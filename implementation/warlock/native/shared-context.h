@@ -132,7 +132,7 @@ static gboolean context_identity_current(const ContextProof *proof,gboolean popu
         && ((popup && proof->source==GTK_WIDGET(popup_view) && origin==popup_owner)
             || (!popup && proof->source==GTK_WIDGET(origin->engine)));
 }
-/* Escape dismisses a native grabbed menu even before its renderer acknowledgement.
+/* Escape dismisses a native grabbed popup even before its renderer acknowledgement.
  * It carries no window effect. All other navigation retains full render readiness. */
 static gboolean context_current(const ContextProof *proof,gboolean popup) {
     return context_identity_current(proof,popup) && (!popup || surface_popup_ready());
@@ -162,12 +162,17 @@ static gboolean shared_native_escape_press(GtkWidget *widget) {
        proof->key!=GDK_KEY_Escape || proof->source!=widget ||
        !(held_context_keys&context_key_bit(GDK_KEY_Escape)))return FALSE;
     JsonObject *snapshot=json_node_get_object(surface_snapshot);guint64 publication,lease;
-    if(g_strcmp0(json_object_get_string_member(snapshot,"mode"),"menu")!=0 ||
+    const char *mode=json_object_get_string_member(snapshot,"mode");
+    gboolean menu=g_strcmp0(mode,"menu")==0;
+    // Text entry retains its renderer/IME route. These three modes have no
+    // editable controls; physical Escape can only retire their native grab.
+    gboolean ordinary=g_strcmp0(mode,"overview")==0 || g_strcmp0(mode,"picker")==0 || g_strcmp0(mode,"switcher")==0;
+    if((!menu && !ordinary) ||
        !surface_uint(json_object_get_member(snapshot,"publication"),&publication) || publication!=proof->publication ||
        !surface_uint(json_object_get_member(snapshot,"lease"),&lease) || lease!=proof->lease)return FALSE;
     JsonObject *object=json_object_new();
     json_object_set_int_member(object,"surfaceProtocol",2);
-    json_object_set_string_member(object,"kind","surface-menu-navigation");
+    json_object_set_string_member(object,"kind",menu?"surface-menu-navigation":"native-popup-dismiss");
     json_object_set_string_member(object,"surface","popup");
     g_autofree char *stamp=g_strdup_printf("%" G_GUINT64_FORMAT,proof->publication);
     g_autofree char *token=g_strdup_printf("%" G_GUINT64_FORMAT,proof->lease);
@@ -193,7 +198,12 @@ static void terminal_release(GtkWidget *widget,guint key) {
     JsonNode *message=terminal_take(widget,key);
     if(!message)return;
     g_print("surface-terminal-released: key=%u view=%" G_GUINT64_FORMAT " generation=%" G_GUINT64_FORMAT "\n",key,terminal_proof.view_id,terminal_proof.view_generation);fflush(stdout);
-    shared_context_forward(popup_owner,message,TRUE);json_node_unref(message);
+    if(g_strcmp0(json_object_get_string_member(json_node_get_object(message),"kind"),"native-popup-dismiss")==0)
+        // Internal physical intent only: retire the native grab, then let the
+        // existing lease-bound NativeDismiss event reach the Elm policy owner.
+        surface_dismiss();
+    else shared_context_forward(popup_owner,message,TRUE);
+    json_node_unref(message);
 }
 static gboolean context_finish_allowed(const ContextProof *proof,gboolean popup,GObject *object,gboolean dom_verified) {
     return dom_verified && object==G_OBJECT(proof->source) && context_current(proof,popup);

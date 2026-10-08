@@ -35,6 +35,7 @@ type alias Model =
     , overview : Bool
     , overviewWorkspace : Maybe String
     , switcher : Switcher.Model
+    , nativeSwitcher : Maybe NativeChord
     , switcherOrigin : Maybe Counter
     , switcherExpected : Maybe Counter
     , switcherHistory : Maybe {context : {lifetime : Counter, epoch : Counter, output : Counter, revision : Counter}, roots : List Counter}
@@ -47,9 +48,11 @@ type alias Model =
 type FocusDestination = TaskbarGroup String | OverviewOpener
 type alias FocusTarget = {binding : Binding.Binding, destination : FocusDestination, output : Maybe Counter}
 
+type alias NativeChord = {generation : Counter, roots : List Counter, history : List Counter, origin : Maybe Counter, steps : List Switcher.Direction, released : Bool, cancelled : Bool, consumed : Bool}
+
 type ChoiceToken = ChoiceToken Binding.Binding Counter
 
-type alias Choice = { binding : Binding.Binding, output : Counter, root : Counter, application : String, token : ChoiceToken }
+type alias Choice = { chord : Maybe Counter, binding : Binding.Binding, output : Counter, root : Counter, application : String, token : ChoiceToken }
 
 choiceToken : Model -> Maybe ChoiceToken
 choiceToken model = model.choice |> Maybe.map .token
@@ -92,7 +95,7 @@ type Effect
 
 initial : Model
 initial =
-    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, open = False, overview = False, overviewWorkspace = Nothing, switcher=Switcher.initial, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, catalogFailure = Nothing }
+    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, open = False, overview = False, overviewWorkspace = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, catalogFailure = Nothing }
 
 switcherOpen : Model -> Bool
 switcherOpen model = List.member (Switcher.phase model.switcher) [Switcher.Waiting,Switcher.Browsing]
@@ -121,13 +124,28 @@ chooseFamily family model =
             in case next.windows.shell.expected of
                 Just request ->
                     let token=ChoiceToken binding request
-                    in ({next | choice=Just {binding=binding,output=observed.context.output,root=family.root,application=family.application,token=token}},effects++[ArmChoice token])
+                    in ({next | choice=Just {chord=model.nativeSwitcher |> Maybe.map .generation,binding=binding,output=observed.context.output,root=family.root,application=family.application,token=token}},effects++[ArmChoice token])
                 Nothing -> (next,effects)
         _ -> (retireSwitcher model,[])
 
 syncSwitcher : Model -> (Model,List Effect)
 syncSwitcher model =
     if not (switcherOpen model) then (model,[]) else
+    case model.nativeSwitcher of
+        Just chord ->
+            case TaskView.groups model.windows.shell of
+                Just groups ->
+                    let candidates=List.concatMap .windows groups |> List.filter (\row -> List.member row.root chord.roots)
+                        (switcher,selected)=if Switcher.phase model.switcher==Switcher.Browsing then (Switcher.reconcile candidates model.switcher,Nothing) else Switcher.ready (Switcher.generation model.switcher) chord.history candidates chord.origin model.switcher
+                        next=advance {model | switcher=switcher}
+                    in case selected of
+                        Just family -> chooseFamily family next
+                        Nothing -> (next,switcherFocus next)
+                Nothing -> (model,[])
+        Nothing -> syncLocalSwitcher model
+
+syncLocalSwitcher : Model -> (Model,List Effect)
+syncLocalSwitcher model =
     case (model.switcherHistory,model.windows.shell.effects.observed,TaskView.groups model.windows.shell) of
         (Just history,Just observed,Just groups) ->
             if Switcher.phase model.switcher==Switcher.Browsing then
@@ -141,6 +159,54 @@ syncSwitcher model =
                     Just family -> chooseFamily family next
                     Nothing -> (next,switcherFocus next)
         _ -> (model,[])
+
+nativeChordDecoder : D.Decoder NativeChord
+nativeChordDecoder =
+    let positive=UInt64.decoder |> D.andThen (\value -> if value==UInt64.zero then D.fail "Zero chord identity" else D.succeed value)
+        identities=D.list positive |> D.andThen (\rows -> if List.length rows<=256 && List.length (List.foldl (\root unique -> if List.member root unique then unique else root::unique) [] rows)==List.length rows then D.succeed rows else D.fail "Chord membership")
+        direction=D.int |> D.andThen (\value -> if value==1 then D.succeed Switcher.Forward else if value== -1 then D.succeed Switcher.Reverse else D.fail "Chord direction")
+        steps=D.list direction |> D.andThen (\rows -> if List.length rows<=4096 then D.succeed rows else D.fail "Chord ordinals")
+    in strict ["generation","roots","history","origin","steps","released","cancelled","consumed"]
+        (D.map8 NativeChord (D.field "generation" UInt64.decoder) (D.field "roots" identities) (D.field "history" identities) (D.field "origin" (D.nullable positive)) (D.field "steps" steps) (D.field "released" D.bool) (D.field "cancelled" D.bool) (D.field "consumed" D.bool))
+        |> D.andThen (\chord -> if (chord.generation==UInt64.zero)==List.isEmpty chord.steps && List.all (\root -> List.member root chord.roots) chord.history then D.succeed chord else D.fail "Chord entry/history")
+
+receiveChord : NativeChord -> Model -> (Model,List Effect)
+receiveChord chord model =
+    let old=model.nativeSwitcher
+        order=old |> Maybe.map (\previous -> UInt64.compare chord.generation previous.generation) |> Maybe.withDefault GT
+        inconsistent=old |> Maybe.map (\previous -> order==EQ && (previous.roots/=chord.roots || previous.history/=chord.history || previous.origin/=chord.origin || List.take (List.length previous.steps) chord.steps/=previous.steps || (previous.released && not chord.released) || (previous.cancelled && not chord.cancelled) || (previous.consumed && not chord.consumed))) |> Maybe.withDefault False
+        closed =
+            let retired=advance (retireSwitcher {model | nativeSwitcher=Just chord})
+                choice=retired.choice |> Maybe.andThen (\pending -> if pending.chord==Just chord.generation then Nothing else Just pending)
+            in ({retired | choice=choice},[])
+    in if chord.generation==UInt64.zero || order==LT then (model,[]) else
+       if inconsistent || chord.cancelled || chord.consumed then closed else
+       let localGeneration=if order==GT then UInt64.next (Switcher.generation model.switcher) else Just (Switcher.generation model.switcher)
+       in case localGeneration of
+           Nothing -> (retireSwitcher model,[])
+           Just generation ->
+               let windows=model.windows
+                   base=if order==GT then {model | nativeSwitcher=Just chord,choice=Nothing,choiceNotice="",open=False,overview=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,switcherHistory=Nothing,switcherExpected=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}} else {model | nativeSwitcher=Just chord}
+                   (stepped,_) = List.foldl (\(ordinal,direction) (state,_) -> Switcher.step generation (ordinal+1) direction state) (base.switcher,Nothing) (List.indexedMap Tuple.pair chord.steps)
+                   (released,selected)=if chord.released then Switcher.release generation (List.length chord.steps) stepped else (stepped,Nothing)
+                   next=advance {base | switcher=released}
+               in case selected of
+                   Just family -> chooseFamily family next
+                   Nothing ->
+                       let (synced,effects)=syncSwitcher next
+                       in if order==GT && not (Shell.available next.windows.shell) then
+                           let (refreshing,reads)=windowBase (TaskbarShell.Native Shell.Refresh) synced
+                           in (refreshing,effects++reads)
+                       else (synced,effects)
+
+fenceSwitcherSelection : Maybe Counter -> Binding.Binding -> List Effect -> List Effect
+fenceSwitcherSelection chord binding effects =
+    effects |> List.concatMap (\effect -> case (chord,effect) of
+        (Just generation,WindowEffect (Shell.Send raw)) ->
+            case D.decodeValue (D.map3 (\kind request root -> (kind,request,root)) (D.field "kind" D.string) (D.at ["intent","request"] UInt64.decoder) (D.at ["intent","incarnation"] UInt64.decoder)) raw of
+                Ok ("window-effect",request,root) -> [Send (E.object [("protocolVersion",E.int 3),("kind",E.string "switcher-selection-request"),("binding",Binding.encode binding),("requestId",E.string (UInt64.string request)),("chord",E.string (UInt64.string generation)),("root",E.string (UInt64.string root))]),effect]
+                _ -> [effect]
+        _ -> [effect])
 
 canProveCatalogUnsent : Binding.Binding -> Counter -> Model -> Bool
 canProveCatalogUnsent binding request model =
@@ -194,6 +260,7 @@ windowBase message model =
         , choiceNotice = if disconnected || changed then "" else model.choiceNotice
         , overview = if disconnected || changed || windows.shell.phase==Shell.Exhausted then False else model.overview
         , overviewWorkspace = if disconnected || changed then Nothing else model.overviewWorkspace
+        , nativeSwitcher = if disconnected || changed || windows.shell.phase==Shell.Exhausted then Nothing else model.nativeSwitcher
         , switcher = if disconnected || changed || windows.shell.phase==Shell.Exhausted then Switcher.cancel (Switcher.generation model.switcher) model.switcher else model.switcher
         , switcherExpected = if disconnected || changed || windows.shell.phase==Shell.Exhausted then Nothing else model.switcherExpected
         , switcherHistory = if disconnected || changed || windows.shell.phase==Shell.Exhausted then Nothing else model.switcherHistory
@@ -246,7 +313,7 @@ window message model =
                             in case next.windows.shell.expected of
                                 Just request ->
                                     let token=ChoiceToken binding request
-                                    in ({next | choice=Just {binding=binding,output=observed.context.output,root=root,application=family.application,token=token}},effects++[ArmChoice token])
+                                    in ({next | choice=Just {chord=Nothing,binding=binding,output=observed.context.output,root=root,application=family.application,token=token}},effects++[ArmChoice token])
                                 Nothing -> (next,effects)
                 _ -> (model,[])
         _ ->
@@ -296,7 +363,7 @@ window message model =
                                 case Taskbar.selection selected of
                                     Taskbar.Apply operation root ->
                                         let (applied,commands)=windowBase (TaskbarShell.Native (Shell.Act scope operation root)) {retired | choiceNotice=""}
-                                        in (applied,effects++commands)
+                                        in (applied,effects++fenceSwitcherSelection pending.chord pending.binding commands)
                                     _ -> (retired,effects)
                             _ -> (retired,effects)
                 Nothing -> (next,effects)
@@ -357,19 +424,20 @@ update message model =
                         origin=base.windows.shell.effects.observed |> Maybe.andThen (\observed -> Scene.focused observed.scene |> Maybe.andThen (\root -> Scene.rootOf root observed.scene))
                         (switcher,_)=Switcher.step generation 1 direction base.switcher
                         windows=base.windows
-                        opened=advance {base | switcher=switcher,switcherOrigin=origin,switcherHistory=Nothing,open=False,overview=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing}}
+                        opened=advance {base | nativeSwitcher=Nothing,switcher=switcher,switcherOrigin=origin,switcherHistory=Nothing,open=False,overview=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing}}
                         (refreshing,commands)=windowBase (TaskbarShell.Native Shell.Refresh) opened
                         (next,history)=readSwitcherHistory refreshing
                     in (next,commands++history)
         SwitcherStep stamp direction ->
             if capture model/=Just stamp || not (switcherOpen model) then (model,[]) else
-            let (switcher,chosen)=Switcher.step (Switcher.generation model.switcher) (Switcher.lastStep model.switcher+1) direction model.switcher
+            let (switcher,chosen)=if model.nativeSwitcher/=Nothing then (Switcher.navigate direction model.switcher,Nothing) else Switcher.step (Switcher.generation model.switcher) (Switcher.lastStep model.switcher+1) direction model.switcher
                 next=advance {model | switcher=switcher}
             in case chosen of
                 Just family -> chooseFamily family next
                 Nothing -> (next,switcherFocus next)
         SwitcherChoose stamp root ->
             if capture model/=Just stamp || not (switcherOpen model) then (model,[]) else
+            if not (List.any (\family -> family.root==root) (Switcher.entries model.switcher)) then (model,[]) else
             let switcher=Switcher.choose (Switcher.generation model.switcher) root model.switcher
                 (resolved,selected)=Switcher.commit (Switcher.generation switcher) switcher
             in case selected of
@@ -384,13 +452,22 @@ update message model =
         CloseSwitcher stamp ->
             if capture model/=Just stamp || not (switcherOpen model) then (model,[]) else
             let closed=advance (retireSwitcher model)
-            in windowBase (TaskbarShell.Native Shell.Refresh) closed
+            in case (model.nativeSwitcher,model.windows.shell.binding,UInt64.next model.request) of
+                (Just chord,Just binding,Just request) ->
+                    let (next,reads)=windowBase (TaskbarShell.Native Shell.Refresh) {closed | request=request}
+                    in (next,Send (E.object [("protocolVersion",E.int 3),("kind",E.string "switcher-cancel-request"),("binding",Binding.encode binding),("requestId",E.string (UInt64.string request)),("chord",E.string (UInt64.string chord.generation))])::reads)
+                _ -> windowBase (TaskbarShell.Native Shell.Refresh) closed
         Window value ->
             let (next,effects)=window value model
                 (synced,commands)=syncSwitcher next
             in if next.windows.picker/=Nothing && next.windows.picker/=model.windows.picker then (retireSwitcher {next | open=False,overview=False,expected=Nothing,menuOrigin=Nothing,returnFocus=Nothing},effects) else (synced,effects++commands)
         Incoming raw ->
             case D.decodeValue (D.field "kind" D.string) raw of
+                Ok "switcher-journal" ->
+                    let decoder=strict ["protocolVersion","kind","binding","requestId","chord"] (D.map4 (\_ binding request chord -> {binding=binding,request=request,chord=chord}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "chord" nativeChordDecoder))
+                    in case D.decodeValue decoder raw of
+                        Ok receipt -> if model.windows.shell.binding/=Just receipt.binding || model.windows.shell.phase==Shell.Detached || model.windows.shell.phase==Shell.Exhausted then (model,[]) else receiveChord receipt.chord model
+                        Err _ -> (model,[])
                 Ok "activation-history" ->
                     let positive=UInt64.decoder |> D.andThen (\value -> if value==UInt64.zero then D.fail "Zero history identity" else D.succeed value)
                         context= strict ["lifetime","epoch","output","revision"] (D.map4 (\lifetime epoch output revision -> {lifetime=lifetime,epoch=epoch,output=output,revision=revision}) (D.field "lifetime" positive) (D.field "epoch" positive) (D.field "output" positive) (D.field "revision" positive))
@@ -488,7 +565,7 @@ update message model =
                     in case next.windows.shell.expected of
                         Just request ->
                             let token=ChoiceToken binding request
-                            in ({next | choice=Just {binding=binding,output=observed.context.output,root=root,application=family.application,token=token}},effects++[ArmChoice token])
+                            in ({next | choice=Just {chord=Nothing,binding=binding,output=observed.context.output,root=root,application=family.application,token=token}},effects++[ArmChoice token])
                         Nothing -> (next,effects)
                 _ -> (model,[])
         SearchQuery stamp query ->

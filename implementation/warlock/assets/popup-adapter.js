@@ -28,7 +28,8 @@ app.ports.actions.subscribe(post);
 let switcherTerminal=null;
 document.addEventListener('keydown',event=>{
   const node=event.target?.closest?.('.surface-popup');
-  if(!node || node.dataset.mode!=='switcher' || event.isComposing ||
+  const dismissal=event.key==='Escape' && ['switcher','overview','picker'].includes(node?.dataset.mode);
+  if(!node || (node.dataset.mode!=='switcher' && !dismissal) || event.isComposing ||
      event.defaultPrevented || event.ctrlKey || event.metaKey) return;
   const id=event.key==='Tab'?(event.shiftKey?'control:reverse':'control:forward'):
     event.key==='ArrowRight'?'control:forward':event.key==='ArrowLeft'?'control:reverse':
@@ -50,7 +51,7 @@ document.addEventListener('keyup',event=>{
   if(!held || held.key!==event.key) return;
   switcherTerminal=null;event.preventDefault();event.stopImmediatePropagation();
   if(event.isComposing || event.ctrlKey || event.metaKey || !held.node.isConnected ||
-    held.node.dataset.mode!=='switcher' || held.node.dataset.publication!==held.packet.publication ||
+    (held.node.dataset.mode!=='switcher' && !(held.key==='Escape' && ['overview','picker'].includes(held.node.dataset.mode))) || held.node.dataset.publication!==held.packet.publication ||
     held.node.dataset.lease!==held.packet.lease || !held.node.contains(event.target)) return;
   app.ports.requestAction.send(held.packet);
 },true);

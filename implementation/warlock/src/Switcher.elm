@@ -1,4 +1,4 @@
-module Switcher exposing (Model, Direction(..), Phase(..), initial, generation, phase, entries, selected, lastStep, step, release, ready, reconcile, choose, commit, cancel)
+module Switcher exposing (Model, Direction(..), Phase(..), initial, generation, phase, entries, selected, lastStep, step, release, ready, reconcile, navigate, choose, commit, cancel)
 
 import Dict exposing (Dict)
 import Taskbar exposing (Family)
@@ -112,6 +112,15 @@ reconcile candidates ((Model model) as original) =
         position=index root surviving |> Maybe.withDefault 0
         baseline=if model.phase==Browsing then Just {root=root,through=lastOrdinal model} else model.baseline
     in Model {model | entries=surviving,selected=position,baseline=baseline,phase=if List.isEmpty surviving then Cancelled else model.phase}
+
+-- Pointer/local controls move the selection baseline without minting another
+-- native ordinal. The next admitted physical step still has its original ID.
+navigate : Direction -> Model -> Model
+navigate direction ((Model model) as original) =
+    if model.phase/=Browsing || model.released/=Nothing || List.isEmpty model.entries then original else
+    let position=modBy (List.length model.entries) (model.selected+delta direction)
+        root=List.drop position model.entries |> List.head |> Maybe.map .root |> Maybe.withDefault UInt64.zero
+    in Model {model | selected=position,baseline=Just {root=root,through=lastOrdinal model}}
 
 choose : Counter -> Counter -> Model -> Model
 choose token root ((Model model) as original) =

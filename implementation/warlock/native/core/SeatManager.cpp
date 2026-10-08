@@ -9,6 +9,7 @@
 #include "../protocols/InputCapture.hpp"
 #include "../Compositor.hpp"
 #include "../desktop/state/FocusState.hpp"
+#include "../desktop/state/ViewState.hpp"
 #include "../devices/IKeyboard.hpp"
 #include "../desktop/view/LayerSurface.hpp"
 #include "../managers/input/InputManager.hpp"
@@ -729,7 +730,32 @@ void CSeatManager::setGrab(SP<CSeatGrab> grab) {
 
         m_seatGrab.reset();
 
-        if (parentLayer && parentLayer->m_layerSurface->m_current.interactivity != ZWLR_LAYER_SURFACE_V1_KEYBOARD_INTERACTIVITY_NONE) {
+        // A keyboard-none shell popup temporarily owns the keyboard without
+        // selecting the window under the pointer. Restore its current native
+        // window before any pointer refocus can emit an unrelated activation.
+        // A retired, hidden or off-workspace recipient still uses normal fallback.
+        if (parentLayer && parentLayer->m_layerSurface->m_current.interactivity == ZWLR_LAYER_SURFACE_V1_KEYBOARD_INTERACTIVITY_NONE && validMapped(previousWindow) &&
+            !previousWindow->isHidden() && previousWindow->acceptsInput() && previousWindow->m_workspace && previousWindow->m_workspace->isVisibleNotCovered()) {
+            Desktop::focusState()->rawWindowFocus(previousWindow, Desktop::FOCUS_REASON_FFM);
+            // Retire the popup's pointer recipient too. Reenter the existing
+            // parent or current window only through the native hit tester;
+            // routing a pointer does not select a different keyboard window.
+            setPointerFocus(nullptr, {});
+            const auto pointer = g_pInputManager->getMouseCoordsInternal();
+            Vector2D local;
+            PHLLS hitLayer;
+            const auto monitor = parentLayer->m_monitor.lock();
+            if (monitor && parentLayer->m_layer < monitor->m_layerSurfaceLayers.size()) {
+                const auto surface = Desktop::viewState()->hitTest().layerSurfaceAt(pointer, &monitor->m_layerSurfaceLayers[parentLayer->m_layer], &local, &hitLayer);
+                if (surface && hitLayer == parentLayer)
+                    setPointerFocus(surface, local);
+            }
+            if (!m_state.pointerFocus && Desktop::viewState()->hitTest().windowAt(pointer, Desktop::View::ALLOW_FLOATING | Desktop::View::RESERVED_EXTENTS | Desktop::View::INPUT_EXTENTS) == previousWindow) {
+                const auto surface = Desktop::viewState()->hitTest().windowSurfaceAt(pointer, previousWindow, local);
+                if (surface)
+                    setPointerFocus(surface, local);
+            }
+        } else if (parentLayer && parentLayer->m_layerSurface->m_current.interactivity != ZWLR_LAYER_SURFACE_V1_KEYBOARD_INTERACTIVITY_NONE) {
             Desktop::focusState()->rawSurfaceFocus(parentLayer->wlSurface()->resource());
         } else {
             static auto PFOLLOWMOUSE = CConfigValue<Config::INTEGER>("input:follow_mouse");

@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-08T03:54:38.748948+00:00",
+  "updatedUTC": "2026-10-08T05:24:10.751579+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
@@ -23,8 +23,8 @@
       "ux-012",
       "ux-013"
     ],
-    "before": "The integrated candidate has no switcher or complete admitted committed-MRU source. Legacy staged switcher has retained native/journal/commit limitations.",
-    "after": "A single typed Elm switcher consumes admitted native MRU history, freezes candidates, cycles in either direction, retires exact identities, cancels without effects and resolves one selection through existing authority. Native chord entry/release and atomic cancellation remain explicit obligations until actual evidence qualifies them.",
+    "before": "Integrated switcher local controls work, but no global native Alt-Tab entry journal freezes membership before readiness or guards cancelled selection at effect commit.",
+    "after": "Native Alt-Tab entry records exact frozen membership/history and numbered direction/release/cancel; Elm resolves once through the existing native effect path with cancellation guarded at native commit.",
     "paths": [
       "src/Switcher.elm",
       "src/Desktop.elm",
@@ -50,17 +50,24 @@
       "qa/check-native-authority.py",
       "qa/current-native-pair.json",
       "qa/current-search-build.json",
-      "qa/native-window-feedback.py"
+      "qa/native-window-feedback.py",
+      "native/switcher-bindings.lua",
+      "native/core/SeatManager.cpp",
+      "qa/check-focus-core.py",
+      "qa/current-focus-core.json",
+      "native/shared-context.h",
+      "native/shared-context-test.c"
     ],
     "verification": [
       "Compiled real integrated Elm switcher and generation/ordinal replay: A/B/C order, cancellation, zero/one, retirement/new-arrival freeze and early release exactly once.",
       "Changed owning native authority TU with exact ABI; existing focus succession regression after native history changes.",
-      "Protected native actual switcher controls, local cycling, cancellation, exact chosen activation/restore and current native history; native pre-ready chord journal and AT acceptance remain separately qualified."
+      "Protected native actual switcher controls, local cycling, cancellation, exact chosen activation/restore and current native history; native pre-ready chord journal and AT acceptance remain separately qualified.",
+      "Lease-bound native Escape and renderer physical-release routing; exact native terminal cache retry after later selection preparation."
     ],
-    "state": "integrated native controls verified; complete global native chord journal/modal/original AT coverage next",
-    "lastComponentEvidence": "implementation/warlock/qa/evidence/switcher-native-controls/manifest.json",
-    "lastObservedBehavior": "Native MRU order, local Tab/Left cycling, Escape focus return, repeated Enter activation and minimized restore, current popup pixels and GTK recipients passed. Original global chord acceptance remains partial.",
-    "nextSourceWork": "Native generation/ordinal Alt-Tab journal with history and membership captured at chord entry, compositor cancellation boundary and modal recipient representation; exact native three-window/zero/one/retire-arrive and AT fixtures."
+    "state": "global native chord implemented and observed; modal/protected membership and independent/AT qualification remain open",
+    "lastComponentEvidence": "implementation/warlock/qa/evidence/switcher-native-chord/manifest.json",
+    "lastObservedBehavior": "Actual global Alt-Tab B/A/C wrap, reverse A, C/MRU-preserving cancellation, startup pre-host release exactly once, native cancelled queued effect refusal, dead B retirement/new D freeze, zero/one and minimized restore; current pixels and GTK recipients. Five terminal retries retain cached original replies after newer sidecar preparation. Noneditable popup Escape retains native press until matching release.",
+    "nextSourceWork": "Native modal-family/recipient and other-workspace/output/protected/lock membership fixtures, retirement-before-readiness policy, then applicable AT and independent original-scenario verdicts. Keep delivered order/release/cancellation/zero-one behavior intact."
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",

@@ -145,7 +145,7 @@ int main(void) {
             case 18:surface_gate.closed=2;break;
             case 19:one.active=FALSE;break;
             case 20:shutting_down=TRUE;break;
-            case 21:json_object_set_string_member(json_node_get_object(surface_snapshot),"mode","applications");break;
+            case 21:json_object_set_string_member(json_node_get_object(surface_snapshot),"mode","closed");break;
             case 22:json_object_set_string_member(json_node_get_object(surface_snapshot),"publication","9");break;
             case 23:json_object_set_string_member(json_node_get_object(surface_snapshot),"lease","1");break;
             case 24:context_proof.released=TRUE;held_context_keys=0;break;
@@ -182,6 +182,26 @@ int main(void) {
     }
     proof(&one,TRUE);context_proof.key=GDK_KEY_Return;held_context_keys=128;
     CHECK("native Escape helper cannot admit Enter before DOM ready",!shared_native_escape_press((GtkWidget*)popup_view) && !context_terminal_current(&context_proof));
+    const char *popup_modes[]={"overview","picker","switcher"};
+    for(guint i=0;i<G_N_ELEMENTS(popup_modes);i++) {
+        json_object_set_string_member(json_node_get_object(surface_snapshot),"mode",popup_modes[i]);
+        proof(&one,TRUE);context_proof.key=GDK_KEY_Escape;held_context_keys=4;applied_publication=9;
+        gint64 captured=context_proof.captured;
+        CHECK("ordinary popup preserves physical Escape before renderer ack",shared_native_escape_press((GtkWidget*)popup_view));
+        JsonObject *dismiss=json_node_get_object(terminal_navigation);
+        CHECK("ordinary intent uses existing native dismissal without an action",g_str_equal(json_object_get_string_member(dismiss,"kind"),"native-popup-dismiss") && !json_object_has_member(dismiss,"id"));
+        CHECK("ordinary dismissal does not renew capture or duplicate press",terminal_proof.captured==captured && !shared_native_escape_press((GtkWidget*)popup_view));
+        held_context_keys=0;taken=terminal_take((GtkWidget*)popup_view,GDK_KEY_Escape);
+        CHECK("ordinary dismissal consumes exact physical release once",taken && !terminal_navigation);if(taken)json_node_unref(taken);
+        CHECK("ordinary duplicate release cannot dismiss again",!terminal_take((GtkWidget*)popup_view,GDK_KEY_Escape));
+        proof(&one,TRUE);context_proof.key=GDK_KEY_Return;held_context_keys=128;
+        CHECK("ordinary Enter cannot become pending-render dismissal",!shared_native_escape_press((GtkWidget*)popup_view));
+    }
+    json_object_set_string_member(json_node_get_object(surface_snapshot),"mode","unknown");
+    proof(&one,TRUE);context_proof.key=GDK_KEY_Escape;held_context_keys=4;
+    CHECK("unknown popup mode cannot mint native dismissal",!shared_native_escape_press((GtkWidget*)popup_view));
+    json_object_set_string_member(json_node_get_object(surface_snapshot),"mode","applications");
+    CHECK("editable popup retains its renderer and IME Escape route",!shared_native_escape_press((GtkWidget*)popup_view));
     held_context_keys=0;applied_publication=10;
     json_node_unref(nav);
     json_node_unref(menu);

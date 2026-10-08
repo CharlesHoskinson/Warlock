@@ -69,6 +69,24 @@ std::string previewFdAddress;
 std::vector<PHLWINDOWREF> recentFocus;
 struct Activation { PHLWINDOWREF root; uint64_t incarnation; };
 std::vector<Activation> activationHistory;
+// A native input journal, never a window-selection policy. Capture membership
+// on chord entry; coalesced notifications are hints to read this exact record.
+struct SwitcherChord {
+    uint64_t generation=0,ownerSession=0,ownerFrontend=0;
+    std::vector<int> steps;
+    std::vector<uint64_t> roots,history;
+    std::optional<uint64_t> origin;
+    bool released=false,cancelled=false,consumed=false;
+};
+SwitcherChord switcherChord;
+uint64_t switcherSerial=0;
+CHyprSignalListener switcherKeys;
+std::set<uint32_t> switcherAlts;
+bool switcherTab=false,switcherStepAvailable=false;
+struct SwitcherSelection {uint64_t request=0,generation=0,root=0;};
+std::map<uint64_t,SwitcherSelection> switcherSelections;
+uint64_t switcherOwnerSession=0,switcherOwnerFrontend=0;
+
 uint64_t outputGeneration=0;
 std::string previousOutputs;
 std::thread::id ownerThread;
@@ -268,6 +286,63 @@ std::string activationRoots() {
     }
     return result+"]";
 }
+void notifySwitcher() noexcept {
+    try {if(g_pEventManager)g_pEventManager->postEvent(SHyprIPCEvent{"warlockswitcher",std::to_string(lifetime)});}catch(...){}
+}
+void cancelSwitcher() noexcept {
+    if(switcherChord.generation && !switcherChord.consumed && !switcherChord.cancelled){switcherChord.cancelled=true;notifySwitcher();}
+}
+void switcherStep(int direction) noexcept {
+    try {
+        if(switcherAlts.empty() || !switcherTab || !switcherStepAvailable || g_pSessionLockManager->isSessionLocked() || !g_pInputManager->m_exclusiveLSes.empty())return;
+        switcherStepAvailable=false;
+        if(!switcherChord.generation || switcherChord.released || switcherChord.cancelled || switcherChord.consumed) {
+            if(switcherSerial==std::numeric_limits<uint64_t>::max())return;
+            SwitcherChord next;next.generation=++switcherSerial;
+            next.ownerSession=switcherOwnerSession;next.ownerFrontend=switcherOwnerFrontend;
+            for(const auto& member:members) {
+                const auto root=member.window.lock();
+                if(root && root->m_isMapped && !root->parent())next.roots.push_back(member.id);
+            }
+            if(next.roots.size()>256)return;
+            for(const auto& entry:activationHistory | std::views::reverse)
+                if(std::ranges::find(next.roots,entry.incarnation)!=next.roots.end())next.history.push_back(entry.incarnation);
+            auto focused=Desktop::focusState()->window();std::set<PHLWINDOW> path;
+            while(focused && focused->parent()){if(path.size()>=256 || !path.insert(focused).second){focused=nullptr;break;}focused=focused->parent();}
+            for(const auto& member:members)if(focused && member.window.lock()==focused)next.origin=member.id;
+            switcherChord=std::move(next);
+        }
+        if(switcherChord.steps.size()>=4096){cancelSwitcher();return;}
+        switcherChord.steps.push_back(direction);notifySwitcher();
+    }catch(...){cancelSwitcher();}
+}
+int switcherForward(lua_State*){switcherStep(1);return 0;}
+int switcherReverse(lua_State*){switcherStep(-1);return 0;}
+void switcherKey(IKeyboard::SKeyEvent event,Event::SCallbackInfo& info) {
+    const bool pressed=event.state==WL_KEYBOARD_KEY_STATE_PRESSED;
+    // The initial step is admitted by the configured compositor keybinding,
+    // not by IPC or a frontend packet. Release/cancel survive popup startup.
+    const auto keyboard=g_pSeatManager->m_keyboard.lock();
+    const auto symbol=keyboard && keyboard->m_xkbState ? xkb_state_key_get_one_sym(keyboard->m_xkbState,event.keycode+8) : 0;
+    if(pressed && (symbol==0xffe9 || symbol==0xffea))switcherAlts.insert(event.keycode);
+    if(!pressed && switcherAlts.erase(event.keycode) && switcherAlts.empty() && switcherChord.generation && !switcherChord.cancelled && !switcherChord.consumed && !switcherChord.released){switcherChord.released=true;notifySwitcher();}
+    if(symbol==0xff09 || symbol==0xfe20 || (!pressed && switcherTab && event.keycode==15)){
+        if(pressed && !switcherTab){switcherTab=true;switcherStepAvailable=true;}
+        if(!pressed){switcherTab=false;switcherStepAvailable=false;}
+        if(pressed && switcherChord.generation && !switcherChord.released && !switcherChord.cancelled && !switcherChord.consumed && !switcherAlts.empty()){
+            switcherStep(symbol==0xfe20 ? -1 : 1);info.cancelled=true;
+        }
+    }
+    if(symbol==0xff1b && switcherChord.generation && !switcherChord.consumed){if(pressed)cancelSwitcher();}
+}
+std::string switcherJournal(const Session& session,bool observing=false) {
+    auto& chord=switcherChord;
+    if(!observing && chord.generation && !chord.ownerSession){chord.ownerSession=session.id;chord.ownerFrontend=session.frontend;}
+    const auto array=[](const std::vector<uint64_t>& values){std::string result="[";for(auto value:values){if(result.size()>1)result+=',';result+=quote(std::to_string(value));}return result+"]";};
+    std::string steps="[";for(auto value:chord.steps){if(steps.size()>1)steps+=',';steps+=std::to_string(value);}steps+=']';
+    const bool mine=chord.ownerSession==session.id && chord.ownerFrontend==session.frontend;
+    return "{\"generation\":"+quote(std::to_string(chord.generation))+",\"roots\":"+array(chord.roots)+",\"history\":"+array(chord.history)+",\"origin\":"+(chord.origin?quote(std::to_string(*chord.origin)):"null")+",\"steps\":"+steps+",\"released\":"+(chord.released?"true":"false")+",\"cancelled\":"+((chord.cancelled || (!observing && chord.generation && !mine))?"true":"false")+",\"consumed\":"+(chord.consumed?"true":"false")+"}";
+}
 std::string sceneFacts() {
     // Native facts only. Vector position is not claimed to be final paint order:
     // specialized fullscreen/effect passes may currently disagree with it.
@@ -396,6 +471,10 @@ std::string performEffect(Session& session, JsonObject* object, const std::strin
     if(!native || !epoch || !output || !expected || !operationNode || !JSON_NODE_HOLDS_VALUE(operationNode) || json_node_get_value_type(operationNode)!=G_TYPE_STRING) return error("effect-schema");
     const std::string operation=json_node_get_string(operationNode);
     gchar* raw=json_to_string(json_object_get_member(object,"intent"),FALSE);std::string encoded(raw);g_free(raw);
+    const auto selection=switcherSelections.find(session.id);
+    const bool fenced=selection!=switcherSelections.end() && selection->second.request==*requestId;
+    // Retry identity belongs to the immutable effect intent. A newer selection
+    // preparation must never change the already recorded terminal reply.
     const std::string fingerprint="1:"+quote(operation)+":"+std::to_string(*requestId)+":"+std::to_string(*generation)+":"+std::to_string(*target)+":"+std::to_string(*native)+":"+std::to_string(*epoch)+":"+std::to_string(*output)+":"+std::to_string(*expected);
     if(*native!=lifetime || *epoch!=session.frontend) return effectOutcome(session,encoded,"Refused","authority-mismatch");
     if(*requestId==session.effectRequest) return fingerprint==session.lastPayload ? session.lastReply : effectOutcome(session,encoded,"Refused","request-reuse");
@@ -406,6 +485,14 @@ std::string performEffect(Session& session, JsonObject* object, const std::strin
     // identities refuse; exact retry returns its original terminal outcome.
     session.effectRequest=*requestId;session.generation=*generation;session.lastPayload=fingerprint;
     session.lastReply=effectOutcome(session,encoded,"Unknown","effect-unproven");
+    if(selection!=switcherSelections.end() && *requestId<selection->second.request)return reject("superseded-switcher-selection");
+    if(fenced) {
+        const auto& chosen=selection->second;
+        if(chosen.generation!=switcherChord.generation || chosen.root!=*target || switcherChord.ownerSession!=session.id || switcherChord.ownerFrontend!=session.frontend || switcherChord.cancelled || switcherChord.consumed || std::ranges::find(switcherChord.roots,*target)==switcherChord.roots.end() || operation=="minimize")return reject("switcher-cancelled-or-retired");
+        // This callback never pumps the event loop. Consume before the first
+        // possible mutation; Unknown cannot make the chord executable again.
+        switcherChord.consumed=true;notifySwitcher();
+    }
     if(operation!="minimize" && operation!="restore" && operation!="activate") return reject("unsupported-operation");
     if(*output!=outputGeneration || *expected!=factsRevision) return reject("dependency-mismatch");
     if(g_pSessionLockManager->isSessionLocked() || !g_pInputManager->m_exclusiveLSes.empty()) return reject("exclusive-input");
@@ -597,7 +684,7 @@ std::string observe(eHyprCtlOutputFormat, std::string request) {
             // Retire dead/reused PIDs, bound registration independently of windows.
             std::erase_if(sessions,[](const auto& entry) {
                 if(startTime(entry.first)==entry.second.start) return false;
-                captureProbes.erase(entry.first);grantRegistry->detach(verifiedPeer(entry.first,entry.second.start));return true;
+                switcherSelections.erase(entry.second.id);captureProbes.erase(entry.first);grantRegistry->detach(verifiedPeer(entry.first,entry.second.start));return true;
             });
             if(auto old=captureProbes.find(peer);old!=captureProbes.end() && old->second.exported) throw std::runtime_error("preview-import-outstanding");
             captureProbes.erase(peer);
@@ -606,6 +693,7 @@ std::string observe(eHyprCtlOutputFormat, std::string request) {
             if(!sessions.contains(peer)) sessions.emplace(peer,Session{start,admitted.binding.session,admitted.binding.frontend,0,0,"","",{}});
             auto& session=sessions.at(peer);
             session.id=admitted.binding.session;session.frontend=admitted.binding.frontend;
+            switcherSelections.erase(session.id);
             session.geometryProtocol=0;session.geometryEnabled=false;session.geometryFrontend=0;session.geometryOperations.clear();session.retained.clear(); session.effectRequest=0; session.generation=0; session.lastPayload.clear(); session.lastReply.clear();
             reply = "{\"protocolVersion\":3,\"kind\":\"attached\",\"binding\":" + binding(session) +
                 ",\"previewFdAddress\":"+quote(previewFdAddress)+",\"compositor\":{\"pid\":" + std::to_string(getpid()) + ",\"instance\":" + quote(g_pCompositor->m_instanceSignature) +
@@ -701,6 +789,36 @@ std::string observe(eHyprCtlOutputFormat, std::string request) {
                     reply="{\"protocolVersion\":3,\"kind\":\"geometry-facts\",\"geometryProtocol\":"+std::to_string(found->second.geometryProtocol)+",\"binding\":"+binding(found->second)+",\"requestId\":"+quote(std::to_string(*requestId))+",\"sequence\":"+quote(std::to_string(geometrySequence))+",\"revision\":"+quote(std::to_string(geometryRevision))+",\"outputGeneration\":"+quote(std::to_string(outputGeneration))+",\"facts\":"+facts+"}";
                 }
             }
+        } else if(((operation=="switcher-journal-request" || operation=="switcher-journal-observe-request") && fields(object,{"protocolVersion","kind","binding","requestId"})) ||
+                  (operation=="switcher-selection-request" && fields(object,{"protocolVersion","kind","binding","requestId","chord","root"})) ||
+                  (operation=="switcher-cancel-request" && fields(object,{"protocolVersion","kind","binding","requestId","chord"}))) {
+            auto* bound=objectMember(object,"binding");const auto requestId=counter(object,"requestId");
+            const auto found=sessions.find(peer);
+            if(!bound || !fields(bound,{"lifetime","session","frontend"}) || !requestId)throw std::runtime_error("switcher-schema");
+            const auto native=counter(bound,"lifetime"),sessionId=counter(bound,"session"),frontend=counter(bound,"frontend");
+            if(!native || !sessionId || !frontend || found==sessions.end() || found->second.start!=start || *native!=lifetime || *sessionId!=found->second.id || *frontend!=found->second.frontend || !grantRegistry->callerMatches(verifiedPeer(peer,start),{lifetime,*sessionId,*frontend}))reply=error("binding-mismatch");
+            else {
+                if(operation!="switcher-journal-observe-request" && switcherOwnerSession && (switcherOwnerSession!=*sessionId || switcherOwnerFrontend!=*frontend)) {
+                    const bool alive=std::ranges::any_of(sessions,[&](const auto& entry){return entry.second.id==switcherOwnerSession && entry.second.frontend==switcherOwnerFrontend && startTime(entry.first)==entry.second.start;});
+                    if(alive)throw std::runtime_error("switcher-owner-busy");
+                    cancelSwitcher();switcherOwnerSession=switcherOwnerFrontend=0;
+                }
+                if(operation=="switcher-journal-request" || operation=="switcher-journal-observe-request") {
+                    if(operation=="switcher-journal-request"){switcherOwnerSession=*sessionId;switcherOwnerFrontend=*frontend;}
+                    reply="{\"protocolVersion\":3,\"kind\":\"switcher-journal\",\"binding\":"+binding(found->second)+",\"requestId\":"+quote(std::to_string(*requestId))+",\"chord\":"+switcherJournal(found->second,operation=="switcher-journal-observe-request")+"}";
+                } else if(operation=="switcher-cancel-request") {
+                    const auto chord=counter(object,"chord");if(!chord)throw std::runtime_error("switcher-cancel-schema");
+                    if(*chord==switcherChord.generation && switcherChord.ownerSession==*sessionId && switcherChord.ownerFrontend==*frontend)cancelSwitcher();
+                    reply="{\"protocolVersion\":3,\"kind\":\"switcher-journal\",\"binding\":"+binding(found->second)+",\"requestId\":"+quote(std::to_string(*requestId))+",\"chord\":"+switcherJournal(found->second)+"}";
+                } else {
+                    const auto chord=counter(object,"chord"),root=counter(object,"root");
+                    if(!chord || !root)throw std::runtime_error("switcher-selection-schema");
+                    const auto prior=switcherSelections.find(*sessionId);
+                    if(prior==switcherSelections.end() || *requestId>prior->second.request)switcherSelections[*sessionId]={*requestId,*chord,*root};
+                    else if(*requestId==prior->second.request && (prior->second.generation!=*chord || prior->second.root!=*root))prior->second.root=0;
+                    reply="{\"protocolVersion\":3,\"kind\":\"switcher-selection\",\"binding\":"+binding(found->second)+",\"requestId\":"+quote(std::to_string(*requestId))+"}";
+                }
+            }
         } else if(operation=="window-effect" && fields(object,{"protocolVersion","kind","binding","effectProtocol","intent"})) {
             const auto bound=objectMember(object,"binding");
             const auto found=sessions.find(peer);const auto effectProtocol=json_object_get_member(object,"effectProtocol");
@@ -763,6 +881,7 @@ APICALL EXPORT PLUGIN_DESCRIPTION_INFO PLUGIN_INIT(HANDLE handle) {
     grantRegistry=std::make_unique<Elm::GrantRetirement::Registry>(lifetime);retirementSequence=0;incarnationRetirementSequence=0;captureResourceSequence=0;
     Render::SceneTrace::clearBindings();
     previewSources.clear();clientTrees.clear();popupTrees.clear();familySources.clear();familyStyles.clear();incarnation = sequence = revision = outputGeneration = 0; previousOutputs.clear(); recentFocus.clear(); activationHistory.clear(); previousProjection.clear(); members.clear(); sessions.clear();
+    switcherChord={};switcherSerial=0;switcherAlts.clear();switcherTab=switcherStepAvailable=false;switcherSelections.clear();switcherOwnerSession=switcherOwnerFrontend=0;
     factsSequence = factsRevision = 0; previousFacts.clear();
     geometryPlacements={};effectBarriers={};geometryWorkspaces={};geometryOutputs={};geometryAreas.clear();geometryAreaRevision=geometrySequence=geometryRevision=0;previousGeometry.clear();
     for (const auto& window : Desktop::windowState()->windows()) if (window->m_isMapped) birth(window);
@@ -772,16 +891,19 @@ APICALL EXPORT PLUGIN_DESCRIPTION_INFO PLUGIN_INIT(HANDLE handle) {
         recordActivation(window);
     });
     if (const auto current=Desktop::focusState()->window()) recordActivation(current);
+    switcherKeys=Event::bus()->m_events.input.keyboard.key.listen(switcherKey);
+    if(!HyprlandAPI::addLuaFunction(handle,"warlock","switcher_forward",switcherForward) || !HyprlandAPI::addLuaFunction(handle,"warlock","switcher_reverse",switcherReverse))throw std::runtime_error("Switcher binding registration failed");
     command = HyprlandAPI::registerHyprCtlCommand(handle,{"elm_observe ",false,observe});
     if (!command) throw std::runtime_error("Authority command registration failed");
     previewPrivacy=previewRendering=1;previewObservation=0;
-    previewLocked=g_pSessionLockManager->m_events.lock.listen([]{revokePreview(true);});
-    previewReloaded=Event::bus()->m_events.config.preReload.listen([]{revokePreview(false);});
+    previewLocked=g_pSessionLockManager->m_events.lock.listen([]{cancelSwitcher();revokePreview(true);});
+    previewReloaded=Event::bus()->m_events.config.preReload.listen([]{cancelSwitcher();switcherAlts.clear();switcherTab=switcherStepAvailable=false;revokePreview(false);});
     previewOutputRemoved=Event::bus()->m_events.monitor.removed.listen([](PHLMONITOR){revokePreview(false);});
     startPreviewFdServer();
     return {"elm-observation-authority","Native first-class minimize/restore authority experiment","local","0.2"};
 }
 APICALL EXPORT void PLUGIN_EXIT() {
+    switcherKeys.reset();switcherSelections.clear();switcherAlts.clear();switcherChord={};switcherOwnerSession=switcherOwnerFrontend=0;
     stopPreviewFdServer();previewLocked.reset();previewReloaded.reset();previewOutputRemoved.reset();
     opened.reset(); closed.reset(); activated.reset(); recentFocus.clear();activationHistory.clear();
     if (command) HyprlandAPI::unregisterHyprCtlCommand(pluginHandle,command);

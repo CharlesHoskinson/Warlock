@@ -1,0 +1,253 @@
+{
+  "schema": 1,
+  "createdUTC": "2026-10-08T05:23:08.615201+00:00",
+  "requirements": [
+    "ELM-UI-003",
+    "ELM-UX-012",
+    "ELM-UX-013"
+  ],
+  "scenarios": [
+    "switcher-order",
+    "switcher-cancel",
+    "switcher-membership",
+    "switcher-zero-one",
+    "switcher-retire-arrive",
+    "ux-012",
+    "ux-013"
+  ],
+  "baseSourceRevision": "25c57690edca58765e43adfcde454d891e7549e1",
+  "sourceState": "Tested uncommitted product delta over base; exact selected hashes and source patch identify bytes.",
+  "sourceHashes": {
+    "implementation/warlock/src/Switcher.elm": "4dfdacbdefc55d1862394ef3343ca949fbae3c0312c718c991bceded34d4406e",
+    "implementation/warlock/src/Desktop.elm": "b31b4e440641954bb0b3f79aee77a875ce803c462d38454f48325b73e028ece8",
+    "implementation/warlock/src/Surface.elm": "42efca16e4282897c013ba55fde68ecfb004db3a5e4be99a7095dd2c88828245",
+    "implementation/warlock/src/SurfaceController.elm": "b68ce597342c33f10871e37a495d27a0b6922b62e946bfc6929f22cde1303068",
+    "implementation/warlock/src/SurfaceRenderer.elm": "e633f56a36e65d5468d55f5e73064b1f43ab1e604cda10ce4cbb00239e77a550",
+    "implementation/warlock/src/Inspection.elm": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc",
+    "implementation/warlock/src/Effects.elm": "c41a0732a640ca7727506193c654fd6e9c996e3b9e136ca58e911961233e9e4b",
+    "implementation/warlock/src/TaskbarShell.elm": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+    "implementation/warlock/native/authority.cpp": "08f38a0d29e354f243ace5b0ce545453cbc6f5e7885b261245c4c9e3783b6e3b",
+    "implementation/warlock/native/host.c": "7696afd88d76494bf80ffcfb209c7c0a140b0ec506df913323ff7d8b4de24a6d",
+    "implementation/warlock/native/shared-host.c": "603961b58810985097a8060818be054025dba6138eeeaf31e00e275fc2a7f5ee",
+    "implementation/warlock/native/surface.h": "87b78b8f1f01fcfb98854133f48527476b4bc48422b1cb1c9feba02433dd3f79",
+    "implementation/warlock/adapter/daemon.py": "cf594c7b04789ce8f4970c857118f1fd40964200d0e1ee0116b1944c90be0a25",
+    "implementation/warlock/adapter/effect_endpoint.py": "78c2e26741c23622de562db9ad773120f9069d2435b7949335e31ade1c10bfc5",
+    "implementation/warlock/assets/popup-adapter.js": "f64bc2003e79bc1d16c5010d4246cea9245ab6b98f73bb53e68d9d77c13fd1a8",
+    "implementation/warlock/assets/elm.js": "f62d12542659c69274b3bd0f99e27dd5fb9f1df7b866adbebc1211c8dc5395fd",
+    "implementation/warlock/assets/bar.js": "dae4f21e29bc176fec10c686ab619570c42839f247b42bd97a1c7236f84150f1",
+    "implementation/warlock/assets/popup.js": "32a30270c86371cf6bed6755cec7584b39707d4a7ece6c3fd07fbb2f82767706",
+    "implementation/warlock/qa/SwitcherReplay.elm": "4bed30776bc48686fb63dcce0944bc16440e7d6e31fa1f717daf970086e820c6",
+    "implementation/warlock/qa/switcher.qnt": "6909537a443f5d0fe04120b6d6691a013714b2e36adcb4eb0fe51ba12d035d3c",
+    "implementation/warlock/qa/check-search.py": "677cd739c6eb018f419768e371b19596f319f50f88f0551aff097f4311b84c6e",
+    "implementation/warlock/qa/check-native-authority.py": "c1b36b2225f76a1b42666c05c7f627e705ac75403810ffa0995a58937021aaed",
+    "implementation/warlock/qa/current-native-pair.json": "49061347a0052f1cc01a043721a8aef126a309f75a7fedb27bd06c9b287b787e",
+    "implementation/warlock/qa/current-search-build.json": "96be5fcf1216e4de741fb67076b26f3944a83b51a7b48cba4c25a57b0040773b",
+    "implementation/warlock/qa/native-window-feedback.py": "74ce40006d56d9bc0b2e1ac11288564c7b1d855e980abcb60ba7ad62161326f3",
+    "implementation/warlock/native/switcher-bindings.lua": "bb5b08c8c98f1699ea6bbec9615098d343299625bc8c0bd59d110576ef6c2f7c",
+    "implementation/warlock/native/core/SeatManager.cpp": "844243e0eb906b0fb144db4769dbcf2a58a078b2815fa19716e65bd30f294f0d",
+    "implementation/warlock/qa/check-focus-core.py": "08f56e21163be2f51e2e863d245dabe13fef06717ff325b274cefc2488f9e04d",
+    "implementation/warlock/qa/current-focus-core.json": "d7a63fef046541c4b7c17c80debcdb0b90f2e802e4c89fdab7488ecfcff3dcf4",
+    "implementation/warlock/native/shared-context.h": "4209c869c75301246d3e8ba266c862289f67dd99c2b68866325dc00278063803",
+    "implementation/warlock/native/shared-context-test.c": "17b6853472e6fb51888d85493ea2d6b4423b5b29a9172c0fad62ab089fe9b4e8"
+  },
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791434796839377534/Hyprland",
+      "sha256": "b246b5ff22545c779b0c541f98e203a5b13eee78d3a66d1df78b6bee5eedec63"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791436649736079171/elm-window-geometry-authority.so",
+      "sha256": "877ef58b1815cf68bceb9e3c762e3f467cc3eafe35d1602d062f9b55de4aad11"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791436649747502991/elm-host",
+    "sha256": "3e781c4a500dd6beec80837818804a47cb812b51c55ff8445855d9560d45891e",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791436649747502991/report.json",
+    "heldBuildSHA256": "d8ab15b35a28c17bffecd564e650c63a11e06340bb7827832bd3222e9bce7222"
+  },
+  "artifacts": {
+    "component.json": {
+      "path": "implementation/warlock/qa/evidence/switcher-native-chord/component.json",
+      "sha256": "d8ab15b35a28c17bffecd564e650c63a11e06340bb7827832bd3222e9bce7222",
+      "originalPath": "implementation/warlock/qa/runs/switcher-1791436649747502991/report.json",
+      "passed": true,
+      "scope": "Compiled real switcher/root/view, bounded release/Ready/ordinal reducer and typed native journal/selection-fence admission; actual physical chord, native focus/AT and original acceptance remain separate",
+      "cleanupPassed": null
+    },
+    "core-build.json": {
+      "path": "implementation/warlock/qa/evidence/switcher-native-chord/core-build.json",
+      "sha256": "a4c5236448e52ef9a1b7497e28730497eb8e969ebc01a07aa5eab5c7ec89290f",
+      "originalPath": "implementation/warlock/qa/runs/focus-core-1791434796839377534/report.json",
+      "passed": true,
+      "scope": "One owning SeatManager TU and exact relink; native eligibility/input remains separately verified",
+      "cleanupPassed": null
+    },
+    "authority-build.json": {
+      "path": "implementation/warlock/qa/evidence/switcher-native-chord/authority-build.json",
+      "sha256": "bdecc075bfbcf49d7dcc36fa37077088f0734d3ac69fa64b777cd7b87a62b7d3",
+      "originalPath": "implementation/warlock/qa/runs/native-authority-1791436649736079171/report.json",
+      "passed": true,
+      "scope": "Changed navigation authority TU and modal preflight against unchanged owning core/capture inputs; strict strong-symbol closure; native acceptance separate",
+      "cleanupPassed": null
+    },
+    "native-global.json": {
+      "path": "implementation/warlock/qa/evidence/switcher-native-chord/native-global.json",
+      "sha256": "0a3224c3cef4148a1995b27855a1b09fbd79f281ae5444348a9f4692f749e4ab",
+      "originalPath": "implementation/warlock/qa/runs/native-switcher-chord-1791436832941766622/report.json",
+      "passed": true,
+      "scope": "Actual global native Alt-Tab three-root order, startup release, native cancellation fence, membership freeze and zero/one; modal/protected/AT/independent acceptance remain open",
+      "cleanupPassed": true
+    },
+    "native-local.json": {
+      "path": "implementation/warlock/qa/evidence/switcher-native-chord/native-local.json",
+      "sha256": "493aa1a6492af57afd262b45b740e2c9f259d54133738c31538d05f7fc1066f0",
+      "originalPath": "implementation/warlock/qa/runs/native-switcher-1791436292499334102/report.json",
+      "passed": true,
+      "scope": "Actual native MRU observation, integrated switcher control pixels, local keyboard cycling/cancel and identity-bound chosen activation; global Alt-Tab journal, modal representation and AT/independent acceptance remain pending",
+      "cleanupPassed": true
+    },
+    "native-taskview.json": {
+      "path": "implementation/warlock/qa/evidence/switcher-native-chord/native-taskview.json",
+      "sha256": "91da5c2b87746d42425d987a257e849f746d0adcb3e4ee361c2f8f4b1059c1da",
+      "originalPath": "implementation/warlock/qa/runs/native-task-view-1791436262018327407/report.json",
+      "passed": true,
+      "scope": "Actual two populated native workspaces, exact window membership and active marker, keyboard/pointer local browsing and Escape recipient; independent and applicable AT acceptance remain pending",
+      "cleanupPassed": true
+    },
+    "native-retired-opener.json": {
+      "path": "implementation/warlock/qa/evidence/switcher-native-chord/native-retired-opener.json",
+      "sha256": "0dc1d3b89e5f58bf2ecc640adf0ffe98c1bc39386056ab3208903f7f30601ebe",
+      "originalPath": "implementation/warlock/qa/runs/native-task-view-1791436235284816608/report.json",
+      "passed": true,
+      "scope": "Actual native Task View browse then primary opener retirement; Escape must not revive its incarnation or dispatch a window effect. Independent/AT acceptance remains pending.",
+      "cleanupPassed": true
+    },
+    "failed-cancel-mru.json": {
+      "path": "implementation/warlock/qa/evidence/switcher-native-chord/failed-cancel-mru.json",
+      "sha256": "7e34f8b6f4c06e05c52fa545df86d9e324659eea5b5df278168fa0f68b92d760",
+      "originalPath": "implementation/warlock/qa/runs/native-switcher-chord-1791433861443376806/report.json",
+      "passed": false,
+      "scope": "Actual global native Alt-Tab three-root order, startup release, native cancellation fence, membership freeze and zero/one; modal/protected/AT/independent acceptance remain open",
+      "cleanupPassed": true
+    },
+    "failed-pointer-return.json": {
+      "path": "implementation/warlock/qa/evidence/switcher-native-chord/failed-pointer-return.json",
+      "sha256": "032d18c693b713e2f0cbbf33e5e88cf1eb2a0578f79247b9b921fee394c15055",
+      "originalPath": "implementation/warlock/qa/runs/native-switcher-1791434568489340945/report.json",
+      "passed": false,
+      "scope": "Actual native MRU observation, integrated switcher control pixels, local keyboard cycling/cancel and identity-bound chosen activation; global Alt-Tab journal, modal representation and AT/independent acceptance remain pending",
+      "cleanupPassed": true
+    },
+    "failed-retired-opener.json": {
+      "path": "implementation/warlock/qa/evidence/switcher-native-chord/failed-retired-opener.json",
+      "sha256": "f2780a2018b68f3352c107d30b0cae42bd686ca3857b6ec320406578bebf71ca",
+      "originalPath": "implementation/warlock/qa/runs/native-task-view-1791434965329540814/report.json",
+      "passed": false,
+      "scope": "Actual native Task View browse then primary opener retirement; Escape must not revive its incarnation or dispatch a window effect. Independent/AT acceptance remains pending.",
+      "cleanupPassed": true
+    },
+    "failed-early-dismissal.json": {
+      "path": "implementation/warlock/qa/evidence/switcher-native-chord/failed-early-dismissal.json",
+      "sha256": "56e87a9afeb2d8df79cf69f2acc96e638397168cb6dce378d0e66dffd4ad511a",
+      "originalPath": "implementation/warlock/qa/runs/native-task-view-1791436059452196752/report.json",
+      "passed": false,
+      "scope": "Actual native Task View browse then primary opener retirement; Escape must not revive its incarnation or dispatch a window effect. Independent/AT acceptance remains pending.",
+      "cleanupPassed": true
+    },
+    "failed-terminal-retry.json": {
+      "path": "implementation/warlock/qa/evidence/switcher-native-chord/failed-terminal-retry.json",
+      "sha256": "2220aea43e95a10ca222cd8ff7c08aea1343c44b3de387e375412f586149e9ad",
+      "originalPath": "implementation/warlock/qa/runs/native-switcher-chord-1791436608548467115/report.json",
+      "passed": false,
+      "scope": "Actual global native Alt-Tab three-root order, startup release, native cancellation fence, membership freeze and zero/one; modal/protected/AT/independent acceptance remain open",
+      "cleanupPassed": true
+    },
+    "failed-incomplete-log-read.json": {
+      "path": "implementation/warlock/qa/evidence/switcher-native-chord/failed-incomplete-log-read.json",
+      "sha256": "64e5517f84fc6d2241d133569288acc28adc1d4e514b27d8c174e82c8712b156",
+      "originalPath": "implementation/warlock/qa/runs/native-switcher-chord-1791436731199740240/report.json",
+      "passed": false,
+      "scope": "Actual global native Alt-Tab three-root order, startup release, native cancellation fence, membership freeze and zero/one; modal/protected/AT/independent acceptance remain open",
+      "cleanupPassed": true
+    },
+    "old-core-comparison.json": {
+      "path": "implementation/warlock/qa/evidence/switcher-native-chord/old-core-comparison.json",
+      "sha256": "cac7654a2cbe0da1cbf87408c4ecd794022d9edb9fe858922f12017c97edfb37",
+      "originalPath": "implementation/warlock/qa/runs/native-task-view-1791435707306358789/report.json",
+      "passed": true,
+      "scope": "Actual native Task View browse then primary opener retirement; Escape must not revive its incarnation or dispatch a window effect. Independent/AT acceptance remains pending.",
+      "cleanupPassed": true
+    },
+    "global-mru.png": {
+      "path": "implementation/warlock/qa/evidence/switcher-native-chord/global-mru.png",
+      "sha256": "65918132611762f5c0a90f394ca13baf68ed12cb876c4ddd4144be15d7176955",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791436832941851790/popup-global-mru.png",
+      "visuallyInspected": true,
+      "scope": "Actual private native compositor switcher with B selected and all three titles painted; not an AT oracle."
+    },
+    "failed-terminal-replies.jsonl": {
+      "path": "implementation/warlock/qa/evidence/switcher-native-chord/failed-terminal-replies.jsonl",
+      "sha256": "ea2510ee16a7f212e3adb2e3552c978ca3fb95ba8c0b59de9946ec8ceb22a857",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791436608548582725/chord-retries.jsonl",
+      "scope": "Exact committed receipt incorrectly became request-reuse after newer sidecar preparation, prior to immutable-intent fix."
+    },
+    "source-delta.patch": {
+      "path": "implementation/warlock/qa/evidence/switcher-native-chord/source-delta.patch",
+      "sha256": "29ae650f44ac77584f21086f36f133e8ea8ddd7f033ae59a3ffd1b054b01cfc7",
+      "scope": "Authored selected delta over base, including new source-only Lua binding; compiled assets carry separate hashes."
+    },
+    "diagnosis.json": {
+      "path": "implementation/warlock/qa/evidence/switcher-native-chord/diagnosis.json",
+      "sha256": "8196e87d103f001b8616669dd151326e7028c2b4095e1fb800a6035a683d50a4",
+      "scope": "Root diagnosis, not independent review."
+    }
+  },
+  "observed": "Actual global Alt-Tab B/A/C wrap, reverse A, C/MRU-preserving cancellation, startup pre-host release exactly once, native cancelled queued effect refusal, dead B retirement/new D freeze, zero/one and minimized restore; current pixels and GTK recipients. Five terminal retries retain cached original replies after newer sidecar preparation. Noneditable popup Escape retains native press until matching release.",
+  "verificationCounts": {
+    "typedSwitcher": 28,
+    "nativeContextGuards": 188,
+    "switcherNamedQuint": 8,
+    "switcherInvariantTraces": 100,
+    "nativeGlobalChecks": 52,
+    "nativeTerminalRetryObservations": 5
+  },
+  "missingObservations": {
+    "switcher-order": [
+      "Applicable assistive-technology observation and independent original-scenario review."
+    ],
+    "switcher-cancel": [
+      "Applicable assistive-technology observation and independent original-scenario review."
+    ],
+    "switcher-membership": [
+      "Native modal-family/recipient, other-workspace/output and lock/protected exclusion fixtures.",
+      "Applicable assistive-technology observation and independent original-scenario review."
+    ],
+    "switcher-zero-one": [
+      "Applicable assistive-technology observation and independent original-scenario review."
+    ],
+    "switcher-retire-arrive": [
+      "Retirement before initial readiness interleaving is not qualified by the held-ready chord case.",
+      "Applicable assistive-technology observation and independent original-scenario review."
+    ],
+    "ux-012": [
+      "Independent original-scenario review."
+    ],
+    "ux-013": [
+      "Independent original-scenario review."
+    ]
+  },
+  "regressionTupleNote": "Local switcher and both Task View reports use the same final host bytes and core, before the authority-only immutable retry-fingerprint correction. Their exact pair remains in each report; the final global report records the corrected authority pair. No whole-release combined-regression verdict is inferred.",
+  "observer": {
+    "name": "root-switcher",
+    "independent": false
+  },
+  "requirementAccepted": false,
+  "assistiveTechnologyAccepted": false,
+  "fullReleaseAccepted": false,
+  "mainDesktopModified": false
+}

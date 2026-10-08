@@ -19,7 +19,7 @@ def run(name,args):
  if p.returncode:raise RuntimeError(p.stderr or p.stdout)
  return p.stdout
 try:
- if SWITCHER:report.update(requirements=['ELM-UI-003','ELM-UX-012','ELM-UX-013'],scope='Compiled real switcher/root/view, bounded release/Ready/ordinal reducer and current native-history admission; global chord, native focus/AT and atomic cancellation remain separately unverified')
+ if SWITCHER:report.update(requirements=['ELM-UI-003','ELM-UX-012','ELM-UX-013'],scope='Compiled real switcher/root/view, bounded release/Ready/ordinal reducer and typed native journal/selection-fence admission; actual physical chord, native focus/AT and original acceptance remain separate')
  if PRIMARY:report.update(requirements=['ELM-UI-004'],scope='Compile current taskbar state labels and integrated Elm roots; unchanged native host reused by exact source/binary hashes; actual pointer/keyboard/AT acceptance separate')
  if PINS:report.update(requirements=['ELM-UI-004','ELM-UX-004'],scope='Compiled identity pins/reorder, private atomic native persistence, current integrated host; native restart/pixels acceptance pending')
  if POPUP:report.update(requirements=['ELM-UI-005','ELM-UX-029','ELM-UX-004'],scope='Changed native popup presentation units compiled/relinked; previously verified compiled Elm assets reused unchanged; actual native pixels acceptance pending')
@@ -43,6 +43,8 @@ handlers.keydown(event('Enter'));assert.equal(sent.length,0);handlers.keyup(even
 handlers.keydown(event('Escape'));node.dataset.publication='8';handlers.keyup(event('Escape'));assert.equal(sent.length,1);
 handlers.keydown({...event('Enter'),repeat:true});handlers.keyup(event('Enter'));assert.equal(sent.length,1);
 handlers.keydown(event('Tab'));assert.equal(sent.at(-1).id,'control:forward');
+node.dataset.mode='overview';const before=sent.length;handlers.keydown(event('Escape'));assert.equal(sent.length,before);handlers.keyup(event('Escape'));assert.equal(sent.length,before+1);assert.equal(sent.at(-1).id,'control:close');handlers.keyup(event('Escape'));assert.equal(sent.length,before+1);
+node.dataset.mode='applications';handlers.keydown(event('Escape'));handlers.keyup(event('Escape'));assert.equal(sent.length,before+1);
 console.log('Actual shipped routing: terminal release once, stale scope cancels, repeat ignored, cycle observation forwarded');
 '''])
   run('compile-switcher',[str(HELD/pinned['compiler']),'make','qa/SwitcherReplay.elm','--optimize','--output=assets/switcher.js'])
@@ -80,7 +82,7 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
    if SWITCHER:
     # The readonly compositor TU is compiled separately. Reused host objects
     # must retain every dependency except the changed owning host/surface files.
-    assert all(sha(INPUT/p)==h for p,h in prior['inputs'].items() if p.startswith('native/') and p not in ['native/host.c','native/shared-host.c','native/surface.h','native/authority.cpp'])
+    assert all(sha(INPUT/p)==h for p,h in prior['inputs'].items() if p.startswith('native/') and p not in ['native/host.c','native/shared-host.c','native/surface.h','native/authority.cpp','native/shared-context.h','native/shared-context-test.c'])
     assert all('surface.h' not in (INPUT/'native'/name).read_text() for name in units)
    if POPUP:
     assert all(sha(INPUT/p)==h for p,h in prior['inputs'].items() if p.startswith('native/') and p not in ['native/host.c','native/shared-host.c'])
@@ -103,6 +105,10 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
     futures=[pool.submit(run,name+'-compile',['g++','-std=c++20','-O2','-Wall','-Wextra','-Werror','-Wno-deprecated-declarations','-c','native/'+name,'-o',str(OUT/(name+'.o')),*flags]) for name in units]
     for future in futures:future.result()
   run('host-link',['g++',str(OUT/'host.o'),*[str(OUT/(name+'.o')) for name in units],'-o',str(OUT/'elm-host'),*flags]);report['binarySHA256']=sha(OUT/'elm-host')
+  if SWITCHER:
+   run('popup-context-compile',['cc','-std=c11','-O2','-Wall','-Wextra','-Werror','-Wno-deprecated-declarations','-c','native/shared-context-test.c','-o',str(OUT/'popup-context.o'),*flags])
+   run('popup-context-link',['g++',str(OUT/'popup-context.o'),*[str(OUT/(name+'.o')) for name in units],'-o',str(OUT/'popup-context-tests'),*flags])
+   run('popup-context-tests',[str(OUT/'popup-context-tests')])
  run('host-self-tests',[str(OUT/'elm-host'),'--self-test']);assert all(sha(ROOT/p)==h for p,h in inputs.items());toolchain.verify();report['compiledAssets']={n:sha(INPUT/'assets'/n) for n in ['elm.js','bar.js','popup.js']};report['passed']=True
 except Exception as error:report['error']=repr(error)
 (OUT/'report.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps({'passed':report['passed'],'report':str(OUT/'report.json'),'error':report.get('error')}));raise SystemExit(not report['passed'])

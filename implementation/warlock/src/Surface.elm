@@ -173,6 +173,7 @@ notice : Desktop.Model -> String
 notice model =
     if Desktop.switcherOpen model then
         if Switcher.phase model.switcher==Switcher.Waiting then "Loading window activation history…"
+        else if model.nativeSwitcher/=Nothing then "Alt+Tab: next window. Alt+Shift+Tab: previous. Release Alt: activate. Escape: cancel."
         else "Tab or Right: next window. Shift+Tab or Left: previous. Enter: activate. Escape: cancel."
     else if model.overview then
         if recoveryNeeded model then windowNotice model else

@@ -92,6 +92,8 @@ def handle_request(client,catalog,request,recovery,reconciliation):
  elif kind=='geometry-facts-request':
   if request['geometryProtocol']!=client.geometry_protocol:raise Refused('Geometry negotiated version mismatch')
   exact(request,['protocolVersion','kind','geometryProtocol','binding','requestId','minimumWatermark'])
+ elif kind in {'switcher-selection-request','switcher-cancel-request'}:
+  exact(request,['protocolVersion','kind','binding','requestId','chord',*(['root'] if kind=='switcher-selection-request' else [])])
  elif kind in {'projection-request','activation-history-request'}:
   exact(request,['protocolVersion','kind','binding','requestId'])
  else:raise Refused('Unsupported frontend request')
@@ -106,6 +108,10 @@ def handle_request(client,catalog,request,recovery,reconciliation):
   guarded(lambda:recovery.settle(outcome))
   for frame in guarded(lambda:recovery.settlement_frames(client.bound)):send(frame)
   send(outcome)
+ elif kind=='switcher-selection-request':
+  send(client.switcher_selection(request['requestId'],request['chord'],request['root']))
+ elif kind=='switcher-cancel-request':
+  send(client.switcher_cancel(request['requestId'],request['chord']))
  elif kind=='activation-history-request':
   canonical(request['requestId']);send(client.activation_history(request['requestId']))
  elif kind=='geometry-attach':
@@ -168,6 +174,7 @@ def main():
   hello=client.hello()
   recovery=lifetime.enter_context(guarded(lambda:Journal(config['runtime'],config['instance'],client.bound['lifetime'])))
   reconciliation=publish_startup(client,hello,recovery)
+  chord_request=1;send(client.switcher_journal(str(chord_request)))
   selector.register(0,selectors.EVENT_READ,'stdin');selector.register(events,selectors.EVENT_READ,'events')
   incoming=FrontendFrames();notifications=bytearray();dirty=False;have_snapshot=False;last_notice=0.0
   relevant={b'elmwindowstate',b'workspace',b'workspacev2',b'focusedmon',b'focusedmonv2',b'monitoradded',b'monitoraddedv2',b'monitorremoved',b'fullscreen',b'pin',b'openwindow',b'closewindow',b'windowtitle',b'windowtitlev2',b'activewindow',b'movewindow',b'movewindowv2',b'changefloatingmode'}
@@ -189,7 +196,11 @@ def main():
      if len(notifications)>MAX_EVENT:raise Refused('Event capacity exceeded')
      while b'\n' in notifications:
       line,_,rest=notifications.partition(b'\n');notifications=bytearray(rest)
-      if bytes(line.split(b'>>',1)[0]) in relevant:dirty=True
+      event=bytes(line.split(b'>>',1)[0])
+      if event==b'warlockswitcher':
+       chord_request+=1
+       canonical(str(chord_request));send(client.switcher_journal(str(chord_request)))
+      if event in relevant:dirty=True
    if dirty and have_snapshot and time.monotonic()-last_notice>=.04:
     client.verify_process();send({'protocolVersion':3,'kind':'host-refresh'});last_notice=time.monotonic();dirty=False
 

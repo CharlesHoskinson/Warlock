@@ -80,6 +80,34 @@ class Endpoint(ReadOnlyEndpoint):
   if r['context']['lifetime']!=self.bound['lifetime'] or r['context']['epoch']!=self.bound['frontend']:raise Refused('History authority')
   if not isinstance(r['roots'],list) or len(r['roots'])>256 or len(set(canonical(value) for value in r['roots']))!=len(r['roots']):raise Refused('History bound/identity')
   return r
+ def switcher_journal(self,request_id,observe=False):
+  canonical(request_id)
+  kind='switcher-journal-observe-request' if observe else 'switcher-journal-request'
+  r=self.request({'protocolVersion':3,'kind':kind,'binding':self.bound,'requestId':request_id})
+  return self.check_switcher_journal(r,request_id)
+ def check_switcher_journal(self,r,request_id):
+  exact(r,['protocolVersion','kind','binding','requestId','chord'])
+  if r['kind']!='switcher-journal' or binding(r['binding'])!=self.bound or r['requestId']!=request_id:raise Refused('Chord correlation')
+  c=r['chord'];exact(c,['generation','roots','history','origin','steps','released','cancelled','consumed']);canonical(c['generation'],True)
+  for field in ['roots','history']:
+   rows=c[field]
+   if not isinstance(rows,list) or len(rows)>256 or len(set(canonical(value) for value in rows))!=len(rows):raise Refused('Chord membership')
+  if any(value not in c['roots'] for value in c['history']):raise Refused('Chord history membership')
+  if c['origin'] is not None:canonical(c['origin'])
+  if not isinstance(c['steps'],list) or len(c['steps'])>4096 or any(type(v) is not int or v not in [-1,1] for v in c['steps']):raise Refused('Chord ordinal/direction')
+  if any(type(c[v]) is not bool for v in ['released','cancelled','consumed']):raise Refused('Chord phase')
+  if (c['generation']=='0')!=(len(c['steps'])==0):raise Refused('Chord generation/entry')
+  return r
+ def switcher_cancel(self,request_id,chord):
+  canonical(request_id);canonical(chord)
+  r=self.request({'protocolVersion':3,'kind':'switcher-cancel-request','binding':self.bound,'requestId':request_id,'chord':chord})
+  return self.check_switcher_journal(r,request_id)
+ def switcher_selection(self,request_id,chord,root):
+  canonical(request_id);canonical(chord);canonical(root)
+  r=self.request({'protocolVersion':3,'kind':'switcher-selection-request','binding':self.bound,'requestId':request_id,'chord':chord,'root':root})
+  exact(r,['protocolVersion','kind','binding','requestId'])
+  if r['kind']!='switcher-selection' or binding(r['binding'])!=self.bound or r['requestId']!=request_id:raise Refused('Chord selection correlation')
+  return r
  def context(self,facts):
   if binding(facts['binding'])!=self.bound:raise Refused('Context binding')
   return {'lifetime':self.bound['lifetime'],'epoch':self.bound['frontend'],'output':facts['outputGeneration'],'revision':facts['revision']}

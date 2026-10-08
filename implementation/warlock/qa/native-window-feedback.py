@@ -5,8 +5,9 @@ lineage. Native/AT acceptance remain separate, with AT explicitly outstanding.
 """
 import hashlib,importlib.util,json,os,pathlib,signal,subprocess,sys,time,traceback
 PRIMARY=sys.argv[1:]==['--taskbar-primary']
+CHORD=sys.argv[1:]==['--switcher-chord']
 SWITCHER=sys.argv[1:]==['--switcher']
-NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'];PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW or PRIMARY or SWITCHER
+NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'];PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW or PRIMARY or SWITCHER or CHORD
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143';RUNTIME=REPO/'implementation/warlock-client-provider-native-v204'
 sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
 spec=importlib.util.spec_from_file_location('feedback_private_host',RUNTIME/'candidate_host.py');host=importlib.util.module_from_spec(spec);spec.loader.exec_module(host)
@@ -42,7 +43,7 @@ else:
 for row in pair.values():assert sha(row['path'])==row['sha256']
 assets=ROOT/'assets';assert all(sha(assets/n)==h for n,h in json.loads((ROOT/'qa'/('current-search-build.json' if CURRENT else 'current-feedback-build.json')).read_text())['compiledAssets'].items())
 subprocess.run(['node','--check',str(assets/'bar-adapter.js')],check=True)
-OUT=ROOT/'qa/runs'/(('native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
+OUT=ROOT/'qa/runs'/(('native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
 OUTPUT=pathlib.Path('/home/hoskinson/window-integration-qa')/('warlock-window-feedback-'+str(time.time_ns()))
 focus_host=None
 if native_pair.get('pair',{}).get('core')!=pre['pair']['core']:
@@ -76,7 +77,17 @@ if PRIMARY:
  adapted=adapted.replace(initial,"create('ELM-AUTHORITY-FIXTURE', 'red') if sys.argv[2]=='primary' else create('ELM-ACTIVATION-PEER', 'green')")
  original_fixture=FIXTURE;FIXTURE=fixture_inputs/'primary-action-fixture.py';FIXTURE.write_text(adapted)
  primary_fixture={'originalSHA256':sha(original_fixture),'path':str(FIXTURE),'sha256':sha(FIXTURE),'change':'One original colored GTK root per process; distinct program identities create two single-family taskbar entries.'}
-report={'schema':1,'requirements':['ELM-UI-007'],'scenarios':['restore-pending','restore-refused','restore-unknown'],'scope':'Actual pointer/Elm/native effect feedback and private compositor pixels; no AT/IME/full release acceptance','nativeFeedbackObserved':False,'nativeAcceptance':False,'assistiveTechnologyAccepted':False,'fullReleaseAccepted':False,'mainDesktopActions':False,'passed':False,'checks':[],'sourceInputs':{str(p.relative_to(ROOT)):sha(p) for folder in ['src','native','adapter','assets'] for p in (ROOT/folder).iterdir() if p.is_file()},'pair':pair,'nativeHost':{'path':str(binary),'sha256':sha(binary),'heldBuild':str(build_path),'heldBuildSHA256':sha(build_path)},'runtimeByReference':{'root':str(RUNTIME),'hostSHA256':sha(RUNTIME/'candidate_host.py')},'helpers':[],'nativeFixtures':[]};s=None;loaded=False;apps=[];broker=None;paused=False;sequence=0
+if CHORD:
+ fixture_inputs=OUTPUT.with_name(OUTPUT.name+'-inputs');fixture_inputs.mkdir(mode=0o700,exist_ok=True)
+ fixture_source=FIXTURE.read_text();initial="create('ELM-AUTHORITY-FIXTURE', 'red')\ncreate('ELM-ACTIVATION-PEER', 'green')"
+ assert fixture_source.count(initial)==1
+ adapted=fixture_source.replace(initial,initial+"\ncreate('ELM-CHORD-THIRD', 'blue')")
+ needle="        elif request['op'] == 'retire-peer':"
+ assert adapted.count(needle)==1
+ adapted=adapted.replace(needle,"        elif request['op'] == 'arrive-chord':\n            create('ELM-CHORD-ARRIVAL', 'blue')\n        elif request['op'] == 'retire-third':\n            windows.pop('ELM-CHORD-THIRD').destroy()\n        elif request['op'] == 'retire-arrival':\n            windows.pop('ELM-CHORD-ARRIVAL').destroy()\n        elif request['op'] == 'retire-primary':\n            windows.pop('ELM-AUTHORITY-FIXTURE').destroy()\n"+needle)
+ original_fixture=FIXTURE;FIXTURE=fixture_inputs/'chord-fixture.py';FIXTURE.write_text(adapted)
+ chord_fixture={'originalSHA256':sha(original_fixture),'path':str(FIXTURE),'sha256':sha(FIXTURE),'change':'Third independent GTK root plus controlled retire/arrival operations; original client input/controllers unchanged.'}
+report={'schema':1,'requirements':['ELM-UI-007'],'scenarios':['restore-pending','restore-refused','restore-unknown'],'scope':'Actual pointer/Elm/native effect feedback and private compositor pixels; no AT/IME/full release acceptance','nativeFeedbackObserved':False,'nativeAcceptance':False,'assistiveTechnologyAccepted':False,'fullReleaseAccepted':False,'mainDesktopActions':False,'passed':False,'checks':[],'sourceInputs':{str(p.relative_to(ROOT)):sha(p) for folder in ['src','native','adapter','assets'] for p in (ROOT/folder).iterdir() if p.is_file()},'pair':pair,'nativeHost':{'path':str(binary),'sha256':sha(binary),'heldBuild':str(build_path),'heldBuildSHA256':sha(build_path)},'runtimeByReference':{'root':str(RUNTIME),'hostSHA256':sha(RUNTIME/'candidate_host.py')},'helpers':[],'nativeFixtures':[]};s=None;loaded=False;apps=[];broker=None;paused=False;sequence=0;chord_keyboard=None;chord_writer=None
 if focus_host:report['focusHostAdaptation']=focus_host
 if retirement_fixture:report['retirementFixture']=retirement_fixture
 if primary_fixture:report['primaryFixture']=primary_fixture
@@ -86,11 +97,13 @@ if TASKVIEW:report.update(requirements=['ELM-UX-017','ELM-UI-006'],scenarios=['u
 if RETIRE_OPENER:report['scope']='Actual native Task View browse then primary opener retirement; Escape must not revive its incarnation or dispatch a window effect. Independent/AT acceptance remains pending.'
 if NAV:report.update(requirements=['ELM-UI-002','ELM-UI-006','ELM-UX-008'],scenarios=['activate-other-workspace','overview-select','ux-008','activation-refused'],scope='Actual minimized workspace-2 family selected through Task View and taskbar; native receipts, focus/keyboard, pixels and unchanged membership; stale-context refusal; other-output, partial-refusal and AT acceptance remain separate',nativeNavigationJourneyObserved=False,authorityBuild={'path':str(authority_path),'sha256':sha(authority_path)})
 if FOCUS:report.update(requirements=['ELM-UI-004','ELM-UX-024'],scenarios=['taskbar-group','ux-024'],scope='Actual native picker traversal and Escape/focus recipient diagnosis; menu/AT original acceptance remains pending')
+if CHORD:report.update(requirements=['ELM-UI-003','ELM-UX-012','ELM-UX-013'],scenarios=['switcher-order','switcher-cancel','switcher-zero-one','switcher-retire-arrive','ux-012','ux-013'],scope='Actual global native Alt-Tab three-root order, startup release, native cancellation fence, membership freeze and zero/one; modal/protected/AT/independent acceptance remain open',nativeChordJourneyObserved=False,chordFixture=chord_fixture)
 if SWITCHER:report.update(requirements=['ELM-UI-003'],scenarios=['switcher-order','switcher-cancel'],scope='Actual native MRU observation, integrated switcher control pixels, local keyboard cycling/cancel and identity-bound chosen activation; global Alt-Tab journal, modal representation and AT/independent acceptance remain pending',nativeSwitcherJourneyObserved=False)
 if PRIMARY:report.update(requirements=['ELM-UI-004'],scenarios=['taskbar-inactive','taskbar-active','taskbar-minimized'],scope='Actual pointer single-family activation/minimize/restore, exact native receipt and GTK keyboard recipient, MRU/desktop succession and pixels; primary keyboard and AT acceptance remain pending',nativePrimaryJourneyObserved=False)
 LUA=b'''hl.config({xwayland={enabled=false},animations={enabled=false}})
 hl.monitor({output="WAYLAND-1",mode="800x600@60",position="0x0",scale=1})
 '''
+if CHORD:LUA+=(ROOT/'native/switcher-bindings.lua').read_bytes()
 def check(name,condition,**data):
  report['checks'].append({'name':name,'passed':bool(condition),**data});assert condition,name
 def wait(fn,seconds=6):
@@ -142,7 +155,7 @@ try:
    if PRIMARY:
     peer_control=OUTPUT/'peer-control.json';peer_fixture=s.host.launch('peer-fixture',['/usr/bin/python3','-B',str(FIXTURE),str(peer_control),'peer'],env=env);apps.append(peer_fixture)
    wait(lambda:any(w['title']=='ELM-AUTHORITY-FIXTURE' for w in s.data('clients')));wait(lambda:any(w['title']=='ELM-ACTIVATION-PEER' for w in s.data('clients')));
-   if not (FOCUS or TASKVIEW or PRIMARY or SWITCHER):fixture_control('hide-peer');wait(lambda:len(s.data('clients'))==1)
+   if not (FOCUS or TASKVIEW or PRIMARY or SWITCHER or CHORD):fixture_control('hide-peer');wait(lambda:len(s.data('clients'))==1)
    if PRIMARY:
     peer=next(w for w in s.data('clients') if w['title']=='ELM-ACTIVATION-PEER');peer_selector='address:'+peer['address']
     if not peer['floating']:check('PeerFixtureFloats',s.ctl('dispatch',"hl.dsp.window.float({action='set',window='"+peer_selector+"'})").strip()=='ok')
@@ -166,8 +179,71 @@ try:
    check('FixtureSize',s.ctl('dispatch',"hl.dsp.window.resize({x=320,y=240,window='"+selector+"'})").strip()=='ok')
    check('FixturePosition',s.ctl('dispatch',"hl.dsp.window.move({x=40,y=100,window='"+selector+"'})").strip()=='ok')
    check('FixtureFocus',s.ctl('dispatch',"hl.dsp.focus({window='"+selector+"'})").strip()=='ok')
-   web=s.host.launch('warlock',['%s'%binary,'--assets',str(assets),'--authority-config',str(config_path),'--backend',str(backend_fixture if CATALOG else ROOT/'adapter/daemon.py'),'--qa-exit-after-render','--qa-stay-open','--surface-experiment'],env=env);apps.append(web);log=OUTPUT/'warlock.log';collector=Collector()
-   def text():return log.read_text(errors='replace')
+   if CHORD:
+    keyboard=pathlib.Path('/home/hoskinson/window-integration-qa/orca-reader/physical-commands/evdev-keyboard');report['keyboard']={'path':str(keyboard),'sha256':sha(keyboard)}
+    fifo=OUTPUT/'chord-keyboard.fifo';os.mkfifo(fifo,0o600);chord_writer=os.open(fifo,os.O_RDWR|os.O_NOFOLLOW)
+    input_wrapper=OUTPUT/'chord-keyboard-input.py';input_wrapper.write_text('import os,stat,sys\nfd=os.open(sys.argv[1],os.O_RDONLY|os.O_NOFOLLOW)\nst=os.fstat(fd)\nassert stat.S_ISFIFO(st.st_mode) and st.st_uid==os.getuid() and stat.S_IMODE(st.st_mode)==0o600\nos.dup2(fd,0);os.close(fd)\nos.execv(sys.argv[2],[sys.argv[2]])\n')
+    chord_keyboard=s.host.launch('chord-keyboard',['/usr/bin/python3','-B',str(input_wrapper),str(fifo),str(keyboard)],env=s.env)
+    report['persistentInput']={'wrapper':str(input_wrapper),'sha256':sha(input_wrapper),'fifoMode':'0600','commands':[]}
+    def physical(commands):
+     assert chord_keyboard.poll() is None
+     before=(OUTPUT/'chord-keyboard.log').read_text().splitlines().count('ready')
+     raw=(commands+'\nsync\n').encode();assert len(raw)<=4096;assert os.write(chord_writer,raw)==len(raw)
+     report['persistentInput']['commands'].append(commands)
+     wait(lambda:(OUTPUT/'chord-keyboard.log').read_text().splitlines().count('ready')>before)
+    native_roots=client.snapshot('430')['windows'];chord_labels={row['label']:row['incarnation'] for row in native_roots}
+    a,b,c=[chord_labels[name] for name in ['ELM-AUTHORITY-FIXTURE','ELM-ACTIVATION-PEER','ELM-CHORD-THIRD']]
+    def native_focus(identity):
+     row=client.scene_facts('430');n=str(8000+len(report['nativeFixtures']));intent={'request':n,'generation':n,'incarnation':identity,'operation':'activate','context':client.context(row)};result=client.effect(intent);report['nativeFixtures'].append({'intent':intent,'result':result});check('CommittedHistoryFixture',result['status']=='Committed',result=result)
+    for identity in [a,b,c]:native_focus(identity)
+    check('NativeHistoryABCBeforeFrontend',client.activation_history('430')['roots']==[c,b,a])
+    physical('key 56 1\nkey 15 1\nsleep 50\nkey 15 0\nkey 56 0\nsleep 100')
+    startup=client.switcher_journal('430',observe=True);report['startupJournalBeforeHost']=startup
+    check('NativeReleaseRecordedBeforeFrontendExists',startup['chord']['released'] and startup['chord']['steps']==[1] and startup['chord']['history']==[c,b,a] and not startup['chord']['consumed'])
+    hold_arm=OUTPUT/'chord-hold.arm';hold_waiting=OUTPUT/'chord-hold.waiting';hold_release=OUTPUT/'chord-hold.release'
+    backend_fixture=OUTPUT/'chord-backend.py'
+    backend_fixture.write_text(f"""import sys,time,json
+from pathlib import Path
+sys.path.insert(0,{str(ROOT/'adapter')!r})
+import daemon
+original=daemon.handle_request
+last_effect=None
+retries=Path({str(OUTPUT/'chord-retries.jsonl')!r})
+def handle(*args):
+ global last_effect
+ client,request=args[0],args[2]
+ if not hasattr(client,'qa_original_effect'):
+  client.qa_original_effect=client.effect
+  def observed(intent):
+   global last_effect
+   outcome=client.qa_original_effect(intent)
+   last_effect=(json.loads(json.dumps(intent)),outcome)
+   return outcome
+  client.effect=observed
+ arm=Path({str(hold_arm)!r});waiting=Path({str(hold_waiting)!r});release=Path({str(hold_release)!r})
+ if request.get('kind')=='switcher-selection-request' and arm.exists():
+  arm.unlink();waiting.write_text(json.dumps(request));deadline=time.monotonic()+2
+  while not release.exists():
+   if time.monotonic()>=deadline:raise RuntimeError('Controlled QA hold expired')
+   time.sleep(.01)
+  release.unlink()
+ result=original(*args)
+ if request.get('kind')=='switcher-selection-request' and last_effect:
+  intent,outcome=last_effect
+  retry=client.qa_original_effect(intent)
+  with retries.open('a') as stream:stream.write(json.dumps(dict(intent=intent,original=outcome,retry=retry,afterPreparation=request['requestId'],matches=retry==outcome))+'\\n')
+  if retry!=outcome:raise RuntimeError('Exact terminal retry changed after new selection preparation')
+ return result
+daemon.handle_request=handle
+raise SystemExit(daemon.run())
+""")
+    report['commitHoldFixture']={'path':str(backend_fixture),'sha256':sha(backend_fixture),'maximumSeconds':2,'scope':'Only delay transport before selection prepare; original effect path and six-second observation deadline unchanged.'}
+   web=s.host.launch('warlock',['%s'%binary,'--assets',str(assets),'--authority-config',str(config_path),'--backend',str(backend_fixture if CATALOG or CHORD else ROOT/'adapter/daemon.py'),'--qa-exit-after-render','--qa-stay-open','--surface-experiment'],env=env);apps.append(web);log=OUTPUT/'warlock.log';collector=Collector()
+   def text():
+    raw=log.read_text(errors='replace')
+    # The live file may end in a producer's unfinished JSON record. Observe
+    # complete lines only; malformed completed records still fail normally.
+    return raw[:raw.rfind('\n')+1]
    def projection():return collector.read(text())
    def group(operation):
     p=projection();return next((g for g in p['groups'] if (FOCUS or NAV or g['title']==('ELM-ACTIVATION-PEER' if PRIMARY else 'ELM-AUTHORITY-FIXTURE')) and g['label'].startswith(operation+' ') and not g['disabled']),None) if p and p['phase']=='Coherent' else None
@@ -180,7 +256,7 @@ try:
    def click(item):
     check('PointerTargetWithinActualViewport',item['visible'],item=item);x,y=map(round,item['point']);helper([str(POINTER),'800','600'],f'move {x} {y}\nsleep 100\nbutton 272 1\nsleep 50\nbutton 272 0\nsleep 100\n')
    def facts():return client.scene_facts('441')
-   initial=None if TASKVIEW or SWITCHER else wait(lambda:group('Activate' if PRIMARY else 'Choose a window from' if FOCUS else 'Minimize'))
+   initial=None if TASKVIEW or SWITCHER or CHORD else wait(lambda:group('Activate' if PRIMARY else 'Choose a window from' if FOCUS else 'Minimize'))
    target=next(w['incarnation'] for w in client.snapshot('442')['windows'] if w['label']==('ELM-ACTIVATION-PEER' if PRIMARY else 'ELM-AUTHORITY-FIXTURE'))
    initial_workspace=next(w['workspace'] for w in facts()['facts']['windows'] if w['incarnation']==target)
    def current_window():return next(w for w in facts()['facts']['windows'] if w['incarnation']==target)
@@ -252,7 +328,7 @@ try:
     launches=[json.loads(l.split(': ',1)[1]) for l in text().splitlines() if l.startswith('frontend-request: ') and json.loads(l.split(': ',1)[1])['kind']=='application-launch']
     check('OrdinaryPrimaryActionsNeverLaunchDuplicates',not launches and len(journal())==5,launchRequests=launches,windowRequests=len(journal()))
     report['nativePrimaryJourneyObserved']=True
-   elif CATALOG or TASKVIEW or SWITCHER:
+   elif CATALOG or TASKVIEW or SWITCHER or CHORD:
     keyboard=pathlib.Path('/home/hoskinson/window-integration-qa/orca-reader/physical-commands/evdev-keyboard');report['keyboard']={'path':str(keyboard),'sha256':sha(keyboard)}
     def key(code):helper([str(keyboard)],f'key {code} 1\nsleep 50\nkey {code} 0\nsleep 100\nsync\n')
     def popup_body():
@@ -272,7 +348,7 @@ try:
      # Count only current control interiors. Whole-popup counts incorrectly
      # included the compositor's warning overlay above a black reopened popup.
      for button in body['buttons']:
-      selected=button['accessibleName'].startswith(('Activate ELM-','Restore ELM-')) if SWITCHER else (button['accessibleName'].startswith('Browse workspace ') or (NAV and button['accessibleName'].startswith('Restore ELM-ACTIVATION-PEER'))) if TASKVIEW else button['accessibleName'] in ['Refresh applications','Open Files']
+      selected=button['accessibleName'].startswith(('Activate ELM-','Restore ELM-')) if SWITCHER or CHORD else (button['accessibleName'].startswith('Browse workspace ') or (NAV and button['accessibleName'].startswith('Restore ELM-ACTIVATION-PEER'))) if TASKVIEW else button['accessibleName'] in ['Refresh applications','Open Files']
       if not selected or button['disabled'] or button['y']<0 or button['y']+button['height']>box[3]:continue
       left,top=max(0,int(box[0]+button['x'])+12),max(100,int(box[1]+button['y'])+6)
       right,bottom=min(800,int(box[0]+button['x']+min(220,button['width']))-12),min(600,box[1]+box[3],int(box[1]+button['y']+button['height'])-6)
@@ -297,7 +373,59 @@ try:
       key(15)
      check('KeyboardReaches'+label,popup_body()['focus']==button['id'],body=popup_body())
      key(57)
-    if SWITCHER:
+    if CHORD:
+     def coherent_closed():return (projection() or {}).get('mode')=='closed' and (projection() or {}).get('phase')=='Coherent'
+     def native_journal():return client.switcher_journal('450',observe=True)['chord']
+     def selected_window(label):
+      body=popup_body();p=projection()
+      if not body or not p or p.get('mode')!='switcher' or body['publication']!=p['publication']:return None
+      chosen=next((button for button in body['buttons'] if button['accessibleName'].endswith(label+'; selected') and not button['disabled']),None)
+      ack='surface-presentation-applied: publication='+body['publication']+' lease='+body['lease']
+      return body if chosen and body['focus']==chosen['id'] and ack in text().splitlines() else None
+     def chord_start(reverse=False):physical('key 56 1\n'+('key 42 1\n' if reverse else '')+'key 15 1\nsleep 50\nkey 15 0\n'+('key 42 0\n' if reverse else '')+'sleep 100')
+     def chord_step(reverse=False):physical(('key 42 1\n' if reverse else '')+'key 15 1\nsleep 50\nkey 15 0\n'+('key 42 0\n' if reverse else '')+'sleep 100')
+     def release_alt():physical('key 56 0\nsleep 100')
+     def escape():physical('key 1 1\nsleep 50\nkey 1 0\nsleep 100')
+     def receipt(stage,count,identity,status='Committed'):
+      wait(coherent_closed);wait(lambda:len(journal())==count+1)
+      request=journal()[-1]
+      def receipts():
+       frames=[json.loads(line.split(': ',1)[1]) for line in text().splitlines() if line.startswith('backend-frame: ')]
+       return [row for row in frames if row.get('kind')=='effect-outcome' and row.get('binding')==request['binding'] and row.get('intent')==request['intent']]
+      rows=wait(receipts)
+      check(stage+'ExactlyOneNativeReceipt',len(rows)==1 and rows[0]['status']==status and request['intent']['incarnation']==identity and request['intent']['operation'] in ['activate','restore'],request=request,receipts=rows)
+      report.setdefault('chordReceipts',[]).append({'stage':stage,'request':request,'receipt':rows[0]})
+     def recipient(stage,identity,label):
+      events=control.with_suffix('.events.jsonl');before=len(events.read_text().splitlines()) if events.exists() else 0
+      physical('key 30 1\nsleep 50\nkey 30 0\nsleep 100')
+      delivered=[json.loads(line) for line in events.read_text().splitlines()[before:]] if events.exists() else []
+      check(stage+'RealKeyboardRecipient',facts()['facts']['focused']==identity and any(row['kind']=='key' and row['keyval']==97 and row['window']==label for row in delivered),focus=facts()['facts']['focused'],events=delivered)
+     receipt('StartupRelease',0,b);check('StartupOneResolutionAndNoOpenSwitcher',len(journal())==1 and native_journal()['consumed']);recipient('StartupRelease',b,'ELM-ACTIVATION-PEER')
+     for identity in [a,b,c]:native_focus(identity)
+     wait(coherent_closed);before=len(journal());history_before=client.activation_history('450')['roots'];chord_start();body=wait(lambda:selected_window('ELM-ACTIVATION-PEER'))
+     order=[button['accessibleName'].split(';',1)[0] for button in body['buttons'] if button['accessibleName'].startswith(('Activate ELM-','Restore ELM-'))]
+     check('NativeThreeRootFrozenMRUOrder',order==['Activate ELM-CHORD-THIRD','Activate ELM-ACTIVATION-PEER','Activate ELM-AUTHORITY-FIXTURE'],body=body,journal=native_journal())
+     popup_capture('global-mru');chord_step();wait(lambda:selected_window('ELM-AUTHORITY-FIXTURE'));chord_step();wait(lambda:selected_window('ELM-CHORD-THIRD'))
+     check('ForwardBACWrapNoMutation',len(journal())==before);escape();release_alt();wait(coherent_closed)
+     check('CancelPreservesCAndCommittedMRU',facts()['facts']['focused']==c and client.activation_history('450')['roots']==history_before and len(journal())==before,expectedFocus=c,actualFocus=facts()['facts']['focused'],historyBefore=history_before,historyAfter=client.activation_history('450')['roots']);recipient('Cancel',c,'ELM-CHORD-THIRD')
+     chord_start(True);wait(lambda:selected_window('ELM-AUTHORITY-FIXTURE'));escape();release_alt();wait(coherent_closed);check('FirstReverseAWithoutMutation',len(journal())==before and facts()['facts']['focused']==c)
+     chord_start();wait(lambda:selected_window('ELM-ACTIVATION-PEER'));hold_arm.write_text('armed');release_alt();wait(lambda:hold_waiting.exists());prepared=json.loads(hold_waiting.read_text());report['heldSelection']=prepared
+     escape();check('NativeCancelBeforeQueuedEffectCommit',native_journal()['cancelled'] and not native_journal()['consumed']);hold_release.write_text('release')
+     receipt('QueuedCancel',before,b,'Refused');check('QueuedCancelPreservesFocusMRU',facts()['facts']['focused']==c and client.activation_history('450')['roots']==history_before);recipient('QueuedCancel',c,'ELM-CHORD-THIRD')
+     before=len(journal());chord_start();wait(lambda:selected_window('ELM-ACTIVATION-PEER'));release_alt();receipt('GlobalForward',before,b);recipient('GlobalForward',b,'ELM-ACTIVATION-PEER')
+     for identity in [a,b,c]:native_focus(identity)
+     wait(coherent_closed);report['beforeControlledRetirements']=facts();check('ChordOriginalTargetMembershipBeforeRetirement',current_window()['workspace']==initial_workspace,nativeWorkspace=current_window()['workspace'],originalWorkspace=initial_workspace);before=len(journal());chord_start();wait(lambda:selected_window('ELM-ACTIVATION-PEER'));frozen=native_journal()['roots'];fixture_control('retire-peer');wait(lambda:all(row['incarnation']!=b for row in facts()['facts']['windows']));fixture_control('arrive-chord');arrival=wait(lambda:next((row['incarnation'] for row in client.snapshot('450')['windows'] if row['label']=='ELM-CHORD-ARRIVAL'),None));wait(lambda:selected_window('ELM-AUTHORITY-FIXTURE'))
+     body=popup_body();check('HeldChordRetiresBAndExcludesArrival',arrival not in frozen and all('ELM-CHORD-ARRIVAL' not in row['accessibleName'] for row in body['buttons']),body=body,journal=native_journal());release_alt();receipt('RetiredSelectionFallback',before,a);recipient('RetiredSelectionFallback',a,'ELM-AUTHORITY-FIXTURE')
+     chord_start();wait(lambda:selected_window('ELM-CHORD-ARRIVAL'));check('ArrivalEntersNextChord',arrival in native_journal()['roots']);escape();release_alt();wait(coherent_closed)
+     fixture_control('retire-third');wait(lambda:all(row['incarnation']!=c for row in facts()['facts']['windows']));fixture_control('retire-arrival');wait(lambda:len(client.snapshot('450')['windows'])==1);wait(coherent_closed)
+     before=len(journal());chord_start();wait(lambda:selected_window('ELM-AUTHORITY-FIXTURE'));release_alt();receipt('SoleCandidate',before,a);check('SoleCandidateNeverMinimized',not facts()['facts']['windows'][0]['minimized']);recipient('SoleCandidate',a,'ELM-AUTHORITY-FIXTURE')
+     private_effect('minimize',a);wait(lambda:facts()['facts']['windows'][0]['minimized'] and coherent_closed());before=len(journal());chord_start();wait(lambda:selected_window('ELM-AUTHORITY-FIXTURE'));release_alt();receipt('SoleMinimizedRestore',before,a);check('SoleMinimizedCandidateRestores',not facts()['facts']['windows'][0]['minimized'] and journal()[-1]['intent']['operation']=='restore');recipient('SoleMinimizedRestore',a,'ELM-AUTHORITY-FIXTURE')
+     fixture_control('retire-primary');wait(lambda:len(client.snapshot('450')['windows'])==0);wait(coherent_closed);before=len(journal());before_publication=int(projection()['publication']);chord_start();release_alt();zero_journal=native_journal();zero_generation=zero_journal['generation'];wait(lambda:any(json.loads(line.split(': ',1)[1]).get('chord',{}).get('generation')==zero_generation for line in text().splitlines() if line.startswith('backend-frame: ')));wait(lambda:coherent_closed() and int(projection()['publication'])>before_publication);check('ZeroCandidateNoEffectNoOpenSwitcher',len(journal())==before and facts()['facts']['focused'] is None)
+     check('GlobalChordNeverLaunchesApplications',not launches())
+     retries=[json.loads(line) for line in (OUTPUT/'chord-retries.jsonl').read_text().splitlines()]
+     check('ExactTerminalRetriesSurviveNewSelectionPreparation',len(retries)>=3 and all(row['matches'] for row in retries),retries=retries)
+     report['nativeChordJourneyObserved']=True
+    elif SWITCHER:
      roots=client.snapshot('443')['windows'];labels={row['incarnation']:row['label'] for row in roots}
      native_history=client.activation_history('444');before_focus=facts()['facts']['focused'];before=len(journal())
      peer_identity=next(row['incarnation'] for row in roots if row['label']=='ELM-ACTIVATION-PEER')
@@ -335,6 +463,7 @@ try:
      key(105);wait(lambda:selected_window('ELM-ACTIVATION-PEER'))
      check('SwitcherLocalForwardReverseHasNoWindowEffect',len(journal())==before and facts()['facts']['focused']==before_focus)
      key(1);wait(lambda:(projection() or {}).get('mode')=='closed' and (projection() or {}).get('phase')=='Coherent')
+     check('SwitcherNativeEscapeRetainsPressUntilPhysicalRelease','surface-native-escape-stored:' in text() and 'surface-terminal-released: key=65307' in text())
      check('SwitcherEscapePreservesNativeFocusAndEffects',facts()['facts']['focused']==before_focus and len(journal())==before)
      typed_recipient('ELM-AUTHORITY-FIXTURE')
      open_switcher();wait(lambda:selected_window('ELM-ACTIVATION-PEER'));popup_capture('reopened');selected_effect('activate')
@@ -428,6 +557,8 @@ try:
       presented=wait(current_popup_presented)
       report['retiredOpenerPresentationBarrier']={'publication':presented['publication'],'lease':presented['lease'],'observedNativeAck':True}
      key(1);wait(lambda:(projection() or {}).get('mode')=='closed' and (projection() or {}).get('phase')=='Coherent')
+     escape_trace=[line for line in text().splitlines() if line.startswith(('surface-native-escape-stored:','surface-terminal-released: key=65307'))]
+     check('TaskViewNativeEscapeRetainsPressUntilPhysicalRelease',len(escape_trace)==2,nativeTrace=escape_trace)
      events=control.with_suffix('.events.jsonl');before_events=len(events.read_text().splitlines()) if events.exists() else 0
      key(30);delivered=[json.loads(l) for l in events.read_text().splitlines()[before_events:]] if events.exists() else []
      if RETIRE_OPENER:
@@ -547,10 +678,14 @@ try:
     after_peer=next(w for w in facts()['facts']['windows'] if w['incarnation']==peer['incarnation'])
     check('NoScratchpadOrWorkspaceTransfer',all(before_peer[k]==after_peer[k] for k in ['workspace','monitor']),before={k:before_peer[k] for k in ['workspace','monitor']},after={k:after_peer[k] for k in ['workspace','monitor']})
    else:
-    check('NoScratchpadOrWorkspaceTransfer',current_window()['workspace']==initial_workspace,nativeWorkspace=current_window()['workspace'],originalWorkspace=initial_workspace)
-   report['nativeFeedbackObserved']=not FOCUS and not CATALOG and not TASKVIEW and not PRIMARY and not SWITCHER;report['nativeFocusJourneyObserved']=FOCUS;check('EveryRegisteredHelperExitedNormally',all(r['exitCode']==0 for r in report['helpers']));report['passed']=True
+    check('NoScratchpadOrWorkspaceTransfer',not facts()['facts']['windows'] and report['beforeControlledRetirements']['facts']['windows'] if CHORD else current_window()['workspace']==initial_workspace,nativeWorkspace='controlled original roots retired' if CHORD else current_window()['workspace'],originalWorkspace=initial_workspace)
+   report['nativeFeedbackObserved']=not FOCUS and not CATALOG and not TASKVIEW and not PRIMARY and not SWITCHER and not CHORD;report['nativeFocusJourneyObserved']=FOCUS;check('EveryRegisteredHelperExitedNormally',all(r['exitCode']==0 for r in report['helpers']));report['passed']=True
   finally:
    if paused:pause(False)
+   if chord_writer is not None:
+    os.close(chord_writer);chord_writer=None
+   if chord_keyboard is not None:
+    chord_keyboard.wait(timeout=5);check('PersistentKeyboardNormalExit',chord_keyboard.returncode==0)
    for proc in reversed(apps):
     if proc.poll() is None:
      if proc is fixture:fixture_control('quit');proc.wait(timeout=5)

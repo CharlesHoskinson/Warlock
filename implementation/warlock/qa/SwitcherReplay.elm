@@ -10,6 +10,7 @@ import Platform
 import Shell
 import Surface
 import SurfaceRenderer
+import TaskbarShell
 import Switcher as S
 import UInt64
 
@@ -40,6 +41,8 @@ base =
     in {initial | windows={windows | shell={shell | binding=binding,phase=Shell.Ready,effects={effects | connected=True,observed=scene |> Maybe.map (\s -> {context=context,scene=s})},geometry=geometry}}}
 scoped make model=Desktop.capture model |> Maybe.map (\stamp -> Desktop.update (make stamp) model) |> Maybe.withDefault (model,[])
 historyFrame model=binding |> Maybe.map (\b -> E.object [("protocolVersion",E.int 3),("kind",E.string "activation-history"),("binding",Binding.encode b),("requestId",E.string (model.switcherExpected |> Maybe.map UInt64.string |> Maybe.withDefault "99")),("context",E.object [("lifetime",E.string "1"),("epoch",E.string "1"),("output",E.string "1"),("revision",E.string "1")]),("roots",E.list (UInt64.string >> E.string) history)]) |> Maybe.withDefault E.null
+journalFrame nativeGeneration roots historySteps released cancelled model = binding |> Maybe.map (\b -> E.object [("protocolVersion",E.int 3),("kind",E.string "switcher-journal"),("binding",Binding.encode b),("requestId",E.string "91"),("chord",E.object [("generation",E.string nativeGeneration),("roots",E.list E.string roots),("history",E.list E.string (List.reverse roots)),("origin",E.string "3"),("steps",E.list E.int historySteps),("released",E.bool released),("cancelled",E.bool cancelled),("consumed",E.bool False)])]) |> Maybe.withDefault E.null
+journal gen roots steps released cancelled model=Desktop.update (Desktop.Incoming (journalFrame gen roots steps released cancelled model)) model
 mutations effects=effects |> List.filter (\effect -> case effect of
     Desktop.Send raw -> D.decodeValue (D.field "kind" D.string) raw==Ok "window-effect"
     Desktop.WindowEffect (Shell.Send raw) -> D.decodeValue (D.field "kind" D.string) raw==Ok "window-effect"
@@ -74,6 +77,19 @@ result =
         oldStamp=Desktop.capture integrated
         stale=oldStamp |> Maybe.map (\stamp -> Desktop.update (Desktop.CommitSwitcher stamp) closed) |> Maybe.withDefault (closed,[])
         presentation=Surface.packet one one integrated
+        (nativeOpened,nativeOpenEffects)=journal "90" ["1","2","3"] [1] False False base
+        (nativeReleased,nativeReleaseEffects)=journal "90" ["1","2","3"] [1,1] True False nativeOpened
+        (nativeDuplicate,nativeDuplicateEffects)=journal "90" ["1","2","3"] [1,1] True False nativeReleased
+        (nativeCancelled,nativeCancelEffects)=journal "90" ["1","2","3"] [1,1] True True nativeReleased
+        (frozenMembership,_)=journal "91" ["1","2"] [1] False False base
+        coldWindows=base.windows
+        coldShell=coldWindows.shell
+        coldEffects=coldShell.effects
+        cold={base | windows={coldWindows | shell={coldShell | effects={coldEffects | observed=Nothing},geometry=Nothing,phase=Shell.Reconciling}}}
+        (early,earlyEffects)=journal "92" ["1","2","3"] [1,1] True False cold
+        earlyWindows=early.windows
+        readyEarly={early | windows={earlyWindows | shell=base.windows.shell}}
+        (earlyResolved,earlyResolvedEffects)=Desktop.update (Desktop.Window (TaskbarShell.Native (Shell.Incoming E.null))) readyEarly
         checks=
             [("mruFirstForward",root browsing==Just two)
             ,("mruForwardWrap",root (cycle 2 S.Forward browsing)==Just one && root (cycle 3 S.Forward (cycle 2 S.Forward browsing))==Just three)
@@ -92,5 +108,15 @@ result =
             ,("cancelClosesWithoutMutation",Surface.mode closed=="closed" && List.isEmpty (mutations closeEffects))
             ,("commitClosesAndRefreshesGrant",Surface.mode committed=="closed" && committed.choice/=Nothing && List.isEmpty (mutations commitEffects))
             ,("staleControlCannotCommit",(Tuple.first stale).choice==Nothing && List.isEmpty (mutations (Tuple.second stale)))
+            ,("nativeJournalFreezesBeforeReady",List.map .root (S.entries frozenMembership.switcher)==[two,one])
+            ,("nativeStepsUseOwnGeneration",S.generation nativeOpened.switcher==one && (nativeOpened.nativeSwitcher |> Maybe.map .generation)==Just (counter "90") && root nativeOpened.switcher==Just two && List.isEmpty (mutations nativeOpenEffects))
+            ,("nativeReleaseResolvesOnce",nativeReleased.choice |> Maybe.map .root |> (==) (Just one))
+            ,("nativeDuplicateDoesNotResolveAgain",nativeDuplicate.choice==nativeReleased.choice && List.isEmpty (mutations nativeDuplicateEffects))
+            ,("nativeCancelDropsPendingSelection",nativeCancelled.choice==Nothing && Surface.mode nativeCancelled=="closed" && List.isEmpty (mutations nativeCancelEffects))
+            ,("nativeReleaseBeforeReadyWaits",S.phase early.switcher==S.Waiting && early.choice==Nothing && List.isEmpty (mutations earlyEffects))
+            ,("nativeReleaseBeforeReadyThenResolves",earlyResolved.choice |> Maybe.map .root |> (==) (Just one))
+            ,("localNavigationKeepsNativeOrdinal",let moved=S.navigate S.Forward browsing in S.lastStep moved==1 && root moved==Just one && root (cycle 2 S.Forward moved)==Just three)
+            ,("unknownManualChoiceCannotCommit",let (unchanged,commands)=scoped (\stamp -> Desktop.SwitcherChoose stamp (counter "99")) integrated in unchanged.choice==Nothing && List.isEmpty commands)
+            ,("nativeReadinessDoesNotMutate",List.isEmpty (mutations earlyResolvedEffects) && List.isEmpty (mutations nativeReleaseEffects))
             ,("rendererAcceptsSwitcher",SurfaceRenderer.decode presentation |> Result.map (SurfaceRenderer.mode >> (==) "switcher") |> Result.withDefault False)]
     in E.object [("checks",E.object (List.map (\(name,value) -> (name,E.bool value)) checks)),("scope",E.string "Typed reducer and integrated current-history presentation/choice admission only; no global chord, native focus/AT or atomic cancellation verdict.")]

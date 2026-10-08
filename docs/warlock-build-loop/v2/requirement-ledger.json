@@ -4399,9 +4399,19 @@
               "path": "implementation/warlock/qa/evidence/switcher-native-controls/manifest.json",
               "sha256": "331d2314bc5e6e89f6f22d34ac364da86817fb47fd11f9a9270ab0f078eb1df0",
               "scope": "Integrated title-based switcher with readonly native committed-family history; actual two-window local keyboard cycling/cancel, one committed activation/restore, current pixels and GTK recipients. Three-window sequence/early-release/retirement are compiled component observations only."
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/switcher-native-chord/manifest.json",
+              "sha256": "6e21cd8b1eed734e8ca758b65d55575586f979b42664c4d88e25d0ab04e1b4fa",
+              "scope": "Native physical Alt-Tab exact committed C/B/A history: forward B/A/C wrap and initial reverse A, unique three-root controls and actual private compositor pixels."
             }
           ],
-          "missingObservation": "Exact three-window native Alt-Tab A/B/C sequence, forward/reverse wrap and committed-MRU scope.; Applicable assistive-technology observation and independent original-scenario review."
+          "missingObservation": "Applicable assistive-technology observation and independent original-scenario review.",
+          "reviewerDisposition": {
+            "name": "root-switcher",
+            "independent": false,
+            "disposition": "Scoped implementation/native observation only; independent original-scenario acceptance pending."
+          }
         },
         {
           "name": "switcher-cancel",
@@ -4412,9 +4422,19 @@
               "path": "implementation/warlock/qa/evidence/switcher-native-controls/manifest.json",
               "sha256": "331d2314bc5e6e89f6f22d34ac364da86817fb47fd11f9a9270ab0f078eb1df0",
               "scope": "Integrated title-based switcher with readonly native committed-family history; actual two-window local keyboard cycling/cancel, one committed activation/restore, current pixels and GTK recipients. Three-window sequence/early-release/retirement are compiled component observations only."
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/switcher-native-chord/manifest.json",
+              "sha256": "6e21cd8b1eed734e8ca758b65d55575586f979b42664c4d88e25d0ab04e1b4fa",
+              "scope": "Native physical Escape closes global chord with C focus and committed C/B/A MRU unchanged; actual C GTK keyboard recipient."
             }
           ],
-          "missingObservation": "Exact three-window native chord cancellation and unchanged native MRU history observation.; Applicable assistive-technology observation and independent original-scenario review."
+          "missingObservation": "Applicable assistive-technology observation and independent original-scenario review.",
+          "reviewerDisposition": {
+            "name": "root-switcher",
+            "independent": false,
+            "disposition": "Scoped implementation/native observation only; independent original-scenario acceptance pending."
+          }
         },
         {
           "name": "switcher-membership",
@@ -4425,9 +4445,19 @@
               "path": "implementation/warlock/qa/evidence/switcher-native-controls/manifest.json",
               "sha256": "331d2314bc5e6e89f6f22d34ac364da86817fb47fd11f9a9270ab0f078eb1df0",
               "scope": "Integrated title-based switcher with readonly native committed-family history; actual two-window local keyboard cycling/cancel, one committed activation/restore, current pixels and GTK recipients. Three-window sequence/early-release/retirement are compiled component observations only."
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/switcher-native-chord/manifest.json",
+              "sha256": "6e21cd8b1eed734e8ca758b65d55575586f979b42664c4d88e25d0ab04e1b4fa",
+              "scope": "Compiled family/availability enumeration and native ordinary three-root frozen membership only; modal/protected/all-workspace exclusions are not qualified."
             }
           ],
-          "missingObservation": "Native modal recipient representation, other-workspace/output and lock/protected exclusions.; Applicable assistive-technology observation and independent original-scenario review."
+          "missingObservation": "Native modal-family/recipient, other-workspace/output and lock/protected exclusion fixtures.; Applicable assistive-technology observation and independent original-scenario review.",
+          "reviewerDisposition": {
+            "name": "root-switcher",
+            "independent": false,
+            "disposition": "Scoped implementation/native observation only; independent original-scenario acceptance pending."
+          }
         },
         {
           "name": "switcher-zero-one",
@@ -4438,9 +4468,19 @@
               "path": "implementation/warlock/qa/evidence/switcher-native-controls/manifest.json",
               "sha256": "331d2314bc5e6e89f6f22d34ac364da86817fb47fd11f9a9270ab0f078eb1df0",
               "scope": "Integrated title-based switcher with readonly native committed-family history; actual two-window local keyboard cycling/cancel, one committed activation/restore, current pixels and GTK recipients. Three-window sequence/early-release/retirement are compiled component observations only."
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/switcher-native-chord/manifest.json",
+              "sha256": "6e21cd8b1eed734e8ca758b65d55575586f979b42664c4d88e25d0ab04e1b4fa",
+              "scope": "Native global zero is effectless/closed; sole family activates without minimize, sole minimized family restores, actual GTK recipient after each."
             }
           ],
-          "missingObservation": "Native global-chord zero/one-family activation or restore without minimization.; Applicable assistive-technology observation and independent original-scenario review."
+          "missingObservation": "Applicable assistive-technology observation and independent original-scenario review.",
+          "reviewerDisposition": {
+            "name": "root-switcher",
+            "independent": false,
+            "disposition": "Scoped implementation/native observation only; independent original-scenario acceptance pending."
+          }
         },
         {
           "name": "switcher-retire-arrive",
@@ -4451,9 +4491,19 @@
               "path": "implementation/warlock/qa/evidence/switcher-native-controls/manifest.json",
               "sha256": "331d2314bc5e6e89f6f22d34ac364da86817fb47fd11f9a9270ab0f078eb1df0",
               "scope": "Integrated title-based switcher with readonly native committed-family history; actual two-window local keyboard cycling/cancel, one committed activation/restore, current pixels and GTK recipients. Three-window sequence/early-release/retirement are compiled component observations only."
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/switcher-native-chord/manifest.json",
+              "sha256": "6e21cd8b1eed734e8ca758b65d55575586f979b42664c4d88e25d0ab04e1b4fa",
+              "scope": "Native selected B retirement during a ready held chord advances to A; D remains excluded until next chord. Retirement before initial readiness is not qualified."
             }
           ],
-          "missingObservation": "Native identity retirement/new-arrival while a global chord is held.; Applicable assistive-technology observation and independent original-scenario review."
+          "missingObservation": "Retirement before initial readiness interleaving is not qualified by the held-ready chord case.; Applicable assistive-technology observation and independent original-scenario review.",
+          "reviewerDisposition": {
+            "name": "root-switcher",
+            "independent": false,
+            "disposition": "Scoped implementation/native observation only; independent original-scenario acceptance pending."
+          }
         }
       ]
     },
@@ -6546,9 +6596,19 @@
               "path": "implementation/warlock/qa/evidence/switcher-native-controls/manifest.json",
               "sha256": "331d2314bc5e6e89f6f22d34ac364da86817fb47fd11f9a9270ab0f078eb1df0",
               "scope": "Integrated title-based switcher with readonly native committed-family history; actual two-window local keyboard cycling/cancel, one committed activation/restore, current pixels and GTK recipients. Three-window sequence/early-release/retirement are compiled component observations only."
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/switcher-native-chord/manifest.json",
+              "sha256": "6e21cd8b1eed734e8ca758b65d55575586f979b42664c4d88e25d0ab04e1b4fa",
+              "scope": "Actual physical Alt press/Tab/release precede whole Elm host startup: retained journal resolves with one Committed receipt and no open switcher; compiled reducer asserts duplicate suppression."
             }
           ],
-          "missingObservation": "Native startup Alt press/Tab/release journal before popup readiness and single compositor commit guard.; Independent original-scenario review."
+          "missingObservation": "Independent original-scenario review.",
+          "reviewerDisposition": {
+            "name": "root-switcher",
+            "independent": false,
+            "disposition": "Scoped implementation/native observation only; independent original-scenario acceptance pending."
+          }
         }
       ]
     },
@@ -6571,9 +6631,19 @@
               "path": "implementation/warlock/qa/evidence/switcher-native-controls/manifest.json",
               "sha256": "331d2314bc5e6e89f6f22d34ac364da86817fb47fd11f9a9270ab0f078eb1df0",
               "scope": "Integrated title-based switcher with readonly native committed-family history; actual two-window local keyboard cycling/cancel, one committed activation/restore, current pixels and GTK recipients. Three-window sequence/early-release/retirement are compiled component observations only."
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/switcher-native-chord/manifest.json",
+              "sha256": "6e21cd8b1eed734e8ca758b65d55575586f979b42664c4d88e25d0ab04e1b4fa",
+              "scope": "Actual queued selection is cancelled by physical Escape before effect commit: identity-bound Refused receipt, closed switcher, unchanged C focus/MRU and real GTK recipient; typed/model cancellation guards."
             }
           ],
-          "missingObservation": "Native global-chord cancellation at the compositor boundary before actual effect commit, including the pending-selection interval.; Independent original-scenario review."
+          "missingObservation": "Independent original-scenario review.",
+          "reviewerDisposition": {
+            "name": "root-switcher",
+            "independent": false,
+            "disposition": "Scoped implementation/native observation only; independent original-scenario acceptance pending."
+          }
         }
       ]
     },
@@ -7472,5 +7542,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-07T23:29:55.138296+00:00"
+  "updatedUTC": "2026-10-08T05:24:10.749353+00:00"
 }
