@@ -5711,7 +5711,7 @@
       "owner": "Elm presentation lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "overflow-first-last",
@@ -5730,9 +5730,20 @@
         {
           "name": "menu-invocation",
           "oracle": "secondary click and Menu/Shift-F10 expose labeled operations and Escape returns focus",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/pinned-window-menus/manifest.json",
+              "sha256": "558e5294161a44057a20fc2fa18c8495cd9dbd1c4be738f32f3be3de88e14384",
+              "scope": "Native current running pin: secondary click, Menu/Shift-F10, labeled operations, arrow traversal, Escape focus, minimize/restore and actual application input. 800x600 fixture with default 16px text; full original dense/enlarged-text/AT fixture not qualified."
+            }
+          ],
+          "missingObservation": "Dense layout with enlarged text and more icons than fit; applicable AT and independent original-scenario review remain open.",
+          "reviewerDisposition": {
+            "name": "root-pinned-menus",
+            "independent": false,
+            "disposition": "Observed scoped native/compiled behavior; original-scenario acceptance remains pending."
+          }
         }
       ]
     },
@@ -7222,7 +7233,7 @@
       "owner": "Accessibility lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "ux-023",
@@ -7269,9 +7280,20 @@
         {
           "name": "keyboard-menus",
           "oracle": "each operation completes with recorded keyboard focus and no pointer events",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/pinned-window-menus/manifest.json",
+              "sha256": "558e5294161a44057a20fc2fa18c8495cd9dbd1c4be738f32f3be3de88e14384",
+              "scope": "Physical keyboard-only interval after pointer setup: Menu/Shift-F10 opens, arrows traverse, Enter minimizes exactly once, Menu reopens the current minimized menu and Escape returns focus. Full zero-pointer setup and independent original-scenario review remain separate."
+            }
+          ],
+          "missingObservation": "Complete no-pointer fixture coverage beyond this current running-pin interval and independent original-scenario review remain open.",
+          "reviewerDisposition": {
+            "name": "root-pinned-menus",
+            "independent": false,
+            "disposition": "Observed scoped native/compiled behavior; original-scenario acceptance remains pending."
+          }
         },
         {
           "name": "keyboard-settings",

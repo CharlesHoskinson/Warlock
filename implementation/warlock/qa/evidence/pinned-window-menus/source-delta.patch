@@ -1,0 +1,115 @@
+diff --git i/implementation/warlock/native/core/SeatManager.cpp w/implementation/warlock/native/core/SeatManager.cpp
+index 20c9e73..5a7d57c 100644
+--- i/implementation/warlock/native/core/SeatManager.cpp
++++ w/implementation/warlock/native/core/SeatManager.cpp
+@@ -757,6 +757,19 @@ void CSeatManager::setGrab(SP<CSeatGrab> grab) {
+             }
+         } else if (parentLayer && parentLayer->m_layerSurface->m_current.interactivity != ZWLR_LAYER_SURFACE_V1_KEYBOARD_INTERACTIVITY_NONE) {
+             Desktop::focusState()->rawSurfaceFocus(parentLayer->wlSurface()->resource());
++            // The popup role is retired, but its retained presentation surface
++            // can still own pointer focus. Reenter this exact eligible parent
++            // through the native hit tester without selecting another window.
++            setPointerFocus(nullptr, {});
++            const auto pointer = g_pInputManager->getMouseCoordsInternal();
++            const auto monitor = parentLayer->m_monitor.lock();
++            Vector2D local;
++            PHLLS hitLayer;
++            if (monitor && parentLayer->m_layer < monitor->m_layerSurfaceLayers.size()) {
++                const auto surface = Desktop::viewState()->hitTest().layerSurfaceAt(pointer, &monitor->m_layerSurfaceLayers[parentLayer->m_layer], &local, &hitLayer);
++                if (surface && hitLayer == parentLayer)
++                    setPointerFocus(surface, local);
++            }
+         } else {
+             static auto PFOLLOWMOUSE = CConfigValue<Config::INTEGER>("input:follow_mouse");
+             if (*PFOLLOWMOUSE == 0 || *PFOLLOWMOUSE == 2 || *PFOLLOWMOUSE == 3) {
+diff --git i/implementation/warlock/native/shared-host.c w/implementation/warlock/native/shared-host.c
+index 3310bcb..16ea982 100644
+--- i/implementation/warlock/native/shared-host.c
++++ w/implementation/warlock/native/shared-host.c
+@@ -138,6 +138,22 @@ static void shared_publish(void) {
+ static WebKitWebView *shared_focus_target(void) {
+     return focus_owner && focus_owner->active ? focus_owner->engine : view;
+ }
++static void shared_keyboard_parent(OutputView *owner,JsonNode *frame) {
++    if (!owner) return; /* Closing retains the menu's keyboard-eligible parent. */
++    const char *mode=json_object_get_string_member(json_node_get_object(frame),"mode");
++    gboolean returns_to_bar=g_str_equal(mode,"menu") || g_str_equal(mode,"picker");
++    for (guint i=0;i<output_views->len;i++) {
++        OutputView *row=g_ptr_array_index(output_views,i);
++        if (!row->active) continue;
++        /* On-demand permits native popup-parent restoration and ordinary clicks
++         * back into applications. Never acquire exclusive keyboard focus. Other
++         * surfaces retain their application's existing dismissal recipient. */
++        GtkLayerShellKeyboardMode keyboard=row==owner && returns_to_bar?GTK_LAYER_SHELL_KEYBOARD_MODE_ON_DEMAND:GTK_LAYER_SHELL_KEYBOARD_MODE_NONE;
++        if (gtk_layer_get_keyboard_mode(GTK_WINDOW(row->bar))==keyboard) continue;
++        gtk_layer_set_keyboard_mode(GTK_WINDOW(row->bar),keyboard);
++        gtk_layer_try_force_commit(GTK_WINDOW(row->bar));
++    }
++}
+ static void shared_popup_notify(const char *function,guint64 lease) {
+     if (!popup_owner || !popup_owner->active || shutting_down) return;
+     JsonObject *object=json_object_new();json_object_set_member(object,"scope",scope_packet(popup_owner));
+@@ -295,6 +311,7 @@ static void shared_commit(JsonNode *root,const char *original) {
+     if (popup_active && popup_owner!=next_popup) popup_hide();
+     popup_owner=next_popup;focus_owner=next_focus;
+     owned_monitor=popup_owner?popup_owner->monitor:NULL;window=popup_owner?popup_owner->bar:controller_window;
++    shared_keyboard_parent(popup_owner,frame);
+     wire=json_to_string(translated,FALSE);SurfaceDisposition disposition=surface_receive(primary_manager,wire,translated);shared_preserve_context_anchor=FALSE;json_node_unref(translated);
+     shared_batch_finish(record,disposition);
+     g_print("view-commit: popup=%" G_GUINT64_FORMAT " focus=%" G_GUINT64_FORMAT " publication=%" G_GUINT64_FORMAT "\n",popup_owner?popup_owner->id:0,focus_owner?focus_owner->id:0,publication);fflush(stdout);return;
+diff --git i/implementation/warlock/src/Desktop.elm w/implementation/warlock/src/Desktop.elm
+index 653e19a..960076a 100644
+--- i/implementation/warlock/src/Desktop.elm
++++ w/implementation/warlock/src/Desktop.elm
+@@ -283,6 +283,16 @@ windowBase message model =
+ window : TaskbarShell.Msg -> Model -> (Model,List Effect)
+ window message model =
+     case message of
++        TaskbarShell.MenuEvent (Menu.Activate menuId binding index) ->
++            let (next,effects)=windowBase message {model | returnFocus=Nothing}
++                inactiveMinimize=case ((MenuBridge.menuSnapshot model.windows.menus).menu,MenuBridge.currentProvider model.windows.menus) of
++                    (Just menu,Just provider) ->
++                        menu.id==menuId && menu.binding==binding
++                            && (menu.items |> List.drop index |> List.head |> Maybe.map .action)==Just Menu.Minimize
++                            && (TaskbarShell.groups model.windows |> List.concatMap .families |> List.any (\family -> family.root==Provider.incarnation provider && not family.active))
++                    _ -> False
++                admitted=MenuBridge.preparedSnapshot model.windows.menus==Nothing && MenuBridge.preparedSnapshot next.windows.menus/=Nothing
++            in if inactiveMinimize && admitted then ({next | returnFocus=model.menuOrigin},effects) else (next,effects)
+         TaskbarShell.MenuEvent (Menu.Dismiss menuId) ->
+             case ((MenuBridge.menuSnapshot model.windows.menus).menu,model.menuOrigin) of
+                 (Just menu,Just origin) ->
+@@ -339,7 +349,10 @@ window message model =
+                     else updated.windows.shell.effects.observed |> Maybe.map (.context >> .output)
+                 (next,effects)=case updated.returnFocus of
+                     Just target ->
+-                        if not matchingObservation || not (Shell.available updated.windows.shell) then (updated,ordinaryEffects) else
++                        let blocked=case target.destination of
++                                TaskbarGroup groupKey -> TaskbarShell.groups updated.windows |> List.filter (\group -> group.key==groupKey) |> List.concatMap .families |> List.any (\family -> MenuBridge.blockedFor family.root updated.windows.shell updated.windows.menus)
++                                OverviewOpener -> False
++                        in if not matchingObservation || not (Shell.available updated.windows.shell) || blocked then (updated,ordinaryEffects) else
+                             let retired={updated | returnFocus=Nothing}
+                                 exists=case target.destination of
+                                     TaskbarGroup groupKey -> TaskbarShell.groups retired.windows |> List.any (\group -> group.key==groupKey && List.any .available group.families)
+diff --git i/implementation/warlock/src/Surface.elm w/implementation/warlock/src/Surface.elm
+index 20f0520..d85d6ae 100644
+--- i/implementation/warlock/src/Surface.elm
++++ w/implementation/warlock/src/Surface.elm
+@@ -271,10 +271,15 @@ resolve publication lease raw model =
+                 if not (List.member trigger ["pointer","keyboard"]) || model.choice/=Nothing then Nothing else
+                 Shell.capture model.windows.shell |> Maybe.andThen (\stamp ->
+                     if role=="bar" then
+-                        TaskbarShell.groups model.windows |> List.filter (\group -> "bar:group:" ++ group.key==identity) |> List.head |> Maybe.andThen (\group ->
+-                            case group.families of
++                        let enabled=barControls model |> List.any (\control -> control.id==identity && control.enabled)
++                            group=if String.startsWith "bar:pin:" identity then
++                                let pin=String.dropLeft 8 identity
++                                in if List.member pin (Desktop.pinIdentities model) then Desktop.pinnedGroup pin model else Nothing
++                                else TaskbarShell.groups model.windows |> List.filter (\candidate -> "bar:group:" ++ candidate.key==identity) |> List.head
++                        in (if enabled then group else Nothing) |> Maybe.andThen (\current ->
++                            case current.families of
+                                 [family] -> if family.available then Just (Desktop.OpenWindowMenu stamp family.root) else Nothing
+-                                _ -> if Taskbar.primary False group.families==Taskbar.Picker then Just (Desktop.Window (TaskbarShell.Primary stamp group.key)) else Nothing)
++                                _ -> if Taskbar.primary False current.families==Taskbar.Picker then Just (Desktop.Window (TaskbarShell.Primary stamp current.key)) else Nothing)
+                     else if role=="popup" && mode model=="picker" then
+                         model.windows.picker |> Maybe.andThen (\picker ->
+                             if picker.scope/=stamp then Nothing else

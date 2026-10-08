@@ -1,6 +1,7 @@
 """Focused compiled launcher/search integration, protected CPU scope only."""
 import pathlib,hashlib,json,os,sys,time,shutil,subprocess,shlex,importlib.util,concurrent.futures
-PRIMARY=sys.argv[1:]==['--taskbar-primary']
+PINMENUS=sys.argv[1:]==['--pinned-menus']
+PRIMARY=sys.argv[1:]==['--taskbar-primary'] or PINMENUS
 SWITCHER=sys.argv[1:]==['--switcher']
 NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'];POPUP=sys.argv[1:]==['--native-popup'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV;assert not sys.argv[1:] or PINS or POPUP or TASKVIEW or PRIMARY or SWITCHER
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143'
@@ -30,6 +31,10 @@ try:
   run('compile-search',[str(HELD/pinned['compiler']),'make','qa/SearchReplay.elm','--optimize','--output=assets/search.js'])
   replay=(INPUT/'qa/feedback-replay.js').read_text().replace('Elm.FeedbackReplay','Elm.SearchReplay');(INPUT/'qa/search-replay.js').write_text(replay)
   run('typed-search',['node','qa/search-replay.js','assets/search.js',str(OUT/'search.json')]);r=json.loads((OUT/'search.json').read_text());assert r['rank']==['z-exact','a-prefix','b-token'] and r['keyword']==['z-exact'] and r['generic']==['b-token','z-exact'] and r['unicode']==['c-unicode'];assert r['refreshClearsSettledRefusal'] and r['refreshPreservesUnknown'];assert r['queryEditHasNoEffects'] and r['staleQueryRejected'] and 'No matching' in r['noMatchStatus'] and r['queryRetained']=='nonexistent';report['typedSearch']=r
+ if PINMENUS:
+  report.update(requirements=['ELM-UI-008','ELM-UX-023'],scope='Compiled running-pin context guards and changed native keyboard-parent host; unchanged C++ objects reused by exact hashes; native menu/AT acceptance separate')
+  run('compile-pinned-menu',[str(HELD/pinned['compiler']),'make','qa/PinnedMenuReplay.elm','--optimize','--output=assets/pinned-menu.js'])
+  (INPUT/'qa/pinned-menu-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.PinnedMenuReplay'));run('typed-pinned-menu',['node','qa/pinned-menu-replay.js','assets/pinned-menu.js',str(OUT/'pinned-menu.json')]);report['typedPinnedMenus']=json.loads((OUT/'pinned-menu.json').read_text());assert all(report['typedPinnedMenus']['checks'].values())
  if SWITCHER:
   run('switcher-key-routing',['node','-e',r'''
 const fs=require('fs'),vm=require('vm'),assert=require('assert');const handlers={},sent=[];
@@ -61,7 +66,7 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
   run('compile-pins',[str(HELD/pinned['compiler']),'make','qa/PinsReplay.elm','--optimize','--output=assets/pins.js'])
   (INPUT/'qa/pins-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.PinsReplay'));run('typed-pins',['node','qa/pins-replay.js','assets/pins.js',str(OUT/'pins.json')]);report['typedPins']=json.loads((OUT/'pins.json').read_text());assert all(report['typedPins']['checks'].values());run('pin-storage',['/usr/bin/python3','-B','qa/check-pin-storage.py'])
   run('pin-model-typecheck',['quint','typecheck','qa/pins.qnt']);run('pin-model-named',['quint','test','qa/pins.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79019']);run('pin-model-invariants',['quint','run','qa/pins.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79020'])
- if PRIMARY:
+ if PRIMARY and not PINMENUS:
   previous=json.loads((ROOT/'qa/current-search-build.json').read_text());prior_path=REPO/previous['report'];assert sha(prior_path)==previous['reportSHA256'];prior=json.loads(prior_path.read_text());assert prior['passed']
   old_binary=prior_path.parent/'elm-host';assert sha(old_binary)==prior['binarySHA256']
   assert all(sha(INPUT/p)==h for p,h in prior['inputs'].items() if p.startswith('native/'))
@@ -77,7 +82,7 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
    run('surface-admission-build',['cc','-std=c11','-O2','-Wall','-Wextra','-Werror','native/surface-test.c','-o',str(OUT/'surface-tests'),*flags]);run('surface-admission',[str(OUT/'surface-tests')])
   run('host-compile',['cc','-std=c11','-O2','-Wall','-Wextra','-Werror','-Wno-deprecated-declarations','-MD','-MF',str(OUT/'host.d'),'-c','native/shared-host.c','-o',str(OUT/'host.o'),*flags])
   units=['preview_uri.cpp','preview_icons.cpp','preview-uri-webkit.cpp','preview-provider-bootstrap.cpp','client-producer.cpp','imported-clients.cpp','preview-uri-router.cpp','elm-preview-policy.cpp','preview-visual-channel.cpp','preview-policy-driver.cpp']
-  if PINS or POPUP or TASKVIEW or SWITCHER:
+  if PINS or POPUP or TASKVIEW or SWITCHER or PINMENUS:
    previous=json.loads((ROOT/'qa/current-search-build.json').read_text());prior_path=REPO/previous['report'];assert sha(prior_path)==previous['reportSHA256'];prior=json.loads(prior_path.read_text());assert prior['passed'] and sha(prior_path.parent/'elm-host')==prior['binarySHA256'];report['reusedNativeObjects']={}
    if SWITCHER:
     # The readonly compositor TU is compiled separately. Reused host objects
@@ -87,6 +92,9 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
    if POPUP:
     assert all(sha(INPUT/p)==h for p,h in prior['inputs'].items() if p.startswith('native/') and p not in ['native/host.c','native/shared-host.c'])
     assert all(sha(INPUT/'assets'/n)==h for n,h in previous['compiledAssets'].items())
+   if PINMENUS:
+    # Only the owning GTK host changes; every reused C++ dependency is exact.
+    assert all(sha(INPUT/p)==h for p,h in prior['inputs'].items() if p.startswith('native/') and p not in ['native/host.c','native/shared-host.c'])
    if TASKVIEW:
     # The authority TU is independently compiled against its owning core; none
     # of these reused GTK host objects link it or include its modal preflight.

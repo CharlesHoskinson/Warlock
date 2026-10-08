@@ -138,6 +138,22 @@ static void shared_publish(void) {
 static WebKitWebView *shared_focus_target(void) {
     return focus_owner && focus_owner->active ? focus_owner->engine : view;
 }
+static void shared_keyboard_parent(OutputView *owner,JsonNode *frame) {
+    if (!owner) return; /* Closing retains the menu's keyboard-eligible parent. */
+    const char *mode=json_object_get_string_member(json_node_get_object(frame),"mode");
+    gboolean returns_to_bar=g_str_equal(mode,"menu") || g_str_equal(mode,"picker");
+    for (guint i=0;i<output_views->len;i++) {
+        OutputView *row=g_ptr_array_index(output_views,i);
+        if (!row->active) continue;
+        /* On-demand permits native popup-parent restoration and ordinary clicks
+         * back into applications. Never acquire exclusive keyboard focus. Other
+         * surfaces retain their application's existing dismissal recipient. */
+        GtkLayerShellKeyboardMode keyboard=row==owner && returns_to_bar?GTK_LAYER_SHELL_KEYBOARD_MODE_ON_DEMAND:GTK_LAYER_SHELL_KEYBOARD_MODE_NONE;
+        if (gtk_layer_get_keyboard_mode(GTK_WINDOW(row->bar))==keyboard) continue;
+        gtk_layer_set_keyboard_mode(GTK_WINDOW(row->bar),keyboard);
+        gtk_layer_try_force_commit(GTK_WINDOW(row->bar));
+    }
+}
 static void shared_popup_notify(const char *function,guint64 lease) {
     if (!popup_owner || !popup_owner->active || shutting_down) return;
     JsonObject *object=json_object_new();json_object_set_member(object,"scope",scope_packet(popup_owner));
@@ -295,6 +311,7 @@ static void shared_commit(JsonNode *root,const char *original) {
     if (popup_active && popup_owner!=next_popup) popup_hide();
     popup_owner=next_popup;focus_owner=next_focus;
     owned_monitor=popup_owner?popup_owner->monitor:NULL;window=popup_owner?popup_owner->bar:controller_window;
+    shared_keyboard_parent(popup_owner,frame);
     wire=json_to_string(translated,FALSE);SurfaceDisposition disposition=surface_receive(primary_manager,wire,translated);shared_preserve_context_anchor=FALSE;json_node_unref(translated);
     shared_batch_finish(record,disposition);
     g_print("view-commit: popup=%" G_GUINT64_FORMAT " focus=%" G_GUINT64_FORMAT " publication=%" G_GUINT64_FORMAT "\n",popup_owner?popup_owner->id:0,focus_owner?focus_owner->id:0,publication);fflush(stdout);return;

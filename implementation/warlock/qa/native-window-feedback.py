@@ -4,12 +4,13 @@ Reuse immutable ABI/runtime by reference; no preview, supervisor or new source
 lineage. Native/AT acceptance remain separate, with AT explicitly outstanding.
 """
 import hashlib,importlib.util,json,os,pathlib,signal,subprocess,sys,time,traceback
-PRIMARY=sys.argv[1:]==['--taskbar-primary']
+PINMENUS=sys.argv[1:]==['--pinned-menus']
+PRIMARY=sys.argv[1:]==['--taskbar-primary'] or PINMENUS
 PRE_READY_RETIRE=sys.argv[1:]==['--switcher-pre-ready-retirement']
 MEMBERSHIP=sys.argv[1:]==['--switcher-membership'] or PRE_READY_RETIRE
 CHORD=sys.argv[1:]==['--switcher-chord'] or MEMBERSHIP
 SWITCHER=sys.argv[1:]==['--switcher']
-NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'];PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW or PRIMARY or SWITCHER or CHORD
+NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'];PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS or PINMENUS;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW or PRIMARY or SWITCHER or CHORD
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143';RUNTIME=REPO/'implementation/warlock-client-provider-native-v204'
 sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
 spec=importlib.util.spec_from_file_location('feedback_private_host',RUNTIME/'candidate_host.py');host=importlib.util.module_from_spec(spec);spec.loader.exec_module(host)
@@ -45,7 +46,7 @@ else:
 for row in pair.values():assert sha(row['path'])==row['sha256']
 assets=ROOT/'assets';assert all(sha(assets/n)==h for n,h in json.loads((ROOT/'qa'/('current-search-build.json' if CURRENT else 'current-feedback-build.json')).read_text())['compiledAssets'].items())
 subprocess.run(['node','--check',str(assets/'bar-adapter.js')],check=True)
-OUT=ROOT/'qa/runs'/(('native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
+OUT=ROOT/'qa/runs'/(('native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
 OUTPUT=pathlib.Path('/home/hoskinson/window-integration-qa')/('warlock-window-feedback-'+str(time.time_ns()))
 focus_host=None
 if native_pair.get('pair',{}).get('core')!=pre['pair']['core']:
@@ -103,6 +104,7 @@ if CHORD:report.update(requirements=['ELM-UI-003','ELM-UX-012','ELM-UX-013'],sce
 if MEMBERSHIP:report.update(scenarios=['switcher-membership','switcher-retire-arrive'],scope='Actual native '+('one-step selected retirement' if PRE_READY_RETIRE else 'two-step buffered retirement')+' before readiness/arrival, modal-family activation/recipient and minimized workspace-2 restore; lock, other-output, AT and independent review remain open',nativeMembershipJourneyObserved=False)
 if SWITCHER:report.update(requirements=['ELM-UI-003'],scenarios=['switcher-order','switcher-cancel'],scope='Actual native MRU observation, integrated switcher control pixels, local keyboard cycling/cancel and identity-bound chosen activation; global Alt-Tab journal, modal representation and AT/independent acceptance remain pending',nativeSwitcherJourneyObserved=False)
 if PRIMARY:report.update(requirements=['ELM-UI-004'],scenarios=['taskbar-inactive','taskbar-active','taskbar-minimized'],scope='Actual pointer single-family activation/minimize/restore, exact native receipt and GTK keyboard recipient, MRU/desktop succession and pixels; primary keyboard and AT acceptance remain pending',nativePrimaryJourneyObserved=False)
+if PINMENUS:report.update(requirements=['ELM-UI-008','ELM-UX-023'],scenarios=['menu-invocation','keyboard-menus'],scope='Actual current running pin, native secondary click/Menu/Shift-F10 menus and existing minimize/restore path; dense/enlarged-text, AT and independent acceptance remain open',nativePinnedMenusObserved=False)
 LUA=b'''hl.config({xwayland={enabled=false},animations={enabled=false}})
 hl.monitor({output="WAYLAND-1",mode="800x600@60",position="0x0",scale=1})
 '''
@@ -154,6 +156,8 @@ try:
     report['catalogFixture']={'backend':str(backend_fixture),'backendSHA256':sha(backend_fixture),'roots':roots,'originalConfigUnchanged':True}
     desktop=catalog_root/'warlock-files.desktop';desktop.write_text('[Desktop Entry]\nType=Application\nName=Files\nGenericName=File manager\nKeywords=folders;documents;\nExec=/usr/bin/true\n')
     (catalog_root/'warlock-editor.desktop').write_text('[Desktop Entry]\nType=Application\nName=Editor\nGenericName=Text editor\nExec=/usr/bin/true\n')
+   if PINMENUS:
+    (catalog_root/'warlock-running-peer.desktop').write_text('[Desktop Entry]\nType=Application\nName=Peer\nStartupWMClass=warlock-peer-fixture\nExec=/usr/bin/true\n')
    control=OUTPUT/'fixture-control.json';fixture=s.host.launch('fixture',['/usr/bin/python3','-B',str(FIXTURE),str(control),*(['primary'] if PRIMARY else [])],env=env);apps.append(fixture)
    if PRIMARY:
     peer_control=OUTPUT/'peer-control.json';peer_fixture=s.host.launch('peer-fixture',['/usr/bin/python3','-B',str(FIXTURE),str(peer_control),'peer'],env=env);apps.append(peer_fixture)
@@ -276,7 +280,7 @@ raise SystemExit(daemon.run())
     pix=GdkPixbuf.Pixbuf.new_from_file(str(image));data=pix.get_pixels();stride=pix.get_rowstride();channels=pix.get_n_channels();left,top=int(o['x'])+5,int(o['y'])+3;right,bottom=min(800,int(o['x']+o['width'])-3),min(48,int(o['y']+o['height'])-3)
     bright=sum(1 for y in range(top,bottom) for x in range(left,right) if all(data[y*stride+x*channels+i]>170 for i in range(3)))
     check(state+'NativeTaskbarHasTextPixels',pix.get_width()==800 and pix.get_height()==600 and bright>30,image=str(image),sha256=sha(image),brightPixels=bright,region=[left,top,right,bottom]);report.setdefault('feedback',{})[state]=body
-   if PRIMARY:
+   if PRIMARY and not PINMENUS:
     keyboard=pathlib.Path('/home/hoskinson/window-integration-qa/orca-reader/physical-commands/evdev-keyboard');report['keyboard']={'path':str(keyboard),'sha256':sha(keyboard)}
     roots=client.snapshot('443')['windows'];companion=next(w['incarnation'] for w in roots if w['label']=='ELM-AUTHORITY-FIXTURE')
     check('DistinctSingleFamilyApplicationIdentities',len(roots)==2 and len({w['application'] for w in roots})==2,windows=roots)
@@ -354,7 +358,7 @@ raise SystemExit(daemon.run())
      # Count only current control interiors. Whole-popup counts incorrectly
      # included the compositor's warning overlay above a black reopened popup.
      for button in body['buttons']:
-      selected=button['accessibleName'].startswith(('Activate ELM-','Restore ELM-')) if SWITCHER or CHORD else (button['accessibleName'].startswith('Browse workspace ') or (NAV and button['accessibleName'].startswith('Restore ELM-ACTIVATION-PEER'))) if TASKVIEW else button['accessibleName'] in ['Refresh applications','Open Files']
+      selected=button['accessibleName'] in ['Minimize','Close window actions','Maximize'] if PINMENUS else button['accessibleName'].startswith(('Activate ELM-','Restore ELM-')) if SWITCHER or CHORD else (button['accessibleName'].startswith('Browse workspace ') or (NAV and button['accessibleName'].startswith('Restore ELM-ACTIVATION-PEER'))) if TASKVIEW else button['accessibleName'] in ['Refresh applications','Open Files']
       if not selected or button['disabled'] or button['y']<0 or button['y']+button['height']>box[3]:continue
       left,top=max(0,int(box[0]+button['x'])+12),max(100,int(box[1]+button['y'])+6)
       right,bottom=min(800,int(box[0]+button['x']+min(220,button['width']))-12),min(600,box[1]+box[3],int(box[1]+button['y']+button['height'])-6)
@@ -379,7 +383,61 @@ raise SystemExit(daemon.run())
       key(15)
      check('KeyboardReaches'+label,popup_body()['focus']==button['id'],body=popup_body())
      key(57)
-    if CHORD:
+    if PINMENUS:
+     click(wait(lambda:projection().get('openApplications') if projection() else None))
+     wait(lambda:field_value()=='');query([25,18,18,19],'peer');keyboard_button('Pin Peer')
+     wait(lambda:any(button['label'].startswith('Peer') and 'Pinned;' in button['label'] for button in (bar_body() or {}).get('buttons',[])))
+     keyboard_button('Close applications and return to windows');wait(lambda:(projection() or {}).get('mode')=='closed' and projection()['phase']=='Coherent')
+     def pin_button():return next((button for button in (bar_body() or {}).get('buttons',[]) if button['label'].startswith('Peer') and 'Pinned;' in button['label'] and not button['disabled']),None)
+     def menu():
+      body=popup_body();p=projection()
+      return body if body and p and p.get('mode')=='menu' and body['publication']==p['publication'] and any(button['accessibleName']=='Minimize' for button in body['buttons']) else None
+     before=len(journal());button=wait(pin_button);report['runningPin']=button
+     x,y=round(button['x']+button['width']/2),round(button['y']+button['height']/2)
+     check('RunningPinPointerTargetWithinBar',0<=x<800 and 0<=y<48,button=button)
+     helper([str(POINTER),'800','600'],f'move {x} {y}\nsleep 100\nbutton 273 1\nsleep 50\nbutton 273 0\nsleep 100\n')
+     body=wait(menu);check('PinnedSecondaryClickOpensLabeledWindowMenu',len(journal())==before and any(button['accessibleName']=='Minimize' for button in body['buttons']),body=body)
+     popup_capture('pinned-window-menu');check('NativeMenuControlsHaveTextPixels',bool(report['popupCaptures'][-1]['controlRegions']) and all(region['brightPixels']>15 for region in report['popupCaptures'][-1]['controlRegions']))
+     key(1);wait(lambda:(projection() or {}).get('mode')=='closed');wait(lambda:(bar_body() or {}).get('focus')==(pin_button() or {}).get('id'))
+     check('MenuEscapeReturnsRunningPinFocus',bar_body()['focus']==pin_button()['id'])
+     key(127);wait(menu);check('PinnedMenuKeyUsesNativeBarProof',any('surface-context-admitted:' in line and 'origin=bar trigger=keyboard' in line for line in text().splitlines()))
+     key(1);wait(lambda:(projection() or {}).get('mode')=='closed');wait(lambda:(bar_body() or {}).get('focus')==(pin_button() or {}).get('id'))
+     helper([str(keyboard)],'key 42 1\nkey 68 1\nsleep 50\nkey 68 0\nkey 42 0\nsleep 100\nsync\n');wait(menu)
+     check('PinnedShiftF10DoesNotActivateOrLaunch',len(journal())==before and not launches())
+     def selected_action():
+      body=menu()
+      return next((button['accessibleName'] for button in body['buttons'] if button['id']==body['focus']),None) if body else None
+     key(108);wait(lambda:selected_action()=='Maximize');key(103);wait(lambda:selected_action()=='Minimize')
+     check('NativeMenuArrowTraversalReturnsToMinimize',selected_action()=='Minimize' and len(journal())==before)
+     for _ in range(12):
+      body=menu();focused=next((button for button in body['buttons'] if button['id']==body['focus']),None)
+      if focused and focused['accessibleName']=='Minimize':break
+      key(108)
+     check('KeyboardSelectsLabeledMinimize',next(button for button in menu()['buttons'] if button['id']==menu()['focus'])['accessibleName']=='Minimize')
+     prior_focus=facts()['facts']['focused'];key(28);wait(lambda:current_window()['minimized'] and len(journal())==before+1 and transaction_state()=='Committed')
+     check('PinnedMenuMinimizesExactlyOnce',journal()[-1]['intent']['incarnation']==target and journal()[-1]['intent']['operation']=='minimize',request=journal()[-1])
+     check('InactiveMenuMinimizePreservesExistingFocus',prior_focus!=target and facts()['facts']['focused']==prior_focus,priorFocus=prior_focus)
+     wait(lambda:(bar_body() or {}).get('focus')==(pin_button() or {}).get('id'))
+     # The inactive-family oracle preserves its real bar recipient; it must
+     # not fabricate activation of another application after minimizing it.
+     proofs=sum('surface-context-admitted:' in line and 'origin=bar trigger=keyboard' in line for line in text().splitlines());key(127);wait(menu)
+     check('InactiveMinimizeRetainsNativeBarKeyboard',sum('surface-context-admitted:' in line and 'origin=bar trigger=keyboard' in line for line in text().splitlines())==proofs+1 and len(journal())==before+1)
+     check('MinimizedPinExposesCurrentRestoreAction',any(button['accessibleName']=='Restore' and not button['disabled'] for button in menu()['buttons']))
+     key(1);wait(lambda:(projection() or {}).get('mode')=='closed');wait(lambda:(bar_body() or {}).get('focus')==(pin_button() or {}).get('id'))
+     button=wait(pin_button);x,y=round(button['x']+button['width']/2),round(button['y']+button['height']/2);helper([str(POINTER),'800','600'],f'move {x} {y}\nsleep 100\nbutton 272 1\nsleep 50\nbutton 272 0\nsleep 100\n');wait(lambda:not current_window()['minimized'] and facts()['facts']['focused']==target and len(journal())==before+2 and transaction_state()=='Committed')
+     check('RunningPinRestoresWithoutDuplicateLaunch',journal()[-1]['intent']['operation']=='restore' and not launches())
+     events=peer_control.with_suffix('.events.jsonl');n=len(events.read_text().splitlines()) if events.exists() else 0;key(30)
+     delivered=wait(lambda:[json.loads(line) for line in events.read_text().splitlines()[n:]] if events.exists() else None)
+     check('RestoredPinReceivesActualApplicationTyping',any(row['window']=='ELM-ACTIVATION-PEER' and row['kind']=='key' and row['keyval']==97 for row in delivered),events=delivered)
+     # Switching from an on-demand menu parent to Task View must retain its
+     # ordinary application dismissal policy, with a real GTK recipient.
+     button=wait(lambda:next((b for b in (bar_body() or {}).get('buttons',[]) if b['accessibleName']=='Open Task View' and not b['disabled']),None));x,y=round(button['x']+button['width']/2),round(button['y']+button['height']/2)
+     helper([str(POINTER),'800','600'],f'move {x} {y}\nsleep 100\nbutton 272 1\nsleep 50\nbutton 272 0\nsleep 100\n');wait(lambda:(projection() or {}).get('mode')=='overview' and popup_body())
+     key(1);wait(lambda:(projection() or {}).get('mode')=='closed' and projection()['phase']=='Coherent')
+     n=len(events.read_text().splitlines());key(30);delivered=wait(lambda:[json.loads(line) for line in events.read_text().splitlines()[n:]])
+     check('TaskViewAfterMenuReturnsApplicationKeyboard',facts()['facts']['focused']==target and any(row['window']=='ELM-ACTIVATION-PEER' and row['kind']=='key' and row['keyval']==97 for row in delivered),events=delivered)
+     report['nativePinnedMenusObserved']=True
+    elif CHORD:
      def coherent_closed():return (projection() or {}).get('mode')=='closed' and (projection() or {}).get('phase')=='Coherent'
      def native_journal():return client.switcher_journal('450',observe=True)['chord']
      def selected_window(label):

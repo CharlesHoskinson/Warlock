@@ -283,6 +283,16 @@ windowBase message model =
 window : TaskbarShell.Msg -> Model -> (Model,List Effect)
 window message model =
     case message of
+        TaskbarShell.MenuEvent (Menu.Activate menuId binding index) ->
+            let (next,effects)=windowBase message {model | returnFocus=Nothing}
+                inactiveMinimize=case ((MenuBridge.menuSnapshot model.windows.menus).menu,MenuBridge.currentProvider model.windows.menus) of
+                    (Just menu,Just provider) ->
+                        menu.id==menuId && menu.binding==binding
+                            && (menu.items |> List.drop index |> List.head |> Maybe.map .action)==Just Menu.Minimize
+                            && (TaskbarShell.groups model.windows |> List.concatMap .families |> List.any (\family -> family.root==Provider.incarnation provider && not family.active))
+                    _ -> False
+                admitted=MenuBridge.preparedSnapshot model.windows.menus==Nothing && MenuBridge.preparedSnapshot next.windows.menus/=Nothing
+            in if inactiveMinimize && admitted then ({next | returnFocus=model.menuOrigin},effects) else (next,effects)
         TaskbarShell.MenuEvent (Menu.Dismiss menuId) ->
             case ((MenuBridge.menuSnapshot model.windows.menus).menu,model.menuOrigin) of
                 (Just menu,Just origin) ->
@@ -339,7 +349,10 @@ window message model =
                     else updated.windows.shell.effects.observed |> Maybe.map (.context >> .output)
                 (next,effects)=case updated.returnFocus of
                     Just target ->
-                        if not matchingObservation || not (Shell.available updated.windows.shell) then (updated,ordinaryEffects) else
+                        let blocked=case target.destination of
+                                TaskbarGroup groupKey -> TaskbarShell.groups updated.windows |> List.filter (\group -> group.key==groupKey) |> List.concatMap .families |> List.any (\family -> MenuBridge.blockedFor family.root updated.windows.shell updated.windows.menus)
+                                OverviewOpener -> False
+                        in if not matchingObservation || not (Shell.available updated.windows.shell) || blocked then (updated,ordinaryEffects) else
                             let retired={updated | returnFocus=Nothing}
                                 exists=case target.destination of
                                     TaskbarGroup groupKey -> TaskbarShell.groups retired.windows |> List.any (\group -> group.key==groupKey && List.any .available group.families)

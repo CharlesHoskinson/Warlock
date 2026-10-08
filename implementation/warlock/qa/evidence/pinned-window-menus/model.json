@@ -1,0 +1,19 @@
+{
+  "scope": "Bounded abstract return-focus reducer lifecycle; no native, AT or independent acceptance inferred.",
+  "model": {
+    "path": "implementation/warlock/qa/menu-focus.qnt",
+    "sha256": "87ad97e1c182b5ca98138776a6fcd50567748cb1fd67a6431d9d5be56e06d16a"
+  },
+  "typecheckPassed": true,
+  "namedTests": 6,
+  "safety": {
+    "samples": 100,
+    "steps": 20,
+    "seed": 88031
+  },
+  "namedSeed": 88030,
+  "protectedLauncher": {
+    "path": "/home/hoskinson/window-integration-qa/qa_run.py",
+    "sha256": "656f118c268e9f762f2d62c859d146043d74c83b72cd5457b779f1e30cb183a1"
+  }
+}

@@ -271,10 +271,15 @@ resolve publication lease raw model =
                 if not (List.member trigger ["pointer","keyboard"]) || model.choice/=Nothing then Nothing else
                 Shell.capture model.windows.shell |> Maybe.andThen (\stamp ->
                     if role=="bar" then
-                        TaskbarShell.groups model.windows |> List.filter (\group -> "bar:group:" ++ group.key==identity) |> List.head |> Maybe.andThen (\group ->
-                            case group.families of
+                        let enabled=barControls model |> List.any (\control -> control.id==identity && control.enabled)
+                            group=if String.startsWith "bar:pin:" identity then
+                                let pin=String.dropLeft 8 identity
+                                in if List.member pin (Desktop.pinIdentities model) then Desktop.pinnedGroup pin model else Nothing
+                                else TaskbarShell.groups model.windows |> List.filter (\candidate -> "bar:group:" ++ candidate.key==identity) |> List.head
+                        in (if enabled then group else Nothing) |> Maybe.andThen (\current ->
+                            case current.families of
                                 [family] -> if family.available then Just (Desktop.OpenWindowMenu stamp family.root) else Nothing
-                                _ -> if Taskbar.primary False group.families==Taskbar.Picker then Just (Desktop.Window (TaskbarShell.Primary stamp group.key)) else Nothing)
+                                _ -> if Taskbar.primary False current.families==Taskbar.Picker then Just (Desktop.Window (TaskbarShell.Primary stamp current.key)) else Nothing)
                     else if role=="popup" && mode model=="picker" then
                         model.windows.picker |> Maybe.andThen (\picker ->
                             if picker.scope/=stamp then Nothing else

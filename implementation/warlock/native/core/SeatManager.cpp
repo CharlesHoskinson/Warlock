@@ -757,6 +757,19 @@ void CSeatManager::setGrab(SP<CSeatGrab> grab) {
             }
         } else if (parentLayer && parentLayer->m_layerSurface->m_current.interactivity != ZWLR_LAYER_SURFACE_V1_KEYBOARD_INTERACTIVITY_NONE) {
             Desktop::focusState()->rawSurfaceFocus(parentLayer->wlSurface()->resource());
+            // The popup role is retired, but its retained presentation surface
+            // can still own pointer focus. Reenter this exact eligible parent
+            // through the native hit tester without selecting another window.
+            setPointerFocus(nullptr, {});
+            const auto pointer = g_pInputManager->getMouseCoordsInternal();
+            const auto monitor = parentLayer->m_monitor.lock();
+            Vector2D local;
+            PHLLS hitLayer;
+            if (monitor && parentLayer->m_layer < monitor->m_layerSurfaceLayers.size()) {
+                const auto surface = Desktop::viewState()->hitTest().layerSurfaceAt(pointer, &monitor->m_layerSurfaceLayers[parentLayer->m_layer], &local, &hitLayer);
+                if (surface && hitLayer == parentLayer)
+                    setPointerFocus(surface, local);
+            }
         } else {
             static auto PFOLLOWMOUSE = CConfigValue<Config::INTEGER>("input:follow_mouse");
             if (*PFOLLOWMOUSE == 0 || *PFOLLOWMOUSE == 2 || *PFOLLOWMOUSE == 3) {
