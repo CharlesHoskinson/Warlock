@@ -7,14 +7,25 @@ From the repository root:
 ```sh
 python3 -B plugins/warlock-contributor/scripts/warlock.py doctor
 python3 -B plugins/warlock-contributor/scripts/warlock.py status
+python3 -B plugins/warlock-contributor/scripts/warlock.py remaining --summary
 python3 -B plugins/warlock-contributor/scripts/warlock.py inspect --requirement ELM-UX-004
 python3 -B plugins/warlock-contributor/scripts/warlock.py start --owner your-name
 python3 -B docs/warlock-build-loop/v2/loop.py check
 python3 -B plugins/warlock-contributor/scripts/warlock.py record --outcome production-fix --summary 'Describe the actual source behavior and observations'
 python3 -B plugins/warlock-contributor/scripts/warlock.py handoff
+python3 -B plugins/warlock-contributor/scripts/warlock.py review
 ```
 
 ## Scaffold and resume
+
+`remaining` returns a checklist from the original scenario ledger, including exact
+given/when/then text, verification obligations and recorded missing observations.
+Use `--requirement ID` to focus on a feature, repeat `--status failed` or other
+statuses to filter, or use `--summary` for counts. The default omits recorded
+accepted scenarios. Counts describe recorded dispositions, not delivered features;
+unadjudicated does not mean unimplemented, and this command does not revalidate
+accepted evidence. The original 242/417 inventory is only part of the full release
+scope. It never selects work or changes the ledger.
 
 `doctor` checks local package files, Python/Git availability and the scratch ignore;
 it reports which client executables are on PATH without launching or installing
@@ -121,6 +132,29 @@ Checked October 7, 2026 against primary documentation and installed CLI help:
 - [Grok plugins](https://docs.x.ai/build/features/skills-plugins-marketplaces) and [hooks](https://docs.x.ai/build/features/hooks): Claude compatibility, camelCase event input, GROK environment and passive stdout limitation.
 
 See [the six-agent review and dispositions](../../docs/warlock-workflow-review/contributor-plugin-20261007/consensus.md), [the implementation skill](skills/warlock-contribute/SKILL.md) and [protected execution](references/workflow.md) for contributor work. Host manifests describe loading only; the v2 delivery contract and original EARS/OpenSpecs determine the product work.
+
+## Review a contribution
+
+After staging an explicitly owned contribution, `review` combines the participant
+handoff with a read-only check of staged contents. Declared source and recorded
+evidence are in scope; use repeatable `--include REPO_FILE` for owned supporting
+documentation or other support files. Explicit includes cannot override protected
+foreign drafts or permit archival implementation changes. All staged files must
+be resolved regular files whose bytes match the working copy. This catches a
+partially staged source or a report edited after staging. It neither stages nor
+commits files, runs checks, pushes, nor establishes ownership or oracle truth.
+An empty index produces an advisory; missing records and mismatches fail.
+
+```sh
+python3 -B plugins/warlock-contributor/scripts/warlock.py review \
+  --include docs/your-owned-observation.md
+```
+
+Changed authored C++ `.cpp`/`.hpp` files now count as implementation progress
+alongside Elm, C, Python, CSS and SVG in the candidate's source directories.
+Generated JavaScript, QA and documentation remain excluded. New iterations record
+progress policy 2; existing policy 1 records retain their original interpretation.
+A source change is still an implementation observation, not GUI acceptance.
 
 ## What is enforced
 

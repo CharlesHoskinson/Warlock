@@ -176,16 +176,17 @@ def normalize_slice(root, s, reqs):
     return s
 
 
-def authored(name):
+def authored(name, include_cpp=True):
     prefix = 'implementation/warlock/'
     if not name.startswith(prefix):
         return False
     relative = name[len(prefix):]
-    return relative.startswith(('src/', 'native/', 'adapter/', 'assets/')) and pathlib.Path(name).suffix in ('.elm', '.c', '.h', '.py', '.css', '.svg')
+    extensions = ('.elm', '.c', '.h', '.py', '.css', '.svg') + (('.cpp', '.hpp') if include_cpp else ())
+    return relative.startswith(('src/', 'native/', 'adapter/', 'assets/')) and pathlib.Path(name).suffix in extensions
 
 
-def product_delta(current, previous):
-    return any(authored(n) and current[n] != previous.get(n) for n in current)
+def product_delta(current, previous, include_cpp=True):
+    return any(authored(n, include_cpp) and current[n] != previous.get(n) for n in current)
 
 
 def verdict_key(claim):
@@ -300,6 +301,83 @@ def doctor(root, record_path):
         'warnings': warnings}
 
 
+def remaining(root, reqs, requirements, statuses, summary_only):
+    """Report recorded backlog, without inferring implementation or acceptance."""
+    if len(set(requirements)) != len(requirements) or any(i not in reqs for i in requirements):
+        raise ValueError('Remaining needs unique original requirement IDs')
+    ledger = read(safe(root, LEDGER))
+    counts, rows = {}, []
+    requirement_count = 0
+    for requirement in ledger['requirements']:
+        identity = requirement['id']
+        if requirements and identity not in requirements:
+            continue
+        requirement_count += 1
+        original = reqs[identity]
+        scenarios = {s['name']: s for s in original['scenarios']}
+        for scenario in requirement['scenarios']:
+            status = scenario['status']
+            counts[status] = counts.get(status, 0) + 1
+            if status not in statuses:
+                continue
+            rows.append({'requirement': identity, 'capability': original['capability'],
+                         'original': scenarios[scenario['name']],
+                         'verificationScope': original['verification'], 'ledger': scenario})
+    return {'ledgerSha256': digest(safe(root, LEDGER)), 'recordedOnly': True,
+            'requirementsConsidered': requirement_count, 'scenarioCountsByRecordedStatus': counts,
+            'matchingScenarios': len(rows), 'scenarios': [] if summary_only else rows,
+            'summaryOnly': summary_only, 'releaseAccepted': False,
+            'warnings': ['Recorded dispositions are not revalidated here. Unadjudicated does not mean unimplemented; '
+                         'accepted rows still require current evidence and independent review. '
+                         'The frozen 242/417 baseline is only part of the full release scope.']}
+
+
+def review(root, record, reqs, state, includes):
+    """Read-only staging review; explicit support paths do not override foreign ownership."""
+    packet = handoff(root, record, reqs, state)
+    allowed = set(record['slice']['paths'])
+    for name in includes:
+        path = safe(root, name)
+        if path.is_dir() or name.startswith(('.git/', '.warlock-contributor/')):
+            raise ValueError('Review includes must be publishable repository files: ' + name)
+        if name.startswith('implementation/') and not name.startswith('implementation/warlock/'):
+            raise ValueError('Review cannot include archival implementation: ' + name)
+        allowed.add(name)
+    for iteration in record['iterations']:
+        for claim in iteration.get('claims', []):
+            allowed.update(e['path'] for e in claim['evidence'])
+    staged = []
+    for name in git(root, 'diff', '--cached', '--no-renames', '--name-only', '-z', '--').decode().split('\0'):
+        if not name:
+            continue
+        if name in record['foreignDirty']:
+            packet['errors'].append('Staged protected foreign path: ' + name)
+        elif name not in allowed:
+            packet['errors'].append('Staged path needs explicit contribution scope (--include for owned support files): ' + name)
+        path = safe(root, name)
+        entries = git(root, 'ls-files', '--stage', '-z', '--', ':(literal)' + name).split(b'\0')
+        index_hash = None
+        for entry in entries:
+            if not entry:
+                continue
+            metadata, _ = entry.split(b'\t', 1)
+            mode, blob, stage = metadata.decode().split()
+            if stage != '0' or mode not in ('100644', '100755'):
+                raise ValueError('Staged path must be a resolved regular file: ' + name)
+            index_hash = hashlib.sha256(git(root, 'cat-file', 'blob', blob)).hexdigest()
+        current_hash = digest(path)
+        matches = index_hash == current_hash
+        if not matches:
+            packet['errors'].append('Staged bytes differ from current source/evidence: ' + name)
+        staged.append({'path': name, 'stagedSha256': index_hash, 'workingSha256': current_hash,
+                       'matchesWorkingTree': matches})
+    if not staged:
+        packet['warnings'].append('Nothing is staged; this review has no commit contents to check.')
+    packet.update(staged=staged, explicitSupportPaths=includes,
+                  reviewBoundary='Read-only scope and byte comparison. Does not stage, commit, push, run QA or certify observations.')
+    return packet
+
+
 def validate(root, record, reqs, state):
     errors, warnings = [], []
     if record.get('schema') != 1 or not record.get('owner'):
@@ -372,7 +450,9 @@ def validate(root, record, reqs, state):
     previous = record['sourceHashes']
     seen_verdicts = set()
     for item in iterations:
-        expected_progress = (item['outcome'] == 'production-fix' and product_delta(item['sourceHashes'], previous)) or (item['outcome'] == 'scenario-verdict' and any(verdict_key(c) not in seen_verdicts for c in item.get('claims', [])))
+        if item.get('progressPolicy', 1) not in (1, 2):
+            errors.append('Unknown iteration progress policy')
+        expected_progress = (item['outcome'] == 'production-fix' and product_delta(item['sourceHashes'], previous, item.get('progressPolicy', 1) == 2)) or (item['outcome'] == 'scenario-verdict' and any(verdict_key(c) not in seen_verdicts for c in item.get('claims', [])))
         if item['meaningfulProgress'] != expected_progress:
             errors.append('Iteration progress assertion differs from source hashes/recorded verdict')
         previous = item['sourceHashes']
@@ -403,6 +483,12 @@ def main():
     subs.add_parser('status'); check = subs.add_parser('check')
     subs.add_parser('doctor')
     subs.add_parser('handoff')
+    backlog = subs.add_parser('remaining', help='Read-only original scenario checklist from recorded ledger dispositions')
+    backlog.add_argument('--requirement', action='append', default=[])
+    backlog.add_argument('--status', action='append', choices=['unadjudicated', 'missing', 'implemented-unverified', 'partial', 'failed', 'blocked', 'accepted'])
+    backlog.add_argument('--summary', action='store_true', help='Counts only; omit scenario details')
+    staging = subs.add_parser('review', help='Read-only participant handoff and staged contribution review')
+    staging.add_argument('--include', action='append', default=[], help='Explicitly owned supporting file; cannot override protected foreign paths')
     claim = subs.add_parser('claim', help='Print a record-compatible observation scaffold; does not write or accept')
     claim.add_argument('--requirement', required=True)
     claim.add_argument('--scenario', required=True)
@@ -452,6 +538,9 @@ def main():
             fcntl.flock(lock, fcntl.LOCK_EX)
         if args.command == 'doctor':
             result.update(doctor(root, args.record))
+        elif args.command == 'remaining':
+            result.update(remaining(root, reqs, args.requirement,
+                args.status or ['unadjudicated', 'missing', 'implemented-unverified', 'partial', 'failed', 'blocked'], args.summary))
         elif args.command == 'plan':
             s = normalize_slice(root, {'id': args.id, 'requirements': args.requirement,
                 'scenarios': args.scenario, 'paths': args.path, 'before': args.before,
@@ -460,11 +549,13 @@ def main():
                 'requirement': i, 'verification': reqs[i]['verification'],
                 'scenarios': [x for x in reqs[i]['scenarios'] if x['name'] in s['scenarios']]
             } for i in s['requirements']])
-        elif args.command in ('handoff', 'claim'):
+        elif args.command in ('handoff', 'claim', 'review'):
             if not path.exists():
                 raise ValueError('No participant record to resume; inspect status and start an owned slice first')
             if args.command == 'claim':
                 result.update(scaffold_claim(root, read(path), reqs, state, args))
+            elif args.command == 'review':
+                result.update(review(root, read(path), reqs, state, args.include))
             else:
                 result.update(handoff(root, read(path), reqs, state))
         elif args.command == 'inspect':
@@ -528,7 +619,7 @@ def main():
                 previous = record['iterations'][-1]['sourceHashes'] if record['iterations'] else record['sourceHashes']
                 seen_verdicts = {verdict_key(c) for i in record['iterations'] for c in i.get('claims', [])}
                 progress = (args.outcome == 'production-fix' and product_delta(hashes, previous)) or (args.outcome == 'scenario-verdict' and any(verdict_key(c) not in seen_verdicts for c in claims))
-                record['iterations'].append({'atUTC': now(), 'outcome': args.outcome, 'summary': args.summary, 'sourceHashes': hashes, 'meaningfulProgress': progress, 'claims': claims, 'sourceRevision': git(root, 'rev-parse', 'HEAD').decode().strip()})
+                record['iterations'].append({'atUTC': now(), 'outcome': args.outcome, 'summary': args.summary, 'sourceHashes': hashes, 'meaningfulProgress': progress, 'progressPolicy': 2, 'claims': claims, 'sourceRevision': git(root, 'rev-parse', 'HEAD').decode().strip()})
                 errors, warnings = validate(root, record, reqs, state)
                 if not errors:
                     write_record(path, record)
