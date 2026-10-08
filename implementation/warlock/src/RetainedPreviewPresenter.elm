@@ -1,4 +1,4 @@
-module RetainedPreviewPresenter exposing (Model, initial, present, receive, receiveRealm, image, visuals, observe, metadata, enrollment, feedback, enrollRealm, closeRealm, quarantineRealm, realmStatus, issued, retry)
+module RetainedPreviewPresenter exposing (Model, initial, present, receive, receiveRealm, image, visuals, observe, metadata, enrollment, feedback, enrollRealm, closeRealm, quarantineRealm, retireLegacy, realmStatus, issued, retry)
 
 import Html exposing (Html)
 import Json.Decode as D
@@ -37,6 +37,9 @@ commit ((Model _ grant ingress deferred) as prior) (candidate,output) =
 
 present : Maybe SurfaceRenderer.Snapshot -> Model -> (Model,E.Value)
 present snapshot ((Model policy _ _ _) as prior) = commit prior (Preview.present snapshot policy)
+
+retireLegacy : D.Value -> Model -> (Model,E.Value)
+retireLegacy raw ((Model policy _ _ _) as prior) = commit prior (Preview.retireLegacy raw policy)
 
 receive : Maybe SurfaceRenderer.Snapshot -> D.Value -> Model -> (Model,E.Value)
 receive snapshot raw ((Model policy _ _ _) as prior) = commit prior (Preview.receive snapshot raw policy)

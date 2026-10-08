@@ -6,7 +6,7 @@ import PreviewLifecycle as Preview
 import NativeFamilyPreviewSource
 import UInt64 exposing (Counter)
 
-type Source = MonitorPlane | ClientMain | StyleCroppedFamily | GeneratedBackdropFamily Counter
+type Source = MonitorPlane | ClientMain | StyleCroppedFamily | PickerFamily | GeneratedBackdropFamily Counter
 type Observation = Observation { source : Source, native : Preview.Scope, raw : D.Value, request : Counter, maximumTransferBytes : Counter }
 
 strict : List String -> D.Decoder a -> D.Decoder a
@@ -20,9 +20,10 @@ binding = strict ["lifetime","session","frontend"] (D.map3 (\a b c -> (a,b,c)) (
 
 decoder : D.Decoder Observation
 decoder = D.field "kind" D.string |> D.andThen (\kind ->
-    if kind == "preview-family-style-crop-scope" || kind == "preview-family-backdrop-crop-scope" then
+    if kind == "preview-family-style-crop-scope" || kind == "preview-family-backdrop-crop-scope" || kind == "preview-picker-family-scope" then
         D.map (\family -> Observation { source=(case NativeFamilyPreviewSource.plane family of
             NativeFamilyPreviewSource.Transparent -> StyleCroppedFamily
+            NativeFamilyPreviewSource.PickerTransparent -> PickerFamily
             NativeFamilyPreviewSource.GeneratedOpaque color -> GeneratedBackdropFamily color), native=NativeFamilyPreviewSource.scope family, raw=NativeFamilyPreviewSource.rawScope family, request=NativeFamilyPreviewSource.requestIdentity family, maximumTransferBytes=NativeFamilyPreviewSource.maximumTransfer family }) NativeFamilyPreviewSource.decoder
     else legacyDecoder)
 
@@ -58,4 +59,5 @@ encodeSummary (Observation value) = E.object ((case value.source of
     MonitorPlane -> "monitor"
     ClientMain -> "client"
     StyleCroppedFamily -> "style-cropped-family-unqualified"
-    GeneratedBackdropFamily _ -> "generated-backdrop-family-unqualified")),("request",E.string (UInt64.string value.request)),("maximumTransferBytes",E.string (UInt64.string value.maximumTransferBytes)),("previewEligible",E.bool False),("scope",value.raw)])
+    PickerFamily -> "picker-native-family-style-crop"
+    GeneratedBackdropFamily _ -> "generated-backdrop-family-unqualified")),("request",E.string (UInt64.string value.request)),("maximumTransferBytes",E.string (UInt64.string value.maximumTransferBytes)),("previewEligible",E.bool (value.source==PickerFamily)),("scope",value.raw)])

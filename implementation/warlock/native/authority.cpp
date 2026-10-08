@@ -58,6 +58,7 @@
 #include "family_crop_fd.hpp"
 #include "family_style_crop_fd.hpp"
 #include "generated_backdrop_fd.hpp"
+#include "picker-probe-table.hpp"
 #include "family_crop_capture.hpp"
 #include "source_epoch.hpp"
 #include <hyprland/src/protocols/core/Compositor.hpp>
@@ -126,7 +127,12 @@ struct CaptureProbe {
     std::unique_ptr<const preview::capture::OwnedPng> image;
     uint64_t privacy=1,rendering=1,scene=1,content=1,deadline=1;bool revoked=false;bool client=false;bool popup=false;bool family=false;bool crop=false;bool styled=false;bool backdrop=false;uint32_t generatedColor=0;CBox cropBounds{};double cropScale=0;std::vector<preview::FamilyNode> capturedMembers{};std::unique_ptr<ExportedImage> exported{};
 };
-std::map<pid_t,CaptureProbe> captureProbes;
+std::map<CaptureKey,CaptureProbe> captureProbes;
+void erasePeerCaptures(pid_t peer) {std::erase_if(captureProbes,[&](const auto& item){return item.first.peer==peer;});}
+uint64_t productCaptureSubject(pid_t peer,uint64_t subject,uint64_t request) {
+    const auto found=captureProbes.find(CaptureKey(peer,subject));
+    return found!=captureProbes.end() && subject && found->second.request==request ? subject : 0;
+}
 struct PreviewSource {preview::SourceEpoch epoch;WP<CWLSurfaceResource> surface;CHyprSignalListener commit,destroy;bool dead=false;};
 std::map<uint64_t,std::unique_ptr<PreviewSource>> previewSources;
 std::map<uint64_t,preview::capture::SurfaceRevisionTracker> clientTrees;
@@ -726,6 +732,7 @@ void parsedMember(JsonParser*, JsonObject* object, const gchar* member, gpointer
 #include "source-scope.inc"
 #include "capture-probe.inc"
 #include "client-probe.inc"
+#include "picker-preview.inc"
 #include "capture-fd-server.inc"
 #include "capture-resources.inc"
 
@@ -760,10 +767,10 @@ std::string observe(eHyprCtlOutputFormat, std::string request) {
             // Retire dead/reused PIDs, bound registration independently of windows.
             std::erase_if(sessions,[](const auto& entry) {
                 if(startTime(entry.first)==entry.second.start) return false;
-                switcherSelections.erase(entry.second.id);captureProbes.erase(entry.first);grantRegistry->detach(verifiedPeer(entry.first,entry.second.start));return true;
+                switcherSelections.erase(entry.second.id);erasePeerCaptures(entry.first);grantRegistry->detach(verifiedPeer(entry.first,entry.second.start));return true;
             });
-            if(auto old=captureProbes.find(peer);old!=captureProbes.end() && old->second.exported) throw std::runtime_error("preview-import-outstanding");
-            captureProbes.erase(peer);
+            if(std::ranges::any_of(captureProbes,[&](const auto& item){return item.first.peer==peer && item.second.exported;})) throw std::runtime_error("preview-import-outstanding");
+            erasePeerCaptures(peer);
             const auto admitted=grantRegistry->hello(verifiedPeer(peer,start));
             if(admitted.status!=Elm::GrantRetirement::Status::Admitted) throw std::runtime_error("grant-bound-or-exhausted");
             if(!sessions.contains(peer)) sessions.emplace(peer,Session{start,admitted.binding.session,admitted.binding.frontend,0,0,"","",{}});
@@ -827,6 +834,8 @@ std::string observe(eHyprCtlOutputFormat, std::string request) {
             }
         } else if (operation=="preview-client-resource-state-request" || operation=="preview-client-resource-release-request" || operation=="preview-client-resource-retire-request") {
             reply=clientResources(peer,start,operation,object);
+        } else if(operation.starts_with("preview-picker-family-")) {
+            reply=pickerFamilyProbe(peer,start,operation,object);
         } else if ((operation.starts_with("preview-client-") || (operation=="preview-popup-scope-request" || operation=="preview-family-scope-request" || operation=="preview-family-style-scope-request" || operation=="preview-family-style-crop-scope-request" || operation=="preview-family-backdrop-crop-scope-request" || operation=="preview-family-effect-facts-request"))) {
             reply=clientProbe(peer,start,operation,object);
         } else if ((operation.starts_with("preview-capture-probe-") || operation=="preview-popup-scoped-request" || operation=="preview-popup-state-request" || operation=="preview-popup-retire-request" || operation=="preview-family-scoped-request" || operation=="preview-family-state-request" || operation=="preview-family-retire-request" || operation=="preview-family-crop-scoped-request" || operation=="preview-family-crop-state-request" || operation=="preview-family-crop-retire-request" || operation=="preview-family-style-crop-scoped-request" || operation=="preview-family-style-crop-state-request" || operation=="preview-family-style-crop-retire-request" || operation=="preview-family-backdrop-crop-scoped-request" || operation=="preview-family-backdrop-crop-state-request" || operation=="preview-family-backdrop-crop-retire-request")) {

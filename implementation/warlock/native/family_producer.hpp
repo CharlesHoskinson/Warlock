@@ -4,10 +4,10 @@
 #include "preview_delivery.hpp"
 
 namespace preview::bridge {
-inline std::optional<uri::NativeTime> familyNativeTime(Native& native,const stylecropfd::Header& frame) noexcept {
+inline std::optional<uri::NativeTime> familyNativeTime(Native& native,const stylecropfd::Header& frame,bool picker=false) noexcept {
     try {
         auto observed=native.familyQuery(fd::Observe,frame[fd::Capture],frame[fd::Subject],frame[fd::Transfer]);if(!observed)return {};
-        const auto& h=observed->words;auto current=observeFamilySource(native,{frame[fd::Subject]});const auto& s=current.scope;
+        const auto& h=observed->words;auto current=observeFamilySource(native,{frame[fd::Subject]},FamilyPlane::Transparent,picker);const auto& s=current.scope;
         if(!stylecropfd::imageHeader(frame) || !stylecropfd::imageHeader(h) || !(h[fd::Flags]&fd::Present) || !s.present || s.locked || !s.gpuReady || s.binding!=native.binding() || s.context.lifetime.value!=frame[fd::Lifetime] || s.context.incarnation.value!=frame[fd::Subject] || s.context.output.value!=frame[fd::Output] || s.context.privacy.value!=frame[fd::Privacy] || s.context.rendering.value!=frame[fd::Rendering] || h[fd::Now]<frame[fd::Now] || s.now<h[fd::Now] || s.now>=frame[fd::Expires])return {};
         return uri::NativeTime{s.clock,s.now};
     }catch(...){return {};}
@@ -118,9 +118,9 @@ class FamilyProducer {
     FamilySourceObservation observed_;
     stylecropfd::Header header_{};
     backdropfd::Header backdropHeader_{};
-    bool haveHeader_{},attempted_{},cleanup_{},exportReleased_{},producerRetired_{},mappingClosed_{},retirementPending_{},scopeDenied_{};
+    bool haveHeader_{},attempted_{},cleanup_{},exportReleased_{},producerRetired_{},mappingClosed_{},retirementPending_{},scopeDenied_{},staleRefused_{};
     uri::Endpoint endpoint_;
-    uint64_t popup_,lease_;
+    uint64_t popup_,lease_,publication_;
     Job job_;
     std::optional<FamilyCapture> capture_;
     std::optional<Packet> packet_;
@@ -135,7 +135,7 @@ class FamilyProducer {
             require(backdropMapping_?backdropMapping_->close():mapping_->close(),"Physical client mapping and FD close");mappingClosed_=true;
             if(!exportReleased_) {require(releaseFamily(native_,*capture_,(backdropMapping_?backdropHeader_[fd::Transfer]:header_[fd::Transfer])),"Exact client export release");exportReleased_=true;}
             if(!producerRetired_) {
-                const auto state=retireFamilyState(native_,observed_.plane);retirementPending_=state==ClientRetirement::PendingLock;
+                const auto state=retireFamilyState(native_,observed_.plane,job_.context.incarnation.value,observed_.picker);retirementPending_=state==ClientRetirement::PendingLock;
                 if(retirementPending_)return false;
                 producerRetired_=true;
             }
@@ -143,9 +143,9 @@ class FamilyProducer {
         });
     }
 public:
-    FamilyProducer(Native& native,uint64_t popup,uint64_t subject,uint64_t publication,uint64_t lease,FamilyPlane plane=FamilyPlane::Transparent):
-        native_(native),observed_(observeFamilySource(native,{subject},plane)),
-        endpoint_({1,4,1,128ULL*1024*1024},1,1,[this](uint64_t)->std::optional<uri::NativeTime>{return haveHeader_?(observed_.plane==FamilyPlane::GeneratedBackdrop?familyNativeTime(native_,backdropHeader_):familyNativeTime(native_,header_)):std::nullopt;}),popup_(popup),lease_(lease) {
+    FamilyProducer(Native& native,uint64_t popup,uint64_t subject,uint64_t publication,uint64_t lease,FamilyPlane plane=FamilyPlane::Transparent,bool picker=false):
+        native_(native),observed_(observeFamilySource(native,{subject},plane,picker)),
+        endpoint_({1,4,1,128ULL*1024*1024},1,1,[this](uint64_t)->std::optional<uri::NativeTime>{return haveHeader_?(observed_.plane==FamilyPlane::GeneratedBackdrop?familyNativeTime(native_,backdropHeader_):familyNativeTime(native_,header_,observed_.picker)):std::nullopt;}),popup_(popup),lease_(lease),publication_(publication) {
         require(popup && publication && lease && !observed_.wire.empty(),"Trusted qualification source/stamp");
         const auto& scope=observed_.scope;require(scope.binding==native_.binding() && scope.present && scope.sourceLive && !scope.locked && scope.gpuReady,"Own live native client scope");
         require(scope.now<=UINT64_MAX-2000000000ULL,"Original client deadline representable");
@@ -162,25 +162,45 @@ public:
     const Job& job()const{return job_;}
     uint64_t lease()const{return lease_;}
     std::string currentURI()const{return packet_ && !cleanup_ && !scopeDenied_?uri::encode(packet_->token):"";}
+    std::string refreshRefused(uint64_t publication,uint64_t lease) {
+        if(!observed_.picker || !staleRefused_ || !publication || lease!=lease_ || !empty())return "[]";
+        require(!capture_ && !mapped() && !attempted_,"Acknowledged no-capture refusal before changed source demand");
+        auto fresh=observeFamilySource(native_,job_.context.incarnation,observed_.plane,true);
+        if(fresh.scope.context==job_.context)return "[]";
+        auto next=endpoint_.nativeDemand([&](auto& queue){return reserveFamilyResume(queue,job_,observed_,lease_-1,fresh,publication,lease);});
+        if(!next)return "[]";
+        observed_=fresh;job_=*next;publication_=publication;cleanup_=false;staleRefused_=false;
+        return "["+familySeed(observed_,publication,lease)+","+familyRequest(job_)+"]";
+    }
     std::string resume(uint64_t publication,uint64_t lease) {
         // No source query or new reservation while old physical or proof
         // ownership remains. New demand comes from the admitted GTK gate.
         if(!publication || lease<=lease_ || !empty())return "[]";
         require(!mapped() && (!attempted_ || (mappingClosed_ && exportReleased_ && producerRetired_ && !retirementPending_)),"Actual old producer retirement before new source query");
         FamilySourceObservation fresh;
-        try {fresh=observeFamilySource(native_,job_.context.incarnation,observed_.plane);}
+        try {fresh=observeFamilySource(native_,job_.context.incarnation,observed_.plane,observed_.picker);}
         catch(const ScopeDenied&){return "[]";}
         auto next=endpoint_.nativeDemand([&](auto& queue){return reserveFamilyResume(queue,job_,observed_,lease_,fresh,publication,lease);});
         if(!next)return "[]";
-        observed_=fresh;job_=*next;lease_=lease;header_={};backdropHeader_={};haveHeader_=false;attempted_=false;cleanup_=false;
-        exportReleased_=false;producerRetired_=false;mappingClosed_=false;retirementPending_=false;scopeDenied_=false;capture_.reset();packet_.reset();
+        observed_=fresh;job_=*next;lease_=lease;publication_=publication;header_={};backdropHeader_={};haveHeader_=false;attempted_=false;cleanup_=false;
+        exportReleased_=false;producerRetired_=false;mappingClosed_=false;retirementPending_=false;scopeDenied_=false;staleRefused_=false;capture_.reset();packet_.reset();
         return "["+familySeed(observed_,publication,lease_)+","+familyRequest(job_)+"]";
     }
     std::string command(const std::string& identity,const std::string& text) {
         const auto command=decodeFamilyCommand(identity,text,job_,packet_);
         if(command==ClientCommand::Acquire) {
             require(!attempted_ && !cleanup_,"Single original physical client capture");attempted_=true;
-            capture_=captureFamily(native_,observed_,job_.deadline);std::unique_ptr<const Buffer> payload;uint64_t expires=0;
+            try {capture_=captureFamily(native_,observed_,job_.deadline);}
+            catch(const PickerCaptureRefused& refused) {
+                // The authenticated exact request proved no native capture was
+                // installed. Its original broker publishes a retained Refused
+                // proof; only Elm's exact Ack can release this reservation.
+                endpoint_.native([&](auto& b){return b.producerRefused(1,job_);});
+                attempted_=false;cleanup_=true;staleRefused_=refused.stale;
+                g_print("picker-native-refused: %s\n",refused.what());fflush(stdout);
+                return "[]";
+            }
+            std::unique_ptr<const Buffer> payload;uint64_t expires=0;
             if(observed_.plane==FamilyPlane::GeneratedBackdrop) {
                 auto received=native_.backdropQuery(fd::Get,capture_->request,job_.context.incarnation.value);
                 require(received && received->rights.size()==1 && familyFrameMatches(received->words,*capture_),"Exact owned generated backdrop descriptor");backdropHeader_=received->words;haveHeader_=true;
@@ -190,7 +210,7 @@ public:
                 require(received && received->rights.size()==1 && familyFrameMatches(received->words,*capture_),"Exact owned client descriptor");header_=received->words;haveHeader_=true;
                 auto mapping=std::make_unique<stylecropfd::Mapped>(std::move(received->rights.front()),header_,observed_.maximumTransferBytes);mapping_=mapping.get();payload=std::move(mapping);expires=header_[fd::Expires];
             }
-            auto fresh=observeFamilySource(native_,job_.context.incarnation,observed_.plane);require(fresh.scope.context==job_.context && fresh.scope.binding==job_.binding && fresh.scope.clock==job_.clock && fresh.generatedColor==observed_.generatedColor && fresh.scope.now<job_.deadline,"Native family source/deadline still current before offer");
+            auto fresh=observeFamilySource(native_,job_.context.incarnation,observed_.plane,observed_.picker);require(fresh.scope.context==job_.context && fresh.scope.binding==job_.binding && fresh.scope.clock==job_.clock && fresh.generatedColor==observed_.generatedColor && fresh.scope.now<job_.deadline,"Native family source/deadline still current before offer");
             auto offered=endpoint_.native([&](auto& b){return b.allocate(1,job_,payload,expires,Packet::Fidelity::Family,15);});require(offered.receipts.size()==1 && offered.receipts.front().packet && !payload,"Physical client payload adopted");
             const auto before=*offered.receipts.front().packet;auto ready=endpoint_.native([&](auto& b){return b.producerComplete(1,job_);});require(ready.receipts.size()==1 && ready.receipts.front().packet,"Completed immutable client copy");packet_=*ready.receipts.front().packet;
             // Readiness concerns encoded immutable storage, never hardware presentation.
@@ -209,14 +229,15 @@ public:
         // Original native source clock, not a frontend timer or renewed deadline.
         std::optional<FamilySourceObservation> currentObservation;std::string deniedEvent;
         endpoint_.native([&](auto& broker){
-            try {auto fresh=observeFamilySource(native_,job_.context.incarnation,observed_.plane);require(admitFamilyObservation(broker,job_,fresh),"Coherent own client authority update");currentObservation=fresh;}
+            try {auto fresh=observeFamilySource(native_,job_.context.incarnation,observed_.plane,observed_.picker);require(admitFamilyObservation(broker,job_,fresh),"Coherent own client authority update");currentObservation=fresh;}
             catch(const ScopeDenied& denied) {deniedEvent=familyDenied(broker,job_,*packet_,denied);scopeDenied_=true;}
         });
         if(!deniedEvent.empty())return "["+deniedEvent+"]";
         require(currentObservation.has_value(),"Native observation or exact denial");const auto& current=*currentObservation;
         const bool changed=familyFactsChanged(observed_,current);observed_=current;
-        const bool newPresentation=endpoint_.native([&](auto& broker){return admitRetainedFamilyPresentation(broker,job_,current,*packet_,lease_,publication,lease);});
-        if(newPresentation)lease_=lease;
+        const bool refresh=observed_.picker && lease==lease_ && publication>publication_;
+        const bool newPresentation=endpoint_.native([&](auto& broker){return admitRetainedFamilyPresentation(broker,job_,current,*packet_,refresh?lease_-1:lease_,publication,lease);});
+        if(newPresentation){lease_=lease;publication_=publication;}
         std::string events;
         // The actual GTK gate supplies this stamp. Hidden/retired projections
         // receive observations of their retained owner, never a fresh enrollment.

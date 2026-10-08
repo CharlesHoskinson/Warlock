@@ -544,7 +544,9 @@ static void receive(WebKitUserContentManager *manager,WebKitJavascriptResult *re
     fflush(stdout);
 }
 static gboolean (*native_icon_dispatch)(WebKitURISchemeRequest*);
+static gboolean (*native_picker_dispatch)(WebKitURISchemeRequest*);
 static void scheme(WebKitURISchemeRequest *request,gpointer unused) {
+    if (native_picker_dispatch && native_picker_dispatch(request)) return;
     if (unused && preview_uri_router_dispatch((PreviewURIRouter*)unused,request)) return;
     if (!unused && preview_uri_dispatch(native_preview_endpoint,request)) return;
     if (native_icon_dispatch && native_icon_dispatch(request)) return;

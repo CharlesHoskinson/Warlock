@@ -6,7 +6,7 @@ import PreviewLifecycle as Preview
 import Set
 import UInt64 exposing (Counter)
 
-type Plane = Transparent | GeneratedOpaque Counter
+type Plane = Transparent | PickerTransparent | GeneratedOpaque Counter
 
 type Observation = Observation { plane : Plane, native : Preview.Scope, raw : D.Value, crop : Crop, members : List Member, styles : List Style, request : Counter, maximum : Counter }
 type alias Crop = { x : String, y : String, width : Int, height : Int, scale : Float }
@@ -66,6 +66,7 @@ reachesRoot root members remaining current =
 decoder : D.Decoder Observation
 decoder = D.field "kind" D.string |> D.andThen (\kind ->
     if kind == "preview-family-style-crop-scope" then familyDecoder Transparent
+    else if kind == "preview-picker-family-scope" then familyDecoder PickerTransparent
     else if kind == "preview-family-backdrop-crop-scope" then
         D.field "generatedBackdrop" backdropDecoder |> D.andThen (GeneratedOpaque >> familyDecoder)
     else D.fail "Explicit native family source kind")
@@ -81,12 +82,15 @@ familyDecoder : Plane -> D.Decoder Observation
 familyDecoder plane_ =
     let fields = case plane_ of
             Transparent -> []
+            PickerTransparent -> []
             GeneratedOpaque _ -> [ "generatedBackdrop" ]
         expectedKind = case plane_ of
             Transparent -> "preview-family-style-crop-scope"
+            PickerTransparent -> "preview-picker-family-scope"
             GeneratedOpaque _ -> "preview-family-backdrop-crop-scope"
         expectedLabel = case plane_ of
             Transparent -> "native-family-style-crop-channels-unqualified"
+            PickerTransparent -> "picker-native-family-style-crop"
             GeneratedOpaque _ -> "native-generated-backdrop-family-crop-unqualified"
     in strict (fields ++ [ "protocolVersion", "kind", "binding", "requestId", "scope", "maximumTransferBytes", "previewEligible", "scopeKind", "members", "styles", "crop" ])
     (D.map8 (\version kind owner request raw maximum eligible label -> { version=version, kind=kind, owner=owner, request=request, raw=raw, maximum=maximum, eligible=eligible, label=label })
@@ -102,7 +106,7 @@ familyDecoder plane_ =
                     withinBudget = String.length maximum < 9 || (String.length maximum == 9 && maximum <= "134217728")
                 in case (D.decodeValue Preview.scopeDecoder wire.raw,D.decodeValue facts wire.raw) of
                     (Ok native,Ok current) ->
-                        if wire.version == 3 && wire.kind == expectedKind && wire.label == expectedLabel && not wire.eligible && wire.owner == current.own && current.lifetime == current.clock && aligned && withinBudget &&
+                        if wire.version == 3 && wire.kind == expectedKind && wire.label == expectedLabel && wire.eligible==(plane_==PickerTransparent) && wire.owner == current.own && current.lifetime == current.clock && aligned && withinBudget &&
                             List.length ids > 0 && List.length ids <= 256 && Set.size (Set.fromList ids) == List.length ids && List.sort ids == List.sort styleIds && List.all (\member -> reachesRoot current.root members (List.length members) member.incarnation) members then
                             D.succeed (Observation { plane=plane_, native=native, raw=wire.raw, crop=crop, members=members, styles=styles, request=wire.request, maximum=wire.maximum })
                         else D.fail "Native family correlation"
@@ -118,10 +122,12 @@ summary : Observation -> E.Value
 summary (Observation value) = E.object
     ((case value.plane of
         Transparent -> []
+        PickerTransparent -> []
         GeneratedOpaque color -> [("generatedBackdrop",E.object [("kind",E.string "native-opaque-generated-color"),("colorARGB",E.string (UInt64.string color))])]) ++
     [ ("source",E.string (case value.plane of
         Transparent -> "native-style-cropped-family-unqualified"
-        GeneratedOpaque _ -> "native-generated-backdrop-family-crop-unqualified")), ("scope",value.raw), ("request",E.string (UInt64.string value.request)), ("maximumTransferBytes",E.string (UInt64.string value.maximum)), ("previewEligible",E.bool False)
+        PickerTransparent -> "picker-native-family-style-crop"
+        GeneratedOpaque _ -> "native-generated-backdrop-family-crop-unqualified")), ("scope",value.raw), ("request",E.string (UInt64.string value.request)), ("maximumTransferBytes",E.string (UInt64.string value.maximum)), ("previewEligible",E.bool (value.plane==PickerTransparent))
     , ("memberCount",E.int (List.length value.members)), ("styleCount",E.int (List.length value.styles))
     , ("crop",E.object [ ("pixelX",E.string value.crop.x), ("pixelY",E.string value.crop.y), ("width",E.int value.crop.width), ("height",E.int value.crop.height), ("scale",E.float value.crop.scale) ]) ])
 

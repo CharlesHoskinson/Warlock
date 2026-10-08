@@ -1,4 +1,4 @@
-module PreviewPresenter exposing (Model, initial, present, receive, image, visual, observe, metadata, enrollment, feedback, enrollRealm, receiveRealm, realmStatus, closeRealm, quarantineRealm)
+module PreviewPresenter exposing (Model, initial, present, receive, image, visual, observe, metadata, enrollment, feedback, enrollRealm, receiveRealm, realmStatus, closeRealm, quarantineRealm, retireLegacy)
 
 import Dict exposing (Dict)
 import Html exposing (Html, span, text)
@@ -92,6 +92,16 @@ quarantineOwned ((Model entries catalog ledger scoped) as prior) =
                 in (Dict.insert identity closed next,emitted ++ [{identity=identity,commands=commands}])
             (retained,cleanup) = Dict.foldl step (Dict.empty,[]) entries
         in (Model retained catalog ledger {scoped | closing=True},encode cleanup)
+
+-- The trusted host supplies its own binding during receiver teardown. This
+-- calls the existing lifecycle retirement; it creates no native completion.
+retireLegacy : D.Value -> Model -> (Model,E.Value)
+retireLegacy raw ((Model entries _ _ scoped) as prior) =
+    case D.decodeValue binding raw of
+        Ok owner ->
+            if scoped.grant == Nothing && List.all (\entry -> entry.binding == owner) (Dict.values entries) then quarantineOwned prior
+            else (prior,encode [])
+        Err _ -> (prior,encode [])
 
 quarantineRealm : Realm.Domain -> Model -> (Model,E.Value)
 quarantineRealm domain ((Model _ _ _ scoped) as prior) =
@@ -221,6 +231,7 @@ familyFrameOwns : Maybe NativePreviewSource.Source -> D.Value -> Bool
 familyFrameOwns sourceKind wire =
     if not (case sourceKind of
         Just NativePreviewSource.StyleCroppedFamily -> True
+        Just NativePreviewSource.PickerFamily -> True
         Just (NativePreviewSource.GeneratedBackdropFamily _) -> True
         _ -> False) then True
     else
@@ -254,7 +265,14 @@ encode outputs = E.list (\out -> E.object [("identity",E.string out.identity),("
 present : Maybe SurfaceRenderer.Snapshot -> Model -> (Model,E.Value)
 present snapshot (Model entries catalog ledger scoped) =
     let advance identity entry (next,outputs) =
-            let current = entry.stamp |> Maybe.map (\stamp -> snapshot |> Maybe.map (\shown -> same stamp shown && SurfaceRenderer.enabled True identity shown) |> Maybe.withDefault False) |> Maybe.withDefault False
+            let current = entry.stamp |> Maybe.map (\stamp -> snapshot |> Maybe.map (\shown ->
+                    SurfaceRenderer.enabled True identity shown &&
+                    (same stamp shown || (entry.source == Just NativePreviewSource.PickerFamily &&
+                        SurfaceRenderer.mode shown == "picker" && stamp.lease == SurfaceRenderer.lease shown &&
+                        UInt64.compare (SurfaceRenderer.publication shown) stamp.publication == GT))) |> Maybe.withDefault False) |> Maybe.withDefault False
+                -- A product family keeps custody across publications in the
+                -- same admitted lease. Its old stamp still hides the image;
+                -- only a fresh native source seed can authorize new pixels.
             in if current || entry.stamp == Nothing then (Dict.insert identity entry next,outputs)
                else
                 let (closed,commands) = closeEntry entry

@@ -6,23 +6,26 @@
       "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
     },
     "plugin": {
-      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791489372596689127/elm-window-geometry-authority.so",
-      "sha256": "aea28fae8b9b25321d42bfe1da60e7dfd0ffd468f000df715e1a644094f6d28e"
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791491150091172898/elm-window-geometry-authority.so",
+      "sha256": "712699d85400872fff6702b9895404d2014e9f5820d776ef8394e742c17890a1"
     },
     "aquamarine": {
       "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
       "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
     }
   },
-  "authorityReport": "implementation/warlock/qa/runs/native-authority-1791489372596689127/report.json",
-  "authorityReportSHA256": "8d7fa22af9507ce9d67aee30e1e6048ec4c1728e127e645dce7194fd68b72f57",
+  "authorityReport": "implementation/warlock/qa/runs/native-authority-1791491150091172898/report.json",
+  "authorityReportSHA256": "2602d2f710b70f65a25be343bdeef4c58ec338a1cdc18dd8aae0d222868cc230",
   "authorityInputs": {
-    "native/authority.cpp": "18bf3ee6f13efa08a2bf3790648169eb75ec7449e43b5f7f29765924a4d6d511",
+    "native/authority.cpp": "541cbacbc799f600c81ebd61ad0d2ece3aff3b01919e787d017c8108c362ec85",
     "native/navigation-modal.hpp": "f3a1fdabeaa4abdaa3bcd839e0a3b62854a844cd791dd338d8f1a3e5bb488c1e",
     "native/geometry-effects.inc": "d943d7c89242ea2f4c4b04fe683097e17d69fd41b2d2319814cfc93b0783e271",
     "native/snap-placement.inc": "736badc0ebc3fd423286778539a453f1a704d26b3f41a8fa6416d739b4015d64",
     "native/transfer-workspace.inc": "5e1a64474eb248e9ed13d0860d1fe1aa1ec99eb2b3984723645d89e6beddb026",
-    "native/motion-profile.inc": "60ec1e00982bc1e58be76805d4be52faad12c15f5822521dddf4d3042e7c4b62"
+    "native/motion-profile.inc": "60ec1e00982bc1e58be76805d4be52faad12c15f5822521dddf4d3042e7c4b62",
+    "native/picker-preview.inc": "dd012861b1f54943bb82d23378766a35d644c9ca561b5a412dd048ee05c3eb00",
+    "native/picker-probe-table.hpp": "82663226635882932bd6ebdb298d63f1ca0be68f7e271b9e56d141cb06e1492f",
+    "native/capture-fd-server.inc": "b81d77ec641f05ecbe90ffbef38fc90935f8ec6d56e636b5bafc04cc7ac31557"
   },
   "unchangedRuntimePreflight": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v204/qa/preflight.json",
   "unchangedRuntimePreflightSHA256": "d0b121978e8833ad03da40aab848b8f80442abe5cfc7540d4582a812e1e8cc26",

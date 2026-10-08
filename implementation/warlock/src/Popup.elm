@@ -22,8 +22,9 @@ port nativePreviewQuarantine : (D.Value -> msg) -> Sub msg
 port nativePreviewClosed : (D.Value -> msg) -> Sub msg
 port nativePreviewIssued : (D.Value -> msg) -> Sub msg
 port nativePreviewRetry : (D.Value -> msg) -> Sub msg
+port nativePreviewRetirement : (D.Value -> msg) -> Sub msg
 
-type Msg = Present D.Value | Action E.Value | NativePreview D.Value | NativeGrant D.Value | NativeQuarantine D.Value | NativeClosed D.Value | NativeIssued D.Value | NativeRetry D.Value
+type Msg = Present D.Value | Action E.Value | NativePreview D.Value | NativeGrant D.Value | NativeQuarantine D.Value | NativeClosed D.Value | NativeIssued D.Value | NativeRetry D.Value | NativeRetirement D.Value
 type Composition = Idle | Preediting { baseline : String, before : Maybe String }
 type alias Model = { presentation : Presentation.Model, previews : Preview.Model, pendingQuery : Maybe String, composition : Composition, lastQuery : Maybe (String, UInt64.Counter, UInt64.Counter) }
 
@@ -36,7 +37,7 @@ isComposing model = model.composition/=Idle
 main : Program () Model Msg
 main = Browser.element
     { init=\_ -> (initial,Cmd.none)
-    , subscriptions=\_ -> Sub.batch [presentation Present,requestAction Action,nativePreviews NativePreview,nativePreviewGrants NativeGrant,nativePreviewQuarantine NativeQuarantine,nativePreviewClosed NativeClosed,nativePreviewIssued NativeIssued,nativePreviewRetry NativeRetry]
+    , subscriptions=\_ -> Sub.batch [presentation Present,requestAction Action,nativePreviews NativePreview,nativePreviewGrants NativeGrant,nativePreviewQuarantine NativeQuarantine,nativePreviewClosed NativeClosed,nativePreviewIssued NativeIssued,nativePreviewRetry NativeRetry,nativePreviewRetirement NativeRetirement]
     , view=\model -> div [attribute "data-input-composing" (if isComposing model then "true" else "false")] [Presentation.current model.presentation |> Maybe.map (\snapshot -> SurfaceRenderer.viewWithPreview (\identity -> Preview.image snapshot identity model.previews) True Action (model.pendingQuery |> Maybe.map (\query -> SurfaceRenderer.pendingQuery query snapshot) |> Maybe.withDefault snapshot)) |> Maybe.withDefault (text "")]
     , update=update
     }
@@ -90,6 +91,9 @@ update message model =
                     case D.decodeValue Realm.envelopeDecoder raw of
                         Ok _ -> Preview.receiveRealm (Presentation.current model.presentation) raw model.previews
                         Err _ -> Preview.receive (Presentation.current model.presentation) raw model.previews
+            in ({model | previews=previews},previewCommands commands)
+        NativeRetirement raw ->
+            let (previews,commands) = Preview.retireLegacy raw model.previews
             in ({model | previews=previews},previewCommands commands)
         NativeGrant raw ->
             let previews = D.decodeValue Realm.grantDecoder raw |> Result.toMaybe |> Maybe.andThen (\grant -> Preview.enrollRealm grant model.previews) |> Maybe.withDefault model.previews

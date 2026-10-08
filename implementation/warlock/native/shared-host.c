@@ -11,6 +11,7 @@ static void terminated(WebKitWebView*,WebKitWebProcessTerminationReason,gpointer
 #include "context-keys.h"
 #include "preview-provider-bootstrap.h"
 #include "client-producer.h"
+#include "picker-previews.h"
 #include <libsoup/soup.h>
 #include "qa-reader-control.h"
 #include "imported-clients.h"
@@ -31,6 +32,7 @@ static gboolean qa_motion_tick(gpointer unused) {
 }
 static WarlockPreviewBootstrap *preview_bootstrap;
 static WarlockClientProducer *client_producer;
+static WarlockPickerPreviews *product_previews;
 static WarlockImportedClients *imported_clients;
 static guint64 qa_import_subjects[3];
 static guint qa_import_count=2;
@@ -691,30 +693,105 @@ static gboolean client_publish(const char *wire,GError **error) {
     if(json_array_get_length(events)) {g_print("native-client-events: %s\n",wire);fflush(stdout);surface_eval(popup_view,"receiveNativePreviewBatch",json_parser_get_root(parser));}
     return TRUE;
 }
-/* Ordinary metadata enrollment uses the provider own authenticated catalog.
- * Inventory never opens a capture, creates a Scope, or owns a physical slot. */
-static gboolean product_catalog_poll(gpointer data) {
-    (void)data;
-    guint64 publication,lease;gboolean open;
-    if(shutting_down) {product_catalog_source=0;return G_SOURCE_REMOVE;}
-    if(!popup_ready || !surface_popup_ready() || !popup_owner || !popup_owner->active ||
-       !surface_frame(surface_snapshot,&publication,&lease,&open) || !open ||
-       publication!=surface_gate.publication || lease!=surface_gate.lease ||
-       !g_str_equal(json_object_get_string_member(json_node_get_object(surface_snapshot),"mode"),"picker"))return G_SOURCE_CONTINUE;
-    GError *error=NULL;g_autofree char *catalog=NULL;
-    if(!warlock_preview_bootstrap_catalog(preview_bootstrap,publication,lease,&catalog,&error)) {
-        /* A failed metadata read has no settlement or source-denial authority. */
-        const char *message=error?error->message:"Native metadata unavailable";
-        if(g_strcmp0(product_catalog_error,message)) {g_free(product_catalog_error);product_catalog_error=g_strdup(message);g_printerr("Native catalog enrollment unavailable: %s\n",message);}
-        g_clear_error(&error);return G_SOURCE_CONTINUE;
+/* Actual GTK gate supplies subjects; native independently validates source,
+ * grant, family composition and physical ownership. Elm alone issues effects. */
+static gboolean product_picker_gate(guint64 *publication,guint64 *lease) {
+    gboolean open;
+    return !shutting_down && popup_ready && surface_popup_ready() && popup_owner && popup_owner->active &&
+        surface_frame(surface_snapshot,publication,lease,&open) && open &&
+        *publication==surface_gate.publication && *lease==surface_gate.lease &&
+        g_str_equal(json_object_get_string_member(json_node_get_object(surface_snapshot),"mode"),"picker");
+}
+static guint product_picker_subjects(guint64 *subjects,guint maximum) {
+    guint count=0;
+    JsonArray *controls=json_object_get_array_member(json_node_get_object(surface_snapshot),"popup");
+    for(guint i=0;i<json_array_get_length(controls) && count<maximum;i++) {
+        JsonObject *control=json_node_get_object(json_array_get_element(controls,i));const char *name=json_object_get_string_member(control,"id");
+        if(!json_object_get_boolean_member(control,"enabled") || !g_str_has_prefix(name,"family:") || strlen(name+7)>20)continue;
+        g_autoptr(JsonNode) number=json_node_new(JSON_NODE_VALUE);json_node_set_string(number,name+7);guint64 subject;
+        if(surface_uint(number,&subject) && subject)subjects[count++]=subject;
     }
-    g_clear_pointer(&product_catalog_error,g_free);
+    return count;
+}
+static gboolean product_events(const char *wire,GError **error) {
     g_autoptr(JsonParser) parser=json_parser_new();
-    if(!strict_json_load(parser,catalog) || !JSON_NODE_HOLDS_OBJECT(json_parser_get_root(parser))) {
-        g_printerr("Native catalog enrollment shape unavailable\n");return G_SOURCE_CONTINUE;
+    if(!wire || !strict_json_load(parser,wire) || !JSON_NODE_HOLDS_ARRAY(json_parser_get_root(parser)) ||
+       json_array_get_length(json_node_get_array(json_parser_get_root(parser)))>64) {
+        g_set_error_literal(error,G_IO_ERROR,G_IO_ERROR_INVALID_DATA,"Bounded product preview events");return FALSE;
     }
-    surface_eval(popup_view,"receiveNativePreview",json_parser_get_root(parser));
-    return G_SOURCE_CONTINUE;
+    if(json_array_get_length(json_node_get_array(json_parser_get_root(parser)))) {
+        g_print("picker-preview-events: %s\n",wire);fflush(stdout);
+        surface_eval(popup_view,"receiveNativePreviewBatch",json_parser_get_root(parser));
+    }
+    return TRUE;
+}
+static gboolean product_preview_commands(WebKitWebView *target,JsonNode *root) {
+    if(preview_owner!=g_thread_self() || target!=popup_view || !product_previews || !JSON_NODE_HOLDS_OBJECT(root))return FALSE;
+    JsonNode *rows=json_object_get_member(json_node_get_object(root),"entries");
+    if(!rows || !JSON_NODE_HOLDS_ARRAY(rows) || json_array_get_length(json_node_get_array(rows))!=1)return FALSE;
+    JsonNode *row=json_array_get_element(json_node_get_array(rows),0);if(!JSON_NODE_HOLDS_OBJECT(row))return FALSE;
+    JsonObject *entry=json_node_get_object(row);const char *const fields[]={"identity","commands"};
+    JsonNode *identity=json_object_get_member(entry,"identity"),*commands=json_object_get_member(entry,"commands");
+    if(!surface_fields(entry,fields,2) || !surface_text(identity,512,FALSE) || !commands || !JSON_NODE_HOLDS_ARRAY(commands) || json_array_get_length(json_node_get_array(commands))!=1)return FALSE;
+    const char *name=json_node_get_string(identity);guint64 subject=0,publication=0,lease=0;
+    gboolean allowed=FALSE;
+    if(g_str_has_prefix(name,"family:") && strlen(name+7)<=20) {
+        g_autoptr(JsonNode) counter=json_node_new(JSON_NODE_VALUE);json_node_set_string(counter,name+7);
+        allowed=surface_uint(counter,&subject) && product_picker_gate(&publication,&lease) && client_frame_target(surface_snapshot,subject,&publication,&lease);
+    }
+    g_autofree char *command=json_to_string(json_array_get_element(json_node_get_array(commands),0),FALSE),*events=NULL;
+    GError *error=NULL;
+    gboolean ok=warlock_picker_previews_command(product_previews,target,name,command,allowed,lease,&events,&error) && product_events(events,&error);
+    if(ok) {
+        g_clear_pointer(&events,g_free);
+        guint64 subjects[256];guint count=0;
+        if(product_picker_gate(&publication,&lease))count=product_picker_subjects(subjects,G_N_ELEMENTS(subjects));
+        else {publication=0;lease=0;}
+        ok=warlock_picker_previews_poll(product_previews,subjects,count,publication,lease,&events,&error) && product_events(events,&error);
+    }
+    if(!ok)g_printerr("Picker control retained without replay: %s\n",error?error->message:"Unproven outcome");
+    g_clear_error(&error);return ok;
+}
+static gboolean product_preview_dispatch(WebKitURISchemeRequest *request) {
+    const char *uri=webkit_uri_scheme_request_get_uri(request);
+    gboolean icon=g_str_has_prefix(uri,"elm-shell://icon/");
+    if(!g_str_has_prefix(uri,"elm-shell://preview/") && !icon)return FALSE;
+    GError *error=NULL;GInputStream *stream=NULL;gsize length=0;guint64 publication=0,lease=0;
+    if(preview_owner==g_thread_self() && product_previews && webkit_uri_scheme_request_get_web_view(request)==popup_view && product_picker_gate(&publication,&lease))
+        stream=icon?warlock_picker_previews_icon_stream(product_previews,popup_view,uri,lease,&length,&error):warlock_picker_previews_stream(product_previews,popup_view,uri,lease,&length,&error);
+    if(!stream) {
+        if(!error)error=g_error_new_literal(G_IO_ERROR,G_IO_ERROR_PERMISSION_DENIED,"Current picker source unavailable");
+        webkit_uri_scheme_request_finish_error(request,error);g_error_free(error);return TRUE;
+    }
+    WebKitURISchemeResponse *response=webkit_uri_scheme_response_new(stream,(gint64)length);
+    webkit_uri_scheme_response_set_content_type(response,"image/png");
+    SoupMessageHeaders *headers=soup_message_headers_new(SOUP_MESSAGE_HEADERS_RESPONSE);
+    soup_message_headers_append(headers,"Cache-Control","no-store");soup_message_headers_append(headers,"X-Content-Type-Options","nosniff");
+    webkit_uri_scheme_response_set_http_headers(response,headers);webkit_uri_scheme_request_finish_with_response(request,response);
+    g_object_unref(response);g_object_unref(stream);return TRUE;
+}
+static gboolean product_catalog_poll(gpointer data) {
+    (void)data;guint64 publication=0,lease=0;guint64 subjects[256];guint count=0;
+    if(shutting_down) {product_catalog_source=0;return G_SOURCE_REMOVE;}
+    GError *error=NULL;g_autofree char *catalog=NULL,*events=NULL;
+    if(product_picker_gate(&publication,&lease)) {
+        if(!warlock_preview_bootstrap_catalog(preview_bootstrap,publication,lease,&catalog,&error))goto unavailable;
+        g_autoptr(JsonParser) parser=json_parser_new();
+        if(!strict_json_load(parser,catalog) || !JSON_NODE_HOLDS_OBJECT(json_parser_get_root(parser)))goto unavailable;
+        surface_eval(popup_view,"receiveNativePreview",json_parser_get_root(parser));
+        count=product_picker_subjects(subjects,G_N_ELEMENTS(subjects));
+        if(!product_previews) {
+            void *native=warlock_preview_bootstrap_native_transport(preview_bootstrap,&error);if(!native)goto unavailable;
+            product_previews=warlock_picker_previews_open(native,popup_view,&error);if(!product_previews)goto unavailable;
+            preview_host_set_command_handler(product_preview_commands);native_picker_dispatch=product_preview_dispatch;
+        }
+    }
+    if(product_previews && (!warlock_picker_previews_poll(product_previews,subjects,count,publication,lease,&events,&error) || !product_events(events,&error)))goto unavailable;
+    g_clear_pointer(&product_catalog_error,g_free);return G_SOURCE_CONTINUE;
+unavailable:
+    {const char *message=error?error->message:"Native preview shape unavailable";
+    if(g_strcmp0(product_catalog_error,message)){g_free(product_catalog_error);product_catalog_error=g_strdup(message);g_printerr("Picker preview retained without replay: %s\n",message);}}
+    g_clear_error(&error);return G_SOURCE_CONTINUE;
 }
 static void client_failure(GError *error) {
     g_printerr("Native client producer failed: %s\n",error?error->message:"Owner unavailable");g_clear_error(&error);failed=TRUE;gtk_main_quit();
@@ -1458,6 +1535,21 @@ int ELM_SHARED_HOST_MAIN(int argc,char **argv) {
     g_print("shared-host-start: views=%u controllers=1 backend-clients=1 sandbox=%d\n",output_views->len,webkit_web_context_get_sandbox_enabled(shared_context));fflush(stdout);
     gtk_main();shutting_down=TRUE;if (quit_source) g_source_remove(quit_source);if(client_poll_source) {g_source_remove(client_poll_source);client_poll_source=0;}if(imported_poll_source) {g_source_remove(imported_poll_source);imported_poll_source=0;}
     if(product_catalog_source) {g_source_remove(product_catalog_source);product_catalog_source=0;}g_clear_pointer(&product_catalog_error,g_free);
+    if(product_previews) {
+        GError *error=NULL;g_autofree char *binding=NULL;
+        if(warlock_preview_bootstrap_binding(preview_bootstrap,&binding,&error)) {
+            g_autoptr(JsonParser) parser=json_parser_new();
+            if(strict_json_load(parser,binding))surface_eval(popup_view,"receiveNativePreviewRetirement",json_parser_get_root(parser));
+        }
+        g_clear_error(&error);
+        gint64 drain_until=g_get_monotonic_time()+500000;
+        while(!warlock_picker_previews_empty(product_previews) && g_get_monotonic_time()<drain_until) {
+            while(g_main_context_iteration(NULL,FALSE)) {}
+            g_autofree char *events=NULL;
+            if(!warlock_picker_previews_poll(product_previews,NULL,0,0,0,&events,&error) || !product_events(events,&error))g_clear_error(&error);
+            g_usleep(5000);
+        }
+    }
     g_signal_handler_disconnect(owned_display,add_handler);g_signal_handler_disconnect(owned_display,remove_handler);
     if (popup_active) popup_hide();
     qa_popup_retired=NULL;qa_snapshot_carrier_close();popup_release_retired();
@@ -1484,7 +1576,10 @@ int ELM_SHARED_HOST_MAIN(int argc,char **argv) {
     if(!g_queue_is_empty(&qa_controller_commits))failed=TRUE;
     g_queue_clear_full(&qa_controller_commits,(GDestroyNotify)qa_controller_commit_free);
     g_queue_clear_full(&qa_held_commands,(GDestroyNotify)json_node_unref);g_clear_pointer(&qa_held_uri,g_free);
-    native_icon_dispatch=NULL;preview_host_set_command_handler(NULL);preview_host_set_endpoint(NULL);
+    native_picker_dispatch=NULL;native_icon_dispatch=NULL;preview_host_set_command_handler(NULL);preview_host_set_endpoint(NULL);
+    if(product_previews) {
+        GError *error=NULL;if(!warlock_picker_previews_close(product_previews,&error)){g_printerr("Picker teardown incomplete: %s\n",error?error->message:"Outstanding custody");g_clear_error(&error);failed=TRUE;}else product_previews=NULL;
+    }
     if(client_producer) {
         GError *error=NULL;if(!warlock_client_producer_close(client_producer,&error)) {g_printerr("Native client teardown incomplete: %s\n",error?error->message:"Outstanding owner");g_clear_error(&error);failed=TRUE;}else client_producer=NULL;
     }
@@ -1505,6 +1600,6 @@ int ELM_SHARED_HOST_MAIN(int argc,char **argv) {
     if(authority_binding){json_node_unref(authority_binding);authority_binding=NULL;}
     admission_close();
     /* Failed drain keeps the borrowed Native alive until process exit. */
-    if(!client_producer && !imported_clients) {warlock_preview_bootstrap_free(preview_bootstrap);preview_bootstrap=NULL;}
+    if(!client_producer && !imported_clients && !product_previews) {warlock_preview_bootstrap_free(preview_bootstrap);preview_bootstrap=NULL;}
     g_print("shared-host-exit: failure=%d rendered=%d\n",failed,reported);fflush(stdout);return restart_requested?3:failed || (qa_exit && !reported);
 }

@@ -1,0 +1,151 @@
+{
+  "schema": 1,
+  "owner": "root-visible-preview",
+  "observedUTC": "2026-10-08T21:09:06.180522+00:00",
+  "requirements": [
+    "ELM-UI-016"
+  ],
+  "scenarios": [
+    "preview-states"
+  ],
+  "original": {
+    "id": "ELM-UI-016",
+    "capability": "elm-capture-motion",
+    "phase": "P4",
+    "pattern": "ubiquitous",
+    "priority": "must",
+    "ears": "The preview view SHALL distinguish loading, authorized historical, current-live and unavailable source states visually and accessibly without borrowing pixels from another incarnation.",
+    "task": "Qualify explicit preview source states.",
+    "verification": "Frozen threshold/policy plus independently observed named fixtures, native counters or user/AT records as applicable; hashes and failure outcomes retained.",
+    "legacyEvidence": "docs/elm-roadmap/INTERACTION.md; new coverage: final UI/UX review",
+    "scenarios": [
+      {
+        "name": "preview-states",
+        "given": "one identity-bound preview fixture",
+        "when": "loading historical live and unavailable states render",
+        "then": "each state has matching visual and accessible labels and only authorized pixels"
+      }
+    ],
+    "source": "docs/elm-roadmap/coordinator-requirements.json",
+    "status": "proposed",
+    "taskId": "P4-ELM-UI-016",
+    "accountableOwnerRole": "Graphics lead",
+    "verifierRole": "Independent acceptance reviewer"
+  },
+  "scope": "Ordinary picker executes exact single-Elm-policy Acquire/Cancel/Release/Ack against authenticated native family/style/crop grants, opaque tokens and distinct incarnation custody. Actual compiled reducer all four states, family/source isolation and teardown pass; current native journey records own-colored Live and minimized Historical, original five-second Unavailable, Loading DOM and all normal owned cleanup. Physical Loading and actual AT/independent acceptance remain open. Native two-allocation/128MiB budget is unchanged; simultaneous family raster/export capacity and broader fairness remain open.",
+  "sourceBaseRevision": "57123656692b587cf4b117a04d2c79b13c52597b",
+  "publicBaseRevision": "1e50590448e36826b55be38ed9bd6f7d297dfeb1",
+  "sourceHashes": {
+    "implementation/warlock/src/Popup.elm": "94038692d76a8061b26c22967683d7837963d5b4a6a452e25597c8e570f710ff",
+    "implementation/warlock/src/NativePreviewRealm.elm": "2a3de2f3eacdf5b00489e5c1f5e5cef058e8f36d74fefecb25a5d3d9ea6024cf",
+    "implementation/warlock/src/NativePreviewPolicy.elm": "99a37f7ea929dcfb746e10d1e7356ba51aa307965bd72165aa708d475e6fec64",
+    "implementation/warlock/src/NativePreviewVisual.elm": "19f42ecd6e4d8b73adf5390eb47170ea2c47d3215b84c146e77f87583c8d3d3b",
+    "implementation/warlock/src/PreviewVisual.elm": "4110504939d5924476f4a691a065866c305515dfca9c067e15d4732dc609a67d",
+    "implementation/warlock/src/SurfaceRenderer.elm": "c997f882cfbcd31c1afac3d95b07a6b64c08931f5fca9b2d2ec472980125cf39",
+    "implementation/warlock/native/shared-host.c": "eb18e53c7906e13b5e61b98083ee53ad89de5e475edd9552ec0e7f7ee11a3133",
+    "implementation/warlock/native/host.c": "f4a36569b2b03bbb88a0a62a871b71020331cf7b3f4be66a831909e7198ba852",
+    "implementation/warlock/native/preview-provider-bootstrap.cpp": "cd2b1f1c45b2679f87656c7a7749a9cd1060ca0f224c1691ad1dac2350346607",
+    "implementation/warlock/native/client-producer.cpp": "b332305b3c4cdcb29f72bd2b01e32f233f496e99a37ca576de269aa056c86de6",
+    "implementation/warlock/native/authority.cpp": "541cbacbc799f600c81ebd61ad0d2ece3aff3b01919e787d017c8108c362ec85",
+    "implementation/warlock/qa/PreviewStateReplay.elm": "efefea96e5683b22ae8f7a739245f442293585b0ccce7c810f2b455d2d198847",
+    "implementation/warlock/qa/check-preview-states.py": "f235ce161f57d9e7da233578ce1a53ff113c8a827054d8fa9171aed04fb246fa",
+    "implementation/warlock/qa/native-preview-states.py": "49c423663537989f844f36459d64bfc9ca9f97c9350bc2c5c55a398ce9363b4a",
+    "implementation/warlock/qa/check-search.py": "122c7bca61d36ab2d776dfc74c451198cac2b795cf90ba52561e0724533dc090",
+    "implementation/warlock/qa/current-search-build.json": "f8f1f80a4d811fdd945c5e52e7798d18f10507fcf497ea8a3b80e6b98813e4b1",
+    "implementation/warlock/qa/current-native-pair.json": "98373a9c4b79d0347a79914cf8fab31971effd550cdf66a83d20eafcfec01183",
+    "implementation/warlock/assets/elm.js": "9a3319b59e265c8c64e9cd1312de4951d549c651135a3fd538dd824eb916bea3",
+    "implementation/warlock/assets/bar.js": "676469d827783ed1e60e6a3e578ca79153b3e135e550f1cf95fd9d01a1db5683",
+    "implementation/warlock/assets/popup.js": "3a6fb8f2298ad11ead76c4f0a5e84d82c4a48c8d97618dbfb255240574f6fd3d",
+    "implementation/warlock/README.md": "2f9caa777f1d1378537d89d8d52dcf7441fe7d79c439ae97351cecccf193a879",
+    "implementation/warlock/native/picker-preview.inc": "dd012861b1f54943bb82d23378766a35d644c9ca561b5a412dd048ee05c3eb00",
+    "implementation/warlock/native/capture-fd-server.inc": "b81d77ec641f05ecbe90ffbef38fc90935f8ec6d56e636b5bafc04cc7ac31557",
+    "implementation/warlock/native/family_source.hpp": "73362d6d9c707ab54ab833614d44e28531ad5f480fdfea82e18a1e82351c6bee",
+    "implementation/warlock/native/family_frame.hpp": "8c1fb4bcd10d15dba3b3dcc82e3b46cd185efbb6101453e54e7d08bb7d5666bb",
+    "implementation/warlock/native/family_producer.hpp": "05e8ad81dac3841e3ebe2355ec826e36e8326fded94ba6baff1fb9c63c6c9990",
+    "implementation/warlock/src/NativePreviewSource.elm": "9177298d05a999f3a28660df9a76b8be7cafcda523e7cc20fe73bc471b7c37e9",
+    "implementation/warlock/src/NativeFamilyPreviewSource.elm": "dc93a0698cb1bc13c37f9e56c221d356f1c6aea3d4651b71df7d4f7c178d8321",
+    "implementation/warlock/src/PreviewPresenter.elm": "10769b8d9a86e5e5b35f1f292d9837a38b20a0ba636d5baa0ee0c3b8fcdac1cc",
+    "implementation/warlock/qa/check-native-authority.py": "32aa88f8b8c56310795f721996cd672694b687816aef77eb45dc64278d4132d7",
+    "implementation/warlock/native/picker-probe-table.hpp": "82663226635882932bd6ebdb298d63f1ca0be68f7e271b9e56d141cb06e1492f",
+    "implementation/warlock/native/picker-previews.h": "3de20eb93294c790dae3e950a8a94221be47613d181bfae7f2dc93468213ab56",
+    "implementation/warlock/native/picker-previews.inc": "8e0799d2a56b08e7bee8c64fe098168ac2f1f4f3ab8a4b53e9e1363fa0cdcca3",
+    "implementation/warlock/qa/picker-ownership.qnt": "b57bc5da5f5ee7d00cfe23ac93269e4b09ee1b25bfea3e93dd57cebb196b9277",
+    "implementation/warlock/assets/popup-adapter.js": "c637040ec23dff55cebf6959a75f9ae8cd144c3f8c96b870163564c2148c10f4",
+    "implementation/warlock/src/RetainedPreviewPresenter.elm": "7e1f806897e4bc728961ef6c19da5cf0d36a2948a2966f329cc8d34a6b0ed506"
+  },
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+      "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791491150091172898/elm-window-geometry-authority.so",
+      "sha256": "712699d85400872fff6702b9895404d2014e9f5820d776ef8394e742c17890a1"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-states-1791493532102412666/elm-host",
+    "sha256": "9f08778662ec751319ffcb03be61b80c5efdd05f070b29f1dda2a8b3d12ca6a2",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-states-1791493532102412666/report.json",
+    "heldBuildSHA256": "c0b5d6d3096836dee80fbcb24a2086a11364d8c44b57758747a3c41e1c0e7bd3"
+  },
+  "failedNativeAttempts": [
+    {
+      "path": "implementation/warlock/qa/evidence/preview-states/native-failure-1.json",
+      "sha256": "0eeb674b97381661acc2fed0344e2a6299740469d8524076b20f131d746be252",
+      "original": "implementation/warlock/qa/runs/native-preview-states-1791492721266811206/report.json",
+      "error": "AssertionError('OwnedClientNormalExit')",
+      "cleanupPassed": true
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/preview-states/native-failure-2.json",
+      "sha256": "83f0d09604b15dc2d4141f900562a586468bd0dc83b1312431a07ea75aa06cda",
+      "original": "implementation/warlock/qa/runs/native-preview-states-1791492990294774842/report.json",
+      "error": "RuntimeError('Original observation deadline live_rows')",
+      "cleanupPassed": true
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/preview-states/native-failure-3.json",
+      "sha256": "9c0bae1b762cfdb5ec105d3502ba46aa816ffeef457517dd24d9eae8350faeea",
+      "original": "implementation/warlock/qa/runs/native-preview-states-1791493228566587823/report.json",
+      "error": "RuntimeError('Original observation deadline historical_row')",
+      "cleanupPassed": true
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/preview-states/native-failure-4.json",
+      "sha256": "e06a7bc4ca1b4aedfd6962bc16a693dfe485e820e354aa6e0fda88354b547320",
+      "original": "implementation/warlock/qa/runs/native-preview-states-1791493309159662092/report.json",
+      "error": "AssertionError('OwnedClientNormalExit')",
+      "cleanupPassed": true
+    }
+  ],
+  "missingObservations": [
+    "Two simultaneous native raster/export pairs exceed the unchanged two-allocation native budget; broader capacity/fairness remains open.",
+    "Physical loading pixels were not intercepted; native DOM label observation is weaker.",
+    "Actual assistive technology and independent original-scenario acceptance remain open."
+  ],
+  "artifacts": {
+    "compiled-report.json": "c0b5d6d3096836dee80fbcb24a2086a11364d8c44b57758747a3c41e1c0e7bd3",
+    "reducer-report.json": "dbca4833d390f86d82f389fab8484f9179e2a40254d4bcfafa08f560d117d03e",
+    "native-report.json": "548a12a3b10dffdb6a9b8c30728b5830930eb3b05a23c7c92a69d04160bb89a6",
+    "authority-report.json": "2602d2f710b70f65a25be343bdeef4c58ec338a1cdc18dd8aae0d222868cc230",
+    "native-failure-1.json": "0eeb674b97381661acc2fed0344e2a6299740469d8524076b20f131d746be252",
+    "native-failure-2.json": "83f0d09604b15dc2d4141f900562a586468bd0dc83b1312431a07ea75aa06cda",
+    "native-failure-3.json": "9c0bae1b762cfdb5ec105d3502ba46aa816ffeef457517dd24d9eae8350faeea",
+    "native-failure-4.json": "e06a7bc4ca1b4aedfd6962bc16a693dfe485e820e354aa6e0fda88354b547320",
+    "Live.png": "b1798574bea04e6638cfb3005d48ff09aa17fcf85dcd61b78406e46bb67199bb",
+    "Historical.png": "393006a74cab2bd035cd80aeb3e82340c23e9fe479c1c8103b378827e5230e2d",
+    "Unavailable.png": "d558ef1e9bb2c640e5023d53c114eeca31631e3dcf4385aa9d2cdb04c50735c2",
+    "cpu-failures.json": "5fd0b96da8255a55c3d6c842722ad2f447c2c927772b6f609f0fd497812dec0b",
+    "source.patch": "0d71bda109468490978ecafe8347e51a25165b6254f365fcec357c2848571353"
+  },
+  "scenarioDisposition": "partial",
+  "requirementAccepted": false,
+  "fullReleaseAccepted": false,
+  "installedOnMainDesktop": false,
+  "reviewerDisposition": "Independent original-scenario acceptance remains open."
+}

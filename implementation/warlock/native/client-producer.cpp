@@ -2,6 +2,7 @@
 #include "client_producer.hpp"
 #include "family_producer.hpp"
 #include "preview_icons.hpp"
+#include "picker-previews.h"
 struct WarlockClientProducer {
  preview::bridge::Native::LegacyPreviewClaim legacyClaim;
  std::unique_ptr<preview::bridge::ClientProducer> client;
@@ -57,11 +58,11 @@ struct WarlockClientProducer {
   char* raw=json_to_string(json_object_get_member(envelope.object(),"events"),FALSE);std::string result(raw);g_free(raw);return result;
  }
 
- WarlockClientProducer(preview::bridge::Native& owner,uint64_t view,uint64_t incarnation,uint64_t publication,uint64_t lease,bool useFamily=false,preview::bridge::FamilyPlane plane=preview::bridge::FamilyPlane::Transparent):legacyClaim(owner),native(owner),popup(view),subject(incarnation),metadata(preview::bridge::windowMetadata(owner,incarnation)),icons(view,owner.binding(),incarnation,[this](const preview::icons::Record& record){
+ WarlockClientProducer(preview::bridge::Native& owner,uint64_t view,uint64_t incarnation,uint64_t publication,uint64_t lease,bool useFamily=false,preview::bridge::FamilyPlane plane=preview::bridge::FamilyPlane::Transparent,bool picker=false):legacyClaim(owner),native(owner),popup(view),subject(incarnation),metadata(preview::bridge::windowMetadata(owner,incarnation)),icons(view,owner.binding(),incarnation,[this](const preview::icons::Record& record){
   const auto scope=native.clientScope({subject}).scope;
   return scope.present && !scope.locked && scope.binding==record.metadata.binding && scope.context.incarnation.value==record.metadata.subject && scope.context.privacy.value==record.privacy && preview::bridge::windowMetadata(native,subject).application==record.metadata.application;
  }) {
-  if(useFamily)family=std::make_unique<preview::bridge::FamilyProducer>(owner,view,incarnation,publication,lease,plane);else client=std::make_unique<preview::bridge::ClientProducer>(owner,view,incarnation,publication,lease);
+  if(useFamily)family=std::make_unique<preview::bridge::FamilyProducer>(owner,view,incarnation,publication,lease,plane,picker);else client=std::make_unique<preview::bridge::ClientProducer>(owner,view,incarnation,publication,lease);
   iconTheme=gtk_icon_theme_get_default();if(iconTheme){g_object_ref(iconTheme);iconThemeHandler=g_signal_connect(iconTheme,"changed",G_CALLBACK(iconThemeChanged),this);}
  }
  template<class F> auto visit(F&& call){if(family)return call(*family);return call(*client);}
@@ -151,3 +152,5 @@ extern "C" gboolean warlock_client_producer_locked(WarlockClientProducer* owner,
         }
     }catch(const std::exception& exception){g_set_error_literal(error,G_IO_ERROR,G_IO_ERROR_FAILED,exception.what());return FALSE;}
 }
+
+#include "picker-previews.inc"

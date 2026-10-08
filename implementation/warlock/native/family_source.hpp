@@ -12,7 +12,7 @@ struct FamilySourceObservation {
     Scope scope;uint64_t observation{},request{},maximumTransferBytes{};
     FamilyCrop crop;std::vector<FamilyMember> members;std::vector<FamilyStyle> styles;
     std::string wire;
-    FamilyPlane plane{FamilyPlane::Transparent};std::optional<uint32_t> generatedColor{};
+    FamilyPlane plane{FamilyPlane::Transparent};std::optional<uint32_t> generatedColor{};bool picker=false;
 };
 inline double familyNumber(JsonNode* node) {
     require(node && JSON_NODE_HOLDS_VALUE(node),"Native family number");
@@ -34,15 +34,16 @@ inline int32_t familyPixel(JsonObject* object,const char* name) {
     const std::string_view text=Json::text(object,name);int32_t value{};const auto parsed=std::from_chars(text.data(),text.data()+text.size(),value);
     require(!text.empty() && parsed.ec==std::errc{} && parsed.ptr==text.data()+text.size() && std::to_string(value)==text,"Canonical signed native crop origin");return value;
 }
-inline FamilySourceObservation decodeFamilySource(const Json& reply,Binding owner,Id<Incarnation> subject,uint64_t request,FamilyPlane plane=FamilyPlane::Transparent) {
+inline FamilySourceObservation decodeFamilySource(const Json& reply,Binding owner,Id<Incarnation> subject,uint64_t request,FamilyPlane plane=FamilyPlane::Transparent,bool picker=false) {
+    require(!picker || plane==FamilyPlane::Transparent,"Picker owns only native transparent family composition");
     const bool backdrop=plane==FamilyPlane::GeneratedBackdrop;
     auto object=reply.object();if(backdrop)Json::fields(object,{"protocolVersion","kind","binding","requestId","scope","maximumTransferBytes","previewEligible","scopeKind","members","styles","crop","generatedBackdrop"});else Json::fields(object,{"protocolVersion","kind","binding","requestId","scope","maximumTransferBytes","previewEligible","scopeKind","members","styles","crop"});
-    require(Json::integer(object,"protocolVersion")==3 && std::string_view(Json::text(object,"kind"))==(backdrop?"preview-family-backdrop-crop-scope":"preview-family-style-crop-scope") && std::string_view(Json::text(object,"scopeKind"))==(backdrop?"native-generated-backdrop-family-crop-unqualified":"native-family-style-crop-channels-unqualified") && !Json::boolean(object,"previewEligible"),"Distinct unqualified native family source");
+    require(Json::integer(object,"protocolVersion")==3 && std::string_view(Json::text(object,"kind"))==(picker?"preview-picker-family-scope":backdrop?"preview-family-backdrop-crop-scope":"preview-family-style-crop-scope") && std::string_view(Json::text(object,"scopeKind"))==(picker?"picker-native-family-style-crop":backdrop?"native-generated-backdrop-family-crop-unqualified":"native-family-style-crop-channels-unqualified") && Json::boolean(object,"previewEligible")==picker,"Distinct unqualified native family source");
     require(owner.lifetime.value && owner.session.value && owner.frontend.value && subject.value && request && decodeBinding(Json::child(object,"binding"))==owner && reply.counter("requestId")==request,"Own native family envelope correlation");
     auto raw=Json::child(object,"scope");Json::fields(raw,{"binding","context","observation","clock","now","present","sourceLive","locked","gpuReady"});
     const auto context=decodeContext(Json::child(raw,"context"));Scope scope{decodeBinding(Json::child(raw,"binding")),context,{decimal(Json::text(raw,"clock"))},decimal(Json::text(raw,"now")),Json::boolean(raw,"present"),Json::boolean(raw,"sourceLive"),Json::boolean(raw,"locked"),Json::boolean(raw,"gpuReady")};
     require(scope.binding==owner && context.lifetime==owner.lifetime && context.incarnation==subject && scope.clock.value==owner.lifetime.value,"Own native family scope subject/clock");
-    FamilySourceObservation result;result.plane=plane;
+    FamilySourceObservation result;result.plane=plane;result.picker=picker;
     if(backdrop) {
         auto color=Json::child(object,"generatedBackdrop");Json::fields(color,{"kind","colorARGB"});
         const auto value=decimal(Json::text(color,"colorARGB"));require(std::string_view(Json::text(color,"kind"))=="native-opaque-generated-color" && value<=UINT32_MAX && (value>>24)==255,"Typed opaque generated backdrop color");result.generatedColor=static_cast<uint32_t>(value);
@@ -83,16 +84,18 @@ inline std::optional<SourceDenial> decodeFamilySourceDenial(const Json& reply,Fa
     if(const auto common=decodeSourceDenial(reply))return common;
     auto object=reply.object();if(std::string_view(Json::text(object,"kind"))!="refused")return {};
     const std::string_view reason=Json::text(object,"reason");
+    if(reason=="picker-preview-source-unavailable")return SourceDenial::SourceUnavailable;
     if(reason=="preview-family-style-source-unavailable")return SourceDenial::SourceUnavailable;
     if(reason=="preview-family-style-crop-unavailable")return SourceDenial::LayoutUnsupported;
     if(plane==FamilyPlane::GeneratedBackdrop && reason=="preview-family-backdrop-source-unavailable")return SourceDenial::SourceUnavailable;
     return {};
 }
-inline FamilySourceObservation observeFamilySource(Native& native,Id<Incarnation> subject,FamilyPlane plane=FamilyPlane::Transparent) {
+inline FamilySourceObservation observeFamilySource(Native& native,Id<Incarnation> subject,FamilyPlane plane=FamilyPlane::Transparent,bool picker=false) {
+    require(!picker || plane==FamilyPlane::Transparent,"Picker native family plane");
     Deadline deadline;const auto owner=native.binding();const auto request=native.next();
-    Wire wire;wire.integer("protocolVersion",3).text("kind",plane==FamilyPlane::GeneratedBackdrop?"preview-family-backdrop-crop-scope-request":"preview-family-style-crop-scope-request").begin("binding").binding(owner).end().counter("requestId",request).counter("subjectIncarnation",subject.value);
+    Wire wire;wire.integer("protocolVersion",3).text("kind",picker?"preview-picker-family-scope-request":plane==FamilyPlane::GeneratedBackdrop?"preview-family-backdrop-crop-scope-request":"preview-family-style-crop-scope-request").begin("binding").binding(owner).end().counter("requestId",request).counter("subjectIncarnation",subject.value);
     auto reply=native.controlWithin(wire.finish(),deadline);
     if(const auto denied=decodeFamilySourceDenial(reply,plane))throw ScopeDenied(owner,subject,request,*denied);
-    auto result=decodeFamilySource(reply,owner,subject,request,plane);require(native.binding()==owner,"Native family grant still current");deadline.check();return result;
+    auto result=decodeFamilySource(reply,owner,subject,request,plane,picker);require(native.binding()==owner,"Native family grant still current");deadline.check();return result;
 }
 }

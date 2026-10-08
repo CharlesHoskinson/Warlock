@@ -125,7 +125,11 @@ if (window.elmHostQA) {
     const palette={background:getComputedStyle(document.body).backgroundColor,foreground:getComputedStyle(document.body).color};
     const active=document.activeElement,activeStyle=active&&getComputedStyle(active),activeBox=active?.getBoundingClientRect();
     const focusStyle=activeStyle?{color:activeStyle.color,background:activeStyle.backgroundColor,outlineColor:activeStyle.outlineColor,outlineWidth:activeStyle.outlineWidth,outlineOffset:activeStyle.outlineOffset,x:activeBox.x,y:activeBox.y,width:activeBox.width,height:activeBox.height}:null;
-    const body={motionProfile:node?.dataset.motion||null,motionAnimations:document.getAnimations().length,queryObservations:window.imeQueryObservations||[],compositionEvents,composing:document.querySelector('[data-input-composing]')?.dataset.inputComposing==='true',palette,focusStyle,publication:node?.dataset.publication||null,lease:node?.dataset.lease||null,buttons,content,fields,focus:document.activeElement?.id||'',documentFocused:document.hasFocus(),fontSize:getComputedStyle(document.body).fontSize,theme:document.documentElement.dataset.theme||null,textScale:document.documentElement.dataset.textScale||null,viewportWidth:innerWidth,viewportHeight:innerHeight,scrollTop:node?.scrollTop||0,scrollHeight:node?.scrollHeight||0,text:document.body.innerText};
+    const previews=[...document.querySelectorAll('.window-preview')].slice(0,16).map(node=>{
+      const image=node.querySelector('img.preview-image'),r=image?.getBoundingClientRect();
+      return {identity:node.closest('[data-surface-control]')?.dataset.surfaceControl||null,state:node.dataset.previewState||null,label:node.getAttribute('aria-label'),text:node.textContent,image:image?{uri:image.src,complete:image.complete,naturalWidth:image.naturalWidth,naturalHeight:image.naturalHeight,x:r.x,y:r.y,width:r.width,height:r.height}:null};
+    });
+    const body={previews,motionProfile:node?.dataset.motion||null,motionAnimations:document.getAnimations().length,queryObservations:window.imeQueryObservations||[],compositionEvents,composing:document.querySelector('[data-input-composing]')?.dataset.inputComposing==='true',palette,focusStyle,publication:node?.dataset.publication||null,lease:node?.dataset.lease||null,buttons,content,fields,focus:document.activeElement?.id||'',documentFocused:document.hasFocus(),fontSize:getComputedStyle(document.body).fontSize,theme:document.documentElement.dataset.theme||null,textScale:document.documentElement.dataset.textScale||null,viewportWidth:innerWidth,viewportHeight:innerHeight,scrollTop:node?.scrollTop||0,scrollHeight:node?.scrollHeight||0,text:document.body.innerText};
     const current=JSON.stringify(body);if(current!==last){last=current;post({kind:'surface-report',body});}
   });
   for(const type of ['compositionstart','compositionupdate','compositionend','input'])document.addEventListener(type,event=>{
@@ -134,6 +138,7 @@ if (window.elmHostQA) {
     if(compositionEvents.length>64)compositionEvents.shift();observe();
   },true);
   document.addEventListener('scroll',observe,true);
+  document.addEventListener('load',observe,true);
   new MutationObserver(observe).observe(document.body,{subtree:true,childList:true,attributes:true});
   document.addEventListener('focusin',observe);observe();
   window.addEventListener('resize',observe);window.addEventListener('focus',observe);window.addEventListener('blur',observe);
@@ -141,6 +146,7 @@ if (window.elmHostQA) {
 
 window.receiveNativePreview = value => app.ports.nativePreviews.send(value);
 window.receiveNativePreviewBatch = values => { for (const value of values) app.ports.nativePreviews.send(value); };
+window.receiveNativePreviewRetirement = value => app.ports.nativePreviewRetirement.send(value);
 let previewControlOrdinal=0n;
 app.ports.previewCommands.subscribe(value => {
   for (const entry of value) for (const command of entry.commands) {
