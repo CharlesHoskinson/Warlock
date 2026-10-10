@@ -32,7 +32,14 @@ bool geometryTargetEligible(const PHLWINDOW& window,int protocol) {
     } else return false;
     for(const auto& peer:Desktop::windowState()->windows()) if(peer!=window && peer->m_isMapped && peer->m_workspace==workspace) {
         const auto other=Fullscreen::controller()->getFullscreenModes(peer);
-        if(other.internal!=Fullscreen::FSMODE_NONE || other.client!=Fullscreen::FSMODE_NONE) return false;
+        if(other.internal==Fullscreen::FSMODE_NONE && other.client==Fullscreen::FSMODE_NONE) continue;
+        // Only coherent native floating MAX peers can coexist. Keep the exact
+        // peer readback below; a changed peer still cannot commit this effect.
+        const auto peerTarget=peer->layoutTarget();
+        if(other.internal!=Fullscreen::FSMODE_MAXIMIZED || other.client!=Fullscreen::FSMODE_MAXIMIZED ||
+           !peerTarget || !peerTarget->floating() || peerTarget->workspace()!=workspace ||
+           peer->parent() || peer->m_group || peer->isHidden() || Desktop::WindowPolicy::isMinimized(peer) ||
+           Fullscreen::controller()->layoutManagedFS(peer)) return false;
     }
     return true;
 }

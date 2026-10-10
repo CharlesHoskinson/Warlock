@@ -2,24 +2,24 @@
   "schema": 1,
   "pair": {
     "core": {
-      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-core-1791495415110842751/Hyprland",
-      "sha256": "81c9ac609c2900f99c1efbe613b83e949aeae3059a5e4403601581fa96191acf"
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/max-core-1791611447208487848/Hyprland",
+      "sha256": "935bacda219faad6b44d30fc94ebf5e715db98bd499df0e2929de570b5e22f3b"
     },
     "plugin": {
-      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791596429600393566/elm-window-geometry-authority.so",
-      "sha256": "1f5de87c759902cbbca05dfdbba56090641c994cf3c7276671094248465bcac4"
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791611480287047016/elm-window-geometry-authority.so",
+      "sha256": "a7321a9a9560b9e6befd81c7ee233ac7d9ebb3e4bcd8f8c79fb453c883b98134"
     },
     "aquamarine": {
       "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
       "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
     }
   },
-  "authorityReport": "implementation/warlock/qa/runs/native-authority-1791596429600393566/report.json",
-  "authorityReportSHA256": "cc00fe49743f604347942071751fec5713a474d3f19691f130361926328b81c9",
+  "authorityReport": "implementation/warlock/qa/runs/native-authority-1791611480287047016/report.json",
+  "authorityReportSHA256": "b0630b78b8fb7663d7481d1a324634e4e4eff0b69d82e5e03f637a9eb8265372",
   "authorityInputs": {
     "native/authority.cpp": "08d13f3b6ca6b67c1bd1ac78e36a4c59c7d4e2468d41fdbcac6a7ab95dddd081",
     "native/navigation-modal.hpp": "f3a1fdabeaa4abdaa3bcd839e0a3b62854a844cd791dd338d8f1a3e5bb488c1e",
-    "native/geometry-effects.inc": "b299e891fd298394acc654df76924a01d7c1611472cdbec5a2d8dd3b9ca8c797",
+    "native/geometry-effects.inc": "78276a901a3d5a47c48e5c6eeb646715fbc72f5d13ae6ba9d7b703d9ec761d04",
     "native/snap-placement.inc": "fd7c0480bcf6b09d3e663f9432d8f42400867a95c48afc85c0569a6a6c01a122",
     "native/transfer-workspace.inc": "5e1a64474eb248e9ed13d0860d1fe1aa1ec99eb2b3984723645d89e6beddb026",
     "native/motion-profile.inc": "60ec1e00982bc1e58be76805d4be52faad12c15f5822521dddf4d3042e7c4b62",
@@ -38,6 +38,13 @@
     "report": "implementation/warlock/qa/runs/pin-core-1791495415110842751/report.json",
     "reportSHA256": "8b708af7cc1f4b4eae0600cd43a1024fb5f7bad9ead03fa65a1ec3d6d1d84ebf",
     "binarySHA256": "81c9ac609c2900f99c1efbe613b83e949aeae3059a5e4403601581fa96191acf",
+    "nativeAcceptance": false
+  },
+  "maxCoreReport": {
+    "schema": 1,
+    "report": "implementation/warlock/qa/runs/max-core-1791611447208487848/report.json",
+    "reportSHA256": "42b5cb5227d28d99101967484fb0910f5dd19f199697a82b49d78a3be24a2d45",
+    "binarySHA256": "935bacda219faad6b44d30fc94ebf5e715db98bd499df0e2929de570b5e22f3b",
     "nativeAcceptance": false
   }
 }

@@ -1,13 +1,68 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T05:33:20.200851+00:00",
+  "updatedUTC": "2026-10-10T05:55:02.595193+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
+    "id": "max-input-region",
+    "requirements": [
+      "ELM-REN-015"
+    ],
+    "scenarios": [
+      "max-input-region"
+    ],
+    "paths": [
+      "implementation/warlock/native/geometry-effects.inc",
+      "implementation/warlock/native/core/FullscreenController.cpp",
+      "implementation/warlock/qa/check-max-core.py",
+      "implementation/warlock/qa/check-native-authority.py",
+      "implementation/warlock/qa/current-max-core.json",
+      "implementation/warlock/qa/current-native-pair.json",
+      "implementation/warlock/qa/native-window-feedback.py",
+      "implementation/warlock/qa/native-max-input-region.py",
+      "implementation/warlock/qa/max-overlap.qnt",
+      "implementation/warlock/qa/max-overlap_test.qnt",
+      "implementation/warlock/README.md",
+      "implementation/warlock/qa/current-search-build.json",
+      "implementation/warlock/native/core/Window.cpp",
+      "implementation/warlock/native/core/ViewHitTester.cpp",
+      "implementation/warlock/qa/check-max-overlap.py"
+    ],
+    "before": "The geometry authority refuses a second MAX; the owning controller also exits a prior floating MAX, so the original two-MAX input-region journey cannot run.",
+    "after": "A second coherent floating MAX preserves the first MAX and its return placement; the original input-hole click is tested against actual upper pixels and lower native recipient, with scene agreement still requiring explicit evidence.",
+    "verification": [
+      "Quint named cases/witnesses/sampled traces; owning controller TU and plugin compile/ABI closure; original protected two-MAX native input-region journey"
+    ],
+    "status": "implemented-partial",
+    "participantRecord": ".warlock-contributor/max-input.json",
+    "evidence": "implementation/warlock/qa/evidence/max-input-region/manifest.json",
+    "observed": "Two floating MAX windows now coexist without changing peer geometry. Actual native upper pixels, included upper GTK recipient and excluded lower GTK recipient/focus pass; both return placements recover. Seven model cases/positive witnesses/sampled safety and 81-check native pin/MAX regression pass. Original committed-scene agreement and independent acceptance remain open.",
+    "missingObservations": [
+      "Native render and hit receipts bound to one committed constrained scene revision, including input region/transform commits.",
+      "Original transformed/modal recipient and explicit passthrough/no-activation exception cases.",
+      "Independent original scenario disposition and applicable native AT/full-release qualification."
+    ],
+    "nextSourceWork": "Implement a native committed constrained-scene identity shared by render and input traversal, with real input-region/transform dependencies and authenticated native receipts. Preserve actual two-MAX, pin/MAX and return-placement behavior. Continue original modal/pass-through/no-activation predicates without using authority dependency revisions as frame-scene proof; full family/fullscreen/AT/IME/hardware/resources/package/rollback stay mandatory."
+  },
+  "nextSlices": [
+    "taskbar activation/minimize/restore and popup focus journeys",
+    "persistent catalog pins",
+    "launcher search and refusal recovery",
+    "switcher/Task View/workspaces and snap/output journeys",
+    "authorized visible previews and fallback",
+    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
+    "original native, AT/IME, hardware/resource/journey gates",
+    "reproducible package, reversible deployment/rollback"
+  ],
+  "releaseAccepted": false,
+  "oldTrackerIsCurrent": false,
+  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
+  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
+  "previousSlice": {
     "id": "stable-observed-always-on-top",
     "requirements": [
       "ELM-UX-016"
@@ -49,74 +104,6 @@
       "Full original pin/family/fullscreen, modal/input-region/paint predicates and release hardware/resource/package/rollback scope."
     ],
     "nextSourceWork": "Complete the remaining original MAX/pin family, fullscreen and painted/input-order predicates on the current coherent native tuple. Select one original REN-015/016/017/018 behavior, inspect its exact original campaign and implement actual missing scene behavior before extending qualification. Preserve original pin blockers, MAX return geometry, drafts, source/core/plugin ABI and deadlines. Native AT/IME/hardware/resources and package/rollback remain mandatory release scope."
-  },
-  "nextSlices": [
-    "taskbar activation/minimize/restore and popup focus journeys",
-    "persistent catalog pins",
-    "launcher search and refusal recovery",
-    "switcher/Task View/workspaces and snap/output journeys",
-    "authorized visible previews and fallback",
-    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
-    "original native, AT/IME, hardware/resource/journey gates",
-    "reproducible package, reversible deployment/rollback"
-  ],
-  "releaseAccepted": false,
-  "oldTrackerIsCurrent": false,
-  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
-  "previousSlice": {
-    "id": "notification-expiration-relevance",
-    "requirements": [
-      "ELM-UI-010"
-    ],
-    "scenarios": [
-      "announce-notification expiration",
-      "announce-expired action rejection",
-      "announcement-expiration-irrelevant"
-    ],
-    "before": "Notification expiry updates history and removes native actions, but has no focus/user-invocation relevance input or correlated expiry/refusal message. Removing or disabling a focused action makes the popup move focus to Close.",
-    "after": "The root admits scoped passive popup focus observations and announces only exact focused/user-invoked expiry and matched expired-action refusals, politely when DND permits. The focused unavailable action remains a keyed, aria-disabled non-actionable node until focus leaves. Irrelevant expiry, foreign/stale focus observations and repeated receipts remain silent; reads and Unknown mutations never replay.",
-    "paths": [
-      "implementation/warlock/src/Notifications.elm",
-      "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/src/OutcomeAnnouncements.elm",
-      "implementation/warlock/src/OutputController.elm",
-      "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/src/SurfaceRenderer.elm",
-      "implementation/warlock/assets/popup-adapter.js",
-      "implementation/warlock/assets/shell.css",
-      "implementation/warlock/assets/elm.js",
-      "implementation/warlock/assets/bar.js",
-      "implementation/warlock/assets/popup.js",
-      "implementation/warlock/native/surface.h",
-      "implementation/warlock/native/shared-host.c",
-      "implementation/warlock/qa/notification-relevance.qnt",
-      "implementation/warlock/qa/notification-relevance_test.qnt",
-      "implementation/warlock/qa/check-notification-relevance.py",
-      "implementation/warlock/qa/NotificationRelevanceReplay.elm",
-      "implementation/warlock/qa/check-search.py",
-      "implementation/warlock/qa/announcement-browser.mjs",
-      "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/qa/surface-admission.c",
-      "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/README.md",
-      "implementation/warlock/adapter/notification_service.py",
-      "implementation/warlock/qa/check-notifications.py"
-    ],
-    "verification": [
-      "Use quint-llm-kit modeling/execution skills: incrementally check matched focus/request/expiry/rejection/DND/no-replay model with explicit named tests and positive witnesses. Compile current roots/GTK C host; strict native focus-only/frame/observation gates; typed root source identity/relevance/foreign/repeat guards; browser real focus and unavailable keyed node semantics. Protected original native notification fixture extends actual expiry/reused-ID queued rejection and physical keyboard focused expiry, irrelevant silence/DND, exact one-owner correlation/unchanged node/control/document focus and no action replay. Preserve owning ABI, existing native deadlines and original checks. Actual speech/braille, full native lifecycle/output/hardware matrix and independent acceptance remain partial."
-    ],
-    "status": "implemented-partial",
-    "participantRecord": ".warlock-contributor/notification-relevance.json",
-    "evidence": "implementation/warlock/qa/evidence/notification-relevance/manifest.json",
-    "observed": "Implemented exact focused/user-invoked expiry and expired-action rejection relevance, passive scoped focus observations and keyed non-actionable focus retention. Original protected native notification journey passes 91 checks including physical expiry, DND/no replay, Enter rejection, departure, irrelevant silence and original held ID-reuse refusal. Nine native keyboard surfaces pass 37 regression checks. Actual AT, wider native lifecycle/pixels and independent acceptance remain open.",
-    "missingObservations": [
-      "Actual stable-focus speech and braille, repeated delivery, readonly control semantics and reachable recovery through native AT.",
-      "Independent original-scenario acceptance.",
-      "Native user-invoked expiry with other focus, wider focus/output/transport/producer lifecycle and retained-control physical pixel qualification.",
-      "Spontaneous service-unavailability outcomes and broader release scope remain open."
-    ],
-    "nextSourceWork": "Implement stable checkable Always on top/pin and MAX controls integrated with existing native geometry authority. Use quint-llm-kit for exact identity, pending/Unknown/refusal and no-replay transitions; preserve original pin/MAX/restore oracles. Native speech/braille announcement qualification and all remaining full GUI release scope remain mandatory."
   },
   "recentSlices": [
     {

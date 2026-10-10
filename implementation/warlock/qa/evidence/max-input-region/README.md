@@ -1,0 +1,15 @@
+# Two floating MAX windows and real input-region traversal
+
+The GUI can maximize a second floating native window while the first retains MAX and its placement. At a real Wayland input-region hole, the upper MAX remains painted and a physical click reaches the lower eligible GTK root. Included points still target the upper root. Restoring either member preserves the other and recovers its original return placement.
+
+The original ELM-REN-015 / `max-input-region` remains **partial**. The native recording passes 63 checks and normal cleanup. It observes actual upper pixels, GTK pressed events and native focused identities for both included and excluded points. It does **not** prove that render and hit receipts reference one committed scene revision. The authority's dependency-fact revision is metadata, not that proof. Nonzero XDG origins/transforms, modal recipients, passthrough/no-activation exceptions, full pin/family/fullscreen predicates, native AT and independent acceptance remain open.
+
+`manifest.json` binds the current source paths, exact core/plugin/aquamarine tuple and original reports. `IncludedPoint.png` and `ExcludedPoint.png` are actual private native captures before their respective clicks. `native-report.json` retains the physical input and recipient observations. The 81-check pin/MAX pointer and keyboard regression also passes on this new tuple; it is a regression, not an additional delivered feature or independent acceptance.
+
+The installed quint-llm-kit modeling discipline was used for `qa/max-overlap.qnt`: incremental runnable initialization, seven named tests, three positive reachability witnesses and 1,000 sampled 30-step safety traces. The model abstracts two coherent modes, placement and input-hole/scene-revision admission. It excludes native ABI, actual Wayland commits, transforms, pixels and seats. Its stale-paint rule is a design obligation; it does not establish native implementation of committed-scene agreement.
+
+## Retained failures and corrections
+
+The initial native run preserved both MAX windows and upper pixels but timed out waiting for the lower GTK recipient at the excluded point. `native-input-hole-failure.json` is unchanged. The correction keeps all floating native MAX members eligible without clearing other input blockers, consults the existing native surface/input-region/XDG-origin function during stack traversal, and prevents an arbitrary handler member from overriding a failed floating hit.
+
+The first core attempt used the earlier stock controller source. Before final qualification it was corrected to retain the exact v73 client-maximize notification and the current Window/HitTester source ancestors. The final build verifies their recorded object and source hashes, changes three archive members, preserves 430 others and retains public headers/exports. A build-script dependency-field error and an initial malformed compiled-asset map were also corrected. Their reports/launch output remain local; no native acceptance is derived from those failed attempts.

@@ -1,0 +1,534 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      floating: [true, true],
+      hitRevision: -1,
+      hole: false,
+      modes: [0, 0],
+      painted: -1,
+      paintedRevision: -1,
+      recipient: -1,
+      rejected: 0,
+      revision: 0,
+      staleHits: 0
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      floating: [true, true],
+      hitRevision: -1,
+      hole: false,
+      modes: [1, 0],
+      painted: -1,
+      paintedRevision: -1,
+      recipient: -1,
+      rejected: 0,
+      revision: 1,
+      staleHits: 0
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      floating: [true, false],
+      hitRevision: -1,
+      hole: false,
+      modes: [0, 1],
+      painted: -1,
+      paintedRevision: -1,
+      recipient: -1,
+      rejected: 0,
+      revision: 2,
+      staleHits: 0
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      floating: [true, false],
+      hitRevision: -1,
+      hole: false,
+      modes: [0, 1],
+      painted: -1,
+      paintedRevision: -1,
+      recipient: -1,
+      rejected: 0,
+      revision: 3,
+      staleHits: 0
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      floating: [true, false],
+      hitRevision: -1,
+      hole: false,
+      modes: [0, 1],
+      painted: -1,
+      paintedRevision: -1,
+      recipient: -1,
+      rejected: 0,
+      revision: 4,
+      staleHits: 0
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      floating: [true, false],
+      hitRevision: -1,
+      hole: true,
+      modes: [0, 1],
+      painted: -1,
+      paintedRevision: -1,
+      recipient: -1,
+      rejected: 0,
+      revision: 5,
+      staleHits: 0
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      floating: [true, false],
+      hitRevision: -1,
+      hole: false,
+      modes: [0, 1],
+      painted: -1,
+      paintedRevision: -1,
+      recipient: -1,
+      rejected: 0,
+      revision: 6,
+      staleHits: 0
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      floating: [true, false],
+      hitRevision: -1,
+      hole: true,
+      modes: [0, 1],
+      painted: -1,
+      paintedRevision: -1,
+      recipient: -1,
+      rejected: 0,
+      revision: 7,
+      staleHits: 0
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      floating: [true, false],
+      hitRevision: -1,
+      hole: true,
+      modes: [0, 2],
+      painted: -1,
+      paintedRevision: -1,
+      recipient: -1,
+      rejected: 0,
+      revision: 8,
+      staleHits: 0
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      floating: [true, false],
+      hitRevision: -1,
+      hole: true,
+      modes: [0, 1],
+      painted: -1,
+      paintedRevision: -1,
+      recipient: -1,
+      rejected: 0,
+      revision: 9,
+      staleHits: 0
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      floating: [true, false],
+      hitRevision: -1,
+      hole: true,
+      modes: [0, 1],
+      painted: -1,
+      paintedRevision: -1,
+      recipient: -1,
+      rejected: 0,
+      revision: 10,
+      staleHits: 0
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      floating: [true, false],
+      hitRevision: -1,
+      hole: true,
+      modes: [0, 1],
+      painted: -1,
+      paintedRevision: -1,
+      recipient: -1,
+      rejected: 1,
+      revision: 10,
+      staleHits: 0
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      floating: [true, false],
+      hitRevision: -1,
+      hole: true,
+      modes: [0, 1],
+      painted: -1,
+      paintedRevision: -1,
+      recipient: -1,
+      rejected: 2,
+      revision: 10,
+      staleHits: 0
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      floating: [true, false],
+      hitRevision: -1,
+      hole: true,
+      modes: [0, 1],
+      painted: -1,
+      paintedRevision: -1,
+      recipient: -1,
+      rejected: 2,
+      revision: 11,
+      staleHits: 0
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      floating: [true, false],
+      hitRevision: -1,
+      hole: true,
+      modes: [0, 1],
+      painted: -1,
+      paintedRevision: -1,
+      recipient: -1,
+      rejected: 3,
+      revision: 11,
+      staleHits: 0
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      floating: [true, false],
+      hitRevision: -1,
+      hole: true,
+      modes: [0, 1],
+      painted: -1,
+      paintedRevision: -1,
+      recipient: -1,
+      rejected: 3,
+      revision: 12,
+      staleHits: 0
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      floating: [true, false],
+      hitRevision: -1,
+      hole: true,
+      modes: [0, 0],
+      painted: -1,
+      paintedRevision: -1,
+      recipient: -1,
+      rejected: 3,
+      revision: 13,
+      staleHits: 0
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      floating: [true, false],
+      hitRevision: -1,
+      hole: true,
+      modes: [0, 1],
+      painted: -1,
+      paintedRevision: -1,
+      recipient: -1,
+      rejected: 3,
+      revision: 14,
+      staleHits: 0
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      floating: [true, false],
+      hitRevision: -1,
+      hole: true,
+      modes: [0, 1],
+      painted: -1,
+      paintedRevision: -1,
+      recipient: -1,
+      rejected: 3,
+      revision: 15,
+      staleHits: 0
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      floating: [true, false],
+      hitRevision: -1,
+      hole: true,
+      modes: [0, 1],
+      painted: -1,
+      paintedRevision: -1,
+      recipient: -1,
+      rejected: 3,
+      revision: 16,
+      staleHits: 0
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      floating: [true, false],
+      hitRevision: -1,
+      hole: true,
+      modes: [0, 1],
+      painted: -1,
+      paintedRevision: -1,
+      recipient: -1,
+      rejected: 3,
+      revision: 17,
+      staleHits: 0
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      floating: [true, false],
+      hitRevision: -1,
+      hole: true,
+      modes: [0, 0],
+      painted: -1,
+      paintedRevision: -1,
+      recipient: -1,
+      rejected: 3,
+      revision: 18,
+      staleHits: 0
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      floating: [true, false],
+      hitRevision: -1,
+      hole: true,
+      modes: [0, 0],
+      painted: -1,
+      paintedRevision: -1,
+      recipient: -1,
+      rejected: 3,
+      revision: 19,
+      staleHits: 0
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      floating: [true, false],
+      hitRevision: -1,
+      hole: true,
+      modes: [0, 1],
+      painted: -1,
+      paintedRevision: -1,
+      recipient: -1,
+      rejected: 3,
+      revision: 20,
+      staleHits: 0
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      floating: [true, false],
+      hitRevision: -1,
+      hole: true,
+      modes: [0, 1],
+      painted: -1,
+      paintedRevision: -1,
+      recipient: -1,
+      rejected: 3,
+      revision: 21,
+      staleHits: 0
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      floating: [true, false],
+      hitRevision: -1,
+      hole: true,
+      modes: [0, 0],
+      painted: -1,
+      paintedRevision: -1,
+      recipient: -1,
+      rejected: 3,
+      revision: 22,
+      staleHits: 0
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      floating: [true, false],
+      hitRevision: -1,
+      hole: false,
+      modes: [0, 0],
+      painted: -1,
+      paintedRevision: -1,
+      recipient: -1,
+      rejected: 3,
+      revision: 23,
+      staleHits: 0
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      floating: [true, false],
+      hitRevision: -1,
+      hole: false,
+      modes: [0, 0],
+      painted: -1,
+      paintedRevision: -1,
+      recipient: -1,
+      rejected: 3,
+      revision: 24,
+      staleHits: 0
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      floating: [true, false],
+      hitRevision: -1,
+      hole: false,
+      modes: [0, 0],
+      painted: -1,
+      paintedRevision: -1,
+      recipient: -1,
+      rejected: 3,
+      revision: 25,
+      staleHits: 0
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      floating: [true, false],
+      hitRevision: -1,
+      hole: false,
+      modes: [0, 0],
+      painted: -1,
+      paintedRevision: -1,
+      recipient: -1,
+      rejected: 4,
+      revision: 25,
+      staleHits: 0
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      floating: [true, false],
+      hitRevision: -1,
+      hole: false,
+      modes: [0, 0],
+      painted: -1,
+      paintedRevision: -1,
+      recipient: -1,
+      rejected: 4,
+      revision: 26,
+      staleHits: 0
+    }
+}
+
+[ok] No violation found (887ms at 1127 traces/second).
+Trace length statistics: max=31, min=31, average=31.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x135c7 --backend=typescript to reproduce.

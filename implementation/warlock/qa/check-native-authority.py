@@ -46,6 +46,12 @@ try:
   assert pin_core['passed'] and pin_core['existingPublicHeadersUnchanged'] and pin_core['existingObjectLayoutsUnchanged'] and sha(ROOT/'native/core/ConfigActions.cpp')==pin_core['sourceSHA256']
   assert pin_core['ancestor']=={'report':str(focus_report),'reportSHA256':sha(focus_report)} and pin_core['owningHeaders']==focus_core['owningHeaders']
   header_prefix=(header_prefix[0],str(pin_report.parent/'owning-headers'));core={'path':pin_core['binary'],'sha256':pin_core['binarySHA256']};assert sha(core['path'])==core['sha256']
+ max_path=ROOT/'qa/current-max-core.json'
+ if max_path.exists():
+  maximum=json.loads(max_path.read_text());max_report=REPO/maximum['report'];assert sha(max_report)==maximum['reportSHA256'];max_core=json.loads(max_report.read_text())
+  assert max_core['passed'] and max_core['existingPublicHeadersUnchanged'] and max_core['existingObjectLayoutsUnchanged'] and sha(ROOT/'native/core/FullscreenController.cpp')==max_core['sourceSHA256'] and all(sha(ROOT/p)==h for p,h in max_core['sourceHashes'].items())
+  assert max_core['ancestor']=={'report':str(pin_report),'reportSHA256':sha(pin_report)} and max_core['owningHeaders']==pin_core['owningHeaders']
+  header_prefix=(header_prefix[0],str(max_report.parent/'owning-headers'));core={'path':max_core['binary'],'sha256':max_core['binarySHA256']};assert sha(core['path'])==core['sha256']
  source=OUT/'inputs/native';source.mkdir(parents=True)
  inputs={}
  for name in ('authority.cpp','navigation-modal.hpp','geometry-effects.inc','snap-placement.inc','transfer-workspace.inc','motion-profile.inc','picker-preview.inc','picker-probe-table.hpp','capture-fd-server.inc','geometry.inc','shortcut-bindings.inc'):

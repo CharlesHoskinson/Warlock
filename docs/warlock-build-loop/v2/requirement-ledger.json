@@ -2973,7 +2973,7 @@
       "owner": "Native authority lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "ren-015",
@@ -2985,9 +2985,35 @@
         {
           "name": "max-input-region",
           "oracle": "paint retains the upper pixels, native hit chooses the eligible lower input surface, and the scene revision agrees",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/max-input-region/manifest.json",
+              "sha256": "a82593b87f252a88a594702c0633c380f2709886c9c8a0936191177516708ca1",
+              "scope": "Actual two floating MAX windows, retained upper pixels at the input-hole point, exact lower GTK pressed/focus recipient, included-point upper recipient, preserved other MAX geometry and both return placements. Current 81-check pin/MAX keyboard/pointer regression passes. No native committed render/hit scene revision agreement or independent acceptance inferred.",
+              "sourceBaseRevision": "4db6961761767cb898a706308df70d4d6cad8c27",
+              "sourceHashes": {
+                "implementation/warlock/native/geometry-effects.inc": "78276a901a3d5a47c48e5c6eeb646715fbc72f5d13ae6ba9d7b703d9ec761d04",
+                "implementation/warlock/native/core/FullscreenController.cpp": "c9281a65d4a42c2c4e0b45903d4a2acc1e75e52af14304f5b7cd96ce592bad3c",
+                "implementation/warlock/qa/check-max-core.py": "be4afc82dd525ecfae9d86df7c844c358387a95e2abf6ad1cbe9377f0993a72b",
+                "implementation/warlock/qa/check-native-authority.py": "0e221e76e2f6187d419e81ac93b2e549ed90e0d73e13a036f7182f035aa3e4cf",
+                "implementation/warlock/qa/current-max-core.json": "887b06db4872f4cb835ece06dade787b9086e794e6df944d5740541842431db3",
+                "implementation/warlock/qa/current-native-pair.json": "b2a098c73abdc8022b83d6d09d0cf8d75eb47103073a42973cb994eba7c25966",
+                "implementation/warlock/qa/native-window-feedback.py": "e7b619c023bc25fa4cc9051c625ee32369fac93da96f13c609507c1fcd83549c",
+                "implementation/warlock/qa/native-max-input-region.py": "719d0efd13a2f3867dc6e5732c54ca81065c71de5e02a6b9cf70e23d765dddc6",
+                "implementation/warlock/qa/max-overlap.qnt": "b42f598d9cd54c25d0dc23c3c4ead9919b1e25a926b99006b3f8d440a6655a30",
+                "implementation/warlock/qa/max-overlap_test.qnt": "711ad185c846f3f593a4ea58cfbe61181ea791037f70039c3661e8e125b9b8bb",
+                "implementation/warlock/README.md": "a3741ba9415846c777bde24909e7bbb4a65e0ea7c79ce63aad983254d8d9b5b6",
+                "implementation/warlock/qa/current-search-build.json": "ce2d3095e0e96aedf7033e9a4005bf02411e1f77373d09193eec59c0a1ed17b8",
+                "implementation/warlock/native/core/Window.cpp": "e948a6265d3d8ce12bc6c1f1ee75c855684ce0863662f5da9fd07fb9e9ab49c2",
+                "implementation/warlock/native/core/ViewHitTester.cpp": "7552b157e59e5f333a1969ddb41143992f4e658819089668985aa699787160a8",
+                "implementation/warlock/qa/check-max-overlap.py": "8b828dd65040984f2b962ccd27ac81a51f371034318c5711f06f96a225d828cb"
+              },
+              "reviewer": "root-max-input",
+              "disposition": "partial"
+            }
+          ],
+          "missingObservation": "Native render/hit receipts bound to one committed constrained scene revision including input-region/transform changes; original transformed/modal and explicit passthrough/no-activation cases; applicable native AT and independent acceptance."
         },
         {
           "name": "max-modal-focus",
@@ -10962,5 +10988,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-10T05:33:20.200851+00:00"
+  "updatedUTC": "2026-10-10T05:55:02.595193+00:00"
 }

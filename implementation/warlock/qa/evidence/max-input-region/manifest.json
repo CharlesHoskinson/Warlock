@@ -1,0 +1,112 @@
+{
+  "schema": 1,
+  "requirement": "ELM-REN-015",
+  "scenario": "max-input-region",
+  "oracle": "paint retains the upper pixels, native hit chooses the eligible lower input surface, and the scene revision agrees",
+  "disposition": "partial",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "sourceBaseRevision": "4db6961761767cb898a706308df70d4d6cad8c27",
+  "sourceHashes": {
+    "implementation/warlock/native/geometry-effects.inc": "78276a901a3d5a47c48e5c6eeb646715fbc72f5d13ae6ba9d7b703d9ec761d04",
+    "implementation/warlock/native/core/FullscreenController.cpp": "c9281a65d4a42c2c4e0b45903d4a2acc1e75e52af14304f5b7cd96ce592bad3c",
+    "implementation/warlock/qa/check-max-core.py": "be4afc82dd525ecfae9d86df7c844c358387a95e2abf6ad1cbe9377f0993a72b",
+    "implementation/warlock/qa/check-native-authority.py": "0e221e76e2f6187d419e81ac93b2e549ed90e0d73e13a036f7182f035aa3e4cf",
+    "implementation/warlock/qa/current-max-core.json": "887b06db4872f4cb835ece06dade787b9086e794e6df944d5740541842431db3",
+    "implementation/warlock/qa/current-native-pair.json": "b2a098c73abdc8022b83d6d09d0cf8d75eb47103073a42973cb994eba7c25966",
+    "implementation/warlock/qa/native-window-feedback.py": "e7b619c023bc25fa4cc9051c625ee32369fac93da96f13c609507c1fcd83549c",
+    "implementation/warlock/qa/native-max-input-region.py": "719d0efd13a2f3867dc6e5732c54ca81065c71de5e02a6b9cf70e23d765dddc6",
+    "implementation/warlock/qa/max-overlap.qnt": "b42f598d9cd54c25d0dc23c3c4ead9919b1e25a926b99006b3f8d440a6655a30",
+    "implementation/warlock/qa/max-overlap_test.qnt": "711ad185c846f3f593a4ea58cfbe61181ea791037f70039c3661e8e125b9b8bb",
+    "implementation/warlock/README.md": "a3741ba9415846c777bde24909e7bbb4a65e0ea7c79ce63aad983254d8d9b5b6",
+    "implementation/warlock/qa/current-search-build.json": "ce2d3095e0e96aedf7033e9a4005bf02411e1f77373d09193eec59c0a1ed17b8",
+    "implementation/warlock/native/core/Window.cpp": "e948a6265d3d8ce12bc6c1f1ee75c855684ce0863662f5da9fd07fb9e9ab49c2",
+    "implementation/warlock/native/core/ViewHitTester.cpp": "7552b157e59e5f333a1969ddb41143992f4e658819089668985aa699787160a8",
+    "implementation/warlock/qa/check-max-overlap.py": "8b828dd65040984f2b962ccd27ac81a51f371034318c5711f06f96a225d828cb"
+  },
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/max-core-1791611447208487848/Hyprland",
+      "sha256": "935bacda219faad6b44d30fc94ebf5e715db98bd499df0e2929de570b5e22f3b"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791611480287047016/elm-window-geometry-authority.so",
+      "sha256": "a7321a9a9560b9e6befd81c7ee233ac7d9ebb3e4bcd8f8c79fb453c883b98134"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "reports": {
+    "core": {
+      "original": "implementation/warlock/qa/runs/max-core-1791611447208487848/report.json",
+      "originalSHA256": "42b5cb5227d28d99101967484fb0910f5dd19f199697a82b49d78a3be24a2d45",
+      "retained": "implementation/warlock/qa/evidence/max-input-region/core-report.json",
+      "sha256": "42b5cb5227d28d99101967484fb0910f5dd19f199697a82b49d78a3be24a2d45"
+    },
+    "authority": {
+      "original": "implementation/warlock/qa/runs/native-authority-1791611480287047016/report.json",
+      "originalSHA256": "b0630b78b8fb7663d7481d1a324634e4e4eff0b69d82e5e03f637a9eb8265372",
+      "retained": "implementation/warlock/qa/evidence/max-input-region/authority-report.json",
+      "sha256": "b0630b78b8fb7663d7481d1a324634e4e4eff0b69d82e5e03f637a9eb8265372"
+    },
+    "compiled": {
+      "original": "implementation/warlock/qa/runs/pin-max-1791611133148904669/report.json",
+      "originalSHA256": "e9284bab274fb16b16a191c679f1fb5c6b35a5aa98ada3bc0060a5a715573cdf",
+      "retained": "implementation/warlock/qa/evidence/max-input-region/compiled-report.json",
+      "sha256": "e9284bab274fb16b16a191c679f1fb5c6b35a5aa98ada3bc0060a5a715573cdf"
+    },
+    "model": {
+      "original": "implementation/warlock/qa/runs/max-overlap-1791611536029052541/report.json",
+      "originalSHA256": "523414a8a71684872d6ed37c1420a5947b59c5635922d37619b62e4564f824fd",
+      "retained": "implementation/warlock/qa/evidence/max-input-region/model-report.json",
+      "sha256": "523414a8a71684872d6ed37c1420a5947b59c5635922d37619b62e4564f824fd"
+    },
+    "native": {
+      "original": "implementation/warlock/qa/runs/native-max-input-region-1791611513721562225/report.json",
+      "originalSHA256": "0cf01daa3261cefdd93d56a70c4f4ee340a0207bcf47d6682119f520256569ef",
+      "retained": "implementation/warlock/qa/evidence/max-input-region/native-report.json",
+      "sha256": "0cf01daa3261cefdd93d56a70c4f4ee340a0207bcf47d6682119f520256569ef"
+    },
+    "pin-regression": {
+      "original": "implementation/warlock/qa/runs/native-pin-max-1791611561702187085/report.json",
+      "originalSHA256": "1e8e516dcf1919475bea8ac88c3d8571c46bf5ae7264606497970d3b761f96ec",
+      "retained": "implementation/warlock/qa/evidence/max-input-region/pin-regression-report.json",
+      "sha256": "1e8e516dcf1919475bea8ac88c3d8571c46bf5ae7264606497970d3b761f96ec"
+    }
+  },
+  "modelWitnessCounts": {
+    "bothMax": 192,
+    "holeLower": 2,
+    "stalePaintRefused": 43
+  },
+  "nativeChecks": 63,
+  "pinRegressionChecks": 81,
+  "committedSceneAgreementAccepted": false,
+  "missingObservations": [
+    "Native render and hit receipts bound to one committed constrained scene revision, including input region/transform commits.",
+    "Original transformed/modal recipient and explicit passthrough/no-activation exception cases.",
+    "Independent original scenario disposition and applicable native AT/full-release qualification."
+  ],
+  "artifacts": {
+    "core-report.json": "42b5cb5227d28d99101967484fb0910f5dd19f199697a82b49d78a3be24a2d45",
+    "authority-report.json": "b0630b78b8fb7663d7481d1a324634e4e4eff0b69d82e5e03f637a9eb8265372",
+    "compiled-report.json": "e9284bab274fb16b16a191c679f1fb5c6b35a5aa98ada3bc0060a5a715573cdf",
+    "model-report.json": "523414a8a71684872d6ed37c1420a5947b59c5635922d37619b62e4564f824fd",
+    "native-report.json": "0cf01daa3261cefdd93d56a70c4f4ee340a0207bcf47d6682119f520256569ef",
+    "pin-regression-report.json": "1e8e516dcf1919475bea8ac88c3d8571c46bf5ae7264606497970d3b761f96ec",
+    "IncludedPoint.png": "9b7f8629f8a2839ab20ce41804cee92b185d6ab76a6834546e69c8dd94a210b7",
+    "ExcludedPoint.png": "2b1e449e9d0570504167b92413ada1f130d1c0814e67149adf952f32a278f602",
+    "model-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "model-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "model-named.stdout": "b4ce2323b3a59b70bef36b413b51ec32a907af6cf8ede923ecc2197f9702e9e9",
+    "model-named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "model-witnesses.stdout": "6cc3d6bf0f730ada653c0397afb9db411d8f4ae82b07d9d44ca0737d9c349982",
+    "model-witnesses.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "model-safety.stdout": "c6625997c78b2c48f574c223dd9af085da9593d3cac4a9d24499e443f0924f63",
+    "model-safety.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-input-hole-failure.json": "c7134b94f4c2f5f5efe75a6fa78dc849032c443f41894daaed00441878f47b4f",
+    "README.md": "e2f95e1089b4d4170b82d3c98eca2f050be512a2dde57b02e22b4b949bc44c8f"
+  }
+}
