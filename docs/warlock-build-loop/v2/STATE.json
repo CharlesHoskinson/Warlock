@@ -1,13 +1,137 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T22:06:19.054626+00:00",
+  "updatedUTC": "2026-10-10T22:35:08.635329+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
+    "id": "outer-focus-indicators",
+    "requirements": [
+      "ELM-UI-013",
+      "ELM-UX-027"
+    ],
+    "scenarios": [
+      "readability-high contrast",
+      "ux-027"
+    ],
+    "paths": [
+      "implementation/warlock/assets/shell.css",
+      "implementation/warlock/qa/settings-browser.mjs",
+      "implementation/warlock/qa/native-window-feedback.py",
+      "implementation/warlock/qa/current-search-build.json",
+      "implementation/warlock/assets/elm.js",
+      "implementation/warlock/assets/bar.js",
+      "implementation/warlock/assets/popup.js",
+      "implementation/warlock/README.md",
+      "implementation/warlock/assets/bar-adapter.js",
+      "implementation/warlock/native/shared-host.c"
+    ],
+    "before": "Bar, high-contrast and effects-off focus treatments use inset rings instead of the adopted WARLOCK-DL-006 outer indicator; overflow clips any naive outer replacement.",
+    "after": "Keyboard focus has an unclipped outer contour distinct from active/selected states, with theme/forced-color contrast and reachable controls at enlarged scale and narrow widths.",
+    "verification": [
+      "Original protected high-contrast/settings browser journey plus first/last taskbar controls in all themes, enlargement, narrow outputs and forced colors; outer geometry and minimum contrast/targets. Protected real keyboard taskbar journey retains original native receipts, pixels and actual recipients. Projection-only CSS change needs no new authority model; original applicable models and acceptance gaps remain separate."
+    ],
+    "owner": "root-outer-focus",
+    "participantRecord": ".warlock-contributor/outer-focus.json",
+    "sourceHashes": {
+      "implementation/warlock/assets/shell.css": "b489d65f21e70646e0af25391f15459d0d728e1313d1cdfb75f7092a60cb5517",
+      "implementation/warlock/qa/settings-browser.mjs": "9f81ea352a1e397a543aee7c5a6bf4c14262fc6dd475724463a0af0d3fa83957",
+      "implementation/warlock/qa/native-window-feedback.py": "3413062f9c94ecbc182a999ba8b8ae6d314bb562736cb4eeb775b6ff87a7467f",
+      "implementation/warlock/qa/current-search-build.json": "ff14f94e3f5495a2f02609f78a37b7f0f3d06ce5b745ae90db066b729d1e6216",
+      "implementation/warlock/assets/elm.js": "bd721cfee4c454729cd2847ae0f31869983bce532034118b063b8733688d549d",
+      "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+      "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
+      "implementation/warlock/README.md": "2fad414870d632166d5782991284e478f57f84fd3123616ef6d8ebf5417882c3",
+      "implementation/warlock/assets/bar-adapter.js": "821e971218880d3319e9d3b7aa60bfe074ba62becc7a3f633ccc318aade1471d",
+      "implementation/warlock/native/shared-host.c": "6e7f43b92c08f19ac82f5c93d67ca69d0a11a6c73f01a763a018f2beba282a7a"
+    },
+    "evidence": [
+      {
+        "requirement": "ELM-UI-013",
+        "scenario": "readability-high contrast",
+        "oracle": "measured thresholds pass, state recognition has non-color cues and all focused controls remain visible and reachable",
+        "verificationScope": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+        "scope": "Outer contour and readonly scroll reveal; current 102-check browser build, 131-check native action/recipient journey and 81-check native high-contrast save/restart. Original oracles retained; sampled models and component forced colors remain separately scoped.",
+        "evidence": [
+          {
+            "path": "implementation/warlock/qa/evidence/outer-focus-indicators/manifest.json",
+            "sha256": "52fcaa0a663946db80640336c6abe59ab25a04b42ce322174e3279111d87c76e"
+          }
+        ],
+        "sourceHashes": {
+          "implementation/warlock/assets/shell.css": "b489d65f21e70646e0af25391f15459d0d728e1313d1cdfb75f7092a60cb5517",
+          "implementation/warlock/qa/settings-browser.mjs": "9f81ea352a1e397a543aee7c5a6bf4c14262fc6dd475724463a0af0d3fa83957",
+          "implementation/warlock/qa/native-window-feedback.py": "3413062f9c94ecbc182a999ba8b8ae6d314bb562736cb4eeb775b6ff87a7467f",
+          "implementation/warlock/qa/current-search-build.json": "ff14f94e3f5495a2f02609f78a37b7f0f3d06ce5b745ae90db066b729d1e6216",
+          "implementation/warlock/assets/elm.js": "bd721cfee4c454729cd2847ae0f31869983bce532034118b063b8733688d549d",
+          "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+          "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
+          "implementation/warlock/README.md": "2fad414870d632166d5782991284e478f57f84fd3123616ef6d8ebf5417882c3",
+          "implementation/warlock/assets/bar-adapter.js": "821e971218880d3319e9d3b7aa60bfe074ba62becc7a3f633ccc318aade1471d",
+          "implementation/warlock/native/shared-host.c": "6e7f43b92c08f19ac82f5c93d67ca69d0a11a6c73f01a763a018f2beba282a7a"
+        },
+        "reviewer": "root-outer-focus",
+        "disposition": "partial",
+        "missingObservations": [
+          "Every-surface/profile/output, native OS forced colors, native AT speech/braille and independent acceptance remain open; retained AT/WebKit reopening crash unresolved."
+        ]
+      },
+      {
+        "requirement": "ELM-UX-027",
+        "scenario": "ux-027",
+        "oracle": "labels and focus remain visible and every action retains a hit target",
+        "verificationScope": "Elm replay assertion and isolated native recording: labels and focus remain visible and every action retains a hit target.",
+        "scope": "Readable captions, complete outer focus geometry and reachable taskbar/Settings targets at enlarged/narrow widths; actual native taskbar and 150-percent Settings save/restart with physical pixels and normal cleanup.",
+        "evidence": [
+          {
+            "path": "implementation/warlock/qa/evidence/outer-focus-indicators/manifest.json",
+            "sha256": "52fcaa0a663946db80640336c6abe59ab25a04b42ce322174e3279111d87c76e"
+          }
+        ],
+        "sourceHashes": {
+          "implementation/warlock/assets/shell.css": "b489d65f21e70646e0af25391f15459d0d728e1313d1cdfb75f7092a60cb5517",
+          "implementation/warlock/qa/settings-browser.mjs": "9f81ea352a1e397a543aee7c5a6bf4c14262fc6dd475724463a0af0d3fa83957",
+          "implementation/warlock/qa/native-window-feedback.py": "3413062f9c94ecbc182a999ba8b8ae6d314bb562736cb4eeb775b6ff87a7467f",
+          "implementation/warlock/qa/current-search-build.json": "ff14f94e3f5495a2f02609f78a37b7f0f3d06ce5b745ae90db066b729d1e6216",
+          "implementation/warlock/assets/elm.js": "bd721cfee4c454729cd2847ae0f31869983bce532034118b063b8733688d549d",
+          "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+          "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
+          "implementation/warlock/README.md": "2fad414870d632166d5782991284e478f57f84fd3123616ef6d8ebf5417882c3",
+          "implementation/warlock/assets/bar-adapter.js": "821e971218880d3319e9d3b7aa60bfe074ba62becc7a3f633ccc318aade1471d",
+          "implementation/warlock/native/shared-host.c": "6e7f43b92c08f19ac82f5c93d67ca69d0a11a6c73f01a763a018f2beba282a7a"
+        },
+        "reviewer": "root-outer-focus",
+        "disposition": "partial",
+        "missingObservations": [
+          "Full every-surface/output/localized-label/enlargement scope, native AT and independent original acceptance remain open."
+        ]
+      }
+    ],
+    "missingObservations": [
+      "Native OS forced-colors, every-surface/profile/output/enlarged/localized-label scope, native AT speech/braille and independent original acceptance remain open.",
+      "The retained native AT/WebKit reopening crash is unresolved; these keyboard journeys do not qualify it."
+    ],
+    "observedOutcome": "Implemented adopted outer taskbar/Settings focus with matched native gutter, complete enlarged group captions and outline-aware scroll reveal. Final original native taskbar actions/receipts/recipients pass with five intact captures; high-contrast 150-percent save/restart and four-edge paint contrast pass. All-surface AT/independent acceptance remains partial.",
+    "nextAction": "Continue original ELM-UI-008 overflow-first-last on the current outer-focus row: actual small-output/enlarged native navigation must reveal complete contours, readable group captions and first/last operation labels while retaining recipients and exact native authority. Reconcile old fixed row-height assertions with the declared eight-pixel gutter without relaxing reachability/pixel/target oracles, and fix any observed production clipping. Native popup reflow and AT remain separate original obligations; no new model unless policy/authority changes."
+  },
+  "nextSlices": [
+    "taskbar activation/minimize/restore and popup focus journeys",
+    "persistent catalog pins",
+    "launcher search and refusal recovery",
+    "switcher/Task View/workspaces and snap/output journeys",
+    "authorized visible previews and fallback",
+    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
+    "original native, AT/IME, hardware/resource/journey gates",
+    "reproducible package, reversible deployment/rollback"
+  ],
+  "releaseAccepted": false,
+  "oldTrackerIsCurrent": false,
+  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
+  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
+  "previousSlice": {
     "id": "taskbar-group-active-state",
     "requirements": [
       "ELM-UI-009"
@@ -78,102 +202,6 @@
     ],
     "observedOutcome": "Active two-member groups now retain Active and the window count. Old production fails three active cases and passes two inactive/minimized cases; final production passes all five. Existing browser accessibility and original Quint switcher/focus gates pass. Native AT agrees with all actual taskbar control names and exactly one group toggle state; real pointer dismissal returns to the application and keyboard Home reaches the group. Native AT picker reopening then fails with WebKit termination and host exit 1.",
     "nextAction": "Inspect ELM-UI-009 at-taskbar-groups actual native popup/WebKit lifecycle during the retained AT reopening termination, against existing prior equivalent renderer failures and current host source. One bounded diagnosis and concrete source correction only if supported; preserve original native deadlines, core limit and full action/speech/braille obligations. If no safe product correction follows, record the missing stack/mechanism and continue another mandatory product slice instead of expanding QA."
-  },
-  "nextSlices": [
-    "taskbar activation/minimize/restore and popup focus journeys",
-    "persistent catalog pins",
-    "launcher search and refusal recovery",
-    "switcher/Task View/workspaces and snap/output journeys",
-    "authorized visible previews and fallback",
-    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
-    "original native, AT/IME, hardware/resource/journey gates",
-    "reproducible package, reversible deployment/rollback"
-  ],
-  "releaseAccepted": false,
-  "oldTrackerIsCurrent": false,
-  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
-  "previousSlice": {
-    "id": "switcher-reselection-focus",
-    "requirements": [
-      "ELM-UX-014",
-      "ELM-UX-026"
-    ],
-    "scenarios": [
-      "ux-014",
-      "ux-026"
-    ],
-    "paths": [
-      "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/qa/SwitcherReplay.elm",
-      "implementation/warlock/qa/check-search.py",
-      "implementation/warlock/qa/switcher-focus.qnt",
-      "implementation/warlock/qa/switcher-focus_test.qnt",
-      "implementation/warlock/qa/check-switcher-focus.py",
-      "implementation/warlock/qa/SwitcherFocusReplay.elm",
-      "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/assets/elm.js",
-      "implementation/warlock/assets/bar.js",
-      "implementation/warlock/assets/popup.js",
-      "implementation/warlock/README.md"
-    ],
-    "before": "Local switcher reconciles retirement without advancing/focusing its surviving control; native switcher advances and refocuses selection on every membership refresh, even when the selected incarnation is unchanged.",
-    "after": "A retired selected incarnation moves keyboard focus to the surviving eligible member once; unchanged selection avoids repeated focus commands, and an empty frozen chord cannot activate an arriving/reused incarnation.",
-    "verification": [
-      "Use quint-llm-kit before policy changes: model exact frozen-incarnation selection/focus transitions, positive reachability and safety with named tests. Compile actual Desktop/Popup/Bar, exercise production integration for local/native retirement, unchanged/relabelled snapshots and empty/foreign arrivals. Preserve original native chord/recipient assertions and deadlines; actual speech/braille and independent acceptance remain open."
-    ],
-    "owner": "root-switcher-focus",
-    "participantRecord": ".warlock-contributor/switcher-focus.json",
-    "sourceHashes": {
-      "implementation/warlock/src/Desktop.elm": "8ad8e4797ef13b91add6bce686ebb3bc1f0ec800e4da6328d1d740a3f4961e3f",
-      "implementation/warlock/qa/SwitcherReplay.elm": "36a901e170719ade66eb2c82d0cc9d1ed63b3500721b67d221eb109822a1c64d",
-      "implementation/warlock/qa/check-search.py": "a212ebedd1732c1185e23ebf48e882c167e5dd9d8edb94b09c35dcdda54871b1",
-      "implementation/warlock/qa/switcher-focus.qnt": "93cf358c8197dcfffcc1bd3b71abf19952f9a01c92da11b6f50ba09f6f58462e",
-      "implementation/warlock/qa/switcher-focus_test.qnt": "9eb504a9c822128b3c1a47e96b9a14de12eb3112032b6ada6e15c2664c5e64fe",
-      "implementation/warlock/qa/check-switcher-focus.py": "5748c441942526b3cba1b14e80fc388a0c30e1f594d3b4015c63d5f390464269",
-      "implementation/warlock/qa/SwitcherFocusReplay.elm": "500dae7f1d66bab18dcbfe625911fd62504e1e3aaade660a9ad925558d0aaa4e",
-      "implementation/warlock/qa/native-window-feedback.py": "5f0421e5bb2a52c593fbcc053338e11aab72ba8685d1215b53b4e6152a1cf161",
-      "implementation/warlock/qa/current-search-build.json": "8952cdbfcf5fee60022cad9a47158145ec69edcf7c519d2915f86f8de7e7534f",
-      "implementation/warlock/assets/elm.js": "be66c690207cdefca0f5028376e5d9297cb15daed41785be5e886ff3d2e3fc70",
-      "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
-      "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
-      "implementation/warlock/README.md": "4a02ef29b537671ebfac860f8c14f2cb531c697ce8f2c7ba7adc9b678b1c16ca"
-    },
-    "evidence": [
-      {
-        "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/manifest.json",
-        "sha256": "0d1e6ff89aedcf9cc4897d42db6fc04a7b279049edb22f807c759a82d4073789",
-        "scope": "Local native 55 and original global native 52 checks pass; final production replay has 12 checks. Changed selection receives one focus request; unchanged metadata does not repeat it; actual physical cancellation input returns to the application.",
-        "sourceBaseRevision": "da48267c8842aa05386be26cc7e6672e98c3301e",
-        "sourceHashes": {
-          "implementation/warlock/src/Desktop.elm": "8ad8e4797ef13b91add6bce686ebb3bc1f0ec800e4da6328d1d740a3f4961e3f",
-          "implementation/warlock/qa/SwitcherReplay.elm": "36a901e170719ade66eb2c82d0cc9d1ed63b3500721b67d221eb109822a1c64d",
-          "implementation/warlock/qa/check-search.py": "a212ebedd1732c1185e23ebf48e882c167e5dd9d8edb94b09c35dcdda54871b1",
-          "implementation/warlock/qa/switcher-focus.qnt": "93cf358c8197dcfffcc1bd3b71abf19952f9a01c92da11b6f50ba09f6f58462e",
-          "implementation/warlock/qa/switcher-focus_test.qnt": "9eb504a9c822128b3c1a47e96b9a14de12eb3112032b6ada6e15c2664c5e64fe",
-          "implementation/warlock/qa/check-switcher-focus.py": "5748c441942526b3cba1b14e80fc388a0c30e1f594d3b4015c63d5f390464269",
-          "implementation/warlock/qa/SwitcherFocusReplay.elm": "500dae7f1d66bab18dcbfe625911fd62504e1e3aaade660a9ad925558d0aaa4e",
-          "implementation/warlock/qa/native-window-feedback.py": "5f0421e5bb2a52c593fbcc053338e11aab72ba8685d1215b53b4e6152a1cf161",
-          "implementation/warlock/qa/current-search-build.json": "8952cdbfcf5fee60022cad9a47158145ec69edcf7c519d2915f86f8de7e7534f",
-          "implementation/warlock/assets/elm.js": "be66c690207cdefca0f5028376e5d9297cb15daed41785be5e886ff3d2e3fc70",
-          "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
-          "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
-          "implementation/warlock/README.md": "4a02ef29b537671ebfac860f8c14f2cb531c697ce8f2c7ba7adc9b678b1c16ca"
-        },
-        "reviewerDisposition": {
-          "name": "root-switcher-focus",
-          "independent": false,
-          "disposition": "partial"
-        }
-      }
-    ],
-    "missingObservations": [
-      "Actual native allocator address reuse remains unobserved.",
-      "Actual speech/braille once per selection transition and independent acceptance remain open; native accessibility campaign failed its original bar_tree deadline."
-    ],
-    "observedOutcome": "Local native 55 and original global native 52 checks pass; final production replay has 12 checks. Changed selection receives one focus request; unchanged metadata does not repeat it; actual physical cancellation input returns to the application.",
-    "nextAction": "ELM-UI-009 at-taskbar-groups: inspect actual bar-host semantic registration against the retained original bar_tree deadline failure, implement an observed product exposure gap if present, then run the one original native AT journey. Preserve the deadline and speech/braille obligations; do not expand a QA investigation or claim full acceptance."
   },
   "recentSlices": [
     {
@@ -1162,78 +1190,157 @@
       ],
       "observedOutcome": "Local native 55 and original global native 52 checks pass; final production replay has 12 checks. Changed selection receives one focus request; unchanged metadata does not repeat it; actual physical cancellation input returns to the application.",
       "nextAction": "ELM-UI-009 at-taskbar-groups: inspect actual bar-host semantic registration against the retained original bar_tree deadline failure, implement an observed product exposure gap if present, then run the one original native AT journey. Preserve the deadline and speech/braille obligations; do not expand a QA investigation or claim full acceptance."
+    },
+    {
+      "id": "taskbar-group-active-state",
+      "requirements": [
+        "ELM-UI-009"
+      ],
+      "scenarios": [
+        "at-taskbar-groups"
+      ],
+      "observedOutcome": "Active two-member groups now retain Active and the window count. Old production fails three active cases and passes two inactive/minimized cases; final production passes all five. Existing browser accessibility and original Quint switcher/focus gates pass. Native AT agrees with all actual taskbar control names and exactly one group toggle state; real pointer dismissal returns to the application and keyboard Home reaches the group. Native AT picker reopening then fails with WebKit termination and host exit 1.",
+      "evidence": [
+        {
+          "path": "implementation/warlock/qa/evidence/taskbar-group-active-state/manifest.json",
+          "sha256": "581c9dc3008408202cb55239dbbc137b8a663a61a57ba4bbec3cd7aa5c67a298",
+          "scope": "Active multiwindow group detail and native toggle state now agree. Five production cases and nine original browser checks pass; actual native names/state, pointer application return and physical keyboard navigation observed. Full native AT reopening journey fails with WebKit termination; no complete action/speech/braille claim.",
+          "sourceBaseRevision": "4e1da8af2cc95dcb9cc301f9655d2cb36a09bef3",
+          "sourceHashes": {
+            "implementation/warlock/src/Surface.elm": "58cca707a3289b998cd54bb6609328064081fc2f7bda2e983a3ec7862bd99758",
+            "implementation/warlock/src/SurfaceRenderer.elm": "48e03f50fd509ea0e42e23d7a1aa26396122350ab824c8dc179952b5bfd28c63",
+            "implementation/warlock/qa/TaskbarGroupStateReplay.elm": "39290fdf9b5f4dd93ec571f08295a40769c238242f93032ef73b83b2a8ac97bc",
+            "implementation/warlock/qa/check-search.py": "155f0ea38e9c5b897b132452d71a825f87dbeeba6821837e11b441150b6df564",
+            "implementation/warlock/qa/native-window-feedback.py": "a89c7d3541aa213c69ecdf37c579b099562a3dd7bfb80be5610d84f48cfdead9",
+            "implementation/warlock/qa/current-search-build.json": "692935c9b47403a9b252ce3fccf434ac2af5b9429eab4cc681738362bdbcf45b",
+            "implementation/warlock/assets/elm.js": "bd721cfee4c454729cd2847ae0f31869983bce532034118b063b8733688d549d",
+            "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+            "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
+            "implementation/warlock/README.md": "a758f957e6bd378c6ecc8fdc655a660fc2630fe9adb2ede2ef8e3b020673d9d8"
+          },
+          "reviewerDisposition": {
+            "name": "root-taskbar-group-active",
+            "independent": false,
+            "disposition": "partial"
+          }
+        }
+      ],
+      "missingObservations": [
+        "Complete native picker action/return and remaining original AT journey are unverified: WebKit terminated during reopening under AT inspection.",
+        "Native speech/braille semantic oracle, per-control native actions and independent acceptance remain open.",
+        "No core stack is available: kernel records RLIMIT_CORE=1 aborting the dump; no OOM event found in the bounded crash interval."
+      ],
+      "boundedContinuation": "Retained WebKit/GIO debugger trace, frozen limit-1 kernel dump failure and unsuccessful prior renderer workaround provide no safely supported new correction. Recorded qualification and moved to actual mandatory focus product work."
     }
   ],
   "lastSlice": {
-    "id": "taskbar-group-active-state",
+    "id": "outer-focus-indicators",
     "requirements": [
-      "ELM-UI-009"
+      "ELM-UI-013",
+      "ELM-UX-027"
     ],
     "scenarios": [
-      "at-taskbar-groups"
+      "readability-high contrast",
+      "ux-027"
     ],
     "paths": [
-      "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/src/SurfaceRenderer.elm",
-      "implementation/warlock/qa/TaskbarGroupStateReplay.elm",
-      "implementation/warlock/qa/check-search.py",
+      "implementation/warlock/assets/shell.css",
+      "implementation/warlock/qa/settings-browser.mjs",
       "implementation/warlock/qa/native-window-feedback.py",
       "implementation/warlock/qa/current-search-build.json",
       "implementation/warlock/assets/elm.js",
       "implementation/warlock/assets/bar.js",
       "implementation/warlock/assets/popup.js",
-      "implementation/warlock/README.md"
+      "implementation/warlock/README.md",
+      "implementation/warlock/assets/bar-adapter.js",
+      "implementation/warlock/native/shared-host.c"
     ],
-    "before": "A grouped taskbar item containing the foreground family displays only its window count and exports aria-pressed false; the AT fixture also excludes native button roles.",
-    "after": "An active multiwindow group retains its window count and exposes Active visually and through the existing native toggle semantics; native names/states are observed for all real button controls.",
+    "before": "Bar, high-contrast and effects-off focus treatments use inset rings instead of the adopted WARLOCK-DL-006 outer indicator; overflow clips any naive outer replacement.",
+    "after": "Keyboard focus has an unclipped outer contour distinct from active/selected states, with theme/forced-color contrast and reachable controls at enlarged scale and narrow widths.",
     "verification": [
-      "Compiled production state projection with two-member active/inactive/minimized groups, original browser accessibility check and original protected native accessibility journey with unchanged deadlines and semantic assertions. No effect-authority change or new model is necessary for this projection fix; retain applicable existing Quint gates and actual speech/braille gaps."
+      "Original protected high-contrast/settings browser journey plus first/last taskbar controls in all themes, enlargement, narrow outputs and forced colors; outer geometry and minimum contrast/targets. Protected real keyboard taskbar journey retains original native receipts, pixels and actual recipients. Projection-only CSS change needs no new authority model; original applicable models and acceptance gaps remain separate."
     ],
-    "owner": "root-taskbar-group-active",
-    "participantRecord": ".warlock-contributor/taskbar-group-active.json",
+    "owner": "root-outer-focus",
+    "participantRecord": ".warlock-contributor/outer-focus.json",
     "sourceHashes": {
-      "implementation/warlock/src/Surface.elm": "58cca707a3289b998cd54bb6609328064081fc2f7bda2e983a3ec7862bd99758",
-      "implementation/warlock/src/SurfaceRenderer.elm": "48e03f50fd509ea0e42e23d7a1aa26396122350ab824c8dc179952b5bfd28c63",
-      "implementation/warlock/qa/TaskbarGroupStateReplay.elm": "39290fdf9b5f4dd93ec571f08295a40769c238242f93032ef73b83b2a8ac97bc",
-      "implementation/warlock/qa/check-search.py": "155f0ea38e9c5b897b132452d71a825f87dbeeba6821837e11b441150b6df564",
-      "implementation/warlock/qa/native-window-feedback.py": "a89c7d3541aa213c69ecdf37c579b099562a3dd7bfb80be5610d84f48cfdead9",
-      "implementation/warlock/qa/current-search-build.json": "692935c9b47403a9b252ce3fccf434ac2af5b9429eab4cc681738362bdbcf45b",
+      "implementation/warlock/assets/shell.css": "b489d65f21e70646e0af25391f15459d0d728e1313d1cdfb75f7092a60cb5517",
+      "implementation/warlock/qa/settings-browser.mjs": "9f81ea352a1e397a543aee7c5a6bf4c14262fc6dd475724463a0af0d3fa83957",
+      "implementation/warlock/qa/native-window-feedback.py": "3413062f9c94ecbc182a999ba8b8ae6d314bb562736cb4eeb775b6ff87a7467f",
+      "implementation/warlock/qa/current-search-build.json": "ff14f94e3f5495a2f02609f78a37b7f0f3d06ce5b745ae90db066b729d1e6216",
       "implementation/warlock/assets/elm.js": "bd721cfee4c454729cd2847ae0f31869983bce532034118b063b8733688d549d",
       "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
       "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
-      "implementation/warlock/README.md": "a758f957e6bd378c6ecc8fdc655a660fc2630fe9adb2ede2ef8e3b020673d9d8"
+      "implementation/warlock/README.md": "2fad414870d632166d5782991284e478f57f84fd3123616ef6d8ebf5417882c3",
+      "implementation/warlock/assets/bar-adapter.js": "821e971218880d3319e9d3b7aa60bfe074ba62becc7a3f633ccc318aade1471d",
+      "implementation/warlock/native/shared-host.c": "6e7f43b92c08f19ac82f5c93d67ca69d0a11a6c73f01a763a018f2beba282a7a"
     },
     "evidence": [
       {
-        "path": "implementation/warlock/qa/evidence/taskbar-group-active-state/manifest.json",
-        "sha256": "581c9dc3008408202cb55239dbbc137b8a663a61a57ba4bbec3cd7aa5c67a298",
-        "scope": "Active multiwindow group detail and native toggle state now agree. Five production cases and nine original browser checks pass; actual native names/state, pointer application return and physical keyboard navigation observed. Full native AT reopening journey fails with WebKit termination; no complete action/speech/braille claim.",
-        "sourceBaseRevision": "4e1da8af2cc95dcb9cc301f9655d2cb36a09bef3",
+        "requirement": "ELM-UI-013",
+        "scenario": "readability-high contrast",
+        "oracle": "measured thresholds pass, state recognition has non-color cues and all focused controls remain visible and reachable",
+        "verificationScope": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+        "scope": "Outer contour and readonly scroll reveal; current 102-check browser build, 131-check native action/recipient journey and 81-check native high-contrast save/restart. Original oracles retained; sampled models and component forced colors remain separately scoped.",
+        "evidence": [
+          {
+            "path": "implementation/warlock/qa/evidence/outer-focus-indicators/manifest.json",
+            "sha256": "52fcaa0a663946db80640336c6abe59ab25a04b42ce322174e3279111d87c76e"
+          }
+        ],
         "sourceHashes": {
-          "implementation/warlock/src/Surface.elm": "58cca707a3289b998cd54bb6609328064081fc2f7bda2e983a3ec7862bd99758",
-          "implementation/warlock/src/SurfaceRenderer.elm": "48e03f50fd509ea0e42e23d7a1aa26396122350ab824c8dc179952b5bfd28c63",
-          "implementation/warlock/qa/TaskbarGroupStateReplay.elm": "39290fdf9b5f4dd93ec571f08295a40769c238242f93032ef73b83b2a8ac97bc",
-          "implementation/warlock/qa/check-search.py": "155f0ea38e9c5b897b132452d71a825f87dbeeba6821837e11b441150b6df564",
-          "implementation/warlock/qa/native-window-feedback.py": "a89c7d3541aa213c69ecdf37c579b099562a3dd7bfb80be5610d84f48cfdead9",
-          "implementation/warlock/qa/current-search-build.json": "692935c9b47403a9b252ce3fccf434ac2af5b9429eab4cc681738362bdbcf45b",
+          "implementation/warlock/assets/shell.css": "b489d65f21e70646e0af25391f15459d0d728e1313d1cdfb75f7092a60cb5517",
+          "implementation/warlock/qa/settings-browser.mjs": "9f81ea352a1e397a543aee7c5a6bf4c14262fc6dd475724463a0af0d3fa83957",
+          "implementation/warlock/qa/native-window-feedback.py": "3413062f9c94ecbc182a999ba8b8ae6d314bb562736cb4eeb775b6ff87a7467f",
+          "implementation/warlock/qa/current-search-build.json": "ff14f94e3f5495a2f02609f78a37b7f0f3d06ce5b745ae90db066b729d1e6216",
           "implementation/warlock/assets/elm.js": "bd721cfee4c454729cd2847ae0f31869983bce532034118b063b8733688d549d",
           "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
           "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
-          "implementation/warlock/README.md": "a758f957e6bd378c6ecc8fdc655a660fc2630fe9adb2ede2ef8e3b020673d9d8"
+          "implementation/warlock/README.md": "2fad414870d632166d5782991284e478f57f84fd3123616ef6d8ebf5417882c3",
+          "implementation/warlock/assets/bar-adapter.js": "821e971218880d3319e9d3b7aa60bfe074ba62becc7a3f633ccc318aade1471d",
+          "implementation/warlock/native/shared-host.c": "6e7f43b92c08f19ac82f5c93d67ca69d0a11a6c73f01a763a018f2beba282a7a"
         },
-        "reviewerDisposition": {
-          "name": "root-taskbar-group-active",
-          "independent": false,
-          "disposition": "partial"
-        }
+        "reviewer": "root-outer-focus",
+        "disposition": "partial",
+        "missingObservations": [
+          "Every-surface/profile/output, native OS forced colors, native AT speech/braille and independent acceptance remain open; retained AT/WebKit reopening crash unresolved."
+        ]
+      },
+      {
+        "requirement": "ELM-UX-027",
+        "scenario": "ux-027",
+        "oracle": "labels and focus remain visible and every action retains a hit target",
+        "verificationScope": "Elm replay assertion and isolated native recording: labels and focus remain visible and every action retains a hit target.",
+        "scope": "Readable captions, complete outer focus geometry and reachable taskbar/Settings targets at enlarged/narrow widths; actual native taskbar and 150-percent Settings save/restart with physical pixels and normal cleanup.",
+        "evidence": [
+          {
+            "path": "implementation/warlock/qa/evidence/outer-focus-indicators/manifest.json",
+            "sha256": "52fcaa0a663946db80640336c6abe59ab25a04b42ce322174e3279111d87c76e"
+          }
+        ],
+        "sourceHashes": {
+          "implementation/warlock/assets/shell.css": "b489d65f21e70646e0af25391f15459d0d728e1313d1cdfb75f7092a60cb5517",
+          "implementation/warlock/qa/settings-browser.mjs": "9f81ea352a1e397a543aee7c5a6bf4c14262fc6dd475724463a0af0d3fa83957",
+          "implementation/warlock/qa/native-window-feedback.py": "3413062f9c94ecbc182a999ba8b8ae6d314bb562736cb4eeb775b6ff87a7467f",
+          "implementation/warlock/qa/current-search-build.json": "ff14f94e3f5495a2f02609f78a37b7f0f3d06ce5b745ae90db066b729d1e6216",
+          "implementation/warlock/assets/elm.js": "bd721cfee4c454729cd2847ae0f31869983bce532034118b063b8733688d549d",
+          "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+          "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
+          "implementation/warlock/README.md": "2fad414870d632166d5782991284e478f57f84fd3123616ef6d8ebf5417882c3",
+          "implementation/warlock/assets/bar-adapter.js": "821e971218880d3319e9d3b7aa60bfe074ba62becc7a3f633ccc318aade1471d",
+          "implementation/warlock/native/shared-host.c": "6e7f43b92c08f19ac82f5c93d67ca69d0a11a6c73f01a763a018f2beba282a7a"
+        },
+        "reviewer": "root-outer-focus",
+        "disposition": "partial",
+        "missingObservations": [
+          "Full every-surface/output/localized-label/enlargement scope, native AT and independent original acceptance remain open."
+        ]
       }
     ],
     "missingObservations": [
-      "Complete native picker action/return and remaining original AT journey are unverified: WebKit terminated during reopening under AT inspection.",
-      "Native speech/braille semantic oracle, per-control native actions and independent acceptance remain open.",
-      "No core stack is available: kernel records RLIMIT_CORE=1 aborting the dump; no OOM event found in the bounded crash interval."
+      "Native OS forced-colors, every-surface/profile/output/enlarged/localized-label scope, native AT speech/braille and independent original acceptance remain open.",
+      "The retained native AT/WebKit reopening crash is unresolved; these keyboard journeys do not qualify it."
     ],
-    "observedOutcome": "Active two-member groups now retain Active and the window count. Old production fails three active cases and passes two inactive/minimized cases; final production passes all five. Existing browser accessibility and original Quint switcher/focus gates pass. Native AT agrees with all actual taskbar control names and exactly one group toggle state; real pointer dismissal returns to the application and keyboard Home reaches the group. Native AT picker reopening then fails with WebKit termination and host exit 1.",
-    "nextAction": "Inspect ELM-UI-009 at-taskbar-groups actual native popup/WebKit lifecycle during the retained AT reopening termination, against existing prior equivalent renderer failures and current host source. One bounded diagnosis and concrete source correction only if supported; preserve original native deadlines, core limit and full action/speech/braille obligations. If no safe product correction follows, record the missing stack/mechanism and continue another mandatory product slice instead of expanding QA."
+    "observedOutcome": "Implemented adopted outer taskbar/Settings focus with matched native gutter, complete enlarged group captions and outline-aware scroll reveal. Final original native taskbar actions/receipts/recipients pass with five intact captures; high-contrast 150-percent save/restart and four-edge paint contrast pass. All-surface AT/independent acceptance remains partial.",
+    "nextAction": "Continue original ELM-UI-008 overflow-first-last on the current outer-focus row: actual small-output/enlarged native navigation must reveal complete contours, readable group captions and first/last operation labels while retaining recipients and exact native authority. Reconcile old fixed row-height assertions with the declared eight-pixel gutter without relaxing reachability/pixel/target oracles, and fix any observed production clipping. Native popup reflow and AT remain separate original obligations; no new model unless policy/authority changes."
   }
 }

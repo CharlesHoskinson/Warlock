@@ -12,6 +12,8 @@ Always on top and MAX use typed native intents, observed geometry protocol 3 and
 
 Settings now offers optional keyboard and recovery help. Use **Dismiss help** to hide it and **Show help** to reopen it; the same control retains keyboard focus. Dismissal lasts for the host session, including closing and reopening Settings. Help works while preference writes are pending or unconfirmed and does not send effects, save preferences or discard an unsaved draft. Shortcut-conflict persistence, native AT and offline rollback remain unfinished. See [Settings help evidence](qa/evidence/settings-help/README.md).
 
+Keyboard focus now uses an outer contour distinct from the active-window underline and pressed state. The taskbar reserves eight pixels around its scaled row, reveals the whole contour when horizontal navigation scrolls, and retains the two-line group caption. Settings reserves the same contour space; high contrast and forced colors retain a solid focus ring. Browser checks cover first/last controls at narrow and wide widths, 100%/200% text, all themes and effects preferences. Native keyboard actions and high-contrast save/restart evidence are scoped in [outer-focus evidence](qa/evidence/outer-focus-indicators/README.md); all-surface AT, output profiles and independent acceptance remain open.
+
 The shared surface host accepts `--text-scale 1.5` for enlarged text. Values from
 1 to 2 scale the base text and taskbar height together; the default remains 1.
 This startup option sets initial scale; the persistent Settings page described below is a separate integrated route.

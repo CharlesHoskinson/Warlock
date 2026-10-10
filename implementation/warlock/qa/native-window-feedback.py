@@ -702,13 +702,13 @@ raise SystemExit(daemon.run())
      return (body,button,cue) if button and cue in button['label'] else None
     def capture(stage,minimized):
      body,button,cue=wait(lambda:state_cue(minimized,facts()['facts']['focused']))
-     check(stage+'AdmittedStateCueIsVisible',button['height']<=48 and button['width']>=112 and button['y']>=0 and button['y']+button['height']<=48,cue=cue,button=button)
+     check(stage+'AdmittedStateCueIsVisible',button['height']<=48 and button['width']>=112 and button['y']>=0 and button['y']+button['height']<=body['viewportHeight'],cue=cue,button=button)
      image=OUTPUT/(stage+'.png');helper(['/usr/bin/grim',str(image)])
      import gi;gi.require_version('GdkPixbuf','2.0');from gi.repository import GdkPixbuf
      pix=GdkPixbuf.Pixbuf.new_from_file(str(image));data=pix.get_pixels();stride=pix.get_rowstride();channels=pix.get_n_channels();x,y,width,height=map(int,current_window()['geometry']);left,top=max(0,x+10),max(100,y+10);right,bottom=min(800,x+width-10),min(600,y+height-10)
      green=sum(1 for py in range(top,bottom) for px in range(left,right) if data[py*stride+px*channels+1]>100 and data[py*stride+px*channels+1]>data[py*stride+px*channels]+30 and data[py*stride+px*channels+1]>data[py*stride+px*channels+2]+30)
      check(stage+'ActualWindowPresentation',green==0 if minimized else green>1000,greenPixels=green,region=[left,top,right,bottom],image=str(image),sha256=sha(image))
-     left,top=max(0,int(button['x'])+5),max(0,int(button['y']+button['height']/2));right,bottom=min(800,int(button['x']+button['width'])-5),min(48,int(button['y']+button['height'])-3)
+     left,top=max(0,int(button['x'])+5),max(0,int(button['y']+button['height']/2));right,bottom=min(800,int(button['x']+button['width'])-5),min(body['viewportHeight'],int(button['y']+button['height'])-3)
      bright=sum(1 for py in range(top,bottom) for px in range(left,right) if all(data[py*stride+px*channels+c]>170 for c in range(3)))
      check(stage+'ActualStateCueTextPixels',bright>15,brightPixels=bright,region=[left,top,right,bottom],cue=cue)
      report.setdefault('primaryCaptures',[]).append({'stage':stage,'path':str(image),'sha256':sha(image),'nativeFacts':facts(),'stateCue':cue,'barBody':body})
@@ -728,6 +728,21 @@ raise SystemExit(daemon.run())
       if any(b['id']==current['focus'] and b['identity']==chosen['identity'] for b in current['buttons']):break
       old_focus=current['focus'];primary_key(106);wait(lambda:(b:=focused_bar()) and b['focus']!=old_focus)
      body=wait(focused_bar);check('KeyboardPrimaryReachesCurrent'+operation.title(),any(b['id']==body['focus'] and b['identity']==chosen['identity'] for b in body['buttons']),body=body)
+     style=body['focusStyle'];thickness=float(style['outlineWidth'].removesuffix('px'));offset=float(style['outlineOffset'].removesuffix('px'));extent=thickness+offset
+     check('NativeOuterFocusGeometry'+operation.title(),thickness>=2 and offset>=0 and style['x']-extent>=0 and style['y']-extent>=0 and style['x']+style['width']+extent<=body['viewportWidth'] and style['y']+style['height']+extent<=body['viewportHeight'],style=style,viewport=[body['viewportWidth'],body['viewportHeight']])
+     image=OUTPUT/('outer-focus-'+str(len(report.get('nativeOuterFocusCaptures',[])))+'-'+operation+'.png');helper(['/usr/bin/grim',str(image)])
+     import re,gi;gi.require_version('GdkPixbuf','2.0');from gi.repository import GdkPixbuf
+     pix=GdkPixbuf.Pixbuf.new_from_file(str(image));pixels=pix.get_pixels();stride=pix.get_rowstride();channels=pix.get_n_channels();color=list(map(int,re.findall(r'\d+',style['outlineColor'])))[:3]
+     x,y,w,h=[round(style[k]) for k in ['x','y','width','height']];ring=round(thickness)
+     regions={'top':[x+6,y-ring,x+w-6,y],'bottom':[x+6,y+h,x+w-6,y+h+ring],'left':[x-ring,y+6,x,y+h-6],'right':[x+w,y+6,x+w+ring,y+h-6]};observed={}
+     for side,(left,top,right,bottom) in regions.items():
+      count=sum(1 for py in range(top,bottom) for px in range(left,right) if all(abs(pixels[py*stride+px*channels+c]-color[c])<=35 for c in range(3)));area=(right-left)*(bottom-top);observed[side]={'matchingPixels':count,'area':area,'region':[left,top,right,bottom]}
+      check('NativeOuterFocusPaint'+operation.title()+side,count>=2*max(right-left,bottom-top),observation=observed[side],color=color)
+     def luminance(rgb):
+      values=[v/255 for v in rgb];linear=[v/12.92 if v<=.04045 else ((v+.055)/1.055)**2.4 for v in values];return sum(v*k for v,k in zip(linear,[.2126,.7152,.0722]))
+     sample=((y-ring+1)*stride+(x+w//2)*channels);paint=list(pixels[sample:sample+3]);background=list(pixels[:3]);light,dark=sorted([luminance(paint),luminance(background)],reverse=True);ratio=(light+.05)/(dark+.05)
+     check('NativeOuterFocusContrast'+operation.title(),ratio>=3,ratio=ratio,paint=paint,background=background)
+     report.setdefault('nativeOuterFocusCaptures',[]).append({'operation':operation,'path':str(image),'sha256':sha(image),'style':style,'sides':observed,'nativeContrast':ratio,'body':body})
      primary_key(28)
     def action(stage,operation,focus,minimized):
      button=wait(lambda:group(operation.title()));before=len(journal())
@@ -1807,7 +1822,7 @@ raise SystemExit(daemon.run())
      receipts=[f for f in rows if f.get('kind')=='shell-settings-outcome' and f.get('binding')==submitted[0]['binding'] and f.get('requestId')==submitted[0]['requestId']]
      check('SettingsHasExactSavedReceipt',len(receipts)==1 and receipts[0]['status']=='Saved' and receipts[0]['snapshot']==saved,receipts=receipts)
      wait(lambda:(bar_body() or {}).get('theme')==desired_theme and (bar_body() or {}).get('textScale')=='150')
-     monitors=json.loads(s.ctl('monitors','-j'));check('CommittedScaleReservesActualNativeBar',monitors[0]['reserved'][1]==72 and bar_body()['fontSize']=='24px',monitors=monitors,bar=bar_body())
+     monitors=json.loads(s.ctl('monitors','-j'));check('CommittedScaleReservesActualNativeBar',monitors[0]['reserved'][1]==80 and bar_body()['fontSize']=='24px',monitors=monitors,bar=bar_body())
      check('SettingsStorageIsPrivate',state_file.stat().st_mode&0o777==0o600 and state_file.parent.stat().st_mode&0o777==0o700)
      # Invalid text scale crosses the real authenticated transport bound to
      # this native authority, with only its supervisor-owned private storage.
@@ -1854,7 +1869,9 @@ raise SystemExit(daemon.run())
       body=wait(lambda:settings_body() if settings_body() and settings_body()['focus']==focus['id'] and settings_body()['documentFocused'] else None)
       style=body['focusStyle'];report['nativeContrastFocus']={'body':body,'target':focus}
       check('NativeHighContrastHasReadableCommittedPalette',body['theme']=='high-contrast' and body['fontSize']=='24px' and body['palette']=={'background':'rgb(0, 0, 0)','foreground':'rgb(255, 255, 255)'},body=body)
-      check('ActualKeyboardFocusHasInsetContrastOutline',style['outlineColor']=='rgb(255, 255, 0)' and style['outlineWidth']=='3px' and style['outlineOffset']=='-4px' and focus['accessibleName']=='High contrast theme',body=body)
+      check('ActualKeyboardFocusHasOuterContrastOutline',style['outlineColor']=='rgb(255, 255, 0)' and float(style['outlineWidth'].removesuffix('px'))>=2 and float(style['outlineOffset'].removesuffix('px'))>=0 and focus['accessibleName']=='High contrast theme',body=body)
+      extent=float(style['outlineWidth'].removesuffix('px'))+float(style['outlineOffset'].removesuffix('px'))
+      check('HighContrastOuterFocusFitsNativeViewport',style['x']-extent>=0 and style['y']-extent>=0 and style['x']+style['width']+extent<=body['viewportWidth'] and style['y']+style['height']+extent<=body['viewportHeight'],body=body)
       check('HighContrastFocusedLabelAndTargetAreVisible',focus['width']>0 and focus['height']>0 and focus['x']>=0 and focus['y']>=0 and focus['x']+focus['width']<=body['viewportWidth'] and focus['y']+focus['height']<=body['viewportHeight'] and focus['labelRect']['x']>=focus['x'] and focus['labelRect']['x']+focus['labelRect']['width']<=focus['x']+focus['width'],target=focus,body=body)
      popup_capture('settings-after-restart');check('EnlargedSettingsPopupStartsBelowNativeBar',report['popupCaptures'][-1]['nativeBox'][1]>=72,nativeBox=report['popupCaptures'][-1]['nativeBox']);report['nativeSettingsAfterRestart']={'storage':stored(),'body':body,'writes':requests('shell-settings-write')}
      if LAYER:
@@ -1865,8 +1882,19 @@ raise SystemExit(daemon.run())
       pix=GdkPixbuf.Pixbuf.new_from_file(str(image));pixels=pix.get_pixels();stride=pix.get_rowstride();channels=pix.get_n_channels();box=capture['nativeBox']
       left,top=max(0,int(box[0]+focus['x'])),max(0,int(box[1]+focus['y']));right,bottom=min(pix.get_width(),int(box[0]+focus['x']+focus['width'])),min(pix.get_height(),int(box[1]+focus['y']+focus['height']))
       white=sum(1 for y in range(top,bottom) for x in range(left,right) if all(pixels[y*stride+x*channels+i]>200 for i in range(3)))
-      yellow=sum(1 for y in range(top,bottom) for x in range(left,right) if pixels[y*stride+x*channels]>200 and pixels[y*stride+x*channels+1]>200 and pixels[y*stride+x*channels+2]<80)
-      check('ActualNativeHighContrastTextAndFocusPixels',white>30 and yellow>60,image=str(image),sha256=sha(image),whiteTextPixels=white,yellowFocusPixels=yellow,region=[left,top,right,bottom]);report['nativeHighContrastObserved']=True
+      ring=round(float(style['outlineWidth'].removesuffix('px')))
+      regions={'top':[left+6,top-ring,right-6,top],'bottom':[left+6,bottom,right-6,bottom+ring],'left':[left-ring,top+6,left,bottom-6],'right':[right,top+6,right+ring,bottom-6]};sides={}
+      for side,(x0,y0,x1,y1) in regions.items():
+       yellow=sum(1 for y in range(y0,y1) for x in range(x0,x1) if pixels[y*stride+x*channels]>200 and pixels[y*stride+x*channels+1]>200 and pixels[y*stride+x*channels+2]<80)
+       sides[side]={'yellowPixels':yellow,'region':[x0,y0,x1,y1]}
+       check('NativeHighContrastOuterPaint'+side,yellow>=2*max(x1-x0,y1-y0),observation=sides[side])
+      yellow=sum(side['yellowPixels'] for side in sides.values())
+      sample=(top-ring+1)*stride+((left+right)//2)*channels;paint=list(pixels[sample:sample+3]);sample=(top+6)*stride+(left+6)*channels;background=list(pixels[sample:sample+3])
+      def luminance(rgb):
+       values=[v/255 for v in rgb];linear=[v/12.92 if v<=.04045 else ((v+.055)/1.055)**2.4 for v in values];return sum(v*k for v,k in zip(linear,[.2126,.7152,.0722]))
+      light,dark=sorted([luminance(paint),luminance(background)],reverse=True);ratio=(light+.05)/(dark+.05)
+      check('NativeHighContrastOuterPaintContrast',ratio>=3,ratio=ratio,paint=paint,background=background)
+      check('ActualNativeHighContrastTextAndFocusPixels',white>30 and yellow>60,image=str(image),sha256=sha(image),whiteTextPixels=white,yellowFocusPixels=yellow,region=[left,top,right,bottom],outerSides=sides,nativeContrast=ratio);report['nativeHighContrastObserved']=True
      key(1);wait(lambda:(projection() or {}).get('mode')=='closed');check('SettingsJourneyNeverMutatesOrLaunchesWindows',not journal() and not launches());report['nativeSettingsObserved']=True
     elif PINS:
      state_file=pathlib.Path(env['XDG_STATE_HOME'])/'warlock/taskbar.json'

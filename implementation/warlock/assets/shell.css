@@ -32,19 +32,19 @@
 
 /* Match native text sizing; keep a bounded single row at enlarged text sizes. */
 html{font-size:100%}body{font:1rem system-ui}
-.bar .surface-bar,.bar .surface-actions{height:3rem}
-.bar .surface-actions>button{height:calc(100% - 2px);min-height:0;max-height:none;max-width:15rem;line-height:1.125rem;flex-basis:5rem;scroll-margin-inline:4px}
-.bar .surface-actions>.control-group{flex-basis:7.25rem;min-width:7rem}
+.bar .surface-bar,.bar .surface-actions{height:calc(3rem + 8px)}
+.bar .surface-actions>button{height:calc(100% - 6px);margin:3px;min-height:0;max-height:none;max-width:min(15rem,calc(100% - 6px));line-height:1.125rem;flex-basis:5rem;scroll-margin-inline:6px}
+.bar .surface-actions>.control-group{flex-basis:8rem;min-width:min(8rem,calc(100% - 6px))}
 .bar .surface-actions>.control-recovery{flex-basis:7.5rem}
 .bar .control-detail{font-size:.8125rem;line-height:.8125rem}
-.bar .surface-actions button:focus-visible{outline:none;box-shadow:inset 0 0 0 3px var(--shell-focus,#7ed7ff)}
-.bar .surface-actions{scrollbar-width:thin}
+.bar .surface-actions button:focus-visible{outline:3px solid var(--shell-focus,#7ed7ff);outline-offset:0}
+.bar .surface-actions{scrollbar-width:auto}
 .bar .surface-actions::-webkit-scrollbar{height:4px}
 .popup .surface-popup>h1{font-size:1.25rem;line-height:1.5rem}
 .popup .surface-popup>p[role=status]{line-height:1.25rem}
 .popup button{min-height:2.25rem}
 .popup .control-detail{font-size:.875rem;line-height:1.125rem}
-@media(forced-colors:active){.bar .surface-actions button:focus-visible{outline:2px solid Highlight;outline-offset:-3px;box-shadow:none}}
+@media(forced-colors:active){.bar .surface-actions button:focus-visible{outline:2px solid Highlight;outline-offset:0;box-shadow:none}}
 
 .popup .preview-title,.popup .preview-state,.popup .preview-fidelity{font-size:.8125rem;line-height:1.125rem}
 .popup .preview-title{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -80,12 +80,12 @@ html[data-theme="dawn"] .bar .control-group[data-window-state="attention"]{borde
 @media(forced-colors:active){.bar .control-group[data-window-state="active"]{border-color:Highlight;box-shadow:none;border-bottom-width:4px}.bar .control-group[data-window-state="attention"]{border-color:CanvasText;box-shadow:none;border-top-width:4px}}
 
 /* High contrast preserves semantic color and shape without relying on glow.
-   Focus sits inside the native hit target so overflow cannot clip its outline. */
+   Spacing reserves room for the outer contour within the native scrollport. */
 html[data-theme="high-contrast"]{color-scheme:dark;--shell-background:#000;--shell-foreground:#fff;--shell-control:#000;--shell-border:#fff;--shell-focus:#ff0}
 html[data-theme="high-contrast"] button{border-width:2px}
 html[data-theme="high-contrast"] button:is(:disabled,[aria-disabled="true"]){opacity:1;color:#bfbfbf;border-color:#8c8c8c;border-style:dashed}
 html[data-theme="high-contrast"] button:focus-visible,
-html[data-theme="high-contrast"] .launcher-search:focus-visible{outline:3px solid #ff0;outline-offset:-4px}
+html[data-theme="high-contrast"] .launcher-search:focus-visible{outline:3px solid #ff0;outline-offset:0}
 html[data-theme="high-contrast"] .launcher-search{color:#fff;background:#000;border:2px solid #fff}
 html[data-theme="high-contrast"] .surface-bar>.surface-status{color:#fff;background:#000;border-color:#ff0}
 html[data-theme="high-contrast"] .bar .control-group[data-window-state="active"]{border-color:#0ff;box-shadow:inset 0 -3px 0 #0ff;background:#000}
@@ -122,7 +122,7 @@ html[data-effects="off"] .surface-bar button,
 html[data-effects="off"] .bar .surface-actions button[data-window-state],
 html[data-effects="off"] .surface-popup[data-mode] button,
 html[data-effects="off"] .surface-popup[data-mode] button::before{box-shadow:none;text-shadow:none}
-html[data-effects="off"] .bar .surface-actions button:focus-visible{outline:3px solid var(--shell-focus,#7ed7ff);outline-offset:-3px}
+html[data-effects="off"] .bar .surface-actions button:focus-visible{outline:3px solid var(--shell-focus,#7ed7ff);outline-offset:0}
 html[data-effects="off"] .bar .control-group[data-window-state="active"]{border-bottom-width:4px}
 html[data-effects="off"] .bar .control-group[data-window-state="attention"]{border-top-width:4px}
 html[data-effects="off"] .surface-popup [aria-current="true"]{border-left-width:4px}
@@ -137,3 +137,9 @@ html[data-reduced-transparency="true"] .surface-popup{background:var(--shell-bac
 .popup button[role="menuitemcheckbox"]{position:relative;padding-inline-start:2.5rem}
 .popup button[role="menuitemcheckbox"]::before{content:"";position:absolute;inset-inline-start:.8rem;top:.7rem;width:1rem;height:1rem;border:2px solid currentColor;border-radius:2px}
 .popup button[role="menuitemcheckbox"][aria-checked="true"]::after{content:"";position:absolute;inset-inline-start:1.1rem;top:.8rem;width:.4rem;height:.65rem;border:solid currentColor;border-width:0 2px 2px 0;transform:rotate(45deg)}
+
+/* WARLOCK-DL-006: reserve paint space for an outer focus contour. */
+.surface-controls{padding:4px}
+.surface-popup button:focus-visible,.launcher-search:focus-visible{scroll-margin:4px}
+
+.bar .surface-actions::after{content:"";flex:0 0 6px}

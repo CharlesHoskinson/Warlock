@@ -1,0 +1,115 @@
+{
+  "schema": 1,
+  "requirements": [
+    "ELM-UI-013",
+    "ELM-UX-027"
+  ],
+  "scenarios": [
+    "readability-high contrast",
+    "ux-027"
+  ],
+  "adoptedContract": "WARLOCK-DL-006",
+  "sourceBaseRevision": "27db5c01e879e31f760b3a5b00cc27d20e64cceb",
+  "sourceHashes": {
+    "implementation/warlock/assets/shell.css": "b489d65f21e70646e0af25391f15459d0d728e1313d1cdfb75f7092a60cb5517",
+    "implementation/warlock/qa/settings-browser.mjs": "9f81ea352a1e397a543aee7c5a6bf4c14262fc6dd475724463a0af0d3fa83957",
+    "implementation/warlock/qa/native-window-feedback.py": "3413062f9c94ecbc182a999ba8b8ae6d314bb562736cb4eeb775b6ff87a7467f",
+    "implementation/warlock/qa/current-search-build.json": "ff14f94e3f5495a2f02609f78a37b7f0f3d06ce5b745ae90db066b729d1e6216",
+    "implementation/warlock/assets/elm.js": "bd721cfee4c454729cd2847ae0f31869983bce532034118b063b8733688d549d",
+    "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+    "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
+    "implementation/warlock/README.md": "2fad414870d632166d5782991284e478f57f84fd3123616ef6d8ebf5417882c3",
+    "implementation/warlock/assets/bar-adapter.js": "821e971218880d3319e9d3b7aa60bfe074ba62becc7a3f633ccc318aade1471d",
+    "implementation/warlock/native/shared-host.c": "6e7f43b92c08f19ac82f5c93d67ca69d0a11a6c73f01a763a018f2beba282a7a"
+  },
+  "supportingSourceHashes": {
+    "DesignLanguage/CURRENT.md": "75b19aeaaa3f95cdbff38a305f38e0661ee83aec74aaad3f705642c0bddcf579"
+  },
+  "scope": "Outer-focus presentation: 102 browser checks including 64 first/last bar cases, original protected Elm/native compilation and existing named/sampled Quint checks; 131-check real taskbar action/recipient journey with five unique four-edge native captures; 81-check high-contrast 150% native Settings save/restart and four-edge contrast proof.",
+  "modelWorkflow": {
+    "kit": "https://github.com/quint-co/quint-llm-kit",
+    "installedSkill": "/home/hoskinson/.claude/plugins/cache/quint-llm-kit/quint-llm-kit/1.0.0/skills/quint-execute-spec/SKILL.md",
+    "specChange": false,
+    "reason": "Geometry and readonly scroll reveal do not change reducer/effect authority. Original Settings/TaskView/focus model gates retained."
+  },
+  "nativePair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
+      "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791666305509919483/elm-window-geometry-authority.so",
+      "sha256": "c428e1e6e2b2f9e41b3c5218e3dd37fb6551f09bee6b3531876fb3d3c674948a"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+      "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/high-contrast-1791671144211904320/elm-host",
+    "sha256": "b276c031f945431c10ca128e9e6505f366e14a3ba9cf295362bd36028296eb34",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/high-contrast-1791671144211904320/report.json",
+    "heldBuildSHA256": "993989aa3de2b30ac5d6000211bef627e47b87bdeff6a0716c6270d601568496"
+  },
+  "files": {
+    "historical-limitations.json": "171cc60c8779bcaba9745a582849e8db23f7af9dad15cc73892a9811bb6bd209",
+    "baseline-inset/report.json": "09bb5d2b4f5651146e3090c2f76bf1f7015b5d081c35f80b594ad41dc2c6ad58",
+    "baseline-inset/settings-browser.json": "6b92d48ab5079ffea2f5006026e79e903a89abd7540566247694d08b969d4e40",
+    "narrow-enlarged-target/report.json": "311780cc39c4f99a49dc4c81f2c0ddc8aa7955026d87a1a5bfa0804eb6f40c3a",
+    "narrow-enlarged-target/settings-browser.json": "d2042968930d4e28650bbeb4947a2966f689bf195eba106823c5d25907c68712",
+    "clipped-final-contour/report.json": "14ac8965158ad3941249133ea0fbf771fbd4d698f6516457349f8b4fe6c3d624",
+    "clipped-final-contour/settings-browser.json": "3473d37531cd64b35fad0466b7b8e46be1d290342c00957fef0af254dcf29f1d",
+    "group-caption-clipped/report.json": "fc1c436a98464d38309f3220e918d67627b145f8c0f064bc059c683e9b187e16",
+    "group-caption-clipped/settings-browser.json": "816148385dbf73ffbf7895b3798ac498fe7b8ec4c7bbd00c6e3a82b59980ab64",
+    "final-build/report.json": "993989aa3de2b30ac5d6000211bef627e47b87bdeff6a0716c6270d601568496",
+    "final-build/settings-browser.json": "da165d85c24b5f7d0ebc8b154a5b1028396f62e7e5764efbdd1840aabea3cc0d",
+    "final-build/settings.json": "0c5a110e6c350b0e137b70833de929dcb43d39254e114b75d484e31f86b95e9e",
+    "final-build/task-view.json": "10e47127ad0f8e80dd3a57b7abd04ab3b029194bff55801ca2b9b7523ebbf18d",
+    "final-build/settings-high-contrast-enlarged.png": "63439e71d704e6cc3220e51fa3b47e02742650b897185e2e7288ffb63e2e28d7",
+    "final-build/settings-high-contrast-forced-colors.png": "102ea3bda49943a4fdfbe9248daf1516de56272391e9f0763b5ec896296e93f1",
+    "final-build/outer-bar-focus-enlarged.png": "46f59e9235deee5b1f859503e59d8bbc209519a2f1f54dec13f92ba2ad05e943",
+    "final-build/task-view-model-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "final-build/task-view-model-named.stdout": "e4fffebca7785f7a8f8cd81c8c66823c5a2775b5fccc3e5b3030eec11fa19a44",
+    "final-build/task-view-model-invariants.stdout": "f612d24cf93386092aabdfa7576bf57061ec7141f959add6887256879331f893",
+    "final-build/settings-model-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "final-build/settings-model-named.stdout": "691d4b9a72241938ee34f4615425f66ea8375f853d3f1090a4b47d36e9be5f0b",
+    "final-build/settings-model-invariants.stdout": "12a9bbf53e6d1accb25947ded5fb2554d07e5daa56d364698b71516d73dc3f37",
+    "final-build/focus-model-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "final-build/focus-model-named.stdout": "aac026f1e9e57e7e5ba4fb62f1d738950d97ce21408a16aaf3a475211ff6b8bd",
+    "final-build/focus-model-invariants.stdout": "8c61521affa9f3312b31720d9f92d6279dbf579c87510a11787a0ee7efb0a389",
+    "missing-viewport/report.json": "a2b15547f9bf9f17873f2fcaa5a604cd0e2d6b8232411eb8c58865dfe23be24e",
+    "colliding-captures/report.json": "f84e03ddb974bf8a97b9883321edf47064f7c8a3fa4b18d2319e6ffe6cb8481d",
+    "old-inset-assertion/report.json": "2bd8487bc67a4da98cdffc9cf288391a3a27d1ec17b682f326cbc0f390f6aa30",
+    "old-inset-pixel-region/report.json": "fd08144ced7938d5a8561ed46fb13167d8e1436caa8e73e947068e28d4d904e0",
+    "native-keyboard/report.json": "1388f3a21c46dcd053a245a37ddbb77116fdddd1bcc304792c745e7708e4123a",
+    "native-keyboard/outer-focus-0-activate.png": "36e421185672d2806e919ef5053cd891351c77f439c54f5471fe5bd764c8fc8f",
+    "native-keyboard/outer-focus-1-minimize.png": "fe58093b0629f2d65fba5d1cddf245146893a3b9c1cffdd5dcced580a218ba20",
+    "native-keyboard/outer-focus-2-restore.png": "7559ff5c0a5849f71ef1a418209d9780e8dcafb3486f71e21ac613aabaee411f",
+    "native-keyboard/outer-focus-3-minimize.png": "1cf4e5fda87d817abe8eba5137a6688876abd4110bbd4bb9ba8bec53025da409",
+    "native-keyboard/outer-focus-4-restore.png": "26a06449c3b8fd87a72251c211d8188a06398e81dc7071bffa56da774070c5b7",
+    "native-keyboard/InactiveActivation.png": "9eff403b09a92b5d7e0877b304de5c856b17734783d5a5ff051cc42888b7ac67",
+    "native-keyboard/ActiveMinimizeToMRU.png": "797be66fc3870a0a1d3f75c309ce0eb03cbbd9df8b671fce4ef938b3feba800c",
+    "native-keyboard/MinimizedRestore.png": "ec77eb07347f341d8c5e64172ea10269446efa4ffe85cbbc0dfdbf9f6ca9a070",
+    "native-keyboard/ActiveMinimizeToDesktop.png": "5b02e4c66c7a4ef49a90a11ebdd9306b4055c9037ed29ae445da5a807e879306",
+    "native-keyboard/DesktopRestore.png": "6156ca9c85aaaebbe594a4aa46b61e175a72671a388322418f0987af46b79e7d",
+    "native-keyboard/warlock.log": "ecdeb504f7056e6a6a4c6ffa49edfbbd0dfa82870a2df62d13c197b0c7ccb294",
+    "native-high-contrast/report.json": "154bf37370c03aefc92b0a94e452c8b6dc4805c43dcfbfbac6523ebcde910c7d",
+    "native-high-contrast/popup-settings-before-restart.png": "a69f776d72ddd98dfb910da2652e7cd854c78a566aa8226d99bd0d8f9f46363b",
+    "native-high-contrast/popup-settings-after-restart.png": "e015f90adbfb805ae78e662c4b9befbcee86e447eb94509a8dc3c911f3b59e3a",
+    "native-high-contrast/warlock.log": "a01d64212d56c7af5fde5f007c1bc5cd0e2b0e26586452e58bf6d6b1774acdec",
+    "README.md": "bcd6c9c97b3315c684e6cf2c24159610c5d6dbdba388f106acef726171ec15e6"
+  },
+  "missingObservations": [
+    "Native OS forced-colors, every-surface/profile/output/enlarged/localized-label scope, native AT speech/braille and independent original acceptance remain open.",
+    "The retained native AT/WebKit reopening crash is unresolved; these keyboard journeys do not qualify it."
+  ],
+  "reviewer": {
+    "name": "root-outer-focus",
+    "independent": false,
+    "disposition": "partial"
+  },
+  "nativeAcceptance": false,
+  "requirementAccepted": false,
+  "fullReleaseAccepted": false
+}

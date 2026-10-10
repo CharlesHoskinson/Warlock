@@ -160,7 +160,7 @@ static void shared_publish(void) {
     if (!surface_snapshot || shutting_down) return;
     JsonNode *appearance=json_object_get_member(json_node_get_object(surface_snapshot),"appearance");
     gint scale=appearance?json_object_get_int_member(json_node_get_object(appearance),"textScale"):100;
-    gint height=3*shared_text_pixels*scale/100;
+    gint height=3*shared_text_pixels*scale/100+8;
     for(guint i=0;i<output_views->len;i++){
         OutputView *row=g_ptr_array_index(output_views,i);if(!row->active)continue;
         gint width,old_height;gtk_widget_get_size_request(row->bar,&width,&old_height);
@@ -610,8 +610,8 @@ static void shared_add(GdkDisplay *display,GdkMonitor *monitor,gpointer unused) 
     /* The owned shell remains reachable over true fullscreen. Its reserved
      * band applies to ordinary/MAX placement; fullscreen keeps output geometry.
      * Keyboard input still requires the existing explicit popup lease. */
-    gtk_layer_set_layer(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_LAYER_OVERLAY);gtk_layer_set_anchor(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_EDGE_TOP,TRUE);gtk_layer_set_anchor(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_EDGE_LEFT,TRUE);gtk_layer_set_anchor(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_EDGE_RIGHT,TRUE);gtk_layer_set_exclusive_zone(GTK_WINDOW(row->bar),3*shared_text_pixels);gtk_layer_set_keyboard_mode(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_KEYBOARD_MODE_NONE);
-    gtk_widget_set_size_request(row->bar,-1,3*shared_text_pixels);gtk_window_resize(GTK_WINDOW(row->bar),1,1);gtk_widget_set_size_request(GTK_WIDGET(row->engine),-1,3*shared_text_pixels);
+    gtk_layer_set_layer(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_LAYER_OVERLAY);gtk_layer_set_anchor(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_EDGE_TOP,TRUE);gtk_layer_set_anchor(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_EDGE_LEFT,TRUE);gtk_layer_set_anchor(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_EDGE_RIGHT,TRUE);gtk_layer_set_exclusive_zone(GTK_WINDOW(row->bar),3*shared_text_pixels+8);gtk_layer_set_keyboard_mode(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_KEYBOARD_MODE_NONE);
+    gtk_widget_set_size_request(row->bar,-1,3*shared_text_pixels+8);gtk_window_resize(GTK_WINDOW(row->bar),1,1);gtk_widget_set_size_request(GTK_WIDGET(row->engine),-1,3*shared_text_pixels+8);
     gtk_container_add(GTK_CONTAINER(row->bar),GTK_WIDGET(row->engine));
     g_signal_connect(row->bar,"size-allocate",G_CALLBACK(shared_bar_allocated),row);
     g_signal_connect(row->engine,"decide-policy",G_CALLBACK(policy),NULL);g_signal_connect(row->engine,"web-process-terminated",G_CALLBACK(terminated),NULL);

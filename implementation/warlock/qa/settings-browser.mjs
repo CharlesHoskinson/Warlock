@@ -62,7 +62,7 @@ try{
   const observed=await evaluate(`(()=>{const a=document.activeElement,s=getComputedStyle(a),b=getComputedStyle(document.body),r=a.getBoundingClientRect();return {theme:document.documentElement.dataset.theme,scale:document.documentElement.dataset.textScale,foreground:s.color,background:s.backgroundColor,bodyForeground:b.color,bodyBackground:b.backgroundColor,outlineColor:s.outlineColor,outlineWidth:s.outlineWidth,outlineOffset:s.outlineOffset,fontSize:b.fontSize,identity:a.dataset.surfaceControl,visible:r.x>=0&&r.y>=0&&r.right<=innerWidth+1&&r.bottom<=innerHeight+1,hasName:!!a.getAttribute('aria-label')};})()`);
   const ratio=contrast(observed.foreground,observed.background);report.appearanceFixtures.push({...observed,contrast:ratio});
   check('Readable enlarged named target '+observed.theme+'/'+observed.scale,ratio>=4.5 && observed.visible && observed.hasName && observed.identity==='settings:refresh' && Number.parseFloat(observed.fontSize)===16*frame.appearance.textScale/100,observed);
-  if(observed.theme==='high-contrast')check('Inset high contrast focus '+observed.scale,observed.outlineColor==='rgb(255, 255, 0)' && observed.outlineWidth==='3px' && observed.outlineOffset==='-4px' && contrast(observed.outlineColor,observed.background)>=3,observed);
+  if(observed.theme==='high-contrast')check('Outer high contrast focus '+observed.scale,observed.outlineColor==='rgb(255, 255, 0)' && Number.parseFloat(observed.outlineWidth)>=2 && Number.parseFloat(observed.outlineOffset)>=0 && contrast(observed.outlineColor,observed.background)>=3,observed);
  }
  await capture('settings-high-contrast-enlarged');
  await call('Emulation.setEmulatedMedia',{features:[{name:'forced-colors',value:'active'}]});
@@ -82,6 +82,24 @@ try{
  check('Reopening help retains the same focused identity and reveals it',await evaluate(`document.activeElement.dataset.surfaceControl==='settings:help' && document.activeElement.getAttribute('aria-expanded')==='true' && document.querySelectorAll('[data-settings-help]').length===3 && document.activeElement.getBoundingClientRect().top>=0 && document.activeElement.getBoundingClientRect().bottom<=innerHeight+1`));
  await key('End');check('Help does not trap preference navigation',await evaluate(`document.activeElement.dataset.surfaceControl==='settings:refresh'`));
  await capture('settings-keyboard-help');
+ await call('Page.navigate',{url:base+'/assets/bar.html'});await until('typeof receivePresentation==="function"');
+ report.outerBarFocus=[];let publication=100;
+ for(const theme of ['night','dawn','high-contrast'])for(const scale of [100,200])for(const width of [320,800])for(const effectsOff of [false,true]){
+  const appearance={...packet.savedFrame.appearance,theme,textScale:scale,effectsOff};
+  const frame={...packet.savedFrame,publication:String(++publication),lease:'0',mode:'closed',popup:[],bar:[{id:'bar:group:focus-fixture',domId:'focus-fixture',label:'Example windows',ariaLabel:'Choose a window from Example windows; Active; 2 windows',detail:'Active; 2 windows',enabled:true,focusOnly:false},...packet.savedFrame.bar],appearance};
+  await viewport(width,3*16*scale/100+8);await evaluate('receivePresentation('+JSON.stringify(frame)+')');await until('document.querySelector(".surface-bar")?.dataset.publication==='+JSON.stringify(frame.publication));
+  for(const forced of (theme==='high-contrast'?['none','active']:['none'])){
+   await call('Emulation.setEmulatedMedia',{features:[{name:'forced-colors',value:forced}]});
+   await key('Tab');await evaluate('document.querySelector(".surface-actions button:not(:disabled)").focus()');
+   for(const edge of ['Home','End']){
+    await key(edge);
+    const value=await evaluate(`(()=>{const a=document.activeElement,s=getComputedStyle(a),r=a.getBoundingClientRect(),p=document.querySelector('.surface-actions'),c=p.getBoundingClientRect(),w=parseFloat(s.outlineWidth),o=parseFloat(s.outlineOffset),e=w+o;return {identity:a.dataset.surfaceControl,name:a.getAttribute('aria-label'),visibleFocus:a.matches(':focus-visible'),style:s.outlineStyle,width:w,offset:o,color:s.outlineColor,background:getComputedStyle(document.body).backgroundColor,target:[r.width,r.height],outer:[r.left-e,r.top-e,r.right+e,r.bottom+e],clip:[Math.max(0,c.left),Math.max(0,c.top),Math.min(innerWidth,c.left+p.clientWidth),Math.min(innerHeight,c.top+p.clientHeight)],pressed:a.getAttribute('aria-pressed'),labelBoxes:[...a.querySelectorAll('.control-label,.control-detail')].map(n=>{const b=n.getBoundingClientRect();return {top:b.top,bottom:b.bottom,text:n.textContent};}),targetBox:[r.left,r.top,r.right,r.bottom]};})()`);
+    report.outerBarFocus.push({theme,scale,viewportWidth:width,effectsOff,forced,edge,...value});
+    check('Outer reachable bar focus '+[theme,scale,width,effectsOff,forced,edge].join('/'),value.visibleFocus&&value.style==='solid'&&value.width>=2&&value.offset>=0&&value.name&&value.target[0]>=24&&value.target[1]>=24&&value.labelBoxes.every(b=>!b.text||(b.top>=value.targetBox[1]&&b.bottom<=value.targetBox[3]))&&(edge!=='Home'||value.pressed==='true')&&value.outer[0]>=value.clip[0]-.5&&value.outer[1]>=value.clip[1]-.5&&value.outer[2]<=value.clip[2]+.5&&value.outer[3]<=value.clip[3]+.5&&contrast(value.color,value.background)>=3,value);
+   }
+  }
+ }
+ await capture('outer-bar-focus-enlarged');
  check('No browser exceptions',report.errors.length===0,report.errors);report.passed=true;
 }catch(error){report.error=String(error.stack||error);}
 finally{
