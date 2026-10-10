@@ -518,3 +518,10 @@ Changing a returned output to 400×200 at a negative origin previously left the 
 The observed application is reachable at (-360, -32) after the smaller-output change, with its original 108×440 size and workspace 2. Actual taskbar Minimize/Restore, client pointer press/release, physical keyboard editing and native pixels pass with the unsaved draft preserved. The original output/drag/capture journey, unchanged caption/MAX/snap/lifecycle regression and delayed-shortcut recovery pass on the same core/plugin/host/transport tuple with normal cleanup. See [usable-area evidence](qa/evidence/reachable-output-area/README.md).
 
 UI-019 remains partial. The recovery preserves a reachable input region; it does not fit an oversized client entirely into a smaller screen. Minimized-before-output-change, pinned/fullscreen/grouped/modal families, wider transforms/output combinations, concurrent gestures/custody/Unknown, physical hotplug/AT/IME, independent acceptance and original release/package/rollback gates remain open. Quint and compiled-helper results are separate from native acceptance.
+
+
+## Minimized application recovery — October 10
+
+A real taskbar Minimize committed before the returned output changed to 400x200 at (-400,-200). The application remained minimized across reconciliation, then a real taskbar Restore committed exactly once at reachable position (-360,-32), preserving size108x440/workspace2 and its unsaved draft. Actual client pointer press/release, physical keyboard editing and painted pixels pass normal cleanup. Existing production placement already covers this ordinary minimized case; no new production behavior is claimed. See [native restore evidence](qa/evidence/minimized-output-area/README.md).
+
+UI-019 remains partial. Pinned/fullscreen/grouped/modal recovery, actual retirement while minimized, wider transforms, hardware/AT/IME, independent acceptance and release/package/rollback gates remain open. This is qualification of existing behavior, not an additional feature.

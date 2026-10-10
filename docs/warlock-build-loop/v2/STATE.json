@@ -1,14 +1,14 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T14:14:13.906278+00:00",
+  "updatedUTC": "2026-10-10T14:25:08.635493+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "reachable-output-area",
+    "id": "minimized-output-area",
     "requirements": [
       "ELM-UI-019"
     ],
@@ -16,40 +16,29 @@
       "outputs-return"
     ],
     "paths": [
-      "implementation/warlock/native/core/WorkspacePlacementController.cpp",
-      "implementation/warlock/native/core/Space.cpp",
-      "implementation/warlock/native/core/ReachablePlacement.hpp",
-      "implementation/warlock/qa/check-output-placement-core.py",
-      "implementation/warlock/qa/reachable-placement.qnt",
-      "implementation/warlock/qa/reachable-placement_test.qnt",
-      "implementation/warlock/qa/check-reachable-placement.py",
-      "implementation/warlock/qa/native-window-area-recovery.py",
-      "implementation/warlock/qa/current-scene-core.json",
-      "implementation/warlock/qa/current-native-pair.json",
-      "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/qa/check-native-authority.py",
+      "implementation/warlock/qa/native-minimized-output-area.py",
       "implementation/warlock/README.md"
     ],
-    "before": "Relative workspace/monitor placement can leave a returned floating application outside a smaller or negatively shifted usable output area; keyboard focus alone does not establish reachability.",
-    "after": "Recover an ordinary floating application\u2019s reachable top-left input/caption region inside the actual usable output area, without resizing it or changing workspace/draft, and retain ordinary unchanged-area manual placement.",
+    "before": "The ordinary output recovery journey minimizes only after the output shrinks; restoring a previously minimized application after output changes has not been observed.",
+    "after": "Restore a previously minimized floating application through the actual taskbar after a smaller, negatively shifted output change, retaining workspace, size and unsaved draft with one effect and real native input; fix a demonstrated saved-placement defect in its existing native owner if found.",
     "verification": [
-      "quint-llm-kit usable-area placement model, positive witnesses/named cases and sampled safety; actual compiled coordinate helper, narrow owning native TU relink with retained ABI/objects. Protected original output/application journey followed by real smaller/negative-origin monitor configure, actual taskbar/client input and draft preservation at original deadlines. Existing delayed shortcut and caption/lifecycle regressions; wider transforms/hardware/AT/independent gates separate."
+      "Protected original output/application journey, then real taskbar minimize before actual output configure and restore after reconciliation; retain original waits, draft/client-wire/physical-key/pixel observations and normal cleanup. If native behavior fails, quint-llm-kit state model before owning source fix and proportional changed-target build. Native hardware/AT/independent acceptance remains separate."
     ],
-    "owner": "root-reachable-area",
-    "participantRecord": ".warlock-contributor/reachable-area.json",
+    "owner": "root-minimized-output-area",
+    "participantRecord": ".warlock-contributor/minimized-output-area.json",
     "disposition": "partial",
     "evidence": {
-      "path": "implementation/warlock/qa/evidence/reachable-output-area/manifest.json",
-      "sha256": "d08c9e366357e3ee94ba527b10e37773cb50e8560e4ea00ce80678c60bdb40da"
+      "path": "implementation/warlock/qa/evidence/minimized-output-area/manifest.json",
+      "sha256": "36ae84bbbaaae7ab0d6b5b5a0f2e29a24f4cdda3d346c51548eba1c01ec6aa12"
     },
-    "observed": "Native smaller/negative-origin output change previously placed the application at (-360,30), outside the output. Changed usable-area/workspace placement now keeps its top-left input region reachable at (-360,-32), preserving original size108x440/workspace2 and the unsaved draft. Actual taskbar Minimize/Restore, named GTK press/client-wire release, physical keyboard editing to the retained draft and painted native pixels pass. Original output/drag/capture and same-tuple caption/MAX/snap/lifecycle and delayed-shortcut regressions pass normal cleanup.",
+    "observed": "A real taskbar Minimize committed before the returned output changed to 400x200 at (-400,-200). The application remained minimized across reconciliation, then a real taskbar Restore committed exactly once at reachable position (-360,-32), preserving size108x440/workspace2 and its unsaved draft. Actual client pointer press/release, physical keyboard editing and painted pixels pass normal cleanup. Existing production placement already covers this ordinary minimized case; no new production behavior is claimed.",
     "missingObservations": [
       "Independent original UI-019 acceptance and physical hotplug/AT/IME remain open.",
-      "Minimized-before-area-change, pinned/fullscreen/grouped/modal families and wider scale/rotation/multiple-output placement remain unqualified. An oversized window is not fully fitted into the smaller screen; its original size is retained.",
-      "Concurrent gesture/output changes, preview/capture/effect custody, protected input, Unknown and other asynchronous/native-host ordering or transport-failure schedules remain open.",
+      "Pinned/fullscreen/grouped/modal families, minimized windows across actual output retirement rather than this post-return reconfigure, and wider scale/rotation/multiple-output placement remain unqualified. An oversized window is not fully fitted; original size is preserved.",
+      "Concurrent gesture/output changes, preview/capture/effect custody, protected input, Unknown and other asynchronous/native-host ordering or transport failures remain open.",
       "Full original hardware/resource/journey evidence, reproducible package and reversible deployment/rollback remain open."
     ],
-    "nextSourceWork": "Original UI-019: reproduce minimized-before-output-change application recovery and restore on smaller/shifted outputs. Fix demonstrated native saved placement without resetting workspace/draft or replaying an effect; retain current ordinary/window, delayed shortcut and caption/MAX behavior. Pinned/fullscreen/group/modal, wider transforms/concurrent custody and physical/AT/release gates remain mandatory."
+    "nextSourceWork": "Original UI-019: reproduce pinned floating application recovery after output usable-area shrink/negative-origin change; fix demonstrated owning placement while retaining pinned/workspace/size/draft and actual taskbar/client access. Wider/fullscreen/group/modal/custody/hardware/AT/release gates remain open."
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -1897,5 +1886,49 @@
       },
       "nextSourceWork": "Original UI-019: reproduce and close fresh old native shortcut journals delayed across identical output replacement bounds. Stamp typed shortcut generation and enforce current root/native output reconciliation without replay, preserving real keyboard recipients and Unknown/custody. Wider native origin/transform/minimized/fullscreen/modal placement, physical hotplug/AT/IME and full original release gates remain mandatory."
     }
-  ]
+  ],
+  "lastSlice": {
+    "id": "reachable-output-area",
+    "requirements": [
+      "ELM-UI-019"
+    ],
+    "scenarios": [
+      "outputs-return"
+    ],
+    "paths": [
+      "implementation/warlock/native/core/WorkspacePlacementController.cpp",
+      "implementation/warlock/native/core/Space.cpp",
+      "implementation/warlock/native/core/ReachablePlacement.hpp",
+      "implementation/warlock/qa/check-output-placement-core.py",
+      "implementation/warlock/qa/reachable-placement.qnt",
+      "implementation/warlock/qa/reachable-placement_test.qnt",
+      "implementation/warlock/qa/check-reachable-placement.py",
+      "implementation/warlock/qa/native-window-area-recovery.py",
+      "implementation/warlock/qa/current-scene-core.json",
+      "implementation/warlock/qa/current-native-pair.json",
+      "implementation/warlock/qa/native-window-feedback.py",
+      "implementation/warlock/qa/check-native-authority.py",
+      "implementation/warlock/README.md"
+    ],
+    "before": "Relative workspace/monitor placement can leave a returned floating application outside a smaller or negatively shifted usable output area; keyboard focus alone does not establish reachability.",
+    "after": "Recover an ordinary floating application\u2019s reachable top-left input/caption region inside the actual usable output area, without resizing it or changing workspace/draft, and retain ordinary unchanged-area manual placement.",
+    "verification": [
+      "quint-llm-kit usable-area placement model, positive witnesses/named cases and sampled safety; actual compiled coordinate helper, narrow owning native TU relink with retained ABI/objects. Protected original output/application journey followed by real smaller/negative-origin monitor configure, actual taskbar/client input and draft preservation at original deadlines. Existing delayed shortcut and caption/lifecycle regressions; wider transforms/hardware/AT/independent gates separate."
+    ],
+    "owner": "root-reachable-area",
+    "participantRecord": ".warlock-contributor/reachable-area.json",
+    "disposition": "partial",
+    "evidence": {
+      "path": "implementation/warlock/qa/evidence/reachable-output-area/manifest.json",
+      "sha256": "d08c9e366357e3ee94ba527b10e37773cb50e8560e4ea00ce80678c60bdb40da"
+    },
+    "observed": "Native smaller/negative-origin output change previously placed the application at (-360,30), outside the output. Changed usable-area/workspace placement now keeps its top-left input region reachable at (-360,-32), preserving original size108x440/workspace2 and the unsaved draft. Actual taskbar Minimize/Restore, named GTK press/client-wire release, physical keyboard editing to the retained draft and painted native pixels pass. Original output/drag/capture and same-tuple caption/MAX/snap/lifecycle and delayed-shortcut regressions pass normal cleanup.",
+    "missingObservations": [
+      "Independent original UI-019 acceptance and physical hotplug/AT/IME remain open.",
+      "Minimized-before-area-change, pinned/fullscreen/grouped/modal families and wider scale/rotation/multiple-output placement remain unqualified. An oversized window is not fully fitted into the smaller screen; its original size is retained.",
+      "Concurrent gesture/output changes, preview/capture/effect custody, protected input, Unknown and other asynchronous/native-host ordering or transport-failure schedules remain open.",
+      "Full original hardware/resource/journey evidence, reproducible package and reversible deployment/rollback remain open."
+    ],
+    "nextSourceWork": "Original UI-019: reproduce minimized-before-output-change application recovery and restore on smaller/shifted outputs. Fix demonstrated native saved placement without resetting workspace/draft or replaying an effect; retain current ordinary/window, delayed shortcut and caption/MAX behavior. Pinned/fullscreen/group/modal, wider transforms/concurrent custody and physical/AT/release gates remain mandatory."
+  }
 }

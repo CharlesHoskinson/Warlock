@@ -1,0 +1,76 @@
+{
+  "schema": 1,
+  "requirement": "ELM-UI-019",
+  "ears": "WHEN an output disappears, the host SHALL recover shell controls and displaced popup focus on a declared surviving output, preserve workspace identity and reachable application recovery, and reject removed-generation effects until available outputs reconcile.",
+  "scenario": {
+    "name": "outputs-return",
+    "given": "all outputs disappear",
+    "when": "one returns",
+    "then": "controls reconcile on available output without old-generation effects"
+  },
+  "verificationScope": "Frozen threshold/policy plus independently observed named fixtures, native counters or user/AT records as applicable; hashes and failure outcomes retained.",
+  "originalRequirements": {
+    "path": "docs/elm-roadmap/requirements.json",
+    "sha256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b"
+  },
+  "disposition": "partial",
+  "requirementAccepted": false,
+  "fullReleaseAccepted": false,
+  "sourceParent": "c6a3b36b88df7518e491ffbad87fd3c4fd1db086",
+  "sourceHashes": {
+    "implementation/warlock/qa/native-minimized-output-area.py": "49f9aff80e98073440951ba9bd573feff801077b9730b0e10a206aba52a937fd",
+    "implementation/warlock/README.md": "9a65d2d6b7aa95620b73dcee2de7039d1a50836495a5f5e8a091f519fb52dae8"
+  },
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791641218119586632/Hyprland",
+      "sha256": "8270e6ddce040e2d02a76d2573db1a6cea43b6dd352faed2d4afda5ecc3e5c83"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791640237225188593/elm-window-geometry-authority.so",
+      "sha256": "1c95964d7b91640dfc586871c28512e320d4af6aeec3434c3c6b9ec20610ba72"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+      "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791640275755675047/elm-host",
+    "sha256": "806aa4bcd44f0b67b6e58db7d1e41da41f1956692ff14001d5f19a5b005cecf7",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791640275755675047/report.json",
+    "heldBuildSHA256": "dea548c1c537be76e4796d505f6c58ea2af0b26e5cff4917d25011c116ef0d21"
+  },
+  "artifacts": {
+    "native": {
+      "path": "implementation/warlock/qa/runs/native-drag-ownership-1791642200284114084/report.json",
+      "sha256": "ff73054e59606c66e7974e936b1416f685bd3c555c2900d2bad41cbcf24650bd",
+      "packet": "native.json.gz",
+      "packetSHA256": "d776eed2c1bb8af7a64148aa65226745246a6b91924159e746c48ca5e7fd828b",
+      "encoding": "gzip",
+      "passed": true
+    }
+  },
+  "image": {
+    "path": "restored-application.png",
+    "sha256": "7c03132ebdae6af961718d0a12c79abb82ae4022d89476746c8ece08d835efdc"
+  },
+  "observation": "A real taskbar Minimize committed before the returned output changed to 400x200 at (-400,-200). The application remained minimized across reconciliation, then a real taskbar Restore committed exactly once at reachable position (-360,-32), preserving size108x440/workspace2 and its unsaved draft. Actual client pointer press/release, physical keyboard editing and painted pixels pass normal cleanup. Existing production placement already covers this ordinary minimized case; no new production behavior is claimed.",
+  "missingObservations": [
+    "Independent original UI-019 acceptance and physical hotplug/AT/IME remain open.",
+    "Pinned/fullscreen/grouped/modal families, minimized windows across actual output retirement rather than this post-return reconfigure, and wider scale/rotation/multiple-output placement remain unqualified. An oversized window is not fully fitted; original size is preserved.",
+    "Concurrent gesture/output changes, preview/capture/effect custody, protected input, Unknown and other asynchronous/native-host ordering or transport failures remain open.",
+    "Full original hardware/resource/journey evidence, reproducible package and reversible deployment/rollback remain open."
+  ],
+  "productionChange": false,
+  "modelByReference": {
+    "path": "implementation/warlock/qa/evidence/reachable-output-area/manifest.json",
+    "sha256": "d08c9e366357e3ee94ba527b10e37773cb50e8560e4ea00ce80678c60bdb40da",
+    "scope": "Existing sampled placement/helper model remains unchanged; minimized native state is separately observed here, not proven by that model."
+  },
+  "reviewerDisposition": {
+    "name": "root-minimized-output-area",
+    "independent": false,
+    "disposition": "Owner-observed protected nested native journey; original independent acceptance remains open."
+  }
+}
