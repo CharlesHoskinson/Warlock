@@ -1,0 +1,300 @@
+{
+  "schema": 1,
+  "requirements": [
+    "ELM-UX-023"
+  ],
+  "scenarios": [
+    "keyboard-launcher"
+  ],
+  "disposition": "partial",
+  "scope": "Native free-default Apps opening and one catalog/GIO operation; repeated Apps keyboard traversal/dismissal/current bar focus and actual reload preserves explicit alternate/default/Keep without preference resubmission, foreign chord changes or stale-fingerprint application. Compiled/storage, exact ABI and Quint LLM Kit sampled lifecycle gates pass. Combined campaigns retain later failures.",
+  "sourceBaseRevision": "9fa2e5ab3f19d83eae945b2c54361766a749a153",
+  "sourceHashes": {
+    "implementation/warlock/native/authority.cpp": "08d13f3b6ca6b67c1bd1ac78e36a4c59c7d4e2468d41fdbcac6a7ab95dddd081",
+    "implementation/warlock/native/shortcut-bindings.inc": "1103085deb970c048b81f5afbf9848eae64388ad73c741f1bb7780cfbd8e3345",
+    "implementation/warlock/qa/shortcut-registration.qnt": "e33181c1857b0cac6d7a02f9d03723e8371116996595fd9ecd8c0925b400fff7",
+    "implementation/warlock/qa/check-search.py": "4d0a064c1c458c35235ed385d80370c52d9fa2ea1a6c3e63a9b22bb141217039",
+    "implementation/warlock/qa/check-native-authority.py": "d06bca4ee340d0f13ed6373a0e38fa444b234e7282932c1c6f7cd59263274e41",
+    "implementation/warlock/qa/native-shortcut-preferences.py": "65ab619eb2100167d61ee1a6a84f15614ff546a87812e2ab85136aae0e0bbfd0",
+    "implementation/warlock/qa/current-native-pair.json": "7032fd9441c2a9ee529fe6f11073ee151b791f82b06801613796c1d9f67f66d7",
+    "implementation/warlock/qa/current-search-build.json": "ed17c3681385337407b40f86439666c8cb658b25d421010b3127d45657e19ed9",
+    "implementation/warlock/README.md": "8cb2a668bb4082235ec2c0f77c1a62cc32c0748065f3a840859f3f000e64eb68",
+    "implementation/warlock/qa/check-shortcut-registration.py": "c7f676ae084cb879f73c75fc56e01d7d32f6eb06d0133278eed0bd9f97aa875e",
+    "implementation/warlock/qa/shortcut-registration_test.qnt": "a114e9a7273bd0ad0b36ea7a463c3573341c9cb7c1abfdee2c722f7146b5b9e7"
+  },
+  "quintLLMKit": {
+    "version": "1.0.0",
+    "upstream": "https://github.com/quint-co/quint-llm-kit",
+    "skills": {
+      "quint-modeling": {
+        "path": "/home/hoskinson/.claude/plugins/cache/quint-llm-kit/quint-llm-kit/1.0.0/skills/quint-modeling/SKILL.md",
+        "sha256": "fe595baac9353a4c8ca572ee91b0d516000a17a83697db6244597597ae69c591"
+      },
+      "quint-lang": {
+        "path": "/home/hoskinson/.claude/plugins/cache/quint-llm-kit/quint-llm-kit/1.0.0/skills/quint-lang/SKILL.md",
+        "sha256": "ba2312c2da15be623f8fcce0d256ae4427905ff3592e6d74bac0caa3aff68532"
+      },
+      "quint-execute-spec": {
+        "path": "/home/hoskinson/.claude/plugins/cache/quint-llm-kit/quint-llm-kit/1.0.0/skills/quint-execute-spec/SKILL.md",
+        "sha256": "7bd1dbfddcded796c41bd0019b02f4b47a42e13ffd2d87010448ed86e0f38ab5"
+      }
+    },
+    "workflow": "requirements -> executable shared-state model -> typecheck/named/witness/safety -> native implementation -> scoped compiled/ABI/physical tests"
+  },
+  "reports": {
+    "compiled-report.json": {
+      "path": "implementation/warlock/qa/evidence/shortcut-registration/compiled-report.json",
+      "sha256": "118677b356d58865082989b85189ae3f4214d043a6ae0e017e7f24ae83196947",
+      "originalPath": "implementation/warlock/qa/runs/settings-1791595203943298843/report.json"
+    },
+    "authority-report.json": {
+      "path": "implementation/warlock/qa/evidence/shortcut-registration/authority-report.json",
+      "sha256": "092f8e9b2eed159de9dd8f4c76bfa313c8aa130a8356ffc08a8dd611218c5a8a",
+      "originalPath": "implementation/warlock/qa/runs/native-authority-1791595150048076927/report.json"
+    },
+    "model-report.json": {
+      "path": "implementation/warlock/qa/evidence/shortcut-registration/model-report.json",
+      "sha256": "cf7b9e4074ef51dff3a4817edd4b840ba630e8891a9bfce96e619a7aa6ac411d",
+      "originalPath": "implementation/warlock/qa/runs/shortcut-registration-1791595128064759613/report.json"
+    },
+    "native-keyboard-report.json": {
+      "path": "implementation/warlock/qa/evidence/shortcut-registration/native-keyboard-report.json",
+      "sha256": "f0de01eaffc5612db5d83934a48ce627b4a2403c5b3a361298eaaee076b5c2b2",
+      "originalPath": "implementation/warlock/qa/runs/native-keyboard-shell-1791595235343402603/report.json"
+    },
+    "native-reload-report.json": {
+      "path": "implementation/warlock/qa/evidence/shortcut-registration/native-reload-report.json",
+      "sha256": "d4d236f0c5b8cf383c65612e64cc47b7041fc98b2ab3e56e2964fd43693d04d9",
+      "originalPath": "implementation/warlock/qa/runs/native-shortcut-choices-1791595284884611072/report.json"
+    }
+  },
+  "nativeObservations": {
+    "native-keyboard-report.json": {
+      "checks": [
+        "OwningPluginLoads",
+        "FixtureFloats",
+        "FixtureSize",
+        "FixturePosition",
+        "FixtureFocus",
+        "KeyboardLauncherDispatchesOneNativeCatalogEntry",
+        "KeyboardReachesActions for A Warlock Editor",
+        "KeyboardReachesNew document",
+        "KeyboardJumpListDispatchesExactlyOnce",
+        "KeyboardReachesActions for A Warlock Editor",
+        "KeyboardReachesRefresh notifications",
+        "KeyboardReachesRefresh system state",
+        "KeyboardBarRouteOpen settings",
+        "KeyboardReachesDawn theme",
+        "KeyboardReachesSave settings",
+        "KeyboardSettingsNativeSaved",
+        "KeyboardGroupOpensWithoutDuplicateLaunch",
+        "KeyboardReachesActivate ELM-ACTIVATION-PEER",
+        "KeyboardChosenGroupMemberReceivesInput",
+        "PersistentKeyboardNormalExit",
+        "OwnedClientNormalExit",
+        "OwnedClientNormalExit",
+        "OwningPluginUnloads"
+      ],
+      "keyboardSurfaces": [
+        {
+          "surface": "launcher",
+          "passed": true,
+          "events": [
+            {
+              "argv": [
+                "RECENT"
+              ],
+              "pid": 272764
+            }
+          ],
+          "outcome": {
+            "protocolVersion": 3,
+            "kind": "application-launch-outcome",
+            "binding": {
+              "lifetime": "12888551140065584358",
+              "session": "3",
+              "frontend": "1"
+            },
+            "outcome": {
+              "catalogProtocol": 1,
+              "kind": "launch-outcome",
+              "intent": {
+                "request": "1",
+                "lifetime": "12610934571777164420",
+                "generation": "1",
+                "entry": "warlock-editor"
+              },
+              "status": "Submitted",
+              "reason": "native-submission-accepted"
+            }
+          }
+        },
+        {
+          "surface": "jump-lists",
+          "passed": true,
+          "events": [
+            {
+              "argv": [
+                "RECENT"
+              ],
+              "pid": 272764
+            },
+            {
+              "argv": [
+                "ALPHA"
+              ],
+              "pid": 272830
+            }
+          ],
+          "dismissed": true
+        },
+        {
+          "surface": "notifications",
+          "passed": true,
+          "snapshots": 2,
+          "dismissed": true
+        },
+        {
+          "surface": "menus",
+          "passed": true,
+          "systemSnapshots": 2,
+          "dismissed": true
+        },
+        {
+          "surface": "settings",
+          "passed": true,
+          "receipt": {
+            "protocolVersion": 3,
+            "kind": "shell-settings-outcome",
+            "binding": {
+              "lifetime": "12888551140065584358",
+              "session": "3",
+              "frontend": "1"
+            },
+            "requestId": "20",
+            "snapshot": {
+              "schema": 1,
+              "revision": "2",
+              "values": {
+                "theme": "dawn",
+                "textScale": 100
+              }
+            },
+            "status": "Saved"
+          },
+          "dismissed": true
+        },
+        {
+          "surface": "taskbar-groups",
+          "passed": true,
+          "selected": {
+            "incarnation": "1",
+            "title": "ELM-ACTIVATION-PEER",
+            "state": "Open",
+            "domId": "picker:{\"lifetime\":\"12888551140065584358\",\"session\":\"3\",\"frontend\":\"1\"}:1:2:1:1",
+            "disabled": false,
+            "label": "Activate ELM-ACTIVATION-PEER",
+            "point": [
+              400.0,
+              218.0
+            ],
+            "rect": [
+              61,
+              151,
+              678,
+              134
+            ],
+            "clip": [
+              50,
+              48,
+              750,
+              468
+            ],
+            "visible": true
+          },
+          "events": [
+            {
+              "window": "ELM-ACTIVATION-PEER",
+              "kind": "key",
+              "keyval": 97,
+              "keycode": 38
+            }
+          ],
+          "dismissed": true
+        }
+      ],
+      "pointerStreams": [
+        {
+          "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791595235343495288/fixture-control.events.jsonl",
+          "sha256": "57522041e6e1522a60207d7e0ca702ea92fc4f7d50f4c19839c4c29b67ffe704",
+          "events": 14,
+          "pointerEvents": 0
+        }
+      ],
+      "pointerEventsObserved": 0,
+      "cleanupPassed": true
+    },
+    "native-reload-report.json": {
+      "checks": [
+        "OwningPluginLoads",
+        "FixtureFloats",
+        "FixtureSize",
+        "FixturePosition",
+        "FixtureFocus",
+        "ExplicitCustomizedNativeBindingsExist",
+        "KeyboardBarRouteOpen settings",
+        "LiveConflictIsVisibleAndDefaultDisabled",
+        "KeyboardReachesDismiss help",
+        "KeyboardReachesUse Apps menu alternative",
+        "KeyboardReachesUse System menu default",
+        "KeyboardReachesKeep existing shortcut for Notification history",
+        "UnsavedChoicesDoNotWriteOrMutateBindings",
+        "KeyboardReachesSave shortcut choices",
+        "SavedChoiceHasOneCorrelatedNativeWrite",
+        "ForeignCustomizedBindingsPreservedExactly",
+        "HelpRemainsReachableAfterChoice",
+        "KeyboardReachesShow help",
+        "feedback-helper-1NormalExit",
+        "ChosenAlternativeOpensActualAppsMenu",
+        "ExistingUserOverrideStillOpensActualAppsMenu",
+        "ReopenedAppsEscapeClosesAndRestoresBarFocus",
+        "RepeatedAppsKeyboardTraversal0",
+        "RepeatedAppsReleaseRestoresCurrentBarFocus0",
+        "RepeatedAppsKeyboardTraversal1",
+        "RepeatedAppsReleaseRestoresCurrentBarFocus1",
+        "RepeatedAppsKeyboardTraversal2",
+        "RepeatedAppsReleaseRestoresCurrentBarFocus2",
+        "ReloadPrivateConfiguration",
+        "ReloadPreservesForeignChordSemantics",
+        "ReloadRetainsAlternateDefaultAndExplicitKeep",
+        "ReloadRetiresPreviousFingerprintWithoutReapplying",
+        "ChosenAlternativeWorksAfterNativeReload",
+        "PersistentKeyboardNormalExit",
+        "OwnedClientNormalExit",
+        "OwnedClientNormalExit",
+        "OwningPluginUnloads"
+      ],
+      "keyboardSurfaces": [],
+      "pointerStreams": [
+        {
+          "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791595284884710596/fixture-control.events.jsonl",
+          "sha256": "d1482fcb5e7af4ba287339bcb00b70e8939a9ee225f37e2d5548f7cdde6e717b",
+          "events": 3,
+          "pointerEvents": 0
+        }
+      ],
+      "pointerEventsObserved": 0,
+      "cleanupPassed": true
+    }
+  },
+  "missingObservations": [
+    "Combined original keyboard campaign still fails at repeated Home taskbar-group entry after launcher/jump-list/notification/system/settings/group subintervals pass. Customized-binding campaign passes repeated Apps release/focus and native configuration reload, then fails the foreign original-shortcut focus recipient. Whole-host restart/offline rollback, native IME/AT, full combined keyboard journey and independent acceptance remain open."
+  ],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "reviewerDisposition": {
+    "name": "root-shortcut-lifecycle",
+    "independent": false,
+    "disposition": "Owner-observed original launcher and configuration subintervals; independent acceptance remains open"
+  }
+}

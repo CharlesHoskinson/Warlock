@@ -8340,9 +8340,33 @@
                 "independent": false,
                 "disposition": "Owner-observed native subintervals only"
               }
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/shortcut-registration/manifest.json",
+              "sha256": "76cb6b47ab768e8fd5ef59fc7d75fa10900a3b381501e41a5dfbde320f42884f",
+              "scope": "Native free-default Apps opening and one catalog/GIO operation; repeated Apps keyboard traversal/dismissal/current bar focus and actual reload preserves explicit alternate/default/Keep without preference resubmission, foreign chord changes or stale-fingerprint application. Compiled/storage, exact ABI and Quint LLM Kit sampled lifecycle gates pass. Combined campaigns retain later failures.",
+              "sourceBaseRevision": "9fa2e5ab3f19d83eae945b2c54361766a749a153",
+              "sourceHashes": {
+                "implementation/warlock/native/authority.cpp": "08d13f3b6ca6b67c1bd1ac78e36a4c59c7d4e2468d41fdbcac6a7ab95dddd081",
+                "implementation/warlock/native/shortcut-bindings.inc": "1103085deb970c048b81f5afbf9848eae64388ad73c741f1bb7780cfbd8e3345",
+                "implementation/warlock/qa/shortcut-registration.qnt": "e33181c1857b0cac6d7a02f9d03723e8371116996595fd9ecd8c0925b400fff7",
+                "implementation/warlock/qa/check-search.py": "4d0a064c1c458c35235ed385d80370c52d9fa2ea1a6c3e63a9b22bb141217039",
+                "implementation/warlock/qa/check-native-authority.py": "d06bca4ee340d0f13ed6373a0e38fa444b234e7282932c1c6f7cd59263274e41",
+                "implementation/warlock/qa/native-shortcut-preferences.py": "65ab619eb2100167d61ee1a6a84f15614ff546a87812e2ab85136aae0e0bbfd0",
+                "implementation/warlock/qa/current-native-pair.json": "7032fd9441c2a9ee529fe6f11073ee151b791f82b06801613796c1d9f67f66d7",
+                "implementation/warlock/qa/current-search-build.json": "ed17c3681385337407b40f86439666c8cb658b25d421010b3127d45657e19ed9",
+                "implementation/warlock/README.md": "8cb2a668bb4082235ec2c0f77c1a62cc32c0748065f3a840859f3f000e64eb68",
+                "implementation/warlock/qa/check-shortcut-registration.py": "c7f676ae084cb879f73c75fc56e01d7d32f6eb06d0133278eed0bd9f97aa875e",
+                "implementation/warlock/qa/shortcut-registration_test.qnt": "a114e9a7273bd0ad0b36ea7a463c3573341c9cb7c1abfdee2c722f7146b5b9e7"
+              },
+              "reviewerDisposition": {
+                "name": "root-shortcut-lifecycle",
+                "independent": false,
+                "disposition": "Owner-observed original launcher and configuration subintervals; independent acceptance remains open"
+              }
             }
           ],
-          "missingObservation": "The full original keyboard-launcher operation journey did not start: free defaults report available but active keep after session setup. The customized-binding campaign passes repeated Apps traversal/dismissal/bar focus, then fails the preserved default shortcut focus-recipient deadline. Native IME/AT, full launcher operation on this tuple and independent acceptance remain open."
+          "missingObservation": "Combined original keyboard campaign still fails at repeated Home taskbar-group entry after launcher/jump-list/notification/system/settings/group subintervals pass. Customized-binding campaign passes repeated Apps release/focus and native configuration reload, then fails the foreign original-shortcut focus recipient. Whole-host restart/offline rollback, native IME/AT, full combined keyboard journey and independent acceptance remain open."
         },
         {
           "name": "keyboard-taskbar-groups",
@@ -9372,5 +9396,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-10T01:12:28.670293+00:00"
+  "updatedUTC": "2026-10-10T01:23:02.975185+00:00"
 }

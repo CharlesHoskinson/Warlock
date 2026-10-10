@@ -6,6 +6,10 @@ const std::array<ShortcutSpec,3> shortcutSpecs = {{
     {"notifications","Notification history","warlock_notification_history","comma",XKB_KEY_comma,51,"SUPER SHIFT ALT","SUPER CTRL ALT","SUPER + SHIFT + ALT + comma","SUPER + CTRL + ALT + comma",ShellRoute::Notifications}
 }};
 std::array<SP<SKeybind>,3> ownedShortcutBindings;
+enum class ShortcutChoice {Keep,Default,Alternate};
+std::array<ShortcutChoice,3> desiredShortcutChoices;
+CHyprSignalListener shortcutReloaded;
+bool shortcutReloading=false;
 uint64_t shortcutConfigurationRevision=1;
 struct ShortcutApplyReceipt { uint64_t request=0; std::string proposal; std::string reply; };
 std::map<std::string,ShortcutApplyReceipt> shortcutApplyReceipts;
@@ -58,22 +62,52 @@ SP<SKeybind> shortcutCreate(size_t i,bool alternate) {
     const auto& spec=shortcutSpecs[i];SKeybind key{};key.key=spec.key;key.modmask=g_pKeybindManager->stringToModMask(alternate?spec.alternateModifiers:spec.modifiers);key.handler=spec.dispatcher;key.description=spec.label;key.hasDescription=true;key.displayKey=alternate?spec.alternateChord:spec.chord;
     return g_pKeybindManager->addKeybind(key);
 }
+void clearOwnedShortcutBindings() noexcept {
+    if(g_pKeybindManager)for(const auto& owned:ownedShortcutBindings)if(owned){owned->enabled=false;std::erase(g_pKeybindManager->m_keybinds,owned);}
+    ownedShortcutBindings={};
+}
+void beginShortcutReload() noexcept {
+    shortcutReloading=true;
+    clearOwnedShortcutBindings();
+    if(shortcutConfigurationRevision!=std::numeric_limits<uint64_t>::max())++shortcutConfigurationRevision;
+}
+void restoreShortcutBindings() noexcept {
+    shortcutReloading=false;
+    if(!g_pKeybindManager || shortcutConfigurationRevision==std::numeric_limits<uint64_t>::max())return;
+    std::array<SP<SKeybind>,3> prepared;
+    try {
+        for(size_t i=0;i<shortcutSpecs.size();++i) {
+            const auto choice=desiredShortcutChoices[i];
+            if(choice==ShortcutChoice::Keep || !shortcutFree(i,choice==ShortcutChoice::Alternate))continue;
+            prepared[i]=shortcutCreate(i,choice==ShortcutChoice::Alternate);
+            if(!prepared[i])throw std::runtime_error("Shortcut restoration failed");
+        }
+    } catch(...) {
+        for(const auto& owned:prepared)if(owned){owned->enabled=false;std::erase(g_pKeybindManager->m_keybinds,owned);}
+        return;
+    }
+    clearOwnedShortcutBindings();ownedShortcutBindings=prepared;
+}
 void retireShortcutBindings() noexcept {
-    if(g_pKeybindManager)for(const auto& owned:ownedShortcutBindings)if(owned)std::erase(g_pKeybindManager->m_keybinds,owned);
-    ownedShortcutBindings={};shortcutApplyReceipts.clear();
+    shortcutReloaded.reset();shortcutReloading=true;
+    clearOwnedShortcutBindings();shortcutApplyReceipts.clear();desiredShortcutChoices.fill(ShortcutChoice::Keep);
 }
 void registerShortcutBindings(HANDLE handle) {
     retireShortcutBindings();
+    desiredShortcutChoices.fill(ShortcutChoice::Default);shortcutConfigurationRevision=1;
     for(size_t i=0;i<shortcutSpecs.size();++i) {
         const auto& spec=shortcutSpecs[i];
         if(!HyprlandAPI::addDispatcherV2(handle,spec.dispatcher,[i](std::string){
             const auto& owned=ownedShortcutBindings[i];
-            if(shortcutPresent(owned) && owned->enabled && shortcutFree(i,owned->modmask==g_pKeybindManager->stringToModMask(shortcutSpecs[i].alternateModifiers)))shellShortcut(shortcutSpecs[i].routeValue);
+            if(!shortcutReloading && shortcutPresent(owned) && owned->enabled && shortcutFree(i,owned->modmask==g_pKeybindManager->stringToModMask(shortcutSpecs[i].alternateModifiers)))shellShortcut(shortcutSpecs[i].routeValue);
             return SDispatchResult{};
         }))throw std::runtime_error("Shortcut dispatcher registration failed");
-        // The approved default is installed only when the live chord is free.
-        if(shortcutFree(i,false))ownedShortcutBindings[i]=shortcutCreate(i,false);
     }
+    // Lua/plugin registration can trigger a configuration reload that clears
+    // keybinds. Reinstall the known native choice after the foreign rows exist;
+    // explicit Keep is never replaced by an automatic default.
+    shortcutReloaded=Event::bus()->m_events.config.reloaded.listen(restoreShortcutBindings);
+    restoreShortcutBindings();
 }
 std::string shortcutBindingsReply(const Session& session,uint64_t request,const char* kind,const char* status=nullptr) {
     return "{\"protocolVersion\":3,\"kind\":"+quote(kind)+",\"binding\":"+binding(session)+",\"requestId\":"+quote(std::to_string(request))+(status?",\"status\":"+quote(status):"")+",\"inventory\":"+shortcutInventory()+"}";
@@ -85,7 +119,7 @@ std::string applyShortcutBindings(const Session& session,uint64_t request,JsonOb
     if(found!=shortcutApplyReceipts.end() && request<=found->second.request){if(request==found->second.request && found->second.proposal==proposal)return found->second.reply;return error("shortcut-request-retired");}
     if(found==shortcutApplyReceipts.end() && shortcutApplyReceipts.size()>=64)return error("shortcut-receipt-capacity");
     auto finish=[&](const char* status){auto reply=shortcutBindingsReply(session,request,"shortcut-bindings-outcome",status);shortcutApplyReceipts[key]={request,proposal,reply};return reply;};
-    if(shortcutConfigurationRevision==std::numeric_limits<uint64_t>::max() || fingerprint!=shortcutFingerprint() || g_pSessionLockManager->isSessionLocked() || g_layoutManager->dragController()->target())return finish("Refused");
+    if(shortcutReloading || shortcutConfigurationRevision==std::numeric_limits<uint64_t>::max() || fingerprint!=shortcutFingerprint() || g_pSessionLockManager->isSessionLocked() || g_layoutManager->dragController()->target())return finish("Refused");
     for(size_t i=0;i<selected.size();++i)if(selected[i]!="keep" && !shortcutFree(i,selected[i]=="alternate"))return finish("Refused");
     std::array<SP<SKeybind>,3> prepared;
     try {
@@ -94,7 +128,8 @@ std::string applyShortcutBindings(const Session& session,uint64_t request,JsonOb
         for(const auto& owned:prepared)if(owned)std::erase(g_pKeybindManager->m_keybinds,owned);
         return finish("Refused");
     }
-    for(const auto& owned:ownedShortcutBindings)if(owned)std::erase(g_pKeybindManager->m_keybinds,owned);
+    clearOwnedShortcutBindings();
     ownedShortcutBindings=prepared;++shortcutConfigurationRevision;
+    for(size_t i=0;i<selected.size();++i)desiredShortcutChoices[i]=selected[i]=="keep"?ShortcutChoice::Keep:selected[i]=="alternate"?ShortcutChoice::Alternate:ShortcutChoice::Default;
     return finish("Applied");
 }

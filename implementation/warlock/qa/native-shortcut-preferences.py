@@ -42,6 +42,21 @@ branch=r'''     wait(lambda:closed() and bool(frames('shell-shortcuts')))
       check('RepeatedAppsKeyboardTraversal'+str(cycle),body['focus']!='launcher-search',body=body)
       key(1);wait(closed)
       check('RepeatedAppsReleaseRestoresCurrentBarFocus'+str(cycle),bool(wait(bar_focus)),body=bar_body())
+     inventory_before=client.shortcut_bindings('30990')['inventory'];foreign_before=existing()
+     check('ReloadPrivateConfiguration',s.ctl('reload').strip()=='ok')
+     def reloaded_inventory():
+      v=client.shortcut_bindings('30991')['inventory']
+      return v if v['fingerprint']!=inventory_before['fingerprint'] and v['applications']['active']=='alternate' and v['system']['active']=='default' and v['notifications']['active']=='keep' else None
+     inventory_after=wait(reloaded_inventory)
+     # The configuration owner allocates new Lua callback IDs on reload. All
+     # exposed chord/dispatch flags and descriptions must preserve their value.
+     semantic=lambda rows:[{k:v for k,v in row.items() if k!='arg'} for row in rows]
+     check('ReloadPreservesForeignChordSemantics',semantic(existing())==semantic(foreign_before),before=foreign_before,after=existing())
+     check('ReloadRetainsAlternateDefaultAndExplicitKeep',inventory_after['applications']['defaultAvailable']==False and stored()==saved and len(requests('shortcut-preferences-write'))==before+1,inventory=inventory_after)
+     stale=client.shortcut_bindings('30992',saved['choices'],inventory_before['fingerprint'])
+     check('ReloadRetiresPreviousFingerprintWithoutReapplying',stale['status']=='Refused' and stale['inventory']['applications']['active']=='alternate',outcome=stale)
+     chord([125,29,56],57);wait(lambda:(body:=body_for('applications')) and body['focus']=='launcher-search');key(1);wait(closed)
+     check('ChosenAlternativeWorksAfterNativeReload',bool(wait(bar_focus)),body=bar_body())
      primary=next(w['incarnation'] for w in client.snapshot('29000')['windows'] if w['label']=='ELM-AUTHORITY-FIXTURE')
      peer=next(w['incarnation'] for w in client.snapshot('29001')['windows'] if w['label']=='ELM-ACTIVATION-PEER')
      chord([125,56],57);wait(lambda:facts()['facts']['focused']==peer)

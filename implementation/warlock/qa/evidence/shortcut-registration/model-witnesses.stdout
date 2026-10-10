@@ -1,0 +1,348 @@
+An example execution:
+
+[State 0]
+{
+  state:
+    {
+      desired: Default,
+      expected: 0,
+      foreign: Set("existing"),
+      generation: 1,
+      installed: Keep,
+      lastApplied: 0,
+      lastExpected: 0,
+      life: Reloading,
+      phase: Idle,
+      proposed: Keep,
+      reloads: 0,
+      restores: 0,
+      submissions: 0,
+      writes: 0
+    }
+}
+
+[State 1]
+{
+  state:
+    {
+      desired: Default,
+      expected: 0,
+      foreign: Set("default", "existing"),
+      generation: 1,
+      installed: Keep,
+      lastApplied: 0,
+      lastExpected: 0,
+      life: Reloading,
+      phase: Idle,
+      proposed: Keep,
+      reloads: 0,
+      restores: 0,
+      submissions: 0,
+      writes: 0
+    }
+}
+
+[State 2]
+{
+  state:
+    {
+      desired: Default,
+      expected: 0,
+      foreign: Set("default", "existing"),
+      generation: 1,
+      installed: Keep,
+      lastApplied: 0,
+      lastExpected: 0,
+      life: Ready,
+      phase: Idle,
+      proposed: Keep,
+      reloads: 0,
+      restores: 1,
+      submissions: 0,
+      writes: 0
+    }
+}
+
+[State 3]
+{
+  state:
+    {
+      desired: Default,
+      expected: 0,
+      foreign: Set("default", "existing"),
+      generation: 2,
+      installed: Keep,
+      lastApplied: 0,
+      lastExpected: 0,
+      life: Reloading,
+      phase: Idle,
+      proposed: Keep,
+      reloads: 1,
+      restores: 1,
+      submissions: 0,
+      writes: 0
+    }
+}
+
+[State 4]
+{
+  state:
+    {
+      desired: Default,
+      expected: 0,
+      foreign: Set("default", "existing"),
+      generation: 2,
+      installed: Keep,
+      lastApplied: 0,
+      lastExpected: 0,
+      life: Ready,
+      phase: Idle,
+      proposed: Keep,
+      reloads: 1,
+      restores: 2,
+      submissions: 0,
+      writes: 0
+    }
+}
+
+[State 5]
+{
+  state:
+    {
+      desired: Default,
+      expected: 0,
+      foreign: Set("default", "existing"),
+      generation: 3,
+      installed: Keep,
+      lastApplied: 0,
+      lastExpected: 0,
+      life: Reloading,
+      phase: Idle,
+      proposed: Keep,
+      reloads: 2,
+      restores: 2,
+      submissions: 0,
+      writes: 0
+    }
+}
+
+[State 6]
+{
+  state:
+    {
+      desired: Default,
+      expected: 0,
+      foreign: Set("default", "existing"),
+      generation: 3,
+      installed: Keep,
+      lastApplied: 0,
+      lastExpected: 0,
+      life: Ready,
+      phase: Idle,
+      proposed: Keep,
+      reloads: 2,
+      restores: 3,
+      submissions: 0,
+      writes: 0
+    }
+}
+
+[State 7]
+{
+  state:
+    {
+      desired: Default,
+      expected: 0,
+      foreign: Set("default", "existing"),
+      generation: 4,
+      installed: Keep,
+      lastApplied: 0,
+      lastExpected: 0,
+      life: Reloading,
+      phase: Idle,
+      proposed: Keep,
+      reloads: 3,
+      restores: 3,
+      submissions: 0,
+      writes: 0
+    }
+}
+
+[State 8]
+{
+  state:
+    {
+      desired: Default,
+      expected: 0,
+      foreign: Set("default", "existing"),
+      generation: 4,
+      installed: Keep,
+      lastApplied: 0,
+      lastExpected: 0,
+      life: Ready,
+      phase: Idle,
+      proposed: Keep,
+      reloads: 3,
+      restores: 4,
+      submissions: 0,
+      writes: 0
+    }
+}
+
+[State 9]
+{
+  state:
+    {
+      desired: Default,
+      expected: 0,
+      foreign: Set("default", "existing"),
+      generation: 5,
+      installed: Keep,
+      lastApplied: 0,
+      lastExpected: 0,
+      life: Reloading,
+      phase: Idle,
+      proposed: Keep,
+      reloads: 4,
+      restores: 4,
+      submissions: 0,
+      writes: 0
+    }
+}
+
+[State 10]
+{
+  state:
+    {
+      desired: Default,
+      expected: 0,
+      foreign: Set("default", "existing"),
+      generation: 5,
+      installed: Keep,
+      lastApplied: 0,
+      lastExpected: 0,
+      life: Ready,
+      phase: Idle,
+      proposed: Keep,
+      reloads: 4,
+      restores: 5,
+      submissions: 0,
+      writes: 0
+    }
+}
+
+[State 11]
+{
+  state:
+    {
+      desired: Default,
+      expected: 5,
+      foreign: Set("default", "existing"),
+      generation: 5,
+      installed: Keep,
+      lastApplied: 0,
+      lastExpected: 0,
+      life: Ready,
+      phase: Pending,
+      proposed: Keep,
+      reloads: 4,
+      restores: 5,
+      submissions: 1,
+      writes: 0
+    }
+}
+
+[State 12]
+{
+  state:
+    {
+      desired: Default,
+      expected: 5,
+      foreign: Set("default", "existing"),
+      generation: 6,
+      installed: Keep,
+      lastApplied: 0,
+      lastExpected: 0,
+      life: Reloading,
+      phase: Pending,
+      proposed: Keep,
+      reloads: 5,
+      restores: 5,
+      submissions: 1,
+      writes: 0
+    }
+}
+
+[State 13]
+{
+  state:
+    {
+      desired: Default,
+      expected: 5,
+      foreign: Set("default", "existing"),
+      generation: 6,
+      installed: Keep,
+      lastApplied: 0,
+      lastExpected: 0,
+      life: Reloading,
+      phase: Idle,
+      proposed: Keep,
+      reloads: 5,
+      restores: 5,
+      submissions: 1,
+      writes: 0
+    }
+}
+
+[State 14]
+{
+  state:
+    {
+      desired: Default,
+      expected: 5,
+      foreign: Set("default", "existing"),
+      generation: 6,
+      installed: Keep,
+      lastApplied: 0,
+      lastExpected: 0,
+      life: Stopped,
+      phase: Idle,
+      proposed: Keep,
+      reloads: 5,
+      restores: 5,
+      submissions: 1,
+      writes: 0
+    }
+}
+
+[State 15]
+{
+  state:
+    {
+      desired: Default,
+      expected: 5,
+      foreign: Set("alternate", "default", "existing"),
+      generation: 6,
+      installed: Keep,
+      lastApplied: 0,
+      lastExpected: 0,
+      life: Stopped,
+      phase: Idle,
+      proposed: Keep,
+      reloads: 5,
+      restores: 5,
+      submissions: 1,
+      writes: 0
+    }
+}
+
+[ok] No violation found (352ms at 2841 traces/second).
+Trace length statistics: max=16, min=4, average=5.37
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Witnesses:
+defaultReady was witnessed in 406 trace(s) out of 1000 explored (40.60%)
+keptAfterReload was witnessed in 10 trace(s) out of 1000 explored (1.00%)
+alternateAfterReload was witnessed in 3 trace(s) out of 1000 explored (0.30%)
+unknownAfterReload was witnessed in 6 trace(s) out of 1000 explored (0.60%)
+Use --seed=0x19e64 --backend=typescript to reproduce.

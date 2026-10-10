@@ -1032,7 +1032,7 @@ APICALL EXPORT PLUGIN_DESCRIPTION_INFO PLUGIN_INIT(HANDLE handle) {
     if (!command) throw std::runtime_error("Authority command registration failed");
     previewPrivacy=previewRendering=1;previewObservation=0;
     previewLocked=g_pSessionLockManager->m_events.lock.listen([]{cancelSwitcher();shellShortcuts.clear();notifyShellShortcuts();revokePreview(true);});
-    previewReloaded=Event::bus()->m_events.config.preReload.listen([]{cancelSwitcher();shellShortcuts.clear();notifyShellShortcuts();switcherAlts.clear();switcherTab=switcherStepAvailable=false;revokePreview(false);});
+    previewReloaded=Event::bus()->m_events.config.preReload.listen([]{beginShortcutReload();cancelSwitcher();shellShortcuts.clear();notifyShellShortcuts();switcherAlts.clear();switcherTab=switcherStepAvailable=false;revokePreview(false);});
     previewOutputRemoved=Event::bus()->m_events.monitor.removed.listen([](PHLMONITOR){revokePreview(false);});
     startPreviewFdServer();
     return {"elm-observation-authority","Native first-class minimize/restore authority experiment","local","0.2"};

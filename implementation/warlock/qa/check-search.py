@@ -205,6 +205,8 @@ console.log('Current body-target Escape releases once; stale scope, preedit, rep
   (INPUT/'qa/snap-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.SnapReplay'));run('typed-snap',['node','qa/snap-replay.js','assets/snap.js',str(OUT/'snap.json')]);report['typedSnap']=json.loads((OUT/'snap.json').read_text());assert all(report['typedSnap']['checks'].values())
   run('snap-model-typecheck',['quint','typecheck','qa/snap-chooser.qnt']);run('snap-model-named',['quint','test','qa/snap-chooser.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79121']);run('snap-model-invariants',['quint','run','qa/snap-chooser.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79122'])
  if SHORTCUTS:
+  registration=json.loads(run('shortcut-registration-model',['/usr/bin/python3','-B','qa/check-shortcut-registration.py']))
+  registration_path=pathlib.Path(registration['report']);registration_report=json.loads(registration_path.read_text());assert registration['passed'] and registration_report['passed'];report['shortcutRegistrationModel']={'path':str(registration_path),'sha256':sha(registration_path),'witnessCounts':registration_report['witnessCounts']}
   run('shortcut-preference-store',['/usr/bin/python3','-B','qa/check-shortcut-preferences.py'])
   run('compile-shortcut-preferences',[str(HELD/pinned['compiler']),'make','qa/ShortcutPreferencesReplay.elm','--optimize','--output=assets/shortcut-preferences.js'])
   (INPUT/'qa/shortcut-preferences-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.ShortcutPreferencesReplay'))

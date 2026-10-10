@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "scope": "Sampled singleton native owner/configuration model; filesystem, physical input, AT and ABI excluded",
+  "nativeAcceptance": false,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-02fee1d0373e49be9cf7678a7748ec54.scope",
+    "coreLimit": 1
+  },
+  "modelSHA256": "e33181c1857b0cac6d7a02f9d03723e8371116996595fd9ecd8c0925b400fff7",
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/shortcut-registration.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/shortcut-registration_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=79191"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "witnesses",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/shortcut-registration.qnt",
+        "--backend=typescript",
+        "--witnesses",
+        "defaultReady",
+        "keptAfterReload",
+        "alternateAfterReload",
+        "unknownAfterReload",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79192"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "safety",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/shortcut-registration.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79193"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "witnessCounts": {
+    "defaultReady": 406,
+    "keptAfterReload": 10,
+    "alternateAfterReload": 3,
+    "unknownAfterReload": 6
+  }
+}
