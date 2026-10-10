@@ -1,13 +1,78 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T11:41:38.821504+00:00",
+  "updatedUTC": "2026-10-10T12:26:49.984237+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
+    "id": "shortcut-current-output",
+    "requirements": [
+      "ELM-UX-023",
+      "ELM-UI-005"
+    ],
+    "scenarios": [
+      "ux-023",
+      "search-no-match"
+    ],
+    "paths": [
+      "implementation/warlock/src/Shortcuts.elm",
+      "implementation/warlock/src/OutputController.elm",
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/native/authority.cpp",
+      "implementation/warlock/native/shared-host.c",
+      "implementation/warlock/adapter/effect_endpoint.py",
+      "implementation/warlock/qa/shortcut-output.qnt",
+      "implementation/warlock/qa/shortcut-output_test.qnt",
+      "implementation/warlock/qa/check-shortcut-output.py",
+      "implementation/warlock/qa/ShortcutOutputReplay.elm",
+      "implementation/warlock/qa/check-search.py",
+      "implementation/warlock/qa/native-window-feedback.py",
+      "implementation/warlock/qa/native-shortcut-output.py",
+      "implementation/warlock/qa/current-search-build.json",
+      "implementation/warlock/qa/current-native-pair.json",
+      "implementation/warlock/assets/elm.js",
+      "implementation/warlock/assets/bar.js",
+      "implementation/warlock/assets/popup.js",
+      "implementation/warlock/README.md"
+    ],
+    "before": "The actual two-output Apps chord opens on the initial controller output rather than the currently focused native output; its nested inactive output capture shows blank controls.",
+    "after": "Native shortcut observations retain their exact live output destination; the one Elm output controller chooses the matching current view. The launcher opens and paints on that output, preserving keyboard query/no-match and stale/blocked/retired rejection.",
+    "verification": [
+      "quint-llm-kit current destination/current topology/serial/retirement model and compiled production OutputController replay; exact host/Elm/plugin builds, original two-output drag journey with additive owner/configure/pixels/keyboard no-match observations, unchanged nine-surface keyboard regression and normal cleanup. Native AT/hardware/independent acceptance remain separate."
+    ],
+    "owner": "root-shortcut-output",
+    "participantRecord": ".warlock-contributor/shortcut-output.json",
+    "disposition": "partial",
+    "missingObservations": [
+      "Native AT/IME consumers and independent original scenario review remain open; the broad UX-023 surface requirement and UI-005 search policy are not accepted from these owner observations.",
+      "Output removal/replacement/movement between native journal delivery and host topology delivery, mirrored/rotated/fractional-scale hardware, disabled/DPMS transitions and wider hotplug/lock schedules need direct native qualification. The model abstracts native journal admission and host matching in one receive, not every transport interleaving.",
+      "Initial paint on an occluded output, unrelated output/caption/fullscreen/group/preview paths, resource budgets, representative journeys, reproducible packaging and reversible deployment remain separate release work."
+    ],
+    "evidence": {
+      "path": "implementation/warlock/qa/evidence/shortcut-current-output/manifest.json",
+      "sha256": "bd047458c9f4ad494d2e1c69661f384c09c0c9f968186a6dd5fb5c1b1489febc"
+    },
+    "observed": "Native Apps shortcuts now open on the output of the actual keyboard recipient after a cancelled cross-output drag. The shared Elm controller resolves the press-time live output against current issued view geometry; duplicate, missing, moved, retired, ambiguous and pointer-blocked destinations cannot relocate or replay. A fresh valid shortcut clears only obsolete shortcut-refusal feedback. The original two-output drag/cancel/capture journey passes, followed by actual popup bounds, painted control pixels, physical-keyboard no-match/query/focus retention and Escape without launch or window mutation. The unchanged all-nine-surface keyboard journey passes on the same core/plugin/host tuple with normal cleanup.",
+    "nextSourceWork": "Exercise live output retirement/replacement with an open native popup and retained keyboard query; fix any demonstrated owner/dismissal gap in the existing shared host/controller. Preserve current serial, native effect/custody and original deadline guarantees."
+  },
+  "nextSlices": [
+    "taskbar activation/minimize/restore and popup focus journeys",
+    "persistent catalog pins",
+    "launcher search and refusal recovery",
+    "switcher/Task View/workspaces and snap/output journeys",
+    "authorized visible previews and fallback",
+    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
+    "original native, AT/IME, hardware/resource/journey gates",
+    "reproducible package, reversible deployment/rollback"
+  ],
+  "releaseAccepted": false,
+  "oldTrackerIsCurrent": false,
+  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
+  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
+  "previousSlice": {
     "id": "native-output-capture-demand",
     "requirements": [
       "ELM-UX-021"
@@ -47,66 +112,6 @@
       "Independent original UX-021 disposition and release-wide native/IME/hardware/resource/journey/package/reversible deployment remain open."
     ],
     "nextSourceWork": "Fix observed two-output launcher popup attachment and first paint in the existing host/surface root; taskbar is on the right while its left popup has a blank control area. Preserve native input/effect/custody guarantees and use the actual combined image, per-output geometry and native controls at original deadlines."
-  },
-  "nextSlices": [
-    "taskbar activation/minimize/restore and popup focus journeys",
-    "persistent catalog pins",
-    "launcher search and refusal recovery",
-    "switcher/Task View/workspaces and snap/output journeys",
-    "authorized visible previews and fallback",
-    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
-    "original native, AT/IME, hardware/resource/journey gates",
-    "reproducible package, reversible deployment/rollback"
-  ],
-  "releaseAccepted": false,
-  "oldTrackerIsCurrent": false,
-  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
-  "previousSlice": {
-    "id": "native-caption-placement-restoration",
-    "requirements": [
-      "ELM-UX-021"
-    ],
-    "scenarios": [
-      "ux-021"
-    ],
-    "paths": [
-      "implementation/warlock/native/core/DragController.cpp",
-      "implementation/warlock/native/core/GestureEndPolicy.hpp",
-      "implementation/warlock/native/authority.cpp",
-      "implementation/warlock/native/snap-placement.inc",
-      "implementation/warlock/qa/caption-restoration.qnt",
-      "implementation/warlock/qa/caption-restoration_test.qnt",
-      "implementation/warlock/qa/check-caption-restoration.py",
-      "implementation/warlock/qa/native-caption-restoration.py",
-      "implementation/warlock/qa/check-gesture-core.py",
-      "implementation/warlock/qa/check-native-authority.py",
-      "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/qa/current-scene-core.json",
-      "implementation/warlock/qa/current-native-pair.json",
-      "implementation/warlock/README.md",
-      "implementation/warlock/native/geometry-effects.inc"
-    ],
-    "before": "Native maximized caption restoration centers the ordinary box under the pointer and cancellation snapshots only post-restoration geometry. Negotiated snap placement does not retain an ordinary caption restore box.",
-    "after": "The captured current native owner keeps its fractional horizontal caption press offset while restoring a maximized or snap placement. Escape restores the original geometry, mode and live source space without drop/focus or stale replacement adoption.",
-    "verification": [
-      "Quint-llm-kit incremental original caption/native-drag geometry correspondence with explicit named and reachable witnesses, actual current-pair GTK maximized/snap press fractions and cancel/release readback, old lifecycle negative cases and retained drafts, exact owning changed-TU/plugin rebuild and ABI/dependency provenance. Original full two-output capture and native AT/full release acceptance remain open."
-    ],
-    "owner": "root-caption-restoration",
-    "participantRecord": ".warlock-contributor/caption-restoration.json",
-    "evidence": {
-      "path": "implementation/warlock/qa/evidence/native-caption-placement-restoration/manifest.json",
-      "sha256": "75ace5b6efbb205e97de5fa6d0d0ffc55be5f155dff0164dbe2e8a13734552ea"
-    },
-    "disposition": "partial",
-    "observed": "Native maximized and committed left-half snapped captions now retain placement on a click without movement, restore ordinary size at the original horizontal press fraction, and restore the captured box/modes/source workspace on Escape. Actual quarter- and three-quarter-width drags, one-output pixels, committed release, unsaved drafts and captured-owner retirement/replacement pass. A released MAX caption retires its exact old ordinary placement so the next maximize/restore captures the new box. The admitted restore effect now applies its saved prospective ordinary box after validating live identity/mode/scope. The final caption/lifecycle and original modal/draft regressions pass. Original two-output input and cross-output rollback assertions pass again after separating caption phase from the shared keybind threshold flag; full combined capture still fails at the original five-second limit. UX-021 and the release remain partial.",
-    "missingObservations": [
-      "Original two-output combined capture still fails its unchanged five-second grim limit; bounded one-output images do not substitute for it.",
-      "Native fullscreen/tiled/grouped restoration, the other snap regions/repeated snaps, nondefault thresholds/key traffic, constraints/scale/rotation and resize-mode placement transitions remain unqualified.",
-      "Active-gesture reload/reattachment, source-space loss, hidden/disabled outputs, device/hotplug/lock/grab and wider output/lifecycle schedules, other toolkits, native AT and independent original UX-021 review remain open.",
-      "Full original native/IME/hardware/resource/journey/package/reversible deployment/rollback release gates remain open."
-    ],
-    "nextSourceWork": "Implement the demonstrated original two-output presentation gap in the existing owning renderer/output path at the unchanged capture limit; preserve the actual input passes and failed recording. Keep quint-llm-kit tied to original properties. If no production fix or original verdict is obtained within the workflow limit, record the missing observation and continue another mandatory GUI slice."
   },
   "recentSlices": [
     {

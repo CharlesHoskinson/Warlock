@@ -1,0 +1,177 @@
+{
+  "refreshClearsSettledRefusal": true,
+  "refreshPreservesUnknown": true,
+  "rank": [
+    "z-exact",
+    "a-prefix",
+    "b-token"
+  ],
+  "keyword": [
+    "z-exact"
+  ],
+  "generic": [
+    "b-token",
+    "z-exact"
+  ],
+  "unicode": [
+    "c-unicode"
+  ],
+  "queryEditHasNoEffects": true,
+  "staleQueryRejected": true,
+  "noMatchStatus": "No matching applications. Change your search or Refresh.",
+  "queryRetained": "nonexistent",
+  "frame": {
+    "surfaceProtocol": 2,
+    "keyboardParent": true,
+    "motion": "reduced",
+    "appearance": {
+      "theme": "night",
+      "textScale": 100,
+      "effectsOff": false,
+      "reducedTransparency": false
+    },
+    "publication": "1",
+    "lease": "1",
+    "mode": "applications",
+    "status": "Choose a matching application.",
+    "bar": [
+      {
+        "id": "bar:applications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:control:opener",
+        "label": "Applications",
+        "ariaLabel": "Open applications",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:overview",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:control:overview-opener",
+        "label": "Task View",
+        "ariaLabel": "Open Task View",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:switcher",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:control:switcher-opener",
+        "label": "Switch windows",
+        "ariaLabel": "Open window switcher",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:notifications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:notifications:opener",
+        "label": "Notifications",
+        "ariaLabel": "Open notifications",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:files",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:files:opener",
+        "label": "Files",
+        "ariaLabel": "Open Files menu",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:system",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:system:opener",
+        "label": "System",
+        "ariaLabel": "Open system menu",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:settings",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:settings:opener",
+        "label": "Settings",
+        "ariaLabel": "Open settings",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      }
+    ],
+    "popup": [
+      {
+        "id": "control:search",
+        "domId": "launcher-search",
+        "label": "files",
+        "ariaLabel": "Search applications",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "control:close",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:control:close",
+        "label": "Windows",
+        "ariaLabel": "Close applications and return to windows",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "control:refresh",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:control:refresh",
+        "label": "Refresh",
+        "ariaLabel": "Refresh applications",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "jump:open:z-exact",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:jump:open:z-exact",
+        "label": "Actions for Files",
+        "ariaLabel": "Actions for Files",
+        "detail": "Application actions and recent files",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "pin:z-exact",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:pin:z-exact",
+        "label": "Pin Files",
+        "ariaLabel": "Pin Files",
+        "detail": "Add to taskbar",
+        "enabled": false,
+        "focusOnly": false
+      },
+      {
+        "id": "entry:z-exact",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:entry:z-exact",
+        "label": "Open Files",
+        "ariaLabel": "Open Files",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "entry:a-prefix",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:entry:a-prefix",
+        "label": "Open Files Plus",
+        "ariaLabel": "Open Files Plus",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "entry:b-token",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:entry:b-token",
+        "label": "Open Explorer",
+        "ariaLabel": "Open Explorer",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      }
+    ]
+  }
+}

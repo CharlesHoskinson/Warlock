@@ -1,0 +1,268 @@
+{
+  "schema": 1,
+  "requirements": [
+    {
+      "id": "ELM-UX-023",
+      "ears": "The Elm desktop SHALL provide keyboard routes for launcher, taskbar groups, switcher, Task View, snap chooser, menus, settings, notifications and jump lists without requiring pointer input.",
+      "scenario": {
+        "name": "ux-023",
+        "given": "pointer is unused",
+        "when": "keyboard-only acceptance script visits all migrated surfaces",
+        "then": "each surface can be opened, operated and dismissed without pointer events"
+      },
+      "verification": "Elm replay assertion and isolated native recording: each surface can be opened, operated and dismissed without pointer events."
+    },
+    {
+      "id": "ELM-UI-005",
+      "ears": "The launcher SHALL bind results and selection to the current query and catalog generation, apply the frozen matching/ranking policy, expose initial, loading, no-match and unavailable states, and preserve the query with reachable recovery on refusal.",
+      "scenario": {
+        "name": "search-no-match",
+        "given": "a query and catalog fixture",
+        "when": "no entries match",
+        "then": "no-match message and query remain reachable without launch"
+      },
+      "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle."
+    }
+  ],
+  "disposition": "partial",
+  "requirementAccepted": false,
+  "fullReleaseAccepted": false,
+  "sourceParent": "0155b0a1bc28c7ade2bc88a7f56a691791a912c7",
+  "sourceHashes": {
+    "implementation/warlock/src/Shortcuts.elm": "05399194936c24b85e5cda505eed47fae163109a5e8a6a513f9008c420b9309d",
+    "implementation/warlock/src/OutputController.elm": "2a4aa85bdc7ba3b0caa94b8dbfd1538d791ec78f33040a4221a1ef1fb701c53e",
+    "implementation/warlock/src/Desktop.elm": "176ddaf19e5dfb6c2362ac9c9c46d296155cd38e916e4cd28938a591648ed711",
+    "implementation/warlock/native/authority.cpp": "4dc251499eaff2e78f87fb1fda93be98fcac251333ff80a3fe25943a6819968e",
+    "implementation/warlock/native/shared-host.c": "e511725b1b42e94d56c65a871114fe58fab3dd564221ce1201d479f9abddf5ed",
+    "implementation/warlock/adapter/effect_endpoint.py": "c2d2bf6cf3170f57743fa1d136c4c7c9983a1b978f7e286d819ab79ca7b502a5",
+    "implementation/warlock/qa/shortcut-output.qnt": "63058352261e32a87267a79b7a53895fd497ca48061785cd493821f856fec153",
+    "implementation/warlock/qa/shortcut-output_test.qnt": "ef30bc8b1c6ee7195ce587738125440dcbe1959d100bb5d2bfb173125b865f83",
+    "implementation/warlock/qa/check-shortcut-output.py": "03669ea6b298d9820bcc39ef2ae96c13858aecaa10848761052ed76b022e218a",
+    "implementation/warlock/qa/ShortcutOutputReplay.elm": "7699e70f9179a4952945b2b89cdf1ab7da32454c62c5d0c7fb1c44c19b9fc619",
+    "implementation/warlock/qa/check-search.py": "f088a87c2ba64ef33ea098df215180ca7080ba141efecbf5d802d2a6efeab5f3",
+    "implementation/warlock/qa/native-window-feedback.py": "3ad96b5fb47a7b1edc37c2ddc84e9b0ccd1db724e13b52da7817c3df5085c25a",
+    "implementation/warlock/qa/native-shortcut-output.py": "44d0167f0161ac36d903ef295792e8718710e076dfc057c82b7f46c685188454",
+    "implementation/warlock/qa/current-search-build.json": "2407cb4c95d4e059c0156e6d82cdb807054b50a4f3a17a2318f92274c96cad1c",
+    "implementation/warlock/qa/current-native-pair.json": "eb970c734aaa4961cdee9c1adda8c0eb06f40ccbfb795edc90f986d8f5d72431",
+    "implementation/warlock/assets/elm.js": "bfbfc8fabf8e4df0bf4baa05493038288677cce5b789dc84c4bbb02f76e1dbd0",
+    "implementation/warlock/assets/bar.js": "1b490122e33ec692c225c2f6936d2e05eb23cc0ec91c9fa0d2a16469c030cff1",
+    "implementation/warlock/assets/popup.js": "c12dc5323bbaaf2d83cff1799b1e0e72c861d012f6db0da39d50adb62648f933",
+    "implementation/warlock/README.md": "ff78ee69bf7dfc997e64b023eacd986a048493d132bea52057111981139f2035"
+  },
+  "originalRequirements": {
+    "path": "docs/elm-roadmap/requirements.json",
+    "sha256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b"
+  },
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/capture-demand-core-1791633599455082376/Hyprland",
+      "sha256": "7b954e5c6b818cdc6dfe8c8edd9e6c1be98a7e293b07c3e97fe0621135d1e42c"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791634959927269669/elm-window-geometry-authority.so",
+      "sha256": "0143d6cd1a2a927fe5fc2d17cca7d095841a8bf9343f11131aabba28c4777655"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "currentHostBuild": {
+    "report": "implementation/warlock/qa/runs/drag-ownership-1791635072217490704/report.json",
+    "reportSHA256": "aa574ed861345f742f4e982af7fd7f21fee7f5dbd0c631a6f6b4d326d6b9c9e5",
+    "compiledAssets": {
+      "elm.js": "bfbfc8fabf8e4df0bf4baa05493038288677cce5b789dc84c4bbb02f76e1dbd0",
+      "bar.js": "1b490122e33ec692c225c2f6936d2e05eb23cc0ec91c9fa0d2a16469c030cff1",
+      "popup.js": "c12dc5323bbaaf2d83cff1799b1e0e72c861d012f6db0da39d50adb62648f933"
+    }
+  },
+  "artifacts": {
+    "native-pointer-monitor-counterexample": {
+      "path": "implementation/warlock/qa/runs/native-drag-ownership-1791634929348302548/report.json",
+      "sha256": "8f04c5e9f6ecf0f18358f0e84a453c56fdafb01dac13d9d92d09203f221a1e10",
+      "packet": "native-pointer-monitor-counterexample.json.gz",
+      "packetSHA256": "e20df375917b1457b59b59e6ace313d0df43590915712fd653ecb4070036fa6f",
+      "encoding": "gzip",
+      "passed": false
+    },
+    "native-status-counterexample": {
+      "path": "implementation/warlock/qa/runs/native-drag-ownership-1791635009503375678/report.json",
+      "sha256": "25d480744d115558cdc33121f20910f1fedbdc8962d59ad0694f7725617b07ad",
+      "packet": "native-status-counterexample.json.gz",
+      "packetSHA256": "b05372c7c7f383a29b69f32b3a303b6e876711d137457b675c2fff36b0930f38",
+      "encoding": "gzip",
+      "passed": false
+    },
+    "native-after": {
+      "path": "implementation/warlock/qa/runs/native-drag-ownership-1791635095236354350/report.json",
+      "sha256": "d5f10e4ef369be84c7cb63223034673ed49cd161549f2d1f5b77c6b7762d5a46",
+      "packet": "native-after.json.gz",
+      "packetSHA256": "598dbcfb97ab6bb0a9a29e0bd1ca721e041935c5e9ab98c8cd5d0bd3eac7265b",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "keyboard-regression": {
+      "path": "implementation/warlock/qa/runs/native-keyboard-shell-1791635116036375765/report.json",
+      "sha256": "04c03c232ff41c5bf1a777b6882a51fa92e0199052ace6c548ff4f7cfada1303",
+      "packet": "keyboard-regression.json.gz",
+      "packetSHA256": "f7cc3004ce30b78bc9257dd12a13ae3d4c7aa65b965f212fb07fb2903c7d576f",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "host-build": {
+      "path": "implementation/warlock/qa/runs/drag-ownership-1791635072217490704/report.json",
+      "sha256": "aa574ed861345f742f4e982af7fd7f21fee7f5dbd0c631a6f6b4d326d6b9c9e5",
+      "packet": "host-build.json.gz",
+      "packetSHA256": "c6d38593db01c2e5a29f78c1cdf37232e85b8c8ac77c515d50f4215663f04556",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "plugin-build": {
+      "path": "implementation/warlock/qa/runs/native-authority-1791634959927269669/report.json",
+      "sha256": "88f8f0ed9eb2bee790aa6a3e23447eecd32c35f8471e86fec931e9355a914f2d",
+      "packet": "plugin-build.json.gz",
+      "packetSHA256": "dc892da968c3ebd5088309ec59c068b3c3242a2049669476b9ffc23828d96993",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "model-init": {
+      "path": "implementation/warlock/qa/runs/shortcut-output-1791634211176455048/report.json",
+      "sha256": "646fdf252d13e319163f2ba64f848662ddd3ac4f2ef8e5fd0de84877cbfc014d",
+      "packet": "model-init.json.gz",
+      "packetSHA256": "3a63bfbbe4ecfe6394c633b07f0817825d4951520773e7e065a1625b926d7834",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "model-after": {
+      "path": "implementation/warlock/qa/runs/drag-ownership-1791635072217490704/inputs/qa/runs/shortcut-output-1791635075158050862/report.json",
+      "sha256": "a485308a7e5f8a3ca2ceb334cbee3eb257d151b9088be05945cb7a217099acfe",
+      "packet": "model-after.json.gz",
+      "packetSHA256": "177b3d560384e4f23e25581ba1724550233c8b0c331ead183e8b54b23e4372a3",
+      "encoding": "gzip",
+      "passed": true
+    }
+  },
+  "logs": {
+    "native-pointer-monitor-counterexample-warlock.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791634929348401091/warlock.log",
+      "originalSHA256": "0fc0fdd4c92e20f8404fcb1b7fab2849dcda94127f0f00fc1bc4a06a628cf917",
+      "sha256": "2b0fcddb9410a4f3a7c92b2a198f04878062d968e8646dd7a38e77651d1499dc"
+    },
+    "native-pointer-monitor-counterexample-fixture.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791634929348401091/fixture.log",
+      "originalSHA256": "b8279fe0ff912c29967d404b9cd9d5e541ec0bb73ddfeb8d76dd5ac14fb799f1",
+      "sha256": "80e5e230619100d3c8b4fb45c6ab9011c84cbfe13d8a74337addbb1b5f672db7"
+    },
+    "native-pointer-monitor-counterexample-fixture-control.events.jsonl.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791634929348401091/fixture-control.events.jsonl",
+      "originalSHA256": "10243a0483e6972a27f790304400060624c2c0072a215f66ec193ab6a0d79732",
+      "sha256": "2bfe11f8dbaf20c31e3c881489b53208bf0e1e5d90c29e0f59590651f0001504"
+    },
+    "native-pointer-monitor-counterexample-chord-keyboard.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791634929348401091/chord-keyboard.log",
+      "originalSHA256": "faea83f9635d8235acc0e1eb49f48c4bdff09b69ffacf94bd824c68304c2cd32",
+      "sha256": "84740e3113646a3a35cb6b2790ba353ab14c5b6332be4c8b7cc35c81d7051f42"
+    },
+    "native-status-counterexample-warlock.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791635009503463069/warlock.log",
+      "originalSHA256": "24406c6cbdb519bee725a06306191e1be6a8f94b4f95507c0a328af139b0e865",
+      "sha256": "8006721184d22e96418a3ec36ed5df7aed74bdd32aa7c034dc677f8e72783157"
+    },
+    "native-status-counterexample-fixture.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791635009503463069/fixture.log",
+      "originalSHA256": "8e3c8efaa17e73bc003e1865c670069993719c551d98e888662addd54ab0abe3",
+      "sha256": "11300df19f6e510aa4da2480ce7173586b1bcab17bfb3e2cfba2c9d622e05be5"
+    },
+    "native-status-counterexample-fixture-control.events.jsonl.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791635009503463069/fixture-control.events.jsonl",
+      "originalSHA256": "10243a0483e6972a27f790304400060624c2c0072a215f66ec193ab6a0d79732",
+      "sha256": "2bfe11f8dbaf20c31e3c881489b53208bf0e1e5d90c29e0f59590651f0001504"
+    },
+    "native-status-counterexample-chord-keyboard.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791635009503463069/chord-keyboard.log",
+      "originalSHA256": "c7c00050579a9d71b859a65f04175fb461fea1325f1c102f3d56fd44bee8c042",
+      "sha256": "cd80126531623d61a1f1e1d6f75312e72cc999ae9deb6a39e4f6273cc8ec0d9b"
+    },
+    "native-after-warlock.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791635095236469918/warlock.log",
+      "originalSHA256": "e0c06a104d4c3ec7c8c9c23c8309d64e22d46103bbde2403bc197f7249fc61f4",
+      "sha256": "477011a33564d23372cef83825e13df49d72e94a3c6499ccaac688dc35898933"
+    },
+    "native-after-fixture.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791635095236469918/fixture.log",
+      "originalSHA256": "0c5a131dfc2e515633fabc533cd6f5b1ea5bbca6c057ad079e3fee363999331e",
+      "sha256": "05e67e29b1f951369a19c2347221fdaa3f1b19fd66a0b819c8b65e04fb93fca0"
+    },
+    "native-after-fixture-control.events.jsonl.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791635095236469918/fixture-control.events.jsonl",
+      "originalSHA256": "10243a0483e6972a27f790304400060624c2c0072a215f66ec193ab6a0d79732",
+      "sha256": "2bfe11f8dbaf20c31e3c881489b53208bf0e1e5d90c29e0f59590651f0001504"
+    },
+    "native-after-chord-keyboard.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791635095236469918/chord-keyboard.log",
+      "originalSHA256": "a58bb862d01a73e11a6607bd5c24863073b5dc88e97069801299fb4ba42d8f66",
+      "sha256": "80b8e68a283bc995bbc2d1fd8e51d7458257cdaa5402319327c9ff1a93f1f3c2"
+    },
+    "keyboard-regression-warlock.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791635116036505456/warlock.log",
+      "originalSHA256": "f1ca65197e73843730434c3be7a7d50ca6be3956960c1f185d846ca812ce8902",
+      "sha256": "8d5acb099541eb087d8866141251ed1bcd4f27b243c5e97f80cf2e216a1e14d9"
+    },
+    "keyboard-regression-fixture.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791635116036505456/fixture.log",
+      "originalSHA256": "5dab056a87953941b0350dbefc651f836356d2fe100c2c8d7c063c01f28d255c",
+      "sha256": "73560a14066617063080cdfa248695104073676b2cc8d68723acd4cb982191d8"
+    },
+    "keyboard-regression-fixture-control.events.jsonl.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791635116036505456/fixture-control.events.jsonl",
+      "originalSHA256": "d54de08810e5a15c0953410198148c6c60aea2686e3c3a3325dc6ad25e670889",
+      "sha256": "5ec91319cc69207fce8091e74b6ab0bade785411ab20c3c6d1e09b75dac71791"
+    },
+    "keyboard-regression-chord-keyboard.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791635116036505456/chord-keyboard.log",
+      "originalSHA256": "97d8e9c12f001003305dd081313666090de212ec7bbe67d3dadfa321b8f5babe",
+      "sha256": "c0e119d094d923fb63f0a97f9ae4c1edb2a84bc5713db3fbfef0d4a66aec4ea4"
+    },
+    "model-typecheck.stdout.gz": {
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791635072217490704/inputs/qa/runs/shortcut-output-1791635075158050862/typecheck.stdout",
+      "originalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+    },
+    "model-named.stdout.gz": {
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791635072217490704/inputs/qa/runs/shortcut-output-1791635075158050862/named.stdout",
+      "originalSHA256": "41d1802ceedd2716c12031781d0b398f0ae532e0d8e7191510b3cabf44bfa161",
+      "sha256": "ceca75d6683bb0063b0431138b39bd0c695a3332f7f5b1ae563d2972d7284bde"
+    },
+    "model-witnesses.stdout.gz": {
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791635072217490704/inputs/qa/runs/shortcut-output-1791635075158050862/witnesses.stdout",
+      "originalSHA256": "01c0c713933bc08a9387129e77d30b43e3374ca5a99a8b1f24d7bc69ebeaefe5",
+      "sha256": "8633b4324d65810784703b63a139b109eb4c3d161d0cb81f0f9680d8c8a029df"
+    },
+    "model-safety.stdout.gz": {
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791635072217490704/inputs/qa/runs/shortcut-output-1791635075158050862/safety.stdout",
+      "originalSHA256": "b5136a2370f727709a0e2ee1bcb38f4656bd0d3406006bb8bd0d055724aabf8b",
+      "sha256": "45fdd19621d473917497f4e6daafa957383a3525f76ff7999e853fc421924702"
+    }
+  },
+  "images": {
+    "shortcut-open.png": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791635095236469918/drag-two-output.png",
+      "sha256": "85a79897fd85da5c09d016667ddf0e6d3f4216fe6b69755b04740477a9131321"
+    },
+    "shortcut-no-match.png": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791635095236469918/shortcut-current-output.png",
+      "sha256": "ca2accaa8aa8779b0dacc0386886270b6eca1c9f1aa25e3fc8d0617fbb876aaf"
+    }
+  },
+  "observation": "Native Apps shortcuts now open on the output of the actual keyboard recipient after a cancelled cross-output drag. The shared Elm controller resolves the press-time live output against current issued view geometry; duplicate, missing, moved, retired, ambiguous and pointer-blocked destinations cannot relocate or replay. A fresh valid shortcut clears only obsolete shortcut-refusal feedback. The original two-output drag/cancel/capture journey passes, followed by actual popup bounds, painted control pixels, physical-keyboard no-match/query/focus retention and Escape without launch or window mutation. The unchanged all-nine-surface keyboard journey passes on the same core/plugin/host tuple with normal cleanup.",
+  "missingObservations": [
+    "Native AT/IME consumers and independent original scenario review remain open; the broad UX-023 surface requirement and UI-005 search policy are not accepted from these owner observations.",
+    "Output removal/replacement/movement between native journal delivery and host topology delivery, mirrored/rotated/fractional-scale hardware, disabled/DPMS transitions and wider hotplug/lock schedules need direct native qualification. The model abstracts native journal admission and host matching in one receive, not every transport interleaving.",
+    "Initial paint on an occluded output, unrelated output/caption/fullscreen/group/preview paths, resource budgets, representative journeys, reproducible packaging and reversible deployment remain separate release work."
+  ],
+  "reviewerDisposition": {
+    "name": "root-shortcut-output",
+    "independent": false,
+    "disposition": "Owner-observed native/compiled/model result; independent acceptance remains open."
+  }
+}

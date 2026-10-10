@@ -120,7 +120,7 @@ Elm::Geometry::Barriers effectBarriers;
 struct Session { std::string start; uint64_t id; uint64_t frontend; uint64_t effectRequest=0, generation=0; std::string lastPayload, lastReply; std::vector<Render::SceneTrace::Frame> retained; int geometryProtocol=0; bool geometryEnabled=false; uint64_t geometryFrontend=0; std::set<std::string> geometryOperations{}; bool reducedMotion=true; uint64_t motionRequest=0; pid_t presentationPid=0; std::string presentationStart{}; AcceptedMotion motion{}; };
 std::map<pid_t, Session> sessions;
 enum class ShellRoute {Applications,System,Notifications};
-struct ShellShortcut {uint64_t serial;ShellRoute route;};
+struct ShellShortcut {uint64_t serial;ShellRoute route;PHLMONITORREF monitor;std::array<int32_t,4> box;};
 uint64_t shellShortcutSerial=0,shellShortcutSession=0,shellShortcutFrontend=0;
 std::vector<ShellShortcut> shellShortcuts;
 
@@ -374,11 +374,30 @@ std::string pointerOwnership(const Session& session,uint64_t request) {
     return "{\"protocolVersion\":3,\"kind\":\"pointer-ownership\",\"ownershipProtocol\":1,\"binding\":"+binding(session)+",\"requestId\":"+quote(std::to_string(request))+",\"serial\":"+quote(std::to_string(pointerSerial))+",\"state\":"+quote(pointerState)+",\"owner\":"+pointerOwner+"}";
 }
 void notifyShellShortcuts() noexcept {try {if(g_pEventManager)g_pEventManager->postEvent(SHyprIPCEvent{"warlockshortcuts",std::to_string(lifetime)});}catch(...) {}}
+// Match the exact integer logical bounds advertised by xdg-output. Weak
+// native identity and press-time bounds prevent output replacement/move adoption.
+std::optional<std::array<int32_t,4>> shortcutOutputBox(const PHLMONITOR& monitor) {
+    if(!monitor || !State::monitorState()->contains(monitor) || !monitor->m_enabled || !monitor->m_dpmsStatus)return std::nullopt;
+    const std::array<double,4> values={monitor->m_position.x,monitor->m_position.y,monitor->m_size.x,monitor->m_size.y};
+    std::array<int32_t,4> box;
+    for(size_t i=0;i<values.size();++i) {
+        if(!std::isfinite(values[i]) || values[i]<std::numeric_limits<int32_t>::min() || values[i]>std::numeric_limits<int32_t>::max())return std::nullopt;
+        box[i]=static_cast<int32_t>(values[i]);
+    }
+    if(box[2]<=0 || box[3]<=0)return std::nullopt;
+    return box;
+}
 void shellShortcut(ShellRoute route) noexcept {
     try {
         if(g_layoutManager->dragController()->target() || !shellShortcutSession || !shellShortcutFrontend || g_pSessionLockManager->isSessionLocked() || !g_pInputManager->m_exclusiveLSes.empty() || (switcherChord.generation && !switcherChord.cancelled && !switcherChord.consumed && !switcherChord.released) || shellShortcutSerial==std::numeric_limits<uint64_t>::max())return;
+        // Keyboard ownership can remain on a restored window after a cancelled
+        // cross-output drag while the pointer's active monitor is elsewhere.
+        const auto focused=Desktop::focusState()->window();
+        const auto monitor=focused && focused->wlSurface() && g_pSeatManager->m_state.keyboardFocus.lock()==focused->wlSurface()->resource()
+            ? focused->m_monitor.lock() : Desktop::focusState()->monitor();
+        const auto box=shortcutOutputBox(monitor);if(!box)return;
         if(shellShortcuts.size()==64)shellShortcuts.erase(shellShortcuts.begin());
-        shellShortcuts.push_back({++shellShortcutSerial,route});notifyShellShortcuts();
+        shellShortcuts.push_back({++shellShortcutSerial,route,monitor,*box});notifyShellShortcuts();
     } catch(...) {shellShortcuts.clear();}
 }
 int appsMenu(lua_State*){shellShortcut(ShellRoute::Applications);return 0;}
@@ -390,9 +409,12 @@ std::string shellShortcutJournal(const Session& session,uint64_t request) {
     if(!blocked)for(const auto& event:shellShortcuts) {
         if(events.size()>1)events+=',';
         const std::string route=event.route==ShellRoute::Applications?"applications":event.route==ShellRoute::System?"system":"notifications";
-        events+="{\"serial\":"+quote(std::to_string(event.serial))+",\"route\":"+quote(route)+"}";
+        const auto current=shortcutOutputBox(event.monitor.lock());
+        std::string destination="null";
+        if(current && *current==event.box)destination="["+std::to_string(event.box[0])+","+std::to_string(event.box[1])+","+std::to_string(event.box[2])+","+std::to_string(event.box[3])+"]";
+        events+="{\"serial\":"+quote(std::to_string(event.serial))+",\"route\":"+quote(route)+",\"output\":"+destination+"}";
     }
-    return "{\"protocolVersion\":3,\"kind\":\"shell-shortcuts\",\"shortcutProtocol\":1,\"binding\":"+binding(session)+",\"requestId\":"+quote(std::to_string(request))+",\"serial\":"+quote(std::to_string(shellShortcutSerial))+",\"blocked\":"+(blocked?"true":"false")+",\"events\":"+events+"]}";
+    return "{\"protocolVersion\":3,\"kind\":\"shell-shortcuts\",\"shortcutProtocol\":2,\"binding\":"+binding(session)+",\"requestId\":"+quote(std::to_string(request))+",\"serial\":"+quote(std::to_string(shellShortcutSerial))+",\"blocked\":"+(blocked?"true":"false")+",\"events\":"+events+"]}";
 }
 #include "shortcut-bindings.inc"
 int switcherForward(lua_State*){switcherStep(1);return 0;}

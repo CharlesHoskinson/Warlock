@@ -1,4 +1,4 @@
-module Shortcuts exposing (Model, Route(..), Snapshot, decoder, initial, receive)
+module Shortcuts exposing (Model, Route(..), Snapshot, Box, boxDecoder, destination, decoder, initial, receive)
 import Binding
 import Json.Decode as D
 import UInt64 exposing (Counter)
@@ -14,10 +14,16 @@ routeDecoder=D.string |> D.andThen (\v -> case v of
     "system" -> D.succeed System
     "notifications" -> D.succeed Notifications
     _ -> D.fail "Unsupported shell shortcut")
-eventDecoder=strict ["serial","route"] (D.map2 Event (D.field "serial" positive) (D.field "route" routeDecoder))
-decoder = strict ["protocolVersion","kind","shortcutProtocol","binding","requestId","serial","blocked","events"]
+type alias Box = List Int
+boxDecoder = D.list D.int |> D.andThen (\box -> case box of
+    [x,y,width,height] -> if width>0 && height>0 && List.all (\v -> v >= -2147483648 && v<=2147483647) box then D.succeed box else D.fail "Shortcut output bounds"
+    _ -> D.fail "Shortcut output shape")
+destination raw = D.decodeValue (D.field "events" (D.list (D.field "output" (D.nullable boxDecoder)))) raw |> Result.toMaybe |> Maybe.andThen (List.reverse >> List.head) |> Maybe.andThen identity
+eventDecoder protocol = if protocol==1 then strict ["serial","route"] (D.map2 Event (D.field "serial" positive) (D.field "route" routeDecoder)) else
+    strict ["serial","route","output"] (D.map3 (\serial route _ -> Event serial route) (D.field "serial" positive) (D.field "route" routeDecoder) (D.field "output" (D.nullable boxDecoder)))
+decoder = D.field "shortcutProtocol" D.int |> D.andThen (\eventProtocol -> strict ["protocolVersion","kind","shortcutProtocol","binding","requestId","serial","blocked","events"]
     (D.map8 (\version kind protocol binding request serial blocked events -> {version=version,kind=kind,protocol=protocol,snapshot={binding=binding,serial=serial,blocked=blocked,events=events}})
-        (D.field "protocolVersion" D.int) (D.field "kind" D.string) (D.field "shortcutProtocol" D.int) (D.field "binding" Binding.decoder) (D.field "requestId" positive) (D.field "serial" UInt64.decoder) (D.field "blocked" D.bool) (D.field "events" (D.list eventDecoder)))
+        (D.field "protocolVersion" D.int) (D.field "kind" D.string) (D.field "shortcutProtocol" D.int) (D.field "binding" Binding.decoder) (D.field "requestId" positive) (D.field "serial" UInt64.decoder) (D.field "blocked" D.bool) (D.field "events" (D.list (eventDecoder eventProtocol))))
     |> D.andThen (\receipt ->
         let snapshot=receipt.snapshot
         in
@@ -26,7 +32,7 @@ decoder = strict ["protocolVersion","kind","shortcutProtocol","binding","request
                 [_] -> True
                 a::b::rest -> UInt64.next a.serial==Just b.serial && ordered (b::rest)
             last=snapshot.events |> List.reverse |> List.head |> Maybe.map .serial
-        in if receipt.version/=3 || receipt.kind/="shell-shortcuts" || receipt.protocol/=1 || List.length snapshot.events>64 || not (ordered snapshot.events) || (last/=Nothing && last/=Just snapshot.serial) then D.fail "Shortcut protocol/order" else D.succeed snapshot)
+        in if receipt.version/=3 || receipt.kind/="shell-shortcuts" || not (List.member receipt.protocol [1,2]) || List.length snapshot.events>64 || not (ordered snapshot.events) || (last/=Nothing && last/=Just snapshot.serial) then D.fail "Shortcut protocol/order" else D.succeed snapshot))
 receive expected snapshot model =
     if expected/=Just snapshot.binding then (model,Nothing,Nothing) else
     if model.binding/=expected then ({binding=expected,seen=snapshot.serial},Nothing,Nothing) else

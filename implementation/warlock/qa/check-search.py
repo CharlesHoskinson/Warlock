@@ -22,7 +22,8 @@ IME=sys.argv[1:]==['--ime'] or LAUNCHER
 ACCESSIBILITY=sys.argv[1:]==['--accessibility']
 CONTRAST=sys.argv[1:]==['--high-contrast']
 READINESS=sys.argv[1:]==['--pointer-readiness']
-DRAG=READINESS or sys.argv[1:]==['--drag-ownership']
+SHORTCUTOUTPUT=sys.argv[1:]==['--shortcut-output']
+DRAG=SHORTCUTOUTPUT or READINESS or sys.argv[1:]==['--drag-ownership']
 KEYBOARD=sys.argv[1:]==['--keyboard-shell']
 ATTENTION=sys.argv[1:]==['--attention']
 JUMP=sys.argv[1:]==['--jump-lists']
@@ -193,6 +194,12 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
  if READINESS:
   report['pointerReadinessModel']=json.loads(run('pointer-readiness-model',['/usr/bin/python3','-B','qa/check-pointer-readiness.py']))
   assert report['pointerReadinessModel']['passed']
+ if SHORTCUTOUTPUT:
+  report['shortcutOutputModel']=json.loads(run('shortcut-output-model',['/usr/bin/python3','-B','qa/check-shortcut-output.py']));assert report['shortcutOutputModel']['passed']
+  run('compile-shortcut-output',[str(HELD/pinned['compiler']),'make','qa/ShortcutOutputReplay.elm','--optimize','--output=assets/shortcut-output.js'])
+  (INPUT/'qa/shortcut-output-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.ShortcutOutputReplay'));run('typed-shortcut-output',['node','qa/shortcut-output-replay.js','assets/shortcut-output.js',str(OUT/'shortcut-output.json')]);report['typedShortcutOutput']=json.loads((OUT/'shortcut-output.json').read_text());assert all(report['typedShortcutOutput']['checks'].values())
+  run('compile-shortcut-regression',[str(HELD/pinned['compiler']),'make','qa/KeyboardShortcutsReplay.elm','--optimize','--output=assets/shortcut-regression.js'])
+  (INPUT/'qa/shortcut-regression.js').write_text(replay.replace('Elm.SearchReplay','Elm.KeyboardShortcutsReplay'));run('typed-shortcut-regression',['node','qa/shortcut-regression.js','assets/shortcut-regression.js',str(OUT/'shortcut-regression.json')]);report['typedShortcutRegression']=json.loads((OUT/'shortcut-regression.json').read_text());assert all(report['typedShortcutRegression']['checks'].values())
  if DRAG:
   report.update(requirements=['ELM-UX-021'],scenarios=['ux-021'],scope='Compiled immutable native pointer ownership/root suppression and strict production decoder; original frozen native_drag invariant model. Actual crossing/native gesture end acceptance separate.')
   run('compile-pointer-ownership',[str(HELD/pinned['compiler']),'make','qa/PointerOwnershipReplay.elm','--optimize','--output=assets/pointer-ownership.js'])
@@ -336,6 +343,10 @@ console.log('Current body-target Escape releases once; stale scope, preedit, rep
     if SHORTCUTS:
      excluded+=['native/shortcut-bindings.inc']
      assert all('shortcut-bindings.inc' not in (INPUT/'native'/name).read_text() for name in units)
+    if SHORTCUTOUTPUT:
+     excluded+=['native/geometry-effects.inc','native/snap-placement.inc']
+     pair_meta=json.loads((ROOT/'qa/current-native-pair.json').read_text());authority_path=REPO/pair_meta['authorityReport'];assert sha(authority_path)==pair_meta['authorityReportSHA256'];authority=json.loads(authority_path.read_text());assert authority['passed'] and authority['missingSymbols']==[]
+     for name in ['native/authority.cpp','native/geometry-effects.inc','native/snap-placement.inc']:assert sha(INPUT/name)==authority['inputs'][name]
     assert all(sha(INPUT/p)==h for p,h in prior['inputs'].items() if p.startswith('native/') and p not in excluded)
     assert all('surface.h' not in (INPUT/'native'/name).read_text() for name in units)
    object_path=prior_path;object_report=prior;seen=set()
@@ -386,6 +397,7 @@ console.log('Current body-target Escape releases once; stale scope, preedit, rep
    (OUT/'layer-browser').mkdir()
    run('layer-appearance-browser',['node','qa/layer-appearance-browser.mjs','http://127.0.0.1:'+str(server.server_address[1]),str(OUT),str(browser)])
    child_path=OUT/'layer-browser/report.json';child=json.loads(child_path.read_text());assert child['passed'] and child['browserExitCode']==0;report['layerAppearanceBrowser']={'path':str(child_path),'sha256':sha(child_path),'checks':child['checks']}
+ if SHORTCUTOUTPUT:report.update(requirements=['ELM-UX-023','ELM-UI-005'],scenarios=['ux-023','search-no-match'],scope='Compiled current-output shortcut routing with typed live destination/current topology, stale/blocked/ambiguous rejection, original serial/pointer/search regressions and owning GTK host. Native/AT acceptance remains separate.')
  assert all(sha(ROOT/p)==h for p,h in inputs.items());toolchain.verify();report['compiledAssets']={n:sha(INPUT/'assets'/n) for n in ['elm.js','bar.js','popup.js']};report['passed']=True
 except Exception as error:report['error']=repr(error)
 finally:

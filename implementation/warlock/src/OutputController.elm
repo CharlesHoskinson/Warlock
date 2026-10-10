@@ -1,6 +1,8 @@
 module OutputController exposing (Model, Event(..), Scope, initial, update, frame, controller, owner, views, scopeDecoder, encodeScope, register, pendingBatches)
 
 import Binding
+import Shortcuts
+import PointerOwnership
 import MenuBridge
 import Shell
 import TaskbarShell
@@ -23,6 +25,7 @@ type Model = Model
     , revision : Counter
     , highest : Counter
     , views : List Scope
+    , locations : List {scope : Scope, box : Shortcuts.Box}
     , selected : Maybe Scope
     , batches : List Batch
     , batchExhausted : Bool
@@ -35,7 +38,7 @@ type alias Batch = { scope : Scope, revision : Counter, publication : Counter, l
 type Event = Disposition D.Value | Topology D.Value | Renderer D.Value | Interaction Desktop.Msg | Dismiss D.Value | Reflow D.Value
 
 initial : Model
-initial = Model {announcements=OutcomeAnnouncements.initial,controller=Controller.initial,revision=UInt64.zero,highest=UInt64.zero,views=[],selected=Nothing,batches=[],batchExhausted=False,capacityRefused=False}
+initial = Model {announcements=OutcomeAnnouncements.initial,controller=Controller.initial,revision=UInt64.zero,highest=UInt64.zero,views=[],locations=[],selected=Nothing,batches=[],batchExhausted=False,capacityRefused=False}
 
 strict : List String -> D.Decoder a -> D.Decoder a
 strict fields decoder = D.keyValuePairs D.value |> D.andThen (\pairs -> if List.sort (List.map Tuple.first pairs)==List.sort fields then decoder else D.fail "Output view fields")
@@ -100,17 +103,43 @@ updateCore : Event -> Model -> (Model,List Controller.Effect)
 updateCore event ((Model model) as current) =
     case event of
         Disposition raw -> receiveDisposition raw current
-        Interaction message -> apply (Controller.Interaction message) current
+        Interaction message ->
+            case message of
+                Desktop.Incoming raw ->
+                    let desktop=Controller.desktop model.controller
+                    in case D.decodeValue Shortcuts.decoder raw of
+                        Err _ -> apply (Controller.Interaction message) current
+                        Ok snapshot ->
+                            let (_,route,_)=Shortcuts.receive desktop.windows.shell.binding snapshot desktop.shortcuts
+                                matches=Shortcuts.destination raw |> Maybe.map (\box -> List.filter (\entry -> entry.box==box && List.member entry.scope model.views) model.locations) |> Maybe.withDefault []
+                                destination=if D.decodeValue (D.field "shortcutProtocol" D.int) raw==Ok 1 && List.length model.views==1 then List.head model.views else case matches of
+                                    [entry] -> Just entry.scope
+                                    _ -> Nothing
+                            in if route==Nothing || desktop.windows.shell.phase==Shell.Detached || desktop.windows.shell.phase==Shell.Exhausted then apply (Controller.Interaction message) current else
+                               case destination of
+                                Just scope ->
+                                    if PointerOwnership.blocked desktop.windows.shell.binding desktop.pointer || (model.selected/=Just scope && not (freshRelocationPossible model.controller)) then
+                                        apply (Controller.Interaction (Desktop.ScopedShortcut snapshot False)) current
+                                    else
+                                        let (assigned,ownerEffects)=assignOwner (Just scope) model.controller
+                                            (next,effects)=apply (Controller.Interaction (Desktop.ScopedShortcut snapshot True)) (Model {model | selected=Just scope,controller=assigned})
+                                        in (next,ownerEffects++effects)
+                                Nothing -> apply (Controller.Interaction (Desktop.ScopedShortcut snapshot False)) current
+                _ -> apply (Controller.Interaction message) current
         Topology raw ->
-            let decoder = strict ["viewProtocol","kind","revision","views"]
-                    (D.map4 (\version kind revision scopes -> {version=version,kind=kind,revision=revision,scopes=scopes}) (D.field "viewProtocol" D.int) (D.field "kind" D.string) (D.field "revision" UInt64.decoder) (D.field "views" (D.list scopeDecoder)))
+            let locationDecoder = strict ["scope","box"] (D.map2 (\scope box -> {scope=scope,box=box}) (D.field "scope" scopeDecoder) (D.field "box" Shortcuts.boxDecoder))
+                decoder = D.field "viewProtocol" D.int |> D.andThen (\protocol ->
+                    if protocol==1 then strict ["viewProtocol","kind","revision","views"]
+                        (D.map4 (\version kind revision scopes -> {version=version,kind=kind,revision=revision,scopes=scopes,locations=[]}) (D.field "viewProtocol" D.int) (D.field "kind" D.string) (D.field "revision" UInt64.decoder) (D.field "views" (D.list scopeDecoder)))
+                    else strict ["viewProtocol","kind","revision","views","locations"]
+                        (D.map5 (\version kind revision scopes locations -> {version=version,kind=kind,revision=revision,scopes=scopes,locations=locations}) (D.field "viewProtocol" D.int) (D.field "kind" D.string) (D.field "revision" UInt64.decoder) (D.field "views" (D.list scopeDecoder)) (D.field "locations" (D.list locationDecoder))))
                 admitted scopes = List.length scopes<=64 && List.length (List.map identity scopes)==List.length (List.foldl (\scope ids -> if List.member (identity scope) ids then ids else identity scope::ids) [] scopes)
                     && List.all (\scope -> case List.filter (\prior -> identity prior==identity scope) model.views |> List.head of
                         Just prior -> UInt64.compare (generation scope) (generation prior)/=LT
                         Nothing -> UInt64.compare (identity scope) model.highest==GT) scopes
             in case D.decodeValue decoder raw of
                 Ok table ->
-                    if table.version/=1 || table.kind/="view-topology" || UInt64.compare table.revision model.revision/=GT || not (admitted table.scopes) then (current,[]) else
+                    if not (List.member table.version [1,2]) || (table.version==2 && List.map .scope table.locations/=table.scopes) || table.kind/="view-topology" || UInt64.compare table.revision model.revision/=GT || not (admitted table.scopes) then (current,[]) else
                         let survives = model.selected |> Maybe.map (\priorSelected -> List.member priorSelected table.scopes) |> Maybe.withDefault False
                             selected = if survives then model.selected else List.head table.scopes
                             retired = not survives && owner current/=Nothing
@@ -123,7 +152,7 @@ updateCore event ((Model model) as current) =
                                 Nothing -> (assigned,[])
                             (unblocked,_) = if model.capacityRefused then (cancelled,[]) else Controller.update (Controller.Interaction (Desktop.Window (TaskbarShell.Native (Shell.RegistrationAvailable False)))) cancelled
                             (refreshed,readEffects)=Controller.update (Controller.Interaction (Desktop.Window (TaskbarShell.Native (Shell.SupersedeObservations (selected/=Nothing))))) unblocked
-                            result = Model {model | revision=table.revision,highest=highest,views=table.scopes,selected=selected,controller=refreshed,batchExhausted=if model.capacityRefused then model.batchExhausted else False}
+                            result = Model {model | revision=table.revision,highest=highest,views=table.scopes,locations=table.locations,selected=selected,controller=refreshed,batchExhausted=if model.capacityRefused then model.batchExhausted else False}
                             -- These reads were allocated in this same unsent update,
                             -- before the supersession above. Never forward obsolete
                             -- observations; retain every operation/local effect.

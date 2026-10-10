@@ -246,8 +246,17 @@ static void shared_topology(void) {
     shared_context_cancel();
     if (!controller_ready || shutting_down) return;
     JsonObject *object=json_object_new();JsonArray *array=json_array_new();
-    for (guint i=0;i<output_views->len;i++) {OutputView *row=g_ptr_array_index(output_views,i);if (row->active) json_array_add_element(array,scope_packet(row));}
-    json_object_set_int_member(object,"viewProtocol",1);json_object_set_string_member(object,"kind","view-topology");
+    JsonArray *locations=json_array_new();
+    for (guint i=0;i<output_views->len;i++) {
+        OutputView *row=g_ptr_array_index(output_views,i);if(!row->active)continue;
+        json_array_add_element(array,scope_packet(row));
+        GdkRectangle bounds;gdk_monitor_get_geometry(row->monitor,&bounds);
+        JsonObject *location=json_object_new();json_object_set_member(location,"scope",scope_packet(row));
+        JsonArray *box=json_array_new();json_array_add_int_element(box,bounds.x);json_array_add_int_element(box,bounds.y);json_array_add_int_element(box,bounds.width);json_array_add_int_element(box,bounds.height);
+        json_object_set_array_member(location,"box",box);json_array_add_object_element(locations,location);
+    }
+    json_object_set_array_member(object,"locations",locations);
+    json_object_set_int_member(object,"viewProtocol",2);json_object_set_string_member(object,"kind","view-topology");
     g_autofree char *revision=g_strdup_printf("%" G_GUINT64_FORMAT,topology_revision);json_object_set_string_member(object,"revision",revision);json_object_set_array_member(object,"views",array);
     JsonNode *packet=json_node_new(JSON_NODE_OBJECT);json_node_take_object(packet,object);
     g_autofree char *wire=json_to_string(packet,FALSE);g_print("view-topology: %s\n",wire);fflush(stdout);
@@ -519,7 +528,7 @@ static void shared_receive(WebKitUserContentManager *manager,WebKitJavascriptRes
 static void shared_geometry(GObject *object,GParamSpec *property,gpointer data) {
     (void)property;OutputView *row=data;
     if (!row->active || object!=G_OBJECT(row->monitor) || shutting_down) return;
-    shared_context_cancel();
+    topology_advance();
     if(row!=popup_owner || !popup_active) return;
     guint64 lease=surface_gate.lease;popup_hide();shared_popup_notify("receiveReflow",lease);
     g_print("view-reflow: id=%" G_GUINT64_FORMAT " lease=%" G_GUINT64_FORMAT "\n",row->id,lease);fflush(stdout);

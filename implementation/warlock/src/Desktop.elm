@@ -117,6 +117,7 @@ type Msg
     | CloseSnap ViewStamp
     | InvalidateSnap
     | OwnerScope D.Value
+    | ScopedShortcut Shortcuts.Snapshot Bool
     | PresentationOwner (Maybe {outputId : Counter, providerId : Counter})
     | Incoming D.Value
     | OpenApplications ViewStamp
@@ -564,6 +565,7 @@ motionGesture message =
 gestureAction message =
     case message of
         Incoming _ -> False
+        ScopedShortcut _ _ -> False
         OwnerScope _ -> False
         PresentationOwner _ -> False
         InvalidateSnap -> False
@@ -616,6 +618,17 @@ updateAvailable message model =
         RetryWindows ->
             if model.choice/=Nothing || String.isEmpty model.choiceNotice then (model,[]) else
                 windowBase (TaskbarShell.Native Shell.Refresh) {model | choiceNotice=""}
+        ScopedShortcut snapshot allowed ->
+            if model.windows.shell.phase==Shell.Detached || model.windows.shell.phase==Shell.Exhausted then (model,[]) else
+            let (shortcuts,route,failure)=Shortcuts.receive model.windows.shell.binding snapshot model.shortcuts
+                notice=if route/=Nothing && not allowed then Just "Shell shortcut output is unavailable. Press the shortcut again." else failure
+                priorNotice=if route/=Nothing && allowed && List.member model.choiceNotice ["Shell shortcut output is unavailable. Press the shortcut again.","Shell shortcut unavailable while input is blocked.","Shortcut history expired. Press the shortcut again."] then "" else model.choiceNotice
+                next={model | popupOrigin=KeyboardEntry,shortcuts=shortcuts,choiceNotice=notice |> Maybe.withDefault priorNotice}
+            in case (if allowed then route else Nothing,capture next) of
+                (Just Shortcuts.Applications,Just stamp) -> update (OpenApplications stamp) next
+                (Just Shortcuts.System,Just stamp) -> update (OpenSystemMenu stamp) next
+                (Just Shortcuts.Notifications,Just stamp) -> update (OpenNotifications stamp) next
+                _ -> (next,[])
         PresentationOwner scope ->
             if scope==model.ownerScope then (model,[]) else
             let (retired,effects) =
@@ -747,15 +760,7 @@ updateAvailable message model =
                 Ok "shell-shortcuts" ->
                     case D.decodeValue Shortcuts.decoder raw of
                         Err _ -> (model,[])
-                        Ok snapshot ->
-                            if model.windows.shell.phase==Shell.Detached || model.windows.shell.phase==Shell.Exhausted then (model,[]) else
-                            let (shortcuts,route,failure)=Shortcuts.receive model.windows.shell.binding snapshot model.shortcuts
-                                next={model | popupOrigin=KeyboardEntry,shortcuts=shortcuts,choiceNotice=failure |> Maybe.withDefault model.choiceNotice}
-                            in case (route,capture next) of
-                                (Just Shortcuts.Applications,Just stamp) -> update (OpenApplications stamp) next
-                                (Just Shortcuts.System,Just stamp) -> update (OpenSystemMenu stamp) next
-                                (Just Shortcuts.Notifications,Just stamp) -> update (OpenNotifications stamp) next
-                                _ -> (next,[])
+                        Ok snapshot -> update (ScopedShortcut snapshot True) model
                 Ok "switcher-journal" ->
                     let decoder=strict ["protocolVersion","kind","binding","requestId","chord"] (D.map4 (\_ binding request chord -> {binding=binding,request=request,chord=chord}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "chord" nativeChordDecoder))
                     in case D.decodeValue decoder raw of
