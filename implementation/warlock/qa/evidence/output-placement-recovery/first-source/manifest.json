@@ -1,0 +1,317 @@
+{
+  "schema": 1,
+  "requirement": "ELM-UI-019",
+  "ears": "WHEN an output disappears, the host SHALL recover shell controls and displaced popup focus on a declared surviving output, preserve workspace identity and reachable application recovery, and reject removed-generation effects until available outputs reconcile.",
+  "scenario": {
+    "name": "outputs-return",
+    "given": "all outputs disappear",
+    "when": "one returns",
+    "then": "controls reconcile on available output without old-generation effects"
+  },
+  "verificationScope": "Frozen threshold/policy plus independently observed named fixtures, native counters or user/AT records as applicable; hashes and failure outcomes retained.",
+  "disposition": "partial",
+  "requirementAccepted": false,
+  "fullReleaseAccepted": false,
+  "sourceParent": "cdff45e808ddf18d67b1370f711e4f03416b9610",
+  "sourceHashes": {
+    "implementation/warlock/native/core/WorkspacePlacementController.cpp": "aa433d54a87d1dacf6ff018ea4d9dd70f64a7d7678f4c12eb92e2c7aa1448880",
+    "implementation/warlock/native/core/OrphanedPlacement.hpp": "862c2ca98821a94268f7bba91dafa61603bdbffcf2e6c4dc14d45cbb6e1ce123",
+    "implementation/warlock/qa/check-output-placement.py": "07d9edd7dd6d78d181953ca09e3d83cce545439c4e9d052178f74e74887b96a0",
+    "implementation/warlock/qa/check-output-placement-core.py": "767489f520dd1b00ae6cbba464b8a3d6e2454aa9e741026cc0e24b760ea3b99c",
+    "implementation/warlock/qa/output-placement.qnt": "299ed8119c55b66708ae4702f800e0d4e83afee19a44df3c36923fc616cab8f4",
+    "implementation/warlock/qa/output-placement_test.qnt": "38336672aa3b02b5eba3aec4340e62b0b7e9fbf4fba3d8800501961034f44c6f",
+    "implementation/warlock/qa/native-output-placement.py": "fee54ea5cd2bb27caaeb88e41cefb044357b012205e43a64d0c88abee54a6dbc",
+    "implementation/warlock/qa/current-scene-core.json": "75706b8fe2ce772c1c70b1733f801fc2cfd55fcf8b1e842616eafe6143b7b812",
+    "implementation/warlock/qa/current-native-pair.json": "f70664287b591036495cb2f2aec72dfa16bfb95a3be8e5f9abfb5798fda8c828",
+    "implementation/warlock/qa/native-window-feedback.py": "d54b41384480f8c5a9e71ca0edaea9e08d33dc57c3eba963579c1209b2b75c6b",
+    "implementation/warlock/README.md": "37d7900ab1d80a789731d7c8ea7e7bea1fbc958ef4e84377e4eff35a7cb32bc1"
+  },
+  "originalRequirements": {
+    "path": "docs/elm-roadmap/requirements.json",
+    "sha256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b"
+  },
+  "frozenOutputPolicy": {
+    "path": "docs/elm-roadmap/INTERACTION.md",
+    "sha256": "2a947a3aa56d7b7b9e7d2f5c1ceb100ac7b8c345a73fd7616c0c4c567d0e01c4"
+  },
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791638201781325761/Hyprland",
+      "sha256": "b3df2652426d8fb781f3e938be9a9e8df8fb699867370500eedfee54aa4528c4"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791636752727044471/elm-window-geometry-authority.so",
+      "sha256": "b5e9a099e4e4de1d226a31b0a470e69b3e9596e1890628321721601bd74f7cc4"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+      "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
+    }
+  },
+  "unchangedHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791636841496519233/elm-host",
+    "sha256": "806aa4bcd44f0b67b6e58db7d1e41da41f1956692ff14001d5f19a5b005cecf7",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791636841496519233/report.json",
+    "heldBuildSHA256": "7cc0c70641c1694b4fa52268884fb0a08a10f81ce6ad61ae1938e00292d37558"
+  },
+  "unchangedPluginReport": {
+    "path": "implementation/warlock/qa/runs/native-authority-1791636752727044471/report.json",
+    "sha256": "d8d7fac64485beb8318f2564844370b87dece1951dd46324c30e4f6cba5133f2"
+  },
+  "unchangedTransportReport": {
+    "report": "implementation/warlock/qa/runs/output-transport-1791637476981206198/report.json",
+    "reportSHA256": "d73ea81d74c617e4b39ef21c115c792aec3bf27b6b13defb294f30f33faee57e"
+  },
+  "artifacts": {
+    "before-origin": {
+      "path": "implementation/warlock/qa/runs/native-drag-ownership-1791638331888395197/report.json",
+      "sha256": "67e543a9277a679f200078b70e5e32363291104b43489da8915fbfc0468e6b79",
+      "packet": "before-origin.json.gz",
+      "packetSHA256": "0277e413d7286000b3ad90bf56c160372d10fa0bfa7da7806ae8f3cf702ff865",
+      "encoding": "gzip",
+      "passed": false
+    },
+    "probe-gesture-release": {
+      "path": "implementation/warlock/qa/runs/native-drag-ownership-1791638560567012237/report.json",
+      "sha256": "72342ad00a5c314e9017685175f8509c4ae7ff0e6e6a21fe2dbd4d888ced8f2b",
+      "packet": "probe-gesture-release.json.gz",
+      "packetSHA256": "887cea44cc38261abac21570838b08ce235884158756724eb9b23772a0c1f202",
+      "encoding": "gzip",
+      "passed": false
+    },
+    "probe-unavailable-gdk-event": {
+      "path": "implementation/warlock/qa/runs/native-drag-ownership-1791638702662255894/report.json",
+      "sha256": "0d72d7a1073da85900b1ca1d2cf20ffa8ca69a705d10af6db4ce616d69ee5c4b",
+      "packet": "probe-unavailable-gdk-event.json.gz",
+      "packetSHA256": "1b2f491d4ec13f06ebb7b08ffbf68e48212ab699f3a976e452b9577a08acd305",
+      "encoding": "gzip",
+      "passed": false
+    },
+    "after": {
+      "path": "implementation/warlock/qa/runs/native-drag-ownership-1791638829107189672/report.json",
+      "sha256": "87e859e170cd59da2213c014300dde74cb444f1132a1d33a428fda752ad019b2",
+      "packet": "after.json.gz",
+      "packetSHA256": "0ef4286645593e25294003216616c93e371ed4d6be2bcb90336c07979865651e",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "caption-regression": {
+      "path": "implementation/warlock/qa/runs/native-caption-restoration-1791638896465732736/report.json",
+      "sha256": "152684e5c8713483d5f4a64df89f194f0a99549ca74bc830cf8287fff254f610",
+      "packet": "caption-regression.json.gz",
+      "packetSHA256": "bc5e2f526e0f37643228880ae4b3b495033cb8bf5c4972f3bf25ff4225ca4650",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "core-build": {
+      "path": "implementation/warlock/qa/runs/output-placement-core-1791638201781325761/report.json",
+      "sha256": "8d3009e21ea9f0f7727ae20804e489b979f2e4321040af9cf3ffa78ada216a05",
+      "packet": "core-build.json.gz",
+      "packetSHA256": "e9f8b9ab45fe270525b769d1900601c8ab6e3cbb24b1785b8c6225e485d07dba",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "model-init": {
+      "path": "implementation/warlock/qa/runs/output-placement-1791638168099957472/report.json",
+      "sha256": "cd2db1020559418d9aa06cd9ec7f9f46b713250b49ff33a5b901b5a23652c548",
+      "packet": "model-init.json.gz",
+      "packetSHA256": "464ac80a87d001cdfc5933c0389b71a817ea1b46a903978e08b12f611b32eabe",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "model-after": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-1791638202003116437/report.json",
+      "sha256": "9772a35c53d68c22b3acb9e73bf90cbb5fc73980a83432de87b9cb8cc9872215",
+      "packet": "model-after.json.gz",
+      "packetSHA256": "39ab64fb36523b213ec4c8c3d6aa55b38e2cb8aad60d0da62dd8518682108df5",
+      "encoding": "gzip",
+      "passed": true
+    }
+  },
+  "logs": {
+    "before-origin-warlock.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791638331888484369/warlock.log",
+      "originalSHA256": "6c82289cadeea6b01abf90f61fbf7dc4501eac72a3b55b03c1ec03075d2e3f6c",
+      "sha256": "9fece55d437e52e9c7b0350e7946c9c9069a8e0322eb467ab87ca3560ab0ef28"
+    },
+    "before-origin-fixture.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791638331888484369/fixture.log",
+      "originalSHA256": "652c81fc49005aa945ffa78d215bf7e340c278141bafbcb15aec9e7e6148c599",
+      "sha256": "b32d68e92495746d5c077cf781ebfb062122000dacbd3ca48968e68fb0eae3d6"
+    },
+    "before-origin-fixture-control.events.jsonl.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791638331888484369/fixture-control.events.jsonl",
+      "originalSHA256": "47856648e94b1449e26b3d8aeed0fd1203dae5d726f5f8bf0c108e262b6f9924",
+      "sha256": "f3d1907023fb1fa9b7af200e320b05d01ab8bf8899b3a9593bd4d5e48b6ed8fc"
+    },
+    "before-origin-host-evidence.json.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791638331888484369/host-evidence.json",
+      "originalSHA256": "40695d7e1ed22653461b70cf8a2da4aa24e87a2d879d2abb8a9f97c309cec193",
+      "sha256": "8ef50eac12ad39c2380006c1dc378cbb1161c61c004067e777c390530ed708a1"
+    },
+    "probe-unavailable-gdk-event-warlock.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791638702662361702/warlock.log",
+      "originalSHA256": "b6092fe68a4dc533c9465935ffe62c7d945eba535633441192320fea59c15e93",
+      "sha256": "61635c6134c270c594c2abec9058c48b47fc2e1d2ea5fee92dfa3d72b302bc6e"
+    },
+    "probe-unavailable-gdk-event-fixture.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791638702662361702/fixture.log",
+      "originalSHA256": "9ec03bc1b8a3934f830580823861aad265c8a2346b8759c04381eacdfaf4c41d",
+      "sha256": "e0f9810550a656aed200ede6eed0c66a93398a4022286bae3f4da383e9cf44ad"
+    },
+    "probe-unavailable-gdk-event-fixture-control.events.jsonl.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791638702662361702/fixture-control.events.jsonl",
+      "originalSHA256": "a5c592d2a356b3bd6afc67bb329170cc76434b4a3ddc520b4612fe2bc696e2c8",
+      "sha256": "0dc9f1bf91c93532a284421cf942479ea802d4de708c93be66b3206af21ae952"
+    },
+    "probe-unavailable-gdk-event-host-evidence.json.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791638702662361702/host-evidence.json",
+      "originalSHA256": "acb95aed5e8596197afddd3055a289b0dce25184f2b5ad0489b054d7e2582b2c",
+      "sha256": "c6daf0b1e63967d284394ecd1a0440009b252b0a95f522462f6622c73b01e282"
+    },
+    "after-warlock.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791638829107281563/warlock.log",
+      "originalSHA256": "0c0bc153a04aa77346aee8d6cd6b84d7032aecc92ac6819719667e55d9334138",
+      "sha256": "10f5b872ddc299fbb7cb915aa0803531cd7f144b426b21c1abfc3758f0c0e224"
+    },
+    "after-fixture.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791638829107281563/fixture.log",
+      "originalSHA256": "22975ebe184c29cddcbf02b9266e90ca65bbedc06cfd2663867f34eff4e23223",
+      "sha256": "9194cab1ea524539bc2d84fad5976a0e0b3e640c375c4c6cd3ee34750f36a31d"
+    },
+    "after-fixture-control.events.jsonl.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791638829107281563/fixture-control.events.jsonl",
+      "originalSHA256": "b49a20ced957adb33f2a511734c24a4d16e6241b335a669ba4d560159b2ede4d",
+      "sha256": "875336afb0db04ab2641c09034988de7302d5fcc8a34391d7bc78f435201139c"
+    },
+    "after-host-evidence.json.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791638829107281563/host-evidence.json",
+      "originalSHA256": "095201aef9573a783cd0f2d5036e15d41c65c2bf434b5269131ec88aef67d298",
+      "sha256": "09120acfd993bfeb2847688041f473d5661bcb9f6e756c97e548ad2a539bbe80"
+    },
+    "caption-regression-warlock.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791638896465820571/warlock.log",
+      "originalSHA256": "65cc178b2fbce62c96234db835f1ca4cc021f3ca5eea560be026163062800932",
+      "sha256": "adda8d69285f4d010f7a61f3697f34debbffcff65516ecbe96add755c9be9f56"
+    },
+    "caption-regression-fixture.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791638896465820571/fixture.log",
+      "originalSHA256": "f80ea8be6932cc401b1d2f6ac970cca9efcae10a3dc15653fcd4d8d30ea5ca97",
+      "sha256": "8ab6978510393beff6327346b55399a28944fb813816feb907eb4284fa974bda"
+    },
+    "caption-regression-fixture-control.events.jsonl.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791638896465820571/fixture-control.events.jsonl",
+      "originalSHA256": "e26a32cf02c982793f13a1759ad78d8b17d4598815510a605391882828dce4e4",
+      "sha256": "790b456ef2c2f2411115ce37d6901e190190f40c979e5ca0b4497e0554c58acb"
+    },
+    "caption-regression-host-evidence.json.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791638896465820571/host-evidence.json",
+      "originalSHA256": "a667e0f55221e7a34718b45e4933ff9fdb9a50dafa31ef06478c67d1910a6140",
+      "sha256": "b1d489b3696c0b9744b683520256192e53a8f16e6737eba6d0f31b3b9d6b490c"
+    },
+    "model-helper-compile.stdout.gz": {
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-1791638202003116437/helper-compile.stdout",
+      "originalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+    },
+    "model-helper-tests.stdout.gz": {
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-1791638202003116437/helper-tests.stdout",
+      "originalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+    },
+    "model-init.stdout.gz": {
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-1791638202003116437/init.stdout",
+      "originalSHA256": "19ef9cb24ce131058c10eb3b192120d4b148dd075bf09bb620474ea9c12713b7",
+      "sha256": "d2828576dbe7c775c45c4520e358f2a954de11b74927bbce144f0fff3fce373b"
+    },
+    "model-named.stdout.gz": {
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-1791638202003116437/named.stdout",
+      "originalSHA256": "cd4407383aac8d0d17137ffd2cf0278c281dde2672eb51e4ab66a513c2354b18",
+      "sha256": "d474c576da2c9012a67f3b0856175fe6d34dc3c35834b897940e40f44df11ff5"
+    },
+    "model-safety.stdout.gz": {
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-1791638202003116437/safety.stdout",
+      "originalSHA256": "816293ca06a992533ac1a596912d169ed6fdb7a0858ca919d149667e23d0b53a",
+      "sha256": "65179e4ccf25dd27673da16d29075f988cd016b401844d48a796c09f5538e978"
+    },
+    "model-typecheck.stdout.gz": {
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-1791638202003116437/typecheck.stdout",
+      "originalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+    },
+    "model-witnesses.stdout.gz": {
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-1791638202003116437/witnesses.stdout",
+      "originalSHA256": "a0b60c6e598064aa11a77fbdf1f90d1d65c5c2d0b43db44b090c34557e71ca70",
+      "sha256": "47b0d12e1ea7918b35aba30a78a5557e42804ec480e618815f81c0935d408133"
+    }
+  },
+  "observation": "Orphaned workspace placement now anchors to the destination output origin and wraps negative logical coordinates without changing size. The observed returning floating application retains workspace 2 and its unsaved draft, is reachable at x=40/y=230, activates through the actual taskbar exactly once, receives GTK press plus client-wire release and physical keyboard editing, and paints onscreen. Original two-output move/resize/cancel/capture and unchanged MAX/snap caption/lifecycle regression pass one native tuple with normal cleanup.",
+  "missingObservations": [
+    "Independent original UI-019 scenario review, physical output hotplug and native AT/IME remain open.",
+    "Native negative/nonzero destination origin, smaller/rotated/scaled outputs and minimized/pinned/fullscreen/modal recovery remain unqualified. Existing-monitor translation still preserves relative placement; this fix does not establish arbitrary smaller-output fit. Original vertical partial clipping is unchanged.",
+    "Fresh old native shortcut receipts delayed across identical replacement bounds and arbitrary host/native generation ordering remain unqualified; the source/retirement abstractions are atomic.",
+    "Pending preview/capture/effect custody, protected input, Unknown reconciliation, transport EAGAIN/backpressure and fatal parent-loss runtime schedules remain unqualified.",
+    "Full original release journeys, measured hardware/resource budgets, reproducible package and reversible deployment remain open."
+  ],
+  "reviewerDisposition": {
+    "name": "root-output-placement",
+    "independent": false,
+    "disposition": "Owner-observed nested native/compiled/sampled results; independent original acceptance remains open."
+  },
+  "image": {
+    "path": "returned-application.png",
+    "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791638829107281563/returned-application.png",
+    "sha256": "934af75b47f8bdea635bc686c3e1c69502e9679450a9194f28ea807319ebf958",
+    "native": {
+      "address": "0x55f61558ee00",
+      "mapped": true,
+      "hidden": false,
+      "visible": true,
+      "acceptsInput": true,
+      "at": [
+        40,
+        230
+      ],
+      "size": [
+        108,
+        440
+      ],
+      "workspace": {
+        "id": 2,
+        "name": "2"
+      },
+      "floating": true,
+      "monitor": 1,
+      "class": "GTK Application",
+      "title": "ELM-AUTHORITY-FIXTURE",
+      "initialClass": "GTK Application",
+      "initialTitle": "ELM-AUTHORITY-FIXTURE",
+      "pid": 2744648,
+      "xwayland": false,
+      "pinned": false,
+      "pinFullscreened": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default",
+      "allowedOverFullscreen": true,
+      "grouped": [],
+      "tags": [],
+      "swallowing": "0x0",
+      "focusHistoryID": 0,
+      "inhibitingIdle": false,
+      "xdgTag": "",
+      "xdgDescription": "",
+      "contentType": "none",
+      "tearingHint": false,
+      "stableId": "18000000"
+    },
+    "redPixels": 27048
+  },
+  "productPatchSHA256": "cadd4ac5e4e4a905c0ed3cf001539a8b22d64802e18a36e3fdb24d1dbedeba0e",
+  "probeCorrections": [
+    "A preflight refused the new owning TU until its exact two changed-source paths were admitted. A second preflight hit the 12-node ancestry bound; bounded hash/cycle validation now allows 64 nodes. Neither launched a GUI or changed original observation deadlines.",
+    "The unchanged GTK window GestureClick observer records an editor press but not its gesture-level release. The client Wayland trace independently shows press/release on the same pointer proxy with no intervening enter/leave.",
+    "The attempted raw Gtk.EventControllerLegacy observer received None for its event through PyGObject and raised AttributeError; its failed packet/log is retained, and this observer was removed. The final proof uses existing native client wire events plus named GTK press and actual edited text.",
+    "A fresh 800x600 virtual-pointer helper sends the actual returned-output click; the retained drag device has its original 1600x600 absolute extent and is unchanged."
+  ]
+}

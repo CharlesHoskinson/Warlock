@@ -7836,12 +7836,36 @@
                 "independent": false,
                 "disposition": "Owner-observed nested native/compiled/sampled results; independent original acceptance remains open."
               }
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/output-placement-recovery/manifest.json",
+              "sha256": "5c0b682e62befc258e1073db262b0a1a65a30294e618457c86dabc06140e0c26",
+              "scope": "Orphaned workspace placement now anchors to the destination output origin and wraps negative logical coordinates without changing size. The observed returning floating application retains workspace 2 and its unsaved draft, is reachable at x=40/y=230, activates through the actual taskbar exactly once, receives GTK press plus client-wire release and physical keyboard editing, and paints onscreen. Original two-output move/resize/cancel/capture and unchanged MAX/snap caption/lifecycle regression pass one native tuple with normal cleanup.",
+              "sourceBaseRevision": "cdff45e808ddf18d67b1370f711e4f03416b9610",
+              "sourceHashes": {
+                "implementation/warlock/native/core/WorkspacePlacementController.cpp": "aa433d54a87d1dacf6ff018ea4d9dd70f64a7d7678f4c12eb92e2c7aa1448880",
+                "implementation/warlock/native/core/OrphanedPlacement.hpp": "998bb22bb861932d457f3f303fe77ff5c2a6cc023b4f040326ad11b1252313d8",
+                "implementation/warlock/qa/check-output-placement.py": "d693e0f711d5a3d3a4acd0cdc7f8b39effa208aa7ffd6977112cd2712f5e21ae",
+                "implementation/warlock/qa/check-output-placement-core.py": "767489f520dd1b00ae6cbba464b8a3d6e2454aa9e741026cc0e24b760ea3b99c",
+                "implementation/warlock/qa/output-placement.qnt": "299ed8119c55b66708ae4702f800e0d4e83afee19a44df3c36923fc616cab8f4",
+                "implementation/warlock/qa/output-placement_test.qnt": "38336672aa3b02b5eba3aec4340e62b0b7e9fbf4fba3d8800501961034f44c6f",
+                "implementation/warlock/qa/native-output-placement.py": "fee54ea5cd2bb27caaeb88e41cefb044357b012205e43a64d0c88abee54a6dbc",
+                "implementation/warlock/qa/current-scene-core.json": "4cfdd2df49bf05167cced0e35cf91d030994047cecddfea2166cabcd05b1514a",
+                "implementation/warlock/qa/current-native-pair.json": "372baf4f77459332d2c114fa6cec41bee12a4e1be85f3255774c4f2d61ea3dc5",
+                "implementation/warlock/qa/native-window-feedback.py": "d54b41384480f8c5a9e71ca0edaea9e08d33dc57c3eba963579c1209b2b75c6b",
+                "implementation/warlock/README.md": "37d7900ab1d80a789731d7c8ea7e7bea1fbc958ef4e84377e4eff35a7cb32bc1"
+              },
+              "reviewerDisposition": {
+                "name": "root-output-placement",
+                "independent": false,
+                "disposition": "Owner-observed nested native/compiled/sampled results; independent original acceptance remains open."
+              }
             }
           ],
-          "missingObservation": "Actual floating application returns offscreen (x=-1880, width=108, on an 800px output); workspace 2 survives but visible application placement/recovery is not qualified. Repair native placement next.; Physical display hotplug, native AT/IME and independent original-scenario acceptance remain open.; Fresh old native shortcut receipts delayed across identical replacement bounds and arbitrary topology/native generation ordering remain unqualified; the retirement model abstracts atomic topology delivery.; Pending preview/capture/effect custody, protected input and Unknown reconciliation during removal remain unqualified. Parent transport model assumes successful flush; EAGAIN/write-backpressure and fatal parent-loss runtime schedules remain unqualified.; Full original release journeys, hardware/resource budgets, reproducible packaging and reversible deployment remain open.",
-          "observation": "Real output absence now suspends shell presentation without giving internal FALLBACK a bar, popup, reserved band or shortcut event. Immediate nested parent initialization flush restores a fresh view after configure ACK, actual focused launcher/query and physical-keyboard Refresh (one catalog read) without launch/window-effect replay; workspace identity survives. Original two-output drag/capture and all-nine-surface keyboard regressions pass with normal cleanup. Application placement remains offscreen and unqualified.",
+          "missingObservation": "Independent original UI-019 scenario review, physical output hotplug and native AT/IME remain open.; Native negative/nonzero destination origin, smaller/rotated/scaled outputs and minimized/pinned/fullscreen/modal recovery remain unqualified. Existing-monitor translation still preserves relative placement; this fix does not establish arbitrary smaller-output fit. Original vertical partial clipping is unchanged.; Fresh old native shortcut receipts delayed across identical replacement bounds and arbitrary host/native generation ordering remain unqualified; the source/retirement abstractions are atomic.; Pending preview/capture/effect custody, protected input, Unknown reconciliation, transport EAGAIN/backpressure and fatal parent-loss runtime schedules remain unqualified.; Full original release journeys, measured hardware/resource budgets, reproducible package and reversible deployment remain open.",
+          "observation": "Orphaned workspace placement now anchors to the destination output origin and wraps negative logical coordinates without changing size. The observed returning floating application retains workspace 2 and its unsaved draft, is reachable at x=40/y=230, activates through the actual taskbar exactly once, receives GTK press plus client-wire release and physical keyboard editing, and paints onscreen. Original two-output move/resize/cancel/capture and unchanged MAX/snap caption/lifecycle regression pass one native tuple with normal cleanup.",
           "reviewerDisposition": {
-            "name": "root-zero-output",
+            "name": "root-output-placement",
             "independent": false,
             "disposition": "Owner-observed nested native/compiled/sampled results; independent original acceptance remains open."
           }
@@ -11463,5 +11487,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-10T13:08:38.718522+00:00"
+  "updatedUTC": "2026-10-10T13:40:42.293009+00:00"
 }
