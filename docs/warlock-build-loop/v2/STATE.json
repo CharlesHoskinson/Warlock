@@ -1,67 +1,48 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T19:20:31.316065+00:00",
+  "updatedUTC": "2026-10-10T20:07:41.777331+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "taskview-workspace-navigation",
+    "id": "taskview-transfer-retirement",
     "requirements": [
       "ELM-UI-006"
     ],
     "scenarios": [
-      "overview-empty"
+      "overview-retire"
     ],
     "paths": [
-      "implementation/warlock/src/WorkspaceNavigation.elm",
-      "implementation/warlock/src/WorkspaceInventory.elm",
       "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/native/authority.cpp",
-      "implementation/warlock/native/workspace-navigation.inc",
-      "implementation/warlock/native/host-journal.h",
-      "implementation/warlock/native/host.c",
-      "implementation/warlock/native/shared-host.c",
-      "implementation/warlock/adapter/workspace_navigation.py",
-      "implementation/warlock/adapter/daemon.py",
-      "implementation/warlock/qa/workspace-navigation.qnt",
-      "implementation/warlock/qa/workspace-navigation_test.qnt",
-      "implementation/warlock/qa/check-workspace-navigation.py",
-      "implementation/warlock/qa/check-native-authority.py",
+      "implementation/warlock/qa/TaskViewReplay.elm",
+      "implementation/warlock/qa/overview-retirement.qnt",
+      "implementation/warlock/qa/overview-retirement_test.qnt",
+      "implementation/warlock/qa/check-overview-retirement.py",
+      "implementation/warlock/qa/native-taskview-retirement.py",
       "implementation/warlock/qa/check-search.py",
-      "implementation/warlock/qa/WorkspaceNavigationReplay.elm",
-      "implementation/warlock/qa/native-taskview-navigation.py",
-      "implementation/warlock/qa/current-native-pair.json",
       "implementation/warlock/qa/current-search-build.json",
       "implementation/warlock/assets/elm.js",
       "implementation/warlock/assets/bar.js",
       "implementation/warlock/assets/popup.js",
-      "implementation/warlock/README.md",
-      "implementation/warlock/native/geometry-effects.inc",
-      "implementation/warlock/src/Main.elm",
-      "implementation/warlock/qa/empty-workspace-navigation.qnt",
-      "implementation/warlock/qa/empty-workspace-navigation_test.qnt",
-      "implementation/warlock/qa/native-workspace-recovery.py",
-      "implementation/warlock/qa/workspace-navigation-transport.py"
+      "implementation/warlock/README.md"
     ],
-    "before": "Task View can browse real empty workspaces but cannot navigate the native desktop to them.",
-    "after": "An explicit keyboard/pointer Go action navigates an existing ordinary empty workspace through a typed owner-correlated durable native receipt. Refusal retains the overview and context, Unknown remains visible with read-only recovery and no replay, and dismissal stays available.",
+    "before": "When the chosen transfer member disappears, overviewTransfer retains its retired incarnation and the destination chooser remains open with no targets.",
+    "after": "A coherent exact-member retirement returns Task View to its retained valid workspace filter or All windows, focuses the current browse control and emits no native mutation or replacement selection. Incomplete/mismatched observations cannot declare retirement.",
     "verification": [
-      "quint-llm-kit model before code, initialization, named tests, positive commit/refusal/lost-ack/restart witnesses and sampled safety. Strict transport/journal negatives, compiled real Elm roots and integrated replay. Protected exact ABI native keyboard/pointer navigation, focus/active workspace/pixels/refusal and lost-ack no replay under original deadlines; original scenario remains partial until applicable AT and independent acceptance."
+      "quint-llm-kit executable initialization, named tests and sampled safety/positive reachability before reducer change; original Task View replay and stale/coherence negatives, protected actual member disappearance, current popup focus/pixels/no mutation and dismissal."
     ],
-    "owner": "root-taskview-workspace-navigation",
-    "participantRecord": ".warlock-contributor/taskview-workspace-navigation.json",
+    "owner": "root-taskview-retirement",
+    "participantRecord": ".warlock-contributor/taskview-retirement.json",
     "disposition": "partial",
     "evidence": {
-      "path": "implementation/warlock/qa/evidence/taskview-workspace-recovery/final-manifest.json",
-      "sha256": "9af62f9307130a10bf01d56a98b03b7296aff29d95eae4f5ee4259d15f11fcfc",
-      "scope": "Real keyboard/pointer empty-workspace navigation retained; native pinned-source Refused with current overview selection/focus, observation-only refresh and dismissal; actual native receipt loss before durable settlement/frontend delivery, durable Unknown and exact historical recovery after authenticated reconnect without replay; separate settled receipt loss with painted direct taskbar read and physical pointer recovery to exact Committed outcome. Compiled real roots and route/update regression, unchanged Quint named tests/witnesses/sampled safety remain separately scoped."
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-retirement/manifest.json",
+      "sha256": "43ee9e9f67ead0af61eed3c0d2b5908e40c76fa55577a06b7dd44e4f160ed28a"
     },
-    "missingObservation": "Applicable native AT observations and independent original ELM-UI-006 acceptance remain open. Native workspace refusal and both receipt-loss read/reconnect recovery paths now observed.",
-    "nextAction": "The direct taskbar workspace read fix and native refusal/two receipt-loss recoveries are ready to publish. After two qualification-only records, stop expanding this investigation. Select the original ELM-UI-006 overview-select/overview-cancel native AT-SPI/Orca selection and dismissal slice next, using current Task View and retained exact outcomes. Applicable empty-workspace AT and independent acceptance remain open; include empty controls where applicable without inventing new qualification schedules."
+    "missingObservation": "Applicable AT/Orca overview-retire observations and independent original acceptance remain open; the separately retained actual WebKit AT traversal crash is unresolved.",
+    "nextAction": "Publish the coherent transfer-member retirement fix. Continue Task View transfer-cancel keyboard focus return through the exact eligible origin, under original overview-cancel and applicable keyboard focus requirements. The WebKit AT diagnosis is exhausted at two qualification-only iterations; retain its actual failure until a concrete renderer dependency fix can be tested. Independent original acceptance and the complete release remain open."
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",

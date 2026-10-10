@@ -1,0 +1,773 @@
+[New LWP 4053099]
+[New LWP 4053098]
+[New LWP 4053097]
+[New LWP 4053096]
+[New LWP 4053095]
+[New LWP 4053094]
+[New LWP 4053090]
+[New LWP 4053089]
+[New LWP 4053088]
+[New LWP 4053087]
+[New LWP 4053086]
+[New LWP 4053085]
+[New LWP 4053084]
+[New LWP 4053083]
+[New LWP 4053073]
+[New LWP 4053072]
+[New LWP 4053071]
+[New LWP 4053070]
+[New LWP 4053069]
+[New LWP 4053068]
+[New LWP 4053065]
+[New LWP 4053064]
+[New LWP 4053063]
+[New LWP 4053062]
+[New LWP 4053057]
+[New LWP 4053056]
+[New LWP 4053055]
+[New LWP 4053054]
+[New LWP 4053053]
+[New LWP 4053052]
+[New LWP 4053050]
+[New LWP 4053049]
+[New LWP 4053048]
+[New LWP 4053047]
+[New LWP 4053045]
+[New LWP 4053044]
+[New LWP 4053043]
+[New LWP 4053042]
+[New LWP 4053041]
+[New LWP 4053040]
+[New LWP 4053039]
+[New LWP 4053038]
+[New LWP 4053037]
+[New LWP 4053036]
+[New LWP 4053034]
+[New LWP 4053033]
+[New LWP 4053032]
+[New LWP 4053031]
+[New LWP 4053028]
+[New LWP 4053027]
+[New LWP 4053026]
+[New LWP 4053025]
+[New LWP 4053024]
+warning: "target:/usr/lib/webkit2gtk-4.1/WebKitWebProcess": could not open as an executable file: Input/output error.
+warning: `target:/usr/lib/webkit2gtk-4.1/WebKitWebProcess': can't open to read symbols: Input/output error.
+warning: Could not load vsyscall page because no executable was specified
+warning: Target and debugger are in different PID namespaces; thread lists and other data are likely unreliable.  Connect to gdbserver inside the container.
+0x00007f6c6cca0952 in ?? ()
+
+Thread 1 "WebKitWebProces" received signal SIGABRT, Aborted.
+0x00007f6c6cc9a17c in ?? ()
+
+Thread 54 (LWP 4053024 "WebKitWebProces"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6c527ff9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000000000000000 in ?? ()
+
+Thread 53 (LWP 4053025 "EventDispatcher"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cd11365 in ?? ()
+#2  0x00007f6c0ddfd9c8 in ?? ()
+#3  0x0000000000000000 in ?? ()
+
+Thread 52 (LWP 4053026 "rruptDispatcher"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cd11365 in ?? ()
+#2  0x00007f6c0d5fc9c8 in ?? ()
+#3  0x0000000000000000 in ?? ()
+
+Thread 51 (LWP 4053027 "uggerDispatcher"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cd11365 in ?? ()
+#2  0x00007f6c0cdfb9c8 in ?? ()
+#3  0x0000000000000000 in ?? ()
+
+Thread 50 (LWP 4053028 "ReceiveQueue"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cd11365 in ?? ()
+#2  0x00007f6c07fff9c8 in ?? ()
+#3  0x0000000000000000 in ?? ()
+
+Thread 49 (LWP 4053031 "ReceiveQueue"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cd11365 in ?? ()
+#2  0x00007f6c077fe9c8 in ?? ()
+#3  0x0000000000000000 in ?? ()
+
+Thread 48 (LWP 4053032 "pool-spawner"):
+#0  0x00007f6c6cd1e4ed in ?? ()
+#1  0x00007f6c6933e15e in ?? ()
+#2  0x0000000000000000 in ?? ()
+
+Thread 47 (LWP 4053033 "gmain"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cd11a57 in ?? ()
+#2  0x00007f6c067fc9c8 in ?? ()
+#3  0x0000000000000000 in ?? ()
+
+Thread 46 (LWP 4053034 "pool-0"):
+#0  0x00007f6c6cd1e4ed in ?? ()
+#1  0x00007f6c6933ef9c in ?? ()
+#2  0x000000003b9ac629 in ?? ()
+#3  0x000000000000000e in ?? ()
+#4  0x0000000000084614 in ?? ()
+#5  0x000000001d274d67 in ?? ()
+#6  0x000000000000000e in ?? ()
+#7  0x000000003b9ac629 in ?? ()
+#8  0x000000001dcd6260 in ?? ()
+#9  0x4781ea48058b5100 in ?? ()
+#10 0x0000557d19f85ca0 in ?? ()
+#11 0x0000557d19f85ca0 in ?? ()
+#12 0x0000557d19f85ca0 in ?? ()
+#13 0x0000000000000008 in ?? ()
+#14 0x00007f6c05ff9f00 in ?? ()
+#15 0x00007f6c692d34f7 in ?? ()
+#16 0x0000000000084614 in ?? ()
+#17 0x000000001d274cea in ?? ()
+#18 0x0000007e3f56239a in ?? ()
+#19 0x0000000000e4e1c0 in ?? ()
+#20 0x0000000000000000 in ?? ()
+
+Thread 45 (LWP 4053036 "gdbus"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cd11a57 in ?? ()
+#2  0x00007f6c057fa9c8 in ?? ()
+#3  0x0000000000000000 in ?? ()
+
+Thread 44 (LWP 4053037 "WebKitW:disk$0"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6c013ff9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x000000001af124b9 in ?? ()
+#5  0x00007f6c013ff6c0 in ?? ()
+#6  0x0000000000000000 in ?? ()
+
+Thread 43 (LWP 4053038 "WebKitWebP:sh0"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6c00bfe9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x000000000001a260 in ?? ()
+#5  0x00007f6c00bfe6c0 in ?? ()
+#6  0x00007f6ac80304e0 in ?? ()
+#7  0x00007f6ac8030510 in ?? ()
+#8  0x00007f6c00bfce90 in ?? ()
+#9  0x00007f6c6cc9754c in ?? ()
+#10 0x0000557d19ff5070 in ?? ()
+#11 0x0000557d19ff5070 in ?? ()
+#12 0x00000000c8030510 in ?? ()
+#13 0x000000000000000e in ?? ()
+#14 0x00007f6c6cc97380 in ?? ()
+#15 0x00007f6c00bfce30 in ?? ()
+#16 0x00007f6c00bfce80 in ?? ()
+#17 0x0000000000000000 in ?? ()
+
+Thread 42 (LWP 4053039 "WebKit:traceq0"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6aeffff9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000003000000030 in ?? ()
+#5  0x00007f6aeffff6c0 in ?? ()
+#6  0x00007f6aefffdde0 in ?? ()
+#7  0x4781ea48058b5100 in ?? ()
+#8  0x00007f6aefffde90 in ?? ()
+#9  0x00007f6c6cc9754c in ?? ()
+#10 0x0000557d1a04a8b8 in ?? ()
+#11 0x0000557d1a04a8b8 in ?? ()
+#12 0x0000000000000000 in ?? ()
+
+Thread 41 (LWP 4053040 "WebKitWe:gdrv0"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6aef7fe9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000003000000030 in ?? ()
+#5  0x00007f6aef7fe6c0 in ?? ()
+#6  0x00007f6aef7fcde0 in ?? ()
+#7  0x4781ea48058b5100 in ?? ()
+#8  0x00007f6aef7fce90 in ?? ()
+#9  0x00007f6c6cc9754c in ?? ()
+#10 0x00007f6c0c1435f8 in ?? ()
+#11 0x00007f6c0c1435f8 in ?? ()
+#12 0x0000000000000000 in ?? ()
+
+Thread 40 (LWP 4053041 "WebKit:traceq0"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6aeeffd9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000003000000030 in ?? ()
+#5  0x00007f6aeeffd6c0 in ?? ()
+#6  0x00007f6aeeffbde0 in ?? ()
+#7  0x4781ea48058b5100 in ?? ()
+#8  0x00007f6aeeffbe90 in ?? ()
+#9  0x00007f6c6cc9754c in ?? ()
+#10 0x0000557d1a10a048 in ?? ()
+#11 0x0000557d1a10a048 in ?? ()
+#12 0x0000000000000000 in ?? ()
+
+Thread 39 (LWP 4053042 "WebKitWe:gdrv0"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6aee7fc9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000003000000030 in ?? ()
+#5  0x00007f6aee7fc6c0 in ?? ()
+#6  0x00007f6aee7fade0 in ?? ()
+#7  0x4781ea48058b5100 in ?? ()
+#8  0x00007f6aee7fae90 in ?? ()
+#9  0x00007f6c6cc9754c in ?? ()
+#10 0x00007f6c04f855f8 in ?? ()
+#11 0x00007f6c04f855f8 in ?? ()
+#12 0x0000000000000000 in ?? ()
+
+Thread 38 (LWP 4053043 "eadedCompositor"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cd11365 in ?? ()
+#2  0x00007f6aedffb9c8 in ?? ()
+#3  0x0000000000000000 in ?? ()
+
+Thread 37 (LWP 4053044 "WebKit:traceq0"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6aed5fa9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000003000000030 in ?? ()
+#5  0x00007f6aed5fa6c0 in ?? ()
+#6  0x00007f6aed5f8de0 in ?? ()
+#7  0x4781ea48058b5100 in ?? ()
+#8  0x00007f6aed5f8e90 in ?? ()
+#9  0x00007f6c6cc9754c in ?? ()
+#10 0x00007f6ab0004018 in ?? ()
+#11 0x00007f6ab0004018 in ?? ()
+#12 0x0000000000000000 in ?? ()
+
+Thread 36 (LWP 4053045 "WebKitWe:gdrv0"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6aecdf99c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000003000000030 in ?? ()
+#5  0x00007f6aecdf96c0 in ?? ()
+#6  0x00007f6aecdf7de0 in ?? ()
+#7  0x4781ea48058b5100 in ?? ()
+#8  0x00007f6aecdf7e90 in ?? ()
+#9  0x00007f6c6cc9754c in ?? ()
+#10 0x00007f6c0178b5f8 in ?? ()
+#11 0x00007f6c0178b5f8 in ?? ()
+#12 0x0000000000000000 in ?? ()
+
+Thread 35 (LWP 4053047 "eadedCompositor"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cd11365 in ?? ()
+#2  0x00007f6acd9ff9c8 in ?? ()
+#3  0x0000000000000000 in ?? ()
+
+Thread 34 (LWP 4053048 "WebKit:traceq0"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6acd1fe9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000003000000030 in ?? ()
+#5  0x00007f6acd1fe6c0 in ?? ()
+#6  0x00007f6acd1fcde0 in ?? ()
+#7  0x4781ea48058b5100 in ?? ()
+#8  0x00007f6acd1fce90 in ?? ()
+#9  0x00007f6c6cc9754c in ?? ()
+#10 0x00007f6aac004018 in ?? ()
+#11 0x00007f6aac004018 in ?? ()
+#12 0x0000000000000000 in ?? ()
+
+Thread 33 (LWP 4053049 "WebKitWe:gdrv0"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6acc9fd9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000003000000030 in ?? ()
+#5  0x00007f6acc9fd6c0 in ?? ()
+#6  0x00007f6acc9fbde0 in ?? ()
+#7  0x4781ea48058b5100 in ?? ()
+#8  0x00007f6acc9fbe90 in ?? ()
+#9  0x00007f6c6cc9754c in ?? ()
+#10 0x00007f6c0003f5f8 in ?? ()
+#11 0x00007f6c0003f5f8 in ?? ()
+#12 0x0000000000000000 in ?? ()
+
+Thread 32 (LWP 4053050 "eadedCompositor"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cd11365 in ?? ()
+#2  0x00007f6a9ffff9c8 in ?? ()
+#3  0x0000000000000000 in ?? ()
+
+Thread 31 (LWP 4053052 "WebKit:traceq0"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6a9f7fe9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000003000000030 in ?? ()
+#5  0x00007f6a9f7fe6c0 in ?? ()
+#6  0x00007f6a9f7fcde0 in ?? ()
+#7  0x4781ea48058b5100 in ?? ()
+#8  0x00007f6a9f7fce90 in ?? ()
+#9  0x00007f6c6cc9754c in ?? ()
+#10 0x00007f6a98004018 in ?? ()
+#11 0x00007f6a98004018 in ?? ()
+#12 0x0000000000000000 in ?? ()
+
+Thread 30 (LWP 4053053 "WebKitWe:gdrv0"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6a9effd9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000003000000030 in ?? ()
+#5  0x00007f6a9effd6c0 in ?? ()
+#6  0x00007f6a9effbde0 in ?? ()
+#7  0x4781ea48058b5100 in ?? ()
+#8  0x00007f6a9effbe90 in ?? ()
+#9  0x00007f6c6cc9754c in ?? ()
+#10 0x00007f6aec0b65f8 in ?? ()
+#11 0x00007f6aec0b65f8 in ?? ()
+#12 0x0000000000000000 in ?? ()
+
+Thread 29 (LWP 4053054 "Core: Scrolling"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cd11365 in ?? ()
+#2  0x00007f6a9e7fc9c8 in ?? ()
+#3  0x0000000000000000 in ?? ()
+
+Thread 28 (LWP 4053055 "SkiaGPUWorker"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6a9dffb9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x00007f6c72899a18 in ?? ()
+#5  0x00007f6a9dffb6c0 in ?? ()
+#6  0x00007f6a9dff9cb0 in ?? ()
+#7  0x00007f6c71f6d249 in ?? ()
+#8  0x00007f6a9dff9d30 in ?? ()
+#9  0x00007f6c6cc9754c in ?? ()
+#10 0x00007f6c4e2ac150 in ?? ()
+#11 0x00007f6c4e2ac150 in ?? ()
+#12 0x00000000988ceeb0 in ?? ()
+#13 0x0000000000000006 in ?? ()
+#14 0x00007f6c6cc97380 in ?? ()
+#15 0x00007f6a9dff9cd0 in ?? ()
+#16 0x00007f6a9dffb9c8 in ?? ()
+#17 0x0000000000000000 in ?? ()
+
+Thread 27 (LWP 4053056 "WebKit:traceq0"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6a9d5fa9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000003000000030 in ?? ()
+#5  0x00007f6a9d5fa6c0 in ?? ()
+#6  0x00007f6a9d5f8de0 in ?? ()
+#7  0x4781ea48058b5100 in ?? ()
+#8  0x00007f6a9d5f8e90 in ?? ()
+#9  0x00007f6c6cc9754c in ?? ()
+#10 0x00007f6a98067758 in ?? ()
+#11 0x00007f6a98067758 in ?? ()
+#12 0x0000000000000000 in ?? ()
+
+Thread 26 (LWP 4053057 "WebKitWe:gdrv0"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6a9cdf99c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000003000000030 in ?? ()
+#5  0x00007f6a9cdf96c0 in ?? ()
+#6  0x00007f6a9cdf7de0 in ?? ()
+#7  0x4781ea48058b5100 in ?? ()
+#8  0x00007f6a9cdf7e90 in ?? ()
+#9  0x00007f6c6cc9754c in ?? ()
+#10 0x00007f6aec0115f8 in ?? ()
+#11 0x00007f6aec0115f8 in ?? ()
+#12 0x0000000000000000 in ?? ()
+
+Thread 25 (LWP 4053062 "JITWorker"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6a97fff9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000000000000000 in ?? ()
+
+Thread 24 (LWP 4053063 "JITWorker"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6a977fe9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000000000000000 in ?? ()
+
+Thread 23 (LWP 4053064 "JITWorker"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6a96ffd9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000000000000000 in ?? ()
+
+Thread 22 (LWP 4053065 "WebKitW:disk$1"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6a963389c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x000000001b015065 in ?? ()
+#5  0x00007f6a963386c0 in ?? ()
+#6  0x0000000000000000 in ?? ()
+
+Thread 21 (LWP 4053068 "SkiaGPUWorker"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6a95b379c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x00007f6c72899a18 in ?? ()
+#5  0x00007f6a95b376c0 in ?? ()
+#6  0x00007f6a95b35cb0 in ?? ()
+#7  0x00007f6c71f6d249 in ?? ()
+#8  0x00007f6a95b35d30 in ?? ()
+#9  0x00007f6c6cc9754c in ?? ()
+#10 0x00007f6c4e9ec1d0 in ?? ()
+#11 0x00007f6c4e9ec1d0 in ?? ()
+#12 0x00000000a81701f0 in ?? ()
+#13 0x0000000000000002 in ?? ()
+#14 0x00007f6c6cc97380 in ?? ()
+#15 0x00007f6a95b35cd0 in ?? ()
+#16 0x00007f6a95b379c8 in ?? ()
+#17 0x0000000000000000 in ?? ()
+
+Thread 20 (LWP 4053069 "WebKit:traceq0"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6a951369c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000003000000030 in ?? ()
+#5  0x00007f6a951366c0 in ?? ()
+#6  0x00007f6a95134de0 in ?? ()
+#7  0x4781ea48058b5100 in ?? ()
+#8  0x00007f6a95134e90 in ?? ()
+#9  0x00007f6c6cc9754c in ?? ()
+#10 0x00007f6aa8003e88 in ?? ()
+#11 0x00007f6aa8003e88 in ?? ()
+#12 0x0000000000000000 in ?? ()
+
+Thread 19 (LWP 4053070 "WebKitWe:gdrv0"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6a949359c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000003000000030 in ?? ()
+#5  0x00007f6a949356c0 in ?? ()
+#6  0x00007f6a94933de0 in ?? ()
+#7  0x4781ea48058b5100 in ?? ()
+#8  0x00007f6a94933e90 in ?? ()
+#9  0x00007f6c6cc9754c in ?? ()
+#10 0x00007f6aa801b228 in ?? ()
+#11 0x00007f6aa801b228 in ?? ()
+#12 0x0000000000000000 in ?? ()
+
+Thread 18 (LWP 4053071 "WebKitWebP:sh1"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6a8fbbe9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000000001000000 in ?? ()
+#5  0x00007f6a8fbbe6c0 in ?? ()
+#6  0x00007f6abc000e80 in ?? ()
+#7  0x00007f6abc000eb0 in ?? ()
+#8  0x00007f6a8fbbce90 in ?? ()
+#9  0x00007f6c6cc9754c in ?? ()
+#10 0x0000557d19ff5074 in ?? ()
+#11 0x0000557d19ff5074 in ?? ()
+#12 0x00000001bc02b1e0 in ?? ()
+#13 0x000000000000000d in ?? ()
+#14 0x00007f6c6cc97380 in ?? ()
+#15 0x00007f6a8fbbce30 in ?? ()
+#16 0x00007f6a8fbbce80 in ?? ()
+#17 0x0000000000000000 in ?? ()
+
+Thread 17 (LWP 4053072 "WebKitW:disk$2"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6a8f3bd9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x000000001ac35dff in ?? ()
+#5  0x00007f6a8f3bd6c0 in ?? ()
+#6  0x0000000000000000 in ?? ()
+
+Thread 16 (LWP 4053073 "WebKitW:disk$3"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6a8eb5c9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x000000001b015065 in ?? ()
+#5  0x00007f6a8eb5c6c0 in ?? ()
+#6  0x0000000000000000 in ?? ()
+
+Thread 15 (LWP 4053083 "HeapHelper"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6a8bfff9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000000000084615 in ?? ()
+#5  0x00007f6a8bfff6c0 in ?? ()
+#6  0x41208c2ae848387e in ?? ()
+#7  0x4781ea48058b5100 in ?? ()
+#8  0x00007f6a8bffdd30 in ?? ()
+#9  0x00007f6c6cc97762 in ?? ()
+#10 0x4781ea48058b5100 in ?? ()
+#11 0x000000000000009b in ?? ()
+#12 0x00007f6a8bffdd50 in ?? ()
+#13 0x000000000000004b in ?? ()
+#14 0x0000000100000000 in ?? ()
+#15 0x000000000000004d in ?? ()
+#16 0x00007f6c6cc97380 in ?? ()
+#17 0x00007f6a8bffdcd0 in ?? ()
+#18 0x00007f6c6cc9d430 in ?? ()
+#19 0x0000000000000000 in ?? ()
+
+Thread 14 (LWP 4053084 "HeapHelper"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6a8b7fe9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000000000084615 in ?? ()
+#5  0x00007f6a8b7fe6c0 in ?? ()
+#6  0x41208c2ae847b246 in ?? ()
+#7  0x4781ea48058b5100 in ?? ()
+#8  0x00007f6a8b7fcd30 in ?? ()
+#9  0x00007f6c6cc97762 in ?? ()
+#10 0x4781ea48058b5100 in ?? ()
+#11 0x00000000000000ab in ?? ()
+#12 0x00007f6a8b7fcd50 in ?? ()
+#13 0x0000000000000053 in ?? ()
+#14 0x0000000100000000 in ?? ()
+#15 0x0000000000000055 in ?? ()
+#16 0x00007f6c6cc97380 in ?? ()
+#17 0x00007f6a8b7fccd0 in ?? ()
+#18 0x00007f6c6cc9d430 in ?? ()
+#19 0x0000000000000000 in ?? ()
+
+Thread 13 (LWP 4053085 "HeapHelper"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6a8affd9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000000000084615 in ?? ()
+#5  0x00007f6a8affd6c0 in ?? ()
+#6  0x41208c2ae84a72eb in ?? ()
+#7  0x4781ea48058b5100 in ?? ()
+#8  0x00007f6a8affbd30 in ?? ()
+#9  0x00007f6c6cc97762 in ?? ()
+#10 0x4781ea48058b5100 in ?? ()
+#11 0x00000000000000af in ?? ()
+#12 0x00007f6a8affbd50 in ?? ()
+#13 0x0000000000000055 in ?? ()
+#14 0x0000000100000000 in ?? ()
+#15 0x0000000000000057 in ?? ()
+#16 0x00007f6c6cc97380 in ?? ()
+#17 0x00007f6a8affbcd0 in ?? ()
+#18 0x00007f6c6cc9d430 in ?? ()
+#19 0x0000000000000000 in ?? ()
+
+Thread 12 (LWP 4053086 "HeapHelper"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6a8a7fc9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000000000084615 in ?? ()
+#5  0x00007f6a8a7fc6c0 in ?? ()
+#6  0x41208c2ae8489d28 in ?? ()
+#7  0x4781ea48058b5100 in ?? ()
+#8  0x00007f6a8a7fad30 in ?? ()
+#9  0x00007f6c6cc97762 in ?? ()
+#10 0x4781ea48058b5100 in ?? ()
+#11 0x00000000000000b4 in ?? ()
+#12 0x00007f6a8a7fad50 in ?? ()
+#13 0x0000000000000058 in ?? ()
+#14 0x0000000000000000 in ?? ()
+
+Thread 11 (LWP 4053087 "HeapHelper"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6a89ffb9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000000000084615 in ?? ()
+#5  0x00007f6a89ffb6c0 in ?? ()
+#6  0x41208c2ae866c2ad in ?? ()
+#7  0x4781ea48058b5100 in ?? ()
+#8  0x00007f6a89ff9d30 in ?? ()
+#9  0x00007f6c6cc97762 in ?? ()
+#10 0x4781ea48058b5100 in ?? ()
+#11 0x00000000000000b0 in ?? ()
+#12 0x00007f6a89ff9d50 in ?? ()
+#13 0x0000000000000056 in ?? ()
+#14 0x0000000000000000 in ?? ()
+
+Thread 10 (LWP 4053088 "HeapHelper"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6a897fa9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000000000084615 in ?? ()
+#5  0x00007f6a897fa6c0 in ?? ()
+#6  0xffffffff897f8ca0 in ?? ()
+#7  0x4781ea48058b5100 in ?? ()
+#8  0x00007f6a897f8d30 in ?? ()
+#9  0x00007f6c6cc97762 in ?? ()
+#10 0x4781ea48058b5100 in ?? ()
+#11 0x00000000000000e8 in ?? ()
+#12 0x00007f6a897f8d50 in ?? ()
+#13 0x0000000000000072 in ?? ()
+#14 0x0000000000000000 in ?? ()
+
+Thread 9 (LWP 4053089 "HeapHelper"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6a88ff99c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000000000084615 in ?? ()
+#5  0x00007f6a88ff96c0 in ?? ()
+#6  0x41208c2ae8487b9a in ?? ()
+#7  0x4781ea48058b5100 in ?? ()
+#8  0x00007f6a88ff7d30 in ?? ()
+#9  0x00007f6c6cc97762 in ?? ()
+#10 0x4781ea48058b5100 in ?? ()
+#11 0x00000000000000f0 in ?? ()
+#12 0x00007f6a88ff7d50 in ?? ()
+#13 0x0000000000000076 in ?? ()
+#14 0x0000000000000000 in ?? ()
+
+Thread 8 (LWP 4053090 "ollector Thread"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6a887f89c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x00007f6a887f6c80 in ?? ()
+#5  0x00007f6a887f86c0 in ?? ()
+#6  0x0000000000084614 in ?? ()
+#7  0x0000000031416e27 in ?? ()
+#8  0x00007f6a887f6d30 in ?? ()
+#9  0x00007f6c6cc97762 in ?? ()
+#10 0x00007f6a887f6d00 in ?? ()
+#11 0x0000000000000017 in ?? ()
+#12 0x00007f6a887f6d50 in ?? ()
+#13 0x0000000000000009 in ?? ()
+#14 0x0000000100000000 in ?? ()
+#15 0x000000000000000b in ?? ()
+#16 0x00007f6c6cc97380 in ?? ()
+#17 0x00007f6a887f6cd0 in ?? ()
+#18 0x00007f6c6cc9d430 in ?? ()
+#19 0x0000000000000000 in ?? ()
+
+Thread 7 (LWP 4053094 "SkiaGPUWorker"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6a87ff79c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x00007f6c72899a18 in ?? ()
+#5  0x00007f6a87ff76c0 in ?? ()
+#6  0x00007f6a87ff5cb0 in ?? ()
+#7  0x00007f6c71f6d249 in ?? ()
+#8  0x00007f6a87ff5d30 in ?? ()
+#9  0x00007f6c6cc9754c in ?? ()
+#10 0x00007f6c4edbc1d4 in ?? ()
+#11 0x00007f6c4edbc1d4 in ?? ()
+#12 0x00000001c80c1bd0 in ?? ()
+#13 0x0000000000000007 in ?? ()
+#14 0x00007f6c6cc97380 in ?? ()
+#15 0x00007f6a87ff5cd0 in ?? ()
+#16 0x00007f6a87ff79c8 in ?? ()
+#17 0x0000000000000000 in ?? ()
+
+Thread 6 (LWP 4053095 "SkiaGPUWorker"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6a877f69c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x00007f6c72899a18 in ?? ()
+#5  0x00007f6a877f66c0 in ?? ()
+#6  0x00007f6a877f4cb0 in ?? ()
+#7  0x00007f6c71f6d249 in ?? ()
+#8  0x00007f6a877f4d30 in ?? ()
+#9  0x00007f6c6cc9754c in ?? ()
+#10 0x00007f6c4ed70150 in ?? ()
+#11 0x00007f6c4ed70150 in ?? ()
+#12 0x00000000c009d420 in ?? ()
+#13 0x0000000000000004 in ?? ()
+#14 0x00007f6c6cc97380 in ?? ()
+#15 0x00007f6a877f4cd0 in ?? ()
+#16 0x00007f6ac009d860 in ?? ()
+#17 0x0000000000000000 in ?? ()
+
+Thread 5 (LWP 4053096 "WebKit:traceq0"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6a86df59c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000003000000030 in ?? ()
+#5  0x00007f6a86df56c0 in ?? ()
+#6  0x00007f6a86df3de0 in ?? ()
+#7  0x4781ea48058b5100 in ?? ()
+#8  0x00007f6a86df3e90 in ?? ()
+#9  0x00007f6c6cc9754c in ?? ()
+#10 0x00007f6ac0003e88 in ?? ()
+#11 0x00007f6ac0003e88 in ?? ()
+#12 0x0000000000000000 in ?? ()
+
+Thread 4 (LWP 4053097 "WebKitWe:gdrv0"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6a865f49c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000003000000030 in ?? ()
+#5  0x00007f6a865f46c0 in ?? ()
+#6  0x00007f6a865f2de0 in ?? ()
+#7  0x4781ea48058b5100 in ?? ()
+#8  0x00007f6a865f2e90 in ?? ()
+#9  0x00007f6c6cc9754c in ?? ()
+#10 0x00007f6ac001aef8 in ?? ()
+#11 0x00007f6ac001aef8 in ?? ()
+#12 0x0000000000000000 in ?? ()
+
+Thread 3 (LWP 4053098 "WebKit:traceq0"):
+#0  0x00007f6c6cc{"passed": false, "report": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-accessibility-1791661776831341039/report.json", "error": "AssertionError('OwnedClientNormalExit')"}
+a0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6a85b259c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000003000000030 in ?? ()
+#5  0x00007f6a85b256c0 in ?? ()
+#6  0x00007f6a85b23de0 in ?? ()
+#7  0x4781ea48058b5100 in ?? ()
+#8  0x00007f6a85b23e90 in ?? ()
+#9  0x00007f6c6cc9754c in ?? ()
+#10 0x00007f6ac806cb98 in ?? ()
+#11 0x00007f6ac806cb98 in ?? ()
+#12 0x0000000000000000 in ?? ()
+
+Thread 2 (LWP 4053099 "WebKitWe:gdrv0"):
+#0  0x00007f6c6cca0952 in ?? ()
+#1  0x00007f6c6cc94cd9 in ?? ()
+#2  0x00007f6a853249c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000003000000030 in ?? ()
+#5  0x00007f6a853246c0 in ?? ()
+#6  0x00007f6a85322de0 in ?? ()
+#7  0x4781ea48058b5100 in ?? ()
+#8  0x00007f6a85322e90 in ?? ()
+#9  0x00007f6c6cc9754c in ?? ()
+#10 0x00007f6ac807ad18 in ?? ()
+#11 0x00007f6ac807ad18 in ?? ()
+#12 0x0000000000000000 in ?? ()
+
+Thread 1 (LWP 4053023 "WebKitWebProces"):
+#0  0x00007f6c6cc9a17c in ?? ()
+#1  0x00007f6c4e65c000 in ?? ()
+#2  0x00007f6c5280e910 in ?? ()
+#3  0x0000000000000000 in ?? ()
+[Inferior 1 (process 4053023) detached]

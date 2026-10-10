@@ -1,0 +1,171 @@
+{
+  "schema": 1,
+  "requirements": [
+    "ELM-UI-006"
+  ],
+  "scenarios": [
+    "overview-retire"
+  ],
+  "sourceBaseRevision": "4c3e31ddc8ac46756ed8a53ebfd0f8179f834bbb",
+  "sourceHashes": {
+    "implementation/warlock/src/Desktop.elm": "9e295f97cd16c45e6522b5d670ec88a434d090c38527ce11d30ae7379840a233",
+    "implementation/warlock/qa/TaskViewReplay.elm": "28d5e83576a355c5c19587d1b3d239b097fa23f717d7e72cddd309f6b27a7123",
+    "implementation/warlock/qa/overview-retirement.qnt": "ec74723b993632770f6f446e80e4a07ef2109fce42977ff3d3da8992660b0133",
+    "implementation/warlock/qa/overview-retirement_test.qnt": "ff5d6737545401449781a910d64d73aa7e5ff9ee97725649d9321b3f899e8d3d",
+    "implementation/warlock/qa/check-overview-retirement.py": "023adb0fa7c275f17640bc9a7cee956c82a5d7da12e6c069598f78a2fe2b2ce8",
+    "implementation/warlock/qa/native-taskview-retirement.py": "2ce440ccbe730e425caa5d17c61a5520e7bbd90d9b58fa055563d4da88dad941",
+    "implementation/warlock/qa/check-search.py": "b3c1f91bfc526955eccea4f635d812b405ae6687565cca08e123625940a20fd0",
+    "implementation/warlock/qa/current-search-build.json": "f437270e4b4249e6c0e0f0fa15af4582e3f3a2f46db51f195deb858fc284be2d",
+    "implementation/warlock/assets/elm.js": "cefce47093eb9e5f1884a69a7c7449693301f04986096cbcdbb30651225c2a9d",
+    "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+    "implementation/warlock/assets/popup.js": "a20165e1d339c0d518286cac3e973cdd30f1fe20401295434d8c5361e1aa4b22",
+    "implementation/warlock/README.md": "54653aa763deed5c019cd1b6eebb0c3fbd9dc9925a03a76bd1e097c316f0c120"
+  },
+  "scope": "Native selected transfer member closes in a retained existing workspace; chooser returns to current filtered browse focus/pixels with zero mutations or replacement. Escape returns actual client keyboard recipient. Separate original workspace-retirement case/model/compiled integration negatives are retained.",
+  "missingObservations": [
+    "Applicable original overview-retire AT/Orca observations and independent acceptance.",
+    "The separately retained WebKit actual AT traversal abort is unresolved.",
+    "Other original overview scenarios and full release acceptance remain separate."
+  ],
+  "nativeAcceptance": false,
+  "assistiveTechnologyAccepted": false,
+  "fullReleaseAccepted": false,
+  "nativePair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
+      "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791657775676809428/elm-window-geometry-authority.so",
+      "sha256": "ae84313c512d0ba398e7f931c5c877eb69d7635588fbbd11b71a729386fcbfd2"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+      "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/task-view-1791662637530493951/elm-host",
+    "sha256": "0a2012c0c311fb48a1d7e3adaac8eecb83a08f0b98a1b5697274a64edecdd609",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/task-view-1791662637530493951/report.json",
+    "heldBuildSHA256": "1acbecb09131e00071064cd436701e208ec357605250d3397e7c2eea9cf222aa"
+  },
+  "quintWorkflow": {
+    "kit": "quint-llm-kit",
+    "skills": [
+      "quint-modeling",
+      "quint-execute-spec"
+    ],
+    "modelPrecededImplementation": true,
+    "originalModelsChanged": false,
+    "modelReport": "implementation/warlock/qa/evidence/taskview-transfer-retirement/model.report.json",
+    "limits": "Coherent abstract membership, exact incarnation retirement, safe browse focus command/idempotence and zero mutation only; native authority, physical focus, transport timing, paint and AT are external observations."
+  },
+  "artifacts": [
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-retirement/model.report.json",
+      "sha256": "cefe1e8da0b7baff17e710f61e5223f35d8957bd9dc0f9e0ce0c4777a7136d1a",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/overview-retirement-1791662369961563491/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-retirement/model.named.stdout",
+      "sha256": "4bf51cb84e31324bb1b516e0703e888c1824d8e8f35ac86a354d1ccbb53597ed",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/overview-retirement-1791662369961563491/named.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-retirement/model.witness-safety.stdout",
+      "sha256": "bbf7a0ff36ceee0c757bc3ea1dfc72fef9cca51e6378b1e45133b52795f4cec8",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/overview-retirement-1791662369961563491/witness-safety.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-retirement/initial-model-failed.report.json",
+      "sha256": "aff582076f2a25f93315b4868f3bc6b29090bc9f91e9a2bbf5cc142991141e7b",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/overview-retirement-1791662346968244908/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-retirement/initial-model-failed.named.stdout",
+      "sha256": "6810ddfb1e8280e47b512080d0e9ebdd8bf4047d36fa6ce0a400c28388aa2e7a",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/overview-retirement-1791662346968244908/named.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-retirement/initial-model-failed.witness-safety.stdout",
+      "sha256": "67b06e80ddfb35323720c0d05202d19393897fef279c4eebbc3ea96fd95d8679",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/overview-retirement-1791662346968244908/witness-safety.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-retirement/initial-overview-retirement.qnt",
+      "sha256": "971fd30f2c139856a5748d06a781169357b43d36fd11616919037059f6fefba8",
+      "scope": "Reconstructed exact initial own model bytes, matched to the immutable initial report hash."
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-retirement/initial-overview-retirement_test.qnt",
+      "sha256": "08fe5586b29271669db07519c1a0e0df75da5f7607c873e6999345e2f282a9a1",
+      "scope": "Reconstructed exact initial own model bytes, matched to the immutable initial report hash."
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-retirement/build-report.json",
+      "sha256": "1acbecb09131e00071064cd436701e208ec357605250d3397e7c2eea9cf222aa",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/task-view-1791662637530493951/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-retirement/task-view.json",
+      "sha256": "73be7bcab3dfcdc594df853cac48a69bfaa602dcadd9543fc6198da1a46ac565",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/task-view-1791662637530493951/task-view.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-retirement/test-variable-failed.build-report.json",
+      "sha256": "adda476cae1d89af934600ed4fa4f7dce3a97d13a61e401c9369747d8f5ad8b6",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/task-view-1791662622638374403/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-retirement/test-variable-failed.stderr",
+      "sha256": "7ee52d0abfdbe7869a94eabb5218fb49a28d3ba8bcb4ac4163941dd6bf1510cc",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/task-view-1791662622638374403/compile-task-view.stderr"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-retirement/workspace-removal-baseline-pass.report.json",
+      "sha256": "f216eeda4a7ad2bab61d183b79c6904ab173522d610f2cdf8adfa8f569e94480",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-workspace-navigation-1791662449126284304/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-retirement/workspace-removal-baseline-pass.warlock.log",
+      "sha256": "68b920da5841eeac86b2bc85655476d9182e52e974f970225f5ebbebd67fc149",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791662449126388502/warlock.log"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-retirement/retained-workspace-baseline-failed.report.json",
+      "sha256": "4c68ed1a3b8350219422e71d1fc5b1e8d024f8594771741dbf4d2da6cff3ee8c",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-workspace-navigation-1791662509260621165/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-retirement/retained-workspace-baseline-failed.warlock.log",
+      "sha256": "5d942fd5ba8707fbe71861fa94c96e2c9d34cb69b74c3915f8ca5551e672c113",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791662509260715497/warlock.log"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-retirement/current-retained-workspace-pass.report.json",
+      "sha256": "edaeaab6bfc255ab37cc5ca963514c4c5a4952b03ac5450a3f6db26bf12b2b0f",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-workspace-navigation-1791662664107766637/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-retirement/current-retained-workspace-pass.warlock.log",
+      "sha256": "9ccd317cc9793fd752fcf464c2f3e195409faa3d77ea264bf953f53bebcb74be",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791662664107866457/warlock.log"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-retirement/current-retired-transfer.png",
+      "sha256": "91f81f4aa2df5cca27dfafa2beb8ba8479f549149d0e0ddb9bd479bc656215cb",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791662664107866457/popup-retired-transfer-browse.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-retirement/retained-workspace-runner.py",
+      "sha256": "2ce440ccbe730e425caa5d17c61a5520e7bbd90d9b58fa055563d4da88dad941",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/native-taskview-retirement.py"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-retirement/workspace-removal-baseline-runner.py",
+      "sha256": "eba4c6ac5588466814c9f37071d5ecf44b860b0206ce59dc72785beb1454bf31",
+      "scope": "Exact first own runner bytes reconstructed and matched to held runner hash."
+    }
+  ]
+}

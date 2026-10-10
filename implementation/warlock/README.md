@@ -636,3 +636,9 @@ When a workspace switch cannot be confirmed, the taskbar now offers **Refresh wo
 Task View's selected workspace filter now exposes pressed toggle-button state to native assistive technology, using the existing immutable Elm selection. Strict native admission requires exactly one selected filter and rejects incomplete, conflicting or foreign checked state. Browsing still submits no window or workspace mutation.
 
 The [scoped evidence](qa/evidence/taskview-filter-accessibility/README.md) retains the passing compiled/model/native-admission checks and actual AT-SPI selected-state observation. The full keyboard/Orca journey fails when WebKit crashes while tabbing to workspace 2; its original deadline and normal-client-exit failure remain intact. Native restore, dismissal focus return and independent original ELM-UI-006 acceptance on this updated tuple remain open.
+
+### Transfer member retirement — October 10
+
+If the selected transfer window closes while its workspace remains, Task View now returns to that workspace's browse view with current keyboard focus. If the workspace also disappears, it returns to All windows. Incomplete observations keep the choice intact; another incarnation cannot replace it, and retirement emits no native action.
+
+The [native before/after evidence](qa/evidence/taskview-transfer-retirement/README.md) records the stranded-chooser failure and the corrected filtered view, painted controls, no replacement activation and physical keyboard return after Escape. The new quint-llm-kit model precedes implementation and the original Task View assertions remain passing. Applicable AT and independent original overview-retire acceptance remain open.

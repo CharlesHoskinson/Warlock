@@ -1,6 +1,7 @@
 """Focused compiled launcher/search integration, protected CPU scope only."""
 import pathlib,hashlib,json,os,sys,time,shutil,subprocess,shlex,importlib.util,concurrent.futures,http.server,threading
 EMPTYNAV=sys.argv[1:]==['--empty-workspace-navigation']
+RETIREMENT=sys.argv[1:]==['--overview-retirement']
 INVENTORY=sys.argv[1:]==['--workspace-inventory']
 RECOVERY=sys.argv[1:]==['--overview-recovery']
 RELEVANCE=sys.argv[1:]==['--notification-relevance']
@@ -48,7 +49,7 @@ DENSE=sys.argv[1:]==['--dense-taskbar'] or PICKER
 PINMENUS=sys.argv[1:]==['--pinned-menus'] or (DENSE and not PICKER)
 PRIMARY=(DESCRIPTION and not FALLBACK) or sys.argv[1:]==['--taskbar-primary'] or PINMENUS or PICKER
 SWITCHER=sys.argv[1:]==['--switcher'] or ACCESSIBILITY
-NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'] or LOCALFIELD;POPUP=sys.argv[1:]==['--native-popup'] or QUIESCENT or SHUTDOWN or BARRETURN;TASKVIEW=EMPTYNAV or INVENTORY or RECOVERY or sys.argv[1:]==['--task-view'] or NAV or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION or KEYBOARD or DRAG or IME or TRANSFER or MOTION or PINMAX or ANNOUNCEMENTS;assert not sys.argv[1:] or PINS or POPUP or TASKVIEW or PRIMARY or SWITCHER or PREVIEW
+NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'] or LOCALFIELD;POPUP=sys.argv[1:]==['--native-popup'] or QUIESCENT or SHUTDOWN or BARRETURN;TASKVIEW=RETIREMENT or EMPTYNAV or INVENTORY or RECOVERY or sys.argv[1:]==['--task-view'] or NAV or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION or KEYBOARD or DRAG or IME or TRANSFER or MOTION or PINMAX or ANNOUNCEMENTS;assert not sys.argv[1:] or PINS or POPUP or TASKVIEW or PRIMARY or SWITCHER or PREVIEW
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143'
 sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
 scope=require_qa_scope();sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
@@ -216,6 +217,9 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
  if RECOVERY:
   report['overviewRecoveryModel']=json.loads(run('overview-recovery-model',['/usr/bin/python3','-B','qa/check-overview-recovery.py']));assert report['overviewRecoveryModel']['passed']
   report.update(requirements=['ELM-UI-006'],scenarios=['overview-refusal'],scope='Compiled exact-intent overview refusal recovery; model/typed/renderer evidence only. Native original acceptance remains separate.')
+ if RETIREMENT:
+  report['overviewRetirementModel']=json.loads(run('overview-retirement-model',['/usr/bin/python3','-B','qa/check-overview-retirement.py']));assert report['overviewRetirementModel']['passed']
+  report.update(requirements=['ELM-UI-006'],scenarios=['overview-retire'],scope='Compiled exact coherent transfer-member retirement and safe current browse focus; original Task View assertions retained. Native/AT/independent acceptance remain separate.')
  if TASKVIEW and not IME:
   run('compile-task-view',[str(HELD/pinned['compiler']),'make','qa/TaskViewReplay.elm','--optimize','--output=assets/task-view.js'])
   (INPUT/'qa/task-view-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.TaskViewReplay'));run('typed-task-view',['node','qa/task-view-replay.js','assets/task-view.js',str(OUT/'task-view.json')]);report['typedTaskView']=json.loads((OUT/'task-view.json').read_text());assert all(report['typedTaskView']['checks'].values())

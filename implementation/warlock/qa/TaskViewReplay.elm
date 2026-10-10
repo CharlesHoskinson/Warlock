@@ -91,10 +91,34 @@ result =
         closed=scoped Desktop.CloseOverview model
         windows=model.windows
         shell=windows.shell
+        effects=shell.effects
         independentRevision={model | windows={windows | shell={shell | geometry=Maybe.map (\g -> {g | context={context | revision=two}}) shell.geometry}}}
         wrongOutput={model | windows={windows | shell={shell | geometry=Maybe.map (\g -> {g | context={context | output=two}}) shell.geometry}}}
         wrongFocus={model | windows={windows | shell={shell | geometry=Maybe.map (\g -> {g | focused=Just two}) shell.geometry}}}
         wrongState={model | windows={windows | shell={shell | geometry=Maybe.map (\g -> {g | windows=List.map (\w -> {w | minimized=True}) g.windows}) shell.geometry}}}
+        transferInventory=binding |> Maybe.map (\b -> {binding=b,request=one,sequence=one,revision=one,output=one,active=Just "1",rows=[{identity="1",generation=one,monitor=UInt64.zero,outputOwnershipGeneration=one},{identity="2",generation=two,monitor=UInt64.zero,outputOwnershipGeneration=one}]})
+        transferOrigin={model | overviewWorkspace=Just "2",overviewTransfer=Just two,workspaceInventory=transferInventory}
+        remainingScene=Scene.decode (E.object [("revision",E.string "1"),("focused",E.string "1"),("windows",E.list identity [window "1" "Editor" True])]) |> Result.toMaybe
+        retiredTransfer={transferOrigin | windows={windows | shell={shell | effects={effects | observed=remainingScene |> Maybe.map (\s -> {context=context,scene=s})},geometry=Maybe.map (\g -> {g | windows=[geometryWindow one "1"]}) shell.geometry}}}
+        retirementTick current=scoped (\stamp -> Desktop.SearchQuery stamp "") current
+        retiredTransferResult=retirementTick retiredTransfer
+        retiredTransferModel=Tuple.first retiredTransferResult
+        duplicateRetirement=retirementTick retiredTransferModel
+        wholeWorkspaceRetired=retirementTick {retiredTransfer | workspaceInventory=Nothing}
+        incoherentTransfer=retirementTick {retiredTransfer | windows={windows | shell={shell | effects={effects | observed=remainingScene |> Maybe.map (\s -> {context=context,scene=s})},geometry=Maybe.map (\g -> {g | context={context | output=two},windows=[geometryWindow one "1"]}) shell.geometry}}}
+        existingTransfer=retirementTick transferOrigin
+        closedTransfer=retirementTick {retiredTransfer | overview=False}
+        replacementScene=Scene.decode (E.object [("revision",E.string "1"),("focused",E.string "1"),("windows",E.list identity [window "1" "Editor" True,window "3" "Files" True])]) |> Result.toMaybe
+        replacementGeometry=geometryWindow (counter "3") "2"
+        replacementTransfer=retirementTick {transferOrigin | windows={windows | shell={shell | effects={effects | observed=replacementScene |> Maybe.map (\s -> {context=context,scene=s})},geometry=Maybe.map (\g -> {g | windows=[geometryWindow one "1",{replacementGeometry | workspaceGeneration=Just two}]}) shell.geometry}}}
+        retirementChecks=[("retiredTransferReturnsCurrentRetainedWorkspaceFocus",retiredTransferModel.overview && retiredTransferModel.overviewTransfer==Nothing && retiredTransferModel.overviewWorkspace==Just "2" && focuses (Tuple.second retiredTransferResult)==[Desktop.key retiredTransferModel "overview:workspace:2"] && List.isEmpty (mutations (Tuple.second retiredTransferResult))),
+            ("retiredTransferChooserHasVisibleBrowseAndDismissal",Surface.controls retiredTransferModel |> List.any (\control -> control.ariaLabel=="Close Task View and return to windows" && control.enabled)),
+            ("retiredTransferDoesNotRepeatFocus",List.isEmpty (focuses (Tuple.second duplicateRetirement)) && List.isEmpty (mutations (Tuple.second duplicateRetirement))),
+            ("retiredTransferAndWorkspaceReturnAll",(Tuple.first wholeWorkspaceRetired).overviewTransfer==Nothing && (Tuple.first wholeWorkspaceRetired).overviewWorkspace==Nothing && focuses (Tuple.second wholeWorkspaceRetired)==[Desktop.key (Tuple.first wholeWorkspaceRetired) "overview:all"]),
+            ("incoherentTransferObservationCannotRetireSelection",(Tuple.first incoherentTransfer).overviewTransfer==Just two && List.isEmpty (focuses (Tuple.second incoherentTransfer)) && List.isEmpty (mutations (Tuple.second incoherentTransfer))),
+            ("existingUnavailableExactMemberKeepsTransferChooser",(Tuple.first existingTransfer).overviewTransfer==Just two && List.isEmpty (focuses (Tuple.second existingTransfer))),
+            ("closedTransferNeverRefocuses",List.isEmpty (focuses (Tuple.second closedTransfer)) && List.isEmpty (mutations (Tuple.second closedTransfer))),
+            ("sameApplicationNewIncarnationNeverSubstitutes",(Tuple.first replacementTransfer).overviewTransfer==Nothing && (Tuple.first replacementTransfer).choice==Nothing && List.isEmpty (mutations (Tuple.second replacementTransfer)) && focuses (Tuple.second replacementTransfer)==[Desktop.key (Tuple.first replacementTransfer) "overview:workspace:2"])]
         frame=Surface.packet one one model
         navigationOpened=scoped Desktop.OpenOverview restorableBase |> Tuple.first
         navigationSelected=scoped (\stamp -> Desktop.OverviewChoose stamp two) navigationOpened
@@ -193,4 +217,4 @@ result =
             ("staleNavigationObservationNeverMutates",Tuple.first navigationStale==navigationPending && List.isEmpty (mutations (Tuple.second navigationStale))),
             ("retiredNavigationRootNeverSubstitutes",(Tuple.first navigationRetired).choice==Nothing && List.isEmpty (mutations (Tuple.second navigationRetired))),
             ("duplicateNavigationObservationNeverReplays",List.isEmpty (mutations (Tuple.second navigationRepeated)))]
-    in E.object [("checks",E.object (List.map (\(name,passed) -> (name,E.bool passed)) (checks++recoveryChecks++inventoryChecks))),("frame",frame)]
+    in E.object [("checks",E.object (List.map (\(name,passed) -> (name,E.bool passed)) (checks++recoveryChecks++inventoryChecks++retirementChecks))),("frame",frame)]

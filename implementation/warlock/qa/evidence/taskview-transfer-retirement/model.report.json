@@ -1,0 +1,70 @@
+{
+  "passed": true,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-78be88e5da794276a780763c58e55f3f.scope",
+    "coreLimit": 1
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/overview-retirement.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "tests-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/overview-retirement_test.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/overview-retirement_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=82412"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "witness-safety",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/overview-retirement.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--witnesses",
+        "filterReturnWitness",
+        "allReturnWitness",
+        "incoherentHeldWitness",
+        "--max-samples=1000",
+        "--max-steps=25",
+        "--seed=82413"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/overview-retirement.qnt": "ec74723b993632770f6f446e80e4a07ef2109fce42977ff3d3da8992660b0133",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/overview-retirement_test.qnt": "ff5d6737545401449781a910d64d73aa7e5ff9ee97725649d9321b3f899e8d3d"
+  },
+  "scope": "Exact coherent transfer-member retirement and valid workspace/All browse-focus fallback; no implicit replacement or native mutation, duplicate/incomplete/closed/authority lifecycle. Native/AT input, pixels, grant identity and transport timing are separate.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "witnesses": {
+    "filterReturnWitness": 57,
+    "allReturnWitness": 95,
+    "incoherentHeldWitness": 217
+  }
+}

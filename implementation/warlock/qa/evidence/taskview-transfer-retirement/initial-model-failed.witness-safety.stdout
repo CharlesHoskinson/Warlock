@@ -1,0 +1,137 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      coherent: true,
+      focus: 0,
+      focusCommands: 0,
+      live: Set(7, 8),
+      mutations: 0,
+      open: true,
+      selected: 2,
+      transfer: 7,
+      workspaces: Set(1, 2)
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      coherent: true,
+      focus: 0,
+      focusCommands: 0,
+      live: Set(7, 8),
+      mutations: 0,
+      open: true,
+      selected: 2,
+      transfer: 7,
+      workspaces: Set(1, 2)
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      coherent: true,
+      focus: 0,
+      focusCommands: 0,
+      live: Set(7, 8),
+      mutations: 0,
+      open: true,
+      selected: 2,
+      transfer: 7,
+      workspaces: Set(1, 2)
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      coherent: true,
+      focus: 0,
+      focusCommands: 0,
+      live: Set(8),
+      mutations: 0,
+      open: true,
+      selected: 2,
+      transfer: 7,
+      workspaces: Set(1, 2)
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      coherent: true,
+      focus: 2,
+      focusCommands: 1,
+      live: Set(8),
+      mutations: 0,
+      open: true,
+      selected: 2,
+      transfer: 0,
+      workspaces: Set(1, 2)
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      coherent: true,
+      focus: 2,
+      focusCommands: 1,
+      live: Set(8),
+      mutations: 0,
+      open: true,
+      selected: 2,
+      transfer: 0,
+      workspaces: Set(1)
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      coherent: true,
+      focus: 2,
+      focusCommands: 1,
+      live: Set(8),
+      mutations: 0,
+      open: true,
+      selected: 2,
+      transfer: 0,
+      workspaces: Set(1)
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      coherent: true,
+      focus: 0,
+      focusCommands: 2,
+      live: Set(8),
+      mutations: 0,
+      open: true,
+      selected: 0,
+      transfer: 0,
+      workspaces: Set(1)
+    }
+}
+
+[violation] Found an issue (56ms at 911 traces/second).
+Use --verbosity=3 to show executions.
+Witnesses:
+filterReturnWitness was witnessed in 3 trace(s) out of 51 explored (5.88%)
+allReturnWitness was witnessed in 0 trace(s) out of 51 explored (0.00%)
+incoherentHeldWitness was witnessed in 9 trace(s) out of 51 explored (17.65%)
+Use --seed=0x1641b --backend=typescript to reproduce.

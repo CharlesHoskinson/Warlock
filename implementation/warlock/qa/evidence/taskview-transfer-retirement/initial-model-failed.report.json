@@ -1,0 +1,66 @@
+{
+  "passed": false,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-fb41d3a7a1774e88b3a97f8d638cca1d.scope",
+    "coreLimit": 1
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/overview-retirement.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "tests-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/overview-retirement_test.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/overview-retirement_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=82412"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "witness-safety",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/overview-retirement.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--witnesses",
+        "filterReturnWitness",
+        "allReturnWitness",
+        "incoherentHeldWitness",
+        "--max-samples=1000",
+        "--max-steps=25",
+        "--seed=82413"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/overview-retirement.qnt": "971fd30f2c139856a5748d06a781169357b43d36fd11616919037059f6fefba8",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/overview-retirement_test.qnt": "08fe5586b29271669db07519c1a0e0df75da5f7607c873e6999345e2f282a9a1"
+  },
+  "scope": "Exact coherent transfer-member retirement and valid workspace/All browse-focus fallback; no implicit replacement or native mutation, duplicate/incomplete/closed/authority lifecycle. Native/AT input, pixels, grant identity and transport timing are separate.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "error": "AssertionError('An example execution:\\n\\n[State 0]\\n{\\n  s:\\n    {\\n      coherent: true,\\n      focus: 0,\\n      focusCommands: 0,\\n      live: Set(7, 8),\\n      mutations: 0,\\n      open: true,\\n      selected: 2,\\n      transfer: 7,\\n      workspaces: Set(1, 2)\\n    }\\n}\\n\\n[State 1]\\n{\\n  s:\\n    {\\n      coherent: true,\\n      focus: 0,\\n      focusCommands: 0,\\n      live: Set(7, 8),\\n      mutations: 0,\\n      open: true,\\n      selected: 2,\\n      transfer: 7,\\n      workspaces: Set(1, 2)\\n    }\\n}\\n\\n[State 2]\\n{\\n  s:\\n    {\\n      coherent: true,\\n      focus: 0,\\n      focusCommands: 0,\\n      live: Set(7, 8),\\n      mutations: 0,\\n      open: true,\\n      selected: 2,\\n      transfer: 7,\\n      workspaces: Set(1, 2)\\n    }\\n}\\n\\n[State 3]\\n{\\n  s:\\n    {\\n      coherent: true,\\n      focus: 0,\\n      focusCommands: 0,\\n      live: Set(8),\\n      mutations: 0,\\n      open: true,\\n      selected: 2,\\n      transfer: 7,\\n      workspaces: Set(1, 2)\\n    }\\n}\\n\\n[State 4]\\n{\\n  s:\\n    {\\n      coherent: true,\\n      focus: 2,\\n      focusCommands: 1,\\n      live: Set(8),\\n      mutations: 0,\\n      open: true,\\n      selected: 2,\\n      transfer: 0,\\n      workspaces: Set(1, 2)\\n    }\\n}\\n\\n[State 5]\\n{\\n  s:\\n    {\\n      coherent: true,\\n      focus: 2,\\n      focusCommands: 1,\\n      live: Set(8),\\n      mutations: 0,\\n      open: true,\\n      selected: 2,\\n      transfer: 0,\\n      workspaces: Set(1)\\n    }\\n}\\n\\n[State 6]\\n{\\n  s:\\n    {\\n      coherent: true,\\n      focus: 2,\\n      focusCommands: 1,\\n      live: Set(8),\\n      mutations: 0,\\n      open: true,\\n      selected: 2,\\n      transfer: 0,\\n      workspaces: Set(1)\\n    }\\n}\\n\\n[State 7]\\n{\\n  s:\\n    {\\n      coherent: true,\\n      focus: 0,\\n      focusCommands: 2,\\n      live: Set(8),\\n      mutations: 0,\\n      open: true,\\n      selected: 0,\\n      transfer: 0,\\n      workspaces: Set(1)\\n    }\\n}\\n\\n[violation] Found an issue (56ms at 911 traces/second).\\nUse --verbosity=3 to show executions.\\nWitnesses:\\nfilterReturnWitness was witnessed in 3 trace(s) out of 51 explored (5.88%)\\nallReturnWitness was witnessed in 0 trace(s) out of 51 explored (0.00%)\\nincoherentHeldWitness was witnessed in 9 trace(s) out of 51 explored (17.65%)\\nUse --seed=0x1641b --backend=typescript to reproduce.\\nerror: Invariant violated\\n')"
+}

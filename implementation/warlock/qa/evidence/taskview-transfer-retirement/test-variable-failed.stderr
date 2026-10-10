@@ -1,0 +1,16 @@
+-- NAMING ERROR ------------------------------------------ qa/TaskViewReplay.elm
+
+I cannot find a `effects` variable:
+
+101|         retiredTransfer={transferOrigin | windows={windows | shell={shell | effects={effects | observed=remainingScene |> Maybe.map (\s -> {context=context,scene=s})},geometry=Maybe.map (\g -> {g | windows=[geometryWindow one "1"]}) shell.geometry}}}
+                                                                                          ^^^^^^^
+These names seem close though:
+
+    E.dict
+    E.set
+    checks
+    D.dict
+
+Hint: Read <https://elm-lang.org/0.19.2/imports> to see how `import`
+declarations work in Elm.
+

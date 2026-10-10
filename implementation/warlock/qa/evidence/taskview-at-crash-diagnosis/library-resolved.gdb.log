@@ -1,0 +1,766 @@
+[New LWP 4055692]
+[New LWP 4055690]
+[New LWP 4055689]
+[New LWP 4055688]
+[New LWP 4055687]
+[New LWP 4055686]
+[New LWP 4055672]
+[New LWP 4055671]
+[New LWP 4055670]
+[New LWP 4055669]
+[New LWP 4055668]
+[New LWP 4055667]
+[New LWP 4055666]
+[New LWP 4055665]
+[New LWP 4055637]
+[New LWP 4055636]
+[New LWP 4055635]
+[New LWP 4055634]
+[New LWP 4055633]
+[New LWP 4055632]
+[New LWP 4055625]
+[New LWP 4055624]
+[New LWP 4055623]
+[New LWP 4055622]
+[New LWP 4055621]
+[New LWP 4055620]
+[New LWP 4055619]
+[New LWP 4055618]
+[New LWP 4055617]
+[New LWP 4055616]
+[New LWP 4055614]
+[New LWP 4055613]
+[New LWP 4055612]
+[New LWP 4055610]
+[New LWP 4055609]
+[New LWP 4055608]
+[New LWP 4055607]
+[New LWP 4055606]
+[New LWP 4055605]
+[New LWP 4055604]
+[New LWP 4055603]
+[New LWP 4055602]
+[New LWP 4055601]
+[New LWP 4055599]
+[New LWP 4055598]
+[New LWP 4055597]
+[New LWP 4055596]
+[New LWP 4055593]
+[New LWP 4055592]
+[New LWP 4055591]
+[New LWP 4055590]
+[New LWP 4055589]
+warning: Target and debugger are in different PID namespaces; thread lists and other data are likely unreliable.  Connect to gdbserver inside the container.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/usr/lib/libthread_db.so.1".
+0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+
+Thread 1 "WebKitWebProces" received signal SIGABRT, Aborted.
+0x00007ff771e9a17c in ?? () from /usr/lib/libc.so.6
+From                To                  Syms Read   Shared Object Library
+0x00007ff772200000  0x00007ff777b45000  Yes (*)     /usr/lib/libwebkit2gtk-4.1.so.0
+0x00007ff771e00000  0x00007ff772023000  Yes (*)     /usr/lib/libc.so.6
+0x00007ff771c21000  0x00007ff771e00000  Yes (*)     /usr/lib/libgio-2.0.so.0
+0x00007ff777ca1000  0x00007ff777ca8000  Yes (*)     /usr/lib/libgmodule-2.0.so.0
+0x00007ff777b94000  0x00007ff777ca1000  Yes (*)     /usr/lib/libepoxy.so.0
+0x00007ff777b87000  0x00007ff777b92000  Yes (*)     /usr/lib/libatomic.so.1
+0x00007ff771400000  0x00007ff771afe000  Yes (*)     /usr/lib/libgtk-3.so.0
+0x00007ff772113000  0x00007ff772200000  Yes (*)     /usr/lib/libgdk-3.so.0
+0x00007ff7720a4000  0x00007ff772113000  Yes (*)     /usr/lib/libpango-1.0.so.0
+0x00007ff7712c1000  0x00007ff771400000  Yes (*)     /usr/lib/libharfbuzz.so.0
+0x00007ff777b60000  0x00007ff777b87000  Yes (*)     /usr/lib/libatk-1.0.so.0
+0x00007ff771184000  0x00007ff7712c1000  Yes (*)     /usr/lib/libcairo.so.2
+0x00007ff772089000  0x00007ff7720a4000  Yes (*)     /usr/lib/libz.so.1
+0x00007ff771b51000  0x00007ff771c21000  Yes (*)     /usr/lib/libfreetype.so.6
+0x00007ff771109000  0x00007ff771184000  Yes (*)     /usr/lib/libfontconfig.so.1
+0x00007ff777b52000  0x00007ff777b5e000  Yes (*)     /usr/lib/libwebpmux.so.3
+0x00007ff77205b000  0x00007ff772089000  Yes (*)     /usr/lib/libexpat.so.1
+0x00007ff7710a6000  0x00007ff771109000  Yes (*)     /usr/lib/libgobject-2.0.so.0
+0x00007ff76ec00000  0x00007ff77100d000  Yes (*)     /usr/lib/libjavascriptcoregtk-4.1.so.0
+0x00007ff76e800000  0x00007ff76eb8e000  Yes (*)     /usr/lib/libicui18n.so.78
+0x00007ff76e6b8000  0x00007ff76e800000  Yes (*)     /usr/lib/libsystemd.so.0
+0x00007ff76e610000  0x00007ff76e6b8000  Yes (*)     /usr/lib/libjpeg.so.8
+0x00007ff771b14000  0x00007ff771b51000  Yes (*)     /usr/lib/libpng16.so.16
+0x00007ff76e4ad000  0x00007ff76e610000  Yes (*)     /usr/lib/libglib-2.0.so.0
+0x00007ff76e200000  0x00007ff76e40e000  Yes (*)     /usr/lib/libicuuc.so.78
+0x00007ff76e0bb000  0x00007ff76e200000  Yes (*)     /usr/lib/libxml2.so.16
+0x00007ff76df22000  0x00007ff76e0bb000  Yes (*)     /usr/lib/libsqlite3.so.0
+0x00007ff771069000  0x00007ff7710a6000  Yes (*)     /usr/lib/libxslt.so.1
+0x00007ff76eb94000  0x00007ff76ec00000  Yes (*)     /usr/lib/liblcms2.so.2
+0x00007ff76dd71000  0x00007ff76df22000  Yes (*)     /usr/lib/libgcrypt.so.20
+0x00007ff772051000  0x00007ff77205b000  Yes (*)     /usr/lib/libgstallocators-1.0.so.0
+0x00007ff772038000  0x00007ff772051000  Yes (*)     /usr/lib/libgstapp-1.0.so.0
+0x00007ff76e425000  0x00007ff76e4ad000  Yes (*)     /usr/lib/libgstbase-1.0.so.0
+0x00007ff76dbfe000  0x00007ff76dd71000  Yes (*)     /usr/lib/libgstreamer-1.0.so.0
+0x00007ff771024000  0x00007ff771069000  Yes (*)     /usr/lib/libgstpbutils-1.0.so.0
+0x00007ff76db74000  0x00007ff76dbfe000  Yes (*)     /usr/lib/libgstaudio-1.0.so.0
+0x00007ff76db35000  0x00007ff76db74000  Yes (*)     /usr/lib/libgsttag-1.0.so.0
+0x00007ff76da56000  0x00007ff76db35000  Yes (*)     /usr/lib/libgstvideo-1.0.so.0
+0x00007ff76d9c0000  0x00007ff76da56000  Yes (*)     /usr/lib/libgstgl-1.0.so.0
+0x00007ff77202d000  0x00007ff772038000  Yes (*)     /usr/lib/libgstfft-1.0.so.0
+0x00007ff772026000  0x00007ff77202d000  Yes (*)     /usr/lib/libwebpdemux.so.2
+0x00007ff76d939000  0x00007ff76d9c0000  Yes (*)     /usr/lib/libwebp.so.7
+0x00007ff76d400000  0x00007ff76d836000  Yes (*)     /usr/lib/libjxl.so.0.12
+0x00007ff76d8f1000  0x00007ff76d939000  Yes (*)     /usr/lib/libavif.so.16
+0x00007ff76d85a000  0x00007ff76d8f1000  Yes (*)     /usr/lib/libsoup-3.0.so.0
+0x00007ff771b0f000  0x00007ff771b14000  Yes (*)     /usr/lib/libharfbuzz-icu.so.0
+0x00007ff76d2be000  0x00007ff76d400000  Yes (*)     /usr/lib/libX11.so.6
+0x00007ff77100f000  0x00007ff771024000  Yes (*)     /usr/lib/libwayland-server.so.0
+0x00007ff771aff000  0x00007ff771b0f000  Yes (*)     /usr/lib/libwayland-client.so.0
+0x00007ff76d187000  0x00007ff76d2be000  Yes (*)     /usr/lib/libm.so.6
+0x00007ff76d135000  0x00007ff76d187000  Yes (*)     /usr/lib/libmanette-0.2.so.0
+0x00007ff76d108000  0x00007ff76d135000  Yes (*)     /usr/lib/libseccomp.so.2
+0x00007ff76e413000  0x00007ff76e425000  Yes (*)     /usr/lib/libenchant-2.so.2
+0x00007ff76eb8e000  0x00007ff76eb94000  Yes (*)     /usr/lib/libgbm.so.1
+0x00007ff76d843000  0x00007ff76d85a000  Yes (*)     /usr/lib/libdrm.so.2
+0x00007ff76d0f2000  0x00007ff76d108000  Yes (*)     /usr/lib/libtasn1.so.6
+0x00007ff76d83b000  0x00007ff76d843000  Yes (*)     /usr/lib/libhyphen.so.0
+0x00007ff76d094000  0x00007ff76d0f2000  Yes (*)     /usr/lib/libsecret-1.so.0
+0x00007ff76cc00000  0x00007ff76ced3000  Yes (*)     /usr/lib/libstdc++.so.6
+0x00007ff76d067000  0x00007ff76d094000  Yes (*)     /usr/lib/libgcc_s.so.1
+0x00007ff777cd8000  0x00007ff777d19000  Yes (*)     /lib64/ld-linux-x86-64.so.2
+0x00007ff76d00a000  0x00007ff76d067000  Yes (*)     /usr/lib/libmount.so.1
+0x00007ff76cff8000  0x00007ff76d00a000  Yes (*)     /usr/lib/libpangocairo-1.0.so.0
+0x00007ff76cfd9000  0x00007ff76cff8000  Yes (*)     /usr/lib/libpangoft2-1.0.so.0
+0x00007ff76cfb9000  0x00007ff76cfd9000  Yes (*)     /usr/lib/libfribidi.so.0
+0x00007ff76cfb0000  0x00007ff76cfb9000  Yes (*)     /usr/lib/libcairo-gobject.so.2
+0x00007ff76cf76000  0x00007ff76cfb0000  Yes (*)     /usr/lib/libgdk_pixbuf-2.0.so.0
+0x00007ff76cf61000  0x00007ff76cf76000  Yes (*)     /usr/lib/libXi.so.6
+0x00007ff76cf25000  0x00007ff76cf61000  Yes (*)     /usr/lib/libatk-bridge-2.0.so.0
+0x00007ff76cf0d000  0x00007ff76cf25000  Yes (*)     /usr/lib/libcloudproviders.so.0
+0x00007ff76cb2c000  0x00007ff76cc00000  Yes (*)     /usr/lib/libtinysparql-3.0.so.0
+0x00007ff76cf05000  0x00007ff76cf0d000  Yes (*)     /usr/lib/libXfixes.so.3
+0x00007ff76cacd000  0x00007ff76cb2c000  Yes (*)     /usr/lib/libxkbcommon.so.0
+0x00007ff76cefc000  0x00007ff76cf05000  Yes (*)     /usr/lib/libwayland-cursor.so.0
+0x00007ff76d836000  0x00007ff76d83b000  Yes (*)     /usr/lib/libwayland-egl.so.1
+0x00007ff76cee8000  0x00007ff76cefc000  Yes (*)     /usr/lib/libXext.so.6
+0x00007ff76ced9000  0x00007ff76cee6000  Yes (*)     /usr/lib/libXcursor.so.1
+0x00007ff76ced4000  0x00007ff76ced9000  Yes (*)     /usr/lib/libXdamage.so.1
+0x00007ff76cac8000  0x00007ff76cacd000  Yes (*)     /usr/lib/libXcomposite.so.1
+0x00007ff76cabb000  0x00007ff76cac8000  Yes (*)     /usr/lib/libXrandr.so.2
+0x00007ff76cab6000  0x00007ff76cabb000  Yes (*)     /usr/lib/libXinerama.so.1
+0x00007ff76caa9000  0x00007ff76cab4000  Yes (*)     /usr/lib/libthai.so.0
+0x00007ff76ca86000  0x00007ff76caa9000  Yes (*)     /usr/lib/libgraphite2.so.3
+0x00007ff76ca7a000  0x00007ff76ca86000  Yes (*)     /usr/lib/libXrender.so.1
+0x00007ff76ca4f000  0x00007ff76ca7a000  Yes (*)     /usr/lib/libxcb.so.1
+0x00007ff76ca40000  0x00007ff76ca4f000  Yes (*)     /usr/lib/libxcb-render.so.0
+0x00007ff76ca39000  0x00007ff76ca3e000  Yes (*)     /usr/lib/libxcb-shm.so.0
+0x00007ff76c98a000  0x00007ff76ca39000  Yes (*)     /usr/lib/libpixman-1.so.0
+0x00007ff76c977000  0x00007ff76c98a000  Yes (*)     /usr/lib/libbz2.so.1.0
+0x00007ff76c968000  0x00007ff76c977000  Yes (*)     /usr/lib/libbrotlidec.so.1
+0x00007ff76c95a000  0x00007ff76c968000  Yes (*)     /usr/lib/libffi.so.8
+0x00007ff76c8a5000  0x00007ff76c958000  Yes (*)     /usr/lib/libpcre2-8.so.0
+0x00007ff76a800000  0x00007ff76c795000  Yes (*)     /usr/lib/libicudata.so.78
+0x00007ff76c878000  0x00007ff76c8a5000  Yes (*)     /usr/lib/libgpg-error.so.0
+0x00007ff76c85c000  0x00007ff76c878000  Yes (*)     /usr/lib/libunwind.so.8
+0x00007ff76c7ba000  0x00007ff76c85c000  Yes (*)     /usr/lib/libdw.so.1
+0x00007ff76a6ee000  0x00007ff76a800000  Yes (*)     /usr/lib/liborc-0.4.so.0
+0x00007ff76c7a6000  0x00007ff76c7b8000  Yes (*)     /usr/lib/libEGL.so.1
+0x00007ff76a6bd000  0x00007ff76a6ee000  Yes (*)     /usr/lib/libGLX.so.0
+0x00007ff76c7a1000  0x00007ff76c7a6000  Yes (*)     /usr/lib/libX11-xcb.so.1
+0x00007ff76c795000  0x00007ff76c7a1000  Yes (*)     /usr/lib/libgudev-1.0.so.0
+0x00007ff76a6b2000  0x00007ff76a6bb000  Yes (*)     /usr/lib/libsharpyuv.so.0
+0x00007ff76a689000  0x00007ff76a6b2000  Yes (*)     /usr/lib/libjxl_cms.so.0.12
+0x00007ff76a67a000  0x00007ff76a689000  Yes (*)     /usr/lib/libhwy.so.1
+0x00007ff76a5ba000  0x00007ff76a67a000  Yes (*)     /usr/lib/libbrotlienc.so.1
+0x00007ff76a513000  0x00007ff76a5ba000  Yes (*)     /usr/lib/libyuv.so
+0x00007ff76a332000  0x00007ff76a513000  Yes (*)     /usr/lib/libdav1d.so.7
+0x00007ff76a000000  0x00007ff76a324000  Yes (*)     /usr/lib/librav1e.so.0.8
+0x00007ff761a00000  0x00007ff769f6e000  Yes (*)     /usr/lib/libSvtAv1Enc.so.4
+0x00007ff761000000  0x00007ff7618e0000  Yes (*)     /usr/lib/libaom.so.3
+0x00007ff769fec000  0x00007ff76a000000  Yes (*)     /usr/lib/libpsl.so.5
+0x00007ff769f94000  0x00007ff769fec000  Yes (*)     /usr/lib/libgssapi_krb5.so.2
+0x00007ff7619d6000  0x00007ff761a00000  Yes (*)     /usr/lib/libnghttp2.so.14
+0x00007ff76a326000  0x00007ff76a32e000  Yes (*)     /usr/lib/libhidapi-hidraw.so.0
+0x00007ff769f7e000  0x00007ff769f94000  Yes (*)     /usr/lib/libevdev.so.2
+0x00007ff761944000  0x00007ff7619d6000  Yes (*)     /usr/lib/libtss2-esys.so.0
+0x00007ff7618fa000  0x00007ff761944000  Yes (*)     /usr/lib/libtss2-mu.so.0
+0x00007ff769f75000  0x00007ff769f7e000  Yes (*)     /usr/lib/libtss2-rc.so.0
+0x00007ff7618f2000  0x00007ff7618fa000  Yes (*)     /usr/lib/libtss2-tctildr.so.0
+0x00007ff760fc0000  0x00007ff761000000  Yes (*)     /usr/lib/libblkid.so.1
+0x00007ff760a00000  0x00007ff760dfd000  Yes (*)     /usr/lib/libglycin-2.so.0
+0x00007ff760f84000  0x00007ff760fc0000  Yes (*)     /usr/lib/libatspi.so.0
+0x00007ff760f31000  0x00007ff760f84000  Yes (*)     /usr/lib/libdbus-1.so.3
+0x00007ff760f07000  0x00007ff760f31000  Yes (*)     /usr/lib/libjson-glib-1.0.so.0
+0x00007ff7618e9000  0x00007ff7618f2000  Yes (*)     /usr/lib/libdatrie.so.1
+0x00007ff769f6e000  0x00007ff769f73000  Yes (*)     /usr/lib/libXau.so.6
+0x00007ff7618e1000  0x00007ff7618e9000  Yes (*)     /usr/lib/libXdmcp.so.6
+0x00007ff760ee4000  0x00007ff760f07000  Yes (*)     /usr/lib/libbrotlicommon.so.1
+0x00007ff760ead000  0x00007ff760ee2000  Yes (*)     /usr/lib/liblzma.so.5
+0x00007ff760e8f000  0x00007ff760ead000  Yes (*)     /usr/lib/libelf.so.1
+0x00007ff76091a000  0x00007ff760a00000  Yes (*)     /usr/lib/libzstd.so.1
+0x00007ff760e16000  0x00007ff760e8f000  Yes (*)     /usr/lib/libGLdispatch.so.0
+0x00007ff7608ca000  0x00007ff76091a000  Yes (*)     /usr/lib/libudev.so.1
+0x00007ff7606e3000  0x00007ff7608ca000  Yes (*)     /usr/lib/libunistring.so.5
+0x00007ff7606c1000  0x00007ff7606e3000  Yes (*)     /usr/lib/libidn2.so.0
+0x00007ff7605f2000  0x00007ff7606c1000  Yes (*)     /usr/lib/libkrb5.so.3
+0x00007ff7605c4000  0x00007ff7605f2000  Yes (*)     /usr/lib/libk5crypto.so.3
+0x00007ff760e0e000  0x00007ff760e14000  Yes (*)     /usr/lib/libcom_err.so.2
+0x00007ff760dff000  0x00007ff760e0e000  Yes (*)     /usr/lib/libkrb5support.so.0
+0x00007ff7605bd000  0x00007ff7605c4000  Yes (*)     /usr/lib/libkeyutils.so.1
+0x00007ff7605aa000  0x00007ff7605bd000  Yes (*)     /usr/lib/libresolv.so.2
+0x00007ff760000000  0x00007ff7605a9000  Yes (*)     /usr/lib/libcrypto.so.3
+0x00007ff75ffde000  0x00007ff760000000  Yes (*)     /usr/lib/libtss2-sys.so.1
+0x00007ff75ff39000  0x00007ff75ff3d000  Yes (*)     /usr/lib/webkit2gtk-4.1/injected-bundle/libwebkit2gtkinjectedbundle.so
+0x00007ff75ff0c000  0x00007ff75ff2e000  Yes (*)     /usr/lib/gbm/dri_gbm.so
+0x00007ff5e4800000  0x00007ff5e7e78000  Yes (*)     /usr/lib/libgallium-26.2.2-arch1.1.so
+0x00007ff5da200000  0x00007ff5e464c000  Yes (*)     /usr/lib/libLLVM.so.22.1
+0x00007ff757223000  0x00007ff7573ff000  Yes (*)     /usr/lib/libSPIRV-Tools.so
+0x00007ff75fefc000  0x00007ff75ff0c000  Yes (*)     /usr/lib/libsensors.so.5
+0x00007ff757211000  0x00007ff757223000  Yes (*)     /usr/lib/libxcb-randr.so.0
+0x00007ff75fef3000  0x00007ff75fefc000  Yes (*)     /usr/lib/libxcb-sync.so.1
+0x00007ff75feee000  0x00007ff75fef3000  Yes (*)     /usr/lib/libxcb-present.so.0
+0x00007ff75720c000  0x00007ff757211000  Yes (*)     /usr/lib/libxshmfence.so.1
+0x00007ff757203000  0x00007ff75720c000  Yes (*)     /usr/lib/libxcb-xfixes.so.0
+0x00007ff7101f1000  0x00007ff7101f8000  Yes (*)     /usr/lib/libxcb-dri3.so.0
+0x00007ff7101e4000  0x00007ff7101f1000  Yes (*)     /usr/lib/libdrm_amdgpu.so.1
+0x00007ff7101be000  0x00007ff7101e4000  Yes (*)     /usr/lib/libdrm_intel.so.1
+0x00007ff710182000  0x00007ff7101be000  Yes (*)     /usr/lib/libedit.so.0
+0x00007ff710177000  0x00007ff710182000  Yes (*)     /usr/lib/libpciaccess.so.0
+0x00007ff710106000  0x00007ff710177000  Yes (*)     /usr/lib/libncursesw.so.6
+0x00007ff710063000  0x00007ff7100c6000  Yes (*)     /usr/lib/libEGL_mesa.so.0
+0x00007ff702423000  0x00007ff702433000  Yes (*)     /usr/lib/libGLESv2.so.2
+(*): Shared library is missing debugging information.
+
+Thread 53 (Thread 0x7ff757bff6c0 (LWP 4055589) "WebKitWebProces"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e97762 in pthread_cond_timedwait () from /usr/lib/libc.so.6
+#3  0x00007ff770f4b122 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#4  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#5  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 52 (Thread 0x7ff7131fd6c0 (LWP 4055590) "EventDispatcher"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771f11365 in poll () from /usr/lib/libc.so.6
+#2  0x00007ff770ee66c9 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#3  0x00007ff770ee6e7a in WTF::RunLoop::run() () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#4  0x00007ff770eec289 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#5  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#6  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 51 (Thread 0x7ff7129fc6c0 (LWP 4055591) "rruptDispatcher"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771f11365 in poll () from /usr/lib/libc.so.6
+#2  0x00007ff770ee66c9 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#3  0x00007ff770ee6e7a in WTF::RunLoop::run() () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#4  0x00007ff770eec289 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#5  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#6  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 50 (Thread 0x7ff7121fb6c0 (LWP 4055592) "uggerDispatcher"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771f11365 in poll () from /usr/lib/libc.so.6
+#2  0x00007ff770ee66c9 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#3  0x00007ff770ee6e7a in WTF::RunLoop::run() () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#4  0x00007ff770eec289 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#5  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#6  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 49 (Thread 0x7ff7119fa6c0 (LWP 4055593) "ReceiveQueue"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771f11365 in poll () from /usr/lib/libc.so.6
+#2  0x00007ff770ee66c9 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#3  0x00007ff770ee6e7a in WTF::RunLoop::run() () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#4  0x00007ff770eec289 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#5  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#6  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 48 (Thread 0x7ff7111f96c0 (LWP 4055596) "ReceiveQueue"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771f11365 in poll () from /usr/lib/libc.so.6
+#2  0x00007ff770ee66c9 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#3  0x00007ff770ee6e7a in WTF::RunLoop::run() () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#4  0x00007ff770eec289 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#5  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#6  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 47 (Thread 0x7ff7109f86c0 (LWP 4055597) "pool-spawner"):
+#0  0x00007ff771f1e4ed in syscall () from /usr/lib/libc.so.6
+#1  0x00007ff76e53e15e in g_cond_wait () from /usr/lib/libglib-2.0.so.0
+#2  0x00007ff76e4d352d in ?? () from /usr/lib/libglib-2.0.so.0
+#3  0x00007ff76e548017 in ?? () from /usr/lib/libglib-2.0.so.0
+#4  0x00007ff76e547b14 in ?? () from /usr/lib/libglib-2.0.so.0
+#5  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#6  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 46 (Thread 0x7ff703fff6c0 (LWP 4055598) "gmain"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771f11a57 in ppoll () from /usr/lib/libc.so.6
+#2  0x00007ff76e510f59 in ?? () from /usr/lib/libglib-2.0.so.0
+#3  0x00007ff76e511055 in g_main_context_iteration () from /usr/lib/libglib-2.0.so.0
+#4  0x00007ff76e5110a2 in ?? () from /usr/lib/libglib-2.0.so.0
+#5  0x00007ff76e547b14 in ?? () from /usr/lib/libglib-2.0.so.0
+#6  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#7  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 45 (Thread 0x7ff7037fe6c0 (LWP 4055599) "pool-0"):
+#0  0x00007ff771f1e4ed in syscall () from /usr/lib/libc.so.6
+#1  0x00007ff76e53ef9c in g_cond_wait_until () from /usr/lib/libglib-2.0.so.0
+#2  0x00007ff76e4d34f7 in ?? () from /usr/lib/libglib-2.0.so.0
+#3  0x00007ff76e4d366f in g_async_queue_timeout_pop () from /usr/lib/libglib-2.0.so.0
+#4  0x00007ff76e548e31 in ?? () from /usr/lib/libglib-2.0.so.0
+#5  0x00007ff76e547b14 in ?? () from /usr/lib/libglib-2.0.so.0
+#6  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#7  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 44 (Thread 0x7ff702ffd6c0 (LWP 4055601) "gdbus"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771f11a57 in ppoll () from /usr/lib/libc.so.6
+#2  0x00007ff76e510f59 in ?? () from /usr/lib/libglib-2.0.so.0
+#3  0x00007ff76e511217 in g_main_loop_run () from /usr/lib/libglib-2.0.so.0
+#4  0x00007ff771d40ed4 in ?? () from /usr/lib/libgio-2.0.so.0
+#5  0x00007ff76e547b14 in ?? () from /usr/lib/libglib-2.0.so.0
+#6  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#7  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 43 (Thread 0x7ff7021ff6c0 (LWP 4055602) "WebKitW:disk$0"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e9754c in pthread_cond_wait () from /usr/lib/libc.so.6
+#3  0x00007ff5e4e2790e in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#4  0x00007ff5e4ddcb4d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#5  0x00007ff5e4e2784d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#6  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#7  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 42 (Thread 0x7ff7019fe6c0 (LWP 4055603) "WebKitWebP:sh0"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e9754c in pthread_cond_wait () from /usr/lib/libc.so.6
+#3  0x00007ff5e4e2790e in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#4  0x00007ff5e4ddcb4d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#5  0x00007ff5e4e2784d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#6  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#7  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 41 (Thread 0x7ff700ffd6c0 (LWP 4055604) "WebKit:traceq0"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e9754c in pthread_cond_wait () from /usr/lib/libc.so.6
+#3  0x00007ff5e4e2790e in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#4  0x00007ff5e4ddcb4d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#5  0x00007ff5e4e2784d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#6  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#7  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 40 (Thread 0x7ff5da1ff6c0 (LWP 4055605) "WebKitWe:gdrv0"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e9754c in pthread_cond_wait () from /usr/lib/libc.so.6
+#3  0x00007ff5e4e2790e in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#4  0x00007ff5e4ddcb4d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#5  0x00007ff5e4e2784d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#6  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#7  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 39 (Thread 0x7ff5d99fe6c0 (LWP 4055606) "WebKit:traceq0"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e9754c in pthread_cond_wait () from /usr/lib/libc.so.6
+#3  0x00007ff5e4e2790e in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#4  0x00007ff5e4ddcb4d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#5  0x00007ff5e4e2784d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#6  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#7  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 38 (Thread 0x7ff5d91fd6c0 (LWP 4055607) "WebKitWe:gdrv0"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e9754c in pthread_cond_wait () from /usr/lib/libc.so.6
+#3  0x00007ff5e4e2790e in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#4  0x00007ff5e4ddcb4d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#5  0x00007ff5e4e2784d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#6  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#7  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 37 (Thread 0x7ff5d89fc6c0 (LWP 4055608) "eadedCompositor"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771f11365 in poll () from /usr/lib/libc.so.6
+#2  0x00007ff770ee66c9 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#3  0x00007ff770ee6e7a in WTF::RunLoop::run() () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#4  0x00007ff770eec289 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#5  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#6  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 36 (Thread 0x7ff5bbfff6c0 (LWP 4055609) "WebKit:traceq0"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e9754c in pthread_cond_wait () from /usr/lib/libc.so.6
+#3  0x00007ff5e4e2790e in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#4  0x00007ff5e4ddcb4d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#5  0x00007ff5e4e2784d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#6  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#7  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 35 (Thread 0x7ff5bb7fe6c0 (LWP 4055610) "WebKitWe:gdrv0"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e9754c in pthread_cond_wait () from /usr/lib/libc.so.6
+#3  0x00007ff5e4e2790e in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#4  0x00007ff5e4ddcb4d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#5  0x00007ff5e4e2784d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#6  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#7  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 34 (Thread 0x7ff5baffd6c0 (LWP 4055612) "eadedCompositor"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771f11365 in poll () from /usr/lib/libc.so.6
+#2  0x00007ff770ee66c9 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#3  0x00007ff770ee6e7a in WTF::RunLoop::run() () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#4  0x00007ff770eec289 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#5  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#6  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 33 (Thread 0x7ff5ba5fc6c0 (LWP 4055613) "WebKit:traceq0"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e9754c in pthread_cond_wait () from /usr/lib/libc.so.6
+#3  0x00007ff5e4e2790e in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#4  0x00007ff5e4ddcb4d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#5  0x00007ff5e4e2784d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#6  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#7  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 32 (Thread 0x7ff5b9dfb6c0 (LWP 4055614) "WebKitWe:gdrv0"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e9754c in pthread_cond_wait () from /usr/lib/libc.so.6
+#3  0x00007ff5e4e2790e in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#4  0x00007ff5e4ddcb4d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#5  0x00007ff5e4e2784d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#6  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#7  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 31 (Thread 0x7ff5b95fa6c0 (LWP 4055616) "eadedCompositor"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771f11365 in poll () from /usr/lib/libc.so.6
+#2  0x00007ff770ee66c9 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#3  0x00007ff770ee6e7a in WTF::RunLoop::run() () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#4  0x00007ff770eec289 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#5  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#6  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 30 (Thread 0x7ff5b8bf96c0 (LWP 4055617) "WebKit:traceq0"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e9754c in pthread_cond_wait () from /usr/lib/libc.so.6
+#3  0x00007ff5e4e2790e in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#4  0x00007ff5e4ddcb4d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#5  0x00007ff5e4e2784d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#6  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#7  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 29 (Thread 0x7ff59bfff6c0 (LWP 4055618) "WebKitWe:gdrv0"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e9754c in pthread_cond_wait () from /usr/lib/libc.so.6
+#3  0x00007ff5e4e2790e in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#4  0x00007ff5e4ddcb4d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#5  0x00007ff5e4e2784d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#6  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#7  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 28 (Thread 0x7ff59b7fe6c0 (LWP 4055619) "Core: Scrolling"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771f11365 in poll () from /usr/lib/libc.so.6
+#2  0x00007ff770ee66c9 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#3  0x00007ff770ee6e7a in WTF::RunLoop::run() () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#4  0x00007ff770eec289 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#5  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#6  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 27 (Thread 0x7ff59affd6c0 (LWP 4055620) "SkiaGPUWorker"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e9754c in pthread_cond_wait () from /usr/lib/libc.so.6
+#3  0x00007ff770eed5e1 in WTF::ThreadCondition::timedWait(WTF::Mutex&, WTF::WallTime) () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#4  0x00007ff770e061b2 in WTF::ParkingLot::parkConditionallyImpl(void const*, WTF::ScopedLambda<bool ()> const&, WTF::ScopedLambda<void ()> const&, WTF::TimeWithDynamicClockType const&) () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#5  0x00007ff770dd09d4 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#6  0x00007ff770eec289 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#7  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#8  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 26 (Thread 0x7ff59a7fc6c0 (LWP 4055621) "WebKit:traceq0"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e9754c in pthread_cond_wait () from /usr/lib/libc.so.6
+#3  0x00007ff5e4e2790e in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#4  0x00007ff5e4ddcb4d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#5  0x00007ff5e4e2784d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#6  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#7  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 25 (Thread 0x7ff599ffb6c0 (LWP 4055622) "WebKitWe:gdrv0"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e9754c in pthread_cond_wait () from /usr/lib/libc.so.6
+#3  0x00007ff5e4e2790e in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#4  0x00007ff5e4ddcb4d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#5  0x00007ff5e4e2784d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#6  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#7  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 24 (Thread 0x7ff5994626c0 (LWP 4055623) "JITWorker"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e97762 in pthread_cond_timedwait () from /usr/lib/libc.so.6
+#3  0x00007ff770eed637 in WTF::ThreadCondition::timedWait(WTF::Mutex&, WTF::WallTime) () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#4  0x00007ff770e061b2 in WTF::ParkingLot::parkConditionallyImpl(void const*, WTF::ScopedLambda<bool ()> const&, WTF::ScopedLambda<void ()> const&, WTF::TimeWithDynamicClockType const&) () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#5  0x00007ff770dd09d4 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#6  0x00007ff770eec289 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#7  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#8  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 23 (Thread 0x7ff598c616c0 (LWP 4055624) "JITWorker"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e97762 in pthread_cond_timedwait () from /usr/lib/libc.so.6
+#3  0x00007ff770eed637 in WTF::ThreadCondition::timedWait(WTF::Mutex&, WTF::WallTime) () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#4  0x00007ff770e061b2 in WTF::ParkingLot::parkConditionallyImpl(void const*, WTF::ScopedLambda<bool ()> const&, WTF::ScopedLambda<void ()> const&, WTF::TimeWithDynamicClockType const&) () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#5  0x00007ff770dd09d4 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#6  0x00007ff770eec289 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#7  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#8  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 22 (Thread 0x7ff5984606c0 (LWP 4055625) "JITWorker"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e97762 in pthread_cond_timedwait () from /usr/lib/libc.so.6
+#3  0x00007ff770eed637 in WTF::ThreadCondition::timedWait(WTF::Mutex&, WTF::WallTime) () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#4  0x00007ff770e061b2 in WTF::ParkingLot::parkConditionallyImpl(void const*, WTF::ScopedLambda<bool ()> const&, WTF::ScopedLambda<void ()> const&, WTF::TimeWithDynamicClockType const&) () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#5  0x00007ff770dd09d4 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#6  0x00007ff770eec289 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#7  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#8  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 21 (Thread 0x7ff5976a76c0 (LWP 4055632) "SkiaGPUWorker"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e9754c in pthread_cond_wait () from /usr/lib/libc.so.6
+#3  0x00007ff770eed5e1 in WTF::ThreadCondition::timedWait(WTF::Mutex&, WTF::WallTime) () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#4  0x00007ff770e061b2 in WTF::ParkingLot::parkConditionallyImpl(void const*, WTF::ScopedLambda<bool ()> const&, WTF::ScopedLambda<void ()> const&, WTF::TimeWithDynamicClockType const&) () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#5  0x00007ff770dd09d4 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#6  0x00007ff770eec289 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#7  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#8  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 20 (Thread 0x7ff596c666c0 (LWP 4055633) "WebKit:traceq0"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e9754c in pthread_cond_wait () from /usr/lib/libc.so.6
+#3  0x00007ff5e4e2790e in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#4  0x00007ff5e4ddcb4d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#5  0x00007ff5e4e2784d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#6  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#7  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 19 (Thread 0x7ff5964256c0 (LWP 4055634) "WebKitWe:gdrv0"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e9754c in pthread_cond_wait () from /usr/lib/libc.so.6
+#3  0x00007ff5e4e2790e in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#4  0x00007ff5e4ddcb4d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#5  0x00007ff5e4e2784d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#6  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#7  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 18 (Thread 0x7ff5958446c0 (LWP 4055635) "WebKitWebP:sh1"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e9754c in pthread_cond_wait () from /usr/lib/libc.so.6
+#3  0x00007ff5e4e2790e in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#4  0x00007ff5e4ddcb4d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#5  0x00007ff5e4e2784d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#6  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#7  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 17 (Thread 0x7ff594e336c0 (LWP 4055636) "WebKitWebP:sh2"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e9754c in pthread_cond_wait () from /usr/lib/libc.so.6
+#3  0x00007ff5e4e2790e in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#4  0x00007ff5e4ddcb4d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#5  0x00007ff5e4e2784d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#6  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#7  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 16 (Thread 0x7ff5946326c0 (LWP 4055637) "WebKitWebP:sh3"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e9754c in pthread_cond_wait () from /usr/lib/libc.so.6
+#3  0x00007ff5e4e2790e in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#4  0x00007ff5e4ddcb4d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#5  0x00007ff5e4e2784d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#6  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#7  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 15 (Thread 0x7ff58f9ff6c0 (LWP 4055665) "HeapHelper"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e97762 in pthread_cond_timedwait () from /usr/lib/libc.so.6
+#3  0x00007ff770eed637 in WTF::ThreadCondition::timedWait(WTF::Mutex&, WTF::WallTime) () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#4  0x00007ff770e061b2 in WTF::ParkingLot::parkConditionallyImpl(void const*, WTF::ScopedLambda<bool ()> const&, WTF::ScopedLambda<void ()> const&, WTF::TimeWithDynamicClockType const&) () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#5  0x00007ff770dd09d4 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#6  0x00007ff770eec289 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#7  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#8  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 14 (Thread 0x7ff58f1fe6c0 (LWP 4055666) "HeapHelper"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e97762 in pthread_cond_timedwait () from /usr/lib/libc.so.6
+#3  0x00007ff770eed637 in WTF::ThreadCondition::timedWait(WTF::Mutex&, WTF::WallTime) () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#4  0x00007ff770e061b2 in WTF::ParkingLot::parkConditionallyImpl(void const*, WTF::ScopedLambda<bool ()> const&, WTF::ScopedLambda<void ()> const&, WTF::TimeWithDynamicClockType const&) () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#5  0x00007ff770dd09d4 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#6  0x00007ff770eec289 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#7  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#8  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 13 (Thread 0x7ff58e9fd6c0 (LWP 4055667) "HeapHelper"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e97762 in pthread_cond_timedwait () from /usr/lib/libc.so.6
+#3  0x00007ff770eed637 in WTF::ThreadCondition::timedWait(WTF::Mutex&, WTF::WallTime) () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#4  0x00007ff770e061b2 in WTF::ParkingLot::parkConditionallyImpl(void const*, WTF::ScopedLambda<bool ()> const&, WTF::ScopedLambda<void ()> const&, WTF::TimeWithDynamicClockType const&) () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#5  0x00007ff770dd09d4 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#6  0x00007ff770eec289 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#7  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#8  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 12 (Thread 0x7ff58e1fc6c0 (LWP 4055668) "HeapHelper"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e97762 in pthread_cond_timedwait () from /usr/lib/libc.so.6
+#3  0x00007ff770eed637 in WTF::ThreadCondition::timedWait(WTF::Mutex&, WTF::WallTime) () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#4  0x00007ff770e061b2 in WTF::ParkingLot::parkConditionallyImpl(void const*, WTF::ScopedLambda<bool ()> const&, WTF::ScopedLambda<void ()> const&, WTF::TimeWithDynamicClockType const&) () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#5  0x00007ff770dd09d4 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#6  0x00007ff770eec289 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#7  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#8  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 11 (Thread 0x7ff58d9fb6c0 (LWP 4055669) "HeapHelper"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e97762 in pthread_cond_timedwait () from /usr/lib/libc.so.6
+#3  0x00007ff770eed637 in WTF::ThreadCondition::timedWait(WTF::Mutex&, WTF::WallTime) () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#4  0x00007ff770e061b2 in WTF::ParkingLot::parkConditionallyImpl(void const*, WTF::ScopedLambda<bool ()> const&, WTF::ScopedLambda<void ()> const&, WTF::TimeWithDynamicClockType const&) () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#5  0x00007ff770dd09d4 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#6  0x00007ff770eec289 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#7  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#8  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 10 (Thread 0x7ff58d1fa6c0 (LWP 4055670) "HeapHelper"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e97762 in pthread_cond_timedwait () from /usr/lib/libc.so.6
+#3  0x00007ff770eed637 in WTF::ThreadCondition::timedWait(WTF::Mutex&, WTF::WallTime) () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#4  0x00007ff770e061b2 in WTF::ParkingLot::parkConditionallyImpl(void const*, WTF::ScopedLambda<bool ()> const&, WTF::ScopedLambda<void ()> const&, WTF::TimeWithDynamicClockType const&) () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#5  0x00007ff770dd09d4 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#6  0x00007ff770eec289 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#7  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#8  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 9 (Thread 0x7ff58c9f96c0 (LWP 4055671) "HeapHelper"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e97762 in pthread_cond_timedwait () from /usr/lib/libc.so.6
+#3  0x00007ff770eed637 in WTF::ThreadCondition::timedWait(WTF::Mutex&, WTF::WallTime) () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#4  0x00007ff770e061b2 in WTF::ParkingLot::parkConditionallyImpl(void const*, WTF::ScopedLambda<bool ()> const&, WTF::ScopedLambda<void ()> const&, WTF::TimeWithDynamicClockType const&) () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#5  0x00007ff770dd09d4 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#6  0x00007ff770eec289 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#7  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#8  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 8 (Thread 0x7ff58c1f86c0 (LWP 4055672) "ollector Thread"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e97762 in pthread_cond_timedwait () from /usr/lib/libc.so.6
+#3  0x00007ff770eed637 in WTF::ThreadCondition::timedWait(WTF::Mutex&, WTF::WallTime) () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#4  0x00007ff770e061b2 in WTF::ParkingLot::parkConditionallyImpl(void const*, WTF::ScopedLambda<bool ()> const&, WTF::ScopedLambda<void ()> const&, WTF::TimeWithDynamicClockType const&) () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#5  0x00007ff770dd09d4 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#6  0x00007ff770eec289 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#7  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#8  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 7 (Thread 0x7ff58b9f76c0 (LWP 4055686) "SkiaGPUWorker"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e9754c in pthread_cond_wait () from /usr/lib/libc.so.6
+#3  0x00007ff770eed5e1 in WTF::ThreadCondition::timedWait(WTF::Mutex&, WTF::WallTime) () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#4  0x00007ff770e061b2 in WTF::ParkingLot::parkConditionallyImpl(void const*, WTF::ScopedLambda<bool ()> const&, WTF::ScopedLambda<void ()> const&, WTF::TimeWithDynamicClockType const&) () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#5  0x00007ff770dd09d4 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#6  0x00007ff770eec289 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#7  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#8  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 6 (Thread 0x7ff58b1f66c0 (LWP 4055687) "SkiaGPUWorker"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e9754c in pthread_cond_wait () from /usr/lib/libc.so.6
+#3  0x00007ff770eed5e1 in WTF::ThreadCondition::timedWait(WTF::Mutex&, WTF::WallTime) () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#4  0x00007ff770e061b2 in WTF::ParkingLot::parkConditionallyImpl(void const*, WTF::ScopedLambda<bool ()> const&, WTF::ScopedLambda<void ()> const&, WTF::TimeWithDynamicClockType const&) () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#5  0x00007ff770dd09d4 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#6  0x00007ff770eec289 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#7  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#8  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 5 (Thread 0x7ff58a7f56c0 (LWP 4055688) "WebKit:traceq0"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e9754c in pthread_cond_wait () from /usr/lib/libc.so.6
+#3  0x00007ff5e4e2790e in ?? () from /usr/lib/libgallium-26{"passed": false, "report": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-accessibility-1791661820245394806/report.json", "error": "AssertionError('OwnedClientNormalExit')"}
+.2.2-arch1.1.so
+#4  0x00007ff5e4ddcb4d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#5  0x00007ff5e4e2784d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#6  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#7  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 4 (Thread 0x7ff589ff46c0 (LWP 4055689) "WebKitWe:gdrv0"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e9754c in pthread_cond_wait () from /usr/lib/libc.so.6
+#3  0x00007ff5e4e2790e in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#4  0x00007ff5e4ddcb4d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#5  0x00007ff5e4e2784d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#6  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#7  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 3 (Thread 0x7ff5895f36c0 (LWP 4055690) "WebKit:traceq0"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e9754c in pthread_cond_wait () from /usr/lib/libc.so.6
+#3  0x00007ff5e4e2790e in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#4  0x00007ff5e4ddcb4d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#5  0x00007ff5e4e2784d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#6  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#7  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 2 (Thread 0x7ff588dd26c0 (LWP 4055692) "WebKitWe:gdrv0"):
+#0  0x00007ff771ea0952 in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e94cd9 in ?? () from /usr/lib/libc.so.6
+#2  0x00007ff771e9754c in pthread_cond_wait () from /usr/lib/libc.so.6
+#3  0x00007ff5e4e2790e in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#4  0x00007ff5e4ddcb4d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#5  0x00007ff5e4e2784d in ?? () from /usr/lib/libgallium-26.2.2-arch1.1.so
+#6  0x00007ff771e980a2 in ?? () from /usr/lib/libc.so.6
+#7  0x00007ff771f20634 in clone () from /usr/lib/libc.so.6
+
+Thread 1 (Thread 0x7ff75ffce5c0 (LWP 4055588) "WebKitWebProces"):
+#0  0x00007ff771e9a17c in ?? () from /usr/lib/libc.so.6
+#1  0x00007ff771e3e5d0 in raise () from /usr/lib/libc.so.6
+#2  0x00007ff771e25685 in abort () from /usr/lib/libc.so.6
+#3  0x00007ff77352839a in ?? () from /usr/lib/libwebkit2gtk-4.1.so.0
+#4  0x00007ff773528389 in ?? () from /usr/lib/libwebkit2gtk-4.1.so.0
+#5  0x00007ff775579fb9 in ?? () from /usr/lib/libwebkit2gtk-4.1.so.0
+#6  0x00007ff77557f4d0 in ?? () from /usr/lib/libwebkit2gtk-4.1.so.0
+#7  0x00007ff771d3ea0d in ?? () from /usr/lib/libgio-2.0.so.0
+#8  0x00007ff76e50ec76 in ?? () from /usr/lib/libglib-2.0.so.0
+#9  0x00007ff76e50ef68 in g_main_context_dispatch () from /usr/lib/libglib-2.0.so.0
+#10 0x00007ff770ee66f7 in ?? () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#11 0x00007ff770ee6e7a in WTF::RunLoop::run() () from /usr/lib/libjavascriptcoregtk-4.1.so.0
+#12 0x00007ff7742d92a8 in WebKit::WebProcessMain(int, char**) () from /usr/lib/libwebkit2gtk-4.1.so.0
+#13 0x00007ff771e27781 in ?? () from /usr/lib/libc.so.6
+#14 0x00007ff771e278b9 in __libc_start_main () from /usr/lib/libc.so.6
+#15 0x00005593ec07d635 in ?? ()
+[Inferior 1 (process 4055588) detached]

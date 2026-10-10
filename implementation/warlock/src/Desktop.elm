@@ -629,10 +629,14 @@ resumeOverview model =
 
 syncOverviewWorkspace model =
     case (model.overview,model.overviewWorkspace,taskViewGroups model) of
-        (True,Just selected,Just groups) ->
-            if List.any (\group -> group.identity==selected) groups then (model,[]) else
-                let next=advance {model | overviewWorkspace=Nothing,overviewTransfer=Nothing}
-                in (next,[Focus (key next "overview:all")])
+        (True,selected,Just groups) ->
+            let workspacePresent=selected |> Maybe.map (\identity -> List.any (\group -> group.identity==identity) groups) |> Maybe.withDefault True
+                transferRetired=model.overviewTransfer |> Maybe.map (\root -> not (List.any (\family -> family.root==root) (List.concatMap .windows groups))) |> Maybe.withDefault False
+            in if workspacePresent && not transferRetired then (model,[]) else
+                let workspace=if workspacePresent then selected else Nothing
+                    next=advance {model | overviewWorkspace=workspace,overviewTransfer=Nothing}
+                    target=workspace |> Maybe.map ((++) "overview:workspace:") |> Maybe.withDefault "overview:all"
+                in (next,[Focus (key next target)])
         _ -> (model,[])
 
 syncMotion : Model -> (Model,List Effect)
