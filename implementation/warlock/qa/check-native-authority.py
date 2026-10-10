@@ -52,7 +52,7 @@ try:
  max_path=ROOT/'qa/current-max-core.json'
  if max_path.exists():
   maximum=json.loads(max_path.read_text());max_report=REPO/maximum['report'];assert sha(max_report)==maximum['reportSHA256'];max_core=json.loads(max_report.read_text())
-  assert max_core['passed'] and max_core['existingPublicHeadersUnchanged'] and max_core['existingObjectLayoutsUnchanged'] and sha(ROOT/'native/core/FullscreenController.cpp')==max_core['sourceSHA256'] and all(sha((max_report.parent/'owning-headers/src/desktop/state/ViewHitTester.cpp') if scene_record and p=='native/core/ViewHitTester.cpp' else ROOT/p)==h for p,h in max_core['sourceHashes'].items())
+  assert max_core['passed'] and max_core['existingPublicHeadersUnchanged'] and max_core['existingObjectLayoutsUnchanged'] and sha(ROOT/'native/core/FullscreenController.cpp')==max_core['sourceSHA256'] and all(sha((max_report.parent/'owning-headers'/('src/desktop/state/ViewHitTester.cpp' if p=='native/core/ViewHitTester.cpp' else 'src/desktop/view/Window.cpp')) if scene_record and p in ('native/core/ViewHitTester.cpp','native/core/Window.cpp') else ROOT/p)==h for p,h in max_core['sourceHashes'].items())
   assert max_core['ancestor']=={'report':str(pin_report),'reportSHA256':sha(pin_report)} and max_core['owningHeaders']==pin_core['owningHeaders']
   header_prefix=(header_prefix[0],str(max_report.parent/'owning-headers'));core={'path':max_core['binary'],'sha256':max_core['binarySHA256']};assert sha(core['path'])==core['sha256']
  if scene_record:
@@ -60,14 +60,20 @@ try:
   assert scene_record['passed'] and scene_record['existingPublicHeadersUnchanged'] and scene_record['existingObjectLayoutsUnchanged'] and scene_record['existingStrongExportsPreserved']
   expected_ancestor={'report':str(max_report),'reportSHA256':sha(max_report)}
   scene_base=scene_record
-  if scene_record['ancestor']!=expected_ancestor:
-   # A checked one-TU gesture descendant retains the exact original scene/max ABI.
-   parent_path=pathlib.Path(scene_record['ancestor']['report']);assert sha(parent_path)==scene_record['ancestor']['reportSHA256']
+  seen_ancestors=set()
+  while scene_base['ancestor']!=expected_ancestor:
+   child=scene_base;parent_path=pathlib.Path(child['ancestor']['report'])
+   assert str(parent_path) not in seen_ancestors and len(seen_ancestors)<2;seen_ancestors.add(str(parent_path))
+   assert sha(parent_path)==child['ancestor']['reportSHA256']
    scene_base=json.loads(parent_path.read_text());assert scene_base['passed'] and sha(scene_base['binary'])==scene_base['binarySHA256']
-   assert scene_record['owningHeaders']==scene_base['owningHeaders']
-   assert set(scene_record['sourceHashes'])==set(scene_base['sourceHashes'])|{'native/core/KeybindManager.cpp','native/core/GestureKeyPolicy.hpp'}
-   assert all(scene_record['sourceHashes'][p]==h and sha(ROOT/p)==h for p,h in scene_base['sourceHashes'].items())
+   assert scene_base['existingPublicHeadersUnchanged'] and scene_base['existingObjectLayoutsUnchanged'] and scene_base['existingStrongExportsPreserved']
+   assert child['owningHeaders']==scene_base['owningHeaders']
+   changes=set(child.get('changedSources',['native/core/KeybindManager.cpp','native/core/GestureKeyPolicy.hpp']))
+   assert changes in ({'native/core/KeybindManager.cpp','native/core/GestureKeyPolicy.hpp'},{'native/core/Window.cpp','native/core/CaptionGesturePolicy.hpp'})
+   assert set(child['sourceHashes'])==set(scene_base['sourceHashes'])|changes
+   assert all(child['sourceHashes'][p]==h for p,h in scene_base['sourceHashes'].items() if p not in changes)
    assert all(sha(p)==h for p,h in {**scene_base['dependencies'],**scene_base['linkDependencies']}.items())
+  assert 'native/core/Window.cpp' in scene_record['sourceHashes'] or sha(ROOT/'native/core/Window.cpp')==max_core['sourceHashes']['native/core/Window.cpp']
   assert scene_base['ancestor']==expected_ancestor and scene_record['owningHeaders']==max_core['owningHeaders']
   assert all(sha(ROOT/p)==h for p,h in scene_record['sourceHashes'].items())
   assert all(sha(p)==h for p,h in scene_record['dependencies'].items()) and all(sha(p)==h for p,h in scene_record['linkDependencies'].items())

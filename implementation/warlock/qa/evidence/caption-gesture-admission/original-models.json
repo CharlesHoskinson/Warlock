@@ -1,0 +1,89 @@
+{
+  "passed": true,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-4b45895e38e84f699771938f92dbe7d4.scope",
+    "coreLimit": 1
+  },
+  "nativeAcceptance": false,
+  "scope": "Frozen caption_drag/native_drag original named cases and sampled safety, unchanged models; no native acceptance.",
+  "inputs": {
+    "window-behavior-spec/caption_drag.qnt": "990ef55fec4b51bf7f78a59aa2d053c924c275092f71f654d7bdfd9ae8ae83c9",
+    "window-behavior-spec/caption_drag_test.qnt": "23bbaa4bc2504e0299faf65f6fb739da61f1d9c121259d3c6d1d92f5bc396383",
+    "window-behavior-spec/native_drag.qnt": "2e3aa95d3116676cd5dfec0d337fbca9e1774a45f176c07a90dde15473516392",
+    "window-behavior-spec/native_drag_test.qnt": "4d3d35c690e65ace01145008d119c58977a48c01a23103436c0761bcb221194b"
+  },
+  "commands": [
+    {
+      "name": "caption_drag-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/window-behavior-spec/caption_drag.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "caption_drag-named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/window-behavior-spec/caption_drag_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=79940"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "caption_drag-safety",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/window-behavior-spec/caption_drag.qnt",
+        "--backend=typescript",
+        "--invariants=allProps",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79941"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "native_drag-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/window-behavior-spec/native_drag.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "native_drag-named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/window-behavior-spec/native_drag_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=79940"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "native_drag-safety",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/window-behavior-spec/native_drag.qnt",
+        "--backend=typescript",
+        "--invariants=allProps",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79941"
+      ],
+      "exitCode": 0
+    }
+  ]
+}

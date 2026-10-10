@@ -68,7 +68,7 @@ if (ROOT/'qa/current-native-pair.json').exists():
   if 'maxCoreReport' in native_pair:
    maximum=native_pair['maxCoreReport'];max_path=REPO/maximum['report'];assert sha(max_path)==maximum['reportSHA256'];max_core=json.loads(max_path.read_text())
    assert max_core['passed'] and max_core['existingPublicHeadersUnchanged'] and max_core['existingObjectLayoutsUnchanged'] and max_core['owningHeaders']==pin_core['owningHeaders']
-   assert sha(ROOT/'native/core/FullscreenController.cpp')==max_core['sourceSHA256'] and all(sha((max_path.parent/'owning-headers/src/desktop/state/ViewHitTester.cpp') if 'sceneCoreReport' in native_pair and p=='native/core/ViewHitTester.cpp' else ROOT/p)==h for p,h in max_core['sourceHashes'].items()) and max_core['ancestor']=={'report':str(pin_path),'reportSHA256':sha(pin_path)}
+   assert sha(ROOT/'native/core/FullscreenController.cpp')==max_core['sourceSHA256'] and all(sha((max_path.parent/'owning-headers'/('src/desktop/state/ViewHitTester.cpp' if p=='native/core/ViewHitTester.cpp' else 'src/desktop/view/Window.cpp')) if 'sceneCoreReport' in native_pair and p in ('native/core/ViewHitTester.cpp','native/core/Window.cpp') else ROOT/p)==h for p,h in max_core['sourceHashes'].items()) and max_core['ancestor']=={'report':str(pin_path),'reportSHA256':sha(pin_path)}
    assert all(sha(p)==h for p,h in max_core['dependencies'].items()) and all(sha(p)==h for p,h in max_core['linkDependencies'].items())
    qualified_core=max_core
   if 'sceneCoreReport' in native_pair:
@@ -76,13 +76,20 @@ if (ROOT/'qa/current-native-pair.json').exists():
    assert scene_core['passed'] and scene_core['existingPublicHeadersUnchanged'] and scene_core['existingObjectLayoutsUnchanged'] and scene_core['existingStrongExportsPreserved'] and scene_core['owningHeaders']==max_core['owningHeaders']
    expected_ancestor={'report':str(max_path),'reportSHA256':sha(max_path)}
    scene_base=scene_core
-   if scene_core['ancestor']!=expected_ancestor:
-    parent_path=pathlib.Path(scene_core['ancestor']['report']);assert sha(parent_path)==scene_core['ancestor']['reportSHA256']
+   seen_ancestors=set()
+   while scene_base['ancestor']!=expected_ancestor:
+    child=scene_base;parent_path=pathlib.Path(child['ancestor']['report'])
+    assert str(parent_path) not in seen_ancestors and len(seen_ancestors)<2;seen_ancestors.add(str(parent_path))
+    assert sha(parent_path)==child['ancestor']['reportSHA256']
     scene_base=json.loads(parent_path.read_text());assert scene_base['passed'] and sha(scene_base['binary'])==scene_base['binarySHA256']
-    assert scene_core['owningHeaders']==scene_base['owningHeaders']
-    assert set(scene_core['sourceHashes'])==set(scene_base['sourceHashes'])|{'native/core/KeybindManager.cpp','native/core/GestureKeyPolicy.hpp'}
-    assert all(scene_core['sourceHashes'][p]==h and sha(ROOT/p)==h for p,h in scene_base['sourceHashes'].items())
+    assert scene_base['existingPublicHeadersUnchanged'] and scene_base['existingObjectLayoutsUnchanged'] and scene_base['existingStrongExportsPreserved']
+    assert child['owningHeaders']==scene_base['owningHeaders']
+    changes=set(child.get('changedSources',['native/core/KeybindManager.cpp','native/core/GestureKeyPolicy.hpp']))
+    assert changes in ({'native/core/KeybindManager.cpp','native/core/GestureKeyPolicy.hpp'},{'native/core/Window.cpp','native/core/CaptionGesturePolicy.hpp'})
+    assert set(child['sourceHashes'])==set(scene_base['sourceHashes'])|changes
+    assert all(child['sourceHashes'][p]==h for p,h in scene_base['sourceHashes'].items() if p not in changes)
     assert all(sha(p)==h for p,h in {**scene_base['dependencies'],**scene_base['linkDependencies']}.items())
+   assert 'native/core/Window.cpp' in scene_core['sourceHashes'] or sha(ROOT/'native/core/Window.cpp')==max_core['sourceHashes']['native/core/Window.cpp']
    assert scene_base['ancestor']==expected_ancestor and all(sha(ROOT/p)==h for p,h in scene_core['sourceHashes'].items())
    assert all(sha(p)==h for p,h in scene_core['dependencies'].items()) and all(sha(p)==h for p,h in scene_core['linkDependencies'].items())
    qualified_core=scene_core

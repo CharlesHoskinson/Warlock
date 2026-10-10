@@ -1,0 +1,70 @@
+{
+  "passed": true,
+  "scope": "quint-llm-kit sampled native press/current recipient admission; native keys/identity/AT separate.",
+  "nativeAcceptance": false,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-2604b201740d4d3d952c3abf131a1163.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "qa/caption-gesture.qnt": "ee54a18c0dd3cc93d246194d0652ca466048d9efb97a05cc90d6ba69091345ca",
+    "qa/caption-gesture_test.qnt": "ac98d64fba2fc3df87574529b7940b002022c2c228c609107c5addb356a35122",
+    "native/core/Window.cpp": "e948a6265d3d8ce12bc6c1f1ee75c855684ce0863662f5da9fd07fb9e9ab49c2"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/caption-gesture.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/caption-gesture_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=79931"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "witnesses",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/caption-gesture.qnt",
+        "--backend=typescript",
+        "--witnesses",
+        "pressed",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79932"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "safety",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/caption-gesture.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79933"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "witnessCounts": {
+    "pressed": 1000
+  }
+}

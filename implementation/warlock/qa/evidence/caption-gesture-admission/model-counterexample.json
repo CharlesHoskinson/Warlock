@@ -1,0 +1,87 @@
+{
+  "passed": false,
+  "scope": "quint-llm-kit sampled native press/current recipient admission; native keys/identity/AT separate.",
+  "nativeAcceptance": false,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-ad85ecfa46e644c7bf31fb80d05a0f66.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "qa/caption-gesture.qnt": "bcf6755b9c3df82e0c5b8c204f84f467122f1cbb4c56a9872587f1cb77b2ef2d",
+    "qa/caption-gesture_test.qnt": "71ebc8af034f4291ed33bd298ba295f609aaaab9d8f057b46d2ea07841fe885f",
+    "native/core/Window.cpp": "e948a6265d3d8ce12bc6c1f1ee75c855684ce0863662f5da9fd07fb9e9ab49c2"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/caption-gesture.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/caption-gesture_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=79931"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "witnesses",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/caption-gesture.qnt",
+        "--backend=typescript",
+        "--witnesses",
+        "pressed",
+        "acceptedMove",
+        "acceptedResize",
+        "noFocusRefused",
+        "modalRefused",
+        "protectedRefused",
+        "staleOwnerRefused",
+        "consumedPressRefused",
+        "releaseIdle",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79932"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "safety",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/caption-gesture.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79933"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "witnessCounts": {
+    "pressed": 992,
+    "acceptedMove": 210,
+    "acceptedResize": 203,
+    "noFocusRefused": 380,
+    "modalRefused": 389,
+    "protectedRefused": 597,
+    "staleOwnerRefused": 104,
+    "consumedPressRefused": 855,
+    "releaseIdle": 956
+  },
+  "error": "RuntimeError('error: Invariant violated\\n')"
+}

@@ -9329,10 +9329,14 @@
             {
               "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/manifest.json",
               "sha256": "5313c21ea1dd5bd84fbab671b8d148a333aa5f080a0137f280e74f37c88ecf0c"
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/caption-gesture-admission/manifest.json",
+              "sha256": "c4d601f76acc6f1738c5be3927c716550efc91241c232fa79f25513cdbe5f0ae"
             }
           ],
-          "missingObservation": "The current full two-output native recording fails final original five-second grim capture. All gesture input assertions pass, but no full capture/presentation acceptance is inferred.; Caption/edge initiation, actual reattachment during an active gesture, close/reload, snap and transition reversal, unrelated button/device/hotplug/lock and wider output schedules; Native AT and independent original UX-021 scenario review; full original drag/restore/recovery/native/IME/hardware/resource/package/rollback gates",
-          "observation": "Native gesture ownership now waits for a current-binding idle observation before shell input, and the owning key handler preserves active move/resize across ordinary keys and shortcuts until pointer release or explicit Escape. Current two-output input checks pass both crossings, native refusal and exactly-one end; Escape cancellation also ends once. The full drag recording still fails its original final screenshot deadline, so UX-021 remains partial. Keyboard-only and taskbar Escape regressions pass. Caption/edge initiation, broader lifecycle/device/AT and independent acceptance remain open."
+          "missingObservation": "Original two-output combined capture still fails its unchanged five-second grim limit; the new one-output image does not substitute for it.; Caption cancellation/geometry rollback, close/reload and incarnation replacement during an active gesture, snapped-caption restoration, device/hotplug/lock and wider output schedules still need native implementation/qualification.; Protected-input and stale-incarnation admission are modeled/source-checked here; no native lock/grab/device or close/reuse claim. Other toolkit captions, AT and independent original scenario acceptance remain open.; Full original native/IME/hardware/resource/journey/package/rollback release gates remain open.",
+          "observation": "Native caption moves and edge resizes preserve their original owner, finish once on release and keep the unsaved GTK draft. Admission now rechecks the current shared family recipient and protected-input policy after the actual XDG press grant is consumed. Held presses refused after no-focus or a mapped modal cannot replay when eligibility returns. The one-output native addition, matched core/plugin rebuild, Quint checks and unchanged modal/draft regression pass. The original full two-output capture remains failed; UX-021 and the release remain partial."
         }
       ]
     },
@@ -11298,5 +11302,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-10T09:39:55.854255+00:00"
+  "updatedUTC": "2026-10-10T10:16:08.095999+00:00"
 }

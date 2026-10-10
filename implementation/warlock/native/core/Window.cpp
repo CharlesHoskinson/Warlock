@@ -1,4 +1,5 @@
 #include "WindowPolicy.hpp"
+#include "CaptionGesturePolicy.hpp"
 #include <algorithm>
 #include <array>
 #include <cmath>
@@ -2838,14 +2839,14 @@ void CWindow::activateX11() {
 }
 
 void CWindow::onXDGMoveRequest(const SXDGToplevelMoveRequest&) {
-    if (!m_isMapped || isHidden() || g_layoutManager->dragController()->target())
+    if (!m_isMapped || isHidden() || !WarlockCaption::eligibleRequest(m_self.lock()))
         return;
 
     g_layoutManager->beginDragTarget(layoutTarget(), MBIND_MOVE, std::nullopt, true);
 }
 
 void CWindow::onXDGResizeRequest(const SXDGToplevelResizeRequest& request) {
-    if (!m_isMapped || isHidden() || g_layoutManager->dragController()->target())
+    if (!m_isMapped || isHidden() || !WarlockCaption::eligibleRequest(m_self.lock()))
         return;
 
     g_layoutManager->beginDragTarget(layoutTarget(), MBIND_RESIZE, xdgResizeEdgeToCorner(request.edges), true);

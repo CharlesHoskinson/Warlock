@@ -2,11 +2,12 @@
 import hashlib,importlib.util,json,pathlib,resource,shlex,shutil,subprocess,sys,time
 sys.path.insert(0,'/home/hoskinson/window-integration-qa')
 from qa_launch import require_qa_scope
+CAPTION=sys.argv[1:]==['--caption'];assert not sys.argv[1:] or CAPTION
 scope=require_qa_scope();assert resource.getrlimit(resource.RLIMIT_CORE)==(1,1)
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1]
 OWNER=REPO/'implementation/maximized-stack-v1/native-core-v2'
 pointer=json.loads((ROOT/'qa/current-scene-core.json').read_text());previous=REPO/pointer['report'];prior=json.loads(previous.read_text());PRIOR=previous.parent
-OUT=ROOT/'qa/runs'/('gesture-core-'+str(time.time_ns()));OUT.mkdir()
+OUT=ROOT/'qa/runs'/(('caption-core-' if CAPTION else 'gesture-core-')+str(time.time_ns()));OUT.mkdir()
 sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
 spec=importlib.util.spec_from_file_location('owning_archive',REPO/'implementation/warlock-core-family-crop-v16/qa/archive.py');archive=importlib.util.module_from_spec(spec);spec.loader.exec_module(archive)
 r={'passed':False,'nativeAcceptance':False,'installed':False,'protectedScope':scope,'commands':[],'scope':__doc__}
@@ -24,13 +25,24 @@ try:
  assert prior['passed'] and sha(previous)==pointer['reportSHA256'] and sha(prior['binary'])==prior['binarySHA256']
  for p,h in {**prior['dependencies'],**prior['linkDependencies']}.items():assert sha(p)==h,p
  for p,h in prior['sourceHashes'].items():assert sha(ROOT/p)==h,p
- model=json.loads(run('gesture-keys-model',['/usr/bin/python3','-B',ROOT/'qa/check-gesture-keys.py'],REPO));assert model['passed'];r['gestureKeysModel']=model
+ model_name='caption-gesture' if CAPTION else 'gesture-keys'
+ model=json.loads(run(model_name+'-model',['/usr/bin/python3','-B',ROOT/('qa/check-'+model_name+'.py')],REPO));assert model['passed'];r[model_name+'Model']=model
  tree=OUT/'owning-headers';shutil.copytree(PRIOR/'owning-headers',tree)
  for rel,h in prior['owningHeaders'].items():assert sha(tree/rel)==h
- rel='src/managers/KeybindManager.cpp';source=ROOT/'native/core/KeybindManager.cpp';header=ROOT/'native/core/GestureKeyPolicy.hpp'
+ unit='Window.cpp' if CAPTION else 'KeybindManager.cpp'
+ rel='src/desktop/view/Window.cpp' if CAPTION else 'src/managers/KeybindManager.cpp'
+ source=ROOT/'native/core'/unit;header=ROOT/'native/core'/('CaptionGesturePolicy.hpp' if CAPTION else 'GestureKeyPolicy.hpp')
+ if CAPTION:
+  maximum=json.loads((ROOT/'qa/current-max-core.json').read_text());max_path=REPO/maximum['report'];assert sha(max_path)==maximum['reportSHA256']
+  max_record=json.loads(max_path.read_text());assert max_record['passed']
+  assert sha(max_path.parent/'owning-headers'/rel)==max_record['sourceHashes']['native/core/Window.cpp']
+  max_window=next(x for x in archive.archive_payloads(max_path.parent/'libhyprland_lib.a') if x['name']=='Window.cpp.o')
+  prior_window=next(x for x in archive.archive_payloads(PRIOR/'libhyprland_lib.a') if x['name']=='Window.cpp.o');assert prior_window==max_window
  compiled=tree/rel;shutil.copyfile(source,compiled);shutil.copyfile(header,compiled.parent/header.name)
- source_hashes={**prior['sourceHashes'],'native/core/KeybindManager.cpp':sha(source),'native/core/GestureKeyPolicy.hpp':sha(header)}
- originals=archive.archive_payloads(PRIOR/'libhyprland_lib.a');rows=[x for x in originals if x['name']=='KeybindManager.cpp.o'];assert len(rows)==1
+ if CAPTION:shutil.copyfile(ROOT/'native/core/ModalRecipient.hpp',compiled.parent/'ModalRecipient.hpp')
+ changed={'native/core/'+unit:sha(source),'native/core/'+header.name:sha(header)}
+ source_hashes={**prior['sourceHashes'],**changed}
+ originals=archive.archive_payloads(PRIOR/'libhyprland_lib.a');rows=[x for x in originals if x['name']==unit+'.o'];assert len(rows)==1
  original=OWNER/rel;entries=json.loads((OWNER/'build/compile_commands.json').read_text());entry=next(e for e in entries if e['file']==str(original))
  args=shlex.split(entry['command']);command=[];i=0
  while i<len(args):
@@ -39,13 +51,17 @@ try:
   if a=='-c' or a==str(original):i+=1;continue
   if a.startswith('-I'+str(OWNER)) and '/build/' not in a and '/subprojects/' not in a:a='-I'+str(tree)+a[len('-I'+str(OWNER)):]
   command.append(a);i+=1
- obj=OUT/'KeybindManager.cpp.o';dep=OUT/'KeybindManager.cpp.d'
- run('compile-KeybindManager.cpp',command+['-MD','-MF',dep,'-o',obj,'-c',compiled]);deps=dependencies(dep)
+ if CAPTION:
+  policies=[p for p in max_record['dependencies'] if p.endswith('/WindowPolicy.hpp')];assert len(policies)==1
+  policy=pathlib.Path(policies[0]);assert sha(policy)==max_record['dependencies'][str(policy)]
+  command.append('-I'+str(policy.parent))
+ obj=OUT/(unit+'.o');dep=OUT/(unit+'.d')
+ run('compile-'+unit,command+['-MD','-MF',dep,'-o',obj,'-c',compiled]);deps=dependencies(dep)
  assert not any(p.startswith('/usr/include/hyprland') or p.startswith(str(OWNER)+'/src/') for p in deps)
  target=OUT/'libhyprland_lib.a';archive.replace_payload(PRIOR/'libhyprland_lib.a',target,rows[0]['sha256'],obj);run('archive-index',['ar','s',target])
  new=archive.archive_payloads(target);assert len(new)==len(originals)
  for a,b in zip(originals,new):
-  assert a['name']==b['name'];assert b['sha256']==sha(obj) if a['name']=='KeybindManager.cpp.o' else a==b
+  assert a['name']==b['name'];assert b['sha256']==sha(obj) if a['name']==unit+'.o' else a==b
  link=next(c['command'] for c in prior['commands'] if c['name']=='link').copy()
  for i,a in enumerate(link):
   if i and link[i-1]=='-o':link[i]=str(OUT/'Hyprland')
@@ -57,7 +73,7 @@ try:
  for name,binary in [('ancestor',PRIOR/'Hyprland'),('candidate',OUT/'Hyprland')]:exports.append({tuple(l.split()[1:]) for l in run(name+'-exports',['nm','-D','--defined-only',binary]).decode().splitlines()})
  strong=lambda xs:{x for x in xs if x[0] not in ('W','V','u')};assert strong(exports[0])==strong(exports[1])
  for p,h in source_hashes.items():assert sha(ROOT/p)==h
- r.update(passed=True,binary=str(OUT/'Hyprland'),binarySHA256=sha(OUT/'Hyprland'),archiveSHA256=sha(target),sourceHashes=source_hashes,dependencies=deps,linkDependencies=actual,owningHeaders=prior['owningHeaders'],existingStrongExportsPreserved=True,existingPublicHeadersUnchanged=True,existingObjectLayoutsUnchanged=True,unchangedArchiveMembers=len(originals)-1,ancestor={'report':str(previous),'reportSHA256':sha(previous)},baselineSources={rel:{'path':str(original),'sha256':sha(original),'objectSHA256':rows[0]['sha256']}},aqLibrary=prior['aqLibrary'],aqLibrarySHA256=prior['aqLibrarySHA256'])
+ r.update(passed=True,binary=str(OUT/'Hyprland'),binarySHA256=sha(OUT/'Hyprland'),archiveSHA256=sha(target),sourceHashes=source_hashes,changedSources=sorted(changed),dependencies=deps,linkDependencies=actual,owningHeaders=prior['owningHeaders'],existingStrongExportsPreserved=True,existingPublicHeadersUnchanged=True,existingObjectLayoutsUnchanged=True,unchangedArchiveMembers=len(originals)-1,ancestor={'report':str(previous),'reportSHA256':sha(previous)},baselineSources={rel:{'path':str(original),'sha256':sha(original),'objectSHA256':rows[0]['sha256']}},aqLibrary=prior['aqLibrary'],aqLibrarySHA256=prior['aqLibrarySHA256'])
 except Exception as error:
  import traceback
  r.update(error=repr(error),traceback=traceback.format_exc())

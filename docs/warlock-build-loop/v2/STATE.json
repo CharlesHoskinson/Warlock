@@ -1,13 +1,71 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T09:39:55.854255+00:00",
+  "updatedUTC": "2026-10-10T10:16:08.095999+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
+    "id": "caption-gesture-admission",
+    "requirements": [
+      "ELM-UX-021"
+    ],
+    "scenarios": [
+      "ux-021"
+    ],
+    "paths": [
+      "implementation/warlock/native/core/Window.cpp",
+      "implementation/warlock/native/core/CaptionGesturePolicy.hpp",
+      "implementation/warlock/qa/caption-gesture.qnt",
+      "implementation/warlock/qa/caption-gesture_test.qnt",
+      "implementation/warlock/qa/check-caption-gesture.py",
+      "implementation/warlock/qa/caption-gesture-fixture.py",
+      "implementation/warlock/qa/native-caption-gesture.py",
+      "implementation/warlock/qa/check-gesture-core.py",
+      "implementation/warlock/qa/check-native-authority.py",
+      "implementation/warlock/qa/native-window-feedback.py",
+      "implementation/warlock/qa/current-scene-core.json",
+      "implementation/warlock/qa/current-native-pair.json",
+      "implementation/warlock/README.md",
+      "implementation/warlock/qa/native-max-input-region.py"
+    ],
+    "before": "XDG caption/edge requests consume a valid native press serial, then start a drag without checking the current eligible family recipient or protected-input conditions. Policy may change while the button remains held.",
+    "after": "Current native caption/edge admission uses the existing modal recipient and protected-input policy, requires the requesting window to remain that exact eligible recipient, and never redirects a gesture or replays a consumed press.",
+    "verification": [
+      "quint-llm-kit incremental native grant/current-recipient model plus frozen caption_drag/native_drag named safety checks; actual current-core pre-change GTK/Gdk delayed request counterexample, ordinary caption/edge move/resize, no-focus/modal changes during held press, one-use serial, native owner/end, draft/peer preservation and original clocks/custody; exact one-TU core/plugin rebuild and modal regression. Original two-output combined capture stays failed and release remains partial."
+    ],
+    "status": "implemented-partial",
+    "participantRecord": ".warlock-contributor/caption.json",
+    "evidence": {
+      "path": "implementation/warlock/qa/evidence/caption-gesture-admission/manifest.json",
+      "sha256": "c4d601f76acc6f1738c5be3927c716550efc91241c232fa79f25513cdbe5f0ae"
+    },
+    "observed": "Native caption moves and edge resizes preserve their original owner, finish once on release and keep the unsaved GTK draft. Admission now rechecks the current shared family recipient and protected-input policy after the actual XDG press grant is consumed. Held presses refused after no-focus or a mapped modal cannot replay when eligibility returns. The one-output native addition, matched core/plugin rebuild, Quint checks and unchanged modal/draft regression pass. The original full two-output capture remains failed; UX-021 and the release remain partial.",
+    "missingObservations": [
+      "Original two-output combined capture still fails its unchanged five-second grim limit; the new one-output image does not substitute for it.",
+      "Caption cancellation/geometry rollback, close/reload and incarnation replacement during an active gesture, snapped-caption restoration, device/hotplug/lock and wider output schedules still need native implementation/qualification.",
+      "Protected-input and stale-incarnation admission are modeled/source-checked here; no native lock/grab/device or close/reuse claim. Other toolkit captions, AT and independent original scenario acceptance remain open.",
+      "Full original native/IME/hardware/resource/journey/package/rollback release gates remain open."
+    ],
+    "nextSourceWork": "Original UX-021 close/reload and snapped-caption/cancel integration: exercise the actual owning native drag controller with owner retirement and retained drafts, model the exact demonstrated gap with quint-llm-kit and implement it in the current candidate. Preserve the failed original two-output capture and all other release gates."
+  },
+  "nextSlices": [
+    "taskbar activation/minimize/restore and popup focus journeys",
+    "persistent catalog pins",
+    "launcher search and refusal recovery",
+    "switcher/Task View/workspaces and snap/output journeys",
+    "authorized visible previews and fallback",
+    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
+    "original native, AT/IME, hardware/resource/journey gates",
+    "reproducible package, reversible deployment/rollback"
+  ],
+  "releaseAccepted": false,
+  "oldTrackerIsCurrent": false,
+  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
+  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
+  "previousSlice": {
     "id": "pointer-ownership-readiness",
     "requirements": [
       "ELM-UX-021"
@@ -76,68 +134,6 @@
       "Native AT and independent original UX-021 scenario review; full original drag/restore/recovery/native/IME/hardware/resource/package/rollback gates"
     ],
     "nextSourceWork": "Original UX-021 current native caption/edge initiation and gesture cancellation/close/snap integration: inspect actual owning request serial/recipient and original 52 drag/resize failures, then implement demonstrated gaps. Preserve the failed two-output capture, remaining UI-011 lifecycle/AT and full release scope."
-  },
-  "nextSlices": [
-    "taskbar activation/minimize/restore and popup focus journeys",
-    "persistent catalog pins",
-    "launcher search and refusal recovery",
-    "switcher/Task View/workspaces and snap/output journeys",
-    "authorized visible previews and fallback",
-    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
-    "original native, AT/IME, hardware/resource/journey gates",
-    "reproducible package, reversible deployment/rollback"
-  ],
-  "releaseAccepted": false,
-  "oldTrackerIsCurrent": false,
-  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
-  "previousSlice": {
-    "id": "popup-entry-keyboard-return",
-    "requirements": [
-      "ELM-UX-024",
-      "ELM-UI-011"
-    ],
-    "scenarios": [
-      "ux-024",
-      "focus-scope-nested dismissal"
-    ],
-    "paths": [
-      "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/src/SurfaceRenderer.elm",
-      "implementation/warlock/native/shared-host.c",
-      "implementation/warlock/native/surface.h",
-      "implementation/warlock/qa/check-search.py",
-      "implementation/warlock/qa/PopupEntryReplay.elm",
-      "implementation/warlock/qa/popup-entry.qnt",
-      "implementation/warlock/qa/popup-entry_test.qnt",
-      "implementation/warlock/qa/check-popup-entry.py",
-      "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/assets/elm.js",
-      "implementation/warlock/assets/bar.js",
-      "implementation/warlock/assets/popup.js",
-      "implementation/warlock/README.md",
-      "implementation/warlock/src/CapturedAction.elm",
-      "implementation/warlock/assets/activation.js"
-    ],
-    "before": "Original pointer taskbar Escape retains native focus identity but loses actual GTK keyboard delivery; frontend dismissal and on-demand bar parent assume keyboard entry for every opener.",
-    "after": "Carry pointer versus keyboard popup entry in the single Elm policy; pointer dismissal yields the bar keyboard lease before popup grab teardown, keyboard/nested return retains the eligible bar parent; actual original key receipt follows the opener.",
-    "verification": [
-      "quint-llm-kit sampled entry/parent/dismissal model with named tests and witnesses; compiled actual root/renderer/host and typed origin/dismissal replay; unchanged original native taskbar Escape assertion and original keyboard-only menu/Apps/taskbar return journey, same clocks/no-force/no-replay/custody; relevant modal regression."
-    ],
-    "status": "implemented-partial",
-    "participantRecord": ".warlock-contributor/popup-entry.json",
-    "evidence": {
-      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/manifest.json",
-      "sha256": "561e5f87e031d777a8f16ed2ec0f24838eebc4b969ba667622ffacc16cec2f51"
-    },
-    "observed": "Captured pointer/keyboard entry controls native parent lease before popup teardown. Original taskbar Escape now restores actual GTK key delivery; all nine keyboard surfaces pass with no injected pointer events. Modal/draft and fullscreen regressions pass normal exits. Additive Quint model and eleven actual Elm checks pass; historical failure preserved.",
-    "missingObservations": [
-      "Independent original UX-024 and UI-011 scenario review; no full original-oracle acceptance inferred",
-      "Native AT focus return and full nested scope stack, opener retirement/replacement/workspace/minimize/restart, protected-input/output races",
-      "Full original GUI journeys, toolkit/hardware/resource gates, reproducible package and reversible deployment/rollback"
-    ],
-    "nextSourceWork": "Original ELM-UX-021/ux-021 native drag/resize ownership, taskbar/output crossing and release/cancel integration: inspect current actual gesture owner and retained failures, then implement demonstrated gap. Continue full GUI release scope and outstanding focus lifecycle/AT gates."
   },
   "recentSlices": [
     {

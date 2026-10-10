@@ -85,7 +85,7 @@ fixture=r'''   peer_row=next(row for row in s.data('clients') if row['title']=='
    if not peer_row['floating']:check('SecondRootFloats',s.ctl('dispatch',"hl.dsp.window.float({action='set',window='"+peer_selector+"'})").strip()=='ok')
 '''
 adapted=adapted.replace(needle,fixture+needle)
-needle='try:\n with host.PrivateHyprSession';assert adapted.count(needle)==1
+needle='try:\n # Each nested Wayland output';assert adapted.count(needle)==1
 packet={'originalPath':str(path),'originalSHA256':hashlib.sha256(original.encode()).hexdigest(),'change':'Float original peer; replace FOCUS branch with actual two-MAX overlap, original real GTK input region, physical included/excluded clicks and return placement. No scene-revision acceptance inferred.'}
 adapted=adapted.replace(needle,"report.update(requirements=['ELM-REN-015'],scenarios=['max-input-region'],scope='Original two floating MAX surfaces, upper native pixels, real GTK lower input-hole recipient and actual focus. Committed render/hit scene agreement and independent acceptance remain open.',nativeMaxInputRunner="+repr(packet)+")\n"+needle)
 sys.argv=[str(path),'--taskbar-focus'];exec(compile(adapted,str(path),'exec'),globals())

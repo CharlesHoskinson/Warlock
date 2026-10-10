@@ -1,0 +1,86 @@
+{
+  "passed": true,
+  "scope": "quint-llm-kit sampled native press/current recipient admission; native keys/identity/AT separate.",
+  "nativeAcceptance": false,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-9ffb4f5cf27e4755a915295c080b7fbe.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "qa/caption-gesture.qnt": "09ab026b34d73d7ecb4ff3c41442652bb9a435f4fa419cf22520aa0812ac87e1",
+    "qa/caption-gesture_test.qnt": "71ebc8af034f4291ed33bd298ba295f609aaaab9d8f057b46d2ea07841fe885f",
+    "native/core/Window.cpp": "e948a6265d3d8ce12bc6c1f1ee75c855684ce0863662f5da9fd07fb9e9ab49c2"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/caption-gesture.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/caption-gesture_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=79931"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "witnesses",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/caption-gesture.qnt",
+        "--backend=typescript",
+        "--witnesses",
+        "pressed",
+        "acceptedMove",
+        "acceptedResize",
+        "noFocusRefused",
+        "modalRefused",
+        "protectedRefused",
+        "staleOwnerRefused",
+        "consumedPressRefused",
+        "releaseIdle",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79932"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "safety",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/caption-gesture.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79933"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "witnessCounts": {
+    "pressed": 992,
+    "acceptedMove": 211,
+    "acceptedResize": 190,
+    "noFocusRefused": 407,
+    "modalRefused": 425,
+    "protectedRefused": 599,
+    "staleOwnerRefused": 34,
+    "consumedPressRefused": 855,
+    "releaseIdle": 956
+  }
+}

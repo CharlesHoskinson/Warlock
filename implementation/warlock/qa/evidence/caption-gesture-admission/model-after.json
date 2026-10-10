@@ -1,0 +1,87 @@
+{
+  "passed": true,
+  "scope": "quint-llm-kit sampled native press/current recipient admission; native keys/identity/AT separate.",
+  "nativeAcceptance": false,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-886098e1d4a14fc1995ac22fc15944eb.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "qa/caption-gesture.qnt": "09ab026b34d73d7ecb4ff3c41442652bb9a435f4fa419cf22520aa0812ac87e1",
+    "qa/caption-gesture_test.qnt": "71ebc8af034f4291ed33bd298ba295f609aaaab9d8f057b46d2ea07841fe885f",
+    "native/core/Window.cpp": "c8b0ed9862a3a21b2674d6758bd876b8926f52d2be9547bb29665af35b5b872d",
+    "native/core/CaptionGesturePolicy.hpp": "f06435fdbefe36e94fd560a4808391deb9f4fae5d01c720d72ad0ffac06edbfe"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/caption-gesture.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/caption-gesture_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=79931"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "witnesses",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/caption-gesture.qnt",
+        "--backend=typescript",
+        "--witnesses",
+        "pressed",
+        "acceptedMove",
+        "acceptedResize",
+        "noFocusRefused",
+        "modalRefused",
+        "protectedRefused",
+        "staleOwnerRefused",
+        "consumedPressRefused",
+        "releaseIdle",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79932"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "safety",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/caption-gesture.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79933"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "witnessCounts": {
+    "pressed": 992,
+    "acceptedMove": 211,
+    "acceptedResize": 190,
+    "noFocusRefused": 407,
+    "modalRefused": 425,
+    "protectedRefused": 599,
+    "staleOwnerRefused": 34,
+    "consumedPressRefused": 855,
+    "releaseIdle": 956
+  }
+}
