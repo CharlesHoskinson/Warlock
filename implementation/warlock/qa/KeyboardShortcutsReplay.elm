@@ -15,7 +15,7 @@ port outgoing : E.Value -> Cmd msg
 counter value = D.decodeValue UInt64.decoder (E.string value) |> Result.withDefault UInt64.zero
 one = counter "1"
 bound = E.object [("lifetime",E.string "1"),("session",E.string "1"),("frontend",E.string "1")]
-snapshot binding serial blocked events = { binding = binding, serial = counter serial, blocked = blocked, events = List.map (\(ordinal,route) -> {serial=counter ordinal,route=route}) events }
+snapshot binding serial blocked events = { binding = binding, serial = counter serial, blocked = blocked, events = List.map (\(ordinal,route) -> {serial=counter ordinal,route=route,outputGeneration=Nothing}) events }
 receive binding value model = Shortcuts.receive (Just binding) value model
 base binding =
     let initial=Desktop.initial

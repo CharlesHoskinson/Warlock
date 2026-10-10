@@ -22,7 +22,8 @@ IME=sys.argv[1:]==['--ime'] or LAUNCHER
 ACCESSIBILITY=sys.argv[1:]==['--accessibility']
 CONTRAST=sys.argv[1:]==['--high-contrast']
 READINESS=sys.argv[1:]==['--pointer-readiness']
-ZEROOUTPUT=sys.argv[1:]==['--zero-output']
+GENERATION=sys.argv[1:]==['--shortcut-generation']
+ZEROOUTPUT=GENERATION or sys.argv[1:]==['--zero-output']
 RETIREOUTPUT=ZEROOUTPUT or sys.argv[1:]==['--output-retirement']
 SHORTCUTOUTPUT=RETIREOUTPUT or sys.argv[1:]==['--shortcut-output']
 DRAG=SHORTCUTOUTPUT or READINESS or sys.argv[1:]==['--drag-ownership']
@@ -206,6 +207,11 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
   report['outputRetirementModel']=json.loads(run('output-retirement-model',['/usr/bin/python3','-B','qa/check-output-retirement.py']));assert report['outputRetirementModel']['passed']
   run('compile-output-retirement',[str(HELD/pinned['compiler']),'make','qa/OutputRetirementReplay.elm','--optimize','--output=assets/output-retirement.js'])
   (INPUT/'qa/output-retirement-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.OutputRetirementReplay'));run('typed-output-retirement',['node','qa/output-retirement-replay.js','assets/output-retirement.js',str(OUT/'output-retirement.json')]);report['typedOutputRetirement']=json.loads((OUT/'output-retirement.json').read_text());assert all(report['typedOutputRetirement']['checks'].values())
+ if GENERATION:
+  report['shortcutGenerationModel']=json.loads(run('shortcut-generation-model',['/usr/bin/python3','-B','qa/check-shortcut-generation.py']));assert report['shortcutGenerationModel']['passed']
+  run('strict-shortcut-generation',['/usr/bin/python3','-B','qa/check-keyboard-shortcuts.py'])
+  run('compile-shortcut-generation',[str(HELD/pinned['compiler']),'make','qa/ShortcutGenerationReplay.elm','--optimize','--output=assets/shortcut-generation.js'])
+  (INPUT/'qa/shortcut-generation-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.ShortcutGenerationReplay'));run('typed-shortcut-generation',['node','qa/shortcut-generation-replay.js','assets/shortcut-generation.js',str(OUT/'shortcut-generation.json')]);report['typedShortcutGeneration']=json.loads((OUT/'shortcut-generation.json').read_text());assert all(report['typedShortcutGeneration']['checks'].values())
  if DRAG:
   report.update(requirements=['ELM-UX-021'],scenarios=['ux-021'],scope='Compiled immutable native pointer ownership/root suppression and strict production decoder; original frozen native_drag invariant model. Actual crossing/native gesture end acceptance separate.')
   run('compile-pointer-ownership',[str(HELD/pinned['compiler']),'make','qa/PointerOwnershipReplay.elm','--optimize','--output=assets/pointer-ownership.js'])

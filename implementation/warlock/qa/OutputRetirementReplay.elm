@@ -1,4 +1,4 @@
-port module OutputRetirementReplay exposing (main)
+port module OutputRetirementReplay exposing (main, bound, left, right, topology, step, native, shortcut, shortcutAt, projection, base, desktop, owner, open, seen, reconcile)
 import Desktop
 import Json.Decode as D
 import Json.Encode as E
@@ -17,10 +17,16 @@ topology revision locations=E.object [("viewProtocol",E.int 2),("kind",E.string 
 step event model=Outputs.update event model |> Tuple.first
 native value model=step (Outputs.Interaction (Desktop.Incoming value)) model
 pointer serial state recipient=E.object [("protocolVersion",E.int 3),("kind",E.string "pointer-ownership"),("ownershipProtocol",E.int 1),("binding",bound),("requestId",E.string "1"),("serial",E.string serial),("state",E.string state),("owner",recipient |> Maybe.map E.string |> Maybe.withDefault E.null)]
-shortcut binding serial destination=E.object [("protocolVersion",E.int 3),("kind",E.string "shell-shortcuts"),("shortcutProtocol",E.int 2),("binding",binding),("requestId",E.string "1"),("serial",E.string serial),("blocked",E.bool False),("events",if serial=="0" then E.list identity [] else E.list identity [E.object [("serial",E.string serial),("route",E.string "applications"),("output",destination)]])]
+shortcutAt generation binding serial destination=E.object [("protocolVersion",E.int 3),("kind",E.string "shell-shortcuts"),("shortcutProtocol",E.int 3),("binding",binding),("requestId",E.string "1"),("serial",E.string serial),("blocked",E.bool False),("events",if serial=="0" then E.list identity [] else E.list identity [E.object [("serial",E.string serial),("route",E.string "applications"),("output",destination),("outputGeneration",E.string generation)]])]
+shortcut = shortcutAt "1"
 attached=E.object [("protocolVersion",E.int 3),("kind",E.string "attached"),("binding",bound)]
 row id=E.object [("incarnation",E.string id),("label",E.string ("Document "++id)),("owner",E.null),("application",E.string "documents"),("minimized",E.bool False),("available",E.bool True)]
 projection=E.object [("protocolVersion",E.int 3),("kind",E.string "action-projection"),("binding",bound),("requestId",E.string "1"),("context",E.object [("lifetime",E.string "1"),("epoch",E.string "1"),("output",E.string "1"),("revision",E.string "1")]),("scene",E.object [("revision",E.string "1"),("focused",E.string "1"),("windows",E.list identity [row "1",row "2"])])]
+reconcile generation model =
+ let shell=(desktop model).windows.shell
+     request=shell.expected |> Maybe.map UInt64.string |> Maybe.withDefault "0"
+     value=E.object [("protocolVersion",E.int 3),("kind",E.string "action-projection"),("binding",bound),("requestId",E.string request),("context",E.object [("lifetime",E.string "1"),("epoch",E.string "1"),("output",E.string generation),("revision",E.string generation)]),("scene",E.object [("revision",E.string generation),("focused",E.string "1"),("windows",E.list identity [row "1",row "2"])])]
+ in native value model
 base locations=Outputs.initial |> step (Outputs.Topology (topology "1" locations)) |> native attached |> native projection |> native (pointer "1" "idle" Nothing) |> native (shortcut bound "0" E.null)
 desktop model=Controller.desktop (Outputs.controller model)
 owner model=D.decodeValue (D.field "focusOwner" (D.field "id" D.string)) (Outputs.frame model) |> Result.toMaybe
@@ -37,7 +43,7 @@ result=
      unrelated=step (Outputs.Topology (topology "2" [("2",right)])) opened
      replaced=step (Outputs.Topology (topology "3" [("1",left),("3",right)])) removed
      duplicate=native (shortcut bound "1" (E.list E.int right)) replaced
-     reopened=native (shortcut bound "2" (E.list E.int left)) replaced
+     reopened=native (shortcutAt "2" bound "2" (E.list E.int left)) (reconcile "2" replaced)
      oldDismiss=step (Outputs.Dismiss (dismiss "2" opened)) reopened
      staleAction=step (Outputs.Renderer (action "2" "bar" "bar:applications" reopened)) removed
      stalePopup=step (Outputs.Renderer (action "2" "popup" "control:refresh" reopened)) reopened

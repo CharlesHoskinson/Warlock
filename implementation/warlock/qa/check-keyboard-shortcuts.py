@@ -4,7 +4,7 @@ ROOT=pathlib.Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'ada
 from effect_endpoint import Endpoint
 from endpoint import Refused
 bound={'lifetime':'1','session':'1','frontend':'1'}
-reply={'protocolVersion':3,'kind':'shell-shortcuts','shortcutProtocol':1,'binding':bound,'requestId':'1','serial':'3','blocked':False,'events':[{'serial':str(i+1),'route':route} for i,route in enumerate(['applications','system','notifications'])]}
+reply={'protocolVersion':3,'kind':'shell-shortcuts','shortcutProtocol':3,'binding':bound,'requestId':'1','serial':'3','blocked':False,'events':[{'serial':str(i+1),'route':route,'output':[0,0,800,600],'outputGeneration':'1'} for i,route in enumerate(['applications','system','notifications'])]}
 checks=[]
 class Client(Endpoint):
  def __init__(self,value):self.bound=bound;self.value=value;self.submitted=None
@@ -13,6 +13,9 @@ client=Client(reply);value=client.shell_shortcuts('1')
 assert value==reply and client.submitted=={'protocolVersion':3,'kind':'shell-shortcuts-request','binding':bound,'requestId':'1'};checks.append('Read-only request carries exact native binding')
 empty=copy.deepcopy(reply);empty.update(serial='0',events=[]);assert Client(empty).shell_shortcuts('1')==empty;checks.append('Initial empty journal establishes baseline')
 for name,change in [
+ ('Legacy unstamped protocol refused',lambda r:r.update(shortcutProtocol=2)),
+ ('Zero generation refused',lambda r:r['events'][0].update(outputGeneration='0')),
+ ('Noncanonical generation refused',lambda r:r['events'][0].update(outputGeneration='01')),
  ('Boolean protocol refused',lambda r:r.update(shortcutProtocol=True)),
  ('Foreign binding refused',lambda r:r['binding'].update(frontend='2')),
  ('Wrong request refused',lambda r:r.update(requestId='2')),

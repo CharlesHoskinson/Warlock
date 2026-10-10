@@ -126,12 +126,12 @@ class Endpoint(ReadOnlyEndpoint):
   canonical(request_id)
   r=self.request({'protocolVersion':3,'kind':'shell-shortcuts-request','binding':self.bound,'requestId':request_id})
   exact(r,['protocolVersion','kind','shortcutProtocol','binding','requestId','serial','blocked','events'])
-  if r['protocolVersion']!=3 or r['kind']!='shell-shortcuts' or type(r['shortcutProtocol']) is not int or r['shortcutProtocol']!=2 or binding(r['binding'])!=self.bound or r['requestId']!=request_id or type(r['blocked']) is not bool:raise Refused('Shortcut correlation/protocol')
+  if r['protocolVersion']!=3 or r['kind']!='shell-shortcuts' or type(r['shortcutProtocol']) is not int or r['shortcutProtocol']!=3 or binding(r['binding'])!=self.bound or r['requestId']!=request_id or type(r['blocked']) is not bool:raise Refused('Shortcut correlation/protocol')
   high=int(canonical(r['serial'],True));rows=r['events']
   if not isinstance(rows,list) or len(rows)>64:raise Refused('Shortcut capacity')
   previous=None
   for row in rows:
-   exact(row,['serial','route','output']);serial=int(canonical(row['serial']))
+   exact(row,['serial','route','output','outputGeneration']);serial=int(canonical(row['serial']));canonical(row['outputGeneration'])
    box=row['output']
    if box is not None and (not isinstance(box,list) or len(box)!=4 or any(type(v) is not int or v<-(2**31) or v>=2**31 for v in box) or box[2]<=0 or box[3]<=0):raise Refused('Shortcut output bounds')
    if row['route'] not in ['applications','system','notifications'] or (previous is not None and serial!=previous+1):raise Refused('Shortcut route/order')

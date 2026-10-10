@@ -72,7 +72,7 @@
 namespace {
 HANDLE pluginHandle;
 SP<SHyprCtlCommand> command;
-CHyprSignalListener opened, closed, activated, previewLocked, previewReloaded, previewOutputRemoved;
+CHyprSignalListener opened, closed, activated, previewLocked, previewReloaded, previewOutputRemoved, shortcutOutputAdded;
 uint64_t previewPrivacy=1,previewRendering=1,previewObservation=0;
 std::string previewFdAddress;
 std::vector<PHLWINDOWREF> recentFocus;
@@ -121,7 +121,7 @@ Elm::Geometry::Barriers effectBarriers;
 struct Session { std::string start; uint64_t id; uint64_t frontend; uint64_t effectRequest=0, generation=0; std::string lastPayload, lastReply; std::vector<Render::SceneTrace::Frame> retained; int geometryProtocol=0; bool geometryEnabled=false; uint64_t geometryFrontend=0; std::set<std::string> geometryOperations{}; bool reducedMotion=true; uint64_t motionRequest=0; pid_t presentationPid=0; std::string presentationStart{}; AcceptedMotion motion{}; };
 std::map<pid_t, Session> sessions;
 enum class ShellRoute {Applications,System,Notifications};
-struct ShellShortcut {uint64_t serial;ShellRoute route;PHLMONITORREF monitor;std::array<int32_t,4> box;};
+struct ShellShortcut {uint64_t serial;ShellRoute route;PHLMONITORREF monitor;std::array<int32_t,4> box;uint64_t outputGeneration;};
 uint64_t shellShortcutSerial=0,shellShortcutSession=0,shellShortcutFrontend=0;
 std::vector<ShellShortcut> shellShortcuts;
 
@@ -375,6 +375,7 @@ std::string pointerOwnership(const Session& session,uint64_t request) {
     return "{\"protocolVersion\":3,\"kind\":\"pointer-ownership\",\"ownershipProtocol\":1,\"binding\":"+binding(session)+",\"requestId\":"+quote(std::to_string(request))+",\"serial\":"+quote(std::to_string(pointerSerial))+",\"state\":"+quote(pointerState)+",\"owner\":"+pointerOwner+"}";
 }
 void notifyShellShortcuts() noexcept {try {if(g_pEventManager)g_pEventManager->postEvent(SHyprIPCEvent{"warlockshortcuts",std::to_string(lifetime)});}catch(...) {}}
+void refreshOutputs(bool lifecycle=false);
 // Match the exact integer logical bounds advertised by xdg-output. Weak
 // native identity and press-time bounds prevent output replacement/move adoption.
 std::optional<std::array<int32_t,4>> shortcutOutputBox(const PHLMONITOR& monitor) {
@@ -407,14 +408,16 @@ void shellShortcut(ShellRoute route) noexcept {
             if(popup && popup->aliveAndVisible()) monitor=popup->getMonitor();
         }
         const auto box=shortcutOutputBox(monitor);if(!box)return;
+        refreshOutputs();
         if(shellShortcuts.size()==64)shellShortcuts.erase(shellShortcuts.begin());
-        shellShortcuts.push_back({++shellShortcutSerial,route,monitor,*box});notifyShellShortcuts();
+        shellShortcuts.push_back({++shellShortcutSerial,route,monitor,*box,outputGeneration});notifyShellShortcuts();
     } catch(...) {shellShortcuts.clear();}
 }
 int appsMenu(lua_State*){shellShortcut(ShellRoute::Applications);return 0;}
 int systemMenu(lua_State*){shellShortcut(ShellRoute::System);return 0;}
 int notificationHistory(lua_State*){shellShortcut(ShellRoute::Notifications);return 0;}
 std::string shellShortcutJournal(const Session& session,uint64_t request) {
+    refreshOutputs();
     const bool blocked=g_layoutManager->dragController()->target() || g_pSessionLockManager->isSessionLocked() || !g_pInputManager->m_exclusiveLSes.empty();
     std::string events="[";
     if(!blocked)for(const auto& event:shellShortcuts) {
@@ -422,10 +425,10 @@ std::string shellShortcutJournal(const Session& session,uint64_t request) {
         const std::string route=event.route==ShellRoute::Applications?"applications":event.route==ShellRoute::System?"system":"notifications";
         const auto current=shortcutOutputBox(event.monitor.lock());
         std::string destination="null";
-        if(current && *current==event.box)destination="["+std::to_string(event.box[0])+","+std::to_string(event.box[1])+","+std::to_string(event.box[2])+","+std::to_string(event.box[3])+"]";
-        events+="{\"serial\":"+quote(std::to_string(event.serial))+",\"route\":"+quote(route)+",\"output\":"+destination+"}";
+        if(current && *current==event.box && event.outputGeneration==outputGeneration)destination="["+std::to_string(event.box[0])+","+std::to_string(event.box[1])+","+std::to_string(event.box[2])+","+std::to_string(event.box[3])+"]";
+        events+="{\"serial\":"+quote(std::to_string(event.serial))+",\"route\":"+quote(route)+",\"output\":"+destination+",\"outputGeneration\":"+quote(std::to_string(event.outputGeneration))+"}";
     }
-    return "{\"protocolVersion\":3,\"kind\":\"shell-shortcuts\",\"shortcutProtocol\":2,\"binding\":"+binding(session)+",\"requestId\":"+quote(std::to_string(request))+",\"serial\":"+quote(std::to_string(shellShortcutSerial))+",\"blocked\":"+(blocked?"true":"false")+",\"events\":"+events+"]}";
+    return "{\"protocolVersion\":3,\"kind\":\"shell-shortcuts\",\"shortcutProtocol\":3,\"binding\":"+binding(session)+",\"requestId\":"+quote(std::to_string(request))+",\"serial\":"+quote(std::to_string(shellShortcutSerial))+",\"blocked\":"+(blocked?"true":"false")+",\"events\":"+events+"]}";
 }
 #include "shortcut-bindings.inc"
 int switcherForward(lua_State*){switcherStep(1);return 0;}
@@ -533,7 +536,7 @@ std::string renderTrace(const std::vector<Render::SceneTrace::Frame>& frames) {
     }
     return result+"]";
 }
-void refreshOutputs() {
+void refreshOutputs(bool lifecycle) {
     std::string value;
     for (const auto& monitor : State::monitorState()->monitors()) {
         value += std::to_string(monitor->m_id) + ":" + monitor->m_name + ":" +
@@ -541,7 +544,9 @@ void refreshOutputs() {
             std::to_string(monitor->m_size.x) + ":" + std::to_string(monitor->m_size.y) + ":" +
             std::to_string(monitor->m_scale) + ":" + std::to_string(static_cast<int>(monitor->m_transform)) + ";";
     }
-    if (value != previousOutputs) {
+    // A disconnect/reconnect can restore identical names, IDs and bounds
+    // between reads. Native lifecycle signals retire that generation anyway.
+    if (lifecycle || value != previousOutputs) {
         if (outputGeneration == std::numeric_limits<uint64_t>::max()) throw std::runtime_error("Output generation exhausted");
         ++outputGeneration; previousOutputs = value;
     }
@@ -1105,7 +1110,8 @@ APICALL EXPORT PLUGIN_DESCRIPTION_INFO PLUGIN_INIT(HANDLE handle) {
     previewPrivacy=previewRendering=1;previewObservation=0;
     previewLocked=g_pSessionLockManager->m_events.lock.listen([]{cancelSwitcher();shellShortcuts.clear();notifyShellShortcuts();revokePreview(true);});
     previewReloaded=Event::bus()->m_events.config.preReload.listen([]{beginShortcutReload();cancelSwitcher();shellShortcuts.clear();notifyShellShortcuts();switcherAlts.clear();switcherTab=switcherStepAvailable=false;revokePreview(false);});
-    previewOutputRemoved=Event::bus()->m_events.monitor.removed.listen([](PHLMONITOR){revokePreview(false);});
+    previewOutputRemoved=Event::bus()->m_events.monitor.removed.listen([](PHLMONITOR){refreshOutputs(true);revokePreview(false);});
+    shortcutOutputAdded=Event::bus()->m_events.monitor.added.listen([](PHLMONITOR){refreshOutputs(true);});
     startPreviewFdServer();
     WarlockGestureEnd::releaseMaxPlacement=retireNativeCaptionPlacement;
     return {"elm-observation-authority","Native first-class minimize/restore authority experiment","local","0.2"};
@@ -1116,7 +1122,7 @@ APICALL EXPORT void PLUGIN_EXIT() {
     shellShortcuts.clear();shellShortcutSerial=shellShortcutSession=shellShortcutFrontend=0;
     pointerFrames.reset();
     switcherKeys.reset();switcherSelections.clear();switcherAlts.clear();switcherChord={};switcherOwnerSession=switcherOwnerFrontend=0;
-    stopPreviewFdServer();previewLocked.reset();previewReloaded.reset();previewOutputRemoved.reset();
+    stopPreviewFdServer();previewLocked.reset();previewReloaded.reset();previewOutputRemoved.reset();shortcutOutputAdded.reset();
     opened.reset(); closed.reset(); activated.reset(); recentFocus.clear();activationHistory.clear();
     if (command) HyprlandAPI::unregisterHyprCtlCommand(pluginHandle,command);
     command.reset();previewSources.clear();clientTrees.clear();popupTrees.clear();familySources.clear();familyStyles.clear();captureProbes.clear();captureBudget.reset(); members.clear(); sessions.clear();grantRegistry.reset(); Render::SceneTrace::clearBindings();

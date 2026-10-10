@@ -7860,14 +7860,49 @@
                 "independent": false,
                 "disposition": "Owner-observed nested native/compiled/sampled results; independent original acceptance remains open."
               }
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/shortcut-generation-recovery/manifest.json",
+              "sha256": "c7b7d5322b5d306a79b0f1a1cfb185e51984a294d39a43a29ab4b682f91ccf04",
+              "scope": "An actual validated shortcut reply was held after native read with fresh serial 10/output generation 14, then its output retired and a fresh view reconciled at identical 800x600 bounds/output generation 21. Re-delivering the unchanged reply through the original bounded writer produced visible refusal without popup/window-effect replay. The next physical shortcut opened the focused launcher. Workspace, original size and unsaved application draft survived; original output/drag/capture and same-tuple nine-surface keyboard journeys passed normal cleanup.",
+              "sourceBaseRevision": "e8a3464e5a1e4217658a5494bfe3bd33376ba5e2",
+              "sourceHashes": {
+                "implementation/warlock/native/authority.cpp": "c98297f348011c6fafe93e9906d7dc938eb97f02639c75354de58116cb928fce",
+                "implementation/warlock/adapter/effect_endpoint.py": "09d01f26c6f6925051c2368972d97d67c03dea065002b9eda2335fff61e0e9b1",
+                "implementation/warlock/src/Shortcuts.elm": "cfa79040387114e79b7a6cf51ca31aa4fbe569372ff1948105265adf90cd97a7",
+                "implementation/warlock/src/OutputController.elm": "5d42d7a05b3c08438602b7753c4933011d75fb025efaddf4465effb246dd91a5",
+                "implementation/warlock/src/Desktop.elm": "176ddaf19e5dfb6c2362ac9c9c46d296155cd38e916e4cd28938a591648ed711",
+                "implementation/warlock/qa/shortcut-generation.qnt": "623af83e0501ba3f4127b98789f2c1a9e6c2dca210bc6ac1bc7e73dd833d1127",
+                "implementation/warlock/qa/shortcut-generation_test.qnt": "125b7417405690cce01dd5723f9efe69ef1cf8a1ad15efccdcce937401bbc181",
+                "implementation/warlock/qa/check-shortcut-generation.py": "8a5cf03c4ba658baee6fc3efdf8eb44bf379f0215487f3e2ef33ad6c1c77f9bb",
+                "implementation/warlock/qa/ShortcutGenerationReplay.elm": "842676757ca80981e161f814a1148dd3a08204553b917c502898fe2a933dbebb",
+                "implementation/warlock/qa/ShortcutOutputReplay.elm": "50656cdc8a02afe8cfb3fedc5d175a9449ccdab9d76dc6e08a0a56ed0391543e",
+                "implementation/warlock/qa/OutputRetirementReplay.elm": "fc288be90c83b37ad007bfe4fe8a7224bbd2359773aa599a2bc97bbeddb152b9",
+                "implementation/warlock/qa/KeyboardShortcutsReplay.elm": "3040bd2e8628f47adabdb227d7ac08796d59a3a001f7c8e985c2ca0c5c69565d",
+                "implementation/warlock/qa/check-search.py": "e077205c1151dee076391f270b0f0c7fb914d92879899f78307a8ef45e136a0f",
+                "implementation/warlock/qa/current-native-pair.json": "3c388c1e9a5cb0def1fb6a79c147c7335200e29be6d553760ddc57aa4d235322",
+                "implementation/warlock/qa/current-search-build.json": "c57578734d7a4794ac32fbf3d0b5c9ab0db5e0385e143ec6e4084ad09fb2481f",
+                "implementation/warlock/assets/elm.js": "23395064a706d042fadf1246d0a21e31ba59f6b218402d43242b970121631e76",
+                "implementation/warlock/assets/bar.js": "1b490122e33ec692c225c2f6936d2e05eb23cc0ec91c9fa0d2a16469c030cff1",
+                "implementation/warlock/assets/popup.js": "c12dc5323bbaaf2d83cff1799b1e0e72c861d012f6db0da39d50adb62648f933",
+                "implementation/warlock/qa/native-shortcut-generation.py": "1a1baa1c395df47b6d11cea2a260bb0a416b8ed2ec6b8979dd5afae30e5d4789",
+                "implementation/warlock/README.md": "0daeff04599f578510f9be8e2eae1a80cd172ad2592ddd4c2bf2d18006e3318b",
+                "implementation/warlock/qa/check-native-authority.py": "5b84e9ee1e792d8134eb724d8237819ade1094162c92ffe3dff32911a5c0f2d0",
+                "implementation/warlock/qa/check-keyboard-shortcuts.py": "7c4daf45ec5c61b554c11df2d2345c64663b3bc63cce7ee6a17dc3a2dc921129"
+              },
+              "reviewerDisposition": {
+                "name": "root-shortcut-generation",
+                "independent": false,
+                "disposition": "Owner-observed typed/compiled/sampled and real nested native results; independent original acceptance remains open."
+              }
             }
           ],
-          "missingObservation": "Independent original UI-019 scenario review, physical output hotplug and native AT/IME remain open.; Native negative/nonzero destination origin, smaller/rotated/scaled outputs and minimized/pinned/fullscreen/modal recovery remain unqualified. Existing-monitor translation still preserves relative placement; this fix does not establish arbitrary smaller-output fit. Original vertical partial clipping is unchanged.; Fresh old native shortcut receipts delayed across identical replacement bounds and arbitrary host/native generation ordering remain unqualified; the source/retirement abstractions are atomic.; Pending preview/capture/effect custody, protected input, Unknown reconciliation, transport EAGAIN/backpressure and fatal parent-loss runtime schedules remain unqualified.; Full original release journeys, measured hardware/resource budgets, reproducible package and reversible deployment remain open.",
-          "observation": "Orphaned workspace placement now anchors to the destination output origin and wraps negative logical coordinates without changing size. The observed returning floating application retains workspace 2 and its unsaved draft, is reachable at x=40/y=230, activates through the actual taskbar exactly once, receives GTK press plus client-wire release and physical keyboard editing, and paints onscreen. Original two-output move/resize/cancel/capture and unchanged MAX/snap caption/lifecycle regression pass one native tuple with normal cleanup.",
+          "missingObservation": "Independent original UI-019 acceptance and physical hotplug/AT/IME remain open.; Native/host observation-before-retirement ordering and other asynchronous observation/topology combinations remain unqualified; the held-after-read, delivered-after-reconciliation schedule is observed.; Multiple/transformed/negative-origin/smaller outputs and minimized/pinned/fullscreen/modal placement recovery remain unqualified. Existing vertical partial clipping remains unchanged.; Pending preview/capture/effect custody, protected input, Unknown reconciliation, fatal transport/backpressure and original hardware/resource/journey/package/rollback release gates remain open.",
+          "observation": "An actual validated shortcut reply was held after native read with fresh serial 10/output generation 14, then its output retired and a fresh view reconciled at identical 800x600 bounds/output generation 21. Re-delivering the unchanged reply through the original bounded writer produced visible refusal without popup/window-effect replay. The next physical shortcut opened the focused launcher. Workspace, original size and unsaved application draft survived; original output/drag/capture and same-tuple nine-surface keyboard journeys passed normal cleanup.",
           "reviewerDisposition": {
-            "name": "root-output-placement",
+            "name": "root-shortcut-generation",
             "independent": false,
-            "disposition": "Owner-observed nested native/compiled/sampled results; independent original acceptance remains open."
+            "disposition": "Owner-observed typed/compiled/sampled and real nested native results; independent original acceptance remains open."
           }
         }
       ]
@@ -11487,5 +11522,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-10T13:40:42.293009+00:00"
+  "updatedUTC": "2026-10-10T13:56:20.997577+00:00"
 }

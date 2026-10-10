@@ -1,0 +1,251 @@
+{
+  "schema": 1,
+  "requirement": "ELM-UI-019",
+  "ears": "WHEN an output disappears, the host SHALL recover shell controls and displaced popup focus on a declared surviving output, preserve workspace identity and reachable application recovery, and reject removed-generation effects until available outputs reconcile.",
+  "scenario": {
+    "name": "outputs-return",
+    "given": "all outputs disappear",
+    "when": "one returns",
+    "then": "controls reconcile on available output without old-generation effects"
+  },
+  "verificationScope": "Frozen threshold/policy plus independently observed named fixtures, native counters or user/AT records as applicable; hashes and failure outcomes retained.",
+  "disposition": "partial",
+  "requirementAccepted": false,
+  "fullReleaseAccepted": false,
+  "sourceParent": "e8a3464e5a1e4217658a5494bfe3bd33376ba5e2",
+  "sourceHashes": {
+    "implementation/warlock/native/authority.cpp": "c98297f348011c6fafe93e9906d7dc938eb97f02639c75354de58116cb928fce",
+    "implementation/warlock/adapter/effect_endpoint.py": "09d01f26c6f6925051c2368972d97d67c03dea065002b9eda2335fff61e0e9b1",
+    "implementation/warlock/src/Shortcuts.elm": "cfa79040387114e79b7a6cf51ca31aa4fbe569372ff1948105265adf90cd97a7",
+    "implementation/warlock/src/OutputController.elm": "5d42d7a05b3c08438602b7753c4933011d75fb025efaddf4465effb246dd91a5",
+    "implementation/warlock/src/Desktop.elm": "176ddaf19e5dfb6c2362ac9c9c46d296155cd38e916e4cd28938a591648ed711",
+    "implementation/warlock/qa/shortcut-generation.qnt": "623af83e0501ba3f4127b98789f2c1a9e6c2dca210bc6ac1bc7e73dd833d1127",
+    "implementation/warlock/qa/shortcut-generation_test.qnt": "125b7417405690cce01dd5723f9efe69ef1cf8a1ad15efccdcce937401bbc181",
+    "implementation/warlock/qa/check-shortcut-generation.py": "8a5cf03c4ba658baee6fc3efdf8eb44bf379f0215487f3e2ef33ad6c1c77f9bb",
+    "implementation/warlock/qa/ShortcutGenerationReplay.elm": "842676757ca80981e161f814a1148dd3a08204553b917c502898fe2a933dbebb",
+    "implementation/warlock/qa/ShortcutOutputReplay.elm": "50656cdc8a02afe8cfb3fedc5d175a9449ccdab9d76dc6e08a0a56ed0391543e",
+    "implementation/warlock/qa/OutputRetirementReplay.elm": "fc288be90c83b37ad007bfe4fe8a7224bbd2359773aa599a2bc97bbeddb152b9",
+    "implementation/warlock/qa/KeyboardShortcutsReplay.elm": "3040bd2e8628f47adabdb227d7ac08796d59a3a001f7c8e985c2ca0c5c69565d",
+    "implementation/warlock/qa/check-search.py": "e077205c1151dee076391f270b0f0c7fb914d92879899f78307a8ef45e136a0f",
+    "implementation/warlock/qa/current-native-pair.json": "3c388c1e9a5cb0def1fb6a79c147c7335200e29be6d553760ddc57aa4d235322",
+    "implementation/warlock/qa/current-search-build.json": "c57578734d7a4794ac32fbf3d0b5c9ab0db5e0385e143ec6e4084ad09fb2481f",
+    "implementation/warlock/assets/elm.js": "23395064a706d042fadf1246d0a21e31ba59f6b218402d43242b970121631e76",
+    "implementation/warlock/assets/bar.js": "1b490122e33ec692c225c2f6936d2e05eb23cc0ec91c9fa0d2a16469c030cff1",
+    "implementation/warlock/assets/popup.js": "c12dc5323bbaaf2d83cff1799b1e0e72c861d012f6db0da39d50adb62648f933",
+    "implementation/warlock/qa/native-shortcut-generation.py": "1a1baa1c395df47b6d11cea2a260bb0a416b8ed2ec6b8979dd5afae30e5d4789",
+    "implementation/warlock/README.md": "0daeff04599f578510f9be8e2eae1a80cd172ad2592ddd4c2bf2d18006e3318b",
+    "implementation/warlock/qa/check-native-authority.py": "5b84e9ee1e792d8134eb724d8237819ade1094162c92ffe3dff32911a5c0f2d0",
+    "implementation/warlock/qa/check-keyboard-shortcuts.py": "7c4daf45ec5c61b554c11df2d2345c64663b3bc63cce7ee6a17dc3a2dc921129"
+  },
+  "originalRequirements": {
+    "path": "docs/elm-roadmap/requirements.json",
+    "sha256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b"
+  },
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791639318653433427/Hyprland",
+      "sha256": "63203d5438b5d632467bda134c409ed02783ce4597f308104b20adf4b2a90154"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791640237225188593/elm-window-geometry-authority.so",
+      "sha256": "1c95964d7b91640dfc586871c28512e320d4af6aeec3434c3c6b9ec20610ba72"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+      "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791640275755675047/elm-host",
+    "sha256": "806aa4bcd44f0b67b6e58db7d1e41da41f1956692ff14001d5f19a5b005cecf7",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791640275755675047/report.json",
+    "heldBuildSHA256": "dea548c1c537be76e4796d505f6c58ea2af0b26e5cff4917d25011c116ef0d21"
+  },
+  "artifacts": {
+    "native-failed-default-size": {
+      "path": "implementation/warlock/qa/runs/native-drag-ownership-1791640359984272455/report.json",
+      "sha256": "82eb3882cac6ceaf9a9ba00ef166497233605d1eb9549aa22508b3701a8ec5ac",
+      "packet": "native-failed-default-size.json.gz",
+      "packetSHA256": "46995dd0482ce6adb5342bfbf45569118c725f8d3717dd86fd01699fc9535927",
+      "encoding": "gzip",
+      "passed": false
+    },
+    "native-after": {
+      "path": "implementation/warlock/qa/runs/native-drag-ownership-1791640416873373924/report.json",
+      "sha256": "497eb5076c7f1545e81c83f24c0f55206a6a769f9f43cfcfa9b22b83b6f4e99b",
+      "packet": "native-after.json.gz",
+      "packetSHA256": "5b11d44ac0db38151e5bc8157c714f7979daa7eee487f5bfdc8cec8e72b25573",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "keyboard-regression": {
+      "path": "implementation/warlock/qa/runs/native-keyboard-shell-1791640471440008821/report.json",
+      "sha256": "14577e7fcfed7395e91b55c6e927203eee68843d9f6c3c97c8aa8c32005d9d99",
+      "packet": "keyboard-regression.json.gz",
+      "packetSHA256": "0e36870f6a6d07f2c7903be589c6e24762049be4ae0340ceaa6271f77d790731",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "compiled-root-host": {
+      "path": "implementation/warlock/qa/runs/drag-ownership-1791640275755675047/report.json",
+      "sha256": "dea548c1c537be76e4796d505f6c58ea2af0b26e5cff4917d25011c116ef0d21",
+      "packet": "compiled-root-host.json.gz",
+      "packetSHA256": "5fb85c5246a2fd22c8375d5f7ecdc78d37ad8b08ce9395ecd0ce18e08affbc50",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "native-authority": {
+      "path": "implementation/warlock/qa/runs/native-authority-1791640237225188593/report.json",
+      "sha256": "ea7c63b786f509384a99be7e024a29c2a7dbdeb78f2a05a34a7bc192f4851812",
+      "packet": "native-authority.json.gz",
+      "packetSHA256": "9530051f21fb4162c1099c58d15f5c7e7fc200ebfa3dc993462e7f49336eb3e9",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "model-init": {
+      "path": "implementation/warlock/qa/runs/shortcut-generation-1791639950789459904/report.json",
+      "sha256": "d210db3ff2fe2e7498f7596a462946cf2fe362a1f5c7edc4ccd326ddc4ff381c",
+      "packet": "model-init.json.gz",
+      "packetSHA256": "6a8e60b367472d2d4791631bd7046d3810c18f38cc7d0a99b919792832b16272",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "model-final": {
+      "path": "implementation/warlock/qa/runs/shortcut-generation-1791640031125214889/report.json",
+      "sha256": "34898ac5a20dad0b2e5e1c34737a06b60c11e32ed13ed78936852f9fe4bc9511",
+      "packet": "model-final.json.gz",
+      "packetSHA256": "a518250fd65c0e243dc1153c93c60172206a4b375840476c8bbabe39218b8b50",
+      "encoding": "gzip",
+      "passed": true
+    }
+  },
+  "logs": {
+    "native-failed-default-size-warlock.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791640359984383267/warlock.log",
+      "originalSHA256": "a1e3d75f2a10fe2811153759287c6f3e177b7aecbe126573e5a693de7ebf62fd",
+      "sha256": "b2d00fa3aaead4db03386070e94baaa3d2e4eb2bbe14013928a70cfbca33a837"
+    },
+    "native-failed-default-size-fixture.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791640359984383267/fixture.log",
+      "originalSHA256": "eaf3be3dbb137917510dfe710bd92a16c6f9011f62e78a87a66affd48b3a45f7",
+      "sha256": "0cc55437389f7f648e1e90c608772d2069603b68ba89349feaedcdbe949c35d2"
+    },
+    "native-failed-default-size-fixture-control.events.jsonl.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791640359984383267/fixture-control.events.jsonl",
+      "originalSHA256": "c25634f70dece7be703776bbed1b77d41a136d12314b72e1bcfb64ccd683379d",
+      "sha256": "95d3baed21abdcbec8bc7a58f075e1daf382e8de57bd19da5b6f981596d934a8"
+    },
+    "native-failed-default-size-host-evidence.json.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791640359984383267/host-evidence.json",
+      "originalSHA256": "6676d88aaedda86b3acf43c949de415d4f2672f47c474631b201955e961ddf58",
+      "sha256": "402765d9f0104e670c697ca297f3835e5428cd259354ebdb99ca90baa8148d68"
+    },
+    "native-after-warlock.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791640416873494252/warlock.log",
+      "originalSHA256": "f5bd9e4b0e93c591d3b767e7981a9123955729571503e62b5951c38c3911d334",
+      "sha256": "d91acb8b1e974cee46c1d1011b648d29cba772def8ddc3f951e9e4c46e6a0fd2"
+    },
+    "native-after-fixture.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791640416873494252/fixture.log",
+      "originalSHA256": "99ae7f3ee99e5250ef67f0bbcb89f1ccdf58a22b632f72143f5e2d7153559703",
+      "sha256": "accfcdf4f6e492426c58a64ce1bf58793fbe33de0677894282a96844b36992ce"
+    },
+    "native-after-fixture-control.events.jsonl.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791640416873494252/fixture-control.events.jsonl",
+      "originalSHA256": "c25634f70dece7be703776bbed1b77d41a136d12314b72e1bcfb64ccd683379d",
+      "sha256": "95d3baed21abdcbec8bc7a58f075e1daf382e8de57bd19da5b6f981596d934a8"
+    },
+    "native-after-host-evidence.json.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791640416873494252/host-evidence.json",
+      "originalSHA256": "9b7017c0691a0acf294754a7b34cbe99dade2c1e7e8cefa0d52b170bb1c7153e",
+      "sha256": "3c377f907b993a5b75a641b90d68a6d8770db8cac20b1ab44e12e024ab51dc77"
+    },
+    "native-after-shortcut-hold.json.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791640416873494252/shortcut-hold.json",
+      "originalSHA256": "2db3c1c7d95330cc924a8a69c7a2020991f089cc5d017f5e5b3ba0aed7e07e73",
+      "sha256": "9bc4a09f634f12468db0a2ad980effc3a739b7c5345837b8e6b9a3ba1b237405"
+    },
+    "native-after-shortcut-hold.delivered.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791640416873494252/shortcut-hold.delivered",
+      "originalSHA256": "2db3c1c7d95330cc924a8a69c7a2020991f089cc5d017f5e5b3ba0aed7e07e73",
+      "sha256": "9bc4a09f634f12468db0a2ad980effc3a739b7c5345837b8e6b9a3ba1b237405"
+    },
+    "native-after-shortcut-generation-backend.py.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791640416873494252/shortcut-generation-backend.py",
+      "originalSHA256": "dcd98c9159e4a06c1f0ec36cd1f02c6d77469347d0a8cd24d2b696c459416b1f",
+      "sha256": "0766b06fdd1b154519f6dc8bc956f5b2d8b085e85919f055a9591b95f249a0f8"
+    },
+    "keyboard-regression-warlock.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791640471440116873/warlock.log",
+      "originalSHA256": "d887dccbdb3dd1fcc4e58a4aef98b8967de6288143cf65c11cd76c8a4f99ff25",
+      "sha256": "c3ed1eebd119c1c097fd6becd5df6d8aea79a9edaa263f5e426bad3075712939"
+    },
+    "keyboard-regression-fixture.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791640471440116873/fixture.log",
+      "originalSHA256": "6312561917da3b109239845cfb67170a49c40b02c5aaade68d6d535f7ef7fdd7",
+      "sha256": "567f9400694e8970fe2c6f18ce3ccf75ac8bfacee15c133797dc0e21907595a7"
+    },
+    "keyboard-regression-fixture-control.events.jsonl.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791640471440116873/fixture-control.events.jsonl",
+      "originalSHA256": "d54de08810e5a15c0953410198148c6c60aea2686e3c3a3325dc6ad25e670889",
+      "sha256": "5ec91319cc69207fce8091e74b6ab0bade785411ab20c3c6d1e09b75dac71791"
+    },
+    "keyboard-regression-host-evidence.json.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791640471440116873/host-evidence.json",
+      "originalSHA256": "b4c5638b80887c34f5c054bf97c03057c75bab359861217206c5ff5597de1b60",
+      "sha256": "96e190db849bfa7fb97d156e3c690fbe11ccc49abcf089f59db2210cb71628be"
+    },
+    "model-typecheck.stdout.gz": {
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/shortcut-generation-1791640031125214889/typecheck.stdout",
+      "originalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+    },
+    "model-named.stdout.gz": {
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/shortcut-generation-1791640031125214889/named.stdout",
+      "originalSHA256": "fef6f51df4ad1447dc22d2d21ea616f84866f651505425828590ef078a08c7f0",
+      "sha256": "0cb58c693056b64a13ee78810fddb4a17bf5ae11a4466c8674c38ea69834dada"
+    },
+    "model-witnesses.stdout.gz": {
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/shortcut-generation-1791640031125214889/witnesses.stdout",
+      "originalSHA256": "7208db0d4f8f6b66a69989d8b6c57572330ddffb323b0ee8b4bcd4207257ef27",
+      "sha256": "4179d792c8202e65cece73b23b8b3c129c5868dc3cf0bf016f4a6efbe0c17350"
+    },
+    "model-safety.stdout.gz": {
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/shortcut-generation-1791640031125214889/safety.stdout",
+      "originalSHA256": "5b3432b6e5ebfbb80a82f76c95610b2733a492c073c66f30a532dc3786b4b477",
+      "sha256": "025a440e625a51ae74ad4a65e59ded8a40cb5fc8b2f35c423de24bbba867c65c"
+    }
+  },
+  "reviewerDisposition": {
+    "name": "root-shortcut-generation",
+    "independent": false,
+    "disposition": "Owner-observed typed/compiled/sampled and real nested native results; independent original acceptance remains open."
+  },
+  "modelConstructionFailures": [
+    {
+      "path": "implementation/warlock/qa/runs/shortcut-generation-1791639984433632680/report.json",
+      "sha256": "4979916d317f60fab425dfb1a90c9c81aaa99ce0a68fcc2cb9fa015877fa1b48",
+      "error": "RuntimeError(\"\\n Error [QNT000]: Expected [native,view,observed,ready,held,seen,opened,retiredAdoption] and [native,view,observed,ready,held,seen] to be the same\\nTrying to unify entities ['native', 'view', 'observed', 'ready', 'held', 'seen', 'opened', 'retiredAdoption'] and ['native', 'view', 'observed', 'ready', 'held', 'seen']\\nTrying to unify Read[_v782] & Temporal[_v783] & Update['native', 'view', 'observed', 'ready', 'held', 'seen', 'opened', 'retiredAdoption'] and Read['held', 'native', 'view', 'observed', 'ready', 'opened', 'seen', 'retiredAdoption'] & Temporal['opened', 'retiredAdoption'] & Update['native', 'view', 'observed', 'ready', 'held', 'seen']\\nTrying to unify (Read[_v771] & Temporal[_v772] & Update[_v773], Read[_v774] & Temporal[_v775] & Update[_v773], Read[_v776] & Temporal[_v777] & Update[_v773], Read[_v778] & Temporal[_v779] & Update[_v773], Read[_v780] & Temporal[_v781] & Update[_v773], Read[_v782] & Temporal[_v783] & Update[_v773], Read[_v784] & Temporal[_v785] & Update[_v773]) => Read[_v771, _v774, _v776, _v778, _v780, _v782, _v784] & Temporal[_v772, _v775, _v777, _v779, _v781, _v783, _v785] & Update[_v773] and (Read['held', 'native', 'view', 'observed', 'ready', 'seen', 'opened', 'retiredAdoption'] & Update['native', 'view', 'observed', 'ready', 'held', 'seen', 'opened', 'retiredAdoption'], Read['native', 'view', 'observed', 'ready', 'held', 'seen', 'opened', 'retiredAdoption'] & Update['native', 'view', 'observed', 'ready', 'held', 'seen', 'opened', 'retiredAdoption'], Read['native', 'view', 'observed', 'held', 'seen', 'retiredAdoption'] & Update['native', 'view', 'observed', 'ready', 'held', 'seen', 'opened', 'retiredAdoption'], Read['view', 'ready', 'native', 'observed', 'held', 'seen', 'opened', 'retiredAdoption'] & Update['native', 'view', 'observed', 'ready', 'held', 'seen', 'opened', 'retiredAdoption'], Read['view', 'ready', 'native', 'held', 'seen', 'opened', 'retiredAdoption'] & Update['native', 'view', 'observed', 'ready', 'held', 'seen', 'opened', 'retiredAdoption'], Read['held', 'native', 'view', 'observed', 'ready', 'opened', 'seen', 'retiredAdoption'] & Temporal['opened', 'retiredAdoption'] & Update['native', 'view', 'observed', 'ready', 'held', 'seen'], Read['native', 'seen', 'held', 'view', 'observed', 'ready', 'opened', 'retiredAdoption'] & Update['native', 'view', 'observed', 'ready', 'held', 'seen', 'opened', 'retiredAdoption']) => _e133\\nTrying to infer effect for operator application in actionAny(press, retire, replace, oldObservation, reconcile, deliver, freshPress)\\n\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/shortcut-generation.qnt:47:17\\n  47:   action step = any {press,retire,replace,oldObservation,reconcile,deliver,freshPress}\\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n\\n\\n Error [QNT200]: Using an action as an argument of `or` is only allowed in temporal definitions, but it is used in action `deliverLegacy`. For alternative actions, use `any { ... }` instead.\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/shortcut-generation.qnt:42:5\\n  42:     opened'=opened or not(seen),\\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n\\n\\n Error [QNT200]: Using an action as an argument of `or` is only allowed in temporal definitions, but it is used in action `deliver`. For alternative actions, use `any { ... }` instead.\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/shortcut-generation.qnt:38:5\\n  38:     opened'=opened or admit(ready,observed,held,seen),\\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n\\nerror: typechecking failed\\n\")"
+    },
+    {
+      "path": "implementation/warlock/qa/runs/shortcut-generation-1791640007341936419/report.json",
+      "sha256": "cc9355aed72e1d8607936d67358957b3c3f3c414a26b1fde29a856faea616f3a",
+      "error": "RuntimeError(\"\\n Error [QNT000]: Expected [native,view,observed,ready,held,seen,opened,retiredAdoption] and [] to be the same\\nTrying to unify entities ['native', 'view', 'observed', 'ready', 'held', 'seen', 'opened', 'retiredAdoption'] and []\\nTrying to unify Read[_v815] & Update['native', 'view', 'observed', 'ready', 'held', 'seen', 'opened', 'retiredAdoption'] and Read['retiredAdoption', 'opened']\\nTrying to unify (Read[_v813] & Update[_v814], Read[_v815] & Update[_v814]) => Read[_v816] & Update[_v814] and (Read[_v805] & Update['native', 'view', 'observed', 'ready', 'held', 'seen', 'opened', 'retiredAdoption'], Read['retiredAdoption', 'opened']) => _e141\\nTrying to infer effect for operator application in then(then(then(then(then(then(init, press), retire), replace), reconcile), deliverLegacy), assert(and(retiredAdoption, opened)))\\n\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/shortcut-generation_test.qnt:8:34\\n  8:   run legacyCounterexampleTest = init.then(press).then(retire).then(replace).then(reconcile).then(deliverLegacy).then(assert(retiredAdoption and opened))\\n                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n\\nerror: typechecking failed\\n\")"
+    },
+    {
+      "path": "implementation/warlock/qa/runs/shortcut-generation-1791640019837187284/report.json",
+      "sha256": "f49942e33fadbff13a08b02f24f747b65949ec00bad780c1978bc8466837d93d",
+      "error": "RuntimeError(\"\\n Error [QNT000]: mismatched input '=' expecting ':'\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/shortcut-generation_test.qnt:3:33\\n  3:   action check(condition: bool) = all {assert(condition),native'=native,view'=view,observed'=observed,ready'=ready,held'=held,seen'=seen,opened'=opened,retiredAdoption'=retiredAdoption}\\n                                     ^\\n\\n\\n Error [QNT000]: extraneous input 'run' expecting {<EOF>, 'module', DOCCOMMENT}\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/shortcut-generation_test.qnt:4:3\\n  4:   run delayedOldReplyTest = init.then(press).then(retire).then(replace).then(reconcile).then(deliver).then(check(staleConsumed and safety))\\n       ^^^\\n\\nerror: parsing failed\\n\")"
+    }
+  ],
+  "observation": "An actual validated shortcut reply was held after native read with fresh serial 10/output generation 14, then its output retired and a fresh view reconciled at identical 800x600 bounds/output generation 21. Re-delivering the unchanged reply through the original bounded writer produced visible refusal without popup/window-effect replay. The next physical shortcut opened the focused launcher. Workspace, original size and unsaved application draft survived; original output/drag/capture and same-tuple nine-surface keyboard journeys passed normal cleanup.",
+  "missingObservations": [
+    "Independent original UI-019 acceptance and physical hotplug/AT/IME remain open.",
+    "Native/host observation-before-retirement ordering and other asynchronous observation/topology combinations remain unqualified; the held-after-read, delivered-after-reconciliation schedule is observed.",
+    "Multiple/transformed/negative-origin/smaller outputs and minimized/pinned/fullscreen/modal placement recovery remain unqualified. Existing vertical partial clipping remains unchanged.",
+    "Pending preview/capture/effect custody, protected input, Unknown reconciliation, fatal transport/backpressure and original hardware/resource/journey/package/rollback release gates remain open."
+  ],
+  "modelScope": "Separate press, retirement, host replacement, old observation, fresh reconciliation and delivery. One held reply with opaque bounded generations and consumed flag abstracts the transport; original Shell request supersession provides old-observation rejection. Six named tests retain the legacy unsafe adoption counterexample. Initialization, positive witnesses and sampled safety passed; no exhaustive/fairness/hardware/input/AT acceptance claimed.",
+  "protocolCompatibility": "Protocol 3 event generation is canonical, positive and mandatory at the native adapter. Elm still strictly decodes old protocol 1/2 journals for serial/binding compatibility, but unstamped events cannot authorize root output routing. Serial, contiguous history, binding, pointer ownership and Unknown/effect authority contracts remain unchanged.",
+  "fixtureCorrection": "First run passed every original output/placement assertion but timed out waiting for identical replacement bounds: recreated nested output defaults to 400x300. Final fixture explicitly applies the original 800x600@60,0x0,scale1 mode before release; original six-second waits and cleanup stay unchanged."
+}

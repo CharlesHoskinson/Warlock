@@ -115,7 +115,11 @@ updateCore event ((Model model) as current) =
                                 destination=if D.decodeValue (D.field "shortcutProtocol" D.int) raw==Ok 1 && List.length model.views==1 then List.head model.views else case matches of
                                     [entry] -> Just entry.scope
                                     _ -> Nothing
-                            in if route==Nothing || desktop.windows.shell.phase==Shell.Detached || desktop.windows.shell.phase==Shell.Exhausted then apply (Controller.Interaction message) current else
+                                nativeGeneration=desktop.windows.shell.effects.observed |> Maybe.map (.context >> .output)
+                                reconciled=desktop.windows.shell.phase==Shell.Ready && Shortcuts.currentGeneration nativeGeneration snapshot
+                            in if route==Nothing || desktop.windows.shell.phase==Shell.Detached || desktop.windows.shell.phase==Shell.Exhausted then apply (Controller.Interaction message) current else if not reconciled then
+                                apply (Controller.Interaction (Desktop.ScopedShortcut snapshot False)) current
+                               else
                                case destination of
                                 Just scope ->
                                     if PointerOwnership.blocked desktop.windows.shell.binding desktop.pointer || (model.selected/=Just scope && not (freshRelocationPossible model.controller)) then
