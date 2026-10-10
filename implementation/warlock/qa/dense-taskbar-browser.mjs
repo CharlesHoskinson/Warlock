@@ -40,8 +40,8 @@ try{
  await call('Emulation.setEmulatedMedia',{features:[{name:'forced-colors',value:'active'}]});await key('Home');check('Forced colors retain a visible focus outline',await evaluate(`getComputedStyle(document.activeElement).outlineStyle!=='none'`));
  check('Scrolling and navigation never emit activation',await evaluate(`nativePackets.filter(p=>p.kind==='surface-action').length===0`));await call('Emulation.setEmulatedMedia',{features:[]});await viewport(480,420);await call('Page.navigate',{url:base+'/qa/dense-picker.html'});await until('!!window.receivePresentation');
  let pickerPub=0;
- async function showPicker(disabled=-1,lease='1',reverse=false){
-  const members=Array.from({length:20},(_,i)=>({id:'family:'+i,domId:'picker:'+String(pickerPub+1)+':'+i,label:'Document '+i,ariaLabel:'Activate Document '+i,detail:'Open',enabled:i!==disabled}));
+ async function showPicker(disabled=-1,lease='1',reverse=false,fixedIds=false){
+  const members=Array.from({length:20},(_,i)=>({id:'family:'+i,domId:'picker:'+(fixedIds?'retained':String(pickerPub+1))+':'+i,label:'Document '+i,ariaLabel:'Activate Document '+i,detail:'Open',enabled:i!==disabled}));
   if(reverse)members.reverse();
   const frame={surfaceProtocol:2,publication:String(++pickerPub),lease,mode:'picker',status:'Choose a window',bar:[],popup:[{id:'control:close',domId:'picker-close:'+pickerPub,label:'Close',ariaLabel:'Close picker',detail:'',enabled:true},...members]};
   await evaluate('receivePresentation('+JSON.stringify(frame)+')');await until('document.querySelector(".surface-popup")?.dataset.publication==='+JSON.stringify(frame.publication));await sleep(70);
@@ -60,13 +60,26 @@ try{
  await evaluate(`document.querySelectorAll('.surface-controls button').forEach(button=>button.style.minHeight='')`);await sleep(100);
  await showPicker(-1,'1',true);check('Picker reordered publication preserves chosen identity',(await pickerState()).id==='family:19'&&pickerVisible(await pickerState()));
  await showPicker(-1,'2',true);check('Picker fresh reflow lease preserves its current focused member',(await pickerState()).id==='family:19'&&pickerVisible(await pickerState()));
- await evaluate(`document.body.tabIndex=-1;document.body.focus()`);await showPicker(-1,'3');check('Picker old lease cannot restore a selected member',await evaluate('document.activeElement===document.body'));
+ // Native reflow retains the same focused DOM control; it does not create a
+ // replacement control/focusin event. Ordinary publications keep wheel position,
+ // while a fresh input lease must reveal that actual focused choice again.
+ await showPicker(-1,'2',false,true);await key('End');await evaluate(`window.retainedPickerFocus=document.activeElement;document.querySelector('.surface-popup').scrollTop=0`);await showPicker(-1,'2',false,true);
+ check('Picker ordinary publication preserves deliberate scrolling',(await pickerState()).scroll===0);
+ await showPicker(-1,'3',false,true);check('Fresh lease reveals the same retained focused DOM control',await evaluate('document.activeElement===window.retainedPickerFocus')&&(await pickerState()).id==='family:19'&&pickerVisible(await pickerState()),await pickerState());
+ await evaluate(`document.body.tabIndex=-1;document.body.focus()`);await showPicker(-1,'4');check('Picker old lease cannot restore a selected member',await evaluate('document.activeElement===document.body'));
  await evaluate(`document.querySelector('[data-surface-control="family:0"]').focus()`);await key('ArrowUp');await key('ArrowUp');check('Picker arrows clamp at first action',(await pickerState()).id==='control:close');
  await key('End');await key('ArrowDown');check('Picker arrows clamp at final member',(await pickerState()).id==='family:19'&&pickerVisible(await pickerState()));
+ // Match the original native 200% small-output available popup height.
+ await evaluate(`document.documentElement.style.fontSize='32px';document.body.style.fontSize='32px'`);await showPicker(-1,'4');await evaluate(`document.querySelector('[data-surface-control="family:0"]').focus()`);await key('End');
+ for(const [width,height] of [[480,252],[640,372],[480,252]]){
+  await viewport(width,height);const geometry=await evaluate(`(()=>{const b=document.activeElement,r=b.getBoundingClientRect(),s=getComputedStyle(b),extent=parseFloat(s.outlineWidth)+Math.max(0,parseFloat(s.outlineOffset));return {identity:b.dataset.surfaceControl,font:getComputedStyle(document.body).fontSize,viewport:[innerWidth,innerHeight],box:[r.left,r.top,r.right,r.bottom],outline:extent,captions:[...b.querySelectorAll('.control-label,.control-detail')].filter(n=>n.textContent).map(n=>{const q=n.getBoundingClientRect();return {text:n.textContent,top:q.top,bottom:q.bottom};})};})()`);
+  check('200-percent small popup keeps full target focus and captions '+width+'x'+height,geometry.identity==='family:19'&&geometry.font==='32px'&&geometry.box[0]-geometry.outline>=0&&geometry.box[1]-geometry.outline>=0&&geometry.box[2]+geometry.outline<=width&&geometry.box[3]+geometry.outline<=height&&geometry.captions.every(c=>c.top>=geometry.box[1]&&c.bottom<=geometry.box[3]),geometry);
+ }
+ await capture('picker-small-200');await evaluate(`document.documentElement.style.fontSize='24px';document.body.style.fontSize='24px'`);
  check('Picker navigation emits no window action',await evaluate(`nativePackets.filter(p=>p.kind==='surface-action').length===0`));
  await viewport(480,260);let menuPub=100;
  async function showMenu(selected=19,allDisabled=false){
-  const frame={surfaceProtocol:2,publication:String(++menuPub),lease:'3',mode:'menu',status:'Window actions',bar:[],popup:[{id:'control:menu-close',domId:'menu-close',label:'Close',ariaLabel:'Close window actions',detail:'',enabled:true},...Array.from({length:20},(_,i)=>({id:'menu:1:'+i,domId:'menu:1:'+i,label:'Operation '+i,ariaLabel:'Operation '+i,detail:i===selected?'Selected':'',enabled:!allDisabled&&i!==18}))]};
+  const frame={surfaceProtocol:2,publication:String(++menuPub),lease:'4',mode:'menu',status:'Window actions',bar:[],popup:[{id:'control:menu-close',domId:'menu-close',label:'Close',ariaLabel:'Close window actions',detail:'',enabled:true},...Array.from({length:20},(_,i)=>({id:'menu:1:'+i,domId:'menu:1:'+i,label:'Operation '+i,ariaLabel:'Operation '+i,detail:i===selected?'Selected':'',enabled:!allDisabled&&i!==18}))]};
   await evaluate('receivePresentation('+JSON.stringify(frame)+')');await until('document.querySelector(".surface-popup")?.dataset.publication==='+JSON.stringify(frame.publication));await sleep(70);
  }
  const menuState=()=>evaluate(`(()=>{const f=document.activeElement,r=f.getBoundingClientRect(),n=document.querySelector('.surface-popup');return {id:f.dataset.surfaceControl,top:r.top,bottom:r.bottom,height:innerHeight,font:getComputedStyle(document.body).fontSize,scroll:n.scrollTop,order:[...n.querySelectorAll('[data-surface-control]')].map(b=>b.dataset.surfaceControl)};})()`);

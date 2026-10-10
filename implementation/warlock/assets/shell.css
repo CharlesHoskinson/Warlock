@@ -5,7 +5,7 @@
 
 /* ELM-UX-016: preview arrival must not move a pressed family target.
    Reserve the same thumbnail and text geometry for every source state. */
-.popup [data-mode="picker"] button[data-surface-control^="family:"]{display:grid;grid-template-columns:minmax(0,min(10rem,35%)) minmax(0,1fr);grid-template-rows:repeat(4,minmax(0,1fr));column-gap:12px;align-items:start;height:calc(7.5rem + 14px);min-height:calc(7.5rem + 14px);max-height:calc(7.5rem + 14px)}
+.popup [data-mode="picker"] button[data-surface-control^="family:"]{display:grid;grid-template-columns:minmax(0,min(10rem,35%)) minmax(0,1fr);grid-template-rows:repeat(4,minmax(0,1fr));column-gap:12px;align-items:start;height:min(calc(7.5rem + 14px),calc(100vh - 30px));min-height:min(calc(7.5rem + 14px),calc(100vh - 30px));max-height:min(calc(7.5rem + 14px),calc(100vh - 30px))}
 .popup [data-mode="picker"] button[data-surface-control^="family:"] .window-preview,
 .popup [data-mode="picker"] button[data-surface-control^="family:"] .window-preview>span:not(.preview-title):not(.preview-state){display:contents}
 .popup [data-mode="picker"] button[data-surface-control^="family:"] .preview-image,

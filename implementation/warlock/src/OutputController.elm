@@ -144,6 +144,14 @@ updateCore event ((Model model) as current) =
             in case D.decodeValue decoder raw of
                 Ok table ->
                     if not (List.member table.version [1,2]) || (table.version==2 && List.map .scope table.locations/=table.scopes) || table.kind/="view-topology" || UInt64.compare table.revision model.revision/=GT || not (admitted table.scopes) then (current,[]) else
+                    if table.version==2 && table.scopes==model.views && model.selected/=Nothing && not model.capacityRefused && not model.batchExhausted && Shell.available (Controller.desktop model.controller).windows.shell then
+                        -- Native geometry changes routing boxes, not these exact
+                        -- live view capabilities. Preserve the accepted policy;
+                        -- the host seals the old popup/input and sends Reflow to
+                        -- mint its replacement lease. Actual native observations
+                        -- still reconcile window facts and effect eligibility.
+                        (Model {model | revision=table.revision,locations=table.locations},[Controller.Publish (Controller.frame model.controller)])
+                    else
                         let survives = model.selected |> Maybe.map (\priorSelected -> List.member priorSelected table.scopes) |> Maybe.withDefault False
                             selected = if survives then model.selected else List.head table.scopes
                             retired = not survives && owner current/=Nothing

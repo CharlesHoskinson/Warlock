@@ -1,0 +1,233 @@
+'use strict';
+const app = Elm.Popup.init({node:document.getElementById('app')});
+window.submitSurfaceAction = value => app.ports.requestAction.send(value);
+const post = value => {
+  window.webkit.messageHandlers.native.postMessage(JSON.stringify(value));
+  if(window.elmHostQA&&value.kind==='surface-query'){
+    window.imeQueryObservations.push(value);if(window.imeQueryObservations.length>64)window.imeQueryObservations.shift();
+  }
+};
+let pickerSelection=null,observedPicker=null;
+const pickerNode=()=>document.querySelector('.surface-popup:is([data-mode="picker"],[data-mode="snap"],[data-mode="settings"],[data-mode="notifications"],[data-mode="system"],[data-mode="files"],[data-mode="jump"])');
+const rememberPicker=control=>{
+  const node=control?.closest?.('.surface-popup:is([data-mode="picker"],[data-mode="snap"],[data-mode="settings"],[data-mode="notifications"],[data-mode="system"],[data-mode="files"],[data-mode="jump"])');
+  if(node&&!control.disabled&&control.dataset.surfaceControl)pickerSelection={lease:node.dataset.lease,identity:control.dataset.surfaceControl};
+};
+const revealPicker=(force=false)=>{
+  const node=pickerNode();
+  if(!node||!document.hasFocus()||pickerSelection?.lease!==node.dataset.lease)return;
+  const control=[...node.querySelectorAll('[data-surface-control]')].find(item=>item.dataset.surfaceControl===pickerSelection.identity&&!item.disabled);
+  if(!control)return;
+  if(document.activeElement!==control){control.focus({preventScroll:true});force=true;}
+  if(force)control.scrollIntoView({block:'nearest',inline:'nearest'});
+};
+const pickerResize=window.ResizeObserver&&new ResizeObserver(()=>requestAnimationFrame(()=>revealPicker(true)));
+const observePicker=()=>{
+  const node=pickerNode();if(node===observedPicker)return;
+  pickerResize?.disconnect();observedPicker=node;
+  if(node){pickerResize?.observe(node);const controls=node.querySelector('.surface-controls');if(controls)pickerResize?.observe(controls);}
+};
+// Passive scoped DOM fact. Elm decides relevance; this route cannot perform
+// an action. Reobserve after presentation so a stale queued fact can be retired.
+let notificationFocusFrame=false,lastNotificationFocus='';
+const observeNotificationFocus=()=>{
+ if(notificationFocusFrame)return;notificationFocusFrame=true;
+ requestAnimationFrame(()=>{
+  notificationFocusFrame=false;const node=document.querySelector('.surface-popup[data-mode="notifications"]');
+  if(!node){lastNotificationFocus='';return;}
+  const focused=document.hasFocus()&&node.contains(document.activeElement)?document.activeElement.dataset.surfaceControl||'':'';
+  const packet={surfaceProtocol:2,kind:'surface-notification-focus',surface:'popup',publication:node.dataset.publication,lease:node.dataset.lease,id:focused};
+  const key=JSON.stringify(packet);if(key===lastNotificationFocus)return;lastNotificationFocus=key;post(packet);
+ });
+};
+for(const type of ['focusin','focusout'])document.addEventListener(type,observeNotificationFocus);
+window.addEventListener('focus',observeNotificationFocus);window.addEventListener('blur',observeNotificationFocus);
+document.addEventListener('focusin',event=>{
+  if(event.target.closest?.('.surface-popup:is([data-mode="picker"],[data-mode="snap"],[data-mode="settings"],[data-mode="notifications"],[data-mode="system"],[data-mode="files"],[data-mode="jump"])')){if(event.target.matches?.('[data-surface-field]'))pickerSelection=null;else {rememberPicker(event.target);revealPicker(true);}}
+  else if(event.target!==document.body&&event.target!==document.documentElement)pickerSelection=null;
+});
+window.addEventListener('focus',()=>{rememberPicker(document.activeElement);revealPicker(true);});
+window.addEventListener('resize',()=>requestAnimationFrame(()=>revealPicker(true)));
+document.addEventListener('keydown',event=>{
+  if(!['ArrowUp','ArrowDown','Home','End'].includes(event.key)||event.isComposing||event.defaultPrevented||event.ctrlKey||event.altKey||event.metaKey||event.shiftKey)return;
+  const node=event.target.closest?.('.surface-popup:is([data-mode="picker"],[data-mode="snap"],[data-mode="settings"],[data-mode="notifications"],[data-mode="system"],[data-mode="files"],[data-mode="jump"])');if(!node)return;
+  const items=[...node.querySelectorAll('[data-surface-control]:not(:disabled)')],current=items.indexOf(document.activeElement);if(current<0)return;
+  const index=event.key==='Home'?0:event.key==='End'?items.length-1:Math.max(0,Math.min(items.length-1,current+(event.key==='ArrowDown'?1:-1)));
+  event.preventDefault();event.stopImmediatePropagation();items[index].focus({preventScroll:true});rememberPicker(items[index]);revealPicker(true);
+},true);
+window.receiveAnnouncement = value => app.ports.announcements.send(value);
+// Elm can resend an unacknowledged local edit while accepting a presentation.
+// Native input admission opens only after presentation-applied. Keep one
+// current observational query and post it after that acknowledgement, in the
+// same handler's FIFO. Buttons/effects retain their original strict admission.
+let queryPresentation=null,queryApplied=false,queuedQuery=null;
+const currentQuery=value=>queryPresentation && value.publication===queryPresentation.publication &&
+  value.lease===queryPresentation.lease;
+window.receivePresentation = value => {
+  if(!currentQuery(value)){
+    queryPresentation={publication:value.publication,lease:value.lease};
+    queryApplied=false;queuedQuery=null;
+  }
+  app.ports.presentation.send(value);
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    const node=document.querySelector('.surface-popup');
+    if (node?.dataset.publication===value.publication && node.dataset.lease===value.lease) {
+      // A native reflow replaces the input lease around the same retained view.
+      // Carry only the currently focused eligible DOM control into that lease;
+      // a remembered identity alone never restores focus from an older lease.
+      if(['notifications','system','files','jump'].includes(node.dataset.mode) && document.hasFocus() && pickerSelection?.lease===node.dataset.lease &&
+         ![...node.querySelectorAll('[data-surface-control]')].some(item=>item.dataset.surfaceControl===pickerSelection.identity&&!item.disabled) &&
+         (document.activeElement===document.body || document.activeElement?.disabled)){
+        const close=node.querySelector('[data-surface-control="control:close"]');close?.focus({preventScroll:true});
+      }
+      if(document.hasFocus())rememberPicker(document.activeElement);
+      observePicker();revealPicker();observeNotificationFocus();
+      post({surfaceProtocol:2,kind:'presentation-applied',publication:value.publication,lease:value.lease});
+      if(currentQuery(value)) {
+        queryApplied=true;
+        const pending=queuedQuery;queuedQuery=null;
+        if(pending && currentQuery(pending))post(pending);
+      }
+    }
+  }));
+};
+window.receiveFocus = value => requestAnimationFrame(() => {
+  const node=document.querySelector('.surface-popup');
+  if(value.surfaceProtocol!==2 || value.kind!=='surface-focus' || !node || node.dataset.publication!==value.publication || node.dataset.lease!==value.lease) return;
+  const focused=[];
+  for (const target of value.targets) {
+    const control=document.getElementById(target);
+    if(control && node.contains(control) && !control.disabled){control.focus();control.scrollIntoView({block:'nearest',inline:'nearest'});if(document.activeElement===control){rememberPicker(control);focused.push(target);}}
+  }
+  post({surfaceProtocol:2,kind:'focus-applied',publication:value.publication,lease:value.lease,targets:focused});
+});
+if(window.elmHostQA)window.imeQueryObservations=[];
+app.ports.actions.subscribe(value=>{
+  if(value.kind==='surface-query') {
+    if(value.surface!=='popup' || !currentQuery(value))return;
+    if(!queryApplied){queuedQuery=value;return;}
+  }
+  post(value);
+});
+// Forward only current-surface key observations. Elm owns candidate order,
+// selection, ordinal bounds and mutation decisions; this is not a global chord
+// journal and cannot attest to input arriving before native popup readiness.
+let switcherTerminal=null;
+const dismissibleModes=['switcher','overview','picker','snap','settings','notifications','system','files','jump','applications'];
+const popupComposing=node=>node.closest?.('[data-input-composing]')?.dataset.inputComposing==='true';
+document.addEventListener('keydown',event=>{
+  // Saving or refreshing can disable the focused control and move DOM focus
+  // to the body. Escape still belongs to this document's current popup.
+  const bodyEscape=event.key==='Escape' &&
+    (event.target===document.body || event.target===document.documentElement);
+  const node=event.target?.closest?.('.surface-popup') ||
+    (bodyEscape ? document.querySelector?.('.surface-popup') : null);
+  const dismissal=event.key==='Escape' && dismissibleModes.includes(node?.dataset.mode);
+  if(!node || (node.dataset.mode!=='switcher' && !dismissal) || event.isComposing ||
+     popupComposing(node) || event.defaultPrevented || event.ctrlKey || event.metaKey ||
+     (node.dataset.mode==='applications' && (event.altKey || event.shiftKey))) return;
+  const id=event.key==='Tab'?(event.shiftKey?'control:reverse':'control:forward'):
+    event.key==='ArrowRight'?'control:forward':event.key==='ArrowLeft'?'control:reverse':
+    event.key==='Enter'?'control:commit':event.key==='Escape'?'control:close':null;
+  if(!id || ((event.key==='Enter'||event.key==='Escape') && event.repeat)) return;
+  event.preventDefault();event.stopImmediatePropagation();
+  const control=[...node.querySelectorAll('[data-surface-control]')].find(row=>row.dataset.surfaceControl===id);
+  if(!control || control.disabled) return;
+  const packet=Object.freeze({surfaceProtocol:2,kind:'surface-action',surface:'popup',
+    publication:node.dataset.publication,lease:node.dataset.lease,id});
+  // Terminal keys retain the popup until their real keyup. Withdrawing it on
+  // keydown loses the native release and leaves the compositor's repeat guard
+  // held. A changed presentation cancels this gesture instead of reminting it.
+  if(event.key==='Enter'||event.key==='Escape') switcherTerminal={node,key:event.key,packet};
+  else app.ports.requestAction.send(packet);
+},true);
+document.addEventListener('keyup',event=>{
+  const held=switcherTerminal;
+  if(!held || held.key!==event.key) return;
+  switcherTerminal=null;event.preventDefault();event.stopImmediatePropagation();
+  if(event.isComposing || popupComposing(held.node) || event.ctrlKey || event.metaKey || !held.node.isConnected ||
+    (held.node.dataset.mode==='applications' && (event.altKey || event.shiftKey)) ||
+    (held.node.dataset.mode!=='switcher' && !(held.key==='Escape' && dismissibleModes.includes(held.node.dataset.mode))) || held.node.dataset.publication!==held.packet.publication ||
+    held.node.dataset.lease!==held.packet.lease || !held.node.contains(event.target)) return;
+  app.ports.requestAction.send(held.packet);
+},true);
+window.addEventListener('blur',()=>{switcherTerminal=null;});
+document.addEventListener('compositionstart',()=>{switcherTerminal=null;},true);
+post({surfaceProtocol:2,kind:'presentation-ready'});
+
+if (window.elmHostQA) {
+  let last='',focusNodeSerial=0;
+  const focusNodes=new WeakMap();
+  const compositionEvents=[];
+  const observe=()=>requestAnimationFrame(()=>{
+    const buttons=[...document.querySelectorAll('button')].map(button=>{
+      const r=button.getBoundingClientRect(),label=button.querySelector('.control-label')?.getBoundingClientRect();return {id:button.id,identity:button.dataset.surfaceControl,label:button.textContent,labelRect:label?{x:label.x,y:label.y,width:label.width,height:label.height}:null,accessibleName:button.getAttribute('aria-label'),disabled:button.disabled||button.getAttribute('aria-disabled')==='true',nativeDisabled:button.disabled,focusOnly:button.dataset.focusOnly==='true',role:button.getAttribute('role'),checked:button.getAttribute('aria-checked'),x:r.x,y:r.y,width:r.width,height:r.height};
+    });
+    const content=[...document.querySelectorAll('[data-notification-content],[data-system-content],[data-files-content],[data-jump-content]')].map(item=>{
+      const r=item.getBoundingClientRect(),label=item.querySelector('.control-label')?.getBoundingClientRect();return {id:item.id,identity:item.dataset.notificationContent||item.dataset.systemContent||item.dataset.filesContent||item.dataset.jumpContent,label:item.textContent,labelRect:label?{x:label.x,y:label.y,width:label.width,height:label.height}:null,accessibleName:item.querySelector('.control-label')?.textContent||'',disabled:true,x:r.x,y:r.y,width:r.width,height:r.height};
+    });
+    const node=document.querySelector('.surface-bar,.surface-popup');
+    const fields=[...document.querySelectorAll('[data-surface-field]')].map(field=>({id:field.id,value:field.value,accessibleName:field.getAttribute('aria-label'),disabled:field.disabled,caretStart:field.selectionStart,caretEnd:field.selectionEnd}));
+    const palette={background:getComputedStyle(document.body).backgroundColor,foreground:getComputedStyle(document.body).color};
+    const active=document.activeElement,activeStyle=active&&getComputedStyle(active),activeBox=active?.getBoundingClientRect();
+    const focusStyle=activeStyle?{color:activeStyle.color,background:activeStyle.backgroundColor,outlineColor:activeStyle.outlineColor,outlineWidth:activeStyle.outlineWidth,outlineOffset:activeStyle.outlineOffset,x:activeBox.x,y:activeBox.y,width:activeBox.width,height:activeBox.height}:null;
+    const previews=[...document.querySelectorAll('.window-preview')].slice(0,16).map(node=>{
+      const image=node.querySelector('img.preview-image'),r=image?.getBoundingClientRect(),icon=node.querySelector('img.preview-icon'),ir=icon?.getBoundingClientRect(),title=node.querySelector('.preview-title'),tr=title?.getBoundingClientRect();
+      return {identity:node.closest('[data-surface-control]')?.dataset.surfaceControl||null,state:node.dataset.previewState||null,label:node.getAttribute('aria-label'),text:node.textContent,image:image?{uri:image.src,complete:image.complete,naturalWidth:image.naturalWidth,naturalHeight:image.naturalHeight,x:r.x,y:r.y,width:r.width,height:r.height}:null,icon:icon?{uri:icon.src,complete:icon.complete,naturalWidth:icon.naturalWidth,naturalHeight:icon.naturalHeight,x:ir.x,y:ir.y,width:ir.width,height:ir.height}:null,title:title?{text:title.textContent,x:tr.x,y:tr.y,width:tr.width,height:tr.height}:null};
+    });
+    if(active&&!focusNodes.has(active))focusNodes.set(active,++focusNodeSerial);
+    const body={focusNode:active?focusNodes.get(active):null,focusIdentity:active?.dataset.surfaceControl||null,announcements:[...document.querySelectorAll(".shell-announcement")].map(n=>({text:n.textContent,sequence:n.querySelector("[data-announcement-sequence]")?.dataset.announcementSequence||null,correlation:n.querySelector("[data-announcement-correlation]")?.dataset.announcementCorrelation||null,live:n.getAttribute("aria-live")})),previews,motionProfile:node?.dataset.motion||null,motionAnimations:document.getAnimations().length,queryObservations:window.imeQueryObservations||[],compositionEvents,composing:document.querySelector('[data-input-composing]')?.dataset.inputComposing==='true',palette,focusStyle,publication:node?.dataset.publication||null,lease:node?.dataset.lease||null,buttons,content,fields,focus:document.activeElement?.id||'',documentFocused:document.hasFocus(),fontSize:getComputedStyle(document.body).fontSize,theme:document.documentElement.dataset.theme||null,textScale:document.documentElement.dataset.textScale||null,effects:document.documentElement.dataset.effects||null,reducedTransparency:document.documentElement.dataset.reducedTransparency||null,viewportWidth:innerWidth,viewportHeight:innerHeight,scrollTop:node?.scrollTop||0,scrollHeight:node?.scrollHeight||0,text:document.body.innerText};
+    const current=JSON.stringify(body);if(current!==last){last=current;post({kind:'surface-report',body});}
+  });
+  for(const type of ['compositionstart','compositionupdate','compositionend','input'])document.addEventListener(type,event=>{
+    if(!event.target.matches?.('[data-surface-field]'))return;
+    compositionEvents.push({type,data:event.data??null,value:event.target.value,isComposing:!!event.isComposing,isTrusted:event.isTrusted,caretStart:event.target.selectionStart,caretEnd:event.target.selectionEnd});
+    if(compositionEvents.length>64)compositionEvents.shift();observe();
+  },true);
+  document.addEventListener('scroll',observe,true);
+  document.addEventListener('load',observe,true);
+  new MutationObserver(observe).observe(document.body,{subtree:true,childList:true,attributes:true});
+  document.addEventListener('focusin',observe);observe();
+  window.addEventListener('resize',observe);window.addEventListener('focus',observe);window.addEventListener('blur',observe);
+}
+
+window.receiveNativePreview = value => app.ports.nativePreviews.send(value);
+window.receiveNativePreviewBatch = values => { for (const value of values) app.ports.nativePreviews.send(value); };
+window.receiveNativePreviewRetirement = value => app.ports.nativePreviewRetirement.send(value);
+app.ports.previewPaintRequests.subscribe(requests => {
+  for (const request of requests) {
+    // Elm retains the original Acquire. Give its Loading view a paint
+    // opportunity before returning this one-use ticket; controls never wait.
+    requestAnimationFrame(() => requestAnimationFrame(() =>
+      app.ports.previewPainted.send(request)));
+  }
+});
+let previewControlOrdinal=0n;
+app.ports.previewCommands.subscribe(value => {
+  for (const entry of value) for (const command of entry.commands) {
+    if (previewControlOrdinal===18446744073709551615n) return;
+    previewControlOrdinal+=1n;
+    post({previewProtocol:2,kind:"preview-commands",controlOrdinal:String(previewControlOrdinal),
+      entries:[{identity:entry.identity,commands:[command]}]});
+  }
+});
+
+if (window.elmPreviewQA) {
+  const inspectNativePreviewQA=()=>{
+    const images=[...document.querySelectorAll('img.preview-image')].slice(0,2).map(image=>{
+      const rect=image.getBoundingClientRect();return {uri:image.src,complete:image.complete,naturalWidth:image.naturalWidth,naturalHeight:image.naturalHeight,width:Math.round(rect.width),height:Math.round(rect.height)};
+    });
+    post({kind:'preview-image-report',images});
+    const fallbacks=[...document.querySelectorAll('.window-preview')].filter(node=>node.querySelector('.preview-title')).slice(0,2).map(node=>({
+      state:node.dataset.previewState,title:node.querySelector('.preview-title').textContent,
+      icons:[...node.querySelectorAll('img.preview-icon')].map(image=>{const rect=image.getBoundingClientRect();return {uri:image.src,complete:image.complete,naturalWidth:image.naturalWidth,naturalHeight:image.naturalHeight,width:Math.round(rect.width),height:Math.round(rect.height)};})
+    }));
+    post({kind:'preview-fallback-report',fallbacks});
+  };
+  // The private native owner may read the same DOM while an offscreen renderer
+  // has no next presentation frame. This observer supplies no policy inputs.
+  window.inspectNativePreviewQA=inspectNativePreviewQA;
+  const reportImages=()=>requestAnimationFrame(inspectNativePreviewQA);
+  document.addEventListener('load',reportImages,true);
+  new MutationObserver(reportImages).observe(document.getElementById('app'),{subtree:true,childList:true,attributes:true});
+}

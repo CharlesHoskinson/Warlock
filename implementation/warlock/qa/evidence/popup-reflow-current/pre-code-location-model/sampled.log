@@ -1,0 +1,7 @@
+[ok] No violation found (838ms at 1193 traces/second).
+Witnesses:
+resizedAndReflowed was witnessed in 52 trace(s) out of 1000 explored (5.20%)
+grownAndShrunk was witnessed in 35 trace(s) out of 1000 explored (3.50%)
+replacementRetired was witnessed in 957 trace(s) out of 1000 explored (95.70%)
+refusalRetained was witnessed in 959 trace(s) out of 1000 explored (95.90%)
+Use --seed=0x136f3 --backend=typescript to reproduce.

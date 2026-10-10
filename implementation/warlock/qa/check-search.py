@@ -164,6 +164,11 @@ console.log(JSON.stringify({paintOpportunityBeforeDispatch:true,ticketPreserved:
   replay=(INPUT/'qa/feedback-replay.js').read_text().replace('Elm.FeedbackReplay','Elm.SearchReplay');(INPUT/'qa/search-replay.js').write_text(replay)
   run('typed-search',['node','qa/search-replay.js','assets/search.js',str(OUT/'search.json')]);r=json.loads((OUT/'search.json').read_text());assert r['rank']==['z-exact','a-prefix','b-token'] and r['keyword']==['z-exact'] and r['generic']==['b-token','z-exact'] and r['unicode']==['c-unicode'];assert r['refreshClearsSettledRefusal'] and r['refreshPreservesUnknown'];assert r['queryEditHasNoEffects'] and r['staleQueryRejected'] and 'No matching' in r['noMatchStatus'] and r['queryRetained']=='nonexistent';report['typedSearch']=r
  if REFLOW:
+  run('location-reflow-model-typecheck',['quint','typecheck','qa/popup-location-reflow_test.qnt'])
+  run('location-reflow-model-named',['quint','test','qa/popup-location-reflow_test.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79602'])
+  witnesses=run('location-reflow-model-sampled',['quint','run','qa/popup-location-reflow.qnt','--backend=typescript','--invariants=safety','--witnesses','resizedAndReflowed','grownAndShrunk','replacementRetired','refusalRetained','--max-samples=1000','--max-steps=25','--seed=79603','--verbosity=1'])
+  import re
+  counts={name:int(count) for name,count in re.findall(r'(\w+) was witnessed in (\d+) trace',witnesses)};assert len(counts)==4 and all(counts.values());report['locationReflowWitnesses']=counts
   run('compile-popup-reflow',[str(HELD/pinned['compiler']),'make','qa/PopupReflowReplay.elm','--optimize','--output=assets/popup-reflow.js'])
   (INPUT/'qa/popup-reflow-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.PopupReflowReplay'));run('typed-popup-reflow',['node','qa/popup-reflow-replay.js','assets/popup-reflow.js',str(OUT/'popup-reflow.json')]);report['typedPopupReflow']=json.loads((OUT/'popup-reflow.json').read_text());assert all(report['typedPopupReflow']['checks'].values())
   run('focus-model-typecheck',['quint','typecheck','qa/focus-publication.qnt'])

@@ -680,3 +680,29 @@ The [before/after evidence](qa/evidence/switcher-reselection-focus/README.md) in
 A grouped taskbar item now keeps its window count and shows Active when either member is foreground. The same detail drives its existing active styling and native toggle state. Clicking the group still opens its window picker; inactive and fully minimized groups retain their count without Active.
 
 The [before/after evidence](qa/evidence/taskbar-group-active-state/README.md) records five compiled production cases, the original browser accessibility checks, and actual native names/toggle-state agreement. Pointer dismissal returns to the application, while keyboard entry uses the toolbar's Home/arrow navigation. The native AT journey then encountered a WebKit termination while reopening the picker. The failed run, kernel observation and recovery route are retained; full native action, speech/braille and independent ELM-UI-009 acceptance remain open.
+
+### Active picker and menu resize — October 10
+
+An ordinary ready popup now keeps its accepted Elm policy when native output
+locations change and every view identity/generation remains exactly unchanged.
+The routing table updates without withdrawing registration or reissuing reads.
+Changed capabilities and unready/refused/exhausted registration retain their
+existing reconciliation path. Native resize still seals the old input before
+reflow mints a fresh presentation lease; this grants no new window authority.
+
+At 200% text, picker cards adapt to the available popup height without reducing
+the font. Fresh-lease presentation reveals the actual retained focused control
+after layout/focus settles; ordinary publications preserve deliberate scrolling,
+and an old remembered selection cannot restore focus without a current control.
+The [current evidence](qa/evidence/popup-reflow-current/README.md) records the
+complete 18-pin/ten-member native picker and menu growth/shrink journey, exact
+selection/order, readable pixels, native input retirement, Menu/Shift-F10/Tab and
+Escape, one final activation and actual GTK keyboard delivery with normal cleanup.
+
+quint-llm-kit modeling preceded the routing change. Eight named model checks,
+sampled safety with four positive witnesses, 21 compiled reducer/integration
+checks and 50 browser checks pass; original focus and reflow assertions remain.
+Earlier small-card, registration, late-reveal and fixture failures remain frozen.
+Original ELM-UI-008 overflow-resize acceptance remains partial pending applicable
+native AT and independent review, with broader providers/output profiles and
+release-wide hardware/resource/package obligations separate.

@@ -1,0 +1,15 @@
+{
+  "checks": {
+    "fixtureHasActualReadyPicker": false,
+    "reflowPreservesEntireDesktopPolicy": true,
+    "reflowPublishesWithoutReadsFocusOrEffects": false,
+    "reflowMintsFreshLeaseAndPublication": false,
+    "duplicateRetiredLeaseIsInert": true,
+    "retiredLeaseDismissalIsInert": true,
+    "retiredLeaseCannotSelectWindow": true,
+    "currentLeaseCanStillDismiss": true,
+    "closedSurfaceCannotReflow": true,
+    "successiveReflowRetainsPolicyWithoutReplay": false
+  },
+  "scope": "Compiled actual reflow reducer and legacy two-root picker; physical native input/AT and geometry authority remain separate."
+}

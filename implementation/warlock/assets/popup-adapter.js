@@ -46,7 +46,11 @@ document.addEventListener('focusin',event=>{
   if(event.target.closest?.('.surface-popup:is([data-mode="picker"],[data-mode="snap"],[data-mode="settings"],[data-mode="notifications"],[data-mode="system"],[data-mode="files"],[data-mode="jump"])')){if(event.target.matches?.('[data-surface-field]'))pickerSelection=null;else {rememberPicker(event.target);revealPicker(true);}}
   else if(event.target!==document.body&&event.target!==document.documentElement)pickerSelection=null;
 });
-window.addEventListener('focus',()=>{rememberPicker(document.activeElement);revealPicker(true);});
+window.addEventListener('focus',()=>requestAnimationFrame(()=>{
+  // WebKit can deliver native focus before the resized document has settled.
+  // Carry only its actual focused control, after observing current ownership.
+  if(document.hasFocus()){rememberPicker(document.activeElement);revealPicker(true);}
+}));
 window.addEventListener('resize',()=>requestAnimationFrame(()=>revealPicker(true)));
 document.addEventListener('keydown',event=>{
   if(!['ArrowUp','ArrowDown','Home','End'].includes(event.key)||event.isComposing||event.defaultPrevented||event.ctrlKey||event.altKey||event.metaKey||event.shiftKey)return;
@@ -64,6 +68,7 @@ let queryPresentation=null,queryApplied=false,queuedQuery=null;
 const currentQuery=value=>queryPresentation && value.publication===queryPresentation.publication &&
   value.lease===queryPresentation.lease;
 window.receivePresentation = value => {
+  const replacedPickerLease=pickerNode()?.dataset.lease!==value.lease;
   if(!currentQuery(value)){
     queryPresentation={publication:value.publication,lease:value.lease};
     queryApplied=false;queuedQuery=null;
@@ -81,7 +86,7 @@ window.receivePresentation = value => {
         const close=node.querySelector('[data-surface-control="control:close"]');close?.focus({preventScroll:true});
       }
       if(document.hasFocus())rememberPicker(document.activeElement);
-      observePicker();revealPicker();observeNotificationFocus();
+      observePicker();revealPicker(replacedPickerLease);observeNotificationFocus();
       post({surfaceProtocol:2,kind:'presentation-applied',publication:value.publication,lease:value.lease});
       if(currentQuery(value)) {
         queryApplied=true;

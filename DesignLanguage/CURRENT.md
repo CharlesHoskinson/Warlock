@@ -28,6 +28,15 @@ Effects-off and reduced-transparency preferences now have native keyboard save/r
 
 Grouped taskbar items retain the running window count while exposing Active when a member is foreground. The same observed state drives the visible detail and native toggle state; opening a grouped item still chooses a window. [Current evidence](../implementation/warlock/qa/evidence/taskbar-group-active-state/README.md) records the production projection and native semantic observations; original AT action, speech/braille and independent acceptance remain separate.
 
+Enlarged picker cards fit the available popup height while retaining their font,
+caption, identity and configured order. A native output resize retires old input
+and presents a fresh lease around the retained selection. Reveal the actual
+focused control after reflow; ordinary updates preserve deliberate scrolling.
+[Current native evidence](../implementation/warlock/qa/evidence/popup-reflow-current/README.md)
+covers the 200% picker/menu growth-and-shrink journey and real application input.
+Applicable native AT, broader output/provider coverage and independent acceptance
+remain open.
+
 ## New and evolving surfaces
 
 Settings, notifications, system controls, Files, jump lists and motion preferences require the same six component sections as the existing catalog: overview, anatomy/states, behavior/keyboard, accessibility, content and evidence. Record their actual implementation route and unsupported capabilities before adding specimens. Label every simulated native outcome as fixture data.

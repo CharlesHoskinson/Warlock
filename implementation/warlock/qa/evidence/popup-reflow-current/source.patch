@@ -1,0 +1,399 @@
+diff --git c/DesignLanguage/CURRENT.md w/DesignLanguage/CURRENT.md
+index 6a328b6..c7996f9 100644
+--- c/DesignLanguage/CURRENT.md
++++ w/DesignLanguage/CURRENT.md
+@@ -28,6 +28,15 @@ Effects-off and reduced-transparency preferences now have native keyboard save/r
+ 
+ Grouped taskbar items retain the running window count while exposing Active when a member is foreground. The same observed state drives the visible detail and native toggle state; opening a grouped item still chooses a window. [Current evidence](../implementation/warlock/qa/evidence/taskbar-group-active-state/README.md) records the production projection and native semantic observations; original AT action, speech/braille and independent acceptance remain separate.
+ 
++Enlarged picker cards fit the available popup height while retaining their font,
++caption, identity and configured order. A native output resize retires old input
++and presents a fresh lease around the retained selection. Reveal the actual
++focused control after reflow; ordinary updates preserve deliberate scrolling.
++[Current native evidence](../implementation/warlock/qa/evidence/popup-reflow-current/README.md)
++covers the 200% picker/menu growth-and-shrink journey and real application input.
++Applicable native AT, broader output/provider coverage and independent acceptance
++remain open.
++
+ ## New and evolving surfaces
+ 
+ Settings, notifications, system controls, Files, jump lists and motion preferences require the same six component sections as the existing catalog: overview, anatomy/states, behavior/keyboard, accessibility, content and evidence. Record their actual implementation route and unsupported capabilities before adding specimens. Label every simulated native outcome as fixture data.
+diff --git c/implementation/warlock/README.md w/implementation/warlock/README.md
+index 05ceb70..f41d3f3 100644
+--- c/implementation/warlock/README.md
++++ w/implementation/warlock/README.md
+@@ -680,3 +680,29 @@ The [before/after evidence](qa/evidence/switcher-reselection-focus/README.md) in
+ A grouped taskbar item now keeps its window count and shows Active when either member is foreground. The same detail drives its existing active styling and native toggle state. Clicking the group still opens its window picker; inactive and fully minimized groups retain their count without Active.
+ 
+ The [before/after evidence](qa/evidence/taskbar-group-active-state/README.md) records five compiled production cases, the original browser accessibility checks, and actual native names/toggle-state agreement. Pointer dismissal returns to the application, while keyboard entry uses the toolbar's Home/arrow navigation. The native AT journey then encountered a WebKit termination while reopening the picker. The failed run, kernel observation and recovery route are retained; full native action, speech/braille and independent ELM-UI-009 acceptance remain open.
++
++### Active picker and menu resize — October 10
++
++An ordinary ready popup now keeps its accepted Elm policy when native output
++locations change and every view identity/generation remains exactly unchanged.
++The routing table updates without withdrawing registration or reissuing reads.
++Changed capabilities and unready/refused/exhausted registration retain their
++existing reconciliation path. Native resize still seals the old input before
++reflow mints a fresh presentation lease; this grants no new window authority.
++
++At 200% text, picker cards adapt to the available popup height without reducing
++the font. Fresh-lease presentation reveals the actual retained focused control
++after layout/focus settles; ordinary publications preserve deliberate scrolling,
++and an old remembered selection cannot restore focus without a current control.
++The [current evidence](qa/evidence/popup-reflow-current/README.md) records the
++complete 18-pin/ten-member native picker and menu growth/shrink journey, exact
++selection/order, readable pixels, native input retirement, Menu/Shift-F10/Tab and
++Escape, one final activation and actual GTK keyboard delivery with normal cleanup.
++
++quint-llm-kit modeling preceded the routing change. Eight named model checks,
++sampled safety with four positive witnesses, 21 compiled reducer/integration
++checks and 50 browser checks pass; original focus and reflow assertions remain.
++Earlier small-card, registration, late-reveal and fixture failures remain frozen.
++Original ELM-UI-008 overflow-resize acceptance remains partial pending applicable
++native AT and independent review, with broader providers/output profiles and
++release-wide hardware/resource/package obligations separate.
+diff --git c/implementation/warlock/assets/popup-adapter.js w/implementation/warlock/assets/popup-adapter.js
+index 59498cb..9f2184e 100644
+--- c/implementation/warlock/assets/popup-adapter.js
++++ w/implementation/warlock/assets/popup-adapter.js
+@@ -46,7 +46,11 @@ document.addEventListener('focusin',event=>{
+   if(event.target.closest?.('.surface-popup:is([data-mode="picker"],[data-mode="snap"],[data-mode="settings"],[data-mode="notifications"],[data-mode="system"],[data-mode="files"],[data-mode="jump"])')){if(event.target.matches?.('[data-surface-field]'))pickerSelection=null;else {rememberPicker(event.target);revealPicker(true);}}
+   else if(event.target!==document.body&&event.target!==document.documentElement)pickerSelection=null;
+ });
+-window.addEventListener('focus',()=>{rememberPicker(document.activeElement);revealPicker(true);});
++window.addEventListener('focus',()=>requestAnimationFrame(()=>{
++  // WebKit can deliver native focus before the resized document has settled.
++  // Carry only its actual focused control, after observing current ownership.
++  if(document.hasFocus()){rememberPicker(document.activeElement);revealPicker(true);}
++}));
+ window.addEventListener('resize',()=>requestAnimationFrame(()=>revealPicker(true)));
+ document.addEventListener('keydown',event=>{
+   if(!['ArrowUp','ArrowDown','Home','End'].includes(event.key)||event.isComposing||event.defaultPrevented||event.ctrlKey||event.altKey||event.metaKey||event.shiftKey)return;
+@@ -64,6 +68,7 @@ let queryPresentation=null,queryApplied=false,queuedQuery=null;
+ const currentQuery=value=>queryPresentation && value.publication===queryPresentation.publication &&
+   value.lease===queryPresentation.lease;
+ window.receivePresentation = value => {
++  const replacedPickerLease=pickerNode()?.dataset.lease!==value.lease;
+   if(!currentQuery(value)){
+     queryPresentation={publication:value.publication,lease:value.lease};
+     queryApplied=false;queuedQuery=null;
+@@ -81,7 +86,7 @@ window.receivePresentation = value => {
+         const close=node.querySelector('[data-surface-control="control:close"]');close?.focus({preventScroll:true});
+       }
+       if(document.hasFocus())rememberPicker(document.activeElement);
+-      observePicker();revealPicker();observeNotificationFocus();
++      observePicker();revealPicker(replacedPickerLease);observeNotificationFocus();
+       post({surfaceProtocol:2,kind:'presentation-applied',publication:value.publication,lease:value.lease});
+       if(currentQuery(value)) {
+         queryApplied=true;
+diff --git c/implementation/warlock/assets/shell.css w/implementation/warlock/assets/shell.css
+index 74d3f34..00c4199 100644
+--- c/implementation/warlock/assets/shell.css
++++ w/implementation/warlock/assets/shell.css
+@@ -5,7 +5,7 @@
+ 
+ /* ELM-UX-016: preview arrival must not move a pressed family target.
+    Reserve the same thumbnail and text geometry for every source state. */
+-.popup [data-mode="picker"] button[data-surface-control^="family:"]{display:grid;grid-template-columns:minmax(0,min(10rem,35%)) minmax(0,1fr);grid-template-rows:repeat(4,minmax(0,1fr));column-gap:12px;align-items:start;height:calc(7.5rem + 14px);min-height:calc(7.5rem + 14px);max-height:calc(7.5rem + 14px)}
++.popup [data-mode="picker"] button[data-surface-control^="family:"]{display:grid;grid-template-columns:minmax(0,min(10rem,35%)) minmax(0,1fr);grid-template-rows:repeat(4,minmax(0,1fr));column-gap:12px;align-items:start;height:min(calc(7.5rem + 14px),calc(100vh - 30px));min-height:min(calc(7.5rem + 14px),calc(100vh - 30px));max-height:min(calc(7.5rem + 14px),calc(100vh - 30px))}
+ .popup [data-mode="picker"] button[data-surface-control^="family:"] .window-preview,
+ .popup [data-mode="picker"] button[data-surface-control^="family:"] .window-preview>span:not(.preview-title):not(.preview-state){display:contents}
+ .popup [data-mode="picker"] button[data-surface-control^="family:"] .preview-image,
+diff --git c/implementation/warlock/qa/PopupReflowReplay.elm w/implementation/warlock/qa/PopupReflowReplay.elm
+index 53aede2..d5f51cc 100644
+--- c/implementation/warlock/qa/PopupReflowReplay.elm
++++ w/implementation/warlock/qa/PopupReflowReplay.elm
+@@ -1,6 +1,9 @@
+ port module PopupReflowReplay exposing (main)
+ 
+ import Desktop
++import Binding
++import Motion
++import OutputController as Outputs
+ import Json.Decode as D
+ import Json.Encode as E
+ import Platform
+@@ -19,12 +22,55 @@ attached = E.object [("protocolVersion",E.int 3),("kind",E.string "attached"),("
+ projection = E.object [("protocolVersion",E.int 3),("kind",E.string "action-projection"),("binding",binding),("requestId",E.string "1"),("context",E.object [("lifetime",E.string "1"),("epoch",E.string "1"),("output",E.string "1"),("revision",E.string "1")]),("scene",E.object [("revision",E.string "1"),("focused",E.string "1"),("windows",E.list identity [window "1",window "2"])])]
+ field name model = D.decodeValue (D.field name UInt64.decoder) (Controller.frame model) |> Result.withDefault UInt64.zero
+ native raw model = Controller.update (Controller.Interaction (Desktop.Incoming raw)) model |> Tuple.first
+-ready = Controller.initial |> native attached |> native projection
++-- Current readiness requires explicit native idle and the matched motion receipt.
++pointerIdle = E.object [("protocolVersion",E.int 3),("kind",E.string "pointer-ownership"),("ownershipProtocol",E.int 1),("binding",binding),("requestId",E.string "1"),("serial",E.string "1"),("state",E.string "idle"),("owner",E.null)]
++settleMotion controller =
++    (Controller.desktop controller).motion.pending
++        |> Maybe.map (\pending -> native (E.object [("protocolVersion",E.int 3),("kind",E.string "motion-profile"),("binding",Binding.encode pending.binding),("requestId",E.string (UInt64.string pending.request)),("profile",E.string (Motion.name pending.profile))]) controller)
++        |> Maybe.withDefault controller
++ready = Controller.initial |> native attached |> native pointerIdle |> native projection |> settleMotion
+ opened = Shell.capture (Controller.desktop ready).windows.shell |> Maybe.map (\stamp -> Controller.update (Controller.Interaction (Desktop.Window (TaskbarShell.Primary stamp "application:documents"))) ready |> Tuple.first) |> Maybe.withDefault ready
+ onlyPresentation effects = case effects of
+     [Controller.Publish _] -> True
+     _ -> False
+ 
++scope generation = E.object [("id",E.string "1"),("generation",E.string generation)]
++topology revision generation width = E.object [("viewProtocol",E.int 2),("kind",E.string "view-topology"),("revision",E.string revision),("views",E.list identity [scope generation]),("locations",E.list identity [E.object [("scope",scope generation),("box",E.list E.int [0,0,width,480])]])]
++outputStep event model = Outputs.update event model |> Tuple.first
++outputNative raw model = outputStep (Outputs.Interaction (Desktop.Incoming raw)) model
++outputDesktop model = Controller.desktop (Outputs.controller model)
++outputMotion model = (outputDesktop model).motion.pending
++    |> Maybe.map (\pending -> outputNative (E.object [("protocolVersion",E.int 3),("kind",E.string "motion-profile"),("binding",Binding.encode pending.binding),("requestId",E.string (UInt64.string pending.request)),("profile",E.string (Motion.name pending.profile))]) model)
++    |> Maybe.withDefault model
++outputReady = Outputs.initial |> outputStep (Outputs.Topology (topology "1" "1" 480)) |> outputNative attached |> outputNative pointerIdle |> outputNative projection |> outputMotion
++outputOpened = Shell.capture (outputDesktop outputReady).windows.shell |> Maybe.map (\stamp -> outputStep (Outputs.Interaction (Desktop.Window (TaskbarShell.Primary stamp "application:documents"))) outputReady) |> Maybe.withDefault outputReady
++popupCallback generation shown = E.object [("scope",scope generation),("lease",E.string (UInt64.string (field "lease" (Outputs.controller shown))))]
++
++outputChecks =
++    let (located,locationEffects)=Outputs.update (Outputs.Topology (topology "2" "1" 640)) outputOpened
++        (grown,reflowEffects)=Outputs.update (Outputs.Reflow (popupCallback "1" outputOpened)) located
++        shrunkLocation=outputStep (Outputs.Topology (topology "3" "1" 480)) grown
++        (shrunk,shrinkEffects)=Outputs.update (Outputs.Reflow (popupCallback "1" grown)) shrunkLocation
++        (stale,staleEffects)=Outputs.update (Outputs.Reflow (popupCallback "1" outputOpened)) shrunk
++        (foreign,foreignEffects)=Outputs.update (Outputs.Reflow (popupCallback "2" shrunk)) shrunk
++        (duplicate,duplicateEffects)=Outputs.update (Outputs.Topology (topology "3" "1" 640)) shrunk
++        replaced=outputStep (Outputs.Topology (topology "4" "2" 480)) shrunk
++        (retired,retiredEffects)=Outputs.update (Outputs.Reflow (popupCallback "1" shrunk)) replaced
++        unready=outputStep (Outputs.Interaction (Desktop.Window (TaskbarShell.Native (Shell.RegistrationRefused [] [])))) outputOpened
++        reconciled=outputStep (Outputs.Topology (topology "2" "1" 640)) unready
++        ids model=List.map .id (Surface.controls (outputDesktop model))
++    in [("outputFixtureHasReadyPicker",Surface.mode (outputDesktop outputOpened)=="picker" && Shell.available (outputDesktop outputOpened).windows.shell),
++        ("locationTopologyPreservesEntireController",Outputs.controller located==Outputs.controller outputOpened && onlyPresentation locationEffects && Outputs.pendingBatches located==Outputs.pendingBatches outputOpened),
++        ("locationTopologyUpdatesRoutingBox",D.decodeValue (D.field "revision" D.string) (Outputs.frame located)==Ok "2" && Outputs.owner located==Outputs.owner outputOpened),
++        ("integratedGrowShrinkPreservesPolicyAndOrder",outputDesktop shrunk==outputDesktop outputOpened && ids shrunk==ids outputOpened && Surface.mode (outputDesktop shrunk)=="picker"),
++        ("integratedReflowFreshLeaseWithoutEffects",UInt64.compare (field "lease" (Outputs.controller shrunk)) (field "lease" (Outputs.controller grown))==GT && onlyPresentation reflowEffects && onlyPresentation shrinkEffects),
++        ("integratedStaleLeaseInert",stale==shrunk && List.isEmpty staleEffects),
++        ("integratedForeignScopeInert",foreign==shrunk && List.isEmpty foreignEffects),
++        ("integratedStaleTopologyInert",duplicate==shrunk && List.isEmpty duplicateEffects),
++        ("changedViewGenerationRetiresPicker",Surface.mode (outputDesktop replaced)=="closed" && not (Shell.available (outputDesktop replaced).windows.shell)),
++        ("retiredScopeCannotReopenPicker",retired==replaced && List.isEmpty retiredEffects),
++        ("unreadyTopologyStillReconciles",not (Shell.available (outputDesktop reconciled).windows.shell) && (outputDesktop reconciled).windows.shell.expected/=(outputDesktop unready).windows.shell.expected)]
++
+ result =
+     let oldLease=field "lease" opened
+         (reflow,effects)=Controller.update (Controller.NativeReflow oldLease) opened
+@@ -45,8 +91,8 @@ result =
+             ("retiredLeaseCannotSelectWindow",staleAction==reflow && List.isEmpty staleActionEffects),
+             ("currentLeaseCanStillDismiss",Surface.mode (Controller.desktop freshDismiss)=="closed"),
+             ("closedSurfaceCannotReflow",closed==Controller.initial && List.isEmpty closedEffects),
+-            ("successiveReflowRetainsPolicyWithoutReplay",Controller.desktop again==Controller.desktop opened && onlyPresentation againEffects && UInt64.compare (field "lease" again) newLease==GT)]
+-    in E.object [("checks",E.object (List.map (\(name,passed) -> (name,E.bool passed)) checks)),("scope",E.string "Compiled actual reflow reducer and legacy two-root picker; physical native input/AT and geometry authority remain separate.")]
++            ("successiveReflowRetainsPolicyWithoutReplay",Controller.desktop again==Controller.desktop opened && onlyPresentation againEffects && UInt64.compare (field "lease" again) newLease==GT)]++outputChecks
++    in E.object [("checks",E.object (List.map (\(name,passed) -> (name,E.bool passed)) checks)),("scope",E.string "Compiled actual reflow reducer and full output/topology integration with typed native idle/current motion readiness; physical native input/AT and geometry authority remain separate.")]
+ 
+ main : Program () () Never
+ main = Platform.worker {init=\_ -> ((),outgoing result),update=\_ state -> (state,Cmd.none),subscriptions=\_ -> Sub.none}
+diff --git c/implementation/warlock/qa/check-search.py w/implementation/warlock/qa/check-search.py
+index 929e5ec..b80d232 100644
+--- c/implementation/warlock/qa/check-search.py
++++ w/implementation/warlock/qa/check-search.py
+@@ -164,6 +164,11 @@ console.log(JSON.stringify({paintOpportunityBeforeDispatch:true,ticketPreserved:
+   replay=(INPUT/'qa/feedback-replay.js').read_text().replace('Elm.FeedbackReplay','Elm.SearchReplay');(INPUT/'qa/search-replay.js').write_text(replay)
+   run('typed-search',['node','qa/search-replay.js','assets/search.js',str(OUT/'search.json')]);r=json.loads((OUT/'search.json').read_text());assert r['rank']==['z-exact','a-prefix','b-token'] and r['keyword']==['z-exact'] and r['generic']==['b-token','z-exact'] and r['unicode']==['c-unicode'];assert r['refreshClearsSettledRefusal'] and r['refreshPreservesUnknown'];assert r['queryEditHasNoEffects'] and r['staleQueryRejected'] and 'No matching' in r['noMatchStatus'] and r['queryRetained']=='nonexistent';report['typedSearch']=r
+  if REFLOW:
++  run('location-reflow-model-typecheck',['quint','typecheck','qa/popup-location-reflow_test.qnt'])
++  run('location-reflow-model-named',['quint','test','qa/popup-location-reflow_test.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79602'])
++  witnesses=run('location-reflow-model-sampled',['quint','run','qa/popup-location-reflow.qnt','--backend=typescript','--invariants=safety','--witnesses','resizedAndReflowed','grownAndShrunk','replacementRetired','refusalRetained','--max-samples=1000','--max-steps=25','--seed=79603','--verbosity=1'])
++  import re
++  counts={name:int(count) for name,count in re.findall(r'(\w+) was witnessed in (\d+) trace',witnesses)};assert len(counts)==4 and all(counts.values());report['locationReflowWitnesses']=counts
+   run('compile-popup-reflow',[str(HELD/pinned['compiler']),'make','qa/PopupReflowReplay.elm','--optimize','--output=assets/popup-reflow.js'])
+   (INPUT/'qa/popup-reflow-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.PopupReflowReplay'));run('typed-popup-reflow',['node','qa/popup-reflow-replay.js','assets/popup-reflow.js',str(OUT/'popup-reflow.json')]);report['typedPopupReflow']=json.loads((OUT/'popup-reflow.json').read_text());assert all(report['typedPopupReflow']['checks'].values())
+   run('focus-model-typecheck',['quint','typecheck','qa/focus-publication.qnt'])
+diff --git c/implementation/warlock/qa/dense-taskbar-browser.mjs w/implementation/warlock/qa/dense-taskbar-browser.mjs
+index 8b77124..1d4c4ee 100644
+--- c/implementation/warlock/qa/dense-taskbar-browser.mjs
++++ w/implementation/warlock/qa/dense-taskbar-browser.mjs
+@@ -40,8 +40,8 @@ try{
+  await call('Emulation.setEmulatedMedia',{features:[{name:'forced-colors',value:'active'}]});await key('Home');check('Forced colors retain a visible focus outline',await evaluate(`getComputedStyle(document.activeElement).outlineStyle!=='none'`));
+  check('Scrolling and navigation never emit activation',await evaluate(`nativePackets.filter(p=>p.kind==='surface-action').length===0`));await call('Emulation.setEmulatedMedia',{features:[]});await viewport(480,420);await call('Page.navigate',{url:base+'/qa/dense-picker.html'});await until('!!window.receivePresentation');
+  let pickerPub=0;
+- async function showPicker(disabled=-1,lease='1',reverse=false){
+-  const members=Array.from({length:20},(_,i)=>({id:'family:'+i,domId:'picker:'+String(pickerPub+1)+':'+i,label:'Document '+i,ariaLabel:'Activate Document '+i,detail:'Open',enabled:i!==disabled}));
++ async function showPicker(disabled=-1,lease='1',reverse=false,fixedIds=false){
++  const members=Array.from({length:20},(_,i)=>({id:'family:'+i,domId:'picker:'+(fixedIds?'retained':String(pickerPub+1))+':'+i,label:'Document '+i,ariaLabel:'Activate Document '+i,detail:'Open',enabled:i!==disabled}));
+   if(reverse)members.reverse();
+   const frame={surfaceProtocol:2,publication:String(++pickerPub),lease,mode:'picker',status:'Choose a window',bar:[],popup:[{id:'control:close',domId:'picker-close:'+pickerPub,label:'Close',ariaLabel:'Close picker',detail:'',enabled:true},...members]};
+   await evaluate('receivePresentation('+JSON.stringify(frame)+')');await until('document.querySelector(".surface-popup")?.dataset.publication==='+JSON.stringify(frame.publication));await sleep(70);
+@@ -60,13 +60,26 @@ try{
+  await evaluate(`document.querySelectorAll('.surface-controls button').forEach(button=>button.style.minHeight='')`);await sleep(100);
+  await showPicker(-1,'1',true);check('Picker reordered publication preserves chosen identity',(await pickerState()).id==='family:19'&&pickerVisible(await pickerState()));
+  await showPicker(-1,'2',true);check('Picker fresh reflow lease preserves its current focused member',(await pickerState()).id==='family:19'&&pickerVisible(await pickerState()));
+- await evaluate(`document.body.tabIndex=-1;document.body.focus()`);await showPicker(-1,'3');check('Picker old lease cannot restore a selected member',await evaluate('document.activeElement===document.body'));
++ // Native reflow retains the same focused DOM control; it does not create a
++ // replacement control/focusin event. Ordinary publications keep wheel position,
++ // while a fresh input lease must reveal that actual focused choice again.
++ await showPicker(-1,'2',false,true);await key('End');await evaluate(`window.retainedPickerFocus=document.activeElement;document.querySelector('.surface-popup').scrollTop=0`);await showPicker(-1,'2',false,true);
++ check('Picker ordinary publication preserves deliberate scrolling',(await pickerState()).scroll===0);
++ await showPicker(-1,'3',false,true);check('Fresh lease reveals the same retained focused DOM control',await evaluate('document.activeElement===window.retainedPickerFocus')&&(await pickerState()).id==='family:19'&&pickerVisible(await pickerState()),await pickerState());
++ await evaluate(`document.body.tabIndex=-1;document.body.focus()`);await showPicker(-1,'4');check('Picker old lease cannot restore a selected member',await evaluate('document.activeElement===document.body'));
+  await evaluate(`document.querySelector('[data-surface-control="family:0"]').focus()`);await key('ArrowUp');await key('ArrowUp');check('Picker arrows clamp at first action',(await pickerState()).id==='control:close');
+  await key('End');await key('ArrowDown');check('Picker arrows clamp at final member',(await pickerState()).id==='family:19'&&pickerVisible(await pickerState()));
++ // Match the original native 200% small-output available popup height.
++ await evaluate(`document.documentElement.style.fontSize='32px';document.body.style.fontSize='32px'`);await showPicker(-1,'4');await evaluate(`document.querySelector('[data-surface-control="family:0"]').focus()`);await key('End');
++ for(const [width,height] of [[480,252],[640,372],[480,252]]){
++  await viewport(width,height);const geometry=await evaluate(`(()=>{const b=document.activeElement,r=b.getBoundingClientRect(),s=getComputedStyle(b),extent=parseFloat(s.outlineWidth)+Math.max(0,parseFloat(s.outlineOffset));return {identity:b.dataset.surfaceControl,font:getComputedStyle(document.body).fontSize,viewport:[innerWidth,innerHeight],box:[r.left,r.top,r.right,r.bottom],outline:extent,captions:[...b.querySelectorAll('.control-label,.control-detail')].filter(n=>n.textContent).map(n=>{const q=n.getBoundingClientRect();return {text:n.textContent,top:q.top,bottom:q.bottom};})};})()`);
++  check('200-percent small popup keeps full target focus and captions '+width+'x'+height,geometry.identity==='family:19'&&geometry.font==='32px'&&geometry.box[0]-geometry.outline>=0&&geometry.box[1]-geometry.outline>=0&&geometry.box[2]+geometry.outline<=width&&geometry.box[3]+geometry.outline<=height&&geometry.captions.every(c=>c.top>=geometry.box[1]&&c.bottom<=geometry.box[3]),geometry);
++ }
++ await capture('picker-small-200');await evaluate(`document.documentElement.style.fontSize='24px';document.body.style.fontSize='24px'`);
+  check('Picker navigation emits no window action',await evaluate(`nativePackets.filter(p=>p.kind==='surface-action').length===0`));
+  await viewport(480,260);let menuPub=100;
+  async function showMenu(selected=19,allDisabled=false){
+-  const frame={surfaceProtocol:2,publication:String(++menuPub),lease:'3',mode:'menu',status:'Window actions',bar:[],popup:[{id:'control:menu-close',domId:'menu-close',label:'Close',ariaLabel:'Close window actions',detail:'',enabled:true},...Array.from({length:20},(_,i)=>({id:'menu:1:'+i,domId:'menu:1:'+i,label:'Operation '+i,ariaLabel:'Operation '+i,detail:i===selected?'Selected':'',enabled:!allDisabled&&i!==18}))]};
++  const frame={surfaceProtocol:2,publication:String(++menuPub),lease:'4',mode:'menu',status:'Window actions',bar:[],popup:[{id:'control:menu-close',domId:'menu-close',label:'Close',ariaLabel:'Close window actions',detail:'',enabled:true},...Array.from({length:20},(_,i)=>({id:'menu:1:'+i,domId:'menu:1:'+i,label:'Operation '+i,ariaLabel:'Operation '+i,detail:i===selected?'Selected':'',enabled:!allDisabled&&i!==18}))]};
+   await evaluate('receivePresentation('+JSON.stringify(frame)+')');await until('document.querySelector(".surface-popup")?.dataset.publication==='+JSON.stringify(frame.publication));await sleep(70);
+  }
+  const menuState=()=>evaluate(`(()=>{const f=document.activeElement,r=f.getBoundingClientRect(),n=document.querySelector('.surface-popup');return {id:f.dataset.surfaceControl,top:r.top,bottom:r.bottom,height:innerHeight,font:getComputedStyle(document.body).fontSize,scroll:n.scrollTop,order:[...n.querySelectorAll('[data-surface-control]')].map(b=>b.dataset.surfaceControl)};})()`);
+diff --git c/implementation/warlock/qa/native-window-feedback.py w/implementation/warlock/qa/native-window-feedback.py
+index 4ae4800..9e40c9c 100644
+--- c/implementation/warlock/qa/native-window-feedback.py
++++ w/implementation/warlock/qa/native-window-feedback.py
+@@ -2032,7 +2032,7 @@ raise SystemExit(daemon.run())
+      left=max(box['x'],button['x']);right=min(box['x']+box['width'],button['x']+button['width'])
+      for _ in range(18 if REFLOW else 1):
+       if right-left>=20:break
+-      helper([str(POINTER),'480',str(dense_height)],f'move {round(box["x"]+box["width"]/2)} 30\nwheel 400 0\nsleep 100\n')
++      helper([str(POINTER),'480',str(dense_height)],f'move {round(box["x"]+box["width"]/2)} 30\nwheel 120 0\nsleep 100\n')
+       button=wait(group_button);body=bar_body();box=body['actions'];left=max(box['x'],button['x']);right=min(box['x']+box['width'],button['x']+button['width'])
+      check('ActualGroupPointerIntersection',right-left>=20,button=button,body=body)
+      x,y=round((left+right)/2),round(button['y']+button['height']/2)
+@@ -2060,7 +2060,7 @@ raise SystemExit(daemon.run())
+      packet={'stage':stage,'path':str(image),'sha256':sha(image),'region':[left,top,right,bottom],'brightPixels':bright,'paintedPixels':painted,'area':area,'body':body}
+      report.setdefault('densePickerCaptures',[]).append(packet)
+      check(stage+'ActualFocusedControlPixels',area>0 and bright>15 and painted>.9*area,capture=packet)
+-    before=len(journal());before_launches=len(launches());picker=open_picker();order=[b['identity'] for b in members()]
++    before=len(journal());before_launches=len(launches());pointer_recipient=facts()['facts']['focused'];picker=open_picker();order=[b['identity'] for b in members()]
+     check('ActualTenMemberGroupOpensWithoutLaunchOrWindowEffect',len(picker['selections'])==10 and len(journal())==before and len(launches())==before_launches,picker=picker)
+     check('NativePickerHasEnlargedTextAndOverflow',popup_body()['fontSize']==('32px' if DENSEMENU else '24px') and popup_body()['scrollHeight']>popup_body()['viewportHeight'],body=popup_body())
+     key(107);wait(lambda:selected(order[-1]));capture('last')
+@@ -2072,7 +2072,7 @@ raise SystemExit(daemon.run())
+       result=s.ctl('eval','hl.monitor({output="WAYLAND-1",mode="'+str(width)+'x'+str(height)+'@60",position="0x0",scale=1})')
+       check(stage+'NativeOutputResizeCommand',result.strip()=='ok',result=result)
+       wait(lambda:any(m['name']=='WAYLAND-1' and m['width']==width and m['height']==height for m in s.data('monitors')))
+-      expected_width,expected_height=min(700,width-8),min(420,height-52)
++      expected_width,expected_height=min(700,width-8),min(420,height-bar_body()["viewportHeight"]-4)
+       wait(lambda:(projection() or {}).get('mode')==mode and int((popup_body() or {}).get('lease','0'))>previous_lease and (popup_body() or {}).get('viewportWidth')==expected_width and (popup_body() or {}).get('viewportHeight')==expected_height and selected(identity))
+       wait(lambda:(bar_body() or {}).get('viewportWidth')==width)
+       body=popup_body();check(stage+'CurrentSelectionAndOrderPersist',[b['identity'] for b in body['buttons']]==previous_order and pin_order(bar_body())==reflow_ids and len(journal())==before and len(launches())==before_launches,body=body,prior=prior,current=projection())
+@@ -2093,12 +2093,23 @@ raise SystemExit(daemon.run())
+     button=members()[0];x,y=round(box[0]+button['x']+button['width']/2),round(box[1]+button['y']+button['height']/2)
+     helper([str(POINTER),'480',str(dense_height)],f'move {x} {y}\nsleep 100\nbutton 273 1\nsleep 50\nbutton 273 0\nsleep 100\n')
+     wait(lambda:(projection() or {}).get('mode')=='menu' and popup_body() and any(b['accessibleName']=='Minimize' and not b['disabled'] for b in popup_body()['buttons']));capture('first-secondary-menu')
+-    key(1);wait(lambda:(projection() or {}).get('mode')=='closed');wait(lambda:bar_body()['focus']==group_button()['id'])
+-    open_picker();key(102);key(108);wait(lambda:selected(order[0]));key(127)
++    key(1);wait(lambda:(projection() or {}).get('mode')=='closed');wait(lambda:facts()['facts']['focused']==pointer_recipient)
++    check('DensePointerMenuEscapePreservesApplicationRecipient',facts()['facts']['focused']==pointer_recipient,before=pointer_recipient,after=facts()['facts']['focused'])
++    # Pointer entry returns to its actual application. Establish real keyboard
++    # bar entry before testing keyboard-menu return; never acquire focus via QA.
++    helper([str(keyboard)],'key 125 1\nkey 56 1\nkey 57 1\nsleep 50\nkey 57 0\nkey 56 0\nkey 125 0\nsleep 100\nsync\n')
++    wait(lambda:(projection() or {}).get('mode')=='applications');key(1)
++    wait(lambda:bar_body()['documentFocused']);key(102)
++    for _ in range(len(bar_body()['buttons'])+1):
++     if bar_body()['focus']==group_button()['id']:break
++     key(106)
++    wait(lambda:bar_body()['documentFocused'] and bar_body()['focus']==group_button()['id']);key(28)
++    wait(lambda:(projection() or {}).get('picker') and popup_body() and len(members())==10)
++    key(102);key(108);wait(lambda:selected(order[0]));key(127)
+     wait(lambda:(projection() or {}).get('mode')=='menu' and popup_body() and any(b['accessibleName']=='Minimize' and not b['disabled'] for b in popup_body()['buttons']));capture('first-menu')
+     key(1);wait(lambda:(projection() or {}).get('mode')=='closed')
+     wait(lambda:bar_body()['focus']==group_button()['id'])
+-    open_picker();key(107);wait(lambda:selected(order[-1]))
++    key(28);wait(lambda:(projection() or {}).get('picker') and popup_body() and len(members())==10);key(107);wait(lambda:selected(order[-1]))
+     helper([str(keyboard)],'key 42 1\nkey 68 1\nsleep 50\nkey 68 0\nkey 42 0\nsleep 100\nsync\n')
+     wait(lambda:(projection() or {}).get('mode')=='menu' and popup_body() and any(b['accessibleName']=='Minimize' and not b['disabled'] for b in popup_body()['buttons']));capture('last-menu')
+     if DENSEMENU:
+@@ -2115,6 +2126,7 @@ raise SystemExit(daemon.run())
+      key(102);body=wait(lambda:menu_selected('Minimize'));check('NativeMenuHomeSkipsDisabledRestore',True,body=body)
+      key(103);wait(lambda:menu_selected('Maximize'));key(108);wait(lambda:menu_selected('Minimize'))
+      check('NativeMenuArrowsWrapEnabledOperationsInOriginalOrder',[b['identity'] for b in popup_body()['buttons']]==menu_order and len(journal())==before,body=popup_body())
++     key(15);body=wait(lambda:menu_selected('Open snapping'));check('NativeMenuTabReachesSnapControlWithoutEffect',len(journal())==before,body=body)
+      key(15);wait(lambda:menu_selected('Close window actions'));capture('operation-close')
+      key(15);wait(lambda:menu_selected('Minimize'));check('NativeMenuTabReturnsToElmSelectedOperation',len(journal())==before,body=popup_body())
+     key(1);wait(lambda:(projection() or {}).get('mode')=='closed');wait(lambda:bar_body()['focus']==group_button()['id'])
+diff --git c/implementation/warlock/src/OutputController.elm w/implementation/warlock/src/OutputController.elm
+index 88ed9c6..e709ec3 100644
+--- c/implementation/warlock/src/OutputController.elm
++++ w/implementation/warlock/src/OutputController.elm
+@@ -144,6 +144,14 @@ updateCore event ((Model model) as current) =
+             in case D.decodeValue decoder raw of
+                 Ok table ->
+                     if not (List.member table.version [1,2]) || (table.version==2 && List.map .scope table.locations/=table.scopes) || table.kind/="view-topology" || UInt64.compare table.revision model.revision/=GT || not (admitted table.scopes) then (current,[]) else
++                    if table.version==2 && table.scopes==model.views && model.selected/=Nothing && not model.capacityRefused && not model.batchExhausted && Shell.available (Controller.desktop model.controller).windows.shell then
++                        -- Native geometry changes routing boxes, not these exact
++                        -- live view capabilities. Preserve the accepted policy;
++                        -- the host seals the old popup/input and sends Reflow to
++                        -- mint its replacement lease. Actual native observations
++                        -- still reconcile window facts and effect eligibility.
++                        (Model {model | revision=table.revision,locations=table.locations},[Controller.Publish (Controller.frame model.controller)])
++                    else
+                         let survives = model.selected |> Maybe.map (\priorSelected -> List.member priorSelected table.scopes) |> Maybe.withDefault False
+                             selected = if survives then model.selected else List.head table.scopes
+                             retired = not survives && owner current/=Nothing
+diff --git 1/implementation/warlock/qa/popup-location-reflow.qnt 2/implementation/warlock/qa/popup-location-reflow.qnt
+new file mode 100644
+index 0000000..97d138c
+--- /dev/null
++++ 2/implementation/warlock/qa/popup-location-reflow.qnt
+@@ -0,0 +1,40 @@
++// ELM-UI-008 / overflow-resize: identity/order and reachable active selection.
++// One Elm reducer observes native topology and exact popup callbacks. Native
++// geometry retires input before callbacks; location alone changes no view grant.
++// Scope: output routing and presentation leases, not native geometry/action
++// validation, preview custody, actual pixels, AT, transport or UInt64 exhaustion.
++module popup_location_reflow {
++  type State = {revision:int, generation:int, authority:int, width:int,
++    ready:bool, refused:bool, exhausted:bool, open:bool, lease:int,
++    inputLease:int, choice:int, order:List[int], observations:int, effects:int,
++    reflows:int}
++  var s:State
++  action init = s'={revision:1,generation:1,authority:1,width:480,
++    ready:true,refused:false,exhausted:false,open:true,lease:1,inputLease:1,
++    choice:10,order:List(1,2,3,4,5,6,7,8,9,10),observations:0,effects:0,reflows:0}
++  val safety = s.effects==0 and s.choice==10 and
++    s.order==List(1,2,3,4,5,6,7,8,9,10) and
++    (not(s.open) or (s.ready and s.generation==s.authority)) and
++    (s.inputLease==0 or s.inputLease==s.lease)
++  pure def canLocate(st:State):bool = st.ready and not(st.refused) and not(st.exhausted)
++  pure def locate(st:State,w:int):State = {...st,revision:st.revision+1,width:w,inputLease:0}
++  pure def canReflow(st:State,g:int,l:int):bool = st.open and st.generation==g and st.lease==l and not(st.exhausted)
++  pure def reflow(st:State):State = {...st,lease:st.lease+1,inputLease:st.lease+1,reflows:st.reflows+1}
++  action location(w:int):bool = all { canLocate(s), s'=locate(s,w) }
++  action currentReflow(g:int,l:int):bool = all { canReflow(s,g,l), s'=reflow(s) }
++  action rejectedCallback(g:int,l:int):bool = all { not(canReflow(s,g,l)), s'=s }
++  action replace = s'={...s,revision:s.revision+1,generation:s.generation+1,
++    authority:s.authority+1,ready:false,open:false,inputLease:0,observations:s.observations+1}
++  action refuse = s'={...s,refused:true,ready:false,open:false,inputLease:0}
++  action exhaust = s'={...s,exhausted:true,ready:false,open:false,inputLease:0}
++  action unready = s'={...s,ready:false,open:false,inputLease:0}
++  action fullTopology = all {not(canLocate(s)),
++    s'={...s,revision:s.revision+1,observations:s.observations+1,open:false,inputLease:0}}
++  val resizedAndReflowed = s.open and s.width==640 and s.reflows>0 and s.observations==0
++  val grownAndShrunk = s.open and s.width==480 and s.reflows>=2 and s.observations==0
++  val replacementRetired = s.generation>1 and not(s.open) and not(s.ready) and s.observations>0
++  val refusalRetained = s.refused and not(s.ready) and not(s.open)
++  action step = any {location(640),location(480),currentReflow(s.generation,s.lease),
++    rejectedCallback(s.generation-1,s.lease),rejectedCallback(s.generation,s.lease-1),
++    replace,refuse,exhaust,unready,fullTopology,s'=s}
++}
+diff --git 1/implementation/warlock/qa/popup-location-reflow_test.qnt 2/implementation/warlock/qa/popup-location-reflow_test.qnt
+new file mode 100644
+index 0000000..9d29439
+--- /dev/null
++++ 2/implementation/warlock/qa/popup-location-reflow_test.qnt
+@@ -0,0 +1,19 @@
++module popup_location_reflow_test {
++  import popup_location_reflow.* from "./popup-location-reflow"
++  run locationPreservesPolicyTest = init.then(location(640)).then(all{
++    assert(s.open and s.ready and s.choice==10 and s.lease==1 and s.inputLease==0 and s.observations==0 and safety),s'=s})
++  run growAndShrinkTest = init.then(location(640)).then(currentReflow(1,1))
++    .then(location(480)).then(currentReflow(1,2)).then(all{assert(grownAndShrunk and s.lease==3 and safety),s'=s})
++  run retiredLeaseTest = init.then(location(640)).then(currentReflow(1,1))
++    .then(rejectedCallback(1,1)).then(all{assert(resizedAndReflowed and s.lease==2 and s.reflows==1 and safety),s'=s})
++  run foreignScopeTest = init.then(location(640)).then(rejectedCallback(2,1))
++    .then(all{assert(s.lease==1 and s.inputLease==0 and s.reflows==0 and safety),s'=s})
++  run changedGenerationRetiresTest = init.then(replace).then(rejectedCallback(1,1))
++    .then(all{assert(replacementRetired and s.reflows==0 and safety),s'=s})
++  run refusalCannotRestoreRegistrationTest = init.then(refuse).then(fullTopology)
++    .then(all{assert(refusalRetained and s.observations==1 and safety),s'=s})
++  run exhaustedCannotReopenTest = init.then(exhaust).then(fullTopology).then(rejectedCallback(1,1))
++    .then(all{assert(s.exhausted and not(s.open) and s.reflows==0 and safety),s'=s})
++  run unreadyKeepsReconciliationTest = init.then(unready).then(fullTopology)
++    .then(all{assert(not(s.ready) and s.observations==1 and safety),s'=s})
++}

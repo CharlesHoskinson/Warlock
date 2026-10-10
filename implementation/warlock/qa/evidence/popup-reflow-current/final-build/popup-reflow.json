@@ -1,0 +1,26 @@
+{
+  "checks": {
+    "fixtureHasActualReadyPicker": true,
+    "reflowPreservesEntireDesktopPolicy": true,
+    "reflowPublishesWithoutReadsFocusOrEffects": true,
+    "reflowMintsFreshLeaseAndPublication": true,
+    "duplicateRetiredLeaseIsInert": true,
+    "retiredLeaseDismissalIsInert": true,
+    "retiredLeaseCannotSelectWindow": true,
+    "currentLeaseCanStillDismiss": true,
+    "closedSurfaceCannotReflow": true,
+    "successiveReflowRetainsPolicyWithoutReplay": true,
+    "outputFixtureHasReadyPicker": true,
+    "locationTopologyPreservesEntireController": true,
+    "locationTopologyUpdatesRoutingBox": true,
+    "integratedGrowShrinkPreservesPolicyAndOrder": true,
+    "integratedReflowFreshLeaseWithoutEffects": true,
+    "integratedStaleLeaseInert": true,
+    "integratedForeignScopeInert": true,
+    "integratedStaleTopologyInert": true,
+    "changedViewGenerationRetiresPicker": true,
+    "retiredScopeCannotReopenPicker": true,
+    "unreadyTopologyStillReconciles": true
+  },
+  "scope": "Compiled actual reflow reducer and full output/topology integration with typed native idle/current motion readiness; physical native input/AT and geometry authority remain separate."
+}

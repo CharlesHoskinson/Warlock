@@ -6582,51 +6582,70 @@
           "status": "partial",
           "evidence": [
             {
-              "path": "implementation/warlock/qa/evidence/keyboard-handoff/manifest.json",
-              "sha256": "66c41da0aa2ffb9dfe56752b0e18841cff05e6d7256550a9bf3aa86d22b90de8"
+              "path": "implementation/warlock/qa/evidence/popup-reflow-current/manifest.json",
+              "sha256": "8a740384ac5ca005299ec5ca89cf08f209b52491da7e628b279aba09411bd053"
             }
           ],
-          "missingObservation": "Applicable assistive-technology navigation, operation names and focus observations; Independent original-scenario review against exact source/ABI/toolchain",
+          "missingObservation": "Applicable native AT names/navigation/focus/speech/braille and independent original-scenario review; broader output/provider/profile and release-wide hardware/resource/package/rollback acceptance remain open.",
           "reviewerDisposition": {
-            "name": "root-native-keyboard-handoff",
+            "name": "root-popup-reflow-current",
             "independent": false,
-            "disposition": "Owner-observed native pass; applicable AT and independent acceptance pending"
+            "disposition": "Owner-observed complete bounded native resize and primary regression; applicable AT and independent original acceptance pending."
           },
           "sourceTuple": {
-            "sourceBaseRevision": "277fba7a8e60b5b4dc32e359244f561be7c4b2b0",
-            "publicBaseRevision": "08d4d6c13f6574ce16320af4bc4475d3fcce379e",
+            "sourceBaseRevision": "38e347bc4ea8c209683769fe01786631517f4391",
+            "publicBaseRevision": "6bb4c61468f8073d845466166c28b1aae030887b",
             "sourceHashes": {
-              "implementation/warlock/native/host.c": "97781183f747fe202628be969226c11cffd8311a96a43ecc5c07e8ce3d5657d7",
-              "implementation/warlock/native/shared-host.c": "43dda6c2391d52e78f689bf2323be0493baae5493947aa9f7ad483e6dfca7d94",
-              "implementation/warlock/qa/check-search.py": "1c02ea302c174855016149f117875af5694906ac19ef833ec019dd75715b2869",
-              "implementation/warlock/qa/native-window-feedback.py": "d0a3e2d5b8e7ceb31e1682503c81d55dac231bba83ef6d6dfec8e02ec1167caf",
-              "implementation/warlock/qa/current-search-build.json": "edb2634aed6d76361e5f61c3bf2234ae2dc1656b58ad5ed8ac8b450da5c4744a",
-              "implementation/warlock/README.md": "d4fa8380fedd28c8d3ae763f897202d66a853c1a92a69ccc2e46dc56a88596c8"
+              "implementation/warlock/native/host.c": "cde6230199756dfaa193d5e8af5a41470f8b65de3cdd1942e0e0224ab458ccbf",
+              "implementation/warlock/native/shared-host.c": "6e7f43b92c08f19ac82f5c93d67ca69d0a11a6c73f01a763a018f2beba282a7a",
+              "implementation/warlock/assets/popup-adapter.js": "050af2a6cfb58195f6999f126ab94f37573231007cb2fcd7d119873969365605",
+              "implementation/warlock/assets/shell.css": "77566e786969cfb4d7c87f2e33cc9f36d2cf4682fdc2da21bf38073340979098",
+              "implementation/warlock/src/Desktop.elm": "8ad8e4797ef13b91add6bce686ebb3bc1f0ec800e4da6328d1d740a3f4961e3f",
+              "implementation/warlock/src/SurfaceController.elm": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
+              "implementation/warlock/qa/native-window-feedback.py": "941c298d010f6cbccc0c20484ba17e34ab881a7a60a34ad549e88ece918f7a6a",
+              "implementation/warlock/qa/current-search-build.json": "de7f04d04d32dcbdb1438b09561c074c8be582edf91b8d97dda043b84f7d8084",
+              "implementation/warlock/assets/elm.js": "461351a07aca1f13fa95b9fbedcdca591c1de579e88bccec610f6358bb20c7db",
+              "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+              "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
+              "implementation/warlock/README.md": "88d1bbc44c1113e931b235825515659233e825d94b085fdb3c356da7a0177349",
+              "implementation/warlock/qa/dense-taskbar-browser.mjs": "07591ac61867a470d94ae0170187ac6f6ace59f96b0664419e00c0730edbe05e",
+              "implementation/warlock/qa/PopupReflowReplay.elm": "348e49a8f218396d0edb725ebd5891aa59ef11c71bc83c4119a7140107777d49",
+              "implementation/warlock/src/OutputController.elm": "8da2227997dda10570707c456df8b00fcc000291c66a8ec2a48e8d5321cee8dc",
+              "implementation/warlock/qa/popup-location-reflow.qnt": "b3e8bc5361802f6f77ca3c66a8addca9d07660262485c69a93a52760f10cafec",
+              "implementation/warlock/qa/popup-location-reflow_test.qnt": "eb3fdf93a5990ce34347ffe11e4177fe20f20d523d3c4739931e9b49956d017b",
+              "implementation/warlock/qa/check-search.py": "3471d523dba3ed7a1f89c26e685d9df0b6200248e8d20449b932390fcb0f0f3c"
+            },
+            "supportingSourceHashes": {
+              "DesignLanguage/CURRENT.md": "0a44c8ba957f441b54f726b46eae7588e68f7b48a9c1e66110603e2b16c3fb43"
             },
             "pair": {
               "core": {
-                "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
-                "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+                "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
+                "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
               },
               "plugin": {
-                "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791440691968763486/elm-window-geometry-authority.so",
-                "sha256": "1805693201328985cbf109f5fef6779b8fe469badf094fd417e8206f91c50b47"
+                "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791666305509919483/elm-window-geometry-authority.so",
+                "sha256": "c428e1e6e2b2f9e41b3c5218e3dd37fb6551f09bee6b3531876fb3d3c674948a"
               },
               "aquamarine": {
-                "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
-                "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+                "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+                "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
               }
             },
             "nativeHost": {
-              "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791453447239135682/elm-host",
-              "sha256": "543928926619370ca89bd308515ccb10ec1ee726b98b215abd4c77e9776e80a3",
-              "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791453447239135682/report.json",
-              "heldBuildSHA256": "f00a3d3817ea0413f5a70b7e4f8554276f983a6699092af5849bf8b3c2cf159a"
+              "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791674339460650359/elm-host",
+              "sha256": "b276c031f945431c10ca128e9e6505f366e14a3ba9cf295362bd36028296eb34",
+              "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791674339460650359/report.json",
+              "heldBuildSHA256": "5b797a2c1f06f4931aaa66c58768e53bf40fa18ec2b80a0fb8baf0ec13c1f200"
             },
             "compiledAssets": {
-              "elm.js": "10d72c9dd0cba778619e0284368861e57da4c5b8512914ca7bbaa4549a6712df",
-              "bar.js": "d2bd3e1d84b6dc605744da689c0331e89a0cd45d083c0cdbc3b1ee620a18e860",
-              "popup.js": "054636c284b4f6a026963b18b0e41b2f1a737fd87f9cdc1d8ef5449d6030222a"
+              "elm.js": "461351a07aca1f13fa95b9fbedcdca591c1de579e88bccec610f6358bb20c7db",
+              "bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+              "popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43"
+            },
+            "buildReport": {
+              "path": "implementation/warlock/qa/runs/taskbar-primary-1791674339460650359/report.json",
+              "sha256": "5b797a2c1f06f4931aaa66c58768e53bf40fa18ec2b80a0fb8baf0ec13c1f200"
             }
           },
           "priorObservations": [
@@ -6687,10 +6706,65 @@
                 "independent": false,
                 "disposition": "Owner-observed bounded native reflow; dense selection typing failed, AT/independent original acceptance pending."
               }
+            },
+            {
+              "status": "partial",
+              "evidence": [
+                {
+                  "path": "implementation/warlock/qa/evidence/keyboard-handoff/manifest.json",
+                  "sha256": "66c41da0aa2ffb9dfe56752b0e18841cff05e6d7256550a9bf3aa86d22b90de8"
+                }
+              ],
+              "missingObservation": "Applicable assistive-technology navigation, operation names and focus observations; Independent original-scenario review against exact source/ABI/toolchain",
+              "reviewerDisposition": {
+                "name": "root-native-keyboard-handoff",
+                "independent": false,
+                "disposition": "Owner-observed native pass; applicable AT and independent acceptance pending"
+              },
+              "sourceTuple": {
+                "sourceBaseRevision": "277fba7a8e60b5b4dc32e359244f561be7c4b2b0",
+                "publicBaseRevision": "08d4d6c13f6574ce16320af4bc4475d3fcce379e",
+                "sourceHashes": {
+                  "implementation/warlock/native/host.c": "97781183f747fe202628be969226c11cffd8311a96a43ecc5c07e8ce3d5657d7",
+                  "implementation/warlock/native/shared-host.c": "43dda6c2391d52e78f689bf2323be0493baae5493947aa9f7ad483e6dfca7d94",
+                  "implementation/warlock/qa/check-search.py": "1c02ea302c174855016149f117875af5694906ac19ef833ec019dd75715b2869",
+                  "implementation/warlock/qa/native-window-feedback.py": "d0a3e2d5b8e7ceb31e1682503c81d55dac231bba83ef6d6dfec8e02ec1167caf",
+                  "implementation/warlock/qa/current-search-build.json": "edb2634aed6d76361e5f61c3bf2234ae2dc1656b58ad5ed8ac8b450da5c4744a",
+                  "implementation/warlock/README.md": "d4fa8380fedd28c8d3ae763f897202d66a853c1a92a69ccc2e46dc56a88596c8"
+                },
+                "pair": {
+                  "core": {
+                    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
+                    "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+                  },
+                  "plugin": {
+                    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791440691968763486/elm-window-geometry-authority.so",
+                    "sha256": "1805693201328985cbf109f5fef6779b8fe469badf094fd417e8206f91c50b47"
+                  },
+                  "aquamarine": {
+                    "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+                    "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+                  }
+                },
+                "nativeHost": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791453447239135682/elm-host",
+                  "sha256": "543928926619370ca89bd308515ccb10ec1ee726b98b215abd4c77e9776e80a3",
+                  "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791453447239135682/report.json",
+                  "heldBuildSHA256": "f00a3d3817ea0413f5a70b7e4f8554276f983a6699092af5849bf8b3c2cf159a"
+                },
+                "compiledAssets": {
+                  "elm.js": "10d72c9dd0cba778619e0284368861e57da4c5b8512914ca7bbaa4549a6712df",
+                  "bar.js": "d2bd3e1d84b6dc605744da689c0331e89a0cd45d083c0cdbc3b1ee620a18e860",
+                  "popup.js": "054636c284b4f6a026963b18b0e41b2f1a737fd87f9cdc1d8ef5449d6030222a"
+                }
+              },
+              "verificationScope": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+              "evidenceScope": "Owner-observed native picker activation/input after reflow and background-Minimize/Escape/Restore guards. Original applicable AT and independent acceptance remain open.",
+              "historicalAfterSourceChange": true
             }
           ],
           "verificationScope": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
-          "evidenceScope": "Owner-observed native picker activation/input after reflow and background-Minimize/Escape/Restore guards. Original applicable AT and independent acceptance remain open."
+          "evidenceScope": "Ready unchanged-view location routing, adaptive 200-percent picker targets and actual-control fresh-lease reveal. Original native 18-pin/ten-root picker/menu grow-shrink journey passes 176 checks with exact order/selection, physical pixels/input retirement, one committed activation, real GTK keyboard input and normal cleanup; default primary regression passes 131. Full compiled output integration, browser and model checks are separately scoped."
         },
         {
           "name": "menu-invocation",
@@ -12279,5 +12353,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-10T22:49:42.089345+00:00"
+  "updatedUTC": "2026-10-10T23:24:55.160946+00:00"
 }
