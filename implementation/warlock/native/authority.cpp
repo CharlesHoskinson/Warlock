@@ -378,7 +378,7 @@ void notifyShellShortcuts() noexcept {try {if(g_pEventManager)g_pEventManager->p
 // Match the exact integer logical bounds advertised by xdg-output. Weak
 // native identity and press-time bounds prevent output replacement/move adoption.
 std::optional<std::array<int32_t,4>> shortcutOutputBox(const PHLMONITOR& monitor) {
-    if(!monitor || !State::monitorState()->contains(monitor) || !monitor->m_enabled || !monitor->m_dpmsStatus)return std::nullopt;
+    if(!monitor || !State::monitorState()->contains(monitor) || !monitor->m_enabled || !monitor->m_dpmsStatus || monitor->m_name=="FALLBACK")return std::nullopt;
     const std::array<double,4> values={monitor->m_position.x,monitor->m_position.y,monitor->m_size.x,monitor->m_size.y};
     std::array<int32_t,4> box;
     for(size_t i=0;i<values.size();++i) {

@@ -562,10 +562,29 @@ static WebKitWebView *shared_child(WebKitUserContentManager *manager) {
     g_print("view-process-policy: related=1 distinct-manager=1\n");fflush(stdout);
     return child;
 }
+/* GTK3 exposes the Wayland connector through this public compatibility API.
+ * Model/manufacturer strings are not output identities. Wait for the native
+ * name/geometry before issuing a view; FALLBACK is the owning compositor's
+ * internal non-presenting monitor, not a recovered display. */
+static char *shared_monitor_name(GdkDisplay *display,GdkMonitor *monitor) {
+    for(int i=0;i<gdk_display_get_n_monitors(display);++i)
+        if(gdk_display_get_monitor(display,i)==monitor)
+            return gdk_screen_get_monitor_plug_name(gdk_display_get_default_screen(display),i);
+    return NULL;
+}
 static void shared_add(GdkDisplay *display,GdkMonitor *monitor,gpointer unused) {
     (void)display;(void)unused;if (shutting_down) return;
     if (output_views->len>=64 || issued_view==G_MAXUINT64 || !GDK_IS_WAYLAND_MONITOR(monitor) || !gdk_wayland_monitor_get_wl_output(monitor)) {failed=TRUE;gtk_main_quit();return;}
     for (guint i=0;i<output_views->len;i++) if (((OutputView*)g_ptr_array_index(output_views,i))->monitor==monitor) return;
+    g_autofree char *name=shared_monitor_name(display,monitor);GdkRectangle bounds;gdk_monitor_get_geometry(monitor,&bounds);
+    if(!name || !*name || bounds.width<=0 || bounds.height<=0)return;
+    if(g_str_equal(name,"FALLBACK")) {
+        if(!g_object_get_data(G_OBJECT(monitor),"warlock-internal-output")) {
+            g_object_set_data(G_OBJECT(monitor),"warlock-internal-output",GINT_TO_POINTER(1));
+            g_print("view-unpresentable: name=%s\n",name);fflush(stdout);
+        }
+        return;
+    }
     OutputView *row=g_new0(OutputView,1);row->id=++issued_view;row->generation=1;row->monitor=g_object_ref(monitor);row->active=TRUE;
     row->manager=webkit_user_content_manager_new();manager_configure(row->manager);
     row->engine=shared_child(row->manager);
@@ -586,6 +605,12 @@ static void shared_add(GdkDisplay *display,GdkMonitor *monitor,gpointer unused) 
     webkit_web_view_load_uri(row->engine,"elm-shell://app/bar.html");
     GdkRectangle geometry;gdk_monitor_get_geometry(monitor,&geometry);g_print("view-added: id=%" G_GUINT64_FORMAT " geometry=%d,%d,%d,%d\n",row->id,geometry.x,geometry.y,geometry.width,geometry.height);fflush(stdout);
     if (controller_ready) topology_advance();
+}
+static void shared_monitors_changed(GdkScreen *screen,gpointer unused) {
+    (void)unused;if(shutting_down)return;
+    GdkDisplay *display=gdk_screen_get_display(screen);
+    for(int i=0;i<gdk_display_get_n_monitors(display);++i)
+        shared_add(display,gdk_display_get_monitor(display,i),NULL);
 }
 static void view_retire(OutputView *row) {
     shared_context_cancel();
@@ -1649,6 +1674,7 @@ int ELM_SHARED_HOST_MAIN(int argc,char **argv) {
     shared_input_cancel=shared_context_cancel;
     shared_popup_notice=shared_popup_notify;shared_frame_notice=shared_publish;shared_bar_focus_view=shared_focus_target;
     gulong add_handler=g_signal_connect(owned_display,"monitor-added",G_CALLBACK(shared_add),NULL),remove_handler=g_signal_connect(owned_display,"monitor-removed",G_CALLBACK(shared_remove),NULL);
+    gulong changed_handler=g_signal_connect(gdk_display_get_default_screen(owned_display),"monitors-changed",G_CALLBACK(shared_monitors_changed),NULL);
     for (int i=0;i<gdk_display_get_n_monitors(owned_display);i++) shared_add(owned_display,gdk_display_get_monitor(owned_display,i),NULL);
     if(qa_controlled_preview){renderer_failure_drain_hook=controlled_delivery_failure;controlled_curtain();g_signal_connect(popup_view,"load-changed",G_CALLBACK(controlled_load_changed),NULL);if(qa_controlled_process_stop)g_signal_connect(popup_view,"web-process-terminated",G_CALLBACK(controlled_qa_process_terminated),NULL);}
     webkit_web_view_load_uri(popup_view,qa_controlled_preview?"elm-shell://app/controlled-popup.html":"elm-shell://app/popup.html");webkit_web_view_load_uri(view,"elm-shell://app/index.html");
@@ -1678,7 +1704,7 @@ int ELM_SHARED_HOST_MAIN(int argc,char **argv) {
             g_usleep(5000);
         }
     }
-    g_signal_handler_disconnect(owned_display,add_handler);g_signal_handler_disconnect(owned_display,remove_handler);
+    g_signal_handler_disconnect(gdk_display_get_default_screen(owned_display),changed_handler);g_signal_handler_disconnect(owned_display,add_handler);g_signal_handler_disconnect(owned_display,remove_handler);
     if (popup_active) popup_hide();
     qa_popup_retired=NULL;qa_snapshot_carrier_close();popup_release_retired();
     if (backend) {

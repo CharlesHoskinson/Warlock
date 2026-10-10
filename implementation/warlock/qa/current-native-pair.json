@@ -6,18 +6,18 @@
       "sha256": "7b954e5c6b818cdc6dfe8c8edd9e6c1be98a7e293b07c3e97fe0621135d1e42c"
     },
     "plugin": {
-      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791635606630613382/elm-window-geometry-authority.so",
-      "sha256": "d5bb7534e00980c2d5f62c0579d8426353db604f4e4ce137a0f3b61036633bd3"
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791636752727044471/elm-window-geometry-authority.so",
+      "sha256": "b5e9a099e4e4de1d226a31b0a470e69b3e9596e1890628321721601bd74f7cc4"
     },
     "aquamarine": {
-      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
-      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+      "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
     }
   },
-  "authorityReport": "implementation/warlock/qa/runs/native-authority-1791635606630613382/report.json",
-  "authorityReportSHA256": "408a911191d045def073af675ee46afd10f09d3e0fa5aaf190cfd85e798fcfff",
+  "authorityReport": "implementation/warlock/qa/runs/native-authority-1791636752727044471/report.json",
+  "authorityReportSHA256": "d8d7fac64485beb8318f2564844370b87dece1951dd46324c30e4f6cba5133f2",
   "authorityInputs": {
-    "native/authority.cpp": "e98d5707fd8e7b44cabb937ef3e2f8dfa5b73088b00f141d5c1477d420097299",
+    "native/authority.cpp": "94d45c1fa693fec00257c1db56a92baf1f72e99acec859afc8c12b9cf4ccb8c6",
     "native/navigation-modal.hpp": "48a0a3c195425db508b20d1bc869ad588a03f3f3fc5fcba01ac0cd16853db30f",
     "native/geometry-effects.inc": "3fb8e9cf84c36885f03cafe5c1fcfcf2cd3ff09bd6d899be23af3fad8bea027e",
     "native/snap-placement.inc": "3c7e92f10ce480a7512fe845a2155946b624f7a8ca669c90ee4040f09897de2e",
@@ -56,5 +56,9 @@
     "reportSHA256": "1b322eb49ad2f3d728c5d624ad2775d11491fa830bc85bda358cfd44d65c72ab",
     "binarySHA256": "7b954e5c6b818cdc6dfe8c8edd9e6c1be98a7e293b07c3e97fe0621135d1e42c",
     "nativeAcceptance": false
+  },
+  "outputTransportReport": {
+    "report": "implementation/warlock/qa/runs/output-transport-1791637476981206198/report.json",
+    "reportSHA256": "d73ea81d74c617e4b39ef21c115c792aec3bf27b6b13defb294f30f33faee57e"
   }
 }

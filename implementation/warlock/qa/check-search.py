@@ -22,7 +22,8 @@ IME=sys.argv[1:]==['--ime'] or LAUNCHER
 ACCESSIBILITY=sys.argv[1:]==['--accessibility']
 CONTRAST=sys.argv[1:]==['--high-contrast']
 READINESS=sys.argv[1:]==['--pointer-readiness']
-RETIREOUTPUT=sys.argv[1:]==['--output-retirement']
+ZEROOUTPUT=sys.argv[1:]==['--zero-output']
+RETIREOUTPUT=ZEROOUTPUT or sys.argv[1:]==['--output-retirement']
 SHORTCUTOUTPUT=RETIREOUTPUT or sys.argv[1:]==['--shortcut-output']
 DRAG=SHORTCUTOUTPUT or READINESS or sys.argv[1:]==['--drag-ownership']
 KEYBOARD=sys.argv[1:]==['--keyboard-shell']
@@ -404,6 +405,7 @@ console.log('Current body-target Escape releases once; stale scope, preedit, rep
    child_path=OUT/'layer-browser/report.json';child=json.loads(child_path.read_text());assert child['passed'] and child['browserExitCode']==0;report['layerAppearanceBrowser']={'path':str(child_path),'sha256':sha(child_path),'checks':child['checks']}
  if SHORTCUTOUTPUT:report.update(requirements=['ELM-UX-023','ELM-UI-005'],scenarios=['ux-023','search-no-match'],scope='Compiled current-output shortcut routing with typed live destination/current topology, stale/blocked/ambiguous rejection, original serial/pointer/search regressions and owning GTK host. Native/AT acceptance remains separate.')
  if RETIREOUTPUT:report.update(requirements=['ELM-UI-019'],scenarios=['output-remove'],scope='Compiled current root focused-output removal, unrelated output retention, fresh replacement capability and retired action/dismissal/shortcut rejection; owning host and sampled model separate from actual native/hardware/AT acceptance.')
+ if ZEROOUTPUT:report.update(requirements=['ELM-UI-019'],scenarios=['outputs-return'],scope='Compiled existing zero-output root reconciliation and changed GTK delayed native-name admission/internal FALLBACK exclusion; sampled scoped retirement model, owning host and strict matched native authority. Actual native/physical/AT acceptance remains separate.')
  assert all(sha(ROOT/p)==h for p,h in inputs.items());toolchain.verify();report['compiledAssets']={n:sha(INPUT/'assets'/n) for n in ['elm.js','bar.js','popup.js']};report['passed']=True
 except Exception as error:report['error']=repr(error)
 finally:

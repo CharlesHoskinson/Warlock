@@ -7799,9 +7799,52 @@
         {
           "name": "outputs-return",
           "oracle": "controls reconcile on available output without old-generation effects",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/zero-output-return/manifest.json",
+              "sha256": "5abfb49a2fa6bfba53cd969a8a408b26646a9596b74dcb32ee26680b10a37ee1",
+              "scope": "Real output absence now suspends shell presentation without giving internal FALLBACK a bar, popup, reserved band or shortcut event. Immediate nested parent initialization flush restores a fresh view after configure ACK, actual focused launcher/query and physical-keyboard Refresh (one catalog read) without launch/window-effect replay; workspace identity survives. Original two-output drag/capture and all-nine-surface keyboard regressions pass with normal cleanup. Application placement remains offscreen and unqualified.",
+              "sourceBaseRevision": "84643b51299e0952f587284817ed3085498ed481",
+              "sourceHashes": {
+                "implementation/warlock/native/shared-host.c": "63bf35e5f4ea09a4046badd534a60c609becf92600fb767b48aa26574df9b906",
+                "implementation/warlock/native/authority.cpp": "94d45c1fa693fec00257c1db56a92baf1f72e99acec859afc8c12b9cf4ccb8c6",
+                "implementation/warlock/src/OutputController.elm": "2a4aa85bdc7ba3b0caa94b8dbfd1538d791ec78f33040a4221a1ef1fb701c53e",
+                "implementation/warlock/src/Desktop.elm": "176ddaf19e5dfb6c2362ac9c9c46d296155cd38e916e4cd28938a591648ed711",
+                "implementation/warlock/src/Shortcuts.elm": "05399194936c24b85e5cda505eed47fae163109a5e8a6a513f9008c420b9309d",
+                "implementation/warlock/adapter/effect_endpoint.py": "c2d2bf6cf3170f57743fa1d136c4c7c9983a1b978f7e286d819ab79ca7b502a5",
+                "implementation/warlock/qa/native-zero-output.py": "272b456d355bc4808b93e983a740593827ee82a5ec183f5c9b713b2c3bbfd2cd",
+                "implementation/warlock/qa/OutputRetirementReplay.elm": "05df5b73077b6a3bcb1172fa720d32ef7f991f58ac57982c3dfcef2e4e0f487b",
+                "implementation/warlock/qa/output-retirement.qnt": "d206ebb8483647882112e3432b08e7e2197f55ccf9c6739fd506adc00b934bf6",
+                "implementation/warlock/qa/output-retirement_test.qnt": "1b43a816d26a1bd63ee8628ab84335e6517faa78e5d835083286f232b849675e",
+                "implementation/warlock/qa/check-output-retirement.py": "912bf85a0eda8893789ec40a747b58704dd782a14e51909128c1cec1367e39ad",
+                "implementation/warlock/qa/check-search.py": "71a3ad7f0b176f16556285df6e359cd2f7262c8d628c19088588e3de9eb7dd83",
+                "implementation/warlock/qa/current-native-pair.json": "036c8dcbc81352a8d39c20ba155960c9b4d8e504fa56f99a57e5c7f275e3c1b5",
+                "implementation/warlock/qa/current-search-build.json": "32aa54b35b490df06b89471e22f2a63523d75ea1b6364d7645dbacb9e32b84e2",
+                "implementation/warlock/assets/elm.js": "bfbfc8fabf8e4df0bf4baa05493038288677cce5b789dc84c4bbb02f76e1dbd0",
+                "implementation/warlock/assets/bar.js": "1b490122e33ec692c225c2f6936d2e05eb23cc0ec91c9fa0d2a16469c030cff1",
+                "implementation/warlock/assets/popup.js": "c12dc5323bbaaf2d83cff1799b1e0e72c861d012f6db0da39d50adb62648f933",
+                "implementation/warlock/README.md": "d78621ecba82e38f78b26b089f3c9c446e97696ac02cb53e677c7909e1bfb6af",
+                "implementation/warlock/native/aquamarine/Wayland.cpp": "f6a199eeb77879a65150db8cff024fd58298a93b8fee390260dda8c6c69cf635",
+                "implementation/warlock/qa/check-output-transport.py": "709f64ea96ac1d8735b5fc14c9512363f98f467b07494035bbd927d196042e92",
+                "implementation/warlock/qa/output-transport.qnt": "51ceb2aeb3589414d6d3376b4f485654420efc43ac769456adb27f7287ee6f9e",
+                "implementation/warlock/qa/output-transport_test.qnt": "0ea66faca7a05f5b16a821df81e479124d83948df30136f17a432f83340d797e",
+                "implementation/warlock/qa/native-window-feedback.py": "a6ad8e08bc61dacdc16a8117faaebd34086abcad2afd67631878e8a74784a21d"
+              },
+              "reviewerDisposition": {
+                "name": "root-zero-output",
+                "independent": false,
+                "disposition": "Owner-observed nested native/compiled/sampled results; independent original acceptance remains open."
+              }
+            }
+          ],
+          "missingObservation": "Actual floating application returns offscreen (x=-1880, width=108, on an 800px output); workspace 2 survives but visible application placement/recovery is not qualified. Repair native placement next.; Physical display hotplug, native AT/IME and independent original-scenario acceptance remain open.; Fresh old native shortcut receipts delayed across identical replacement bounds and arbitrary topology/native generation ordering remain unqualified; the retirement model abstracts atomic topology delivery.; Pending preview/capture/effect custody, protected input and Unknown reconciliation during removal remain unqualified. Parent transport model assumes successful flush; EAGAIN/write-backpressure and fatal parent-loss runtime schedules remain unqualified.; Full original release journeys, hardware/resource budgets, reproducible packaging and reversible deployment remain open.",
+          "observation": "Real output absence now suspends shell presentation without giving internal FALLBACK a bar, popup, reserved band or shortcut event. Immediate nested parent initialization flush restores a fresh view after configure ACK, actual focused launcher/query and physical-keyboard Refresh (one catalog read) without launch/window-effect replay; workspace identity survives. Original two-output drag/capture and all-nine-surface keyboard regressions pass with normal cleanup. Application placement remains offscreen and unqualified.",
+          "reviewerDisposition": {
+            "name": "root-zero-output",
+            "independent": false,
+            "disposition": "Owner-observed nested native/compiled/sampled results; independent original acceptance remains open."
+          }
         }
       ]
     },
@@ -11420,5 +11463,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-10T12:43:12.129152+00:00"
+  "updatedUTC": "2026-10-10T13:08:38.718522+00:00"
 }

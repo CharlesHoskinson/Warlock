@@ -1,4 +1,4 @@
-"""quint-llm-kit sampled popup/output retirement, fresh view identity and keyboard destination; atomic topology abstraction; native gates separate."""
+"""quint-llm-kit sampled popup/output retirement, fresh view identity and keyboard destination; internal FALLBACK suspension with atomic topology abstraction; native gates separate."""
 import hashlib,json,pathlib,re,subprocess,sys,time
 assert not sys.argv[1:] or sys.argv[1:]==['--init']
 initial=bool(sys.argv[1:])

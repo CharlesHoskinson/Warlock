@@ -54,7 +54,14 @@ assert not NAV or (ROOT/'qa/current-native-pair.json').exists()
 assert not (ROOT/'native/authority.cpp').exists() or (ROOT/'qa/current-native-pair.json').exists()
 if (ROOT/'qa/current-native-pair.json').exists():
  native_pair=json.loads((ROOT/'qa/current-native-pair.json').read_text());authority_path=REPO/native_pair['authorityReport'];assert sha(authority_path)==native_pair['authorityReportSHA256'];authority=json.loads(authority_path.read_text());assert authority['passed'] and authority['missingSymbols']==[]
- assert native_pair['pair']['aquamarine']==pair['aquamarine'] and sha(RUNTIME/'qa/preflight.json')==native_pair['unchangedRuntimePreflightSHA256']
+ assert sha(RUNTIME/'qa/preflight.json')==native_pair['unchangedRuntimePreflightSHA256']
+ if native_pair['pair']['aquamarine']!=pair['aquamarine']:
+  transport=native_pair['outputTransportReport'];transport_path=REPO/transport['report'];assert sha(transport_path)==transport['reportSHA256'];aq=json.loads(transport_path.read_text())
+  assert aq['passed'] and aq['publicHeadersUnchanged'] and aq['missingParentSymbols']==[]
+  assert aq['ancestor']['librarySHA256']==pair['aquamarine']['sha256']
+  assert native_pair['pair']['aquamarine']=={'path':aq['library'],'sha256':aq['librarySHA256']}
+  assert all(sha(ROOT/p)==h for p,h in aq['sourceHashes'].items())
+  assert all(sha(p)==h for p,h in {**aq['dependencies'],**aq['retainedObjects'],**aq['linkLibraries']}.items())
  if native_pair['pair']['core']!=pair['core']:
   focus=authority['focusCoreReport'];focus_path=REPO/focus['report'];assert sha(focus_path)==focus['reportSHA256'];focus_core=json.loads(focus_path.read_text())
   assert focus_core['passed'] and focus_core['existingPublicHeadersUnchanged'] and focus_core['existingObjectLayoutsUnchanged']
@@ -113,7 +120,7 @@ subprocess.run(['node','--check',str(assets/'bar-adapter.js')],check=True)
 OUT=ROOT/'qa/runs'/(('native-adapter-unavailable-' if UNAVAILABLE else 'native-layer-appearance-' if LAYER else 'native-primary-keyboard-' if PRIMARYKEY else 'native-live-motion-' if LIVE else 'native-reduced-motion-' if MOTION else 'native-transfer-workspace-' if TRANSFER else 'native-ime-' if IME else 'native-accessibility-' if ACCESSIBILITY else 'native-high-contrast-' if CONTRAST else 'native-drag-ownership-' if DRAG else 'native-keyboard-shell-' if KEYBOARD else 'native-attention-' if ATTENTION else 'native-jump-lists-' if JUMP else 'native-files-' if FILES else 'native-system-menu-' if SYSTEM else 'native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
 OUTPUT=pathlib.Path('/home/hoskinson/window-integration-qa')/('warlock-window-feedback-'+str(time.time_ns()))
 focus_host=None
-if native_pair.get('pair',{}).get('core')!=pre['pair']['core']:
+if native_pair.get('pair',{}).get('core')!=pre['pair']['core'] or native_pair.get('pair',{}).get('aquamarine')!=pre['pair']['aquamarine']:
  # The frozen host's process selector reads its sibling native build tuple.
  # Keep every other verified runtime asset at the frozen root and give this
  # private, recorded copy the newly compiled core tuple. Never edit that root.
@@ -121,11 +128,28 @@ if native_pair.get('pair',{}).get('core')!=pre['pair']['core']:
  original_host=(RUNTIME/'candidate_host.py').read_text();needle='ROOT=Path(__file__).resolve().parent'
  assert original_host.count(needle)==1
  adapted=original_host.replace(needle,'ROOT=Path('+repr(str(RUNTIME))+')')
+ if pair['aquamarine']!=pre['pair']['aquamarine']:
+  begin=adapted.index('def aq_tuple():');end=adapted.index('spec=importlib.util.spec_from_file_location',begin)
+  selector='''def aq_tuple():
+    manifest=Path(AQ_REPORT)
+    if digest(manifest)!=AQ_REPORT_SHA:raise RuntimeError('Output transport build report changed')
+    packet=json.loads(manifest.read_text())
+    if not packet['passed'] or not packet['publicHeadersUnchanged'] or packet['missingParentSymbols']:raise RuntimeError('Unqualified output transport build')
+    for path,value in {**packet['dependencies'],**packet['retainedObjects'],**packet['linkLibraries']}.items():
+        if digest(path)!=value:raise RuntimeError('Output transport dependency changed: '+path)
+    link=Path(packet['loaderSymlink']['path'])
+    if not link.is_symlink() or str(link.readlink())!=packet['loaderSymlink']['target']:raise RuntimeError('Output transport loader symlink changed')
+    lib=Path(packet['library'])
+    if digest(lib)!=packet['librarySHA256']:raise RuntimeError('Output transport library changed')
+    return {'librarySHA256':packet['librarySHA256'],'manifestSHA256':AQ_REPORT_SHA},lib
+'''
+  adapted=adapted[:begin]+selector+adapted[end:]
+  adapted='AQ_REPORT='+repr(str(transport_path))+'\nAQ_REPORT_SHA='+repr(transport['reportSHA256'])+'\n'+adapted
  host_path=focus_inputs/'focus_host.py';host_path.write_text(adapted)
  (focus_inputs/'native-build-report.json').write_text(json.dumps({'result':'pass','binary':pair['core']['path'],'sha256':pair['core']['sha256']}))
  spec=importlib.util.spec_from_file_location('focus_core_private_host',host_path);host=importlib.util.module_from_spec(spec);spec.loader.exec_module(host)
  isolate_session_host(host)
- focus_host={'originalSHA256':sha(RUNTIME/'candidate_host.py'),'adaptedPath':str(host_path),'adaptedSHA256':sha(host_path),'change':'Keep frozen asset ROOT; sibling process tuple points only to the source-verified focus core.'}
+ focus_host={'originalSHA256':sha(RUNTIME/'candidate_host.py'),'adaptedPath':str(host_path),'adaptedSHA256':sha(host_path),'change':'Keep frozen runtime assets; select the source-verified core and qualified parent-output transport with exact mapped-library verification.'}
 POINTER=pathlib.Path('/home/hoskinson/.local/share/hypr-window-controls/qa/virtual-pointer');FIXTURE=RUNTIME/'fixture.py'
 retirement_fixture=None
 primary_fixture=None

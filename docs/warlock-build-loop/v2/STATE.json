@@ -1,13 +1,82 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T12:43:12.129152+00:00",
+  "updatedUTC": "2026-10-10T12:48:05.123047+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
+    "id": "zero-output-return",
+    "requirements": [
+      "ELM-UI-019"
+    ],
+    "scenarios": [
+      "outputs-return"
+    ],
+    "paths": [
+      "implementation/warlock/native/shared-host.c",
+      "implementation/warlock/native/authority.cpp",
+      "implementation/warlock/src/OutputController.elm",
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/src/Shortcuts.elm",
+      "implementation/warlock/adapter/effect_endpoint.py",
+      "implementation/warlock/qa/native-zero-output.py",
+      "implementation/warlock/qa/OutputRetirementReplay.elm",
+      "implementation/warlock/qa/output-retirement.qnt",
+      "implementation/warlock/qa/output-retirement_test.qnt",
+      "implementation/warlock/qa/check-output-retirement.py",
+      "implementation/warlock/qa/check-search.py",
+      "implementation/warlock/qa/current-native-pair.json",
+      "implementation/warlock/qa/current-search-build.json",
+      "implementation/warlock/assets/elm.js",
+      "implementation/warlock/assets/bar.js",
+      "implementation/warlock/assets/popup.js",
+      "implementation/warlock/README.md",
+      "implementation/warlock/native/aquamarine/Wayland.cpp",
+      "implementation/warlock/qa/check-output-transport.py",
+      "implementation/warlock/qa/output-transport.qnt",
+      "implementation/warlock/qa/output-transport_test.qnt",
+      "implementation/warlock/qa/native-window-feedback.py"
+    ],
+    "before": "All-output disappearance/return has only model/compiled coverage; actual suspended presentation, fresh native controls and stale-generation refusal are unverified.",
+    "after": "With no outputs Warlock suspends presentation safely; a returned output obtains a fresh issued view, actual keyboard controls recover, and retired scope/shortcut/effect generations cannot replay.",
+    "verification": [
+      "Original protected nested native output removal/return with an open launcher, zero presentable outputs (native internal FALLBACK retained)/empty host topology, live processes, fresh identity, physical keyboard recovery/catalog read, actual frame and unchanged journal/custody cleanup at original deadlines. Reuse existing quint-llm-kit retirement cases; model changed ordering if a defect is demonstrated. Physical hardware/AT/independent acceptance remains separate."
+    ],
+    "owner": "root-zero-output",
+    "participantRecord": ".warlock-contributor/zero-output.json",
+    "disposition": "partial",
+    "missingObservations": [
+      "Actual floating application returns offscreen (x=-1880, width=108, on an 800px output); workspace 2 survives but visible application placement/recovery is not qualified. Repair native placement next.",
+      "Physical display hotplug, native AT/IME and independent original-scenario acceptance remain open.",
+      "Fresh old native shortcut receipts delayed across identical replacement bounds and arbitrary topology/native generation ordering remain unqualified; the retirement model abstracts atomic topology delivery.",
+      "Pending preview/capture/effect custody, protected input and Unknown reconciliation during removal remain unqualified. Parent transport model assumes successful flush; EAGAIN/write-backpressure and fatal parent-loss runtime schedules remain unqualified.",
+      "Full original release journeys, hardware/resource budgets, reproducible packaging and reversible deployment remain open."
+    ],
+    "observed": "Real output absence now suspends shell presentation without giving internal FALLBACK a bar, popup, reserved band or shortcut event. Immediate nested parent initialization flush restores a fresh view after configure ACK, actual focused launcher/query and physical-keyboard Refresh (one catalog read) without launch/window-effect replay; workspace identity survives. Original two-output drag/capture and all-nine-surface keyboard regressions pass with normal cleanup. Application placement remains offscreen and unqualified.",
+    "evidence": {
+      "path": "implementation/warlock/qa/evidence/zero-output-return/manifest.json",
+      "sha256": "5abfb49a2fa6bfba53cd969a8a408b26646a9596b74dcb32ee26680b10a37ee1"
+    },
+    "nextSourceWork": "Repair actual offscreen floating application placement on zero-output return in the owning native monitor/placement path. Preserve workspace identity and unsaved drafts; observe actual visible application pixels, native bounds and input without a manual focus/placement workaround. Delayed fresh old shortcut/native generation ordering, protected input/custody/Unknown, physical hotplug/AT/IME and release gates remain mandatory."
+  },
+  "nextSlices": [
+    "taskbar activation/minimize/restore and popup focus journeys",
+    "persistent catalog pins",
+    "launcher search and refusal recovery",
+    "switcher/Task View/workspaces and snap/output journeys",
+    "authorized visible previews and fallback",
+    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
+    "original native, AT/IME, hardware/resource/journey gates",
+    "reproducible package, reversible deployment/rollback"
+  ],
+  "releaseAccepted": false,
+  "oldTrackerIsCurrent": false,
+  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
+  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
+  "previousSlice": {
     "id": "live-output-retirement",
     "requirements": [
       "ELM-UI-019"
@@ -54,72 +123,58 @@
     "observed": "Keyboard shortcuts now resolve the actual native keyboard window, mapped shell layer or live popup before choosing an output; an unrecognized focused surface is refused. The real nested output-removal journey dismisses the displaced launcher, preserves workspace identity, keeps the typed query and keyboard recovery on a declared survivor, and operates Refresh with one observed catalog read. Reconnection at identical old bounds receives a new view identity while the retired native shortcut destination stays null. No launch/window-effect replay occurs, and original drag/capture plus all-nine-surface keyboard regressions pass with normal cleanup.",
     "nextSourceWork": "Exercise actual native zero-output return (UI-019 outputs-return) and inspect delayed pre-retirement shortcut receipts across same-bounds replacement. Implement demonstrated generation/recovery gaps in the existing host/root/authority; preserve original waits, custody and Unknown/no-replay."
   },
-  "nextSlices": [
-    "taskbar activation/minimize/restore and popup focus journeys",
-    "persistent catalog pins",
-    "launcher search and refusal recovery",
-    "switcher/Task View/workspaces and snap/output journeys",
-    "authorized visible previews and fallback",
-    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
-    "original native, AT/IME, hardware/resource/journey gates",
-    "reproducible package, reversible deployment/rollback"
-  ],
-  "releaseAccepted": false,
-  "oldTrackerIsCurrent": false,
-  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
-  "previousSlice": {
-    "id": "shortcut-current-output",
-    "requirements": [
-      "ELM-UX-023",
-      "ELM-UI-005"
-    ],
-    "scenarios": [
-      "ux-023",
-      "search-no-match"
-    ],
-    "paths": [
-      "implementation/warlock/src/Shortcuts.elm",
-      "implementation/warlock/src/OutputController.elm",
-      "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/native/authority.cpp",
-      "implementation/warlock/native/shared-host.c",
-      "implementation/warlock/adapter/effect_endpoint.py",
-      "implementation/warlock/qa/shortcut-output.qnt",
-      "implementation/warlock/qa/shortcut-output_test.qnt",
-      "implementation/warlock/qa/check-shortcut-output.py",
-      "implementation/warlock/qa/ShortcutOutputReplay.elm",
-      "implementation/warlock/qa/check-search.py",
-      "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/qa/native-shortcut-output.py",
-      "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/qa/current-native-pair.json",
-      "implementation/warlock/assets/elm.js",
-      "implementation/warlock/assets/bar.js",
-      "implementation/warlock/assets/popup.js",
-      "implementation/warlock/README.md"
-    ],
-    "before": "The actual two-output Apps chord opens on the initial controller output rather than the currently focused native output; its nested inactive output capture shows blank controls.",
-    "after": "Native shortcut observations retain their exact live output destination; the one Elm output controller chooses the matching current view. The launcher opens and paints on that output, preserving keyboard query/no-match and stale/blocked/retired rejection.",
-    "verification": [
-      "quint-llm-kit current destination/current topology/serial/retirement model and compiled production OutputController replay; exact host/Elm/plugin builds, original two-output drag journey with additive owner/configure/pixels/keyboard no-match observations, unchanged nine-surface keyboard regression and normal cleanup. Native AT/hardware/independent acceptance remain separate."
-    ],
-    "owner": "root-shortcut-output",
-    "participantRecord": ".warlock-contributor/shortcut-output.json",
-    "disposition": "partial",
-    "missingObservations": [
-      "Native AT/IME consumers and independent original scenario review remain open; the broad UX-023 surface requirement and UI-005 search policy are not accepted from these owner observations.",
-      "Output removal/replacement/movement between native journal delivery and host topology delivery, mirrored/rotated/fractional-scale hardware, disabled/DPMS transitions and wider hotplug/lock schedules need direct native qualification. The model abstracts native journal admission and host matching in one receive, not every transport interleaving.",
-      "Initial paint on an occluded output, unrelated output/caption/fullscreen/group/preview paths, resource budgets, representative journeys, reproducible packaging and reversible deployment remain separate release work."
-    ],
-    "evidence": {
-      "path": "implementation/warlock/qa/evidence/shortcut-current-output/manifest.json",
-      "sha256": "bd047458c9f4ad494d2e1c69661f384c09c0c9f968186a6dd5fb5c1b1489febc"
-    },
-    "observed": "Native Apps shortcuts now open on the output of the actual keyboard recipient after a cancelled cross-output drag. The shared Elm controller resolves the press-time live output against current issued view geometry; duplicate, missing, moved, retired, ambiguous and pointer-blocked destinations cannot relocate or replay. A fresh valid shortcut clears only obsolete shortcut-refusal feedback. The original two-output drag/cancel/capture journey passes, followed by actual popup bounds, painted control pixels, physical-keyboard no-match/query/focus retention and Escape without launch or window mutation. The unchanged all-nine-surface keyboard journey passes on the same core/plugin/host tuple with normal cleanup.",
-    "nextSourceWork": "Exercise live output retirement/replacement with an open native popup and retained keyboard query; fix any demonstrated owner/dismissal gap in the existing shared host/controller. Preserve current serial, native effect/custody and original deadline guarantees."
-  },
   "recentSlices": [
+    {
+      "id": "shortcut-current-output",
+      "requirements": [
+        "ELM-UX-023",
+        "ELM-UI-005"
+      ],
+      "scenarios": [
+        "ux-023",
+        "search-no-match"
+      ],
+      "paths": [
+        "implementation/warlock/src/Shortcuts.elm",
+        "implementation/warlock/src/OutputController.elm",
+        "implementation/warlock/src/Desktop.elm",
+        "implementation/warlock/native/authority.cpp",
+        "implementation/warlock/native/shared-host.c",
+        "implementation/warlock/adapter/effect_endpoint.py",
+        "implementation/warlock/qa/shortcut-output.qnt",
+        "implementation/warlock/qa/shortcut-output_test.qnt",
+        "implementation/warlock/qa/check-shortcut-output.py",
+        "implementation/warlock/qa/ShortcutOutputReplay.elm",
+        "implementation/warlock/qa/check-search.py",
+        "implementation/warlock/qa/native-window-feedback.py",
+        "implementation/warlock/qa/native-shortcut-output.py",
+        "implementation/warlock/qa/current-search-build.json",
+        "implementation/warlock/qa/current-native-pair.json",
+        "implementation/warlock/assets/elm.js",
+        "implementation/warlock/assets/bar.js",
+        "implementation/warlock/assets/popup.js",
+        "implementation/warlock/README.md"
+      ],
+      "before": "The actual two-output Apps chord opens on the initial controller output rather than the currently focused native output; its nested inactive output capture shows blank controls.",
+      "after": "Native shortcut observations retain their exact live output destination; the one Elm output controller chooses the matching current view. The launcher opens and paints on that output, preserving keyboard query/no-match and stale/blocked/retired rejection.",
+      "verification": [
+        "quint-llm-kit current destination/current topology/serial/retirement model and compiled production OutputController replay; exact host/Elm/plugin builds, original two-output drag journey with additive owner/configure/pixels/keyboard no-match observations, unchanged nine-surface keyboard regression and normal cleanup. Native AT/hardware/independent acceptance remain separate."
+      ],
+      "owner": "root-shortcut-output",
+      "participantRecord": ".warlock-contributor/shortcut-output.json",
+      "disposition": "partial",
+      "missingObservations": [
+        "Native AT/IME consumers and independent original scenario review remain open; the broad UX-023 surface requirement and UI-005 search policy are not accepted from these owner observations.",
+        "Output removal/replacement/movement between native journal delivery and host topology delivery, mirrored/rotated/fractional-scale hardware, disabled/DPMS transitions and wider hotplug/lock schedules need direct native qualification. The model abstracts native journal admission and host matching in one receive, not every transport interleaving.",
+        "Initial paint on an occluded output, unrelated output/caption/fullscreen/group/preview paths, resource budgets, representative journeys, reproducible packaging and reversible deployment remain separate release work."
+      ],
+      "evidence": {
+        "path": "implementation/warlock/qa/evidence/shortcut-current-output/manifest.json",
+        "sha256": "bd047458c9f4ad494d2e1c69661f384c09c0c9f968186a6dd5fb5c1b1489febc"
+      },
+      "observed": "Native Apps shortcuts now open on the output of the actual keyboard recipient after a cancelled cross-output drag. The shared Elm controller resolves the press-time live output against current issued view geometry; duplicate, missing, moved, retired, ambiguous and pointer-blocked destinations cannot relocate or replay. A fresh valid shortcut clears only obsolete shortcut-refusal feedback. The original two-output drag/cancel/capture journey passes, followed by actual popup bounds, painted control pixels, physical-keyboard no-match/query/focus retention and Escape without launch or window mutation. The unchanged all-nine-surface keyboard journey passes on the same core/plugin/host tuple with normal cleanup.",
+      "nextSourceWork": "Exercise live output retirement/replacement with an open native popup and retained keyboard query; fix any demonstrated owner/dismissal gap in the existing shared host/controller. Preserve current serial, native effect/custody and original deadline guarantees."
+    },
     {
       "id": "native-output-capture-demand",
       "requirements": [
