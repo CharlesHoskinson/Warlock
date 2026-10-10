@@ -153,6 +153,14 @@ if native_pair.get('pair',{}).get('core')!=pre['pair']['core'] or native_pair.ge
 POINTER=pathlib.Path('/home/hoskinson/.local/share/hypr-window-controls/qa/virtual-pointer');FIXTURE=RUNTIME/'fixture.py'
 retirement_fixture=None
 primary_fixture=None
+label_fixture=None
+if SWITCHER and not ACCESSIBILITY:
+ fixture_inputs=OUTPUT.with_name(OUTPUT.name+'-inputs');fixture_inputs.mkdir(mode=0o700,exist_ok=True)
+ fixture_source=FIXTURE.read_text();needle="        elif request['op'] == 'retire-peer':"
+ assert fixture_source.count(needle)==1
+ adapted=fixture_source.replace(needle,"        elif request['op'] == 'rename-peer':\n            windows['ELM-ACTIVATION-PEER'].set_title('ELM-ACTIVATION-PEER-RENAMED')\n        elif request['op'] == 'restore-peer-title':\n            windows['ELM-ACTIVATION-PEER'].set_title('ELM-ACTIVATION-PEER')\n"+needle)
+ original_fixture=FIXTURE;FIXTURE=fixture_inputs/'switcher-label-fixture.py';FIXTURE.write_text(adapted)
+ label_fixture={'originalSHA256':sha(original_fixture),'path':str(FIXTURE),'sha256':sha(FIXTURE),'change':'Rename the existing GTK peer and restore its title; no replacement incarnation, source pixels or focus injection.'}
 if RETIRE_OPENER:
  fixture_inputs=OUTPUT.with_name(OUTPUT.name+'-inputs');fixture_inputs.mkdir(mode=0o700,exist_ok=True)
  fixture_source=FIXTURE.read_text();needle="        elif request['op'] == 'retire-peer':"
@@ -1221,17 +1229,17 @@ raise SystemExit(daemon.run())
       events=control.with_suffix('.events.jsonl');offset=len(events.read_text().splitlines()) if events.exists() else 0
       key(30);delivered=[json.loads(line) for line in events.read_text().splitlines()[offset:]] if events.exists() else []
       check('ActualKeyboardRecipient'+label,any(row['kind']=='key' and row['keyval']==97 and row['window']==label for row in delivered),events=delivered)
-     def selected_effect(operation):
+     def selected_effect(operation,identity=peer_identity,label='ELM-ACTIVATION-PEER'):
       count=len(journal());key(28)
-      wait(lambda:(projection() or {}).get('mode')=='closed' and (projection() or {}).get('phase')=='Coherent' and facts()['facts']['focused']==peer_identity)
-      check('SwitcherExactlyOne'+operation,len(journal())==count+1 and journal()[-1]['intent']['incarnation']==peer_identity and journal()[-1]['intent']['operation']==operation,journal=journal()[count:])
+      wait(lambda:(projection() or {}).get('mode')=='closed' and (projection() or {}).get('phase')=='Coherent' and facts()['facts']['focused']==identity)
+      check('SwitcherExactlyOne'+operation,len(journal())==count+1 and journal()[-1]['intent']['incarnation']==identity and journal()[-1]['intent']['operation']==operation,journal=journal()[count:])
       submitted=journal()[-1]
       def receipts():
        frames=[json.loads(line.split(': ',1)[1]) for line in text().splitlines() if line.startswith('backend-frame: ')]
        return [frame for frame in frames if frame.get('kind')=='effect-outcome' and frame.get('binding')==submitted['binding'] and frame.get('effectProtocol')==submitted['effectProtocol'] and frame.get('intent')==submitted['intent']]
       observed=wait(receipts);check('SwitcherCorrelatedNative'+operation,len(observed)==1 and observed[0]['status']=='Committed',receipts=observed)
       report.setdefault('switcherReceipts',[]).append({'request':submitted,'receipt':observed[0]})
-      typed_recipient('ELM-ACTIVATION-PEER')
+      typed_recipient(label)
      if ACCESSIBILITY:
       dom=wait(lambda:(body if body and body.get('buttons') and any(b['accessibleName'].startswith('Choose a window from') for b in body['buttons']) else None) if (body:=bar_body()) else None);names=[b['accessibleName'] for b in dom['buttons']]
       def bar_tree():
@@ -1260,6 +1268,17 @@ raise SystemExit(daemon.run())
       check(stage+'NativeNamesRolesSelectionAndOrcaFocusAgree',value['reader']['focus']['role']=='list item',reader=value['reader'])
      open_switcher();body=wait(lambda:selected_window('ELM-ACTIVATION-PEER'))
      if ACCESSIBILITY:accessible_choice('SwitcherInitial',body)
+     if not ACCESSIBILITY:
+      report['metadataRefreshFixture']=label_fixture
+      focus_before=sum(line.startswith('surface-focus-issued: ') for line in text().splitlines())
+      original_body=body
+      fixture_control('rename-peer')
+      def quiet_refresh():
+       current=selected_window('ELM-ACTIVATION-PEER-RENAMED')
+       return current if current and int(current['publication'])>int(original_body['publication']) else None
+      quiet_body=wait(quiet_refresh)
+      check('UnchangedSwitcherRefreshKeepsNativeFocusWithoutRepeatedRequest',quiet_body['focusNode']==original_body['focusNode'] and quiet_body['focusIdentity']==original_body['focusIdentity'] and sum(line.startswith('surface-focus-issued: ') for line in text().splitlines())==focus_before,before=original_body,after=quiet_body,focusRequests=focus_before)
+      fixture_control('restore-peer-title');body=wait(lambda:selected_window('ELM-ACTIVATION-PEER'))
      visible_order=[button['accessibleName'].split(';',1)[0] for button in body['buttons'] if button['accessibleName'].startswith(('Activate ELM-','Restore ELM-'))]
      check('SwitcherFrozenOrderMatchesNativeHistory',visible_order==['Activate '+labels[root] for root in native_history['roots']],body=body)
      popup_capture('mru-initial');key(15);wait(lambda:selected_window('ELM-AUTHORITY-FIXTURE'))
@@ -1286,6 +1305,18 @@ raise SystemExit(daemon.run())
       check('ActualOrcaSpeaksTaskbarAndSwitcherNames',any('Choose a window from' in row.get('text','') for row in report['orcaSpeechOutput']) and all(any(label in row.get('text','') for row in report['orcaSpeechOutput']) for label in ['ELM-AUTHORITY-FIXTURE','ELM-ACTIVATION-PEER']),utterances=report['orcaSpeechOutput'])
       report['accessibilityFixture']['nativeATObserved']=True
      report['nativeSwitcherJourneyObserved']=True
+     if not ACCESSIBILITY:
+      before_retirement=len(journal());open_switcher()
+      for _ in range(2):
+       if selected_window('ELM-ACTIVATION-PEER'):break
+       key(15)
+      retired_body=wait(lambda:selected_window('ELM-ACTIVATION-PEER'))
+      fixture_control('retire-peer');wait(lambda:all(row['incarnation']!=peer_identity for row in facts()['facts']['windows']))
+      survivor_body=wait(lambda:selected_window('ELM-AUTHORITY-FIXTURE'))
+      check('LocalSelectedRetirementMovesActualKeyboardFocusToSurvivor',survivor_body['focusIdentity']=='switcher:family:'+target and len(journal())==before_retirement,before=retired_body,after=survivor_body)
+      key(15);wait(lambda:selected_window('ELM-AUTHORITY-FIXTURE'));selected_effect('activate',target,'ELM-AUTHORITY-FIXTURE')
+      check('RetiredLocalSelectionNeverReceivesTheCommit',len(journal())==before_retirement+1 and journal()[-1]['intent']['incarnation']==target,journal=journal()[before_retirement:])
+      report['nativeSwitcherReselectionFocusObserved']=True
     elif NAV:
      def peer_window():return next(w for w in facts()['facts']['windows'] if w['incarnation']==peer_identity)
      def native_membership():return sorted((w['incarnation'],w['workspace'],w['monitor']) for w in facts()['facts']['windows'])

@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-bae1594ff477471d96ea73fdd7da05d8.scope",
+    "coreLimit": 1
+  },
+  "initializationOnly": false,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/switcher-focus.qnt": "93cf358c8197dcfffcc1bd3b71abf19952f9a01c92da11b6f50ba09f6f58462e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/switcher-focus_test.qnt": "9eb504a9c822128b3c1a47e96b9a14de12eb3112032b6ada6e15c2664c5e64fe"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/switcher-focus.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "tests-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/switcher-focus_test.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/switcher-focus_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=82911"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "witness-safety",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/switcher-focus.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--witnesses",
+        "retirementFocusWitness",
+        "physicalStepFocusWitness",
+        "quietLabelWitness",
+        "emptyDismissalWitness",
+        "--max-samples=1000",
+        "--max-steps=25",
+        "--seed=82912"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "scope": "Admitted immutable browsing-selection reconciliation and exact changed-incarnation focus requests; no native mutation, physical focus, speech/braille or AT claim.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "witnesses": {
+    "retirementFocusWitness": 320,
+    "physicalStepFocusWitness": 159,
+    "quietLabelWitness": 148,
+    "emptyDismissalWitness": 1000
+  }
+}

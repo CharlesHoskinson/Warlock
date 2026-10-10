@@ -139,7 +139,12 @@ console.log(JSON.stringify({paintOpportunityBeforeDispatch:true,ticketPreserved:
   if FALLBACK:
    report['iconResolution']=json.loads(run('icon-resolution',['/usr/bin/python3','-B','qa/check-icon-resolution.py']));assert report['iconResolution']['passed']
    report.update(requirements=['ELM-UX-007','ELM-UI-016'],scenarios=['ux-007','preview-states'],scope='Actual GTK/GIO application/window-class icon resolution and ambiguity negatives, existing metadata model and compiled preview source states; original native expiry and pixels remain separate.')
- if SWITCHER:report.update(requirements=['ELM-UI-003','ELM-UX-012','ELM-UX-013'],scope='Compiled real switcher/root/view, bounded release/Ready/ordinal reducer and typed native journal/selection-fence admission; actual physical chord, native focus/AT and original acceptance remain separate')
+ if SWITCHER:
+  report.update(requirements=['ELM-UI-003','ELM-UX-012','ELM-UX-013','ELM-UX-014','ELM-UX-026'],scope='Compiled real switcher/root/view, bounded release/Ready/ordinal reducer, typed native journal/selection-fence admission and changed-incarnation focus requests; actual physical chord, native focus/AT and original acceptance remain separate')
+  run('compile-switcher-focus',[str(HELD/pinned['compiler']),'make','qa/SwitcherFocusReplay.elm','--optimize','--output=assets/switcher-focus.js'])
+  focus_replay=(INPUT/'qa/feedback-replay.js').read_text().replace('Elm.FeedbackReplay','Elm.SwitcherFocusReplay');(INPUT/'qa/switcher-focus-replay.js').write_text(focus_replay)
+  run('typed-switcher-focus',['node','qa/switcher-focus-replay.js','assets/switcher-focus.js',str(OUT/'switcher-focus.json')])
+  report['switcherFocus']=json.loads((OUT/'switcher-focus.json').read_text());assert all(report['switcherFocus']['checks'].values())
  if PRIMARY:report.update(requirements=['ELM-UI-004'],scope='Compile current taskbar state labels and integrated Elm roots; unchanged native host reused by exact source/binary hashes; actual pointer/keyboard/AT acceptance separate')
  if PINS:report.update(requirements=['ELM-UI-004','ELM-UX-004'],scope='Compiled identity pins/reorder, private atomic native persistence, current integrated host; native restart/pixels acceptance pending')
  if POPUP:report.update(requirements=['ELM-UI-005','ELM-UX-029','ELM-UX-004'],scope='Changed native popup presentation units compiled/relinked; previously verified compiled Elm assets reused unchanged; actual native pixels acceptance pending')

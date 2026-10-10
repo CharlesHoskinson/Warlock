@@ -1,13 +1,109 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T21:22:36.599664+00:00",
+  "updatedUTC": "2026-10-10T21:54:03.972742+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
+    "id": "switcher-reselection-focus",
+    "requirements": [
+      "ELM-UX-014",
+      "ELM-UX-026"
+    ],
+    "scenarios": [
+      "ux-014",
+      "ux-026"
+    ],
+    "paths": [
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/qa/SwitcherReplay.elm",
+      "implementation/warlock/qa/check-search.py",
+      "implementation/warlock/qa/switcher-focus.qnt",
+      "implementation/warlock/qa/switcher-focus_test.qnt",
+      "implementation/warlock/qa/check-switcher-focus.py",
+      "implementation/warlock/qa/SwitcherFocusReplay.elm",
+      "implementation/warlock/qa/native-window-feedback.py",
+      "implementation/warlock/qa/current-search-build.json",
+      "implementation/warlock/assets/elm.js",
+      "implementation/warlock/assets/bar.js",
+      "implementation/warlock/assets/popup.js",
+      "implementation/warlock/README.md"
+    ],
+    "before": "Local switcher reconciles retirement without advancing/focusing its surviving control; native switcher advances and refocuses selection on every membership refresh, even when the selected incarnation is unchanged.",
+    "after": "A retired selected incarnation moves keyboard focus to the surviving eligible member once; unchanged selection avoids repeated focus commands, and an empty frozen chord cannot activate an arriving/reused incarnation.",
+    "verification": [
+      "Use quint-llm-kit before policy changes: model exact frozen-incarnation selection/focus transitions, positive reachability and safety with named tests. Compile actual Desktop/Popup/Bar, exercise production integration for local/native retirement, unchanged/relabelled snapshots and empty/foreign arrivals. Preserve original native chord/recipient assertions and deadlines; actual speech/braille and independent acceptance remain open."
+    ],
+    "owner": "root-switcher-focus",
+    "participantRecord": ".warlock-contributor/switcher-focus.json",
+    "sourceHashes": {
+      "implementation/warlock/src/Desktop.elm": "8ad8e4797ef13b91add6bce686ebb3bc1f0ec800e4da6328d1d740a3f4961e3f",
+      "implementation/warlock/qa/SwitcherReplay.elm": "36a901e170719ade66eb2c82d0cc9d1ed63b3500721b67d221eb109822a1c64d",
+      "implementation/warlock/qa/check-search.py": "a212ebedd1732c1185e23ebf48e882c167e5dd9d8edb94b09c35dcdda54871b1",
+      "implementation/warlock/qa/switcher-focus.qnt": "93cf358c8197dcfffcc1bd3b71abf19952f9a01c92da11b6f50ba09f6f58462e",
+      "implementation/warlock/qa/switcher-focus_test.qnt": "9eb504a9c822128b3c1a47e96b9a14de12eb3112032b6ada6e15c2664c5e64fe",
+      "implementation/warlock/qa/check-switcher-focus.py": "5748c441942526b3cba1b14e80fc388a0c30e1f594d3b4015c63d5f390464269",
+      "implementation/warlock/qa/SwitcherFocusReplay.elm": "500dae7f1d66bab18dcbfe625911fd62504e1e3aaade660a9ad925558d0aaa4e",
+      "implementation/warlock/qa/native-window-feedback.py": "5f0421e5bb2a52c593fbcc053338e11aab72ba8685d1215b53b4e6152a1cf161",
+      "implementation/warlock/qa/current-search-build.json": "8952cdbfcf5fee60022cad9a47158145ec69edcf7c519d2915f86f8de7e7534f",
+      "implementation/warlock/assets/elm.js": "be66c690207cdefca0f5028376e5d9297cb15daed41785be5e886ff3d2e3fc70",
+      "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+      "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
+      "implementation/warlock/README.md": "4a02ef29b537671ebfac860f8c14f2cb531c697ce8f2c7ba7adc9b678b1c16ca"
+    },
+    "evidence": [
+      {
+        "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/manifest.json",
+        "sha256": "0d1e6ff89aedcf9cc4897d42db6fc04a7b279049edb22f807c759a82d4073789",
+        "scope": "Local native 55 and original global native 52 checks pass; final production replay has 12 checks. Changed selection receives one focus request; unchanged metadata does not repeat it; actual physical cancellation input returns to the application.",
+        "sourceBaseRevision": "da48267c8842aa05386be26cc7e6672e98c3301e",
+        "sourceHashes": {
+          "implementation/warlock/src/Desktop.elm": "8ad8e4797ef13b91add6bce686ebb3bc1f0ec800e4da6328d1d740a3f4961e3f",
+          "implementation/warlock/qa/SwitcherReplay.elm": "36a901e170719ade66eb2c82d0cc9d1ed63b3500721b67d221eb109822a1c64d",
+          "implementation/warlock/qa/check-search.py": "a212ebedd1732c1185e23ebf48e882c167e5dd9d8edb94b09c35dcdda54871b1",
+          "implementation/warlock/qa/switcher-focus.qnt": "93cf358c8197dcfffcc1bd3b71abf19952f9a01c92da11b6f50ba09f6f58462e",
+          "implementation/warlock/qa/switcher-focus_test.qnt": "9eb504a9c822128b3c1a47e96b9a14de12eb3112032b6ada6e15c2664c5e64fe",
+          "implementation/warlock/qa/check-switcher-focus.py": "5748c441942526b3cba1b14e80fc388a0c30e1f594d3b4015c63d5f390464269",
+          "implementation/warlock/qa/SwitcherFocusReplay.elm": "500dae7f1d66bab18dcbfe625911fd62504e1e3aaade660a9ad925558d0aaa4e",
+          "implementation/warlock/qa/native-window-feedback.py": "5f0421e5bb2a52c593fbcc053338e11aab72ba8685d1215b53b4e6152a1cf161",
+          "implementation/warlock/qa/current-search-build.json": "8952cdbfcf5fee60022cad9a47158145ec69edcf7c519d2915f86f8de7e7534f",
+          "implementation/warlock/assets/elm.js": "be66c690207cdefca0f5028376e5d9297cb15daed41785be5e886ff3d2e3fc70",
+          "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+          "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
+          "implementation/warlock/README.md": "4a02ef29b537671ebfac860f8c14f2cb531c697ce8f2c7ba7adc9b678b1c16ca"
+        },
+        "reviewerDisposition": {
+          "name": "root-switcher-focus",
+          "independent": false,
+          "disposition": "partial"
+        }
+      }
+    ],
+    "missingObservations": [
+      "Actual native allocator address reuse remains unobserved.",
+      "Actual speech/braille once per selection transition and independent acceptance remain open; native accessibility campaign failed its original bar_tree deadline."
+    ],
+    "observedOutcome": "Local native 55 and original global native 52 checks pass; final production replay has 12 checks. Changed selection receives one focus request; unchanged metadata does not repeat it; actual physical cancellation input returns to the application.",
+    "nextAction": "ELM-UI-009 at-taskbar-groups: inspect actual bar-host semantic registration against the retained original bar_tree deadline failure, implement an observed product exposure gap if present, then run the one original native AT journey. Preserve the deadline and speech/braille obligations; do not expand a QA investigation or claim full acceptance."
+  },
+  "nextSlices": [
+    "taskbar activation/minimize/restore and popup focus journeys",
+    "persistent catalog pins",
+    "launcher search and refusal recovery",
+    "switcher/Task View/workspaces and snap/output journeys",
+    "authorized visible previews and fallback",
+    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
+    "original native, AT/IME, hardware/resource/journey gates",
+    "reproducible package, reversible deployment/rollback"
+  ],
+  "releaseAccepted": false,
+  "oldTrackerIsCurrent": false,
+  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
+  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
+  "previousSlice": {
     "id": "picker-reopen-cleanup",
     "requirements": [
       "ELM-UI-017"
@@ -87,121 +183,6 @@
     ],
     "observedOutcome": "41-check original reopened journey and both normal client exits pass on existing production code; only image-observation predicates repaired. No new GUI feature counted.",
     "nextAction": "Move to ELM-UX-014 selected-switcher closure/address reuse: inspect current immutable member selection against the exact original reselect/dismiss oracle and repair any remaining source path. Do not expand preview/AT qualification. Keep full release and original native/hardware obligations."
-  },
-  "nextSlices": [
-    "taskbar activation/minimize/restore and popup focus journeys",
-    "persistent catalog pins",
-    "launcher search and refusal recovery",
-    "switcher/Task View/workspaces and snap/output journeys",
-    "authorized visible previews and fallback",
-    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
-    "original native, AT/IME, hardware/resource/journey gates",
-    "reproducible package, reversible deployment/rollback"
-  ],
-  "releaseAccepted": false,
-  "oldTrackerIsCurrent": false,
-  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
-  "previousSlice": {
-    "id": "picker-shared-sealed-storage",
-    "requirements": [
-      "ELM-UI-016"
-    ],
-    "scenarios": [
-      "preview-states"
-    ],
-    "paths": [
-      "implementation/warlock/native/preview_png.hpp",
-      "implementation/warlock/native/preview_capture.hpp",
-      "implementation/warlock/native/family_crop_capture.hpp",
-      "implementation/warlock/native/capture-probe.inc",
-      "implementation/warlock/native/authority.cpp",
-      "implementation/warlock/native/capture-fd-server.inc",
-      "implementation/warlock/qa/check-native-authority.py",
-      "implementation/warlock/qa/check-picker-storage.py",
-      "implementation/warlock/qa/picker-storage.qnt",
-      "implementation/warlock/qa/picker-storage_test.qnt",
-      "implementation/warlock/qa/picker-storage-test.cpp",
-      "implementation/warlock/qa/native-picker-storage.py",
-      "implementation/warlock/qa/current-native-pair.json",
-      "implementation/warlock/README.md",
-      "implementation/warlock/native/capture-resources.hpp",
-      "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/assets/elm.js",
-      "implementation/warlock/assets/bar.js",
-      "implementation/warlock/assets/popup.js"
-    ],
-    "before": "Current ordinary two-window picker shows only one authorized live preview; retained raster plus copied export consume the two native budget reservations.",
-    "after": "Both distinct live families can retain authorized previews backed by their own sealed allocation while native two-allocation/128MiB limits, original deadlines and exact release/retirement custody remain unchanged.",
-    "verification": [
-      "Use quint-llm-kit initializer, sampled safety/positive capacity and custody witnesses, selected named tests before implementation. Direct native storage tests require immutable sealed bytes, same backing export and charge retained through exact custody; legacy copy behavior preserved. Compile plugin against exact current core ABI and run original native own-family loading/live/historical/expiry journey extended to require both Live images and native budget counters; retain failures and AT/independent acceptance gaps."
-    ],
-    "owner": "root-picker-storage",
-    "participantRecord": ".warlock-contributor/picker-storage.json",
-    "evidence": [
-      {
-        "path": "implementation/warlock/qa/evidence/picker-shared-storage/manifest-final.json",
-        "sha256": "1a421747b6a367543bfa5788c2e45209d66206f8f4923abe0b270f5ff979142b",
-        "scope": "Two actual own-family Live images, physical owned Live/Historical pixels, original expiry, current sealed-storage counters under unchanged native budget, exact zero-custody retirement and normal native cleanup; Loading physical captions separately inspected by implementation owner.",
-        "sourceBaseRevision": "9a0395580b97431c2581a29d0dd13e4bfdfa102f",
-        "sourceHashes": {
-          "implementation/warlock/native/preview_png.hpp": "b63627d40daa984ac17305a5f7510a5dcb4cedce94a82f938e9f36aadfcebe0b",
-          "implementation/warlock/native/preview_capture.hpp": "ea0aebf465dcf5656a4b5e8cd5ac240ed0907f20c069c2e6460ce506efb72f6f",
-          "implementation/warlock/native/family_crop_capture.hpp": "d2eb856c41947f34c1e381d169f21460e8d2d47c12ee444503a653ebeedcaa4e",
-          "implementation/warlock/native/capture-probe.inc": "6d9a70f5d3aebbdb4db8b5ca70c807f93f4d7f6ddffdc59bd1598fb39a1dae74",
-          "implementation/warlock/native/authority.cpp": "2293da138a4c0b27e5f848f4db5842b2a2f0fc17c4fdbf33e7d0f5d5787305fa",
-          "implementation/warlock/native/capture-fd-server.inc": "d6cd846a9d14f975ca25154d757fb0a23edd13c01021a9a383784f7706ec6eea",
-          "implementation/warlock/qa/check-native-authority.py": "669914bca8ecdfe6aa4c5be917558ed4d070d9655ac090ce370d653248447198",
-          "implementation/warlock/qa/check-picker-storage.py": "4b7ced924793385585e6a5651a3949699f7edebf39386ce68876cf57d448d748",
-          "implementation/warlock/qa/picker-storage.qnt": "6e70f384caf9a28641afe2ed9e1a3c120956823c3f6877313c41b6d53b9cfe0d",
-          "implementation/warlock/qa/picker-storage_test.qnt": "19e14c912df573d28dff463dad8c1286737c4a5bddfdb6a73eff6d99399cd2da",
-          "implementation/warlock/qa/picker-storage-test.cpp": "1f7072dc1add2805de611b99a5fd33ede6e78b2e3f06d847db3323a874753e42",
-          "implementation/warlock/qa/native-picker-storage.py": "80b677fa22dfeb96981e8c780d8ee9bcd1dc240ddcdee2cc3e225b58aff6039b",
-          "implementation/warlock/qa/current-native-pair.json": "63e9196840e52de55603a258e21a1d596615477ecc74862c6256630fecd621dd",
-          "implementation/warlock/README.md": "a954fcef0bc34e2eb1f1ac79efa244c81895c4d6222fd45bd48a048ff48e5f25",
-          "implementation/warlock/native/capture-resources.hpp": "80dec431033fddf4cfe48a07532251c5b1139053bcfff8b16084c20b070f62e7",
-          "implementation/warlock/qa/native-window-feedback.py": "295ba28cf8d9d297b214bd0d6dba19ac3289d861faa953f9fd94b82937473c64",
-          "implementation/warlock/qa/current-search-build.json": "a5c18d8d53951cccbe75286c1cb5c25d8f2ee6776ed2edc32fb06fc3190c0a56",
-          "implementation/warlock/assets/elm.js": "5056dab9023368ce4e022dc4146eceeb7dd5217d57217242038413919e1485a6",
-          "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
-          "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43"
-        },
-        "reviewerDisposition": {
-          "name": "root-picker-storage",
-          "independent": false,
-          "disposition": "partial"
-        }
-      }
-    ],
-    "sourceHashes": {
-      "implementation/warlock/native/preview_png.hpp": "b63627d40daa984ac17305a5f7510a5dcb4cedce94a82f938e9f36aadfcebe0b",
-      "implementation/warlock/native/preview_capture.hpp": "ea0aebf465dcf5656a4b5e8cd5ac240ed0907f20c069c2e6460ce506efb72f6f",
-      "implementation/warlock/native/family_crop_capture.hpp": "d2eb856c41947f34c1e381d169f21460e8d2d47c12ee444503a653ebeedcaa4e",
-      "implementation/warlock/native/capture-probe.inc": "6d9a70f5d3aebbdb4db8b5ca70c807f93f4d7f6ddffdc59bd1598fb39a1dae74",
-      "implementation/warlock/native/authority.cpp": "2293da138a4c0b27e5f848f4db5842b2a2f0fc17c4fdbf33e7d0f5d5787305fa",
-      "implementation/warlock/native/capture-fd-server.inc": "d6cd846a9d14f975ca25154d757fb0a23edd13c01021a9a383784f7706ec6eea",
-      "implementation/warlock/qa/check-native-authority.py": "669914bca8ecdfe6aa4c5be917558ed4d070d9655ac090ce370d653248447198",
-      "implementation/warlock/qa/check-picker-storage.py": "4b7ced924793385585e6a5651a3949699f7edebf39386ce68876cf57d448d748",
-      "implementation/warlock/qa/picker-storage.qnt": "6e70f384caf9a28641afe2ed9e1a3c120956823c3f6877313c41b6d53b9cfe0d",
-      "implementation/warlock/qa/picker-storage_test.qnt": "19e14c912df573d28dff463dad8c1286737c4a5bddfdb6a73eff6d99399cd2da",
-      "implementation/warlock/qa/picker-storage-test.cpp": "1f7072dc1add2805de611b99a5fd33ede6e78b2e3f06d847db3323a874753e42",
-      "implementation/warlock/qa/native-picker-storage.py": "80b677fa22dfeb96981e8c780d8ee9bcd1dc240ddcdee2cc3e225b58aff6039b",
-      "implementation/warlock/qa/current-native-pair.json": "63e9196840e52de55603a258e21a1d596615477ecc74862c6256630fecd621dd",
-      "implementation/warlock/README.md": "a954fcef0bc34e2eb1f1ac79efa244c81895c4d6222fd45bd48a048ff48e5f25",
-      "implementation/warlock/native/capture-resources.hpp": "80dec431033fddf4cfe48a07532251c5b1139053bcfff8b16084c20b070f62e7",
-      "implementation/warlock/qa/native-window-feedback.py": "295ba28cf8d9d297b214bd0d6dba19ac3289d861faa953f9fd94b82937473c64",
-      "implementation/warlock/qa/current-search-build.json": "a5c18d8d53951cccbe75286c1cb5c25d8f2ee6776ed2edc32fb06fc3190c0a56",
-      "implementation/warlock/assets/elm.js": "5056dab9023368ce4e022dc4146eceeb7dd5217d57217242038413919e1485a6",
-      "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
-      "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43"
-    },
-    "missingObservations": [
-      "Actual all-state native AT passive descriptions and applicable independent original-scenario acceptance remain open.",
-      "General transient paint consistency, broader three-or-more-family capacity/fairness and qualified hardware memory/resource measurements remain open."
-    ],
-    "observedOutcome": "Both real families display their own live pixels; unchanged native two-slot/128MiB budget reaches 5,873,427 bytes and exact dismissal retirement drains to zero with normal cleanup.",
-    "nextAction": "Select ELM-UI-017 quiesce/reopen bounded teardown repair: inspect the preserved reopened journey outstanding custody/journal failure and implement exact cleanup without discarding Unknown obligations, replaying effects or extending deadlines. Use quint-llm-kit model/implementation correspondence. Do not expand UI-016 AT qualification."
   },
   "recentSlices": [
     {
@@ -1027,94 +1008,169 @@
       "missingObservation": "Actual GUI native activation/navigation to an empty workspace still needs a separately correlated native effect. Applicable AT and independent original acceptance remain open.",
       "observedUTC": "2026-10-10T18:24:31.934146+00:00",
       "nextSourceWork": "Complete original ELM-UI-006 overview-empty with an explicit typed empty-workspace navigation intent through the existing native authority and durable receipt/recovery path. Bind destination workspace/output owner and current source context; preserve lock/exclusive/pointer guards, Unknown/no replay and truthful partial navigation outcome. Keep local Browse controls distinct from native activation and qualify real keyboard/native/AT navigation to an empty destination. Do not represent an empty workspace by a fake window incarnation."
+    },
+    {
+      "id": "picker-reopen-cleanup",
+      "requirements": [
+        "ELM-UI-017"
+      ],
+      "scenarios": [
+        "quiesce",
+        "reopen"
+      ],
+      "paths": [
+        "implementation/warlock/native/shared-host.c",
+        "implementation/warlock/native/picker-previews.inc",
+        "implementation/warlock/native/family_producer.hpp",
+        "implementation/warlock/qa/native-preview-states.py",
+        "implementation/warlock/qa/check-search.py",
+        "implementation/warlock/qa/current-search-build.json",
+        "implementation/warlock/assets/elm.js",
+        "implementation/warlock/assets/bar.js",
+        "implementation/warlock/assets/popup.js",
+        "implementation/warlock/README.md",
+        "implementation/warlock/qa/picker-reopen.qnt",
+        "implementation/warlock/qa/picker-reopen_test.qnt",
+        "implementation/warlock/qa/check-picker-reopen.py"
+      ],
+      "before": "Preserved reopened native journey fails normal host exit with outstanding picker custody/journal; establish the current baseline before changing code.",
+      "after": "Picker closes after a quiescent reopen with exact consumer/producer/journal retirement, normal owned exit and no Unknown custody discard, replay or deadline extension.",
+      "verification": [
+        "Preserve the original quiescence/reopen identity, request-floor, pixels, six-second observations and normal-exit assertions. Use quint-llm-kit before changing lifecycle; compile affected current targets and repeat the real serialized native journey. Keep dormant-retained-frame, power/wakeup/AT/independent obligations explicit."
+      ],
+      "owner": "root-picker-reopen",
+      "participantRecord": ".warlock-contributor/picker-reopen.json",
+      "evidence": [
+        {
+          "path": "implementation/warlock/qa/evidence/picker-reopen-cleanup/manifest.json",
+          "sha256": "2998d27d6fea612a082b90ec7f39da44355c2f3a6ffcc9770043088cbfd01124",
+          "scope": "Existing current native quiescence/reopen journey passes all 41 original and fixture checks, exact request/context advancement and no expired-frame borrowing or repeated effect, one-second dormant picker counters and both normal owned client exits. Observation predicates now wait for all displayed images under unchanged original deadlines. No new production behavior.",
+          "sourceBaseRevision": "03b23397d4ae23ef4918bf9770de40f77ec88981",
+          "sourceHashes": {
+            "implementation/warlock/native/shared-host.c": "b61f7e79da12693a4d30693309fe5dd2147f5760246052d230efed30fdd7d844",
+            "implementation/warlock/native/picker-previews.inc": "8e0799d2a56b08e7bee8c64fe098168ac2f1f4f3ab8a4b53e9e1363fa0cdcca3",
+            "implementation/warlock/native/family_producer.hpp": "65fe1aa8956081084117bdc27d2b7dc624a62cd44ff42fc7a037d5e6bd80794d",
+            "implementation/warlock/qa/native-preview-states.py": "3120a1e2f8239ebf20fb8fa1a52ccc415c5fba8ec7b3c5782971e6826f0f18aa",
+            "implementation/warlock/qa/check-search.py": "1f38480921e82d4141ec12027b821ec06f22e44a75285c6c8f0b6732086c7735",
+            "implementation/warlock/qa/current-search-build.json": "a5c18d8d53951cccbe75286c1cb5c25d8f2ee6776ed2edc32fb06fc3190c0a56",
+            "implementation/warlock/assets/elm.js": "5056dab9023368ce4e022dc4146eceeb7dd5217d57217242038413919e1485a6",
+            "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+            "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
+            "implementation/warlock/README.md": "ea0d68f28aa5f1721b15bd225816671034c3ae49eaac130b4ee0fca157507ed6"
+          },
+          "reviewerDisposition": {
+            "name": "root-picker-reopen",
+            "independent": false,
+            "disposition": "partial"
+          }
+        }
+      ],
+      "sourceHashes": {
+        "implementation/warlock/native/shared-host.c": "b61f7e79da12693a4d30693309fe5dd2147f5760246052d230efed30fdd7d844",
+        "implementation/warlock/native/picker-previews.inc": "8e0799d2a56b08e7bee8c64fe098168ac2f1f4f3ab8a4b53e9e1363fa0cdcca3",
+        "implementation/warlock/native/family_producer.hpp": "65fe1aa8956081084117bdc27d2b7dc624a62cd44ff42fc7a037d5e6bd80794d",
+        "implementation/warlock/qa/native-preview-states.py": "3120a1e2f8239ebf20fb8fa1a52ccc415c5fba8ec7b3c5782971e6826f0f18aa",
+        "implementation/warlock/qa/check-search.py": "1f38480921e82d4141ec12027b821ec06f22e44a75285c6c8f0b6732086c7735",
+        "implementation/warlock/qa/current-search-build.json": "a5c18d8d53951cccbe75286c1cb5c25d8f2ee6776ed2edc32fb06fc3190c0a56",
+        "implementation/warlock/assets/elm.js": "5056dab9023368ce4e022dc4146eceeb7dd5217d57217242038413919e1485a6",
+        "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+        "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
+        "implementation/warlock/README.md": "ea0d68f28aa5f1721b15bd225816671034c3ae49eaac130b4ee0fca157507ed6"
+      },
+      "unusedPlannedPaths": [
+        "implementation/warlock/qa/picker-reopen.qnt",
+        "implementation/warlock/qa/picker-reopen_test.qnt",
+        "implementation/warlock/qa/check-picker-reopen.py"
+      ],
+      "missingObservations": [
+        "Frozen numeric quiescence interval and qualified whole-process power/wakeup/resource soak remain unestablished; the one-second unchanged picker counters are bounded evidence only.",
+        "Authorized Historical storage is observed across close/reopen, but fully dormant retained-storage timing is not established.",
+        "Unknown reserved-custody cases, broader capacity/fairness, actual native AT and independent original-scenario/requirement acceptance remain open."
+      ],
+      "observedOutcome": "41-check original reopened journey and both normal client exits pass on existing production code; only image-observation predicates repaired. No new GUI feature counted.",
+      "nextAction": "Move to ELM-UX-014 selected-switcher closure/address reuse: inspect current immutable member selection against the exact original reselect/dismiss oracle and repair any remaining source path. Do not expand preview/AT qualification. Keep full release and original native/hardware obligations."
     }
   ],
   "lastSlice": {
-    "id": "picker-reopen-cleanup",
+    "id": "switcher-reselection-focus",
     "requirements": [
-      "ELM-UI-017"
+      "ELM-UX-014",
+      "ELM-UX-026"
     ],
     "scenarios": [
-      "quiesce",
-      "reopen"
+      "ux-014",
+      "ux-026"
     ],
     "paths": [
-      "implementation/warlock/native/shared-host.c",
-      "implementation/warlock/native/picker-previews.inc",
-      "implementation/warlock/native/family_producer.hpp",
-      "implementation/warlock/qa/native-preview-states.py",
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/qa/SwitcherReplay.elm",
       "implementation/warlock/qa/check-search.py",
+      "implementation/warlock/qa/switcher-focus.qnt",
+      "implementation/warlock/qa/switcher-focus_test.qnt",
+      "implementation/warlock/qa/check-switcher-focus.py",
+      "implementation/warlock/qa/SwitcherFocusReplay.elm",
+      "implementation/warlock/qa/native-window-feedback.py",
       "implementation/warlock/qa/current-search-build.json",
       "implementation/warlock/assets/elm.js",
       "implementation/warlock/assets/bar.js",
       "implementation/warlock/assets/popup.js",
-      "implementation/warlock/README.md",
-      "implementation/warlock/qa/picker-reopen.qnt",
-      "implementation/warlock/qa/picker-reopen_test.qnt",
-      "implementation/warlock/qa/check-picker-reopen.py"
+      "implementation/warlock/README.md"
     ],
-    "before": "Preserved reopened native journey fails normal host exit with outstanding picker custody/journal; establish the current baseline before changing code.",
-    "after": "Picker closes after a quiescent reopen with exact consumer/producer/journal retirement, normal owned exit and no Unknown custody discard, replay or deadline extension.",
+    "before": "Local switcher reconciles retirement without advancing/focusing its surviving control; native switcher advances and refocuses selection on every membership refresh, even when the selected incarnation is unchanged.",
+    "after": "A retired selected incarnation moves keyboard focus to the surviving eligible member once; unchanged selection avoids repeated focus commands, and an empty frozen chord cannot activate an arriving/reused incarnation.",
     "verification": [
-      "Preserve the original quiescence/reopen identity, request-floor, pixels, six-second observations and normal-exit assertions. Use quint-llm-kit before changing lifecycle; compile affected current targets and repeat the real serialized native journey. Keep dormant-retained-frame, power/wakeup/AT/independent obligations explicit."
+      "Use quint-llm-kit before policy changes: model exact frozen-incarnation selection/focus transitions, positive reachability and safety with named tests. Compile actual Desktop/Popup/Bar, exercise production integration for local/native retirement, unchanged/relabelled snapshots and empty/foreign arrivals. Preserve original native chord/recipient assertions and deadlines; actual speech/braille and independent acceptance remain open."
     ],
-    "owner": "root-picker-reopen",
-    "participantRecord": ".warlock-contributor/picker-reopen.json",
+    "owner": "root-switcher-focus",
+    "participantRecord": ".warlock-contributor/switcher-focus.json",
+    "sourceHashes": {
+      "implementation/warlock/src/Desktop.elm": "8ad8e4797ef13b91add6bce686ebb3bc1f0ec800e4da6328d1d740a3f4961e3f",
+      "implementation/warlock/qa/SwitcherReplay.elm": "36a901e170719ade66eb2c82d0cc9d1ed63b3500721b67d221eb109822a1c64d",
+      "implementation/warlock/qa/check-search.py": "a212ebedd1732c1185e23ebf48e882c167e5dd9d8edb94b09c35dcdda54871b1",
+      "implementation/warlock/qa/switcher-focus.qnt": "93cf358c8197dcfffcc1bd3b71abf19952f9a01c92da11b6f50ba09f6f58462e",
+      "implementation/warlock/qa/switcher-focus_test.qnt": "9eb504a9c822128b3c1a47e96b9a14de12eb3112032b6ada6e15c2664c5e64fe",
+      "implementation/warlock/qa/check-switcher-focus.py": "5748c441942526b3cba1b14e80fc388a0c30e1f594d3b4015c63d5f390464269",
+      "implementation/warlock/qa/SwitcherFocusReplay.elm": "500dae7f1d66bab18dcbfe625911fd62504e1e3aaade660a9ad925558d0aaa4e",
+      "implementation/warlock/qa/native-window-feedback.py": "5f0421e5bb2a52c593fbcc053338e11aab72ba8685d1215b53b4e6152a1cf161",
+      "implementation/warlock/qa/current-search-build.json": "8952cdbfcf5fee60022cad9a47158145ec69edcf7c519d2915f86f8de7e7534f",
+      "implementation/warlock/assets/elm.js": "be66c690207cdefca0f5028376e5d9297cb15daed41785be5e886ff3d2e3fc70",
+      "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+      "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
+      "implementation/warlock/README.md": "4a02ef29b537671ebfac860f8c14f2cb531c697ce8f2c7ba7adc9b678b1c16ca"
+    },
     "evidence": [
       {
-        "path": "implementation/warlock/qa/evidence/picker-reopen-cleanup/manifest.json",
-        "sha256": "2998d27d6fea612a082b90ec7f39da44355c2f3a6ffcc9770043088cbfd01124",
-        "scope": "Existing current native quiescence/reopen journey passes all 41 original and fixture checks, exact request/context advancement and no expired-frame borrowing or repeated effect, one-second dormant picker counters and both normal owned client exits. Observation predicates now wait for all displayed images under unchanged original deadlines. No new production behavior.",
-        "sourceBaseRevision": "03b23397d4ae23ef4918bf9770de40f77ec88981",
+        "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/manifest.json",
+        "sha256": "0d1e6ff89aedcf9cc4897d42db6fc04a7b279049edb22f807c759a82d4073789",
+        "scope": "Local native 55 and original global native 52 checks pass; final production replay has 12 checks. Changed selection receives one focus request; unchanged metadata does not repeat it; actual physical cancellation input returns to the application.",
+        "sourceBaseRevision": "da48267c8842aa05386be26cc7e6672e98c3301e",
         "sourceHashes": {
-          "implementation/warlock/native/shared-host.c": "b61f7e79da12693a4d30693309fe5dd2147f5760246052d230efed30fdd7d844",
-          "implementation/warlock/native/picker-previews.inc": "8e0799d2a56b08e7bee8c64fe098168ac2f1f4f3ab8a4b53e9e1363fa0cdcca3",
-          "implementation/warlock/native/family_producer.hpp": "65fe1aa8956081084117bdc27d2b7dc624a62cd44ff42fc7a037d5e6bd80794d",
-          "implementation/warlock/qa/native-preview-states.py": "3120a1e2f8239ebf20fb8fa1a52ccc415c5fba8ec7b3c5782971e6826f0f18aa",
-          "implementation/warlock/qa/check-search.py": "1f38480921e82d4141ec12027b821ec06f22e44a75285c6c8f0b6732086c7735",
-          "implementation/warlock/qa/current-search-build.json": "a5c18d8d53951cccbe75286c1cb5c25d8f2ee6776ed2edc32fb06fc3190c0a56",
-          "implementation/warlock/assets/elm.js": "5056dab9023368ce4e022dc4146eceeb7dd5217d57217242038413919e1485a6",
+          "implementation/warlock/src/Desktop.elm": "8ad8e4797ef13b91add6bce686ebb3bc1f0ec800e4da6328d1d740a3f4961e3f",
+          "implementation/warlock/qa/SwitcherReplay.elm": "36a901e170719ade66eb2c82d0cc9d1ed63b3500721b67d221eb109822a1c64d",
+          "implementation/warlock/qa/check-search.py": "a212ebedd1732c1185e23ebf48e882c167e5dd9d8edb94b09c35dcdda54871b1",
+          "implementation/warlock/qa/switcher-focus.qnt": "93cf358c8197dcfffcc1bd3b71abf19952f9a01c92da11b6f50ba09f6f58462e",
+          "implementation/warlock/qa/switcher-focus_test.qnt": "9eb504a9c822128b3c1a47e96b9a14de12eb3112032b6ada6e15c2664c5e64fe",
+          "implementation/warlock/qa/check-switcher-focus.py": "5748c441942526b3cba1b14e80fc388a0c30e1f594d3b4015c63d5f390464269",
+          "implementation/warlock/qa/SwitcherFocusReplay.elm": "500dae7f1d66bab18dcbfe625911fd62504e1e3aaade660a9ad925558d0aaa4e",
+          "implementation/warlock/qa/native-window-feedback.py": "5f0421e5bb2a52c593fbcc053338e11aab72ba8685d1215b53b4e6152a1cf161",
+          "implementation/warlock/qa/current-search-build.json": "8952cdbfcf5fee60022cad9a47158145ec69edcf7c519d2915f86f8de7e7534f",
+          "implementation/warlock/assets/elm.js": "be66c690207cdefca0f5028376e5d9297cb15daed41785be5e886ff3d2e3fc70",
           "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
           "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
-          "implementation/warlock/README.md": "ea0d68f28aa5f1721b15bd225816671034c3ae49eaac130b4ee0fca157507ed6"
+          "implementation/warlock/README.md": "4a02ef29b537671ebfac860f8c14f2cb531c697ce8f2c7ba7adc9b678b1c16ca"
         },
         "reviewerDisposition": {
-          "name": "root-picker-reopen",
+          "name": "root-switcher-focus",
           "independent": false,
           "disposition": "partial"
         }
       }
     ],
-    "sourceHashes": {
-      "implementation/warlock/native/shared-host.c": "b61f7e79da12693a4d30693309fe5dd2147f5760246052d230efed30fdd7d844",
-      "implementation/warlock/native/picker-previews.inc": "8e0799d2a56b08e7bee8c64fe098168ac2f1f4f3ab8a4b53e9e1363fa0cdcca3",
-      "implementation/warlock/native/family_producer.hpp": "65fe1aa8956081084117bdc27d2b7dc624a62cd44ff42fc7a037d5e6bd80794d",
-      "implementation/warlock/qa/native-preview-states.py": "3120a1e2f8239ebf20fb8fa1a52ccc415c5fba8ec7b3c5782971e6826f0f18aa",
-      "implementation/warlock/qa/check-search.py": "1f38480921e82d4141ec12027b821ec06f22e44a75285c6c8f0b6732086c7735",
-      "implementation/warlock/qa/current-search-build.json": "a5c18d8d53951cccbe75286c1cb5c25d8f2ee6776ed2edc32fb06fc3190c0a56",
-      "implementation/warlock/assets/elm.js": "5056dab9023368ce4e022dc4146eceeb7dd5217d57217242038413919e1485a6",
-      "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
-      "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
-      "implementation/warlock/README.md": "ea0d68f28aa5f1721b15bd225816671034c3ae49eaac130b4ee0fca157507ed6"
-    },
-    "unusedPlannedPaths": [
-      "implementation/warlock/qa/picker-reopen.qnt",
-      "implementation/warlock/qa/picker-reopen_test.qnt",
-      "implementation/warlock/qa/check-picker-reopen.py"
-    ],
     "missingObservations": [
-      "Frozen numeric quiescence interval and qualified whole-process power/wakeup/resource soak remain unestablished; the one-second unchanged picker counters are bounded evidence only.",
-      "Authorized Historical storage is observed across close/reopen, but fully dormant retained-storage timing is not established.",
-      "Unknown reserved-custody cases, broader capacity/fairness, actual native AT and independent original-scenario/requirement acceptance remain open."
+      "Actual native allocator address reuse remains unobserved.",
+      "Actual speech/braille once per selection transition and independent acceptance remain open; native accessibility campaign failed its original bar_tree deadline."
     ],
-    "observedOutcome": "41-check original reopened journey and both normal client exits pass on existing production code; only image-observation predicates repaired. No new GUI feature counted.",
-    "nextAction": "Move to ELM-UX-014 selected-switcher closure/address reuse: inspect current immutable member selection against the exact original reselect/dismiss oracle and repair any remaining source path. Do not expand preview/AT qualification. Keep full release and original native/hardware obligations.",
-    "disposition": "partial",
-    "observedUTC": "2026-10-10T21:22:36.599664+00:00",
-    "reviewerDisposition": {
-      "name": "root-picker-reopen",
-      "independent": false,
-      "disposition": "partial"
-    }
+    "observedOutcome": "Local native 55 and original global native 52 checks pass; final production replay has 12 checks. Changed selection receives one focus request; unchanged metadata does not repeat it; actual physical cancellation input returns to the application.",
+    "nextAction": "ELM-UI-009 at-taskbar-groups: inspect actual bar-host semantic registration against the retained original bar_tree deadline failure, implement an observed product exposure gap if present, then run the one original native AT journey. Preserve the deadline and speech/braille obligations; do not expand a QA investigation or claim full acceptance."
   }
 }

@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-f7e63f5f029f44ada8b95f4b25345441.scope",
+    "coreLimit": 1
+  },
+  "initializationOnly": true,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/switcher-focus.qnt": "340cc1f46fd326700a65601245ace37d9d97a20d8e68e260fec3206c748603d1"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/switcher-focus.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "initialization",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/switcher-focus.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1",
+        "--max-steps=1",
+        "--seed=82910"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "scope": "Admitted immutable browsing-selection reconciliation and exact changed-incarnation focus requests; no native mutation, physical focus, speech/braille or AT claim.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

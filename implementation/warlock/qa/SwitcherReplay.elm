@@ -1,4 +1,4 @@
-port module SwitcherReplay exposing (main)
+port module SwitcherReplay exposing (main, base, scoped, historyFrame, journal, window, geometryWindow, counter)
 
 import ActionProjection as Scene
 import Binding

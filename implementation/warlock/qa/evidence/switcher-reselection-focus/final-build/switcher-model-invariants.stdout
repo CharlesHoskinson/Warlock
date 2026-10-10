@@ -1,0 +1,406 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      cancelled: false,
+      closed: false,
+      consumed: false,
+      emitted: 0,
+      final: 0,
+      frozen: Set(),
+      live: Set(1, 2, 3),
+      nativeEffects: 0,
+      prepared: false,
+      ready: false,
+      released: false,
+      steps: Set()
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      cancelled: false,
+      closed: false,
+      consumed: false,
+      emitted: 0,
+      final: 0,
+      frozen: Set(),
+      live: Set(1, 2, 3, 4),
+      nativeEffects: 0,
+      prepared: false,
+      ready: false,
+      released: false,
+      steps: Set()
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      cancelled: false,
+      closed: false,
+      consumed: false,
+      emitted: 0,
+      final: 0,
+      frozen: Set(),
+      live: Set(1, 2, 3, 4),
+      nativeEffects: 0,
+      prepared: false,
+      ready: false,
+      released: false,
+      steps: Set()
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      cancelled: false,
+      closed: false,
+      consumed: false,
+      emitted: 0,
+      final: 0,
+      frozen: Set(),
+      live: Set(1, 2, 3, 4),
+      nativeEffects: 0,
+      prepared: false,
+      ready: false,
+      released: false,
+      steps: Set()
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      cancelled: false,
+      closed: false,
+      consumed: false,
+      emitted: 0,
+      final: 0,
+      frozen: Set(1, 2, 3, 4),
+      live: Set(1, 2, 3, 4),
+      nativeEffects: 0,
+      prepared: false,
+      ready: false,
+      released: false,
+      steps: Set(1)
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      cancelled: false,
+      closed: false,
+      consumed: false,
+      emitted: 0,
+      final: 0,
+      frozen: Set(1, 2, 3, 4),
+      live: Set(1, 2, 3, 4),
+      nativeEffects: 0,
+      prepared: false,
+      ready: false,
+      released: false,
+      steps: Set(1)
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      cancelled: false,
+      closed: false,
+      consumed: false,
+      emitted: 0,
+      final: 0,
+      frozen: Set(1, 2, 3, 4),
+      live: Set(1, 2, 3, 4),
+      nativeEffects: 0,
+      prepared: false,
+      ready: true,
+      released: false,
+      steps: Set(1)
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      cancelled: false,
+      closed: false,
+      consumed: false,
+      emitted: 0,
+      final: 0,
+      frozen: Set(1, 2, 3, 4),
+      live: Set(1, 2, 3, 4),
+      nativeEffects: 0,
+      prepared: false,
+      ready: true,
+      released: false,
+      steps: Set(1, 2)
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      cancelled: false,
+      closed: false,
+      consumed: false,
+      emitted: 0,
+      final: 0,
+      frozen: Set(1, 2, 3, 4),
+      live: Set(1, 2, 3, 4),
+      nativeEffects: 0,
+      prepared: false,
+      ready: true,
+      released: false,
+      steps: Set(1, 2)
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      cancelled: false,
+      closed: false,
+      consumed: false,
+      emitted: 0,
+      final: 0,
+      frozen: Set(1, 2, 3, 4),
+      live: Set(1, 2, 3, 4),
+      nativeEffects: 0,
+      prepared: false,
+      ready: true,
+      released: false,
+      steps: Set(1, 2)
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      cancelled: false,
+      closed: false,
+      consumed: false,
+      emitted: 0,
+      final: 0,
+      frozen: Set(1, 2, 3, 4),
+      live: Set(1, 2, 3, 4),
+      nativeEffects: 0,
+      prepared: false,
+      ready: true,
+      released: false,
+      steps: Set(1, 2)
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      cancelled: false,
+      closed: false,
+      consumed: false,
+      emitted: 0,
+      final: 0,
+      frozen: Set(1, 2, 3, 4),
+      live: Set(1, 2, 3, 4),
+      nativeEffects: 0,
+      prepared: false,
+      ready: true,
+      released: false,
+      steps: Set(1, 2)
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      cancelled: false,
+      closed: false,
+      consumed: false,
+      emitted: 0,
+      final: 2,
+      frozen: Set(1, 2, 3, 4),
+      live: Set(1, 2, 3, 4),
+      nativeEffects: 0,
+      prepared: false,
+      ready: true,
+      released: true,
+      steps: Set(1, 2)
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      cancelled: false,
+      closed: false,
+      consumed: false,
+      emitted: 0,
+      final: 2,
+      frozen: Set(1, 2, 3, 4),
+      live: Set(1, 2, 3, 4),
+      nativeEffects: 0,
+      prepared: true,
+      ready: true,
+      released: true,
+      steps: Set(1, 2)
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      cancelled: false,
+      closed: false,
+      consumed: true,
+      emitted: 0,
+      final: 2,
+      frozen: Set(1, 2, 3, 4),
+      live: Set(1, 2, 3, 4),
+      nativeEffects: 1,
+      prepared: true,
+      ready: true,
+      released: true,
+      steps: Set(1, 2)
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      cancelled: false,
+      closed: false,
+      consumed: true,
+      emitted: 0,
+      final: 2,
+      frozen: Set(1, 2, 3, 4),
+      live: Set(1, 2, 3, 4),
+      nativeEffects: 1,
+      prepared: true,
+      ready: true,
+      released: true,
+      steps: Set(1, 2)
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      cancelled: false,
+      closed: true,
+      consumed: true,
+      emitted: 1,
+      final: 2,
+      frozen: Set(1, 2, 3, 4),
+      live: Set(1, 2, 3, 4),
+      nativeEffects: 1,
+      prepared: true,
+      ready: true,
+      released: true,
+      steps: Set(1, 2)
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      cancelled: false,
+      closed: true,
+      consumed: true,
+      emitted: 1,
+      final: 2,
+      frozen: Set(1, 2, 3, 4),
+      live: Set(1, 2, 3, 4),
+      nativeEffects: 1,
+      prepared: true,
+      ready: true,
+      released: true,
+      steps: Set(1, 2)
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      cancelled: false,
+      closed: true,
+      consumed: true,
+      emitted: 1,
+      final: 2,
+      frozen: Set(1, 2, 3, 4),
+      live: Set(1, 2, 3, 4),
+      nativeEffects: 1,
+      prepared: true,
+      ready: true,
+      released: true,
+      steps: Set(1, 2)
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      cancelled: false,
+      closed: true,
+      consumed: true,
+      emitted: 1,
+      final: 2,
+      frozen: Set(1, 2, 3, 4),
+      live: Set(1, 2, 3, 4),
+      nativeEffects: 1,
+      prepared: true,
+      ready: true,
+      released: true,
+      steps: Set(1, 2)
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      cancelled: false,
+      closed: true,
+      consumed: true,
+      emitted: 1,
+      final: 2,
+      frozen: Set(1, 2, 3, 4),
+      live: Set(1, 2, 3, 4),
+      nativeEffects: 1,
+      prepared: true,
+      ready: true,
+      released: true,
+      steps: Set(1, 2)
+    }
+}
+
+[ok] No violation found (88ms at 1136 traces/second).
+Trace length statistics: max=21, min=21, average=21.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x13508 --backend=typescript to reproduce.

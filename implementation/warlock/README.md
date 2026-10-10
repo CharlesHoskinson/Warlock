@@ -664,3 +664,9 @@ The [scoped evidence](qa/evidence/picker-shared-storage/README.md) links quint-l
 ### Reopening a quiescent picker
 
 The current host now passes the [original quiescence/reopen journey](qa/evidence/picker-reopen-cleanup/README.md), including normal client exit. Reopening observes the current native identity and advances its retained request floor, presents fresh owned pixels or an explicit unavailable state, and submits no repeated window effect. The closed interval has unchanged picker callback/catalog counters; an acknowledged reopen wakes them. The older outstanding-custody failure is preserved. This qualifies existing implementation, rather than delivering another GUI feature. Dormancy with authorized retained storage, frozen whole-process power/wakeup/resource budgets, native AT and independent acceptance remain open.
+
+### Switcher reselection and keyboard focus
+
+When the selected switcher member disappears, local and global switchers now focus the next eligible member of the frozen chord once. Metadata refreshes and title changes retain selection without repeating focus; physical Alt+Tab steps still move it. An empty chord dismisses without choosing a newly arrived incarnation. Global chords retain the application's keyboard return policy, so Escape returns physical input to the application instead of leaving it on the bar.
+
+The [before/after evidence](qa/evidence/switcher-reselection-focus/README.md) includes quint-llm-kit initialization, named tests and reachable safety witnesses, compiled production replays, and the original local/global native keyboard journeys. The global chord uses the existing application-return branch of `popupOrigin`; local bar entry retains its captured return policy. Actual allocator address reuse, speech/braille and independent ELM-UX-014/026 acceptance remain open. The separate accessibility campaign missed its original bar-tree deadline; that failure is retained.

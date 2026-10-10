@@ -221,6 +221,14 @@ retireSwitcher model = {model | switcher=Switcher.cancel (Switcher.generation mo
 switcherFocus : Model -> List Effect
 switcherFocus model = Switcher.selected model.switcher |> Maybe.map (\family -> [Focus (key model ("switcher:family:"++UInt64.string family.root))]) |> Maybe.withDefault []
 
+reconcileSwitcher : List Taskbar.Family -> Model -> (Model,List Effect)
+reconcileSwitcher candidates model =
+    let switcher=Switcher.reconcile candidates model.switcher
+        previous=Switcher.selected model.switcher |> Maybe.map .root
+        current=Switcher.selected switcher |> Maybe.map .root
+        next=if switcher==model.switcher then model else advance {model | switcher=switcher}
+    in (next,if current/=previous then switcherFocus next else [])
+
 historyRequest : Binding.Binding -> Counter -> Effect
 historyRequest binding request = Send (E.object [("protocolVersion",E.int 3),("kind",E.string "activation-history-request"),("binding",Binding.encode binding),("requestId",E.string (UInt64.string request))])
 
@@ -251,11 +259,12 @@ syncSwitcher model =
             case TaskView.groups model.windows.shell of
                 Just groups ->
                     let candidates=List.concatMap .windows groups |> List.filter (\row -> List.member row.root chord.roots)
-                        (switcher,selected)=if Switcher.phase model.switcher==Switcher.Browsing then (Switcher.reconcile candidates model.switcher,Nothing) else Switcher.readyFrozen (Switcher.generation model.switcher) chord.roots chord.history candidates chord.origin model.switcher
-                        next=advance {model | switcher=switcher}
-                    in case selected of
-                        Just family -> chooseFamily family next
-                        Nothing -> (next,switcherFocus next)
+                    in if Switcher.phase model.switcher==Switcher.Browsing then reconcileSwitcher candidates model else
+                        let (switcher,selected)=Switcher.readyFrozen (Switcher.generation model.switcher) chord.roots chord.history candidates chord.origin model.switcher
+                            next=advance {model | switcher=switcher}
+                        in case selected of
+                            Just family -> chooseFamily family next
+                            Nothing -> (next,switcherFocus next)
                 Nothing -> (model,[])
         Nothing -> syncLocalSwitcher model
 
@@ -264,7 +273,7 @@ syncLocalSwitcher model =
     case (model.switcherHistory,model.windows.shell.effects.observed,TaskView.groups model.windows.shell) of
         (Just history,Just observed,Just groups) ->
             if Switcher.phase model.switcher==Switcher.Browsing then
-                ( {model | switcher=Switcher.reconcile (List.concatMap .windows groups) model.switcher},[] )
+                reconcileSwitcher (List.concatMap .windows groups) model
             else if history.context/=observed.context then
                 if model.switcherExpected==Nothing then readSwitcherHistory model else (model,[])
             else
@@ -301,7 +310,7 @@ receiveChord chord model =
            Nothing -> (retireSwitcher model,[])
            Just generation ->
                let windows=model.windows
-                   base=if order==GT then {model | jumpEntry=Nothing,jumpOpening=False,filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,nativeSwitcher=Just chord,choice=Nothing,choiceNotice="",open=False,overview=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,switcherHistory=Nothing,switcherExpected=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}} else {model | jumpEntry=Nothing,jumpOpening=False,filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,nativeSwitcher=Just chord}
+                   base=if order==GT then {model | popupOrigin=PointerEntry,jumpEntry=Nothing,jumpOpening=False,filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,nativeSwitcher=Just chord,choice=Nothing,choiceNotice="",open=False,overview=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,switcherHistory=Nothing,switcherExpected=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}} else {model | jumpEntry=Nothing,jumpOpening=False,filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,nativeSwitcher=Just chord}
                    (stepped,_) = List.foldl (\(ordinal,direction) (state,_) -> Switcher.step generation (ordinal+1) direction state) (base.switcher,Nothing) (List.indexedMap Tuple.pair chord.steps)
                    (released,selected)=if chord.released then Switcher.release generation (List.length chord.steps) stepped else (stepped,Nothing)
                    next=advance {base | switcher=released}
@@ -309,10 +318,16 @@ receiveChord chord model =
                    Just family -> chooseFamily family next
                    Nothing ->
                        let (synced,effects)=syncSwitcher next
+                           previous=Switcher.selected model.switcher |> Maybe.map .root
+                           current=Switcher.selected synced.switcher |> Maybe.map .root
+                           alreadyFocused=List.any (\effect -> case effect of
+                               Focus _ -> True
+                               _ -> False) effects
+                           focused=if Switcher.phase synced.switcher==Switcher.Browsing && (order==GT || current/=previous) && not alreadyFocused then effects++switcherFocus synced else effects
                        in if order==GT && not (Shell.available next.windows.shell) then
                            let (refreshing,reads)=windowBase (TaskbarShell.Native Shell.Refresh) synced
-                           in (refreshing,effects++reads)
-                       else (synced,effects)
+                           in (refreshing,focused++reads)
+                       else (synced,focused)
 
 fenceSwitcherSelection : Maybe Counter -> Binding.Binding -> List Effect -> List Effect
 fenceSwitcherSelection chord binding effects =

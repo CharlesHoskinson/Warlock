@@ -9020,14 +9020,41 @@
       "owner": "Elm policy lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "ux-014",
           "oracle": "reused address is never activated as the closed window",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/manifest.json",
+              "sha256": "0d1e6ff89aedcf9cc4897d42db6fc04a7b279049edb22f807c759a82d4073789",
+              "scope": "Production replay and native local/global frozen-cohort retirement, survivor focus/activation, arrival exclusion and real keyboard recipient checks; opaque incarnation Quint model is separate.",
+              "sourceBaseRevision": "da48267c8842aa05386be26cc7e6672e98c3301e",
+              "sourceHashes": {
+                "implementation/warlock/src/Desktop.elm": "8ad8e4797ef13b91add6bce686ebb3bc1f0ec800e4da6328d1d740a3f4961e3f",
+                "implementation/warlock/qa/SwitcherReplay.elm": "36a901e170719ade66eb2c82d0cc9d1ed63b3500721b67d221eb109822a1c64d",
+                "implementation/warlock/qa/check-search.py": "a212ebedd1732c1185e23ebf48e882c167e5dd9d8edb94b09c35dcdda54871b1",
+                "implementation/warlock/qa/switcher-focus.qnt": "93cf358c8197dcfffcc1bd3b71abf19952f9a01c92da11b6f50ba09f6f58462e",
+                "implementation/warlock/qa/switcher-focus_test.qnt": "9eb504a9c822128b3c1a47e96b9a14de12eb3112032b6ada6e15c2664c5e64fe",
+                "implementation/warlock/qa/check-switcher-focus.py": "5748c441942526b3cba1b14e80fc388a0c30e1f594d3b4015c63d5f390464269",
+                "implementation/warlock/qa/SwitcherFocusReplay.elm": "500dae7f1d66bab18dcbfe625911fd62504e1e3aaade660a9ad925558d0aaa4e",
+                "implementation/warlock/qa/native-window-feedback.py": "5f0421e5bb2a52c593fbcc053338e11aab72ba8685d1215b53b4e6152a1cf161",
+                "implementation/warlock/qa/current-search-build.json": "8952cdbfcf5fee60022cad9a47158145ec69edcf7c519d2915f86f8de7e7534f",
+                "implementation/warlock/assets/elm.js": "be66c690207cdefca0f5028376e5d9297cb15daed41785be5e886ff3d2e3fc70",
+                "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+                "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
+                "implementation/warlock/README.md": "4a02ef29b537671ebfac860f8c14f2cb531c697ce8f2c7ba7adc9b678b1c16ca"
+              },
+              "reviewerDisposition": {
+                "name": "root-switcher-focus",
+                "independent": false,
+                "disposition": "partial"
+              }
+            }
+          ],
+          "missingObservation": "Actual native allocator address reuse and independent original ux-014 acceptance remain unobserved."
         }
       ]
     },
@@ -11381,14 +11408,41 @@
       "owner": "Accessibility lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "ux-026",
           "oracle": "speech and braille identify the same selected window once per transition",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/manifest.json",
+              "sha256": "0d1e6ff89aedcf9cc4897d42db6fc04a7b279049edb22f807c759a82d4073789",
+              "scope": "Changed selection receives focus once; unchanged/relabelled metadata retains actual DOM focus without repeated native focus request. Compiled replay and native input observed, no speech/braille verdict.",
+              "sourceBaseRevision": "da48267c8842aa05386be26cc7e6672e98c3301e",
+              "sourceHashes": {
+                "implementation/warlock/src/Desktop.elm": "8ad8e4797ef13b91add6bce686ebb3bc1f0ec800e4da6328d1d740a3f4961e3f",
+                "implementation/warlock/qa/SwitcherReplay.elm": "36a901e170719ade66eb2c82d0cc9d1ed63b3500721b67d221eb109822a1c64d",
+                "implementation/warlock/qa/check-search.py": "a212ebedd1732c1185e23ebf48e882c167e5dd9d8edb94b09c35dcdda54871b1",
+                "implementation/warlock/qa/switcher-focus.qnt": "93cf358c8197dcfffcc1bd3b71abf19952f9a01c92da11b6f50ba09f6f58462e",
+                "implementation/warlock/qa/switcher-focus_test.qnt": "9eb504a9c822128b3c1a47e96b9a14de12eb3112032b6ada6e15c2664c5e64fe",
+                "implementation/warlock/qa/check-switcher-focus.py": "5748c441942526b3cba1b14e80fc388a0c30e1f594d3b4015c63d5f390464269",
+                "implementation/warlock/qa/SwitcherFocusReplay.elm": "500dae7f1d66bab18dcbfe625911fd62504e1e3aaade660a9ad925558d0aaa4e",
+                "implementation/warlock/qa/native-window-feedback.py": "5f0421e5bb2a52c593fbcc053338e11aab72ba8685d1215b53b4e6152a1cf161",
+                "implementation/warlock/qa/current-search-build.json": "8952cdbfcf5fee60022cad9a47158145ec69edcf7c519d2915f86f8de7e7534f",
+                "implementation/warlock/assets/elm.js": "be66c690207cdefca0f5028376e5d9297cb15daed41785be5e886ff3d2e3fc70",
+                "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+                "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
+                "implementation/warlock/README.md": "4a02ef29b537671ebfac860f8c14f2cb531c697ce8f2c7ba7adc9b678b1c16ca"
+              },
+              "reviewerDisposition": {
+                "name": "root-switcher-focus",
+                "independent": false,
+                "disposition": "partial"
+              }
+            }
+          ],
+          "missingObservation": "Native AT campaign failed original bar_tree deadline. Actual speech/braille once per transition and independent original ux-026 acceptance remain unobserved."
         }
       ]
     },
@@ -12063,5 +12117,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-10T21:22:36.599664+00:00"
+  "updatedUTC": "2026-10-10T21:54:03.972742+00:00"
 }

@@ -1,0 +1,37 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      changes: 0,
+      closed: false,
+      focuses: 0,
+      label: 0,
+      live: Set(1, 2, 3),
+      previous: 2,
+      selected: 2,
+      target: 0
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      changes: 0,
+      closed: false,
+      focuses: 0,
+      label: 0,
+      live: Set(1, 2, 3),
+      previous: 2,
+      selected: 2,
+      target: 0
+    }
+}
+
+[ok] No violation found (9ms at 111 traces/second).
+Trace length statistics: max=2, min=2, average=2.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x143de --backend=typescript to reproduce.

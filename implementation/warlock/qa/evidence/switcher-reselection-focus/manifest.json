@@ -1,0 +1,775 @@
+{
+  "schema": 1,
+  "createdUTC": "2026-10-10T21:52:50.871116+00:00",
+  "requirements": [
+    "ELM-UX-014",
+    "ELM-UX-026"
+  ],
+  "scenarios": [
+    "ux-014",
+    "ux-026"
+  ],
+  "sourceBaseRevision": "da48267c8842aa05386be26cc7e6672e98c3301e",
+  "sourceHashes": {
+    "implementation/warlock/src/Desktop.elm": "8ad8e4797ef13b91add6bce686ebb3bc1f0ec800e4da6328d1d740a3f4961e3f",
+    "implementation/warlock/qa/SwitcherReplay.elm": "36a901e170719ade66eb2c82d0cc9d1ed63b3500721b67d221eb109822a1c64d",
+    "implementation/warlock/qa/check-search.py": "a212ebedd1732c1185e23ebf48e882c167e5dd9d8edb94b09c35dcdda54871b1",
+    "implementation/warlock/qa/switcher-focus.qnt": "93cf358c8197dcfffcc1bd3b71abf19952f9a01c92da11b6f50ba09f6f58462e",
+    "implementation/warlock/qa/switcher-focus_test.qnt": "9eb504a9c822128b3c1a47e96b9a14de12eb3112032b6ada6e15c2664c5e64fe",
+    "implementation/warlock/qa/check-switcher-focus.py": "5748c441942526b3cba1b14e80fc388a0c30e1f594d3b4015c63d5f390464269",
+    "implementation/warlock/qa/SwitcherFocusReplay.elm": "500dae7f1d66bab18dcbfe625911fd62504e1e3aaade660a9ad925558d0aaa4e",
+    "implementation/warlock/qa/native-window-feedback.py": "5f0421e5bb2a52c593fbcc053338e11aab72ba8685d1215b53b4e6152a1cf161",
+    "implementation/warlock/qa/current-search-build.json": "8952cdbfcf5fee60022cad9a47158145ec69edcf7c519d2915f86f8de7e7534f",
+    "implementation/warlock/assets/elm.js": "be66c690207cdefca0f5028376e5d9297cb15daed41785be5e886ff3d2e3fc70",
+    "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+    "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
+    "implementation/warlock/README.md": "4a02ef29b537671ebfac860f8c14f2cb531c697ce8f2c7ba7adc9b678b1c16ca"
+  },
+  "retainedFiles": [
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/initialization/switcher-focus.qnt",
+      "sha256": "340cc1f46fd326700a65601245ace37d9d97a20d8e68e260fec3206c748603d1",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-focus-1791667643042361854/switcher-focus.qnt",
+      "bytes": 808
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/initialization/typecheck.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-focus-1791667643042361854/typecheck.stdout",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/initialization/typecheck.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-focus-1791667643042361854/typecheck.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/initialization/initialization.stdout",
+      "sha256": "500f92100b1ecc4cba49ac4af371fa25114ec9b34fc14ffd610fa1b0b576bf3f",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-focus-1791667643042361854/initialization.stdout",
+      "bytes": 649
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/initialization/initialization.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-focus-1791667643042361854/initialization.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/initialization/report.json",
+      "sha256": "892ded3c874a8e849cc6e1b296a4728275e812e5088c71da36c6bb543aeeb93e",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-focus-1791667643042361854/report.json",
+      "bytes": 1252
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/pre-code-model/switcher-focus.qnt",
+      "sha256": "f7cfaac1aef86d2f7b0a50c2d1572fd05a1a4b5f4eb10f75f334b7031917f46f",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-focus-1791667702052487408/switcher-focus.qnt",
+      "bytes": 2146
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/pre-code-model/switcher-focus_test.qnt",
+      "sha256": "c15580ee6b820c126d1963a4fcd74037a884c568e5b2d48138a8ec3cb169bc55",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-focus-1791667702052487408/switcher-focus_test.qnt",
+      "bytes": 1326
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/pre-code-model/typecheck.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-focus-1791667702052487408/typecheck.stdout",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/pre-code-model/typecheck.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-focus-1791667702052487408/typecheck.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/pre-code-model/tests-typecheck.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-focus-1791667702052487408/tests-typecheck.stdout",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/pre-code-model/tests-typecheck.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-focus-1791667702052487408/tests-typecheck.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/pre-code-model/named.stdout",
+      "sha256": "d87d606e8988f131acb4b1d4eb36ed4b4b37889be3b1fbe82a78a28f3b83adc6",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-focus-1791667702052487408/named.stdout",
+      "bytes": 428
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/pre-code-model/named.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-focus-1791667702052487408/named.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/pre-code-model/witness-safety.stdout",
+      "sha256": "949a97f12ea2b56880bc5d85fed910da735b7afb8e7a7890c2dc514bcc35028f",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-focus-1791667702052487408/witness-safety.stdout",
+      "bytes": 3455
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/pre-code-model/witness-safety.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-focus-1791667702052487408/witness-safety.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/pre-code-model/report.json",
+      "sha256": "035b3469bfbe45b4ad7f9cbc20bf14d630554940daddca3b6435947f517c25a6",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-focus-1791667702052487408/report.json",
+      "bytes": 2216
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-model/switcher-focus.qnt",
+      "sha256": "93cf358c8197dcfffcc1bd3b71abf19952f9a01c92da11b6f50ba09f6f58462e",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-focus-1791669049193694061/switcher-focus.qnt",
+      "bytes": 2743
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-model/switcher-focus_test.qnt",
+      "sha256": "9eb504a9c822128b3c1a47e96b9a14de12eb3112032b6ada6e15c2664c5e64fe",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-focus-1791669049193694061/switcher-focus_test.qnt",
+      "bytes": 1637
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-model/typecheck.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-focus-1791669049193694061/typecheck.stdout",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-model/typecheck.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-focus-1791669049193694061/typecheck.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-model/tests-typecheck.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-focus-1791669049193694061/tests-typecheck.stdout",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-model/tests-typecheck.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-focus-1791669049193694061/tests-typecheck.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-model/named.stdout",
+      "sha256": "5d74032265b70b9d53b722a2e54fb07da62551855fb20c8a74babebd2da02c31",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-focus-1791669049193694061/named.stdout",
+      "bytes": 530
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-model/named.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-focus-1791669049193694061/named.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-model/witness-safety.stdout",
+      "sha256": "9098b9f1b2835ab1f3cc2abd888ffc5c0dfcbbe7b825f4310a3068584285fd4b",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-focus-1791669049193694061/witness-safety.stdout",
+      "bytes": 4266
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-model/witness-safety.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-focus-1791669049193694061/witness-safety.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-model/report.json",
+      "sha256": "15708390f9f9ad16a734f3e6c13556da19aa986f5c5665fbba48a70bb25e3c45",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-focus-1791669049193694061/report.json",
+      "bytes": 2289
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/application-parent-model/typecheck.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/popup-entry-1791669029456120950/typecheck.stdout",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/application-parent-model/typecheck.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/popup-entry-1791669029456120950/typecheck.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/application-parent-model/named.stdout",
+      "sha256": "da20008dc9146a502f1d5764dbd22f0ee618464a3942e2e86b7536ea6213bc3c",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/popup-entry-1791669029456120950/named.stdout",
+      "bytes": 292
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/application-parent-model/named.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/popup-entry-1791669029456120950/named.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/application-parent-model/witnesses.stdout",
+      "sha256": "cf8185bda85a36799865c626004bd54fd1205cee1f4d7f02f7897754c7732002",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/popup-entry-1791669029456120950/witnesses.stdout",
+      "bytes": 9378
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/application-parent-model/witnesses.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/popup-entry-1791669029456120950/witnesses.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/application-parent-model/safety.stdout",
+      "sha256": "20df57aa7c964293a07aff1bc45bbdac8807fa5e1b811a56e41ca0348c30865d",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/popup-entry-1791669029456120950/safety.stdout",
+      "bytes": 9118
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/application-parent-model/safety.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/popup-entry-1791669029456120950/safety.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/application-parent-model/report.json",
+      "sha256": "6941581bccd74d5575f6eb0d13122d70b688ba69ce7441ba686c8f94fbedacf8",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/popup-entry-1791669029456120950/report.json",
+      "bytes": 2249
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/baseline-component/report.json",
+      "sha256": "7c35c89e585dd6f66c5d6fc864fbb6092737da01f89baa8609bc22441c890e4a",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791667816878661297/report.json",
+      "bytes": 69234
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/baseline-component/switcher-focus.json",
+      "sha256": "70a14900983668eb6184d37a6b89be085051cf9b8add022caf929937d8b5c3d2",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791667816878661297/switcher-focus.json",
+      "bytes": 573
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/baseline-component/typed-switcher-focus.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791667816878661297/typed-switcher-focus.stdout",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/baseline-component/typed-switcher-focus.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791667816878661297/typed-switcher-focus.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/parent-policy-component-failure/report.json",
+      "sha256": "3cec3f282eb6e0315f669c0e6123365056947ce26100c2fea6e4337c0763bbea",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669038971144712/report.json",
+      "bytes": 69390
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/parent-policy-component-failure/switcher-focus.json",
+      "sha256": "bae52ecfb40e174d6eba1924681e3549307398e480fec97fd7643a7e60de18c3",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669038971144712/switcher-focus.json",
+      "bytes": 723
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/parent-policy-component-failure/typed-switcher-focus.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669038971144712/typed-switcher-focus.stdout",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/parent-policy-component-failure/typed-switcher-focus.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669038971144712/typed-switcher-focus.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/report.json",
+      "sha256": "74c71fcd4261642a03e42f99d0d73f37c0576698edb6e14240d51fb646c8c794",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/report.json",
+      "bytes": 101200
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/switcher-focus.json",
+      "sha256": "a1196388d22a0ee9475eca07bd78c3e302ceaaf21d20c1cba2807fd145f0214b",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/switcher-focus.json",
+      "bytes": 722
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/typed-switcher-focus.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/typed-switcher-focus.stdout",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/typed-switcher-focus.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/typed-switcher-focus.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/compile-switcher-focus.stdout",
+      "sha256": "6832b402e02d51b58685c1bbc7e068394e630b4c2a0ea1a4886571e366639a1b",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/compile-switcher-focus.stdout",
+      "bytes": 1054
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/compile-switcher-focus.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/compile-switcher-focus.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/compile-Main.stdout",
+      "sha256": "a8bb8ef4acc5fe5e2dab4c2770e65fb10ace5792bd06a0441b506be85811a8c5",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/compile-Main.stdout",
+      "bytes": 191
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/compile-Main.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/compile-Main.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/compile-Bar.stdout",
+      "sha256": "c739b6d04713994eeec409f2d6abad44074a629c0c9485b274fb9a70200e032c",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/compile-Bar.stdout",
+      "bytes": 120
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/compile-Bar.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/compile-Bar.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/compile-Popup.stdout",
+      "sha256": "fb9f01e07f4c7a30ab10ec91b6437a6a4d9448c93566f14eafeb5814373094b3",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/compile-Popup.stdout",
+      "bytes": 254
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/compile-Popup.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/compile-Popup.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/compile-search.stdout",
+      "sha256": "680d002db2e14ae52f7e56f90e92256b46efe5ce118a5c716883822973e309e3",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/compile-search.stdout",
+      "bytes": 103
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/compile-search.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/compile-search.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/typed-search.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/typed-search.stdout",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/typed-search.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/typed-search.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/switcher-key-routing.stdout",
+      "sha256": "26955c4d71a20082c4de5fe4a12782ecec45b731ff1a979bdf7cde5a12064af4",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/switcher-key-routing.stdout",
+      "bytes": 112
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/switcher-key-routing.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/switcher-key-routing.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/compile-switcher.stdout",
+      "sha256": "3ca436312b8f444d90af3565d1625d41a29e8a4cc397ec023ef60b2ba0ee1e5e",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/compile-switcher.stdout",
+      "bytes": 88
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/compile-switcher.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/compile-switcher.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/typed-switcher.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/typed-switcher.stdout",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/typed-switcher.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/typed-switcher.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/switcher-model-typecheck.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/switcher-model-typecheck.stdout",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/switcher-model-typecheck.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/switcher-model-typecheck.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/switcher-model-named.stdout",
+      "sha256": "1d5dec59d94c266f03129e23e1ff6573e97ea273b97f6faa8fb361919e503346",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/switcher-model-named.stdout",
+      "bytes": 523
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/switcher-model-named.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/switcher-model-named.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/switcher-model-invariants.stdout",
+      "sha256": "52d056bc2ffa618c2cc0f9806b31d4f710ff0ac2bbba3dd37a48ecb2a3d5a6b5",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/switcher-model-invariants.stdout",
+      "bytes": 6630
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/switcher-model-invariants.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/switcher-model-invariants.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/focus-model-typecheck.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/focus-model-typecheck.stdout",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/focus-model-typecheck.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/focus-model-typecheck.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/focus-model-named.stdout",
+      "sha256": "8ac73a1a65127e442c752888f05934f13ba6b34e06a7dfa29b89b5b9ae01ef8f",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/focus-model-named.stdout",
+      "bytes": 308
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/focus-model-named.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/focus-model-named.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/focus-model-invariants.stdout",
+      "sha256": "5245e2f5136348b6dd36714a20b4dc47cb3858e1704466d375c0d4146f3f1565",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/focus-model-invariants.stdout",
+      "bytes": 4583
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/focus-model-invariants.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/focus-model-invariants.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/surface-admission-build.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/surface-admission-build.stdout",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/surface-admission-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/surface-admission-build.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/surface-admission.stdout",
+      "sha256": "cd066b7e70f6686d4b1bfd15595c53516c0de9b4de968ea5384d49b931a06491",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/surface-admission.stdout",
+      "bytes": 339
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/surface-admission.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/surface-admission.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/host-compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/host-compile.stdout",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/host-compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/host-compile.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/host-link.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/host-link.stdout",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/host-link.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/host-link.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/popup-context-compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/popup-context-compile.stdout",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/popup-context-compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/popup-context-compile.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/popup-context-link.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/popup-context-link.stdout",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/popup-context-link.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/popup-context-link.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/popup-context-tests.stdout",
+      "sha256": "fa168d070127459f16f58038cec7f057541c34c03f53181119a1f1147e28fd41",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/popup-context-tests.stdout",
+      "bytes": 27
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/popup-context-tests.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/popup-context-tests.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/host-self-tests.stdout",
+      "sha256": "937d3727d285f4aa2f06c293618f1ecf5157f0e7df3d41c09f4a544025d2e440",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/host-self-tests.stdout",
+      "bytes": 1177
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/final-build/host-self-tests.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/switcher-1791669048076701660/host-self-tests.stderr",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/local-native/report.json",
+      "sha256": "fee102350cd4d638b266106067eb47d06b0163ce02f1cbc17a2c61e9479188e7",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-switcher-1791669086755218248/report.json",
+      "bytes": 353255
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/local-native/host-evidence.json",
+      "sha256": "3fad407b8d0a335676ddd10573922cea3bdf6536edfc86a8c03b3fa70e3e0bb9",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791669086755304745/host-evidence.json",
+      "bytes": 226819
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/local-native/warlock.log",
+      "sha256": "d2bc04c0eb7ae3ca344f80bacf80130cf63f1f1056dc1b31658c8c7c071ea3af",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791669086755304745/warlock.log",
+      "bytes": 522497
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/local-native/fixture-control.events.jsonl",
+      "sha256": "356a44707f0140491f9ca33770c511d6698f8772ff3ea4790dd19939ce9e50d2",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791669086755304745/fixture-control.events.jsonl",
+      "bytes": 316
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/local-native/popup-mru-initial.png",
+      "sha256": "5da67067fb256979134a650424f669fd577432eeaab251cd74a709c42a9eecbb",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791669086755304745/popup-mru-initial.png",
+      "bytes": 58783
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/local-native/popup-reopened.png",
+      "sha256": "13e7a260dbcb3fe1487a8d01b62f054c0ddfdc9c34b22d9b32927c60c383a525",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791669086755304745/popup-reopened.png",
+      "bytes": 58922
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/global-native/report.json",
+      "sha256": "a521c5c2c112c66a1778ad39e89754fee34e78a1fc58e38e4369dd45115677dd",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-switcher-chord-1791669068940277683/report.json",
+      "bytes": 335495
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/global-native/host-evidence.json",
+      "sha256": "0b7df9aa9dc3e778ba9a32acdfc02e7b5abbf776b14563d3e2aa82db3991c5e7",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791669068940365454/host-evidence.json",
+      "bytes": 217128
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/global-native/warlock.log",
+      "sha256": "2615b51edafde59999702ff84e3b205fd316a2f6d4a4f0d59444a2362eda9cc4",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791669068940365454/warlock.log",
+      "bytes": 830600
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/global-native/fixture-control.events.jsonl",
+      "sha256": "d4c4decc7e70f8572274018bebdf2427ae070c963894a08ba74ab698abb34628",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791669068940365454/fixture-control.events.jsonl",
+      "bytes": 1325
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/global-native/chord-retries.jsonl",
+      "sha256": "7d74d7dddf10f8221f5808ecad24adc1d2a69d744de1fd8fbe4ad63639f61f55",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791669068940365454/chord-retries.jsonl",
+      "bytes": 5565
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/global-native/popup-global-mru.png",
+      "sha256": "154b5559c3401e9b1e16bc5f38f138996eb827b7aca5a39c1ebb1917bda067bd",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791669068940365454/popup-global-mru.png",
+      "bytes": 95593
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/accessibility-failed/report.json",
+      "sha256": "501020e1ee8a8198a7a64a7b1fc03f40fc2bde070d87d0dad1def45e965e3ee3",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-accessibility-1791669109264114295/report.json",
+      "bytes": 265148
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/accessibility-failed/host-evidence.json",
+      "sha256": "95fc3b78e56bbe2cbd21e0adea59c75ee1e3c94513f317425d17936175ce4bef",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791669109264228305/host-evidence.json",
+      "bytes": 218545
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/accessibility-failed/warlock.log",
+      "sha256": "ada20af6a0b712bc7cb940c6a08e8d8ae03f5610d028a77370030b7b99cc629a",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791669109264228305/warlock.log",
+      "bytes": 195018
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/accessibility-failed/accessibility-inspector.log",
+      "sha256": "38e678a66997729f6f448ec010076d465b09f618e1ed467a19c2f319f8b455c4",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791669109264228305/accessibility-inspector.log",
+      "bytes": 673
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/accessibility-failed/accessibility-orca.log",
+      "sha256": "d5db2d29c63666351e8b73068aae6268dc3cb7ae6156f3d60d6cdb4c4f7f5960",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791669109264228305/accessibility-orca.log",
+      "bytes": 12370
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/accessibility-failed/orca-utterances.jsonl",
+      "sha256": "bde4c9ce331d9d07e0b47abf5d1ff6f22fb1547dc63c0ebf5c783084d6b580cb",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791669109264228305/orca-utterances.jsonl",
+      "bytes": 270
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/accessibility-failed/at-events.jsonl",
+      "sha256": "d4d28f3ad95a19595fd33a8994de0e0877d8512b421ac0cee42f763da4316643",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791669109264228305/at-events.jsonl",
+      "bytes": 1200
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/accessibility-failed/at-ready.json",
+      "sha256": "568eaaed2e7080ddd632abd6a080e379cd12560eb833285636b97e452be5c7d9",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791669109264228305/at-ready.json",
+      "bytes": 165
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/accessibility-failed/at-request.json",
+      "sha256": "d329268011f09265021c1b177a98b11f7912cea34c77699b0cbb0bab0c384659",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791669109264228305/at-request.json",
+      "bytes": 16
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/accessibility-failed/at-reply.json",
+      "sha256": "8decd7831dfc0515392a0df66ed393f71594197994e5598089ba9349b879c6ea",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791669109264228305/at-reply.json",
+      "bytes": 16565
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/failed-attempts/native-switcher-1791668039592329732.json",
+      "sha256": "51f15a01b62a74e18ee49dd0b2fb650195d6b1b3016123314a68ccd6102a6ed0",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-switcher-1791668039592329732/report.json",
+      "bytes": 262369
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/failed-attempts/native-switcher-1791668117336091979.json",
+      "sha256": "ac28985a3ca0875fff35bf39490d80939f1a1451a311b526faa0304878a8ca31",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-switcher-1791668117336091979/report.json",
+      "bytes": 346857
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/failed-attempts/native-switcher-1791668164323163200.json",
+      "sha256": "70461cfcbe9304445ee9ad40e20eb642df82e4d2ff3733e8d43e1ce4cee38990",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-switcher-1791668164323163200/report.json",
+      "bytes": 349283
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/failed-attempts/native-switcher-chord-1791668306061454046.json",
+      "sha256": "4719b38bb8857b63506dbfb1f3af5b46ea49942345dd76785eeaf8541b6279cc",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-switcher-chord-1791668306061454046/report.json",
+      "bytes": 291775
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-reselection-focus/failed-attempts/native-switcher-chord-1791668576048291224.json",
+      "sha256": "a1211c34e29db645d2d0380b9f434d0374247110837526ecea37edabc7fdfe8d",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-switcher-chord-1791668576048291224/report.json",
+      "bytes": 293678
+    }
+  ],
+  "observedOutcome": "Local native 55 and original global native 52 checks pass; final production replay has 12 checks. Changed selection receives one focus request; unchanged metadata does not repeat it; actual physical cancellation input returns to the application.",
+  "modelScope": "Opaque admitted incarnations and atomic Elm selection/focus transitions. 10 explicitly selected named tests, 1000 sampled traces and four positive witnesses. Existing popup-entry model checks application return policy before implementation. No native mutation authority, allocator addresses, renderer timing or AT modeled.",
+  "missingObservations": [
+    "Actual native allocator address reuse remains unobserved.",
+    "Actual speech/braille once per selection transition and independent acceptance remain open; native accessibility campaign failed its original bar_tree deadline."
+  ],
+  "reviewerDisposition": {
+    "name": "root-switcher-focus",
+    "independent": false,
+    "disposition": "partial"
+  },
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}
