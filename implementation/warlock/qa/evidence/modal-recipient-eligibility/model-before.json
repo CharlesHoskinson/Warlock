@@ -1,0 +1,78 @@
+{
+  "passed": true,
+  "scope": "quint-llm-kit sampled modal topology/eligibility/draft model; no native acceptance.",
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-e361460119114b8fa755e20c1fb90e1c.scope",
+    "coreLimit": 1
+  },
+  "nativeAcceptance": false,
+  "inputs": {
+    "qa/modal-eligibility.qnt": "564154888afb2be4352277b90e61d71572f237103b508c57e19c9fb8a925eb87",
+    "qa/modal-eligibility_test.qnt": "9c1aab2fa3cda3b1ea2c783a851fc1c81e087775c5f950c20c8e86325a43061c",
+    "native/core/ModalRecipient.hpp": "212cc06e1b7eb1a2d40eb8b06b7caaaf4a1a69f36501a1f73686372548c12411"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/modal-eligibility.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/modal-eligibility_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=79801"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "witnesses",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/modal-eligibility.qnt",
+        "--backend=typescript",
+        "--witnesses",
+        "eligibleModalReached",
+        "nestedModalReached",
+        "blockedModalRefused",
+        "noFocusModalRefused",
+        "unrelatedDraftPreserved",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=79802"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "safety",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/modal-eligibility.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=79803"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "witnessCounts": {
+    "eligibleModalReached": 13,
+    "nestedModalReached": 17,
+    "blockedModalRefused": 709,
+    "noFocusModalRefused": 698,
+    "unrelatedDraftPreserved": 320
+  }
+}

@@ -1,0 +1,15 @@
+eligible singleton root: pass
+no-focus singleton refuses: FAIL
+input-blocked singleton refuses: FAIL
+eligible modal: pass
+blocked modal never falls back to parent: FAIL
+no-focus modal refuses: FAIL
+eligible deepest modal: pass
+blocked deepest never falls back to ancestor: FAIL
+no-focus deepest refuses: FAIL
+blocked sibling does not erase ambiguity: FAIL
+retired modal releases parent: pass
+restore resolves minimized modal: pass
+unrelated eligible root ignores foreign modal: pass
+cyclic ancestry refuses: pass
+checks=14, failures=7

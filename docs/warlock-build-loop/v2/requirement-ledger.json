@@ -3364,14 +3364,41 @@
       "owner": "Native authority lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "ren-018",
           "oracle": "native policy focuses the intended eligible recipient without closing drafts",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/modal-recipient-eligibility/manifest.json",
+              "sha256": "004e896c1ed8fa24a38cd9316b2032808fa2b5f4d51f7541df4d7672bb502402",
+              "scope": "Shared native selector resolves mapped modal topology before leaf eligibility, refusing blocked/no-focus or ambiguous leaves without ancestor fallback. Actual unrelated GTK click/key preserves the modal incarnation, geometry and unsaved typed draft; painted native no-focus modal excludes click/key to the eligible peer. Original modal/MAX and unchanged fullscreen journeys pass normal owned exits. Additional original taskbar Escape keyboard-return test fails and is retained.",
+              "sourceParent": "23935ce5972ebfdfdbac253ac9ce6e81c1d6afb9",
+              "sourceHashes": {
+                "implementation/warlock/native/core/ModalRecipient.hpp": "08602c2401bc8038cbd9f8ceb89c6cb5bb0a52b1c37f9680231e436da38ef200",
+                "implementation/warlock/qa/modal-eligibility.qnt": "564154888afb2be4352277b90e61d71572f237103b508c57e19c9fb8a925eb87",
+                "implementation/warlock/qa/modal-eligibility_test.qnt": "9c1aab2fa3cda3b1ea2c783a851fc1c81e087775c5f950c20c8e86325a43061c",
+                "implementation/warlock/qa/check-modal-eligibility.py": "f8bc819cb618c567fed9fb709d9e1744722bf2d2320d082011dc54178370a3cd",
+                "implementation/warlock/qa/native-modal-draft-focus.py": "4a4a1d43362865e7935d64548b752ed51865b670b3bb685b572a3ec21ec687b0",
+                "implementation/warlock/qa/modal-draft-fixture.py": "54443c331488528e62ae79200a2d3f8406a7065e22f16943e783482239830eb7",
+                "implementation/warlock/qa/check-modal-recipient.cpp": "85dcce93acc1bec5d35af521491afe556b977b3f73619fedb54ef7577074a685",
+                "implementation/warlock/qa/check-modal-recipient.py": "94f2ce5d5f317e5431929a58fbc67a24abe6238b883e1e6007c7df12bd321323",
+                "implementation/warlock/qa/current-scene-core.json": "033b29fc00a7088618eba3ac369412628f85db3721b309091d705e57d13bba44",
+                "implementation/warlock/qa/current-native-pair.json": "c66afec478b401becc1e998895b48049a3cd15fb9c82c543582a00df119745ae",
+                "implementation/warlock/qa/current-search-build.json": "1643fb74299eb9c8b1c2a19ddb606e0f733b01de2277da94701cd79221265205",
+                "implementation/warlock/README.md": "6063baae32cd45fad0389f1905f3f46985e1d28d8755f80ed2ed1d500804726c"
+              },
+              "reviewer": {
+                "observer": "root-modal-eligibility",
+                "status": "partial",
+                "independent": false
+              },
+              "observedUTC": "2026-10-10T08:44:12.343291+00:00"
+            }
+          ],
+          "missingObservation": "Independent original REN-018/ren-018 disposition; full release remains unaccepted; Actual mapped native input-blocked modal/monocle schedules: substitute-object blocked cases are algorithm evidence only; allows_input=false is not an input blocker; Native Qt/Xwayland, nested/ambiguous/cyclic families, workspace changes, actual grab/layer/lock and recipient mutation races, transformed/multiple outputs and AT/IME; Additional unchanged original taskbar campaign fails EscapeRestoresOriginalNativeRecipient: focus identity remains the opener, but no actual GTK key is delivered. Retain and repair keyboard recipient return without extending timing or forcing focus.; Wider original hardware/resource/journey evidence, reproducible package and reversible deployment/rollback"
         }
       ]
     },
@@ -11275,5 +11302,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-10T08:23:02.706371+00:00"
+  "updatedUTC": "2026-10-10T08:44:12.343291+00:00"
 }

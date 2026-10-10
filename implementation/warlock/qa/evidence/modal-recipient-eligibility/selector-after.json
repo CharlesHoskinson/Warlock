@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "scope": "Protected real selector body with native-object substitutes; no ABI/input acceptance.",
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-62dcba0a79dd457cbc779f9a9580ee51.scope",
+    "coreLimit": 1
+  },
+  "nativeAcceptance": false,
+  "inputs": {
+    "native/core/ModalRecipient.hpp": "08602c2401bc8038cbd9f8ceb89c6cb5bb0a52b1c37f9680231e436da38ef200",
+    "qa/check-modal-recipient.cpp": "85dcce93acc1bec5d35af521491afe556b977b3f73619fedb54ef7577074a685"
+  },
+  "commands": [
+    {
+      "name": "compile",
+      "command": [
+        "c++",
+        "-std=c++23",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock/native/core",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/modal-recipient-1791621170869084349/shims",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/check-modal-recipient.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/modal-recipient-1791621170869084349/test"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "behavior",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/modal-recipient-1791621170869084349/test"
+      ],
+      "exitCode": 0
+    }
+  ]
+}

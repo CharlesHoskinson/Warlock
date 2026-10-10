@@ -1,0 +1,745 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: true,
+      familyAttempts: 0,
+      focus: 9,
+      noFocus: false,
+      protected: false,
+      ready: true,
+      refusals: 0,
+      topology: 0,
+      unrelatedClicks: 0,
+      validDecision: true
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: true,
+      familyAttempts: 0,
+      focus: 9,
+      noFocus: false,
+      protected: false,
+      ready: false,
+      refusals: 0,
+      topology: 0,
+      unrelatedClicks: 0,
+      validDecision: true
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: true,
+      familyAttempts: 0,
+      focus: 9,
+      noFocus: false,
+      protected: false,
+      ready: false,
+      refusals: 0,
+      topology: 2,
+      unrelatedClicks: 0,
+      validDecision: true
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: true,
+      familyAttempts: 0,
+      focus: 9,
+      noFocus: true,
+      protected: false,
+      ready: false,
+      refusals: 0,
+      topology: 2,
+      unrelatedClicks: 0,
+      validDecision: true
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: true,
+      familyAttempts: 0,
+      focus: 9,
+      noFocus: true,
+      protected: true,
+      ready: false,
+      refusals: 0,
+      topology: 2,
+      unrelatedClicks: 0,
+      validDecision: true
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: true,
+      familyAttempts: 0,
+      focus: 9,
+      noFocus: false,
+      protected: true,
+      ready: false,
+      refusals: 0,
+      topology: 2,
+      unrelatedClicks: 0,
+      validDecision: true
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: true,
+      familyAttempts: 0,
+      focus: 9,
+      noFocus: false,
+      protected: false,
+      ready: false,
+      refusals: 0,
+      topology: 2,
+      unrelatedClicks: 0,
+      validDecision: true
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: false,
+      familyAttempts: 0,
+      focus: 9,
+      noFocus: false,
+      protected: false,
+      ready: false,
+      refusals: 0,
+      topology: 2,
+      unrelatedClicks: 0,
+      validDecision: true
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: false,
+      familyAttempts: 0,
+      focus: 9,
+      noFocus: false,
+      protected: true,
+      ready: false,
+      refusals: 0,
+      topology: 2,
+      unrelatedClicks: 0,
+      validDecision: true
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: false,
+      familyAttempts: 0,
+      focus: 9,
+      noFocus: false,
+      protected: false,
+      ready: false,
+      refusals: 0,
+      topology: 2,
+      unrelatedClicks: 0,
+      validDecision: true
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: false,
+      familyAttempts: 1,
+      focus: 9,
+      noFocus: false,
+      protected: false,
+      ready: false,
+      refusals: 1,
+      topology: 2,
+      unrelatedClicks: 0,
+      validDecision: true
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: false,
+      familyAttempts: 2,
+      focus: 9,
+      noFocus: false,
+      protected: false,
+      ready: false,
+      refusals: 2,
+      topology: 2,
+      unrelatedClicks: 0,
+      validDecision: true
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: false,
+      familyAttempts: 2,
+      focus: 9,
+      noFocus: false,
+      protected: false,
+      ready: false,
+      refusals: 2,
+      topology: 2,
+      unrelatedClicks: 0,
+      validDecision: true
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: false,
+      familyAttempts: 2,
+      focus: 9,
+      noFocus: false,
+      protected: false,
+      ready: true,
+      refusals: 2,
+      topology: 2,
+      unrelatedClicks: 0,
+      validDecision: true
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: false,
+      familyAttempts: 3,
+      focus: 9,
+      noFocus: false,
+      protected: false,
+      ready: true,
+      refusals: 3,
+      topology: 2,
+      unrelatedClicks: 0,
+      validDecision: true
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: false,
+      familyAttempts: 4,
+      focus: 9,
+      noFocus: false,
+      protected: false,
+      ready: true,
+      refusals: 4,
+      topology: 2,
+      unrelatedClicks: 0,
+      validDecision: true
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: false,
+      familyAttempts: 4,
+      focus: 9,
+      noFocus: false,
+      protected: false,
+      ready: false,
+      refusals: 4,
+      topology: 1,
+      unrelatedClicks: 0,
+      validDecision: true
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: false,
+      familyAttempts: 4,
+      focus: 9,
+      noFocus: false,
+      protected: false,
+      ready: true,
+      refusals: 4,
+      topology: 1,
+      unrelatedClicks: 0,
+      validDecision: true
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: false,
+      familyAttempts: 4,
+      focus: 9,
+      noFocus: true,
+      protected: false,
+      ready: true,
+      refusals: 4,
+      topology: 1,
+      unrelatedClicks: 0,
+      validDecision: true
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: false,
+      familyAttempts: 4,
+      focus: 9,
+      noFocus: true,
+      protected: false,
+      ready: false,
+      refusals: 4,
+      topology: 4,
+      unrelatedClicks: 0,
+      validDecision: true
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: false,
+      familyAttempts: 4,
+      focus: 9,
+      noFocus: true,
+      protected: false,
+      ready: false,
+      refusals: 4,
+      topology: 2,
+      unrelatedClicks: 0,
+      validDecision: true
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: false,
+      familyAttempts: 4,
+      focus: 9,
+      noFocus: true,
+      protected: false,
+      ready: false,
+      refusals: 4,
+      topology: 3,
+      unrelatedClicks: 0,
+      validDecision: true
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: false,
+      familyAttempts: 5,
+      focus: 9,
+      noFocus: true,
+      protected: false,
+      ready: false,
+      refusals: 5,
+      topology: 3,
+      unrelatedClicks: 0,
+      validDecision: true
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: false,
+      familyAttempts: 5,
+      focus: 9,
+      noFocus: true,
+      protected: false,
+      ready: false,
+      refusals: 5,
+      topology: 0,
+      unrelatedClicks: 0,
+      validDecision: true
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: false,
+      familyAttempts: 5,
+      focus: 9,
+      noFocus: true,
+      protected: false,
+      ready: false,
+      refusals: 5,
+      topology: 2,
+      unrelatedClicks: 0,
+      validDecision: true
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: false,
+      familyAttempts: 5,
+      focus: 9,
+      noFocus: true,
+      protected: false,
+      ready: false,
+      refusals: 5,
+      topology: 3,
+      unrelatedClicks: 0,
+      validDecision: true
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: false,
+      familyAttempts: 5,
+      focus: 9,
+      noFocus: false,
+      protected: false,
+      ready: false,
+      refusals: 5,
+      topology: 3,
+      unrelatedClicks: 0,
+      validDecision: true
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: false,
+      familyAttempts: 5,
+      focus: 9,
+      noFocus: false,
+      protected: false,
+      ready: false,
+      refusals: 5,
+      topology: 2,
+      unrelatedClicks: 0,
+      validDecision: true
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: false,
+      familyAttempts: 5,
+      focus: 9,
+      noFocus: false,
+      protected: false,
+      ready: false,
+      refusals: 5,
+      topology: 1,
+      unrelatedClicks: 0,
+      validDecision: true
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: false,
+      familyAttempts: 5,
+      focus: 9,
+      noFocus: false,
+      protected: false,
+      ready: false,
+      refusals: 5,
+      topology: 1,
+      unrelatedClicks: 0,
+      validDecision: true
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: false,
+      familyAttempts: 5,
+      focus: 9,
+      noFocus: false,
+      protected: false,
+      ready: true,
+      refusals: 5,
+      topology: 1,
+      unrelatedClicks: 0,
+      validDecision: true
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: false,
+      familyAttempts: 5,
+      focus: 9,
+      noFocus: false,
+      protected: false,
+      ready: true,
+      refusals: 5,
+      topology: 1,
+      unrelatedClicks: 1,
+      validDecision: true
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: false,
+      familyAttempts: 5,
+      focus: 9,
+      noFocus: false,
+      protected: false,
+      ready: false,
+      refusals: 5,
+      topology: 3,
+      unrelatedClicks: 1,
+      validDecision: true
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: false,
+      familyAttempts: 5,
+      focus: 9,
+      noFocus: false,
+      protected: false,
+      ready: false,
+      refusals: 5,
+      topology: 3,
+      unrelatedClicks: 1,
+      validDecision: true
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: false,
+      familyAttempts: 6,
+      focus: 9,
+      noFocus: false,
+      protected: false,
+      ready: false,
+      refusals: 6,
+      topology: 3,
+      unrelatedClicks: 1,
+      validDecision: true
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: true,
+      familyAttempts: 6,
+      focus: 9,
+      noFocus: false,
+      protected: false,
+      ready: false,
+      refusals: 6,
+      topology: 3,
+      unrelatedClicks: 1,
+      validDecision: true
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: true,
+      familyAttempts: 6,
+      focus: 9,
+      noFocus: false,
+      protected: false,
+      ready: true,
+      refusals: 6,
+      topology: 3,
+      unrelatedClicks: 1,
+      validDecision: true
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: true,
+      familyAttempts: 7,
+      focus: 9,
+      noFocus: false,
+      protected: false,
+      ready: true,
+      refusals: 7,
+      topology: 3,
+      unrelatedClicks: 1,
+      validDecision: true
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: false,
+      familyAttempts: 7,
+      focus: 9,
+      noFocus: false,
+      protected: false,
+      ready: true,
+      refusals: 7,
+      topology: 3,
+      unrelatedClicks: 1,
+      validDecision: true
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: false,
+      familyAttempts: 7,
+      focus: 9,
+      noFocus: false,
+      protected: false,
+      ready: false,
+      refusals: 7,
+      topology: 1,
+      unrelatedClicks: 1,
+      validDecision: true
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      draft: "unsaved modal draft",
+      eligible: false,
+      familyAttempts: 7,
+      focus: 9,
+      noFocus: false,
+      protected: false,
+      ready: false,
+      refusals: 7,
+      topology: 4,
+      unrelatedClicks: 1,
+      validDecision: true
+    }
+}
+
+[ok] No violation found (919ms at 1088 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x137bb --backend=typescript to reproduce.

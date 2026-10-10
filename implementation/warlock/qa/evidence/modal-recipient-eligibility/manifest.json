@@ -1,0 +1,241 @@
+{
+  "schema": 1,
+  "requirements": [
+    "ELM-REN-018"
+  ],
+  "scenarios": [
+    "ren-018"
+  ],
+  "oracle": "native policy focuses the intended eligible recipient without closing drafts",
+  "verification": "Native family tests preserve drafts and distinguish input blockers from allows_input.",
+  "sourceParent": "23935ce5972ebfdfdbac253ac9ce6e81c1d6afb9",
+  "sourceHashes": {
+    "implementation/warlock/native/core/ModalRecipient.hpp": "08602c2401bc8038cbd9f8ceb89c6cb5bb0a52b1c37f9680231e436da38ef200",
+    "implementation/warlock/qa/modal-eligibility.qnt": "564154888afb2be4352277b90e61d71572f237103b508c57e19c9fb8a925eb87",
+    "implementation/warlock/qa/modal-eligibility_test.qnt": "9c1aab2fa3cda3b1ea2c783a851fc1c81e087775c5f950c20c8e86325a43061c",
+    "implementation/warlock/qa/check-modal-eligibility.py": "f8bc819cb618c567fed9fb709d9e1744722bf2d2320d082011dc54178370a3cd",
+    "implementation/warlock/qa/native-modal-draft-focus.py": "4a4a1d43362865e7935d64548b752ed51865b670b3bb685b572a3ec21ec687b0",
+    "implementation/warlock/qa/modal-draft-fixture.py": "54443c331488528e62ae79200a2d3f8406a7065e22f16943e783482239830eb7",
+    "implementation/warlock/qa/check-modal-recipient.cpp": "85dcce93acc1bec5d35af521491afe556b977b3f73619fedb54ef7577074a685",
+    "implementation/warlock/qa/check-modal-recipient.py": "94f2ce5d5f317e5431929a58fbc67a24abe6238b883e1e6007c7df12bd321323",
+    "implementation/warlock/qa/current-scene-core.json": "033b29fc00a7088618eba3ac369412628f85db3721b309091d705e57d13bba44",
+    "implementation/warlock/qa/current-native-pair.json": "c66afec478b401becc1e998895b48049a3cd15fb9c82c543582a00df119745ae",
+    "implementation/warlock/qa/current-search-build.json": "1643fb74299eb9c8b1c2a19ddb606e0f733b01de2277da94701cd79221265205",
+    "implementation/warlock/README.md": "6063baae32cd45fad0389f1905f3f46985e1d28d8755f80ed2ed1d500804726c"
+  },
+  "frozenRequirements": {
+    "path": "docs/elm-roadmap/requirements.json",
+    "sha256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
+    "requirements": 242,
+    "scenarios": 417
+  },
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/scene-core-1791621191426123207/Hyprland",
+      "sha256": "2ffd686ca77107900647cb6f6f017091c87fe084ed9cd339f1c20d7436f818f6"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791621365267378094/elm-window-geometry-authority.so",
+      "sha256": "3d62a13a6c1ab1dd59eae4db2cc626fc69e05e7aa10d1e8ebc1f814cd99d2235"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-max-1791620399653736282/elm-host",
+    "sha256": "302cc8a8421a772c9fa06101bcadadc9652dc37a2bdec138ab0489a3d8c9c2f3",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-max-1791620399653736282/report.json",
+    "heldBuildSHA256": "ccef411a2d870858174b394400e1e934682439d28fd1db22e02aec6337b2b48e"
+  },
+  "nativeRunnerSHA256": "4a4a1d43362865e7935d64548b752ed51865b670b3bb685b572a3ec21ec687b0",
+  "nativeFixtureSHA256": "54443c331488528e62ae79200a2d3f8406a7065e22f16943e783482239830eb7",
+  "nativeFixtureAncestor": {
+    "path": "implementation/warlock-client-provider-native-v204/fixture.py",
+    "sha256": "c6628d141b75bb20cc2fa526d85ef2a14025a28b832ebae57f1d996c76552f06"
+  },
+  "unchangedFullscreenRunnerSHA256": "1bf234a6d68a011a24aeab593537021de2305c0afd32c50faa2e950c20e73fa4",
+  "unchangedTaskbarRunnerSHA256": "a6247750ae49bfef098a5c2840c36d12e5cae4a301144338c58758005e667946",
+  "nativeModalDraftFocusObserved": true,
+  "normalOwnedExitObserved": true,
+  "nativeFullscreenRegressionPassed": true,
+  "nativeTaskbarEscapeRegressionPassed": false,
+  "artifacts": [
+    {
+      "path": "implementation/warlock/qa/evidence/modal-recipient-eligibility/selector-before.json",
+      "sha256": "4bb5c1b6ad1b479bf13ffca5fad9802403e685349c197fc058d43c3c30657706",
+      "original": "implementation/warlock/qa/runs/modal-recipient-1791621107392021400/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/modal-recipient-eligibility/selector-after.json",
+      "sha256": "43386a26acbd8f5d55bd92d00aee7a269a7b01631f39e6d69072b8a288b4465f",
+      "original": "implementation/warlock/qa/runs/modal-recipient-1791621170869084349/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/modal-recipient-eligibility/model-before.json",
+      "sha256": "21cacaa378639598eb39ed6b299e2eb504a356f552c3a28d746b191c29418585",
+      "original": "implementation/warlock/qa/runs/modal-eligibility-1791621127995065901/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/modal-recipient-eligibility/model-after.json",
+      "sha256": "6da8489c67a046df9a3b7b2967be5f250bccd44e1b62ce103b9de228db6f8ba9",
+      "original": "implementation/warlock/qa/runs/modal-eligibility-1791621170869041325/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/modal-recipient-eligibility/core.json",
+      "sha256": "2b3eb5ecd526dc954c9be9d23aca4bfc5616868b2e87727fb7136afc2a3af6f0",
+      "original": "implementation/warlock/qa/runs/scene-core-1791621191426123207/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/modal-recipient-eligibility/native-authority.json",
+      "sha256": "0c0275ce63517ed35d2517a85eaf4a022ec5bdefe2437e26b1000dd82e88bb4f",
+      "original": "implementation/warlock/qa/runs/native-authority-1791621365267378094/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/modal-recipient-eligibility/native-modal-draft.json",
+      "sha256": "0f05431e10210ca2fff4b7ea1e441901151ef795784e4223a7ec4e2914dda803",
+      "original": "implementation/warlock/qa/runs/native-modal-draft-focus-1791621497772637921/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/modal-recipient-eligibility/native-fullscreen-regression.json",
+      "sha256": "9eaa28b1547114d6e48c72651eba02a7864d56c9e5fc36bec5d9bacd8ae076b3",
+      "original": "implementation/warlock/qa/runs/native-fullscreen-pin-1791621535005447777/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/modal-recipient-eligibility/native-taskbar-escape-fail.json",
+      "sha256": "5d0e6190532283198b379e084de13e388ec919b822970501da4c4e48fefbbf92",
+      "original": "implementation/warlock/qa/runs/native-taskbar-focus-1791621568922331364/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/modal-recipient-eligibility/IncludedPoint.png",
+      "sha256": "ac69ba5020f5f874b904200287de4a2992ae011e71ddef6ac4a257ec9f73afa0",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791621497772757874/IncludedPoint.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/modal-recipient-eligibility/ExcludedPoint.png",
+      "sha256": "9c6fa6f714e3e46f6655fb0db7a99d151e180e21735365ab8b5dde4420d0a777",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791621497772757874/ExcludedPoint.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/modal-recipient-eligibility/ModalParentPointBefore.png",
+      "sha256": "61600135af671d82c447879388f1be514dd87304c448245627fb0843ce76b04a",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791621497772757874/ModalParentPointBefore.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/modal-recipient-eligibility/ModalRecipientAfter.png",
+      "sha256": "6541cd78fc6ed145aac9a16295535ff8a614ff079c4a615f02efe25146fe8e1e",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791621497772757874/ModalRecipientAfter.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/modal-recipient-eligibility/UnrelatedEligibleWindowWithDraftModal.png",
+      "sha256": "ef72087264379bb3ac0511a191d2d8d04519716f4ed1ba68320b090d702fda96",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791621497772757874/UnrelatedEligibleWindowWithDraftModal.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/modal-recipient-eligibility/NoFocusModalPaint.png",
+      "sha256": "1d1e5464dbaaa8a72793b6667e828d1d76c1af4c6fa949b56d7f2861d96d03a6",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791621497772757874/NoFocusModalPaint.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/modal-recipient-eligibility/RetiredModalParentEligibleAgain.png",
+      "sha256": "97d84b87f1175a123460856d2b911a980b3ff0d981854b1e1973b1c91124151c",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791621497772757874/RetiredModalParentEligibleAgain.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/modal-recipient-eligibility/selector-before.stdout",
+      "sha256": "a3f4d372818317456fa82967fb9ae8e5b6b9cd95da45d118b0e6cc8d2a112c8d",
+      "original": "implementation/warlock/qa/runs/modal-recipient-1791621107392021400/behavior.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/modal-recipient-eligibility/selector-after.stdout",
+      "sha256": "dac85ad0d977365d43e0bcddc21d5ce23f172dc3832b459af3170b7d504ebf34",
+      "original": "implementation/warlock/qa/runs/modal-recipient-1791621170869084349/behavior.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/modal-recipient-eligibility/named.stdout",
+      "sha256": "66bbbc628f4d5e4825a3b85941a65d071ccc74dc31035ff681028e1e20b6f56f",
+      "original": "implementation/warlock/qa/runs/modal-eligibility-1791621170869041325/named.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/modal-recipient-eligibility/witnesses.stdout",
+      "sha256": "2b90989f227edd034b3fbf8809f24486829d25a797bedc0bcc363e6d9827d326",
+      "original": "implementation/warlock/qa/runs/modal-eligibility-1791621170869041325/witnesses.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/modal-recipient-eligibility/safety.stdout",
+      "sha256": "e301286b44450a653479008d9ea8ca9b19947d49b50a58b06bbd21396b5435de",
+      "original": "implementation/warlock/qa/runs/modal-eligibility-1791621170869041325/safety.stdout"
+    }
+  ],
+  "compressedLogs": [
+    {
+      "path": "implementation/warlock/qa/evidence/modal-recipient-eligibility/native-modal-draft-warlock.log.gz",
+      "sha256": "d9520c4a4b01be1a8288229ae1d87b87c0ec532dc08b7f95eb4575a5bf720c90",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791621497772757874/warlock.log",
+      "originalSHA256": "1c96af46af54515b96ce9b85ebe7084e4c29481bc5101a81facc49dd39162eb2"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/modal-recipient-eligibility/native-fullscreen-regression-warlock.log.gz",
+      "sha256": "e3a9006937edc9493d315adfa418094284ed70201b993cbe48367bbc47f7ab55",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791621535005542131/warlock.log",
+      "originalSHA256": "cfc3076b9269a5724dd7cce12c7cfdd280fa352c4c250b30034601b0a1a6f144"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/modal-recipient-eligibility/native-taskbar-escape-fail-warlock.log.gz",
+      "sha256": "89c00ed6b4045de7aab962b6648206baa7379e424740669316097ffeea74c902",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791621568922451236/warlock.log",
+      "originalSHA256": "21f4768de1a82333e6adc5ff6d5a0cd31f6386e2ef95fe7310640883d58bdc82"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/modal-recipient-eligibility/native-draft-fixture-fail-1-warlock.log.gz",
+      "sha256": "01d941a179d01a905a44b43d3c82e662f87eebbebbbe82377cea53682264da4a",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791621390580752214/warlock.log",
+      "originalSHA256": "caf92f52fba4382104b86ffdf7d5d3aa4cf2d23f768f82a43bb37387f90c3398"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/modal-recipient-eligibility/native-draft-fixture-fail-2-warlock.log.gz",
+      "sha256": "b078848cf078c7c85687bf2ab90bde47416200f9018f973b1af1d5cf97db50a0",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791621453530626276/warlock.log",
+      "originalSHA256": "a365b8d5bd035a2916d1e05922ed9fdceaadbd3bd8375b80a4eb133236bc9dc0"
+    }
+  ],
+  "compressedNativeFixtureFailures": [
+    {
+      "path": "implementation/warlock/qa/evidence/modal-recipient-eligibility/native-draft-fixture-fail-1.json.gz",
+      "sha256": "82b69ba34e84b4e50089356620bdcf1d2ac104f0f1b0a7fa6a13f9310e22999f",
+      "original": "implementation/warlock/qa/runs/native-modal-draft-focus-1791621390580653756/report.json",
+      "originalSHA256": "f522c799f9088ecc2a2d1169fe241993be8cdfb60247257b9393d8e5cb0c80e5"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/modal-recipient-eligibility/native-draft-fixture-fail-2.json.gz",
+      "sha256": "8df50f0ab12d93222e3dadd1c0893610be83019939540b71d4238afbec2c9021",
+      "original": "implementation/warlock/qa/runs/native-modal-draft-focus-1791621453530509049/report.json",
+      "originalSHA256": "b629aede2fbbf280293704dbcbab74ab60d2da4ce507128c2c98a06e9b762423"
+    }
+  ],
+  "retainedModelSyntaxFailures": [
+    {
+      "path": "implementation/warlock/qa/runs/modal-eligibility-1791621107390782680/report.json",
+      "sha256": "84362d7d9da734512bafd11ca4467f143ff179d2e0c88ba41bb7428858b10d91"
+    },
+    {
+      "path": "implementation/warlock/qa/runs/modal-eligibility-1791621118834509451/report.json",
+      "sha256": "983aa0ae7e485af571c90990e1ab0740cdf7a397b5f54a8cfb6074230110a2e3"
+    }
+  ],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "disposition": {
+    "observer": "root-modal-eligibility",
+    "status": "partial",
+    "independent": false
+  },
+  "missingObservations": [
+    "Independent original REN-018/ren-018 disposition; full release remains unaccepted",
+    "Actual mapped native input-blocked modal/monocle schedules: substitute-object blocked cases are algorithm evidence only; allows_input=false is not an input blocker",
+    "Native Qt/Xwayland, nested/ambiguous/cyclic families, workspace changes, actual grab/layer/lock and recipient mutation races, transformed/multiple outputs and AT/IME",
+    "Additional unchanged original taskbar campaign fails EscapeRestoresOriginalNativeRecipient: focus identity remains the opener, but no actual GTK key is delivered. Retain and repair keyboard recipient return without extending timing or forcing focus.",
+    "Wider original hardware/resource/journey evidence, reproducible package and reversible deployment/rollback"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "passed": false,
+  "scope": "Protected real selector body with native-object substitutes; no ABI/input acceptance.",
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-fc5327d6a5bd4f9b8ddfa31f9184ef4a.scope",
+    "coreLimit": 1
+  },
+  "nativeAcceptance": false,
+  "inputs": {
+    "native/core/ModalRecipient.hpp": "212cc06e1b7eb1a2d40eb8b06b7caaaf4a1a69f36501a1f73686372548c12411",
+    "qa/check-modal-recipient.cpp": "85dcce93acc1bec5d35af521491afe556b977b3f73619fedb54ef7577074a685"
+  },
+  "commands": [
+    {
+      "name": "compile",
+      "command": [
+        "c++",
+        "-std=c++23",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock/native/core",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/modal-recipient-1791621107392021400/shims",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/check-modal-recipient.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/modal-recipient-1791621107392021400/test"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "behavior",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/modal-recipient-1791621107392021400/test"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "error": "RuntimeError('eligible singleton root: pass\\nno-focus singleton refuses: FAIL\\ninput-blocked singleton refuses: FAIL\\neligible modal: pass\\nblocked modal never falls back to parent: FAIL\\nno-focus modal refuses: FAIL\\neligible deepest modal: pass\\nblocked deepest never falls back to ancestor: FAIL\\nno-focus deepest refuses: FAIL\\nblocked sibling does not erase ambiguity: FAIL\\nretired modal releases parent: pass\\nrestore resolves minimized modal: pass\\nunrelated eligible root ignores foreign modal: pass\\ncyclic ancestry refuses: pass\\nchecks=14, failures=7\\n')"
+}

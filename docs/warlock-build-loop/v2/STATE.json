@@ -1,13 +1,70 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T08:23:02.706371+00:00",
+  "updatedUTC": "2026-10-10T08:44:12.343291+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
+    "id": "modal-recipient-eligibility",
+    "requirements": [
+      "ELM-REN-018"
+    ],
+    "scenarios": [
+      "ren-018"
+    ],
+    "paths": [
+      "implementation/warlock/native/core/ModalRecipient.hpp",
+      "implementation/warlock/qa/modal-eligibility.qnt",
+      "implementation/warlock/qa/modal-eligibility_test.qnt",
+      "implementation/warlock/qa/check-modal-eligibility.py",
+      "implementation/warlock/qa/native-modal-draft-focus.py",
+      "implementation/warlock/qa/modal-draft-fixture.py",
+      "implementation/warlock/qa/check-modal-recipient.cpp",
+      "implementation/warlock/qa/check-modal-recipient.py",
+      "implementation/warlock/qa/current-scene-core.json",
+      "implementation/warlock/qa/current-native-pair.json",
+      "implementation/warlock/qa/current-search-build.json",
+      "implementation/warlock/README.md"
+    ],
+    "before": "Shared native modal selection removes input-blocked descendants before topology resolution, potentially selecting an ancestor while its mapped modal constraint remains. Current draft/unrelated/native no-focus observations are missing.",
+    "after": "Resolve current mapped modal constraints before evaluating the unique deepest recipient; blocked/no-focus or ambiguous leaves refuse without ancestor fallback. Preserve independent eligible-window focus and actual draft text.",
+    "verification": [
+      "quint-llm-kit linked graph/eligibility/draft model with named cases and reachable witnesses; actual owning-header selector replay, exact three-TU core relink and matched plugin rebuild; original modal/MAX journey plus unrelated real GTK hit/key/draft preservation and native no-focus refusal; unchanged fullscreen regression, original deadlines and custody."
+    ],
+    "status": "implemented-partial",
+    "participantRecord": ".warlock-contributor/modal-eligibility.json",
+    "evidence": {
+      "path": "implementation/warlock/qa/evidence/modal-recipient-eligibility/manifest.json",
+      "sha256": "004e896c1ed8fa24a38cd9316b2032808fa2b5f4d51f7541df4d7672bb502402"
+    },
+    "observed": "Shared native selector resolves mapped modal topology before leaf eligibility, refusing blocked/no-focus or ambiguous leaves without ancestor fallback. Actual unrelated GTK click/key preserves the modal incarnation, geometry and unsaved typed draft; painted native no-focus modal excludes click/key to the eligible peer. Original modal/MAX and unchanged fullscreen journeys pass normal owned exits. Additional original taskbar Escape keyboard-return test fails and is retained.",
+    "missingObservations": [
+      "Independent original REN-018/ren-018 disposition; full release remains unaccepted",
+      "Actual mapped native input-blocked modal/monocle schedules: substitute-object blocked cases are algorithm evidence only; allows_input=false is not an input blocker",
+      "Native Qt/Xwayland, nested/ambiguous/cyclic families, workspace changes, actual grab/layer/lock and recipient mutation races, transformed/multiple outputs and AT/IME",
+      "Additional unchanged original taskbar campaign fails EscapeRestoresOriginalNativeRecipient: focus identity remains the opener, but no actual GTK key is delivered. Retain and repair keyboard recipient return without extending timing or forcing focus.",
+      "Wider original hardware/resource/journey evidence, reproducible package and reversible deployment/rollback"
+    ],
+    "nextSourceWork": "Repair the observed original ELM-UI-011/ELM-UX-024 shell dismissal keyboard-recipient path: preserve the identity-bound application opener for pointer entry and the documented bar/parent opener for keyboard entry, with actual native key delivery before claiming return. Re-run the unchanged original taskbar Escape test and keyboard bar-return regression under original timing; do not force focus or weaken the oracle. Then resume remaining native drag/resize, genuine blocker and full GUI/AT/IME/hardware/resource/package/rollback scope."
+  },
+  "nextSlices": [
+    "taskbar activation/minimize/restore and popup focus journeys",
+    "persistent catalog pins",
+    "launcher search and refusal recovery",
+    "switcher/Task View/workspaces and snap/output journeys",
+    "authorized visible previews and fallback",
+    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
+    "original native, AT/IME, hardware/resource/journey gates",
+    "reproducible package, reversible deployment/rollback"
+  ],
+  "releaseAccepted": false,
+  "oldTrackerIsCurrent": false,
+  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
+  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
+  "previousSlice": {
     "id": "fullscreen-pin-menu-exit",
     "requirements": [
       "ELM-REN-017"
@@ -61,57 +118,6 @@
       "Wider original hardware/resource/journey evidence, reproducible package and reversible deployment/rollback"
     ],
     "nextSourceWork": "Original ELM-REN-018/ren-018 modal family recipient policy: inspect current click/focus routing and implement demonstrated gaps for unrelated eligible-window activation while a draft modal remains open, including real no-focus/input blockers. Preserve full GUI scope and later fullscreen/AT/IME/hardware/resource/package/rollback gates."
-  },
-  "nextSlices": [
-    "taskbar activation/minimize/restore and popup focus journeys",
-    "persistent catalog pins",
-    "launcher search and refusal recovery",
-    "switcher/Task View/workspaces and snap/output journeys",
-    "authorized visible previews and fallback",
-    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
-    "original native, AT/IME, hardware/resource/journey gates",
-    "reproducible package, reversible deployment/rollback"
-  ],
-  "releaseAccepted": false,
-  "oldTrackerIsCurrent": false,
-  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
-  "previousSlice": {
-    "id": "picker-preoffer-retirement",
-    "requirements": [
-      "ELM-DEL-021",
-      "ELM-QA-011"
-    ],
-    "scenarios": [
-      "delivery-021",
-      "qa-011"
-    ],
-    "paths": [
-      "implementation/warlock/native/family_producer.hpp",
-      "implementation/warlock/qa/preoffer-retirement.qnt",
-      "implementation/warlock/qa/preoffer-retirement_test.qnt",
-      "implementation/warlock/qa/check-preoffer-retirement.py",
-      "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/README.md"
-    ],
-    "before": "A family source changes after physical capture but before offer; an exception destroys its mapping while leaving the native export/reservation and shutdown custody outstanding.",
-    "after": "Retain unoffered mapping ownership and retire its actual descriptor, export and producer before publishing a terminal refusal; an exact frontend ACK retires the journal and strict shutdown succeeds.",
-    "verification": [
-      "quint-llm-kit new pre-offer custody model, named tests and positive/safety sampled runs; original shutdown model unchanged; rebuild owning host objects and run unchanged direct-owner modal journey and no-activation lifecycle regression through protected serialized launcher."
-    ],
-    "status": "implemented-partial",
-    "participantRecord": ".warlock-contributor/capture-retirement.json",
-    "evidence": {
-      "path": "implementation/warlock/qa/evidence/picker-preoffer-retirement/manifest.json",
-      "sha256": "773b1200893ffb7a113c918f2ec23080a30e92d3125e6b69fc3f8941d4bfd37f"
-    },
-    "observed": "Actual unoffered capture mapping/FD/export/native producer retire before retained Refused proof. Exact unchanged direct-owner modal journey and no-activation regression pass normal owned exits and private cleanup; original core/plugin, deadlines and strict close remain unchanged.",
-    "missingObservations": [
-      "Independent original-scenario/release disposition",
-      "Actual held-reader, locked producer and uncertain transport schedules beyond the sampled abstraction",
-      "Wider native scene/transform/fullscreen/AT/IME/hardware/resource and package/rollback gates"
-    ],
-    "nextSourceWork": "Implement original ELM-REN-017/ren-017 true-fullscreen and pinned-surface policy with actual native fullscreen/pin/menu focus/pixels/hit observations. Preserve current MAX behavior, single Elm policy/native effect authority, exact ABI, Unknown/no-replay and real custody. Wider release-wide native/AT/IME/hardware/resource/package/rollback gates remain mandatory."
   },
   "recentSlices": [
     {
@@ -1508,6 +1514,61 @@
         "Wider native scene/transform/fullscreen/AT/IME/hardware/resource and package/rollback gates"
       ],
       "nextSourceWork": "Implement original ELM-REN-017/ren-017 true-fullscreen and pinned-surface policy with actual native fullscreen/pin/menu focus/pixels/hit observations. Preserve current MAX behavior, single Elm policy/native effect authority, exact ABI, Unknown/no-replay and real custody. Wider release-wide native/AT/IME/hardware/resource/package/rollback gates remain mandatory."
+    },
+    {
+      "id": "fullscreen-pin-menu-exit",
+      "requirements": [
+        "ELM-REN-017"
+      ],
+      "scenarios": [
+        "ren-017"
+      ],
+      "paths": [
+        "implementation/warlock/src/Effects.elm",
+        "implementation/warlock/src/GeometryProjection.elm",
+        "implementation/warlock/src/Provider.elm",
+        "implementation/warlock/src/MenuBridge.elm",
+        "implementation/warlock/src/Surface.elm",
+        "implementation/warlock/src/ReceiptRouter.elm",
+        "implementation/warlock/adapter/geometry_endpoint.py",
+        "implementation/warlock/adapter/recovery_journal.py",
+        "implementation/warlock/native/authority.cpp",
+        "implementation/warlock/native/geometry-effects.inc",
+        "implementation/warlock/native/geometry.inc",
+        "implementation/warlock/qa/current-native-pair.json",
+        "implementation/warlock/qa/current-search-build.json",
+        "implementation/warlock/qa/native-fullscreen-pin.py",
+        "implementation/warlock/qa/exit-fullscreen.qnt",
+        "implementation/warlock/qa/exit-fullscreen_test.qnt",
+        "implementation/warlock/qa/check-exit-fullscreen.py",
+        "implementation/warlock/qa/FullscreenExitReplay.elm",
+        "implementation/warlock/qa/check-search.py",
+        "implementation/warlock/README.md",
+        "implementation/warlock/native/shared-host.c",
+        "implementation/warlock/native/host-journal.h",
+        "implementation/warlock/assets/elm.js",
+        "implementation/warlock/assets/bar.js",
+        "implementation/warlock/assets/popup.js"
+      ],
+      "before": "True fullscreen uses native fullscreen/pinned paint and focus exceptions, but the captured window menu has no negotiated ExitFullscreen effect implementation.",
+      "after": "True fullscreen retains its separate native pinned-surface priority and offers a capability-explicit Exit fullscreen menu action through the existing immutable typed effect reducer, exact native barriers/journal and observed native mode transition.",
+      "verification": [
+        "Retain original native pin/MAX journey then actual true-fullscreen+pinned paint/hit/focus/menu matrix and one exact Exit fullscreen action; preserve six-second waits, strict cleanup and ABI. quint-llm-kit model exact capture/negotiation/stale/blocked/Unknown/no-replay cases; compiled actual Elm replay and roots, native authority and owning host build, protected unchanged modal regression."
+      ],
+      "status": "implemented-partial",
+      "participantRecord": ".warlock-contributor/fullscreen.json",
+      "evidence": {
+        "path": "implementation/warlock/qa/evidence/fullscreen-pin-menu/manifest.json",
+        "sha256": "b92791b849166011a0adee56ac4948ef8839421d0e54eb59afff0d4643a279d3"
+      },
+      "observed": "Actual true-fullscreen/pinned pixels, GTK press/release and focus; reachable owned overlay bar; context reads without window effects; one negotiated typed Exit fullscreen Committed outcome restores ordinary target geometry and retains peer pin. Original MAX/pin and unchanged direct-owner modal regression pass normal exits and strict cleanup.",
+      "missingObservations": [
+        "Independent original-scenario disposition; ELM-REN-017/ren-017 and release acceptance remain partial",
+        "Actual fullscreen modal/tiled/Xwayland families, nested/ambiguous input recipients and fullscreen/unpin/allowed-over policy cells outside this two-root Wayland fixture",
+        "Actual session lock/exclusive-layer/seat-grab/drag races, transformed or multiple outputs and native AT/IME",
+        "Wider original hardware/resource/journey evidence, reproducible package and reversible deployment/rollback"
+      ],
+      "nextSourceWork": "Original ELM-REN-018/ren-018 modal family recipient policy: inspect current click/focus routing and implement demonstrated gaps for unrelated eligible-window activation while a draft modal remains open, including real no-focus/input blockers. Preserve full GUI scope and later fullscreen/AT/IME/hardware/resource/package/rollback gates."
     }
   ]
 }

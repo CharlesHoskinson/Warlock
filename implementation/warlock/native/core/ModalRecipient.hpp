@@ -34,7 +34,10 @@ inline std::optional<PHLWINDOW> focusRecipient(const PHLWINDOW& root, bool resto
     std::vector<PHLWINDOW> modals;
     const auto& order = committedOrder ? *committedOrder : Desktop::windowState()->windows();
     for (const auto& window : order) {
-        if (window == root || (!restoring && Desktop::WindowPolicy::isMinimized(window)) || !Desktop::View::validMapped(window) || window->isHidden() || !window->m_workspace || (!window->m_workspace->isVisible() && !(navigating && window->m_workspace==root->m_workspace && window->m_monitor.lock()==root->m_monitor.lock())) || (restoring ? window->isInputBlocked() : !window->acceptsInput()))
+        // A live modal remains a family constraint when its input is blocked
+        // or no_focus is set. Removing it here would erase a deeper recipient
+        // (or sibling ambiguity) and incorrectly fall back to an ancestor.
+        if (window == root || (!restoring && Desktop::WindowPolicy::isMinimized(window)) || !Desktop::View::validMapped(window) || window->isHidden() || !window->m_workspace || (!window->m_workspace->isVisible() && !(navigating && window->m_workspace==root->m_workspace && window->m_monitor.lock()==root->m_monitor.lock())))
             continue;
         const bool waylandModal = window->m_xdgSurface && window->m_xdgSurface->m_toplevel && window->m_xdgSurface->m_toplevel->m_dialog &&
             window->m_xdgSurface->m_toplevel->m_dialog->modal;
@@ -65,7 +68,12 @@ inline std::optional<PHLWINDOW> focusRecipient(const PHLWINDOW& root, bool resto
     }
     if (deepest.size() > 1)
         return std::nullopt;
-    return deepest.empty() ? root : deepest.front();
+    const auto recipient = deepest.empty() ? root : deepest.front();
+    if (!Desktop::View::validMapped(recipient) || recipient->isHidden() || !recipient->m_workspace ||
+        (!recipient->m_workspace->isVisible() && !(navigating && recipient->m_workspace==root->m_workspace && recipient->m_monitor.lock()==root->m_monitor.lock())) ||
+        (restoring ? recipient->isInputBlocked() : !recipient->acceptsInput()) || recipient->m_ruleApplicator->noFocus().valueOrDefault())
+        return std::nullopt;
+    return recipient;
 }
 
 }
