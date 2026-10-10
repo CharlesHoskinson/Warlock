@@ -1,0 +1,5 @@
+# Pinned application usable-area recovery
+
+A pinned floating application previously remained at (-360,30), below the real 400x200 output at (-400,-200). The owning changed-area placement now recovers it at (-360,-32) without unpinning or changing its size108x440/workspace2/draft. Real taskbar Minimize/Restore each submit once; actual client pointer press/release, physical keyboard editing and native painted pixels pass. The unchanged minimized-before-reconfigure and caption/MAX/snap/lifecycle regressions pass the exact tuple with normal cleanup. This advances UI-019 reachable application recovery; independent original acceptance and full release remain open.
+
+[Manifest](manifest.json) retains the original EARS/oracle, source/native tuple, before/after counterexample, failed model import, exact core rebuild, native regressions and image hashes. Compressed reports preserve their complete original bytes. Native fixture pin setup precedes reconfiguration; all input and restoration remain real native actions at original deadlines with normal cleanup. UI-019 is partial and full-release acceptance is false.

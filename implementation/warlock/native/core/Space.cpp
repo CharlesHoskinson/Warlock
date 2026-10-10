@@ -117,7 +117,9 @@ void CSpace::recheckWorkArea() {
         if (!target || !target->floating() || target->type() != TARGET_TYPE_WINDOW)
             continue;
         const auto window = target->window();
-        if (!window || !window->m_isMapped || window->isHidden() || window->m_pinned ||
+        // Pinning preserves workspace visibility; it must not leave an ordinary
+        // floating window unreachable when its owning monitor's area changes.
+        if (!window || !window->m_isMapped || window->isHidden() ||
             window->m_monitor != m_parent->m_monitor || Fullscreen::controller()->isFullscreen(window))
             continue;
         const auto box = target->position();

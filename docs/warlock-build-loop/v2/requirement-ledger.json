@@ -7936,14 +7936,38 @@
                 "independent": false,
                 "disposition": "Owner-observed protected nested native journey; original independent acceptance remains open."
               }
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/pinned-output-area/manifest.json",
+              "sha256": "1a595711f7fe273b0c9d1e490bf30bce775d324d484ec63075bf4dad7e403158",
+              "scope": "A pinned floating application previously remained at (-360,30), below the real 400x200 output at (-400,-200). The owning changed-area placement now recovers it at (-360,-32) without unpinning or changing its size108x440/workspace2/draft. Real taskbar Minimize/Restore each submit once; actual client pointer press/release, physical keyboard editing and native painted pixels pass. The unchanged minimized-before-reconfigure and caption/MAX/snap/lifecycle regressions pass the exact tuple with normal cleanup. This advances UI-019 reachable application recovery; independent original acceptance and full release remain open.",
+              "sourceBaseRevision": "1df095d1e90201758ebd490ede7bc760db1f63ba",
+              "sourceHashes": {
+                "implementation/warlock/native/core/Space.cpp": "1ab63457ec28f02cfefa8a75c4a14af24a73a99578941090e34b61e25fcf2013",
+                "implementation/warlock/qa/native-pinned-output-area.py": "83fe9f6fcf52cab7acf643d5a9a08edaf58bf73f5d6d3b4e5613ef1cf7ba7953",
+                "implementation/warlock/qa/pinned-output-area.qnt": "fb052a8c77dd97a2dd63d54e6043bfb299638bba4a62de5184e50246392c00d7",
+                "implementation/warlock/qa/pinned-output-area_test.qnt": "647b6b169f5e2561725ee5183f4a8e30bdd69510e907821e47e3fe3fb1d2de5f",
+                "implementation/warlock/qa/check-pinned-output-area.py": "e7f47394a050e9f47e6d4c7bc056f0a4f297e05a420ebd4621fa7fd04ed938b2",
+                "implementation/warlock/qa/check-output-placement-core.py": "8d6ca7a030c6ff4a9396df716f15c1659b237a1d2098966062e338e2bdbf5350",
+                "implementation/warlock/qa/current-scene-core.json": "80c1f189c6920bfba9af604ab815550ad1075318cae6018332365fecfb878f9b",
+                "implementation/warlock/qa/current-native-pair.json": "483da544bc0ed7b33e4cb7698befe5e877e86c3e52a62712d9db279a6a205c2e",
+                "implementation/warlock/README.md": "b0286ebadf0b1c3bd29ae39e9639794db36f083eeda9f8f8a3e6e31eea036955",
+                "implementation/warlock/qa/native-window-feedback.py": "604215b8ce072aef00da0b9b8ebadc0cd36656f85e4ab9a7036f596ab579163d",
+                "implementation/warlock/qa/check-native-authority.py": "45a0a7af5ad3bc3a13d4049133a944c384d42b1bb74cbd32c72cc0d5d9d37906"
+              },
+              "reviewerDisposition": {
+                "name": "root-pinned-output-area",
+                "independent": false,
+                "disposition": "Owner-observed native/compiled/sampled results; independent original acceptance remains open."
+              }
             }
           ],
-          "missingObservation": "Independent original UI-019 acceptance and physical hotplug/AT/IME remain open.; Pinned/fullscreen/grouped/modal families, minimized windows across actual output retirement rather than this post-return reconfigure, and wider scale/rotation/multiple-output placement remain unqualified. An oversized window is not fully fitted; original size is preserved.; Concurrent gesture/output changes, preview/capture/effect custody, protected input, Unknown and other asynchronous/native-host ordering or transport failures remain open.; Full original hardware/resource/journey evidence, reproducible package and reversible deployment/rollback remain open.",
-          "observation": "A real taskbar Minimize committed before the returned output changed to 400x200 at (-400,-200). The application remained minimized across reconciliation, then a real taskbar Restore committed exactly once at reachable position (-360,-32), preserving size108x440/workspace2 and its unsaved draft. Actual client pointer press/release, physical keyboard editing and painted pixels pass normal cleanup. Existing production placement already covers this ordinary minimized case; no new production behavior is claimed.",
+          "missingObservation": "Independent original UI-019 acceptance and physical hotplug/AT/IME remain open.; Pin/minimized recovery across actual output retirement, fullscreen/grouped/modal families and wider scale/rotation/multiple-output placement remain unqualified. Oversized windows retain their original size; the first up-to-32 logical pixels are recovered, not the entire client.; Concurrent gestures/output changes, preview/capture/effect custody, protected input, Unknown and other asynchronous/native-host ordering or transport-failure schedules remain open.; Full original hardware/resource/journey evidence, reproducible package and reversible deployment/rollback remain open.",
+          "observation": "A pinned floating application previously remained at (-360,30), below the real 400x200 output at (-400,-200). The owning changed-area placement now recovers it at (-360,-32) without unpinning or changing its size108x440/workspace2/draft. Real taskbar Minimize/Restore each submit once; actual client pointer press/release, physical keyboard editing and native painted pixels pass. The unchanged minimized-before-reconfigure and caption/MAX/snap/lifecycle regressions pass the exact tuple with normal cleanup. This advances UI-019 reachable application recovery; independent original acceptance and full release remain open.",
           "reviewerDisposition": {
-            "name": "root-minimized-output-area",
+            "name": "root-pinned-output-area",
             "independent": false,
-            "disposition": "Owner-observed protected nested native journey; original independent acceptance remains open."
+            "disposition": "Owner-observed native/compiled/sampled results; independent original acceptance remains open."
           }
         }
       ]
@@ -11563,5 +11587,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-10T14:25:08.631623+00:00"
+  "updatedUTC": "2026-10-10T14:32:40.965327+00:00"
 }

@@ -1,0 +1,176 @@
+{
+  "schema": 1,
+  "requirement": "ELM-UI-019",
+  "ears": "WHEN an output disappears, the host SHALL recover shell controls and displaced popup focus on a declared surviving output, preserve workspace identity and reachable application recovery, and reject removed-generation effects until available outputs reconcile.",
+  "scenario": {
+    "name": "outputs-return",
+    "given": "all outputs disappear",
+    "when": "one returns",
+    "then": "controls reconcile on available output without old-generation effects"
+  },
+  "verificationScope": "Frozen threshold/policy plus independently observed named fixtures, native counters or user/AT records as applicable; hashes and failure outcomes retained.",
+  "originalRequirements": {
+    "path": "docs/elm-roadmap/requirements.json",
+    "sha256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b"
+  },
+  "disposition": "partial",
+  "requirementAccepted": false,
+  "fullReleaseAccepted": false,
+  "sourceParent": "1df095d1e90201758ebd490ede7bc760db1f63ba",
+  "sourceHashes": {
+    "implementation/warlock/native/core/Space.cpp": "1ab63457ec28f02cfefa8a75c4a14af24a73a99578941090e34b61e25fcf2013",
+    "implementation/warlock/qa/native-pinned-output-area.py": "83fe9f6fcf52cab7acf643d5a9a08edaf58bf73f5d6d3b4e5613ef1cf7ba7953",
+    "implementation/warlock/qa/pinned-output-area.qnt": "fb052a8c77dd97a2dd63d54e6043bfb299638bba4a62de5184e50246392c00d7",
+    "implementation/warlock/qa/pinned-output-area_test.qnt": "647b6b169f5e2561725ee5183f4a8e30bdd69510e907821e47e3fe3fb1d2de5f",
+    "implementation/warlock/qa/check-pinned-output-area.py": "e7f47394a050e9f47e6d4c7bc056f0a4f297e05a420ebd4621fa7fd04ed938b2",
+    "implementation/warlock/qa/check-output-placement-core.py": "8d6ca7a030c6ff4a9396df716f15c1659b237a1d2098966062e338e2bdbf5350",
+    "implementation/warlock/qa/current-scene-core.json": "80c1f189c6920bfba9af604ab815550ad1075318cae6018332365fecfb878f9b",
+    "implementation/warlock/qa/current-native-pair.json": "483da544bc0ed7b33e4cb7698befe5e877e86c3e52a62712d9db279a6a205c2e",
+    "implementation/warlock/README.md": "b0286ebadf0b1c3bd29ae39e9639794db36f083eeda9f8f8a3e6e31eea036955",
+    "implementation/warlock/qa/native-window-feedback.py": "604215b8ce072aef00da0b9b8ebadc0cd36656f85e4ab9a7036f596ab579163d",
+    "implementation/warlock/qa/check-native-authority.py": "45a0a7af5ad3bc3a13d4049133a944c384d42b1bb74cbd32c72cc0d5d9d37906"
+  },
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791642536392957192/Hyprland",
+      "sha256": "e52718535b27ffb6910113cd9d52a0e8f88af1e18e75ab6999021123393e4b37"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791640237225188593/elm-window-geometry-authority.so",
+      "sha256": "1c95964d7b91640dfc586871c28512e320d4af6aeec3434c3c6b9ec20610ba72"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+      "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791640275755675047/elm-host",
+    "sha256": "806aa4bcd44f0b67b6e58db7d1e41da41f1956692ff14001d5f19a5b005cecf7",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791640275755675047/report.json",
+    "heldBuildSHA256": "dea548c1c537be76e4796d505f6c58ea2af0b26e5cff4917d25011c116ef0d21"
+  },
+  "artifacts": {
+    "native-before": {
+      "path": "implementation/warlock/qa/runs/native-drag-ownership-1791642399427806132/report.json",
+      "sha256": "ee793289269d6347e85bbedc0e0aa40c42163b77c303809cc7e6701282fbac70",
+      "packet": "native-before.json.gz",
+      "packetSHA256": "52fc3a4c09a6a6289c304398bb0e4ad986c97907f85d19905c99aed0d3ef5fe0",
+      "encoding": "gzip",
+      "passed": false
+    },
+    "native-after": {
+      "path": "implementation/warlock/qa/runs/native-drag-ownership-1791642581497455869/report.json",
+      "sha256": "54e805a3e508e0842a9328b3d20316ea068795eb14b02298e980bbcd34965e88",
+      "packet": "native-after.json.gz",
+      "packetSHA256": "1fbdec81fbbe3f586456c712f330491347ee0ee524f3570f9fbd2c64ca472c6f",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "minimized-regression": {
+      "path": "implementation/warlock/qa/runs/native-drag-ownership-1791642614125385769/report.json",
+      "sha256": "76defa0ca738770c8b10c36e0e7a25aaeeca1b89b6a7690c98a70a4ab2aefb1c",
+      "packet": "minimized-regression.json.gz",
+      "packetSHA256": "76d9abef227daebfc200cfc6e76ef59f8a5ac09ab5edd03028a97a1fa01456af",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "caption-regression": {
+      "path": "implementation/warlock/qa/runs/native-caption-restoration-1791642647509459101/report.json",
+      "sha256": "c849184badc5a342deaf87681d69cf457eebd1f6d4b7b38ffef52ade8551a298",
+      "packet": "caption-regression.json.gz",
+      "packetSHA256": "f344301f40746592bba0743149aa7b822b9f5f50329a3c681fb28e3b04af9d8f",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "core-build": {
+      "path": "implementation/warlock/qa/runs/output-placement-core-1791642536392957192/report.json",
+      "sha256": "e5145fbed4b0111af1603e92b0e5703a0dcf0e6a68d32464f6a7fc3cfc01ef51",
+      "packet": "core-build.json.gz",
+      "packetSHA256": "995fe24ac7afd72ebb0654aad59221f9007ec385bd0bd086f3758d5c44adaf31",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "model-init": {
+      "path": "implementation/warlock/qa/runs/pinned-output-area-1791642439648648471/report.json",
+      "sha256": "e994928fd68a5b32e6bab580ba7296df29aa8a7a6e1d828ad7863033525d7280",
+      "packet": "model-init.json.gz",
+      "packetSHA256": "2014c5ae11b961f8a9f5ad2eb08a805d268fd035d3d5b304561641e05ff28b62",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "model-import-failure": {
+      "path": "implementation/warlock/qa/runs/pinned-output-area-1791642492113891619/report.json",
+      "sha256": "9fe0af38413f131a5bb4255b9531cfb6cce0a63ce5e871bb6bc8b8184a3bc472",
+      "packet": "model-import-failure.json.gz",
+      "packetSHA256": "4cb785513401a97e07cbfe30fc9761769f7cf6410cfcff9bc93231b75ed56ca9",
+      "encoding": "gzip",
+      "passed": false
+    },
+    "model-final": {
+      "path": "implementation/warlock/qa/runs/pinned-output-area-1791642540987199450/report.json",
+      "sha256": "1044ffed28a02de7fced52190e3538d753d8d0cf4c88e2f668e61215279e0e87",
+      "packet": "model-final.json.gz",
+      "packetSHA256": "0f6451651ef1d22943b92db6a4eb2e582b55ab8f0dc65271290a2b83d97c6817",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "reachable-helper-model": {
+      "path": "implementation/warlock/qa/runs/reachable-placement-1791642538564618795/report.json",
+      "sha256": "02f89bd5d9f597d60e2328da8e53c863229b0b009f718c0dc817b15012a5953d",
+      "packet": "reachable-helper-model.json.gz",
+      "packetSHA256": "44ea6be38fde33843cdaf595f4978b031224714f28ecee63dfa7ab553d28b4b1",
+      "encoding": "gzip",
+      "passed": true
+    }
+  },
+  "logs": {
+    "named.stdout.gz": {
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pinned-output-area-1791642540987199450/named.stdout",
+      "originalSHA256": "60600c750927222c2a0273c445b72986db4f7e3e72ac1dbc63f6d79031d0b12d",
+      "sha256": "6707ccaeeb697dc85c6c559136f1ab01cf0c9f27aed0f9190632e9291e337187"
+    },
+    "witnesses.stdout.gz": {
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pinned-output-area-1791642540987199450/witnesses.stdout",
+      "originalSHA256": "3a5af1bb6543961ecf761192e2851721f446b6605a966a54aebb419dee606e45",
+      "sha256": "f34cbb6f868cbe66c82cd95bbb9cf0bed8ba10198653c6bbc291c98ddda8928c"
+    },
+    "safety.stdout.gz": {
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pinned-output-area-1791642540987199450/safety.stdout",
+      "originalSHA256": "78c69e6c52aa20cbc1a28d25c76e4ce15fcc32bf5879957693510cdc07351467",
+      "sha256": "3a29a9aad3afb519b433dd2c09552d7d6826b81bd143a2b0db1d024f8c3c3fc5"
+    }
+  },
+  "image": {
+    "path": "pinned-application.png",
+    "sha256": "35f93f69c43ac752fca35a4ea8606899669f78d8eb72cf309f78f4d912e1a1c2"
+  },
+  "observation": "A pinned floating application previously remained at (-360,30), below the real 400x200 output at (-400,-200). The owning changed-area placement now recovers it at (-360,-32) without unpinning or changing its size108x440/workspace2/draft. Real taskbar Minimize/Restore each submit once; actual client pointer press/release, physical keyboard editing and native painted pixels pass. The unchanged minimized-before-reconfigure and caption/MAX/snap/lifecycle regressions pass the exact tuple with normal cleanup. This advances UI-019 reachable application recovery; independent original acceptance and full release remain open.",
+  "missingObservations": [
+    "Independent original UI-019 acceptance and physical hotplug/AT/IME remain open.",
+    "Pin/minimized recovery across actual output retirement, fullscreen/grouped/modal families and wider scale/rotation/multiple-output placement remain unqualified. Oversized windows retain their original size; the first up-to-32 logical pixels are recovered, not the entire client.",
+    "Concurrent gestures/output changes, preview/capture/effect custody, protected input, Unknown and other asynchronous/native-host ordering or transport-failure schedules remain open.",
+    "Full original hardware/resource/journey evidence, reproducible package and reversible deployment/rollback remain open."
+  ],
+  "modelScope": "Single compositor-thread same-monitor usable-area reconfigure with explicit translation/recovery/minimize/restore. Shared unchanged coordinate function; 10 named cases, retained pinned-exclusion counterexample and sampled safety/positive witnesses. No hotplug/transport/AT/liveness claim. An initial missing transitive test import failed and is retained; explicit import was corrected before production implementation.",
+  "sourceBoundary": "Only ordinary mapped non-hidden floating WINDOW targets owned by the workspace monitor and outside true fullscreen participate. Pin state is preserved. Existing hidden/group/fullscreen/other-monitor paths and unchanged-area manual placement remain intact.",
+  "coreBoundary": {
+    "changedSources": [
+      "native/core/Space.cpp"
+    ],
+    "rebuiltArchiveMembers": {
+      "Space.cpp.o": "bc7edd86cc4713a228de7b63b61b0e57c469ecd9414790f252a3b0d7bb77d574"
+    },
+    "unchangedArchiveMembers": 432,
+    "existingPublicHeadersUnchanged": true,
+    "existingObjectLayoutsUnchanged": true,
+    "existingStrongExportsPreserved": true,
+    "unchangedPlugin": "Retained exact plugin/host/Elm/Aquamarine tuple; actual native load/actions qualify the private implementation descendant. No core/plugin installation or main desktop activation."
+  },
+  "nativeFixtureScope": "Original full output/drag/zero-return/draft journey unchanged. Supported native pin dispatch then sets up this pinned fixture before smaller/negative-origin configure; no post-failure focus or placement workaround. Actual taskbar, physical client input and native pixels establish the user journey. No claim that pinning itself is exercised through the GUI here.",
+  "reviewerDisposition": {
+    "name": "root-pinned-output-area",
+    "independent": false,
+    "disposition": "Owner-observed native/compiled/sampled results; independent original acceptance remains open."
+  }
+}

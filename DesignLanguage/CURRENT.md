@@ -129,3 +129,12 @@ UI-019 remains partial. The recovery preserves a reachable input region; it does
 A real taskbar Minimize committed before the returned output changed to 400x200 at (-400,-200). The application remained minimized across reconciliation, then a real taskbar Restore committed exactly once at reachable position (-360,-32), preserving size108x440/workspace2 and its unsaved draft. Actual client pointer press/release, physical keyboard editing and painted pixels pass normal cleanup. Existing production placement already covers this ordinary minimized case; no new production behavior is claimed. See [native restore evidence](../implementation/warlock/qa/evidence/minimized-output-area/README.md).
 
 UI-019 remains partial. Pinned/fullscreen/grouped/modal recovery, actual retirement while minimized, wider transforms, hardware/AT/IME, independent acceptance and release/package/rollback gates remain open. This is qualification of existing behavior, not an additional feature.
+
+
+## Pinned application recovery — October 10
+
+A pinned floating application previously remained at (-360,30), below the real 400x200 output at (-400,-200). The owning changed-area placement now recovers it at (-360,-32) without unpinning or changing its size108x440/workspace2/draft. Real taskbar Minimize/Restore each submit once; actual client pointer press/release, physical keyboard editing and native painted pixels pass. The unchanged minimized-before-reconfigure and caption/MAX/snap/lifecycle regressions pass the exact tuple with normal cleanup. This advances UI-019 reachable application recovery; independent original acceptance and full release remain open. See [pinned usable-area evidence](../implementation/warlock/qa/evidence/pinned-output-area/README.md).
+
+Pinning a native floating window keeps it visible across workspaces. That state now survives the same-monitor usable-area recovery; it does not exclude the window from recovery. This differs from a persistent catalog launcher pin. Recovery preserves size and a reachable input region; fullscreen, hidden/grouped targets, other-monitor transfers and unchanged-area manual placement retain their existing paths. Quint named/positive/sampled checks remain separate from native GUI and hardware/AT acceptance.
+
+UI-019 remains partial. Actual pin/minimized output retirement, wider transforms/fullscreen/group/modal recovery, custody/Unknown/concurrency, hardware/AT/IME, independent acceptance and release/package/rollback gates remain open.

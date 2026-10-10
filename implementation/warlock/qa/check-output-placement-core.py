@@ -1,8 +1,8 @@
-"""Protected two-TU orphan/usable-area workspace placement on the exact current owning core."""
+"""Protected narrow orphan/usable-area placement on the exact current owning core; --area-only rebuilds only Space.cpp."""
 import hashlib,importlib.util,json,pathlib,resource,shlex,shutil,subprocess,sys,time
 sys.path.insert(0,'/home/hoskinson/window-integration-qa')
 from qa_launch import require_qa_scope
-assert not sys.argv[1:]
+assert sys.argv[1:] in ([],['--area-only']);area_only=bool(sys.argv[1:])
 mode='--capture'
 scope=require_qa_scope();assert resource.getrlimit(resource.RLIMIT_CORE)==(1,1)
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1]
@@ -25,12 +25,14 @@ def dependencies(path):
 try:
  assert prior['passed'] and sha(previous)==pointer['reportSHA256'] and sha(prior['binary'])==prior['binarySHA256'] and sha(PRIOR/'libhyprland_lib.a')==prior['archiveSHA256']
  for p,h in {**prior['dependencies'],**prior['linkDependencies']}.items():assert sha(p)==h,p
- units=['src/state/WorkspacePlacementController.cpp','src/layout/space/Space.cpp']
- changed_paths={'native/core/WorkspacePlacementController.cpp','native/core/Space.cpp','native/core/ReachablePlacement.hpp'}
+ units=['src/layout/space/Space.cpp'] if area_only else ['src/state/WorkspacePlacementController.cpp','src/layout/space/Space.cpp']
+ changed_paths={'native/core/Space.cpp'} if area_only else {'native/core/WorkspacePlacementController.cpp','native/core/Space.cpp','native/core/ReachablePlacement.hpp'}
  for p,h in prior['sourceHashes'].items():
   if p not in changed_paths:assert sha(ROOT/p)==h,p
  model=json.loads(run('output-placement-model',['/usr/bin/python3','-B',ROOT/'qa/check-output-placement.py'],REPO));assert model['passed'];r['placementModel']=model
  reachable=json.loads(run('reachable-placement-model',['/usr/bin/python3','-B',ROOT/'qa/check-reachable-placement.py'],REPO));assert reachable['passed'];r['reachableModel']=reachable
+ if area_only:
+  pinned=json.loads(run('pinned-output-area-model',['/usr/bin/python3','-B',ROOT/'qa/check-pinned-output-area.py'],REPO));assert pinned['passed'];r['pinnedModel']=pinned
  tree=OUT/'owning-headers';shutil.copytree(PRIOR/'owning-headers',tree)
  for rel,h in prior['owningHeaders'].items():assert sha(tree/rel)==h
  maximum=json.loads((ROOT/'qa/current-max-core.json').read_text());max_path=REPO/maximum['report'];assert sha(max_path)==maximum['reportSHA256'];max_record=json.loads(max_path.read_text());assert max_record['passed']
