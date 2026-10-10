@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "scope": "Phase/retirement gate and retained reader/journal abstraction; native timing, ordinal/JSON, ABI and cleanup excluded",
+  "nativeAcceptance": false,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-89ec2029e9ad46b9b3ba085f4b61d412.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "shutdown-preview.qnt": "74f4f9dd89e0dafb678f0af78c224164a5016cff8bb7c4f7df5b900371dcc360",
+    "shutdown-preview_test.qnt": "3075f7db5f4afb856f62b8d51dadc0f265539cbe4ce501502523d02e20762087"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-shutdown-1791598062705915870/inputs/qa/shutdown-preview.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-shutdown-1791598062705915870/inputs/qa/shutdown-preview_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=79211"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "witnesses",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-shutdown-1791598062705915870/inputs/qa/shutdown-preview.qnt",
+        "--backend=typescript",
+        "--witnesses",
+        "drainedClosure",
+        "retainedDuringDrain",
+        "terminalAwaitingAck",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79212"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "safety",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-shutdown-1791598062705915870/inputs/qa/shutdown-preview.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79213"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "witnessCounts": {
+    "drainedClosure": 657,
+    "retainedDuringDrain": 787,
+    "terminalAwaitingAck": 843
+  }
+}

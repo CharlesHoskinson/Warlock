@@ -1144,14 +1144,45 @@
       "owner": "Release integration lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "delivery-021",
           "oracle": "closure receipts prove order and normal termination",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/picker-shutdown/manifest.json",
+              "sha256": "470d3ffe1978c33079937a40229aa1f07442e09e747eea9709aa365c60f87ba8",
+              "scope": "Actual protected native pin/MAX journey now passes normal owned client/helper exits, strict picker closure with zero icon assets/readers/bytes, owning plugin unload and private cleanup. Real WebKit entry callback and strict parser/router permit only exact owned ordered cancellation/release/ACK during shutdown; desktop/acquisition effects remain sealed, original 500ms drain and native custody/journal close are unchanged. Separate six named/sampled Quint schedules and 20 host tests are component checks.",
+              "sourceBaseRevision": "c9694691c2748009f11a2783744b9123406d4cd0",
+              "sourceHashes": {
+                "implementation/warlock/native/host.c": "ee9d57df42c8fa60ecc41a23fbeadc4ecae66c99cfcca14252c1b6c91a6d96f4",
+                "implementation/warlock/native/shared-host.c": "5a7ad24fe1f63f4454340566a94a4b60ede133b38eb8c769bc452c1e82b1bde5",
+                "implementation/warlock/native/picker-previews.inc": "8e0799d2a56b08e7bee8c64fe098168ac2f1f4f3ab8a4b53e9e1363fa0cdcca3",
+                "implementation/warlock/native/preview-control.h": "eeb41047554ba5a84f75614a62c1de93e871b3099a12560584150d6c4b6540d8",
+                "implementation/warlock/qa/check-search.py": "0a855325d6ada559b39c5afcd07b5211721582b1823baae67289cb6ca42c8a57",
+                "implementation/warlock/qa/current-search-build.json": "514040585b977b029c8569be9904f8d7865b2978b98385d5e5bd646f41f345ab",
+                "implementation/warlock/qa/shutdown-preview.qnt": "74f4f9dd89e0dafb678f0af78c224164a5016cff8bb7c4f7df5b900371dcc360",
+                "implementation/warlock/qa/shutdown-preview_test.qnt": "3075f7db5f4afb856f62b8d51dadc0f265539cbe4ce501502523d02e20762087",
+                "implementation/warlock/qa/check-shutdown-preview.py": "7b012f9b88528c5d928e8fd823b3f919c2d87f15a9b81a01ffbc47fa76c80c2c",
+                "implementation/warlock/qa/native-pin-max.py": "2f6ffe59073bba00c9d8708925d0d6eab729c9262bdb74a8f5fa2e7fdb80bd94",
+                "implementation/warlock/qa/native-window-feedback.py": "d0c45c673ac47751cef680175a79c251674dc19d444eb7eeb3f35dd23ecbd353",
+                "implementation/warlock/README.md": "a30eeab8205a1c29665e24a2b1e2fba4282e0a4cc0e7a7838e54a1726b3d0934"
+              },
+              "reviewerDisposition": {
+                "name": "root-picker-shutdown",
+                "independent": false,
+                "disposition": "Owner-observed full native pin/MAX journey, exact retirement routing, strict close, normal client/helper termination, plugin unload and private cleanup; independent release acceptance remains open."
+              }
+            }
+          ],
+          "missingObservation": "Independent acceptance and complete release-wide original client/lease/order receipts beyond this concrete native pin/MAX session. Original generic delivery-021 is not accepted from this owner observation.",
+          "reviewerDisposition": {
+            "name": "root-picker-shutdown",
+            "independent": false,
+            "disposition": "Owner-observed full native pin/MAX journey, exact retirement routing, strict close, normal client/helper termination, plugin unload and private cleanup; independent release acceptance remains open."
+          }
         }
       ]
     },
@@ -7545,13 +7576,38 @@
                 "independent": false,
                 "disposition": "Owner-observed functional native pin/MAX/pixel/input success with later shutdown failure and retained keyboard regression; independent acceptance remains open."
               }
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/picker-shutdown/manifest.json",
+              "sha256": "470d3ffe1978c33079937a40229aa1f07442e09e747eea9709aa365c60f87ba8",
+              "scope": "Unchanged native pin/MAX scenario now passes every original functional check plus normal owned client/helper exits, exact strict picker retirement, owning plugin unload and private cleanup. Earlier failed pin and keyboard packets remain immutable.",
+              "sourceBaseRevision": "c9694691c2748009f11a2783744b9123406d4cd0",
+              "sourceHashes": {
+                "implementation/warlock/native/host.c": "ee9d57df42c8fa60ecc41a23fbeadc4ecae66c99cfcca14252c1b6c91a6d96f4",
+                "implementation/warlock/native/shared-host.c": "5a7ad24fe1f63f4454340566a94a4b60ede133b38eb8c769bc452c1e82b1bde5",
+                "implementation/warlock/native/picker-previews.inc": "8e0799d2a56b08e7bee8c64fe098168ac2f1f4f3ab8a4b53e9e1363fa0cdcca3",
+                "implementation/warlock/native/preview-control.h": "eeb41047554ba5a84f75614a62c1de93e871b3099a12560584150d6c4b6540d8",
+                "implementation/warlock/qa/check-search.py": "0a855325d6ada559b39c5afcd07b5211721582b1823baae67289cb6ca42c8a57",
+                "implementation/warlock/qa/current-search-build.json": "514040585b977b029c8569be9904f8d7865b2978b98385d5e5bd646f41f345ab",
+                "implementation/warlock/qa/shutdown-preview.qnt": "74f4f9dd89e0dafb678f0af78c224164a5016cff8bb7c4f7df5b900371dcc360",
+                "implementation/warlock/qa/shutdown-preview_test.qnt": "3075f7db5f4afb856f62b8d51dadc0f265539cbe4ce501502523d02e20762087",
+                "implementation/warlock/qa/check-shutdown-preview.py": "7b012f9b88528c5d928e8fd823b3f919c2d87f15a9b81a01ffbc47fa76c80c2c",
+                "implementation/warlock/qa/native-pin-max.py": "2f6ffe59073bba00c9d8708925d0d6eab729c9262bdb74a8f5fa2e7fdb80bd94",
+                "implementation/warlock/qa/native-window-feedback.py": "d0c45c673ac47751cef680175a79c251674dc19d444eb7eeb3f35dd23ecbd353",
+                "implementation/warlock/README.md": "a30eeab8205a1c29665e24a2b1e2fba4282e0a4cc0e7a7838e54a1726b3d0934"
+              },
+              "reviewerDisposition": {
+                "name": "root-picker-shutdown",
+                "independent": false,
+                "disposition": "Owner-observed full native pin/MAX journey, exact retirement routing, strict close, normal client/helper termination, plugin unload and private cleanup; independent release acceptance remains open."
+              }
             }
           ],
-          "missingObservation": "Native shell exits 1 with Outstanding native picker custody/journal; private cleanup passes but normal client exit/plugin unload acceptance is not established for this pin run. Current combined keyboard regression fails repeated Home at original line 779 after six surfaces; earlier all-nine pass remains evidence only for its preceding tuple. Independent original scenario review, stable checked semantics and applicable AT/resource/release gates remain open.",
+          "missingObservation": "Independent original pin scenario review, stable checked semantics and applicable AT/resource/release gates remain open. Combined keyboard reliability is separate and its preceding native regression still fails repeated Home; this shutdown-only change adds no new keyboard claim.",
           "reviewerDisposition": {
-            "name": "root-pin-max-order",
+            "name": "root-picker-shutdown",
             "independent": false,
-            "disposition": "Owner-observed functional native pin/MAX/pixel/input success with later shutdown failure and retained keyboard regression; independent acceptance remains open."
+            "disposition": "Owner-observed full native pin/MAX journey, exact retirement routing, strict close, normal client/helper termination, plugin unload and private cleanup; independent release acceptance remains open."
           }
         }
       ]
@@ -9729,5 +9785,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-10T01:53:36.833449+00:00"
+  "updatedUTC": "2026-10-10T02:09:46.884605+00:00"
 }

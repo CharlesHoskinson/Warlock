@@ -452,10 +452,11 @@ static void shared_context_forward(OutputView *origin,JsonNode *action,gboolean 
     JsonNode *packet=json_node_new(JSON_NODE_OBJECT);json_node_take_object(packet,object);surface_eval(view,"receiveAction",packet);json_node_unref(packet);
 }
 static void shared_receive_text(WebKitUserContentManager *manager,const char *text) {
-    if (shutting_down || !text || strlen(text)>1048576) return;
+    if (!text || strlen(text)>1048576) return;
     g_autoptr(JsonParser) parser=json_parser_new();if (!strict_json_load(parser,text)) {g_print("view-refused: duplicate-or-malformed-json\n");fflush(stdout);return;}
     JsonNode *root=json_parser_get_root(parser);if (!JSON_NODE_HOLDS_OBJECT(root)) return;
     JsonObject *object=json_node_get_object(root);const char *kind=surface_text(json_object_get_member(object,"kind"),32,FALSE)?json_object_get_string_member(object,"kind"):NULL;
+    if(shutting_down) {preview_route_commands(manager,text,root);return;}
     if(controlled_receive(manager,text,object))return;
     if (preview_route_commands(manager,text,root)) return;
     if(manager==popup_manager && kind && g_str_equal(kind,"preview-image-report")) {
@@ -498,7 +499,9 @@ static void shared_receive_text(WebKitUserContentManager *manager,const char *te
     } else shared_forward(origin,root,FALSE);
 }
 static void shared_receive(WebKitUserContentManager *manager,WebKitJavascriptResult *result,gpointer unused) {
-    (void)unused;if (shutting_down) return;
+    (void)unused;
+    /* Teardown controls must reach the same strict text router. That router
+     * seals other messages and admits only exact owned retirement controls. */
     JSCValue *value=webkit_javascript_result_get_js_value(result);if (!jsc_value_is_string(value)) return;
     g_autofree char *text=jsc_value_to_string(value);shared_receive_text(manager,text);
 }
@@ -745,6 +748,9 @@ static gboolean product_preview_commands(WebKitWebView *target,JsonNode *root) {
     g_autofree char *command=json_to_string(json_array_get_element(json_node_get_array(commands),0),FALSE),*events=NULL;
     GError *error=NULL;
     gboolean ok=warlock_picker_previews_command(product_previews,target,name,command,allowed,lease,&events,&error) && product_events(events,&error);
+    if(shutting_down && qa_exit) {
+        g_print("picker-shutdown-control: identity=%s accepted=%d\n",name,ok);fflush(stdout);
+    }
     if(ok) {
         g_clear_pointer(&events,g_free);
         guint64 subjects[256];guint count=0;
@@ -1399,6 +1405,46 @@ gboolean preview_host_publish_receipts(GError **error) {
 static guint preview_test_calls;
 static WebKitWebView *preview_test_view;
 static gboolean preview_test_handler(WebKitWebView *target,JsonNode *root) {g_assert_true(target==preview_test_view);g_assert_true(JSON_NODE_HOLDS_OBJECT(root));preview_test_calls++;return TRUE;}
+static char *shutdown_test_wire(const char *kind,guint64 ordinal) {
+    return ordinal?g_strdup_printf("{\"kind\":\"preview-commands\",\"previewProtocol\":2,\"controlOrdinal\":\"%" G_GUINT64_FORMAT "\",\"entries\":[{\"identity\":\"family:1\",\"commands\":[{\"kind\":\"%s\"}]}]}",ordinal,kind):
+        g_strdup_printf("{\"kind\":\"preview-commands\",\"previewProtocol\":1,\"entries\":[{\"identity\":\"family:1\",\"commands\":[{\"kind\":\"%s\"}]}]}",kind);
+}
+static void test_shutdown_preview_router(void) {
+    int primary=0,popup=0,foreign=0,target=0;
+    primary_manager=(WebKitUserContentManager*)&primary;popup_manager=(WebKitUserContentManager*)&popup;
+    popup_view=(WebKitWebView*)&target;preview_test_view=popup_view;preview_owner=g_thread_self();
+    preview_controls=(PreviewControl){0};preview_test_calls=0;shutting_down=TRUE;
+    preview_host_set_command_handler(preview_test_handler);
+    g_autofree char *legacy=shutdown_test_wire("acknowledge",0),*legacy_acquire=shutdown_test_wire("acquire",0);
+    shared_receive_text(primary_manager,legacy);shared_receive_text((WebKitUserContentManager*)&foreign,legacy);
+    g_assert_cmpuint(preview_test_calls,==,0);
+    shared_receive_text(popup_manager,legacy);shared_receive_text(popup_manager,legacy_acquire);
+    g_assert_cmpuint(preview_test_calls,==,1);
+    g_autofree char *acquire=shutdown_test_wire("acquire",1),*cancel=shutdown_test_wire("cancel",2),*release=shutdown_test_wire("release",3),*ack=shutdown_test_wire("acknowledge",4);
+    shared_receive_text(popup_manager,acquire);
+    g_assert_cmpuint(preview_test_calls,==,1);g_assert_cmpuint(preview_controls.delivered,==,1);
+    shared_receive_text(popup_manager,ack);g_assert_cmpuint(preview_controls.delivered,==,1);
+    shared_receive_text(popup_manager,cancel);shared_receive_text(popup_manager,cancel);
+    g_assert_cmpuint(preview_test_calls,==,2);g_assert_cmpuint(preview_controls.delivered,==,2);
+    shared_receive_text(popup_manager,release);shared_receive_text(popup_manager,ack);
+    g_assert_cmpuint(preview_test_calls,==,4);g_assert_cmpuint(preview_controls.delivered,==,4);
+    g_autofree char *unknown=shutdown_test_wire("window-effect",5),*next_ack=shutdown_test_wire("acknowledge",6);
+    shared_receive_text(popup_manager,unknown);g_assert_cmpuint(preview_test_calls,==,4);
+    g_assert_cmpuint(preview_controls.delivered,==,5);
+    shared_receive_text(primary_manager,next_ack);shared_receive_text((WebKitUserContentManager*)&foreign,next_ack);
+    shared_receive_text(popup_manager,"{\"kind\":\"preview-commands\",\"previewProtocol\":2,\"previewProtocol\":2,\"controlOrdinal\":\"6\",\"entries\":[]}");
+    g_assert_cmpuint(preview_controls.delivered,==,5);
+    g_autofree char *padding=g_strnfill(4097,' '),*oversized=g_strconcat(next_ack,padding,NULL);
+    shared_receive_text(popup_manager,oversized);g_assert_cmpuint(preview_controls.delivered,==,5);
+    shared_receive_text(primary_manager,"{\"protocolVersion\":3,\"kind\":\"host-ready\"}");
+    shared_receive_text(popup_manager,"{\"protocolVersion\":3,\"kind\":\"window-effect\"}");
+    g_assert_null(backend);g_assert_false(controller_ready);
+    shared_receive_text(popup_manager,next_ack);g_assert_cmpuint(preview_test_calls,==,5);
+    preview_host_set_command_handler(NULL);g_autofree char *late=shutdown_test_wire("acknowledge",7);
+    shared_receive_text(popup_manager,late);g_assert_cmpuint(preview_controls.delivered,==,6);
+    preview_controls=(PreviewControl){0};shutting_down=FALSE;preview_owner=NULL;
+    primary_manager=NULL;popup_manager=NULL;popup_view=NULL;
+}
 static void test_shared_preview_router(void) {
     int primary=0,popup=0,foreign=0,target=0;primary_manager=(WebKitUserContentManager*)&primary;popup_manager=(WebKitUserContentManager*)&popup;popup_view=(WebKitWebView*)&target;preview_test_view=popup_view;output_views=g_ptr_array_new();preview_owner=g_thread_self();
     const char *wire="{\"kind\":\"preview-commands\",\"previewProtocol\":1,\"entries\":[{\"identity\":\"family:1\",\"commands\":[]}]}";
@@ -1474,7 +1520,7 @@ static void test_product_source_retirement(void) {
 }
 int ELM_SHARED_HOST_MAIN(int argc,char **argv) {
     if (argc==2 && g_str_equal(argv[1],"--self-test")) {
-        g_test_init(&argc,&argv,NULL);g_test_add_func("/host/assets",test_assets);g_test_add_func("/host/request-schema",test_requests);g_test_add_func("/host/qa-report-control-bounds",test_bridge_bounds);g_test_add_func("/host/surface-atomic-preflight",test_surface_preflight);g_test_add_func("/host/surface-manager-isolation",test_surface_managers);g_test_add_func("/host/surface-acknowledgements",test_surface_acknowledgements);g_test_add_func("/host/monitor-index-boundaries",test_monitor_index);g_test_add_func("/host/popup-logical-dimensions",test_popup_dimensions);g_test_add_func("/host/popup-retired-event-order-and-bound",test_popup_queue);g_test_add_func("/host/popup-callback-retirement",test_popup_callback_retirement);g_test_add_func("/host/shared-view-capabilities",test_view_capabilities);g_test_add_func("/host/shared-projection-capabilities",test_projection_capabilities);g_test_add_func("/host/shared-foreground-keyboard-handoff",test_foreground_handoff);g_test_add_func("/host/shared-duplicate-fields",test_duplicate_fields);g_test_add_func("/host/shared-preview-router",test_shared_preview_router);g_test_add_func("/host/client-source-target",test_client_target);g_test_add_func("/host/imported-source-targets",test_imported_target);g_test_add_func("/host/imported-acknowledgement-isolation",test_imported_acknowledgement_isolation);g_test_add_func("/host/product-preview-source-retirement",test_product_source_retirement);return g_test_run();
+        g_test_init(&argc,&argv,NULL);g_test_add_func("/host/assets",test_assets);g_test_add_func("/host/request-schema",test_requests);g_test_add_func("/host/qa-report-control-bounds",test_bridge_bounds);g_test_add_func("/host/surface-atomic-preflight",test_surface_preflight);g_test_add_func("/host/surface-manager-isolation",test_surface_managers);g_test_add_func("/host/surface-acknowledgements",test_surface_acknowledgements);g_test_add_func("/host/monitor-index-boundaries",test_monitor_index);g_test_add_func("/host/popup-logical-dimensions",test_popup_dimensions);g_test_add_func("/host/popup-retired-event-order-and-bound",test_popup_queue);g_test_add_func("/host/popup-callback-retirement",test_popup_callback_retirement);g_test_add_func("/host/shared-view-capabilities",test_view_capabilities);g_test_add_func("/host/shared-projection-capabilities",test_projection_capabilities);g_test_add_func("/host/shared-foreground-keyboard-handoff",test_foreground_handoff);g_test_add_func("/host/shared-duplicate-fields",test_duplicate_fields);g_test_add_func("/host/shared-preview-router",test_shared_preview_router);g_test_add_func("/host/shutdown-preview-retirement-routing",test_shutdown_preview_router);g_test_add_func("/host/client-source-target",test_client_target);g_test_add_func("/host/imported-source-targets",test_imported_target);g_test_add_func("/host/imported-acknowledgement-isolation",test_imported_acknowledgement_isolation);g_test_add_func("/host/product-preview-source-retirement",test_product_source_retirement);return g_test_run();
     }
     for (int i=1;i<argc;i++) {
         if (g_str_equal(argv[i],"--assets") && i+1<argc) asset_dir=argv[++i];
@@ -1580,8 +1626,10 @@ int ELM_SHARED_HOST_MAIN(int argc,char **argv) {
         GError *error=NULL;g_autofree char *binding=NULL;
         if(warlock_preview_bootstrap_binding(preview_bootstrap,&binding,&error)) {
             g_autoptr(JsonParser) parser=json_parser_new();
+            if(qa_exit) {g_print("picker-shutdown-binding: %s\n",binding);fflush(stdout);}
             if(strict_json_load(parser,binding))surface_eval(popup_view,"receiveNativePreviewRetirement",json_parser_get_root(parser));
         }
+        if(error)g_printerr("Picker retirement delivery unavailable: %s\n",error->message);
         g_clear_error(&error);
         gint64 drain_until=g_get_monotonic_time()+500000;
         while(!warlock_picker_previews_empty(product_previews) && g_get_monotonic_time()<drain_until) {

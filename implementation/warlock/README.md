@@ -334,7 +334,11 @@ Pin/unpin of a maximized family now completes through the existing typed window
 allocator and menu receipt registry. Post-close observations compare complete
 window records by incarnation, preserving actions through list reordering while
 rejecting changed facts. Native MAX geometry, displayed pin/MAX state, exact
-three intents and visible pixel/GTK pointer recipients pass. The recording
-retains a later picker-custody shutdown failure; a shared keyboard regression
-also fails repeated Home, so reliable focus and resource retirement remain
-open. See [pin/MAX evidence](qa/evidence/pin-max-order/README.md).
+three intents and visible pixel/GTK pointer recipients pass. The initial
+recording retained a picker-custody shutdown failure. Both receiver paths and
+the actual WebKit callback now route only owned retirement controls during
+shutdown; the unchanged native pin/MAX journey also passes normal client exit,
+strict picker closure, plugin unload and private cleanup within the original
+drain bound. Independent release-wide retirement evidence remains open. A
+shared keyboard regression still fails repeated Home. See [pin/MAX evidence](qa/evidence/pin-max-order/README.md)
+and [shutdown evidence](qa/evidence/picker-shutdown/README.md).

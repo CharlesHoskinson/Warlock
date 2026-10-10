@@ -1,0 +1,125 @@
+{
+  "schema": 1,
+  "requirements": [
+    "ELM-DEL-021"
+  ],
+  "scenarios": [
+    "delivery-021"
+  ],
+  "supportingRequirements": [
+    "ELM-UX-016"
+  ],
+  "disposition": "partial",
+  "sourceBaseRevision": "c9694691c2748009f11a2783744b9123406d4cd0",
+  "sourceHashes": {
+    "implementation/warlock/native/host.c": "ee9d57df42c8fa60ecc41a23fbeadc4ecae66c99cfcca14252c1b6c91a6d96f4",
+    "implementation/warlock/native/shared-host.c": "5a7ad24fe1f63f4454340566a94a4b60ede133b38eb8c769bc452c1e82b1bde5",
+    "implementation/warlock/native/picker-previews.inc": "8e0799d2a56b08e7bee8c64fe098168ac2f1f4f3ab8a4b53e9e1363fa0cdcca3",
+    "implementation/warlock/native/preview-control.h": "eeb41047554ba5a84f75614a62c1de93e871b3099a12560584150d6c4b6540d8",
+    "implementation/warlock/qa/check-search.py": "0a855325d6ada559b39c5afcd07b5211721582b1823baae67289cb6ca42c8a57",
+    "implementation/warlock/qa/current-search-build.json": "514040585b977b029c8569be9904f8d7865b2978b98385d5e5bd646f41f345ab",
+    "implementation/warlock/qa/shutdown-preview.qnt": "74f4f9dd89e0dafb678f0af78c224164a5016cff8bb7c4f7df5b900371dcc360",
+    "implementation/warlock/qa/shutdown-preview_test.qnt": "3075f7db5f4afb856f62b8d51dadc0f265539cbe4ce501502523d02e20762087",
+    "implementation/warlock/qa/check-shutdown-preview.py": "7b012f9b88528c5d928e8fd823b3f919c2d87f15a9b81a01ffbc47fa76c80c2c",
+    "implementation/warlock/qa/native-pin-max.py": "2f6ffe59073bba00c9d8708925d0d6eab729c9262bdb74a8f5fa2e7fdb80bd94",
+    "implementation/warlock/qa/native-window-feedback.py": "d0c45c673ac47751cef680175a79c251674dc19d444eb7eeb3f35dd23ecbd353",
+    "implementation/warlock/README.md": "a30eeab8205a1c29665e24a2b1e2fba4282e0a4cc0e7a7838e54a1726b3d0934"
+  },
+  "nativePair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-core-1791495415110842751/Hyprland",
+      "sha256": "81c9ac609c2900f99c1efbe613b83e949aeae3059a5e4403601581fa96191acf"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791596429600393566/elm-window-geometry-authority.so",
+      "sha256": "1f5de87c759902cbbca05dfdbba56090641c994cf3c7276671094248465bcac4"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-shutdown-1791598062705915870/elm-host",
+    "sha256": "77a72e40c82bb18aa30b30d41a4cd5ee6191ecd305b3f1a57c49ed6bc4a0c4ef",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-shutdown-1791598062705915870/report.json",
+    "heldBuildSHA256": "693e049d0fb8be2db838200b66591773e65b1526ff1d69d1213a2000021cd50b"
+  },
+  "files": {
+    "compiled-report.json": {
+      "path": "implementation/warlock/qa/evidence/picker-shutdown/compiled-report.json",
+      "sha256": "693e049d0fb8be2db838200b66591773e65b1526ff1d69d1213a2000021cd50b",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-shutdown-1791598062705915870/report.json"
+    },
+    "native-report.json": {
+      "path": "implementation/warlock/qa/evidence/picker-shutdown/native-report.json",
+      "sha256": "9763b99513adb45ce33b06da55dc368f773ff4b0bbfa96a5de8ccac543068941",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-pin-max-1791598079514268268/report.json"
+    },
+    "model-report.json": {
+      "path": "implementation/warlock/qa/evidence/picker-shutdown/model-report.json",
+      "sha256": "cb24e6ecdc69ce920d0f5d5af0c43a5a18d1147c7220c3e9c2de8672acb54e9a",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-shutdown-1791598062705915870/inputs/qa/runs/shutdown-preview-1791598062792823393/report.json"
+    },
+    "model-named.stdout": {
+      "path": "implementation/warlock/qa/evidence/picker-shutdown/model-named.stdout",
+      "sha256": "e7b3f6b1275da92530a13a31dc16a96a4dc2ad843a60cd58b8b5e628b108bc1c",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-shutdown-1791598062705915870/inputs/qa/runs/shutdown-preview-1791598062792823393/named.stdout"
+    },
+    "model-witnesses.stdout": {
+      "path": "implementation/warlock/qa/evidence/picker-shutdown/model-witnesses.stdout",
+      "sha256": "a3108dc664a2358b0029a4bf9384fabf753d0a4248b2fb25e650e0df19b48780",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-shutdown-1791598062705915870/inputs/qa/runs/shutdown-preview-1791598062792823393/witnesses.stdout"
+    },
+    "model-safety.stdout": {
+      "path": "implementation/warlock/qa/evidence/picker-shutdown/model-safety.stdout",
+      "sha256": "4f67c7cc406ce4aded45a9e62064055f2956a433f1018114f51db0d6c9cf1894",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-shutdown-1791598062705915870/inputs/qa/runs/shutdown-preview-1791598062792823393/safety.stdout"
+    },
+    "host-self-tests.stdout": {
+      "path": "implementation/warlock/qa/evidence/picker-shutdown/host-self-tests.stdout",
+      "sha256": "2fe5329e85111c593419d505677ef89a40c087fc9abc116b4d1a23e46251ed91",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-shutdown-1791598062705915870/host-self-tests.stdout"
+    },
+    "failed-native-routing-report.json": {
+      "path": "implementation/warlock/qa/evidence/picker-shutdown/failed-native-routing-report.json",
+      "sha256": "6cb882b9ef7043351c1bd0f1dfad4c38b1ad55ae47ee83d6513cc13d6d4883b9",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-pin-max-1791597631675561179/report.json"
+    },
+    "failed-native-entrypoint-report.json": {
+      "path": "implementation/warlock/qa/evidence/picker-shutdown/failed-native-entrypoint-report.json",
+      "sha256": "6a75cd6f0f10ab242df9f6203e9946c7c65736573af3e67795ebbcf0e6246c85",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-pin-max-1791597974604475994/report.json"
+    },
+    "native-retirement.log": {
+      "path": "implementation/warlock/qa/evidence/picker-shutdown/native-retirement.log",
+      "sha256": "4a851a34c5a1262aa17520df2341090b7861219a6daa50492f08805c6fc81118",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791598079514361598/warlock.log",
+      "originalSHA256": "76fce6186f8ba5db508d7594dd7b9ab15bc60f5f83b48b87b4e4f87008179c06",
+      "scope": "Selected original lines, without synthesized closure receipts"
+    }
+  },
+  "observed": {
+    "pinMaxNativeJourney": true,
+    "privateCleanup": true,
+    "normalOwnedClients": true,
+    "pluginUnload": true,
+    "emptyPickerIconStores": 2,
+    "nativeStrictCloseUnchanged": true,
+    "drainBoundUS": 500000,
+    "hostReceiverSelfTests": 20,
+    "modelNamedTests": 6,
+    "modelWitnessCounts": {
+      "drainedClosure": 657,
+      "retainedDuringDrain": 787,
+      "terminalAwaitingAck": 843
+    }
+  },
+  "missingObservations": [
+    "Independent acceptance and complete original release-wide client/lease/order receipts beyond this native pin/MAX journey.",
+    "Current keyboard Home regression remains failed on the preceding retained tuple; no new keyboard reliability claim."
+  ],
+  "modelBoundary": "One retained owner/reader/journal phase abstraction. Sampled checks exclude native timing, JSON/ordinal authority, ABI, hardware and resource completeness.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

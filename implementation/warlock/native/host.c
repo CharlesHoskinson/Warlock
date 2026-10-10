@@ -499,6 +499,21 @@ static gboolean bridge_bound(gsize length,const char *kind,gboolean qa) {
 /* Both native entry points share the same popup-only preview router. The
  * installed native provider still validates exact jobs and retained ownership.
  * Recognized malformed/foreign commands never fall through to desktop actions. */
+static gboolean preview_retirement_only(JsonNode *root) {
+    if(!root || !JSON_NODE_HOLDS_OBJECT(root))return FALSE;
+    JsonNode *entries=json_object_get_member(json_node_get_object(root),"entries");
+    if(!entries || !JSON_NODE_HOLDS_ARRAY(entries) || json_array_get_length(json_node_get_array(entries))!=1)return FALSE;
+    JsonNode *entry=json_array_get_element(json_node_get_array(entries),0);
+    if(!entry || !JSON_NODE_HOLDS_OBJECT(entry))return FALSE;
+    JsonNode *commands=json_object_get_member(json_node_get_object(entry),"commands");
+    if(!commands || !JSON_NODE_HOLDS_ARRAY(commands) || json_array_get_length(json_node_get_array(commands))!=1)return FALSE;
+    JsonNode *command=json_array_get_element(json_node_get_array(commands),0);
+    if(!command || !JSON_NODE_HOLDS_OBJECT(command))return FALSE;
+    JsonNode *kind=json_object_get_member(json_node_get_object(command),"kind");
+    if(!surface_text(kind,32,FALSE))return FALSE;
+    const char *name=json_node_get_string(kind);
+    return g_str_equal(name,"cancel") || g_str_equal(name,"release") || g_str_equal(name,"acknowledge");
+}
 static gboolean preview_route_commands(WebKitUserContentManager *manager,const char *text,JsonNode *root) {
     if (!text || !root || !JSON_NODE_HOLDS_OBJECT(root)) return FALSE;
     JsonObject *obj=json_node_get_object(root);JsonNode *kind=json_object_get_member(obj,"kind");
@@ -509,7 +524,7 @@ static gboolean preview_route_commands(WebKitUserContentManager *manager,const c
        json_array_get_length(json_node_get_array(entries))!=1 || !native_preview_handler)return TRUE;
     if(json_node_get_int(version)==1) {
         const char *const fields[]={"previewProtocol","kind","entries"};
-        if(!preview_controls.ordered && surface_fields(obj,fields,3))native_preview_handler(popup_view,root);
+        if(!preview_controls.ordered && surface_fields(obj,fields,3) && (!shutting_down || preview_retirement_only(root)))native_preview_handler(popup_view,root);
     }else if(json_node_get_int(version)==2) {
         const char *const fields[]={"previewProtocol","kind","controlOrdinal","entries"};guint64 ordinal;
         if(!surface_fields(obj,fields,4) || !surface_uint(json_object_get_member(obj,"controlOrdinal"),&ordinal) ||
@@ -517,14 +532,17 @@ static gboolean preview_route_commands(WebKitUserContentManager *manager,const c
         /* Hold this packet until its handler returns. Nested transport
          * delivery cannot replay or overtake it. Effect/ACK success is separate;
          * the aggregate transaction still verifies every original obligation. */
-        preview_control_begin(&preview_controls,ordinal);native_preview_handler(popup_view,root);
+        preview_control_begin(&preview_controls,ordinal);
+        // Delivery order also advances for an acquisition queued before stop.
+        // It receives no native effect or retirement proof; rejecting it must
+        // not strand the following exact release/cancel/ack controls.
+        if(!shutting_down || preview_retirement_only(root))native_preview_handler(popup_view,root);
         preview_control_delivered(&preview_controls,ordinal);
     }
     return TRUE;
 }
 static void receive(WebKitUserContentManager *manager,WebKitJavascriptResult *result,gpointer unused) {
     (void)unused;
-    if (shutting_down) return;
     JSCValue *value=webkit_javascript_result_get_js_value(result);
     if (!jsc_value_is_string(value)) { g_print("bridge-refused: type\n"); return; }
     g_autofree char *text=jsc_value_to_string(value);
@@ -533,6 +551,7 @@ static void receive(WebKitUserContentManager *manager,WebKitJavascriptResult *re
     if (!geometry_parse(parser,text)) { g_print("bridge-refused: malformed\n"); return; }
     JsonNode *root=json_parser_get_root(parser);
     if (preview_route_commands(manager,text,root)) return;
+    if (shutting_down) return;
     if (surface_experiment) {surface_receive(manager,text,root);return;}
     const char *kind=request_kind(root);
     if (!kind) { g_print("bridge-refused: schema\n"); return; }
