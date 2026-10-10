@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-b48c1ee76433490e9922344fc22c7bef.scope",
+    "coreLimit": 1
+  },
+  "initializationOnly": true,
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/picker-storage.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "initialization",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/picker-storage.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1",
+        "--max-steps=1",
+        "--seed=82810"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/picker-storage.qnt": "aaeca335c3c3cfeb0b64eedcd1560d53044d4a5ace05f4c1a8f8eb5140b735ab"
+  },
+  "scope": "Two unique sealed native backings under original slot/byte bounds, descriptor alias without another backing, exact consumer close/export release/producer retirement and no foreign/repeated offer. No native pixels, AT or hardware memory claim.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

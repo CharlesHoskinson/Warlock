@@ -7772,9 +7772,42 @@
                 "independent": false,
                 "disposition": "Owner observed scoped production fix; independent original acceptance remains open."
               }
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/picker-shared-storage/manifest-final.json",
+              "sha256": "1a421747b6a367543bfa5788c2e45209d66206f8f4923abe0b270f5ff979142b",
+              "scope": "Two actual own-family Live images, physical owned Live/Historical pixels, original expiry, current sealed-storage counters under unchanged native budget, exact zero-custody retirement and normal native cleanup; Loading physical captions separately inspected by implementation owner.",
+              "sourceBaseRevision": "9a0395580b97431c2581a29d0dd13e4bfdfa102f",
+              "sourceHashes": {
+                "implementation/warlock/native/preview_png.hpp": "b63627d40daa984ac17305a5f7510a5dcb4cedce94a82f938e9f36aadfcebe0b",
+                "implementation/warlock/native/preview_capture.hpp": "ea0aebf465dcf5656a4b5e8cd5ac240ed0907f20c069c2e6460ce506efb72f6f",
+                "implementation/warlock/native/family_crop_capture.hpp": "d2eb856c41947f34c1e381d169f21460e8d2d47c12ee444503a653ebeedcaa4e",
+                "implementation/warlock/native/capture-probe.inc": "6d9a70f5d3aebbdb4db8b5ca70c807f93f4d7f6ddffdc59bd1598fb39a1dae74",
+                "implementation/warlock/native/authority.cpp": "2293da138a4c0b27e5f848f4db5842b2a2f0fc17c4fdbf33e7d0f5d5787305fa",
+                "implementation/warlock/native/capture-fd-server.inc": "d6cd846a9d14f975ca25154d757fb0a23edd13c01021a9a383784f7706ec6eea",
+                "implementation/warlock/qa/check-native-authority.py": "669914bca8ecdfe6aa4c5be917558ed4d070d9655ac090ce370d653248447198",
+                "implementation/warlock/qa/check-picker-storage.py": "4b7ced924793385585e6a5651a3949699f7edebf39386ce68876cf57d448d748",
+                "implementation/warlock/qa/picker-storage.qnt": "6e70f384caf9a28641afe2ed9e1a3c120956823c3f6877313c41b6d53b9cfe0d",
+                "implementation/warlock/qa/picker-storage_test.qnt": "19e14c912df573d28dff463dad8c1286737c4a5bddfdb6a73eff6d99399cd2da",
+                "implementation/warlock/qa/picker-storage-test.cpp": "1f7072dc1add2805de611b99a5fd33ede6e78b2e3f06d847db3323a874753e42",
+                "implementation/warlock/qa/native-picker-storage.py": "80b677fa22dfeb96981e8c780d8ee9bcd1dc240ddcdee2cc3e225b58aff6039b",
+                "implementation/warlock/qa/current-native-pair.json": "63e9196840e52de55603a258e21a1d596615477ecc74862c6256630fecd621dd",
+                "implementation/warlock/README.md": "a954fcef0bc34e2eb1f1ac79efa244c81895c4d6222fd45bd48a048ff48e5f25",
+                "implementation/warlock/native/capture-resources.hpp": "80dec431033fddf4cfe48a07532251c5b1139053bcfff8b16084c20b070f62e7",
+                "implementation/warlock/qa/native-window-feedback.py": "295ba28cf8d9d297b214bd0d6dba19ac3289d861faa953f9fd94b82937473c64",
+                "implementation/warlock/qa/current-search-build.json": "a5c18d8d53951cccbe75286c1cb5c25d8f2ee6776ed2edc32fb06fc3190c0a56",
+                "implementation/warlock/assets/elm.js": "5056dab9023368ce4e022dc4146eceeb7dd5217d57217242038413919e1485a6",
+                "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+                "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43"
+              },
+              "reviewerDisposition": {
+                "name": "root-picker-storage",
+                "independent": false,
+                "disposition": "partial"
+              }
             }
           ],
-          "missingObservation": "Current native Loading screenshot and original full-state journey observed; actual all-state native AT passive descriptions, general transient paint consistency, broader capacity/fairness and independent acceptance remain open. Earlier full-state failures preserved."
+          "missingObservation": "Two native own-family live previews and exact storage retirement now observed within original budget. Actual all-state native AT passive descriptions and applicable independent original-scenario acceptance remain open. General transient paint consistency, broader three-or-more-family capacity/fairness and qualified hardware memory/resource measurements remain open. Earlier failures and original full-state packets are preserved."
         }
       ]
     },
@@ -11984,5 +12017,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-10T20:50:33.357777+00:00"
+  "updatedUTC": "2026-10-10T21:14:32.685832+00:00"
 }

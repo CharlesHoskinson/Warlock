@@ -38,13 +38,23 @@ preview::fd::Header previewImageReply(pid_t pid,const preview::fd::Query& q,bool
     if(q[ROp]==Get) {
         if(q[RTransfer] || (probe.exported && probe.exported->sent)){out[Status]=6;return out;}
         if(!probe.exported) {
-            // Reserve the page-rounded kernel backing before creating it. The
-            // producer raster reservation and export reservation are separate.
+            // Reserve the page-rounded kernel backing before creating it. Legacy
+            // vector captures keep separate raster/export reservations.
             const uint64_t charge=(probe.image->png().size()+4095)&~uint64_t{4095};
-            auto reserved=captureBudget->reserve(charge);
-            if(!reserved){out[Status]=7;return out;}
-            auto image=preview::fd::seal(probe.image->png());
-            probe.exported=std::make_unique<ExportedImage>(ExportedImage{std::move(image),std::move(*reserved),randomIdentity(),false});
+            if(probe.image->sealedDescriptor()>=0) {
+                // A duplicate descriptor references the producer's immutable
+                // allocation. Original import-outstanding retirement guards
+                // keep its reservation alive until all native custody drains.
+                preview::fd::Owned image(::fcntl(probe.image->sealedDescriptor(),F_DUPFD_CLOEXEC,0));
+                if(!image){out[Status]=7;return out;}
+                probe.exported=std::make_unique<ExportedImage>(ExportedImage{std::move(image),std::nullopt,randomIdentity(),false});
+                g_print("picker-sealed-storage: subject=%lu items=%zu bytes=%lu backingShared=1\n",probe.incarnation,captureBudget->items(),captureBudget->used());fflush(stdout);
+            } else {
+                auto reserved=captureBudget->reserve(charge);
+                if(!reserved){out[Status]=7;return out;}
+                auto image=preview::fd::seal(probe.image->png());
+                probe.exported=std::make_unique<ExportedImage>(ExportedImage{std::move(image),std::move(reserved),randomIdentity(),false});
+            }
         }
     }
     if(!probe.exported || (q[RTransfer] && q[RTransfer]!=probe.exported->transfer)){out[Status]=8;return out;}
@@ -53,7 +63,7 @@ preview::fd::Header previewImageReply(pid_t pid,const preview::fd::Query& q,bool
     const bool present=window && window->m_isMapped;
     const bool live=present && !Desktop::WindowPolicy::isMinimized(window) && g_pHyprRenderer->shouldRenderWindow(window);
     out[Status]=0;out[Lifetime]=lifetime;out[preview::fd::Session]=probe.session;out[Frontend]=probe.frontend;out[Capture]=probe.request;out[Subject]=probe.incarnation;out[Output]=probe.output;
-    out[Completed]=probe.completed;out[Now]=now;out[Width]=probe.image->width;out[Height]=probe.image->height;out[Bytes]=probe.image->png().size();out[Charge]=probe.exported->reservation.bytes();
+    out[Completed]=probe.completed;out[Now]=now;out[Width]=probe.image->width;out[Height]=probe.image->height;out[Bytes]=probe.image->png().size();out[Charge]=probe.exported->reservation?probe.exported->reservation->bytes():((probe.image->png().size()+4095)&~uint64_t{4095});
     out[Transfer]=probe.exported->transfer;out[CRC]=probe.checksum;out[Privacy]=probe.privacy;out[Rendering]=probe.rendering;out[Scene]=probe.scene;out[Content]=probe.content;
     out[Flags]=(probe.backdrop?preview::backdropfd::GeneratedBackdropPlane:probe.styled?preview::stylecropfd::StyleCroppedFamilyPlane:probe.crop?preview::cropfd::CroppedFamilyPlane:probe.family?NativeFamilyPlane:probe.popup?RootPopupPlane:probe.client?IsolatedClientPlane:FullMonitorPlane)|(present?uint64_t{Present}:0ULL)|(live?uint64_t{SourceLive}:0ULL);out[Deadline]=probe.deadline;out[Expires]=probe.completed+5000000000ULL;return out;
 }

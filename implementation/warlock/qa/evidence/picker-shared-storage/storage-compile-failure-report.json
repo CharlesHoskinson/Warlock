@@ -1,0 +1,92 @@
+{
+  "passed": false,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-f2de377d129d406db74eecf4135ab2c6.scope",
+    "coreLimit": 1
+  },
+  "initializationOnly": false,
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/picker-storage.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "tests-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/picker-storage_test.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/picker-storage_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=82811"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "witness-safety",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/picker-storage.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--witnesses",
+        "twoFamiliesWitness",
+        "retainedAfterReleaseWitness",
+        "capacityRefusalWitness",
+        "--max-samples=1000",
+        "--max-steps=25",
+        "--seed=82812"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "storage-compile",
+      "command": [
+        "/usr/bin/g++",
+        "-std=c++20",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-MMD",
+        "-MF",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/picker-storage-1791666078120652031/storage.d",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock/native",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/picker-storage-1791666078120652031/picker-storage-test.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/picker-storage-1791666078120652031/picker-storage-test"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/picker-storage.qnt": "6e70f384caf9a28641afe2ed9e1a3c120956823c3f6877313c41b6d53b9cfe0d",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/picker-storage_test.qnt": "19e14c912df573d28dff463dad8c1286737c4a5bddfdb6a73eff6d99399cd2da",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/picker-storage-test.cpp": "5e14e4d3e14eb2064ad3576b39f83aa27922ef816097a804acb395566b2db3e2"
+  },
+  "scope": "Two unique sealed native backings under original slot/byte bounds, descriptor alias without another backing, exact consumer close/export release/producer retirement and no foreign/repeated offer. No native pixels, AT or hardware memory claim.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "witnesses": {
+    "twoFamiliesWitness": 2,
+    "retainedAfterReleaseWitness": 55,
+    "capacityRefusalWitness": 330
+  },
+  "compilerSHA256": "f04191f6a7b2cd7d9a62e1745872b8a6088791e5af6955488c69c9b2c4668bc9",
+  "error": "AssertionError('In file included from /home/hoskinson/omarchy-windows-parity/implementation/warlock/native/preview_png.hpp:2,\\n                 from /home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/picker-storage-1791666078120652031/picker-storage-test.cpp:1:\\n/home/hoskinson/omarchy-windows-parity/implementation/warlock/native/preview_uri.hpp:3:10: fatal error: gio/gio.h: No such file or directory\\n    3 | #include <gio/gio.h>\\n      |          ^~~~~~~~~~~\\ncompilation terminated.\\n')"
+}

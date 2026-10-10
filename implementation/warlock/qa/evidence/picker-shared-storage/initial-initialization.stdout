@@ -1,0 +1,39 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      exported: Set(),
+      held: Set(),
+      issued: Set(),
+      mapped: Set(),
+      refused: false,
+      reply: 0,
+      retired: Set(),
+      revoked: false,
+      sealed: Set()
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      exported: Set(),
+      held: Set(),
+      issued: Set(),
+      mapped: Set(),
+      refused: false,
+      reply: 0,
+      retired: Set(),
+      revoked: false,
+      sealed: Set()
+    }
+}
+
+[ok] No violation found (5ms at 200 traces/second).
+Trace length statistics: max=2, min=2, average=2.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x1437a --backend=typescript to reproduce.

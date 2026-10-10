@@ -1,0 +1,292 @@
+{
+  "schema": 1,
+  "requirements": [
+    "ELM-UI-016"
+  ],
+  "scenarios": [
+    "preview-states"
+  ],
+  "sourceBaseRevision": "9a0395580b97431c2581a29d0dd13e4bfdfa102f",
+  "sourceHashes": {
+    "implementation/warlock/native/preview_png.hpp": "b63627d40daa984ac17305a5f7510a5dcb4cedce94a82f938e9f36aadfcebe0b",
+    "implementation/warlock/native/preview_capture.hpp": "ea0aebf465dcf5656a4b5e8cd5ac240ed0907f20c069c2e6460ce506efb72f6f",
+    "implementation/warlock/native/family_crop_capture.hpp": "d2eb856c41947f34c1e381d169f21460e8d2d47c12ee444503a653ebeedcaa4e",
+    "implementation/warlock/native/capture-probe.inc": "6d9a70f5d3aebbdb4db8b5ca70c807f93f4d7f6ddffdc59bd1598fb39a1dae74",
+    "implementation/warlock/native/authority.cpp": "2293da138a4c0b27e5f848f4db5842b2a2f0fc17c4fdbf33e7d0f5d5787305fa",
+    "implementation/warlock/native/capture-fd-server.inc": "d6cd846a9d14f975ca25154d757fb0a23edd13c01021a9a383784f7706ec6eea",
+    "implementation/warlock/qa/check-native-authority.py": "669914bca8ecdfe6aa4c5be917558ed4d070d9655ac090ce370d653248447198",
+    "implementation/warlock/qa/check-picker-storage.py": "4b7ced924793385585e6a5651a3949699f7edebf39386ce68876cf57d448d748",
+    "implementation/warlock/qa/picker-storage.qnt": "6e70f384caf9a28641afe2ed9e1a3c120956823c3f6877313c41b6d53b9cfe0d",
+    "implementation/warlock/qa/picker-storage_test.qnt": "19e14c912df573d28dff463dad8c1286737c4a5bddfdb6a73eff6d99399cd2da",
+    "implementation/warlock/qa/picker-storage-test.cpp": "1f7072dc1add2805de611b99a5fd33ede6e78b2e3f06d847db3323a874753e42",
+    "implementation/warlock/qa/native-picker-storage.py": "80b677fa22dfeb96981e8c780d8ee9bcd1dc240ddcdee2cc3e225b58aff6039b",
+    "implementation/warlock/qa/current-native-pair.json": "63e9196840e52de55603a258e21a1d596615477ecc74862c6256630fecd621dd",
+    "implementation/warlock/README.md": "a954fcef0bc34e2eb1f1ac79efa244c81895c4d6222fd45bd48a048ff48e5f25",
+    "implementation/warlock/native/capture-resources.hpp": "80dec431033fddf4cfe48a07532251c5b1139053bcfff8b16084c20b070f62e7",
+    "implementation/warlock/qa/native-window-feedback.py": "295ba28cf8d9d297b214bd0d6dba19ac3289d861faa953f9fd94b82937473c64",
+    "implementation/warlock/qa/current-search-build.json": "a5c18d8d53951cccbe75286c1cb5c25d8f2ee6776ed2edc32fb06fc3190c0a56",
+    "implementation/warlock/assets/elm.js": "5056dab9023368ce4e022dc4146eceeb7dd5217d57217242038413919e1485a6",
+    "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+    "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43"
+  },
+  "scope": "Two actual own-family Live images, physical owned Live/Historical pixels, original expiry, current sealed-storage counters under unchanged native budget, exact zero-custody retirement and normal native cleanup; Loading physical captions separately inspected by implementation owner.",
+  "originalOracle": "each state has matching visual and accessible labels and only authorized pixels",
+  "verificationScope": "Frozen threshold/policy plus independently observed named fixtures, native counters or user/AT records as applicable; hashes and failure outcomes retained.",
+  "missingObservations": [
+    "Actual all-state native AT passive descriptions and applicable independent original-scenario acceptance remain open.",
+    "General transient paint consistency, broader three-or-more-family capacity/fairness and qualified hardware memory/resource measurements remain open."
+  ],
+  "nativeAcceptance": false,
+  "assistiveTechnologyAccepted": false,
+  "fullReleaseAccepted": false,
+  "nativePair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
+      "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791666305509919483/elm-window-geometry-authority.so",
+      "sha256": "c428e1e6e2b2f9e41b3c5218e3dd37fb6551f09bee6b3531876fb3d3c674948a"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+      "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-states-1791666469457479211/elm-host",
+    "sha256": "3c8ae483e00d4096bbf06d848426bbb80b1249a856a03fcbd264372dc6cdf34f",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-states-1791666469457479211/report.json",
+    "heldBuildSHA256": "8a94d2bcaa4d7b9016a62c5ab22f007e8a500111061faf56ee9d7eb4c5ec1bf4"
+  },
+  "quintWorkflow": {
+    "quint-modeling": {
+      "path": "/home/hoskinson/.claude/plugins/cache/quint-llm-kit/quint-llm-kit/1.0.0/skills/quint-modeling/SKILL.md",
+      "sha256": "fe595baac9353a4c8ca572ee91b0d516000a17a83697db6244597597ae69c591"
+    },
+    "quint-execute-spec": {
+      "path": "/home/hoskinson/.claude/plugins/cache/quint-llm-kit/quint-llm-kit/1.0.0/skills/quint-execute-spec/SKILL.md",
+      "sha256": "7bd1dbfddcded796c41bd0019b02f4b47a42e13ffd2d87010448ed86e0f38ab5"
+    }
+  },
+  "modelScope": "Two-slot storage/custody abstraction of whole authenticated jobs; initialization, named tests and sampled positive witnesses/safety before code. No pixels, clocks, driver memory, AT or fairness proof.",
+  "nativeSharedStorage": {
+    "exports": [
+      {
+        "subject": 1,
+        "items": 1,
+        "bytes": 4855048
+      },
+      {
+        "subject": 2,
+        "items": 2,
+        "bytes": 5873427
+      }
+    ],
+    "retirements": [
+      {
+        "subject": 1,
+        "items": 1,
+        "bytes": 1018379
+      },
+      {
+        "subject": 2,
+        "items": 0,
+        "bytes": 0
+      }
+    ],
+    "slotLimit": 2,
+    "byteLimit": 134217728
+  },
+  "reviewerDisposition": {
+    "name": "root-picker-storage",
+    "independent": false,
+    "disposition": "partial"
+  },
+  "artifacts": [
+    {
+      "path": "implementation/warlock/qa/evidence/picker-shared-storage/initial-report.json",
+      "sha256": "b842562e252d9cf17762aed8884d9e93ff6ba1af31b9504774f9a89dd5119e1a",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/picker-storage-1791665786137658607/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/picker-shared-storage/initial-picker-storage.qnt",
+      "sha256": "aaeca335c3c3cfeb0b64eedcd1560d53044d4a5ace05f4c1a8f8eb5140b735ab",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/picker-storage-1791665786137658607/picker-storage.qnt"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/picker-shared-storage/initial-initialization.stdout",
+      "sha256": "390d38f4fb3919a603217c37e7f30ffad2849758a848827b421a8af3d4a1d1ab",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/picker-storage-1791665786137658607/initialization.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/picker-shared-storage/before-code-report.json",
+      "sha256": "040cd8e086991a95185813f23d38e223477ba9e9059734cc6f3df0f5a06b5bca",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/picker-storage-1791665914025629659/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/picker-shared-storage/before-code-named.stdout",
+      "sha256": "22f03a3d422f3d06e3bad1c1c44b6ff7bb068e862892f1fcdcabe5cfc0c2986a",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/picker-storage-1791665914025629659/named.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/picker-shared-storage/before-code-witness-safety.stdout",
+      "sha256": "223e70738625206d30c995b2945b47b5f9b871b28d3f678c02484087c809f860",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/picker-storage-1791665914025629659/witness-safety.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/picker-shared-storage/storage-report.json",
+      "sha256": "e3b4dea458316c613a5937135e4d93a1a1bbf5129aea7425f382626cabcf113b",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/picker-storage-1791666341894754786/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/picker-shared-storage/storage-named.stdout",
+      "sha256": "1180ae77c8ec45ca51c2fc6623fd5fe9acf2d6ec2a678a82652dc638eae0af30",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/picker-storage-1791666341894754786/named.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/picker-shared-storage/storage-witness-safety.stdout",
+      "sha256": "13769b1b1ed38e49a8b3279785b03a24b9dec1e3ff6ced940a9f43d2e265b921",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/picker-storage-1791666341894754786/witness-safety.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/picker-shared-storage/storage-storage-behavior.stdout",
+      "sha256": "1ad167cfdfb163eb2a6075438c46447c1e8e8f9e6fb47fe3bfdd6e756114b842",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/picker-storage-1791666341894754786/storage-behavior.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/picker-shared-storage/storage-storage-compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/picker-storage-1791666341894754786/storage-compile.stderr"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/picker-shared-storage/plugin-report.json",
+      "sha256": "fd3e4e0087d8964590b10ffa1fbcfd46041df704d3d508c0d365f05380968033",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791666305509919483/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/picker-shared-storage/plugin-navigation-authority-compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791666305509919483/navigation-authority-compile.stderr"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/picker-shared-storage/plugin-current-core-exports.stdout",
+      "sha256": "9f9a0a4cdb59352d54e3854d07a12b3c2b0a68ad193b9912a524ef414026b151",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791666305509919483/current-core-exports.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/picker-shared-storage/plugin-plugin-undefined.stdout",
+      "sha256": "c15ff49b7a631bb00c886b270bf97d95ab63fa614d69b179c687e3f110365832",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791666305509919483/plugin-undefined.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/picker-shared-storage/host-report.json",
+      "sha256": "8a94d2bcaa4d7b9016a62c5ab22f007e8a500111061faf56ee9d7eb4c5ec1bf4",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-states-1791666469457479211/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/picker-shared-storage/host-preview-states.json",
+      "sha256": "07cb6c357f24ffa32d02b591e4fe5b722dee24ad304d2bb2384693164ec356ce",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-states-1791666469457479211/preview-states.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/picker-shared-storage/host-typed-preview-states.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-states-1791666469457479211/typed-preview-states.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/picker-shared-storage/baseline-native-report.json",
+      "sha256": "329e607fc5dfae27131b70d3f11de5f931c3c0b425b62f24b9705a1b66837193",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-picker-storage-1791665876877165489/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/picker-shared-storage/decode-race-native-report.json",
+      "sha256": "d58c3eae681c38764dbeda240293c3f250a9b1bd8bcb1e6225992ecc6a414f6b",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-picker-storage-1791666530443717235/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/picker-shared-storage/native-report.json",
+      "sha256": "6a4ad98d24b92b3e8ee7cd2a0b5e4d00ce8b5483e583728a725fd1650f37b335",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-picker-storage-1791666753850553313/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/picker-shared-storage/zero-witness-failure-report.json",
+      "sha256": "34ba3168a474282c203abb6cfa3f165a3add46ab7379bbb09b4199789de119b0",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/picker-storage-1791665842758244298/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/picker-shared-storage/zero-witness-failure-witness-safety.stdout",
+      "sha256": "eeecb68b9a40b84715c0086df44edbde299486e6e760e4d7df702413fde28f48",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/picker-storage-1791665842758244298/witness-safety.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/picker-shared-storage/storage-compile-failure-report.json",
+      "sha256": "157437428493444527158505db1f4607d83aa6e19c458a62c743a569edb1c584",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/picker-storage-1791666078120652031/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/picker-shared-storage/storage-compile-failure-storage-compile.stderr",
+      "sha256": "0bfe036542b45260c9f6e75e0a0eb6da997e24d2719bc8b4637409f9dd49d824",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/picker-storage-1791666078120652031/storage-compile.stderr"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/picker-shared-storage/plugin-compile-failure-report.json",
+      "sha256": "f58aa7c515cc1947ed57e4bb2f24809fda71776e0de36582930cae7b1bf426b0",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791666079296246082/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/picker-shared-storage/plugin-compile-failure-navigation-authority-compile.stderr",
+      "sha256": "018eab5f5af529d3357529e4ad3093ed6f7e42746baf089ef9e49afc846f80ad",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791666079296246082/navigation-authority-compile.stderr"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/picker-shared-storage/native-hyprland.log",
+      "sha256": "bd0c1603cf9be9886423a0db80ae0c35c14215f5d5d52f15125633f97e04b88b",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791666753850656931/hyprland.log"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/picker-shared-storage/native-warlock.log",
+      "sha256": "f37d1791e7d730c72339c1483b172ace64f16d13db16ffe4704bddec575889d2",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791666753850656931/warlock.log"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/picker-shared-storage/native-host-evidence.json",
+      "sha256": "f93d18e752e4a79bc366136059c0645d18d77c57fdba14ac14fcdb01c18b0f8d",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791666753850656931/host-evidence.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/picker-shared-storage/native-Loading-attempt.png",
+      "sha256": "57f2a7743f7726d0de22170b9533ec0a7fad3f6128b7aaae311de0a576cff1f2",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791666753850656931/Loading-attempt.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/picker-shared-storage/native-Live.png",
+      "sha256": "3ed9d200d38b5218a3d4be27dd034a603875666c66d3cb60a81c3e25dfe751b0",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791666753850656931/Live.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/picker-shared-storage/native-Historical.png",
+      "sha256": "a071ba3680a8d7243280d99596a2e22b7d6e702d0b6c59add44c898bc828ed82",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791666753850656931/Historical.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/picker-shared-storage/native-Unavailable.png",
+      "sha256": "fdcb65d3a5a8fe8746605395398b26dee008c9c3f088fa3b229c9936b826bc7a",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791666753850656931/Unavailable.png"
+    }
+  ],
+  "retainedFailuresByReference": [
+    {
+      "path": "implementation/warlock/qa/runs/picker-storage-1791665827146428662/report.json",
+      "sha256": "efc4f5a3b7a532b33b85f7ec96678fab904140d79e54a51284cf22129eaf63f7",
+      "retainedLocally": true,
+      "scope": "Incremental model syntax failure, not a weakened acceptance property."
+    },
+    {
+      "path": "implementation/warlock/qa/runs/picker-storage-1791665835778572644/report.json",
+      "sha256": "bf0694eacaac69bee10b4b3f893c26418062879ff8f8afaa570559bd42d26a7c",
+      "retainedLocally": true,
+      "scope": "Incremental model syntax failure, not a weakened acceptance property."
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "checks": {
+    "actualPickerSnapshot": true,
+    "supportedNativeSource": true,
+    "unsupportedPickerEligibilityRejected": true,
+    "legacyCannotBecomeEligible": true,
+    "oneElmAcquire": true,
+    "loading": true,
+    "liveNeedsFence": true,
+    "currentLive": true,
+    "authorizedHistorical": true,
+    "unavailable": true,
+    "fullFamilyCoverageRequired": true,
+    "foreignIncarnationCannotBorrowPixels": true,
+    "hostRetirementUsesElmRelease": true,
+    "foreignBindingCannotRetire": true,
+    "sameLeaseRetainsCustody": true,
+    "newPublicationHidesOldPixels": true,
+    "nativeRefreshAuthorizesRetainedPixels": true,
+    "newLeaseHidesOldFrame": true
+  },
+  "frame": {
+    "surfaceProtocol": 2,
+    "keyboardParent": true,
+    "motion": "reduced",
+    "appearance": {
+      "theme": "night",
+      "textScale": 100,
+      "effectsOff": false,
+      "reducedTransparency": false
+    },
+    "publication": "4",
+    "lease": "1",
+    "mode": "picker",
+    "status": "Connected",
+    "bar": [
+      {
+        "id": "bar:group:application:documents",
+        "domId": "group:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:1:application:documents",
+        "label": "Document 1",
+        "ariaLabel": "Choose a window from Document 1; 2 windows",
+        "detail": "2 windows",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:applications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:control:opener",
+        "label": "Applications",
+        "ariaLabel": "Open applications",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:overview",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:control:overview-opener",
+        "label": "Task View",
+        "ariaLabel": "Open Task View",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:switcher",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:control:switcher-opener",
+        "label": "Switch windows",
+        "ariaLabel": "Open window switcher",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:notifications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:notifications:opener",
+        "label": "Notifications",
+        "ariaLabel": "Open notifications",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:files",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:files:opener",
+        "label": "Files",
+        "ariaLabel": "Open Files menu",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:system",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:system:opener",
+        "label": "System",
+        "ariaLabel": "Open system menu",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:settings",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:settings:opener",
+        "label": "Settings",
+        "ariaLabel": "Open settings",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      }
+    ],
+    "popup": [
+      {
+        "id": "control:close",
+        "domId": "picker-close:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:1:1",
+        "label": "Close",
+        "ariaLabel": "Close window picker",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "family:1",
+        "domId": "picker:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:1:1:1",
+        "label": "Activate Document 1",
+        "ariaLabel": "Activate Document 1",
+        "detail": "Open",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "family:2",
+        "domId": "picker:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:1:1:2",
+        "label": "Activate Document 2",
+        "ariaLabel": "Activate Document 2",
+        "detail": "Open",
+        "enabled": true,
+        "focusOnly": false
+      }
+    ]
+  },
+  "states": [
+    {
+      "kind": "lifecycle",
+      "state": "loading",
+      "title": "Document 1",
+      "icon": null,
+      "frame": null,
+      "fidelity": null
+    },
+    {
+      "kind": "lifecycle",
+      "state": "live",
+      "title": null,
+      "icon": null,
+      "frame": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "fidelity": "family"
+    },
+    {
+      "kind": "lifecycle",
+      "state": "historical",
+      "title": null,
+      "icon": null,
+      "frame": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "fidelity": "family"
+    },
+    {
+      "kind": "lifecycle",
+      "state": "unavailable",
+      "title": "Document 1",
+      "icon": null,
+      "frame": null,
+      "fidelity": null
+    }
+  ],
+  "emitted": [
+    {
+      "identity": "family:1",
+      "commands": [
+        {
+          "kind": "acquire",
+          "job": {
+            "binding": {
+              "lifetime": "1",
+              "session": "1",
+              "frontend": "1"
+            },
+            "context": {
+              "lifetime": "1",
+              "incarnation": "1",
+              "output": "1",
+              "privacy": "1",
+              "rendering": "1",
+              "scene": "1",
+              "content": "1"
+            },
+            "request": "1",
+            "origin": "1",
+            "clock": "1",
+            "deadline": "1000"
+          }
+        }
+      ]
+    }
+  ]
+}

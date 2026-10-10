@@ -1,5 +1,6 @@
 #pragma once
 #include "preview_uri.hpp"
+#include "preview_fd.hpp"
 #include <algorithm>
 #include <span>
 
@@ -99,14 +100,40 @@ inline std::vector<uint8_t> encodeRgba(std::span<const uint8_t> rgba,uint32_t wi
 }
 class OwnedPng final:public uri::Payload {
     Reservation reservation_;
-    const std::vector<uint8_t> bytes_;
+    std::vector<uint8_t> bytes_;
+    mutable fd::Owned backing_;
+    mutable void* mapping_{MAP_FAILED};
+    size_t encodedBytes_{};
 public:
     const uint32_t width,height;
-    OwnedPng(Reservation&& reservation,std::vector<uint8_t>&& bytes,uint32_t w,uint32_t h):reservation_(std::move(reservation)),bytes_(std::move(bytes)),width(w),height(h) {
+    OwnedPng(Reservation&& reservation,std::vector<uint8_t>&& bytes,uint32_t w,uint32_t h,bool sealedOutput=false):reservation_(std::move(reservation)),bytes_(std::move(bytes)),width(w),height(h) {
         const auto p=plan(w,h);
         if(!p || bytes_.size()!=p->png || bytes_.capacity()>p->png || reservation_.bytes()<p->peak) throw std::invalid_argument("PNG ownership plan");
+        if(sealedOutput) {
+            const uint64_t pages=(p->png+4095)&~uint64_t{4095};
+            // Pixels/framebuffer have already drained. Charge both the old
+            // encoded vector and new backing during this bounded handoff.
+            if(reservation_.bytes()<p->png+pages)throw std::invalid_argument("Sealed handoff exceeds original reservation");
+            backing_=fd::seal(bytes_);
+            encodedBytes_=bytes_.size();
+            mapping_=::mmap(nullptr,encodedBytes_,PROT_READ,MAP_SHARED,backing_.get(),0);
+            if(mapping_==MAP_FAILED)throw std::runtime_error("Sealed producer mapping unavailable");
+            std::vector<uint8_t>{}.swap(bytes_);
+        }
     }
+    ~OwnedPng() override {closeBacking();}
+    bool closeBacking() const noexcept {
+        if(mapping_!=MAP_FAILED) {
+            if(::munmap(mapping_,encodedBytes_))return false;
+            mapping_=MAP_FAILED;
+        }
+        backing_=fd::Owned{};
+        return true;
+    }
+    // Export aliases the exact sealed backing, never a second raster/copy.
+    // Producer reservation remains until actual export release and retirement.
+    int sealedDescriptor() const noexcept {return backing_.get();}
     uint64_t charge() const noexcept override {return reservation_.bytes();}
-    std::span<const uint8_t> png() const noexcept override {return bytes_;}
+    std::span<const uint8_t> png() const noexcept override {return mapping_==MAP_FAILED?std::span<const uint8_t>{bytes_}:std::span<const uint8_t>{static_cast<const uint8_t*>(mapping_),encodedBytes_};}
 };
 }

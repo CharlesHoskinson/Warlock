@@ -80,12 +80,20 @@ try:
   header_prefix=(header_prefix[0],str(scene_report.parent/'owning-headers'));core={'path':scene_record['binary'],'sha256':scene_record['binarySHA256']};assert sha(core['path'])==core['sha256']
  source=OUT/'inputs/native';source.mkdir(parents=True)
  inputs={}
- for name in ('authority.cpp','navigation-modal.hpp','geometry-effects.inc','snap-placement.inc','transfer-workspace.inc','motion-profile.inc','picker-preview.inc','picker-probe-table.hpp','capture-fd-server.inc','geometry.inc','shortcut-bindings.inc','workspace-navigation.inc'):
+ for name in ('authority.cpp','navigation-modal.hpp','geometry-effects.inc','snap-placement.inc','transfer-workspace.inc','motion-profile.inc','picker-preview.inc','picker-probe-table.hpp','capture-fd-server.inc','geometry.inc','shortcut-bindings.inc','workspace-navigation.inc','preview_png.hpp','preview_capture.hpp','family_crop_capture.hpp','capture-probe.inc','capture-resources.hpp'):
   p=ROOT/'native'/name;inputs['native/'+name]=sha(p);shutil.copyfile(p,source/name)
  if scene_record:
   p=ROOT/'native/core/CommittedScene.hpp';inputs['native/core/CommittedScene.hpp']=sha(p);(source/'core').mkdir();shutil.copyfile(p,source/'core/CommittedScene.hpp')
   p=ROOT/'native/core/ModalRecipient.hpp';inputs['native/core/ModalRecipient.hpp']=sha(p);shutil.copyfile(p,source/'core/ModalRecipient.hpp')
   p=ROOT/'native/core/GestureEndPolicy.hpp';inputs['native/core/GestureEndPolicy.hpp']=sha(p);shutil.copyfile(p,source/'core/GestureEndPolicy.hpp')
+ # Only these two unchanged header parents need a compilation overlay to
+ # resolve the candidate PNG/capture definitions through quoted includes.
+ # Preserve their bytes and verify each inherited path/hash in dependency audit.
+ inherited_overlay={}
+ for name in ('client_capture.hpp','client_plan.hpp'):
+  origin=PRIOR/'inputs/native'/name;assert sha(origin)==preserved[str(origin)]
+  destination=source/name;shutil.copyfile(origin,destination)
+  inherited_overlay[str(destination.resolve())]={'path':str(origin),'sha256':sha(origin)}
  command=next(c['command'] for c in prior['commands'] if c['name']=='compile').copy()
  for i,arg in enumerate(command):
   if arg==str(PRIOR/'inputs/native/authority.cpp'):command[i]=str(source/'authority.cpp')
@@ -99,7 +107,8 @@ try:
  dependencies={str(pathlib.Path(p).resolve()):sha(p) for p in deps}
  for p,h in dependencies.items():
   if p.startswith(str(source)):
-   assert pathlib.Path(p).name in ('GestureEndPolicy.hpp','ModalRecipient.hpp','CommittedScene.hpp','authority.cpp','navigation-modal.hpp','geometry-effects.inc','snap-placement.inc','transfer-workspace.inc','motion-profile.inc','picker-preview.inc','picker-probe-table.hpp','capture-fd-server.inc','geometry.inc','shortcut-bindings.inc','workspace-navigation.inc')
+   if p in inherited_overlay:assert h==inherited_overlay[p]['sha256'] and sha(inherited_overlay[p]['path'])==h
+   else:assert pathlib.Path(p).name in ('GestureEndPolicy.hpp','ModalRecipient.hpp','CommittedScene.hpp','authority.cpp','navigation-modal.hpp','geometry-effects.inc','snap-placement.inc','transfer-workspace.inc','motion-profile.inc','picker-preview.inc','picker-probe-table.hpp','capture-fd-server.inc','geometry.inc','shortcut-bindings.inc','workspace-navigation.inc','preview_png.hpp','preview_capture.hpp','family_crop_capture.hpp','capture-probe.inc','capture-resources.hpp')
   else:
    inherited=header_prefix[0]+p[len(header_prefix[1]):] if header_prefix and p.startswith(header_prefix[1]+'/') else p
    recorded=preserved.get(inherited)
@@ -123,7 +132,7 @@ try:
  for rel,h in inputs.items():assert sha(ROOT/rel)==h
  for p,h in preserved.items():assert sha(p)==h,p
  assert sha(core['path'])==core['sha256']
- r.update(passed=True,inputs=inputs,dependencies=dependencies,inheritedBuild=str(PRIOR/'report.json'),
+ r.update(passed=True,inputs=inputs,dependencies=dependencies,inheritedHeaderOverlay=inherited_overlay,inheritedBuild=str(PRIOR/'report.json'),
           inheritedBuildSHA256=sha(PRIOR/'report.json'),core=core,binary=str(binary),binarySHA256=sha(binary),missingSymbols=missing,
           focusCoreReport=focus if focus_core else None)
 except Exception as e:r['error']=repr(e)

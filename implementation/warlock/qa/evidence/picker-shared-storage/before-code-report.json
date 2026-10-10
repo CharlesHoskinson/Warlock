@@ -1,0 +1,71 @@
+{
+  "passed": true,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-5a61bdfda43d4b03a21e3719eb8ca8cf.scope",
+    "coreLimit": 1
+  },
+  "initializationOnly": false,
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/picker-storage.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "tests-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/picker-storage_test.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/picker-storage_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=82811"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "witness-safety",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/picker-storage.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--witnesses",
+        "twoFamiliesWitness",
+        "retainedAfterReleaseWitness",
+        "capacityRefusalWitness",
+        "--max-samples=1000",
+        "--max-steps=25",
+        "--seed=82812"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/picker-storage.qnt": "6e70f384caf9a28641afe2ed9e1a3c120956823c3f6877313c41b6d53b9cfe0d",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/picker-storage_test.qnt": "19e14c912df573d28dff463dad8c1286737c4a5bddfdb6a73eff6d99399cd2da"
+  },
+  "scope": "Two unique sealed native backings under original slot/byte bounds, descriptor alias without another backing, exact consumer close/export release/producer retirement and no foreign/repeated offer. No native pixels, AT or hardware memory claim.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "witnesses": {
+    "twoFamiliesWitness": 2,
+    "retainedAfterReleaseWitness": 55,
+    "capacityRefusalWitness": 330
+  }
+}

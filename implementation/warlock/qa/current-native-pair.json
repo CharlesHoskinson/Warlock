@@ -6,18 +6,18 @@
       "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
     },
     "plugin": {
-      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791657775676809428/elm-window-geometry-authority.so",
-      "sha256": "ae84313c512d0ba398e7f931c5c877eb69d7635588fbbd11b71a729386fcbfd2"
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791666305509919483/elm-window-geometry-authority.so",
+      "sha256": "c428e1e6e2b2f9e41b3c5218e3dd37fb6551f09bee6b3531876fb3d3c674948a"
     },
     "aquamarine": {
       "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
       "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
     }
   },
-  "authorityReport": "implementation/warlock/qa/runs/native-authority-1791657775676809428/report.json",
-  "authorityReportSHA256": "5220768b5ffabc3ab82937ca78e3a088b639294590b546df73e0cba34c110f50",
+  "authorityReport": "implementation/warlock/qa/runs/native-authority-1791666305509919483/report.json",
+  "authorityReportSHA256": "fd3e4e0087d8964590b10ffa1fbcfd46041df704d3d508c0d365f05380968033",
   "authorityInputs": {
-    "native/authority.cpp": "fd01bb16b21c99e312b5501fe5e26ccf18848d9ffa3d97a5598ccb19f9c7a016",
+    "native/authority.cpp": "2293da138a4c0b27e5f848f4db5842b2a2f0fc17c4fdbf33e7d0f5d5787305fa",
     "native/navigation-modal.hpp": "48a0a3c195425db508b20d1bc869ad588a03f3f3fc5fcba01ac0cd16853db30f",
     "native/geometry-effects.inc": "97206695980b48a3d0b212b46051f2f1fd17dc1a95f502f15b727f67b8025f7b",
     "native/snap-placement.inc": "3c7e92f10ce480a7512fe845a2155946b624f7a8ca669c90ee4040f09897de2e",
@@ -25,10 +25,15 @@
     "native/motion-profile.inc": "60ec1e00982bc1e58be76805d4be52faad12c15f5822521dddf4d3042e7c4b62",
     "native/picker-preview.inc": "dd012861b1f54943bb82d23378766a35d644c9ca561b5a412dd048ee05c3eb00",
     "native/picker-probe-table.hpp": "82663226635882932bd6ebdb298d63f1ca0be68f7e271b9e56d141cb06e1492f",
-    "native/capture-fd-server.inc": "b81d77ec641f05ecbe90ffbef38fc90935f8ec6d56e636b5bafc04cc7ac31557",
+    "native/capture-fd-server.inc": "d6cd846a9d14f975ca25154d757fb0a23edd13c01021a9a383784f7706ec6eea",
     "native/geometry.inc": "ca532735a4ddb6f095517ab5b49593860aeaeb1fd1d24018feecf7c52fb8aba6",
     "native/shortcut-bindings.inc": "1103085deb970c048b81f5afbf9848eae64388ad73c741f1bb7780cfbd8e3345",
     "native/workspace-navigation.inc": "5d75d09f5ef676df07f8b98b962d8e09468ea5b51398f6e91c9e4865e572ce76",
+    "native/preview_png.hpp": "b63627d40daa984ac17305a5f7510a5dcb4cedce94a82f938e9f36aadfcebe0b",
+    "native/preview_capture.hpp": "ea0aebf465dcf5656a4b5e8cd5ac240ed0907f20c069c2e6460ce506efb72f6f",
+    "native/family_crop_capture.hpp": "d2eb856c41947f34c1e381d169f21460e8d2d47c12ee444503a653ebeedcaa4e",
+    "native/capture-probe.inc": "6d9a70f5d3aebbdb4db8b5ca70c807f93f4d7f6ddffdc59bd1598fb39a1dae74",
+    "native/capture-resources.hpp": "80dec431033fddf4cfe48a07532251c5b1139053bcfff8b16084c20b070f62e7",
     "native/core/CommittedScene.hpp": "8ab0576ddf0d2f141259b57dd211219455fa6f0fca94e21a077e49fc57fd577f",
     "native/core/ModalRecipient.hpp": "08602c2401bc8038cbd9f8ceb89c6cb5bb0a52b1c37f9680231e436da38ef200",
     "native/core/GestureEndPolicy.hpp": "cba651c875c980c357a6bfe7d5e567da424cf8dd7f11537f8195a74ec52f5946"

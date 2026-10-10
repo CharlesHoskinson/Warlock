@@ -125,7 +125,7 @@ struct ShellShortcut {uint64_t serial;ShellRoute route;PHLMONITORREF monitor;std
 uint64_t shellShortcutSerial=0,shellShortcutSession=0,shellShortcutFrontend=0;
 std::vector<ShellShortcut> shellShortcuts;
 
-struct ExportedImage {preview::fd::Owned file;preview::capture::Reservation reservation;uint64_t transfer;bool sent=false;};
+struct ExportedImage {preview::fd::Owned file;std::optional<preview::capture::Reservation> reservation;uint64_t transfer;bool sent=false;};
 struct CaptureProbe {
     uint64_t session{},frontend{},incarnation{},request{},output{},completed{},checksum{};
     std::unique_ptr<const preview::capture::OwnedPng> image;

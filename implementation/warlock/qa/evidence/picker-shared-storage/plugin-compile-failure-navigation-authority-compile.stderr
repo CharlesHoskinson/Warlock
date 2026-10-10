@@ -1,0 +1,13 @@
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791666079296246082/inputs/native/authority.cpp:7:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v19/qa/build-1791342038926680323/inputs/native/capture-resources.hpp: In instantiation of ‘auto preview::resources::execute(Map&, Peer, Binding, Target, uint64_t, uint64_t, bool, Operation, uint64_t, uint64_t&, Prepare&&) [with Map = std::map<CaptureKey, {anonymous}::CaptureProbe>; Peer = int; Prepare = std::__cxx11::basic_string<char> (&)(const Result&); uint64_t = long unsigned int]’:
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v19/qa/build-1791342038926680323/inputs/native/capture-resources.inc:15:19:   required from here
+   15 |     return execute(captureProbes,peer,Binding{*native,*session,*frontend},Target{*capture,*subject},*request,
+      |            ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   16 |         preview::capture::nativeNow(),locked,action,*transfer,captureResourceSequence,wire);
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v19/qa/build-1791342038926680323/inputs/native/capture-resources.hpp:57:81: error: ‘class std::optional<preview::capture::Reservation>’ has no member named ‘bytes’
+   57 |                 require(probe.exported->transfer && probe.exported->reservation.bytes(),"Actual original native export reservation");
+      |                                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v19/qa/build-1791342038926680323/inputs/native/capture-resources.hpp:58:111: error: ‘class std::optional<preview::capture::Reservation>’ has no member named ‘bytes’
+   58 |                 result.exportTransfer=probe.exported->transfer;result.exportBytes=probe.exported->reservation.bytes();
+      |                                                                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~

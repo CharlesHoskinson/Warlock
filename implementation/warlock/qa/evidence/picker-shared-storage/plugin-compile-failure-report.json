@@ -1,0 +1,59 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "installed": false,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-7b1b7023c04d491da982bbe3fca5130f.scope",
+    "coreLimit": 1
+  },
+  "commands": [
+    {
+      "name": "navigation-authority-compile",
+      "command": [
+        "g++",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v19/qa/build-1791342038926680323/inputs/native",
+        "-std=c++23",
+        "-O2",
+        "-fPIC",
+        "-shared",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "-isystem",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v19/qa/build-1791342038926680323/include",
+        "-isystem",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v19/qa/build-1791342038926680323/owning-headers",
+        "-isystem",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v19/qa/build-1791342038926680323/owning-headers/src",
+        "-isystem",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v19/qa/build-1791342038926680323/owning-headers/protocols",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v19/qa/build-1791342038926680323/inputs/candidate",
+        "-I/usr/include/json-glib-1.0",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/libmount",
+        "-I/usr/include/blkid",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-I/usr/include/pixman-1",
+        "-I/usr/include/libdrm",
+        "-I/usr/include/libei-1.0",
+        "-MD",
+        "-MF",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791666079296246082/authority.d",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791666079296246082/inputs/native/authority.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791666079296246082/elm-window-geometry-authority.so",
+        "-lGLESv2",
+        "-ljson-glib-1.0",
+        "-lgio-2.0",
+        "-lgobject-2.0",
+        "-lglib-2.0"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "scope": "Changed native pointer ownership observation/effect guards and navigation authority TU against unchanged owning core/capture inputs; strict strong-symbol closure; native acceptance separate",
+  "error": "RuntimeError('In file included from /home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791666079296246082/inputs/native/authority.cpp:7:\\n/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v19/qa/build-1791342038926680323/inputs/native/capture-resources.hpp: In instantiation of \u2018auto preview::resources::execute(Map&, Peer, Binding, Target, uint64_t, uint64_t, bool, Operation, uint64_t, uint64_t&, Prepare&&) [with Map = std::map<CaptureKey, {anonymous}::CaptureProbe>; Peer = int; Prepare = std::__cxx11::basic_string<char> (&)(const Result&); uint64_t = long unsigned int]\u2019:\\n/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v19/qa/build-1791342038926680323/inputs/native/capture-resources.inc:15:19:   required from here\\n   15 |     return execute(captureProbes,peer,Binding{*native,*session,*frontend},Target{*capture,*subject},*request,\\n      |            ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\n   16 |         preview::capture::nativeNow(),locked,action,*transfer,captureResourceSequence,wire);\\n      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\n/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v19/qa/build-1791342038926680323/inputs/native/capture-resources.hpp:57:81: error: \u2018class std::optional<preview::capture::Reservation>\u2019 has no member named \u2018bytes\u2019\\n   57 |                 require(probe.exported->transfer && probe.exported->reservation.bytes(),\"Actual original native export reservation\");\\n      |                                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~\\n/home/hoskinson/omarchy-windows-parity/implementation/warlock-family-style-crop-capture-v19/qa/build-1791342038926680323/inputs/native/capture-resources.hpp:58:111: error: \u2018class std::optional<preview::capture::Reservation>\u2019 has no member named \u2018bytes\u2019\\n   58 |                 result.exportTransfer=probe.exported->transfer;result.exportBytes=probe.exported->reservation.bytes();\\n      |                                                                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~\\n')"
+}
