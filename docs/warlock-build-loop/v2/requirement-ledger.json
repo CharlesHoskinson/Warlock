@@ -6499,41 +6499,80 @@
               "path": "implementation/warlock/qa/evidence/dense-menu/manifest.json",
               "sha256": "b095ec13dd6903bc73f16c980e4eee054e4d7a30216e977b1e1cb5e43ded4b2e",
               "scope": "At 200% text on a 480x360 native output, the current Restore/Minimize/Maximize menu overflows; End/Home and arrows reveal enabled operation endpoints and skip disabled Restore, Tab reveals Close and returns to the selected operation, Escape returns group focus, and current operation labels paint in actual compositor pixels. Ten-member picker selection still produces one exact activation and real GTK input. Default-size running-pin secondary/Menu/Shift-F10, minimize/restore, typing and Task View dismissal regression passed. Native current three-operation menu overflow and physical keyboard/operation labels; compiled 20-operation projection, growth, viewport, manual-scroll, Close-publication and inactive-document checks. Additional native providers/actions are outside this fixture; original AT and independent acceptance remain open. Active native popup reflow remains unqualified."
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/dense-outer-focus/manifest.json",
+              "sha256": "b5e0fcdf80287ea606c4f1aaec87d8a6c27fa070c8704c3b316ea1b17b7cfa2b",
+              "scope": "Implemented actual-document-gated outer bar focus. Native 18-pin 150-percent pointer/keyboard/scroll/resize journey passes with four four-edge captures despite WebKit focus-visible false, inactive-bar suppression, original menus/order/key proof/no effects; original default native action/receipt/pixel/recipient regression and dense/high-contrast browser gates pass.",
+              "sourceBaseRevision": "36d145526401b0e2a0b22de26f7df706208943ca",
+              "sourceHashes": {
+                "implementation/warlock/qa/native-window-feedback.py": "b83a0861f9f3524ff6f8367df351f5bf291c500ee3c007c5fa54e34ffd9b8436",
+                "implementation/warlock/assets/bar-adapter.js": "2f1dd1dfd2f47850a2b455732c114bd98acea976c273c6ec594bef5208d4a68c",
+                "implementation/warlock/assets/shell.css": "d2eff70639eaed0376c02c3441eb71e978e6cd95da8225cde1aee5b342c852a5",
+                "implementation/warlock/README.md": "15c113b424d0abce86163b2e3ee007a07d362c016eafebcde9f6a6742c3338f3",
+                "implementation/warlock/qa/dense-taskbar-browser.mjs": "aa0ec17559253de21333ab60a6e1561c44d1b8296298286b61621f9463bb20da",
+                "implementation/warlock/qa/current-search-build.json": "57bac07a184a05331a8098d37495c1fc29f36c83eb014411bf3d5097f83e8c8b",
+                "implementation/warlock/assets/elm.js": "bd721cfee4c454729cd2847ae0f31869983bce532034118b063b8733688d549d",
+                "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+                "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43"
+              },
+              "nativePair": {
+                "core": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
+                  "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
+                },
+                "plugin": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791666305509919483/elm-window-geometry-authority.so",
+                  "sha256": "c428e1e6e2b2f9e41b3c5218e3dd37fb6551f09bee6b3531876fb3d3c674948a"
+                },
+                "aquamarine": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+                  "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
+                }
+              },
+              "nativeHost": {
+                "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791672208541185133/elm-host",
+                "sha256": "b276c031f945431c10ca128e9e6505f366e14a3ba9cf295362bd36028296eb34",
+                "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791672208541185133/report.json",
+                "heldBuildSHA256": "8abfe680b791903a890615f4bc68669720ac576fe888bfc07e07ceae5f00ac21"
+              },
+              "reviewerDisposition": "root-dense-outer-focus"
             }
           ],
-          "missingObservation": "Applicable assistive-technology operation names, navigation and focus observations; Independent original-scenario review against the exact source/ABI/toolchain; Native active-popup reflow continuity remains unqualified; browser resizing is component evidence only. Additional native action providers are outside the current three-operation fixture.",
-          "reviewerDisposition": {
-            "name": "root-dense-menu",
-            "independent": false,
-            "disposition": "Owner-observed bounded implementation; original scenario/requirement/release acceptance remains pending."
-          },
+          "missingObservation": "Native AT names/navigation/focus/speech/braille, full providers and multi-member scope, active-popup native reflow and independent original acceptance remain open; retained AT/WebKit reopening crash unresolved.",
+          "reviewerDisposition": "root-dense-outer-focus",
           "sourceTuple": {
-            "sourceParentRevision": "6cf881f027aa228fcd56363e42ad5c300560a61d",
+            "sourceBaseRevision": "36d145526401b0e2a0b22de26f7df706208943ca",
             "sourceHashes": {
-              "implementation/warlock/assets/context.js": "c96d4916242b14d7549011bbbe006b6cd287e86d72947b1928c40a2ac0822e0c",
-              "implementation/warlock/assets/shell.css": "1e52a8cc2ec4de99296476d4eb5de99fc8cbb2feac9abe132c2395e1c6172ea1",
-              "implementation/warlock/qa/check-search.py": "75413ce22e02daec42f9f3ca2faff89e1c2b59da17b28505fb660432ba608299",
-              "implementation/warlock/qa/dense-taskbar-browser.mjs": "9f9b09cc53f95b718049a2296ff0fd9f381d5624cdea7f9d0b9e0e86e8d04910",
-              "implementation/warlock/qa/native-window-feedback.py": "ad3ca50fd37c982bac7d3301f676909b863d8b71bd8d3f3bd50a0003468cbf46",
-              "implementation/warlock/qa/current-search-build.json": "66df43fe159e558b4e121a7f04327a748b8361933d6d1bb6b7f76bcedf52831e",
-              "implementation/warlock/assets/elm.js": "9b48195dd4b61b8f34906444915f070530fcb07e8ec1f2c530fa1e5ed43aa8eb",
-              "implementation/warlock/assets/bar.js": "d2bd3e1d84b6dc605744da689c0331e89a0cd45d083c0cdbc3b1ee620a18e860",
-              "implementation/warlock/assets/popup.js": "054636c284b4f6a026963b18b0e41b2f1a737fd87f9cdc1d8ef5449d6030222a",
-              "implementation/warlock/README.md": "2f400e850d730504008f2b8510283364937eb57b804bdae45671b8c7c87351d7",
-              "implementation/warlock/assets/popup-adapter.js": "b120861b35eacacd6a0b7239b00c9007995a1f45279f68a02801f5a33f926fe5"
+              "implementation/warlock/qa/native-window-feedback.py": "b83a0861f9f3524ff6f8367df351f5bf291c500ee3c007c5fa54e34ffd9b8436",
+              "implementation/warlock/assets/bar-adapter.js": "2f1dd1dfd2f47850a2b455732c114bd98acea976c273c6ec594bef5208d4a68c",
+              "implementation/warlock/assets/shell.css": "d2eff70639eaed0376c02c3441eb71e978e6cd95da8225cde1aee5b342c852a5",
+              "implementation/warlock/README.md": "15c113b424d0abce86163b2e3ee007a07d362c016eafebcde9f6a6742c3338f3",
+              "implementation/warlock/qa/dense-taskbar-browser.mjs": "aa0ec17559253de21333ab60a6e1561c44d1b8296298286b61621f9463bb20da",
+              "implementation/warlock/qa/current-search-build.json": "57bac07a184a05331a8098d37495c1fc29f36c83eb014411bf3d5097f83e8c8b",
+              "implementation/warlock/assets/elm.js": "bd721cfee4c454729cd2847ae0f31869983bce532034118b063b8733688d549d",
+              "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+              "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43"
             },
-            "testedWorkingTree": true,
-            "core": {
-              "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
-              "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
+            "nativePair": {
+              "core": {
+                "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
+                "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
+              },
+              "plugin": {
+                "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791666305509919483/elm-window-geometry-authority.so",
+                "sha256": "c428e1e6e2b2f9e41b3c5218e3dd37fb6551f09bee6b3531876fb3d3c674948a"
+              },
+              "aquamarine": {
+                "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+                "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
+              }
             },
-            "plugin": {
-              "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791440691968763486/elm-window-geometry-authority.so",
-              "sha256": "1805693201328985cbf109f5fef6779b8fe469badf094fd417e8206f91c50b47"
-            },
-            "toolchain": {
-              "path": "implementation/warlock/qa/runs/taskbar-primary-1791449726696723298/report.json",
-              "sha256": "a179152b713745afd22de8ce48fc0e6c460aeff4ddc8c980426e44a593b59157"
+            "nativeHost": {
+              "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791672208541185133/elm-host",
+              "sha256": "b276c031f945431c10ca128e9e6505f366e14a3ba9cf295362bd36028296eb34",
+              "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791672208541185133/report.json",
+              "heldBuildSHA256": "8abfe680b791903a890615f4bc68669720ac576fe888bfc07e07ceae5f00ac21"
             }
           }
         },
@@ -7476,7 +7515,9 @@
                 "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/high-contrast-1791671144211904320/report.json",
                 "heldBuildSHA256": "993989aa3de2b30ac5d6000211bef627e47b87bdeff6a0716c6270d601568496"
               },
-              "reviewerDisposition": "root-outer-focus"
+              "reviewerDisposition": "root-outer-focus",
+              "historicalForTaskbarFocusAfterAdapterChange": true,
+              "currentTaskbarFocusEvidence": "implementation/warlock/qa/evidence/dense-outer-focus/manifest.json"
             }
           ],
           "missingObservation": "Every-surface/profile/output, native OS forced colors, native AT speech/braille and independent acceptance remain open; retained AT/WebKit reopening crash unresolved.",
@@ -11624,7 +11665,9 @@
                 "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/high-contrast-1791671144211904320/report.json",
                 "heldBuildSHA256": "993989aa3de2b30ac5d6000211bef627e47b87bdeff6a0716c6270d601568496"
               },
-              "reviewerDisposition": "root-outer-focus"
+              "reviewerDisposition": "root-outer-focus",
+              "historicalForTaskbarFocusAfterAdapterChange": true,
+              "currentTaskbarFocusEvidence": "implementation/warlock/qa/evidence/dense-outer-focus/manifest.json"
             }
           ],
           "missingObservation": "Full every-surface/output/localized-label/enlargement scope, native AT and independent original acceptance remain open.",
@@ -12236,5 +12279,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-10T22:35:08.635329+00:00"
+  "updatedUTC": "2026-10-10T22:49:42.089345+00:00"
 }

@@ -969,17 +969,6 @@ raise SystemExit(daemon.run())
       button=dense_pin(identity);body=dense_body()
       return body if button and body['documentFocused'] and body['focus']==button['id'] and visible(button,body) else None
      def order(body):return [b['identity'][len('bar:pin:'):] for b in body['buttons'] if b.get('identity','').startswith('bar:pin:')]
-     def reach_last_pin():
-      key(107)
-      def endpoint():
-       body=dense_body();last=next((b for b in reversed(body['buttons']) if not b['disabled']),None) if body else None
-       return body if last and body['documentFocused'] and body['focus']==last['id'] and visible(last,body) else None
-      body=wait(endpoint);check('NativeEndRevealsActualLastEnabledControl',bool(body))
-      # Utilities follow pins; use physical arrows from the actual endpoint.
-      for _ in range(len(body['buttons'])+1):
-       if selected(dense_ids[-1]):break
-       key(105)
-      return wait(lambda:selected(dense_ids[-1]))
      def dense_capture(stage):
       image=OUTPUT/(stage+'.png');helper(['/usr/bin/grim',str(image)])
       import gi;gi.require_version('GdkPixbuf','2.0');from gi.repository import GdkPixbuf
@@ -1028,7 +1017,7 @@ raise SystemExit(daemon.run())
       if selected(dense_ids[0]):break
       key(106)
      wait(lambda:selected(dense_ids[0]));check('DenseKeyboardEntryRevealsFirstPin',bool(selected(dense_ids[0])));dense_capture('dense-first')
-     reach_last_pin();check('NativeEndRevealsLastPin',bool(selected(dense_ids[-1])));dense_capture('dense-last')
+     key(107);wait(lambda:selected(dense_ids[-1]));check('NativeEndRevealsLastPin',bool(selected(dense_ids[-1])));dense_capture('dense-last')
      key(102);wait(lambda:(dense_body() or {}).get('focus')==(dense_body() or {}).get('buttons',[{}])[0].get('id'))
      visited=[]
      for identity in dense_ids:
@@ -1045,7 +1034,7 @@ raise SystemExit(daemon.run())
      check('DenseMenusAndNavigationHaveNoWindowEffectsOrLaunches',len(journal())==before and not launches())
      helper([str(POINTER),'480','600'],'move 200 30\nwheel -30000 0\nsleep 100\n')
      wait(lambda:(dense_body() or {}).get('scrollLeft')==0);check('NativeVerticalWheelReachesBeginning',dense_body()['scrollLeft']==0)
-     reach_last_pin()
+     key(107);wait(lambda:selected(dense_ids[-1]))
      for width in [640,480]:
       result=s.ctl('eval','hl.monitor({output="WAYLAND-1",mode="'+str(width)+'x600@60",position="0x0",scale=1})')
       check('NativeOutputResizeCommand'+str(width),result.strip()=='ok',result=result)

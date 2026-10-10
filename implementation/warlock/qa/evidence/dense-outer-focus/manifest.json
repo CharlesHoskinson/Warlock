@@ -1,0 +1,103 @@
+{
+  "schema": 1,
+  "requirements": [
+    "ELM-UI-008"
+  ],
+  "scenarios": [
+    "overflow-first-last"
+  ],
+  "oracle": "all entries are reachable, focus is revealed and labels identify operations",
+  "sourceBaseRevision": "36d145526401b0e2a0b22de26f7df706208943ca",
+  "sourceHashes": {
+    "implementation/warlock/qa/native-window-feedback.py": "b83a0861f9f3524ff6f8367df351f5bf291c500ee3c007c5fa54e34ffd9b8436",
+    "implementation/warlock/assets/bar-adapter.js": "2f1dd1dfd2f47850a2b455732c114bd98acea976c273c6ec594bef5208d4a68c",
+    "implementation/warlock/assets/shell.css": "d2eff70639eaed0376c02c3441eb71e978e6cd95da8225cde1aee5b342c852a5",
+    "implementation/warlock/README.md": "15c113b424d0abce86163b2e3ee007a07d362c016eafebcde9f6a6742c3338f3",
+    "implementation/warlock/qa/dense-taskbar-browser.mjs": "aa0ec17559253de21333ab60a6e1561c44d1b8296298286b61621f9463bb20da",
+    "implementation/warlock/qa/current-search-build.json": "57bac07a184a05331a8098d37495c1fc29f36c83eb014411bf3d5097f83e8c8b",
+    "implementation/warlock/assets/elm.js": "bd721cfee4c454729cd2847ae0f31869983bce532034118b063b8733688d549d",
+    "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+    "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43"
+  },
+  "supportingSourceHashes": {
+    "DesignLanguage/CURRENT.md": "6dd266b3858502e66f0de091757070e3d9487ca4b3576380c19808384bb4518b"
+  },
+  "scope": "Actual native 18-pin 150-percent pointer/keyboard/scroll/resize journey with four four-edge captures, inactive-bar suppression, menu/key proof/no effects, plus original default keyboard action/receipt/pixel/recipient regression; original dense browser and 64-case high-contrast matrix.",
+  "nativePair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
+      "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791666305509919483/elm-window-geometry-authority.so",
+      "sha256": "c428e1e6e2b2f9e41b3c5218e3dd37fb6551f09bee6b3531876fb3d3c674948a"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+      "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791672208541185133/elm-host",
+    "sha256": "b276c031f945431c10ca128e9e6505f366e14a3ba9cf295362bd36028296eb34",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791672208541185133/report.json",
+    "heldBuildSHA256": "8abfe680b791903a890615f4bc68669720ac576fe888bfc07e07ceae5f00ac21"
+  },
+  "files": {
+    "README.md": "ee7f9525e1a229859672e6bf0c99a8b08713e572787442e6a7635055b94c2f16",
+    "pointer-entry-mismatch/native-window-feedback.py": "3117bda55fdf16f185f01b72ddb63b5ed9db14816fa71a44ddc906034258fe1d",
+    "pointer-entry-mismatch/report.json": "fd4310350bb0596d818e1c31392006dcc0a6c824b71400a41487e806ea3cd1b9",
+    "pointer-return-failure/native-window-feedback.py": "0b3734f395cc4b3ee306d0adcfc77af5db31466b81ec52636ed25b22f6d81a07",
+    "pointer-return-failure/report.json": "3c7680b7892207983fe0184a581eedff2b3cf0cb3fd804fb1896eb0bfe4c1d87",
+    "missing-native-ring/native-window-feedback.py": "61cde86537ef1575131324956178c9aa5fa54743afdd765918e3899a79dcd13b",
+    "missing-native-ring/report.json": "f8d981789c90a5f4140ce22f063fa12738647370ff214a4664f199e9d653e699",
+    "missing-native-ring/dense-first.png": "a649ad2411d1b83e686ad13d465d0f376cab6f20ec762309f42863533f3064dd",
+    "legacy-end-assumption/native-window-feedback.py": "5b2d3d0422722274f6928c0904af76819f150764e02e625f2d621ca579c79e51",
+    "legacy-end-assumption/report.json": "a7084d94251ca1cb8d12442da6558e460d5d32c51c664db03d11da466427430a",
+    "legacy-end-assumption/dense-first.png": "f6b2b8bc08ef0d456a6867ad93b4500198b1bf88cda974044def19a1a38be7bb",
+    "dense-build/report.json": "8abfe680b791903a890615f4bc68669720ac576fe888bfc07e07ceae5f00ac21",
+    "dense-build/dense-browser.json": "b312e93217a84aeaf8ac0e37280327c477588f8094bc310c2eeff28cdd1331c3",
+    "dense-build/focus-model-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dense-build/focus-model-named.stdout": "aac026f1e9e57e7e5ba4fb62f1d738950d97ce21408a16aaf3a475211ff6b8bd",
+    "dense-build/focus-model-invariants.stdout": "4a87865290f5de433485745455aba262064cff1e6121b9ff7d4dd61ad1682842",
+    "contrast-build/report.json": "480d09e66dccd1070d8f505c32b3ec69a66de7206807a94d719df0d23f12f8bc",
+    "contrast-build/settings-browser.json": "da165d85c24b5f7d0ebc8b154a5b1028396f62e7e5764efbdd1840aabea3cc0d",
+    "contrast-build/settings-model-named.stdout": "691d4b9a72241938ee34f4615425f66ea8375f853d3f1090a4b47d36e9be5f0b",
+    "contrast-build/settings-model-invariants.stdout": "12a9bbf53e6d1accb25947ded5fb2554d07e5daa56d364698b71516d73dc3f37",
+    "contrast-build/task-view-model-named.stdout": "717e45311d2752fbdb34e76fafbbcb7b43aefe76d3fd21678cd067491a52592c",
+    "contrast-build/task-view-model-invariants.stdout": "c55d462990034bc117fe3efe2665d8db7cd8eef8ad319a55eeca2f4340c4e4be",
+    "contrast-build/outer-bar-focus-enlarged.png": "46f59e9235deee5b1f859503e59d8bbc209519a2f1f54dec13f92ba2ad05e943",
+    "native-dense/report.json": "02c340dc28babb167e50c47d3073fd1167e7603969df3530584bc5d6086165b5",
+    "native-dense/dense-first.png": "11a90e6bf3db090bce8b4f0f6c5fc8be2fc86393a9f58cd2e166948fb1268f22",
+    "native-dense/dense-last.png": "32da8f4ce28d0cb62bed7724b61d835c0bcbb077b678c9e1aeff9f67c1b6f54b",
+    "native-dense/dense-resize-640.png": "37f75ad25f66ed70768e25529ad5489302035eec8639604fbde1512054a59f1d",
+    "native-dense/dense-resize-480.png": "daaec60e803d7f34929af7f044bb123cbb6e56f37e82d488837de4ad377578a2",
+    "native-dense/popup-dense-first-menu.png": "84fd0adf1c67f6da809dd7031af3db787ddfac87f15f6f8f3c1b27c065843b4e",
+    "native-dense/popup-dense-last-menu.png": "3c5432ad9053516c59f32a334718fdd2fbee054894a200af469e393c961f2c16",
+    "native-dense/warlock.log": "34421a986f5b4d03f123a1f8fe76cadcb1b7c1631bfb345e645fa75c1443acb3",
+    "native-primary/report.json": "7090418c0143601132560085ed24927197071327134f642fa9915690590c5437",
+    "native-primary/outer-focus-0-activate.png": "e740a0449b8fdc83ee0a5cba205607663c4447a0bb108e5262c9a3d84b05b4a5",
+    "native-primary/outer-focus-1-minimize.png": "ca2b8817430928104c7475aa87e18ea291bae619de52c6fe8c2562dcf8cda33d",
+    "native-primary/outer-focus-2-restore.png": "875913ff07f21f396d4d4df3973d426eb9c460a293fa8b296c61c3a2d6185762",
+    "native-primary/outer-focus-3-minimize.png": "a7670654f07188d74e3d68041f7a7eb3d472fb022a584ba6b3c12003dde08633",
+    "native-primary/outer-focus-4-restore.png": "73b4ffc48d6fe51b88c17e79e18b7158b34f8b8998c16c73aa427a8970558843",
+    "native-primary/warlock.log": "59aeb854980a25fb67e46256cd7b0682fdde628e6de2d1f616a3fd2b84c439ea"
+  },
+  "modelWorkflow": {
+    "kit": "https://github.com/quint-co/quint-llm-kit",
+    "modelChange": false,
+    "gates": "Original explicitly selected focus named tests/sampled safety; current Settings/TaskView named/sampled checks retained. Paint/document-focus facts are outside effect authority."
+  },
+  "missingObservations": [
+    "Applicable native AT operation names/navigation/focus/speech/braille and independent original acceptance remain open.",
+    "Additional native action providers, complete multi-member scope and active-popup native reflow remain open; retained AT/WebKit reopening failure unresolved."
+  ],
+  "reviewer": {
+    "name": "root-dense-outer-focus",
+    "independent": false,
+    "disposition": "partial"
+  },
+  "nativeAcceptance": false,
+  "requirementAccepted": false,
+  "fullReleaseAccepted": false
+}

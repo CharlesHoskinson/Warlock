@@ -1,0 +1,280 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      chosenAt: 0,
+      live: Set(1, 2),
+      mutations: [],
+      open: true,
+      pending: 0,
+      shown: 1
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      chosenAt: 0,
+      live: Set(2),
+      mutations: [],
+      open: true,
+      pending: 0,
+      shown: 2
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      chosenAt: 0,
+      live: Set(2),
+      mutations: [],
+      open: false,
+      pending: 0,
+      shown: 2
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      chosenAt: 0,
+      live: Set(2),
+      mutations: [],
+      open: false,
+      pending: 0,
+      shown: 3
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      chosenAt: 0,
+      live: Set(2),
+      mutations: [],
+      open: false,
+      pending: 0,
+      shown: 4
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      chosenAt: 0,
+      live: Set(2),
+      mutations: [],
+      open: false,
+      pending: 0,
+      shown: 4
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      chosenAt: 0,
+      live: Set(2),
+      mutations: [],
+      open: false,
+      pending: 0,
+      shown: 5
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      chosenAt: 0,
+      live: Set(2),
+      mutations: [],
+      open: false,
+      pending: 0,
+      shown: 5
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      chosenAt: 0,
+      live: Set(2),
+      mutations: [],
+      open: false,
+      pending: 0,
+      shown: 5
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      chosenAt: 0,
+      live: Set(2),
+      mutations: [],
+      open: false,
+      pending: 0,
+      shown: 5
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      chosenAt: 0,
+      live: Set(2),
+      mutations: [],
+      open: false,
+      pending: 0,
+      shown: 5
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      chosenAt: 0,
+      live: Set(2),
+      mutations: [],
+      open: false,
+      pending: 0,
+      shown: 5
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      chosenAt: 0,
+      live: Set(2),
+      mutations: [],
+      open: false,
+      pending: 0,
+      shown: 5
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      chosenAt: 0,
+      live: Set(2),
+      mutations: [],
+      open: false,
+      pending: 0,
+      shown: 6
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      chosenAt: 0,
+      live: Set(2),
+      mutations: [],
+      open: false,
+      pending: 0,
+      shown: 6
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      chosenAt: 0,
+      live: Set(2),
+      mutations: [],
+      open: false,
+      pending: 0,
+      shown: 6
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      chosenAt: 0,
+      live: Set(2),
+      mutations: [],
+      open: false,
+      pending: 0,
+      shown: 6
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      chosenAt: 0,
+      live: Set(2),
+      mutations: [],
+      open: false,
+      pending: 0,
+      shown: 6
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      chosenAt: 0,
+      live: Set(2),
+      mutations: [],
+      open: false,
+      pending: 0,
+      shown: 6
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      chosenAt: 0,
+      live: Set(2),
+      mutations: [],
+      open: false,
+      pending: 0,
+      shown: 6
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      chosenAt: 0,
+      live: Set(2),
+      mutations: [],
+      open: false,
+      pending: 0,
+      shown: 6
+    }
+}
+
+[ok] No violation found (66ms at 1515 traces/second).
+Trace length statistics: max=21, min=21, average=21.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x134fe --backend=typescript to reproduce.

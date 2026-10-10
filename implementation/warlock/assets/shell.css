@@ -37,14 +37,15 @@ html{font-size:100%}body{font:1rem system-ui}
 .bar .surface-actions>.control-group{flex-basis:8rem;min-width:min(8rem,calc(100% - 6px))}
 .bar .surface-actions>.control-recovery{flex-basis:7.5rem}
 .bar .control-detail{font-size:.8125rem;line-height:.8125rem}
-.bar .surface-actions button:focus-visible{outline:3px solid var(--shell-focus,#7ed7ff);outline-offset:0}
+.bar .surface-actions button:focus{outline:none}
+.bar .surface-actions[data-document-focus="true"] button:focus{outline:3px solid var(--shell-focus,#7ed7ff);outline-offset:0}
 .bar .surface-actions{scrollbar-width:auto}
 .bar .surface-actions::-webkit-scrollbar{height:4px}
 .popup .surface-popup>h1{font-size:1.25rem;line-height:1.5rem}
 .popup .surface-popup>p[role=status]{line-height:1.25rem}
 .popup button{min-height:2.25rem}
 .popup .control-detail{font-size:.875rem;line-height:1.125rem}
-@media(forced-colors:active){.bar .surface-actions button:focus-visible{outline:2px solid Highlight;outline-offset:0;box-shadow:none}}
+@media(forced-colors:active){.bar .surface-actions[data-document-focus="true"] button:focus{outline:2px solid Highlight;outline-offset:0;box-shadow:none}}
 
 .popup .preview-title,.popup .preview-state,.popup .preview-fidelity{font-size:.8125rem;line-height:1.125rem}
 .popup .preview-title{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -122,13 +123,13 @@ html[data-effects="off"] .surface-bar button,
 html[data-effects="off"] .bar .surface-actions button[data-window-state],
 html[data-effects="off"] .surface-popup[data-mode] button,
 html[data-effects="off"] .surface-popup[data-mode] button::before{box-shadow:none;text-shadow:none}
-html[data-effects="off"] .bar .surface-actions button:focus-visible{outline:3px solid var(--shell-focus,#7ed7ff);outline-offset:0}
+html[data-effects="off"] .bar .surface-actions[data-document-focus="true"] button:focus{outline:3px solid var(--shell-focus,#7ed7ff);outline-offset:0}
 html[data-effects="off"] .bar .control-group[data-window-state="active"]{border-bottom-width:4px}
 html[data-effects="off"] .bar .control-group[data-window-state="attention"]{border-top-width:4px}
 html[data-effects="off"] .surface-popup [aria-current="true"]{border-left-width:4px}
 html[data-reduced-transparency="true"] .surface-bar,
 html[data-reduced-transparency="true"] .surface-popup{background:var(--shell-background,#17202a);backdrop-filter:none;opacity:1}
-@media(forced-colors:active){html[data-effects="off"] .bar .surface-actions button:focus-visible{outline-color:Highlight}}
+@media(forced-colors:active){html[data-effects="off"] .bar .surface-actions[data-document-focus="true"] button:focus{outline-color:Highlight}}
 
 /* Only the Elm-designated announcement route produces live updates. */
 .shell-announcement{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}

@@ -4,7 +4,10 @@ window.submitSurfaceAction = value => app.ports.requestAction.send(value);
 const post = value => window.webkit.messageHandlers.native.postMessage(JSON.stringify(value));
 let selectedIdentity=null, observedActions=null;
 const actionsNode=()=>document.querySelector('.surface-actions');
+// Paint focus only while this WebKit document owns native keyboard focus.
+const syncDocumentFocus=()=>{const actions=actionsNode();if(actions)actions.dataset.documentFocus=String(document.hasFocus());};
 const revealSelection=(restoreOnly=false)=>{
+  syncDocumentFocus();
   const actions=actionsNode();
   if(!actions||!document.hasFocus()||!selectedIdentity)return;
   const control=[...actions.querySelectorAll('[data-surface-control]')].find(item=>item.dataset.surfaceControl===selectedIdentity&&!item.disabled);
@@ -13,7 +16,7 @@ const revealSelection=(restoreOnly=false)=>{
   if(document.activeElement!==control)control.focus({preventScroll:true});
   control.scrollIntoView({block:'nearest',inline:'nearest'});
   // Keep the painted outline inside the same scrollport as its hit target.
-  const style=getComputedStyle(control),extent=control.matches(':focus-visible')?Math.max(0,parseFloat(style.outlineWidth)||0)+Math.max(0,parseFloat(style.outlineOffset)||0):0;
+  const style=getComputedStyle(control),extent=control.matches(':focus')?Math.max(0,parseFloat(style.outlineWidth)||0)+Math.max(0,parseFloat(style.outlineOffset)||0):0;
   const rect=control.getBoundingClientRect(),box=actions.getBoundingClientRect(),left=box.left+actions.clientLeft,right=left+actions.clientWidth;
   if(rect.left-extent<left)actions.scrollLeft+=rect.left-extent-left;
   else if(rect.right+extent>right)actions.scrollLeft+=rect.right+extent-right;
@@ -32,6 +35,7 @@ document.addEventListener('focusin',event=>{
 // Keep the view's logical selection through a popup grab. Restoration still
 // requires real document focus and a currently rendered enabled control.
 window.addEventListener('focus',()=>revealSelection(true));
+window.addEventListener('blur',syncDocumentFocus);
 window.addEventListener('resize',()=>requestAnimationFrame(()=>revealSelection()));
 document.addEventListener('keydown',event=>{
   const trace=phase=>{if(window.elmHostQA && event.key==='Home')post({kind:'context-input-report',phase,key:event.key,repeat:event.repeat,composing:event.isComposing,prevented:event.defaultPrevented,trusted:event.isTrusted,id:document.activeElement?.dataset?.surfaceControl||null,targetId:event.target?.dataset?.surfaceControl||null,anchor:selectedIdentity,documentFocused:document.hasFocus()});};
@@ -63,11 +67,12 @@ window.receivePresentation = value => {
 window.receiveFocus = value => requestAnimationFrame(() => {
   const node=document.querySelector('.surface-bar');
   if(value.surfaceProtocol!==2 || value.kind!=='surface-focus' || !node || node.dataset.publication!==value.publication || node.dataset.lease!==value.lease) return;
-  const focused=[];
+  syncDocumentFocus();const focused=[];
   for (const target of value.targets) {
     const control=document.getElementById(target);
     if(control && node.contains(control) && !control.disabled){control.focus();control.scrollIntoView({block:'nearest',inline:'nearest'});if(document.activeElement===control){selectedIdentity=control.dataset.surfaceControl;focused.push(target);}}
   }
+  if(focused.length)revealSelection();
   post({surfaceProtocol:2,kind:'focus-applied',publication:value.publication,lease:value.lease,targets:focused});
 });
 app.ports.actions.subscribe(post);
@@ -85,7 +90,7 @@ if (window.elmHostQA) {
     const actions=actionsNode(),actionBox=actions?.getBoundingClientRect();
     const palette={background:getComputedStyle(document.body).backgroundColor,foreground:getComputedStyle(document.body).color};
     const active=document.activeElement,activeStyle=active&&getComputedStyle(active),activeBox=active?.getBoundingClientRect();
-    const focusStyle=activeStyle?{color:activeStyle.color,background:activeStyle.backgroundColor,outlineColor:activeStyle.outlineColor,outlineWidth:activeStyle.outlineWidth,outlineOffset:activeStyle.outlineOffset,x:activeBox.x,y:activeBox.y,width:activeBox.width,height:activeBox.height}:null;
+    const focusStyle=activeStyle?{visible:active.matches(':focus-visible'),style:activeStyle.outlineStyle,color:activeStyle.color,background:activeStyle.backgroundColor,outlineColor:activeStyle.outlineColor,outlineWidth:activeStyle.outlineWidth,outlineOffset:activeStyle.outlineOffset,x:activeBox.x,y:activeBox.y,width:activeBox.width,height:activeBox.height}:null;
     const body={announcements:[...document.querySelectorAll(".shell-announcement")].map(n=>({text:n.textContent,sequence:n.querySelector("[data-announcement-sequence]")?.dataset.announcementSequence||null,correlation:n.querySelector("[data-announcement-correlation]")?.dataset.announcementCorrelation||null,live:n.getAttribute("aria-live")})),motionProfile:node?.dataset.motion||null,motionAnimations:document.getAnimations().length,palette,focusStyle,publication:node?.dataset.publication||null,lease:node?.dataset.lease||null,buttons,feedback,focus:document.activeElement?.id||'',documentFocused:document.hasFocus(),selectionAnchor:selectedIdentity,text:document.body.innerText,fontSize:getComputedStyle(document.body).fontSize,theme:document.documentElement.dataset.theme||null,textScale:document.documentElement.dataset.textScale||null,effects:document.documentElement.dataset.effects||null,reducedTransparency:document.documentElement.dataset.reducedTransparency||null,viewportWidth:innerWidth,viewportHeight:innerHeight,scrollLeft:actions?.scrollLeft||0,scrollWidth:actions?.scrollWidth||0,clientWidth:actions?.clientWidth||0,actions:actionBox?{x:actionBox.x,y:actionBox.y,width:actionBox.width,height:actionBox.height}:null};
     const current=JSON.stringify(body);if(current!==last){last=current;post({kind:'surface-report',body});}
   });

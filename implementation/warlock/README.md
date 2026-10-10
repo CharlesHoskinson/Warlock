@@ -18,6 +18,8 @@ The shared surface host accepts `--text-scale 1.5` for enlarged text. Values fro
 1 to 2 scale the base text and taskbar height together; the default remains 1.
 This startup option sets initial scale; the persistent Settings page described below is a separate integrated route.
 
+The taskbar paints a focused control while its WebKit document actually owns keyboard focus, including after pointer-menu use when the browser does not match `:focus-visible`. Native focus loss clears the contour; the Active underline and pressed state retain their separate meaning. This is a projection of actual document/control focus and does not acquire keyboard ownership or issue a window effect. The enlarged 18-pin native menu/scroll/resize journey is recorded in [dense outer-focus evidence](qa/evidence/dense-outer-focus/README.md).
+
 In the taskbar, vertical wheel input scrolls an overflowing row. While a bar
 control has keyboard focus, Home/End reach the endpoints and Left/Right visit
 enabled controls in order. Current logical selection survives presentation

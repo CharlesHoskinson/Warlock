@@ -967,25 +967,14 @@ raise SystemExit(daemon.run())
       return button and extent>=2 and button['x']-extent>=box['x']-.5 and button['x']+button['width']+extent<=box['x']+box['width']+.5 and button['y']-extent>=box['y']-.5 and button['y']+button['height']+extent<=box['y']+box['height']+.5
      def selected(identity):
       button=dense_pin(identity);body=dense_body()
-      return body if button and body['documentFocused'] and body['focus']==button['id'] and visible(button,body) else None
+      return body if button and body['focus']==button['id'] and visible(button,body) else None
      def order(body):return [b['identity'][len('bar:pin:'):] for b in body['buttons'] if b.get('identity','').startswith('bar:pin:')]
-     def reach_last_pin():
-      key(107)
-      def endpoint():
-       body=dense_body();last=next((b for b in reversed(body['buttons']) if not b['disabled']),None) if body else None
-       return body if last and body['documentFocused'] and body['focus']==last['id'] and visible(last,body) else None
-      body=wait(endpoint);check('NativeEndRevealsActualLastEnabledControl',bool(body))
-      # Utilities follow pins; use physical arrows from the actual endpoint.
-      for _ in range(len(body['buttons'])+1):
-       if selected(dense_ids[-1]):break
-       key(105)
-      return wait(lambda:selected(dense_ids[-1]))
      def dense_capture(stage):
       image=OUTPUT/(stage+'.png');helper(['/usr/bin/grim',str(image)])
       import gi;gi.require_version('GdkPixbuf','2.0');from gi.repository import GdkPixbuf
       pix=GdkPixbuf.Pixbuf.new_from_file(str(image));check(stage+'ActualOutputPixels',pix.get_width()==dense_body()['viewportWidth'] and pix.get_height()==600)
       body=dense_body();style=body['focusStyle'];import re
-      check(stage+'CurrentKeyboardFocusHasOuterContour',style['style']=='solid' and float(style['outlineWidth'].removesuffix('px'))>=2 and float(style['outlineOffset'].removesuffix('px'))>=0 and body['documentFocused'],style=style)
+      check(stage+'CurrentKeyboardFocusHasOuterContour',float(style['outlineWidth'].removesuffix('px'))>=2 and float(style['outlineOffset'].removesuffix('px'))>=0 and body['documentFocused'],style=style)
       pixels=pix.get_pixels();stride=pix.get_rowstride();channels=pix.get_n_channels();color=list(map(int,re.findall(r'\d+',style['outlineColor'])))[:3];x,y,w,h=[round(style[k]) for k in ['x','y','width','height']];ring=round(float(style['outlineWidth'].removesuffix('px')))
       regions={'top':[x+6,y-ring,x+w-6,y],'bottom':[x+6,y+h,x+w-6,y+h+ring],'left':[x-ring,y+6,x,y+h-6],'right':[x+w,y+6,x+w+ring,y+h-6]};sides={}
       for side,(left,top,right,bottom) in regions.items():
@@ -995,7 +984,7 @@ raise SystemExit(daemon.run())
      def dense_menu():
       body=popup_body();p=projection()
       return body if body and p and p.get('mode')=='menu' and body['publication']==p['publication'] and any(b['accessibleName']=='Minimize' and not b['disabled'] for b in body['buttons']) else None
-     before=len(journal());body=wait(dense_body);pointer_recipient=facts()['facts']['focused']
+     before=len(journal());body=wait(dense_body)
      check('NativeDenseFixtureUsesSmallOutputAndEnlargedText',body['fontSize']=='24px' and body['viewportWidth']==480 and body['actions']['height']==80 and body['scrollWidth']>body['clientWidth'],body=body)
      check('NativeConfiguredPinOrderIsRendered',order(body)==dense_ids,body=body)
      for _ in range(12):
@@ -1011,24 +1000,9 @@ raise SystemExit(daemon.run())
      check('FirstDensePinSecondaryClickUsesVisibleIntersection',box['x']<=x<box['x']+box['width'] and 0<=y<72,button=button)
      helper([str(POINTER),'480','600'],f'move {x} {y}\nsleep 100\nbutton 273 1\nsleep 50\nbutton 273 0\nsleep 100\n')
      wait(dense_menu);popup_capture('dense-first-menu')
-     inactive_bar=bar_body();report['densePointerMenuBarState']=inactive_bar
-     check('PointerOpenedMenuDoesNotPaintInactiveBarFocus',not inactive_bar['documentFocused'] and inactive_bar['focusStyle']['style']=='none',documentFocused=inactive_bar['documentFocused'],style=inactive_bar['focusStyle'])
      check('DenseFirstPinMenuLabelsHaveNativePixels',bool(report['popupCaptures'][-1]['controlRegions']) and all(r['brightPixels']>15 for r in report['popupCaptures'][-1]['controlRegions']))
-     key(1);wait(lambda:(projection() or {}).get('mode')=='closed')
-     def pointer_return():
-      observed=facts();report['densePointerReturn']={'before':pointer_recipient,'after':observed['facts']['focused'],'expectedPrimary':target,'scene':observed}
-      return observed['facts']['focused']==pointer_recipient
-     wait(pointer_return);check('DensePointerMenuEscapePreservesApplicationRecipient',pointer_return(),observation=report['densePointerReturn'])
-     # Pointer entry does not acquire keyboard ownership for the taskbar.
-     # Enter through the actual native shortcut before testing bar navigation.
-     helper([str(keyboard)],'key 125 1\nkey 56 1\nkey 57 1\nsleep 50\nkey 57 0\nkey 56 0\nkey 125 0\nsleep 100\nsync\n')
-     wait(lambda:(projection() or {}).get('mode')=='applications');key(1)
-     wait(lambda:(body:=dense_body()) and body['documentFocused'] and any(b['id']==body['focus'] and not b['disabled'] for b in body['buttons']));key(102)
-     for _ in range(len(dense_body()['buttons'])+1):
-      if selected(dense_ids[0]):break
-      key(106)
-     wait(lambda:selected(dense_ids[0]));check('DenseKeyboardEntryRevealsFirstPin',bool(selected(dense_ids[0])));dense_capture('dense-first')
-     reach_last_pin();check('NativeEndRevealsLastPin',bool(selected(dense_ids[-1])));dense_capture('dense-last')
+     key(1);wait(lambda:selected(dense_ids[0]));check('DenseMenuEscapeRevealsFirstPin',bool(selected(dense_ids[0])));dense_capture('dense-first')
+     key(107);wait(lambda:selected(dense_ids[-1]));check('NativeEndRevealsLastPin',bool(selected(dense_ids[-1])));dense_capture('dense-last')
      key(102);wait(lambda:(dense_body() or {}).get('focus')==(dense_body() or {}).get('buttons',[{}])[0].get('id'))
      visited=[]
      for identity in dense_ids:
@@ -1045,7 +1019,7 @@ raise SystemExit(daemon.run())
      check('DenseMenusAndNavigationHaveNoWindowEffectsOrLaunches',len(journal())==before and not launches())
      helper([str(POINTER),'480','600'],'move 200 30\nwheel -30000 0\nsleep 100\n')
      wait(lambda:(dense_body() or {}).get('scrollLeft')==0);check('NativeVerticalWheelReachesBeginning',dense_body()['scrollLeft']==0)
-     reach_last_pin()
+     key(107);wait(lambda:selected(dense_ids[-1]))
      for width in [640,480]:
       result=s.ctl('eval','hl.monitor({output="WAYLAND-1",mode="'+str(width)+'x600@60",position="0x0",scale=1})')
       check('NativeOutputResizeCommand'+str(width),result.strip()=='ok',result=result)
