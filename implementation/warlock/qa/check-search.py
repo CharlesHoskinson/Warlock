@@ -18,7 +18,8 @@ LIVE=sys.argv[1:]==['--live-motion']
 MOTION=sys.argv[1:]==['--reduced-motion'] or LIVE
 TRANSFER=sys.argv[1:]==['--transfer-workspace']
 LAUNCHER=sys.argv[1:]==['--launcher-dismissal']
-IME=sys.argv[1:]==['--ime'] or LAUNCHER
+LOCALFIELD=sys.argv[1:]==['--local-field']
+IME=sys.argv[1:]==['--ime'] or LAUNCHER or LOCALFIELD
 ACCESSIBILITY=sys.argv[1:]==['--accessibility']
 CONTRAST=sys.argv[1:]==['--high-contrast']
 READINESS=sys.argv[1:]==['--pointer-readiness']
@@ -42,7 +43,7 @@ DENSE=sys.argv[1:]==['--dense-taskbar'] or PICKER
 PINMENUS=sys.argv[1:]==['--pinned-menus'] or (DENSE and not PICKER)
 PRIMARY=DESCRIPTION or sys.argv[1:]==['--taskbar-primary'] or PINMENUS or PICKER
 SWITCHER=sys.argv[1:]==['--switcher'] or ACCESSIBILITY
-NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'];POPUP=sys.argv[1:]==['--native-popup'] or QUIESCENT or SHUTDOWN or BARRETURN;TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION or KEYBOARD or DRAG or IME or TRANSFER or MOTION or PINMAX or ANNOUNCEMENTS;assert not sys.argv[1:] or PINS or POPUP or TASKVIEW or PRIMARY or SWITCHER or PREVIEW
+NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'] or LOCALFIELD;POPUP=sys.argv[1:]==['--native-popup'] or QUIESCENT or SHUTDOWN or BARRETURN;TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION or KEYBOARD or DRAG or IME or TRANSFER or MOTION or PINMAX or ANNOUNCEMENTS;assert not sys.argv[1:] or PINS or POPUP or TASKVIEW or PRIMARY or SWITCHER or PREVIEW
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143'
 sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
 scope=require_qa_scope();sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
@@ -175,6 +176,12 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
   report['motionStorage']=json.loads(run('motion-store',['/usr/bin/python3','-B','qa/check-live-motion.py']))
   run('live-motion-model-named',['quint','test','qa/motion-profile.qnt','--main=liveMotion','--backend=typescript','--match=Test$','--max-samples=1','--seed=79161'])
   run('live-motion-model-invariants',['quint','run','qa/motion-profile.qnt','--main=liveMotion','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79162'])
+ if LOCALFIELD:
+  local_model=json.loads(run('local-field-model',['/usr/bin/python3','-B','qa/check-local-field-publication.py']))
+  model_path=pathlib.Path(local_model['report']);assert local_model['passed'];report['localFieldModel']={'path':str(model_path),'sha256':sha(model_path)}
+  run('compile-local-field',[str(HELD/pinned['compiler']),'make','qa/LocalFieldReplay.elm','--optimize','--output=assets/local-field.js'])
+  (INPUT/'qa/local-field-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.LocalFieldReplay'))
+  run('typed-local-field',['node','qa/local-field-replay.js','assets/local-field.js',str(OUT/'local-field.json')]);report['typedLocalField']=json.loads((OUT/'local-field.json').read_text());assert all(report['typedLocalField']['checks'].values())
  if IME:
   report.update(requirements=['ELM-UX-028'],scenarios=['ime-spike-commit','ime-spike-cancel'],scope='Actual compiled popup composition lifecycle, commit coalescing and field/custody retirement; original native IME candidate and caret evidence remains separate.')
   run('compile-ime',[str(HELD/pinned['compiler']),'make','qa/ImeReplay.elm','--optimize','--output=assets/ime.js'])

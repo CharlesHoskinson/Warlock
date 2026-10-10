@@ -5,6 +5,7 @@ import Desktop
 import Json.Decode as D
 import Json.Encode as E
 import Launch
+import NativePointerFixture
 import Pins
 import Platform
 import Shell
@@ -19,7 +20,7 @@ base =
     let m=Desktop.initial
         w=m.windows
         s=w.shell
-    in {m|open=True,applications=Catalog.decode catalog |> Result.toMaybe,pins=Pins.observe (Just {revision=one,identities=[]}) Pins.initial,launch=Launch.init |> Launch.bind (E.encode 0 bindingValue) |> Launch.catalog catalog,windows={w|shell={s|binding=binding,phase=Shell.Ready}}}
+    in NativePointerFixture.ready {m|open=True,applications=Catalog.decode catalog |> Result.toMaybe,pins=Pins.observe (Just {revision=one,identities=[]}) Pins.initial,launch=Launch.init |> Launch.bind (E.encode 0 bindingValue) |> Launch.catalog catalog,windows={w|shell={s|binding=binding,phase=Shell.Ready}}}
 apply build model = Desktop.capture model |> Maybe.map (\stamp -> Desktop.update (build stamp) model) |> Maybe.withDefault (model,[])
 save revision state = saveReceipt state |> Tuple.first
 saveReceipt (model,effects) =

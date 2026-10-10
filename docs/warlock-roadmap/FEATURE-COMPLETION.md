@@ -150,3 +150,12 @@ The taskbar now puts its existing read-only recovery control first when recovery
 Recovery keeps the same identity, accessible label and typed observation-only action. Pending recovery remains disabled; Refused and Unknown retain their native outcome and no-replay policy. Visual feedback stays readable with aria-live off while the existing scoped single announcer owns live reporting. This layout change adds no effect authority or new Quint model; unchanged applicable models ran in the compiled build.
 
 Original UI-004 taskbar-refusal is partial. Primary keyboard/AT refusal, independent acceptance, already-scrolled dense arrangements and release-wide hardware/resource/package/rollback gates remain open. Next: the original zero-window pin primary keyboard journey.
+
+
+## Stable launcher typing and zero-window keyboard launch — October 10
+
+Typing in the launcher now survives the gap between an accepted Elm publication and its preceding DOM frame. Popup-owned field callbacks preserve bounded text within the same lease and rebase only read-only query messages; external edits/buttons remain publication-strict, and replacement leases retire drafts. The original native pin/reorder/restart journey passes. Physical Enter and real AT-SPI press each launch the zero-window Editor pin once through GIO. Its observed running family then minimizes/restores without another launch, receives actual client keyboard input and paints 268,432 green pixels inside its native window region. Both private native campaigns exit normally. See [the exact native and model evidence](../../implementation/warlock/qa/evidence/taskbar-zero-keyboard/README.md).
+
+Input text belongs to its current field lease. The popup distinguishes its own Html callbacks from the external action port; this preserves local typing while ordinary captured actions retain exact-publication checks. The repair uses quint-llm-kit, with executable initialization, seven named positive/negative scenarios, sampled safety runs, fifteen compiled field assertions and the unchanged IME/browser regression. No native ABI, effect admission or Unknown/no-replay policy changed.
+
+Original UI-004 taskbar-zero remains partial pending independent acceptance. The fixture does not qualify every application/AT mode or pin/reorder popup paint. Next: original UI-005 search-race with a genuinely delayed old catalog refresh, current query/selection, native pixels and applicable AT observations.

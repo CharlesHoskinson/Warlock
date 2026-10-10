@@ -519,11 +519,11 @@ function _Debug_crash_UNUSED(identifier, fact1, fact2, fact3, fact4)
 
 function _Debug_regionToString(region)
 {
-	if (region.ay._ === region.aF._)
+	if (region.az._ === region.aF._)
 	{
-		return 'on line ' + region.ay._;
+		return 'on line ' + region.az._;
 	}
-	return 'on lines ' + region.ay._ + ' through ' + region.aF._;
+	return 'on lines ' + region.az._ + ' through ' + region.aF._;
 }
 
 
@@ -2720,8 +2720,8 @@ var _VirtualDom_mapEventRecord = F2(function(func, record)
 {
 	return {
 		r: func(record.r),
-		az: record.az,
-		as: record.as
+		aA: record.aA,
+		at: record.at
 	}
 });
 
@@ -2990,10 +2990,10 @@ function _VirtualDom_makeCallback(eventNode, initialHandler)
 
 		var value = result.a;
 		var message = !tag ? value : tag < 3 ? value.a : value.r;
-		var stopPropagation = tag == 1 ? value.b : tag == 3 && value.az;
+		var stopPropagation = tag == 1 ? value.b : tag == 3 && value.aA;
 		var currentEventNode = (
 			stopPropagation && event.stopPropagation(),
-			(tag == 2 ? value.b : tag == 3 && value.as) && event.preventDefault(),
+			(tag == 2 ? value.b : tag == 3 && value.at) && event.preventDefault(),
 			eventNode
 		);
 		var tagger;
@@ -3983,7 +3983,7 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 		impl.bo,
 		impl.bn,
 		function(sendToApp, initialModel) {
-			var divertHrefToApp = impl.aw && impl.aw(sendToApp)
+			var divertHrefToApp = impl.ax && impl.ax(sendToApp)
 			var view = impl.bp;
 			var title = _VirtualDom_doc.title;
 			var bodyNode = _VirtualDom_doc.body;
@@ -4058,7 +4058,7 @@ function _Browser_application(impl)
 	var key = function() { key.a(onUrlChange(_Browser_getUrl())); };
 
 	return _Browser_document({
-		aw: function(sendToApp)
+		ax: function(sendToApp)
 		{
 			key.a = sendToApp;
 			_Browser_window.addEventListener('popstate', key);
@@ -5123,7 +5123,7 @@ var $author$project$UInt64$decoder = A2(
 	},
 	$elm$json$Json$Decode$string);
 var $author$project$Settings$Night = 0;
-var $author$project$Settings$defaults = {ai: false, al: false, ac: 100, ao: 0};
+var $author$project$Settings$defaults = {aj: false, am: false, ac: 100, ap: 0};
 var $elm$core$List$filter = F2(
 	function (isGood, list) {
 		return A3(
@@ -5310,7 +5310,7 @@ var $elm$core$Result$toMaybe = function (result) {
 };
 var $author$project$Settings$Values = F4(
 	function (theme, textScale, effectsOff, reducedTransparency) {
-		return {ai: effectsOff, al: reducedTransparency, ac: textScale, ao: theme};
+		return {aj: effectsOff, am: reducedTransparency, ac: textScale, ap: theme};
 	});
 var $elm$json$Json$Decode$map4 = _Json_map4;
 var $author$project$Settings$scaleDecoder = A2(
@@ -5372,7 +5372,7 @@ var $author$project$Settings$legacyValues = A2(
 		$elm$json$Json$Decode$map2,
 		F2(
 			function (theme, scale) {
-				return {ai: false, al: false, ac: scale, ao: theme};
+				return {aj: false, am: false, ac: scale, ap: theme};
 			}),
 		A2($elm$json$Json$Decode$field, 'theme', $author$project$Settings$themeDecoder),
 		A2($elm$json$Json$Decode$field, 'textScale', $author$project$Settings$scaleDecoder)));
@@ -5445,7 +5445,7 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 				$elm$json$Json$Decode$map8,
 				F8(
 					function (version, shown, scoped, current, notice, bar, popup, appearance) {
-						return {k: appearance, i: bar, G: current, w: notice, b: popup, av: scoped, ax: shown, a3: version};
+						return {k: appearance, i: bar, G: current, w: notice, b: popup, aw: scoped, ay: shown, a3: version};
 					}),
 				A2($elm$json$Json$Decode$field, 'surfaceProtocol', $elm$json$Json$Decode$int),
 				A2($elm$json$Json$Decode$field, 'publication', $author$project$UInt64$decoder),
@@ -5486,11 +5486,11 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 					return $.Q;
 				},
 				all);
-			return ((record.a3 !== 2) || (_Utils_eq(record.ax, $author$project$UInt64$zero) || ((!A2(
+			return ((record.a3 !== 2) || (_Utils_eq(record.ay, $author$project$UInt64$zero) || ((!A2(
 				$elm$core$List$member,
 				record.G,
 				_List_fromArray(
-					['closed', 'picker', 'applications', 'menu', 'overview', 'switcher', 'snap', 'settings', 'notifications', 'system', 'files', 'jump']))) || (((record.G !== 'closed') && _Utils_eq(record.av, $author$project$UInt64$zero)) || (((record.G === 'closed') && (!$elm$core$List$isEmpty(record.b))) || ((!unique(identities)) || ((!unique(
+					['closed', 'picker', 'applications', 'menu', 'overview', 'switcher', 'snap', 'settings', 'notifications', 'system', 'files', 'jump']))) || (((record.G !== 'closed') && _Utils_eq(record.aw, $author$project$UInt64$zero)) || (((record.G === 'closed') && (!$elm$core$List$isEmpty(record.b))) || ((!unique(identities)) || ((!unique(
 				A2(
 					$elm$core$List$map,
 					function ($) {
@@ -5534,7 +5534,7 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 						return !_Utils_eq(control.u, $elm$core$Maybe$Nothing);
 					},
 					record.b)) > 1)))))))))))))) ? $elm$core$Result$Err('Invalid presentation scope/identities') : $elm$core$Result$Ok(
-				{k: record.k, i: record.i, aL: parent, aN: record.av, a: record.G, ak: motion, b: record.b, aX: record.ax, C: record.w});
+				{k: record.k, i: record.i, aL: parent, aN: record.aw, a: record.G, al: motion, b: record.b, aX: record.ay, C: record.w});
 		},
 		A2(
 			$elm$core$Result$mapError,
@@ -5556,19 +5556,19 @@ var $author$project$Presentation$accept = F2(
 		if (_v0.$ === 1) {
 			return _Utils_update(
 				model,
-				{A: $elm$core$Maybe$Nothing});
+				{y: $elm$core$Maybe$Nothing});
 		} else {
 			var snapshot = _v0.a;
 			return ((A2(
 				$author$project$UInt64$compare,
 				$author$project$SurfaceRenderer$publication(snapshot),
-				model.ap) !== 2) || (!A2(
+				model.aq) !== 2) || (!A2(
 				$author$project$UInt64$compare,
 				$author$project$SurfaceRenderer$lease(snapshot),
 				model.aN))) ? prior : {
-				ap: $author$project$SurfaceRenderer$publication(snapshot),
+				aq: $author$project$SurfaceRenderer$publication(snapshot),
 				aN: $author$project$SurfaceRenderer$lease(snapshot),
-				A: $elm$core$Maybe$Just(snapshot)
+				y: $elm$core$Maybe$Just(snapshot)
 			};
 		}
 	});
@@ -5577,7 +5577,7 @@ var $author$project$Bar$announcements = _Platform_incomingPort('announcements', 
 var $elm$core$Platform$Sub$batch = _Platform_batch;
 var $author$project$Presentation$current = function (_v0) {
 	var model = _v0;
-	return model.A;
+	return model.y;
 };
 var $author$project$CapturedAction$CapturedAction = $elm$core$Basics$identity;
 var $elm$json$Json$Decode$map7 = _Json_map7;
@@ -5622,7 +5622,7 @@ var $author$project$CapturedAction$decode = function (raw) {
 					var value = _v0.c;
 					return ((version === 2) && ((kind === 'surface-action') && ((!_Utils_eq(value.aX, $author$project$UInt64$zero)) && (A2(
 						$elm$core$List$member,
-						value.am,
+						value.an,
 						_List_fromArray(
 							['bar', 'popup'])) && ((!$elm$core$String$isEmpty(value.Q)) && (($elm$core$String$length(value.Q) <= 512) && (!A2(
 						$elm$core$String$any,
@@ -5638,7 +5638,7 @@ var $author$project$CapturedAction$decode = function (raw) {
 							return _Utils_Tuple3(
 								version,
 								kind,
-								{Q: name, aN: scoped, aX: shown, am: role, a2: trigger});
+								{Q: name, aN: scoped, aX: shown, an: role, a2: trigger});
 						}),
 					A2($elm$json$Json$Decode$field, 'surfaceProtocol', $elm$json$Json$Decode$int),
 					A2($elm$json$Json$Decode$field, 'kind', $elm$json$Json$Decode$string),
@@ -5707,7 +5707,7 @@ var $author$project$CapturedAction$encode = function (_v0) {
 				[
 					_Utils_Tuple2(
 					'surface',
-					$elm$json$Json$Encode$string(value.am)),
+					$elm$json$Json$Encode$string(value.an)),
 					_Utils_Tuple2(
 					'surfaceProtocol',
 					$elm$json$Json$Encode$int(2)),
@@ -5755,13 +5755,13 @@ var $author$project$CapturedAction$publication = function (_v0) {
 };
 var $author$project$CapturedAction$surface = function (_v0) {
 	var value = _v0;
-	return value.am;
+	return value.an;
 };
 var $author$project$Presentation$dispatch = F3(
 	function (popup, raw, _v0) {
 		var model = _v0;
 		var _v1 = _Utils_Tuple2(
-			model.A,
+			model.y,
 			$author$project$CapturedAction$decode(raw));
 		if ((!_v1.a.$) && (!_v1.b.$)) {
 			var snapshot = _v1.a.a;
@@ -6012,8 +6012,8 @@ var $elm$core$Task$perform = F2(
 	});
 var $elm$browser$Browser$element = _Browser_element;
 var $author$project$Announcement$Model = $elm$core$Basics$identity;
-var $author$project$Announcement$initial = {F: false, ap: $author$project$UInt64$zero, r: $elm$core$Maybe$Nothing};
-var $author$project$Presentation$initial = {ap: $author$project$UInt64$zero, aN: $author$project$UInt64$zero, A: $elm$core$Maybe$Nothing};
+var $author$project$Announcement$initial = {F: false, aq: $author$project$UInt64$zero, r: $elm$core$Maybe$Nothing};
+var $author$project$Presentation$initial = {aq: $author$project$UInt64$zero, aN: $author$project$UInt64$zero, y: $elm$core$Maybe$Nothing};
 var $elm$core$Platform$Cmd$batch = _Platform_batch;
 var $elm$core$Platform$Cmd$none = $elm$core$Platform$Cmd$batch(_List_Nil);
 var $author$project$Bar$presentation = _Platform_incomingPort('presentation', $elm$json$Json$Decode$value);
@@ -6055,7 +6055,7 @@ var $author$project$Announcement$messageDecoder = function () {
 		$elm$json$Json$Decode$map3,
 		F3(
 			function (sequence, correlation, value) {
-				return {ah: correlation, Z: false, M: sequence, an: value};
+				return {ai: correlation, Z: false, M: sequence, ao: value};
 			}),
 		A2($elm$json$Json$Decode$field, 'sequence', $author$project$Announcement$positive),
 		A2(
@@ -6148,7 +6148,7 @@ var $author$project$Announcement$receive = F4(
 				$elm$json$Json$Decode$map8,
 				F8(
 					function (version, kind, recipient, owner, publication, lease, message, deliver) {
-						return {aE: deliver, aM: kind, aN: lease, r: message, aQ: owner, aX: publication, at: recipient, a3: version};
+						return {aE: deliver, aM: kind, aN: lease, r: message, aQ: owner, aX: publication, au: recipient, a3: version};
 					}),
 				A2($elm$json$Json$Decode$field, 'announcementProtocol', $elm$json$Json$Decode$int),
 				A2($elm$json$Json$Decode$field, 'kind', $elm$json$Json$Decode$string),
@@ -6171,7 +6171,7 @@ var $author$project$Announcement$receive = F4(
 			var current = _v0.a.a;
 			var packet = _v0.b.a;
 			if ((packet.a3 !== 1) || ((packet.aM !== 'announcement-projection') || ((!_Utils_eq(
-				packet.at.b,
+				packet.au.b,
 				popup ? 'popup' : 'bar')) || ((!_Utils_eq(
 				packet.aX,
 				$author$project$SurfaceRenderer$publication(current))) || (!_Utils_eq(
@@ -6181,7 +6181,7 @@ var $author$project$Announcement$receive = F4(
 			} else {
 				if (!_Utils_eq(
 					packet.aQ,
-					$elm$core$Maybe$Just(packet.at))) {
+					$elm$core$Maybe$Just(packet.au))) {
 					return _Utils_update(
 						model,
 						{F: false, r: $elm$core$Maybe$Nothing});
@@ -6189,9 +6189,9 @@ var $author$project$Announcement$receive = F4(
 					var _v1 = packet.r;
 					if (!_v1.$) {
 						var message = _v1.a;
-						return (packet.aE && (A2($author$project$UInt64$compare, message.M, model.ap) === 2)) ? {
+						return (packet.aE && (A2($author$project$UInt64$compare, message.M, model.aq) === 2)) ? {
 							F: true,
-							ap: message.M,
+							aq: message.M,
 							r: $elm$core$Maybe$Just(message)
 						} : ((model.F && _Utils_eq(
 							model.r,
@@ -6275,11 +6275,11 @@ var $author$project$Announcement$view = function (_v0) {
 										$elm$html$Html$Attributes$attribute,
 										'data-announcement-sequence',
 										$author$project$UInt64$string(message.M)),
-										A2($elm$html$Html$Attributes$attribute, 'data-announcement-correlation', message.ah)
+										A2($elm$html$Html$Attributes$attribute, 'data-announcement-correlation', message.ai)
 									]),
 								_List_fromArray(
 									[
-										$elm$html$Html$text(message.an)
+										$elm$html$Html$text(message.ao)
 									])))
 						]);
 				},
@@ -6491,7 +6491,7 @@ var $author$project$PreviewVisual$render = F3(
 													_List_Nil))
 											]);
 									},
-									data.aj)),
+									data.ak)),
 							_List_fromArray(
 								[
 									_Utils_Tuple2(
@@ -7146,11 +7146,11 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 			$elm$html$Html$div,
 			_List_fromArray(
 				[
-					A2($elm$html$Html$Attributes$attribute, 'data-motion', snapshot.ak),
+					A2($elm$html$Html$Attributes$attribute, 'data-motion', snapshot.al),
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-theme',
-					$author$project$Settings$themeName(snapshot.k.ao)),
+					$author$project$Settings$themeName(snapshot.k.ap)),
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-text-scale',
@@ -7158,11 +7158,11 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-effects',
-					snapshot.k.ai ? 'off' : 'on'),
+					snapshot.k.aj ? 'off' : 'on'),
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-reduced-transparency',
-					snapshot.k.al ? 'true' : 'false'),
+					snapshot.k.am ? 'true' : 'false'),
 					$elm$html$Html$Attributes$class('surface-popup'),
 					A2($elm$html$Html$Attributes$attribute, 'data-mode', snapshot.a),
 					A2(
@@ -7279,11 +7279,11 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 			'div',
 			_List_fromArray(
 				[
-					A2($elm$html$Html$Attributes$attribute, 'data-motion', snapshot.ak),
+					A2($elm$html$Html$Attributes$attribute, 'data-motion', snapshot.al),
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-theme',
-					$author$project$Settings$themeName(snapshot.k.ao)),
+					$author$project$Settings$themeName(snapshot.k.ap)),
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-text-scale',
@@ -7291,11 +7291,11 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-effects',
-					snapshot.k.ai ? 'off' : 'on'),
+					snapshot.k.aj ? 'off' : 'on'),
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-reduced-transparency',
-					snapshot.k.al ? 'true' : 'false'),
+					snapshot.k.am ? 'true' : 'false'),
 					$elm$html$Html$Attributes$class('surface-bar'),
 					A2(
 					$elm$html$Html$Attributes$attribute,

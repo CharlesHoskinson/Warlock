@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "scope": "Quint sampled/named local field publication abstraction; no native/AT acceptance",
+  "sourceSHA256": "9ae99c56a0ef87f55dd58f516cc084df80972383af6b3d4ec6fab821bce15b14",
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-1f65e23e37984b6e9497e1084682fc00.scope",
+    "coreLimit": 1
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "argv": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/ime-1791649572830297731/inputs/qa/local-field-publication.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "argv": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/ime-1791649572830297731/inputs/qa/local-field-publication.qnt",
+        "--match",
+        ".*Test"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "sampled",
+      "argv": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/ime-1791649572830297731/inputs/qa/local-field-publication.qnt",
+        "--invariant",
+        "safety",
+        "--max-samples",
+        "500",
+        "--max-steps",
+        "40",
+        "--seed",
+        "10010"
+      ],
+      "exitCode": 0
+    }
+  ]
+}

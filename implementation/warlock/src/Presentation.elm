@@ -1,4 +1,4 @@
-module Presentation exposing (Model, initial, accept, current, dispatch, query, editQuery)
+module Presentation exposing (Model, initial, accept, current, dispatch, query, editQuery, localEdit)
 
 import Json.Decode as D
 import Json.Encode as E
@@ -42,4 +42,19 @@ editQuery raw ((Model model) as currentModel) =
     in case (D.decodeValue decoder raw,model.snapshot) of
         (Ok event,Just snapshot) ->
             if event.version/=2 || event.surface/="popup" || event.publication/=SurfaceRenderer.publication snapshot || event.lease/=SurfaceRenderer.lease snapshot || D.decodeValue (D.field "id" D.string) raw/=Ok (SurfaceRenderer.fieldIdentity snapshot) then Nothing else query event.value currentModel |> Maybe.map (\wire -> (event.value,wire))
+        _ -> Nothing
+
+-- Only Popup's own Html callback uses this path. Its DOM can still show the
+-- preceding publication when Elm has accepted the next one. Retain that live
+-- field edit within the same lease; external ports and button actions keep
+-- their exact-publication admission. The rebased query cannot dispatch an app.
+localEdit : D.Value -> Model -> Maybe E.Value
+localEdit raw ((Model model) as currentModel) =
+    let decoder = D.map7 (\version surface publication lease identity kind value -> {version=version,surface=surface,publication=publication,lease=lease,identity=identity,kind=kind,value=value})
+            (D.field "surfaceProtocol" D.int) (D.field "surface" D.string) (D.field "publication" UInt64.decoder) (D.field "lease" UInt64.decoder) (D.field "id" D.string) (D.field "kind" D.string) (D.field "query" D.string)
+    in case (D.decodeValue decoder raw,model.snapshot) of
+        (Ok event,Just snapshot) ->
+            if event.version/=2 || event.surface/="popup" || event.publication==UInt64.zero || UInt64.compare event.publication (SurfaceRenderer.publication snapshot)==GT || event.lease/=SurfaceRenderer.lease snapshot || event.identity/=SurfaceRenderer.fieldIdentity snapshot || not (List.member event.kind ["surface-query","surface-preedit","surface-composition-start","surface-composition-end"]) then Nothing
+            else query event.value currentModel |> Maybe.andThen (\wire ->
+                D.decodeValue (D.keyValuePairs D.value) wire |> Result.toMaybe |> Maybe.map (\fields -> E.object (List.map (\(name,value) -> (name,if name=="kind" then E.string event.kind else value)) fields)))
         _ -> Nothing

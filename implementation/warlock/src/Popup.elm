@@ -26,7 +26,7 @@ port nativePreviewIssued : (D.Value -> msg) -> Sub msg
 port nativePreviewRetry : (D.Value -> msg) -> Sub msg
 port nativePreviewRetirement : (D.Value -> msg) -> Sub msg
 
-type Msg = Announce D.Value | Present D.Value | Action E.Value | NativePreview D.Value | NativeGrant D.Value | NativeQuarantine D.Value | NativeClosed D.Value | NativeIssued D.Value | NativeRetry D.Value | NativeRetirement D.Value
+type Msg = Announce D.Value | Present D.Value | Action E.Value | LocalAction E.Value | NativePreview D.Value | NativeGrant D.Value | NativeQuarantine D.Value | NativeClosed D.Value | NativeIssued D.Value | NativeRetry D.Value | NativeRetirement D.Value
 type Composition = Idle | Preediting { baseline : String, before : Maybe String }
 type alias Model = { announcements : Announcement.Model, presentation : Presentation.Model, previews : Preview.Model, pendingQuery : Maybe String, composition : Composition, lastQuery : Maybe (String, UInt64.Counter, UInt64.Counter) }
 
@@ -40,13 +40,18 @@ main : Program () Model Msg
 main = Browser.element
     { init=\_ -> (initial,Cmd.none)
     , subscriptions=\_ -> Sub.batch [announcements Announce,presentation Present,requestAction Action,nativePreviews NativePreview,nativePreviewGrants NativeGrant,nativePreviewQuarantine NativeQuarantine,nativePreviewClosed NativeClosed,nativePreviewIssued NativeIssued,nativePreviewRetry NativeRetry,nativePreviewRetirement NativeRetirement]
-    , view=\model -> div [attribute "data-input-composing" (if isComposing model then "true" else "false")] [Presentation.current model.presentation |> Maybe.map (\snapshot -> SurfaceRenderer.viewWithPreview (\identity -> Preview.visual snapshot identity model.previews) True Action (model.pendingQuery |> Maybe.map (\query -> SurfaceRenderer.pendingQuery query snapshot) |> Maybe.withDefault snapshot)) |> Maybe.withDefault (text ""),Presentation.current model.presentation |> Maybe.map (\_ -> Announcement.view model.announcements) |> Maybe.withDefault (text "")]
+    , view=\model -> div [attribute "data-input-composing" (if isComposing model then "true" else "false")] [Presentation.current model.presentation |> Maybe.map (\snapshot -> SurfaceRenderer.viewWithPreview (\identity -> Preview.visual snapshot identity model.previews) True LocalAction (model.pendingQuery |> Maybe.map (\query -> SurfaceRenderer.pendingQuery query snapshot) |> Maybe.withDefault snapshot)) |> Maybe.withDefault (text ""),Presentation.current model.presentation |> Maybe.map (\_ -> Announcement.view model.announcements) |> Maybe.withDefault (text "")]
     , update=update
     }
 
 update : Msg -> Model -> (Model, Cmd Msg)
 update message model =
     case message of
+        LocalAction value ->
+            let kind=D.decodeValue (D.field "kind" D.string) value |> Result.withDefault ""
+            in if List.member kind ["surface-query","surface-preedit","surface-composition-start","surface-composition-end"] then
+                Presentation.localEdit value model.presentation |> Maybe.map (\current -> update (Action current) model) |> Maybe.withDefault (model,Cmd.none)
+            else update (Action value) model
         Announce raw -> ({model | announcements=Announcement.receive True (Presentation.current model.presentation) raw model.announcements},Cmd.none)
         Action value ->
             let kind=D.decodeValue (D.field "kind" D.string) value |> Result.withDefault ""
@@ -78,7 +83,7 @@ update message model =
             let acceptedPresentation = Presentation.accept raw model.presentation
                 (previews,commands) = Preview.present (Presentation.current acceptedPresentation) model.previews
                 sameField = case (Presentation.current model.presentation,Presentation.current acceptedPresentation) of
-                    (Just old,Just next) -> List.member (SurfaceRenderer.mode next) ["applications","files"] && SurfaceRenderer.mode old==SurfaceRenderer.mode next && SurfaceRenderer.enabled True (SurfaceRenderer.fieldIdentity next) next
+                    (Just old,Just next) -> SurfaceRenderer.lease old==SurfaceRenderer.lease next && List.member (SurfaceRenderer.mode next) ["applications","files"] && SurfaceRenderer.mode old==SurfaceRenderer.mode next && SurfaceRenderer.enabled True (SurfaceRenderer.fieldIdentity next) next
                     _ -> False
                 composition = if sameField then model.composition else Idle
                 composing = composition/=Idle

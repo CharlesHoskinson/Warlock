@@ -1,55 +1,59 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T16:14:58.783268+00:00",
+  "updatedUTC": "2026-10-10T16:37:39.517108+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "taskbar-native-refusal",
+    "id": "taskbar-zero-keyboard",
     "requirements": [
       "ELM-UI-004"
     ],
     "scenarios": [
-      "taskbar-refusal"
+      "taskbar-zero"
     ],
     "paths": [
-      "implementation/warlock/qa/native-taskbar-refusal.py",
+      "implementation/warlock/qa/native-taskbar-zero-keyboard.py",
       "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/src/TaskbarShell.elm",
-      "implementation/warlock/assets/bar-adapter.js",
-      "implementation/warlock/assets/shell.css",
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/src/Launch.elm",
+      "implementation/warlock/adapter/catalog_authority.py",
       "implementation/warlock/README.md",
+      "implementation/warlock/src/Popup.elm",
+      "implementation/warlock/src/Presentation.elm",
+      "implementation/warlock/qa/local-field-publication.qnt",
+      "implementation/warlock/qa/LocalFieldReplay.elm",
+      "implementation/warlock/qa/check-local-field-publication.py",
+      "implementation/warlock/qa/check-search.py",
       "implementation/warlock/qa/current-search-build.json",
       "implementation/warlock/assets/elm.js",
       "implementation/warlock/assets/bar.js",
       "implementation/warlock/assets/popup.js",
-      "implementation/warlock/qa/check-taskbar-recovery.py",
-      "implementation/warlock/qa/native-taskbar-recovery.py"
+      "implementation/warlock/qa/PinsReplay.elm"
     ],
-    "before": "The original taskbar-refusal scenario is unadjudicated; existing cross-output pinned refusal is observed only through a native fixture call.",
-    "after": "A real taskbar Activate from another output receives native Refused feedback while pin/workspace/draft/geometry and observed focus remain authoritative, with no automatic replay and declared keyboard custody.",
+    "before": "Persistent zero-window taskbar pins have pointer launch evidence but lack actual primary keyboard/AT launch and resulting running-family duplicate suppression.",
+    "after": "A real keyboard primary action launches the pinned catalog application once; subsequent running-family primary actions activate/minimize through native authority without a second launch. Real AT names/focus and applicable current action are observed separately.",
     "verification": [
-      "Compose original two-output native drag fixture, pin the live target on its owner output, map an ordinary independent peer on the other output, then real current-bar pointer activation. Require correlated native implicit-transfer-required refusal, visible current Refused feedback and actual pixels, unchanged native target/peer and no repeated window or launch effects. Observe actual keyboard recipient without a manual success workaround. Model a demonstrated behavioral defect with quint-llm-kit before owning fix. Preserve original waits/core/plugin/source identity; AT and independent original acceptance separate."
+      "Compose original private persistent pin/reorder/restart fixture. Replace only Editor desktop fixture with owned real GTK application matching its declared startup class. Physical Apps/Escape/Home/Right/Enter reaches current pin. Require one bound GIO launch, actual app identity/pixels/client key recipient and unchanged persistent pin order. Subsequent primary action must use observed running family and no duplicate launch. Actual AT-SPI/Orca uses the existing isolated session and original waits. Preserve source/ABI/Unknown/no-replay, normal owned app exit and all original verification; model demonstrated behavioral fixes with quint-llm-kit before implementation."
     ],
-    "owner": "root-taskbar-native-refusal",
-    "participantRecord": ".warlock-contributor/taskbar-native-refusal.json",
+    "owner": "root-taskbar-zero-keyboard",
+    "participantRecord": ".warlock-contributor/taskbar-zero-keyboard.json",
     "disposition": "partial",
     "evidence": {
-      "path": "implementation/warlock/qa/evidence/taskbar-native-refusal/manifest.json",
-      "sha256": "5703769e9de79c200d097accc0a4a9875ea010d35c85d27f8f9aed08d39a3e20",
-      "scope": "The taskbar now puts its existing read-only recovery control first when recovery is needed. The actual Refused frame moved it from x803 outside a 540px action region to x1, width120. Real other-output activation receives one native implicit-transfer-required Refused receipt; pin/workspace/geometry/draft and peer focus remain authoritative. Actual peer keyboard input is preserved before recovery. Clicking the visible recovery issues observations without retry or launch. Current browser and native Pending/Refused/Unknown regressions pass with normal cleanup."
+      "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/manifest.json",
+      "sha256": "b45d998bfcea1a075d0b5c5cabebd69efff44f7e0f377bba3e41d6a5fb381df3",
+      "scope": "Typing in the launcher now survives the gap between an accepted Elm publication and its preceding DOM frame. Popup-owned field callbacks preserve bounded text within the same lease and rebase only read-only query messages; external edits/buttons remain publication-strict, and replacement leases retire drafts. The original native pin/reorder/restart journey passes. Physical Enter and real AT-SPI press each launch the zero-window Editor pin once through GIO. Its observed running family then minimizes/restores without another launch, receives actual client keyboard input and paints 268,432 green pixels inside its native window region. Both private native campaigns exit normally."
     },
-    "observed": "The taskbar now puts its existing read-only recovery control first when recovery is needed. The actual Refused frame moved it from x803 outside a 540px action region to x1, width120. Real other-output activation receives one native implicit-transfer-required Refused receipt; pin/workspace/geometry/draft and peer focus remain authoritative. Actual peer keyboard input is preserved before recovery. Clicking the visible recovery issues observations without retry or launch. Current browser and native Pending/Refused/Unknown regressions pass with normal cleanup.",
+    "observed": "Typing in the launcher now survives the gap between an accepted Elm publication and its preceding DOM frame. Popup-owned field callbacks preserve bounded text within the same lease and rebase only read-only query messages; external edits/buttons remain publication-strict, and replacement leases retire drafts. The original native pin/reorder/restart journey passes. Physical Enter and real AT-SPI press each launch the zero-window Editor pin once through GIO. Its observed running family then minimizes/restores without another launch, receives actual client keyboard input and paints 268,432 green pixels inside its native window region. Both private native campaigns exit normally.",
     "missingObservations": [
-      "Independent original-scenario review against the frozen interaction oracle and exact source/core/plugin/toolchain remains open.",
-      "Native primary keyboard invocation and applicable AT invocation/feedback for taskbar-refusal remain unqualified. Actual peer keyboard delivery after pointer refusal is not keyboard primary invocation. Audible speech/braille and other refusal causes remain separate.",
-      "Recovery is observed without scrolling in the default two-family native viewport and at 320px in a compiled component. Existing user scroll position, denser pin/group arrangements and all input/AT modes remain separate.",
-      "Hardware/AT/IME breadth, resource/journey budgets, reproducible package and reversible deployment/rollback remain release obligations."
+      "Independent original-scenario review of taskbar-zero against the frozen interaction oracle and exact source/core/plugin/toolchain remains open.",
+      "This fixture covers one current zero-window catalog pin, physical Enter and focused AT-SPI press with actual Orca names/focus. Broader applications, cached/unfocused AT actions, audible speech/braille, pin/reorder popup paint and other original GUI scenarios remain separately unqualified.",
+      "Physical hardware/output/IME breadth, resource/journey budgets, reproducible package and reversible deployment/rollback remain release obligations."
     ],
-    "nextSourceWork": "Original ELM-UI-004/taskbar-zero: operate a persistent zero-window taskbar pin through actual primary keyboard input. Require exactly one current identity-bound launch, visible native application, preserved pin order and no ordinary-activation duplicate. Reuse current single Elm launch authority; fix any demonstrated production defect model-first with quint-llm-kit. Applicable AT and independent original acceptance remain separate. Avoid expanding refusal variants after this bounded product fix."
+    "nextSourceWork": "Original ELM-UI-005/search-race: hold a genuine older catalog refresh while the user edits the query, release it, and exercise current selection through actual keyboard/AT with native pixels. Require current query/catalog results, no replacement/stale dispatch and no automatic launch. Reuse existing immutable Elm search/selection/launch authority and the fixed local field route; model any demonstrated behavioral defect first with quint-llm-kit. Independent original acceptance remains separate."
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -2053,44 +2057,88 @@
         "Physical hardware hotplug, AT/IME, resources/journeys, reproducible package and reversible deployment/rollback remain release obligations."
       ],
       "nextSourceWork": "Original ELM-UI-004: exercise the real AT-SPI taskbar names, active/open/minimized state and pointer/keyboard primary routes; fix demonstrated accessible state/focus defects in the owning integrated view/host. Preserve current native pointer/keyboard, pinned retirement and authority guards. Independent original acceptance and wider release gates remain separate."
+    },
+    {
+      "id": "taskbar-primary-at",
+      "requirements": [
+        "ELM-UI-004"
+      ],
+      "scenarios": [
+        "taskbar-inactive",
+        "taskbar-active",
+        "taskbar-minimized"
+      ],
+      "paths": [
+        "implementation/warlock/qa/native-taskbar-primary-at.py",
+        "implementation/warlock/qa/taskbar-at-action.py",
+        "implementation/warlock/src/SurfaceRenderer.elm",
+        "implementation/warlock/assets/activation.js",
+        "implementation/warlock/README.md"
+      ],
+      "before": "Single-family primary actions have native pointer and keyboard proof but no actual AT-SPI/Orca primary state/action observations.",
+      "after": "Screen-reader users receive correct Open/Active/Minimized names and native states while using physical keyboard or the real AT-SPI action; activation/minimize/restore commit once with correct native focus, paint and unchanged membership.",
+      "verification": [
+        "Compose the original primary keyboard/pointer journey with existing private AT bus, actual WebKit tree and Orca. Observe exact native host PID, operation/name/role/current active state, focused accessible and Orca focus/speech. Exercise actual native AT-SPI action on the scoped current taskbar button and preserve original receipts, MRU/desktop succession, client key recipients, pixels and waits. Model behavioral changes with quint-llm-kit before a demonstrated production fix; do not replace AT evidence with DOM injection. Independent original acceptance and wider AT/release gates remain separate."
+      ],
+      "owner": "root-taskbar-primary-at",
+      "participantRecord": ".warlock-contributor/taskbar-primary-at.json",
+      "disposition": "partial",
+      "evidence": {
+        "path": "implementation/warlock/qa/evidence/taskbar-primary-at/manifest.json",
+        "sha256": "73e1d7eb5bc823fbc8c1cf68bb55512bfafe32a91d3600292109e0bf44eefaf1",
+        "scope": "Actual private GTK/WebKit AT-SPI and Orca now qualify the focused single-family Activate/Minimize/Restore fixture. Five real AT-SPI press actions each commit once, with native focus, MRU/desktop succession, client keyboard recipients and painted/absent application frames preserved. A separate physical-Enter journey passes under actual AT observation. All current taskbar names, native active toggle states and focused controls agree with Orca; the real reader emits Activate/Minimize/Restore names. This verifies existing product behavior; no production code or ABI was changed."
+      },
+      "observed": "Actual private GTK/WebKit AT-SPI and Orca now qualify the focused single-family Activate/Minimize/Restore fixture. Five real AT-SPI press actions each commit once, with native focus, MRU/desktop succession, client keyboard recipients and painted/absent application frames preserved. A separate physical-Enter journey passes under actual AT observation. All current taskbar names, native active toggle states and focused controls agree with Orca; the real reader emits Activate/Minimize/Restore names. This verifies existing product behavior; no production code or ABI was changed.",
+      "missingObservations": [
+        "Independent original-scenario review against the exact source/ABI/toolchain and frozen policy remains open.",
+        "This fixture covers focused current AT-SPI press and physical Enter, with silent Orca speech transcript observation. Audible speech, braille, unfocused/cached AT actions, broader AT modes, grouped/zero/refusal taskbar scenarios and other GUI surfaces remain separate obligations.",
+        "Physical hotplug/AT/IME breadth, resource/journey budgets, reproducible package and reversible deployment/rollback remain release obligations."
+      ],
+      "nextSourceWork": "Original ELM-UI-004/taskbar-refusal: reproduce actual taskbar activation of a native pinned family from another output bar, receiving the real implicit-transfer-required refusal. Verify visible Refused feedback, unchanged observed pin/workspace/draft/focus, no replay, and actual keyboard recipient. Fix a demonstrated owning feedback/projection/admission defect with quint-llm-kit before behavioral changes; retain native primary AT and authority guards. Independent acceptance and wider release scope remain open."
     }
   ],
   "lastSlice": {
-    "id": "taskbar-primary-at",
+    "id": "taskbar-native-refusal",
     "requirements": [
       "ELM-UI-004"
     ],
     "scenarios": [
-      "taskbar-inactive",
-      "taskbar-active",
-      "taskbar-minimized"
+      "taskbar-refusal"
     ],
     "paths": [
-      "implementation/warlock/qa/native-taskbar-primary-at.py",
-      "implementation/warlock/qa/taskbar-at-action.py",
-      "implementation/warlock/src/SurfaceRenderer.elm",
-      "implementation/warlock/assets/activation.js",
-      "implementation/warlock/README.md"
+      "implementation/warlock/qa/native-taskbar-refusal.py",
+      "implementation/warlock/src/Surface.elm",
+      "implementation/warlock/src/TaskbarShell.elm",
+      "implementation/warlock/assets/bar-adapter.js",
+      "implementation/warlock/assets/shell.css",
+      "implementation/warlock/README.md",
+      "implementation/warlock/qa/current-search-build.json",
+      "implementation/warlock/assets/elm.js",
+      "implementation/warlock/assets/bar.js",
+      "implementation/warlock/assets/popup.js",
+      "implementation/warlock/qa/check-taskbar-recovery.py",
+      "implementation/warlock/qa/native-taskbar-recovery.py"
     ],
-    "before": "Single-family primary actions have native pointer and keyboard proof but no actual AT-SPI/Orca primary state/action observations.",
-    "after": "Screen-reader users receive correct Open/Active/Minimized names and native states while using physical keyboard or the real AT-SPI action; activation/minimize/restore commit once with correct native focus, paint and unchanged membership.",
+    "before": "The original taskbar-refusal scenario is unadjudicated; existing cross-output pinned refusal is observed only through a native fixture call.",
+    "after": "A real taskbar Activate from another output receives native Refused feedback while pin/workspace/draft/geometry and observed focus remain authoritative, with no automatic replay and declared keyboard custody.",
     "verification": [
-      "Compose the original primary keyboard/pointer journey with existing private AT bus, actual WebKit tree and Orca. Observe exact native host PID, operation/name/role/current active state, focused accessible and Orca focus/speech. Exercise actual native AT-SPI action on the scoped current taskbar button and preserve original receipts, MRU/desktop succession, client key recipients, pixels and waits. Model behavioral changes with quint-llm-kit before a demonstrated production fix; do not replace AT evidence with DOM injection. Independent original acceptance and wider AT/release gates remain separate."
+      "Compose original two-output native drag fixture, pin the live target on its owner output, map an ordinary independent peer on the other output, then real current-bar pointer activation. Require correlated native implicit-transfer-required refusal, visible current Refused feedback and actual pixels, unchanged native target/peer and no repeated window or launch effects. Observe actual keyboard recipient without a manual success workaround. Model a demonstrated behavioral defect with quint-llm-kit before owning fix. Preserve original waits/core/plugin/source identity; AT and independent original acceptance separate."
     ],
-    "owner": "root-taskbar-primary-at",
-    "participantRecord": ".warlock-contributor/taskbar-primary-at.json",
+    "owner": "root-taskbar-native-refusal",
+    "participantRecord": ".warlock-contributor/taskbar-native-refusal.json",
     "disposition": "partial",
     "evidence": {
-      "path": "implementation/warlock/qa/evidence/taskbar-primary-at/manifest.json",
-      "sha256": "73e1d7eb5bc823fbc8c1cf68bb55512bfafe32a91d3600292109e0bf44eefaf1",
-      "scope": "Actual private GTK/WebKit AT-SPI and Orca now qualify the focused single-family Activate/Minimize/Restore fixture. Five real AT-SPI press actions each commit once, with native focus, MRU/desktop succession, client keyboard recipients and painted/absent application frames preserved. A separate physical-Enter journey passes under actual AT observation. All current taskbar names, native active toggle states and focused controls agree with Orca; the real reader emits Activate/Minimize/Restore names. This verifies existing product behavior; no production code or ABI was changed."
+      "path": "implementation/warlock/qa/evidence/taskbar-native-refusal/manifest.json",
+      "sha256": "5703769e9de79c200d097accc0a4a9875ea010d35c85d27f8f9aed08d39a3e20",
+      "scope": "The taskbar now puts its existing read-only recovery control first when recovery is needed. The actual Refused frame moved it from x803 outside a 540px action region to x1, width120. Real other-output activation receives one native implicit-transfer-required Refused receipt; pin/workspace/geometry/draft and peer focus remain authoritative. Actual peer keyboard input is preserved before recovery. Clicking the visible recovery issues observations without retry or launch. Current browser and native Pending/Refused/Unknown regressions pass with normal cleanup."
     },
-    "observed": "Actual private GTK/WebKit AT-SPI and Orca now qualify the focused single-family Activate/Minimize/Restore fixture. Five real AT-SPI press actions each commit once, with native focus, MRU/desktop succession, client keyboard recipients and painted/absent application frames preserved. A separate physical-Enter journey passes under actual AT observation. All current taskbar names, native active toggle states and focused controls agree with Orca; the real reader emits Activate/Minimize/Restore names. This verifies existing product behavior; no production code or ABI was changed.",
+    "observed": "The taskbar now puts its existing read-only recovery control first when recovery is needed. The actual Refused frame moved it from x803 outside a 540px action region to x1, width120. Real other-output activation receives one native implicit-transfer-required Refused receipt; pin/workspace/geometry/draft and peer focus remain authoritative. Actual peer keyboard input is preserved before recovery. Clicking the visible recovery issues observations without retry or launch. Current browser and native Pending/Refused/Unknown regressions pass with normal cleanup.",
     "missingObservations": [
-      "Independent original-scenario review against the exact source/ABI/toolchain and frozen policy remains open.",
-      "This fixture covers focused current AT-SPI press and physical Enter, with silent Orca speech transcript observation. Audible speech, braille, unfocused/cached AT actions, broader AT modes, grouped/zero/refusal taskbar scenarios and other GUI surfaces remain separate obligations.",
-      "Physical hotplug/AT/IME breadth, resource/journey budgets, reproducible package and reversible deployment/rollback remain release obligations."
+      "Independent original-scenario review against the frozen interaction oracle and exact source/core/plugin/toolchain remains open.",
+      "Native primary keyboard invocation and applicable AT invocation/feedback for taskbar-refusal remain unqualified. Actual peer keyboard delivery after pointer refusal is not keyboard primary invocation. Audible speech/braille and other refusal causes remain separate.",
+      "Recovery is observed without scrolling in the default two-family native viewport and at 320px in a compiled component. Existing user scroll position, denser pin/group arrangements and all input/AT modes remain separate.",
+      "Hardware/AT/IME breadth, resource/journey budgets, reproducible package and reversible deployment/rollback remain release obligations."
     ],
-    "nextSourceWork": "Original ELM-UI-004/taskbar-refusal: reproduce actual taskbar activation of a native pinned family from another output bar, receiving the real implicit-transfer-required refusal. Verify visible Refused feedback, unchanged observed pin/workspace/draft/focus, no replay, and actual keyboard recipient. Fix a demonstrated owning feedback/projection/admission defect with quint-llm-kit before behavioral changes; retain native primary AT and authority guards. Independent acceptance and wider release scope remain open."
+    "nextSourceWork": "Original ELM-UI-004/taskbar-zero: operate a persistent zero-window taskbar pin through actual primary keyboard input. Require exactly one current identity-bound launch, visible native application, preserved pin order and no ordinary-activation duplicate. Reuse current single Elm launch authority; fix any demonstrated production defect model-first with quint-llm-kit. Applicable AT and independent original acceptance remain separate. Avoid expanding refusal variants after this bounded product fix."
   }
 }

@@ -1,0 +1,481 @@
+{
+  "schema": 1,
+  "requirement": "ELM-UI-004",
+  "scenarios": [
+    "taskbar-zero"
+  ],
+  "ears": "The taskbar SHALL follow the INTERACTION.md primary-action table for zero, single and multiple family entries, distinguish application pin from always-on-top, and expose explicit new-instance actions without launching duplicates on ordinary activation.",
+  "verificationScope": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+  "originalRequirements": [
+    {
+      "id": "ELM-UI-004",
+      "capability": "elm-taskbar",
+      "phase": "P3",
+      "pattern": "ubiquitous",
+      "priority": "must",
+      "ears": "The taskbar SHALL follow the INTERACTION.md primary-action table for zero, single and multiple family entries, distinguish application pin from always-on-top, and expose explicit new-instance actions without launching duplicates on ordinary activation.",
+      "task": "Implement taskbar decision table with matching pointer/keyboard routes.",
+      "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+      "legacyEvidence": "docs/elm-roadmap/INTERACTION.md; new coverage: final UI/UX review",
+      "scenarios": [
+        {
+          "name": "taskbar-zero",
+          "given": "a pinned app with zero windows",
+          "when": "primary pointer or keyboard activation occurs",
+          "then": "one launch request is issued"
+        },
+        {
+          "name": "taskbar-inactive",
+          "given": "one inactive member",
+          "when": "primary pointer or keyboard activation occurs",
+          "then": "the member visibly activates"
+        },
+        {
+          "name": "taskbar-minimized",
+          "given": "one minimized member",
+          "when": "primary pointer or keyboard activation occurs",
+          "then": "the member restores and visibly activates"
+        },
+        {
+          "name": "taskbar-active",
+          "given": "one active eligible member",
+          "when": "primary pointer or keyboard activation occurs",
+          "then": "the family minimizes with declared focus succession"
+        },
+        {
+          "name": "taskbar-group",
+          "given": "multiple family entries",
+          "when": "primary pointer or keyboard activation occurs",
+          "then": "a group picker opens without new launch and selecting a member visibly activates it"
+        },
+        {
+          "name": "taskbar-refusal",
+          "given": "native authority refuses the requested action",
+          "when": "primary pointer or keyboard activation occurs",
+          "then": "observed state remains authoritative with feedback"
+        }
+      ],
+      "source": "docs/elm-roadmap/coordinator-requirements.json",
+      "status": "proposed",
+      "taskId": "P3-ELM-UI-004",
+      "accountableOwnerRole": "Elm presentation lead",
+      "verifierRole": "Independent acceptance reviewer"
+    }
+  ],
+  "originalInventory": {
+    "path": "docs/elm-roadmap/requirements.json",
+    "sha256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b"
+  },
+  "frozenInteraction": {
+    "path": "docs/elm-roadmap/INTERACTION.md",
+    "sha256": "2a947a3aa56d7b7b9e7d2f5c1ceb100ac7b8c345a73fd7616c0c4c567d0e01c4"
+  },
+  "sourceParent": "6bae93d5dbdffff8937ef6b645b9f0dad71ae0e8",
+  "sourceHashes": {
+    "implementation/warlock/qa/native-taskbar-zero-keyboard.py": "61826a72860ec24cc1a615476bb1812490ba7494a76469ef5c25110acbd4acbe",
+    "implementation/warlock/src/Surface.elm": "a9f8000a7ce0a64174ee10a4fe9a9a8b491443a62e02d47ca11ee3dac2adabdd",
+    "implementation/warlock/src/Desktop.elm": "176ddaf19e5dfb6c2362ac9c9c46d296155cd38e916e4cd28938a591648ed711",
+    "implementation/warlock/src/Launch.elm": "dcd7260248ccb0b5bc6001c49319dd51af8c2fae98888919a308ac025ed273a2",
+    "implementation/warlock/adapter/catalog_authority.py": "ad20204afd3b203eb956918300c8da4cb4765b3c5ad86e701b0257a54b8fb9cc",
+    "implementation/warlock/README.md": "222338ff7417c371452ad434f2daeb559c0f847b94d05d924fa2b1346ff7786d",
+    "implementation/warlock/src/Popup.elm": "cc00f7861217d23ae7cac3dd88f91c042862ff2246e68a4c149427892e5556d3",
+    "implementation/warlock/src/Presentation.elm": "8c3463230d93b768f48784a37ae9e4da7a225defa6f209b3100258af5196c0e9",
+    "implementation/warlock/qa/local-field-publication.qnt": "9ae99c56a0ef87f55dd58f516cc084df80972383af6b3d4ec6fab821bce15b14",
+    "implementation/warlock/qa/LocalFieldReplay.elm": "64f0114398fbff8a1f2f42d0e824727531316660f725edb1c96bfb7de241d09f",
+    "implementation/warlock/qa/check-local-field-publication.py": "31dbe40cc4966aefc1840c0bb64d175d9ca745fcfaa9f90047ca2bbc5215a303",
+    "implementation/warlock/qa/check-search.py": "b45460dd8e9f8b8507a05de7aa83df4be6c3ee138511569fef1e0fc5987bc605",
+    "implementation/warlock/qa/current-search-build.json": "845709415c88f56d0d328dcea01f22b87aab825b90c33fe15821faeb24a0f7fa",
+    "implementation/warlock/assets/elm.js": "d376062010e031d016d780f6d3b65de1d4106efb6392f82d8ce82e9d522a703e",
+    "implementation/warlock/assets/bar.js": "26ef20c9143f87caf7e3d7fc293b248983076f5a7b7a6967cc341d71f7711194",
+    "implementation/warlock/assets/popup.js": "23b0f3e5e223dd5e1d7042ea33dcc1e1f4895997b01ebd7d764a75c15236b56c",
+    "implementation/warlock/qa/PinsReplay.elm": "5014fa611be6138bba47b3b3326e769d1a4c63db4bf463f6d85c26d2bce0f85a",
+    "implementation/warlock/qa/native-window-feedback.py": "295ba28cf8d9d297b214bd0d6dba19ac3289d861faa953f9fd94b82937473c64",
+    "implementation/warlock/qa/NativePointerFixture.elm": "b674baa48a0d0197d32e6bc400412465e3a83934d3a749ebc7cbba35e82c4124",
+    "implementation/warlock/src/SurfaceRenderer.elm": "e7e8d255cf38c2862a03c951f7caab50fddffa73946ae143dedfe71c1fdbf4c6",
+    "implementation/warlock/qa/ImeReplay.elm": "2d7f8a1943e0c2d53a3148de4b61c3ea28f415d10d0bf54ece6384ce5efd0949",
+    "implementation/warlock/assets/popup-adapter.js": "b422e9aa2d3e8dc8b669588b4c7d3e69033da5f20837683df6a7555cfc58cd62",
+    "implementation/warlock/assets/activation.js": "06e3de6bcbc27e2b9a5d166fd665706e300ef5d4a29640b9bd70aa0f095a2c3e",
+    "implementation/warlock/qa/accessibility-session.py": "69bc3b33c2b99f0b9d54805e18afcb85ff02314dc9aa4d002f4df409a0e57524",
+    "implementation/warlock/qa/accessibility-inspector.py": "bc4fe7adba15c29f97137b91848971b65b994c1b8f6282109d7edf1e13bd5c27",
+    "implementation/warlock/qa/accessibility-reader.py": "66442e00fcdabbb5a4cc7bb7d283377ee40b42d0f6a1c6ec35c4b93369b782fd",
+    "implementation/warlock/qa/taskbar-at-action.py": "a0175b7334b755ac74428e466e290f44508f77234d6e4f528e95f1b72a08be2e"
+  },
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
+      "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791643756770507917/elm-window-geometry-authority.so",
+      "sha256": "049a982418a085a976db6bf08eee3da4ad7c9a4f826a724a8d653d86b15f0378"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+      "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/ime-1791649572830297731/elm-host",
+    "sha256": "806aa4bcd44f0b67b6e58db7d1e41da41f1956692ff14001d5f19a5b005cecf7",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/ime-1791649572830297731/report.json",
+    "heldBuildSHA256": "81f0651347ee4ad7f442d5f39e8e91a34bf06897b58a01eea5757ea91c0bba1a"
+  },
+  "toolchain": {
+    "compilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948"
+  },
+  "compiledAssets": {
+    "elm.js": "d376062010e031d016d780f6d3b65de1d4106efb6392f82d8ce82e9d522a703e",
+    "bar.js": "26ef20c9143f87caf7e3d7fc293b248983076f5a7b7a6967cc341d71f7711194",
+    "popup.js": "23b0f3e5e223dd5e1d7042ea33dcc1e1f4895997b01ebd7d764a75c15236b56c"
+  },
+  "reports": [
+    {
+      "name": "native-typing-failed",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-accessibility-1791649187123555838/report.json",
+      "originalSHA256": "ce62dbc5fed890b12426e2367511eefa3cb5d591db5f118027c4b7b46f52c005",
+      "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/native-typing-failed.report.json.gz",
+      "sha256": "1b8c89df6fc6fd5fd4d444a355521e55b6a2f2e6e93142326f2bc3d4fdbf1cb7",
+      "passed": false,
+      "error": "RuntimeError('Original observation deadline <lambda>')",
+      "cleanupPassed": true,
+      "scope": "Actual private GTK/WebKit taskbar and switcher AT-SPI tree/states/focus and real Orca observations with physical input; independent original acceptance remains separate.",
+      "traces": [
+        {
+          "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791649187123665818/warlock.log",
+          "originalSHA256": "3798d66831a45648fe4f98df5d971d19dd39e44a471f0b6e939c8044995123b1",
+          "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/native-typing-failed.warlock.log.gz",
+          "sha256": "1325471f38d751987172a1a7e11e21f2616a22ab3e9b773dc7a33d16bd37dd0c"
+        }
+      ]
+    },
+    {
+      "name": "compiled-pin-fixture-failed",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/ime-1791649531885953073/report.json",
+      "originalSHA256": "8d57a639c125d9dc3ebed232dc1cb1b1eb9561f3faa522f682cbf85b0fdd964d",
+      "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/compiled-pin-fixture-failed.report.json.gz",
+      "sha256": "f2a63b3820a76659a78ba028e6410e65d06e592e9584995cd6262d9f70ac3ccb",
+      "passed": false,
+      "error": "AssertionError()",
+      "cleanupPassed": null,
+      "scope": "Actual compiled popup composition lifecycle, commit coalescing and field/custody retirement; original native IME candidate and caret evidence remains separate."
+    },
+    {
+      "name": "compiled-current",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/ime-1791649572830297731/report.json",
+      "originalSHA256": "81f0651347ee4ad7f442d5f39e8e91a34bf06897b58a01eea5757ea91c0bba1a",
+      "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/compiled-current.report.json.gz",
+      "sha256": "5635c3f56404f05baaa7c190464050fc999b5b3514394c72d8cd153e2f1bcd41",
+      "passed": true,
+      "error": null,
+      "cleanupPassed": null,
+      "scope": "Actual compiled popup composition lifecycle, commit coalescing and field/custody retirement; original native IME candidate and caret evidence remains separate."
+    },
+    {
+      "name": "native-observer-schema-failed",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-accessibility-1791649612027305314/report.json",
+      "originalSHA256": "e2c5ac71d2423865104434ec8a3ae0c9bc8075360aeb5b1334276f767ef060b6",
+      "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/native-observer-schema-failed.report.json.gz",
+      "sha256": "f0085e9dd0345201f1f7c48db94559590dbc58f88cf0f0f8af1d011f286aea4d",
+      "passed": false,
+      "error": "KeyError('label')",
+      "cleanupPassed": true,
+      "scope": "Actual persistent pin/reorder/restart with physical keyboard or actual AT-SPI zero-window primary launch, native resulting GTK application, current running-pin routing without duplicate launch. Exact AT tree/Orca and client keyboard/pixels observed; independent original acceptance remains separate.",
+      "traces": [
+        {
+          "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791649612027419159/warlock.log",
+          "originalSHA256": "5546590d67c5274c2a834208dfce280837140dfd502b2ff4fefb0b541bb2b9e0",
+          "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/native-observer-schema-failed.warlock.log.gz",
+          "sha256": "a9e1af23dfba199c6e2e5db3683eda5ae553f32254ac8999963e5788dd8c9016"
+        },
+        {
+          "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791649612027419159/warlock-restarted.log",
+          "originalSHA256": "9eb10bfd47ef16d3fe9482a49537bb9eda35799eafcce40d739c30fc3d5ed947",
+          "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/native-observer-schema-failed.warlock-restarted.log.gz",
+          "sha256": "10789fe9ee0f4ff5d3ccad0b9228286fa4684d1e2c47ed95369232dd3ada78a7"
+        }
+      ]
+    },
+    {
+      "name": "native-premature-frame-failed",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-accessibility-1791649680334337273/report.json",
+      "originalSHA256": "aa76bf1afd45ca70c46e9c74d43f68cd3d08789873b673f38f993a546f768dae",
+      "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/native-premature-frame-failed.report.json.gz",
+      "sha256": "dcd003973c60b4c2e5560b576c0a125d6c42142c420694021bb9c3f5dfcb0ada",
+      "passed": false,
+      "error": "AssertionError('RestartedPinHasNativeTextPixelsOpen Editor')",
+      "cleanupPassed": true,
+      "scope": "Actual private GTK/WebKit taskbar and switcher AT-SPI tree/states/focus and real Orca observations with physical input; independent original acceptance remains separate.",
+      "traces": [
+        {
+          "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791649680334436919/warlock.log",
+          "originalSHA256": "df8b32f98434786b87ab4fb4700d5a7ae54ef09caa9bb468b849d403ac3f9965",
+          "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/native-premature-frame-failed.warlock.log.gz",
+          "sha256": "42b6c0ead9b8095d6a19b59e30bb58cfd944d2fd2bd429107abe13802c3645e6"
+        },
+        {
+          "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791649680334436919/warlock-restarted.log",
+          "originalSHA256": "4aca9aed2bf2a5a2587c696ce5eed36cd3bc68725c5723d5f5df6ada54ad2e5c",
+          "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/native-premature-frame-failed.warlock-restarted.log.gz",
+          "sha256": "8e15d50fc31a4c0c67ff0d0044d1d7b1305b65d4d1685e771780e67ca1272b7d"
+        }
+      ]
+    },
+    {
+      "name": "native-primary-assumption-failed",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-accessibility-1791649743096171468/report.json",
+      "originalSHA256": "e9a9704f7c2c531db8318370b15cd05de353f061b5ab7ff26cac632e25683a1d",
+      "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/native-primary-assumption-failed.report.json.gz",
+      "sha256": "133d86281992522968b16730b78fe8f5f481131358fe32feaed3c5c4d24c7a0a",
+      "passed": false,
+      "error": "RuntimeError('Original observation deadline <lambda>')",
+      "cleanupPassed": true,
+      "scope": "Actual persistent pin/reorder/restart with physical keyboard or actual AT-SPI zero-window primary launch, native resulting GTK application, current running-pin routing without duplicate launch. Exact AT tree/Orca and client keyboard/pixels observed; independent original acceptance remains separate.",
+      "traces": [
+        {
+          "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791649743096285196/warlock.log",
+          "originalSHA256": "44c96d67d22134c85aa283db8c19d82bd064fb12cf95a82615b993d0e5d986df",
+          "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/native-primary-assumption-failed.warlock.log.gz",
+          "sha256": "7a70ee7d994d0505be15dcf2e0d3bfe56c980c13c8d78735a4fc5f423eecc6cf"
+        },
+        {
+          "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791649743096285196/warlock-restarted.log",
+          "originalSHA256": "ea4f2a8f42c2ba8b2584a4a17e1e059ccd66b749ff5f5bb3bb4523a48b694c0d",
+          "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/native-primary-assumption-failed.warlock-restarted.log.gz",
+          "sha256": "2758398234ba4b871d06c6f3b6ca656d006cc5e2b436769a71292e17ee72ca66"
+        }
+      ]
+    },
+    {
+      "name": "native-log-interleaving-failed",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-accessibility-1791649827190497222/report.json",
+      "originalSHA256": "e32499f908cd3980660320cbe7e5c01f01fdd03512f5a8270452e383b495c4d4",
+      "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/native-log-interleaving-failed.report.json.gz",
+      "sha256": "60c8c1cb2e2d96331bcf99bb5c19783c5a969d77c013466d56039cf140534460",
+      "passed": false,
+      "error": "JSONDecodeError('Unterminated string starting at: line 1 column 4044 (char 4043)')",
+      "cleanupPassed": true,
+      "scope": "Actual persistent pin/reorder/restart with physical keyboard or actual AT-SPI zero-window primary launch, native resulting GTK application, current running-pin routing without duplicate launch. Exact AT tree/Orca and client keyboard/pixels observed; independent original acceptance remains separate.",
+      "traces": [
+        {
+          "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791649827190591749/warlock.log",
+          "originalSHA256": "1f745c0a196e9bfacf87f315173609d8ee05fa1d21e3c13d87965c24cdda7266",
+          "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/native-log-interleaving-failed.warlock.log.gz",
+          "sha256": "9ab67a252a0dc0577e7024874f2bf4f1287700901ba62f842af5a54d6f612849"
+        },
+        {
+          "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791649827190591749/warlock-restarted.log",
+          "originalSHA256": "5fefe22bc5226f69b55f1e3b6845f9473ba4d4720d39d6be79a08248aed36ec7",
+          "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/native-log-interleaving-failed.warlock-restarted.log.gz",
+          "sha256": "b13c498702c0ebfac252e3011bb521621184a87d946acbe1c03191cac86a27c7"
+        }
+      ]
+    },
+    {
+      "name": "native-keyboard",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-accessibility-1791650009101251814/report.json",
+      "originalSHA256": "59a6a2a15a66a506075e6d551d851d9cbf5c44917984dcd4868c21e9de3448fa",
+      "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/native-keyboard.report.json.gz",
+      "sha256": "28555ea6fc747a8e6575ef47753cdc40fd276d210751df523d359812518e79c5",
+      "passed": true,
+      "error": null,
+      "cleanupPassed": true,
+      "scope": "Actual persistent pin/reorder/restart with physical keyboard or actual AT-SPI zero-window primary launch, native resulting GTK application, current running-pin routing without duplicate launch. Exact AT tree/Orca and client keyboard/pixels observed; independent original acceptance remains separate.",
+      "traces": [
+        {
+          "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791650009101365835/warlock.log",
+          "originalSHA256": "f7bd9d3b43eea5f5ae8a88517df93ab556e837abe5b8cc69841a52582a6a331f",
+          "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/native-keyboard.warlock.log.gz",
+          "sha256": "212a078e7db4615bb1b9d0e9e8a3caae02b3e282f85f2501f6e63a1e171afd04"
+        },
+        {
+          "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791650009101365835/warlock-restarted.log",
+          "originalSHA256": "ac35a19be9b54069c5aac5842904f89b18cadea6acab41515eb29fd71e13b85d",
+          "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/native-keyboard.warlock-restarted.log.gz",
+          "sha256": "3fcb5e4bf26de73174309b77009f762292233ff4514cf433472f60ebcedb633f"
+        }
+      ]
+    },
+    {
+      "name": "native-at-action",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-accessibility-1791650061830768060/report.json",
+      "originalSHA256": "95aa2754d9cef072ca3638795e97cf237f108f0c9e0d3367abca01a4dad1e0b5",
+      "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/native-at-action.report.json.gz",
+      "sha256": "2237497dc95750062160b4e3738a022bbfe9672d2dfa1938732ce9dbf1e236f6",
+      "passed": true,
+      "error": null,
+      "cleanupPassed": true,
+      "scope": "Actual persistent pin/reorder/restart with physical keyboard or actual AT-SPI zero-window primary launch, native resulting GTK application, current running-pin routing without duplicate launch. Exact AT tree/Orca and client keyboard/pixels observed; independent original acceptance remains separate.",
+      "traces": [
+        {
+          "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791650061830866829/warlock.log",
+          "originalSHA256": "f9e8b2ec033decbf8032912d023d80172c2184f86b98002d6938dd80370b6792",
+          "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/native-at-action.warlock.log.gz",
+          "sha256": "e3ecab232146e181dd4f3a83f54d345b7e4f9aa97399bd481e64eb2c2a7a3c69"
+        },
+        {
+          "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791650061830866829/warlock-restarted.log",
+          "originalSHA256": "b672908f4806f8bb243d3350f58a60cbd860d52eaa26352b01a7b9421fc8b398",
+          "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/native-at-action.warlock-restarted.log.gz",
+          "sha256": "64e75a9abf2ac2c9291c53be9207f0026526be279ab3dd542518014203eca53c"
+        }
+      ]
+    },
+    {
+      "name": "quint-init",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/local-field-1791649388478622701/report.json",
+      "originalSHA256": "209698c6ff860d2132958ce43550e0fd9dae64005e0e235aba71b284329bc2a5",
+      "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/quint-init.report.json.gz",
+      "sha256": "c7de2ef30b6d0742635f3000dbb451839c15f608e2de6e62a69463ff9342d129",
+      "passed": true,
+      "error": null,
+      "cleanupPassed": null,
+      "scope": "Quint sampled/named local field publication abstraction; no native/AT acceptance"
+    },
+    {
+      "name": "quint-current",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/local-field-1791649426311669641/report.json",
+      "originalSHA256": "c50c8ab58adc192b1500ccd78e4cc2f095cefa629037d1cf2d51a39871883563",
+      "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/quint-current.report.json.gz",
+      "sha256": "c79f8f18a6be94ffcf20ab774f36455532602961f7c9ab19eeedfb7cab7ac3c3",
+      "passed": true,
+      "error": null,
+      "cleanupPassed": null,
+      "scope": "Quint sampled/named local field publication abstraction; no native/AT acceptance"
+    }
+  ],
+  "images": [
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/keyboard-pins-after-restart.png",
+      "sha256": "1af2729086d4c6ffbefc5d2094123c1bec594573d7c36b86a1e80bccc118fb09",
+      "greenPixels": null,
+      "region": null,
+      "scope": "Actual native frame; successful active Editor frames inspected by owner. Failed premature frame retained."
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/keyboard-zero-editor-active.png",
+      "sha256": "eb08687a2053fd71bd550758b5bd35e94ea443cef8445cdeb3e6ef3a1a26b35d",
+      "greenPixels": 268432,
+      "region": [
+        31,
+        100,
+        769,
+        569
+      ],
+      "scope": "Actual native frame; successful active Editor frames inspected by owner. Failed premature frame retained."
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/at-action-pins-after-restart.png",
+      "sha256": "a7d2a4b4508a4dde4e521de6482d28f31d7f11e2b18b6af321fe548734c0b102",
+      "greenPixels": null,
+      "region": null,
+      "scope": "Actual native frame; successful active Editor frames inspected by owner. Failed premature frame retained."
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/at-action-zero-editor-active.png",
+      "sha256": "3ef862de8e9993d1952167e01891640096cfbdd509e7a3ba93ece38fdcd46025",
+      "greenPixels": 268432,
+      "region": [
+        31,
+        100,
+        769,
+        569
+      ],
+      "scope": "Actual native frame; successful active Editor frames inspected by owner. Failed premature frame retained."
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/premature-frame-pins-after-restart.png",
+      "sha256": "d3bd139ccc89beb07cc7900a36926d195d6a9c43356a07599501598034ed9b5e",
+      "greenPixels": null,
+      "region": null,
+      "scope": "Actual native frame; successful active Editor frames inspected by owner. Failed premature frame retained."
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/imeBrowser.json",
+      "sha256": "74217961501b9b11e2aa32f1c3bed1ba8bbd69802015bf8fad5ac42e7009a685"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/localFieldModel.json",
+      "sha256": "2ddfe3a2e8708df73f4bd19a0b64b748d31039ba6d591afe14aaef7cc08613d7"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/quint-named.txt",
+      "sha256": "784174bd98fdeb0631df1dbaea5d79e6221a2eb619c6b89cdc8d53ea5f8c411b"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/quint-sampled.txt",
+      "sha256": "672b311a7de339925d39c303c02a2aeeae69bb938ab890a519a02ef956991dfe"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/taskbar-zero-first-runner.py",
+      "sha256": "1b483a244b43796bbc4adc31528e9e67746671dcab3faaaa9c27a37207cddcb8",
+      "scope": "Historical failed runner bytes; current production runner is qa/native-taskbar-zero-keyboard.py."
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/taskbar-zero-paint-failed-runner.py",
+      "sha256": "5f05a6dea96a043c2651906382d0fc790053ccf0ab8ce16689163f4c8a5129a9",
+      "scope": "Historical failed runner bytes; current production runner is qa/native-taskbar-zero-keyboard.py."
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/taskbar-zero-current-failed-runner.py",
+      "sha256": "9f61e0d7ab43107d85ab9ec68d173fc1b1e0ea3fca19e1e46c8223116e81b9ce",
+      "scope": "Historical failed runner bytes; current production runner is qa/native-taskbar-zero-keyboard.py."
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/taskbar-zero-partial-log-failed-runner.py",
+      "sha256": "bb6efeb9c6a259efbcf833099c8d641dc39a4a90ff520747806963c7f867edf3",
+      "scope": "Historical failed runner bytes; current production runner is qa/native-taskbar-zero-keyboard.py."
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/zero-editor-fixture.py",
+      "sha256": "4cf6eee0f0ef9b00425a9cf8124a1dd7d685db9690b28a62ca9c7eb6128f5150"
+    }
+  ],
+  "scope": "Typing in the launcher now survives the gap between an accepted Elm publication and its preceding DOM frame. Popup-owned field callbacks preserve bounded text within the same lease and rebase only read-only query messages; external edits/buttons remain publication-strict, and replacement leases retire drafts. The original native pin/reorder/restart journey passes. Physical Enter and real AT-SPI press each launch the zero-window Editor pin once through GIO. Its observed running family then minimizes/restores without another launch, receives actual client keyboard input and paints 268,432 green pixels inside its native window region. Both private native campaigns exit normally.",
+  "missingObservations": [
+    "Independent original-scenario review of taskbar-zero against the frozen interaction oracle and exact source/core/plugin/toolchain remains open.",
+    "This fixture covers one current zero-window catalog pin, physical Enter and focused AT-SPI press with actual Orca names/focus. Broader applications, cached/unfocused AT actions, audible speech/braille, pin/reorder popup paint and other original GUI scenarios remain separately unqualified.",
+    "Physical hardware/output/IME breadth, resource/journey budgets, reproducible package and reversible deployment/rollback remain release obligations."
+  ],
+  "disposition": "partial",
+  "requirementAccepted": false,
+  "fullReleaseAccepted": false,
+  "reviewer": {
+    "name": "root-taskbar-zero-keyboard",
+    "independent": false,
+    "disposition": "Owner observed current native keyboard and AT action passes; independent original acceptance pending."
+  },
+  "quint": {
+    "workflow": "quint-llm-kit modeling then execute-spec",
+    "model": "implementation/warlock/qa/local-field-publication.qnt",
+    "sourceCorrespondence": {
+      "pub": "Presentation.accept snapshot publication",
+      "domPub": "SurfaceRenderer field callback capture before Elm DOM paint",
+      "lease": "Popup field snapshot lease",
+      "draft": "Popup.pendingQuery",
+      "localEdit": "Presentation.localEdit and Popup.LocalAction",
+      "externalEdit": "unchanged Popup.Action port admission",
+      "activate": "unchanged Presentation.dispatch captured button admission",
+      "reopen": "Popup.Present replaces lease and retires draft"
+    },
+    "executedNamedTests": 7,
+    "sampledTraces": 500,
+    "sampledSteps": 40,
+    "limits": "Bounded text abstraction and FIFO Elm event delivery; no native paint, IME engine, AT, hardware or exhaustive/model-check claim. Existing external stale composition assertions remain unchanged and passing."
+  },
+  "observedFailures": {
+    "native-typing-failed": "Actual editor typing became tor after a pin refresh; old Html publication was rejected although current field lease survived. Fixed in Popup/Presentation and observed original native pin/reorder sequence now passes.",
+    "compiled-pin-fixture-failed": "PinsReplay lacked the existing required native idle fact. Added NativePointerFixture.ready arrangement only; all original assertions unchanged.",
+    "native-observer-schema-failed": "Fixture read label from native scene facts; title is read from the actual native snapshot instead.",
+    "native-premature-frame-failed": "First current DOM/Coherent report preceded enabled native paint. Current exact host AT tree is observed within original wait before unchanged screenshot/pixel assertion; AT ack alone is never claimed as paint ack.",
+    "native-primary-assumption-failed": "GIO launched/focused Editor. Frozen primary correctly minimized it; fixture had assumed it would stay inactive. Current fixture follows actual active state without post-launch focus manipulation.",
+    "native-log-interleaving-failed": "Mesa worker stdout interrupted one large readonly JSON diagnostic at byte4182. Current fixture retains raw bytes/hash and waits for the next complete observation, filtering only observed Mesa-interleaved readonly diagnostics. Protocol receipts/requests, other malformed diagnostics and original deadlines remain strict."
+  },
+  "scopeBoundaries": [
+    "No root/native launch authority, Unknown/no-replay policy, ABI or original deadline changes.",
+    "Current source directly fixes a typing loss that blocked original keyboard pin setup; this packet does not adjudicate original UI-005 delayed catalog search-race.",
+    "GIO app normal exit uses exact PID/start identity, pidfd terminal observation, original GTK quit handler and normal-exit marker. The main desktop is untouched.",
+    "Compiled production sources/bundles match current native tuple; QA runner later changed only observation/fixture handling. Build and runtime paths remain machine-local, not a portable package."
+  ]
+}
