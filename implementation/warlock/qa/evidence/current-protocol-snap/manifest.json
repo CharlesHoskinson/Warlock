@@ -1,0 +1,424 @@
+{
+  "schema": 1,
+  "requirements": [
+    "ELM-UX-023"
+  ],
+  "scenarios": [
+    "keyboard-snap-chooser"
+  ],
+  "disposition": "partial",
+  "scope": "Advertised geometry protocol 3 now admits snap alongside protocol 2 with unchanged native current-grant, work-area/output/workspace, geometry feasibility, focus/peer and no-replay checks. Original combined physical keyboard journey passes all nine surfaces at original deadlines: selected-family input, current menu, correlated committed right-half placement, Task View activation/dismissal and held-Alt switching; zero injected pointer events and normal cleanup.",
+  "sourceBaseRevision": "91a47467ef47025206a87493e11524684354db42",
+  "sourceHashes": {
+    "implementation/warlock/native/snap-placement.inc": "fd7c0480bcf6b09d3e663f9432d8f42400867a95c48afc85c0569a6a6c01a122",
+    "implementation/warlock/native/authority.cpp": "08d13f3b6ca6b67c1bd1ac78e36a4c59c7d4e2468d41fdbcac6a7ab95dddd081",
+    "implementation/warlock/native/geometry-effects.inc": "b299e891fd298394acc654df76924a01d7c1611472cdbec5a2d8dd3b9ca8c797",
+    "implementation/warlock/qa/snap-chooser.qnt": "ad575eab3db408cb5b2b2d5d9fa9486cb5afa91c0c409426907effcd2b1093b0",
+    "implementation/warlock/qa/check-snap.py": "76dd541d746636068184b960f601cb16b6154f5ca48ce6c387084e959bb8f966",
+    "implementation/warlock/qa/SnapReplay.elm": "f29d40e9473694f966c00053cf153dc21aaa8e07f32c3e370d6dc058cc25dfc8",
+    "implementation/warlock/qa/check-search.py": "7bf61d30140741f3d8b5b3d6b37b14137715969621403446d98f4342182c9b36",
+    "implementation/warlock/qa/check-native-authority.py": "d06bca4ee340d0f13ed6373a0e38fa444b234e7282932c1c6f7cd59263274e41",
+    "implementation/warlock/qa/native-window-feedback.py": "d0c45c673ac47751cef680175a79c251674dc19d444eb7eeb3f35dd23ecbd353",
+    "implementation/warlock/qa/current-native-pair.json": "40e95ec7fa6ddb82cb39416bd908aa84e95dfa78785e270199cd4ca3843234c4",
+    "implementation/warlock/qa/current-search-build.json": "0f2899b1407f8e5de322ecc047e346aca3cde2ba0daee1a1d4c2fff2c82f047f",
+    "implementation/warlock/README.md": "eb184b6012fdb3281301a4de2440e86296703afac962cbee93ab99c75e06d586"
+  },
+  "quintLLMKit": {
+    "upstream": "https://github.com/quint-co/quint-llm-kit",
+    "skill": "quint-execute-spec",
+    "path": "/home/hoskinson/.claude/plugins/cache/quint-llm-kit/quint-llm-kit/1.0.0/skills/quint-execute-spec/SKILL.md",
+    "approach": "Lightweight existing-spec execution for a single function admission correction. Original SnapChooser model is unchanged: seven explicitly selected named cases and 100 sampled safety traces, 20 steps; actual transport, compiled root/browser and native window prove implementation separately. Model abstracts wire protocol versions and is not evidence of native negotiation or exhaustive verification."
+  },
+  "reports": {
+    "compiled-report.json": {
+      "path": "implementation/warlock/qa/evidence/current-protocol-snap/compiled-report.json",
+      "sha256": "846bcd2586ff2b45051b7f9f6a276e65e23f4f89a2ce60cf7541fff68fffca52",
+      "originalPath": "implementation/warlock/qa/runs/snap-chooser-1791596429623978211/report.json"
+    },
+    "authority-report.json": {
+      "path": "implementation/warlock/qa/evidence/current-protocol-snap/authority-report.json",
+      "sha256": "cc00fe49743f604347942071751fec5713a474d3f19691f130361926328b81c9",
+      "originalPath": "implementation/warlock/qa/runs/native-authority-1791596429600393566/report.json"
+    },
+    "native-keyboard-report.json": {
+      "path": "implementation/warlock/qa/evidence/current-protocol-snap/native-keyboard-report.json",
+      "sha256": "fb03631e4dc9a9fa988cb5979187386493a2598585dacca91c986caa70c5a071",
+      "originalPath": "implementation/warlock/qa/runs/native-keyboard-shell-1791596458403482019/report.json"
+    }
+  },
+  "retainedBeforeFailure": {
+    "path": "implementation/warlock/qa/evidence/taskbar-home/native-after-report.json",
+    "sha256": "92f20738979ebe8e2c43fa59799715b24ad16b1f64a4bda115cb55a0674b10d6",
+    "reason": "Original six-second snap-protocol refusal, preceding all-nine passing campaign."
+  },
+  "nativeObservations": {
+    "successfulChecks": [
+      "OwningPluginLoads",
+      "FixtureFloats",
+      "FixtureSize",
+      "FixturePosition",
+      "FixtureFocus",
+      "KeyboardLauncherDispatchesOneNativeCatalogEntry",
+      "KeyboardReachesActions for A Warlock Editor",
+      "KeyboardReachesNew document",
+      "KeyboardJumpListDispatchesExactlyOnce",
+      "KeyboardReachesActions for A Warlock Editor",
+      "KeyboardReachesRefresh notifications",
+      "KeyboardReachesRefresh system state",
+      "KeyboardBarRouteOpen settings",
+      "KeyboardReachesDawn theme",
+      "KeyboardReachesSave settings",
+      "KeyboardSettingsNativeSaved",
+      "KeyboardGroupOpensWithoutDuplicateLaunch",
+      "KeyboardReachesActivate ELM-ACTIVATION-PEER",
+      "KeyboardChosenGroupMemberReceivesInput",
+      "KeyboardMenuTargetIsCurrentFamily",
+      "KeyboardReachesOpen snapping",
+      "KeyboardReachesRight half",
+      "KeyboardReachesSnap to right half",
+      "KeyboardSnapHasNativeCommittedPlacement",
+      "KeyboardBarRouteOpen Task View",
+      "KeyboardReachesBrowse workspace 1; active workspace",
+      "KeyboardReachesActivate ELM-ACTIVATION-PEER on workspace 1",
+      "KeyboardBarRouteOpen Task View",
+      "feedback-helper-1NormalExit",
+      "OriginalJourneyUsesZeroInjectedPointerEvents",
+      "OriginalAllNineKeyboardSurfacesCompleted",
+      "NoScratchpadOrWorkspaceTransfer",
+      "EveryRegisteredHelperExitedNormally",
+      "PersistentKeyboardNormalExit",
+      "OwnedClientNormalExit",
+      "OwnedClientNormalExit",
+      "OwningPluginUnloads"
+    ],
+    "keyboardSurfaces": [
+      {
+        "surface": "launcher",
+        "passed": true,
+        "events": [
+          {
+            "argv": [
+              "RECENT"
+            ],
+            "pid": 343167
+          }
+        ],
+        "outcome": {
+          "protocolVersion": 3,
+          "kind": "application-launch-outcome",
+          "binding": {
+            "lifetime": "12148318014328965442",
+            "session": "3",
+            "frontend": "1"
+          },
+          "outcome": {
+            "catalogProtocol": 1,
+            "kind": "launch-outcome",
+            "intent": {
+              "request": "1",
+              "lifetime": "13965074412036770024",
+              "generation": "1",
+              "entry": "warlock-editor"
+            },
+            "status": "Submitted",
+            "reason": "native-submission-accepted"
+          }
+        }
+      },
+      {
+        "surface": "jump-lists",
+        "passed": true,
+        "events": [
+          {
+            "argv": [
+              "RECENT"
+            ],
+            "pid": 343167
+          },
+          {
+            "argv": [
+              "ALPHA"
+            ],
+            "pid": 343176
+          }
+        ],
+        "dismissed": true
+      },
+      {
+        "surface": "notifications",
+        "passed": true,
+        "snapshots": 2,
+        "dismissed": true
+      },
+      {
+        "surface": "menus",
+        "passed": true,
+        "systemSnapshots": 2,
+        "dismissed": true
+      },
+      {
+        "surface": "settings",
+        "passed": true,
+        "receipt": {
+          "protocolVersion": 3,
+          "kind": "shell-settings-outcome",
+          "binding": {
+            "lifetime": "12148318014328965442",
+            "session": "3",
+            "frontend": "1"
+          },
+          "requestId": "20",
+          "snapshot": {
+            "schema": 1,
+            "revision": "2",
+            "values": {
+              "theme": "dawn",
+              "textScale": 100
+            }
+          },
+          "status": "Saved"
+        },
+        "dismissed": true
+      },
+      {
+        "surface": "taskbar-groups",
+        "passed": true,
+        "selected": {
+          "incarnation": "1",
+          "title": "ELM-ACTIVATION-PEER",
+          "state": "Open",
+          "domId": "picker:{\"lifetime\":\"12148318014328965442\",\"session\":\"3\",\"frontend\":\"1\"}:1:2:1:1",
+          "disabled": false,
+          "label": "Activate ELM-ACTIVATION-PEER",
+          "point": [
+            400.0,
+            218.0
+          ],
+          "rect": [
+            61,
+            151,
+            678,
+            134
+          ],
+          "clip": [
+            50,
+            48,
+            750,
+            468
+          ],
+          "visible": true
+        },
+        "events": [
+          {
+            "window": "ELM-ACTIVATION-PEER",
+            "kind": "key",
+            "keyval": 97,
+            "keycode": 38
+          }
+        ],
+        "dismissed": true
+      },
+      {
+        "surface": "snap-chooser",
+        "passed": true,
+        "receipt": {
+          "protocolVersion": 3,
+          "kind": "effect-outcome",
+          "effectProtocol": 2,
+          "binding": {
+            "lifetime": "12148318014328965442",
+            "session": "3",
+            "frontend": "1"
+          },
+          "intent": {
+            "request": "2",
+            "generation": "2",
+            "incarnation": "2",
+            "operation": "snap",
+            "context": {
+              "lifetime": "12148318014328965442",
+              "epoch": "1",
+              "output": "1",
+              "revision": "10"
+            },
+            "placement": {
+              "region": "right-half",
+              "geometry": [
+                400,
+                48,
+                400,
+                552
+              ],
+              "monitor": "0",
+              "outputOwnershipGeneration": "1",
+              "workAreaRevision": "1",
+              "workspaceGeneration": "1"
+            }
+          },
+          "status": "Committed",
+          "reason": "applied",
+          "revision": "11",
+          "outputGeneration": "1"
+        },
+        "geometry": [
+          400.0,
+          48.0,
+          400.0,
+          552.0
+        ],
+        "dismissed": true
+      },
+      {
+        "surface": "task-view",
+        "passed": true,
+        "selected": {
+          "incarnation": "1",
+          "title": "ELM-ACTIVATION-PEER",
+          "state": "Open",
+          "domId": "picker:{\"lifetime\":\"12148318014328965442\",\"session\":\"3\",\"frontend\":\"1\"}:1:2:1:1",
+          "disabled": false,
+          "label": "Activate ELM-ACTIVATION-PEER",
+          "point": [
+            400.0,
+            218.0
+          ],
+          "rect": [
+            61,
+            151,
+            678,
+            134
+          ],
+          "clip": [
+            50,
+            48,
+            750,
+            468
+          ],
+          "visible": true
+        },
+        "dismissed": true
+      },
+      {
+        "surface": "switcher",
+        "passed": true,
+        "request": {
+          "protocolVersion": 3,
+          "kind": "window-effect",
+          "effectProtocol": 1,
+          "binding": {
+            "lifetime": "12148318014328965442",
+            "session": "3",
+            "frontend": "1"
+          },
+          "intent": {
+            "request": "4",
+            "generation": "4",
+            "incarnation": "1",
+            "operation": "activate",
+            "context": {
+              "lifetime": "12148318014328965442",
+              "epoch": "1",
+              "output": "1",
+              "revision": "4"
+            }
+          }
+        },
+        "dismissed": true
+      }
+    ],
+    "snap": {
+      "name": "KeyboardSnapHasNativeCommittedPlacement",
+      "passed": true,
+      "receipt": {
+        "protocolVersion": 3,
+        "kind": "effect-outcome",
+        "effectProtocol": 2,
+        "binding": {
+          "lifetime": "12148318014328965442",
+          "session": "3",
+          "frontend": "1"
+        },
+        "intent": {
+          "request": "2",
+          "generation": "2",
+          "incarnation": "2",
+          "operation": "snap",
+          "context": {
+            "lifetime": "12148318014328965442",
+            "epoch": "1",
+            "output": "1",
+            "revision": "10"
+          },
+          "placement": {
+            "region": "right-half",
+            "geometry": [
+              400,
+              48,
+              400,
+              552
+            ],
+            "monitor": "0",
+            "outputOwnershipGeneration": "1",
+            "workAreaRevision": "1",
+            "workspaceGeneration": "1"
+          }
+        },
+        "status": "Committed",
+        "reason": "applied",
+        "revision": "11",
+        "outputGeneration": "1"
+      },
+      "geometry": [
+        400.0,
+        48.0,
+        400.0,
+        552.0
+      ]
+    },
+    "sourceTuple": {
+      "core": {
+        "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-core-1791495415110842751/Hyprland",
+        "sha256": "81c9ac609c2900f99c1efbe613b83e949aeae3059a5e4403601581fa96191acf"
+      },
+      "plugin": {
+        "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791596429600393566/elm-window-geometry-authority.so",
+        "sha256": "1f5de87c759902cbbca05dfdbba56090641c994cf3c7276671094248465bcac4"
+      },
+      "aquamarine": {
+        "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+        "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+      }
+    },
+    "nativeHost": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/snap-chooser-1791596429623978211/elm-host",
+      "sha256": "477b0490a62afbf46cf63b1d83606f95422732dad1356c6e86fe3eb4dc790fb0",
+      "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/snap-chooser-1791596429623978211/report.json",
+      "heldBuildSHA256": "846bcd2586ff2b45051b7f9f6a276e65e23f4f89a2ce60cf7541fff68fffca52"
+    },
+    "controlEventStreams": [
+      {
+        "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791596458403590662/fixture-control.events.jsonl",
+        "sha256": "bdb9fe3ff38c464f70eb26ea8b9a29086eb3e9d1b8e91b99d1045ec4f48851e3",
+        "events": 22,
+        "pointerEvents": 0
+      }
+    ],
+    "pointerEventsObserved": 0,
+    "cleanupPassed": true,
+    "mainDesktopActions": false,
+    "runtimeLog": {
+      "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791596458403590662/warlock.log",
+      "sha256": "7d6d6a2964f0b890fd3d762f89ae372a431cc558ad93ea16172677a63b95609c"
+    }
+  },
+  "missingObservations": [
+    "Independent original scenario/requirement review and native accessibility/IME consumers remain open. This fixture disables accessibility bridging; browser/Elm checks do not establish native AT. Protocol 2 admission remains in source and typed wire tests, but this current native journey negotiates protocol 3; hardware/multi-output/cadence/resource/full-release packaging and deployment remain separate."
+  ],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "reviewerDisposition": {
+    "name": "root-current-protocol-snap",
+    "independent": false,
+    "disposition": "Owner-observed passing original keyboard campaign; independent scenario/requirement/release acceptance remains open."
+  }
+}

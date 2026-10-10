@@ -35,7 +35,8 @@ CBox snapRegion(const CBox& area,const std::string& region) {
 template<class Reply,class Reject>
 std::string performSnapEffect(Session& session,const SnapSubmission& placement,uint64_t targetId,const PHLWINDOW& window,
     const Elm::Geometry::Target& barrier,const GeometryScope& scope,const Elm::Placement::Identity& key,Reply reply,Reject reject) {
-    if(session.geometryProtocol!=2)return reject("snap-protocol");
+    // Protocol 3 retains negotiated snap support alongside pin/unpin.
+    if(session.geometryProtocol!=2 && session.geometryProtocol!=3)return reject("snap-protocol");
     const auto modes=Fullscreen::controller()->getFullscreenModes(window);
     if(modes.internal!=Fullscreen::FSMODE_NONE || modes.client!=Fullscreen::FSMODE_NONE)return reject("snap-mode");
     if(geometryPlacements.read(key,key,scope.scope))return reject("ordinary-placement-reserved");

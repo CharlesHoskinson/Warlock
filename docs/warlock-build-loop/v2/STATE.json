@@ -1,48 +1,44 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T01:38:36.447271+00:00",
+  "updatedUTC": "2026-10-10T01:42:31.362689+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "repeated-taskbar-home",
+    "id": "current-protocol-snap",
     "requirements": [
       "ELM-UX-023"
     ],
     "scenarios": [
-      "keyboard-taskbar-groups"
+      "keyboard-snap-chooser"
     ],
     "paths": [
-      "implementation/warlock/assets/bar-adapter.js",
-      "implementation/warlock/src/Bar.elm",
-      "implementation/warlock/src/SurfaceController.elm",
-      "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/src/SurfaceRenderer.elm",
-      "implementation/warlock/native/host.c",
-      "implementation/warlock/native/shared-host.c",
-      "implementation/warlock/native/shared-context.h",
+      "implementation/warlock/native/snap-placement.inc",
+      "implementation/warlock/native/authority.cpp",
+      "implementation/warlock/native/geometry-effects.inc",
+      "implementation/warlock/qa/snap-chooser.qnt",
+      "implementation/warlock/qa/check-snap.py",
+      "implementation/warlock/qa/SnapReplay.elm",
       "implementation/warlock/qa/check-search.py",
-      "implementation/warlock/qa/dense-taskbar-browser.mjs",
+      "implementation/warlock/qa/check-native-authority.py",
       "implementation/warlock/qa/native-window-feedback.py",
+      "implementation/warlock/qa/current-native-pair.json",
       "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/README.md",
-      "implementation/warlock/assets/activation.js",
-      "implementation/warlock/qa/activation-release.js",
-      "implementation/warlock/qa/ime-browser.mjs"
+      "implementation/warlock/README.md"
     ],
-    "before": "After group activation and repeated Apps dismissal, native Home reaches the bar but the enabled first group does not receive keyboard focus within the original six seconds.",
-    "after": "Current keyboard navigation reaches the first group after repeated surface transitions, preserves current identity/focus and allows the original next group/menu operations without pointer or native focus workarounds.",
+    "before": "Original keyboard journey reaches Right half but current protocol 3 authority returns Refused snap-protocol rather than placing the selected window.",
+    "after": "The current advertised protocol admits snap under the unchanged current grant, output/work-area, geometry, input and no-replay checks; keyboard choice visibly places its target and completes within the original deadline.",
     "verification": [
-      "Current compiled bar navigation and changed focus/input lifecycle checks; relevant existing Quint focus invariant and exact native keyboard campaign with original six-second waits, actual recipient, zero pointer input and normal owned cleanup. Native AT and independent acceptance remain separate."
+      "Quint LLM Kit execute-spec lightweight path: preserve existing snap state machine and sampled stale/no-replay invariants; actual compiled snap replay/wire/browser, exact owning native authority build and unchanged original keyboard-only journey/cleanup. Native AT and independent acceptance remain separate."
     ],
     "status": "implemented-partial",
-    "evidence": "implementation/warlock/qa/evidence/taskbar-home/manifest.json",
-    "observed": "Repeated native Home selects the enabled current taskbar group after real Enter activation and Apps transitions; original group member receives input, repeated group/menu targets remain current, and snap chooser is reached. Enter activates once on matched release; stale/composing/blurred controls cannot activate. The unchanged combined native journey fails later on snap-protocol refusal.",
-    "missingObservation": "Snap remains Refused (snap-protocol) at the original six-second deadline. Remaining switcher/Task View intervals, native AT/IME consumers, independent scenario review and full release hardware/resource/package/deployment remain open. Browser preedit verification does not establish native IME acceptance.",
-    "nextSourceWork": "Repair current snap placement protocol admission while preserving grants, output/work-area revisions, no replay and the original six-second keyboard journey."
+    "evidence": "implementation/warlock/qa/evidence/current-protocol-snap/manifest.json",
+    "observed": "Advertised geometry protocol 3 now admits snap alongside protocol 2 with unchanged native current-grant, work-area/output/workspace, geometry feasibility, focus/peer and no-replay checks. Original combined physical keyboard journey passes all nine surfaces at original deadlines: selected-family input, current menu, correlated committed right-half placement, Task View activation/dismissal and held-Alt switching; zero injected pointer events and normal cleanup.",
+    "missingObservation": "Independent original scenario/requirement review and native accessibility/IME consumers remain open. This fixture disables accessibility bridging; browser/Elm checks do not establish native AT. Protocol 2 admission remains in source and typed wire tests, but this current native journey negotiates protocol 3; hardware/multi-output/cadence/resource/full-release packaging and deployment remain separate.",
+    "nextSourceWork": "Next mandatory window behavior slice: inspect remaining pin/MAX completion and workspace transfer protocol admission against original scenarios. Keep native AT and independent keyboard acceptance separate."
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -746,6 +742,43 @@
       "status": "implemented-partial",
       "evidence": "implementation/warlock/qa/evidence/shortcut-registration/manifest.json",
       "missingObservation": "Combined original keyboard campaign still fails at repeated Home taskbar-group entry after launcher/jump-list/notification/system/settings/group subintervals pass. Customized-binding campaign passes repeated Apps release/focus and native configuration reload, then fails the foreign original-shortcut focus recipient. Whole-host restart/offline rollback, native IME/AT, full combined keyboard journey and independent acceptance remain open."
+    },
+    {
+      "id": "repeated-taskbar-home",
+      "requirements": [
+        "ELM-UX-023"
+      ],
+      "scenarios": [
+        "keyboard-taskbar-groups"
+      ],
+      "paths": [
+        "implementation/warlock/assets/bar-adapter.js",
+        "implementation/warlock/src/Bar.elm",
+        "implementation/warlock/src/SurfaceController.elm",
+        "implementation/warlock/src/Surface.elm",
+        "implementation/warlock/src/SurfaceRenderer.elm",
+        "implementation/warlock/native/host.c",
+        "implementation/warlock/native/shared-host.c",
+        "implementation/warlock/native/shared-context.h",
+        "implementation/warlock/qa/check-search.py",
+        "implementation/warlock/qa/dense-taskbar-browser.mjs",
+        "implementation/warlock/qa/native-window-feedback.py",
+        "implementation/warlock/qa/current-search-build.json",
+        "implementation/warlock/README.md",
+        "implementation/warlock/assets/activation.js",
+        "implementation/warlock/qa/activation-release.js",
+        "implementation/warlock/qa/ime-browser.mjs"
+      ],
+      "before": "After group activation and repeated Apps dismissal, native Home reaches the bar but the enabled first group does not receive keyboard focus within the original six seconds.",
+      "after": "Current keyboard navigation reaches the first group after repeated surface transitions, preserves current identity/focus and allows the original next group/menu operations without pointer or native focus workarounds.",
+      "verification": [
+        "Current compiled bar navigation and changed focus/input lifecycle checks; relevant existing Quint focus invariant and exact native keyboard campaign with original six-second waits, actual recipient, zero pointer input and normal owned cleanup. Native AT and independent acceptance remain separate."
+      ],
+      "status": "implemented-partial",
+      "evidence": "implementation/warlock/qa/evidence/taskbar-home/manifest.json",
+      "observed": "Repeated native Home selects the enabled current taskbar group after real Enter activation and Apps transitions; original group member receives input, repeated group/menu targets remain current, and snap chooser is reached. Enter activates once on matched release; stale/composing/blurred controls cannot activate. The unchanged combined native journey fails later on snap-protocol refusal.",
+      "missingObservation": "Snap remains Refused (snap-protocol) at the original six-second deadline. Remaining switcher/Task View intervals, native AT/IME consumers, independent scenario review and full release hardware/resource/package/deployment remain open. Browser preedit verification does not establish native IME acceptance.",
+      "nextSourceWork": "Repair current snap placement protocol admission while preserving grants, output/work-area revisions, no replay and the original six-second keyboard journey."
     }
   ]
 }
