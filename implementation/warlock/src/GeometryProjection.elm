@@ -5,6 +5,7 @@ import Char
 import GeometrySizePolicy
 import Json.Decode as D
 import UInt64 exposing (Counter)
+import WorkspaceInventory
 
 type Mode = Ordinary | Maximized | Fullscreen
 type alias Context = { lifetime : Counter, epoch : Counter, output : Counter, revision : Counter }
@@ -88,6 +89,7 @@ validRows caps blocked rows =
             && (a.workspaceGeneration==Nothing || a.workspaceGeneration/=b.workspaceGeneration || (a.workspace==b.workspace && a.outputOwnershipGeneration==b.outputOwnershipGeneration && a.workAreaRevision==b.workAreaRevision && a.workArea==b.workArea))
     in List.length rows<=256 && unique && List.all rowValid rows && List.all (\a -> List.all (coherent a) rows) rows
 
+factsBody protocol = D.map3 (\focus blocked rows -> {focused=focus,blocked=blocked,windows=rows}) (D.field "focused" (D.nullable positive)) (D.field "inputBlocked" D.bool) (D.field "windows" (D.list (windowDecoder protocol)))
 decoder protocol caps = strict ["protocolVersion","kind","geometryProtocol","binding","requestId","sequence","revision","outputGeneration","facts"]
     (D.map8 (\_ _ _ binding request sequence revision rest ->
         let (output,facts)=rest
@@ -98,7 +100,7 @@ decoder protocol caps = strict ["protocolVersion","kind","geometryProtocol","bin
         (exact "protocolVersion" D.int 3) (exact "kind" D.string "geometry-facts") (exact "geometryProtocol" D.int protocol)
         (D.field "binding" Binding.decoder) (D.field "requestId" positive) (D.field "sequence" positive) (D.field "revision" positive)
         (D.map2 Tuple.pair (D.field "outputGeneration" positive)
-            (D.field "facts" (strict ["focused","inputBlocked","windows"] (D.map3 (\focus blocked rows -> {focused=focus,blocked=blocked,windows=rows}) (D.field "focused" (D.nullable positive)) (D.field "inputBlocked" D.bool) (D.field "windows" (D.list (windowDecoder protocol))))))))
+            (D.field "facts" (D.oneOf [strict ["focused","inputBlocked","windows"] (factsBody protocol), if protocol==3 then strict ["focused","inputBlocked","windows","workspaces","activeWorkspace"] (D.map2 (\facts _ -> facts) (factsBody protocol) WorkspaceInventory.factsDecoder) else D.fail "Workspace inventory version"]))))
     |> D.andThen (\snapshot -> if validRows caps snapshot.blocked snapshot.windows && (snapshot.focused |> Maybe.map (\id -> List.any (\row -> row.incarnation==id) snapshot.windows) |> Maybe.withDefault True) then D.succeed snapshot else D.fail "Geometry facts coherence")
 decode caps raw = D.decodeValue (D.field "geometryProtocol" D.int |> D.andThen (\version -> if List.member version [2,3] then decoder version caps else D.fail "Geometry protocol")) raw |> Result.mapError (\_ -> "Invalid geometry projection")
 

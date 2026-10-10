@@ -4,6 +4,7 @@ import ActionProjection as Scene
 import Binding
 import Desktop
 import Effects
+import WorkspaceInventory
 import NativePointerFixture
 import GeometryProjection as Geometry
 import Json.Decode as D
@@ -59,6 +60,16 @@ receiveOutcome status model =
     model.windows.shell.effects.transaction |> Maybe.map (\t -> apply (incoming (outcome status t.intent)) model) |> Maybe.withDefault (model,[])
 refreshAfterOutcome model =
     model.windows.shell.expected |> Maybe.map (\request -> apply (incoming (projection request [window "1" "Editor" True,windowState "2" "Files" True True])) model) |> Maybe.withDefault (model,[])
+inventoryRow workspace generation = E.object [("identity",E.string workspace),("generation",E.string generation),("monitor",E.string "0"),("outputOwnershipGeneration",E.string "1")]
+inventoryFrame request active rows =
+    binding |> Maybe.map (\b -> E.object [("protocolVersion",E.int 3),("kind",E.string "geometry-facts"),("geometryProtocol",E.int 3),("binding",Binding.encode b),("requestId",E.string request),("sequence",E.string "1"),("revision",E.string "1"),("outputGeneration",E.string "1"),("facts",E.object [("focused",E.null),("inputBlocked",E.bool False),("windows",E.list identity []),("workspaces",E.list identity rows),("activeWorkspace",active)])]) |> Maybe.withDefault E.null
+emptyBase =
+    let windows=base.windows
+        shell=windows.shell
+        effects=shell.effects
+        empty=Scene.decode (E.object [("revision",E.string "1"),("focused",E.null),("windows",E.list identity [])]) |> Result.toMaybe
+    in {base | windows={windows | shell={shell | geometry=Nothing,geometryCaps=Just {effects=False,operations=[]},geometryExpected=Just one,effects={effects | observed=empty |> Maybe.map (\emptyScene -> {context=context,scene=emptyScene})}}}}
+
 focuses effects = effects |> List.filterMap (\effect -> case effect of
     Desktop.Focus target -> Just target
     _ -> Nothing)
@@ -128,6 +139,34 @@ result =
             ("anotherInterfaceCancelsReturn",not (Tuple.first otherInterface).overview && not (Tuple.first dismissedOther).overview && List.isEmpty (mutations (Tuple.second otherInterface))),
             ("replacementAuthorityCannotReturn",not (Tuple.first replaced).overview && List.isEmpty (mutations (Tuple.second replaced))),
             ("retiredFamilyReturnsToAllWindows",(Tuple.first missingWindow).overview && (Tuple.first missingWindow).overviewWorkspace==Nothing && focuses (Tuple.second missingWindow)==[Desktop.key (Tuple.first missingWindow) "overview:all"])]
+        emptyFrame=inventoryFrame "1" (E.string "3") [inventoryRow "1" "1",inventoryRow "3" "3"]
+        observedEmpty=apply (incoming emptyFrame) emptyBase
+        openEmpty=scoped Desktop.OpenOverview (Tuple.first observedEmpty)
+        browseEmpty=scoped (\stamp -> Desktop.OverviewWorkspace stamp (Just "3")) (Tuple.first openEmpty)
+        emptyModel=Tuple.first browseEmpty
+        emptyGroups=Desktop.taskViewGroups emptyModel |> Maybe.withDefault []
+        emptyClosed=scoped Desktop.CloseOverview emptyModel
+        foreignEmpty=apply (incoming (inventoryFrame "99" (E.string "3") [inventoryRow "3" "3"])) emptyBase
+        malformedEmpty=apply (incoming (inventoryFrame "1" (E.string "3") [inventoryRow "3" "3",inventoryRow "3" "4"])) emptyBase
+        staleInventory={emptyModel | workspaceInventory=emptyModel.workspaceInventory |> Maybe.map (\inventory -> {inventory | sequence=two})}
+        retiredInventory={emptyModel | workspaceInventory=emptyModel.workspaceInventory |> Maybe.map (\inventory -> {inventory | active=Just "1",rows=List.filter (\row -> row.identity=="1") inventory.rows})}
+        retiredEmpty=apply Desktop.RetryWindows retiredInventory
+        transferWindows=base.windows
+        transferShell=transferWindows.shell
+        transferEffects=transferShell.effects
+        transferIntent={request=one,generation=one,incarnation=one,operation=Effects.TransferWorkspace {source="4",sourceGeneration=counter "4",destination="1"},context=context}
+        transferModel={base | workspaceInventory=binding |> Maybe.map (\b -> {binding=b,request=one,sequence=one,revision=one,output=one,active=Just "1",rows=[{identity="1",generation=one,monitor=UInt64.zero,outputOwnershipGeneration=one},{identity="2",generation=two,monitor=UInt64.zero,outputOwnershipGeneration=one}]}),windows={transferWindows | shell={transferShell | effects={transferEffects | unresolved=[{intent=transferIntent,status=Effects.Unknown,effectProtocol=2}]}}}}
+        inventoryChecks=[("unconfirmedTransferRetainsSourceFamilyWithoutInventingNativeOwner",Desktop.taskViewGroups transferModel |> Maybe.map (List.filter (\group -> group.identity=="4") >> List.concatMap .windows >> List.map .root >> (==) [one]) |> Maybe.withDefault False),
+            ("emptyInventoryComesThroughExactRootReceipt",(Tuple.first observedEmpty).workspaceInventory/=Nothing && List.map .identity emptyGroups==["1","3"]),
+            ("nativeActiveEmptyMarkerDoesNotNeedFocusedWindow",List.filter .active emptyGroups |> List.map .identity |> (==) ["3"]),
+            ("emptyWorkspaceOpensAndBrowsesWithoutEffects",emptyModel.overview && emptyModel.overviewWorkspace==Just "3" && List.all (List.isEmpty << .windows) emptyGroups && List.isEmpty (mutations (Tuple.second openEmpty++Tuple.second browseEmpty))),
+            ("emptyWorkspaceKeepsVisibleDismissal",Surface.controls emptyModel |> List.any (\control -> control.enabled && control.ariaLabel=="Close Task View and return to windows")),
+            ("emptySelectionHasExplicitNotice",D.decodeValue (D.field "status" D.string) (Surface.packet one one emptyModel) |> Result.map (String.contains "no windows") |> Result.withDefault False),
+            ("emptyWorkspaceDismissalIsReadOnly",not (Tuple.first emptyClosed).overview && List.isEmpty (mutations (Tuple.second emptyClosed))),
+            ("foreignGeometryCannotInventEmptyWorkspace",(Tuple.first foreignEmpty).workspaceInventory==Nothing && (Tuple.first foreignEmpty).windows.shell.geometry==Nothing),
+            ("duplicateWorkspacePacketRejectedByRoot",(Tuple.first malformedEmpty).workspaceInventory==Nothing && (Tuple.first malformedEmpty).windows.shell.geometry==Nothing),
+            ("differentGeometrySequenceCannotJoinInventory",Desktop.taskViewGroups staleInventory==Nothing),
+            ("retiredEmptySelectionFallsBackToAll",(Tuple.first retiredEmpty).overviewWorkspace==Nothing && focuses (Tuple.second retiredEmpty)==[Desktop.key (Tuple.first retiredEmpty) "overview:all"])]
         checks=[("groupsMatchMembership",List.map (\g -> (g.identity,List.map (.root >> UInt64.string) g.windows)) groups==[("1",["1"]),("2",["2"])]),
             ("activeWorkspaceNamed",TaskView.activeWorkspace model.windows.shell==Just "1"),
             ("openingIsObservationOnly",model.overview && List.isEmpty (mutations (Tuple.second opened))),
@@ -151,4 +190,4 @@ result =
             ("staleNavigationObservationNeverMutates",Tuple.first navigationStale==navigationPending && List.isEmpty (mutations (Tuple.second navigationStale))),
             ("retiredNavigationRootNeverSubstitutes",(Tuple.first navigationRetired).choice==Nothing && List.isEmpty (mutations (Tuple.second navigationRetired))),
             ("duplicateNavigationObservationNeverReplays",List.isEmpty (mutations (Tuple.second navigationRepeated)))]
-    in E.object [("checks",E.object (List.map (\(name,passed) -> (name,E.bool passed)) (checks++recoveryChecks))),("frame",frame)]
+    in E.object [("checks",E.object (List.map (\(name,passed) -> (name,E.bool passed)) (checks++recoveryChecks++inventoryChecks))),("frame",frame)]

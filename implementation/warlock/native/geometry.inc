@@ -114,7 +114,22 @@ std::string geometryFacts(int protocol) {
         const auto pinState=protocol==3 ? ",\"pin\":{\"pinned\":"+std::string(boolean(window->m_pinned))+",\"eligible\":"+boolean(!unresolved && pinTargetEligible(window))+"}" : "";
         result+="{\"incarnation\":"+identityOf(window)+",\"owner\":"+identityOf(window->parent())+",\"workspace\":"+workspaceId+",\"workspaceGeneration\":"+workspaceOwner+",\"monitor\":"+outputId+",\"outputOwnershipGeneration\":"+outputOwner+",\"workAreaRevision\":"+workRevision+",\"workArea\":"+workArea+",\"logicalGeometry\":"+geometryRect(target->position())+",\"visualGeometry\":"+geometryRect(visual)+",\"nativeMode\":"+geometryMode(modes.internal)+",\"clientMode\":"+geometryMode(modes.client)+",\"minimized\":"+boolean(Desktop::WindowPolicy::isMinimized(window))+",\"floating\":"+boolean(target->floating())+",\"grouped\":"+boolean(!!window->m_group)+",\"fixedSize\":"+boolean(fixed)+",\"constrainedSize\":"+boolean(constrained)+",\"geometryEligible\":"+boolean(eligible)+",\"ordinaryPlacementKnown\":"+boolean(placementKnown)+sizePolicy+pinState+",\"capabilities\":{\"maximize\":"+boolean(eligible && (protocol==1 || maximizeProjection.has_value()) && !unresolved && originalCompatible && modes.internal==Fullscreen::FSMODE_NONE)+",\"restoreGeometry\":"+boolean(eligible && (protocol==1 || restoreProjection.has_value()) && !unresolved && modes.internal==Fullscreen::FSMODE_MAXIMIZED && placementKnown)+"}}";
     }
-    return result+"]}";
+    result+="]";
+    if(protocol==3) {
+        result+=",\"workspaces\":[";size_t workspaceCount=0;
+        for(const auto& ref:State::workspaceState()->workspaces()) {
+            const auto workspace=ref.lock();
+            if(!workspace || workspace->m_id<=0 || workspace->m_isSpecialWorkspace || !workspace->m_space)continue;
+            const auto monitor=workspace->m_monitor.lock();if(!monitor || !monitor->m_enabled)continue;
+            if(workspaceCount>=256)throw std::runtime_error("Workspace inventory bound");
+            if(workspaceCount++)result+=",";
+            result+="{\"identity\":"+quote(std::to_string(workspace->m_id))+",\"generation\":"+quote(std::to_string(geometryWorkspaces.bind(workspace)))+",\"monitor\":"+quote(std::to_string(monitor->m_id))+",\"outputOwnershipGeneration\":"+quote(std::to_string(geometryOutputs.bind(monitor)))+"}";
+        }
+        const auto monitor=Desktop::focusState()->monitor();
+        const auto active=monitor && monitor->m_enabled ? monitor->m_activeWorkspace : nullptr;
+        result+="],\"activeWorkspace\":"+(active && active->m_id>0 && !active->m_isSpecialWorkspace && active->m_space ? quote(std::to_string(active->m_id)) : "null");
+    }
+    return result+"}";
 }
 std::string refreshGeometryFacts(int protocol=1) {
     const auto value=geometryFacts(3);

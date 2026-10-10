@@ -1,0 +1,495 @@
+{
+  "schema": 1,
+  "observedUTC": "2026-10-10T18:22:51.000326+00:00",
+  "requirements": [
+    "ELM-UI-006"
+  ],
+  "scenarios": [
+    "overview-empty"
+  ],
+  "originalOracle": "empty destination is navigable and dismissal remains available",
+  "sourceRevisionBeforeSlice": "d5f81bf1046a3185c211078c3d9c1d50ff91e281",
+  "sourceHashes": {
+    "implementation/warlock/src/Desktop.elm": "0a69b647a40508e528fa00d2e1dd8b6b234fa3fd36788156d2a458c3b25bcfe8",
+    "implementation/warlock/src/TaskView.elm": "7665dd48cae39ecdc71f85990eaefc0115fb79fe0462e41199b10ec4ccbfcdbe",
+    "implementation/warlock/src/WorkspaceInventory.elm": "ccae889a9e6b5985a0ea01ab144fbf32c39345ba1712516bf9edd30419d3daf6",
+    "implementation/warlock/src/GeometryProjection.elm": "f1b5708b8b4d1c7c02e46542bc041abb9e8cb0524d965ee4b03ab97f586a544c",
+    "implementation/warlock/src/Surface.elm": "f09125ae4cb8d485113a43c4d63cab40eef5000b6c5b4e7759890e479213fcac",
+    "implementation/warlock/native/geometry.inc": "ca532735a4ddb6f095517ab5b49593860aeaeb1fd1d24018feecf7c52fb8aba6",
+    "implementation/warlock/adapter/geometry_endpoint.py": "193b9ef7ecf114156c02cd527a703e79383cdec83267b612ff406f165cc3e3a4",
+    "implementation/warlock/qa/check-search.py": "91362b4f3797fbd18d99872865c3ca062b20fd0727dfa7fa99acf44f3bb69bda",
+    "implementation/warlock/qa/check-workspace-inventory.py": "e8b557b9e733cc39d8dbcac3e2121bc0c4fe48757c440c6b59fa512104d39ba2",
+    "implementation/warlock/qa/workspace-inventory.qnt": "06d9d052d0f30a453102e1e4502a7f712b4696053c5dc16610d2a48a9b24d4f7",
+    "implementation/warlock/qa/workspace-inventory_test.qnt": "8039e0a0b97f5c841568da6f3d7a761fee91aa44aa3766677003a79f38e81cf6",
+    "implementation/warlock/qa/TaskViewReplay.elm": "3ed7f3c063d0c3f5835483235c0a2a55818ac5e35f79e3cf0354bddc2ea3a3a5",
+    "implementation/warlock/qa/native-taskview-empty.py": "d3f93391108d5eeb2c2a2300eef7e6e21a381f31a4b97345e9ea6bea576c6209",
+    "implementation/warlock/qa/current-native-pair.json": "40c0578bbb8317e41869322ca30bf835e0e025d38959730569dfcf8b12c00ca7",
+    "implementation/warlock/qa/current-search-build.json": "747f915576647d6194e24ac30644e7ef8102e66229a0d525de1fea40636f02ef",
+    "implementation/warlock/assets/elm.js": "e676320d82900595404f2d650671a393d87e5cf5526db1fca4122b3f366d4722",
+    "implementation/warlock/assets/bar.js": "26ef20c9143f87caf7e3d7fc293b248983076f5a7b7a6967cc341d71f7711194",
+    "implementation/warlock/assets/popup.js": "23b0f3e5e223dd5e1d7042ea33dcc1e1f4895997b01ebd7d764a75c15236b56c",
+    "implementation/warlock/README.md": "02b6c447ad2ca3b9f771994b930419f9d1132c1139ea80c96984a3cb5e64a763",
+    "implementation/warlock/src/Shell.elm": "93fdf86ac11ff9c190978fb46557623045a6c697d468a42fc9ba16a4bfa4df48",
+    "implementation/warlock/src/Effects.elm": "873e8824d90828a9927cfd89723c7b7299e11791e3779173815ba720b11a8547",
+    "implementation/warlock/qa/check-native-authority.py": "014cba952d735b40d600cd5e2a498e97a9491bce89fadb69fc1600ddfb6cba32",
+    "implementation/warlock/qa/native-window-feedback.py": "295ba28cf8d9d297b214bd0d6dba19ac3289d861faa953f9fd94b82937473c64",
+    "implementation/warlock/qa/native-taskview-refusal.py": "b719e541c335be6524d7c61a89fb8b5f15556c0aa6f5e041474016938639b4da"
+  },
+  "originalInventory": {
+    "path": "docs/elm-roadmap/requirements.json",
+    "sha256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b"
+  },
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
+      "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791656056768332332/elm-window-geometry-authority.so",
+      "sha256": "50b6cc1f2c409c6936ff02ccdd3958ffaa421b796aeec7bf709d8a9eaa496d1b"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+      "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-inventory-1791656361692542175/elm-host",
+    "sha256": "146f4c3cb714f46a1ff3c201b40a9dbf493b7ad37235fd03ce789419b7769f57",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-inventory-1791656361692542175/report.json",
+    "heldBuildSHA256": "2514667fa043275df12bd46b1916913293be8891108e0be3cc60f1fe9a14bab5"
+  },
+  "compilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+  "compiledAssets": {
+    "elm.js": "e676320d82900595404f2d650671a393d87e5cf5526db1fca4122b3f366d4722",
+    "bar.js": "26ef20c9143f87caf7e3d7fc293b248983076f5a7b7a6967cc341d71f7711194",
+    "popup.js": "23b0f3e5e223dd5e1d7042ea33dcc1e1f4895997b01ebd7d764a75c15236b56c"
+  },
+  "reports": [
+    {
+      "name": "model-before",
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/model-before.json.gz",
+      "sha256": "d24f31a9e2f6b4447c484abb6fc3d3343de77eeaaf824d806923743dd502e5b6",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-inventory-1791655977807510816/report.json",
+      "originalSHA256": "8c6f397dbeef45f76beea1f44c5ee096f577aa02293271e65b1d1ae8aa806273",
+      "bytes": 2282,
+      "encoding": "gzip",
+      "passed": true,
+      "error": null
+    },
+    {
+      "name": "native-authority-build",
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/native-authority-build.json.gz",
+      "sha256": "c2d17829d1f3835b924dbd7df725089c332efafeaa158b14db0b4c7c2f39b736",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791656056768332332/report.json",
+      "originalSHA256": "c482c822cd92af685aa65046867f72fed1c3375161e3439cc9b6a45abc8adae9",
+      "bytes": 149641,
+      "encoding": "gzip",
+      "passed": true,
+      "error": null
+    },
+    {
+      "name": "compile-parenthesis-failed",
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/compile-parenthesis-failed.json.gz",
+      "sha256": "14bcfda78a59dae8866d8eb36410a192376dcf64c28e7b264f26f7a9abf79b3c",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-inventory-1791656122819546002/report.json",
+      "originalSHA256": "ddf4837268c90a1872ddc6f4acd73e0136bfdd77fb470dedef01790abc550a5f",
+      "bytes": 64999,
+      "encoding": "gzip",
+      "passed": false,
+      "error": "RuntimeError('-- UNEXPECTED PARENTHESIS --------------------------- src/GeometryProjection.elm\\n\\nI ran into an unexpected parenthesis:\\n\\n103|             (D.field \"facts\" (D.oneOf [strict [\"focused\",\"inputBlocked\",\"windows\"] (factsBody protocol), if protocol==3 then strict [\"focused\",\"inputBlocked\",\"windows\",\"workspaces\",\"activeWorkspace\"] (D.map2 (\\\\facts _ -> facts) (factsBody protocol) WorkspaceInventory.factsDecoder) else D.fail \"Workspace inventory version\"])))))\\n                                                                                                                                                                                                                                                                                                                                             ^\\nThis ) does not match up with an earlier open parenthesis. Try deleting it?\\n\\n')"
+    },
+    {
+      "name": "compile-shadowing-failed",
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/compile-shadowing-failed.json.gz",
+      "sha256": "2a49e188919872e0cc5b29e9f756083453199fedb486d7a65db02f4df957413c",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-inventory-1791656143876529710/report.json",
+      "originalSHA256": "6513ad2ac1d07538b119dafce6ff5c18126f992a47946ebcbee46fab94b7e3bb",
+      "bytes": 71591,
+      "encoding": "gzip",
+      "passed": false,
+      "error": "RuntimeError('-- SHADOWING --------------------------------------------- qa/TaskViewReplay.elm\\n\\nThe name `scene` is first defined here:\\n\\n27| scene = Scene.decode (E.object [(\"revision\",E.string \"1\"),(\"focused\",E.string \"1\"),(\"windows\",E.list identity [window \"1\" \"Editor\" True,window \"2\" \"Files\" False])]) |> Result.toMaybe\\n    ^^^^^\\nBut then it is defined AGAIN over here:\\n\\n71|     in {base | windows={windows | shell={shell | geometry=Nothing,geometryCaps=Just {effects=False,operations=[]},geometryExpected=Just one,effects={effects | observed=empty |> Maybe.map (\\\\scene -> {context=context,scene=scene})}}}}\\n                                                                                                                                                                                                 ^^^^^\\nThink of a more helpful name for one of them and you should be all set!\\n\\nNote: Linters advise against shadowing, so Elm makes \u201cbest practices\u201d the\\ndefault. Read <https://elm-lang.org/0.19.2/shadowing> for more details on this\\nchoice.\\n\\n')"
+    },
+    {
+      "name": "compiled-before-transfer-retention",
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/compiled-before-transfer-retention.json.gz",
+      "sha256": "41b2a5330ce76c33051a28c066ee5c4b1cfba4f0b6abc6a2779c01747714026b",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-inventory-1791656172545652659/report.json",
+      "originalSHA256": "be2dc6dab92f3a142526f3a3e1fc3547e9bdd4a08b02a59ed0a5c17a638ec0ec",
+      "bytes": 83893,
+      "encoding": "gzip",
+      "passed": true,
+      "error": null
+    },
+    {
+      "name": "compiled-current",
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/compiled-current.json.gz",
+      "sha256": "2ed7c08948363f0a6d86a9c4e1c0340cd8dcc7ec9a1574cd6a6ce954e316ad63",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-inventory-1791656361692542175/report.json",
+      "originalSHA256": "2514667fa043275df12bd46b1916913293be8891108e0be3cc60f1fe9a14bab5",
+      "bytes": 84097,
+      "encoding": "gzip",
+      "passed": true,
+      "error": null
+    },
+    {
+      "name": "fixture-dispatch-syntax-failed",
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/fixture-dispatch-syntax-failed.json.gz",
+      "sha256": "77a3c1b427b72e2a0101f886e6050ab805d8cced083fb173adf0e4c2c5e67fc2",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-task-view-1791656256095689806/report.json",
+      "originalSHA256": "ebd87c88f917c1372c8972847d7c697e6ca25eb0fd7ce42697e89b0468cafb85",
+      "bytes": 348232,
+      "encoding": "gzip",
+      "passed": false,
+      "error": "RuntimeError('private IPC failed: error: [string \"return hl.dispatch(workspace 3)\"]:1: \\')\\' expected near \\'3\\'\\n\\n \u2192 Note: dispatch in lua is a shorthand for hl.dispatch(...), your syntax might need to be updated.\\n')"
+    },
+    {
+      "name": "fixture-workspace-table-failed",
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/fixture-workspace-table-failed.json.gz",
+      "sha256": "0a9f621ca8c344457766abfb267e61af8d3eb66f4ffc7f06182c705a82d5ae22",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-task-view-1791656297859447439/report.json",
+      "originalSHA256": "c9518b9127396aafa58650c12582c35906a48de2e8fc4001e284be2c79d32860",
+      "bytes": 348136,
+      "encoding": "gzip",
+      "passed": false,
+      "error": "RuntimeError('private IPC failed: error: [string \"return hl.dispatch(hl.dsp.workspace({workspac...\"]:1: attempt to call a table value (field \\'workspace\\')\\n')"
+    },
+    {
+      "name": "fixture-endpoint-class-failed",
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/fixture-endpoint-class-failed.json.gz",
+      "sha256": "b8146ad3b8222f94260ecd970a10940ba399e99a008299fd7242ce3eb2df30cb",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-task-view-1791656394631287839/report.json",
+      "originalSHA256": "146f804d6ba2a3be4fe20464b1e18c2775d556d5f7b04a8d4f9fe086aa036e25",
+      "bytes": 347596,
+      "encoding": "gzip",
+      "passed": false,
+      "error": "AttributeError(\"'Endpoint' object has no attribute 'geometry_attach'\")"
+    },
+    {
+      "name": "native-current",
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/native-current.json.gz",
+      "sha256": "58a5e59b11d9b90ee5cef7523a520b05d2cc7e6503ecf0e291b102d12ceef2f2",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-task-view-1791656437754685862/report.json",
+      "originalSHA256": "0672267141df2d3d28f61575f9bf57181e061da18d6e3df96ec54b6ad53322ec",
+      "bytes": 447954,
+      "encoding": "gzip",
+      "passed": true,
+      "error": null
+    },
+    {
+      "name": "native-refusal-regression",
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/native-refusal-regression.json.gz",
+      "sha256": "2c6798136a08e40270b1dae8b0c8e4f6c9586fd7b79860a3efb0c5cf5da6300b",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-drag-ownership-1791656487058334672/report.json",
+      "originalSHA256": "901487281c22eb76e18fa9266f8617b5e5cdb782c33239e023cfb04a68058565",
+      "bytes": 431075,
+      "encoding": "gzip",
+      "passed": true,
+      "error": null
+    }
+  ],
+  "files": [
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/model-before.json.gz",
+      "sha256": "d24f31a9e2f6b4447c484abb6fc3d3343de77eeaaf824d806923743dd502e5b6",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-inventory-1791655977807510816/report.json",
+      "originalSHA256": "8c6f397dbeef45f76beea1f44c5ee096f577aa02293271e65b1d1ae8aa806273",
+      "bytes": 2282,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/native-authority-build.json.gz",
+      "sha256": "c2d17829d1f3835b924dbd7df725089c332efafeaa158b14db0b4c7c2f39b736",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791656056768332332/report.json",
+      "originalSHA256": "c482c822cd92af685aa65046867f72fed1c3375161e3439cc9b6a45abc8adae9",
+      "bytes": 149641,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/compile-parenthesis-failed.json.gz",
+      "sha256": "14bcfda78a59dae8866d8eb36410a192376dcf64c28e7b264f26f7a9abf79b3c",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-inventory-1791656122819546002/report.json",
+      "originalSHA256": "ddf4837268c90a1872ddc6f4acd73e0136bfdd77fb470dedef01790abc550a5f",
+      "bytes": 64999,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/compile-shadowing-failed.json.gz",
+      "sha256": "2a49e188919872e0cc5b29e9f756083453199fedb486d7a65db02f4df957413c",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-inventory-1791656143876529710/report.json",
+      "originalSHA256": "6513ad2ac1d07538b119dafce6ff5c18126f992a47946ebcbee46fab94b7e3bb",
+      "bytes": 71591,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/compiled-before-transfer-retention.json.gz",
+      "sha256": "41b2a5330ce76c33051a28c066ee5c4b1cfba4f0b6abc6a2779c01747714026b",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-inventory-1791656172545652659/report.json",
+      "originalSHA256": "be2dc6dab92f3a142526f3a3e1fc3547e9bdd4a08b02a59ed0a5c17a638ec0ec",
+      "bytes": 83893,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/compiled-current.json.gz",
+      "sha256": "2ed7c08948363f0a6d86a9c4e1c0340cd8dcc7ec9a1574cd6a6ce954e316ad63",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-inventory-1791656361692542175/report.json",
+      "originalSHA256": "2514667fa043275df12bd46b1916913293be8891108e0be3cc60f1fe9a14bab5",
+      "bytes": 84097,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/fixture-dispatch-syntax-failed.json.gz",
+      "sha256": "77a3c1b427b72e2a0101f886e6050ab805d8cced083fb173adf0e4c2c5e67fc2",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-task-view-1791656256095689806/report.json",
+      "originalSHA256": "ebd87c88f917c1372c8972847d7c697e6ca25eb0fd7ce42697e89b0468cafb85",
+      "bytes": 348232,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/fixture-workspace-table-failed.json.gz",
+      "sha256": "0a9f621ca8c344457766abfb267e61af8d3eb66f4ffc7f06182c705a82d5ae22",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-task-view-1791656297859447439/report.json",
+      "originalSHA256": "c9518b9127396aafa58650c12582c35906a48de2e8fc4001e284be2c79d32860",
+      "bytes": 348136,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/fixture-endpoint-class-failed.json.gz",
+      "sha256": "b8146ad3b8222f94260ecd970a10940ba399e99a008299fd7242ce3eb2df30cb",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-task-view-1791656394631287839/report.json",
+      "originalSHA256": "146f804d6ba2a3be4fe20464b1e18c2775d556d5f7b04a8d4f9fe086aa036e25",
+      "bytes": 347596,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/native-current.json.gz",
+      "sha256": "58a5e59b11d9b90ee5cef7523a520b05d2cc7e6503ecf0e291b102d12ceef2f2",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-task-view-1791656437754685862/report.json",
+      "originalSHA256": "0672267141df2d3d28f61575f9bf57181e061da18d6e3df96ec54b6ad53322ec",
+      "bytes": 447954,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/native-refusal-regression.json.gz",
+      "sha256": "2c6798136a08e40270b1dae8b0c8e4f6c9586fd7b79860a3efb0c5cf5da6300b",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-drag-ownership-1791656487058334672/report.json",
+      "originalSHA256": "901487281c22eb76e18fa9266f8617b5e5cdb782c33239e023cfb04a68058565",
+      "bytes": 431075,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/model-after.json.gz",
+      "sha256": "0e416f73f972db38dd54230f6dfdd04e24ea0e3497fb0351d3a82ed0f2ce3ed3",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-inventory-1791656361692542175/inputs/qa/runs/workspace-inventory-1791656363436726051/report.json",
+      "originalSHA256": "9d18f52ba992491931558585f28eeff5ad59d62c0f59cf374109f6ef15ee7eb6",
+      "bytes": 3372,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/model-after-typecheck.stdout.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-inventory-1791656361692542175/inputs/qa/runs/workspace-inventory-1791656363436726051/typecheck.stdout",
+      "originalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/model-after-tests-typecheck.stdout.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-inventory-1791656361692542175/inputs/qa/runs/workspace-inventory-1791656363436726051/tests-typecheck.stdout",
+      "originalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/model-after-named.stdout.gz",
+      "sha256": "ce7476a456175f332125a90d65f8b70f870ff97106945aa7763318b06c89c158",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-inventory-1791656361692542175/inputs/qa/runs/workspace-inventory-1791656363436726051/named.stdout",
+      "originalSHA256": "50cfed087fd1e59923677b209eef76b5bb65844681da7d4b2f12d3968b89e3f3",
+      "bytes": 403,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/model-after-witness-safety.stdout.gz",
+      "sha256": "c8a53e742f5cd9e0f02d13ee79d7b01a89057fda42bae4b6c96786d3d6261ff9",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-inventory-1791656361692542175/inputs/qa/runs/workspace-inventory-1791656363436726051/witness-safety.stdout",
+      "originalSHA256": "a5f03e4983a7ef965e5a3246d2119527b70f9758b8930e7dabc30c3f1865b7c3",
+      "bytes": 6523,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/model-before-typecheck.stdout.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-inventory-1791655977807510816/typecheck.stdout",
+      "originalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/model-before-tests-typecheck.stdout.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-inventory-1791655977807510816/tests-typecheck.stdout",
+      "originalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/model-before-named.stdout.gz",
+      "sha256": "e8491effdfe474a0609d15f9064798a4e61413139a9d2b97c2c81a3de33b81fc",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-inventory-1791655977807510816/named.stdout",
+      "originalSHA256": "5bbccd826fb1ce6b4d70ba736cc6446e3a06b37da749c785b18e32f2fd67406a",
+      "bytes": 403,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/model-before-witness-safety.stdout.gz",
+      "sha256": "3fdfa2777b507b7966fe9374c7d12c16fdde9854deaaebbf72505d24cde6c701",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-inventory-1791655977807510816/witness-safety.stdout",
+      "originalSHA256": "a9f474fc98df3a0e5059cbab8dc5db44a9ee2dc5fea815e8a18898248428fff3",
+      "bytes": 6523,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/task-view.json.gz",
+      "sha256": "bbffbc92a41ce7c40a762e12703eea1c638cce71adae1fcabe56ee72c9b15ed0",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-inventory-1791656361692542175/task-view.json",
+      "originalSHA256": "09efdc5756062ac447e49b1d4c59ddf345ba9be94d43e2c121001eb919cfc270",
+      "bytes": 8301,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/task-view.js.gz",
+      "sha256": "57882b2ddd0b80695f82b750d0cf9a464927894a8f9c1c86a192294d232d9295",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-inventory-1791656361692542175/inputs/assets/task-view.js",
+      "originalSHA256": "f10c59a031ea44eb24731ccbd9fff359fdce2379bca82892de4654455230aa35",
+      "bytes": 817970,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/native-current-host-evidence.json.gz",
+      "sha256": "471ce2ffc389a91103d743a7b2a096d9af4a2fde08a2c160d1a97a171d233e99",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791656437754781528/host-evidence.json",
+      "originalSHA256": "af468392eba1f11c6af281139c1a064944b6b4c317647e2237b808732ed18824",
+      "bytes": 231276,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/native-current-warlock.log.gz",
+      "sha256": "9c8b075cd106565ebb130563ab70206add1c022b79513b8b11ecd6934671233b",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791656437754781528/warlock.log",
+      "originalSHA256": "4f72fa7e4ed5d13d86410d39e5d352cf469459cba0eec1c5ab5d08160bf76a79",
+      "bytes": 450723,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/native-current-hyprland.log.gz",
+      "sha256": "3e8d2e4cd7fbff1c61352f98d85c02b241af8cd2e0241102330ddfb5725fb34c",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791656437754781528/hyprland.log",
+      "originalSHA256": "bdf2a951921c4504ffc61deaba20cc2451ab99ab87b5475415d8e08804837be8",
+      "bytes": 431695,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/native-current-fixture-control.events.jsonl.gz",
+      "sha256": "a760b213a3d6ffd0dfa0539107cdca54da036a805ab3a5d79bbef55eb902f670",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791656437754781528/fixture-control.events.jsonl",
+      "originalSHA256": "5c0fcb9cc31e4ee15b45a1cdc65dbf65e44a6b47892196a567cc5c70aef8b141",
+      "bytes": 80,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/native-refusal-regression-host-evidence.json.gz",
+      "sha256": "777f4fd780afbc525caec582ce14fe379d75f5aabf95b321307c8bcf9240116e",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791656487058451049/host-evidence.json",
+      "originalSHA256": "6d99fcc0d83248e7ead67f3728d766e3df277e758c73771b0d7080b50e9a3871",
+      "bytes": 218676,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/native-refusal-regression-warlock.log.gz",
+      "sha256": "6ef56a96c749198113d4cd8ec9678cc63aed409d1714d7c1b94e6a128e4fa6e7",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791656487058451049/warlock.log",
+      "originalSHA256": "2bb2d6baed8350335df1b375f6a1e2310f3daa6b1d986127a068827056a550b2",
+      "bytes": 905483,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/native-refusal-regression-hyprland.log.gz",
+      "sha256": "2d9362ece9538fb694e65edf1365f1973cf94aa1d6c5575372d300539c753adb",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791656487058451049/hyprland.log",
+      "originalSHA256": "fe0a0d13c0adf4a21e794485656bed1c6b202bf65b26f71ba2f4946902b119ed",
+      "bytes": 352257,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/native-refusal-regression-fixture-control.events.jsonl.gz",
+      "sha256": "6b6cc6c13a9760be61dd05a3a122170bbc5e3fcc4893435b582e858e8ef357a4",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791656487058451049/fixture-control.events.jsonl",
+      "originalSHA256": "347dac942679567da6745ef29c4979f6b01936e3e5214e7e5ea31860d3e58e77",
+      "bytes": 688,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/popup-initial.png",
+      "sha256": "5a31148534897281ef8ee0bede01eabf0bdee8a7fc94f3988e701e73f90c359b",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791656437754781528/popup-initial.png",
+      "originalSHA256": "5a31148534897281ef8ee0bede01eabf0bdee8a7fc94f3988e701e73f90c359b",
+      "bytes": 249266,
+      "encoding": "raw"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/popup-workspace-two.png",
+      "sha256": "0e6654b30d31cd4539a0b9a7afb9aab75dff075b56a10d85f7aca550170e36fd",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791656437754781528/popup-workspace-two.png",
+      "originalSHA256": "0e6654b30d31cd4539a0b9a7afb9aab75dff075b56a10d85f7aca550170e36fd",
+      "bytes": 248924,
+      "encoding": "raw"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/popup-empty-workspace.png",
+      "sha256": "ab5351db33f3c1342ad8b7c46ae566e1c43b96520d95dc5d71fc7552632090a1",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791656437754781528/popup-empty-workspace.png",
+      "originalSHA256": "ab5351db33f3c1342ad8b7c46ae566e1c43b96520d95dc5d71fc7552632090a1",
+      "bytes": 245403,
+      "encoding": "raw"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/task-view-native-refused.png",
+      "sha256": "cf089919c1f81fc812155a8f59a411f93ad5a19c64c385192187b45f5e461726",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791656487058451049/task-view-native-refused.png",
+      "originalSHA256": "cf089919c1f81fc812155a8f59a411f93ad5a19c64c385192187b45f5e461726",
+      "bytes": 447759,
+      "encoding": "raw"
+    }
+  ],
+  "modelWitnesses": {
+    "emptyWitness": 37,
+    "activeEmptyWitness": 266,
+    "retiredWitness": 60,
+    "replacementWitness": 1000
+  },
+  "decoderChecks": 17,
+  "typedChecks": 42,
+  "nativeChecks": 61,
+  "refusalRegressionChecks": 62,
+  "nativeEmptyWorkspaceInventoryObserved": true,
+  "nativeRefusalRegressionObserved": true,
+  "cleanupPassed": true,
+  "nativeAcceptance": false,
+  "assistiveTechnologyAccepted": false,
+  "independentAcceptance": false,
+  "fullReleaseAccepted": false,
+  "missingObservations": [
+    "Actual GUI workspace activation/navigation to an empty destination is not implemented by local workspace browsing.",
+    "Applicable native AT and independent original acceptance remain open."
+  ],
+  "modelLimits": "Bounded matching inventory/geometry and local empty browsing/retirement/dismissal; window family transfer retention remains covered by existing policy and typed regression. Native workspace navigation, grants, transport, clocks, custody, paint and AT excluded. Sampled safety is not exhaustive checking.",
+  "modelSourceMap": {
+    "request/current": "Shell current geometry receipt / Desktop.windowBase inventory admission",
+    "show/browseEmpty": "Desktop.OpenOverview / OverviewWorkspace; TaskView.groupsWith",
+    "foreign/malformed": "Strict Python/Elm geometry and workspace decoding; exact native request/binding",
+    "replace": "Desktop.windowBase authority/disconnection invalidation",
+    "retirement": "Desktop.syncOverviewWorkspace current inventory group fallback",
+    "dismiss": "Desktop.CloseOverview existing focus/read contract"
+  }
+}

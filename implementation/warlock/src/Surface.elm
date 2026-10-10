@@ -238,7 +238,7 @@ controls model =
         let
             transferReady=Shell.available model.windows.shell && model.choice==Nothing
             scoped message = Desktop.capture model |> Maybe.map message
-            groups = TaskView.groups model.windows.shell |> Maybe.withDefault []
+            groups = Desktop.taskViewGroups model |> Maybe.withDefault []
             workspaceControl group =
                 {id="overview:workspace:"++group.identity,domId=Desktop.key model ("overview:workspace:"++group.identity),label="Workspace "++group.identity,ariaLabel="Browse workspace "++group.identity++(if group.active then "; active workspace" else ""),detail=(if group.active then "Active workspace" else "")++(if model.overviewWorkspace==Just group.identity then " • Selected" else ""),enabled=True,message=scoped (\stamp -> Desktop.OverviewWorkspace stamp (Just group.identity))}
             familyControl group family =
@@ -381,10 +381,10 @@ notice model =
         else "Tab or Right: next window. Shift+Tab or Left: previous. Enter: activate. Escape: cancel."
     else if model.overview then
         if recoveryNeeded model then windowNotice model else
-        case TaskView.groups model.windows.shell of
+        case Desktop.taskViewGroups model of
             Nothing -> "Waiting for current workspace information. Refresh window status."
             Just [] -> "No windows to show. Close Task View to return."
-            Just _ -> "Choose a window to reveal its workspace, or browse another workspace."
+            Just groups -> if model.overviewWorkspace/=Nothing && not (List.any (\group -> model.overviewWorkspace==Just group.identity && not (List.isEmpty group.windows)) groups) then "This workspace has no windows. Browse another workspace or close Task View." else "Choose a window to reveal its workspace, or browse another workspace."
     else if mode model=="menu" then
         case (MenuBridge.menuSnapshot model.windows.menus).menu |> Maybe.map .status of
             Just (Menu.Refused reason) -> reason

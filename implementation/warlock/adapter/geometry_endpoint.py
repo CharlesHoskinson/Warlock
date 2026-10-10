@@ -33,6 +33,29 @@ def workspace(value):
         raise Refused('Invalid workspace identity')
 
 
+def workspace_inventory(facts):
+    """Optional protocol-3 inventory; never infer empty workspaces from windows."""
+    if 'workspaces' not in facts and 'activeWorkspace' not in facts:
+        exact(facts, ['focused', 'inputBlocked', 'windows']);return None
+    exact(facts, ['focused', 'inputBlocked', 'windows', 'workspaces', 'activeWorkspace'])
+    rows=facts['workspaces']
+    if not isinstance(rows,list) or len(rows)>256:raise Refused('Workspace inventory bound')
+    identities=set();generations={};outputs={}
+    for row in rows:
+        exact(row,['identity','generation','monitor','outputOwnershipGeneration'])
+        workspace(row['identity'])
+        if int(row['identity'])<=0 or row['identity'] in identities:raise Refused('Ordinary unique workspace required')
+        identities.add(row['identity']);generation=canonical(row['generation']);monitor=canonical(row['monitor'],True);output=canonical(row['outputOwnershipGeneration'])
+        if generation in generations and generations[generation]!=row['identity']:raise Refused('Workspace owner reused')
+        if monitor in outputs and outputs[monitor]!=output:raise Refused('Output owner contradiction')
+        generations[generation]=row['identity'];outputs[monitor]=output
+    active=facts['activeWorkspace']
+    if active is not None:
+        workspace(active)
+        if active not in identities:raise Refused('Unknown active workspace')
+    return rows
+
+
 class GeometryEndpoint(LegacyEffectEndpoint):
     def hello(self):
         response = super().hello()
@@ -90,7 +113,8 @@ class GeometryEndpoint(LegacyEffectEndpoint):
         if int(response['sequence']) < int(minimum_watermark):
             raise Refused('Obsolete geometry facts')
         facts = response['facts']
-        exact(facts, ['focused', 'inputBlocked', 'windows'])
+        inventory=workspace_inventory(facts)
+        if inventory is not None and self.geometry_protocol!=3:raise Refused('Workspace inventory version')
         if type(facts['inputBlocked']) is not bool:
             raise Refused('Input blocking state')
         rows = facts['windows']

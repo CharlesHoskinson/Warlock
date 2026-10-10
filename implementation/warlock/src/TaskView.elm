@@ -1,10 +1,11 @@
-module TaskView exposing (Workspace, groups, activeWorkspace)
+module TaskView exposing (Workspace, groups, groupsWith, activeWorkspace)
 
 import Effects
 import ActionProjection as Scene
 import GeometryProjection
 import Shell
 import Taskbar
+import WorkspaceInventory
 
 type alias Workspace = { identity : String, active : Bool, windows : List Taskbar.Family }
 
@@ -54,3 +55,17 @@ membership root shell geometry =
     in case pending |> Maybe.map (.intent >> .operation) of
         Just (Effects.TransferWorkspace p) -> Just p.source
         _ -> GeometryProjection.window root geometry |> Maybe.andThen .workspace
+
+-- Native inventory makes empty workspaces visible. Existing window membership
+-- still supplies families; stale inventory cannot be joined to newer geometry.
+groupsWith inventory shell =
+    case inventory of
+        Nothing -> groups shell
+        Just snapshot ->
+            case (groups shell,shell.geometry) of
+                (Just populated,Just geometry) ->
+                    if not (WorkspaceInventory.coherent snapshot geometry) then Nothing else
+                    let current=snapshot.rows |> List.map (\row -> {identity=row.identity,active=snapshot.active==Just row.identity,windows=populated |> List.filter (\group -> group.identity==row.identity) |> List.concatMap .windows})
+                        retained=populated |> List.filter (\group -> not (List.any (\row -> row.identity==group.identity) snapshot.rows)) |> List.map (\group -> {group | active=False})
+                    in Just (current++retained |> List.sortWith (\a b -> compare (String.length a.identity,a.identity) (String.length b.identity,b.identity)))
+                _ -> Nothing

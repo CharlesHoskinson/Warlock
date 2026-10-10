@@ -519,11 +519,11 @@ function _Debug_crash_UNUSED(identifier, fact1, fact2, fact3, fact4)
 
 function _Debug_regionToString(region)
 {
-	if (region.dN.cp === region.d1.cp)
+	if (region.dO.cp === region.d2.cp)
 	{
-		return 'on line ' + region.dN.cp;
+		return 'on line ' + region.dO.cp;
 	}
-	return 'on lines ' + region.dN.cp + ' through ' + region.d1.cp;
+	return 'on lines ' + region.dO.cp + ' through ' + region.d2.cp;
 }
 
 
@@ -1857,9 +1857,9 @@ var _Platform_worker = F4(function(impl, flagDecoder, debugMetadata, args)
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.fn,
-		impl.fT,
-		impl.fP,
+		impl.fp,
+		impl.fV,
+		impl.fR,
 		function() { return function() {} }
 	);
 });
@@ -2720,8 +2720,8 @@ var _VirtualDom_mapEventRecord = F2(function(func, record)
 {
 	return {
 		aJ: func(record.aJ),
-		dO: record.dO,
-		dH: record.dH
+		dP: record.dP,
+		dI: record.dI
 	}
 });
 
@@ -2990,10 +2990,10 @@ function _VirtualDom_makeCallback(eventNode, initialHandler)
 
 		var value = result.a;
 		var message = !tag ? value : tag < 3 ? value.a : value.aJ;
-		var stopPropagation = tag == 1 ? value.b : tag == 3 && value.dO;
+		var stopPropagation = tag == 1 ? value.b : tag == 3 && value.dP;
 		var currentEventNode = (
 			stopPropagation && event.stopPropagation(),
-			(tag == 2 ? value.b : tag == 3 && value.dH) && event.preventDefault(),
+			(tag == 2 ? value.b : tag == 3 && value.dI) && event.preventDefault(),
 			eventNode
 		);
 		var tagger;
@@ -3943,11 +3943,11 @@ var _Browser_element = _Debugger_element || F4(function(impl, flagDecoder, debug
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.fn,
-		impl.fT,
-		impl.fP,
+		impl.fp,
+		impl.fV,
+		impl.fR,
 		function(sendToApp, initialModel) {
-			var view = impl.fU;
+			var view = impl.fW;
 			/**/
 			var domNode = args['node'];
 			//*/
@@ -3979,12 +3979,12 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.fn,
-		impl.fT,
-		impl.fP,
+		impl.fp,
+		impl.fV,
+		impl.fR,
 		function(sendToApp, initialModel) {
-			var divertHrefToApp = impl.dM && impl.dM(sendToApp)
-			var view = impl.fU;
+			var divertHrefToApp = impl.dN && impl.dN(sendToApp)
+			var view = impl.fW;
 			var title = _VirtualDom_doc.title;
 			var bodyNode = _VirtualDom_doc.body;
 			var currNode = _VirtualDom_virtualize(bodyNode);
@@ -3992,7 +3992,7 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 			{
 				_VirtualDom_divertHrefToApp = divertHrefToApp;
 				var doc = view(model);
-				var nextNode = _VirtualDom_node('body')(_List_Nil)(doc.dU);
+				var nextNode = _VirtualDom_node('body')(_List_Nil)(doc.dV);
 				var patches = _VirtualDom_diff(currNode, nextNode);
 				bodyNode = _VirtualDom_applyPatches(bodyNode, currNode, patches, sendToApp);
 				currNode = nextNode;
@@ -4053,12 +4053,12 @@ function _Browser_makeAnimator(model, draw)
 
 function _Browser_application(impl)
 {
-	var onUrlChange = impl.fu;
-	var onUrlRequest = impl.fv;
+	var onUrlChange = impl.fw;
+	var onUrlRequest = impl.fx;
 	var key = function() { key.a(onUrlChange(_Browser_getUrl())); };
 
 	return _Browser_document({
-		dM: function(sendToApp)
+		dN: function(sendToApp)
 		{
 			key.a = sendToApp;
 			_Browser_window.addEventListener('popstate', key);
@@ -4074,9 +4074,9 @@ function _Browser_application(impl)
 					var next = $elm$url$Url$fromString(href).a;
 					sendToApp(onUrlRequest(
 						(next
-							&& curr.eE === next.eE
+							&& curr.eF === next.eF
 							&& curr.be === next.be
-							&& curr.ez.a === next.ez.a
+							&& curr.eA.a === next.eA.a
 						)
 							? $elm$browser$Browser$Internal(next)
 							: $elm$browser$Browser$External(href)
@@ -4084,13 +4084,13 @@ function _Browser_application(impl)
 				}
 			});
 		},
-		fn: function(flags)
+		fp: function(flags)
 		{
-			return A3(impl.fn, flags, _Browser_getUrl(), key);
+			return A3(impl.fp, flags, _Browser_getUrl(), key);
 		},
-		fU: impl.fU,
-		fT: impl.fT,
-		fP: impl.fP
+		fW: impl.fW,
+		fV: impl.fV,
+		fR: impl.fR
 	});
 }
 
@@ -4156,17 +4156,17 @@ var _Browser_decodeEvent = F2(function(decoder, event)
 function _Browser_visibilityInfo()
 {
 	return (typeof _VirtualDom_doc.hidden !== 'undefined')
-		? { fj: 'hidden', e8: 'visibilitychange' }
+		? { fl: 'hidden', fa: 'visibilitychange' }
 		:
 	(typeof _VirtualDom_doc.mozHidden !== 'undefined')
-		? { fj: 'mozHidden', e8: 'mozvisibilitychange' }
+		? { fl: 'mozHidden', fa: 'mozvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.msHidden !== 'undefined')
-		? { fj: 'msHidden', e8: 'msvisibilitychange' }
+		? { fl: 'msHidden', fa: 'msvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.webkitHidden !== 'undefined')
-		? { fj: 'webkitHidden', e8: 'webkitvisibilitychange' }
-		: { fj: 'hidden', e8: 'visibilitychange' };
+		? { fl: 'webkitHidden', fa: 'webkitvisibilitychange' }
+		: { fl: 'hidden', fa: 'visibilitychange' };
 }
 
 
@@ -4247,8 +4247,8 @@ var _Browser_call = F2(function(functionName, id)
 function _Browser_getViewport()
 {
 	return {
-		eN: _Browser_getScene(),
-		eV: {
+		eP: _Browser_getScene(),
+		eX: {
 			a6: _Browser_window.pageXOffset,
 			a7: _Browser_window.pageYOffset,
 			a5: _Browser_doc.documentElement.clientWidth,
@@ -4286,11 +4286,11 @@ function _Browser_getViewportOf(id)
 	return _Browser_withNode(id, function(node)
 	{
 		return {
-			eN: {
+			eP: {
 				a5: node.scrollWidth,
 				aX: node.scrollHeight
 			},
-			eV: {
+			eX: {
 				a6: node.scrollLeft,
 				a7: node.scrollTop,
 				a5: node.clientWidth,
@@ -4324,14 +4324,14 @@ function _Browser_getElement(id)
 		var x = _Browser_window.pageXOffset;
 		var y = _Browser_window.pageYOffset;
 		return {
-			eN: _Browser_getScene(),
-			eV: {
+			eP: _Browser_getScene(),
+			eX: {
 				a6: x,
 				a7: y,
 				a5: _Browser_doc.documentElement.clientWidth,
 				aX: _Browser_doc.documentElement.clientHeight
 			},
-			fc: {
+			fe: {
 				a6: x + rect.left,
 				a7: y + rect.top,
 				a5: rect.width,
@@ -4894,7 +4894,7 @@ var $elm$url$Url$Http = 0;
 var $elm$url$Url$Https = 1;
 var $elm$url$Url$Url = F6(
 	function (protocol, host, port_, path, query, fragment) {
-		return {d7: fragment, be: host, ew: path, ez: port_, eE: protocol, c_: query};
+		return {d8: fragment, be: host, ex: path, eA: port_, eF: protocol, c$: query};
 	});
 var $elm$core$String$contains = _String_contains;
 var $elm$core$String$length = _String_length;
@@ -5186,48 +5186,48 @@ var $author$project$ReconciliationTracking$empty = {bf: $elm$core$Maybe$Nothing,
 var $author$project$Desktop$KeyboardEntry = 1;
 var $author$project$Launch$Idle = {$: 0};
 var $author$project$Launch$Model = $elm$core$Basics$identity;
-var $author$project$Launch$init = {be: $elm$core$Maybe$Nothing, j: $author$project$Launch$Idle, c1: $author$project$UInt64$zero, c2: $author$project$UInt64$zero, c: $elm$core$Maybe$Nothing};
-var $author$project$Files$initial = {fb: '', ft: 'Loading Files…', ex: $elm$core$Maybe$Nothing, c: $elm$core$Maybe$Nothing, ca: _List_Nil};
-var $author$project$JumpList$initial = {ft: 'Reading application actions…', ex: $elm$core$Maybe$Nothing, c: $elm$core$Maybe$Nothing, ca: _List_Nil};
+var $author$project$Launch$init = {be: $elm$core$Maybe$Nothing, j: $author$project$Launch$Idle, c2: $author$project$UInt64$zero, c3: $author$project$UInt64$zero, c: $elm$core$Maybe$Nothing};
+var $author$project$Files$initial = {fd: '', fv: 'Loading Files…', ey: $elm$core$Maybe$Nothing, c: $elm$core$Maybe$Nothing, ca: _List_Nil};
+var $author$project$JumpList$initial = {fv: 'Reading application actions…', ey: $elm$core$Maybe$Nothing, c: $elm$core$Maybe$Nothing, ca: _List_Nil};
 var $author$project$MotionPreferences$System = 0;
-var $author$project$MotionPreferences$initial = {fb: 0, ft: 'Reading motion preference…', ex: $elm$core$Maybe$Nothing, c: $elm$core$Maybe$Nothing};
-var $author$project$Motion$initial = {bT: $elm$core$Maybe$Nothing, bF: $elm$core$Maybe$Nothing, ex: $elm$core$Maybe$Nothing, a1: $author$project$MotionPreferences$initial};
+var $author$project$MotionPreferences$initial = {fd: 0, fv: 'Reading motion preference…', ey: $elm$core$Maybe$Nothing, c: $elm$core$Maybe$Nothing};
+var $author$project$Motion$initial = {bT: $elm$core$Maybe$Nothing, bF: $elm$core$Maybe$Nothing, ey: $elm$core$Maybe$Nothing, a1: $author$project$MotionPreferences$initial};
 var $author$project$Notifications$initial = {
 	ci: $elm$core$Maybe$Nothing,
-	ft: 'Loading notifications…',
-	cZ: $elm$core$Maybe$Nothing,
-	ex: $elm$core$Maybe$Nothing,
-	fD: {cP: false, ef: false},
+	fv: 'Loading notifications…',
+	c_: $elm$core$Maybe$Nothing,
+	ey: $elm$core$Maybe$Nothing,
+	fF: {cQ: false, eg: false},
 	c: $elm$core$Maybe$Nothing,
 	ca: _List_Nil
 };
 var $author$project$OverviewRecovery$Idle = {$: 0};
 var $author$project$OverviewRecovery$initial = $author$project$OverviewRecovery$Idle;
-var $author$project$Pins$initial = {ft: '', ex: $elm$core$Maybe$Nothing, c: $elm$core$Maybe$Nothing};
+var $author$project$Pins$initial = {fv: '', ey: $elm$core$Maybe$Nothing, c: $elm$core$Maybe$Nothing};
 var $author$project$PointerOwnership$initial = {bF: $elm$core$Maybe$Nothing};
 var $author$project$Settings$Night = 0;
-var $author$project$Settings$defaults = {cQ: false, c$: false, cy: 100, de: 0};
-var $author$project$Settings$initial = {fb: $author$project$Settings$defaults, ft: 'Loading settings…', cZ: $elm$core$Maybe$Nothing, ex: $elm$core$Maybe$Nothing, c: $elm$core$Maybe$Nothing};
+var $author$project$Settings$defaults = {cR: false, c0: false, cy: 100, df: 0};
+var $author$project$Settings$initial = {fd: $author$project$Settings$defaults, fv: 'Loading settings…', c_: $elm$core$Maybe$Nothing, ey: $elm$core$Maybe$Nothing, c: $elm$core$Maybe$Nothing};
 var $author$project$ShortcutPreferences$Undecided = 0;
 var $author$project$ShortcutPreferences$defaults = {aD: 0, C: 0, bP: 0};
-var $author$project$ShortcutPreferences$initial = {fb: $author$project$ShortcutPreferences$defaults, cV: $elm$core$Maybe$Nothing, ft: 'Loading shortcut choices…', ex: $elm$core$Maybe$Nothing, c: $elm$core$Maybe$Nothing};
-var $author$project$Shortcuts$initial = {dk: $elm$core$Maybe$Nothing, bM: $author$project$UInt64$zero};
+var $author$project$ShortcutPreferences$initial = {fd: $author$project$ShortcutPreferences$defaults, cW: $elm$core$Maybe$Nothing, fv: 'Loading shortcut choices…', ey: $elm$core$Maybe$Nothing, c: $elm$core$Maybe$Nothing};
+var $author$project$Shortcuts$initial = {dl: $elm$core$Maybe$Nothing, bM: $author$project$UInt64$zero};
 var $author$project$Switcher$Idle = 0;
 var $author$project$Switcher$Model = $elm$core$Basics$identity;
 var $elm$core$Dict$RBEmpty_elm_builtin = {$: -2};
 var $elm$core$Dict$empty = $elm$core$Dict$RBEmpty_elm_builtin;
-var $author$project$Switcher$initial = {ba: $elm$core$Maybe$Nothing, af: _List_Nil, fh: $author$project$UInt64$zero, cY: $elm$core$Maybe$Nothing, j: 0, b5: false, c0: $elm$core$Maybe$Nothing, dL: _List_Nil, fN: 0, bO: $elm$core$Dict$empty};
-var $author$project$SystemMenu$initial = {ft: 'Loading system state…', ex: $elm$core$Maybe$Nothing, c: $elm$core$Maybe$Nothing, ca: _List_Nil};
+var $author$project$Switcher$initial = {ba: $elm$core$Maybe$Nothing, ah: _List_Nil, fj: $author$project$UInt64$zero, cZ: $elm$core$Maybe$Nothing, j: 0, b5: false, c1: $elm$core$Maybe$Nothing, dM: _List_Nil, fP: 0, bO: $elm$core$Dict$empty};
+var $author$project$SystemMenu$initial = {fv: 'Loading system state…', ey: $elm$core$Maybe$Nothing, c: $elm$core$Maybe$Nothing, ca: _List_Nil};
 var $author$project$MenuBridge$Model = $elm$core$Basics$identity;
 var $author$project$ReceiptRouter$Model = $elm$core$Basics$identity;
 var $author$project$ReceiptRouter$empty = _List_Nil;
 var $author$project$Menu$Model = $elm$core$Basics$identity;
-var $author$project$Menu$init = {az: false, aY: _List_Nil, co: $elm$core$Maybe$Nothing, aI: $elm$core$Maybe$Nothing, cr: 1, cs: 1, fx: _List_Nil, bL: _List_Nil, a3: _List_Nil};
-var $author$project$MenuBridge$initial = {aI: $author$project$Menu$init, O: $elm$core$Maybe$Nothing, dG: $author$project$UInt64$zero, bJ: $elm$core$Maybe$Nothing, au: $author$project$ReceiptRouter$empty};
+var $author$project$Menu$init = {aA: false, aY: _List_Nil, co: $elm$core$Maybe$Nothing, aI: $elm$core$Maybe$Nothing, cr: 1, cs: 1, fz: _List_Nil, bL: _List_Nil, a3: _List_Nil};
+var $author$project$MenuBridge$initial = {aI: $author$project$Menu$init, O: $elm$core$Maybe$Nothing, dH: $author$project$UInt64$zero, bJ: $elm$core$Maybe$Nothing, av: $author$project$ReceiptRouter$empty};
 var $author$project$Shell$Detached = 0;
-var $author$project$Effects$empty = {bb: false, fh: $author$project$UInt64$zero, as: $elm$core$Maybe$Nothing, c1: $author$project$UInt64$zero, fS: $elm$core$Maybe$Nothing, z: _List_Nil};
-var $author$project$Shell$initial = {am: false, dk: $elm$core$Maybe$Nothing, d$: false, _: $author$project$Effects$empty, A: $elm$core$Maybe$Nothing, ap: $elm$core$Maybe$Nothing, ea: $elm$core$Maybe$Nothing, ds: $elm$core$Maybe$Nothing, eb: $elm$core$Maybe$Nothing, U: _List_Nil, ft: 'Connecting…', aA: false, j: 0, a2: false, ct: false, bm: true, b7: $elm$core$Maybe$Nothing, c1: $author$project$UInt64$zero, X: false};
-var $author$project$TaskbarShell$initial = {fh: $author$project$UInt64$zero, h: $author$project$MenuBridge$initial, J: $elm$core$Maybe$Nothing, b: $author$project$Shell$initial};
+var $author$project$Effects$empty = {bb: false, fj: $author$project$UInt64$zero, at: $elm$core$Maybe$Nothing, c2: $author$project$UInt64$zero, fU: $elm$core$Maybe$Nothing, z: _List_Nil};
+var $author$project$Shell$initial = {ao: false, dl: $elm$core$Maybe$Nothing, d0: false, _: $author$project$Effects$empty, A: $elm$core$Maybe$Nothing, aa: $elm$core$Maybe$Nothing, eb: $elm$core$Maybe$Nothing, dt: $elm$core$Maybe$Nothing, ec: $elm$core$Maybe$Nothing, U: _List_Nil, fv: 'Connecting…', aB: false, j: 0, a2: false, ct: false, bm: true, b7: $elm$core$Maybe$Nothing, c2: $author$project$UInt64$zero, X: false};
+var $author$project$TaskbarShell$initial = {fj: $author$project$UInt64$zero, h: $author$project$MenuBridge$initial, J: $elm$core$Maybe$Nothing, b: $author$project$Shell$initial};
 var $author$project$Desktop$initial = {
 	F: $elm$core$Maybe$Nothing,
 	aD: $elm$core$Maybe$Nothing,
@@ -5240,56 +5240,57 @@ var $author$project$Desktop$initial = {
 	aW: $elm$core$Maybe$Nothing,
 	p: false,
 	B: false,
-	cW: false,
+	cX: false,
 	o: $elm$core$Maybe$Nothing,
 	aZ: $elm$core$Maybe$Nothing,
-	ar: $author$project$JumpList$initial,
+	as: $author$project$JumpList$initial,
 	w: false,
 	M: $author$project$Launch$init,
 	H: $elm$core$Maybe$Nothing,
 	I: $author$project$Motion$initial,
 	aK: $elm$core$Maybe$Nothing,
-	ah: $elm$core$Maybe$Nothing,
+	aj: $elm$core$Maybe$Nothing,
 	C: $author$project$Notifications$initial,
 	a0: $elm$core$Maybe$Nothing,
 	t: false,
 	D: false,
 	q: false,
-	m: false,
+	l: false,
 	aN: $author$project$OverviewRecovery$initial,
-	aB: $elm$core$Maybe$Nothing,
-	at: $elm$core$Maybe$Nothing,
+	au: $elm$core$Maybe$Nothing,
+	ac: $elm$core$Maybe$Nothing,
 	b1: false,
 	bj: $elm$core$Maybe$Nothing,
 	R: $author$project$Pins$initial,
 	bH: $author$project$PointerOwnership$initial,
 	bI: 1,
 	aO: $elm$core$Maybe$Just($author$project$UInt64$zero),
-	c_: '',
-	c1: $author$project$UInt64$zero,
+	c$: '',
+	c2: $author$project$UInt64$zero,
 	u: $elm$core$Maybe$Nothing,
-	aj: $author$project$Settings$initial,
+	al: $author$project$Settings$initial,
 	bo: $elm$core$Maybe$Nothing,
-	c8: true,
+	c9: true,
 	n: false,
 	L: false,
 	aQ: $elm$core$Maybe$Nothing,
-	ac: $author$project$ShortcutPreferences$initial,
+	ae: $author$project$ShortcutPreferences$initial,
 	b8: $author$project$Shortcuts$initial,
 	x: $elm$core$Maybe$Nothing,
 	i: $author$project$Switcher$initial,
 	aR: $elm$core$Maybe$Nothing,
 	aS: $elm$core$Maybe$Nothing,
 	cw: $elm$core$Maybe$Nothing,
-	ak: $author$project$SystemMenu$initial,
+	am: $author$project$SystemMenu$initial,
 	s: $elm$core$Maybe$Nothing,
 	aT: $elm$core$Maybe$Nothing,
 	v: false,
 	E: false,
-	a: $author$project$TaskbarShell$initial
+	a: $author$project$TaskbarShell$initial,
+	cF: $elm$core$Maybe$Nothing
 };
-var $author$project$SurfaceController$initial = {d: $author$project$Desktop$initial, az: false, em: $author$project$UInt64$zero, eF: $author$project$UInt64$zero, ai: $author$project$ReconciliationTracking$empty};
-var $author$project$OutputController$initial = {bS: $author$project$OutcomeAnnouncements$initial, aE: false, aw: _List_Nil, aF: false, cM: $author$project$SurfaceController$initial, cS: $author$project$UInt64$zero, bE: _List_Nil, c2: $author$project$UInt64$zero, fN: $elm$core$Maybe$Nothing, av: _List_Nil};
+var $author$project$SurfaceController$initial = {d: $author$project$Desktop$initial, aA: false, en: $author$project$UInt64$zero, eG: $author$project$UInt64$zero, ak: $author$project$ReconciliationTracking$empty};
+var $author$project$OutputController$initial = {bS: $author$project$OutcomeAnnouncements$initial, aE: false, ax: _List_Nil, aF: false, cN: $author$project$SurfaceController$initial, cT: $author$project$UInt64$zero, bE: _List_Nil, c3: $author$project$UInt64$zero, fP: $elm$core$Maybe$Nothing, aw: _List_Nil};
 var $elm$json$Json$Decode$value = _Json_decodeValue;
 var $author$project$Main$nativeBatchDispositions = _Platform_incomingPort('nativeBatchDispositions', $elm$json$Json$Decode$value);
 var $author$project$Main$nativeDismissals = _Platform_incomingPort('nativeDismissals', $elm$json$Json$Decode$value);
@@ -5439,7 +5440,7 @@ var $author$project$Main$commit = F2(
 	});
 var $author$project$OutputController$controller = function (_v0) {
 	var model = _v0;
-	return model.cM;
+	return model.cN;
 };
 var $author$project$Main$inspections = _Platform_outgoingPort('inspections', $elm$core$Basics$identity);
 var $elm$core$List$any = F2(
@@ -5475,12 +5476,12 @@ var $author$project$Binding$matchesContext = F3(
 		return _Utils_eq(life, lifetime) && _Utils_eq(epoch, frontend);
 	});
 var $author$project$Shell$capture = function (model) {
-	var _v0 = _Utils_Tuple2(model.dk, model._.as);
+	var _v0 = _Utils_Tuple2(model.dl, model._.at);
 	if ((!_v0.a.$) && (!_v0.b.$)) {
 		var binding = _v0.a.a;
 		var observed = _v0.b.a;
-		return A3($author$project$Binding$matchesContext, observed.P.fp, observed.P.fe, binding) ? $elm$core$Maybe$Just(
-			A3($author$project$Shell$Stamp, binding, observed.P.y, observed.P.c2)) : $elm$core$Maybe$Nothing;
+		return A3($author$project$Binding$matchesContext, observed.P.fr, observed.P.fg, binding) ? $elm$core$Maybe$Just(
+			A3($author$project$Shell$Stamp, binding, observed.P.y, observed.P.c3)) : $elm$core$Maybe$Nothing;
 	} else {
 		return $elm$core$Maybe$Nothing;
 	}
@@ -5590,10 +5591,10 @@ var $author$project$Effects$pending = function (model) {
 			function (transaction) {
 				return !transaction.W;
 			},
-			model.fS));
+			model.fU));
 };
 var $author$project$Shell$available = function (model) {
-	return (!model.ct) && ((!model.X) && ((model.j === 2) && ((!model.am) && ((!$author$project$Effects$pending(model._)) && (_Utils_eq(model.ea, $elm$core$Maybe$Nothing) && ((!A2(
+	return (!model.ct) && ((!model.X) && ((model.j === 2) && ((!model.ao) && ((!$author$project$Effects$pending(model._)) && (_Utils_eq(model.eb, $elm$core$Maybe$Nothing) && ((!A2(
 		$elm$core$Maybe$withDefault,
 		false,
 		A2(
@@ -5601,7 +5602,7 @@ var $author$project$Shell$available = function (model) {
 			function ($) {
 				return $._;
 			},
-			model.ds))) || (_Utils_eq(model.eb, $elm$core$Maybe$Nothing) && (!_Utils_eq(model.ap, $elm$core$Maybe$Nothing)))))))));
+			model.dt))) || (_Utils_eq(model.ec, $elm$core$Maybe$Nothing) && (!_Utils_eq(model.aa, $elm$core$Maybe$Nothing)))))))));
 };
 var $author$project$Desktop$ViewStamp = F2(
 	function (a, b) {
@@ -5610,7 +5611,7 @@ var $author$project$Desktop$ViewStamp = F2(
 var $author$project$Desktop$capture = function (model) {
 	return A2(
 		$elm$core$Maybe$map,
-		$author$project$Desktop$ViewStamp(model.a.b.dk),
+		$author$project$Desktop$ViewStamp(model.a.b.dl),
 		model.aO);
 };
 var $author$project$Effects$Unknown = 4;
@@ -5636,7 +5637,7 @@ var $author$project$Effects$blocked = F3(
 		return A2(
 			$elm$core$List$any,
 			function (t) {
-				return _Utils_eq(t.aa.P.fp, lifetime) && (_Utils_eq(t.aa.aq, incarnation) && A2(
+				return _Utils_eq(t.ab.P.fr, lifetime) && (_Utils_eq(t.ab.ar, incarnation) && A2(
 					$elm$core$List$member,
 					t.W,
 					_List_fromArray(
@@ -5653,13 +5654,13 @@ var $author$project$Menu$hasOutstandingFor = F2(
 		return A2(
 			$elm$core$List$any,
 			function (entry) {
-				var _v1 = entry.dk;
+				var _v1 = entry.dl;
 				var value = _v1;
 				return _Utils_eq(
-					value.fR,
+					value.fT,
 					$author$project$Menu$Window(window));
 			},
-			state.fx);
+			state.fz);
 	});
 var $elm$core$Basics$compare = _Utils_compare;
 var $elm$core$Dict$get = F2(
@@ -5704,13 +5705,13 @@ var $author$project$ActionProjection$rootOf = F2(
 var $author$project$Menu$snapshot = function (_v0) {
 	var state = _v0;
 	return {
-		az: state.az,
-		eg: $elm$core$List$length(state.aY),
+		aA: state.aA,
+		eh: $elm$core$List$length(state.aY),
 		co: state.co,
 		aI: state.aI,
-		fx: $elm$core$List$length(state.fx),
+		fz: $elm$core$List$length(state.fz),
 		bL: $elm$core$List$length(state.bL),
-		eL: $elm$core$List$length(state.a3)
+		eM: $elm$core$List$length(state.a3)
 	};
 };
 var $author$project$Menu$WindowId = F2(
@@ -5728,27 +5729,27 @@ var $author$project$MenuBridge$blockedFor = F3(
 		var root = A2(
 			$elm$core$Maybe$andThen,
 			function (observed) {
-				return A2($author$project$ActionProjection$rootOf, incarnation, observed.eN);
+				return A2($author$project$ActionProjection$rootOf, incarnation, observed.eP);
 			},
-			shell._.as);
+			shell._.at);
 		var nativeBlocked = function () {
-			var _v2 = _Utils_Tuple3(shell.dk, shell._.as, root);
+			var _v2 = _Utils_Tuple3(shell.dl, shell._.at, root);
 			if (((!_v2.a.$) && (!_v2.b.$)) && (!_v2.c.$)) {
 				var observed = _v2.b.a;
 				var family = _v2.c.a;
 				return A2(
 					$elm$core$List$any,
 					function (window) {
-						return A3($author$project$Effects$blocked, observed.P.fp, window.aq, shell._);
+						return A3($author$project$Effects$blocked, observed.P.fr, window.ar, shell._);
 					},
 					A2(
 						$elm$core$List$filter,
 						function (window) {
 							return _Utils_eq(
-								A2($author$project$ActionProjection$rootOf, window.aq, observed.eN),
+								A2($author$project$ActionProjection$rootOf, window.ar, observed.eP),
 								$elm$core$Maybe$Just(family));
 						},
-						$author$project$ActionProjection$windows(observed.eN)));
+						$author$project$ActionProjection$windows(observed.eP)));
 			} else {
 				return A2(
 					$elm$core$List$any,
@@ -5763,7 +5764,7 @@ var $author$project$MenuBridge$blockedFor = F3(
 			}
 		}();
 		var blocked = function () {
-			var _v1 = _Utils_Tuple2(shell.dk, root);
+			var _v1 = _Utils_Tuple2(shell.dl, root);
 			if ((!_v1.a.$) && (!_v1.b.$)) {
 				var _native = _v1.a.a;
 				var family = _v1.b.a;
@@ -5775,7 +5776,7 @@ var $author$project$MenuBridge$blockedFor = F3(
 						$author$project$UInt64$string(family)),
 					state.aI);
 			} else {
-				return $author$project$Menu$snapshot(state.aI).fx > 0;
+				return $author$project$Menu$snapshot(state.aI).fz > 0;
 			}
 		}();
 		return blocked || nativeBlocked;
@@ -5861,33 +5862,33 @@ var $author$project$Taskbar$groups = function (projection) {
 			$elm$core$List$filter,
 			function (w) {
 				return _Utils_eq(
-					A2($author$project$ActionProjection$rootOf, w.aq, projection),
-					$elm$core$Maybe$Just(root.aq));
+					A2($author$project$ActionProjection$rootOf, w.ar, projection),
+					$elm$core$Maybe$Just(root.ar));
 			},
 			rows);
-		var key = $elm$core$String$isEmpty(root.di) ? ('window:' + $author$project$UInt64$string(root.aq)) : ('application:' + root.di);
+		var key = $elm$core$String$isEmpty(root.dj) ? ('window:' + $author$project$UInt64$string(root.ar)) : ('application:' + root.dj);
 		return _Utils_Tuple2(
 			key,
 			{
 				bt: _Utils_eq(
 					activeRoot,
-					$elm$core$Maybe$Just(root.aq)),
-				di: root.di,
-				dS: A2(
+					$elm$core$Maybe$Just(root.ar)),
+				dj: root.dj,
+				dT: A2(
 					$elm$core$List$any,
 					function ($) {
-						return $.dS;
+						return $.dT;
 					},
 					members),
-				dj: A2(
+				dk: A2(
 					$elm$core$List$all,
 					function ($) {
-						return $.dj;
+						return $.dk;
 					},
 					members),
-				el: root.el,
+				em: root.em,
 				b_: root.b_,
-				r: root.aq
+				r: root.ar
 			});
 	};
 	return A3(
@@ -5901,12 +5902,12 @@ var $author$project$Taskbar$groups = function (projection) {
 				$elm$core$List$sortWith,
 				F2(
 					function (a, b) {
-						return A2($author$project$UInt64$compare, a.aq, b.aq);
+						return A2($author$project$UInt64$compare, a.ar, b.ar);
 					}),
 				A2(
 					$elm$core$List$filter,
 					function (w) {
-						return _Utils_eq(w.dD, $elm$core$Maybe$Nothing);
+						return _Utils_eq(w.dE, $elm$core$Maybe$Nothing);
 					},
 					rows))));
 };
@@ -5919,10 +5920,10 @@ var $author$project$TaskbarShell$groups = function (model) {
 			A2(
 				$elm$core$Basics$composeR,
 				function ($) {
-					return $.eN;
+					return $.eP;
 				},
 				$author$project$Taskbar$groups),
-			model.b._.as));
+			model.b._.at));
 };
 var $elm$core$List$head = function (list) {
 	if (list.b) {
@@ -5986,7 +5987,7 @@ var $author$project$Desktop$key = F2(
 		return 'applications:' + (A2(
 			$elm$core$Maybe$withDefault,
 			'detached',
-			A2($elm$core$Maybe$map, $author$project$Desktop$host, model.a.b.dk)) + (':' + (A2(
+			A2($elm$core$Maybe$map, $author$project$Desktop$host, model.a.b.dl)) + (':' + (A2(
 			$elm$core$Maybe$withDefault,
 			'exhausted',
 			A2($elm$core$Maybe$map, $author$project$UInt64$string, model.aO)) + (':' + suffix))));
@@ -6012,7 +6013,7 @@ var $author$project$Desktop$pinGroups = F2(
 					return A2(
 						$elm$core$List$any,
 						function (family) {
-							return _Utils_eq(family.di, identity) || ((!$elm$core$String$isEmpty(entry.fW)) && _Utils_eq(family.di, entry.fW));
+							return _Utils_eq(family.dj, identity) || ((!$elm$core$String$isEmpty(entry.fY)) && _Utils_eq(family.dj, entry.fY));
 						},
 						group.aG);
 				},
@@ -6026,7 +6027,7 @@ var $author$project$Desktop$pinIdentities = function (model) {
 		A2(
 			$elm$core$Maybe$map,
 			function ($) {
-				return $.fl;
+				return $.fn;
 			},
 			model.R.c));
 };
@@ -6056,7 +6057,7 @@ var $author$project$Taskbar$primary = F2(
 		} else {
 			if (!families.b.b) {
 				var entry = families.a;
-				return (!entry.dj) ? $author$project$Taskbar$Unavailable : (entry.b_ ? A2($author$project$Taskbar$Apply, $author$project$Effects$Restore, entry.r) : (entry.bt ? A2($author$project$Taskbar$Apply, $author$project$Effects$Minimize, entry.r) : A2($author$project$Taskbar$Apply, $author$project$Effects$Activate, entry.r)));
+				return (!entry.dk) ? $author$project$Taskbar$Unavailable : (entry.b_ ? A2($author$project$Taskbar$Apply, $author$project$Effects$Restore, entry.r) : (entry.bt ? A2($author$project$Taskbar$Apply, $author$project$Effects$Minimize, entry.r) : A2($author$project$Taskbar$Apply, $author$project$Effects$Activate, entry.r)));
 			} else {
 				return $author$project$Taskbar$Picker;
 			}
@@ -6070,9 +6071,9 @@ var $author$project$Surface$recoveryControl = F2(
 			f: 'Refresh window status; read observations without retrying actions',
 			e: 'Observation only',
 			g: A2($author$project$Desktop$key, model, identity),
-			fd: (!(!model.a.b.j)) && ((model.a.b.j !== 3) && (!$author$project$Effects$pending(model.a.b._))),
+			ff: (!(!model.a.b.j)) && ((model.a.b.j !== 3) && (!$author$project$Effects$pending(model.a.b._))),
 			cl: identity,
-			el: 'Refresh window status',
+			em: 'Refresh window status',
 			aJ: $elm$core$Maybe$Just(
 				$author$project$Desktop$Window(
 					$author$project$TaskbarShell$Native($author$project$Shell$Refresh)))
@@ -6105,7 +6106,7 @@ var $author$project$Surface$recoveryNeeded = function (model) {
 					_List_fromArray(
 						[2, 4]));
 			},
-			model.a.b._.fS)) || ($author$project$MenuBridge$menuSnapshot(model.a.h).fx > 0));
+			model.a.b._.fU)) || ($author$project$MenuBridge$menuSnapshot(model.a.h).fz > 0));
 };
 var $author$project$Launch$Selection = F5(
 	function (a, b, c, d, e) {
@@ -6132,7 +6133,7 @@ var $elm$core$Maybe$map2 = F3(
 var $author$project$Catalog$scope = function (_v0) {
 	var lifetime = _v0.a;
 	var generation = _v0.b;
-	return {fh: generation, fp: lifetime};
+	return {fj: generation, fr: lifetime};
 };
 var $author$project$Launch$select = F2(
 	function (identity, _v0) {
@@ -6148,7 +6149,7 @@ var $author$project$Launch$select = F2(
 							$elm$core$Maybe$map,
 							function (entry) {
 								var scope = $author$project$Catalog$scope(snapshot);
-								return A5($author$project$Launch$Selection, host, model.c2, scope.fp, scope.fh, entry.cU);
+								return A5($author$project$Launch$Selection, host, model.c3, scope.fr, scope.fj, entry.cV);
 							},
 							A2($author$project$Catalog$lookup, identity, snapshot));
 					}),
@@ -6169,9 +6170,9 @@ var $author$project$Surface$barControls = function (model) {
 		f: 'Open window switcher',
 		e: '',
 		g: A2($author$project$Desktop$key, model, 'control:switcher-opener'),
-		fd: $author$project$Shell$available(model.a.b) && _Utils_eq(model.k, $elm$core$Maybe$Nothing),
+		ff: $author$project$Shell$available(model.a.b) && _Utils_eq(model.k, $elm$core$Maybe$Nothing),
 		cl: 'bar:switcher',
-		el: 'Switch windows',
+		em: 'Switch windows',
 		aJ: A2(
 			$elm$core$Maybe$map,
 			function (stamp) {
@@ -6183,9 +6184,9 @@ var $author$project$Surface$barControls = function (model) {
 		f: 'Refresh windows',
 		e: '',
 		g: A2($author$project$Desktop$key, model, 'refresh-windows'),
-		fd: _Utils_eq(model.k, $elm$core$Maybe$Nothing),
+		ff: _Utils_eq(model.k, $elm$core$Maybe$Nothing),
 		cl: 'bar:refresh-windows',
-		el: 'Refresh windows',
+		em: 'Refresh windows',
 		aJ: $elm$core$Maybe$Just($author$project$Desktop$RetryWindows)
 	};
 	var recovery = ($author$project$Surface$recoveryNeeded(model) && (!(!model.a.b.j))) ? _List_fromArray(
@@ -6196,9 +6197,9 @@ var $author$project$Surface$barControls = function (model) {
 		f: 'Reconnect to the window system',
 		e: '',
 		g: 'reconnect',
-		fd: !model.a.b.bm,
+		ff: !model.a.b.bm,
 		cl: 'bar:reconnect',
-		el: 'Reconnect',
+		em: 'Reconnect',
 		aJ: $elm$core$Maybe$Just(
 			$author$project$Desktop$Window(
 				$author$project$TaskbarShell$Native($author$project$Shell$Reconnect)))
@@ -6224,9 +6225,9 @@ var $author$project$Surface$barControls = function (model) {
 		f: 'Open Task View',
 		e: '',
 		g: A2($author$project$Desktop$key, model, 'control:overview-opener'),
-		fd: $author$project$Shell$available(model.a.b) && _Utils_eq(model.k, $elm$core$Maybe$Nothing),
+		ff: $author$project$Shell$available(model.a.b) && _Utils_eq(model.k, $elm$core$Maybe$Nothing),
 		cl: 'bar:overview',
-		el: 'Task View',
+		em: 'Task View',
 		aJ: A2(
 			$elm$core$Maybe$map,
 			$author$project$Desktop$OpenOverview,
@@ -6284,7 +6285,7 @@ var $author$project$Surface$barControls = function (model) {
 			A2(
 				$elm$core$Maybe$map,
 				function ($) {
-					return $.el;
+					return $.em;
 				},
 				$elm$core$List$head(group.aG)));
 		var blocked = function () {
@@ -6302,7 +6303,7 @@ var $author$project$Surface$barControls = function (model) {
 		var attention = A2(
 			$elm$core$List$any,
 			function ($) {
-				return $.dS;
+				return $.dT;
 			},
 			group.aG) && (!A2(
 			$elm$core$List$any,
@@ -6323,9 +6324,9 @@ var $author$project$Surface$barControls = function (model) {
 						return 'group:' + ($author$project$Shell$stampKey(stamp) + (':' + group.a_));
 					},
 					scoped)),
-			fd: ready,
+			ff: ready,
 			cl: 'bar:group:' + group.a_,
-			el: label,
+			em: label,
 			aJ: ready ? A2(
 				$elm$core$Maybe$map,
 				function (stamp) {
@@ -6346,7 +6347,7 @@ var $author$project$Surface$barControls = function (model) {
 			A2(
 				$elm$core$Maybe$map,
 				function ($) {
-					return $.dA;
+					return $.dB;
 				},
 				entry));
 		var disabled = function (reason) {
@@ -6354,9 +6355,9 @@ var $author$project$Surface$barControls = function (model) {
 				f: _Utils_ap(reason, label),
 				e: reason,
 				g: A2($author$project$Desktop$key, model, 'pin:' + identity),
-				fd: false,
+				ff: false,
 				cl: 'bar:pin:' + identity,
-				el: label,
+				em: label,
 				aJ: $elm$core$Maybe$Nothing
 			};
 		};
@@ -6372,7 +6373,7 @@ var $author$project$Surface$barControls = function (model) {
 				var control = groupControl(group);
 				return _Utils_update(
 					control,
-					{e: 'Pinned; ' + control.e, cl: 'bar:pin:' + identity, el: label});
+					{e: 'Pinned; ' + control.e, cl: 'bar:pin:' + identity, em: label});
 			} else {
 				return disabled('Ambiguous application identity: ');
 			}
@@ -6382,9 +6383,9 @@ var $author$project$Surface$barControls = function (model) {
 				f: 'Open ' + label,
 				e: 'Pinned launcher',
 				g: A2($author$project$Desktop$key, model, 'pin:' + identity),
-				fd: !_Utils_eq(choice, $elm$core$Maybe$Nothing),
+				ff: !_Utils_eq(choice, $elm$core$Maybe$Nothing),
 				cl: 'bar:pin:' + identity,
-				el: label,
+				em: label,
 				aJ: choice
 			});
 		}
@@ -6396,9 +6397,9 @@ var $author$project$Surface$barControls = function (model) {
 		f: 'Open applications',
 		e: '',
 		g: A2($author$project$Desktop$key, model, 'control:opener'),
-		fd: !(!model.a.b.j),
+		ff: !(!model.a.b.j),
 		cl: 'bar:applications',
-		el: 'Applications',
+		em: 'Applications',
 		aJ: A2(
 			$elm$core$Maybe$map,
 			$author$project$Desktop$OpenApplications,
@@ -6419,9 +6420,9 @@ var $author$project$Surface$barControls = function (model) {
 						f: 'Open notifications',
 						e: '',
 						g: A2($author$project$Desktop$key, model, 'notifications:opener'),
-						fd: !_Utils_eq(model.a.b.dk, $elm$core$Maybe$Nothing),
+						ff: !_Utils_eq(model.a.b.dl, $elm$core$Maybe$Nothing),
 						cl: 'bar:notifications',
-						el: 'Notifications' + A2(
+						em: 'Notifications' + A2(
 							$elm$core$Maybe$withDefault,
 							'',
 							A2(
@@ -6431,9 +6432,9 @@ var $author$project$Surface$barControls = function (model) {
 										A2(
 											$elm$core$List$filter,
 											function (entry) {
-												return entry.dc === 'live';
+												return entry.dd === 'live';
 											},
-											snapshot.af));
+											snapshot.ah));
 									return (!count) ? '' : (' · ' + $elm$core$String$fromInt(count));
 								},
 								model.C.c)),
@@ -6448,9 +6449,9 @@ var $author$project$Surface$barControls = function (model) {
 							f: 'Open Files menu',
 							e: '',
 							g: A2($author$project$Desktop$key, model, 'files:opener'),
-							fd: !_Utils_eq(model.a.b.dk, $elm$core$Maybe$Nothing),
+							ff: !_Utils_eq(model.a.b.dl, $elm$core$Maybe$Nothing),
 							cl: 'bar:files',
-							el: 'Files',
+							em: 'Files',
 							aJ: A2(
 								$elm$core$Maybe$map,
 								$author$project$Desktop$OpenFiles,
@@ -6462,9 +6463,9 @@ var $author$project$Surface$barControls = function (model) {
 								f: 'Open system menu',
 								e: '',
 								g: A2($author$project$Desktop$key, model, 'system:opener'),
-								fd: !_Utils_eq(model.a.b.dk, $elm$core$Maybe$Nothing),
+								ff: !_Utils_eq(model.a.b.dl, $elm$core$Maybe$Nothing),
 								cl: 'bar:system',
-								el: 'System',
+								em: 'System',
 								aJ: A2(
 									$elm$core$Maybe$map,
 									$author$project$Desktop$OpenSystemMenu,
@@ -6476,9 +6477,9 @@ var $author$project$Surface$barControls = function (model) {
 									f: 'Open settings',
 									e: '',
 									g: A2($author$project$Desktop$key, model, 'settings:opener'),
-									fd: !_Utils_eq(model.a.b.dk, $elm$core$Maybe$Nothing),
+									ff: !_Utils_eq(model.a.b.dl, $elm$core$Maybe$Nothing),
 									cl: 'bar:settings',
-									el: 'Settings',
+									em: 'Settings',
 									aJ: A2(
 										$elm$core$Maybe$map,
 										$author$project$Desktop$OpenSettings,
@@ -6726,7 +6727,7 @@ var $author$project$ShortcutPreferences$changed = function (model) {
 		A2(
 			$elm$core$Maybe$map,
 			function (current) {
-				return !_Utils_eq(current.ae, model.fb);
+				return !_Utils_eq(current.ag, model.fd);
 			},
 			model.c)) || A2(
 		$elm$core$Maybe$withDefault,
@@ -6738,13 +6739,13 @@ var $author$project$ShortcutPreferences$changed = function (model) {
 					$elm$core$List$any,
 					function (route) {
 						return !_Utils_eq(
-							A2($author$project$ShortcutPreferences$choices, route, model.fb),
+							A2($author$project$ShortcutPreferences$choices, route, model.fd),
 							A2($author$project$ShortcutPreferences$row, route, current).bt);
 					},
 					_List_fromArray(
 						['applications', 'system', 'notifications']));
 			},
-			model.cV));
+			model.cW));
 };
 var $author$project$SystemMenu$code = function (operation) {
 	switch (operation) {
@@ -6783,14 +6784,14 @@ var $author$project$GeometryProjection$window = F2(
 			A2(
 				$elm$core$List$filter,
 				function (row) {
-					return _Utils_eq(row.aq, incarnation);
+					return _Utils_eq(row.ar, incarnation);
 				},
 				snapshot.a));
 	});
 var $author$project$Surface$confirmedWindowState = F2(
 	function (model, root) {
 		var shell = model.a.b;
-		return (!_Utils_eq(shell.eb, $elm$core$Maybe$Nothing)) ? '' : A2(
+		return (!_Utils_eq(shell.ec, $elm$core$Maybe$Nothing)) ? '' : A2(
 			$elm$core$Maybe$withDefault,
 			'',
 			A2(
@@ -6800,7 +6801,7 @@ var $author$project$Surface$confirmedWindowState = F2(
 						$elm$core$String$join,
 						' • ',
 						_Utils_ap(
-							(window.es === 1) ? _List_fromArray(
+							(window.et === 1) ? _List_fromArray(
 								['Maximized']) : _List_Nil,
 							A2(
 								$elm$core$Maybe$withDefault,
@@ -6808,19 +6809,19 @@ var $author$project$Surface$confirmedWindowState = F2(
 								A2(
 									$elm$core$Maybe$map,
 									function (pin) {
-										return pin.fB ? _List_fromArray(
+										return pin.fD ? _List_fromArray(
 											['Always on top']) : _List_Nil;
 									},
-									window.dF))));
+									window.dG))));
 				},
 				A2(
 					$elm$core$Maybe$andThen,
 					function (observed) {
 						return (!_Utils_eq(
-							shell.dk,
-							$elm$core$Maybe$Just(observed.dk))) ? $elm$core$Maybe$Nothing : A2($author$project$GeometryProjection$window, root, observed);
+							shell.dl,
+							$elm$core$Maybe$Just(observed.dl))) ? $elm$core$Maybe$Nothing : A2($author$project$GeometryProjection$window, root, observed);
 					},
-					shell.ap)));
+					shell.aa)));
 	});
 var $author$project$Transfer$ordinary = function (value) {
 	return (!$elm$core$String$isEmpty(value)) && ((!A2($elm$core$String$startsWith, '0', value)) && (A2($elm$core$String$all, $elm$core$Char$isDigit, value) && (($elm$core$String$length(value) < 19) || (($elm$core$String$length(value) === 19) && (value <= '9223372036854775807')))));
@@ -6830,7 +6831,7 @@ var $author$project$Transfer$destinations = function (snapshot) {
 		$elm$core$List$foldl,
 		F2(
 			function (w, ids) {
-				var _v0 = w.e$;
+				var _v0 = w.e1;
 				if (!_v0.$) {
 					var id = _v0.a;
 					return ($author$project$Transfer$ordinary(id) && (!A2($elm$core$List$member, id, ids))) ? _Utils_ap(
@@ -6863,152 +6864,14 @@ var $author$project$Catalog$entries = function (_v0) {
 };
 var $author$project$Switcher$entries = function (_v0) {
 	var model = _v0;
-	return model.af;
-};
-var $author$project$TaskView$membership = F3(
-	function (root, shell, geometry) {
-		var pending = $elm$core$List$head(
-			A2(
-				$elm$core$List$filter,
-				function (t) {
-					return _Utils_eq(t.aa.aq, root) && (_Utils_eq(t.aa.P.fp, geometry.P.fp) && A2(
-						$elm$core$List$member,
-						t.W,
-						_List_fromArray(
-							[0, 4])));
-				},
-				shell._.z));
-		var _v0 = A2(
-			$elm$core$Maybe$map,
-			A2(
-				$elm$core$Basics$composeR,
-				function ($) {
-					return $.aa;
-				},
-				function ($) {
-					return $.bh;
-				}),
-			pending);
-		if ((!_v0.$) && (_v0.a.$ === 7)) {
-			var p = _v0.a.a;
-			return $elm$core$Maybe$Just(p.cv);
-		} else {
-			return A2(
-				$elm$core$Maybe$andThen,
-				function ($) {
-					return $.e$;
-				},
-				A2($author$project$GeometryProjection$window, root, geometry));
-		}
-	});
-var $author$project$TaskView$groups = function (shell) {
-	var _v0 = _Utils_Tuple2(shell._.as, shell.ap);
-	if ((!_v0.a.$) && (!_v0.b.$)) {
-		var observed = _v0.a.a;
-		var geometry = _v0.b.a;
-		var rows = $author$project$ActionProjection$windows(observed.eN);
-		var positive = function (workspace) {
-			return (!$elm$core$String$isEmpty(workspace)) && ((!A2($elm$core$String$startsWith, '-', workspace)) && (workspace !== '0'));
-		};
-		var matching = function (row) {
-			return A2(
-				$elm$core$Maybe$withDefault,
-				false,
-				A2(
-					$elm$core$Maybe$map,
-					function (g) {
-						return _Utils_eq(g.dD, row.dD) && _Utils_eq(g.b_, row.b_);
-					},
-					A2($author$project$GeometryProjection$window, row.aq, geometry)));
-		};
-		var sameAuthority = _Utils_eq(
-			shell.dk,
-			$elm$core$Maybe$Just(geometry.dk)) && (_Utils_eq(observed.P.fp, geometry.P.fp) && (_Utils_eq(observed.P.fe, geometry.P.fe) && (_Utils_eq(observed.P.y, geometry.P.y) && (_Utils_eq(
-			$author$project$ActionProjection$focused(observed.eN),
-			geometry.ci) && (_Utils_eq(
-			$elm$core$List$length(rows),
-			$elm$core$List$length(geometry.a)) && A2($elm$core$List$all, matching, rows))))));
-		var focusedWorkspace = A2(
-			$elm$core$Maybe$andThen,
-			function ($) {
-				return $.e$;
-			},
-			A2(
-				$elm$core$Maybe$andThen,
-				function (identity) {
-					return A2($author$project$GeometryProjection$window, identity, geometry);
-				},
-				$author$project$ActionProjection$focused(observed.eN)));
-		var families = A2(
-			$elm$core$List$concatMap,
-			function ($) {
-				return $.aG;
-			},
-			$author$project$Taskbar$groups(observed.eN));
-		var add = F2(
-			function (family, accumulated) {
-				var _v1 = A3($author$project$TaskView$membership, family.r, shell, geometry);
-				if (!_v1.$) {
-					var workspace = _v1.a;
-					return (!positive(workspace)) ? accumulated : (A2(
-						$elm$core$List$any,
-						function (g) {
-							return _Utils_eq(g.cU, workspace);
-						},
-						accumulated) ? A2(
-						$elm$core$List$map,
-						function (g) {
-							return _Utils_eq(g.cU, workspace) ? _Utils_update(
-								g,
-								{
-									a: _Utils_ap(
-										g.a,
-										_List_fromArray(
-											[family]))
-								}) : g;
-						},
-						accumulated) : _Utils_ap(
-						accumulated,
-						_List_fromArray(
-							[
-								{
-								bt: _Utils_eq(
-									focusedWorkspace,
-									$elm$core$Maybe$Just(workspace)),
-								cU: workspace,
-								a: _List_fromArray(
-									[family])
-							}
-							])));
-				} else {
-					return accumulated;
-				}
-			});
-		return (!sameAuthority) ? $elm$core$Maybe$Nothing : $elm$core$Maybe$Just(
-			A2(
-				$elm$core$List$sortWith,
-				F2(
-					function (a, b) {
-						return A2(
-							$elm$core$Basics$compare,
-							_Utils_Tuple2(
-								$elm$core$String$length(a.cU),
-								a.cU),
-							_Utils_Tuple2(
-								$elm$core$String$length(b.cU),
-								b.cU));
-					}),
-				A3($elm$core$List$foldl, add, _List_Nil, families)));
-	} else {
-		return $elm$core$Maybe$Nothing;
-	}
+	return model.ah;
 };
 var $author$project$Catalog$id = function (_v0) {
 	var value = _v0;
 	return value;
 };
 var $author$project$Notifications$identity = function (value) {
-	return 'notification:' + ($author$project$UInt64$string(value.c7) + (':' + ($author$project$UInt64$string(value.aq) + (':' + (value.cb + (':' + value.e3))))));
+	return 'notification:' + ($author$project$UInt64$string(value.c8) + (':' + ($author$project$UInt64$string(value.ar) + (':' + (value.cb + (':' + value.e5))))));
 };
 var $author$project$Snap$identity = function (region) {
 	switch (region) {
@@ -7028,19 +6891,19 @@ var $author$project$Snap$identity = function (region) {
 };
 var $author$project$Provider$incarnation = function (_v0) {
 	var value = _v0;
-	return value.aq;
+	return value.ar;
 };
 var $author$project$Files$intent = F2(
 	function (snapshot, target) {
-		return {c2: snapshot.c2, c7: snapshot.c7, fR: target};
+		return {c3: snapshot.c3, c8: snapshot.c8, fT: target};
 	});
 var $author$project$JumpList$intent = F2(
 	function (snapshot, action) {
-		return {e3: action, d2: snapshot.d2, c2: snapshot.c2, c7: snapshot.c7};
+		return {e5: action, d3: snapshot.d3, c3: snapshot.c3, c8: snapshot.c8};
 	});
 var $author$project$SystemMenu$intent = F3(
 	function (snapshot, operation, value) {
-		return {bh: operation, c2: snapshot.c2, c7: snapshot.c7, Y: value};
+		return {bh: operation, c3: snapshot.c3, c8: snapshot.c8, Y: value};
 	});
 var $author$project$MotionPreferences$label = function (override) {
 	switch (override) {
@@ -7069,17 +6932,17 @@ var $author$project$Notifications$live = F2(
 			return false;
 		} else {
 			var current = _v0.a;
-			return current.dj && (_Utils_eq(current.c7, choice.c7) && ((!A2($elm$core$List$member, choice, model.ca)) && A2(
+			return current.dk && (_Utils_eq(current.c8, choice.c8) && ((!A2($elm$core$List$member, choice, model.ca)) && A2(
 				$elm$core$List$any,
 				function (row) {
-					return _Utils_eq(row.cl, choice.cl) && (_Utils_eq(row.aq, choice.aq) && (_Utils_eq(row.ab, choice.ab) && ((row.dc === 'live') && (((choice.cb === 'dismiss') && (choice.e3 === '')) || ((choice.cb === 'invoke') && A2(
+					return _Utils_eq(row.cl, choice.cl) && (_Utils_eq(row.ar, choice.ar) && (_Utils_eq(row.ad, choice.ad) && ((row.dd === 'live') && (((choice.cb === 'dismiss') && (choice.e5 === '')) || ((choice.cb === 'invoke') && A2(
 						$elm$core$List$any,
 						function (action) {
-							return _Utils_eq(action.a_, choice.e3);
+							return _Utils_eq(action.a_, choice.e5);
 						},
-						row.cG))))));
+						row.cH))))));
 				},
-				current.af)));
+				current.ah)));
 		}
 	});
 var $author$project$Surface$menuBlocked = function (model) {
@@ -7157,7 +7020,7 @@ var $author$project$Motion$desired = function (model) {
 		return 0;
 	} else {
 		var preference = _v0.a;
-		var _v1 = preference.fy;
+		var _v1 = preference.fA;
 		switch (_v1) {
 			case 1:
 				return 0;
@@ -7183,12 +7046,12 @@ var $author$project$MotionPreferences$selected = function (model) {
 		A2(
 			$elm$core$Maybe$map,
 			function ($) {
-				return $.fy;
+				return $.fA;
 			},
 			model.c));
 };
 var $author$project$Motion$notice = function (model) {
-	return _Utils_eq(model.a1.c, $elm$core$Maybe$Nothing) ? model.a1.ft : ((!_Utils_eq(model.ex, $elm$core$Maybe$Nothing)) ? 'Applying motion preference…' : (((!$author$project$Motion$desired(model)) ? 'Reduced motion: instant transitions' : 'Full motion') + (' · ' + $author$project$MotionPreferences$label(
+	return _Utils_eq(model.a1.c, $elm$core$Maybe$Nothing) ? model.a1.fv : ((!_Utils_eq(model.ey, $elm$core$Maybe$Nothing)) ? 'Applying motion preference…' : (((!$author$project$Motion$desired(model)) ? 'Reduced motion: instant transitions' : 'Full motion') + (' · ' + $author$project$MotionPreferences$label(
 		$author$project$MotionPreferences$selected(model.a1)))));
 };
 var $author$project$Snap$LeftHalf = 0;
@@ -7218,7 +7081,7 @@ var $author$project$Snap$proposal = function (choice) {
 				var quarter = height / 2;
 				var half = width / 2;
 				var geometry = function () {
-					var _v7 = choice.fN;
+					var _v7 = choice.fP;
 					switch (_v7) {
 						case 0:
 							return _List_fromArray(
@@ -7243,10 +7106,10 @@ var $author$project$Snap$proposal = function (choice) {
 				return $elm$core$Maybe$Just(
 					{
 						P: choice.c.P,
-						ap: geometry,
+						aa: geometry,
 						b$: monitor,
 						bi: output,
-						cu: $author$project$Snap$identity(choice.fN),
+						cu: $author$project$Snap$identity(choice.fP),
 						cE: area,
 						ce: workspace
 					});
@@ -7254,15 +7117,15 @@ var $author$project$Snap$proposal = function (choice) {
 				return $elm$core$Maybe$Nothing;
 			}
 		},
-		A2($author$project$GeometryProjection$window, choice.fR, choice.c));
+		A2($author$project$GeometryProjection$window, choice.fT, choice.c));
 };
 var $author$project$Snap$open = F2(
 	function (snapshot, target) {
 		return A2(
 			$elm$core$Maybe$andThen,
 			function (window) {
-				var choice = {fN: 0, c: snapshot, fR: target};
-				return (snapshot.e6 || ((!window.dr) || (window.b_ || ((!(!window.es)) || ((!(!window.cg)) || _Utils_eq(
+				var choice = {fP: 0, c: snapshot, fT: target};
+				return (snapshot.e8 || ((!window.ds) || (window.b_ || ((!(!window.et)) || ((!(!window.cg)) || _Utils_eq(
 					$author$project$Snap$proposal(choice),
 					$elm$core$Maybe$Nothing)))))) ? $elm$core$Maybe$Nothing : $elm$core$Maybe$Just(choice);
 			},
@@ -7277,12 +7140,12 @@ var $author$project$Transfer$propose = F3(
 		return A2(
 			$elm$core$Maybe$andThen,
 			function (w) {
-				var _v0 = _Utils_Tuple2(w.e$, w.ce);
+				var _v0 = _Utils_Tuple2(w.e1, w.ce);
 				if ((!_v0.a.$) && (!_v0.b.$)) {
 					var source = _v0.a.a;
 					var generation = _v0.b.a;
-					return (snapshot.e6 || ((!_Utils_eq(w.dD, $elm$core$Maybe$Nothing)) || (w.bB || ((!($author$project$Transfer$ordinary(source) && $author$project$Transfer$ordinary(destination))) || _Utils_eq(source, destination))))) ? $elm$core$Maybe$Nothing : $elm$core$Maybe$Just(
-						{bx: destination, cv: source, da: generation});
+					return (snapshot.e8 || ((!_Utils_eq(w.dE, $elm$core$Maybe$Nothing)) || (w.bB || ((!($author$project$Transfer$ordinary(source) && $author$project$Transfer$ordinary(destination))) || _Utils_eq(source, destination))))) ? $elm$core$Maybe$Nothing : $elm$core$Maybe$Just(
+						{bx: destination, cv: source, db: generation});
 				} else {
 					return $elm$core$Maybe$Nothing;
 				}
@@ -7295,15 +7158,15 @@ var $author$project$ShortcutPreferences$allowed = F2(
 			case 1:
 				return true;
 			case 2:
-				return observed.dp;
+				return observed.dq;
 			case 3:
-				return observed.dh;
+				return observed.di;
 			default:
 				return false;
 		}
 	});
 var $author$project$ShortcutPreferences$writable = function (model) {
-	return (!_Utils_eq(model.c, $elm$core$Maybe$Nothing)) && ((!_Utils_eq(model.cV, $elm$core$Maybe$Nothing)) && _Utils_eq(model.ex, $elm$core$Maybe$Nothing));
+	return (!_Utils_eq(model.c, $elm$core$Maybe$Nothing)) && ((!_Utils_eq(model.cW, $elm$core$Maybe$Nothing)) && _Utils_eq(model.ey, $elm$core$Maybe$Nothing));
 };
 var $author$project$ShortcutPreferences$ready = function (model) {
 	return $author$project$ShortcutPreferences$writable(model) && A2(
@@ -7317,13 +7180,13 @@ var $author$project$ShortcutPreferences$ready = function (model) {
 					function (route) {
 						return A2(
 							$author$project$ShortcutPreferences$allowed,
-							A2($author$project$ShortcutPreferences$choices, route, model.fb),
+							A2($author$project$ShortcutPreferences$choices, route, model.fd),
 							A2($author$project$ShortcutPreferences$row, route, inventory));
 					},
 					_List_fromArray(
 						['applications', 'system', 'notifications']));
 			},
-			model.cV));
+			model.cW));
 };
 var $author$project$Surface$recoveryPopup = function (model) {
 	return $author$project$Surface$recoveryNeeded(model) ? _List_fromArray(
@@ -7690,9 +7553,9 @@ var $author$project$Catalog$search = F2(
 				A2($elm$core$Basics$composeR, $author$project$SearchFold$fold, $elm$core$String$words),
 				A2(
 					$elm$core$List$cons,
-					entry.dA,
-					A2($elm$core$List$cons, entry.d9, entry.ei)));
-			var name = $author$project$SearchFold$fold(entry.dA);
+					entry.dB,
+					A2($elm$core$List$cons, entry.ea, entry.ej)));
+			var name = $author$project$SearchFold$fold(entry.dB);
 			return $elm$core$String$isEmpty(query) ? $elm$core$Maybe$Just(0) : (_Utils_eq(name, query) ? $elm$core$Maybe$Just(0) : (A2($elm$core$String$startsWith, query, name) ? $elm$core$Maybe$Just(1) : (A2(
 				$elm$core$List$all,
 				function (word) {
@@ -7713,8 +7576,8 @@ var $author$project$Catalog$search = F2(
 				if (_v0 === 1) {
 					return A2(
 						$elm$core$Basics$compare,
-						$author$project$Catalog$id(a.cU),
-						$author$project$Catalog$id(b.cU));
+						$author$project$Catalog$id(a.cV),
+						$author$project$Catalog$id(b.cV));
 				} else {
 					var order = _v0;
 					return order;
@@ -7762,7 +7625,7 @@ var $elm$core$List$drop = F2(
 var $author$project$Switcher$selected = function (_v0) {
 	var model = _v0;
 	return $elm$core$List$head(
-		A2($elm$core$List$drop, model.fN, model.af));
+		A2($elm$core$List$drop, model.fP, model.ah));
 };
 var $elm$core$List$singleton = function (value) {
 	return _List_fromArray(
@@ -7813,30 +7676,30 @@ var $author$project$Files$validTarget = function (value) {
 };
 var $author$project$Files$supported = F2(
 	function (value, model) {
-		return _Utils_eq(model.ex, $elm$core$Maybe$Nothing) && ($author$project$Files$validTarget(value.fR) && ((!A2($elm$core$List$member, value, model.ca)) && A2(
+		return _Utils_eq(model.ey, $elm$core$Maybe$Nothing) && ($author$project$Files$validTarget(value.fT) && ((!A2($elm$core$List$member, value, model.ca)) && A2(
 			$elm$core$Maybe$withDefault,
 			false,
 			A2(
 				$elm$core$Maybe$map,
 				function (snapshot) {
-					return snapshot.dj && (_Utils_eq(value.c7, snapshot.c7) && _Utils_eq(value.c2, snapshot.c2));
+					return snapshot.dk && (_Utils_eq(value.c8, snapshot.c8) && _Utils_eq(value.c3, snapshot.c3));
 				},
 				model.c))));
 	});
 var $author$project$JumpList$supported = F2(
 	function (value, model) {
-		return _Utils_eq(model.ex, $elm$core$Maybe$Nothing) && ((!A2($elm$core$List$member, value, model.ca)) && A2(
+		return _Utils_eq(model.ey, $elm$core$Maybe$Nothing) && ((!A2($elm$core$List$member, value, model.ca)) && A2(
 			$elm$core$Maybe$withDefault,
 			false,
 			A2(
 				$elm$core$Maybe$map,
 				function (snapshot) {
-					return snapshot.dj && (_Utils_eq(snapshot.c7, value.c7) && (_Utils_eq(snapshot.c2, value.c2) && (_Utils_eq(snapshot.d2, value.d2) && A2(
+					return snapshot.dk && (_Utils_eq(snapshot.c8, value.c8) && (_Utils_eq(snapshot.c3, value.c3) && (_Utils_eq(snapshot.d3, value.d3) && A2(
 						$elm$core$List$any,
 						function (row) {
-							return _Utils_eq(row.cl, value.e3);
+							return _Utils_eq(row.cl, value.e5);
 						},
-						snapshot.cG))));
+						snapshot.cH))));
 				},
 				model.c)));
 	});
@@ -7848,7 +7711,7 @@ var $author$project$SystemMenu$supported = F2(
 			return false;
 		} else {
 			var current = _v0.a;
-			return _Utils_eq(value.c7, current.c7) && (_Utils_eq(value.c2, current.c2) && ((!A2($elm$core$List$member, value, model.ca)) && function () {
+			return _Utils_eq(value.c8, current.c8) && (_Utils_eq(value.c3, current.c3) && ((!A2($elm$core$List$member, value, model.ca)) && function () {
 				var _v1 = value.bh;
 				switch (_v1) {
 					case 0:
@@ -7858,9 +7721,9 @@ var $author$project$SystemMenu$supported = F2(
 							A2(
 								$elm$core$Maybe$map,
 								function (v) {
-									return (value.Y >= 0) && ((value.Y <= 100) && (!_Utils_eq(value.Y, v.fz)));
+									return (value.Y >= 0) && ((value.Y <= 100) && (!_Utils_eq(value.Y, v.fB)));
 								},
-								current.fV));
+								current.fX));
 					case 1:
 						return A2(
 							$elm$core$Maybe$withDefault,
@@ -7872,9 +7735,9 @@ var $author$project$SystemMenu$supported = F2(
 										$elm$core$List$member,
 										value.Y,
 										_List_fromArray(
-											[0, 1])) && (!_Utils_eq(value.Y === 1, v.dz));
+											[0, 1])) && (!_Utils_eq(value.Y === 1, v.dA));
 								},
-								current.fV));
+								current.fX));
 					case 2:
 						return A2(
 							$elm$core$Maybe$withDefault,
@@ -7884,15 +7747,15 @@ var $author$project$SystemMenu$supported = F2(
 								function (v) {
 									return A2(
 										$elm$core$List$member,
-										v.fA,
+										v.fC,
 										_List_fromArray(
 											['yes', 'auth'])) && (A2(
 										$elm$core$List$member,
 										value.Y,
 										_List_fromArray(
-											[0, 1])) && (!_Utils_eq(value.Y === 1, v.fd)));
+											[0, 1])) && (!_Utils_eq(value.Y === 1, v.ff)));
 								},
-								current.fs));
+								current.fu));
 					case 3:
 						return A2(
 							$elm$core$Maybe$withDefault,
@@ -7902,12 +7765,26 @@ var $author$project$SystemMenu$supported = F2(
 								function (v) {
 									return A2(
 										$elm$core$List$member,
-										v.fQ,
+										v.fS,
 										_List_fromArray(
 											['yes', 'challenge'])) && (!value.Y);
 								},
-								current.fE));
+								current.fG));
 					case 4:
+						return A2(
+							$elm$core$Maybe$withDefault,
+							false,
+							A2(
+								$elm$core$Maybe$map,
+								function (v) {
+									return A2(
+										$elm$core$List$member,
+										v.fJ,
+										_List_fromArray(
+											['yes', 'challenge'])) && (!value.Y);
+								},
+								current.fG));
+					case 5:
 						return A2(
 							$elm$core$Maybe$withDefault,
 							false,
@@ -7920,21 +7797,7 @@ var $author$project$SystemMenu$supported = F2(
 										_List_fromArray(
 											['yes', 'challenge'])) && (!value.Y);
 								},
-								current.fE));
-					case 5:
-						return A2(
-							$elm$core$Maybe$withDefault,
-							false,
-							A2(
-								$elm$core$Maybe$map,
-								function (v) {
-									return A2(
-										$elm$core$List$member,
-										v.fF,
-										_List_fromArray(
-											['yes', 'challenge'])) && (!value.Y);
-								},
-								current.fE));
+								current.fG));
 					case 6:
 						return A2(
 							$elm$core$Maybe$withDefault,
@@ -7942,9 +7805,9 @@ var $author$project$SystemMenu$supported = F2(
 							A2(
 								$elm$core$Maybe$map,
 								function (v) {
-									return (!v.fq) && (!value.Y);
+									return (!v.fs) && (!value.Y);
 								},
-								current.fO));
+								current.fQ));
 					default:
 						return A2(
 							$elm$core$Maybe$withDefault,
@@ -7952,9 +7815,9 @@ var $author$project$SystemMenu$supported = F2(
 							A2(
 								$elm$core$Maybe$map,
 								function (v) {
-									return (v.dc !== 'closing') && (!value.Y);
+									return (v.dd !== 'closing') && (!value.Y);
 								},
-								current.fO));
+								current.fQ));
 				}
 			}()));
 		}
@@ -7969,8 +7832,251 @@ var $author$project$Desktop$switcherOpen = function (model) {
 };
 var $author$project$Notifications$target = F4(
 	function (snapshot, entry, verb, action) {
-		return {e3: action, cl: entry.cl, aq: entry.aq, ab: entry.ab, c7: snapshot.c7, cb: verb};
+		return {e5: action, cl: entry.cl, ar: entry.ar, ad: entry.ad, c8: snapshot.c8, cb: verb};
 	});
+var $author$project$WorkspaceInventory$coherent = F2(
+	function (inventory, geometry) {
+		return _Utils_eq(inventory.dl, geometry.dl) && (_Utils_eq(inventory.c2, geometry.c2) && (_Utils_eq(inventory.bN, geometry.bN) && (_Utils_eq(inventory.c3, geometry.P.c3) && (_Utils_eq(inventory.y, geometry.P.y) && A2(
+			$elm$core$List$all,
+			function (window) {
+				var _v0 = window.e1;
+				if (!_v0.$) {
+					var workspace = _v0.a;
+					return (A2($elm$core$String$startsWith, '-', workspace) || (workspace === '0')) ? true : A2(
+						$elm$core$List$any,
+						function (row) {
+							return _Utils_eq(row.cV, workspace) && (_Utils_eq(
+								$elm$core$Maybe$Just(row.fj),
+								window.ce) && (_Utils_eq(
+								$elm$core$Maybe$Just(row.b$),
+								window.b$) && _Utils_eq(
+								$elm$core$Maybe$Just(row.bi),
+								window.bi)));
+						},
+						inventory.eO);
+				} else {
+					return true;
+				}
+			},
+			geometry.a)))));
+	});
+var $author$project$TaskView$membership = F3(
+	function (root, shell, geometry) {
+		var pending = $elm$core$List$head(
+			A2(
+				$elm$core$List$filter,
+				function (t) {
+					return _Utils_eq(t.ab.ar, root) && (_Utils_eq(t.ab.P.fr, geometry.P.fr) && A2(
+						$elm$core$List$member,
+						t.W,
+						_List_fromArray(
+							[0, 4])));
+				},
+				shell._.z));
+		var _v0 = A2(
+			$elm$core$Maybe$map,
+			A2(
+				$elm$core$Basics$composeR,
+				function ($) {
+					return $.ab;
+				},
+				function ($) {
+					return $.bh;
+				}),
+			pending);
+		if ((!_v0.$) && (_v0.a.$ === 7)) {
+			var p = _v0.a.a;
+			return $elm$core$Maybe$Just(p.cv);
+		} else {
+			return A2(
+				$elm$core$Maybe$andThen,
+				function ($) {
+					return $.e1;
+				},
+				A2($author$project$GeometryProjection$window, root, geometry));
+		}
+	});
+var $author$project$TaskView$groups = function (shell) {
+	var _v0 = _Utils_Tuple2(shell._.at, shell.aa);
+	if ((!_v0.a.$) && (!_v0.b.$)) {
+		var observed = _v0.a.a;
+		var geometry = _v0.b.a;
+		var rows = $author$project$ActionProjection$windows(observed.eP);
+		var positive = function (workspace) {
+			return (!$elm$core$String$isEmpty(workspace)) && ((!A2($elm$core$String$startsWith, '-', workspace)) && (workspace !== '0'));
+		};
+		var matching = function (row) {
+			return A2(
+				$elm$core$Maybe$withDefault,
+				false,
+				A2(
+					$elm$core$Maybe$map,
+					function (g) {
+						return _Utils_eq(g.dE, row.dE) && _Utils_eq(g.b_, row.b_);
+					},
+					A2($author$project$GeometryProjection$window, row.ar, geometry)));
+		};
+		var sameAuthority = _Utils_eq(
+			shell.dl,
+			$elm$core$Maybe$Just(geometry.dl)) && (_Utils_eq(observed.P.fr, geometry.P.fr) && (_Utils_eq(observed.P.fg, geometry.P.fg) && (_Utils_eq(observed.P.y, geometry.P.y) && (_Utils_eq(
+			$author$project$ActionProjection$focused(observed.eP),
+			geometry.ci) && (_Utils_eq(
+			$elm$core$List$length(rows),
+			$elm$core$List$length(geometry.a)) && A2($elm$core$List$all, matching, rows))))));
+		var focusedWorkspace = A2(
+			$elm$core$Maybe$andThen,
+			function ($) {
+				return $.e1;
+			},
+			A2(
+				$elm$core$Maybe$andThen,
+				function (identity) {
+					return A2($author$project$GeometryProjection$window, identity, geometry);
+				},
+				$author$project$ActionProjection$focused(observed.eP)));
+		var families = A2(
+			$elm$core$List$concatMap,
+			function ($) {
+				return $.aG;
+			},
+			$author$project$Taskbar$groups(observed.eP));
+		var add = F2(
+			function (family, accumulated) {
+				var _v1 = A3($author$project$TaskView$membership, family.r, shell, geometry);
+				if (!_v1.$) {
+					var workspace = _v1.a;
+					return (!positive(workspace)) ? accumulated : (A2(
+						$elm$core$List$any,
+						function (g) {
+							return _Utils_eq(g.cV, workspace);
+						},
+						accumulated) ? A2(
+						$elm$core$List$map,
+						function (g) {
+							return _Utils_eq(g.cV, workspace) ? _Utils_update(
+								g,
+								{
+									a: _Utils_ap(
+										g.a,
+										_List_fromArray(
+											[family]))
+								}) : g;
+						},
+						accumulated) : _Utils_ap(
+						accumulated,
+						_List_fromArray(
+							[
+								{
+								bt: _Utils_eq(
+									focusedWorkspace,
+									$elm$core$Maybe$Just(workspace)),
+								cV: workspace,
+								a: _List_fromArray(
+									[family])
+							}
+							])));
+				} else {
+					return accumulated;
+				}
+			});
+		return (!sameAuthority) ? $elm$core$Maybe$Nothing : $elm$core$Maybe$Just(
+			A2(
+				$elm$core$List$sortWith,
+				F2(
+					function (a, b) {
+						return A2(
+							$elm$core$Basics$compare,
+							_Utils_Tuple2(
+								$elm$core$String$length(a.cV),
+								a.cV),
+							_Utils_Tuple2(
+								$elm$core$String$length(b.cV),
+								b.cV));
+					}),
+				A3($elm$core$List$foldl, add, _List_Nil, families)));
+	} else {
+		return $elm$core$Maybe$Nothing;
+	}
+};
+var $author$project$TaskView$groupsWith = F2(
+	function (inventory, shell) {
+		if (inventory.$ === 1) {
+			return $author$project$TaskView$groups(shell);
+		} else {
+			var snapshot = inventory.a;
+			var _v1 = _Utils_Tuple2(
+				$author$project$TaskView$groups(shell),
+				shell.aa);
+			if ((!_v1.a.$) && (!_v1.b.$)) {
+				var populated = _v1.a.a;
+				var geometry = _v1.b.a;
+				if (!A2($author$project$WorkspaceInventory$coherent, snapshot, geometry)) {
+					return $elm$core$Maybe$Nothing;
+				} else {
+					var retained = A2(
+						$elm$core$List$map,
+						function (group) {
+							return _Utils_update(
+								group,
+								{bt: false});
+						},
+						A2(
+							$elm$core$List$filter,
+							function (group) {
+								return !A2(
+									$elm$core$List$any,
+									function (row) {
+										return _Utils_eq(row.cV, group.cV);
+									},
+									snapshot.eO);
+							},
+							populated));
+					var current = A2(
+						$elm$core$List$map,
+						function (row) {
+							return {
+								bt: _Utils_eq(
+									snapshot.bt,
+									$elm$core$Maybe$Just(row.cV)),
+								cV: row.cV,
+								a: A2(
+									$elm$core$List$concatMap,
+									function ($) {
+										return $.a;
+									},
+									A2(
+										$elm$core$List$filter,
+										function (group) {
+											return _Utils_eq(group.cV, row.cV);
+										},
+										populated))
+							};
+						},
+						snapshot.eO);
+					return $elm$core$Maybe$Just(
+						A2(
+							$elm$core$List$sortWith,
+							F2(
+								function (a, b) {
+									return A2(
+										$elm$core$Basics$compare,
+										_Utils_Tuple2(
+											$elm$core$String$length(a.cV),
+											a.cV),
+										_Utils_Tuple2(
+											$elm$core$String$length(b.cV),
+											b.cV));
+								}),
+							_Utils_ap(current, retained)));
+				}
+			} else {
+				return $elm$core$Maybe$Nothing;
+			}
+		}
+	});
+var $author$project$Desktop$taskViewGroups = function (model) {
+	return A2($author$project$TaskView$groupsWith, model.cF, model.a.b);
+};
 var $author$project$Settings$themeName = function (theme) {
 	switch (theme) {
 		case 0:
@@ -7994,13 +8100,13 @@ var $author$project$Launch$uncertain = function (_v0) {
 	}
 };
 var $author$project$MotionPreferences$writable = function (model) {
-	return (!_Utils_eq(model.c, $elm$core$Maybe$Nothing)) && _Utils_eq(model.ex, $elm$core$Maybe$Nothing);
+	return (!_Utils_eq(model.c, $elm$core$Maybe$Nothing)) && _Utils_eq(model.ey, $elm$core$Maybe$Nothing);
 };
 var $author$project$Pins$writable = function (model) {
-	return (!_Utils_eq(model.c, $elm$core$Maybe$Nothing)) && _Utils_eq(model.ex, $elm$core$Maybe$Nothing);
+	return (!_Utils_eq(model.c, $elm$core$Maybe$Nothing)) && _Utils_eq(model.ey, $elm$core$Maybe$Nothing);
 };
 var $author$project$Settings$writable = function (model) {
-	return (!_Utils_eq(model.c, $elm$core$Maybe$Nothing)) && _Utils_eq(model.ex, $elm$core$Maybe$Nothing);
+	return (!_Utils_eq(model.c, $elm$core$Maybe$Nothing)) && _Utils_eq(model.ey, $elm$core$Maybe$Nothing);
 };
 var $author$project$Surface$controls = function (model) {
 	if (!_Utils_eq(model.o, $elm$core$Maybe$Nothing)) {
@@ -8014,17 +8120,17 @@ var $author$project$Surface$controls = function (model) {
 			$elm$core$Maybe$andThen,
 			function (snapshot) {
 				return _Utils_eq(
-					$elm$core$Maybe$Just(snapshot.d2),
+					$elm$core$Maybe$Just(snapshot.d3),
 					model.o) ? $elm$core$Maybe$Just(snapshot) : $elm$core$Maybe$Nothing;
 			},
-			model.ar.c);
+			model.as.c);
 		var title = A2(
 			$elm$core$Maybe$withDefault,
 			'Application actions',
 			A2(
 				$elm$core$Maybe$map,
 				function (snapshot) {
-					return 'Actions for ' + snapshot.dA;
+					return 'Actions for ' + snapshot.dB;
 				},
 				current));
 		var control = F5(
@@ -8036,9 +8142,9 @@ var $author$project$Surface$controls = function (model) {
 						$author$project$Desktop$key,
 						model,
 						(identity === 'control:close') ? 'jump:close' : identity),
-					fd: enabled,
+					ff: enabled,
 					cl: identity,
-					el: label,
+					em: label,
 					aJ: enabled ? scoped(message) : $elm$core$Maybe$Nothing
 				};
 			});
@@ -8048,9 +8154,9 @@ var $author$project$Surface$controls = function (model) {
 				return A5(
 					control,
 					'jump:action:' + action.cl,
-					action.el,
-					(action.ej === 'recent') ? 'Recent file' : 'Application action',
-					_Utils_eq(model.aZ, $elm$core$Maybe$Nothing) && A2($author$project$JumpList$supported, intent, model.ar),
+					action.em,
+					(action.ek === 'recent') ? 'Recent file' : 'Application action',
+					_Utils_eq(model.aZ, $elm$core$Maybe$Nothing) && A2($author$project$JumpList$supported, intent, model.as),
 					function (stamp) {
 						return A2($author$project$Desktop$JumpAction, stamp, intent);
 					});
@@ -8064,7 +8170,7 @@ var $author$project$Surface$controls = function (model) {
 					return A2(
 						$elm$core$List$map,
 						row(snapshot),
-						snapshot.cG);
+						snapshot.cH);
 				},
 				current));
 		return _Utils_ap(
@@ -8129,7 +8235,7 @@ var $author$project$Surface$controls = function (model) {
 				A2(
 					$elm$core$Maybe$map,
 					function (peer) {
-						return 'Current location: ' + peer.fR;
+						return 'Current location: ' + peer.fT;
 					},
 					A2(
 						$elm$core$Maybe$andThen,
@@ -8146,9 +8252,9 @@ var $author$project$Surface$controls = function (model) {
 							$author$project$Desktop$key,
 							model,
 							(identity === 'control:close') ? 'files:close' : identity),
-						fd: enabled,
+						ff: enabled,
 						cl: identity,
-						el: label,
+						em: label,
 						aJ: enabled ? scoped(message) : $elm$core$Maybe$Nothing
 					};
 				});
@@ -8191,12 +8297,12 @@ var $author$project$Surface$controls = function (model) {
 							f: 'Folder path',
 							e: '',
 							g: A2($author$project$Desktop$key, model, 'files:path'),
-							fd: true,
+							ff: true,
 							cl: 'control:files-path',
-							el: model.T.fb,
+							em: model.T.fd,
 							aJ: scoped(
 								function (stamp) {
-									return A2($author$project$Desktop$EditFilesPath, stamp, model.T.fb);
+									return A2($author$project$Desktop$EditFilesPath, stamp, model.T.fd);
 								})
 						},
 							A5(
@@ -8204,7 +8310,7 @@ var $author$project$Surface$controls = function (model) {
 							'files:open-path',
 							'Open folder',
 							'Open this path in Files',
-							ready(model.T.fb),
+							ready(model.T.fd),
 							$author$project$Desktop$OpenFilesPath)
 						])));
 		} else {
@@ -8224,9 +8330,9 @@ var $author$project$Surface$controls = function (model) {
 								$author$project$Desktop$key,
 								model,
 								(identity === 'control:close') ? 'system:close' : identity),
-							fd: enabled,
+							ff: enabled,
 							cl: identity,
-							el: label,
+							em: label,
 							aJ: enabled ? scoped(message) : $elm$core$Maybe$Nothing
 						};
 					});
@@ -8238,7 +8344,7 @@ var $author$project$Surface$controls = function (model) {
 					var change = F3(
 						function (operation, value, label) {
 							var intent = A3($author$project$SystemMenu$intent, snapshot, operation, value);
-							var ready = _Utils_eq(model.ak.ex, $elm$core$Maybe$Nothing) && (_Utils_eq(model.aT, $elm$core$Maybe$Nothing) && (_Utils_eq(model.s, $elm$core$Maybe$Nothing) && A2($author$project$SystemMenu$supported, intent, model.ak)));
+							var ready = _Utils_eq(model.am.ey, $elm$core$Maybe$Nothing) && (_Utils_eq(model.aT, $elm$core$Maybe$Nothing) && (_Utils_eq(model.s, $elm$core$Maybe$Nothing) && A2($author$project$SystemMenu$supported, intent, model.am)));
 							return A5(
 								control,
 								'system:' + ($author$project$SystemMenu$code(operation) + (':' + $elm$core$String$fromInt(value))),
@@ -8250,7 +8356,7 @@ var $author$project$Surface$controls = function (model) {
 								});
 						});
 					var network = function () {
-						var _v5 = snapshot.fs;
+						var _v5 = snapshot.fu;
 						if (_v5.$ === 1) {
 							return _List_fromArray(
 								[
@@ -8263,17 +8369,17 @@ var $author$project$Surface$controls = function (model) {
 									A2(
 									state,
 									'network',
-									'Network ' + ((current.fd ? 'enabled' : 'disabled') + (' · ' + (current.dc + ((current.fA === 'no') ? '; changes unavailable' : ''))))),
+									'Network ' + ((current.ff ? 'enabled' : 'disabled') + (' · ' + (current.dd + ((current.fC === 'no') ? '; changes unavailable' : ''))))),
 									A3(
 									change,
 									2,
-									current.fd ? 0 : 1,
-									current.fd ? 'Disable networking' : 'Enable networking')
+									current.ff ? 0 : 1,
+									current.ff ? 'Disable networking' : 'Enable networking')
 								]);
 						}
 					}();
 					var session = function () {
-						var _v4 = snapshot.fO;
+						var _v4 = snapshot.fQ;
 						if (_v4.$ === 1) {
 							return _List_fromArray(
 								[
@@ -8286,14 +8392,14 @@ var $author$project$Surface$controls = function (model) {
 									A2(
 									state,
 									'session',
-									'Session ' + (current.dA + (' · ' + (current.dc + (current.fq ? '; locked' : '; unlocked'))))),
+									'Session ' + (current.dB + (' · ' + (current.dd + (current.fs ? '; locked' : '; unlocked'))))),
 									A3(change, 6, 0, 'Lock session'),
 									A3(change, 7, 0, 'Log out')
 								]);
 						}
 					}();
 					var volume = function () {
-						var _v3 = snapshot.fV;
+						var _v3 = snapshot.fX;
 						if (_v3.$ === 1) {
 							return _List_fromArray(
 								[
@@ -8306,7 +8412,7 @@ var $author$project$Surface$controls = function (model) {
 								A2(
 									state,
 									'volume',
-									'Volume ' + ($elm$core$String$fromInt(current.fz) + ('%' + ((current.dz ? '; muted' : '; unmuted') + (' · ' + current.el))))),
+									'Volume ' + ($elm$core$String$fromInt(current.fB) + ('%' + ((current.dA ? '; muted' : '; unmuted') + (' · ' + current.em))))),
 								_Utils_ap(
 									A2(
 										$elm$core$List$map,
@@ -8324,8 +8430,8 @@ var $author$project$Surface$controls = function (model) {
 											A3(
 											change,
 											1,
-											current.dz ? 0 : 1,
-											current.dz ? 'Unmute' : 'Mute')
+											current.dA ? 0 : 1,
+											current.dA ? 'Unmute' : 'Mute')
 										])));
 						}
 					}();
@@ -8333,7 +8439,7 @@ var $author$project$Surface$controls = function (model) {
 						return (value === 'yes') ? 'available' : ((value === 'challenge') ? 'authorization required' : 'unavailable');
 					};
 					var power = function () {
-						var _v2 = snapshot.fE;
+						var _v2 = snapshot.fG;
 						if (_v2.$ === 1) {
 							return _List_fromArray(
 								[
@@ -8346,7 +8452,7 @@ var $author$project$Surface$controls = function (model) {
 									A2(
 									state,
 									'power',
-									'Power · suspend ' + (capability(current.fQ) + (', restart ' + (capability(current.fH) + (', shutdown ' + capability(current.fF)))))),
+									'Power · suspend ' + (capability(current.fS) + (', restart ' + (capability(current.fJ) + (', shutdown ' + capability(current.fH)))))),
 									A3(change, 3, 0, 'Suspend'),
 									A3(change, 4, 0, 'Restart'),
 									A3(change, 5, 0, 'Shut down')
@@ -8377,7 +8483,7 @@ var $author$project$Surface$controls = function (model) {
 								'system:confirm',
 								'Confirm ' + $author$project$SystemMenu$name(intent.bh),
 								'',
-								A2($author$project$SystemMenu$supported, intent, model.ak) && (_Utils_eq(model.ak.ex, $elm$core$Maybe$Nothing) && _Utils_eq(model.aT, $elm$core$Maybe$Nothing)),
+								A2($author$project$SystemMenu$supported, intent, model.am) && (_Utils_eq(model.am.ey, $elm$core$Maybe$Nothing) && _Utils_eq(model.aT, $elm$core$Maybe$Nothing)),
 								function (stamp) {
 									return A2($author$project$Desktop$ConfirmSystemChange, stamp, intent);
 								})
@@ -8400,7 +8506,7 @@ var $author$project$Surface$controls = function (model) {
 						A2(
 							$elm$core$Maybe$withDefault,
 							_List_Nil,
-							A2($elm$core$Maybe$map, rows, model.ak.c)),
+							A2($elm$core$Maybe$map, rows, model.am.c)),
 						confirmation));
 			} else {
 				if (model.t) {
@@ -8419,9 +8525,9 @@ var $author$project$Surface$controls = function (model) {
 									$author$project$Desktop$key,
 									model,
 									(identity === 'control:close') ? 'notifications:close' : identity),
-								fd: enabled,
+								ff: enabled,
 								cl: identity,
-								el: label,
+								em: label,
 								aJ: enabled ? scoped(message) : $elm$core$Maybe$Nothing
 							};
 						});
@@ -8439,17 +8545,17 @@ var $author$project$Surface$controls = function (model) {
 										f: clean(label),
 										e: detail,
 										g: A2($author$project$Desktop$key, model, identity),
-										fd: false,
+										ff: false,
 										cl: identity,
-										el: clean(label),
+										em: clean(label),
 										aJ: $elm$core$Maybe$Nothing
 									};
 								});
-							var prefix = 'notification:' + ($author$project$UInt64$string(snapshot.c7) + (':' + $author$project$UInt64$string(entry.aq)));
+							var prefix = 'notification:' + ($author$project$UInt64$string(snapshot.c8) + (':' + $author$project$UInt64$string(entry.ar)));
 							var action = F3(
 								function (verb, key, label) {
 									var target = A4($author$project$Notifications$target, snapshot, entry, verb, key);
-									var ready = A2($author$project$Notifications$live, target, model.C) && (_Utils_eq(model.C.ex, $elm$core$Maybe$Nothing) && _Utils_eq(model.a0, $elm$core$Maybe$Nothing));
+									var ready = A2($author$project$Notifications$live, target, model.C) && (_Utils_eq(model.C.ey, $elm$core$Maybe$Nothing) && _Utils_eq(model.a0, $elm$core$Maybe$Nothing));
 									return A5(
 										control,
 										$author$project$Notifications$identity(target),
@@ -8466,21 +8572,21 @@ var $author$project$Surface$controls = function (model) {
 										A3(
 										textRow,
 										prefix + ':summary',
-										entry.dR + (': ' + entry.eS),
-										(entry.dc === 'live') ? 'Live' : ('History · ' + entry.dc))
+										entry.dS + (': ' + entry.eU),
+										(entry.dd === 'live') ? 'Live' : ('History · ' + entry.dd))
 									]),
 								_Utils_ap(
-									$elm$core$String$isEmpty(entry.dU) ? _List_Nil : _List_fromArray(
+									$elm$core$String$isEmpty(entry.dV) ? _List_Nil : _List_fromArray(
 										[
-											A3(textRow, prefix + ':body', entry.dU, '')
+											A3(textRow, prefix + ':body', entry.dV, '')
 										]),
-									(entry.dc === 'live') ? _Utils_ap(
+									(entry.dd === 'live') ? _Utils_ap(
 										A2(
 											$elm$core$List$map,
 											function (item) {
-												return A3(action, 'invoke', item.a_, item.el);
+												return A3(action, 'invoke', item.a_, item.em);
 											},
-											entry.cG),
+											entry.cH),
 										_List_fromArray(
 											[
 												A3(action, 'dismiss', '', 'Dismiss notification')
@@ -8490,19 +8596,19 @@ var $author$project$Surface$controls = function (model) {
 										A2(
 											$elm$core$Maybe$andThen,
 											function (selected) {
-												return (_Utils_eq(selected.fR.c7, snapshot.c7) && (_Utils_eq(selected.fR.cl, entry.cl) && (_Utils_eq(selected.fR.aq, entry.aq) && _Utils_eq(selected.fR.ab, entry.ab)))) ? $elm$core$Maybe$Just(
+												return (_Utils_eq(selected.fT.c8, snapshot.c8) && (_Utils_eq(selected.fT.cl, entry.cl) && (_Utils_eq(selected.fT.ar, entry.ar) && _Utils_eq(selected.fT.ad, entry.ad)))) ? $elm$core$Maybe$Just(
 													_List_fromArray(
 														[
 															{
-															f: selected.el + '; unavailable',
-															e: entry.dc + ' · Action unavailable',
+															f: selected.em + '; unavailable',
+															e: entry.dd + ' · Action unavailable',
 															g: A2(
 																$author$project$Desktop$key,
 																model,
-																$author$project$Notifications$identity(selected.fR)),
-															fd: false,
-															cl: $author$project$Notifications$identity(selected.fR),
-															el: selected.el,
+																$author$project$Notifications$identity(selected.fT)),
+															ff: false,
+															cl: $author$project$Notifications$identity(selected.fT),
+															em: selected.em,
 															aJ: $elm$core$Maybe$Nothing
 														}
 														])) : $elm$core$Maybe$Nothing;
@@ -8524,38 +8630,38 @@ var $author$project$Surface$controls = function (model) {
 											A2(
 												$elm$core$Maybe$map,
 												function ($) {
-													return $.dc;
+													return $.dd;
 												},
 												$elm$core$List$head(
 													A2(
 														$elm$core$List$filter,
 														function (entry) {
-															return _Utils_eq(entry.cl, selected.fR.cl) && (_Utils_eq(entry.aq, selected.fR.aq) && _Utils_eq(entry.ab, selected.fR.ab));
+															return _Utils_eq(entry.cl, selected.fT.cl) && (_Utils_eq(entry.ar, selected.fT.ar) && _Utils_eq(entry.ad, selected.fT.ad));
 														},
-														snapshot.af))));
+														snapshot.ah))));
 										var exists = A2(
 											$elm$core$List$any,
 											function (row) {
 												return _Utils_eq(
 													row.cl,
-													$author$project$Notifications$identity(selected.fR));
+													$author$project$Notifications$identity(selected.fT));
 											},
 											A2(
 												$elm$core$List$concatMap,
 												entryRows(snapshot),
-												snapshot.af));
+												snapshot.ah));
 										return exists ? _List_Nil : _List_fromArray(
 											[
 												{
-												f: selected.el + '; unavailable',
+												f: selected.em + '; unavailable',
 												e: state + ' · Action unavailable',
 												g: A2(
 													$author$project$Desktop$key,
 													model,
-													$author$project$Notifications$identity(selected.fR)),
-												fd: false,
-												cl: $author$project$Notifications$identity(selected.fR),
-												el: selected.el,
+													$author$project$Notifications$identity(selected.fT)),
+												ff: false,
+												cl: $author$project$Notifications$identity(selected.fT),
+												em: selected.em,
 												aJ: $elm$core$Maybe$Nothing
 											}
 											]);
@@ -8582,25 +8688,25 @@ var $author$project$Surface$controls = function (model) {
 									control,
 									'notifications:dnd',
 									'Do not disturb for this session',
-									model.C.fD.cP ? 'On · History still updates' : 'Off',
+									model.C.fF.cQ ? 'On · History still updates' : 'Off',
 									true,
 									function (stamp) {
 										return A2(
 											$author$project$Desktop$ConfigureNotificationPolicy,
 											stamp,
-											{cP: !model.C.fD.cP, ef: model.C.fD.ef});
+											{cQ: !model.C.fF.cQ, eg: model.C.fF.eg});
 									}),
 									A5(
 									control,
 									'notifications:critical-interrupt',
 									'Allow critical notification interruptions for this session',
-									model.C.fD.ef ? 'On · Only when Do not disturb is off' : 'Off · New notifications are polite',
+									model.C.fF.eg ? 'On · Only when Do not disturb is off' : 'Off · New notifications are polite',
 									true,
 									function (stamp) {
 										return A2(
 											$author$project$Desktop$ConfigureNotificationPolicy,
 											stamp,
-											{cP: model.C.fD.cP, ef: !model.C.fD.ef});
+											{cQ: model.C.fF.cQ, eg: !model.C.fF.eg});
 									})
 								]),
 							_Utils_ap(
@@ -8613,22 +8719,22 @@ var $author$project$Surface$controls = function (model) {
 											return A2(
 												$elm$core$List$concatMap,
 												entryRows(snapshot),
-												snapshot.af);
+												snapshot.ah);
 										},
 										model.C.c)),
 								retained)));
 				} else {
 					if (model.n) {
-						var shortcutReady = $author$project$ShortcutPreferences$writable(model.ac) && _Utils_eq(model.aQ, $elm$core$Maybe$Nothing);
+						var shortcutReady = $author$project$ShortcutPreferences$writable(model.ae) && _Utils_eq(model.aQ, $elm$core$Maybe$Nothing);
 						var scoped = function (message) {
 							return A2(
 								$elm$core$Maybe$map,
 								message,
 								$author$project$Desktop$capture(model));
 						};
-						var ready = $author$project$Settings$writable(model.aj) && _Utils_eq(model.bo, $elm$core$Maybe$Nothing);
+						var ready = $author$project$Settings$writable(model.al) && _Utils_eq(model.bo, $elm$core$Maybe$Nothing);
 						var motionReady = $author$project$MotionPreferences$writable(model.I.a1) && _Utils_eq(model.aK, $elm$core$Maybe$Nothing);
-						var draft = model.aj.fb;
+						var draft = model.al.fd;
 						var control = F5(
 							function (identity, label, detail, enabled, message) {
 								return {
@@ -8638,13 +8744,13 @@ var $author$project$Surface$controls = function (model) {
 										$author$project$Desktop$key,
 										model,
 										(identity === 'control:close') ? 'settings:close' : identity),
-									fd: enabled,
+									ff: enabled,
 									cl: identity,
-									el: label,
+									em: label,
 									aJ: enabled ? scoped(message) : $elm$core$Maybe$Nothing
 								};
 							});
-						var guidance = (!model.c8) ? _List_Nil : _List_fromArray(
+						var guidance = (!model.c9) ? _List_Nil : _List_fromArray(
 							[
 								A5(control, 'settings:help:text:keyboard', 'Keyboard navigation', 'Tab and Shift+Tab move focus. Arrows move through lists; Home/End reach endpoints. Enter chooses; Escape closes.', false, $author$project$Desktop$ToggleSettingsHelp),
 								A5(control, 'settings:help:text:preferences', 'Keeping your preferences', 'Save applies appearance preferences. Motion has its own Save. Dismissing help keeps unsaved edits.', false, $author$project$Desktop$ToggleSettingsHelp),
@@ -8664,7 +8770,7 @@ var $author$project$Surface$controls = function (model) {
 									}
 								}(),
 								$author$project$MotionPreferences$label(selected),
-								_Utils_eq(model.I.a1.fb, selected) ? 'Selected' : '',
+								_Utils_eq(model.I.a1.fd, selected) ? 'Selected' : '',
 								motionReady,
 								function (stamp) {
 									return A2($author$project$Desktop$EditMotionPreference, stamp, selected);
@@ -8675,7 +8781,7 @@ var $author$project$Surface$controls = function (model) {
 								control,
 								'settings:scale:' + $elm$core$String$fromInt(percent),
 								'Text size ' + ($elm$core$String$fromInt(percent) + '%'),
-								_Utils_eq(model.aj.fb.cy, percent) ? 'Selected' : '',
+								_Utils_eq(model.al.fd.cy, percent) ? 'Selected' : '',
 								ready,
 								function (stamp) {
 									return A2(
@@ -8694,7 +8800,7 @@ var $author$project$Surface$controls = function (model) {
 										'settings:shortcuts:' + (route + (':' + $author$project$ShortcutPreferences$name(selected))),
 										suffix,
 										_Utils_eq(
-											A2($author$project$ShortcutPreferences$choices, route, model.ac.fb),
+											A2($author$project$ShortcutPreferences$choices, route, model.ae.fd),
 											selected) ? 'Selected' : '',
 										shortcutReady && enabled,
 										function (stamp) {
@@ -8704,7 +8810,7 @@ var $author$project$Surface$controls = function (model) {
 							var observed = A2(
 								$elm$core$Maybe$map,
 								$author$project$ShortcutPreferences$row(route),
-								model.ac.cV);
+								model.ae.cW);
 							var label = $author$project$ShortcutPreferences$label(route);
 							var state = A2(
 								$elm$core$Maybe$withDefault,
@@ -8712,7 +8818,7 @@ var $author$project$Surface$controls = function (model) {
 								A2(
 									$elm$core$Maybe$map,
 									function (row) {
-										return label + (': ' + ((row.bt === 1) ? 'existing shortcut preserved' : ((row.bt === 2) ? row.e9 : row.e4)));
+										return label + (': ' + ((row.bt === 1) ? 'existing shortcut preserved' : ((row.bt === 2) ? row.fb : row.e6)));
 									},
 									observed));
 							return _List_fromArray(
@@ -8729,7 +8835,7 @@ var $author$project$Surface$controls = function (model) {
 										A2(
 											$elm$core$Maybe$map,
 											function ($) {
-												return $.dp;
+												return $.dq;
 											},
 											observed))),
 									A5(
@@ -8742,8 +8848,8 @@ var $author$project$Surface$controls = function (model) {
 											$elm$core$Maybe$map,
 											function (row) {
 												return _Utils_ap(
-													row.e9,
-													row.dp ? ' · Available' : ' · Unavailable: existing binding');
+													row.fb,
+													row.dq ? ' · Available' : ' · Unavailable: existing binding');
 											},
 											observed)),
 									'',
@@ -8759,7 +8865,7 @@ var $author$project$Surface$controls = function (model) {
 										A2(
 											$elm$core$Maybe$map,
 											function ($) {
-												return $.dh;
+												return $.di;
 											},
 											observed))),
 									A5(
@@ -8772,8 +8878,8 @@ var $author$project$Surface$controls = function (model) {
 											$elm$core$Maybe$map,
 											function (row) {
 												return _Utils_ap(
-													row.e4,
-													row.dh ? ' · Available' : ' · Unavailable: existing binding');
+													row.e6,
+													row.di ? ' · Available' : ' · Unavailable: existing binding');
 											},
 											observed)),
 									'',
@@ -8783,7 +8889,7 @@ var $author$project$Surface$controls = function (model) {
 						};
 						var shortcutControls = A2(
 							$elm$core$List$cons,
-							A5(control, 'settings:shortcuts:notice:state', model.ac.ft, '', false, $author$project$Desktop$RefreshShortcutChoices),
+							A5(control, 'settings:shortcuts:notice:state', model.ae.fv, '', false, $author$project$Desktop$RefreshShortcutChoices),
 							_Utils_ap(
 								A2(
 									$elm$core$List$concatMap,
@@ -8797,7 +8903,7 @@ var $author$project$Surface$controls = function (model) {
 										'settings:shortcuts:save',
 										'Save shortcut choices',
 										'Apply only the free chosen chords; preserve existing bindings',
-										_Utils_eq(model.aQ, $elm$core$Maybe$Nothing) && ($author$project$ShortcutPreferences$ready(model.ac) && $author$project$ShortcutPreferences$changed(model.ac)),
+										_Utils_eq(model.aQ, $elm$core$Maybe$Nothing) && ($author$project$ShortcutPreferences$ready(model.ae) && $author$project$ShortcutPreferences$changed(model.ae)),
 										$author$project$Desktop$SaveShortcutChoices),
 										A5(
 										control,
@@ -8813,7 +8919,7 @@ var $author$project$Surface$controls = function (model) {
 									control,
 									'settings:theme:' + $author$project$Settings$themeName(selected),
 									label,
-									_Utils_eq(model.aj.fb.de, selected) ? 'Selected' : '',
+									_Utils_eq(model.al.fd.df, selected) ? 'Selected' : '',
 									ready,
 									function (stamp) {
 										return A2(
@@ -8821,7 +8927,7 @@ var $author$project$Surface$controls = function (model) {
 											stamp,
 											_Utils_update(
 												draft,
-												{de: selected}));
+												{df: selected}));
 									});
 							});
 						var changed = A2(
@@ -8830,9 +8936,9 @@ var $author$project$Surface$controls = function (model) {
 							A2(
 								$elm$core$Maybe$map,
 								function (current) {
-									return !_Utils_eq(current.bs, model.aj.fb);
+									return !_Utils_eq(current.bs, model.al.fd);
 								},
-								model.aj.c));
+								model.al.c));
 						return _Utils_ap(
 							_List_fromArray(
 								[
@@ -8840,8 +8946,8 @@ var $author$project$Surface$controls = function (model) {
 									A5(
 									control,
 									'settings:help',
-									model.c8 ? 'Dismiss help' : 'Show help',
-									model.c8 ? 'Expanded' : 'Collapsed',
+									model.c9 ? 'Dismiss help' : 'Show help',
+									model.c9 ? 'Expanded' : 'Collapsed',
 									true,
 									$author$project$Desktop$ToggleSettingsHelp)
 								]),
@@ -8854,7 +8960,7 @@ var $author$project$Surface$controls = function (model) {
 											control,
 											'settings:effects-off',
 											'Disable soft effects',
-											draft.cQ ? 'On' : 'Off',
+											draft.cR ? 'On' : 'Off',
 											ready,
 											function (stamp) {
 												return A2(
@@ -8862,13 +8968,13 @@ var $author$project$Surface$controls = function (model) {
 													stamp,
 													_Utils_update(
 														draft,
-														{cQ: !draft.cQ}));
+														{cR: !draft.cR}));
 											}),
 											A5(
 											control,
 											'settings:reduced-transparency',
 											'Reduce transparency',
-											draft.c$ ? 'On' : 'Off',
+											draft.c0 ? 'On' : 'Off',
 											ready,
 											function (stamp) {
 												return A2(
@@ -8876,7 +8982,7 @@ var $author$project$Surface$controls = function (model) {
 													stamp,
 													_Utils_update(
 														draft,
-														{c$: !draft.c$}));
+														{c0: !draft.c0}));
 											})
 										]),
 									_Utils_ap(
@@ -8886,7 +8992,7 @@ var $author$project$Surface$controls = function (model) {
 												control,
 												'settings:motion',
 												$author$project$Motion$notice(model.I),
-												model.I.a1.ft,
+												model.I.a1.fv,
 												false,
 												$author$project$Desktop$RefreshMotionPreference),
 												motionOption(0),
@@ -8898,7 +9004,7 @@ var $author$project$Surface$controls = function (model) {
 												'Save motion preference',
 												'Apply and keep across restart',
 												motionReady && (!_Utils_eq(
-													model.I.a1.fb,
+													model.I.a1.fd,
 													$author$project$MotionPreferences$selected(model.I.a1))),
 												$author$project$Desktop$SaveMotionPreference),
 												A5(
@@ -8946,7 +9052,7 @@ var $author$project$Surface$controls = function (model) {
 								};
 								var ready = $author$project$Shell$available(model.a.b);
 								var regionControl = function (region) {
-									var selected = _Utils_eq(region, choice.fN);
+									var selected = _Utils_eq(region, choice.fP);
 									var identity = 'snap:region:' + $author$project$Snap$identity(region);
 									return {
 										f: _Utils_ap(
@@ -8954,9 +9060,9 @@ var $author$project$Surface$controls = function (model) {
 											selected ? '; selected preview' : ''),
 										e: selected ? 'Selected' : '',
 										g: A2($author$project$Desktop$key, model, identity),
-										fd: ready,
+										ff: ready,
 										cl: identity,
-										el: $author$project$Snap$name(region),
+										em: $author$project$Snap$name(region),
 										aJ: ready ? scoped(
 											function (stamp) {
 												return A2($author$project$Desktop$SelectSnap, stamp, region);
@@ -8970,20 +9076,20 @@ var $author$project$Surface$controls = function (model) {
 									A2(
 										$elm$core$Maybe$map,
 										function (caps) {
-											return A2($elm$core$List$member, 'snap', caps.ev);
+											return A2($elm$core$List$member, 'snap', caps.ew);
 										},
-										model.a.b.ds)) && (!_Utils_eq(placement, $elm$core$Maybe$Nothing))));
+										model.a.b.dt)) && (!_Utils_eq(placement, $elm$core$Maybe$Nothing))));
 								var applyLabel = applyReady ? ('Snap to ' + $elm$core$String$toLower(
-									$author$project$Snap$name(choice.fN))) : 'Snapping unavailable';
+									$author$project$Snap$name(choice.fP))) : 'Snapping unavailable';
 								return A2(
 									$elm$core$List$cons,
 									{
 										f: 'Close snapping',
 										e: '',
 										g: A2($author$project$Desktop$key, model, 'snap:close'),
-										fd: true,
+										ff: true,
 										cl: 'control:close',
-										el: 'Close',
+										em: 'Close',
 										aJ: scoped($author$project$Desktop$CloseSnap)
 									},
 									_Utils_ap(
@@ -8994,9 +9100,9 @@ var $author$project$Surface$controls = function (model) {
 												f: applyLabel,
 												e: '',
 												g: A2($author$project$Desktop$key, model, 'snap:apply'),
-												fd: applyReady,
+												ff: applyReady,
 												cl: 'snap:apply',
-												el: applyLabel,
+												em: applyLabel,
 												aJ: applyReady ? scoped($author$project$Desktop$ApplySnap) : $elm$core$Maybe$Nothing
 											}
 											])));
@@ -9021,15 +9127,15 @@ var $author$project$Surface$controls = function (model) {
 											f: label,
 											e: '',
 											g: A2($author$project$Desktop$key, model, identity),
-											fd: enabled,
+											ff: enabled,
 											cl: identity,
-											el: label,
+											em: label,
 											aJ: enabled ? scoped(message) : $elm$core$Maybe$Nothing
 										};
 									});
 								var browsing = $author$project$Switcher$phase(model.i) === 2;
 								var row = function (family) {
-									var ready = browsing && (family.dj && (!A2($author$project$Surface$familyBlocked, model, family.r)));
+									var ready = browsing && (family.dk && (!A2($author$project$Surface$familyBlocked, model, family.r)));
 									var identity = 'switcher:family:' + $author$project$UInt64$string(family.r);
 									var detail = _Utils_eq(
 										selected,
@@ -9038,15 +9144,15 @@ var $author$project$Surface$controls = function (model) {
 										f: _Utils_ap(
 											family.b_ ? 'Restore ' : 'Activate ',
 											_Utils_ap(
-												family.el,
+												family.em,
 												_Utils_eq(
 													selected,
 													$elm$core$Maybe$Just(family.r)) ? '; selected' : '')),
 										e: detail,
 										g: A2($author$project$Desktop$key, model, identity),
-										fd: ready,
+										ff: ready,
 										cl: identity,
-										el: family.el,
+										em: family.em,
 										aJ: ready ? scoped(
 											function (stamp) {
 												return A2($author$project$Desktop$SwitcherChoose, stamp, family.r);
@@ -9094,7 +9200,7 @@ var $author$project$Surface$controls = function (model) {
 										row,
 										$author$project$Switcher$entries(model.i)));
 							} else {
-								if (model.m) {
+								if (model.l) {
 									var transferReady = $author$project$Shell$available(model.a.b) && _Utils_eq(model.k, $elm$core$Maybe$Nothing);
 									var scoped = function (message) {
 										return A2(
@@ -9104,22 +9210,22 @@ var $author$project$Surface$controls = function (model) {
 									};
 									var transferControl = function (family) {
 										var identity = 'overview:transfer:' + $author$project$UInt64$string(family.r);
-										var enabled = transferReady && (family.dj && ((!A2($author$project$Surface$familyBlocked, model, family.r)) && A2(
+										var enabled = transferReady && (family.dk && ((!A2($author$project$Surface$familyBlocked, model, family.r)) && A2(
 											$elm$core$Maybe$withDefault,
 											false,
 											A2(
 												$elm$core$Maybe$map,
 												function (caps) {
-													return A2($elm$core$List$member, 'transfer-workspace', caps.ev);
+													return A2($elm$core$List$member, 'transfer-workspace', caps.ew);
 												},
-												model.a.b.ds))));
+												model.a.b.dt))));
 										return {
-											f: 'Move ' + (family.el + ' to another workspace'),
+											f: 'Move ' + (family.em + ' to another workspace'),
 											e: '',
 											g: A2($author$project$Desktop$key, model, identity),
-											fd: enabled,
+											ff: enabled,
 											cl: identity,
-											el: 'Move ' + (family.el + '…'),
+											em: 'Move ' + (family.em + '…'),
 											aJ: enabled ? scoped(
 												function (stamp) {
 													return A2($author$project$Desktop$OpenOverviewTransfer, stamp, family.r);
@@ -9128,41 +9234,41 @@ var $author$project$Surface$controls = function (model) {
 									};
 									var workspaceControl = function (group) {
 										return {
-											f: 'Browse workspace ' + (group.cU + (group.bt ? '; active workspace' : '')),
+											f: 'Browse workspace ' + (group.cV + (group.bt ? '; active workspace' : '')),
 											e: _Utils_ap(
 												group.bt ? 'Active workspace' : '',
 												_Utils_eq(
-													model.at,
-													$elm$core$Maybe$Just(group.cU)) ? ' • Selected' : ''),
-											g: A2($author$project$Desktop$key, model, 'overview:workspace:' + group.cU),
-											fd: true,
-											cl: 'overview:workspace:' + group.cU,
-											el: 'Workspace ' + group.cU,
+													model.ac,
+													$elm$core$Maybe$Just(group.cV)) ? ' • Selected' : ''),
+											g: A2($author$project$Desktop$key, model, 'overview:workspace:' + group.cV),
+											ff: true,
+											cl: 'overview:workspace:' + group.cV,
+											em: 'Workspace ' + group.cV,
 											aJ: scoped(
 												function (stamp) {
 													return A2(
 														$author$project$Desktop$OverviewWorkspace,
 														stamp,
-														$elm$core$Maybe$Just(group.cU));
+														$elm$core$Maybe$Just(group.cV));
 												})
 										};
 									};
 									var groups = A2(
 										$elm$core$Maybe$withDefault,
 										_List_Nil,
-										$author$project$TaskView$groups(model.a.b));
+										$author$project$Desktop$taskViewGroups(model));
 									var familyControl = F2(
 										function (group, family) {
-											var ready = $author$project$Shell$available(model.a.b) && (family.dj && (!A2($author$project$Surface$familyBlocked, model, family.r)));
+											var ready = $author$project$Shell$available(model.a.b) && (family.dk && (!A2($author$project$Surface$familyBlocked, model, family.r)));
 											var identity = 'overview:family:' + $author$project$UInt64$string(family.r);
-											var detail = 'Workspace ' + (group.cU + (' • ' + (A2($author$project$Surface$familyBlocked, model, family.r) ? 'Awaiting native confirmation' : ((!family.dj) ? 'Unavailable for activation' : (family.b_ ? 'Minimized' : 'Open')))));
+											var detail = 'Workspace ' + (group.cV + (' • ' + (A2($author$project$Surface$familyBlocked, model, family.r) ? 'Awaiting native confirmation' : ((!family.dk) ? 'Unavailable for activation' : (family.b_ ? 'Minimized' : 'Open')))));
 											return {
-												f: (family.b_ ? 'Restore ' : 'Activate ') + (family.el + (' on workspace ' + group.cU)),
+												f: (family.b_ ? 'Restore ' : 'Activate ') + (family.em + (' on workspace ' + group.cV)),
 												e: detail,
 												g: A2($author$project$Desktop$key, model, identity),
-												fd: ready,
+												ff: ready,
 												cl: identity,
-												el: family.el,
+												em: family.em,
 												aJ: ready ? scoped(
 													function (stamp) {
 														return A2($author$project$Desktop$OverviewChoose, stamp, family.r);
@@ -9173,9 +9279,9 @@ var $author$project$Surface$controls = function (model) {
 										return A2(
 											$elm$core$List$cons,
 											workspaceControl(group),
-											(_Utils_eq(model.at, $elm$core$Maybe$Nothing) || _Utils_eq(
-												model.at,
-												$elm$core$Maybe$Just(group.cU))) ? A2(
+											(_Utils_eq(model.ac, $elm$core$Maybe$Nothing) || _Utils_eq(
+												model.ac,
+												$elm$core$Maybe$Just(group.cV))) ? A2(
 												$elm$core$List$concatMap,
 												function (family) {
 													return _List_fromArray(
@@ -9204,9 +9310,9 @@ var $author$project$Surface$controls = function (model) {
 																		f: 'Move selected window to workspace ' + destination,
 																		e: '',
 																		g: A2($author$project$Desktop$key, model, identity),
-																		fd: transferReady,
+																		ff: transferReady,
 																		cl: identity,
-																		el: 'Move to workspace ' + destination,
+																		em: 'Move to workspace ' + destination,
 																		aJ: transferReady ? scoped(
 																			function (stamp) {
 																				return A3($author$project$Desktop$OverviewTransfer, stamp, root, destination);
@@ -9217,43 +9323,43 @@ var $author$project$Surface$controls = function (model) {
 														},
 														$author$project$Transfer$destinations(geometry));
 												},
-												model.a.b.ap));
+												model.a.b.aa));
 									};
-									return (!_Utils_eq(model.aB, $elm$core$Maybe$Nothing)) ? _Utils_ap(
+									return (!_Utils_eq(model.au, $elm$core$Maybe$Nothing)) ? _Utils_ap(
 										_List_fromArray(
 											[
 												{
 												f: 'Cancel window transfer',
 												e: '',
 												g: A2($author$project$Desktop$key, model, 'overview:transfer-cancel'),
-												fd: true,
+												ff: true,
 												cl: 'control:close',
-												el: 'Cancel transfer',
+												em: 'Cancel transfer',
 												aJ: scoped($author$project$Desktop$CancelOverviewTransfer)
 											}
 											]),
 										A2(
 											$elm$core$Maybe$withDefault,
 											_List_Nil,
-											A2($elm$core$Maybe$map, destinationRows, model.aB))) : _Utils_ap(
+											A2($elm$core$Maybe$map, destinationRows, model.au))) : _Utils_ap(
 										_List_fromArray(
 											[
 												{
 												f: 'Close Task View and return to windows',
 												e: '',
 												g: A2($author$project$Desktop$key, model, 'overview:close'),
-												fd: true,
+												ff: true,
 												cl: 'control:close',
-												el: 'Close Task View',
+												em: 'Close Task View',
 												aJ: scoped($author$project$Desktop$CloseOverview)
 											},
 												{
 												f: 'Browse all workspaces',
-												e: _Utils_eq(model.at, $elm$core$Maybe$Nothing) ? 'Selected' : '',
+												e: _Utils_eq(model.ac, $elm$core$Maybe$Nothing) ? 'Selected' : '',
 												g: A2($author$project$Desktop$key, model, 'overview:all'),
-												fd: true,
+												ff: true,
 												cl: 'overview:all',
-												el: 'All windows',
+												em: 'All windows',
 												aJ: scoped(
 													function (stamp) {
 														return A2($author$project$Desktop$OverviewWorkspace, stamp, $elm$core$Maybe$Nothing);
@@ -9286,9 +9392,9 @@ var $author$project$Surface$controls = function (model) {
 													f: label,
 													e: detail,
 													g: A2($author$project$Desktop$key, model, suffix),
-													fd: $author$project$Pins$writable(model.R) && allowed,
+													ff: $author$project$Pins$writable(model.R) && allowed,
 													cl: suffix,
-													el: label,
+													em: label,
 													aJ: ($author$project$Pins$writable(model.R) && allowed) ? scoped(message) : $elm$core$Maybe$Nothing
 												};
 											});
@@ -9300,7 +9406,7 @@ var $author$project$Surface$controls = function (model) {
 													A2(
 														$elm$core$Maybe$map,
 														function ($) {
-															return $.dA;
+															return $.dB;
 														},
 														A2(
 															$elm$core$Maybe$andThen,
@@ -9345,18 +9451,18 @@ var $author$project$Surface$controls = function (model) {
 												$author$project$Desktop$Start,
 												A2(
 													$author$project$Launch$select,
-													$author$project$Catalog$id(entry.cU),
+													$author$project$Catalog$id(entry.cV),
 													model.M)) : $elm$core$Maybe$Nothing;
 											return {
-												f: 'Open ' + entry.dA,
+												f: 'Open ' + entry.dB,
 												e: '',
 												g: A2(
 													$author$project$Desktop$key,
 													model,
-													'entry:' + $author$project$Catalog$id(entry.cU)),
-												fd: !_Utils_eq(choice, $elm$core$Maybe$Nothing),
-												cl: 'entry:' + $author$project$Catalog$id(entry.cU),
-												el: 'Open ' + entry.dA,
+													'entry:' + $author$project$Catalog$id(entry.cV)),
+												ff: !_Utils_eq(choice, $elm$core$Maybe$Nothing),
+												cl: 'entry:' + $author$project$Catalog$id(entry.cV),
+												em: 'Open ' + entry.dB,
 												aJ: choice
 											};
 										};
@@ -9365,7 +9471,7 @@ var $author$project$Surface$controls = function (model) {
 											_List_Nil,
 											A2(
 												$elm$core$Maybe$map,
-												$author$project$Catalog$search(model.c_),
+												$author$project$Catalog$search(model.c$),
 												model.aD));
 										var jump = A2(
 											$elm$core$Maybe$withDefault,
@@ -9377,21 +9483,21 @@ var $author$project$Surface$controls = function (model) {
 													$elm$core$Maybe$map,
 													function (entry) {
 														return {
-															f: 'Actions for ' + entry.dA,
+															f: 'Actions for ' + entry.dB,
 															e: 'Application actions and recent files',
 															g: A2(
 																$author$project$Desktop$key,
 																model,
-																'jump:open:' + $author$project$Catalog$id(entry.cU)),
-															fd: true,
-															cl: 'jump:open:' + $author$project$Catalog$id(entry.cU),
-															el: 'Actions for ' + entry.dA,
+																'jump:open:' + $author$project$Catalog$id(entry.cV)),
+															ff: true,
+															cl: 'jump:open:' + $author$project$Catalog$id(entry.cV),
+															em: 'Actions for ' + entry.dB,
 															aJ: scoped(
 																function (stamp) {
 																	return A2(
 																		$author$project$Desktop$OpenJumpList,
 																		stamp,
-																		$author$project$Catalog$id(entry.cU));
+																		$author$project$Catalog$id(entry.cV));
 																})
 														};
 													},
@@ -9407,19 +9513,19 @@ var $author$project$Surface$controls = function (model) {
 													function (entry) {
 														return A2(
 															$elm$core$List$member,
-															$author$project$Catalog$id(entry.cU),
+															$author$project$Catalog$id(entry.cV),
 															pinIds) ? $elm$core$Maybe$Nothing : $elm$core$Maybe$Just(
 															A5(
 																pinAction,
-																'pin:' + $author$project$Catalog$id(entry.cU),
-																'Pin ' + entry.dA,
+																'pin:' + $author$project$Catalog$id(entry.cV),
+																'Pin ' + entry.dB,
 																'Add to taskbar',
 																true,
 																function (stamp) {
 																	return A2(
 																		$author$project$Desktop$TogglePin,
 																		stamp,
-																		$author$project$Catalog$id(entry.cU));
+																		$author$project$Catalog$id(entry.cV));
 																}));
 													},
 													$elm$core$List$head(entries))));
@@ -9436,9 +9542,9 @@ var $author$project$Surface$controls = function (model) {
 															f: 'I checked; allow another launch',
 															e: '',
 															g: A2($author$project$Desktop$key, model, 'control:acknowledge'),
-															fd: true,
+															ff: true,
 															cl: 'control:acknowledge',
-															el: 'I checked; allow another launch',
+															em: 'I checked; allow another launch',
 															aJ: $elm$core$Maybe$Just(
 																$author$project$Desktop$Acknowledge(token))
 														};
@@ -9451,30 +9557,30 @@ var $author$project$Surface$controls = function (model) {
 													f: 'Search applications',
 													e: '',
 													g: 'launcher-search',
-													fd: true,
+													ff: true,
 													cl: 'control:search',
-													el: model.c_,
+													em: model.c$,
 													aJ: scoped(
 														function (stamp) {
-															return A2($author$project$Desktop$SearchQuery, stamp, model.c_);
+															return A2($author$project$Desktop$SearchQuery, stamp, model.c$);
 														})
 												},
 													{
 													f: 'Close applications and return to windows',
 													e: '',
 													g: A2($author$project$Desktop$key, model, 'control:close'),
-													fd: true,
+													ff: true,
 													cl: 'control:close',
-													el: 'Windows',
+													em: 'Windows',
 													aJ: scoped($author$project$Desktop$CloseApplications)
 												},
 													{
 													f: 'Refresh applications',
 													e: '',
 													g: A2($author$project$Desktop$key, model, 'control:refresh'),
-													fd: true,
+													ff: true,
 													cl: 'control:refresh',
-													el: 'Refresh',
+													em: 'Refresh',
 													aJ: scoped($author$project$Desktop$RefreshApplications)
 												}
 												]),
@@ -9522,26 +9628,26 @@ var $author$project$Surface$controls = function (model) {
 																	[
 																		committed,
 																		$author$project$Surface$menuBlocked(model) ? 'Awaiting native confirmation' : (_Utils_eq(
-																		menu.fN,
+																		menu.fP,
 																		$elm$core$Maybe$Just(index)) ? 'Selected' : '')
 																	])));
 														return {
 															f: _Utils_ap(
-																item.el,
+																item.em,
 																$author$project$Surface$menuBlocked(model) ? ('; ' + detail) : ''),
 															e: detail,
 															g: _Utils_ap(
 																prefix,
 																$elm$core$String$fromInt(index)),
-															fd: ready && item.fd,
+															ff: ready && item.ff,
 															cl: _Utils_ap(
 																prefix,
 																$elm$core$String$fromInt(index)),
-															el: item.el,
-															aJ: (ready && item.fd) ? $elm$core$Maybe$Just(
+															em: item.em,
+															aJ: (ready && item.ff) ? $elm$core$Maybe$Just(
 																$author$project$Desktop$Window(
 																	$author$project$TaskbarShell$MenuEvent(
-																		A3($author$project$Menu$Activate, menu.cl, menu.dk, index)))) : $elm$core$Maybe$Nothing
+																		A3($author$project$Menu$Activate, menu.cl, menu.dl, index)))) : $elm$core$Maybe$Nothing
 														};
 													});
 												var snap = A2(
@@ -9554,9 +9660,9 @@ var $author$project$Surface$controls = function (model) {
 																	f: 'Open snapping',
 																	e: '',
 																	g: prefix + 'snap',
-																	fd: ready,
+																	ff: ready,
 																	cl: 'control:snap-open',
-																	el: 'Snap window',
+																	em: 'Snap window',
 																	aJ: ready ? A2(
 																		$elm$core$Maybe$map,
 																		function (stamp) {
@@ -9576,7 +9682,7 @@ var $author$project$Surface$controls = function (model) {
 																		geometry,
 																		$author$project$Provider$incarnation(provider));
 																},
-																model.a.b.ap));
+																model.a.b.aa));
 													},
 													$author$project$MenuBridge$currentProvider(model.a.h));
 												var applicationActions = A2(
@@ -9587,19 +9693,19 @@ var $author$project$Surface$controls = function (model) {
 																var entry = matches.a;
 																return $elm$core$Maybe$Just(
 																	{
-																		f: 'Actions for ' + entry.dA,
+																		f: 'Actions for ' + entry.dB,
 																		e: 'Declared actions and recent files',
 																		g: prefix + 'application-actions',
-																		fd: ready,
-																		cl: 'jump:open:' + $author$project$Catalog$id(entry.cU),
-																		el: 'Application actions',
+																		ff: ready,
+																		cl: 'jump:open:' + $author$project$Catalog$id(entry.cV),
+																		em: 'Application actions',
 																		aJ: ready ? A2(
 																			$elm$core$Maybe$map,
 																			function (stamp) {
 																				return A2(
 																					$author$project$Desktop$OpenJumpList,
 																					stamp,
-																					$author$project$Catalog$id(entry.cU));
+																					$author$project$Catalog$id(entry.cV));
 																			},
 																			$author$project$Desktop$capture(model)) : $elm$core$Maybe$Nothing
 																	});
@@ -9624,7 +9730,7 @@ var $author$project$Surface$controls = function (model) {
 																		},
 																		A2(
 																			$author$project$Desktop$pinGroups,
-																			$author$project$Catalog$id(entry.cU),
+																			$author$project$Catalog$id(entry.cV),
 																			model));
 																},
 																A2(
@@ -9639,16 +9745,16 @@ var $author$project$Surface$controls = function (model) {
 														f: 'Close window actions',
 														e: '',
 														g: prefix + 'close',
-														fd: true,
+														ff: true,
 														cl: 'control:menu-close',
-														el: 'Close',
+														em: 'Close',
 														aJ: $elm$core$Maybe$Just(
 															$author$project$Desktop$Window(
 																$author$project$TaskbarShell$MenuEvent(
 																	$author$project$Menu$Dismiss(menu.cl))))
 													},
 													_Utils_ap(
-														A2($elm$core$List$indexedMap, row, menu.fo),
+														A2($elm$core$List$indexedMap, row, menu.fq),
 														_Utils_ap(
 															A2(
 																$elm$core$Maybe$withDefault,
@@ -9666,9 +9772,9 @@ var $author$project$Surface$controls = function (model) {
 											if (!_v12.$) {
 												var picker = _v12.a;
 												var familyControl = function (family) {
-													var ready = $author$project$Shell$available(model.a.b) && (family.dj && ((!A2($author$project$Surface$familyBlocked, model, family.r)) && _Utils_eq(
+													var ready = $author$project$Shell$available(model.a.b) && (family.dk && ((!A2($author$project$Surface$familyBlocked, model, family.r)) && _Utils_eq(
 														$author$project$Shell$capture(model.a.b),
-														$elm$core$Maybe$Just(picker.c5))));
+														$elm$core$Maybe$Just(picker.c6))));
 													var detail = A2(
 														$elm$core$String$join,
 														' • ',
@@ -9684,18 +9790,18 @@ var $author$project$Surface$controls = function (model) {
 														f: _Utils_ap(
 															family.b_ ? 'Restore ' : 'Activate ',
 															_Utils_ap(
-																family.el,
+																family.em,
 																A2($author$project$Surface$familyBlocked, model, family.r) ? ('; ' + detail) : '')),
 														e: detail,
-														g: 'picker:' + ($author$project$Shell$stampKey(picker.c5) + (':' + ($author$project$UInt64$string(picker.fh) + (':' + $author$project$UInt64$string(family.r))))),
-														fd: ready,
+														g: 'picker:' + ($author$project$Shell$stampKey(picker.c6) + (':' + ($author$project$UInt64$string(picker.fj) + (':' + $author$project$UInt64$string(family.r))))),
+														ff: ready,
 														cl: 'family:' + $author$project$UInt64$string(family.r),
-														el: _Utils_ap(
+														em: _Utils_ap(
 															family.b_ ? 'Restore ' : 'Activate ',
-															family.el),
+															family.em),
 														aJ: ready ? $elm$core$Maybe$Just(
 															$author$project$Desktop$Window(
-																A3($author$project$TaskbarShell$Choose, picker.c5, picker.fh, family.r))) : $elm$core$Maybe$Nothing
+																A3($author$project$TaskbarShell$Choose, picker.c6, picker.fj, family.r))) : $elm$core$Maybe$Nothing
 													};
 												};
 												var families = A2(
@@ -9714,13 +9820,13 @@ var $author$project$Surface$controls = function (model) {
 													{
 														f: 'Close window picker',
 														e: '',
-														g: 'picker-close:' + ($author$project$Shell$stampKey(picker.c5) + (':' + $author$project$UInt64$string(picker.fh))),
-														fd: true,
+														g: 'picker-close:' + ($author$project$Shell$stampKey(picker.c6) + (':' + $author$project$UInt64$string(picker.fj))),
+														ff: true,
 														cl: 'control:close',
-														el: 'Close',
+														em: 'Close',
 														aJ: $elm$core$Maybe$Just(
 															$author$project$Desktop$Window(
-																A2($author$project$TaskbarShell$Close, picker.c5, picker.fh)))
+																A2($author$project$TaskbarShell$Close, picker.c6, picker.fj)))
 													},
 													_Utils_ap(
 														A2($elm$core$List$map, familyControl, families),
@@ -9747,16 +9853,16 @@ var $author$project$Settings$encodeValues = function (values) {
 				_Utils_Tuple2(
 				'theme',
 				$elm$json$Json$Encode$string(
-					$author$project$Settings$themeName(values.de))),
+					$author$project$Settings$themeName(values.df))),
 				_Utils_Tuple2(
 				'textScale',
 				$elm$json$Json$Encode$int(values.cy)),
 				_Utils_Tuple2(
 				'effectsOff',
-				$elm$json$Json$Encode$bool(values.cQ)),
+				$elm$json$Json$Encode$bool(values.cR)),
 				_Utils_Tuple2(
 				'reducedTransparency',
-				$elm$json$Json$Encode$bool(values.c$))
+				$elm$json$Json$Encode$bool(values.c0))
 			]));
 };
 var $author$project$Notifications$focusedIdentity = function (model) {
@@ -9765,14 +9871,14 @@ var $author$project$Notifications$focusedIdentity = function (model) {
 		A2(
 			$elm$core$Basics$composeR,
 			function ($) {
-				return $.fR;
+				return $.fT;
 			},
 			$author$project$Notifications$identity),
 		model.ci);
 };
 var $author$project$Provider$geometryObservation = function (_v0) {
 	var state = _v0;
-	return state.ap;
+	return state.aa;
 };
 var $elm$json$Json$Encode$list = F2(
 	function (func, entries) {
@@ -9785,11 +9891,11 @@ var $elm$json$Json$Encode$list = F2(
 	});
 var $author$project$Provider$getBinding = function (_v0) {
 	var value = _v0;
-	return value.dk;
+	return value.dl;
 };
 var $author$project$Provider$menuBinding = $author$project$Provider$getBinding;
 var $author$project$Surface$mode = function (model) {
-	return (!_Utils_eq(model.o, $elm$core$Maybe$Nothing)) ? 'jump' : (model.p ? 'files' : (model.v ? 'system' : (model.t ? 'notifications' : (model.n ? 'settings' : ((!_Utils_eq(model.x, $elm$core$Maybe$Nothing)) ? 'snap' : ($author$project$Desktop$switcherOpen(model) ? 'switcher' : (model.m ? 'overview' : (model.q ? 'applications' : ((!_Utils_eq(
+	return (!_Utils_eq(model.o, $elm$core$Maybe$Nothing)) ? 'jump' : (model.p ? 'files' : (model.v ? 'system' : (model.t ? 'notifications' : (model.n ? 'settings' : ((!_Utils_eq(model.x, $elm$core$Maybe$Nothing)) ? 'snap' : ($author$project$Desktop$switcherOpen(model) ? 'switcher' : (model.l ? 'overview' : (model.q ? 'applications' : ((!_Utils_eq(
 		$author$project$MenuBridge$menuSnapshot(model.a.h).aI,
 		$elm$core$Maybe$Nothing)) ? 'menu' : ((!_Utils_eq(model.a.J, $elm$core$Maybe$Nothing)) ? 'picker' : 'closed'))))))))));
 };
@@ -9802,7 +9908,7 @@ var $author$project$Motion$name = function (profile) {
 };
 var $author$project$Provider$nativeBinding = function (_v0) {
 	var value = _v0;
-	return value.P.er;
+	return value.P.es;
 };
 var $author$project$Effects$Cancelled = 3;
 var $author$project$Surface$reservationReason = 'Window action awaits native confirmation. Refresh status only reads observations; it does not retry the action.';
@@ -9818,7 +9924,7 @@ var $author$project$Shell$status = function (model) {
 				function ($) {
 					return $.W;
 				},
-				model._.fS);
+				model._.fU);
 			_v0$3:
 			while (true) {
 				if (!_v0.$) {
@@ -9828,10 +9934,10 @@ var $author$project$Shell$status = function (model) {
 							return 'Applying window change…';
 						case 4:
 							var _v2 = _v0.a;
-							return model.ft + ' The last request could not be confirmed.';
+							return model.fv + ' The last request could not be confirmed.';
 						case 2:
 							var _v3 = _v0.a;
-							return model.ft + ' The window change was refused.';
+							return model.fv + ' The window change was refused.';
 						default:
 							break _v0$3;
 					}
@@ -9839,14 +9945,14 @@ var $author$project$Shell$status = function (model) {
 					break _v0$3;
 				}
 			}
-			return model.ft;
+			return model.fv;
 		}
 	}
 };
 var $author$project$Surface$windowNotice = function (model) {
 	var subject = function (transaction) {
 		var operation = function () {
-			var _v3 = transaction.aa.bh;
+			var _v3 = transaction.ab.bh;
 			switch (_v3.$) {
 				case 0:
 					return 'Minimize';
@@ -9879,14 +9985,14 @@ var $author$project$Surface$windowNotice = function (model) {
 				A2(
 					$elm$core$Basics$composeR,
 					function ($) {
-						return $.el;
+						return $.em;
 					},
 					$elm$core$String$left(512)),
 				$elm$core$List$head(
 					A2(
 						$elm$core$List$filter,
 						function (family) {
-							return _Utils_eq(family.r, transaction.aa.aq);
+							return _Utils_eq(family.r, transaction.ab.ar);
 						},
 						A2(
 							$elm$core$List$concatMap,
@@ -9896,7 +10002,7 @@ var $author$project$Surface$windowNotice = function (model) {
 							$author$project$TaskbarShell$groups(model.a))))));
 		return _Utils_Tuple2(operation, label);
 	};
-	var _v0 = model.a.b._.fS;
+	var _v0 = model.a.b._.fU;
 	if (!_v0.$) {
 		var transaction = _v0.a;
 		var _v1 = subject(transaction);
@@ -9921,35 +10027,43 @@ var $author$project$Surface$windowNotice = function (model) {
 };
 var $author$project$Surface$notice = function (model) {
 	if (!_Utils_eq(model.o, $elm$core$Maybe$Nothing)) {
-		return (!_Utils_eq(model.aZ, $elm$core$Maybe$Nothing)) ? 'Reading application actions…' : model.ar.ft;
+		return (!_Utils_eq(model.aZ, $elm$core$Maybe$Nothing)) ? 'Reading application actions…' : model.as.fv;
 	} else {
 		if (model.p) {
-			return (!_Utils_eq(model.aW, $elm$core$Maybe$Nothing)) ? 'Reading Files state…' : model.T.ft;
+			return (!_Utils_eq(model.aW, $elm$core$Maybe$Nothing)) ? 'Reading Files state…' : model.T.fv;
 		} else {
 			if (model.v) {
-				return (!_Utils_eq(model.aT, $elm$core$Maybe$Nothing)) ? 'Reading native system state…' : ((!_Utils_eq(model.s, $elm$core$Maybe$Nothing)) ? 'Confirm or cancel the requested system change.' : model.ak.ft);
+				return (!_Utils_eq(model.aT, $elm$core$Maybe$Nothing)) ? 'Reading native system state…' : ((!_Utils_eq(model.s, $elm$core$Maybe$Nothing)) ? 'Confirm or cancel the requested system change.' : model.am.fv);
 			} else {
 				if (model.t) {
-					return (!_Utils_eq(model.a0, $elm$core$Maybe$Nothing)) ? 'Loading notifications…' : model.C.ft;
+					return (!_Utils_eq(model.a0, $elm$core$Maybe$Nothing)) ? 'Loading notifications…' : model.C.fv;
 				} else {
 					if (model.n) {
-						return ((!_Utils_eq(model.bo, $elm$core$Maybe$Nothing)) ? 'Loading settings…' : model.aj.ft) + (' · ' + model.ac.ft);
+						return ((!_Utils_eq(model.bo, $elm$core$Maybe$Nothing)) ? 'Loading settings…' : model.al.fv) + (' · ' + model.ae.fv);
 					} else {
 						if ($author$project$Desktop$switcherOpen(model)) {
-							return ($author$project$Switcher$phase(model.i) === 1) ? 'Loading window activation history…' : ((!_Utils_eq(model.ah, $elm$core$Maybe$Nothing)) ? 'Alt+Tab: next window. Alt+Shift+Tab: previous. Release Alt: activate. Escape: cancel.' : 'Tab or Right: next window. Shift+Tab or Left: previous. Enter: activate. Escape: cancel.');
+							return ($author$project$Switcher$phase(model.i) === 1) ? 'Loading window activation history…' : ((!_Utils_eq(model.aj, $elm$core$Maybe$Nothing)) ? 'Alt+Tab: next window. Alt+Shift+Tab: previous. Release Alt: activate. Escape: cancel.' : 'Tab or Right: next window. Shift+Tab or Left: previous. Enter: activate. Escape: cancel.');
 						} else {
-							if (model.m) {
+							if (model.l) {
 								if ($author$project$Surface$recoveryNeeded(model)) {
 									return $author$project$Surface$windowNotice(model);
 								} else {
-									var _v0 = $author$project$TaskView$groups(model.a.b);
+									var _v0 = $author$project$Desktop$taskViewGroups(model);
 									if (_v0.$ === 1) {
 										return 'Waiting for current workspace information. Refresh window status.';
 									} else {
 										if (!_v0.a.b) {
 											return 'No windows to show. Close Task View to return.';
 										} else {
-											return 'Choose a window to reveal its workspace, or browse another workspace.';
+											var groups = _v0.a;
+											return ((!_Utils_eq(model.ac, $elm$core$Maybe$Nothing)) && (!A2(
+												$elm$core$List$any,
+												function (group) {
+													return _Utils_eq(
+														model.ac,
+														$elm$core$Maybe$Just(group.cV)) && (!$elm$core$List$isEmpty(group.a));
+												},
+												groups))) ? 'This workspace has no windows. Browse another workspace or close Task View.' : 'Choose a window to reveal its workspace, or browse another workspace.';
 										}
 									}
 								}
@@ -9999,11 +10113,11 @@ var $author$project$Surface$notice = function (model) {
 															_List_fromArray(
 																[0, 4, 2, 3]));
 													},
-													model.a.b._.fS))) {
+													model.a.b._.fU))) {
 												return $author$project$Surface$windowNotice(model);
 											} else {
-												if ((!$elm$core$String$isEmpty(model.R.ft)) && (model.R.ft !== 'Pin order saved.')) {
-													return model.R.ft;
+												if ((!$elm$core$String$isEmpty(model.R.fv)) && (model.R.fv !== 'Pin order saved.')) {
+													return model.R.fv;
 												} else {
 													var _v2 = $author$project$Launch$status(model.M);
 													switch (_v2) {
@@ -10023,10 +10137,10 @@ var $author$project$Surface$notice = function (model) {
 																	$elm$core$Maybe$map,
 																	A2(
 																		$elm$core$Basics$composeR,
-																		$author$project$Catalog$search(model.c_),
+																		$author$project$Catalog$search(model.c$),
 																		$elm$core$List$isEmpty),
 																	model.aD)) ? 'No matching applications. Change your search or Refresh.' : ($elm$core$String$isEmpty(
-																$elm$core$String$trim(model.c_)) ? 'Type to search applications.' : 'Choose a matching application.')))) : $author$project$Surface$windowNotice(model));
+																$elm$core$String$trim(model.c$)) ? 'Type to search applications.' : 'Choose a matching application.')))) : $author$project$Surface$windowNotice(model));
 													}
 												}
 											}
@@ -10055,25 +10169,25 @@ var $author$project$Surface$packet = F3(
 						$elm$core$Maybe$andThen,
 						function (_v1) {
 							var item = _v1.b;
-							var _v2 = item.e3;
+							var _v2 = item.e5;
 							if (_v2.$ === 8) {
 								return A2(
 									$elm$core$Maybe$andThen,
 									function (provider) {
 										return ((!_Utils_eq(
 											$author$project$Provider$menuBinding(provider),
-											menu.dk)) || (!_Utils_eq(
+											menu.dl)) || (!_Utils_eq(
 											$elm$core$Maybe$Just(
 												$author$project$Provider$nativeBinding(provider)),
-											model.a.b.dk))) ? $elm$core$Maybe$Nothing : A2(
+											model.a.b.dl))) ? $elm$core$Maybe$Nothing : A2(
 											$elm$core$Maybe$map,
 											function ($) {
-												return $.fB;
+												return $.fD;
 											},
 											A2(
 												$elm$core$Maybe$andThen,
 												function ($) {
-													return $.dF;
+													return $.dG;
 												},
 												A2(
 													$elm$core$Maybe$andThen,
@@ -10097,7 +10211,7 @@ var $author$project$Surface$packet = F3(
 										'menu:' + ($elm$core$String$fromInt(
 											$author$project$Menu$menuNumber(menu.cl)) + (':' + $elm$core$String$fromInt(index))));
 								},
-								A2($elm$core$List$indexedMap, $elm$core$Tuple$pair, menu.fo))));
+								A2($elm$core$List$indexedMap, $elm$core$Tuple$pair, menu.fq))));
 				},
 				$author$project$MenuBridge$menuSnapshot(model.a.h).aI);
 		};
@@ -10114,7 +10228,7 @@ var $author$project$Surface$packet = F3(
 							$elm$json$Json$Encode$string(control.g)),
 							_Utils_Tuple2(
 							'label',
-							$elm$json$Json$Encode$string(control.el)),
+							$elm$json$Json$Encode$string(control.em)),
 							_Utils_Tuple2(
 							'ariaLabel',
 							$elm$json$Json$Encode$string(control.f)),
@@ -10124,11 +10238,11 @@ var $author$project$Surface$packet = F3(
 							_Utils_Tuple2(
 							'enabled',
 							$elm$json$Json$Encode$bool(
-								control.fd && (!_Utils_eq(control.aJ, $elm$core$Maybe$Nothing)))),
+								control.ff && (!_Utils_eq(control.aJ, $elm$core$Maybe$Nothing)))),
 							_Utils_Tuple2(
 							'focusOnly',
 							$elm$json$Json$Encode$bool(
-								model.t && ((!control.fd) && _Utils_eq(
+								model.t && ((!control.ff) && _Utils_eq(
 									$author$project$Notifications$focusedIdentity(model.C),
 									$elm$core$Maybe$Just(control.cl)))))
 						]),
@@ -10172,7 +10286,7 @@ var $author$project$Surface$packet = F3(
 								function ($) {
 									return $.bs;
 								},
-								model.aj.c)))),
+								model.al.c)))),
 					_Utils_Tuple2(
 					'publication',
 					$elm$json$Json$Encode$string(
@@ -10191,8 +10305,8 @@ var $author$project$Surface$packet = F3(
 						_Utils_ap(
 							$author$project$Surface$notice(model),
 							_Utils_ap(
-								((!model.p) && ((!_Utils_eq(model.T.ex, $elm$core$Maybe$Nothing)) || A2($elm$core$String$startsWith, 'Files:', model.T.ft))) ? (' · ' + model.T.ft) : '',
-								(_Utils_eq(model.o, $elm$core$Maybe$Nothing) && ((!_Utils_eq(model.ar.ex, $elm$core$Maybe$Nothing)) || A2($elm$core$String$startsWith, 'Application action:', model.ar.ft))) ? (' · ' + model.ar.ft) : '')))),
+								((!model.p) && ((!_Utils_eq(model.T.ey, $elm$core$Maybe$Nothing)) || A2($elm$core$String$startsWith, 'Files:', model.T.fv))) ? (' · ' + model.T.fv) : '',
+								(_Utils_eq(model.o, $elm$core$Maybe$Nothing) && ((!_Utils_eq(model.as.ey, $elm$core$Maybe$Nothing)) || A2($elm$core$String$startsWith, 'Application action:', model.as.fv))) ? (' · ' + model.as.fv) : '')))),
 					_Utils_Tuple2(
 					'bar',
 					A2(
@@ -10209,7 +10323,7 @@ var $author$project$Surface$packet = F3(
 	});
 var $author$project$SurfaceController$frame = function (_v0) {
 	var model = _v0;
-	return A3($author$project$Surface$packet, model.eF, model.em, model.d);
+	return A3($author$project$Surface$packet, model.eG, model.en, model.d);
 };
 var $elm$json$Json$Encode$null = _Json_encodeNull;
 var $author$project$ReceiptRouter$count = function (_v0) {
@@ -10218,7 +10332,7 @@ var $author$project$ReceiptRouter$count = function (_v0) {
 };
 var $author$project$MenuBridge$receiptCount = function (_v0) {
 	var state = _v0;
-	return $author$project$ReceiptRouter$count(state.au);
+	return $author$project$ReceiptRouter$count(state.av);
 };
 var $author$project$Effects$statusName = function (status) {
 	switch (status) {
@@ -10277,10 +10391,10 @@ var $author$project$Inspection$packet = function (controller) {
 									$elm$core$String$fromInt(index)))),
 							_Utils_Tuple2(
 							'label',
-							$elm$json$Json$Encode$string(item.el)),
+							$elm$json$Json$Encode$string(item.em)),
 							_Utils_Tuple2(
 							'enabled',
-							$elm$json$Json$Encode$bool(item.fd))
+							$elm$json$Json$Encode$bool(item.ff))
 						]));
 			});
 		return $elm$json$Json$Encode$object(
@@ -10319,13 +10433,13 @@ var $author$project$Inspection$packet = function (controller) {
 					A2(
 						$elm$core$Maybe$withDefault,
 						$elm$json$Json$Encode$null,
-						A2($elm$core$Maybe$map, $elm$json$Json$Encode$int, current.fN))),
+						A2($elm$core$Maybe$map, $elm$json$Json$Encode$int, current.fP))),
 					_Utils_Tuple2(
 					'actions',
 					A2(
 						$elm$json$Json$Encode$list,
 						$elm$core$Basics$identity,
-						A2($elm$core$List$indexedMap, row, current.fo)))
+						A2($elm$core$List$indexedMap, row, current.fq)))
 				]));
 	};
 	var pickerRecord = function (current) {
@@ -10339,7 +10453,7 @@ var $author$project$Inspection$packet = function (controller) {
 							$author$project$UInt64$string(item.r))),
 						_Utils_Tuple2(
 						'title',
-						$elm$json$Json$Encode$string(item.el)),
+						$elm$json$Json$Encode$string(item.em)),
 						_Utils_Tuple2(
 						'state',
 						$elm$json$Json$Encode$string(
@@ -10347,7 +10461,7 @@ var $author$project$Inspection$packet = function (controller) {
 						_Utils_Tuple2(
 						'domId',
 						$elm$json$Json$Encode$string(
-							'picker:' + ($author$project$Shell$stampKey(current.c5) + (':' + ($author$project$UInt64$string(current.fh) + (':' + $author$project$UInt64$string(item.r)))))))
+							'picker:' + ($author$project$Shell$stampKey(current.c6) + (':' + ($author$project$UInt64$string(current.fj) + (':' + $author$project$UInt64$string(item.r)))))))
 					]));
 		};
 		return $elm$json$Json$Encode$object(
@@ -10356,11 +10470,11 @@ var $author$project$Inspection$packet = function (controller) {
 					_Utils_Tuple2(
 					'generation',
 					$elm$json$Json$Encode$string(
-						$author$project$UInt64$string(current.fh))),
+						$author$project$UInt64$string(current.fj))),
 					_Utils_Tuple2(
 					'closeId',
 					$elm$json$Json$Encode$string(
-						'picker-close:' + ($author$project$Shell$stampKey(current.c5) + (':' + $author$project$UInt64$string(current.fh))))),
+						'picker-close:' + ($author$project$Shell$stampKey(current.c6) + (':' + $author$project$UInt64$string(current.fj))))),
 					_Utils_Tuple2(
 					'selections',
 					A2(
@@ -10419,7 +10533,7 @@ var $author$project$Inspection$packet = function (controller) {
 							A2(
 								$elm$core$Maybe$map,
 								function ($) {
-									return $.el;
+									return $.em;
 								},
 								$elm$core$List$head(item.aG))))),
 					_Utils_Tuple2(
@@ -10482,7 +10596,7 @@ var $author$project$Inspection$packet = function (controller) {
 												return $.W;
 											},
 											$author$project$Effects$statusName),
-										shell._.fS)))),
+										shell._.fU)))),
 							_Utils_Tuple2(
 							'groups',
 							A2(
@@ -10504,7 +10618,7 @@ var $author$project$Inspection$packet = function (controller) {
 							_Utils_Tuple2(
 							'outstanding',
 							$elm$json$Json$Encode$int(
-								$author$project$MenuBridge$menuSnapshot(model.h).fx)),
+								$author$project$MenuBridge$menuSnapshot(model.h).fz)),
 							_Utils_Tuple2(
 							'registry',
 							$elm$json$Json$Encode$int(
@@ -10545,23 +10659,23 @@ var $author$project$Notifications$arrivals = F2(
 		if ((!_v0.a.$) && (!_v0.b.$)) {
 			var old = _v0.a.a;
 			var current = _v0.b.a;
-			return ((!current.dj) || ((!_Utils_eq(current.c7, old.c7)) || ((A2($author$project$UInt64$compare, current.c2, old.c2) !== 2) || after.fD.cP))) ? _List_Nil : A2(
+			return ((!current.dk) || ((!_Utils_eq(current.c8, old.c8)) || ((A2($author$project$UInt64$compare, current.c3, old.c3) !== 2) || after.fF.cQ))) ? _List_Nil : A2(
 				$elm$core$List$sortWith,
 				F2(
 					function (a, b) {
-						return A2($author$project$UInt64$compare, a.aq, b.aq);
+						return A2($author$project$UInt64$compare, a.ar, b.ar);
 					}),
 				A2(
 					$elm$core$List$filter,
 					function (entry) {
-						return (entry.dc === 'live') && (!A2(
+						return (entry.dd === 'live') && (!A2(
 							$elm$core$List$any,
 							function (prior) {
-								return _Utils_eq(prior.aq, entry.aq);
+								return _Utils_eq(prior.ar, entry.ar);
 							},
-							old.af));
+							old.ah));
 					},
-					current.af));
+					current.ah));
 		} else {
 			return _List_Nil;
 		}
@@ -10573,7 +10687,7 @@ var $author$project$Notifications$clearFocus = function (model) {
 };
 var $author$project$Notifications$Critical = 2;
 var $author$project$Notifications$critical = function (entry) {
-	return entry.dg === 2;
+	return entry.dh === 2;
 };
 var $author$project$AdapterNotice$name = function (source) {
 	switch (source) {
@@ -10608,7 +10722,7 @@ var $author$project$AdapterNotice$encode = function (notice) {
 				_Utils_Tuple2(
 				'request',
 				$elm$json$Json$Encode$string(
-					$author$project$UInt64$string(notice.c1))),
+					$author$project$UInt64$string(notice.c2))),
 				_Utils_Tuple2(
 				'service',
 				A2(
@@ -10617,7 +10731,7 @@ var $author$project$AdapterNotice$encode = function (notice) {
 					A2(
 						$elm$core$Maybe$map,
 						A2($elm$core$Basics$composeR, $author$project$UInt64$string, $elm$json$Json$Encode$string),
-						notice.c7))),
+						notice.c8))),
 				_Utils_Tuple2(
 				'revision',
 				A2(
@@ -10626,7 +10740,7 @@ var $author$project$AdapterNotice$encode = function (notice) {
 					A2(
 						$elm$core$Maybe$map,
 						A2($elm$core$Basics$composeR, $author$project$UInt64$string, $elm$json$Json$Encode$string),
-						notice.c2)))
+						notice.c3)))
 			]));
 };
 var $author$project$Notifications$encodeIntent = function (value) {
@@ -10636,7 +10750,7 @@ var $author$project$Notifications$encodeIntent = function (value) {
 				_Utils_Tuple2(
 				'service',
 				$elm$json$Json$Encode$string(
-					$author$project$UInt64$string(value.c7))),
+					$author$project$UInt64$string(value.c8))),
 				_Utils_Tuple2(
 				'id',
 				$elm$json$Json$Encode$string(
@@ -10644,13 +10758,13 @@ var $author$project$Notifications$encodeIntent = function (value) {
 				_Utils_Tuple2(
 				'incarnation',
 				$elm$json$Json$Encode$string(
-					$author$project$UInt64$string(value.aq))),
+					$author$project$UInt64$string(value.ar))),
 				_Utils_Tuple2(
 				'producer',
-				$elm$json$Json$Encode$string(value.ab)),
+				$elm$json$Json$Encode$string(value.ad)),
 				_Utils_Tuple2(
 				'action',
-				$elm$json$Json$Encode$string(value.e3)),
+				$elm$json$Json$Encode$string(value.e5)),
 				_Utils_Tuple2(
 				'verb',
 				$elm$json$Json$Encode$string(value.cb))
@@ -10658,7 +10772,7 @@ var $author$project$Notifications$encodeIntent = function (value) {
 };
 var $author$project$Notifications$same = F3(
 	function (choice, service, entry) {
-		return _Utils_eq(choice.c7, service) && (_Utils_eq(choice.cl, entry.cl) && (_Utils_eq(choice.aq, entry.aq) && _Utils_eq(choice.ab, entry.ab)));
+		return _Utils_eq(choice.c8, service) && (_Utils_eq(choice.cl, entry.cl) && (_Utils_eq(choice.ar, entry.ar) && _Utils_eq(choice.ad, entry.ad)));
 	});
 var $author$project$Notifications$expirations = F2(
 	function (before, after) {
@@ -10666,27 +10780,27 @@ var $author$project$Notifications$expirations = F2(
 		if ((!_v0.a.$) && (!_v0.b.$)) {
 			var old = _v0.a.a;
 			var current = _v0.b.a;
-			return ((!_Utils_eq(current.c7, old.c7)) || ((A2($author$project$UInt64$compare, current.c2, old.c2) !== 2) || after.fD.cP)) ? _List_Nil : A2(
+			return ((!_Utils_eq(current.c8, old.c8)) || ((A2($author$project$UInt64$compare, current.c3, old.c3) !== 2) || after.fF.cQ)) ? _List_Nil : A2(
 				$elm$core$List$sortWith,
 				F2(
 					function (a, b) {
-						return A2($author$project$UInt64$compare, a.aq, b.aq);
+						return A2($author$project$UInt64$compare, a.ar, b.ar);
 					}),
 				A2(
 					$elm$core$List$filter,
 					function (entry) {
-						return (entry.dc === 'expired') && (A2(
+						return (entry.dd === 'expired') && (A2(
 							$elm$core$List$any,
 							function (prior) {
-								return (prior.dc === 'live') && (_Utils_eq(prior.cl, entry.cl) && (_Utils_eq(prior.aq, entry.aq) && _Utils_eq(prior.ab, entry.ab)));
+								return (prior.dd === 'live') && (_Utils_eq(prior.cl, entry.cl) && (_Utils_eq(prior.ar, entry.ar) && _Utils_eq(prior.ad, entry.ad)));
 							},
-							old.af) && (A2(
+							old.ah) && (A2(
 							$elm$core$Maybe$withDefault,
 							false,
 							A2(
 								$elm$core$Maybe$map,
 								function (selected) {
-									return A3($author$project$Notifications$same, selected.fR, current.c7, entry);
+									return A3($author$project$Notifications$same, selected.fT, current.c8, entry);
 								},
 								before.ci)) || A2(
 							$elm$core$Maybe$withDefault,
@@ -10694,11 +10808,11 @@ var $author$project$Notifications$expirations = F2(
 							A2(
 								$elm$core$Maybe$map,
 								function (waiting) {
-									return A3($author$project$Notifications$same, waiting.fR, current.c7, entry);
+									return A3($author$project$Notifications$same, waiting.fT, current.c8, entry);
 								},
-								before.ex))));
+								before.ey))));
 					},
-					current.af));
+					current.ah));
 		} else {
 			return _List_Nil;
 		}
@@ -10711,25 +10825,25 @@ var $author$project$Launch$refusal = function (_v0) {
 		var _v2 = _v1.b;
 		return $elm$core$Maybe$Just(
 			{
-				d2: intent.d2,
-				aa: $elm$json$Json$Encode$object(
+				d3: intent.d3,
+				ab: $elm$json$Json$Encode$object(
 					_List_fromArray(
 						[
 							_Utils_Tuple2(
 							'request',
 							$elm$json$Json$Encode$string(
-								$author$project$UInt64$string(intent.c1))),
+								$author$project$UInt64$string(intent.c2))),
 							_Utils_Tuple2(
 							'lifetime',
 							$elm$json$Json$Encode$string(
-								$author$project$UInt64$string(intent.fp))),
+								$author$project$UInt64$string(intent.fr))),
 							_Utils_Tuple2(
 							'generation',
 							$elm$json$Json$Encode$string(
-								$author$project$UInt64$string(intent.fh))),
+								$author$project$UInt64$string(intent.fj))),
 							_Utils_Tuple2(
 							'entry',
-							$elm$json$Json$Encode$string(intent.d2))
+							$elm$json$Json$Encode$string(intent.d3))
 						]))
 			});
 	} else {
@@ -10800,9 +10914,9 @@ var $author$project$OutcomeAnnouncements$settings = function (model) {
 	return A2(
 		$elm$core$Maybe$andThen,
 		function (outcome) {
-			return (outcome.fJ === 1) ? $elm$core$Maybe$Just(outcome.c1) : $elm$core$Maybe$Nothing;
+			return (outcome.fL === 1) ? $elm$core$Maybe$Just(outcome.c2) : $elm$core$Maybe$Nothing;
 		},
-		model.aj.cZ);
+		model.al.c_);
 };
 var $elm$core$List$takeReverse = F3(
 	function (n, list, kept) {
@@ -10941,7 +11055,7 @@ var $author$project$Transfer$encode = function (p) {
 				_Utils_Tuple2(
 				'sourceGeneration',
 				$elm$json$Json$Encode$string(
-					$author$project$UInt64$string(p.da))),
+					$author$project$UInt64$string(p.db))),
 				_Utils_Tuple2(
 				'destination',
 				$elm$json$Json$Encode$string(p.bx))
@@ -10953,16 +11067,16 @@ var $author$project$Effects$encodeContext = function (context) {
 			[
 				_Utils_Tuple2(
 				'lifetime',
-				$author$project$Effects$counter(context.fp)),
+				$author$project$Effects$counter(context.fr)),
 				_Utils_Tuple2(
 				'epoch',
-				$author$project$Effects$counter(context.fe)),
+				$author$project$Effects$counter(context.fg)),
 				_Utils_Tuple2(
 				'output',
 				$author$project$Effects$counter(context.y)),
 				_Utils_Tuple2(
 				'revision',
-				$author$project$Effects$counter(context.c2))
+				$author$project$Effects$counter(context.c3))
 			]));
 };
 var $elm$json$Json$Encode$float = _Json_wrap;
@@ -10975,7 +11089,7 @@ var $author$project$Snap$encodeProposal = function (proposed) {
 				$elm$json$Json$Encode$string(proposed.cu)),
 				_Utils_Tuple2(
 				'geometry',
-				A2($elm$json$Json$Encode$list, $elm$json$Json$Encode$float, proposed.ap)),
+				A2($elm$json$Json$Encode$list, $elm$json$Json$Encode$float, proposed.aa)),
 				_Utils_Tuple2(
 				'monitor',
 				$elm$json$Json$Encode$string(
@@ -11025,13 +11139,13 @@ var $author$project$Effects$encodeIntent = function (intent) {
 				[
 					_Utils_Tuple2(
 					'request',
-					$author$project$Effects$counter(intent.c1)),
+					$author$project$Effects$counter(intent.c2)),
 					_Utils_Tuple2(
 					'generation',
-					$author$project$Effects$counter(intent.fh)),
+					$author$project$Effects$counter(intent.fj)),
 					_Utils_Tuple2(
 					'incarnation',
-					$author$project$Effects$counter(intent.aq)),
+					$author$project$Effects$counter(intent.ar)),
 					_Utils_Tuple2(
 					'operation',
 					$elm$json$Json$Encode$string(
@@ -11068,7 +11182,7 @@ var $author$project$OutcomeAnnouncements$transfer = function (model) {
 	return A2(
 		$elm$core$Maybe$andThen,
 		function (transaction) {
-			var _v0 = transaction.aa.bh;
+			var _v0 = transaction.ab.bh;
 			if (_v0.$ === 7) {
 				return (transaction.W === 2) ? $elm$core$Maybe$Just(
 					$elm$json$Json$Encode$object(
@@ -11076,16 +11190,16 @@ var $author$project$OutcomeAnnouncements$transfer = function (model) {
 							[
 								_Utils_Tuple2(
 								'effectProtocol',
-								$elm$json$Json$Encode$int(transaction.ay)),
+								$elm$json$Json$Encode$int(transaction.az)),
 								_Utils_Tuple2(
 								'intent',
-								$author$project$Effects$encodeIntent(transaction.aa))
+								$author$project$Effects$encodeIntent(transaction.ab))
 							]))) : $elm$core$Maybe$Nothing;
 			} else {
 				return $elm$core$Maybe$Nothing;
 			}
 		},
-		model.a.b._.fS);
+		model.a.b._.fU);
 };
 var $author$project$OutcomeAnnouncements$observe = F3(
 	function (before, after, prior) {
@@ -11093,7 +11207,7 @@ var $author$project$OutcomeAnnouncements$observe = F3(
 		var correlated = F3(
 			function (kind, value, text) {
 				return {
-					cN: A2(
+					cO: A2(
 						$elm$json$Json$Encode$encode,
 						0,
 						$elm$json$Json$Encode$object(
@@ -11107,11 +11221,11 @@ var $author$project$OutcomeAnnouncements$observe = F3(
 									A2(
 										$elm$core$Maybe$withDefault,
 										$elm$json$Json$Encode$null,
-										A2($elm$core$Maybe$map, $author$project$Binding$encode, after.a.b.dk))),
+										A2($elm$core$Maybe$map, $author$project$Binding$encode, after.a.b.dl))),
 									_Utils_Tuple2('identity', value)
 								]))),
 					cm: false,
-					dd: text
+					de: text
 				};
 			});
 		var candidate = function () {
@@ -11120,7 +11234,7 @@ var $author$project$OutcomeAnnouncements$observe = F3(
 					$elm$core$Maybe$map,
 					function (notice) {
 						return {
-							cN: A2(
+							cO: A2(
 								$elm$json$Json$Encode$encode,
 								0,
 								$elm$json$Json$Encode$object(
@@ -11131,13 +11245,13 @@ var $author$project$OutcomeAnnouncements$observe = F3(
 											$elm$json$Json$Encode$string('adapter-unavailable')),
 											_Utils_Tuple2(
 											'binding',
-											$author$project$Binding$encode(notice.dk)),
+											$author$project$Binding$encode(notice.dl)),
 											_Utils_Tuple2(
 											'identity',
 											$author$project$AdapterNotice$encode(notice))
 										]))),
 							cm: false,
-							dd: $author$project$AdapterNotice$message(notice)
+							de: $author$project$AdapterNotice$message(notice)
 						};
 					},
 					after.F);
@@ -11150,20 +11264,20 @@ var $author$project$OutcomeAnnouncements$observe = F3(
 						function (refusal) {
 							var label = A2(
 								$elm$core$Maybe$withDefault,
-								refusal.d2,
+								refusal.d3,
 								A2(
 									$elm$core$Maybe$map,
 									function ($) {
-										return $.dA;
+										return $.dB;
 									},
 									A2(
 										$elm$core$Maybe$andThen,
-										$author$project$Catalog$lookup(refusal.d2),
+										$author$project$Catalog$lookup(refusal.d3),
 										after.aD)));
 							return A3(
 								correlated,
 								'launch-refused',
-								refusal.aa,
+								refusal.ab,
 								'Launch refused for ' + (A2($elm$core$String$left, 512, label) + '. Refresh applications, then choose again.'));
 						},
 						$author$project$OutcomeAnnouncements$launch(after));
@@ -11193,11 +11307,11 @@ var $author$project$OutcomeAnnouncements$observe = F3(
 										'settings-refused',
 										$elm$json$Json$Encode$string(
 											$author$project$UInt64$string(request)),
-										after.aj.ft);
+										after.al.fv);
 								},
 								$author$project$OutcomeAnnouncements$settings(after));
 						} else {
-							if ((!_Utils_eq(before.C.cZ, after.C.cZ)) && (!after.C.fD.cP)) {
+							if ((!_Utils_eq(before.C.c_, after.C.c_)) && (!after.C.fF.cQ)) {
 								return A2(
 									$elm$core$Maybe$andThen,
 									function (outcome) {
@@ -11211,16 +11325,16 @@ var $author$project$OutcomeAnnouncements$observe = F3(
 															_Utils_Tuple2(
 															'request',
 															$elm$json$Json$Encode$string(
-																$author$project$UInt64$string(outcome.c1))),
+																$author$project$UInt64$string(outcome.c2))),
 															_Utils_Tuple2(
 															'target',
-															$author$project$Notifications$encodeIntent(outcome.fR))
+															$author$project$Notifications$encodeIntent(outcome.fT))
 														])),
 												'Notification action refused because the target expired. Refresh notifications, then choose a current notification.')) : $elm$core$Maybe$Nothing;
 									},
-									after.C.cZ);
+									after.C.c_);
 							} else {
-								var expired = (_Utils_eq(before.a.b.dk, after.a.b.dk) && (!_Utils_eq(after.a.b.dk, $elm$core$Maybe$Nothing))) ? A2(
+								var expired = (_Utils_eq(before.a.b.dl, after.a.b.dl) && (!_Utils_eq(after.a.b.dl, $elm$core$Maybe$Nothing))) ? A2(
 									$author$project$Notifications$expirations,
 									before.t ? before.C : $author$project$Notifications$clearFocus(before.C),
 									after.C) : _List_Nil;
@@ -11236,18 +11350,18 @@ var $author$project$OutcomeAnnouncements$observe = F3(
 														_Utils_Tuple2(
 														'service',
 														$elm$json$Json$Encode$string(
-															$author$project$UInt64$string(snapshot.c7))),
+															$author$project$UInt64$string(snapshot.c8))),
 														_Utils_Tuple2(
 														'revision',
 														$elm$json$Json$Encode$string(
-															$author$project$UInt64$string(snapshot.c2))),
+															$author$project$UInt64$string(snapshot.c3))),
 														_Utils_Tuple2(
 														'incarnations',
 														A2(
 															$elm$json$Json$Encode$list,
 															function (entry) {
 																return $elm$json$Json$Encode$string(
-																	$author$project$UInt64$string(entry.aq));
+																	$author$project$UInt64$string(entry.ar));
 															},
 															expired))
 													]));
@@ -11265,7 +11379,7 @@ var $author$project$OutcomeAnnouncements$observe = F3(
 												A2(
 													$elm$core$String$join,
 													' ',
-													$elm$core$String$words(entry.dR + (': ' + entry.eS))));
+													$elm$core$String$words(entry.dS + (': ' + entry.eU))));
 										},
 										A2($elm$core$List$take, 3, expired))) + ' expired. Its actions are unavailable. Refresh notifications for current history.';
 								var clean = function (value) {
@@ -11278,9 +11392,9 @@ var $author$project$OutcomeAnnouncements$observe = F3(
 									return A2(
 										$elm$core$String$left,
 										200,
-										clean(entry.dR + (': ' + entry.eS)));
+										clean(entry.dS + (': ' + entry.eU)));
 								};
-								var arrivals = (_Utils_eq(before.a.b.dk, after.a.b.dk) && (!_Utils_eq(after.a.b.dk, $elm$core$Maybe$Nothing))) ? A2($author$project$Notifications$arrivals, before.C, after.C) : _List_Nil;
+								var arrivals = (_Utils_eq(before.a.b.dl, after.a.b.dl) && (!_Utils_eq(after.a.b.dl, $elm$core$Maybe$Nothing))) ? A2($author$project$Notifications$arrivals, before.C, after.C) : _List_Nil;
 								var details = _Utils_ap(
 									A2(
 										$elm$core$String$join,
@@ -11303,18 +11417,18 @@ var $author$project$OutcomeAnnouncements$observe = F3(
 														_Utils_Tuple2(
 														'service',
 														$elm$json$Json$Encode$string(
-															$author$project$UInt64$string(snapshot.c7))),
+															$author$project$UInt64$string(snapshot.c8))),
 														_Utils_Tuple2(
 														'revision',
 														$elm$json$Json$Encode$string(
-															$author$project$UInt64$string(snapshot.c2))),
+															$author$project$UInt64$string(snapshot.c3))),
 														_Utils_Tuple2(
 														'incarnations',
 														A2(
 															$elm$json$Json$Encode$list,
 															function (entry) {
 																return $elm$json$Json$Encode$string(
-																	$author$project$UInt64$string(entry.aq));
+																	$author$project$UInt64$string(entry.ar));
 															},
 															arrivals))
 													]));
@@ -11326,7 +11440,7 @@ var $author$project$OutcomeAnnouncements$observe = F3(
 									_Utils_update(
 										event,
 										{
-											cm: after.C.fD.ef && A2($elm$core$List$all, $author$project$Notifications$critical, arrivals)
+											cm: after.C.fF.eg && A2($elm$core$List$all, $author$project$Notifications$critical, arrivals)
 										})));
 							}
 						}
@@ -11344,7 +11458,7 @@ var $author$project$OutcomeAnnouncements$observe = F3(
 				$author$project$OutcomeAnnouncements$Model,
 				next,
 				$elm$core$Maybe$Just(
-					{cN: event.cN, cm: event.cm, bN: next, dd: event.dd}));
+					{cO: event.cO, cm: event.cm, bN: next, de: event.de}));
 		} else {
 			return prior;
 		}
@@ -11358,8 +11472,8 @@ var $author$project$OutputController$track = F2(
 			{
 				bS: A3(
 					$author$project$OutcomeAnnouncements$observe,
-					$author$project$SurfaceController$desktop(before.cM),
-					$author$project$SurfaceController$desktop(after.cM),
+					$author$project$SurfaceController$desktop(before.cN),
+					$author$project$SurfaceController$desktop(after.cN),
 					after.bS)
 			});
 	});
@@ -11405,7 +11519,7 @@ var $elm$core$Result$mapError = F2(
 	});
 var $author$project$ReconciliationFrame$Proof = F9(
 	function (protocolVersion, kind, retirementProtocol, operation, binding, requestId, queriedBinding, sequence, grantState) {
-		return {dk: binding, fi: grantState, ej: kind, bh: operation, fG: protocolVersion, eG: queriedBinding, eK: requestId, fL: retirementProtocol, bN: sequence};
+		return {dl: binding, fk: grantState, ek: kind, bh: operation, fI: protocolVersion, eH: queriedBinding, eL: requestId, fN: retirementProtocol, bN: sequence};
 	});
 var $elm$json$Json$Decode$andThen = _Json_andThen;
 var $author$project$Binding$Binding = F3(
@@ -11559,7 +11673,7 @@ var $author$project$ReconciliationTracking$announce = F3(
 							function (old) {
 								return A2($author$project$UInt64$compare, proof.bN, old.bN) === 2;
 							},
-							slot.eC));
+							slot.eD));
 				};
 				var informationalScopeChanged = A2(
 					$elm$core$Maybe$withDefault,
@@ -11567,27 +11681,27 @@ var $author$project$ReconciliationTracking$announce = F3(
 					A2(
 						$elm$core$Maybe$map,
 						function (active) {
-							return !_Utils_eq(active.eG, proof.eG);
+							return !_Utils_eq(active.eH, proof.eH);
 						},
 						model.bf));
 				var eligible = function (slot) {
-					return _Utils_eq(slot.eI.dk, proof.eG) && A2($author$project$Binding$sameLifetime, slot.eI.aa.P.fp, current);
+					return _Utils_eq(slot.eJ.dl, proof.eH) && A2($author$project$Binding$sameLifetime, slot.eJ.ab.P.fr, current);
 				};
 				var anotherActiveScope = A2(
 					$elm$core$List$any,
 					function (slot) {
-						return (!slot.c0) && A2(
+						return (!slot.c1) && A2(
 							$elm$core$Maybe$withDefault,
 							false,
 							A2(
 								$elm$core$Maybe$map,
 								function (active) {
-									return !_Utils_eq(active.eG, proof.eG);
+									return !_Utils_eq(active.eH, proof.eH);
 								},
-								slot.eC));
+								slot.eD));
 					},
 					model.N);
-				return (anotherActiveScope || (informationalScopeChanged || ((!_Utils_eq(proof.dk, current)) || (_Utils_eq(proof.eG, current) || ((!A2($elm$core$List$any, eligible, model.N)) || (!A2(
+				return (anotherActiveScope || (informationalScopeChanged || ((!_Utils_eq(proof.dl, current)) || (_Utils_eq(proof.eH, current) || ((!A2($elm$core$List$any, eligible, model.N)) || (!A2(
 					$elm$core$List$all,
 					function (slot) {
 						return (!eligible(slot)) || newer(slot);
@@ -11599,7 +11713,7 @@ var $author$project$ReconciliationTracking$announce = F3(
 							bf: A2(
 								$elm$core$List$any,
 								function (slot) {
-									return eligible(slot) && (!slot.c0);
+									return eligible(slot) && (!slot.c1);
 								},
 								model.N) ? $elm$core$Maybe$Nothing : $elm$core$Maybe$Just(proof),
 							N: A2(
@@ -11608,11 +11722,11 @@ var $author$project$ReconciliationTracking$announce = F3(
 									return eligible(slot) ? _Utils_update(
 										slot,
 										{
-											e3: $elm$core$Maybe$Nothing,
+											e5: $elm$core$Maybe$Nothing,
 											bR: $elm$core$Maybe$Nothing,
-											ap: $elm$core$Maybe$Nothing,
+											aa: $elm$core$Maybe$Nothing,
 											bd: $elm$core$Maybe$Nothing,
-											eC: $elm$core$Maybe$Just(proof)
+											eD: $elm$core$Maybe$Just(proof)
 										}) : slot;
 								},
 								model.N)
@@ -11625,7 +11739,7 @@ var $author$project$ReconciliationTracking$announce = F3(
 	});
 var $author$project$Switcher$generation = function (_v0) {
 	var model = _v0;
-	return model.fh;
+	return model.fj;
 };
 var $author$project$AdapterNotice$ApplicationActions = 3;
 var $author$project$AdapterNotice$Applications = 0;
@@ -11667,12 +11781,12 @@ var $author$project$Desktop$TaskbarGroup = function (a) {
 };
 var $author$project$Launch$advance = function (_v0) {
 	var model = _v0;
-	var _v1 = $author$project$UInt64$next(model.c2);
+	var _v1 = $author$project$UInt64$next(model.c3);
 	if (!_v1.$) {
 		var revision = _v1.a;
 		return _Utils_update(
 			model,
-			{c2: revision});
+			{c3: revision});
 	} else {
 		return _Utils_update(
 			model,
@@ -11695,23 +11809,6 @@ var $author$project$Launch$acknowledgeUnknown = F2(
 			return current;
 		}
 	});
-var $author$project$TaskView$activeWorkspace = function (shell) {
-	return A2(
-		$elm$core$Maybe$map,
-		function ($) {
-			return $.cU;
-		},
-		A2(
-			$elm$core$Maybe$andThen,
-			A2(
-				$elm$core$Basics$composeR,
-				$elm$core$List$filter(
-					function ($) {
-						return $.bt;
-					}),
-				$elm$core$List$head),
-			$author$project$TaskView$groups(shell)));
-};
 var $author$project$Switcher$Cancelled = 4;
 var $author$project$Switcher$writable = function (model) {
 	return A2(
@@ -11723,9 +11820,9 @@ var $author$project$Switcher$writable = function (model) {
 var $author$project$Switcher$cancel = F2(
 	function (token, original) {
 		var model = original;
-		return ((!_Utils_eq(token, model.fh)) || (!$author$project$Switcher$writable(model))) ? original : _Utils_update(
+		return ((!_Utils_eq(token, model.fj)) || (!$author$project$Switcher$writable(model))) ? original : _Utils_update(
 			model,
-			{af: _List_Nil, j: 4});
+			{ah: _List_Nil, j: 4});
 	});
 var $author$project$Desktop$retireSwitcher = function (model) {
 	return _Utils_update(
@@ -11753,7 +11850,7 @@ var $author$project$Desktop$advance = function (model) {
 		return $author$project$Desktop$retireSwitcher(
 			_Utils_update(
 				model,
-				{aD: $elm$core$Maybe$Nothing, A: $elm$core$Maybe$Nothing, q: false, m: false, aO: $elm$core$Maybe$Nothing}));
+				{aD: $elm$core$Maybe$Nothing, A: $elm$core$Maybe$Nothing, q: false, l: false, aO: $elm$core$Maybe$Nothing}));
 	}
 };
 var $author$project$OverviewRecovery$Choosing = F2(
@@ -11771,7 +11868,7 @@ var $author$project$PointerOwnership$blocked = F2(
 			var _v1 = model.bF;
 			if (!_v1.$) {
 				var snapshot = _v1.a;
-				return (!_Utils_eq(snapshot.dk, binding)) || (!(!snapshot.dc));
+				return (!_Utils_eq(snapshot.dl, binding)) || (!(!snapshot.dd));
 			} else {
 				return true;
 			}
@@ -11780,7 +11877,7 @@ var $author$project$PointerOwnership$blocked = F2(
 var $author$project$Desktop$canProveCatalogUnsent = F3(
 	function (binding, request, model) {
 		return _Utils_eq(
-			model.a.b.dk,
+			model.a.b.dl,
 			$elm$core$Maybe$Just(binding)) && (_Utils_eq(
 			model.A,
 			$elm$core$Maybe$Just(request)) && ((!(!model.a.b.j)) && (model.a.b.j !== 3)));
@@ -11800,7 +11897,7 @@ var $author$project$Catalog$Snapshot = F3(
 	});
 var $author$project$Catalog$Entry = F6(
 	function (identity, name, iconHint, wmclass, genericName, keywords) {
-		return {d9: genericName, fk: iconHint, cU: identity, ei: keywords, dA: name, fW: wmclass};
+		return {ea: genericName, fm: iconHint, cV: identity, ej: keywords, dB: name, fY: wmclass};
 	});
 var $author$project$Catalog$EntryId = $elm$core$Basics$identity;
 var $elm$json$Json$Decode$map4 = _Json_map4;
@@ -11981,7 +12078,7 @@ var $author$project$Catalog$decode = function (raw) {
 					$elm$core$List$map,
 					function (entry) {
 						return _Utils_Tuple2(
-							$author$project$Catalog$id(entry.cU),
+							$author$project$Catalog$id(entry.cV),
 							entry);
 					},
 					values));
@@ -12070,7 +12167,7 @@ var $author$project$Switcher$lastOrdinal = function (model) {
 var $author$project$Switcher$choose = F3(
 	function (token, root, original) {
 		var model = original;
-		return ((!_Utils_eq(token, model.fh)) || ((model.j !== 2) || (!_Utils_eq(model.c0, $elm$core$Maybe$Nothing)))) ? original : A2(
+		return ((!_Utils_eq(token, model.fj)) || ((model.j !== 2) || (!_Utils_eq(model.c1, $elm$core$Maybe$Nothing)))) ? original : A2(
 			$elm$core$Maybe$withDefault,
 			original,
 			A2(
@@ -12082,12 +12179,12 @@ var $author$project$Switcher$choose = F3(
 							ba: $elm$core$Maybe$Just(
 								{
 									r: root,
-									df: $author$project$Switcher$lastOrdinal(model)
+									dg: $author$project$Switcher$lastOrdinal(model)
 								}),
-							fN: position
+							fP: position
 						});
 				},
-				A2($author$project$Switcher$index, root, model.af)));
+				A2($author$project$Switcher$index, root, model.ah)));
 	});
 var $author$project$Desktop$WindowEffect = function (a) {
 	return {$: 0, a: a};
@@ -12199,14 +12296,145 @@ var $author$project$Desktop$catalogRequest = F2(
 var $author$project$AdapterNotice$Windows = 8;
 var $author$project$AdapterNotice$connectionLost = F2(
 	function (binding, request) {
-		return {dk: binding, c1: request, c2: $elm$core$Maybe$Nothing, c7: $elm$core$Maybe$Nothing, cv: 8};
+		return {dl: binding, c2: request, c3: $elm$core$Maybe$Nothing, c8: $elm$core$Maybe$Nothing, cv: 8};
 	});
+var $author$project$WorkspaceInventory$identityDecoder = A2(
+	$elm$json$Json$Decode$andThen,
+	function (s) {
+		return ((!$elm$core$String$isEmpty(s)) && (A2($elm$core$String$all, $elm$core$Char$isDigit, s) && ((!A2($elm$core$String$startsWith, '0', s)) && (($elm$core$String$length(s) < 19) || (($elm$core$String$length(s) === 19) && (s <= '9223372036854775807')))))) ? $elm$json$Json$Decode$succeed(s) : $elm$json$Json$Decode$fail('Ordinary workspace identity');
+	},
+	$elm$json$Json$Decode$string);
+var $elm$json$Json$Decode$null = _Json_decodeNull;
+var $elm$json$Json$Decode$oneOf = _Json_oneOf;
+var $elm$json$Json$Decode$nullable = function (decoder) {
+	return $elm$json$Json$Decode$oneOf(
+		_List_fromArray(
+			[
+				$elm$json$Json$Decode$null($elm$core$Maybe$Nothing),
+				A2($elm$json$Json$Decode$map, $elm$core$Maybe$Just, decoder)
+			]));
+};
+var $author$project$WorkspaceInventory$Row = F4(
+	function (identity, generation, monitor, outputOwnershipGeneration) {
+		return {fj: generation, cV: identity, b$: monitor, bi: outputOwnershipGeneration};
+	});
+var $author$project$WorkspaceInventory$positive = A2(
+	$elm$json$Json$Decode$andThen,
+	function (n) {
+		return (!_Utils_eq(n, $author$project$UInt64$zero)) ? $elm$json$Json$Decode$succeed(n) : $elm$json$Json$Decode$fail('Zero workspace owner');
+	},
+	$author$project$UInt64$decoder);
+var $author$project$WorkspaceInventory$strict = F2(
+	function (fields, body) {
+		return A2(
+			$elm$json$Json$Decode$andThen,
+			function (pairs) {
+				return _Utils_eq(
+					$elm$core$List$sort(
+						A2($elm$core$List$map, $elm$core$Tuple$first, pairs)),
+					$elm$core$List$sort(fields)) ? body : $elm$json$Json$Decode$fail('Workspace inventory schema');
+			},
+			$elm$json$Json$Decode$keyValuePairs($elm$json$Json$Decode$value));
+	});
+var $author$project$WorkspaceInventory$rowDecoder = A2(
+	$author$project$WorkspaceInventory$strict,
+	_List_fromArray(
+		['identity', 'generation', 'monitor', 'outputOwnershipGeneration']),
+	A5(
+		$elm$json$Json$Decode$map4,
+		$author$project$WorkspaceInventory$Row,
+		A2($elm$json$Json$Decode$field, 'identity', $author$project$WorkspaceInventory$identityDecoder),
+		A2($elm$json$Json$Decode$field, 'generation', $author$project$WorkspaceInventory$positive),
+		A2($elm$json$Json$Decode$field, 'monitor', $author$project$UInt64$decoder),
+		A2($elm$json$Json$Decode$field, 'outputOwnershipGeneration', $author$project$WorkspaceInventory$positive)));
+var $author$project$WorkspaceInventory$factsDecoder = A2(
+	$elm$json$Json$Decode$andThen,
+	function (_v0) {
+		var active = _v0.a;
+		var rows = _v0.b;
+		var ids = A2(
+			$elm$core$List$map,
+			function ($) {
+				return $.cV;
+			},
+			rows);
+		var unique = _Utils_eq(
+			$elm$core$List$length(ids),
+			$elm$core$List$length(
+				A3(
+					$elm$core$List$foldl,
+					F2(
+						function (id, xs) {
+							return A2($elm$core$List$member, id, xs) ? xs : A2($elm$core$List$cons, id, xs);
+						}),
+					_List_Nil,
+					ids)));
+		var consistent = function (row) {
+			return A2(
+				$elm$core$List$all,
+				function (other) {
+					return (!_Utils_eq(row.fj, other.fj)) || _Utils_eq(row.cV, other.cV);
+				},
+				rows) && A2(
+				$elm$core$List$all,
+				function (other) {
+					return (!_Utils_eq(row.b$, other.b$)) || _Utils_eq(row.bi, other.bi);
+				},
+				rows);
+		};
+		return (($elm$core$List$length(rows) <= 256) && (unique && (A2($elm$core$List$all, consistent, rows) && A2(
+			$elm$core$Maybe$withDefault,
+			true,
+			A2(
+				$elm$core$Maybe$map,
+				function (id) {
+					return A2($elm$core$List$member, id, ids);
+				},
+				active))))) ? $elm$json$Json$Decode$succeed(
+			_Utils_Tuple2(active, rows)) : $elm$json$Json$Decode$fail('Workspace inventory coherence');
+	},
+	A3(
+		$elm$json$Json$Decode$map2,
+		$elm$core$Tuple$pair,
+		A2(
+			$elm$json$Json$Decode$field,
+			'activeWorkspace',
+			$elm$json$Json$Decode$nullable($author$project$WorkspaceInventory$identityDecoder)),
+		A2(
+			$elm$json$Json$Decode$field,
+			'workspaces',
+			$elm$json$Json$Decode$list($author$project$WorkspaceInventory$rowDecoder))));
+var $elm$json$Json$Decode$map7 = _Json_map7;
+var $author$project$WorkspaceInventory$decode = function (raw) {
+	return $elm$core$Result$toMaybe(
+		A2(
+			$elm$json$Json$Decode$decodeValue,
+			A8(
+				$elm$json$Json$Decode$map7,
+				F7(
+					function (binding, request, sequence, revision, output, _v0, facts) {
+						return {bt: facts.a, dl: binding, y: output, c2: request, c3: revision, eO: facts.b, bN: sequence};
+					}),
+				A2($elm$json$Json$Decode$field, 'binding', $author$project$Binding$decoder),
+				A2($elm$json$Json$Decode$field, 'requestId', $author$project$WorkspaceInventory$positive),
+				A2($elm$json$Json$Decode$field, 'sequence', $author$project$WorkspaceInventory$positive),
+				A2($elm$json$Json$Decode$field, 'revision', $author$project$WorkspaceInventory$positive),
+				A2($elm$json$Json$Decode$field, 'outputGeneration', $author$project$WorkspaceInventory$positive),
+				A2(
+					$elm$json$Json$Decode$andThen,
+					function (n) {
+						return (n === 3) ? $elm$json$Json$Decode$succeed(0) : $elm$json$Json$Decode$fail('Workspace inventory version');
+					},
+					A2($elm$json$Json$Decode$field, 'geometryProtocol', $elm$json$Json$Decode$int)),
+				A2($elm$json$Json$Decode$field, 'facts', $author$project$WorkspaceInventory$factsDecoder)),
+			raw));
+};
 var $author$project$Files$disconnect = function (model) {
 	return _Utils_update(
 		model,
 		{
-			ft: (!_Utils_eq(model.ex, $elm$core$Maybe$Nothing)) ? 'Files: opening not confirmed after connection loss. Open the menu to read current state; this request will not be repeated.' : model.ft,
-			ex: $elm$core$Maybe$Nothing,
+			fv: (!_Utils_eq(model.ey, $elm$core$Maybe$Nothing)) ? 'Files: opening not confirmed after connection loss. Open the menu to read current state; this request will not be repeated.' : model.fv,
+			ey: $elm$core$Maybe$Nothing,
 			c: $elm$core$Maybe$Nothing,
 			ca: _List_Nil
 		});
@@ -12215,8 +12443,8 @@ var $author$project$JumpList$disconnect = function (model) {
 	return _Utils_update(
 		model,
 		{
-			ft: (!_Utils_eq(model.ex, $elm$core$Maybe$Nothing)) ? 'Application action: not confirmed after connection loss. This request will not be repeated.' : model.ft,
-			ex: $elm$core$Maybe$Nothing,
+			fv: (!_Utils_eq(model.ey, $elm$core$Maybe$Nothing)) ? 'Application action: not confirmed after connection loss. This request will not be repeated.' : model.fv,
+			ey: $elm$core$Maybe$Nothing,
 			c: $elm$core$Maybe$Nothing,
 			ca: _List_Nil
 		});
@@ -12245,7 +12473,7 @@ var $author$project$Desktop$motionPreferencesRequest = F2(
 var $author$project$Motion$rebind = function (model) {
 	return _Utils_update(
 		model,
-		{bT: $elm$core$Maybe$Nothing, ex: $elm$core$Maybe$Nothing, a1: $author$project$MotionPreferences$initial});
+		{bT: $elm$core$Maybe$Nothing, ey: $elm$core$Maybe$Nothing, a1: $author$project$MotionPreferences$initial});
 };
 var $author$project$Desktop$settingsRequest = F2(
 	function (binding, request) {
@@ -12307,7 +12535,7 @@ var $author$project$Provider$actionProtocol = function (action) {
 };
 var $author$project$MenuBridge$answer = F4(
 	function (bridge, shell, effects, error) {
-		return {dW: bridge, _: effects, d3: error, b: shell};
+		return {dX: bridge, _: effects, d4: error, b: shell};
 	});
 var $author$project$Menu$ReceiveFor = F3(
 	function (a, b, c) {
@@ -12386,7 +12614,7 @@ var $author$project$Menu$enabledIndices = function (items) {
 			$elm$core$List$indexedMap,
 			F2(
 				function (index, item) {
-					return item.fd ? $elm$core$Maybe$Just(index) : $elm$core$Maybe$Nothing;
+					return item.ff ? $elm$core$Maybe$Just(index) : $elm$core$Maybe$Nothing;
 				}),
 			items));
 };
@@ -12407,7 +12635,7 @@ var $author$project$Menu$orElse = F2(
 	});
 var $author$project$Menu$navigate = F2(
 	function (direction, menu) {
-		var enabled = $author$project$Menu$enabledIndices(menu.fo);
+		var enabled = $author$project$Menu$enabledIndices(menu.fq);
 		var first = $elm$core$List$head(enabled);
 		var last = $elm$core$List$head(
 			$elm$core$List$reverse(enabled));
@@ -12418,7 +12646,7 @@ var $author$project$Menu$navigate = F2(
 				case 3:
 					return last;
 				case 1:
-					var _v1 = menu.fN;
+					var _v1 = menu.fP;
 					if (_v1.$ === 1) {
 						return first;
 					} else {
@@ -12433,7 +12661,7 @@ var $author$project$Menu$navigate = F2(
 									enabled)));
 					}
 				default:
-					var _v2 = menu.fN;
+					var _v2 = menu.fP;
 					if (_v2.$ === 1) {
 						return last;
 					} else {
@@ -12452,17 +12680,17 @@ var $author$project$Menu$navigate = F2(
 		}();
 		return _Utils_update(
 			menu,
-			{fN: selected});
+			{fP: selected});
 	});
 var $author$project$Menu$outputTuple = function (_v0) {
 	var value = _v0;
-	return _Utils_Tuple2(value.y, value.fw);
+	return _Utils_Tuple2(value.y, value.fy);
 };
 var $author$project$Menu$sameTarget = F2(
 	function (_v0, _v1) {
 		var left = _v0;
 		var right = _v1;
-		return _Utils_eq(left.fR, right.fR);
+		return _Utils_eq(left.fT, right.fT);
 	});
 var $author$project$Menu$maxItems = 64;
 var $author$project$Menu$validItems = function (items) {
@@ -12475,11 +12703,11 @@ var $author$project$Menu$validItems = function (items) {
 				} else {
 					var item = remaining.a;
 					var rest = remaining.b;
-					if (A2($elm$core$List$member, item.e3, seen)) {
+					if (A2($elm$core$List$member, item.e5, seen)) {
 						return false;
 					} else {
 						var $temp$remaining = rest,
-							$temp$seen = A2($elm$core$List$cons, item.e3, seen);
+							$temp$seen = A2($elm$core$List$cons, item.e5, seen);
 						remaining = $temp$remaining;
 						seen = $temp$seen;
 						continue uniqueActions;
@@ -12493,9 +12721,9 @@ var $author$project$Menu$validItems = function (items) {
 		$elm$core$List$all,
 		function (item) {
 			return (_Utils_cmp(
-				$elm$core$String$length(item.el),
+				$elm$core$String$length(item.em),
 				$author$project$Menu$maxLabel) < 1) && (!$elm$core$String$isEmpty(
-				$elm$core$String$trim(item.el)));
+				$elm$core$String$trim(item.em)));
 		},
 		items) && A2(uniqueActions, items, _List_Nil));
 };
@@ -12529,7 +12757,7 @@ var $author$project$Menu$update = F2(
 			case 0:
 				var target = message.a;
 				var items = message.b;
-				if (state.az || ((!valid(target)) || ((!$author$project$Menu$validItems(items)) || (state.cs > 2147483647)))) {
+				if (state.aA || ((!valid(target)) || ((!$author$project$Menu$validItems(items)) || (state.cs > 2147483647)))) {
 					return unchanged;
 				} else {
 					var status = function () {
@@ -12537,9 +12765,9 @@ var $author$project$Menu$update = F2(
 							A2(
 								$elm$core$List$filter,
 								function (entry) {
-									return A2($author$project$Menu$sameTarget, entry.dk, target);
+									return A2($author$project$Menu$sameTarget, entry.dl, target);
 								},
-								state.fx));
+								state.fz));
 						if (_v1.$ === 1) {
 							return $author$project$Menu$Ready;
 						} else {
@@ -12548,10 +12776,10 @@ var $author$project$Menu$update = F2(
 						}
 					}();
 					var menu = {
-						dk: target,
+						dl: target,
 						cl: state.cs,
-						fo: items,
-						fN: $elm$core$List$head(
+						fq: items,
+						fP: $elm$core$List$head(
 							$author$project$Menu$enabledIndices(items)),
 						W: status
 					};
@@ -12572,15 +12800,15 @@ var $author$project$Menu$update = F2(
 					editMenu,
 					id,
 					function (menu) {
-						if (_Utils_eq(menu.dk, target) && valid(target)) {
-							var _v2 = A2($author$project$Menu$itemAt, index, menu.fo);
+						if (_Utils_eq(menu.dl, target) && valid(target)) {
+							var _v2 = A2($author$project$Menu$itemAt, index, menu.fq);
 							if (!_v2.$) {
 								var item = _v2.a;
-								return item.fd ? $elm$core$Maybe$Just(
+								return item.ff ? $elm$core$Maybe$Just(
 									_Utils_update(
 										menu,
 										{
-											fN: $elm$core$Maybe$Just(index)
+											fP: $elm$core$Maybe$Just(index)
 										})) : $elm$core$Maybe$Just(menu);
 							} else {
 								return $elm$core$Maybe$Just(menu);
@@ -12608,22 +12836,22 @@ var $author$project$Menu$update = F2(
 					return unchanged;
 				} else {
 					var menu = _v3.a;
-					if (state.az || ((!_Utils_eq(menu.cl, id)) || ((!_Utils_eq(menu.dk, target)) || ((!valid(target)) || (state.cr > 2147483647))))) {
+					if (state.aA || ((!_Utils_eq(menu.cl, id)) || ((!_Utils_eq(menu.dl, target)) || ((!valid(target)) || (state.cr > 2147483647))))) {
 						return unchanged;
 					} else {
 						if (A2(
 							$elm$core$List$any,
 							function (entry) {
-								return A2($author$project$Menu$sameTarget, entry.dk, target);
+								return A2($author$project$Menu$sameTarget, entry.dl, target);
 							},
-							state.fx)) {
+							state.fz)) {
 							return unchanged;
 						} else {
-							var _v4 = A2($author$project$Menu$itemAt, index, menu.fo);
+							var _v4 = A2($author$project$Menu$itemAt, index, menu.fq);
 							if (!_v4.$) {
 								var item = _v4.a;
-								if (item.fd && (_Utils_cmp(
-									$elm$core$List$length(state.fx),
+								if (item.ff && (_Utils_cmp(
+									$elm$core$List$length(state.fz),
 									$author$project$Menu$maxOutstanding) > -1)) {
 									return _Utils_Tuple2(
 										_Utils_update(
@@ -12638,9 +12866,9 @@ var $author$project$Menu$update = F2(
 											}),
 										_List_Nil);
 								} else {
-									if (item.fd) {
+									if (item.ff) {
 										var intent = state.cr;
-										var entry = {dk: target, cl: intent, bq: false};
+										var entry = {dl: target, cl: intent, bq: false};
 										return _Utils_Tuple2(
 											_Utils_update(
 												state,
@@ -12649,15 +12877,15 @@ var $author$project$Menu$update = F2(
 														_Utils_update(
 															menu,
 															{
-																fN: $elm$core$Maybe$Just(index),
+																fP: $elm$core$Maybe$Just(index),
 																W: $author$project$Menu$Pending(intent)
 															})),
 													cr: state.cr + 1,
-													fx: A2($elm$core$List$cons, entry, state.fx)
+													fz: A2($elm$core$List$cons, entry, state.fz)
 												}),
 											_List_fromArray(
 												[
-													A3($author$project$Menu$Dispatch, intent, target, item.e3)
+													A3($author$project$Menu$Dispatch, intent, target, item.e5)
 												]));
 									} else {
 										return unchanged;
@@ -12677,9 +12905,9 @@ var $author$project$Menu$update = F2(
 					A2(
 						$elm$core$List$filter,
 						function (entry) {
-							return _Utils_eq(entry.cl, intent) && _Utils_eq(entry.dk, receiptBinding);
+							return _Utils_eq(entry.cl, intent) && _Utils_eq(entry.dl, receiptBinding);
 						},
-						state.fx));
+						state.fz));
 				if (_v5.$ === 1) {
 					return unchanged;
 				} else {
@@ -12692,12 +12920,12 @@ var $author$project$Menu$update = F2(
 								current,
 								{bq: true}) : current;
 						},
-						state.fx) : A2(
+						state.fz) : A2(
 						$elm$core$List$filter,
 						function (current) {
 							return !_Utils_eq(current.cl, intent);
 						},
-						state.fx);
+						state.fz);
 					var menu = A2(
 						$elm$core$Maybe$andThen,
 						function (current) {
@@ -12738,7 +12966,7 @@ var $author$project$Menu$update = F2(
 								co: $elm$core$Maybe$Just(
 									_Utils_Tuple2(intent, outcome)),
 								aI: menu,
-								fx: outstanding
+								fz: outstanding
 							}),
 						_List_Nil);
 				}
@@ -12752,7 +12980,7 @@ var $author$project$Menu$update = F2(
 					});
 			case 6:
 				var target = message.a;
-				if (A2($elm$core$List$member, target, state.aY) || state.az) {
+				if (A2($elm$core$List$member, target, state.aY) || state.aA) {
 					return unchanged;
 				} else {
 					if (_Utils_cmp(
@@ -12761,13 +12989,13 @@ var $author$project$Menu$update = F2(
 						return _Utils_Tuple2(
 							_Utils_update(
 								state,
-								{az: true, aI: $elm$core$Maybe$Nothing}),
+								{aA: true, aI: $elm$core$Maybe$Nothing}),
 							_List_Nil);
 					} else {
 						var menu = A2(
 							$elm$core$Maybe$andThen,
 							function (current) {
-								return _Utils_eq(current.dk, target) ? $elm$core$Maybe$Nothing : $elm$core$Maybe$Just(current);
+								return _Utils_eq(current.dl, target) ? $elm$core$Maybe$Nothing : $elm$core$Maybe$Just(current);
 							},
 							state.aI);
 						var invalidated = A2($elm$core$List$cons, target, state.aY);
@@ -12782,7 +13010,7 @@ var $author$project$Menu$update = F2(
 				var output = message.a;
 				var generation = message.b;
 				var retired = _Utils_Tuple2(output, generation);
-				if (A2($elm$core$List$member, retired, state.a3) || state.az) {
+				if (A2($elm$core$List$member, retired, state.a3) || state.aA) {
 					return unchanged;
 				} else {
 					if (_Utils_cmp(
@@ -12791,7 +13019,7 @@ var $author$project$Menu$update = F2(
 						return _Utils_Tuple2(
 							_Utils_update(
 								state,
-								{az: true, aI: $elm$core$Maybe$Nothing}),
+								{aA: true, aI: $elm$core$Maybe$Nothing}),
 							_List_Nil);
 					} else {
 						var retiredOutputs = A2($elm$core$List$cons, retired, state.a3);
@@ -12799,7 +13027,7 @@ var $author$project$Menu$update = F2(
 							$elm$core$Maybe$andThen,
 							function (current) {
 								return _Utils_eq(
-									$author$project$Menu$outputTuple(current.dk),
+									$author$project$Menu$outputTuple(current.dl),
 									retired) ? $elm$core$Maybe$Nothing : $elm$core$Maybe$Just(current);
 							},
 							state.aI);
@@ -12834,8 +13062,8 @@ var $author$project$Shell$Send = function (a) {
 };
 var $author$project$Shell$refresh = function (model) {
 	var _v0 = _Utils_Tuple2(
-		model.dk,
-		$author$project$UInt64$next(model.c1));
+		model.dl,
+		$author$project$UInt64$next(model.c2));
 	if ((!_v0.a.$) && (!_v0.b.$)) {
 		var binding = _v0.a.a;
 		var request = _v0.b.a;
@@ -12846,7 +13074,7 @@ var $author$project$Shell$refresh = function (model) {
 					A: $elm$core$Maybe$Just(request),
 					j: 1,
 					a2: false,
-					c1: request
+					c2: request
 				}),
 			_List_fromArray(
 				[
@@ -12873,7 +13101,7 @@ var $author$project$Shell$refresh = function (model) {
 		return _Utils_Tuple2(
 			_Utils_update(
 				model,
-				{A: $elm$core$Maybe$Nothing, ft: 'Restart the shell to continue.', j: 3, a2: false}),
+				{A: $elm$core$Maybe$Nothing, fv: 'Restart the shell to continue.', j: 3, a2: false}),
 			_List_Nil);
 	}
 };
@@ -12883,12 +13111,12 @@ var $author$project$Shell$geometryRequest = F2(
 			return _Utils_Tuple2(model, _List_Nil);
 		} else {
 			var _v0 = _Utils_Tuple2(
-				model.dk,
-				$author$project$UInt64$next(model.c1));
+				model.dl,
+				$author$project$UInt64$next(model.c2));
 			if ((!_v0.a.$) && (!_v0.b.$)) {
 				var binding = _v0.a.a;
 				var request = _v0.b.a;
-				if ((!model.j) || ((attach && (!_Utils_eq(model.ea, $elm$core$Maybe$Nothing))) || ((!attach) && (_Utils_eq(model.ds, $elm$core$Maybe$Nothing) || (!_Utils_eq(model.eb, $elm$core$Maybe$Nothing)))))) {
+				if ((!model.j) || ((attach && (!_Utils_eq(model.eb, $elm$core$Maybe$Nothing))) || ((!attach) && (_Utils_eq(model.dt, $elm$core$Maybe$Nothing) || (!_Utils_eq(model.ec, $elm$core$Maybe$Nothing)))))) {
 					return _Utils_Tuple2(model, _List_Nil);
 				} else {
 					var common = _List_fromArray(
@@ -12929,16 +13157,16 @@ var $author$project$Shell$geometryRequest = F2(
 													return $.bN;
 												},
 												$author$project$UInt64$string),
-											model.ap))))
+											model.aa))))
 							]));
 					return _Utils_Tuple2(
 						_Utils_update(
 							model,
 							{
-								am: attach || model.am,
-								ea: attach ? $elm$core$Maybe$Just(request) : model.ea,
-								eb: attach ? $elm$core$Maybe$Nothing : $elm$core$Maybe$Just(request),
-								c1: request
+								ao: attach || model.ao,
+								eb: attach ? $elm$core$Maybe$Just(request) : model.eb,
+								ec: attach ? $elm$core$Maybe$Nothing : $elm$core$Maybe$Just(request),
+								c2: request
 							}),
 						_List_fromArray(
 							[
@@ -12960,7 +13188,7 @@ var $author$project$Shell$geometrySupported = function (model) {
 			function ($) {
 				return $._;
 			},
-			model.ds));
+			model.dt));
 };
 var $author$project$Shell$refreshObservations = function (model) {
 	if (model.X) {
@@ -12969,10 +13197,10 @@ var $author$project$Shell$refreshObservations = function (model) {
 		var _v0 = $author$project$Shell$refresh(
 			_Utils_update(
 				model,
-				{aA: false}));
+				{aB: false}));
 		var legacy = _v0.a;
 		var commands = _v0.b;
-		if (legacy.am) {
+		if (legacy.ao) {
 			var _v1 = A2($author$project$Shell$geometryRequest, true, legacy);
 			var attached = _v1.a;
 			var attachCommands = _v1.b;
@@ -12994,17 +13222,17 @@ var $author$project$Shell$refreshObservations = function (model) {
 	}
 };
 var $author$project$Shell$drainNotifications = function (model) {
-	return model.a2 ? (((!model.j) || ((model.j === 3) || _Utils_eq(model.dk, $elm$core$Maybe$Nothing))) ? _Utils_Tuple2(
+	return model.a2 ? (((!model.j) || ((model.j === 3) || _Utils_eq(model.dl, $elm$core$Maybe$Nothing))) ? _Utils_Tuple2(
 		_Utils_update(
 			model,
 			{a2: false}),
-		_List_Nil) : ((model.X || (model.d$ || ($author$project$Effects$pending(model._) || ((!_Utils_eq(model.A, $elm$core$Maybe$Nothing)) || (!_Utils_eq(model.ea, $elm$core$Maybe$Nothing)))))) ? _Utils_Tuple2(model, _List_Nil) : $author$project$Shell$refresh(model))) : (((!model.X) && ((!model.d$) && (model.aA && ((model.j === 2) && ((!$author$project$Effects$pending(model._)) && (_Utils_eq(model.A, $elm$core$Maybe$Nothing) && (_Utils_eq(model.eb, $elm$core$Maybe$Nothing) && _Utils_eq(model.ea, $elm$core$Maybe$Nothing)))))))) ? $author$project$Shell$refreshObservations(model) : _Utils_Tuple2(model, _List_Nil));
+		_List_Nil) : ((model.X || (model.d0 || ($author$project$Effects$pending(model._) || ((!_Utils_eq(model.A, $elm$core$Maybe$Nothing)) || (!_Utils_eq(model.eb, $elm$core$Maybe$Nothing)))))) ? _Utils_Tuple2(model, _List_Nil) : $author$project$Shell$refresh(model))) : (((!model.X) && ((!model.d0) && (model.aB && ((model.j === 2) && ((!$author$project$Effects$pending(model._)) && (_Utils_eq(model.A, $elm$core$Maybe$Nothing) && (_Utils_eq(model.ec, $elm$core$Maybe$Nothing) && _Utils_eq(model.eb, $elm$core$Maybe$Nothing)))))))) ? $author$project$Shell$refreshObservations(model) : _Utils_Tuple2(model, _List_Nil));
 };
 var $author$project$Shell$resumeNotifications = function (model) {
 	return $author$project$Shell$drainNotifications(
 		_Utils_update(
 			model,
-			{d$: false}));
+			{d0: false}));
 };
 var $author$project$MenuBridge$cancelPrepared = F3(
 	function (reason, shell, model) {
@@ -13037,20 +13265,20 @@ var $author$project$Shell$captureGeometry = function (model) {
 	return A2(
 		$elm$core$Maybe$map,
 		function (observed) {
-			return A3($author$project$Shell$Stamp, observed.dk, observed.P.y, observed.P.c2);
+			return A3($author$project$Shell$Stamp, observed.dl, observed.P.y, observed.P.c3);
 		},
-		model.ap);
+		model.aa);
 };
 var $author$project$Provider$nativeContext = function (_v0) {
 	var value = _v0;
-	return {fe: value.P.d8, fp: value.P.fp, y: value.P.fw, c2: value.P.c2};
+	return {fg: value.P.d9, fr: value.P.fr, y: value.P.fy, c3: value.P.c3};
 };
 var $author$project$MenuBridge$sameWindowFacts = F2(
 	function (before, after) {
 		var ordered = $elm$core$List$sortWith(
 			F2(
 				function (a, b) {
-					return A2($author$project$UInt64$compare, a.aq, b.aq);
+					return A2($author$project$UInt64$compare, a.ar, b.ar);
 				}));
 		return _Utils_eq(
 			ordered(before),
@@ -13058,11 +13286,11 @@ var $author$project$MenuBridge$sameWindowFacts = F2(
 	});
 var $author$project$MenuBridge$compatiblePrepared = F2(
 	function (slot, shell) {
-		var original = slot.ax.c;
+		var original = slot.ay.c;
 		var sameGeometry = function () {
 			var _v0 = _Utils_Tuple2(
 				$author$project$Provider$geometryObservation(original),
-				shell.ap);
+				shell.aa);
 			if (_v0.a.$ === 1) {
 				var _v1 = _v0.a;
 				return _Utils_eq(slot.bd, $elm$core$Maybe$Nothing);
@@ -13070,41 +13298,41 @@ var $author$project$MenuBridge$compatiblePrepared = F2(
 				if (!_v0.b.$) {
 					var before = _v0.a.a;
 					var after = _v0.b.a;
-					return _Utils_eq(before.dk, after.dk) && (_Utils_eq(before.P.fp, after.P.fp) && (_Utils_eq(before.P.fe, after.P.fe) && (_Utils_eq(before.P.y, after.P.y) && ((!(!A2($author$project$UInt64$compare, after.P.c2, before.P.c2))) && ((!(!A2($author$project$UInt64$compare, after.bN, before.bN))) && ((!after.e6) && A2($author$project$MenuBridge$sameWindowFacts, before.a, after.a)))))));
+					return _Utils_eq(before.dl, after.dl) && (_Utils_eq(before.P.fr, after.P.fr) && (_Utils_eq(before.P.fg, after.P.fg) && (_Utils_eq(before.P.y, after.P.y) && ((!(!A2($author$project$UInt64$compare, after.P.c3, before.P.c3))) && ((!(!A2($author$project$UInt64$compare, after.bN, before.bN))) && ((!after.e8) && A2($author$project$MenuBridge$sameWindowFacts, before.a, after.a)))))));
 				} else {
 					return false;
 				}
 			}
 		}();
 		var old = $author$project$Provider$nativeContext(original);
-		var legacy = shell._.as;
+		var legacy = shell._.at;
 		var sameLegacy = A2(
 			$elm$core$Maybe$withDefault,
 			false,
 			A2(
 				$elm$core$Maybe$map,
 				function (observed) {
-					return _Utils_eq(observed.P.fp, old.fp) && (_Utils_eq(observed.P.fe, old.fe) && (_Utils_eq(observed.P.y, old.y) && ((!(!A2($author$project$UInt64$compare, observed.P.c2, old.c2))) && (A2(
+					return _Utils_eq(observed.P.fr, old.fr) && (_Utils_eq(observed.P.fg, old.fg) && (_Utils_eq(observed.P.y, old.y) && ((!(!A2($author$project$UInt64$compare, observed.P.c3, old.c3))) && (A2(
 						$author$project$MenuBridge$sameWindowFacts,
-						$author$project$ActionProjection$windows(observed.eN),
-						slot.dw) && _Utils_eq(
+						$author$project$ActionProjection$windows(observed.eP),
+						slot.dx) && _Utils_eq(
 						A2(
 							$author$project$ActionProjection$rootOf,
 							$author$project$Provider$incarnation(original),
-							observed.eN),
+							observed.eP),
 						$elm$core$Maybe$Just(
 							$author$project$Provider$incarnation(original)))))));
 				},
 				legacy));
 		return _Utils_eq(
-			shell.dk,
+			shell.dl,
 			$elm$core$Maybe$Just(
-				$author$project$Provider$nativeBinding(original))) && (_Utils_eq(shell.ds, slot.ds) && (sameLegacy && sameGeometry));
+				$author$project$Provider$nativeBinding(original))) && (_Utils_eq(shell.dt, slot.dt) && (sameLegacy && sameGeometry));
 	});
 var $author$project$NativeProvider$counter = A2($elm$core$Basics$composeR, $author$project$UInt64$string, $elm$json$Json$Encode$string);
 var $author$project$Provider$Raw = F7(
 	function (provider, capabilitiesGeneration, context, target, heading, capabilities, entries) {
-		return {cI: capabilities, dm: capabilitiesGeneration, P: context, af: entries, ed: heading, bJ: provider, fR: target};
+		return {cJ: capabilities, dn: capabilitiesGeneration, P: context, ah: entries, ee: heading, bJ: provider, fT: target};
 	});
 var $author$project$Provider$Snapshot = $elm$core$Basics$identity;
 var $author$project$Menu$Binding = $elm$core$Basics$identity;
@@ -13129,9 +13357,8 @@ var $author$project$Provider$boundedList = F2(
 	});
 var $author$project$Provider$Context = F7(
 	function (_native, lifetime, session, frontend, revision, outputId, outputGeneration) {
-		return {d8: frontend, fp: lifetime, er: _native, fw: outputGeneration, dC: outputId, c2: revision, fO: session};
+		return {d9: frontend, fr: lifetime, es: _native, fy: outputGeneration, dD: outputId, c3: revision, fQ: session};
 	});
-var $elm$json$Json$Decode$map7 = _Json_map7;
 var $author$project$Provider$nonzero = A2(
 	$elm$json$Json$Decode$andThen,
 	function (counter) {
@@ -13324,8 +13551,8 @@ var $author$project$Provider$entryDecoder = A2(
 				var action = _v0.b;
 				return {
 					cl: $author$project$UInt64$string(identity),
-					cn: {e3: action, fd: enabled, el: label},
-					ej: kind
+					cn: {e5: action, ff: enabled, em: label},
+					ek: kind
 				};
 			}),
 		A2($elm$json$Json$Decode$field, 'id', $author$project$Provider$nonzero),
@@ -13350,7 +13577,7 @@ var $elm$core$Set$size = function (_v0) {
 };
 var $author$project$Provider$Target = F3(
 	function (lifetime, session, incarnation) {
-		return {aq: incarnation, fp: lifetime, fO: session};
+		return {ar: incarnation, fr: lifetime, fQ: session};
 	});
 var $author$project$Provider$targetDecoder = A2(
 	$author$project$Provider$strict,
@@ -13391,24 +13618,24 @@ var $author$project$Provider$envelopeDecoder = function () {
 			var unsupportedEnabled = A2(
 				$elm$core$List$any,
 				function (entry) {
-					return entry.cn.fd && (!A2($elm$core$List$member, entry.ej, raw.cI));
+					return entry.cn.ff && (!A2($elm$core$List$member, entry.ek, raw.cJ));
 				},
-				raw.af);
+				raw.ah);
 			var identities = A2(
 				$elm$core$List$map,
 				function ($) {
 					return $.cl;
 				},
-				raw.af);
+				raw.ah);
 			var duplicateIds = !_Utils_eq(
 				$elm$core$List$length(identities),
 				$elm$core$Set$size(
 					$elm$core$Set$fromList(identities)));
 			var duplicateCapabilities = !_Utils_eq(
-				$elm$core$List$length(raw.cI),
+				$elm$core$List$length(raw.cJ),
 				$elm$core$Set$size(
-					$elm$core$Set$fromList(raw.cI)));
-			var coherent = _Utils_eq(raw.fR.fp, raw.P.fp) && _Utils_eq(raw.fR.fO, raw.P.fO);
+					$elm$core$Set$fromList(raw.cJ)));
+			var coherent = _Utils_eq(raw.fT.fr, raw.P.fr) && _Utils_eq(raw.fT.fQ, raw.P.fQ);
 			var authority = A2(
 				$elm$json$Json$Encode$encode,
 				0,
@@ -13417,11 +13644,11 @@ var $author$project$Provider$envelopeDecoder = function () {
 					$elm$core$Basics$identity,
 					_List_fromArray(
 						[
-							$author$project$Binding$encode(raw.P.er),
+							$author$project$Binding$encode(raw.P.es),
 							$elm$json$Json$Encode$string(
 							$author$project$UInt64$string(raw.bJ)),
 							$elm$json$Json$Encode$string(
-							$author$project$UInt64$string(raw.dm))
+							$author$project$UInt64$string(raw.dn))
 						])));
 			var actions = A2(
 				$elm$core$List$map,
@@ -13431,9 +13658,9 @@ var $author$project$Provider$envelopeDecoder = function () {
 						return $.cn;
 					},
 					function ($) {
-						return $.e3;
+						return $.e5;
 					}),
-				raw.af);
+				raw.ah);
 			var uniqueActions = A3(
 				$elm$core$List$foldl,
 				F2(
@@ -13447,31 +13674,31 @@ var $author$project$Provider$envelopeDecoder = function () {
 				$elm$core$List$length(uniqueActions));
 			return ((!coherent) || (duplicateIds || (duplicateActions || (duplicateCapabilities || unsupportedEnabled)))) ? $elm$json$Json$Decode$fail('Incoherent provider identity/capabilities') : $elm$json$Json$Decode$succeed(
 				{
-					dk: $author$project$Menu$binding(
+					dl: $author$project$Menu$binding(
 						{
-							dT: authority,
+							dU: authority,
 							y: $author$project$Menu$outputId(
-								$author$project$UInt64$string(raw.P.dC)),
-							fw: $author$project$UInt64$string(raw.P.fw),
-							c2: $author$project$UInt64$string(raw.P.c2),
-							fR: $author$project$Menu$Window(
+								$author$project$UInt64$string(raw.P.dD)),
+							fy: $author$project$UInt64$string(raw.P.fy),
+							c3: $author$project$UInt64$string(raw.P.c3),
+							fT: $author$project$Menu$Window(
 								A2(
 									$author$project$Menu$windowId,
-									$author$project$Binding$authorityIdentity(raw.P.er),
-									$author$project$UInt64$string(raw.fR.aq)))
+									$author$project$Binding$authorityIdentity(raw.P.es),
+									$author$project$UInt64$string(raw.fT.ar)))
 						}),
-					e7: raw.dm,
+					e9: raw.dn,
 					P: raw.P,
-					ap: $elm$core$Maybe$Nothing,
-					aq: raw.fR.aq,
-					fo: A2(
+					aa: $elm$core$Maybe$Nothing,
+					ar: raw.fT.ar,
+					fq: A2(
 						$elm$core$List$map,
 						function ($) {
 							return $.cn;
 						},
-						raw.af),
-					dI: raw.bJ,
-					cA: raw.ed
+						raw.ah),
+					dJ: raw.bJ,
+					cA: raw.ee
 				});
 		},
 		A2(
@@ -13539,17 +13766,17 @@ var $author$project$Provider$decode = function (value) {
 };
 var $author$project$NativeProvider$legacyFromShell = F3(
 	function (scope, incarnation, shell) {
-		if (_Utils_eq(scope.dC, $author$project$UInt64$zero) || (_Utils_eq(scope.dI, $author$project$UInt64$zero) || _Utils_eq(scope.e7, $author$project$UInt64$zero))) {
+		if (_Utils_eq(scope.dD, $author$project$UInt64$zero) || (_Utils_eq(scope.dJ, $author$project$UInt64$zero) || _Utils_eq(scope.e9, $author$project$UInt64$zero))) {
 			return $elm$core$Result$Err('Missing registered provider/output identity');
 		} else {
 			if (shell.j !== 2) {
 				return $elm$core$Result$Err('Native window facts are not ready');
 			} else {
-				var _v0 = _Utils_Tuple2(shell.dk, shell._.as);
+				var _v0 = _Utils_Tuple2(shell.dl, shell._.at);
 				if ((!_v0.a.$) && (!_v0.b.$)) {
 					var binding = _v0.a.a;
 					var observed = _v0.b.a;
-					if (!A3($author$project$Binding$matchesContext, observed.P.fp, observed.P.fe, binding)) {
+					if (!A3($author$project$Binding$matchesContext, observed.P.fr, observed.P.fg, binding)) {
 						return $elm$core$Result$Err('Native observation binding mismatch');
 					} else {
 						var _v1 = A2(
@@ -13559,11 +13786,11 @@ var $author$project$NativeProvider$legacyFromShell = F3(
 									A2(
 										$elm$core$List$filter,
 										function (window) {
-											return _Utils_eq(window.aq, root);
+											return _Utils_eq(window.ar, root);
 										},
-										$author$project$ActionProjection$windows(observed.eN)));
+										$author$project$ActionProjection$windows(observed.eP)));
 							},
-							A2($author$project$ActionProjection$rootOf, incarnation, observed.eN));
+							A2($author$project$ActionProjection$rootOf, incarnation, observed.eP));
 						if (_v1.$ === 1) {
 							return $elm$core$Result$Err('Native window no longer exists');
 						} else {
@@ -13624,10 +13851,10 @@ var $author$project$NativeProvider$legacyFromShell = F3(
 												$elm$json$Json$Encode$int(1)),
 												_Utils_Tuple2(
 												'providerId',
-												$author$project$NativeProvider$counter(scope.dI)),
+												$author$project$NativeProvider$counter(scope.dJ)),
 												_Utils_Tuple2(
 												'capabilityGeneration',
-												$author$project$NativeProvider$counter(scope.e7)),
+												$author$project$NativeProvider$counter(scope.e9)),
 												_Utils_Tuple2(
 												'binding',
 												$elm$json$Json$Encode$object(
@@ -13644,10 +13871,10 @@ var $author$project$NativeProvider$legacyFromShell = F3(
 															$author$project$NativeProvider$counter(frontend)),
 															_Utils_Tuple2(
 															'revision',
-															$author$project$NativeProvider$counter(observed.P.c2)),
+															$author$project$NativeProvider$counter(observed.P.c3)),
 															_Utils_Tuple2(
 															'outputId',
-															$author$project$NativeProvider$counter(scope.dC)),
+															$author$project$NativeProvider$counter(scope.dD)),
 															_Utils_Tuple2(
 															'outputGeneration',
 															$author$project$NativeProvider$counter(observed.P.y))
@@ -13665,12 +13892,12 @@ var $author$project$NativeProvider$legacyFromShell = F3(
 															$author$project$NativeProvider$counter(session)),
 															_Utils_Tuple2(
 															'incarnation',
-															$author$project$NativeProvider$counter(window.aq))
+															$author$project$NativeProvider$counter(window.ar))
 														]))),
 												_Utils_Tuple2(
 												'title',
 												$elm$json$Json$Encode$string(
-													($elm$core$String$trim(window.el) === '') ? 'Window actions' : window.el)),
+													($elm$core$String$trim(window.em) === '') ? 'Window actions' : window.em)),
 												_Utils_Tuple2(
 												'capabilities',
 												A2(
@@ -13685,8 +13912,8 @@ var $author$project$NativeProvider$legacyFromShell = F3(
 													$elm$core$Basics$identity,
 													_List_fromArray(
 														[
-															A4(item, '1', 'Restore', window.dj && window.b_, 'Restore'),
-															A4(item, '2', 'Minimize', window.dj && (!window.b_), 'Minimize')
+															A4(item, '1', 'Restore', window.dk && window.b_, 'Restore'),
+															A4(item, '2', 'Minimize', window.dk && (!window.b_), 'Minimize')
 														])))
 											])));
 							}
@@ -13704,7 +13931,7 @@ var $author$project$ActionProjection$find = F2(
 			A2(
 				$elm$core$List$filter,
 				function (w) {
-					return _Utils_eq(w.aq, identity);
+					return _Utils_eq(w.ar, identity);
 				},
 				rows));
 	});
@@ -13722,37 +13949,37 @@ var $author$project$ActionProjection$minimized = F2(
 	});
 var $author$project$GeometryProjection$Fullscreen = 2;
 var $author$project$GeometryProjection$canExitFullscreen = function (row) {
-	return (row.es === 2) && ((row.cg === 2) && (_Utils_eq(row.dD, $elm$core$Maybe$Nothing) && ((!row.bB) && ((!row.b_) && ((!_Utils_eq(row.e$, $elm$core$Maybe$Nothing)) && ((!_Utils_eq(row.b$, $elm$core$Maybe$Nothing)) && A2(
+	return (row.et === 2) && ((row.cg === 2) && (_Utils_eq(row.dE, $elm$core$Maybe$Nothing) && ((!row.bB) && ((!row.b_) && ((!_Utils_eq(row.e1, $elm$core$Maybe$Nothing)) && ((!_Utils_eq(row.b$, $elm$core$Maybe$Nothing)) && A2(
 		$elm$core$Maybe$withDefault,
 		false,
 		A2(
 			$elm$core$Maybe$map,
 			function (pin) {
-				return !pin.fB;
+				return !pin.fD;
 			},
-			row.dF))))))));
+			row.dG))))))));
 };
 var $author$project$Provider$withGeometry = F3(
 	function (caps, observed, snapshot) {
 		var state = snapshot;
-		if ((!_Utils_eq(observed.dk, state.P.er)) || (!_Utils_eq(observed.P.y, state.P.fw))) {
+		if ((!_Utils_eq(observed.dl, state.P.es)) || (!_Utils_eq(observed.P.y, state.P.fy))) {
 			return $elm$core$Result$Err('Geometry/legacy authority mismatch');
 		} else {
-			var _v0 = A2($author$project$GeometryProjection$window, state.aq, observed);
+			var _v0 = A2($author$project$GeometryProjection$window, state.ar, observed);
 			if (_v0.$ === 1) {
 				return $elm$core$Result$Err('Geometry target missing');
 			} else {
 				var window = _v0.a;
 				var supported = function (op) {
-					return caps._ && A2($elm$core$List$member, op, caps.ev);
+					return caps._ && A2($elm$core$List$member, op, caps.ew);
 				};
 				var restoreGeometry = supported('restore-geometry') && (!window.b_);
 				var ready = A2(
 					$elm$core$List$any,
 					function ($) {
-						return $.fd;
+						return $.ff;
 					},
-					state.fo) && ((!observed.e6) && (window.dr && (!window.fg)));
+					state.fq) && ((!observed.e8) && (window.ds && (!window.fi)));
 				var pinItems = A2(
 					$elm$core$Maybe$withDefault,
 					_List_Nil,
@@ -13762,46 +13989,46 @@ var $author$project$Provider$withGeometry = F3(
 							return (supported('pin') && supported('unpin')) ? _List_fromArray(
 								[
 									{
-									e3: $author$project$Menu$AlwaysOnTop(!pin.fB),
-									fd: (!observed.e6) && pin.dr,
-									el: 'Always on top'
+									e5: $author$project$Menu$AlwaysOnTop(!pin.fD),
+									ff: (!observed.e8) && pin.ds,
+									em: 'Always on top'
 								}
 								]) : _List_Nil;
 						},
-						window.dF));
+						window.dG));
 				var legacyRestore = $elm$core$List$head(
 					A2(
 						$elm$core$List$filter,
 						function (item) {
-							return _Utils_eq(item.e3, $author$project$Menu$Restore);
+							return _Utils_eq(item.e5, $author$project$Menu$Restore);
 						},
-						state.fo));
-				var restore = restoreGeometry ? {e3: $author$project$Menu$RestoreGeometry, fd: ready && (window.fI && ((window.es === 1) && window.fC)), el: 'Restore'} : A2(
+						state.fq));
+				var restore = restoreGeometry ? {e5: $author$project$Menu$RestoreGeometry, ff: ready && (window.fK && ((window.et === 1) && window.fE)), em: 'Restore'} : A2(
 					$elm$core$Maybe$withDefault,
-					{e3: $author$project$Menu$Restore, fd: false, el: 'Restore'},
+					{e5: $author$project$Menu$Restore, ff: false, em: 'Restore'},
 					legacyRestore);
 				var legacyMinimize = $elm$core$List$head(
 					A2(
 						$elm$core$List$filter,
 						function (item) {
-							return _Utils_eq(item.e3, $author$project$Menu$Minimize);
+							return _Utils_eq(item.e5, $author$project$Menu$Minimize);
 						},
-						state.fo));
+						state.fq));
 				var minimize = A2(
 					$elm$core$Maybe$withDefault,
-					{e3: $author$project$Menu$Minimize, fd: false, el: 'Minimize'},
+					{e5: $author$project$Menu$Minimize, ff: false, em: 'Minimize'},
 					legacyMinimize);
-				var exitItems = (supported('exit-fullscreen') && (window.es === 2)) ? _List_fromArray(
+				var exitItems = (supported('exit-fullscreen') && (window.et === 2)) ? _List_fromArray(
 					[
 						{
-						e3: $author$project$Menu$ExitFullscreen,
-						fd: A2(
+						e5: $author$project$Menu$ExitFullscreen,
+						ff: A2(
 							$elm$core$List$any,
 							function ($) {
-								return $.fd;
+								return $.ff;
 							},
-							state.fo) && ((!observed.e6) && $author$project$GeometryProjection$canExitFullscreen(window)),
-						el: 'Exit fullscreen'
+							state.fq) && ((!observed.e8) && $author$project$GeometryProjection$canExitFullscreen(window)),
+						em: 'Exit fullscreen'
 					}
 					]) : _List_Nil;
 				var items = _Utils_ap(
@@ -13813,7 +14040,7 @@ var $author$project$Provider$withGeometry = F3(
 							pinItems,
 							supported('maximize') ? _List_fromArray(
 								[
-									{e3: $author$project$Menu$Maximize, fd: ready && (window.fr && ((!window.b_) && (!window.es))), el: 'Maximize'}
+									{e5: $author$project$Menu$Maximize, ff: ready && (window.ft && ((!window.b_) && (!window.et))), em: 'Maximize'}
 								]) : _List_Nil)));
 				var authority = A2(
 					$elm$json$Json$Encode$encode,
@@ -13827,32 +14054,32 @@ var $author$project$Provider$withGeometry = F3(
 								A2(
 									$elm$json$Json$Encode$encode,
 									0,
-									$author$project$Binding$encode(state.P.er)) + (':' + ($author$project$UInt64$string(state.dI) + (':' + ($author$project$UInt64$string(state.e7) + (':' + $author$project$UInt64$string(state.P.c2))))))),
+									$author$project$Binding$encode(state.P.es)) + (':' + ($author$project$UInt64$string(state.dJ) + (':' + ($author$project$UInt64$string(state.e9) + (':' + $author$project$UInt64$string(state.P.c3))))))),
 								$elm$json$Json$Encode$string(
-								$author$project$UInt64$string(observed.P.c2)),
+								$author$project$UInt64$string(observed.P.c3)),
 								$elm$json$Json$Encode$string(
 								$author$project$UInt64$string(observed.P.y)),
-								A2($elm$json$Json$Encode$list, $elm$json$Json$Encode$string, caps.ev)
+								A2($elm$json$Json$Encode$list, $elm$json$Json$Encode$string, caps.ew)
 							])));
 				return $elm$core$Result$Ok(
 					_Utils_update(
 						state,
 						{
-							dk: $author$project$Menu$binding(
+							dl: $author$project$Menu$binding(
 								{
-									dT: authority,
+									dU: authority,
 									y: $author$project$Menu$outputId(
-										$author$project$UInt64$string(state.P.dC)),
-									fw: $author$project$UInt64$string(observed.P.y),
-									c2: $author$project$UInt64$string(observed.P.c2),
-									fR: $author$project$Menu$Window(
+										$author$project$UInt64$string(state.P.dD)),
+									fy: $author$project$UInt64$string(observed.P.y),
+									c3: $author$project$UInt64$string(observed.P.c3),
+									fT: $author$project$Menu$Window(
 										A2(
 											$author$project$Menu$windowId,
-											$author$project$Binding$authorityIdentity(state.P.er),
-											$author$project$UInt64$string(state.aq)))
+											$author$project$Binding$authorityIdentity(state.P.es),
+											$author$project$UInt64$string(state.ar)))
 								}),
-							ap: $elm$core$Maybe$Just(observed),
-							fo: items
+							aa: $elm$core$Maybe$Just(observed),
+							fq: items
 						}));
 			}
 		}
@@ -13862,7 +14089,7 @@ var $author$project$NativeProvider$fromShell = F3(
 		return A2(
 			$elm$core$Result$andThen,
 			function (legacy) {
-				var _v0 = shell.ds;
+				var _v0 = shell.dt;
 				if (_v0.$ === 1) {
 					return $elm$core$Result$Ok(legacy);
 				} else {
@@ -13870,13 +14097,13 @@ var $author$project$NativeProvider$fromShell = F3(
 					if (!caps._) {
 						return $elm$core$Result$Ok(legacy);
 					} else {
-						var _v1 = _Utils_Tuple3(shell.ap, shell.eb, shell._.as);
+						var _v1 = _Utils_Tuple3(shell.aa, shell.ec, shell._.at);
 						if (((!_v1.a.$) && (_v1.b.$ === 1)) && (!_v1.c.$)) {
 							var observed = _v1.a.a;
 							var _v2 = _v1.b;
 							var legacyObserved = _v1.c.a;
 							var root = $author$project$Provider$incarnation(legacy);
-							var legacyMinimized = A2($author$project$ActionProjection$minimized, root, legacyObserved.eN);
+							var legacyMinimized = A2($author$project$ActionProjection$minimized, root, legacyObserved.eP);
 							var geometryMinimized = A2(
 								$elm$core$Maybe$map,
 								function ($) {
@@ -13919,11 +14146,11 @@ var $author$project$MenuBridge$operation = function (action) {
 };
 var $author$project$Provider$presentationScope = function (_v0) {
 	var value = _v0;
-	return {dC: value.P.dC, dI: value.dI};
+	return {dD: value.P.dD, dJ: value.dJ};
 };
 var $author$project$Provider$getItems = function (_v0) {
 	var value = _v0;
-	return value.fo;
+	return value.fq;
 };
 var $elm$core$Result$map = F2(
 	function (func, ra) {
@@ -13954,7 +14181,7 @@ var $author$project$Provider$actionContext = F2(
 				function ($) {
 					return $.P;
 				},
-				state.ap)) : $author$project$Provider$nativeContext(snapshot);
+				state.aa)) : $author$project$Provider$nativeContext(snapshot);
 	});
 var $author$project$ReceiptRouter$effectVersion = A2(
 	$elm$json$Json$Decode$andThen,
@@ -13968,15 +14195,15 @@ var $author$project$ReceiptRouter$effectVersion = A2(
 	A2($elm$json$Json$Decode$field, 'effectProtocol', $elm$json$Json$Decode$int));
 var $author$project$ReceiptRouter$Key = F3(
 	function (_native, intent, protocol) {
-		return {aa: intent, er: _native, eE: protocol};
+		return {ab: intent, es: _native, eF: protocol};
 	});
 var $author$project$ReceiptRouter$Intent = F5(
 	function (request, generation, incarnation, operation, context) {
-		return {P: context, fh: generation, aq: incarnation, bh: operation, c1: request};
+		return {P: context, fj: generation, ar: incarnation, bh: operation, c2: request};
 	});
 var $author$project$ReceiptRouter$Context = F4(
 	function (lifetime, epoch, output, revision) {
-		return {fe: epoch, fp: lifetime, y: output, c2: revision};
+		return {fg: epoch, fr: lifetime, y: output, c3: revision};
 	});
 var $author$project$ReceiptRouter$positive = A2(
 	$elm$json$Json$Decode$andThen,
@@ -14047,10 +14274,10 @@ var $author$project$ReceiptRouter$key = A2(
 	$elm$json$Json$Decode$andThen,
 	function (value) {
 		return _Utils_eq(
-			value.eE,
+			value.eF,
 			A2(
 				$elm$core$List$member,
-				value.aa.bh,
+				value.ab.bh,
 				_List_fromArray(
 					[2, 3, 4, 5, 6])) ? 2 : 1) ? $elm$json$Json$Decode$succeed(value) : $elm$json$Json$Decode$fail('Operation protocol mismatch');
 	},
@@ -14153,32 +14380,32 @@ var $author$project$ReceiptRouter$register = F4(
 			var eligible = A2(
 				$elm$core$List$any,
 				function (item) {
-					return item.fd && _Utils_eq(item.e3, action);
+					return item.ff && _Utils_eq(item.e5, action);
 				},
 				$author$project$Provider$getItems(provider));
 			return ((!_Utils_eq(
 				binding,
 				$author$project$Provider$getBinding(provider))) || ((!eligible) || ((!_Utils_eq(
-				$elm$core$Maybe$Just(_native.aa.bh),
+				$elm$core$Maybe$Just(_native.ab.bh),
 				expectedOperation)) || ((!_Utils_eq(
-				_native.er,
+				_native.es,
 				$author$project$Provider$nativeBinding(provider))) || ((!_Utils_eq(
-				_native.aa.P,
+				_native.ab.P,
 				A2($author$project$Provider$actionContext, action, provider))) || ((!_Utils_eq(
-				_native.eE,
+				_native.eF,
 				$author$project$Provider$actionProtocol(action))) || (!_Utils_eq(
-				_native.aa.aq,
+				_native.ab.ar,
 				$author$project$Provider$incarnation(provider))))))))) ? $elm$core$Result$Err('Native command does not match frozen menu action') : (A2(
 				$elm$core$List$any,
 				function (entry) {
-					return _Utils_eq(entry.cq, local) || (_Utils_eq(entry.a_, _native) || (_Utils_eq(entry.a_.er, _native.er) && _Utils_eq(entry.a_.aa.c1, _native.aa.c1)));
+					return _Utils_eq(entry.cq, local) || (_Utils_eq(entry.a_, _native) || (_Utils_eq(entry.a_.es, _native.es) && _Utils_eq(entry.a_.ab.c2, _native.ab.c2)));
 				},
 				entries) ? $elm$core$Result$Err('Native/local operation already registered') : ((_Utils_cmp(
 				$elm$core$List$length(entries),
 				$author$project$Menu$maxOutstanding) > -1) ? $elm$core$Result$Err('Receipt registry capacity') : $elm$core$Result$Ok(
 				A2(
 					$elm$core$List$cons,
-					{dk: binding, a_: _native, cq: local},
+					{dl: binding, a_: _native, cq: local},
 					entries))));
 		}
 	});
@@ -14190,7 +14417,7 @@ var $author$project$ReceiptRouter$registerPrepared = F5(
 		var ordered = $elm$core$List$sortWith(
 			F2(
 				function (a, b) {
-					return A2($author$project$UInt64$compare, a.aq, b.aq);
+					return A2($author$project$UInt64$compare, a.ar, b.ar);
 				}));
 		var old = $author$project$Provider$nativeContext(original);
 		var _new = $author$project$Provider$nativeContext(fresh);
@@ -14214,7 +14441,7 @@ var $author$project$ReceiptRouter$registerPrepared = F5(
 						var after = _v2.b.a;
 						return _Utils_eq(
 							ordered(before.a),
-							ordered(after.a)) && ((!after.e6) && (_Utils_eq(before.P.y, after.P.y) && (_Utils_eq(before.dk, after.dk) && ((!(!A2($author$project$UInt64$compare, after.P.c2, before.P.c2))) && (!(!A2($author$project$UInt64$compare, after.bN, before.bN)))))));
+							ordered(after.a)) && ((!after.e8) && (_Utils_eq(before.P.y, after.P.y) && (_Utils_eq(before.dl, after.dl) && ((!(!A2($author$project$UInt64$compare, after.P.c3, before.P.c3))) && (!(!A2($author$project$UInt64$compare, after.bN, before.bN)))))));
 					} else {
 						break _v2$2;
 					}
@@ -14230,7 +14457,7 @@ var $author$project$ReceiptRouter$registerPrepared = F5(
 			$author$project$Provider$incarnation(original),
 			$author$project$Provider$incarnation(fresh))) || ((!_Utils_eq(
 			$author$project$Provider$presentationScope(original),
-			$author$project$Provider$presentationScope(fresh))) || ((!_Utils_eq(old.fp, _new.fp)) || ((!_Utils_eq(old.fe, _new.fe)) || ((!_Utils_eq(old.y, _new.y)) || ((!A2($author$project$UInt64$compare, _new.c2, old.c2)) || ((!geometrySame) || (!_Utils_eq(
+			$author$project$Provider$presentationScope(fresh))) || ((!_Utils_eq(old.fr, _new.fr)) || ((!_Utils_eq(old.fg, _new.fg)) || ((!_Utils_eq(old.y, _new.y)) || ((!A2($author$project$UInt64$compare, _new.c3, old.c3)) || ((!geometrySame) || (!_Utils_eq(
 			$author$project$Provider$getItems(original),
 			$author$project$Provider$getItems(fresh)))))))))))) ? $elm$core$Result$Err('Prepared action authority changed') : A2(
 			$elm$core$Result$map,
@@ -14241,7 +14468,7 @@ var $author$project$ReceiptRouter$registerPrepared = F5(
 					function (entry) {
 						return _Utils_eq(entry.cq, local) ? _Utils_update(
 							entry,
-							{dk: originalBinding}) : entry;
+							{dl: originalBinding}) : entry;
 					},
 					entries);
 			},
@@ -14265,7 +14492,7 @@ var $author$project$ActionProjection$actionable = F2(
 			A2(
 				$elm$core$Maybe$map,
 				function ($) {
-					return $.dj;
+					return $.dk;
 				},
 				A2(
 					$author$project$ActionProjection$find,
@@ -14274,7 +14501,7 @@ var $author$project$ActionProjection$actionable = F2(
 	});
 var $author$project$Effects$Context = F4(
 	function (lifetime, epoch, output, revision) {
-		return {fe: epoch, fp: lifetime, y: output, c2: revision};
+		return {fg: epoch, fr: lifetime, y: output, c3: revision};
 	});
 var $author$project$Effects$identity = A2(
 	$elm$json$Json$Decode$andThen,
@@ -14311,7 +14538,7 @@ var $author$project$ActionProjection$Admitted = F4(
 	});
 var $author$project$ActionProjection$Window = F7(
 	function (incarnation, label, minimized, owner, application, available, attention) {
-		return {di: application, dS: attention, dj: available, aq: incarnation, el: label, b_: minimized, dD: owner};
+		return {dj: application, dT: attention, dk: available, ar: incarnation, em: label, b_: minimized, dE: owner};
 	});
 var $author$project$ActionProjection$nonzero = A2(
 	$elm$json$Json$Decode$andThen,
@@ -14319,16 +14546,6 @@ var $author$project$ActionProjection$nonzero = A2(
 		return _Utils_eq(v, $author$project$UInt64$zero) ? $elm$json$Json$Decode$fail('Zero identity') : $elm$json$Json$Decode$succeed(v);
 	},
 	$author$project$UInt64$decoder);
-var $elm$json$Json$Decode$null = _Json_decodeNull;
-var $elm$json$Json$Decode$oneOf = _Json_oneOf;
-var $elm$json$Json$Decode$nullable = function (decoder) {
-	return $elm$json$Json$Decode$oneOf(
-		_List_fromArray(
-			[
-				$elm$json$Json$Decode$null($elm$core$Maybe$Nothing),
-				A2($elm$json$Json$Decode$map, $elm$core$Maybe$Just, decoder)
-			]));
-};
 var $author$project$ActionProjection$strict = F2(
 	function (fields, decoder) {
 		return A2(
@@ -14398,9 +14615,9 @@ var $author$project$ActionProjection$rootIn = F3(
 		return (fuel <= 0) ? $elm$core$Maybe$Nothing : A2(
 			$elm$core$Maybe$andThen,
 			function (w) {
-				var _v0 = w.dD;
+				var _v0 = w.dE;
 				if (_v0.$ === 1) {
-					return $elm$core$Maybe$Just(w.aq);
+					return $elm$core$Maybe$Just(w.ar);
 				} else {
 					var parent = _v0.a;
 					return A3($author$project$ActionProjection$rootIn, fuel - 1, parent, rows);
@@ -14447,7 +14664,7 @@ var $author$project$ActionProjection$decode = function (value) {
 				$elm$core$List$foldl,
 				F2(
 					function (w, seen) {
-						return A2($elm$core$List$member, w.aq, seen) ? seen : A2($elm$core$List$cons, w.aq, seen);
+						return A2($elm$core$List$member, w.ar, seen) ? seen : A2($elm$core$List$cons, w.ar, seen);
 					}),
 				_List_Nil,
 				rows);
@@ -14456,7 +14673,7 @@ var $author$project$ActionProjection$decode = function (value) {
 					$elm$core$List$map,
 					function (w) {
 						return _Utils_Tuple2(
-							$author$project$UInt64$string(w.aq),
+							$author$project$UInt64$string(w.ar),
 							w);
 					},
 					rows));
@@ -14470,12 +14687,12 @@ var $author$project$ActionProjection$decode = function (value) {
 								function (cache, root) {
 									return A3(
 										$elm$core$Dict$insert,
-										$author$project$UInt64$string(w.aq),
+										$author$project$UInt64$string(w.ar),
 										root,
 										cache);
 								}),
 							accumulated,
-							A3($author$project$ActionProjection$rootIn, 256, w.aq, table));
+							A3($author$project$ActionProjection$rootIn, 256, w.ar, table));
 					}),
 				$elm$core$Maybe$Just($elm$core$Dict$empty),
 				rows);
@@ -14499,7 +14716,7 @@ var $author$project$ActionProjection$decode = function (value) {
 							A2(
 								$elm$core$Maybe$andThen,
 								$elm$core$Dict$get(
-									$author$project$UInt64$string(w.aq)),
+									$author$project$UInt64$string(w.ar)),
 								roots))));
 			};
 			if ((!_Utils_eq(
@@ -14507,7 +14724,7 @@ var $author$project$ActionProjection$decode = function (value) {
 				$elm$core$List$length(rows))) || ((!validFocus) || A2(
 				$elm$core$List$any,
 				function (w) {
-					return !($author$project$ActionProjection$validText(w.el) && ($author$project$ActionProjection$validText(w.di) && validFamily(w)));
+					return !($author$project$ActionProjection$validText(w.em) && ($author$project$ActionProjection$validText(w.dj) && validFamily(w)));
 				},
 				rows))) {
 				return $elm$core$Result$Err('Incoherent ownership/focus projection');
@@ -14546,7 +14763,7 @@ var $author$project$ActionProjection$decode = function (value) {
 };
 var $author$project$Effects$Intent = F5(
 	function (request, generation, incarnation, operation, context) {
-		return {P: context, fh: generation, aq: incarnation, bh: operation, c1: request};
+		return {P: context, fj: generation, ar: incarnation, bh: operation, c2: request};
 	});
 var $author$project$Effects$SnapPlacement = function (a) {
 	return {$: 6, a: a};
@@ -14556,7 +14773,7 @@ var $author$project$Effects$TransferWorkspace = function (a) {
 };
 var $author$project$Transfer$Proposal = F3(
 	function (source, sourceGeneration, destination) {
-		return {bx: destination, cv: source, da: sourceGeneration};
+		return {bx: destination, cv: source, db: sourceGeneration};
 	});
 var $author$project$Transfer$decoder = A2(
 	$elm$json$Json$Decode$andThen,
@@ -14568,7 +14785,7 @@ var $author$project$Transfer$decoder = A2(
 				['destination', 'source', 'sourceGeneration']))) ? $elm$json$Json$Decode$fail('Transfer fields') : A2(
 			$elm$json$Json$Decode$andThen,
 			function (p) {
-				return ($author$project$Transfer$ordinary(p.cv) && ($author$project$Transfer$ordinary(p.bx) && ((!_Utils_eq(p.cv, p.bx)) && (!_Utils_eq(p.da, $author$project$UInt64$zero))))) ? $elm$json$Json$Decode$succeed(p) : $elm$json$Json$Decode$fail('Transfer workspace identity');
+				return ($author$project$Transfer$ordinary(p.cv) && ($author$project$Transfer$ordinary(p.bx) && ((!_Utils_eq(p.cv, p.bx)) && (!_Utils_eq(p.db, $author$project$UInt64$zero))))) ? $elm$json$Json$Decode$succeed(p) : $elm$json$Json$Decode$fail('Transfer workspace identity');
 			},
 			A4(
 				$elm$json$Json$Decode$map3,
@@ -14662,7 +14879,7 @@ var $author$project$Snap$proposalDecoder = function (context) {
 				$elm$json$Json$Decode$map6,
 				F6(
 					function (regionName, geometry, monitor, output, area, workspace) {
-						return {P: context, ap: geometry, b$: monitor, bi: output, cu: regionName, cE: area, ce: workspace};
+						return {P: context, aa: geometry, b$: monitor, bi: output, cu: regionName, cE: area, ce: workspace};
 					}),
 				A2($elm$json$Json$Decode$field, 'region', region),
 				A2($elm$json$Json$Decode$field, 'geometry', rectangle),
@@ -14752,7 +14969,7 @@ var $author$project$ActionProjection$revision = function (_v0) {
 };
 var $author$project$Effects$sameAuthority = F2(
 	function (a, b) {
-		return _Utils_eq(a.fp, b.fp) && (_Utils_eq(a.fe, b.fe) && _Utils_eq(a.y, b.y));
+		return _Utils_eq(a.fr, b.fr) && (_Utils_eq(a.fg, b.fg) && _Utils_eq(a.y, b.y));
 	});
 var $author$project$ActionProjection$sameState = F2(
 	function (left, right) {
@@ -14761,17 +14978,17 @@ var $author$project$ActionProjection$sameState = F2(
 				$elm$core$List$map,
 				function (w) {
 					return _Utils_Tuple3(
-						w.aq,
-						_Utils_Tuple2(w.b_, w.dD),
+						w.ar,
+						_Utils_Tuple2(w.b_, w.dE),
 						_Utils_Tuple2(
-							w.di,
-							_Utils_Tuple2(w.dj, w.dS)));
+							w.dj,
+							_Utils_Tuple2(w.dk, w.dT)));
 				},
 				A2(
 					$elm$core$List$sortWith,
 					F2(
 						function (a, b) {
-							return A2($author$project$UInt64$compare, a.aq, b.aq);
+							return A2($author$project$UInt64$compare, a.ar, b.ar);
 						}),
 					$author$project$ActionProjection$windows(projection)));
 		};
@@ -14858,20 +15075,20 @@ var $author$project$Effects$apply = F2(
 								var scene = _v2.a;
 								if (!_Utils_eq(
 									$author$project$ActionProjection$revision(scene),
-									context.c2)) {
+									context.c3)) {
 									return refuse('Scene/context revision mismatch');
 								} else {
-									var _v3 = model.as;
+									var _v3 = model.at;
 									if (!_v3.$) {
 										var old = _v3.a;
-										return (A2($author$project$Effects$sameAuthority, old.P, context) && ((!A2($author$project$UInt64$compare, context.c2, old.P.c2)) || (_Utils_eq(context.c2, old.P.c2) && (!A2($author$project$ActionProjection$sameState, old.eN, scene))))) ? refuse('Nonincreasing snapshot') : _Utils_Tuple3(
+										return (A2($author$project$Effects$sameAuthority, old.P, context) && ((!A2($author$project$UInt64$compare, context.c3, old.P.c3)) || (_Utils_eq(context.c3, old.P.c3) && (!A2($author$project$ActionProjection$sameState, old.eP, scene))))) ? refuse('Nonincreasing snapshot') : _Utils_Tuple3(
 											_Utils_update(
 												model,
 												{
 													bb: true,
-													as: $elm$core$Maybe$Just(
-														{P: context, eN: scene}),
-													fS: A2($author$project$Effects$sameAuthority, old.P, context) ? model.fS : $author$project$Effects$unknown(model.fS)
+													at: $elm$core$Maybe$Just(
+														{P: context, eP: scene}),
+													fU: A2($author$project$Effects$sameAuthority, old.P, context) ? model.fU : $author$project$Effects$unknown(model.fU)
 												}),
 											$elm$core$Maybe$Nothing,
 											$elm$core$Maybe$Nothing);
@@ -14881,8 +15098,8 @@ var $author$project$Effects$apply = F2(
 												model,
 												{
 													bb: true,
-													as: $elm$core$Maybe$Just(
-														{P: context, eN: scene})
+													at: $elm$core$Maybe$Just(
+														{P: context, eP: scene})
 												}),
 											$elm$core$Maybe$Nothing,
 											$elm$core$Maybe$Nothing);
@@ -14906,9 +15123,9 @@ var $author$project$Effects$apply = F2(
 							var operation = _v4.a;
 							var incarnation = _v4.b;
 							var _v5 = _Utils_Tuple3(
-								model.as,
-								$author$project$UInt64$next(model.c1),
-								$author$project$UInt64$next(model.fh));
+								model.at,
+								$author$project$UInt64$next(model.c2),
+								$author$project$UInt64$next(model.fj));
 							if (((!_v5.a.$) && (!_v5.b.$)) && (!_v5.c.$)) {
 								var observed = _v5.a.a;
 								var request = _v5.b.a;
@@ -14925,13 +15142,13 @@ var $author$project$Effects$apply = F2(
 											if ($author$project$Effects$protocol(operation) === 2) {
 												return refuse('Geometry observation required');
 											} else {
-												if (A3($author$project$Effects$blocked, observed.P.fp, incarnation, model)) {
+												if (A3($author$project$Effects$blocked, observed.P.fr, incarnation, model)) {
 													return refuse('Unresolved native operation');
 												} else {
-													if (!A2($author$project$ActionProjection$actionable, incarnation, observed.eN)) {
+													if (!A2($author$project$ActionProjection$actionable, incarnation, observed.eP)) {
 														return refuse('Locked or unmapped target');
 													} else {
-														var _v6 = A2($author$project$ActionProjection$minimized, incarnation, observed.eN);
+														var _v6 = A2($author$project$ActionProjection$minimized, incarnation, observed.eP);
 														if (_v6.$ === 1) {
 															return refuse('Unknown incarnation');
 														} else {
@@ -14939,18 +15156,18 @@ var $author$project$Effects$apply = F2(
 															if ((_Utils_eq(operation, $author$project$Effects$Minimize) && minimized) || ((_Utils_eq(operation, $author$project$Effects$Restore) && (!minimized)) || (_Utils_eq(operation, $author$project$Effects$Activate) && minimized))) {
 																return refuse('Already in requested native state');
 															} else {
-																var intent = {P: observed.P, fh: generation, aq: incarnation, bh: operation, c1: request};
+																var intent = {P: observed.P, fj: generation, ar: incarnation, bh: operation, c2: request};
 																return _Utils_Tuple3(
 																	_Utils_update(
 																		model,
 																		{
-																			fh: generation,
-																			c1: request,
-																			fS: $elm$core$Maybe$Just(
-																				{ay: 1, aa: intent, W: 0}),
+																			fj: generation,
+																			c2: request,
+																			fU: $elm$core$Maybe$Just(
+																				{az: 1, ab: intent, W: 0}),
 																			z: A2(
 																				$elm$core$List$cons,
-																				{ay: 1, aa: intent, W: 0},
+																				{az: 1, ab: intent, W: 0},
 																				model.z)
 																		}),
 																	$elm$core$Maybe$Just(
@@ -15018,7 +15235,7 @@ var $author$project$Effects$apply = F2(
 							var intent = _v7.b;
 							var status = _v7.c;
 							var exact = function (t) {
-								return _Utils_eq(t.ay, protocolId) && _Utils_eq(t.aa, intent);
+								return _Utils_eq(t.az, protocolId) && _Utils_eq(t.ab, intent);
 							};
 							var found = A2($elm$core$List$any, exact, model.z);
 							var settled = function (t) {
@@ -15040,7 +15257,7 @@ var $author$project$Effects$apply = F2(
 								_Utils_update(
 									model,
 									{
-										fS: A2(
+										fU: A2(
 											$elm$core$Maybe$map,
 											function (t) {
 												return A2(
@@ -15051,9 +15268,9 @@ var $author$project$Effects$apply = F2(
 														function (observed) {
 															return A2($author$project$Effects$sameAuthority, observed.P, intent.P);
 														},
-														model.as)) ? settled(t) : t;
+														model.at)) ? settled(t) : t;
 											},
-											model.fS),
+											model.fU),
 										z: unresolved
 									}),
 								$elm$core$Maybe$Nothing,
@@ -15082,8 +15299,8 @@ var $author$project$Effects$apply = F2(
 								_Utils_update(
 									model,
 									{
-										fh: A2(maximum, model.fh, generation),
-										c1: A2(maximum, model.c1, request)
+										fj: A2(maximum, model.fj, generation),
+										c2: A2(maximum, model.c2, request)
 									}),
 								$elm$core$Maybe$Nothing,
 								$elm$core$Maybe$Nothing);
@@ -15115,7 +15332,7 @@ var $author$project$Effects$apply = F2(
 								if (A2(
 									$elm$core$List$any,
 									function (t) {
-										return _Utils_eq(t.aa, intent) && _Utils_eq(t.ay, protocolId);
+										return _Utils_eq(t.ab, intent) && _Utils_eq(t.az, protocolId);
 									},
 									model.z)) {
 									return _Utils_Tuple3(model, $elm$core$Maybe$Nothing, $elm$core$Maybe$Nothing);
@@ -15123,7 +15340,7 @@ var $author$project$Effects$apply = F2(
 									if ($elm$core$List$length(model.z) >= 64) {
 										return refuse('Unresolved operation capacity');
 									} else {
-										var transaction = {ay: protocolId, aa: intent, W: 4};
+										var transaction = {az: protocolId, ab: intent, W: 4};
 										var maximum = F2(
 											function (old, _new) {
 												return (!A2($author$project$UInt64$compare, old, _new)) ? _new : old;
@@ -15132,9 +15349,9 @@ var $author$project$Effects$apply = F2(
 											_Utils_update(
 												model,
 												{
-													fh: A2(maximum, model.fh, intent.fh),
-													c1: A2(maximum, model.c1, intent.c1),
-													fS: $elm$core$Maybe$Just(transaction),
+													fj: A2(maximum, model.fj, intent.fj),
+													c2: A2(maximum, model.c2, intent.c2),
+													fU: $elm$core$Maybe$Just(transaction),
 													z: A2($elm$core$List$cons, transaction, model.z)
 												}),
 											$elm$core$Maybe$Nothing,
@@ -15157,7 +15374,7 @@ var $author$project$Effects$apply = F2(
 									model,
 									{
 										bb: false,
-										fS: $author$project$Effects$unknown(model.fS),
+										fU: $author$project$Effects$unknown(model.fU),
 										z: A2(
 											$elm$core$List$map,
 											function (t) {
@@ -15203,7 +15420,7 @@ var $author$project$Snap$matches = F3(
 							$author$project$Snap$proposal(
 								_Utils_update(
 									choice,
-									{fN: region})),
+									{fP: region})),
 							$elm$core$Maybe$Just(proposed));
 					},
 					A2($author$project$Snap$open, snapshot, target)));
@@ -15229,20 +15446,20 @@ var $author$project$Effects$beginGeometry = F5(
 			A2(
 				$elm$core$Maybe$map,
 				function (legacy) {
-					return A2($author$project$ActionProjection$actionable, incarnation, legacy.eN) && _Utils_eq(
-						A2($author$project$ActionProjection$rootOf, incarnation, legacy.eN),
+					return A2($author$project$ActionProjection$actionable, incarnation, legacy.eP) && _Utils_eq(
+						A2($author$project$ActionProjection$rootOf, incarnation, legacy.eP),
 						$elm$core$Maybe$Just(incarnation));
 				},
-				model.as));
+				model.at));
 		var _v0 = _Utils_Tuple3(
 			A2($author$project$GeometryProjection$window, incarnation, observed),
-			$author$project$UInt64$next(model.c1),
-			$author$project$UInt64$next(model.fh));
+			$author$project$UInt64$next(model.c2),
+			$author$project$UInt64$next(model.fj));
 		if (((!_v0.a.$) && (!_v0.b.$)) && (!_v0.c.$)) {
 			var window = _v0.a.a;
 			var request = _v0.b.a;
 			var generation = _v0.c.a;
-			if ((!model.bb) || ((!legacyReady) || ($author$project$Effects$pending(model) || A3($author$project$Effects$blocked, observed.P.fp, incarnation, model)))) {
+			if ((!model.bb) || ((!legacyReady) || ($author$project$Effects$pending(model) || A3($author$project$Effects$blocked, observed.P.fr, incarnation, model)))) {
 				return refuse('Unresolved or disconnected native operation');
 			} else {
 				if ($elm$core$List$length(model.z) >= 64) {
@@ -15251,10 +15468,10 @@ var $author$project$Effects$beginGeometry = F5(
 					if (($author$project$Effects$protocol(operation) !== 2) || ((!caps._) || (!A2(
 						$elm$core$List$member,
 						$author$project$Effects$operationName(operation),
-						caps.ev)))) {
+						caps.ew)))) {
 						return refuse('Geometry operation not negotiated');
 					} else {
-						if (observed.e6 || function () {
+						if (observed.e8 || function () {
 							switch (operation.$) {
 								case 8:
 									return !A2(
@@ -15263,9 +15480,9 @@ var $author$project$Effects$beginGeometry = F5(
 										A2(
 											$elm$core$Maybe$map,
 											function ($) {
-												return $.dr;
+												return $.ds;
 											},
-											window.dF));
+											window.dG));
 								case 9:
 									return !A2(
 										$elm$core$Maybe$withDefault,
@@ -15273,16 +15490,16 @@ var $author$project$Effects$beginGeometry = F5(
 										A2(
 											$elm$core$Maybe$map,
 											function ($) {
-												return $.dr;
+												return $.ds;
 											},
-											window.dF));
+											window.dG));
 								case 5:
 									return !$author$project$GeometryProjection$canExitFullscreen(window);
 								case 7:
 									var p = operation.a;
 									return !A3($author$project$Transfer$matches, observed, incarnation, p);
 								default:
-									return (!window.dr) || (window.b_ || window.fg);
+									return (!window.ds) || (window.b_ || window.fi);
 							}
 						}()) {
 							return refuse('Geometry target ineligible');
@@ -15294,13 +15511,13 @@ var $author$project$Effects$beginGeometry = F5(
 									$elm$core$Maybe$map,
 									function (pin) {
 										return _Utils_eq(
-											pin.fB,
+											pin.fD,
 											_Utils_eq(operation, $author$project$Effects$Pin));
 									},
-									window.dF))) {
+									window.dG))) {
 								return refuse('Pin state already requested or unavailable');
 							} else {
-								if ((_Utils_eq(operation, $author$project$Effects$Maximize) && ((!window.fr) || (!(!window.es)))) || (_Utils_eq(operation, $author$project$Effects$RestoreGeometry) && ((!window.fI) || ((window.es !== 1) || (!window.fC))))) {
+								if ((_Utils_eq(operation, $author$project$Effects$Maximize) && ((!window.ft) || (!(!window.et)))) || (_Utils_eq(operation, $author$project$Effects$RestoreGeometry) && ((!window.fK) || ((window.et !== 1) || (!window.fE))))) {
 									return refuse('Geometry state/capability unavailable');
 								} else {
 									if (function () {
@@ -15313,15 +15530,15 @@ var $author$project$Effects$beginGeometry = F5(
 									}()) {
 										return refuse('Snap output/work-area placement changed');
 									} else {
-										var intent = {P: observed.P, fh: generation, aq: incarnation, bh: operation, c1: request};
-										var transaction = {ay: 2, aa: intent, W: 0};
+										var intent = {P: observed.P, fj: generation, ar: incarnation, bh: operation, c2: request};
+										var transaction = {az: 2, ab: intent, W: 0};
 										return _Utils_Tuple3(
 											_Utils_update(
 												model,
 												{
-													fh: generation,
-													c1: request,
-													fS: $elm$core$Maybe$Just(transaction),
+													fj: generation,
+													c2: request,
+													fU: $elm$core$Maybe$Just(transaction),
 													z: A2($elm$core$List$cons, transaction, model.z)
 												}),
 											$elm$core$Maybe$Just(
@@ -15353,10 +15570,10 @@ var $author$project$Effects$beginGeometry = F5(
 var $author$project$Effects$canProveUnsent = F3(
 	function (protocolId, intent, model) {
 		var exact = function (entry) {
-			return _Utils_eq(entry.ay, protocolId) && _Utils_eq(entry.aa, intent);
+			return _Utils_eq(entry.az, protocolId) && _Utils_eq(entry.ab, intent);
 		};
 		var currentSafe = function () {
-			var _v0 = model.fS;
+			var _v0 = model.fU;
 			if (!_v0.$) {
 				var entry = _v0.a;
 				return (!exact(entry)) || (!entry.W);
@@ -15385,13 +15602,13 @@ var $author$project$Shell$canProveUnsent = F2(
 			operations);
 		var known = function (key) {
 			return _Utils_eq(
-				model.dk,
-				$elm$core$Maybe$Just(key.dk)) && (A2(
+				model.dl,
+				$elm$core$Maybe$Just(key.dl)) && (A2(
 				$elm$core$List$any,
 				function (entry) {
-					return _Utils_eq(entry.dk, key.dk) && (_Utils_eq(entry.eE, key.eE) && _Utils_eq(entry.aa, key.aa));
+					return _Utils_eq(entry.dl, key.dl) && (_Utils_eq(entry.eF, key.eF) && _Utils_eq(entry.ab, key.ab));
 				},
-				model.U) && A3($author$project$Effects$canProveUnsent, key.eE, key.aa, model._));
+				model.U) && A3($author$project$Effects$canProveUnsent, key.eF, key.ab, model._));
 		};
 		return (!$elm$core$List$isEmpty(operations)) && (($elm$core$List$length(operations) <= 16) && (_Utils_eq(
 			$elm$core$List$length(unique),
@@ -15421,7 +15638,7 @@ var $author$project$GeometryProjection$strict = F2(
 var $author$project$GeometryProjection$capabilitiesDecoder = A2(
 	$elm$json$Json$Decode$andThen,
 	function (caps) {
-		return (($elm$core$List$length(caps.ev) <= 7) && (A2(
+		return (($elm$core$List$length(caps.ew) <= 7) && (A2(
 			$elm$core$List$all,
 			function (op) {
 				return A2(
@@ -15430,8 +15647,8 @@ var $author$project$GeometryProjection$capabilitiesDecoder = A2(
 					_List_fromArray(
 						['maximize', 'restore-geometry', 'snap', 'transfer-workspace', 'pin', 'unpin', 'exit-fullscreen']));
 			},
-			caps.ev) && (_Utils_eq(
-			$elm$core$List$length(caps.ev),
+			caps.ew) && (_Utils_eq(
+			$elm$core$List$length(caps.ew),
 			$elm$core$List$length(
 				A3(
 					$elm$core$List$foldl,
@@ -15440,9 +15657,9 @@ var $author$project$GeometryProjection$capabilitiesDecoder = A2(
 							return A2($elm$core$List$member, x, xs) ? xs : A2($elm$core$List$cons, x, xs);
 						}),
 					_List_Nil,
-					caps.ev))) && _Utils_eq(
+					caps.ew))) && _Utils_eq(
 			caps._,
-			!$elm$core$List$isEmpty(caps.ev))))) ? $elm$json$Json$Decode$succeed(caps) : $elm$json$Json$Decode$fail('Geometry capabilities');
+			!$elm$core$List$isEmpty(caps.ew))))) ? $elm$json$Json$Decode$succeed(caps) : $elm$json$Json$Decode$fail('Geometry capabilities');
 	},
 	A2(
 		$author$project$GeometryProjection$strict,
@@ -15452,7 +15669,7 @@ var $author$project$GeometryProjection$capabilitiesDecoder = A2(
 			$elm$json$Json$Decode$map6,
 			F6(
 				function (_v0, effects, _v1, operations, _v2, _v3) {
-					return {_: effects, ev: operations};
+					return {_: effects, ew: operations};
 				}),
 			A3($author$project$GeometryProjection$exact, 'observe', $elm$json$Json$Decode$bool, true),
 			A2($elm$json$Json$Decode$field, 'effects', $elm$json$Json$Decode$bool),
@@ -15469,309 +15686,9 @@ var $author$project$GeometryProjection$positive = A2(
 		return _Utils_eq(x, $author$project$UInt64$zero) ? $elm$json$Json$Decode$fail('Zero geometry identity') : $elm$json$Json$Decode$succeed(x);
 	},
 	$author$project$UInt64$decoder);
-var $elm$core$Basics$min = F2(
-	function (x, y) {
-		return (_Utils_cmp(x, y) < 0) ? x : y;
-	});
-var $author$project$GeometrySizePolicy$fixed = function (inputs) {
-	var axis = F4(
-		function (rawLo, rawHi, layoutLo, layoutHi) {
-			var upper = A2(
-				$elm$core$Basics$min,
-				2147483647,
-				A2(
-					$elm$core$Basics$min,
-					(!rawHi) ? 2147483647 : $elm$core$Basics$floor(rawHi),
-					$elm$core$Basics$floor(layoutHi)));
-			var lower = A2(
-				$elm$core$Basics$max,
-				1,
-				A2(
-					$elm$core$Basics$max,
-					$elm$core$Basics$ceiling(rawLo),
-					$elm$core$Basics$floor(layoutLo)));
-			return _Utils_cmp(lower, upper) > -1;
-		});
-	var _v0 = inputs.b3;
-	var ux = _v0.a;
-	var uy = _v0.b;
-	var _v1 = inputs.b4;
-	var rx = _v1.a;
-	var ry = _v1.b;
-	var _v2 = inputs.bZ;
-	var lx = _v2.a;
-	var ly = _v2.b;
-	var _v3 = inputs.bY;
-	var hx = _v3.a;
-	var hy = _v3.b;
-	return A4(axis, rx, ux, lx, hx) || A4(axis, ry, uy, ly, hy);
-};
-var $author$project$GeometrySizePolicy$fromList = function (values) {
-	if ((((values.b && values.b.b) && values.b.b.b) && values.b.b.b.b) && (!values.b.b.b.b.b)) {
-		var x = values.a;
-		var _v1 = values.b;
-		var y = _v1.a;
-		var _v2 = _v1.b;
-		var w = _v2.a;
-		var _v3 = _v2.b;
-		var h = _v3.a;
-		return $elm$core$Maybe$Just(
-			{aX: h, a5: w, a6: x, a7: y});
-	} else {
-		return $elm$core$Maybe$Nothing;
-	}
-};
-var $author$project$GeometrySizePolicy$roundNative = function (x) {
-	return (x >= 0) ? ($elm$core$Basics$floor(x) + (((x - $elm$core$Basics$floor(x)) >= 0.5) ? 1 : 0)) : ($elm$core$Basics$ceiling(x) - ((($elm$core$Basics$ceiling(x) - x) >= 0.5) ? 1 : 0));
-};
-var $author$project$GeometrySizePolicy$rounded = function (value) {
-	return {
-		aX: $author$project$GeometrySizePolicy$roundNative(value.a7 + value.aX) - $author$project$GeometrySizePolicy$roundNative(value.a7),
-		a5: $author$project$GeometrySizePolicy$roundNative(value.a6 + value.a5) - $author$project$GeometrySizePolicy$roundNative(value.a6),
-		a6: $author$project$GeometrySizePolicy$roundNative(value.a6),
-		a7: $author$project$GeometrySizePolicy$roundNative(value.a7)
-	};
-};
-var $author$project$GeometrySizePolicy$within = F2(
-	function (inputs, projection) {
-		var axis = F6(
-			function (configured, real, rawLo, rawHi, lo, hi) {
-				return (configured >= 1) && ((configured <= 2147483647) && ((_Utils_cmp(configured, rawLo) > -1) && (((!rawHi) || (_Utils_cmp(configured, rawHi) < 1)) && ((_Utils_cmp(real, lo) > -1) && (_Utils_cmp(real, hi) < 1)))));
-			});
-		var _v0 = inputs.b3;
-		var ux = _v0.a;
-		var uy = _v0.b;
-		var _v1 = inputs.b4;
-		var rx = _v1.a;
-		var ry = _v1.b;
-		var _v2 = inputs.bZ;
-		var lx = _v2.a;
-		var ly = _v2.b;
-		var _v3 = inputs.bY;
-		var hx = _v3.a;
-		var hy = _v3.b;
-		var _v4 = projection.$7;
-		var cx = _v4.a;
-		var cy = _v4.b;
-		return _Utils_eq(
-			projection.$7,
-			_Utils_Tuple2(
-				$elm$core$Basics$floor(projection.b6.a5),
-				$elm$core$Basics$floor(projection.b6.aX))) && (A6(axis, cx, projection.b6.a5, rx, ux, lx, hx) && A6(axis, cy, projection.b6.aX, ry, uy, ly, hy));
-	});
-var $author$project$GeometrySizePolicy$projectionValid = F4(
-	function (maximize, workArea, inputs, projection) {
-		var real = projection.b6;
-		var logical = projection.en;
-		var source = maximize ? A2(
-			$elm$core$Maybe$withDefault,
-			false,
-			A2(
-				$elm$core$Maybe$map,
-				A2(
-					$elm$core$Basics$composeR,
-					$author$project$GeometrySizePolicy$rounded,
-					$elm$core$Basics$eq(logical)),
-				A2($elm$core$Maybe$andThen, $author$project$GeometrySizePolicy$fromList, workArea))) : _Utils_eq(
-			projection.eX,
-			$elm$core$Maybe$Just(real));
-		var _v0 = inputs.dP;
-		var tx = _v0.a;
-		var ty = _v0.b;
-		var _v1 = inputs.dl;
-		var bx = _v1.a;
-		var by = _v1.b;
-		var converted = maximize ? {aX: logical.aX - (ty + by), a5: logical.a5 - (tx + bx), a6: logical.a6 + tx, a7: logical.a7 + ty} : logical;
-		return _Utils_eq(
-			logical,
-			$author$project$GeometrySizePolicy$rounded(logical)) && (A2(
-			$elm$core$Maybe$withDefault,
-			true,
-			A2(
-				$elm$core$Maybe$map,
-				function (v) {
-					return _Utils_eq(
-						v,
-						$author$project$GeometrySizePolicy$rounded(v));
-				},
-				projection.eX)) && (_Utils_eq(real, converted) && (A2($author$project$GeometrySizePolicy$within, inputs, projection) && (source && ((!maximize) || _Utils_eq(projection.eX, $elm$core$Maybe$Nothing))))));
-	});
-var $author$project$GeometrySizePolicy$supported = function (policy) {
-	var _v0 = policy.dt;
-	if (_v0.$ === 1) {
-		return false;
-	} else {
-		var inputs = _v0.a;
-		return _Utils_eq(
-			inputs.cY,
-			_Utils_Tuple2(0, 0)) && (!$author$project$GeometrySizePolicy$fixed(inputs));
-	}
-};
-var $author$project$GeometrySizePolicy$coherent = F4(
-	function (policy, workArea, constrained, fixedSize) {
-		var _v0 = policy.dt;
-		if (_v0.$ === 1) {
-			return _Utils_eq(policy.fr, $elm$core$Maybe$Nothing) && _Utils_eq(policy.fI, $elm$core$Maybe$Nothing);
-		} else {
-			var inputs = _v0.a;
-			var values = function (_v1) {
-				var x = _v1.a;
-				var y = _v1.b;
-				return _List_fromArray(
-					[x, y]);
-			};
-			var valid = F2(
-				function (maximize, projection) {
-					return A2(
-						$elm$core$Maybe$withDefault,
-						true,
-						A2(
-							$elm$core$Maybe$map,
-							function (p) {
-								return $author$project$GeometrySizePolicy$supported(policy) && A4($author$project$GeometrySizePolicy$projectionValid, maximize, workArea, inputs, p);
-							},
-							projection));
-				});
-			var expected = A2(
-				$elm$core$List$any,
-				$elm$core$Basics$lt(1),
-				_Utils_ap(
-					values(inputs.b4),
-					values(inputs.bZ))) || (A2(
-				$elm$core$List$any,
-				$elm$core$Basics$lt(0),
-				values(inputs.b3)) || A2(
-				$elm$core$List$any,
-				$elm$core$Basics$gt(1.7976931348623157e308),
-				values(inputs.bY)));
-			return _Utils_eq(constrained, expected) && (_Utils_eq(
-				fixedSize,
-				$author$project$GeometrySizePolicy$fixed(inputs)) && (A2(valid, true, policy.fr) && A2(valid, false, policy.fI)));
-		}
-	});
-var $author$project$GeometrySizePolicy$permits = F2(
-	function (maximize, policy) {
-		return $author$project$GeometrySizePolicy$supported(policy) && (maximize ? (!_Utils_eq(policy.fr, $elm$core$Maybe$Nothing)) : (!_Utils_eq(policy.fI, $elm$core$Maybe$Nothing)));
-	});
-var $author$project$GeometryProjection$validRows = F3(
-	function (caps, blocked, rows) {
-		var walk = F2(
-			function (visited, id) {
-				walk:
-				while (true) {
-					if (A2($elm$core$List$member, id, visited)) {
-						return false;
-					} else {
-						var _v0 = $elm$core$List$head(
-							A2(
-								$elm$core$List$filter,
-								function (row) {
-									return _Utils_eq(row.aq, id);
-								},
-								rows));
-						if (_v0.$ === 1) {
-							return false;
-						} else {
-							var row = _v0.a;
-							var _v1 = row.dD;
-							if (_v1.$ === 1) {
-								return true;
-							} else {
-								var parent = _v1.a;
-								var $temp$visited = A2($elm$core$List$cons, id, visited),
-									$temp$id = parent;
-								visited = $temp$visited;
-								id = $temp$id;
-								continue walk;
-							}
-						}
-					}
-				}
-			});
-		var rowValid = function (row) {
-			var sizeValid = A2(
-				$elm$core$Maybe$withDefault,
-				true,
-				A2(
-					$elm$core$Maybe$map,
-					function (p) {
-						return A4($author$project$GeometrySizePolicy$coherent, p, row.cd, row.cK, row.fg) && (((!row.dr) || $author$project$GeometrySizePolicy$supported(p)) && (((!row.fr) || A2($author$project$GeometrySizePolicy$permits, true, p)) && ((!row.fI) || A2($author$project$GeometrySizePolicy$permits, false, p))));
-					},
-					row.c9));
-			var pinValid = A2(
-				$elm$core$Maybe$withDefault,
-				true,
-				A2(
-					$elm$core$Maybe$map,
-					function (pin) {
-						return (!pin.dr) || ((!blocked) && ((!_Utils_eq(row.e$, $elm$core$Maybe$Nothing)) && (row.bX && (_Utils_eq(row.dD, $elm$core$Maybe$Nothing) && ((!row.bB) && ((!row.b_) && (_Utils_eq(row.es, row.cg) && ((row.es !== 2) && (A2($elm$core$List$member, 'pin', caps.ev) && A2($elm$core$List$member, 'unpin', caps.ev))))))))));
-					},
-					row.dF));
-			var ownership = function () {
-				var _v2 = row.dD;
-				if (_v2.$ === 1) {
-					return true;
-				} else {
-					return A2(walk, _List_Nil, row.aq);
-				}
-			}();
-			var known = A2(
-				$elm$core$List$map,
-				$elm$core$Basics$identity,
-				_List_fromArray(
-					[
-						!_Utils_eq(row.e$, $elm$core$Maybe$Nothing),
-						!_Utils_eq(row.ce, $elm$core$Maybe$Nothing),
-						!_Utils_eq(row.b$, $elm$core$Maybe$Nothing),
-						!_Utils_eq(row.bi, $elm$core$Maybe$Nothing),
-						!_Utils_eq(row.cE, $elm$core$Maybe$Nothing),
-						!_Utils_eq(row.cd, $elm$core$Maybe$Nothing)
-					]));
-			var paired = A2(
-				$elm$core$List$all,
-				$elm$core$Basics$eq(true),
-				known) || A2(
-				$elm$core$List$all,
-				$elm$core$Basics$eq(false),
-				known);
-			var eligible = (!row.dr) || ((!_Utils_eq(row.e$, $elm$core$Maybe$Nothing)) && ((!blocked) && ((!row.b_) && ((!row.bB) && ((!row.fg) && (((!_Utils_eq(row.c9, $elm$core$Maybe$Nothing)) || (!row.cK)) && (row.bX && (_Utils_eq(row.dD, $elm$core$Maybe$Nothing) && (_Utils_eq(row.es, row.cg) && (row.es !== 2))))))))));
-			var capabilityModes = ((!row.fr) || (row.dr && (!row.es))) && ((!row.fI) || (row.dr && ((row.es === 1) && row.fC)));
-			return pinValid && (paired && (eligible && (ownership && (sizeValid && (capabilityModes && (((!row.fr) || A2($elm$core$List$member, 'maximize', caps.ev)) && ((!row.fI) || A2($elm$core$List$member, 'restore-geometry', caps.ev))))))));
-		};
-		var ids = A2(
-			$elm$core$List$map,
-			function ($) {
-				return $.aq;
-			},
-			rows);
-		var unique = _Utils_eq(
-			$elm$core$List$length(ids),
-			$elm$core$List$length(
-				A3(
-					$elm$core$List$foldl,
-					F2(
-						function (x, xs) {
-							return A2($elm$core$List$member, x, xs) ? xs : A2($elm$core$List$cons, x, xs);
-						}),
-					_List_Nil,
-					ids)));
-		var coherent = F2(
-			function (a, b) {
-				return (_Utils_eq(a.bi, $elm$core$Maybe$Nothing) || ((!_Utils_eq(a.bi, b.bi)) || _Utils_eq(a.b$, b.b$))) && (_Utils_eq(a.ce, $elm$core$Maybe$Nothing) || ((!_Utils_eq(a.ce, b.ce)) || (_Utils_eq(a.e$, b.e$) && (_Utils_eq(a.bi, b.bi) && (_Utils_eq(a.cE, b.cE) && _Utils_eq(a.cd, b.cd))))));
-			});
-		return ($elm$core$List$length(rows) <= 256) && (unique && (A2($elm$core$List$all, rowValid, rows) && A2(
-			$elm$core$List$all,
-			function (a) {
-				return A2(
-					$elm$core$List$all,
-					coherent(a),
-					rows);
-			},
-			rows)));
-	});
 var $author$project$GeometrySizePolicy$Policy = F3(
 	function (inputs, maximize, restoreGeometry) {
-		return {dt: inputs, fr: maximize, fI: restoreGeometry};
+		return {du: inputs, ft: maximize, fK: restoreGeometry};
 	});
 var $author$project$GeometrySizePolicy$finite = function (x) {
 	return !($elm$core$Basics$isNaN(x) || $elm$core$Basics$isInfinite(x));
@@ -15819,7 +15736,7 @@ var $author$project$GeometrySizePolicy$strict = F2(
 var $author$project$GeometrySizePolicy$inputsDecoder = A2(
 	$elm$json$Json$Decode$andThen,
 	function (inputs) {
-		return ($author$project$GeometrySizePolicy$finite(inputs.c4) && ((inputs.c4 > 0) && (A3($author$project$GeometrySizePolicy$interval, true, inputs.b4, inputs.b3) && A3($author$project$GeometrySizePolicy$interval, false, inputs.bZ, inputs.bY)))) ? $elm$json$Json$Decode$succeed(inputs) : $elm$json$Json$Decode$fail('Size intervals');
+		return ($author$project$GeometrySizePolicy$finite(inputs.c5) && ((inputs.c5 > 0) && (A3($author$project$GeometrySizePolicy$interval, true, inputs.b4, inputs.b3) && A3($author$project$GeometrySizePolicy$interval, false, inputs.bZ, inputs.bY)))) ? $elm$json$Json$Decode$succeed(inputs) : $elm$json$Json$Decode$fail('Size intervals');
 	},
 	A2(
 		$author$project$GeometrySizePolicy$strict,
@@ -15841,7 +15758,7 @@ var $author$project$GeometrySizePolicy$inputsDecoder = A2(
 				$elm$json$Json$Decode$map8,
 				F8(
 					function (rawMin, rawMax, layoutMin, layoutMax, origin, tl, br, scale) {
-						return {dl: br, bY: layoutMax, bZ: layoutMin, cY: origin, b3: rawMax, b4: rawMin, c4: scale, dP: tl};
+						return {dm: br, bY: layoutMax, bZ: layoutMin, cZ: origin, b3: rawMax, b4: rawMin, c5: scale, dQ: tl};
 					}),
 				A2(
 					$elm$json$Json$Decode$field,
@@ -15874,7 +15791,7 @@ var $author$project$GeometrySizePolicy$inputsDecoder = A2(
 				A2($elm$json$Json$Decode$field, 'monitorScale', $elm$json$Json$Decode$float)))));
 var $author$project$GeometrySizePolicy$Projection = F4(
 	function (logical, visual, real, configure) {
-		return {$7: configure, en: logical, b6: real, eX: visual};
+		return {dp: configure, eo: logical, b6: real, eZ: visual};
 	});
 var $author$project$GeometrySizePolicy$box = A2(
 	$elm$json$Json$Decode$andThen,
@@ -15988,7 +15905,7 @@ var $author$project$GeometryProjection$windowDecoder = function (protocol) {
 		$elm$json$Json$Decode$map8,
 		F8(
 			function (logical, visual, _native, client, minimized, floating, grouped, fixed) {
-				return {dY: client, d6: fixed, bX: floating, bB: grouped, en: logical, b_: minimized, er: _native, eX: visual};
+				return {dZ: client, d7: fixed, bX: floating, bB: grouped, eo: logical, b_: minimized, es: _native, eZ: visual};
 			}),
 		A2($elm$json$Json$Decode$field, 'logicalGeometry', $author$project$GeometryProjection$rect),
 		A2($elm$json$Json$Decode$field, 'visualGeometry', $author$project$GeometryProjection$rect),
@@ -16002,7 +15919,7 @@ var $author$project$GeometryProjection$windowDecoder = function (protocol) {
 		$elm$json$Json$Decode$map6,
 		F6(
 			function (constrained, eligible, known, caps, size, pin) {
-				return {dn: caps, dZ: constrained, dr: eligible, ek: known, dF: pin, eQ: size};
+				return {$7: caps, d_: constrained, ds: eligible, el: known, dG: pin, eS: size};
 			}),
 		A2($elm$json$Json$Decode$field, 'constrainedSize', $elm$json$Json$Decode$bool),
 		A2($elm$json$Json$Decode$field, 'geometryEligible', $elm$json$Json$Decode$bool),
@@ -16037,7 +15954,7 @@ var $author$project$GeometryProjection$windowDecoder = function (protocol) {
 						$elm$json$Json$Decode$map2,
 						F2(
 							function (pinned, eligible) {
-								return {dr: eligible, fB: pinned};
+								return {ds: eligible, fD: pinned};
 							}),
 						A2($elm$json$Json$Decode$field, 'pinned', $elm$json$Json$Decode$bool),
 						A2($elm$json$Json$Decode$field, 'eligible', $elm$json$Json$Decode$bool))))) : $elm$json$Json$Decode$succeed($elm$core$Maybe$Nothing));
@@ -16045,7 +15962,7 @@ var $author$project$GeometryProjection$windowDecoder = function (protocol) {
 		$elm$json$Json$Decode$map8,
 		F8(
 			function (inc, owner, ws, wg, mon, og, wr, wa) {
-				return {ee: inc, ep: mon, eu: og, dD: owner, eZ: wa, e_: wg, e0: wr, e1: ws};
+				return {ef: inc, eq: mon, ev: og, dE: owner, e$: wa, e0: wg, e2: wr, e3: ws};
 			}),
 		A2($elm$json$Json$Decode$field, 'incarnation', $author$project$GeometryProjection$positive),
 		A2(
@@ -16090,18 +16007,336 @@ var $author$project$GeometryProjection$windowDecoder = function (protocol) {
 			$elm$json$Json$Decode$map3,
 			F3(
 				function (i, s, p) {
-					return {cg: s.dY, cK: p.dZ, dr: p.dr, fg: s.d6, bX: s.bX, bB: s.bB, aq: i.ee, eo: s.en, fr: p.dn.a, b_: s.b_, b$: i.ep, es: s.er, bi: i.eu, dD: i.dD, dF: p.dF, fC: p.ek, fI: p.dn.b, c9: p.eQ, eY: s.eX, cd: i.eZ, cE: i.e0, e$: i.e1, ce: i.e_};
+					return {cg: s.dZ, cL: p.d_, ds: p.ds, fi: s.d7, bX: s.bX, bB: s.bB, ar: i.ef, ep: s.eo, ft: p.$7.a, b_: s.b_, b$: i.eq, et: s.es, bi: i.ev, dE: i.dE, dG: p.dG, fE: p.el, fK: p.$7.b, da: p.eS, e_: s.eZ, cd: i.e$, cE: i.e2, e1: i.e3, ce: i.e0};
 				}),
 			identities,
 			state,
 			policy));
 };
+var $author$project$GeometryProjection$factsBody = function (protocol) {
+	return A4(
+		$elm$json$Json$Decode$map3,
+		F3(
+			function (focus, blocked, rows) {
+				return {e8: blocked, ci: focus, a: rows};
+			}),
+		A2(
+			$elm$json$Json$Decode$field,
+			'focused',
+			$elm$json$Json$Decode$nullable($author$project$GeometryProjection$positive)),
+		A2($elm$json$Json$Decode$field, 'inputBlocked', $elm$json$Json$Decode$bool),
+		A2(
+			$elm$json$Json$Decode$field,
+			'windows',
+			$elm$json$Json$Decode$list(
+				$author$project$GeometryProjection$windowDecoder(protocol))));
+};
+var $elm$core$Basics$min = F2(
+	function (x, y) {
+		return (_Utils_cmp(x, y) < 0) ? x : y;
+	});
+var $author$project$GeometrySizePolicy$fixed = function (inputs) {
+	var axis = F4(
+		function (rawLo, rawHi, layoutLo, layoutHi) {
+			var upper = A2(
+				$elm$core$Basics$min,
+				2147483647,
+				A2(
+					$elm$core$Basics$min,
+					(!rawHi) ? 2147483647 : $elm$core$Basics$floor(rawHi),
+					$elm$core$Basics$floor(layoutHi)));
+			var lower = A2(
+				$elm$core$Basics$max,
+				1,
+				A2(
+					$elm$core$Basics$max,
+					$elm$core$Basics$ceiling(rawLo),
+					$elm$core$Basics$floor(layoutLo)));
+			return _Utils_cmp(lower, upper) > -1;
+		});
+	var _v0 = inputs.b3;
+	var ux = _v0.a;
+	var uy = _v0.b;
+	var _v1 = inputs.b4;
+	var rx = _v1.a;
+	var ry = _v1.b;
+	var _v2 = inputs.bZ;
+	var lx = _v2.a;
+	var ly = _v2.b;
+	var _v3 = inputs.bY;
+	var hx = _v3.a;
+	var hy = _v3.b;
+	return A4(axis, rx, ux, lx, hx) || A4(axis, ry, uy, ly, hy);
+};
+var $author$project$GeometrySizePolicy$fromList = function (values) {
+	if ((((values.b && values.b.b) && values.b.b.b) && values.b.b.b.b) && (!values.b.b.b.b.b)) {
+		var x = values.a;
+		var _v1 = values.b;
+		var y = _v1.a;
+		var _v2 = _v1.b;
+		var w = _v2.a;
+		var _v3 = _v2.b;
+		var h = _v3.a;
+		return $elm$core$Maybe$Just(
+			{aX: h, a5: w, a6: x, a7: y});
+	} else {
+		return $elm$core$Maybe$Nothing;
+	}
+};
+var $author$project$GeometrySizePolicy$roundNative = function (x) {
+	return (x >= 0) ? ($elm$core$Basics$floor(x) + (((x - $elm$core$Basics$floor(x)) >= 0.5) ? 1 : 0)) : ($elm$core$Basics$ceiling(x) - ((($elm$core$Basics$ceiling(x) - x) >= 0.5) ? 1 : 0));
+};
+var $author$project$GeometrySizePolicy$rounded = function (value) {
+	return {
+		aX: $author$project$GeometrySizePolicy$roundNative(value.a7 + value.aX) - $author$project$GeometrySizePolicy$roundNative(value.a7),
+		a5: $author$project$GeometrySizePolicy$roundNative(value.a6 + value.a5) - $author$project$GeometrySizePolicy$roundNative(value.a6),
+		a6: $author$project$GeometrySizePolicy$roundNative(value.a6),
+		a7: $author$project$GeometrySizePolicy$roundNative(value.a7)
+	};
+};
+var $author$project$GeometrySizePolicy$within = F2(
+	function (inputs, projection) {
+		var axis = F6(
+			function (configured, real, rawLo, rawHi, lo, hi) {
+				return (configured >= 1) && ((configured <= 2147483647) && ((_Utils_cmp(configured, rawLo) > -1) && (((!rawHi) || (_Utils_cmp(configured, rawHi) < 1)) && ((_Utils_cmp(real, lo) > -1) && (_Utils_cmp(real, hi) < 1)))));
+			});
+		var _v0 = inputs.b3;
+		var ux = _v0.a;
+		var uy = _v0.b;
+		var _v1 = inputs.b4;
+		var rx = _v1.a;
+		var ry = _v1.b;
+		var _v2 = inputs.bZ;
+		var lx = _v2.a;
+		var ly = _v2.b;
+		var _v3 = inputs.bY;
+		var hx = _v3.a;
+		var hy = _v3.b;
+		var _v4 = projection.dp;
+		var cx = _v4.a;
+		var cy = _v4.b;
+		return _Utils_eq(
+			projection.dp,
+			_Utils_Tuple2(
+				$elm$core$Basics$floor(projection.b6.a5),
+				$elm$core$Basics$floor(projection.b6.aX))) && (A6(axis, cx, projection.b6.a5, rx, ux, lx, hx) && A6(axis, cy, projection.b6.aX, ry, uy, ly, hy));
+	});
+var $author$project$GeometrySizePolicy$projectionValid = F4(
+	function (maximize, workArea, inputs, projection) {
+		var real = projection.b6;
+		var logical = projection.eo;
+		var source = maximize ? A2(
+			$elm$core$Maybe$withDefault,
+			false,
+			A2(
+				$elm$core$Maybe$map,
+				A2(
+					$elm$core$Basics$composeR,
+					$author$project$GeometrySizePolicy$rounded,
+					$elm$core$Basics$eq(logical)),
+				A2($elm$core$Maybe$andThen, $author$project$GeometrySizePolicy$fromList, workArea))) : _Utils_eq(
+			projection.eZ,
+			$elm$core$Maybe$Just(real));
+		var _v0 = inputs.dQ;
+		var tx = _v0.a;
+		var ty = _v0.b;
+		var _v1 = inputs.dm;
+		var bx = _v1.a;
+		var by = _v1.b;
+		var converted = maximize ? {aX: logical.aX - (ty + by), a5: logical.a5 - (tx + bx), a6: logical.a6 + tx, a7: logical.a7 + ty} : logical;
+		return _Utils_eq(
+			logical,
+			$author$project$GeometrySizePolicy$rounded(logical)) && (A2(
+			$elm$core$Maybe$withDefault,
+			true,
+			A2(
+				$elm$core$Maybe$map,
+				function (v) {
+					return _Utils_eq(
+						v,
+						$author$project$GeometrySizePolicy$rounded(v));
+				},
+				projection.eZ)) && (_Utils_eq(real, converted) && (A2($author$project$GeometrySizePolicy$within, inputs, projection) && (source && ((!maximize) || _Utils_eq(projection.eZ, $elm$core$Maybe$Nothing))))));
+	});
+var $author$project$GeometrySizePolicy$supported = function (policy) {
+	var _v0 = policy.du;
+	if (_v0.$ === 1) {
+		return false;
+	} else {
+		var inputs = _v0.a;
+		return _Utils_eq(
+			inputs.cZ,
+			_Utils_Tuple2(0, 0)) && (!$author$project$GeometrySizePolicy$fixed(inputs));
+	}
+};
+var $author$project$GeometrySizePolicy$coherent = F4(
+	function (policy, workArea, constrained, fixedSize) {
+		var _v0 = policy.du;
+		if (_v0.$ === 1) {
+			return _Utils_eq(policy.ft, $elm$core$Maybe$Nothing) && _Utils_eq(policy.fK, $elm$core$Maybe$Nothing);
+		} else {
+			var inputs = _v0.a;
+			var values = function (_v1) {
+				var x = _v1.a;
+				var y = _v1.b;
+				return _List_fromArray(
+					[x, y]);
+			};
+			var valid = F2(
+				function (maximize, projection) {
+					return A2(
+						$elm$core$Maybe$withDefault,
+						true,
+						A2(
+							$elm$core$Maybe$map,
+							function (p) {
+								return $author$project$GeometrySizePolicy$supported(policy) && A4($author$project$GeometrySizePolicy$projectionValid, maximize, workArea, inputs, p);
+							},
+							projection));
+				});
+			var expected = A2(
+				$elm$core$List$any,
+				$elm$core$Basics$lt(1),
+				_Utils_ap(
+					values(inputs.b4),
+					values(inputs.bZ))) || (A2(
+				$elm$core$List$any,
+				$elm$core$Basics$lt(0),
+				values(inputs.b3)) || A2(
+				$elm$core$List$any,
+				$elm$core$Basics$gt(1.7976931348623157e308),
+				values(inputs.bY)));
+			return _Utils_eq(constrained, expected) && (_Utils_eq(
+				fixedSize,
+				$author$project$GeometrySizePolicy$fixed(inputs)) && (A2(valid, true, policy.ft) && A2(valid, false, policy.fK)));
+		}
+	});
+var $author$project$GeometrySizePolicy$permits = F2(
+	function (maximize, policy) {
+		return $author$project$GeometrySizePolicy$supported(policy) && (maximize ? (!_Utils_eq(policy.ft, $elm$core$Maybe$Nothing)) : (!_Utils_eq(policy.fK, $elm$core$Maybe$Nothing)));
+	});
+var $author$project$GeometryProjection$validRows = F3(
+	function (caps, blocked, rows) {
+		var walk = F2(
+			function (visited, id) {
+				walk:
+				while (true) {
+					if (A2($elm$core$List$member, id, visited)) {
+						return false;
+					} else {
+						var _v0 = $elm$core$List$head(
+							A2(
+								$elm$core$List$filter,
+								function (row) {
+									return _Utils_eq(row.ar, id);
+								},
+								rows));
+						if (_v0.$ === 1) {
+							return false;
+						} else {
+							var row = _v0.a;
+							var _v1 = row.dE;
+							if (_v1.$ === 1) {
+								return true;
+							} else {
+								var parent = _v1.a;
+								var $temp$visited = A2($elm$core$List$cons, id, visited),
+									$temp$id = parent;
+								visited = $temp$visited;
+								id = $temp$id;
+								continue walk;
+							}
+						}
+					}
+				}
+			});
+		var rowValid = function (row) {
+			var sizeValid = A2(
+				$elm$core$Maybe$withDefault,
+				true,
+				A2(
+					$elm$core$Maybe$map,
+					function (p) {
+						return A4($author$project$GeometrySizePolicy$coherent, p, row.cd, row.cL, row.fi) && (((!row.ds) || $author$project$GeometrySizePolicy$supported(p)) && (((!row.ft) || A2($author$project$GeometrySizePolicy$permits, true, p)) && ((!row.fK) || A2($author$project$GeometrySizePolicy$permits, false, p))));
+					},
+					row.da));
+			var pinValid = A2(
+				$elm$core$Maybe$withDefault,
+				true,
+				A2(
+					$elm$core$Maybe$map,
+					function (pin) {
+						return (!pin.ds) || ((!blocked) && ((!_Utils_eq(row.e1, $elm$core$Maybe$Nothing)) && (row.bX && (_Utils_eq(row.dE, $elm$core$Maybe$Nothing) && ((!row.bB) && ((!row.b_) && (_Utils_eq(row.et, row.cg) && ((row.et !== 2) && (A2($elm$core$List$member, 'pin', caps.ew) && A2($elm$core$List$member, 'unpin', caps.ew))))))))));
+					},
+					row.dG));
+			var ownership = function () {
+				var _v2 = row.dE;
+				if (_v2.$ === 1) {
+					return true;
+				} else {
+					return A2(walk, _List_Nil, row.ar);
+				}
+			}();
+			var known = A2(
+				$elm$core$List$map,
+				$elm$core$Basics$identity,
+				_List_fromArray(
+					[
+						!_Utils_eq(row.e1, $elm$core$Maybe$Nothing),
+						!_Utils_eq(row.ce, $elm$core$Maybe$Nothing),
+						!_Utils_eq(row.b$, $elm$core$Maybe$Nothing),
+						!_Utils_eq(row.bi, $elm$core$Maybe$Nothing),
+						!_Utils_eq(row.cE, $elm$core$Maybe$Nothing),
+						!_Utils_eq(row.cd, $elm$core$Maybe$Nothing)
+					]));
+			var paired = A2(
+				$elm$core$List$all,
+				$elm$core$Basics$eq(true),
+				known) || A2(
+				$elm$core$List$all,
+				$elm$core$Basics$eq(false),
+				known);
+			var eligible = (!row.ds) || ((!_Utils_eq(row.e1, $elm$core$Maybe$Nothing)) && ((!blocked) && ((!row.b_) && ((!row.bB) && ((!row.fi) && (((!_Utils_eq(row.da, $elm$core$Maybe$Nothing)) || (!row.cL)) && (row.bX && (_Utils_eq(row.dE, $elm$core$Maybe$Nothing) && (_Utils_eq(row.et, row.cg) && (row.et !== 2))))))))));
+			var capabilityModes = ((!row.ft) || (row.ds && (!row.et))) && ((!row.fK) || (row.ds && ((row.et === 1) && row.fE)));
+			return pinValid && (paired && (eligible && (ownership && (sizeValid && (capabilityModes && (((!row.ft) || A2($elm$core$List$member, 'maximize', caps.ew)) && ((!row.fK) || A2($elm$core$List$member, 'restore-geometry', caps.ew))))))));
+		};
+		var ids = A2(
+			$elm$core$List$map,
+			function ($) {
+				return $.ar;
+			},
+			rows);
+		var unique = _Utils_eq(
+			$elm$core$List$length(ids),
+			$elm$core$List$length(
+				A3(
+					$elm$core$List$foldl,
+					F2(
+						function (x, xs) {
+							return A2($elm$core$List$member, x, xs) ? xs : A2($elm$core$List$cons, x, xs);
+						}),
+					_List_Nil,
+					ids)));
+		var coherent = F2(
+			function (a, b) {
+				return (_Utils_eq(a.bi, $elm$core$Maybe$Nothing) || ((!_Utils_eq(a.bi, b.bi)) || _Utils_eq(a.b$, b.b$))) && (_Utils_eq(a.ce, $elm$core$Maybe$Nothing) || ((!_Utils_eq(a.ce, b.ce)) || (_Utils_eq(a.e1, b.e1) && (_Utils_eq(a.bi, b.bi) && (_Utils_eq(a.cE, b.cE) && _Utils_eq(a.cd, b.cd))))));
+			});
+		return ($elm$core$List$length(rows) <= 256) && (unique && (A2($elm$core$List$all, rowValid, rows) && A2(
+			$elm$core$List$all,
+			function (a) {
+				return A2(
+					$elm$core$List$all,
+					coherent(a),
+					rows);
+			},
+			rows)));
+	});
 var $author$project$GeometryProjection$decoder = F2(
 	function (protocol, caps) {
 		return A2(
 			$elm$json$Json$Decode$andThen,
 			function (snapshot) {
-				return (A3($author$project$GeometryProjection$validRows, caps, snapshot.e6, snapshot.a) && A2(
+				return (A3($author$project$GeometryProjection$validRows, caps, snapshot.e8, snapshot.a) && A2(
 					$elm$core$Maybe$withDefault,
 					true,
 					A2(
@@ -16110,7 +16345,7 @@ var $author$project$GeometryProjection$decoder = F2(
 							return A2(
 								$elm$core$List$any,
 								function (row) {
-									return _Utils_eq(row.aq, id);
+									return _Utils_eq(row.ar, id);
 								},
 								snapshot.a);
 						},
@@ -16140,12 +16375,12 @@ var $author$project$GeometryProjection$decoder = F2(
 									var _v5 = _v4.a;
 									var life = _v5.a;
 									var epoch = _v5.b;
-									return {fe: epoch, fp: life, y: output, c2: revision};
+									return {fg: epoch, fr: life, y: output, c3: revision};
 								} else {
-									return {fe: $author$project$UInt64$zero, fp: $author$project$UInt64$zero, y: output, c2: revision};
+									return {fg: $author$project$UInt64$zero, fr: $author$project$UInt64$zero, y: output, c3: revision};
 								}
 							}();
-							return {dk: binding, e6: facts.e6, P: context, ci: facts.ci, c1: request, bN: sequence, a: facts.a};
+							return {dl: binding, e8: facts.e8, P: context, ci: facts.ci, c2: request, bN: sequence, a: facts.a};
 						}),
 					A3($author$project$GeometryProjection$exact, 'protocolVersion', $elm$json$Json$Decode$int, 3),
 					A3($author$project$GeometryProjection$exact, 'kind', $elm$json$Json$Decode$string, 'geometry-facts'),
@@ -16161,26 +16396,27 @@ var $author$project$GeometryProjection$decoder = F2(
 						A2(
 							$elm$json$Json$Decode$field,
 							'facts',
-							A2(
-								$author$project$GeometryProjection$strict,
+							$elm$json$Json$Decode$oneOf(
 								_List_fromArray(
-									['focused', 'inputBlocked', 'windows']),
-								A4(
-									$elm$json$Json$Decode$map3,
-									F3(
-										function (focus, blocked, rows) {
-											return {e6: blocked, ci: focus, a: rows};
-										}),
-									A2(
-										$elm$json$Json$Decode$field,
-										'focused',
-										$elm$json$Json$Decode$nullable($author$project$GeometryProjection$positive)),
-									A2($elm$json$Json$Decode$field, 'inputBlocked', $elm$json$Json$Decode$bool),
-									A2(
-										$elm$json$Json$Decode$field,
-										'windows',
-										$elm$json$Json$Decode$list(
-											$author$project$GeometryProjection$windowDecoder(protocol))))))))));
+									[
+										A2(
+										$author$project$GeometryProjection$strict,
+										_List_fromArray(
+											['focused', 'inputBlocked', 'windows']),
+										$author$project$GeometryProjection$factsBody(protocol)),
+										(protocol === 3) ? A2(
+										$author$project$GeometryProjection$strict,
+										_List_fromArray(
+											['focused', 'inputBlocked', 'windows', 'workspaces', 'activeWorkspace']),
+										A3(
+											$elm$json$Json$Decode$map2,
+											F2(
+												function (facts, _v6) {
+													return facts;
+												}),
+											$author$project$GeometryProjection$factsBody(protocol),
+											$author$project$WorkspaceInventory$factsDecoder)) : $elm$json$Json$Decode$fail('Workspace inventory version')
+									])))))));
 	});
 var $author$project$GeometryProjection$decode = F2(
 	function (caps, raw) {
@@ -16232,19 +16468,19 @@ var $author$project$Shell$disconnect = function (model) {
 	return _Utils_update(
 		model,
 		{
-			am: false,
-			d$: false,
+			ao: false,
+			d0: false,
 			_: effects,
 			A: $elm$core$Maybe$Nothing,
-			ap: $elm$core$Maybe$Nothing,
-			ea: $elm$core$Maybe$Nothing,
-			ds: $elm$core$Maybe$Nothing,
+			aa: $elm$core$Maybe$Nothing,
 			eb: $elm$core$Maybe$Nothing,
-			ft: A2(
+			dt: $elm$core$Maybe$Nothing,
+			ec: $elm$core$Maybe$Nothing,
+			fv: A2(
 				$elm$core$Maybe$withDefault,
 				'Connection lost. Reconnect to continue.',
 				A2($elm$core$Maybe$map, $author$project$Shell$recoveryNotice, model.b7)),
-			aA: false,
+			aB: false,
 			j: 0,
 			a2: false,
 			bm: false,
@@ -16254,19 +16490,19 @@ var $author$project$Shell$disconnect = function (model) {
 var $author$project$Effects$locallyRefuseUnsent = F3(
 	function (protocolId, intent, model) {
 		var exact = function (entry) {
-			return _Utils_eq(entry.ay, protocolId) && _Utils_eq(entry.aa, intent);
+			return _Utils_eq(entry.az, protocolId) && _Utils_eq(entry.ab, intent);
 		};
 		return (!A3($author$project$Effects$canProveUnsent, protocolId, intent, model)) ? model : _Utils_update(
 			model,
 			{
-				fS: A2(
+				fU: A2(
 					$elm$core$Maybe$map,
 					function (entry) {
 						return exact(entry) ? _Utils_update(
 							entry,
 							{W: 2}) : entry;
 					},
-					model.fS),
+					model.fU),
 				z: A2(
 					$elm$core$List$filter,
 					A2($elm$core$Basics$composeR, exact, $elm$core$Basics$not),
@@ -16280,9 +16516,9 @@ var $author$project$Shell$matchesUnsent = F2(
 				case 'projection-request':
 					return model.A;
 				case 'geometry-facts-request':
-					return model.eb;
+					return model.ec;
 				case 'geometry-attach':
-					return model.ea;
+					return model.eb;
 				default:
 					return $elm$core$Maybe$Nothing;
 			}
@@ -16299,10 +16535,10 @@ var $author$project$Shell$matchesUnsent = F2(
 			observations);
 	});
 var $author$project$Shell$notificationRefresh = function (model) {
-	return ((!model.j) || ((model.j === 3) || model.X)) ? _Utils_Tuple2(model, _List_Nil) : ((model.d$ || ($author$project$Effects$pending(model._) || ((!_Utils_eq(model.A, $elm$core$Maybe$Nothing)) || ((!_Utils_eq(model.eb, $elm$core$Maybe$Nothing)) || (!_Utils_eq(model.ea, $elm$core$Maybe$Nothing)))))) ? _Utils_Tuple2(
+	return ((!model.j) || ((model.j === 3) || model.X)) ? _Utils_Tuple2(model, _List_Nil) : ((model.d0 || ($author$project$Effects$pending(model._) || ((!_Utils_eq(model.A, $elm$core$Maybe$Nothing)) || ((!_Utils_eq(model.ec, $elm$core$Maybe$Nothing)) || (!_Utils_eq(model.eb, $elm$core$Maybe$Nothing)))))) ? _Utils_Tuple2(
 		_Utils_update(
 			model,
-			{aA: true}),
+			{aB: true}),
 		_List_Nil) : $author$project$Shell$refreshObservations(model));
 };
 var $author$project$Shell$positive = A2(
@@ -16314,7 +16550,7 @@ var $author$project$Shell$positive = A2(
 var $author$project$Effects$recoverUnknown = F3(
 	function (protocolId, intent, model) {
 		var observe = function (transaction) {
-			return (_Utils_eq(transaction.aa, intent) && (_Utils_eq(transaction.ay, protocolId) && (!transaction.W))) ? _Utils_update(
+			return (_Utils_eq(transaction.ab, intent) && (_Utils_eq(transaction.az, protocolId) && (!transaction.W))) ? _Utils_update(
 				transaction,
 				{W: 4}) : transaction;
 		};
@@ -16344,7 +16580,7 @@ var $author$project$Effects$recoverUnknown = F3(
 				_Utils_update(
 					recovered,
 					{
-						fS: A2($elm$core$Maybe$map, observe, recovered.fS),
+						fU: A2($elm$core$Maybe$map, observe, recovered.fU),
 						z: A2($elm$core$List$map, observe, recovered.z)
 					}));
 		}
@@ -16381,7 +16617,7 @@ var $author$project$Effects$releaseUnknown = F3(
 				z: A2(
 					$elm$core$List$filter,
 					function (t) {
-						return !((t.W === 4) && (_Utils_eq(t.ay, protocolId) && _Utils_eq(t.aa, intent)));
+						return !((t.W === 4) && (_Utils_eq(t.az, protocolId) && _Utils_eq(t.ab, intent)));
 					},
 					model.z)
 			});
@@ -16533,7 +16769,7 @@ var $author$project$Shell$update = F2(
 					return _Utils_Tuple2(
 						_Utils_update(
 							model,
-							{_: effects, ft: 'The previous window change could not be confirmed.'}),
+							{_: effects, fv: 'The previous window change could not be confirmed.'}),
 						_List_Nil);
 				}
 			case 2:
@@ -16549,10 +16785,10 @@ var $author$project$Shell$update = F2(
 							U: A2(
 								$elm$core$List$filter,
 								function (entry) {
-									return !(_Utils_eq(entry.dk, oldBinding) && (_Utils_eq(entry.eE, protocolId) && _Utils_eq(entry.aa, intent)));
+									return !(_Utils_eq(entry.dl, oldBinding) && (_Utils_eq(entry.eF, protocolId) && _Utils_eq(entry.ab, intent)));
 								},
 								model.U),
-							ft: 'Previous request remains unconfirmed. Choose a new window action.'
+							fv: 'Previous request remains unconfirmed. Choose a new window action.'
 						}),
 					_List_Nil);
 			case 4:
@@ -16561,18 +16797,18 @@ var $author$project$Shell$update = F2(
 				return ((!model.j) && (!model.bm)) ? _Utils_Tuple2(
 					_Utils_update(
 						model,
-						{ft: 'Reconnecting…', bm: true}),
+						{fv: 'Reconnecting…', bm: true}),
 					_List_fromArray(
 						[$author$project$Shell$RestartBackend])) : _Utils_Tuple2(model, _List_Nil);
 			case 11:
 				var reissue = msg.a;
-				if ((!model.j) || ((model.j === 3) || _Utils_eq(model.dk, $elm$core$Maybe$Nothing))) {
+				if ((!model.j) || ((model.j === 3) || _Utils_eq(model.dl, $elm$core$Maybe$Nothing))) {
 					return _Utils_Tuple2(model, _List_Nil);
 				} else {
 					var retired = _Utils_update(
 						model,
-						{d$: false, A: $elm$core$Maybe$Nothing, ea: $elm$core$Maybe$Nothing, eb: $elm$core$Maybe$Nothing, aA: true, j: 1, a2: false});
-					var attach = model.am || (!_Utils_eq(model.ea, $elm$core$Maybe$Nothing));
+						{d0: false, A: $elm$core$Maybe$Nothing, eb: $elm$core$Maybe$Nothing, ec: $elm$core$Maybe$Nothing, aB: true, j: 1, a2: false});
+					var attach = model.ao || (!_Utils_eq(model.eb, $elm$core$Maybe$Nothing));
 					if (!reissue) {
 						return _Utils_Tuple2(retired, _List_Nil);
 					} else {
@@ -16592,7 +16828,7 @@ var $author$project$Shell$update = F2(
 				var observations = msg.b;
 				var matches = F2(
 					function (key, entry) {
-						return _Utils_eq(entry.dk, key.dk) && (_Utils_eq(entry.eE, key.eE) && _Utils_eq(entry.aa, key.aa));
+						return _Utils_eq(entry.dl, key.dl) && (_Utils_eq(entry.eF, key.eF) && _Utils_eq(entry.ab, key.ab));
 					});
 				var keys = A3(
 					$elm$core$List$foldl,
@@ -16629,19 +16865,19 @@ var $author$project$Shell$update = F2(
 					$elm$core$List$foldl,
 					F2(
 						function (key, state) {
-							return A3($author$project$Effects$locallyRefuseUnsent, key.eE, key.aa, state);
+							return A3($author$project$Effects$locallyRefuseUnsent, key.eF, key.ab, state);
 						}),
 					model._,
 					proven);
 				var retired = _Utils_update(
 					model,
 					{
-						am: model.am || A2(has, 'geometry-attach', model.ea),
-						d$: false,
+						ao: model.ao || A2(has, 'geometry-attach', model.eb),
+						d0: false,
 						_: effects,
 						A: A2(has, 'projection-request', model.A) ? $elm$core$Maybe$Nothing : model.A,
-						ea: A2(has, 'geometry-attach', model.ea) ? $elm$core$Maybe$Nothing : model.ea,
-						eb: A2(has, 'geometry-facts-request', model.eb) ? $elm$core$Maybe$Nothing : model.eb,
+						eb: A2(has, 'geometry-attach', model.eb) ? $elm$core$Maybe$Nothing : model.eb,
+						ec: A2(has, 'geometry-facts-request', model.ec) ? $elm$core$Maybe$Nothing : model.ec,
 						U: A2(
 							$elm$core$List$filter,
 							function (entry) {
@@ -16653,8 +16889,8 @@ var $author$project$Shell$update = F2(
 									proven);
 							},
 							model.U),
-						ft: 'The request was not sent. Waiting for window transport recovery.',
-						aA: true,
+						fv: 'The request was not sent. Waiting for window transport recovery.',
+						aB: true,
 						j: ((!model.j) || (model.j === 3)) ? model.j : 1,
 						X: true
 					});
@@ -16667,7 +16903,7 @@ var $author$project$Shell$update = F2(
 					var recovered = _Utils_update(
 						model,
 						{X: false});
-					return ((!reissue) || ((!recovered.j) || ((recovered.j === 3) || ($author$project$Effects$pending(recovered._) || ((!_Utils_eq(recovered.A, $elm$core$Maybe$Nothing)) || ((!_Utils_eq(recovered.eb, $elm$core$Maybe$Nothing)) || (!_Utils_eq(recovered.ea, $elm$core$Maybe$Nothing)))))))) ? _Utils_Tuple2(recovered, _List_Nil) : $author$project$Shell$refreshObservations(recovered);
+					return ((!reissue) || ((!recovered.j) || ((recovered.j === 3) || ($author$project$Effects$pending(recovered._) || ((!_Utils_eq(recovered.A, $elm$core$Maybe$Nothing)) || ((!_Utils_eq(recovered.ec, $elm$core$Maybe$Nothing)) || (!_Utils_eq(recovered.eb, $elm$core$Maybe$Nothing)))))))) ? _Utils_Tuple2(recovered, _List_Nil) : $author$project$Shell$refreshObservations(recovered);
 				}
 			case 12:
 				var operations = msg.a;
@@ -16676,13 +16912,13 @@ var $author$project$Shell$update = F2(
 				} else {
 					var matches = F2(
 						function (key, entry) {
-							return _Utils_eq(entry.dk, key.dk) && (_Utils_eq(entry.eE, key.eE) && _Utils_eq(entry.aa, key.aa));
+							return _Utils_eq(entry.dl, key.dl) && (_Utils_eq(entry.eF, key.eF) && _Utils_eq(entry.ab, key.ab));
 						});
 					var effects = A3(
 						$elm$core$List$foldl,
 						F2(
 							function (key, state) {
-								return A3($author$project$Effects$locallyRefuseUnsent, key.eE, key.aa, state);
+								return A3($author$project$Effects$locallyRefuseUnsent, key.eF, key.ab, state);
 							}),
 						model._,
 						operations);
@@ -16701,7 +16937,7 @@ var $author$project$Shell$update = F2(
 										operations);
 								},
 								model.U),
-							ft: 'The request was not sent. Choose again.'
+							fv: 'The request was not sent. Choose again.'
 						});
 					return $author$project$Shell$resumeNotifications(updated);
 				}
@@ -16721,14 +16957,14 @@ var $author$project$Shell$update = F2(
 					model,
 					{
 						A: contains('projection-request') ? $elm$core$Maybe$Nothing : model.A,
-						ea: contains('geometry-attach') ? $elm$core$Maybe$Nothing : model.ea,
-						eb: contains('geometry-facts-request') ? $elm$core$Maybe$Nothing : model.eb,
-						aA: true
+						eb: contains('geometry-attach') ? $elm$core$Maybe$Nothing : model.eb,
+						ec: contains('geometry-facts-request') ? $elm$core$Maybe$Nothing : model.ec,
+						aB: true
 					});
 				if ((!valid) || ((!model.j) || (model.j === 3))) {
 					return _Utils_Tuple2(model, _List_Nil);
 				} else {
-					if ($author$project$Effects$pending(model._) || (model.d$ || ((!_Utils_eq(cleared.A, $elm$core$Maybe$Nothing)) || ((!_Utils_eq(cleared.eb, $elm$core$Maybe$Nothing)) || (!_Utils_eq(cleared.ea, $elm$core$Maybe$Nothing)))))) {
+					if ($author$project$Effects$pending(model._) || (model.d0 || ((!_Utils_eq(cleared.A, $elm$core$Maybe$Nothing)) || ((!_Utils_eq(cleared.ec, $elm$core$Maybe$Nothing)) || (!_Utils_eq(cleared.eb, $elm$core$Maybe$Nothing)))))) {
 						return _Utils_Tuple2(cleared, _List_Nil);
 					} else {
 						var _v5 = $author$project$Shell$refreshObservations(cleared);
@@ -16761,16 +16997,16 @@ var $author$project$Shell$update = F2(
 						return _Utils_Tuple2(
 							_Utils_update(
 								model,
-								{ft: 'Window list changed. Choose again.'}),
+								{fv: 'Window list changed. Choose again.'}),
 							_List_Nil);
 					} else {
 						var _v8 = function () {
 							if ($author$project$Effects$protocol(operation) === 2) {
-								var _v9 = _Utils_Tuple2(model.ds, model.ap);
+								var _v9 = _Utils_Tuple2(model.dt, model.aa);
 								if ((!_v9.a.$) && (!_v9.b.$)) {
 									var caps = _v9.a.a;
 									var observed = _v9.b.a;
-									return ((!_Utils_eq(model.eb, $elm$core$Maybe$Nothing)) || (!_Utils_eq(model.ea, $elm$core$Maybe$Nothing))) ? _Utils_Tuple3(
+									return ((!_Utils_eq(model.ec, $elm$core$Maybe$Nothing)) || (!_Utils_eq(model.eb, $elm$core$Maybe$Nothing))) ? _Utils_Tuple3(
 										model._,
 										$elm$core$Maybe$Nothing,
 										$elm$core$Maybe$Just('Geometry refresh pending')) : A5($author$project$Effects$beginGeometry, caps, observed, operation, incarnation, model._);
@@ -16805,7 +17041,7 @@ var $author$project$Shell$update = F2(
 						var command = _v8.b;
 						var error = _v8.c;
 						var commands = function () {
-							var _v11 = _Utils_Tuple2(command, model.dk);
+							var _v11 = _Utils_Tuple2(command, model.dl);
 							if ((!_v11.a.$) && (!_v11.b.$)) {
 								var value = _v11.a.a;
 								var binding = _v11.b.a;
@@ -16850,19 +17086,19 @@ var $author$project$Shell$update = F2(
 								{
 									_: effects,
 									U: function () {
-										var _v10 = _Utils_Tuple3(command, model.dk, effects.fS);
+										var _v10 = _Utils_Tuple3(command, model.dl, effects.fU);
 										if (((!_v10.a.$) && (!_v10.b.$)) && (!_v10.c.$)) {
 											var binding = _v10.b.a;
 											var transaction = _v10.c.a;
 											return A2(
 												$elm$core$List$cons,
-												{dk: binding, aa: transaction.aa, eE: transaction.ay},
+												{dl: binding, ab: transaction.ab, eF: transaction.az},
 												model.U);
 										} else {
 											return model.U;
 										}
 									}(),
-									ft: A2($elm$core$Maybe$withDefault, model.ft, error)
+									fv: A2($elm$core$Maybe$withDefault, model.fv, error)
 								}),
 							commands);
 					}
@@ -16900,7 +17136,7 @@ var $author$project$Shell$update = F2(
 										_Utils_update(
 											detached,
 											{
-												ft: $author$project$Shell$recoveryNotice(reason),
+												fv: $author$project$Shell$recoveryNotice(reason),
 												b7: $elm$core$Maybe$Just(reason)
 											}),
 										_List_Nil);
@@ -16948,7 +17184,7 @@ var $author$project$Shell$update = F2(
 												$elm$core$Basics$composeR,
 												$author$project$Binding$replaces(binding),
 												$elm$core$Basics$not),
-											model.dk)))) {
+											model.dl)))) {
 										return _Utils_Tuple2(model, _List_Nil);
 									} else {
 										var detached = $author$project$Shell$disconnect(model);
@@ -16956,8 +17192,8 @@ var $author$project$Shell$update = F2(
 											_Utils_update(
 												detached,
 												{
-													dk: $elm$core$Maybe$Just(binding),
-													ft: 'Updating window information…',
+													dl: $elm$core$Maybe$Just(binding),
+													fv: 'Updating window information…',
 													j: 1,
 													bm: false,
 													b7: $elm$core$Maybe$Nothing
@@ -16996,13 +17232,13 @@ var $author$project$Shell$update = F2(
 									var binding = _v20.a;
 									var request = _v20.b;
 									return ((!model.j) || ((model.j === 3) || ((!_Utils_eq(
-										model.dk,
+										model.dl,
 										$elm$core$Maybe$Just(binding))) || (!_Utils_eq(
 										model.A,
 										$elm$core$Maybe$Just(request)))))) ? _Utils_Tuple2(model, _List_Nil) : $author$project$Shell$drainNotifications(
 										_Utils_update(
 											model,
-											{A: $elm$core$Maybe$Nothing, aA: true, j: 1, a2: true}));
+											{A: $elm$core$Maybe$Nothing, aB: true, j: 1, a2: true}));
 								}
 							case 'action-projection':
 								var decoder = A2(
@@ -17040,7 +17276,7 @@ var $author$project$Shell$update = F2(
 									var life = _v25.a;
 									var epoch = _v25.b;
 									if ((!model.j) || ((!_Utils_eq(
-										model.dk,
+										model.dl,
 										$elm$core$Maybe$Just(binding))) || ((!_Utils_eq(
 										model.A,
 										$elm$core$Maybe$Just(request))) || (!A3($author$project$Binding$matchesContext, life, epoch, binding))))) {
@@ -17076,7 +17312,7 @@ var $author$project$Shell$update = F2(
 													{
 														_: effects,
 														A: _Utils_eq(error, $elm$core$Maybe$Nothing) ? $elm$core$Maybe$Nothing : model.A,
-														ft: _Utils_eq(error, $elm$core$Maybe$Nothing) ? 'Connected' : 'Window information could not be verified.',
+														fv: _Utils_eq(error, $elm$core$Maybe$Nothing) ? 'Connected' : 'Window information could not be verified.',
 														j: _Utils_eq(error, $elm$core$Maybe$Nothing) ? 2 : 1
 													}));
 										} else {
@@ -17098,7 +17334,7 @@ var $author$project$Shell$update = F2(
 								if (_v29.$ === 1) {
 									return _Utils_Tuple2(model, _List_Nil);
 								} else {
-									return ((!_Utils_eq(model.ds, $elm$core$Maybe$Nothing)) || (!_Utils_eq(model.ea, $elm$core$Maybe$Nothing))) ? _Utils_Tuple2(model, _List_Nil) : A2($author$project$Shell$geometryRequest, true, model);
+									return ((!_Utils_eq(model.dt, $elm$core$Maybe$Nothing)) || (!_Utils_eq(model.eb, $elm$core$Maybe$Nothing))) ? _Utils_Tuple2(model, _List_Nil) : A2($author$project$Shell$geometryRequest, true, model);
 								}
 							case 'geometry-unavailable':
 								var decoder = A2(
@@ -17109,7 +17345,7 @@ var $author$project$Shell$update = F2(
 										$elm$json$Json$Decode$map4,
 										F4(
 											function (_v31, binding, request, reason) {
-												return {dk: binding, eH: reason, c1: request};
+												return {dl: binding, eI: reason, c2: request};
 											}),
 										$author$project$Shell$version,
 										A2($elm$json$Json$Decode$field, 'binding', $author$project$Binding$decoder),
@@ -17126,19 +17362,19 @@ var $author$project$Shell$update = F2(
 								} else {
 									var refusal = _v30.a;
 									return ((!_Utils_eq(
-										model.dk,
-										$elm$core$Maybe$Just(refusal.dk))) || (!_Utils_eq(
-										model.ea,
-										$elm$core$Maybe$Just(refusal.c1)))) ? _Utils_Tuple2(model, _List_Nil) : $author$project$Shell$drainNotifications(
+										model.dl,
+										$elm$core$Maybe$Just(refusal.dl))) || (!_Utils_eq(
+										model.eb,
+										$elm$core$Maybe$Just(refusal.c2)))) ? _Utils_Tuple2(model, _List_Nil) : $author$project$Shell$drainNotifications(
 										_Utils_update(
 											model,
 											{
-												am: false,
-												ap: $elm$core$Maybe$Nothing,
-												ea: $elm$core$Maybe$Nothing,
-												ds: $elm$core$Maybe$Just(
-													{_: false, ev: _List_Nil}),
-												eb: $elm$core$Maybe$Nothing
+												ao: false,
+												aa: $elm$core$Maybe$Nothing,
+												eb: $elm$core$Maybe$Nothing,
+												dt: $elm$core$Maybe$Just(
+													{_: false, ew: _List_Nil}),
+												ec: $elm$core$Maybe$Nothing
 											}));
 								}
 							case 'geometry-attached':
@@ -17150,7 +17386,7 @@ var $author$project$Shell$update = F2(
 										$elm$json$Json$Decode$map5,
 										F5(
 											function (_v33, _v34, binding, request, caps) {
-												return {dk: binding, dn: caps, c1: request};
+												return {dl: binding, $7: caps, c2: request};
 											}),
 										$author$project$Shell$version,
 										A2(
@@ -17166,25 +17402,25 @@ var $author$project$Shell$update = F2(
 								if (!_v32.$) {
 									var value = _v32.a;
 									return ((!_Utils_eq(
-										model.dk,
-										$elm$core$Maybe$Just(value.dk))) || ((!_Utils_eq(
-										model.ea,
-										$elm$core$Maybe$Just(value.c1))) || (!model.j))) ? _Utils_Tuple2(model, _List_Nil) : A2(
+										model.dl,
+										$elm$core$Maybe$Just(value.dl))) || ((!_Utils_eq(
+										model.eb,
+										$elm$core$Maybe$Just(value.c2))) || (!model.j))) ? _Utils_Tuple2(model, _List_Nil) : A2(
 										$author$project$Shell$geometryRequest,
 										false,
 										_Utils_update(
 											model,
 											{
-												am: false,
-												ap: $elm$core$Maybe$Nothing,
-												ea: $elm$core$Maybe$Nothing,
-												ds: $elm$core$Maybe$Just(value.dn)
+												ao: false,
+												aa: $elm$core$Maybe$Nothing,
+												eb: $elm$core$Maybe$Nothing,
+												dt: $elm$core$Maybe$Just(value.$7)
 											}));
 								} else {
 									return _Utils_Tuple2(model, _List_Nil);
 								}
 							case 'geometry-facts':
-								var _v35 = model.ds;
+								var _v35 = model.dt;
 								if (_v35.$ === 1) {
 									return _Utils_Tuple2(model, _List_Nil);
 								} else {
@@ -17195,28 +17431,28 @@ var $author$project$Shell$update = F2(
 									} else {
 										var observed = _v36.a;
 										var newer = function () {
-											var _v37 = model.ap;
+											var _v37 = model.aa;
 											if (_v37.$ === 1) {
 												return true;
 											} else {
 												var old = _v37.a;
-												return (_Utils_eq(old.P.fp, observed.P.fp) && _Utils_eq(old.P.fe, observed.P.fe)) ? ((!(!A2($author$project$UInt64$compare, observed.P.y, old.P.y))) && ((!(!A2($author$project$UInt64$compare, observed.bN, old.bN))) && ((!(!A2($author$project$UInt64$compare, observed.P.c2, old.P.c2))) && ((!_Utils_eq(observed.P.c2, old.P.c2)) || _Utils_eq(
+												return (_Utils_eq(old.P.fr, observed.P.fr) && _Utils_eq(old.P.fg, observed.P.fg)) ? ((!(!A2($author$project$UInt64$compare, observed.P.y, old.P.y))) && ((!(!A2($author$project$UInt64$compare, observed.bN, old.bN))) && ((!(!A2($author$project$UInt64$compare, observed.P.c3, old.P.c3))) && ((!_Utils_eq(observed.P.c3, old.P.c3)) || _Utils_eq(
 													observed,
 													_Utils_update(
 														old,
-														{c1: observed.c1, bN: observed.bN})))))) : true;
+														{c2: observed.c2, bN: observed.bN})))))) : true;
 											}
 										}();
 										return ((!_Utils_eq(
-											model.dk,
-											$elm$core$Maybe$Just(observed.dk))) || ((!_Utils_eq(
-											model.eb,
-											$elm$core$Maybe$Just(observed.c1))) || ((!model.j) || (!newer)))) ? _Utils_Tuple2(model, _List_Nil) : $author$project$Shell$drainNotifications(
+											model.dl,
+											$elm$core$Maybe$Just(observed.dl))) || ((!_Utils_eq(
+											model.ec,
+											$elm$core$Maybe$Just(observed.c2))) || ((!model.j) || (!newer)))) ? _Utils_Tuple2(model, _List_Nil) : $author$project$Shell$drainNotifications(
 											_Utils_update(
 												model,
 												{
-													ap: $elm$core$Maybe$Just(observed),
-													eb: $elm$core$Maybe$Nothing
+													aa: $elm$core$Maybe$Just(observed),
+													ec: $elm$core$Maybe$Nothing
 												}));
 									}
 								}
@@ -17242,7 +17478,7 @@ var $author$project$Shell$update = F2(
 									var request = _v39.b;
 									var generation = _v39.c;
 									if ((model.j !== 1) || (!_Utils_eq(
-										model.dk,
+										model.dl,
 										$elm$core$Maybe$Just(binding)))) {
 										return _Utils_Tuple2(model, _List_Nil);
 									} else {
@@ -17313,7 +17549,7 @@ var $author$project$Shell$update = F2(
 									var intent = _v43.b;
 									var protocolId = _v43.c;
 									if ((!_Utils_eq(
-										model.dk,
+										model.dl,
 										$elm$core$Maybe$Just(binding))) || ((model.j !== 1) || (!_Utils_eq(
 										A2(
 											$elm$core$Result$map,
@@ -17350,7 +17586,7 @@ var $author$project$Shell$update = F2(
 										return (!_Utils_eq(error, $elm$core$Maybe$Nothing)) ? _Utils_Tuple2(model, _List_Nil) : _Utils_Tuple2(
 											_Utils_update(
 												model,
-												{_: effects, ft: 'The previous window change could not be confirmed.'}),
+												{_: effects, fv: 'The previous window change could not be confirmed.'}),
 											_List_Nil);
 									}
 								} else {
@@ -17401,8 +17637,8 @@ var $author$project$Shell$update = F2(
 												A2($elm$json$Json$Decode$field, 'intent', $author$project$Effects$intentDecoder),
 												raw));
 										var exact = function (entry) {
-											return _Utils_eq(entry.dk, binding) && (_Utils_eq(entry.eE, protocolId) && _Utils_eq(
-												$elm$core$Maybe$Just(entry.aa),
+											return _Utils_eq(entry.dl, binding) && (_Utils_eq(entry.eF, protocolId) && _Utils_eq(
+												$elm$core$Maybe$Just(entry.ab),
 												receivedIntent));
 										};
 										var known = A2($elm$core$List$any, exact, model.U);
@@ -17425,18 +17661,18 @@ var $author$project$Shell$update = F2(
 												return _Utils_Tuple2(model, _List_Nil);
 											} else {
 												var current = function () {
-													var _v51 = model._.fS;
+													var _v51 = model._.fU;
 													if (_v51.$ === 1) {
 														return false;
 													} else {
 														var transaction = _v51.a;
-														return _Utils_eq(transaction.ay, protocolId) && _Utils_eq(
-															$elm$core$Maybe$Just(transaction.aa),
+														return _Utils_eq(transaction.az, protocolId) && _Utils_eq(
+															$elm$core$Maybe$Just(transaction.ab),
 															receivedIntent);
 													}
 												}();
 												return ((!current) || ((!model.j) || (!_Utils_eq(
-													model.dk,
+													model.dl,
 													$elm$core$Maybe$Just(binding))))) ? _Utils_Tuple2(
 													_Utils_update(
 														model,
@@ -17470,9 +17706,9 @@ var $author$project$MenuBridge$advancePrepared = F4(
 		} else {
 			var slot = _v0.a;
 			if ((!shell.j) || ((shell.j === 3) || (!_Utils_eq(
-				shell.dk,
+				shell.dl,
 				$elm$core$Maybe$Just(
-					$author$project$Provider$nativeBinding(slot.ax.c)))))) {
+					$author$project$Provider$nativeBinding(slot.ay.c)))))) {
 				return A3($author$project$MenuBridge$cancelPrepared, 'Selection disconnected or authority changed', shell, model);
 			} else {
 				var response = function () {
@@ -17500,7 +17736,7 @@ var $author$project$MenuBridge$advancePrepared = F4(
 					$elm$core$Maybe$Just(
 						_Utils_Tuple3(
 							'action-projection',
-							$author$project$Provider$nativeBinding(slot.ax.c),
+							$author$project$Provider$nativeBinding(slot.ay.c),
 							slot.bg))) && (_Utils_eq(
 					previous.A,
 					$elm$core$Maybe$Just(slot.bg)) && _Utils_eq(shell.A, $elm$core$Maybe$Nothing)));
@@ -17515,15 +17751,15 @@ var $author$project$MenuBridge$advancePrepared = F4(
 							$elm$core$Maybe$Just(
 								_Utils_Tuple3(
 									'geometry-facts',
-									$author$project$Provider$nativeBinding(slot.ax.c),
+									$author$project$Provider$nativeBinding(slot.ay.c),
 									request))) && (_Utils_eq(
-							previous.eb,
-							$elm$core$Maybe$Just(request)) && _Utils_eq(shell.eb, $elm$core$Maybe$Nothing));
+							previous.ec,
+							$elm$core$Maybe$Just(request)) && _Utils_eq(shell.ec, $elm$core$Maybe$Nothing));
 					}
 				}();
 				var lostCorrelation = ((!legacyReady) && (!_Utils_eq(
 					shell.A,
-					$elm$core$Maybe$Just(slot.bg)))) || ((!geometryReady) && (!_Utils_eq(shell.eb, slot.bd)));
+					$elm$core$Maybe$Just(slot.bg)))) || ((!geometryReady) && (!_Utils_eq(shell.ec, slot.bd)));
 				var updatedSlot = _Utils_update(
 					slot,
 					{bA: geometryReady, bD: legacyReady});
@@ -17541,7 +17777,7 @@ var $author$project$MenuBridge$advancePrepared = F4(
 						if (!A2($author$project$MenuBridge$compatiblePrepared, updatedSlot, shell)) {
 							return A3($author$project$MenuBridge$cancelPrepared, 'Window state changed. Choose again.', shell, updated);
 						} else {
-							var scope = $author$project$Provider$presentationScope(slot.ax.c);
+							var scope = $author$project$Provider$presentationScope(slot.ay.c);
 							var generation = A2(
 								$elm$core$Maybe$withDefault,
 								$author$project$UInt64$zero,
@@ -17553,25 +17789,25 @@ var $author$project$MenuBridge$advancePrepared = F4(
 											return $.P;
 										},
 										function ($) {
-											return $.c2;
+											return $.c3;
 										}),
-									shell._.as));
+									shell._.at));
 							var _v1 = A3(
 								$author$project$NativeProvider$fromShell,
-								{e7: generation, dC: scope.dC, dI: scope.dI},
-								$author$project$Provider$incarnation(slot.ax.c),
+								{e9: generation, dD: scope.dD, dJ: scope.dJ},
+								$author$project$Provider$incarnation(slot.ay.c),
 								shell);
 							if (_v1.$ === 1) {
 								var reason = _v1.a;
 								return A3($author$project$MenuBridge$cancelPrepared, reason, shell, updated);
 							} else {
 								var fresh = _v1.a;
-								var _v2 = $author$project$MenuBridge$operation(slot.e3);
+								var _v2 = $author$project$MenuBridge$operation(slot.e5);
 								if (_v2.$ === 1) {
 									return A3($author$project$MenuBridge$cancelPrepared, 'Selected operation unavailable', shell, updated);
 								} else {
 									var nativeOperation = _v2.a;
-									var stamp = ($author$project$Provider$actionProtocol(slot.e3) === 2) ? $author$project$Shell$captureGeometry(shell) : $author$project$Shell$capture(shell);
+									var stamp = ($author$project$Provider$actionProtocol(slot.e5) === 2) ? $author$project$Shell$captureGeometry(shell) : $author$project$Shell$capture(shell);
 									if (stamp.$ === 1) {
 										return A3($author$project$MenuBridge$cancelPrepared, 'Fresh native context unavailable', shell, updated);
 									} else {
@@ -17588,7 +17824,7 @@ var $author$project$MenuBridge$advancePrepared = F4(
 										var commands = _v4.b;
 										if ((commands.b && (!commands.a.$)) && (!commands.b.b)) {
 											var command = commands.a.a;
-											var _v6 = A5($author$project$ReceiptRouter$registerPrepared, slot.dq, slot.ax.c, fresh, command, state.au);
+											var _v6 = A5($author$project$ReceiptRouter$registerPrepared, slot.dr, slot.ay.c, fresh, command, state.av);
 											if (_v6.$ === 1) {
 												var reason = _v6.a;
 												return A3($author$project$MenuBridge$cancelPrepared, reason, shell, updated);
@@ -17598,10 +17834,10 @@ var $author$project$MenuBridge$advancePrepared = F4(
 													$author$project$MenuBridge$answer,
 													_Utils_update(
 														state,
-														{O: $elm$core$Maybe$Nothing, au: router}),
+														{O: $elm$core$Maybe$Nothing, av: router}),
 													_Utils_update(
 														issued,
-														{d$: false}),
+														{d0: false}),
 													commands,
 													$elm$core$Maybe$Nothing);
 											}
@@ -17638,14 +17874,14 @@ var $author$project$Menu$markDisconnected = function (_v0) {
 					}
 				},
 				state.aI),
-			fx: A2(
+			fz: A2(
 				$elm$core$List$map,
 				function (entry) {
 					return _Utils_update(
 						entry,
 						{bq: true});
 				},
-				state.fx)
+				state.fz)
 		});
 };
 var $author$project$MenuBridge$connectionLost = function (_v0) {
@@ -17727,13 +17963,13 @@ var $author$project$UnsentOperation$encodeCommand = function (key) {
 				$elm$json$Json$Encode$string('window-effect')),
 				_Utils_Tuple2(
 				'effectProtocol',
-				$elm$json$Json$Encode$int(key.eE)),
+				$elm$json$Json$Encode$int(key.eF)),
 				_Utils_Tuple2(
 				'binding',
-				$author$project$Binding$encode(key.dk)),
+				$author$project$Binding$encode(key.dl)),
 				_Utils_Tuple2(
 				'intent',
-				$author$project$Effects$encodeIntent(key.aa))
+				$author$project$Effects$encodeIntent(key.ab))
 			]));
 };
 var $author$project$ReceiptRouter$locallyRefuseUnsent = F2(
@@ -17769,7 +18005,7 @@ var $author$project$ReceiptRouter$locallyRefuseUnsent = F2(
 						A3(
 							$author$project$Menu$ReceiveFor,
 							entry.cq,
-							entry.dk,
+							entry.dl,
 							$author$project$Menu$Refusal('The request was not sent. Choose again.'))));
 			}
 		}
@@ -17777,7 +18013,7 @@ var $author$project$ReceiptRouter$locallyRefuseUnsent = F2(
 var $author$project$MenuBridge$locallyRefuseUnsent = F2(
 	function (proved, model) {
 		var state = model;
-		var _v0 = A2($author$project$ReceiptRouter$locallyRefuseUnsent, proved, state.au);
+		var _v0 = A2($author$project$ReceiptRouter$locallyRefuseUnsent, proved, state.av);
 		var router = _v0.a;
 		var message = _v0.b;
 		if (message.$ === 1) {
@@ -17788,7 +18024,7 @@ var $author$project$MenuBridge$locallyRefuseUnsent = F2(
 			var menu = _v2.a;
 			return _Utils_update(
 				state,
-				{aI: menu, au: router});
+				{aI: menu, av: router});
 		}
 	});
 var $elm$json$Json$Decode$decodeString = _Json_runOnString;
@@ -17888,7 +18124,7 @@ var $author$project$ReceiptRouter$accept = F2(
 					return _Utils_Tuple3(
 						next,
 						$elm$core$Maybe$Just(
-							A3($author$project$Menu$ReceiveFor, entry.cq, entry.dk, outcome)),
+							A3($author$project$Menu$ReceiveFor, entry.cq, entry.dl, outcome)),
 						$elm$core$Maybe$Nothing);
 				}
 			}
@@ -17912,7 +18148,7 @@ var $author$project$MenuBridge$nativeFrame = F2(
 						$author$project$MenuBridge$connectionLost(model),
 						$elm$core$Maybe$Nothing);
 				case 'effect-outcome':
-					var _v1 = A2($author$project$ReceiptRouter$accept, raw, state.au);
+					var _v1 = A2($author$project$ReceiptRouter$accept, raw, state.av);
 					var router = _v1.a;
 					var receipt = _v1.b;
 					var error = _v1.c;
@@ -17925,7 +18161,7 @@ var $author$project$MenuBridge$nativeFrame = F2(
 						return _Utils_Tuple2(
 							_Utils_update(
 								state,
-								{aI: menu, au: router}),
+								{aI: menu, av: router}),
 							error);
 					}
 				default:
@@ -17967,7 +18203,7 @@ var $author$project$MenuBridge$providerStamp = function (provider) {
 						_Utils_Tuple2(
 						'revision',
 						$elm$json$Json$Encode$string(
-							$author$project$UInt64$string(context.c2)))
+							$author$project$UInt64$string(context.c3)))
 					]))));
 };
 var $author$project$Menu$rebindReady = F5(
@@ -17976,7 +18212,7 @@ var $author$project$Menu$rebindReady = F5(
 		var _v0 = state.aI;
 		if (!_v0.$) {
 			var current = _v0.a;
-			return (state.az || ((!_Utils_eq(current.cl, id)) || ((!_Utils_eq(current.dk, previous)) || ((!_Utils_eq(current.W, $author$project$Menu$Ready)) || ((!_Utils_eq(current.fo, items)) || ((!$author$project$Menu$validItems(items)) || ((!A2($author$project$Menu$sameTarget, previous, fresh)) || ((!_Utils_eq(
+			return (state.aA || ((!_Utils_eq(current.cl, id)) || ((!_Utils_eq(current.dl, previous)) || ((!_Utils_eq(current.W, $author$project$Menu$Ready)) || ((!_Utils_eq(current.fq, items)) || ((!$author$project$Menu$validItems(items)) || ((!A2($author$project$Menu$sameTarget, previous, fresh)) || ((!_Utils_eq(
 				$author$project$Menu$outputTuple(previous),
 				$author$project$Menu$outputTuple(fresh))) || (A2($elm$core$List$member, fresh, state.aY) || (A2(
 				$elm$core$List$member,
@@ -17984,15 +18220,15 @@ var $author$project$Menu$rebindReady = F5(
 				state.a3) || A2(
 				$elm$core$List$any,
 				function (entry) {
-					return A2($author$project$Menu$sameTarget, entry.dk, fresh);
+					return A2($author$project$Menu$sameTarget, entry.dl, fresh);
 				},
-				state.fx))))))))))) ? model : _Utils_update(
+				state.fz))))))))))) ? model : _Utils_update(
 				state,
 				{
 					aI: $elm$core$Maybe$Just(
 						_Utils_update(
 							current,
-							{dk: fresh}))
+							{dl: fresh}))
 				});
 		} else {
 			return model;
@@ -18012,7 +18248,7 @@ var $author$project$MenuBridge$reconcileWithShell = F2(
 					return model;
 				} else {
 					var captured = _v0.a;
-					var _v1 = shell._.as;
+					var _v1 = shell._.at;
 					if (_v1.$ === 1) {
 						return model;
 					} else {
@@ -18030,14 +18266,14 @@ var $author$project$MenuBridge$reconcileWithShell = F2(
 						}();
 						var previous = $author$project$Provider$nativeContext(captured.c);
 						var sameAuthority = _Utils_eq(
-							shell.dk,
+							shell.dl,
 							$elm$core$Maybe$Just(
-								$author$project$Provider$nativeBinding(captured.c))) && (_Utils_eq(observed.P.fp, previous.fp) && (_Utils_eq(observed.P.fe, previous.fe) && _Utils_eq(observed.P.y, previous.y)));
+								$author$project$Provider$nativeBinding(captured.c))) && (_Utils_eq(observed.P.fr, previous.fr) && (_Utils_eq(observed.P.fg, previous.fg) && _Utils_eq(observed.P.y, previous.y)));
 						var liveRoot = _Utils_eq(
 							A2(
 								$author$project$ActionProjection$rootOf,
 								$author$project$Provider$incarnation(captured.c),
-								observed.eN),
+								observed.eP),
 							$elm$core$Maybe$Just(
 								$author$project$Provider$incarnation(captured.c)));
 						var changed = (!_Utils_eq(observed.P, previous)) || ((!sameAuthority) || ((!liveRoot) || (!_Utils_eq(
@@ -18054,7 +18290,7 @@ var $author$project$MenuBridge$reconcileWithShell = F2(
 								function ($) {
 									return $.P;
 								},
-								shell.ap)))));
+								shell.aa)))));
 						if (!changed) {
 							return model;
 						} else {
@@ -18064,7 +18300,7 @@ var $author$project$MenuBridge$reconcileWithShell = F2(
 								if ((!_Utils_eq(view.W, $author$project$Menu$Ready)) || ((!sameAuthority) || (!liveRoot))) {
 									return retired;
 								} else {
-									if ((!_Utils_eq(shell.A, $elm$core$Maybe$Nothing)) || ((!_Utils_eq(shell.eb, $elm$core$Maybe$Nothing)) || (!_Utils_eq(shell.ea, $elm$core$Maybe$Nothing)))) {
+									if ((!_Utils_eq(shell.A, $elm$core$Maybe$Nothing)) || ((!_Utils_eq(shell.ec, $elm$core$Maybe$Nothing)) || (!_Utils_eq(shell.eb, $elm$core$Maybe$Nothing)))) {
 										return model;
 									} else {
 										if (!$author$project$Shell$available(shell)) {
@@ -18089,7 +18325,7 @@ var $author$project$MenuBridge$reconcileWithShell = F2(
 														if (!_v5.b.$) {
 															var previousFacts = _v5.a.a;
 															var currentFacts = _v5.b.a;
-															return A2($author$project$MenuBridge$sameWindowFacts, previousFacts.a, currentFacts.a) && (_Utils_eq(previousFacts.dk, currentFacts.dk) && (_Utils_eq(previousFacts.P.fp, currentFacts.P.fp) && (_Utils_eq(previousFacts.P.fe, currentFacts.P.fe) && _Utils_eq(previousFacts.P.y, currentFacts.P.y))));
+															return A2($author$project$MenuBridge$sameWindowFacts, previousFacts.a, currentFacts.a) && (_Utils_eq(previousFacts.dl, currentFacts.dl) && (_Utils_eq(previousFacts.P.fr, currentFacts.P.fr) && (_Utils_eq(previousFacts.P.fg, currentFacts.P.fg) && _Utils_eq(previousFacts.P.y, currentFacts.P.y))));
 														} else {
 															break _v5$2;
 														}
@@ -18099,7 +18335,7 @@ var $author$project$MenuBridge$reconcileWithShell = F2(
 											};
 											var _v3 = A3(
 												$author$project$NativeProvider$fromShell,
-												{e7: observed.P.c2, dC: scope.dC, dI: scope.dI},
+												{e9: observed.P.c3, dD: scope.dD, dJ: scope.dJ},
 												$author$project$Provider$incarnation(captured.c),
 												shell);
 											if (_v3.$ === 1) {
@@ -18121,7 +18357,7 @@ var $author$project$MenuBridge$reconcileWithShell = F2(
 														var refreshed = A5(
 															$author$project$Menu$rebindReady,
 															view.cl,
-															view.dk,
+															view.dl,
 															$author$project$Provider$getBinding(fresh),
 															$author$project$Provider$getItems(fresh),
 															state.aI);
@@ -18129,7 +18365,7 @@ var $author$project$MenuBridge$reconcileWithShell = F2(
 															A2(
 																$elm$core$Maybe$map,
 																function ($) {
-																	return $.dk;
+																	return $.dl;
 																},
 																$author$project$Menu$snapshot(refreshed).aI),
 															$elm$core$Maybe$Just(
@@ -18138,7 +18374,7 @@ var $author$project$MenuBridge$reconcileWithShell = F2(
 															{
 																aI: refreshed,
 																bJ: $elm$core$Maybe$Just(
-																	{c: fresh, db: stamp})
+																	{c: fresh, dc: stamp})
 															});
 													}
 												}
@@ -18219,7 +18455,7 @@ var $author$project$TaskbarShell$native = F2(
 						_Utils_update(
 							next,
 							{
-								ft: A2($elm$core$Maybe$withDefault, next.ft, error)
+								fv: A2($elm$core$Maybe$withDefault, next.fv, error)
 							}),
 						emitted);
 				case 3:
@@ -18238,13 +18474,13 @@ var $author$project$TaskbarShell$native = F2(
 		var effects = _v0.b;
 		var advanced = A4($author$project$MenuBridge$advancePrepared, message, model.b, shell, menus);
 		var finalShell = advanced.b;
-		var settledMenus = A2($author$project$MenuBridge$reconcileWithShell, advanced.b, advanced.dW);
+		var settledMenus = A2($author$project$MenuBridge$reconcileWithShell, advanced.b, advanced.dX);
 		var picker = A2(
 			$elm$core$Maybe$andThen,
 			function (current) {
 				return (_Utils_eq(
 					$author$project$Shell$capture(shell),
-					$elm$core$Maybe$Just(current.c5)) && $author$project$Shell$available(shell)) ? $elm$core$Maybe$Just(current) : $elm$core$Maybe$Nothing;
+					$elm$core$Maybe$Just(current.c6)) && $author$project$Shell$available(shell)) ? $elm$core$Maybe$Just(current) : $elm$core$Maybe$Nothing;
 			},
 			model.J);
 		return _Utils_Tuple2(
@@ -18256,7 +18492,7 @@ var $author$project$TaskbarShell$native = F2(
 					b: _Utils_update(
 						finalShell,
 						{
-							ft: A2($elm$core$Maybe$withDefault, finalShell.ft, advanced.d3)
+							fv: A2($elm$core$Maybe$withDefault, finalShell.fv, advanced.d4)
 						})
 				}),
 			_Utils_ap(effects, advanced._));
@@ -18293,11 +18529,11 @@ var $author$project$Shell$ArmPrepared = function (a) {
 var $author$project$MenuBridge$providerMatches = F2(
 	function (captured, shell) {
 		return _Utils_eq(
-			shell.dk,
+			shell.dl,
 			$elm$core$Maybe$Just(
 				$author$project$Provider$nativeBinding(captured.c))) && (_Utils_eq(
 			$author$project$Shell$capture(shell),
-			$elm$core$Maybe$Just(captured.db)) && (_Utils_eq(
+			$elm$core$Maybe$Just(captured.dc)) && (_Utils_eq(
 			A2(
 				$elm$core$Maybe$map,
 				function ($) {
@@ -18311,13 +18547,13 @@ var $author$project$MenuBridge$providerMatches = F2(
 				function ($) {
 					return $.P;
 				},
-				shell.ap)) && (_Utils_eq(
+				shell.aa)) && (_Utils_eq(
 			A2(
 				$elm$core$Maybe$map,
 				function ($) {
 					return $.P;
 				},
-				shell._.as),
+				shell._.at),
 			$elm$core$Maybe$Just(
 				$author$project$Provider$nativeContext(captured.c))) && _Utils_eq(
 			A2(
@@ -18326,9 +18562,9 @@ var $author$project$MenuBridge$providerMatches = F2(
 					return A2(
 						$author$project$ActionProjection$rootOf,
 						$author$project$Provider$incarnation(captured.c),
-						observed.eN);
+						observed.eP);
 				},
-				shell._.as),
+				shell._.at),
 			$elm$core$Maybe$Just(
 				$author$project$Provider$incarnation(captured.c))))));
 	});
@@ -18355,7 +18591,7 @@ var $author$project$MenuBridge$menuEvent = F3(
 				var _v1 = state.O;
 				if (!_v1.$) {
 					var slot = _v1.a;
-					return _Utils_eq(slot.dx, id) ? A3($author$project$MenuBridge$cancelPrepared, 'Selection canceled before dispatch', shell, model) : A4($author$project$MenuBridge$answer, model, shell, _List_Nil, $elm$core$Maybe$Nothing);
+					return _Utils_eq(slot.dy, id) ? A3($author$project$MenuBridge$cancelPrepared, 'Selection canceled before dispatch', shell, model) : A4($author$project$MenuBridge$answer, model, shell, _List_Nil, $elm$core$Maybe$Nothing);
 				} else {
 					return A4(
 						$author$project$MenuBridge$answer,
@@ -18404,10 +18640,10 @@ var $author$project$MenuBridge$menuEvent = F3(
 					return (_Utils_eq(
 						$author$project$Menu$outputId(
 							$author$project$UInt64$string(
-								$author$project$Provider$presentationScope(slot.ax.c).dC)),
+								$author$project$Provider$presentationScope(slot.ay.c).dD)),
 						output) && _Utils_eq(
 						$author$project$UInt64$string(
-							$author$project$Provider$nativeContext(slot.ax.c).y),
+							$author$project$Provider$nativeContext(slot.ay.c).y),
 						generation)) ? A3($author$project$MenuBridge$cancelPrepared, 'Selection output retired', shell, model) : A4(
 						$author$project$MenuBridge$answer,
 						_Utils_update(
@@ -18480,15 +18716,15 @@ var $author$project$MenuBridge$menuEvent = F3(
 								var captured = _v6.a.a;
 								if ((!_Utils_eq(
 									$author$project$Provider$getBinding(captured.c),
-									binding)) || ((!A2($author$project$MenuBridge$providerMatches, captured, shell)) || (($author$project$Provider$actionProtocol(action) === 2) && ((!_Utils_eq(shell.eb, $elm$core$Maybe$Nothing)) || (!_Utils_eq(shell.ea, $elm$core$Maybe$Nothing)))))) {
+									binding)) || ((!A2($author$project$MenuBridge$providerMatches, captured, shell)) || (($author$project$Provider$actionProtocol(action) === 2) && ((!_Utils_eq(shell.ec, $elm$core$Maybe$Nothing)) || (!_Utils_eq(shell.eb, $elm$core$Maybe$Nothing)))))) {
 									return rejected('Native window information changed; choose again');
 								} else {
 									var _v7 = _Utils_Tuple3(
 										state.O,
-										$author$project$UInt64$next(state.dG),
+										$author$project$UInt64$next(state.dH),
 										_Utils_Tuple2(
 											$author$project$Menu$snapshot(state.aI).aI,
-											shell._.as));
+											shell._.at));
 									if ((((_v7.a.$ === 1) && (!_v7.b.$)) && (!_v7.c.a.$)) && (!_v7.c.b.$)) {
 										var _v8 = _v7.a;
 										var token = _v7.b.a;
@@ -18510,21 +18746,21 @@ var $author$project$MenuBridge$menuEvent = F3(
 											return rejected('Post-close window observation unavailable');
 										} else {
 											var legacyRequest = _v11.a;
-											if ($elm$core$List$isEmpty(requests) || (needsGeometry && _Utils_eq(refreshing.eb, $elm$core$Maybe$Nothing))) {
+											if ($elm$core$List$isEmpty(requests) || (needsGeometry && _Utils_eq(refreshing.ec, $elm$core$Maybe$Nothing))) {
 												return rejected('Post-close geometry observation unavailable');
 											} else {
 												var slot = {
-													e3: action,
-													ax: captured,
-													dq: dispatch,
-													ds: shell.ds,
+													e5: action,
+													ay: captured,
+													dr: dispatch,
+													dt: shell.dt,
 													bA: !needsGeometry,
-													bd: refreshing.eb,
+													bd: refreshing.ec,
 													bD: false,
 													bg: legacyRequest,
-													dw: $author$project$ActionProjection$windows(observed.eN),
+													dx: $author$project$ActionProjection$windows(observed.eP),
 													cq: local,
-													dx: view.cl,
+													dy: view.cl,
 													b0: binding,
 													bp: token
 												};
@@ -18535,11 +18771,11 @@ var $author$project$MenuBridge$menuEvent = F3(
 														{
 															aI: closed,
 															O: $elm$core$Maybe$Just(slot),
-															dG: token
+															dH: token
 														}),
 													_Utils_update(
 														refreshing,
-														{d$: true}),
+														{d0: true}),
 													_Utils_ap(
 														requests,
 														_List_fromArray(
@@ -18583,7 +18819,7 @@ var $author$project$TaskbarShell$dismissMenus = function (model) {
 			model.h);
 		return _Utils_update(
 			model,
-			{h: result.dW});
+			{h: result.dX});
 	}
 };
 var $author$project$MenuBridge$expirePrepared = F3(
@@ -18603,7 +18839,7 @@ var $author$project$Menu$Open = F2(
 	});
 var $author$project$Provider$toOpen = function (_v0) {
 	var value = _v0;
-	return A2($author$project$Menu$Open, value.dk, value.fo);
+	return A2($author$project$Menu$Open, value.dl, value.fq);
 };
 var $author$project$MenuBridge$open = F2(
 	function (provider, model) {
@@ -18629,13 +18865,13 @@ var $author$project$MenuBridge$open = F2(
 					{
 						aI: menu,
 						bJ: $elm$core$Maybe$Just(
-							{c: provider, db: stamp})
+							{c: provider, dc: stamp})
 					});
 			}
 		}
 	});
 var $author$project$Taskbar$selection = function (entry) {
-	return (!entry.dj) ? $author$project$Taskbar$Unavailable : A2(
+	return (!entry.dk) ? $author$project$Taskbar$Unavailable : A2(
 		$author$project$Taskbar$Apply,
 		entry.b_ ? $author$project$Effects$Restore : $author$project$Effects$Activate,
 		entry.r);
@@ -18670,12 +18906,12 @@ var $author$project$TaskbarShell$update = F2(
 					_Utils_update(
 						model,
 						{
-							h: result.dW,
+							h: result.dX,
 							J: $elm$core$List$isEmpty(result._) ? model.J : $elm$core$Maybe$Nothing,
 							b: _Utils_update(
 								shell,
 								{
-									ft: A2($elm$core$Maybe$withDefault, shell.ft, result.d3)
+									fv: A2($elm$core$Maybe$withDefault, shell.fv, result.d4)
 								})
 						}),
 					result._);
@@ -18687,11 +18923,11 @@ var $author$project$TaskbarShell$update = F2(
 					_Utils_update(
 						model,
 						{
-							h: result.dW,
+							h: result.dX,
 							b: _Utils_update(
 								shell,
 								{
-									ft: A2($elm$core$Maybe$withDefault, shell.ft, result.d3)
+									fv: A2($elm$core$Maybe$withDefault, shell.fv, result.d4)
 								})
 						}),
 					result._);
@@ -18703,11 +18939,11 @@ var $author$project$TaskbarShell$update = F2(
 					_Utils_update(
 						model,
 						{
-							h: result.dW,
+							h: result.dX,
 							b: _Utils_update(
 								shell,
 								{
-									ft: A2($elm$core$Maybe$withDefault, shell.ft, result.d3)
+									fv: A2($elm$core$Maybe$withDefault, shell.fv, result.d4)
 								})
 						}),
 					result._);
@@ -18734,16 +18970,16 @@ var $author$project$TaskbarShell$update = F2(
 						var base = $author$project$TaskbarShell$dismissMenus(model);
 						var _v2 = A2($author$project$Taskbar$primary, false, group.aG);
 						if (_v2.$ === 1) {
-							var _v3 = $author$project$UInt64$next(model.fh);
+							var _v3 = $author$project$UInt64$next(model.fj);
 							if (!_v3.$) {
 								var generation = _v3.a;
 								return _Utils_Tuple2(
 									_Utils_update(
 										base,
 										{
-											fh: generation,
+											fj: generation,
 											J: $elm$core$Maybe$Just(
-												{fh: generation, a_: key, c5: scope})
+												{fj: generation, a_: key, c6: scope})
 										}),
 									_List_Nil);
 							} else {
@@ -18766,7 +19002,7 @@ var $author$project$TaskbarShell$update = F2(
 				var _v4 = model.J;
 				if (!_v4.$) {
 					var picker = _v4.a;
-					return ((!A2($author$project$TaskbarShell$valid, scope, model)) || ((!_Utils_eq(picker.c5, scope)) || (!_Utils_eq(picker.fh, generation)))) ? _Utils_Tuple2(model, _List_Nil) : A2(
+					return ((!A2($author$project$TaskbarShell$valid, scope, model)) || ((!_Utils_eq(picker.c6, scope)) || (!_Utils_eq(picker.fj, generation)))) ? _Utils_Tuple2(model, _List_Nil) : A2(
 						$elm$core$Maybe$withDefault,
 						_Utils_Tuple2(model, _List_Nil),
 						A2(
@@ -18804,7 +19040,7 @@ var $author$project$TaskbarShell$update = F2(
 				var _v5 = model.J;
 				if (!_v5.$) {
 					var picker = _v5.a;
-					return (_Utils_eq(picker.c5, scope) && _Utils_eq(picker.fh, generation)) ? _Utils_Tuple2(
+					return (_Utils_eq(picker.c6, scope) && _Utils_eq(picker.fj, generation)) ? _Utils_Tuple2(
 						_Utils_update(
 							model,
 							{J: $elm$core$Maybe$Nothing}),
@@ -18816,20 +19052,20 @@ var $author$project$TaskbarShell$update = F2(
 	});
 var $author$project$Snap$valid = F2(
 	function (current, choice) {
-		return _Utils_eq(current.dk, choice.c.dk) && (_Utils_eq(current.P.fp, choice.c.P.fp) && (_Utils_eq(current.P.fe, choice.c.P.fe) && (_Utils_eq(current.P.y, choice.c.P.y) && A2(
+		return _Utils_eq(current.dl, choice.c.dl) && (_Utils_eq(current.P.fr, choice.c.P.fr) && (_Utils_eq(current.P.fg, choice.c.P.fg) && (_Utils_eq(current.P.y, choice.c.P.y) && A2(
 			$elm$core$Maybe$withDefault,
 			false,
 			A2(
 				$elm$core$Maybe$map,
 				function (window) {
-					return (current.e6 || window.dr) && ((!window.b_) && (window.bX && ((!window.bB) && ((!window.fg) && (_Utils_eq(window.dD, $elm$core$Maybe$Nothing) && ((!window.es) && ((!window.cg) && (_Utils_eq(
+					return (current.e8 || window.ds) && ((!window.b_) && (window.bX && ((!window.bB) && ((!window.fi) && (_Utils_eq(window.dE, $elm$core$Maybe$Nothing) && ((!window.et) && ((!window.cg) && (_Utils_eq(
 						A2(
 							$elm$core$Maybe$map,
 							function ($) {
-								return $.c9;
+								return $.da;
 							},
-							A2($author$project$GeometryProjection$window, choice.fR, choice.c)),
-						$elm$core$Maybe$Just(window.c9)) && _Utils_eq(
+							A2($author$project$GeometryProjection$window, choice.fT, choice.c)),
+						$elm$core$Maybe$Just(window.da)) && _Utils_eq(
 						$author$project$Snap$proposal(
 							_Utils_update(
 								choice,
@@ -18843,16 +19079,32 @@ var $author$project$Snap$valid = F2(
 							},
 							$author$project$Snap$proposal(choice)))))))))));
 				},
-				A2($author$project$GeometryProjection$window, choice.fR, current))))));
+				A2($author$project$GeometryProjection$window, choice.fT, current))))));
 	});
 var $author$project$Desktop$windowBase = F2(
 	function (message, model) {
 		var _v0 = A2($author$project$TaskbarShell$update, message, model.a);
 		var windows = _v0.a;
 		var effects = _v0.b;
-		var changed = !_Utils_eq(windows.b.dk, model.a.b.dk);
+		var changed = !_Utils_eq(windows.b.dl, model.a.b.dl);
 		var disconnected = !windows.b.j;
 		var pins = (disconnected || changed) ? $author$project$Pins$initial : model.R;
+		var inventory = function () {
+			if (disconnected || changed) {
+				return $elm$core$Maybe$Nothing;
+			} else {
+				if (_Utils_eq(windows.b.aa, model.a.b.aa)) {
+					return model.cF;
+				} else {
+					if ((!message.$) && (message.a.$ === 3)) {
+						var raw = message.a.a;
+						return $author$project$WorkspaceInventory$decode(raw);
+					} else {
+						return $elm$core$Maybe$Nothing;
+					}
+				}
+			}
+		}();
 		var launch = disconnected ? $author$project$Launch$disconnect(model.M) : (changed ? A2(
 			$elm$core$Maybe$withDefault,
 			$author$project$Launch$disconnect(model.M),
@@ -18864,7 +19116,7 @@ var $author$project$Desktop$windowBase = F2(
 						$author$project$Desktop$host(binding),
 						model.M);
 				},
-				windows.b.dk)) : model.M);
+				windows.b.dl)) : model.M);
 		var read = (changed && (!disconnected)) ? A2(
 			$elm$core$Maybe$andThen,
 			function (binding) {
@@ -18873,9 +19125,9 @@ var $author$project$Desktop$windowBase = F2(
 					function (request) {
 						return _Utils_Tuple2(binding, request);
 					},
-					$author$project$UInt64$next(model.c1));
+					$author$project$UInt64$next(model.c2));
 			},
-			windows.b.dk) : $elm$core$Maybe$Nothing;
+			windows.b.dl) : $elm$core$Maybe$Nothing;
 		var settingsRead = A2(
 			$elm$core$Maybe$andThen,
 			function (_v11) {
@@ -18923,9 +19175,9 @@ var $author$project$Desktop$windowBase = F2(
 						F: (disconnected && (!(!model.a.b.j))) ? A2(
 							$elm$core$Maybe$map,
 							function (binding) {
-								return A2($author$project$AdapterNotice$connectionLost, binding, model.a.b.c1);
+								return A2($author$project$AdapterNotice$connectionLost, binding, model.a.b.c2);
 							},
-							model.a.b.dk) : (changed ? $elm$core$Maybe$Nothing : model.F),
+							model.a.b.dl) : (changed ? $elm$core$Maybe$Nothing : model.F),
 						aD: (disconnected || changed) ? $elm$core$Maybe$Nothing : model.aD,
 						bu: (disconnected || changed) ? $elm$core$Maybe$Nothing : model.bu,
 						k: (disconnected || (changed || (windows.b.j === 3))) ? $elm$core$Maybe$Nothing : model.k,
@@ -18937,7 +19189,7 @@ var $author$project$Desktop$windowBase = F2(
 						B: (disconnected || (changed || (windows.b.j === 3))) ? false : model.B,
 						o: (disconnected || (changed || (windows.b.j === 3))) ? $elm$core$Maybe$Nothing : model.o,
 						aZ: (disconnected || changed) ? $elm$core$Maybe$Nothing : model.aZ,
-						ar: (disconnected || changed) ? $author$project$JumpList$disconnect(model.ar) : model.ar,
+						as: (disconnected || changed) ? $author$project$JumpList$disconnect(model.as) : model.as,
 						w: (disconnected || (changed || (windows.b.j === 3))) ? false : model.w,
 						M: launch,
 						H: (disconnected || (changed || _Utils_eq(
@@ -18945,16 +19197,16 @@ var $author$project$Desktop$windowBase = F2(
 							$elm$core$Maybe$Nothing))) ? $elm$core$Maybe$Nothing : model.H,
 						I: (disconnected || changed) ? $author$project$Motion$rebind(model.I) : model.I,
 						aK: (disconnected || changed) ? A2($elm$core$Maybe$map, $elm$core$Tuple$second, motionRead) : model.aK,
-						ah: (disconnected || (changed || (windows.b.j === 3))) ? $elm$core$Maybe$Nothing : model.ah,
+						aj: (disconnected || (changed || (windows.b.j === 3))) ? $elm$core$Maybe$Nothing : model.aj,
 						C: (disconnected || changed) ? $author$project$Notifications$initial : model.C,
 						a0: (disconnected || changed) ? $elm$core$Maybe$Nothing : model.a0,
 						t: (disconnected || (changed || (windows.b.j === 3))) ? false : model.t,
 						D: (disconnected || (changed || (windows.b.j === 3))) ? false : model.D,
-						m: (disconnected || (changed || (windows.b.j === 3))) ? false : model.m,
-						aB: (disconnected || (changed || (!model.m))) ? $elm$core$Maybe$Nothing : model.aB,
-						at: (disconnected || changed) ? $elm$core$Maybe$Nothing : model.at,
+						l: (disconnected || (changed || (windows.b.j === 3))) ? false : model.l,
+						au: (disconnected || (changed || (!model.l))) ? $elm$core$Maybe$Nothing : model.au,
+						ac: (disconnected || changed) ? $elm$core$Maybe$Nothing : model.ac,
 						R: pins,
-						c1: A2(
+						c2: A2(
 							$elm$core$Maybe$withDefault,
 							A2(
 								$elm$core$Maybe$withDefault,
@@ -18962,23 +19214,23 @@ var $author$project$Desktop$windowBase = F2(
 									$elm$core$Maybe$withDefault,
 									A2(
 										$elm$core$Maybe$withDefault,
-										model.c1,
+										model.c2,
 										A2($elm$core$Maybe$map, $elm$core$Tuple$second, read)),
 									A2($elm$core$Maybe$map, $elm$core$Tuple$second, settingsRead)),
 								A2($elm$core$Maybe$map, $elm$core$Tuple$second, motionRead)),
 							A2($elm$core$Maybe$map, $elm$core$Tuple$second, shortcutsRead)),
 						u: (disconnected || changed) ? $elm$core$Maybe$Nothing : model.u,
-						aj: (disconnected || changed) ? $author$project$Settings$initial : model.aj,
+						al: (disconnected || changed) ? $author$project$Settings$initial : model.al,
 						bo: (disconnected || changed) ? A2($elm$core$Maybe$map, $elm$core$Tuple$second, settingsRead) : model.bo,
 						n: (disconnected || (changed || (windows.b.j === 3))) ? false : model.n,
 						L: (disconnected || (changed || (windows.b.j === 3))) ? false : model.L,
 						aQ: (disconnected || changed) ? A2($elm$core$Maybe$map, $elm$core$Tuple$second, shortcutsRead) : model.aQ,
-						ac: (disconnected || changed) ? $author$project$ShortcutPreferences$initial : model.ac,
+						ae: (disconnected || changed) ? $author$project$ShortcutPreferences$initial : model.ae,
 						b8: (disconnected || changed) ? $author$project$Shortcuts$initial : model.b8,
 						x: (disconnected || (changed || (windows.b.j === 3))) ? $elm$core$Maybe$Nothing : A2(
 							$elm$core$Maybe$andThen,
 							function (choice) {
-								var _v1 = windows.b.ap;
+								var _v1 = windows.b.aa;
 								if (_v1.$ === 1) {
 									return $elm$core$Maybe$Just(choice);
 								} else {
@@ -18996,12 +19248,13 @@ var $author$project$Desktop$windowBase = F2(
 							model.i) : model.i,
 						aR: (disconnected || (changed || (windows.b.j === 3))) ? $elm$core$Maybe$Nothing : model.aR,
 						aS: (disconnected || (changed || (windows.b.j === 3))) ? $elm$core$Maybe$Nothing : model.aS,
-						ak: (disconnected || changed) ? $author$project$SystemMenu$initial : model.ak,
+						am: (disconnected || changed) ? $author$project$SystemMenu$initial : model.am,
 						s: (disconnected || (changed || (windows.b.j === 3))) ? $elm$core$Maybe$Nothing : model.s,
 						aT: (disconnected || changed) ? $elm$core$Maybe$Nothing : model.aT,
 						v: (disconnected || (changed || (windows.b.j === 3))) ? false : model.v,
 						E: (disconnected || (changed || (windows.b.j === 3))) ? false : model.E,
-						a: windows
+						a: windows,
+						cF: inventory
 					})),
 			_Utils_ap(
 				A2(
@@ -19074,10 +19327,10 @@ var $author$project$Desktop$windowBase = F2(
 											A2(
 												$elm$core$Maybe$map,
 												function ($) {
-													return $.fh;
+													return $.fj;
 												},
 												prior),
-											$elm$core$Maybe$Just(picker.fh)) ? _List_Nil : A2(
+											$elm$core$Maybe$Just(picker.fj)) ? _List_Nil : A2(
 											$elm$core$Maybe$withDefault,
 											_List_Nil,
 											A2(
@@ -19086,14 +19339,14 @@ var $author$project$Desktop$windowBase = F2(
 													return _List_fromArray(
 														[
 															$author$project$Desktop$Focus(
-															'picker:' + ($author$project$Shell$stampKey(picker.c5) + (':' + ($author$project$UInt64$string(picker.fh) + (':' + $author$project$UInt64$string(family.r))))))
+															'picker:' + ($author$project$Shell$stampKey(picker.c6) + (':' + ($author$project$UInt64$string(picker.fj) + (':' + $author$project$UInt64$string(family.r))))))
 														]);
 												},
 												$elm$core$List$head(
 													A2(
 														$elm$core$List$filter,
 														function ($) {
-															return $.dj;
+															return $.dk;
 														},
 														A2(
 															$elm$core$List$concatMap,
@@ -19113,7 +19366,7 @@ var $author$project$Desktop$windowBase = F2(
 											var _v8 = _v6.c;
 											var scope = _v8.a;
 											var generation = _v8.b;
-											return (_Utils_eq(picker.c5, scope) && (_Utils_eq(picker.fh, generation) && _Utils_eq(
+											return (_Utils_eq(picker.c6, scope) && (_Utils_eq(picker.fj, generation) && _Utils_eq(
 												$author$project$Shell$capture(windows.b),
 												$elm$core$Maybe$Just(scope)))) ? _List_fromArray(
 												[
@@ -19128,7 +19381,7 @@ var $author$project$Desktop$windowBase = F2(
 	});
 var $author$project$Desktop$chooseFamily = F2(
 	function (family, model) {
-		var _v0 = _Utils_Tuple2(model.a.b.dk, model.a.b._.as);
+		var _v0 = _Utils_Tuple2(model.a.b.dl, model.a.b._.at);
 		if ((!_v0.a.$) && (!_v0.b.$)) {
 			var binding = _v0.a.a;
 			var observed = _v0.b.a;
@@ -19143,7 +19396,7 @@ var $author$project$Desktop$chooseFamily = F2(
 					$author$project$Desktop$retireSwitcher(
 						_Utils_update(
 							model,
-							{G: '', m: false, aN: $author$project$OverviewRecovery$initial})));
+							{G: '', l: false, aN: $author$project$OverviewRecovery$initial})));
 				var next = _v1.a;
 				var effects = _v1.b;
 				var _v2 = next.a.b.A;
@@ -19156,14 +19409,14 @@ var $author$project$Desktop$chooseFamily = F2(
 							{
 								k: $elm$core$Maybe$Just(
 									{
-										di: family.di,
-										dk: binding,
+										dj: family.dj,
+										dl: binding,
 										aV: A2(
 											$elm$core$Maybe$map,
 											function ($) {
-												return $.fh;
+												return $.fj;
 											},
-											model.ah),
+											model.aj),
 										y: observed.P.y,
 										bk: $elm$core$Maybe$Nothing,
 										r: family.r,
@@ -19192,11 +19445,11 @@ var $author$project$Switcher$fresh = function (token) {
 	var model = _v0;
 	return _Utils_update(
 		model,
-		{fh: token, j: 1});
+		{fj: token, j: 1});
 };
 var $author$project$Switcher$prepare = F2(
 	function (token, model) {
-		var _v0 = A2($author$project$UInt64$compare, token, model.fh);
+		var _v0 = A2($author$project$UInt64$compare, token, model.fj);
 		switch (_v0) {
 			case 2:
 				return _Utils_eq(token, $author$project$UInt64$zero) ? $elm$core$Maybe$Nothing : $elm$core$Maybe$Just(
@@ -19238,7 +19491,7 @@ var $author$project$Switcher$settle = function (model) {
 			function (ordinal) {
 				return A2($author$project$Switcher$contiguous, ordinal, model);
 			},
-			model.c0));
+			model.c1));
 	if ((!model.b5) || (!complete)) {
 		return _Utils_Tuple2(
 			_Utils_update(
@@ -19246,14 +19499,14 @@ var $author$project$Switcher$settle = function (model) {
 				{j: 1}),
 			$elm$core$Maybe$Nothing);
 	} else {
-		if ($elm$core$List$isEmpty(model.af)) {
+		if ($elm$core$List$isEmpty(model.ah)) {
 			return _Utils_Tuple2(
 				_Utils_update(
 					model,
 					{j: 3}),
 				$elm$core$Maybe$Nothing);
 		} else {
-			if (!_Utils_eq(model.c0, $elm$core$Maybe$Nothing)) {
+			if (!_Utils_eq(model.c1, $elm$core$Maybe$Nothing)) {
 				var current = _Utils_update(
 					model,
 					{j: 3});
@@ -19286,7 +19539,7 @@ var $author$project$Switcher$release = F3(
 					$author$project$Switcher$lastOrdinal(model)) < 0) {
 					return _Utils_Tuple2(original, $elm$core$Maybe$Nothing);
 				} else {
-					var _v1 = model.c0;
+					var _v1 = model.c1;
 					if (!_v1.$) {
 						return _Utils_Tuple2(original, $elm$core$Maybe$Nothing);
 					} else {
@@ -19294,7 +19547,7 @@ var $author$project$Switcher$release = F3(
 							_Utils_update(
 								model,
 								{
-									c0: $elm$core$Maybe$Just(ordinal)
+									c1: $elm$core$Maybe$Just(ordinal)
 								}));
 					}
 				}
@@ -19304,7 +19557,7 @@ var $author$project$Switcher$release = F3(
 var $author$project$Switcher$commit = F2(
 	function (token, original) {
 		var model = original;
-		return ((!_Utils_eq(token, model.fh)) || (model.j !== 2)) ? _Utils_Tuple2(original, $elm$core$Maybe$Nothing) : A3(
+		return ((!_Utils_eq(token, model.fj)) || (model.j !== 2)) ? _Utils_Tuple2(original, $elm$core$Maybe$Nothing) : A3(
 			$author$project$Switcher$release,
 			token,
 			$author$project$Switcher$lastOrdinal(model),
@@ -19314,7 +19567,7 @@ var $author$project$Notifications$configure = F2(
 	function (policy, model) {
 		return _Utils_update(
 			model,
-			{fD: policy});
+			{fF: policy});
 	});
 var $author$project$SystemMenu$confirmed = function (value) {
 	return A2(
@@ -19325,11 +19578,11 @@ var $author$project$SystemMenu$confirmed = function (value) {
 };
 var $author$project$Files$Peer = F5(
 	function (pid, start, instance, target, visible) {
-		return {du: instance, dE: pid, dN: start, fR: target, eW: visible};
+		return {dv: instance, dF: pid, dO: start, fT: target, eY: visible};
 	});
 var $author$project$Files$Snapshot = F5(
 	function (service, revision, available, reason, peer) {
-		return {dj: available, b2: peer, eH: reason, c2: revision, c7: service};
+		return {dk: available, b2: peer, eI: reason, c3: revision, c8: service};
 	});
 var $author$project$Files$bounded = function (limit) {
 	return A2(
@@ -19362,7 +19615,7 @@ var $author$project$Files$strict = F2(
 var $author$project$Files$decoder = A2(
 	$elm$json$Json$Decode$andThen,
 	function (snapshot) {
-		return ((!snapshot.dj) && (!_Utils_eq(snapshot.b2, $elm$core$Maybe$Nothing))) ? $elm$json$Json$Decode$fail('Unavailable Files peer') : $elm$json$Json$Decode$succeed(snapshot);
+		return ((!snapshot.dk) && (!_Utils_eq(snapshot.b2, $elm$core$Maybe$Nothing))) ? $elm$json$Json$Decode$fail('Unavailable Files peer') : $elm$json$Json$Decode$succeed(snapshot);
 	},
 	A2(
 		$author$project$Files$strict,
@@ -19417,11 +19670,11 @@ var $author$project$Files$decoder = A2(
 							A2($elm$json$Json$Decode$field, 'visible', $elm$json$Json$Decode$bool))))))));
 var $author$project$JumpList$Snapshot = F7(
 	function (service, revision, entry, name, available, reason, actions) {
-		return {cG: actions, dj: available, d2: entry, dA: name, eH: reason, c2: revision, c7: service};
+		return {cH: actions, dk: available, d3: entry, dB: name, eI: reason, c3: revision, c8: service};
 	});
 var $author$project$JumpList$Action = F3(
 	function (id, label, kind) {
-		return {cl: id, ej: kind, el: label};
+		return {cl: id, ek: kind, em: label};
 	});
 var $author$project$JumpList$bounded = F2(
 	function (limit, nonempty) {
@@ -19493,7 +19746,7 @@ var $author$project$JumpList$decoder = A2(
 			function ($) {
 				return $.cl;
 			},
-			snapshot.cG);
+			snapshot.cH);
 		var unique = A3(
 			$elm$core$List$foldl,
 			F2(
@@ -19504,12 +19757,12 @@ var $author$project$JumpList$decoder = A2(
 			keys);
 		return (($elm$core$List$length(keys) > 44) || ((!_Utils_eq(
 			$elm$core$List$length(keys),
-			$elm$core$List$length(unique))) || (((!snapshot.dj) && (!$elm$core$List$isEmpty(keys))) || A2(
+			$elm$core$List$length(unique))) || (((!snapshot.dk) && (!$elm$core$List$isEmpty(keys))) || A2(
 			$elm$core$List$any,
 			function (row) {
-				return !A2($elm$core$String$startsWith, row.ej + ':', row.cl);
+				return !A2($elm$core$String$startsWith, row.ek + ':', row.cl);
 			},
-			snapshot.cG)))) ? $elm$json$Json$Decode$fail('Jump list actions') : $elm$json$Json$Decode$succeed(snapshot);
+			snapshot.cH)))) ? $elm$json$Json$Decode$fail('Jump list actions') : $elm$json$Json$Decode$succeed(snapshot);
 	},
 	A2(
 		$author$project$JumpList$strict,
@@ -19590,7 +19843,7 @@ var $author$project$Motion$decoder = A2(
 		$elm$json$Json$Decode$map5,
 		F5(
 			function (_v0, _v1, serial, profile, source) {
-				return {aC: profile, c6: serial, cv: source};
+				return {aC: profile, c7: serial, cv: source};
 			}),
 		$author$project$Motion$version,
 		$author$project$Motion$kind('host-motion-preference'),
@@ -19643,7 +19896,7 @@ var $author$project$MotionPreferences$decoder = A2(
 		$elm$json$Json$Decode$map3,
 		F3(
 			function (_v0, revision, override) {
-				return {fy: override, c2: revision};
+				return {fA: override, c3: revision};
 			}),
 		A2(
 			$elm$json$Json$Decode$andThen,
@@ -19660,7 +19913,7 @@ var $author$project$MotionPreferences$decoder = A2(
 		A2($elm$json$Json$Decode$field, 'override', $author$project$MotionPreferences$overrideDecoder)));
 var $author$project$Notifications$Snapshot = F5(
 	function (service, revision, available, reason, entries) {
-		return {dj: available, af: entries, eH: reason, c2: revision, c7: service};
+		return {dk: available, ah: entries, eI: reason, c3: revision, c8: service};
 	});
 var $author$project$Notifications$bounded = function (limit) {
 	return A2(
@@ -19723,7 +19976,7 @@ var $author$project$Notifications$entryDecoder = function () {
 		$elm$json$Json$Decode$map8,
 		F8(
 			function (id, incarnation, producer, app, summary, body, state, actions) {
-				return {cG: actions, dR: app, dU: body, cl: id, aq: incarnation, ab: producer, dc: state, eS: summary, dg: 1};
+				return {cH: actions, dS: app, dV: body, cl: id, ar: incarnation, ad: producer, dd: state, eU: summary, dh: 1};
 			}),
 		A2($elm$json$Json$Decode$field, 'id', $author$project$Notifications$positive),
 		A2($elm$json$Json$Decode$field, 'incarnation', $author$project$Notifications$positive),
@@ -19773,7 +20026,7 @@ var $author$project$Notifications$entryDecoder = function () {
 						$elm$json$Json$Decode$map2,
 						F2(
 							function (key, label) {
-								return {a_: key, el: label};
+								return {a_: key, em: label};
 							}),
 						A2(
 							$elm$json$Json$Decode$field,
@@ -19786,18 +20039,18 @@ var $author$project$Notifications$entryDecoder = function () {
 	return A2(
 		$elm$json$Json$Decode$andThen,
 		function (entry) {
-			return (($elm$core$List$length(entry.cG) <= 8) && ($author$project$Notifications$unique(
+			return (($elm$core$List$length(entry.cH) <= 8) && ($author$project$Notifications$unique(
 				A2(
 					$elm$core$List$map,
 					function ($) {
 						return $.a_;
 					},
-					entry.cG)) && (A2(
+					entry.cH)) && (A2(
 				$elm$core$List$all,
 				function (a) {
-					return (!$elm$core$String$isEmpty(a.a_)) && (!$elm$core$String$isEmpty(a.el));
+					return (!$elm$core$String$isEmpty(a.a_)) && (!$elm$core$String$isEmpty(a.em));
 				},
-				entry.cG) && ((entry.dc === 'live') || $elm$core$List$isEmpty(entry.cG))))) ? $elm$json$Json$Decode$succeed(entry) : $elm$json$Json$Decode$fail('Notification action lifecycle');
+				entry.cH) && ((entry.dd === 'live') || $elm$core$List$isEmpty(entry.cH))))) ? $elm$json$Json$Decode$succeed(entry) : $elm$json$Json$Decode$fail('Notification action lifecycle');
 		},
 		$elm$json$Json$Decode$oneOf(
 			_List_fromArray(
@@ -19812,7 +20065,7 @@ var $author$project$Notifications$entryDecoder = function () {
 							function (entry, level) {
 								return _Utils_update(
 									entry,
-									{dg: level});
+									{dh: level});
 							}),
 						base,
 						A2($elm$json$Json$Decode$field, 'urgency', urgency))),
@@ -19826,7 +20079,7 @@ var $author$project$Notifications$entryDecoder = function () {
 var $author$project$Notifications$decoder = A2(
 	$elm$json$Json$Decode$andThen,
 	function (value) {
-		return (($elm$core$List$length(value.af) <= 32) && ($author$project$Notifications$unique(
+		return (($elm$core$List$length(value.ah) <= 32) && ($author$project$Notifications$unique(
 			A2(
 				$elm$core$List$map,
 				A2(
@@ -19835,16 +20088,16 @@ var $author$project$Notifications$decoder = A2(
 						return $.cl;
 					},
 					$author$project$UInt64$string),
-				value.af)) && $author$project$Notifications$unique(
+				value.ah)) && $author$project$Notifications$unique(
 			A2(
 				$elm$core$List$map,
 				A2(
 					$elm$core$Basics$composeR,
 					function ($) {
-						return $.aq;
+						return $.ar;
 					},
 					$author$project$UInt64$string),
-				value.af)))) ? $elm$json$Json$Decode$succeed(value) : $elm$json$Json$Decode$fail('Notification capacity/identity');
+				value.ah)))) ? $elm$json$Json$Decode$succeed(value) : $elm$json$Json$Decode$fail('Notification capacity/identity');
 	},
 	A2(
 		$author$project$Notifications$strict,
@@ -19866,7 +20119,7 @@ var $author$project$Notifications$decoder = A2(
 				$elm$json$Json$Decode$list($author$project$Notifications$entryDecoder)))));
 var $author$project$Pins$Snapshot = F2(
 	function (revision, identities) {
-		return {fl: identities, c2: revision};
+		return {fn: identities, c3: revision};
 	});
 var $author$project$Pins$identityDecoder = A2(
 	$elm$json$Json$Decode$andThen,
@@ -19978,7 +20231,7 @@ var $author$project$PointerOwnership$strict = F2(
 var $author$project$PointerOwnership$decoder = A2(
 	$elm$json$Json$Decode$andThen,
 	function (r) {
-		return ((r.eU !== 3) || ((r.ej !== 'pointer-ownership') || ((r.eE !== 1) || ((!r.c.dc) && (!_Utils_eq(r.c.dD, $elm$core$Maybe$Nothing)))))) ? $elm$json$Json$Decode$fail('Pointer protocol/owner') : $elm$json$Json$Decode$succeed(r.c);
+		return ((r.eW !== 3) || ((r.ek !== 'pointer-ownership') || ((r.eF !== 1) || ((!r.c.dd) && (!_Utils_eq(r.c.dE, $elm$core$Maybe$Nothing)))))) ? $elm$json$Json$Decode$fail('Pointer protocol/owner') : $elm$json$Json$Decode$succeed(r.c);
 	},
 	A2(
 		$author$project$PointerOwnership$strict,
@@ -19989,10 +20242,10 @@ var $author$project$PointerOwnership$decoder = A2(
 			F8(
 				function (version, kind, protocol, binding, request, serial, state, owner) {
 					return {
-						ej: kind,
-						eE: protocol,
-						c: {dk: binding, dD: owner, c6: serial, dc: state},
-						eU: version
+						ek: kind,
+						eF: protocol,
+						c: {dl: binding, dE: owner, c7: serial, dd: state},
+						eW: version
 					};
 				}),
 			A2($elm$json$Json$Decode$field, 'protocolVersion', $elm$json$Json$Decode$int),
@@ -20008,11 +20261,11 @@ var $author$project$PointerOwnership$decoder = A2(
 				$elm$json$Json$Decode$nullable($author$project$PointerOwnership$positive)))));
 var $author$project$Settings$Snapshot = F3(
 	function (schema, revision, values) {
-		return {c2: revision, fM: schema, bs: values};
+		return {c3: revision, fO: schema, bs: values};
 	});
 var $author$project$Settings$Values = F4(
 	function (theme, textScale, effectsOff, reducedTransparency) {
-		return {cQ: effectsOff, c$: reducedTransparency, cy: textScale, de: theme};
+		return {cR: effectsOff, c0: reducedTransparency, cy: textScale, df: theme};
 	});
 var $author$project$Settings$scaleDecoder = A2(
 	$elm$json$Json$Decode$andThen,
@@ -20070,7 +20323,7 @@ var $author$project$Settings$legacyValues = A2(
 		$elm$json$Json$Decode$map2,
 		F2(
 			function (theme, scale) {
-				return {cQ: false, c$: false, cy: scale, de: theme};
+				return {cR: false, c0: false, cy: scale, df: theme};
 			}),
 		A2($elm$json$Json$Decode$field, 'theme', $author$project$Settings$themeDecoder),
 		A2($elm$json$Json$Decode$field, 'textScale', $author$project$Settings$scaleDecoder)));
@@ -20105,7 +20358,7 @@ var $author$project$Settings$decoder = A2(
 		A2($elm$json$Json$Decode$field, 'schema', $elm$json$Json$Decode$int)));
 var $author$project$ShortcutPreferences$Snapshot = F3(
 	function (schema, revision, choices) {
-		return {ae: choices, c2: revision, fM: schema};
+		return {ag: choices, c3: revision, fO: schema};
 	});
 var $author$project$ShortcutPreferences$Choices = F3(
 	function (applications, system, notifications) {
@@ -20178,7 +20431,7 @@ var $author$project$ShortcutPreferences$decoder = A2(
 		A2($elm$json$Json$Decode$field, 'choices', $author$project$ShortcutPreferences$choicesDecoder)));
 var $author$project$Shortcuts$Event = F3(
 	function (serial, route, outputGeneration) {
-		return {fw: outputGeneration, eM: route, c6: serial};
+		return {fy: outputGeneration, eN: route, c7: serial};
 	});
 var $author$project$Shortcuts$boxDecoder = A2(
 	$elm$json$Json$Decode$andThen,
@@ -20306,8 +20559,8 @@ var $author$project$Shortcuts$decoder = A2(
 							var b = _v1.a;
 							var rest = _v1.b;
 							return _Utils_eq(
-								$author$project$UInt64$next(a.c6),
-								$elm$core$Maybe$Just(b.c6)) && ordered(
+								$author$project$UInt64$next(a.c7),
+								$elm$core$Maybe$Just(b.c7)) && ordered(
 								A2($elm$core$List$cons, b, rest));
 						}
 					}
@@ -20315,17 +20568,17 @@ var $author$project$Shortcuts$decoder = A2(
 				var last = A2(
 					$elm$core$Maybe$map,
 					function ($) {
-						return $.c6;
+						return $.c7;
 					},
 					$elm$core$List$head(
 						$elm$core$List$reverse(snapshot.by)));
-				return ((receipt.eU !== 3) || ((receipt.ej !== 'shell-shortcuts') || ((!A2(
+				return ((receipt.eW !== 3) || ((receipt.ek !== 'shell-shortcuts') || ((!A2(
 					$elm$core$List$member,
-					receipt.eE,
+					receipt.eF,
 					_List_fromArray(
 						[1, 2, 3]))) || (($elm$core$List$length(snapshot.by) > 64) || ((!ordered(snapshot.by)) || ((!_Utils_eq(last, $elm$core$Maybe$Nothing)) && (!_Utils_eq(
 					last,
-					$elm$core$Maybe$Just(snapshot.c6))))))))) ? $elm$json$Json$Decode$fail('Shortcut protocol/order') : $elm$json$Json$Decode$succeed(snapshot);
+					$elm$core$Maybe$Just(snapshot.c7))))))))) ? $elm$json$Json$Decode$fail('Shortcut protocol/order') : $elm$json$Json$Decode$succeed(snapshot);
 			},
 			A2(
 				$author$project$Shortcuts$strict,
@@ -20336,10 +20589,10 @@ var $author$project$Shortcuts$decoder = A2(
 					F8(
 						function (version, kind, protocol, binding, request, serial, blocked, events) {
 							return {
-								ej: kind,
-								eE: protocol,
-								c: {dk: binding, e6: blocked, by: events, c6: serial},
-								eU: version
+								ek: kind,
+								eF: protocol,
+								c: {dl: binding, e8: blocked, by: events, c7: serial},
+								eW: version
 							};
 						}),
 					A2($elm$json$Json$Decode$field, 'protocolVersion', $elm$json$Json$Decode$int),
@@ -20358,7 +20611,7 @@ var $author$project$Shortcuts$decoder = A2(
 	A2($elm$json$Json$Decode$field, 'shortcutProtocol', $elm$json$Json$Decode$int));
 var $author$project$SystemMenu$Snapshot = F6(
 	function (service, revision, volume, network, power, session) {
-		return {fs: network, fE: power, c2: revision, c7: service, fO: session, fV: volume};
+		return {fu: network, fG: power, c3: revision, c8: service, fQ: session, fX: volume};
 	});
 var $author$project$SystemMenu$bounded = function (limit) {
 	return A2(
@@ -20422,7 +20675,7 @@ var $author$project$SystemMenu$decoder = A2(
 						$elm$json$Json$Decode$map3,
 						F3(
 							function (percent, muted, label) {
-								return {el: label, dz: muted, fz: percent};
+								return {em: label, dA: muted, fB: percent};
 							}),
 						A2(
 							$elm$json$Json$Decode$field,
@@ -20450,7 +20703,7 @@ var $author$project$SystemMenu$decoder = A2(
 						$elm$json$Json$Decode$map3,
 						F3(
 							function (enabled, state, permission) {
-								return {fd: enabled, fA: permission, dc: state};
+								return {ff: enabled, fC: permission, dd: state};
 							}),
 						A2($elm$json$Json$Decode$field, 'enabled', $elm$json$Json$Decode$bool),
 						A2(
@@ -20475,7 +20728,7 @@ var $author$project$SystemMenu$decoder = A2(
 						$elm$json$Json$Decode$map3,
 						F3(
 							function (suspend, reboot, poweroff) {
-								return {fF: poweroff, fH: reboot, fQ: suspend};
+								return {fH: poweroff, fJ: reboot, fS: suspend};
 							}),
 						A2(
 							$elm$json$Json$Decode$field,
@@ -20507,7 +20760,7 @@ var $author$project$SystemMenu$decoder = A2(
 						$elm$json$Json$Decode$map3,
 						F3(
 							function (ownerName, state, locked) {
-								return {fq: locked, dA: ownerName, dc: state};
+								return {fs: locked, dB: ownerName, dd: state};
 							}),
 						A2(
 							$elm$json$Json$Decode$field,
@@ -20522,13 +20775,13 @@ var $author$project$Files$edit = F2(
 	function (value, model) {
 		return $author$project$Files$textValid(value) ? _Utils_update(
 			model,
-			{fb: value}) : model;
+			{fd: value}) : model;
 	});
 var $author$project$MotionPreferences$edit = F2(
 	function (override, model) {
 		return $author$project$MotionPreferences$writable(model) ? _Utils_update(
 			model,
-			{fb: override, ft: 'Unsaved motion preference. Save to apply.'}) : model;
+			{fd: override, fv: 'Unsaved motion preference. Save to apply.'}) : model;
 	});
 var $author$project$Settings$edit = F2(
 	function (values, model) {
@@ -20538,7 +20791,7 @@ var $author$project$Settings$edit = F2(
 			_List_fromArray(
 				[100, 125, 150, 200])))) ? model : _Utils_update(
 			model,
-			{fb: values, ft: 'Unsaved changes. Save to apply.'});
+			{fd: values, fv: 'Unsaved changes. Save to apply.'});
 	});
 var $author$project$ShortcutPreferences$edit = F3(
 	function (route, selected, model) {
@@ -20555,10 +20808,10 @@ var $author$project$ShortcutPreferences$edit = F3(
 					$elm$core$Basics$composeR,
 					$author$project$ShortcutPreferences$row(route),
 					$author$project$ShortcutPreferences$allowed(selected)),
-				model.cV))))) {
+				model.cW))))) {
 			return model;
 		} else {
-			var draft = model.fb;
+			var draft = model.fd;
 			var next = function () {
 				switch (route) {
 					case 'applications':
@@ -20577,13 +20830,13 @@ var $author$project$ShortcutPreferences$edit = F3(
 			}();
 			return _Utils_update(
 				model,
-				{fb: next, ft: 'Unsaved shortcut choices. Existing bindings remain unchanged until you save.'});
+				{fd: next, fv: 'Unsaved shortcut choices. Existing bindings remain unchanged until you save.'});
 		}
 	});
 var $author$project$AdapterNotice$failedRead = F7(
 	function (source, binding, request, service, revision, unavailable, prior) {
 		return unavailable ? $elm$core$Maybe$Just(
-			{dk: binding, c1: request, c2: revision, c7: service, cv: source}) : prior;
+			{dl: binding, c2: request, c3: revision, c8: service, cv: source}) : prior;
 	});
 var $author$project$Notifications$focus = F2(
 	function (selected, model) {
@@ -20600,7 +20853,7 @@ var $author$project$Notifications$focus = F2(
 							$elm$core$List$filter,
 							function (row) {
 								return _Utils_eq(
-									$author$project$Notifications$identity(row.fR),
+									$author$project$Notifications$identity(row.fT),
 									selected);
 							},
 							A2(
@@ -20611,25 +20864,25 @@ var $author$project$Notifications$focus = F2(
 											$elm$core$List$map,
 											function (action) {
 												return {
-													el: action.el,
-													fR: A4($author$project$Notifications$target, snapshot, entry, 'invoke', action.a_)
+													em: action.em,
+													fT: A4($author$project$Notifications$target, snapshot, entry, 'invoke', action.a_)
 												};
 											},
-											entry.cG),
+											entry.cH),
 										_List_fromArray(
 											[
 												{
-												el: 'Dismiss notification',
-												fR: A4($author$project$Notifications$target, snapshot, entry, 'dismiss', '')
+												em: 'Dismiss notification',
+												fT: A4($author$project$Notifications$target, snapshot, entry, 'dismiss', '')
 											}
 											]));
 								},
 								A2(
 									$elm$core$List$filter,
 									function (entry) {
-										return entry.dc === 'live';
+										return entry.dd === 'live';
 									},
-									snapshot.af))));
+									snapshot.ah))));
 				},
 				model.c);
 			return _Utils_update(
@@ -20675,18 +20928,18 @@ var $author$project$Desktop$gestureAction = function (message) {
 };
 var $author$project$ShortcutPreferences$Inventory = F4(
 	function (fingerprint, applications, system, notifications) {
-		return {aD: applications, d5: fingerprint, C: notifications, bP: system};
+		return {aD: applications, d6: fingerprint, C: notifications, bP: system};
 	});
 var $author$project$ShortcutPreferences$Row = F5(
 	function (defaultChord, alternateChord, defaultAvailable, alternateAvailable, active) {
-		return {bt: active, dh: alternateAvailable, e4: alternateChord, dp: defaultAvailable, e9: defaultChord};
+		return {bt: active, di: alternateAvailable, e6: alternateChord, dq: defaultAvailable, fb: defaultChord};
 	});
 var $author$project$ShortcutPreferences$rowDecoder = F2(
 	function (defaultChord, alternateChord) {
 		return A2(
 			$elm$json$Json$Decode$andThen,
 			function (value) {
-				return (((value.bt === 2) && (!value.dp)) || ((value.bt === 3) && (!value.dh))) ? $elm$json$Json$Decode$fail('Active shortcut conflicts') : $elm$json$Json$Decode$succeed(value);
+				return (((value.bt === 2) && (!value.dq)) || ((value.bt === 3) && (!value.di))) ? $elm$json$Json$Decode$fail('Active shortcut conflicts') : $elm$json$Json$Decode$succeed(value);
 			},
 			A2(
 				$author$project$ShortcutPreferences$strict,
@@ -20840,7 +21093,7 @@ var $author$project$Pins$move = F3(
 	});
 var $author$project$Desktop$NativeChord = F8(
 	function (generation, roots, history, origin, steps, released, cancelled, consumed) {
-		return {cH: cancelled, cL: consumed, fh: generation, ck: history, cY: origin, c0: released, aP: roots, bO: steps};
+		return {cI: cancelled, cM: consumed, fj: generation, ck: history, cZ: origin, c1: released, aP: roots, bO: steps};
 	});
 var $author$project$Desktop$strict = F2(
 	function (fields, decoder) {
@@ -20893,7 +21146,7 @@ var $author$project$Desktop$nativeChordDecoder = function () {
 		$elm$json$Json$Decode$andThen,
 		function (chord) {
 			return (_Utils_eq(
-				_Utils_eq(chord.fh, $author$project$UInt64$zero),
+				_Utils_eq(chord.fj, $author$project$UInt64$zero),
 				$elm$core$List$isEmpty(chord.bO)) && A2(
 				$elm$core$List$all,
 				function (root) {
@@ -20927,13 +21180,13 @@ var $elm$core$Basics$modBy = _Basics_modBy;
 var $author$project$Switcher$navigate = F2(
 	function (direction, original) {
 		var model = original;
-		if ((model.j !== 2) || ((!_Utils_eq(model.c0, $elm$core$Maybe$Nothing)) || $elm$core$List$isEmpty(model.af))) {
+		if ((model.j !== 2) || ((!_Utils_eq(model.c1, $elm$core$Maybe$Nothing)) || $elm$core$List$isEmpty(model.ah))) {
 			return original;
 		} else {
 			var position = A2(
 				$elm$core$Basics$modBy,
-				$elm$core$List$length(model.af),
-				model.fN + $author$project$Switcher$delta(direction));
+				$elm$core$List$length(model.ah),
+				model.fP + $author$project$Switcher$delta(direction));
 			var root = A2(
 				$elm$core$Maybe$withDefault,
 				$author$project$UInt64$zero,
@@ -20943,16 +21196,16 @@ var $author$project$Switcher$navigate = F2(
 						return $.r;
 					},
 					$elm$core$List$head(
-						A2($elm$core$List$drop, position, model.af))));
+						A2($elm$core$List$drop, position, model.ah))));
 			return _Utils_update(
 				model,
 				{
 					ba: $elm$core$Maybe$Just(
 						{
 							r: root,
-							df: $author$project$Switcher$lastOrdinal(model)
+							dg: $author$project$Switcher$lastOrdinal(model)
 						}),
-					fN: position
+					fP: position
 				});
 		}
 	});
@@ -20964,7 +21217,7 @@ var $author$project$Motion$observe = F2(
 			A2(
 				$elm$core$Maybe$map,
 				function (old) {
-					return A2($author$project$UInt64$compare, observation.c6, old.c6) !== 2;
+					return A2($author$project$UInt64$compare, observation.c7, old.c7) !== 2;
 				},
 				model.bF)) ? model : _Utils_update(
 			model,
@@ -20977,7 +21230,7 @@ var $author$project$MotionPreferences$observe = F2(
 		if (snapshot.$ === 1) {
 			return _Utils_update(
 				model,
-				{ft: 'Stored motion preference unavailable. Refresh to read it again; the stored copy is preserved.', c: $elm$core$Maybe$Nothing});
+				{fv: 'Stored motion preference unavailable. Refresh to read it again; the stored copy is preserved.', c: $elm$core$Maybe$Nothing});
 		} else {
 			var current = snapshot.a;
 			return A2(
@@ -20986,14 +21239,14 @@ var $author$project$MotionPreferences$observe = F2(
 				A2(
 					$elm$core$Maybe$map,
 					function (old) {
-						return (!A2($author$project$UInt64$compare, current.c2, old.c2)) || (_Utils_eq(current.c2, old.c2) && (!_Utils_eq(current.fy, old.fy)));
+						return (!A2($author$project$UInt64$compare, current.c3, old.c3)) || (_Utils_eq(current.c3, old.c3) && (!_Utils_eq(current.fA, old.fA)));
 					},
 					model.c)) ? model : _Utils_update(
 				model,
 				{
-					fb: current.fy,
-					ft: 'Motion preference loaded.',
-					ex: $elm$core$Maybe$Nothing,
+					fd: current.fA,
+					fv: 'Motion preference loaded.',
+					ey: $elm$core$Maybe$Nothing,
 					c: $elm$core$Maybe$Just(current)
 				});
 		}
@@ -21009,34 +21262,34 @@ var $author$project$Notifications$observe = F2(
 						bV: waiting.bV || A2(
 							$elm$core$List$any,
 							function (entry) {
-								return A3($author$project$Notifications$same, waiting.fR, current.c7, entry) && (entry.dc === 'expired');
+								return A3($author$project$Notifications$same, waiting.fT, current.c8, entry) && (entry.dd === 'expired');
 							},
-							current.af)
+							current.ah)
 					});
 			},
-			model.ex);
+			model.ey);
 		var entries = A2(
 			$elm$core$List$filter,
 			function (row) {
-				return row.dc === 'live';
+				return row.dd === 'live';
 			},
-			current.af);
+			current.ah);
 		var count = $elm$core$List$length(entries);
-		var notice = (!current.dj) ? current.eH : ((!count) ? 'No live notifications. Previous notifications remain in history.' : ($elm$core$String$fromInt(count) + ' live notifications. Actions apply only to the current notification.'));
+		var notice = (!current.dk) ? current.eI : ((!count) ? 'No live notifications. Previous notifications remain in history.' : ($elm$core$String$fromInt(count) + ' live notifications. Actions apply only to the current notification.'));
 		var admitted = function () {
 			var _v0 = model.c;
 			if (_v0.$ === 1) {
 				return true;
 			} else {
 				var old = _v0.a;
-				return _Utils_eq(current.c7, old.c7) && ((A2($author$project$UInt64$compare, current.c2, old.c2) === 2) || _Utils_eq(current, old));
+				return _Utils_eq(current.c8, old.c8) && ((A2($author$project$UInt64$compare, current.c3, old.c3) === 2) || _Utils_eq(current, old));
 			}
 		}();
 		return (!admitted) ? model : _Utils_update(
 			model,
 			{
-				ft: (!_Utils_eq(model.ex, $elm$core$Maybe$Nothing)) ? model.ft : notice,
-				ex: pending,
+				fv: (!_Utils_eq(model.ey, $elm$core$Maybe$Nothing)) ? model.fv : notice,
+				ey: pending,
 				c: $elm$core$Maybe$Just(current)
 			});
 	});
@@ -21045,7 +21298,7 @@ var $author$project$Pins$observe = F2(
 		if (snapshot.$ === 1) {
 			return _Utils_update(
 				model,
-				{ft: 'Pin storage unavailable. Refresh applications to try again.', ex: $elm$core$Maybe$Nothing, c: $elm$core$Maybe$Nothing});
+				{fv: 'Pin storage unavailable. Refresh applications to try again.', ey: $elm$core$Maybe$Nothing, c: $elm$core$Maybe$Nothing});
 		} else {
 			var value = snapshot.a;
 			return A2(
@@ -21054,13 +21307,13 @@ var $author$project$Pins$observe = F2(
 				A2(
 					$elm$core$Maybe$map,
 					function (old) {
-						return !A2($author$project$UInt64$compare, value.c2, old.c2);
+						return !A2($author$project$UInt64$compare, value.c3, old.c3);
 					},
 					model.c)) ? model : _Utils_update(
 				model,
 				{
-					ft: '',
-					ex: $elm$core$Maybe$Nothing,
+					fv: '',
+					ey: $elm$core$Maybe$Nothing,
 					c: $elm$core$Maybe$Just(value)
 				});
 		}
@@ -21070,7 +21323,7 @@ var $author$project$Settings$observe = F2(
 		if (snapshot.$ === 1) {
 			return _Utils_update(
 				model,
-				{ft: 'Settings unavailable or from an unsupported version. Refresh to read them again; the stored copy is preserved.', ex: $elm$core$Maybe$Nothing, c: $elm$core$Maybe$Nothing});
+				{fv: 'Settings unavailable or from an unsupported version. Refresh to read them again; the stored copy is preserved.', ey: $elm$core$Maybe$Nothing, c: $elm$core$Maybe$Nothing});
 		} else {
 			var current = snapshot.a;
 			return A2(
@@ -21079,14 +21332,14 @@ var $author$project$Settings$observe = F2(
 				A2(
 					$elm$core$Maybe$map,
 					function (old) {
-						return !A2($author$project$UInt64$compare, current.c2, old.c2);
+						return !A2($author$project$UInt64$compare, current.c3, old.c3);
 					},
 					model.c)) ? model : _Utils_update(
 				model,
 				{
-					fb: current.bs,
-					ft: 'Settings loaded.',
-					ex: $elm$core$Maybe$Nothing,
+					fd: current.bs,
+					fv: 'Settings loaded.',
+					ey: $elm$core$Maybe$Nothing,
 					c: $elm$core$Maybe$Just(current)
 				});
 		}
@@ -21103,21 +21356,21 @@ var $author$project$ShortcutPreferences$observe = F3(
 				A2(
 					$elm$core$Maybe$map,
 					function (old) {
-						return !A2($author$project$UInt64$compare, current.c2, old.c2);
+						return !A2($author$project$UInt64$compare, current.c3, old.c3);
 					},
 					model.c)) ? model : _Utils_update(
 				model,
 				{
-					fb: current.ae,
-					cV: $elm$core$Maybe$Just(_native),
-					ft: 'Shortcut choices loaded. Conflicting bindings are preserved; choose a free chord or keep the existing shortcut.',
-					ex: $elm$core$Maybe$Nothing,
+					fd: current.ag,
+					cW: $elm$core$Maybe$Just(_native),
+					fv: 'Shortcut choices loaded. Conflicting bindings are preserved; choose a free chord or keep the existing shortcut.',
+					ey: $elm$core$Maybe$Nothing,
 					c: $elm$core$Maybe$Just(current)
 				});
 		} else {
 			return _Utils_update(
 				model,
-				{cV: $elm$core$Maybe$Nothing, ft: 'Shortcut choices unavailable. Stored choices are preserved. Refresh to read again.', ex: $elm$core$Maybe$Nothing, c: $elm$core$Maybe$Nothing});
+				{cW: $elm$core$Maybe$Nothing, fv: 'Shortcut choices unavailable. Stored choices are preserved. Refresh to read again.', ey: $elm$core$Maybe$Nothing, c: $elm$core$Maybe$Nothing});
 		}
 	});
 var $author$project$JumpList$propose = F3(
@@ -21126,9 +21379,9 @@ var $author$project$JumpList$propose = F3(
 			_Utils_update(
 				model,
 				{
-					ft: 'Application action: waiting for native submission…',
-					ex: $elm$core$Maybe$Just(
-						{aa: value, c1: request}),
+					fv: 'Application action: waiting for native submission…',
+					ey: $elm$core$Maybe$Just(
+						{ab: value, c2: request}),
 					ca: A2(
 						$elm$core$List$take,
 						128,
@@ -21141,17 +21394,17 @@ var $author$project$JumpList$propose = F3(
 							_Utils_Tuple2(
 							'service',
 							$elm$json$Json$Encode$string(
-								$author$project$UInt64$string(value.c7))),
+								$author$project$UInt64$string(value.c8))),
 							_Utils_Tuple2(
 							'revision',
 							$elm$json$Json$Encode$string(
-								$author$project$UInt64$string(value.c2))),
+								$author$project$UInt64$string(value.c3))),
 							_Utils_Tuple2(
 							'entry',
-							$elm$json$Json$Encode$string(value.d2)),
+							$elm$json$Json$Encode$string(value.d3)),
 							_Utils_Tuple2(
 							'action',
-							$elm$json$Json$Encode$string(value.e3))
+							$elm$json$Json$Encode$string(value.e5))
 						]))));
 	});
 var $author$project$MotionPreferences$encode = function (snapshot) {
@@ -21164,11 +21417,11 @@ var $author$project$MotionPreferences$encode = function (snapshot) {
 				_Utils_Tuple2(
 				'revision',
 				$elm$json$Json$Encode$string(
-					$author$project$UInt64$string(snapshot.c2))),
+					$author$project$UInt64$string(snapshot.c3))),
 				_Utils_Tuple2(
 				'override',
 				function () {
-					var _v0 = snapshot.fy;
+					var _v0 = snapshot.fA;
 					switch (_v0) {
 						case 0:
 							return $elm$json$Json$Encode$null;
@@ -21187,30 +21440,30 @@ var $author$project$MotionPreferences$propose = F2(
 			return _Utils_Tuple2(model, $elm$core$Maybe$Nothing);
 		} else {
 			var current = _v0.a;
-			return (_Utils_eq(request, $author$project$UInt64$zero) || ((!$author$project$MotionPreferences$writable(model)) || _Utils_eq(current.fy, model.fb))) ? _Utils_Tuple2(model, $elm$core$Maybe$Nothing) : _Utils_Tuple2(
+			return (_Utils_eq(request, $author$project$UInt64$zero) || ((!$author$project$MotionPreferences$writable(model)) || _Utils_eq(current.fA, model.fd))) ? _Utils_Tuple2(model, $elm$core$Maybe$Nothing) : _Utils_Tuple2(
 				_Utils_update(
 					model,
 					{
-						ft: 'Saving motion preference…',
-						ex: $elm$core$Maybe$Just(
-							{fy: model.fb, c1: request, c2: current.c2})
+						fv: 'Saving motion preference…',
+						ey: $elm$core$Maybe$Just(
+							{fA: model.fd, c2: request, c3: current.c3})
 					}),
 				$elm$core$Maybe$Just(
 					$author$project$MotionPreferences$encode(
 						_Utils_update(
 							current,
-							{fy: model.fb}))));
+							{fA: model.fd}))));
 		}
 	});
 var $author$project$Notifications$propose = F3(
 	function (request, choice, model) {
-		return ((!_Utils_eq(model.ex, $elm$core$Maybe$Nothing)) || (!A2($author$project$Notifications$live, choice, model))) ? _Utils_Tuple2(model, $elm$core$Maybe$Nothing) : _Utils_Tuple2(
+		return ((!_Utils_eq(model.ey, $elm$core$Maybe$Nothing)) || (!A2($author$project$Notifications$live, choice, model))) ? _Utils_Tuple2(model, $elm$core$Maybe$Nothing) : _Utils_Tuple2(
 			_Utils_update(
 				model,
 				{
-					ft: 'Sending notification action…',
-					ex: $elm$core$Maybe$Just(
-						{bV: false, c1: request, fR: choice}),
+					fv: 'Sending notification action…',
+					ey: $elm$core$Maybe$Just(
+						{bV: false, c2: request, fT: choice}),
 					ca: A2(
 						$elm$core$List$take,
 						64,
@@ -21225,11 +21478,11 @@ var $author$project$Settings$encode = function (snapshot) {
 			[
 				_Utils_Tuple2(
 				'schema',
-				$elm$json$Json$Encode$int(snapshot.fM)),
+				$elm$json$Json$Encode$int(snapshot.fO)),
 				_Utils_Tuple2(
 				'revision',
 				$elm$json$Json$Encode$string(
-					$author$project$UInt64$string(snapshot.c2))),
+					$author$project$UInt64$string(snapshot.c3))),
 				_Utils_Tuple2(
 				'values',
 				$author$project$Settings$encodeValues(snapshot.bs))
@@ -21240,20 +21493,20 @@ var $author$project$Settings$propose = F2(
 		var _v0 = model.c;
 		if (!_v0.$) {
 			var current = _v0.a;
-			return ((!$author$project$Settings$writable(model)) || _Utils_eq(current.bs, model.fb)) ? _Utils_Tuple2(model, $elm$core$Maybe$Nothing) : _Utils_Tuple2(
+			return ((!$author$project$Settings$writable(model)) || _Utils_eq(current.bs, model.fd)) ? _Utils_Tuple2(model, $elm$core$Maybe$Nothing) : _Utils_Tuple2(
 				_Utils_update(
 					model,
 					{
-						ft: 'Saving settings…',
-						cZ: $elm$core$Maybe$Nothing,
-						ex: $elm$core$Maybe$Just(
-							{c1: request, bs: model.fb})
+						fv: 'Saving settings…',
+						c_: $elm$core$Maybe$Nothing,
+						ey: $elm$core$Maybe$Just(
+							{c2: request, bs: model.fd})
 					}),
 				$elm$core$Maybe$Just(
 					$author$project$Settings$encode(
 						_Utils_update(
 							current,
-							{bs: model.fb}))));
+							{bs: model.fd}))));
 		} else {
 			return _Utils_Tuple2(model, $elm$core$Maybe$Nothing);
 		}
@@ -21268,7 +21521,7 @@ var $author$project$ShortcutPreferences$encode = function (snapshot) {
 				_Utils_Tuple2(
 				'revision',
 				$elm$json$Json$Encode$string(
-					$author$project$UInt64$string(snapshot.c2))),
+					$author$project$UInt64$string(snapshot.c3))),
 				_Utils_Tuple2(
 				'choices',
 				$elm$json$Json$Encode$object(
@@ -21277,21 +21530,21 @@ var $author$project$ShortcutPreferences$encode = function (snapshot) {
 							_Utils_Tuple2(
 							'applications',
 							$elm$json$Json$Encode$string(
-								$author$project$ShortcutPreferences$name(snapshot.ae.aD))),
+								$author$project$ShortcutPreferences$name(snapshot.ag.aD))),
 							_Utils_Tuple2(
 							'system',
 							$elm$json$Json$Encode$string(
-								$author$project$ShortcutPreferences$name(snapshot.ae.bP))),
+								$author$project$ShortcutPreferences$name(snapshot.ag.bP))),
 							_Utils_Tuple2(
 							'notifications',
 							$elm$json$Json$Encode$string(
-								$author$project$ShortcutPreferences$name(snapshot.ae.C)))
+								$author$project$ShortcutPreferences$name(snapshot.ag.C)))
 						])))
 			]));
 };
 var $author$project$ShortcutPreferences$propose = F2(
 	function (request, model) {
-		var _v0 = _Utils_Tuple2(model.c, model.cV);
+		var _v0 = _Utils_Tuple2(model.c, model.cW);
 		if ((!_v0.a.$) && (!_v0.b.$)) {
 			var current = _v0.a.a;
 			var _native = _v0.b.a;
@@ -21299,9 +21552,9 @@ var $author$project$ShortcutPreferences$propose = F2(
 				_Utils_update(
 					model,
 					{
-						ft: 'Saving and applying shortcut choices…',
-						ex: $elm$core$Maybe$Just(
-							{ae: model.fb, c1: request})
+						fv: 'Saving and applying shortcut choices…',
+						ey: $elm$core$Maybe$Just(
+							{ag: model.fd, c2: request})
 					}),
 				$elm$core$Maybe$Just(
 					$elm$json$Json$Encode$object(
@@ -21312,10 +21565,10 @@ var $author$project$ShortcutPreferences$propose = F2(
 								$author$project$ShortcutPreferences$encode(
 									_Utils_update(
 										current,
-										{ae: model.fb}))),
+										{ag: model.fd}))),
 								_Utils_Tuple2(
 								'fingerprint',
-								$elm$json$Json$Encode$string(_native.d5))
+								$elm$json$Json$Encode$string(_native.d6))
 							]))));
 		} else {
 			return _Utils_Tuple2(model, $elm$core$Maybe$Nothing);
@@ -21326,8 +21579,8 @@ var $author$project$Desktop$readFiles = function (model) {
 		return _Utils_Tuple2(model, _List_Nil);
 	} else {
 		var _v0 = _Utils_Tuple2(
-			model.a.b.dk,
-			$author$project$UInt64$next(model.c1));
+			model.a.b.dl,
+			$author$project$UInt64$next(model.c2));
 		if ((!_v0.a.$) && (!_v0.b.$)) {
 			var binding = _v0.a.a;
 			var request = _v0.b.a;
@@ -21337,7 +21590,7 @@ var $author$project$Desktop$readFiles = function (model) {
 						model,
 						{
 							aW: $elm$core$Maybe$Just(request),
-							c1: request
+							c2: request
 						})),
 				_List_fromArray(
 					[
@@ -21370,8 +21623,8 @@ var $author$project$Desktop$readJumpList = function (model) {
 		return _Utils_Tuple2(model, _List_Nil);
 	} else {
 		var _v0 = _Utils_Tuple3(
-			model.a.b.dk,
-			$author$project$UInt64$next(model.c1),
+			model.a.b.dl,
+			$author$project$UInt64$next(model.c2),
 			model.o);
 		if (((!_v0.a.$) && (!_v0.b.$)) && (!_v0.c.$)) {
 			var binding = _v0.a.a;
@@ -21383,7 +21636,7 @@ var $author$project$Desktop$readJumpList = function (model) {
 						model,
 						{
 							aZ: $elm$core$Maybe$Just(request),
-							c1: request
+							c2: request
 						})),
 				_List_fromArray(
 					[
@@ -21416,8 +21669,8 @@ var $author$project$Desktop$readJumpList = function (model) {
 };
 var $author$project$Desktop$readMotionPreferences = function (model) {
 	var _v0 = _Utils_Tuple2(
-		model.a.b.dk,
-		$author$project$UInt64$next(model.c1));
+		model.a.b.dl,
+		$author$project$UInt64$next(model.c2));
 	if ((!_v0.a.$) && (!_v0.b.$)) {
 		var binding = _v0.a.a;
 		var request = _v0.b.a;
@@ -21427,7 +21680,7 @@ var $author$project$Desktop$readMotionPreferences = function (model) {
 					model,
 					{
 						aK: $elm$core$Maybe$Just(request),
-						c1: request
+						c2: request
 					})),
 			_List_fromArray(
 				[
@@ -21442,8 +21695,8 @@ var $author$project$Desktop$readNotifications = function (model) {
 		return _Utils_Tuple2(model, _List_Nil);
 	} else {
 		var _v0 = _Utils_Tuple2(
-			model.a.b.dk,
-			$author$project$UInt64$next(model.c1));
+			model.a.b.dl,
+			$author$project$UInt64$next(model.c2));
 		if ((!_v0.a.$) && (!_v0.b.$)) {
 			var binding = _v0.a.a;
 			var request = _v0.b.a;
@@ -21453,7 +21706,7 @@ var $author$project$Desktop$readNotifications = function (model) {
 						model,
 						{
 							a0: $elm$core$Maybe$Just(request),
-							c1: request
+							c2: request
 						})),
 				_List_fromArray(
 					[
@@ -21483,8 +21736,8 @@ var $author$project$Desktop$readNotifications = function (model) {
 };
 var $author$project$Desktop$readSettings = function (model) {
 	var _v0 = _Utils_Tuple2(
-		model.a.b.dk,
-		$author$project$UInt64$next(model.c1));
+		model.a.b.dl,
+		$author$project$UInt64$next(model.c2));
 	if ((!_v0.a.$) && (!_v0.b.$)) {
 		var binding = _v0.a.a;
 		var request = _v0.b.a;
@@ -21493,7 +21746,7 @@ var $author$project$Desktop$readSettings = function (model) {
 				_Utils_update(
 					model,
 					{
-						c1: request,
+						c2: request,
 						bo: $elm$core$Maybe$Just(request)
 					})),
 			_List_fromArray(
@@ -21506,8 +21759,8 @@ var $author$project$Desktop$readSettings = function (model) {
 };
 var $author$project$Desktop$readShortcutPreferences = function (model) {
 	var _v0 = _Utils_Tuple2(
-		model.a.b.dk,
-		$author$project$UInt64$next(model.c1));
+		model.a.b.dl,
+		$author$project$UInt64$next(model.c2));
 	if ((!_v0.a.$) && (!_v0.b.$)) {
 		var binding = _v0.a.a;
 		var request = _v0.b.a;
@@ -21516,7 +21769,7 @@ var $author$project$Desktop$readShortcutPreferences = function (model) {
 				_Utils_update(
 					model,
 					{
-						c1: request,
+						c2: request,
 						aQ: $elm$core$Maybe$Just(request)
 					})),
 			_List_fromArray(
@@ -21550,8 +21803,8 @@ var $author$project$Desktop$historyRequest = F2(
 	});
 var $author$project$Desktop$readSwitcherHistory = function (model) {
 	var _v0 = _Utils_Tuple2(
-		model.a.b.dk,
-		$author$project$UInt64$next(model.c1));
+		model.a.b.dl,
+		$author$project$UInt64$next(model.c2));
 	if ((!_v0.a.$) && (!_v0.b.$)) {
 		var binding = _v0.a.a;
 		var request = _v0.b.a;
@@ -21559,7 +21812,7 @@ var $author$project$Desktop$readSwitcherHistory = function (model) {
 			_Utils_update(
 				model,
 				{
-					c1: request,
+					c2: request,
 					aR: $elm$core$Maybe$Just(request),
 					aS: $elm$core$Maybe$Nothing
 				}),
@@ -21575,8 +21828,8 @@ var $author$project$Desktop$readSwitcherHistory = function (model) {
 };
 var $author$project$Desktop$readSystemMenu = function (model) {
 	var _v0 = _Utils_Tuple2(
-		model.a.b.dk,
-		$author$project$UInt64$next(model.c1));
+		model.a.b.dl,
+		$author$project$UInt64$next(model.c2));
 	if ((!_v0.a.$) && (!_v0.b.$)) {
 		var binding = _v0.a.a;
 		var request = _v0.b.a;
@@ -21585,7 +21838,7 @@ var $author$project$Desktop$readSystemMenu = function (model) {
 				_Utils_update(
 					model,
 					{
-						c1: request,
+						c2: request,
 						aT: $elm$core$Maybe$Just(request)
 					})),
 			_List_fromArray(
@@ -21615,7 +21868,7 @@ var $author$project$Desktop$readSystemMenu = function (model) {
 };
 var $author$project$Motion$ready = F2(
 	function (binding, model) {
-		return (_Utils_eq(model.bF, $elm$core$Maybe$Nothing) && ((!$author$project$MotionPreferences$selected(model.a1)) && _Utils_eq(model.ex, $elm$core$Maybe$Nothing))) || ((!_Utils_eq(model.a1.c, $elm$core$Maybe$Nothing)) && (_Utils_eq(model.ex, $elm$core$Maybe$Nothing) && A2(
+		return (_Utils_eq(model.bF, $elm$core$Maybe$Nothing) && ((!$author$project$MotionPreferences$selected(model.a1)) && _Utils_eq(model.ey, $elm$core$Maybe$Nothing))) || ((!_Utils_eq(model.a1.c, $elm$core$Maybe$Nothing)) && (_Utils_eq(model.ey, $elm$core$Maybe$Nothing) && A2(
 			$elm$core$Maybe$withDefault,
 			false,
 			A2(
@@ -21623,7 +21876,7 @@ var $author$project$Motion$ready = F2(
 				function (a) {
 					return _Utils_eq(
 						binding,
-						$elm$core$Maybe$Just(a.dk)) && _Utils_eq(
+						$elm$core$Maybe$Just(a.dl)) && _Utils_eq(
 						a.aC,
 						$author$project$Motion$desired(model));
 				},
@@ -21637,7 +21890,7 @@ var $author$project$Motion$receiptDecoder = A2(
 		$elm$json$Json$Decode$map5,
 		F5(
 			function (_v0, _v1, binding, request_, profile) {
-				return {dk: binding, aC: profile, c1: request_};
+				return {dl: binding, aC: profile, c2: request_};
 			}),
 		$author$project$Motion$version,
 		$author$project$Motion$kind('motion-profile'),
@@ -21672,24 +21925,24 @@ var $author$project$Files$observe = F2(
 			A2(
 				$elm$core$Maybe$map,
 				function (old) {
-					return _Utils_eq(snapshot.c7, old.c7) && ((A2($author$project$UInt64$compare, snapshot.c2, old.c2) === 2) || _Utils_eq(snapshot, old));
+					return _Utils_eq(snapshot.c8, old.c8) && ((A2($author$project$UInt64$compare, snapshot.c3, old.c3) === 2) || _Utils_eq(snapshot, old));
 				},
 				model.c));
 		return (!admitted) ? model : _Utils_update(
 			model,
 			{
-				ft: (!_Utils_eq(model.ex, $elm$core$Maybe$Nothing)) ? model.ft : (snapshot.dj ? 'Choose a collection or folder.' : snapshot.eH),
+				fv: (!_Utils_eq(model.ey, $elm$core$Maybe$Nothing)) ? model.fv : (snapshot.dk ? 'Choose a collection or folder.' : snapshot.eI),
 				c: $elm$core$Maybe$Just(snapshot)
 			});
 	});
 var $author$project$Files$receive = F4(
 	function (request, status, snapshot, model) {
-		var _v0 = model.ex;
+		var _v0 = model.ey;
 		if (_v0.$ === 1) {
 			return model;
 		} else {
 			var pending = _v0.a;
-			if ((!_Utils_eq(request, pending.c1)) || ((!_Utils_eq(snapshot.c7, pending.aa.c7)) || (!A2(
+			if ((!_Utils_eq(request, pending.c2)) || ((!_Utils_eq(snapshot.c8, pending.ab.c8)) || (!A2(
 				$elm$core$List$member,
 				status,
 				_List_fromArray(
@@ -21711,7 +21964,7 @@ var $author$project$Files$receive = F4(
 							if (!_v1.b.$) {
 								var old = _v1.a.a;
 								var current = _v1.b.a;
-								return _Utils_eq(old.dE, current.dE) && (_Utils_eq(old.dN, current.dN) && _Utils_eq(old.du, current.du));
+								return _Utils_eq(old.dF, current.dF) && (_Utils_eq(old.dO, current.dO) && _Utils_eq(old.dv, current.dv));
 							} else {
 								break _v1$2;
 							}
@@ -21736,18 +21989,18 @@ var $author$project$Files$receive = F4(
 							return A2(
 								$elm$core$String$startsWith,
 								'~',
-								$elm$core$String$trim(pending.aa.fR)) ? A2($elm$core$String$startsWith, '/', peer.fR) : _Utils_eq(
-								peer.fR,
-								$author$project$Files$normalize(pending.aa.fR));
+								$elm$core$String$trim(pending.ab.fT)) ? A2($elm$core$String$startsWith, '/', peer.fT) : _Utils_eq(
+								peer.fT,
+								$author$project$Files$normalize(pending.ab.fT));
 						},
 						snapshot.b2));
-				var opened = snapshot.dj && (samePeer && (locationMatches && ((A2($author$project$UInt64$compare, snapshot.c2, pending.aa.c2) === 2) && A2(
+				var opened = snapshot.dk && (samePeer && (locationMatches && ((A2($author$project$UInt64$compare, snapshot.c3, pending.ab.c3) === 2) && A2(
 					$elm$core$Maybe$withDefault,
 					false,
 					A2(
 						$elm$core$Maybe$map,
 						function ($) {
-							return $.eW;
+							return $.eY;
 						},
 						snapshot.b2)))));
 				var notice = ((status === 'Opened') && opened) ? 'Files: requested location opened.' : ((status === 'Refused') ? 'Files: request refused. Refresh before choosing again.' : 'Files: opening not confirmed. Refresh only reads state; this request will not be repeated.');
@@ -21756,8 +22009,8 @@ var $author$project$Files$receive = F4(
 					$elm$core$Maybe$Just(snapshot))) ? model : _Utils_update(
 					next,
 					{
-						ft: notice,
-						ex: ((status === 'Refused') || ((status === 'Opened') && opened)) ? $elm$core$Maybe$Nothing : model.ex
+						fv: notice,
+						ey: ((status === 'Refused') || ((status === 'Opened') && opened)) ? $elm$core$Maybe$Nothing : model.ey
 					});
 			}
 		}
@@ -21770,24 +22023,24 @@ var $author$project$JumpList$observe = F2(
 			A2(
 				$elm$core$Maybe$map,
 				function (old) {
-					return _Utils_eq(snapshot.c7, old.c7) && ((A2($author$project$UInt64$compare, snapshot.c2, old.c2) === 2) || _Utils_eq(snapshot, old));
+					return _Utils_eq(snapshot.c8, old.c8) && ((A2($author$project$UInt64$compare, snapshot.c3, old.c3) === 2) || _Utils_eq(snapshot, old));
 				},
 				model.c));
 		return (!admitted) ? model : _Utils_update(
 			model,
 			{
-				ft: (!_Utils_eq(model.ex, $elm$core$Maybe$Nothing)) ? model.ft : (snapshot.dj ? ($elm$core$String$isEmpty(snapshot.eH) ? 'Choose an application action or recent file.' : snapshot.eH) : snapshot.eH),
+				fv: (!_Utils_eq(model.ey, $elm$core$Maybe$Nothing)) ? model.fv : (snapshot.dk ? ($elm$core$String$isEmpty(snapshot.eI) ? 'Choose an application action or recent file.' : snapshot.eI) : snapshot.eI),
 				c: $elm$core$Maybe$Just(snapshot)
 			});
 	});
 var $author$project$JumpList$receive = F4(
 	function (request, status, snapshot, model) {
-		var _v0 = model.ex;
+		var _v0 = model.ey;
 		if (_v0.$ === 1) {
 			return model;
 		} else {
 			var pending = _v0.a;
-			if ((!_Utils_eq(request, pending.c1)) || ((!_Utils_eq(snapshot.c7, pending.aa.c7)) || ((!_Utils_eq(snapshot.d2, pending.aa.d2)) || (!A2(
+			if ((!_Utils_eq(request, pending.c2)) || ((!_Utils_eq(snapshot.c8, pending.ab.c8)) || ((!_Utils_eq(snapshot.d3, pending.ab.d3)) || (!A2(
 				$elm$core$List$member,
 				status,
 				_List_fromArray(
@@ -21800,8 +22053,8 @@ var $author$project$JumpList$receive = F4(
 					$elm$core$Maybe$Just(snapshot))) ? model : _Utils_update(
 					next,
 					{
-						ft: (status === 'Submitted') ? 'Application action: submitted to the native launcher.' : ((status === 'Refused') ? 'Application action: refused or no longer available. Refresh before choosing again.' : 'Application action: not confirmed. Refresh only reads actions; this request will not be repeated.'),
-						ex: (status === 'Unknown') ? model.ex : $elm$core$Maybe$Nothing
+						fv: (status === 'Submitted') ? 'Application action: submitted to the native launcher.' : ((status === 'Refused') ? 'Application action: refused or no longer available. Refresh before choosing again.' : 'Application action: not confirmed. Refresh only reads actions; this request will not be repeated.'),
+						ey: (status === 'Unknown') ? model.ey : $elm$core$Maybe$Nothing
 					});
 			}
 		}
@@ -21810,7 +22063,7 @@ var $author$project$Launch$Refused = 1;
 var $author$project$Launch$Submitted = 0;
 var $author$project$Launch$Intent = F4(
 	function (request, lifetime, generation, entry) {
-		return {d2: entry, fh: generation, fp: lifetime, c1: request};
+		return {d3: entry, fj: generation, fr: lifetime, c2: request};
 	});
 var $author$project$Launch$positive = A2(
 	$elm$json$Json$Decode$andThen,
@@ -21854,14 +22107,14 @@ var $author$project$Launch$intentDecoder = A2(
 var $author$project$Launch$receiptDecoder = A2(
 	$elm$json$Json$Decode$andThen,
 	function (receipt) {
-		return ((receipt.eU !== 1) || (receipt.ej !== 'launch-outcome')) ? $elm$json$Json$Decode$fail('Launch receipt version/kind') : (((receipt.dc === 'Submitted') && (receipt.eH === 'native-submission-accepted')) ? $elm$json$Json$Decode$succeed(
-			_Utils_Tuple2(receipt.aa, 0)) : (((receipt.dc === 'Unknown') && (receipt.eH === 'submission-not-confirmed')) ? $elm$json$Json$Decode$succeed(
-			_Utils_Tuple2(receipt.aa, 2)) : (((receipt.dc === 'Refused') && A2(
+		return ((receipt.eW !== 1) || (receipt.ek !== 'launch-outcome')) ? $elm$json$Json$Decode$fail('Launch receipt version/kind') : (((receipt.dd === 'Submitted') && (receipt.eI === 'native-submission-accepted')) ? $elm$json$Json$Decode$succeed(
+			_Utils_Tuple2(receipt.ab, 0)) : (((receipt.dd === 'Unknown') && (receipt.eI === 'submission-not-confirmed')) ? $elm$json$Json$Decode$succeed(
+			_Utils_Tuple2(receipt.ab, 2)) : (((receipt.dd === 'Refused') && A2(
 			$elm$core$List$member,
-			receipt.eH,
+			receipt.eI,
 			_List_fromArray(
 				['retired-authority', 'request-reuse', 'retired-request', 'catalog-unavailable', 'stale-catalog', 'removed-entry', 'native-entry-unavailable', 'desktop-entry-raced']))) ? $elm$json$Json$Decode$succeed(
-			_Utils_Tuple2(receipt.aa, 1)) : $elm$json$Json$Decode$fail('Launch receipt outcome'))));
+			_Utils_Tuple2(receipt.ab, 1)) : $elm$json$Json$Decode$fail('Launch receipt outcome'))));
 	},
 	A2(
 		$author$project$Launch$strict,
@@ -21871,7 +22124,7 @@ var $author$project$Launch$receiptDecoder = A2(
 			$elm$json$Json$Decode$map5,
 			F5(
 				function (version, kind, intent, state, reason) {
-					return {aa: intent, ej: kind, eH: reason, dc: state, eU: version};
+					return {ab: intent, ek: kind, eI: reason, dd: state, eW: version};
 				}),
 			A2($elm$json$Json$Decode$field, 'catalogProtocol', $elm$json$Json$Decode$int),
 			A2($elm$json$Json$Decode$field, 'kind', $elm$json$Json$Decode$string),
@@ -21907,68 +22160,68 @@ var $author$project$Motion$receive = F3(
 	function (binding, receipt, model) {
 		return ((!_Utils_eq(
 			binding,
-			$elm$core$Maybe$Just(receipt.dk))) || (!_Utils_eq(
-			model.ex,
+			$elm$core$Maybe$Just(receipt.dl))) || (!_Utils_eq(
+			model.ey,
 			$elm$core$Maybe$Just(receipt)))) ? model : _Utils_update(
 			model,
 			{
 				bT: $elm$core$Maybe$Just(
-					{dk: receipt.dk, aC: receipt.aC}),
-				ex: $elm$core$Maybe$Nothing
+					{dl: receipt.dl, aC: receipt.aC}),
+				ey: $elm$core$Maybe$Nothing
 			});
 	});
 var $author$project$MotionPreferences$receive = F4(
 	function (request, status, snapshot, model) {
-		var _v0 = model.ex;
+		var _v0 = model.ey;
 		if (_v0.$ === 1) {
 			return model;
 		} else {
 			var pending = _v0.a;
-			return (!_Utils_eq(request, pending.c1)) ? model : (((status === 'Saved') && A2(
+			return (!_Utils_eq(request, pending.c2)) ? model : (((status === 'Saved') && A2(
 				$elm$core$Maybe$withDefault,
 				false,
 				A2(
 					$elm$core$Maybe$map,
 					function (s) {
-						return _Utils_eq(s.fy, pending.fy) && (A2($author$project$UInt64$compare, s.c2, pending.c2) === 2);
+						return _Utils_eq(s.fA, pending.fA) && (A2($author$project$UInt64$compare, s.c3, pending.c3) === 2);
 					},
 					snapshot))) ? _Utils_update(
 				model,
-				{ft: 'Motion preference saved.', ex: $elm$core$Maybe$Nothing, c: snapshot}) : ((status === 'Refused') ? _Utils_update(
+				{fv: 'Motion preference saved.', ey: $elm$core$Maybe$Nothing, c: snapshot}) : ((status === 'Refused') ? _Utils_update(
 				model,
-				{ft: 'Motion preference refused. Refresh, then choose again.', ex: $elm$core$Maybe$Nothing}) : _Utils_update(
+				{fv: 'Motion preference refused. Refresh, then choose again.', ey: $elm$core$Maybe$Nothing}) : _Utils_update(
 				model,
-				{ft: 'Motion preference save not confirmed. Refresh to read stored values; this write will not be repeated.'})));
+				{fv: 'Motion preference save not confirmed. Refresh to read stored values; this write will not be repeated.'})));
 		}
 	});
 var $author$project$Pins$receive = F4(
 	function (request, status, snapshot, model) {
-		var _v0 = model.ex;
+		var _v0 = model.ey;
 		if (!_v0.$) {
 			var pending = _v0.a;
-			return (!_Utils_eq(pending.c1, request)) ? model : (((status === 'Saved') && A2(
+			return (!_Utils_eq(pending.c2, request)) ? model : (((status === 'Saved') && A2(
 				$elm$core$Maybe$withDefault,
 				false,
 				A2(
 					$elm$core$Maybe$map,
 					function (s) {
-						return _Utils_eq(s.fl, pending.fl) && A2(
+						return _Utils_eq(s.fn, pending.fn) && A2(
 							$elm$core$Maybe$withDefault,
 							false,
 							A2(
 								$elm$core$Maybe$map,
 								function (old) {
-									return A2($author$project$UInt64$compare, s.c2, old.c2) === 2;
+									return A2($author$project$UInt64$compare, s.c3, old.c3) === 2;
 								},
 								model.c));
 					},
 					snapshot))) ? _Utils_update(
 				model,
-				{ft: 'Pin order saved.', ex: $elm$core$Maybe$Nothing, c: snapshot}) : ((status === 'Refused') ? _Utils_update(
+				{fv: 'Pin order saved.', ey: $elm$core$Maybe$Nothing, c: snapshot}) : ((status === 'Refused') ? _Utils_update(
 				model,
-				{ft: 'Pin change refused. Refresh applications and choose again.', ex: $elm$core$Maybe$Nothing}) : _Utils_update(
+				{fv: 'Pin change refused. Refresh applications and choose again.', ey: $elm$core$Maybe$Nothing}) : _Utils_update(
 				model,
-				{ft: 'Pin save not confirmed. Refresh applications to read the order; the change will not be repeated.'})));
+				{fv: 'Pin save not confirmed. Refresh applications to read the order; the change will not be repeated.'})));
 		} else {
 			return model;
 		}
@@ -21977,13 +22230,13 @@ var $author$project$PointerOwnership$receive = F3(
 	function (expected, snapshot, model) {
 		if (!_Utils_eq(
 			expected,
-			$elm$core$Maybe$Just(snapshot.dk))) {
+			$elm$core$Maybe$Just(snapshot.dl))) {
 			return model;
 		} else {
 			var _v0 = model.bF;
 			if (!_v0.$) {
 				var prior = _v0.a;
-				return (_Utils_eq(prior.dk, snapshot.dk) && (A2($author$project$UInt64$compare, snapshot.c6, prior.c6) !== 2)) ? model : {
+				return (_Utils_eq(prior.dl, snapshot.dl) && (A2($author$project$UInt64$compare, snapshot.c7, prior.c7) !== 2)) ? model : {
 					bF: $elm$core$Maybe$Just(snapshot)
 				};
 			} else {
@@ -21997,12 +22250,12 @@ var $author$project$Settings$Saved = 0;
 var $author$project$Settings$Unconfirmed = 2;
 var $author$project$Settings$receive = F4(
 	function (request, status, snapshot, model) {
-		var _v0 = model.ex;
+		var _v0 = model.ey;
 		if (_v0.$ === 1) {
 			return model;
 		} else {
 			var pending = _v0.a;
-			return (!_Utils_eq(request, pending.c1)) ? model : (((status === 'Saved') && A2(
+			return (!_Utils_eq(request, pending.c2)) ? model : (((status === 'Saved') && A2(
 				$elm$core$Maybe$withDefault,
 				false,
 				A2(
@@ -22014,54 +22267,54 @@ var $author$project$Settings$receive = F4(
 							A2(
 								$elm$core$Maybe$map,
 								function (old) {
-									return A2($author$project$UInt64$compare, current.c2, old.c2) === 2;
+									return A2($author$project$UInt64$compare, current.c3, old.c3) === 2;
 								},
 								model.c));
 					},
 					snapshot))) ? _Utils_update(
 				model,
 				{
-					ft: 'Settings saved.',
-					cZ: $elm$core$Maybe$Just(
-						{c1: request, fJ: 0}),
-					ex: $elm$core$Maybe$Nothing,
+					fv: 'Settings saved.',
+					c_: $elm$core$Maybe$Just(
+						{c2: request, fL: 0}),
+					ey: $elm$core$Maybe$Nothing,
 					c: snapshot
 				}) : ((status === 'Refused') ? _Utils_update(
 				model,
 				{
-					ft: 'Settings change refused. Refresh, then choose again.',
-					cZ: $elm$core$Maybe$Just(
-						{c1: request, fJ: 1}),
-					ex: $elm$core$Maybe$Nothing
+					fv: 'Settings change refused. Refresh, then choose again.',
+					c_: $elm$core$Maybe$Just(
+						{c2: request, fL: 1}),
+					ey: $elm$core$Maybe$Nothing
 				}) : _Utils_update(
 				model,
 				{
-					ft: 'Settings save not confirmed. Refresh to read the stored values; this write will not be repeated.',
-					cZ: $elm$core$Maybe$Just(
-						{c1: request, fJ: 2})
+					fv: 'Settings save not confirmed. Refresh to read the stored values; this write will not be repeated.',
+					c_: $elm$core$Maybe$Just(
+						{c2: request, fL: 2})
 				})));
 		}
 	});
 var $author$project$ShortcutPreferences$receive = F5(
 	function (request, status, snapshot, inventory, model) {
-		var _v0 = model.ex;
+		var _v0 = model.ey;
 		if (_v0.$ === 1) {
 			return model;
 		} else {
 			var pending = _v0.a;
-			return (!_Utils_eq(pending.c1, request)) ? model : (((status === 'Saved') && (A2(
+			return (!_Utils_eq(pending.c2, request)) ? model : (((status === 'Saved') && (A2(
 				$elm$core$Maybe$withDefault,
 				false,
 				A2(
 					$elm$core$Maybe$map,
 					function (current) {
-						return _Utils_eq(current.ae, pending.ae) && A2(
+						return _Utils_eq(current.ag, pending.ag) && A2(
 							$elm$core$Maybe$withDefault,
 							false,
 							A2(
 								$elm$core$Maybe$map,
 								function (old) {
-									return !(!A2($author$project$UInt64$compare, current.c2, old.c2));
+									return !(!A2($author$project$UInt64$compare, current.c3, old.c3));
 								},
 								model.c));
 					},
@@ -22075,7 +22328,7 @@ var $author$project$ShortcutPreferences$receive = F5(
 							$elm$core$List$all,
 							function (route) {
 								return _Utils_eq(
-									A2($author$project$ShortcutPreferences$choices, route, pending.ae),
+									A2($author$project$ShortcutPreferences$choices, route, pending.ag),
 									A2($author$project$ShortcutPreferences$row, route, _native).bt);
 							},
 							_List_fromArray(
@@ -22083,46 +22336,46 @@ var $author$project$ShortcutPreferences$receive = F5(
 					},
 					inventory)))) ? _Utils_update(
 				model,
-				{cV: inventory, ft: 'Shortcut choices saved and active. Existing bindings were preserved.', ex: $elm$core$Maybe$Nothing, c: snapshot}) : (((status === 'Stored') && A2(
+				{cW: inventory, fv: 'Shortcut choices saved and active. Existing bindings were preserved.', ey: $elm$core$Maybe$Nothing, c: snapshot}) : (((status === 'Stored') && A2(
 				$elm$core$Maybe$withDefault,
 				false,
 				A2(
 					$elm$core$Maybe$map,
 					function (current) {
-						return _Utils_eq(current.ae, pending.ae);
+						return _Utils_eq(current.ag, pending.ag);
 					},
 					snapshot))) ? _Utils_update(
 				model,
-				{cV: inventory, ft: 'Choices saved, but live bindings changed. Refresh and choose a free shortcut before applying.', ex: $elm$core$Maybe$Nothing, c: snapshot}) : ((status === 'Refused') ? _Utils_update(
+				{cW: inventory, fv: 'Choices saved, but live bindings changed. Refresh and choose a free shortcut before applying.', ey: $elm$core$Maybe$Nothing, c: snapshot}) : ((status === 'Refused') ? _Utils_update(
 				model,
-				{ft: 'Shortcut choices refused. Bindings or stored choices changed; refresh and choose again.', ex: $elm$core$Maybe$Nothing}) : _Utils_update(
+				{fv: 'Shortcut choices refused. Bindings or stored choices changed; refresh and choose again.', ey: $elm$core$Maybe$Nothing}) : _Utils_update(
 				model,
-				{ft: 'Shortcut application not confirmed. Refresh reads stored choices and live bindings; this action will not be repeated.'}))));
+				{fv: 'Shortcut application not confirmed. Refresh reads stored choices and live bindings; this action will not be repeated.'}))));
 		}
 	});
 var $author$project$Shortcuts$receive = F3(
 	function (expected, snapshot, model) {
 		if (!_Utils_eq(
 			expected,
-			$elm$core$Maybe$Just(snapshot.dk))) {
+			$elm$core$Maybe$Just(snapshot.dl))) {
 			return _Utils_Tuple3(model, $elm$core$Maybe$Nothing, $elm$core$Maybe$Nothing);
 		} else {
-			if (!_Utils_eq(model.dk, expected)) {
+			if (!_Utils_eq(model.dl, expected)) {
 				return _Utils_Tuple3(
-					{dk: expected, bM: snapshot.c6},
+					{dl: expected, bM: snapshot.c7},
 					$elm$core$Maybe$Nothing,
 					$elm$core$Maybe$Nothing);
 			} else {
-				if (A2($author$project$UInt64$compare, snapshot.c6, model.bM) !== 2) {
+				if (A2($author$project$UInt64$compare, snapshot.c7, model.bM) !== 2) {
 					return _Utils_Tuple3(model, $elm$core$Maybe$Nothing, $elm$core$Maybe$Nothing);
 				} else {
 					var next = _Utils_update(
 						model,
-						{bM: snapshot.c6});
+						{bM: snapshot.c7});
 					var fresh = A2(
 						$elm$core$List$filter,
 						function (event) {
-							return A2($author$project$UInt64$compare, event.c6, model.bM) === 2;
+							return A2($author$project$UInt64$compare, event.c7, model.bM) === 2;
 						},
 						snapshot.by);
 					var contiguous = A2(
@@ -22133,10 +22386,10 @@ var $author$project$Shortcuts$receive = F3(
 							function (event) {
 								return _Utils_eq(
 									$author$project$UInt64$next(model.bM),
-									$elm$core$Maybe$Just(event.c6));
+									$elm$core$Maybe$Just(event.c7));
 							},
 							$elm$core$List$head(fresh)));
-					return snapshot.e6 ? _Utils_Tuple3(
+					return snapshot.e8 ? _Utils_Tuple3(
 						next,
 						$elm$core$Maybe$Nothing,
 						$elm$core$Maybe$Just('Shell shortcut unavailable while input is blocked.')) : ((!contiguous) ? _Utils_Tuple3(
@@ -22147,7 +22400,7 @@ var $author$project$Shortcuts$receive = F3(
 						A2(
 							$elm$core$Maybe$map,
 							function ($) {
-								return $.eM;
+								return $.eN;
 							},
 							$elm$core$List$head(
 								$elm$core$List$reverse(fresh))),
@@ -22164,32 +22417,32 @@ var $author$project$SystemMenu$observe = F2(
 				return true;
 			} else {
 				var old = _v0.a;
-				return _Utils_eq(current.c7, old.c7) && ((A2($author$project$UInt64$compare, current.c2, old.c2) === 2) || _Utils_eq(current, old));
+				return _Utils_eq(current.c8, old.c8) && ((A2($author$project$UInt64$compare, current.c3, old.c3) === 2) || _Utils_eq(current, old));
 			}
 		}();
 		return (!admitted) ? model : _Utils_update(
 			model,
 			{
-				ft: (!_Utils_eq(model.ex, $elm$core$Maybe$Nothing)) ? model.ft : 'Current system state. Unavailable controls cannot be changed.',
+				fv: (!_Utils_eq(model.ey, $elm$core$Maybe$Nothing)) ? model.fv : 'Current system state. Unavailable controls cannot be changed.',
 				c: $elm$core$Maybe$Just(current)
 			});
 	});
 var $author$project$SystemMenu$receive = F4(
 	function (request, status, snapshot, model) {
-		var _v0 = model.ex;
+		var _v0 = model.ey;
 		if (_v0.$ === 1) {
 			return model;
 		} else {
 			var pending = _v0.a;
-			if ((!_Utils_eq(request, pending.c1)) || ((!A2(
+			if ((!_Utils_eq(request, pending.c2)) || ((!A2(
 				$elm$core$List$member,
 				status,
 				_List_fromArray(
-					['Committed', 'Submitted', 'Refused', 'Unknown']))) || (!_Utils_eq(snapshot.c7, pending.aa.c7)))) {
+					['Committed', 'Submitted', 'Refused', 'Unknown']))) || (!_Utils_eq(snapshot.c8, pending.ab.c8)))) {
 				return model;
 			} else {
 				var notice = _Utils_ap(
-					$author$project$SystemMenu$name(pending.aa.bh),
+					$author$project$SystemMenu$name(pending.ab.bh),
 					(status === 'Committed') ? ': change observed.' : ((status === 'Submitted') ? ': request accepted by the native service.' : ((status === 'Refused') ? ': refused or no longer available. Refresh before choosing again.' : ': not confirmed. Refresh only reads state; the request will not be repeated.')));
 				var next = A2($author$project$SystemMenu$observe, snapshot, model);
 				return (!_Utils_eq(
@@ -22197,8 +22450,8 @@ var $author$project$SystemMenu$receive = F4(
 					$elm$core$Maybe$Just(snapshot))) ? model : _Utils_update(
 					next,
 					{
-						ft: notice,
-						ex: (status === 'Unknown') ? model.ex : $elm$core$Maybe$Nothing
+						fv: notice,
+						ey: (status === 'Unknown') ? model.ey : $elm$core$Maybe$Nothing
 					});
 			}
 		}
@@ -22210,12 +22463,12 @@ var $author$project$Menu$abandonPrepared = F3(
 			state,
 			{
 				aI: $elm$core$Maybe$Nothing,
-				fx: A2(
+				fz: A2(
 					$elm$core$List$filter,
 					function (entry) {
-						return !(_Utils_eq(entry.cl, local) && (_Utils_eq(entry.dk, bound) && (!entry.bq)));
+						return !(_Utils_eq(entry.cl, local) && (_Utils_eq(entry.dl, bound) && (!entry.bq)));
 					},
-					state.fx)
+					state.fz)
 			});
 	});
 var $author$project$MenuBridge$retireChoices = function (_v0) {
@@ -22255,7 +22508,7 @@ var $author$project$Switcher$advanceSelection = function (model) {
 		A2(
 			$elm$core$Maybe$map,
 			function ($) {
-				return $.df;
+				return $.dg;
 			},
 			model.ba));
 	var total = $elm$core$List$sum(
@@ -22269,12 +22522,12 @@ var $author$project$Switcher$advanceSelection = function (model) {
 					return _Utils_cmp(number, through) > 0;
 				},
 				$elm$core$Dict$toList(model.bO))));
-	var ring = _Utils_eq(model.ba, $elm$core$Maybe$Nothing) ? model.dL : A2(
+	var ring = _Utils_eq(model.ba, $elm$core$Maybe$Nothing) ? model.dM : A2(
 		$elm$core$List$map,
 		function ($) {
 			return $.r;
 		},
-		model.af);
+		model.ah);
 	var size = $elm$core$List$length(ring);
 	var anchor = A2(
 		$elm$core$Maybe$withDefault,
@@ -22296,7 +22549,7 @@ var $author$project$Switcher$advanceSelection = function (model) {
 		}(
 			A2(
 				$elm$core$Maybe$withDefault,
-				A2($elm$core$Maybe$withDefault, $author$project$UInt64$zero, model.cY),
+				A2($elm$core$Maybe$withDefault, $author$project$UInt64$zero, model.cZ),
 				A2(
 					$elm$core$Maybe$map,
 					function ($) {
@@ -22313,7 +22566,7 @@ var $author$project$Switcher$advanceSelection = function (model) {
 					function (row) {
 						return _Utils_eq(row.r, identity);
 					},
-					model.af);
+					model.ah);
 			},
 			_Utils_ap(
 				A2($elm$core$List$drop, position, ring),
@@ -22321,13 +22574,13 @@ var $author$project$Switcher$advanceSelection = function (model) {
 	return _Utils_update(
 		model,
 		{
-			fN: A2(
+			fP: A2(
 				$elm$core$Maybe$withDefault,
 				0,
 				A2(
 					$elm$core$Maybe$andThen,
 					function (identity) {
-						return A2($author$project$Switcher$index, identity, model.af);
+						return A2($author$project$Switcher$index, identity, model.ah);
 					},
 					survivor))
 		});
@@ -22351,7 +22604,7 @@ var $author$project$Switcher$step = F4(
 						function (_final) {
 							return _Utils_cmp(ordinal, _final) > 0;
 						},
-						model.c0))) {
+						model.c1))) {
 					return _Utils_Tuple2(original, $elm$core$Maybe$Nothing);
 				} else {
 					var _v1 = A2($elm$core$Dict$get, ordinal, model.bO);
@@ -22360,7 +22613,7 @@ var $author$project$Switcher$step = F4(
 						return _Utils_eq(previous, direction) ? _Utils_Tuple2(original, $elm$core$Maybe$Nothing) : _Utils_Tuple2(
 							_Utils_update(
 								model,
-								{af: _List_Nil, j: 4}),
+								{ah: _List_Nil, j: 4}),
 							$elm$core$Maybe$Nothing);
 					} else {
 						var next = _Utils_update(
@@ -22378,7 +22631,7 @@ var $author$project$Switcher$step = F4(
 var $author$project$Switcher$readyWith = F6(
 	function (frozenRoots, token, history, candidates, origin, original) {
 		var model = original;
-		if ((!_Utils_eq(token, model.fh)) || ((!$author$project$Switcher$writable(model)) || model.b5)) {
+		if ((!_Utils_eq(token, model.fj)) || ((!$author$project$Switcher$writable(model)) || model.b5)) {
 			return _Utils_Tuple2(original, $elm$core$Maybe$Nothing);
 		} else {
 			var unique = function (rows) {
@@ -22402,7 +22655,7 @@ var $author$project$Switcher$readyWith = F6(
 			var eligible = A2(
 				$elm$core$List$filter,
 				function (row) {
-					return row.dj && A2(
+					return row.dk && A2(
 						$elm$core$Maybe$withDefault,
 						true,
 						A2(
@@ -22480,7 +22733,7 @@ var $author$project$Switcher$readyWith = F6(
 				$author$project$Switcher$advanceSelection(
 					_Utils_update(
 						model,
-						{af: frozen, cY: origin, b5: true, dL: ring})));
+						{ah: frozen, cZ: origin, b5: true, dM: ring})));
 		}
 	});
 var $author$project$Switcher$readyFrozen = F2(
@@ -22507,14 +22760,14 @@ var $author$project$Switcher$reconcile = F2(
 					A2(
 						$elm$core$List$filter,
 						function (row) {
-							return row.dj && (_Utils_eq(row.r, old.r) && _Utils_eq(row.di, old.di));
+							return row.dk && (_Utils_eq(row.r, old.r) && _Utils_eq(row.dj, old.dj));
 						},
 						candidates));
 			};
-			var surviving = A2($elm$core$List$filterMap, current, model.af);
+			var surviving = A2($elm$core$List$filterMap, current, model.ah);
 			var after = _Utils_ap(
-				A2($elm$core$List$drop, model.fN, model.af),
-				A2($elm$core$List$take, model.fN, model.af));
+				A2($elm$core$List$drop, model.fP, model.ah),
+				A2($elm$core$List$take, model.fP, model.ah));
 			var fallback = $elm$core$List$head(
 				A2(
 					$elm$core$List$filterMap,
@@ -22544,7 +22797,7 @@ var $author$project$Switcher$reconcile = F2(
 			var baseline = (model.j === 2) ? $elm$core$Maybe$Just(
 				{
 					r: root,
-					df: $author$project$Switcher$lastOrdinal(model)
+					dg: $author$project$Switcher$lastOrdinal(model)
 				}) : model.ba;
 			var position = A2(
 				$elm$core$Maybe$withDefault,
@@ -22554,9 +22807,9 @@ var $author$project$Switcher$reconcile = F2(
 				model,
 				{
 					ba: baseline,
-					af: surviving,
+					ah: surviving,
 					j: $elm$core$List$isEmpty(surviving) ? 4 : model.j,
-					fN: position
+					fP: position
 				});
 		}
 	});
@@ -22582,7 +22835,7 @@ var $author$project$Switcher$ready = $author$project$Switcher$readyWith($elm$cor
 var $author$project$Desktop$syncLocalSwitcher = function (model) {
 	var _v0 = _Utils_Tuple3(
 		model.aS,
-		model.a.b._.as,
+		model.a.b._.at,
 		$author$project$TaskView$groups(model.a.b));
 	if (((!_v0.a.$) && (!_v0.b.$)) && (!_v0.c.$)) {
 		var history = _v0.a.a;
@@ -22644,7 +22897,7 @@ var $author$project$Desktop$syncSwitcher = function (model) {
 	if (!$author$project$Desktop$switcherOpen(model)) {
 		return _Utils_Tuple2(model, _List_Nil);
 	} else {
-		var _v0 = model.ah;
+		var _v0 = model.aj;
 		if (!_v0.$) {
 			var chord = _v0.a;
 			var _v1 = $author$project$TaskView$groups(model.a.b);
@@ -22669,7 +22922,7 @@ var $author$project$Desktop$syncSwitcher = function (model) {
 					chord.aP,
 					chord.ck,
 					candidates,
-					chord.cY,
+					chord.cZ,
 					model.i);
 				var switcher = _v2.a;
 				var selected = _v2.b;
@@ -22695,14 +22948,14 @@ var $author$project$Desktop$syncSwitcher = function (model) {
 };
 var $author$project$Desktop$receiveChord = F2(
 	function (chord, model) {
-		var old = model.ah;
+		var old = model.aj;
 		var order = A2(
 			$elm$core$Maybe$withDefault,
 			2,
 			A2(
 				$elm$core$Maybe$map,
 				function (previous) {
-					return A2($author$project$UInt64$compare, chord.fh, previous.fh);
+					return A2($author$project$UInt64$compare, chord.fj, previous.fj);
 				},
 				old));
 		var inconsistent = A2(
@@ -22711,12 +22964,12 @@ var $author$project$Desktop$receiveChord = F2(
 			A2(
 				$elm$core$Maybe$map,
 				function (previous) {
-					return (order === 1) && ((!_Utils_eq(previous.aP, chord.aP)) || ((!_Utils_eq(previous.ck, chord.ck)) || ((!_Utils_eq(previous.cY, chord.cY)) || ((!_Utils_eq(
+					return (order === 1) && ((!_Utils_eq(previous.aP, chord.aP)) || ((!_Utils_eq(previous.ck, chord.ck)) || ((!_Utils_eq(previous.cZ, chord.cZ)) || ((!_Utils_eq(
 						A2(
 							$elm$core$List$take,
 							$elm$core$List$length(previous.bO),
 							chord.bO),
-						previous.bO)) || ((previous.c0 && (!chord.c0)) || ((previous.cH && (!chord.cH)) || (previous.cL && (!chord.cL))))))));
+						previous.bO)) || ((previous.c1 && (!chord.c1)) || ((previous.cI && (!chord.cI)) || (previous.cM && (!chord.cM))))))));
 				},
 				old));
 		var closed = function () {
@@ -22729,7 +22982,7 @@ var $author$project$Desktop$receiveChord = F2(
 							B: false,
 							o: $elm$core$Maybe$Nothing,
 							w: false,
-							ah: $elm$core$Maybe$Just(chord),
+							aj: $elm$core$Maybe$Just(chord),
 							t: false,
 							D: false,
 							n: false,
@@ -22743,7 +22996,7 @@ var $author$project$Desktop$receiveChord = F2(
 				function (pending) {
 					return _Utils_eq(
 						pending.aV,
-						$elm$core$Maybe$Just(chord.fh)) ? $elm$core$Maybe$Nothing : $elm$core$Maybe$Just(pending);
+						$elm$core$Maybe$Just(chord.fj)) ? $elm$core$Maybe$Nothing : $elm$core$Maybe$Just(pending);
 				},
 				retired.k);
 			return _Utils_Tuple2(
@@ -22752,10 +23005,10 @@ var $author$project$Desktop$receiveChord = F2(
 					{k: choice}),
 				_List_Nil);
 		}();
-		if (_Utils_eq(chord.fh, $author$project$UInt64$zero) || (!order)) {
+		if (_Utils_eq(chord.fj, $author$project$UInt64$zero) || (!order)) {
 			return _Utils_Tuple2(model, _List_Nil);
 		} else {
-			if (inconsistent || (chord.cH || chord.cL)) {
+			if (inconsistent || (chord.cI || chord.cM)) {
 				return closed;
 			} else {
 				var localGeneration = (order === 2) ? $author$project$UInt64$next(
@@ -22779,11 +23032,11 @@ var $author$project$Desktop$receiveChord = F2(
 							o: $elm$core$Maybe$Nothing,
 							w: false,
 							H: $elm$core$Maybe$Nothing,
-							ah: $elm$core$Maybe$Just(chord),
+							aj: $elm$core$Maybe$Just(chord),
 							t: false,
 							D: false,
 							q: false,
-							m: false,
+							l: false,
 							u: $elm$core$Maybe$Nothing,
 							n: false,
 							L: false,
@@ -22805,7 +23058,7 @@ var $author$project$Desktop$receiveChord = F2(
 							B: false,
 							o: $elm$core$Maybe$Nothing,
 							w: false,
-							ah: $elm$core$Maybe$Just(chord),
+							aj: $elm$core$Maybe$Just(chord),
 							t: false,
 							D: false,
 							n: false,
@@ -22826,7 +23079,7 @@ var $author$project$Desktop$receiveChord = F2(
 						_Utils_Tuple2(base.i, $elm$core$Maybe$Nothing),
 						A2($elm$core$List$indexedMap, $elm$core$Tuple$pair, chord.bO));
 					var stepped = _v1.a;
-					var _v4 = chord.c0 ? A3(
+					var _v4 = chord.c1 ? A3(
 						$author$project$Switcher$release,
 						generation,
 						$elm$core$List$length(chord.bO),
@@ -22864,16 +23117,16 @@ var $author$project$Desktop$receiveChord = F2(
 	});
 var $author$project$Notifications$receiveReason = F5(
 	function (request, status, reason, current, model) {
-		var _v0 = model.ex;
+		var _v0 = model.ey;
 		if (_v0.$ === 1) {
 			return model;
 		} else {
 			var pending = _v0.a;
-			if ((!_Utils_eq(request, pending.c1)) || ((!A2(
+			if ((!_Utils_eq(request, pending.c2)) || ((!A2(
 				$elm$core$List$member,
 				status,
 				_List_fromArray(
-					['Dispatched', 'Refused', 'Unknown']))) || (!_Utils_eq(current.c7, pending.fR.c7)))) {
+					['Dispatched', 'Refused', 'Unknown']))) || (!_Utils_eq(current.c8, pending.fT.c8)))) {
 				return model;
 			} else {
 				var observed = A2($author$project$Notifications$observe, current, model);
@@ -22885,19 +23138,19 @@ var $author$project$Notifications$receiveReason = F5(
 						function ($) {
 							return $.bV;
 						},
-						observed.ex));
+						observed.ey));
 				var outcome = $elm$core$Maybe$Just(
-					{bV: expired, c1: request, W: status, fR: pending.fR});
+					{bV: expired, c2: request, W: status, fT: pending.fT});
 				return (!_Utils_eq(
 					observed.c,
 					$elm$core$Maybe$Just(current))) ? model : ((status === 'Unknown') ? _Utils_update(
 					observed,
-					{ft: 'Notification action not confirmed. It will not be repeated.', cZ: outcome}) : _Utils_update(
+					{fv: 'Notification action not confirmed. It will not be repeated.', c_: outcome}) : _Utils_update(
 					observed,
 					{
-						ft: (status === 'Dispatched') ? 'Notification action sent.' : 'Notification action refused. The target expired or changed; choose a current notification.',
-						cZ: outcome,
-						ex: $elm$core$Maybe$Nothing
+						fv: (status === 'Dispatched') ? 'Notification action sent.' : 'Notification action refused. The target expired or changed; choose a current notification.',
+						c_: outcome,
+						ey: $elm$core$Maybe$Nothing
 					}));
 			}
 		}
@@ -22905,37 +23158,37 @@ var $author$project$Notifications$receiveReason = F5(
 var $author$project$Files$reconcile = F2(
 	function (snapshot, model) {
 		var next = A2($author$project$Files$observe, snapshot, model);
-		var _v0 = next.ex;
+		var _v0 = next.ey;
 		if (_v0.$ === 1) {
 			return next;
 		} else {
 			var pending = _v0.a;
 			return (_Utils_eq(
 				next.c,
-				$elm$core$Maybe$Just(snapshot)) && (A2($author$project$UInt64$compare, snapshot.c2, pending.aa.c2) === 2)) ? _Utils_update(
+				$elm$core$Maybe$Just(snapshot)) && (A2($author$project$UInt64$compare, snapshot.c3, pending.ab.c3) === 2)) ? _Utils_update(
 				next,
-				{ft: 'Files state refreshed. The previous request will not be repeated.', ex: $elm$core$Maybe$Nothing}) : next;
+				{fv: 'Files state refreshed. The previous request will not be repeated.', ey: $elm$core$Maybe$Nothing}) : next;
 		}
 	});
 var $author$project$JumpList$reconcile = F2(
 	function (snapshot, model) {
 		var next = A2($author$project$JumpList$observe, snapshot, model);
-		var _v0 = next.ex;
+		var _v0 = next.ey;
 		if (_v0.$ === 1) {
 			return next;
 		} else {
 			var pending = _v0.a;
 			return (_Utils_eq(
 				next.c,
-				$elm$core$Maybe$Just(snapshot)) && (A2($author$project$UInt64$compare, snapshot.c2, pending.aa.c2) === 2)) ? _Utils_update(
+				$elm$core$Maybe$Just(snapshot)) && (A2($author$project$UInt64$compare, snapshot.c3, pending.ab.c3) === 2)) ? _Utils_update(
 				next,
-				{ft: 'Application actions refreshed. The previous request will not be repeated.', ex: $elm$core$Maybe$Nothing}) : next;
+				{fv: 'Application actions refreshed. The previous request will not be repeated.', ey: $elm$core$Maybe$Nothing}) : next;
 		}
 	});
 var $author$project$Notifications$reconcile = F2(
 	function (snapshot, model) {
 		var current = A2($author$project$Notifications$observe, snapshot, model);
-		var _v0 = current.ex;
+		var _v0 = current.ey;
 		if (_v0.$ === 1) {
 			return current;
 		} else {
@@ -22945,26 +23198,26 @@ var $author$project$Notifications$reconcile = F2(
 				$elm$core$Maybe$Just(snapshot)) && (!A2(
 				$elm$core$List$any,
 				function (row) {
-					return _Utils_eq(row.cl, pending.fR.cl) && (_Utils_eq(row.aq, pending.fR.aq) && (_Utils_eq(row.ab, pending.fR.ab) && (row.dc === 'live')));
+					return _Utils_eq(row.cl, pending.fT.cl) && (_Utils_eq(row.ar, pending.fT.ar) && (_Utils_eq(row.ad, pending.fT.ad) && (row.dd === 'live')));
 				},
-				snapshot.af))) ? _Utils_update(
+				snapshot.ah))) ? _Utils_update(
 				current,
-				{ft: 'Notification target is no longer live. Its action will not be repeated.', ex: $elm$core$Maybe$Nothing}) : current;
+				{fv: 'Notification target is no longer live. Its action will not be repeated.', ey: $elm$core$Maybe$Nothing}) : current;
 		}
 	});
 var $author$project$SystemMenu$reconcile = F2(
 	function (snapshot, model) {
 		var next = A2($author$project$SystemMenu$observe, snapshot, model);
-		var _v0 = next.ex;
+		var _v0 = next.ey;
 		if (_v0.$ === 1) {
 			return next;
 		} else {
 			var pending = _v0.a;
 			return (_Utils_eq(
 				next.c,
-				$elm$core$Maybe$Just(snapshot)) && (A2($author$project$UInt64$compare, snapshot.c2, pending.aa.c2) === 2)) ? _Utils_update(
+				$elm$core$Maybe$Just(snapshot)) && (A2($author$project$UInt64$compare, snapshot.c3, pending.ab.c3) === 2)) ? _Utils_update(
 				next,
-				{ft: 'System state refreshed. The previous request will not be repeated.', ex: $elm$core$Maybe$Nothing}) : next;
+				{fv: 'System state refreshed. The previous request will not be repeated.', ey: $elm$core$Maybe$Nothing}) : next;
 		}
 	});
 var $author$project$Desktop$requestApplications = F3(
@@ -23008,7 +23261,7 @@ var $author$project$Desktop$requestApplications = F3(
 							t: false,
 							D: false,
 							q: true,
-							m: false,
+							l: false,
 							u: $elm$core$Maybe$Nothing,
 							n: false,
 							L: false,
@@ -23021,8 +23274,8 @@ var $author$project$Desktop$requestApplications = F3(
 								{J: $elm$core$Maybe$Nothing})
 						})));
 			var _v0 = _Utils_Tuple2(
-				model.a.b.dk,
-				$author$project$UInt64$next(model.c1));
+				model.a.b.dl,
+				$author$project$UInt64$next(model.c2));
 			if ((!_v0.a.$) && (!_v0.b.$)) {
 				var binding = _v0.a.a;
 				var request = _v0.b.a;
@@ -23031,7 +23284,7 @@ var $author$project$Desktop$requestApplications = F3(
 						retired,
 						{
 							A: $elm$core$Maybe$Just(request),
-							c1: request
+							c2: request
 						}),
 					_Utils_ap(
 						_List_fromArray(
@@ -23074,7 +23327,7 @@ var $author$project$OverviewRecovery$observe = F5(
 				var owner = _v2.a;
 				var intent = _v2.b;
 				var outcome = _v1.b.a;
-				if (!_Utils_eq(outcome.aa, intent)) {
+				if (!_Utils_eq(outcome.ab, intent)) {
 					return model;
 				} else {
 					var _v3 = outcome.W;
@@ -23101,7 +23354,7 @@ var $author$project$OverviewRecovery$observe = F5(
 				function (owner) {
 					return !_Utils_eq(
 						authority,
-						$elm$core$Maybe$Just(owner.dk));
+						$elm$core$Maybe$Just(owner.dl));
 				},
 				origin))) {
 			return _Utils_Tuple2($author$project$OverviewRecovery$Idle, $elm$core$Maybe$Nothing);
@@ -23117,19 +23370,19 @@ var $author$project$OverviewRecovery$observe = F5(
 		}
 	});
 var $author$project$Desktop$resumeOverview = function (model) {
-	var occupied = model.m || (model.q || ((!_Utils_eq(model.x, $elm$core$Maybe$Nothing)) || ((!_Utils_eq(model.o, $elm$core$Maybe$Nothing)) || (model.p || (model.v || (model.t || (model.n || ($author$project$Desktop$switcherOpen(model) || ((!_Utils_eq(model.a.J, $elm$core$Maybe$Nothing)) || ((!_Utils_eq(
+	var occupied = model.l || (model.q || ((!_Utils_eq(model.x, $elm$core$Maybe$Nothing)) || ((!_Utils_eq(model.o, $elm$core$Maybe$Nothing)) || (model.p || (model.v || (model.t || (model.n || ($author$project$Desktop$switcherOpen(model) || ((!_Utils_eq(model.a.J, $elm$core$Maybe$Nothing)) || ((!_Utils_eq(
 		$author$project$MenuBridge$menuSnapshot(model.a.h).aI,
 		$elm$core$Maybe$Nothing)) || (!_Utils_eq(
 		$author$project$MenuBridge$preparedSnapshot(model.a.h),
 		$elm$core$Maybe$Nothing))))))))))));
-	var groups = $author$project$TaskView$groups(model.a.b);
-	var ready = $author$project$Shell$available(model.a.b) && (_Utils_eq(model.a.b.A, $elm$core$Maybe$Nothing) && (_Utils_eq(model.a.b.eb, $elm$core$Maybe$Nothing) && (_Utils_eq(model.k, $elm$core$Maybe$Nothing) && ((!_Utils_eq(model.aO, $elm$core$Maybe$Nothing)) && ((!_Utils_eq(groups, $elm$core$Maybe$Nothing)) && (!A2($author$project$PointerOwnership$blocked, model.a.b.dk, model.bH)))))));
+	var groups = $author$project$Desktop$taskViewGroups(model);
+	var ready = $author$project$Shell$available(model.a.b) && (_Utils_eq(model.a.b.A, $elm$core$Maybe$Nothing) && (_Utils_eq(model.a.b.ec, $elm$core$Maybe$Nothing) && (_Utils_eq(model.k, $elm$core$Maybe$Nothing) && ((!_Utils_eq(model.aO, $elm$core$Maybe$Nothing)) && ((!_Utils_eq(groups, $elm$core$Maybe$Nothing)) && (!A2($author$project$PointerOwnership$blocked, model.a.b.dl, model.bH)))))));
 	var authority = A2(
 		$elm$core$List$member,
 		model.a.b.j,
 		_List_fromArray(
-			[0, 3])) ? $elm$core$Maybe$Nothing : model.a.b.dk;
-	var _v0 = A5($author$project$OverviewRecovery$observe, authority, model.a.b._.fS, occupied, ready, model.aN);
+			[0, 3])) ? $elm$core$Maybe$Nothing : model.a.b.dl;
+	var _v0 = A5($author$project$OverviewRecovery$observe, authority, model.a.b._.fU, occupied, ready, model.aN);
 	var recovery = _v0.a;
 	var origin = _v0.b;
 	var next = _Utils_update(
@@ -23146,15 +23399,15 @@ var $author$project$Desktop$resumeOverview = function (model) {
 				return A2(
 					$elm$core$List$any,
 					function (group) {
-						return _Utils_eq(group.cU, selected);
+						return _Utils_eq(group.cV, selected);
 					},
 					current) ? $elm$core$Maybe$Just(selected) : $elm$core$Maybe$Nothing;
 			},
-			owner.e$);
+			owner.e1);
 		var family = A2(
 			$elm$core$List$any,
 			function (row) {
-				return _Utils_eq(row.r, owner.r) && (row.dj && (!A3($author$project$MenuBridge$blockedFor, row.r, model.a.b, model.a.h)));
+				return _Utils_eq(row.r, owner.r) && (row.dk && (!A3($author$project$MenuBridge$blockedFor, row.r, model.a.b, model.a.h)));
 			},
 			A2(
 				$elm$core$List$concatMap,
@@ -23166,13 +23419,13 @@ var $author$project$Desktop$resumeOverview = function (model) {
 					function (group) {
 						return _Utils_eq(workspace, $elm$core$Maybe$Nothing) || _Utils_eq(
 							workspace,
-							$elm$core$Maybe$Just(group.cU));
+							$elm$core$Maybe$Just(group.cV));
 					},
 					current)));
 		var reopened = $author$project$Desktop$advance(
 			_Utils_update(
 				next,
-				{m: true, aB: $elm$core$Maybe$Nothing, at: workspace, u: $elm$core$Maybe$Nothing}));
+				{l: true, au: $elm$core$Maybe$Nothing, ac: workspace, u: $elm$core$Maybe$Nothing}));
 		var target = family ? ('overview:family:' + $author$project$UInt64$string(owner.r)) : A2(
 			$elm$core$Maybe$withDefault,
 			'overview:all',
@@ -23180,7 +23433,7 @@ var $author$project$Desktop$resumeOverview = function (model) {
 				$elm$core$Maybe$map,
 				$elm$core$Basics$append('overview:workspace:'),
 				workspace));
-		return (reopened.m && (!_Utils_eq(reopened.aO, $elm$core$Maybe$Nothing))) ? _Utils_Tuple2(
+		return (reopened.l && (!_Utils_eq(reopened.aO, $elm$core$Maybe$Nothing))) ? _Utils_Tuple2(
 			reopened,
 			_List_fromArray(
 				[
@@ -23196,10 +23449,10 @@ var $author$project$Pins$encode = function (snapshot) {
 				_Utils_Tuple2(
 				'revision',
 				$elm$json$Json$Encode$string(
-					$author$project$UInt64$string(snapshot.c2))),
+					$author$project$UInt64$string(snapshot.c3))),
 				_Utils_Tuple2(
 				'identities',
-				A2($elm$json$Json$Encode$list, $elm$json$Json$Encode$string, snapshot.fl))
+				A2($elm$json$Json$Encode$list, $elm$json$Json$Encode$string, snapshot.fn))
 			]));
 };
 var $author$project$Pins$propose = F3(
@@ -23207,19 +23460,19 @@ var $author$project$Pins$propose = F3(
 		var _v0 = model.c;
 		if (!_v0.$) {
 			var snapshot = _v0.a;
-			return ((!$author$project$Pins$writable(model)) || ((!$author$project$Pins$valid(values)) || _Utils_eq(values, snapshot.fl))) ? _Utils_Tuple2(model, $elm$core$Maybe$Nothing) : _Utils_Tuple2(
+			return ((!$author$project$Pins$writable(model)) || ((!$author$project$Pins$valid(values)) || _Utils_eq(values, snapshot.fn))) ? _Utils_Tuple2(model, $elm$core$Maybe$Nothing) : _Utils_Tuple2(
 				_Utils_update(
 					model,
 					{
-						ft: 'Saving pin order…',
-						ex: $elm$core$Maybe$Just(
-							{fl: values, c1: request})
+						fv: 'Saving pin order…',
+						ey: $elm$core$Maybe$Just(
+							{fn: values, c2: request})
 					}),
 				$elm$core$Maybe$Just(
 					$author$project$Pins$encode(
 						_Utils_update(
 							snapshot,
-							{fl: values}))));
+							{fn: values}))));
 		} else {
 			return _Utils_Tuple2(model, $elm$core$Maybe$Nothing);
 		}
@@ -23227,8 +23480,8 @@ var $author$project$Pins$propose = F3(
 var $author$project$Desktop$savePins = F2(
 	function (values, model) {
 		var _v0 = _Utils_Tuple2(
-			model.a.b.dk,
-			$author$project$UInt64$next(model.c1));
+			model.a.b.dl,
+			$author$project$UInt64$next(model.c2));
 		if ((!_v0.a.$) && (!_v0.b.$)) {
 			var binding = _v0.a.a;
 			var request = _v0.b.a;
@@ -23267,13 +23520,13 @@ var $author$project$Desktop$savePins = F2(
 						{
 							R: _Utils_update(
 								pins,
-								{ft: 'Pin order is too large to save.', ex: $elm$core$Maybe$Nothing})
+								{fv: 'Pin order is too large to save.', ey: $elm$core$Maybe$Nothing})
 						}),
 					_List_Nil) : _Utils_Tuple2(
 					$author$project$Desktop$advance(
 						_Utils_update(
 							model,
-							{R: pins, c1: request})),
+							{R: pins, c2: request})),
 					_List_fromArray(
 						[
 							$author$project$Desktop$Send(
@@ -23291,7 +23544,7 @@ var $author$project$Snap$select = F3(
 		return A2($author$project$Snap$valid, current, choice) ? $elm$core$Maybe$Just(
 			_Utils_update(
 				choice,
-				{fN: region})) : $elm$core$Maybe$Nothing;
+				{fP: region})) : $elm$core$Maybe$Nothing;
 	});
 var $author$project$Files$propose = F3(
 	function (request, value, model) {
@@ -23299,9 +23552,9 @@ var $author$project$Files$propose = F3(
 			_Utils_update(
 				model,
 				{
-					ft: 'Files: waiting for the requested location…',
-					ex: $elm$core$Maybe$Just(
-						{aa: value, c1: request}),
+					fv: 'Files: waiting for the requested location…',
+					ey: $elm$core$Maybe$Just(
+						{ab: value, c2: request}),
 					ca: A2(
 						$elm$core$List$take,
 						128,
@@ -23314,14 +23567,14 @@ var $author$project$Files$propose = F3(
 							_Utils_Tuple2(
 							'service',
 							$elm$json$Json$Encode$string(
-								$author$project$UInt64$string(value.c7))),
+								$author$project$UInt64$string(value.c8))),
 							_Utils_Tuple2(
 							'revision',
 							$elm$json$Json$Encode$string(
-								$author$project$UInt64$string(value.c2))),
+								$author$project$UInt64$string(value.c3))),
 							_Utils_Tuple2(
 							'target',
-							$elm$json$Json$Encode$string(value.fR))
+							$elm$json$Json$Encode$string(value.fT))
 						]))));
 	});
 var $author$project$Desktop$sendFiles = F2(
@@ -23330,8 +23583,8 @@ var $author$project$Desktop$sendFiles = F2(
 			return _Utils_Tuple2(model, _List_Nil);
 		} else {
 			var _v0 = _Utils_Tuple2(
-				model.a.b.dk,
-				$author$project$UInt64$next(model.c1));
+				model.a.b.dl,
+				$author$project$UInt64$next(model.c2));
 			if ((!_v0.a.$) && (!_v0.b.$)) {
 				var binding = _v0.a.a;
 				var request = _v0.b.a;
@@ -23346,7 +23599,7 @@ var $author$project$Desktop$sendFiles = F2(
 						$author$project$Desktop$advance(
 							_Utils_update(
 								model,
-								{T: files, p: false, B: false, o: $elm$core$Maybe$Nothing, w: false, c1: request})),
+								{T: files, p: false, B: false, o: $elm$core$Maybe$Nothing, w: false, c2: request})),
 						_List_fromArray(
 							[
 								$author$project$Desktop$Send(
@@ -23382,11 +23635,11 @@ var $author$project$SystemMenu$encode = function (value) {
 				_Utils_Tuple2(
 				'service',
 				$elm$json$Json$Encode$string(
-					$author$project$UInt64$string(value.c7))),
+					$author$project$UInt64$string(value.c8))),
 				_Utils_Tuple2(
 				'revision',
 				$elm$json$Json$Encode$string(
-					$author$project$UInt64$string(value.c2))),
+					$author$project$UInt64$string(value.c3))),
 				_Utils_Tuple2(
 				'operation',
 				$elm$json$Json$Encode$string(
@@ -23398,13 +23651,13 @@ var $author$project$SystemMenu$encode = function (value) {
 };
 var $author$project$SystemMenu$propose = F3(
 	function (request, value, model) {
-		return ((!_Utils_eq(model.ex, $elm$core$Maybe$Nothing)) || (!A2($author$project$SystemMenu$supported, value, model))) ? _Utils_Tuple2(model, $elm$core$Maybe$Nothing) : _Utils_Tuple2(
+		return ((!_Utils_eq(model.ey, $elm$core$Maybe$Nothing)) || (!A2($author$project$SystemMenu$supported, value, model))) ? _Utils_Tuple2(model, $elm$core$Maybe$Nothing) : _Utils_Tuple2(
 			_Utils_update(
 				model,
 				{
-					ft: $author$project$SystemMenu$name(value.bh) + ': waiting for native result…',
-					ex: $elm$core$Maybe$Just(
-						{aa: value, c1: request}),
+					fv: $author$project$SystemMenu$name(value.bh) + ': waiting for native result…',
+					ey: $elm$core$Maybe$Just(
+						{ab: value, c2: request}),
 					ca: A2(
 						$elm$core$List$take,
 						128,
@@ -23416,12 +23669,12 @@ var $author$project$SystemMenu$propose = F3(
 var $author$project$Desktop$sendSystemChange = F2(
 	function (intent, model) {
 		var _v0 = _Utils_Tuple2(
-			model.a.b.dk,
-			$author$project$UInt64$next(model.c1));
+			model.a.b.dl,
+			$author$project$UInt64$next(model.c2));
 		if ((!_v0.a.$) && (!_v0.b.$)) {
 			var binding = _v0.a.a;
 			var request = _v0.b.a;
-			var _v1 = A3($author$project$SystemMenu$propose, request, intent, model.ak);
+			var _v1 = A3($author$project$SystemMenu$propose, request, intent, model.am);
 			var menu = _v1.a;
 			var proposal = _v1.b;
 			if (proposal.$ === 1) {
@@ -23432,7 +23685,7 @@ var $author$project$Desktop$sendSystemChange = F2(
 					$author$project$Desktop$advance(
 						_Utils_update(
 							model,
-							{c1: request, ak: menu, s: $elm$core$Maybe$Nothing})),
+							{c2: request, am: menu, s: $elm$core$Maybe$Nothing})),
 					_List_fromArray(
 						[
 							$author$project$Desktop$Send(
@@ -23520,14 +23773,14 @@ var $author$project$Launch$start = F2(
 		}();
 		var _v1 = _Utils_Tuple2(
 			model.c,
-			$author$project$UInt64$next(model.c1));
+			$author$project$UInt64$next(model.c2));
 		if ((!_v1.a.$) && (!_v1.b.$)) {
 			var snapshot = _v1.a.a;
 			var request = _v1.b.a;
 			var scope = $author$project$Catalog$scope(snapshot);
 			if (ready && (_Utils_eq(
 				model.be,
-				$elm$core$Maybe$Just(host)) && (_Utils_eq(model.c2, revision) && (_Utils_eq(lifetime, scope.fp) && _Utils_eq(generation, scope.fh))))) {
+				$elm$core$Maybe$Just(host)) && (_Utils_eq(model.c3, revision) && (_Utils_eq(lifetime, scope.fr) && _Utils_eq(generation, scope.fj))))) {
 				var _v2 = A3($author$project$Catalog$intent, request, entry, snapshot);
 				if (!_v2.$) {
 					var wire = _v2.a;
@@ -23540,12 +23793,12 @@ var $author$project$Launch$start = F2(
 										$author$project$Launch$Pending,
 										host,
 										{
-											d2: $author$project$Catalog$id(entry),
-											fh: generation,
-											fp: lifetime,
-											c1: request
+											d3: $author$project$Catalog$id(entry),
+											fj: generation,
+											fr: lifetime,
+											c2: request
 										}),
-									c1: request
+									c2: request
 								})),
 						$elm$core$Maybe$Just(wire));
 				} else {
@@ -23570,11 +23823,11 @@ var $author$project$Motion$request = function (pending) {
 				$elm$json$Json$Encode$string('motion-profile-set')),
 				_Utils_Tuple2(
 				'binding',
-				$author$project$Binding$encode(pending.dk)),
+				$author$project$Binding$encode(pending.dl)),
 				_Utils_Tuple2(
 				'requestId',
 				$elm$json$Json$Encode$string(
-					$author$project$UInt64$string(pending.c1))),
+					$author$project$UInt64$string(pending.c2))),
 				_Utils_Tuple2(
 				'profile',
 				$elm$json$Json$Encode$string(
@@ -23583,13 +23836,13 @@ var $author$project$Motion$request = function (pending) {
 };
 var $author$project$Motion$propose = F3(
 	function (binding, request_, model) {
-		if ((!_Utils_eq(model.ex, $elm$core$Maybe$Nothing)) || (_Utils_eq(request_, $author$project$UInt64$zero) || (_Utils_eq(model.a1.c, $elm$core$Maybe$Nothing) || ((_Utils_eq(model.bF, $elm$core$Maybe$Nothing) && (!$author$project$MotionPreferences$selected(model.a1))) || A2(
+		if ((!_Utils_eq(model.ey, $elm$core$Maybe$Nothing)) || (_Utils_eq(request_, $author$project$UInt64$zero) || (_Utils_eq(model.a1.c, $elm$core$Maybe$Nothing) || ((_Utils_eq(model.bF, $elm$core$Maybe$Nothing) && (!$author$project$MotionPreferences$selected(model.a1))) || A2(
 			$elm$core$Maybe$withDefault,
 			false,
 			A2(
 				$elm$core$Maybe$map,
 				function (a) {
-					return _Utils_eq(a.dk, binding) && _Utils_eq(
+					return _Utils_eq(a.dl, binding) && _Utils_eq(
 						a.aC,
 						$author$project$Motion$desired(model));
 				},
@@ -23597,15 +23850,15 @@ var $author$project$Motion$propose = F3(
 			return _Utils_Tuple2(model, $elm$core$Maybe$Nothing);
 		} else {
 			var pending = {
-				dk: binding,
+				dl: binding,
 				aC: $author$project$Motion$desired(model),
-				c1: request_
+				c2: request_
 			};
 			return _Utils_Tuple2(
 				_Utils_update(
 					model,
 					{
-						ex: $elm$core$Maybe$Just(pending)
+						ey: $elm$core$Maybe$Just(pending)
 					}),
 				$elm$core$Maybe$Just(
 					$author$project$Motion$request(pending)));
@@ -23616,8 +23869,8 @@ var $author$project$Desktop$syncMotion = function (model) {
 		return _Utils_Tuple2(model, _List_Nil);
 	} else {
 		var _v0 = _Utils_Tuple2(
-			model.a.b.dk,
-			$author$project$UInt64$next(model.c1));
+			model.a.b.dl,
+			$author$project$UInt64$next(model.c2));
 		if ((!_v0.a.$) && (!_v0.b.$)) {
 			var binding = _v0.a.a;
 			var request = _v0.b.a;
@@ -23632,7 +23885,7 @@ var $author$project$Desktop$syncMotion = function (model) {
 					$author$project$Desktop$advance(
 						_Utils_update(
 							model,
-							{I: motion, c1: request})),
+							{I: motion, c2: request})),
 					_List_fromArray(
 						[
 							$author$project$Desktop$Send(wire)
@@ -23641,6 +23894,38 @@ var $author$project$Desktop$syncMotion = function (model) {
 		} else {
 			return _Utils_Tuple2(model, _List_Nil);
 		}
+	}
+};
+var $author$project$Desktop$syncOverviewWorkspace = function (model) {
+	var _v0 = _Utils_Tuple3(
+		model.l,
+		model.ac,
+		$author$project$Desktop$taskViewGroups(model));
+	if ((_v0.a && (!_v0.b.$)) && (!_v0.c.$)) {
+		var selected = _v0.b.a;
+		var groups = _v0.c.a;
+		if (A2(
+			$elm$core$List$any,
+			function (group) {
+				return _Utils_eq(group.cV, selected);
+			},
+			groups)) {
+			return _Utils_Tuple2(model, _List_Nil);
+		} else {
+			var next = $author$project$Desktop$advance(
+				_Utils_update(
+					model,
+					{au: $elm$core$Maybe$Nothing, ac: $elm$core$Maybe$Nothing}));
+			return _Utils_Tuple2(
+				next,
+				_List_fromArray(
+					[
+						$author$project$Desktop$Focus(
+						A2($author$project$Desktop$key, next, 'overview:all'))
+					]));
+		}
+	} else {
+		return _Utils_Tuple2(model, _List_Nil);
 	}
 };
 var $author$project$Pins$toggle = F2(
@@ -23749,7 +24034,7 @@ var $author$project$OverviewRecovery$issue = F3(
 					var _v2 = sent.a;
 					var binding = _v2.a;
 					var intent = _v2.b;
-					return (_Utils_eq(binding, origin.dk) && (_Utils_eq(intent.aq, origin.r) && A2(
+					return (_Utils_eq(binding, origin.dl) && (_Utils_eq(intent.ar, origin.r) && A2(
 						$elm$core$List$member,
 						intent.bh,
 						_List_fromArray(
@@ -23815,14 +24100,14 @@ var $author$project$Desktop$window = F2(
 								if ((!_v3.a.$) && (!_v3.b.$)) {
 									var menu = _v3.a.a;
 									var provider = _v3.b.a;
-									return _Utils_eq(menu.cl, menuId) && (_Utils_eq(menu.dk, binding) && (_Utils_eq(
+									return _Utils_eq(menu.cl, menuId) && (_Utils_eq(menu.dl, binding) && (_Utils_eq(
 										A2(
 											$elm$core$Maybe$map,
 											function ($) {
-												return $.e3;
+												return $.e5;
 											},
 											$elm$core$List$head(
-												A2($elm$core$List$drop, index, menu.fo))),
+												A2($elm$core$List$drop, index, menu.fq))),
 										$elm$core$Maybe$Just($author$project$Menu$Minimize)) && A2(
 										$elm$core$List$any,
 										function (family) {
@@ -23898,14 +24183,14 @@ var $author$project$Desktop$window = F2(
 				case 3:
 					var scope = message.a;
 					var generation = message.b;
-					var _v7 = _Utils_Tuple2(model.a.J, model.a.b.dk);
+					var _v7 = _Utils_Tuple2(model.a.J, model.a.b.dl);
 					if ((!_v7.a.$) && (!_v7.b.$)) {
 						var picker = _v7.a.a;
 						var binding = _v7.b.a;
 						var _v8 = A2($author$project$Desktop$windowBase, message, model);
 						var closed = _v8.a;
 						var effects = _v8.b;
-						if ((!_Utils_eq(closed.a.J, $elm$core$Maybe$Nothing)) || ((!_Utils_eq(picker.c5, scope)) || (!_Utils_eq(picker.fh, generation)))) {
+						if ((!_Utils_eq(closed.a.J, $elm$core$Maybe$Nothing)) || ((!_Utils_eq(picker.c6, scope)) || (!_Utils_eq(picker.fj, generation)))) {
 							return _Utils_Tuple2(closed, effects);
 						} else {
 							var _v9 = A2(
@@ -23920,7 +24205,7 @@ var $author$project$Desktop$window = F2(
 									{
 										u: (model.bI === 1) ? $elm$core$Maybe$Just(
 											{
-												dk: binding,
+												dl: binding,
 												bx: $author$project$Desktop$TaskbarGroup(picker.a_),
 												y: A2(
 													$elm$core$Maybe$map,
@@ -23932,7 +24217,7 @@ var $author$project$Desktop$window = F2(
 														function ($) {
 															return $.y;
 														}),
-													model.a.b._.as)
+													model.a.b._.at)
 											}) : $elm$core$Maybe$Nothing
 									}),
 								_Utils_ap(
@@ -23955,12 +24240,12 @@ var $author$project$Desktop$window = F2(
 					var scope = message.a;
 					var generation = message.b;
 					var root = message.c;
-					var _v11 = _Utils_Tuple3(model.a.J, model.a.b.dk, model.a.b._.as);
+					var _v11 = _Utils_Tuple3(model.a.J, model.a.b.dl, model.a.b._.at);
 					if (((!_v11.a.$) && (!_v11.b.$)) && (!_v11.c.$)) {
 						var picker = _v11.a.a;
 						var binding = _v11.b.a;
 						var observed = _v11.c.a;
-						if ((!_Utils_eq(model.k, $elm$core$Maybe$Nothing)) || ((!_Utils_eq(picker.c5, scope)) || ((!_Utils_eq(picker.fh, generation)) || ((!_Utils_eq(
+						if ((!_Utils_eq(model.k, $elm$core$Maybe$Nothing)) || ((!_Utils_eq(picker.c6, scope)) || ((!_Utils_eq(picker.fj, generation)) || ((!_Utils_eq(
 							$author$project$Shell$capture(model.a.b),
 							$elm$core$Maybe$Just(scope))) || (!$author$project$Shell$available(model.a.b)))))) {
 							return _Utils_Tuple2(model, _List_Nil);
@@ -23969,7 +24254,7 @@ var $author$project$Desktop$window = F2(
 								A2(
 									$elm$core$List$filter,
 									function (family) {
-										return _Utils_eq(family.r, root) && family.dj;
+										return _Utils_eq(family.r, root) && family.dk;
 									},
 									A2(
 										$elm$core$List$concatMap,
@@ -24009,7 +24294,7 @@ var $author$project$Desktop$window = F2(
 											next,
 											{
 												k: $elm$core$Maybe$Just(
-													{di: family.di, dk: binding, aV: $elm$core$Maybe$Nothing, y: observed.P.y, bk: $elm$core$Maybe$Nothing, r: root, bp: token, a4: $elm$core$Maybe$Nothing})
+													{dj: family.dj, dl: binding, aV: $elm$core$Maybe$Nothing, y: observed.P.y, bk: $elm$core$Maybe$Nothing, r: root, bp: token, a4: $elm$core$Maybe$Nothing})
 											}),
 										_Utils_ap(
 											effects,
@@ -24076,7 +24361,7 @@ var $author$project$Desktop$window = F2(
 				function ($) {
 					return $._;
 				},
-				updated.a.b.ds)) ? A2(
+				updated.a.b.dt)) ? A2(
 			$elm$core$Maybe$map,
 			A2(
 				$elm$core$Basics$composeR,
@@ -24086,7 +24371,7 @@ var $author$project$Desktop$window = F2(
 				function ($) {
 					return $.y;
 				}),
-			updated.a.b.ap) : A2(
+			updated.a.b.aa) : A2(
 			$elm$core$Maybe$map,
 			A2(
 				$elm$core$Basics$composeR,
@@ -24096,7 +24381,7 @@ var $author$project$Desktop$window = F2(
 				function ($) {
 					return $.y;
 				}),
-			updated.a.b._.as);
+			updated.a.b._.at);
 		var matchingGeometry = function () {
 			if ((!message.$) && (message.a.$ === 3)) {
 				var raw = message.a.a;
@@ -24109,15 +24394,15 @@ var $author$project$Desktop$window = F2(
 							var kind = _v31.a;
 							var request = _v31.b;
 							return (kind === 'geometry-facts') && (_Utils_eq(
-								model.a.b.eb,
+								model.a.b.ec,
 								$elm$core$Maybe$Just(request)) && (_Utils_eq(
 								A2(
 									$elm$core$Maybe$map,
 									function ($) {
-										return $.c1;
+										return $.c2;
 									},
-									updated.a.b.ap),
-								$elm$core$Maybe$Just(request)) && (!_Utils_eq(updated.a.b.ap, model.a.b.ap))));
+									updated.a.b.aa),
+								$elm$core$Maybe$Just(request)) && (!_Utils_eq(updated.a.b.aa, model.a.b.aa))));
 						},
 						A2(
 							$elm$json$Json$Decode$decodeValue,
@@ -24191,7 +24476,7 @@ var $author$project$Desktop$window = F2(
 									return _Utils_eq(group.a_, groupKey) && A2(
 										$elm$core$List$any,
 										function ($) {
-											return $.dj;
+											return $.dk;
 										},
 										group.aG);
 								},
@@ -24200,11 +24485,11 @@ var $author$project$Desktop$window = F2(
 							return _Utils_eq(retired.k, $elm$core$Maybe$Nothing);
 						}
 					}();
-					return (retired.q || (retired.m || ((!_Utils_eq(retired.a.J, $elm$core$Maybe$Nothing)) || ((!_Utils_eq(
+					return (retired.q || (retired.l || ((!_Utils_eq(retired.a.J, $elm$core$Maybe$Nothing)) || ((!_Utils_eq(
 						$author$project$MenuBridge$menuSnapshot(retired.a.h).aI,
 						$elm$core$Maybe$Nothing)) || ((!_Utils_eq(
-						retired.a.b.dk,
-						$elm$core$Maybe$Just(target.dk))) || (_Utils_eq(target.y, $elm$core$Maybe$Nothing) || ((!_Utils_eq(
+						retired.a.b.dl,
+						$elm$core$Maybe$Just(target.dl))) || (_Utils_eq(target.y, $elm$core$Maybe$Nothing) || ((!_Utils_eq(
 						A2(
 							$elm$core$Maybe$map,
 							A2(
@@ -24215,7 +24500,7 @@ var $author$project$Desktop$window = F2(
 								function ($) {
 									return $.y;
 								}),
-							retired.a.b._.as),
+							retired.a.b._.at),
 						target.y)) || ((!_Utils_eq(geometryOutput, target.y)) || (!exists))))))))) ? _Utils_Tuple2(retired, ordinaryEffects) : _Utils_Tuple2(
 						retired,
 						_Utils_ap(
@@ -24243,9 +24528,9 @@ var $author$project$Desktop$window = F2(
 				A2(
 					$elm$core$Maybe$map,
 					function ($) {
-						return $.e6;
+						return $.e8;
 					},
-					next.a.b.ap)))))) {
+					next.a.b.aa)))))) {
 				return _Utils_Tuple2(next, effects);
 			} else {
 				var retired = _Utils_update(
@@ -24261,12 +24546,12 @@ var $author$project$Desktop$window = F2(
 						function ($) {
 							return $.y;
 						}),
-					next.a.b._.as);
+					next.a.b._.at);
 				var family = $elm$core$List$head(
 					A2(
 						$elm$core$List$filter,
 						function (item) {
-							return _Utils_eq(item.r, pending.r) && (_Utils_eq(item.di, pending.di) && item.dj);
+							return _Utils_eq(item.r, pending.r) && (_Utils_eq(item.dj, pending.dj) && item.dk);
 						},
 						A2(
 							$elm$core$List$concatMap,
@@ -24275,8 +24560,8 @@ var $author$project$Desktop$window = F2(
 							},
 							$author$project$TaskbarShell$groups(next.a))));
 				if ((!_Utils_eq(
-					next.a.b.dk,
-					$elm$core$Maybe$Just(pending.dk))) || ((!_Utils_eq(
+					next.a.b.dl,
+					$elm$core$Maybe$Just(pending.dl))) || ((!_Utils_eq(
 					output,
 					$elm$core$Maybe$Just(pending.y))) || (!_Utils_eq(
 					geometryOutput,
@@ -24292,7 +24577,7 @@ var $author$project$Desktop$window = F2(
 						if (!_Utils_eq(pending.a4, $elm$core$Maybe$Nothing)) {
 							var _v23 = _Utils_Tuple3(
 								pending.a4,
-								next.a.b.ap,
+								next.a.b.aa,
 								$author$project$Shell$captureGeometry(next.a.b));
 							if (((!_v23.a.$) && (!_v23.b.$)) && (!_v23.c.$)) {
 								var proposed = _v23.a.a;
@@ -24330,7 +24615,7 @@ var $author$project$Desktop$window = F2(
 							if (!_v25.$) {
 								var proposed = _v25.a;
 								var _v26 = _Utils_Tuple2(
-									next.a.b.ap,
+									next.a.b.aa,
 									$author$project$Shell$captureGeometry(next.a.b));
 								if ((!_v26.a.$) && (!_v26.b.$)) {
 									var geometry = _v26.a.a;
@@ -24383,7 +24668,7 @@ var $author$project$Desktop$window = F2(
 										A3($author$project$Desktop$trackOverviewChoice, pending.bp, commands, applied),
 										_Utils_ap(
 											effects,
-											A3($author$project$Desktop$fenceSwitcherSelection, pending.aV, pending.dk, commands)));
+											A3($author$project$Desktop$fenceSwitcherSelection, pending.aV, pending.dl, commands)));
 								} else {
 									return _Utils_Tuple2(retired, effects);
 								}
@@ -24428,16 +24713,16 @@ var $author$project$Desktop$updateAvailable = F2(
 					$elm$core$Maybe$Just(stamp))) || ((!$author$project$Shell$available(model.a.b)) || A3($author$project$MenuBridge$blockedFor, root, model.a.b, model.a.h))) {
 					return _Utils_Tuple2(model, _List_Nil);
 				} else {
-					var _v4 = A2(
+					var _v5 = A2(
 						$elm$core$Maybe$andThen,
 						function (geometry) {
 							return A2($author$project$Snap$open, geometry, root);
 						},
-						model.a.b.ap);
-					if (_v4.$ === 1) {
+						model.a.b.aa);
+					if (_v5.$ === 1) {
 						return _Utils_Tuple2(model, _List_Nil);
 					} else {
-						var choice = _v4.a;
+						var choice = _v5.a;
 						var windows = model.a;
 						return _Utils_Tuple2(
 							$author$project$Desktop$advance(
@@ -24455,7 +24740,7 @@ var $author$project$Desktop$updateAvailable = F2(
 											t: false,
 											D: false,
 											q: false,
-											m: false,
+											l: false,
 											u: $elm$core$Maybe$Nothing,
 											n: false,
 											L: false,
@@ -24481,10 +24766,10 @@ var $author$project$Desktop$updateAvailable = F2(
 					$elm$core$Maybe$Just(stamp))) {
 					return _Utils_Tuple2(model, _List_Nil);
 				} else {
-					var _v5 = _Utils_Tuple2(model.a.b.ap, model.x);
-					if ((!_v5.a.$) && (!_v5.b.$)) {
-						var geometry = _v5.a.a;
-						var choice = _v5.b.a;
+					var _v6 = _Utils_Tuple2(model.a.b.aa, model.x);
+					if ((!_v6.a.$) && (!_v6.b.$)) {
+						var geometry = _v6.a.a;
+						var choice = _v6.b.a;
 						return _Utils_Tuple2(
 							_Utils_update(
 								model,
@@ -24506,25 +24791,25 @@ var $author$project$Desktop$updateAvailable = F2(
 					A2(
 						$elm$core$Maybe$map,
 						function (caps) {
-							return A2($elm$core$List$member, 'snap', caps.ev);
+							return A2($elm$core$List$member, 'snap', caps.ew);
 						},
-						model.a.b.ds)))))) {
+						model.a.b.dt)))))) {
 					return _Utils_Tuple2(model, _List_Nil);
 				} else {
-					var _v6 = _Utils_Tuple2(model.x, model.a.b.ap);
-					if ((!_v6.a.$) && (!_v6.b.$)) {
-						var choice = _v6.a.a;
-						var geometry = _v6.b.a;
+					var _v7 = _Utils_Tuple2(model.x, model.a.b.aa);
+					if ((!_v7.a.$) && (!_v7.b.$)) {
+						var choice = _v7.a.a;
+						var geometry = _v7.b.a;
 						if (!A2($author$project$Snap$valid, geometry, choice)) {
 							return _Utils_Tuple2(model, _List_Nil);
 						} else {
-							var _v7 = _Utils_Tuple2(
+							var _v8 = _Utils_Tuple2(
 								$author$project$Snap$proposal(choice),
 								$elm$core$List$head(
 									A2(
 										$elm$core$List$filter,
 										function (family) {
-											return _Utils_eq(family.r, choice.fR) && family.dj;
+											return _Utils_eq(family.r, choice.fT) && family.dk;
 										},
 										A2(
 											$elm$core$List$concatMap,
@@ -24532,17 +24817,17 @@ var $author$project$Desktop$updateAvailable = F2(
 												return $.aG;
 											},
 											$author$project$TaskbarShell$groups(model.a)))));
-							if ((!_v7.a.$) && (!_v7.b.$)) {
-								var proposed = _v7.a.a;
-								var family = _v7.b.a;
-								var _v8 = A2(
+							if ((!_v8.a.$) && (!_v8.b.$)) {
+								var proposed = _v8.a.a;
+								var family = _v8.b.a;
+								var _v9 = A2(
 									$author$project$Desktop$chooseFamily,
 									family,
 									_Utils_update(
 										model,
 										{x: $elm$core$Maybe$Nothing}));
-								var next = _v8.a;
-								var effects = _v8.b;
+								var next = _v9.a;
+								var effects = _v9.b;
 								return _Utils_Tuple2(
 									_Utils_update(
 										next,
@@ -24597,8 +24882,8 @@ var $author$project$Desktop$updateAvailable = F2(
 					$elm$core$Maybe$Just(token))) {
 					return _Utils_Tuple2(model, _List_Nil);
 				} else {
-					var _v9 = token;
-					var request = _v9.b;
+					var _v10 = token;
+					var request = _v10.b;
 					return _Utils_Tuple2(
 						_Utils_update(
 							model,
@@ -24622,10 +24907,10 @@ var $author$project$Desktop$updateAvailable = F2(
 				if ((!model.a.b.j) || (model.a.b.j === 3)) {
 					return _Utils_Tuple2(model, _List_Nil);
 				} else {
-					var _v10 = A3($author$project$Shortcuts$receive, model.a.b.dk, snapshot, model.b8);
-					var shortcuts = _v10.a;
-					var route = _v10.b;
-					var failure = _v10.c;
+					var _v11 = A3($author$project$Shortcuts$receive, model.a.b.dl, snapshot, model.b8);
+					var shortcuts = _v11.a;
+					var route = _v11.b;
+					var failure = _v11.c;
 					var notice = ((!_Utils_eq(route, $elm$core$Maybe$Nothing)) && (!allowed)) ? $elm$core$Maybe$Just('Shell shortcut output is unavailable. Press the shortcut again.') : failure;
 					var priorNotice = ((!_Utils_eq(route, $elm$core$Maybe$Nothing)) && (allowed && A2(
 						$elm$core$List$member,
@@ -24639,28 +24924,28 @@ var $author$project$Desktop$updateAvailable = F2(
 							bI: 1,
 							b8: shortcuts
 						});
-					var _v11 = _Utils_Tuple2(
+					var _v12 = _Utils_Tuple2(
 						allowed ? route : $elm$core$Maybe$Nothing,
 						$author$project$Desktop$capture(next));
-					if ((!_v11.a.$) && (!_v11.b.$)) {
-						switch (_v11.a.a) {
+					if ((!_v12.a.$) && (!_v12.b.$)) {
+						switch (_v12.a.a) {
 							case 0:
-								var _v12 = _v11.a.a;
-								var stamp = _v11.b.a;
+								var _v13 = _v12.a.a;
+								var stamp = _v12.b.a;
 								return A2(
 									$author$project$Desktop$update,
 									$author$project$Desktop$OpenApplications(stamp),
 									next);
 							case 1:
-								var _v13 = _v11.a.a;
-								var stamp = _v11.b.a;
+								var _v14 = _v12.a.a;
+								var stamp = _v12.b.a;
 								return A2(
 									$author$project$Desktop$update,
 									$author$project$Desktop$OpenSystemMenu(stamp),
 									next);
 							default:
-								var _v14 = _v11.a.a;
-								var stamp = _v11.b.a;
+								var _v15 = _v12.a.a;
+								var stamp = _v12.b.a;
 								return A2(
 									$author$project$Desktop$update,
 									$author$project$Desktop$OpenNotifications(stamp),
@@ -24675,12 +24960,12 @@ var $author$project$Desktop$updateAvailable = F2(
 				if (_Utils_eq(scope, model.bj)) {
 					return _Utils_Tuple2(model, _List_Nil);
 				} else {
-					var _v15 = function () {
-						var _v16 = $author$project$MenuBridge$currentProvider(model.a.h);
-						if (_v16.$ === 1) {
+					var _v16 = function () {
+						var _v17 = $author$project$MenuBridge$currentProvider(model.a.h);
+						if (_v17.$ === 1) {
 							return _Utils_Tuple2(model, _List_Nil);
 						} else {
-							var provider = _v16.a;
+							var provider = _v17.a;
 							return A2(
 								$author$project$Desktop$windowBase,
 								$author$project$TaskbarShell$MenuEvent(
@@ -24689,8 +24974,8 @@ var $author$project$Desktop$updateAvailable = F2(
 								model);
 						}
 					}();
-					var retired = _v15.a;
-					var effects = _v15.b;
+					var retired = _v16.a;
+					var effects = _v16.b;
 					return _Utils_Tuple2(
 						$author$project$Desktop$retireSwitcher(
 							_Utils_update(
@@ -24717,21 +25002,21 @@ var $author$project$Desktop$updateAvailable = F2(
 								return _Utils_Tuple3(
 									protocol,
 									kind,
-									{dC: output, dI: provider});
+									{dD: output, dJ: provider});
 							}),
 						A2($elm$json$Json$Decode$field, 'surfaceProtocol', $elm$json$Json$Decode$int),
 						A2($elm$json$Json$Decode$field, 'kind', $elm$json$Json$Decode$string),
 						A2($elm$json$Json$Decode$field, 'outputId', positive),
 						A2($elm$json$Json$Decode$field, 'providerId', positive)));
-				var _v17 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
-				if (((!_v17.$) && (_v17.a.a === 2)) && (_v17.a.b === 'surface-owner')) {
-					var _v18 = _v17.a;
-					var owner = _v18.c;
+				var _v18 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
+				if (((!_v18.$) && (_v18.a.a === 2)) && (_v18.a.b === 'surface-owner')) {
+					var _v19 = _v18.a;
+					var owner = _v19.c;
 					if (model.b1) {
 						return _Utils_Tuple2(model, _List_Nil);
 					} else {
-						var _v19 = model.bj;
-						if (_v19.$ === 1) {
+						var _v20 = model.bj;
+						if (_v20.$ === 1) {
 							return _Utils_Tuple2(
 								_Utils_update(
 									model,
@@ -24740,16 +25025,16 @@ var $author$project$Desktop$updateAvailable = F2(
 									}),
 								_List_Nil);
 						} else {
-							var previous = _v19.a;
+							var previous = _v20.a;
 							if (_Utils_eq(previous, owner)) {
 								return _Utils_Tuple2(model, _List_Nil);
 							} else {
 								var retired = function () {
-									var _v20 = $author$project$MenuBridge$currentProvider(model.a.h);
-									if (_v20.$ === 1) {
+									var _v21 = $author$project$MenuBridge$currentProvider(model.a.h);
+									if (_v21.$ === 1) {
 										return model;
 									} else {
-										var provider = _v20.a;
+										var provider = _v21.a;
 										return A2(
 											$author$project$Desktop$windowBase,
 											$author$project$TaskbarShell$MenuEvent(
@@ -24780,31 +25065,31 @@ var $author$project$Desktop$updateAvailable = F2(
 					$elm$core$Maybe$Just(stamp))) || (!$author$project$Shell$available(model.a.b)))))) {
 					return _Utils_Tuple2(model, _List_Nil);
 				} else {
-					var _v21 = model.a.b._.as;
-					if (_v21.$ === 1) {
+					var _v22 = model.a.b._.at;
+					if (_v22.$ === 1) {
 						return _Utils_Tuple2(model, _List_Nil);
 					} else {
-						var observed = _v21.a;
-						var _v22 = model.bj;
-						if (_v22.$ === 1) {
+						var observed = _v22.a;
+						var _v23 = model.bj;
+						if (_v23.$ === 1) {
 							return _Utils_Tuple2(model, _List_Nil);
 						} else {
-							var owner = _v22.a;
-							var _v23 = A3(
+							var owner = _v23.a;
+							var _v24 = A3(
 								$author$project$NativeProvider$fromShell,
-								{e7: observed.P.c2, dC: owner.dC, dI: owner.dI},
+								{e9: observed.P.c3, dD: owner.dD, dJ: owner.dJ},
 								root,
 								model.a.b);
-							if (_v23.$ === 1) {
+							if (_v24.$ === 1) {
 								return _Utils_Tuple2(model, _List_Nil);
 							} else {
-								var provider = _v23.a;
-								var _v24 = A2(
+								var provider = _v24.a;
+								var _v25 = A2(
 									$author$project$Desktop$windowBase,
 									$author$project$TaskbarShell$OpenMenu(provider),
 									model);
-								var next = _v24.a;
-								var effects = _v24.b;
+								var next = _v25.a;
+								var effects = _v25.b;
 								return _Utils_eq(
 									$author$project$MenuBridge$menuSnapshot(next.a.h).aI,
 									$author$project$MenuBridge$menuSnapshot(model.a.h).aI) ? _Utils_Tuple2(model, _List_Nil) : _Utils_Tuple2(
@@ -24824,7 +25109,7 @@ var $author$project$Desktop$updateAvailable = F2(
 															$elm$core$Maybe$map,
 															function (group) {
 																return {
-																	dk: binding,
+																	dl: binding,
 																	bx: $author$project$Desktop$TaskbarGroup(group.a_),
 																	y: $elm$core$Maybe$Just(observed.P.y)
 																};
@@ -24842,11 +25127,11 @@ var $author$project$Desktop$updateAvailable = F2(
 																	},
 																	$author$project$TaskbarShell$groups(model.a))));
 													},
-													model.a.b.dk),
+													model.a.b.dl),
 												t: false,
 												D: false,
 												q: false,
-												m: false,
+												l: false,
 												u: $elm$core$Maybe$Nothing,
 												n: false,
 												L: false,
@@ -24870,14 +25155,14 @@ var $author$project$Desktop$updateAvailable = F2(
 					$elm$core$Maybe$Nothing))))) {
 					return _Utils_Tuple2(model, _List_Nil);
 				} else {
-					var _v25 = $author$project$UInt64$next(
+					var _v26 = $author$project$UInt64$next(
 						$author$project$Switcher$generation(model.i));
-					if (_v25.$ === 1) {
+					if (_v26.$ === 1) {
 						return _Utils_Tuple2(
 							$author$project$Desktop$retireSwitcher(model),
 							_List_Nil);
 					} else {
-						var generation = _v25.a;
+						var generation = _v26.a;
 						var base = A2(
 							$elm$core$Maybe$withDefault,
 							model,
@@ -24897,14 +25182,14 @@ var $author$project$Desktop$updateAvailable = F2(
 								return A2(
 									$elm$core$Maybe$andThen,
 									function (root) {
-										return A2($author$project$ActionProjection$rootOf, root, observed.eN);
+										return A2($author$project$ActionProjection$rootOf, root, observed.eP);
 									},
-									$author$project$ActionProjection$focused(observed.eN));
+									$author$project$ActionProjection$focused(observed.eP));
 							},
-							base.a.b._.as);
+							base.a.b._.at);
 						var windows = base.a;
-						var _v26 = A4($author$project$Switcher$step, generation, 1, direction, base.i);
-						var switcher = _v26.a;
+						var _v27 = A4($author$project$Switcher$step, generation, 1, direction, base.i);
+						var switcher = _v27.a;
 						var opened = $author$project$Desktop$advance(
 							_Utils_update(
 								base,
@@ -24915,11 +25200,11 @@ var $author$project$Desktop$updateAvailable = F2(
 									o: $elm$core$Maybe$Nothing,
 									w: false,
 									H: $elm$core$Maybe$Nothing,
-									ah: $elm$core$Maybe$Nothing,
+									aj: $elm$core$Maybe$Nothing,
 									t: false,
 									D: false,
 									q: false,
-									m: false,
+									l: false,
 									u: $elm$core$Maybe$Nothing,
 									n: false,
 									L: false,
@@ -24934,15 +25219,15 @@ var $author$project$Desktop$updateAvailable = F2(
 										windows,
 										{J: $elm$core$Maybe$Nothing})
 								}));
-						var _v27 = A2(
+						var _v28 = A2(
 							$author$project$Desktop$windowBase,
 							$author$project$TaskbarShell$Native($author$project$Shell$Refresh),
 							opened);
-						var refreshing = _v27.a;
-						var commands = _v27.b;
-						var _v28 = $author$project$Desktop$readSwitcherHistory(refreshing);
-						var next = _v28.a;
-						var history = _v28.b;
+						var refreshing = _v28.a;
+						var commands = _v28.b;
+						var _v29 = $author$project$Desktop$readSwitcherHistory(refreshing);
+						var next = _v29.a;
+						var history = _v29.b;
 						return _Utils_Tuple2(
 							next,
 							_Utils_ap(commands, history));
@@ -24956,7 +25241,7 @@ var $author$project$Desktop$updateAvailable = F2(
 					$elm$core$Maybe$Just(stamp))) || (!$author$project$Desktop$switcherOpen(model))) {
 					return _Utils_Tuple2(model, _List_Nil);
 				} else {
-					var _v29 = (!_Utils_eq(model.ah, $elm$core$Maybe$Nothing)) ? _Utils_Tuple2(
+					var _v30 = (!_Utils_eq(model.aj, $elm$core$Maybe$Nothing)) ? _Utils_Tuple2(
 						A2($author$project$Switcher$navigate, direction, model.i),
 						$elm$core$Maybe$Nothing) : A4(
 						$author$project$Switcher$step,
@@ -24964,8 +25249,8 @@ var $author$project$Desktop$updateAvailable = F2(
 						$author$project$Switcher$lastStep(model.i) + 1,
 						direction,
 						model.i);
-					var switcher = _v29.a;
-					var chosen = _v29.b;
+					var switcher = _v30.a;
+					var chosen = _v30.b;
 					var next = $author$project$Desktop$advance(
 						_Utils_update(
 							model,
@@ -25000,12 +25285,12 @@ var $author$project$Desktop$updateAvailable = F2(
 							$author$project$Switcher$generation(model.i),
 							root,
 							model.i);
-						var _v31 = A2(
+						var _v32 = A2(
 							$author$project$Switcher$commit,
 							$author$project$Switcher$generation(switcher),
 							switcher);
-						var resolved = _v31.a;
-						var selected = _v31.b;
+						var resolved = _v32.a;
+						var selected = _v32.b;
 						if (!selected.$) {
 							var family = selected.a;
 							return A2(
@@ -25027,12 +25312,12 @@ var $author$project$Desktop$updateAvailable = F2(
 					$elm$core$Maybe$Just(stamp))) || (!$author$project$Desktop$switcherOpen(model))) {
 					return _Utils_Tuple2(model, _List_Nil);
 				} else {
-					var _v33 = A2(
+					var _v34 = A2(
 						$author$project$Switcher$commit,
 						$author$project$Switcher$generation(model.i),
 						model.i);
-					var switcher = _v33.a;
-					var selected = _v33.b;
+					var switcher = _v34.a;
+					var selected = _v34.b;
 					if (!selected.$) {
 						var family = selected.a;
 						return A2(
@@ -25055,22 +25340,22 @@ var $author$project$Desktop$updateAvailable = F2(
 				} else {
 					var closed = $author$project$Desktop$advance(
 						$author$project$Desktop$retireSwitcher(model));
-					var _v35 = _Utils_Tuple3(
-						model.ah,
-						model.a.b.dk,
-						$author$project$UInt64$next(model.c1));
-					if (((!_v35.a.$) && (!_v35.b.$)) && (!_v35.c.$)) {
-						var chord = _v35.a.a;
-						var binding = _v35.b.a;
-						var request = _v35.c.a;
-						var _v36 = A2(
+					var _v36 = _Utils_Tuple3(
+						model.aj,
+						model.a.b.dl,
+						$author$project$UInt64$next(model.c2));
+					if (((!_v36.a.$) && (!_v36.b.$)) && (!_v36.c.$)) {
+						var chord = _v36.a.a;
+						var binding = _v36.b.a;
+						var request = _v36.c.a;
+						var _v37 = A2(
 							$author$project$Desktop$windowBase,
 							$author$project$TaskbarShell$Native($author$project$Shell$Refresh),
 							_Utils_update(
 								closed,
-								{c1: request}));
-						var next = _v36.a;
-						var reads = _v36.b;
+								{c2: request}));
+						var next = _v37.a;
+						var reads = _v37.b;
 						return _Utils_Tuple2(
 							next,
 							A2(
@@ -25095,7 +25380,7 @@ var $author$project$Desktop$updateAvailable = F2(
 												_Utils_Tuple2(
 												'chord',
 												$elm$json$Json$Encode$string(
-													$author$project$UInt64$string(chord.fh)))
+													$author$project$UInt64$string(chord.fj)))
 											]))),
 								reads));
 					} else {
@@ -25109,30 +25394,30 @@ var $author$project$Desktop$updateAvailable = F2(
 				return _Utils_Tuple2(model, _List_Nil);
 			case 1:
 				var value = message.a;
-				var _v37 = A2($author$project$Desktop$window, value, model);
-				var next = _v37.a;
-				var effects = _v37.b;
-				var _v38 = $author$project$Desktop$syncSwitcher(next);
-				var synced = _v38.a;
-				var commands = _v38.b;
+				var _v38 = A2($author$project$Desktop$window, value, model);
+				var next = _v38.a;
+				var effects = _v38.b;
+				var _v39 = $author$project$Desktop$syncSwitcher(next);
+				var synced = _v39.a;
+				var commands = _v39.b;
 				return ((!_Utils_eq(next.a.J, $elm$core$Maybe$Nothing)) && (!_Utils_eq(next.a.J, model.a.J))) ? _Utils_Tuple2(
 					$author$project$Desktop$retireSwitcher(
 						_Utils_update(
 							next,
-							{A: $elm$core$Maybe$Nothing, p: false, B: false, o: $elm$core$Maybe$Nothing, w: false, H: $elm$core$Maybe$Nothing, t: false, D: false, q: false, m: false, u: $elm$core$Maybe$Nothing, n: false, L: false, x: $elm$core$Maybe$Nothing, s: $elm$core$Maybe$Nothing, v: false, E: false})),
+							{A: $elm$core$Maybe$Nothing, p: false, B: false, o: $elm$core$Maybe$Nothing, w: false, H: $elm$core$Maybe$Nothing, t: false, D: false, q: false, l: false, u: $elm$core$Maybe$Nothing, n: false, L: false, x: $elm$core$Maybe$Nothing, s: $elm$core$Maybe$Nothing, v: false, E: false})),
 					effects) : _Utils_Tuple2(
 					synced,
 					_Utils_ap(effects, commands));
 			case 11:
 				var raw = message.a;
-				var _v39 = A2(
+				var _v40 = A2(
 					$elm$json$Json$Decode$decodeValue,
 					A2($elm$json$Json$Decode$field, 'kind', $elm$json$Json$Decode$string),
 					raw);
-				_v39$24:
+				_v40$24:
 				while (true) {
-					if (!_v39.$) {
-						switch (_v39.a) {
+					if (!_v40.$) {
+						switch (_v40.a) {
 							case 'motion-preferences':
 								var decoder = A2(
 									$author$project$Desktop$strict,
@@ -25141,8 +25426,8 @@ var $author$project$Desktop$updateAvailable = F2(
 									A5(
 										$elm$json$Json$Decode$map4,
 										F4(
-											function (_v41, binding, request, snapshot) {
-												return {dk: binding, c1: request, c: snapshot};
+											function (_v42, binding, request, snapshot) {
+												return {dl: binding, c2: request, c: snapshot};
 											}),
 										$author$project$Desktop$version,
 										A2($elm$json$Json$Decode$field, 'binding', $author$project$Binding$decoder),
@@ -25151,16 +25436,16 @@ var $author$project$Desktop$updateAvailable = F2(
 											$elm$json$Json$Decode$field,
 											'snapshot',
 											$elm$json$Json$Decode$nullable($author$project$MotionPreferences$decoder))));
-								var _v40 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
-								if (_v40.$ === 1) {
+								var _v41 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
+								if (_v41.$ === 1) {
 									return _Utils_Tuple2(model, _List_Nil);
 								} else {
-									var receipt = _v40.a;
+									var receipt = _v41.a;
 									if ((!_Utils_eq(
-										model.a.b.dk,
-										$elm$core$Maybe$Just(receipt.dk))) || (!_Utils_eq(
+										model.a.b.dl,
+										$elm$core$Maybe$Just(receipt.dl))) || (!_Utils_eq(
 										model.aK,
-										$elm$core$Maybe$Just(receipt.c1)))) {
+										$elm$core$Maybe$Just(receipt.c2)))) {
 										return _Utils_Tuple2(model, _List_Nil);
 									} else {
 										var motion = model.I;
@@ -25173,8 +25458,8 @@ var $author$project$Desktop$updateAvailable = F2(
 														F: A7(
 															$author$project$AdapterNotice$failedRead,
 															6,
-															receipt.dk,
-															receipt.c1,
+															receipt.dl,
+															receipt.c2,
 															$elm$core$Maybe$Nothing,
 															$elm$core$Maybe$Nothing,
 															_Utils_eq(receipt.c, $elm$core$Maybe$Nothing),
@@ -25195,8 +25480,8 @@ var $author$project$Desktop$updateAvailable = F2(
 									A6(
 										$elm$json$Json$Decode$map5,
 										F5(
-											function (_v43, binding, request, status, snapshot) {
-												return {dk: binding, c1: request, c: snapshot, W: status};
+											function (_v44, binding, request, status, snapshot) {
+												return {dl: binding, c2: request, c: snapshot, W: status};
 											}),
 										$author$project$Desktop$version,
 										A2($elm$json$Json$Decode$field, 'binding', $author$project$Binding$decoder),
@@ -25206,18 +25491,18 @@ var $author$project$Desktop$updateAvailable = F2(
 											$elm$json$Json$Decode$field,
 											'snapshot',
 											$elm$json$Json$Decode$nullable($author$project$MotionPreferences$decoder))));
-								var _v42 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
-								if (_v42.$ === 1) {
+								var _v43 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
+								if (_v43.$ === 1) {
 									return _Utils_Tuple2(model, _List_Nil);
 								} else {
-									var receipt = _v42.a;
+									var receipt = _v43.a;
 									if (!_Utils_eq(
-										model.a.b.dk,
-										$elm$core$Maybe$Just(receipt.dk))) {
+										model.a.b.dl,
+										$elm$core$Maybe$Just(receipt.dl))) {
 										return _Utils_Tuple2(model, _List_Nil);
 									} else {
 										var motion = model.I;
-										var preference = A4($author$project$MotionPreferences$receive, receipt.c1, receipt.W, receipt.c, motion.a1);
+										var preference = A4($author$project$MotionPreferences$receive, receipt.c2, receipt.W, receipt.c, motion.a1);
 										return _Utils_eq(preference, motion.a1) ? _Utils_Tuple2(model, _List_Nil) : _Utils_Tuple2(
 											$author$project$Desktop$advance(
 												_Utils_update(
@@ -25231,11 +25516,11 @@ var $author$project$Desktop$updateAvailable = F2(
 									}
 								}
 							case 'host-motion-preference':
-								var _v44 = A2($elm$json$Json$Decode$decodeValue, $author$project$Motion$decoder, raw);
-								if (_v44.$ === 1) {
+								var _v45 = A2($elm$json$Json$Decode$decodeValue, $author$project$Motion$decoder, raw);
+								if (_v45.$ === 1) {
 									return _Utils_Tuple2(model, _List_Nil);
 								} else {
-									var observation = _v44.a;
+									var observation = _v45.a;
 									var motion = A2($author$project$Motion$observe, observation, model.I);
 									return _Utils_eq(motion, model.I) ? _Utils_Tuple2(model, _List_Nil) : _Utils_Tuple2(
 										$author$project$Desktop$advance(
@@ -25245,12 +25530,12 @@ var $author$project$Desktop$updateAvailable = F2(
 										_List_Nil);
 								}
 							case 'motion-profile':
-								var _v45 = A2($elm$json$Json$Decode$decodeValue, $author$project$Motion$receiptDecoder, raw);
-								if (_v45.$ === 1) {
+								var _v46 = A2($elm$json$Json$Decode$decodeValue, $author$project$Motion$receiptDecoder, raw);
+								if (_v46.$ === 1) {
 									return _Utils_Tuple2(model, _List_Nil);
 								} else {
-									var receipt = _v45.a;
-									var motion = A3($author$project$Motion$receive, model.a.b.dk, receipt, model.I);
+									var receipt = _v46.a;
+									var motion = A3($author$project$Motion$receive, model.a.b.dl, receipt, model.I);
 									return _Utils_eq(motion, model.I) ? _Utils_Tuple2(model, _List_Nil) : _Utils_Tuple2(
 										$author$project$Desktop$advance(
 											_Utils_update(
@@ -25259,19 +25544,19 @@ var $author$project$Desktop$updateAvailable = F2(
 										_List_Nil);
 								}
 							case 'pointer-ownership':
-								var _v46 = A2($elm$json$Json$Decode$decodeValue, $author$project$PointerOwnership$decoder, raw);
-								if (_v46.$ === 1) {
+								var _v47 = A2($elm$json$Json$Decode$decodeValue, $author$project$PointerOwnership$decoder, raw);
+								if (_v47.$ === 1) {
 									return _Utils_Tuple2(model, _List_Nil);
 								} else {
-									var snapshot = _v46.a;
-									var pointer = A3($author$project$PointerOwnership$receive, model.a.b.dk, snapshot, model.bH);
+									var snapshot = _v47.a;
+									var pointer = A3($author$project$PointerOwnership$receive, model.a.b.dl, snapshot, model.bH);
 									var next = _Utils_update(
 										model,
 										{bH: pointer});
 									if (_Utils_eq(pointer, model.bH)) {
 										return _Utils_Tuple2(model, _List_Nil);
 									} else {
-										if (!A2($author$project$PointerOwnership$blocked, model.a.b.dk, pointer)) {
+										if (!A2($author$project$PointerOwnership$blocked, model.a.b.dl, pointer)) {
 											return _Utils_Tuple2(next, _List_Nil);
 										} else {
 											var windows = next.a;
@@ -25289,7 +25574,7 @@ var $author$project$Desktop$updateAvailable = F2(
 															t: false,
 															D: false,
 															q: false,
-															m: false,
+															l: false,
 															u: $elm$core$Maybe$Nothing,
 															n: false,
 															L: false,
@@ -25309,11 +25594,11 @@ var $author$project$Desktop$updateAvailable = F2(
 									}
 								}
 							case 'shell-shortcuts':
-								var _v47 = A2($elm$json$Json$Decode$decodeValue, $author$project$Shortcuts$decoder, raw);
-								if (_v47.$ === 1) {
+								var _v48 = A2($elm$json$Json$Decode$decodeValue, $author$project$Shortcuts$decoder, raw);
+								if (_v48.$ === 1) {
 									return _Utils_Tuple2(model, _List_Nil);
 								} else {
-									var snapshot = _v47.a;
+									var snapshot = _v48.a;
 									return A2(
 										$author$project$Desktop$update,
 										A2($author$project$Desktop$ScopedShortcut, snapshot, true),
@@ -25327,19 +25612,19 @@ var $author$project$Desktop$updateAvailable = F2(
 									A5(
 										$elm$json$Json$Decode$map4,
 										F4(
-											function (_v49, binding, request, chord) {
-												return {dk: binding, aV: chord, c1: request};
+											function (_v50, binding, request, chord) {
+												return {dl: binding, aV: chord, c2: request};
 											}),
 										$author$project$Desktop$version,
 										A2($elm$json$Json$Decode$field, 'binding', $author$project$Binding$decoder),
 										A2($elm$json$Json$Decode$field, 'requestId', $author$project$UInt64$decoder),
 										A2($elm$json$Json$Decode$field, 'chord', $author$project$Desktop$nativeChordDecoder)));
-								var _v48 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
-								if (!_v48.$) {
-									var receipt = _v48.a;
+								var _v49 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
+								if (!_v49.$) {
+									var receipt = _v49.a;
 									return ((!_Utils_eq(
-										model.a.b.dk,
-										$elm$core$Maybe$Just(receipt.dk))) || ((!model.a.b.j) || (model.a.b.j === 3))) ? _Utils_Tuple2(model, _List_Nil) : A2($author$project$Desktop$receiveChord, receipt.aV, model);
+										model.a.b.dl,
+										$elm$core$Maybe$Just(receipt.dl))) || ((!model.a.b.j) || (model.a.b.j === 3))) ? _Utils_Tuple2(model, _List_Nil) : A2($author$project$Desktop$receiveChord, receipt.aV, model);
 								} else {
 									return _Utils_Tuple2(model, _List_Nil);
 								}
@@ -25374,7 +25659,7 @@ var $author$project$Desktop$updateAvailable = F2(
 										$elm$json$Json$Decode$map4,
 										F4(
 											function (lifetime, epoch, output, revision) {
-												return {fe: epoch, fp: lifetime, y: output, c2: revision};
+												return {fg: epoch, fr: lifetime, y: output, c3: revision};
 											}),
 										A2($elm$json$Json$Decode$field, 'lifetime', positive),
 										A2($elm$json$Json$Decode$field, 'epoch', positive),
@@ -25387,22 +25672,22 @@ var $author$project$Desktop$updateAvailable = F2(
 									A6(
 										$elm$json$Json$Decode$map5,
 										F5(
-											function (_v51, binding, request, scope, rows) {
-												return {dk: binding, P: scope, c1: request, aP: rows};
+											function (_v52, binding, request, scope, rows) {
+												return {dl: binding, P: scope, c2: request, aP: rows};
 											}),
 										$author$project$Desktop$version,
 										A2($elm$json$Json$Decode$field, 'binding', $author$project$Binding$decoder),
 										A2($elm$json$Json$Decode$field, 'requestId', positive),
 										A2($elm$json$Json$Decode$field, 'context', context),
 										A2($elm$json$Json$Decode$field, 'roots', roots)));
-								var _v50 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
-								if (!_v50.$) {
-									var receipt = _v50.a;
+								var _v51 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
+								if (!_v51.$) {
+									var receipt = _v51.a;
 									return ((!$author$project$Desktop$switcherOpen(model)) || ((!_Utils_eq(
-										model.a.b.dk,
-										$elm$core$Maybe$Just(receipt.dk))) || (!_Utils_eq(
+										model.a.b.dl,
+										$elm$core$Maybe$Just(receipt.dl))) || (!_Utils_eq(
 										model.aR,
-										$elm$core$Maybe$Just(receipt.c1))))) ? _Utils_Tuple2(model, _List_Nil) : $author$project$Desktop$syncSwitcher(
+										$elm$core$Maybe$Just(receipt.c2))))) ? _Utils_Tuple2(model, _List_Nil) : $author$project$Desktop$syncSwitcher(
 										_Utils_update(
 											model,
 											{
@@ -25421,27 +25706,27 @@ var $author$project$Desktop$updateAvailable = F2(
 									A5(
 										$elm$json$Json$Decode$map4,
 										F4(
-											function (_v53, binding, request, snapshot) {
-												return {dk: binding, c1: request, c: snapshot};
+											function (_v54, binding, request, snapshot) {
+												return {dl: binding, c2: request, c: snapshot};
 											}),
 										$author$project$Desktop$version,
 										A2($elm$json$Json$Decode$field, 'binding', $author$project$Binding$decoder),
 										A2($elm$json$Json$Decode$field, 'requestId', $author$project$UInt64$decoder),
 										A2($elm$json$Json$Decode$field, 'snapshot', $author$project$JumpList$decoder)));
-								var _v52 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
-								if (!_v52.$) {
-									var result = _v52.a;
+								var _v53 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
+								if (!_v53.$) {
+									var result = _v53.a;
 									if ((!_Utils_eq(
-										model.a.b.dk,
-										$elm$core$Maybe$Just(result.dk))) || ((!_Utils_eq(
+										model.a.b.dl,
+										$elm$core$Maybe$Just(result.dl))) || ((!_Utils_eq(
 										model.aZ,
-										$elm$core$Maybe$Just(result.c1))) || ((!_Utils_eq(
+										$elm$core$Maybe$Just(result.c2))) || ((!_Utils_eq(
 										model.o,
-										$elm$core$Maybe$Just(result.c.d2))) || (!model.a.b.j)))) {
+										$elm$core$Maybe$Just(result.c.d3))) || (!model.a.b.j)))) {
 										return _Utils_Tuple2(model, _List_Nil);
 									} else {
-										var reconciled = A2($author$project$JumpList$reconcile, result.c, model.ar);
-										var failed = (!result.c.dj) && _Utils_eq(
+										var reconciled = A2($author$project$JumpList$reconcile, result.c, model.as);
+										var failed = (!result.c.dk) && _Utils_eq(
 											reconciled.c,
 											$elm$core$Maybe$Just(result.c));
 										var next = $author$project$Desktop$advance(
@@ -25451,14 +25736,14 @@ var $author$project$Desktop$updateAvailable = F2(
 													F: A7(
 														$author$project$AdapterNotice$failedRead,
 														3,
-														result.dk,
-														result.c1,
-														$elm$core$Maybe$Just(result.c.c7),
-														$elm$core$Maybe$Just(result.c.c2),
+														result.dl,
+														result.c2,
+														$elm$core$Maybe$Just(result.c.c8),
+														$elm$core$Maybe$Just(result.c.c3),
 														failed,
 														model.F),
 													aZ: $elm$core$Maybe$Nothing,
-													ar: reconciled,
+													as: reconciled,
 													w: false
 												}));
 										return _Utils_Tuple2(
@@ -25480,28 +25765,28 @@ var $author$project$Desktop$updateAvailable = F2(
 									A6(
 										$elm$json$Json$Decode$map5,
 										F5(
-											function (_v55, binding, request, status, snapshot) {
-												return {dk: binding, c1: request, c: snapshot, W: status};
+											function (_v56, binding, request, status, snapshot) {
+												return {dl: binding, c2: request, c: snapshot, W: status};
 											}),
 										$author$project$Desktop$version,
 										A2($elm$json$Json$Decode$field, 'binding', $author$project$Binding$decoder),
 										A2($elm$json$Json$Decode$field, 'requestId', $author$project$UInt64$decoder),
 										A2($elm$json$Json$Decode$field, 'status', $elm$json$Json$Decode$string),
 										A2($elm$json$Json$Decode$field, 'snapshot', $author$project$JumpList$decoder)));
-								var _v54 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
-								if (!_v54.$) {
-									var result = _v54.a;
+								var _v55 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
+								if (!_v55.$) {
+									var result = _v55.a;
 									if ((!_Utils_eq(
-										model.a.b.dk,
-										$elm$core$Maybe$Just(result.dk))) || (!model.a.b.j)) {
+										model.a.b.dl,
+										$elm$core$Maybe$Just(result.dl))) || (!model.a.b.j)) {
 										return _Utils_Tuple2(model, _List_Nil);
 									} else {
-										var jumpList = A4($author$project$JumpList$receive, result.c1, result.W, result.c, model.ar);
-										return _Utils_eq(jumpList, model.ar) ? _Utils_Tuple2(model, _List_Nil) : _Utils_Tuple2(
+										var jumpList = A4($author$project$JumpList$receive, result.c2, result.W, result.c, model.as);
+										return _Utils_eq(jumpList, model.as) ? _Utils_Tuple2(model, _List_Nil) : _Utils_Tuple2(
 											$author$project$Desktop$advance(
 												_Utils_update(
 													model,
-													{ar: jumpList})),
+													{as: jumpList})),
 											_List_Nil);
 									}
 								} else {
@@ -25515,25 +25800,25 @@ var $author$project$Desktop$updateAvailable = F2(
 									A5(
 										$elm$json$Json$Decode$map4,
 										F4(
-											function (_v57, binding, request, snapshot) {
-												return {dk: binding, c1: request, c: snapshot};
+											function (_v58, binding, request, snapshot) {
+												return {dl: binding, c2: request, c: snapshot};
 											}),
 										$author$project$Desktop$version,
 										A2($elm$json$Json$Decode$field, 'binding', $author$project$Binding$decoder),
 										A2($elm$json$Json$Decode$field, 'requestId', $author$project$UInt64$decoder),
 										A2($elm$json$Json$Decode$field, 'snapshot', $author$project$Files$decoder)));
-								var _v56 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
-								if (!_v56.$) {
-									var result = _v56.a;
+								var _v57 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
+								if (!_v57.$) {
+									var result = _v57.a;
 									if ((!_Utils_eq(
-										model.a.b.dk,
-										$elm$core$Maybe$Just(result.dk))) || ((!_Utils_eq(
+										model.a.b.dl,
+										$elm$core$Maybe$Just(result.dl))) || ((!_Utils_eq(
 										model.aW,
-										$elm$core$Maybe$Just(result.c1))) || (!model.a.b.j))) {
+										$elm$core$Maybe$Just(result.c2))) || (!model.a.b.j))) {
 										return _Utils_Tuple2(model, _List_Nil);
 									} else {
 										var reconciled = A2($author$project$Files$reconcile, result.c, model.T);
-										var failed = (!result.c.dj) && _Utils_eq(
+										var failed = (!result.c.dk) && _Utils_eq(
 											reconciled.c,
 											$elm$core$Maybe$Just(result.c));
 										var next = $author$project$Desktop$advance(
@@ -25543,10 +25828,10 @@ var $author$project$Desktop$updateAvailable = F2(
 													F: A7(
 														$author$project$AdapterNotice$failedRead,
 														2,
-														result.dk,
-														result.c1,
-														$elm$core$Maybe$Just(result.c.c7),
-														$elm$core$Maybe$Just(result.c.c2),
+														result.dl,
+														result.c2,
+														$elm$core$Maybe$Just(result.c.c8),
+														$elm$core$Maybe$Just(result.c.c3),
 														failed,
 														model.F),
 													T: reconciled,
@@ -25572,23 +25857,23 @@ var $author$project$Desktop$updateAvailable = F2(
 									A6(
 										$elm$json$Json$Decode$map5,
 										F5(
-											function (_v59, binding, request, status, snapshot) {
-												return {dk: binding, c1: request, c: snapshot, W: status};
+											function (_v60, binding, request, status, snapshot) {
+												return {dl: binding, c2: request, c: snapshot, W: status};
 											}),
 										$author$project$Desktop$version,
 										A2($elm$json$Json$Decode$field, 'binding', $author$project$Binding$decoder),
 										A2($elm$json$Json$Decode$field, 'requestId', $author$project$UInt64$decoder),
 										A2($elm$json$Json$Decode$field, 'status', $elm$json$Json$Decode$string),
 										A2($elm$json$Json$Decode$field, 'snapshot', $author$project$Files$decoder)));
-								var _v58 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
-								if (!_v58.$) {
-									var result = _v58.a;
+								var _v59 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
+								if (!_v59.$) {
+									var result = _v59.a;
 									if ((!_Utils_eq(
-										model.a.b.dk,
-										$elm$core$Maybe$Just(result.dk))) || (!model.a.b.j)) {
+										model.a.b.dl,
+										$elm$core$Maybe$Just(result.dl))) || (!model.a.b.j)) {
 										return _Utils_Tuple2(model, _List_Nil);
 									} else {
-										var files = A4($author$project$Files$receive, result.c1, result.W, result.c, model.T);
+										var files = A4($author$project$Files$receive, result.c2, result.W, result.c, model.T);
 										return _Utils_eq(files, model.T) ? _Utils_Tuple2(model, _List_Nil) : _Utils_Tuple2(
 											$author$project$Desktop$advance(
 												_Utils_update(
@@ -25607,25 +25892,25 @@ var $author$project$Desktop$updateAvailable = F2(
 									A5(
 										$elm$json$Json$Decode$map4,
 										F4(
-											function (_v61, binding, request, snapshot) {
-												return {dk: binding, c1: request, c: snapshot};
+											function (_v62, binding, request, snapshot) {
+												return {dl: binding, c2: request, c: snapshot};
 											}),
 										$author$project$Desktop$version,
 										A2($elm$json$Json$Decode$field, 'binding', $author$project$Binding$decoder),
 										A2($elm$json$Json$Decode$field, 'requestId', $author$project$UInt64$decoder),
 										A2($elm$json$Json$Decode$field, 'snapshot', $author$project$SystemMenu$decoder)));
-								var _v60 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
-								if (!_v60.$) {
-									var receipt = _v60.a;
+								var _v61 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
+								if (!_v61.$) {
+									var receipt = _v61.a;
 									if ((!_Utils_eq(
-										model.a.b.dk,
-										$elm$core$Maybe$Just(receipt.dk))) || (!_Utils_eq(
+										model.a.b.dl,
+										$elm$core$Maybe$Just(receipt.dl))) || (!_Utils_eq(
 										model.aT,
-										$elm$core$Maybe$Just(receipt.c1)))) {
+										$elm$core$Maybe$Just(receipt.c2)))) {
 										return _Utils_Tuple2(model, _List_Nil);
 									} else {
-										var reconciled = A2($author$project$SystemMenu$reconcile, receipt.c, model.ak);
-										var failed = (_Utils_eq(receipt.c.fV, $elm$core$Maybe$Nothing) && (_Utils_eq(receipt.c.fs, $elm$core$Maybe$Nothing) && (_Utils_eq(receipt.c.fE, $elm$core$Maybe$Nothing) && _Utils_eq(receipt.c.fO, $elm$core$Maybe$Nothing)))) && _Utils_eq(
+										var reconciled = A2($author$project$SystemMenu$reconcile, receipt.c, model.am);
+										var failed = (_Utils_eq(receipt.c.fX, $elm$core$Maybe$Nothing) && (_Utils_eq(receipt.c.fu, $elm$core$Maybe$Nothing) && (_Utils_eq(receipt.c.fG, $elm$core$Maybe$Nothing) && _Utils_eq(receipt.c.fQ, $elm$core$Maybe$Nothing)))) && _Utils_eq(
 											reconciled.c,
 											$elm$core$Maybe$Just(receipt.c));
 										var next = $author$project$Desktop$advance(
@@ -25635,13 +25920,13 @@ var $author$project$Desktop$updateAvailable = F2(
 													F: A7(
 														$author$project$AdapterNotice$failedRead,
 														4,
-														receipt.dk,
-														receipt.c1,
-														$elm$core$Maybe$Just(receipt.c.c7),
-														$elm$core$Maybe$Just(receipt.c.c2),
+														receipt.dl,
+														receipt.c2,
+														$elm$core$Maybe$Just(receipt.c.c8),
+														$elm$core$Maybe$Just(receipt.c.c3),
 														failed,
 														model.F),
-													ak: reconciled,
+													am: reconciled,
 													s: $elm$core$Maybe$Nothing,
 													aT: $elm$core$Maybe$Nothing,
 													E: false
@@ -25665,28 +25950,28 @@ var $author$project$Desktop$updateAvailable = F2(
 									A6(
 										$elm$json$Json$Decode$map5,
 										F5(
-											function (_v63, binding, request, status, snapshot) {
-												return {dk: binding, c1: request, c: snapshot, W: status};
+											function (_v64, binding, request, status, snapshot) {
+												return {dl: binding, c2: request, c: snapshot, W: status};
 											}),
 										$author$project$Desktop$version,
 										A2($elm$json$Json$Decode$field, 'binding', $author$project$Binding$decoder),
 										A2($elm$json$Json$Decode$field, 'requestId', $author$project$UInt64$decoder),
 										A2($elm$json$Json$Decode$field, 'status', $elm$json$Json$Decode$string),
 										A2($elm$json$Json$Decode$field, 'snapshot', $author$project$SystemMenu$decoder)));
-								var _v62 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
-								if (!_v62.$) {
-									var receipt = _v62.a;
+								var _v63 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
+								if (!_v63.$) {
+									var receipt = _v63.a;
 									if (!_Utils_eq(
-										model.a.b.dk,
-										$elm$core$Maybe$Just(receipt.dk))) {
+										model.a.b.dl,
+										$elm$core$Maybe$Just(receipt.dl))) {
 										return _Utils_Tuple2(model, _List_Nil);
 									} else {
-										var menu = A4($author$project$SystemMenu$receive, receipt.c1, receipt.W, receipt.c, model.ak);
-										return _Utils_eq(menu, model.ak) ? _Utils_Tuple2(model, _List_Nil) : _Utils_Tuple2(
+										var menu = A4($author$project$SystemMenu$receive, receipt.c2, receipt.W, receipt.c, model.am);
+										return _Utils_eq(menu, model.am) ? _Utils_Tuple2(model, _List_Nil) : _Utils_Tuple2(
 											$author$project$Desktop$advance(
 												_Utils_update(
 													model,
-													{ak: menu})),
+													{am: menu})),
 											_List_Nil);
 									}
 								} else {
@@ -25700,25 +25985,25 @@ var $author$project$Desktop$updateAvailable = F2(
 									A5(
 										$elm$json$Json$Decode$map4,
 										F4(
-											function (_v65, binding, request, snapshot) {
-												return {dk: binding, c1: request, c: snapshot};
+											function (_v66, binding, request, snapshot) {
+												return {dl: binding, c2: request, c: snapshot};
 											}),
 										$author$project$Desktop$version,
 										A2($elm$json$Json$Decode$field, 'binding', $author$project$Binding$decoder),
 										A2($elm$json$Json$Decode$field, 'requestId', $author$project$UInt64$decoder),
 										A2($elm$json$Json$Decode$field, 'snapshot', $author$project$Notifications$decoder)));
-								var _v64 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
-								if (!_v64.$) {
-									var receipt = _v64.a;
+								var _v65 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
+								if (!_v65.$) {
+									var receipt = _v65.a;
 									if ((!_Utils_eq(
-										model.a.b.dk,
-										$elm$core$Maybe$Just(receipt.dk))) || (!_Utils_eq(
+										model.a.b.dl,
+										$elm$core$Maybe$Just(receipt.dl))) || (!_Utils_eq(
 										model.a0,
-										$elm$core$Maybe$Just(receipt.c1)))) {
+										$elm$core$Maybe$Just(receipt.c2)))) {
 										return _Utils_Tuple2(model, _List_Nil);
 									} else {
 										var reconciled = A2($author$project$Notifications$reconcile, receipt.c, model.C);
-										var failed = (!receipt.c.dj) && _Utils_eq(
+										var failed = (!receipt.c.dk) && _Utils_eq(
 											reconciled.c,
 											$elm$core$Maybe$Just(receipt.c));
 										var next = $author$project$Desktop$advance(
@@ -25728,10 +26013,10 @@ var $author$project$Desktop$updateAvailable = F2(
 													F: A7(
 														$author$project$AdapterNotice$failedRead,
 														1,
-														receipt.dk,
-														receipt.c1,
-														$elm$core$Maybe$Just(receipt.c.c7),
-														$elm$core$Maybe$Just(receipt.c.c2),
+														receipt.dl,
+														receipt.c2,
+														$elm$core$Maybe$Just(receipt.c.c8),
+														$elm$core$Maybe$Just(receipt.c.c3),
 														failed,
 														model.F),
 													C: reconciled,
@@ -25757,18 +26042,18 @@ var $author$project$Desktop$updateAvailable = F2(
 									A4(
 										$elm$json$Json$Decode$map3,
 										F3(
-											function (_v67, binding, snapshot) {
-												return {dk: binding, c: snapshot};
+											function (_v68, binding, snapshot) {
+												return {dl: binding, c: snapshot};
 											}),
 										$author$project$Desktop$version,
 										A2($elm$json$Json$Decode$field, 'binding', $author$project$Binding$decoder),
 										A2($elm$json$Json$Decode$field, 'snapshot', $author$project$Notifications$decoder)));
-								var _v66 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
-								if (!_v66.$) {
-									var receipt = _v66.a;
+								var _v67 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
+								if (!_v67.$) {
+									var receipt = _v67.a;
 									if ((!_Utils_eq(
-										model.a.b.dk,
-										$elm$core$Maybe$Just(receipt.dk))) || (!model.a.b.j)) {
+										model.a.b.dl,
+										$elm$core$Maybe$Just(receipt.dl))) || (!model.a.b.j)) {
 										return _Utils_Tuple2(model, _List_Nil);
 									} else {
 										var notifications = A2($author$project$Notifications$observe, receipt.c, model.C);
@@ -25813,8 +26098,8 @@ var $author$project$Desktop$updateAvailable = F2(
 									A7(
 										$elm$json$Json$Decode$map6,
 										F6(
-											function (_v69, binding, request, status, reason, snapshot) {
-												return {dk: binding, eH: reason, c1: request, c: snapshot, W: status};
+											function (_v70, binding, request, status, reason, snapshot) {
+												return {dl: binding, eI: reason, c2: request, c: snapshot, W: status};
 											}),
 										$author$project$Desktop$version,
 										A2($elm$json$Json$Decode$field, 'binding', $author$project$Binding$decoder),
@@ -25822,15 +26107,15 @@ var $author$project$Desktop$updateAvailable = F2(
 										A2($elm$json$Json$Decode$field, 'status', $elm$json$Json$Decode$string),
 										reasonDecoder,
 										A2($elm$json$Json$Decode$field, 'snapshot', $author$project$Notifications$decoder)));
-								var _v68 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
-								if (!_v68.$) {
-									var receipt = _v68.a;
+								var _v69 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
+								if (!_v69.$) {
+									var receipt = _v69.a;
 									if (!_Utils_eq(
-										model.a.b.dk,
-										$elm$core$Maybe$Just(receipt.dk))) {
+										model.a.b.dl,
+										$elm$core$Maybe$Just(receipt.dl))) {
 										return _Utils_Tuple2(model, _List_Nil);
 									} else {
-										var notifications = A5($author$project$Notifications$receiveReason, receipt.c1, receipt.W, receipt.eH, receipt.c, model.C);
+										var notifications = A5($author$project$Notifications$receiveReason, receipt.c2, receipt.W, receipt.eI, receipt.c, model.C);
 										return _Utils_eq(notifications, model.C) ? _Utils_Tuple2(model, _List_Nil) : _Utils_Tuple2(
 											$author$project$Desktop$advance(
 												_Utils_update(
@@ -25849,8 +26134,8 @@ var $author$project$Desktop$updateAvailable = F2(
 									A6(
 										$elm$json$Json$Decode$map5,
 										F5(
-											function (_v71, binding, request, snapshot, inventory) {
-												return {dk: binding, cV: inventory, c1: request, c: snapshot};
+											function (_v72, binding, request, snapshot, inventory) {
+												return {dl: binding, cW: inventory, c2: request, c: snapshot};
 											}),
 										$author$project$Desktop$version,
 										A2($elm$json$Json$Decode$field, 'binding', $author$project$Binding$decoder),
@@ -25860,14 +26145,14 @@ var $author$project$Desktop$updateAvailable = F2(
 											'snapshot',
 											$elm$json$Json$Decode$nullable($author$project$ShortcutPreferences$decoder)),
 										A2($elm$json$Json$Decode$field, 'inventory', $author$project$ShortcutPreferences$inventoryDecoder)));
-								var _v70 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
-								if (!_v70.$) {
-									var receipt = _v70.a;
+								var _v71 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
+								if (!_v71.$) {
+									var receipt = _v71.a;
 									return ((!_Utils_eq(
-										model.a.b.dk,
-										$elm$core$Maybe$Just(receipt.dk))) || (!_Utils_eq(
+										model.a.b.dl,
+										$elm$core$Maybe$Just(receipt.dl))) || (!_Utils_eq(
 										model.aQ,
-										$elm$core$Maybe$Just(receipt.c1)))) ? _Utils_Tuple2(model, _List_Nil) : _Utils_Tuple2(
+										$elm$core$Maybe$Just(receipt.c2)))) ? _Utils_Tuple2(model, _List_Nil) : _Utils_Tuple2(
 										$author$project$Desktop$advance(
 											_Utils_update(
 												model,
@@ -25875,18 +26160,18 @@ var $author$project$Desktop$updateAvailable = F2(
 													F: A7(
 														$author$project$AdapterNotice$failedRead,
 														7,
-														receipt.dk,
-														receipt.c1,
+														receipt.dl,
+														receipt.c2,
 														$elm$core$Maybe$Nothing,
 														$elm$core$Maybe$Nothing,
 														_Utils_eq(receipt.c, $elm$core$Maybe$Nothing),
 														model.F),
 													aQ: $elm$core$Maybe$Nothing,
-													ac: A3(
+													ae: A3(
 														$author$project$ShortcutPreferences$observe,
 														receipt.c,
-														$elm$core$Maybe$Just(receipt.cV),
-														model.ac)
+														$elm$core$Maybe$Just(receipt.cW),
+														model.ae)
 												})),
 										_List_Nil);
 								} else {
@@ -25900,8 +26185,8 @@ var $author$project$Desktop$updateAvailable = F2(
 									A7(
 										$elm$json$Json$Decode$map6,
 										F6(
-											function (_v73, binding, request, status, snapshot, inventory) {
-												return {dk: binding, cV: inventory, c1: request, c: snapshot, W: status};
+											function (_v74, binding, request, status, snapshot, inventory) {
+												return {dl: binding, cW: inventory, c2: request, c: snapshot, W: status};
 											}),
 										$author$project$Desktop$version,
 										A2($elm$json$Json$Decode$field, 'binding', $author$project$Binding$decoder),
@@ -25912,26 +26197,26 @@ var $author$project$Desktop$updateAvailable = F2(
 											'snapshot',
 											$elm$json$Json$Decode$nullable($author$project$ShortcutPreferences$decoder)),
 										A2($elm$json$Json$Decode$field, 'inventory', $author$project$ShortcutPreferences$inventoryDecoder)));
-								var _v72 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
-								if (!_v72.$) {
-									var receipt = _v72.a;
+								var _v73 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
+								if (!_v73.$) {
+									var receipt = _v73.a;
 									if (!_Utils_eq(
-										model.a.b.dk,
-										$elm$core$Maybe$Just(receipt.dk))) {
+										model.a.b.dl,
+										$elm$core$Maybe$Just(receipt.dl))) {
 										return _Utils_Tuple2(model, _List_Nil);
 									} else {
 										var preferences = A5(
 											$author$project$ShortcutPreferences$receive,
-											receipt.c1,
+											receipt.c2,
 											receipt.W,
 											receipt.c,
-											$elm$core$Maybe$Just(receipt.cV),
-											model.ac);
-										return _Utils_eq(preferences, model.ac) ? _Utils_Tuple2(model, _List_Nil) : _Utils_Tuple2(
+											$elm$core$Maybe$Just(receipt.cW),
+											model.ae);
+										return _Utils_eq(preferences, model.ae) ? _Utils_Tuple2(model, _List_Nil) : _Utils_Tuple2(
 											$author$project$Desktop$advance(
 												_Utils_update(
 													model,
-													{ac: preferences})),
+													{ae: preferences})),
 											_List_Nil);
 									}
 								} else {
@@ -25945,8 +26230,8 @@ var $author$project$Desktop$updateAvailable = F2(
 									A5(
 										$elm$json$Json$Decode$map4,
 										F4(
-											function (_v75, binding, request, snapshot) {
-												return {dk: binding, c1: request, c: snapshot};
+											function (_v76, binding, request, snapshot) {
+												return {dl: binding, c2: request, c: snapshot};
 											}),
 										$author$project$Desktop$version,
 										A2($elm$json$Json$Decode$field, 'binding', $author$project$Binding$decoder),
@@ -25955,14 +26240,14 @@ var $author$project$Desktop$updateAvailable = F2(
 											$elm$json$Json$Decode$field,
 											'snapshot',
 											$elm$json$Json$Decode$nullable($author$project$Settings$decoder))));
-								var _v74 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
-								if (!_v74.$) {
-									var receipt = _v74.a;
+								var _v75 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
+								if (!_v75.$) {
+									var receipt = _v75.a;
 									if ((!_Utils_eq(
-										model.a.b.dk,
-										$elm$core$Maybe$Just(receipt.dk))) || (!_Utils_eq(
+										model.a.b.dl,
+										$elm$core$Maybe$Just(receipt.dl))) || (!_Utils_eq(
 										model.bo,
-										$elm$core$Maybe$Just(receipt.c1)))) {
+										$elm$core$Maybe$Just(receipt.c2)))) {
 										return _Utils_Tuple2(model, _List_Nil);
 									} else {
 										var next = $author$project$Desktop$advance(
@@ -25972,13 +26257,13 @@ var $author$project$Desktop$updateAvailable = F2(
 													F: A7(
 														$author$project$AdapterNotice$failedRead,
 														5,
-														receipt.dk,
-														receipt.c1,
+														receipt.dl,
+														receipt.c2,
 														$elm$core$Maybe$Nothing,
 														$elm$core$Maybe$Nothing,
 														_Utils_eq(receipt.c, $elm$core$Maybe$Nothing),
 														model.F),
-													aj: A2($author$project$Settings$observe, receipt.c, model.aj),
+													al: A2($author$project$Settings$observe, receipt.c, model.al),
 													bo: $elm$core$Maybe$Nothing,
 													L: false
 												}));
@@ -26001,8 +26286,8 @@ var $author$project$Desktop$updateAvailable = F2(
 									A6(
 										$elm$json$Json$Decode$map5,
 										F5(
-											function (_v77, binding, request, status, snapshot) {
-												return {dk: binding, c1: request, c: snapshot, W: status};
+											function (_v78, binding, request, status, snapshot) {
+												return {dl: binding, c2: request, c: snapshot, W: status};
 											}),
 										$author$project$Desktop$version,
 										A2($elm$json$Json$Decode$field, 'binding', $author$project$Binding$decoder),
@@ -26012,20 +26297,20 @@ var $author$project$Desktop$updateAvailable = F2(
 											$elm$json$Json$Decode$field,
 											'snapshot',
 											$elm$json$Json$Decode$nullable($author$project$Settings$decoder))));
-								var _v76 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
-								if (!_v76.$) {
-									var receipt = _v76.a;
+								var _v77 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
+								if (!_v77.$) {
+									var receipt = _v77.a;
 									if (!_Utils_eq(
-										model.a.b.dk,
-										$elm$core$Maybe$Just(receipt.dk))) {
+										model.a.b.dl,
+										$elm$core$Maybe$Just(receipt.dl))) {
 										return _Utils_Tuple2(model, _List_Nil);
 									} else {
-										var settings = A4($author$project$Settings$receive, receipt.c1, receipt.W, receipt.c, model.aj);
-										return _Utils_eq(settings, model.aj) ? _Utils_Tuple2(model, _List_Nil) : _Utils_Tuple2(
+										var settings = A4($author$project$Settings$receive, receipt.c2, receipt.W, receipt.c, model.al);
+										return _Utils_eq(settings, model.al) ? _Utils_Tuple2(model, _List_Nil) : _Utils_Tuple2(
 											$author$project$Desktop$advance(
 												_Utils_update(
 													model,
-													{aj: settings})),
+													{al: settings})),
 											_List_Nil);
 									}
 								} else {
@@ -26047,8 +26332,8 @@ var $author$project$Desktop$updateAvailable = F2(
 											A6(
 												$elm$json$Json$Decode$map5,
 												F5(
-													function (_v79, binding, request, snapshot, pins) {
-														return {dk: binding, R: pins, c1: request, c: snapshot};
+													function (_v80, binding, request, snapshot, pins) {
+														return {dl: binding, R: pins, c2: request, c: snapshot};
 													}),
 												$author$project$Desktop$version,
 												A2($elm$json$Json$Decode$field, 'binding', $author$project$Binding$decoder),
@@ -26060,14 +26345,14 @@ var $author$project$Desktop$updateAvailable = F2(
 													$elm$json$Json$Decode$nullable($author$project$Pins$decoder))));
 									},
 									$elm$json$Json$Decode$keyValuePairs($elm$json$Json$Decode$value));
-								var _v78 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
-								if (!_v78.$) {
-									var receipt = _v78.a;
+								var _v79 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
+								if (!_v79.$) {
+									var receipt = _v79.a;
 									if ((!(!model.a.b.j)) && (_Utils_eq(
-										model.a.b.dk,
-										$elm$core$Maybe$Just(receipt.dk)) && _Utils_eq(
+										model.a.b.dl,
+										$elm$core$Maybe$Just(receipt.dl)) && _Utils_eq(
 										model.A,
-										$elm$core$Maybe$Just(receipt.c1)))) {
+										$elm$core$Maybe$Just(receipt.c2)))) {
 										var target = 'launcher-search';
 										var applications = $elm$core$Result$toMaybe(
 											$author$project$Catalog$decode(receipt.c));
@@ -26078,8 +26363,8 @@ var $author$project$Desktop$updateAvailable = F2(
 													F: A7(
 														$author$project$AdapterNotice$failedRead,
 														0,
-														receipt.dk,
-														receipt.c1,
+														receipt.dl,
+														receipt.c2,
 														$elm$core$Maybe$Nothing,
 														$elm$core$Maybe$Nothing,
 														_Utils_eq(applications, $elm$core$Maybe$Nothing),
@@ -26111,8 +26396,8 @@ var $author$project$Desktop$updateAvailable = F2(
 									A6(
 										$elm$json$Json$Decode$map5,
 										F5(
-											function (_v81, binding, request, status, pins) {
-												return {dk: binding, R: pins, c1: request, W: status};
+											function (_v82, binding, request, status, pins) {
+												return {dl: binding, R: pins, c2: request, W: status};
 											}),
 										$author$project$Desktop$version,
 										A2($elm$json$Json$Decode$field, 'binding', $author$project$Binding$decoder),
@@ -26122,19 +26407,19 @@ var $author$project$Desktop$updateAvailable = F2(
 											$elm$json$Json$Decode$field,
 											'preferences',
 											$elm$json$Json$Decode$nullable($author$project$Pins$decoder))));
-								var _v80 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
-								if (!_v80.$) {
-									var receipt = _v80.a;
+								var _v81 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
+								if (!_v81.$) {
+									var receipt = _v81.a;
 									if ((!model.a.b.j) || ((!_Utils_eq(
-										model.a.b.dk,
-										$elm$core$Maybe$Just(receipt.dk))) || (!A2(
+										model.a.b.dl,
+										$elm$core$Maybe$Just(receipt.dl))) || (!A2(
 										$elm$core$List$member,
 										receipt.W,
 										_List_fromArray(
 											['Saved', 'Refused', 'Unknown']))))) {
 										return _Utils_Tuple2(model, _List_Nil);
 									} else {
-										var pins = A4($author$project$Pins$receive, receipt.c1, receipt.W, receipt.R, model.R);
+										var pins = A4($author$project$Pins$receive, receipt.c2, receipt.W, receipt.R, model.R);
 										return _Utils_Tuple2(
 											_Utils_update(
 												model,
@@ -26155,19 +26440,19 @@ var $author$project$Desktop$updateAvailable = F2(
 									A4(
 										$elm$json$Json$Decode$map3,
 										F3(
-											function (_v84, binding, outcome) {
+											function (_v85, binding, outcome) {
 												return _Utils_Tuple2(binding, outcome);
 											}),
 										$author$project$Desktop$version,
 										A2($elm$json$Json$Decode$field, 'binding', $author$project$Binding$decoder),
 										A2($elm$json$Json$Decode$field, 'outcome', $elm$json$Json$Decode$value)));
-								var _v82 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
-								if (!_v82.$) {
-									var _v83 = _v82.a;
-									var binding = _v83.a;
-									var outcome = _v83.b;
+								var _v83 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
+								if (!_v83.$) {
+									var _v84 = _v83.a;
+									var binding = _v84.a;
+									var outcome = _v84.b;
 									if ((!(!model.a.b.j)) && _Utils_eq(
-										model.a.b.dk,
+										model.a.b.dl,
 										$elm$core$Maybe$Just(binding))) {
 										var launch = A3(
 											$author$project$Launch$receive,
@@ -26189,22 +26474,22 @@ var $author$project$Desktop$updateAvailable = F2(
 									return _Utils_Tuple2(model, _List_Nil);
 								}
 							default:
-								break _v39$24;
+								break _v40$24;
 						}
 					} else {
-						break _v39$24;
+						break _v40$24;
 					}
 				}
-				var _v85 = A2(
+				var _v86 = A2(
 					$author$project$Desktop$window,
 					$author$project$TaskbarShell$Native(
 						$author$project$Shell$Incoming(raw)),
 					model);
-				var next = _v85.a;
-				var effects = _v85.b;
-				var _v86 = $author$project$Desktop$syncSwitcher(next);
-				var synced = _v86.a;
-				var commands = _v86.b;
+				var next = _v86.a;
+				var effects = _v86.b;
+				var _v87 = $author$project$Desktop$syncSwitcher(next);
+				var synced = _v87.a;
+				var commands = _v87.b;
 				return _Utils_Tuple2(
 					synced,
 					_Utils_ap(effects, commands));
@@ -26213,7 +26498,7 @@ var $author$project$Desktop$updateAvailable = F2(
 				var entry = message.b;
 				if ((!_Utils_eq(
 					$author$project$Desktop$capture(model),
-					$elm$core$Maybe$Just(stamp))) || ((!_Utils_eq(model.k, $elm$core$Maybe$Nothing)) || (_Utils_eq(model.a.b.dk, $elm$core$Maybe$Nothing) || ((!_Utils_eq(
+					$elm$core$Maybe$Just(stamp))) || ((!_Utils_eq(model.k, $elm$core$Maybe$Nothing)) || (_Utils_eq(model.a.b.dl, $elm$core$Maybe$Nothing) || ((!_Utils_eq(
 					$author$project$MenuBridge$preparedSnapshot(model.a.h),
 					$elm$core$Maybe$Nothing)) || _Utils_eq(
 					A2(
@@ -26231,14 +26516,14 @@ var $author$project$Desktop$updateAvailable = F2(
 								{
 									p: false,
 									B: false,
-									cW: model.q,
+									cX: model.q,
 									o: $elm$core$Maybe$Just(entry),
 									w: true,
 									H: $elm$core$Maybe$Nothing,
 									t: false,
 									D: false,
 									q: false,
-									m: false,
+									l: false,
 									u: $elm$core$Maybe$Nothing,
 									n: false,
 									L: false,
@@ -26253,9 +26538,9 @@ var $author$project$Desktop$updateAvailable = F2(
 											J: $elm$core$Maybe$Nothing
 										})
 								})));
-					var _v87 = $author$project$Desktop$readJumpList(next);
-					var reading = _v87.a;
-					var commands = _v87.b;
+					var _v88 = $author$project$Desktop$readJumpList(next);
+					var reading = _v88.a;
+					var commands = _v88.b;
 					return _Utils_Tuple2(
 						reading,
 						_Utils_ap(
@@ -26277,7 +26562,7 @@ var $author$project$Desktop$updateAvailable = F2(
 						_Utils_update(
 							model,
 							{o: $elm$core$Maybe$Nothing, w: false}));
-					return model.cW ? A2(
+					return model.cX ? A2(
 						$elm$core$Maybe$withDefault,
 						_Utils_Tuple2(next, _List_Nil),
 						A2(
@@ -26308,18 +26593,18 @@ var $author$project$Desktop$updateAvailable = F2(
 					$author$project$Desktop$capture(model),
 					$elm$core$Maybe$Just(stamp))) || ((!_Utils_eq(
 					model.o,
-					$elm$core$Maybe$Just(intent.d2))) || (!_Utils_eq(model.aZ, $elm$core$Maybe$Nothing)))) {
+					$elm$core$Maybe$Just(intent.d3))) || (!_Utils_eq(model.aZ, $elm$core$Maybe$Nothing)))) {
 					return _Utils_Tuple2(model, _List_Nil);
 				} else {
-					var _v88 = _Utils_Tuple2(
-						model.a.b.dk,
-						$author$project$UInt64$next(model.c1));
-					if ((!_v88.a.$) && (!_v88.b.$)) {
-						var binding = _v88.a.a;
-						var request = _v88.b.a;
-						var _v89 = A3($author$project$JumpList$propose, request, intent, model.ar);
-						var jumpList = _v89.a;
-						var proposal = _v89.b;
+					var _v89 = _Utils_Tuple2(
+						model.a.b.dl,
+						$author$project$UInt64$next(model.c2));
+					if ((!_v89.a.$) && (!_v89.b.$)) {
+						var binding = _v89.a.a;
+						var request = _v89.b.a;
+						var _v90 = A3($author$project$JumpList$propose, request, intent, model.as);
+						var jumpList = _v90.a;
+						var proposal = _v90.b;
 						if (proposal.$ === 1) {
 							return _Utils_Tuple2(model, _List_Nil);
 						} else {
@@ -26328,7 +26613,7 @@ var $author$project$Desktop$updateAvailable = F2(
 								$author$project$Desktop$advance(
 									_Utils_update(
 										model,
-										{o: $elm$core$Maybe$Nothing, ar: jumpList, w: false, c1: request})),
+										{o: $elm$core$Maybe$Nothing, as: jumpList, w: false, c2: request})),
 								_List_fromArray(
 									[
 										$author$project$Desktop$Send(
@@ -26360,7 +26645,7 @@ var $author$project$Desktop$updateAvailable = F2(
 				var stamp = message.a;
 				if ((!_Utils_eq(
 					$author$project$Desktop$capture(model),
-					$elm$core$Maybe$Just(stamp))) || ((!_Utils_eq(model.k, $elm$core$Maybe$Nothing)) || (_Utils_eq(model.a.b.dk, $elm$core$Maybe$Nothing) || (!_Utils_eq(
+					$elm$core$Maybe$Just(stamp))) || ((!_Utils_eq(model.k, $elm$core$Maybe$Nothing)) || (_Utils_eq(model.a.b.dl, $elm$core$Maybe$Nothing) || (!_Utils_eq(
 					$author$project$MenuBridge$preparedSnapshot(model.a.h),
 					$elm$core$Maybe$Nothing))))) {
 					return _Utils_Tuple2(model, _List_Nil);
@@ -26379,7 +26664,7 @@ var $author$project$Desktop$updateAvailable = F2(
 									t: false,
 									D: false,
 									q: false,
-									m: false,
+									l: false,
 									u: $elm$core$Maybe$Nothing,
 									n: false,
 									L: false,
@@ -26394,9 +26679,9 @@ var $author$project$Desktop$updateAvailable = F2(
 											J: $elm$core$Maybe$Nothing
 										})
 								})));
-					var _v91 = $author$project$Desktop$readFiles(next);
-					var reading = _v91.a;
-					var commands = _v91.b;
+					var _v92 = $author$project$Desktop$readFiles(next);
+					var reading = _v92.a;
+					var commands = _v92.b;
 					return _Utils_Tuple2(
 						reading,
 						_Utils_ap(
@@ -26459,7 +26744,7 @@ var $author$project$Desktop$updateAvailable = F2(
 						function (snapshot) {
 							return A2(
 								$author$project$Desktop$sendFiles,
-								A2($author$project$Files$intent, snapshot, model.T.fb),
+								A2($author$project$Files$intent, snapshot, model.T.fd),
 								model);
 						},
 						model.T.c));
@@ -26473,7 +26758,7 @@ var $author$project$Desktop$updateAvailable = F2(
 				var stamp = message.a;
 				if ((!_Utils_eq(
 					$author$project$Desktop$capture(model),
-					$elm$core$Maybe$Just(stamp))) || ((!_Utils_eq(model.k, $elm$core$Maybe$Nothing)) || (_Utils_eq(model.a.b.dk, $elm$core$Maybe$Nothing) || (!_Utils_eq(
+					$elm$core$Maybe$Just(stamp))) || ((!_Utils_eq(model.k, $elm$core$Maybe$Nothing)) || (_Utils_eq(model.a.b.dl, $elm$core$Maybe$Nothing) || (!_Utils_eq(
 					$author$project$MenuBridge$preparedSnapshot(model.a.h),
 					$elm$core$Maybe$Nothing))))) {
 					return _Utils_Tuple2(model, _List_Nil);
@@ -26492,7 +26777,7 @@ var $author$project$Desktop$updateAvailable = F2(
 									t: false,
 									D: false,
 									q: false,
-									m: false,
+									l: false,
 									u: $elm$core$Maybe$Nothing,
 									n: false,
 									L: false,
@@ -26507,9 +26792,9 @@ var $author$project$Desktop$updateAvailable = F2(
 											J: $elm$core$Maybe$Nothing
 										})
 								})));
-					var _v92 = $author$project$Desktop$readSystemMenu(next);
-					var reading = _v92.a;
-					var commands = _v92.b;
+					var _v93 = $author$project$Desktop$readSystemMenu(next);
+					var reading = _v93.a;
+					var commands = _v93.b;
 					return _Utils_Tuple2(
 						reading,
 						_Utils_ap(
@@ -26552,7 +26837,7 @@ var $author$project$Desktop$updateAvailable = F2(
 				var intent = message.b;
 				return ((!_Utils_eq(
 					$author$project$Desktop$capture(model),
-					$elm$core$Maybe$Just(stamp))) || ((!model.v) || ((!_Utils_eq(model.aT, $elm$core$Maybe$Nothing)) || ((!_Utils_eq(model.ak.ex, $elm$core$Maybe$Nothing)) || (!A2($author$project$SystemMenu$supported, intent, model.ak)))))) ? _Utils_Tuple2(model, _List_Nil) : ($author$project$SystemMenu$confirmed(intent) ? _Utils_Tuple2(
+					$elm$core$Maybe$Just(stamp))) || ((!model.v) || ((!_Utils_eq(model.aT, $elm$core$Maybe$Nothing)) || ((!_Utils_eq(model.am.ey, $elm$core$Maybe$Nothing)) || (!A2($author$project$SystemMenu$supported, intent, model.am)))))) ? _Utils_Tuple2(model, _List_Nil) : ($author$project$SystemMenu$confirmed(intent) ? _Utils_Tuple2(
 					$author$project$Desktop$advance(
 						_Utils_update(
 							model,
@@ -26595,7 +26880,7 @@ var $author$project$Desktop$updateAvailable = F2(
 				var stamp = message.a;
 				if ((!_Utils_eq(
 					$author$project$Desktop$capture(model),
-					$elm$core$Maybe$Just(stamp))) || ((!_Utils_eq(model.k, $elm$core$Maybe$Nothing)) || _Utils_eq(model.a.b.dk, $elm$core$Maybe$Nothing))) {
+					$elm$core$Maybe$Just(stamp))) || ((!_Utils_eq(model.k, $elm$core$Maybe$Nothing)) || _Utils_eq(model.a.b.dl, $elm$core$Maybe$Nothing))) {
 					return _Utils_Tuple2(model, _List_Nil);
 				} else {
 					var windows = model.a;
@@ -26613,7 +26898,7 @@ var $author$project$Desktop$updateAvailable = F2(
 									t: true,
 									D: true,
 									q: false,
-									m: false,
+									l: false,
 									u: $elm$core$Maybe$Nothing,
 									n: false,
 									L: false,
@@ -26628,9 +26913,9 @@ var $author$project$Desktop$updateAvailable = F2(
 											J: $elm$core$Maybe$Nothing
 										})
 								})));
-					var _v93 = $author$project$Desktop$readNotifications(next);
-					var reading = _v93.a;
-					var commands = _v93.b;
+					var _v94 = $author$project$Desktop$readNotifications(next);
+					var reading = _v94.a;
+					var commands = _v94.b;
 					return _Utils_Tuple2(
 						reading,
 						_Utils_ap(
@@ -26689,7 +26974,7 @@ var $author$project$Desktop$updateAvailable = F2(
 				var policy = message.b;
 				return ((!_Utils_eq(
 					$author$project$Desktop$capture(model),
-					$elm$core$Maybe$Just(stamp))) || ((!model.t) || _Utils_eq(model.C.fD, policy))) ? _Utils_Tuple2(model, _List_Nil) : _Utils_Tuple2(
+					$elm$core$Maybe$Just(stamp))) || ((!model.t) || _Utils_eq(model.C.fF, policy))) ? _Utils_Tuple2(model, _List_Nil) : _Utils_Tuple2(
 					$author$project$Desktop$advance(
 						_Utils_update(
 							model,
@@ -26705,15 +26990,15 @@ var $author$project$Desktop$updateAvailable = F2(
 					$elm$core$Maybe$Just(stamp))) || ((!model.t) || (!_Utils_eq(model.a0, $elm$core$Maybe$Nothing)))) {
 					return _Utils_Tuple2(model, _List_Nil);
 				} else {
-					var _v94 = _Utils_Tuple2(
-						model.a.b.dk,
-						$author$project$UInt64$next(model.c1));
-					if ((!_v94.a.$) && (!_v94.b.$)) {
-						var binding = _v94.a.a;
-						var request = _v94.b.a;
-						var _v95 = A3($author$project$Notifications$propose, request, target, model.C);
-						var notifications = _v95.a;
-						var proposal = _v95.b;
+					var _v95 = _Utils_Tuple2(
+						model.a.b.dl,
+						$author$project$UInt64$next(model.c2));
+					if ((!_v95.a.$) && (!_v95.b.$)) {
+						var binding = _v95.a.a;
+						var request = _v95.b.a;
+						var _v96 = A3($author$project$Notifications$propose, request, target, model.C);
+						var notifications = _v96.a;
+						var proposal = _v96.b;
 						if (proposal.$ === 1) {
 							return _Utils_Tuple2(model, _List_Nil);
 						} else {
@@ -26722,7 +27007,7 @@ var $author$project$Desktop$updateAvailable = F2(
 								$author$project$Desktop$advance(
 									_Utils_update(
 										model,
-										{C: notifications, c1: request})),
+										{C: notifications, c2: request})),
 								_List_fromArray(
 									[
 										$author$project$Desktop$Send(
@@ -26754,7 +27039,7 @@ var $author$project$Desktop$updateAvailable = F2(
 				var stamp = message.a;
 				if ((!_Utils_eq(
 					$author$project$Desktop$capture(model),
-					$elm$core$Maybe$Just(stamp))) || ((!_Utils_eq(model.k, $elm$core$Maybe$Nothing)) || _Utils_eq(model.a.b.dk, $elm$core$Maybe$Nothing))) {
+					$elm$core$Maybe$Just(stamp))) || ((!_Utils_eq(model.k, $elm$core$Maybe$Nothing)) || _Utils_eq(model.a.b.dl, $elm$core$Maybe$Nothing))) {
 					return _Utils_Tuple2(model, _List_Nil);
 				} else {
 					var windows = model.a;
@@ -26771,7 +27056,7 @@ var $author$project$Desktop$updateAvailable = F2(
 									t: false,
 									D: false,
 									q: false,
-									m: false,
+									l: false,
 									u: $elm$core$Maybe$Nothing,
 									n: true,
 									L: true,
@@ -26786,12 +27071,12 @@ var $author$project$Desktop$updateAvailable = F2(
 											J: $elm$core$Maybe$Nothing
 										})
 								})));
-					var _v97 = $author$project$Desktop$readSettings(next);
-					var reading = _v97.a;
-					var commands = _v97.b;
-					var _v98 = $author$project$Desktop$readShortcutPreferences(reading);
-					var shortcutsReading = _v98.a;
-					var shortcutCommands = _v98.b;
+					var _v98 = $author$project$Desktop$readSettings(next);
+					var reading = _v98.a;
+					var commands = _v98.b;
+					var _v99 = $author$project$Desktop$readShortcutPreferences(reading);
+					var shortcutsReading = _v99.a;
+					var shortcutCommands = _v99.b;
 					return _Utils_Tuple2(
 						shortcutsReading,
 						_Utils_ap(
@@ -26831,7 +27116,7 @@ var $author$project$Desktop$updateAvailable = F2(
 					$author$project$Desktop$advance(
 						_Utils_update(
 							model,
-							{c8: !model.c8})),
+							{c9: !model.c9})),
 					_List_Nil);
 			case 39:
 				var stamp = message.a;
@@ -26842,12 +27127,12 @@ var $author$project$Desktop$updateAvailable = F2(
 					$elm$core$Maybe$Just(stamp))) || ((!model.n) || (!_Utils_eq(model.aQ, $elm$core$Maybe$Nothing)))) {
 					return _Utils_Tuple2(model, _List_Nil);
 				} else {
-					var preferences = A3($author$project$ShortcutPreferences$edit, route, choice, model.ac);
-					return _Utils_eq(preferences, model.ac) ? _Utils_Tuple2(model, _List_Nil) : _Utils_Tuple2(
+					var preferences = A3($author$project$ShortcutPreferences$edit, route, choice, model.ae);
+					return _Utils_eq(preferences, model.ae) ? _Utils_Tuple2(model, _List_Nil) : _Utils_Tuple2(
 						$author$project$Desktop$advance(
 							_Utils_update(
 								model,
-								{ac: preferences})),
+								{ae: preferences})),
 						_List_Nil);
 				}
 			case 40:
@@ -26857,15 +27142,15 @@ var $author$project$Desktop$updateAvailable = F2(
 					$elm$core$Maybe$Just(stamp))) || ((!model.n) || (!_Utils_eq(model.aQ, $elm$core$Maybe$Nothing)))) {
 					return _Utils_Tuple2(model, _List_Nil);
 				} else {
-					var _v99 = _Utils_Tuple2(
-						model.a.b.dk,
-						$author$project$UInt64$next(model.c1));
-					if ((!_v99.a.$) && (!_v99.b.$)) {
-						var binding = _v99.a.a;
-						var request = _v99.b.a;
-						var _v100 = A2($author$project$ShortcutPreferences$propose, request, model.ac);
-						var preferences = _v100.a;
-						var proposal = _v100.b;
+					var _v100 = _Utils_Tuple2(
+						model.a.b.dl,
+						$author$project$UInt64$next(model.c2));
+					if ((!_v100.a.$) && (!_v100.b.$)) {
+						var binding = _v100.a.a;
+						var request = _v100.b.a;
+						var _v101 = A2($author$project$ShortcutPreferences$propose, request, model.ae);
+						var preferences = _v101.a;
+						var proposal = _v101.b;
 						if (proposal.$ === 1) {
 							return _Utils_Tuple2(model, _List_Nil);
 						} else {
@@ -26874,7 +27159,7 @@ var $author$project$Desktop$updateAvailable = F2(
 								$author$project$Desktop$advance(
 									_Utils_update(
 										model,
-										{c1: request, ac: preferences})),
+										{c2: request, ae: preferences})),
 								_List_fromArray(
 									[
 										$author$project$Desktop$Send(
@@ -26917,7 +27202,7 @@ var $author$project$Desktop$updateAvailable = F2(
 						_Utils_update(
 							model,
 							{
-								aj: A2($author$project$Settings$edit, values, model.aj)
+								al: A2($author$project$Settings$edit, values, model.al)
 							})),
 					_List_Nil);
 			case 43:
@@ -26927,15 +27212,15 @@ var $author$project$Desktop$updateAvailable = F2(
 					$elm$core$Maybe$Just(stamp))) || ((!model.n) || (!_Utils_eq(model.bo, $elm$core$Maybe$Nothing)))) {
 					return _Utils_Tuple2(model, _List_Nil);
 				} else {
-					var _v102 = _Utils_Tuple2(
-						model.a.b.dk,
-						$author$project$UInt64$next(model.c1));
-					if ((!_v102.a.$) && (!_v102.b.$)) {
-						var binding = _v102.a.a;
-						var request = _v102.b.a;
-						var _v103 = A2($author$project$Settings$propose, request, model.aj);
-						var settings = _v103.a;
-						var proposal = _v103.b;
+					var _v103 = _Utils_Tuple2(
+						model.a.b.dl,
+						$author$project$UInt64$next(model.c2));
+					if ((!_v103.a.$) && (!_v103.b.$)) {
+						var binding = _v103.a.a;
+						var request = _v103.b.a;
+						var _v104 = A2($author$project$Settings$propose, request, model.al);
+						var settings = _v104.a;
+						var proposal = _v104.b;
 						if (proposal.$ === 1) {
 							return _Utils_Tuple2(model, _List_Nil);
 						} else {
@@ -26944,7 +27229,7 @@ var $author$project$Desktop$updateAvailable = F2(
 								$author$project$Desktop$advance(
 									_Utils_update(
 										model,
-										{c1: request, aj: settings})),
+										{c2: request, al: settings})),
 								_List_fromArray(
 									[
 										$author$project$Desktop$Send(
@@ -27001,16 +27286,16 @@ var $author$project$Desktop$updateAvailable = F2(
 					$elm$core$Maybe$Just(stamp))) || ((!model.n) || (!_Utils_eq(model.aK, $elm$core$Maybe$Nothing)))) {
 					return _Utils_Tuple2(model, _List_Nil);
 				} else {
-					var _v105 = _Utils_Tuple2(
-						model.a.b.dk,
-						$author$project$UInt64$next(model.c1));
-					if ((!_v105.a.$) && (!_v105.b.$)) {
-						var binding = _v105.a.a;
-						var request = _v105.b.a;
+					var _v106 = _Utils_Tuple2(
+						model.a.b.dl,
+						$author$project$UInt64$next(model.c2));
+					if ((!_v106.a.$) && (!_v106.b.$)) {
+						var binding = _v106.a.a;
+						var request = _v106.b.a;
 						var motion = model.I;
-						var _v106 = A2($author$project$MotionPreferences$propose, request, motion.a1);
-						var preference = _v106.a;
-						var proposal = _v106.b;
+						var _v107 = A2($author$project$MotionPreferences$propose, request, motion.a1);
+						var preference = _v107.a;
+						var proposal = _v107.b;
 						if (proposal.$ === 1) {
 							return _Utils_Tuple2(model, _List_Nil);
 						} else {
@@ -27023,7 +27308,7 @@ var $author$project$Desktop$updateAvailable = F2(
 											I: _Utils_update(
 												motion,
 												{a1: preference}),
-											c1: request
+											c2: request
 										})),
 								_List_fromArray(
 									[
@@ -27077,7 +27362,7 @@ var $author$project$Desktop$updateAvailable = F2(
 						{
 							F: A7($author$project$AdapterNotice$failedRead, 0, binding, request, $elm$core$Maybe$Nothing, $elm$core$Maybe$Nothing, true, model.F),
 							bu: $elm$core$Maybe$Just(
-								{dk: binding, c1: request}),
+								{dl: binding, c2: request}),
 							bv: false,
 							A: $elm$core$Maybe$Nothing
 						}),
@@ -27138,9 +27423,9 @@ var $author$project$Desktop$updateAvailable = F2(
 									t: false,
 									D: false,
 									q: false,
-									m: true,
-									aB: $elm$core$Maybe$Nothing,
-									at: $elm$core$Maybe$Nothing,
+									l: true,
+									au: $elm$core$Maybe$Nothing,
+									ac: $elm$core$Maybe$Nothing,
 									u: $elm$core$Maybe$Nothing,
 									n: false,
 									L: false,
@@ -27160,7 +27445,21 @@ var $author$project$Desktop$updateAvailable = F2(
 							function (workspace) {
 								return A2($author$project$Desktop$key, next, 'overview:workspace:' + workspace);
 							},
-							$author$project$TaskView$activeWorkspace(next.a.b)));
+							A2(
+								$elm$core$Maybe$map,
+								function ($) {
+									return $.cV;
+								},
+								A2(
+									$elm$core$Maybe$andThen,
+									A2(
+										$elm$core$Basics$composeR,
+										$elm$core$List$filter(
+											function ($) {
+												return $.bt;
+											}),
+										$elm$core$List$head),
+									$author$project$Desktop$taskViewGroups(next)))));
 					return _Utils_Tuple2(
 						next,
 						_List_fromArray(
@@ -27172,14 +27471,14 @@ var $author$project$Desktop$updateAvailable = F2(
 				var stamp = message.a;
 				if ((!_Utils_eq(
 					$author$project$Desktop$capture(model),
-					$elm$core$Maybe$Just(stamp))) || (!model.m)) {
+					$elm$core$Maybe$Just(stamp))) || (!model.l)) {
 					return _Utils_Tuple2(model, _List_Nil);
 				} else {
 					var target = A2(
 						$elm$core$Maybe$map,
 						function (binding) {
 							return {
-								dk: binding,
+								dl: binding,
 								bx: $author$project$Desktop$OverviewOpener,
 								y: A2(
 									$elm$core$Maybe$map,
@@ -27191,20 +27490,20 @@ var $author$project$Desktop$updateAvailable = F2(
 										function ($) {
 											return $.y;
 										}),
-									model.a.b._.as)
+									model.a.b._.at)
 							};
 						},
-						model.a.b.dk);
+						model.a.b.dl);
 					var next = $author$project$Desktop$advance(
 						_Utils_update(
 							model,
-							{m: false, aB: $elm$core$Maybe$Nothing, at: $elm$core$Maybe$Nothing}));
-					var _v108 = A2(
+							{l: false, au: $elm$core$Maybe$Nothing, ac: $elm$core$Maybe$Nothing}));
+					var _v109 = A2(
 						$author$project$Desktop$windowBase,
 						$author$project$TaskbarShell$Native($author$project$Shell$Refresh),
 						next);
-					var refreshing = _v108.a;
-					var commands = _v108.b;
+					var refreshing = _v109.a;
+					var commands = _v109.b;
 					return _Utils_Tuple2(
 						_Utils_update(
 							refreshing,
@@ -27216,13 +27515,13 @@ var $author$project$Desktop$updateAvailable = F2(
 				var selected = message.b;
 				if ((!_Utils_eq(
 					$author$project$Desktop$capture(model),
-					$elm$core$Maybe$Just(stamp))) || ((!model.m) || _Utils_eq(selected, model.at))) {
+					$elm$core$Maybe$Just(stamp))) || ((!model.l) || _Utils_eq(selected, model.ac))) {
 					return _Utils_Tuple2(model, _List_Nil);
 				} else {
 					var next = $author$project$Desktop$advance(
 						_Utils_update(
 							model,
-							{at: selected}));
+							{ac: selected}));
 					var exists = A2(
 						$elm$core$Maybe$withDefault,
 						true,
@@ -27236,9 +27535,9 @@ var $author$project$Desktop$updateAvailable = F2(
 										$elm$core$Maybe$map,
 										$elm$core$List$any(
 											function (g) {
-												return _Utils_eq(g.cU, workspace);
+												return _Utils_eq(g.cV, workspace);
 											}),
-										$author$project$TaskView$groups(model.a.b)));
+										$author$project$Desktop$taskViewGroups(model)));
 							},
 							selected));
 					return (!exists) ? _Utils_Tuple2(model, _List_Nil) : _Utils_Tuple2(
@@ -27263,13 +27562,13 @@ var $author$project$Desktop$updateAvailable = F2(
 				var root = message.b;
 				if ((!_Utils_eq(
 					$author$project$Desktop$capture(model),
-					$elm$core$Maybe$Just(stamp))) || ((!model.m) || ((!_Utils_eq(model.k, $elm$core$Maybe$Nothing)) || (!$author$project$Shell$available(model.a.b))))) {
+					$elm$core$Maybe$Just(stamp))) || ((!model.l) || ((!_Utils_eq(model.k, $elm$core$Maybe$Nothing)) || (!$author$project$Shell$available(model.a.b))))) {
 					return _Utils_Tuple2(model, _List_Nil);
 				} else {
 					var listed = A2(
 						$elm$core$List$any,
 						function (family) {
-							return _Utils_eq(family.r, root) && family.dj;
+							return _Utils_eq(family.r, root) && family.dk;
 						},
 						A2(
 							$elm$core$List$concatMap,
@@ -27279,22 +27578,22 @@ var $author$project$Desktop$updateAvailable = F2(
 							A2(
 								$elm$core$Maybe$withDefault,
 								_List_Nil,
-								$author$project$TaskView$groups(model.a.b))));
+								$author$project$Desktop$taskViewGroups(model))));
 					var enabled = A2(
 						$elm$core$Maybe$withDefault,
 						false,
 						A2(
 							$elm$core$Maybe$map,
 							function (caps) {
-								return A2($elm$core$List$member, 'transfer-workspace', caps.ev);
+								return A2($elm$core$List$member, 'transfer-workspace', caps.ew);
 							},
-							model.a.b.ds));
+							model.a.b.dt));
 					return (!(listed && enabled)) ? _Utils_Tuple2(model, _List_Nil) : _Utils_Tuple2(
 						$author$project$Desktop$advance(
 							_Utils_update(
 								model,
 								{
-									aB: $elm$core$Maybe$Just(root)
+									au: $elm$core$Maybe$Just(root)
 								})),
 						_List_Nil);
 				}
@@ -27302,11 +27601,11 @@ var $author$project$Desktop$updateAvailable = F2(
 				var stamp = message.a;
 				return ((!_Utils_eq(
 					$author$project$Desktop$capture(model),
-					$elm$core$Maybe$Just(stamp))) || (!model.m)) ? _Utils_Tuple2(model, _List_Nil) : _Utils_Tuple2(
+					$elm$core$Maybe$Just(stamp))) || (!model.l)) ? _Utils_Tuple2(model, _List_Nil) : _Utils_Tuple2(
 					$author$project$Desktop$advance(
 						_Utils_update(
 							model,
-							{aB: $elm$core$Maybe$Nothing})),
+							{au: $elm$core$Maybe$Nothing})),
 					_List_Nil);
 			case 59:
 				var stamp = message.a;
@@ -27315,28 +27614,28 @@ var $author$project$Desktop$updateAvailable = F2(
 				if ((!_Utils_eq(
 					$author$project$Desktop$capture(model),
 					$elm$core$Maybe$Just(stamp))) || ((!_Utils_eq(
-					model.aB,
+					model.au,
 					$elm$core$Maybe$Just(root))) || (!_Utils_eq(model.k, $elm$core$Maybe$Nothing)))) {
 					return _Utils_Tuple2(model, _List_Nil);
 				} else {
-					var _v109 = _Utils_Tuple3(
+					var _v110 = _Utils_Tuple3(
 						A2(
 							$elm$core$Maybe$andThen,
 							function (g) {
 								return A3($author$project$Transfer$propose, g, root, destination);
 							},
-							model.a.b.ap),
-						model.a.b.dk,
-						model.a.b._.as);
-					if (((!_v109.a.$) && (!_v109.b.$)) && (!_v109.c.$)) {
-						var proposed = _v109.a.a;
-						var binding = _v109.b.a;
-						var observed = _v109.c.a;
-						var _v110 = $elm$core$List$head(
+							model.a.b.aa),
+						model.a.b.dl,
+						model.a.b._.at);
+					if (((!_v110.a.$) && (!_v110.b.$)) && (!_v110.c.$)) {
+						var proposed = _v110.a.a;
+						var binding = _v110.b.a;
+						var observed = _v110.c.a;
+						var _v111 = $elm$core$List$head(
 							A2(
 								$elm$core$List$filter,
 								function (f) {
-									return _Utils_eq(f.r, root) && f.dj;
+									return _Utils_eq(f.r, root) && f.dk;
 								},
 								A2(
 									$elm$core$List$concatMap,
@@ -27344,19 +27643,19 @@ var $author$project$Desktop$updateAvailable = F2(
 										return $.aG;
 									},
 									$author$project$TaskbarShell$groups(model.a))));
-						if (!_v110.$) {
-							var family = _v110.a;
-							var _v111 = A2(
+						if (!_v111.$) {
+							var family = _v111.a;
+							var _v112 = A2(
 								$author$project$Desktop$windowBase,
 								$author$project$TaskbarShell$Native($author$project$Shell$Refresh),
 								_Utils_update(
 									model,
-									{G: '', m: false, aB: $elm$core$Maybe$Nothing}));
-							var next = _v111.a;
-							var effects = _v111.b;
-							var _v112 = next.a.b.A;
-							if (!_v112.$) {
-								var request = _v112.a;
+									{G: '', l: false, au: $elm$core$Maybe$Nothing}));
+							var next = _v112.a;
+							var effects = _v112.b;
+							var _v113 = next.a.b.A;
+							if (!_v113.$) {
+								var request = _v113.a;
 								var token = A2($author$project$Desktop$ChoiceToken, binding, request);
 								return _Utils_Tuple2(
 									_Utils_update(
@@ -27364,8 +27663,8 @@ var $author$project$Desktop$updateAvailable = F2(
 										{
 											k: $elm$core$Maybe$Just(
 												{
-													di: family.di,
-													dk: binding,
+													dj: family.dj,
+													dl: binding,
 													aV: $elm$core$Maybe$Nothing,
 													y: observed.P.y,
 													bk: $elm$core$Maybe$Nothing,
@@ -27395,14 +27694,14 @@ var $author$project$Desktop$updateAvailable = F2(
 				var root = message.b;
 				if ((!_Utils_eq(
 					$author$project$Desktop$capture(model),
-					$elm$core$Maybe$Just(stamp))) || ((!model.m) || ((!_Utils_eq(model.k, $elm$core$Maybe$Nothing)) || (!$author$project$Shell$available(model.a.b))))) {
+					$elm$core$Maybe$Just(stamp))) || ((!model.l) || ((!_Utils_eq(model.k, $elm$core$Maybe$Nothing)) || (!$author$project$Shell$available(model.a.b))))) {
 					return _Utils_Tuple2(model, _List_Nil);
 				} else {
 					var selected = $elm$core$List$head(
 						A2(
 							$elm$core$List$filter,
 							function (family) {
-								return _Utils_eq(family.r, root) && (family.dj && (!A3($author$project$MenuBridge$blockedFor, root, model.a.b, model.a.h)));
+								return _Utils_eq(family.r, root) && (family.dk && (!A3($author$project$MenuBridge$blockedFor, root, model.a.b, model.a.h)));
 							},
 							A2(
 								$elm$core$List$concatMap,
@@ -27412,40 +27711,40 @@ var $author$project$Desktop$updateAvailable = F2(
 								A2(
 									$elm$core$List$filter,
 									function (g) {
-										return _Utils_eq(model.at, $elm$core$Maybe$Nothing) || _Utils_eq(
-											model.at,
-											$elm$core$Maybe$Just(g.cU));
+										return _Utils_eq(model.ac, $elm$core$Maybe$Nothing) || _Utils_eq(
+											model.ac,
+											$elm$core$Maybe$Just(g.cV));
 									},
 									A2(
 										$elm$core$Maybe$withDefault,
 										_List_Nil,
-										$author$project$TaskView$groups(model.a.b))))));
-					var _v113 = _Utils_Tuple3(selected, model.a.b.dk, model.a.b._.as);
-					if (((!_v113.a.$) && (!_v113.b.$)) && (!_v113.c.$)) {
-						var family = _v113.a.a;
-						var binding = _v113.b.a;
-						var observed = _v113.c.a;
-						var _v114 = A2(
+										$author$project$Desktop$taskViewGroups(model))))));
+					var _v114 = _Utils_Tuple3(selected, model.a.b.dl, model.a.b._.at);
+					if (((!_v114.a.$) && (!_v114.b.$)) && (!_v114.c.$)) {
+						var family = _v114.a.a;
+						var binding = _v114.b.a;
+						var observed = _v114.c.a;
+						var _v115 = A2(
 							$author$project$Desktop$windowBase,
 							$author$project$TaskbarShell$Native($author$project$Shell$Refresh),
 							_Utils_update(
 								model,
-								{G: '', m: false}));
-						var next = _v114.a;
-						var effects = _v114.b;
-						var _v115 = next.a.b.A;
-						if (!_v115.$) {
-							var request = _v115.a;
+								{G: '', l: false}));
+						var next = _v115.a;
+						var effects = _v115.b;
+						var _v116 = next.a.b.A;
+						if (!_v116.$) {
+							var request = _v116.a;
 							var token = A2($author$project$Desktop$ChoiceToken, binding, request);
 							return _Utils_Tuple2(
 								_Utils_update(
 									next,
 									{
 										k: $elm$core$Maybe$Just(
-											{di: family.di, dk: binding, aV: $elm$core$Maybe$Nothing, y: observed.P.y, bk: $elm$core$Maybe$Nothing, r: root, bp: token, a4: $elm$core$Maybe$Nothing}),
+											{dj: family.dj, dl: binding, aV: $elm$core$Maybe$Nothing, y: observed.P.y, bk: $elm$core$Maybe$Nothing, r: root, bp: token, a4: $elm$core$Maybe$Nothing}),
 										aN: A2(
 											$author$project$OverviewRecovery$begin,
-											{dk: binding, r: root, e$: model.at},
+											{dl: binding, r: root, e1: model.ac},
 											request)
 									}),
 								_Utils_ap(
@@ -27466,7 +27765,7 @@ var $author$project$Desktop$updateAvailable = F2(
 				var query = message.b;
 				return ((!_Utils_eq(
 					$author$project$Desktop$capture(model),
-					$elm$core$Maybe$Just(stamp))) || ((!model.q) || (_Utils_eq(query, model.c_) || (($elm$core$String$length(query) > 256) || A2(
+					$elm$core$Maybe$Just(stamp))) || ((!model.q) || (_Utils_eq(query, model.c$) || (($elm$core$String$length(query) > 256) || A2(
 					$elm$core$String$any,
 					function (c) {
 						return ($elm$core$Char$toCode(c) < 32) || ($elm$core$Char$toCode(c) === 127);
@@ -27475,7 +27774,7 @@ var $author$project$Desktop$updateAvailable = F2(
 					$author$project$Desktop$advance(
 						_Utils_update(
 							model,
-							{c_: query})),
+							{c$: query})),
 					_List_Nil);
 			case 62:
 				var stamp = message.a;
@@ -27518,18 +27817,18 @@ var $author$project$Desktop$updateAvailable = F2(
 					$elm$core$Maybe$Nothing)) {
 					return _Utils_Tuple2(model, _List_Nil);
 				} else {
-					var _v116 = A2($author$project$Launch$start, selection, model.M);
-					var launch = _v116.a;
-					var intent = _v116.b;
-					var _v117 = _Utils_Tuple2(intent, model.a.b.dk);
-					if ((!_v117.a.$) && (!_v117.b.$)) {
-						var wire = _v117.a.a;
-						var binding = _v117.b.a;
+					var _v117 = A2($author$project$Launch$start, selection, model.M);
+					var launch = _v117.a;
+					var intent = _v117.b;
+					var _v118 = _Utils_Tuple2(intent, model.a.b.dl);
+					if ((!_v118.a.$) && (!_v118.b.$)) {
+						var wire = _v118.a.a;
+						var binding = _v118.b.a;
 						return _Utils_Tuple2(
 							$author$project$Desktop$retireSwitcher(
 								_Utils_update(
 									model,
-									{A: $elm$core$Maybe$Nothing, M: launch, q: false, m: false})),
+									{A: $elm$core$Maybe$Nothing, M: launch, q: false, l: false})),
 							A2(
 								$elm$core$List$cons,
 								$author$project$Desktop$Send(
@@ -27584,7 +27883,7 @@ var $author$project$Desktop$updateAvailable = F2(
 	});
 var $author$project$Desktop$updateOrdinary = F2(
 	function (message, model) {
-		if ((A2($author$project$PointerOwnership$blocked, model.a.b.dk, model.bH) && $author$project$Desktop$gestureAction(message)) || ((!A2($author$project$Motion$ready, model.a.b.dk, model.I)) && $author$project$Desktop$motionGesture(message))) {
+		if ((A2($author$project$PointerOwnership$blocked, model.a.b.dl, model.bH) && $author$project$Desktop$gestureAction(message)) || ((!A2($author$project$Motion$ready, model.a.b.dl, model.I)) && $author$project$Desktop$motionGesture(message))) {
 			return _Utils_Tuple2(model, _List_Nil);
 		} else {
 			var _v0 = A2($author$project$Desktop$updateAvailable, message, model);
@@ -27593,20 +27892,25 @@ var $author$project$Desktop$updateOrdinary = F2(
 			var _v1 = $author$project$Desktop$resumeOverview(next);
 			var recovered = _v1.a;
 			var recoveryEffects = _v1.b;
-			var _v2 = $author$project$Desktop$syncMotion(recovered);
-			var synced = _v2.a;
-			var commands = _v2.b;
+			var _v2 = $author$project$Desktop$syncOverviewWorkspace(recovered);
+			var overview = _v2.a;
+			var overviewEffects = _v2.b;
+			var _v3 = $author$project$Desktop$syncMotion(overview);
+			var synced = _v3.a;
+			var commands = _v3.b;
 			return _Utils_Tuple2(
 				synced,
 				_Utils_ap(
 					effects,
-					_Utils_ap(recoveryEffects, commands)));
+					_Utils_ap(
+						recoveryEffects,
+						_Utils_ap(overviewEffects, commands))));
 		}
 	});
 var $author$project$SurfaceController$applyOrdinary = F2(
 	function (message, current) {
 		var model = current;
-		if (model.az) {
+		if (model.aA) {
 			return _Utils_Tuple2(current, _List_Nil);
 		} else {
 			var oldMode = $author$project$Surface$mode(model.d);
@@ -27631,26 +27935,26 @@ var $author$project$SurfaceController$applyOrdinary = F2(
 				A2(
 					$elm$core$Maybe$map,
 					function ($) {
-						return $.fh;
+						return $.fj;
 					},
 					model.d.a.J),
 				A2(
 					$elm$core$Maybe$map,
 					function ($) {
-						return $.fh;
+						return $.fj;
 					},
 					next.a.J)))) || ((nextMode === 'switcher') && (!_Utils_eq(
 				$author$project$Switcher$generation(model.d.i),
 				$author$project$Switcher$generation(next.i)))))));
-			var lease = newLease ? $author$project$UInt64$next(model.em) : $elm$core$Maybe$Just(model.em);
+			var lease = newLease ? $author$project$UInt64$next(model.en) : $elm$core$Maybe$Just(model.en);
 			if ((!changed) && $elm$core$List$isEmpty(effects)) {
 				return _Utils_Tuple2(current, _List_Nil);
 			} else {
-				var stableSurface = (!_Utils_eq(model.eF, $author$project$UInt64$zero)) && ((!newLease) && ($elm$core$List$isEmpty(effects) && _Utils_eq(
+				var stableSurface = (!_Utils_eq(model.eG, $author$project$UInt64$zero)) && ((!newLease) && ($elm$core$List$isEmpty(effects) && _Utils_eq(
 					A2(
 						$elm$json$Json$Encode$encode,
 						0,
-						A3($author$project$Surface$packet, model.eF, model.em, next)),
+						A3($author$project$Surface$packet, model.eG, model.en, next)),
 					A2(
 						$elm$json$Json$Encode$encode,
 						0,
@@ -27661,7 +27965,7 @@ var $author$project$SurfaceController$applyOrdinary = F2(
 							A2(
 								$elm$json$Json$Encode$encode,
 								0,
-								A3($author$project$Surface$packet, model.eF, model.em, next)),
+								A3($author$project$Surface$packet, model.eG, model.en, next)),
 							A2(
 								$elm$json$Json$Encode$encode,
 								0,
@@ -27678,14 +27982,14 @@ var $author$project$SurfaceController$applyOrdinary = F2(
 						A2($elm$core$List$map, $author$project$SurfaceController$DesktopEffect, effects));
 				} else {
 					var _v1 = _Utils_Tuple2(
-						$author$project$UInt64$next(model.eF),
+						$author$project$UInt64$next(model.eG),
 						lease);
 					if ((!_v1.a.$) && (!_v1.b.$)) {
 						var publication = _v1.a.a;
 						var token = _v1.b.a;
 						var result = _Utils_update(
 							model,
-							{d: next, em: token, eF: publication});
+							{d: next, en: token, eG: publication});
 						return _Utils_Tuple2(
 							result,
 							A2(
@@ -27697,7 +28001,7 @@ var $author$project$SurfaceController$applyOrdinary = F2(
 						return _Utils_Tuple2(
 							_Utils_update(
 								model,
-								{az: true}),
+								{aA: true}),
 							_List_Nil);
 					}
 				}
@@ -27717,7 +28021,7 @@ var $author$project$ReconciliationTracking$legacy = F3(
 					$elm$json$Json$Decode$decodeValue,
 					A2($elm$json$Json$Decode$field, 'binding', $author$project$Binding$decoder),
 					raw)),
-			shell.dk)) || (!_Utils_eq(
+			shell.dl)) || (!_Utils_eq(
 			A2(
 				$elm$json$Json$Decode$decodeValue,
 				A2($elm$json$Json$Decode$field, 'protocolVersion', $elm$json$Json$Decode$int),
@@ -27740,11 +28044,11 @@ var $author$project$ReconciliationTracking$legacy = F3(
 						$elm$json$Json$Decode$decodeValue,
 						A2($elm$json$Json$Decode$field, 'effectProtocol', $elm$json$Json$Decode$int),
 						raw));
-				var entry = {aa: intent, eE: protocol};
+				var entry = {ab: intent, eF: protocol};
 				return (A2($elm$core$List$member, entry, model.bC) || (($elm$core$List$length(model.bC) >= 64) || (!A2(
 					$elm$core$List$any,
 					function (t) {
-						return _Utils_eq(t.aa, intent) && (_Utils_eq(t.ay, protocol) && (t.W === 4));
+						return _Utils_eq(t.ab, intent) && (_Utils_eq(t.az, protocol) && (t.W === 4));
 					},
 					shell._.z)))) ? model : _Utils_update(
 					model,
@@ -27781,9 +28085,9 @@ var $author$project$ReceiptRouter$reservationKey = F3(
 			$elm$core$Maybe$map,
 			function (op) {
 				return {
-					aa: {P: original.P, fh: original.fh, aq: original.aq, bh: op, c1: original.c1},
-					er: bound,
-					eE: protocolId
+					ab: {P: original.P, fj: original.fj, ar: original.ar, bh: op, c2: original.c2},
+					es: bound,
+					eF: protocolId
 				};
 			},
 			operationValue);
@@ -27797,7 +28101,7 @@ var $author$project$ReceiptRouter$findReservation = F4(
 				return A2(
 					$elm$core$Maybe$map,
 					function (entry) {
-						return _Utils_Tuple2(entry.cq, entry.dk);
+						return _Utils_Tuple2(entry.cq, entry.dl);
 					},
 					$elm$core$List$head(
 						A2(
@@ -27818,7 +28122,7 @@ var $author$project$Menu$observeUnknown = F3(
 				aI: A2(
 					$elm$core$Maybe$map,
 					function (menu) {
-						return (_Utils_eq(menu.dk, bound) && _Utils_eq(
+						return (_Utils_eq(menu.dl, bound) && _Utils_eq(
 							menu.W,
 							$author$project$Menu$Pending(local))) ? _Utils_update(
 							menu,
@@ -27827,14 +28131,14 @@ var $author$project$Menu$observeUnknown = F3(
 							}) : menu;
 					},
 					state.aI),
-				fx: A2(
+				fz: A2(
 					$elm$core$List$map,
 					function (entry) {
-						return (_Utils_eq(entry.cl, local) && _Utils_eq(entry.dk, bound)) ? _Utils_update(
+						return (_Utils_eq(entry.cl, local) && _Utils_eq(entry.dl, bound)) ? _Utils_update(
 							entry,
 							{bq: true}) : entry;
 					},
-					state.fx)
+					state.fz)
 			});
 	});
 var $author$project$MenuBridge$observeReservationUnknown = F4(
@@ -27854,11 +28158,11 @@ var $author$project$MenuBridge$observeReservationUnknown = F4(
 							aI: A3($author$project$Menu$observeUnknown, local, original, state.aI)
 						});
 				},
-				A4($author$project$ReceiptRouter$findReservation, bound, protocolId, intent, state.au)));
+				A4($author$project$ReceiptRouter$findReservation, bound, protocolId, intent, state.av)));
 	});
 var $author$project$ReconciliationFrame$Context = F4(
 	function (lifetime, epoch, output, revision) {
-		return {fe: epoch, fp: lifetime, y: output, c2: revision};
+		return {fg: epoch, fr: lifetime, y: output, c3: revision};
 	});
 var $author$project$ReconciliationFrame$contextDecoder = A2(
 	$author$project$ReconciliationFrame$strict,
@@ -27892,18 +28196,18 @@ var $author$project$ReconciliationTracking$observed = F4(
 				function ($) {
 					return $.P;
 				},
-				after.ap);
+				after.aa);
 			var geometryAccepted = (kind === 'geometry-facts') && (_Utils_eq(
-				before.eb,
+				before.ec,
 				$elm$core$Maybe$Just(request)) && ((!_Utils_eq(
-				after.eb,
+				after.ec,
 				$elm$core$Maybe$Just(request))) && _Utils_eq(
 				A2(
 					$elm$core$Maybe$map,
 					function ($) {
-						return $.c1;
+						return $.c2;
 					},
-					after.ap),
+					after.aa),
 				$elm$core$Maybe$Just(request))));
 			var actionContext = $elm$core$Result$toMaybe(
 				A2(
@@ -27920,7 +28224,7 @@ var $author$project$ReconciliationTracking$observed = F4(
 					function ($) {
 						return $.P;
 					},
-					after._.as),
+					after._.at),
 				actionContext))));
 			return _Utils_update(
 				model,
@@ -27928,15 +28232,15 @@ var $author$project$ReconciliationTracking$observed = F4(
 					N: A2(
 						$elm$core$List$map,
 						function (slot) {
-							return _Utils_eq(slot.eC, $elm$core$Maybe$Nothing) ? slot : ((actionAccepted && _Utils_eq(
+							return _Utils_eq(slot.eD, $elm$core$Maybe$Nothing) ? slot : ((actionAccepted && _Utils_eq(
 								slot.bR,
 								$elm$core$Maybe$Just(request))) ? _Utils_update(
 								slot,
 								{
-									e3: A2(
+									e5: A2(
 										$elm$core$Maybe$map,
 										function (context) {
-											return {P: context, c1: request};
+											return {P: context, c2: request};
 										},
 										actionContext)
 								}) : ((geometryAccepted && _Utils_eq(
@@ -27944,10 +28248,10 @@ var $author$project$ReconciliationTracking$observed = F4(
 								$elm$core$Maybe$Just(request))) ? _Utils_update(
 								slot,
 								{
-									ap: A2(
+									aa: A2(
 										$elm$core$Maybe$map,
 										function (context) {
-											return {P: context, c1: request};
+											return {P: context, c2: request};
 										},
 										geometryContext)
 								}) : slot));
@@ -27962,11 +28266,11 @@ var $author$project$ReconciliationFrame$ReservationReleased = F3(
 	});
 var $author$project$ReconciliationFrame$contextMatches = F2(
 	function (binding, context) {
-		return A3($author$project$Binding$matchesContext, context.fp, context.fe, binding);
+		return A3($author$project$Binding$matchesContext, context.fr, context.fg, binding);
 	});
 var $author$project$ReconciliationFrame$Record = F5(
 	function (schema, effectProtocol, binding, intent, status) {
-		return {dk: binding, ay: effectProtocol, aa: intent, fM: schema, W: status};
+		return {dl: binding, az: effectProtocol, ab: intent, fO: schema, W: status};
 	});
 var $author$project$ReconciliationFrame$protocolDecoder = A2(
 	$elm$json$Json$Decode$andThen,
@@ -27977,12 +28281,12 @@ var $author$project$ReconciliationFrame$protocolDecoder = A2(
 var $author$project$ReconciliationFrame$recordDecoder = A2(
 	$elm$json$Json$Decode$andThen,
 	function (record) {
-		var operationMatches = (record.ay === 1) ? A2(
+		var operationMatches = (record.az === 1) ? A2(
 			$elm$core$List$member,
-			record.aa.bh,
+			record.ab.bh,
 			_List_fromArray(
-				[$author$project$Effects$Minimize, $author$project$Effects$Restore, $author$project$Effects$Activate])) : ($author$project$Effects$protocol(record.aa.bh) === 2);
-		return (A3($author$project$Binding$matchesContext, record.aa.P.fp, record.aa.P.fe, record.dk) && operationMatches) ? $elm$json$Json$Decode$succeed(record) : $elm$json$Json$Decode$fail('Record authority or operation/protocol mismatch');
+				[$author$project$Effects$Minimize, $author$project$Effects$Restore, $author$project$Effects$Activate])) : ($author$project$Effects$protocol(record.ab.bh) === 2);
+		return (A3($author$project$Binding$matchesContext, record.ab.P.fr, record.ab.P.fg, record.dl) && operationMatches) ? $elm$json$Json$Decode$succeed(record) : $elm$json$Json$Decode$fail('Record authority or operation/protocol mismatch');
 	},
 	A2(
 		$author$project$ReconciliationFrame$strict,
@@ -28009,11 +28313,11 @@ var $author$project$ReconciliationFrame$recordDecoder = A2(
 					$author$project$ReconciliationFrame$exactString('Unknown'))))));
 var $author$project$ReconciliationFrame$Release = F3(
 	function (id, proof, observation) {
-		return {cl: id, bF: observation, eC: proof};
+		return {cl: id, bF: observation, eD: proof};
 	});
 var $author$project$ReconciliationFrame$Observation = F4(
 	function (actionRequestId, geometryRequestId, actionContext, geometryContext) {
-		return {a8: actionContext, cF: actionRequestId, bc: geometryContext, cR: geometryRequestId};
+		return {a8: actionContext, cG: actionRequestId, bc: geometryContext, cS: geometryRequestId};
 	});
 var $author$project$ReconciliationFrame$observationDecoder = A2(
 	$author$project$ReconciliationFrame$strict,
@@ -28076,10 +28380,10 @@ var $author$project$ReconciliationFrame$decodeReleased = F2(
 				var binding = _v0.a;
 				var record = _v0.b;
 				var release = _v0.c;
-				var proof = release.eC;
+				var proof = release.eD;
 				var observation = release.bF;
-				var expectedValid = A2($author$project$ReconciliationFrame$contextMatches, expected.cO, expected.a8) && (A2($author$project$ReconciliationFrame$contextMatches, expected.cO, expected.bc) && _Utils_eq(expected.a8.y, expected.bc.y));
-				var correlated = _Utils_eq(binding, expected.cO) && (_Utils_eq(record, expected.eI) && (_Utils_eq(proof.dk, binding) && (_Utils_eq(proof.eG, record.dk) && (_Utils_eq(proof.eK, expected.eD) && ((!_Utils_eq(record.dk, binding)) && (A2($author$project$Binding$sameLifetime, record.aa.P.fp, binding) && (_Utils_eq(observation.cF, expected.cF) && (_Utils_eq(observation.cR, expected.cR) && (_Utils_eq(observation.a8, expected.a8) && (_Utils_eq(observation.bc, expected.bc) && (A2($author$project$ReconciliationFrame$contextMatches, binding, observation.a8) && (A2($author$project$ReconciliationFrame$contextMatches, binding, observation.bc) && _Utils_eq(observation.a8.y, observation.bc.y)))))))))))));
+				var expectedValid = A2($author$project$ReconciliationFrame$contextMatches, expected.cP, expected.a8) && (A2($author$project$ReconciliationFrame$contextMatches, expected.cP, expected.bc) && _Utils_eq(expected.a8.y, expected.bc.y));
+				var correlated = _Utils_eq(binding, expected.cP) && (_Utils_eq(record, expected.eJ) && (_Utils_eq(proof.dl, binding) && (_Utils_eq(proof.eH, record.dl) && (_Utils_eq(proof.eL, expected.eE) && ((!_Utils_eq(record.dl, binding)) && (A2($author$project$Binding$sameLifetime, record.ab.P.fr, binding) && (_Utils_eq(observation.cG, expected.cG) && (_Utils_eq(observation.cS, expected.cS) && (_Utils_eq(observation.a8, expected.a8) && (_Utils_eq(observation.bc, expected.bc) && (A2($author$project$ReconciliationFrame$contextMatches, binding, observation.a8) && (A2($author$project$ReconciliationFrame$contextMatches, binding, observation.bc) && _Utils_eq(observation.a8.y, observation.bc.y)))))))))))));
 				return (expectedValid && correlated) ? $elm$core$Result$Ok(
 					A3($author$project$ReconciliationFrame$ReservationReleased, binding, record, release)) : $elm$core$Result$Err('Uncorrelated retirement or current observation');
 			},
@@ -28090,7 +28394,7 @@ var $author$project$ReconciliationFrame$decodeReleased = F2(
 	});
 var $author$project$ReconciliationTracking$same = F2(
 	function (a, b) {
-		return _Utils_eq(a.dk, b.dk) && (_Utils_eq(a.aa, b.aa) && _Utils_eq(a.ay, b.ay));
+		return _Utils_eq(a.dl, b.dl) && (_Utils_eq(a.ab, b.ab) && _Utils_eq(a.az, b.az));
 	});
 var $author$project$ReconciliationTracking$release = F3(
 	function (current, raw, model) {
@@ -28100,7 +28404,7 @@ var $author$project$ReconciliationTracking$release = F3(
 				if (A2(
 					$elm$core$List$any,
 					function (entry) {
-						return _Utils_eq(entry.aa, record.aa) && _Utils_eq(entry.eE, record.ay);
+						return _Utils_eq(entry.ab, record.ab) && _Utils_eq(entry.eF, record.az);
 					},
 					model.bC)) {
 					return $elm$core$Result$Err('Legacy origin remains unsupported');
@@ -28109,14 +28413,14 @@ var $author$project$ReconciliationTracking$release = F3(
 						A2(
 							$elm$core$List$filter,
 							function (slot) {
-								return A2($author$project$ReconciliationTracking$same, slot.eI, record);
+								return A2($author$project$ReconciliationTracking$same, slot.eJ, record);
 							},
 							model.N));
 					if (_v0.$ === 1) {
 						return $elm$core$Result$Err('No stored Unknown reservation');
 					} else {
 						var slot = _v0.a;
-						var _v1 = _Utils_Tuple3(slot.eC, slot.e3, slot.ap);
+						var _v1 = _Utils_Tuple3(slot.eD, slot.e5, slot.aa);
 						if (((!_v1.a.$) && (!_v1.b.$)) && (!_v1.c.$)) {
 							var proof = _v1.a.a;
 							var action = _v1.b.a;
@@ -28126,7 +28430,7 @@ var $author$project$ReconciliationTracking$release = F3(
 								function (frame) {
 									if (frame.$ === 1) {
 										var accepted = frame.c;
-										return (!_Utils_eq(accepted.eC, proof)) ? $elm$core$Result$Err('Announced proof changed') : $elm$core$Result$Ok(
+										return (!_Utils_eq(accepted.eD, proof)) ? $elm$core$Result$Err('Announced proof changed') : $elm$core$Result$Ok(
 											_Utils_Tuple2(
 												_Utils_update(
 													model,
@@ -28137,9 +28441,9 @@ var $author$project$ReconciliationTracking$release = F3(
 														N: A2(
 															$elm$core$List$map,
 															function (entry) {
-																return A2($author$project$ReconciliationTracking$same, entry.eI, record) ? _Utils_update(
+																return A2($author$project$ReconciliationTracking$same, entry.eJ, record) ? _Utils_update(
 																	entry,
-																	{c0: true}) : entry;
+																	{c1: true}) : entry;
 															},
 															model.N)
 													}),
@@ -28150,7 +28454,7 @@ var $author$project$ReconciliationTracking$release = F3(
 								},
 								A2(
 									$author$project$ReconciliationFrame$decodeReleased,
-									{a8: action.P, cF: action.c1, cO: current, bc: geometry.P, cR: geometry.c1, eD: proof.eK, eI: slot.eI},
+									{a8: action.P, cG: action.c2, cP: current, bc: geometry.P, cS: geometry.c2, eE: proof.eL, eJ: slot.eJ},
 									raw));
 						} else {
 							return $elm$core$Result$Err('Proof and both accepted observations required');
@@ -28183,9 +28487,9 @@ var $author$project$Menu$releaseUnknown = F3(
 			A2(
 				$elm$core$List$filter,
 				function (entry) {
-					return _Utils_eq(entry.cl, local) && (_Utils_eq(entry.dk, bound) && entry.bq);
+					return _Utils_eq(entry.cl, local) && (_Utils_eq(entry.dl, bound) && entry.bq);
 				},
-				state.fx));
+				state.fz));
 		if (_v0.$ === 1) {
 			return _Utils_Tuple2(model, false);
 		} else {
@@ -28196,12 +28500,12 @@ var $author$project$Menu$releaseUnknown = F3(
 				_Utils_update(
 					state,
 					{
-						fx: A2(
+						fz: A2(
 							$elm$core$List$filter,
 							function (current) {
 								return !_Utils_eq(current.cl, local);
 							},
-							state.fx),
+							state.fz),
 						bL: A2($elm$core$List$cons, entry, state.bL)
 					}),
 				true);
@@ -28210,7 +28514,7 @@ var $author$project$Menu$releaseUnknown = F3(
 var $author$project$MenuBridge$releaseReservationUnknown = F4(
 	function (bound, protocolId, intent, model) {
 		var state = model;
-		var _v0 = A4($author$project$ReceiptRouter$findReservation, bound, protocolId, intent, state.au);
+		var _v0 = A4($author$project$ReceiptRouter$findReservation, bound, protocolId, intent, state.av);
 		if (_v0.$ === 1) {
 			return model;
 		} else {
@@ -28224,7 +28528,7 @@ var $author$project$MenuBridge$releaseReservationUnknown = F4(
 				state,
 				{
 					aI: menu,
-					au: A2($author$project$ReceiptRouter$forgetReservation, local, state.au)
+					av: A2($author$project$ReceiptRouter$forgetReservation, local, state.av)
 				}) : model;
 		}
 	});
@@ -28236,7 +28540,7 @@ var $author$project$ReconciliationTracking$requested = F3(
 				N: A2(
 					$elm$core$List$map,
 					function (slot) {
-						return _Utils_eq(slot.eC, $elm$core$Maybe$Nothing) ? slot : ((kind === 'projection-request') ? _Utils_update(
+						return _Utils_eq(slot.eD, $elm$core$Maybe$Nothing) ? slot : ((kind === 'projection-request') ? _Utils_update(
 							slot,
 							{
 								bR: $elm$core$Maybe$Just(request)
@@ -28259,7 +28563,7 @@ var $author$project$ReconciliationTracking$reset = function (model) {
 				function (slot) {
 					return _Utils_update(
 						slot,
-						{e3: $elm$core$Maybe$Nothing, bR: $elm$core$Maybe$Nothing, ap: $elm$core$Maybe$Nothing, bd: $elm$core$Maybe$Nothing, eC: $elm$core$Maybe$Nothing});
+						{e5: $elm$core$Maybe$Nothing, bR: $elm$core$Maybe$Nothing, aa: $elm$core$Maybe$Nothing, bd: $elm$core$Maybe$Nothing, eD: $elm$core$Maybe$Nothing});
 				},
 				model.N)
 		});
@@ -28314,12 +28618,12 @@ var $author$project$ReconciliationTracking$unknown = F3(
 						A2(
 							$elm$core$List$filter,
 							function (slot) {
-								return A2($author$project$ReconciliationTracking$same, slot.eI, record);
+								return A2($author$project$ReconciliationTracking$same, slot.eJ, record);
 							},
 							model.N));
 					if (!_v1.$) {
 						var slot = _v1.a;
-						return slot.c0 ? $elm$core$Result$Err('Historical reservation already released') : $elm$core$Result$Ok(
+						return slot.c1 ? $elm$core$Result$Err('Historical reservation already released') : $elm$core$Result$Ok(
 							_Utils_Tuple2(model, record));
 					} else {
 						return ($elm$core$List$length(model.N) >= 64) ? $elm$core$Result$Err('Historical reservation capacity') : $elm$core$Result$Ok(
@@ -28329,7 +28633,7 @@ var $author$project$ReconciliationTracking$unknown = F3(
 									{
 										N: A2(
 											$elm$core$List$cons,
-											{e3: $elm$core$Maybe$Nothing, bR: $elm$core$Maybe$Nothing, ap: $elm$core$Maybe$Nothing, bd: $elm$core$Maybe$Nothing, eC: $elm$core$Maybe$Nothing, eI: record, c0: false},
+											{e5: $elm$core$Maybe$Nothing, bR: $elm$core$Maybe$Nothing, aa: $elm$core$Maybe$Nothing, bd: $elm$core$Maybe$Nothing, eD: $elm$core$Maybe$Nothing, eJ: record, c1: false},
 											model.N)
 									}),
 								record));
@@ -28380,21 +28684,21 @@ var $author$project$SurfaceController$apply = F2(
 					return _Utils_Tuple2(
 						_Utils_update(
 							model,
-							{ai: recovery}),
+							{ak: recovery}),
 						_List_Nil);
 				} else {
-					var _v19 = $author$project$UInt64$next(model.eF);
+					var _v19 = $author$project$UInt64$next(model.eG);
 					if (_v19.$ === 1) {
 						return _Utils_Tuple2(
 							_Utils_update(
 								model,
-								{az: true}),
+								{aA: true}),
 							_List_Nil);
 					} else {
 						var publication = _v19.a;
 						var updated = _Utils_update(
 							model,
-							{d: next, eF: publication, ai: recovery});
+							{d: next, eG: publication, ak: recovery});
 						return _Utils_Tuple2(
 							updated,
 							_List_fromArray(
@@ -28465,12 +28769,12 @@ var $author$project$SurfaceController$apply = F2(
 							$author$project$ReconciliationTracking$legacy,
 							raw,
 							result.d.a.b,
-							A4($author$project$ReconciliationTracking$observed, raw, model.d.a.b, result.d.a.b, result.ai));
+							A4($author$project$ReconciliationTracking$observed, raw, model.d.a.b, result.d.a.b, result.ak));
 					} else {
-						return result.ai;
+						return result.ak;
 					}
 				}();
-				var reset = ((!_Utils_eq(model.d.a.b.dk, result.d.a.b.dk)) || (!result.d.a.b.j)) ? $author$project$ReconciliationTracking$reset(recovery) : recovery;
+				var reset = ((!_Utils_eq(model.d.a.b.dl, result.d.a.b.dl)) || (!result.d.a.b.j)) ? $author$project$ReconciliationTracking$reset(recovery) : recovery;
 				var proofs = A3(
 					$elm$core$List$foldl,
 					F2(
@@ -28482,12 +28786,12 @@ var $author$project$SurfaceController$apply = F2(
 						A2(
 							$elm$core$List$filterMap,
 							function ($) {
-								return $.eC;
+								return $.eD;
 							},
 							A2(
 								$elm$core$List$filter,
 								function (slot) {
-									return !slot.c0;
+									return !slot.c1;
 								},
 								reset.N)),
 						A2(
@@ -28510,14 +28814,14 @@ var $author$project$SurfaceController$apply = F2(
 											$elm$json$Json$Encode$string('reconciliation-ready')),
 											_Utils_Tuple2(
 											'binding',
-											$author$project$Binding$encode(proof.dk)),
+											$author$project$Binding$encode(proof.dl)),
 											_Utils_Tuple2(
 											'proofRequestId',
 											$elm$json$Json$Encode$string(
-												$author$project$UInt64$string(proof.eK))),
+												$author$project$UInt64$string(proof.eL))),
 											_Utils_Tuple2(
 											'queriedBinding',
-											$author$project$Binding$encode(proof.eG))
+											$author$project$Binding$encode(proof.eH))
 										]))));
 					},
 					proofs) : _List_Nil;
@@ -28532,14 +28836,14 @@ var $author$project$SurfaceController$apply = F2(
 						}
 					},
 					effects))) {
-					var _v15 = $author$project$UInt64$next(result.eF);
+					var _v15 = $author$project$UInt64$next(result.eG);
 					if (!_v15.$) {
 						var publication = _v15.a;
 						var updated = _Utils_update(
 							result,
 							{
-								eF: publication,
-								ai: A2(register, emitted, reset)
+								eG: publication,
+								ak: A2(register, emitted, reset)
 							});
 						return _Utils_Tuple2(
 							updated,
@@ -28552,7 +28856,7 @@ var $author$project$SurfaceController$apply = F2(
 						return _Utils_Tuple2(
 							_Utils_update(
 								result,
-								{az: true}),
+								{aA: true}),
 							_List_Nil);
 					}
 				} else {
@@ -28560,7 +28864,7 @@ var $author$project$SurfaceController$apply = F2(
 						_Utils_update(
 							result,
 							{
-								ai: A2(register, emitted, reset)
+								ak: A2(register, emitted, reset)
 							}),
 						emitted);
 				}
@@ -28579,8 +28883,8 @@ var $author$project$SurfaceController$apply = F2(
 					H: $elm$core$Maybe$Nothing,
 					t: false,
 					D: false,
-					m: false,
-					at: $elm$core$Maybe$Nothing,
+					l: false,
+					ac: $elm$core$Maybe$Nothing,
 					u: $elm$core$Maybe$Nothing,
 					n: false,
 					L: false,
@@ -28600,7 +28904,7 @@ var $author$project$SurfaceController$apply = F2(
 							J: $elm$core$Maybe$Nothing,
 							b: _Utils_update(
 								shell,
-								{d$: false})
+								{d0: false})
 						})
 				});
 		};
@@ -28613,7 +28917,7 @@ var $author$project$SurfaceController$apply = F2(
 					$elm$json$Json$Decode$decodeValue,
 					A2($elm$json$Json$Decode$field, 'kind', $elm$json$Json$Decode$string),
 					raw),
-				model.d.a.b.dk);
+				model.d.a.b.dl);
 			_v1$3:
 			while (true) {
 				if ((!_v1.a.$) && (!_v1.b.$)) {
@@ -28623,7 +28927,7 @@ var $author$project$SurfaceController$apply = F2(
 							if ((!model.d.a.b.j) || (model.d.a.b.j === 3)) {
 								return _Utils_Tuple2(current, _List_Nil);
 							} else {
-								var _v2 = A3($author$project$ReconciliationTracking$unknown, currentBinding, raw, model.ai);
+								var _v2 = A3($author$project$ReconciliationTracking$unknown, currentBinding, raw, model.ak);
 								if (_v2.$ === 1) {
 									if (_v2.a === 'Historical reservation capacity') {
 										return A2(
@@ -28642,15 +28946,15 @@ var $author$project$SurfaceController$apply = F2(
 										$author$project$Desktop$update,
 										$author$project$Desktop$Window(
 											$author$project$TaskbarShell$Native(
-												A2($author$project$Shell$RecoveredUnknown, record.ay, record.aa))),
+												A2($author$project$Shell$RecoveredUnknown, record.az, record.ab))),
 										model.d);
 									var admitted = _v4.a;
 									var windows = admitted.a;
-									var menus = A4($author$project$MenuBridge$observeReservationUnknown, record.dk, record.ay, record.aa, windows.h);
+									var menus = A4($author$project$MenuBridge$observeReservationUnknown, record.dl, record.az, record.ab, windows.h);
 									var tracked = A2(
 										$elm$core$List$any,
 										function (entry) {
-											return _Utils_eq(entry.aa, record.aa) && (_Utils_eq(entry.ay, record.ay) && (entry.W === 4));
+											return _Utils_eq(entry.ab, record.ab) && (_Utils_eq(entry.az, record.az) && (entry.W === 4));
 										},
 										windows.b._.z);
 									return (!tracked) ? _Utils_Tuple2(current, _List_Nil) : A2(
@@ -28670,7 +28974,7 @@ var $author$project$SurfaceController$apply = F2(
 							if ((!model.d.a.b.j) || (model.d.a.b.j === 3)) {
 								return _Utils_Tuple2(current, _List_Nil);
 							} else {
-								var _v5 = A3($author$project$ReconciliationTracking$announce, currentBinding, raw, model.ai);
+								var _v5 = A3($author$project$ReconciliationTracking$announce, currentBinding, raw, model.ak);
 								if (_v5.$ === 1) {
 									return _Utils_Tuple2(current, _List_Nil);
 								} else {
@@ -28695,10 +28999,10 @@ var $author$project$SurfaceController$apply = F2(
 													_Utils_Tuple2(
 													'proofRequestId',
 													$elm$json$Json$Encode$string(
-														$author$project$UInt64$string(proof.eK))),
+														$author$project$UInt64$string(proof.eL))),
 													_Utils_Tuple2(
 													'queriedBinding',
-													$author$project$Binding$encode(proof.eG))
+													$author$project$Binding$encode(proof.eH))
 												]));
 										var _v7 = A2(
 											ordinary,
@@ -28706,7 +29010,7 @@ var $author$project$SurfaceController$apply = F2(
 												model,
 												{
 													d: clearChoices(model.d),
-													ai: recovery
+													ak: recovery
 												}),
 											$author$project$Desktop$Window(
 												$author$project$TaskbarShell$Native($author$project$Shell$Refresh)));
@@ -28742,7 +29046,7 @@ var $author$project$SurfaceController$apply = F2(
 							if ((!model.d.a.b.j) || (model.d.a.b.j === 3)) {
 								return _Utils_Tuple2(current, _List_Nil);
 							} else {
-								var _v9 = A3($author$project$ReconciliationTracking$release, currentBinding, raw, model.ai);
+								var _v9 = A3($author$project$ReconciliationTracking$release, currentBinding, raw, model.ak);
 								if (_v9.$ === 1) {
 									return _Utils_Tuple2(current, _List_Nil);
 								} else {
@@ -28752,29 +29056,29 @@ var $author$project$SurfaceController$apply = F2(
 									if (!A2(
 										$elm$core$List$any,
 										function (entry) {
-											return (entry.W === 4) && (_Utils_eq(entry.ay, record.ay) && _Utils_eq(entry.aa, record.aa));
+											return (entry.W === 4) && (_Utils_eq(entry.az, record.az) && _Utils_eq(entry.ab, record.ab));
 										},
 										model.d.a.b._.z)) {
 										return _Utils_Tuple2(
 											_Utils_update(
 												model,
-												{ai: recovery}),
+												{ak: recovery}),
 											_List_Nil);
 									} else {
 										var preserveShared = A2(
 											$elm$core$List$any,
 											function (slot) {
-												return (!slot.c0) && (_Utils_eq(slot.eI.aa, record.aa) && _Utils_eq(slot.eI.ay, record.ay));
+												return (!slot.c1) && (_Utils_eq(slot.eJ.ab, record.ab) && _Utils_eq(slot.eJ.az, record.az));
 											},
 											recovery.N);
 										var cleared = clearChoices(model.d);
 										var windows = cleared.a;
-										var menus = A4($author$project$MenuBridge$releaseReservationUnknown, record.dk, record.ay, record.aa, windows.h);
+										var menus = A4($author$project$MenuBridge$releaseReservationUnknown, record.dl, record.az, record.ab, windows.h);
 										var _v11 = A2(
 											$author$project$Desktop$update,
 											$author$project$Desktop$Window(
 												$author$project$TaskbarShell$Native(
-													A4($author$project$Shell$ReservationReleased, preserveShared, record.dk, record.ay, record.aa))),
+													A4($author$project$Shell$ReservationReleased, preserveShared, record.dl, record.az, record.ab))),
 											_Utils_update(
 												cleared,
 												{
@@ -28860,7 +29164,7 @@ var $author$project$Surface$resolveAction = F4(
 				$elm$json$Json$Decode$map7,
 				F7(
 					function (version, kind, shown, scoped, identity, role, origin) {
-						return {cU: identity, ej: kind, cY: origin, c3: role, eO: scoped, eP: shown, eU: version};
+						return {cV: identity, ek: kind, cZ: origin, c4: role, eQ: scoped, eR: shown, eW: version};
 					}),
 				A2($elm$json$Json$Decode$field, 'surfaceProtocol', $elm$json$Json$Decode$int),
 				A2($elm$json$Json$Decode$field, 'kind', $elm$json$Json$Decode$string),
@@ -28872,10 +29176,10 @@ var $author$project$Surface$resolveAction = F4(
 		var _v0 = A2($elm$json$Json$Decode$decodeValue, decoder, raw);
 		if (!_v0.$) {
 			var event = _v0.a;
-			return ((event.eU !== 2) || ((event.ej !== 'surface-action') || ((!_Utils_eq(event.eP, publication)) || (!_Utils_eq(event.eO, lease))))) ? $elm$core$Maybe$Nothing : A2(
+			return ((event.eW !== 2) || ((event.ek !== 'surface-action') || ((!_Utils_eq(event.eR, publication)) || (!_Utils_eq(event.eQ, lease))))) ? $elm$core$Maybe$Nothing : A2(
 				$elm$core$Maybe$map,
-				(event.c3 === 'bar') ? $author$project$Desktop$SurfaceEntry(
-					(event.cY === 'keyboard') ? 1 : 0) : $elm$core$Basics$identity,
+				(event.c4 === 'bar') ? $author$project$Desktop$SurfaceEntry(
+					(event.cZ === 'keyboard') ? 1 : 0) : $elm$core$Basics$identity,
 				A2(
 					$elm$core$Maybe$andThen,
 					function ($) {
@@ -28885,9 +29189,9 @@ var $author$project$Surface$resolveAction = F4(
 						A2(
 							$elm$core$List$filter,
 							function (control) {
-								return _Utils_eq(control.cl, event.cU) && control.fd;
+								return _Utils_eq(control.cl, event.cV) && control.ff;
 							},
-							(event.c3 === 'bar') ? $author$project$Surface$barControls(model) : ((event.c3 === 'popup') ? $author$project$Surface$controls(model) : _List_Nil)))));
+							(event.c4 === 'bar') ? $author$project$Surface$barControls(model) : ((event.c4 === 'popup') ? $author$project$Surface$controls(model) : _List_Nil)))));
 		} else {
 			return $elm$core$Maybe$Nothing;
 		}
@@ -28980,9 +29284,9 @@ var $author$project$Surface$resolveBase = F4(
 								function (index) {
 									return $author$project$Desktop$Window(
 										$author$project$TaskbarShell$MenuEvent(
-											A3($author$project$Menu$Activate, menu.cl, menu.dk, index)));
+											A3($author$project$Menu$Activate, menu.cl, menu.dl, index)));
 								},
-								menu.fN) : $elm$core$Maybe$Nothing;
+								menu.fP) : $elm$core$Maybe$Nothing;
 						default:
 							return $elm$core$Maybe$Nothing;
 					}
@@ -29103,7 +29407,7 @@ var $author$project$Surface$resolveBase = F4(
 											var enabled = A2(
 												$elm$core$List$any,
 												function (control) {
-													return _Utils_eq(control.cl, identity) && control.fd;
+													return _Utils_eq(control.cl, identity) && control.ff;
 												},
 												$author$project$Surface$barControls(model));
 											var emptyPin = function () {
@@ -29137,7 +29441,7 @@ var $author$project$Surface$resolveBase = F4(
 													var _v3 = current.aG;
 													if (_v3.b && (!_v3.b.b)) {
 														var family = _v3.a;
-														return family.dj ? $elm$core$Maybe$Just(
+														return family.dk ? $elm$core$Maybe$Just(
 															A2($author$project$Desktop$OpenWindowMenu, stamp, family.r)) : $elm$core$Maybe$Nothing;
 													} else {
 														return _Utils_eq(
@@ -29170,7 +29474,7 @@ var $author$project$Surface$resolveBase = F4(
 													return A2(
 														$elm$core$Maybe$andThen,
 														function (picker) {
-															return (!_Utils_eq(picker.c5, stamp)) ? $elm$core$Maybe$Nothing : A2(
+															return (!_Utils_eq(picker.c6, stamp)) ? $elm$core$Maybe$Nothing : A2(
 																$elm$core$Maybe$map,
 																function (family) {
 																	return A2($author$project$Desktop$OpenWindowMenu, stamp, family.r);
@@ -29181,7 +29485,7 @@ var $author$project$Surface$resolveBase = F4(
 																		function (family) {
 																			return _Utils_eq(
 																				'family:' + $author$project$UInt64$string(family.r),
-																				identity) && family.dj;
+																				identity) && family.dk;
 																		},
 																		A2(
 																			$elm$core$List$concatMap,
@@ -29245,7 +29549,7 @@ var $author$project$Surface$resolve = F4(
 var $author$project$SurfaceController$update = F2(
 	function (event, current) {
 		var model = current;
-		if (model.az) {
+		if (model.aA) {
 			return _Utils_Tuple2(current, _List_Nil);
 		} else {
 			switch (event.$) {
@@ -29262,20 +29566,20 @@ var $author$project$SurfaceController$update = F2(
 							function (message) {
 								return A2($author$project$SurfaceController$apply, message, current);
 							},
-							A4($author$project$Surface$resolve, model.eF, model.em, raw, model.d)));
+							A4($author$project$Surface$resolve, model.eG, model.en, raw, model.d)));
 				case 4:
 					if ($author$project$Surface$mode(model.d) === 'closed') {
 						return _Utils_Tuple2(current, _List_Nil);
 					} else {
 						var _v1 = _Utils_Tuple2(
-							$author$project$UInt64$next(model.em),
-							$author$project$UInt64$next(model.eF));
+							$author$project$UInt64$next(model.en),
+							$author$project$UInt64$next(model.eG));
 						if ((!_v1.a.$) && (!_v1.b.$)) {
 							var token = _v1.a.a;
 							var shown = _v1.b.a;
 							var result = _Utils_update(
 								model,
-								{em: token, eF: shown});
+								{en: token, eG: shown});
 							return _Utils_Tuple2(
 								result,
 								_List_fromArray(
@@ -29287,27 +29591,27 @@ var $author$project$SurfaceController$update = F2(
 							return _Utils_Tuple2(
 								_Utils_update(
 									model,
-									{az: true}),
+									{aA: true}),
 								_List_Nil);
 						}
 					}
 				case 3:
 					var lease = event.a;
-					if ((!_Utils_eq(lease, model.em)) || ($author$project$Surface$mode(model.d) === 'closed')) {
+					if ((!_Utils_eq(lease, model.en)) || ($author$project$Surface$mode(model.d) === 'closed')) {
 						return _Utils_Tuple2(current, _List_Nil);
 					} else {
 						if (!_Utils_eq(model.d.x, $elm$core$Maybe$Nothing)) {
 							return A2($author$project$SurfaceController$apply, $author$project$Desktop$InvalidateSnap, current);
 						} else {
 							var _v2 = _Utils_Tuple2(
-								$author$project$UInt64$next(model.em),
-								$author$project$UInt64$next(model.eF));
+								$author$project$UInt64$next(model.en),
+								$author$project$UInt64$next(model.eG));
 							if ((!_v2.a.$) && (!_v2.b.$)) {
 								var token = _v2.a.a;
 								var shown = _v2.b.a;
 								var result = _Utils_update(
 									model,
-									{em: token, eF: shown});
+									{en: token, eG: shown});
 								return _Utils_Tuple2(
 									result,
 									_List_fromArray(
@@ -29319,14 +29623,14 @@ var $author$project$SurfaceController$update = F2(
 								return _Utils_Tuple2(
 									_Utils_update(
 										model,
-										{az: true}),
+										{aA: true}),
 									_List_Nil);
 							}
 						}
 					}
 				default:
 					var lease = event.a;
-					return ((!_Utils_eq(lease, model.em)) || ($author$project$Surface$mode(model.d) === 'closed')) ? _Utils_Tuple2(current, _List_Nil) : ((!_Utils_eq(model.d.o, $elm$core$Maybe$Nothing)) ? A2(
+					return ((!_Utils_eq(lease, model.en)) || ($author$project$Surface$mode(model.d) === 'closed')) ? _Utils_Tuple2(current, _List_Nil) : ((!_Utils_eq(model.d.o, $elm$core$Maybe$Nothing)) ? A2(
 						$elm$core$Maybe$withDefault,
 						_Utils_Tuple2(current, _List_Nil),
 						A2(
@@ -29416,7 +29720,7 @@ var $author$project$SurfaceController$update = F2(
 									$author$project$Desktop$CloseSwitcher(stamp),
 									current);
 							},
-							$author$project$Desktop$capture(model.d))) : (model.d.m ? A2(
+							$author$project$Desktop$capture(model.d))) : (model.d.l ? A2(
 						$elm$core$Maybe$withDefault,
 						_Utils_Tuple2(current, _List_Nil),
 						A2(
@@ -29447,7 +29751,7 @@ var $author$project$SurfaceController$update = F2(
 								return A2(
 									$author$project$SurfaceController$apply,
 									$author$project$Desktop$Window(
-										A2($author$project$TaskbarShell$Close, picker.c5, picker.fh)),
+										A2($author$project$TaskbarShell$Close, picker.c6, picker.fj)),
 									current);
 							},
 							model.d.a.J))))))))))));
@@ -29457,12 +29761,12 @@ var $author$project$SurfaceController$update = F2(
 var $author$project$OutputController$apply = F2(
 	function (event, _v0) {
 		var model = _v0;
-		var _v1 = A2($author$project$SurfaceController$update, event, model.cM);
+		var _v1 = A2($author$project$SurfaceController$update, event, model.cN);
 		var next = _v1.a;
 		var effects = _v1.b;
 		var changed = !_Utils_eq(
-			$author$project$SurfaceController$desktop(next).a.b.dk,
-			$author$project$SurfaceController$desktop(model.cM).a.b.dk);
+			$author$project$SurfaceController$desktop(next).a.b.dl,
+			$author$project$SurfaceController$desktop(model.cN).a.b.dl);
 		return _Utils_Tuple2(
 			A2(
 				$author$project$OutputController$track,
@@ -29471,9 +29775,9 @@ var $author$project$OutputController$apply = F2(
 					model,
 					{
 						aE: changed ? false : model.aE,
-						aw: changed ? _List_Nil : model.aw,
+						ax: changed ? _List_Nil : model.ax,
 						aF: changed ? false : model.aF,
-						cM: next
+						cN: next
 					})),
 			effects);
 	});
@@ -29501,7 +29805,7 @@ var $author$project$OutputController$catalogRequest = function (raw) {
 					return _Utils_Tuple3(
 						version,
 						kind,
-						{dk: binding, c1: request});
+						{dl: binding, c2: request});
 				}),
 			A2($elm$json$Json$Decode$field, 'protocolVersion', $elm$json$Json$Decode$int),
 			A2($elm$json$Json$Decode$field, 'kind', $elm$json$Json$Decode$string),
@@ -29511,7 +29815,7 @@ var $author$project$OutputController$catalogRequest = function (raw) {
 	if (((!_v0.$) && (_v0.a.a === 3)) && (_v0.a.b === 'catalog-request')) {
 		var _v1 = _v0.a;
 		var request = _v1.c;
-		return _Utils_eq(request.c1, $author$project$UInt64$zero) ? $elm$core$Maybe$Nothing : $elm$core$Maybe$Just(request);
+		return _Utils_eq(request.c2, $author$project$UInt64$zero) ? $elm$core$Maybe$Nothing : $elm$core$Maybe$Just(request);
 	} else {
 		return $elm$core$Maybe$Nothing;
 	}
@@ -29530,8 +29834,8 @@ var $author$project$UnsentOperation$commandDecoder = A2(
 				var kind = _v0.b;
 				var key = _v0.c;
 				return ((version !== 3) || ((kind !== 'window-effect') || ((!_Utils_eq(
-					key.eE,
-					$author$project$Effects$protocol(key.aa.bh))) || (!A3($author$project$Binding$matchesContext, key.aa.P.fp, key.aa.P.fe, key.dk))))) ? $elm$json$Json$Decode$fail('Operation command authority/protocol') : $elm$json$Json$Decode$succeed(key);
+					key.eF,
+					$author$project$Effects$protocol(key.ab.bh))) || (!A3($author$project$Binding$matchesContext, key.ab.P.fr, key.ab.P.fg, key.dl))))) ? $elm$json$Json$Decode$fail('Operation command authority/protocol') : $elm$json$Json$Decode$succeed(key);
 			},
 			A6(
 				$elm$json$Json$Decode$map5,
@@ -29540,7 +29844,7 @@ var $author$project$UnsentOperation$commandDecoder = A2(
 						return _Utils_Tuple3(
 							version,
 							kind,
-							{dk: binding, aa: intent, eE: protocol});
+							{dl: binding, ab: intent, eF: protocol});
 					}),
 				A2($elm$json$Json$Decode$field, 'protocolVersion', $elm$json$Json$Decode$int),
 				A2($elm$json$Json$Decode$field, 'kind', $elm$json$Json$Decode$string),
@@ -29599,7 +29903,7 @@ var $author$project$SurfaceRenderer$controls = function (maximum) {
 							$elm$json$Json$Decode$map6,
 							F6(
 								function (identity, domId, label, ariaLabel, detail, available) {
-									return {f: ariaLabel, aU: $elm$core$Maybe$Nothing, e: detail, g: domId, fd: available, aH: false, cU: identity, el: label};
+									return {f: ariaLabel, aU: $elm$core$Maybe$Nothing, e: detail, g: domId, ff: available, aH: false, cV: identity, em: label};
 								}),
 							A2(
 								$elm$json$Json$Decode$field,
@@ -29718,7 +30022,7 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 				$elm$json$Json$Decode$map8,
 				F8(
 					function (version, shown, scoped, current, notice, bar, popup, appearance) {
-						return {al: appearance, ad: bar, bw: current, ft: notice, K: popup, eO: scoped, eP: shown, eU: version};
+						return {an: appearance, af: bar, bw: current, fv: notice, K: popup, eQ: scoped, eR: shown, eW: version};
 					}),
 				A2($elm$json$Json$Decode$field, 'surfaceProtocol', $elm$json$Json$Decode$int),
 				A2($elm$json$Json$Decode$field, 'publication', $author$project$UInt64$decoder),
@@ -29752,18 +30056,18 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 					$elm$core$Set$size(
 						$elm$core$Set$fromList(names)));
 			};
-			var all = _Utils_ap(record.ad, record.K);
+			var all = _Utils_ap(record.af, record.K);
 			var identities = A2(
 				$elm$core$List$map,
 				function ($) {
-					return $.cU;
+					return $.cV;
 				},
 				all);
-			return ((record.eU !== 2) || (_Utils_eq(record.eP, $author$project$UInt64$zero) || ((!A2(
+			return ((record.eW !== 2) || (_Utils_eq(record.eR, $author$project$UInt64$zero) || ((!A2(
 				$elm$core$List$member,
 				record.bw,
 				_List_fromArray(
-					['closed', 'picker', 'applications', 'menu', 'overview', 'switcher', 'snap', 'settings', 'notifications', 'system', 'files', 'jump']))) || (((record.bw !== 'closed') && _Utils_eq(record.eO, $author$project$UInt64$zero)) || (((record.bw === 'closed') && (!$elm$core$List$isEmpty(record.K))) || ((!unique(identities)) || ((!unique(
+					['closed', 'picker', 'applications', 'menu', 'overview', 'switcher', 'snap', 'settings', 'notifications', 'system', 'files', 'jump']))) || (((record.bw !== 'closed') && _Utils_eq(record.eQ, $author$project$UInt64$zero)) || (((record.bw === 'closed') && (!$elm$core$List$isEmpty(record.K))) || ((!unique(identities)) || ((!unique(
 				A2(
 					$elm$core$List$map,
 					function ($) {
@@ -29772,14 +30076,14 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 					all))) || (A2(
 				$elm$core$List$any,
 				function (control) {
-					return $elm$core$String$isEmpty(control.cU) || ($elm$core$String$isEmpty(control.g) || (control.aH && control.fd));
+					return $elm$core$String$isEmpty(control.cV) || ($elm$core$String$isEmpty(control.g) || (control.aH && control.ff));
 				},
 				all) || (A2(
 				$elm$core$List$any,
 				function ($) {
 					return $.aH;
 				},
-				record.ad) || ((A2(
+				record.af) || ((A2(
 				$elm$core$List$any,
 				function ($) {
 					return $.aH;
@@ -29795,10 +30099,10 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 				function (control) {
 					return !_Utils_eq(control.aU, $elm$core$Maybe$Nothing);
 				},
-				record.ad) || (A2(
+				record.af) || (A2(
 				$elm$core$List$any,
 				function (control) {
-					return (!_Utils_eq(control.aU, $elm$core$Maybe$Nothing)) && ((record.bw !== 'menu') || (!A2($elm$core$String$startsWith, 'menu:', control.cU)));
+					return (!_Utils_eq(control.aU, $elm$core$Maybe$Nothing)) && ((record.bw !== 'menu') || (!A2($elm$core$String$startsWith, 'menu:', control.cV)));
 				},
 				record.K) || ($elm$core$List$length(
 				A2(
@@ -29807,7 +30111,7 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 						return !_Utils_eq(control.aU, $elm$core$Maybe$Nothing);
 					},
 					record.K)) > 1)))))))))))))) ? $elm$core$Result$Err('Invalid presentation scope/identities') : $elm$core$Result$Ok(
-				{al: record.al, ad: record.ad, eh: parent, em: record.eO, l: record.bw, I: motion, K: record.K, eF: record.eP, W: record.ft});
+				{an: record.an, af: record.af, ei: parent, en: record.eQ, m: record.bw, I: motion, K: record.K, eG: record.eR, W: record.fv});
 		},
 		A2(
 			$elm$core$Result$mapError,
@@ -29827,10 +30131,10 @@ var $author$project$Announcement$encodeMessage = function (message) {
 					$author$project$UInt64$string(message.bN))),
 				_Utils_Tuple2(
 				'correlation',
-				$elm$json$Json$Encode$string(message.cN)),
+				$elm$json$Json$Encode$string(message.cO)),
 				_Utils_Tuple2(
 				'text',
-				$elm$json$Json$Encode$string(message.dd))
+				$elm$json$Json$Encode$string(message.de))
 			]));
 };
 var $author$project$OutcomeAnnouncements$encode = function (_v0) {
@@ -29859,7 +30163,7 @@ var $author$project$OutputController$encodeScope = function (_v0) {
 var $author$project$OutputController$owner = function (_v0) {
 	var model = _v0;
 	return ($author$project$Surface$mode(
-		$author$project$SurfaceController$desktop(model.cM)) === 'closed') ? $elm$core$Maybe$Nothing : model.fN;
+		$author$project$SurfaceController$desktop(model.cN)) === 'closed') ? $elm$core$Maybe$Nothing : model.fP;
 };
 var $author$project$OutputController$frame = function (current) {
 	var model = current;
@@ -29875,16 +30179,16 @@ var $author$project$OutputController$frame = function (current) {
 				_Utils_Tuple2(
 				'revision',
 				$elm$json$Json$Encode$string(
-					$author$project$UInt64$string(model.c2))),
+					$author$project$UInt64$string(model.c3))),
 				_Utils_Tuple2(
 				'views',
-				A2($elm$json$Json$Encode$list, $author$project$OutputController$encodeScope, model.av)),
+				A2($elm$json$Json$Encode$list, $author$project$OutputController$encodeScope, model.aw)),
 				_Utils_Tuple2(
 				'focusOwner',
 				A2(
 					$elm$core$Maybe$withDefault,
 					$elm$json$Json$Encode$null,
-					A2($elm$core$Maybe$map, $author$project$OutputController$encodeScope, model.fN))),
+					A2($elm$core$Maybe$map, $author$project$OutputController$encodeScope, model.fP))),
 				_Utils_Tuple2(
 				'popupOwner',
 				A2(
@@ -29896,7 +30200,7 @@ var $author$project$OutputController$frame = function (current) {
 						$author$project$OutputController$owner(current)))),
 				_Utils_Tuple2(
 				'frame',
-				$author$project$SurfaceController$frame(model.cM)),
+				$author$project$SurfaceController$frame(model.cN)),
 				_Utils_Tuple2(
 				'announcer',
 				A2(
@@ -29919,7 +30223,7 @@ var $author$project$OutputController$frame = function (current) {
 												$elm$core$Maybe$Nothing)) ? 'popup' : 'bar'))
 									]));
 						},
-						model.fN))),
+						model.fP))),
 				_Utils_Tuple2(
 				'announcement',
 				$author$project$OutcomeAnnouncements$encode(model.bS))
@@ -29927,7 +30231,7 @@ var $author$project$OutputController$frame = function (current) {
 };
 var $author$project$SurfaceRenderer$lease = function (_v0) {
 	var snapshot = _v0;
-	return snapshot.em;
+	return snapshot.en;
 };
 var $author$project$OutputController$lease = function (model) {
 	return A2(
@@ -29960,7 +30264,7 @@ var $author$project$OutputController$observation = function (raw) {
 };
 var $author$project$SurfaceRenderer$publication = function (_v0) {
 	var snapshot = _v0;
-	return snapshot.eF;
+	return snapshot.eG;
 };
 var $author$project$Desktop$CatalogUnsent = F2(
 	function (a, b) {
@@ -29978,7 +30282,7 @@ var $author$project$OutputController$refuseCatalogs = F3(
 				var _v3 = A2(
 					$author$project$OutputController$apply,
 					$author$project$SurfaceController$Interaction(
-						A2($author$project$Desktop$CatalogUnsent, request.dk, request.c1)),
+						A2($author$project$Desktop$CatalogUnsent, request.dl, request.c2)),
 					state);
 				var next = _v3.a;
 				var emitted = _v3.b;
@@ -29991,7 +30295,7 @@ var $author$project$OutputController$refuseCatalogs = F3(
 		var matching = A2(
 			$elm$core$List$filter,
 			function (request) {
-				return A3($author$project$Desktop$canProveCatalogUnsent, request.dk, request.c1, desktop);
+				return A3($author$project$Desktop$canProveCatalogUnsent, request.dl, request.c2, desktop);
 			},
 			requests);
 		var _v0 = A3(
@@ -30042,7 +30346,7 @@ var $author$project$OutputController$register = F2(
 			A2(
 				$elm$core$Maybe$withDefault,
 				A2($author$project$OutputController$Scope, $author$project$UInt64$zero, $author$project$UInt64$zero),
-				model.fN),
+				model.fP),
 			$author$project$OutputController$owner(current));
 		var requests = A2(
 			$elm$core$List$filterMap,
@@ -30136,7 +30440,7 @@ var $author$project$OutputController$register = F2(
 				]));
 		var text = A2($elm$json$Json$Encode$encode, 0, packet);
 		var catalogs = A2($elm$core$List$filterMap, $author$project$OutputController$catalogRequest, requests);
-		var binding = $author$project$SurfaceController$desktop(model.cM).a.b.dk;
+		var binding = $author$project$SurfaceController$desktop(model.cN).a.b.dl;
 		var bound = A2(
 			$elm$core$List$all,
 			function (request) {
@@ -30157,8 +30461,8 @@ var $author$project$OutputController$register = F2(
 					current,
 					$elm$core$Maybe$Just(packet));
 			} else {
-				if ((!A2($elm$core$List$member, scoped, model.av)) || (model.aE || (($elm$core$List$length(model.aw) >= 16) || (($elm$core$List$length(requests) > 16) || (($elm$core$String$length(text) > 131072) || ($author$project$OutputController$utf8Length(text) > 131072)))))) {
-					var capacity = ($elm$core$List$length(model.aw) >= 16) && (A2($elm$core$List$member, scoped, model.av) && (($elm$core$List$length(requests) <= 16) && (($elm$core$String$length(text) <= 131072) && ($author$project$OutputController$utf8Length(text) <= 131072))));
+				if ((!A2($elm$core$List$member, scoped, model.aw)) || (model.aE || (($elm$core$List$length(model.ax) >= 16) || (($elm$core$List$length(requests) > 16) || (($elm$core$String$length(text) > 131072) || ($author$project$OutputController$utf8Length(text) > 131072)))))) {
+					var capacity = ($elm$core$List$length(model.ax) >= 16) && (A2($elm$core$List$member, scoped, model.aw) && (($elm$core$List$length(requests) <= 16) && (($elm$core$String$length(text) <= 131072) && ($author$project$OutputController$utf8Length(text) <= 131072))));
 					var belongs = function (slot) {
 						return A2(
 							$elm$core$List$member,
@@ -30208,7 +30512,7 @@ var $author$project$OutputController$register = F2(
 					var settled = _v1.a;
 					var _v3 = A3(
 						$author$project$OutputController$refuseCatalogs,
-						$author$project$OutputController$lease(model.cM),
+						$author$project$OutputController$lease(model.cN),
 						catalogs,
 						settled);
 					var catalogSettled = _v3.a;
@@ -30261,26 +30565,26 @@ var $author$project$OutputController$register = F2(
 					var _v5 = _Utils_Tuple2(
 						binding,
 						$author$project$SurfaceRenderer$decode(
-							$author$project$SurfaceController$frame(model.cM)));
+							$author$project$SurfaceController$frame(model.cN)));
 					if ((!_v5.a.$) && (!_v5.b.$)) {
 						var authority = _v5.a.a;
 						var snapshot = _v5.b.a;
 						var batch = {
-							dk: authority,
-							cJ: catalogs,
-							em: $author$project$SurfaceRenderer$lease(snapshot),
-							cX: observations,
-							ev: operations,
-							eF: $author$project$SurfaceRenderer$publication(snapshot),
-							c2: model.c2,
-							c5: scoped,
+							dl: authority,
+							cK: catalogs,
+							en: $author$project$SurfaceRenderer$lease(snapshot),
+							cY: observations,
+							ew: operations,
+							eG: $author$project$SurfaceRenderer$publication(snapshot),
+							c3: model.c3,
+							c6: scoped,
 							cD: text
 						};
 						return _Utils_Tuple2(
 							_Utils_update(
 								model,
 								{
-									aw: A2($elm$core$List$cons, batch, model.aw)
+									ax: A2($elm$core$List$cons, batch, model.ax)
 								}),
 							$elm$core$Maybe$Just(packet));
 					} else {
@@ -30310,7 +30614,7 @@ var $author$project$OutputController$assignOwner = F2(
 			function (_v0) {
 				var outputId = _v0.a;
 				var providerId = _v0.b;
-				return {dC: outputId, dI: providerId};
+				return {dD: outputId, dJ: providerId};
 			},
 			scope);
 		return A2(
@@ -30325,7 +30629,7 @@ var $author$project$Shortcuts$currentGeneration = F2(
 			A2(
 				$elm$core$Maybe$andThen,
 				function ($) {
-					return $.fw;
+					return $.fy;
 				},
 				$elm$core$List$head(
 					$elm$core$List$reverse(snapshot.by))),
@@ -30413,7 +30717,7 @@ var $author$project$OutputController$nativePopup = F3(
 			var token = _v1.b;
 			return (_Utils_eq(
 				$author$project$OutputController$owner(current),
-				$elm$core$Maybe$Just(scope)) && A2($elm$core$List$member, scope, model.av)) ? A2(
+				$elm$core$Maybe$Just(scope)) && A2($elm$core$List$member, scope, model.aw)) ? A2(
 				$author$project$OutputController$apply,
 				event(token),
 				current) : _Utils_Tuple2(current, _List_Nil);
@@ -30448,7 +30752,7 @@ var $author$project$OutputController$receiveDisposition = F2(
 				$elm$json$Json$Decode$map8,
 				F8(
 					function (scope, revision, publication, token, binding, batch, disposition, header) {
-						return {dk: binding, ch: disposition, ec: header, em: token, eF: publication, c2: revision, c5: scope, cD: batch};
+						return {dl: binding, ch: disposition, ed: header, en: token, eG: publication, c3: revision, c6: scope, cD: batch};
 					}),
 				A2($elm$json$Json$Decode$field, 'scope', $author$project$OutputController$scopeDecoder),
 				A2($elm$json$Json$Decode$field, 'revision', $author$project$UInt64$decoder),
@@ -30474,10 +30778,10 @@ var $author$project$OutputController$receiveDisposition = F2(
 		if (!_v0.$) {
 			var certificate = _v0.a;
 			var matches = function (batch) {
-				return _Utils_eq(batch.c5, certificate.c5) && (_Utils_eq(batch.c2, certificate.c2) && (_Utils_eq(batch.eF, certificate.eF) && (_Utils_eq(batch.em, certificate.em) && (_Utils_eq(batch.dk, certificate.dk) && _Utils_eq(batch.cD, certificate.cD)))));
+				return _Utils_eq(batch.c6, certificate.c6) && (_Utils_eq(batch.c3, certificate.c3) && (_Utils_eq(batch.eG, certificate.eG) && (_Utils_eq(batch.en, certificate.en) && (_Utils_eq(batch.dl, certificate.dl) && _Utils_eq(batch.cD, certificate.cD)))));
 			};
 			if ((!_Utils_eq(
-				certificate.ec,
+				certificate.ed,
 				_Utils_Tuple2(1, 'batch-disposition'))) || (!A2(
 				$elm$core$List$member,
 				certificate.ch,
@@ -30486,7 +30790,7 @@ var $author$project$OutputController$receiveDisposition = F2(
 				return _Utils_Tuple2(current, _List_Nil);
 			} else {
 				var _v1 = $elm$core$List$head(
-					A2($elm$core$List$filter, matches, model.aw));
+					A2($elm$core$List$filter, matches, model.ax));
 				if (_v1.$ === 1) {
 					return _Utils_Tuple2(current, _List_Nil);
 				} else {
@@ -30494,43 +30798,43 @@ var $author$project$OutputController$receiveDisposition = F2(
 					var remaining = A2(
 						$elm$core$List$filter,
 						A2($elm$core$Basics$composeR, matches, $elm$core$Basics$not),
-						model.aw);
-					var currentShell = $author$project$SurfaceController$desktop(model.cM).a.b;
+						model.ax);
+					var currentShell = $author$project$SurfaceController$desktop(model.cN).a.b;
 					var catalogMatched = A2(
 						$elm$core$List$any,
 						function (request) {
 							return A3(
 								$author$project$Desktop$canProveCatalogUnsent,
-								request.dk,
-								request.c1,
-								$author$project$SurfaceController$desktop(model.cM));
+								request.dl,
+								request.c2,
+								$author$project$SurfaceController$desktop(model.cN));
 						},
-						batch.cJ);
+						batch.cK);
 					var canRecover = model.aF && ($elm$core$List$length(remaining) < 16);
 					var consumed = _Utils_update(
 						model,
 						{
 							aE: canRecover ? false : model.aE,
-							aw: remaining,
+							ax: remaining,
 							aF: canRecover ? false : model.aF
 						});
 					var _v2 = ((certificate.ch === 'preflight-unsent') && _Utils_eq(
-						currentShell.dk,
-						$elm$core$Maybe$Just(batch.dk))) ? A2(
+						currentShell.dl,
+						$elm$core$Maybe$Just(batch.dl))) ? A2(
 						$author$project$OutputController$apply,
 						$author$project$SurfaceController$Interaction(
 							$author$project$Desktop$Window(
 								$author$project$TaskbarShell$Native(
-									$author$project$Shell$UnsentOperations(batch.ev)))),
+									$author$project$Shell$UnsentOperations(batch.ew)))),
 						consumed) : _Utils_Tuple2(consumed, _List_Nil);
 					var settled = _v2.a;
 					var operationEffects = _v2.b;
 					var _v3 = ((certificate.ch === 'preflight-unsent') && _Utils_eq(
-						currentShell.dk,
-						$elm$core$Maybe$Just(batch.dk))) ? A3(
+						currentShell.dl,
+						$elm$core$Maybe$Just(batch.dl))) ? A3(
 						$author$project$OutputController$refuseCatalogs,
-						$elm$core$Maybe$Just(batch.em),
-						batch.cJ,
+						$elm$core$Maybe$Just(batch.en),
+						batch.cK,
 						settled) : _Utils_Tuple2(settled, _List_Nil);
 					var catalogSettled = _v3.a;
 					var catalogEffects = _v3.b;
@@ -30546,16 +30850,16 @@ var $author$project$OutputController$receiveDisposition = F2(
 					var allEffects = _Utils_ap(
 						operationEffects,
 						_Utils_ap(catalogEffects, recoveryEffects));
-					if ((certificate.ch !== 'preflight-unsent') || (((!A2($author$project$Shell$matchesUnsent, batch.cX, currentShell)) && (!catalogMatched)) || ((!_Utils_eq(
-						currentShell.dk,
-						$elm$core$Maybe$Just(batch.dk))) || (!_Utils_eq(
-						$author$project$OutputController$lease(model.cM),
-						$elm$core$Maybe$Just(batch.em)))))) {
+					if ((certificate.ch !== 'preflight-unsent') || (((!A2($author$project$Shell$matchesUnsent, batch.cY, currentShell)) && (!catalogMatched)) || ((!_Utils_eq(
+						currentShell.dl,
+						$elm$core$Maybe$Just(batch.dl))) || (!_Utils_eq(
+						$author$project$OutputController$lease(model.cN),
+						$elm$core$Maybe$Just(batch.en)))))) {
 						return _Utils_Tuple2(recovered, allEffects);
 					} else {
 						var _v5 = A2(
 							$author$project$OutputController$apply,
-							$author$project$SurfaceController$NativeDismiss(batch.em),
+							$author$project$SurfaceController$NativeDismiss(batch.en),
 							recovered);
 						var closed = _v5.a;
 						var closeEffects = _v5.b;
@@ -30582,7 +30886,7 @@ var $author$project$OutputController$receiveDisposition = F2(
 							$author$project$SurfaceController$Interaction(
 								$author$project$Desktop$Window(
 									$author$project$TaskbarShell$Native(
-										$author$project$Shell$UnsentObservations(batch.cX)))),
+										$author$project$Shell$UnsentObservations(batch.cY)))),
 							cancelled);
 						var fresh = _v8.a;
 						var effects = _v8.b;
@@ -30611,7 +30915,7 @@ var $author$project$OutputController$updateCore = F2(
 				var message = event.a;
 				if (message.$ === 11) {
 					var raw = message.a;
-					var desktop = $author$project$SurfaceController$desktop(model.cM);
+					var desktop = $author$project$SurfaceController$desktop(model.cN);
 					var _v2 = A2($elm$json$Json$Decode$decodeValue, $author$project$Shortcuts$decoder, raw);
 					if (_v2.$ === 1) {
 						return A2(
@@ -30630,7 +30934,7 @@ var $author$project$OutputController$updateCore = F2(
 								function ($) {
 									return $.y;
 								}),
-							desktop.a.b._.as);
+							desktop.a.b._.at);
 						var reconciled = (desktop.a.b.j === 2) && A2($author$project$Shortcuts$currentGeneration, nativeGeneration, snapshot);
 						var matches = A2(
 							$elm$core$Maybe$withDefault,
@@ -30641,7 +30945,7 @@ var $author$project$OutputController$updateCore = F2(
 									return A2(
 										$elm$core$List$filter,
 										function (entry) {
-											return _Utils_eq(entry.dV, box) && A2($elm$core$List$member, entry.c5, model.av);
+											return _Utils_eq(entry.dW, box) && A2($elm$core$List$member, entry.c6, model.aw);
 										},
 										model.bE);
 								},
@@ -30652,18 +30956,18 @@ var $author$project$OutputController$updateCore = F2(
 									$elm$json$Json$Decode$decodeValue,
 									A2($elm$json$Json$Decode$field, 'shortcutProtocol', $elm$json$Json$Decode$int),
 									raw),
-								$elm$core$Result$Ok(1)) && ($elm$core$List$length(model.av) === 1)) {
-								return $elm$core$List$head(model.av);
+								$elm$core$Result$Ok(1)) && ($elm$core$List$length(model.aw) === 1)) {
+								return $elm$core$List$head(model.aw);
 							} else {
 								if (matches.b && (!matches.b.b)) {
 									var entry = matches.a;
-									return $elm$core$Maybe$Just(entry.c5);
+									return $elm$core$Maybe$Just(entry.c6);
 								} else {
 									return $elm$core$Maybe$Nothing;
 								}
 							}
 						}();
-						var _v3 = A3($author$project$Shortcuts$receive, desktop.a.b.dk, snapshot, desktop.b8);
+						var _v3 = A3($author$project$Shortcuts$receive, desktop.a.b.dl, snapshot, desktop.b8);
 						var route = _v3.b;
 						if (_Utils_eq(route, $elm$core$Maybe$Nothing) || ((!desktop.a.b.j) || (desktop.a.b.j === 3))) {
 							return A2(
@@ -30680,9 +30984,9 @@ var $author$project$OutputController$updateCore = F2(
 							} else {
 								if (!destination.$) {
 									var scope = destination.a;
-									if (A2($author$project$PointerOwnership$blocked, desktop.a.b.dk, desktop.bH) || ((!_Utils_eq(
-										model.fN,
-										$elm$core$Maybe$Just(scope))) && (!$author$project$OutputController$freshRelocationPossible(model.cM)))) {
+									if (A2($author$project$PointerOwnership$blocked, desktop.a.b.dl, desktop.bH) || ((!_Utils_eq(
+										model.fP,
+										$elm$core$Maybe$Just(scope))) && (!$author$project$OutputController$freshRelocationPossible(model.cN)))) {
 										return A2(
 											$author$project$OutputController$apply,
 											$author$project$SurfaceController$Interaction(
@@ -30692,7 +30996,7 @@ var $author$project$OutputController$updateCore = F2(
 										var _v5 = A2(
 											$author$project$OutputController$assignOwner,
 											$elm$core$Maybe$Just(scope),
-											model.cM);
+											model.cN);
 										var assigned = _v5.a;
 										var ownerEffects = _v5.b;
 										var _v6 = A2(
@@ -30702,8 +31006,8 @@ var $author$project$OutputController$updateCore = F2(
 											_Utils_update(
 												model,
 												{
-													cM: assigned,
-													fN: $elm$core$Maybe$Just(scope)
+													cN: assigned,
+													fP: $elm$core$Maybe$Just(scope)
 												}));
 										var next = _v6.a;
 										var effects = _v6.b;
@@ -30737,7 +31041,7 @@ var $author$project$OutputController$updateCore = F2(
 						$elm$json$Json$Decode$map2,
 						F2(
 							function (scope, box) {
-								return {dV: box, c5: scope};
+								return {dW: box, c6: scope};
 							}),
 						A2($elm$json$Json$Decode$field, 'scope', $author$project$OutputController$scopeDecoder),
 						A2($elm$json$Json$Decode$field, 'box', $author$project$Shortcuts$boxDecoder)));
@@ -30752,7 +31056,7 @@ var $author$project$OutputController$updateCore = F2(
 								$elm$json$Json$Decode$map4,
 								F4(
 									function (version, kind, revision, scopes) {
-										return {ej: kind, bE: _List_Nil, c2: revision, bn: scopes, eU: version};
+										return {ek: kind, bE: _List_Nil, c3: revision, bn: scopes, eW: version};
 									}),
 								A2($elm$json$Json$Decode$field, 'viewProtocol', $elm$json$Json$Decode$int),
 								A2($elm$json$Json$Decode$field, 'kind', $elm$json$Json$Decode$string),
@@ -30768,7 +31072,7 @@ var $author$project$OutputController$updateCore = F2(
 								$elm$json$Json$Decode$map5,
 								F5(
 									function (version, kind, revision, scopes, locations) {
-										return {ej: kind, bE: locations, c2: revision, bn: scopes, eU: version};
+										return {ek: kind, bE: locations, c3: revision, bn: scopes, eW: version};
 									}),
 								A2($elm$json$Json$Decode$field, 'viewProtocol', $elm$json$Json$Decode$int),
 								A2($elm$json$Json$Decode$field, 'kind', $elm$json$Json$Decode$string),
@@ -30812,7 +31116,7 @@ var $author$project$OutputController$updateCore = F2(
 											$author$project$OutputController$identity(prior),
 											$author$project$OutputController$identity(scope));
 									},
-									model.av));
+									model.aw));
 							if (!_v15.$) {
 								var prior = _v15.a;
 								return !(!A2(
@@ -30823,7 +31127,7 @@ var $author$project$OutputController$updateCore = F2(
 								return A2(
 									$author$project$UInt64$compare,
 									$author$project$OutputController$identity(scope),
-									model.cS) === 2;
+									model.cT) === 2;
 							}
 						},
 						scopes));
@@ -30833,16 +31137,16 @@ var $author$project$OutputController$updateCore = F2(
 					var table = _v8.a;
 					if ((!A2(
 						$elm$core$List$member,
-						table.eU,
+						table.eW,
 						_List_fromArray(
-							[1, 2]))) || (((table.eU === 2) && (!_Utils_eq(
+							[1, 2]))) || (((table.eW === 2) && (!_Utils_eq(
 						A2(
 							$elm$core$List$map,
 							function ($) {
-								return $.c5;
+								return $.c6;
 							},
 							table.bE),
-						table.bn))) || ((table.ej !== 'view-topology') || ((A2($author$project$UInt64$compare, table.c2, model.c2) !== 2) || (!admitted(table.bn)))))) {
+						table.bn))) || ((table.ek !== 'view-topology') || ((A2($author$project$UInt64$compare, table.c3, model.c3) !== 2) || (!admitted(table.bn)))))) {
 						return _Utils_Tuple2(current, _List_Nil);
 					} else {
 						var survives = A2(
@@ -30853,8 +31157,8 @@ var $author$project$OutputController$updateCore = F2(
 								function (priorSelected) {
 									return A2($elm$core$List$member, priorSelected, table.bn);
 								},
-								model.fN));
-						var selected = survives ? model.fN : $elm$core$List$head(table.bn);
+								model.fP));
+						var selected = survives ? model.fP : $elm$core$List$head(table.bn);
 						var retired = (!survives) && (!_Utils_eq(
 							$author$project$OutputController$owner(current),
 							$elm$core$Maybe$Nothing));
@@ -30867,20 +31171,20 @@ var $author$project$OutputController$updateCore = F2(
 										$author$project$OutputController$identity(scope),
 										maximum) === 2) ? $author$project$OutputController$identity(scope) : maximum;
 								}),
-							model.cS,
+							model.cT,
 							table.bn);
 						var _v9 = retired ? A2(
 							$elm$core$Maybe$withDefault,
-							_Utils_Tuple2(model.cM, _List_Nil),
+							_Utils_Tuple2(model.cN, _List_Nil),
 							A2(
 								$elm$core$Maybe$map,
 								function (token) {
 									return A2(
 										$author$project$SurfaceController$update,
 										$author$project$SurfaceController$NativeDismiss(token),
-										model.cM);
+										model.cN);
 								},
-								$author$project$OutputController$lease(model.cM))) : _Utils_Tuple2(model.cM, _List_Nil);
+								$author$project$OutputController$lease(model.cN))) : _Utils_Tuple2(model.cN, _List_Nil);
 						var next = _v9.a;
 						var effects = _v9.b;
 						var _v10 = A2($author$project$OutputController$assignOwner, selected, next);
@@ -30931,12 +31235,12 @@ var $author$project$OutputController$updateCore = F2(
 							model,
 							{
 								aE: model.aF ? model.aE : false,
-								cM: refreshed,
-								cS: highest,
+								cN: refreshed,
+								cT: highest,
 								bE: table.bE,
-								c2: table.c2,
-								fN: selected,
-								av: table.bn
+								c3: table.c3,
+								fP: selected,
+								aw: table.bn
 							});
 						return _Utils_Tuple2(
 							result,
@@ -30959,7 +31263,7 @@ var $author$project$OutputController$updateCore = F2(
 						$elm$json$Json$Decode$map4,
 						F4(
 							function (version, kind, scope, action) {
-								return {e3: action, ej: kind, c5: scope, eU: version};
+								return {e5: action, ek: kind, c6: scope, eW: version};
 							}),
 						A2($elm$json$Json$Decode$field, 'viewProtocol', $elm$json$Json$Decode$int),
 						A2($elm$json$Json$Decode$field, 'kind', $elm$json$Json$Decode$string),
@@ -30968,42 +31272,42 @@ var $author$project$OutputController$updateCore = F2(
 				var _v16 = _Utils_Tuple2(
 					A2($elm$json$Json$Decode$decodeValue, decoder, raw),
 					$author$project$SurfaceRenderer$decode(
-						$author$project$SurfaceController$frame(model.cM)));
+						$author$project$SurfaceController$frame(model.cN)));
 				if ((!_v16.a.$) && (!_v16.b.$)) {
 					var callback = _v16.a.a;
 					var snapshot = _v16.b.a;
-					if ((callback.eU !== 1) || ((callback.ej !== 'view-action') || (!A2($elm$core$List$member, callback.c5, model.av)))) {
+					if ((callback.eW !== 1) || ((callback.ek !== 'view-action') || (!A2($elm$core$List$member, callback.c6, model.aw)))) {
 						return _Utils_Tuple2(current, _List_Nil);
 					} else {
 						var popup = _Utils_eq(
 							A2(
 								$elm$json$Json$Decode$decodeValue,
 								A2($elm$json$Json$Decode$field, 'surface', $elm$json$Json$Decode$string),
-								callback.e3),
+								callback.e5),
 							$elm$core$Result$Ok('popup'));
 						var ownerChange = (!popup) && (!_Utils_eq(
-							model.fN,
-							$elm$core$Maybe$Just(callback.c5)));
-						var canMove = (!ownerChange) || $author$project$OutputController$freshRelocationPossible(model.cM);
+							model.fP,
+							$elm$core$Maybe$Just(callback.c6)));
+						var canMove = (!ownerChange) || $author$project$OutputController$freshRelocationPossible(model.cN);
 						if ((popup && (!_Utils_eq(
 							$author$project$OutputController$owner(current),
-							$elm$core$Maybe$Just(callback.c5)))) || (!canMove)) {
+							$elm$core$Maybe$Just(callback.c6)))) || (!canMove)) {
 							return _Utils_Tuple2(current, _List_Nil);
 						} else {
 							var _v17 = A4(
 								$author$project$Surface$resolve,
 								$author$project$SurfaceRenderer$publication(snapshot),
 								$author$project$SurfaceRenderer$lease(snapshot),
-								callback.e3,
-								$author$project$SurfaceController$desktop(model.cM));
+								callback.e5,
+								$author$project$SurfaceController$desktop(model.cN));
 							if (_v17.$ === 1) {
 								return _Utils_Tuple2(current, _List_Nil);
 							} else {
 								var message = _v17.a;
 								var _v18 = A2(
 									$author$project$OutputController$assignOwner,
-									$elm$core$Maybe$Just(callback.c5),
-									model.cM);
+									$elm$core$Maybe$Just(callback.c6),
+									model.cN);
 								var assigned = _v18.a;
 								var ownerEffects = _v18.b;
 								var _v19 = A2(
@@ -31019,8 +31323,8 @@ var $author$project$OutputController$updateCore = F2(
 									_Utils_update(
 										model,
 										{
-											cM: next,
-											fN: $elm$core$Maybe$Just(callback.c5)
+											cN: next,
+											fP: $elm$core$Maybe$Just(callback.c6)
 										}),
 									_Utils_ap(
 										ownerEffects,
@@ -31087,7 +31391,7 @@ var $author$project$Main$update = F2(
 			return _Utils_Tuple2(model, $elm$core$Platform$Cmd$none);
 		} else {
 			var value = event.a;
-			var _v1 = A2($author$project$OutputController$update, value, model.cM);
+			var _v1 = A2($author$project$OutputController$update, value, model.cN);
 			var updated = _v1.a;
 			var effects = _v1.b;
 			var _v2 = A2($author$project$OutputController$register, effects, updated);
@@ -31096,12 +31400,12 @@ var $author$project$Main$update = F2(
 			return _Utils_Tuple2(
 				_Utils_update(
 					model,
-					{cM: next}),
+					{cN: next}),
 				$elm$core$Platform$Cmd$batch(
 					_List_fromArray(
 						[
 							A2($author$project$Main$commit, packet, effects),
-							model.dJ ? $author$project$Main$inspections(
+							model.dK ? $author$project$Main$inspections(
 							$author$project$Inspection$packet(
 								$author$project$OutputController$controller(next))) : $elm$core$Platform$Cmd$none
 						])));
@@ -31109,12 +31413,12 @@ var $author$project$Main$update = F2(
 	});
 var $author$project$Main$main = $elm$browser$Browser$element(
 	{
-		fn: function (qa) {
+		fp: function (qa) {
 			return _Utils_Tuple2(
-				{cM: $author$project$OutputController$initial, dJ: qa},
+				{cN: $author$project$OutputController$initial, dK: qa},
 				$elm$core$Platform$Cmd$none);
 		},
-		fP: function (_v0) {
+		fR: function (_v0) {
 			return $elm$core$Platform$Sub$batch(
 				_List_fromArray(
 					[
@@ -31126,8 +31430,8 @@ var $author$project$Main$main = $elm$browser$Browser$element(
 						$author$project$Main$nativeReflows($author$project$Main$Reflow)
 					]));
 		},
-		fT: $author$project$Main$update,
-		fU: function (_v1) {
+		fV: $author$project$Main$update,
+		fW: function (_v1) {
 			return $elm$html$Html$text('');
 		}
 	});
