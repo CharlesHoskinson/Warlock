@@ -1,4 +1,4 @@
-module PreviewVisual exposing (Visual(..), State(..), LocalState(..), Fidelity(..), encode, decoder, view, inlineView)
+module PreviewVisual exposing (Visual(..), State(..), LocalState(..), Fidelity(..), encode, decoder, view, inlineView, decorativeInlineView, description)
 
 import Html exposing (Html, img, span, text)
 import Html.Attributes exposing (alt, attribute, class, src)
@@ -102,14 +102,29 @@ view = render "figure" "figcaption"
 inlineView : Visual -> Html msg
 inlineView = render "span" "span"
 
+-- Controls retain their own name and expose this passive description. Preview
+-- updates must not create independent announcement producers.
+description : Visual -> String
+description visual = case visual of
+    Hidden -> ""
+    Fallback -> stateLabel Unavailable
+    Local state _ -> localLabel state
+    Lifecycle data -> String.join "; " (stateLabel data.state :: (data.fidelity |> Maybe.map (fidelityLabel >> List.singleton) |> Maybe.withDefault []))
+
+fidelityLabel : Fidelity -> String
+fidelityLabel fidelity = if fidelity==Family then "Window family" else "Client content"
+
+decorativeInlineView : Visual -> Html msg
+decorativeInlineView visual = if visual==Hidden then text "" else span [class "preview-content",attribute "aria-hidden" "true"] [inlineView visual]
+
 render : String -> String -> Visual -> Html msg
 render root caption visual = case visual of
     Hidden -> text ""
-    Fallback -> span [class "window-preview",attribute "data-preview-state" "unavailable"] [span [class "preview-title"] [text "Preview unavailable"],span [class "preview-state"] [text "Preview unavailable"]]
-    Local state title -> span [class "window-preview",attribute "data-preview-state" (localName state)] [span [class "preview-title"] [text title],span [class "preview-state",attribute "role" "status",attribute "aria-live" "polite"] [text (localLabel state)]]
+    Fallback -> span [class "window-preview",attribute "data-preview-state" "unavailable"] [span [class "preview-title"] [],span [class "preview-state"] [text "Preview unavailable"]]
+    Local state title -> span [class "window-preview",attribute "data-preview-state" (localName state)] [span [class "preview-title"] [text (if title==localLabel state then "" else title)],span [class "preview-state"] [text (localLabel state)]]
     Lifecycle data ->
         let contents = case data.frame of
                 Just handle -> [("frame:" ++ handle,img [class "preview-image",src ("elm-shell://preview/" ++ handle),alt "",attribute "aria-hidden" "true"] [])]
-                Nothing -> (data.icon |> Maybe.map (\handle -> [("icon:" ++ handle,img [class "preview-icon",src ("elm-shell://icon/" ++ handle),alt "",attribute "aria-hidden" "true"] [])]) |> Maybe.withDefault []) ++ [("title",span [class "preview-title"] [text (Maybe.withDefault "Preview unavailable" data.title)])]
-            fidelity = data.fidelity |> Maybe.map (\f -> if f==Family then "Window family" else "Client content") |> Maybe.withDefault ""
+                Nothing -> (data.icon |> Maybe.map (\handle -> [("icon:" ++ handle,img [class "preview-icon",src ("elm-shell://icon/" ++ handle),alt "",attribute "aria-hidden" "true"] [])]) |> Maybe.withDefault []) ++ [("title",span [class "preview-title"] [text (data.title |> Maybe.andThen (\title -> if title==stateLabel data.state then Nothing else Just title) |> Maybe.withDefault "")])]
+            fidelity = data.fidelity |> Maybe.map fidelityLabel |> Maybe.withDefault ""
         in Html.Keyed.node root [class "window-preview",attribute "data-preview-state" (stateName data.state)] (contents ++ [("status",Html.node caption [] [span [class "preview-state"] [text (stateLabel data.state)],span [class "preview-fidelity"] [text fidelity]])])

@@ -1,0 +1,18 @@
+[
+  {
+    "path": "implementation/warlock/qa/runs/preview-description-1791602674514843143/report.json",
+    "sha256": "c9554e8d502770ac1e94729d247e250859fb69d63f4228150df43e84c6efaca5",
+    "passed": false,
+    "error": "RuntimeError(\"file:///home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-description-1791602674514843143/inputs/qa/preview-description-browser.mjs:28\\n const frame=fixture.frame, target=frame.popup.find(row=>row.id==='family:1');\\n                            ^\\n\\nSyntaxError: Identifier 'target' has already been declared\\n    at compileSourceTextModule (node:internal/modules/esm/utils:355:16)\\n    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:93:18)\\n    at #translate (node:internal/modules/esm/loader:441:20)\\n    at afterLoad (node:internal/modules/esm/loader:509:29)\\n    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:514:12)\\n    at #getOrCreateModuleJobAfterResolve (node:internal/modules/esm/loader:567:36)\\n    at afterResolve (node:internal/modules/esm/loader:614:52)\\n    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:620:12)\\n    at node:internal/modules/esm/loader:639:32\\n    at TracingChannel.tracePromise (node:diagnostics_channel:551:22)\\n\\nNode.js v26.10.0\\n\")",
+    "correction": "Browser fixture reused the CDP target variable name; renamed the selected control variable.",
+    "scope": "Fixture failure; original production oracles unchanged; raw source snapshot and report retained locally."
+  },
+  {
+    "path": "implementation/warlock/qa/runs/preview-description-1791602685241183487/report.json",
+    "sha256": "a15979c970678481c5ed88fbfbc169a1c165459e590b150623aaea48ab932d6e",
+    "passed": false,
+    "error": "RuntimeError('{\"passed\":false,\"checks\":1,\"captures\":[],\"error\":\"Error: Condition timeout document.activeElement?.dataset.surfaceControl===\\\\\"family:1\\\\\"\\\\n    at until (file:///home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-description-1791602685241183487/inputs/qa/preview-description-browser.mjs:12:117)\\\\n    at async file:///home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-description-1791602685241183487/inputs/qa/preview-description-browser.mjs:37:2\"}\\n')",
+    "correction": "Original picker tab order starts with Close; use the second actual Tab to reach the first family control.",
+    "scope": "Fixture failure; original production oracles unchanged; raw source snapshot and report retained locally."
+  }
+]

@@ -1,4 +1,4 @@
-module RetainedPreviewPresenter exposing (Model, initial, present, receive, receiveRealm, image, visuals, observe, metadata, enrollment, feedback, enrollRealm, closeRealm, quarantineRealm, retireLegacy, realmStatus, issued, retry)
+module RetainedPreviewPresenter exposing (Model, initial, present, receive, receiveRealm, image, visual, visuals, observe, metadata, enrollment, feedback, enrollRealm, closeRealm, quarantineRealm, retireLegacy, realmStatus, issued, retry)
 
 import Html exposing (Html)
 import Json.Decode as D
@@ -94,6 +94,9 @@ realmStatus (Model policy _ ingress deferred) =
 
 image : SurfaceRenderer.Snapshot -> String -> Model -> Html msg
 image snapshot name (Model policy _ _ _) = Preview.image snapshot name policy
+
+visual : SurfaceRenderer.Snapshot -> String -> Model -> Visual.Visual
+visual snapshot name (Model policy _ _ _) = Preview.visual snapshot name policy
 
 visuals : Maybe SurfaceRenderer.Snapshot -> Model -> E.Value
 visuals snapshot (Model policy grant _ _) = case grant of

@@ -1,0 +1,1073 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "Original identity-bound state fixture is admitted"
+    },
+    {
+      "name": "loading: named focused control carries exact passive description",
+      "detail": [
+        {
+          "name": "Activate Document 1",
+          "role": "button",
+          "description": "Preview loading",
+          "focused": true
+        }
+      ]
+    },
+    {
+      "name": "loading: focus and reserved chosenControl geometry are stable",
+      "detail": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Preview loading",
+        "visibleState": "Preview loading",
+        "title": "Document 1",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "name": "loading: no preview live region and description is outside layout",
+      "detail": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Preview loading",
+        "visibleState": "Preview loading",
+        "title": "Document 1",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "name": "loading: visible state matches accessible state",
+      "detail": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Preview loading",
+        "visibleState": "Preview loading",
+        "title": "Document 1",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "name": "live: named focused control carries exact passive description",
+      "detail": [
+        {
+          "name": "Activate Document 1",
+          "role": "button",
+          "description": "Live preview; Window family",
+          "focused": true
+        }
+      ]
+    },
+    {
+      "name": "live: focus and reserved chosenControl geometry are stable",
+      "detail": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Live preview; Window family",
+        "visibleState": "Live preview",
+        "title": "",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "name": "live: no preview live region and description is outside layout",
+      "detail": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Live preview; Window family",
+        "visibleState": "Live preview",
+        "title": "",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "name": "live: visible state matches accessible state",
+      "detail": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Live preview; Window family",
+        "visibleState": "Live preview",
+        "title": "",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "name": "historical: named focused control carries exact passive description",
+      "detail": [
+        {
+          "name": "Activate Document 1",
+          "role": "button",
+          "description": "Historical preview; Window family",
+          "focused": true
+        }
+      ]
+    },
+    {
+      "name": "historical: focus and reserved chosenControl geometry are stable",
+      "detail": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Historical preview; Window family",
+        "visibleState": "Historical preview",
+        "title": "",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "name": "historical: no preview live region and description is outside layout",
+      "detail": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Historical preview; Window family",
+        "visibleState": "Historical preview",
+        "title": "",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "name": "historical: visible state matches accessible state",
+      "detail": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Historical preview; Window family",
+        "visibleState": "Historical preview",
+        "title": "",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "name": "unavailable: named focused control carries exact passive description",
+      "detail": [
+        {
+          "name": "Activate Document 1",
+          "role": "button",
+          "description": "Preview unavailable",
+          "focused": true
+        }
+      ]
+    },
+    {
+      "name": "unavailable: focus and reserved chosenControl geometry are stable",
+      "detail": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Preview unavailable",
+        "visibleState": "Preview unavailable",
+        "title": "Document 1",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "name": "unavailable: no preview live region and description is outside layout",
+      "detail": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Preview unavailable",
+        "visibleState": "Preview unavailable",
+        "title": "Document 1",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "name": "unavailable: visible state matches accessible state",
+      "detail": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Preview unavailable",
+        "visibleState": "Preview unavailable",
+        "title": "Document 1",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "name": "fallback: named focused control carries exact passive description",
+      "detail": [
+        {
+          "name": "Activate Document 1",
+          "role": "button",
+          "description": "Preview unavailable",
+          "focused": true
+        }
+      ]
+    },
+    {
+      "name": "fallback: focus and reserved chosenControl geometry are stable",
+      "detail": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Preview unavailable",
+        "visibleState": "Preview unavailable",
+        "title": "",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "name": "fallback: no preview live region and description is outside layout",
+      "detail": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Preview unavailable",
+        "visibleState": "Preview unavailable",
+        "title": "",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "name": "fallback: visible state matches accessible state",
+      "detail": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Preview unavailable",
+        "visibleState": "Preview unavailable",
+        "title": "",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "name": "fallback: unavailable is rendered once"
+    },
+    {
+      "name": "capacity: named focused control carries exact passive description",
+      "detail": [
+        {
+          "name": "Activate Document 1",
+          "role": "button",
+          "description": "Waiting for preview capacity",
+          "focused": true
+        }
+      ]
+    },
+    {
+      "name": "capacity: focus and reserved chosenControl geometry are stable",
+      "detail": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Waiting for preview capacity",
+        "visibleState": "Waiting for preview capacity",
+        "title": "Document 1",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "name": "capacity: no preview live region and description is outside layout",
+      "detail": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Waiting for preview capacity",
+        "visibleState": "Waiting for preview capacity",
+        "title": "Document 1",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "name": "capacity: visible state matches accessible state",
+      "detail": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Waiting for preview capacity",
+        "visibleState": "Waiting for preview capacity",
+        "title": "Document 1",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "name": "waiting: named focused control carries exact passive description",
+      "detail": [
+        {
+          "name": "Activate Document 1",
+          "role": "button",
+          "description": "Waiting for preview",
+          "focused": true
+        }
+      ]
+    },
+    {
+      "name": "waiting: focus and reserved chosenControl geometry are stable",
+      "detail": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Waiting for preview",
+        "visibleState": "Waiting for preview",
+        "title": "Document 1",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "name": "waiting: no preview live region and description is outside layout",
+      "detail": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Waiting for preview",
+        "visibleState": "Waiting for preview",
+        "title": "Document 1",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "name": "waiting: visible state matches accessible state",
+      "detail": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Waiting for preview",
+        "visibleState": "Waiting for preview",
+        "title": "Document 1",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "name": "Real window title remains visible"
+    },
+    {
+      "name": "expired: named focused control carries exact passive description",
+      "detail": [
+        {
+          "name": "Activate Document 1",
+          "role": "button",
+          "description": "Preview request expired",
+          "focused": true
+        }
+      ]
+    },
+    {
+      "name": "expired: focus and reserved chosenControl geometry are stable",
+      "detail": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Preview request expired",
+        "visibleState": "Preview request expired",
+        "title": "Document 1",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "name": "expired: no preview live region and description is outside layout",
+      "detail": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Preview request expired",
+        "visibleState": "Preview request expired",
+        "title": "Document 1",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "name": "expired: visible state matches accessible state",
+      "detail": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Preview request expired",
+        "visibleState": "Preview request expired",
+        "title": "Document 1",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "name": "conflict: named focused control carries exact passive description",
+      "detail": [
+        {
+          "name": "Activate Document 1",
+          "role": "button",
+          "description": "Preview request changed",
+          "focused": true
+        }
+      ]
+    },
+    {
+      "name": "conflict: focus and reserved chosenControl geometry are stable",
+      "detail": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Preview request changed",
+        "visibleState": "Preview request changed",
+        "title": "Document 1",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "name": "conflict: no preview live region and description is outside layout",
+      "detail": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Preview request changed",
+        "visibleState": "Preview request changed",
+        "title": "Document 1",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "name": "conflict: visible state matches accessible state",
+      "detail": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Preview request changed",
+        "visibleState": "Preview request changed",
+        "title": "Document 1",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "name": "exhausted: named focused control carries exact passive description",
+      "detail": [
+        {
+          "name": "Activate Document 1",
+          "role": "button",
+          "description": "Preview unavailable",
+          "focused": true
+        }
+      ]
+    },
+    {
+      "name": "exhausted: focus and reserved chosenControl geometry are stable",
+      "detail": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Preview unavailable",
+        "visibleState": "Preview unavailable",
+        "title": "",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "name": "exhausted: no preview live region and description is outside layout",
+      "detail": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Preview unavailable",
+        "visibleState": "Preview unavailable",
+        "title": "",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "name": "exhausted: visible state matches accessible state",
+      "detail": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Preview unavailable",
+        "visibleState": "Preview unavailable",
+        "title": "",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "name": "exhausted: unavailable is rendered once"
+    },
+    {
+      "name": "hidden: named focused control carries exact passive description",
+      "detail": [
+        {
+          "name": "Activate Document 1",
+          "role": "button",
+          "description": "",
+          "focused": true
+        }
+      ]
+    },
+    {
+      "name": "hidden: focus and reserved chosenControl geometry are stable",
+      "detail": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "",
+        "visibleState": "",
+        "title": "",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "name": "hidden: no preview live region and description is outside layout",
+      "detail": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "",
+        "visibleState": "",
+        "title": "",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "name": "Description IDs cannot alias a supplied control ID"
+    },
+    {
+      "name": "Foreign renderer binding cannot erase focused preview description"
+    },
+    {
+      "name": "Repeated exact projection keeps the same focused description"
+    },
+    {
+      "name": "Retired picker exports no stale descriptions or controls"
+    },
+    {
+      "name": "Component inspection submits no window effects"
+    },
+    {
+      "name": "No browser exceptions",
+      "detail": []
+    }
+  ],
+  "captures": [
+    "loading.png",
+    "unavailable.png"
+  ],
+  "states": [
+    {
+      "state": "loading",
+      "accessible": [
+        {
+          "name": "Activate Document 1",
+          "role": "button",
+          "description": "Preview loading",
+          "focused": true
+        }
+      ],
+      "observed": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Preview loading",
+        "visibleState": "Preview loading",
+        "title": "Document 1",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "state": "live",
+      "accessible": [
+        {
+          "name": "Activate Document 1",
+          "role": "button",
+          "description": "Live preview; Window family",
+          "focused": true
+        }
+      ],
+      "observed": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Live preview; Window family",
+        "visibleState": "Live preview",
+        "title": "",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "state": "historical",
+      "accessible": [
+        {
+          "name": "Activate Document 1",
+          "role": "button",
+          "description": "Historical preview; Window family",
+          "focused": true
+        }
+      ],
+      "observed": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Historical preview; Window family",
+        "visibleState": "Historical preview",
+        "title": "",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "state": "unavailable",
+      "accessible": [
+        {
+          "name": "Activate Document 1",
+          "role": "button",
+          "description": "Preview unavailable",
+          "focused": true
+        }
+      ],
+      "observed": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Preview unavailable",
+        "visibleState": "Preview unavailable",
+        "title": "Document 1",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "state": "fallback",
+      "accessible": [
+        {
+          "name": "Activate Document 1",
+          "role": "button",
+          "description": "Preview unavailable",
+          "focused": true
+        }
+      ],
+      "observed": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Preview unavailable",
+        "visibleState": "Preview unavailable",
+        "title": "",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "state": "capacity",
+      "accessible": [
+        {
+          "name": "Activate Document 1",
+          "role": "button",
+          "description": "Waiting for preview capacity",
+          "focused": true
+        }
+      ],
+      "observed": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Waiting for preview capacity",
+        "visibleState": "Waiting for preview capacity",
+        "title": "Document 1",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "state": "waiting",
+      "accessible": [
+        {
+          "name": "Activate Document 1",
+          "role": "button",
+          "description": "Waiting for preview",
+          "focused": true
+        }
+      ],
+      "observed": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Waiting for preview",
+        "visibleState": "Waiting for preview",
+        "title": "Document 1",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "state": "expired",
+      "accessible": [
+        {
+          "name": "Activate Document 1",
+          "role": "button",
+          "description": "Preview request expired",
+          "focused": true
+        }
+      ],
+      "observed": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Preview request expired",
+        "visibleState": "Preview request expired",
+        "title": "Document 1",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "state": "conflict",
+      "accessible": [
+        {
+          "name": "Activate Document 1",
+          "role": "button",
+          "description": "Preview request changed",
+          "focused": true
+        }
+      ],
+      "observed": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Preview request changed",
+        "visibleState": "Preview request changed",
+        "title": "Document 1",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "state": "exhausted",
+      "accessible": [
+        {
+          "name": "Activate Document 1",
+          "role": "button",
+          "description": "Preview unavailable",
+          "focused": true
+        }
+      ],
+      "observed": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "Preview unavailable",
+        "visibleState": "Preview unavailable",
+        "title": "",
+        "hiddenDescription": true,
+        "images": true
+      }
+    },
+    {
+      "state": "hidden",
+      "accessible": [
+        {
+          "name": "Activate Document 1",
+          "role": "button",
+          "description": "",
+          "focused": true
+        }
+      ],
+      "observed": {
+        "same": true,
+        "focused": true,
+        "rect": {
+          "x": 11,
+          "y": 103,
+          "width": 618,
+          "height": 134
+        },
+        "live": 0,
+        "description": "",
+        "visibleState": "",
+        "title": "",
+        "hiddenDescription": true,
+        "images": true
+      }
+    }
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "browserExitCode": 0
+}

@@ -519,11 +519,11 @@ function _Debug_crash_UNUSED(identifier, fact1, fact2, fact3, fact4)
 
 function _Debug_regionToString(region)
 {
-	if (region.aj.P === region.ap.P)
+	if (region.an.R === region.at.R)
 	{
-		return 'on line ' + region.aj.P;
+		return 'on line ' + region.an.R;
 	}
-	return 'on lines ' + region.aj.P + ' through ' + region.ap.P;
+	return 'on lines ' + region.an.R + ' through ' + region.at.R;
 }
 
 
@@ -1857,9 +1857,9 @@ var _Platform_worker = F4(function(impl, flagDecoder, debugMetadata, args)
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aY,
-		impl.a4,
-		impl.a2,
+		impl.a0,
+		impl.a7,
+		impl.a6,
 		function() { return function() {} }
 	);
 });
@@ -2719,9 +2719,9 @@ var _VirtualDom_mapEventTuple = F2(function(func, tuple)
 var _VirtualDom_mapEventRecord = F2(function(func, record)
 {
 	return {
-		w: func(record.w),
-		ak: record.ak,
-		af: record.af
+		v: func(record.v),
+		ao: record.ao,
+		aj: record.aj
 	}
 });
 
@@ -2989,11 +2989,11 @@ function _VirtualDom_makeCallback(eventNode, initialHandler)
 		// 3 = Custom
 
 		var value = result.a;
-		var message = !tag ? value : tag < 3 ? value.a : value.w;
-		var stopPropagation = tag == 1 ? value.b : tag == 3 && value.ak;
+		var message = !tag ? value : tag < 3 ? value.a : value.v;
+		var stopPropagation = tag == 1 ? value.b : tag == 3 && value.ao;
 		var currentEventNode = (
 			stopPropagation && event.stopPropagation(),
-			(tag == 2 ? value.b : tag == 3 && value.af) && event.preventDefault(),
+			(tag == 2 ? value.b : tag == 3 && value.aj) && event.preventDefault(),
 			eventNode
 		);
 		var tagger;
@@ -3943,11 +3943,11 @@ var _Browser_element = _Debugger_element || F4(function(impl, flagDecoder, debug
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aY,
-		impl.a4,
-		impl.a2,
+		impl.a0,
+		impl.a7,
+		impl.a6,
 		function(sendToApp, initialModel) {
-			var view = impl.a5;
+			var view = impl.a8;
 			/**/
 			var domNode = args['node'];
 			//*/
@@ -3979,12 +3979,12 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aY,
-		impl.a4,
-		impl.a2,
+		impl.a0,
+		impl.a7,
+		impl.a6,
 		function(sendToApp, initialModel) {
-			var divertHrefToApp = impl.ah && impl.ah(sendToApp)
-			var view = impl.a5;
+			var divertHrefToApp = impl.al && impl.al(sendToApp)
+			var view = impl.a8;
 			var title = _VirtualDom_doc.title;
 			var bodyNode = _VirtualDom_doc.body;
 			var currNode = _VirtualDom_virtualize(bodyNode);
@@ -3992,12 +3992,12 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 			{
 				_VirtualDom_divertHrefToApp = divertHrefToApp;
 				var doc = view(model);
-				var nextNode = _VirtualDom_node('body')(_List_Nil)(doc.aR);
+				var nextNode = _VirtualDom_node('body')(_List_Nil)(doc.aV);
 				var patches = _VirtualDom_diff(currNode, nextNode);
 				bodyNode = _VirtualDom_applyPatches(bodyNode, currNode, patches, sendToApp);
 				currNode = nextNode;
 				_VirtualDom_divertHrefToApp = 0;
-				(title !== doc.a3) && (_VirtualDom_doc.title = title = doc.a3);
+				(title !== doc.V) && (_VirtualDom_doc.title = title = doc.V);
 			});
 		}
 	);
@@ -4053,12 +4053,12 @@ function _Browser_makeAnimator(model, draw)
 
 function _Browser_application(impl)
 {
-	var onUrlChange = impl.a_;
-	var onUrlRequest = impl.a$;
+	var onUrlChange = impl.a2;
+	var onUrlRequest = impl.a3;
 	var key = function() { key.a(onUrlChange(_Browser_getUrl())); };
 
 	return _Browser_document({
-		ah: function(sendToApp)
+		al: function(sendToApp)
 		{
 			key.a = sendToApp;
 			_Browser_window.addEventListener('popstate', key);
@@ -4074,9 +4074,9 @@ function _Browser_application(impl)
 					var next = $elm$url$Url$fromString(href).a;
 					sendToApp(onUrlRequest(
 						(next
-							&& curr.aC === next.aC
-							&& curr.at === next.at
-							&& curr.az.a === next.az.a
+							&& curr.aG === next.aG
+							&& curr.ax === next.ax
+							&& curr.aD.a === next.aD.a
 						)
 							? $elm$browser$Browser$Internal(next)
 							: $elm$browser$Browser$External(href)
@@ -4084,13 +4084,13 @@ function _Browser_application(impl)
 				}
 			});
 		},
-		aY: function(flags)
+		a0: function(flags)
 		{
-			return A3(impl.aY, flags, _Browser_getUrl(), key);
+			return A3(impl.a0, flags, _Browser_getUrl(), key);
 		},
-		a5: impl.a5,
-		a4: impl.a4,
-		a2: impl.a2
+		a8: impl.a8,
+		a7: impl.a7,
+		a6: impl.a6
 	});
 }
 
@@ -4156,17 +4156,17 @@ var _Browser_decodeEvent = F2(function(decoder, event)
 function _Browser_visibilityInfo()
 {
 	return (typeof _VirtualDom_doc.hidden !== 'undefined')
-		? { aW: 'hidden', aS: 'visibilitychange' }
+		? { a_: 'hidden', aW: 'visibilitychange' }
 		:
 	(typeof _VirtualDom_doc.mozHidden !== 'undefined')
-		? { aW: 'mozHidden', aS: 'mozvisibilitychange' }
+		? { a_: 'mozHidden', aW: 'mozvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.msHidden !== 'undefined')
-		? { aW: 'msHidden', aS: 'msvisibilitychange' }
+		? { a_: 'msHidden', aW: 'msvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.webkitHidden !== 'undefined')
-		? { aW: 'webkitHidden', aS: 'webkitvisibilitychange' }
-		: { aW: 'hidden', aS: 'visibilitychange' };
+		? { a_: 'webkitHidden', aW: 'webkitvisibilitychange' }
+		: { a_: 'hidden', aW: 'visibilitychange' };
 }
 
 
@@ -4247,12 +4247,12 @@ var _Browser_call = F2(function(functionName, id)
 function _Browser_getViewport()
 {
 	return {
-		aG: _Browser_getScene(),
-		aL: {
-			aN: _Browser_window.pageXOffset,
-			aO: _Browser_window.pageYOffset,
-			aM: _Browser_doc.documentElement.clientWidth,
-			as: _Browser_doc.documentElement.clientHeight
+		aK: _Browser_getScene(),
+		aP: {
+			aR: _Browser_window.pageXOffset,
+			aS: _Browser_window.pageYOffset,
+			aQ: _Browser_doc.documentElement.clientWidth,
+			aw: _Browser_doc.documentElement.clientHeight
 		}
 	};
 }
@@ -4262,8 +4262,8 @@ function _Browser_getScene()
 	var body = _Browser_doc.body;
 	var elem = _Browser_doc.documentElement;
 	return {
-		aM: Math.max(body.scrollWidth, body.offsetWidth, elem.scrollWidth, elem.offsetWidth, elem.clientWidth),
-		as: Math.max(body.scrollHeight, body.offsetHeight, elem.scrollHeight, elem.offsetHeight, elem.clientHeight)
+		aQ: Math.max(body.scrollWidth, body.offsetWidth, elem.scrollWidth, elem.offsetWidth, elem.clientWidth),
+		aw: Math.max(body.scrollHeight, body.offsetHeight, elem.scrollHeight, elem.offsetHeight, elem.clientHeight)
 	};
 }
 
@@ -4286,15 +4286,15 @@ function _Browser_getViewportOf(id)
 	return _Browser_withNode(id, function(node)
 	{
 		return {
-			aG: {
-				aM: node.scrollWidth,
-				as: node.scrollHeight
+			aK: {
+				aQ: node.scrollWidth,
+				aw: node.scrollHeight
 			},
-			aL: {
-				aN: node.scrollLeft,
-				aO: node.scrollTop,
-				aM: node.clientWidth,
-				as: node.clientHeight
+			aP: {
+				aR: node.scrollLeft,
+				aS: node.scrollTop,
+				aQ: node.clientWidth,
+				aw: node.clientHeight
 			}
 		};
 	});
@@ -4324,18 +4324,18 @@ function _Browser_getElement(id)
 		var x = _Browser_window.pageXOffset;
 		var y = _Browser_window.pageYOffset;
 		return {
-			aG: _Browser_getScene(),
-			aL: {
-				aN: x,
-				aO: y,
-				aM: _Browser_doc.documentElement.clientWidth,
-				as: _Browser_doc.documentElement.clientHeight
+			aK: _Browser_getScene(),
+			aP: {
+				aR: x,
+				aS: y,
+				aQ: _Browser_doc.documentElement.clientWidth,
+				aw: _Browser_doc.documentElement.clientHeight
 			},
-			aU: {
-				aN: x + rect.left,
-				aO: y + rect.top,
-				aM: rect.width,
-				as: rect.height
+			aY: {
+				aR: x + rect.left,
+				aS: y + rect.top,
+				aQ: rect.width,
+				aw: rect.height
 			}
 		};
 	});
@@ -4927,7 +4927,7 @@ var $author$project$SurfaceRenderer$bounded = function (limit) {
 };
 var $author$project$SurfaceRenderer$Control = F6(
 	function (identity, domId, label, ariaLabel, detail, enabled) {
-		return {V: ariaLabel, e: detail, n: domId, D: enabled, J: identity, r: label};
+		return {Y: ariaLabel, e: detail, h: domId, D: enabled, K: identity, q: label};
 	});
 var $elm$json$Json$Decode$bool = _Json_decodeBool;
 var $elm$json$Json$Decode$field = _Json_decodeField;
@@ -5077,7 +5077,7 @@ var $author$project$UInt64$decoder = A2(
 	},
 	$elm$json$Json$Decode$string);
 var $author$project$Settings$Night = 0;
-var $author$project$Settings$defaults = {W: false, Z: false, R: 100, aa: 0};
+var $author$project$Settings$defaults = {Z: false, ac: false, T: 100, ae: 0};
 var $elm$core$Set$Set_elm_builtin = $elm$core$Basics$identity;
 var $elm$core$Dict$RBEmpty_elm_builtin = {$: -2};
 var $elm$core$Dict$empty = $elm$core$Dict$RBEmpty_elm_builtin;
@@ -5267,7 +5267,7 @@ var $elm$core$Result$toMaybe = function (result) {
 };
 var $author$project$Settings$Values = F4(
 	function (theme, textScale, effectsOff, reducedTransparency) {
-		return {W: effectsOff, Z: reducedTransparency, R: textScale, aa: theme};
+		return {Z: effectsOff, ac: reducedTransparency, T: textScale, ae: theme};
 	});
 var $elm$json$Json$Decode$map4 = _Json_map4;
 var $author$project$Settings$scaleDecoder = A2(
@@ -5328,7 +5328,7 @@ var $author$project$Settings$legacyValues = A2(
 		$elm$json$Json$Decode$map2,
 		F2(
 			function (theme, scale) {
-				return {W: false, Z: false, R: scale, aa: theme};
+				return {Z: false, ac: false, T: scale, ae: theme};
 			}),
 		A2($elm$json$Json$Decode$field, 'theme', $author$project$Settings$themeDecoder),
 		A2($elm$json$Json$Decode$field, 'textScale', $author$project$Settings$scaleDecoder)));
@@ -5383,7 +5383,7 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 				$elm$json$Json$Decode$map8,
 				F8(
 					function (version, shown, scoped, current, notice, bar, popup, appearance) {
-						return {j: appearance, q: bar, O: current, t: notice, g: popup, ag: scoped, ai: shown, aK: version};
+						return {j: appearance, m: bar, P: current, s: notice, c: popup, ak: scoped, am: shown, aO: version};
 					}),
 				A2($elm$json$Json$Decode$field, 'surfaceProtocol', $elm$json$Json$Decode$int),
 				A2($elm$json$Json$Decode$field, 'publication', $author$project$UInt64$decoder),
@@ -5416,30 +5416,30 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 					$elm$core$Set$size(
 						$elm$core$Set$fromList(names)));
 			};
-			var all = _Utils_ap(record.q, record.g);
+			var all = _Utils_ap(record.m, record.c);
 			var identities = A2(
 				$elm$core$List$map,
 				function ($) {
-					return $.J;
+					return $.K;
 				},
 				all);
-			return ((record.aK !== 2) || (_Utils_eq(record.ai, $author$project$UInt64$zero) || ((!A2(
+			return ((record.aO !== 2) || (_Utils_eq(record.am, $author$project$UInt64$zero) || ((!A2(
 				$elm$core$List$member,
-				record.O,
+				record.P,
 				_List_fromArray(
-					['closed', 'picker', 'applications', 'menu', 'overview', 'switcher', 'snap', 'settings', 'notifications', 'system', 'files', 'jump']))) || (((record.O !== 'closed') && _Utils_eq(record.ag, $author$project$UInt64$zero)) || (((record.O === 'closed') && (!$elm$core$List$isEmpty(record.g))) || ((!unique(identities)) || ((!unique(
+					['closed', 'picker', 'applications', 'menu', 'overview', 'switcher', 'snap', 'settings', 'notifications', 'system', 'files', 'jump']))) || (((record.P !== 'closed') && _Utils_eq(record.ak, $author$project$UInt64$zero)) || (((record.P === 'closed') && (!$elm$core$List$isEmpty(record.c))) || ((!unique(identities)) || ((!unique(
 				A2(
 					$elm$core$List$map,
 					function ($) {
-						return $.n;
+						return $.h;
 					},
 					all))) || A2(
 				$elm$core$List$any,
 				function (control) {
-					return $elm$core$String$isEmpty(control.J) || $elm$core$String$isEmpty(control.n);
+					return $elm$core$String$isEmpty(control.K) || $elm$core$String$isEmpty(control.h);
 				},
 				all)))))))) ? $elm$core$Result$Err('Invalid presentation scope/identities') : $elm$core$Result$Ok(
-				{j: record.j, q: record.q, ac: record.ag, a: record.O, X: motion, g: record.g, Y: record.ai, z: record.t});
+				{j: record.j, m: record.m, ag: record.ak, a: record.P, aa: motion, c: record.c, ab: record.am, z: record.s});
 		},
 		A2(
 			$elm$core$Result$mapError,
@@ -5448,11 +5448,11 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 };
 var $author$project$SurfaceRenderer$lease = function (_v0) {
 	var snapshot = _v0;
-	return snapshot.ac;
+	return snapshot.ag;
 };
 var $author$project$SurfaceRenderer$publication = function (_v0) {
 	var snapshot = _v0;
-	return snapshot.Y;
+	return snapshot.ab;
 };
 var $author$project$Presentation$accept = F2(
 	function (raw, prior) {
@@ -5461,19 +5461,19 @@ var $author$project$Presentation$accept = F2(
 		if (_v0.$ === 1) {
 			return _Utils_update(
 				model,
-				{y: $elm$core$Maybe$Nothing});
+				{x: $elm$core$Maybe$Nothing});
 		} else {
 			var snapshot = _v0.a;
 			return ((A2(
 				$author$project$UInt64$compare,
 				$author$project$SurfaceRenderer$publication(snapshot),
-				model.ab) !== 2) || (!A2(
+				model.af) !== 2) || (!A2(
 				$author$project$UInt64$compare,
 				$author$project$SurfaceRenderer$lease(snapshot),
-				model.ac))) ? prior : {
-				ab: $author$project$SurfaceRenderer$publication(snapshot),
-				ac: $author$project$SurfaceRenderer$lease(snapshot),
-				y: $elm$core$Maybe$Just(snapshot)
+				model.ag))) ? prior : {
+				af: $author$project$SurfaceRenderer$publication(snapshot),
+				ag: $author$project$SurfaceRenderer$lease(snapshot),
+				x: $elm$core$Maybe$Just(snapshot)
 			};
 		}
 	});
@@ -5481,7 +5481,7 @@ var $author$project$Bar$actions = _Platform_outgoingPort('actions', $elm$core$Ba
 var $elm$core$Platform$Sub$batch = _Platform_batch;
 var $author$project$Presentation$current = function (_v0) {
 	var model = _v0;
-	return model.y;
+	return model.x;
 };
 var $author$project$CapturedAction$CapturedAction = $elm$core$Basics$identity;
 var $author$project$CapturedAction$decode = function (raw) {
@@ -5499,16 +5499,16 @@ var $author$project$CapturedAction$decode = function (raw) {
 					var version = _v0.a;
 					var kind = _v0.b;
 					var value = _v0.c;
-					return ((version === 2) && ((kind === 'surface-action') && ((!_Utils_eq(value.Y, $author$project$UInt64$zero)) && (A2(
+					return ((version === 2) && ((kind === 'surface-action') && ((!_Utils_eq(value.ab, $author$project$UInt64$zero)) && (A2(
 						$elm$core$List$member,
-						value._,
+						value.ad,
 						_List_fromArray(
-							['bar', 'popup'])) && ((!$elm$core$String$isEmpty(value.J)) && (($elm$core$String$length(value.J) <= 512) && (!A2(
+							['bar', 'popup'])) && ((!$elm$core$String$isEmpty(value.K)) && (($elm$core$String$length(value.K) <= 512) && (!A2(
 						$elm$core$String$any,
 						function (c) {
 							return $elm$core$Char$toCode(c) < 32;
 						},
-						value.J)))))))) ? $elm$json$Json$Decode$succeed(value) : $elm$json$Json$Decode$fail('Action scope');
+						value.K)))))))) ? $elm$json$Json$Decode$succeed(value) : $elm$json$Json$Decode$fail('Action scope');
 				},
 				A7(
 					$elm$json$Json$Decode$map6,
@@ -5517,7 +5517,7 @@ var $author$project$CapturedAction$decode = function (raw) {
 							return _Utils_Tuple3(
 								version,
 								kind,
-								{J: name, ac: scoped, Y: shown, _: role});
+								{K: name, ag: scoped, ab: shown, ad: role});
 						}),
 					A2($elm$json$Json$Decode$field, 'surfaceProtocol', $elm$json$Json$Decode$int),
 					A2($elm$json$Json$Decode$field, 'kind', $elm$json$Json$Decode$string),
@@ -5535,9 +5535,9 @@ var $author$project$SurfaceRenderer$enabled = F3(
 		return A2(
 			$elm$core$List$any,
 			function (control) {
-				return _Utils_eq(control.J, identity) && control.D;
+				return _Utils_eq(control.K, identity) && control.D;
 			},
-			popup ? snapshot.g : snapshot.q);
+			popup ? snapshot.c : snapshot.m);
 	});
 var $elm$json$Json$Encode$int = _Json_wrap;
 var $elm$json$Json$Encode$object = function (pairs) {
@@ -5565,7 +5565,7 @@ var $author$project$CapturedAction$encode = function (_v0) {
 			[
 				_Utils_Tuple2(
 				'surface',
-				$elm$json$Json$Encode$string(value._)),
+				$elm$json$Json$Encode$string(value.ad)),
 				_Utils_Tuple2(
 				'surfaceProtocol',
 				$elm$json$Json$Encode$int(2)),
@@ -5575,37 +5575,37 @@ var $author$project$CapturedAction$encode = function (_v0) {
 				_Utils_Tuple2(
 				'publication',
 				$elm$json$Json$Encode$string(
-					$author$project$UInt64$string(value.Y))),
+					$author$project$UInt64$string(value.ab))),
 				_Utils_Tuple2(
 				'lease',
 				$elm$json$Json$Encode$string(
-					$author$project$UInt64$string(value.ac))),
+					$author$project$UInt64$string(value.ag))),
 				_Utils_Tuple2(
 				'id',
-				$elm$json$Json$Encode$string(value.J))
+				$elm$json$Json$Encode$string(value.K))
 			]));
 };
 var $author$project$CapturedAction$identity = function (_v0) {
 	var value = _v0;
-	return value.J;
+	return value.K;
 };
 var $author$project$CapturedAction$lease = function (_v0) {
 	var value = _v0;
-	return value.ac;
+	return value.ag;
 };
 var $author$project$CapturedAction$publication = function (_v0) {
 	var value = _v0;
-	return value.Y;
+	return value.ab;
 };
 var $author$project$CapturedAction$surface = function (_v0) {
 	var value = _v0;
-	return value._;
+	return value.ad;
 };
 var $author$project$Presentation$dispatch = F3(
 	function (popup, raw, _v0) {
 		var model = _v0;
 		var _v1 = _Utils_Tuple2(
-			model.y,
+			model.x,
 			$author$project$CapturedAction$decode(raw));
 		if ((!_v1.a.$) && (!_v1.b.$)) {
 			var snapshot = _v1.a.a;
@@ -5650,7 +5650,7 @@ var $elm$url$Url$Http = 0;
 var $elm$url$Url$Https = 1;
 var $elm$url$Url$Url = F6(
 	function (protocol, host, port_, path, query, fragment) {
-		return {ar: fragment, at: host, ax: path, az: port_, aC: protocol, aD: query};
+		return {av: fragment, ax: host, aB: path, aD: port_, aG: protocol, aH: query};
 	});
 var $elm$core$String$contains = _String_contains;
 var $elm$core$String$slice = _String_slice;
@@ -5855,7 +5855,7 @@ var $elm$core$Task$perform = F2(
 			A2($elm$core$Task$map, toMessage, task));
 	});
 var $elm$browser$Browser$element = _Browser_element;
-var $author$project$Presentation$initial = {ab: $author$project$UInt64$zero, ac: $author$project$UInt64$zero, y: $elm$core$Maybe$Nothing};
+var $author$project$Presentation$initial = {af: $author$project$UInt64$zero, ag: $author$project$UInt64$zero, x: $elm$core$Maybe$Nothing};
 var $elm$core$Maybe$map = F2(
 	function (f, maybe) {
 		if (!maybe.$) {
@@ -5872,6 +5872,7 @@ var $author$project$Bar$presentation = _Platform_incomingPort('presentation', $e
 var $author$project$Bar$requestAction = _Platform_incomingPort('requestAction', $elm$json$Json$Decode$value);
 var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
 var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
+var $author$project$PreviewVisual$Hidden = {$: 0};
 var $elm$json$Json$Decode$at = F2(
 	function (fields, decoder) {
 		return A3($elm$core$List$foldr, $elm$json$Json$Decode$field, decoder, fields);
@@ -5893,6 +5894,348 @@ var $elm$html$Html$Attributes$stringProperty = F2(
 			$elm$json$Json$Encode$string(string));
 	});
 var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('className');
+var $elm$html$Html$Attributes$alt = $elm$html$Html$Attributes$stringProperty('alt');
+var $elm$core$Maybe$andThen = F2(
+	function (callback, maybeValue) {
+		if (!maybeValue.$) {
+			var value = maybeValue.a;
+			return callback(value);
+		} else {
+			return $elm$core$Maybe$Nothing;
+		}
+	});
+var $author$project$PreviewVisual$Family = 1;
+var $author$project$PreviewVisual$fidelityLabel = function (fidelity) {
+	return (fidelity === 1) ? 'Window family' : 'Client content';
+};
+var $elm$html$Html$img = _VirtualDom_node('img');
+var $author$project$PreviewVisual$localLabel = function (state) {
+	switch (state) {
+		case 0:
+			return 'Waiting for preview capacity';
+		case 1:
+			return 'Waiting for preview';
+		case 2:
+			return 'Preview request expired';
+		case 3:
+			return 'Preview request changed';
+		default:
+			return 'Preview unavailable';
+	}
+};
+var $author$project$PreviewVisual$localName = function (state) {
+	switch (state) {
+		case 0:
+			return 'capacity';
+		case 1:
+			return 'waiting';
+		case 2:
+			return 'expired';
+		case 3:
+			return 'conflict';
+		default:
+			return 'exhausted';
+	}
+};
+var $elm$virtual_dom$VirtualDom$node = function (tag) {
+	return _VirtualDom_node(
+		_VirtualDom_noScript(tag));
+};
+var $elm$html$Html$node = $elm$virtual_dom$VirtualDom$node;
+var $elm$virtual_dom$VirtualDom$keyedNode = function (tag) {
+	return _VirtualDom_keyedNode(
+		_VirtualDom_noScript(tag));
+};
+var $elm$html$Html$Keyed$node = $elm$virtual_dom$VirtualDom$keyedNode;
+var $elm$html$Html$span = _VirtualDom_node('span');
+var $elm$html$Html$Attributes$src = function (url) {
+	return A2(
+		$elm$html$Html$Attributes$stringProperty,
+		'src',
+		_VirtualDom_noJavaScriptOrHtmlUri(url));
+};
+var $author$project$PreviewVisual$stateLabel = function (state) {
+	switch (state) {
+		case 0:
+			return 'Live preview';
+		case 1:
+			return 'Historical preview';
+		case 2:
+			return 'Preview loading';
+		default:
+			return 'Preview unavailable';
+	}
+};
+var $author$project$PreviewVisual$stateName = function (state) {
+	switch (state) {
+		case 0:
+			return 'live';
+		case 1:
+			return 'historical';
+		case 2:
+			return 'loading';
+		default:
+			return 'unavailable';
+	}
+};
+var $elm$core$Maybe$withDefault = F2(
+	function (_default, maybe) {
+		if (!maybe.$) {
+			var value = maybe.a;
+			return value;
+		} else {
+			return _default;
+		}
+	});
+var $author$project$PreviewVisual$render = F3(
+	function (root, caption, visual) {
+		switch (visual.$) {
+			case 0:
+				return $elm$html$Html$text('');
+			case 1:
+				return A2(
+					$elm$html$Html$span,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('window-preview'),
+							A2($elm$html$Html$Attributes$attribute, 'data-preview-state', 'unavailable')
+						]),
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$span,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('preview-title')
+								]),
+							_List_Nil),
+							A2(
+							$elm$html$Html$span,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('preview-state')
+								]),
+							_List_fromArray(
+								[
+									$elm$html$Html$text('Preview unavailable')
+								]))
+						]));
+			case 2:
+				var state = visual.a;
+				var title = visual.b;
+				return A2(
+					$elm$html$Html$span,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('window-preview'),
+							A2(
+							$elm$html$Html$Attributes$attribute,
+							'data-preview-state',
+							$author$project$PreviewVisual$localName(state))
+						]),
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$span,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('preview-title')
+								]),
+							_List_fromArray(
+								[
+									$elm$html$Html$text(
+									_Utils_eq(
+										title,
+										$author$project$PreviewVisual$localLabel(state)) ? '' : title)
+								])),
+							A2(
+							$elm$html$Html$span,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('preview-state')
+								]),
+							_List_fromArray(
+								[
+									$elm$html$Html$text(
+									$author$project$PreviewVisual$localLabel(state))
+								]))
+						]));
+			default:
+				var data = visual.a;
+				var fidelity = A2(
+					$elm$core$Maybe$withDefault,
+					'',
+					A2($elm$core$Maybe$map, $author$project$PreviewVisual$fidelityLabel, data.J));
+				var contents = function () {
+					var _v1 = data.Q;
+					if (!_v1.$) {
+						var handle = _v1.a;
+						return _List_fromArray(
+							[
+								_Utils_Tuple2(
+								'frame:' + handle,
+								A2(
+									$elm$html$Html$img,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$class('preview-image'),
+											$elm$html$Html$Attributes$src('elm-shell://preview/' + handle),
+											$elm$html$Html$Attributes$alt(''),
+											A2($elm$html$Html$Attributes$attribute, 'aria-hidden', 'true')
+										]),
+									_List_Nil))
+							]);
+					} else {
+						return _Utils_ap(
+							A2(
+								$elm$core$Maybe$withDefault,
+								_List_Nil,
+								A2(
+									$elm$core$Maybe$map,
+									function (handle) {
+										return _List_fromArray(
+											[
+												_Utils_Tuple2(
+												'icon:' + handle,
+												A2(
+													$elm$html$Html$img,
+													_List_fromArray(
+														[
+															$elm$html$Html$Attributes$class('preview-icon'),
+															$elm$html$Html$Attributes$src('elm-shell://icon/' + handle),
+															$elm$html$Html$Attributes$alt(''),
+															A2($elm$html$Html$Attributes$attribute, 'aria-hidden', 'true')
+														]),
+													_List_Nil))
+											]);
+									},
+									data._)),
+							_List_fromArray(
+								[
+									_Utils_Tuple2(
+									'title',
+									A2(
+										$elm$html$Html$span,
+										_List_fromArray(
+											[
+												$elm$html$Html$Attributes$class('preview-title')
+											]),
+										_List_fromArray(
+											[
+												$elm$html$Html$text(
+												A2(
+													$elm$core$Maybe$withDefault,
+													'',
+													A2(
+														$elm$core$Maybe$andThen,
+														function (title) {
+															return _Utils_eq(
+																title,
+																$author$project$PreviewVisual$stateLabel(data.y)) ? $elm$core$Maybe$Nothing : $elm$core$Maybe$Just(title);
+														},
+														data.V)))
+											])))
+								]));
+					}
+				}();
+				return A3(
+					$elm$html$Html$Keyed$node,
+					root,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('window-preview'),
+							A2(
+							$elm$html$Html$Attributes$attribute,
+							'data-preview-state',
+							$author$project$PreviewVisual$stateName(data.y))
+						]),
+					_Utils_ap(
+						contents,
+						_List_fromArray(
+							[
+								_Utils_Tuple2(
+								'status',
+								A3(
+									$elm$html$Html$node,
+									caption,
+									_List_Nil,
+									_List_fromArray(
+										[
+											A2(
+											$elm$html$Html$span,
+											_List_fromArray(
+												[
+													$elm$html$Html$Attributes$class('preview-state')
+												]),
+											_List_fromArray(
+												[
+													$elm$html$Html$text(
+													$author$project$PreviewVisual$stateLabel(data.y))
+												])),
+											A2(
+											$elm$html$Html$span,
+											_List_fromArray(
+												[
+													$elm$html$Html$Attributes$class('preview-fidelity')
+												]),
+											_List_fromArray(
+												[
+													$elm$html$Html$text(fidelity)
+												]))
+										])))
+							])));
+		}
+	});
+var $author$project$PreviewVisual$inlineView = A2($author$project$PreviewVisual$render, 'span', 'span');
+var $author$project$PreviewVisual$decorativeInlineView = function (visual) {
+	return _Utils_eq(visual, $author$project$PreviewVisual$Hidden) ? $elm$html$Html$text('') : A2(
+		$elm$html$Html$span,
+		_List_fromArray(
+			[
+				$elm$html$Html$Attributes$class('preview-content'),
+				A2($elm$html$Html$Attributes$attribute, 'aria-hidden', 'true')
+			]),
+		_List_fromArray(
+			[
+				$author$project$PreviewVisual$inlineView(visual)
+			]));
+};
+var $author$project$PreviewVisual$Unavailable = 3;
+var $elm$core$Basics$composeR = F3(
+	function (f, g, x) {
+		return g(
+			f(x));
+	});
+var $elm$core$List$singleton = function (value) {
+	return _List_fromArray(
+		[value]);
+};
+var $author$project$PreviewVisual$description = function (visual) {
+	switch (visual.$) {
+		case 0:
+			return '';
+		case 1:
+			return $author$project$PreviewVisual$stateLabel(3);
+		case 2:
+			var state = visual.a;
+			return $author$project$PreviewVisual$localLabel(state);
+		default:
+			var data = visual.a;
+			return A2(
+				$elm$core$String$join,
+				'; ',
+				A2(
+					$elm$core$List$cons,
+					$author$project$PreviewVisual$stateLabel(data.y),
+					A2(
+						$elm$core$Maybe$withDefault,
+						_List_Nil,
+						A2(
+							$elm$core$Maybe$map,
+							A2($elm$core$Basics$composeR, $author$project$PreviewVisual$fidelityLabel, $elm$core$List$singleton),
+							data.J))));
+	}
+};
 var $elm$json$Json$Encode$bool = _Json_wrap;
 var $elm$html$Html$Attributes$boolProperty = F2(
 	function (key, bool) {
@@ -5941,13 +6284,54 @@ var $elm$core$List$filter = F2(
 			list);
 	});
 var $elm$html$Html$h1 = _VirtualDom_node('h1');
+var $elm$html$Html$Attributes$hidden = $elm$html$Html$Attributes$boolProperty('hidden');
 var $elm$html$Html$Attributes$id = $elm$html$Html$Attributes$stringProperty('id');
 var $elm$html$Html$input = _VirtualDom_node('input');
-var $elm$virtual_dom$VirtualDom$keyedNode = function (tag) {
-	return _VirtualDom_keyedNode(
-		_VirtualDom_noScript(tag));
-};
-var $elm$html$Html$Keyed$node = $elm$virtual_dom$VirtualDom$keyedNode;
+var $elm$core$Dict$get = F2(
+	function (targetKey, dict) {
+		get:
+		while (true) {
+			if (dict.$ === -2) {
+				return $elm$core$Maybe$Nothing;
+			} else {
+				var key = dict.b;
+				var value = dict.c;
+				var left = dict.d;
+				var right = dict.e;
+				var _v1 = A2($elm$core$Basics$compare, targetKey, key);
+				switch (_v1) {
+					case 0:
+						var $temp$targetKey = targetKey,
+							$temp$dict = left;
+						targetKey = $temp$targetKey;
+						dict = $temp$dict;
+						continue get;
+					case 1:
+						return $elm$core$Maybe$Just(value);
+					default:
+						var $temp$targetKey = targetKey,
+							$temp$dict = right;
+						targetKey = $temp$targetKey;
+						dict = $temp$dict;
+						continue get;
+				}
+			}
+		}
+	});
+var $elm$core$Dict$member = F2(
+	function (key, dict) {
+		var _v0 = A2($elm$core$Dict$get, key, dict);
+		if (!_v0.$) {
+			return true;
+		} else {
+			return false;
+		}
+	});
+var $elm$core$Set$member = F2(
+	function (key, _v0) {
+		var dict = _v0;
+		return A2($elm$core$Dict$member, key, dict);
+	});
 var $elm$virtual_dom$VirtualDom$Normal = function (a) {
 	return {$: 0, a: a};
 };
@@ -5961,7 +6345,6 @@ var $elm$html$Html$Events$on = F2(
 	});
 var $elm$html$Html$p = _VirtualDom_node('p');
 var $elm$html$Html$Attributes$placeholder = $elm$html$Html$Attributes$stringProperty('placeholder');
-var $elm$html$Html$span = _VirtualDom_node('span');
 var $author$project$Settings$themeName = function (theme) {
 	switch (theme) {
 		case 0:
@@ -5982,7 +6365,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 			if (rows.b) {
 				var first = rows.a;
 				var rest = rows.b;
-				return A2($elm$core$String$startsWith, 'overview:family:', first.J) ? A2(
+				return A2($elm$core$String$startsWith, 'overview:family:', first.K) ? A2(
 					$elm$core$List$cons,
 					first,
 					familyPrefix(rest)) : _List_Nil;
@@ -5990,26 +6373,57 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 				return _List_Nil;
 			}
 		};
+		var domIds = $elm$core$Set$fromList(
+			A2(
+				$elm$core$List$map,
+				function ($) {
+					return $.h;
+				},
+				_Utils_ap(snapshot.m, snapshot.c)));
+		var prefix = function (candidate) {
+			prefix:
+			while (true) {
+				if (A2(
+					$elm$core$List$any,
+					function (item) {
+						return A2(
+							$elm$core$Set$member,
+							_Utils_ap(candidate, item.h),
+							domIds);
+					},
+					_Utils_ap(snapshot.m, snapshot.c))) {
+					var $temp$candidate = candidate + '-';
+					candidate = $temp$candidate;
+					continue prefix;
+				} else {
+					return candidate;
+				}
+			}
+		};
+		var descriptionPrefix = prefix('preview-description-');
 		var control = function (item) {
-			var switcherOption = popup && ((snapshot.a === 'switcher') && A2($elm$core$String$startsWith, 'switcher:family:', item.J));
+			var visual = preview(item.K);
+			var switcherOption = popup && ((snapshot.a === 'switcher') && A2($elm$core$String$startsWith, 'switcher:family:', item.K));
 			var settingsToggle = popup && ((snapshot.a === 'settings') && A2(
 				$elm$core$List$member,
-				item.J,
+				item.K,
 				_List_fromArray(
 					['settings:effects-off', 'settings:reduced-transparency'])));
-			var kind = (A2($elm$core$String$startsWith, 'bar:group:', item.J) || A2($elm$core$String$startsWith, 'bar:pin:', item.J)) ? 'control-group' : ((item.J === 'bar:recovery-refresh') ? 'control-recovery' : 'control-utility');
-			var active = (!popup) && ((A2($elm$core$String$startsWith, 'bar:group:', item.J) || A2($elm$core$String$startsWith, 'bar:pin:', item.J)) && (A2($elm$core$String$contains, 'Active', item.e) && (!A2($elm$core$String$contains, 'Attention; ', item.e))));
-			if (popup && ((snapshot.a === 'settings') && (A2($elm$core$String$startsWith, 'settings:help:text:', item.J) || (A2($elm$core$String$startsWith, 'settings:shortcuts:', item.J) && A2($elm$core$String$endsWith, ':state', item.J))))) {
+			var kind = (A2($elm$core$String$startsWith, 'bar:group:', item.K) || A2($elm$core$String$startsWith, 'bar:pin:', item.K)) ? 'control-group' : ((item.K === 'bar:recovery-refresh') ? 'control-recovery' : 'control-utility');
+			var descriptionId = _Utils_ap(descriptionPrefix, item.h);
+			var description = $author$project$PreviewVisual$description(visual);
+			var active = (!popup) && ((A2($elm$core$String$startsWith, 'bar:group:', item.K) || A2($elm$core$String$startsWith, 'bar:pin:', item.K)) && (A2($elm$core$String$contains, 'Active', item.e) && (!A2($elm$core$String$contains, 'Attention; ', item.e))));
+			if (popup && ((snapshot.a === 'settings') && (A2($elm$core$String$startsWith, 'settings:help:text:', item.K) || (A2($elm$core$String$startsWith, 'settings:shortcuts:', item.K) && A2($elm$core$String$endsWith, ':state', item.K))))) {
 				return A2(
 					$elm$html$Html$p,
 					_List_fromArray(
 						[
 							$elm$html$Html$Attributes$class('notification-text'),
-							$elm$html$Html$Attributes$id(item.n),
+							$elm$html$Html$Attributes$id(item.h),
 							A2(
 							$elm$html$Html$Attributes$attribute,
-							A2($elm$core$String$startsWith, 'settings:help:text:', item.J) ? 'data-settings-help' : 'data-shortcut-state',
-							item.J)
+							A2($elm$core$String$startsWith, 'settings:help:text:', item.K) ? 'data-settings-help' : 'data-shortcut-state',
+							item.K)
 						]),
 					_List_fromArray(
 						[
@@ -6021,7 +6435,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 								]),
 							_List_fromArray(
 								[
-									$elm$html$Html$text(item.r)
+									$elm$html$Html$text(item.q)
 								])),
 							A2(
 							$elm$html$Html$span,
@@ -6035,14 +6449,14 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 								]))
 						]));
 			} else {
-				if (popup && ((snapshot.a === 'notifications') && (A2($elm$core$String$endsWith, ':summary', item.J) || A2($elm$core$String$endsWith, ':body', item.J)))) {
+				if (popup && ((snapshot.a === 'notifications') && (A2($elm$core$String$endsWith, ':summary', item.K) || A2($elm$core$String$endsWith, ':body', item.K)))) {
 					return A2(
 						$elm$html$Html$p,
 						_List_fromArray(
 							[
 								$elm$html$Html$Attributes$class('notification-text'),
-								$elm$html$Html$Attributes$id(item.n),
-								A2($elm$html$Html$Attributes$attribute, 'data-notification-content', item.J)
+								$elm$html$Html$Attributes$id(item.h),
+								A2($elm$html$Html$Attributes$attribute, 'data-notification-content', item.K)
 							]),
 						_List_fromArray(
 							[
@@ -6054,7 +6468,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 									]),
 								_List_fromArray(
 									[
-										$elm$html$Html$text(item.r)
+										$elm$html$Html$text(item.q)
 									])),
 								A2(
 								$elm$html$Html$span,
@@ -6072,17 +6486,17 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 						$elm$core$List$member,
 						snapshot.a,
 						_List_fromArray(
-							['system', 'files', 'jump'])) && A2($elm$core$String$endsWith, ':state', item.J))) {
+							['system', 'files', 'jump'])) && A2($elm$core$String$endsWith, ':state', item.K))) {
 						return A2(
 							$elm$html$Html$p,
 							_List_fromArray(
 								[
 									$elm$html$Html$Attributes$class('notification-text'),
-									$elm$html$Html$Attributes$id(item.n),
+									$elm$html$Html$Attributes$id(item.h),
 									A2(
 									$elm$html$Html$Attributes$attribute,
 									(snapshot.a === 'jump') ? 'data-jump-content' : ((snapshot.a === 'files') ? 'data-files-content' : 'data-system-content'),
-									item.J)
+									item.K)
 								]),
 							_List_fromArray(
 								[
@@ -6094,7 +6508,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 										]),
 									_List_fromArray(
 										[
-											$elm$html$Html$text(item.r)
+											$elm$html$Html$text(item.q)
 										]))
 								]));
 					} else {
@@ -6103,7 +6517,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 							snapshot.a,
 							_List_fromArray(
 								['applications', 'files'])) && _Utils_eq(
-							item.J,
+							item.K,
 							$author$project$SurfaceRenderer$fieldIdentity(current)))) {
 							var packet = F2(
 								function (inputKind, query) {
@@ -6123,14 +6537,14 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 													_Utils_Tuple2(
 													'publication',
 													$elm$json$Json$Encode$string(
-														$author$project$UInt64$string(snapshot.Y))),
+														$author$project$UInt64$string(snapshot.ab))),
 													_Utils_Tuple2(
 													'lease',
 													$elm$json$Json$Encode$string(
-														$author$project$UInt64$string(snapshot.ac))),
+														$author$project$UInt64$string(snapshot.ag))),
 													_Utils_Tuple2(
 													'id',
-													$elm$json$Json$Encode$string(item.J)),
+													$elm$json$Json$Encode$string(item.K)),
 													_Utils_Tuple2(
 													'query',
 													$elm$json$Json$Encode$string(query))
@@ -6171,14 +6585,14 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 								_List_fromArray(
 									[
 										$elm$html$Html$Attributes$class('launcher-search'),
-										$elm$html$Html$Attributes$id(item.n),
+										$elm$html$Html$Attributes$id(item.h),
 										$elm$html$Html$Attributes$type_(
 										(snapshot.a === 'files') ? 'text' : 'search'),
 										$elm$html$Html$Attributes$placeholder(
 										(snapshot.a === 'files') ? '/path/to/folder or ~/Documents' : 'Search applications'),
-										$elm$html$Html$Attributes$value(item.r),
-										A2($elm$html$Html$Attributes$attribute, 'aria-label', item.V),
-										A2($elm$html$Html$Attributes$attribute, 'data-surface-field', item.J),
+										$elm$html$Html$Attributes$value(item.q),
+										A2($elm$html$Html$Attributes$attribute, 'aria-label', item.Y),
+										A2($elm$html$Html$Attributes$attribute, 'data-surface-field', item.K),
 										A2($elm$html$Html$Attributes$attribute, 'autocomplete', 'off'),
 										$elm$html$Html$Attributes$disabled(!item.D),
 										A2($elm$html$Html$Events$on, 'input', edit),
@@ -6199,14 +6613,14 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 									_List_fromArray(
 										[
 											$elm$html$Html$Attributes$class(kind),
-											$elm$html$Html$Attributes$id(item.n),
+											$elm$html$Html$Attributes$id(item.h),
 											A2(
 											$elm$html$Html$Attributes$attribute,
 											'data-window-state',
 											(kind !== 'control-group') ? 'none' : (A2($elm$core$String$contains, 'Attention; ', item.e) ? 'attention' : (A2($elm$core$String$contains, 'Active', item.e) ? 'active' : (A2($elm$core$String$contains, 'Minimized', item.e) ? 'minimized' : 'open')))),
-											A2($elm$html$Html$Attributes$attribute, 'aria-label', item.V),
+											A2($elm$html$Html$Attributes$attribute, 'aria-label', item.Y),
 											$elm$html$Html$Attributes$disabled(!item.D),
-											A2($elm$html$Html$Attributes$attribute, 'data-surface-control', item.J),
+											A2($elm$html$Html$Attributes$attribute, 'data-surface-control', item.K),
 											A2(
 											$elm$html$Html$Attributes$attribute,
 											'role',
@@ -6221,37 +6635,42 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 													['menu', 'switcher', 'snap', 'settings', 'notifications', 'system', 'files', 'jump'])) && ((item.e === 'Selected') || (settingsToggle && (item.e === 'On')))))) ? 'true' : 'false')
 										]),
 									_Utils_ap(
-										(popup && ((snapshot.a === 'settings') && (item.J === 'settings:help'))) ? _List_fromArray(
+										$elm$core$String$isEmpty(description) ? _List_Nil : _List_fromArray(
 											[
-												A2(
-												$elm$html$Html$Attributes$attribute,
-												'aria-expanded',
-												(item.e === 'Expanded') ? 'true' : 'false')
-											]) : _List_Nil,
+												A2($elm$html$Html$Attributes$attribute, 'aria-describedby', descriptionId)
+											]),
 										_Utils_ap(
-											settingsToggle ? _List_fromArray(
+											(popup && ((snapshot.a === 'settings') && (item.K === 'settings:help'))) ? _List_fromArray(
 												[
 													A2(
 													$elm$html$Html$Attributes$attribute,
-													'aria-pressed',
-													(item.e === 'On') ? 'true' : 'false')
+													'aria-expanded',
+													(item.e === 'Expanded') ? 'true' : 'false')
 												]) : _List_Nil,
-											switcherOption ? _List_fromArray(
-												[
-													A2(
-													$elm$html$Html$Attributes$attribute,
-													'aria-selected',
-													(item.e === 'Selected') ? 'true' : 'false')
-												]) : (((!popup) && (kind === 'control-group')) ? _List_fromArray(
-												[
-													A2(
-													$elm$html$Html$Attributes$attribute,
-													'aria-pressed',
-													active ? 'true' : 'false')
-												]) : _List_Nil)))),
+											_Utils_ap(
+												settingsToggle ? _List_fromArray(
+													[
+														A2(
+														$elm$html$Html$Attributes$attribute,
+														'aria-pressed',
+														(item.e === 'On') ? 'true' : 'false')
+													]) : _List_Nil,
+												switcherOption ? _List_fromArray(
+													[
+														A2(
+														$elm$html$Html$Attributes$attribute,
+														'aria-selected',
+														(item.e === 'Selected') ? 'true' : 'false')
+													]) : (((!popup) && (kind === 'control-group')) ? _List_fromArray(
+													[
+														A2(
+														$elm$html$Html$Attributes$attribute,
+														'aria-pressed',
+														active ? 'true' : 'false')
+													]) : _List_Nil))))),
 								_List_fromArray(
 									[
-										preview(item.J),
+										$author$project$PreviewVisual$decorativeInlineView(visual),
 										A2(
 										$elm$html$Html$span,
 										_List_fromArray(
@@ -6260,7 +6679,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 											]),
 										_List_fromArray(
 											[
-												$elm$html$Html$text(item.r)
+												$elm$html$Html$text(item.q)
 											])),
 										A2(
 										$elm$html$Html$span,
@@ -6271,6 +6690,18 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 										_List_fromArray(
 											[
 												$elm$html$Html$text(item.e)
+											])),
+										$elm$core$String$isEmpty(description) ? $elm$html$Html$text('') : A2(
+										$elm$html$Html$span,
+										_List_fromArray(
+											[
+												$elm$html$Html$Attributes$class('preview-description'),
+												$elm$html$Html$Attributes$id(descriptionId),
+												$elm$html$Html$Attributes$hidden(true)
+											]),
+										_List_fromArray(
+											[
+												$elm$html$Html$text(description)
 											]))
 									]));
 						}
@@ -6284,7 +6715,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 			} else {
 				var first = rows.a;
 				var rest = rows.b;
-				if (A2($elm$core$String$startsWith, 'overview:workspace:', first.J)) {
+				if (A2($elm$core$String$startsWith, 'overview:workspace:', first.K)) {
 					var members = familyPrefix(rest);
 					return A2(
 						$elm$core$List$cons,
@@ -6294,7 +6725,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 								[
 									$elm$html$Html$Attributes$class('overview-workspace'),
 									A2($elm$html$Html$Attributes$attribute, 'role', 'group'),
-									A2($elm$html$Html$Attributes$attribute, 'aria-labelledby', first.n)
+									A2($elm$html$Html$Attributes$attribute, 'aria-labelledby', first.h)
 								]),
 							A2(
 								$elm$core$List$map,
@@ -6317,33 +6748,33 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 			$elm$html$Html$div,
 			_List_fromArray(
 				[
-					A2($elm$html$Html$Attributes$attribute, 'data-motion', snapshot.X),
+					A2($elm$html$Html$Attributes$attribute, 'data-motion', snapshot.aa),
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-theme',
-					$author$project$Settings$themeName(snapshot.j.aa)),
+					$author$project$Settings$themeName(snapshot.j.ae)),
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-text-scale',
-					$elm$core$String$fromInt(snapshot.j.R)),
+					$elm$core$String$fromInt(snapshot.j.T)),
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-effects',
-					snapshot.j.W ? 'off' : 'on'),
+					snapshot.j.Z ? 'off' : 'on'),
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-reduced-transparency',
-					snapshot.j.Z ? 'true' : 'false'),
+					snapshot.j.ac ? 'true' : 'false'),
 					$elm$html$Html$Attributes$class('surface-popup'),
 					A2($elm$html$Html$Attributes$attribute, 'data-mode', snapshot.a),
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-publication',
-					$author$project$UInt64$string(snapshot.Y)),
+					$author$project$UInt64$string(snapshot.ab)),
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-lease',
-					$author$project$UInt64$string(snapshot.ac))
+					$author$project$UInt64$string(snapshot.ag))
 				]),
 			_List_fromArray(
 				[
@@ -6373,7 +6804,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 							$elm$html$Html$Attributes$class('surface-controls'),
 							A2($elm$html$Html$Attributes$attribute, 'role', 'group')
 						]),
-					overviewRows(snapshot.g)) : ((snapshot.a === 'switcher') ? A2(
+					overviewRows(snapshot.c)) : ((snapshot.a === 'switcher') ? A2(
 					$elm$html$Html$div,
 					_List_fromArray(
 						[
@@ -6396,15 +6827,15 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 								$elm$core$List$map,
 								function (item) {
 									return _Utils_Tuple2(
-										'control:' + item.J,
+										'control:' + item.K,
 										control(item));
 								},
 								A2(
 									$elm$core$List$filter,
 									function (item) {
-										return A2($elm$core$String$startsWith, 'switcher:family:', item.J);
+										return A2($elm$core$String$startsWith, 'switcher:family:', item.K);
 									},
-									snapshot.g))),
+									snapshot.c))),
 							A3(
 							$elm$html$Html$Keyed$node,
 							'div',
@@ -6417,15 +6848,15 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 								$elm$core$List$map,
 								function (item) {
 									return _Utils_Tuple2(
-										'control:' + item.J,
+										'control:' + item.K,
 										control(item));
 								},
 								A2(
 									$elm$core$List$filter,
 									function (item) {
-										return !A2($elm$core$String$startsWith, 'switcher:family:', item.J);
+										return !A2($elm$core$String$startsWith, 'switcher:family:', item.K);
 									},
-									snapshot.g)))
+									snapshot.c)))
 						])) : A3(
 					$elm$html$Html$Keyed$node,
 					'div',
@@ -6441,41 +6872,41 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 						$elm$core$List$map,
 						function (item) {
 							return _Utils_Tuple2(
-								'control:' + item.J,
+								'control:' + item.K,
 								control(item));
 						},
-						snapshot.g)))
+						snapshot.c)))
 				])) : A3(
 			$elm$html$Html$Keyed$node,
 			'div',
 			_List_fromArray(
 				[
-					A2($elm$html$Html$Attributes$attribute, 'data-motion', snapshot.X),
+					A2($elm$html$Html$Attributes$attribute, 'data-motion', snapshot.aa),
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-theme',
-					$author$project$Settings$themeName(snapshot.j.aa)),
+					$author$project$Settings$themeName(snapshot.j.ae)),
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-text-scale',
-					$elm$core$String$fromInt(snapshot.j.R)),
+					$elm$core$String$fromInt(snapshot.j.T)),
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-effects',
-					snapshot.j.W ? 'off' : 'on'),
+					snapshot.j.Z ? 'off' : 'on'),
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-reduced-transparency',
-					snapshot.j.Z ? 'true' : 'false'),
+					snapshot.j.ac ? 'true' : 'false'),
 					$elm$html$Html$Attributes$class('surface-bar'),
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-publication',
-					$author$project$UInt64$string(snapshot.Y)),
+					$author$project$UInt64$string(snapshot.ab)),
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-lease',
-					$author$project$UInt64$string(snapshot.ac))
+					$author$project$UInt64$string(snapshot.ag))
 				]),
 			_List_fromArray(
 				[
@@ -6494,10 +6925,10 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 							$elm$core$List$map,
 							function (item) {
 								return _Utils_Tuple2(
-									'control:' + item.J,
+									'control:' + item.K,
 									control(item));
 							},
-							snapshot.q))),
+							snapshot.m))),
 					_Utils_Tuple2(
 					'status',
 					A2(
@@ -6523,27 +6954,18 @@ var $author$project$SurfaceRenderer$view = F3(
 		return A4(
 			$author$project$SurfaceRenderer$viewWithPreview,
 			function (_v0) {
-				return $elm$html$Html$text('');
+				return $author$project$PreviewVisual$Hidden;
 			},
 			popup,
 			send,
 			current);
 	});
-var $elm$core$Maybe$withDefault = F2(
-	function (_default, maybe) {
-		if (!maybe.$) {
-			var value = maybe.a;
-			return value;
-		} else {
-			return _default;
-		}
-	});
 var $author$project$Bar$main = $elm$browser$Browser$element(
 	{
-		aY: function (_v0) {
+		a0: function (_v0) {
 			return _Utils_Tuple2($author$project$Presentation$initial, $elm$core$Platform$Cmd$none);
 		},
-		a2: function (_v1) {
+		a6: function (_v1) {
 			return $elm$core$Platform$Sub$batch(
 				_List_fromArray(
 					[
@@ -6551,7 +6973,7 @@ var $author$project$Bar$main = $elm$browser$Browser$element(
 						$author$project$Bar$requestAction($author$project$Bar$Action)
 					]));
 		},
-		a4: F2(
+		a7: F2(
 			function (message, model) {
 				if (message.$ === 1) {
 					var value = message.a;
@@ -6571,7 +6993,7 @@ var $author$project$Bar$main = $elm$browser$Browser$element(
 						$elm$core$Platform$Cmd$none);
 				}
 			}),
-		a5: function (model) {
+		a8: function (model) {
 			return A2(
 				$elm$core$Maybe$withDefault,
 				$elm$html$Html$text(''),

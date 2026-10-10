@@ -38,7 +38,7 @@ encode (Projection domain snapshot previews) = E.object [("visualProtocol",E.int
 view : (E.Value -> msg) -> Projection -> Html msg
 view send (Projection _ snapshot previews) =
     let visuals = Dict.fromList previews
-    in snapshot |> Maybe.map (SurfaceRenderer.viewWithPreview (\name -> Dict.get name visuals |> Maybe.map Visual.inlineView |> Maybe.withDefault (text "")) True send) |> Maybe.withDefault (text "")
+    in snapshot |> Maybe.map (SurfaceRenderer.viewWithPreview (\name -> Dict.get name visuals |> Maybe.withDefault Visual.Hidden) True send) |> Maybe.withDefault (text "")
 
 action : String -> Projection -> Maybe E.Value
 action identity (Projection _ snapshot _) = snapshot |> Maybe.andThen (SurfaceRenderer.action True identity)

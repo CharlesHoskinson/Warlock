@@ -1,12 +1,13 @@
 """Focused compiled launcher/search integration, protected CPU scope only."""
 import pathlib,hashlib,json,os,sys,time,shutil,subprocess,shlex,importlib.util,concurrent.futures,http.server,threading
+DESCRIPTION=sys.argv[1:]==['--preview-description']
 LAYER=sys.argv[1:]==['--layer-appearance']
 SHUTDOWN=sys.argv[1:]==['--preview-shutdown']
 BARRETURN=sys.argv[1:]==['--bar-keyboard-return']
 SHORTCUTS=sys.argv[1:]==['--shortcut-choices']
 PINMAX=sys.argv[1:]==['--pin-max']
 QUIESCENT=sys.argv[1:]==['--preview-quiescence']
-PREVIEW=sys.argv[1:]==['--preview-states']
+PREVIEW=DESCRIPTION or sys.argv[1:]==['--preview-states']
 LIVE=sys.argv[1:]==['--live-motion']
 MOTION=sys.argv[1:]==['--reduced-motion'] or LIVE
 TRANSFER=sys.argv[1:]==['--transfer-workspace']
@@ -28,13 +29,13 @@ MENU=sys.argv[1:]==['--dense-menu'] or REFLOW
 PICKER=sys.argv[1:]==['--dense-picker'] or MENU
 DENSE=sys.argv[1:]==['--dense-taskbar'] or PICKER
 PINMENUS=sys.argv[1:]==['--pinned-menus'] or (DENSE and not PICKER)
-PRIMARY=sys.argv[1:]==['--taskbar-primary'] or PINMENUS or PICKER
+PRIMARY=DESCRIPTION or sys.argv[1:]==['--taskbar-primary'] or PINMENUS or PICKER
 SWITCHER=sys.argv[1:]==['--switcher'] or ACCESSIBILITY
 NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'];POPUP=sys.argv[1:]==['--native-popup'] or QUIESCENT or SHUTDOWN or BARRETURN;TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION or KEYBOARD or DRAG or IME or TRANSFER or MOTION or PINMAX;assert not sys.argv[1:] or PINS or POPUP or TASKVIEW or PRIMARY or SWITCHER or PREVIEW
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143'
 sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
 scope=require_qa_scope();sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
-OUT=ROOT/'qa/runs'/(('layer-appearance-' if LAYER else 'bar-keyboard-return-' if BARRETURN else 'preview-shutdown-' if SHUTDOWN else 'pin-max-' if PINMAX else 'preview-quiescence-' if QUIESCENT else 'preview-states-' if PREVIEW else 'live-motion-' if LIVE else 'reduced-motion-' if MOTION else 'transfer-workspace-' if TRANSFER else 'ime-' if IME else 'accessibility-' if ACCESSIBILITY else 'high-contrast-' if CONTRAST else 'drag-ownership-' if DRAG else 'keyboard-shell-' if KEYBOARD else 'attention-' if ATTENTION else 'jump-lists-' if JUMP else 'files-' if FILES else 'system-menu-' if SYSTEM else 'notifications-' if NOTIFICATIONS else 'settings-' if SETTINGS else 'snap-chooser-' if SNAP else 'switcher-' if SWITCHER else 'taskbar-primary-' if PRIMARY else 'workspace-navigation-' if NAV else 'task-view-' if TASKVIEW else 'popup-' if POPUP else 'pins-' if PINS else 'search-')+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
+OUT=ROOT/'qa/runs'/(('preview-description-' if DESCRIPTION else 'layer-appearance-' if LAYER else 'bar-keyboard-return-' if BARRETURN else 'preview-shutdown-' if SHUTDOWN else 'pin-max-' if PINMAX else 'preview-quiescence-' if QUIESCENT else 'preview-states-' if PREVIEW else 'live-motion-' if LIVE else 'reduced-motion-' if MOTION else 'transfer-workspace-' if TRANSFER else 'ime-' if IME else 'accessibility-' if ACCESSIBILITY else 'high-contrast-' if CONTRAST else 'drag-ownership-' if DRAG else 'keyboard-shell-' if KEYBOARD else 'attention-' if ATTENTION else 'jump-lists-' if JUMP else 'files-' if FILES else 'system-menu-' if SYSTEM else 'notifications-' if NOTIFICATIONS else 'settings-' if SETTINGS else 'snap-chooser-' if SNAP else 'switcher-' if SWITCHER else 'taskbar-primary-' if PRIMARY else 'workspace-navigation-' if NAV else 'task-view-' if TASKVIEW else 'popup-' if POPUP else 'pins-' if PINS else 'search-')+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
 for folder in ['src','native','adapter','assets','qa']:
  (INPUT/folder).mkdir()
  for p in (ROOT/folder).iterdir():
@@ -69,6 +70,7 @@ try:
   run('typed-preview-states',['node','qa/preview-states-replay.js','assets/preview-states.js',str(OUT/'preview-states.json')])
   report['previewStates']=json.loads((OUT/'preview-states.json').read_text());assert all(report['previewStates']['checks'].values())
   run('preview-owning-table',['/usr/bin/python3','-B','qa/check-preview-states.py'])
+  if DESCRIPTION:run('compile-preview-renderer',[str(HELD/pinned['compiler']),'make','src/NativePreviewRenderer.elm','--optimize','--output=assets/preview-renderer.js'])
  if SWITCHER:report.update(requirements=['ELM-UI-003','ELM-UX-012','ELM-UX-013'],scope='Compiled real switcher/root/view, bounded release/Ready/ordinal reducer and typed native journal/selection-fence admission; actual physical chord, native focus/AT and original acceptance remain separate')
  if PRIMARY:report.update(requirements=['ELM-UI-004'],scope='Compile current taskbar state labels and integrated Elm roots; unchanged native host reused by exact source/binary hashes; actual pointer/keyboard/AT acceptance separate')
  if PINS:report.update(requirements=['ELM-UI-004','ELM-UX-004'],scope='Compiled identity pins/reorder, private atomic native persistence, current integrated host; native restart/pixels acceptance pending')
@@ -296,7 +298,7 @@ console.log('Current body-target Escape releases once; stale scope, preedit, rep
    run('popup-context-link',['g++',str(OUT/'popup-context.o'),*[str(OUT/(name+'.o')) for name in units],'-o',str(OUT/'popup-context-tests'),*flags])
    run('popup-context-tests',[str(OUT/'popup-context-tests')])
  run('host-self-tests',[str(OUT/'elm-host'),'--self-test'])
- if IME or ACCESSIBILITY or DENSE or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION:
+ if DESCRIPTION or IME or ACCESSIBILITY or DENSE or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION:
   if DENSE:report.update(requirements=['ELM-UI-008'],scenarios=['overflow-first-last','overflow-resize','menu-invocation'],scope='Current compiled renderer/adapter dense enlarged-text browser journeys and rebuilt scalable native host; native output/menu/AT observations separate')
   (INPUT/'qa/dense.html').write_text('<!doctype html><html style="font-size:24px"><head><link rel="stylesheet" href="../assets/shell.css"></head><body class="bar"><div id="app"></div><script>window.nativePackets=[];window.webkit={messageHandlers:{native:{postMessage:s=>nativePackets.push(JSON.parse(s))}}};</script><script src="../assets/bar.js"></script><script src="../assets/bar-adapter.js"></script><script src="../assets/context.js"></script><script src="../assets/activation.js"></script></body></html>')
   (INPUT/'qa/dense-picker.html').write_text('<!doctype html><html style="font-size:24px"><head><link rel="stylesheet" href="../assets/shell.css"></head><body class="popup"><div id="app"></div><script>window.nativePackets=[];window.webkit={messageHandlers:{native:{postMessage:s=>nativePackets.push(JSON.parse(s))}}};</script><script src="../assets/popup.js"></script><script src="../assets/popup-adapter.js"></script><script src="../assets/context.js"></script><script src="../assets/activation.js"></script></body></html>')
@@ -308,9 +310,12 @@ console.log('Current body-target Escape releases once; stale scope, preedit, rep
    def log_message(self,*args):pass
   server=http.server.ThreadingHTTPServer(('127.0.0.1',0),Handler);threading.Thread(target=server.serve_forever,daemon=True).start()
   browser=pathlib.Path('/home/hoskinson/.cache/puppeteer/chrome-headless-shell/linux-154.0.8037.57/chrome-headless-shell-linux64/chrome-headless-shell');report['browserSHA256']=sha(browser)
-  browser_name='ime-browser' if IME else 'accessibility-browser' if ACCESSIBILITY else 'attention-browser' if ATTENTION else 'jump-lists-browser' if JUMP else 'files-browser' if FILES else 'system-menu-browser' if SYSTEM else 'notifications-browser' if NOTIFICATIONS else 'settings-browser' if SETTINGS else 'snap-browser' if SNAP else 'dense-browser';browser_runner='ime-browser.mjs' if IME else 'accessibility-browser.mjs' if ACCESSIBILITY else 'attention-browser.mjs' if ATTENTION else 'jump-lists-browser.mjs' if JUMP else 'files-browser.mjs' if FILES else 'system-menu-browser.mjs' if SYSTEM else 'notifications-browser.mjs' if NOTIFICATIONS else 'settings-browser.mjs' if SETTINGS else 'snap-browser.mjs' if SNAP else 'dense-taskbar-browser.mjs'
+  if DESCRIPTION:
+   (INPUT/'qa/preview-description.html').write_text('''<!doctype html><html><head><link rel="stylesheet" href="../assets/shell.css"></head><body class="popup"><div id="app"></div><script src="../assets/preview-renderer.js"></script><script>window.nativePackets=[];window.previewReceipts=[];window.app=Elm.NativePreviewRenderer.init({node:document.getElementById("app"),flags:{channelProtocol:1,kind:"native-preview-renderer-grant",binding:{lifetime:"1",session:"1",frontend:"1"},receiverEpoch:"1",rendererLease:"1",sequenceFloor:"0"}});app.ports.acceptedSnapshots.subscribe(v=>previewReceipts.push(v));app.ports.surfaceActions.subscribe(v=>nativePackets.push(v));window.receiveVisual=v=>app.ports.visualSnapshots.send(v);</script></body></html>''')
+   report.update(requirements=['ELM-UI-016'],scenarios=['preview-states'],scope='Compiled ordinary Popup and actual native preview receiver/renderer; passive control descriptions and keyed focus/geometry in Chromium AX component; unchanged producer/ownership model and typed source isolation. Native AT/speech/braille and independent original acceptance remain separate.')
+  browser_name='preview-description-browser' if DESCRIPTION else 'ime-browser' if IME else 'accessibility-browser' if ACCESSIBILITY else 'attention-browser' if ATTENTION else 'jump-lists-browser' if JUMP else 'files-browser' if FILES else 'system-menu-browser' if SYSTEM else 'notifications-browser' if NOTIFICATIONS else 'settings-browser' if SETTINGS else 'snap-browser' if SNAP else 'dense-browser';browser_runner='preview-description-browser.mjs' if DESCRIPTION else 'ime-browser.mjs' if IME else 'accessibility-browser.mjs' if ACCESSIBILITY else 'attention-browser.mjs' if ATTENTION else 'jump-lists-browser.mjs' if JUMP else 'files-browser.mjs' if FILES else 'system-menu-browser.mjs' if SYSTEM else 'notifications-browser.mjs' if NOTIFICATIONS else 'settings-browser.mjs' if SETTINGS else 'snap-browser.mjs' if SNAP else 'dense-taskbar-browser.mjs'
   run(browser_name,['node','qa/'+browser_runner,'http://127.0.0.1:'+str(server.server_port),str(OUT),str(browser)])
-  child_path=OUT/(browser_name+'.json');child=json.loads(child_path.read_text());assert child['passed'] and child['browserExitCode']==0;report['imeBrowser' if IME else 'accessibilityBrowser' if ACCESSIBILITY else 'attentionBrowser' if ATTENTION else 'jumpListsBrowser' if JUMP else 'filesBrowser' if FILES else 'systemMenuBrowser' if SYSTEM else 'notificationsBrowser' if NOTIFICATIONS else 'settingsBrowser' if SETTINGS else 'snapBrowser' if SNAP else 'denseBrowser']={'path':str(child_path),'sha256':sha(child_path),'checks':child['checks']}
+  child_path=OUT/(browser_name+'.json');child=json.loads(child_path.read_text());assert child['passed'] and child['browserExitCode']==0;report['previewDescriptionBrowser' if DESCRIPTION else 'imeBrowser' if IME else 'accessibilityBrowser' if ACCESSIBILITY else 'attentionBrowser' if ATTENTION else 'jumpListsBrowser' if JUMP else 'filesBrowser' if FILES else 'systemMenuBrowser' if SYSTEM else 'notificationsBrowser' if NOTIFICATIONS else 'settingsBrowser' if SETTINGS else 'snapBrowser' if SNAP else 'denseBrowser']={'path':str(child_path),'sha256':sha(child_path),'checks':child['checks']}
   if SNAP:
    run('menu-navigation-regression',['node','qa/dense-taskbar-browser.mjs','http://127.0.0.1:'+str(server.server_port),str(OUT),str(browser)])
    regression=json.loads((OUT/'dense-browser.json').read_text());assert regression['passed'] and regression['browserExitCode']==0;report['menuNavigationRegression']={'path':str(OUT/'dense-browser.json'),'sha256':sha(OUT/'dense-browser.json'),'checks':regression['checks']}

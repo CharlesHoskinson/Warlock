@@ -74,7 +74,7 @@ main = Platform.worker
                  ("fullFamilyCoverageRequired",Tuple.first badCoverage==Tuple.first capturing && count (Tuple.second badCoverage)==0),
                  ("foreignIncarnationCannotBorrowPixels",frame |> Maybe.map (\snapshot -> Presenter.visual snapshot "family:2" borrowed==Presenter.visual snapshot "family:2" foreign) |> Maybe.withDefault False),
                  ("hostRetirementUsesElmRelease",count (Tuple.second retiring)==1),("foreignBindingCannotRetire",Tuple.first foreignRetiring==liveModel && count (Tuple.second foreignRetiring)==0),("sameLeaseRetainsCustody",count (Tuple.second retained)==0),("newPublicationHidesOldPixels",hidden),("nativeRefreshAuthorizesRetainedPixels",resumed),("newLeaseHidesOldFrame",Renderer.decode (replace "lease" (E.string "999") newFrame) |> Result.map (\snapshot -> Presenter.visual snapshot "family:1" (Tuple.first replacement)==Visual.Hidden) |> Result.withDefault False)]
-        in ((),outgoing (E.object [("checks",E.object (List.map (\(name,ok)->(name,E.bool ok)) checks)),("states",E.list identity (List.map visual [Tuple.first capturing,liveModel,historical,unavailable])),("emitted",Tuple.second capturing)]))
+        in ((),outgoing (E.object [("checks",E.object (List.map (\(name,ok)->(name,E.bool ok)) checks)),("frame",rawFrame),("states",E.list identity (List.map visual [Tuple.first capturing,liveModel,historical,unavailable])),("emitted",Tuple.second capturing)]))
     , update = \_ model -> (model,Cmd.none)
     , subscriptions = \_ -> Sub.none
     }

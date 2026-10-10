@@ -1,0 +1,188 @@
+{
+  "schema": 1,
+  "status": "partial",
+  "requirements": [
+    "ELM-UI-016"
+  ],
+  "scenarios": [
+    "preview-states"
+  ],
+  "originalRequirement": {
+    "id": "ELM-UI-016",
+    "capability": "elm-capture-motion",
+    "phase": "P4",
+    "pattern": "ubiquitous",
+    "priority": "must",
+    "ears": "The preview view SHALL distinguish loading, authorized historical, current-live and unavailable source states visually and accessibly without borrowing pixels from another incarnation.",
+    "task": "Qualify explicit preview source states.",
+    "verification": "Frozen threshold/policy plus independently observed named fixtures, native counters or user/AT records as applicable; hashes and failure outcomes retained.",
+    "legacyEvidence": "docs/elm-roadmap/INTERACTION.md; new coverage: final UI/UX review",
+    "scenarios": [
+      {
+        "name": "preview-states",
+        "given": "one identity-bound preview fixture",
+        "when": "loading historical live and unavailable states render",
+        "then": "each state has matching visual and accessible labels and only authorized pixels"
+      }
+    ],
+    "source": "docs/elm-roadmap/coordinator-requirements.json",
+    "status": "proposed",
+    "taskId": "P4-ELM-UI-016",
+    "accountableOwnerRole": "Graphics lead",
+    "verifierRole": "Independent acceptance reviewer"
+  },
+  "sourceBaseRevision": "e7a3f9c8673c5a2505971960cdf2ff84ee9d9d90",
+  "sourceObservation": "Precommit candidate bytes identified by sourceHashes; base revision does not contain this delta. No independent acceptance claimed.",
+  "sourceHashes": {
+    "implementation/warlock/src/PreviewVisual.elm": "5c285bd8c6fde00b4e1082edfd10e59e281264a4f45b15cea9b5ce0920dd039a",
+    "implementation/warlock/src/SurfaceRenderer.elm": "9d8e0505844349485cb895db6feca8bd717614082fa883b0d3f6ea2f0163d591",
+    "implementation/warlock/src/Popup.elm": "5be24b76e75913eaf813ce4eaa271dcc8a3acfee1813be0988eafe9fe335d668",
+    "implementation/warlock/src/RetainedPreviewPresenter.elm": "3446188256b8422ff79fc177c46871a8dc102f4f06522584e252216727f3c4a8",
+    "implementation/warlock/src/NativePreviewVisual.elm": "807da8e07317469ac03c37907ba8c8830b1b3a7fa93fa3a488ecb525b973886d",
+    "implementation/warlock/assets/shell.css": "63d6c4e9356e89be4155f9c341b545dcb971d7b8bf2c60b00375c53efca7ddf7",
+    "implementation/warlock/assets/elm.js": "2606ba1d2ca516d9e1581132d1383e42ccb3f38d74da34b143faf057b96c0b71",
+    "implementation/warlock/assets/bar.js": "29c449606435d1ef67a2c36d2e118e2627da6faa083b6975ee8fe4ca732caaa2",
+    "implementation/warlock/assets/popup.js": "29651bc0ac71f4586c4e9aeea5acb84d7601011ee04292b1d828516eaa5d0ac7",
+    "implementation/warlock/qa/check-search.py": "9f57bfdd5bcd4830ec5dda5cdbf333e05548e5adb906aa901a40f3eb8b29fe32",
+    "implementation/warlock/qa/PreviewStateReplay.elm": "0512b81d0607d8b61e03b1a96e1757c9b174a79f1dd25d16359d5528037ad99e",
+    "implementation/warlock/qa/preview-description-browser.mjs": "05d19ad7b2575cde87376160072bc872a34c59bc142500063f7915a62d900492",
+    "implementation/warlock/qa/current-search-build.json": "3296fec9ef43f1444755fe08623def13c7ae241bfcaee0ccccee3df2a428f0f4",
+    "implementation/warlock/README.md": "6a0f3ed508cafbfda351dc5d95c1242e45c137b4689aca9340e9696d769d7966"
+  },
+  "nativePair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-core-1791495415110842751/Hyprland",
+      "sha256": "81c9ac609c2900f99c1efbe613b83e949aeae3059a5e4403601581fa96191acf"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791596429600393566/elm-window-geometry-authority.so",
+      "sha256": "1f5de87c759902cbbca05dfdbba56090641c994cf3c7276671094248465bcac4"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-description-1791602926265841748/elm-host",
+    "sha256": "5771db964a191bffe0958e2724d13aa790b19de32ecc8329b5b4c57ed71b3dc7",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-description-1791602926265841748/report.json",
+    "heldBuildSHA256": "c05b760a0bb0420361bda12ac3776ed1a5bef2f889d831a5c4641d200348a249"
+  },
+  "compiledAssets": {
+    "elm.js": "2606ba1d2ca516d9e1581132d1383e42ccb3f38d74da34b143faf057b96c0b71",
+    "bar.js": "29c449606435d1ef67a2c36d2e118e2627da6faa083b6975ee8fe4ca732caaa2",
+    "popup.js": "29651bc0ac71f4586c4e9aeea5acb84d7601011ee04292b1d828516eaa5d0ac7"
+  },
+  "originalPickerModel": {
+    "path": "implementation/warlock/qa/picker-ownership.qnt",
+    "sha256": "b57bc5da5f5ee7d00cfe23ac93269e4b09ee1b25bfea3e93dd57cebb196b9277",
+    "skill": "quint-llm-kit/quint-execute-spec",
+    "changed": false,
+    "mapping": "Owned/released/revoked facts and descriptor denial remain in native picker tables/presenter. PreviewVisual.description and SurfaceRenderer.viewWithPreview render current typed facts only; they neither acquire pixels nor change those transitions.",
+    "namedRuns": [
+      "independentFamiliesTest",
+      "foreignPeerCannotBorrowTest",
+      "foreignSubjectCannotBorrowTest",
+      "familyRetirementDoesNotEraseOtherTest",
+      "revokedDescriptorDeniedTest",
+      "completedConsumerCannotReadTest"
+    ],
+    "sampledSafety": {
+      "samples": 100,
+      "maxSteps": 20,
+      "seed": 79102
+    },
+    "limits": "The model covers bounded ownership, not accessibility export, speech delivery, pixel rendering or release resource budgets."
+  },
+  "componentObservations": {
+    "browserChecks": 53,
+    "states": 11,
+    "nativeAT": false
+  },
+  "nativeObservations": {
+    "report": "implementation/warlock/qa/runs/native-preview-states-1791602939689463718/report.json",
+    "sha256": "50db46445cbbe2e3d698eb71d2c372f29927c4d4fbeb2199ffdf3f3b655b75af",
+    "checks": 28,
+    "cleanupPassed": true,
+    "scope": "Actual ordinary picker native Loading DOM, Live/Historical/Unavailable and owned color/expiry journey; physical loading and actual AT/independent acceptance separate",
+    "runner": "implementation/warlock/qa/native-preview-states.py",
+    "runnerSHA256": "0836abf13375d62bc9bc330ce4dba1602a099cf06ccb332fa533ec89bb699609"
+  },
+  "missingObservations": [
+    "Two simultaneous native raster/export pairs exceed the unchanged two-allocation native budget; broader capacity/fairness remains open.",
+    "Physical loading pixels were not intercepted; native DOM label observation is weaker.",
+    "Actual assistive technology and independent original-scenario acceptance remain open.",
+    "Actual WebKit/Orca/braille description delivery is not established by Chromium AX component checks.",
+    "Single shell announcement owner, frozen notification policy and correlated receipt deduplication remain open separately."
+  ],
+  "reviewerDisposition": "Root observed scoped component/native results. Independent original-scenario acceptance is open.",
+  "nativeAcceptance": false,
+  "assistiveTechnologyAccepted": false,
+  "fullReleaseAccepted": false,
+  "reproduce": [
+    [
+      "PYTHONDONTWRITEBYTECODE=1",
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/window-integration-qa/qa_run.py",
+      "--",
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/check-search.py",
+      "--preview-description"
+    ],
+    [
+      "python3",
+      "-B",
+      "docs/warlock-build-loop/v2/loop.py",
+      "--record",
+      ".warlock-contributor/preview-description.json",
+      "native",
+      "--runner",
+      "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/native-preview-states.py"
+    ]
+  ],
+  "files": {
+    "compiled-report.json": {
+      "sha256": "c05b760a0bb0420361bda12ac3776ed1a5bef2f889d831a5c4641d200348a249",
+      "bytes": 81913
+    },
+    "typed-states.json": {
+      "sha256": "7f2e84e0b7917271f40c9825e1b39b66d78ac2618cf1bc5f59500a8ad4d0e0c9",
+      "bytes": 5517
+    },
+    "browser-report.json": {
+      "sha256": "a6e82f3907b1c351706ba1e0429acc96dfd638ecdaca42a22ecd3160acb2197d",
+      "bytes": 26279
+    },
+    "ownership-check.stdout": {
+      "sha256": "f0a91135926b813b03d73c96357ae6c3729428e83e865945b26aa059c6106659",
+      "bytes": 571
+    },
+    "native-report.json": {
+      "sha256": "50db46445cbbe2e3d698eb71d2c372f29927c4d4fbeb2199ffdf3f3b655b75af",
+      "bytes": 287805
+    },
+    "Live.png": {
+      "sha256": "8cfb67669efd8d5c0dc4fdbd1b18f4928b03c3b9c92b496bc91fa9ca4ab03f2b",
+      "bytes": 82991
+    },
+    "Historical.png": {
+      "sha256": "5c01bc96ba2c641adf92e2cc75cb29bc61df6a4153e4b3440cd1bf4d9d2d450a",
+      "bytes": 162565
+    },
+    "Unavailable.png": {
+      "sha256": "37c7aa4b5354dd06849d23bd8dee10bcf41b7bb150c88d00379e4cd3a869f7c3",
+      "bytes": 169973
+    },
+    "fixture-failures.json": {
+      "sha256": "4e07cd6956e24cd0e4642991b7e310dff1f5ab308b40174d006b3a7bf851f015",
+      "bytes": 2574
+    },
+    "README.md": {
+      "sha256": "93915e6a8ec289c0fbfd61aceb68c5456bb2afba1e71a8a4cd7a1da635ce009c",
+      "bytes": 3637
+    }
+  }
+}

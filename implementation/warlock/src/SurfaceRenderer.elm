@@ -1,13 +1,14 @@
 module SurfaceRenderer exposing (enabled, Snapshot, decode, encode, controlIdentities, publication, lease, mode, view, viewWithPreview, action, queryValue, pendingQuery, fieldIdentity)
 
 import Html exposing (Html, button, div, h1, input, p, span, text)
-import Html.Attributes exposing (attribute, class, disabled, id, title, type_, value, placeholder)
+import Html.Attributes exposing (attribute, class, disabled, hidden, id, title, type_, value, placeholder)
 import Html.Events exposing (on)
 import Html.Keyed as Keyed
 import Json.Decode as D
 import Json.Encode as E
 import Set
 import Settings
+import PreviewVisual as Preview
 import UInt64 exposing (Counter)
 
 type alias Control = { identity : String, domId : String, label : String, ariaLabel : String, detail : String, enabled : Bool }
@@ -75,12 +76,20 @@ action popup identity (Snapshot snapshot) =
     else Nothing
 
 view : Bool -> (E.Value -> msg) -> Snapshot -> Html msg
-view popup send current = viewWithPreview (\_ -> text "") popup send current
+view popup send current = viewWithPreview (\_ -> Preview.Hidden) popup send current
 
-viewWithPreview : (String -> Html msg) -> Bool -> (E.Value -> msg) -> Snapshot -> Html msg
+viewWithPreview : (String -> Preview.Visual) -> Bool -> (E.Value -> msg) -> Snapshot -> Html msg
 viewWithPreview preview popup send ((Snapshot snapshot) as current) =
-    let control item =
-            let settingsToggle = popup && snapshot.mode=="settings" && List.member item.identity ["settings:effects-off","settings:reduced-transparency"]
+    let -- A description ID is stable across state changes and cannot collide
+        -- with any control ID supplied by the current closed projection.
+        domIds = Set.fromList (List.map .domId (snapshot.bar ++ snapshot.popup))
+        prefix candidate = if List.any (\item -> Set.member (candidate ++ item.domId) domIds) (snapshot.bar ++ snapshot.popup) then prefix (candidate ++ "-") else candidate
+        descriptionPrefix = prefix "preview-description-"
+        control item =
+            let visual = preview item.identity
+                description = Preview.description visual
+                descriptionId = descriptionPrefix ++ item.domId
+                settingsToggle = popup && snapshot.mode=="settings" && List.member item.identity ["settings:effects-off","settings:reduced-transparency"]
                 switcherOption = popup && snapshot.mode=="switcher" && String.startsWith "switcher:family:" item.identity
                 active = not popup && (String.startsWith "bar:group:" item.identity || String.startsWith "bar:pin:" item.identity) && String.contains "Active" item.detail && not (String.contains "Attention; " item.detail)
                 kind = if String.startsWith "bar:group:" item.identity || String.startsWith "bar:pin:" item.identity then "control-group" else if item.identity=="bar:recovery-refresh" then "control-recovery" else "control-utility"
@@ -95,7 +104,7 @@ viewWithPreview preview popup send ((Snapshot snapshot) as current) =
                     edit = D.map2 (\query composing -> packet (if composing then "surface-preedit" else "surface-query") query) (D.at ["target","value"] D.string) (D.oneOf [D.field "isComposing" D.bool,D.succeed False])
                     composition inputKind = D.map (packet inputKind) (D.at ["target","value"] D.string)
                 in input [class "launcher-search",id item.domId,type_ (if snapshot.mode=="files" then "text" else "search"),placeholder (if snapshot.mode=="files" then "/path/to/folder or ~/Documents" else "Search applications"),value item.label,attribute "aria-label" item.ariaLabel,attribute "data-surface-field" item.identity,attribute "autocomplete" "off",disabled (not item.enabled),on "input" edit,on "compositionstart" (composition "surface-composition-start"),on "compositionend" (composition "surface-composition-end")] []
-            else button ([class kind,id item.domId,attribute "data-window-state" (if kind/="control-group" then "none" else if String.contains "Attention; " item.detail then "attention" else if String.contains "Active" item.detail then "active" else if String.contains "Minimized" item.detail then "minimized" else "open"),attribute "aria-label" item.ariaLabel,disabled (not item.enabled),attribute "data-surface-control" item.identity,attribute "role" (if switcherOption then "option" else if popup && snapshot.mode=="menu" then "menuitem" else "button"),attribute "aria-current" (if (not popup && kind=="control-group" && String.contains "Active" item.detail && not (String.contains "Attention; " item.detail)) || (popup && List.member snapshot.mode ["menu","switcher","snap","settings","notifications","system","files","jump"] && (item.detail=="Selected" || (settingsToggle && item.detail=="On"))) then "true" else "false")] ++ (if popup && snapshot.mode=="settings" && item.identity=="settings:help" then [attribute "aria-expanded" (if item.detail=="Expanded" then "true" else "false")] else []) ++ (if settingsToggle then [attribute "aria-pressed" (if item.detail=="On" then "true" else "false")] else []) ++ (if switcherOption then [attribute "aria-selected" (if item.detail=="Selected" then "true" else "false")] else if not popup && kind=="control-group" then [attribute "aria-pressed" (if active then "true" else "false")] else [])) [preview item.identity,span [class "control-label"] [text item.label],span [class "control-detail"] [text item.detail]]
+            else button ([class kind,id item.domId,attribute "data-window-state" (if kind/="control-group" then "none" else if String.contains "Attention; " item.detail then "attention" else if String.contains "Active" item.detail then "active" else if String.contains "Minimized" item.detail then "minimized" else "open"),attribute "aria-label" item.ariaLabel,disabled (not item.enabled),attribute "data-surface-control" item.identity,attribute "role" (if switcherOption then "option" else if popup && snapshot.mode=="menu" then "menuitem" else "button"),attribute "aria-current" (if (not popup && kind=="control-group" && String.contains "Active" item.detail && not (String.contains "Attention; " item.detail)) || (popup && List.member snapshot.mode ["menu","switcher","snap","settings","notifications","system","files","jump"] && (item.detail=="Selected" || (settingsToggle && item.detail=="On"))) then "true" else "false")] ++ (if String.isEmpty description then [] else [attribute "aria-describedby" descriptionId]) ++ (if popup && snapshot.mode=="settings" && item.identity=="settings:help" then [attribute "aria-expanded" (if item.detail=="Expanded" then "true" else "false")] else []) ++ (if settingsToggle then [attribute "aria-pressed" (if item.detail=="On" then "true" else "false")] else []) ++ (if switcherOption then [attribute "aria-selected" (if item.detail=="Selected" then "true" else "false")] else if not popup && kind=="control-group" then [attribute "aria-pressed" (if active then "true" else "false")] else [])) [Preview.decorativeInlineView visual,span [class "control-label"] [text item.label],span [class "control-detail"] [text item.detail],if String.isEmpty description then text "" else span [class "preview-description",id descriptionId,hidden True] [text description]]
         familyPrefix rows = case rows of
             first :: rest -> if String.startsWith "overview:family:" first.identity then first :: familyPrefix rest else []
             [] -> []
