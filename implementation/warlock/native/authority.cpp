@@ -656,8 +656,10 @@ std::string performEffect(Session& session, JsonObject* object, const std::strin
         if(!window->m_workspace || window->onSpecialWorkspace() || window->isHidden() || (minimize && !window->m_workspace->isVisible())) return reject("ineligible-family");
         if(window->m_workspace!=destination || window->m_monitor.lock()!=destinationMonitor) return reject("mixed-family-workspace-owner");
         // The core's pinned focus path can reassign workspace membership.
+        // Same-output explicit navigation selects this preserved workspace
+        // before focus; another focus output would still implicitly transfer it.
         const auto focusMonitor=Desktop::focusState()->monitor();
-        if(!minimize && window->m_pinned && (!focusMonitor || focusMonitor->m_activeWorkspace!=destination)) return reject("implicit-transfer-required");
+        if(!minimize && window->m_pinned && (!focusMonitor || focusMonitor!=destinationMonitor || (!navigating && focusMonitor->m_activeWorkspace!=destination))) return reject("implicit-transfer-required");
         if(Desktop::WindowPolicy::isMinimized(window)!=(operation=="restore")) return reject("family-state-mismatch");
     }
     PHLWINDOW restoreFocus=nullptr;

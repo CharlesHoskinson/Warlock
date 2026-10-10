@@ -7960,14 +7960,39 @@
                 "independent": false,
                 "disposition": "Owner-observed native/compiled/sampled results; independent original acceptance remains open."
               }
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/pinned-output-retirement/manifest.json",
+              "sha256": "0776ad7e4897d80b4ef4ef118ca8e22c047153e9e2755d730f8940822ec2d4b7",
+              "scope": "Pinned applications now preserve workspace2, size108x440, pin state and the unsaved draft through the original first output removal, replacement, all-output disappearance and fresh return. Owning workspace migration avoids retired-owner gap callbacks and pinned stay-behind paths; the existing native authority permits explicit same-output navigation to the preserved workspace before pin focus. Actual taskbar Activate/Restore and native pointer/keyboard/draft/pixels pass for pinned and previously minimized applications. Real cross-output pin activation remains Refused without transfer; a live-monitor workspace move retains the pin on its old output. The prior pinned smaller/negative-origin journey passes the exact tuple with normal cleanup.",
+              "sourceBaseRevision": "7a00d7ac61bf1c39ba06e550ecfe4813827bba48",
+              "sourceHashes": {
+                "implementation/warlock/qa/native-state-output-return.py": "349e6adc7909690b3a8ca6f16c0368bdaedb540c82cc5c877e215fd07ac6498f",
+                "implementation/warlock/native/core/WorkspacePlacementController.cpp": "8e53f37f4f554e92b928e713010ec6033fe80fcb87e4cccccafa693a52ae7206",
+                "implementation/warlock/qa/pinned-output-retirement.qnt": "609eb395cf4d95bd4d36bb9d09ba72756e996b35e45898da3b7cd2ec0cd46c31",
+                "implementation/warlock/qa/pinned-output-retirement_test.qnt": "fa241453330b5c9ce8baef77bb6677d1927efc6e611fcab1a8c19b6f587ffc78",
+                "implementation/warlock/qa/check-pinned-output-retirement.py": "62d14facb94f150d486485b5596667059dd1655ed7d72de92cb4750ff3c45d35",
+                "implementation/warlock/qa/check-output-placement-core.py": "d0cc3adb5d203f92625d2f893f18f439a4444bd620b42f02a2d8bad74ea9e7de",
+                "implementation/warlock/qa/native-window-feedback.py": "295ba28cf8d9d297b214bd0d6dba19ac3289d861faa953f9fd94b82937473c64",
+                "implementation/warlock/qa/check-native-authority.py": "014cba952d735b40d600cd5e2a498e97a9491bce89fadb69fc1600ddfb6cba32",
+                "implementation/warlock/qa/current-scene-core.json": "d8caf7b564ee4cd4e3ce0413f6d93ee6178041f462bc9936891320a39f061be8",
+                "implementation/warlock/qa/current-native-pair.json": "53d843510f37e8a05d3ea7bac24c0077e657ce402a83287493e7cd1e2efdc2b7",
+                "implementation/warlock/README.md": "8996b32d358cb5d719d71f0d1394c19ce9fe43da82addba41d29d23f536b7ad3",
+                "implementation/warlock/native/authority.cpp": "586cf2dd3ceaee87da9c6f8681e932f2d6a2aeeed9c91fc2e5221f3993b30b00"
+              },
+              "reviewerDisposition": {
+                "name": "root-pinned-output-retirement",
+                "independent": false,
+                "disposition": "Owner-observed protected native/compiled/sampled results; original independent acceptance remains open."
+              }
             }
           ],
-          "missingObservation": "Independent original UI-019 acceptance and physical hotplug/AT/IME remain open.; Pin/minimized recovery across actual output retirement, fullscreen/grouped/modal families and wider scale/rotation/multiple-output placement remain unqualified. Oversized windows retain their original size; the first up-to-32 logical pixels are recovered, not the entire client.; Concurrent gestures/output changes, preview/capture/effect custody, protected input, Unknown and other asynchronous/native-host ordering or transport-failure schedules remain open.; Full original hardware/resource/journey evidence, reproducible package and reversible deployment/rollback remain open.",
-          "observation": "A pinned floating application previously remained at (-360,30), below the real 400x200 output at (-400,-200). The owning changed-area placement now recovers it at (-360,-32) without unpinning or changing its size108x440/workspace2/draft. Real taskbar Minimize/Restore each submit once; actual client pointer press/release, physical keyboard editing and native painted pixels pass. The unchanged minimized-before-reconfigure and caption/MAX/snap/lifecycle regressions pass the exact tuple with normal cleanup. This advances UI-019 reachable application recovery; independent original acceptance and full release remain open.",
+          "missingObservation": "Independent original UI-019 acceptance and physical hotplug/AT/IME remain open.; Fullscreen/grouped/modal families, wider scale/rotation/output combinations, concurrent gestures/custody/protected input/Unknown and other native-host/transport schedules remain open. Oversized clients retain their original size; this does not prove whole-client fit.; Post-first-unplug/pre-zero fixture setup exposed an Active/Minimize cue while pinning selected another active workspace; original taskbar-active focus/visibility/custody must be reproduced and reconciled separately. The final pin/min fixtures are established before the first unplug and validate the broader original journey.; Full original hardware/resource/journey evidence, reproducible package and reversible deployment/rollback remain open.",
+          "observation": "Pinned applications now preserve workspace2, size108x440, pin state and the unsaved draft through the original first output removal, replacement, all-output disappearance and fresh return. Owning workspace migration avoids retired-owner gap callbacks and pinned stay-behind paths; the existing native authority permits explicit same-output navigation to the preserved workspace before pin focus. Actual taskbar Activate/Restore and native pointer/keyboard/draft/pixels pass for pinned and previously minimized applications. Real cross-output pin activation remains Refused without transfer; a live-monitor workspace move retains the pin on its old output. The prior pinned smaller/negative-origin journey passes the exact tuple with normal cleanup.",
           "reviewerDisposition": {
-            "name": "root-pinned-output-area",
+            "name": "root-pinned-output-retirement",
             "independent": false,
-            "disposition": "Owner-observed native/compiled/sampled results; independent original acceptance remains open."
+            "disposition": "Owner-observed protected native/compiled/sampled results; original independent acceptance remains open."
           }
         }
       ]
@@ -11587,5 +11612,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-10T14:32:40.965327+00:00"
+  "updatedUTC": "2026-10-10T15:10:52.962390+00:00"
 }

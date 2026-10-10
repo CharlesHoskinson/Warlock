@@ -1,14 +1,14 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T14:32:40.965327+00:00",
+  "updatedUTC": "2026-10-10T15:10:52.962390+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "pinned-output-area",
+    "id": "pinned-output-retirement",
     "requirements": [
       "ELM-UI-019"
     ],
@@ -16,38 +16,39 @@
       "outputs-return"
     ],
     "paths": [
-      "implementation/warlock/native/core/Space.cpp",
-      "implementation/warlock/qa/native-pinned-output-area.py",
-      "implementation/warlock/qa/pinned-output-area.qnt",
-      "implementation/warlock/qa/pinned-output-area_test.qnt",
-      "implementation/warlock/qa/check-pinned-output-area.py",
+      "implementation/warlock/qa/native-state-output-return.py",
+      "implementation/warlock/native/core/WorkspacePlacementController.cpp",
+      "implementation/warlock/qa/pinned-output-retirement.qnt",
+      "implementation/warlock/qa/pinned-output-retirement_test.qnt",
+      "implementation/warlock/qa/check-pinned-output-retirement.py",
       "implementation/warlock/qa/check-output-placement-core.py",
+      "implementation/warlock/qa/native-window-feedback.py",
+      "implementation/warlock/qa/check-native-authority.py",
       "implementation/warlock/qa/current-scene-core.json",
       "implementation/warlock/qa/current-native-pair.json",
       "implementation/warlock/README.md",
-      "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/qa/check-native-authority.py"
+      "implementation/warlock/native/authority.cpp"
     ],
-    "before": "Changed-area placement explicitly excludes pinned floating windows; a real reconfigure can leave their input region outside the usable output.",
-    "after": "Keep a pinned floating application reachable after an actual smaller/negative-origin usable-area change without unpinning, changing workspace/size/draft, or replaying a window effect. Restore/minimize and real client input remain available.",
+    "before": "Pinned/minimized before actual native output retirement and zero-output return is unqualified. Native workspace migration still leaves pinned windows on the departing monitor path.",
+    "after": "Retain pin/minimized state, original workspace/size/draft and a reachable application across actual output retirement/return, with one actual taskbar Activate/Restore and no old-generation replay. Fix an observed owning migration defect, preserving live-monitor pinned workspace-move semantics.",
     "verification": [
-      "Reproduce native pinned fixture before actual output configure in the original output/application journey. Use quint-llm-kit init, explicit named legacy/witness/guard cases and sampled safety before a demonstrated owning Space placement fix. Narrow core TU relink retains exact public ABI/unchanged objects; actual pinned taskbar/client/draft/pixels and unchanged minimized regression at original deadlines, normal cleanup. Original independent/hardware/AT/fullscreen/group/modal gates separate."
+      "Use original two-output removal/replacement and all-output disappearance/return schedule with native pinned fixture before zero retirement, retained original deadlines and actual client/taskbar/draft/pixels/cleanup. quint-llm-kit incremental init, legacy retirement witness, live-owner negative case and sampled invariant before implementation. Narrow owning workspace TU relink retains headers/layout/exports and existing Space behavior; actual minimized-before-retirement and prior pinned-usable-area regressions. Hardware/AT/independent and wider custody/fullscreen/group/modal gates remain separate."
     ],
-    "owner": "root-pinned-output-area",
-    "participantRecord": ".warlock-contributor/pinned-output-area.json",
+    "owner": "root-pinned-output-retirement",
+    "participantRecord": ".warlock-contributor/pinned-output-retirement.json",
     "disposition": "partial",
     "evidence": {
-      "path": "implementation/warlock/qa/evidence/pinned-output-area/manifest.json",
-      "sha256": "1a595711f7fe273b0c9d1e490bf30bce775d324d484ec63075bf4dad7e403158"
+      "path": "implementation/warlock/qa/evidence/pinned-output-retirement/manifest.json",
+      "sha256": "0776ad7e4897d80b4ef4ef118ca8e22c047153e9e2755d730f8940822ec2d4b7"
     },
-    "observed": "A pinned floating application previously remained at (-360,30), below the real 400x200 output at (-400,-200). The owning changed-area placement now recovers it at (-360,-32) without unpinning or changing its size108x440/workspace2/draft. Real taskbar Minimize/Restore each submit once; actual client pointer press/release, physical keyboard editing and native painted pixels pass. The unchanged minimized-before-reconfigure and caption/MAX/snap/lifecycle regressions pass the exact tuple with normal cleanup. This advances UI-019 reachable application recovery; independent original acceptance and full release remain open.",
+    "observed": "Pinned applications now preserve workspace2, size108x440, pin state and the unsaved draft through the original first output removal, replacement, all-output disappearance and fresh return. Owning workspace migration avoids retired-owner gap callbacks and pinned stay-behind paths; the existing native authority permits explicit same-output navigation to the preserved workspace before pin focus. Actual taskbar Activate/Restore and native pointer/keyboard/draft/pixels pass for pinned and previously minimized applications. Real cross-output pin activation remains Refused without transfer; a live-monitor workspace move retains the pin on its old output. The prior pinned smaller/negative-origin journey passes the exact tuple with normal cleanup.",
     "missingObservations": [
       "Independent original UI-019 acceptance and physical hotplug/AT/IME remain open.",
-      "Pin/minimized recovery across actual output retirement, fullscreen/grouped/modal families and wider scale/rotation/multiple-output placement remain unqualified. Oversized windows retain their original size; the first up-to-32 logical pixels are recovered, not the entire client.",
-      "Concurrent gestures/output changes, preview/capture/effect custody, protected input, Unknown and other asynchronous/native-host ordering or transport-failure schedules remain open.",
+      "Fullscreen/grouped/modal families, wider scale/rotation/output combinations, concurrent gestures/custody/protected input/Unknown and other native-host/transport schedules remain open. Oversized clients retain their original size; this does not prove whole-client fit.",
+      "Post-first-unplug/pre-zero fixture setup exposed an Active/Minimize cue while pinning selected another active workspace; original taskbar-active focus/visibility/custody must be reproduced and reconciled separately. The final pin/min fixtures are established before the first unplug and validate the broader original journey.",
       "Full original hardware/resource/journey evidence, reproducible package and reversible deployment/rollback remain open."
     ],
-    "nextSourceWork": "Original UI-019: put native pinned/minimized applications into their state before actual output retirement and return, then reproduce and fix demonstrated owning recovery defects without unpin/workspace/draft/effect replay. Use the original output-return schedule and actual taskbar/client input. Fullscreen/group/modal, transforms/custody/hardware/AT and release gates remain open."
+    "nextSourceWork": "Original ELM-UI-004 taskbar-active: reproduce the Active/Minimize cue and native focus/visibility/custody after the first output removal, before zero-output reset. Determine whether the active cue and offered action match an eligible current application recipient; fix demonstrated owning focus/projection/admission behavior without a manual focus workaround, workspace/draft reset or effect replay. Retain current pinned/minimized retirement and cross-output/live-owner guard behavior. Original transformed/fullscreen/group/modal, hardware/AT and release gates remain open."
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -1894,10 +1895,43 @@
         "sha256": "5c0b682e62befc258e1073db262b0a1a65a30294e618457c86dabc06140e0c26"
       },
       "nextSourceWork": "Original UI-019: reproduce and close fresh old native shortcut journals delayed across identical output replacement bounds. Stamp typed shortcut generation and enforce current root/native output reconciliation without replay, preserving real keyboard recipients and Unknown/custody. Wider native origin/transform/minimized/fullscreen/modal placement, physical hotplug/AT/IME and full original release gates remain mandatory."
+    },
+    {
+      "id": "minimized-output-area",
+      "requirements": [
+        "ELM-UI-019"
+      ],
+      "scenarios": [
+        "outputs-return"
+      ],
+      "paths": [
+        "implementation/warlock/qa/native-minimized-output-area.py",
+        "implementation/warlock/README.md"
+      ],
+      "before": "The ordinary output recovery journey minimizes only after the output shrinks; restoring a previously minimized application after output changes has not been observed.",
+      "after": "Restore a previously minimized floating application through the actual taskbar after a smaller, negatively shifted output change, retaining workspace, size and unsaved draft with one effect and real native input; fix a demonstrated saved-placement defect in its existing native owner if found.",
+      "verification": [
+        "Protected original output/application journey, then real taskbar minimize before actual output configure and restore after reconciliation; retain original waits, draft/client-wire/physical-key/pixel observations and normal cleanup. If native behavior fails, quint-llm-kit state model before owning source fix and proportional changed-target build. Native hardware/AT/independent acceptance remains separate."
+      ],
+      "owner": "root-minimized-output-area",
+      "participantRecord": ".warlock-contributor/minimized-output-area.json",
+      "disposition": "partial",
+      "evidence": {
+        "path": "implementation/warlock/qa/evidence/minimized-output-area/manifest.json",
+        "sha256": "36ae84bbbaaae7ab0d6b5b5a0f2e29a24f4cdda3d346c51548eba1c01ec6aa12"
+      },
+      "observed": "A real taskbar Minimize committed before the returned output changed to 400x200 at (-400,-200). The application remained minimized across reconciliation, then a real taskbar Restore committed exactly once at reachable position (-360,-32), preserving size108x440/workspace2 and its unsaved draft. Actual client pointer press/release, physical keyboard editing and painted pixels pass normal cleanup. Existing production placement already covers this ordinary minimized case; no new production behavior is claimed.",
+      "missingObservations": [
+        "Independent original UI-019 acceptance and physical hotplug/AT/IME remain open.",
+        "Pinned/fullscreen/grouped/modal families, minimized windows across actual output retirement rather than this post-return reconfigure, and wider scale/rotation/multiple-output placement remain unqualified. An oversized window is not fully fitted; original size is preserved.",
+        "Concurrent gesture/output changes, preview/capture/effect custody, protected input, Unknown and other asynchronous/native-host ordering or transport failures remain open.",
+        "Full original hardware/resource/journey evidence, reproducible package and reversible deployment/rollback remain open."
+      ],
+      "nextSourceWork": "Original UI-019: reproduce pinned floating application recovery after output usable-area shrink/negative-origin change; fix demonstrated owning placement while retaining pinned/workspace/size/draft and actual taskbar/client access. Wider/fullscreen/group/modal/custody/hardware/AT/release gates remain open."
     }
   ],
   "lastSlice": {
-    "id": "minimized-output-area",
+    "id": "pinned-output-area",
     "requirements": [
       "ELM-UI-019"
     ],
@@ -1905,28 +1939,37 @@
       "outputs-return"
     ],
     "paths": [
-      "implementation/warlock/qa/native-minimized-output-area.py",
-      "implementation/warlock/README.md"
+      "implementation/warlock/native/core/Space.cpp",
+      "implementation/warlock/qa/native-pinned-output-area.py",
+      "implementation/warlock/qa/pinned-output-area.qnt",
+      "implementation/warlock/qa/pinned-output-area_test.qnt",
+      "implementation/warlock/qa/check-pinned-output-area.py",
+      "implementation/warlock/qa/check-output-placement-core.py",
+      "implementation/warlock/qa/current-scene-core.json",
+      "implementation/warlock/qa/current-native-pair.json",
+      "implementation/warlock/README.md",
+      "implementation/warlock/qa/native-window-feedback.py",
+      "implementation/warlock/qa/check-native-authority.py"
     ],
-    "before": "The ordinary output recovery journey minimizes only after the output shrinks; restoring a previously minimized application after output changes has not been observed.",
-    "after": "Restore a previously minimized floating application through the actual taskbar after a smaller, negatively shifted output change, retaining workspace, size and unsaved draft with one effect and real native input; fix a demonstrated saved-placement defect in its existing native owner if found.",
+    "before": "Changed-area placement explicitly excludes pinned floating windows; a real reconfigure can leave their input region outside the usable output.",
+    "after": "Keep a pinned floating application reachable after an actual smaller/negative-origin usable-area change without unpinning, changing workspace/size/draft, or replaying a window effect. Restore/minimize and real client input remain available.",
     "verification": [
-      "Protected original output/application journey, then real taskbar minimize before actual output configure and restore after reconciliation; retain original waits, draft/client-wire/physical-key/pixel observations and normal cleanup. If native behavior fails, quint-llm-kit state model before owning source fix and proportional changed-target build. Native hardware/AT/independent acceptance remains separate."
+      "Reproduce native pinned fixture before actual output configure in the original output/application journey. Use quint-llm-kit init, explicit named legacy/witness/guard cases and sampled safety before a demonstrated owning Space placement fix. Narrow core TU relink retains exact public ABI/unchanged objects; actual pinned taskbar/client/draft/pixels and unchanged minimized regression at original deadlines, normal cleanup. Original independent/hardware/AT/fullscreen/group/modal gates separate."
     ],
-    "owner": "root-minimized-output-area",
-    "participantRecord": ".warlock-contributor/minimized-output-area.json",
+    "owner": "root-pinned-output-area",
+    "participantRecord": ".warlock-contributor/pinned-output-area.json",
     "disposition": "partial",
     "evidence": {
-      "path": "implementation/warlock/qa/evidence/minimized-output-area/manifest.json",
-      "sha256": "36ae84bbbaaae7ab0d6b5b5a0f2e29a24f4cdda3d346c51548eba1c01ec6aa12"
+      "path": "implementation/warlock/qa/evidence/pinned-output-area/manifest.json",
+      "sha256": "1a595711f7fe273b0c9d1e490bf30bce775d324d484ec63075bf4dad7e403158"
     },
-    "observed": "A real taskbar Minimize committed before the returned output changed to 400x200 at (-400,-200). The application remained minimized across reconciliation, then a real taskbar Restore committed exactly once at reachable position (-360,-32), preserving size108x440/workspace2 and its unsaved draft. Actual client pointer press/release, physical keyboard editing and painted pixels pass normal cleanup. Existing production placement already covers this ordinary minimized case; no new production behavior is claimed.",
+    "observed": "A pinned floating application previously remained at (-360,30), below the real 400x200 output at (-400,-200). The owning changed-area placement now recovers it at (-360,-32) without unpinning or changing its size108x440/workspace2/draft. Real taskbar Minimize/Restore each submit once; actual client pointer press/release, physical keyboard editing and native painted pixels pass. The unchanged minimized-before-reconfigure and caption/MAX/snap/lifecycle regressions pass the exact tuple with normal cleanup. This advances UI-019 reachable application recovery; independent original acceptance and full release remain open.",
     "missingObservations": [
       "Independent original UI-019 acceptance and physical hotplug/AT/IME remain open.",
-      "Pinned/fullscreen/grouped/modal families, minimized windows across actual output retirement rather than this post-return reconfigure, and wider scale/rotation/multiple-output placement remain unqualified. An oversized window is not fully fitted; original size is preserved.",
-      "Concurrent gesture/output changes, preview/capture/effect custody, protected input, Unknown and other asynchronous/native-host ordering or transport failures remain open.",
+      "Pin/minimized recovery across actual output retirement, fullscreen/grouped/modal families and wider scale/rotation/multiple-output placement remain unqualified. Oversized windows retain their original size; the first up-to-32 logical pixels are recovered, not the entire client.",
+      "Concurrent gestures/output changes, preview/capture/effect custody, protected input, Unknown and other asynchronous/native-host ordering or transport-failure schedules remain open.",
       "Full original hardware/resource/journey evidence, reproducible package and reversible deployment/rollback remain open."
     ],
-    "nextSourceWork": "Original UI-019: reproduce pinned floating application recovery after output usable-area shrink/negative-origin change; fix demonstrated owning placement while retaining pinned/workspace/size/draft and actual taskbar/client access. Wider/fullscreen/group/modal/custody/hardware/AT/release gates remain open."
+    "nextSourceWork": "Original UI-019: put native pinned/minimized applications into their state before actual output retirement and return, then reproduce and fix demonstrated owning recovery defects without unpin/workspace/draft/effect replay. Use the original output-return schedule and actual taskbar/client input. Fullscreen/group/modal, transforms/custody/hardware/AT and release gates remain open."
   }
 }

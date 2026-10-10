@@ -534,3 +534,12 @@ A pinned floating application previously remained at (-360,30), below the real 4
 Pinning a native floating window keeps it visible across workspaces. That state now survives the same-monitor usable-area recovery; it does not exclude the window from recovery. This differs from a persistent catalog launcher pin. Recovery preserves size and a reachable input region; fullscreen, hidden/grouped targets, other-monitor transfers and unchanged-area manual placement retain their existing paths. Quint named/positive/sampled checks remain separate from native GUI and hardware/AT acceptance.
 
 UI-019 remains partial. Actual pin/minimized output retirement, wider transforms/fullscreen/group/modal recovery, custody/Unknown/concurrency, hardware/AT/IME, independent acceptance and release/package/rollback gates remain open.
+
+
+## Pinned output retirement — October 10
+
+Pinned applications now preserve workspace2, size108x440, pin state and the unsaved draft through the original first output removal, replacement, all-output disappearance and fresh return. Owning workspace migration avoids retired-owner gap callbacks and pinned stay-behind paths; the existing native authority permits explicit same-output navigation to the preserved workspace before pin focus. Actual taskbar Activate/Restore and native pointer/keyboard/draft/pixels pass for pinned and previously minimized applications. Real cross-output pin activation remains Refused without transfer; a live-monitor workspace move retains the pin on its old output. The prior pinned smaller/negative-origin journey passes the exact tuple with normal cleanup. See [native retirement evidence](qa/evidence/pinned-output-retirement/README.md).
+
+A native floating pin follows its preserved workspace when its output retires; moving a workspace from a live output keeps the existing pin behavior. Recovering the pin through the taskbar may explicitly select its preserved workspace on the same output before focus. Another focus output still refuses to avoid implicit membership transfer. Existing membership, recipient, output-generation and Unknown/no-replay guards remain in the admitted effect path.
+
+UI-019 remains partial. Hardware/AT/IME and independent acceptance, fuller transformed/fullscreen/group/modal/custody journeys, the separately observed taskbar activity-cue issue and release/package/rollback gates remain open. Sampled/named models and native evidence are distinct.

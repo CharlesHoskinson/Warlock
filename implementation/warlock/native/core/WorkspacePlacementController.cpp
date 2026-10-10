@@ -260,7 +260,9 @@ void CWorkspacePlacementController::moveWorkspaceToMonitor(PHLWORKSPACE pWorkspa
 
     // fix old mon
     WORKSPACEID nextWorkspaceOnMonitorID = WORKSPACE_INVALID;
-    if (!SWITCHINGISACTIVE)
+    // A retired owner has no workspace gap to repair. changeWorkspace would
+    // reassign its pins before the migration loop can preserve their workspace.
+    if (!SWITCHINGISACTIVE || !POLDMON || !POLDMON->m_enabled)
         nextWorkspaceOnMonitorID = pWorkspace->m_id;
     else {
         PHLWORKSPACE newWorkspace; // for holding a ref to the new workspace that might be created
@@ -299,7 +301,9 @@ void CWorkspacePlacementController::moveWorkspaceToMonitor(PHLWORKSPACE pWorkspa
 
     for (auto const& w : Desktop::windowState()->windows()) {
         if (w->m_workspace == pWorkspace) {
-            if (w->m_pinned) {
+            // A pin stays behind only on a live owner. During output retirement
+            // it must follow its preserved workspace to the available monitor.
+            if (w->m_pinned && POLDMON && POLDMON->m_enabled) {
                 w->m_workspace = State::workspaceState()->query().id(nextWorkspaceOnMonitorID).run();
                 continue;
             }
