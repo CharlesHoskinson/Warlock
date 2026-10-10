@@ -1,6 +1,7 @@
 port module SettingsReplay exposing (main, initialModel)
 
 import Desktop
+import NativePointerFixture
 import Settings
 import Surface
 import SurfaceRenderer
@@ -12,7 +13,7 @@ import UInt64
 port outgoing : E.Value -> Cmd msg
 counter value = D.decodeValue UInt64.decoder (E.string value) |> Result.withDefault UInt64.zero
 bound = E.object [("lifetime",E.string "1"),("session",E.string "1"),("frontend",E.string "1")]
-native raw model = Desktop.update (Desktop.Incoming raw) model |> Tuple.first
+native raw model = NativePointerFixture.incoming raw model |> Tuple.first
 attached = E.object [("protocolVersion",E.int 3),("kind",E.string "attached"),("binding",bound)]
 snapshot revision theme scale = E.object [("schema",E.int 1),("revision",E.string revision),("values",E.object [("theme",E.string theme),("textScale",E.int scale)])]
 loaded request value = E.object [("protocolVersion",E.int 3),("kind",E.string "shell-settings"),("binding",bound),("requestId",E.string (UInt64.string request)),("snapshot",value)]

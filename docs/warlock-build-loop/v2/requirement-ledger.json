@@ -9324,31 +9324,15 @@
         {
           "name": "ux-021",
           "oracle": "exactly one gesture ends and no shell surface steals the drag",
-          "status": "implemented-unverified",
+          "status": "partial",
           "evidence": [
             {
-              "path": "implementation/warlock/qa/evidence/drag-ownership/manifest.json",
-              "sha256": "aacf49f1d5b11e3c055c5f25270463e184f1e6d248696d788023e9c4a838d0c4",
-              "scope": "Integrated native move/resize owner observation, actual-controller window-effect/shortcut guards, immutable Elm surface suppression and adopted Super/Alt pointer bindings. Compiled typed/root and production-decoder checks plus unchanged original drag model pass. Two-output native setup failed before gesture input; separate current native taskbar activation/minimize/restore/input regression passes. Original drag acceptance is unproven.",
-              "sourceRevision": "2c63cde304b19aed170dafa9ade2f9e042cb8b54",
-              "sourceTuple": {
-                "core": {
-                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
-                  "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
-                },
-                "plugin": {
-                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791477973836253029/elm-window-geometry-authority.so",
-                  "sha256": "216c5cce257eaff5d063285d44df6ac20090f285064c9681fac6213e414b0d1c"
-                },
-                "aquamarine": {
-                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
-                  "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
-                }
-              },
-              "reviewerDisposition": "Owner-observed component/regression evidence only; original drag scenario and independent acceptance remain unproven."
+              "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/manifest.json",
+              "sha256": "5313c21ea1dd5bd84fbab671b8d148a333aa5f080a0137f280e74f37c88ecf0c"
             }
           ],
-          "missingObservation": "Original ux-021 native gesture oracle remains unverified: both isolated qualification attempts failed before input, first observing native 1600x1000 output dimensions and then timing out at the unchanged six-second expected 800x600 geometry barrier. No native drag, taskbar/output crossing, single end or surface-theft observation is claimed. Caption/edge initiation, explicit cancellation/close interleavings, native AT and touch/tablet/device coverage remain open. Independent original-scenario and full-release acceptance remain open."
+          "missingObservation": "The current full two-output native recording fails final original five-second grim capture. All gesture input assertions pass, but no full capture/presentation acceptance is inferred.; Caption/edge initiation, actual reattachment during an active gesture, close/reload, snap and transition reversal, unrelated button/device/hotplug/lock and wider output schedules; Native AT and independent original UX-021 scenario review; full original drag/restore/recovery/native/IME/hardware/resource/package/rollback gates",
+          "observation": "Native gesture ownership now waits for a current-binding idle observation before shell input, and the owning key handler preserves active move/resize across ordinary keys and shortcuts until pointer release or explicit Escape. Current two-output input checks pass both crossings, native refusal and exactly-one end; Escape cancellation also ends once. The full drag recording still fails its original final screenshot deadline, so UX-021 remains partial. Keyboard-only and taskbar Escape regressions pass. Caption/edge initiation, broader lifecycle/device/AT and independent acceptance remain open."
         }
       ]
     },
@@ -11314,5 +11298,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-10T09:15:14.389624+00:00"
+  "updatedUTC": "2026-10-10T09:39:55.854255+00:00"
 }

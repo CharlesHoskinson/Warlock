@@ -1,0 +1,29 @@
+{
+  "checks": {
+    "InitialUnknownBindingBlocks": false,
+    "ForeignObservationCannotPermitShell": false,
+    "IdlePermitsShell": true,
+    "MoveBlocks": true,
+    "ResizeBlocks": true,
+    "OldIdleCannotEndOwnership": true,
+    "SameSerialCannotChangeOwner": true,
+    "ReleasePermitsShell": true,
+    "ActiveUnknownRootStillBlocks": true,
+    "NoBindingCannotApplyForeignOwner": true,
+    "IdleWithOwnerRefused": true,
+    "ZeroSerialRefused": true,
+    "UnknownModeRefused": true,
+    "NativeOwnerRetiresAllShellSurfaces": true,
+    "RetirementNeverStealsFocusOrMutates": true,
+    "GestureObservationPreservesNativeTransactionAndLaunch": true,
+    "ApplicationsBlockedDuringMove": true,
+    "SystemBlockedDuringMove": true,
+    "NotificationsBlockedDuringMove": true,
+    "SettingsBlockedDuringMove": true,
+    "FilesBlockedDuringMove": true,
+    "OverviewBlockedDuringMove": true,
+    "ReleaseDoesNotReplayPopup": true,
+    "FreshInputAfterReleaseWorks": true
+  },
+  "nativeAcceptance": false
+}

@@ -11747,17 +11747,18 @@ var $author$project$Desktop$advance = function (model) {
 var $author$project$PointerOwnership$Idle = 0;
 var $author$project$PointerOwnership$blocked = F2(
 	function (expected, model) {
-		return A2(
-			$elm$core$Maybe$withDefault,
-			false,
-			A2(
-				$elm$core$Maybe$map,
-				function (snapshot) {
-					return _Utils_eq(
-						expected,
-						$elm$core$Maybe$Just(snapshot.dj)) && (!(!snapshot.db));
-				},
-				model.bB));
+		if (expected.$ === 1) {
+			return false;
+		} else {
+			var binding = expected.a;
+			var _v1 = model.bB;
+			if (!_v1.$) {
+				var snapshot = _v1.a;
+				return (!_Utils_eq(snapshot.dj, binding)) || (!(!snapshot.db));
+			} else {
+				return true;
+			}
+		}
 	});
 var $author$project$Desktop$canProveCatalogUnsent = F3(
 	function (binding, request, model) {

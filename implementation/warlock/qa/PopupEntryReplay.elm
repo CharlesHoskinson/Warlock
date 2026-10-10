@@ -3,6 +3,7 @@ port module PopupEntryReplay exposing (main)
 import Binding
 import CapturedAction
 import Desktop
+import NativePointerFixture
 import Json.Decode as D
 import Json.Encode as E
 import Platform
@@ -15,7 +16,7 @@ import UInt64
 port outgoing : E.Value -> Cmd msg
 counter value=D.decodeValue UInt64.decoder (E.string value) |> Result.withDefault UInt64.zero
 bound=E.object [("lifetime",E.string "1"),("session",E.string "1"),("frontend",E.string "1")]
-native wire model=Desktop.update (Desktop.Incoming wire) model |> Tuple.first
+native wire model=NativePointerFixture.incoming wire model |> Tuple.first
 attached=E.object [("protocolVersion",E.int 3),("kind",E.string "attached"),("binding",bound)]
 row id=E.object [("incarnation",E.string id),("label",E.string ("Document "++id)),("owner",E.null),("application",E.string "documents"),("minimized",E.bool False),("available",E.bool True)]
 projection=E.object [("protocolVersion",E.int 3),("kind",E.string "action-projection"),("binding",bound),("requestId",E.string "1"),("context",E.object [("lifetime",E.string "1"),("epoch",E.string "1"),("output",E.string "1"),("revision",E.string "1")]),("scene",E.object [("revision",E.string "1"),("focused",E.string "1"),("windows",E.list identity [row "1",row "2"])])]

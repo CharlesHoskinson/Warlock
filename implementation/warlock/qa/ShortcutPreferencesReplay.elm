@@ -1,5 +1,6 @@
 port module ShortcutPreferencesReplay exposing (main)
 import Desktop
+import NativePointerFixture
 import ShortcutPreferences as P
 import Surface
 import SurfaceRenderer
@@ -11,7 +12,7 @@ port outgoing : E.Value -> Cmd msg
 counter value = D.decodeValue UInt64.decoder (E.string value) |> Result.withDefault UInt64.zero
 bound = E.object [("lifetime",E.string "1"),("session",E.string "1"),("frontend",E.string "1")]
 attached = E.object [("protocolVersion",E.int 3),("kind",E.string "attached"),("binding",bound)]
-native wire model=Desktop.update (Desktop.Incoming wire) model |> Tuple.first
+native wire model=NativePointerFixture.incoming wire model |> Tuple.first
 dispatch message model=Desktop.capture model |> Maybe.map (\stamp -> Desktop.update (message stamp) model) |> Maybe.withDefault (model,[])
 preferences revision values={schema=1,revision=counter revision,choices=values}
 row normal alternate available active=E.object [("defaultChord",E.string normal),("alternateChord",E.string alternate),("defaultAvailable",E.bool available),("alternateAvailable",E.bool True),("active",E.string active)]

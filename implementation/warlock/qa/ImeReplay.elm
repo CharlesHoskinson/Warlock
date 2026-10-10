@@ -3,6 +3,7 @@ port module ImeReplay exposing (main)
 import Binding
 import Catalog
 import Desktop
+import NativePointerFixture
 import Json.Decode as D
 import Json.Encode as E
 import Launch
@@ -21,7 +22,7 @@ base =
         windows=initial.windows
         shell=windows.shell
         binding=D.decodeValue Binding.decoder (E.object [("lifetime",E.string "1"),("session",E.string "1"),("frontend",E.string "1")]) |> Result.toMaybe
-    in {initial | open=True,applications=Catalog.decode catalog |> Result.toMaybe,windows={windows | shell={shell | binding=binding,phase=Shell.Ready}},launch=Launch.init |> Launch.bind "ime-fixture" |> Launch.catalog catalog}
+    in NativePointerFixture.ready {initial | open=True,applications=Catalog.decode catalog |> Result.toMaybe,windows={windows | shell={shell | binding=binding,phase=Shell.Ready}},launch=Launch.init |> Launch.bind "ime-fixture" |> Launch.catalog catalog}
 
 frame number query = Surface.packet (counter number) (counter "1") {base | query=query}
 event number kind query = E.object [("surfaceProtocol",E.int 2),("surface",E.string "popup"),("publication",E.string number),("lease",E.string "1"),("id",E.string "control:search"),("kind",E.string kind),("query",E.string query)]

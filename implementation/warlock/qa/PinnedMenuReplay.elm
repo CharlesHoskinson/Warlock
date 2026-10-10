@@ -4,6 +4,7 @@ import ActionProjection as Scene
 import Binding
 import Catalog
 import Desktop
+import NativePointerFixture
 import Json.Decode as D
 import Json.Encode as E
 import Menu
@@ -28,13 +29,15 @@ model apps pins windows =
         shell=native.shell
         effects=shell.effects
         scene=Scene.decode (E.object [("revision",E.string "1"),("focused",E.string "1"),("windows",E.list identity windows)]) |> Result.toMaybe
-    in {initial | applications=catalog apps,pins=Pins.observe (Just {revision=one,identities=pins}) Pins.initial,windows={native | shell={shell | binding=binding,phase=Shell.Ready,effects={effects | connected=True,observed=scene |> Maybe.map (\value -> {context={lifetime=one,epoch=one,output=one,revision=one},scene=value})}}}}
+    in NativePointerFixture.ready {initial | applications=catalog apps,pins=Pins.observe (Just {revision=one,identities=pins}) Pins.initial,windows={native | shell={shell | binding=binding,phase=Shell.Ready,effects={effects | connected=True,observed=scene |> Maybe.map (\value -> {context={lifetime=one,epoch=one,output=one,revision=one},scene=value})}}}}
 event id trigger publication=E.object [("surfaceProtocol",E.int 2),("kind",E.string "surface-context"),("surface",E.string "bar"),("publication",E.string publication),("lease",E.string "1"),("id",E.string id),("trigger",E.string trigger),("x",E.int 0),("y",E.int 0)]
 resolve id trigger publication current=Surface.resolve one one (event id trigger publication) current
 menuRoot message=case message of
+    Just (Desktop.SurfaceEntry _ inner) -> menuRoot (Just inner)
     Just (Desktop.OpenWindowMenu _ root) -> Just root
     _ -> Nothing
 picker message=case message of
+    Just (Desktop.SurfaceEntry _ inner) -> picker (Just inner)
     Just (Desktop.Window (TaskbarShell.Primary _ _)) -> True
     _ -> False
 base=model [entry "owned-pin" "owned-app",entry "empty-pin" "empty-app"] ["owned-pin","empty-pin"] [window "1" "owned-app"]

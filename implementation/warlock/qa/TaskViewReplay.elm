@@ -3,6 +3,7 @@ port module TaskViewReplay exposing (main)
 import ActionProjection as Scene
 import Binding
 import Desktop
+import NativePointerFixture
 import GeometryProjection as Geometry
 import Json.Decode as D
 import Json.Encode as E
@@ -32,7 +33,7 @@ base =
         shell=windows.shell
         effects=shell.effects
         geometry=binding |> Maybe.map (\b -> {binding=b,request=one,sequence=one,context=context,focused=Just one,blocked=False,windows=[geometryWindow one "1",geometryWindow two "2"]})
-    in {initial | windows={windows | shell={shell | binding=binding,phase=Shell.Ready,effects={effects | connected=True,observed=scene |> Maybe.map (\s -> {context=context,scene=s})},geometry=geometry}}}
+    in NativePointerFixture.ready {initial | windows={windows | shell={shell | binding=binding,phase=Shell.Ready,effects={effects | connected=True,observed=scene |> Maybe.map (\s -> {context=context,scene=s})},geometry=geometry}}}
 
 apply message model = Desktop.update message model
 scoped make model = Desktop.capture model |> Maybe.map (\stamp -> apply (make stamp) model) |> Maybe.withDefault (model,[])
@@ -41,7 +42,7 @@ restorableBase =
         shell=windows.shell
         effects=shell.effects
         restorableScene=Scene.decode (E.object [("revision",E.string "1"),("focused",E.string "1"),("windows",E.list identity [window "1" "Editor" True,windowState "2" "Files" True True])]) |> Result.toMaybe
-    in {base | windows={windows | shell={shell | effects={effects | observed=restorableScene |> Maybe.map (\s -> {context=context,scene=s})},geometry=Maybe.map (\g -> {g | windows=List.map (\w -> if w.incarnation==two then {w | minimized=True} else w) g.windows}) shell.geometry}}}
+    in NativePointerFixture.ready {base | windows={windows | shell={shell | effects={effects | observed=restorableScene |> Maybe.map (\s -> {context=context,scene=s})},geometry=Maybe.map (\g -> {g | windows=List.map (\w -> if w.incarnation==two then {w | minimized=True} else w) g.windows}) shell.geometry}}}
 projection request rows = projectionAt request "1" rows
 projectionAt request revision rows =
     binding |> Maybe.map (\b -> E.object [("protocolVersion",E.int 3),("kind",E.string "action-projection"),("binding",Binding.encode b),("requestId",E.string (UInt64.string request)),("context",E.object [("lifetime",E.string "1"),("epoch",E.string "1"),("output",E.string "1"),("revision",E.string revision)]),("scene",E.object [("revision",E.string revision),("focused",E.string "1"),("windows",E.list identity rows)])]) |> Maybe.withDefault E.null

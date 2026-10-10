@@ -2,6 +2,7 @@ port module AttentionReplay exposing (main)
 import ActionProjection as Scene
 import Binding
 import Desktop
+import NativePointerFixture
 import Effects
 import Json.Decode as D
 import Json.Encode as E
@@ -25,7 +26,7 @@ base requested focus=
      shell=windows.shell
      effects=shell.effects
      scene=Scene.decode (raw "1" focus (rows requested)) |> Result.toMaybe
- in {initial | windows={windows | shell={shell | binding=D.decodeValue Binding.decoder bound |> Result.toMaybe,phase=Shell.Ready,effects={effects | connected=True,observed=scene |> Maybe.map (\s -> {context=context,scene=s})}}}}
+ in NativePointerFixture.ready {initial | windows={windows | shell={shell | binding=D.decodeValue Binding.decoder bound |> Result.toMaybe,phase=Shell.Ready,effects={effects | connected=True,observed=scene |> Maybe.map (\s -> {context=context,scene=s})}}}}
 result=
  let current=base True (E.string "1")
      ordinary=base False (E.string "1")

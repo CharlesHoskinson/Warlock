@@ -1,0 +1,69 @@
+An example execution:
+
+[State 0] { s: { ends: 0, initialEnds: 0, last: "init", owner: 0 } }
+
+[State 1] { s: { ends: 0, initialEnds: 0, last: "escapeRelease", owner: 0 } }
+
+[State 2] { s: { ends: 0, initialEnds: 0, last: "key", owner: 0 } }
+
+[State 3] { s: { ends: 0, initialEnds: 0, last: "cancel", owner: 0 } }
+
+[State 4] { s: { ends: 0, initialEnds: 0, last: "begin", owner: 1 } }
+
+[State 5] { s: { ends: 0, initialEnds: 0, last: "busy", owner: 1 } }
+
+[State 6] { s: { ends: 0, initialEnds: 0, last: "escapeRelease", owner: 1 } }
+
+[State 7] { s: { ends: 0, initialEnds: 0, last: "busy", owner: 1 } }
+
+[State 8] { s: { ends: 0, initialEnds: 0, last: "escapeRelease", owner: 1 } }
+
+[State 9] { s: { ends: 0, initialEnds: 0, last: "chord", owner: 1 } }
+
+[State 10] { s: { ends: 0, initialEnds: 0, last: "key", owner: 1 } }
+
+[State 11] { s: { ends: 0, initialEnds: 0, last: "escapeRelease", owner: 1 } }
+
+[State 12] { s: { ends: 0, initialEnds: 0, last: "escapeRelease", owner: 1 } }
+
+[State 13] { s: { ends: 0, initialEnds: 0, last: "key", owner: 1 } }
+
+[State 14] { s: { ends: 0, initialEnds: 0, last: "chord", owner: 1 } }
+
+[State 15] { s: { ends: 0, initialEnds: 0, last: "chord", owner: 1 } }
+
+[State 16] { s: { ends: 0, initialEnds: 0, last: "escapeRelease", owner: 1 } }
+
+[State 17] { s: { ends: 1, initialEnds: 0, last: "cancel", owner: 0 } }
+
+[State 18] { s: { ends: 1, initialEnds: 0, last: "escapeRelease", owner: 0 } }
+
+[State 19] { s: { ends: 1, initialEnds: 0, last: "chord", owner: 0 } }
+
+[State 20] { s: { ends: 1, initialEnds: 0, last: "chord", owner: 0 } }
+
+[State 21] { s: { ends: 1, initialEnds: 1, last: "begin", owner: 1 } }
+
+[State 22] { s: { ends: 1, initialEnds: 1, last: "key", owner: 1 } }
+
+[State 23] { s: { ends: 2, initialEnds: 1, last: "release", owner: 0 } }
+
+[State 24] { s: { ends: 2, initialEnds: 1, last: "cancel", owner: 0 } }
+
+[State 25] { s: { ends: 2, initialEnds: 1, last: "escapeRelease", owner: 0 } }
+
+[State 26] { s: { ends: 2, initialEnds: 1, last: "chord", owner: 0 } }
+
+[State 27] { s: { ends: 2, initialEnds: 1, last: "release", owner: 0 } }
+
+[State 28] { s: { ends: 2, initialEnds: 1, last: "release", owner: 0 } }
+
+[State 29] { s: { ends: 2, initialEnds: 1, last: "cancel", owner: 0 } }
+
+[State 30] { s: { ends: 2, initialEnds: 1, last: "release", owner: 0 } }
+
+[ok] No violation found (361ms at 2770 traces/second).
+Trace length statistics: max=31, min=31, average=31.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x13833 --backend=typescript to reproduce.

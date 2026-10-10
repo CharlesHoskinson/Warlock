@@ -1,0 +1,801 @@
+{
+  "schema": 1,
+  "requirements": [
+    "ELM-UX-021"
+  ],
+  "scenarios": [
+    "ux-021"
+  ],
+  "sourceParent": "cde51589796a07a5ae049d814046d3bb6b60c958",
+  "sourceHashes": {
+    "implementation/warlock/src/PointerOwnership.elm": "7e6d9f3e1ad79670383f58502449533d8a0857d38c6b62538eb89855a70b3ef3",
+    "implementation/warlock/qa/PointerOwnershipReplay.elm": "d4deed6ad7d1b2688c12e23fa8cf8984753481e8ae73ed12d00ca5669511405e",
+    "implementation/warlock/qa/NativePointerFixture.elm": "b674baa48a0d0197d32e6bc400412465e3a83934d3a749ebc7cbba35e82c4124",
+    "implementation/warlock/qa/check-search.py": "9da6a96ced11ca77da4de19afbaa73bee1ae9431accf7383c1ac2f20069b66b1",
+    "implementation/warlock/qa/native-window-feedback.py": "a9b24fe1959ac7ba1a7676c70b747b507063154c67897ac1f857927bcda699b2",
+    "implementation/warlock/qa/pointer-readiness.qnt": "ada48b39f6359792e78b9c4d63057b970a1ba79104fe0724ba977a80e4bb79cd",
+    "implementation/warlock/qa/pointer-readiness_test.qnt": "8e57652a0e7354f3adb35bc5f53065dd6192626e904604a9ae85b1b68dadf0f3",
+    "implementation/warlock/qa/check-pointer-readiness.py": "315c7d3636f1b1197c77c271502e1b5917e611ab8eb16f6d29890cba83057a67",
+    "implementation/warlock/qa/current-search-build.json": "7ada15e4c9e1c3811292606b1a0442f5f7341780feb8ae52bb44a3269e2fa790",
+    "implementation/warlock/assets/elm.js": "071739be5596bde5129da1b901b5ae7358065bbe991a17f3749942b5b1b5855a",
+    "implementation/warlock/assets/bar.js": "1b490122e33ec692c225c2f6936d2e05eb23cc0ec91c9fa0d2a16469c030cff1",
+    "implementation/warlock/assets/popup.js": "c12dc5323bbaaf2d83cff1799b1e0e72c861d012f6db0da39d50adb62648f933",
+    "implementation/warlock/README.md": "f608c605ea55fdce25f61a550b05479a63a40f0edf471f5e51860e3d4e382004",
+    "implementation/warlock/qa/FeedbackReplay.elm": "8d7e54cb33e1f2f9371d5ebb4da4baba91a1696bfecb62c651d17a1d41306614",
+    "implementation/warlock/qa/SearchReplay.elm": "81fd5f7ecd7b7b2d4a895f942f5c4794a2e466ee1bda939e35ae8a66877b222b",
+    "implementation/warlock/qa/PinsReplay.elm": "fc0a790b5528709868d68eb36843d1ce3ca48df75266bf80edeb9414781e2fae",
+    "implementation/warlock/qa/TaskViewReplay.elm": "89f1deae54d0fbc79598da9ffc4b326999c0e8ef927d92de157db03928466331",
+    "implementation/warlock/qa/SwitcherReplay.elm": "3a6f048f3afff14142207ff121bf5b91d15a7958639356a3b28dc2247be5a0c4",
+    "implementation/warlock/qa/PinnedMenuReplay.elm": "d6f12ae276c3c11b531c27f142e1d982b1a997fcedf10fd26760c53e874411ae",
+    "implementation/warlock/qa/SnapReplay.elm": "638ad46f4a9569631bba1faf27a07525a9a9f02bb3070f8408914c3edbb19198",
+    "implementation/warlock/qa/SettingsReplay.elm": "3bdcfbb1706ec9ee4c1b56c0fea5ea9f7fc2601a21fdcb16a4b69c6dc35c380e",
+    "implementation/warlock/qa/NotificationsReplay.elm": "17805d743730a01649603b2771a0d16f540513c2620df508c3cf80e41b06b428",
+    "implementation/warlock/qa/SystemMenuReplay.elm": "88701417539ba76f89796461aea8fa79b5b4835b7f14cd7db0d12dc79102baec",
+    "implementation/warlock/qa/FilesReplay.elm": "b15ca398ff3ae65312351092c114e7f96cb77df10c24302f063203efeb15e61b",
+    "implementation/warlock/qa/JumpListReplay.elm": "1a566bff746f573c895a39a1c6e6413fb7ee4ca020826c16a063dae2b6d12bad",
+    "implementation/warlock/qa/AttentionReplay.elm": "130696992b5e4e663d07ab532fd172da0903f0faec40e8fc1bf2c898f45879eb",
+    "implementation/warlock/qa/KeyboardShortcutsReplay.elm": "f7d1b2134f79f3bb6cbf0a50a0d448d3efba790d6918a9d78c94d2587f3b2e5b",
+    "implementation/warlock/qa/ImeReplay.elm": "2d7f8a1943e0c2d53a3148de4b61c3ea28f415d10d0bf54ece6384ce5efd0949",
+    "implementation/warlock/qa/ShortcutPreferencesReplay.elm": "8ada29c12d8a26b476d4767f06f9a1f94c0fe14710e632f1f6df5fd4f153b9a4",
+    "implementation/warlock/qa/AnnouncementReplay.elm": "940b974ada565ab6b2acf49901875911b567237340e5d430208bfd60ba1e7c89",
+    "implementation/warlock/qa/AdapterAnnouncementReplay.elm": "d5f7180feab00ed7073b754eb2540019452f9e9da2e30b2846124b22d9efaa7e",
+    "implementation/warlock/qa/PopupEntryReplay.elm": "a0843e1679dfe8c5aa06ab034102aa7c1de1d1a518770d328f5712cae566ae02",
+    "implementation/warlock/native/core/KeybindManager.cpp": "815cec4c73916b38d3dc9fae19b0566b53ae3073587e6468e62ce0721795f2ee",
+    "implementation/warlock/native/core/GestureKeyPolicy.hpp": "b84a16c27bcb6b837fdd7a7a6d3b11176429c6eba5f83129a0014a6a260ec8be",
+    "implementation/warlock/qa/check-gesture-core.py": "ab0a0a32943938385534afbaa35bb98dd66fec3f001f27513d0c55277db81201",
+    "implementation/warlock/qa/gesture-keys.qnt": "b04d3c5befaf45eaa0e882db786b13ba432036574e92a3a0b4ca475a787ad3c6",
+    "implementation/warlock/qa/gesture-keys_test.qnt": "7557329d45ee3e7f808f4b43692550088d09ad5f0dfa9498a40ac03685764ad9",
+    "implementation/warlock/qa/check-gesture-keys.py": "df00f275ff7e6fa12ec6101fdcea9f43af11e821d66e7c2b7b69d12625c277f7",
+    "implementation/warlock/qa/current-scene-core.json": "ad2f161987cc94f4c86e3d24225262addc050e4757e372d6ec4c5569fac64eb3",
+    "implementation/warlock/qa/current-native-pair.json": "184de3024f84864038611bda969128271a7e54492e90560334bc7c829bd7c261",
+    "implementation/warlock/qa/check-native-authority.py": "41de3313c3d522a174079d4a383a03cc8aea5fa813d72ebd04e45b16f7b8cf4f"
+  },
+  "frozenRequirements": {
+    "path": "docs/elm-roadmap/requirements.json",
+    "sha256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
+    "requirements": 242,
+    "scenarios": 417
+  },
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/gesture-core-1791624510986187069/Hyprland",
+      "sha256": "acf75107a04f3f047688081e604003705e416af748838127cb9050ef7768f3ea"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791624591434289129/elm-window-geometry-authority.so",
+      "sha256": "3d62a13a6c1ab1dd59eae4db2cc626fc69e05e7aa10d1e8ebc1f814cd99d2235"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624223913942588/elm-host",
+    "sha256": "aff4273d7474b3b2adc52cfba6cc2841219f3b9937391ec1192b04ad10d2bbd9",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624223913942588/report.json",
+    "heldBuildSHA256": "45a4efe17a1433839bccab04e995bc25dd8b8830c3ff6851eb06fb9e7c9d7eb6"
+  },
+  "currentCompiledBuild": {
+    "path": "implementation/warlock/qa/runs/drag-ownership-1791625062835115910/report.json",
+    "sha256": "f86ab99a265c39952e365276cd790ef312c0621ccd94be43e12b2e0fafd45365",
+    "binarySHA256": "aff4273d7474b3b2adc52cfba6cc2841219f3b9937391ec1192b04ad10d2bbd9",
+    "compiledAssets": {
+      "elm.js": "071739be5596bde5129da1b901b5ae7358065bbe991a17f3749942b5b1b5855a",
+      "bar.js": "1b490122e33ec692c225c2f6936d2e05eb23cc0ec91c9fa0d2a16469c030cff1",
+      "popup.js": "c12dc5323bbaaf2d83cff1799b1e0e72c861d012f6db0da39d50adb62648f933"
+    }
+  },
+  "sameCompiledHostAndAssetsAsNative": true,
+  "compiledPointerRootChecks": 26,
+  "compiledReadiedReplayChecks": 250,
+  "nativeGestureInputChecksPassed": true,
+  "nativeExplicitCancelObserved": true,
+  "nativeDragCampaignPassed": false,
+  "nativeDragFailure": "TimeoutExpired(['/usr/bin/grim', '/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624738086978975/drag-two-output.png'], 5)",
+  "nativeCleanupPassed": true,
+  "nativeKeyboardRegressionPassed": true,
+  "nativeTaskbarRegressionPassed": true,
+  "originalDragRunnerAncestor": {
+    "path": "implementation/warlock/qa/evidence/drag-ownership/native-report.json",
+    "sha256": "a867c592a87403c33fa1a3030dd74a71a0ee62f1f7edf055c66d3f27688b8685"
+  },
+  "artifacts": [
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/compiled-after.json",
+      "sha256": "f86ab99a265c39952e365276cd790ef312c0621ccd94be43e12b2e0fafd45365",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791625062835115910/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/compiled-before.json",
+      "sha256": "bc997c969e8ff3261951529c103ca93aa7bbf8e366e3c8896d3af02432dbac2b",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624178160071422/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-core.json",
+      "sha256": "2a3421506beef74e730e5074caa33569358b691f764286d69c6a397ab98d6cf5",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/gesture-core-1791624510986187069/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-authority.json",
+      "sha256": "0b3900fd9efbef59fd2525f74e7a66fdd4c3bb1fb5add1d816c8ed4fb8682b5a",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791624591434289129/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/readiness-before.json",
+      "sha256": "a67190e2be5799d01a72f0a00fd1aecb21eb1ac3ab10696222fc9122bc405d6f",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624178160071422/inputs/qa/runs/pointer-readiness-1791624181380153688/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/readiness-before-typecheck.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624178160071422/inputs/qa/runs/pointer-readiness-1791624181380153688/typecheck.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/readiness-before-named.stdout",
+      "sha256": "b4821ba21ca60eb6dcb0b1a3e606c3237361ecc7a1a21383bd92774790d32ebc",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624178160071422/inputs/qa/runs/pointer-readiness-1791624181380153688/named.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/readiness-before-witnesses.stdout",
+      "sha256": "21bd16a51a46a850c232333ff38b191c3e5a83f5294d402c6654cafbe8698c4a",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624178160071422/inputs/qa/runs/pointer-readiness-1791624181380153688/witnesses.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/readiness-before-safety.stdout",
+      "sha256": "4131f78b6ba4c037b5dba366463dd174655dd5b9560d72dc7a6ab10c59a5d721",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624178160071422/inputs/qa/runs/pointer-readiness-1791624181380153688/safety.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/readiness-after.json",
+      "sha256": "36b3ca0a96497506971766f416aaf48f885622d62f3d258f14cb893bbf043de5",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791625062835115910/inputs/qa/runs/pointer-readiness-1791625065774876525/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/readiness-after-typecheck.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791625062835115910/inputs/qa/runs/pointer-readiness-1791625065774876525/typecheck.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/readiness-after-named.stdout",
+      "sha256": "b4821ba21ca60eb6dcb0b1a3e606c3237361ecc7a1a21383bd92774790d32ebc",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791625062835115910/inputs/qa/runs/pointer-readiness-1791625065774876525/named.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/readiness-after-witnesses.stdout",
+      "sha256": "9b5abea359b278bccbbcf991aa617ac16db78289e90734693a76f2d12b896615",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791625062835115910/inputs/qa/runs/pointer-readiness-1791625065774876525/witnesses.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/readiness-after-safety.stdout",
+      "sha256": "1b340988881623a37ac43407cea82780b65ae87058dbbca2dd33ea17c4134bfb",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791625062835115910/inputs/qa/runs/pointer-readiness-1791625065774876525/safety.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/gesture-keys.json",
+      "sha256": "b8ad7c5c67ceb5929b33186005f7549d571fc657b6e1350ebcc4387e77388ea8",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/gesture-keys-1791624511194346979/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/gesture-keys-typecheck.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/gesture-keys-1791624511194346979/typecheck.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/gesture-keys-named.stdout",
+      "sha256": "cd06d41c0ccfbd7dbbb8ea0df6ff2a9268cb0af2ddc6c5e23ab6b18d25c4b904",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/gesture-keys-1791624511194346979/named.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/gesture-keys-witnesses.stdout",
+      "sha256": "d3b1cc9a702ce814dd579cfa5c166b7c78fb9ba9fd15767f40354e2456910ede",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/gesture-keys-1791624511194346979/witnesses.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/gesture-keys-safety.stdout",
+      "sha256": "5bf673ef3676f17193241b6dc5503f754cfb706be17656f6da87b73a89b7e002",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/gesture-keys-1791624511194346979/safety.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/typed-before.json",
+      "sha256": "328904fdba4b93a07d36150eb041e247c1774711acb8cb3b820dfaba408660b9",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624178160071422/pointer-ownership.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/typed-after.json",
+      "sha256": "3d2fea25f97f7d31cab607722f373893fc865408c22db5314d01529ab066457d",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791625062835115910/pointer-ownership.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/gesture-source.patch",
+      "sha256": "4efae78417f58065d621f5faa4669c06157ef00ce3f2de365838cf2a1ed65586",
+      "original": "/tmp/warlock-gesture-source.patch"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-keyboard-regression.json",
+      "sha256": "643eff3b004f38cb9e85f02b1958a937e68b2bc568c38859252e8ed5572ecda3",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-keyboard-shell-1791624849081645034/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-keyboard-regression-popup-keyboard-shell-finished.png",
+      "sha256": "9eb88a0fca2385de7f3a9e01f015e051955acc0dca88b4ed7e1bdcde0d65cbf9",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624849081736489/popup-keyboard-shell-finished.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-taskbar-regression.json",
+      "sha256": "c34027437ddd2d628c361fc68ec842e80196b993a072a8000c3ab54b99967b37",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-taskbar-focus-1791624901717268755/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-drag-key-fail.json",
+      "sha256": "0b9f31c5f41cb881ac308936f94ce936f7e90ee4aa21538d75ed270db819a51c",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-drag-ownership-1791624249823518978/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-drag-helper-status-fail.json",
+      "sha256": "4a7f7046f0c76c6045280ec60d081d99f2965e00ac56d78bddc2d491d2c4d8f3",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-drag-ownership-1791624628312434405/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-drag-helper-return-fail.json",
+      "sha256": "b6fdfd13c0d427e39339c35da90a1992177a045db3a74719e2b01d6a3e81b3d2",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-drag-ownership-1791624698723245193/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-drag-input-pass-capture-fail.json",
+      "sha256": "873683bb48e173a5e4764fe5487a668f60444fa305d85340e84f4c7424403587",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-drag-ownership-1791624738086886457/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/typed-fixture-compile-fail.json",
+      "sha256": "1b59b79b7543550cf66ebfdbce7253cee594a4ba42fa47e0df3e76a0261a06ec",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624154806749920/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/core-dependency-reader-fail.json",
+      "sha256": "7ecc9b11ee7c51e86a45858270b1fe98b616e2887c109ffe61cec7f983adc7a0",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/gesture-core-1791624472926002193/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/authority-ancestry-fail.json",
+      "sha256": "4d14651cf72cf910efb705a3447680d297f0af088a13b3e9616663e73b080d07",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791624530836497748/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/old-pinned-constructor-fail.json",
+      "sha256": "289103ca776264f61e379433914029ac2f8743dd7a88fcfc658034c2c6ffea31",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624977584798229/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/retained-pinned-constructor-fail.json",
+      "sha256": "3ea49c029be75c00eb8cae0ec5ebc63358e54725ef975bb55ccbe54213c6d473",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791625048458087298/report.json"
+    }
+  ],
+  "compressedLogs": [
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-keyboard-regression-warlock.log.gz",
+      "sha256": "eb3831d80f3c3d998fee6aaad48ea04fffb0e7d563161c11de799e0d918e64ea",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624849081736489/warlock.log",
+      "uncompressedSHA256": "0b96bc6b5e4b9e02ce04e005b1acf35a7f9271b82e408fa8dcb9a8f820c02e7b"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-keyboard-regression-fixture.log.gz",
+      "sha256": "f7f6b87fd833f12eb354bb65a3d9983068a593c07c7ea3700043ec9e66e4de0c",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624849081736489/fixture.log",
+      "uncompressedSHA256": "013b311016d79245825392ea78673cce4dbdf1390dd0fbe99dcb39deb79aa7d8"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-keyboard-regression-fixture-control.events.jsonl.gz",
+      "sha256": "5ec91319cc69207fce8091e74b6ab0bade785411ab20c3c6d1e09b75dac71791",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624849081736489/fixture-control.events.jsonl",
+      "uncompressedSHA256": "d54de08810e5a15c0953410198148c6c60aea2686e3c3a3325dc6ad25e670889"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-keyboard-regression-hyprland.log.gz",
+      "sha256": "aa272371b6b20f58a1ae191a56d1e884cfbe6389eca7b535b9109b7bbe058758",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624849081736489/hyprland.log",
+      "uncompressedSHA256": "e9e3c41e84e996cb87a0155d5dacf3823f1f83cbb7ed1c6326a038a103d7db28"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-keyboard-regression-host-evidence.json.gz",
+      "sha256": "7f2e83b677e0009b0d342b06ab0917c80736e589b7694c98aaad7b7e3fa2f21d",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624849081736489/host-evidence.json",
+      "uncompressedSHA256": "343a3f1745a04fe74f6694e702d70facee37fce38da49ac6645d1e4e031dea65"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-keyboard-regression-weston-renderer.log.gz",
+      "sha256": "f59540443472366ddd36c8543d1cc0af1b09ccf33ddc7ad63096ae44b98d7b42",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624849081736489/weston-renderer.log",
+      "uncompressedSHA256": "5eb4c79f939662f97f28788014aedbc0c952a7b2629f7ab5a14d852e12e265de"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-taskbar-regression-warlock.log.gz",
+      "sha256": "ac2828cdc43b688cc8f5cf103199e506ba73b7d79cea2c9a207c16125d970261",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624901717355037/warlock.log",
+      "uncompressedSHA256": "263009b83acf79990a4dc1e0c8496dbaf3e6b26a682870fb976384cf08d0f348"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-taskbar-regression-fixture.log.gz",
+      "sha256": "b5e3a1416275c871a2b3b60f7d55d78f457f057ef4161eebcd23560b8e372e3a",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624901717355037/fixture.log",
+      "uncompressedSHA256": "0b585cf5c589a1549751d3fcc6eec587e19a79558b0aeaf7bbd633bb0eeef8b4"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-taskbar-regression-fixture-control.events.jsonl.gz",
+      "sha256": "a760b213a3d6ffd0dfa0539107cdca54da036a805ab3a5d79bbef55eb902f670",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624901717355037/fixture-control.events.jsonl",
+      "uncompressedSHA256": "5c0fcb9cc31e4ee15b45a1cdc65dbf65e44a6b47892196a567cc5c70aef8b141"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-taskbar-regression-hyprland.log.gz",
+      "sha256": "de866fd3711a6e451804d0a1e8c2f923298eab0ad910b82dca25d76e70ea3ccb",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624901717355037/hyprland.log",
+      "uncompressedSHA256": "640b351b6e6303378b056cb54ce95bac4ffde6c5b5da5ba3c075b059d4c55f33"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-taskbar-regression-host-evidence.json.gz",
+      "sha256": "a65dab73b645d7b3cf19dc73e7ee62fac3b82c18e2d69ab620615d3a75cc18e9",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624901717355037/host-evidence.json",
+      "uncompressedSHA256": "c7a13940f43d1c3c7e8deeafa63889394c1dc034e6858596ab26b6adb76722c5"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-taskbar-regression-weston-renderer.log.gz",
+      "sha256": "f59fb2a61af097c062e34e1e3f49f79500b47acf362034a00b52357df3372aa0",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624901717355037/weston-renderer.log",
+      "uncompressedSHA256": "0dd0f3f9c86a146bb68028fe485e92f51a79e3420a56d4bccc978ed12ed2104a"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-drag-key-fail-warlock.log.gz",
+      "sha256": "bc530a0515f97fa3574329833492bb368d6be56a0213f75b73647105af92af51",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624249823603879/warlock.log",
+      "uncompressedSHA256": "ca7fad93305afbfef8badc0c646e6f5d1d51a1e55c15584ce5bdc495db93d103"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-drag-key-fail-fixture.log.gz",
+      "sha256": "1873163079c90053768f38d106ae9f9f063a9ed65f6d361ef17a69b0d426c2e0",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624249823603879/fixture.log",
+      "uncompressedSHA256": "bbf6ffc358b35f082722342a5dbd29167891d667e703f4fa08bd38025e260565"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-drag-key-fail-fixture-control.events.jsonl.gz",
+      "sha256": "7b2926df063db5166177aa80fa79eca6608c22bd3a04c70f8b7cf9e36ea2e0db",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624249823603879/fixture-control.events.jsonl",
+      "uncompressedSHA256": "5d03c7d4811bdf00db0a9eb7a94c0d0af950ca2e2127fbf856be02bf1dcf3050"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-drag-key-fail-hyprland.log.gz",
+      "sha256": "7be36ebfacd2265f722720b25d6f935ea6db5da98f512a6ee99c843d563fc7ba",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624249823603879/hyprland.log",
+      "uncompressedSHA256": "a4e5bf06bcf7be5c8b911ad8162a5d9454a61e9366e6f254b6a1f737a0cff2a1"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-drag-key-fail-host-evidence.json.gz",
+      "sha256": "869048c7818d4e912b8e70381c1ccb93fb8be1f7d6ff6086f484d464ec3c8fd6",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624249823603879/host-evidence.json",
+      "uncompressedSHA256": "40d59a7f8e67cbc197522008d0afe9b25e10824d01d897cf4b4ccdc1a4e4f021"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-drag-key-fail-weston-renderer.log.gz",
+      "sha256": "f24ed1763d61748b5a77cd07e8915f0d80b87ec811888982a054e65680ab4121",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624249823603879/weston-renderer.log",
+      "uncompressedSHA256": "6458d02f2c5201b5a2cd0537af030e296aa3752f8b9b63c017bef03c77c4d546"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-drag-helper-status-fail-warlock.log.gz",
+      "sha256": "bf9ce70dbc8c79d7058c97fc5b03629e6a72200ce4b95bf3a41f0215fc8bfebc",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624628312547629/warlock.log",
+      "uncompressedSHA256": "2812a29fcca94987251e80f13d06bf32f7791720b70e6608c94cb02291f84dc3"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-drag-helper-status-fail-fixture.log.gz",
+      "sha256": "78e07503723380958c53720445ffc8ddec7a6e7981962adf82b92a0f852bd1b8",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624628312547629/fixture.log",
+      "uncompressedSHA256": "d886e71d3ae82a3376a1c8c4840f03d834210c7f0cf2658a409fd16734d0f642"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-drag-helper-status-fail-fixture-control.events.jsonl.gz",
+      "sha256": "7b2926df063db5166177aa80fa79eca6608c22bd3a04c70f8b7cf9e36ea2e0db",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624628312547629/fixture-control.events.jsonl",
+      "uncompressedSHA256": "5d03c7d4811bdf00db0a9eb7a94c0d0af950ca2e2127fbf856be02bf1dcf3050"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-drag-helper-status-fail-hyprland.log.gz",
+      "sha256": "c6b9423476a4dc0c9f54d22df78f2d5fae4e3471834f23635f0b55cf160c5568",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624628312547629/hyprland.log",
+      "uncompressedSHA256": "a070477e201b0cdad97f5d59df39be7669a52bf97c7faf0267e6dccb3b6759c0"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-drag-helper-status-fail-host-evidence.json.gz",
+      "sha256": "921f94c7e7a21b351a21edcc23ee721562bd2523f88ccfda077a2e7daa35ecaa",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624628312547629/host-evidence.json",
+      "uncompressedSHA256": "f7491c73a4ffbcf8303c5039c962b1d988b1f9163642371a2c0fd7bcdd41acad"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-drag-helper-status-fail-weston-renderer.log.gz",
+      "sha256": "371e365f35794d1598d869a66d87742c93627e95259c2b98253de5ad454f2375",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624628312547629/weston-renderer.log",
+      "uncompressedSHA256": "eb6ef804fa7a2e1a27e24c8e52fd3ced0a0aed7b3ee52228314c2731d5f1a0ac"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-drag-helper-return-fail-warlock.log.gz",
+      "sha256": "9092eaad45bab1e91f5ba5f757a1486c5ee98fc57cbc40c944a102597ebded6e",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624698723339145/warlock.log",
+      "uncompressedSHA256": "3a7421ce1d002149367e0ddb8a2a7d37797cc6f0ad7478626db0319ea1dc3838"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-drag-helper-return-fail-fixture.log.gz",
+      "sha256": "70c5c63587b07c6d447ec9bf7492ac4fc9b228fdc6dd120f1aaf0c47f194762a",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624698723339145/fixture.log",
+      "uncompressedSHA256": "637033687cda6531e7f540cca1e6fafcbd0f0b40e464249c84c086862d7e2bae"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-drag-helper-return-fail-fixture-control.events.jsonl.gz",
+      "sha256": "7b2926df063db5166177aa80fa79eca6608c22bd3a04c70f8b7cf9e36ea2e0db",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624698723339145/fixture-control.events.jsonl",
+      "uncompressedSHA256": "5d03c7d4811bdf00db0a9eb7a94c0d0af950ca2e2127fbf856be02bf1dcf3050"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-drag-helper-return-fail-hyprland.log.gz",
+      "sha256": "50a9c8ea8b59ad6d75e2fe4675b439bec4458497d978377497854ccc771fc859",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624698723339145/hyprland.log",
+      "uncompressedSHA256": "3f573d3e023c800c4f8c9c8515cf32e13eb9b9712e698f036a43f645a99aebc5"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-drag-helper-return-fail-host-evidence.json.gz",
+      "sha256": "1f45ea6558e097baabb660ed8a96974e6e289d6328540e0fdb89b9f10208753b",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624698723339145/host-evidence.json",
+      "uncompressedSHA256": "f26d37a3c45cc81955092676b442965e3ff177ea8911f38d8587e394e4af0a36"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-drag-helper-return-fail-weston-renderer.log.gz",
+      "sha256": "d65c807ae91173866b285ea8c89a59705bdc984cfdddc99539ead69df6ade0b0",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624698723339145/weston-renderer.log",
+      "uncompressedSHA256": "ee0728575297e4a414a53810ae624947fc40c8540131b341fe4ca3724cf3186c"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-drag-input-pass-capture-fail-warlock.log.gz",
+      "sha256": "b743193102ae8df9bc50a94356d576129efb6502cc73ed70a429a984038935cf",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624738086978975/warlock.log",
+      "uncompressedSHA256": "47f75100384fd39a94943f8ae75c8c432e1afce553982a2d66ff154699d628d1"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-drag-input-pass-capture-fail-fixture.log.gz",
+      "sha256": "f1ffd88a149d767d771edef5984ec17e125278b10b33de07dd732c3c355cc4f1",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624738086978975/fixture.log",
+      "uncompressedSHA256": "4033205ab5e1c863469afa3297d5c0b08f8854434229b9c5df8f9e0c827dcbda"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-drag-input-pass-capture-fail-fixture-control.events.jsonl.gz",
+      "sha256": "1a041e05f263c568677504f79f1b03a3d1a7819679b2252a5dfab1aff32d7966",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624738086978975/fixture-control.events.jsonl",
+      "uncompressedSHA256": "f124d1126dfabfa183d69be24ebba4369f98b23cc87ab26ce852ac7eb2a065e0"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-drag-input-pass-capture-fail-hyprland.log.gz",
+      "sha256": "72d083c3c70276bb58894550475150ca21c60b4b26b19d96544701e947bfc119",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624738086978975/hyprland.log",
+      "uncompressedSHA256": "8571e9e2bdb50a2941970cfe780a11f10a3ef424d1169cb560e13c3fe888a2cb"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-drag-input-pass-capture-fail-host-evidence.json.gz",
+      "sha256": "c4e75206312c2219f7b7d4407f1a02fb61fa1aed094b5f7c0fee6b3a97358708",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624738086978975/host-evidence.json",
+      "uncompressedSHA256": "c8ceaae561dc54511a9fbcd4c502d0eb2de05a4c14981e9d3033f9eccfd18a95"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/native-drag-input-pass-capture-fail-weston-renderer.log.gz",
+      "sha256": "ed2f70c370f46870bdf7892f91e4360a997e997a4793fe040515f1284e5f67c0",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791624738086978975/weston-renderer.log",
+      "uncompressedSHA256": "69f41c840c8d3d5aa21206a011f651017b3b4368376f3d626476ac8ed68e2968"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/typed-fixture-compile-fail-compile-Main.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624154806749920/compile-Main.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/typed-fixture-compile-fail-compile-Bar.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624154806749920/compile-Bar.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/typed-fixture-compile-fail-compile-Popup.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624154806749920/compile-Popup.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/typed-fixture-compile-fail-compile-search.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624154806749920/compile-search.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/typed-fixture-compile-fail-typed-search.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624154806749920/typed-search.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/typed-fixture-compile-fail-compile-task-view.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624154806749920/compile-task-view.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/typed-fixture-compile-fail-typed-task-view.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624154806749920/typed-task-view.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/typed-fixture-compile-fail-task-view-model-typecheck.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624154806749920/task-view-model-typecheck.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/typed-fixture-compile-fail-task-view-model-named.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624154806749920/task-view-model-named.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/typed-fixture-compile-fail-task-view-model-invariants.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624154806749920/task-view-model-invariants.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/typed-fixture-compile-fail-pointer-readiness-model.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624154806749920/pointer-readiness-model.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/typed-fixture-compile-fail-compile-pointer-ownership.stderr.gz",
+      "sha256": "6749c9785d06ddfe9bb3d23438256f1c3025d1ee9c1c7930667692defe67445f",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624154806749920/compile-pointer-ownership.stderr",
+      "uncompressedSHA256": "ab35be9f16b398689bccfabb71db26e549982e7384659b433055336281a7dec7"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/core-dependency-reader-fail-gesture-keys-model.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/gesture-core-1791624472926002193/gesture-keys-model.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/core-dependency-reader-fail-compile-KeybindManager.cpp.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/gesture-core-1791624472926002193/compile-KeybindManager.cpp.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/core-dependency-reader-fail-archive-index.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/gesture-core-1791624472926002193/archive-index.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/core-dependency-reader-fail-link.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/gesture-core-1791624472926002193/link.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/old-pinned-constructor-fail-compile-Main.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624977584798229/compile-Main.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/old-pinned-constructor-fail-compile-Bar.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624977584798229/compile-Bar.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/old-pinned-constructor-fail-compile-Popup.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624977584798229/compile-Popup.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/old-pinned-constructor-fail-compile-search.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624977584798229/compile-search.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/old-pinned-constructor-fail-typed-search.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624977584798229/typed-search.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/old-pinned-constructor-fail-compile-task-view.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624977584798229/compile-task-view.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/old-pinned-constructor-fail-typed-task-view.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624977584798229/typed-task-view.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/old-pinned-constructor-fail-task-view-model-typecheck.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624977584798229/task-view-model-typecheck.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/old-pinned-constructor-fail-task-view-model-named.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624977584798229/task-view-model-named.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/old-pinned-constructor-fail-task-view-model-invariants.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624977584798229/task-view-model-invariants.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/old-pinned-constructor-fail-pointer-readiness-model.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624977584798229/pointer-readiness-model.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/old-pinned-constructor-fail-compile-pointer-ownership.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624977584798229/compile-pointer-ownership.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/old-pinned-constructor-fail-typed-pointer-ownership.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624977584798229/typed-pointer-ownership.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/old-pinned-constructor-fail-compile-SwitcherReplay.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624977584798229/compile-SwitcherReplay.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/old-pinned-constructor-fail-typed-SwitcherReplay.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624977584798229/typed-SwitcherReplay.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/old-pinned-constructor-fail-compile-PinnedMenuReplay.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624977584798229/compile-PinnedMenuReplay.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/old-pinned-constructor-fail-typed-PinnedMenuReplay.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624977584798229/typed-PinnedMenuReplay.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/retained-pinned-constructor-fail-compile-Main.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791625048458087298/compile-Main.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/retained-pinned-constructor-fail-compile-Bar.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791625048458087298/compile-Bar.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/retained-pinned-constructor-fail-compile-Popup.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791625048458087298/compile-Popup.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/retained-pinned-constructor-fail-compile-search.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791625048458087298/compile-search.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/retained-pinned-constructor-fail-typed-search.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791625048458087298/typed-search.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/retained-pinned-constructor-fail-compile-task-view.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791625048458087298/compile-task-view.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/retained-pinned-constructor-fail-typed-task-view.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791625048458087298/typed-task-view.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/retained-pinned-constructor-fail-task-view-model-typecheck.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791625048458087298/task-view-model-typecheck.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/retained-pinned-constructor-fail-task-view-model-named.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791625048458087298/task-view-model-named.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/retained-pinned-constructor-fail-task-view-model-invariants.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791625048458087298/task-view-model-invariants.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/retained-pinned-constructor-fail-pointer-readiness-model.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791625048458087298/pointer-readiness-model.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/retained-pinned-constructor-fail-compile-pointer-ownership.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791625048458087298/compile-pointer-ownership.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/retained-pinned-constructor-fail-typed-pointer-ownership.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791625048458087298/typed-pointer-ownership.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/retained-pinned-constructor-fail-compile-SwitcherReplay.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791625048458087298/compile-SwitcherReplay.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/retained-pinned-constructor-fail-typed-SwitcherReplay.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791625048458087298/typed-SwitcherReplay.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/retained-pinned-constructor-fail-compile-PinnedMenuReplay.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791625048458087298/compile-PinnedMenuReplay.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/retained-pinned-constructor-fail-typed-PinnedMenuReplay.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791625048458087298/typed-PinnedMenuReplay.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "disposition": "partial",
+  "missingObservations": [
+    "The current full two-output native recording fails final original five-second grim capture. All gesture input assertions pass, but no full capture/presentation acceptance is inferred.",
+    "Caption/edge initiation, actual reattachment during an active gesture, close/reload, snap and transition reversal, unrelated button/device/hotplug/lock and wider output schedules",
+    "Native AT and independent original UX-021 scenario review; full original drag/restore/recovery/native/IME/hardware/resource/package/rollback gates"
+  ]
+}

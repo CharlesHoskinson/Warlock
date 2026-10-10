@@ -21,7 +21,8 @@ LAUNCHER=sys.argv[1:]==['--launcher-dismissal']
 IME=sys.argv[1:]==['--ime'] or LAUNCHER
 ACCESSIBILITY=sys.argv[1:]==['--accessibility']
 CONTRAST=sys.argv[1:]==['--high-contrast']
-DRAG=sys.argv[1:]==['--drag-ownership']
+READINESS=sys.argv[1:]==['--pointer-readiness']
+DRAG=READINESS or sys.argv[1:]==['--drag-ownership']
 KEYBOARD=sys.argv[1:]==['--keyboard-shell']
 ATTENTION=sys.argv[1:]==['--attention']
 JUMP=sys.argv[1:]==['--jump-lists']
@@ -189,10 +190,23 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
   run('compile-task-view',[str(HELD/pinned['compiler']),'make','qa/TaskViewReplay.elm','--optimize','--output=assets/task-view.js'])
   (INPUT/'qa/task-view-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.TaskViewReplay'));run('typed-task-view',['node','qa/task-view-replay.js','assets/task-view.js',str(OUT/'task-view.json')]);report['typedTaskView']=json.loads((OUT/'task-view.json').read_text());assert all(report['typedTaskView']['checks'].values())
   run('task-view-model-typecheck',['quint','typecheck','qa/task-view.qnt']);run('task-view-model-named',['quint','test','qa/task-view.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79101']);run('task-view-model-invariants',['quint','run','qa/task-view.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79102'])
+ if READINESS:
+  report['pointerReadinessModel']=json.loads(run('pointer-readiness-model',['/usr/bin/python3','-B','qa/check-pointer-readiness.py']))
+  assert report['pointerReadinessModel']['passed']
  if DRAG:
   report.update(requirements=['ELM-UX-021'],scenarios=['ux-021'],scope='Compiled immutable native pointer ownership/root suppression and strict production decoder; original frozen native_drag invariant model. Actual crossing/native gesture end acceptance separate.')
   run('compile-pointer-ownership',[str(HELD/pinned['compiler']),'make','qa/PointerOwnershipReplay.elm','--optimize','--output=assets/pointer-ownership.js'])
   (INPUT/'qa/pointer-ownership-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.PointerOwnershipReplay'));run('typed-pointer-ownership',['node','qa/pointer-ownership-replay.js','assets/pointer-ownership.js',str(OUT/'pointer-ownership.json')]);report['typedPointerOwnership']=json.loads((OUT/'pointer-ownership.json').read_text());assert all(report['typedPointerOwnership']['checks'].values())
+  if READINESS:
+   # The original replay assertions remain intact. Ready fixtures now include
+   # the adapter's first current native idle observation, never product policy.
+   report['readiedFixtures']={}
+   for module in ['SwitcherReplay', 'PinnedMenuReplay', 'SnapReplay', 'SettingsReplay', 'NotificationsReplay', 'SystemMenuReplay', 'FilesReplay', 'JumpListReplay', 'AttentionReplay', 'KeyboardShortcutsReplay', 'ImeReplay', 'ShortcutPreferencesReplay', 'PopupEntryReplay']:
+    run('compile-'+module,[str(HELD/pinned['compiler']),'make','qa/'+module+'.elm','--optimize','--output=assets/'+module+'.js'])
+    harness=INPUT/('qa/'+module+'-replay.js');harness.write_text(replay.replace('Elm.SearchReplay','Elm.'+module))
+    result_path=OUT/(module+'.json');run('typed-'+module,['node',str(harness),str(INPUT/'assets'/ (module+'.js')),str(result_path)])
+    value=json.loads(result_path.read_text());assert value['checks'] and all(value['checks'].values()),module
+    report['readiedFixtures'][module]=value
   report['pointerDecoder']=json.loads(run('pointer-decoder',['/usr/bin/python3','-B','qa/check-pointer-ownership.py']))
   drag_model=REPO/'window-behavior-spec/native_drag.qnt';report['frozenDragModel']={'path':str(drag_model),'sha256':sha(drag_model)}
   run('drag-model-typecheck',['quint','typecheck',str(drag_model)])

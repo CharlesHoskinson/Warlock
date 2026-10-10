@@ -1,0 +1,81 @@
+{
+  "passed": true,
+  "scope": "quint-llm-kit sampled captured gesture key/cancel/release contract; native keys/identity/AT separate.",
+  "nativeAcceptance": false,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-9a976268401340b891f150c0f1c2939c.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "qa/gesture-keys.qnt": "b04d3c5befaf45eaa0e882db786b13ba432036574e92a3a0b4ca475a787ad3c6",
+    "qa/gesture-keys_test.qnt": "7557329d45ee3e7f808f4b43692550088d09ad5f0dfa9498a40ac03685764ad9",
+    "native/core/GestureKeyPolicy.hpp": "b84a16c27bcb6b837fdd7a7a6d3b11176429c6eba5f83129a0014a6a260ec8be",
+    "native/core/KeybindManager.cpp": "815cec4c73916b38d3dc9fae19b0566b53ae3073587e6468e62ce0721795f2ee"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/gesture-keys.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/gesture-keys_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=79921"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "witnesses",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/gesture-keys.qnt",
+        "--backend=typescript",
+        "--witnesses",
+        "began",
+        "ordinaryRetains",
+        "releaseKeyRetains",
+        "chordRetains",
+        "cancelled",
+        "released",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79922"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "safety",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/gesture-keys.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79923"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "witnessCounts": {
+    "began": 997,
+    "ordinaryRetains": 737,
+    "releaseKeyRetains": 722,
+    "chordRetains": 731,
+    "cancelled": 977,
+    "released": 970
+  }
+}

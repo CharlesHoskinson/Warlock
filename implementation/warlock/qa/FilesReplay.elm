@@ -1,5 +1,6 @@
 port module FilesReplay exposing (main)
 import Desktop
+import NativePointerFixture
 import Files
 import Surface
 import SurfaceRenderer
@@ -11,7 +12,7 @@ import UInt64
 port outgoing : E.Value -> Cmd msg
 counter value = D.decodeValue UInt64.decoder (E.string value) |> Result.withDefault UInt64.zero
 bound = E.object [("lifetime",E.string "1"),("session",E.string "1"),("frontend",E.string "1")]
-native raw model = Desktop.update (Desktop.Incoming raw) model |> Tuple.first
+native raw model = NativePointerFixture.incoming raw model |> Tuple.first
 snapshot revision target = E.object [("service",E.string "9"),("revision",E.string revision),("available",E.bool True),("reason",E.string ""),("peer",E.object [("pid",E.string "20"),("start",E.string "40"),("instance",E.string "owned1"),("target",E.string target),("visible",E.bool True)])]
 loaded request value = E.object [("protocolVersion",E.int 3),("kind",E.string "files-snapshot"),("binding",bound),("requestId",E.string (UInt64.string request)),("snapshot",value)]
 outcome request status value = E.object [("protocolVersion",E.int 3),("kind",E.string "files-outcome"),("binding",bound),("requestId",E.string (UInt64.string request)),("status",E.string status),("snapshot",value)]

@@ -3,6 +3,7 @@ port module SwitcherReplay exposing (main)
 import ActionProjection as Scene
 import Binding
 import Desktop
+import NativePointerFixture
 import GeometryProjection as Geometry
 import Json.Decode as D
 import Json.Encode as E
@@ -38,7 +39,7 @@ base =
         shell=windows.shell
         effects=shell.effects
         geometry=binding |> Maybe.map (\b -> {binding=b,request=one,sequence=one,context=context,focused=Just three,blocked=False,windows=List.map geometryWindow [one,two,three]})
-    in {initial | windows={windows | shell={shell | binding=binding,phase=Shell.Ready,effects={effects | connected=True,observed=scene |> Maybe.map (\s -> {context=context,scene=s})},geometry=geometry}}}
+    in NativePointerFixture.ready {initial | windows={windows | shell={shell | binding=binding,phase=Shell.Ready,effects={effects | connected=True,observed=scene |> Maybe.map (\s -> {context=context,scene=s})},geometry=geometry}}}
 scoped make model=Desktop.capture model |> Maybe.map (\stamp -> Desktop.update (make stamp) model) |> Maybe.withDefault (model,[])
 historyFrame model=binding |> Maybe.map (\b -> E.object [("protocolVersion",E.int 3),("kind",E.string "activation-history"),("binding",Binding.encode b),("requestId",E.string (model.switcherExpected |> Maybe.map UInt64.string |> Maybe.withDefault "99")),("context",E.object [("lifetime",E.string "1"),("epoch",E.string "1"),("output",E.string "1"),("revision",E.string "1")]),("roots",E.list (UInt64.string >> E.string) history)]) |> Maybe.withDefault E.null
 journalFrame nativeGeneration roots historySteps released cancelled model = binding |> Maybe.map (\b -> E.object [("protocolVersion",E.int 3),("kind",E.string "switcher-journal"),("binding",Binding.encode b),("requestId",E.string "91"),("chord",E.object [("generation",E.string nativeGeneration),("roots",E.list E.string roots),("history",E.list E.string (List.reverse roots)),("origin",E.string "3"),("steps",E.list E.int historySteps),("released",E.bool released),("cancelled",E.bool cancelled),("consumed",E.bool False)])]) |> Maybe.withDefault E.null

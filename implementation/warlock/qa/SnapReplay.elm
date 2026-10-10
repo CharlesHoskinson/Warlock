@@ -2,6 +2,7 @@ port module SnapReplay exposing (main, readyFor, geometryFor, bound, counter)
 
 import Binding
 import Desktop
+import NativePointerFixture
 import Effects
 import NativeOutcome
 import GeometryProjection as Geometry
@@ -20,7 +21,7 @@ counter value = D.decodeValue UInt64.decoder (E.string value) |> Result.withDefa
 bound = E.object [("lifetime",E.string "1"),("session",E.string "1"),("frontend",E.string "1")]
 window = {incarnation=counter "1",owner=Nothing,workspace=Just "1",workspaceGeneration=Just (counter "4"),monitor=Just UInt64.zero,outputOwnershipGeneration=Just (counter "2"),workAreaRevision=Just (counter "3"),workArea=Just [-80,30,801,601],logicalGeometry=[0,80,320,240],visualGeometry=[0,80,320,240],nativeMode=Geometry.Ordinary,clientMode=Geometry.Ordinary,minimized=False,floating=True,grouped=False,fixedSize=False,constrainedSize=False,eligible=True,pin=Nothing,placementKnown=False,maximize=True,restoreGeometry=False,sizePolicy=Nothing}
 geometryFor binding = {binding=binding,request=counter "1",sequence=counter "1",context={lifetime=counter "1",epoch=counter "1",output=counter "1",revision=counter "1"},focused=Just (counter "1"),blocked=False,windows=[window]}
-native raw model = Desktop.update (Desktop.Incoming raw) model |> Tuple.first
+native raw model = NativePointerFixture.incoming raw model |> Tuple.first
 attached = E.object [("protocolVersion",E.int 3),("kind",E.string "attached"),("binding",bound)]
 projection = E.object [("protocolVersion",E.int 3),("kind",E.string "action-projection"),("binding",bound),("requestId",E.string "1"),("context",E.object [("lifetime",E.string "1"),("epoch",E.string "1"),("output",E.string "1"),("revision",E.string "1")]),("scene",E.object [("revision",E.string "1"),("focused",E.string "1"),("windows",E.list identity [E.object [("incarnation",E.string "1"),("label",E.string "Document"),("owner",E.null),("application",E.string "documents"),("minimized",E.bool False),("available",E.bool True)]])])]
 readyFor binding =

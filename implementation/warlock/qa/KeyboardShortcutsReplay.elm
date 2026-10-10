@@ -2,6 +2,7 @@ port module KeyboardShortcutsReplay exposing (main)
 
 import Binding
 import Desktop
+import NativePointerFixture
 import Json.Decode as D
 import Json.Encode as E
 import Platform
@@ -20,7 +21,7 @@ base binding =
     let initial=Desktop.initial
         windows=initial.windows
         shell=windows.shell
-    in {initial | windows={windows | shell={shell | binding=Just binding,phase=Shell.Ready}}}
+    in NativePointerFixture.ready {initial | windows={windows | shell={shell | binding=Just binding,phase=Shell.Ready}}}
 wire binding serial blocked events = E.object
     [("protocolVersion",E.int 3),("kind",E.string "shell-shortcuts"),("shortcutProtocol",E.int 1)
     ,("binding",Binding.encode binding),("requestId",E.string "1"),("serial",E.string serial),("blocked",E.bool blocked)

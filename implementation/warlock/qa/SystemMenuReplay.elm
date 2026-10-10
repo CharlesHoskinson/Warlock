@@ -1,5 +1,6 @@
 port module SystemMenuReplay exposing (main)
 import Desktop
+import NativePointerFixture
 import SystemMenu
 import Surface
 import SurfaceRenderer
@@ -10,7 +11,7 @@ import UInt64
 port outgoing : E.Value -> Cmd msg
 counter value = D.decodeValue UInt64.decoder (E.string value) |> Result.withDefault UInt64.zero
 bound = E.object [("lifetime",E.string "1"),("session",E.string "1"),("frontend",E.string "1")]
-native raw model = Desktop.update (Desktop.Incoming raw) model |> Tuple.first
+native raw model = NativePointerFixture.incoming raw model |> Tuple.first
 attached = E.object [("protocolVersion",E.int 3),("kind",E.string "attached"),("binding",bound)]
 snapshot revision percent = E.object [("service",E.string "9"),("revision",E.string revision),("volume",E.object [("percent",E.int percent),("muted",E.bool False),("label",E.string "Warlock private audio")]),("network",E.null),("power",E.object [("suspend",E.string "yes"),("reboot",E.string "yes"),("poweroff",E.string "no")]),("session",E.object [("name",E.string "Warlock private session"),("state",E.string "active"),("locked",E.bool False)])]
 loaded request value = E.object [("protocolVersion",E.int 3),("kind",E.string "system-menu-snapshot"),("binding",bound),("requestId",E.string (UInt64.string request)),("snapshot",value)]

@@ -1,0 +1,418 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      active: false,
+      binding: 1,
+      last: "init",
+      observed: 0,
+      opened: false,
+      serial: 0
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      active: false,
+      binding: 1,
+      last: "idle",
+      observed: 1,
+      opened: false,
+      serial: 1
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      active: false,
+      binding: 2,
+      last: "rebind",
+      observed: 1,
+      opened: false,
+      serial: 1
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      active: true,
+      binding: 2,
+      last: "begin",
+      observed: 2,
+      opened: false,
+      serial: 2
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      active: true,
+      binding: 2,
+      last: "begin",
+      observed: 2,
+      opened: false,
+      serial: 3
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      active: true,
+      binding: 2,
+      last: "shell",
+      observed: 2,
+      opened: false,
+      serial: 3
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      active: false,
+      binding: 2,
+      last: "release",
+      observed: 2,
+      opened: false,
+      serial: 4
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      active: false,
+      binding: 2,
+      last: "shell",
+      observed: 2,
+      opened: true,
+      serial: 4
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      active: false,
+      binding: 2,
+      last: "stale",
+      observed: 2,
+      opened: true,
+      serial: 4
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      active: false,
+      binding: 3,
+      last: "rebind",
+      observed: 2,
+      opened: false,
+      serial: 4
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      active: false,
+      binding: 3,
+      last: "stale",
+      observed: 2,
+      opened: false,
+      serial: 4
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      active: false,
+      binding: 3,
+      last: "stale",
+      observed: 2,
+      opened: false,
+      serial: 4
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      active: false,
+      binding: 3,
+      last: "release",
+      observed: 3,
+      opened: false,
+      serial: 5
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      active: true,
+      binding: 3,
+      last: "begin",
+      observed: 3,
+      opened: false,
+      serial: 6
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      active: true,
+      binding: 4,
+      last: "rebind",
+      observed: 3,
+      opened: false,
+      serial: 6
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      active: false,
+      binding: 4,
+      last: "idle",
+      observed: 4,
+      opened: false,
+      serial: 7
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      active: false,
+      binding: 4,
+      last: "idle",
+      observed: 4,
+      opened: false,
+      serial: 8
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      active: false,
+      binding: 4,
+      last: "release",
+      observed: 4,
+      opened: false,
+      serial: 9
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      active: false,
+      binding: 4,
+      last: "idle",
+      observed: 4,
+      opened: false,
+      serial: 10
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      active: false,
+      binding: 4,
+      last: "release",
+      observed: 4,
+      opened: false,
+      serial: 11
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      active: false,
+      binding: 4,
+      last: "shell",
+      observed: 4,
+      opened: true,
+      serial: 11
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      active: true,
+      binding: 4,
+      last: "begin",
+      observed: 4,
+      opened: false,
+      serial: 12
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      active: false,
+      binding: 4,
+      last: "release",
+      observed: 4,
+      opened: false,
+      serial: 13
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      active: false,
+      binding: 4,
+      last: "release",
+      observed: 4,
+      opened: false,
+      serial: 14
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      active: true,
+      binding: 4,
+      last: "begin",
+      observed: 4,
+      opened: false,
+      serial: 15
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      active: true,
+      binding: 4,
+      last: "shell",
+      observed: 4,
+      opened: false,
+      serial: 15
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      active: true,
+      binding: 4,
+      last: "shell",
+      observed: 4,
+      opened: false,
+      serial: 15
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      active: false,
+      binding: 4,
+      last: "release",
+      observed: 4,
+      opened: false,
+      serial: 16
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      active: false,
+      binding: 5,
+      last: "rebind",
+      observed: 4,
+      opened: false,
+      serial: 16
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      active: false,
+      binding: 5,
+      last: "release",
+      observed: 5,
+      opened: false,
+      serial: 17
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      active: false,
+      binding: 5,
+      last: "shell",
+      observed: 5,
+      opened: true,
+      serial: 17
+    }
+}
+
+[ok] No violation found (491ms at 2037 traces/second).
+Trace length statistics: max=31, min=31, average=31.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Witnesses:
+initializedBlocked was witnessed in 258 trace(s) out of 1000 explored (25.80%)
+idleReached was witnessed in 998 trace(s) out of 1000 explored (99.80%)
+activeBlocked was witnessed in 997 trace(s) out of 1000 explored (99.70%)
+releasedPermits was witnessed in 987 trace(s) out of 1000 explored (98.70%)
+rebindBlocked was witnessed in 997 trace(s) out of 1000 explored (99.70%)
+staleReached was witnessed in 722 trace(s) out of 1000 explored (72.20%)
+freshShellReached was witnessed in 887 trace(s) out of 1000 explored (88.70%)
+Use --seed=0x13828 --backend=typescript to reproduce.

@@ -58,7 +58,17 @@ try:
  if scene_record:
   scene_report=REPO/scene_meta['report'];assert sha(scene_report)==scene_meta['reportSHA256']
   assert scene_record['passed'] and scene_record['existingPublicHeadersUnchanged'] and scene_record['existingObjectLayoutsUnchanged'] and scene_record['existingStrongExportsPreserved']
-  assert scene_record['ancestor']=={'report':str(max_report),'reportSHA256':sha(max_report)} and scene_record['owningHeaders']==max_core['owningHeaders']
+  expected_ancestor={'report':str(max_report),'reportSHA256':sha(max_report)}
+  scene_base=scene_record
+  if scene_record['ancestor']!=expected_ancestor:
+   # A checked one-TU gesture descendant retains the exact original scene/max ABI.
+   parent_path=pathlib.Path(scene_record['ancestor']['report']);assert sha(parent_path)==scene_record['ancestor']['reportSHA256']
+   scene_base=json.loads(parent_path.read_text());assert scene_base['passed'] and sha(scene_base['binary'])==scene_base['binarySHA256']
+   assert scene_record['owningHeaders']==scene_base['owningHeaders']
+   assert set(scene_record['sourceHashes'])==set(scene_base['sourceHashes'])|{'native/core/KeybindManager.cpp','native/core/GestureKeyPolicy.hpp'}
+   assert all(scene_record['sourceHashes'][p]==h and sha(ROOT/p)==h for p,h in scene_base['sourceHashes'].items())
+   assert all(sha(p)==h for p,h in {**scene_base['dependencies'],**scene_base['linkDependencies']}.items())
+  assert scene_base['ancestor']==expected_ancestor and scene_record['owningHeaders']==max_core['owningHeaders']
   assert all(sha(ROOT/p)==h for p,h in scene_record['sourceHashes'].items())
   assert all(sha(p)==h for p,h in scene_record['dependencies'].items()) and all(sha(p)==h for p,h in scene_record['linkDependencies'].items())
   header_prefix=(header_prefix[0],str(scene_report.parent/'owning-headers'));core={'path':scene_record['binary'],'sha256':scene_record['binarySHA256']};assert sha(core['path'])==core['sha256']

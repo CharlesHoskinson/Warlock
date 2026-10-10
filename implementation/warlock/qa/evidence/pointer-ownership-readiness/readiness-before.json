@@ -1,0 +1,82 @@
+{
+  "passed": true,
+  "scope": "quint-llm-kit sampled current-binding readiness/stale/release gate; native keys/identity/AT separate.",
+  "nativeAcceptance": false,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-865b90078192434c819b56ca81bf42d9.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "qa/pointer-readiness.qnt": "ada48b39f6359792e78b9c4d63057b970a1ba79104fe0724ba977a80e4bb79cd",
+    "qa/pointer-readiness_test.qnt": "8e57652a0e7354f3adb35bc5f53065dd6192626e904604a9ae85b1b68dadf0f3",
+    "src/PointerOwnership.elm": "c9590423eb41aff0077c4170ebf287f37a43c1a96d7c19c36e621b283194f492"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624178160071422/inputs/qa/pointer-readiness.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624178160071422/inputs/qa/pointer-readiness_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=79911"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "witnesses",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624178160071422/inputs/qa/pointer-readiness.qnt",
+        "--backend=typescript",
+        "--witnesses",
+        "initializedBlocked",
+        "idleReached",
+        "activeBlocked",
+        "releasedPermits",
+        "rebindBlocked",
+        "staleReached",
+        "freshShellReached",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79912"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "safety",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791624178160071422/inputs/qa/pointer-readiness.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79913"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "witnessCounts": {
+    "initializedBlocked": 258,
+    "idleReached": 998,
+    "activeBlocked": 997,
+    "releasedPermits": 987,
+    "rebindBlocked": 997,
+    "staleReached": 722,
+    "freshShellReached": 887
+  }
+}

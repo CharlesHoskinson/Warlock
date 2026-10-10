@@ -23,13 +23,22 @@ result binding =
         initial=Desktop.initial
         windows=initial.windows
         shell=windows.shell
-        base={initial | windows={windows | shell={shell | binding=Just binding,phase=Shell.Ready}},open=True,overview=True,settingsOpen=True,notificationsOpen=True,systemMenuOpen=True,filesOpen=True}
+        base={initial | pointer=idle,windows={windows | shell={shell | binding=Just binding,phase=Shell.Ready}},open=True,overview=True,settingsOpen=True,notificationsOpen=True,systemMenuOpen=True,filesOpen=True}
         (retired,retireEffects)=Desktop.update (Desktop.Incoming (wire binding "2" "move" (Just "9"))) base
         tryOpen constructor=Desktop.capture retired |> Maybe.map (\stamp -> Desktop.update (constructor stamp) retired) |> Maybe.withDefault (retired,[])
         inert pair=Tuple.first pair==retired && List.isEmpty (Tuple.second pair)
         (ended,endEffects)=Desktop.update (Desktop.Incoming (wire binding "3" "idle" Nothing)) retired
         reopened=Desktop.capture ended |> Maybe.map (\stamp -> Desktop.update (Desktop.OpenApplications stamp) ended) |> Maybe.withDefault (ended,[])
-        checks=[("IdlePermitsShell",not (Pointer.blocked (Just binding) idle))
+        unknown={base|pointer=Pointer.initial,open=False,overview=False,settingsOpen=False,notificationsOpen=False,systemMenuOpen=False,filesOpen=False}
+        unknownRequest=Desktop.capture unknown |> Maybe.map (\stamp -> Desktop.update (Desktop.OpenApplications stamp) unknown) |> Maybe.withDefault (unknown,[])
+        foreignBinding=D.decodeValue Binding.decoder (E.object [("lifetime",E.string "1"),("session",E.string "1"),("frontend",E.string "2")]) |> Result.toMaybe
+        foreign={unknown|pointer=idle,windows={windows|shell={shell|binding=foreignBinding,phase=Shell.Ready}}}
+        foreignRequest=Desktop.capture foreign |> Maybe.map (\stamp -> Desktop.update (Desktop.OpenApplications stamp) foreign) |> Maybe.withDefault (foreign,[])
+        checks=[("InitialUnknownBindingBlocks",Pointer.blocked (Just binding) Pointer.initial)
+            ,("ForeignObservationCannotPermitShell",Pointer.blocked ((D.decodeValue Binding.decoder (E.object [("lifetime",E.string "1"),("session",E.string "1"),("frontend",E.string "2")]) |> Result.toMaybe)) idle)
+            ,("UnknownNativeOwnershipCannotOpenPopup",Tuple.first unknownRequest==unknown && List.isEmpty (Tuple.second unknownRequest))
+            ,("OldFrontendIdleCannotOpenPopup",Tuple.first foreignRequest==foreign && List.isEmpty (Tuple.second foreignRequest))
+            ,("IdlePermitsShell",not (Pointer.blocked (Just binding) idle))
             ,("MoveBlocks",Pointer.blocked (Just binding) moving)
             ,("ResizeBlocks",Pointer.blocked (Just binding) resizing)
             ,("OldIdleCannotEndOwnership",old==resizing)

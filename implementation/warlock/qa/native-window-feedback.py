@@ -74,7 +74,16 @@ if (ROOT/'qa/current-native-pair.json').exists():
   if 'sceneCoreReport' in native_pair:
    scene=native_pair['sceneCoreReport'];scene_path=REPO/scene['report'];assert sha(scene_path)==scene['reportSHA256'];scene_core=json.loads(scene_path.read_text())
    assert scene_core['passed'] and scene_core['existingPublicHeadersUnchanged'] and scene_core['existingObjectLayoutsUnchanged'] and scene_core['existingStrongExportsPreserved'] and scene_core['owningHeaders']==max_core['owningHeaders']
-   assert scene_core['ancestor']=={'report':str(max_path),'reportSHA256':sha(max_path)} and all(sha(ROOT/p)==h for p,h in scene_core['sourceHashes'].items())
+   expected_ancestor={'report':str(max_path),'reportSHA256':sha(max_path)}
+   scene_base=scene_core
+   if scene_core['ancestor']!=expected_ancestor:
+    parent_path=pathlib.Path(scene_core['ancestor']['report']);assert sha(parent_path)==scene_core['ancestor']['reportSHA256']
+    scene_base=json.loads(parent_path.read_text());assert scene_base['passed'] and sha(scene_base['binary'])==scene_base['binarySHA256']
+    assert scene_core['owningHeaders']==scene_base['owningHeaders']
+    assert set(scene_core['sourceHashes'])==set(scene_base['sourceHashes'])|{'native/core/KeybindManager.cpp','native/core/GestureKeyPolicy.hpp'}
+    assert all(scene_core['sourceHashes'][p]==h and sha(ROOT/p)==h for p,h in scene_base['sourceHashes'].items())
+    assert all(sha(p)==h for p,h in {**scene_base['dependencies'],**scene_base['linkDependencies']}.items())
+   assert scene_base['ancestor']==expected_ancestor and all(sha(ROOT/p)==h for p,h in scene_core['sourceHashes'].items())
    assert all(sha(p)==h for p,h in scene_core['dependencies'].items()) and all(sha(p)==h for p,h in scene_core['linkDependencies'].items())
    qualified_core=scene_core
   assert native_pair['pair']['core']=={'path':qualified_core['binary'],'sha256':qualified_core['binarySHA256']}
@@ -217,7 +226,10 @@ def pause(value):
 def fixture_control(op):
  temp=control.with_suffix('.tmp');temp.write_text(json.dumps({'op':op}));temp.replace(control)
 try:
- with host.PrivateHyprSession(OUTPUT,dict(os.environ),1600,1000,LUA,mesa_vendor=True) as s:
+ # Each nested Wayland output receives its actual parent configure size. The
+ # original two-output oracle requires two 800x600 outputs, not a 1600x1000
+ # parent that overrides both monitor rules. Other journeys keep their parent.
+ with host.PrivateHyprSession(OUTPUT,dict(os.environ),800 if DRAG else 1600,600 if DRAG else 1000,LUA,mesa_vendor=True) as s:
   try:
    plugin=pair['plugin']['path'];check('OwningPluginLoads',s.ctl('plugin','load',plugin).strip()=='ok');loaded=True
    if DRAG:
@@ -497,8 +509,8 @@ raise SystemExit(daemon.run())
    initial_workspace=next(w['workspace'] for w in facts()['facts']['windows'] if w['incarnation']==target)
    def current_window():return next(w for w in facts()['facts']['windows'] if w['incarnation']==target)
    def transaction_state():return (projection() or {}).get('transaction')
-   def private_effect(operation,identity=None):
-    before=facts();n=str((10000 if MEMBERSHIP else 9000)+len(report['nativeFixtures']));intent={'request':n,'generation':n,'incarnation':identity or target,'operation':operation,'context':client.context(before)};result=client.effect(intent);report['nativeFixtures'].append({'intent':intent,'result':result});check('ControlledNativeFixture'+operation,result['status']=='Committed',result=result)
+   def private_effect(operation,identity=None,expected_status="Committed"):
+    before=facts();n=str((10000 if MEMBERSHIP else 9000)+len(report['nativeFixtures']));intent={'request':n,'generation':n,'incarnation':identity or target,'operation':operation,'context':client.context(before)};result=client.effect(intent);report['nativeFixtures'].append({'intent':intent,'result':result});check('ControlledNativeFixture'+operation,result['status']==expected_status,result=result,expectedStatus=expected_status);return result
    def screenshot(state):
     body=wait(lambda:feedback(state));o=body['feedback'];check(state+'VisibleCorrelatedMessage',o and o['width']>=180 and o['height']==48 and o['clip']=='none' and o['display']!='none' and o['accessibleName']==o['text'] and o['atomic']=='true' and o['live']=='polite',feedback=o)
     image=OUTPUT/(state+'.png');helper(['/usr/bin/grim',str(image)])
@@ -549,12 +561,24 @@ raise SystemExit(daemon.run())
      other=56 if modifier==125 else 125
      physical(f'key {other} 1\nkey 57 1\nsleep 50\nkey 57 0\nkey {other} 0\nsleep 100')
      check(name+'AppsShortcutCannotStealGesture',ownership()==active and (projection() or {}).get('mode')=='closed',observation=ownership(),projection=projection())
-     outcome=private_effect('minimize',target)
+     outcome=private_effect('minimize',target,expected_status='Refused')
      check(name+'CompetingNativeEffectRefused',outcome['status']=='Refused' and outcome['reason']=='native-pointer-owned' and ownership()==active,result=outcome)
      pointer(f'button {button} 0\nsleep 100');ended=wait(lambda:owned('idle'));physical(f'key {modifier} 0\nsleep 100');wait(lambda:received_owner('idle',ended['serial']))
      check(name+'ExactlyOneNativeEnd',int(ended['serial'])==int(active['serial'])+1 and ended['owner'] is None and not current_window()['minimized'],before=before,active=active,end=ended)
      after=root_window();check(name+'NativeGeometryChanged',after['at']!=window_before['at'] if button==272 else after['size']!=window_before['size'],before=window_before,after=after)
      report['gestures'].append({'name':name,'before':before,'active':active,'crossings':crossings,'end':ended,'windowBefore':window_before,'windowAfter':after})
+    # Additive explicit-cancellation recording; the original two crossings,
+    # blocked shortcut/effect and one-release assertions above are unchanged.
+    cancel_before=ownership();cancel_window=root_window()
+    cx,cy=map(round,[cancel_window['at'][0]+cancel_window['size'][0]/2,cancel_window['at'][1]+cancel_window['size'][1]/2])
+    pointer(f'move {cx} {cy}\nsleep 100');physical('key 125 1\nsleep 50');pointer(f'button 272 1\nsleep 50\nmove {cx+10} {cy+10}\nsleep 100')
+    cancel_active=wait(lambda:owned('move'));wait(lambda:received_owner('move',cancel_active['serial']))
+    check('ExplicitEscapeStartsOriginalNativeOwner',cancel_active['owner']==target and int(cancel_active['serial'])==int(cancel_before['serial'])+1,observation=cancel_active)
+    physical('key 1 1\nsleep 50\nkey 1 0\nsleep 100');cancel_end=wait(lambda:owned('idle'));wait(lambda:received_owner('idle',cancel_end['serial']))
+    check('ExplicitEscapeEndsGestureExactlyOnce',int(cancel_end['serial'])==int(cancel_active['serial'])+1 and cancel_end['owner'] is None and (projection() or {}).get('mode')=='closed',observation=cancel_end)
+    pointer('button 272 0\nsleep 100');physical('key 125 0\nsleep 100')
+    check('ReleaseAfterExplicitCancelCannotEndAgain',ownership()==cancel_end,observation=ownership())
+    report['explicitCancel']={'before':cancel_before,'active':cancel_active,'end':cancel_end,'afterPhysicalRelease':ownership()}
     physical('key 125 1\nkey 56 1\nkey 57 1\nsleep 50\nkey 57 0\nkey 56 0\nkey 125 0\nsleep 100')
     wait(lambda:(projection() or {}).get('mode')=='applications')
     check('FreshAppsShortcutWorksAfterNativeRelease',(projection() or {}).get('mode')=='applications')

@@ -23,4 +23,11 @@ receive expected snapshot model =
         Just prior -> if prior.binding==snapshot.binding && UInt64.compare snapshot.serial prior.serial/=GT then model else {observation=Just snapshot}
         Nothing -> {observation=Just snapshot}
 blocked expected model =
-    model.observation |> Maybe.map (\snapshot -> expected==Just snapshot.binding && snapshot.state/=Idle) |> Maybe.withDefault False
+    -- A live binding must establish current native ownership before shell input.
+    -- No observation, or an old frontend's idle observation, cannot release it.
+    case expected of
+        Nothing -> False
+        Just binding ->
+            case model.observation of
+                Just snapshot -> snapshot.binding/=binding || snapshot.state/=Idle
+                Nothing -> True

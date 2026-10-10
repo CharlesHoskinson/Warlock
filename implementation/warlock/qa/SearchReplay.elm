@@ -2,6 +2,7 @@ port module SearchReplay exposing (main)
 import Binding
 import Catalog
 import Desktop
+import NativePointerFixture
 import Json.Encode as E
 import Json.Decode as D
 import Launch
@@ -18,7 +19,7 @@ base =
         windows=initial.windows
         shell=windows.shell
         binding= D.decodeValue Binding.decoder (E.object [("lifetime",E.string "1"),("session",E.string "1"),("frontend",E.string "1")]) |> Result.toMaybe
-    in {initial | open=True,applications=Catalog.decode snapshot |> Result.toMaybe,windows={windows | shell={shell | binding=binding,phase=Shell.Ready}},launch=Launch.init |> Launch.bind "fixture-host" |> Launch.catalog snapshot}
+    in NativePointerFixture.ready {initial | open=True,applications=Catalog.decode snapshot |> Result.toMaybe,windows={windows | shell={shell | binding=binding,phase=Shell.Ready}},launch=Launch.init |> Launch.bind "fixture-host" |> Launch.catalog snapshot}
 main : Program () () Never
 main = Platform.worker {init=\_ -> ((),outgoing result),update=\_ state -> (state,Cmd.none),subscriptions=\_ -> Sub.none}
 result =

@@ -1,6 +1,7 @@
 port module NotificationsReplay exposing (main)
 
 import Desktop
+import NativePointerFixture
 import Notifications
 import Surface
 import SurfaceRenderer
@@ -12,7 +13,7 @@ import UInt64
 port outgoing : E.Value -> Cmd msg
 counter value = D.decodeValue UInt64.decoder (E.string value) |> Result.withDefault UInt64.zero
 bound = E.object [("lifetime",E.string "1"),("session",E.string "1"),("frontend",E.string "1")]
-native raw model = Desktop.update (Desktop.Incoming raw) model |> Tuple.first
+native raw model = NativePointerFixture.incoming raw model |> Tuple.first
 attached = E.object [("protocolVersion",E.int 3),("kind",E.string "attached"),("binding",bound)]
 entry incarnation state = E.object [("id",E.string "1"),("incarnation",E.string incarnation),("producer",E.string ":1.7"),("app",E.string "Calendar"),("summary",E.string "Meeting soon"),("body",E.string "Bring your notes"),("state",E.string state),("actions",if state=="live" then E.list identity [E.object [("key",E.string "open"),("label",E.string "Open meeting")]] else E.list identity [])]
 snapshot revision incarnation state = E.object [("service",E.string "9"),("revision",E.string revision),("available",E.bool True),("reason",E.string ""),("entries",E.list identity [entry incarnation state])]

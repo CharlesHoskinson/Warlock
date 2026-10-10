@@ -1,5 +1,6 @@
 port module JumpListReplay exposing (main)
 import Desktop
+import NativePointerFixture
 import JumpList
 import Surface
 import SurfaceRenderer
@@ -10,7 +11,7 @@ import UInt64
 port outgoing : E.Value -> Cmd msg
 counter value = D.decodeValue UInt64.decoder (E.string value) |> Result.withDefault UInt64.zero
 bound = E.object [("lifetime",E.string "1"),("session",E.string "1"),("frontend",E.string "1")]
-native raw model = Desktop.update (Desktop.Incoming raw) model |> Tuple.first
+native raw model = NativePointerFixture.incoming raw model |> Tuple.first
 row id label kind=E.object [("id",E.string id),("label",E.string label),("kind",E.string kind)]
 snapshot revision entry=E.object [("service",E.string "9"),("revision",E.string revision),("entry",E.string entry),("name",E.string "Warlock Editor"),("available",E.bool True),("reason",E.string ""),("actions",E.list identity [row "desktop:Alpha" "New document" "desktop",row "desktop:Beta" "Private window" "desktop",row "recent:owned" "Open Warlock recent document" "recent"])]
 loaded request value=E.object [("protocolVersion",E.int 3),("kind",E.string "jump-list-snapshot"),("binding",bound),("requestId",E.string (UInt64.string request)),("snapshot",value)]

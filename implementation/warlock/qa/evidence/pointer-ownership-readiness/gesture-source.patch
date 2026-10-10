@@ -1,0 +1,19 @@
+--- owning/KeybindManager.cpp
++++ candidate/KeybindManager.cpp
+@@ -1,3 +1,4 @@
++#include "GestureKeyPolicy.hpp"
+ #include "../config/ConfigValue.hpp"
+ #include "../config/ConfigManager.hpp"
+ #include "../config/legacy/DispatcherTranslator.hpp"
+@@ -386,7 +387,10 @@
+     Config::Actions::state()->m_lastCode      = KEYCODE;
+     Config::Actions::state()->m_lastMouseCode = 0;
+ 
+-    bool       mouseBindWasActive = ensureMouseBindState();
++    const bool mouseBindWasActive = bool(g_layoutManager->dragController()->target());
++    if (WarlockGesture::cancelKey(mouseBindWasActive, e.state == WL_KEYBOARD_KEY_STATE_PRESSED,
++                                 keysym == XKB_KEY_Escape || internalKeysym == XKB_KEY_Escape))
++        ensureMouseBindState();
+ 
+     const auto KEY = SPressedKeyWithMods{
+         .keysym             = keysym,
