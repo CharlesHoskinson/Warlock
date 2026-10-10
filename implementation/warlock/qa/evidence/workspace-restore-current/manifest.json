@@ -1,0 +1,101 @@
+{
+  "schema": 1,
+  "requirements": [
+    "ELM-UI-002",
+    "ELM-UI-006",
+    "ELM-UX-008"
+  ],
+  "scenarios": [
+    "activate-other-workspace",
+    "overview-select",
+    "ux-008",
+    "activation-refused"
+  ],
+  "disposition": "partial",
+  "sourceBaseRevision": "d098e52025c21e7411df7622614cb9b91a5bdf4b",
+  "sourceHashes": {
+    "implementation/warlock/qa/native-window-feedback.py": "80defb323ef4bb4502966f49f878250da8935117e9bf8af7b158054c6ee49627",
+    "implementation/warlock/src/Desktop.elm": "0de211c106232d0e79033eb17a105c0e0d668d0fe226011656d90dc66ec2f4dd",
+    "implementation/warlock/src/Taskbar.elm": "31ed9ce6b37e5b35065f8833e31412657800d894b6d9e9544f380bc16e7aa519",
+    "implementation/warlock/src/Surface.elm": "c1956597c3565b396ee0e620902039661dac9ae9bdc70bd8afd0b74ee6a07fe0",
+    "implementation/warlock/native/host.c": "ee9d57df42c8fa60ecc41a23fbeadc4ecae66c99cfcca14252c1b6c91a6d96f4",
+    "implementation/warlock/native/shared-host.c": "a8f30ce61053c0000a4f526d3efa6e0d144a3e8598319ce4ec00f44e13226298",
+    "implementation/warlock/native/shared-context.h": "6e4924cf86fdf3224acf0547a1d7e06fccbf1b08b5350ddaba41ae0a0117d9be",
+    "implementation/warlock/native/authority.cpp": "08d13f3b6ca6b67c1bd1ac78e36a4c59c7d4e2468d41fdbcac6a7ab95dddd081",
+    "implementation/warlock/native/navigation-modal.hpp": "f3a1fdabeaa4abdaa3bcd839e0a3b62854a844cd791dd338d8f1a3e5bb488c1e",
+    "implementation/warlock/native/core/SeatManager.cpp": "a829d16bc1651c85f67a288daec87efdc43a37aeb5b9f1c3a8b190169f7d9fba",
+    "implementation/warlock/native/core/ConfigActions.cpp": "4b74a2876bc78efbacbb3993bbeef103a6b086183872151a7972ab98bc4cd956",
+    "implementation/warlock/qa/check-search.py": "df0f9251a519afc32f8d30c9fcfdbf77846201f2faab25b79ef6c6c4482060f6",
+    "implementation/warlock/qa/check-native-authority.py": "d06bca4ee340d0f13ed6373a0e38fa444b234e7282932c1c6f7cd59263274e41",
+    "implementation/warlock/qa/current-search-build.json": "4877915ffe391675706105bb0178fff04f1b31657e2b8c839bad80e2cba44292",
+    "implementation/warlock/qa/current-native-pair.json": "40e95ec7fa6ddb82cb39416bd908aa84e95dfa78785e270199cd4ca3843234c4",
+    "implementation/warlock/qa/workspace-navigation.qnt": "91e24c0cde7b481c8d5cb2710c3be7f5d4f5e63963c88a36d32329050bee126c",
+    "implementation/warlock/README.md": "f33b97f33bdf1d098b50cbb0498640f4291b5d5284cb218af4b00fb3b2d1faa2"
+  },
+  "nativePair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-core-1791495415110842751/Hyprland",
+      "sha256": "81c9ac609c2900f99c1efbe613b83e949aeae3059a5e4403601581fa96191acf"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791596429600393566/elm-window-geometry-authority.so",
+      "sha256": "1f5de87c759902cbbca05dfdbba56090641c994cf3c7276671094248465bcac4"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/bar-keyboard-return-1791598954468402628/elm-host",
+    "sha256": "f2be6fc90a55e3bd46d1de44d9b850ef296f5c607bc39714d3aff406e48eeaa9",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/bar-keyboard-return-1791598954468402628/report.json",
+    "heldBuildSHA256": "ea249f394d9953a1930a782ae365e01a92d43a0894e12cbac9c8dc570d072ae8"
+  },
+  "runnerSHA256": "80defb323ef4bb4502966f49f878250da8935117e9bf8af7b158054c6ee49627",
+  "files": {
+    "native-report.json": {
+      "path": "implementation/warlock/qa/evidence/workspace-restore-current/native-report.json",
+      "sha256": "792a60b24281a14b04926d7d6bf75bb18835b71debb5b8fdcd23a380cf1a6fcd",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-workspace-navigation-1791600162123767694/report.json"
+    },
+    "TaskViewRestore.png": {
+      "path": "implementation/warlock/qa/evidence/workspace-restore-current/TaskViewRestore.png",
+      "sha256": "94a63b2c703755d4839f14cdcf72120cad38d863362920ea82477ff0f9fc8168",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791600162123848289/TaskViewRestore.png"
+    },
+    "TaskbarRestore.png": {
+      "path": "implementation/warlock/qa/evidence/workspace-restore-current/TaskbarRestore.png",
+      "sha256": "7c2f2355714772d145bc0c17ef80557efa398f8b9f3371c2bc8e2da7870edfbe",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791600162123848289/TaskbarRestore.png"
+    },
+    "popup-task-view-before-select.png": {
+      "path": "implementation/warlock/qa/evidence/workspace-restore-current/popup-task-view-before-select.png",
+      "sha256": "7c13a5138169aacf7074dbee92568b74478f8294e9a4c45a66a35b3bf3383b10",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791600162123848289/popup-task-view-before-select.png"
+    },
+    "popup-taskbar-before-select.png": {
+      "path": "implementation/warlock/qa/evidence/workspace-restore-current/popup-taskbar-before-select.png",
+      "sha256": "92c8d261425972f8b75ae1adf70f4cad037c9897aecc33eef5f522356b8d00ef",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791600162123848289/popup-taskbar-before-select.png"
+    }
+  },
+  "scope": "Actual minimized workspace-2 family selected through Task View and taskbar; native receipts, focus/keyboard, pixels and unchanged membership; stale-context refusal; other-output, partial-refusal and AT acceptance remain separate",
+  "observed": {
+    "nativeNavigationJourneyObserved": true,
+    "cleanupPassed": true,
+    "TaskViewAndTaskbarReceiptsPixelsAndRecipients": true,
+    "membershipUnchanged": true,
+    "staleRefusalPreservesVisibleFocus": true
+  },
+  "missingObservations": [
+    "Other-output and partial-navigation-refusal original scenarios are separate.",
+    "Native assistive technology and independent original acceptance remain open."
+  ],
+  "reviewerDisposition": {
+    "name": "root-workspace-restore",
+    "independent": false,
+    "disposition": "Owner observed native pass; acceptance partial."
+  },
+  "fullReleaseAccepted": false
+}
