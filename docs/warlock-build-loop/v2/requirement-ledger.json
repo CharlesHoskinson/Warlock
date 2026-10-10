@@ -7857,9 +7857,54 @@
               },
               "reviewerDisposition": "Root observed scoped component/native results; independent original-scenario acceptance remains open.",
               "observedUTC": "2026-10-10T03:31:23.049731+00:00"
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/preview-application-fallback/manifest.json",
+              "sha256": "eef2f3385276b6c3165f1f448a267323cfa3eb684313ec8af42658437f4d7aca",
+              "scope": "Related source/layout and original compiled/browser observations; full native attempts failed at live pixels then Loading DOM. Separate UX-007 fallback-only run passed Live/Historical family pixels and current unavailable application icon/title pixels/AT names. No full Loading/all-state native acceptance.",
+              "sourceBaseRevision": "e42a162906af9939e88cdce477a09ad8df2901ed",
+              "sourceHashes": {
+                "implementation/warlock/native/preview_icons.cpp": "59fe0133669595212bb69b3f726bc26d46b1fb0dfc593cb27741d745c88db16c",
+                "implementation/warlock/qa/native-preview-fallback.py": "8eb5ce002de1099ad54d9d19717932364d7227508ac69574f59ce3c191d2c945",
+                "implementation/warlock/qa/icon-resolution-test.cpp": "3bfb3796e0e892a36150a57ca2a422a785176603b877cf66dd6ec30e24195e5f",
+                "implementation/warlock/qa/check-search.py": "b740f5ecac4d4b118f1af953ae62d60160bfe774695b529f1653119eb5056058",
+                "implementation/warlock/qa/check-icon-resolution.py": "e2ca5bdceb61dcc4f432087638b008df6455abdbeec8b910904674879bd28a0c",
+                "implementation/warlock/assets/popup-adapter.js": "4bbac62dee388680fb98c838462db2463f81c10fff634d916545f426a6e3dbea",
+                "implementation/warlock/qa/current-search-build.json": "99415401ad8f549493959ede2a88da0eb432b5079b26d8a6c8ae04f0a0a16ee7",
+                "implementation/warlock/assets/elm.js": "4f165d7c52185fdb3bdd371e49534c3213bf7d05dbb17263ef51ae4d7b9c052b",
+                "implementation/warlock/assets/bar.js": "26ef20c9143f87caf7e3d7fc293b248983076f5a7b7a6967cc341d71f7711194",
+                "implementation/warlock/assets/popup.js": "23b0f3e5e223dd5e1d7042ea33dcc1e1f4895997b01ebd7d764a75c15236b56c",
+                "implementation/warlock/README.md": "eb2aa17ed51b0233761a704e131c7f347962022684cdb3fb06ca0e8b1d6b80e2",
+                "implementation/warlock/qa/PreviewStateReplay.elm": "28c4ed7976d8f87e9ebabb7ea583a592f3e2037d0069434777a87a9580b9ae93",
+                "implementation/warlock/assets/shell.css": "3440ca0d1b6da63bec25aa8901e4f91676b09269a85178a1ea3eb1efd3af7cd1",
+                "implementation/warlock/src/PreviewPresenter.elm": "10769b8d9a86e5e5b35f1f292d9837a38b20a0ba636d5baa0ee0c3b8fcdac1cc",
+                "implementation/warlock/src/PreviewLifecycle.elm": "232ebe2e823a4f9b07444f9afaccd98cdc3de9a592ff220d9975a64952dacf24",
+                "implementation/warlock/src/PreviewVisual.elm": "5c285bd8c6fde00b4e1082edfd10e59e281264a4f45b15cea9b5ce0920dd039a",
+                "implementation/warlock/src/NativePreviewRealm.elm": "2a3de2f3eacdf5b00489e5c1f5e5cef058e8f36d74fefecb25a5d3d9ea6024cf",
+                "implementation/warlock/src/NativePreviewPolicy.elm": "99a37f7ea929dcfb746e10d1e7356ba51aa307965bd72165aa708d475e6fec64",
+                "implementation/warlock/src/NativePreviewSource.elm": "9177298d05a999f3a28660df9a76b8be7cafcda523e7cc20fe73bc471b7c37e9",
+                "implementation/warlock/src/NativePreviewVisual.elm": "807da8e07317469ac03c37907ba8c8830b1b3a7fa93fa3a488ecb525b973886d",
+                "implementation/warlock/src/Popup.elm": "cc00f7861217d23ae7cac3dd88f91c042862ff2246e68a4c149427892e5556d3",
+                "implementation/warlock/src/SurfaceRenderer.elm": "e7e8d255cf38c2862a03c951f7caab50fddffa73946ae143dedfe71c1fdbf4c6",
+                "implementation/warlock/native/client-producer.cpp": "b332305b3c4cdcb29f72bd2b01e32f233f496e99a37ca576de269aa056c86de6",
+                "implementation/warlock/native/preview_icons.hpp": "6af2174049d623e824fdcf66ddd3a18d0b48a2c34c7159c1651dc0e4b53d8a32",
+                "implementation/warlock/native/preview_metadata.hpp": "1cf84f1094cd8ccca90fcc5c44bed4182716e256792bb542c771c8bc1ce9ad5e",
+                "implementation/warlock/native/picker-previews.inc": "8e0799d2a56b08e7bee8c64fe098168ac2f1f4f3ab8a4b53e9e1363fa0cdcca3",
+                "implementation/warlock/qa/native-preview-states.py": "0836abf13375d62bc9bc330ce4dba1602a099cf06ccb332fa533ec89bb699609",
+                "implementation/warlock/qa/native-window-feedback.py": "295ba28cf8d9d297b214bd0d6dba19ac3289d861faa953f9fd94b82937473c64",
+                "implementation/warlock/qa/preview-description-browser.mjs": "05d19ad7b2575cde87376160072bc872a34c59bc142500063f7915a62d900492",
+                "implementation/warlock/qa/accessibility-inspector.py": "bc4fe7adba15c29f97137b91848971b65b994c1b8f6282109d7edf1e13bd5c27",
+                "implementation/warlock/qa/accessibility-session.py": "69bc3b33c2b99f0b9d54805e18afcb85ff02314dc9aa4d002f4df409a0e57524"
+              },
+              "reviewerDisposition": {
+                "name": "root-preview-application-fallback",
+                "independent": false,
+                "disposition": "Owner observed production icon/layout fixes and original expired-fallback native oracle; independent acceptance remains open."
+              },
+              "observedUTC": "2026-10-10T17:48:01.860220+00:00"
             }
           ],
-          "missingObservation": "Physical Loading pixels, actual native assistive technology and independent original acceptance remain missing. Simultaneous native raster/export capacity and broader fairness remain open. Global single-owner announcements and frozen notification/DND policy remain separate unfinished work."
+          "missingObservation": "Physical/native Loading and all-state actual native AT passive descriptions, transient paint consistency, broader capacity/fairness and independent original acceptance remain open. Both current full-state failures are retained; UX-007 fallback-only pass is separate."
         }
       ]
     },
@@ -8572,14 +8617,61 @@
       "owner": "Elm presentation lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "ux-007",
           "oracle": "fallback shows correct title and icon with no unrelated pixels",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/preview-application-fallback/manifest.json",
+              "sha256": "eef2f3385276b6c3165f1f448a267323cfa3eb684313ec8af42658437f4d7aca",
+              "scope": "Unique declared StartupWMClass now supplies current application artwork while exact desktop IDs keep priority and ambiguous classes use generic fallback. Fixed target geometry is retained; 48px icons and correct title boxes render in the picker text column. Real GTK/GIO old-failure/current-positive and ambiguity negatives, 18 compiled original preview assertions, 53 browser state/focus/geometry checks and existing metadata model pass. Original UX-007 native retained-frame expiry passes with distinct incarnation-owned icon tokens, exact current titles, full cyan icon pixels, correct Live/Historical family pixels, actual AT names/states, no extra window effect and normal cleanup. Full UI-016 attempts retain live-paint and Loading-observation failures; no Loading acceptance inferred.",
+              "sourceBaseRevision": "e42a162906af9939e88cdce477a09ad8df2901ed",
+              "sourceHashes": {
+                "implementation/warlock/native/preview_icons.cpp": "59fe0133669595212bb69b3f726bc26d46b1fb0dfc593cb27741d745c88db16c",
+                "implementation/warlock/qa/native-preview-fallback.py": "8eb5ce002de1099ad54d9d19717932364d7227508ac69574f59ce3c191d2c945",
+                "implementation/warlock/qa/icon-resolution-test.cpp": "3bfb3796e0e892a36150a57ca2a422a785176603b877cf66dd6ec30e24195e5f",
+                "implementation/warlock/qa/check-search.py": "b740f5ecac4d4b118f1af953ae62d60160bfe774695b529f1653119eb5056058",
+                "implementation/warlock/qa/check-icon-resolution.py": "e2ca5bdceb61dcc4f432087638b008df6455abdbeec8b910904674879bd28a0c",
+                "implementation/warlock/assets/popup-adapter.js": "4bbac62dee388680fb98c838462db2463f81c10fff634d916545f426a6e3dbea",
+                "implementation/warlock/qa/current-search-build.json": "99415401ad8f549493959ede2a88da0eb432b5079b26d8a6c8ae04f0a0a16ee7",
+                "implementation/warlock/assets/elm.js": "4f165d7c52185fdb3bdd371e49534c3213bf7d05dbb17263ef51ae4d7b9c052b",
+                "implementation/warlock/assets/bar.js": "26ef20c9143f87caf7e3d7fc293b248983076f5a7b7a6967cc341d71f7711194",
+                "implementation/warlock/assets/popup.js": "23b0f3e5e223dd5e1d7042ea33dcc1e1f4895997b01ebd7d764a75c15236b56c",
+                "implementation/warlock/README.md": "eb2aa17ed51b0233761a704e131c7f347962022684cdb3fb06ca0e8b1d6b80e2",
+                "implementation/warlock/qa/PreviewStateReplay.elm": "28c4ed7976d8f87e9ebabb7ea583a592f3e2037d0069434777a87a9580b9ae93",
+                "implementation/warlock/assets/shell.css": "3440ca0d1b6da63bec25aa8901e4f91676b09269a85178a1ea3eb1efd3af7cd1",
+                "implementation/warlock/src/PreviewPresenter.elm": "10769b8d9a86e5e5b35f1f292d9837a38b20a0ba636d5baa0ee0c3b8fcdac1cc",
+                "implementation/warlock/src/PreviewLifecycle.elm": "232ebe2e823a4f9b07444f9afaccd98cdc3de9a592ff220d9975a64952dacf24",
+                "implementation/warlock/src/PreviewVisual.elm": "5c285bd8c6fde00b4e1082edfd10e59e281264a4f45b15cea9b5ce0920dd039a",
+                "implementation/warlock/src/NativePreviewRealm.elm": "2a3de2f3eacdf5b00489e5c1f5e5cef058e8f36d74fefecb25a5d3d9ea6024cf",
+                "implementation/warlock/src/NativePreviewPolicy.elm": "99a37f7ea929dcfb746e10d1e7356ba51aa307965bd72165aa708d475e6fec64",
+                "implementation/warlock/src/NativePreviewSource.elm": "9177298d05a999f3a28660df9a76b8be7cafcda523e7cc20fe73bc471b7c37e9",
+                "implementation/warlock/src/NativePreviewVisual.elm": "807da8e07317469ac03c37907ba8c8830b1b3a7fa93fa3a488ecb525b973886d",
+                "implementation/warlock/src/Popup.elm": "cc00f7861217d23ae7cac3dd88f91c042862ff2246e68a4c149427892e5556d3",
+                "implementation/warlock/src/SurfaceRenderer.elm": "e7e8d255cf38c2862a03c951f7caab50fddffa73946ae143dedfe71c1fdbf4c6",
+                "implementation/warlock/native/client-producer.cpp": "b332305b3c4cdcb29f72bd2b01e32f233f496e99a37ca576de269aa056c86de6",
+                "implementation/warlock/native/preview_icons.hpp": "6af2174049d623e824fdcf66ddd3a18d0b48a2c34c7159c1651dc0e4b53d8a32",
+                "implementation/warlock/native/preview_metadata.hpp": "1cf84f1094cd8ccca90fcc5c44bed4182716e256792bb542c771c8bc1ce9ad5e",
+                "implementation/warlock/native/picker-previews.inc": "8e0799d2a56b08e7bee8c64fe098168ac2f1f4f3ab8a4b53e9e1363fa0cdcca3",
+                "implementation/warlock/qa/native-preview-states.py": "0836abf13375d62bc9bc330ce4dba1602a099cf06ccb332fa533ec89bb699609",
+                "implementation/warlock/qa/native-window-feedback.py": "295ba28cf8d9d297b214bd0d6dba19ac3289d861faa953f9fd94b82937473c64",
+                "implementation/warlock/qa/preview-description-browser.mjs": "05d19ad7b2575cde87376160072bc872a34c59bc142500063f7915a62d900492",
+                "implementation/warlock/qa/accessibility-inspector.py": "bc4fe7adba15c29f97137b91848971b65b994c1b8f6282109d7edf1e13bd5c27",
+                "implementation/warlock/qa/accessibility-session.py": "69bc3b33c2b99f0b9d54805e18afcb85ff02314dc9aa4d002f4df409a0e57524"
+              },
+              "reviewerDisposition": {
+                "name": "root-preview-application-fallback",
+                "independent": false,
+                "disposition": "Owner observed production icon/layout fixes and original expired-fallback native oracle; independent acceptance remains open."
+              },
+              "observedUTC": "2026-10-10T17:48:01.860220+00:00"
+            }
+          ],
+          "missingObservation": "Independent acceptance against the original Elm replay and isolated native expiry oracle. Current class-to-desktop icon/title/pixels/AT-name fixture passes; broader icon themes and native AT passive descriptions remain separate.",
+          "reviewerDisposition": "Owner observed source fixes and original expired-preview fixture; independent original acceptance remains pending."
         }
       ]
     },
@@ -11923,5 +12015,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-10T17:26:45.510682+00:00"
+  "updatedUTC": "2026-10-10T17:48:01.860220+00:00"
 }

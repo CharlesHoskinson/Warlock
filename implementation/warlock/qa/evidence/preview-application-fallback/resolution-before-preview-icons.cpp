@@ -45,24 +45,6 @@ std::optional<Asset> resolveApplication(const std::string& application) {
     if(valid && application!="." && application!="..") {
         auto id=application.ends_with(".desktop")?application:application+".desktop";
         GDesktopAppInfo* app=g_desktop_app_info_new(id.c_str());
-        // Native metadata reports the window class, which need not be the
-        // desktop filename. A declared unique association can supply its icon;
-        // ambiguous classes must never choose another application's artwork.
-        if(!app) {
-            GList* installed=g_app_info_get_all();
-            unsigned matches=0;
-            for(GList* row=installed;row;row=row->next) {
-                if(!G_IS_DESKTOP_APP_INFO(row->data))continue;
-                auto candidate=G_DESKTOP_APP_INFO(row->data);
-                const char* windowClass=g_desktop_app_info_get_startup_wm_class(candidate);
-                if(windowClass && application==windowClass) {
-                    ++matches;
-                    if(matches==1)app=G_DESKTOP_APP_INFO(g_object_ref(candidate));
-                    else {g_clear_object(&app);break;}
-                }
-            }
-            g_list_free_full(installed,g_object_unref);
-        }
         if(app) {if(auto actual=g_app_info_get_icon(G_APP_INFO(app))){icon=G_ICON(g_object_ref(actual));kind="application";}g_object_unref(app);}
     }
     if(!icon)icon=g_themed_icon_new("application-x-executable");

@@ -1,92 +1,97 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T17:26:45.510682+00:00",
+  "updatedUTC": "2026-10-10T17:48:01.860220+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "launcher-unavailable",
+    "id": "preview-application-fallback",
     "requirements": [
-      "ELM-UI-005"
+      "ELM-UX-007",
+      "ELM-UI-016"
     ],
     "scenarios": [
-      "search-unavailable"
+      "ux-007",
+      "preview-states"
     ],
     "paths": [
-      "implementation/warlock/qa/native-launcher-unavailable.py",
-      "implementation/warlock/qa/launcher-retry-at-action.py",
-      "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/src/AdapterNotice.elm",
-      "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/README.md",
-      "implementation/warlock/qa/AdapterAnnouncementReplay.elm",
+      "implementation/warlock/native/preview_icons.cpp",
+      "implementation/warlock/qa/native-preview-fallback.py",
+      "implementation/warlock/qa/icon-resolution-test.cpp",
       "implementation/warlock/qa/check-search.py",
+      "implementation/warlock/qa/check-icon-resolution.py",
+      "implementation/warlock/assets/popup-adapter.js",
       "implementation/warlock/qa/current-search-build.json",
       "implementation/warlock/assets/elm.js",
       "implementation/warlock/assets/bar.js",
       "implementation/warlock/assets/popup.js",
-      "implementation/warlock/qa/AnnouncementReplay.elm",
-      "implementation/warlock/qa/native-launcher-search-race.py"
+      "implementation/warlock/README.md",
+      "implementation/warlock/qa/PreviewStateReplay.elm",
+      "implementation/warlock/assets/shell.css"
     ],
-    "before": "Original catalog-unavailable scenario has no adjudicated current native keyboard/AT recovery evidence.",
-    "after": "A genuine catalog snapshot failure preserves the query and exposes accessible unavailable status with physical keyboard and actual AT retry; restoring the provider recovers current results without any automatic launch.",
+    "before": "Application icon lookup uses the native window class as a desktop filename and misses declared StartupWMClass associations. Original expired-preview application icon/title native oracle remains unadjudicated.",
+    "after": "An expired retained preview shows the correct application icon for a unique declared StartupWMClass association and correct incarnation title; ambiguity falls back to the generic icon and no other incarnation frame is substituted.",
     "verification": [
-      "Use private owned desktop metadata exceeding the existing catalog name bound to trigger a genuine null application-catalog reply through unchanged authority. Physical Apps/query/Refresh, actual current AT/Orca status and focused retry, control pixels, keyboard or real AT retry after metadata repair, exact current receipts and zero launch/window effects. Preserve original waits/ABI/single authority/Unknown. Model any demonstrated behavior defect first with quint-llm-kit."
+      "Use quint-llm-kit existing metadata/privacy model without weakening it; actual GTK/GIO resolution fixture covers exact id priority, unique class, ambiguous class, unavailable icon and invalid input. Compile current host/views. Protected ordinary picker native journey with private desktop entry/icon and actual window class, own preview then historical expiry, pixel checks on current icon/title and no preview substitution; preserve original deadlines, ABI, native ownership and main desktop. Actual AT observations where feasible remain separately scoped."
     ],
-    "owner": "root-launcher-unavailable",
-    "participantRecord": ".warlock-contributor/launcher-unavailable.json",
+    "owner": "root-preview-application-fallback",
+    "participantRecord": ".warlock-contributor/preview-application-fallback.json",
     "disposition": "partial",
     "evidence": {
-      "path": "implementation/warlock/qa/evidence/launcher-unavailable/manifest.json",
-      "sha256": "7c68a5b036f59a35a7fe835f41536dfb28f5c61ab08458d8c8e6e4b4c3a514ec",
-      "scope": "Catalog failures now emit one existing typed request-correlated polite announcement and leave focus intact. A distinct typed Refresh action shares the catalog authority but preserves current focus through both request and receipt; Apps opening retains search focus. Native keyboard and actual AT-SPI retry preserve the files query and recover current matching results after a genuine metadata-bound null catalog. Exact duplicated failed receipts are silent after their first announcement; explicit new failure reads get fresh identities. Unavailable-field Enter, recovery and Escape issue zero launch/window effects. Real AT/Orca status/focus, current control pixels and normal cleanup pass. Current delayed-catalog physical Enter regression passes; existing executable model, 34 typed adapter assertions and announcement/IME browser checks pass.",
-      "sourceBaseRevision": "dfbdfeea6c1162e488277981221415d879b19bfb",
+      "path": "implementation/warlock/qa/evidence/preview-application-fallback/manifest.json",
+      "sha256": "eef2f3385276b6c3165f1f448a267323cfa3eb684313ec8af42658437f4d7aca",
+      "scope": "Unique declared StartupWMClass now supplies current application artwork while exact desktop IDs keep priority and ambiguous classes use generic fallback. Fixed target geometry is retained; 48px icons and correct title boxes render in the picker text column. Real GTK/GIO old-failure/current-positive and ambiguity negatives, 18 compiled original preview assertions, 53 browser state/focus/geometry checks and existing metadata model pass. Original UX-007 native retained-frame expiry passes with distinct incarnation-owned icon tokens, exact current titles, full cyan icon pixels, correct Live/Historical family pixels, actual AT names/states, no extra window effect and normal cleanup. Full UI-016 attempts retain live-paint and Loading-observation failures; no Loading acceptance inferred.",
+      "sourceBaseRevision": "e42a162906af9939e88cdce477a09ad8df2901ed",
       "sourceHashes": {
-        "implementation/warlock/qa/native-launcher-unavailable.py": "e0c898f0c33df569d1a9e148eacac1ec6ee57018a4d41898615679a1221d2652",
-        "implementation/warlock/qa/launcher-retry-at-action.py": "8697111c48596ceb6d1fcf304fe956a3270907d8d502f77ea02632705e35e625",
-        "implementation/warlock/src/Desktop.elm": "1d37a3848f4b4bb89d83f6eccab92c3a945accc8aced89dd675ea41c2a3ea9e3",
-        "implementation/warlock/src/AdapterNotice.elm": "32c4c13e599e843aa6da4a2302cb44da233226eb79d2561f551d0640fe9dd409",
-        "implementation/warlock/src/Surface.elm": "2e0678f7ce124cb1e07866dc7ca4d7a9e8c4fd07508fcd8ca9644ce751d12a92",
-        "implementation/warlock/README.md": "8019603360d3668d217d37a944653938aba0bb3951b471389fffb5ec0c763acb",
-        "implementation/warlock/qa/AdapterAnnouncementReplay.elm": "71baa009e78ab31f74b8d9371eea57410393d0ed68f09307f1ec5333ea9b7b1b",
-        "implementation/warlock/qa/check-search.py": "0f90b049311309cb758a987175b43c702923315076d55573b7a7ee229c3ebe0a",
-        "implementation/warlock/qa/current-search-build.json": "4e7d4bc9cf60f491cdf35ae94e19948e18cdc3778bc308e94d24fafeb6700cad",
+        "implementation/warlock/native/preview_icons.cpp": "59fe0133669595212bb69b3f726bc26d46b1fb0dfc593cb27741d745c88db16c",
+        "implementation/warlock/qa/native-preview-fallback.py": "8eb5ce002de1099ad54d9d19717932364d7227508ac69574f59ce3c191d2c945",
+        "implementation/warlock/qa/icon-resolution-test.cpp": "3bfb3796e0e892a36150a57ca2a422a785176603b877cf66dd6ec30e24195e5f",
+        "implementation/warlock/qa/check-search.py": "b740f5ecac4d4b118f1af953ae62d60160bfe774695b529f1653119eb5056058",
+        "implementation/warlock/qa/check-icon-resolution.py": "e2ca5bdceb61dcc4f432087638b008df6455abdbeec8b910904674879bd28a0c",
+        "implementation/warlock/assets/popup-adapter.js": "4bbac62dee388680fb98c838462db2463f81c10fff634d916545f426a6e3dbea",
+        "implementation/warlock/qa/current-search-build.json": "99415401ad8f549493959ede2a88da0eb432b5079b26d8a6c8ae04f0a0a16ee7",
         "implementation/warlock/assets/elm.js": "4f165d7c52185fdb3bdd371e49534c3213bf7d05dbb17263ef51ae4d7b9c052b",
         "implementation/warlock/assets/bar.js": "26ef20c9143f87caf7e3d7fc293b248983076f5a7b7a6967cc341d71f7711194",
         "implementation/warlock/assets/popup.js": "23b0f3e5e223dd5e1d7042ea33dcc1e1f4895997b01ebd7d764a75c15236b56c",
-        "implementation/warlock/qa/AnnouncementReplay.elm": "2c79c5dc5c61dfa1e55ed2318621958d0cd282bee8195182f6878d434aa29f72",
-        "implementation/warlock/qa/native-launcher-search-race.py": "49d2edbbad146b4087115f230f65d56a1d92a1432cd0cd2c6e68cf6698472c46",
-        "implementation/warlock/src/OutcomeAnnouncements.elm": "158b22f574983da656838c4388c93cca1c7d9b044aaae83ee21153eae29b7586",
-        "implementation/warlock/src/SurfaceController.elm": "399283022f7dd4dc345f313c32655d74cca7dd70cd3e4b0811310cb09711fcd1",
-        "implementation/warlock/src/OutputController.elm": "5d42d7a05b3c08438602b7753c4933011d75fb025efaddf4465effb246dd91a5",
+        "implementation/warlock/README.md": "eb2aa17ed51b0233761a704e131c7f347962022684cdb3fb06ca0e8b1d6b80e2",
+        "implementation/warlock/qa/PreviewStateReplay.elm": "28c4ed7976d8f87e9ebabb7ea583a592f3e2037d0069434777a87a9580b9ae93",
+        "implementation/warlock/assets/shell.css": "3440ca0d1b6da63bec25aa8901e4f91676b09269a85178a1ea3eb1efd3af7cd1",
+        "implementation/warlock/src/PreviewPresenter.elm": "10769b8d9a86e5e5b35f1f292d9837a38b20a0ba636d5baa0ee0c3b8fcdac1cc",
+        "implementation/warlock/src/PreviewLifecycle.elm": "232ebe2e823a4f9b07444f9afaccd98cdc3de9a592ff220d9975a64952dacf24",
+        "implementation/warlock/src/PreviewVisual.elm": "5c285bd8c6fde00b4e1082edfd10e59e281264a4f45b15cea9b5ce0920dd039a",
+        "implementation/warlock/src/NativePreviewRealm.elm": "2a3de2f3eacdf5b00489e5c1f5e5cef058e8f36d74fefecb25a5d3d9ea6024cf",
+        "implementation/warlock/src/NativePreviewPolicy.elm": "99a37f7ea929dcfb746e10d1e7356ba51aa307965bd72165aa708d475e6fec64",
+        "implementation/warlock/src/NativePreviewSource.elm": "9177298d05a999f3a28660df9a76b8be7cafcda523e7cc20fe73bc471b7c37e9",
+        "implementation/warlock/src/NativePreviewVisual.elm": "807da8e07317469ac03c37907ba8c8830b1b3a7fa93fa3a488ecb525b973886d",
         "implementation/warlock/src/Popup.elm": "cc00f7861217d23ae7cac3dd88f91c042862ff2246e68a4c149427892e5556d3",
-        "implementation/warlock/src/Presentation.elm": "8c3463230d93b768f48784a37ae9e4da7a225defa6f209b3100258af5196c0e9",
-        "implementation/warlock/assets/popup-adapter.js": "9c566e99694e1d8d5c6ed38d94f1c0449beaf7b4a57aa14f13b46402b0b1b0dc",
-        "implementation/warlock/adapter/catalog_authority.py": "ad20204afd3b203eb956918300c8da4cb4765b3c5ad86e701b0257a54b8fb9cc",
-        "implementation/warlock/adapter/catalog_transport.py": "43bd1cd1059b87ce4d349d72e4b2a917ac1bdc3dacda2f60563fa621e05a4b84",
-        "implementation/warlock/adapter/daemon.py": "819b945c7d1c92d6360045db297715ac9ff7ac72024741b8ca3238fc24d08d67",
+        "implementation/warlock/src/SurfaceRenderer.elm": "e7e8d255cf38c2862a03c951f7caab50fddffa73946ae143dedfe71c1fdbf4c6",
+        "implementation/warlock/native/client-producer.cpp": "b332305b3c4cdcb29f72bd2b01e32f233f496e99a37ca576de269aa056c86de6",
+        "implementation/warlock/native/preview_icons.hpp": "6af2174049d623e824fdcf66ddd3a18d0b48a2c34c7159c1651dc0e4b53d8a32",
+        "implementation/warlock/native/preview_metadata.hpp": "1cf84f1094cd8ccca90fcc5c44bed4182716e256792bb542c771c8bc1ce9ad5e",
+        "implementation/warlock/native/picker-previews.inc": "8e0799d2a56b08e7bee8c64fe098168ac2f1f4f3ab8a4b53e9e1363fa0cdcca3",
+        "implementation/warlock/qa/native-preview-states.py": "0836abf13375d62bc9bc330ce4dba1602a099cf06ccb332fa533ec89bb699609",
         "implementation/warlock/qa/native-window-feedback.py": "295ba28cf8d9d297b214bd0d6dba19ac3289d861faa953f9fd94b82937473c64",
-        "implementation/warlock/qa/adapter-announcements.qnt": "de140d10af4ea7ac39d3dfe7a5ccfc431aa7e1a7aa1de954ef93499d752823e5",
-        "implementation/warlock/qa/adapter-announcements_test.qnt": "55d8c54d97c547c9f6463c59d3f0072379f9ff5343308b2d70540124d143e9a5",
-        "implementation/warlock/qa/check-adapter-announcements.py": "d2aafd025455711f40b3951c7867b2fb618c5e7c7cd23fd8cbf5a390a475f7f6"
+        "implementation/warlock/qa/preview-description-browser.mjs": "05d19ad7b2575cde87376160072bc872a34c59bc142500063f7915a62d900492",
+        "implementation/warlock/qa/accessibility-inspector.py": "bc4fe7adba15c29f97137b91848971b65b994c1b8f6282109d7edf1e13bd5c27",
+        "implementation/warlock/qa/accessibility-session.py": "69bc3b33c2b99f0b9d54805e18afcb85ff02314dc9aa4d002f4df409a0e57524"
       },
       "reviewerDisposition": {
-        "name": "root-launcher-unavailable",
+        "name": "root-preview-application-fallback",
         "independent": false,
-        "disposition": "Owner observed production fix and current keyboard/AT failure/retry; independent original acceptance remains pending."
+        "disposition": "Owner observed production icon/layout fixes and original expired-fallback native oracle; independent acceptance remains open."
       },
-      "observedUTC": "2026-10-10T17:26:45.510682+00:00"
+      "observedUTC": "2026-10-10T17:48:01.860220+00:00"
     },
-    "observed": "Catalog failures now emit one existing typed request-correlated polite announcement and leave focus intact. A distinct typed Refresh action shares the catalog authority but preserves current focus through both request and receipt; Apps opening retains search focus. Native keyboard and actual AT-SPI retry preserve the files query and recover current matching results after a genuine metadata-bound null catalog. Exact duplicated failed receipts are silent after their first announcement; explicit new failure reads get fresh identities. Unavailable-field Enter, recovery and Escape issue zero launch/window effects. Real AT/Orca status/focus, current control pixels and normal cleanup pass. Current delayed-catalog physical Enter regression passes; existing executable model, 34 typed adapter assertions and announcement/IME browser checks pass.",
+    "observed": "Unique declared StartupWMClass now supplies current application artwork while exact desktop IDs keep priority and ambiguous classes use generic fallback. Fixed target geometry is retained; 48px icons and correct title boxes render in the picker text column. Real GTK/GIO old-failure/current-positive and ambiguity negatives, 18 compiled original preview assertions, 53 browser state/focus/geometry checks and existing metadata model pass. Original UX-007 native retained-frame expiry passes with distinct incarnation-owned icon tokens, exact current titles, full cyan icon pixels, correct Live/Historical family pixels, actual AT names/states, no extra window effect and normal cleanup. Full UI-016 attempts retain live-paint and Loading-observation failures; no Loading acceptance inferred.",
     "missingObservations": [
-      "Independent original-scenario review against frozen interaction/product policy and exact source/core/plugin/compiler remains open.",
-      "Current failure is a genuine catalog name-bound failure during an existing query, with exact duplicate receipts and focused physical Enter/AT-SPI retry. Other provider failures, initial-failure entry, output/language/AT breadth, audible speech/braille and spontaneous service loss remain separate.",
-      "Original native IME candidate popup remains failed at its retained unchanged deadline; hardware/resource/journey budgets, reproducible package and reversible deployment/rollback remain release obligations."
+      "Independent acceptance of UX-007 against its original replay/native oracle remains pending.",
+      "UI-016 full native attempts remain failed; current fallback-only journey does not accept physical Loading, every native AT passive description, transient paint consistency or broader capacity/fairness.",
+      "Native IME candidate failure, original resource/hardware/journey budgets, reproducible package and reversible deployment/rollback remain release obligations."
     ],
-    "nextSourceWork": "Original ELM-UI-016/preview-states and ELM-UX-007/ux-007: implement visible authorized preview states and correct title/icon fallback. Inspect current native grant/custody/reveal conditions first; retain controlled opacity-0 until actual ownership and presentation are proved. Use quint-llm-kit against existing preview models before changing behavior, then the original native/AT frame oracle. Do not expand this successful launcher slice into additional invented schedules. Native IME remains a separate release gate."
+    "nextSourceWork": "Continue the remaining original switcher/Task View/workspace and snap product scope. Select one original scenario from its current candidate source and exact ledger oracle, implement any observed missing behavior using quint-llm-kit, and run its decisive native journey. Preserve the current full UI-016 live-paint/Loading failures as separate integration gates; do not turn the completed expired-preview fallback into more qualification variants. Native IME candidate and complete release obligations remain open."
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -2220,89 +2225,170 @@
         "Physical hardware/output/IME breadth, resource/journey budgets, reproducible package and reversible deployment/rollback remain release obligations."
       ],
       "nextSourceWork": "Original ELM-UI-005/search-race: hold a genuine older catalog refresh while the user edits the query, release it, and exercise current selection through actual keyboard/AT with native pixels. Require current query/catalog results, no replacement/stale dispatch and no automatic launch. Reuse existing immutable Elm search/selection/launch authority and the fixed local field route; model any demonstrated behavioral defect first with quint-llm-kit. Independent original acceptance remains separate."
+    },
+    {
+      "id": "launcher-search-race",
+      "requirements": [
+        "ELM-UI-005"
+      ],
+      "scenarios": [
+        "search-race"
+      ],
+      "paths": [
+        "implementation/warlock/qa/native-launcher-search-race.py",
+        "implementation/warlock/src/Desktop.elm",
+        "implementation/warlock/src/Popup.elm",
+        "implementation/warlock/src/Presentation.elm",
+        "implementation/warlock/src/Catalog.elm",
+        "implementation/warlock/src/Launch.elm",
+        "implementation/warlock/adapter/catalog_authority.py",
+        "implementation/warlock/README.md",
+        "implementation/warlock/qa/launcher-at-action.py",
+        "implementation/warlock/assets/popup-adapter.js",
+        "implementation/warlock/qa/query-delivery.qnt",
+        "implementation/warlock/qa/query-delivery_test.qnt",
+        "implementation/warlock/qa/check-query-delivery.py",
+        "implementation/warlock/qa/query-delivery.js",
+        "implementation/warlock/qa/current-search-build.json",
+        "implementation/warlock/qa/check-search.py"
+      ],
+      "before": "Search-race has typed and stale-publication evidence but lacks the original delayed old catalog refresh with changed query on the current native/AT tuple.",
+      "after": "A user changes the query while a real catalog refresh is held; a newer refresh/selection stays authoritative after the exact old receipt is released. Only the current query/catalog result dispatches through physical Enter or actual AT action.",
+      "verification": [
+        "Use the existing native launcher/private AT fixture and unchanged catalog authority. Hold one genuine application-catalog frame before the unchanged bounded writer without blocking other backend reads. Type a different query; deliver a fresh catalog request/generation, then the exact old frame. Observe matching current field/result names, focus, actual control pixels and AT/Orca. Enter during loading must never launch; final physical Enter or real AT action issues exactly one current-generation GIO request and recorded current argv. No root/native authority, deadline, Unknown/no-replay or ABI substitutions. Model a demonstrated behavior defect with quint-llm-kit first."
+      ],
+      "owner": "root-launcher-search-race",
+      "participantRecord": ".warlock-contributor/launcher-search-race.json",
+      "disposition": "partial",
+      "evidence": {
+        "path": "implementation/warlock/qa/evidence/launcher-search-race/manifest.json",
+        "sha256": "59367652cf533b7052a9547a8bfa85eaca5727b966298090b2e9de37738f9694",
+        "scope": "Launcher query delivery now waits for the unchanged native presentation-applied admission. A genuine old request/catalog receipt is held across real files-to-editor typing and a newer generation-2 refresh; the exact old generation-1 receipt cannot replace query/results/focused selection. Physical Enter and actual AT-SPI press each launch one current identity/generation through GIO with CURRENT_EDITOR argv. Actual result/refresh interiors paint; current host AT-SPI and Orca focus agree before/after old reply. Compiled/local-field/browser IME and model regressions pass; both search-race campaigns clean up normally.",
+        "sourceBaseRevision": "87a3bd12b7b83e51953da3d471c0aa95fce27198",
+        "sourceHashes": {
+          "implementation/warlock/qa/native-launcher-search-race.py": "347ca394def22935a2a6207024b4e7efb8eb34168297a571c27d6370e46b4b26",
+          "implementation/warlock/src/Desktop.elm": "176ddaf19e5dfb6c2362ac9c9c46d296155cd38e916e4cd28938a591648ed711",
+          "implementation/warlock/src/Popup.elm": "cc00f7861217d23ae7cac3dd88f91c042862ff2246e68a4c149427892e5556d3",
+          "implementation/warlock/src/Presentation.elm": "8c3463230d93b768f48784a37ae9e4da7a225defa6f209b3100258af5196c0e9",
+          "implementation/warlock/src/Catalog.elm": "3eadb76212a66986ef2d76292a2f33595f7cd7d47dc90c8982435195f9ea3f02",
+          "implementation/warlock/src/Launch.elm": "dcd7260248ccb0b5bc6001c49319dd51af8c2fae98888919a308ac025ed273a2",
+          "implementation/warlock/adapter/catalog_authority.py": "ad20204afd3b203eb956918300c8da4cb4765b3c5ad86e701b0257a54b8fb9cc",
+          "implementation/warlock/README.md": "9c84c18cdfdb52d378a31b21e4aa4df01eae47888ecf2b0fc4b7cd784b1115ca",
+          "implementation/warlock/qa/launcher-at-action.py": "660ed0e324cd1ae5e104a045f8a96c72e28d680a15667d34d64698e47bebf1d6",
+          "implementation/warlock/assets/popup-adapter.js": "9c566e99694e1d8d5c6ed38d94f1c0449beaf7b4a57aa14f13b46402b0b1b0dc",
+          "implementation/warlock/qa/query-delivery.qnt": "0561bb02949b3162179e46571b4abb5e4c31fb9dae3d6b800a80ab48185ccf0b",
+          "implementation/warlock/qa/query-delivery_test.qnt": "b5c14092ffd1673cb81d4063af63489a75a187280809ddc1711bf920925bae8f",
+          "implementation/warlock/qa/check-query-delivery.py": "b0db710b92d9eeaebcc71808522b324cfea999c6ebfe36504552c27f69d0cacb",
+          "implementation/warlock/qa/query-delivery.js": "d220250bce2a1a981b2f2c37df4caf02a1f4672c1ea02ea6b4747ace06b81ae2",
+          "implementation/warlock/qa/current-search-build.json": "41ebeef11168c78c0bcead2ffe2c384d87122bad410c0e95e6d7a64c79119d1b",
+          "implementation/warlock/qa/check-search.py": "6605aaa383ef26a7946ff8cf2a92d9726d629ace6f862008b5e375124ab48b3d",
+          "implementation/warlock/src/Surface.elm": "a9f8000a7ce0a64174ee10a4fe9a9a8b491443a62e02d47ca11ee3dac2adabdd",
+          "implementation/warlock/src/SurfaceRenderer.elm": "e7e8d255cf38c2862a03c951f7caab50fddffa73946ae143dedfe71c1fdbf4c6",
+          "implementation/warlock/src/SurfaceController.elm": "399283022f7dd4dc345f313c32655d74cca7dd70cd3e4b0811310cb09711fcd1",
+          "implementation/warlock/src/OutputController.elm": "5d42d7a05b3c08438602b7753c4933011d75fb025efaddf4465effb246dd91a5",
+          "implementation/warlock/adapter/daemon.py": "819b945c7d1c92d6360045db297715ac9ff7ac72024741b8ca3238fc24d08d67",
+          "implementation/warlock/adapter/catalog_transport.py": "43bd1cd1059b87ce4d349d72e4b2a917ac1bdc3dacda2f60563fa621e05a4b84",
+          "implementation/warlock/qa/native-window-feedback.py": "295ba28cf8d9d297b214bd0d6dba19ac3289d861faa953f9fd94b82937473c64",
+          "implementation/warlock/native/shared-host.c": "63bf35e5f4ea09a4046badd534a60c609becf92600fb767b48aa26574df9b906",
+          "implementation/warlock/native/surface.h": "d7fbd6a79d9aefb232a6f86ce2e3db806d2fd5b913eb90ea5a8cddc0807f4c43",
+          "implementation/warlock/assets/elm.js": "d376062010e031d016d780f6d3b65de1d4106efb6392f82d8ce82e9d522a703e",
+          "implementation/warlock/assets/bar.js": "26ef20c9143f87caf7e3d7fc293b248983076f5a7b7a6967cc341d71f7711194",
+          "implementation/warlock/assets/popup.js": "23b0f3e5e223dd5e1d7042ea33dcc1e1f4895997b01ebd7d764a75c15236b56c"
+        },
+        "reviewerDisposition": {
+          "name": "root-launcher-search-race",
+          "independent": false,
+          "disposition": "Owner observed exact native keyboard/AT schedule; independent original acceptance remains pending."
+        }
+      },
+      "observed": "Launcher query delivery now waits for the unchanged native presentation-applied admission. A genuine old request/catalog receipt is held across real files-to-editor typing and a newer generation-2 refresh; the exact old generation-1 receipt cannot replace query/results/focused selection. Physical Enter and actual AT-SPI press each launch one current identity/generation through GIO with CURRENT_EDITOR argv. Actual result/refresh interiors paint; current host AT-SPI and Orca focus agree before/after old reply. Compiled/local-field/browser IME and model regressions pass; both search-race campaigns clean up normally.",
+      "missingObservations": [
+        "Independent original-scenario review against the frozen matching/ranking and interaction oracle and exact source/core/plugin/compiler remains open.",
+        "This covers a delayed obsolete request after a newer request/generation and exact current keyboard/AT selection. Broader catalogs/languages/AT modes, audible speech/braille and other original scenarios remain separate.",
+        "Native IME direct preedit and commit/caret pass; candidate popup is unobserved at the unchanged deadline, matching a retained prior failure. Candidate commit/cancel and hardware/resource/journey/package/deployment/rollback remain release obligations."
+      ],
+      "nextSourceWork": "Original ELM-UI-005/search-unavailable: genuine provider failure with retained query, accessible unavailable status and real keyboard Refresh recovery without automatic launch. Reuse the current single Elm/catalog authority and original native/AT fixture, fixing any observed production defect with quint-llm-kit first. Native IME candidate failure remains a separate integration gate; do not expand this successful search-race into more invented schedules."
     }
   ],
   "lastSlice": {
-    "id": "launcher-search-race",
+    "id": "launcher-unavailable",
     "requirements": [
       "ELM-UI-005"
     ],
     "scenarios": [
-      "search-race"
+      "search-unavailable"
     ],
     "paths": [
-      "implementation/warlock/qa/native-launcher-search-race.py",
+      "implementation/warlock/qa/native-launcher-unavailable.py",
+      "implementation/warlock/qa/launcher-retry-at-action.py",
       "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/src/Popup.elm",
-      "implementation/warlock/src/Presentation.elm",
-      "implementation/warlock/src/Catalog.elm",
-      "implementation/warlock/src/Launch.elm",
-      "implementation/warlock/adapter/catalog_authority.py",
+      "implementation/warlock/src/AdapterNotice.elm",
+      "implementation/warlock/src/Surface.elm",
       "implementation/warlock/README.md",
-      "implementation/warlock/qa/launcher-at-action.py",
-      "implementation/warlock/assets/popup-adapter.js",
-      "implementation/warlock/qa/query-delivery.qnt",
-      "implementation/warlock/qa/query-delivery_test.qnt",
-      "implementation/warlock/qa/check-query-delivery.py",
-      "implementation/warlock/qa/query-delivery.js",
+      "implementation/warlock/qa/AdapterAnnouncementReplay.elm",
+      "implementation/warlock/qa/check-search.py",
       "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/qa/check-search.py"
+      "implementation/warlock/assets/elm.js",
+      "implementation/warlock/assets/bar.js",
+      "implementation/warlock/assets/popup.js",
+      "implementation/warlock/qa/AnnouncementReplay.elm",
+      "implementation/warlock/qa/native-launcher-search-race.py"
     ],
-    "before": "Search-race has typed and stale-publication evidence but lacks the original delayed old catalog refresh with changed query on the current native/AT tuple.",
-    "after": "A user changes the query while a real catalog refresh is held; a newer refresh/selection stays authoritative after the exact old receipt is released. Only the current query/catalog result dispatches through physical Enter or actual AT action.",
+    "before": "Original catalog-unavailable scenario has no adjudicated current native keyboard/AT recovery evidence.",
+    "after": "A genuine catalog snapshot failure preserves the query and exposes accessible unavailable status with physical keyboard and actual AT retry; restoring the provider recovers current results without any automatic launch.",
     "verification": [
-      "Use the existing native launcher/private AT fixture and unchanged catalog authority. Hold one genuine application-catalog frame before the unchanged bounded writer without blocking other backend reads. Type a different query; deliver a fresh catalog request/generation, then the exact old frame. Observe matching current field/result names, focus, actual control pixels and AT/Orca. Enter during loading must never launch; final physical Enter or real AT action issues exactly one current-generation GIO request and recorded current argv. No root/native authority, deadline, Unknown/no-replay or ABI substitutions. Model a demonstrated behavior defect with quint-llm-kit first."
+      "Use private owned desktop metadata exceeding the existing catalog name bound to trigger a genuine null application-catalog reply through unchanged authority. Physical Apps/query/Refresh, actual current AT/Orca status and focused retry, control pixels, keyboard or real AT retry after metadata repair, exact current receipts and zero launch/window effects. Preserve original waits/ABI/single authority/Unknown. Model any demonstrated behavior defect first with quint-llm-kit."
     ],
-    "owner": "root-launcher-search-race",
-    "participantRecord": ".warlock-contributor/launcher-search-race.json",
+    "owner": "root-launcher-unavailable",
+    "participantRecord": ".warlock-contributor/launcher-unavailable.json",
     "disposition": "partial",
     "evidence": {
-      "path": "implementation/warlock/qa/evidence/launcher-search-race/manifest.json",
-      "sha256": "59367652cf533b7052a9547a8bfa85eaca5727b966298090b2e9de37738f9694",
-      "scope": "Launcher query delivery now waits for the unchanged native presentation-applied admission. A genuine old request/catalog receipt is held across real files-to-editor typing and a newer generation-2 refresh; the exact old generation-1 receipt cannot replace query/results/focused selection. Physical Enter and actual AT-SPI press each launch one current identity/generation through GIO with CURRENT_EDITOR argv. Actual result/refresh interiors paint; current host AT-SPI and Orca focus agree before/after old reply. Compiled/local-field/browser IME and model regressions pass; both search-race campaigns clean up normally.",
-      "sourceBaseRevision": "87a3bd12b7b83e51953da3d471c0aa95fce27198",
+      "path": "implementation/warlock/qa/evidence/launcher-unavailable/manifest.json",
+      "sha256": "7c68a5b036f59a35a7fe835f41536dfb28f5c61ab08458d8c8e6e4b4c3a514ec",
+      "scope": "Catalog failures now emit one existing typed request-correlated polite announcement and leave focus intact. A distinct typed Refresh action shares the catalog authority but preserves current focus through both request and receipt; Apps opening retains search focus. Native keyboard and actual AT-SPI retry preserve the files query and recover current matching results after a genuine metadata-bound null catalog. Exact duplicated failed receipts are silent after their first announcement; explicit new failure reads get fresh identities. Unavailable-field Enter, recovery and Escape issue zero launch/window effects. Real AT/Orca status/focus, current control pixels and normal cleanup pass. Current delayed-catalog physical Enter regression passes; existing executable model, 34 typed adapter assertions and announcement/IME browser checks pass.",
+      "sourceBaseRevision": "dfbdfeea6c1162e488277981221415d879b19bfb",
       "sourceHashes": {
-        "implementation/warlock/qa/native-launcher-search-race.py": "347ca394def22935a2a6207024b4e7efb8eb34168297a571c27d6370e46b4b26",
-        "implementation/warlock/src/Desktop.elm": "176ddaf19e5dfb6c2362ac9c9c46d296155cd38e916e4cd28938a591648ed711",
-        "implementation/warlock/src/Popup.elm": "cc00f7861217d23ae7cac3dd88f91c042862ff2246e68a4c149427892e5556d3",
-        "implementation/warlock/src/Presentation.elm": "8c3463230d93b768f48784a37ae9e4da7a225defa6f209b3100258af5196c0e9",
-        "implementation/warlock/src/Catalog.elm": "3eadb76212a66986ef2d76292a2f33595f7cd7d47dc90c8982435195f9ea3f02",
-        "implementation/warlock/src/Launch.elm": "dcd7260248ccb0b5bc6001c49319dd51af8c2fae98888919a308ac025ed273a2",
-        "implementation/warlock/adapter/catalog_authority.py": "ad20204afd3b203eb956918300c8da4cb4765b3c5ad86e701b0257a54b8fb9cc",
-        "implementation/warlock/README.md": "9c84c18cdfdb52d378a31b21e4aa4df01eae47888ecf2b0fc4b7cd784b1115ca",
-        "implementation/warlock/qa/launcher-at-action.py": "660ed0e324cd1ae5e104a045f8a96c72e28d680a15667d34d64698e47bebf1d6",
-        "implementation/warlock/assets/popup-adapter.js": "9c566e99694e1d8d5c6ed38d94f1c0449beaf7b4a57aa14f13b46402b0b1b0dc",
-        "implementation/warlock/qa/query-delivery.qnt": "0561bb02949b3162179e46571b4abb5e4c31fb9dae3d6b800a80ab48185ccf0b",
-        "implementation/warlock/qa/query-delivery_test.qnt": "b5c14092ffd1673cb81d4063af63489a75a187280809ddc1711bf920925bae8f",
-        "implementation/warlock/qa/check-query-delivery.py": "b0db710b92d9eeaebcc71808522b324cfea999c6ebfe36504552c27f69d0cacb",
-        "implementation/warlock/qa/query-delivery.js": "d220250bce2a1a981b2f2c37df4caf02a1f4672c1ea02ea6b4747ace06b81ae2",
-        "implementation/warlock/qa/current-search-build.json": "41ebeef11168c78c0bcead2ffe2c384d87122bad410c0e95e6d7a64c79119d1b",
-        "implementation/warlock/qa/check-search.py": "6605aaa383ef26a7946ff8cf2a92d9726d629ace6f862008b5e375124ab48b3d",
-        "implementation/warlock/src/Surface.elm": "a9f8000a7ce0a64174ee10a4fe9a9a8b491443a62e02d47ca11ee3dac2adabdd",
-        "implementation/warlock/src/SurfaceRenderer.elm": "e7e8d255cf38c2862a03c951f7caab50fddffa73946ae143dedfe71c1fdbf4c6",
+        "implementation/warlock/qa/native-launcher-unavailable.py": "e0c898f0c33df569d1a9e148eacac1ec6ee57018a4d41898615679a1221d2652",
+        "implementation/warlock/qa/launcher-retry-at-action.py": "8697111c48596ceb6d1fcf304fe956a3270907d8d502f77ea02632705e35e625",
+        "implementation/warlock/src/Desktop.elm": "1d37a3848f4b4bb89d83f6eccab92c3a945accc8aced89dd675ea41c2a3ea9e3",
+        "implementation/warlock/src/AdapterNotice.elm": "32c4c13e599e843aa6da4a2302cb44da233226eb79d2561f551d0640fe9dd409",
+        "implementation/warlock/src/Surface.elm": "2e0678f7ce124cb1e07866dc7ca4d7a9e8c4fd07508fcd8ca9644ce751d12a92",
+        "implementation/warlock/README.md": "8019603360d3668d217d37a944653938aba0bb3951b471389fffb5ec0c763acb",
+        "implementation/warlock/qa/AdapterAnnouncementReplay.elm": "71baa009e78ab31f74b8d9371eea57410393d0ed68f09307f1ec5333ea9b7b1b",
+        "implementation/warlock/qa/check-search.py": "0f90b049311309cb758a987175b43c702923315076d55573b7a7ee229c3ebe0a",
+        "implementation/warlock/qa/current-search-build.json": "4e7d4bc9cf60f491cdf35ae94e19948e18cdc3778bc308e94d24fafeb6700cad",
+        "implementation/warlock/assets/elm.js": "4f165d7c52185fdb3bdd371e49534c3213bf7d05dbb17263ef51ae4d7b9c052b",
+        "implementation/warlock/assets/bar.js": "26ef20c9143f87caf7e3d7fc293b248983076f5a7b7a6967cc341d71f7711194",
+        "implementation/warlock/assets/popup.js": "23b0f3e5e223dd5e1d7042ea33dcc1e1f4895997b01ebd7d764a75c15236b56c",
+        "implementation/warlock/qa/AnnouncementReplay.elm": "2c79c5dc5c61dfa1e55ed2318621958d0cd282bee8195182f6878d434aa29f72",
+        "implementation/warlock/qa/native-launcher-search-race.py": "49d2edbbad146b4087115f230f65d56a1d92a1432cd0cd2c6e68cf6698472c46",
+        "implementation/warlock/src/OutcomeAnnouncements.elm": "158b22f574983da656838c4388c93cca1c7d9b044aaae83ee21153eae29b7586",
         "implementation/warlock/src/SurfaceController.elm": "399283022f7dd4dc345f313c32655d74cca7dd70cd3e4b0811310cb09711fcd1",
         "implementation/warlock/src/OutputController.elm": "5d42d7a05b3c08438602b7753c4933011d75fb025efaddf4465effb246dd91a5",
-        "implementation/warlock/adapter/daemon.py": "819b945c7d1c92d6360045db297715ac9ff7ac72024741b8ca3238fc24d08d67",
+        "implementation/warlock/src/Popup.elm": "cc00f7861217d23ae7cac3dd88f91c042862ff2246e68a4c149427892e5556d3",
+        "implementation/warlock/src/Presentation.elm": "8c3463230d93b768f48784a37ae9e4da7a225defa6f209b3100258af5196c0e9",
+        "implementation/warlock/assets/popup-adapter.js": "9c566e99694e1d8d5c6ed38d94f1c0449beaf7b4a57aa14f13b46402b0b1b0dc",
+        "implementation/warlock/adapter/catalog_authority.py": "ad20204afd3b203eb956918300c8da4cb4765b3c5ad86e701b0257a54b8fb9cc",
         "implementation/warlock/adapter/catalog_transport.py": "43bd1cd1059b87ce4d349d72e4b2a917ac1bdc3dacda2f60563fa621e05a4b84",
+        "implementation/warlock/adapter/daemon.py": "819b945c7d1c92d6360045db297715ac9ff7ac72024741b8ca3238fc24d08d67",
         "implementation/warlock/qa/native-window-feedback.py": "295ba28cf8d9d297b214bd0d6dba19ac3289d861faa953f9fd94b82937473c64",
-        "implementation/warlock/native/shared-host.c": "63bf35e5f4ea09a4046badd534a60c609becf92600fb767b48aa26574df9b906",
-        "implementation/warlock/native/surface.h": "d7fbd6a79d9aefb232a6f86ce2e3db806d2fd5b913eb90ea5a8cddc0807f4c43",
-        "implementation/warlock/assets/elm.js": "d376062010e031d016d780f6d3b65de1d4106efb6392f82d8ce82e9d522a703e",
-        "implementation/warlock/assets/bar.js": "26ef20c9143f87caf7e3d7fc293b248983076f5a7b7a6967cc341d71f7711194",
-        "implementation/warlock/assets/popup.js": "23b0f3e5e223dd5e1d7042ea33dcc1e1f4895997b01ebd7d764a75c15236b56c"
+        "implementation/warlock/qa/adapter-announcements.qnt": "de140d10af4ea7ac39d3dfe7a5ccfc431aa7e1a7aa1de954ef93499d752823e5",
+        "implementation/warlock/qa/adapter-announcements_test.qnt": "55d8c54d97c547c9f6463c59d3f0072379f9ff5343308b2d70540124d143e9a5",
+        "implementation/warlock/qa/check-adapter-announcements.py": "d2aafd025455711f40b3951c7867b2fb618c5e7c7cd23fd8cbf5a390a475f7f6"
       },
       "reviewerDisposition": {
-        "name": "root-launcher-search-race",
+        "name": "root-launcher-unavailable",
         "independent": false,
-        "disposition": "Owner observed exact native keyboard/AT schedule; independent original acceptance remains pending."
-      }
+        "disposition": "Owner observed production fix and current keyboard/AT failure/retry; independent original acceptance remains pending."
+      },
+      "observedUTC": "2026-10-10T17:26:45.510682+00:00"
     },
-    "observed": "Launcher query delivery now waits for the unchanged native presentation-applied admission. A genuine old request/catalog receipt is held across real files-to-editor typing and a newer generation-2 refresh; the exact old generation-1 receipt cannot replace query/results/focused selection. Physical Enter and actual AT-SPI press each launch one current identity/generation through GIO with CURRENT_EDITOR argv. Actual result/refresh interiors paint; current host AT-SPI and Orca focus agree before/after old reply. Compiled/local-field/browser IME and model regressions pass; both search-race campaigns clean up normally.",
+    "observed": "Catalog failures now emit one existing typed request-correlated polite announcement and leave focus intact. A distinct typed Refresh action shares the catalog authority but preserves current focus through both request and receipt; Apps opening retains search focus. Native keyboard and actual AT-SPI retry preserve the files query and recover current matching results after a genuine metadata-bound null catalog. Exact duplicated failed receipts are silent after their first announcement; explicit new failure reads get fresh identities. Unavailable-field Enter, recovery and Escape issue zero launch/window effects. Real AT/Orca status/focus, current control pixels and normal cleanup pass. Current delayed-catalog physical Enter regression passes; existing executable model, 34 typed adapter assertions and announcement/IME browser checks pass.",
     "missingObservations": [
-      "Independent original-scenario review against the frozen matching/ranking and interaction oracle and exact source/core/plugin/compiler remains open.",
-      "This covers a delayed obsolete request after a newer request/generation and exact current keyboard/AT selection. Broader catalogs/languages/AT modes, audible speech/braille and other original scenarios remain separate.",
-      "Native IME direct preedit and commit/caret pass; candidate popup is unobserved at the unchanged deadline, matching a retained prior failure. Candidate commit/cancel and hardware/resource/journey/package/deployment/rollback remain release obligations."
+      "Independent original-scenario review against frozen interaction/product policy and exact source/core/plugin/compiler remains open.",
+      "Current failure is a genuine catalog name-bound failure during an existing query, with exact duplicate receipts and focused physical Enter/AT-SPI retry. Other provider failures, initial-failure entry, output/language/AT breadth, audible speech/braille and spontaneous service loss remain separate.",
+      "Original native IME candidate popup remains failed at its retained unchanged deadline; hardware/resource/journey budgets, reproducible package and reversible deployment/rollback remain release obligations."
     ],
-    "nextSourceWork": "Original ELM-UI-005/search-unavailable: genuine provider failure with retained query, accessible unavailable status and real keyboard Refresh recovery without automatic launch. Reuse the current single Elm/catalog authority and original native/AT fixture, fixing any observed production defect with quint-llm-kit first. Native IME candidate failure remains a separate integration gate; do not expand this successful search-race into more invented schedules."
+    "nextSourceWork": "Original ELM-UI-016/preview-states and ELM-UX-007/ux-007: implement visible authorized preview states and correct title/icon fallback. Inspect current native grant/custody/reveal conditions first; retain controlled opacity-0 until actual ownership and presentation are proved. Use quint-llm-kit against existing preview models before changing behavior, then the original native/AT frame oracle. Do not expand this successful launcher slice into additional invented schedules. Native IME remains a separate release gate."
   }
 }

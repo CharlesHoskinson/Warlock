@@ -595,3 +595,9 @@ An owned desktop name exceeding the unchanged 512-unit bound makes the real auth
 The repair implements the existing quint-llm-kit adapter-announcement specification, including matched/repeated/foreign reads, successful recovery and unchanged focus. The executable model, 34 compiled adapter assertions, shared announcement ownership, local-field/query-delivery/IME/pin checks and announcement/IME browser regressions pass. Two old compiled announcement arrangements gained only their missing native idle fact; original assertions and production input gates remain intact.
 
 Original UI-005 search-unavailable and UI-010 adapter-unavailable acceptance remain partial pending independent review. Audible/braille consumers, wider failure causes and the previously retained native IME candidate gate remain open. Next product work: ordinary visible authorized preview states and identity-correct title/icon fallback, preserving the native grant/custody and current-renderer conditions.
+
+### Application icon and title fallback — October 10
+
+Expired retained previews now resolve a uniquely declared `StartupWMClass` application icon even when the desktop filename differs from the native window class. Exact desktop filenames keep priority; ambiguous matches use the existing generic icon. Picker titles occupy the text column and icons retain their 48px size without moving the family target.
+
+The [current evidence](qa/evidence/preview-application-fallback/README.md) records actual GTK/GIO positives and ambiguity negatives, compiled preview and browser geometry/focus checks, and the original native expiry scenario with correct icon/title pixels, current AT names and normal cleanup. Full preview-state attempts retain their live-paint/Loading failures; Loading and independent acceptance remain open. The unchanged metadata/privacy model runs through quint-llm-kit; its sampled pass does not certify native rendering or desktop-entry discovery.

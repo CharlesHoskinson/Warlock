@@ -5,7 +5,8 @@ LAUNCHER_UNAVAILABLE=sys.argv[1:]==['--launcher-unavailable']
 ADAPTER_ANNOUNCEMENTS=LAUNCHER_UNAVAILABLE or sys.argv[1:]==['--adapter-announcements']
 NOTIFICATION_ANNOUNCEMENTS=sys.argv[1:]==['--notification-announcements']
 ANNOUNCEMENTS=RELEVANCE or ADAPTER_ANNOUNCEMENTS or NOTIFICATION_ANNOUNCEMENTS or sys.argv[1:]==['--announcements']
-DESCRIPTION=sys.argv[1:]==['--preview-description']
+FALLBACK=sys.argv[1:]==['--preview-fallback']
+DESCRIPTION=FALLBACK or sys.argv[1:]==['--preview-description']
 LAYER=sys.argv[1:]==['--layer-appearance']
 SHUTDOWN=sys.argv[1:]==['--preview-shutdown']
 BARRETURN=sys.argv[1:]==['--bar-keyboard-return']
@@ -14,7 +15,7 @@ POPUPENTRY=sys.argv[1:]==['--popup-entry']
 FULLSCREEN=sys.argv[1:]==['--fullscreen-pin']
 PINMAX=POPUPENTRY or FULLSCREEN or sys.argv[1:]==['--pin-max']
 QUIESCENT=sys.argv[1:]==['--preview-quiescence']
-PREVIEW=DESCRIPTION or sys.argv[1:]==['--preview-states']
+PREVIEW=FALLBACK or DESCRIPTION or sys.argv[1:]==['--preview-states']
 LIVE=sys.argv[1:]==['--live-motion']
 MOTION=sys.argv[1:]==['--reduced-motion'] or LIVE
 TRANSFER=sys.argv[1:]==['--transfer-workspace']
@@ -42,7 +43,7 @@ MENU=sys.argv[1:]==['--dense-menu'] or REFLOW
 PICKER=sys.argv[1:]==['--dense-picker'] or MENU
 DENSE=sys.argv[1:]==['--dense-taskbar'] or PICKER
 PINMENUS=sys.argv[1:]==['--pinned-menus'] or (DENSE and not PICKER)
-PRIMARY=DESCRIPTION or sys.argv[1:]==['--taskbar-primary'] or PINMENUS or PICKER
+PRIMARY=(DESCRIPTION and not FALLBACK) or sys.argv[1:]==['--taskbar-primary'] or PINMENUS or PICKER
 SWITCHER=sys.argv[1:]==['--switcher'] or ACCESSIBILITY
 NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'] or LOCALFIELD;POPUP=sys.argv[1:]==['--native-popup'] or QUIESCENT or SHUTDOWN or BARRETURN;TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION or KEYBOARD or DRAG or IME or TRANSFER or MOTION or PINMAX or ANNOUNCEMENTS;assert not sys.argv[1:] or PINS or POPUP or TASKVIEW or PRIMARY or SWITCHER or PREVIEW
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143'
@@ -115,6 +116,9 @@ try:
   report['previewStates']=json.loads((OUT/'preview-states.json').read_text());assert all(report['previewStates']['checks'].values())
   run('preview-owning-table',['/usr/bin/python3','-B','qa/check-preview-states.py'])
   if DESCRIPTION:run('compile-preview-renderer',[str(HELD/pinned['compiler']),'make','src/NativePreviewRenderer.elm','--optimize','--output=assets/preview-renderer.js'])
+  if FALLBACK:
+   report['iconResolution']=json.loads(run('icon-resolution',['/usr/bin/python3','-B','qa/check-icon-resolution.py']));assert report['iconResolution']['passed']
+   report.update(requirements=['ELM-UX-007','ELM-UI-016'],scenarios=['ux-007','preview-states'],scope='Actual GTK/GIO application/window-class icon resolution and ambiguity negatives, existing metadata model and compiled preview source states; original native expiry and pixels remain separate.')
  if SWITCHER:report.update(requirements=['ELM-UI-003','ELM-UX-012','ELM-UX-013'],scope='Compiled real switcher/root/view, bounded release/Ready/ordinal reducer and typed native journal/selection-fence admission; actual physical chord, native focus/AT and original acceptance remain separate')
  if PRIMARY:report.update(requirements=['ELM-UI-004'],scope='Compile current taskbar state labels and integrated Elm roots; unchanged native host reused by exact source/binary hashes; actual pointer/keyboard/AT acceptance separate')
  if PINS:report.update(requirements=['ELM-UI-004','ELM-UX-004'],scope='Compiled identity pins/reorder, private atomic native persistence, current integrated host; native restart/pixels acceptance pending')
@@ -323,7 +327,11 @@ console.log('Current body-target Escape releases once; stale scope, preedit, rep
   run('compile-pins',[str(HELD/pinned['compiler']),'make','qa/PinsReplay.elm','--optimize','--output=assets/pins.js'])
   (INPUT/'qa/pins-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.PinsReplay'));run('typed-pins',['node','qa/pins-replay.js','assets/pins.js',str(OUT/'pins.json')]);report['typedPins']=json.loads((OUT/'pins.json').read_text());assert all(report['typedPins']['checks'].values());run('pin-storage',['/usr/bin/python3','-B','qa/check-pin-storage.py'])
   run('pin-model-typecheck',['quint','typecheck','qa/pins.qnt']);run('pin-model-named',['quint','test','qa/pins.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79019']);run('pin-model-invariants',['quint','run','qa/pins.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79020'])
- if PRIMARY and not PINMENUS and not REFLOW:
+ reuse_fallback=False
+ if FALLBACK:
+  previous=json.loads((ROOT/'qa/current-search-build.json').read_text());prior_path=REPO/previous['report'];assert sha(prior_path)==previous['reportSHA256'];prior=json.loads(prior_path.read_text())
+  reuse_fallback=prior['passed'] and all(sha(INPUT/p)==h for p,h in prior['inputs'].items() if p.startswith('native/'))
+ if (PRIMARY or reuse_fallback) and not PINMENUS and not REFLOW:
   previous=json.loads((ROOT/'qa/current-search-build.json').read_text());prior_path=REPO/previous['report'];assert sha(prior_path)==previous['reportSHA256'];prior=json.loads(prior_path.read_text());assert prior['passed']
   old_binary=prior_path.parent/'elm-host';assert sha(old_binary)==prior['binarySHA256']
   assert all(sha(INPUT/p)==h for p,h in prior['inputs'].items() if p.startswith('native/'))

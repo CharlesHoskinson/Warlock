@@ -1,0 +1,347 @@
+{
+  "schema": 1,
+  "observedUTC": "2026-10-10T17:46:12.763500+00:00",
+  "requirements": [
+    "ELM-UX-007",
+    "ELM-UI-016"
+  ],
+  "selectedNativeRequirement": "ELM-UX-007",
+  "scenarios": [
+    "ux-007",
+    "preview-states"
+  ],
+  "originalOracle": "fallback shows correct title and icon with no unrelated pixels",
+  "sourceRevisionBeforeSlice": "e42a162906af9939e88cdce477a09ad8df2901ed",
+  "sourceHashes": {
+    "implementation/warlock/native/preview_icons.cpp": "59fe0133669595212bb69b3f726bc26d46b1fb0dfc593cb27741d745c88db16c",
+    "implementation/warlock/qa/native-preview-fallback.py": "8eb5ce002de1099ad54d9d19717932364d7227508ac69574f59ce3c191d2c945",
+    "implementation/warlock/qa/icon-resolution-test.cpp": "3bfb3796e0e892a36150a57ca2a422a785176603b877cf66dd6ec30e24195e5f",
+    "implementation/warlock/qa/check-search.py": "b740f5ecac4d4b118f1af953ae62d60160bfe774695b529f1653119eb5056058",
+    "implementation/warlock/qa/check-icon-resolution.py": "e2ca5bdceb61dcc4f432087638b008df6455abdbeec8b910904674879bd28a0c",
+    "implementation/warlock/assets/popup-adapter.js": "4bbac62dee388680fb98c838462db2463f81c10fff634d916545f426a6e3dbea",
+    "implementation/warlock/qa/current-search-build.json": "99415401ad8f549493959ede2a88da0eb432b5079b26d8a6c8ae04f0a0a16ee7",
+    "implementation/warlock/assets/elm.js": "4f165d7c52185fdb3bdd371e49534c3213bf7d05dbb17263ef51ae4d7b9c052b",
+    "implementation/warlock/assets/bar.js": "26ef20c9143f87caf7e3d7fc293b248983076f5a7b7a6967cc341d71f7711194",
+    "implementation/warlock/assets/popup.js": "23b0f3e5e223dd5e1d7042ea33dcc1e1f4895997b01ebd7d764a75c15236b56c",
+    "implementation/warlock/README.md": "eb2aa17ed51b0233761a704e131c7f347962022684cdb3fb06ca0e8b1d6b80e2",
+    "implementation/warlock/qa/PreviewStateReplay.elm": "28c4ed7976d8f87e9ebabb7ea583a592f3e2037d0069434777a87a9580b9ae93",
+    "implementation/warlock/assets/shell.css": "3440ca0d1b6da63bec25aa8901e4f91676b09269a85178a1ea3eb1efd3af7cd1",
+    "implementation/warlock/src/PreviewPresenter.elm": "10769b8d9a86e5e5b35f1f292d9837a38b20a0ba636d5baa0ee0c3b8fcdac1cc",
+    "implementation/warlock/src/PreviewLifecycle.elm": "232ebe2e823a4f9b07444f9afaccd98cdc3de9a592ff220d9975a64952dacf24",
+    "implementation/warlock/src/PreviewVisual.elm": "5c285bd8c6fde00b4e1082edfd10e59e281264a4f45b15cea9b5ce0920dd039a",
+    "implementation/warlock/src/NativePreviewRealm.elm": "2a3de2f3eacdf5b00489e5c1f5e5cef058e8f36d74fefecb25a5d3d9ea6024cf",
+    "implementation/warlock/src/NativePreviewPolicy.elm": "99a37f7ea929dcfb746e10d1e7356ba51aa307965bd72165aa708d475e6fec64",
+    "implementation/warlock/src/NativePreviewSource.elm": "9177298d05a999f3a28660df9a76b8be7cafcda523e7cc20fe73bc471b7c37e9",
+    "implementation/warlock/src/NativePreviewVisual.elm": "807da8e07317469ac03c37907ba8c8830b1b3a7fa93fa3a488ecb525b973886d",
+    "implementation/warlock/src/Popup.elm": "cc00f7861217d23ae7cac3dd88f91c042862ff2246e68a4c149427892e5556d3",
+    "implementation/warlock/src/SurfaceRenderer.elm": "e7e8d255cf38c2862a03c951f7caab50fddffa73946ae143dedfe71c1fdbf4c6",
+    "implementation/warlock/native/client-producer.cpp": "b332305b3c4cdcb29f72bd2b01e32f233f496e99a37ca576de269aa056c86de6",
+    "implementation/warlock/native/preview_icons.hpp": "6af2174049d623e824fdcf66ddd3a18d0b48a2c34c7159c1651dc0e4b53d8a32",
+    "implementation/warlock/native/preview_metadata.hpp": "1cf84f1094cd8ccca90fcc5c44bed4182716e256792bb542c771c8bc1ce9ad5e",
+    "implementation/warlock/native/picker-previews.inc": "8e0799d2a56b08e7bee8c64fe098168ac2f1f4f3ab8a4b53e9e1363fa0cdcca3",
+    "implementation/warlock/qa/native-preview-states.py": "0836abf13375d62bc9bc330ce4dba1602a099cf06ccb332fa533ec89bb699609",
+    "implementation/warlock/qa/native-window-feedback.py": "295ba28cf8d9d297b214bd0d6dba19ac3289d861faa953f9fd94b82937473c64",
+    "implementation/warlock/qa/preview-description-browser.mjs": "05d19ad7b2575cde87376160072bc872a34c59bc142500063f7915a62d900492",
+    "implementation/warlock/qa/accessibility-inspector.py": "bc4fe7adba15c29f97137b91848971b65b994c1b8f6282109d7edf1e13bd5c27",
+    "implementation/warlock/qa/accessibility-session.py": "69bc3b33c2b99f0b9d54805e18afcb85ff02314dc9aa4d002f4df409a0e57524"
+  },
+  "originalInventory": {
+    "path": "docs/elm-roadmap/requirements.json",
+    "sha256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b"
+  },
+  "frozenInteraction": {
+    "path": "docs/elm-roadmap/INTERACTION.md",
+    "sha256": "2a947a3aa56d7b7b9e7d2f5c1ceb100ac7b8c345a73fd7616c0c4c567d0e01c4"
+  },
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
+      "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791643756770507917/elm-window-geometry-authority.so",
+      "sha256": "049a982418a085a976db6bf08eee3da4ad7c9a4f826a724a8d653d86b15f0378"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+      "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-description-1791654020905882476/elm-host",
+    "sha256": "146f4c3cb714f46a1ff3c201b40a9dbf493b7ad37235fd03ce789419b7769f57",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-description-1791654020905882476/report.json",
+    "heldBuildSHA256": "4cc623d039e55ffc9d8794948f43a3bf5f74f0792f7ea92388c41ac1e39ffdcc"
+  },
+  "compilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+  "compiledAssets": {
+    "elm.js": "4f165d7c52185fdb3bdd371e49534c3213bf7d05dbb17263ef51ae4d7b9c052b",
+    "bar.js": "26ef20c9143f87caf7e3d7fc293b248983076f5a7b7a6967cc341d71f7711194",
+    "popup.js": "23b0f3e5e223dd5e1d7042ea33dcc1e1f4895997b01ebd7d764a75c15236b56c"
+  },
+  "reports": [
+    {
+      "name": "fixture-model-match-failed",
+      "path": "implementation/warlock/qa/evidence/preview-application-fallback/fixture-model-match-failed.json.gz",
+      "sha256": "383550714caba9662f5b4398e530ceb6963ce14a4e437045a39fe6712c35fdc2",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/icon-resolution-1791653584171492062/report.json",
+      "originalSHA256": "2202285379bddd8d8910f3eebe1481ae8ec4921b9aeb1cbd508c68f770da2b9f",
+      "passed": false,
+      "error": "RuntimeError(\"model-named: error: Tests failed\\n\\n  metadata_tests\\n    ok init passed 1 test(s)\\n    1) step failed after 1 test(s)\\n    2) safety failed after 1 test(s)\\n    3) freshWitness failed after 1 test(s)\\n    4) concealedWitness failed after 1 test(s)\\n    5) cancelledWitness failed after 1 test(s)\\n    ok freshMetadata passed 1 test(s)\\n    ok staleAndForeign passed 1 test(s)\\n    ok lockConceals passed 1 test(s)\\n    ok metadataCannotUnlock passed 1 test(s)\\n    ok staleUnlockIgnored passed 1 test(s)\\n    ok freshUnlockRetainsCleanup passed 1 test(s)\\n    ok foreignLockIgnored passed 1 test(s)\\n    ok lockedScopeConceals passed 1 test(s)\\n\\n  9 passing (7ms)\\n  5 failed\\n  13 ignored\\n\\n  1) step:\\n       Error [QNT502]: Variable s not set\\n        at /home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/icon-resolution-1791653584171492062/metadata.qnt:15:52\\n        15:  action fire(event:Event):bool={val updated=reduce(s,event);s'={...updated,history:s.history.append(label(event))}}\\n                                                               ^\\n    Use --seed=0x136ab --match=step to repeat.\\n  2) safety:\\n       Error [QNT502]: Variable s not set\\n        at /home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/icon-resolution-1791653584171492062/metadata.qnt:17:13\\n        17:  val safety=s.revision>=0 and s.cancels>=0 and s.cancels<=1 and (s.capturing==(s.cancels==0))\\n                        ^\\n    Use --seed=0x136ac --match=safety to repeat.\\n  3) freshWitness:\\n       Error [QNT502]: Variable s not set\\n        at /home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/icon-resolution-1791653584171492062/metadata.qnt:18:19\\n        18:  val freshWitness=s.revision>0\\n                              ^\\n    Use --seed=0x136ac --match=freshWitness to repeat.\\n  4) concealedWitness:\\n       Error [QNT502]: Variable s not set\\n        at /home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/icon-resolution-1791653584171492062/metadata.qnt:19:27\\n        19:  val concealedWitness=not(s.visible)\\n                                      ^\\n    Use --seed=0x136ac --match=concealedWitness to repeat.\\n  5) cancelledWitness:\\n       Error [QNT502]: Variable s not set\\n        at /home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/icon-resolution-1791653584171492062/metadata.qnt:20:23\\n        20:  val cancelledWitness=s.cancels==1\\n                                  ^\\n    Use --seed=0x136ac --match=cancelledWitness to repeat.\\n\\n\\n  Use --verbosity=3 to show executions.\\n  Further debug with: quint test --verbosity=3 metadata_tests.qnt\\n\")",
+      "cleanupPassed": null
+    },
+    {
+      "name": "fixture-data-root-failed",
+      "path": "implementation/warlock/qa/evidence/preview-application-fallback/fixture-data-root-failed.json.gz",
+      "sha256": "bc49b7199e6ea600da45eb854e42e24058f9ae45aa7c100456cfcd4e20e4fe9a",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/icon-resolution-1791653593117778491/report.json",
+      "originalSHA256": "bb317da0b87ca5ae0443aafd39b25a0201048b1f28afed30e590e9199df66fe0",
+      "passed": false,
+      "error": "RuntimeError('current-direct: Wrong application/generic resolution\\n')",
+      "cleanupPassed": null
+    },
+    {
+      "name": "compiled-picker-idle-failed",
+      "path": "implementation/warlock/qa/evidence/preview-application-fallback/compiled-picker-idle-failed.json.gz",
+      "sha256": "f43e41dfc36d1a39628b29b7b65b7af61dd08b3c34e47b58505716ff954ddbfd",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-states-1791653717625653770/report.json",
+      "originalSHA256": "a6800dec2f39660d84b851ac4c5ab169980b94a1c4905c2b1fd7a524f9304478",
+      "passed": false,
+      "error": "AssertionError()",
+      "cleanupPassed": null
+    },
+    {
+      "name": "compiled-captured-path-failed",
+      "path": "implementation/warlock/qa/evidence/preview-application-fallback/compiled-captured-path-failed.json.gz",
+      "sha256": "76d1c50aa8017b969ce4fbb7216fe522a6ca0315ee951c408ca2fc2ed0d2255e",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-states-1791653764364096929/report.json",
+      "originalSHA256": "7c2a73106b47460d7904c26d9f87858ade5e45a59448f3e26b057e624f6a63d7",
+      "passed": false,
+      "error": "RuntimeError('Traceback (most recent call last):\\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-states-1791653764364096929/inputs/qa/check-icon-resolution.py\", line 10, in <module>\\n    report={\\'passed\\':False,\\'protectedScope\\':scope,\\'inputs\\':{str(p):sha(p) for p in sources},\\'commands\\':[],\\'nativeAcceptance\\':False,\\'fullReleaseAccepted\\':False,\\'scope\\':\\'Actual GTK/GIO unique window-class icon association, exact desktop priority and ambiguity/invalid/unresolved negatives. Existing metadata/privacy model; no native preview acceptance inferred.\\'}\\n                                                                   ~~~^^^\\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-states-1791653764364096929/inputs/qa/check-icon-resolution.py\", line 7, in <lambda>\\n    sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()\\n                                ~~~~~~~~~~~~~~~~~~~~~~~~~~^^\\n  File \"/usr/lib/python3.14/pathlib/__init__.py\", line 777, in read_bytes\\n    with self.open(mode=\\'rb\\', buffering=0) as f:\\n         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/usr/lib/python3.14/pathlib/__init__.py\", line 771, in open\\n    return io.open(self, mode, buffering, encoding, errors, newline)\\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\nFileNotFoundError: [Errno 2] No such file or directory: \\'/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/implementation/warlock-preview-provider-v143/spec/metadata.qnt\\'\\n')",
+      "cleanupPassed": null
+    },
+    {
+      "name": "compiled-native-host",
+      "path": "implementation/warlock/qa/evidence/preview-application-fallback/compiled-native-host.json.gz",
+      "sha256": "f7736d306b92873080f0410927ee226d60d30020cd4e9ea625c7ef77f41cf8ce",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-states-1791653794410802625/report.json",
+      "originalSHA256": "3e78b39f0d4ab01f90f5f968e0a8f89bb1cb0cb2bcaf01d7f00fde1cc62d9165",
+      "passed": true,
+      "error": null,
+      "cleanupPassed": null
+    },
+    {
+      "name": "compiled-browser",
+      "path": "implementation/warlock/qa/evidence/preview-application-fallback/compiled-browser.json.gz",
+      "sha256": "bb5641184b9d1c448d74d8bd28488cdd99bdfa41a989db525fad1c5b7b6d24e3",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-description-1791654020905882476/report.json",
+      "originalSHA256": "4cc623d039e55ffc9d8794948f43a3bf5f74f0792f7ea92388c41ac1e39ffdcc",
+      "passed": true,
+      "error": null,
+      "cleanupPassed": null
+    },
+    {
+      "name": "native-live-paint-failed",
+      "path": "implementation/warlock/qa/evidence/preview-application-fallback/native-live-paint-failed.json.gz",
+      "sha256": "fbde3163a768dea7377bb6d2d32d838be43f09a84e30f5e3cef9562c75c7a167",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-accessibility-1791653895840471845/report.json",
+      "originalSHA256": "94a6a749b3439d4b4ec70b0a777a138b608534a9d9b865f7f6d4bfd099cec693",
+      "passed": false,
+      "error": "AssertionError('LiveFamilyOwnPixelsfamily:1')",
+      "cleanupPassed": true,
+      "rawLog": {
+        "path": "implementation/warlock/qa/evidence/preview-application-fallback/native-live-paint-failed.log.gz",
+        "sha256": "9a5c789d8f2ca398ba4c20ccaca022e3111b3ef71502ab5c0e45c4e6d1db007a",
+        "uncompressedSHA256": "72ffc4c6a0570f168c59ff95d351287950d7f9130313ec9f34c51009d84f1b57"
+      }
+    },
+    {
+      "name": "native-loading-observation-failed",
+      "path": "implementation/warlock/qa/evidence/preview-application-fallback/native-loading-observation-failed.json.gz",
+      "sha256": "36ff92062fe68b2468c18e501360427630fc19a714c6fcdcf6c9411b6376b504",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-accessibility-1791654056867541689/report.json",
+      "originalSHA256": "1149e5e26011e336ec53fc2adc3cd342d22c6fad2a2210ae622db9a299ea8fba",
+      "passed": false,
+      "error": "AssertionError('ActualLoadingDOMHasMatchingFallbackLabel')",
+      "cleanupPassed": true,
+      "rawLog": {
+        "path": "implementation/warlock/qa/evidence/preview-application-fallback/native-loading-observation-failed.log.gz",
+        "sha256": "0b6f70ffe70dd69c3e785062a7a176fdce57e0d0fc0b3d33a8ba28030bf34dc4",
+        "uncompressedSHA256": "2348be2ea459c50ce85d9689ab5a3020c70e99d87eb18f594044508d49d41c91"
+      }
+    },
+    {
+      "name": "native-expired-fallback",
+      "path": "implementation/warlock/qa/evidence/preview-application-fallback/native-expired-fallback.json.gz",
+      "sha256": "63a37cc44b4e8176b2b1284588566b1765bf747aabbb9de4e740d89581376003",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-accessibility-1791654120616378827/report.json",
+      "originalSHA256": "8f8e564fa2b4e85121902d6cc943eefb8a8aeb8ca18ab76ace08ab248336c32e",
+      "passed": true,
+      "error": null,
+      "cleanupPassed": true,
+      "rawLog": {
+        "path": "implementation/warlock/qa/evidence/preview-application-fallback/native-expired-fallback.log.gz",
+        "sha256": "091b29e8ac555b0e5776a7a0f6ce94abfbd68d1812fe339ca01ad1c76d2b6d57",
+        "uncompressedSHA256": "e58dcb2af8f1624f9d59aed772f60d74849fc070e21adcec27f7b4942f6bfdaa"
+      }
+    }
+  ],
+  "resolutionReport": {
+    "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-description-1791654020905882476/inputs/qa/runs/icon-resolution-1791654024745914402/report.json",
+    "originalSHA256": "dbb292336b06b7c6177bb8639bc8a2cbc1b5c35bb5021770df192229588d7198",
+    "path": "implementation/warlock/qa/evidence/preview-application-fallback/resolution-report.json.gz",
+    "sha256": "9a24e9376b447a2699538e289b3be43bb3662e23fe122f3efb9d6fc00d64c37f"
+  },
+  "scope": "Unique declared StartupWMClass now supplies current application artwork while exact desktop IDs keep priority and ambiguous classes use generic fallback. Fixed target geometry is retained; 48px icons and correct title boxes render in the picker text column. Real GTK/GIO old-failure/current-positive and ambiguity negatives, 18 compiled original preview assertions, 53 browser state/focus/geometry checks and existing metadata model pass. Original UX-007 native retained-frame expiry passes with distinct incarnation-owned icon tokens, exact current titles, full cyan icon pixels, correct Live/Historical family pixels, actual AT names/states, no extra window effect and normal cleanup. Full UI-016 attempts retain live-paint and Loading-observation failures; no Loading acceptance inferred.",
+  "missingObservations": [
+    "Independent acceptance of UX-007 against its original replay/native oracle remains pending.",
+    "UI-016 full native attempts remain failed; current fallback-only journey does not accept physical Loading, every native AT passive description, transient paint consistency or broader capacity/fairness.",
+    "Native IME candidate failure, original resource/hardware/journey budgets, reproducible package and reversible deployment/rollback remain release obligations."
+  ],
+  "disposition": "partial",
+  "requirementAccepted": false,
+  "fullReleaseAccepted": false,
+  "reviewer": {
+    "name": "root-preview-application-fallback",
+    "independent": false,
+    "disposition": "Owner observed production icon/layout fixes and original expired-fallback native oracle; independent acceptance remains open."
+  },
+  "nativeCommand": [
+    "python3",
+    "-B",
+    "docs/warlock-build-loop/v2/loop.py",
+    "--record",
+    ".warlock-contributor/preview-application-fallback.json",
+    "native",
+    "--runner",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/native-preview-fallback.py",
+    "--",
+    "--fallback-only"
+  ],
+  "nativeObservations": {
+    "checks": 39,
+    "cleanupPassed": true,
+    "fallbackRegions": [
+      {
+        "identity": "family:1",
+        "icon": {
+          "bounds": [
+            130,
+            194,
+            178,
+            242
+          ],
+          "area": 2304,
+          "cyan": 2304,
+          "red": 0,
+          "green": 0,
+          "bright": 0
+        },
+        "title": {
+          "bounds": [
+            246,
+            188,
+            726,
+            206
+          ],
+          "area": 8640,
+          "cyan": 0,
+          "red": 0,
+          "green": 0,
+          "bright": 305
+        }
+      },
+      {
+        "identity": "family:2",
+        "icon": {
+          "bounds": [
+            130,
+            331,
+            178,
+            379
+          ],
+          "area": 2304,
+          "cyan": 2304,
+          "red": 0,
+          "green": 0,
+          "bright": 0
+        },
+        "title": {
+          "bounds": [
+            246,
+            325,
+            726,
+            343
+          ],
+          "area": 8640,
+          "cyan": 0,
+          "red": 0,
+          "green": 0,
+          "bright": 330
+        }
+      }
+    ],
+    "actualAtNamesObserved": true,
+    "loadingDOMObservedOutsideSelectedScenario": false,
+    "screenshotVisuallyInspected": "native-expired-fallback-ApplicationFallback.png"
+  },
+  "quint": {
+    "workflow": "quint-llm-kit execute-spec against existing metadata/privacy model; unchanged reducer/safety/named tests, private additional witness predicates only",
+    "originalModel": "implementation/warlock-preview-provider-v143/spec/metadata.qnt",
+    "originalTests": "implementation/warlock-preview-provider-v143/spec/metadata_tests.qnt",
+    "sourceCorrespondence": "Existing PreviewPresenter metadata freshness and PreviewLifecycle lock/concealment/cancellation rules remain unchanged. Resolver returns artwork through unchanged native Endpoint issuance and current subject/privacy checks.",
+    "namedTests": 8,
+    "sampledTraces": 1000,
+    "sampledSteps": 20,
+    "witnesses": {
+      "freshWitness": 905,
+      "concealedWitness": 961,
+      "cancelledWitness": 1000
+    },
+    "limits": "Abstract metadata/privacy state only; StartupWMClass discovery and exact native pixels are checked by actual GTK/GIO/native fixtures, not inferred from the model."
+  },
+  "provenanceLimits": [
+    "Inherited nativePreviewRunner.originalSHA256 hashes the composed base source after arrangement injection; on-disk native-window-feedback source hash is separately recorded here.",
+    "Native runner changed after the compiled build to add explicit fallback-only scenario scope; production src/native/adapter and compiled assets are source-verified unchanged.",
+    "Pre-session wrapper boundary failure ran no native session and generated no native report; current wrapper matches the existing commented session boundary.",
+    "Machine-local source/toolchain/build artifacts remain required; no portable release package claim."
+  ],
+  "evidence": {
+    "README.md": "30f1f5b43704810f8c2965906184ce7fcaca3a808b612c647745e996971bf5c2",
+    "application-icon.png": "b69cb14d422bfdd23bda90ecb283ce2d316c15f317a1389bc4b2fc4b3cbec989",
+    "browser-report.json": "a6e82f3907b1c351706ba1e0429acc96dfd638ecdaca42a22ecd3160acb2197d",
+    "compiled-browser.json.gz": "bb5641184b9d1c448d74d8bd28488cdd99bdfa41a989db525fad1c5b7b6d24e3",
+    "compiled-captured-path-failed.json.gz": "76d1c50aa8017b969ce4fbb7216fe522a6ca0315ee951c408ca2fc2ed0d2255e",
+    "compiled-native-host.json.gz": "f7736d306b92873080f0410927ee226d60d30020cd4e9ea625c7ef77f41cf8ce",
+    "compiled-picker-idle-failed.json.gz": "f43e41dfc36d1a39628b29b7b65b7af61dd08b3c34e47b58505716ff954ddbfd",
+    "fixture-data-root-failed.json.gz": "bc49b7199e6ea600da45eb854e42e24058f9ae45aa7c100456cfcd4e20e4fe9a",
+    "fixture-model-match-failed.json.gz": "383550714caba9662f5b4398e530ceb6963ce14a4e437045a39fe6712c35fdc2",
+    "native-expired-fallback-ApplicationFallback.png": "bca05f3c46edc3b11f77b2796b8bfc04a0e47ae3157f734fdbe4459e256e327d",
+    "native-expired-fallback-Historical.png": "606ee821993f6057d74461ff6d0b0694b96d3056ba2bb265028aa787d6407385",
+    "native-expired-fallback-Live.png": "085e399a85bd190ae33abe13e7177d77e1849887e0ad0025a110003569d5f462",
+    "native-expired-fallback.json.gz": "63a37cc44b4e8176b2b1284588566b1765bf747aabbb9de4e740d89581376003",
+    "native-expired-fallback.log.gz": "091b29e8ac555b0e5776a7a0f6ce94abfbd68d1812fe339ca01ad1c76d2b6d57",
+    "native-gtk-fixture.py": "efcb0ebd176bc4c9fe5ae6f29024e08c6dbad34072efbf1abf46e02129a56264",
+    "native-live-paint-failed-Live.png": "106f06fef711a9dd9f1fc23a6191bfaaa2745c28daf777326347701b4b306178",
+    "native-live-paint-failed.json.gz": "fbde3163a768dea7377bb6d2d32d838be43f09a84e30f5e3cef9562c75c7a167",
+    "native-live-paint-failed.log.gz": "9a5c789d8f2ca398ba4c20ccaca022e3111b3ef71502ab5c0e45c4e6d1db007a",
+    "native-loading-observation-failed-Live.png": "467d510de774592336bb7c5a9fb68b80acc906359d97c3503cf2a3cef6e61dd5",
+    "native-loading-observation-failed.json.gz": "36ff92062fe68b2468c18e501360427630fc19a714c6fcdcf6c9411b6376b504",
+    "native-loading-observation-failed.log.gz": "0b6f70ffe70dd69c3e785062a7a176fdce57e0d0fc0b3d33a8ba28030bf34dc4",
+    "resolution-before-class.stderr": "80098be5fde6524b6f0db131acdf033ec00f02f75742054a6dc310135441b3bf",
+    "resolution-before-class.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "resolution-before-preview-icons.cpp": "48aa83cc63d4f1f08b9333372cb3f63e0a25bf880cc17567098079284ee79693",
+    "resolution-metadata.qnt": "6f000d695c34e89e9d52ef1cf0aee6e230b9d549f0320e92a61c08d0dc145526",
+    "resolution-metadata_tests.qnt": "25af23b35954ac1816179a8a5746066d94d109801fe4d01a30eacc184a483194",
+    "resolution-model-named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "resolution-model-named.stdout": "92d800c8ffed0e74b7f7ce08ef978268d6dbe09c1c726f1760419819dc2be4e8",
+    "resolution-model-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "resolution-model-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "resolution-model-witness-safety.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "resolution-model-witness-safety.stdout": "9a085939aab8f009dd5309205bd6f31793ec558fe5d94909376591f8b025b95a",
+    "resolution-report.json.gz": "9a24e9376b447a2699538e289b3be43bb3662e23fe122f3efb9d6fc00d64c37f",
+    "resolution-tests-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "resolution-tests-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typed-states.json": "07cb6c357f24ffa32d02b591e4fe5b722dee24ad304d2bb2384693164ec356ce"
+  }
+}

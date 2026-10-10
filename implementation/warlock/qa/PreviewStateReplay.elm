@@ -27,7 +27,9 @@ window root = E.object [("incarnation",E.string root),("label",E.string ("Docume
 attached = E.object [("protocolVersion",E.int 3),("kind",E.string "attached"),("binding",binding)]
 projection = E.object [("protocolVersion",E.int 3),("kind",E.string "action-projection"),("binding",binding),("requestId",E.string "1"),("context",E.object [("lifetime",E.string "1"),("epoch",E.string "1"),("output",E.string "1"),("revision",E.string "1")]),("scene",E.object [("revision",E.string "1"),("focused",E.string "1"),("windows",E.list identity [window "1",window "2"])])]
 native raw model = Controller.update (Controller.Interaction (Desktop.Incoming raw)) model |> Tuple.first
-ready = Controller.initial |> native attached |> native projection
+-- The current admission gate requires the first native idle observation.
+pointerIdle = E.object [("protocolVersion",E.int 3),("kind",E.string "pointer-ownership"),("ownershipProtocol",E.int 1),("binding",binding),("requestId",E.string "1"),("serial",E.string "1"),("state",E.string "idle"),("owner",E.null)]
+ready = Controller.initial |> native attached |> native pointerIdle |> native projection
 opened = Shell.capture (Controller.desktop ready).windows.shell |> Maybe.map (\stamp -> Controller.update (Controller.Interaction (Desktop.Window (TaskbarShell.Primary stamp "application:documents"))) ready |> Tuple.first) |> Maybe.withDefault ready
 rawFrame = Controller.frame opened
 frame = Renderer.decode rawFrame |> Result.toMaybe

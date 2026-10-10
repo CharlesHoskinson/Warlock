@@ -7,11 +7,12 @@
    Reserve the same thumbnail and text geometry for every source state. */
 .popup [data-mode="picker"] button[data-surface-control^="family:"]{display:grid;grid-template-columns:minmax(0,min(10rem,35%)) minmax(0,1fr);grid-template-rows:repeat(4,minmax(0,1fr));column-gap:12px;align-items:start;height:calc(7.5rem + 14px);min-height:calc(7.5rem + 14px);max-height:calc(7.5rem + 14px)}
 .popup [data-mode="picker"] button[data-surface-control^="family:"] .window-preview,
-.popup [data-mode="picker"] button[data-surface-control^="family:"] .window-preview>span{display:contents}
+.popup [data-mode="picker"] button[data-surface-control^="family:"] .window-preview>span:not(.preview-title):not(.preview-state){display:contents}
 .popup [data-mode="picker"] button[data-surface-control^="family:"] .preview-image,
 .popup [data-mode="picker"] button[data-surface-control^="family:"] .preview-icon{grid-column:1;grid-row:1 / span 4;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;align-self:stretch}
-.popup [data-mode="picker"] button[data-surface-control^="family:"] .preview-state,
-.popup [data-mode="picker"] button[data-surface-control^="family:"] .preview-title{grid-column:2;grid-row:1;margin:0}
+.popup [data-mode="picker"] button[data-surface-control^="family:"] .preview-icon{width:48px;height:48px;max-width:100%;max-height:100%;align-self:center;justify-self:center}
+.popup [data-mode="picker"] button[data-surface-control^="family:"] .preview-state{grid-column:2;grid-row:1;margin:0}
+.popup [data-mode="picker"] button[data-surface-control^="family:"] .preview-title{grid-column:2;grid-row:2;margin:0;min-width:0}
 .popup [data-mode="picker"] button[data-surface-control^="family:"] .preview-fidelity{grid-column:2;grid-row:2}
 .popup [data-mode="picker"] button[data-surface-control^="family:"] .control-label{grid-column:2;grid-row:3}
 .popup [data-mode="picker"] button[data-surface-control^="family:"] .control-detail{grid-column:2;grid-row:4;margin:0}
