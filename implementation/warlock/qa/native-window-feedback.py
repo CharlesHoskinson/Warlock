@@ -26,12 +26,13 @@ DENSEPICKER=sys.argv[1:]==['--dense-picker'] or DENSEMENU
 DENSE=sys.argv[1:]==['--dense-taskbar']
 SMALL=DENSE or DENSEPICKER
 PINMENUS=sys.argv[1:]==['--pinned-menus'] or DENSE or SNAP
-PRIMARY=sys.argv[1:]==['--taskbar-primary'] or PINMENUS or ATTENTION or MOTION
+PRIMARYKEY=sys.argv[1:]==['--taskbar-primary-keyboard']
+PRIMARY=sys.argv[1:]==['--taskbar-primary'] or PRIMARYKEY or PINMENUS or ATTENTION or MOTION
 PRE_READY_RETIRE=sys.argv[1:]==['--switcher-pre-ready-retirement']
 MEMBERSHIP=sys.argv[1:]==['--switcher-membership'] or PRE_READY_RETIRE
 CHORD=sys.argv[1:]==['--switcher-chord'] or MEMBERSHIP
 SWITCHER=sys.argv[1:]==['--switcher'] or ACCESSIBILITY
-NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'] or DENSEPICKER or KEYBOARD;PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION or IME;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS or PINMENUS or REFLOW or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or KEYBOARD;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER or TRANSFER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW or PRIMARY or SWITCHER or CHORD or DRAG
+NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'] or DENSEPICKER or KEYBOARD;PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION or IME;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS or PINMENUS or REFLOW or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or KEYBOARD or PRIMARYKEY;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER or TRANSFER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW or PRIMARY or SWITCHER or CHORD or DRAG
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143';RUNTIME=REPO/'implementation/warlock-client-provider-native-v204'
 sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
 spec=importlib.util.spec_from_file_location('feedback_private_host',RUNTIME/'candidate_host.py');host=importlib.util.module_from_spec(spec);spec.loader.exec_module(host)
@@ -78,7 +79,7 @@ else:
 for row in pair.values():assert sha(row['path'])==row['sha256']
 assets=ROOT/'assets';assert all(sha(assets/n)==h for n,h in json.loads((ROOT/'qa'/('current-search-build.json' if CURRENT else 'current-feedback-build.json')).read_text())['compiledAssets'].items())
 subprocess.run(['node','--check',str(assets/'bar-adapter.js')],check=True)
-OUT=ROOT/'qa/runs'/(('native-live-motion-' if LIVE else 'native-reduced-motion-' if MOTION else 'native-transfer-workspace-' if TRANSFER else 'native-ime-' if IME else 'native-accessibility-' if ACCESSIBILITY else 'native-high-contrast-' if CONTRAST else 'native-drag-ownership-' if DRAG else 'native-keyboard-shell-' if KEYBOARD else 'native-attention-' if ATTENTION else 'native-jump-lists-' if JUMP else 'native-files-' if FILES else 'native-system-menu-' if SYSTEM else 'native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
+OUT=ROOT/'qa/runs'/(('native-primary-keyboard-' if PRIMARYKEY else 'native-live-motion-' if LIVE else 'native-reduced-motion-' if MOTION else 'native-transfer-workspace-' if TRANSFER else 'native-ime-' if IME else 'native-accessibility-' if ACCESSIBILITY else 'native-high-contrast-' if CONTRAST else 'native-drag-ownership-' if DRAG else 'native-keyboard-shell-' if KEYBOARD else 'native-attention-' if ATTENTION else 'native-jump-lists-' if JUMP else 'native-files-' if FILES else 'native-system-menu-' if SYSTEM else 'native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
 OUTPUT=pathlib.Path('/home/hoskinson/window-integration-qa')/('warlock-window-feedback-'+str(time.time_ns()))
 focus_host=None
 if native_pair.get('pair',{}).get('core')!=pre['pair']['core']:
@@ -146,6 +147,7 @@ if CHORD:report.update(requirements=['ELM-UI-003','ELM-UX-012','ELM-UX-013'],sce
 if MEMBERSHIP:report.update(scenarios=['switcher-membership','switcher-retire-arrive'],scope='Actual native '+('one-step selected retirement' if PRE_READY_RETIRE else 'two-step buffered retirement')+' before readiness/arrival, modal-family activation/recipient and minimized workspace-2 restore; lock, other-output, AT and independent review remain open',nativeMembershipJourneyObserved=False)
 if SWITCHER:report.update(requirements=['ELM-UI-003'],scenarios=['switcher-order','switcher-cancel'],scope='Actual native MRU observation, integrated switcher control pixels, local keyboard cycling/cancel and identity-bound chosen activation; global Alt-Tab journal, modal representation and AT/independent acceptance remain pending',nativeSwitcherJourneyObserved=False)
 if PRIMARY:report.update(requirements=['ELM-UI-004'],scenarios=['taskbar-inactive','taskbar-active','taskbar-minimized'],scope='Actual pointer single-family activation/minimize/restore, exact native receipt and GTK keyboard recipient, MRU/desktop succession and pixels; primary keyboard and AT acceptance remain pending',nativePrimaryJourneyObserved=False)
+if PRIMARYKEY:report.update(scope='Actual physical keyboard-only primary activation/minimize/restore, native receipts/pixels and actual app-key recipients, MRU/desktop succession, no pointer helper and normal cleanup. Native AT and independent original acceptance remain open.',nativeKeyboardPrimaryJourneyObserved=False)
 if PINMENUS:report.update(requirements=['ELM-UI-008','ELM-UX-023'],scenarios=['menu-invocation','keyboard-menus'],scope='Actual current running pin, native secondary click/Menu/Shift-F10 menus and existing minimize/restore path; dense/enlarged-text, AT and independent acceptance remain open',nativePinnedMenusObserved=False)
 if SNAP:report.update(requirements=['ELM-UX-019','ELM-UX-020'],scenarios=['ux-019','ux-020'],scope='Actual native snap chooser presentation/keyboard/output-scale invalidation only; native snap placement authority and accepted half-work-area oracle remain required',nativeSnapChooserObserved=False)
 if CONTRAST:report.update(requirements=['ELM-UX-027'],scenarios=['ux-027'],scope='Actual native high contrast appearance at enlarged text, named keyboard focus/pixels and committed persistence/restart; all-surface/theme/scale original qualification and native AT remain open.')
@@ -161,7 +163,7 @@ if MOTION:LUA=LUA.replace(b'animations={enabled=false}',b'animations={enabled=tr
 if SMALL:LUA=LUA.replace(b'800x600',b'480x360' if DENSEMENU else b'480x600')
 if ATTENTION:LUA+=b'hl.config({misc={focus_on_activate=false}})\n'
 if CHORD or KEYBOARD or DRAG:LUA+=(ROOT/'native/switcher-bindings.lua').read_bytes()
-if KEYBOARD or DRAG:LUA+=(ROOT/'native/shell-bindings.lua').read_bytes()
+if KEYBOARD or PRIMARYKEY or DRAG:LUA+=(ROOT/'native/shell-bindings.lua').read_bytes()
 if DRAG:
  LUA+=b'hl.monitor({output="WAYLAND-2",mode="800x600@60",position="800x0",scale=1})\n'
  report.update(requirements=['ELM-UX-021'],scenarios=['ux-021'],scope='Actual native move/resize input across taskbar and two outputs; native controller owner/serial, real blocked shell shortcut and competing native effect, one end per gesture. No caption/edge, AT, touch/tablet or independent acceptance inferred.')
@@ -605,8 +607,27 @@ raise SystemExit(daemon.run())
      bright=sum(1 for py in range(top,bottom) for px in range(left,right) if all(data[py*stride+px*channels+c]>170 for c in range(3)))
      check(stage+'ActualStateCueTextPixels',bright>15,brightPixels=bright,region=[left,top,right,bottom],cue=cue)
      report.setdefault('primaryCaptures',[]).append({'stage':stage,'path':str(image),'sha256':sha(image),'nativeFacts':facts(),'stateCue':cue,'barBody':body})
+    def primary_key(code):helper([str(keyboard)],f'key {code} 1\nsleep 50\nkey {code} 0\nsleep 100\nsync\n')
+    def keyboard_primary(operation):
+     helper([str(keyboard)],'key 125 1\nkey 56 1\nkey 57 1\nsleep 50\nkey 57 0\nkey 56 0\nkey 125 0\nsleep 100\nsync\n')
+     wait(lambda:(projection() or {}).get('mode')=='applications')
+     primary_key(1)
+     def focused_bar():
+      rows=[json.loads(line.split(' ',2)[2])['body'] for line in text().splitlines() if line.startswith('surface-report: origin=bar ')]
+      body=rows[-1] if rows else None;p=projection()
+      return body if body and body.get('documentFocused') and p and p['phase']=='Coherent' and p['mode']=='closed' and body['publication']==p['publication'] and any(b['id']==body['focus'] and not b['disabled'] for b in body['buttons']) else None
+     wait(focused_bar);primary_key(102)
+     body=wait(focused_bar);chosen=next(b for b in body['buttons'] if b['accessibleName'].startswith(operation.title()+' ELM-ACTIVATION-PEER;') and not b['disabled'])
+     for _ in range(len(body['buttons'])+1):
+      current=wait(focused_bar)
+      if any(b['id']==current['focus'] and b['identity']==chosen['identity'] for b in current['buttons']):break
+      old_focus=current['focus'];primary_key(106);wait(lambda:(b:=focused_bar()) and b['focus']!=old_focus)
+     body=wait(focused_bar);check('KeyboardPrimaryReachesCurrent'+operation.title(),any(b['id']==body['focus'] and b['identity']==chosen['identity'] for b in body['buttons']),body=body)
+     primary_key(28)
     def action(stage,operation,focus,minimized):
-     button=wait(lambda:group(operation.title()));before=len(journal());click(button)
+     button=wait(lambda:group(operation.title()));before=len(journal())
+     if PRIMARYKEY:keyboard_primary(operation)
+     else:click(button)
      wait(lambda:transaction_state()=='Committed' and current_window()['minimized']==minimized and facts()['facts']['focused']==focus)
      check(stage+'ExactlyOneBoundEffect',len(journal())==before+1 and journal()[-1]['intent']['incarnation']==target and journal()[-1]['intent']['operation']==operation,journal=journal()[before:])
      submitted=journal()[-1]
@@ -635,6 +656,9 @@ raise SystemExit(daemon.run())
     action('DesktopRestore','restore',target,False)
     launches=[json.loads(l.split(': ',1)[1]) for l in text().splitlines() if l.startswith('frontend-request: ') and json.loads(l.split(': ',1)[1])['kind']=='application-launch']
     check('OrdinaryPrimaryActionsNeverLaunchDuplicates',not launches and len(journal())==5,launchRequests=launches,windowRequests=len(journal()))
+    if PRIMARYKEY:
+     check('PrimaryJourneyUsesZeroInjectedPointerEvents',not any(str(POINTER) in row['command'] for row in report['helpers']))
+     report['nativeKeyboardPrimaryJourneyObserved']=True
     if MOTION:
      def bar_body_motion():
       bodies=[json.loads(line.split(' ',2)[2])['body'] for line in text().splitlines() if line.startswith('surface-report: origin=bar ')]

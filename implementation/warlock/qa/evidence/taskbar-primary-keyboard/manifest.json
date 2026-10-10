@@ -1,0 +1,120 @@
+{
+  "schema": 1,
+  "requirements": [
+    "ELM-UI-004"
+  ],
+  "scenarios": [
+    "taskbar-inactive",
+    "taskbar-active",
+    "taskbar-minimized"
+  ],
+  "disposition": "partial",
+  "sourceBaseRevision": "da0ee0e8fed2dc4122513b70b21d4e0d5bf8a519",
+  "sourceHashes": {
+    "implementation/warlock/qa/native-window-feedback.py": "80defb323ef4bb4502966f49f878250da8935117e9bf8af7b158054c6ee49627",
+    "implementation/warlock/src/Taskbar.elm": "31ed9ce6b37e5b35065f8833e31412657800d894b6d9e9544f380bc16e7aa519",
+    "implementation/warlock/src/TaskbarShell.elm": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+    "implementation/warlock/src/Desktop.elm": "0de211c106232d0e79033eb17a105c0e0d668d0fe226011656d90dc66ec2f4dd",
+    "implementation/warlock/src/Surface.elm": "c1956597c3565b396ee0e620902039661dac9ae9bdc70bd8afd0b74ee6a07fe0",
+    "implementation/warlock/native/shared-host.c": "a8f30ce61053c0000a4f526d3efa6e0d144a3e8598319ce4ec00f44e13226298",
+    "implementation/warlock/native/shared-context.h": "6e4924cf86fdf3224acf0547a1d7e06fccbf1b08b5350ddaba41ae0a0117d9be",
+    "implementation/warlock/assets/bar-adapter.js": "9624b022e871cae05bd42257bfc9318d691c57be216502e7f22ff42db9796507",
+    "implementation/warlock/assets/activation.js": "c6571168d163b422461f55f14ed0a332c1effbd0130316b9f6009f0e686d1090",
+    "implementation/warlock/qa/check-search.py": "df0f9251a519afc32f8d30c9fcfdbf77846201f2faab25b79ef6c6c4482060f6",
+    "implementation/warlock/qa/current-search-build.json": "4877915ffe391675706105bb0178fff04f1b31657e2b8c839bad80e2cba44292",
+    "implementation/warlock/README.md": "84ab74c9af1833246f741706505626e2b3d75bf871a5dd402ed981a0b2a88daa"
+  },
+  "nativePair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-core-1791495415110842751/Hyprland",
+      "sha256": "81c9ac609c2900f99c1efbe613b83e949aeae3059a5e4403601581fa96191acf"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791596429600393566/elm-window-geometry-authority.so",
+      "sha256": "1f5de87c759902cbbca05dfdbba56090641c994cf3c7276671094248465bcac4"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/bar-keyboard-return-1791598954468402628/elm-host",
+    "sha256": "f2be6fc90a55e3bd46d1de44d9b850ef296f5c607bc39714d3aff406e48eeaa9",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/bar-keyboard-return-1791598954468402628/report.json",
+    "heldBuildSHA256": "ea249f394d9953a1930a782ae365e01a92d43a0894e12cbac9c8dc570d072ae8"
+  },
+  "runnerSHA256": "80defb323ef4bb4502966f49f878250da8935117e9bf8af7b158054c6ee49627",
+  "files": {
+    "native-report.json": {
+      "path": "implementation/warlock/qa/evidence/taskbar-primary-keyboard/native-report.json",
+      "sha256": "5a1bbac6a3e732a4c7689093eb6c91d11a04f8480005f5c4709d995e3ba98749",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-primary-keyboard-1791599809597791473/report.json"
+    },
+    "InactiveActivation.png": {
+      "path": "implementation/warlock/qa/evidence/taskbar-primary-keyboard/InactiveActivation.png",
+      "sha256": "adcb5b8474eac316106c138ad2ebb257207a3e357e30102097634866d35841c5",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791599809597895952/InactiveActivation.png"
+    },
+    "ActiveMinimizeToMRU.png": {
+      "path": "implementation/warlock/qa/evidence/taskbar-primary-keyboard/ActiveMinimizeToMRU.png",
+      "sha256": "a4bd2e52b029811100009c635636f73cd29ce78b247ee7e6535a6b76420b4d64",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791599809597895952/ActiveMinimizeToMRU.png"
+    },
+    "MinimizedRestore.png": {
+      "path": "implementation/warlock/qa/evidence/taskbar-primary-keyboard/MinimizedRestore.png",
+      "sha256": "b8e90bc70364848efa2ff0f4bb08e810142bd46fb26843f8101a04ed9e7798ab",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791599809597895952/MinimizedRestore.png"
+    },
+    "ActiveMinimizeToDesktop.png": {
+      "path": "implementation/warlock/qa/evidence/taskbar-primary-keyboard/ActiveMinimizeToDesktop.png",
+      "sha256": "33d6b702b6b44e1804ec11c822c022ed94e913ff7667204748d8d9de593a0cba",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791599809597895952/ActiveMinimizeToDesktop.png"
+    },
+    "DesktopRestore.png": {
+      "path": "implementation/warlock/qa/evidence/taskbar-primary-keyboard/DesktopRestore.png",
+      "sha256": "aef341c04360890317ed4e88a6e955d6151ab7b0fb563366fa7e9b2d8c9d0497",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791599809597895952/DesktopRestore.png"
+    }
+  },
+  "observed": {
+    "nativeKeyboardPrimaryJourneyObserved": true,
+    "zeroInjectedPointerEvents": true,
+    "cleanupPassed": true,
+    "effectOperations": [
+      "activate",
+      "minimize",
+      "restore",
+      "minimize",
+      "restore"
+    ],
+    "actualFocusSuccession": [
+      "peer",
+      "companion",
+      "peer",
+      "desktop",
+      "peer"
+    ],
+    "ownerInspectedFrames": [
+      "InactiveActivation.png",
+      "ActiveMinimizeToDesktop.png"
+    ]
+  },
+  "scope": "Actual physical keyboard-only primary activation/minimize/restore, native receipts/pixels and actual app-key recipients, MRU/desktop succession, no pointer helper and normal cleanup. Native AT and independent original acceptance remain open.",
+  "modelByReference": {
+    "path": "implementation/warlock/qa/evidence/bar-keyboard-replay/manifest.json",
+    "sha256": "af974b4107acd090a68217b8c7895bd1bae472d01946581c3b2a7b9d28cd898d",
+    "limits": "Existing replay/authority component evidence. Fixture addition changes no product policy or compiled assets; no new model execution claimed."
+  },
+  "missingObservations": [
+    "Applicable native assistive-technology fixtures.",
+    "Independent original-scenario acceptance.",
+    "Zero-window keyboard launch, refusal and group requirements are separate cases."
+  ],
+  "reviewerDisposition": {
+    "name": "root-primary-keyboard",
+    "independent": false,
+    "disposition": "Owner native observation; original acceptance remains partial."
+  },
+  "fullReleaseAccepted": false
+}

@@ -343,3 +343,5 @@ drain bound. Independent release-wide retirement evidence remains open. The
 shared keyboard Home regression is now repaired; two current native keyboard
 journeys pass all nine surfaces. See [pin/MAX evidence](qa/evidence/pin-max-order/README.md)
 and [shutdown evidence](qa/evidence/picker-shutdown/README.md).
+
+The primary taskbar activation/minimize/restore journey now has actual keyboard-only native evidence: one committed receipt per action, visible state cues and windows, MRU/desktop focus succession, real application-key recipients, zero injected pointer helpers and normal cleanup. This verifies existing behavior; the fixture addition changes no product policy. Native AT and independent acceptance remain open. See [primary keyboard evidence](qa/evidence/taskbar-primary-keyboard/README.md).

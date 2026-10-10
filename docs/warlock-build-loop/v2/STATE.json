@@ -1,45 +1,51 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T02:28:13.040324+00:00",
+  "updatedUTC": "2026-10-10T02:40:29.447746+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "taskbar-native-keyboard-return",
+    "id": "taskbar-primary-keyboard",
     "requirements": [
-      "ELM-UX-023"
+      "ELM-UI-004"
     ],
     "scenarios": [
-      "ux-023",
-      "keyboard-taskbar-groups"
+      "taskbar-inactive",
+      "taskbar-active",
+      "taskbar-minimized"
     ],
-    "before": "After repeated native Apps/picker dismissal, Home arrives at the GTK bar but is intermittently absent from the DOM handler, preventing the next keyboard-only group/menu journey.",
-    "after": "Exact already admitted GTK key replays redirected by a popup grab return once to their live original bar engine, preserving the physical proof and held-key state so the next real Home reaches DOM navigation without pointer input or effect replay.",
     "paths": [
-      "implementation/warlock/native/host.c",
+      "implementation/warlock/qa/native-window-feedback.py",
+      "implementation/warlock/src/Taskbar.elm",
+      "implementation/warlock/src/TaskbarShell.elm",
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/src/Surface.elm",
       "implementation/warlock/native/shared-host.c",
       "implementation/warlock/native/shared-context.h",
-      "implementation/warlock/native/shared-context-test.c",
       "implementation/warlock/assets/bar-adapter.js",
+      "implementation/warlock/assets/activation.js",
       "implementation/warlock/qa/check-search.py",
       "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/qa/bar-keyboard-return.qnt",
-      "implementation/warlock/qa/bar-keyboard-return_test.qnt",
-      "implementation/warlock/qa/check-bar-keyboard-return.py",
       "implementation/warlock/README.md"
     ],
+    "before": "Primary native activation/minimize/restore has pointer and subsequent real key-recipient evidence, but its original keyboard taskbar activation route is unqualified.",
+    "after": "The same real primary actions execute through keyboard-only taskbar entry and activation, with visible native state, MRU/desktop succession, exact receipts, no duplicate launch and original deadlines; fix a demonstrated product gap if encountered.",
     "verification": [
-      "Quint LLM Kit exact source/signature/replay schedules with positive repeated-return witnesses and native authority/proof preservation; real owning shared-context source tests include all eight immutable signature fields, duplicate, retired, ambiguous and replacement negatives; unchanged original nine-surface native keyboard journey and cleanup at original timings."
+      "Extend the existing protected native primary fixture with actual key-only Apps/Escape/Home/bar traversal and matched Enter activation; retain original native journal, pixel, recipient, membership and cleanup oracles. Reuse the exact compiled source/core/plugin tuple unless product code changes; existing Quint authority/replay properties apply without a new model for a fixture-only addition."
     ],
     "status": "implemented-partial",
-    "participantRecord": ".warlock-contributor/bar-keyboard-return.json",
-    "evidence": "implementation/warlock/qa/evidence/bar-keyboard-replay/manifest.json",
-    "observed": "Exact original GTK replay returns to its live bar engine once without a new physical proof/held-key transition. Both current full nine-surface native keyboard journeys pass at original timings, with zero pointer injection and normal cleanup.",
-    "nextSourceWork": "Deliver the original native primary taskbar activation/minimize/restore keyboard journey, including real recipients and zero-window catalog launch; independent AT/IME and release-wide closure acceptance remain explicit."
+    "participantRecord": ".warlock-contributor/primary-keyboard.json",
+    "evidence": "implementation/warlock/qa/evidence/taskbar-primary-keyboard/manifest.json",
+    "observed": "Actual keyboard-only primary actions pass original receipts/pixels/recipient and MRU/desktop succession with zero pointer injection and normal cleanup. Fixture verification only; no new product feature.",
+    "missingObservations": [
+      "Applicable native assistive-technology fixtures.",
+      "Independent original-scenario acceptance.",
+      "Zero-window keyboard launch, refusal and group requirements are separate cases."
+    ],
+    "nextSourceWork": "Keyboard zero-window pinned launch and the remaining observed workspace restore focus gap; native AT and independent original acceptance remain separate."
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -880,6 +886,40 @@
       "evidence": "implementation/warlock/qa/evidence/picker-shutdown/manifest.json",
       "nextSourceWork": "Fix intermittent Home target/focus navigation in the real taskbar; independent release-wide closure receipts and AT remain explicit. Shutdown retirement routes and the native pin/MAX journey now pass without weakening close or deadlines.",
       "observed": "Real WebKit callback + both strict receivers admit only exact owned retirement controls during stop; unchanged native pin/MAX journey, strict close, normal client/helper exit, plugin unload and private cleanup pass. Failed preliminary runs retained."
+    },
+    {
+      "id": "taskbar-native-keyboard-return",
+      "requirements": [
+        "ELM-UX-023"
+      ],
+      "scenarios": [
+        "ux-023",
+        "keyboard-taskbar-groups"
+      ],
+      "before": "After repeated native Apps/picker dismissal, Home arrives at the GTK bar but is intermittently absent from the DOM handler, preventing the next keyboard-only group/menu journey.",
+      "after": "Exact already admitted GTK key replays redirected by a popup grab return once to their live original bar engine, preserving the physical proof and held-key state so the next real Home reaches DOM navigation without pointer input or effect replay.",
+      "paths": [
+        "implementation/warlock/native/host.c",
+        "implementation/warlock/native/shared-host.c",
+        "implementation/warlock/native/shared-context.h",
+        "implementation/warlock/native/shared-context-test.c",
+        "implementation/warlock/assets/bar-adapter.js",
+        "implementation/warlock/qa/check-search.py",
+        "implementation/warlock/qa/current-search-build.json",
+        "implementation/warlock/qa/native-window-feedback.py",
+        "implementation/warlock/qa/bar-keyboard-return.qnt",
+        "implementation/warlock/qa/bar-keyboard-return_test.qnt",
+        "implementation/warlock/qa/check-bar-keyboard-return.py",
+        "implementation/warlock/README.md"
+      ],
+      "verification": [
+        "Quint LLM Kit exact source/signature/replay schedules with positive repeated-return witnesses and native authority/proof preservation; real owning shared-context source tests include all eight immutable signature fields, duplicate, retired, ambiguous and replacement negatives; unchanged original nine-surface native keyboard journey and cleanup at original timings."
+      ],
+      "status": "implemented-partial",
+      "participantRecord": ".warlock-contributor/bar-keyboard-return.json",
+      "evidence": "implementation/warlock/qa/evidence/bar-keyboard-replay/manifest.json",
+      "observed": "Exact original GTK replay returns to its live bar engine once without a new physical proof/held-key transition. Both current full nine-surface native keyboard journeys pass at original timings, with zero pointer injection and normal cleanup.",
+      "nextSourceWork": "Deliver the original native primary taskbar activation/minimize/restore keyboard journey, including real recipients and zero-window catalog launch; independent AT/IME and release-wide closure acceptance remain explicit."
     }
   ]
 }
