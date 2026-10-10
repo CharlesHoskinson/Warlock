@@ -1,4 +1,5 @@
 #include "CommittedScene.hpp"
+#include "ModalRecipient.hpp"
 #include "ViewHitTester.hpp"
 #include "FocusState.hpp"
 #include "ViewStateTracker.hpp"
@@ -51,8 +52,11 @@ PHLWINDOW CViewHitTester::windowAt(const Vector2D& pos, uint16_t properties, PHL
     const auto  LASTFOCUSED           = focusState()->window();
     const auto& WINDOWS               = inputScene.required ? inputScene.order : m_tracker.windows();
 
-    const auto  isShadowedByModal = [](PHLWINDOW w) -> bool {
-        return *PMODALPARENTBLOCKING && w->m_xdgSurface && w->m_xdgSurface->m_toplevel && w->m_xdgSurface->m_toplevel->anyChildModal();
+    const auto  isShadowedByModal = [&](PHLWINDOW w) -> bool {
+        const auto modes = Fullscreen::controller()->getFullscreenModes(w);
+        const bool activationOwner = (properties & WarlockModal::INCLUDE_BLOCKED_PARENT) && inputScene.required &&
+            w->m_isFloating && !w->m_isX11 && modes.internal == Fullscreen::FSMODE_MAXIMIZED && modes.client == Fullscreen::FSMODE_MAXIMIZED;
+        return !activationOwner && *PMODALPARENTBLOCKING && w->m_xdgSurface && w->m_xdgSurface->m_toplevel && w->m_xdgSurface->m_toplevel->anyChildModal();
     };
 
     const auto maxInputContains = [&](PHLWINDOW w) -> bool {

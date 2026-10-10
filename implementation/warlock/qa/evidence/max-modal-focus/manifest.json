@@ -1,0 +1,538 @@
+{
+  "schema": 1,
+  "requirements": [
+    "ELM-REN-015",
+    "ELM-GNO-006"
+  ],
+  "scenarios": [
+    "max-modal-focus",
+    "hit-modal-redirect"
+  ],
+  "disposition": "partial",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "sourceBaseRevision": "d09c0d3c4f22703ee1ce1b77461c341f8010d327",
+  "sourceHashes": {
+    "implementation/warlock/native/core/InputManager.cpp": "d3f57b0d1d27fe204fd28afbf540def44fa7084d0c5cc1fb3cc67f66fd5de8cc",
+    "implementation/warlock/native/core/ViewHitTester.cpp": "2a168c756303d2b8fd4b74264f4e9933bcd88c0841383245b8f128f85e4e8018",
+    "implementation/warlock/native/core/ModalRecipient.hpp": "212cc06e1b7eb1a2d40eb8b06b7caaaf4a1a69f36501a1f73686372548c12411",
+    "implementation/warlock/native/navigation-modal.hpp": "48a0a3c195425db508b20d1bc869ad588a03f3f3fc5fcba01ac0cd16853db30f",
+    "implementation/warlock/qa/check-scene-core.py": "ff243cdc650635c0bf7fa800e506abbde916df0a79c4cea77056d8ad0b3329f5",
+    "implementation/warlock/qa/check-native-authority.py": "493ce0ebfdb3e7dd53ff142fc87ad9d4a2f8f94fdba7cbdd13b0166fb238beee",
+    "implementation/warlock/qa/native-window-feedback.py": "a6247750ae49bfef098a5c2840c36d12e5cae4a301144338c58758005e667946",
+    "implementation/warlock/qa/current-scene-core.json": "e4050c2eeabf7ed52528d90e59f49502117b5f0c9e645faa8b52757f727a6d06",
+    "implementation/warlock/qa/current-native-pair.json": "92cf77bb7cb4af7207d846858c1c4a6151da4d097e8f8db81a878b4fefb4a315",
+    "implementation/warlock/qa/current-search-build.json": "cea4cc86d82db772ed9c7af10f43b0675fae596d13338a4eb936118fc9f3f060",
+    "implementation/warlock/qa/modal-activation.qnt": "5958db8543fd0b2140d713d715505ff36c450184f427bf8765428e7ebaa6436e",
+    "implementation/warlock/qa/modal-activation_test.qnt": "44ba30b895729ec7bc4e5a5cdc0918376fa260629d4bc0e6936a39b7db764b8d",
+    "implementation/warlock/qa/check-modal-activation.py": "df5ae3cbf58c26b5813ac29d9365dcdf2cc6f78cd54d6bfb2c767d4f2348d818",
+    "implementation/warlock/qa/native-max-modal-focus.py": "128df4b9d6b05dbb06c0d7f709c7fd5e5f92e83315999472e12705b4a0761fee",
+    "implementation/warlock/README.md": "ee69e19759d8c279d5934cf017e793ec34403d30a23597d3d06e82270e79e559",
+    "implementation/warlock/native/authority.cpp": "f7c7445c47a61f2fffd5ed41e8cc48f8028e5499f059b072990a48376db99c07",
+    "implementation/warlock/native/core/CommittedScene.hpp": "8ab0576ddf0d2f141259b57dd211219455fa6f0fca94e21a077e49fc57fd577f",
+    "implementation/warlock/native/core/Renderer.cpp": "ceefb9b27ed86dad043057590c2558ebf799f71397c5e41071d21d368f1892ef",
+    "implementation/warlock/qa/native-committed-max.py": "a273ce078f454dcf87ddf9c8d5240a4e01ebbdb500a836bd231e72c0aa11d89e",
+    "implementation/warlock/qa/native-max-input-region.py": "719d0efd13a2f3867dc6e5732c54ca81065c71de5e02a6b9cf70e23d765dddc6"
+  },
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/scene-core-1791616203505769024/Hyprland",
+      "sha256": "5b95e2c22e12ce6ab980d24064ab88b0e0237f0f9b3ef00c6f28720208dc1bb2"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791616285223842851/elm-window-geometry-authority.so",
+      "sha256": "c7d66277cf320d5beef2d5eacb9da65fa80e1bcf49b57b73e67aeaf0bac90e13"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "reports": {
+    "core": {
+      "path": "implementation/warlock/qa/runs/scene-core-1791616203505769024/report.json",
+      "sha256": "4cf0fd9a1aa011c50eba69859478773ad8083c0876c3f640034be101b168f1f5",
+      "evidence": "core.json",
+      "passed": true
+    },
+    "authority": {
+      "path": "implementation/warlock/qa/runs/native-authority-1791616285223842851/report.json",
+      "sha256": "f51f84d348f92b4001406c863b5dcee7b26caf4e55f8fe85f5d69acebba2fd09",
+      "evidence": "authority.json",
+      "passed": true
+    },
+    "compiled": {
+      "path": "implementation/warlock/qa/runs/workspace-navigation-1791615361863473033/report.json",
+      "sha256": "116014e5345e9db6a24550aa8d19aa9a193b566a1e06cc336d0739ce5d1e8bab",
+      "evidence": "compiled.json",
+      "passed": true
+    },
+    "model-before": {
+      "path": "implementation/warlock/qa/runs/modal-activation-1791615248432849480/report.json",
+      "sha256": "4862f7f6dec0c6b76d5cd28e67849c0e6bfb361a800726ac03b45f51d0925129",
+      "evidence": "model-before.json",
+      "passed": true
+    },
+    "model-after": {
+      "path": "implementation/warlock/qa/runs/modal-activation-1791616550620767086/report.json",
+      "sha256": "3596759a61883bb1bb066d981892ad362a36104d54d1bdfa097a8ce86dfd7fa8",
+      "evidence": "model-after.json",
+      "passed": true
+    },
+    "native-input-hole-pass": {
+      "path": "implementation/warlock/qa/runs/native-max-modal-focus-1791616370665598272/report.json",
+      "sha256": "da36867fc2c902020464480bcdf937ad5bbb0da89271f32444e81fe156929b4f",
+      "evidence": "native-input-hole-pass.json",
+      "passed": true
+    },
+    "native-visible-owner-fail": {
+      "path": "implementation/warlock/qa/runs/native-max-modal-focus-1791617000476400560/report.json",
+      "sha256": "13926a000e678ecd9ca3059a11fbab7e0fed5e3beb63a09c2d311ec59d2b806f",
+      "evidence": "native-visible-owner-fail.json",
+      "passed": false
+    },
+    "native-visible-owner-repeat-fail": {
+      "path": "implementation/warlock/qa/runs/native-max-modal-focus-1791617120532421478/report.json",
+      "sha256": "9ae50d58db53cc1844b5ab36cb42590acab120bfaa6296b9888230ec76828db6",
+      "evidence": "native-visible-owner-repeat-fail.json",
+      "passed": false
+    },
+    "no-activation-regression": {
+      "path": "implementation/warlock/qa/runs/native-max-no-activation-1791616442666290013/report.json",
+      "sha256": "5f5d7ac1cd9f38dd6459aae1273dd527dc71e0c0100e9e1f8ddb381454103098",
+      "evidence": "no-activation-regression.json",
+      "passed": true
+    },
+    "pin-regression": {
+      "path": "implementation/warlock/qa/runs/native-pin-max-1791616467261629759/report.json",
+      "sha256": "081e322860471ef6cd618bfd484c765036476184b927832d0f64e08b7a7033d9",
+      "evidence": "pin-regression.json",
+      "passed": true
+    },
+    "native-before-fail": {
+      "path": "implementation/warlock/qa/runs/native-max-modal-focus-1791614984648298259/report.json",
+      "sha256": "0919ff9fd21b911c3125be5193c0b63db385b01b6345583aa6c98087984680ad",
+      "evidence": "native-before-fail.json",
+      "passed": false
+    }
+  },
+  "retainedFailedRuns": [
+    {
+      "kind": "initial-witness-sample-missed-reachable-retirement",
+      "path": "implementation/warlock/qa/runs/modal-activation-1791615108031391863/report.json",
+      "sha256": "c48fe0d2daa6534a5cd5ac694a394c0360ec4572000ae2797325615483641ed4"
+    },
+    {
+      "kind": "QA-boolean-option-parser-error",
+      "path": "implementation/warlock/qa/runs/native-max-modal-focus-1791615495061246990/report.json",
+      "sha256": "103c2c3fd8e7ff74a2aa5725023703d3d3e03e3e31f656e8d4d19e0a3074420d"
+    }
+  ],
+  "visibleOwnerBehaviorObserved": true,
+  "visibleOwnerCampaignPassed": false,
+  "inputHoleModalCampaignPassed": true,
+  "normalShutdownAccepted": false,
+  "modalObservation": {
+    "owner": "2",
+    "recipient": "3",
+    "point": [
+      201,
+      229
+    ],
+    "paintSceneBefore": {
+      "monitor": "0",
+      "sceneRevision": "9",
+      "outputCommitted": true,
+      "ready": true,
+      "order": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    "paintSceneAfter": {
+      "monitor": "0",
+      "sceneRevision": "10",
+      "outputCommitted": true,
+      "ready": true,
+      "order": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    "hitReceipts": [
+      {
+        "sequence": "35",
+        "monitor": "0",
+        "sceneRevision": "9",
+        "ready": true,
+        "recipient": "2",
+        "point": [
+          201.0,
+          229.0
+        ],
+        "properties": 32787
+      }
+    ],
+    "before": {
+      "protocolVersion": 3,
+      "kind": "scene-facts",
+      "binding": {
+        "lifetime": "394058872440710908",
+        "session": "1",
+        "frontend": "1"
+      },
+      "requestId": "441",
+      "sequence": "68",
+      "revision": "9",
+      "outputGeneration": "1",
+      "facts": {
+        "focused": "1",
+        "windows": [
+          {
+            "incarnation": "1",
+            "owner": null,
+            "application": "GTK Application",
+            "stackPosition": 0,
+            "workspace": "1",
+            "monitor": "0",
+            "geometry": [
+              1.0,
+              49.0,
+              798.0,
+              550.0
+            ],
+            "fullscreenMode": 1,
+            "workspaceVisible": true,
+            "hidden": false,
+            "pinned": false,
+            "allowedOverFullscreen": true,
+            "renderOverFullscreen": true,
+            "acceptsInput": true,
+            "shouldRenderAny": true,
+            "shouldRenderOwnMonitor": true,
+            "minimized": false
+          },
+          {
+            "incarnation": "2",
+            "owner": null,
+            "application": "GTK Application",
+            "stackPosition": 1,
+            "workspace": "1",
+            "monitor": "0",
+            "geometry": [
+              1.0,
+              49.0,
+              798.0,
+              550.0
+            ],
+            "fullscreenMode": 1,
+            "workspaceVisible": true,
+            "hidden": false,
+            "pinned": false,
+            "allowedOverFullscreen": true,
+            "renderOverFullscreen": true,
+            "acceptsInput": true,
+            "shouldRenderAny": true,
+            "shouldRenderOwnMonitor": true,
+            "minimized": false
+          },
+          {
+            "incarnation": "3",
+            "owner": "2",
+            "application": "GTK Application",
+            "stackPosition": 2,
+            "workspace": "1",
+            "monitor": "0",
+            "geometry": [
+              240.0,
+              204.0,
+              320.0,
+              240.0
+            ],
+            "fullscreenMode": 0,
+            "workspaceVisible": true,
+            "hidden": false,
+            "pinned": false,
+            "allowedOverFullscreen": true,
+            "renderOverFullscreen": true,
+            "acceptsInput": true,
+            "shouldRenderAny": true,
+            "shouldRenderOwnMonitor": true,
+            "minimized": false
+          }
+        ]
+      }
+    },
+    "after": {
+      "protocolVersion": 3,
+      "kind": "scene-facts",
+      "binding": {
+        "lifetime": "394058872440710908",
+        "session": "1",
+        "frontend": "1"
+      },
+      "requestId": "441",
+      "sequence": "73",
+      "revision": "10",
+      "outputGeneration": "1",
+      "facts": {
+        "focused": "3",
+        "windows": [
+          {
+            "incarnation": "1",
+            "owner": null,
+            "application": "GTK Application",
+            "stackPosition": 0,
+            "workspace": "1",
+            "monitor": "0",
+            "geometry": [
+              1.0,
+              49.0,
+              798.0,
+              550.0
+            ],
+            "fullscreenMode": 1,
+            "workspaceVisible": true,
+            "hidden": false,
+            "pinned": false,
+            "allowedOverFullscreen": true,
+            "renderOverFullscreen": true,
+            "acceptsInput": true,
+            "shouldRenderAny": true,
+            "shouldRenderOwnMonitor": true,
+            "minimized": false
+          },
+          {
+            "incarnation": "2",
+            "owner": null,
+            "application": "GTK Application",
+            "stackPosition": 1,
+            "workspace": "1",
+            "monitor": "0",
+            "geometry": [
+              1.0,
+              49.0,
+              798.0,
+              550.0
+            ],
+            "fullscreenMode": 1,
+            "workspaceVisible": true,
+            "hidden": false,
+            "pinned": false,
+            "allowedOverFullscreen": true,
+            "renderOverFullscreen": true,
+            "acceptsInput": true,
+            "shouldRenderAny": true,
+            "shouldRenderOwnMonitor": true,
+            "minimized": false
+          },
+          {
+            "incarnation": "3",
+            "owner": "2",
+            "application": "GTK Application",
+            "stackPosition": 2,
+            "workspace": "1",
+            "monitor": "0",
+            "geometry": [
+              240.0,
+              204.0,
+              320.0,
+              240.0
+            ],
+            "fullscreenMode": 0,
+            "workspaceVisible": true,
+            "hidden": false,
+            "pinned": false,
+            "allowedOverFullscreen": true,
+            "renderOverFullscreen": true,
+            "acceptsInput": true,
+            "shouldRenderAny": true,
+            "shouldRenderOwnMonitor": true,
+            "minimized": false
+          }
+        ]
+      }
+    },
+    "actualGTKKey": {
+      "window": "SCENE-MODAL",
+      "kind": "key",
+      "keyval": 97,
+      "keycode": 38
+    },
+    "images": [
+      {
+        "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791617120532523195/ModalParentPointBefore.png",
+        "sha256": "05475083d7b2d4c30265c431782c6b9c09e8a197176be100033c87aeeb9a8e52"
+      },
+      {
+        "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791617120532523195/ModalRecipientAfter.png",
+        "sha256": "c33c40368ffeac069fd3960deaed760d827396ea936fdb07784d34ac7c798015"
+      }
+    ],
+    "noSyntheticClick": true
+  },
+  "taskbarModalObservation": {
+    "intent": {
+      "protocolVersion": 3,
+      "kind": "window-effect",
+      "effectProtocol": 1,
+      "binding": {
+        "lifetime": "394058872440710908",
+        "session": "3",
+        "frontend": "1"
+      },
+      "intent": {
+        "request": "5",
+        "generation": "5",
+        "incarnation": "2",
+        "operation": "activate",
+        "context": {
+          "lifetime": "394058872440710908",
+          "epoch": "1",
+          "output": "1",
+          "revision": "11"
+        }
+      }
+    },
+    "native": {
+      "protocolVersion": 3,
+      "kind": "scene-facts",
+      "binding": {
+        "lifetime": "394058872440710908",
+        "session": "1",
+        "frontend": "1"
+      },
+      "requestId": "441",
+      "sequence": "94",
+      "revision": "12",
+      "outputGeneration": "1",
+      "facts": {
+        "focused": "3",
+        "windows": [
+          {
+            "incarnation": "2",
+            "owner": null,
+            "application": "GTK Application",
+            "stackPosition": 0,
+            "workspace": "1",
+            "monitor": "0",
+            "geometry": [
+              1.0,
+              49.0,
+              798.0,
+              550.0
+            ],
+            "fullscreenMode": 1,
+            "workspaceVisible": true,
+            "hidden": false,
+            "pinned": false,
+            "allowedOverFullscreen": true,
+            "renderOverFullscreen": true,
+            "acceptsInput": true,
+            "shouldRenderAny": true,
+            "shouldRenderOwnMonitor": true,
+            "minimized": false
+          },
+          {
+            "incarnation": "1",
+            "owner": null,
+            "application": "GTK Application",
+            "stackPosition": 1,
+            "workspace": "1",
+            "monitor": "0",
+            "geometry": [
+              1.0,
+              49.0,
+              798.0,
+              550.0
+            ],
+            "fullscreenMode": 1,
+            "workspaceVisible": true,
+            "hidden": false,
+            "pinned": false,
+            "allowedOverFullscreen": true,
+            "renderOverFullscreen": true,
+            "acceptsInput": true,
+            "shouldRenderAny": true,
+            "shouldRenderOwnMonitor": true,
+            "minimized": false
+          },
+          {
+            "incarnation": "3",
+            "owner": "2",
+            "application": "GTK Application",
+            "stackPosition": 2,
+            "workspace": "1",
+            "monitor": "0",
+            "geometry": [
+              240.0,
+              204.0,
+              320.0,
+              240.0
+            ],
+            "fullscreenMode": 0,
+            "workspaceVisible": true,
+            "hidden": false,
+            "pinned": false,
+            "allowedOverFullscreen": true,
+            "renderOverFullscreen": true,
+            "acceptsInput": true,
+            "shouldRenderAny": true,
+            "shouldRenderOwnMonitor": true,
+            "minimized": false
+          }
+        ]
+      }
+    },
+    "recipient": "3",
+    "noSyntheticClick": true
+  },
+  "missingObservations": [
+    "The two direct visible-owner recordings fail normal host exit with outstanding native picker custody/journal. Resolve actual custody retirement; preserve exit checks and original deadlines.",
+    "Independent original REN-015/max-modal-focus and GNO-006/hit-modal-redirect disposition; both remain partial.",
+    "Native nested/ambiguous/ineligible/cyclic families, stale/failed commit and button/device/map/retirement races, transforms, grabs/layers/constraints, fullscreen and multi-output.",
+    "Full scene/presentation, native AT/IME, measured resource/performance budgets and reproducible package/reversible deployment/rollback."
+  ],
+  "artifacts": {
+    "ExcludedPoint.png": "8c3368b9a52aa7f3e115465a32ca25d7f9bddef347e958e27295de21c9693eb2",
+    "IncludedPoint.png": "fe56a5a3770e65a56854a3e0b9347dddab270f4fb43bf2112bfd7da406dcddeb",
+    "README.md": "39e6dbeab00819c1647da41625dab8a88c1e2558bd1693142dd46079d9979caa",
+    "RetiredModalParentEligibleAgain.png": "8df7915415f21848addbb3034a4cd75396578f58d17165cd9bc20560bdd4d66e",
+    "authority.json": "f51f84d348f92b4001406c863b5dcee7b26caf4e55f8fe85f5d69acebba2fd09",
+    "compiled.json": "116014e5345e9db6a24550aa8d19aa9a193b566a1e06cc336d0739ce5d1e8bab",
+    "core.json": "4cf0fd9a1aa011c50eba69859478773ad8083c0876c3f640034be101b168f1f5",
+    "input-hole-passing-runner.py": "7ebd7e6e8b2cd8ab15641335c24ac45264e7a0db5c9f2608d1e70a8830a271d5",
+    "model-after-named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "model-after-named.stdout": "e9aa0a5d30f8c21c7de42a06927df853d5a4146bc344e5434b76e6ee7878c195",
+    "model-after-safety.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "model-after-safety.stdout": "c86d7ff810a9201099d23b0971470e0be241646617b09e2748f80aa28bc9a000",
+    "model-after-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "model-after-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "model-after-witnesses.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "model-after-witnesses.stdout": "f114d58b1d87d2a758ff3735bdabde6c6ff2e53418e50ff0cd028436771d9be7",
+    "model-after.json": "3596759a61883bb1bb066d981892ad362a36104d54d1bdfa097a8ce86dfd7fa8",
+    "model-before-named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "model-before-named.stdout": "ab2f8a78e1f1fbb94b1f262fa574b66f2200d56bd2cbde5aa8288e07e4d90463",
+    "model-before-safety.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "model-before-safety.stdout": "1299ab5d866f020186f49b25a758e9b0cd63c65b865f84824f2a3252ae56b2a2",
+    "model-before-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "model-before-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "model-before-witnesses.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "model-before-witnesses.stdout": "33591812c61e60c68bdddc71b37fa88899432245bd8418911696017b9718080b",
+    "model-before.json": "4862f7f6dec0c6b76d5cd28e67849c0e6bfb361a800726ac03b45f51d0925129",
+    "native-before-fail.json": "0919ff9fd21b911c3125be5193c0b63db385b01b6345583aa6c98087984680ad",
+    "native-input-hole-pass-ModalParentPointBefore.png": "e855fcb3e07ff0c373d54326c822d934fa810d8b2d2841874b5fcadeedf722db",
+    "native-input-hole-pass-ModalRecipientAfter.png": "5a903964b471d5810a12731fb480f4afbf0369e92f10642b624edd7184920b80",
+    "native-input-hole-pass.json": "da36867fc2c902020464480bcdf937ad5bbb0da89271f32444e81fe156929b4f",
+    "native-visible-owner-fail-ModalParentPointBefore.png": "51fe386ee6088b17fef20a6e098da5334540e9de2380c8fb4f6a42106c28629b",
+    "native-visible-owner-fail-ModalRecipientAfter.png": "ecd1ff9fae765ec611c99a310d1768b006283be34bd2fbe37978191bf630e77c",
+    "native-visible-owner-fail.json": "13926a000e678ecd9ca3059a11fbab7e0fed5e3beb63a09c2d311ec59d2b806f",
+    "native-visible-owner-repeat-fail-ModalParentPointBefore.png": "05475083d7b2d4c30265c431782c6b9c09e8a197176be100033c87aeeb9a8e52",
+    "native-visible-owner-repeat-fail-ModalRecipientAfter.png": "c33c40368ffeac069fd3960deaed760d827396ea936fdb07784d34ac7c798015",
+    "native-visible-owner-repeat-fail.json": "9ae50d58db53cc1844b5ab36cb42590acab120bfaa6296b9888230ec76828db6",
+    "no-activation-regression.json": "5f5d7ac1cd9f38dd6459aae1273dd527dc71e0c0100e9e1f8ddb381454103098",
+    "pin-regression.json": "081e322860471ef6cd618bfd484c765036476184b927832d0f64e08b7a7033d9"
+  }
+}

@@ -1,4 +1,5 @@
 #include "CommittedScene.hpp"
+#include "ModalRecipient.hpp"
 #include <bitset>
 #include <linux/input-event-codes.h>
 #include "InputManager.hpp"
@@ -867,6 +868,7 @@ void CInputManager::processMouseDownNormal(const IPointer::SButtonEvent& e, SP<I
     static auto PPASSMOUSE        = CConfigValue<Config::INTEGER>("binds:pass_mouse_when_bound");
     const auto  PASS              = g_pKeybindManager->onMouseEvent(e, mouse);
     static auto PFOLLOWMOUSE      = CConfigValue<Config::INTEGER>("input:follow_mouse");
+    static auto PMODALBLOCKING    = CConfigValue<Config::INTEGER>("general:modal_parent_blocking");
     static auto PRESIZEONBORDER   = CConfigValue<Config::INTEGER>("general:resize_on_border");
     static auto PBORDERSIZE       = CConfigValue<Config::INTEGER>("general:border_size");
     static auto PBORDERGRABEXTEND = CConfigValue<Config::INTEGER>("general:extend_border_grab_area");
@@ -891,6 +893,27 @@ void CInputManager::processMouseDownNormal(const IPointer::SButtonEvent& e, SP<I
         !g_pSeatManager->m_seatGrab && !isConstrained() && inputScene.required && !inputScene.ready) {
         sceneSuppressedButtons.set(e.button);
         return;
+    }
+    if (e.state == WL_POINTER_BUTTON_STATE_PRESSED && !m_lastFocusOnLS && !g_pSessionLockManager->isSessionLocked() &&
+        !g_pSeatManager->m_seatGrab && !isConstrained() && inputScene.required && inputScene.ready && *PMODALBLOCKING && *PFOLLOWMOUSE != 3) {
+        const auto owner = Desktop::viewState()->hitTest().windowAt(mouseCoords,
+            Desktop::View::ALLOW_FLOATING | Desktop::View::RESERVED_EXTENTS | Desktop::View::INPUT_EXTENTS | WarlockModal::INCLUDE_BLOCKED_PARENT);
+        if (owner && owner->m_xdgSurface && owner->m_xdgSurface->m_toplevel && owner->m_xdgSurface->m_toplevel->anyChildModal()) {
+            // This is activation only: never pass parent coordinates to a modal.
+            // Reserve release suppression before any focus callback or mutation.
+            sceneSuppressedButtons.set(e.button);
+            const auto recipient = WarlockModal::focusRecipient(owner, false, false, &inputScene.order);
+            const auto currentScene = Render::CommittedScene::inputOrder(sceneMonitor);
+            const bool recipientBlocked = recipient.has_value() && *recipient && (*recipient)->m_xdgSurface && (*recipient)->m_xdgSurface->m_toplevel &&
+                (*recipient)->m_xdgSurface->m_toplevel->anyChildModal();
+            if (currentScene.ready && currentScene.revision == inputScene.revision && recipient.has_value() && *recipient && *recipient != owner &&
+                !recipientBlocked && (*recipient)->acceptsInput() && !(*recipient)->m_ruleApplicator->noFocus().valueOrDefault()) {
+                Desktop::focusState()->fullWindowFocus(*recipient, Desktop::FOCUS_REASON_CLICK);
+                if (Desktop::focusState()->window() == *recipient)
+                    Desktop::windowState()->raise(*recipient);
+            }
+            return;
+        }
     }
     const auto w           = Desktop::viewState()->hitTest().windowAt(mouseCoords, Desktop::View::ALLOW_FLOATING | Desktop::View::RESERVED_EXTENTS | Desktop::View::INPUT_EXTENTS);
 

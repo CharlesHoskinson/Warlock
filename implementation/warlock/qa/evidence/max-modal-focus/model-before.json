@@ -1,0 +1,75 @@
+{
+  "passed": true,
+  "scope": "Ordinary MAX blocked-parent focus-only admission with abstract constraint cases; no native graph, timing, grabs/layers/lock, pixels, transforms, ABI, presentation or AT acceptance.",
+  "nativeAcceptance": false,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-a58a4ca9ec2e417caec743455f93f8e2.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "modal-activation.qnt": "5958db8543fd0b2140d713d715505ff36c450184f427bf8765428e7ebaa6436e",
+    "modal-activation_test.qnt": "44ba30b895729ec7bc4e5a5cdc0918376fa260629d4bc0e6936a39b7db764b8d"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/modal-activation.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/modal-activation_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=79501"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "witnesses",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/modal-activation.qnt",
+        "--backend=typescript",
+        "--witnesses",
+        "modalFocused",
+        "nestedFocused",
+        "ambiguousRefused",
+        "ownerAfterRetirement",
+        "--max-samples=10000",
+        "--max-steps=80",
+        "--seed=79502"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "safety",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/modal-activation.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79503"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "witnessCounts": {
+    "modalFocused": 252,
+    "nestedFocused": 278,
+    "ambiguousRefused": 8817,
+    "ownerAfterRetirement": 10
+  }
+}

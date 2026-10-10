@@ -1483,9 +1483,40 @@
         {
           "name": "hit-modal-redirect",
           "oracle": "native focus redirects to the eligible modal without forwarding the parent click coordinates as a modal click",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/max-modal-focus/manifest.json",
+              "sha256": "e29badbf4ba80af595631ce8086dfe0780611c51c6f9bdf74a5c5805bf3c43cf",
+              "scope": "Native committed MAX owner-hit, accepted modal focus/key/pixels, no synthesized GTK button, taskbar activation and retirement recovery. Input-hole modal campaign passes; two visible-owner behavior recordings fail host custody shutdown, retained. Overall native campaign and independent acceptance remain incomplete.",
+              "sourceBaseRevision": "d09c0d3c4f22703ee1ce1b77461c341f8010d327",
+              "sourceHashes": {
+                "implementation/warlock/native/core/InputManager.cpp": "d3f57b0d1d27fe204fd28afbf540def44fa7084d0c5cc1fb3cc67f66fd5de8cc",
+                "implementation/warlock/native/core/ViewHitTester.cpp": "2a168c756303d2b8fd4b74264f4e9933bcd88c0841383245b8f128f85e4e8018",
+                "implementation/warlock/native/core/ModalRecipient.hpp": "212cc06e1b7eb1a2d40eb8b06b7caaaf4a1a69f36501a1f73686372548c12411",
+                "implementation/warlock/native/navigation-modal.hpp": "48a0a3c195425db508b20d1bc869ad588a03f3f3fc5fcba01ac0cd16853db30f",
+                "implementation/warlock/qa/check-scene-core.py": "ff243cdc650635c0bf7fa800e506abbde916df0a79c4cea77056d8ad0b3329f5",
+                "implementation/warlock/qa/check-native-authority.py": "493ce0ebfdb3e7dd53ff142fc87ad9d4a2f8f94fdba7cbdd13b0166fb238beee",
+                "implementation/warlock/qa/native-window-feedback.py": "a6247750ae49bfef098a5c2840c36d12e5cae4a301144338c58758005e667946",
+                "implementation/warlock/qa/current-scene-core.json": "e4050c2eeabf7ed52528d90e59f49502117b5f0c9e645faa8b52757f727a6d06",
+                "implementation/warlock/qa/current-native-pair.json": "92cf77bb7cb4af7207d846858c1c4a6151da4d097e8f8db81a878b4fefb4a315",
+                "implementation/warlock/qa/current-search-build.json": "cea4cc86d82db772ed9c7af10f43b0675fae596d13338a4eb936118fc9f3f060",
+                "implementation/warlock/qa/modal-activation.qnt": "5958db8543fd0b2140d713d715505ff36c450184f427bf8765428e7ebaa6436e",
+                "implementation/warlock/qa/modal-activation_test.qnt": "44ba30b895729ec7bc4e5a5cdc0918376fa260629d4bc0e6936a39b7db764b8d",
+                "implementation/warlock/qa/check-modal-activation.py": "df5ae3cbf58c26b5813ac29d9365dcdf2cc6f78cd54d6bfb2c767d4f2348d818",
+                "implementation/warlock/qa/native-max-modal-focus.py": "128df4b9d6b05dbb06c0d7f709c7fd5e5f92e83315999472e12705b4a0761fee",
+                "implementation/warlock/README.md": "ee69e19759d8c279d5934cf017e793ec34403d30a23597d3d06e82270e79e559",
+                "implementation/warlock/native/authority.cpp": "f7c7445c47a61f2fffd5ed41e8cc48f8028e5499f059b072990a48376db99c07",
+                "implementation/warlock/native/core/CommittedScene.hpp": "8ab0576ddf0d2f141259b57dd211219455fa6f0fca94e21a077e49fc57fd577f",
+                "implementation/warlock/native/core/Renderer.cpp": "ceefb9b27ed86dad043057590c2558ebf799f71397c5e41071d21d368f1892ef",
+                "implementation/warlock/qa/native-committed-max.py": "a273ce078f454dcf87ddf9c8d5240a4e01ebbdb500a836bd231e72c0aa11d89e",
+                "implementation/warlock/qa/native-max-input-region.py": "719d0efd13a2f3867dc6e5732c54ca81065c71de5e02a6b9cf70e23d765dddc6"
+              },
+              "reviewer": "root-modal",
+              "disposition": "partial"
+            }
+          ],
+          "missingObservation": "The two direct visible-owner recordings fail normal host exit with outstanding native picker custody/journal. Resolve actual custody retirement; preserve exit checks and original deadlines.; Independent original REN-015/max-modal-focus and GNO-006/hit-modal-redirect disposition; both remain partial.; Native nested/ambiguous/ineligible/cyclic families, stale/failed commit and button/device/map/retirement races, transforms, grabs/layers/constraints, fullscreen and multi-output.; Full scene/presentation, native AT/IME, measured resource/performance budgets and reproducible package/reversible deployment/rollback."
         }
       ]
     },
@@ -3067,9 +3098,40 @@
         {
           "name": "max-modal-focus",
           "oracle": "native authority focuses the accepted modal recipient without corrupting constrained paint order",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/max-modal-focus/manifest.json",
+              "sha256": "e29badbf4ba80af595631ce8086dfe0780611c51c6f9bdf74a5c5805bf3c43cf",
+              "scope": "Native committed MAX owner-hit, accepted modal focus/key/pixels, no synthesized GTK button, taskbar activation and retirement recovery. Input-hole modal campaign passes; two visible-owner behavior recordings fail host custody shutdown, retained. Overall native campaign and independent acceptance remain incomplete.",
+              "sourceBaseRevision": "d09c0d3c4f22703ee1ce1b77461c341f8010d327",
+              "sourceHashes": {
+                "implementation/warlock/native/core/InputManager.cpp": "d3f57b0d1d27fe204fd28afbf540def44fa7084d0c5cc1fb3cc67f66fd5de8cc",
+                "implementation/warlock/native/core/ViewHitTester.cpp": "2a168c756303d2b8fd4b74264f4e9933bcd88c0841383245b8f128f85e4e8018",
+                "implementation/warlock/native/core/ModalRecipient.hpp": "212cc06e1b7eb1a2d40eb8b06b7caaaf4a1a69f36501a1f73686372548c12411",
+                "implementation/warlock/native/navigation-modal.hpp": "48a0a3c195425db508b20d1bc869ad588a03f3f3fc5fcba01ac0cd16853db30f",
+                "implementation/warlock/qa/check-scene-core.py": "ff243cdc650635c0bf7fa800e506abbde916df0a79c4cea77056d8ad0b3329f5",
+                "implementation/warlock/qa/check-native-authority.py": "493ce0ebfdb3e7dd53ff142fc87ad9d4a2f8f94fdba7cbdd13b0166fb238beee",
+                "implementation/warlock/qa/native-window-feedback.py": "a6247750ae49bfef098a5c2840c36d12e5cae4a301144338c58758005e667946",
+                "implementation/warlock/qa/current-scene-core.json": "e4050c2eeabf7ed52528d90e59f49502117b5f0c9e645faa8b52757f727a6d06",
+                "implementation/warlock/qa/current-native-pair.json": "92cf77bb7cb4af7207d846858c1c4a6151da4d097e8f8db81a878b4fefb4a315",
+                "implementation/warlock/qa/current-search-build.json": "cea4cc86d82db772ed9c7af10f43b0675fae596d13338a4eb936118fc9f3f060",
+                "implementation/warlock/qa/modal-activation.qnt": "5958db8543fd0b2140d713d715505ff36c450184f427bf8765428e7ebaa6436e",
+                "implementation/warlock/qa/modal-activation_test.qnt": "44ba30b895729ec7bc4e5a5cdc0918376fa260629d4bc0e6936a39b7db764b8d",
+                "implementation/warlock/qa/check-modal-activation.py": "df5ae3cbf58c26b5813ac29d9365dcdf2cc6f78cd54d6bfb2c767d4f2348d818",
+                "implementation/warlock/qa/native-max-modal-focus.py": "128df4b9d6b05dbb06c0d7f709c7fd5e5f92e83315999472e12705b4a0761fee",
+                "implementation/warlock/README.md": "ee69e19759d8c279d5934cf017e793ec34403d30a23597d3d06e82270e79e559",
+                "implementation/warlock/native/authority.cpp": "f7c7445c47a61f2fffd5ed41e8cc48f8028e5499f059b072990a48376db99c07",
+                "implementation/warlock/native/core/CommittedScene.hpp": "8ab0576ddf0d2f141259b57dd211219455fa6f0fca94e21a077e49fc57fd577f",
+                "implementation/warlock/native/core/Renderer.cpp": "ceefb9b27ed86dad043057590c2558ebf799f71397c5e41071d21d368f1892ef",
+                "implementation/warlock/qa/native-committed-max.py": "a273ce078f454dcf87ddf9c8d5240a4e01ebbdb500a836bd231e72c0aa11d89e",
+                "implementation/warlock/qa/native-max-input-region.py": "719d0efd13a2f3867dc6e5732c54ca81065c71de5e02a6b9cf70e23d765dddc6"
+              },
+              "reviewer": "root-modal",
+              "disposition": "partial"
+            }
+          ],
+          "missingObservation": "The two direct visible-owner recordings fail normal host exit with outstanding native picker custody/journal. Resolve actual custody retirement; preserve exit checks and original deadlines.; Independent original REN-015/max-modal-focus and GNO-006/hit-modal-redirect disposition; both remain partial.; Native nested/ambiguous/ineligible/cyclic families, stale/failed commit and button/device/map/retirement races, transforms, grabs/layers/constraints, fullscreen and multi-output.; Full scene/presentation, native AT/IME, measured resource/performance budgets and reproducible package/reversible deployment/rollback."
         },
         {
           "name": "max-focus-not-top",
@@ -11037,5 +11099,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-10T06:43:11.236337+00:00"
+  "updatedUTC": "2026-10-10T07:32:24.601362+00:00"
 }

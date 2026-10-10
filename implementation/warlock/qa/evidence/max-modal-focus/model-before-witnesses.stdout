@@ -1,0 +1,1713 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      constraint: 0,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: false,
+      ready: true,
+      redirects: 0,
+      refusals: 0,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      constraint: 0,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 0,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      constraint: 5,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 0,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      constraint: 1,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 0,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      constraint: 3,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 0,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      constraint: 3,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: false,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 0,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      constraint: 3,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: false,
+      presses: 0,
+      protected: false,
+      ready: true,
+      redirects: 0,
+      refusals: 0,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      constraint: 1,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: false,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 0,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      constraint: 2,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: false,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 0,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      constraint: 5,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: false,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 0,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      constraint: 5,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: false,
+      presses: 0,
+      protected: true,
+      ready: false,
+      redirects: 0,
+      refusals: 0,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      constraint: 5,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: false,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 0,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      constraint: 2,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: false,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 0,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      constraint: 2,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: false,
+      presses: 0,
+      protected: false,
+      ready: true,
+      redirects: 0,
+      refusals: 0,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      constraint: 2,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: false,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 0,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      constraint: 2,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: false,
+      presses: 0,
+      protected: false,
+      ready: true,
+      redirects: 0,
+      refusals: 0,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      constraint: 2,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: false,
+      ready: true,
+      redirects: 0,
+      refusals: 0,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      constraint: 2,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 0,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      constraint: 0,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 0,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      constraint: 0,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: true,
+      synthetic: 0
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      constraint: 0,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: false,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: true,
+      synthetic: 0
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      constraint: 5,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: false,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: true,
+      synthetic: 0
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      constraint: 5,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: true,
+      synthetic: 0
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      constraint: 0,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: true,
+      synthetic: 0
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      constraint: 4,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: true,
+      synthetic: 0
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      constraint: 4,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      constraint: 4,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: false,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      constraint: 0,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: false,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      constraint: 0,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: false,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      constraint: 0,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: false,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      constraint: 0,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: false,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      constraint: 0,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      constraint: 3,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      constraint: 3,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: false,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      constraint: 3,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: false,
+      presses: 0,
+      protected: true,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      constraint: 4,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: false,
+      presses: 0,
+      protected: true,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      constraint: 3,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: false,
+      presses: 0,
+      protected: true,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      constraint: 4,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: false,
+      presses: 0,
+      protected: true,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      constraint: 4,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: true,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      constraint: 4,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: true,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      constraint: 0,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: true,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 41]
+{
+  s:
+    {
+      constraint: 0,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 42]
+{
+  s:
+    {
+      constraint: 2,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 43]
+{
+  s:
+    {
+      constraint: 4,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 44]
+{
+  s:
+    {
+      constraint: 0,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 45]
+{
+  s:
+    {
+      constraint: 0,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: true,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 46]
+{
+  s:
+    {
+      constraint: 2,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: true,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 47]
+{
+  s:
+    {
+      constraint: 5,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: true,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 48]
+{
+  s:
+    {
+      constraint: 4,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: true,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 49]
+{
+  s:
+    {
+      constraint: 4,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: true,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 50]
+{
+  s:
+    {
+      constraint: 2,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: true,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 51]
+{
+  s:
+    {
+      constraint: 2,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: true,
+      ready: true,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 52]
+{
+  s:
+    {
+      constraint: 2,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: true,
+      ready: true,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 53]
+{
+  s:
+    {
+      constraint: 3,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: true,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 54]
+{
+  s:
+    {
+      constraint: 3,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: false,
+      presses: 0,
+      protected: true,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 55]
+{
+  s:
+    {
+      constraint: 3,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: false,
+      presses: 0,
+      protected: true,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 56]
+{
+  s:
+    {
+      constraint: 1,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: false,
+      presses: 0,
+      protected: true,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 57]
+{
+  s:
+    {
+      constraint: 3,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: false,
+      presses: 0,
+      protected: true,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 58]
+{
+  s:
+    {
+      constraint: 3,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: false,
+      presses: 0,
+      protected: true,
+      ready: true,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 59]
+{
+  s:
+    {
+      constraint: 3,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: false,
+      presses: 0,
+      protected: false,
+      ready: true,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 60]
+{
+  s:
+    {
+      constraint: 3,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: false,
+      presses: 0,
+      protected: false,
+      ready: true,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 61]
+{
+  s:
+    {
+      constraint: 3,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: false,
+      presses: 0,
+      protected: true,
+      ready: true,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 62]
+{
+  s:
+    {
+      constraint: 3,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: false,
+      presses: 0,
+      protected: true,
+      ready: true,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 63]
+{
+  s:
+    {
+      constraint: 3,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: false,
+      presses: 0,
+      protected: true,
+      ready: true,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 64]
+{
+  s:
+    {
+      constraint: 1,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: false,
+      presses: 0,
+      protected: true,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 65]
+{
+  s:
+    {
+      constraint: 1,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: false,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 66]
+{
+  s:
+    {
+      constraint: 1,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 67]
+{
+  s:
+    {
+      constraint: 1,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 68]
+{
+  s:
+    {
+      constraint: 2,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 69]
+{
+  s:
+    {
+      constraint: 3,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 70]
+{
+  s:
+    {
+      constraint: 3,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 71]
+{
+  s:
+    {
+      constraint: 3,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: true,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 72]
+{
+  s:
+    {
+      constraint: 1,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: true,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 73]
+{
+  s:
+    {
+      constraint: 0,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: true,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 74]
+{
+  s:
+    {
+      constraint: 0,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: true,
+      ready: true,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 75]
+{
+  s:
+    {
+      constraint: 0,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: false,
+      ready: true,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 76]
+{
+  s:
+    {
+      constraint: 4,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 77]
+{
+  s:
+    {
+      constraint: 4,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: false,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 78]
+{
+  s:
+    {
+      constraint: 4,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: true,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 79]
+{
+  s:
+    {
+      constraint: 1,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: true,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[State 80]
+{
+  s:
+    {
+      constraint: 4,
+      focus: 1,
+      modalAbove: false,
+      parentPoint: true,
+      presses: 0,
+      protected: true,
+      ready: false,
+      redirects: 0,
+      refusals: 1,
+      releases: 0,
+      rootOrder: [0, 1],
+      staleMutations: 0,
+      suppressed: false,
+      synthetic: 0
+    }
+}
+
+[ok] No violation found (16764ms at 597 traces/second).
+Trace length statistics: max=81, min=81, average=81.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Witnesses:
+modalFocused was witnessed in 252 trace(s) out of 10000 explored (2.52%)
+nestedFocused was witnessed in 278 trace(s) out of 10000 explored (2.78%)
+ambiguousRefused was witnessed in 8817 trace(s) out of 10000 explored (88.17%)
+ownerAfterRetirement was witnessed in 10 trace(s) out of 10000 explored (0.10%)
+Use --seed=0x1368e --backend=typescript to reproduce.

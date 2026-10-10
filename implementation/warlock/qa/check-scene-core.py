@@ -55,12 +55,13 @@ try:
             rel=original.relative_to(renderer_path.parent/'owning-headers');q=tree/rel
             q.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(original,q)
     header=ROOT/'native/core/CommittedScene.hpp';shutil.copyfile(header,tree/'CommittedScene.hpp')
+    modal_header=ROOT/'native/core/ModalRecipient.hpp';shutil.copyfile(modal_header,tree/'ModalRecipient.hpp')
     input_path=REPO/'implementation/elm-core-seat-focus-restoration-v450/build-1791131758410759196/report.json'
     input_record=json.loads(input_path.read_text());assert input_record['passed']
     specs=[('src/render/Renderer.cpp',renderer_path,renderer),('src/desktop/state/ViewHitTester.cpp',PRIOR/'report.json',prior),
            ('src/managers/input/InputManager.cpp',input_path,input_record)]
     entries=json.loads((OWNER/'build/compile_commands.json').read_text())
-    source_hashes={'native/core/CommittedScene.hpp':sha(header)};baseline_sources={};deps={};replacements={}
+    source_hashes={'native/core/CommittedScene.hpp':sha(header),'native/core/ModalRecipient.hpp':sha(modal_header)};baseline_sources={};deps={};replacements={}
     target=OUT/'libhyprland_lib.a';shutil.copyfile(PRIOR/'libhyprland_lib.a',target)
     for rel,baseline_report,baseline in specs:
         name=pathlib.Path(rel).name;member=name+'.o'
