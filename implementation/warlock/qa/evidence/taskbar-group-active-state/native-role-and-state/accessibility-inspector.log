@@ -1,0 +1,6 @@
+/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/accessibility-inspector.py:39: DeprecationWarning: Gio.DBusConnection.register_object is deprecated
+  session.register_object('/org/a11y/bus', item, method, prop, None)
+/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/accessibility-inspector.py:127: PyGIDeprecationWarning: GLib.unix_signal_add is deprecated; use GLibUnix.signal_add instead
+  GLib.unix_signal_add(GLib.PRIORITY_DEFAULT, signal.SIGTERM, lambda: (loop.quit(), False)[1])
+
+(process:301899): dbind-WARNING **: 15:59:34.423: AT-SPI: Error in GetItems, sender=:1.3, error=Object does not exist at path “/org/a11y/atspi/cache”

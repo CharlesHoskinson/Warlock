@@ -26,6 +26,8 @@ Every cue retains a non-color shape or text alternative. High contrast, effects-
 
 Effects-off and reduced-transparency preferences now have native keyboard save/restart evidence ([scope](../implementation/warlock/qa/evidence/layer-appearance/README.md)). Current native shell colors and the snap glow are provisional rather than full layered-token adoption. Inset focus rings avoid clipping but do not close the voted outer-indicator contract. Always on top now has one stable checkable label and shape, with typed checked state from the exact captured native pin observation. Actual pointer/keyboard MAX pin/unpin and physical overlap behavior are recorded in [the current evidence](../implementation/warlock/qa/evidence/pin-check/README.md); native AT and full family/fullscreen qualification remain open. Taskbar Pin/Unpin names application persistence only.
 
+Grouped taskbar items retain the running window count while exposing Active when a member is foreground. The same observed state drives the visible detail and native toggle state; opening a grouped item still chooses a window. [Current evidence](../implementation/warlock/qa/evidence/taskbar-group-active-state/README.md) records the production projection and native semantic observations; original AT action, speech/braille and independent acceptance remain separate.
+
 ## New and evolving surfaces
 
 Settings, notifications, system controls, Files, jump lists and motion preferences require the same six component sections as the existing catalog: overview, anatomy/states, behavior/keyboard, accessibility, content and evidence. Record their actual implementation route and unsupported capabilities before adding specimens. Label every simulated native outcome as fixture data.

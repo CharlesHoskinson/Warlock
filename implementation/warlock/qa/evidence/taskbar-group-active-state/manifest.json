@@ -1,0 +1,220 @@
+{
+  "schema": 1,
+  "createdUTC": "2026-10-10T22:04:54.254831+00:00",
+  "requirements": [
+    "ELM-UI-009"
+  ],
+  "scenarios": [
+    "at-taskbar-groups"
+  ],
+  "sourceBaseRevision": "4e1da8af2cc95dcb9cc301f9655d2cb36a09bef3",
+  "sourceHashes": {
+    "implementation/warlock/src/Surface.elm": "58cca707a3289b998cd54bb6609328064081fc2f7bda2e983a3ec7862bd99758",
+    "implementation/warlock/src/SurfaceRenderer.elm": "48e03f50fd509ea0e42e23d7a1aa26396122350ab824c8dc179952b5bfd28c63",
+    "implementation/warlock/qa/TaskbarGroupStateReplay.elm": "39290fdf9b5f4dd93ec571f08295a40769c238242f93032ef73b83b2a8ac97bc",
+    "implementation/warlock/qa/check-search.py": "155f0ea38e9c5b897b132452d71a825f87dbeeba6821837e11b441150b6df564",
+    "implementation/warlock/qa/native-window-feedback.py": "a89c7d3541aa213c69ecdf37c579b099562a3dd7bfb80be5610d84f48cfdead9",
+    "implementation/warlock/qa/current-search-build.json": "692935c9b47403a9b252ce3fccf434ac2af5b9429eab4cc681738362bdbcf45b",
+    "implementation/warlock/assets/elm.js": "bd721cfee4c454729cd2847ae0f31869983bce532034118b063b8733688d549d",
+    "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+    "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
+    "implementation/warlock/README.md": "a758f957e6bd378c6ecc8fdc655a660fc2630fe9adb2ede2ef8e3b020673d9d8"
+  },
+  "supportingSourceHashes": {
+    "DesignLanguage/CURRENT.md": "79aa0023ed2e6d4e4e612b91345e6d2dda42ebc11073ce1006096abfa1dec261"
+  },
+  "retainedFiles": [
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-group-active-state/baseline/report.json",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/accessibility-1791669525408134272/report.json",
+      "sha256": "3beee2693a3749ee916c03fe89daf4e76231ffc9b969ea84d45ff6ca6051fc6a",
+      "bytes": 72018
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-group-active-state/baseline/taskbar-group-state.json",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/accessibility-1791669525408134272/taskbar-group-state.json",
+      "sha256": "4bc1cd8b3caa592447cbfd693f1404dbc62afda983eb331a5ee8c375e0895bb3",
+      "bytes": 3225
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-group-active-state/baseline/typed-taskbar-group-state.stdout",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/accessibility-1791669525408134272/typed-taskbar-group-state.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-group-active-state/final-build/report.json",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/accessibility-1791669538841893877/report.json",
+      "sha256": "4221ab73d6f01d74ed452cec99c3269d025c8465fe3bb27b3d9490e3dc905fc2",
+      "bytes": 109038
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-group-active-state/final-build/taskbar-group-state.json",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/accessibility-1791669538841893877/taskbar-group-state.json",
+      "sha256": "c1831a994c402eb628f68d9325eeb030bf6a503fbdfd9ea7321e77cdf39902ff",
+      "bytes": 3238
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-group-active-state/final-build/typed-taskbar-group-state.stdout",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/accessibility-1791669538841893877/typed-taskbar-group-state.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-group-active-state/final-build/switcher-focus.json",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/accessibility-1791669538841893877/switcher-focus.json",
+      "sha256": "a1196388d22a0ee9475eca07bd78c3e302ceaaf21d20c1cba2807fd145f0214b",
+      "bytes": 722
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-group-active-state/final-build/switcher-model-named.stdout",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/accessibility-1791669538841893877/switcher-model-named.stdout",
+      "sha256": "691d636a4b1d74314efca1c8275ae8fcd0ab9d3aea833c29ee858838ddf43a34",
+      "bytes": 523
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-group-active-state/final-build/switcher-model-invariants.stdout",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/accessibility-1791669538841893877/switcher-model-invariants.stdout",
+      "sha256": "52d056bc2ffa618c2cc0f9806b31d4f710ff0ac2bbba3dd37a48ecb2a3d5a6b5",
+      "bytes": 6630
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-group-active-state/final-build/focus-model-named.stdout",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/accessibility-1791669538841893877/focus-model-named.stdout",
+      "sha256": "1653999475f3732396fbf3a9ed87964bb3aee810e7876d2430f13bc50a05bfbb",
+      "bytes": 308
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-group-active-state/final-build/focus-model-invariants.stdout",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/accessibility-1791669538841893877/focus-model-invariants.stdout",
+      "sha256": "80762e14cc57e3977dc521db30cc7b7a0be4e16d8a1a932c3be5a9be18113541",
+      "bytes": 4583
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-group-active-state/final-build/accessibility-browser.json",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/accessibility-1791669538841893877/accessibility-browser.json",
+      "sha256": "e7e60e3250786ae56e126430c023ab6419e2fc1ee51f0d2d3ca26a085465b801",
+      "bytes": 3807
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-group-active-state/native-role-and-state/report.json",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-accessibility-1791669570610162258/report.json",
+      "sha256": "7c11c91e793f15e0e199878fd09bb1b7f32e2d324219ac8af7c5c34c44239a29",
+      "bytes": 324364
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-group-active-state/native-role-and-state/at-reply.json",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791669570610254180/at-reply.json",
+      "sha256": "17e1fc25c05e8eb699af34939dc36a1abe149d092c1d745cabf6ac5fa1294b2b",
+      "bytes": 19488
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-group-active-state/native-role-and-state/at-events.jsonl",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791669570610254180/at-events.jsonl",
+      "sha256": "a2778abec8d9a73588a79fca6a3965daa3d9ada5710ebb41118e9e716ff46e24",
+      "bytes": 3949
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-group-active-state/native-role-and-state/orca-utterances.jsonl",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791669570610254180/orca-utterances.jsonl",
+      "sha256": "749b57badcb0aaea988c85cc1c3239a70a367ff888b4c8f7a1fe2298986fd18d",
+      "bytes": 1222
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-group-active-state/native-role-and-state/accessibility-inspector.log",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791669570610254180/accessibility-inspector.log",
+      "sha256": "38bc3a14ba67a49e7a4ab0c647de4f13b61c86e2e2c05e4ccc3772b3e3498786",
+      "bytes": 673
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-group-active-state/native-role-and-state/accessibility-orca.log",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791669570610254180/accessibility-orca.log",
+      "sha256": "d64fe26c25b609743bea0deebcca3724f50d03468998d2c71c4dc60abf06ae21",
+      "bytes": 12370
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-group-active-state/native-input-missing-app-dismissal/report.json",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-accessibility-1791669631728869075/report.json",
+      "sha256": "cfbd99b9e9c4f1c7692a1f308714fe40106f67d47e059962037454f6ee2f30f7",
+      "bytes": 363882
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-group-active-state/native-input-label-mismatch/report.json",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-accessibility-1791669674505025484/report.json",
+      "sha256": "46f101e8d435f3d26f1671c794d72a4a95c9f007b74383547c83715fcd2953df",
+      "bytes": 374611
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-group-active-state/native-reopen-crash/report.json",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-accessibility-1791669768274446731/report.json",
+      "sha256": "e36df8feaa6d61b60af5a6affaa6b722808cdc94e010ae66329500871df44a0d",
+      "bytes": 367528
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-group-active-state/native-reopen-crash/at-reply.json",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791669768274572836/at-reply.json",
+      "sha256": "46d497261dccf8a1f9122ffaa0d38784f74c589caa782e58379c238814b09691",
+      "bytes": 18969
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-group-active-state/native-reopen-crash/at-events.jsonl",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791669768274572836/at-events.jsonl",
+      "sha256": "37d3c92d5242890ffd745f27c461d6b496a8b2a38a1365d1ca2d2e5cd27f0cf4",
+      "bytes": 8790
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-group-active-state/native-reopen-crash/orca-utterances.jsonl",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791669768274572836/orca-utterances.jsonl",
+      "sha256": "55dc5673264923f3bfc1712dd9e98d8bf5a05a81f129c9f321d0b1bdb6fcd120",
+      "bytes": 3224
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-group-active-state/native-reopen-crash/accessibility-inspector.log",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791669768274572836/accessibility-inspector.log",
+      "sha256": "21d807e44dbfab55659a09afbb4b9e7d31108006d294ed73a984dbc158e20add",
+      "bytes": 673
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-group-active-state/native-reopen-crash/accessibility-orca.log",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791669768274572836/accessibility-orca.log",
+      "sha256": "802fee8a89cd4b872031c25af653b281789407768f2183de7ef54b2da81b0051",
+      "bytes": 12370
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-group-active-state/native-reopen-crash/warlock.log",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791669768274572836/warlock.log",
+      "sha256": "4fa1809ad3a639aab538bd61113d636042bfe86d4a6930f1c13a353dc349288e",
+      "bytes": 291587
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-group-active-state/kernel-crash-observation.txt",
+      "sha256": "b2023a92d2fc3bca7abff0626837353c523d60b2e931eac53967d53d9d74c749",
+      "bytes": 98,
+      "scope": "Bounded read-only system crash observation; no core extracted or core-limit change."
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-group-active-state/coredump-query.txt",
+      "sha256": "e2407dad5480fe176681b503a643685b72e70da34e81a34efea3aef9c6dabb21",
+      "bytes": 20,
+      "scope": "Bounded read-only system crash observation; no core extracted or core-limit change."
+    }
+  ],
+  "observedOutcome": "Active two-member groups now retain Active and the window count. Old production fails three active cases and passes two inactive/minimized cases; final production passes all five. Existing browser accessibility and original Quint switcher/focus gates pass. Native AT agrees with all actual taskbar control names and exactly one group toggle state; real pointer dismissal returns to the application and keyboard Home reaches the group. Native AT picker reopening then fails with WebKit termination and host exit 1.",
+  "fixtureCorrections": [
+    "Recognize native button alongside push button/toggle button without changing exact-name/count/state assertions.",
+    "Preserve pointer application-return policy, then exercise keyboard opener-return using real Super+Alt+Space, application dismissal and Home/arrow navigation. Match immutable group control identity rather than its changing state label. Original deadlines and final bar-opener/Orca agreement assertions are unchanged."
+  ],
+  "modelScope": "Projection-only Surface detail change; no reducer, admission or effect-authority change. Existing explicitly selected switcher/focus Quint tests and sampled invariants pass; these do not prove native AT behavior. No new model created for text/state projection.",
+  "missingObservations": [
+    "Complete native picker action/return and remaining original AT journey are unverified: WebKit terminated during reopening under AT inspection.",
+    "Native speech/braille semantic oracle, per-control native actions and independent acceptance remain open.",
+    "No core stack is available: kernel records RLIMIT_CORE=1 aborting the dump; no OOM event found in the bounded crash interval."
+  ],
+  "reviewerDisposition": {
+    "name": "root-taskbar-group-active",
+    "independent": false,
+    "disposition": "partial"
+  },
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

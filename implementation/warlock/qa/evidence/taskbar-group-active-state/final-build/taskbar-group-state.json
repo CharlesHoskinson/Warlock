@@ -1,0 +1,100 @@
+{
+  "checks": {
+    "firstMemberActiveGroup": true,
+    "secondMemberActiveGroup": true,
+    "inactiveGroupRetainsCount": true,
+    "mixedMinimizedGroupRetainsActive": true,
+    "allMinimizedGroupHasNoActiveState": true
+  },
+  "activeFrame": {
+    "surfaceProtocol": 2,
+    "keyboardParent": true,
+    "motion": "reduced",
+    "appearance": {
+      "theme": "night",
+      "textScale": 100,
+      "effectsOff": false,
+      "reducedTransparency": false
+    },
+    "publication": "1",
+    "lease": "0",
+    "mode": "closed",
+    "status": "Connected",
+    "bar": [
+      {
+        "id": "bar:group:application:documents",
+        "domId": "group:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:1:application:documents",
+        "label": "Document 1",
+        "ariaLabel": "Choose a window from Document 1; Active; 2 windows",
+        "detail": "Active; 2 windows",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:applications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:control:opener",
+        "label": "Applications",
+        "ariaLabel": "Open applications",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:overview",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:control:overview-opener",
+        "label": "Task View",
+        "ariaLabel": "Open Task View",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:switcher",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:control:switcher-opener",
+        "label": "Switch windows",
+        "ariaLabel": "Open window switcher",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:notifications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:notifications:opener",
+        "label": "Notifications",
+        "ariaLabel": "Open notifications",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:files",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:files:opener",
+        "label": "Files",
+        "ariaLabel": "Open Files menu",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:system",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:system:opener",
+        "label": "System",
+        "ariaLabel": "Open system menu",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:settings",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:settings:opener",
+        "label": "Settings",
+        "ariaLabel": "Open settings",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      }
+    ],
+    "popup": []
+  },
+  "scope": "Production Surface projection from admitted two-member component fixtures; native states, input and speech/braille are separate."
+}

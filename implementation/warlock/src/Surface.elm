@@ -348,7 +348,7 @@ barControls model =
                         if family.minimized then "Minimized"
                         else if family.active then "Active"
                         else "Open"
-                    _ -> String.fromInt (List.length group.families) ++ " windows"
+                    _ -> (if List.any .active group.families then "Active; " else "") ++ String.fromInt (List.length group.families) ++ " windows"
                 observedState = if attention then "Attention; "++state else state
             in {id="bar:group:" ++ group.key,domId=scoped |> Maybe.map (\stamp -> "group:" ++ Shell.stampKey stamp ++ ":" ++ group.key) |> Maybe.withDefault "detached-group",label=label,ariaLabel=operation ++ label ++ "; " ++ observedState ++ (if blocked then "; awaiting native confirmation" else ""),detail=if blocked then "Awaiting native confirmation; " ++ observedState else observedState,enabled=ready,message=if ready then scoped |> Maybe.map (\stamp -> Desktop.Window (TaskbarShell.Primary stamp group.key)) else Nothing}
         pinIds = Desktop.pinIdentities model

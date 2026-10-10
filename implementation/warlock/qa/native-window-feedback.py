@@ -1243,16 +1243,33 @@ raise SystemExit(daemon.run())
      if ACCESSIBILITY:
       dom=wait(lambda:(body if body and body.get('buttons') and any(b['accessibleName'].startswith('Choose a window from') for b in body['buttons']) else None) if (body:=bar_body()) else None);names=[b['accessibleName'] for b in dom['buttons']]
       def bar_tree():
-       value=at_observe();rows=[row for row in value['nodes'] if any(a['role']=='tool bar' and a['name']=='Warlock taskbar' for a in row['ancestors']) and row['role'] in ['push button','toggle button']]
+       value=at_observe();rows=[row for row in value['nodes'] if any(a['role']=='tool bar' and a['name']=='Warlock taskbar' for a in row['ancestors']) and row['role'] in ['button','push button','toggle button']]
        return (value,rows) if len(rows)==len(names) and sorted(row['name'] for row in rows)==sorted(names) else None
       tree,at_bar=wait(bar_tree);report['accessibilitySnapshots']=[{'stage':'TaskbarInitial',**tree}]
       check('ActualTaskbarExportsAllControlNames',len(at_bar)==len(names) and sorted(row['name'] for row in at_bar)==sorted(names),native=at_bar,dom=names)
       check('ActualTaskbarActiveStateHasNativeToggleState',sum(bool({'pressed','checked'} & set(row['states'])) for row in at_bar)==1 and all(bool({'pressed','checked'} & set(row['states']))==('Active' in row['name']) for row in at_bar),native=at_bar)
       button=next(b for b in dom['buttons'] if b['accessibleName'].startswith('Choose a window from'))
       click({'visible':0<=button['x']+button['width']/2<800 and 0<=button['y']<48,'point':[button['x']+button['width']/2,button['y']+button['height']/2]})
-      # Click opens the actual group picker. Escape then leaves physical focus
-      # on its existing taskbar opener; no injected DOM/AT focus qualifies it.
+      # Pointer dismissal preserves the application's recipient. Exercise the
+      # separate real keyboard-entry route before asserting bar-opener return.
       wait(lambda:(projection() or {}).get('mode')=='picker');key(1);wait(lambda:(projection() or {}).get('mode')=='closed')
+      def pointer_return():
+       value=at_observe();reader=value.get('reader') or {};active=reader.get('active_window') or {};focus=reader.get('focus') or {}
+       return value if active.get('name')=='ELM-AUTHORITY-FIXTURE' and focus.get('app')!='elm-host' and focus.get('role')=='text' else None
+      returned=wait(pointer_return);report['accessibilitySnapshots'].append({'stage':'PointerDismissalApplicationReturn',**returned})
+      check('ActualPointerDismissalPreservesApplicationRecipient',returned['reader']['active_window']['name']=='ELM-AUTHORITY-FIXTURE',reader=returned['reader'])
+      helper([str(keyboard)],'key 125 1\nkey 56 1\nkey 57 1\nsleep 50\nkey 57 0\nkey 56 0\nkey 125 0\nsleep 100\nsync\n')
+      wait(lambda:(projection() or {}).get('mode')=='applications');key(1);wait(lambda:(projection() or {}).get('mode')=='closed')
+      def keyboard_bar():
+       body=bar_body();return body if body and body.get('documentFocused') and any(b['id']==body['focus'] and not b['disabled'] for b in body['buttons']) else None
+      wait(keyboard_bar);key(102);focused=wait(keyboard_bar)
+      for _ in range(len(focused['buttons'])+1):
+       chosen=next(b for b in focused['buttons'] if b['id']==focused['focus'])
+       if chosen['identity']==button['identity']:break
+       previous=focused['focus'];key(106);focused=wait(lambda:(b:=keyboard_bar()) and b['focus']!=previous and b)
+      check('ActualKeyboardNavigatesToTaskbarGroup',chosen['identity']==button['identity'],chosen=chosen)
+      button=chosen
+      key(28);wait(lambda:(projection() or {}).get('mode')=='picker');key(1);wait(lambda:(projection() or {}).get('mode')=='closed')
       def bar_focus():
        value=at_observe();return value if ((value.get('reader') or {}).get('focus') or {}).get('name')==button['accessibleName'] and any(row['name']==button['accessibleName'] and 'focused' in row['states'] for row in value['nodes']) else None
       bar_state=wait(bar_focus);report['accessibilitySnapshots'].append({'stage':'TaskbarFocusAfterDismissal',**bar_state})

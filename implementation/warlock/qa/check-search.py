@@ -68,6 +68,10 @@ def run(name,args):
  if p.returncode:raise RuntimeError(p.stderr or p.stdout)
  return p.stdout
 try:
+ if ACCESSIBILITY:
+  run('compile-taskbar-group-state',[str(HELD/pinned['compiler']),'make','qa/TaskbarGroupStateReplay.elm','--output='+str(OUT/'taskbar-group-state.js')])
+  replay=(INPUT/'qa/feedback-replay.js').read_text().replace('Elm.FeedbackReplay','Elm.TaskbarGroupStateReplay');(INPUT/'qa/taskbar-group-state-replay.js').write_text(replay)
+  run('typed-taskbar-group-state',['node','qa/taskbar-group-state-replay.js',str(OUT/'taskbar-group-state.js'),str(OUT/'taskbar-group-state.json')]);report['taskbarGroupState']=json.loads((OUT/'taskbar-group-state.json').read_text());assert all(report['taskbarGroupState']['checks'].values())
  if RELEVANCE:
   model=json.loads(run('notification-relevance-model',['/usr/bin/python3','-B','qa/check-notification-relevance.py']));assert model['passed'];report['notificationRelevanceModel']=model
   run('compile-notification-relevance',[str(HELD/pinned['compiler']),'make','qa/NotificationRelevanceReplay.elm','--optimize','--output=assets/notification-relevance.js'])

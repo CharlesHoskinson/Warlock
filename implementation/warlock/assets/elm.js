@@ -6296,8 +6296,13 @@ var $author$project$Surface$barControls = function (model) {
 				var family = _v6.a;
 				return family.b_ ? 'Minimized' : (family.bv ? 'Active' : 'Open');
 			} else {
-				return $elm$core$String$fromInt(
-					$elm$core$List$length(group.aI)) + ' windows';
+				return (A2(
+					$elm$core$List$any,
+					function ($) {
+						return $.bv;
+					},
+					group.aI) ? 'Active; ' : '') + ($elm$core$String$fromInt(
+					$elm$core$List$length(group.aI)) + ' windows');
 			}
 		}();
 		var scoped = $author$project$Shell$capture(model.a.b);
