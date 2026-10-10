@@ -1,0 +1,66 @@
+{
+  "passed": true,
+  "scope": "Bounded appearance CAS/draft/committed/lost/refused/read state; no native presentation, timing, schema codec or transport refinement.",
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/layer-appearance-1791601256550634659/inputs/qa/layer-appearance_test.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/layer-appearance-1791601256550634659/inputs/qa/layer-appearance_test.qnt",
+        "--backend=typescript",
+        "--match=^(draftDoesNotApplyTest|bothFlagsCommitTest|unknownKeepsOldAppearanceTest|readReconcilesWithoutReplayTest|staleSaveCannotOverwriteTest)$",
+        "--max-samples=1",
+        "--seed=79401"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "witnesses",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/layer-appearance-1791601256550634659/inputs/qa/layer-appearance.qnt",
+        "--backend=typescript",
+        "--witnesses",
+        "bothCommitted",
+        "unknownHeld",
+        "staleRefused",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79402"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "safety",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/layer-appearance-1791601256550634659/inputs/qa/layer-appearance.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79403"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "witnessCounts": {
+    "bothCommitted": 543,
+    "unknownHeld": 454,
+    "staleRefused": 436
+  },
+  "modelSHA256": "234aaa3f46555712502819a7f9de8233f3ca931053d250278bbac16b12e758a4",
+  "nativeAcceptance": false
+}

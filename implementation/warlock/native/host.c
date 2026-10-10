@@ -390,9 +390,14 @@ static const char *request_kind(JsonNode *root) {
         if(write){
             JsonNode *proposal=json_object_get_member(obj,"proposal");if(!proposal || !JSON_NODE_HOLDS_OBJECT(proposal))return NULL;
             JsonObject *p=json_node_get_object(proposal);const char *const pfields[]={"schema","revision","values"};JsonNode *version=json_object_get_member(p,"schema"),*values=json_object_get_member(p,"values");
-            if(!surface_fields(p,pfields,3) || !version || json_node_get_value_type(version)!=G_TYPE_INT64 || json_node_get_int(version)!=1 || !surface_uint(json_object_get_member(p,"revision"),&revision) || !revision || !values || !JSON_NODE_HOLDS_OBJECT(values))return NULL;
-            JsonObject *v=json_node_get_object(values);const char *const vfields[]={"theme","textScale"};JsonNode *theme=json_object_get_member(v,"theme"),*scale=json_object_get_member(v,"textScale");
-            if(!surface_fields(v,vfields,2) || !surface_theme(theme) || !scale || json_node_get_value_type(scale)!=G_TYPE_INT64 || (json_node_get_int(scale)!=100 && json_node_get_int(scale)!=125 && json_node_get_int(scale)!=150 && json_node_get_int(scale)!=200))return NULL;
+            if(!surface_fields(p,pfields,3) || !version || json_node_get_value_type(version)!=G_TYPE_INT64 || (json_node_get_int(version)!=1 && json_node_get_int(version)!=2) || !surface_uint(json_object_get_member(p,"revision"),&revision) || !revision || !values || !JSON_NODE_HOLDS_OBJECT(values))return NULL;
+            JsonObject *v=json_node_get_object(values);const char *const vfields[]={"theme","textScale","effectsOff","reducedTransparency"};JsonNode *theme=json_object_get_member(v,"theme"),*scale=json_object_get_member(v,"textScale");
+            gboolean extended=json_node_get_int(version)==2;
+            if(extended){
+                JsonNode *effects=json_object_get_member(v,"effectsOff"),*transparency=json_object_get_member(v,"reducedTransparency");
+                if(!effects || !transparency || json_node_get_value_type(effects)!=G_TYPE_BOOLEAN || json_node_get_value_type(transparency)!=G_TYPE_BOOLEAN)return NULL;
+            }
+            if(!surface_fields(v,vfields,extended?4:2) || !surface_theme(theme) || !scale || json_node_get_value_type(scale)!=G_TYPE_INT64 || (json_node_get_int(scale)!=100 && json_node_get_int(scale)!=125 && json_node_get_int(scale)!=150 && json_node_get_int(scale)!=200))return NULL;
         }
         return value;
     }
@@ -941,6 +946,13 @@ static void test_requests(void) {
     json_object_set_string_member(settings_values,"theme","high-contrast");
     json_object_set_int_member(settings_values,"textScale",77);g_assert_null(request_kind(json_parser_get_root(settings_parser)));
     json_object_set_int_member(settings_values,"textScale",150);json_object_set_int_member(settings_proposal,"schema",2);g_assert_null(request_kind(json_parser_get_root(settings_parser)));
+    json_object_set_boolean_member(settings_values,"effectsOff",TRUE);g_assert_null(request_kind(json_parser_get_root(settings_parser)));
+    json_object_set_boolean_member(settings_values,"reducedTransparency",TRUE);g_assert_nonnull(request_kind(json_parser_get_root(settings_parser)));
+    json_object_set_int_member(settings_values,"effectsOff",1);g_assert_null(request_kind(json_parser_get_root(settings_parser)));
+    json_object_set_string_member(settings_values,"effectsOff","false");g_assert_null(request_kind(json_parser_get_root(settings_parser)));
+    json_object_set_boolean_member(settings_values,"effectsOff",FALSE);g_assert_nonnull(request_kind(json_parser_get_root(settings_parser)));
+    json_object_set_int_member(settings_proposal,"schema",3);g_assert_null(request_kind(json_parser_get_root(settings_parser)));
+    json_object_remove_member(settings_values,"effectsOff");json_object_remove_member(settings_values,"reducedTransparency");
     json_object_set_int_member(settings_proposal,"schema",1);json_object_set_string_member(settings_proposal,"path","/tmp/foreign");g_assert_null(request_kind(json_parser_get_root(settings_parser)));
     const char *pins_good="{\"protocolVersion\":3,\"kind\":\"taskbar-pins-write\",\"binding\":{},\"requestId\":\"1\",\"proposal\":{\"revision\":\"1\",\"identities\":[\"files\",\"editor\"]}}";
     g_autoptr(JsonParser) pins_parser=json_parser_new();g_assert_true(json_parser_load_from_data(pins_parser,pins_good,-1,NULL));g_assert_nonnull(request_kind(json_parser_get_root(pins_parser)));

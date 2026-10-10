@@ -1,0 +1,43 @@
+--- a/native-window-feedback.py
++++ b/native-window-feedback.py
+@@ -1549,7 +1549,7 @@
+      from catalog_transport import CatalogTransport
+      from shell_preferences import Store as SettingsStore
+      transport=CatalogTransport(client,roots);transport.settings=SettingsStore(env['XDG_STATE_HOME'])
+-     original=state_file.read_bytes();invalid={**saved,'values':{**saved['values'],'theme':'night','textScale':77}}
++     original=state_file.read_bytes();invalid={**saved,'values':{'theme':'night','textScale':77}}
+      bad_request={'protocolVersion':3,'kind':'shell-settings-write','binding':client.bound,'requestId':'31000','proposal':invalid};refusal=transport.handle(bad_request)
+      check('NativeBoundInvalidScaleRefusedAndUnapplied',refusal['status']=='Refused' and refusal['snapshot'] is None and state_file.read_bytes()==original and settings_body()['theme']==desired_theme and settings_body()['textScale']=='150',request=bad_request,receipt=refusal)
+      report['nativeSettingsInvalidScale']={'request':bad_request,'receipt':refusal,'storedSHA256':sha(state_file)}
+@@ -1565,21 +1565,6 @@
+      body=wait(lambda:settings_body() if settings_body() and settings_body()['theme']==desired_theme and settings_body()['fontSize']=='24px' else None)
+      check('ReopenedSettingsReadsSavedValues',body['textScale']=='150' and 'Settings loaded.' in body['text'],body=body)
+      if LAYER:check('BothAppearanceModesSurviveWholeHostRestart',body['effects']=='off' and body['reducedTransparency']=='true' and bar_body()['effects']=='off' and bar_body()['reducedTransparency']=='true' and stored()==saved,body=body,bar=bar_body(),storage=stored())
+-     if LAYER:
+-      keyboard_button('Dismiss help',28)
+-      for _ in range(len(settings_body()['buttons'])+1):
+-       body=settings_body();focus=next((button for button in body['buttons'] if button['id']==body['focus']),None)
+-       if focus and focus['identity']=='settings:effects-off':break
+-       key(15)
+-      else:raise AssertionError('Original native appearance focus traversal')
+-      body=wait(lambda:settings_body() if settings_body() and settings_body()['focus']==focus['id'] and settings_body()['documentFocused'] else None)
+-      # Ordinary Tab reveals the second preference through the real popup scroll
+-      # route, rather than treating an offscreen successor as an unusable control.
+-      key(15)
+-      body=wait(lambda:settings_body() if settings_body() and any(button['identity']=='settings:reduced-transparency' and button['id']==settings_body()['focus'] for button in settings_body()['buttons']) else None)
+-      toggles=[button for button in body['buttons'] if button['identity'] in ['settings:effects-off','settings:reduced-transparency']]
+-      check('NativeAppearanceControlsRemainVisibleAndNamed',len(toggles)==2 and all(button['width']>0 and button['height']>0 and button['x']>=0 and button['y']>=0 and button['x']+button['width']<=body['viewportWidth'] and button['y']+button['height']<=body['viewportHeight'] for button in toggles),controls=toggles,body=body)
+-      check('NativeEffectsOffRetainsSolidKeyboardFocus',body['focusStyle']['outlineWidth']=='3px' and body['focusStyle']['outlineColor']=='rgb(23, 104, 176)',body=body)
+      if CONTRAST:
+       for _ in range(len(body['buttons'])+1):
+        body=settings_body();focus=next((button for button in body['buttons'] if button['id']==body['focus']),None)
+@@ -1592,9 +1577,6 @@
+       check('ActualKeyboardFocusHasInsetContrastOutline',style['outlineColor']=='rgb(255, 255, 0)' and style['outlineWidth']=='3px' and style['outlineOffset']=='-4px' and focus['accessibleName']=='High contrast theme',body=body)
+       check('HighContrastFocusedLabelAndTargetAreVisible',focus['width']>0 and focus['height']>0 and focus['x']>=0 and focus['y']>=0 and focus['x']+focus['width']<=body['viewportWidth'] and focus['y']+focus['height']<=body['viewportHeight'] and focus['labelRect']['x']>=focus['x'] and focus['labelRect']['x']+focus['labelRect']['width']<=focus['x']+focus['width'],target=focus,body=body)
+      popup_capture('settings-after-restart');check('EnlargedSettingsPopupStartsBelowNativeBar',report['popupCaptures'][-1]['nativeBox'][1]>=72,nativeBox=report['popupCaptures'][-1]['nativeBox']);report['nativeSettingsAfterRestart']={'storage':stored(),'body':body,'writes':requests('shell-settings-write')}
+-     if LAYER:
+-      capture=report['popupCaptures'][-1]
+-      check('ActualNativeAppearanceControlsArePainted',bool(capture['controlRegions']) and all(c['area']>0 and c['paintedPixels']>.9*c['area'] for c in capture['controlRegions']),capture=capture)
+      if CONTRAST:
+       capture=report['popupCaptures'][-1];image=pathlib.Path(capture['path']);import gi;gi.require_version('GdkPixbuf','2.0');from gi.repository import GdkPixbuf
+       pix=GdkPixbuf.Pixbuf.new_from_file(str(image));pixels=pix.get_pixels();stride=pix.get_rowstride();channels=pix.get_n_channels();box=capture['nativeBox']

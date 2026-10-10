@@ -9894,9 +9894,87 @@
                 }
               },
               "reviewerDisposition": "Owner-observed native Settings/taskbar and component theme/scale fixtures only; independent original all-surface acceptance remains open."
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/layer-appearance/manifest.json",
+              "sha256": "2b9e8832cae10475b78ded30a4a909734dda829ccf8e48cf160da7e60c625fd6",
+              "scope": "Implemented committed shell appearance preferences; original native keyboard save/restart and isolated invalid-scale refusal, native solid focus/control pixels and existing nine-surface regression. Browser 12 flag/theme combinations and model/store/host checks remain separate from native acceptance."
             }
           ],
-          "missingObservation": "Original ux-027 still requires native readable-label/focus/hit-target coverage across every migrated shell surface and every supported theme/text-scale fixture. Current physical evidence covers Settings and taskbar with Night defaults, High contrast at 150% and a separate Dawn 150% restart journey; the 12-fixture matrix and forced colors are browser component evidence. Applicable native AT/speech/braille consumers and independent original-scenario acceptance remain open. Full-release hardware/resource/journey/package/deployment gates remain open."
+          "missingObservation": "Independent original-scenario acceptance and native AT remain open. UX-027 every-surface/profile/output scope and full layered-window token/window-decoration contracts remain separate.",
+          "reviewerDisposition": {
+            "name": "root-layer-appearance",
+            "independent": false,
+            "disposition": "Owner observed component/native pass; original and release acceptance remain partial."
+          },
+          "sourceTuple": {
+            "sourceBaseRevision": "520971e4110addeeb92f0293cd48982c84bf52d1",
+            "sourceHashes": {
+              "implementation/warlock/src/Settings.elm": "128b031066a0146a469bcfcbc254294d0bfebf47eaf91aa6c066bdd17f2d103f",
+              "implementation/warlock/src/Surface.elm": "cf0f691ab114902b1afd1f08b5a616cb9ee99562a8af179eee30ad4426bf9234",
+              "implementation/warlock/src/SurfaceRenderer.elm": "b8fa11052a9cfb27a0e663781ffd41a1265372451148a3a567c5d5efa71825c1",
+              "implementation/warlock/adapter/shell_preferences.py": "333895ca91c20e206cebf645206584213d08cb02553bb10a1758f5308f04c7fa",
+              "implementation/warlock/native/surface.h": "689eb6cf1fcd93a8cb92705e6c4b93fa1d3b87c52b064631367af6616eba355d",
+              "implementation/warlock/assets/appearance.js": "99b01609571af35328d7b69034f647f25651fb59d9d59928063a7e8c83a9b3f6",
+              "implementation/warlock/assets/shell.css": "ff839b058db3599f6c83633f7ba090b8729140878832226ccd39845335441aa4",
+              "implementation/warlock/assets/elm.js": "3434364bdd5b147c87b7ae2f2b523ddfddd3ff8ef8d870b70f305f67fd593b97",
+              "implementation/warlock/assets/bar.js": "b69b4aa6d1f9868f46f7819085f1cf7b1d96fc581c4c5b6a024fb8834f5c3591",
+              "implementation/warlock/assets/popup.js": "da81c70a55cd2dc2a82f4187db7b0007e44c532d91aaece8db6f7036a5351931",
+              "implementation/warlock/assets/bar-adapter.js": "2ca45278e7947fd0a5e81d2806477a44c584168937d9584a18f203783de2b080",
+              "implementation/warlock/assets/popup-adapter.js": "8f9e77accc18cb7001578ed2458d5be2fcfb6ddf49def180b471dcd0a26e9390",
+              "implementation/warlock/qa/SettingsReplay.elm": "121f6c9e319ba1a1942d3e04656eb157e434791d20288bd0af87bf5ca6cc322a",
+              "implementation/warlock/qa/LayerAppearanceReplay.elm": "edecab58528556dbe44da05c325977893059551f79895131ed11d55c7c90e8ab",
+              "implementation/warlock/qa/check-settings.py": "b39f26f170336599756aab3812c8c41ab1a71fcd6846590abea7b3557409ee5a",
+              "implementation/warlock/qa/settings-browser.mjs": "b57f88a203065df5cf59ab863d6757139da6b1f9748fd0cd0f5c2b8df0212afa",
+              "implementation/warlock/qa/layer-appearance-browser.mjs": "0e009835cb1bc1ac3cd45c24e4fff2f204f1207386871453ee981ad0c6db54c8",
+              "implementation/warlock/qa/layer-appearance.qnt": "234aaa3f46555712502819a7f9de8233f3ca931053d250278bbac16b12e758a4",
+              "implementation/warlock/qa/layer-appearance_test.qnt": "cdb8cb8fcbe2643281fee1b5116b40046f2aaa32c7d2edd75b7dd1357871ac0b",
+              "implementation/warlock/qa/check-layer-appearance.py": "8af51b89b42672b960936f5a97f67f4f3adcc5fa3e7fd0e3855431e2c01ca606",
+              "implementation/warlock/qa/check-search.py": "fe3f160a1f0cd84060c785e0f07b711d69e7776b6b49049b324722805028e284",
+              "implementation/warlock/qa/native-window-feedback.py": "8f16e8b6ef49f4e15833b1b7f0734ea8d83ae8e2c4dbd1b47cdff9a625a46c96",
+              "implementation/warlock/qa/current-search-build.json": "4e582adfaa28003e38d492ded6b13c545b0a97285d73be3f1079d5a998a00cfa",
+              "implementation/warlock/README.md": "82a9030b6905ea4cffc1a8a35cc377d774c450bc791864e5d96807097be468b1",
+              "implementation/warlock/native/surface-test.c": "bc456113a69637bf8046055926dc1933a948f70f1c1ace6b46c1a7bdf3aa8405",
+              "implementation/warlock/native/host.c": "d039ae60ee62f95b4a12d594bf28a53bd5387efa0f0d53a8aa2fd053a0107a56"
+            },
+            "nativePair": {
+              "core": {
+                "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-core-1791495415110842751/Hyprland",
+                "sha256": "81c9ac609c2900f99c1efbe613b83e949aeae3059a5e4403601581fa96191acf"
+              },
+              "plugin": {
+                "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791596429600393566/elm-window-geometry-authority.so",
+                "sha256": "1f5de87c759902cbbca05dfdbba56090641c994cf3c7276671094248465bcac4"
+              },
+              "aquamarine": {
+                "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+                "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+              }
+            },
+            "nativeHost": {
+              "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/layer-appearance-1791601256550634659/elm-host",
+              "sha256": "5771db964a191bffe0958e2724d13aa790b19de32ecc8329b5b4c57ed71b3dc7",
+              "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/layer-appearance-1791601256550634659/report.json",
+              "heldBuildSHA256": "ee0b23f13a0afc56bd837ca19e24e5b73c97f27e24a7a47be2b4857b3d50c3fc"
+            }
+          },
+          "scopedObservations": [
+            {
+              "atUTC": "2026-10-10T03:10:54.015532+00:00",
+              "disposition": "partial",
+              "scope": "Implemented committed shell appearance preferences; original native keyboard save/restart and isolated invalid-scale refusal, native solid focus/control pixels and existing nine-surface regression. Browser 12 flag/theme combinations and model/store/host checks remain separate from native acceptance.",
+              "missingObservations": [
+                "Independent original-scenario acceptance.",
+                "Native AT and every surface/profile/output qualification.",
+                "Full layered-window token/window-decoration adoption and remaining design-language contracts."
+              ],
+              "evidence": {
+                "path": "implementation/warlock/qa/evidence/layer-appearance/manifest.json",
+                "sha256": "2b9e8832cae10475b78ded30a4a909734dda829ccf8e48cf160da7e60c625fd6",
+                "scope": "Implemented committed shell appearance preferences; original native keyboard save/restart and isolated invalid-scale refusal, native solid focus/control pixels and existing nine-surface regression. Browser 12 flag/theme combinations and model/store/host checks remain separate from native acceptance."
+              }
+            }
+          ]
         }
       ]
     },
@@ -10032,9 +10110,14 @@
               "path": "implementation/warlock/qa/evidence/shell-settings/manifest.json",
               "sha256": "1f3fda77b902c3e9445c107aa13a4c4dba6d53c00f3eda6425a2cebaec5ba253",
               "scope": "Integrated keyboard-operable appearance settings, exact Saved/CAS correlation, private atomic persistence and whole native host restart. Actual committed Dawn/150% rendering, live/restarted 72-pixel bar/popup layout and native-bound invalid-scale refusal observed. Independent original-scenario acceptance remains open."
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/layer-appearance/manifest.json",
+              "sha256": "2b9e8832cae10475b78ded30a4a909734dda829ccf8e48cf160da7e60c625fd6",
+              "scope": "Implemented committed shell appearance preferences; original native keyboard save/restart and isolated invalid-scale refusal, native solid focus/control pixels and existing nine-surface regression. Browser 12 flag/theme combinations and model/store/host checks remain separate from native acceptance."
             }
           ],
-          "missingObservation": "Independent original ux-030 review against the exact source/core/plugin/toolchain tuple.; Original keyboard-only and applicable AT/IME settings fixtures remain separate; this native recording uses pointer opening and keyboard edits/save/dismissal.; Reduced motion, notification and other release settings obligations are not supplied by this bounded theme/text-size implementation.",
+          "missingObservation": "Independent original-scenario acceptance and native AT remain open. UX-027 every-surface/profile/output scope and full layered-window token/window-decoration contracts remain separate.",
           "sourceHashes": {
             "implementation/warlock/src/Settings.elm": "d4b47648e2276c533d23729232ed3fe75f599bc3bad9113b97565f4f40ecb8cc",
             "implementation/warlock/src/Desktop.elm": "2ad3f0d47f8b4ec91c70558394acd401bc14e4b3461a836be6f2dac41d760f4d",
@@ -10069,7 +10152,80 @@
             "name": "root-shell-settings",
             "independent": false,
             "disposition": "Original native save/restart and invalid-scale oracles observed by owner; independent acceptance remains open."
-          }
+          },
+          "reviewerDisposition": {
+            "name": "root-layer-appearance",
+            "independent": false,
+            "disposition": "Owner observed component/native pass; original and release acceptance remain partial."
+          },
+          "sourceTuple": {
+            "sourceBaseRevision": "520971e4110addeeb92f0293cd48982c84bf52d1",
+            "sourceHashes": {
+              "implementation/warlock/src/Settings.elm": "128b031066a0146a469bcfcbc254294d0bfebf47eaf91aa6c066bdd17f2d103f",
+              "implementation/warlock/src/Surface.elm": "cf0f691ab114902b1afd1f08b5a616cb9ee99562a8af179eee30ad4426bf9234",
+              "implementation/warlock/src/SurfaceRenderer.elm": "b8fa11052a9cfb27a0e663781ffd41a1265372451148a3a567c5d5efa71825c1",
+              "implementation/warlock/adapter/shell_preferences.py": "333895ca91c20e206cebf645206584213d08cb02553bb10a1758f5308f04c7fa",
+              "implementation/warlock/native/surface.h": "689eb6cf1fcd93a8cb92705e6c4b93fa1d3b87c52b064631367af6616eba355d",
+              "implementation/warlock/assets/appearance.js": "99b01609571af35328d7b69034f647f25651fb59d9d59928063a7e8c83a9b3f6",
+              "implementation/warlock/assets/shell.css": "ff839b058db3599f6c83633f7ba090b8729140878832226ccd39845335441aa4",
+              "implementation/warlock/assets/elm.js": "3434364bdd5b147c87b7ae2f2b523ddfddd3ff8ef8d870b70f305f67fd593b97",
+              "implementation/warlock/assets/bar.js": "b69b4aa6d1f9868f46f7819085f1cf7b1d96fc581c4c5b6a024fb8834f5c3591",
+              "implementation/warlock/assets/popup.js": "da81c70a55cd2dc2a82f4187db7b0007e44c532d91aaece8db6f7036a5351931",
+              "implementation/warlock/assets/bar-adapter.js": "2ca45278e7947fd0a5e81d2806477a44c584168937d9584a18f203783de2b080",
+              "implementation/warlock/assets/popup-adapter.js": "8f9e77accc18cb7001578ed2458d5be2fcfb6ddf49def180b471dcd0a26e9390",
+              "implementation/warlock/qa/SettingsReplay.elm": "121f6c9e319ba1a1942d3e04656eb157e434791d20288bd0af87bf5ca6cc322a",
+              "implementation/warlock/qa/LayerAppearanceReplay.elm": "edecab58528556dbe44da05c325977893059551f79895131ed11d55c7c90e8ab",
+              "implementation/warlock/qa/check-settings.py": "b39f26f170336599756aab3812c8c41ab1a71fcd6846590abea7b3557409ee5a",
+              "implementation/warlock/qa/settings-browser.mjs": "b57f88a203065df5cf59ab863d6757139da6b1f9748fd0cd0f5c2b8df0212afa",
+              "implementation/warlock/qa/layer-appearance-browser.mjs": "0e009835cb1bc1ac3cd45c24e4fff2f204f1207386871453ee981ad0c6db54c8",
+              "implementation/warlock/qa/layer-appearance.qnt": "234aaa3f46555712502819a7f9de8233f3ca931053d250278bbac16b12e758a4",
+              "implementation/warlock/qa/layer-appearance_test.qnt": "cdb8cb8fcbe2643281fee1b5116b40046f2aaa32c7d2edd75b7dd1357871ac0b",
+              "implementation/warlock/qa/check-layer-appearance.py": "8af51b89b42672b960936f5a97f67f4f3adcc5fa3e7fd0e3855431e2c01ca606",
+              "implementation/warlock/qa/check-search.py": "fe3f160a1f0cd84060c785e0f07b711d69e7776b6b49049b324722805028e284",
+              "implementation/warlock/qa/native-window-feedback.py": "8f16e8b6ef49f4e15833b1b7f0734ea8d83ae8e2c4dbd1b47cdff9a625a46c96",
+              "implementation/warlock/qa/current-search-build.json": "4e582adfaa28003e38d492ded6b13c545b0a97285d73be3f1079d5a998a00cfa",
+              "implementation/warlock/README.md": "82a9030b6905ea4cffc1a8a35cc377d774c450bc791864e5d96807097be468b1",
+              "implementation/warlock/native/surface-test.c": "bc456113a69637bf8046055926dc1933a948f70f1c1ace6b46c1a7bdf3aa8405",
+              "implementation/warlock/native/host.c": "d039ae60ee62f95b4a12d594bf28a53bd5387efa0f0d53a8aa2fd053a0107a56"
+            },
+            "nativePair": {
+              "core": {
+                "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-core-1791495415110842751/Hyprland",
+                "sha256": "81c9ac609c2900f99c1efbe613b83e949aeae3059a5e4403601581fa96191acf"
+              },
+              "plugin": {
+                "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791596429600393566/elm-window-geometry-authority.so",
+                "sha256": "1f5de87c759902cbbca05dfdbba56090641c994cf3c7276671094248465bcac4"
+              },
+              "aquamarine": {
+                "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+                "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+              }
+            },
+            "nativeHost": {
+              "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/layer-appearance-1791601256550634659/elm-host",
+              "sha256": "5771db964a191bffe0958e2724d13aa790b19de32ecc8329b5b4c57ed71b3dc7",
+              "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/layer-appearance-1791601256550634659/report.json",
+              "heldBuildSHA256": "ee0b23f13a0afc56bd837ca19e24e5b73c97f27e24a7a47be2b4857b3d50c3fc"
+            }
+          },
+          "scopedObservations": [
+            {
+              "atUTC": "2026-10-10T03:10:54.015532+00:00",
+              "disposition": "partial",
+              "scope": "Implemented committed shell appearance preferences; original native keyboard save/restart and isolated invalid-scale refusal, native solid focus/control pixels and existing nine-surface regression. Browser 12 flag/theme combinations and model/store/host checks remain separate from native acceptance.",
+              "missingObservations": [
+                "Independent original-scenario acceptance.",
+                "Native AT and every surface/profile/output qualification.",
+                "Full layered-window token/window-decoration adoption and remaining design-language contracts."
+              ],
+              "evidence": {
+                "path": "implementation/warlock/qa/evidence/layer-appearance/manifest.json",
+                "sha256": "2b9e8832cae10475b78ded30a4a909734dda829ccf8e48cf160da7e60c625fd6",
+                "scope": "Implemented committed shell appearance preferences; original native keyboard save/restart and isolated invalid-scale refusal, native solid focus/control pixels and existing nine-surface regression. Browser 12 flag/theme combinations and model/store/host checks remain separate from native acceptance."
+              }
+            }
+          ]
         }
       ]
     },
@@ -10374,5 +10530,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-10T02:47:33.011211+00:00"
+  "updatedUTC": "2026-10-10T03:10:54.015532+00:00"
 }

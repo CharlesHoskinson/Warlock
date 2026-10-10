@@ -1,0 +1,205 @@
+{
+  "schema": 1,
+  "requirements": [
+    "ELM-UX-030",
+    "ELM-UX-027"
+  ],
+  "scenarios": [
+    "ux-030",
+    "ux-027"
+  ],
+  "supportingContracts": [
+    "WARLOCK-LAYER-010",
+    "WARLOCK-DL-014"
+  ],
+  "disposition": "partial",
+  "sourceBaseRevision": "520971e4110addeeb92f0293cd48982c84bf52d1",
+  "sourceHashes": {
+    "implementation/warlock/src/Settings.elm": "128b031066a0146a469bcfcbc254294d0bfebf47eaf91aa6c066bdd17f2d103f",
+    "implementation/warlock/src/Surface.elm": "cf0f691ab114902b1afd1f08b5a616cb9ee99562a8af179eee30ad4426bf9234",
+    "implementation/warlock/src/SurfaceRenderer.elm": "b8fa11052a9cfb27a0e663781ffd41a1265372451148a3a567c5d5efa71825c1",
+    "implementation/warlock/adapter/shell_preferences.py": "333895ca91c20e206cebf645206584213d08cb02553bb10a1758f5308f04c7fa",
+    "implementation/warlock/native/surface.h": "689eb6cf1fcd93a8cb92705e6c4b93fa1d3b87c52b064631367af6616eba355d",
+    "implementation/warlock/assets/appearance.js": "99b01609571af35328d7b69034f647f25651fb59d9d59928063a7e8c83a9b3f6",
+    "implementation/warlock/assets/shell.css": "ff839b058db3599f6c83633f7ba090b8729140878832226ccd39845335441aa4",
+    "implementation/warlock/assets/elm.js": "3434364bdd5b147c87b7ae2f2b523ddfddd3ff8ef8d870b70f305f67fd593b97",
+    "implementation/warlock/assets/bar.js": "b69b4aa6d1f9868f46f7819085f1cf7b1d96fc581c4c5b6a024fb8834f5c3591",
+    "implementation/warlock/assets/popup.js": "da81c70a55cd2dc2a82f4187db7b0007e44c532d91aaece8db6f7036a5351931",
+    "implementation/warlock/assets/bar-adapter.js": "2ca45278e7947fd0a5e81d2806477a44c584168937d9584a18f203783de2b080",
+    "implementation/warlock/assets/popup-adapter.js": "8f9e77accc18cb7001578ed2458d5be2fcfb6ddf49def180b471dcd0a26e9390",
+    "implementation/warlock/qa/SettingsReplay.elm": "121f6c9e319ba1a1942d3e04656eb157e434791d20288bd0af87bf5ca6cc322a",
+    "implementation/warlock/qa/LayerAppearanceReplay.elm": "edecab58528556dbe44da05c325977893059551f79895131ed11d55c7c90e8ab",
+    "implementation/warlock/qa/check-settings.py": "b39f26f170336599756aab3812c8c41ab1a71fcd6846590abea7b3557409ee5a",
+    "implementation/warlock/qa/settings-browser.mjs": "b57f88a203065df5cf59ab863d6757139da6b1f9748fd0cd0f5c2b8df0212afa",
+    "implementation/warlock/qa/layer-appearance-browser.mjs": "0e009835cb1bc1ac3cd45c24e4fff2f204f1207386871453ee981ad0c6db54c8",
+    "implementation/warlock/qa/layer-appearance.qnt": "234aaa3f46555712502819a7f9de8233f3ca931053d250278bbac16b12e758a4",
+    "implementation/warlock/qa/layer-appearance_test.qnt": "cdb8cb8fcbe2643281fee1b5116b40046f2aaa32c7d2edd75b7dd1357871ac0b",
+    "implementation/warlock/qa/check-layer-appearance.py": "8af51b89b42672b960936f5a97f67f4f3adcc5fa3e7fd0e3855431e2c01ca606",
+    "implementation/warlock/qa/check-search.py": "fe3f160a1f0cd84060c785e0f07b711d69e7776b6b49049b324722805028e284",
+    "implementation/warlock/qa/native-window-feedback.py": "8f16e8b6ef49f4e15833b1b7f0734ea8d83ae8e2c4dbd1b47cdff9a625a46c96",
+    "implementation/warlock/qa/current-search-build.json": "4e582adfaa28003e38d492ded6b13c545b0a97285d73be3f1079d5a998a00cfa",
+    "implementation/warlock/README.md": "82a9030b6905ea4cffc1a8a35cc377d774c450bc791864e5d96807097be468b1",
+    "implementation/warlock/native/surface-test.c": "bc456113a69637bf8046055926dc1933a948f70f1c1ace6b46c1a7bdf3aa8405",
+    "implementation/warlock/native/host.c": "d039ae60ee62f95b4a12d594bf28a53bd5387efa0f0d53a8aa2fd053a0107a56"
+  },
+  "nativePair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-core-1791495415110842751/Hyprland",
+      "sha256": "81c9ac609c2900f99c1efbe613b83e949aeae3059a5e4403601581fa96191acf"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791596429600393566/elm-window-geometry-authority.so",
+      "sha256": "1f5de87c759902cbbca05dfdbba56090641c994cf3c7276671094248465bcac4"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/layer-appearance-1791601256550634659/elm-host",
+    "sha256": "5771db964a191bffe0958e2724d13aa790b19de32ecc8329b5b4c57ed71b3dc7",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/layer-appearance-1791601256550634659/report.json",
+    "heldBuildSHA256": "ee0b23f13a0afc56bd837ca19e24e5b73c97f27e24a7a47be2b4857b3d50c3fc"
+  },
+  "compiledAssets": {
+    "elm.js": "3434364bdd5b147c87b7ae2f2b523ddfddd3ff8ef8d870b70f305f67fd593b97",
+    "bar.js": "b69b4aa6d1f9868f46f7819085f1cf7b1d96fc581c4c5b6a024fb8834f5c3591",
+    "popup.js": "da81c70a55cd2dc2a82f4187db7b0007e44c532d91aaece8db6f7036a5351931"
+  },
+  "files": {
+    "compiled-report.json": {
+      "path": "implementation/warlock/qa/evidence/layer-appearance/compiled-report.json",
+      "sha256": "ee0b23f13a0afc56bd837ca19e24e5b73c97f27e24a7a47be2b4857b3d50c3fc",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/layer-appearance-1791601256550634659/report.json"
+    },
+    "native-report.json": {
+      "path": "implementation/warlock/qa/evidence/layer-appearance/native-report.json",
+      "sha256": "d752141e7847bb2e027292f16f458ebd7c646e21ababb066bc49176c2a0e5357",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-layer-appearance-1791601621815442103/report.json"
+    },
+    "nine-surface-keyboard-report.json": {
+      "path": "implementation/warlock/qa/evidence/layer-appearance/nine-surface-keyboard-report.json",
+      "sha256": "0a2bf6f006918113288c7ae223fac8c1c82f3821959927bb2e378fd49810eb9f",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-keyboard-shell-1791601371490011561/report.json"
+    },
+    "failed-before-successor-scroll-report.json": {
+      "path": "implementation/warlock/qa/evidence/layer-appearance/failed-before-successor-scroll-report.json",
+      "sha256": "ff6c4d19054bb4362fc834f8f07ec8f5b563414624fcdb013bfc81f5608515e9",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-layer-appearance-1791601534489238255/report.json"
+    },
+    "initial-unisolated-invalid-scale-report.json": {
+      "path": "implementation/warlock/qa/evidence/layer-appearance/initial-unisolated-invalid-scale-report.json",
+      "sha256": "009172bc00c1f5dc7f5e208c684aec9aecbf2bde5ad960f5be04232d71f505bb",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-layer-appearance-1791601298756065679/report.json"
+    },
+    "popup-settings-before-restart.png": {
+      "path": "implementation/warlock/qa/evidence/layer-appearance/popup-settings-before-restart.png",
+      "sha256": "6cbb79908877cc196ba08cd0b3171073a2ae0a79ac5f765a09f4759c50db73da",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791601621815541748/popup-settings-before-restart.png"
+    },
+    "popup-settings-after-restart.png": {
+      "path": "implementation/warlock/qa/evidence/layer-appearance/popup-settings-after-restart.png",
+      "sha256": "c0b30e49674a16a24e976d2a4efec505bc0bcc16067bb4d72bb3738a57f658da",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791601621815541748/popup-settings-after-restart.png"
+    },
+    "model-report.json": {
+      "path": "implementation/warlock/qa/evidence/layer-appearance/model-report.json",
+      "sha256": "0b6959f10e20109a30ec3e8ce1504438144a3a13c1a3dfb578ff97ab039d66e3",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/layer-appearance-1791601256550634659/inputs/qa/runs/layer-appearance-model-1791601256634139435/report.json"
+    },
+    "model-named.stdout": {
+      "path": "implementation/warlock/qa/evidence/layer-appearance/model-named.stdout",
+      "sha256": "7fdf218cf0ff18e016e9846fbba57f4fe99f54c8b8c005365a91c09a8eb9527a",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/layer-appearance-1791601256550634659/inputs/qa/runs/layer-appearance-model-1791601256634139435/named.stdout"
+    },
+    "model-witnesses.stdout": {
+      "path": "implementation/warlock/qa/evidence/layer-appearance/model-witnesses.stdout",
+      "sha256": "467e15c16b155b92ff6dae83ec29f0ed7ec520c4ab0e48e3d1bb7f57c3cc65e4",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/layer-appearance-1791601256550634659/inputs/qa/runs/layer-appearance-model-1791601256634139435/witnesses.stdout"
+    },
+    "model-safety.stdout": {
+      "path": "implementation/warlock/qa/evidence/layer-appearance/model-safety.stdout",
+      "sha256": "0e88221a3d49d8c254b16c45f834412d2b4c8f89a206c3c95499a0d0fbcec4a4",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/layer-appearance-1791601256550634659/inputs/qa/runs/layer-appearance-model-1791601256634139435/safety.stdout"
+    },
+    "settings-store.stdout": {
+      "path": "implementation/warlock/qa/evidence/layer-appearance/settings-store.stdout",
+      "sha256": "6c0f49e8cbd9ff014a0c864df13919fe303bc6870fbd03168b8446afbeb355ed",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/layer-appearance-1791601256550634659/settings-store.stdout"
+    },
+    "settings.json": {
+      "path": "implementation/warlock/qa/evidence/layer-appearance/settings.json",
+      "sha256": "6ecd26f4c375c1b8ce62fd5f95d9d4de16e510c00b37e5dc456002df2e527fe8",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/layer-appearance-1791601256550634659/settings.json"
+    },
+    "layer-appearance.json": {
+      "path": "implementation/warlock/qa/evidence/layer-appearance/layer-appearance.json",
+      "sha256": "83820d3d0cf56db045d6d8c29c035889686833777b0d01243fa5f4e03667c16a",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/layer-appearance-1791601256550634659/layer-appearance.json"
+    },
+    "surface-admission.stdout": {
+      "path": "implementation/warlock/qa/evidence/layer-appearance/surface-admission.stdout",
+      "sha256": "2b1b23abb2ebe3ffc3c48a0761cbcc913b904e091cef6e54f625ed71bd15d566",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/layer-appearance-1791601256550634659/surface-admission.stdout"
+    },
+    "host-self-tests.stdout": {
+      "path": "implementation/warlock/qa/evidence/layer-appearance/host-self-tests.stdout",
+      "sha256": "28699b2f83767c17cbd474369c5f7f4f4e7779ef63cef0bf8e8a232c0cdc656c",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/layer-appearance-1791601256550634659/host-self-tests.stdout"
+    },
+    "browser-report.json": {
+      "path": "implementation/warlock/qa/evidence/layer-appearance/browser-report.json",
+      "sha256": "83d72bfd9174c9d965fd8254d3de87aaa6901f694acdf462928ed50ddce0f826",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/layer-appearance-1791601256550634659/layer-browser/report.json"
+    },
+    "layer-appearance-night.png": {
+      "path": "implementation/warlock/qa/evidence/layer-appearance/layer-appearance-night.png",
+      "sha256": "a0f707e834f32fe9cdecba85c90db9d6bbfbebab74df2dcec688d3633924fb4b",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/layer-appearance-1791601256550634659/layer-browser/layer-appearance-night.png"
+    },
+    "layer-appearance-dawn.png": {
+      "path": "implementation/warlock/qa/evidence/layer-appearance/layer-appearance-dawn.png",
+      "sha256": "b943d4929654a01892e3e01b659565336fbaddf3fb3caffc5cac92617183b85f",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/layer-appearance-1791601256550634659/layer-browser/layer-appearance-dawn.png"
+    },
+    "layer-appearance-high-contrast.png": {
+      "path": "implementation/warlock/qa/evidence/layer-appearance/layer-appearance-high-contrast.png",
+      "sha256": "a10303edbb278114c11af9ff9b08b5ea6bb02ec9c60bdc7499e06a983790dcad",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/layer-appearance-1791601256550634659/layer-browser/layer-appearance-high-contrast.png"
+    },
+    "nine-surface-driver.patch": {
+      "path": "implementation/warlock/qa/evidence/layer-appearance/nine-surface-driver.patch",
+      "sha256": "e973e254444da5420ae3e1aadbdc541a13a6bdcb0ae99788aa44c103c7cfdf28",
+      "scope": "Apply to this contribution native-window-feedback.py in an isolated directory to reconstruct the exact nine-surface fixture; only the later supplementary Settings interval differs."
+    }
+  },
+  "scope": "Implemented committed shell appearance preferences; original native keyboard save/restart and isolated invalid-scale refusal, native solid focus/control pixels and existing nine-surface regression. Browser 12 flag/theme combinations and model/store/host checks remain separate from native acceptance.",
+  "observed": {
+    "nativeKeyboardFlagsSaveAndWholeHostRestart": true,
+    "invalidScaleRefusedWithOtherwiseValidShape": true,
+    "nativeNamedControlsAndSolidFocusPainted": true,
+    "nineSurfaceKeyboardRegression": true,
+    "zeroWindowEffectsFromSettings": true,
+    "cleanupPassed": true,
+    "ownerInspectedNativeRestartFrame": true
+  },
+  "regressionFixture": {
+    "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/layer-appearance-1791601256550634659/inputs/qa/native-window-feedback.py",
+    "sha256": "d02d644742cf9ae0b56228ea4044bb39b1926db9da50e17256424e62f5cd22ad",
+    "currentRunnerSHA256": "8f16e8b6ef49f4e15833b1b7f0734ea8d83ae8e2c4dbd1b47cdff9a625a46c96",
+    "patch": "nine-surface-driver.patch",
+    "productSourceAndNativeTupleUnchangedBetweenRegressionAndFinalCapture": true
+  },
+  "missingObservations": [
+    "Independent original-scenario acceptance.",
+    "Native AT and every surface/profile/output qualification.",
+    "Full layered-window token/window-decoration adoption and remaining design-language contracts."
+  ],
+  "reviewerDisposition": {
+    "name": "root-layer-appearance",
+    "independent": false,
+    "disposition": "Owner observed component/native pass; original and release acceptance remain partial."
+  },
+  "fullReleaseAccepted": false
+}

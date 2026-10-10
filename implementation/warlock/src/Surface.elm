@@ -149,10 +149,11 @@ controls model =
            ++ (model.notifications.snapshot |> Maybe.map (\snapshot -> List.concatMap (entryRows snapshot) snapshot.entries) |> Maybe.withDefault [])
     else if model.settingsOpen then
         let scoped message=Desktop.capture model |> Maybe.map message
+            draft=model.settings.draft
             ready=Settings.writable model.settings && model.settingsExpected==Nothing
             control identity label detail enabled message={id=identity,domId=Desktop.key model (if identity=="control:close" then "settings:close" else identity),label=label,ariaLabel=label,detail=detail,enabled=enabled,message=if enabled then scoped message else Nothing}
-            theme selected label=control ("settings:theme:"++Settings.themeName selected) label (if model.settings.draft.theme==selected then "Selected" else "") ready (\stamp -> Desktop.EditSettings stamp {theme=selected,textScale=model.settings.draft.textScale})
-            scale percent=control ("settings:scale:"++String.fromInt percent) ("Text size "++String.fromInt percent++"%") (if model.settings.draft.textScale==percent then "Selected" else "") ready (\stamp -> Desktop.EditSettings stamp {theme=model.settings.draft.theme,textScale=percent})
+            theme selected label=control ("settings:theme:"++Settings.themeName selected) label (if model.settings.draft.theme==selected then "Selected" else "") ready (\stamp -> Desktop.EditSettings stamp { draft | theme=selected })
+            scale percent=control ("settings:scale:"++String.fromInt percent) ("Text size "++String.fromInt percent++"%") (if model.settings.draft.textScale==percent then "Selected" else "") ready (\stamp -> Desktop.EditSettings stamp { draft | textScale=percent })
             motionReady=MotionPreferences.writable model.motion.preferences && model.motionExpected==Nothing
             motionOption selected=control ("settings:motion:"++(case selected of
                 MotionPreferences.System -> "system"
@@ -177,11 +178,13 @@ controls model =
             guidance =
                 if not model.settingsHelp then [] else
                     [control "settings:help:text:keyboard" "Keyboard navigation" "Tab and Shift+Tab move focus. Arrows move through lists; Home/End reach endpoints. Enter chooses; Escape closes." False Desktop.ToggleSettingsHelp
-                    ,control "settings:help:text:preferences" "Keeping your preferences" "Save settings applies theme and text size. Motion has a separate Save control. Dismissing help keeps unsaved edits." False Desktop.ToggleSettingsHelp
+                    ,control "settings:help:text:preferences" "Keeping your preferences" "Save applies appearance preferences. Motion has its own Save. Dismissing help keeps unsaved edits." False Desktop.ToggleSettingsHelp
                     ,control "settings:help:text:recovery" "When an action is not confirmed" "Pending is waiting; Refused did not proceed; Unknown is unconfirmed. Refresh reads state without repeating an action." False Desktop.ToggleSettingsHelp]
         in [control "control:close" "Close settings" "" True Desktop.CloseSettings
            ,control "settings:help" (if model.settingsHelp then "Dismiss help" else "Show help") (if model.settingsHelp then "Expanded" else "Collapsed") True Desktop.ToggleSettingsHelp]
            ++guidance
+           ++[control "settings:effects-off" "Disable soft effects" (if draft.effectsOff then "On" else "Off") ready (\stamp -> Desktop.EditSettings stamp {draft|effectsOff=not draft.effectsOff})
+             ,control "settings:reduced-transparency" "Reduce transparency" (if draft.reducedTransparency then "On" else "Off") ready (\stamp -> Desktop.EditSettings stamp {draft|reducedTransparency=not draft.reducedTransparency})]
            ++[control "settings:motion" (Motion.notice model.motion) model.motion.preferences.notice False Desktop.RefreshMotionPreference
            ,motionOption MotionPreferences.System,motionOption MotionPreferences.Reduce,motionOption MotionPreferences.Full
            ,control "settings:motion:save" "Save motion preference" "Apply and keep across restart" (motionReady && model.motion.preferences.draft/=MotionPreferences.selected model.motion.preferences) Desktop.SaveMotionPreference

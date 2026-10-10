@@ -45,10 +45,15 @@ static gboolean surface_frame(JsonNode *node,guint64 *pub,guint64 *lease,gboolea
     const char *const names[]={"surfaceProtocol","publication","lease","mode","status","bar","popup","appearance","motion"};
     JsonNode *appearance=json_object_get_member(o,"appearance");
     if(appearance){
-        const char *const fields[]={"theme","textScale"};
+        const char *const fields[]={"theme","textScale","effectsOff","reducedTransparency"};
         if(!JSON_NODE_HOLDS_OBJECT(appearance))return FALSE;
         JsonObject *a=json_node_get_object(appearance);JsonNode *theme=json_object_get_member(a,"theme"),*scale=json_object_get_member(a,"textScale");
-        if(!surface_fields(a,fields,2) || !surface_theme(theme) || !scale || json_node_get_value_type(scale)!=G_TYPE_INT64 || (json_node_get_int(scale)!=100 && json_node_get_int(scale)!=125 && json_node_get_int(scale)!=150 && json_node_get_int(scale)!=200))return FALSE;
+        gboolean extended=json_object_has_member(a,"effectsOff") || json_object_has_member(a,"reducedTransparency");
+        if(extended){
+            JsonNode *effects=json_object_get_member(a,"effectsOff"),*transparency=json_object_get_member(a,"reducedTransparency");
+            if(!effects || !transparency || json_node_get_value_type(effects)!=G_TYPE_BOOLEAN || json_node_get_value_type(transparency)!=G_TYPE_BOOLEAN)return FALSE;
+        }
+        if(!surface_fields(a,fields,extended?4:2) || !surface_theme(theme) || !scale || json_node_get_value_type(scale)!=G_TYPE_INT64 || (json_node_get_int(scale)!=100 && json_node_get_int(scale)!=125 && json_node_get_int(scale)!=150 && json_node_get_int(scale)!=200))return FALSE;
     }
     JsonNode *motion=json_object_get_member(o,"motion");
     if(motion && (!surface_text(motion,16,FALSE) || (!g_str_equal(json_node_get_string(motion),"reduced") && !g_str_equal(json_node_get_string(motion),"full"))))return FALSE;

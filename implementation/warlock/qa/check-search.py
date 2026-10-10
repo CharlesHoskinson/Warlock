@@ -1,5 +1,6 @@
 """Focused compiled launcher/search integration, protected CPU scope only."""
 import pathlib,hashlib,json,os,sys,time,shutil,subprocess,shlex,importlib.util,concurrent.futures,http.server,threading
+LAYER=sys.argv[1:]==['--layer-appearance']
 SHUTDOWN=sys.argv[1:]==['--preview-shutdown']
 BARRETURN=sys.argv[1:]==['--bar-keyboard-return']
 SHORTCUTS=sys.argv[1:]==['--shortcut-choices']
@@ -20,7 +21,7 @@ JUMP=sys.argv[1:]==['--jump-lists']
 FILES=sys.argv[1:]==['--files']
 SYSTEM=sys.argv[1:]==['--system-menu']
 NOTIFICATIONS=sys.argv[1:]==['--notifications']
-SETTINGS=sys.argv[1:]==['--settings'] or CONTRAST or SHORTCUTS
+SETTINGS=LAYER or sys.argv[1:]==['--settings'] or CONTRAST or SHORTCUTS
 SNAP=sys.argv[1:]==['--snap-chooser']
 REFLOW=sys.argv[1:]==['--popup-reflow']
 MENU=sys.argv[1:]==['--dense-menu'] or REFLOW
@@ -33,7 +34,7 @@ NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'];POPUP
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143'
 sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
 scope=require_qa_scope();sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
-OUT=ROOT/'qa/runs'/(('bar-keyboard-return-' if BARRETURN else 'preview-shutdown-' if SHUTDOWN else 'pin-max-' if PINMAX else 'preview-quiescence-' if QUIESCENT else 'preview-states-' if PREVIEW else 'live-motion-' if LIVE else 'reduced-motion-' if MOTION else 'transfer-workspace-' if TRANSFER else 'ime-' if IME else 'accessibility-' if ACCESSIBILITY else 'high-contrast-' if CONTRAST else 'drag-ownership-' if DRAG else 'keyboard-shell-' if KEYBOARD else 'attention-' if ATTENTION else 'jump-lists-' if JUMP else 'files-' if FILES else 'system-menu-' if SYSTEM else 'notifications-' if NOTIFICATIONS else 'settings-' if SETTINGS else 'snap-chooser-' if SNAP else 'switcher-' if SWITCHER else 'taskbar-primary-' if PRIMARY else 'workspace-navigation-' if NAV else 'task-view-' if TASKVIEW else 'popup-' if POPUP else 'pins-' if PINS else 'search-')+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
+OUT=ROOT/'qa/runs'/(('layer-appearance-' if LAYER else 'bar-keyboard-return-' if BARRETURN else 'preview-shutdown-' if SHUTDOWN else 'pin-max-' if PINMAX else 'preview-quiescence-' if QUIESCENT else 'preview-states-' if PREVIEW else 'live-motion-' if LIVE else 'reduced-motion-' if MOTION else 'transfer-workspace-' if TRANSFER else 'ime-' if IME else 'accessibility-' if ACCESSIBILITY else 'high-contrast-' if CONTRAST else 'drag-ownership-' if DRAG else 'keyboard-shell-' if KEYBOARD else 'attention-' if ATTENTION else 'jump-lists-' if JUMP else 'files-' if FILES else 'system-menu-' if SYSTEM else 'notifications-' if NOTIFICATIONS else 'settings-' if SETTINGS else 'snap-chooser-' if SNAP else 'switcher-' if SWITCHER else 'taskbar-primary-' if PRIMARY else 'workspace-navigation-' if NAV else 'task-view-' if TASKVIEW else 'popup-' if POPUP else 'pins-' if PINS else 'search-')+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
 for folder in ['src','native','adapter','assets','qa']:
  (INPUT/folder).mkdir()
  for p in (ROOT/folder).iterdir():
@@ -46,6 +47,8 @@ def run(name,args):
  if p.returncode:raise RuntimeError(p.stderr or p.stdout)
  return p.stdout
 try:
+ if LAYER:
+  layerPacket=json.loads(run('layer-appearance-model',['/usr/bin/python3','-B','qa/check-layer-appearance.py']));assert layerPacket['passed'];report['layerAppearanceModel']=layerPacket
  if BARRETURN:
   modelPacket=json.loads(run('bar-keyboard-return-model',['/usr/bin/python3','-B','qa/check-bar-keyboard-return.py']))
   assert modelPacket['passed'];report['barKeyboardReturnModel']=modelPacket
@@ -217,6 +220,11 @@ console.log('Current body-target Escape releases once; stale scope, preedit, rep
   run('compile-snap',[str(HELD/pinned['compiler']),'make','qa/SnapReplay.elm','--optimize','--output=assets/snap.js'])
   (INPUT/'qa/snap-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.SnapReplay'));run('typed-snap',['node','qa/snap-replay.js','assets/snap.js',str(OUT/'snap.json')]);report['typedSnap']=json.loads((OUT/'snap.json').read_text());assert all(report['typedSnap']['checks'].values())
   run('snap-model-typecheck',['quint','typecheck','qa/snap-chooser.qnt']);run('snap-model-named',['quint','test','qa/snap-chooser.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79121']);run('snap-model-invariants',['quint','run','qa/snap-chooser.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79122'])
+ if LAYER:
+  run('compile-layer-appearance',[str(HELD/pinned['compiler']),'make','qa/LayerAppearanceReplay.elm','--optimize','--output=assets/layer-appearance.js'])
+  (INPUT/'qa/layer-appearance-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.LayerAppearanceReplay'))
+  run('typed-layer-appearance',['node','qa/layer-appearance-replay.js','assets/layer-appearance.js',str(OUT/'layer-appearance.json')])
+  report['typedLayerAppearance']=json.loads((OUT/'layer-appearance.json').read_text());assert all(report['typedLayerAppearance']['checks'].values())
  if SHORTCUTS:
   registration=json.loads(run('shortcut-registration-model',['/usr/bin/python3','-B','qa/check-shortcut-registration.py']))
   registration_path=pathlib.Path(registration['report']);registration_report=json.loads(registration_path.read_text());assert registration['passed'] and registration_report['passed'];report['shortcutRegistrationModel']={'path':str(registration_path),'sha256':sha(registration_path),'witnessCounts':registration_report['witnessCounts']}
@@ -306,6 +314,10 @@ console.log('Current body-target Escape releases once; stale scope, preedit, rep
   if SNAP:
    run('menu-navigation-regression',['node','qa/dense-taskbar-browser.mjs','http://127.0.0.1:'+str(server.server_port),str(OUT),str(browser)])
    regression=json.loads((OUT/'dense-browser.json').read_text());assert regression['passed'] and regression['browserExitCode']==0;report['menuNavigationRegression']={'path':str(OUT/'dense-browser.json'),'sha256':sha(OUT/'dense-browser.json'),'checks':regression['checks']}
+  if LAYER:
+   (OUT/'layer-browser').mkdir()
+   run('layer-appearance-browser',['node','qa/layer-appearance-browser.mjs','http://127.0.0.1:'+str(server.server_address[1]),str(OUT),str(browser)])
+   child_path=OUT/'layer-browser/report.json';child=json.loads(child_path.read_text());assert child['passed'] and child['browserExitCode']==0;report['layerAppearanceBrowser']={'path':str(child_path),'sha256':sha(child_path),'checks':child['checks']}
  assert all(sha(ROOT/p)==h for p,h in inputs.items());toolchain.verify();report['compiledAssets']={n:sha(INPUT/'assets'/n) for n in ['elm.js','bar.js','popup.js']};report['passed']=True
 except Exception as error:report['error']=repr(error)
 finally:

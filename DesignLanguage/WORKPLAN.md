@@ -60,7 +60,7 @@ The root workplan is the current coordination document. [Catalog closure](catalo
 - [ ] Make Always on top a stable checkable control with observed semantics; keep application Pin/Unpin terminology separate.
 - [ ] Key popup controls and complete explicit focus behavior. Current inset focus rings avoid clipping; DL-006 product scope remains open until its outer-indicator contract and actual contrast are reconciled. Unify search and button focus tokens.
 - [ ] Establish one announcement owner. PreviewVisual currently creates per-preview live regions and duplicates unavailable text; native speech/braille delivery remains open.
-- [ ] Adopt approved layered-window tokens and observed layer cues natively. Current shell/snap colors and local glow/shadow are provisional. Implement effects-off and reduced-transparency preferences.
+- [ ] Adopt approved layered-window tokens and observed layer cues natively. Current shell/snap colors and local glow/shadow are provisional. Effects-off and reduced-transparency preferences now save through the native route and survive whole-host restart with equivalent solid shell focus/state cues; [current evidence](../implementation/warlock/qa/evidence/layer-appearance/README.md). Full token/window-decoration and accessibility scope remains open.
 - [ ] Complete effective Omarchy keyword/binding compatibility, guidance and offline recovery.
 - [ ] Finish original native, AT/IME, motion, resource and hardware observations on one coherent candidate tuple.
 

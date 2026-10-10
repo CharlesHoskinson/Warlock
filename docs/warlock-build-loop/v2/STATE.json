@@ -1,51 +1,58 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T02:47:33.011211+00:00",
+  "updatedUTC": "2026-10-10T03:10:54.015532+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "task-view-transfer-native",
+    "id": "layer-appearance-preferences",
     "requirements": [
-      "ELM-UX-018"
+      "ELM-UX-030",
+      "ELM-UX-027"
     ],
     "scenarios": [
-      "ux-018",
-      "transfer-refused",
-      "transfer-accepted"
+      "ux-030",
+      "ux-027"
     ],
-    "before": "The Task View workspace transfer native fixture previously timed out after keyboard destination activation; pinned refusal and committed existing/empty workspace outcomes need current qualification.",
-    "after": "Task View transfer sends one fresh identity-correlated native request, retains workspace 1 with visible pinned refusal, and updates existing/empty destination membership only from matching native acceptance; cancellation emits no mutation.",
+    "before": "Settings saves theme and text scale; the agreed WARLOCK-LAYER-010 effects-off and reduced-transparency modes have no qualified user preference route.",
+    "after": "Users can disable soft shell effects and request opaque shell backing through Settings. Only committed validated values apply and survive host restart; unsaved/Unknown/stale values cannot alter appearance. Essential focus, state and outcome cues remain visible. Legacy schema-1 bytes remain unchanged until an explicit successful save upgrades to schema 2.",
     "paths": [
-      "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/src/Transfer.elm",
-      "implementation/warlock/src/Shell.elm",
-      "implementation/warlock/src/Effects.elm",
-      "implementation/warlock/native/authority.cpp",
-      "implementation/warlock/native/shared-host.c",
-      "implementation/warlock/native/shared-context.h",
-      "implementation/warlock/native/host.c",
-      "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/qa/transfer-workspace.qnt",
-      "implementation/warlock/qa/check-transfer-workspace.py",
+      "implementation/warlock/src/Settings.elm",
+      "implementation/warlock/src/Surface.elm",
+      "implementation/warlock/src/SurfaceRenderer.elm",
+      "implementation/warlock/adapter/shell_preferences.py",
+      "implementation/warlock/native/surface.h",
+      "implementation/warlock/assets/appearance.js",
+      "implementation/warlock/assets/shell.css",
+      "implementation/warlock/assets/elm.js",
+      "implementation/warlock/assets/bar.js",
+      "implementation/warlock/assets/popup.js",
+      "implementation/warlock/assets/bar-adapter.js",
+      "implementation/warlock/assets/popup-adapter.js",
+      "implementation/warlock/qa/SettingsReplay.elm",
+      "implementation/warlock/qa/LayerAppearanceReplay.elm",
+      "implementation/warlock/qa/check-settings.py",
+      "implementation/warlock/qa/settings-browser.mjs",
+      "implementation/warlock/qa/layer-appearance-browser.mjs",
+      "implementation/warlock/qa/layer-appearance.qnt",
+      "implementation/warlock/qa/layer-appearance_test.qnt",
+      "implementation/warlock/qa/check-layer-appearance.py",
       "implementation/warlock/qa/check-search.py",
-      "implementation/warlock/qa/check-native-authority.py",
+      "implementation/warlock/qa/native-window-feedback.py",
       "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/qa/current-native-pair.json",
-      "implementation/warlock/qa/TransferReplay.elm",
       "implementation/warlock/README.md"
     ],
     "verification": [
-      "Establish unchanged original --transfer-workspace result on the current exact source/core/plugin pair. Use quint-llm-kit to map existing transfer model to code before changing authority/reducer policy; retain no-replay and receipt correlation. Compile changed targets proportionately; pass original cancellation, pinned refusal, existing/empty workspace acceptance, native observations and normal cleanup with original deadlines. Independent original acceptance and native AT remain separate."
+      "quint-llm-kit additive appearance transaction model: immutable draft/stored/applied flag pairs, exact CAS/receipt, lost receipt/no automatic replay and explicit read reconciliation; preserve existing Settings model. Typecheck, selected named tests, positive witnesses and sampled safety before integration. Extend actual store/Elm/browser checks for legacy preservation, strict booleans, both modes, stale/Unknown and focus/state cues; compile owning roots and GTK units with unchanged native C++ tuple. Native keyboard save/restart and pixels/input evidence remain separate from component checks."
     ],
     "status": "implemented-partial",
-    "participantRecord": ".warlock-contributor/transfer-native.json",
-    "evidence": "implementation/warlock/qa/evidence/transfer-current/manifest.json",
-    "observed": "Original native transfer/refusal passes existing and empty workspace destinations, exact receipts, selected-only membership, visible refusal and normal cleanup. Fixture footer corrected; no product policy change.",
-    "nextSourceWork": "Implement requested effects-off and reduced-transparency settings with equivalent focus/state cues under the layered-window design contract."
+    "participantRecord": ".warlock-contributor/layer-appearance.json",
+    "evidence": "implementation/warlock/qa/evidence/layer-appearance/manifest.json",
+    "observed": "Effects-off and reduced-transparency controls implemented; actual keyboard save, whole-host restart, isolated invalid-scale refusal and native named controls/solid focus pass. Twelve browser theme/flag pairs and original nine-surface keyboard regression pass with component/native scopes separated.",
+    "nextSourceWork": "Remove duplicate per-preview live regions and unavailable announcements under the original one-announcement-owner contract; native speech/braille and all-profile qualification remain separate."
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -1003,6 +1010,46 @@
       "evidence": "implementation/warlock/qa/evidence/workspace-restore-current/manifest.json",
       "observed": "Current original workspace restore passes real recipients, pixels, exact receipts, membership and stale refusal; no product change needed.",
       "nextSourceWork": "Repair the retained transfer-workspace native journey after establishing its current failing boundary."
+    },
+    {
+      "id": "task-view-transfer-native",
+      "requirements": [
+        "ELM-UX-018"
+      ],
+      "scenarios": [
+        "ux-018",
+        "transfer-refused",
+        "transfer-accepted"
+      ],
+      "before": "The Task View workspace transfer native fixture previously timed out after keyboard destination activation; pinned refusal and committed existing/empty workspace outcomes need current qualification.",
+      "after": "Task View transfer sends one fresh identity-correlated native request, retains workspace 1 with visible pinned refusal, and updates existing/empty destination membership only from matching native acceptance; cancellation emits no mutation.",
+      "paths": [
+        "implementation/warlock/src/Desktop.elm",
+        "implementation/warlock/src/Transfer.elm",
+        "implementation/warlock/src/Shell.elm",
+        "implementation/warlock/src/Effects.elm",
+        "implementation/warlock/native/authority.cpp",
+        "implementation/warlock/native/shared-host.c",
+        "implementation/warlock/native/shared-context.h",
+        "implementation/warlock/native/host.c",
+        "implementation/warlock/qa/native-window-feedback.py",
+        "implementation/warlock/qa/transfer-workspace.qnt",
+        "implementation/warlock/qa/check-transfer-workspace.py",
+        "implementation/warlock/qa/check-search.py",
+        "implementation/warlock/qa/check-native-authority.py",
+        "implementation/warlock/qa/current-search-build.json",
+        "implementation/warlock/qa/current-native-pair.json",
+        "implementation/warlock/qa/TransferReplay.elm",
+        "implementation/warlock/README.md"
+      ],
+      "verification": [
+        "Establish unchanged original --transfer-workspace result on the current exact source/core/plugin pair. Use quint-llm-kit to map existing transfer model to code before changing authority/reducer policy; retain no-replay and receipt correlation. Compile changed targets proportionately; pass original cancellation, pinned refusal, existing/empty workspace acceptance, native observations and normal cleanup with original deadlines. Independent original acceptance and native AT remain separate."
+      ],
+      "status": "implemented-partial",
+      "participantRecord": ".warlock-contributor/transfer-native.json",
+      "evidence": "implementation/warlock/qa/evidence/transfer-current/manifest.json",
+      "observed": "Original native transfer/refusal passes existing and empty workspace destinations, exact receipts, selected-only membership, visible refusal and normal cleanup. Fixture footer corrected; no product policy change.",
+      "nextSourceWork": "Implement requested effects-off and reduced-transparency settings with equivalent focus/state cues under the layered-window design contract."
     }
   ]
 }

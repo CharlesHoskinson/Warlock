@@ -43,6 +43,11 @@ static void test_appearance(void) {
     JsonNode *f=frame("7","3","settings");JsonObject *root=json_node_get_object(f),*a=json_object_new();
     json_object_set_string_member(a,"theme","high-contrast");json_object_set_int_member(a,"textScale",200);json_object_set_object_member(root,"appearance",a);
     guint64 p,l;gboolean open;g_assert_true(surface_frame(f,&p,&l,&open));
+    json_object_set_boolean_member(a,"effectsOff",TRUE);g_assert_false(surface_frame(f,&p,&l,&open));
+    json_object_set_boolean_member(a,"reducedTransparency",TRUE);g_assert_true(surface_frame(f,&p,&l,&open));
+    json_object_set_int_member(a,"effectsOff",1);g_assert_false(surface_frame(f,&p,&l,&open));
+    json_object_set_string_member(a,"effectsOff","false");g_assert_false(surface_frame(f,&p,&l,&open));
+    json_object_set_boolean_member(a,"effectsOff",FALSE);g_assert_true(surface_frame(f,&p,&l,&open));
     json_object_set_string_member(a,"theme","high-contrast/path");g_assert_false(surface_frame(f,&p,&l,&open));
     json_object_set_string_member(a,"theme","high-contrast");json_object_set_int_member(a,"textScale",77);g_assert_false(surface_frame(f,&p,&l,&open));
     json_object_set_int_member(a,"textScale",200);json_object_set_string_member(a,"path","foreign");g_assert_false(surface_frame(f,&p,&l,&open));json_node_unref(f);

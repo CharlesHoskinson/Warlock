@@ -7,32 +7,38 @@ import json, os, secrets
 from endpoint import Refused, exact, canonical, unique
 from taskbar_preferences import Store as PrivateStore, MAX_REVISION
 
-def values(value):
- exact(value,['theme','textScale'])
+DEFAULTS={'theme':'night','textScale':100,'effectsOff':False,'reducedTransparency':False}
+def values(value,legacy=False):
+ exact(value,['theme','textScale'] if legacy else list(DEFAULTS))
  if value['theme'] not in ('night','dawn','high-contrast') or type(value['theme']) is not str:raise Refused('Appearance theme')
  if type(value['textScale']) is not int or value['textScale'] not in (100,125,150,200):raise Refused('Appearance text scale')
- return value
+ if not legacy and any(type(value[k]) is not bool for k in ('effectsOff','reducedTransparency')):raise Refused('Appearance flags')
+ return {**DEFAULTS,**value}
 
 def snapshot(value):
  exact(value,['schema','revision','values'])
- if type(value['schema']) is not int or value['schema']!=1:raise Refused('Unsupported settings schema; preserve the stored copy')
- canonical(value['revision']);values(value['values']);return value
+ if type(value['schema']) is not int or value['schema'] not in (1,2):raise Refused('Unsupported settings schema; preserve the stored copy')
+ canonical(value['revision'])
+ if value['revision']=='0':raise Refused('Settings revision')
+ return {'schema':2,'revision':value['revision'],'values':values(value['values'],legacy=value['schema']==1)}
 
 class Store(PrivateStore):
  def _read(self,directory):
   try:fd=os.open('settings.json',os.O_RDONLY|os.O_NOFOLLOW,dir_fd=directory)
-  except FileNotFoundError:return {'schema':1,'revision':'1','values':{'theme':'night','textScale':100}}
+  except FileNotFoundError:return {'schema':2,'revision':'1','values':dict(DEFAULTS)}
   try:
    self._private(fd);body=os.read(fd,4097)
    if len(body)>4096:raise Refused('Settings storage bound')
    return snapshot(json.loads(body,object_pairs_hook=unique))
   finally:os.close(fd)
  def save(self,proposal):
-  snapshot(proposal);directory,lock=self._open();temporary=None;renamed=False
+  current=snapshot(proposal)
+  if proposal['schema']!=2:raise Refused('Settings write requires current schema')
+  proposal=current;directory,lock=self._open();temporary=None;renamed=False
   try:
    old=self._read(directory)
    if old['revision']!=proposal['revision'] or old['values']==proposal['values'] or int(old['revision'])==MAX_REVISION:return 'Refused',old
-   saved={'schema':1,'revision':str(int(old['revision'])+1),'values':proposal['values']}
+   saved={'schema':2,'revision':str(int(old['revision'])+1),'values':proposal['values']}
    body=json.dumps(saved,separators=(',',':')).encode()
    temporary='settings.'+secrets.token_hex(12)+'.tmp'
    fd=os.open(temporary,os.O_WRONLY|os.O_CREAT|os.O_EXCL|os.O_NOFOLLOW,0o600,dir_fd=directory)

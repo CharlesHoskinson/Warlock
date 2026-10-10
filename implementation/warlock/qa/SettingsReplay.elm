@@ -1,4 +1,4 @@
-port module SettingsReplay exposing (main)
+port module SettingsReplay exposing (main, initialModel)
 
 import Desktop
 import Settings
@@ -18,13 +18,19 @@ snapshot revision theme scale = E.object [("schema",E.int 1),("revision",E.strin
 loaded request value = E.object [("protocolVersion",E.int 3),("kind",E.string "shell-settings"),("binding",bound),("requestId",E.string (UInt64.string request)),("snapshot",value)]
 outcome request status value = E.object [("protocolVersion",E.int 3),("kind",E.string "shell-settings-outcome"),("binding",bound),("requestId",E.string (UInt64.string request)),("status",E.string status),("snapshot",value)]
 dispatch build model = Desktop.capture model |> Maybe.map (\stamp -> Desktop.update (build stamp) model) |> Maybe.withDefault (model,[])
+initialModel =
+    let ready=native (loaded (counter "2") (snapshot "1" "night" 100)) (native attached Desktop.initial)
+        opened=dispatch Desktop.OpenSettings ready |> Tuple.first
+        request=opened.settingsExpected |> Maybe.withDefault UInt64.zero
+    in native (loaded request (snapshot "1" "night" 100)) opened
+
 result =
     let attachedModel=native attached Desktop.initial
         ready=native (loaded (counter "2") (snapshot "1" "night" 100)) attachedModel
         (opened,_)=dispatch Desktop.OpenSettings ready
         current=opened.settingsExpected |> Maybe.withDefault UInt64.zero
         (read,readEffects)=Desktop.update (Desktop.Incoming (loaded current (snapshot "1" "night" 100))) opened
-        (edited,_)=dispatch (\stamp -> Desktop.EditSettings stamp {theme=Settings.Dawn,textScale=150}) read
+        (edited,_)=dispatch (\stamp -> Desktop.EditSettings stamp {theme=Settings.Dawn,textScale=150,effectsOff=False,reducedTransparency=False}) read
         (saving,effects)=dispatch Desktop.SaveSettings edited
         request=saving.settings.pending |> Maybe.map .request |> Maybe.withDefault UInt64.zero
         (twice,duplicate)=dispatch Desktop.SaveSettings saving
@@ -39,18 +45,18 @@ result =
         (refreshing,_)=dispatch Desktop.RefreshSettings committed
         (_,ordinaryReadEffects)=Desktop.update (Desktop.Incoming (loaded (refreshing.settingsExpected |> Maybe.withDefault UInt64.zero) (snapshot "2" "dawn" 150))) refreshing
         restarted=native (loaded (counter "2") (snapshot "2" "dawn" 150)) (native attached Desktop.initial)
-        (invalid,invalidEffects)=dispatch (\stamp -> Desktop.EditSettings stamp {theme=Settings.Dawn,textScale=77}) read
+        (invalid,invalidEffects)=dispatch (\stamp -> Desktop.EditSettings stamp {theme=Settings.Dawn,textScale=77,effectsOff=False,reducedTransparency=False}) read
         stale=case Desktop.capture read of
-            Just stamp -> Desktop.update (Desktop.EditSettings stamp {theme=Settings.Night,textScale=200}) edited |> Tuple.first
+            Just stamp -> Desktop.update (Desktop.EditSettings stamp {theme=Settings.Night,textScale=200,effectsOff=False,reducedTransparency=False}) edited |> Tuple.first
             Nothing -> edited
         themed theme scale ordinal =
-            let altered=dispatch (\stamp -> Desktop.EditSettings stamp {theme=theme,textScale=scale}) read |> Tuple.first
+            let altered=dispatch (\stamp -> Desktop.EditSettings stamp {theme=theme,textScale=scale,effectsOff=False,reducedTransparency=False}) read |> Tuple.first
                 submitted=dispatch Desktop.SaveSettings altered |> Tuple.first
                 expected=submitted.settings.pending |> Maybe.map .request |> Maybe.withDefault UInt64.zero
                 observed=native (outcome expected "Saved" (snapshot "2" (Settings.themeName theme) scale)) submitted
             in Surface.packet (counter (String.fromInt ordinal)) (counter "1") observed
         appearanceFrames=List.indexedMap (\index (theme,scale) -> themed theme scale (index+3)) (List.concatMap (\theme -> List.map (\scale -> (theme,scale)) [100,125,150,200]) [Settings.Night,Settings.Dawn,Settings.HighContrast])
-        contrastEdited=dispatch (\stamp -> Desktop.EditSettings stamp {theme=Settings.HighContrast,textScale=150}) read |> Tuple.first
+        contrastEdited=dispatch (\stamp -> Desktop.EditSettings stamp {theme=Settings.HighContrast,textScale=150,effectsOff=False,reducedTransparency=False}) read |> Tuple.first
         contrastSaving=dispatch Desktop.SaveSettings contrastEdited |> Tuple.first
         contrastRequest=contrastSaving.settings.pending |> Maybe.map .request |> Maybe.withDefault UInt64.zero
         contrastSaved=native (outcome contrastRequest "Saved" (snapshot "2" "high-contrast" 150)) contrastSaving
@@ -81,19 +87,19 @@ result =
             ,checked "pendingWriteCannotRepeat" (twice==saving && List.isEmpty duplicate)
             ,checked "wrongReceiptCannotApply" (wrong==saving)
             ,checked "sameRequestWrongValuesCannotApply" (appearance mismatch==Just Settings.defaults && mismatch.settings.pending/=Nothing)
-            ,checked "exactSavedValuesApply" (appearance committed==Just {theme=Settings.Dawn,textScale=150} && committed.settings.pending==Nothing)
+            ,checked "exactSavedValuesApply" (appearance committed==Just {theme=Settings.Dawn,textScale=150,effectsOff=False,reducedTransparency=False} && committed.settings.pending==Nothing)
             ,checked "duplicateReceiptIsInert" (repeated==committed)
             ,checked "unknownRetainsNoReplay" (unknown.settings.pending/=Nothing && List.isEmpty noReplay && appearance unknown==Just Settings.defaults)
-            ,checked "explicitReadReconcilesUnknown" (unknownRead.settings.pending==Nothing && appearance unknownRead==Just {theme=Settings.Dawn,textScale=150})
+            ,checked "explicitReadReconcilesUnknown" (unknownRead.settings.pending==Nothing && appearance unknownRead==Just {theme=Settings.Dawn,textScale=150,effectsOff=False,reducedTransparency=False})
             ,checked "ordinaryRefreshDoesNotMoveFocus" (List.isEmpty ordinaryReadEffects)
             ,checked "unknownRefreshOnlyReads" (List.length readCommands==1 && not (List.any write readCommands))
-            ,checked "restartUsesStoredValues" (appearance restarted==Just {theme=Settings.Dawn,textScale=150})
+            ,checked "restartUsesStoredValues" (appearance restarted==Just {theme=Settings.Dawn,textScale=150,effectsOff=False,reducedTransparency=False})
             ,checked "invalidScaleCannotEditOrApply" (invalid.settings==read.settings && List.isEmpty invalidEffects)
             ,checked "invalidScaleDecoderRejects" (D.decodeValue Settings.decoder (snapshot "2" "dawn" 77) |> Result.toMaybe |> (==) Nothing)
             ,checked "staleViewCannotEdit" (stale==edited)
-            ,checked "contrastDecoderIsTyped" (D.decodeValue Settings.valuesDecoder (Settings.encodeValues {theme=Settings.HighContrast,textScale=200})==Ok {theme=Settings.HighContrast,textScale=200})
-            ,checked "contrastDraftDoesNotApplyBeforeReceipt" (appearance contrastEdited==Just {theme=Settings.Night,textScale=100})
-            ,checked "contrastCorrelatedReceiptApplies" (appearance contrastSaved==Just {theme=Settings.HighContrast,textScale=150})
+            ,checked "contrastDecoderIsTyped" (D.decodeValue Settings.valuesDecoder (Settings.encodeValues {theme=Settings.HighContrast,textScale=200,effectsOff=False,reducedTransparency=False})==Ok {theme=Settings.HighContrast,textScale=200,effectsOff=False,reducedTransparency=False})
+            ,checked "contrastDraftDoesNotApplyBeforeReceipt" (appearance contrastEdited==Just {theme=Settings.Night,textScale=100,effectsOff=False,reducedTransparency=False})
+            ,checked "contrastCorrelatedReceiptApplies" (appearance contrastSaved==Just {theme=Settings.HighContrast,textScale=150,effectsOff=False,reducedTransparency=False})
             ,checked "helpOfferedWithoutOnboardingGate" (read.settingsHelp && List.length (helpRows read)==3 && Settings.writable read.settings)
             ,checked "helpDismissalKeepsDraftWithoutEffects" (not helpDismissed.settingsHelp && helpDismissed.settings==edited.settings && List.isEmpty helpDismissEffects && List.isEmpty (helpRows helpDismissed))
             ,checked "helpReopensWithoutEffects" (helpReopened.settingsHelp && List.length (helpRows helpReopened)==3 && helpReopened.settings==edited.settings && List.isEmpty helpReopenEffects)
