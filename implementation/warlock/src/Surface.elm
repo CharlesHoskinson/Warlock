@@ -143,12 +143,17 @@ controls model =
                         in control (Notifications.identity target) (clean label) "" ready (\stamp -> Desktop.NotificationAction stamp target)
                 in [textRow (prefix++":summary") (entry.app++": "++entry.summary) (if entry.state=="live" then "Live" else "History · "++entry.state)]
                    ++ (if String.isEmpty entry.body then [] else [textRow (prefix++":body") entry.body ""])
-                   ++ (if entry.state=="live" then List.map (\item -> action "invoke" item.key item.label) entry.actions ++ [action "dismiss" "" "Dismiss notification"] else [])
+                   ++ (if entry.state=="live" then List.map (\item -> action "invoke" item.key item.label) entry.actions ++ [action "dismiss" "" "Dismiss notification"] else
+                       model.notifications.focused |> Maybe.andThen (\selected -> if selected.target.service==snapshot.service && selected.target.id==entry.id && selected.target.incarnation==entry.incarnation && selected.target.producer==entry.producer then Just [{id=Notifications.identity selected.target,domId=Desktop.key model (Notifications.identity selected.target),label=selected.label,ariaLabel=selected.label++"; unavailable",detail=entry.state++" · Action unavailable",enabled=False,message=Nothing}] else Nothing) |> Maybe.withDefault [])
+            retained=model.notifications.focused |> Maybe.andThen (\selected -> model.notifications.snapshot |> Maybe.map (\snapshot ->
+                let exists=List.concatMap (entryRows snapshot) snapshot.entries |> List.any (\row -> row.id==Notifications.identity selected.target)
+                    state=snapshot.entries |> List.filter (\entry -> entry.id==selected.target.id && entry.incarnation==selected.target.incarnation && entry.producer==selected.target.producer) |> List.head |> Maybe.map .state |> Maybe.withDefault "unavailable"
+                in if exists then [] else [{id=Notifications.identity selected.target,domId=Desktop.key model (Notifications.identity selected.target),label=selected.label,ariaLabel=selected.label++"; unavailable",detail=state++" · Action unavailable",enabled=False,message=Nothing}])) |> Maybe.withDefault []
         in [control "control:close" "Close notifications" "" True Desktop.CloseNotifications
            ,control "notifications:refresh" "Refresh notifications" (if model.notificationsExpected/=Nothing then "Reading current targets…" else "Read current targets; no action is repeated") True Desktop.RefreshNotifications]
            ++ [control "notifications:dnd" "Do not disturb for this session" (if model.notifications.policy.doNotDisturb then "On · History still updates" else "Off") True (\stamp -> Desktop.ConfigureNotificationPolicy stamp {doNotDisturb=not model.notifications.policy.doNotDisturb,interruptCritical=model.notifications.policy.interruptCritical})
               ,control "notifications:critical-interrupt" "Allow critical notification interruptions for this session" (if model.notifications.policy.interruptCritical then "On · Only when Do not disturb is off" else "Off · New notifications are polite") True (\stamp -> Desktop.ConfigureNotificationPolicy stamp {doNotDisturb=model.notifications.policy.doNotDisturb,interruptCritical=not model.notifications.policy.interruptCritical})]
-           ++ (model.notifications.snapshot |> Maybe.map (\snapshot -> List.concatMap (entryRows snapshot) snapshot.entries) |> Maybe.withDefault [])
+           ++ (model.notifications.snapshot |> Maybe.map (\snapshot -> List.concatMap (entryRows snapshot) snapshot.entries) |> Maybe.withDefault []) ++ retained
     else if model.settingsOpen then
         let scoped message=Desktop.capture model |> Maybe.map message
             draft=model.settings.draft
@@ -431,7 +436,7 @@ windowNotice model =
 packet : Counter -> Counter -> Desktop.Model -> E.Value
 packet publication lease model =
     let
-        encode control = E.object [("id",E.string control.id),("domId",E.string control.domId),("label",E.string control.label),("ariaLabel",E.string control.ariaLabel),("detail",E.string control.detail),("enabled",E.bool (control.enabled && control.message/=Nothing))]
+        encode control = E.object [("id",E.string control.id),("domId",E.string control.domId),("label",E.string control.label),("ariaLabel",E.string control.ariaLabel),("detail",E.string control.detail),("enabled",E.bool (control.enabled && control.message/=Nothing)),("focusOnly",E.bool (model.notificationsOpen && not control.enabled && Notifications.focusedIdentity model.notifications==Just control.id))]
     in E.object [("surfaceProtocol",E.int 2),("motion",E.string (Motion.name (Motion.desired model.motion))),("appearance",Settings.encodeValues (model.settings.snapshot |> Maybe.map .values |> Maybe.withDefault Settings.defaults)),("publication",E.string (UInt64.string publication)),("lease",E.string (UInt64.string lease)),("mode",E.string (mode model)),("status",E.string ((notice model)++(if not model.filesOpen && (model.files.pending/=Nothing || String.startsWith "Files:" model.files.notice) then " · "++model.files.notice else "")++(if model.jumpEntry==Nothing && (model.jumpList.pending/=Nothing || String.startsWith "Application action:" model.jumpList.notice) then " · "++model.jumpList.notice else ""))),("bar",E.list encode (barControls model)),("popup",E.list encode (controls model))]
 
 resolveAction : Counter -> Counter -> D.Value -> Desktop.Model -> Maybe Desktop.Msg
@@ -451,6 +456,7 @@ resolve publication lease raw model =
         scopes child = D.map4 (\version shown scoped role -> (version==2 && shown==publication && scoped==lease,role)) (D.field "surfaceProtocol" D.int) (D.field "publication" UInt64.decoder) (D.field "lease" UInt64.decoder) (D.field "surface" D.string) |> D.andThen (\(valid,role) -> if valid then child role else D.fail "Stale surface event")
         context = strict ["surfaceProtocol","kind","surface","publication","lease","id","trigger","x","y"] (scopes (\role -> D.map4 (\identity trigger x y -> (role,identity,trigger)) (D.field "id" D.string) (D.field "trigger" D.string) (D.field "x" D.int) (D.field "y" D.int)))
         navigation = strict ["surfaceProtocol","kind","surface","publication","lease","key"] (scopes (\role -> if role=="popup" && mode model=="menu" then D.field "key" D.string else D.fail "No menu"))
+        attention = strict ["surfaceProtocol","kind","surface","publication","lease","id"] (scopes (\role -> if role=="popup" && model.notificationsOpen then D.field "id" D.string else D.fail "No notification popup"))
         query = strict ["surfaceProtocol","kind","surface","publication","lease","id","query"] (scopes (\role -> if role=="popup" && (model.open || model.filesOpen) then D.map2 Tuple.pair (D.field "id" D.string) (D.field "query" D.string) else D.fail "No applications"))
         menuMessage key =
             (MenuBridge.menuSnapshot model.windows.menus).menu |> Maybe.andThen (\menu ->
@@ -465,6 +471,7 @@ resolve publication lease raw model =
                     "Enter" -> if Shell.available model.windows.shell && menu.status==Menu.Ready && not (menuBlocked model) then menu.selected |> Maybe.map (\index -> Desktop.Window (TaskbarShell.MenuEvent (Menu.Activate menu.id menu.binding index))) else Nothing
                     _ -> Nothing)
     in case D.decodeValue (D.field "kind" D.string) raw of
+        Ok "surface-notification-focus" -> D.decodeValue attention raw |> Result.toMaybe |> Maybe.andThen (\identity -> if identity=="" || List.any (\control -> control.id==identity) (controls model) then Desktop.capture model |> Maybe.map (\stamp -> Desktop.NotificationFocus stamp identity) else Nothing)
         Ok "surface-action" -> resolveAction publication lease raw model
         Ok "surface-query" -> D.decodeValue query raw |> Result.toMaybe |> Maybe.andThen (\(identity,value) -> if identity=="control:search" && model.open then Desktop.capture model |> Maybe.map (\stamp -> Desktop.SearchQuery stamp value) else if identity=="control:files-path" && model.filesOpen then Desktop.capture model |> Maybe.map (\stamp -> Desktop.EditFilesPath stamp value) else Nothing)
         Ok "surface-menu-navigation" -> D.decodeValue navigation raw |> Result.toMaybe |> Maybe.andThen menuMessage

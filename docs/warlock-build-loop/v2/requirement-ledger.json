@@ -6536,16 +6536,88 @@
         {
           "name": "announce-notification expiration",
           "oracle": "one correlated message appears with reachable detail/recovery and no focus relocation; repeated receipts do not reannounce",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/notification-relevance/manifest.json",
+              "sha256": "0617cdc8670a66b8ec78195da70a6f48a00068d6c79ea53714efda15c72e5c6f",
+              "scope": "Actual native physical keyboard focused expiry: exact service/revision/incarnation and one polite route retain the same focused node/control/document; Enter cannot dispatch, keyboard departure retires the unavailable control; DND suppression/no replay. Typed/browser checks also cover user-invoked expiry elsewhere and repeats; that native journey, speech/braille, new control pixels and independent acceptance remain open.",
+              "sourceBaseRevision": "edbf262c7e3b2b96bcd2bb720ac86c5015dce411",
+              "sourceHashes": {
+                "implementation/warlock/src/Notifications.elm": "b37bff9f104d80eb1d1ea99f297c4d859b9d5744d7b0c05f6c89fa51581bc244",
+                "implementation/warlock/src/Desktop.elm": "cc1a171fb066bf57723f0ba141eda75b41c134e3638ed2669429b320428ce3f1",
+                "implementation/warlock/src/OutcomeAnnouncements.elm": "158b22f574983da656838c4388c93cca1c7d9b044aaae83ee21153eae29b7586",
+                "implementation/warlock/src/OutputController.elm": "1afb664b11b5c303177728483c8e7e469830b75d828070130cebc95fb5c9cafd",
+                "implementation/warlock/src/Surface.elm": "17c721ce36b6e0f1b685acc350f7999d818e656e020f6603f0cf3310fe374656",
+                "implementation/warlock/src/SurfaceRenderer.elm": "a1fe894c483c1bd3be837ca491e2b6adead6dc131955ecd2d62caf8ad3a83b15",
+                "implementation/warlock/assets/popup-adapter.js": "c3c61101fe67bfbe9a70248edbf82e35e2ad0cf8417c756db36d864d025383b0",
+                "implementation/warlock/assets/shell.css": "274332c827316f2a7edc02d92bdfff0fb9783f8a4490c0ce4f27690163fa2d28",
+                "implementation/warlock/assets/elm.js": "acc09296e558f99c838de2f990bb54ceadfd63cd824de7e0a3bcb4c333413738",
+                "implementation/warlock/assets/bar.js": "93dd5aacc0ded281914da7a958d53f1992af02f9178f153bc84bec000a4333c2",
+                "implementation/warlock/assets/popup.js": "4a3beb47d6d3c29bb9f9c4aca5837402556f1baefc30414a985bb4f5f3edceda",
+                "implementation/warlock/native/surface.h": "1a692f3d541a3ec55ca61f885129612f9b9c2b173754676819859f11036e7a67",
+                "implementation/warlock/native/shared-host.c": "f2a1e05a3133074fe5beedb634cf8da1d4240767f44e8c6ecc57a03e7cea035d",
+                "implementation/warlock/qa/notification-relevance.qnt": "bc15befdc4f4089adf6705d228accfdbaf85d4a840eae1060dd593f79db49508",
+                "implementation/warlock/qa/notification-relevance_test.qnt": "dd3a39bea15f3eef178016bd976963e35cd9760f8ac98fd143175c78fdb730a5",
+                "implementation/warlock/qa/check-notification-relevance.py": "52d26e05ac122ca4a587480f2c0a292330ae987652e6ef88634277bf8fae9038",
+                "implementation/warlock/qa/NotificationRelevanceReplay.elm": "3783ce39eaa3193f6ff45e1abd12967c20d8093a25f564662d8fc9233592db84",
+                "implementation/warlock/qa/check-search.py": "dc505bfb2ca659221cd17050b9068e9f900af62a330df9ed9c20315d245fcfd9",
+                "implementation/warlock/qa/announcement-browser.mjs": "353e08eb515ac283378e72db8a7e76178b1b5ec68733f261bdc36eae976b0d06",
+                "implementation/warlock/qa/native-window-feedback.py": "4259e5e0a9a2e3c5f49d83b01dc45d06d97a4b60bfe168dcab570d27776131a2",
+                "implementation/warlock/qa/surface-admission.c": "cd7234488b5419c82f23a84cb1ce67990c34538339a9cfc1382f75cea74590f3",
+                "implementation/warlock/qa/current-search-build.json": "49ea911ec04a891aeb0e078b32dfe06cd4e10b7838de762661cbc0d8ac9cc10c",
+                "implementation/warlock/README.md": "ff0ad00ed57240f646032b0911f1373cd71876aad39e2cdb7f6582d0e6dff74c",
+                "implementation/warlock/adapter/notification_service.py": "129c864f275282320274ab417bdbc2a7a919096c2ce2b58d0438b18988fc334b",
+                "implementation/warlock/qa/check-notifications.py": "19a85148dec72254ee764a027a03282cdf67ca09512a8726e1bf226195ec3339"
+              },
+              "reviewerDisposition": "Root observed scoped implementation/component/native keyboard/DOM/focus results; independent original-scenario acceptance remains open.",
+              "observedUTC": "2026-10-10T05:11:12.677882+00:00"
+            }
+          ],
+          "missingObservation": "Actual stable-focus speech and braille, repeated delivery, readonly control semantics and reachable recovery through native AT.; Independent original-scenario acceptance.; Native user-invoked expiry with other focus, wider focus/output/transport/producer lifecycle and retained-control physical pixel qualification.; Spontaneous service-unavailability outcomes and broader release scope remain open."
         },
         {
           "name": "announce-expired action rejection",
           "oracle": "one correlated message appears with reachable detail/recovery and no focus relocation; repeated receipts do not reannounce",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/notification-relevance/manifest.json",
+              "sha256": "0617cdc8670a66b8ec78195da70a6f48a00068d6c79ea53714efda15c72e5c6f",
+              "scope": "Actual original held queued native action expires before a producer reuses its numeric ID: bounded exact expired-target native fact gives one polite announcement correlated to the original request/full target, without replay. Component matched/foreign/repeat and focus guards pass. Actual speech/braille, wider native focus/output lifecycle and independent acceptance remain open.",
+              "sourceBaseRevision": "edbf262c7e3b2b96bcd2bb720ac86c5015dce411",
+              "sourceHashes": {
+                "implementation/warlock/src/Notifications.elm": "b37bff9f104d80eb1d1ea99f297c4d859b9d5744d7b0c05f6c89fa51581bc244",
+                "implementation/warlock/src/Desktop.elm": "cc1a171fb066bf57723f0ba141eda75b41c134e3638ed2669429b320428ce3f1",
+                "implementation/warlock/src/OutcomeAnnouncements.elm": "158b22f574983da656838c4388c93cca1c7d9b044aaae83ee21153eae29b7586",
+                "implementation/warlock/src/OutputController.elm": "1afb664b11b5c303177728483c8e7e469830b75d828070130cebc95fb5c9cafd",
+                "implementation/warlock/src/Surface.elm": "17c721ce36b6e0f1b685acc350f7999d818e656e020f6603f0cf3310fe374656",
+                "implementation/warlock/src/SurfaceRenderer.elm": "a1fe894c483c1bd3be837ca491e2b6adead6dc131955ecd2d62caf8ad3a83b15",
+                "implementation/warlock/assets/popup-adapter.js": "c3c61101fe67bfbe9a70248edbf82e35e2ad0cf8417c756db36d864d025383b0",
+                "implementation/warlock/assets/shell.css": "274332c827316f2a7edc02d92bdfff0fb9783f8a4490c0ce4f27690163fa2d28",
+                "implementation/warlock/assets/elm.js": "acc09296e558f99c838de2f990bb54ceadfd63cd824de7e0a3bcb4c333413738",
+                "implementation/warlock/assets/bar.js": "93dd5aacc0ded281914da7a958d53f1992af02f9178f153bc84bec000a4333c2",
+                "implementation/warlock/assets/popup.js": "4a3beb47d6d3c29bb9f9c4aca5837402556f1baefc30414a985bb4f5f3edceda",
+                "implementation/warlock/native/surface.h": "1a692f3d541a3ec55ca61f885129612f9b9c2b173754676819859f11036e7a67",
+                "implementation/warlock/native/shared-host.c": "f2a1e05a3133074fe5beedb634cf8da1d4240767f44e8c6ecc57a03e7cea035d",
+                "implementation/warlock/qa/notification-relevance.qnt": "bc15befdc4f4089adf6705d228accfdbaf85d4a840eae1060dd593f79db49508",
+                "implementation/warlock/qa/notification-relevance_test.qnt": "dd3a39bea15f3eef178016bd976963e35cd9760f8ac98fd143175c78fdb730a5",
+                "implementation/warlock/qa/check-notification-relevance.py": "52d26e05ac122ca4a587480f2c0a292330ae987652e6ef88634277bf8fae9038",
+                "implementation/warlock/qa/NotificationRelevanceReplay.elm": "3783ce39eaa3193f6ff45e1abd12967c20d8093a25f564662d8fc9233592db84",
+                "implementation/warlock/qa/check-search.py": "dc505bfb2ca659221cd17050b9068e9f900af62a330df9ed9c20315d245fcfd9",
+                "implementation/warlock/qa/announcement-browser.mjs": "353e08eb515ac283378e72db8a7e76178b1b5ec68733f261bdc36eae976b0d06",
+                "implementation/warlock/qa/native-window-feedback.py": "4259e5e0a9a2e3c5f49d83b01dc45d06d97a4b60bfe168dcab570d27776131a2",
+                "implementation/warlock/qa/surface-admission.c": "cd7234488b5419c82f23a84cb1ce67990c34538339a9cfc1382f75cea74590f3",
+                "implementation/warlock/qa/current-search-build.json": "49ea911ec04a891aeb0e078b32dfe06cd4e10b7838de762661cbc0d8ac9cc10c",
+                "implementation/warlock/README.md": "ff0ad00ed57240f646032b0911f1373cd71876aad39e2cdb7f6582d0e6dff74c",
+                "implementation/warlock/adapter/notification_service.py": "129c864f275282320274ab417bdbc2a7a919096c2ce2b58d0438b18988fc334b",
+                "implementation/warlock/qa/check-notifications.py": "19a85148dec72254ee764a027a03282cdf67ca09512a8726e1bf226195ec3339"
+              },
+              "reviewerDisposition": "Root observed scoped implementation/component/native keyboard/DOM/focus results; independent original-scenario acceptance remains open.",
+              "observedUTC": "2026-10-10T05:11:12.677882+00:00"
+            }
+          ],
+          "missingObservation": "Actual stable-focus speech and braille, repeated delivery, readonly control semantics and reachable recovery through native AT.; Independent original-scenario acceptance.; Native user-invoked expiry with other focus, wider focus/output/transport/producer lifecycle and retained-control physical pixel qualification.; Spontaneous service-unavailability outcomes and broader release scope remain open."
         },
         {
           "name": "announcement-dnd",
@@ -6591,9 +6663,45 @@
         {
           "name": "announcement-expiration-irrelevant",
           "oracle": "expiration does not announce or move focus",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/notification-relevance/manifest.json",
+              "sha256": "0617cdc8670a66b8ec78195da70a6f48a00068d6c79ea53714efda15c72e5c6f",
+              "scope": "Original native unfocused and uninvoked expiration remains silent; scoped typed/browser relevance, late focus and repeated receipt checks pass. Native broader focus/output/producer matrix and independent original-scenario acceptance remain open.",
+              "sourceBaseRevision": "edbf262c7e3b2b96bcd2bb720ac86c5015dce411",
+              "sourceHashes": {
+                "implementation/warlock/src/Notifications.elm": "b37bff9f104d80eb1d1ea99f297c4d859b9d5744d7b0c05f6c89fa51581bc244",
+                "implementation/warlock/src/Desktop.elm": "cc1a171fb066bf57723f0ba141eda75b41c134e3638ed2669429b320428ce3f1",
+                "implementation/warlock/src/OutcomeAnnouncements.elm": "158b22f574983da656838c4388c93cca1c7d9b044aaae83ee21153eae29b7586",
+                "implementation/warlock/src/OutputController.elm": "1afb664b11b5c303177728483c8e7e469830b75d828070130cebc95fb5c9cafd",
+                "implementation/warlock/src/Surface.elm": "17c721ce36b6e0f1b685acc350f7999d818e656e020f6603f0cf3310fe374656",
+                "implementation/warlock/src/SurfaceRenderer.elm": "a1fe894c483c1bd3be837ca491e2b6adead6dc131955ecd2d62caf8ad3a83b15",
+                "implementation/warlock/assets/popup-adapter.js": "c3c61101fe67bfbe9a70248edbf82e35e2ad0cf8417c756db36d864d025383b0",
+                "implementation/warlock/assets/shell.css": "274332c827316f2a7edc02d92bdfff0fb9783f8a4490c0ce4f27690163fa2d28",
+                "implementation/warlock/assets/elm.js": "acc09296e558f99c838de2f990bb54ceadfd63cd824de7e0a3bcb4c333413738",
+                "implementation/warlock/assets/bar.js": "93dd5aacc0ded281914da7a958d53f1992af02f9178f153bc84bec000a4333c2",
+                "implementation/warlock/assets/popup.js": "4a3beb47d6d3c29bb9f9c4aca5837402556f1baefc30414a985bb4f5f3edceda",
+                "implementation/warlock/native/surface.h": "1a692f3d541a3ec55ca61f885129612f9b9c2b173754676819859f11036e7a67",
+                "implementation/warlock/native/shared-host.c": "f2a1e05a3133074fe5beedb634cf8da1d4240767f44e8c6ecc57a03e7cea035d",
+                "implementation/warlock/qa/notification-relevance.qnt": "bc15befdc4f4089adf6705d228accfdbaf85d4a840eae1060dd593f79db49508",
+                "implementation/warlock/qa/notification-relevance_test.qnt": "dd3a39bea15f3eef178016bd976963e35cd9760f8ac98fd143175c78fdb730a5",
+                "implementation/warlock/qa/check-notification-relevance.py": "52d26e05ac122ca4a587480f2c0a292330ae987652e6ef88634277bf8fae9038",
+                "implementation/warlock/qa/NotificationRelevanceReplay.elm": "3783ce39eaa3193f6ff45e1abd12967c20d8093a25f564662d8fc9233592db84",
+                "implementation/warlock/qa/check-search.py": "dc505bfb2ca659221cd17050b9068e9f900af62a330df9ed9c20315d245fcfd9",
+                "implementation/warlock/qa/announcement-browser.mjs": "353e08eb515ac283378e72db8a7e76178b1b5ec68733f261bdc36eae976b0d06",
+                "implementation/warlock/qa/native-window-feedback.py": "4259e5e0a9a2e3c5f49d83b01dc45d06d97a4b60bfe168dcab570d27776131a2",
+                "implementation/warlock/qa/surface-admission.c": "cd7234488b5419c82f23a84cb1ce67990c34538339a9cfc1382f75cea74590f3",
+                "implementation/warlock/qa/current-search-build.json": "49ea911ec04a891aeb0e078b32dfe06cd4e10b7838de762661cbc0d8ac9cc10c",
+                "implementation/warlock/README.md": "ff0ad00ed57240f646032b0911f1373cd71876aad39e2cdb7f6582d0e6dff74c",
+                "implementation/warlock/adapter/notification_service.py": "129c864f275282320274ab417bdbc2a7a919096c2ce2b58d0438b18988fc334b",
+                "implementation/warlock/qa/check-notifications.py": "19a85148dec72254ee764a027a03282cdf67ca09512a8726e1bf226195ec3339"
+              },
+              "reviewerDisposition": "Root observed scoped implementation/component/native keyboard/DOM/focus results; independent original-scenario acceptance remains open.",
+              "observedUTC": "2026-10-10T05:11:12.677882+00:00"
+            }
+          ],
+          "missingObservation": "Actual stable-focus speech and braille, repeated delivery, readonly control semantics and reachable recovery through native AT.; Independent original-scenario acceptance.; Native user-invoked expiry with other focus, wider focus/output/transport/producer lifecycle and retained-control physical pixel qualification.; Spontaneous service-unavailability outcomes and broader release scope remain open."
         },
         {
           "name": "announcement-urgency-opt-in",
@@ -10800,5 +10908,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-10T04:49:50.823065+00:00"
+  "updatedUTC": "2026-10-10T05:11:12.677882+00:00"
 }

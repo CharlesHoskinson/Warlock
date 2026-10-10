@@ -1,4 +1,4 @@
-module Notifications exposing (Policy, Urgency(..), Model, Snapshot, Entry, Target, initial, configure, arrivals, critical, decoder, observe, reconcile, target, identity, encodeIntent, live, propose, receive)
+module Notifications exposing (Policy, Urgency(..), Model, Snapshot, Entry, Target, initial, configure, arrivals, expirations, focus, clearFocus, focusedIdentity, critical, decoder, observe, reconcile, target, identity, encodeIntent, live, propose, receive, receiveReason)
 
 import Json.Decode as D
 import Json.Encode as E
@@ -10,10 +10,10 @@ type alias Policy = { doNotDisturb : Bool, interruptCritical : Bool }
 type alias Entry = { urgency : Urgency, id : Counter, incarnation : Counter, producer : String, app : String, summary : String, body : String, state : String, actions : List { key : String, label : String } }
 type alias Snapshot = { service : Counter, revision : Counter, available : Bool, reason : String, entries : List Entry }
 type alias Target = { service : Counter, id : Counter, incarnation : Counter, producer : String, action : String, verb : String }
-type alias Model = { policy : Policy, snapshot : Maybe Snapshot, pending : Maybe { request : Counter, target : Target }, spent : List Target, notice : String }
+type alias Model = { focused : Maybe {target:Target,label:String}, outcome : Maybe {request:Counter,target:Target,status:String,expired:Bool}, policy : Policy, snapshot : Maybe Snapshot, pending : Maybe { request : Counter, target : Target, expired : Bool }, spent : List Target, notice : String }
 
 initial : Model
-initial = {policy={doNotDisturb=False,interruptCritical=False},snapshot=Nothing,pending=Nothing,spent=[],notice="Loading notifications…"}
+initial = {focused=Nothing,outcome=Nothing,policy={doNotDisturb=False,interruptCritical=False},snapshot=Nothing,pending=Nothing,spent=[],notice="Loading notifications…"}
 strict fields child = D.keyValuePairs D.value |> D.andThen (\pairs -> if List.sort (List.map Tuple.first pairs)==List.sort fields then child else D.fail "Notification fields")
 positive = UInt64.decoder |> D.andThen (\value -> if value/=UInt64.zero then D.succeed value else D.fail "Notification identity")
 bounded limit = D.string |> D.andThen (\value -> if String.length value<=limit && not (String.any (\c -> Char.toCode c<32 && c/='\n' && c/='\t') value) then D.succeed value else D.fail "Notification text")
@@ -46,7 +46,8 @@ observe current model =
         entries=List.filter (\row -> row.state=="live") current.entries
         count=List.length entries
         notice=if not current.available then current.reason else if count==0 then "No live notifications. Previous notifications remain in history." else String.fromInt count++" live notifications. Actions apply only to the current notification."
-    in if not admitted then model else {model | snapshot=Just current,notice=if model.pending/=Nothing then model.notice else notice}
+        pending=model.pending |> Maybe.map (\waiting -> {waiting|expired=waiting.expired || List.any (\entry -> same waiting.target current.service entry && entry.state=="expired") current.entries})
+    in if not admitted then model else {model | snapshot=Just current,pending=pending,notice=if model.pending/=Nothing then model.notice else notice}
 target : Snapshot -> Entry -> String -> String -> Target
 target snapshot entry verb action = {service=snapshot.service,id=entry.id,incarnation=entry.incarnation,producer=entry.producer,action=action,verb=verb}
 identity : Target -> String
@@ -59,16 +60,20 @@ live choice model = case model.snapshot of
 propose : Counter -> Target -> Model -> (Model,Maybe E.Value)
 propose request choice model =
     if model.pending/=Nothing || not (live choice model) then (model,Nothing) else
-        ({model | pending=Just {request=request,target=choice},spent=List.take 64 (choice::model.spent),notice="Sending notification action…"},Just (encodeIntent choice))
+        ({model | pending=Just {request=request,target=choice,expired=False},spent=List.take 64 (choice::model.spent),notice="Sending notification action…"},Just (encodeIntent choice))
 receive : Counter -> String -> Snapshot -> Model -> Model
-receive request status current model = case model.pending of
+receive request status current model = receiveReason request status "" current model
+
+receiveReason request status reason current model = case model.pending of
     Nothing -> model
     Just pending ->
         if request/=pending.request || not (List.member status ["Dispatched","Refused","Unknown"]) || current.service/=pending.target.service then model else
         let observed=observe current model
+            expired=reason=="expired" || (observed.pending |> Maybe.map .expired |> Maybe.withDefault pending.expired)
+            outcome=Just {request=request,target=pending.target,status=status,expired=expired}
         in if observed.snapshot/=Just current then model else
-            if status=="Unknown" then {observed | notice="Notification action not confirmed. It will not be repeated."}
-            else {observed | pending=Nothing,notice=if status=="Dispatched" then "Notification action sent." else "Notification action refused. The target expired or changed; choose a current notification."}
+            if status=="Unknown" then {observed | outcome=outcome,notice="Notification action not confirmed. It will not be repeated."}
+            else {observed | outcome=outcome,pending=Nothing,notice=if status=="Dispatched" then "Notification action sent." else "Notification action refused. The target expired or changed; choose a current notification."}
 
 reconcile : Snapshot -> Model -> Model
 reconcile snapshot model =
@@ -94,3 +99,24 @@ arrivals before after =
             if not current.available || current.service/=old.service || UInt64.compare current.revision old.revision/=GT || after.policy.doNotDisturb then [] else
             current.entries |> List.filter (\entry -> entry.state=="live" && not (List.any (\prior -> prior.incarnation==entry.incarnation) old.entries)) |> List.sortWith (\a b -> UInt64.compare a.incarnation b.incarnation)
         _ -> []
+
+
+-- Observed control identity is admitted by the current popup publication/lease.
+-- It creates no action, native intent, deadline or availability authority.
+same choice service entry = choice.service==service && choice.id==entry.id && choice.incarnation==entry.incarnation && choice.producer==entry.producer
+focusedIdentity model = model.focused |> Maybe.map (.target >> identity)
+clearFocus model = {model|focused=Nothing}
+focus selected model =
+    if focusedIdentity model==Just selected then model else
+    let chosen=model.snapshot |> Maybe.andThen (\snapshot ->
+            snapshot.entries |> List.filter (\entry -> entry.state=="live") |> List.concatMap (\entry ->
+                List.map (\action -> {target=target snapshot entry "invoke" action.key,label=action.label}) entry.actions ++ [{target=target snapshot entry "dismiss" "",label="Dismiss notification"}])
+            |> List.filter (\row -> identity row.target==selected) |> List.head)
+    in {model|focused=chosen}
+expirations : Model -> Model -> List Entry
+expirations before after = case (before.snapshot,after.snapshot) of
+    (Just old,Just current) ->
+        if current.service/=old.service || UInt64.compare current.revision old.revision/=GT || after.policy.doNotDisturb then [] else
+        current.entries |> List.filter (\entry -> entry.state=="expired" && List.any (\prior -> prior.state=="live" && prior.id==entry.id && prior.incarnation==entry.incarnation && prior.producer==entry.producer) old.entries &&
+            ((before.focused |> Maybe.map (\selected -> same selected.target current.service entry) |> Maybe.withDefault False) || (before.pending |> Maybe.map (\waiting -> same waiting.target current.service entry) |> Maybe.withDefault False))) |> List.sortWith (\a b -> UInt64.compare a.incarnation b.incarnation)
+    _ -> []

@@ -431,7 +431,7 @@ static void qa_flush_controller_commits(void) {
     }
 }
 static void shared_forward(OutputView *origin,JsonNode *action,gboolean popup) {
-    if (!origin || !origin->active || (popup && origin!=popup_owner) || !(surface_action(&surface_gate,action,surface_snapshot,popup) || surface_query(&surface_gate,action,surface_snapshot,popup))) return;
+    if (!origin || !origin->active || (popup && origin!=popup_owner) || !(surface_action(&surface_gate,action,surface_snapshot,popup) || surface_query(&surface_gate,action,surface_snapshot,popup) || surface_notification_focus(&surface_gate,action,surface_snapshot,popup))) return;
     JsonObject *object=json_object_new();json_object_set_int_member(object,"viewProtocol",1);json_object_set_string_member(object,"kind","view-action");
     json_object_set_member(object,"scope",scope_packet(origin));json_object_set_member(object,"action",json_node_copy(action));
     JsonNode *packet=json_node_new(JSON_NODE_OBJECT);json_node_take_object(packet,object);surface_eval(view,"receiveAction",packet);json_node_unref(packet);

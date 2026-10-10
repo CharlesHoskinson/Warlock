@@ -1,0 +1,732 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "Only the designated popup owns a live region before refusal"
+    },
+    {
+      "name": "Refusal text and identity are delivered on one route",
+      "detail": [
+        {
+          "id": "bar1",
+          "live": [],
+          "visual": [
+            {
+              "text": "Settings change refused. Refresh, then choose again. · Loading shortcut choices…",
+              "live": "off"
+            }
+          ],
+          "focus": null,
+          "packets": [
+            {
+              "surfaceProtocol": 2,
+              "kind": "presentation-ready"
+            },
+            {
+              "surfaceProtocol": 2,
+              "kind": "presentation-applied",
+              "publication": "9",
+              "lease": "1"
+            }
+          ]
+        },
+        {
+          "id": "bar2",
+          "live": [],
+          "visual": [
+            {
+              "text": "Settings change refused. Refresh, then choose again. · Loading shortcut choices…",
+              "live": "off"
+            }
+          ],
+          "focus": null,
+          "packets": [
+            {
+              "surfaceProtocol": 2,
+              "kind": "presentation-ready"
+            },
+            {
+              "surfaceProtocol": 2,
+              "kind": "presentation-applied",
+              "publication": "9",
+              "lease": "1"
+            }
+          ]
+        },
+        {
+          "id": "popup",
+          "live": [
+            {
+              "live": "polite",
+              "text": "Settings change refused. Refresh, then choose again.",
+              "sequence": "1",
+              "correlation": "{\"outcome\":\"settings-refused\",\"binding\":{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"},\"identity\":\"7\"}"
+            }
+          ],
+          "visual": [
+            {
+              "text": "Settings change refused. Refresh, then choose again. · Loading shortcut choices…",
+              "live": "off"
+            }
+          ],
+          "focus": "settings:save",
+          "packets": [
+            {
+              "surfaceProtocol": 2,
+              "kind": "presentation-ready"
+            },
+            {
+              "surfaceProtocol": 2,
+              "kind": "presentation-applied",
+              "publication": "9",
+              "lease": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Persistent status remains readable and passive on mirrors",
+      "detail": [
+        {
+          "id": "bar1",
+          "live": [],
+          "visual": [
+            {
+              "text": "Settings change refused. Refresh, then choose again. · Loading shortcut choices…",
+              "live": "off"
+            }
+          ],
+          "focus": null,
+          "packets": [
+            {
+              "surfaceProtocol": 2,
+              "kind": "presentation-ready"
+            },
+            {
+              "surfaceProtocol": 2,
+              "kind": "presentation-applied",
+              "publication": "9",
+              "lease": "1"
+            }
+          ]
+        },
+        {
+          "id": "bar2",
+          "live": [],
+          "visual": [
+            {
+              "text": "Settings change refused. Refresh, then choose again. · Loading shortcut choices…",
+              "live": "off"
+            }
+          ],
+          "focus": null,
+          "packets": [
+            {
+              "surfaceProtocol": 2,
+              "kind": "presentation-ready"
+            },
+            {
+              "surfaceProtocol": 2,
+              "kind": "presentation-applied",
+              "publication": "9",
+              "lease": "1"
+            }
+          ]
+        },
+        {
+          "id": "popup",
+          "live": [
+            {
+              "live": "polite",
+              "text": "Settings change refused. Refresh, then choose again.",
+              "sequence": "1",
+              "correlation": "{\"outcome\":\"settings-refused\",\"binding\":{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"},\"identity\":\"7\"}"
+            }
+          ],
+          "visual": [
+            {
+              "text": "Settings change refused. Refresh, then choose again. · Loading shortcut choices…",
+              "live": "off"
+            }
+          ],
+          "focus": "settings:save",
+          "packets": [
+            {
+              "surfaceProtocol": 2,
+              "kind": "presentation-ready"
+            },
+            {
+              "surfaceProtocol": 2,
+              "kind": "presentation-applied",
+              "publication": "9",
+              "lease": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Refusal does not relocate focused control"
+    },
+    {
+      "name": "Repeated exact delivery and publication do not repeat the live mutation"
+    },
+    {
+      "name": "New refusal with the same words has its own identity and mutation"
+    },
+    {
+      "name": "New receipt keeps the same keyed focused control"
+    },
+    {
+      "name": "Owner retirement moves eligibility without replaying the prior refusal",
+      "detail": [
+        {
+          "id": "bar1",
+          "live": [],
+          "visual": [
+            {
+              "text": "Updating window information…",
+              "live": "off"
+            }
+          ],
+          "focus": null,
+          "packets": [
+            {
+              "surfaceProtocol": 2,
+              "kind": "presentation-ready"
+            },
+            {
+              "surfaceProtocol": 2,
+              "kind": "presentation-applied",
+              "publication": "9",
+              "lease": "1"
+            },
+            {
+              "surfaceProtocol": 2,
+              "kind": "presentation-applied",
+              "publication": "11",
+              "lease": "1"
+            },
+            {
+              "surfaceProtocol": 2,
+              "kind": "presentation-applied",
+              "publication": "14",
+              "lease": "1"
+            }
+          ]
+        },
+        {
+          "id": "bar2",
+          "live": [
+            {
+              "live": "polite",
+              "text": "",
+              "sequence": null,
+              "correlation": null
+            }
+          ],
+          "visual": [
+            {
+              "text": "Updating window information…",
+              "live": "off"
+            }
+          ],
+          "focus": null,
+          "packets": [
+            {
+              "surfaceProtocol": 2,
+              "kind": "presentation-ready"
+            },
+            {
+              "surfaceProtocol": 2,
+              "kind": "presentation-applied",
+              "publication": "9",
+              "lease": "1"
+            },
+            {
+              "surfaceProtocol": 2,
+              "kind": "presentation-applied",
+              "publication": "11",
+              "lease": "1"
+            },
+            {
+              "surfaceProtocol": 2,
+              "kind": "presentation-applied",
+              "publication": "14",
+              "lease": "1"
+            }
+          ]
+        },
+        {
+          "id": "popup",
+          "live": [],
+          "visual": [
+            {
+              "text": "Updating window information…",
+              "live": "off"
+            }
+          ],
+          "focus": null,
+          "packets": [
+            {
+              "surfaceProtocol": 2,
+              "kind": "presentation-ready"
+            },
+            {
+              "surfaceProtocol": 2,
+              "kind": "presentation-applied",
+              "publication": "9",
+              "lease": "1"
+            },
+            {
+              "surfaceProtocol": 2,
+              "kind": "presentation-applied",
+              "publication": "11",
+              "lease": "1"
+            },
+            {
+              "surfaceProtocol": 2,
+              "kind": "presentation-applied",
+              "publication": "14",
+              "lease": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stale publication cannot announce in a newly selected host"
+    },
+    {
+      "name": "Nonowner recipient cannot announce even with a forged delivery flag"
+    },
+    {
+      "name": "Announcement projection submits no actions or focus effects"
+    },
+    {
+      "name": "Actual focused notification submits scoped passive fact"
+    },
+    {
+      "name": "Focus observation keeps keyed node without message"
+    },
+    {
+      "name": "Pending action keeps focus with honest unavailable semantics"
+    },
+    {
+      "name": "Focused expiry uses one polite owner and exact identity"
+    },
+    {
+      "name": "Expired action remains the same focused unavailable node",
+      "detail": {
+        "same": true,
+        "connected": true,
+        "disabled": false,
+        "aria": "true",
+        "focusOnly": "true",
+        "text": "Open meetingexpired · Action unavailable",
+        "active": "<button class=\"control-utility\" id=\"applications:{&quot;lifetime&quot;:&quot;1&quot;,&quot;session&quot;:&quot;1&quot;,&quot;frontend&quot;:&quot;1&quot;}:9:notification:9:1:invoke:open\" data-window-state=\"none\" aria-label=\"Open meeting; unavailable\" aria-disabled=\"true\" data-focus-only=\"true\" data-surface-control=\"notification:9:1:invoke:open\" role=\"button\" aria-current=\"false\"><span class=\"control-label\">Open meeting</span><span class=\"control-detail\">expired · Action unavailable</span></button>"
+      }
+    },
+    {
+      "name": "Retained unavailable control cannot submit an action"
+    },
+    {
+      "name": "Expired-action refusal retains keyed focus and polite message"
+    },
+    {
+      "name": "User can navigate away from unavailable control"
+    },
+    {
+      "name": "Leaving unavailable control retires it"
+    },
+    {
+      "name": "No browser exceptions",
+      "detail": []
+    }
+  ],
+  "captures": [],
+  "errors": [],
+  "externalRequests": [],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "observations": {
+    "first": [
+      {
+        "id": "bar1",
+        "live": [],
+        "visual": [
+          {
+            "text": "Settings change refused. Refresh, then choose again. · Loading shortcut choices…",
+            "live": "off"
+          }
+        ],
+        "focus": null,
+        "packets": [
+          {
+            "surfaceProtocol": 2,
+            "kind": "presentation-ready"
+          },
+          {
+            "surfaceProtocol": 2,
+            "kind": "presentation-applied",
+            "publication": "9",
+            "lease": "1"
+          }
+        ]
+      },
+      {
+        "id": "bar2",
+        "live": [],
+        "visual": [
+          {
+            "text": "Settings change refused. Refresh, then choose again. · Loading shortcut choices…",
+            "live": "off"
+          }
+        ],
+        "focus": null,
+        "packets": [
+          {
+            "surfaceProtocol": 2,
+            "kind": "presentation-ready"
+          },
+          {
+            "surfaceProtocol": 2,
+            "kind": "presentation-applied",
+            "publication": "9",
+            "lease": "1"
+          }
+        ]
+      },
+      {
+        "id": "popup",
+        "live": [
+          {
+            "live": "polite",
+            "text": "Settings change refused. Refresh, then choose again.",
+            "sequence": "1",
+            "correlation": "{\"outcome\":\"settings-refused\",\"binding\":{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"},\"identity\":\"7\"}"
+          }
+        ],
+        "visual": [
+          {
+            "text": "Settings change refused. Refresh, then choose again. · Loading shortcut choices…",
+            "live": "off"
+          }
+        ],
+        "focus": "settings:save",
+        "packets": [
+          {
+            "surfaceProtocol": 2,
+            "kind": "presentation-ready"
+          },
+          {
+            "surfaceProtocol": 2,
+            "kind": "presentation-applied",
+            "publication": "9",
+            "lease": "1"
+          }
+        ]
+      }
+    ],
+    "relocated": [
+      {
+        "id": "bar1",
+        "live": [],
+        "visual": [
+          {
+            "text": "Updating window information…",
+            "live": "off"
+          }
+        ],
+        "focus": null,
+        "packets": [
+          {
+            "surfaceProtocol": 2,
+            "kind": "presentation-ready"
+          },
+          {
+            "surfaceProtocol": 2,
+            "kind": "presentation-applied",
+            "publication": "9",
+            "lease": "1"
+          },
+          {
+            "surfaceProtocol": 2,
+            "kind": "presentation-applied",
+            "publication": "11",
+            "lease": "1"
+          },
+          {
+            "surfaceProtocol": 2,
+            "kind": "presentation-applied",
+            "publication": "14",
+            "lease": "1"
+          }
+        ]
+      },
+      {
+        "id": "bar2",
+        "live": [
+          {
+            "live": "polite",
+            "text": "",
+            "sequence": null,
+            "correlation": null
+          }
+        ],
+        "visual": [
+          {
+            "text": "Updating window information…",
+            "live": "off"
+          }
+        ],
+        "focus": null,
+        "packets": [
+          {
+            "surfaceProtocol": 2,
+            "kind": "presentation-ready"
+          },
+          {
+            "surfaceProtocol": 2,
+            "kind": "presentation-applied",
+            "publication": "9",
+            "lease": "1"
+          },
+          {
+            "surfaceProtocol": 2,
+            "kind": "presentation-applied",
+            "publication": "11",
+            "lease": "1"
+          },
+          {
+            "surfaceProtocol": 2,
+            "kind": "presentation-applied",
+            "publication": "14",
+            "lease": "1"
+          }
+        ]
+      },
+      {
+        "id": "popup",
+        "live": [],
+        "visual": [
+          {
+            "text": "Updating window information…",
+            "live": "off"
+          }
+        ],
+        "focus": null,
+        "packets": [
+          {
+            "surfaceProtocol": 2,
+            "kind": "presentation-ready"
+          },
+          {
+            "surfaceProtocol": 2,
+            "kind": "presentation-applied",
+            "publication": "9",
+            "lease": "1"
+          },
+          {
+            "surfaceProtocol": 2,
+            "kind": "presentation-applied",
+            "publication": "11",
+            "lease": "1"
+          },
+          {
+            "surfaceProtocol": 2,
+            "kind": "presentation-applied",
+            "publication": "14",
+            "lease": "1"
+          }
+        ]
+      }
+    ],
+    "mutations": [
+      {
+        "id": "popup",
+        "sequence": "1",
+        "text": "Settings change refused. Refresh, then choose again."
+      },
+      {
+        "id": "popup",
+        "sequence": "2",
+        "text": "Settings change refused. Refresh, then choose again."
+      }
+    ]
+  },
+  "notificationRelevanceObservations": [
+    {
+      "id": "bar1",
+      "live": [],
+      "visual": [
+        {
+          "text": "Sending notification action…",
+          "live": "off"
+        }
+      ],
+      "focus": null,
+      "packets": [
+        {
+          "surfaceProtocol": 2,
+          "kind": "presentation-ready"
+        },
+        {
+          "surfaceProtocol": 2,
+          "kind": "presentation-applied",
+          "publication": "7",
+          "lease": "1"
+        },
+        {
+          "surfaceProtocol": 2,
+          "kind": "presentation-applied",
+          "publication": "8",
+          "lease": "1"
+        },
+        {
+          "surfaceProtocol": 2,
+          "kind": "presentation-applied",
+          "publication": "9",
+          "lease": "1"
+        },
+        {
+          "surfaceProtocol": 2,
+          "kind": "presentation-applied",
+          "publication": "10",
+          "lease": "1"
+        }
+      ]
+    },
+    {
+      "id": "bar2",
+      "live": [],
+      "visual": [
+        {
+          "text": "Sending notification action…",
+          "live": "off"
+        }
+      ],
+      "focus": null,
+      "packets": [
+        {
+          "surfaceProtocol": 2,
+          "kind": "presentation-ready"
+        },
+        {
+          "surfaceProtocol": 2,
+          "kind": "presentation-applied",
+          "publication": "7",
+          "lease": "1"
+        },
+        {
+          "surfaceProtocol": 2,
+          "kind": "presentation-applied",
+          "publication": "8",
+          "lease": "1"
+        },
+        {
+          "surfaceProtocol": 2,
+          "kind": "presentation-applied",
+          "publication": "9",
+          "lease": "1"
+        },
+        {
+          "surfaceProtocol": 2,
+          "kind": "presentation-applied",
+          "publication": "10",
+          "lease": "1"
+        }
+      ]
+    },
+    {
+      "id": "popup",
+      "live": [
+        {
+          "live": "polite",
+          "text": "Calendar: Meeting 1 expired. Its actions are unavailable. Refresh notifications for current history.",
+          "sequence": "1",
+          "correlation": "{\"outcome\":\"notification-expiration\",\"binding\":{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"},\"identity\":{\"service\":\"9\",\"revision\":\"2\",\"incarnations\":[\"1\"]}}"
+        }
+      ],
+      "visual": [
+        {
+          "text": "Sending notification action…",
+          "live": "off"
+        }
+      ],
+      "focus": "notification:9:1:invoke:open",
+      "packets": [
+        {
+          "surfaceProtocol": 2,
+          "kind": "presentation-ready"
+        },
+        {
+          "surfaceProtocol": 2,
+          "kind": "presentation-applied",
+          "publication": "7",
+          "lease": "1"
+        },
+        {
+          "surfaceProtocol": 2,
+          "kind": "surface-notification-focus",
+          "surface": "popup",
+          "publication": "7",
+          "lease": "1",
+          "id": ""
+        },
+        {
+          "surfaceProtocol": 2,
+          "kind": "surface-notification-focus",
+          "surface": "popup",
+          "publication": "7",
+          "lease": "1",
+          "id": "notification:9:1:invoke:open"
+        },
+        {
+          "surfaceProtocol": 2,
+          "kind": "presentation-applied",
+          "publication": "8",
+          "lease": "1"
+        },
+        {
+          "surfaceProtocol": 2,
+          "kind": "surface-notification-focus",
+          "surface": "popup",
+          "publication": "8",
+          "lease": "1",
+          "id": "notification:9:1:invoke:open"
+        },
+        {
+          "surfaceProtocol": 2,
+          "kind": "presentation-applied",
+          "publication": "9",
+          "lease": "1"
+        },
+        {
+          "surfaceProtocol": 2,
+          "kind": "surface-notification-focus",
+          "surface": "popup",
+          "publication": "9",
+          "lease": "1",
+          "id": "notification:9:1:invoke:open"
+        },
+        {
+          "surfaceProtocol": 2,
+          "kind": "presentation-applied",
+          "publication": "10",
+          "lease": "1"
+        },
+        {
+          "surfaceProtocol": 2,
+          "kind": "surface-notification-focus",
+          "surface": "popup",
+          "publication": "10",
+          "lease": "1",
+          "id": "notification:9:1:invoke:open"
+        }
+      ]
+    }
+  ],
+  "browserExitCode": 0
+}

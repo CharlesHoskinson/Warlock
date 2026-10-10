@@ -1549,6 +1549,10 @@ raise SystemExit(daemon.run())
      refused=wait(lambda:next((frame for frame in incoming() if frame.get('kind')=='notification-outcome' and frame.get('requestId')==queued['requestId']),None))
      wait(lambda:(body:=center_body()) and any(b['accessibleName']=='Open replacement notification' and not b['disabled'] for b in body['buttons']))
      check('OldQueuedActionRefusedAfterExpiredIdReuse',replacement==reuse and refused['status']=='Refused' and notification_row(reuse)['incarnation']!=queued['intent']['incarnation'] and not any(row['signal']=='ActionInvoked' for row in signals(reuse)),queued=queued,outcome=refused,producerSignals=signals(reuse))
+     rejection_cue=wait(lambda:next((json.loads(line.split(': ',1)[1]) for line in text().splitlines() if line.startswith('announcement-delivery: ') and json.loads(json.loads(line.split(': ',1)[1])['message']['correlation'])['outcome']=='notification-expired-action-refused' and json.loads(json.loads(line.split(': ',1)[1])['message']['correlation'])['identity']['request']==queued['requestId']),None))
+     rejection_identity=json.loads(rejection_cue['message']['correlation'])
+     check('OriginalExpiredQueuedActionHasExactPoliteAnnouncement',refused['reason']=='expired' and rejection_identity['binding']==queued['binding'] and rejection_identity['identity']['target']==queued['intent'] and not rejection_cue['message']['interrupt'] and rejection_cue['recipient']==rejection_cue['announcer'],cue=rejection_cue,receipt=refused)
+
      keyboard_button('Open replacement notification',28)
      wait(lambda:any(row['signal']=='ActionInvoked' for row in signals(reuse)))
      check('OnlyNewIncarnationReceivesChosenAction',len([row for row in signals(reuse) if row['signal']=='ActionInvoked'])==1 and signals(other)==[],signals=signals(reuse))
@@ -1587,6 +1591,44 @@ raise SystemExit(daemon.run())
      assert_arrival(opted,True,stable_focus)
      ordinary=notify(0,'Ordinary remains polite','Open ordinary notification',urgency=1)
      assert_arrival(ordinary,False,stable_focus)
+
+     def expiry_cues():return [json.loads(line.split(': ',1)[1]) for line in text().splitlines() if line.startswith('announcement-delivery: ') and json.loads(json.loads(line.split(': ',1)[1])['message']['correlation'])['outcome']=='notification-expiration']
+     # Existing irrelevant 1200ms expiry above must remain silent. Its native
+     # incarnation cannot be inferred from a count or reused numeric ID.
+     check('OriginalUnfocusedUninvokedExpiryIsSilent',not any(old_expiring['incarnation'] in json.loads(cue['message']['correlation'])['identity']['incarnations'] for cue in expiry_cues()))
+     focused_notification=notify(0,'Focused expiration','Open focused expiration',timeout=1800)
+     wait(lambda:any(b['accessibleName']=='Open focused expiration' and not b['disabled'] for b in (center_body() or {}).get('buttons',[])))
+     item=notification_row(focused_notification);focus_identity='notification:'+notification_snapshot()['service']+':'+item['incarnation']+':invoke:open'
+     key(102)
+     for _ in range(len(center_body()['buttons'])+2):
+      if center_body()['focusIdentity']==focus_identity:break
+      key(108)
+     stable=wait(lambda:(body:=center_body()) and body['focusIdentity']==focus_identity and body['documentFocused'] and body)
+     wait(lambda:notification_row(focused_notification)['state']=='expired' and any(item['incarnation'] in json.loads(cue['message']['correlation'])['identity']['incarnations'] for cue in expiry_cues()))
+     cue=next(cue for cue in expiry_cues() if item['incarnation'] in json.loads(cue['message']['correlation'])['identity']['incarnations']);identity=json.loads(cue['message']['correlation'])
+     body=wait(lambda:(body:=center_body()) and any(b.get('identity')==focus_identity and b.get('focusOnly') and b['disabled'] for b in body['buttons']) and body)
+     observation=next(frame for frame in reversed(incoming()) if frame.get('kind')=='notification-update' and any(entry['incarnation']==item['incarnation'] and entry['state']=='expired' for entry in frame['snapshot']['entries']))
+     check('FocusedExpiryHasExactPoliteIdentityAndRetainedActualNode',identity['binding']==observation['binding'] and identity['identity']['service']==observation['snapshot']['service'] and identity['identity']['revision']==observation['snapshot']['revision'] and identity['identity']['incarnations']==[item['incarnation']] and not cue['message']['interrupt'] and cue['recipient']==cue['announcer'] and body['focusNode']==stable['focusNode'] and body['focusIdentity']==focus_identity and body['documentFocused'] and len(body['announcements'])==1 and body['announcements'][0]['live']=='polite',cue=cue,observation=observation,before=stable,after=body)
+     old_actions=len(requests('notification-effect'));key(28)
+     check('RetainedExpiredControlCannotDispatchOrRelocate',len(requests('notification-effect'))==old_actions and center_body()['focusNode']==stable['focusNode'] and center_body()['focusIdentity']==focus_identity and not any(row['signal']=='ActionInvoked' for row in signals(focused_notification)))
+     key(102);wait(lambda:(body:=center_body()) and body['focusIdentity']=='control:close' and not any(b.get('identity')==focus_identity for b in body['buttons']))
+     check('UserKeyboardDepartureRetiresUnavailableControl',not any(b.get('identity')==focus_identity for b in center_body()['buttons']))
+     keyboard_button('Do not disturb for this session',28)
+     wait(lambda:any(b['identity']=='notifications:dnd' and 'On' in b['label'] for b in center_body()['buttons']))
+     silent_expiry=notify(0,'DND focused expiration','Open DND focused expiration',timeout=1800)
+     wait(lambda:any(b['accessibleName']=='Open DND focused expiration' and not b['disabled'] for b in center_body()['buttons']))
+     silent_item=notification_row(silent_expiry);silent_focus='notification:'+notification_snapshot()['service']+':'+silent_item['incarnation']+':invoke:open';before_cues=len(expiry_cues())
+     key(102)
+     for _ in range(len(center_body()['buttons'])+2):
+      if center_body()['focusIdentity']==silent_focus:break
+      key(108)
+     stable_silent=wait(lambda:(body:=center_body()) and body['focusIdentity']==silent_focus and body)
+     wait(lambda:notification_row(silent_expiry)['state']=='expired' and any(b.get('identity')==silent_focus and b.get('focusOnly') for b in center_body()['buttons']))
+     check('DndRelevantExpiryKeepsHistoryAndFocusWithoutAnnouncement',len(expiry_cues())==before_cues and center_body()['focusNode']==stable_silent['focusNode'] and center_body()['focusIdentity']==silent_focus and center_body()['documentFocused'],before=stable_silent,after=center_body())
+     key(102);keyboard_button('Do not disturb for this session',28)
+     wait(lambda:any(b['identity']=='notifications:dnd' and 'Off' in b['label'] for b in center_body()['buttons']))
+     check('DndOffDoesNotReplayExpiration',len(expiry_cues())==before_cues)
+     report['nativeNotificationRelevanceObserved']=True;report['notificationRelevanceCues']=expiry_cues()+[rejection_cue]
      report['nativeNotificationAnnouncementPolicyObserved']=True
      report['notificationAnnouncementScope']='Real native producer urgency, physical DND/consent controls, exact once-only announcement correlation, actual WebKit polite/assertive region and retained DOM focus; actual speech/braille and independent original acceptance remain open.'
      key(1);wait(lambda:projection()['mode']=='closed')

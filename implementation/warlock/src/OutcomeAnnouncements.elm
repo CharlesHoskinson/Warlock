@@ -40,14 +40,19 @@ observe before after ((Model sequence _) as prior) =
                     in correlated "launch-refused" refusal.intent ("Launch refused for "++String.left 512 label++". Refresh applications, then choose again."))
                 else if transfer before/=transfer after then transfer after |> Maybe.map (\intent -> correlated "transfer-refused" intent (Surface.windowNotice after))
                 else if settings before/=settings after then settings after |> Maybe.map (\request -> correlated "settings-refused" (E.string (UInt64.string request)) after.settings.notice)
+                else if before.notifications.outcome/=after.notifications.outcome && not after.notifications.policy.doNotDisturb then
+                    after.notifications.outcome |> Maybe.andThen (\outcome -> if outcome.status=="Refused" && outcome.expired then Just (correlated "notification-expired-action-refused" (E.object [("request",E.string (UInt64.string outcome.request)),("target",Notifications.encodeIntent outcome.target)]) "Notification action refused because the target expired. Refresh notifications, then choose a current notification.") else Nothing)
                 else
-                    let arrivals=if before.windows.shell.binding==after.windows.shell.binding && after.windows.shell.binding/=Nothing then Notifications.arrivals before.notifications after.notifications else []
+                    let expired=if before.windows.shell.binding==after.windows.shell.binding && after.windows.shell.binding/=Nothing then Notifications.expirations (if before.notificationsOpen then before.notifications else Notifications.clearFocus before.notifications) after.notifications else []
+                        expiryIdentity=after.notifications.snapshot |> Maybe.map (\snapshot -> E.object [("service",E.string (UInt64.string snapshot.service)),("revision",E.string (UInt64.string snapshot.revision)),("incarnations",E.list (\entry -> E.string (UInt64.string entry.incarnation)) expired)]) |> Maybe.withDefault E.null
+                        expiryText=String.join "; " (List.map (\entry -> String.left 200 (String.join " " (String.words (entry.app++": "++entry.summary)))) (List.take 3 expired))++" expired. Its actions are unavailable. Refresh notifications for current history."
+                        arrivals=if before.windows.shell.binding==after.windows.shell.binding && after.windows.shell.binding/=Nothing then Notifications.arrivals before.notifications after.notifications else []
                         clean value=String.join " " (String.words value)
                         summary entry=String.left 200 (clean (entry.app++": "++entry.summary))
                         details=String.join "; " (List.map summary (List.take 3 arrivals))++(if List.length arrivals>3 then "; and "++String.fromInt (List.length arrivals-3)++" more" else "")
                         identity=after.notifications.snapshot |> Maybe.map (\snapshot -> E.object [("service",E.string (UInt64.string snapshot.service)),("revision",E.string (UInt64.string snapshot.revision)),("incarnations",E.list (\entry -> E.string (UInt64.string entry.incarnation)) arrivals)]) |> Maybe.withDefault E.null
                         event=correlated "notification-arrival" identity (details++". Open Notifications for details and current actions.")
-                    in if List.isEmpty arrivals then Nothing else Just {event|interrupt=after.notifications.policy.interruptCritical && List.all Notifications.critical arrivals}
+                    in if not (List.isEmpty expired) then Just (correlated "notification-expiration" expiryIdentity expiryText) else if List.isEmpty arrivals then Nothing else Just {event|interrupt=after.notifications.policy.interruptCritical && List.all Notifications.critical arrivals}
     in case (candidate,UInt64.next sequence) of
         (Just event,Just next) -> Model next (Just {sequence=next,correlation=event.correlation,text=event.text,interrupt=event.interrupt})
         _ -> prior

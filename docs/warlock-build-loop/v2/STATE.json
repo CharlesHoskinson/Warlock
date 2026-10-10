@@ -1,13 +1,81 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T04:49:50.823065+00:00",
+  "updatedUTC": "2026-10-10T05:11:12.677882+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
+    "id": "notification-expiration-relevance",
+    "requirements": [
+      "ELM-UI-010"
+    ],
+    "scenarios": [
+      "announce-notification expiration",
+      "announce-expired action rejection",
+      "announcement-expiration-irrelevant"
+    ],
+    "before": "Notification expiry updates history and removes native actions, but has no focus/user-invocation relevance input or correlated expiry/refusal message. Removing or disabling a focused action makes the popup move focus to Close.",
+    "after": "The root admits scoped passive popup focus observations and announces only exact focused/user-invoked expiry and matched expired-action refusals, politely when DND permits. The focused unavailable action remains a keyed, aria-disabled non-actionable node until focus leaves. Irrelevant expiry, foreign/stale focus observations and repeated receipts remain silent; reads and Unknown mutations never replay.",
+    "paths": [
+      "implementation/warlock/src/Notifications.elm",
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/src/OutcomeAnnouncements.elm",
+      "implementation/warlock/src/OutputController.elm",
+      "implementation/warlock/src/Surface.elm",
+      "implementation/warlock/src/SurfaceRenderer.elm",
+      "implementation/warlock/assets/popup-adapter.js",
+      "implementation/warlock/assets/shell.css",
+      "implementation/warlock/assets/elm.js",
+      "implementation/warlock/assets/bar.js",
+      "implementation/warlock/assets/popup.js",
+      "implementation/warlock/native/surface.h",
+      "implementation/warlock/native/shared-host.c",
+      "implementation/warlock/qa/notification-relevance.qnt",
+      "implementation/warlock/qa/notification-relevance_test.qnt",
+      "implementation/warlock/qa/check-notification-relevance.py",
+      "implementation/warlock/qa/NotificationRelevanceReplay.elm",
+      "implementation/warlock/qa/check-search.py",
+      "implementation/warlock/qa/announcement-browser.mjs",
+      "implementation/warlock/qa/native-window-feedback.py",
+      "implementation/warlock/qa/surface-admission.c",
+      "implementation/warlock/qa/current-search-build.json",
+      "implementation/warlock/README.md",
+      "implementation/warlock/adapter/notification_service.py",
+      "implementation/warlock/qa/check-notifications.py"
+    ],
+    "verification": [
+      "Use quint-llm-kit modeling/execution skills: incrementally check matched focus/request/expiry/rejection/DND/no-replay model with explicit named tests and positive witnesses. Compile current roots/GTK C host; strict native focus-only/frame/observation gates; typed root source identity/relevance/foreign/repeat guards; browser real focus and unavailable keyed node semantics. Protected original native notification fixture extends actual expiry/reused-ID queued rejection and physical keyboard focused expiry, irrelevant silence/DND, exact one-owner correlation/unchanged node/control/document focus and no action replay. Preserve owning ABI, existing native deadlines and original checks. Actual speech/braille, full native lifecycle/output/hardware matrix and independent acceptance remain partial."
+    ],
+    "status": "implemented-partial",
+    "participantRecord": ".warlock-contributor/notification-relevance.json",
+    "evidence": "implementation/warlock/qa/evidence/notification-relevance/manifest.json",
+    "observed": "Implemented exact focused/user-invoked expiry and expired-action rejection relevance, passive scoped focus observations and keyed non-actionable focus retention. Original protected native notification journey passes 91 checks including physical expiry, DND/no replay, Enter rejection, departure, irrelevant silence and original held ID-reuse refusal. Nine native keyboard surfaces pass 37 regression checks. Actual AT, wider native lifecycle/pixels and independent acceptance remain open.",
+    "missingObservations": [
+      "Actual stable-focus speech and braille, repeated delivery, readonly control semantics and reachable recovery through native AT.",
+      "Independent original-scenario acceptance.",
+      "Native user-invoked expiry with other focus, wider focus/output/transport/producer lifecycle and retained-control physical pixel qualification.",
+      "Spontaneous service-unavailability outcomes and broader release scope remain open."
+    ],
+    "nextSourceWork": "Implement stable checkable Always on top/pin and MAX controls integrated with existing native geometry authority. Use quint-llm-kit for exact identity, pending/Unknown/refusal and no-replay transitions; preserve original pin/MAX/restore oracles. Native speech/braille announcement qualification and all remaining full GUI release scope remain mandatory."
+  },
+  "nextSlices": [
+    "taskbar activation/minimize/restore and popup focus journeys",
+    "persistent catalog pins",
+    "launcher search and refusal recovery",
+    "switcher/Task View/workspaces and snap/output journeys",
+    "authorized visible previews and fallback",
+    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
+    "original native, AT/IME, hardware/resource/journey gates",
+    "reproducible package, reversible deployment/rollback"
+  ],
+  "releaseAccepted": false,
+  "oldTrackerIsCurrent": false,
+  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
+  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
+  "previousSlice": {
     "id": "adapter-unavailable-announcements",
     "requirements": [
       "ELM-UI-010"
@@ -52,72 +120,6 @@
       "Relevant notification expiration and expired-action refusal announcements remain unfinished scope."
     ],
     "nextSourceWork": "Implement relevant notification expiration and expired-action refusal announcement sources. Use quint-llm-kit to model actual focus/user-invocation relevance with exact binding/service/incarnation/request and no replay. Preserve irrelevant-expiry silence and DND policy; then qualify native AT routes and continue the full original GUI scope."
-  },
-  "nextSlices": [
-    "taskbar activation/minimize/restore and popup focus journeys",
-    "persistent catalog pins",
-    "launcher search and refusal recovery",
-    "switcher/Task View/workspaces and snap/output journeys",
-    "authorized visible previews and fallback",
-    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
-    "original native, AT/IME, hardware/resource/journey gates",
-    "reproducible package, reversible deployment/rollback"
-  ],
-  "releaseAccepted": false,
-  "oldTrackerIsCurrent": false,
-  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
-  "previousSlice": {
-    "id": "notification-arrival-permission",
-    "requirements": [
-      "ELM-UI-010"
-    ],
-    "scenarios": [
-      "announce-notification arrival",
-      "announcement-dnd",
-      "announcement-urgency-opt-in"
-    ],
-    "before": "Notification observations retain history and targets but have no typed urgency or user-controlled announcement permission. New shared refusal route intentionally admits no notification source.",
-    "after": "Notification center exposes session-scoped Do not disturb and explicit critical-interruption opt-in. Elm admits new identity-bound arrivals politely by default, suppresses arrivals during DND while retaining history, and permits assertive delivery only for opted-in critical arrivals when DND is off. Refresh, duplicate observations, preference changes and pre-existing history never replay messages or move focus.",
-    "paths": [
-      "implementation/warlock/src/Notifications.elm",
-      "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/src/OutcomeAnnouncements.elm",
-      "implementation/warlock/src/Announcement.elm",
-      "implementation/warlock/native/announcement-transport.h",
-      "implementation/warlock/adapter/notification_service.py",
-      "implementation/warlock/assets/elm.js",
-      "implementation/warlock/assets/bar.js",
-      "implementation/warlock/assets/popup.js",
-      "implementation/warlock/qa/notification-announcements.qnt",
-      "implementation/warlock/qa/notification-announcements_test.qnt",
-      "implementation/warlock/qa/check-notification-announcements.py",
-      "implementation/warlock/qa/NotificationAnnouncementReplay.elm",
-      "implementation/warlock/qa/check-notifications.py",
-      "implementation/warlock/qa/announcement-browser.mjs",
-      "implementation/warlock/qa/check-search.py",
-      "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/qa/notification-producer.py",
-      "implementation/warlock/README.md",
-      "implementation/warlock/src/SurfaceRenderer.elm",
-      "implementation/warlock/assets/popup-adapter.js"
-    ],
-    "verification": [
-      "quint-llm-kit additive single-Elm permission/identity model: init then one arrival action/witness, DND/opt-in/suppressed/new-identity events with explicit named tests, positive witnesses and sampled safety; preserve original receipt/owner models. Compile actual roots/GTK host; native session-bus urgency metadata and malformed-hint no escalation, typed root arrival/baseline/repeat/batch/focus guards, browser one-route polite/assertive regions and real policy controls. Relevant original protected native notification history/action journey plus named permission controls and exact native notification/announcement correlation; actual stable-focus speech/braille and independent acceptance remain partial."
-    ],
-    "status": "implemented-partial",
-    "participantRecord": ".warlock-contributor/notification-announcements.json",
-    "evidence": "implementation/warlock/qa/evidence/notification-announcements/manifest.json",
-    "observed": "Implemented session DND/critical consent with accessible pressed state, strict native urgency and critical nonexpiration. Permission model/typed/browser and original native notification journey pass. Real keyboard/producer arrivals show suppression/no replay and polite/assertive correlation while retaining the same focused DOM node. Native AT/speech/braille and independent acceptance remain open.",
-    "missingObservations": [
-      "Actual speech and braille, repeated-receipt delivery and reachable recovery/relationships through native AT.",
-      "Independent original-scenario acceptance.",
-      "Native batch/coalescing stress and full physical control/profile qualification.",
-      "Adapter-unavailable and relevant notification expiration/action-refusal announcements remain unfinished scope."
-    ],
-    "nextSourceWork": "Complete adapter-unavailable and relevant notification expiration/expired-action refusal announcement sources. Use quint-llm-kit to model guarded actual focus/user-invocation relevance before implementing, retain exact service/incarnation/request identity and no replay. Then qualify the integrated announcement routes with actual native AT speech/braille and continue the remaining GUI release scope."
   },
   "recentSlices": [
     {
@@ -1259,6 +1261,52 @@
         "Adapter-unavailable and relevant notification expiration/action-refusal announcements remain unfinished scope."
       ],
       "nextSourceWork": "Complete adapter-unavailable and relevant notification expiration/expired-action refusal announcement sources. Use quint-llm-kit to model guarded actual focus/user-invocation relevance before implementing, retain exact service/incarnation/request identity and no replay. Then qualify the integrated announcement routes with actual native AT speech/braille and continue the remaining GUI release scope."
+    },
+    {
+      "id": "adapter-unavailable-announcements",
+      "requirements": [
+        "ELM-UI-010"
+      ],
+      "scenarios": [
+        "announce-adapter unavailable"
+      ],
+      "before": "Adapter failures are visually reported through typed catalog/service/preference/connection state, but the shared announcement route has no unavailable source and failed opening reads can reissue Focus.",
+      "after": "Matched adapter failures carry a typed source, binding/request and available service/revision identity into the root-selected polite announcer. Repeated receipts/publications cannot reannounce or request focus. Existing read-only refresh/reconnect/detail controls remain reachable; empty notification-service occupancy can be re-probed on explicit refresh without replacing another owner or replaying actions.",
+      "paths": [
+        "implementation/warlock/src/AdapterNotice.elm",
+        "implementation/warlock/src/Desktop.elm",
+        "implementation/warlock/src/OutcomeAnnouncements.elm",
+        "implementation/warlock/adapter/notification_service.py",
+        "implementation/warlock/assets/elm.js",
+        "implementation/warlock/assets/bar.js",
+        "implementation/warlock/assets/popup.js",
+        "implementation/warlock/qa/adapter-announcements.qnt",
+        "implementation/warlock/qa/adapter-announcements_test.qnt",
+        "implementation/warlock/qa/check-adapter-announcements.py",
+        "implementation/warlock/qa/AdapterAnnouncementReplay.elm",
+        "implementation/warlock/qa/check-notifications.py",
+        "implementation/warlock/qa/announcement-browser.mjs",
+        "implementation/warlock/qa/check-search.py",
+        "implementation/warlock/qa/current-search-build.json",
+        "implementation/warlock/qa/native-window-feedback.py",
+        "implementation/warlock/qa/notification-unavailable-owner.py",
+        "implementation/warlock/README.md",
+        "implementation/warlock/src/Surface.elm"
+      ],
+      "verification": [
+        "quint-llm-kit additive typed failed-read/request/binding/duplicate/no-focus model with incremental initialization and positive witness, explicit named tests and sampled safety; preserve original owner/notification/focus models. Compile actual roots/GTK host, typed available/foreign/stale/failure/repeat branches, browser focus/recovery/one owner. Existing native D-Bus no-replacement/action/no-replay checks plus explicit empty-service re-probe. Protected private native occupied service, actual keyboard refresh/recovery, exact real receipt correlation and retained focused node; duplicated real read receipt is an adversarial transport fixture. Actual native speech/braille, all-provider native matrix and independent acceptance remain partial."
+      ],
+      "status": "implemented-partial",
+      "participantRecord": ".warlock-contributor/adapter-announcements.json",
+      "evidence": "implementation/warlock/qa/evidence/adapter-announcements/manifest.json",
+      "observed": "Matched adapter failures use one polite owner without receipt-triggered Focus. Notification Refresh stays focusable while reading; exact duplicate native receipts are silent. Actual private occupied notification service and keyboard refresh/recovery retain node/control/document focus, measure control pixels and exit normally without replay.",
+      "missingObservations": [
+        "Actual stable-focus speech and braille, repeated-receipt delivery and reachable recovery through native AT.",
+        "Independent original-scenario acceptance.",
+        "Other native provider journeys, spontaneous service loss and applicable transport faults.",
+        "Relevant notification expiration and expired-action refusal announcements remain unfinished scope."
+      ],
+      "nextSourceWork": "Implement relevant notification expiration and expired-action refusal announcement sources. Use quint-llm-kit to model actual focus/user-invocation relevance with exact binding/service/incarnation/request and no replay. Preserve irrelevant-expiry silence and DND policy; then qualify native AT routes and continue the full original GUI scope."
     }
   ]
 }

@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-644f910d259d468e8ac17e34015b003d.scope",
+    "coreLimit": 1
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "args": [
+        "quint",
+        "typecheck",
+        "qa/notification-relevance.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "tests-typecheck",
+      "args": [
+        "quint",
+        "typecheck",
+        "qa/notification-relevance_test.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "args": [
+        "quint",
+        "test",
+        "qa/notification-relevance_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=79501"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "witness-safety",
+      "args": [
+        "quint",
+        "run",
+        "qa/notification-relevance.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--witnesses",
+        "focusedExpiryWitness",
+        "invokedExpiryWitness",
+        "irrelevantWitness",
+        "refusalWitness",
+        "repeatWitness",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79502"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "inputs": {
+    "qa/notification-relevance.qnt": "bc15befdc4f4089adf6705d228accfdbaf85d4a840eae1060dd593f79db49508",
+    "qa/notification-relevance_test.qnt": "dd3a39bea15f3eef178016bd976963e35cd9760f8ac98fd143175c78fdb730a5"
+  },
+  "witnesses": {
+    "focusedExpiryWitness": 315,
+    "invokedExpiryWitness": 190,
+    "irrelevantWitness": 939,
+    "refusalWitness": 169,
+    "repeatWitness": 997
+  }
+}

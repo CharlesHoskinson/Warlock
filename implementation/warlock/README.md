@@ -368,7 +368,7 @@ Each new refusal has a monotonic serial and the owning binding/request identity;
 
 The additive model follows quint-llm-kit’s modeling and implementation skills. Eight explicitly selected tests and positive witnesses accompany sampled safety checks; existing authority models remain unchanged. Actual compiled roots, twelve typed checks and a three-view browser fixture pass. The protected original native transfer journey also observes one identity-matched refusal in the real WebKit live-region DOM, then passes cancellation and successful existing/empty-workspace transfers with normal cleanup. See [the evidence and abstraction limits](qa/evidence/announcements/README.md).
 
-ELM-UI-010 and WARLOCK-DL-011 remain partial. Native launch/settings announcement delivery, actual stable-focus speech/braille, independent acceptance, native adapter-unavailable delivery across providers and notification expiration/action-refusal relevance remain required. Notification arrival/DND/critical-consent behavior is described below. Unpermitted notification count/history changes do not produce an announcement through this new route. Browser/live-region DOM checks establish no audible or braille delivery.
+ELM-UI-010 and WARLOCK-DL-011 remain partial. Native launch/settings announcement delivery, actual stable-focus speech/braille, independent acceptance, native adapter-unavailable delivery across providers and native speech/braille delivery and remaining provider/transport lifecycle coverage remain required. Notification arrival/DND/critical-consent behavior is described below. Unpermitted notification count/history changes do not produce an announcement through this new route. Browser/live-region DOM checks establish no audible or braille delivery.
 
 
 ## Notification announcement permissions
@@ -381,7 +381,7 @@ The Elm root correlates an arrival with the current binding, notification servic
 
 The quint-llm-kit permission model, actual compiled root/view checks and protected native notification journey pass. Native keyboard controls demonstrate DND suppression, no history replay, unopted critical politeness, opted critical assertive delivery and ordinary politeness. Real WebKit reports retain the same focused node/control identity and document focus; current event-stamped DOM IDs are allowed to change. Existing producer action, expiry, reused-ID refusal and normal cleanup observations are preserved. See [scoped evidence](qa/evidence/notification-announcements/README.md).
 
-The selected three ELM-UI-010 scenarios remain partial: actual speech/braille and independent original acceptance are not established by DOM/native transport observations. Relevant notification expiration and expired-action refusal announcements still need implementation/qualification. The adapter-unavailable route is described below. The controls are session policy, not persisted settings or a guarantee of native AT delivery.
+The selected three ELM-UI-010 scenarios remain partial: actual speech/braille and independent original acceptance are not established by DOM/native transport observations. Relevant notification expiration and expired-action refusal announcements now have scoped native evidence, described below. The adapter-unavailable route is described below. The controls are session policy, not persisted settings or a guarantee of native AT delivery.
 
 
 ## Adapter failure announcements and explicit recovery
@@ -392,4 +392,17 @@ Matched failed reads now publish a typed adapter notice through the existing Elm
 
 The quint-llm-kit model passed eight explicitly selected tests, five positive witnesses and sampled safety before implementation. Actual compiled checks cover matched/foreign/repeated reads, partial capabilities, read-only recovery and no Focus commands. Browser checks retain the same keyed node through pending/failure/recovery. A protected native GUI fixture uses an actual competing bus owner and duplicate real receipts: physical keyboard refresh produces one identity-matched polite message, keeps the same focused node, then recovers after the other owner exits normally without replaying a message or action. The native refresh control has measured text pixels. See [scoped evidence](qa/evidence/adapter-announcements/README.md).
 
-ELM-UI-010 remains partial. Native speech/braille, the native provider matrix, spontaneous service-loss announcements and independent original acceptance remain open. Native DOM/live-region observations do not prove spoken or braille delivery.
+ELM-UI-010 remains partial. Native speech/braille, the native provider matrix, spontaneous service-loss announcements and independent original acceptance remain open. Notification relevance is described below. Native DOM/live-region observations do not prove spoken or braille delivery.
+
+
+## Relevant notification expiration and rejection
+
+The Elm root now announces expiry only for the exact notification whose action has keyboard focus or whose action the user invoked. An unrelated history expiry stays silent. Matched expired-action refusals carry the request and full native target identity into the same polite announcement owner. DND suppresses both sources; turning it off, refocusing history, refreshing or repeating a receipt never replays a message. These outcomes remain polite even when critical-arrival interruption is enabled.
+
+Popup focus is a passive observation admitted only for the current output owner, notification surface, publication, lease and projected control identity. It grants no action. A focused pending or retired action keeps its existing keyed DOM node with **aria-disabled** and visible unavailable detail. The user can navigate away; departure removes the retired placeholder. The renderer, native gate and Elm resolver all reject action dispatch from that placeholder. Expiry and refusal send no Focus command.
+
+Native retains a bounded set of 64 exact expired incarnation/producer/ID facts and returns a typed reason on matched refusal. This lets Elm report expiry even when a queued action reaches the adapter after its old numeric ID has been replaced and no intermediate expired snapshot was delivered. A substituted producer or changed live target cannot inherit the expired fact. Legacy receipts remain strictly admitted with their existing shape; Unknown actions still cannot replay.
+
+The quint-llm-kit model, nineteen compiled typed checks, twenty-one browser checks, owning native C gate/host checks and the protected original notification journey pass. Native keyboard evidence covers focused expiry with the same node/control/document focus, non-actionable retained control, explicit departure, DND/no replay, unrelated expiry silence and the original queued expiry/ID-replacement refusal. The original nine-surface keyboard journey also passes after the shared presentation change. See [scoped evidence](qa/evidence/notification-relevance/README.md).
+
+The three selected ELM-UI-010 scenarios remain partial. Actual speech/braille, user-invoked expiry with other focus on the native path, broader focus/output/transport lifecycle cases and independent original acceptance remain required. Sampled Quint, browser and native DOM observations qualify only their recorded scopes.

@@ -1,0 +1,26 @@
+[
+  {
+    "report": "implementation/warlock/qa/runs/notification-relevance-model-1791608111183264528/report.json",
+    "sha256": "7cf741759ca84b3ff55599cf70f9d1d2bab9e1deed69bbd1ef839fdb14029e7b",
+    "error": "\n\n Error [QNT000]: Couldn't unify set and int\nTrying to unify Set[int] and int\nTrying to unify (Set[_t229], Set[_t229]) => Set[_t229] and (Set[int], int) => _t230\n\n\n  at /home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/notification-relevance.qnt:15:18\n  15:   {...state,live:state.live.exclude(id),expired:state.expired.union(Set(id)),expiry:state.expiry.set(id,if(allowed)1 else 0),permittedExpiry:if(allowed)state.permittedExpiry.union(Set(id))else state.permittedExpiry}\n                       ^^^^^^^^^^^^^^^^^^^^^^\n\nerror: typechecking failed\n",
+    "preservedLocally": true
+  },
+  {
+    "report": "implementation/warlock/qa/runs/announcements-1791608330388390405/report.json",
+    "sha256": "ed918c2ff0a17d6e7f6d2f79a73c4354de9b9908d4eb04f5cc69e259d118d4e4",
+    "error": "RuntimeError('-- UNFINISHED PARENTHESES ------------------------------ src/SurfaceRenderer.elm\\n\\nI was expecting to see a closing parenthesis next:\\n\\n25|     D.list D.value |> D.andThen (\\\\values -> if List.length values>maximum then D.fail \"Presentation capacity\" else\\n26|         D.list (D.keyValuePairs D.value |> D.andThen (\\\\pairs ->\\n27|             let extended=List.member \"focusOnly\" (List.map Tuple.first pairs)\\n28|                 base=D.map6 (\\\\identity domId label ariaLabel detail enabled -> {identity=identity,domId=domId,label=label,ariaLabel=ariaLabel,detail=detail,enabled=enabled,focusOnly=False}) (D.field \"id\" (bounded 512)) (D.field \"domId\" (bounded 1024)) (D.field \"label\" (bounded 1024)) (D.field \"ariaLabel\" (bounded 1024)) (D.field \"detail\" (bounded 128)) (D.field \"enabled\" D.bool)\\n29|             in strict ([\"id\",\"domId\",\"label\",\"ariaLabel\",\"detail\",\"enabled\"]++(if extended then [\"focusOnly\"] else [])) (D.map2 (\\\\row focusOnly -> {row|focusOnly=focusOnly}) base (if extended then D.field \"focusOnly\" D.bool else D.succeed False))))\\n                                                                                                                                                                                                                                                            ^\\nTry adding a ) to see if that helps!\\n\\nNote: I can get confused by indentation in cases like this, so maybe you have a\\nclosing parenthesis but it is not indented enough?\\n\\n')",
+    "preservedLocally": true
+  },
+  {
+    "report": "implementation/warlock/qa/runs/announcements-1791608399711555245/report.json",
+    "sha256": "f7fb9bc6f84f56ef27d3da07aa986d6c07d0372bf22026cd215c0bf4a62e8af7",
+    "error": "RuntimeError('{\"passed\":false,\"checks\":15,\"captures\":[],\"error\":\"Error: Expired action remains the same focused unavailable node undefined\\\\n    at check (file:///home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/announcements-1791608399711555245/inputs/qa/announcement-browser.mjs:10:59)\\\\n    at file:///home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/announcements-1791608399711555245/inputs/qa/announcement-browser.mjs:124:3\"}\\n')",
+    "preservedLocally": true
+  },
+  {
+    "report": "implementation/warlock/qa/runs/announcements-1791608435153536583/report.json",
+    "sha256": "64f73d81592d06f849d2ded7ca3c332fc9df1b3662ac375987617a8161bc8fe8",
+    "error": "RuntimeError('{\"passed\":false,\"checks\":15,\"captures\":[],\"error\":\"Error: Expired action remains the same focused unavailable node {\\\\\"same\\\\\":true,\\\\\"connected\\\\\":true,\\\\\"disabled\\\\\":false,\\\\\"aria\\\\\":\\\\\"true\\\\\",\\\\\"focusOnly\\\\\":\\\\\"true\\\\\",\\\\\"text\\\\\":\\\\\"Open meeting\\\\\",\\\\\"active\\\\\":\\\\\"<button class=\\\\\\\\\\\\\"control-utility\\\\\\\\\\\\\" id=\\\\\\\\\\\\\"applications:{&quot;lifetime&quot;:&quot;1&quot;,&quot;session&quot;:&quot;1&quot;,&quot;frontend&quot;:&quot;1&quot;}:8:notification:9:1:invoke:open\\\\\\\\\\\\\" data-window-state=\\\\\\\\\\\\\"none\\\\\\\\\\\\\" aria-label=\\\\\\\\\\\\\"Open meeting\\\\\\\\\\\\\" aria-disabled=\\\\\\\\\\\\\"true\\\\\\\\\\\\\" data-focus-only=\\\\\\\\\\\\\"true\\\\\\\\\\\\\" data-surface-control=\\\\\\\\\\\\\"notification:9:1:invoke:open\\\\\\\\\\\\\" role=\\\\\\\\\\\\\"button\\\\\\\\\\\\\" aria-current=\\\\\\\\\\\\\"false\\\\\\\\\\\\\"><span class=\\\\\\\\\\\\\"control-label\\\\\\\\\\\\\">Open meeting</span><span class=\\\\\\\\\\\\\"control-detail\\\\\\\\\\\\\"></span></button>\\\\\"}\\\\n    at check (file:///home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/announcements-1791608435153536583/inputs/qa/announcement-browser.mjs:10:59)\\\\n    at file:///home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/announcements-1791608435153536583/inputs/qa/announcement-browser.mjs:124:3\"}\\n')",
+    "preservedLocally": true
+  }
+]

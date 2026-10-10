@@ -134,6 +134,7 @@ type Msg
     | CancelSystemChange ViewStamp
     | OpenNotifications ViewStamp
     | CloseNotifications ViewStamp
+    | NotificationFocus ViewStamp String
     | RefreshNotifications ViewStamp
     | ConfigureNotificationPolicy ViewStamp Notifications.Policy
     | NotificationAction ViewStamp Notifications.Target
@@ -559,6 +560,7 @@ gestureAction message =
         InvalidateSnap -> False
         Deadline _ -> False
         ChoiceDeadline _ -> False
+        NotificationFocus _ _ -> False
         CatalogUnsent _ _ -> False
         Acknowledge _ -> False
         Window (TaskbarShell.Native _) -> False
@@ -832,11 +834,13 @@ updateAvailable message model =
                                 in if notifications==model.notifications then (model,[]) else (advance {model | notifications=notifications},[])
                         Err _ -> (model,[])
                 Ok "notification-outcome" ->
-                    let decoder=strict ["protocolVersion","kind","binding","requestId","status","snapshot"] (D.map5 (\_ binding request status snapshot -> {binding=binding,request=request,status=status,snapshot=snapshot}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "status" D.string) (D.field "snapshot" Notifications.decoder))
+                    let hasReason=D.decodeValue (D.field "reason" D.value) raw |> Result.toMaybe |> (/=) Nothing
+                        reasonDecoder=if hasReason then D.field "reason" (D.string |> D.andThen (\value -> if List.member value ["","expired","changed","unavailable","already-handled"] then D.succeed value else D.fail "Notification refusal reason")) else D.succeed ""
+                        decoder=strict (["protocolVersion","kind","binding","requestId","status","snapshot"]++(if hasReason then ["reason"] else [])) (D.map6 (\_ binding request status reason snapshot -> {binding=binding,request=request,status=status,reason=reason,snapshot=snapshot}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "status" D.string) reasonDecoder (D.field "snapshot" Notifications.decoder))
                     in case D.decodeValue decoder raw of
                         Ok receipt ->
                             if model.windows.shell.binding/=Just receipt.binding then (model,[]) else
-                                let notifications=Notifications.receive receipt.request receipt.status receipt.snapshot model.notifications
+                                let notifications=Notifications.receiveReason receipt.request receipt.status receipt.reason receipt.snapshot model.notifications
                                 in if notifications==model.notifications then (model,[]) else (advance {model | notifications=notifications},[])
                         Err _ -> (model,[])
                 Ok "shortcut-preferences" ->
@@ -971,13 +975,17 @@ updateAvailable message model =
         OpenNotifications stamp ->
             if capture model/=Just stamp || model.choice/=Nothing || model.windows.shell.binding==Nothing then (model,[]) else
             let windows=model.windows
-                next=advance (retireSwitcher {model | jumpEntry=Nothing,jumpOpening=False,filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=True,notificationsOpening=True,settingsOpen=False,settingsOpening=False,open=False,overview=False,snap=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}})
+                next=advance (retireSwitcher {model | jumpEntry=Nothing,jumpOpening=False,filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notifications=Notifications.clearFocus model.notifications,notificationsOpen=True,notificationsOpening=True,settingsOpen=False,settingsOpening=False,open=False,overview=False,snap=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}})
                 (reading,commands)=readNotifications next
             in (reading,commands++[Focus (key reading "notifications:close")])
         CloseNotifications stamp ->
             if capture model/=Just stamp || not model.notificationsOpen then (model,[]) else
-                let next=advance {model | notificationsOpen=False,notificationsOpening=False}
+                let next=advance {model | notifications=Notifications.clearFocus model.notifications,notificationsOpen=False,notificationsOpening=False}
                 in (next,[Focus (key next "notifications:opener")])
+        NotificationFocus stamp identity ->
+            if capture model/=Just stamp || not model.notificationsOpen then (model,[]) else
+                let notifications=Notifications.focus identity model.notifications
+                in if notifications==model.notifications then (model,[]) else ({model|notifications=notifications},[])
         RefreshNotifications stamp ->
             if capture model/=Just stamp || not model.notificationsOpen then (model,[]) else readNotifications model
         ConfigureNotificationPolicy stamp policy ->

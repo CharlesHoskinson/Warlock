@@ -27,7 +27,7 @@ class Service:
   self.lock=threading.RLock();self.wake,self.writer=socket.socketpair()
   self.wake.setblocking(False);self.writer.setblocking(False)
   self.service=str(secrets.randbelow(2**64-1)+1);self.revision=1;self.serial=0;self.next_id=0
-  self.rows=[];self.ever_owned=False;self.available=False;self.reason='Notification service unavailable.'
+  self.rows=[];self.expired=[];self.ever_owned=False;self.available=False;self.reason='Notification service unavailable.'
   self.connection=None;self.loop=None;self.context=None;self.expiry_source=None;self.stopping=False
   self.last_binding=None;self.last_effect=0;self.ready=threading.Event()
   self.thread=threading.Thread(target=self._run,name='warlock-notifications',daemon=True);self.thread.start()
@@ -62,6 +62,7 @@ class Service:
   if not self.connection or not self.connection.emit_signal(row['producer'],PATH,NAME,signal,GLib.Variant(signature,values)):raise Refused('Notification signal not queued')
  def close(self,row,state,reason,signal=True):
   row['state']=state;row['actions']=[];row['deadline']=None
+  if state=='expired':self.expired=([(row['id'],row['incarnation'],row['producer'])]+self.expired)[:64]
   self.changed() # invalidate all action targets before any native signal
   self.schedule_expiry()
   if signal:
@@ -120,10 +121,11 @@ class Service:
   with self.lock:
    self.expire()
    if scope!=self.last_binding:self.last_binding=scope;self.last_effect=0
-   number=int(request['requestId']);status='Refused'
+   number=int(request['requestId']);status='Refused';reason='already-handled'
    if number>self.last_effect:
     self.last_effect=number
     row=next((r for r in self.rows if r['id']==intent['id'] and r['incarnation']==intent['incarnation'] and r['producer']==intent['producer']),None)
+    reason='unavailable' if not self.available or intent['service']!=self.service else 'expired' if (intent['id'],intent['incarnation'],intent['producer']) in self.expired else 'changed'
     valid=self.available and intent['service']==self.service and row is not None and row['state']=='live'
     valid=valid and (intent['verb']=='dismiss' or any(p['key']==intent['action'] for p in row['actions']))
     if valid:
@@ -139,9 +141,10 @@ class Service:
        self.emit(row,'ActionInvoked','(us)',(int(row['id']),intent['action']));status='Dispatched'
      except Exception:
       if row['state']!='live':row['state']='unknown';status='Unknown';self.changed()
+   if status!='Refused':reason=''
    client.verify_process();client.verify_paths()
    return {'protocolVersion':3,'kind':'notification-outcome','binding':scope,'requestId':request['requestId'],
-           'status':status,'snapshot':self.snapshot()}
+           'status':status,'reason':reason,'snapshot':self.snapshot()}
  def read(self,request,client):
   exact(request,['protocolVersion','kind','binding','requestId']);canonical(request['requestId'])
   if request['requestId']=='0':raise Refused('Notification request identity')

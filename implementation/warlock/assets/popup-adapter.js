@@ -22,6 +22,21 @@ const observePicker=()=>{
   pickerResize?.disconnect();observedPicker=node;
   if(node){pickerResize?.observe(node);const controls=node.querySelector('.surface-controls');if(controls)pickerResize?.observe(controls);}
 };
+// Passive scoped DOM fact. Elm decides relevance; this route cannot perform
+// an action. Reobserve after presentation so a stale queued fact can be retired.
+let notificationFocusFrame=false,lastNotificationFocus='';
+const observeNotificationFocus=()=>{
+ if(notificationFocusFrame)return;notificationFocusFrame=true;
+ requestAnimationFrame(()=>{
+  notificationFocusFrame=false;const node=document.querySelector('.surface-popup[data-mode="notifications"]');
+  if(!node){lastNotificationFocus='';return;}
+  const focused=document.hasFocus()&&node.contains(document.activeElement)?document.activeElement.dataset.surfaceControl||'':'';
+  const packet={surfaceProtocol:2,kind:'surface-notification-focus',surface:'popup',publication:node.dataset.publication,lease:node.dataset.lease,id:focused};
+  const key=JSON.stringify(packet);if(key===lastNotificationFocus)return;lastNotificationFocus=key;post(packet);
+ });
+};
+for(const type of ['focusin','focusout'])document.addEventListener(type,observeNotificationFocus);
+window.addEventListener('focus',observeNotificationFocus);window.addEventListener('blur',observeNotificationFocus);
 document.addEventListener('focusin',event=>{
   if(event.target.closest?.('.surface-popup:is([data-mode="picker"],[data-mode="snap"],[data-mode="settings"],[data-mode="notifications"],[data-mode="system"],[data-mode="files"],[data-mode="jump"])')){if(event.target.matches?.('[data-surface-field]'))pickerSelection=null;else {rememberPicker(event.target);revealPicker(true);}}
   else if(event.target!==document.body&&event.target!==document.documentElement)pickerSelection=null;
@@ -50,7 +65,7 @@ window.receivePresentation = value => {
         const close=node.querySelector('[data-surface-control="control:close"]');close?.focus({preventScroll:true});
       }
       if(document.hasFocus())rememberPicker(document.activeElement);
-      observePicker();revealPicker();
+      observePicker();revealPicker();observeNotificationFocus();
       post({surfaceProtocol:2,kind:'presentation-applied',publication:value.publication,lease:value.lease});
     }
   }));
@@ -122,7 +137,7 @@ if (window.elmHostQA) {
   const compositionEvents=[];
   const observe=()=>requestAnimationFrame(()=>{
     const buttons=[...document.querySelectorAll('button')].map(button=>{
-      const r=button.getBoundingClientRect(),label=button.querySelector('.control-label')?.getBoundingClientRect();return {id:button.id,identity:button.dataset.surfaceControl,label:button.textContent,labelRect:label?{x:label.x,y:label.y,width:label.width,height:label.height}:null,accessibleName:button.getAttribute('aria-label'),disabled:button.disabled,x:r.x,y:r.y,width:r.width,height:r.height};
+      const r=button.getBoundingClientRect(),label=button.querySelector('.control-label')?.getBoundingClientRect();return {id:button.id,identity:button.dataset.surfaceControl,label:button.textContent,labelRect:label?{x:label.x,y:label.y,width:label.width,height:label.height}:null,accessibleName:button.getAttribute('aria-label'),disabled:button.disabled||button.getAttribute('aria-disabled')==='true',nativeDisabled:button.disabled,focusOnly:button.dataset.focusOnly==='true',x:r.x,y:r.y,width:r.width,height:r.height};
     });
     const content=[...document.querySelectorAll('[data-notification-content],[data-system-content],[data-files-content],[data-jump-content]')].map(item=>{
       const r=item.getBoundingClientRect(),label=item.querySelector('.control-label')?.getBoundingClientRect();return {id:item.id,identity:item.dataset.notificationContent||item.dataset.systemContent||item.dataset.filesContent||item.dataset.jumpContent,label:item.textContent,labelRect:label?{x:label.x,y:label.y,width:label.width,height:label.height}:null,accessibleName:item.querySelector('.control-label')?.textContent||'',disabled:true,x:r.x,y:r.y,width:r.width,height:r.height};

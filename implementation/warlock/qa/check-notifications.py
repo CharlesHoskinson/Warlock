@@ -49,14 +49,14 @@ try:
   wait(lambda:next(r for r in service.snapshot()['entries'] if r['id']==str(expiring))['state']=='expired')
   wait(lambda:any(name=='NotificationClosed' and value==(expiring,1) for name,value in signals[0]));before=copy.deepcopy(signals)
   check('Expiry removes all action targets',next(r for r in service.snapshot()['entries'] if r['id']==str(expiring))['actions']==[])
-  check('Expired queued action refused',effect(service,old)['status']=='Refused')
+  expired_receipt=effect(service,old);check('Expired queued action refused',expired_receipt['status']=='Refused');check('Expired refusal has exact native reason',expired_receipt['reason']=='expired')
   reused=notify(first,'New native incarnation',replaces=expiring);new=capture(service,reused)
   check('Replaced numeric ID keeps new native incarnation',reused==expiring and new['incarnation']!=old['incarnation'])
-  check('Old queued action rejected after ID reuse',effect(service,old)['status']=='Refused')
+  reused_receipt=effect(service,old);check('Old queued action rejected after ID reuse',reused_receipt['status']=='Refused');check('Replacement cannot erase exact expired-target fact',reused_receipt['reason']=='expired');check('Native expiry facts stay bounded',len(service.expired)<=64)
   check('Replacement and unrelated producer unaffected',signals==before and next(r for r in service.snapshot()['entries'] if r['id']==str(b))['state']=='live')
   check('New incarnation action dispatches',effect(service,new)['status']=='Dispatched');wait(lambda:any(name=='ActionInvoked' and value==(reused,'open') for name,value in signals[0]))
   check('Old and new each dispatch at most once',sum(name=='ActionInvoked' for name,value in signals[0])==2)
-  victim=notify(second,'Foreign producer');foreign=capture(service,victim);foreign['producer']=first.get_unique_name();check('Producer substitution is refused',effect(service,foreign)['status']=='Refused')
+  victim=notify(second,'Foreign producer');foreign=capture(service,victim);foreign['producer']=first.get_unique_name();substitution=effect(service,foreign);check('Producer substitution is refused',substitution['status']=='Refused');check('Foreign producer never inherits expired-target reason',substitution['reason']!='expired')
   failed=False
   try:notify(first,'Foreign replacement',replaces=victim)
   except GLib.Error:failed=True

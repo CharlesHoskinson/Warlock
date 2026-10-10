@@ -1,8 +1,9 @@
 """Focused compiled launcher/search integration, protected CPU scope only."""
 import pathlib,hashlib,json,os,sys,time,shutil,subprocess,shlex,importlib.util,concurrent.futures,http.server,threading
+RELEVANCE=sys.argv[1:]==['--notification-relevance']
 ADAPTER_ANNOUNCEMENTS=sys.argv[1:]==['--adapter-announcements']
 NOTIFICATION_ANNOUNCEMENTS=sys.argv[1:]==['--notification-announcements']
-ANNOUNCEMENTS=ADAPTER_ANNOUNCEMENTS or NOTIFICATION_ANNOUNCEMENTS or sys.argv[1:]==['--announcements']
+ANNOUNCEMENTS=RELEVANCE or ADAPTER_ANNOUNCEMENTS or NOTIFICATION_ANNOUNCEMENTS or sys.argv[1:]==['--announcements']
 DESCRIPTION=sys.argv[1:]==['--preview-description']
 LAYER=sys.argv[1:]==['--layer-appearance']
 SHUTDOWN=sys.argv[1:]==['--preview-shutdown']
@@ -24,7 +25,7 @@ ATTENTION=sys.argv[1:]==['--attention']
 JUMP=sys.argv[1:]==['--jump-lists']
 FILES=sys.argv[1:]==['--files']
 SYSTEM=sys.argv[1:]==['--system-menu']
-NOTIFICATIONS=ADAPTER_ANNOUNCEMENTS or NOTIFICATION_ANNOUNCEMENTS or sys.argv[1:]==['--notifications']
+NOTIFICATIONS=RELEVANCE or ADAPTER_ANNOUNCEMENTS or NOTIFICATION_ANNOUNCEMENTS or sys.argv[1:]==['--notifications']
 SETTINGS=LAYER or sys.argv[1:]==['--settings'] or CONTRAST or SHORTCUTS
 SNAP=sys.argv[1:]==['--snap-chooser']
 REFLOW=sys.argv[1:]==['--popup-reflow']
@@ -51,6 +52,11 @@ def run(name,args):
  if p.returncode:raise RuntimeError(p.stderr or p.stdout)
  return p.stdout
 try:
+ if RELEVANCE:
+  model=json.loads(run('notification-relevance-model',['/usr/bin/python3','-B','qa/check-notification-relevance.py']));assert model['passed'];report['notificationRelevanceModel']=model
+  run('compile-notification-relevance',[str(HELD/pinned['compiler']),'make','qa/NotificationRelevanceReplay.elm','--optimize','--output=assets/notification-relevance.js'])
+  replay=(INPUT/'qa/feedback-replay.js').read_text().replace('Elm.FeedbackReplay','Elm.NotificationRelevanceReplay');(INPUT/'qa/notification-relevance-replay.js').write_text(replay)
+  run('typed-notification-relevance',['node','qa/notification-relevance-replay.js','assets/notification-relevance.js',str(OUT/'notification-relevance.json')]);report['notificationRelevance']=json.loads((OUT/'notification-relevance.json').read_text());assert all(report['notificationRelevance']['checks'].values())
  if ADAPTER_ANNOUNCEMENTS:
   model=json.loads(run('adapter-announcements-model',['/usr/bin/python3','-B','qa/check-adapter-announcements.py']));assert model['passed'];report['adapterAnnouncementsModel']=model
   run('compile-adapter-announcements',[str(HELD/pinned['compiler']),'make','qa/AdapterAnnouncementReplay.elm','--optimize','--output=assets/adapter-announcements.js'])
@@ -274,7 +280,7 @@ console.log('Current body-target Escape releases once; stale scope, preedit, rep
   run('focus-model-named',['quint','test','qa/focus-publication.qnt','--backend=typescript','--match=^(pendingSurvivesPublicationTest|issuedNeverReplayedTest|replacementCannotReceiveOldFocusTest|closeCannotReviveFocusTest|staleAckCannotIssueFocusTest)$','--max-samples=1','--seed=79017'])
   run('focus-model-invariants',['quint','run','qa/focus-publication.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79018'])
   if not POPUP:
-   run('surface-admission-build',['cc','-std=c11','-O2','-Wall','-Wextra','-Werror','native/surface-test.c','-o',str(OUT/'surface-tests'),*flags]);run('surface-admission',[str(OUT/'surface-tests')])
+   run('surface-admission-build',['cc','-std=c11','-O2','-Wall','-Wextra','-Werror','qa/surface-admission.c' if RELEVANCE else 'native/surface-test.c','-o',str(OUT/'surface-tests'),*flags]);run('surface-admission',[str(OUT/'surface-tests')])
   run('host-compile',['cc','-std=c11','-O2','-Wall','-Wextra','-Werror','-Wno-deprecated-declarations','-MD','-MF',str(OUT/'host.d'),'-c','native/shared-host.c','-o',str(OUT/'host.o'),*flags])
   units=['preview_uri.cpp','preview_icons.cpp','preview-uri-webkit.cpp','preview-provider-bootstrap.cpp','client-producer.cpp','imported-clients.cpp','preview-uri-router.cpp','elm-preview-policy.cpp','preview-visual-channel.cpp','preview-policy-driver.cpp']
   if PINS or POPUP or TASKVIEW or SWITCHER or PINMENUS or REFLOW:
@@ -342,6 +348,7 @@ console.log('Current body-target Escape releases once; stale scope, preedit, rep
   if ANNOUNCEMENTS:report.update(requirements=['ELM-UI-010'],scenarios=['announce-launch refusal','announce-transfer refusal','announce-settings validation failure'],scope='Integrated typed refusal identity, Elm-selected announcement ownership, native once-only transport and actual multi-view browser focus/live-region projection; native speech/braille/independent acceptance and permitted notification policy remain separate.')
   if NOTIFICATION_ANNOUNCEMENTS:report.update(requirements=['ELM-UI-010'],scenarios=['announce-notification arrival','announcement-dnd','announcement-urgency-opt-in'],scope='Integrated native urgency facts and Elm session permission, typed/batch/suppression/no-focus and multi-view live-region behavior; actual native GUI/AT and independent acceptance separate.')
   if ADAPTER_ANNOUNCEMENTS:report.update(requirements=['ELM-UI-010'],scenarios=['announce-adapter unavailable'],scope='Matched typed adapter failures, explicit read-only empty notification-service retry, shared polite owner and retained keyed focus; native speech/braille and independent acceptance remain separate.')
+  if RELEVANCE:report.update(requirements=['ELM-UI-010'],scenarios=['announce-notification expiration','announce-expired action rejection','announcement-expiration-irrelevant'],scope='Scoped passive focus observation, exact relevant expiry/refusal policy, readonly retained unavailable action and DND/irrelevant/repeat suppression; native speech/braille and independent acceptance remain separate.')
   browser_name='announcement-browser' if ANNOUNCEMENTS else 'preview-description-browser' if DESCRIPTION else 'ime-browser' if IME else 'accessibility-browser' if ACCESSIBILITY else 'attention-browser' if ATTENTION else 'jump-lists-browser' if JUMP else 'files-browser' if FILES else 'system-menu-browser' if SYSTEM else 'notifications-browser' if NOTIFICATIONS else 'settings-browser' if SETTINGS else 'snap-browser' if SNAP else 'dense-browser';browser_runner='announcement-browser.mjs' if ANNOUNCEMENTS else 'preview-description-browser.mjs' if DESCRIPTION else 'ime-browser.mjs' if IME else 'accessibility-browser.mjs' if ACCESSIBILITY else 'attention-browser.mjs' if ATTENTION else 'jump-lists-browser.mjs' if JUMP else 'files-browser.mjs' if FILES else 'system-menu-browser.mjs' if SYSTEM else 'notifications-browser.mjs' if NOTIFICATIONS else 'settings-browser.mjs' if SETTINGS else 'snap-browser.mjs' if SNAP else 'dense-taskbar-browser.mjs'
   run(browser_name,['node','qa/'+browser_runner,'http://127.0.0.1:'+str(server.server_port),str(OUT),str(browser)])
   child_path=OUT/(browser_name+'.json');child=json.loads(child_path.read_text());assert child['passed'] and child['browserExitCode']==0;report['announcementBrowser' if ANNOUNCEMENTS else 'previewDescriptionBrowser' if DESCRIPTION else 'imeBrowser' if IME else 'accessibilityBrowser' if ACCESSIBILITY else 'attentionBrowser' if ATTENTION else 'jumpListsBrowser' if JUMP else 'filesBrowser' if FILES else 'systemMenuBrowser' if SYSTEM else 'notificationsBrowser' if NOTIFICATIONS else 'settingsBrowser' if SETTINGS else 'snapBrowser' if SNAP else 'denseBrowser']={'path':str(child_path),'sha256':sha(child_path),'checks':child['checks']}

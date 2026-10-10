@@ -106,6 +106,33 @@ try{
   check('Successful recovery updates current state without replay or focus movement',await evaluate('document.getElementById("popup").contentWindow.document.activeElement===adapterFocus&&adapterFocus.isConnected&&!adapterFocus.disabled')&&adapters.recoveredFrame.announcement.sequence===adapters.retryFrame.announcement.sequence);
   report.adapterObservations=await observe();
  }
+ if(fs.existsSync(path.join(out,'notification-relevance.json'))){
+  const relevance=JSON.parse(fs.readFileSync(path.join(out,'notification-relevance.json'),'utf8'));
+  await call('Page.navigate',{url:base+'/qa/announcement-host.html?relevance'});
+  await until('["bar1","bar2","popup"].every(id=>typeof document.getElementById(id)?.contentWindow?.receiveAnnouncement==="function")');
+  await frame(relevance.readyFrame);await metadata(relevance.readyFrame,false);
+  const button=`document.getElementById("popup").contentWindow.document.querySelector('[data-surface-control="notification:9:1:invoke:open"]')`;
+  await evaluate(`window.expiryFocus=${button};expiryFocus.focus()`);await sleep(80);
+  check('Actual focused notification submits scoped passive fact',await evaluate('document.getElementById("popup").contentWindow.nativePackets.some(p=>p.kind==="surface-notification-focus"&&p.id==="notification:9:1:invoke:open"&&p.surface==="popup")'));
+  await frame(relevance.focusedFrame);await metadata(relevance.focusedFrame,false);
+  check('Focus observation keeps keyed node without message',await evaluate('document.getElementById("popup").contentWindow.document.activeElement===expiryFocus')&&relevance.focusedFrame.announcement===null);
+  await frame(relevance.pendingFrame);await metadata(relevance.pendingFrame,false);
+  check('Pending action keeps focus with honest unavailable semantics',await evaluate('document.getElementById("popup").contentWindow.document.activeElement===expiryFocus&&!expiryFocus.disabled&&expiryFocus.getAttribute("aria-disabled")==="true"'));
+  await frame(relevance.pendingExpiredFrame);await metadata(relevance.pendingExpiredFrame,true);
+  const observed=await observe();
+  check('Focused expiry uses one polite owner and exact identity',observed.every(row=>row.live.length===(row.id==='popup'?1:0))&&observed.find(row=>row.id==='popup').live[0].live==='polite'&&observed.find(row=>row.id==='popup').live[0].correlation===relevance.expiredFrame.announcement.correlation);
+  check('Expired action remains the same focused unavailable node',await evaluate('document.getElementById("popup").contentWindow.document.activeElement===expiryFocus&&expiryFocus.isConnected&&!expiryFocus.disabled&&expiryFocus.getAttribute("aria-disabled")==="true"&&expiryFocus.dataset.focusOnly==="true"&&expiryFocus.textContent.includes("expired")'),await evaluate('({same:document.getElementById("popup").contentWindow.document.activeElement===expiryFocus,connected:expiryFocus.isConnected,disabled:expiryFocus.disabled,aria:expiryFocus.getAttribute("aria-disabled"),focusOnly:expiryFocus.dataset.focusOnly,text:expiryFocus.textContent,active:document.getElementById("popup").contentWindow.document.activeElement?.outerHTML})'));
+  const before=await evaluate('document.getElementById("popup").contentWindow.nativePackets.filter(p=>p.kind==="surface-action").length');
+  await call('Input.dispatchKeyEvent',{type:'keyDown',key:'Enter',code:'Enter'});await call('Input.dispatchKeyEvent',{type:'keyUp',key:'Enter',code:'Enter'});await sleep(80);
+  check('Retained unavailable control cannot submit an action',await evaluate('document.getElementById("popup").contentWindow.nativePackets.filter(p=>p.kind==="surface-action").length')===before);
+  await frame(relevance.refusedFrame);await metadata(relevance.refusedFrame,true);
+  check('Expired-action refusal retains keyed focus and polite message',await evaluate('document.getElementById("popup").contentWindow.document.activeElement===expiryFocus')&&(await observe()).find(row=>row.id==='popup').live[0].correlation===relevance.refusedFrame.announcement.correlation);
+  await call('Input.dispatchKeyEvent',{type:'keyDown',key:'Tab',code:'Tab'});await call('Input.dispatchKeyEvent',{type:'keyUp',key:'Tab',code:'Tab'});await sleep(80);
+  check('User can navigate away from unavailable control',await evaluate('document.getElementById("popup").contentWindow.document.activeElement!==expiryFocus'));
+  await frame(relevance.clearedFrame);await metadata(relevance.clearedFrame,false);
+  check('Leaving unavailable control retires it',await evaluate('!expiryFocus.isConnected'));
+  report.notificationRelevanceObservations=observed;
+ }
  check('No browser exceptions',report.errors.length===0,report.errors);report.passed=true;
 }catch(error){report.error=String(error.stack||error);}
 finally{
