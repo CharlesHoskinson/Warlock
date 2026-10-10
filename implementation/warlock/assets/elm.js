@@ -6184,6 +6184,10 @@ var $author$project$Surface$barControls = function (model) {
 		ek: 'Refresh windows',
 		aH: $elm$core$Maybe$Just($author$project$Desktop$RetryWindows)
 	};
+	var recovery = ($author$project$Surface$recoveryNeeded(model) && (!(!model.a.b.j))) ? _List_fromArray(
+		[
+			A2($author$project$Surface$recoveryControl, 'bar:recovery-refresh', model)
+		]) : _List_Nil;
 	var reconnect = {
 		f: 'Reconnect to the window system',
 		e: '',
@@ -6478,14 +6482,11 @@ var $author$project$Surface$barControls = function (model) {
 								},
 								_List_Nil)))))));
 	return _Utils_ap(
-		(!model.a.b.j) ? _Utils_ap(utilities, applications) : _Utils_ap(applications, utilities),
+		recovery,
 		_Utils_ap(
+			(!model.a.b.j) ? _Utils_ap(utilities, applications) : _Utils_ap(applications, utilities),
 			((!$elm$core$String$isEmpty(model.F)) && (!(!model.a.b.j))) ? _List_fromArray(
-				[retry]) : _List_Nil,
-			($author$project$Surface$recoveryNeeded(model) && (!(!model.a.b.j))) ? _List_fromArray(
-				[
-					A2($author$project$Surface$recoveryControl, 'bar:recovery-refresh', model)
-				]) : _List_Nil));
+				[retry]) : _List_Nil));
 };
 var $author$project$Desktop$Acknowledge = function (a) {
 	return {$: 68, a: a};

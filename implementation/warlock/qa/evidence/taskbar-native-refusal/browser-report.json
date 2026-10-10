@@ -1,0 +1,189 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "Pending actual compiled view visibly exposes typed feedback",
+      "detail": {
+        "text": "Restore: applying to selected window…",
+        "label": "Restore: applying to selected window…",
+        "atomic": "true",
+        "live": "off",
+        "width": 360,
+        "height": 48,
+        "x": 1080,
+        "y": 0,
+        "clip": "none",
+        "display": "flex",
+        "controlsRight": 1076
+      }
+    },
+    {
+      "name": "Pending full message available to accessibility",
+      "detail": {
+        "text": "Restore: applying to selected window…",
+        "label": "Restore: applying to selected window…",
+        "atomic": "true",
+        "live": "off",
+        "width": 360,
+        "height": 48,
+        "x": 1080,
+        "y": 0,
+        "clip": "none",
+        "display": "flex",
+        "controlsRight": 1076
+      }
+    },
+    {
+      "name": "Refused actual compiled view visibly exposes typed feedback",
+      "detail": {
+        "text": "Restore: refused for selected window. Refresh window status, then choose again.",
+        "label": "Restore: refused for selected window. Refresh window status, then choose again.",
+        "atomic": "true",
+        "live": "off",
+        "width": 360,
+        "height": 48,
+        "x": 1080,
+        "y": 0,
+        "clip": "none",
+        "display": "flex",
+        "controlsRight": 1076
+      }
+    },
+    {
+      "name": "Refused full message available to accessibility",
+      "detail": {
+        "text": "Restore: refused for selected window. Refresh window status, then choose again.",
+        "label": "Restore: refused for selected window. Refresh window status, then choose again.",
+        "atomic": "true",
+        "live": "off",
+        "width": 360,
+        "height": 48,
+        "x": 1080,
+        "y": 0,
+        "clip": "none",
+        "display": "flex",
+        "controlsRight": 1076
+      }
+    },
+    {
+      "name": "Unknown actual compiled view visibly exposes typed feedback",
+      "detail": {
+        "text": "Restore: not confirmed for selected window. Check your windows; Refresh only reads status.",
+        "label": "Restore: not confirmed for selected window. Check your windows; Refresh only reads status.",
+        "atomic": "true",
+        "live": "off",
+        "width": 360,
+        "height": 48,
+        "x": 1080,
+        "y": 0,
+        "clip": "none",
+        "display": "flex",
+        "controlsRight": 1076
+      }
+    },
+    {
+      "name": "Unknown full message available to accessibility",
+      "detail": {
+        "text": "Restore: not confirmed for selected window. Check your windows; Refresh only reads status.",
+        "label": "Restore: not confirmed for selected window. Check your windows; Refresh only reads status.",
+        "atomic": "true",
+        "live": "off",
+        "width": 360,
+        "height": 48,
+        "x": 1080,
+        "y": 0,
+        "clip": "none",
+        "display": "flex",
+        "controlsRight": 1076
+      }
+    },
+    {
+      "name": "Refused recovery is first and fits actual action viewport"
+    },
+    {
+      "name": "Unknown recovery is first and fits actual action viewport"
+    },
+    {
+      "name": "Pending recovery is first and fits actual action viewport"
+    },
+    {
+      "name": "Inherited stylesheet reproduces visually hidden status",
+      "detail": {
+        "text": "Restore: not confirmed for selected window. Check your windows; Refresh only reads status.",
+        "label": "Restore: not confirmed for selected window. Check your windows; Refresh only reads status.",
+        "atomic": "true",
+        "live": "off",
+        "width": 1,
+        "height": 1,
+        "x": 0,
+        "y": 23.5,
+        "clip": "inset(50%)",
+        "display": "block",
+        "controlsRight": 1440
+      }
+    },
+    {
+      "name": "320px feedback fits and does not cover controls",
+      "detail": {
+        "text": "Restore: not confirmed for selected window. Check your windows; Refresh only reads status.",
+        "label": "Restore: not confirmed for selected window. Check your windows; Refresh only reads status.",
+        "atomic": "true",
+        "live": "off",
+        "width": 180,
+        "height": 48,
+        "x": 140,
+        "y": 0,
+        "clip": "none",
+        "display": "flex",
+        "controlsRight": 136
+      }
+    },
+    {
+      "name": "Last control remains reachable and is revealed in bounded overflow"
+    },
+    {
+      "name": "Feedback update preserves keyed control and focus"
+    },
+    {
+      "name": "Status changes never dispatch an action"
+    },
+    {
+      "name": "Recovery keyboard activation emits one observation-control action"
+    },
+    {
+      "name": "Old pressed input is cancelled across a new publication"
+    },
+    {
+      "name": "Unknown remains visibly unconfirmed without auto-retry"
+    },
+    {
+      "name": "Ready status does not consume taskbar width",
+      "detail": {
+        "text": "Ready",
+        "label": "Ready",
+        "atomic": "true",
+        "live": "off",
+        "width": 0,
+        "height": 0,
+        "x": 0,
+        "y": 0,
+        "clip": "none",
+        "display": "none",
+        "controlsRight": 320
+      }
+    },
+    {
+      "name": "No uncaught browser exceptions",
+      "detail": []
+    }
+  ],
+  "captures": [
+    "feedback-wide-unknown.png",
+    "feedback-narrow-refused.png"
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "browserExitCode": 0
+}

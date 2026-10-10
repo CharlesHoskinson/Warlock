@@ -1,0 +1,314 @@
+{
+  "schema": 1,
+  "requirement": "ELM-UI-004",
+  "scenarios": [
+    "taskbar-refusal"
+  ],
+  "ears": "The taskbar SHALL follow the INTERACTION.md primary-action table for zero, single and multiple family entries, distinguish application pin from always-on-top, and expose explicit new-instance actions without launching duplicates on ordinary activation.",
+  "verificationScope": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+  "originalRequirements": [
+    {
+      "id": "ELM-UI-004",
+      "capability": "elm-taskbar",
+      "phase": "P3",
+      "pattern": "ubiquitous",
+      "priority": "must",
+      "ears": "The taskbar SHALL follow the INTERACTION.md primary-action table for zero, single and multiple family entries, distinguish application pin from always-on-top, and expose explicit new-instance actions without launching duplicates on ordinary activation.",
+      "task": "Implement taskbar decision table with matching pointer/keyboard routes.",
+      "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+      "legacyEvidence": "docs/elm-roadmap/INTERACTION.md; new coverage: final UI/UX review",
+      "scenarios": [
+        {
+          "name": "taskbar-zero",
+          "given": "a pinned app with zero windows",
+          "when": "primary pointer or keyboard activation occurs",
+          "then": "one launch request is issued"
+        },
+        {
+          "name": "taskbar-inactive",
+          "given": "one inactive member",
+          "when": "primary pointer or keyboard activation occurs",
+          "then": "the member visibly activates"
+        },
+        {
+          "name": "taskbar-minimized",
+          "given": "one minimized member",
+          "when": "primary pointer or keyboard activation occurs",
+          "then": "the member restores and visibly activates"
+        },
+        {
+          "name": "taskbar-active",
+          "given": "one active eligible member",
+          "when": "primary pointer or keyboard activation occurs",
+          "then": "the family minimizes with declared focus succession"
+        },
+        {
+          "name": "taskbar-group",
+          "given": "multiple family entries",
+          "when": "primary pointer or keyboard activation occurs",
+          "then": "a group picker opens without new launch and selecting a member visibly activates it"
+        },
+        {
+          "name": "taskbar-refusal",
+          "given": "native authority refuses the requested action",
+          "when": "primary pointer or keyboard activation occurs",
+          "then": "observed state remains authoritative with feedback"
+        }
+      ],
+      "source": "docs/elm-roadmap/coordinator-requirements.json",
+      "status": "proposed",
+      "taskId": "P3-ELM-UI-004",
+      "accountableOwnerRole": "Elm presentation lead",
+      "verifierRole": "Independent acceptance reviewer"
+    }
+  ],
+  "originalInventory": {
+    "path": "docs/elm-roadmap/requirements.json",
+    "sha256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b"
+  },
+  "frozenInteraction": {
+    "path": "docs/elm-roadmap/INTERACTION.md",
+    "sha256": "2a947a3aa56d7b7b9e7d2f5c1ceb100ac7b8c345a73fd7616c0c4c567d0e01c4"
+  },
+  "disposition": "partial",
+  "requirementAccepted": false,
+  "fullReleaseAccepted": false,
+  "sourceParent": "3b69807f5e39b35892eb1e9a9446a70d96362aa3",
+  "sourceHashes": {
+    "implementation/warlock/qa/native-taskbar-refusal.py": "71b834d4194eb8488b0bbcdcd9360d4c491a1b012c7f9c323e8ab9b52aab9afa",
+    "implementation/warlock/src/Surface.elm": "a9f8000a7ce0a64174ee10a4fe9a9a8b491443a62e02d47ca11ee3dac2adabdd",
+    "implementation/warlock/src/TaskbarShell.elm": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+    "implementation/warlock/assets/bar-adapter.js": "13dc001c14223183b9f344bdae711175695e11a79854a01b380348bde2c37a6a",
+    "implementation/warlock/assets/shell.css": "8368a33e4c16e77473005e9db56d7d629ea27463afb546c8f2faae97352164c7",
+    "implementation/warlock/README.md": "705f2b27687b4124f620b6da0c52107a59aaeb1d89de775612a96db52b86ed44",
+    "implementation/warlock/qa/current-search-build.json": "3d67ae66221380809e93825e55132e42fa9b1fc3c2af140cf34b28a21af7329d",
+    "implementation/warlock/assets/elm.js": "d376062010e031d016d780f6d3b65de1d4106efb6392f82d8ce82e9d522a703e",
+    "implementation/warlock/assets/bar.js": "1b490122e33ec692c225c2f6936d2e05eb23cc0ec91c9fa0d2a16469c030cff1",
+    "implementation/warlock/assets/popup.js": "c12dc5323bbaaf2d83cff1799b1e0e72c861d012f6db0da39d50adb62648f933",
+    "implementation/warlock/qa/check-taskbar-recovery.py": "618024eef891bf8614794a97285fde795a5879702841f6fa0387678515331271",
+    "implementation/warlock/qa/native-taskbar-recovery.py": "107b689efa0af233c000f4dd703fa678c25fc32b206b906e6cef95861b2be5bd",
+    "implementation/warlock/qa/native-window-feedback.py": "295ba28cf8d9d297b214bd0d6dba19ac3289d861faa953f9fd94b82937473c64",
+    "implementation/warlock/qa/check-feedback.py": "9464b7a54fe48aed1ca75015489fa82d335f4264cd9d88870b059184fe2f7bc3",
+    "implementation/warlock/qa/feedback-browser.mjs": "936b39c907c324d53923a641e825b367969335b2e184e07b81d8657847d1d2ad",
+    "implementation/warlock/src/Effects.elm": "873e8824d90828a9927cfd89723c7b7299e11791e3779173815ba720b11a8547",
+    "implementation/warlock/src/Shell.elm": "93fdf86ac11ff9c190978fb46557623045a6c697d468a42fc9ba16a4bfa4df48",
+    "implementation/warlock/src/Launch.elm": "dcd7260248ccb0b5bc6001c49319dd51af8c2fae98888919a308ac025ed273a2",
+    "implementation/warlock/src/SurfaceRenderer.elm": "e7e8d255cf38c2862a03c951f7caab50fddffa73946ae143dedfe71c1fdbf4c6",
+    "implementation/warlock/src/Announcement.elm": "71bc1e29724266c26301716ea0a1c7452f02c9f67e140e1bd1ec33c5166d402f"
+  },
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
+      "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791643756770507917/elm-window-geometry-authority.so",
+      "sha256": "049a982418a085a976db6bf08eee3da4ad7c9a4f826a724a8d653d86b15f0378"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+      "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791648311405254970/elm-host",
+    "sha256": "806aa4bcd44f0b67b6e58db7d1e41da41f1956692ff14001d5f19a5b005cecf7",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791648311405254970/report.json",
+    "heldBuildSHA256": "8df650d4dd886e2a114d56efd61108f4a6511e1d7db5aef3104f3f793e0db46f"
+  },
+  "compiledAssets": {
+    "elm.js": "d376062010e031d016d780f6d3b65de1d4106efb6392f82d8ce82e9d522a703e",
+    "bar.js": "1b490122e33ec692c225c2f6936d2e05eb23cc0ec91c9fa0d2a16469c030cff1",
+    "popup.js": "c12dc5323bbaaf2d83cff1799b1e0e72c861d012f6db0da39d50adb62648f933"
+  },
+  "toolchain": {
+    "compilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948"
+  },
+  "reports": [
+    {
+      "name": "setup-failed",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-drag-ownership-1791647829600533315/report.json",
+      "originalSHA256": "d369f75a88421373ec002cd05dac78072cb2546c2925e04ef66e5d926eeb5ee8",
+      "path": "implementation/warlock/qa/evidence/taskbar-native-refusal/setup-failed.report.json.gz",
+      "sha256": "686faab4cc591b5c2d2e14c72dc48839f165ee74411e8657953d89e81a52e3e3",
+      "passed": false,
+      "error": "RuntimeError('Original observation deadline <lambda>')",
+      "cleanupPassed": true,
+      "scope": "Actual current taskbar pointer Activate from another output, real native pinned implicit-transfer refusal, authoritative target/peer/focus/draft, visible current feedback and no replay. Original two-output drag/custody fixture retained; AT/independent original acceptance separate.",
+      "trace": {
+        "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791647829600630482/warlock.log",
+        "originalSHA256": "9114c8424d0be013229d85f0af3f6052e61e36a9231c77822506e02e37a774f0",
+        "path": "implementation/warlock/qa/evidence/taskbar-native-refusal/setup-failed.warlock.log.gz",
+        "sha256": "1e315895b9b133fdec466c00bad5a8e89c031212d1a3d8ad3c373020b6ec8a3d"
+      }
+    },
+    {
+      "name": "baseline-refused",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-drag-ownership-1791647988198120050/report.json",
+      "originalSHA256": "ed462ca84300ccd6c7bfae853a614716b465b6941de7966c56a3682c039bb178",
+      "path": "implementation/warlock/qa/evidence/taskbar-native-refusal/baseline-refused.report.json.gz",
+      "sha256": "91f8752e9fcc038f5c1ae0da41e6e03fee7ae7d772f0f5ffcd8678641669d898",
+      "passed": true,
+      "error": null,
+      "cleanupPassed": true,
+      "scope": "Actual current taskbar pointer Activate from another output, real native pinned implicit-transfer refusal, authoritative target/peer/focus/draft, visible current feedback and no replay. Original two-output drag/custody fixture retained; AT/independent original acceptance separate.",
+      "trace": {
+        "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791647988198246807/warlock.log",
+        "originalSHA256": "52b0d359f4a2aaa2c0da77eefba8172934c2a6cc7c97bde2a2ad3b00537c0ceb",
+        "path": "implementation/warlock/qa/evidence/taskbar-native-refusal/baseline-refused.warlock.log.gz",
+        "sha256": "78341974ee51b9c1fae0f98e7dad9eb301f58c5de7683ce66bfabee743c02d91"
+      }
+    },
+    {
+      "name": "recovery-offscreen-failed",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-drag-ownership-1791648205802443792/report.json",
+      "originalSHA256": "4eae1a21f2a703234782636bf9f257c06e072546e03c2463642fa40305435085",
+      "path": "implementation/warlock/qa/evidence/taskbar-native-refusal/recovery-offscreen-failed.report.json.gz",
+      "sha256": "a99075ed57b59360f6de735d1b090c74f2f488db53bba17497878d3e11901184",
+      "passed": false,
+      "error": "AssertionError('RefusedReadOnlyRecoveryVisibleWithoutScrolling')",
+      "cleanupPassed": true,
+      "scope": "Actual current taskbar pointer Activate from another output, real native pinned implicit-transfer refusal, authoritative target/peer/focus/draft, visible current feedback and no replay. Original two-output drag/custody fixture retained; AT/independent original acceptance separate.",
+      "trace": {
+        "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791648205802528634/warlock.log",
+        "originalSHA256": "5afef128c20de9cdab57dc2d8129809fd236a689853663382edfaff78d89e4db",
+        "path": "implementation/warlock/qa/evidence/taskbar-native-refusal/recovery-offscreen-failed.warlock.log.gz",
+        "sha256": "4b4d4d8243a0dfa8de4148c6e5af4b0802b47a1f028c0c12e11b149a10dfe391"
+      }
+    },
+    {
+      "name": "compiled-build",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791648311405254970/report.json",
+      "originalSHA256": "8df650d4dd886e2a114d56efd61108f4a6511e1d7db5aef3104f3f793e0db46f",
+      "path": "implementation/warlock/qa/evidence/taskbar-native-refusal/compiled-build.report.json.gz",
+      "sha256": "5acfc89f7a2040387de62d731fbc54ec54ff8ae6cca648b133d131767af7ebc7",
+      "passed": true,
+      "error": null,
+      "cleanupPassed": null,
+      "scope": "Compiled existing zero-output root reconciliation and changed GTK delayed native-name admission/internal FALLBACK exclusion; sampled scoped retirement model, owning host and strict matched native authority. Actual native/physical/AT acceptance remains separate."
+    },
+    {
+      "name": "native-refusal-recovery",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-drag-ownership-1791648423542562461/report.json",
+      "originalSHA256": "81e99b5fa19652c12e30e9a78e852faf6185155c26be26a6ff1271ca5f3c40f6",
+      "path": "implementation/warlock/qa/evidence/taskbar-native-refusal/native-refusal-recovery.report.json.gz",
+      "sha256": "af5ee7db0b6ab14f68da5a596cb9a420491b7c0d435d03d139471e94607996ee",
+      "passed": true,
+      "error": null,
+      "cleanupPassed": true,
+      "scope": "Actual current taskbar pointer Activate from another output, real native pinned implicit-transfer refusal, authoritative target/peer/focus/draft, visible current feedback and no replay. Original two-output drag/custody fixture retained; AT/independent original acceptance separate.",
+      "trace": {
+        "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791648423542662429/warlock.log",
+        "originalSHA256": "c79590745fca0c4e672b00a067271cef982f99b0b4f223e8c7ad4a001860b6d0",
+        "path": "implementation/warlock/qa/evidence/taskbar-native-refusal/native-refusal-recovery.warlock.log.gz",
+        "sha256": "05d3213948b61fc8d5b9f2819f5c9671885523d69557c3acdbfd1f371a0d865e"
+      }
+    },
+    {
+      "name": "legacy-native-oracle-failed",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-feedback-1791648473753195577/report.json",
+      "originalSHA256": "b477fb78d63ffd06e021cc85bef17e0c59f9449d0950e375521e8f67d7377f5b",
+      "path": "implementation/warlock/qa/evidence/taskbar-native-refusal/legacy-native-oracle-failed.report.json.gz",
+      "sha256": "6df5e4752dd2dd4dbda01a633cfdf9bdb60c0c337601b90b4c4da372af1314be",
+      "passed": false,
+      "error": "AssertionError('PendingVisibleCorrelatedMessage')",
+      "cleanupPassed": true,
+      "scope": "Actual pointer/Elm/native effect feedback and private compositor pixels; no AT/IME/full release acceptance",
+      "trace": {
+        "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791648473753319755/warlock.log",
+        "originalSHA256": "45d04c59dde87787a2e060a84fb180e45198d1f1cde1e418720cd967b5ba3f0a",
+        "path": "implementation/warlock/qa/evidence/taskbar-native-refusal/legacy-native-oracle-failed.warlock.log.gz",
+        "sha256": "883b3c3b4ab6bf00323d4328fad83ab0f681f489055f3ccb293f6cf46e765955"
+      }
+    },
+    {
+      "name": "legacy-authority-baseline-failed",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/1791648497902038776/report.json",
+      "originalSHA256": "f1ef989e4b681d7a8747a3c82f4fc6cf53aa66ef5229d4a556947c6660a7bf91",
+      "path": "implementation/warlock/qa/evidence/taskbar-native-refusal/legacy-authority-baseline-failed.report.json.gz",
+      "sha256": "f19291324b1e52089d0a31d7937af7f3a555af9d32a2fc698fbcacbc709ca95c",
+      "passed": false,
+      "error": "AssertionError()",
+      "cleanupPassed": null,
+      "scope": "Actual compiled Elm policy projection and browser rendering; no native/AT acceptance"
+    },
+    {
+      "name": "compiled-component-current",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/1791648793184778998/report.json",
+      "originalSHA256": "d7c455ed86db102494ae63c207595086447e43314d94364f4d80be3a695f9dd0",
+      "path": "implementation/warlock/qa/evidence/taskbar-native-refusal/compiled-component-current.report.json.gz",
+      "sha256": "5956c395584ad175f8cab298f06148da669e5cbb3981c9a212d2ca471ba4c8fc",
+      "passed": true,
+      "error": null,
+      "cleanupPassed": null,
+      "scope": "Actual compiled Elm policy projection and browser rendering; no native/AT acceptance"
+    },
+    {
+      "name": "native-feedback-current",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-feedback-1791648766977377014/report.json",
+      "originalSHA256": "89466772becedf68d9dceafa62e9db85e1c16729f8c569c96caad7276d7e8b90",
+      "path": "implementation/warlock/qa/evidence/taskbar-native-refusal/native-feedback-current.report.json.gz",
+      "sha256": "d552db2c62856406bff0cc7f6b1e7d897589ac851ae891e452d2fd54d7cb134e",
+      "passed": true,
+      "error": null,
+      "cleanupPassed": true,
+      "scope": "Actual pointer/Elm/native effect feedback and private compositor pixels; no AT/IME/full release acceptance",
+      "trace": {
+        "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791648766977498878/warlock.log",
+        "originalSHA256": "dc83221e36894b2341e9df5605dedb4d27ebb8e650c40b84174bc45d99fc8309",
+        "path": "implementation/warlock/qa/evidence/taskbar-native-refusal/native-feedback-current.warlock.log.gz",
+        "sha256": "9130e6146d20c711cda18e78618ab0f0ebb9b5d0408e72f85f1777c0259befca"
+      }
+    }
+  ],
+  "browserReport": {
+    "path": "implementation/warlock/qa/evidence/taskbar-native-refusal/browser-report.json",
+    "sha256": "1972eac00cca5afcfbfccb930e8e14f2f408bf2321d7faedbe1c12298f30cb84"
+  },
+  "images": [
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-native-refusal/before-refused.png",
+      "sha256": "2392078f22bf7b927f46db8b3dbfdc1f23c7787648ac0db0d9edf1c170c79ab7",
+      "scope": "Actual native combined outputs; same feedback/target/peer, recovery offscreen before and first after. Owner visually inspected after frame."
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-native-refusal/after-refused.png",
+      "sha256": "8ad7821fbf25bc9d53ff259618626ffcc88adbc2996ca07230ea2afd6e9aa5cc",
+      "scope": "Actual native combined outputs; same feedback/target/peer, recovery offscreen before and first after. Owner visually inspected after frame."
+    }
+  ],
+  "fixtures": [
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-native-refusal/refusal-fixture.py",
+      "sha256": "20fd65f5a37eb3a34dabe0a0597ec8925515d7823478e8ca1a2c9fede1199ed2"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-native-refusal/refusal-peer-fixture.py",
+      "sha256": "fd9f72fa3b9a0ca8f1b69042e973df1ab3894bd7b1559505a0a402b3ebf7295d"
+    }
+  ],
+  "scope": "The taskbar now puts its existing read-only recovery control first when recovery is needed. The actual Refused frame moved it from x803 outside a 540px action region to x1, width120. Real other-output activation receives one native implicit-transfer-required Refused receipt; pin/workspace/geometry/draft and peer focus remain authoritative. Actual peer keyboard input is preserved before recovery. Clicking the visible recovery issues observations without retry or launch. Current browser and native Pending/Refused/Unknown regressions pass with normal cleanup.",
+  "missingObservations": [
+    "Independent original-scenario review against the frozen interaction oracle and exact source/core/plugin/toolchain remains open.",
+    "Native primary keyboard invocation and applicable AT invocation/feedback for taskbar-refusal remain unqualified. Actual peer keyboard delivery after pointer refusal is not keyboard primary invocation. Audible speech/braille and other refusal causes remain separate.",
+    "Recovery is observed without scrolling in the default two-family native viewport and at 320px in a compiled component. Existing user scroll position, denser pin/group arrangements and all input/AT modes remain separate.",
+    "Hardware/AT/IME breadth, resource/journey budgets, reproducible package and reversible deployment/rollback remain release obligations."
+  ],
+  "reviewer": {
+    "name": "root-taskbar-native-refusal",
+    "independent": false,
+    "disposition": "Owner observed bounded native/component passes; independent original acceptance pending."
+  },
+  "quint": {
+    "workflow": "quint-llm-kit; existing models preserved and executed in compiled-build report",
+    "newModel": false,
+    "reason": "Existing read-only recovery control ordering only; no reducer, authority, custody or replay-policy change. Named and sampled model results are separate from native/AT acceptance."
+  },
+  "retainedFailures": {
+    "setup-failed": "Peer was mapped on the other output but lacked declared active focus; fixture now initializes that initial scene before GUI action. No post-action focus workaround.",
+    "recovery-offscreen-failed": "Real enabled recovery control at x803 beyond 540px action region; actual source layout defect.",
+    "legacy-native-oracle-failed": "Old visual aria-live polite assertion conflicts with existing scoped single-announcer architecture. Current regression asserts visual aria-live off and preserves physical/native/feedback/no-replay checks. No AT/speech acceptance inferred.",
+    "legacy-authority-baseline-failed": "Old checker compares effect/dispatch sources to GUI143 ancestry although later product revisions changed those sources. Current regression seals them to qualified current build inputs; originals retained."
+  },
+  "protectedAdmission": "Initial current native feedback launch returned 75 before any campaign while CPU QA held the protected scope. It was launched after CPU terminal; deadlines and coordinator unchanged."
+}
