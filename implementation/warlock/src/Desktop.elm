@@ -27,6 +27,7 @@ import Shell
 import Taskbar
 import Effects
 import TaskbarShell
+import OverviewRecovery
 import TaskView
 import Transfer
 import Snap
@@ -77,6 +78,7 @@ type alias Model =
     , open : Bool
     , overview : Bool
     , overviewWorkspace : Maybe String
+    , overviewRecovery : OverviewRecovery.Model
     , overviewTransfer : Maybe Counter
     , snap : Maybe Snap.Choice
     , switcher : Switcher.Model
@@ -189,7 +191,7 @@ type Effect
 
 initial : Model
 initial =
-    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", popupOrigin = KeyboardEntry, returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, pointer = PointerOwnership.initial, shortcuts = Shortcuts.initial, jumpList = JumpList.initial, jumpEntry = Nothing, jumpOpening = False, jumpExpected = Nothing, jumpBack = False, files = Files.initial, filesOpen = False, filesOpening = False, filesExpected = Nothing, systemMenu = SystemMenu.initial, systemMenuOpen = False, systemMenuOpening = False, systemMenuExpected = Nothing, systemMenuConfirmation = Nothing, notifications = Notifications.initial, notificationsOpen = False, notificationsOpening = False, notificationsExpected = Nothing, motionExpected = Nothing, motion = Motion.initial, settings = Settings.initial, settingsOpen = False, settingsOpening = False, settingsExpected = Nothing, settingsHelp = True, shortcutPreferences = ShortcutPreferences.initial, shortcutExpected = Nothing, open = False, overview = False, overviewWorkspace = Nothing, overviewTransfer = Nothing, snap = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, adapterNotice = Nothing, catalogFailure = Nothing, catalogOpening=False }
+    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", popupOrigin = KeyboardEntry, returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, pointer = PointerOwnership.initial, shortcuts = Shortcuts.initial, jumpList = JumpList.initial, jumpEntry = Nothing, jumpOpening = False, jumpExpected = Nothing, jumpBack = False, files = Files.initial, filesOpen = False, filesOpening = False, filesExpected = Nothing, systemMenu = SystemMenu.initial, systemMenuOpen = False, systemMenuOpening = False, systemMenuExpected = Nothing, systemMenuConfirmation = Nothing, notifications = Notifications.initial, notificationsOpen = False, notificationsOpening = False, notificationsExpected = Nothing, motionExpected = Nothing, motion = Motion.initial, settings = Settings.initial, settingsOpen = False, settingsOpening = False, settingsExpected = Nothing, settingsHelp = True, shortcutPreferences = ShortcutPreferences.initial, shortcutExpected = Nothing, open = False, overview = False, overviewWorkspace = Nothing, overviewRecovery = OverviewRecovery.initial, overviewTransfer = Nothing, snap = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, adapterNotice = Nothing, catalogFailure = Nothing, catalogOpening=False }
 
 switcherOpen : Model -> Bool
 switcherOpen model = List.member (Switcher.phase model.switcher) [Switcher.Waiting,Switcher.Browsing]
@@ -214,7 +216,7 @@ chooseFamily family model =
     case (model.windows.shell.binding,model.windows.shell.effects.observed) of
         (Just binding,Just observed) ->
             if model.choice/=Nothing || MenuBridge.blockedFor family.root model.windows.shell model.windows.menus then (retireSwitcher model,[]) else
-            let (next,effects)=windowBase (TaskbarShell.Native Shell.Refresh) (retireSwitcher {model | overview=False,choiceNotice=""})
+            let (next,effects)=windowBase (TaskbarShell.Native Shell.Refresh) (retireSwitcher {model | overview=False,overviewRecovery=OverviewRecovery.initial,choiceNotice=""})
             in case next.windows.shell.expected of
                 Just request ->
                     let token=ChoiceToken binding request
@@ -524,7 +526,7 @@ window message model =
                                         case Taskbar.selection selected of
                                             Taskbar.Apply operation root ->
                                                 let (applied,commands)=windowBase (TaskbarShell.Native (Shell.Act scope operation root)) {retired | choiceNotice=""}
-                                                in (applied,effects++fenceSwitcherSelection pending.chord pending.binding commands)
+                                                in (trackOverviewChoice pending.token commands applied,effects++fenceSwitcherSelection pending.chord pending.binding commands)
                                             _ -> (retired,effects)
                             _ -> (retired,effects)
                 Nothing -> (next,effects)
@@ -538,8 +540,38 @@ update message model =
 updateOrdinary message model =
     if (PointerOwnership.blocked model.windows.shell.binding model.pointer && gestureAction message) || (not (Motion.ready model.windows.shell.binding model.motion) && motionGesture message) then (model,[]) else
     let (next,effects)=updateAvailable message model
-        (synced,commands)=syncMotion next
-    in (synced,effects++commands)
+        (recovered,recoveryEffects)=resumeOverview next
+        (synced,commands)=syncMotion recovered
+    in (synced,effects++recoveryEffects++commands)
+
+-- Restore only display context from an exact terminal refusal. Native action
+-- ownership and Unknown/replay policy remain in Shell/Effects.
+trackOverviewChoice : ChoiceToken -> List Effect -> Model -> Model
+trackOverviewChoice (ChoiceToken _ read) effects model =
+    let sent = effects |> List.filterMap (\effect -> case effect of
+            WindowEffect (Shell.Send wire) ->
+                if D.decodeValue (D.field "kind" D.string) wire/=Ok "window-effect" then Nothing else
+                    D.decodeValue (D.map2 Tuple.pair (D.field "binding" Binding.decoder) (D.field "intent" Effects.intentDecoder)) wire |> Result.toMaybe
+            _ -> Nothing) |> List.head
+    in {model | overviewRecovery=OverviewRecovery.issue read sent model.overviewRecovery}
+
+resumeOverview : Model -> (Model,List Effect)
+resumeOverview model =
+    let occupied = model.overview || model.open || model.snap/=Nothing || model.jumpEntry/=Nothing || model.filesOpen || model.systemMenuOpen || model.notificationsOpen || model.settingsOpen || switcherOpen model || model.windows.picker/=Nothing || (MenuBridge.menuSnapshot model.windows.menus).menu/=Nothing || MenuBridge.preparedSnapshot model.windows.menus/=Nothing
+        groups = TaskView.groups model.windows.shell
+        ready = Shell.available model.windows.shell && model.windows.shell.expected==Nothing && model.windows.shell.geometryExpected==Nothing && model.choice==Nothing && model.presentation/=Nothing && groups/=Nothing && not (PointerOwnership.blocked model.windows.shell.binding model.pointer)
+        authority = if List.member model.windows.shell.phase [Shell.Detached,Shell.Exhausted] then Nothing else model.windows.shell.binding
+        (recovery,origin) = OverviewRecovery.observe authority model.windows.shell.effects.transaction occupied ready model.overviewRecovery
+        next = {model | overviewRecovery=recovery}
+    in case origin of
+        Nothing -> (next,[])
+        Just owner ->
+            let current = groups |> Maybe.withDefault []
+                workspace = owner.workspace |> Maybe.andThen (\selected -> if List.any (\group -> group.identity==selected) current then Just selected else Nothing)
+                family = current |> List.filter (\group -> workspace==Nothing || workspace==Just group.identity) |> List.concatMap .windows |> List.any (\row -> row.root==owner.root && row.available && not (MenuBridge.blockedFor row.root model.windows.shell model.windows.menus))
+                reopened = advance {next | overview=True,overviewWorkspace=workspace,overviewTransfer=Nothing,returnFocus=Nothing}
+                target = if family then "overview:family:"++UInt64.string owner.root else workspace |> Maybe.map ((++) "overview:workspace:") |> Maybe.withDefault "overview:all"
+            in if reopened.overview && reopened.presentation/=Nothing then (reopened,[Focus (key reopened target)]) else (reopened,[])
 
 syncMotion : Model -> (Model,List Effect)
 syncMotion model =
@@ -616,7 +648,8 @@ updateAvailable message model =
                 windowBase (TaskbarShell.Native Shell.Refresh) (advance {model|snap=Nothing,choiceNotice="Output changed. Open snapping again."})
         ChoiceDeadline token ->
             if (model.choice |> Maybe.map .token)/=Just token then (model,[]) else
-                ({model | choice=Nothing,choiceNotice="Window information took too long. Refresh windows, then choose again."},[])
+                let (ChoiceToken _ request)=token
+                in ({model | choice=Nothing,overviewRecovery=OverviewRecovery.cancelChoice request model.overviewRecovery,choiceNotice="Window information took too long. Refresh windows, then choose again."},[])
         RetryWindows ->
             if model.choice/=Nothing || String.isEmpty model.choiceNotice then (model,[]) else
                 windowBase (TaskbarShell.Native Shell.Refresh) {model | choiceNotice=""}
@@ -1139,7 +1172,7 @@ updateAvailable message model =
                     in case next.windows.shell.expected of
                         Just request ->
                             let token=ChoiceToken binding request
-                            in ({next | choice=Just {chord=Nothing,binding=binding,output=observed.context.output,root=root,application=family.application,token=token,placement=Nothing,transfer=Nothing}},effects++[ArmChoice token])
+                            in ({next | overviewRecovery=OverviewRecovery.begin {binding=binding,root=root,workspace=model.overviewWorkspace} request,choice=Just {chord=Nothing,binding=binding,output=observed.context.output,root=root,application=family.application,token=token,placement=Nothing,transfer=Nothing}},effects++[ArmChoice token])
                         Nothing -> (next,effects)
                 _ -> (model,[])
         SearchQuery stamp query ->

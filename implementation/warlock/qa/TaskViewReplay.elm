@@ -3,6 +3,7 @@ port module TaskViewReplay exposing (main)
 import ActionProjection as Scene
 import Binding
 import Desktop
+import Effects
 import NativePointerFixture
 import GeometryProjection as Geometry
 import Json.Decode as D
@@ -52,6 +53,16 @@ mutations effects = List.filter (\effect -> case effect of
     Desktop.WindowEffect (Shell.Send wire) -> D.decodeValue (D.field "kind" D.string) wire==Ok "window-effect"
     _ -> False) effects
 
+outcome status intent =
+    binding |> Maybe.map (\b -> E.object [("protocolVersion",E.int 3),("kind",E.string "effect-outcome"),("effectProtocol",E.int 1),("binding",Binding.encode b),("intent",Effects.encodeIntent intent),("status",E.string status),("reason",E.string "implicit-transfer-required"),("revision",E.string "1"),("outputGeneration",E.string "1")]) |> Maybe.withDefault E.null
+receiveOutcome status model =
+    model.windows.shell.effects.transaction |> Maybe.map (\t -> apply (incoming (outcome status t.intent)) model) |> Maybe.withDefault (model,[])
+refreshAfterOutcome model =
+    model.windows.shell.expected |> Maybe.map (\request -> apply (incoming (projection request [window "1" "Editor" True,windowState "2" "Files" True True])) model) |> Maybe.withDefault (model,[])
+focuses effects = effects |> List.filterMap (\effect -> case effect of
+    Desktop.Focus target -> Just target
+    _ -> Nothing)
+
 main : Program () () Never
 main = Platform.worker {init=\_ -> ((),outgoing result),update=\_ state -> (state,Cmd.none),subscriptions=\_ -> Sub.none}
 
@@ -86,6 +97,37 @@ result =
         exactRestore=case issued of
             [Desktop.WindowEffect (Shell.Send wire)] -> D.decodeValue (D.map2 Tuple.pair (D.at ["intent","incarnation"] D.string) (D.at ["intent","operation"] D.string)) wire==Ok ("2","restore")
             _ -> False
+        recoveryFiltered=scoped (\stamp -> Desktop.OverviewWorkspace stamp (Just "2")) navigationOpened |> Tuple.first
+        recoveryChosen=scoped (\stamp -> Desktop.OverviewChoose stamp two) recoveryFiltered |> Tuple.first
+        recoveryIssued=apply (incoming (projection (recoveryChosen.windows.shell.expected |> Maybe.withDefault UInt64.zero) restorableRows)) recoveryChosen
+        recoveryPending=Tuple.first recoveryIssued
+        refused=receiveOutcome "Refused" recoveryPending
+        restored=refreshAfterOutcome (Tuple.first refused)
+        restoredModel=Tuple.first restored
+        repeated=receiveOutcome "Refused" restoredModel
+        committed=receiveOutcome "Committed" recoveryPending |> Tuple.first |> refreshAfterOutcome
+        unknown=receiveOutcome "Unknown" recoveryPending |> Tuple.first |> refreshAfterOutcome
+        foreign=recoveryPending.windows.shell.effects.transaction |> Maybe.map (\t -> apply (incoming (outcome "Refused" (let original=t.intent in {original | incarnation=counter "99"}))) recoveryPending) |> Maybe.withDefault (recoveryPending,[])
+        busy=Tuple.first refused
+        otherInterface=refreshAfterOutcome {busy | open=True}
+        otherModel=Tuple.first otherInterface
+        dismissedOther=refreshAfterOutcome {otherModel | open=False}
+        replacedWindows=busy.windows
+        replacedShell=replacedWindows.shell
+        replacedBinding=D.decodeValue Binding.decoder (E.object [("lifetime",E.string "1"),("session",E.string "1"),("frontend",E.string "2")]) |> Result.toMaybe
+        replaced=refreshAfterOutcome {busy | windows={replacedWindows | shell={replacedShell | binding=replacedBinding}}}
+        retiredGeometry={busy | windows={replacedWindows | shell={replacedShell | geometry=Maybe.map (\g -> {g | context={context | revision=two},windows=[geometryWindow one "1"]}) replacedShell.geometry}}}
+        missingWindow=apply (incoming (projectionAt (busy.windows.shell.expected |> Maybe.withDefault UInt64.zero) "2" [window "1" "Editor" True])) retiredGeometry
+        recoveryChecks=[("matchedRefusalWaitsForFreshRead",not (Tuple.first refused).overview && (Tuple.first refused).windows.shell.expected/=Nothing && List.isEmpty (mutations (Tuple.second refused))),
+            ("exactRefusalRestoresFilteredOverview",restoredModel.overview && restoredModel.overviewWorkspace==Just "2" && List.isEmpty (mutations (Tuple.second restored))),
+            ("restoredEligibleFamilyGetsCurrentFocus",focuses (Tuple.second restored)==[Desktop.key restoredModel "overview:family:2"]),
+            ("duplicateRefusalCannotReopenOrReplay",Tuple.first repeated==restoredModel && List.isEmpty (Tuple.second repeated)),
+            ("committedChoiceStaysClosed",not (Tuple.first committed).overview && List.isEmpty (mutations (Tuple.second committed))),
+            ("unknownChoiceStaysClosedWithoutReplay",not (Tuple.first unknown).overview && List.isEmpty (mutations (Tuple.second unknown))),
+            ("foreignIntentCannotReturn",Tuple.first foreign==recoveryPending && List.isEmpty (Tuple.second foreign)),
+            ("anotherInterfaceCancelsReturn",not (Tuple.first otherInterface).overview && not (Tuple.first dismissedOther).overview && List.isEmpty (mutations (Tuple.second otherInterface))),
+            ("replacementAuthorityCannotReturn",not (Tuple.first replaced).overview && List.isEmpty (mutations (Tuple.second replaced))),
+            ("retiredFamilyReturnsToAllWindows",(Tuple.first missingWindow).overview && (Tuple.first missingWindow).overviewWorkspace==Nothing && focuses (Tuple.second missingWindow)==[Desktop.key (Tuple.first missingWindow) "overview:all"])]
         checks=[("groupsMatchMembership",List.map (\g -> (g.identity,List.map (.root >> UInt64.string) g.windows)) groups==[("1",["1"]),("2",["2"])]),
             ("activeWorkspaceNamed",TaskView.activeWorkspace model.windows.shell==Just "1"),
             ("openingIsObservationOnly",model.overview && List.isEmpty (mutations (Tuple.second opened))),
@@ -109,4 +151,4 @@ result =
             ("staleNavigationObservationNeverMutates",Tuple.first navigationStale==navigationPending && List.isEmpty (mutations (Tuple.second navigationStale))),
             ("retiredNavigationRootNeverSubstitutes",(Tuple.first navigationRetired).choice==Nothing && List.isEmpty (mutations (Tuple.second navigationRetired))),
             ("duplicateNavigationObservationNeverReplays",List.isEmpty (mutations (Tuple.second navigationRepeated)))]
-    in E.object [("checks",E.object (List.map (\(name,passed) -> (name,E.bool passed)) checks)),("frame",frame)]
+    in E.object [("checks",E.object (List.map (\(name,passed) -> (name,E.bool passed)) (checks++recoveryChecks))),("frame",frame)]

@@ -5762,9 +5762,71 @@
         {
           "name": "overview-refusal",
           "oracle": "overview remains usable with feedback and retained selection context",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/taskview-refusal-recovery/manifest.json",
+              "sha256": "d9a2c5f7610168b0d384fef3ea543e581dd938b2bc2082424ae1e41e549d308a"
+            }
+          ],
+          "missingObservation": "Applicable actual Task View AT refusal/focus recovery and independent original acceptance remain open. Other original overview scenarios, including empty-workspace navigation, are separately open.",
+          "verificationScope": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+          "evidenceScope": "Exact-intent Task View refusal recovery with retained workspace filter, current family/fallback focus, Unknown/foreign/duplicate/authority/other-interface negatives and no replay. Quint initialization, eight named tests and sampled safety/positive witnesses precede production implementation; original 21 plus ten compiled Task View checks pass. Real pinned cross-output Activate refusal returns the filtered popup, current focus and native control pixels. Physical read-only Refresh creates no new effect; Escape restores the peer keyboard recipient; placement, unsaved draft and main desktop survive normal cleanup. Native AT and independent acceptance remain separate.",
+          "reviewerDisposition": {
+            "name": "root-taskview-refusal-recovery",
+            "independent": false,
+            "disposition": "Owner observed production fix and matching genuine native refusal/filter/focus/pixel/no-replay pass; applicable AT and independent original acceptance remain open."
+          },
+          "sourceTuple": {
+            "sourceBaseRevision": "9ecb81054d42c9cf7c4cc89dfb4ae1ec7a4ba498",
+            "sourceHashes": {
+              "implementation/warlock/src/Desktop.elm": "ce481cf60a66a095e97eb72f92a05d46e36ec0acbb60014c651029a9a4606c09",
+              "implementation/warlock/src/OverviewRecovery.elm": "1e34eb2fe6cfffb5662699f11736e6778f9dad0f35b73f58f283488a29fcf8e5",
+              "implementation/warlock/qa/overview-recovery.qnt": "6d6eaa62d4680405e3a5bdd967c3d01b6d5185346914cbac2a2dd526f6a4b557",
+              "implementation/warlock/qa/overview-recovery_test.qnt": "86b9e8624060315332cc3724511dbfe14a2b8c8e9ee0452738bb159c13fcd1cc",
+              "implementation/warlock/qa/check-overview-recovery.py": "40b7cf0e0f6710a7d545f28c5c2311f52403564df2d5e7f0843390f22d9599a7",
+              "implementation/warlock/qa/TaskViewReplay.elm": "d1d4b101a357aae783ecc5ea11f9be034891420ea6de3821c51bfeaf8b9ad36d",
+              "implementation/warlock/qa/native-taskview-refusal.py": "b719e541c335be6524d7c61a89fb8b5f15556c0aa6f5e041474016938639b4da",
+              "implementation/warlock/qa/check-search.py": "c2fdea78b64909232194a0219a28c970af4484406ca6d9a135420a2aafecce64",
+              "implementation/warlock/qa/current-search-build.json": "b4ddf2322f23a49a8cac1be1bdc60a7357049fe072d07b8752e30091ceab758e",
+              "implementation/warlock/assets/elm.js": "fc2095a5fe4d4d369e0d394cce70b296f9a9ccf94fbe3e301806493f6b63af0b",
+              "implementation/warlock/assets/bar.js": "26ef20c9143f87caf7e3d7fc293b248983076f5a7b7a6967cc341d71f7711194",
+              "implementation/warlock/assets/popup.js": "23b0f3e5e223dd5e1d7042ea33dcc1e1f4895997b01ebd7d764a75c15236b56c",
+              "implementation/warlock/README.md": "ced61434f5da5486fa50bad69a808c2705b93ba522320ee4230c8736f55fb32b",
+              "implementation/warlock/src/TaskView.elm": "4775c51917d4117bda6b6c21b354d2d8ac018f1902af8b0dcd6489d443f946d8",
+              "implementation/warlock/src/Surface.elm": "2e0678f7ce124cb1e07866dc7ca4d7a9e8c4fd07508fcd8ca9644ce751d12a92",
+              "implementation/warlock/src/Shell.elm": "93fdf86ac11ff9c190978fb46557623045a6c697d468a42fc9ba16a4bfa4df48",
+              "implementation/warlock/src/Effects.elm": "873e8824d90828a9927cfd89723c7b7299e11791e3779173815ba720b11a8547",
+              "implementation/warlock/qa/native-taskbar-refusal.py": "71b834d4194eb8488b0bbcdcd9360d4c491a1b012c7f9c323e8ab9b52aab9afa",
+              "implementation/warlock/qa/native-window-feedback.py": "295ba28cf8d9d297b214bd0d6dba19ac3289d861faa953f9fd94b82937473c64"
+            },
+            "nativePair": {
+              "core": {
+                "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
+                "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
+              },
+              "plugin": {
+                "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791643756770507917/elm-window-geometry-authority.so",
+                "sha256": "049a982418a085a976db6bf08eee3da4ad7c9a4f826a724a8d653d86b15f0378"
+              },
+              "aquamarine": {
+                "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+                "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
+              }
+            },
+            "nativeHost": {
+              "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/overview-recovery-1791655413337909670/elm-host",
+              "sha256": "146f4c3cb714f46a1ff3c201b40a9dbf493b7ad37235fd03ce789419b7769f57",
+              "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/overview-recovery-1791655413337909670/report.json",
+              "heldBuildSHA256": "b0f1951866e798241b7233995520a28fc8f6ae032193d5858c35d4eef1e00ffa"
+            },
+            "compilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+            "compiledAssets": {
+              "elm.js": "fc2095a5fe4d4d369e0d394cce70b296f9a9ccf94fbe3e301806493f6b63af0b",
+              "bar.js": "26ef20c9143f87caf7e3d7fc293b248983076f5a7b7a6967cc341d71f7711194",
+              "popup.js": "23b0f3e5e223dd5e1d7042ea33dcc1e1f4895997b01ebd7d764a75c15236b56c"
+            }
+          }
         },
         {
           "name": "overview-empty",
@@ -12015,5 +12077,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-10T17:48:01.860220+00:00"
+  "updatedUTC": "2026-10-10T18:07:37.560217+00:00"
 }

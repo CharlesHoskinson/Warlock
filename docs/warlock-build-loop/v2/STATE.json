@@ -1,97 +1,77 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T17:48:01.860220+00:00",
+  "updatedUTC": "2026-10-10T18:07:37.560217+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "preview-application-fallback",
+    "id": "taskview-refusal-recovery",
     "requirements": [
-      "ELM-UX-007",
-      "ELM-UI-016"
+      "ELM-UI-006"
     ],
     "scenarios": [
-      "ux-007",
-      "preview-states"
+      "overview-refusal"
     ],
     "paths": [
-      "implementation/warlock/native/preview_icons.cpp",
-      "implementation/warlock/qa/native-preview-fallback.py",
-      "implementation/warlock/qa/icon-resolution-test.cpp",
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/src/OverviewRecovery.elm",
+      "implementation/warlock/qa/overview-recovery.qnt",
+      "implementation/warlock/qa/overview-recovery_test.qnt",
+      "implementation/warlock/qa/check-overview-recovery.py",
+      "implementation/warlock/qa/TaskViewReplay.elm",
+      "implementation/warlock/qa/native-taskview-refusal.py",
       "implementation/warlock/qa/check-search.py",
-      "implementation/warlock/qa/check-icon-resolution.py",
-      "implementation/warlock/assets/popup-adapter.js",
       "implementation/warlock/qa/current-search-build.json",
       "implementation/warlock/assets/elm.js",
       "implementation/warlock/assets/bar.js",
       "implementation/warlock/assets/popup.js",
-      "implementation/warlock/README.md",
-      "implementation/warlock/qa/PreviewStateReplay.elm",
-      "implementation/warlock/assets/shell.css"
+      "implementation/warlock/README.md"
     ],
-    "before": "Application icon lookup uses the native window class as a desktop filename and misses declared StartupWMClass associations. Original expired-preview application icon/title native oracle remains unadjudicated.",
-    "after": "An expired retained preview shows the correct application icon for a unique declared StartupWMClass association and correct incarnation title; ambiguity falls back to the generic icon and no other incarnation frame is substituted.",
+    "before": "Task View closes before choosing a window and remains closed after native refusal, losing its usable overview context.",
+    "after": "Only the exact issued overview activation refusal restores Task View and its workspace filter after current native state is ready. The original root is focused if still eligible, otherwise a current workspace/all-windows control. Foreign or duplicate outcomes, Unknown, committed actions, changed authority and another active UI cannot reopen or replay.",
     "verification": [
-      "Use quint-llm-kit existing metadata/privacy model without weakening it; actual GTK/GIO resolution fixture covers exact id priority, unique class, ambiguous class, unavailable icon and invalid input. Compile current host/views. Protected ordinary picker native journey with private desktop entry/icon and actual window class, own preview then historical expiry, pixel checks on current icon/title and no preview substitution; preserve original deadlines, ABI, native ownership and main desktop. Actual AT observations where feasible remain separately scoped."
+      "quint-llm-kit model before code: bounded single-choice origin, issued intent, matched refusal and deferred current-UI recovery, positive witnesses and no-replay/duplicate/foreign/Unknown/authority/occupied negatives. Compile actual roots and original TaskView replay. Reuse protected genuine pinned cross-output native refusal fixture; physical Task View/filter/Enter, one exact Refused effect, reopened retained filter, current pixels/focus and observation-only refresh/no automatic retry. Preserve original deadlines, ABI, native effect/custody authority and main desktop."
     ],
-    "owner": "root-preview-application-fallback",
-    "participantRecord": ".warlock-contributor/preview-application-fallback.json",
+    "owner": "root-taskview-refusal-recovery",
+    "participantRecord": ".warlock-contributor/taskview-refusal-recovery.json",
     "disposition": "partial",
     "evidence": {
-      "path": "implementation/warlock/qa/evidence/preview-application-fallback/manifest.json",
-      "sha256": "eef2f3385276b6c3165f1f448a267323cfa3eb684313ec8af42658437f4d7aca",
-      "scope": "Unique declared StartupWMClass now supplies current application artwork while exact desktop IDs keep priority and ambiguous classes use generic fallback. Fixed target geometry is retained; 48px icons and correct title boxes render in the picker text column. Real GTK/GIO old-failure/current-positive and ambiguity negatives, 18 compiled original preview assertions, 53 browser state/focus/geometry checks and existing metadata model pass. Original UX-007 native retained-frame expiry passes with distinct incarnation-owned icon tokens, exact current titles, full cyan icon pixels, correct Live/Historical family pixels, actual AT names/states, no extra window effect and normal cleanup. Full UI-016 attempts retain live-paint and Loading-observation failures; no Loading acceptance inferred.",
-      "sourceBaseRevision": "e42a162906af9939e88cdce477a09ad8df2901ed",
-      "sourceHashes": {
-        "implementation/warlock/native/preview_icons.cpp": "59fe0133669595212bb69b3f726bc26d46b1fb0dfc593cb27741d745c88db16c",
-        "implementation/warlock/qa/native-preview-fallback.py": "8eb5ce002de1099ad54d9d19717932364d7227508ac69574f59ce3c191d2c945",
-        "implementation/warlock/qa/icon-resolution-test.cpp": "3bfb3796e0e892a36150a57ca2a422a785176603b877cf66dd6ec30e24195e5f",
-        "implementation/warlock/qa/check-search.py": "b740f5ecac4d4b118f1af953ae62d60160bfe774695b529f1653119eb5056058",
-        "implementation/warlock/qa/check-icon-resolution.py": "e2ca5bdceb61dcc4f432087638b008df6455abdbeec8b910904674879bd28a0c",
-        "implementation/warlock/assets/popup-adapter.js": "4bbac62dee388680fb98c838462db2463f81c10fff634d916545f426a6e3dbea",
-        "implementation/warlock/qa/current-search-build.json": "99415401ad8f549493959ede2a88da0eb432b5079b26d8a6c8ae04f0a0a16ee7",
-        "implementation/warlock/assets/elm.js": "4f165d7c52185fdb3bdd371e49534c3213bf7d05dbb17263ef51ae4d7b9c052b",
-        "implementation/warlock/assets/bar.js": "26ef20c9143f87caf7e3d7fc293b248983076f5a7b7a6967cc341d71f7711194",
-        "implementation/warlock/assets/popup.js": "23b0f3e5e223dd5e1d7042ea33dcc1e1f4895997b01ebd7d764a75c15236b56c",
-        "implementation/warlock/README.md": "eb2aa17ed51b0233761a704e131c7f347962022684cdb3fb06ca0e8b1d6b80e2",
-        "implementation/warlock/qa/PreviewStateReplay.elm": "28c4ed7976d8f87e9ebabb7ea583a592f3e2037d0069434777a87a9580b9ae93",
-        "implementation/warlock/assets/shell.css": "3440ca0d1b6da63bec25aa8901e4f91676b09269a85178a1ea3eb1efd3af7cd1",
-        "implementation/warlock/src/PreviewPresenter.elm": "10769b8d9a86e5e5b35f1f292d9837a38b20a0ba636d5baa0ee0c3b8fcdac1cc",
-        "implementation/warlock/src/PreviewLifecycle.elm": "232ebe2e823a4f9b07444f9afaccd98cdc3de9a592ff220d9975a64952dacf24",
-        "implementation/warlock/src/PreviewVisual.elm": "5c285bd8c6fde00b4e1082edfd10e59e281264a4f45b15cea9b5ce0920dd039a",
-        "implementation/warlock/src/NativePreviewRealm.elm": "2a3de2f3eacdf5b00489e5c1f5e5cef058e8f36d74fefecb25a5d3d9ea6024cf",
-        "implementation/warlock/src/NativePreviewPolicy.elm": "99a37f7ea929dcfb746e10d1e7356ba51aa307965bd72165aa708d475e6fec64",
-        "implementation/warlock/src/NativePreviewSource.elm": "9177298d05a999f3a28660df9a76b8be7cafcda523e7cc20fe73bc471b7c37e9",
-        "implementation/warlock/src/NativePreviewVisual.elm": "807da8e07317469ac03c37907ba8c8830b1b3a7fa93fa3a488ecb525b973886d",
-        "implementation/warlock/src/Popup.elm": "cc00f7861217d23ae7cac3dd88f91c042862ff2246e68a4c149427892e5556d3",
-        "implementation/warlock/src/SurfaceRenderer.elm": "e7e8d255cf38c2862a03c951f7caab50fddffa73946ae143dedfe71c1fdbf4c6",
-        "implementation/warlock/native/client-producer.cpp": "b332305b3c4cdcb29f72bd2b01e32f233f496e99a37ca576de269aa056c86de6",
-        "implementation/warlock/native/preview_icons.hpp": "6af2174049d623e824fdcf66ddd3a18d0b48a2c34c7159c1651dc0e4b53d8a32",
-        "implementation/warlock/native/preview_metadata.hpp": "1cf84f1094cd8ccca90fcc5c44bed4182716e256792bb542c771c8bc1ce9ad5e",
-        "implementation/warlock/native/picker-previews.inc": "8e0799d2a56b08e7bee8c64fe098168ac2f1f4f3ab8a4b53e9e1363fa0cdcca3",
-        "implementation/warlock/qa/native-preview-states.py": "0836abf13375d62bc9bc330ce4dba1602a099cf06ccb332fa533ec89bb699609",
-        "implementation/warlock/qa/native-window-feedback.py": "295ba28cf8d9d297b214bd0d6dba19ac3289d861faa953f9fd94b82937473c64",
-        "implementation/warlock/qa/preview-description-browser.mjs": "05d19ad7b2575cde87376160072bc872a34c59bc142500063f7915a62d900492",
-        "implementation/warlock/qa/accessibility-inspector.py": "bc4fe7adba15c29f97137b91848971b65b994c1b8f6282109d7edf1e13bd5c27",
-        "implementation/warlock/qa/accessibility-session.py": "69bc3b33c2b99f0b9d54805e18afcb85ff02314dc9aa4d002f4df409a0e57524"
-      },
-      "reviewerDisposition": {
-        "name": "root-preview-application-fallback",
-        "independent": false,
-        "disposition": "Owner observed production icon/layout fixes and original expired-fallback native oracle; independent acceptance remains open."
-      },
-      "observedUTC": "2026-10-10T17:48:01.860220+00:00"
+      "path": "implementation/warlock/qa/evidence/taskview-refusal-recovery/manifest.json",
+      "sha256": "d9a2c5f7610168b0d384fef3ea543e581dd938b2bc2082424ae1e41e549d308a",
+      "scope": "Exact-intent Task View refusal recovery with retained workspace filter, current family/fallback focus, Unknown/foreign/duplicate/authority/other-interface negatives and no replay. Quint initialization, eight named tests and sampled safety/positive witnesses precede production implementation; original 21 plus ten compiled Task View checks pass. Real pinned cross-output Activate refusal returns the filtered popup, current focus and native control pixels. Physical read-only Refresh creates no new effect; Escape restores the peer keyboard recipient; placement, unsaved draft and main desktop survive normal cleanup. Native AT and independent acceptance remain separate."
     },
-    "observed": "Unique declared StartupWMClass now supplies current application artwork while exact desktop IDs keep priority and ambiguous classes use generic fallback. Fixed target geometry is retained; 48px icons and correct title boxes render in the picker text column. Real GTK/GIO old-failure/current-positive and ambiguity negatives, 18 compiled original preview assertions, 53 browser state/focus/geometry checks and existing metadata model pass. Original UX-007 native retained-frame expiry passes with distinct incarnation-owned icon tokens, exact current titles, full cyan icon pixels, correct Live/Historical family pixels, actual AT names/states, no extra window effect and normal cleanup. Full UI-016 attempts retain live-paint and Loading-observation failures; no Loading acceptance inferred.",
-    "missingObservations": [
-      "Independent acceptance of UX-007 against its original replay/native oracle remains pending.",
-      "UI-016 full native attempts remain failed; current fallback-only journey does not accept physical Loading, every native AT passive description, transient paint consistency or broader capacity/fairness.",
-      "Native IME candidate failure, original resource/hardware/journey budgets, reproducible package and reversible deployment/rollback remain release obligations."
-    ],
-    "nextSourceWork": "Continue the remaining original switcher/Task View/workspace and snap product scope. Select one original scenario from its current candidate source and exact ledger oracle, implement any observed missing behavior using quint-llm-kit, and run its decisive native journey. Preserve the current full UI-016 live-paint/Loading failures as separate integration gates; do not turn the completed expired-preview fallback into more qualification variants. Native IME candidate and complete release obligations remain open."
+    "sourceHashes": {
+      "implementation/warlock/src/Desktop.elm": "ce481cf60a66a095e97eb72f92a05d46e36ec0acbb60014c651029a9a4606c09",
+      "implementation/warlock/src/OverviewRecovery.elm": "1e34eb2fe6cfffb5662699f11736e6778f9dad0f35b73f58f283488a29fcf8e5",
+      "implementation/warlock/qa/overview-recovery.qnt": "6d6eaa62d4680405e3a5bdd967c3d01b6d5185346914cbac2a2dd526f6a4b557",
+      "implementation/warlock/qa/overview-recovery_test.qnt": "86b9e8624060315332cc3724511dbfe14a2b8c8e9ee0452738bb159c13fcd1cc",
+      "implementation/warlock/qa/check-overview-recovery.py": "40b7cf0e0f6710a7d545f28c5c2311f52403564df2d5e7f0843390f22d9599a7",
+      "implementation/warlock/qa/TaskViewReplay.elm": "d1d4b101a357aae783ecc5ea11f9be034891420ea6de3821c51bfeaf8b9ad36d",
+      "implementation/warlock/qa/native-taskview-refusal.py": "b719e541c335be6524d7c61a89fb8b5f15556c0aa6f5e041474016938639b4da",
+      "implementation/warlock/qa/check-search.py": "c2fdea78b64909232194a0219a28c970af4484406ca6d9a135420a2aafecce64",
+      "implementation/warlock/qa/current-search-build.json": "b4ddf2322f23a49a8cac1be1bdc60a7357049fe072d07b8752e30091ceab758e",
+      "implementation/warlock/assets/elm.js": "fc2095a5fe4d4d369e0d394cce70b296f9a9ccf94fbe3e301806493f6b63af0b",
+      "implementation/warlock/assets/bar.js": "26ef20c9143f87caf7e3d7fc293b248983076f5a7b7a6967cc341d71f7711194",
+      "implementation/warlock/assets/popup.js": "23b0f3e5e223dd5e1d7042ea33dcc1e1f4895997b01ebd7d764a75c15236b56c",
+      "implementation/warlock/README.md": "ced61434f5da5486fa50bad69a808c2705b93ba522320ee4230c8736f55fb32b",
+      "implementation/warlock/src/TaskView.elm": "4775c51917d4117bda6b6c21b354d2d8ac018f1902af8b0dcd6489d443f946d8",
+      "implementation/warlock/src/Surface.elm": "2e0678f7ce124cb1e07866dc7ca4d7a9e8c4fd07508fcd8ca9644ce751d12a92",
+      "implementation/warlock/src/Shell.elm": "93fdf86ac11ff9c190978fb46557623045a6c697d468a42fc9ba16a4bfa4df48",
+      "implementation/warlock/src/Effects.elm": "873e8824d90828a9927cfd89723c7b7299e11791e3779173815ba720b11a8547",
+      "implementation/warlock/qa/native-taskbar-refusal.py": "71b834d4194eb8488b0bbcdcd9360d4c491a1b012c7f9c323e8ab9b52aab9afa",
+      "implementation/warlock/qa/native-window-feedback.py": "295ba28cf8d9d297b214bd0d6dba19ac3289d861faa953f9fd94b82937473c64"
+    },
+    "reviewerDisposition": {
+      "name": "root-taskview-refusal-recovery",
+      "independent": false,
+      "disposition": "Owner observed production fix and matching genuine native refusal/filter/focus/pixel/no-replay pass; applicable AT and independent original acceptance remain open."
+    },
+    "missingObservation": "Applicable actual Task View AT refusal/focus recovery and independent original acceptance remain open. Other original overview scenarios, including empty-workspace navigation, are separately open.",
+    "observedUTC": "2026-10-10T18:07:37.560217+00:00",
+    "nextSourceWork": "Original ELM-UI-006 overview-empty: add explicit current native workspace inventory to Task View, including empty workspaces, then use the existing correlated navigation authority. Preserve occupied-window membership, stale/retired workspace guards, output context, native/keyboard/AT oracles and no-replay. Applicable Task View refusal AT/independent acceptance remains separately open."
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -2308,87 +2288,178 @@
         "Native IME direct preedit and commit/caret pass; candidate popup is unobserved at the unchanged deadline, matching a retained prior failure. Candidate commit/cancel and hardware/resource/journey/package/deployment/rollback remain release obligations."
       ],
       "nextSourceWork": "Original ELM-UI-005/search-unavailable: genuine provider failure with retained query, accessible unavailable status and real keyboard Refresh recovery without automatic launch. Reuse the current single Elm/catalog authority and original native/AT fixture, fixing any observed production defect with quint-llm-kit first. Native IME candidate failure remains a separate integration gate; do not expand this successful search-race into more invented schedules."
+    },
+    {
+      "id": "preview-application-fallback",
+      "requirements": [
+        "ELM-UX-007",
+        "ELM-UI-016"
+      ],
+      "scenarios": [
+        "ux-007",
+        "preview-states"
+      ],
+      "paths": [
+        "implementation/warlock/native/preview_icons.cpp",
+        "implementation/warlock/qa/native-preview-fallback.py",
+        "implementation/warlock/qa/icon-resolution-test.cpp",
+        "implementation/warlock/qa/check-search.py",
+        "implementation/warlock/qa/check-icon-resolution.py",
+        "implementation/warlock/assets/popup-adapter.js",
+        "implementation/warlock/qa/current-search-build.json",
+        "implementation/warlock/assets/elm.js",
+        "implementation/warlock/assets/bar.js",
+        "implementation/warlock/assets/popup.js",
+        "implementation/warlock/README.md",
+        "implementation/warlock/qa/PreviewStateReplay.elm",
+        "implementation/warlock/assets/shell.css"
+      ],
+      "before": "Application icon lookup uses the native window class as a desktop filename and misses declared StartupWMClass associations. Original expired-preview application icon/title native oracle remains unadjudicated.",
+      "after": "An expired retained preview shows the correct application icon for a unique declared StartupWMClass association and correct incarnation title; ambiguity falls back to the generic icon and no other incarnation frame is substituted.",
+      "verification": [
+        "Use quint-llm-kit existing metadata/privacy model without weakening it; actual GTK/GIO resolution fixture covers exact id priority, unique class, ambiguous class, unavailable icon and invalid input. Compile current host/views. Protected ordinary picker native journey with private desktop entry/icon and actual window class, own preview then historical expiry, pixel checks on current icon/title and no preview substitution; preserve original deadlines, ABI, native ownership and main desktop. Actual AT observations where feasible remain separately scoped."
+      ],
+      "owner": "root-preview-application-fallback",
+      "participantRecord": ".warlock-contributor/preview-application-fallback.json",
+      "disposition": "partial",
+      "evidence": {
+        "path": "implementation/warlock/qa/evidence/preview-application-fallback/manifest.json",
+        "sha256": "eef2f3385276b6c3165f1f448a267323cfa3eb684313ec8af42658437f4d7aca",
+        "scope": "Unique declared StartupWMClass now supplies current application artwork while exact desktop IDs keep priority and ambiguous classes use generic fallback. Fixed target geometry is retained; 48px icons and correct title boxes render in the picker text column. Real GTK/GIO old-failure/current-positive and ambiguity negatives, 18 compiled original preview assertions, 53 browser state/focus/geometry checks and existing metadata model pass. Original UX-007 native retained-frame expiry passes with distinct incarnation-owned icon tokens, exact current titles, full cyan icon pixels, correct Live/Historical family pixels, actual AT names/states, no extra window effect and normal cleanup. Full UI-016 attempts retain live-paint and Loading-observation failures; no Loading acceptance inferred.",
+        "sourceBaseRevision": "e42a162906af9939e88cdce477a09ad8df2901ed",
+        "sourceHashes": {
+          "implementation/warlock/native/preview_icons.cpp": "59fe0133669595212bb69b3f726bc26d46b1fb0dfc593cb27741d745c88db16c",
+          "implementation/warlock/qa/native-preview-fallback.py": "8eb5ce002de1099ad54d9d19717932364d7227508ac69574f59ce3c191d2c945",
+          "implementation/warlock/qa/icon-resolution-test.cpp": "3bfb3796e0e892a36150a57ca2a422a785176603b877cf66dd6ec30e24195e5f",
+          "implementation/warlock/qa/check-search.py": "b740f5ecac4d4b118f1af953ae62d60160bfe774695b529f1653119eb5056058",
+          "implementation/warlock/qa/check-icon-resolution.py": "e2ca5bdceb61dcc4f432087638b008df6455abdbeec8b910904674879bd28a0c",
+          "implementation/warlock/assets/popup-adapter.js": "4bbac62dee388680fb98c838462db2463f81c10fff634d916545f426a6e3dbea",
+          "implementation/warlock/qa/current-search-build.json": "99415401ad8f549493959ede2a88da0eb432b5079b26d8a6c8ae04f0a0a16ee7",
+          "implementation/warlock/assets/elm.js": "4f165d7c52185fdb3bdd371e49534c3213bf7d05dbb17263ef51ae4d7b9c052b",
+          "implementation/warlock/assets/bar.js": "26ef20c9143f87caf7e3d7fc293b248983076f5a7b7a6967cc341d71f7711194",
+          "implementation/warlock/assets/popup.js": "23b0f3e5e223dd5e1d7042ea33dcc1e1f4895997b01ebd7d764a75c15236b56c",
+          "implementation/warlock/README.md": "eb2aa17ed51b0233761a704e131c7f347962022684cdb3fb06ca0e8b1d6b80e2",
+          "implementation/warlock/qa/PreviewStateReplay.elm": "28c4ed7976d8f87e9ebabb7ea583a592f3e2037d0069434777a87a9580b9ae93",
+          "implementation/warlock/assets/shell.css": "3440ca0d1b6da63bec25aa8901e4f91676b09269a85178a1ea3eb1efd3af7cd1",
+          "implementation/warlock/src/PreviewPresenter.elm": "10769b8d9a86e5e5b35f1f292d9837a38b20a0ba636d5baa0ee0c3b8fcdac1cc",
+          "implementation/warlock/src/PreviewLifecycle.elm": "232ebe2e823a4f9b07444f9afaccd98cdc3de9a592ff220d9975a64952dacf24",
+          "implementation/warlock/src/PreviewVisual.elm": "5c285bd8c6fde00b4e1082edfd10e59e281264a4f45b15cea9b5ce0920dd039a",
+          "implementation/warlock/src/NativePreviewRealm.elm": "2a3de2f3eacdf5b00489e5c1f5e5cef058e8f36d74fefecb25a5d3d9ea6024cf",
+          "implementation/warlock/src/NativePreviewPolicy.elm": "99a37f7ea929dcfb746e10d1e7356ba51aa307965bd72165aa708d475e6fec64",
+          "implementation/warlock/src/NativePreviewSource.elm": "9177298d05a999f3a28660df9a76b8be7cafcda523e7cc20fe73bc471b7c37e9",
+          "implementation/warlock/src/NativePreviewVisual.elm": "807da8e07317469ac03c37907ba8c8830b1b3a7fa93fa3a488ecb525b973886d",
+          "implementation/warlock/src/Popup.elm": "cc00f7861217d23ae7cac3dd88f91c042862ff2246e68a4c149427892e5556d3",
+          "implementation/warlock/src/SurfaceRenderer.elm": "e7e8d255cf38c2862a03c951f7caab50fddffa73946ae143dedfe71c1fdbf4c6",
+          "implementation/warlock/native/client-producer.cpp": "b332305b3c4cdcb29f72bd2b01e32f233f496e99a37ca576de269aa056c86de6",
+          "implementation/warlock/native/preview_icons.hpp": "6af2174049d623e824fdcf66ddd3a18d0b48a2c34c7159c1651dc0e4b53d8a32",
+          "implementation/warlock/native/preview_metadata.hpp": "1cf84f1094cd8ccca90fcc5c44bed4182716e256792bb542c771c8bc1ce9ad5e",
+          "implementation/warlock/native/picker-previews.inc": "8e0799d2a56b08e7bee8c64fe098168ac2f1f4f3ab8a4b53e9e1363fa0cdcca3",
+          "implementation/warlock/qa/native-preview-states.py": "0836abf13375d62bc9bc330ce4dba1602a099cf06ccb332fa533ec89bb699609",
+          "implementation/warlock/qa/native-window-feedback.py": "295ba28cf8d9d297b214bd0d6dba19ac3289d861faa953f9fd94b82937473c64",
+          "implementation/warlock/qa/preview-description-browser.mjs": "05d19ad7b2575cde87376160072bc872a34c59bc142500063f7915a62d900492",
+          "implementation/warlock/qa/accessibility-inspector.py": "bc4fe7adba15c29f97137b91848971b65b994c1b8f6282109d7edf1e13bd5c27",
+          "implementation/warlock/qa/accessibility-session.py": "69bc3b33c2b99f0b9d54805e18afcb85ff02314dc9aa4d002f4df409a0e57524"
+        },
+        "reviewerDisposition": {
+          "name": "root-preview-application-fallback",
+          "independent": false,
+          "disposition": "Owner observed production icon/layout fixes and original expired-fallback native oracle; independent acceptance remains open."
+        },
+        "observedUTC": "2026-10-10T17:48:01.860220+00:00"
+      },
+      "observed": "Unique declared StartupWMClass now supplies current application artwork while exact desktop IDs keep priority and ambiguous classes use generic fallback. Fixed target geometry is retained; 48px icons and correct title boxes render in the picker text column. Real GTK/GIO old-failure/current-positive and ambiguity negatives, 18 compiled original preview assertions, 53 browser state/focus/geometry checks and existing metadata model pass. Original UX-007 native retained-frame expiry passes with distinct incarnation-owned icon tokens, exact current titles, full cyan icon pixels, correct Live/Historical family pixels, actual AT names/states, no extra window effect and normal cleanup. Full UI-016 attempts retain live-paint and Loading-observation failures; no Loading acceptance inferred.",
+      "missingObservations": [
+        "Independent acceptance of UX-007 against its original replay/native oracle remains pending.",
+        "UI-016 full native attempts remain failed; current fallback-only journey does not accept physical Loading, every native AT passive description, transient paint consistency or broader capacity/fairness.",
+        "Native IME candidate failure, original resource/hardware/journey budgets, reproducible package and reversible deployment/rollback remain release obligations."
+      ],
+      "nextSourceWork": "Continue the remaining original switcher/Task View/workspace and snap product scope. Select one original scenario from its current candidate source and exact ledger oracle, implement any observed missing behavior using quint-llm-kit, and run its decisive native journey. Preserve the current full UI-016 live-paint/Loading failures as separate integration gates; do not turn the completed expired-preview fallback into more qualification variants. Native IME candidate and complete release obligations remain open."
     }
   ],
   "lastSlice": {
-    "id": "launcher-unavailable",
+    "id": "preview-application-fallback",
     "requirements": [
-      "ELM-UI-005"
+      "ELM-UX-007",
+      "ELM-UI-016"
     ],
     "scenarios": [
-      "search-unavailable"
+      "ux-007",
+      "preview-states"
     ],
     "paths": [
-      "implementation/warlock/qa/native-launcher-unavailable.py",
-      "implementation/warlock/qa/launcher-retry-at-action.py",
-      "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/src/AdapterNotice.elm",
-      "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/README.md",
-      "implementation/warlock/qa/AdapterAnnouncementReplay.elm",
+      "implementation/warlock/native/preview_icons.cpp",
+      "implementation/warlock/qa/native-preview-fallback.py",
+      "implementation/warlock/qa/icon-resolution-test.cpp",
       "implementation/warlock/qa/check-search.py",
+      "implementation/warlock/qa/check-icon-resolution.py",
+      "implementation/warlock/assets/popup-adapter.js",
       "implementation/warlock/qa/current-search-build.json",
       "implementation/warlock/assets/elm.js",
       "implementation/warlock/assets/bar.js",
       "implementation/warlock/assets/popup.js",
-      "implementation/warlock/qa/AnnouncementReplay.elm",
-      "implementation/warlock/qa/native-launcher-search-race.py"
+      "implementation/warlock/README.md",
+      "implementation/warlock/qa/PreviewStateReplay.elm",
+      "implementation/warlock/assets/shell.css"
     ],
-    "before": "Original catalog-unavailable scenario has no adjudicated current native keyboard/AT recovery evidence.",
-    "after": "A genuine catalog snapshot failure preserves the query and exposes accessible unavailable status with physical keyboard and actual AT retry; restoring the provider recovers current results without any automatic launch.",
+    "before": "Application icon lookup uses the native window class as a desktop filename and misses declared StartupWMClass associations. Original expired-preview application icon/title native oracle remains unadjudicated.",
+    "after": "An expired retained preview shows the correct application icon for a unique declared StartupWMClass association and correct incarnation title; ambiguity falls back to the generic icon and no other incarnation frame is substituted.",
     "verification": [
-      "Use private owned desktop metadata exceeding the existing catalog name bound to trigger a genuine null application-catalog reply through unchanged authority. Physical Apps/query/Refresh, actual current AT/Orca status and focused retry, control pixels, keyboard or real AT retry after metadata repair, exact current receipts and zero launch/window effects. Preserve original waits/ABI/single authority/Unknown. Model any demonstrated behavior defect first with quint-llm-kit."
+      "Use quint-llm-kit existing metadata/privacy model without weakening it; actual GTK/GIO resolution fixture covers exact id priority, unique class, ambiguous class, unavailable icon and invalid input. Compile current host/views. Protected ordinary picker native journey with private desktop entry/icon and actual window class, own preview then historical expiry, pixel checks on current icon/title and no preview substitution; preserve original deadlines, ABI, native ownership and main desktop. Actual AT observations where feasible remain separately scoped."
     ],
-    "owner": "root-launcher-unavailable",
-    "participantRecord": ".warlock-contributor/launcher-unavailable.json",
+    "owner": "root-preview-application-fallback",
+    "participantRecord": ".warlock-contributor/preview-application-fallback.json",
     "disposition": "partial",
     "evidence": {
-      "path": "implementation/warlock/qa/evidence/launcher-unavailable/manifest.json",
-      "sha256": "7c68a5b036f59a35a7fe835f41536dfb28f5c61ab08458d8c8e6e4b4c3a514ec",
-      "scope": "Catalog failures now emit one existing typed request-correlated polite announcement and leave focus intact. A distinct typed Refresh action shares the catalog authority but preserves current focus through both request and receipt; Apps opening retains search focus. Native keyboard and actual AT-SPI retry preserve the files query and recover current matching results after a genuine metadata-bound null catalog. Exact duplicated failed receipts are silent after their first announcement; explicit new failure reads get fresh identities. Unavailable-field Enter, recovery and Escape issue zero launch/window effects. Real AT/Orca status/focus, current control pixels and normal cleanup pass. Current delayed-catalog physical Enter regression passes; existing executable model, 34 typed adapter assertions and announcement/IME browser checks pass.",
-      "sourceBaseRevision": "dfbdfeea6c1162e488277981221415d879b19bfb",
+      "path": "implementation/warlock/qa/evidence/preview-application-fallback/manifest.json",
+      "sha256": "eef2f3385276b6c3165f1f448a267323cfa3eb684313ec8af42658437f4d7aca",
+      "scope": "Unique declared StartupWMClass now supplies current application artwork while exact desktop IDs keep priority and ambiguous classes use generic fallback. Fixed target geometry is retained; 48px icons and correct title boxes render in the picker text column. Real GTK/GIO old-failure/current-positive and ambiguity negatives, 18 compiled original preview assertions, 53 browser state/focus/geometry checks and existing metadata model pass. Original UX-007 native retained-frame expiry passes with distinct incarnation-owned icon tokens, exact current titles, full cyan icon pixels, correct Live/Historical family pixels, actual AT names/states, no extra window effect and normal cleanup. Full UI-016 attempts retain live-paint and Loading-observation failures; no Loading acceptance inferred.",
+      "sourceBaseRevision": "e42a162906af9939e88cdce477a09ad8df2901ed",
       "sourceHashes": {
-        "implementation/warlock/qa/native-launcher-unavailable.py": "e0c898f0c33df569d1a9e148eacac1ec6ee57018a4d41898615679a1221d2652",
-        "implementation/warlock/qa/launcher-retry-at-action.py": "8697111c48596ceb6d1fcf304fe956a3270907d8d502f77ea02632705e35e625",
-        "implementation/warlock/src/Desktop.elm": "1d37a3848f4b4bb89d83f6eccab92c3a945accc8aced89dd675ea41c2a3ea9e3",
-        "implementation/warlock/src/AdapterNotice.elm": "32c4c13e599e843aa6da4a2302cb44da233226eb79d2561f551d0640fe9dd409",
-        "implementation/warlock/src/Surface.elm": "2e0678f7ce124cb1e07866dc7ca4d7a9e8c4fd07508fcd8ca9644ce751d12a92",
-        "implementation/warlock/README.md": "8019603360d3668d217d37a944653938aba0bb3951b471389fffb5ec0c763acb",
-        "implementation/warlock/qa/AdapterAnnouncementReplay.elm": "71baa009e78ab31f74b8d9371eea57410393d0ed68f09307f1ec5333ea9b7b1b",
-        "implementation/warlock/qa/check-search.py": "0f90b049311309cb758a987175b43c702923315076d55573b7a7ee229c3ebe0a",
-        "implementation/warlock/qa/current-search-build.json": "4e7d4bc9cf60f491cdf35ae94e19948e18cdc3778bc308e94d24fafeb6700cad",
+        "implementation/warlock/native/preview_icons.cpp": "59fe0133669595212bb69b3f726bc26d46b1fb0dfc593cb27741d745c88db16c",
+        "implementation/warlock/qa/native-preview-fallback.py": "8eb5ce002de1099ad54d9d19717932364d7227508ac69574f59ce3c191d2c945",
+        "implementation/warlock/qa/icon-resolution-test.cpp": "3bfb3796e0e892a36150a57ca2a422a785176603b877cf66dd6ec30e24195e5f",
+        "implementation/warlock/qa/check-search.py": "b740f5ecac4d4b118f1af953ae62d60160bfe774695b529f1653119eb5056058",
+        "implementation/warlock/qa/check-icon-resolution.py": "e2ca5bdceb61dcc4f432087638b008df6455abdbeec8b910904674879bd28a0c",
+        "implementation/warlock/assets/popup-adapter.js": "4bbac62dee388680fb98c838462db2463f81c10fff634d916545f426a6e3dbea",
+        "implementation/warlock/qa/current-search-build.json": "99415401ad8f549493959ede2a88da0eb432b5079b26d8a6c8ae04f0a0a16ee7",
         "implementation/warlock/assets/elm.js": "4f165d7c52185fdb3bdd371e49534c3213bf7d05dbb17263ef51ae4d7b9c052b",
         "implementation/warlock/assets/bar.js": "26ef20c9143f87caf7e3d7fc293b248983076f5a7b7a6967cc341d71f7711194",
         "implementation/warlock/assets/popup.js": "23b0f3e5e223dd5e1d7042ea33dcc1e1f4895997b01ebd7d764a75c15236b56c",
-        "implementation/warlock/qa/AnnouncementReplay.elm": "2c79c5dc5c61dfa1e55ed2318621958d0cd282bee8195182f6878d434aa29f72",
-        "implementation/warlock/qa/native-launcher-search-race.py": "49d2edbbad146b4087115f230f65d56a1d92a1432cd0cd2c6e68cf6698472c46",
-        "implementation/warlock/src/OutcomeAnnouncements.elm": "158b22f574983da656838c4388c93cca1c7d9b044aaae83ee21153eae29b7586",
-        "implementation/warlock/src/SurfaceController.elm": "399283022f7dd4dc345f313c32655d74cca7dd70cd3e4b0811310cb09711fcd1",
-        "implementation/warlock/src/OutputController.elm": "5d42d7a05b3c08438602b7753c4933011d75fb025efaddf4465effb246dd91a5",
+        "implementation/warlock/README.md": "eb2aa17ed51b0233761a704e131c7f347962022684cdb3fb06ca0e8b1d6b80e2",
+        "implementation/warlock/qa/PreviewStateReplay.elm": "28c4ed7976d8f87e9ebabb7ea583a592f3e2037d0069434777a87a9580b9ae93",
+        "implementation/warlock/assets/shell.css": "3440ca0d1b6da63bec25aa8901e4f91676b09269a85178a1ea3eb1efd3af7cd1",
+        "implementation/warlock/src/PreviewPresenter.elm": "10769b8d9a86e5e5b35f1f292d9837a38b20a0ba636d5baa0ee0c3b8fcdac1cc",
+        "implementation/warlock/src/PreviewLifecycle.elm": "232ebe2e823a4f9b07444f9afaccd98cdc3de9a592ff220d9975a64952dacf24",
+        "implementation/warlock/src/PreviewVisual.elm": "5c285bd8c6fde00b4e1082edfd10e59e281264a4f45b15cea9b5ce0920dd039a",
+        "implementation/warlock/src/NativePreviewRealm.elm": "2a3de2f3eacdf5b00489e5c1f5e5cef058e8f36d74fefecb25a5d3d9ea6024cf",
+        "implementation/warlock/src/NativePreviewPolicy.elm": "99a37f7ea929dcfb746e10d1e7356ba51aa307965bd72165aa708d475e6fec64",
+        "implementation/warlock/src/NativePreviewSource.elm": "9177298d05a999f3a28660df9a76b8be7cafcda523e7cc20fe73bc471b7c37e9",
+        "implementation/warlock/src/NativePreviewVisual.elm": "807da8e07317469ac03c37907ba8c8830b1b3a7fa93fa3a488ecb525b973886d",
         "implementation/warlock/src/Popup.elm": "cc00f7861217d23ae7cac3dd88f91c042862ff2246e68a4c149427892e5556d3",
-        "implementation/warlock/src/Presentation.elm": "8c3463230d93b768f48784a37ae9e4da7a225defa6f209b3100258af5196c0e9",
-        "implementation/warlock/assets/popup-adapter.js": "9c566e99694e1d8d5c6ed38d94f1c0449beaf7b4a57aa14f13b46402b0b1b0dc",
-        "implementation/warlock/adapter/catalog_authority.py": "ad20204afd3b203eb956918300c8da4cb4765b3c5ad86e701b0257a54b8fb9cc",
-        "implementation/warlock/adapter/catalog_transport.py": "43bd1cd1059b87ce4d349d72e4b2a917ac1bdc3dacda2f60563fa621e05a4b84",
-        "implementation/warlock/adapter/daemon.py": "819b945c7d1c92d6360045db297715ac9ff7ac72024741b8ca3238fc24d08d67",
+        "implementation/warlock/src/SurfaceRenderer.elm": "e7e8d255cf38c2862a03c951f7caab50fddffa73946ae143dedfe71c1fdbf4c6",
+        "implementation/warlock/native/client-producer.cpp": "b332305b3c4cdcb29f72bd2b01e32f233f496e99a37ca576de269aa056c86de6",
+        "implementation/warlock/native/preview_icons.hpp": "6af2174049d623e824fdcf66ddd3a18d0b48a2c34c7159c1651dc0e4b53d8a32",
+        "implementation/warlock/native/preview_metadata.hpp": "1cf84f1094cd8ccca90fcc5c44bed4182716e256792bb542c771c8bc1ce9ad5e",
+        "implementation/warlock/native/picker-previews.inc": "8e0799d2a56b08e7bee8c64fe098168ac2f1f4f3ab8a4b53e9e1363fa0cdcca3",
+        "implementation/warlock/qa/native-preview-states.py": "0836abf13375d62bc9bc330ce4dba1602a099cf06ccb332fa533ec89bb699609",
         "implementation/warlock/qa/native-window-feedback.py": "295ba28cf8d9d297b214bd0d6dba19ac3289d861faa953f9fd94b82937473c64",
-        "implementation/warlock/qa/adapter-announcements.qnt": "de140d10af4ea7ac39d3dfe7a5ccfc431aa7e1a7aa1de954ef93499d752823e5",
-        "implementation/warlock/qa/adapter-announcements_test.qnt": "55d8c54d97c547c9f6463c59d3f0072379f9ff5343308b2d70540124d143e9a5",
-        "implementation/warlock/qa/check-adapter-announcements.py": "d2aafd025455711f40b3951c7867b2fb618c5e7c7cd23fd8cbf5a390a475f7f6"
+        "implementation/warlock/qa/preview-description-browser.mjs": "05d19ad7b2575cde87376160072bc872a34c59bc142500063f7915a62d900492",
+        "implementation/warlock/qa/accessibility-inspector.py": "bc4fe7adba15c29f97137b91848971b65b994c1b8f6282109d7edf1e13bd5c27",
+        "implementation/warlock/qa/accessibility-session.py": "69bc3b33c2b99f0b9d54805e18afcb85ff02314dc9aa4d002f4df409a0e57524"
       },
       "reviewerDisposition": {
-        "name": "root-launcher-unavailable",
+        "name": "root-preview-application-fallback",
         "independent": false,
-        "disposition": "Owner observed production fix and current keyboard/AT failure/retry; independent original acceptance remains pending."
+        "disposition": "Owner observed production icon/layout fixes and original expired-fallback native oracle; independent acceptance remains open."
       },
-      "observedUTC": "2026-10-10T17:26:45.510682+00:00"
+      "observedUTC": "2026-10-10T17:48:01.860220+00:00"
     },
-    "observed": "Catalog failures now emit one existing typed request-correlated polite announcement and leave focus intact. A distinct typed Refresh action shares the catalog authority but preserves current focus through both request and receipt; Apps opening retains search focus. Native keyboard and actual AT-SPI retry preserve the files query and recover current matching results after a genuine metadata-bound null catalog. Exact duplicated failed receipts are silent after their first announcement; explicit new failure reads get fresh identities. Unavailable-field Enter, recovery and Escape issue zero launch/window effects. Real AT/Orca status/focus, current control pixels and normal cleanup pass. Current delayed-catalog physical Enter regression passes; existing executable model, 34 typed adapter assertions and announcement/IME browser checks pass.",
+    "observed": "Unique declared StartupWMClass now supplies current application artwork while exact desktop IDs keep priority and ambiguous classes use generic fallback. Fixed target geometry is retained; 48px icons and correct title boxes render in the picker text column. Real GTK/GIO old-failure/current-positive and ambiguity negatives, 18 compiled original preview assertions, 53 browser state/focus/geometry checks and existing metadata model pass. Original UX-007 native retained-frame expiry passes with distinct incarnation-owned icon tokens, exact current titles, full cyan icon pixels, correct Live/Historical family pixels, actual AT names/states, no extra window effect and normal cleanup. Full UI-016 attempts retain live-paint and Loading-observation failures; no Loading acceptance inferred.",
     "missingObservations": [
-      "Independent original-scenario review against frozen interaction/product policy and exact source/core/plugin/compiler remains open.",
-      "Current failure is a genuine catalog name-bound failure during an existing query, with exact duplicate receipts and focused physical Enter/AT-SPI retry. Other provider failures, initial-failure entry, output/language/AT breadth, audible speech/braille and spontaneous service loss remain separate.",
-      "Original native IME candidate popup remains failed at its retained unchanged deadline; hardware/resource/journey budgets, reproducible package and reversible deployment/rollback remain release obligations."
+      "Independent acceptance of UX-007 against its original replay/native oracle remains pending.",
+      "UI-016 full native attempts remain failed; current fallback-only journey does not accept physical Loading, every native AT passive description, transient paint consistency or broader capacity/fairness.",
+      "Native IME candidate failure, original resource/hardware/journey budgets, reproducible package and reversible deployment/rollback remain release obligations."
     ],
-    "nextSourceWork": "Original ELM-UI-016/preview-states and ELM-UX-007/ux-007: implement visible authorized preview states and correct title/icon fallback. Inspect current native grant/custody/reveal conditions first; retain controlled opacity-0 until actual ownership and presentation are proved. Use quint-llm-kit against existing preview models before changing behavior, then the original native/AT frame oracle. Do not expand this successful launcher slice into additional invented schedules. Native IME remains a separate release gate."
+    "nextSourceWork": "Continue the remaining original switcher/Task View/workspace and snap product scope. Select one original scenario from its current candidate source and exact ledger oracle, implement any observed missing behavior using quint-llm-kit, and run its decisive native journey. Preserve the current full UI-016 live-paint/Loading failures as separate integration gates; do not turn the completed expired-preview fallback into more qualification variants. Native IME candidate and complete release obligations remain open."
   }
 }

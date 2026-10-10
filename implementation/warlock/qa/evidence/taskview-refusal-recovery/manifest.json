@@ -1,0 +1,338 @@
+{
+  "schema": 1,
+  "observedUTC": "2026-10-10T18:06:32.364071+00:00",
+  "requirements": [
+    "ELM-UI-006"
+  ],
+  "scenarios": [
+    "overview-refusal"
+  ],
+  "originalOracle": "overview remains usable with feedback and retained selection context",
+  "sourceRevisionBeforeSlice": "9ecb81054d42c9cf7c4cc89dfb4ae1ec7a4ba498",
+  "sourceHashes": {
+    "implementation/warlock/src/Desktop.elm": "ce481cf60a66a095e97eb72f92a05d46e36ec0acbb60014c651029a9a4606c09",
+    "implementation/warlock/src/OverviewRecovery.elm": "1e34eb2fe6cfffb5662699f11736e6778f9dad0f35b73f58f283488a29fcf8e5",
+    "implementation/warlock/qa/overview-recovery.qnt": "6d6eaa62d4680405e3a5bdd967c3d01b6d5185346914cbac2a2dd526f6a4b557",
+    "implementation/warlock/qa/overview-recovery_test.qnt": "86b9e8624060315332cc3724511dbfe14a2b8c8e9ee0452738bb159c13fcd1cc",
+    "implementation/warlock/qa/check-overview-recovery.py": "40b7cf0e0f6710a7d545f28c5c2311f52403564df2d5e7f0843390f22d9599a7",
+    "implementation/warlock/qa/TaskViewReplay.elm": "d1d4b101a357aae783ecc5ea11f9be034891420ea6de3821c51bfeaf8b9ad36d",
+    "implementation/warlock/qa/native-taskview-refusal.py": "b719e541c335be6524d7c61a89fb8b5f15556c0aa6f5e041474016938639b4da",
+    "implementation/warlock/qa/check-search.py": "c2fdea78b64909232194a0219a28c970af4484406ca6d9a135420a2aafecce64",
+    "implementation/warlock/qa/current-search-build.json": "b4ddf2322f23a49a8cac1be1bdc60a7357049fe072d07b8752e30091ceab758e",
+    "implementation/warlock/assets/elm.js": "fc2095a5fe4d4d369e0d394cce70b296f9a9ccf94fbe3e301806493f6b63af0b",
+    "implementation/warlock/assets/bar.js": "26ef20c9143f87caf7e3d7fc293b248983076f5a7b7a6967cc341d71f7711194",
+    "implementation/warlock/assets/popup.js": "23b0f3e5e223dd5e1d7042ea33dcc1e1f4895997b01ebd7d764a75c15236b56c",
+    "implementation/warlock/README.md": "ced61434f5da5486fa50bad69a808c2705b93ba522320ee4230c8736f55fb32b",
+    "implementation/warlock/src/TaskView.elm": "4775c51917d4117bda6b6c21b354d2d8ac018f1902af8b0dcd6489d443f946d8",
+    "implementation/warlock/src/Surface.elm": "2e0678f7ce124cb1e07866dc7ca4d7a9e8c4fd07508fcd8ca9644ce751d12a92",
+    "implementation/warlock/src/Shell.elm": "93fdf86ac11ff9c190978fb46557623045a6c697d468a42fc9ba16a4bfa4df48",
+    "implementation/warlock/src/Effects.elm": "873e8824d90828a9927cfd89723c7b7299e11791e3779173815ba720b11a8547",
+    "implementation/warlock/qa/native-taskbar-refusal.py": "71b834d4194eb8488b0bbcdcd9360d4c491a1b012c7f9c323e8ab9b52aab9afa",
+    "implementation/warlock/qa/native-window-feedback.py": "295ba28cf8d9d297b214bd0d6dba19ac3289d861faa953f9fd94b82937473c64"
+  },
+  "originalInventory": {
+    "path": "docs/elm-roadmap/requirements.json",
+    "sha256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b"
+  },
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
+      "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791643756770507917/elm-window-geometry-authority.so",
+      "sha256": "049a982418a085a976db6bf08eee3da4ad7c9a4f826a724a8d653d86b15f0378"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+      "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/overview-recovery-1791655413337909670/elm-host",
+    "sha256": "146f4c3cb714f46a1ff3c201b40a9dbf493b7ad37235fd03ce789419b7769f57",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/overview-recovery-1791655413337909670/report.json",
+    "heldBuildSHA256": "b0f1951866e798241b7233995520a28fc8f6ae032193d5858c35d4eef1e00ffa"
+  },
+  "compilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+  "compiledAssets": {
+    "elm.js": "fc2095a5fe4d4d369e0d394cce70b296f9a9ccf94fbe3e301806493f6b63af0b",
+    "bar.js": "26ef20c9143f87caf7e3d7fc293b248983076f5a7b7a6967cc341d71f7711194",
+    "popup.js": "23b0f3e5e223dd5e1d7042ea33dcc1e1f4895997b01ebd7d764a75c15236b56c"
+  },
+  "reports": [
+    {
+      "name": "model-before",
+      "path": "implementation/warlock/qa/evidence/taskview-refusal-recovery/model-before.json.gz",
+      "sha256": "77018fae4566449e807f914f8475e0833d6a5c8b126659d4af07583e21170d66",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/overview-recovery-1791655054914336922/report.json",
+      "originalSHA256": "75a69a0e083798f13c446771a17f15307ff8b1f8a3f3c06b1ad06c2b6129cce3",
+      "bytes": 2482,
+      "encoding": "gzip",
+      "passed": true,
+      "error": null
+    },
+    {
+      "name": "compile-fixture-failed",
+      "path": "implementation/warlock/qa/evidence/taskview-refusal-recovery/compile-fixture-failed.json.gz",
+      "sha256": "893c07c3215d35677540ab1e792eafea88fafa97a4b832fa2631a819eb515b33",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/overview-recovery-1791655374308262634/report.json",
+      "originalSHA256": "1bef9c7c963221f7179f19f6efa9455bddbda21d5c85abbe3b465f99b7ea51c1",
+      "bytes": 70448,
+      "encoding": "gzip",
+      "passed": false,
+      "error": "RuntimeError('-- TYPE MISMATCH ----------------------------------------- qa/TaskViewReplay.elm\\n\\nThis function cannot handle the argument sent through the (|>) pipe:\\n\\n117|         replacedBinding=binding |> Maybe.map (\\\\b -> {b | frontend=two})\\n                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\nThe argument is:\\n\\n    Maybe Binding.Binding\\n\\nBut (|>) is piping it to a function that expects:\\n\\n    Maybe { a | frontend : UInt64.Counter }\\n\\n')"
+    },
+    {
+      "name": "fixture-geometry-failed",
+      "path": "implementation/warlock/qa/evidence/taskview-refusal-recovery/fixture-geometry-failed.json.gz",
+      "sha256": "18f13084b6e1accf3b3ac5f82b9b18c3102ae6ea9a464752839d3480f4a83510",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/overview-recovery-1791655389867033545/report.json",
+      "originalSHA256": "8b394878acf322030f071f44474e9e12bb8a132f729fb20fb2bc5d08c3a5bde7",
+      "bytes": 78194,
+      "encoding": "gzip",
+      "passed": false,
+      "error": "AssertionError()"
+    },
+    {
+      "name": "compiled-current",
+      "path": "implementation/warlock/qa/evidence/taskview-refusal-recovery/compiled-current.json.gz",
+      "sha256": "a82b2c18ba40290bbecf552527bb8aae494e614e9698633a404e2812da676435",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/overview-recovery-1791655413337909670/report.json",
+      "originalSHA256": "b0f1951866e798241b7233995520a28fc8f6ae032193d5858c35d4eef1e00ffa",
+      "bytes": 82789,
+      "encoding": "gzip",
+      "passed": true,
+      "error": null
+    },
+    {
+      "name": "native-current",
+      "path": "implementation/warlock/qa/evidence/taskview-refusal-recovery/native-current.json.gz",
+      "sha256": "c82763cfd79f6a86fdf157304ba44e4f19075f3cfddf2d5b2c8032e36d44380a",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-drag-ownership-1791655504493408023/report.json",
+      "originalSHA256": "af0011d1f123a61a26a135de315550de72768a783d47d2add71d36b582673b6d",
+      "bytes": 431153,
+      "encoding": "gzip",
+      "passed": true,
+      "error": null
+    }
+  ],
+  "files": [
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-refusal-recovery/model-before.json.gz",
+      "sha256": "77018fae4566449e807f914f8475e0833d6a5c8b126659d4af07583e21170d66",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/overview-recovery-1791655054914336922/report.json",
+      "originalSHA256": "75a69a0e083798f13c446771a17f15307ff8b1f8a3f3c06b1ad06c2b6129cce3",
+      "bytes": 2482,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-refusal-recovery/compile-fixture-failed.json.gz",
+      "sha256": "893c07c3215d35677540ab1e792eafea88fafa97a4b832fa2631a819eb515b33",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/overview-recovery-1791655374308262634/report.json",
+      "originalSHA256": "1bef9c7c963221f7179f19f6efa9455bddbda21d5c85abbe3b465f99b7ea51c1",
+      "bytes": 70448,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-refusal-recovery/fixture-geometry-failed.json.gz",
+      "sha256": "18f13084b6e1accf3b3ac5f82b9b18c3102ae6ea9a464752839d3480f4a83510",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/overview-recovery-1791655389867033545/report.json",
+      "originalSHA256": "8b394878acf322030f071f44474e9e12bb8a132f729fb20fb2bc5d08c3a5bde7",
+      "bytes": 78194,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-refusal-recovery/compiled-current.json.gz",
+      "sha256": "a82b2c18ba40290bbecf552527bb8aae494e614e9698633a404e2812da676435",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/overview-recovery-1791655413337909670/report.json",
+      "originalSHA256": "b0f1951866e798241b7233995520a28fc8f6ae032193d5858c35d4eef1e00ffa",
+      "bytes": 82789,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-refusal-recovery/native-current.json.gz",
+      "sha256": "c82763cfd79f6a86fdf157304ba44e4f19075f3cfddf2d5b2c8032e36d44380a",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-drag-ownership-1791655504493408023/report.json",
+      "originalSHA256": "af0011d1f123a61a26a135de315550de72768a783d47d2add71d36b582673b6d",
+      "bytes": 431153,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-refusal-recovery/model-after.json.gz",
+      "sha256": "fb97f265d43dce2d324e2da15d6e16d859763219a073b12231b914ffc4cc6c20",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/overview-recovery-1791655413337909670/inputs/qa/runs/overview-recovery-1791655415177822070/report.json",
+      "originalSHA256": "1e677be1beafcc2eda0cb09737cef596edce42dc3332bff847699d0d12788259",
+      "bytes": 2800,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-refusal-recovery/model-after-typecheck.stdout.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/overview-recovery-1791655413337909670/inputs/qa/runs/overview-recovery-1791655415177822070/typecheck.stdout",
+      "originalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-refusal-recovery/model-after-tests-typecheck.stdout.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/overview-recovery-1791655413337909670/inputs/qa/runs/overview-recovery-1791655415177822070/tests-typecheck.stdout",
+      "originalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-refusal-recovery/model-after-named.stdout.gz",
+      "sha256": "4066cd71015d915aefd82105e5a3248eb25f73a29587d1b7c297feac20b7de01",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/overview-recovery-1791655413337909670/inputs/qa/runs/overview-recovery-1791655415177822070/named.stdout",
+      "originalSHA256": "505eaf6d4e0143bc45aee2844a06f1474fd750b9d0d3eecfc434b09b2a1754a5",
+      "bytes": 528,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-refusal-recovery/model-after-witness-safety.stdout.gz",
+      "sha256": "3dca63608abd2eef5379b6f84f18fa7738f137cc4349e9dcaf5562142a1dfdd5",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/overview-recovery-1791655413337909670/inputs/qa/runs/overview-recovery-1791655415177822070/witness-safety.stdout",
+      "originalSHA256": "2b41cf08180ae629e008a6f2f446799cad5c5948dbb89cbf1b8474e0ff189617",
+      "bytes": 11659,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-refusal-recovery/model-before-typecheck.stdout.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/overview-recovery-1791655054914336922/typecheck.stdout",
+      "originalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-refusal-recovery/model-before-tests-typecheck.stdout.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/overview-recovery-1791655054914336922/tests-typecheck.stdout",
+      "originalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-refusal-recovery/model-before-named.stdout.gz",
+      "sha256": "4066cd71015d915aefd82105e5a3248eb25f73a29587d1b7c297feac20b7de01",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/overview-recovery-1791655054914336922/named.stdout",
+      "originalSHA256": "505eaf6d4e0143bc45aee2844a06f1474fd750b9d0d3eecfc434b09b2a1754a5",
+      "bytes": 528,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-refusal-recovery/model-before-witness-safety.stdout.gz",
+      "sha256": "f48b1b3f75fa40ff54a6f6a9bdd5d765f39c1d2b3cba946253a3cf1da8a47769",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/overview-recovery-1791655054914336922/witness-safety.stdout",
+      "originalSHA256": "9fd5a4cec8cb88714370050eaf93da7984c9225b4c51f19ec11cab6a90debbf5",
+      "bytes": 11659,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-refusal-recovery/task-view.json.gz",
+      "sha256": "b2e9d2208bed6caad3e3ad3f8d3c6520c9735af6bb2019189030fe0e32c032ae",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/overview-recovery-1791655413337909670/task-view.json",
+      "originalSHA256": "e0e81c1d210aae8098a07a3558125081fd41a93576faa073d803c1268acad41e",
+      "bytes": 7693,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-refusal-recovery/task-view.js.gz",
+      "sha256": "fa30bd29b7f95b64e6dd0eb737b9ece7beb15eb25819c3bc15fd82ce3d99f74a",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/overview-recovery-1791655413337909670/inputs/assets/task-view.js",
+      "originalSHA256": "153fe577d0c24bd8cc0dbfe3af9dcc5bd554378180d11069ea4b9d86719f722c",
+      "bytes": 796184,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-refusal-recovery/host-evidence.json.gz",
+      "sha256": "5f68fa6899f653a31a3344dff7b3c7c247bcbe6e38fcfc2c699fab92abdd7d14",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791655504493499791/host-evidence.json",
+      "originalSHA256": "bcea49ebcaff774a139206c8374464df9738d42c95e3a7134f31d296a24130ee",
+      "bytes": 218684,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-refusal-recovery/warlock.log.gz",
+      "sha256": "46865362ddf1950242f9eea6540127400f7d4171f88373b40e64ab7eeb423a10",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791655504493499791/warlock.log",
+      "originalSHA256": "a5c0c64da36c130c99d75bf8ee69e65f738fc3763e874957ddb3feab678bce03",
+      "bytes": 903521,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-refusal-recovery/hyprland.log.gz",
+      "sha256": "44851f643f6590b1f179d46a471ec1f6dddf761f925619b0b1e904e2fc9c948d",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791655504493499791/hyprland.log",
+      "originalSHA256": "50226da76c4d11fd470f765beea662a0407ec909131e03efc0616894b2514837",
+      "bytes": 347818,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-refusal-recovery/fixture-control.events.jsonl.gz",
+      "sha256": "6b6cc6c13a9760be61dd05a3a122170bbc5e3fcc4893435b582e858e8ef357a4",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791655504493499791/fixture-control.events.jsonl",
+      "originalSHA256": "347dac942679567da6745ef29c4979f6b01936e3e5214e7e5ea31860d3e58e77",
+      "bytes": 688,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-refusal-recovery/refusal-peer-control.events.jsonl.gz",
+      "sha256": "9d026bd3841cc0e9c13b538fffd4a92cb0107281d75d26095cde219b91947394",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791655504493499791/refusal-peer-control.events.jsonl",
+      "originalSHA256": "383f589402f7ac9b5e69fdb624d88084f333e5c1fa08aa01ad59f6ac47be2831",
+      "bytes": 234,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-refusal-recovery/chord-keyboard.log.gz",
+      "sha256": "afd0d87a9c3f48083e95c63ffc9a785ca1b2cb473c60c436693a9102d18271c8",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791655504493499791/chord-keyboard.log",
+      "originalSHA256": "505a05438afb2d9280563dfbb7d2d61cfab4cab85686cff818ab19f62e77d39e",
+      "bytes": 150,
+      "encoding": "gzip"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-refusal-recovery/task-view-native-refused.png",
+      "sha256": "482cabdd1ee58dc80bbcfd76f25fca5d7e6187a4a385f3266d127c6b0ff7b193",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791655504493499791/task-view-native-refused.png",
+      "originalSHA256": "482cabdd1ee58dc80bbcfd76f25fca5d7e6187a4a385f3266d127c6b0ff7b193",
+      "bytes": 107200,
+      "encoding": "raw"
+    }
+  ],
+  "modelWitnesses": {
+    "choiceWitness": 390,
+    "issuedWitness": 113,
+    "refusalWitness": 18,
+    "recoveryWitness": 3,
+    "unknownWitness": 18,
+    "foreignWitness": 19,
+    "replacedWitness": 998,
+    "occupiedWitness": 995
+  },
+  "typedChecks": 31,
+  "nativeChecks": 62,
+  "nativeTaskViewRefusalObserved": true,
+  "cleanupPassed": true,
+  "nativeAcceptance": false,
+  "assistiveTechnologyAccepted": false,
+  "independentAcceptance": false,
+  "fullReleaseAccepted": false,
+  "missingObservations": [
+    "Applicable actual Task View assistive-technology refusal/focus recovery and independent original acceptance.",
+    "Other original overview scenarios, including empty-workspace navigation, remain separately open."
+  ],
+  "modelLimits": "Single issued choice/intent and retained UI context; native grants, transport, custody, deadlines, paint and AT excluded. Sampled safety is not exhaustive model checking.",
+  "modelSourceMap": {
+    "choose": "Desktop.OverviewChoose / OverviewRecovery.begin",
+    "issue": "Desktop.trackOverviewChoice / OverviewRecovery.issue",
+    "refusal": "Shell exact native receipt admission; OverviewRecovery.observe",
+    "recover": "Desktop.resumeOverview after fresh current observation",
+    "occupied": "Desktop.updateOrdinary current UI occupancy",
+    "replacement": "OverviewRecovery.observe binding and disconnected authority",
+    "cancel": "Desktop.ChoiceDeadline / OverviewRecovery.cancelChoice"
+  }
+}

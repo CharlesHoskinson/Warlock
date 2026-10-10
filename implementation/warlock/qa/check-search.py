@@ -1,5 +1,6 @@
 """Focused compiled launcher/search integration, protected CPU scope only."""
 import pathlib,hashlib,json,os,sys,time,shutil,subprocess,shlex,importlib.util,concurrent.futures,http.server,threading
+RECOVERY=sys.argv[1:]==['--overview-recovery']
 RELEVANCE=sys.argv[1:]==['--notification-relevance']
 LAUNCHER_UNAVAILABLE=sys.argv[1:]==['--launcher-unavailable']
 ADAPTER_ANNOUNCEMENTS=LAUNCHER_UNAVAILABLE or sys.argv[1:]==['--adapter-announcements']
@@ -45,11 +46,11 @@ DENSE=sys.argv[1:]==['--dense-taskbar'] or PICKER
 PINMENUS=sys.argv[1:]==['--pinned-menus'] or (DENSE and not PICKER)
 PRIMARY=(DESCRIPTION and not FALLBACK) or sys.argv[1:]==['--taskbar-primary'] or PINMENUS or PICKER
 SWITCHER=sys.argv[1:]==['--switcher'] or ACCESSIBILITY
-NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'] or LOCALFIELD;POPUP=sys.argv[1:]==['--native-popup'] or QUIESCENT or SHUTDOWN or BARRETURN;TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION or KEYBOARD or DRAG or IME or TRANSFER or MOTION or PINMAX or ANNOUNCEMENTS;assert not sys.argv[1:] or PINS or POPUP or TASKVIEW or PRIMARY or SWITCHER or PREVIEW
+NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'] or LOCALFIELD;POPUP=sys.argv[1:]==['--native-popup'] or QUIESCENT or SHUTDOWN or BARRETURN;TASKVIEW=RECOVERY or sys.argv[1:]==['--task-view'] or NAV or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION or KEYBOARD or DRAG or IME or TRANSFER or MOTION or PINMAX or ANNOUNCEMENTS;assert not sys.argv[1:] or PINS or POPUP or TASKVIEW or PRIMARY or SWITCHER or PREVIEW
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143'
 sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
 scope=require_qa_scope();sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
-OUT=ROOT/'qa/runs'/(('announcements-' if ANNOUNCEMENTS else 'preview-description-' if DESCRIPTION else 'layer-appearance-' if LAYER else 'bar-keyboard-return-' if BARRETURN else 'preview-shutdown-' if SHUTDOWN else 'pin-max-' if PINMAX else 'preview-quiescence-' if QUIESCENT else 'preview-states-' if PREVIEW else 'live-motion-' if LIVE else 'reduced-motion-' if MOTION else 'transfer-workspace-' if TRANSFER else 'ime-' if IME else 'accessibility-' if ACCESSIBILITY else 'high-contrast-' if CONTRAST else 'drag-ownership-' if DRAG else 'keyboard-shell-' if KEYBOARD else 'attention-' if ATTENTION else 'jump-lists-' if JUMP else 'files-' if FILES else 'system-menu-' if SYSTEM else 'notifications-' if NOTIFICATIONS else 'settings-' if SETTINGS else 'snap-chooser-' if SNAP else 'switcher-' if SWITCHER else 'taskbar-primary-' if PRIMARY else 'workspace-navigation-' if NAV else 'task-view-' if TASKVIEW else 'popup-' if POPUP else 'pins-' if PINS else 'search-')+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
+OUT=ROOT/'qa/runs'/(('overview-recovery-' if RECOVERY else 'announcements-' if ANNOUNCEMENTS else 'preview-description-' if DESCRIPTION else 'layer-appearance-' if LAYER else 'bar-keyboard-return-' if BARRETURN else 'preview-shutdown-' if SHUTDOWN else 'pin-max-' if PINMAX else 'preview-quiescence-' if QUIESCENT else 'preview-states-' if PREVIEW else 'live-motion-' if LIVE else 'reduced-motion-' if MOTION else 'transfer-workspace-' if TRANSFER else 'ime-' if IME else 'accessibility-' if ACCESSIBILITY else 'high-contrast-' if CONTRAST else 'drag-ownership-' if DRAG else 'keyboard-shell-' if KEYBOARD else 'attention-' if ATTENTION else 'jump-lists-' if JUMP else 'files-' if FILES else 'system-menu-' if SYSTEM else 'notifications-' if NOTIFICATIONS else 'settings-' if SETTINGS else 'snap-chooser-' if SNAP else 'switcher-' if SWITCHER else 'taskbar-primary-' if PRIMARY else 'workspace-navigation-' if NAV else 'task-view-' if TASKVIEW else 'popup-' if POPUP else 'pins-' if PINS else 'search-')+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
 for folder in ['src','native','adapter','assets','qa']:
  (INPUT/folder).mkdir()
  for p in (ROOT/folder).iterdir():
@@ -204,6 +205,9 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
   run('transfer-model-typecheck',['quint','typecheck','qa/transfer-workspace.qnt'])
   run('transfer-model-named',['quint','test','qa/transfer-workspace.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79141'])
   run('transfer-model-invariants',['quint','run','qa/transfer-workspace.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79142'])
+ if RECOVERY:
+  report['overviewRecoveryModel']=json.loads(run('overview-recovery-model',['/usr/bin/python3','-B','qa/check-overview-recovery.py']));assert report['overviewRecoveryModel']['passed']
+  report.update(requirements=['ELM-UI-006'],scenarios=['overview-refusal'],scope='Compiled exact-intent overview refusal recovery; model/typed/renderer evidence only. Native original acceptance remains separate.')
  if TASKVIEW and not IME:
   run('compile-task-view',[str(HELD/pinned['compiler']),'make','qa/TaskViewReplay.elm','--optimize','--output=assets/task-view.js'])
   (INPUT/'qa/task-view-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.TaskViewReplay'));run('typed-task-view',['node','qa/task-view-replay.js','assets/task-view.js',str(OUT/'task-view.json')]);report['typedTaskView']=json.loads((OUT/'task-view.json').read_text());assert all(report['typedTaskView']['checks'].values())
