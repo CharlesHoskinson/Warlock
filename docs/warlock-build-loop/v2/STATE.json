@@ -1,13 +1,71 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T13:56:20.997577+00:00",
+  "updatedUTC": "2026-10-10T14:14:13.906278+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
+    "id": "reachable-output-area",
+    "requirements": [
+      "ELM-UI-019"
+    ],
+    "scenarios": [
+      "outputs-return"
+    ],
+    "paths": [
+      "implementation/warlock/native/core/WorkspacePlacementController.cpp",
+      "implementation/warlock/native/core/Space.cpp",
+      "implementation/warlock/native/core/ReachablePlacement.hpp",
+      "implementation/warlock/qa/check-output-placement-core.py",
+      "implementation/warlock/qa/reachable-placement.qnt",
+      "implementation/warlock/qa/reachable-placement_test.qnt",
+      "implementation/warlock/qa/check-reachable-placement.py",
+      "implementation/warlock/qa/native-window-area-recovery.py",
+      "implementation/warlock/qa/current-scene-core.json",
+      "implementation/warlock/qa/current-native-pair.json",
+      "implementation/warlock/qa/native-window-feedback.py",
+      "implementation/warlock/qa/check-native-authority.py",
+      "implementation/warlock/README.md"
+    ],
+    "before": "Relative workspace/monitor placement can leave a returned floating application outside a smaller or negatively shifted usable output area; keyboard focus alone does not establish reachability.",
+    "after": "Recover an ordinary floating application\u2019s reachable top-left input/caption region inside the actual usable output area, without resizing it or changing workspace/draft, and retain ordinary unchanged-area manual placement.",
+    "verification": [
+      "quint-llm-kit usable-area placement model, positive witnesses/named cases and sampled safety; actual compiled coordinate helper, narrow owning native TU relink with retained ABI/objects. Protected original output/application journey followed by real smaller/negative-origin monitor configure, actual taskbar/client input and draft preservation at original deadlines. Existing delayed shortcut and caption/lifecycle regressions; wider transforms/hardware/AT/independent gates separate."
+    ],
+    "owner": "root-reachable-area",
+    "participantRecord": ".warlock-contributor/reachable-area.json",
+    "disposition": "partial",
+    "evidence": {
+      "path": "implementation/warlock/qa/evidence/reachable-output-area/manifest.json",
+      "sha256": "d08c9e366357e3ee94ba527b10e37773cb50e8560e4ea00ce80678c60bdb40da"
+    },
+    "observed": "Native smaller/negative-origin output change previously placed the application at (-360,30), outside the output. Changed usable-area/workspace placement now keeps its top-left input region reachable at (-360,-32), preserving original size108x440/workspace2 and the unsaved draft. Actual taskbar Minimize/Restore, named GTK press/client-wire release, physical keyboard editing to the retained draft and painted native pixels pass. Original output/drag/capture and same-tuple caption/MAX/snap/lifecycle and delayed-shortcut regressions pass normal cleanup.",
+    "missingObservations": [
+      "Independent original UI-019 acceptance and physical hotplug/AT/IME remain open.",
+      "Minimized-before-area-change, pinned/fullscreen/grouped/modal families and wider scale/rotation/multiple-output placement remain unqualified. An oversized window is not fully fitted into the smaller screen; its original size is retained.",
+      "Concurrent gesture/output changes, preview/capture/effect custody, protected input, Unknown and other asynchronous/native-host ordering or transport-failure schedules remain open.",
+      "Full original hardware/resource/journey evidence, reproducible package and reversible deployment/rollback remain open."
+    ],
+    "nextSourceWork": "Original UI-019: reproduce minimized-before-output-change application recovery and restore on smaller/shifted outputs. Fix demonstrated native saved placement without resetting workspace/draft or replaying an effect; retain current ordinary/window, delayed shortcut and caption/MAX behavior. Pinned/fullscreen/group/modal, wider transforms/concurrent custody and physical/AT/release gates remain mandatory."
+  },
+  "nextSlices": [
+    "taskbar activation/minimize/restore and popup focus journeys",
+    "persistent catalog pins",
+    "launcher search and refusal recovery",
+    "switcher/Task View/workspaces and snap/output journeys",
+    "authorized visible previews and fallback",
+    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
+    "original native, AT/IME, hardware/resource/journey gates",
+    "reproducible package, reversible deployment/rollback"
+  ],
+  "releaseAccepted": false,
+  "oldTrackerIsCurrent": false,
+  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
+  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
+  "previousSlice": {
     "id": "shortcut-generation-recovery",
     "requirements": [
       "ELM-UI-019"
@@ -59,63 +117,6 @@
       "Pending preview/capture/effect custody, protected input, Unknown reconciliation, fatal transport/backpressure and original hardware/resource/journey/package/rollback release gates remain open."
     ],
     "nextSourceWork": "Original UI-019 reachable application recovery on smaller/negative-origin outputs: reproduce an offscreen floating application after output size/origin changes, then fix owning native placement while preserving workspace/size/draft and actual keyboard/taskbar access. Wider asynchronous schedules, hardware/AT/IME, custody/Unknown and release gates remain mandatory."
-  },
-  "nextSlices": [
-    "taskbar activation/minimize/restore and popup focus journeys",
-    "persistent catalog pins",
-    "launcher search and refusal recovery",
-    "switcher/Task View/workspaces and snap/output journeys",
-    "authorized visible previews and fallback",
-    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
-    "original native, AT/IME, hardware/resource/journey gates",
-    "reproducible package, reversible deployment/rollback"
-  ],
-  "releaseAccepted": false,
-  "oldTrackerIsCurrent": false,
-  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
-  "previousSlice": {
-    "id": "output-placement-recovery",
-    "requirements": [
-      "ELM-UI-019"
-    ],
-    "scenarios": [
-      "outputs-return"
-    ],
-    "paths": [
-      "implementation/warlock/native/core/WorkspacePlacementController.cpp",
-      "implementation/warlock/native/core/OrphanedPlacement.hpp",
-      "implementation/warlock/qa/check-output-placement.py",
-      "implementation/warlock/qa/check-output-placement-core.py",
-      "implementation/warlock/qa/output-placement.qnt",
-      "implementation/warlock/qa/output-placement_test.qnt",
-      "implementation/warlock/qa/native-output-placement.py",
-      "implementation/warlock/qa/current-scene-core.json",
-      "implementation/warlock/qa/current-native-pair.json",
-      "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/README.md"
-    ],
-    "before": "Current native zero-output return restores shell controls but sends the preserved floating application to x=-1880 because orphaned placement omits the destination monitor origin.",
-    "after": "Orphaned placement is anchored to the actual destination output, preserves size/workspace/draft, and the returning application is visibly reachable and accepts actual input through its taskbar entry.",
-    "verification": [
-      "quint-llm-kit orphaned origin/negative-coordinate model named cases, reachable witnesses and sampled safety; actual helper boundary checks and one owning native TU relink with unchanged ABI/pair. Extend the protected original zero-output shell journey with actual taskbar activation, visible application pixels/geometry and preserved draft keyboard input; unchanged native caption/lifecycle regression at original deadlines. Physical hardware/AT/independent acceptance remain separate."
-    ],
-    "owner": "root-output-placement",
-    "participantRecord": ".warlock-contributor/output-placement.json",
-    "disposition": "partial",
-    "missingObservations": [
-      "Independent original UI-019 scenario review, physical output hotplug and native AT/IME remain open.",
-      "Native negative/nonzero destination origin, smaller/rotated/scaled outputs and minimized/pinned/fullscreen/modal recovery remain unqualified. Existing-monitor translation still preserves relative placement; this fix does not establish arbitrary smaller-output fit. Original vertical partial clipping is unchanged.",
-      "Fresh old native shortcut receipts delayed across identical replacement bounds and arbitrary host/native generation ordering remain unqualified; the source/retirement abstractions are atomic.",
-      "Pending preview/capture/effect custody, protected input, Unknown reconciliation, transport EAGAIN/backpressure and fatal parent-loss runtime schedules remain unqualified.",
-      "Full original release journeys, measured hardware/resource budgets, reproducible package and reversible deployment remain open."
-    ],
-    "observed": "Orphaned workspace placement now anchors to the destination output origin and wraps negative logical coordinates without changing size. The observed returning floating application retains workspace 2 and its unsaved draft, is reachable at x=40/y=230, activates through the actual taskbar exactly once, receives GTK press plus client-wire release and physical keyboard editing, and paints onscreen. Original two-output move/resize/cancel/capture and unchanged MAX/snap caption/lifecycle regression pass one native tuple with normal cleanup.",
-    "evidence": {
-      "path": "implementation/warlock/qa/evidence/output-placement-recovery/manifest.json",
-      "sha256": "5c0b682e62befc258e1073db262b0a1a65a30294e618457c86dabc06140e0c26"
-    },
-    "nextSourceWork": "Original UI-019: reproduce and close fresh old native shortcut journals delayed across identical output replacement bounds. Stamp typed shortcut generation and enforce current root/native output reconciliation without replay, preserving real keyboard recipients and Unknown/custody. Wider native origin/transform/minimized/fullscreen/modal placement, physical hotplug/AT/IME and full original release gates remain mandatory."
   },
   "recentSlices": [
     {
@@ -1852,6 +1853,49 @@
         "sha256": "5abfb49a2fa6bfba53cd969a8a408b26646a9596b74dcb32ee26680b10a37ee1"
       },
       "nextSourceWork": "Repair actual offscreen floating application placement on zero-output return in the owning native monitor/placement path. Preserve workspace identity and unsaved drafts; observe actual visible application pixels, native bounds and input without a manual focus/placement workaround. Delayed fresh old shortcut/native generation ordering, protected input/custody/Unknown, physical hotplug/AT/IME and release gates remain mandatory."
+    },
+    {
+      "id": "output-placement-recovery",
+      "requirements": [
+        "ELM-UI-019"
+      ],
+      "scenarios": [
+        "outputs-return"
+      ],
+      "paths": [
+        "implementation/warlock/native/core/WorkspacePlacementController.cpp",
+        "implementation/warlock/native/core/OrphanedPlacement.hpp",
+        "implementation/warlock/qa/check-output-placement.py",
+        "implementation/warlock/qa/check-output-placement-core.py",
+        "implementation/warlock/qa/output-placement.qnt",
+        "implementation/warlock/qa/output-placement_test.qnt",
+        "implementation/warlock/qa/native-output-placement.py",
+        "implementation/warlock/qa/current-scene-core.json",
+        "implementation/warlock/qa/current-native-pair.json",
+        "implementation/warlock/qa/native-window-feedback.py",
+        "implementation/warlock/README.md"
+      ],
+      "before": "Current native zero-output return restores shell controls but sends the preserved floating application to x=-1880 because orphaned placement omits the destination monitor origin.",
+      "after": "Orphaned placement is anchored to the actual destination output, preserves size/workspace/draft, and the returning application is visibly reachable and accepts actual input through its taskbar entry.",
+      "verification": [
+        "quint-llm-kit orphaned origin/negative-coordinate model named cases, reachable witnesses and sampled safety; actual helper boundary checks and one owning native TU relink with unchanged ABI/pair. Extend the protected original zero-output shell journey with actual taskbar activation, visible application pixels/geometry and preserved draft keyboard input; unchanged native caption/lifecycle regression at original deadlines. Physical hardware/AT/independent acceptance remain separate."
+      ],
+      "owner": "root-output-placement",
+      "participantRecord": ".warlock-contributor/output-placement.json",
+      "disposition": "partial",
+      "missingObservations": [
+        "Independent original UI-019 scenario review, physical output hotplug and native AT/IME remain open.",
+        "Native negative/nonzero destination origin, smaller/rotated/scaled outputs and minimized/pinned/fullscreen/modal recovery remain unqualified. Existing-monitor translation still preserves relative placement; this fix does not establish arbitrary smaller-output fit. Original vertical partial clipping is unchanged.",
+        "Fresh old native shortcut receipts delayed across identical replacement bounds and arbitrary host/native generation ordering remain unqualified; the source/retirement abstractions are atomic.",
+        "Pending preview/capture/effect custody, protected input, Unknown reconciliation, transport EAGAIN/backpressure and fatal parent-loss runtime schedules remain unqualified.",
+        "Full original release journeys, measured hardware/resource budgets, reproducible package and reversible deployment remain open."
+      ],
+      "observed": "Orphaned workspace placement now anchors to the destination output origin and wraps negative logical coordinates without changing size. The observed returning floating application retains workspace 2 and its unsaved draft, is reachable at x=40/y=230, activates through the actual taskbar exactly once, receives GTK press plus client-wire release and physical keyboard editing, and paints onscreen. Original two-output move/resize/cancel/capture and unchanged MAX/snap caption/lifecycle regression pass one native tuple with normal cleanup.",
+      "evidence": {
+        "path": "implementation/warlock/qa/evidence/output-placement-recovery/manifest.json",
+        "sha256": "5c0b682e62befc258e1073db262b0a1a65a30294e618457c86dabc06140e0c26"
+      },
+      "nextSourceWork": "Original UI-019: reproduce and close fresh old native shortcut journals delayed across identical output replacement bounds. Stamp typed shortcut generation and enforce current root/native output reconciliation without replay, preserving real keyboard recipients and Unknown/custody. Wider native origin/transform/minimized/fullscreen/modal placement, physical hotplug/AT/IME and full original release gates remain mandatory."
     }
   ]
 }

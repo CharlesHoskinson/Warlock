@@ -7895,14 +7895,40 @@
                 "independent": false,
                 "disposition": "Owner-observed typed/compiled/sampled and real nested native results; independent original acceptance remains open."
               }
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/reachable-output-area/manifest.json",
+              "sha256": "d08c9e366357e3ee94ba527b10e37773cb50e8560e4ea00ce80678c60bdb40da",
+              "scope": "Native smaller/negative-origin output change previously placed the application at (-360,30), outside the output. Changed usable-area/workspace placement now keeps its top-left input region reachable at (-360,-32), preserving original size108x440/workspace2 and the unsaved draft. Actual taskbar Minimize/Restore, named GTK press/client-wire release, physical keyboard editing to the retained draft and painted native pixels pass. Original output/drag/capture and same-tuple caption/MAX/snap/lifecycle and delayed-shortcut regressions pass normal cleanup.",
+              "sourceBaseRevision": "cfcad95bfcece37532eaa00355adb8f16cfb250c",
+              "sourceHashes": {
+                "implementation/warlock/native/core/WorkspacePlacementController.cpp": "90e162b7bbd3f51edbe7d340ebfec9d398d2dce7170b7d62073e950b431d17a8",
+                "implementation/warlock/native/core/Space.cpp": "2c4dc3e7c6c4007b5d1d1fed185ed651d63cea1a8fc4008a13f5c90467188c6f",
+                "implementation/warlock/native/core/ReachablePlacement.hpp": "e04b43343092061efd55c525f3e3e23324656faef82ee18ed76a804afe8f12c9",
+                "implementation/warlock/qa/check-output-placement-core.py": "0820309e8cb49f5333fdccf189fe0668e4f70cbb1042ddc5fc9aae7814332887",
+                "implementation/warlock/qa/reachable-placement.qnt": "24c41fbf98e5c16c87fdc189c2d67c909da8c498638efabf8a9e78ba4d90585c",
+                "implementation/warlock/qa/reachable-placement_test.qnt": "ca0cca1da7c11c2e0a65530df401babde58d141b2038e966a0c1308e45d961eb",
+                "implementation/warlock/qa/check-reachable-placement.py": "1083ffe609db8a25cf7c7c662585849b028d10a5d1ec5db7ecb69b8867b1e4ab",
+                "implementation/warlock/qa/native-window-area-recovery.py": "65a85f70ed1c417fff7960a24dd6c3bc538bd07eeadc3bd9a6933bedac5da692",
+                "implementation/warlock/qa/current-scene-core.json": "8b0d7a11e56a11a7419e2cd26199401a5acd8d9da188fe0760ebc66d9b5f53b2",
+                "implementation/warlock/qa/current-native-pair.json": "25273a0682d4a4ffc05f17f80800ded64904f61538e713b8f535c329e7ef1521",
+                "implementation/warlock/qa/native-window-feedback.py": "f97545242ce54629990a20f1f6b41ded3af0bc65653a0d2c1449910c87440cdf",
+                "implementation/warlock/qa/check-native-authority.py": "487e6c3e21b4b7c8666977cac34e2a3495fb0bd42438aedc723df6de36bc8b79",
+                "implementation/warlock/README.md": "4264004fcd6e05f5d32d9f03be54575213a0c167e6be4520f9a56618dbf871dc"
+              },
+              "reviewerDisposition": {
+                "name": "root-reachable-area",
+                "independent": false,
+                "disposition": "Owner-observed nested/native/compiled/sampled results; independent original acceptance remains open."
+              }
             }
           ],
-          "missingObservation": "Independent original UI-019 acceptance and physical hotplug/AT/IME remain open.; Native/host observation-before-retirement ordering and other asynchronous observation/topology combinations remain unqualified; the held-after-read, delivered-after-reconciliation schedule is observed.; Multiple/transformed/negative-origin/smaller outputs and minimized/pinned/fullscreen/modal placement recovery remain unqualified. Existing vertical partial clipping remains unchanged.; Pending preview/capture/effect custody, protected input, Unknown reconciliation, fatal transport/backpressure and original hardware/resource/journey/package/rollback release gates remain open.",
-          "observation": "An actual validated shortcut reply was held after native read with fresh serial 10/output generation 14, then its output retired and a fresh view reconciled at identical 800x600 bounds/output generation 21. Re-delivering the unchanged reply through the original bounded writer produced visible refusal without popup/window-effect replay. The next physical shortcut opened the focused launcher. Workspace, original size and unsaved application draft survived; original output/drag/capture and same-tuple nine-surface keyboard journeys passed normal cleanup.",
+          "missingObservation": "Independent original UI-019 acceptance and physical hotplug/AT/IME remain open.; Minimized-before-area-change, pinned/fullscreen/grouped/modal families and wider scale/rotation/multiple-output placement remain unqualified. An oversized window is not fully fitted into the smaller screen; its original size is retained.; Concurrent gesture/output changes, preview/capture/effect custody, protected input, Unknown and other asynchronous/native-host ordering or transport-failure schedules remain open.; Full original hardware/resource/journey evidence, reproducible package and reversible deployment/rollback remain open.",
+          "observation": "Native smaller/negative-origin output change previously placed the application at (-360,30), outside the output. Changed usable-area/workspace placement now keeps its top-left input region reachable at (-360,-32), preserving original size108x440/workspace2 and the unsaved draft. Actual taskbar Minimize/Restore, named GTK press/client-wire release, physical keyboard editing to the retained draft and painted native pixels pass. Original output/drag/capture and same-tuple caption/MAX/snap/lifecycle and delayed-shortcut regressions pass normal cleanup.",
           "reviewerDisposition": {
-            "name": "root-shortcut-generation",
+            "name": "root-reachable-area",
             "independent": false,
-            "disposition": "Owner-observed typed/compiled/sampled and real nested native results; independent original acceptance remains open."
+            "disposition": "Owner-observed nested/native/compiled/sampled results; independent original acceptance remains open."
           }
         }
       ]
@@ -11522,5 +11548,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-10T13:56:20.997577+00:00"
+  "updatedUTC": "2026-10-10T14:14:13.906278+00:00"
 }

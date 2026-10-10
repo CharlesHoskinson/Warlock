@@ -1,0 +1,379 @@
+{
+  "schema": 1,
+  "requirement": "ELM-UI-019",
+  "ears": "WHEN an output disappears, the host SHALL recover shell controls and displaced popup focus on a declared surviving output, preserve workspace identity and reachable application recovery, and reject removed-generation effects until available outputs reconcile.",
+  "scenario": {
+    "name": "outputs-return",
+    "given": "all outputs disappear",
+    "when": "one returns",
+    "then": "controls reconcile on available output without old-generation effects"
+  },
+  "verificationScope": "Frozen threshold/policy plus independently observed named fixtures, native counters or user/AT records as applicable; hashes and failure outcomes retained.",
+  "disposition": "partial",
+  "requirementAccepted": false,
+  "fullReleaseAccepted": false,
+  "sourceParent": "cfcad95bfcece37532eaa00355adb8f16cfb250c",
+  "sourceHashes": {
+    "implementation/warlock/native/core/WorkspacePlacementController.cpp": "90e162b7bbd3f51edbe7d340ebfec9d398d2dce7170b7d62073e950b431d17a8",
+    "implementation/warlock/native/core/Space.cpp": "2c4dc3e7c6c4007b5d1d1fed185ed651d63cea1a8fc4008a13f5c90467188c6f",
+    "implementation/warlock/native/core/ReachablePlacement.hpp": "e04b43343092061efd55c525f3e3e23324656faef82ee18ed76a804afe8f12c9",
+    "implementation/warlock/qa/check-output-placement-core.py": "0820309e8cb49f5333fdccf189fe0668e4f70cbb1042ddc5fc9aae7814332887",
+    "implementation/warlock/qa/reachable-placement.qnt": "24c41fbf98e5c16c87fdc189c2d67c909da8c498638efabf8a9e78ba4d90585c",
+    "implementation/warlock/qa/reachable-placement_test.qnt": "ca0cca1da7c11c2e0a65530df401babde58d141b2038e966a0c1308e45d961eb",
+    "implementation/warlock/qa/check-reachable-placement.py": "1083ffe609db8a25cf7c7c662585849b028d10a5d1ec5db7ecb69b8867b1e4ab",
+    "implementation/warlock/qa/native-window-area-recovery.py": "65a85f70ed1c417fff7960a24dd6c3bc538bd07eeadc3bd9a6933bedac5da692",
+    "implementation/warlock/qa/current-scene-core.json": "8b0d7a11e56a11a7419e2cd26199401a5acd8d9da188fe0760ebc66d9b5f53b2",
+    "implementation/warlock/qa/current-native-pair.json": "25273a0682d4a4ffc05f17f80800ded64904f61538e713b8f535c329e7ef1521",
+    "implementation/warlock/qa/native-window-feedback.py": "f97545242ce54629990a20f1f6b41ded3af0bc65653a0d2c1449910c87440cdf",
+    "implementation/warlock/qa/check-native-authority.py": "487e6c3e21b4b7c8666977cac34e2a3495fb0bd42438aedc723df6de36bc8b79",
+    "implementation/warlock/README.md": "4264004fcd6e05f5d32d9f03be54575213a0c167e6be4520f9a56618dbf871dc"
+  },
+  "originalRequirements": {
+    "path": "docs/elm-roadmap/requirements.json",
+    "sha256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b"
+  },
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791641218119586632/Hyprland",
+      "sha256": "8270e6ddce040e2d02a76d2573db1a6cea43b6dd352faed2d4afda5ecc3e5c83"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791640237225188593/elm-window-geometry-authority.so",
+      "sha256": "1c95964d7b91640dfc586871c28512e320d4af6aeec3434c3c6b9ec20610ba72"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+      "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791640275755675047/elm-host",
+    "sha256": "806aa4bcd44f0b67b6e58db7d1e41da41f1956692ff14001d5f19a5b005cecf7",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791640275755675047/report.json",
+    "heldBuildSHA256": "dea548c1c537be76e4796d505f6c58ea2af0b26e5cff4917d25011c116ef0d21"
+  },
+  "artifacts": {
+    "native-before": {
+      "path": "implementation/warlock/qa/runs/native-drag-ownership-1791641024126815430/report.json",
+      "sha256": "89c36bc1e14758a37545e507e8eabe7dc401871363c7ad46806ef681e599f5eb",
+      "packet": "native-before.json.gz",
+      "packetSHA256": "f9dee82b2b1732dcd1ab596c405b4ca9c70a83d7183a3d97af027a9301014ca6",
+      "encoding": "gzip",
+      "passed": false
+    },
+    "probe-active-taskbar": {
+      "path": "implementation/warlock/qa/runs/native-drag-ownership-1791641271269475610/report.json",
+      "sha256": "807a48aa30f8df8ee31e0aca2d90857bcaa87746cb73b4eaa3c3a9ff8ff90abe",
+      "packet": "probe-active-taskbar.json.gz",
+      "packetSHA256": "793590c86f2e4a392e379774f8f67ffdf1d738b625ac25a6185eaaced37f1389",
+      "encoding": "gzip",
+      "passed": false
+    },
+    "probe-input-wrapper": {
+      "path": "implementation/warlock/qa/runs/native-drag-ownership-1791641343174763385/report.json",
+      "sha256": "279aee8ff6f49196ed5d9cd79512d60e22a4e3b88fd9cdc7512096a1ebfb6c66",
+      "packet": "probe-input-wrapper.json.gz",
+      "packetSHA256": "f2845f39d6e2a13e292fa7b3f65e1261e9c92267692aa6e4575df703b045545e",
+      "encoding": "gzip",
+      "passed": false
+    },
+    "native-after": {
+      "path": "implementation/warlock/qa/runs/native-drag-ownership-1791641399693716226/report.json",
+      "sha256": "6c492df31121c90b7b87c7792aaf3a2710cd201873ecebe12b36d59b89bdf66e",
+      "packet": "native-after.json.gz",
+      "packetSHA256": "3dce79e6a22c9f0519c1c389833453142dba0ffe83f26620c0cec4e8a4ab05e6",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "caption-regression": {
+      "path": "implementation/warlock/qa/runs/native-caption-restoration-1791641449319138314/report.json",
+      "sha256": "3222d9eed18ace372bb223e03e989a399d5ffd91a918f52d99044cd1b76b7374",
+      "packet": "caption-regression.json.gz",
+      "packetSHA256": "6460bdbc9b70e2a2724bfa4afdfe5856fea132e0c194112a964b76a0e753c205",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "shortcut-regression": {
+      "path": "implementation/warlock/qa/runs/native-drag-ownership-1791641490657620540/report.json",
+      "sha256": "9855f282024ecc0726621bd6861c1af98116b0e3b52fe29890b115b23b21932c",
+      "packet": "shortcut-regression.json.gz",
+      "packetSHA256": "d087effc0f65d15171e3dfc0a4418952a88a6c39950c5a25812056b3e411645c",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "core-build": {
+      "path": "implementation/warlock/qa/runs/output-placement-core-1791641218119586632/report.json",
+      "sha256": "4e2e094b6c51a5d5944e6170828e8dfa8c2be7b655d1131a50cb99e9ec63e232",
+      "packet": "core-build.json.gz",
+      "packetSHA256": "75c387601bd048cde53177a15948d7f00e99c92cfe19a1b672ba3815eba3ab77",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "model-init": {
+      "path": "implementation/warlock/qa/runs/reachable-placement-1791641131519793937/report.json",
+      "sha256": "97a5f44851d20f390408c721f804d4805e68b4e15ddefbf1e4c8a9faa3174949",
+      "packet": "model-init.json.gz",
+      "packetSHA256": "14c16ae9ddd07269aabb0cb2082af689fd0c0c9823f9341a3d6be0db5fc86ea7",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "model-final": {
+      "path": "implementation/warlock/qa/runs/reachable-placement-1791641220302329120/report.json",
+      "sha256": "2aeefebd5539b31875eb43f8523494598d43350c1ae61aecde95f85753d1ce30",
+      "packet": "model-final.json.gz",
+      "packetSHA256": "fa1730dcde0fc48405ef2f04865b006f262b2c9832e692ecc033725bf02a59ca",
+      "encoding": "gzip",
+      "passed": true
+    }
+  },
+  "logs": {
+    "native-before-warlock.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791641024126889003/warlock.log",
+      "originalSHA256": "c9f815e068524e75a0eee5ccc6f9c719f7a203cc748225824dbad7004f644d7d",
+      "sha256": "d89a8d0abeb023f5f7df0abd3682bc0aaa45fd9ecb5d0776fd13f8aabd04104a"
+    },
+    "native-before-fixture.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791641024126889003/fixture.log",
+      "originalSHA256": "dd50e23051420715221960866162bc971cb43d751ddbd204f48a05d5b1bb02fd",
+      "sha256": "57432513262dccbd6e778e338ad152c39999918f003e092d3a8e888724ecbc3b"
+    },
+    "native-before-fixture-control.events.jsonl.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791641024126889003/fixture-control.events.jsonl",
+      "originalSHA256": "b49a20ced957adb33f2a511734c24a4d16e6241b335a669ba4d560159b2ede4d",
+      "sha256": "875336afb0db04ab2641c09034988de7302d5fcc8a34391d7bc78f435201139c"
+    },
+    "native-before-host-evidence.json.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791641024126889003/host-evidence.json",
+      "originalSHA256": "00ac6837a64c24aa98321049c3c5d9fa8d1d5218ac2177e8cc69b409eb61571e",
+      "sha256": "1561a322b8ec7bc119752d04b99f34cca5c74c3c3c83b8ea28ddabc9b5cdc89e"
+    },
+    "native-after-warlock.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791641399693809102/warlock.log",
+      "originalSHA256": "2f7f7f673a342e1f3d7529ca5237b5d95cae7b32072cec8f96c39e5f810bc02c",
+      "sha256": "39a1e347a6ad512a21b8c350144a0238a69c9d3aeb61b4e319b4ad5ad787994b"
+    },
+    "native-after-fixture.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791641399693809102/fixture.log",
+      "originalSHA256": "7b31b0762f3f700282c335bed2e4549634aa4eab887438ac0aa8a5106ac69d9f",
+      "sha256": "4efd96fa5e3785deffc7d527c2f86af75cb13e0e31387265655ccfb11aa90ed2"
+    },
+    "native-after-fixture-control.events.jsonl.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791641399693809102/fixture-control.events.jsonl",
+      "originalSHA256": "c8a3a7cd25c4066f433b138fa9f4928cb87f4f39da88bc8492ba23c1edc86d3b",
+      "sha256": "e96fb812b95a65645c2a2966706da8b4b64d3c05a9dc36399222337c2b43da2d"
+    },
+    "native-after-host-evidence.json.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791641399693809102/host-evidence.json",
+      "originalSHA256": "8e3bb37e64885c382338b99955e5f694e376a0a9f2c9fad117fe3671758b7d59",
+      "sha256": "2572860f6ce0d0ce4aad8ce762bb53a8e92d8eabeea6cd83b1ec965a0a91bcf6"
+    },
+    "probe-active-taskbar-warlock.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791641271269610585/warlock.log",
+      "originalSHA256": "b3c639e51346adc554674f24cfae4fd23f831d8ad76a23c1df18d7adf49bca25",
+      "sha256": "15a6b1ad61b73aa70bce0a724d53eba27cd3b1ae244d186167777b5b6a8bb74f"
+    },
+    "probe-active-taskbar-fixture.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791641271269610585/fixture.log",
+      "originalSHA256": "8d4e8f7da5e2c71e7f6d86b6698f6c3de8a04debf6e91ed216e7e5ae22248181",
+      "sha256": "ae85751bdb97c633a55be6c5968c39105576bf3b4a4749fb06758dde66c610f7"
+    },
+    "probe-active-taskbar-fixture-control.events.jsonl.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791641271269610585/fixture-control.events.jsonl",
+      "originalSHA256": "c25634f70dece7be703776bbed1b77d41a136d12314b72e1bcfb64ccd683379d",
+      "sha256": "95d3baed21abdcbec8bc7a58f075e1daf382e8de57bd19da5b6f981596d934a8"
+    },
+    "probe-active-taskbar-host-evidence.json.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791641271269610585/host-evidence.json",
+      "originalSHA256": "5c1f27599bbd5c103b54cf8b941e4afe7dd5db695ccdd6eaeb018c1cfb3ae6a5",
+      "sha256": "9b347083073224a9c2e5d07400b82d1be8a015b08172e991dc3c8d6706cee9e5"
+    },
+    "probe-input-wrapper-warlock.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791641343174873220/warlock.log",
+      "originalSHA256": "f28f7c30153ebcaf9565d486499399b423ed8900fa9988cbe62ea169e050641f",
+      "sha256": "147ac6bcf475bd6b2436382e9410fa32bc7f3a3110971117050eda0d38a29626"
+    },
+    "probe-input-wrapper-fixture.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791641343174873220/fixture.log",
+      "originalSHA256": "d587804e839cdd668b95d4cad98ae8b754decb1e7bfb05ef4bba2138563436d8",
+      "sha256": "75da54852ef7adf5694e2a6d503358cd2fc882ab61d2e7f133230506a96855a8"
+    },
+    "probe-input-wrapper-fixture-control.events.jsonl.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791641343174873220/fixture-control.events.jsonl",
+      "originalSHA256": "c25634f70dece7be703776bbed1b77d41a136d12314b72e1bcfb64ccd683379d",
+      "sha256": "95d3baed21abdcbec8bc7a58f075e1daf382e8de57bd19da5b6f981596d934a8"
+    },
+    "probe-input-wrapper-host-evidence.json.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791641343174873220/host-evidence.json",
+      "originalSHA256": "d136231fff33f2cbc1384fe410aa6743ad40e91ba906cc345c138abf8e3f78e3",
+      "sha256": "3ae27c3b17ecd72275cb9abc06aa8217f5fb30c98a5b561e545377d0a2e70aee"
+    },
+    "probe-input-wrapper-feedback-helper-8.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791641343174873220/feedback-helper-8.log",
+      "originalSHA256": "9cd1f9655434313843b85822d8af1929bcaf91241a81fdbaf2feef6ea8a88958",
+      "sha256": "939e32fd27eab7c1a34823b61b9981a514259557177ab3e91cb6b9dbcf7a4c77"
+    },
+    "probe-input-wrapper-feedback-helper-8.input.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791641343174873220/feedback-helper-8.input",
+      "originalSHA256": "e180494977fbf7d0afe1b932f057d87f3f8030b08a34ae86d9a6363087f24914",
+      "sha256": "46069bec3dbf7d0313dcb39a44bf9d93c7e8e21636a89ea5a89012b317d10c37"
+    },
+    "caption-regression-warlock.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791641449319232214/warlock.log",
+      "originalSHA256": "15314dc19610ea6480f567d6b6fc42091ead4345c0c6d5ac628a38fcf069069f",
+      "sha256": "6caba668fd287ead390694b344365dc64a42cd082eee4e8cc4c92ea027c79ce5"
+    },
+    "caption-regression-fixture.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791641449319232214/fixture.log",
+      "originalSHA256": "7f27e422b0b31874ff6ce9c40ee62a2bb6487e1645ba5f8729e4c9816cd90323",
+      "sha256": "d221669f00ae8442a7163d44f9d5eec360ae3adbd2108f42de41d48e3bea5bed"
+    },
+    "caption-regression-fixture-control.events.jsonl.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791641449319232214/fixture-control.events.jsonl",
+      "originalSHA256": "acbadba74f3c11186c45692a683ff9b0fa9f0991a2e3fbbaec86f0cd220ad9ad",
+      "sha256": "474e9b3ee5936bdbf6f36fe30714789f828c1129395052c2e589ed55b7c26ddd"
+    },
+    "caption-regression-host-evidence.json.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791641449319232214/host-evidence.json",
+      "originalSHA256": "8f59c85c1f76c4a76716bc3e587b87a79b975305f3c8fb6a1678f16e96560bb0",
+      "sha256": "45d32300c21669c1b0c25803029a881dfbbfbebbaf5e26248126b0270814b16a"
+    },
+    "shortcut-regression-warlock.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791641490657751400/warlock.log",
+      "originalSHA256": "fb7ac01a808416503229736f014e41359b25d244bb95648bf720db30ce915001",
+      "sha256": "aa087d7b3310345c5acd46f8bc8935cd08bdf8f1d2887649cd8269caae708ac2"
+    },
+    "shortcut-regression-fixture.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791641490657751400/fixture.log",
+      "originalSHA256": "76c35a1eac9dd2e480a6d3513a2baed1e8ca6c0ccbd8c6ebbd16265e98bfcc8a",
+      "sha256": "3fe67cea4738d7880210866a169e9e04b2bd8409024c08ec9ffd9298c5e43838"
+    },
+    "shortcut-regression-fixture-control.events.jsonl.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791641490657751400/fixture-control.events.jsonl",
+      "originalSHA256": "c25634f70dece7be703776bbed1b77d41a136d12314b72e1bcfb64ccd683379d",
+      "sha256": "95d3baed21abdcbec8bc7a58f075e1daf382e8de57bd19da5b6f981596d934a8"
+    },
+    "shortcut-regression-host-evidence.json.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791641490657751400/host-evidence.json",
+      "originalSHA256": "340c05f55bf3ad3edd793de62faf20f0be817e57e2247ea676212158f1e1a351",
+      "sha256": "743bbd393708c2629dd9e045e142b089082703f16fc0ee3a8196c08dfb7ca412"
+    },
+    "model-typecheck.stdout.gz": {
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/reachable-placement-1791641220302329120/typecheck.stdout",
+      "originalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+    },
+    "model-init.stdout.gz": {
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/reachable-placement-1791641220302329120/init.stdout",
+      "originalSHA256": "b97dee0bc75c7e6b9342a8e8afd77fbd58379a91e62e7c1fea8538a1661103b4",
+      "sha256": "071a9fa04f01b00a17ec6790fc78a6546326bef4db67c495d10a26e7eaf98f6b"
+    },
+    "model-named.stdout.gz": {
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/reachable-placement-1791641220302329120/named.stdout",
+      "originalSHA256": "424e15367e196089aa1296268c8abd385110fa79c58237c0929a2f1032692bee",
+      "sha256": "6dd6f9c959d08f5f329be58def292914434925311e061fb2ad59eeb7a4687a1d"
+    },
+    "model-witnesses.stdout.gz": {
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/reachable-placement-1791641220302329120/witnesses.stdout",
+      "originalSHA256": "07e99c6e4f6cd7b8fde83d2e19facc959ecbe8139221f0b7640de73dcc637273",
+      "sha256": "f657246f3d3ba7475e10bd32f1b341b9e944b0a565bf4e686d6d2ac616c88964"
+    },
+    "model-safety.stdout.gz": {
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/reachable-placement-1791641220302329120/safety.stdout",
+      "originalSHA256": "ff4862901be1c8858c7711e4318f5a681ff290e0d16c22204e136b4426a455fb",
+      "sha256": "66237cf8f709bbe387be4391de2d13a784f4e79d8e939a41042cb64485a9b825"
+    },
+    "model-helper-compile.stdout.gz": {
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/reachable-placement-1791641220302329120/helper-compile.stdout",
+      "originalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+    },
+    "model-helper-tests.stdout.gz": {
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/reachable-placement-1791641220302329120/helper-tests.stdout",
+      "originalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+    }
+  },
+  "reviewerDisposition": {
+    "name": "root-reachable-area",
+    "independent": false,
+    "disposition": "Owner-observed nested/native/compiled/sampled results; independent original acceptance remains open."
+  },
+  "image": {
+    "path": "smaller-output-application.png",
+    "sha256": "992b55568073a4eba2ae87a8ec6b14d5c442788c87a822fccf41312f28f6d38f",
+    "native": {
+      "address": "0x561de759f3b0",
+      "mapped": true,
+      "hidden": false,
+      "visible": true,
+      "acceptsInput": true,
+      "at": [
+        -360,
+        -32
+      ],
+      "size": [
+        108,
+        440
+      ],
+      "workspace": {
+        "id": 2,
+        "name": "2"
+      },
+      "floating": true,
+      "monitor": 1,
+      "class": "GTK Application",
+      "title": "ELM-AUTHORITY-FIXTURE",
+      "initialClass": "GTK Application",
+      "initialTitle": "ELM-AUTHORITY-FIXTURE",
+      "pid": 2890495,
+      "xwayland": false,
+      "pinned": false,
+      "pinFullscreened": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default",
+      "allowedOverFullscreen": true,
+      "grouped": [],
+      "tags": [],
+      "swallowing": "0x0",
+      "focusHistoryID": 0,
+      "inhibitingIdle": false,
+      "xdgTag": "",
+      "xdgDescription": "",
+      "contentType": "none",
+      "tearingHint": false,
+      "stableId": "18000000"
+    },
+    "redPixels": 771,
+    "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791641399693809102/smaller-output-application.png"
+  },
+  "observation": "Native smaller/negative-origin output change previously placed the application at (-360,30), outside the output. Changed usable-area/workspace placement now keeps its top-left input region reachable at (-360,-32), preserving original size108x440/workspace2 and the unsaved draft. Actual taskbar Minimize/Restore, named GTK press/client-wire release, physical keyboard editing to the retained draft and painted native pixels pass. Original output/drag/capture and same-tuple caption/MAX/snap/lifecycle and delayed-shortcut regressions pass normal cleanup.",
+  "modelScope": "Integer logical usable boxes and atomic owner-thread placement; eight named cases retain offscreen relative-translation counterexample, reachable unchanged placement, recovery/roundtrip/idempotence, tiny/nonexistent area and unchanged-area manual positioning. The illustrative model includes 12px floating gaps; the native fixture uses zero gaps, so its recovered y is -32 rather than illustrative -44. Compiled helper checks validate the actual implementation across extents/negative/fractional coordinates; sampled safety/witnesses are not hardware/full-window-fit/fairness/AT acceptance.",
+  "sourceBoundary": "Only mapped, visible ordinary floating TARGET_TYPE_WINDOW targets recover. Hidden/minimized, pinned, fullscreen and grouped paths remain unchanged. Space recovers only when its floating usable area changes and target native monitor matches the space; workspace transfer separately clamps after its original translation/orphan placement. Size, workspace, native focus/effect authority and unchanged-area manual placement are preserved.",
+  "coreBoundary": {
+    "rebuiltUnits": [
+      "WorkspacePlacementController.cpp",
+      "Space.cpp"
+    ],
+    "unchangedArchiveMembers": 431,
+    "publicHeadersUnchanged": true,
+    "objectLayoutsUnchanged": true,
+    "strongExportsPreserved": true,
+    "unchangedPluginAndAssets": true
+  },
+  "missingObservations": [
+    "Independent original UI-019 acceptance and physical hotplug/AT/IME remain open.",
+    "Minimized-before-area-change, pinned/fullscreen/grouped/modal families and wider scale/rotation/multiple-output placement remain unqualified. An oversized window is not fully fitted into the smaller screen; its original size is retained.",
+    "Concurrent gesture/output changes, preview/capture/effect custody, protected input, Unknown and other asynchronous/native-host ordering or transport-failure schedules remain open.",
+    "Full original hardware/resource/journey evidence, reproducible package and reversible deployment/rollback remain open."
+  ],
+  "probeCorrections": [
+    "The active taskbar entry remained correctly labelled Minimize after the natural Apps/Escape journey; the fixture now performs one real Minimize and one Restore instead of waiting for inactive Activate.",
+    "The protected helper already seals input_text and invokes input_helper.py. A redundant nested wrapper attempted to open a missing file; the final fixture supplies only the virtual pointer command at the real400x200 extent. Original deadlines and normal cleanup remain unchanged."
+  ],
+  "modelConstructionFailure": {
+    "path": "implementation/warlock/qa/runs/reachable-placement-1791641122701385648/report.json",
+    "sha256": "d081565e9d0b84b8fb2f108ee7c56991f7c438a5b10aab6246d66795eec80a3b",
+    "reason": "Reserved built-in parameter name size; renamed before production implementation."
+  }
+}

@@ -1,0 +1,11 @@
+# Reachable application area after output changes
+
+UI-019 / outputs-return remains **partial**. [Manifest](manifest.json) preserves the original EARS/oracle, exact tuple, native failure and probe corrections, model abstraction, source boundaries and missing observations. [Native image](smaller-output-application.png) shows the preserved application entry and edited draft on the smaller output.
+
+After the original all-output/return/drag/capture/application-input journey, the real monitor changes to 400×200 at (-400,-200). Relative translation alone left the application at (-360,30), below the screen. Native workspace transfer and changed floating usable-area handling now recover a first up-to-32-pixel input region inside the area available after shell reservations and floating gaps. The observed application returns to (-360,-32), preserving 108×440 size, workspace2 and unsaved text. It is not resized to fit the whole client.
+
+Actual taskbar Minimize and Restore each issue one native intent. The recovered entry receives named GTK press, stable native client-wire release and physical keyboard editing; its retained draft gains b after the earlier a. Actual red application pixels paint on the 400×200 output. The original output/drag/capture journey, unchanged caption/MAX/snap/lifecycle and delayed-shortcut regression pass the same core/plugin/host/transport tuple with normal cleanup. The active-taskbar and redundant-input-wrapper probe failures remain retained; neither changes product behavior or deadlines.
+
+quint-llm-kit grounds usable-area recovery with initialization, eight named cases, positive witnesses, sampled safety and compiled helper checks. The illustrative integer model includes 12px floating gaps; the actual fixture has zero gaps. Only two native TUs rebuild;431 archive members, existing public headers/layouts/strong exports, plugin and Elm/GTK assets remain unchanged. Ordinary unchanged-area rechecks leave deliberate manual placement alone.
+
+Minimized-before-output-change, pinned/fullscreen/grouped/modal families, wider scale/rotation/multiple outputs, concurrent gesture/custody/Unknown, physical hotplug/AT/IME, independent original acceptance and complete release/package/rollback gates remain open.

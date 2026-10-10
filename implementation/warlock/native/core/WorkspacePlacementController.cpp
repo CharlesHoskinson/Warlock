@@ -1,5 +1,6 @@
 #include "WorkspacePlacementController.hpp"
 #include "OrphanedPlacement.hpp"
+#include "ReachablePlacement.hpp"
 
 #include "MonitorState.hpp"
 #include "WorkspaceState.hpp"
@@ -320,6 +321,15 @@ void CWorkspacePlacementController::moveWorkspaceToMonitor(PHLWORKSPACE pWorkspa
                                  WarlockPlacement::orphanedCoordinate(w->position(Desktop::View::IGeometric::GEOMETRIC_GOAL).y, pMonitor->m_position.y, pMonitor->m_size.y),
                              },
                              w->layoutTarget()->position().size()});
+
+                if (w->m_isFloating && !Fullscreen::controller()->isFullscreen(w) && w->layoutTarget()->type() == Layout::TARGET_TYPE_WINDOW) {
+                    const auto area = pWorkspace->m_space->workArea(true);
+                    const auto box = w->layoutTarget()->position();
+                    const Vector2D recovered = {WarlockPlacement::reachableCoordinate(box.x, area.x, area.w, box.w),
+                                                WarlockPlacement::reachableCoordinate(box.y, area.y, area.h, box.h)};
+                    if (recovered != box.pos())
+                        w->layoutTarget()->setPositionGlobal(CBox{recovered, box.size()});
+                }
             }
 
             w->updateToplevel();

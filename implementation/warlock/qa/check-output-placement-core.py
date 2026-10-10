@@ -1,4 +1,4 @@
-"""Protected one-TU orphan workspace placement on the exact current owning core."""
+"""Protected two-TU orphan/usable-area workspace placement on the exact current owning core."""
 import hashlib,importlib.util,json,pathlib,resource,shlex,shutil,subprocess,sys,time
 sys.path.insert(0,'/home/hoskinson/window-integration-qa')
 from qa_launch import require_qa_scope
@@ -25,11 +25,12 @@ def dependencies(path):
 try:
  assert prior['passed'] and sha(previous)==pointer['reportSHA256'] and sha(prior['binary'])==prior['binarySHA256'] and sha(PRIOR/'libhyprland_lib.a')==prior['archiveSHA256']
  for p,h in {**prior['dependencies'],**prior['linkDependencies']}.items():assert sha(p)==h,p
- units=['src/state/WorkspacePlacementController.cpp']
- changed_paths={'native/core/WorkspacePlacementController.cpp','native/core/OrphanedPlacement.hpp'}
+ units=['src/state/WorkspacePlacementController.cpp','src/layout/space/Space.cpp']
+ changed_paths={'native/core/WorkspacePlacementController.cpp','native/core/Space.cpp','native/core/ReachablePlacement.hpp'}
  for p,h in prior['sourceHashes'].items():
   if p not in changed_paths:assert sha(ROOT/p)==h,p
  model=json.loads(run('output-placement-model',['/usr/bin/python3','-B',ROOT/'qa/check-output-placement.py'],REPO));assert model['passed'];r['placementModel']=model
+ reachable=json.loads(run('reachable-placement-model',['/usr/bin/python3','-B',ROOT/'qa/check-reachable-placement.py'],REPO));assert reachable['passed'];r['reachableModel']=reachable
  tree=OUT/'owning-headers';shutil.copytree(PRIOR/'owning-headers',tree)
  for rel,h in prior['owningHeaders'].items():assert sha(tree/rel)==h
  maximum=json.loads((ROOT/'qa/current-max-core.json').read_text());max_path=REPO/maximum['report'];assert sha(max_path)==maximum['reportSHA256'];max_record=json.loads(max_path.read_text());assert max_record['passed']
@@ -38,7 +39,8 @@ try:
  originals=archive.archive_payloads(PRIOR/'libhyprland_lib.a');assert len(originals)==433
  entries=json.loads((OWNER/'build/compile_commands.json').read_text());source_hashes={**prior['sourceHashes']};deps={};replacements={};baseline_sources={}
  target=OUT/'libhyprland_lib.a';shutil.copyfile(PRIOR/'libhyprland_lib.a',target)
- private=['OrphanedPlacement.hpp']
+ private=['OrphanedPlacement.hpp','ReachablePlacement.hpp']
+ source_hashes['native/core/ReachablePlacement.hpp']=sha(ROOT/'native/core/ReachablePlacement.hpp')
  source_hashes['native/core/OrphanedPlacement.hpp']=sha(ROOT/'native/core/OrphanedPlacement.hpp')
  for rel in units:
   unit=pathlib.Path(rel).name;source=ROOT/'native/core'/unit;source_hashes['native/core/'+unit]=sha(source)
