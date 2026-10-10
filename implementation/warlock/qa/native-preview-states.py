@@ -27,7 +27,7 @@ branch=r'''   elif FOCUS:
      return next((row for row in reversed(bodies()) if current and row['publication']==current['publication']),None)
     def live_rows():
      row=body()
-     return row if row and len(row.get('previews',[]))==2 and any(p['state']=='live' and p['image'] and p['image']['complete'] and p['image']['naturalWidth']>0 for p in row['previews']) and all(p['state'] in ['live','unavailable'] for p in row['previews']) else None
+     return row if row and len(row.get('previews',[]))==2 and any(p['state']=='live' and p['image'] and p['image']['complete'] and p['image']['naturalWidth']>0 for p in row['previews']) and all(p['state']=='unavailable' or (p['state']=='live' and p['image'] and p['image']['complete'] and p['image']['naturalWidth']>0) for p in row['previews']) else None
     live=wait(live_rows)
     check('OrdinaryAuthorizedNativeImageLoadsWithBoundedFallback',True,body=live)
     packets=[json.loads(line.split(': ',1)[1]) for line in text().splitlines() if line.startswith('picker-preview-events: ')]
@@ -89,6 +89,7 @@ branch=r'''   elif FOCUS:
      def renewed_row():
       current=body()
       if not current or not any(row['state']=='live' and row['image'] and row['image']['complete'] and row['image']['naturalWidth']>0 and row['image']['uri']!=old_handle for row in current['previews']):return None
+      if any(row['image'] and (not row['image']['complete'] or row['image']['naturalWidth']<=0) for row in current['previews']):return None
       own=next((row for row in current['previews'] if row['identity']==primary),None)
       return current if own and ((own['state']=='unavailable' and own['image'] is None and 'Preview unavailable' in own['text']) or (own['state']=='live' and own['image'] and own['image']['complete'] and own['image']['uri']!=old_handle)) else None
      renewed=wait(renewed_row)

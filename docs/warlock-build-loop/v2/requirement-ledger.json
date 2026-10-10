@@ -7852,9 +7852,32 @@
                 "implementation/warlock/README.md": "fff301292f4a6bfb822d24e35e0d690f0d1acc4a9301494140c258064f0acbff"
               },
               "reviewerDisposition": "Independent original-scenario acceptance remains open."
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/picker-reopen-cleanup/manifest.json",
+              "sha256": "2998d27d6fea612a082b90ec7f39da44355c2f3a6ffcc9770043088cbfd01124",
+              "scope": "Existing current native quiescence/reopen journey passes all 41 original and fixture checks, exact request/context advancement and no expired-frame borrowing or repeated effect, one-second dormant picker counters and both normal owned client exits. Observation predicates now wait for all displayed images under unchanged original deadlines. No new production behavior.",
+              "sourceBaseRevision": "03b23397d4ae23ef4918bf9770de40f77ec88981",
+              "sourceHashes": {
+                "implementation/warlock/native/shared-host.c": "b61f7e79da12693a4d30693309fe5dd2147f5760246052d230efed30fdd7d844",
+                "implementation/warlock/native/picker-previews.inc": "8e0799d2a56b08e7bee8c64fe098168ac2f1f4f3ab8a4b53e9e1363fa0cdcca3",
+                "implementation/warlock/native/family_producer.hpp": "65fe1aa8956081084117bdc27d2b7dc624a62cd44ff42fc7a037d5e6bd80794d",
+                "implementation/warlock/qa/native-preview-states.py": "3120a1e2f8239ebf20fb8fa1a52ccc415c5fba8ec7b3c5782971e6826f0f18aa",
+                "implementation/warlock/qa/check-search.py": "1f38480921e82d4141ec12027b821ec06f22e44a75285c6c8f0b6732086c7735",
+                "implementation/warlock/qa/current-search-build.json": "a5c18d8d53951cccbe75286c1cb5c25d8f2ee6776ed2edc32fb06fc3190c0a56",
+                "implementation/warlock/assets/elm.js": "5056dab9023368ce4e022dc4146eceeb7dd5217d57217242038413919e1485a6",
+                "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+                "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
+                "implementation/warlock/README.md": "ea0d68f28aa5f1721b15bd225816671034c3ae49eaac130b4ee0fca157507ed6"
+              },
+              "reviewerDisposition": {
+                "name": "root-picker-reopen",
+                "independent": false,
+                "disposition": "partial"
+              }
             }
           ],
-          "missingObservation": "Frozen numeric quiescence interval/policy and qualified whole-process power/wakeup/resource soak are not established. One second of unchanged picker counters is bounded evidence only.; Dormancy is observed after original frame expiry/cleanup; authorized Historical storage is observed across close/reopen, but no fully dormant retained-storage interval is established.; The extended reopened journey fails normal owned client exit with outstanding picker custody/journal. Original bounded cleanup is not qualified. Both failed native reports are retained.; Unknown reserved-custody cases, broader capacity/fairness, native AT and independent original-scenario/requirement acceptance remain open."
+          "missingObservation": "Current reopened original journey and both normal owned client exits now pass. Frozen numeric quiescence interval and qualified whole-process power/wakeup/resource soak remain unestablished; the one-second unchanged picker counters are bounded evidence only. Authorized Historical storage is observed across close/reopen, but fully dormant retained-storage timing is not established. Unknown reserved-custody cases, broader capacity/fairness, actual native AT and independent original-scenario/requirement acceptance remain open. Earlier failures remain frozen."
         },
         {
           "name": "reopen",
@@ -7887,9 +7910,32 @@
                 "implementation/warlock/README.md": "fff301292f4a6bfb822d24e35e0d690f0d1acc4a9301494140c258064f0acbff"
               },
               "reviewerDisposition": "Independent original-scenario acceptance remains open."
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/picker-reopen-cleanup/manifest.json",
+              "sha256": "2998d27d6fea612a082b90ec7f39da44355c2f3a6ffcc9770043088cbfd01124",
+              "scope": "Existing current native quiescence/reopen journey passes all 41 original and fixture checks, exact request/context advancement and no expired-frame borrowing or repeated effect, one-second dormant picker counters and both normal owned client exits. Observation predicates now wait for all displayed images under unchanged original deadlines. No new production behavior.",
+              "sourceBaseRevision": "03b23397d4ae23ef4918bf9770de40f77ec88981",
+              "sourceHashes": {
+                "implementation/warlock/native/shared-host.c": "b61f7e79da12693a4d30693309fe5dd2147f5760246052d230efed30fdd7d844",
+                "implementation/warlock/native/picker-previews.inc": "8e0799d2a56b08e7bee8c64fe098168ac2f1f4f3ab8a4b53e9e1363fa0cdcca3",
+                "implementation/warlock/native/family_producer.hpp": "65fe1aa8956081084117bdc27d2b7dc624a62cd44ff42fc7a037d5e6bd80794d",
+                "implementation/warlock/qa/native-preview-states.py": "3120a1e2f8239ebf20fb8fa1a52ccc415c5fba8ec7b3c5782971e6826f0f18aa",
+                "implementation/warlock/qa/check-search.py": "1f38480921e82d4141ec12027b821ec06f22e44a75285c6c8f0b6732086c7735",
+                "implementation/warlock/qa/current-search-build.json": "a5c18d8d53951cccbe75286c1cb5c25d8f2ee6776ed2edc32fb06fc3190c0a56",
+                "implementation/warlock/assets/elm.js": "5056dab9023368ce4e022dc4146eceeb7dd5217d57217242038413919e1485a6",
+                "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+                "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
+                "implementation/warlock/README.md": "ea0d68f28aa5f1721b15bd225816671034c3ae49eaac130b4ee0fca157507ed6"
+              },
+              "reviewerDisposition": {
+                "name": "root-picker-reopen",
+                "independent": false,
+                "disposition": "partial"
+              }
             }
           ],
-          "missingObservation": "Frozen numeric quiescence interval/policy and qualified whole-process power/wakeup/resource soak are not established. One second of unchanged picker counters is bounded evidence only.; Dormancy is observed after original frame expiry/cleanup; authorized Historical storage is observed across close/reopen, but no fully dormant retained-storage interval is established.; The extended reopened journey fails normal owned client exit with outstanding picker custody/journal. Original bounded cleanup is not qualified. Both failed native reports are retained.; Unknown reserved-custody cases, broader capacity/fairness, native AT and independent original-scenario/requirement acceptance remain open."
+          "missingObservation": "Current reopened original journey and both normal owned client exits now pass. Frozen numeric quiescence interval and qualified whole-process power/wakeup/resource soak remain unestablished; the one-second unchanged picker counters are bounded evidence only. Authorized Historical storage is observed across close/reopen, but fully dormant retained-storage timing is not established. Unknown reserved-custody cases, broader capacity/fairness, actual native AT and independent original-scenario/requirement acceptance remain open. Earlier failures remain frozen."
         },
         {
           "name": "quiescence-soak",
@@ -12017,5 +12063,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-10T21:14:32.685832+00:00"
+  "updatedUTC": "2026-10-10T21:22:36.599664+00:00"
 }
