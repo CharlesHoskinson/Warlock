@@ -147,3 +147,11 @@ Pinned applications now preserve workspace2, size108x440, pin state and the unsa
 A native floating pin follows its preserved workspace when its output retires; moving a workspace from a live output keeps the existing pin behavior. Recovering the pin through the taskbar may explicitly select its preserved workspace on the same output before focus. Another focus output still refuses to avoid implicit membership transfer. Existing membership, recipient, output-generation and Unknown/no-replay guards remain in the admitted effect path.
 
 UI-019 remains partial. Hardware/AT/IME and independent acceptance, fuller transformed/fullscreen/group/modal/custody journeys, the separately observed taskbar activity-cue issue and release/package/rollback gates remain open. Sampled/named models and native evidence are distinct.
+
+## Taskbar activity after output retirement — October 10
+
+After real output removal/replacement, an invisible workspace member now offers Activate/Open rather than Minimize/Active. Actual taskbar Activate, Minimize and Restore each commit once, with native frames showing 27,048 red application pixels after activation/restoration and zero after minimize. Workspace2, size108x440 and the unsaved draft survive; actual client pointer and physical keyboard editing pass. The unchanged keyboard primary journey passes MRU/desktop succession, and pinned retirement/return plus cross-output/live-owner guards pass the same tuple. See [the exact observation packet](../implementation/warlock/qa/evidence/taskbar-output-focus/README.md).
+
+The Active cue refers to an eligible visible desktop family. A bar or popup holding keyboard custody keeps that family active; an invisible member remains available for explicit activation. The existing adapter filters only the action projection's focus from coherent native facts. It does not change raw native focus, window membership, effect admission or replay policy.
+
+UI-004 remains partial: applicable native AT and independent acceptance are still required. Sampled Quint/model results remain separate from actual native observations and release acceptance.

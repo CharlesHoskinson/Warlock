@@ -11,7 +11,15 @@ def coherent_scene(before, snapshot, after):
         return None
     if any(w['minimized'] != facts[w['incarnation']]['minimized'] or w['application'] != facts[w['incarnation']]['application'] for w in snapshot['windows']):
         return None
-    return {'revision': after['revision'], 'focused': after['facts']['focused'], 'windows': [
+    focus = after['facts']['focused']
+    focused_member = facts.get(focus)
+    # Desktop focus can outlive presentation of its workspace after output
+    # retirement. It cannot make that member the active primary Minimize target.
+    # Do not consult keyboard focus: bar/popup custody keeps a visible desktop
+    # family active. Raw native facts and native effect admission stay intact.
+    if focused_member is None or focused_member['hidden'] or focused_member['minimized'] or not focused_member['workspaceVisible'] or focused_member['workspace'] is None or int(focused_member['workspace']) <= 0:
+        focus = None
+    return {'revision': after['revision'], 'focused': focus, 'windows': [
         {**w, **({'attention': facts[w['incarnation']]['attention']} if after.get('attentionProtocol')==1 else {}), 'owner': facts[w['incarnation']]['owner'],
          'available': not facts[w['incarnation']]['hidden']
                       and facts[w['incarnation']]['workspace'] is not None and int(facts[w['incarnation']]['workspace']) > 0}

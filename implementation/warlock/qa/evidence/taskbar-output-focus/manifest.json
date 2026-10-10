@@ -1,0 +1,395 @@
+{
+  "schema": 1,
+  "requirement": "ELM-UI-004",
+  "scenarios": [
+    "taskbar-inactive",
+    "taskbar-active"
+  ],
+  "ears": "The taskbar SHALL follow the INTERACTION.md primary-action table for zero, single and multiple family entries, distinguish application pin from always-on-top, and expose explicit new-instance actions without launching duplicates on ordinary activation.",
+  "verificationScope": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+  "originalRequirements": [
+    {
+      "id": "ELM-UI-004",
+      "capability": "elm-taskbar",
+      "phase": "P3",
+      "pattern": "ubiquitous",
+      "priority": "must",
+      "ears": "The taskbar SHALL follow the INTERACTION.md primary-action table for zero, single and multiple family entries, distinguish application pin from always-on-top, and expose explicit new-instance actions without launching duplicates on ordinary activation.",
+      "task": "Implement taskbar decision table with matching pointer/keyboard routes.",
+      "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+      "legacyEvidence": "docs/elm-roadmap/INTERACTION.md; new coverage: final UI/UX review",
+      "scenarios": [
+        {
+          "name": "taskbar-zero",
+          "given": "a pinned app with zero windows",
+          "when": "primary pointer or keyboard activation occurs",
+          "then": "one launch request is issued"
+        },
+        {
+          "name": "taskbar-inactive",
+          "given": "one inactive member",
+          "when": "primary pointer or keyboard activation occurs",
+          "then": "the member visibly activates"
+        },
+        {
+          "name": "taskbar-minimized",
+          "given": "one minimized member",
+          "when": "primary pointer or keyboard activation occurs",
+          "then": "the member restores and visibly activates"
+        },
+        {
+          "name": "taskbar-active",
+          "given": "one active eligible member",
+          "when": "primary pointer or keyboard activation occurs",
+          "then": "the family minimizes with declared focus succession"
+        },
+        {
+          "name": "taskbar-group",
+          "given": "multiple family entries",
+          "when": "primary pointer or keyboard activation occurs",
+          "then": "a group picker opens without new launch and selecting a member visibly activates it"
+        },
+        {
+          "name": "taskbar-refusal",
+          "given": "native authority refuses the requested action",
+          "when": "primary pointer or keyboard activation occurs",
+          "then": "observed state remains authoritative with feedback"
+        }
+      ],
+      "source": "docs/elm-roadmap/coordinator-requirements.json",
+      "status": "proposed",
+      "taskId": "P3-ELM-UI-004",
+      "accountableOwnerRole": "Elm presentation lead",
+      "verifierRole": "Independent acceptance reviewer"
+    }
+  ],
+  "originalInventory": {
+    "path": "docs/elm-roadmap/requirements.json",
+    "sha256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b"
+  },
+  "frozenInteraction": {
+    "path": "docs/elm-roadmap/INTERACTION.md",
+    "sha256": "2a947a3aa56d7b7b9e7d2f5c1ceb100ac7b8c345a73fd7616c0c4c567d0e01c4"
+  },
+  "disposition": "partial",
+  "requirementAccepted": false,
+  "fullReleaseAccepted": false,
+  "sourceParent": "c14a1c33415947475322cc74bf72e6cd6f94055d",
+  "sourceHashes": {
+    "implementation/warlock/adapter/taskbar_projection.py": "b9da24de2a910a3d8515f2e8e4de2cb0086bdd0cd26c7f857fcbbdc15978c976",
+    "implementation/warlock/qa/native-taskbar-output-focus.py": "79c155877b6b0551c4907ce8914e77a1c1c1c5aa73305bb39e169ae3f74bec5f",
+    "implementation/warlock/qa/taskbar-output-focus.qnt": "6895d40b51bd6bec5d180f0503d6bf7441877a92a460f4a11d96340072702526",
+    "implementation/warlock/qa/taskbar-output-focus_test.qnt": "9074660d19991d688d3125517a2cf646a0131ff41bc22ee45142b070de949b9f",
+    "implementation/warlock/qa/check-taskbar-output-focus.py": "0871b7c2b25cd01ac685f8bba0fb682606057fe3c2d63b35ffb29660aa94744e",
+    "implementation/warlock/README.md": "a95afa10fc5491ab0d430cd6a6b8c0e9cf58e99dcb5ab02877ff3a3f53ef5b86",
+    "implementation/warlock/qa/current-search-build.json": "e1f9f4a4c107028851dc808e9d7935af814020f6b37d6b33e17273588a59d115",
+    "implementation/warlock/src/Taskbar.elm": "31ed9ce6b37e5b35065f8833e31412657800d894b6d9e9544f380bc16e7aa519",
+    "implementation/warlock/src/ActionProjection.elm": "911faed965465fac4e32f404d75a4d130b4e560cda191c7773eb96749be1d062",
+    "implementation/warlock/src/TaskbarShell.elm": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+    "implementation/warlock/src/Surface.elm": "272a822fca0bd99397797ab340380e17847095d3db736d2dc7500fa93c97f066",
+    "implementation/warlock/adapter/daemon.py": "819b945c7d1c92d6360045db297715ac9ff7ac72024741b8ca3238fc24d08d67",
+    "implementation/warlock/native/authority.cpp": "586cf2dd3ceaee87da9c6f8681e932f2d6a2aeeed9c91fc2e5221f3993b30b00",
+    "implementation/warlock/native/core/WorkspacePlacementController.cpp": "8e53f37f4f554e92b928e713010ec6033fe80fcb87e4cccccafa693a52ae7206",
+    "implementation/warlock/native/core/Space.cpp": "1ab63457ec28f02cfefa8a75c4a14af24a73a99578941090e34b61e25fcf2013"
+  },
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
+      "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791643756770507917/elm-window-geometry-authority.so",
+      "sha256": "049a982418a085a976db6bf08eee3da4ad7c9a4f826a724a8d653d86b15f0378"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+      "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791646018291514576/elm-host",
+    "sha256": "806aa4bcd44f0b67b6e58db7d1e41da41f1956692ff14001d5f19a5b005cecf7",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791646018291514576/report.json",
+    "heldBuildSHA256": "9f124b1d34d907aac9a33c05f3b77ac9c4773afd1cbf85a2de0c53d80e3c501e"
+  },
+  "artifacts": {
+    "model-init": {
+      "path": "implementation/warlock/qa/runs/taskbar-output-focus-1791645906567772492/report.json",
+      "sha256": "9a7f219941a989dd3021babf77a1bba4f757ea34f548762f0d15ab4f35f112c4",
+      "packet": "model-init.json.gz",
+      "packetSHA256": "1e560e3d538d13979454a001b2bfe1d9fcb89623797477dd182b50873f884d1e",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "model-before-adapter": {
+      "path": "implementation/warlock/qa/runs/taskbar-output-focus-1791645951652194320/report.json",
+      "sha256": "cf22bd314321b092ffecef22361a398ef241b7667ec1a536437fe26fcd28b103",
+      "packet": "model-before-adapter.json.gz",
+      "packetSHA256": "838c4be7267fe90b1a363f3e3f661b1d5128a77fdb4564469343fc5ff93d2985",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "adapter-before": {
+      "path": "implementation/warlock/qa/runs/taskbar-output-focus-1791646001700681903/report.json",
+      "sha256": "1ca69125e1f2d3439a62be52f1b9110e284339804c2fd838d9fe48e78ce3be6f",
+      "packet": "adapter-before.json.gz",
+      "packetSHA256": "7f37c80a5c9b8d938c49460a2314d98307e5ea47adec579a70eaffdb734f14ec",
+      "encoding": "gzip",
+      "passed": false
+    },
+    "model-adapter-after": {
+      "path": "implementation/warlock/qa/runs/taskbar-output-focus-1791646015723654864/report.json",
+      "sha256": "c47a1211d23f3a7d078fa68ab45ba8c2c90ba081d5c3049bf5b40c2c54f29a97",
+      "packet": "model-adapter-after.json.gz",
+      "packetSHA256": "916cb4986a7d7ca29bb90ba4b91c2225f38851213ca8db49b7e0ba8613a29d69",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "native-before": {
+      "path": "implementation/warlock/qa/runs/native-drag-ownership-1791645856834409921/report.json",
+      "sha256": "361e1f42b7725b0a20d13f085cf22babf02fb31bdf71a27263d6636b0b28092b",
+      "packet": "native-before.json.gz",
+      "packetSHA256": "bd165e6c5d21a9536041cc40dc1477ab4fed3374ce74d65161b63c3aa06cdea3",
+      "encoding": "gzip",
+      "passed": false
+    },
+    "probe-pointer-extent": {
+      "path": "implementation/warlock/qa/runs/native-drag-ownership-1791646047009730647/report.json",
+      "sha256": "bc35924ceb9584099805d6ff19076ce5d2e6836b45d5867e6824ca2e263dfeb8",
+      "packet": "probe-pointer-extent.json.gz",
+      "packetSHA256": "e46db1d24d128284f90024eed652f1deaaaaa01ac2bb51a6fd2902bb388a8727",
+      "encoding": "gzip",
+      "passed": false
+    },
+    "native-before-picture-assertions": {
+      "path": "implementation/warlock/qa/runs/native-drag-ownership-1791646110349262784/report.json",
+      "sha256": "04b8fd369b903a80423ebadafe4c529113684d3773223ecd5ff5e8a5d6d9b851",
+      "packet": "native-before-picture-assertions.json.gz",
+      "packetSHA256": "ceec38a503d3eb6a48fbe552e1a8f4d8c4dd90d350f8af4109a091f931cd255b",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "native-after": {
+      "path": "implementation/warlock/qa/runs/native-drag-ownership-1791646195729154299/report.json",
+      "sha256": "e62d2abe596516fdaed11c80b7252964139abf6317ef5ca954373c63c371e23a",
+      "packet": "native-after.json.gz",
+      "packetSHA256": "5b30f6e69eaabddf511bebd06e3eb11d64b2f8b7d67fba19446ee70a9a2502a0",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "integrated-build": {
+      "path": "implementation/warlock/qa/runs/drag-ownership-1791646018291514576/report.json",
+      "sha256": "9f124b1d34d907aac9a33c05f3b77ac9c4773afd1cbf85a2de0c53d80e3c501e",
+      "packet": "integrated-build.json.gz",
+      "packetSHA256": "5473d46f50c430a1da6840ff13c3c937574b829d51db17ecb0f2d61e56c85723",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "native-keyboard": {
+      "path": "implementation/warlock/qa/runs/native-primary-keyboard-1791646147215246178/report.json",
+      "sha256": "2f1f7987fe8816b079134cd1ef9f4d9261b796c24aa36bdcf5cd49f73cd1867b",
+      "packet": "native-keyboard.json.gz",
+      "packetSHA256": "dcd39b28a231e4dc264d97cdf40f5405dd52a86cfc9d7f11957c5da556f7fc5f",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "native-pinned-guards": {
+      "path": "implementation/warlock/qa/runs/native-drag-ownership-1791646230358869173/report.json",
+      "sha256": "beb108cc166dab265398086c719ed166593d37bfd76fd91af35a90bc9d10cf01",
+      "packet": "native-pinned-guards.json.gz",
+      "packetSHA256": "d2c248070b8737db601450184a06c4e6aa92a48aca3c977eede81bdfeb81a40a",
+      "encoding": "gzip",
+      "passed": true
+    }
+  },
+  "logs": {
+    "named": {
+      "path": "implementation/warlock/qa/runs/taskbar-output-focus-1791646015723654864/named.stdout",
+      "sha256": "64ac8eef986c289f0b060e0c4194f8d13fcc59f26045e07b7810642c9fe002e9",
+      "packet": "model-named.stdout.gz",
+      "packetSHA256": "5fe21d8d6225f4416a03c479ec8f9fe7e72513e58cfb5c35b7a4cc43d398df9e"
+    },
+    "witnesses": {
+      "path": "implementation/warlock/qa/runs/taskbar-output-focus-1791646015723654864/witnesses.stdout",
+      "sha256": "249e924aa4f102cd60176851a74e997528d12594f1461c49ca4e76552504c202",
+      "packet": "model-witnesses.stdout.gz",
+      "packetSHA256": "9a0702b3beffb3af2e734bfb11642402d32aa79cc0cd06b3301cfd4e26a59f31"
+    },
+    "safety": {
+      "path": "implementation/warlock/qa/runs/taskbar-output-focus-1791646015723654864/safety.stdout",
+      "sha256": "6c4bc0adeffeaad8c78021d5e9ebd3b4ad580777f5e538fbfe9bc1847cc8bb1f",
+      "packet": "model-safety.stdout.gz",
+      "packetSHA256": "dc0acbc22067314fc03b86c4e0c5f5294f0f70bf066d230d8ac5baf28ef0433f"
+    }
+  },
+  "images": [
+    {
+      "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791646195729270691/taskbar-output-activated.png",
+      "sha256": "2a9ee9c05584772c7c302ec238259d3b3c9515bef1e0e4e2d1707ded2ac05925",
+      "native": {
+        "address": "0x555d1e4b2af0",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          40,
+          230
+        ],
+        "size": [
+          108,
+          440
+        ],
+        "workspace": {
+          "id": 2,
+          "name": "2"
+        },
+        "floating": true,
+        "monitor": 0,
+        "class": "GTK Application",
+        "title": "ELM-AUTHORITY-FIXTURE",
+        "initialClass": "GTK Application",
+        "initialTitle": "ELM-AUTHORITY-FIXTURE",
+        "pid": 3160360,
+        "xwayland": false,
+        "pinned": false,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [],
+        "swallowing": "0x0",
+        "focusHistoryID": 0,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "18000000"
+      },
+      "redPixels": 27048,
+      "packet": "taskbar-output-activated.png",
+      "packetSHA256": "2a9ee9c05584772c7c302ec238259d3b3c9515bef1e0e4e2d1707ded2ac05925"
+    },
+    {
+      "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791646195729270691/taskbar-output-minimized.png",
+      "sha256": "b90e79d0c9bebede1d82589e601e64559d1afc5e5ff4fd1ea735ac7124661513",
+      "native": {
+        "address": "0x555d1e4b2af0",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": false,
+        "at": [
+          40,
+          230
+        ],
+        "size": [
+          108,
+          440
+        ],
+        "workspace": {
+          "id": 2,
+          "name": "2"
+        },
+        "floating": true,
+        "monitor": 0,
+        "class": "GTK Application",
+        "title": "ELM-AUTHORITY-FIXTURE",
+        "initialClass": "GTK Application",
+        "initialTitle": "ELM-AUTHORITY-FIXTURE",
+        "pid": 3160360,
+        "xwayland": false,
+        "pinned": false,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [],
+        "swallowing": "0x0",
+        "focusHistoryID": 0,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "18000000"
+      },
+      "redPixels": 0,
+      "packet": "taskbar-output-minimized.png",
+      "packetSHA256": "b90e79d0c9bebede1d82589e601e64559d1afc5e5ff4fd1ea735ac7124661513"
+    },
+    {
+      "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791646195729270691/taskbar-output-recovered.png",
+      "sha256": "38209ea17da72f31f89ff586bcae798826011a2d30c730fce5c321fa1254c2bd",
+      "native": {
+        "address": "0x555d1e4b2af0",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          40,
+          230
+        ],
+        "size": [
+          108,
+          440
+        ],
+        "workspace": {
+          "id": 2,
+          "name": "2"
+        },
+        "floating": true,
+        "monitor": 0,
+        "class": "GTK Application",
+        "title": "ELM-AUTHORITY-FIXTURE",
+        "initialClass": "GTK Application",
+        "initialTitle": "ELM-AUTHORITY-FIXTURE",
+        "pid": 3160360,
+        "xwayland": false,
+        "pinned": false,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [],
+        "swallowing": "0x0",
+        "focusHistoryID": 0,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "18000000"
+      },
+      "redPixels": 27048,
+      "packet": "taskbar-output-recovered.png",
+      "packetSHA256": "38209ea17da72f31f89ff586bcae798826011a2d30c730fce5c321fa1254c2bd"
+    }
+  ],
+  "observation": "After real output removal/replacement, an invisible workspace member now offers Activate/Open rather than Minimize/Active. Actual taskbar Activate, Minimize and Restore each commit once, with native frames showing 27,048 red application pixels after activation/restoration and zero after minimize. Workspace2, size108x440 and the unsaved draft survive; actual client pointer and physical keyboard editing pass. The unchanged keyboard primary journey passes MRU/desktop succession, and pinned retirement/return plus cross-output/live-owner guards pass the same tuple.",
+  "missingObservations": [
+    "Applicable native assistive-technology taskbar fixtures and independent original UI-004 acceptance remain open.",
+    "This projection does not retire a stale native focus pointer or prove all keyboard-recipient/custody, modal/group/fullscreen, hidden-family or other-output schedules. Native admission and raw facts remain authoritative.",
+    "Physical hardware hotplug, AT/IME, resources/journeys, reproducible package and reversible deployment/rollback remain release obligations."
+  ],
+  "modelScope": "quint-llm-kit: incrementally executed initialization, ten named cases, six positive witnesses and 1000 sampled safety traces. Validated coherent native snapshot, raw desktop focus vs keyboard custody, ordinary visible eligibility and primary operation sequence. No authentication, native pixels, modal/native succession, AT, hardware or liveness proof. Model passed before production change; direct original adapter case failed before fix and passed after.",
+  "sourceBoundary": "Only existing taskbar adapter projection behavior changed. Raw native facts, focused pointer, workspace membership, native admission, Unknown/no-replay and original frozen oracle untouched. Unchanged Elm/GTK/core/plugin bytes retained.",
+  "probeDisposition": {
+    "native-before": "Original invisible native member offered Active/Minimize; workspaceVisible and native rendering false with raw focused id retained. Original assertion failed and cleanup passed.",
+    "probe-pointer-extent": "Corrected projection offered Activate; fixture click used single-output 800x600 helper extent with two actual outputs. No window-effect request was emitted before original wait deadline. Corrected actual native desktop extent to1600x600; preserved failed report and deadline.",
+    "native-before-picture-assertions": "Initial fixed journey passed native focus, effects, pointer/keyboard/draft. Later final runner adds explicit activated/minimized/recovered frame assertions without changing production or original waits."
+  },
+  "reviewerDisposition": {
+    "name": "root-taskbar-output-focus",
+    "independent": false,
+    "disposition": "Owner observed native pass; original acceptance pending."
+  }
+}
