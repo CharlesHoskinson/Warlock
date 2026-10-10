@@ -124,10 +124,38 @@ class FamilyProducer {
     Job job_;
     std::optional<FamilyCapture> capture_;
     std::optional<Packet> packet_;
+    // Preserve the physical mapping on any failure before broker adoption.
+    // A thrown observation cannot destroy it and leave dangling retirement pointers.
+    std::unique_ptr<const Buffer> unoffered_;
     stylecropfd::Mapped* mapping_{};
     backdropfd::Mapped* backdropMapping_{};
     bool mapped() const {return mapping_ || backdropMapping_;}
     std::string initial_;
+    bool retireUnoffered() {
+        if(!cleanup_ || packet_ || !unoffered_)return false;
+        require(capture_ && mapped(),"Exact unoffered family custody");
+        if(!mappingClosed_) {
+            require(backdropMapping_?backdropMapping_->close():mapping_->close(),"Unoffered family mapping and FD close");
+            mappingClosed_=true;
+        }
+        if(!exportReleased_) {
+            require(releaseFamily(native_,*capture_,backdropMapping_?backdropHeader_[fd::Transfer]:header_[fd::Transfer]),"Exact unoffered family export release");
+            exportReleased_=true;
+        }
+        if(!producerRetired_) {
+            const auto state=retireFamilyState(native_,observed_.plane,job_.context.incarnation.value,observed_.picker);
+            retirementPending_=state==ClientRetirement::PendingLock;
+            if(retirementPending_)return false;
+            producerRetired_=true;
+        }
+        // No packet was offered. Only actual physical disposal permits this
+        // terminal proof, whose reservation remains until the exact Elm ACK.
+        const auto refused=endpoint_.native([&](auto& broker){return broker.producerRefused(1,job_);});
+        require(refused.status==Result::Status::Complete && !refused.receipts.empty(),"Retained unoffered family refusal proof");
+        unoffered_.reset();mapping_=nullptr;backdropMapping_=nullptr;capture_.reset();attempted_=false;haveHeader_=false;
+        g_print("picker-unoffered-retired: mappingClosed=1 exportReleased=1 producerRetired=1 terminalProof=1\n");fflush(stdout);
+        return true;
+    }
     bool retire() {
         return endpoint_.native([&](Broker& broker) {
             if(!cleanup_ || !packet_ || !broker.consumerComplete(1,job_))return false;
@@ -170,6 +198,9 @@ public:
         auto next=endpoint_.nativeDemand([&](auto& queue){return reserveFamilyResume(queue,job_,observed_,lease_-1,fresh,publication,lease);});
         if(!next)return "[]";
         observed_=fresh;job_=*next;publication_=publication;cleanup_=false;staleRefused_=false;
+        // A post-capture refusal has actually retired physical ownership. A
+        // later acknowledged changed-source demand owns new resources.
+        exportReleased_=false;producerRetired_=false;mappingClosed_=false;retirementPending_=false;scopeDenied_=false;
         return "["+familySeed(observed_,publication,lease)+","+familyRequest(job_)+"]";
     }
     std::string resume(uint64_t publication,uint64_t lease) {
@@ -200,18 +231,24 @@ public:
                 g_print("picker-native-refused: %s\n",refused.what());fflush(stdout);
                 return "[]";
             }
-            std::unique_ptr<const Buffer> payload;uint64_t expires=0;
+            uint64_t expires=0;
             if(observed_.plane==FamilyPlane::GeneratedBackdrop) {
                 auto received=native_.backdropQuery(fd::Get,capture_->request,job_.context.incarnation.value);
                 require(received && received->rights.size()==1 && familyFrameMatches(received->words,*capture_),"Exact owned generated backdrop descriptor");backdropHeader_=received->words;haveHeader_=true;
-                auto mapping=std::make_unique<backdropfd::Mapped>(std::move(received->rights.front()),backdropHeader_,observed_.maximumTransferBytes);backdropMapping_=mapping.get();payload=std::move(mapping);expires=backdropHeader_[fd::Expires];
+                auto mapping=std::make_unique<backdropfd::Mapped>(std::move(received->rights.front()),backdropHeader_,observed_.maximumTransferBytes);backdropMapping_=mapping.get();unoffered_=std::move(mapping);expires=backdropHeader_[fd::Expires];
             } else {
                 auto received=native_.familyQuery(fd::Get,capture_->request,job_.context.incarnation.value);
                 require(received && received->rights.size()==1 && familyFrameMatches(received->words,*capture_),"Exact owned client descriptor");header_=received->words;haveHeader_=true;
-                auto mapping=std::make_unique<stylecropfd::Mapped>(std::move(received->rights.front()),header_,observed_.maximumTransferBytes);mapping_=mapping.get();payload=std::move(mapping);expires=header_[fd::Expires];
+                auto mapping=std::make_unique<stylecropfd::Mapped>(std::move(received->rights.front()),header_,observed_.maximumTransferBytes);mapping_=mapping.get();unoffered_=std::move(mapping);expires=header_[fd::Expires];
             }
-            auto fresh=observeFamilySource(native_,job_.context.incarnation,observed_.plane,observed_.picker);require(fresh.scope.context==job_.context && fresh.scope.binding==job_.binding && fresh.scope.clock==job_.clock && fresh.generatedColor==observed_.generatedColor && fresh.scope.now<job_.deadline,"Native family source/deadline still current before offer");
-            auto offered=endpoint_.native([&](auto& b){return b.allocate(1,job_,payload,expires,Packet::Fidelity::Family,15);});require(offered.receipts.size()==1 && offered.receipts.front().packet && !payload,"Physical client payload adopted");
+            auto fresh=observeFamilySource(native_,job_.context.incarnation,observed_.plane,observed_.picker);
+            require(fresh.scope.binding==job_.binding && fresh.scope.clock==job_.clock && fresh.scope.context.lifetime==job_.context.lifetime && fresh.scope.context.incarnation==job_.context.incarnation,"Exact own family observation before offer");
+            if(fresh.scope.context!=job_.context || fresh.generatedColor!=observed_.generatedColor || fresh.scope.now>=job_.deadline) {
+                cleanup_=true;staleRefused_=true;
+                retireUnoffered();
+                return "[]";
+            }
+            auto offered=endpoint_.native([&](auto& b){return b.allocate(1,job_,unoffered_,expires,Packet::Fidelity::Family,15);});require(offered.receipts.size()==1 && offered.receipts.front().packet && !unoffered_,"Physical client payload adopted");
             const auto before=*offered.receipts.front().packet;auto ready=endpoint_.native([&](auto& b){return b.producerComplete(1,job_);});require(ready.receipts.size()==1 && ready.receipts.front().packet,"Completed immutable client copy");packet_=*ready.receipts.front().packet;
             // Readiness concerns encoded immutable storage, never hardware presentation.
             return "["+familyFrameEvent("offer",before)+","+familyFrameEvent("fence",*packet_)+"]";
@@ -220,11 +257,13 @@ public:
             endpoint_.native([&](auto& b){return b.cancel(1,job_.binding,job_);});cleanup_=true;
             if(!attempted_)endpoint_.native([&](auto& b){return b.producerRefused(1,job_);});
         } else {endpoint_.native([&](auto& b){return b.release(1,job_.binding,job_,packet_->token);});cleanup_=true;}
-        if(mapped())retire();
+        if(unoffered_)retireUnoffered();
+        else if(mapped())retire();
         return "[]";
     }
     std::string poll(uint64_t publication,uint64_t lease) {
-        if(mapped() && cleanup_)retire();
+        if(unoffered_ && cleanup_)retireUnoffered();
+        else if(mapped() && cleanup_)retire();
         if(!packet_ || cleanup_ || scopeDenied_)return "[]";
         // Original native source clock, not a frontend timer or renewed deadline.
         std::optional<FamilySourceObservation> currentObservation;std::string deniedEvent;
@@ -246,7 +285,7 @@ public:
         if(!events.empty())return "["+events+"]";
         return "[]";
     }
-    bool empty(){return endpoint_.readers()==0 && endpoint_.native([](auto& b){return b.recordCount()==0 && b.charge()==0;});}
+    bool empty(){return !unoffered_ && endpoint_.readers()==0 && endpoint_.native([](auto& b){return b.recordCount()==0 && b.charge()==0;});}
     std::string status(){return endpoint_.native([&](auto& b){Wire w;return w.begin("job").job(job_).end().text("charge",std::to_string(b.charge())).integer("records",b.recordCount()).boolean("mappedFDClosed",mappingClosed_).boolean("exportReleased",exportReleased_).boolean("producerRetired",producerRetired_).boolean("retirementPending",retirementPending_).finish();});}
     bool close() {
         endpoint_.unregisterView(popup_);

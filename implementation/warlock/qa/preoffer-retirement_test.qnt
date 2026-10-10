@@ -1,0 +1,22 @@
+module preoffer_retirement_test {
+  import preoffer_retirement.* from "./preoffer-retirement"
+  run staleCaptureRetiresBeforeRefusalTest = init.then(capture).then(sourceChanges)
+    .then(refuseStale).then(closeMapping).then(releaseExport).then(retireProducer)
+    .then(publishRefusal).then(acknowledge(true)).then(close)
+    .then(all { assert(s.closed and safety), s' = s })
+  run canceledUncertainCaptureRetiresTest = init.then(capture).then(cancel)
+    .then(closeMapping).then(releaseExport).then(retireProducer).then(publishRefusal)
+    .then(acknowledge(true)).then(close).then(all { assert(s.closed and safety), s' = s })
+  run lockRetainsActualProducerTest = init.then(capture).then(sourceChanges).then(refuseStale)
+    .then(lock).then(closeMapping).then(releaseExport).then(attemptEarlyClose)
+    .then(all { assert(retainedLockedProducer and not(s.closed) and safety), s' = s })
+  run unlockCompletesRetirementTest = init.then(capture).then(cancel).then(lock)
+    .then(closeMapping).then(releaseExport).then(unlock).then(retireProducer)
+    .then(publishRefusal).then(acknowledge(true)).then(close)
+    .then(all { assert(s.closed and safety), s' = s })
+  run wrongAckRetainsReservationTest = init.then(capture).then(cancel).then(closeMapping)
+    .then(releaseExport).then(retireProducer).then(publishRefusal).then(acknowledge(false))
+    .then(attemptEarlyClose).then(all { assert(awaitingExactAcknowledgement and not(s.closed)), s' = s })
+  run liveMappingPreventsCloseTest = init.then(capture).then(sourceChanges).then(refuseStale)
+    .then(attemptEarlyClose).then(all { assert(s.mapping and s.exportOwned and s.reservation and not(s.closed)), s' = s })
+}

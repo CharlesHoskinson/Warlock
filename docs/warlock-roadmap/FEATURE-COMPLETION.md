@@ -29,3 +29,5 @@ IDs above abbreviate the `ELM-` prefix; DL refers to `WARLOCK-DL-`. These are wo
 - [ ] Complete release admission and session deployment. A GitHub merge performs none of these steps.
 
 Feature complete means the selected behaviors are implemented and integrated. Release ready additionally requires the original acceptance obligations. No percentage or completion date is inferred from commit counts or ledger bookkeeping.
+
+The retained modal shutdown defect is now fixed by actual unoffered capture retirement. The exact direct-owner modal runner and no-activation regression pass on the fresh host with normal owned exits and strict cleanup; [evidence](../../implementation/warlock/qa/evidence/picker-preoffer-retirement/README.md). ELM-DEL-021/QA-011 and the full release remain partial pending independent and wider resource/native obligations. Original REN-017 fullscreen/pin/menu policy is next.

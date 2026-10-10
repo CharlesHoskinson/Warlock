@@ -1,0 +1,157 @@
+{
+  "schema": 1,
+  "requirements": [
+    "ELM-DEL-021",
+    "ELM-QA-011"
+  ],
+  "scenarios": [
+    "delivery-021",
+    "qa-011"
+  ],
+  "sourceBaseRevision": "a124899bcd506c249d4c4e63437d0cf5e615172a",
+  "sourceHashes": {
+    "implementation/warlock/native/family_producer.hpp": "65fe1aa8956081084117bdc27d2b7dc624a62cd44ff42fc7a037d5e6bd80794d",
+    "implementation/warlock/qa/preoffer-retirement.qnt": "cfa4e4d7dc83a6844150658f952429bb204485490b89443ff8f5190a69d40770",
+    "implementation/warlock/qa/preoffer-retirement_test.qnt": "b19c4a20035d2cfc5f8492f833c5f9d64fcbb3c2a925aca083ae64b6934e4005",
+    "implementation/warlock/qa/check-preoffer-retirement.py": "ca61c599bccf00cca3230ea88ae21de597713f5527502dbf8c4121ed1ee3ffd3",
+    "implementation/warlock/qa/current-search-build.json": "159e7d44bda2becd74b96325d533870097dcf357ab702aa0f48d7e0ec11b5f8e",
+    "implementation/warlock/README.md": "f50dabe2626f6ffd7f13a1c0f9b1e76caffd9058c96bb3ac423f82b0d745520a",
+    "implementation/warlock/qa/native-max-modal-focus.py": "128df4b9d6b05dbb06c0d7f709c7fd5e5f92e83315999472e12705b4a0761fee",
+    "implementation/warlock/qa/native-max-no-activation.py": "e1ca26e2f5a2582d51a214afe65ad7bf933c068ed66fb6e540a431ae7efc3a32",
+    "implementation/warlock/qa/check-search.py": "7824b3a7d5c777288fb1c4a34e163852d91db5bb2666a29820eba4817a5cd5d2",
+    "implementation/warlock/qa/shutdown-preview.qnt": "74f4f9dd89e0dafb678f0af78c224164a5016cff8bb7c4f7df5b900371dcc360",
+    "implementation/warlock/qa/shutdown-preview_test.qnt": "3075f7db5f4afb856f62b8d51dadc0f265539cbe4ce501502523d02e20762087",
+    "implementation/warlock/native/shared-host.c": "f2a1e05a3133074fe5beedb634cf8da1d4240767f44e8c6ecc57a03e7cea035d",
+    "implementation/warlock/native/picker-previews.inc": "8e0799d2a56b08e7bee8c64fe098168ac2f1f4f3ab8a4b53e9e1363fa0cdcca3",
+    "implementation/warlock/native/preview_broker.hpp": "9c57428130093f8d815b7851004f103897deca278bbe4196e2116bec85a323ed",
+    "implementation/warlock/native/family_frame.hpp": "8c1fb4bcd10d15dba3b3dcc82e3b46cd185efbb6101453e54e7d08bb7d5666bb",
+    "implementation/warlock/qa/current-native-pair.json": "92cf77bb7cb4af7207d846858c1c4a6151da4d097e8f8db81a878b4fefb4a315",
+    "implementation/warlock/qa/current-scene-core.json": "e4050c2eeabf7ed52528d90e59f49502117b5f0c9e645faa8b52757f727a6d06"
+  },
+  "reports": {
+    "compiled": {
+      "path": "implementation/warlock/qa/runs/preview-states-1791618268499370974/report.json",
+      "sha256": "2cbef276246fb3ea6bc53031c91c56466d7649c7a7713b74ac5e3fa8ee03c02f"
+    },
+    "model-before": {
+      "path": "implementation/warlock/qa/runs/preoffer-retirement-1791618184836624148/report.json",
+      "sha256": "3d15fc42a14a3282968fc4496a4a43591fa90107a7edd1ec2f5f44441a9e7d1e"
+    },
+    "model-after": {
+      "path": "implementation/warlock/qa/runs/preoffer-retirement-1791618278511441482/report.json",
+      "sha256": "d9cb3fd3409e19a5224e373942153127e249cfc7d523d3603c16c44282a9419f"
+    },
+    "shutdown-model": {
+      "path": "implementation/warlock/qa/runs/shutdown-preview-1791618278511468484/report.json",
+      "sha256": "712f01648dbe2b11560cd7001237e4f8460a4ece0b2efd0111b73532832feef6"
+    },
+    "native-modal": {
+      "path": "implementation/warlock/qa/runs/native-max-modal-focus-1791618304541163476/report.json",
+      "sha256": "8b58947bd353e417d717a6c9520292ab6cd4dd80c3ca3fd5d6bdaf760bbdb424",
+      "runtimeLog": {
+        "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791618304541265767/warlock.log",
+        "sha256": "f822aa5b7fa31b329db219162d812aecb9922b474a3b01bae3318a65211f6b35",
+        "retainedCompressed": "native-modal-warlock.log.gz"
+      }
+    },
+    "native-no-activation": {
+      "path": "implementation/warlock/qa/runs/native-max-no-activation-1791618337861814658/report.json",
+      "sha256": "852e24dc8d82e4dcfd806ba12ac77fda15b390b31031dd66fadd04fdb23bc820",
+      "runtimeLog": {
+        "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791618337861903041/warlock.log",
+        "sha256": "506052959955a12bc1523563eeab7776cbfae2c20cfd1cabb23e3e2ad86b6005",
+        "retainedCompressed": "native-no-activation-warlock.log.gz"
+      }
+    }
+  },
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/scene-core-1791616203505769024/Hyprland",
+      "sha256": "5b95e2c22e12ce6ab980d24064ab88b0e0237f0f9b3ef00c6f28720208dc1bb2"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791616285223842851/elm-window-geometry-authority.so",
+      "sha256": "c7d66277cf320d5beef2d5eacb9da65fa80e1bcf49b57b73e67aeaf0bac90e13"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-states-1791618268499370974/elm-host",
+    "sha256": "054a2b5de1b3a071a3c3487140178331f871be63741964596045db7492b6d33e",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-states-1791618268499370974/report.json",
+    "heldBuildSHA256": "2cbef276246fb3ea6bc53031c91c56466d7649c7a7713b74ac5e3fa8ee03c02f"
+  },
+  "unchangedDirectOwnerRunner": "128df4b9d6b05dbb06c0d7f709c7fd5e5f92e83315999472e12705b4a0761fee",
+  "nativeUnofferedPhysicalRetirementObserved": true,
+  "normalOwnedExitObserved": true,
+  "nativeModalCampaignPassed": true,
+  "nativeNoActivationCampaignPassed": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "missingObservations": [
+    "Independent original-scenario/release disposition",
+    "Actual held-reader, locked producer and uncertain transport schedules beyond the sampled abstraction",
+    "Wider native scene/transform/fullscreen/AT/IME/hardware/resource and package/rollback gates"
+  ],
+  "retainedFailures": [
+    {
+      "path": "implementation/warlock/qa/evidence/max-modal-focus/native-visible-owner-fail.json",
+      "sha256": "13926a000e678ecd9ca3059a11fbab7e0fed5e3beb63a09c2d311ec59d2b806f"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/max-modal-focus/native-visible-owner-repeat-fail.json",
+      "sha256": "9ae50d58db53cc1844b5ab36cb42590acab120bfaa6296b9888230ec76828db6"
+    },
+    {
+      "path": "implementation/warlock/qa/runs/preoffer-retirement-1791618175863166685/report.json",
+      "sha256": "f16405a0f4696bfc0197e34473e25793f72e47a42de316402669060345e8939e",
+      "scope": "Initial model reserved-identifier parsing error; renamed field before source work, properties unchanged."
+    }
+  ],
+  "artifacts": {
+    "README.md": "7b0da76657f8baf64a6b9982af88e522d9df3e4602478686d9d54a3a438f6c60",
+    "compiled.json": "2cbef276246fb3ea6bc53031c91c56466d7649c7a7713b74ac5e3fa8ee03c02f",
+    "model-after-named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "model-after-named.stdout": "7ffa55ab1e1953e44595721551c9eb40b343c0c77ea3aa58f24fef25c97307e6",
+    "model-after-safety.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "model-after-safety.stdout": "fcfed343acfec1114c584aab526b44f33f8478beabacd87da779543f3a854c79",
+    "model-after-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "model-after-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "model-after-witnesses.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "model-after-witnesses.stdout": "65becc728fef9c15b307c8790c1003dc0546e84eccc3b21e4368990fdc4b1341",
+    "model-after.json": "d9cb3fd3409e19a5224e373942153127e249cfc7d523d3603c16c44282a9419f",
+    "model-before-named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "model-before-named.stdout": "fd645ce194752e930af60e2376a5fc71f2bd68746d8fb23d636af873dc1eeb40",
+    "model-before-safety.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "model-before-safety.stdout": "3567dc1c676a8203a3dad90995290d89532096c06908b8a911879bcdecb3e36f",
+    "model-before-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "model-before-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "model-before-witnesses.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "model-before-witnesses.stdout": "2242c51710279378ab0e9c1c360640a721828e7db66503bdbbe9579b031c9b75",
+    "model-before.json": "3d15fc42a14a3282968fc4496a4a43591fa90107a7edd1ec2f5f44441a9e7d1e",
+    "native-modal-ExcludedPoint.png": "8264f9e52ddc58f601731565857f395f095c496a8d3e3aac629cf739a585a5d4",
+    "native-modal-IncludedPoint.png": "b13e71bab240fbf54568e096602bd9e1f220b76dee38ed174ad9e9c0484f6038",
+    "native-modal-ModalParentPointBefore.png": "a2ab4f924970114b2ebf90a9c424552ca3535f6ae5721492977376bb08ee2d53",
+    "native-modal-ModalRecipientAfter.png": "978025626c7d2fcd9d49085721fa860ecfd0971738bb9fbeefde1a3e810f516d",
+    "native-modal-RetiredModalParentEligibleAgain.png": "7a6c20368b7a9338a9e7b34a0c4632a12c284f5b06845d477cf9b13f0fa07b4b",
+    "native-modal-warlock.log.gz": "a3f2da8589f0076d5426ec0b3fa5b2ea8f3e020abed05e657a97dc7ba8c2e3c5",
+    "native-modal.json": "8b58947bd353e417d717a6c9520292ab6cd4dd80c3ca3fd5d6bdaf760bbdb424",
+    "native-no-activation-BothExcludedPoint.png": "5f306e1f37cbd261e5c8d434d19cf6233fb47cc08152a1b09ce6d742502d0f9f",
+    "native-no-activation-ExcludedPoint.png": "6efb4192dd502b157a61f411c4f229bfd3f27460c274566c38c6e50bfc1ab5e8",
+    "native-no-activation-IncludedPoint.png": "62a72c42e9ba77f4decf207412392e12092cda617b3f491d21d95544af7feb91",
+    "native-no-activation-warlock.log.gz": "5c06059c4565362db52bf618917a145e18fac602bf362c818ef872846dbed562",
+    "native-no-activation.json": "852e24dc8d82e4dcfd806ba12ac77fda15b390b31031dd66fadd04fdb23bc820",
+    "shutdown-model-named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "shutdown-model-named.stdout": "cc25cd97b98cb73a7bd201f5e4c041e03c679ca85064bfdf8cb0ac4dc4dfad06",
+    "shutdown-model-safety.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "shutdown-model-safety.stdout": "68c60309752fcb0af929b15a7a3dbe8088ad4e657cc71cb5737fd87fae68ce71",
+    "shutdown-model-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "shutdown-model-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "shutdown-model-witnesses.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "shutdown-model-witnesses.stdout": "391d159341e7297ba12a085df8615c271a52b436ed19b0e50a4d89f0b15e8e99",
+    "shutdown-model.json": "712f01648dbe2b11560cd7001237e4f8460a4ece0b2efd0111b73532832feef6"
+  }
+}

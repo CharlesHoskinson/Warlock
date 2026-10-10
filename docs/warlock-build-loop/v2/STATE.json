@@ -1,13 +1,64 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T07:32:24.601362+00:00",
+  "updatedUTC": "2026-10-10T07:48:25.922363+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
+    "id": "picker-preoffer-retirement",
+    "requirements": [
+      "ELM-DEL-021",
+      "ELM-QA-011"
+    ],
+    "scenarios": [
+      "delivery-021",
+      "qa-011"
+    ],
+    "paths": [
+      "implementation/warlock/native/family_producer.hpp",
+      "implementation/warlock/qa/preoffer-retirement.qnt",
+      "implementation/warlock/qa/preoffer-retirement_test.qnt",
+      "implementation/warlock/qa/check-preoffer-retirement.py",
+      "implementation/warlock/qa/current-search-build.json",
+      "implementation/warlock/README.md"
+    ],
+    "before": "A family source changes after physical capture but before offer; an exception destroys its mapping while leaving the native export/reservation and shutdown custody outstanding.",
+    "after": "Retain unoffered mapping ownership and retire its actual descriptor, export and producer before publishing a terminal refusal; an exact frontend ACK retires the journal and strict shutdown succeeds.",
+    "verification": [
+      "quint-llm-kit new pre-offer custody model, named tests and positive/safety sampled runs; original shutdown model unchanged; rebuild owning host objects and run unchanged direct-owner modal journey and no-activation lifecycle regression through protected serialized launcher."
+    ],
+    "status": "implemented-partial",
+    "participantRecord": ".warlock-contributor/capture-retirement.json",
+    "evidence": {
+      "path": "implementation/warlock/qa/evidence/picker-preoffer-retirement/manifest.json",
+      "sha256": "773b1200893ffb7a113c918f2ec23080a30e92d3125e6b69fc3f8941d4bfd37f"
+    },
+    "observed": "Actual unoffered capture mapping/FD/export/native producer retire before retained Refused proof. Exact unchanged direct-owner modal journey and no-activation regression pass normal owned exits and private cleanup; original core/plugin, deadlines and strict close remain unchanged.",
+    "missingObservations": [
+      "Independent original-scenario/release disposition",
+      "Actual held-reader, locked producer and uncertain transport schedules beyond the sampled abstraction",
+      "Wider native scene/transform/fullscreen/AT/IME/hardware/resource and package/rollback gates"
+    ],
+    "nextSourceWork": "Implement original ELM-REN-017/ren-017 true-fullscreen and pinned-surface policy with actual native fullscreen/pin/menu focus/pixels/hit observations. Preserve current MAX behavior, single Elm policy/native effect authority, exact ABI, Unknown/no-replay and real custody. Wider release-wide native/AT/IME/hardware/resource/package/rollback gates remain mandatory."
+  },
+  "nextSlices": [
+    "taskbar activation/minimize/restore and popup focus journeys",
+    "persistent catalog pins",
+    "launcher search and refusal recovery",
+    "switcher/Task View/workspaces and snap/output journeys",
+    "authorized visible previews and fallback",
+    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
+    "original native, AT/IME, hardware/resource/journey gates",
+    "reproducible package, reversible deployment/rollback"
+  ],
+  "releaseAccepted": false,
+  "oldTrackerIsCurrent": false,
+  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
+  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
+  "previousSlice": {
     "id": "max-modal-activation",
     "requirements": [
       "ELM-REN-015",
@@ -51,56 +102,51 @@
     ],
     "nextSourceWork": "Fix the observed product host picker custody/journal shutdown failure under original ELM-QA-011 client-before-compositor teardown and native resource-retirement obligations. Inspect shared-host/picker shutdown and backend completion; preserve real custody retirement, existing exit failure, core limit, normal cleanup and original deadlines. Re-run the unchanged direct visible-owner journey on the actual fix. Then continue original REN-017 true-fullscreen/pin/menu policy and remaining full GUI release scope. No additional native repetition without a source change or new diagnostic obligation."
   },
-  "nextSlices": [
-    "taskbar activation/minimize/restore and popup focus journeys",
-    "persistent catalog pins",
-    "launcher search and refusal recovery",
-    "switcher/Task View/workspaces and snap/output journeys",
-    "authorized visible previews and fallback",
-    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
-    "original native, AT/IME, hardware/resource/journey gates",
-    "reproducible package, reversible deployment/rollback"
-  ],
-  "releaseAccepted": false,
-  "oldTrackerIsCurrent": false,
-  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
-  "previousSlice": {
-    "id": "max-no-activation",
-    "requirements": [
-      "ELM-REN-015"
-    ],
-    "scenarios": [
-      "max-input-region"
-    ],
-    "paths": [
-      "implementation/warlock/native/core/InputManager.cpp",
-      "implementation/warlock/qa/committed-press.qnt",
-      "implementation/warlock/qa/committed-press_test.qnt",
-      "implementation/warlock/qa/check-committed-press.py",
-      "implementation/warlock/qa/native-max-no-activation.py",
-      "implementation/warlock/qa/current-scene-core.json",
-      "implementation/warlock/qa/current-native-pair.json",
-      "implementation/warlock/README.md"
-    ],
-    "before": "A ready committed MAX scene with no eligible root can fall through to cached pointer button delivery and raise.",
-    "after": "Ordinary MAX presses with no committed eligible root are suppressed with their releases; original lower-eligible clicks and accepted release ownership remain.",
-    "verification": [
-      "quint-llm-kit incremental typecheck/sampled run, explicit named tests and witnesses; rebuild current protected scene core and matched plugin; original two-MAX native included/excluded journey plus both-excluded no-activation and eligible recovery, original deadlines and actual GTK release owners."
-    ],
-    "status": "implemented-partial",
-    "participantRecord": ".warlock-contributor/no-activation.json",
-    "evidence": "implementation/warlock/qa/evidence/max-no-activation/manifest.json",
-    "observed": "Ordinary committed MAX no-hit presses/releases now stop before cached button delivery and activation. Original lower-eligible upper-pixel/committed-scene/GTK-owner journey remains; both-excluded negative, eligible recovery and pin/MAX pointer/keyboard regression pass with normal cleanup. Actual cache/commit races and independent broader acceptance remain open.",
-    "missingObservations": [
-      "Independent original max-input-region disposition and full constrained-scene/presentation acceptance.",
-      "Actual cached pointer focus retained through shape commit; ready eligible-root cache mismatch; stale/failed commit and button/release/device/retirement races.",
-      "Transformed/subsurface/modal, passthrough/layer/lock/grab/constraint/fullscreen and multi-output schedules.",
-      "Native AT/IME, measured resource/performance budgets and reproducible package/reversible deployment/rollback remain release obligations."
-    ],
-    "nextSourceWork": "Advance original ELM-REN-015/max-modal-focus: map blocking modal ownership and qualifying activation to actual native accepted recipient and constrained paint order. Preserve current MAX positive/no-activation/pin behavior. Retained-cache/button/stale/failed-frame, layer/grab/transform and full native AT/resource/package/rollback obligations remain mandatory; switch to another bounded mandatory product slice at the v2 no-progress threshold."
-  },
   "recentSlices": [
+    {
+      "id": "max-modal-activation",
+      "requirements": [
+        "ELM-REN-015",
+        "ELM-GNO-006"
+      ],
+      "scenarios": [
+        "max-modal-focus",
+        "hit-modal-redirect"
+      ],
+      "paths": [
+        "implementation/warlock/native/core/InputManager.cpp",
+        "implementation/warlock/native/core/ViewHitTester.cpp",
+        "implementation/warlock/native/core/ModalRecipient.hpp",
+        "implementation/warlock/native/navigation-modal.hpp",
+        "implementation/warlock/qa/check-scene-core.py",
+        "implementation/warlock/qa/check-native-authority.py",
+        "implementation/warlock/qa/native-window-feedback.py",
+        "implementation/warlock/qa/current-scene-core.json",
+        "implementation/warlock/qa/current-native-pair.json",
+        "implementation/warlock/qa/current-search-build.json",
+        "implementation/warlock/qa/modal-activation.qnt",
+        "implementation/warlock/qa/modal-activation_test.qnt",
+        "implementation/warlock/qa/check-modal-activation.py",
+        "implementation/warlock/qa/native-max-modal-focus.py",
+        "implementation/warlock/README.md"
+      ],
+      "before": "Ordinary MAX hit traversal skips modal-blocked parents and can activate a lower unrelated root at the visible parent point.",
+      "after": "A qualifying ordinary MAX parent click redirects focus to its eligible native modal recipient, preserves constrained paint order, and sends no synthetic modal click.",
+      "verification": [
+        "quint-llm-kit scoped executable activation/refusal/no-click model; retain actual protected pre-change failure; matched owning core/plugin; original native MAX owner point, modal focus/key recipient, no GTK click, family paint, modal retirement and lower-owner fallback with six-second deadlines; regress original two-MAX and no-activation behavior."
+      ],
+      "status": "implemented-partial",
+      "participantRecord": ".warlock-contributor/modal.json",
+      "evidence": "implementation/warlock/qa/evidence/max-modal-focus/manifest.json",
+      "observed": "Committed MAX activation redirects eligible blocked-parent focus to the shared native modal recipient, suppresses press/release and preserves placement/order. Physical modal key/pixels, taskbar activation and retirement recovery observed. Input-hole modal, no-activation and pin/MAX regressions pass. Two direct visible-owner recordings pass behavior then fail normal host exit with outstanding picker custody/journal; native campaign acceptance remains partial.",
+      "missingObservations": [
+        "The two direct visible-owner recordings fail normal host exit with outstanding native picker custody/journal. Resolve actual custody retirement; preserve exit checks and original deadlines.",
+        "Independent original REN-015/max-modal-focus and GNO-006/hit-modal-redirect disposition; both remain partial.",
+        "Native nested/ambiguous/ineligible/cyclic families, stale/failed commit and button/device/map/retirement races, transforms, grabs/layers/constraints, fullscreen and multi-output.",
+        "Full scene/presentation, native AT/IME, measured resource/performance budgets and reproducible package/reversible deployment/rollback."
+      ],
+      "nextSourceWork": "Fix the observed product host picker custody/journal shutdown failure under original ELM-QA-011 client-before-compositor teardown and native resource-retirement obligations. Inspect shared-host/picker shutdown and backend completion; preserve real custody retirement, existing exit failure, core limit, normal cleanup and original deadlines. Re-run the unchanged direct visible-owner journey on the actual fix. Then continue original REN-017 true-fullscreen/pin/menu policy and remaining full GUI release scope. No additional native repetition without a source change or new diagnostic obligation."
+    },
     {
       "id": "single-owner-refusal-announcements",
       "requirements": [

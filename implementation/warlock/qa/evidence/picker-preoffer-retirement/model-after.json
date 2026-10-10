@@ -1,0 +1,74 @@
+{
+  "passed": true,
+  "scope": "Sampled unoffered physical-custody ordering; native completion is separate.",
+  "nativeAcceptance": false,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-44fd6b78216a4b978a4612df79692182.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "qa/preoffer-retirement.qnt": "cfa4e4d7dc83a6844150658f952429bb204485490b89443ff8f5190a69d40770",
+    "qa/preoffer-retirement_test.qnt": "b19c4a20035d2cfc5f8492f833c5f9d64fcbb3c2a925aca083ae64b6934e4005",
+    "native/family_producer.hpp": "65fe1aa8956081084117bdc27d2b7dc624a62cd44ff42fc7a037d5e6bd80794d"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/preoffer-retirement.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/preoffer-retirement_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=79601"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "witnesses",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/preoffer-retirement.qnt",
+        "--backend=typescript",
+        "--witnesses",
+        "completedStaleRetirement",
+        "retainedLockedProducer",
+        "awaitingExactAcknowledgement",
+        "--max-samples=10000",
+        "--max-steps=80",
+        "--seed=79602"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "safety",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/preoffer-retirement.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79603"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "witnessCounts": {
+    "completedStaleRetirement": 5030,
+    "retainedLockedProducer": 7178,
+    "awaitingExactAcknowledgement": 9991
+  }
+}

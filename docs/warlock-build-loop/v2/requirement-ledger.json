@@ -1175,13 +1175,43 @@
                 "independent": false,
                 "disposition": "Owner-observed full native pin/MAX journey, exact retirement routing, strict close, normal client/helper termination, plugin unload and private cleanup; independent release acceptance remains open."
               }
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/picker-preoffer-retirement/manifest.json",
+              "sha256": "773b1200893ffb7a113c918f2ec23080a30e92d3125e6b69fc3f8941d4bfd37f",
+              "scope": "Actual unoffered capture mapping/FD/export/native producer retire before retained Refused proof. Exact unchanged direct-owner modal journey and no-activation regression pass normal owned exits and private cleanup; original core/plugin, deadlines and strict close remain unchanged.",
+              "sourceBaseRevision": "a124899bcd506c249d4c4e63437d0cf5e615172a",
+              "sourceHashes": {
+                "implementation/warlock/native/family_producer.hpp": "65fe1aa8956081084117bdc27d2b7dc624a62cd44ff42fc7a037d5e6bd80794d",
+                "implementation/warlock/qa/preoffer-retirement.qnt": "cfa4e4d7dc83a6844150658f952429bb204485490b89443ff8f5190a69d40770",
+                "implementation/warlock/qa/preoffer-retirement_test.qnt": "b19c4a20035d2cfc5f8492f833c5f9d64fcbb3c2a925aca083ae64b6934e4005",
+                "implementation/warlock/qa/check-preoffer-retirement.py": "ca61c599bccf00cca3230ea88ae21de597713f5527502dbf8c4121ed1ee3ffd3",
+                "implementation/warlock/qa/current-search-build.json": "159e7d44bda2becd74b96325d533870097dcf357ab702aa0f48d7e0ec11b5f8e",
+                "implementation/warlock/README.md": "f50dabe2626f6ffd7f13a1c0f9b1e76caffd9058c96bb3ac423f82b0d745520a",
+                "implementation/warlock/qa/native-max-modal-focus.py": "128df4b9d6b05dbb06c0d7f709c7fd5e5f92e83315999472e12705b4a0761fee",
+                "implementation/warlock/qa/native-max-no-activation.py": "e1ca26e2f5a2582d51a214afe65ad7bf933c068ed66fb6e540a431ae7efc3a32",
+                "implementation/warlock/qa/check-search.py": "7824b3a7d5c777288fb1c4a34e163852d91db5bb2666a29820eba4817a5cd5d2",
+                "implementation/warlock/qa/shutdown-preview.qnt": "74f4f9dd89e0dafb678f0af78c224164a5016cff8bb7c4f7df5b900371dcc360",
+                "implementation/warlock/qa/shutdown-preview_test.qnt": "3075f7db5f4afb856f62b8d51dadc0f265539cbe4ce501502523d02e20762087",
+                "implementation/warlock/native/shared-host.c": "f2a1e05a3133074fe5beedb634cf8da1d4240767f44e8c6ecc57a03e7cea035d",
+                "implementation/warlock/native/picker-previews.inc": "8e0799d2a56b08e7bee8c64fe098168ac2f1f4f3ab8a4b53e9e1363fa0cdcca3",
+                "implementation/warlock/native/preview_broker.hpp": "9c57428130093f8d815b7851004f103897deca278bbe4196e2116bec85a323ed",
+                "implementation/warlock/native/family_frame.hpp": "8c1fb4bcd10d15dba3b3dcc82e3b46cd185efbb6101453e54e7d08bb7d5666bb",
+                "implementation/warlock/qa/current-native-pair.json": "92cf77bb7cb4af7207d846858c1c4a6151da4d097e8f8db81a878b4fefb4a315",
+                "implementation/warlock/qa/current-scene-core.json": "e4050c2eeabf7ed52528d90e59f49502117b5f0c9e645faa8b52757f727a6d06"
+              },
+              "reviewerDisposition": {
+                "name": "root-capture-retirement",
+                "independent": false,
+                "disposition": "Owner-observed protected unchanged native modal and no-activation campaigns pass including actual unoffered physical retirement and normal owned exit; independent original and release acceptance remains open."
+              }
             }
           ],
-          "missingObservation": "Independent acceptance and complete release-wide original client/lease/order receipts beyond this concrete native pin/MAX session. Original generic delivery-021 is not accepted from this owner observation.",
+          "missingObservation": "Independent original disposition, applicable wider native/resource/AT/IME gates. Historical custody failure is resolved by this unchanged direct-owner campaign; full original requirement is not accepted from this bounded owner observation.",
           "reviewerDisposition": {
-            "name": "root-picker-shutdown",
+            "name": "root-capture-retirement",
             "independent": false,
-            "disposition": "Owner-observed full native pin/MAX journey, exact retirement routing, strict close, normal client/helper termination, plugin unload and private cleanup; independent release acceptance remains open."
+            "disposition": "Owner-observed protected unchanged native modal and no-activation campaigns pass including actual unoffered physical retirement and normal owned exit; independent original and release acceptance remains open."
           }
         }
       ]
@@ -1457,7 +1487,7 @@
       "owner": "Native authority lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "gnome-layering-006",
@@ -1514,9 +1544,44 @@
               },
               "reviewer": "root-modal",
               "disposition": "partial"
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/picker-preoffer-retirement/manifest.json",
+              "sha256": "773b1200893ffb7a113c918f2ec23080a30e92d3125e6b69fc3f8941d4bfd37f",
+              "scope": "Actual unoffered capture mapping/FD/export/native producer retire before retained Refused proof. Exact unchanged direct-owner modal journey and no-activation regression pass normal owned exits and private cleanup; original core/plugin, deadlines and strict close remain unchanged.",
+              "sourceBaseRevision": "a124899bcd506c249d4c4e63437d0cf5e615172a",
+              "sourceHashes": {
+                "implementation/warlock/native/family_producer.hpp": "65fe1aa8956081084117bdc27d2b7dc624a62cd44ff42fc7a037d5e6bd80794d",
+                "implementation/warlock/qa/preoffer-retirement.qnt": "cfa4e4d7dc83a6844150658f952429bb204485490b89443ff8f5190a69d40770",
+                "implementation/warlock/qa/preoffer-retirement_test.qnt": "b19c4a20035d2cfc5f8492f833c5f9d64fcbb3c2a925aca083ae64b6934e4005",
+                "implementation/warlock/qa/check-preoffer-retirement.py": "ca61c599bccf00cca3230ea88ae21de597713f5527502dbf8c4121ed1ee3ffd3",
+                "implementation/warlock/qa/current-search-build.json": "159e7d44bda2becd74b96325d533870097dcf357ab702aa0f48d7e0ec11b5f8e",
+                "implementation/warlock/README.md": "f50dabe2626f6ffd7f13a1c0f9b1e76caffd9058c96bb3ac423f82b0d745520a",
+                "implementation/warlock/qa/native-max-modal-focus.py": "128df4b9d6b05dbb06c0d7f709c7fd5e5f92e83315999472e12705b4a0761fee",
+                "implementation/warlock/qa/native-max-no-activation.py": "e1ca26e2f5a2582d51a214afe65ad7bf933c068ed66fb6e540a431ae7efc3a32",
+                "implementation/warlock/qa/check-search.py": "7824b3a7d5c777288fb1c4a34e163852d91db5bb2666a29820eba4817a5cd5d2",
+                "implementation/warlock/qa/shutdown-preview.qnt": "74f4f9dd89e0dafb678f0af78c224164a5016cff8bb7c4f7df5b900371dcc360",
+                "implementation/warlock/qa/shutdown-preview_test.qnt": "3075f7db5f4afb856f62b8d51dadc0f265539cbe4ce501502523d02e20762087",
+                "implementation/warlock/native/shared-host.c": "f2a1e05a3133074fe5beedb634cf8da1d4240767f44e8c6ecc57a03e7cea035d",
+                "implementation/warlock/native/picker-previews.inc": "8e0799d2a56b08e7bee8c64fe098168ac2f1f4f3ab8a4b53e9e1363fa0cdcca3",
+                "implementation/warlock/native/preview_broker.hpp": "9c57428130093f8d815b7851004f103897deca278bbe4196e2116bec85a323ed",
+                "implementation/warlock/native/family_frame.hpp": "8c1fb4bcd10d15dba3b3dcc82e3b46cd185efbb6101453e54e7d08bb7d5666bb",
+                "implementation/warlock/qa/current-native-pair.json": "92cf77bb7cb4af7207d846858c1c4a6151da4d097e8f8db81a878b4fefb4a315",
+                "implementation/warlock/qa/current-scene-core.json": "e4050c2eeabf7ed52528d90e59f49502117b5f0c9e645faa8b52757f727a6d06"
+              },
+              "reviewerDisposition": {
+                "name": "root-capture-retirement",
+                "independent": false,
+                "disposition": "Owner-observed protected unchanged native modal and no-activation campaigns pass including actual unoffered physical retirement and normal owned exit; independent original and release acceptance remains open."
+              }
             }
           ],
-          "missingObservation": "The two direct visible-owner recordings fail normal host exit with outstanding native picker custody/journal. Resolve actual custody retirement; preserve exit checks and original deadlines.; Independent original REN-015/max-modal-focus and GNO-006/hit-modal-redirect disposition; both remain partial.; Native nested/ambiguous/ineligible/cyclic families, stale/failed commit and button/device/map/retirement races, transforms, grabs/layers/constraints, fullscreen and multi-output.; Full scene/presentation, native AT/IME, measured resource/performance budgets and reproducible package/reversible deployment/rollback."
+          "missingObservation": "Independent original disposition, applicable wider native/resource/AT/IME gates. Historical custody failure is resolved by this unchanged direct-owner campaign; full original requirement is not accepted from this bounded owner observation.",
+          "reviewerDisposition": {
+            "name": "root-capture-retirement",
+            "independent": false,
+            "disposition": "Owner-observed protected unchanged native modal and no-activation campaigns pass including actual unoffered physical retirement and normal owned exit; independent original and release acceptance remains open."
+          }
         }
       ]
     },
@@ -2305,14 +2370,50 @@
       "owner": "Verification lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "qa-011",
           "oracle": "client/helper closure precedes compositor termination",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/picker-preoffer-retirement/manifest.json",
+              "sha256": "773b1200893ffb7a113c918f2ec23080a30e92d3125e6b69fc3f8941d4bfd37f",
+              "scope": "Actual unoffered capture mapping/FD/export/native producer retire before retained Refused proof. Exact unchanged direct-owner modal journey and no-activation regression pass normal owned exits and private cleanup; original core/plugin, deadlines and strict close remain unchanged.",
+              "sourceBaseRevision": "a124899bcd506c249d4c4e63437d0cf5e615172a",
+              "sourceHashes": {
+                "implementation/warlock/native/family_producer.hpp": "65fe1aa8956081084117bdc27d2b7dc624a62cd44ff42fc7a037d5e6bd80794d",
+                "implementation/warlock/qa/preoffer-retirement.qnt": "cfa4e4d7dc83a6844150658f952429bb204485490b89443ff8f5190a69d40770",
+                "implementation/warlock/qa/preoffer-retirement_test.qnt": "b19c4a20035d2cfc5f8492f833c5f9d64fcbb3c2a925aca083ae64b6934e4005",
+                "implementation/warlock/qa/check-preoffer-retirement.py": "ca61c599bccf00cca3230ea88ae21de597713f5527502dbf8c4121ed1ee3ffd3",
+                "implementation/warlock/qa/current-search-build.json": "159e7d44bda2becd74b96325d533870097dcf357ab702aa0f48d7e0ec11b5f8e",
+                "implementation/warlock/README.md": "f50dabe2626f6ffd7f13a1c0f9b1e76caffd9058c96bb3ac423f82b0d745520a",
+                "implementation/warlock/qa/native-max-modal-focus.py": "128df4b9d6b05dbb06c0d7f709c7fd5e5f92e83315999472e12705b4a0761fee",
+                "implementation/warlock/qa/native-max-no-activation.py": "e1ca26e2f5a2582d51a214afe65ad7bf933c068ed66fb6e540a431ae7efc3a32",
+                "implementation/warlock/qa/check-search.py": "7824b3a7d5c777288fb1c4a34e163852d91db5bb2666a29820eba4817a5cd5d2",
+                "implementation/warlock/qa/shutdown-preview.qnt": "74f4f9dd89e0dafb678f0af78c224164a5016cff8bb7c4f7df5b900371dcc360",
+                "implementation/warlock/qa/shutdown-preview_test.qnt": "3075f7db5f4afb856f62b8d51dadc0f265539cbe4ce501502523d02e20762087",
+                "implementation/warlock/native/shared-host.c": "f2a1e05a3133074fe5beedb634cf8da1d4240767f44e8c6ecc57a03e7cea035d",
+                "implementation/warlock/native/picker-previews.inc": "8e0799d2a56b08e7bee8c64fe098168ac2f1f4f3ab8a4b53e9e1363fa0cdcca3",
+                "implementation/warlock/native/preview_broker.hpp": "9c57428130093f8d815b7851004f103897deca278bbe4196e2116bec85a323ed",
+                "implementation/warlock/native/family_frame.hpp": "8c1fb4bcd10d15dba3b3dcc82e3b46cd185efbb6101453e54e7d08bb7d5666bb",
+                "implementation/warlock/qa/current-native-pair.json": "92cf77bb7cb4af7207d846858c1c4a6151da4d097e8f8db81a878b4fefb4a315",
+                "implementation/warlock/qa/current-scene-core.json": "e4050c2eeabf7ed52528d90e59f49502117b5f0c9e645faa8b52757f727a6d06"
+              },
+              "reviewerDisposition": {
+                "name": "root-capture-retirement",
+                "independent": false,
+                "disposition": "Owner-observed protected unchanged native modal and no-activation campaigns pass including actual unoffered physical retirement and normal owned exit; independent original and release acceptance remains open."
+              }
+            }
+          ],
+          "missingObservation": "Independent original disposition, applicable wider native/resource/AT/IME gates. Historical custody failure is resolved by this unchanged direct-owner campaign; full original requirement is not accepted from this bounded owner observation.",
+          "reviewerDisposition": {
+            "name": "root-capture-retirement",
+            "independent": false,
+            "disposition": "Owner-observed protected unchanged native modal and no-activation campaigns pass including actual unoffered physical retirement and normal owned exit; independent original and release acceptance remains open."
+          }
         }
       ]
     },
@@ -3129,9 +3230,44 @@
               },
               "reviewer": "root-modal",
               "disposition": "partial"
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/picker-preoffer-retirement/manifest.json",
+              "sha256": "773b1200893ffb7a113c918f2ec23080a30e92d3125e6b69fc3f8941d4bfd37f",
+              "scope": "Actual unoffered capture mapping/FD/export/native producer retire before retained Refused proof. Exact unchanged direct-owner modal journey and no-activation regression pass normal owned exits and private cleanup; original core/plugin, deadlines and strict close remain unchanged.",
+              "sourceBaseRevision": "a124899bcd506c249d4c4e63437d0cf5e615172a",
+              "sourceHashes": {
+                "implementation/warlock/native/family_producer.hpp": "65fe1aa8956081084117bdc27d2b7dc624a62cd44ff42fc7a037d5e6bd80794d",
+                "implementation/warlock/qa/preoffer-retirement.qnt": "cfa4e4d7dc83a6844150658f952429bb204485490b89443ff8f5190a69d40770",
+                "implementation/warlock/qa/preoffer-retirement_test.qnt": "b19c4a20035d2cfc5f8492f833c5f9d64fcbb3c2a925aca083ae64b6934e4005",
+                "implementation/warlock/qa/check-preoffer-retirement.py": "ca61c599bccf00cca3230ea88ae21de597713f5527502dbf8c4121ed1ee3ffd3",
+                "implementation/warlock/qa/current-search-build.json": "159e7d44bda2becd74b96325d533870097dcf357ab702aa0f48d7e0ec11b5f8e",
+                "implementation/warlock/README.md": "f50dabe2626f6ffd7f13a1c0f9b1e76caffd9058c96bb3ac423f82b0d745520a",
+                "implementation/warlock/qa/native-max-modal-focus.py": "128df4b9d6b05dbb06c0d7f709c7fd5e5f92e83315999472e12705b4a0761fee",
+                "implementation/warlock/qa/native-max-no-activation.py": "e1ca26e2f5a2582d51a214afe65ad7bf933c068ed66fb6e540a431ae7efc3a32",
+                "implementation/warlock/qa/check-search.py": "7824b3a7d5c777288fb1c4a34e163852d91db5bb2666a29820eba4817a5cd5d2",
+                "implementation/warlock/qa/shutdown-preview.qnt": "74f4f9dd89e0dafb678f0af78c224164a5016cff8bb7c4f7df5b900371dcc360",
+                "implementation/warlock/qa/shutdown-preview_test.qnt": "3075f7db5f4afb856f62b8d51dadc0f265539cbe4ce501502523d02e20762087",
+                "implementation/warlock/native/shared-host.c": "f2a1e05a3133074fe5beedb634cf8da1d4240767f44e8c6ecc57a03e7cea035d",
+                "implementation/warlock/native/picker-previews.inc": "8e0799d2a56b08e7bee8c64fe098168ac2f1f4f3ab8a4b53e9e1363fa0cdcca3",
+                "implementation/warlock/native/preview_broker.hpp": "9c57428130093f8d815b7851004f103897deca278bbe4196e2116bec85a323ed",
+                "implementation/warlock/native/family_frame.hpp": "8c1fb4bcd10d15dba3b3dcc82e3b46cd185efbb6101453e54e7d08bb7d5666bb",
+                "implementation/warlock/qa/current-native-pair.json": "92cf77bb7cb4af7207d846858c1c4a6151da4d097e8f8db81a878b4fefb4a315",
+                "implementation/warlock/qa/current-scene-core.json": "e4050c2eeabf7ed52528d90e59f49502117b5f0c9e645faa8b52757f727a6d06"
+              },
+              "reviewerDisposition": {
+                "name": "root-capture-retirement",
+                "independent": false,
+                "disposition": "Owner-observed protected unchanged native modal and no-activation campaigns pass including actual unoffered physical retirement and normal owned exit; independent original and release acceptance remains open."
+              }
             }
           ],
-          "missingObservation": "The two direct visible-owner recordings fail normal host exit with outstanding native picker custody/journal. Resolve actual custody retirement; preserve exit checks and original deadlines.; Independent original REN-015/max-modal-focus and GNO-006/hit-modal-redirect disposition; both remain partial.; Native nested/ambiguous/ineligible/cyclic families, stale/failed commit and button/device/map/retirement races, transforms, grabs/layers/constraints, fullscreen and multi-output.; Full scene/presentation, native AT/IME, measured resource/performance budgets and reproducible package/reversible deployment/rollback."
+          "missingObservation": "Independent original disposition, applicable wider native/resource/AT/IME gates. Historical custody failure is resolved by this unchanged direct-owner campaign; full original requirement is not accepted from this bounded owner observation.",
+          "reviewerDisposition": {
+            "name": "root-capture-retirement",
+            "independent": false,
+            "disposition": "Owner-observed protected unchanged native modal and no-activation campaigns pass including actual unoffered physical retirement and normal owned exit; independent original and release acceptance remains open."
+          }
         },
         {
           "name": "max-focus-not-top",
@@ -11099,5 +11235,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-10T07:32:24.601362+00:00"
+  "updatedUTC": "2026-10-10T07:48:25.922363+00:00"
 }
