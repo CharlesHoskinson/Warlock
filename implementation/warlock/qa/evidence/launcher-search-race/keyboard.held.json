@@ -1,0 +1,40 @@
+{
+  "protocolVersion": 3,
+  "kind": "application-catalog",
+  "binding": {
+    "lifetime": "13091073694396149842",
+    "session": "3",
+    "frontend": "1"
+  },
+  "requestId": "7",
+  "preferences": {
+    "revision": "1",
+    "identities": []
+  },
+  "snapshot": {
+    "catalogProtocol": 2,
+    "lifetime": "16578106011435094589",
+    "generation": "1",
+    "entries": [
+      {
+        "id": "warlock-editor",
+        "name": "Editor",
+        "iconHint": "application-x-executable",
+        "wmclass": "",
+        "genericName": "Text editor",
+        "keywords": []
+      },
+      {
+        "id": "warlock-files",
+        "name": "Files",
+        "iconHint": "application-x-executable",
+        "wmclass": "",
+        "genericName": "File manager",
+        "keywords": [
+          "folders",
+          "documents"
+        ]
+      }
+    ]
+  }
+}

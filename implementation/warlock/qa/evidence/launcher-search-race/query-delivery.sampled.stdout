@@ -1,0 +1,668 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      ack: 0,
+      deliveryAck: 0,
+      lastDelivered: -1,
+      lastDeliveredLease: 0,
+      lastDeliveredPub: 0,
+      lease: 1,
+      pending: -1,
+      pub: 1,
+      root: 0
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      ack: 0,
+      deliveryAck: 0,
+      lastDelivered: -1,
+      lastDeliveredLease: 0,
+      lastDeliveredPub: 0,
+      lease: 2,
+      pending: -1,
+      pub: 2,
+      root: 0
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      ack: 2,
+      deliveryAck: 0,
+      lastDelivered: -1,
+      lastDeliveredLease: 0,
+      lastDeliveredPub: 0,
+      lease: 2,
+      pending: -1,
+      pub: 2,
+      root: 0
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      ack: 0,
+      deliveryAck: 0,
+      lastDelivered: -1,
+      lastDeliveredLease: 0,
+      lastDeliveredPub: 0,
+      lease: 2,
+      pending: -1,
+      pub: 3,
+      root: 0
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      ack: 0,
+      deliveryAck: 0,
+      lastDelivered: -1,
+      lastDeliveredLease: 0,
+      lastDeliveredPub: 0,
+      lease: 2,
+      pending: 3,
+      pub: 3,
+      root: 0
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      ack: 3,
+      deliveryAck: 3,
+      lastDelivered: 3,
+      lastDeliveredLease: 2,
+      lastDeliveredPub: 3,
+      lease: 2,
+      pending: -1,
+      pub: 3,
+      root: 3
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      ack: 3,
+      deliveryAck: 3,
+      lastDelivered: 3,
+      lastDeliveredLease: 2,
+      lastDeliveredPub: 3,
+      lease: 2,
+      pending: -1,
+      pub: 3,
+      root: 3
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      ack: 3,
+      deliveryAck: 3,
+      lastDelivered: 3,
+      lastDeliveredLease: 2,
+      lastDeliveredPub: 3,
+      lease: 2,
+      pending: -1,
+      pub: 3,
+      root: 3
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      ack: 0,
+      deliveryAck: 3,
+      lastDelivered: 3,
+      lastDeliveredLease: 2,
+      lastDeliveredPub: 3,
+      lease: 3,
+      pending: -1,
+      pub: 4,
+      root: 3
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      ack: 0,
+      deliveryAck: 3,
+      lastDelivered: 3,
+      lastDeliveredLease: 2,
+      lastDeliveredPub: 3,
+      lease: 3,
+      pending: 3,
+      pub: 4,
+      root: 3
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      ack: 0,
+      deliveryAck: 3,
+      lastDelivered: 3,
+      lastDeliveredLease: 2,
+      lastDeliveredPub: 3,
+      lease: 3,
+      pending: 3,
+      pub: 4,
+      root: 3
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      ack: 0,
+      deliveryAck: 3,
+      lastDelivered: 3,
+      lastDeliveredLease: 2,
+      lastDeliveredPub: 3,
+      lease: 3,
+      pending: 3,
+      pub: 4,
+      root: 3
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      ack: 0,
+      deliveryAck: 3,
+      lastDelivered: 3,
+      lastDeliveredLease: 2,
+      lastDeliveredPub: 3,
+      lease: 3,
+      pending: -1,
+      pub: 5,
+      root: 3
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      ack: 0,
+      deliveryAck: 3,
+      lastDelivered: 3,
+      lastDeliveredLease: 2,
+      lastDeliveredPub: 3,
+      lease: 3,
+      pending: -1,
+      pub: 6,
+      root: 3
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      ack: 0,
+      deliveryAck: 3,
+      lastDelivered: 3,
+      lastDeliveredLease: 2,
+      lastDeliveredPub: 3,
+      lease: 3,
+      pending: 3,
+      pub: 6,
+      root: 3
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      ack: 0,
+      deliveryAck: 3,
+      lastDelivered: 3,
+      lastDeliveredLease: 2,
+      lastDeliveredPub: 3,
+      lease: 3,
+      pending: 3,
+      pub: 6,
+      root: 3
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      ack: 6,
+      deliveryAck: 6,
+      lastDelivered: 3,
+      lastDeliveredLease: 3,
+      lastDeliveredPub: 6,
+      lease: 3,
+      pending: -1,
+      pub: 6,
+      root: 3
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      ack: 0,
+      deliveryAck: 6,
+      lastDelivered: 3,
+      lastDeliveredLease: 3,
+      lastDeliveredPub: 6,
+      lease: 3,
+      pending: -1,
+      pub: 7,
+      root: 3
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      ack: 7,
+      deliveryAck: 6,
+      lastDelivered: 3,
+      lastDeliveredLease: 3,
+      lastDeliveredPub: 6,
+      lease: 3,
+      pending: -1,
+      pub: 7,
+      root: 3
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      ack: 7,
+      deliveryAck: 7,
+      lastDelivered: 3,
+      lastDeliveredLease: 3,
+      lastDeliveredPub: 7,
+      lease: 3,
+      pending: -1,
+      pub: 7,
+      root: 3
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      ack: 7,
+      deliveryAck: 7,
+      lastDelivered: 3,
+      lastDeliveredLease: 3,
+      lastDeliveredPub: 7,
+      lease: 3,
+      pending: -1,
+      pub: 7,
+      root: 3
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      ack: 7,
+      deliveryAck: 7,
+      lastDelivered: 3,
+      lastDeliveredLease: 3,
+      lastDeliveredPub: 7,
+      lease: 3,
+      pending: -1,
+      pub: 7,
+      root: 3
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      ack: 0,
+      deliveryAck: 7,
+      lastDelivered: 3,
+      lastDeliveredLease: 3,
+      lastDeliveredPub: 7,
+      lease: 4,
+      pending: -1,
+      pub: 8,
+      root: 3
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      ack: 8,
+      deliveryAck: 7,
+      lastDelivered: 3,
+      lastDeliveredLease: 3,
+      lastDeliveredPub: 7,
+      lease: 4,
+      pending: -1,
+      pub: 8,
+      root: 3
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      ack: 0,
+      deliveryAck: 7,
+      lastDelivered: 3,
+      lastDeliveredLease: 3,
+      lastDeliveredPub: 7,
+      lease: 5,
+      pending: -1,
+      pub: 9,
+      root: 3
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      ack: 0,
+      deliveryAck: 7,
+      lastDelivered: 3,
+      lastDeliveredLease: 3,
+      lastDeliveredPub: 7,
+      lease: 6,
+      pending: -1,
+      pub: 10,
+      root: 3
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      ack: 10,
+      deliveryAck: 7,
+      lastDelivered: 3,
+      lastDeliveredLease: 3,
+      lastDeliveredPub: 7,
+      lease: 6,
+      pending: -1,
+      pub: 10,
+      root: 3
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      ack: 0,
+      deliveryAck: 7,
+      lastDelivered: 3,
+      lastDeliveredLease: 3,
+      lastDeliveredPub: 7,
+      lease: 7,
+      pending: -1,
+      pub: 11,
+      root: 3
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      ack: 0,
+      deliveryAck: 7,
+      lastDelivered: 3,
+      lastDeliveredLease: 3,
+      lastDeliveredPub: 7,
+      lease: 8,
+      pending: -1,
+      pub: 12,
+      root: 3
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      ack: 0,
+      deliveryAck: 7,
+      lastDelivered: 3,
+      lastDeliveredLease: 3,
+      lastDeliveredPub: 7,
+      lease: 9,
+      pending: -1,
+      pub: 13,
+      root: 3
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      ack: 0,
+      deliveryAck: 7,
+      lastDelivered: 3,
+      lastDeliveredLease: 3,
+      lastDeliveredPub: 7,
+      lease: 10,
+      pending: -1,
+      pub: 14,
+      root: 3
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      ack: 14,
+      deliveryAck: 7,
+      lastDelivered: 3,
+      lastDeliveredLease: 3,
+      lastDeliveredPub: 7,
+      lease: 10,
+      pending: -1,
+      pub: 14,
+      root: 3
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      ack: 0,
+      deliveryAck: 7,
+      lastDelivered: 3,
+      lastDeliveredLease: 3,
+      lastDeliveredPub: 7,
+      lease: 10,
+      pending: -1,
+      pub: 15,
+      root: 3
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      ack: 15,
+      deliveryAck: 7,
+      lastDelivered: 3,
+      lastDeliveredLease: 3,
+      lastDeliveredPub: 7,
+      lease: 10,
+      pending: -1,
+      pub: 15,
+      root: 3
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      ack: 0,
+      deliveryAck: 7,
+      lastDelivered: 3,
+      lastDeliveredLease: 3,
+      lastDeliveredPub: 7,
+      lease: 10,
+      pending: -1,
+      pub: 16,
+      root: 3
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      ack: 0,
+      deliveryAck: 7,
+      lastDelivered: 3,
+      lastDeliveredLease: 3,
+      lastDeliveredPub: 7,
+      lease: 10,
+      pending: 3,
+      pub: 16,
+      root: 3
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      ack: 0,
+      deliveryAck: 7,
+      lastDelivered: 3,
+      lastDeliveredLease: 3,
+      lastDeliveredPub: 7,
+      lease: 10,
+      pending: 3,
+      pub: 16,
+      root: 3
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      ack: 0,
+      deliveryAck: 7,
+      lastDelivered: 3,
+      lastDeliveredLease: 3,
+      lastDeliveredPub: 7,
+      lease: 10,
+      pending: 3,
+      pub: 16,
+      root: 3
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      ack: 0,
+      deliveryAck: 7,
+      lastDelivered: 3,
+      lastDeliveredLease: 3,
+      lastDeliveredPub: 7,
+      lease: 10,
+      pending: -1,
+      pub: 17,
+      root: 3
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      ack: 17,
+      deliveryAck: 7,
+      lastDelivered: 3,
+      lastDeliveredLease: 3,
+      lastDeliveredPub: 7,
+      lease: 10,
+      pending: -1,
+      pub: 17,
+      root: 3
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      ack: 17,
+      deliveryAck: 17,
+      lastDelivered: 3,
+      lastDeliveredLease: 10,
+      lastDeliveredPub: 17,
+      lease: 10,
+      pending: -1,
+      pub: 17,
+      root: 3
+    }
+}
+
+[ok] No violation found (94ms at 5319 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Witnesses:
+queued was witnessed in 498 trace(s) out of 500 explored (99.60%)
+delivered was witnessed in 500 trace(s) out of 500 explored (100.00%)
+retired was witnessed in 500 trace(s) out of 500 explored (100.00%)
+advanced was witnessed in 500 trace(s) out of 500 explored (100.00%)
+Use --seed=0x15efa --backend=rust to reproduce.

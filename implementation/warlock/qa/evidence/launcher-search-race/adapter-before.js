@@ -1,12 +1,7 @@
 'use strict';
 const app = Elm.Popup.init({node:document.getElementById('app')});
 window.submitSurfaceAction = value => app.ports.requestAction.send(value);
-const post = value => {
-  window.webkit.messageHandlers.native.postMessage(JSON.stringify(value));
-  if(window.elmHostQA&&value.kind==='surface-query'){
-    window.imeQueryObservations.push(value);if(window.imeQueryObservations.length>64)window.imeQueryObservations.shift();
-  }
-};
+const post = value => window.webkit.messageHandlers.native.postMessage(JSON.stringify(value));
 let pickerSelection=null,observedPicker=null;
 const pickerNode=()=>document.querySelector('.surface-popup:is([data-mode="picker"],[data-mode="snap"],[data-mode="settings"],[data-mode="notifications"],[data-mode="system"],[data-mode="files"],[data-mode="jump"])');
 const rememberPicker=control=>{
@@ -56,18 +51,7 @@ document.addEventListener('keydown',event=>{
   event.preventDefault();event.stopImmediatePropagation();items[index].focus({preventScroll:true});rememberPicker(items[index]);revealPicker(true);
 },true);
 window.receiveAnnouncement = value => app.ports.announcements.send(value);
-// Elm can resend an unacknowledged local edit while accepting a presentation.
-// Native input admission opens only after presentation-applied. Keep one
-// current observational query and post it after that acknowledgement, in the
-// same handler's FIFO. Buttons/effects retain their original strict admission.
-let queryPresentation=null,queryApplied=false,queuedQuery=null;
-const currentQuery=value=>queryPresentation && value.publication===queryPresentation.publication &&
-  value.lease===queryPresentation.lease;
 window.receivePresentation = value => {
-  if(!currentQuery(value)){
-    queryPresentation={publication:value.publication,lease:value.lease};
-    queryApplied=false;queuedQuery=null;
-  }
   app.ports.presentation.send(value);
   requestAnimationFrame(() => requestAnimationFrame(() => {
     const node=document.querySelector('.surface-popup');
@@ -83,11 +67,6 @@ window.receivePresentation = value => {
       if(document.hasFocus())rememberPicker(document.activeElement);
       observePicker();revealPicker();observeNotificationFocus();
       post({surfaceProtocol:2,kind:'presentation-applied',publication:value.publication,lease:value.lease});
-      if(currentQuery(value)) {
-        queryApplied=true;
-        const pending=queuedQuery;queuedQuery=null;
-        if(pending && currentQuery(pending))post(pending);
-      }
     }
   }));
 };
@@ -103,11 +82,8 @@ window.receiveFocus = value => requestAnimationFrame(() => {
 });
 if(window.elmHostQA)window.imeQueryObservations=[];
 app.ports.actions.subscribe(value=>{
-  if(value.kind==='surface-query') {
-    if(value.surface!=='popup' || !currentQuery(value))return;
-    if(!queryApplied){queuedQuery=value;return;}
-  }
   post(value);
+  if(window.elmHostQA&&value.kind==='surface-query'){window.imeQueryObservations.push(value);if(window.imeQueryObservations.length>64)window.imeQueryObservations.shift();}
 });
 // Forward only current-surface key observations. Elm owns candidate order,
 // selection, ordinal bounds and mutation decisions; this is not a global chord

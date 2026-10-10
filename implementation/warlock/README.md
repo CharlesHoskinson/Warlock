@@ -575,3 +575,12 @@ Typing in the launcher now survives the gap between an accepted Elm publication 
 Input text belongs to its current field lease. The popup distinguishes its own Html callbacks from the external action port; this preserves local typing while ordinary captured actions retain exact-publication checks. The repair uses quint-llm-kit, with executable initialization, seven named positive/negative scenarios, sampled safety runs, fifteen compiled field assertions and the unchanged IME/browser regression. No native ABI, effect admission or Unknown/no-replay policy changed.
 
 Original UI-004 taskbar-zero remains partial pending independent acceptance. The fixture does not qualify every application/AT mode or pin/reorder popup paint. Next: original UI-005 search-race with a genuinely delayed old catalog refresh, current query/selection, native pixels and applicable AT observations.
+
+
+## Current launcher query across delayed refresh — October 10
+
+Launcher typing during a refresh now reaches the authoritative Elm model. The popup adapter retains one current observational query until it posts the native presentation-applied acknowledgement, then forwards that query in FIFO order. Duplicate presentations preserve the slot; a replacement publication or lease retires it. Button/effect admission remains unchanged. See [the native search-race and model evidence](qa/evidence/launcher-search-race/README.md).
+
+A genuine older catalog reply is held while the user changes files to editor. A newer request observes catalog generation 2; releasing the exact generation-1 reply preserves the current query, results and focused selection. Physical Enter and an actual AT-SPI press each submit one identity-bound GIO launch with current generation and recorded CURRENT_EDITOR argv. The current result paints, and the real Orca reader agrees with focus before and after the old reply. Both campaigns exit normally. The quint-llm-kit workflow verifies initialization, six named tests, sampled safety with positive witnesses and the actual adapter's ordering/retirement regression; compiled Elm and browser IME checks pass.
+
+Original UI-005 search-race remains partial pending independent review. The unchanged native IME journey passes direct preedit and commit/caret, then fails at the previously retained candidate-popup observation deadline. Candidate commit/cancel and release-wide hardware/resource/package/rollback obligations remain open. Next: original UI-005 search-unavailable, with native query-preserving keyboard retry and accessible failure.

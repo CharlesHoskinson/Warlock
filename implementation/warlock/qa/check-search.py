@@ -177,6 +177,8 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
   run('live-motion-model-named',['quint','test','qa/motion-profile.qnt','--main=liveMotion','--backend=typescript','--match=Test$','--max-samples=1','--seed=79161'])
   run('live-motion-model-invariants',['quint','run','qa/motion-profile.qnt','--main=liveMotion','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79162'])
  if LOCALFIELD:
+  delivery_model=json.loads(run('query-delivery-model',['/usr/bin/python3','-B','qa/check-query-delivery.py']))
+  delivery_path=pathlib.Path(delivery_model['report']);assert delivery_model['passed'];report['queryDeliveryModel']={'path':str(delivery_path),'sha256':sha(delivery_path)}
   local_model=json.loads(run('local-field-model',['/usr/bin/python3','-B','qa/check-local-field-publication.py']))
   model_path=pathlib.Path(local_model['report']);assert local_model['passed'];report['localFieldModel']={'path':str(model_path),'sha256':sha(model_path)}
   run('compile-local-field',[str(HELD/pinned['compiler']),'make','qa/LocalFieldReplay.elm','--optimize','--output=assets/local-field.js'])

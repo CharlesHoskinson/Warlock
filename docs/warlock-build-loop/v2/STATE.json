@@ -1,59 +1,94 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T16:37:39.517108+00:00",
+  "updatedUTC": "2026-10-10T16:57:51.041774+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "taskbar-zero-keyboard",
+    "id": "launcher-search-race",
     "requirements": [
-      "ELM-UI-004"
+      "ELM-UI-005"
     ],
     "scenarios": [
-      "taskbar-zero"
+      "search-race"
     ],
     "paths": [
-      "implementation/warlock/qa/native-taskbar-zero-keyboard.py",
-      "implementation/warlock/src/Surface.elm",
+      "implementation/warlock/qa/native-launcher-search-race.py",
       "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/src/Popup.elm",
+      "implementation/warlock/src/Presentation.elm",
+      "implementation/warlock/src/Catalog.elm",
       "implementation/warlock/src/Launch.elm",
       "implementation/warlock/adapter/catalog_authority.py",
       "implementation/warlock/README.md",
-      "implementation/warlock/src/Popup.elm",
-      "implementation/warlock/src/Presentation.elm",
-      "implementation/warlock/qa/local-field-publication.qnt",
-      "implementation/warlock/qa/LocalFieldReplay.elm",
-      "implementation/warlock/qa/check-local-field-publication.py",
-      "implementation/warlock/qa/check-search.py",
+      "implementation/warlock/qa/launcher-at-action.py",
+      "implementation/warlock/assets/popup-adapter.js",
+      "implementation/warlock/qa/query-delivery.qnt",
+      "implementation/warlock/qa/query-delivery_test.qnt",
+      "implementation/warlock/qa/check-query-delivery.py",
+      "implementation/warlock/qa/query-delivery.js",
       "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/assets/elm.js",
-      "implementation/warlock/assets/bar.js",
-      "implementation/warlock/assets/popup.js",
-      "implementation/warlock/qa/PinsReplay.elm"
+      "implementation/warlock/qa/check-search.py"
     ],
-    "before": "Persistent zero-window taskbar pins have pointer launch evidence but lack actual primary keyboard/AT launch and resulting running-family duplicate suppression.",
-    "after": "A real keyboard primary action launches the pinned catalog application once; subsequent running-family primary actions activate/minimize through native authority without a second launch. Real AT names/focus and applicable current action are observed separately.",
+    "before": "Search-race has typed and stale-publication evidence but lacks the original delayed old catalog refresh with changed query on the current native/AT tuple.",
+    "after": "A user changes the query while a real catalog refresh is held; a newer refresh/selection stays authoritative after the exact old receipt is released. Only the current query/catalog result dispatches through physical Enter or actual AT action.",
     "verification": [
-      "Compose original private persistent pin/reorder/restart fixture. Replace only Editor desktop fixture with owned real GTK application matching its declared startup class. Physical Apps/Escape/Home/Right/Enter reaches current pin. Require one bound GIO launch, actual app identity/pixels/client key recipient and unchanged persistent pin order. Subsequent primary action must use observed running family and no duplicate launch. Actual AT-SPI/Orca uses the existing isolated session and original waits. Preserve source/ABI/Unknown/no-replay, normal owned app exit and all original verification; model demonstrated behavioral fixes with quint-llm-kit before implementation."
+      "Use the existing native launcher/private AT fixture and unchanged catalog authority. Hold one genuine application-catalog frame before the unchanged bounded writer without blocking other backend reads. Type a different query; deliver a fresh catalog request/generation, then the exact old frame. Observe matching current field/result names, focus, actual control pixels and AT/Orca. Enter during loading must never launch; final physical Enter or real AT action issues exactly one current-generation GIO request and recorded current argv. No root/native authority, deadline, Unknown/no-replay or ABI substitutions. Model a demonstrated behavior defect with quint-llm-kit first."
     ],
-    "owner": "root-taskbar-zero-keyboard",
-    "participantRecord": ".warlock-contributor/taskbar-zero-keyboard.json",
+    "owner": "root-launcher-search-race",
+    "participantRecord": ".warlock-contributor/launcher-search-race.json",
     "disposition": "partial",
     "evidence": {
-      "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/manifest.json",
-      "sha256": "b45d998bfcea1a075d0b5c5cabebd69efff44f7e0f377bba3e41d6a5fb381df3",
-      "scope": "Typing in the launcher now survives the gap between an accepted Elm publication and its preceding DOM frame. Popup-owned field callbacks preserve bounded text within the same lease and rebase only read-only query messages; external edits/buttons remain publication-strict, and replacement leases retire drafts. The original native pin/reorder/restart journey passes. Physical Enter and real AT-SPI press each launch the zero-window Editor pin once through GIO. Its observed running family then minimizes/restores without another launch, receives actual client keyboard input and paints 268,432 green pixels inside its native window region. Both private native campaigns exit normally."
+      "path": "implementation/warlock/qa/evidence/launcher-search-race/manifest.json",
+      "sha256": "59367652cf533b7052a9547a8bfa85eaca5727b966298090b2e9de37738f9694",
+      "scope": "Launcher query delivery now waits for the unchanged native presentation-applied admission. A genuine old request/catalog receipt is held across real files-to-editor typing and a newer generation-2 refresh; the exact old generation-1 receipt cannot replace query/results/focused selection. Physical Enter and actual AT-SPI press each launch one current identity/generation through GIO with CURRENT_EDITOR argv. Actual result/refresh interiors paint; current host AT-SPI and Orca focus agree before/after old reply. Compiled/local-field/browser IME and model regressions pass; both search-race campaigns clean up normally.",
+      "sourceBaseRevision": "87a3bd12b7b83e51953da3d471c0aa95fce27198",
+      "sourceHashes": {
+        "implementation/warlock/qa/native-launcher-search-race.py": "347ca394def22935a2a6207024b4e7efb8eb34168297a571c27d6370e46b4b26",
+        "implementation/warlock/src/Desktop.elm": "176ddaf19e5dfb6c2362ac9c9c46d296155cd38e916e4cd28938a591648ed711",
+        "implementation/warlock/src/Popup.elm": "cc00f7861217d23ae7cac3dd88f91c042862ff2246e68a4c149427892e5556d3",
+        "implementation/warlock/src/Presentation.elm": "8c3463230d93b768f48784a37ae9e4da7a225defa6f209b3100258af5196c0e9",
+        "implementation/warlock/src/Catalog.elm": "3eadb76212a66986ef2d76292a2f33595f7cd7d47dc90c8982435195f9ea3f02",
+        "implementation/warlock/src/Launch.elm": "dcd7260248ccb0b5bc6001c49319dd51af8c2fae98888919a308ac025ed273a2",
+        "implementation/warlock/adapter/catalog_authority.py": "ad20204afd3b203eb956918300c8da4cb4765b3c5ad86e701b0257a54b8fb9cc",
+        "implementation/warlock/README.md": "9c84c18cdfdb52d378a31b21e4aa4df01eae47888ecf2b0fc4b7cd784b1115ca",
+        "implementation/warlock/qa/launcher-at-action.py": "660ed0e324cd1ae5e104a045f8a96c72e28d680a15667d34d64698e47bebf1d6",
+        "implementation/warlock/assets/popup-adapter.js": "9c566e99694e1d8d5c6ed38d94f1c0449beaf7b4a57aa14f13b46402b0b1b0dc",
+        "implementation/warlock/qa/query-delivery.qnt": "0561bb02949b3162179e46571b4abb5e4c31fb9dae3d6b800a80ab48185ccf0b",
+        "implementation/warlock/qa/query-delivery_test.qnt": "b5c14092ffd1673cb81d4063af63489a75a187280809ddc1711bf920925bae8f",
+        "implementation/warlock/qa/check-query-delivery.py": "b0db710b92d9eeaebcc71808522b324cfea999c6ebfe36504552c27f69d0cacb",
+        "implementation/warlock/qa/query-delivery.js": "d220250bce2a1a981b2f2c37df4caf02a1f4672c1ea02ea6b4747ace06b81ae2",
+        "implementation/warlock/qa/current-search-build.json": "41ebeef11168c78c0bcead2ffe2c384d87122bad410c0e95e6d7a64c79119d1b",
+        "implementation/warlock/qa/check-search.py": "6605aaa383ef26a7946ff8cf2a92d9726d629ace6f862008b5e375124ab48b3d",
+        "implementation/warlock/src/Surface.elm": "a9f8000a7ce0a64174ee10a4fe9a9a8b491443a62e02d47ca11ee3dac2adabdd",
+        "implementation/warlock/src/SurfaceRenderer.elm": "e7e8d255cf38c2862a03c951f7caab50fddffa73946ae143dedfe71c1fdbf4c6",
+        "implementation/warlock/src/SurfaceController.elm": "399283022f7dd4dc345f313c32655d74cca7dd70cd3e4b0811310cb09711fcd1",
+        "implementation/warlock/src/OutputController.elm": "5d42d7a05b3c08438602b7753c4933011d75fb025efaddf4465effb246dd91a5",
+        "implementation/warlock/adapter/daemon.py": "819b945c7d1c92d6360045db297715ac9ff7ac72024741b8ca3238fc24d08d67",
+        "implementation/warlock/adapter/catalog_transport.py": "43bd1cd1059b87ce4d349d72e4b2a917ac1bdc3dacda2f60563fa621e05a4b84",
+        "implementation/warlock/qa/native-window-feedback.py": "295ba28cf8d9d297b214bd0d6dba19ac3289d861faa953f9fd94b82937473c64",
+        "implementation/warlock/native/shared-host.c": "63bf35e5f4ea09a4046badd534a60c609becf92600fb767b48aa26574df9b906",
+        "implementation/warlock/native/surface.h": "d7fbd6a79d9aefb232a6f86ce2e3db806d2fd5b913eb90ea5a8cddc0807f4c43",
+        "implementation/warlock/assets/elm.js": "d376062010e031d016d780f6d3b65de1d4106efb6392f82d8ce82e9d522a703e",
+        "implementation/warlock/assets/bar.js": "26ef20c9143f87caf7e3d7fc293b248983076f5a7b7a6967cc341d71f7711194",
+        "implementation/warlock/assets/popup.js": "23b0f3e5e223dd5e1d7042ea33dcc1e1f4895997b01ebd7d764a75c15236b56c"
+      },
+      "reviewerDisposition": {
+        "name": "root-launcher-search-race",
+        "independent": false,
+        "disposition": "Owner observed exact native keyboard/AT schedule; independent original acceptance remains pending."
+      }
     },
-    "observed": "Typing in the launcher now survives the gap between an accepted Elm publication and its preceding DOM frame. Popup-owned field callbacks preserve bounded text within the same lease and rebase only read-only query messages; external edits/buttons remain publication-strict, and replacement leases retire drafts. The original native pin/reorder/restart journey passes. Physical Enter and real AT-SPI press each launch the zero-window Editor pin once through GIO. Its observed running family then minimizes/restores without another launch, receives actual client keyboard input and paints 268,432 green pixels inside its native window region. Both private native campaigns exit normally.",
+    "observed": "Launcher query delivery now waits for the unchanged native presentation-applied admission. A genuine old request/catalog receipt is held across real files-to-editor typing and a newer generation-2 refresh; the exact old generation-1 receipt cannot replace query/results/focused selection. Physical Enter and actual AT-SPI press each launch one current identity/generation through GIO with CURRENT_EDITOR argv. Actual result/refresh interiors paint; current host AT-SPI and Orca focus agree before/after old reply. Compiled/local-field/browser IME and model regressions pass; both search-race campaigns clean up normally.",
     "missingObservations": [
-      "Independent original-scenario review of taskbar-zero against the frozen interaction oracle and exact source/core/plugin/toolchain remains open.",
-      "This fixture covers one current zero-window catalog pin, physical Enter and focused AT-SPI press with actual Orca names/focus. Broader applications, cached/unfocused AT actions, audible speech/braille, pin/reorder popup paint and other original GUI scenarios remain separately unqualified.",
-      "Physical hardware/output/IME breadth, resource/journey budgets, reproducible package and reversible deployment/rollback remain release obligations."
+      "Independent original-scenario review against the frozen matching/ranking and interaction oracle and exact source/core/plugin/compiler remains open.",
+      "This covers a delayed obsolete request after a newer request/generation and exact current keyboard/AT selection. Broader catalogs/languages/AT modes, audible speech/braille and other original scenarios remain separate.",
+      "Native IME direct preedit and commit/caret pass; candidate popup is unobserved at the unchanged deadline, matching a retained prior failure. Candidate commit/cancel and hardware/resource/journey/package/deployment/rollback remain release obligations."
     ],
-    "nextSourceWork": "Original ELM-UI-005/search-race: hold a genuine older catalog refresh while the user edits the query, release it, and exercise current selection through actual keyboard/AT with native pixels. Require current query/catalog results, no replacement/stale dispatch and no automatic launch. Reuse existing immutable Elm search/selection/launch authority and the fixed local field route; model any demonstrated behavioral defect first with quint-llm-kit. Independent original acceptance remains separate."
+    "nextSourceWork": "Original ELM-UI-005/search-unavailable: genuine provider failure with retained query, accessible unavailable status and real keyboard Refresh recovery without automatic launch. Reuse the current single Elm/catalog authority and original native/AT fixture, fixing any observed production defect with quint-llm-kit first. Native IME candidate failure remains a separate integration gate; do not expand this successful search-race into more invented schedules."
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -2095,50 +2130,98 @@
         "Physical hotplug/AT/IME breadth, resource/journey budgets, reproducible package and reversible deployment/rollback remain release obligations."
       ],
       "nextSourceWork": "Original ELM-UI-004/taskbar-refusal: reproduce actual taskbar activation of a native pinned family from another output bar, receiving the real implicit-transfer-required refusal. Verify visible Refused feedback, unchanged observed pin/workspace/draft/focus, no replay, and actual keyboard recipient. Fix a demonstrated owning feedback/projection/admission defect with quint-llm-kit before behavioral changes; retain native primary AT and authority guards. Independent acceptance and wider release scope remain open."
+    },
+    {
+      "id": "taskbar-native-refusal",
+      "requirements": [
+        "ELM-UI-004"
+      ],
+      "scenarios": [
+        "taskbar-refusal"
+      ],
+      "paths": [
+        "implementation/warlock/qa/native-taskbar-refusal.py",
+        "implementation/warlock/src/Surface.elm",
+        "implementation/warlock/src/TaskbarShell.elm",
+        "implementation/warlock/assets/bar-adapter.js",
+        "implementation/warlock/assets/shell.css",
+        "implementation/warlock/README.md",
+        "implementation/warlock/qa/current-search-build.json",
+        "implementation/warlock/assets/elm.js",
+        "implementation/warlock/assets/bar.js",
+        "implementation/warlock/assets/popup.js",
+        "implementation/warlock/qa/check-taskbar-recovery.py",
+        "implementation/warlock/qa/native-taskbar-recovery.py"
+      ],
+      "before": "The original taskbar-refusal scenario is unadjudicated; existing cross-output pinned refusal is observed only through a native fixture call.",
+      "after": "A real taskbar Activate from another output receives native Refused feedback while pin/workspace/draft/geometry and observed focus remain authoritative, with no automatic replay and declared keyboard custody.",
+      "verification": [
+        "Compose original two-output native drag fixture, pin the live target on its owner output, map an ordinary independent peer on the other output, then real current-bar pointer activation. Require correlated native implicit-transfer-required refusal, visible current Refused feedback and actual pixels, unchanged native target/peer and no repeated window or launch effects. Observe actual keyboard recipient without a manual success workaround. Model a demonstrated behavioral defect with quint-llm-kit before owning fix. Preserve original waits/core/plugin/source identity; AT and independent original acceptance separate."
+      ],
+      "owner": "root-taskbar-native-refusal",
+      "participantRecord": ".warlock-contributor/taskbar-native-refusal.json",
+      "disposition": "partial",
+      "evidence": {
+        "path": "implementation/warlock/qa/evidence/taskbar-native-refusal/manifest.json",
+        "sha256": "5703769e9de79c200d097accc0a4a9875ea010d35c85d27f8f9aed08d39a3e20",
+        "scope": "The taskbar now puts its existing read-only recovery control first when recovery is needed. The actual Refused frame moved it from x803 outside a 540px action region to x1, width120. Real other-output activation receives one native implicit-transfer-required Refused receipt; pin/workspace/geometry/draft and peer focus remain authoritative. Actual peer keyboard input is preserved before recovery. Clicking the visible recovery issues observations without retry or launch. Current browser and native Pending/Refused/Unknown regressions pass with normal cleanup."
+      },
+      "observed": "The taskbar now puts its existing read-only recovery control first when recovery is needed. The actual Refused frame moved it from x803 outside a 540px action region to x1, width120. Real other-output activation receives one native implicit-transfer-required Refused receipt; pin/workspace/geometry/draft and peer focus remain authoritative. Actual peer keyboard input is preserved before recovery. Clicking the visible recovery issues observations without retry or launch. Current browser and native Pending/Refused/Unknown regressions pass with normal cleanup.",
+      "missingObservations": [
+        "Independent original-scenario review against the frozen interaction oracle and exact source/core/plugin/toolchain remains open.",
+        "Native primary keyboard invocation and applicable AT invocation/feedback for taskbar-refusal remain unqualified. Actual peer keyboard delivery after pointer refusal is not keyboard primary invocation. Audible speech/braille and other refusal causes remain separate.",
+        "Recovery is observed without scrolling in the default two-family native viewport and at 320px in a compiled component. Existing user scroll position, denser pin/group arrangements and all input/AT modes remain separate.",
+        "Hardware/AT/IME breadth, resource/journey budgets, reproducible package and reversible deployment/rollback remain release obligations."
+      ],
+      "nextSourceWork": "Original ELM-UI-004/taskbar-zero: operate a persistent zero-window taskbar pin through actual primary keyboard input. Require exactly one current identity-bound launch, visible native application, preserved pin order and no ordinary-activation duplicate. Reuse current single Elm launch authority; fix any demonstrated production defect model-first with quint-llm-kit. Applicable AT and independent original acceptance remain separate. Avoid expanding refusal variants after this bounded product fix."
     }
   ],
   "lastSlice": {
-    "id": "taskbar-native-refusal",
+    "id": "taskbar-zero-keyboard",
     "requirements": [
       "ELM-UI-004"
     ],
     "scenarios": [
-      "taskbar-refusal"
+      "taskbar-zero"
     ],
     "paths": [
-      "implementation/warlock/qa/native-taskbar-refusal.py",
+      "implementation/warlock/qa/native-taskbar-zero-keyboard.py",
       "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/src/TaskbarShell.elm",
-      "implementation/warlock/assets/bar-adapter.js",
-      "implementation/warlock/assets/shell.css",
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/src/Launch.elm",
+      "implementation/warlock/adapter/catalog_authority.py",
       "implementation/warlock/README.md",
+      "implementation/warlock/src/Popup.elm",
+      "implementation/warlock/src/Presentation.elm",
+      "implementation/warlock/qa/local-field-publication.qnt",
+      "implementation/warlock/qa/LocalFieldReplay.elm",
+      "implementation/warlock/qa/check-local-field-publication.py",
+      "implementation/warlock/qa/check-search.py",
       "implementation/warlock/qa/current-search-build.json",
       "implementation/warlock/assets/elm.js",
       "implementation/warlock/assets/bar.js",
       "implementation/warlock/assets/popup.js",
-      "implementation/warlock/qa/check-taskbar-recovery.py",
-      "implementation/warlock/qa/native-taskbar-recovery.py"
+      "implementation/warlock/qa/PinsReplay.elm"
     ],
-    "before": "The original taskbar-refusal scenario is unadjudicated; existing cross-output pinned refusal is observed only through a native fixture call.",
-    "after": "A real taskbar Activate from another output receives native Refused feedback while pin/workspace/draft/geometry and observed focus remain authoritative, with no automatic replay and declared keyboard custody.",
+    "before": "Persistent zero-window taskbar pins have pointer launch evidence but lack actual primary keyboard/AT launch and resulting running-family duplicate suppression.",
+    "after": "A real keyboard primary action launches the pinned catalog application once; subsequent running-family primary actions activate/minimize through native authority without a second launch. Real AT names/focus and applicable current action are observed separately.",
     "verification": [
-      "Compose original two-output native drag fixture, pin the live target on its owner output, map an ordinary independent peer on the other output, then real current-bar pointer activation. Require correlated native implicit-transfer-required refusal, visible current Refused feedback and actual pixels, unchanged native target/peer and no repeated window or launch effects. Observe actual keyboard recipient without a manual success workaround. Model a demonstrated behavioral defect with quint-llm-kit before owning fix. Preserve original waits/core/plugin/source identity; AT and independent original acceptance separate."
+      "Compose original private persistent pin/reorder/restart fixture. Replace only Editor desktop fixture with owned real GTK application matching its declared startup class. Physical Apps/Escape/Home/Right/Enter reaches current pin. Require one bound GIO launch, actual app identity/pixels/client key recipient and unchanged persistent pin order. Subsequent primary action must use observed running family and no duplicate launch. Actual AT-SPI/Orca uses the existing isolated session and original waits. Preserve source/ABI/Unknown/no-replay, normal owned app exit and all original verification; model demonstrated behavioral fixes with quint-llm-kit before implementation."
     ],
-    "owner": "root-taskbar-native-refusal",
-    "participantRecord": ".warlock-contributor/taskbar-native-refusal.json",
+    "owner": "root-taskbar-zero-keyboard",
+    "participantRecord": ".warlock-contributor/taskbar-zero-keyboard.json",
     "disposition": "partial",
     "evidence": {
-      "path": "implementation/warlock/qa/evidence/taskbar-native-refusal/manifest.json",
-      "sha256": "5703769e9de79c200d097accc0a4a9875ea010d35c85d27f8f9aed08d39a3e20",
-      "scope": "The taskbar now puts its existing read-only recovery control first when recovery is needed. The actual Refused frame moved it from x803 outside a 540px action region to x1, width120. Real other-output activation receives one native implicit-transfer-required Refused receipt; pin/workspace/geometry/draft and peer focus remain authoritative. Actual peer keyboard input is preserved before recovery. Clicking the visible recovery issues observations without retry or launch. Current browser and native Pending/Refused/Unknown regressions pass with normal cleanup."
+      "path": "implementation/warlock/qa/evidence/taskbar-zero-keyboard/manifest.json",
+      "sha256": "b45d998bfcea1a075d0b5c5cabebd69efff44f7e0f377bba3e41d6a5fb381df3",
+      "scope": "Typing in the launcher now survives the gap between an accepted Elm publication and its preceding DOM frame. Popup-owned field callbacks preserve bounded text within the same lease and rebase only read-only query messages; external edits/buttons remain publication-strict, and replacement leases retire drafts. The original native pin/reorder/restart journey passes. Physical Enter and real AT-SPI press each launch the zero-window Editor pin once through GIO. Its observed running family then minimizes/restores without another launch, receives actual client keyboard input and paints 268,432 green pixels inside its native window region. Both private native campaigns exit normally."
     },
-    "observed": "The taskbar now puts its existing read-only recovery control first when recovery is needed. The actual Refused frame moved it from x803 outside a 540px action region to x1, width120. Real other-output activation receives one native implicit-transfer-required Refused receipt; pin/workspace/geometry/draft and peer focus remain authoritative. Actual peer keyboard input is preserved before recovery. Clicking the visible recovery issues observations without retry or launch. Current browser and native Pending/Refused/Unknown regressions pass with normal cleanup.",
+    "observed": "Typing in the launcher now survives the gap between an accepted Elm publication and its preceding DOM frame. Popup-owned field callbacks preserve bounded text within the same lease and rebase only read-only query messages; external edits/buttons remain publication-strict, and replacement leases retire drafts. The original native pin/reorder/restart journey passes. Physical Enter and real AT-SPI press each launch the zero-window Editor pin once through GIO. Its observed running family then minimizes/restores without another launch, receives actual client keyboard input and paints 268,432 green pixels inside its native window region. Both private native campaigns exit normally.",
     "missingObservations": [
-      "Independent original-scenario review against the frozen interaction oracle and exact source/core/plugin/toolchain remains open.",
-      "Native primary keyboard invocation and applicable AT invocation/feedback for taskbar-refusal remain unqualified. Actual peer keyboard delivery after pointer refusal is not keyboard primary invocation. Audible speech/braille and other refusal causes remain separate.",
-      "Recovery is observed without scrolling in the default two-family native viewport and at 320px in a compiled component. Existing user scroll position, denser pin/group arrangements and all input/AT modes remain separate.",
-      "Hardware/AT/IME breadth, resource/journey budgets, reproducible package and reversible deployment/rollback remain release obligations."
+      "Independent original-scenario review of taskbar-zero against the frozen interaction oracle and exact source/core/plugin/toolchain remains open.",
+      "This fixture covers one current zero-window catalog pin, physical Enter and focused AT-SPI press with actual Orca names/focus. Broader applications, cached/unfocused AT actions, audible speech/braille, pin/reorder popup paint and other original GUI scenarios remain separately unqualified.",
+      "Physical hardware/output/IME breadth, resource/journey budgets, reproducible package and reversible deployment/rollback remain release obligations."
     ],
-    "nextSourceWork": "Original ELM-UI-004/taskbar-zero: operate a persistent zero-window taskbar pin through actual primary keyboard input. Require exactly one current identity-bound launch, visible native application, preserved pin order and no ordinary-activation duplicate. Reuse current single Elm launch authority; fix any demonstrated production defect model-first with quint-llm-kit. Applicable AT and independent original acceptance remain separate. Avoid expanding refusal variants after this bounded product fix."
+    "nextSourceWork": "Original ELM-UI-005/search-race: hold a genuine older catalog refresh while the user edits the query, release it, and exercise current selection through actual keyboard/AT with native pixels. Require current query/catalog results, no replacement/stale dispatch and no automatic launch. Reuse existing immutable Elm search/selection/launch authority and the fixed local field route; model any demonstrated behavioral defect first with quint-llm-kit. Independent original acceptance remains separate."
   }
 }

@@ -5487,10 +5487,51 @@
               "path": "implementation/warlock/qa/evidence/launcher-search/manifest.json",
               "sha256": "c36810d3418807d241e9cc36b3d8a1b78796737135c5c7bcd05123dd631d9d43",
               "scope": "Compiled current-query/ranking and scoped admission; actual native typing, one identity-bound Enter request, refused stale catalog, preserved query/focus and observation-only refresh/no replacement. Popup pixels are black; native visual/AT/IME acceptance is withheld."
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/launcher-search-race/manifest.json",
+              "sha256": "59367652cf533b7052a9547a8bfa85eaca5727b966298090b2e9de37738f9694",
+              "scope": "Launcher query delivery now waits for the unchanged native presentation-applied admission. A genuine old request/catalog receipt is held across real files-to-editor typing and a newer generation-2 refresh; the exact old generation-1 receipt cannot replace query/results/focused selection. Physical Enter and actual AT-SPI press each launch one current identity/generation through GIO with CURRENT_EDITOR argv. Actual result/refresh interiors paint; current host AT-SPI and Orca focus agree before/after old reply. Compiled/local-field/browser IME and model regressions pass; both search-race campaigns clean up normally.",
+              "sourceBaseRevision": "87a3bd12b7b83e51953da3d471c0aa95fce27198",
+              "sourceHashes": {
+                "implementation/warlock/qa/native-launcher-search-race.py": "347ca394def22935a2a6207024b4e7efb8eb34168297a571c27d6370e46b4b26",
+                "implementation/warlock/src/Desktop.elm": "176ddaf19e5dfb6c2362ac9c9c46d296155cd38e916e4cd28938a591648ed711",
+                "implementation/warlock/src/Popup.elm": "cc00f7861217d23ae7cac3dd88f91c042862ff2246e68a4c149427892e5556d3",
+                "implementation/warlock/src/Presentation.elm": "8c3463230d93b768f48784a37ae9e4da7a225defa6f209b3100258af5196c0e9",
+                "implementation/warlock/src/Catalog.elm": "3eadb76212a66986ef2d76292a2f33595f7cd7d47dc90c8982435195f9ea3f02",
+                "implementation/warlock/src/Launch.elm": "dcd7260248ccb0b5bc6001c49319dd51af8c2fae98888919a308ac025ed273a2",
+                "implementation/warlock/adapter/catalog_authority.py": "ad20204afd3b203eb956918300c8da4cb4765b3c5ad86e701b0257a54b8fb9cc",
+                "implementation/warlock/README.md": "9c84c18cdfdb52d378a31b21e4aa4df01eae47888ecf2b0fc4b7cd784b1115ca",
+                "implementation/warlock/qa/launcher-at-action.py": "660ed0e324cd1ae5e104a045f8a96c72e28d680a15667d34d64698e47bebf1d6",
+                "implementation/warlock/assets/popup-adapter.js": "9c566e99694e1d8d5c6ed38d94f1c0449beaf7b4a57aa14f13b46402b0b1b0dc",
+                "implementation/warlock/qa/query-delivery.qnt": "0561bb02949b3162179e46571b4abb5e4c31fb9dae3d6b800a80ab48185ccf0b",
+                "implementation/warlock/qa/query-delivery_test.qnt": "b5c14092ffd1673cb81d4063af63489a75a187280809ddc1711bf920925bae8f",
+                "implementation/warlock/qa/check-query-delivery.py": "b0db710b92d9eeaebcc71808522b324cfea999c6ebfe36504552c27f69d0cacb",
+                "implementation/warlock/qa/query-delivery.js": "d220250bce2a1a981b2f2c37df4caf02a1f4672c1ea02ea6b4747ace06b81ae2",
+                "implementation/warlock/qa/current-search-build.json": "41ebeef11168c78c0bcead2ffe2c384d87122bad410c0e95e6d7a64c79119d1b",
+                "implementation/warlock/qa/check-search.py": "6605aaa383ef26a7946ff8cf2a92d9726d629ace6f862008b5e375124ab48b3d",
+                "implementation/warlock/src/Surface.elm": "a9f8000a7ce0a64174ee10a4fe9a9a8b491443a62e02d47ca11ee3dac2adabdd",
+                "implementation/warlock/src/SurfaceRenderer.elm": "e7e8d255cf38c2862a03c951f7caab50fddffa73946ae143dedfe71c1fdbf4c6",
+                "implementation/warlock/src/SurfaceController.elm": "399283022f7dd4dc345f313c32655d74cca7dd70cd3e4b0811310cb09711fcd1",
+                "implementation/warlock/src/OutputController.elm": "5d42d7a05b3c08438602b7753c4933011d75fb025efaddf4465effb246dd91a5",
+                "implementation/warlock/adapter/daemon.py": "819b945c7d1c92d6360045db297715ac9ff7ac72024741b8ca3238fc24d08d67",
+                "implementation/warlock/adapter/catalog_transport.py": "43bd1cd1059b87ce4d349d72e4b2a917ac1bdc3dacda2f60563fa621e05a4b84",
+                "implementation/warlock/qa/native-window-feedback.py": "295ba28cf8d9d297b214bd0d6dba19ac3289d861faa953f9fd94b82937473c64",
+                "implementation/warlock/native/shared-host.c": "63bf35e5f4ea09a4046badd534a60c609becf92600fb767b48aa26574df9b906",
+                "implementation/warlock/native/surface.h": "d7fbd6a79d9aefb232a6f86ce2e3db806d2fd5b913eb90ea5a8cddc0807f4c43",
+                "implementation/warlock/assets/elm.js": "d376062010e031d016d780f6d3b65de1d4106efb6392f82d8ce82e9d522a703e",
+                "implementation/warlock/assets/bar.js": "26ef20c9143f87caf7e3d7fc293b248983076f5a7b7a6967cc341d71f7711194",
+                "implementation/warlock/assets/popup.js": "23b0f3e5e223dd5e1d7042ea33dcc1e1f4895997b01ebd7d764a75c15236b56c"
+              },
+              "reviewerDisposition": {
+                "name": "root-launcher-search-race",
+                "independent": false,
+                "disposition": "Owner observed exact native keyboard/AT schedule; independent original acceptance remains pending."
+              }
             }
           ],
-          "missingObservation": "Typed stale-query and native stale-publication/lease admission reject; exact original query-change while old refresh completes native schedule and visual/AT verdict remain.",
-          "reviewerDisposition": "Owner records partial observations; independent acceptance pending."
+          "missingObservation": "Independent original acceptance against the frozen policy/source tuple remains. Exact delayed older request plus changed query, native current-generation Enter/AT dispatch, control pixels and Orca focus now observed; broader schedules/AT modes and the separate failed native IME candidate gate remain open.",
+          "reviewerDisposition": "Owner records current original schedule and production query-delivery fix; independent acceptance pending."
         },
         {
           "name": "search-removed",
@@ -11757,5 +11798,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-10T16:37:39.517108+00:00"
+  "updatedUTC": "2026-10-10T16:57:51.041774+00:00"
 }

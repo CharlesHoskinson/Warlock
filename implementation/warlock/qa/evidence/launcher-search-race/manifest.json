@@ -1,0 +1,331 @@
+{
+  "schema": 1,
+  "requirement": "ELM-UI-005",
+  "scenarios": [
+    "search-race"
+  ],
+  "ears": "The launcher SHALL bind results and selection to the current query and catalog generation, apply the frozen matching/ranking policy, expose initial, loading, no-match and unavailable states, and preserve the query with reachable recovery on refusal.",
+  "verificationScope": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+  "originalScenario": {
+    "name": "search-race",
+    "given": "a query and catalog fixture",
+    "when": "query changes while old refresh completes",
+    "then": "only current-generation results and selection can dispatch"
+  },
+  "originalRequirements": [
+    {
+      "id": "ELM-UI-005",
+      "capability": "elm-shell-experience",
+      "phase": "P5",
+      "pattern": "ubiquitous",
+      "priority": "must",
+      "ears": "The launcher SHALL bind results and selection to the current query and catalog generation, apply the frozen matching/ranking policy, expose initial, loading, no-match and unavailable states, and preserve the query with reachable recovery on refusal.",
+      "task": "Implement query-generation-safe search states.",
+      "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+      "legacyEvidence": "docs/elm-roadmap/INTERACTION.md; new coverage: final UI/UX review",
+      "scenarios": [
+        {
+          "name": "search-no-match",
+          "given": "a query and catalog fixture",
+          "when": "no entries match",
+          "then": "no-match message and query remain reachable without launch"
+        },
+        {
+          "name": "search-unavailable",
+          "given": "a query and catalog fixture",
+          "when": "catalog provider fails",
+          "then": "unavailable state exposes keyboard retry without automatic launch"
+        },
+        {
+          "name": "search-race",
+          "given": "a query and catalog fixture",
+          "when": "query changes while old refresh completes",
+          "then": "only current-generation results and selection can dispatch"
+        },
+        {
+          "name": "search-removed",
+          "given": "a query and catalog fixture",
+          "when": "selected identity disappears before Enter",
+          "then": "no replacement entry launches and selection reconciles"
+        },
+        {
+          "name": "search-refused",
+          "given": "a query and catalog fixture",
+          "when": "launch is refused",
+          "then": "query and focus remain with accessible refusal and retry"
+        }
+      ],
+      "source": "docs/elm-roadmap/coordinator-requirements.json",
+      "status": "proposed",
+      "taskId": "P5-ELM-UI-005",
+      "accountableOwnerRole": "Desktop experience lead",
+      "verifierRole": "Independent acceptance reviewer"
+    }
+  ],
+  "originalInventory": {
+    "path": "docs/elm-roadmap/requirements.json",
+    "sha256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b"
+  },
+  "frozenInteraction": {
+    "path": "docs/elm-roadmap/INTERACTION.md",
+    "sha256": "2a947a3aa56d7b7b9e7d2f5c1ceb100ac7b8c345a73fd7616c0c4c567d0e01c4"
+  },
+  "sourceRevisionBeforeSlice": "87a3bd12b7b83e51953da3d471c0aa95fce27198",
+  "sourceHashes": {
+    "implementation/warlock/qa/native-launcher-search-race.py": "347ca394def22935a2a6207024b4e7efb8eb34168297a571c27d6370e46b4b26",
+    "implementation/warlock/src/Desktop.elm": "176ddaf19e5dfb6c2362ac9c9c46d296155cd38e916e4cd28938a591648ed711",
+    "implementation/warlock/src/Popup.elm": "cc00f7861217d23ae7cac3dd88f91c042862ff2246e68a4c149427892e5556d3",
+    "implementation/warlock/src/Presentation.elm": "8c3463230d93b768f48784a37ae9e4da7a225defa6f209b3100258af5196c0e9",
+    "implementation/warlock/src/Catalog.elm": "3eadb76212a66986ef2d76292a2f33595f7cd7d47dc90c8982435195f9ea3f02",
+    "implementation/warlock/src/Launch.elm": "dcd7260248ccb0b5bc6001c49319dd51af8c2fae98888919a308ac025ed273a2",
+    "implementation/warlock/adapter/catalog_authority.py": "ad20204afd3b203eb956918300c8da4cb4765b3c5ad86e701b0257a54b8fb9cc",
+    "implementation/warlock/README.md": "9c84c18cdfdb52d378a31b21e4aa4df01eae47888ecf2b0fc4b7cd784b1115ca",
+    "implementation/warlock/qa/launcher-at-action.py": "660ed0e324cd1ae5e104a045f8a96c72e28d680a15667d34d64698e47bebf1d6",
+    "implementation/warlock/assets/popup-adapter.js": "9c566e99694e1d8d5c6ed38d94f1c0449beaf7b4a57aa14f13b46402b0b1b0dc",
+    "implementation/warlock/qa/query-delivery.qnt": "0561bb02949b3162179e46571b4abb5e4c31fb9dae3d6b800a80ab48185ccf0b",
+    "implementation/warlock/qa/query-delivery_test.qnt": "b5c14092ffd1673cb81d4063af63489a75a187280809ddc1711bf920925bae8f",
+    "implementation/warlock/qa/check-query-delivery.py": "b0db710b92d9eeaebcc71808522b324cfea999c6ebfe36504552c27f69d0cacb",
+    "implementation/warlock/qa/query-delivery.js": "d220250bce2a1a981b2f2c37df4caf02a1f4672c1ea02ea6b4747ace06b81ae2",
+    "implementation/warlock/qa/current-search-build.json": "41ebeef11168c78c0bcead2ffe2c384d87122bad410c0e95e6d7a64c79119d1b",
+    "implementation/warlock/qa/check-search.py": "6605aaa383ef26a7946ff8cf2a92d9726d629ace6f862008b5e375124ab48b3d",
+    "implementation/warlock/src/Surface.elm": "a9f8000a7ce0a64174ee10a4fe9a9a8b491443a62e02d47ca11ee3dac2adabdd",
+    "implementation/warlock/src/SurfaceRenderer.elm": "e7e8d255cf38c2862a03c951f7caab50fddffa73946ae143dedfe71c1fdbf4c6",
+    "implementation/warlock/src/SurfaceController.elm": "399283022f7dd4dc345f313c32655d74cca7dd70cd3e4b0811310cb09711fcd1",
+    "implementation/warlock/src/OutputController.elm": "5d42d7a05b3c08438602b7753c4933011d75fb025efaddf4465effb246dd91a5",
+    "implementation/warlock/adapter/daemon.py": "819b945c7d1c92d6360045db297715ac9ff7ac72024741b8ca3238fc24d08d67",
+    "implementation/warlock/adapter/catalog_transport.py": "43bd1cd1059b87ce4d349d72e4b2a917ac1bdc3dacda2f60563fa621e05a4b84",
+    "implementation/warlock/qa/native-window-feedback.py": "295ba28cf8d9d297b214bd0d6dba19ac3289d861faa953f9fd94b82937473c64",
+    "implementation/warlock/native/shared-host.c": "63bf35e5f4ea09a4046badd534a60c609becf92600fb767b48aa26574df9b906",
+    "implementation/warlock/native/surface.h": "d7fbd6a79d9aefb232a6f86ce2e3db806d2fd5b913eb90ea5a8cddc0807f4c43",
+    "implementation/warlock/assets/elm.js": "d376062010e031d016d780f6d3b65de1d4106efb6392f82d8ce82e9d522a703e",
+    "implementation/warlock/assets/bar.js": "26ef20c9143f87caf7e3d7fc293b248983076f5a7b7a6967cc341d71f7711194",
+    "implementation/warlock/assets/popup.js": "23b0f3e5e223dd5e1d7042ea33dcc1e1f4895997b01ebd7d764a75c15236b56c"
+  },
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
+      "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791643756770507917/elm-window-geometry-authority.so",
+      "sha256": "049a982418a085a976db6bf08eee3da4ad7c9a4f826a724a8d653d86b15f0378"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+      "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/ime-1791649572830297731/elm-host",
+    "sha256": "806aa4bcd44f0b67b6e58db7d1e41da41f1956692ff14001d5f19a5b005cecf7",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/ime-1791649572830297731/report.json",
+    "heldBuildSHA256": "81f0651347ee4ad7f442d5f39e8e91a34bf06897b58a01eea5757ea91c0bba1a"
+  },
+  "toolchain": {
+    "compilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948"
+  },
+  "compiledAssets": {
+    "elm.js": "d376062010e031d016d780f6d3b65de1d4106efb6392f82d8ce82e9d522a703e",
+    "bar.js": "26ef20c9143f87caf7e3d7fc293b248983076f5a7b7a6967cc341d71f7711194",
+    "popup.js": "23b0f3e5e223dd5e1d7042ea33dcc1e1f4895997b01ebd7d764a75c15236b56c"
+  },
+  "reports": [
+    {
+      "name": "native-query-lost-failed",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-accessibility-1791650817782770926/report.json",
+      "originalSHA256": "58375fd2bb710757ba9a9dddf78c068cd145b7191f512ae5ec76d5045999b88f",
+      "path": "implementation/warlock/qa/evidence/launcher-search-race/native-query-lost-failed.report.json.gz",
+      "sha256": "130f1e2d747a804b7515ddec5cab3bb1c9bbf7db05b8f168e468a4dad95e3cc5",
+      "passed": false,
+      "error": "RuntimeError('Original observation deadline <lambda>')",
+      "cleanupPassed": true,
+      "rawLog": {
+        "path": "implementation/warlock/qa/evidence/launcher-search-race/native-query-lost-failed.warlock.log.gz",
+        "sha256": "5d38ada2551441d28c86c9a37f1edefc4f878f6441523f850b5d61cda20f0f79",
+        "uncompressedSHA256": "3a8404967c4eb98c3be93a0f1af7e14de948e47f2029fd470ab44ec816c132f2"
+      }
+    },
+    {
+      "name": "native-keyboard",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-accessibility-1791651240465208158/report.json",
+      "originalSHA256": "0c8652b51a3c50ff589d25abcc9c53fd3a856730eeca1d61b42a16488a546be6",
+      "path": "implementation/warlock/qa/evidence/launcher-search-race/native-keyboard.report.json.gz",
+      "sha256": "dfeb04a9e4254b80b888739d081eb551f1bd8c3972aee23e8716c4a9eec58495",
+      "passed": true,
+      "error": null,
+      "cleanupPassed": true,
+      "rawLog": {
+        "path": "implementation/warlock/qa/evidence/launcher-search-race/native-keyboard.warlock.log.gz",
+        "sha256": "4c52ee023ba975b5133ba408745bfd3a8ef3701d72521a49983d6a58ef4c4dff",
+        "uncompressedSHA256": "6df9e1d6092c1dd90b7ee9f8ce12da5744278e5e4ebfdec7b19a7eb2ab45b156"
+      }
+    },
+    {
+      "name": "native-at-action",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-accessibility-1791651266968891548/report.json",
+      "originalSHA256": "f8e9ff2d4f6289ae1b2342b5640ca141926cb10fb9a2d4cb1d907066102daa88",
+      "path": "implementation/warlock/qa/evidence/launcher-search-race/native-at-action.report.json.gz",
+      "sha256": "6f58e20d43c5f64aeda4cb698cd3bdcfc21531c0220a1c82cf50f4a04cc4fd74",
+      "passed": true,
+      "error": null,
+      "cleanupPassed": true,
+      "rawLog": {
+        "path": "implementation/warlock/qa/evidence/launcher-search-race/native-at-action.warlock.log.gz",
+        "sha256": "b43184adc50624d5e7e2381429dd8568a9d0573e1d215b25184c4a004bcd4098",
+        "uncompressedSHA256": "07804c6d070e03430fbbb44bb20df99c14963226c75e9981fd1ded4720216517"
+      }
+    },
+    {
+      "name": "native-ime-candidate-failed",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-ime-1791651298579783603/report.json",
+      "originalSHA256": "673871100936c4967d9620b11f82bee1a71308cc0c960c11aabc176cdbbc7d65",
+      "path": "implementation/warlock/qa/evidence/launcher-search-race/native-ime-candidate-failed.report.json.gz",
+      "sha256": "566bbf376e8fb740ef93107e64f1f4c1eba560fdf234285569cfcc85156e9b26",
+      "passed": false,
+      "error": "RuntimeError('Original observation deadline candidate_layers')",
+      "cleanupPassed": true,
+      "rawLog": {
+        "path": "implementation/warlock/qa/evidence/launcher-search-race/native-ime-candidate-failed.warlock.log.gz",
+        "sha256": "128bba43692b2f3210730ad4d203a95b60002fc81816a39a0f98b2e2d373b92d",
+        "uncompressedSHA256": "3cd6961484292eef1f98cbae32d5d9b4c50b6f981df0394edb6d16d47219114c"
+      }
+    },
+    {
+      "name": "compiled-component",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/ime-1791651215891073140/report.json",
+      "originalSHA256": "d653cafe377dba86990544baab5906574f609a5098ad85ad628b150dfb49e43c",
+      "path": "implementation/warlock/qa/evidence/launcher-search-race/compiled-component.report.json.gz",
+      "sha256": "9640c40ab8b756916ec0554f1be405982c2605b56155488ecb8ba1b516d937b5",
+      "passed": true,
+      "error": null,
+      "cleanupPassed": null
+    },
+    {
+      "name": "quint-and-adapter",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/ime-1791651215891073140/inputs/qa/runs/query-delivery-1791651217583491978/report.json",
+      "originalSHA256": "572f551904c84145aa4da75db8e2e357b4398e27f2ad02a416389b7f1248872e",
+      "path": "implementation/warlock/qa/evidence/launcher-search-race/quint-and-adapter.report.json.gz",
+      "sha256": "c476f21a43f52636ea53776f629f99325c4fac50f25a874bc01762df6a4d7576",
+      "passed": true,
+      "error": null,
+      "cleanupPassed": null
+    },
+    {
+      "name": "adapter-before-failed",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/query-delivery-1791651099820377773/report.json",
+      "originalSHA256": "dded38d4599a434584b70f0bd7d653315d6ce1cdf0469d25a90a13126c1a810a",
+      "path": "implementation/warlock/qa/evidence/launcher-search-race/adapter-before-failed.report.json.gz",
+      "sha256": "c3aed5bdc8603a275c8a145adc6d35d45b1f16fe82a34e1ee06dca4e475687cc",
+      "passed": false,
+      "error": "node:internal/assert/utils:146\n  throw error;\n  ^\n\nAssertionError [ERR_ASSERTION]: Retained query must wait for presentation acknowledgement\n    at Object.<anonymous> (/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/query-delivery.js:21:8)\n    at Module._compile (node:internal/modules/cjs/loader:1956:14)\n    at Object..js (node:internal/modules/cjs/loader:2096:10)\n    at Module.load (node:internal/modules/cjs/loader:1678:32)\n    at Module._load (node:internal/modules/cjs/loader:1470:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:33:47 {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: 1,\n  expected: 0,\n  operator: '==',\n  diff: 'simple'\n}\n\nNode.js v26.10.0\n",
+      "cleanupPassed": null
+    }
+  ],
+  "scope": "Launcher query delivery now waits for the unchanged native presentation-applied admission. A genuine old request/catalog receipt is held across real files-to-editor typing and a newer generation-2 refresh; the exact old generation-1 receipt cannot replace query/results/focused selection. Physical Enter and actual AT-SPI press each launch one current identity/generation through GIO with CURRENT_EDITOR argv. Actual result/refresh interiors paint; current host AT-SPI and Orca focus agree before/after old reply. Compiled/local-field/browser IME and model regressions pass; both search-race campaigns clean up normally.",
+  "missingObservations": [
+    "Independent original-scenario review against the frozen matching/ranking and interaction oracle and exact source/core/plugin/compiler remains open.",
+    "This covers a delayed obsolete request after a newer request/generation and exact current keyboard/AT selection. Broader catalogs/languages/AT modes, audible speech/braille and other original scenarios remain separate.",
+    "Native IME direct preedit and commit/caret pass; candidate popup is unobserved at the unchanged deadline, matching a retained prior failure. Candidate commit/cancel and hardware/resource/journey/package/deployment/rollback remain release obligations."
+  ],
+  "disposition": "partial",
+  "requirementAccepted": false,
+  "fullReleaseAccepted": false,
+  "reviewer": {
+    "name": "root-launcher-search-race",
+    "independent": false,
+    "disposition": "Owner observed exact native keyboard/AT schedule; independent original acceptance remains pending."
+  },
+  "quint": {
+    "workflow": "quint-llm-kit modeling then execute-spec",
+    "model": "implementation/warlock/qa/query-delivery.qnt",
+    "tests": "implementation/warlock/qa/query-delivery_test.qnt",
+    "sourceCorrespondence": {
+      "present": "popup-adapter.receivePresentation publication/lease slot replacement",
+      "edit": "Popup.actions observational query transport",
+      "acknowledge": "presentation-applied post before exact current queued query",
+      "reopen": "replacement popup lease clears transport slot"
+    },
+    "executedNamedTests": 6,
+    "sampledTraces": 500,
+    "sampledSteps": 40,
+    "witnesses": [
+      "queued",
+      "delivered",
+      "retired",
+      "advanced"
+    ],
+    "limits": "Bounded abstract text and FIFO WebKit handler posts; no exhaustive model checking, native paint, AT, GIO or IME acceptance inferred."
+  },
+  "observedFailures": {
+    "queryLost": "Original native current field showed editor while authoritative catalog remained unfiltered and entry disabled. Retained query was posted before presentation-applied and rejected by unchanged native readiness; fixed by ordered current observational delivery.",
+    "adapterBefore": "Actual original adapter regression posts query before acknowledgement; retained failing report/bytes and assertion.",
+    "imeCandidate": "Current original native IME journey and prior retained native-ime-1791482858189452390 both fail candidate_layers at unchanged deadline with same Fcitx binary/module/profile hashes; direct preedit and correct-caret commit pass in each. No full native IME pass claimed."
+  },
+  "priorImeFailure": {
+    "path": "implementation/warlock/qa/runs/native-ime-1791482858189452390/report.json",
+    "sha256": "4a67dd80cd381d1d1a0d5c80dd5dbd6319140d612cb9df4c19ad558b3d1772c0",
+    "publishedPacket": {
+      "path": "implementation/warlock/qa/evidence/launcher-search-race/prior-ime-candidate-failed.report.json.gz",
+      "sha256": "fb6850a8a293d332bcb53262921260aca472bcd23e81d82bee79577e5e68f7cc",
+      "uncompressedSHA256": "4a67dd80cd381d1d1a0d5c80dd5dbd6319140d612cb9df4c19ad558b3d1772c0"
+    }
+  },
+  "scopeBoundaries": [
+    "No second Elm/native policy authority, effect-action rebasing, changed ABI or widened deadline.",
+    "One observational query slot is retired by publication/lease replacement; duplicate presentation retains it. Existing input/IME composition guards remain in Elm.",
+    "Screenshot counts include only actual Refresh/current result interiors below y100, excluding compositor debug warning. Both captures visually inspected.",
+    "Source and native artifacts remain machine-local; this is not a portable release package."
+  ],
+  "evidence": {
+    "README.md": "2a37f794fdf1e2222d660a3d46302d6ff1e8c14a6aa3bfccf6f2460163b21a78",
+    "adapter-before-failed.report.json.gz": "c3aed5bdc8603a275c8a145adc6d35d45b1f16fe82a34e1ee06dca4e475687cc",
+    "adapter-before.js": "b422e9aa2d3e8dc8b669588b4c7d3e69033da5f20837683df6a7555cfc58cd62",
+    "adapter-before.stderr": "734d9817651f68609db0903e8b24df31f1852380e632c2f63593795c143525f7",
+    "at-action.delivered.json": "c828712e6cad91b14c58912a148344b38d9fe46acb773bd76868e7e070239497",
+    "at-action.fresh.json": "d5dd5400f68400d55e41af8acc26d9667cfa9239d8b346bee14bc085fa8a4df7",
+    "at-action.held.json": "c828712e6cad91b14c58912a148344b38d9fe46acb773bd76868e7e070239497",
+    "at-action.outcome.json": "817ba2dc220dbf0ee6e7b34dcb8672f33a301c9c56da75396035fdbbe97c472d",
+    "at-action.png": "db3565617074b4c24bceabde141426dd019d95a96573922d1c9a0d2cc08e80c6",
+    "at-action.request.json": "0be94979ce3305c8ffcd8d19390ce084591d5eec330df13a5e93d89e81ea46e8",
+    "compiled-component.report.json.gz": "9640c40ab8b756916ec0554f1be405982c2605b56155488ecb8ba1b516d937b5",
+    "ime-browser.json": "74217961501b9b11e2aa32f1c3bed1ba8bbd69802015bf8fad5ac42e7009a685",
+    "keyboard.delivered.json": "c12b6ab95927e0829ba2dfc1ddc02c32203c7177a6496f905fd114b931b9ab00",
+    "keyboard.fresh.json": "290523d5a80617633eda4d7a4e4b2875d4afaa722f3001c2204bab18e40a1cb6",
+    "keyboard.held.json": "c12b6ab95927e0829ba2dfc1ddc02c32203c7177a6496f905fd114b931b9ab00",
+    "keyboard.outcome.json": "7718a8d5faa53bf21a69a9a9986bd128f1b8fd88fd86f3d6541bbe29dc241f46",
+    "keyboard.png": "a753e64bcf51cb8e9609458a4de14253706838c9518af23196bc73a1fb5b88b8",
+    "keyboard.request.json": "fcb8faadc5774d7bf2491114e2e20ce32b296df52ca6e8e45b22704792aa9eff",
+    "native-at-action.catalog-fixture-backend.py": "d0e1fac09e403955087bdf7acaef6c9fb1e9a7a344593fd343e1cd8341b71aa9",
+    "native-at-action.race-launch-recorder.py": "df6871d3eabfc8223760398f7c015048bc0e1dad87a1534b9a52ce33347a0ad0",
+    "native-at-action.report.json.gz": "6f58e20d43c5f64aeda4cb698cd3bdcfc21531c0220a1c82cf50f4a04cc4fd74",
+    "native-at-action.warlock.log.gz": "b43184adc50624d5e7e2381429dd8568a9d0573e1d215b25184c4a004bcd4098",
+    "native-ime-candidate-failed.catalog-fixture-backend.py": "c35a8533f4056a131656473eaf12c8e3d786751168825cc6d73f0dcd8e86f810",
+    "native-ime-candidate-failed.fcitx.log.gz": "247e93f251943ff454f04872df6a03afd4fc6fefd6d49853c0f0a7e863d9a57a",
+    "native-ime-candidate-failed.report.json.gz": "566bbf376e8fb740ef93107e64f1f4c1eba560fdf234285569cfcc85156e9b26",
+    "native-ime-candidate-failed.warlock.log.gz": "128bba43692b2f3210730ad4d203a95b60002fc81816a39a0f98b2e2d373b92d",
+    "native-keyboard.catalog-fixture-backend.py": "ff60127394849294e6226e92f258f6421df048e11ec67cbfa5e6243611f07916",
+    "native-keyboard.race-launch-recorder.py": "df6871d3eabfc8223760398f7c015048bc0e1dad87a1534b9a52ce33347a0ad0",
+    "native-keyboard.report.json.gz": "dfeb04a9e4254b80b888739d081eb551f1bd8c3972aee23e8716c4a9eec58495",
+    "native-keyboard.warlock.log.gz": "4c52ee023ba975b5133ba408745bfd3a8ef3701d72521a49983d6a58ef4c4dff",
+    "native-query-lost-failed-runner.py": "b07500c4d9853b7d54e7e60f40e0fd5bfb5e02e9a92476c72ef6db57b9264bb6",
+    "native-query-lost-failed.catalog-fixture-backend.py": "5cc187e86594a078d5119c2ff78a846a563091bfe6ec643f7ee0c3b2d48526bf",
+    "native-query-lost-failed.race-launch-recorder.py": "df6871d3eabfc8223760398f7c015048bc0e1dad87a1534b9a52ce33347a0ad0",
+    "native-query-lost-failed.report.json.gz": "130f1e2d747a804b7515ddec5cab3bb1c9bbf7db05b8f168e468a4dad95e3cc5",
+    "native-query-lost-failed.warlock.log.gz": "5d38ada2551441d28c86c9a37f1edefc4f878f6441523f850b5d61cda20f0f79",
+    "prior-ime-candidate-failed.report.json.gz": "fb6850a8a293d332bcb53262921260aca472bcd23e81d82bee79577e5e68f7cc",
+    "query-delivery.adapter.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "query-delivery.adapter.stdout": "5a4078bb00e8230b882a774fc0cecd140c228f255c956300044555c0a8795066",
+    "query-delivery.named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "query-delivery.named.stdout": "55736090adc3f1f6bcd7328a601f2ae418f774d7c4c367d03e6530e41afa78e5",
+    "query-delivery.sampled.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "query-delivery.sampled.stdout": "93b072584392f9171d2ba4457787ff03b355a72f00b3def791d8e0ed5659c36c",
+    "query-delivery.typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "query-delivery.typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "quint-and-adapter.report.json.gz": "c476f21a43f52636ea53776f629f99325c4fac50f25a874bc01762df6a4d7576"
+  },
+  "imeCandidateLog": {
+    "path": "implementation/warlock/qa/evidence/launcher-search-race/native-ime-candidate-failed.fcitx.log.gz",
+    "sha256": "247e93f251943ff454f04872df6a03afd4fc6fefd6d49853c0f0a7e863d9a57a",
+    "uncompressedSHA256": "21f9cada8b2b8db7c1328e4bd73d8b50ad1c2b8bdcfc30535f0c5ce36580bb8d"
+  }
+}
