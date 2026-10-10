@@ -1,54 +1,51 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T02:43:53.655388+00:00",
+  "updatedUTC": "2026-10-10T02:47:33.011211+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "workspace-restore-recipient",
+    "id": "task-view-transfer-native",
     "requirements": [
-      "ELM-UI-002",
-      "ELM-UI-006",
-      "ELM-UX-008"
+      "ELM-UX-018"
     ],
     "scenarios": [
-      "activate-other-workspace",
-      "overview-select",
-      "ux-008",
-      "activation-refused"
+      "ux-018",
+      "transfer-refused",
+      "transfer-accepted"
     ],
-    "before": "Workspace restore has historical native evidence, but the current integrated source tuple has not qualified the original Task View and taskbar cross-workspace recipient, visible pixels and refusal journey.",
-    "after": "The original workspace-2 restore selects the preserved workspace, visibly restores the exact family, delivers keyboard input to its eligible target and preserves membership; stale refusal preserves visible focus. Repair a demonstrated current native gap without manual focus workaround.",
+    "before": "The Task View workspace transfer native fixture previously timed out after keyboard destination activation; pinned refusal and committed existing/empty workspace outcomes need current qualification.",
+    "after": "Task View transfer sends one fresh identity-correlated native request, retains workspace 1 with visible pinned refusal, and updates existing/empty destination membership only from matching native acceptance; cancellation emits no mutation.",
     "paths": [
-      "implementation/warlock/qa/native-window-feedback.py",
       "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/src/Taskbar.elm",
-      "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/native/host.c",
+      "implementation/warlock/src/Transfer.elm",
+      "implementation/warlock/src/Shell.elm",
+      "implementation/warlock/src/Effects.elm",
+      "implementation/warlock/native/authority.cpp",
       "implementation/warlock/native/shared-host.c",
       "implementation/warlock/native/shared-context.h",
-      "implementation/warlock/native/authority.cpp",
-      "implementation/warlock/native/navigation-modal.hpp",
-      "implementation/warlock/native/core/SeatManager.cpp",
-      "implementation/warlock/native/core/ConfigActions.cpp",
+      "implementation/warlock/native/host.c",
+      "implementation/warlock/qa/native-window-feedback.py",
+      "implementation/warlock/qa/transfer-workspace.qnt",
+      "implementation/warlock/qa/check-transfer-workspace.py",
       "implementation/warlock/qa/check-search.py",
       "implementation/warlock/qa/check-native-authority.py",
       "implementation/warlock/qa/current-search-build.json",
       "implementation/warlock/qa/current-native-pair.json",
-      "implementation/warlock/qa/workspace-navigation.qnt",
+      "implementation/warlock/qa/TransferReplay.elm",
       "implementation/warlock/README.md"
     ],
     "verification": [
-      "Run unchanged original protected --workspace-navigation on exact current source/core/plugin tuple first. For demonstrated behavioral changes, map existing Quint properties via quint-llm-kit and typecheck/named/witness/safety checks before implementing; compile owning units only. Preserve original deadline, receipts, native pixels, real key recipient, membership, stale refusal and cleanup. Native AT, other-output and independent acceptance remain separate."
+      "Establish unchanged original --transfer-workspace result on the current exact source/core/plugin pair. Use quint-llm-kit to map existing transfer model to code before changing authority/reducer policy; retain no-replay and receipt correlation. Compile changed targets proportionately; pass original cancellation, pinned refusal, existing/empty workspace acceptance, native observations and normal cleanup with original deadlines. Independent original acceptance and native AT remain separate."
     ],
     "status": "implemented-partial",
-    "participantRecord": ".warlock-contributor/workspace-restore.json",
-    "evidence": "implementation/warlock/qa/evidence/workspace-restore-current/manifest.json",
-    "observed": "Current original workspace restore passes real recipients, pixels, exact receipts, membership and stale refusal; no product change needed.",
-    "nextSourceWork": "Repair the retained transfer-workspace native journey after establishing its current failing boundary."
+    "participantRecord": ".warlock-contributor/transfer-native.json",
+    "evidence": "implementation/warlock/qa/evidence/transfer-current/manifest.json",
+    "observed": "Original native transfer/refusal passes existing and empty workspace destinations, exact receipts, selected-only membership, visible refusal and normal cleanup. Fixture footer corrected; no product policy change.",
+    "nextSourceWork": "Implement requested effects-off and reduced-transparency settings with equivalent focus/state cues under the layered-window design contract."
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -963,6 +960,49 @@
         "Zero-window keyboard launch, refusal and group requirements are separate cases."
       ],
       "nextSourceWork": "Keyboard zero-window pinned launch and the remaining observed workspace restore focus gap; native AT and independent original acceptance remain separate."
+    },
+    {
+      "id": "workspace-restore-recipient",
+      "requirements": [
+        "ELM-UI-002",
+        "ELM-UI-006",
+        "ELM-UX-008"
+      ],
+      "scenarios": [
+        "activate-other-workspace",
+        "overview-select",
+        "ux-008",
+        "activation-refused"
+      ],
+      "before": "Workspace restore has historical native evidence, but the current integrated source tuple has not qualified the original Task View and taskbar cross-workspace recipient, visible pixels and refusal journey.",
+      "after": "The original workspace-2 restore selects the preserved workspace, visibly restores the exact family, delivers keyboard input to its eligible target and preserves membership; stale refusal preserves visible focus. Repair a demonstrated current native gap without manual focus workaround.",
+      "paths": [
+        "implementation/warlock/qa/native-window-feedback.py",
+        "implementation/warlock/src/Desktop.elm",
+        "implementation/warlock/src/Taskbar.elm",
+        "implementation/warlock/src/Surface.elm",
+        "implementation/warlock/native/host.c",
+        "implementation/warlock/native/shared-host.c",
+        "implementation/warlock/native/shared-context.h",
+        "implementation/warlock/native/authority.cpp",
+        "implementation/warlock/native/navigation-modal.hpp",
+        "implementation/warlock/native/core/SeatManager.cpp",
+        "implementation/warlock/native/core/ConfigActions.cpp",
+        "implementation/warlock/qa/check-search.py",
+        "implementation/warlock/qa/check-native-authority.py",
+        "implementation/warlock/qa/current-search-build.json",
+        "implementation/warlock/qa/current-native-pair.json",
+        "implementation/warlock/qa/workspace-navigation.qnt",
+        "implementation/warlock/README.md"
+      ],
+      "verification": [
+        "Run unchanged original protected --workspace-navigation on exact current source/core/plugin tuple first. For demonstrated behavioral changes, map existing Quint properties via quint-llm-kit and typecheck/named/witness/safety checks before implementing; compile owning units only. Preserve original deadline, receipts, native pixels, real key recipient, membership, stale refusal and cleanup. Native AT, other-output and independent acceptance remain separate."
+      ],
+      "status": "implemented-partial",
+      "participantRecord": ".warlock-contributor/workspace-restore.json",
+      "evidence": "implementation/warlock/qa/evidence/workspace-restore-current/manifest.json",
+      "observed": "Current original workspace restore passes real recipients, pixels, exact receipts, membership and stale refusal; no product change needed.",
+      "nextSourceWork": "Repair the retained transfer-workspace native journey after establishing its current failing boundary."
     }
   ]
 }

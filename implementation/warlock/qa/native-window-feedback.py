@@ -1242,7 +1242,7 @@ raise SystemExit(daemon.run())
       wait(lambda:(projection() or {}).get('mode')=='overview' and any(b['accessibleName']=='Move ELM-AUTHORITY-FIXTURE to another workspace' for b in (popup_body() or {}).get('buttons',[])))
       keyboard_button('Move ELM-AUTHORITY-FIXTURE to another workspace')
       return wait(lambda:any(b['accessibleName']=='Move selected window to workspace '+destination for b in (popup_body() or {}).get('buttons',[])))
-     before=len(journal());original=member();check('OriginalTransferStartsOnWorkspaceOne',original['workspace']=='1',member=original)
+     before=len(journal());original=member();original_transfer_membership={w['incarnation']:(w['workspace'],w['monitor']) for w in facts()['facts']['windows']};check('OriginalTransferStartsOnWorkspaceOne',original['workspace']=='1',member=original)
      open_transfer();keyboard_button('Cancel window transfer');wait(lambda:not any(b['accessibleName'].startswith('Move selected window') for b in (popup_body() or {}).get('buttons',[])))
      check('CancelTransferDoesNotSubmitOrMove',len(journal())==before and member()['workspace']=='1')
      key(1);wait(lambda:(projection() or {}).get('mode')=='closed')
@@ -1850,6 +1850,13 @@ raise SystemExit(daemon.run())
    else:
     if MEMBERSHIP:check('OnlyExplicitSpecialWorkspaceFixtureMoved',len(facts()['facts']['windows'])==5 and any(row['incarnation']==c and int(row['workspace'])<0 for row in facts()['facts']['windows']),nativeFacts=facts())
     elif DRAG:check('OnlyExplicitNativeGestureCanChangeOutput',all(g['end']['state']=='idle' for g in report['gestures']),gestures=report['gestures'])
+    elif TRANSFER:
+     final_transfer_membership={w['incarnation']:(w['workspace'],w['monitor']) for w in facts()['facts']['windows']}
+     expected_transfer_membership={**original_transfer_membership,root:('3',original_transfer_membership[root][1])}
+     terminal_transfers=transfer_receipts()
+     submitted_transfers=[r for r in journal() if r.get('intent',{}).get('operation')=='transfer-workspace']
+     check('TransferReceiptsMatchExactSubmittedIdentities',len(submitted_transfers)==3 and len(terminal_transfers)==3 and all(len([r for r in terminal_transfers if all(r.get(k)==submitted.get(k) for k in ['binding','effectProtocol','intent'])])==1 for submitted in submitted_transfers),requests=submitted_transfers,receipts=terminal_transfers)
+     check('OnlyMatchingCommittedTransferChangesWorkspace',final_transfer_membership==expected_transfer_membership and len(terminal_transfers)==3 and [r['status'] for r in terminal_transfers]==['Refused','Committed','Committed'] and [r['intent']['transfer']['destination'] for r in terminal_transfers]==['2','2','3'] and all(r['intent']['incarnation']==root for r in terminal_transfers),before=original_transfer_membership,after=final_transfer_membership,receipts=terminal_transfers)
     else:check('NoScratchpadOrWorkspaceTransfer',not facts()['facts']['windows'] and report['beforeControlledRetirements']['facts']['windows'] if CHORD else current_window()['workspace']==initial_workspace,nativeWorkspace='controlled original roots retired' if CHORD else current_window()['workspace'],originalWorkspace=initial_workspace)
    if LIVE:
     report.update(requirements=['ELM-UI-014','ELM-UI-018'],scenarios=['live-motion-minimize','live-motion-restore','live-motion-switcher','live-motion-Task View','motion-enable','motion-overlays','motion-disable'],scope='Actual GTK source changes, physical keyboard override/save/reset, durable restart and subsequent native normal-profile window operation. Original intermediate restore geometry/proxy and all separate live overlay intervals remain explicitly unverified.')

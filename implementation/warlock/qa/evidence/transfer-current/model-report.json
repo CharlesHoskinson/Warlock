@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/transfer-workspace.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/transfer-workspace.qnt",
+        "--backend=typescript",
+        "--match=^(pendingObservationCannotCommitTest|matchingCommitChangesMembershipTest|refusalRetainsSourceTest|wrongReceiptCannotCommitTest|unknownNeverReplaysTest)$",
+        "--max-samples=1",
+        "--seed=79341"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "safety",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/transfer-workspace.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79342"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "modelSHA256": "1258181d574c0b537132f405fd0177dc41f9407f96b91ef55cf9dcebefb9c9c3",
+  "scope": "Existing unchanged transfer transaction abstraction: five explicitly selected named runs include positive commit/refusal reachability, pending observation/wrong receipt/Unknown guards; 1000 sampled safety traces, 30 steps. Not native refinement, pixels, custody timing or acceptance.",
+  "nativeAcceptance": false
+}
