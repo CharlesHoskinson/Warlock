@@ -91,6 +91,35 @@ try:
    identifier=notify(first,'Malformed urgency',hints={'urgency':hint})
    check('Malformed urgency cannot elevate '+hint.get_type_string()+str(hint.unpack()),next(row for row in service.snapshot()['entries'] if row['id']==str(identifier))['urgency']==1)
 
+ # A second actual name owner fixture: read/observation/effect routes never
+ # replace it. Only an authenticated explicit read retries a never-owned empty
+ # service after the existing owner exits normally.
+ read={'protocolVersion':3,'kind':'notification-request','binding':Client.bound,'requestId':'201'}
+ external=Service()
+ try:
+  with Service() as recovering:
+   recovering.thread.join(3)
+   check('Occupied empty service remains unavailable',not recovering.available and recovering.serial==0 and not recovering.rows)
+   old_thread=recovering.thread;identity=recovering.service
+   recovering.observation(Client());check('Observation cannot retry occupied service',recovering.thread is old_thread)
+   occupied_read=recovering.read(read,Client());recovering.thread.join(3)
+   check('Explicit read preserves occupied owner',not occupied_read['snapshot']['available'] and external.available and notify(first,'Owner preserved through explicit read')>0)
+   check('Retry cannot replay an action or alias producer identity',recovering.service==identity and recovering.serial==0 and recovering.last_effect==0 and not recovering.rows)
+   # Release through the original context manager's normal shutdown protocol.
+   external.__exit__(None,None,None)
+   recovered=recovering.read({**read,'requestId':'202'},Client())
+   check('Explicit read acquires released name',recovered['snapshot']['available'] and recovering.ever_owned and recovered['snapshot']['service']==identity)
+   check('Recovery has no replayed entries or effects',recovered['snapshot']['entries']==[] and recovering.serial==0 and recovering.last_effect==0)
+   live=notify(first,'Recovered native service')
+   check('Recovered service serves actual native producer',live>0 and len(recovering.snapshot()['entries'])==1)
+   recovering.connection.close_sync(None)
+   wait(lambda:not recovering.available)
+   recovering.thread.join(3);old_thread=recovering.thread
+   recovery_after_loss=recovering.read({**read,'requestId':'203'},Client())
+   check('Established service loss cannot restart producer custody',not recovery_after_loss['snapshot']['available'] and recovering.thread is old_thread and recovering.ever_owned)
+ finally:
+  if not external.stopping:external.__exit__(None,None,None)
+
 
 finally:
  for connection in [first,second]:

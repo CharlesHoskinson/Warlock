@@ -1,6 +1,7 @@
 module OutcomeAnnouncements exposing (Model, initial, observe, encode)
 
 import Announcement
+import AdapterNotice
 import Binding
 import Catalog
 import Desktop
@@ -31,19 +32,22 @@ observe : Desktop.Model -> Desktop.Model -> Model -> Model
 observe before after ((Model sequence _) as prior) =
     let correlated kind value text = {correlation=E.encode 0 (E.object [("outcome",E.string kind),("binding",after.windows.shell.binding |> Maybe.map Binding.encode |> Maybe.withDefault E.null),("identity",value)]),text=text,interrupt=False}
         candidate =
-            if launch before/=launch after then launch after |> Maybe.map (\refusal ->
-                let label=after.applications |> Maybe.andThen (Catalog.lookup refusal.entry) |> Maybe.map .name |> Maybe.withDefault refusal.entry
-                in correlated "launch-refused" refusal.intent ("Launch refused for "++String.left 512 label++". Refresh applications, then choose again."))
-            else if transfer before/=transfer after then transfer after |> Maybe.map (\intent -> correlated "transfer-refused" intent (Surface.windowNotice after))
-            else if settings before/=settings after then settings after |> Maybe.map (\request -> correlated "settings-refused" (E.string (UInt64.string request)) after.settings.notice)
+            if before.adapterNotice/=after.adapterNotice && after.adapterNotice/=Nothing then
+                after.adapterNotice |> Maybe.map (\notice -> {correlation=E.encode 0 (E.object [("outcome",E.string "adapter-unavailable"),("binding",Binding.encode notice.binding),("identity",AdapterNotice.encode notice)]),text=AdapterNotice.message notice,interrupt=False})
             else
-                let arrivals=if before.windows.shell.binding==after.windows.shell.binding && after.windows.shell.binding/=Nothing then Notifications.arrivals before.notifications after.notifications else []
-                    clean value=String.join " " (String.words value)
-                    summary entry=String.left 200 (clean (entry.app++": "++entry.summary))
-                    details=String.join "; " (List.map summary (List.take 3 arrivals))++(if List.length arrivals>3 then "; and "++String.fromInt (List.length arrivals-3)++" more" else "")
-                    identity=after.notifications.snapshot |> Maybe.map (\snapshot -> E.object [("service",E.string (UInt64.string snapshot.service)),("revision",E.string (UInt64.string snapshot.revision)),("incarnations",E.list (\entry -> E.string (UInt64.string entry.incarnation)) arrivals)]) |> Maybe.withDefault E.null
-                    event=correlated "notification-arrival" identity (details++". Open Notifications for details and current actions.")
-                in if List.isEmpty arrivals then Nothing else Just {event|interrupt=after.notifications.policy.interruptCritical && List.all Notifications.critical arrivals}
+                if launch before/=launch after then launch after |> Maybe.map (\refusal ->
+                    let label=after.applications |> Maybe.andThen (Catalog.lookup refusal.entry) |> Maybe.map .name |> Maybe.withDefault refusal.entry
+                    in correlated "launch-refused" refusal.intent ("Launch refused for "++String.left 512 label++". Refresh applications, then choose again."))
+                else if transfer before/=transfer after then transfer after |> Maybe.map (\intent -> correlated "transfer-refused" intent (Surface.windowNotice after))
+                else if settings before/=settings after then settings after |> Maybe.map (\request -> correlated "settings-refused" (E.string (UInt64.string request)) after.settings.notice)
+                else
+                    let arrivals=if before.windows.shell.binding==after.windows.shell.binding && after.windows.shell.binding/=Nothing then Notifications.arrivals before.notifications after.notifications else []
+                        clean value=String.join " " (String.words value)
+                        summary entry=String.left 200 (clean (entry.app++": "++entry.summary))
+                        details=String.join "; " (List.map summary (List.take 3 arrivals))++(if List.length arrivals>3 then "; and "++String.fromInt (List.length arrivals-3)++" more" else "")
+                        identity=after.notifications.snapshot |> Maybe.map (\snapshot -> E.object [("service",E.string (UInt64.string snapshot.service)),("revision",E.string (UInt64.string snapshot.revision)),("incarnations",E.list (\entry -> E.string (UInt64.string entry.incarnation)) arrivals)]) |> Maybe.withDefault E.null
+                        event=correlated "notification-arrival" identity (details++". Open Notifications for details and current actions.")
+                    in if List.isEmpty arrivals then Nothing else Just {event|interrupt=after.notifications.policy.interruptCritical && List.all Notifications.critical arrivals}
     in case (candidate,UInt64.next sequence) of
         (Just event,Just next) -> Model next (Just {sequence=next,correlation=event.correlation,text=event.text,interrupt=event.interrupt})
         _ -> prior

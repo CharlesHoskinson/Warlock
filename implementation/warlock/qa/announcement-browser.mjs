@@ -82,6 +82,30 @@ try{
   check('Arrival projections retain the focused policy control',await evaluate(`document.getElementById("popup").contentWindow.document.activeElement===${button('notifications:dnd')}`));
   report.notificationObservations=observed;
  }
+ if(fs.existsSync(path.join(out,'adapter-announcements.json'))){
+  const adapters=JSON.parse(fs.readFileSync(path.join(out,'adapter-announcements.json'),'utf8'));
+  await call('Page.navigate',{url:base+'/qa/announcement-host.html?adapters'});
+  await until('["bar1","bar2","popup"].every(id=>typeof document.getElementById(id)?.contentWindow?.receiveAnnouncement==="function")');
+  await frame(adapters.openedFrame);await metadata(adapters.openedFrame,false);
+  const button=`document.getElementById("popup").contentWindow.document.querySelector('[data-surface-control="notifications:refresh"]')`;
+  await evaluate(`window.adapterFocus=${button};adapterFocus.focus()`);
+  await call('Input.dispatchKeyEvent',{type:'keyDown',key:'Enter',code:'Enter'});await call('Input.dispatchKeyEvent',{type:'keyUp',key:'Enter',code:'Enter'});await sleep(50);
+  check('Keyboard refresh submits exactly one current read control',await evaluate('document.getElementById("popup").contentWindow.nativePackets.filter(p=>p.kind==="surface-action"&&p.id==="notifications:refresh").length===1'));
+  await frame(adapters.failedFrame);await metadata(adapters.failedFrame,true);
+  let observed=await observe();
+  check('Unavailable adapter uses exactly one polite owner with real correlation',observed.every(row=>row.live.length===(row.id==='popup'?1:0))&&observed.find(row=>row.id==='popup').live[0].live==='polite'&&observed.find(row=>row.id==='popup').live[0].correlation===adapters.failedFrame.announcement.correlation);
+  check('Failed receipt retains actual keyed refresh node',await evaluate('document.getElementById("popup").contentWindow.document.activeElement===adapterFocus&&adapterFocus.isConnected&&!adapterFocus.disabled'));
+  const firstSerial=adapters.failedFrame.announcement.sequence;
+  await metadata(adapters.failedFrame,true);await metadata(adapters.failedFrame,false);
+  check('Repeated adapter delivery retains one message identity',await evaluate(`document.getElementById("popup").contentWindow.document.querySelectorAll('[data-announcement-sequence="${firstSerial}"]').length===1`));
+  await frame(adapters.retryPendingFrame);await metadata(adapters.retryPendingFrame,false);
+  check('Pending read retains focused refresh control and visible progress',await evaluate('document.getElementById("popup").contentWindow.document.activeElement===adapterFocus&&!adapterFocus.disabled&&adapterFocus.textContent.includes("Reading current targets")'));
+  await frame(adapters.retryFrame);await metadata(adapters.retryFrame,true);
+  check('Explicit retry has fresh polite message without focus movement',await evaluate(`document.getElementById("popup").contentWindow.document.activeElement===adapterFocus&&document.getElementById("popup").contentWindow.document.querySelector('[data-announcement-sequence="${adapters.retryFrame.announcement.sequence}"]')!==null`)&&adapters.retryFrame.announcement.sequence!==firstSerial);
+  await frame(adapters.recoveredFrame);await metadata(adapters.recoveredFrame,false);
+  check('Successful recovery updates current state without replay or focus movement',await evaluate('document.getElementById("popup").contentWindow.document.activeElement===adapterFocus&&adapterFocus.isConnected&&!adapterFocus.disabled')&&adapters.recoveredFrame.announcement.sequence===adapters.retryFrame.announcement.sequence);
+  report.adapterObservations=await observe();
+ }
  check('No browser exceptions',report.errors.length===0,report.errors);report.passed=true;
 }catch(error){report.error=String(error.stack||error);}
 finally{

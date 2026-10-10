@@ -27,7 +27,7 @@ class Service:
   self.lock=threading.RLock();self.wake,self.writer=socket.socketpair()
   self.wake.setblocking(False);self.writer.setblocking(False)
   self.service=str(secrets.randbelow(2**64-1)+1);self.revision=1;self.serial=0;self.next_id=0
-  self.rows=[];self.available=False;self.reason='Notification service unavailable.'
+  self.rows=[];self.ever_owned=False;self.available=False;self.reason='Notification service unavailable.'
   self.connection=None;self.loop=None;self.context=None;self.expiry_source=None;self.stopping=False
   self.last_binding=None;self.last_effect=0;self.ready=threading.Event()
   self.thread=threading.Thread(target=self._run,name='warlock-notifications',daemon=True);self.thread.start()
@@ -147,7 +147,20 @@ class Service:
   if request['requestId']=='0':raise Refused('Notification request identity')
   if type(request['protocolVersion']) is not int or request['protocolVersion']!=3 or binding(request['binding'])!=client.bound:raise Refused('Notification binding')
   client.verify_process();client.verify_paths()
+  self.retry_empty()
+  client.verify_process();client.verify_paths()
   return {'protocolVersion':3,'kind':'notification-snapshot','binding':client.bound,'requestId':request['requestId'],'snapshot':self.snapshot()}
+ def retry_empty(self):
+  # Explicit authenticated read only. A never-owned, empty service has no
+  # producer/action custody to replay. Established service loss stays terminal.
+  with self.lock:
+   if self.stopping or self.available or self.ever_owned or self.serial or self.rows or self.thread.is_alive():return
+   self.connection=None;self.loop=None;self.context=None;self.expiry_source=None
+   self.ready.clear()
+   self.thread=threading.Thread(target=self._run,name='warlock-notifications',daemon=True);self.thread.start()
+  # Never hold the reducer lock while the owning Gio context becomes ready.
+  if not self.ready.wait(3):
+   with self.lock:self.reason='Notification connection did not become ready.'
  def observation(self,client):
   client.verify_process();client.verify_paths()
   return {'protocolVersion':3,'kind':'notification-update','binding':client.bound,'snapshot':self.snapshot()}
@@ -213,7 +226,7 @@ class Service:
    registered=self.connection.register_object(PATH,Gio.DBusNodeInfo.new_for_xml(XML).interfaces[0],self._method,None,None)
    subscription=self.connection.signal_subscribe('org.freedesktop.DBus','org.freedesktop.DBus','NameOwnerChanged','/org/freedesktop/DBus',None,0,self._owners)
    self.loop=GLib.MainLoop.new(self.context,False)
-   with self.lock:self.available=True;self.reason='';self.changed()
+   with self.lock:self.ever_owned=True;self.available=True;self.reason='';self.changed()
    self.ready.set()
    if not self.stopping:self.loop.run()
   except Exception:

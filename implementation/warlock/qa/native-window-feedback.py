@@ -4,6 +4,7 @@ Reuse immutable ABI/runtime by reference; no preview, supervisor or new source
 lineage. Native/AT acceptance remain separate, with AT explicitly outstanding.
 """
 import hashlib,importlib.util,json,os,pathlib,signal,subprocess,sys,time,traceback
+UNAVAILABLE=sys.argv[1:]==['--adapter-unavailable']
 LIVE=sys.argv[1:]==['--live-motion']
 MOTION=sys.argv[1:]==['--reduced-motion'] or LIVE
 LAYER=sys.argv[1:]==['--layer-appearance']
@@ -33,7 +34,7 @@ PRE_READY_RETIRE=sys.argv[1:]==['--switcher-pre-ready-retirement']
 MEMBERSHIP=sys.argv[1:]==['--switcher-membership'] or PRE_READY_RETIRE
 CHORD=sys.argv[1:]==['--switcher-chord'] or MEMBERSHIP
 SWITCHER=sys.argv[1:]==['--switcher'] or ACCESSIBILITY
-NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'] or DENSEPICKER or KEYBOARD;PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION or IME;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=SEARCH or PINS or PINMENUS or REFLOW or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or KEYBOARD or PRIMARYKEY;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER or TRANSFER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW or PRIMARY or SWITCHER or CHORD or DRAG
+NAV=sys.argv[1:]==['--workspace-navigation'];FOCUS=sys.argv[1:]==['--taskbar-focus'] or DENSEPICKER or KEYBOARD;PRESENTATION=sys.argv[1:]==['--launcher-presentation'];SEARCH=sys.argv[1:]==['--launcher-search'] or PRESENTATION or IME;PINS=sys.argv[1:]==['--taskbar-pins'];CATALOG=UNAVAILABLE or SEARCH or PINS or PINMENUS or REFLOW or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or KEYBOARD or PRIMARYKEY;RETIRE_OPENER=sys.argv[1:]==['--task-view-retired-opener'];TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or RETIRE_OPENER or TRANSFER;assert not sys.argv[1:] or FOCUS or CATALOG or TASKVIEW or PRIMARY or SWITCHER or CHORD or DRAG
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143';RUNTIME=REPO/'implementation/warlock-client-provider-native-v204'
 sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
 spec=importlib.util.spec_from_file_location('feedback_private_host',RUNTIME/'candidate_host.py');host=importlib.util.module_from_spec(spec);spec.loader.exec_module(host)
@@ -80,7 +81,7 @@ else:
 for row in pair.values():assert sha(row['path'])==row['sha256']
 assets=ROOT/'assets';assert all(sha(assets/n)==h for n,h in json.loads((ROOT/'qa'/('current-search-build.json' if CURRENT else 'current-feedback-build.json')).read_text())['compiledAssets'].items())
 subprocess.run(['node','--check',str(assets/'bar-adapter.js')],check=True)
-OUT=ROOT/'qa/runs'/(('native-layer-appearance-' if LAYER else 'native-primary-keyboard-' if PRIMARYKEY else 'native-live-motion-' if LIVE else 'native-reduced-motion-' if MOTION else 'native-transfer-workspace-' if TRANSFER else 'native-ime-' if IME else 'native-accessibility-' if ACCESSIBILITY else 'native-high-contrast-' if CONTRAST else 'native-drag-ownership-' if DRAG else 'native-keyboard-shell-' if KEYBOARD else 'native-attention-' if ATTENTION else 'native-jump-lists-' if JUMP else 'native-files-' if FILES else 'native-system-menu-' if SYSTEM else 'native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
+OUT=ROOT/'qa/runs'/(('native-adapter-unavailable-' if UNAVAILABLE else 'native-layer-appearance-' if LAYER else 'native-primary-keyboard-' if PRIMARYKEY else 'native-live-motion-' if LIVE else 'native-reduced-motion-' if MOTION else 'native-transfer-workspace-' if TRANSFER else 'native-ime-' if IME else 'native-accessibility-' if ACCESSIBILITY else 'native-high-contrast-' if CONTRAST else 'native-drag-ownership-' if DRAG else 'native-keyboard-shell-' if KEYBOARD else 'native-attention-' if ATTENTION else 'native-jump-lists-' if JUMP else 'native-files-' if FILES else 'native-system-menu-' if SYSTEM else 'native-notifications-' if NOTIFICATIONS else 'native-settings-' if SETTINGS else 'native-snap-placement-' if PLACEMENT else 'native-snap-chooser-' if SNAP else 'native-dense-picker-' if DENSEPICKER else 'native-dense-taskbar-' if DENSE else 'native-pinned-menus-' if PINMENUS else 'native-switcher-membership-' if MEMBERSHIP else 'native-switcher-chord-' if CHORD else 'native-switcher-' if SWITCHER else 'native-primary-' if PRIMARY else 'native-workspace-navigation-' if NAV else 'native-task-view-' if TASKVIEW else 'native-pins-' if PINS else 'native-search-' if SEARCH else 'native-taskbar-focus-' if FOCUS else 'native-feedback-')+str(time.time_ns()));OUT.mkdir(parents=True)
 OUTPUT=pathlib.Path('/home/hoskinson/window-integration-qa')/('warlock-window-feedback-'+str(time.time_ns()))
 focus_host=None
 if native_pair.get('pair',{}).get('core')!=pre['pair']['core']:
@@ -127,7 +128,7 @@ if CHORD:
  adapted=adapted.replace(needle,"        elif request['op'] == 'arrive-peer':\n            create('ELM-ACTIVATION-PEER', 'green')\n        elif request['op'] == 'arrive-chord':\n            create('ELM-CHORD-ARRIVAL', 'blue')\n        elif request['op'] == 'retire-third':\n            windows.pop('ELM-CHORD-THIRD').destroy()\n        elif request['op'] == 'retire-arrival':\n            windows.pop('ELM-CHORD-ARRIVAL').destroy()\n        elif request['op'] == 'retire-primary':\n            windows.pop('ELM-AUTHORITY-FIXTURE').destroy()\n"+needle)
  original_fixture=FIXTURE;FIXTURE=fixture_inputs/'chord-fixture.py';FIXTURE.write_text(adapted)
  chord_fixture={'originalSHA256':sha(original_fixture),'path':str(FIXTURE),'sha256':sha(FIXTURE),'change':'Third independent GTK root plus controlled retire/arrival operations; original client input/controllers unchanged.'}
-report={'schema':1,'requirements':['ELM-UI-007'],'scenarios':['restore-pending','restore-refused','restore-unknown'],'scope':'Actual pointer/Elm/native effect feedback and private compositor pixels; no AT/IME/full release acceptance','nativeFeedbackObserved':False,'nativeAcceptance':False,'assistiveTechnologyAccepted':False,'fullReleaseAccepted':False,'mainDesktopActions':False,'passed':False,'checks':[],'sourceInputs':{str(p.relative_to(ROOT)):sha(p) for folder in ['src','native','adapter','assets'] for p in (ROOT/folder).iterdir() if p.is_file()},'pair':pair,'nativeHost':{'path':str(binary),'sha256':sha(binary),'heldBuild':str(build_path),'heldBuildSHA256':sha(build_path)},'runtimeByReference':{'root':str(RUNTIME),'hostSHA256':sha(RUNTIME/'candidate_host.py')},'helpers':[],'nativeFixtures':[]};s=None;loaded=False;apps=[];notification_producer=None;broker=None;paused=False;sequence=0;chord_keyboard=None;chord_writer=None;drag_pointer=None;drag_writer=None
+report={'schema':1,'requirements':['ELM-UI-007'],'scenarios':['restore-pending','restore-refused','restore-unknown'],'scope':'Actual pointer/Elm/native effect feedback and private compositor pixels; no AT/IME/full release acceptance','nativeFeedbackObserved':False,'nativeAcceptance':False,'assistiveTechnologyAccepted':False,'fullReleaseAccepted':False,'mainDesktopActions':False,'passed':False,'checks':[],'sourceInputs':{str(p.relative_to(ROOT)):sha(p) for folder in ['src','native','adapter','assets'] for p in (ROOT/folder).iterdir() if p.is_file()},'pair':pair,'nativeHost':{'path':str(binary),'sha256':sha(binary),'heldBuild':str(build_path),'heldBuildSHA256':sha(build_path)},'runtimeByReference':{'root':str(RUNTIME),'hostSHA256':sha(RUNTIME/'candidate_host.py')},'helpers':[],'nativeFixtures':[]};s=None;loaded=False;apps=[];unavailable_owner=None;notification_producer=None;broker=None;paused=False;sequence=0;chord_keyboard=None;chord_writer=None;drag_pointer=None;drag_writer=None
 if focus_host:report['focusHostAdaptation']=focus_host
 if retirement_fixture:report['retirementFixture']=retirement_fixture
 if primary_fixture:report['primaryFixture']=primary_fixture
@@ -137,6 +138,7 @@ if ATTENTION:report.update(requirements=['ELM-UX-009'],scenarios=['ux-009'],scop
 if JUMP:report.update(requirements=['ELM-UX-010'],scenarios=['ux-010','jump-list-recent-identity'],scope='Physical private native jump list: catalog-declared actions, exact application-bound local XBEL file, actual GIO argv; foreign entries absent. Native negative admission is separate adapter evidence, AT and independent acceptance remain open.',nativeJumpListsObserved=False)
 if FILES:report.update(requirements=['ELM-UX-033'],scenarios=['ux-033'],scope='Actual installed Files explorer in private home/runtime; physical Elm collection choice, exact native instance reuse, location readback, no unchanged file operation source edits. Independent/AT and other-workspace summon acceptance remain open.',nativeFilesObserved=False)
 if SYSTEM:report.update(requirements=['ELM-UX-032'],scenarios=['ux-032'],scope='Actual isolated native menu with current private PipeWire volume and login1 session/power capabilities, unavailable network, physical keyboard changes, readback, confirmation and pixels; real hardware, AT and independent acceptance remain open.',nativeSystemMenuObserved=False)
+if UNAVAILABLE:report.update(requirements=['ELM-UI-010'],scenarios=['announce-adapter unavailable'],scope='Actual private native occupied notification service, physical keyboard refresh/recovery, duplicated real matched read receipts, exact polite owner/correlation and retained focused node; all-provider native matrix, speech/braille and independent acceptance remain open.',nativeAdapterUnavailableObserved=False)
 if NOTIFICATIONS:report.update(requirements=['ELM-UX-031'],scenarios=['ux-031','notification-valid','notification-reused'],scope='Actual private native producers and physical Elm center: exactly-once current dispatch, expired history and reused-incarnation queued refusal; independent/AT acceptance remains open.',nativeNotificationsObserved=False)
 if SETTINGS:report.update(requirements=['ELM-UX-030'],scenarios=['ux-030'],scope='Actual integrated settings controls, exact saved appearance, native text size/reservation and whole-host restart; native-bound invalid scale refuses without changing stored or presented settings. Independent and applicable AT/IME/release acceptance remain open.',nativeSettingsObserved=False)
 if PINS:report.update(requirements=['ELM-UI-004','ELM-UX-004'],scenarios=['taskbar-zero','ux-004'],scope='Actual native keyboard pin/reorder, shell restart, identity order and one current zero-window launch; popup physical presentation and AT acceptance remain separate',popupPresentationAccepted=False,nativePinJourneyObserved=False)
@@ -394,6 +396,14 @@ daemon.handle_request=handle
 raise SystemExit(daemon.run())
 """)
     report['commitHoldFixture']={'path':str(backend_fixture),'sha256':sha(backend_fixture),'maximumSeconds':2,'scope':'Only delay transport before selection prepare; original effect path and six-second observation deadline unchanged.'}
+   if UNAVAILABLE:
+    unavailable_ready=OUTPUT/'notification-owner.ready';unavailable_stop=OUTPUT/'notification-owner.stop'
+    unavailable_owner=s.host.launch('notification-name-owner',['/usr/bin/python3','-B',str(ROOT/'qa/notification-unavailable-owner.py'),str(unavailable_ready),str(unavailable_stop)],env=env);apps.append(unavailable_owner)
+    wait(lambda:unavailable_ready.exists() or unavailable_owner.poll() is not None)
+    check('PrivateActualNotificationNameOwnerReady',unavailable_owner.poll() is None and json.loads(unavailable_ready.read_text())['available'])
+    backend_fixture=OUTPUT/'unavailable-backend.py'
+    backend_fixture.write_text('import json,sys\nfrom pathlib import Path\nsys.path.insert(0,'+repr(str(ROOT/'adapter'))+')\nimport daemon\nassert Path(sys.argv[1]).read_text()=='+repr(config_path.read_text())+'\nsys.argv[1]='+repr(str(broker_config))+'\noriginal=daemon.send\ndef send(value):\n original(value)\n if value.get("kind")=="notification-snapshot":original(value)\ndaemon.send=send\nraise SystemExit(daemon.run())\n')
+    report['unavailableFixture']={'owner':str(ROOT/'qa/notification-unavailable-owner.py'),'ownerSHA256':sha(ROOT/'qa/notification-unavailable-owner.py'),'backend':str(backend_fixture),'backendSHA256':sha(backend_fixture),'scope':'Another actual private bus service owns the name; duplicate only the original real read receipt, never synthesize unavailable facts or repeat an action.'}
    if NOTIFICATIONS:
     notification_arm=OUTPUT/'notification-hold-arm';notification_waiting=OUTPUT/'notification-hold-waiting';notification_release=OUTPUT/'notification-hold-release'
     backend_fixture=OUTPUT/'notification-backend.py'
@@ -703,6 +713,7 @@ raise SystemExit(daemon.run())
       if JUMP:selected=button.get("identity","")=="jump:title:state" or button["id"]==body["focus"]
       if FILES:selected=button.get('identity','') in ['files:location:state','files:collection:images'] or button['id']==body['focus']
       if SYSTEM:selected=button.get('identity','').endswith(':state') or button['id']==body['focus']
+      if UNAVAILABLE:selected=button.get('identity')=='notifications:refresh'
       if NOTIFICATIONS:selected=button['accessibleName']=='Warlock fixture: Expiring notification'
       if not selected or (button['disabled'] and not (NOTIFICATIONS or SYSTEM or FILES or JUMP)) or button['y']<0 or button['y']+button['height']>box[3]:continue
       left,top=max(0,int(box[0]+button['x'])+12),max(100,int(box[1]+button['y'])+6)
@@ -1448,6 +1459,42 @@ raise SystemExit(daemon.run())
      key(1);wait(lambda:projection()['mode']=='closed')
      check('SystemEscapeClosesWithoutWindowOrLaunchEffects',len(journal())==before_window and not launches())
      report['systemProviderState']=json.loads(system_state.read_text());report['nativeSystemMenuObserved']=True
+    elif UNAVAILABLE:
+     def center_body():
+      body=popup_body();p=projection()
+      return body if body and p and p.get('mode')=='notifications' and body['publication']==p['publication'] else None
+     def incoming():return [json.loads(line.split(': ',1)[1]) for line in text().splitlines() if line.startswith('backend-frame: ')]
+     def reads():return [row for row in incoming() if row.get('kind')=='notification-snapshot']
+     def cues():return [json.loads(line.split(': ',1)[1]) for line in text().splitlines() if line.startswith('announcement-delivery: ') and json.loads(json.loads(line.split(': ',1)[1])['message']['correlation'])['outcome']=='adapter-unavailable']
+     before_window=len(journal())
+     opener=wait(lambda:next((b for b in (bar_body() or {}).get('buttons',[]) if b['accessibleName']=='Open notifications' and not b['disabled']),None))
+     click({'visible':0<=opener['x'] and opener['x']+opener['width']<=800 and 0<=opener['y']<48,'point':[opener['x']+opener['width']/2,opener['y']+opener['height']/2]})
+     wait(lambda:center_body() and reads() and cues())
+     first=reads()[-1];cue=cues()[-1]
+     check('ActualOccupiedServiceHasOnePoliteMatchedFailure',not first['snapshot']['available'] and len(cues())==1 and not cue['message']['interrupt'] and len(center_body()['announcements'])==1 and center_body()['announcements'][0]['live']=='polite',receipt=first,cue=cue,body=center_body())
+     # Navigate to the real Refresh node, then use the physical key without a
+     # helper Focus effect or a DOM script. Pending reads keep it focusable.
+     button=wait(lambda:next((b for b in center_body()['buttons'] if b.get('identity')=='notifications:refresh' and not b['disabled']),None))
+     for _ in range(len(center_body()['buttons'])+2):
+      if center_body()['focusIdentity']=='notifications:refresh':break
+      key(15)
+     stable=center_body();check('PhysicalKeyboardReachesRefresh',stable['focusIdentity']=='notifications:refresh' and stable['documentFocused'])
+     key(28);wait(lambda:len(cues())==2 and len(reads())>=4)
+     failed=reads()[-1];cue=cues()[-1];correlation=json.loads(cue['message']['correlation']);body=center_body()
+     check('ExactNativeFailureIdentityAndOneOwner',correlation['binding']==failed['binding'] and correlation['identity']=={'adapter':'notifications','request':failed['requestId'],'service':failed['snapshot']['service'],'revision':failed['snapshot']['revision']} and cue['recipient']==cue['announcer'] and cue['recipient']['surface']=='popup' and not cue['message']['interrupt'],receipt=failed,cue=cue)
+     check('DuplicatedRealReceiptCannotReannounce',sum(row['requestId']==failed['requestId'] for row in reads())==2 and len(cues())==2 and sum(row['message']['sequence']==cue['message']['sequence'] for row in cues())==1,receipts=reads(),cues=cues())
+     check('UnavailableFailureRetainsActualFocusedNode',body['focusNode']==stable['focusNode'] and body['focusIdentity']==stable['focusIdentity'] and body['documentFocused'] and len(body['announcements'])==1 and body['announcements'][0]['live']=='polite',before=stable,after=body)
+     popup_capture('adapter-unavailable');capture=report['popupCaptures'][-1]
+     check('UnavailableRecoveryHasActualNativeControlPixels',len(capture['controlRegions'])==1 and capture['controlRegions'][0]['accessibleName']=='Refresh notifications' and capture['controlRegions'][0]['brightPixels']>15,capture=capture)
+     unavailable_stop.write_text('stop');unavailable_owner.wait(timeout=5)
+     check('ExistingOwnerReleasesNormally',unavailable_owner.returncode==0)
+     prior=len(cues());key(28)
+     wait(lambda:reads() and reads()[-1]['snapshot']['available'] and center_body())
+     recovered=reads()[-1];body=center_body()
+     check('ExplicitKeyboardRefreshRecoversEmptyService',recovered['requestId']!=failed['requestId'] and recovered['snapshot']['service']==failed['snapshot']['service'] and int(recovered['snapshot']['revision'])>int(failed['snapshot']['revision']) and recovered['snapshot']['entries']==[],receipt=recovered)
+     check('RecoveryDoesNotReplayAnnouncementOrMoveFocus',len(cues())==prior and body['focusNode']==stable['focusNode'] and body['focusIdentity']==stable['focusIdentity'] and body['documentFocused'],body=body,cues=cues())
+     check('ReadOnlyRecoveryHasNoWindowLaunchOrNotificationEffects',len(journal())==before_window and not launches() and not requests('notification-effect'))
+     popup_capture('adapter-recovered');report['nativeAdapterUnavailableObserved']=True;report['adapterReceipts']=reads();report['adapterAnnouncements']=cues()
     elif NOTIFICATIONS:
      notification_control=OUTPUT/'notification-control.json'
      producer=s.host.launch('notification-producers',['/usr/bin/python3','-B',str(ROOT/'qa/notification-producer.py'),str(notification_control)],env=env);apps.append(producer);notification_producer=producer
@@ -2011,6 +2058,8 @@ raise SystemExit(daemon.run())
     os.close(chord_writer);chord_writer=None
    if chord_keyboard is not None:
     chord_keyboard.wait(timeout=5);check('PersistentKeyboardNormalExit',chord_keyboard.returncode==0)
+   if unavailable_owner is not None and unavailable_owner.poll() is None:
+    unavailable_stop.write_text('stop');unavailable_owner.wait(timeout=5)
    if notification_producer is not None and notification_producer.poll() is None:
     notification_serial+=1;notification_control.write_text(json.dumps({"serial":notification_serial,"op":"quit"}));notification_producer.wait(timeout=5)
    if FILES and 'files_process' in locals() and 'files_native_status' in locals() and files_process.poll() is None:

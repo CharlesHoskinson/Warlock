@@ -8,6 +8,7 @@ import Settings
 import Motion
 import MotionPreferences
 import Notifications
+import AdapterNotice
 import JumpList
 import PointerOwnership
 import Shortcuts
@@ -85,6 +86,7 @@ type alias Model =
     , request : Counter
     , presentation : Maybe Counter
     , expected : Maybe Counter
+    , adapterNotice : Maybe AdapterNotice.Notice
     , catalogFailure : Maybe { binding : Binding.Binding, request : Counter }
     }
 
@@ -179,7 +181,7 @@ type Effect
 
 initial : Model
 initial =
-    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, pointer = PointerOwnership.initial, shortcuts = Shortcuts.initial, jumpList = JumpList.initial, jumpEntry = Nothing, jumpOpening = False, jumpExpected = Nothing, jumpBack = False, files = Files.initial, filesOpen = False, filesOpening = False, filesExpected = Nothing, systemMenu = SystemMenu.initial, systemMenuOpen = False, systemMenuOpening = False, systemMenuExpected = Nothing, systemMenuConfirmation = Nothing, notifications = Notifications.initial, notificationsOpen = False, notificationsOpening = False, notificationsExpected = Nothing, motionExpected = Nothing, motion = Motion.initial, settings = Settings.initial, settingsOpen = False, settingsOpening = False, settingsExpected = Nothing, settingsHelp = True, shortcutPreferences = ShortcutPreferences.initial, shortcutExpected = Nothing, open = False, overview = False, overviewWorkspace = Nothing, overviewTransfer = Nothing, snap = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, catalogFailure = Nothing }
+    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, pointer = PointerOwnership.initial, shortcuts = Shortcuts.initial, jumpList = JumpList.initial, jumpEntry = Nothing, jumpOpening = False, jumpExpected = Nothing, jumpBack = False, files = Files.initial, filesOpen = False, filesOpening = False, filesExpected = Nothing, systemMenu = SystemMenu.initial, systemMenuOpen = False, systemMenuOpening = False, systemMenuExpected = Nothing, systemMenuConfirmation = Nothing, notifications = Notifications.initial, notificationsOpen = False, notificationsOpening = False, notificationsExpected = Nothing, motionExpected = Nothing, motion = Motion.initial, settings = Settings.initial, settingsOpen = False, settingsOpening = False, settingsExpected = Nothing, settingsHelp = True, shortcutPreferences = ShortcutPreferences.initial, shortcutExpected = Nothing, open = False, overview = False, overviewWorkspace = Nothing, overviewTransfer = Nothing, snap = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, adapterNotice = Nothing, catalogFailure = Nothing }
 
 switcherOpen : Model -> Bool
 switcherOpen model = List.member (Switcher.phase model.switcher) [Switcher.Waiting,Switcher.Browsing]
@@ -386,6 +388,7 @@ windowBase message model =
         , request = shortcutsRead |> Maybe.map Tuple.second |> Maybe.withDefault (motionRead |> Maybe.map Tuple.second |> Maybe.withDefault (settingsRead |> Maybe.map Tuple.second |> Maybe.withDefault (read |> Maybe.map Tuple.second |> Maybe.withDefault model.request)))
         , applications = if disconnected || changed then Nothing else model.applications
         , expected = if disconnected || changed then read |> Maybe.map Tuple.second else model.expected
+        , adapterNotice = if disconnected && model.windows.shell.phase /= Shell.Detached then model.windows.shell.binding |> Maybe.map (\binding -> AdapterNotice.connectionLost binding model.windows.shell.request) else if changed then Nothing else model.adapterNotice
         , catalogFailure = if disconnected || changed then Nothing else model.catalogFailure
       }, (read |> Maybe.map (\(binding,request) -> [catalogRequest binding request]) |> Maybe.withDefault []) ++ (settingsRead |> Maybe.map (\(binding,request) -> [settingsRequest binding request]) |> Maybe.withDefault []) ++ (motionRead |> Maybe.map (\(binding,request) -> [motionPreferencesRequest binding request]) |> Maybe.withDefault []) ++ (shortcutsRead |> Maybe.map (\(binding,request) -> [shortcutPreferencesRequest binding request]) |> Maybe.withDefault []) ++ List.map WindowEffect effects ++
         (case (model.windows.picker,windows.picker,message) of
@@ -696,7 +699,7 @@ updateAvailable message model =
                             if model.windows.shell.binding/=Just receipt.binding || model.motionExpected/=Just receipt.request then (model,[]) else
                             let motion=model.motion
                                 preference=MotionPreferences.observe receipt.snapshot motion.preferences
-                            in (advance {model | motion={motion | preferences=preference},motionExpected=Nothing},[])
+                            in (advance {model | motion={motion | preferences=preference},motionExpected=Nothing,adapterNotice=AdapterNotice.failedRead AdapterNotice.Motion receipt.binding receipt.request Nothing Nothing (receipt.snapshot==Nothing) model.adapterNotice},[])
                 Ok "motion-preferences-outcome" ->
                     let decoder=strict ["protocolVersion","kind","binding","requestId","status","snapshot"] (D.map5 (\_ binding request status snapshot -> {binding=binding,request=request,status=status,snapshot=snapshot}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "status" D.string) (D.field "snapshot" (D.nullable MotionPreferences.decoder)))
                     in case D.decodeValue decoder raw of
@@ -761,8 +764,10 @@ updateAvailable message model =
                     in case D.decodeValue decoder raw of
                         Ok result ->
                             if model.windows.shell.binding/=Just result.binding || model.jumpExpected/=Just result.request || model.jumpEntry/=Just result.snapshot.entry || model.windows.shell.phase==Shell.Detached then (model,[]) else
-                                let next=advance {model | jumpList=JumpList.reconcile result.snapshot model.jumpList,jumpExpected=Nothing,jumpOpening=False}
-                                in (next,if model.jumpOpening then [Focus (key next "jump:close")] else [])
+                                let reconciled=JumpList.reconcile result.snapshot model.jumpList
+                                    failed=(not result.snapshot.available) && reconciled.snapshot==Just result.snapshot
+                                    next=advance {model | jumpList=reconciled,adapterNotice=AdapterNotice.failedRead AdapterNotice.ApplicationActions result.binding result.request (Just result.snapshot.service) (Just result.snapshot.revision) failed model.adapterNotice,jumpExpected=Nothing,jumpOpening=False}
+                                in (next,if model.jumpOpening && not failed then [Focus (key next "jump:close")] else [])
                         Err _ -> (model,[])
                 Ok "jump-list-outcome" ->
                     let decoder=strict ["protocolVersion","kind","binding","requestId","status","snapshot"] (D.map5 (\_ binding request status snapshot -> {binding=binding,request=request,status=status,snapshot=snapshot}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "status" D.string) (D.field "snapshot" JumpList.decoder))
@@ -777,8 +782,10 @@ updateAvailable message model =
                     in case D.decodeValue decoder raw of
                         Ok result ->
                             if model.windows.shell.binding/=Just result.binding || model.filesExpected/=Just result.request || model.windows.shell.phase==Shell.Detached then (model,[]) else
-                                let next=advance {model | files=Files.reconcile result.snapshot model.files,filesExpected=Nothing,filesOpening=False}
-                                in (next,if model.filesOpen && model.filesOpening then [Focus (key next "files:close")] else [])
+                                let reconciled=Files.reconcile result.snapshot model.files
+                                    failed=(not result.snapshot.available) && reconciled.snapshot==Just result.snapshot
+                                    next=advance {model | files=reconciled,adapterNotice=AdapterNotice.failedRead AdapterNotice.Files result.binding result.request (Just result.snapshot.service) (Just result.snapshot.revision) failed model.adapterNotice,filesExpected=Nothing,filesOpening=False}
+                                in (next,if model.filesOpen && model.filesOpening && not failed then [Focus (key next "files:close")] else [])
                         Err _ -> (model,[])
                 Ok "files-outcome" ->
                     let decoder=strict ["protocolVersion","kind","binding","requestId","status","snapshot"] (D.map5 (\_ binding request status snapshot -> {binding=binding,request=request,status=status,snapshot=snapshot}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "status" D.string) (D.field "snapshot" Files.decoder))
@@ -793,8 +800,10 @@ updateAvailable message model =
                     in case D.decodeValue decoder raw of
                         Ok receipt ->
                             if model.windows.shell.binding/=Just receipt.binding || model.systemMenuExpected/=Just receipt.request then (model,[]) else
-                                let next=advance {model | systemMenu=SystemMenu.reconcile receipt.snapshot model.systemMenu,systemMenuExpected=Nothing,systemMenuOpening=False,systemMenuConfirmation=Nothing}
-                                in (next,if model.systemMenuOpen && model.systemMenuOpening then [Focus (key next "system:close")] else [])
+                                let reconciled=SystemMenu.reconcile receipt.snapshot model.systemMenu
+                                    failed=(receipt.snapshot.volume==Nothing && receipt.snapshot.network==Nothing && receipt.snapshot.power==Nothing && receipt.snapshot.session==Nothing) && reconciled.snapshot==Just receipt.snapshot
+                                    next=advance {model | systemMenu=reconciled,adapterNotice=AdapterNotice.failedRead AdapterNotice.System receipt.binding receipt.request (Just receipt.snapshot.service) (Just receipt.snapshot.revision) failed model.adapterNotice,systemMenuExpected=Nothing,systemMenuOpening=False,systemMenuConfirmation=Nothing}
+                                in (next,if model.systemMenuOpen && model.systemMenuOpening && not failed then [Focus (key next "system:close")] else [])
                         Err _ -> (model,[])
                 Ok "system-menu-outcome" ->
                     let decoder=strict ["protocolVersion","kind","binding","requestId","status","snapshot"] (D.map5 (\_ binding request status snapshot -> {binding=binding,request=request,status=status,snapshot=snapshot}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "status" D.string) (D.field "snapshot" SystemMenu.decoder))
@@ -809,8 +818,10 @@ updateAvailable message model =
                     in case D.decodeValue decoder raw of
                         Ok receipt ->
                             if model.windows.shell.binding/=Just receipt.binding || model.notificationsExpected/=Just receipt.request then (model,[]) else
-                                let next=advance {model | notifications=Notifications.reconcile receipt.snapshot model.notifications,notificationsExpected=Nothing,notificationsOpening=False}
-                                in (next,if model.notificationsOpen && model.notificationsOpening then [Focus (key next "notifications:close")] else [])
+                                let reconciled=Notifications.reconcile receipt.snapshot model.notifications
+                                    failed=(not receipt.snapshot.available) && reconciled.snapshot==Just receipt.snapshot
+                                    next=advance {model | notifications=reconciled,adapterNotice=AdapterNotice.failedRead AdapterNotice.Notifications receipt.binding receipt.request (Just receipt.snapshot.service) (Just receipt.snapshot.revision) failed model.adapterNotice,notificationsExpected=Nothing,notificationsOpening=False}
+                                in (next,if model.notificationsOpen && model.notificationsOpening && not failed then [Focus (key next "notifications:close")] else [])
                         Err _ -> (model,[])
                 Ok "notification-update" ->
                     let decoder=strict ["protocolVersion","kind","binding","snapshot"] (D.map3 (\_ binding snapshot -> {binding=binding,snapshot=snapshot}) version (D.field "binding" Binding.decoder) (D.field "snapshot" Notifications.decoder))
@@ -833,7 +844,7 @@ updateAvailable message model =
                     in case D.decodeValue decoder raw of
                         Ok receipt ->
                             if model.windows.shell.binding/=Just receipt.binding || model.shortcutExpected/=Just receipt.request then (model,[]) else
-                                (advance {model | shortcutPreferences=ShortcutPreferences.observe receipt.snapshot (Just receipt.inventory) model.shortcutPreferences,shortcutExpected=Nothing},[])
+                                (advance {model | shortcutPreferences=ShortcutPreferences.observe receipt.snapshot (Just receipt.inventory) model.shortcutPreferences,shortcutExpected=Nothing,adapterNotice=AdapterNotice.failedRead AdapterNotice.Shortcuts receipt.binding receipt.request Nothing Nothing (receipt.snapshot==Nothing) model.adapterNotice},[])
                         Err _ -> (model,[])
                 Ok "shortcut-preferences-outcome" ->
                     let decoder=strict ["protocolVersion","kind","binding","requestId","status","snapshot","inventory"] (D.map6 (\_ binding request status snapshot inventory -> {binding=binding,request=request,status=status,snapshot=snapshot,inventory=inventory}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "status" D.string) (D.field "snapshot" (D.nullable ShortcutPreferences.decoder)) (D.field "inventory" ShortcutPreferences.inventoryDecoder))
@@ -848,8 +859,8 @@ updateAvailable message model =
                     in case D.decodeValue decoder raw of
                         Ok receipt ->
                             if model.windows.shell.binding/=Just receipt.binding || model.settingsExpected/=Just receipt.request then (model,[]) else
-                                let next=advance {model | settings=Settings.observe receipt.snapshot model.settings,settingsExpected=Nothing,settingsOpening=False}
-                                in (next,if model.settingsOpen && model.settingsOpening then [Focus (key next "settings:close")] else [])
+                                let next=advance {model | settings=Settings.observe receipt.snapshot model.settings,settingsExpected=Nothing,settingsOpening=False,adapterNotice=AdapterNotice.failedRead AdapterNotice.Settings receipt.binding receipt.request Nothing Nothing (receipt.snapshot==Nothing) model.adapterNotice}
+                                in (next,if model.settingsOpen && model.settingsOpening && receipt.snapshot/=Nothing then [Focus (key next "settings:close")] else [])
                         Err _ -> (model,[])
                 Ok "shell-settings-outcome" ->
                     let decoder=strict ["protocolVersion","kind","binding","requestId","status","snapshot"] (D.map5 (\_ binding request status snapshot -> {binding=binding,request=request,status=status,snapshot=snapshot}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "status" D.string) (D.field "snapshot" (D.nullable Settings.decoder)))
@@ -1054,7 +1065,7 @@ updateAvailable message model =
                 _ -> (retired,[])
         CatalogUnsent binding request ->
             if not (canProveCatalogUnsent binding request model) then (model,[]) else
-                ({model | expected=Nothing,catalogFailure=Just {binding=binding,request=request}},[])
+                ({model | expected=Nothing,catalogFailure=Just {binding=binding,request=request},adapterNotice=AdapterNotice.failedRead AdapterNotice.Applications binding request Nothing Nothing True model.adapterNotice},[])
         CloseApplications stamp ->
             if capture model /= Just stamp || not model.open then (model,[]) else
                 let next = advance {model | open = False, expected = Nothing}

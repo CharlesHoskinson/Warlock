@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-c2dd3a487a4447479635949149c76999.scope",
+    "coreLimit": 1
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "args": [
+        "quint",
+        "typecheck",
+        "qa/adapter-announcements.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "tests-typecheck",
+      "args": [
+        "quint",
+        "typecheck",
+        "qa/adapter-announcements_test.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "args": [
+        "quint",
+        "test",
+        "qa/adapter-announcements_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=79501"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "witness-safety",
+      "args": [
+        "quint",
+        "run",
+        "qa/adapter-announcements.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--witnesses",
+        "requestWitness",
+        "failureWitness",
+        "successWitness",
+        "repeatWitness",
+        "discardWitness",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79502"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "inputs": {
+    "qa/adapter-announcements.qnt": "de140d10af4ea7ac39d3dfe7a5ccfc431aa7e1a7aa1de954ef93499d752823e5",
+    "qa/adapter-announcements_test.qnt": "55d8c54d97c547c9f6463c59d3f0072379f9ff5343308b2d70540124d143e9a5"
+  },
+  "witnesses": {
+    "requestWitness": 1000,
+    "failureWitness": 980,
+    "successWitness": 946,
+    "repeatWitness": 967,
+    "discardWitness": 1000
+  }
+}

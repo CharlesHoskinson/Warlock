@@ -1,13 +1,73 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T04:29:13.182909+00:00",
+  "updatedUTC": "2026-10-10T04:49:50.823065+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
+    "id": "adapter-unavailable-announcements",
+    "requirements": [
+      "ELM-UI-010"
+    ],
+    "scenarios": [
+      "announce-adapter unavailable"
+    ],
+    "before": "Adapter failures are visually reported through typed catalog/service/preference/connection state, but the shared announcement route has no unavailable source and failed opening reads can reissue Focus.",
+    "after": "Matched adapter failures carry a typed source, binding/request and available service/revision identity into the root-selected polite announcer. Repeated receipts/publications cannot reannounce or request focus. Existing read-only refresh/reconnect/detail controls remain reachable; empty notification-service occupancy can be re-probed on explicit refresh without replacing another owner or replaying actions.",
+    "paths": [
+      "implementation/warlock/src/AdapterNotice.elm",
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/src/OutcomeAnnouncements.elm",
+      "implementation/warlock/adapter/notification_service.py",
+      "implementation/warlock/assets/elm.js",
+      "implementation/warlock/assets/bar.js",
+      "implementation/warlock/assets/popup.js",
+      "implementation/warlock/qa/adapter-announcements.qnt",
+      "implementation/warlock/qa/adapter-announcements_test.qnt",
+      "implementation/warlock/qa/check-adapter-announcements.py",
+      "implementation/warlock/qa/AdapterAnnouncementReplay.elm",
+      "implementation/warlock/qa/check-notifications.py",
+      "implementation/warlock/qa/announcement-browser.mjs",
+      "implementation/warlock/qa/check-search.py",
+      "implementation/warlock/qa/current-search-build.json",
+      "implementation/warlock/qa/native-window-feedback.py",
+      "implementation/warlock/qa/notification-unavailable-owner.py",
+      "implementation/warlock/README.md",
+      "implementation/warlock/src/Surface.elm"
+    ],
+    "verification": [
+      "quint-llm-kit additive typed failed-read/request/binding/duplicate/no-focus model with incremental initialization and positive witness, explicit named tests and sampled safety; preserve original owner/notification/focus models. Compile actual roots/GTK host, typed available/foreign/stale/failure/repeat branches, browser focus/recovery/one owner. Existing native D-Bus no-replacement/action/no-replay checks plus explicit empty-service re-probe. Protected private native occupied service, actual keyboard refresh/recovery, exact real receipt correlation and retained focused node; duplicated real read receipt is an adversarial transport fixture. Actual native speech/braille, all-provider native matrix and independent acceptance remain partial."
+    ],
+    "status": "implemented-partial",
+    "participantRecord": ".warlock-contributor/adapter-announcements.json",
+    "evidence": "implementation/warlock/qa/evidence/adapter-announcements/manifest.json",
+    "observed": "Matched adapter failures use one polite owner without receipt-triggered Focus. Notification Refresh stays focusable while reading; exact duplicate native receipts are silent. Actual private occupied notification service and keyboard refresh/recovery retain node/control/document focus, measure control pixels and exit normally without replay.",
+    "missingObservations": [
+      "Actual stable-focus speech and braille, repeated-receipt delivery and reachable recovery through native AT.",
+      "Independent original-scenario acceptance.",
+      "Other native provider journeys, spontaneous service loss and applicable transport faults.",
+      "Relevant notification expiration and expired-action refusal announcements remain unfinished scope."
+    ],
+    "nextSourceWork": "Implement relevant notification expiration and expired-action refusal announcement sources. Use quint-llm-kit to model actual focus/user-invocation relevance with exact binding/service/incarnation/request and no replay. Preserve irrelevant-expiry silence and DND policy; then qualify native AT routes and continue the full original GUI scope."
+  },
+  "nextSlices": [
+    "taskbar activation/minimize/restore and popup focus journeys",
+    "persistent catalog pins",
+    "launcher search and refusal recovery",
+    "switcher/Task View/workspaces and snap/output journeys",
+    "authorized visible previews and fallback",
+    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
+    "original native, AT/IME, hardware/resource/journey gates",
+    "reproducible package, reversible deployment/rollback"
+  ],
+  "releaseAccepted": false,
+  "oldTrackerIsCurrent": false,
+  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
+  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
+  "previousSlice": {
     "id": "notification-arrival-permission",
     "requirements": [
       "ELM-UI-010"
@@ -58,77 +118,6 @@
       "Adapter-unavailable and relevant notification expiration/action-refusal announcements remain unfinished scope."
     ],
     "nextSourceWork": "Complete adapter-unavailable and relevant notification expiration/expired-action refusal announcement sources. Use quint-llm-kit to model guarded actual focus/user-invocation relevance before implementing, retain exact service/incarnation/request identity and no replay. Then qualify the integrated announcement routes with actual native AT speech/braille and continue the remaining GUI release scope."
-  },
-  "nextSlices": [
-    "taskbar activation/minimize/restore and popup focus journeys",
-    "persistent catalog pins",
-    "launcher search and refusal recovery",
-    "switcher/Task View/workspaces and snap/output journeys",
-    "authorized visible previews and fallback",
-    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
-    "original native, AT/IME, hardware/resource/journey gates",
-    "reproducible package, reversible deployment/rollback"
-  ],
-  "releaseAccepted": false,
-  "oldTrackerIsCurrent": false,
-  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
-  "previousSlice": {
-    "id": "single-owner-refusal-announcements",
-    "requirements": [
-      "ELM-UI-010"
-    ],
-    "scenarios": [
-      "announce-launch refusal",
-      "announce-transfer refusal",
-      "announce-settings validation failure"
-    ],
-    "before": "All output bars and popup status lines are live regions, while refusal status lacks a separate identity-bound single-owner delivery contract.",
-    "after": "Elm selects one announcement route for typed matched launch, transfer and settings refusal outcomes. Native validates the declared owner and forwards each serial once. Mirrors retain readable visual status without announcing; current receipt repeats and owner changes do not reannounce or request focus. Frozen notification permission/DND/urgency and native speech/braille remain explicit unfinished original scope.",
-    "paths": [
-      "implementation/warlock/src/Announcement.elm",
-      "implementation/warlock/src/OutcomeAnnouncements.elm",
-      "implementation/warlock/src/OutputController.elm",
-      "implementation/warlock/src/Launch.elm",
-      "implementation/warlock/src/Settings.elm",
-      "implementation/warlock/src/Bar.elm",
-      "implementation/warlock/src/Popup.elm",
-      "implementation/warlock/src/SurfaceRenderer.elm",
-      "implementation/warlock/native/announcement-transport.h",
-      "implementation/warlock/native/shared-host.c",
-      "implementation/warlock/assets/elm.js",
-      "implementation/warlock/assets/bar.js",
-      "implementation/warlock/assets/popup.js",
-      "implementation/warlock/assets/bar-adapter.js",
-      "implementation/warlock/assets/popup-adapter.js",
-      "implementation/warlock/assets/shell.css",
-      "implementation/warlock/qa/announcement-owner.qnt",
-      "implementation/warlock/qa/announcement-owner_test.qnt",
-      "implementation/warlock/qa/check-announcement-owner.py",
-      "implementation/warlock/qa/AnnouncementReplay.elm",
-      "implementation/warlock/qa/announcement-browser.mjs",
-      "implementation/warlock/qa/check-search.py",
-      "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/README.md",
-      "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/src/Desktop.elm"
-    ],
-    "verification": [
-      "Use quint-llm-kit quint-modeling and quint-execute-spec: additive root/transport/receiver ownership and serial-dedup model, explicit named positive/negative tests, positive reachability witnesses and sampled safety; preserve all existing original models. Compile actual integrated Elm roots and owning GTK host. Typed matched refusal/repeat/foreign binding/counter and current-owner transport codec tests; multi-view browser live-region/focus/repeated text and stale publication/owner cases. Relevant protected original native refusal route and DOM/correlation counts remain distinct from actual native speech/braille/independent acceptance."
-    ],
-    "status": "implemented-partial",
-    "participantRecord": ".warlock-contributor/announcements.json",
-    "evidence": "implementation/warlock/qa/evidence/announcements/manifest.json",
-    "observed": "Implemented one root-selected refusal announcer and exact native forwarding/dedup; removed launch receipt Focus command. Typed/browser checks and original native transfer/correlation/DOM/cleanup pass. Actual native speech/braille and independent acceptance remain open.",
-    "missingObservations": [
-      "Actual stable-focus native speech and braille, repeated-receipt delivery and reachable recovery through AT.",
-      "Native launch/settings refusal announcement journeys.",
-      "Independent original-scenario acceptance.",
-      "Adapter unavailable and frozen notification relevance/DND/urgency/expiration policy remain separate unfinished scope.",
-      "Bounded model omits transport loss, process restart, timing and full hardware/resource budgets."
-    ],
-    "nextSourceWork": "Extend the same root-owned announcement route to adapter-unavailable and permitted notification outcomes using the frozen relevance/DND/urgency/expiration policy. Model the permission predicates with quint-llm-kit before behavioral changes; preserve visual history, focus and exact notification identities. Actual AT remains a required separate release observation."
   },
   "recentSlices": [
     {
@@ -1218,6 +1207,58 @@
       "evidence": "implementation/warlock/qa/evidence/layer-appearance/manifest.json",
       "observed": "Effects-off and reduced-transparency controls implemented; actual keyboard save, whole-host restart, isolated invalid-scale refusal and native named controls/solid focus pass. Twelve browser theme/flag pairs and original nine-surface keyboard regression pass with component/native scopes separated.",
       "nextSourceWork": "Remove duplicate per-preview live regions and unavailable announcements under the original one-announcement-owner contract; native speech/braille and all-profile qualification remain separate."
+    },
+    {
+      "id": "notification-arrival-permission",
+      "requirements": [
+        "ELM-UI-010"
+      ],
+      "scenarios": [
+        "announce-notification arrival",
+        "announcement-dnd",
+        "announcement-urgency-opt-in"
+      ],
+      "before": "Notification observations retain history and targets but have no typed urgency or user-controlled announcement permission. New shared refusal route intentionally admits no notification source.",
+      "after": "Notification center exposes session-scoped Do not disturb and explicit critical-interruption opt-in. Elm admits new identity-bound arrivals politely by default, suppresses arrivals during DND while retaining history, and permits assertive delivery only for opted-in critical arrivals when DND is off. Refresh, duplicate observations, preference changes and pre-existing history never replay messages or move focus.",
+      "paths": [
+        "implementation/warlock/src/Notifications.elm",
+        "implementation/warlock/src/Desktop.elm",
+        "implementation/warlock/src/Surface.elm",
+        "implementation/warlock/src/OutcomeAnnouncements.elm",
+        "implementation/warlock/src/Announcement.elm",
+        "implementation/warlock/native/announcement-transport.h",
+        "implementation/warlock/adapter/notification_service.py",
+        "implementation/warlock/assets/elm.js",
+        "implementation/warlock/assets/bar.js",
+        "implementation/warlock/assets/popup.js",
+        "implementation/warlock/qa/notification-announcements.qnt",
+        "implementation/warlock/qa/notification-announcements_test.qnt",
+        "implementation/warlock/qa/check-notification-announcements.py",
+        "implementation/warlock/qa/NotificationAnnouncementReplay.elm",
+        "implementation/warlock/qa/check-notifications.py",
+        "implementation/warlock/qa/announcement-browser.mjs",
+        "implementation/warlock/qa/check-search.py",
+        "implementation/warlock/qa/current-search-build.json",
+        "implementation/warlock/qa/native-window-feedback.py",
+        "implementation/warlock/qa/notification-producer.py",
+        "implementation/warlock/README.md",
+        "implementation/warlock/src/SurfaceRenderer.elm",
+        "implementation/warlock/assets/popup-adapter.js"
+      ],
+      "verification": [
+        "quint-llm-kit additive single-Elm permission/identity model: init then one arrival action/witness, DND/opt-in/suppressed/new-identity events with explicit named tests, positive witnesses and sampled safety; preserve original receipt/owner models. Compile actual roots/GTK host; native session-bus urgency metadata and malformed-hint no escalation, typed root arrival/baseline/repeat/batch/focus guards, browser one-route polite/assertive regions and real policy controls. Relevant original protected native notification history/action journey plus named permission controls and exact native notification/announcement correlation; actual stable-focus speech/braille and independent acceptance remain partial."
+      ],
+      "status": "implemented-partial",
+      "participantRecord": ".warlock-contributor/notification-announcements.json",
+      "evidence": "implementation/warlock/qa/evidence/notification-announcements/manifest.json",
+      "observed": "Implemented session DND/critical consent with accessible pressed state, strict native urgency and critical nonexpiration. Permission model/typed/browser and original native notification journey pass. Real keyboard/producer arrivals show suppression/no replay and polite/assertive correlation while retaining the same focused DOM node. Native AT/speech/braille and independent acceptance remain open.",
+      "missingObservations": [
+        "Actual speech and braille, repeated-receipt delivery and reachable recovery/relationships through native AT.",
+        "Independent original-scenario acceptance.",
+        "Native batch/coalescing stress and full physical control/profile qualification.",
+        "Adapter-unavailable and relevant notification expiration/action-refusal announcements remain unfinished scope."
+      ],
+      "nextSourceWork": "Complete adapter-unavailable and relevant notification expiration/expired-action refusal announcement sources. Use quint-llm-kit to model guarded actual focus/user-invocation relevance before implementing, retain exact service/incarnation/request identity and no replay. Then qualify the integrated announcement routes with actual native AT speech/braille and continue the remaining GUI release scope."
     }
   ]
 }

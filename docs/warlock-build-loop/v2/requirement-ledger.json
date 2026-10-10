@@ -6458,9 +6458,39 @@
         {
           "name": "announce-adapter unavailable",
           "oracle": "one correlated message appears with reachable detail/recovery and no focus relocation; repeated receipts do not reannounce",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/adapter-announcements/manifest.json",
+              "sha256": "2645dd307e2db57e524432aa963cd3960927a0fa242029769707bc2f3265d924",
+              "scope": "Matched typed failure/repeat/foreign guards and no receipt-triggered Focus; actual native occupied notification service and duplicate real receipts, physical keyboard Refresh/recovery, exact polite identity/owner and retained actual focused node/control/document, real control pixels and normal cleanup. Native speech/braille, other providers/spontaneous service loss and independent original acceptance remain open.",
+              "sourceBaseRevision": "e2473e398982f6157954e031b6b36613125d1634",
+              "sourceHashes": {
+                "implementation/warlock/src/AdapterNotice.elm": "32c4c13e599e843aa6da4a2302cb44da233226eb79d2561f551d0640fe9dd409",
+                "implementation/warlock/src/Desktop.elm": "9ba87a77712acd6139482d063876dc615e0c66f60db815b379b3119e94b235a4",
+                "implementation/warlock/src/OutcomeAnnouncements.elm": "cbb05400a4a23d2bf457a73a589be5120281e5ef428a1b31397efa276eb8e5b7",
+                "implementation/warlock/adapter/notification_service.py": "3db0b01ae01d17819829463c2886d2aa7721df44319812a97f134067f2b610e5",
+                "implementation/warlock/assets/elm.js": "71200827444219a13ce0432f1069a001568fdb48945b24f7f9173f1109086032",
+                "implementation/warlock/assets/bar.js": "e57fea4b65aa0b51446a4ff99da907f5f1dfa46a0cb1d4d1364c9a47ca68fc4b",
+                "implementation/warlock/assets/popup.js": "3b202a3fb95bd8ed3a190bc0bbc3d643f062525771b6269c35d1dc19454a98f5",
+                "implementation/warlock/qa/adapter-announcements.qnt": "de140d10af4ea7ac39d3dfe7a5ccfc431aa7e1a7aa1de954ef93499d752823e5",
+                "implementation/warlock/qa/adapter-announcements_test.qnt": "55d8c54d97c547c9f6463c59d3f0072379f9ff5343308b2d70540124d143e9a5",
+                "implementation/warlock/qa/check-adapter-announcements.py": "d2aafd025455711f40b3951c7867b2fb618c5e7c7cd23fd8cbf5a390a475f7f6",
+                "implementation/warlock/qa/AdapterAnnouncementReplay.elm": "d5f7180feab00ed7073b754eb2540019452f9e9da2e30b2846124b22d9efaa7e",
+                "implementation/warlock/qa/check-notifications.py": "a75e97e2b206a448f17915365de270fdffc496c305fdea68f66f6b131428a7b7",
+                "implementation/warlock/qa/announcement-browser.mjs": "31053c0cd2bffbf9206cec232e9c70aa982ee544375aa28c811ab20593b09912",
+                "implementation/warlock/qa/check-search.py": "28a90e00b495ac50a3106518ac6d42fbb7ee10175f5970814ee92cf852aec740",
+                "implementation/warlock/qa/current-search-build.json": "1fca1491c6621499c77d77344894e0034eeb4d837e2c392dba4ad19498e50087",
+                "implementation/warlock/qa/native-window-feedback.py": "508759fbcfabc349658741f905d3a90f8b636de288d0bc4f7cce21d5c7cf9b33",
+                "implementation/warlock/qa/notification-unavailable-owner.py": "b5097236211df0e92001cc1c4a935c0f00e2ebbeb0738b9f0464eaf1dc057369",
+                "implementation/warlock/README.md": "3cca824a0c78f859a8ad1beeca0a818bae04f486e4d115d0ad4fd22868f7cc73",
+                "implementation/warlock/src/Surface.elm": "2be3b4369a80974814e44a38571f3a4a736a14538a3b6310b68baa0392c12d7a"
+              },
+              "reviewerDisposition": "Root observed scoped implementation/component/native keyboard/focus/transport results; independent original acceptance remains open.",
+              "observedUTC": "2026-10-10T04:49:50.823065+00:00"
+            }
+          ],
+          "missingObservation": "Actual stable-focus speech and braille, repeated-receipt delivery and reachable recovery through native AT.; Independent original-scenario acceptance.; Other native provider journeys, spontaneous service loss and applicable transport faults."
         },
         {
           "name": "announce-notification arrival",
@@ -10770,5 +10800,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-10T04:29:13.182909+00:00"
+  "updatedUTC": "2026-10-10T04:49:50.823065+00:00"
 }

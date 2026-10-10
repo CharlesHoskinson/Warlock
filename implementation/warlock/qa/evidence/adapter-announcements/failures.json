@@ -1,0 +1,20 @@
+[
+  {
+    "report": "implementation/warlock/qa/runs/announcements-1791607465114947621/report.json",
+    "sha256": "269115a7b030e5f022a4d562a9472abd99cfa7f94a214bd177cf9069a834190e",
+    "error": "RuntimeError('-- SHADOWING ---------------------------------- qa/AdapterAnnouncementReplay.elm\\n\\nThe name `volume` is first defined here:\\n\\n57|         volume = E.object [(\"percent\",E.int 40),(\"muted\",E.bool False),(\"label\",E.string \"Native output\")]\\n            ^^^^^^\\nBut then it is defined AGAIN over here:\\n\\n56|         system volume = E.object [(\"service\",E.string \"9\"),(\"revision\",E.string \"1\"),(\"volume\",volume),(\"network\",E.null),(\"power\",E.null),(\"session\",E.null)]\\n                   ^^^^^^\\nThink of a more helpful name for one of them and you should be all set!\\n\\nNote: Linters advise against shadowing, so Elm makes \u201cbest practices\u201d the\\ndefault. Read <https://elm-lang.org/0.19.2/shadowing> for more details on this\\nchoice.\\n\\n-- SHADOWING ---------------------------------- qa/AdapterAnnouncementReplay.elm\\n\\nThe name `request` is first defined here:\\n\\n34| request root = (current root).notificationsExpected |> Maybe.withDefault UInt64.zero\\n    ^^^^^^^\\nBut then it is defined AGAIN over here:\\n\\n30| receipt kind owner request value = E.object [(\"protocolVersion\",E.int 3),(\"kind\",E.string kind),(\"binding\",owner),(\"requestId\",E.string (UInt64.string request)),(\"snapshot\",value)]\\n                       ^^^^^^^\\nThink of a more helpful name for one of them and you should be all set!\\n\\nNote: Linters advise against shadowing, so Elm makes \u201cbest practices\u201d the\\ndefault. Read <https://elm-lang.org/0.19.2/shadowing> for more details on this\\nchoice.\\n\\n')",
+    "preservedLocally": true
+  },
+  {
+    "report": "implementation/warlock/qa/runs/announcements-1791607478917931977/report.json",
+    "sha256": "42a54e1883f4764ef1fa10ac1006da00ce7058956b6e4806f401eb76a65f3dd8",
+    "error": "RuntimeError('{\"passed\":false,\"checks\":11,\"captures\":[],\"error\":\"Error: Keyboard refresh submits exactly one current read control undefined\\\\n    at check (file:///home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/announcements-1791607478917931977/inputs/qa/announcement-browser.mjs:10:59)\\\\n    at file:///home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/announcements-1791607478917931977/inputs/qa/announcement-browser.mjs:93:3\"}\\n')",
+    "preservedLocally": true
+  },
+  {
+    "report": "implementation/warlock/qa/runs/native-adapter-unavailable-1791607625190854314/report.json",
+    "sha256": "c8292a806fbf477a185e7f9c5ed4e19e221369eadda3a639e60adc43bdfca766",
+    "error": "RuntimeError('Original observation deadline <lambda>')",
+    "preservedLocally": true
+  }
+]

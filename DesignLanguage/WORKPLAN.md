@@ -65,3 +65,7 @@ The root workplan is the current coordination document. [Catalog closure](catalo
 - [ ] Finish original native, AT/IME, motion, resource and hardware observations on one coherent candidate tuple.
 
 These findings support existing W07/W11 and ELM-ADOPT-016/017/020/029/030 and original GUI work, not a separate policy authority. See the [feature-completion checklist](../docs/warlock-roadmap/FEATURE-COMPLETION.md), [current guidance](CURRENT.md), [design contribution workflow](CONTRIBUTING.md) and [audit disposition](../docs/warlock-documentation-review/20261008/DISPOSITION.md). No design/documentation checkbox closes a native release gate.
+
+### Adapter failure integration, 10 October 2026 UTC
+
+The current product now selects matched adapter-unavailable events through the single polite announcement owner. Failed opening reads no longer relocate focus; notification Refresh keeps its keyed node focusable during a pending read and displays progress. Native keyboard failure/recovery, exact duplicate-receipt suppression and control pixels are recorded in [the scoped evidence](../implementation/warlock/qa/evidence/adapter-announcements/README.md). This advances DL-005/008/011 without accepting those complete contracts. Native speech/braille, other provider journeys, spontaneous service loss and independent original dispositions remain required. Notification relevance and expired-action refusals are the next product sources.
