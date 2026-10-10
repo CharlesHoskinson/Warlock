@@ -1,13 +1,98 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T20:43:11.353982+00:00",
+  "updatedUTC": "2026-10-10T20:50:33.357777+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
+    "id": "shortcut-reload-dismissal",
+    "requirements": [
+      "ELM-UI-020",
+      "ELM-UX-023"
+    ],
+    "scenarios": [
+      "first-use",
+      "keyboard-settings",
+      "keyboard-launcher"
+    ],
+    "paths": [
+      "implementation/warlock/qa/native-shortcut-preferences.py",
+      "implementation/warlock/src/ShortcutPreferences.elm",
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/src/Surface.elm",
+      "implementation/warlock/src/OutputController.elm",
+      "implementation/warlock/src/SurfaceController.elm",
+      "implementation/warlock/assets/adapter.js",
+      "implementation/warlock/assets/popup-adapter.js",
+      "implementation/warlock/native/shared-host.c",
+      "implementation/warlock/native/shortcut-bindings.inc",
+      "implementation/warlock/native/shell-bindings.lua",
+      "implementation/warlock/adapter/shortcut_preferences.py",
+      "implementation/warlock/adapter/catalog_transport.py",
+      "implementation/warlock/qa/check-search.py",
+      "implementation/warlock/qa/ShortcutPreferencesReplay.elm",
+      "implementation/warlock/qa/current-search-build.json",
+      "implementation/warlock/assets/elm.js",
+      "implementation/warlock/assets/bar.js",
+      "implementation/warlock/assets/popup.js",
+      "implementation/warlock/README.md"
+    ],
+    "before": "Original native shortcut-choice journey failed repeated Apps dismissal after saving alternate/default/keep choices and invoking preserved F12 override. Later reload/refresh and stale/duplicate controls were not reached.",
+    "after": "Customized bindings and saved explicit shortcut choices remain usable across repeated Apps dismissal and native configuration reload; help and read-only refresh remain reachable without extra writes or window mutations.",
+    "verification": [
+      "Preserve original six-second waits and journey assertions. Run current native baseline with exact ABI/toolchain, then proportionate changed reducer/transport checks and quint-llm-kit models for any changed routing or lifecycle. Keep AT/whole-host restart/offline recovery/independent acceptance separate."
+    ],
+    "owner": "root-shortcut-reload",
+    "participantRecord": ".warlock-contributor/shortcut-reload.json",
+    "evidence": "implementation/warlock/qa/evidence/shortcut-reload-dismissal/manifest.json",
+    "sourceHashes": {
+      "implementation/warlock/qa/native-shortcut-preferences.py": "8ba22b198fd22d729fdd3cde471104eb1dc7c86e6fe3a6c52b996075f2835afa",
+      "implementation/warlock/src/ShortcutPreferences.elm": "d9196adaae768e57e2531b78ad2cd8fd22a2a81ad952d27c7c88d0fc72da8322",
+      "implementation/warlock/src/Desktop.elm": "9cb07b517ab03a68326446ddecb5091458c97e5602afe576fa6ba43788f3c5e5",
+      "implementation/warlock/src/Surface.elm": "787ee6ab965cb4efa05207b722dcb09602ffa72213aa6eb950e5b37afc74a710",
+      "implementation/warlock/src/OutputController.elm": "d77c9b0a02565677480b35abec7b9ef95c434fdb93afdc57ea0f78912acf8752",
+      "implementation/warlock/src/SurfaceController.elm": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
+      "implementation/warlock/assets/adapter.js": "9d99e140af65c67aa5395ce8dc3f3aee42b2b341e039e6514745e14ec9335f96",
+      "implementation/warlock/assets/popup-adapter.js": "5b732f9984715004f356b670250aca65b613ccdd410879fe075d83103ec119f1",
+      "implementation/warlock/native/shared-host.c": "b61f7e79da12693a4d30693309fe5dd2147f5760246052d230efed30fdd7d844",
+      "implementation/warlock/native/shortcut-bindings.inc": "1103085deb970c048b81f5afbf9848eae64388ad73c741f1bb7780cfbd8e3345",
+      "implementation/warlock/native/shell-bindings.lua": "dc439fb1cbaa02aa6140ed6dd9d39310286d50b6f5327c6e4e3f5eec03a49efd",
+      "implementation/warlock/adapter/shortcut_preferences.py": "2a8cc047ebfb5040c7dda4f9fd0f9e80a9b1207245458beda3ac26ff2251c185",
+      "implementation/warlock/adapter/catalog_transport.py": "43bd1cd1059b87ce4d349d72e4b2a917ac1bdc3dacda2f60563fa621e05a4b84",
+      "implementation/warlock/qa/check-search.py": "1f38480921e82d4141ec12027b821ec06f22e44a75285c6c8f0b6732086c7735",
+      "implementation/warlock/qa/ShortcutPreferencesReplay.elm": "8ada29c12d8a26b476d4767f06f9a1f94c0fe14710e632f1f6df5fd4f153b9a4",
+      "implementation/warlock/qa/current-search-build.json": "d200a11d2e8e3feb1ec3f29db433a6a05f2f5184a5557195c0fb8adcf13df09f",
+      "implementation/warlock/assets/elm.js": "5056dab9023368ce4e022dc4146eceeb7dd5217d57217242038413919e1485a6",
+      "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+      "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
+      "implementation/warlock/README.md": "90226fc4df61ac2900403711824cf6e6f8a18aba01c3891059f8cc81a002e803"
+    },
+    "missingObservations": [
+      "Whole-host/authority restart of saved choices.",
+      "Actual native AT, full effective Omarchy command inventory and independent original acceptance.",
+      "Offline recovery without failed host."
+    ],
+    "observedOutcome": "Existing shortcut GUI/input qualifies full reload/dismissal/refresh journey; no new production GUI feature in this packet.",
+    "nextAction": "Select ELM-UI-016 ordinary picker capacity as the next production slice: a retained raster/export pair consumes both native allocations, leaving the second live family unavailable. Implement storage/custody that supports two own-family previews while preserving the unchanged two-allocation/128MiB limit, exact original deadlines, job identity and terminal cleanup. Model with quint-llm-kit before code. Do not expand shortcut/AT qualification."
+  },
+  "nextSlices": [
+    "taskbar activation/minimize/restore and popup focus journeys",
+    "persistent catalog pins",
+    "launcher search and refusal recovery",
+    "switcher/Task View/workspaces and snap/output journeys",
+    "authorized visible previews and fallback",
+    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
+    "original native, AT/IME, hardware/resource/journey gates",
+    "reproducible package, reversible deployment/rollback"
+  ],
+  "releaseAccepted": false,
+  "oldTrackerIsCurrent": false,
+  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
+  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
+  "previousSlice": {
     "id": "preview-loading-paint",
     "requirements": [
       "ELM-UI-016"
@@ -71,90 +156,6 @@
       "Independent original-scenario acceptance."
     ],
     "nextAction": "Select the next bounded mandatory GUI defect; native AT investigation remains limited pending a concrete WebKit dependency fix. Keep original preview capacity and acceptance obligations open."
-  },
-  "nextSlices": [
-    "taskbar activation/minimize/restore and popup focus journeys",
-    "persistent catalog pins",
-    "launcher search and refusal recovery",
-    "switcher/Task View/workspaces and snap/output journeys",
-    "authorized visible previews and fallback",
-    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
-    "original native, AT/IME, hardware/resource/journey gates",
-    "reproducible package, reversible deployment/rollback"
-  ],
-  "releaseAccepted": false,
-  "oldTrackerIsCurrent": false,
-  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
-  "previousSlice": {
-    "id": "taskview-transfer-cancel",
-    "requirements": [
-      "ELM-UI-006"
-    ],
-    "scenarios": [
-      "overview-cancel"
-    ],
-    "paths": [
-      "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/qa/TaskViewReplay.elm",
-      "implementation/warlock/qa/overview-transfer-cancel.qnt",
-      "implementation/warlock/qa/overview-transfer-cancel_test.qnt",
-      "implementation/warlock/qa/check-overview-transfer-cancel.py",
-      "implementation/warlock/qa/native-taskview-transfer-cancel.py",
-      "implementation/warlock/qa/check-search.py",
-      "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/assets/elm.js",
-      "implementation/warlock/assets/bar.js",
-      "implementation/warlock/assets/popup.js",
-      "implementation/warlock/README.md",
-      "implementation/warlock/src/SurfaceController.elm",
-      "implementation/warlock/src/Main.elm",
-      "implementation/warlock/src/OutputController.elm",
-      "implementation/warlock/assets/adapter.js",
-      "implementation/warlock/native/shared-host.c",
-      "implementation/warlock/native/shared-context.h",
-      "implementation/warlock/native/shared-context-test.c",
-      "implementation/warlock/qa/TaskViewEscapeReplay.elm"
-    ],
-    "before": "Cancelling a transfer chooser clears its state without explicitly returning keyboard focus to the eligible current Move control. Native baseline will determine the actual focus failure.",
-    "after": "Escape or Cancel returns to the same exact eligible transfer opener, with a valid workspace/All fallback and no native mutation. Closing Task View returns actual physical keyboard input to its eligible original window.",
-    "verification": [
-      "quint-llm-kit initialization, named cancellation/lifecycle tests and sampled safety/positive witnesses before implementation; compiled current roots and exact source eligibility; real native Escape/cancel focus and painted control followed by original no-mutation dismissal and keyboard recipient. Applicable AT and independent acceptance remain separate."
-    ],
-    "owner": "root-taskview-transfer-cancel",
-    "participantRecord": ".warlock-contributor/taskview-transfer-cancel.json",
-    "disposition": "partial",
-    "evidence": {
-      "path": "implementation/warlock/qa/evidence/taskview-transfer-cancel/manifest.json",
-      "sha256": "b8cd90f1720c229e182e767fec502fa2b849b0ac01cf16858a5efccb8aa03f27",
-      "scope": "Real nested Escape and Cancel return to exact eligible Move control, keyboard Enter reopens it, controls paint, no native window/workspace mutation or replacement, full Escape dismissal restores actual physical keyboard recipient. Current compiled lifetime/freshness guards and model before code."
-    },
-    "sourceHashes": {
-      "implementation/warlock/src/Desktop.elm": "9cb07b517ab03a68326446ddecb5091458c97e5602afe576fa6ba43788f3c5e5",
-      "implementation/warlock/src/Surface.elm": "787ee6ab965cb4efa05207b722dcb09602ffa72213aa6eb950e5b37afc74a710",
-      "implementation/warlock/qa/TaskViewReplay.elm": "1181bc1c8872c1b6a6424f04b43d1df5d1f8f31a444ae92d80fb35fbbfd398e0",
-      "implementation/warlock/qa/overview-transfer-cancel.qnt": "61fe11eb3f695ed68226e9dab351146a15564848fbe82b32e8b689c60f2371ca",
-      "implementation/warlock/qa/overview-transfer-cancel_test.qnt": "3a004520e23130a3fa57175d740b8c7e96a6c82d00cf443fa0467651954fb75b",
-      "implementation/warlock/qa/check-overview-transfer-cancel.py": "360ad5ac344b5b64273d1e0f94af85e8801fec567ab215850e4213cd1c046bf1",
-      "implementation/warlock/qa/native-taskview-transfer-cancel.py": "52323c4938a7d63a7db816dd8879381a05bc5ecb1bb58c7f8e8e70cdf409099a",
-      "implementation/warlock/qa/check-search.py": "94bcfd38acce0d5c14392dc66709a2ca0b7045e84e2393f028eb534f9885edbd",
-      "implementation/warlock/qa/current-search-build.json": "b24506c5764d1d982341fdcc494dab44c1b5fef5dcb08d78a23bded3c4ebbf52",
-      "implementation/warlock/assets/elm.js": "5056dab9023368ce4e022dc4146eceeb7dd5217d57217242038413919e1485a6",
-      "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
-      "implementation/warlock/assets/popup.js": "a20165e1d339c0d518286cac3e973cdd30f1fe20401295434d8c5361e1aa4b22",
-      "implementation/warlock/README.md": "3937fbe780af97585326da96246f8743b6c3b8cd2605e354f1c3e886f51066f9",
-      "implementation/warlock/src/SurfaceController.elm": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
-      "implementation/warlock/src/Main.elm": "6d797e72117cb0e057638eca1c29bcec8c1fa536221bccd605de48978458cf19",
-      "implementation/warlock/src/OutputController.elm": "d77c9b0a02565677480b35abec7b9ef95c434fdb93afdc57ea0f78912acf8752",
-      "implementation/warlock/assets/adapter.js": "9d99e140af65c67aa5395ce8dc3f3aee42b2b341e039e6514745e14ec9335f96",
-      "implementation/warlock/native/shared-host.c": "b61f7e79da12693a4d30693309fe5dd2147f5760246052d230efed30fdd7d844",
-      "implementation/warlock/native/shared-context.h": "39e735b686769ab2e0600530bb1442b33fdcd68bbbe625131c77bf724b43b229",
-      "implementation/warlock/native/shared-context-test.c": "ee7fa27797a17945cac8419e78f459962609a56b5f2090687c4dfff4f6192883",
-      "implementation/warlock/qa/TaskViewEscapeReplay.elm": "9f95642d106544223fcae61f3b81a684853276ed8b7de461437267d9dba33ac8"
-    },
-    "missingObservation": "Applicable original native AT/Orca and independent original acceptance remain open; separately retained WebKit AT traversal failure is unresolved.",
-    "nextSourceWork": "Publish the actual nested/full Task View cancellation fix, then address original ELM-UI-016 preview-states: inspect the remaining real native Loading/current-live painted-pixel journey and current ownership/custody route. Preserve opacity-0 and ineligible actor restrictions until actual presentation authorization is satisfied. Do not restart the exhausted AT investigation without a concrete dependency fix. Original native/AT/IME/hardware/resource/independent/package/rollback obligations remain open."
   },
   "recentSlices": [
     {

@@ -79,13 +79,15 @@ branch=r'''     wait(lambda:closed() and bool(frames('shell-shortcuts')))
 adapted=original[:start]+branch+original[end:]
 needle="      chord([125,56],57)\n      return wait(lambda:(body:=body_for('applications'))";assert adapted.count(needle)==1
 adapted=adapted.replace(needle,"      key(88)\n      return wait(lambda:(body:=body_for('applications'))")
-needle="if KEYBOARD or DRAG:LUA+=(ROOT/'native/shell-bindings.lua').read_bytes()";assert adapted.count(needle)==1
+needle="if KEYBOARD or PRIMARYKEY or DRAG:LUA+=(ROOT/'native/shell-bindings.lua').read_bytes()";assert adapted.count(needle)==1
+# The owning Lua API constructs dispatcher objects; a callback that only
+# constructs one never dispatches. Bind the exact native focus dispatcher.
 fixture=r'''if KEYBOARD:
- LUA+=b'\nhl.bind("SUPER + ALT + SPACE", function() hl.dsp.window.focus({window="title:ELM-ACTIVATION-PEER"}) end, {description="Existing Apps shortcut"})\nhl.bind("F12", function() hl.plugin.warlock.apps_menu() end, {description="User Apps shortcut"})\n'
+ LUA+=b'\nhl.bind("SUPER + ALT + SPACE", hl.dsp.focus({window="title:ELM-ACTIVATION-PEER"}), {description="Existing Apps shortcut"})\nhl.bind("F12", function() hl.plugin.warlock.apps_menu() end, {description="User Apps shortcut"})\n'
 '''
 adapted=adapted.replace(needle,needle+'\n'+fixture)
 adapted=adapted.replace("'native-keyboard-shell-' if KEYBOARD","'native-shortcut-choices-' if KEYBOARD")
-needle='try:\n with host.PrivateHyprSession';assert adapted.count(needle)==1
+needle='try:\n # Each nested Wayland output';assert adapted.count(needle)==1
 packet={'originalPath':str(path),'originalSHA256':hashlib.sha256(original.encode()).hexdigest(),'change':'Explicit user F12 override and conflicting default Apps focus route, then only bounded original KEYBOARD journey replaced. Native ABI/authority, six-second waits, private sessions and cleanup unchanged.'}
 adapted=adapted.replace(needle,"report.update(requirements=['ELM-UI-020','ELM-UX-023'],scenarios=['first-use','keyboard-settings','keyboard-launcher'],scope='Actual live conflict, explicit keyboard preference choices, exact private save and native default/alternate/user-override recipients, repeated Apps traversal/dismissal/focus, no refresh/repeated-stale mutation. Whole host restart, offline recovery, complete Omarchy inventory, full launcher operation, AT and independent acceptance separate.',nativeShortcutChoicesRunner="+repr(packet)+")\n"+needle)
 sys.argv=[str(path),'--keyboard-shell'];exec(compile(adapted,str(path),'exec'),globals())
