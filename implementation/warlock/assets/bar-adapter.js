@@ -29,12 +29,15 @@ document.addEventListener('focusin',event=>{
 window.addEventListener('focus',()=>revealSelection(true));
 window.addEventListener('resize',()=>requestAnimationFrame(()=>revealSelection()));
 document.addEventListener('keydown',event=>{
+  const trace=phase=>{if(window.elmHostQA && event.key==='Home')post({kind:'context-input-report',phase,key:event.key,repeat:event.repeat,composing:event.isComposing,prevented:event.defaultPrevented,trusted:event.isTrusted,id:document.activeElement?.dataset?.surfaceControl||null,targetId:event.target?.dataset?.surfaceControl||null,anchor:selectedIdentity,documentFocused:document.hasFocus()});};
+  trace('bar-navigation');
   if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key)||event.defaultPrevented||event.isComposing||event.ctrlKey||event.altKey||event.metaKey||event.shiftKey)return;
   const actions=event.target.closest?.('.surface-actions');if(!actions)return;
   const items=[...actions.querySelectorAll('[data-surface-control]:not(:disabled)')],current=items.indexOf(document.activeElement);if(current<0)return;
   const index=event.key==='Home'?0:event.key==='End'?items.length-1:Math.max(0,Math.min(items.length-1,current+(event.key==='ArrowRight'?1:-1)));
   event.preventDefault();event.stopImmediatePropagation();items[index].focus({preventScroll:true});
   selectedIdentity=items[index].dataset.surfaceControl;revealSelection();
+  trace('bar-navigated');
 },true);
 document.addEventListener('wheel',event=>{
   const actions=event.target.closest?.('.surface-actions');if(!actions||actions.scrollWidth<=actions.clientWidth||!event.deltaY||event.deltaX)return;

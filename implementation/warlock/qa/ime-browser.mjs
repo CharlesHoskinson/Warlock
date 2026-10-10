@@ -40,6 +40,9 @@ try{
  async function input(value,isComposing){await evaluate(`(()=>{imeField.value=${JSON.stringify(value)};imeField.dispatchEvent(new InputEvent('input',{bubbles:true,data:${JSON.stringify(value)},isComposing:${isComposing},inputType:'insertCompositionText'}));})()`);await sleep(40);}
  const count=()=>evaluate(`nativePackets.filter(p=>p.kind==='surface-query').length`);
  await composing('compositionstart','');await input('é',true);
+ await call('Input.dispatchKeyEvent',{type:'keyDown',key:'Enter',code:'Enter',windowsVirtualKeyCode:13});
+ await call('Input.dispatchKeyEvent',{type:'keyUp',key:'Enter',code:'Enter',windowsVirtualKeyCode:13});await sleep(40);
+ check('Compiled preedit prevents Enter launch and keeps search focus',await evaluate(`!nativePackets.some(p=>p.kind==='surface-action')&&document.activeElement===imeField&&document.querySelector('[data-input-composing]').dataset.inputComposing==='true'`));
  await escape('keyDown');await escape('keyUp');await sleep(40);
  check('Actual compiled preedit prevents Escape dismissal',await evaluate(`!nativePackets.some(p=>p.kind==='surface-action')&&document.querySelector('[data-input-composing]').dataset.inputComposing==='true'`));
  // Escape may edit/cancel the browser's input value. Start the original IME

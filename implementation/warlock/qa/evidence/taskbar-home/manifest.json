@@ -1,0 +1,226 @@
+{
+  "schema": 1,
+  "requirements": [
+    "ELM-UX-023"
+  ],
+  "scenarios": [
+    "keyboard-taskbar-groups"
+  ],
+  "disposition": "partial",
+  "scope": "Repeated native Home selects the enabled current taskbar group after real Enter activation and Apps transitions; original group member receives input, repeated group/menu targets remain current, and snap chooser is reached. Enter activates once on matched release; stale/composing/blurred controls cannot activate. The unchanged combined native journey fails later on snap-protocol refusal.",
+  "sourceBaseRevision": "945dcb8e0218dcb040449caf111157b0f2d194fc",
+  "sourceHashes": {
+    "implementation/warlock/assets/bar-adapter.js": "9624b022e871cae05bd42257bfc9318d691c57be216502e7f22ff42db9796507",
+    "implementation/warlock/src/Bar.elm": "a10abbe7d0542c642552d90cfa459b353a3843391ce47e06ba94b91afb0b6113",
+    "implementation/warlock/src/SurfaceController.elm": "399283022f7dd4dc345f313c32655d74cca7dd70cd3e4b0811310cb09711fcd1",
+    "implementation/warlock/src/Surface.elm": "c1956597c3565b396ee0e620902039661dac9ae9bdc70bd8afd0b74ee6a07fe0",
+    "implementation/warlock/src/SurfaceRenderer.elm": "7acd0083ccf4209ea6bde220ad82e9189417f55d3e1d4929ba13ab9fd9bb0025",
+    "implementation/warlock/native/host.c": "e5dca3201f7d7b506476829ddf1c4bf1c92c048445bcea3f4bc1821e4f489e7d",
+    "implementation/warlock/native/shared-host.c": "e8e907a2b850142facbf8af1d2abfc519b94e3d06d5889889b15e199a50e5eeb",
+    "implementation/warlock/native/shared-context.h": "19e1415305fd87a0a74287f5a541b38c80a56df9ab8179a08d357d8cf8f061d1",
+    "implementation/warlock/qa/check-search.py": "7bf61d30140741f3d8b5b3d6b37b14137715969621403446d98f4342182c9b36",
+    "implementation/warlock/qa/dense-taskbar-browser.mjs": "aa0ec17559253de21333ab60a6e1561c44d1b8296298286b61621f9463bb20da",
+    "implementation/warlock/qa/native-window-feedback.py": "d0c45c673ac47751cef680175a79c251674dc19d444eb7eeb3f35dd23ecbd353",
+    "implementation/warlock/qa/current-search-build.json": "5b2c81e9c6855d93a99690b5a422637fdc565b9b63b27059c644b0c1bc1f1de7",
+    "implementation/warlock/README.md": "882dabeff811c5e3192a99c60440d512070a5b6ffa04cff5ef3b7e736a2599cf",
+    "implementation/warlock/assets/activation.js": "c6571168d163b422461f55f14ed0a332c1effbd0130316b9f6009f0e686d1090",
+    "implementation/warlock/qa/activation-release.js": "b0113c0d6f1a59c19e402ac09a29a4edf1a7e8eabfc53d6abd901a6cd869093d",
+    "implementation/warlock/qa/ime-browser.mjs": "15559c377caa19d613eeea17caa05267ead782e9927f1ff4a8c2c7e5287f77d2"
+  },
+  "reports": {
+    "compiled-home-report.json": {
+      "path": "implementation/warlock/qa/evidence/taskbar-home/compiled-home-report.json",
+      "sha256": "d705f6a94a82ecb0e5111a40e6c5392c5ea9fd9409c226543b4ab2afabf37500",
+      "originalPath": "implementation/warlock/qa/runs/taskbar-primary-1791595969889889635/report.json"
+    },
+    "compiled-ime-report.json": {
+      "path": "implementation/warlock/qa/evidence/taskbar-home/compiled-ime-report.json",
+      "sha256": "3f119d9d3fb72461ab14986b6c0fc4b12438400f5ec10f1c383347545353e0f1",
+      "originalPath": "implementation/warlock/qa/runs/ime-1791596068553838329/report.json"
+    },
+    "native-before-report.json": {
+      "path": "implementation/warlock/qa/evidence/taskbar-home/native-before-report.json",
+      "sha256": "43b62b65d109688552bbe7498c7d267bcde39fe49bb43ad8f1b710825aa3e213",
+      "originalPath": "implementation/warlock/qa/runs/native-keyboard-shell-1791595736636441369/report.json"
+    },
+    "native-after-report.json": {
+      "path": "implementation/warlock/qa/evidence/taskbar-home/native-after-report.json",
+      "sha256": "92f20738979ebe8e2c43fa59799715b24ad16b1f64a4bda115cb55a0674b10d6",
+      "originalPath": "implementation/warlock/qa/runs/native-keyboard-shell-1791596031052477015/report.json"
+    }
+  },
+  "nativeObservations": {
+    "successfulChecks": [
+      "OwningPluginLoads",
+      "FixtureFloats",
+      "FixtureSize",
+      "FixturePosition",
+      "FixtureFocus",
+      "KeyboardLauncherDispatchesOneNativeCatalogEntry",
+      "KeyboardReachesActions for A Warlock Editor",
+      "KeyboardReachesNew document",
+      "KeyboardJumpListDispatchesExactlyOnce",
+      "KeyboardReachesActions for A Warlock Editor",
+      "KeyboardReachesRefresh notifications",
+      "KeyboardReachesRefresh system state",
+      "KeyboardBarRouteOpen settings",
+      "KeyboardReachesDawn theme",
+      "KeyboardReachesSave settings",
+      "KeyboardSettingsNativeSaved",
+      "KeyboardGroupOpensWithoutDuplicateLaunch",
+      "KeyboardReachesActivate ELM-ACTIVATION-PEER",
+      "KeyboardChosenGroupMemberReceivesInput",
+      "KeyboardMenuTargetIsCurrentFamily",
+      "KeyboardReachesOpen snapping",
+      "KeyboardReachesRight half",
+      "KeyboardReachesSnap to right half",
+      "PersistentKeyboardNormalExit",
+      "OwnedClientNormalExit",
+      "OwnedClientNormalExit",
+      "OwningPluginUnloads"
+    ],
+    "observedSurfaces": [
+      "launcher",
+      "jump-lists",
+      "notifications",
+      "menus",
+      "settings",
+      "taskbar-groups"
+    ],
+    "controlEventStreams": [
+      {
+        "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791596031052563517/fixture-control.events.jsonl",
+        "sha256": "57522041e6e1522a60207d7e0ca702ea92fc4f7d50f4c19839c4c29b67ffe704",
+        "events": 14,
+        "pointerEvents": 0
+      }
+    ],
+    "pointerEventsObserved": 0,
+    "persistentInput": {
+      "wrapper": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791596031052563517/keyboard-shell-input.py",
+      "sha256": "149bd1c812435c3f12274d8aec6bbf1eaeec3ec48a2665ea0a5ddcf91093b09c",
+      "commands": [
+        "key 125 1\nkey 56 1\nkey 57 1\nsleep 50\nkey 57 0\nkey 56 0\nkey 125 0\nsleep 100",
+        "key 30 1\nsleep 50\nkey 30 0\nsleep 100",
+        "key 28 1\nsleep 50\nkey 28 0\nsleep 100",
+        "key 125 1\nkey 56 1\nkey 57 1\nsleep 50\nkey 57 0\nkey 56 0\nkey 125 0\nsleep 100",
+        "key 15 1\nsleep 50\nkey 15 0\nsleep 100",
+        "key 15 1\nsleep 50\nkey 15 0\nsleep 100",
+        "key 15 1\nsleep 50\nkey 15 0\nsleep 100",
+        "key 28 1\nsleep 50\nkey 28 0\nsleep 100",
+        "key 15 1\nsleep 50\nkey 15 0\nsleep 100",
+        "key 15 1\nsleep 50\nkey 15 0\nsleep 100",
+        "key 28 1\nsleep 50\nkey 28 0\nsleep 100",
+        "key 125 1\nkey 56 1\nkey 57 1\nsleep 50\nkey 57 0\nkey 56 0\nkey 125 0\nsleep 100",
+        "key 15 1\nsleep 50\nkey 15 0\nsleep 100",
+        "key 15 1\nsleep 50\nkey 15 0\nsleep 100",
+        "key 15 1\nsleep 50\nkey 15 0\nsleep 100",
+        "key 28 1\nsleep 50\nkey 28 0\nsleep 100",
+        "key 1 1\nsleep 50\nkey 1 0\nsleep 100",
+        "key 1 1\nsleep 50\nkey 1 0\nsleep 100",
+        "key 125 1\nkey 42 1\nkey 56 1\nkey 51 1\nsleep 50\nkey 51 0\nkey 56 0\nkey 42 0\nkey 125 0\nsleep 100",
+        "key 15 1\nsleep 50\nkey 15 0\nsleep 100",
+        "key 28 1\nsleep 50\nkey 28 0\nsleep 100",
+        "key 1 1\nsleep 50\nkey 1 0\nsleep 100",
+        "key 125 1\nkey 1 1\nsleep 50\nkey 1 0\nkey 125 0\nsleep 100",
+        "key 15 1\nsleep 50\nkey 15 0\nsleep 100",
+        "key 28 1\nsleep 50\nkey 28 0\nsleep 100",
+        "key 1 1\nsleep 50\nkey 1 0\nsleep 100",
+        "key 125 1\nkey 56 1\nkey 57 1\nsleep 50\nkey 57 0\nkey 56 0\nkey 125 0\nsleep 100",
+        "key 1 1\nsleep 50\nkey 1 0\nsleep 100",
+        "key 102 1\nsleep 50\nkey 102 0\nsleep 100",
+        "key 106 1\nsleep 50\nkey 106 0\nsleep 100",
+        "key 106 1\nsleep 50\nkey 106 0\nsleep 100",
+        "key 106 1\nsleep 50\nkey 106 0\nsleep 100",
+        "key 106 1\nsleep 50\nkey 106 0\nsleep 100",
+        "key 106 1\nsleep 50\nkey 106 0\nsleep 100",
+        "key 106 1\nsleep 50\nkey 106 0\nsleep 100",
+        "key 28 1\nsleep 50\nkey 28 0\nsleep 100",
+        "key 15 1\nsleep 50\nkey 15 0\nsleep 100",
+        "key 15 1\nsleep 50\nkey 15 0\nsleep 100",
+        "key 15 1\nsleep 50\nkey 15 0\nsleep 100",
+        "key 15 1\nsleep 50\nkey 15 0\nsleep 100",
+        "key 15 1\nsleep 50\nkey 15 0\nsleep 100",
+        "key 15 1\nsleep 50\nkey 15 0\nsleep 100",
+        "key 15 1\nsleep 50\nkey 15 0\nsleep 100",
+        "key 15 1\nsleep 50\nkey 15 0\nsleep 100",
+        "key 28 1\nsleep 50\nkey 28 0\nsleep 100",
+        "key 15 1\nsleep 50\nkey 15 0\nsleep 100",
+        "key 15 1\nsleep 50\nkey 15 0\nsleep 100",
+        "key 15 1\nsleep 50\nkey 15 0\nsleep 100",
+        "key 15 1\nsleep 50\nkey 15 0\nsleep 100",
+        "key 15 1\nsleep 50\nkey 15 0\nsleep 100",
+        "key 15 1\nsleep 50\nkey 15 0\nsleep 100",
+        "key 28 1\nsleep 50\nkey 28 0\nsleep 100",
+        "key 1 1\nsleep 50\nkey 1 0\nsleep 100",
+        "key 125 1\nkey 56 1\nkey 57 1\nsleep 50\nkey 57 0\nkey 56 0\nkey 125 0\nsleep 100",
+        "key 1 1\nsleep 50\nkey 1 0\nsleep 100",
+        "key 102 1\nsleep 50\nkey 102 0\nsleep 100",
+        "key 28 1\nsleep 50\nkey 28 0\nsleep 100",
+        "key 28 1\nsleep 50\nkey 28 0\nsleep 100",
+        "key 30 1\nsleep 50\nkey 30 0\nsleep 100",
+        "key 125 1\nkey 56 1\nkey 57 1\nsleep 50\nkey 57 0\nkey 56 0\nkey 125 0\nsleep 100",
+        "key 1 1\nsleep 50\nkey 1 0\nsleep 100",
+        "key 102 1\nsleep 50\nkey 102 0\nsleep 100",
+        "key 28 1\nsleep 50\nkey 28 0\nsleep 100",
+        "key 1 1\nsleep 50\nkey 1 0\nsleep 100",
+        "key 125 1\nkey 56 1\nkey 57 1\nsleep 50\nkey 57 0\nkey 56 0\nkey 125 0\nsleep 100",
+        "key 1 1\nsleep 50\nkey 1 0\nsleep 100",
+        "key 102 1\nsleep 50\nkey 102 0\nsleep 100",
+        "key 28 1\nsleep 50\nkey 28 0\nsleep 100",
+        "key 15 1\nsleep 50\nkey 15 0\nsleep 100",
+        "key 42 1\nkey 68 1\nsleep 50\nkey 68 0\nkey 42 0\nsleep 100",
+        "key 15 1\nsleep 50\nkey 15 0\nsleep 100",
+        "key 28 1\nsleep 50\nkey 28 0\nsleep 100",
+        "key 15 1\nsleep 50\nkey 15 0\nsleep 100",
+        "key 15 1\nsleep 50\nkey 15 0\nsleep 100",
+        "key 15 1\nsleep 50\nkey 15 0\nsleep 100",
+        "key 28 1\nsleep 50\nkey 28 0\nsleep 100",
+        "key 15 1\nsleep 50\nkey 15 0\nsleep 100",
+        "key 15 1\nsleep 50\nkey 15 0\nsleep 100",
+        "key 15 1\nsleep 50\nkey 15 0\nsleep 100",
+        "key 15 1\nsleep 50\nkey 15 0\nsleep 100",
+        "key 15 1\nsleep 50\nkey 15 0\nsleep 100",
+        "key 28 1\nsleep 50\nkey 28 0\nsleep 100"
+      ]
+    },
+    "cleanupPassed": true,
+    "mainDesktopActions": false,
+    "sourceTuple": {
+      "core": {
+        "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-core-1791495415110842751/Hyprland",
+        "sha256": "81c9ac609c2900f99c1efbe613b83e949aeae3059a5e4403601581fa96191acf"
+      },
+      "plugin": {
+        "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791595150048076927/elm-window-geometry-authority.so",
+        "sha256": "19e4eb54ff55d5a15c80d5448dbc95ed042a38d088d44765da3160a3802cb3e8"
+      },
+      "aquamarine": {
+        "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+        "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+      }
+    },
+    "nativeHost": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791595969889889635/elm-host",
+      "sha256": "477b0490a62afbf46cf63b1d83606f95422732dad1356c6e86fe3eb4dc790fb0",
+      "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791595969889889635/report.json",
+      "heldBuildSHA256": "d705f6a94a82ecb0e5111a40e6c5392c5ea9fd9409c226543b4ab2afabf37500"
+    },
+    "runtimeLog": {
+      "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791596031052563517/warlock.log",
+      "sha256": "9f516b4b0675c73173566141222745c0b51e74c4d587b26cfe10159267deb6a8"
+    },
+    "failedOriginalTraceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/native-window-feedback.py\", line 788, in <module>\n    receipt=wait(lambda:next((f for f in frames('effect-outcome') if f.get('status')=='Committed' and f.get('intent',{}).get('operation')=='snap'),None))\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/native-window-feedback.py\", line 180, in wait\n    raise RuntimeError('Original observation deadline '+getattr(fn,'__name__',''))\nRuntimeError: Original observation deadline <lambda>\n"
+  },
+  "modelScope": "Existing focus-publication model typecheck, explicitly selected named tests and sampled safety pass unchanged in compiled-home report. Its abstraction does not establish native input delivery. Shipped adapter release and actual compiled preedit checks cover the view timing change.",
+  "missingObservations": [
+    "Snap remains Refused (snap-protocol) at the original six-second deadline. Remaining switcher/Task View intervals, native AT/IME consumers, independent scenario review and full release hardware/resource/package/deployment remain open. Browser preedit verification does not establish native IME acceptance."
+  ],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "reviewerDisposition": {
+    "name": "root-taskbar-home",
+    "independent": false,
+    "disposition": "Owner-observed partial native interval; independent acceptance remains open."
+  }
+}

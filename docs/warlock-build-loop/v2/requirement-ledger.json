@@ -8407,9 +8407,38 @@
                 "independent": false,
                 "disposition": "Owner partial observations and failed combined original journey; independent acceptance remains open."
               }
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/taskbar-home/manifest.json",
+              "sha256": "26bbed3490b69266951116c4c8c2df6ed233d5fb2176bae070701311cfa1eb94",
+              "scope": "Repeated native Home selects the enabled current taskbar group after real Enter activation and Apps transitions; original group member receives input, repeated group/menu targets remain current, and snap chooser is reached. Enter activates once on matched release; stale/composing/blurred controls cannot activate. The unchanged combined native journey fails later on snap-protocol refusal.",
+              "sourceBaseRevision": "945dcb8e0218dcb040449caf111157b0f2d194fc",
+              "sourceHashes": {
+                "implementation/warlock/assets/bar-adapter.js": "9624b022e871cae05bd42257bfc9318d691c57be216502e7f22ff42db9796507",
+                "implementation/warlock/src/Bar.elm": "a10abbe7d0542c642552d90cfa459b353a3843391ce47e06ba94b91afb0b6113",
+                "implementation/warlock/src/SurfaceController.elm": "399283022f7dd4dc345f313c32655d74cca7dd70cd3e4b0811310cb09711fcd1",
+                "implementation/warlock/src/Surface.elm": "c1956597c3565b396ee0e620902039661dac9ae9bdc70bd8afd0b74ee6a07fe0",
+                "implementation/warlock/src/SurfaceRenderer.elm": "7acd0083ccf4209ea6bde220ad82e9189417f55d3e1d4929ba13ab9fd9bb0025",
+                "implementation/warlock/native/host.c": "e5dca3201f7d7b506476829ddf1c4bf1c92c048445bcea3f4bc1821e4f489e7d",
+                "implementation/warlock/native/shared-host.c": "e8e907a2b850142facbf8af1d2abfc519b94e3d06d5889889b15e199a50e5eeb",
+                "implementation/warlock/native/shared-context.h": "19e1415305fd87a0a74287f5a541b38c80a56df9ab8179a08d357d8cf8f061d1",
+                "implementation/warlock/qa/check-search.py": "7bf61d30140741f3d8b5b3d6b37b14137715969621403446d98f4342182c9b36",
+                "implementation/warlock/qa/dense-taskbar-browser.mjs": "aa0ec17559253de21333ab60a6e1561c44d1b8296298286b61621f9463bb20da",
+                "implementation/warlock/qa/native-window-feedback.py": "d0c45c673ac47751cef680175a79c251674dc19d444eb7eeb3f35dd23ecbd353",
+                "implementation/warlock/qa/current-search-build.json": "5b2c81e9c6855d93a99690b5a422637fdc565b9b63b27059c644b0c1bc1f1de7",
+                "implementation/warlock/README.md": "882dabeff811c5e3192a99c60440d512070a5b6ffa04cff5ef3b7e736a2599cf",
+                "implementation/warlock/assets/activation.js": "c6571168d163b422461f55f14ed0a332c1effbd0130316b9f6009f0e686d1090",
+                "implementation/warlock/qa/activation-release.js": "b0113c0d6f1a59c19e402ac09a29a4edf1a7e8eabfc53d6abd901a6cd869093d",
+                "implementation/warlock/qa/ime-browser.mjs": "15559c377caa19d613eeea17caa05267ead782e9927f1ff4a8c2c7e5287f77d2"
+              },
+              "reviewerDisposition": {
+                "name": "root-taskbar-home",
+                "independent": false,
+                "disposition": "Owner-observed partial native interval; independent acceptance remains open."
+              }
             }
           ],
-          "missingObservation": "Combined original ux-023 remains failed: after completed group activation/dismissal, a repeated Home press does not select the current taskbar group within the original six-second deadline. No forced focus, reordered journey or deadline extension qualifies it. Remaining keyboard-switcher, keyboard-task-view and keyboard-snap-chooser intervals were not reached in this combined native campaign. Menus has observed global System entry/refresh/dismissal; keyboard window-context and snap entry remain unreached in this campaign. Native AT/IME consumers and independent original-scenario acceptance remain open; this private campaign disables accessibility bridging. Full Omarchy vocabulary/keybindings, multi-output/device/resource and release gates remain separate mandatory work."
+          "missingObservation": "Snap remains Refused (snap-protocol) at the original six-second deadline. Remaining switcher/Task View intervals, native AT/IME consumers, independent scenario review and full release hardware/resource/package/deployment remain open. Browser preedit verification does not establish native IME acceptance."
         },
         {
           "name": "keyboard-switcher",
@@ -9396,5 +9425,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-10T01:23:02.975185+00:00"
+  "updatedUTC": "2026-10-10T01:38:36.447271+00:00"
 }

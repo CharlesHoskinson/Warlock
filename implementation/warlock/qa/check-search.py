@@ -76,6 +76,7 @@ try:
   run('focus-model-named',['quint','test','qa/focus-publication.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79113'])
   run('focus-model-invariants',['quint','run','qa/focus-publication.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79114'])
  if PINMENUS:
+  run('activation-release-routing',['node','qa/activation-release.js'])
   report.update(requirements=['ELM-UI-008','ELM-UX-023'],scope='Compiled running-pin context guards and changed native keyboard-parent host; unchanged C++ objects reused by exact hashes; native menu/AT acceptance separate')
   run('compile-pinned-menu',[str(HELD/pinned['compiler']),'make','qa/PinnedMenuReplay.elm','--optimize','--output=assets/pinned-menu.js'])
   (INPUT/'qa/pinned-menu-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.PinnedMenuReplay'));run('typed-pinned-menu',['node','qa/pinned-menu-replay.js','assets/pinned-menu.js',str(OUT/'pinned-menu.json')]);report['typedPinnedMenus']=json.loads((OUT/'pinned-menu.json').read_text());assert all(report['typedPinnedMenus']['checks'].values())

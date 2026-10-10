@@ -93,15 +93,16 @@
     pending=Object.freeze({...held,phase:'released'});generated=pending;
     try{held.stamp.item.click();}finally{generated=null;}
   };
-  const qualified=event=>!event.repeat&&!event.isComposing&&!event.defaultPrevented&&
+  const composing=root=>root?.closest?.('[data-input-composing]')?.dataset.inputComposing==='true';
+  const qualified=event=>!event.repeat&&!event.isComposing&&!composing(owner(event.target))&&!event.defaultPrevented&&
     !event.ctrlKey&&!event.altKey&&!event.metaKey&&!event.shiftKey;
   const activationKey=event=>event.key==='Enter'||event.key===' ';
   document.addEventListener('keydown',event=>{
     if(event.key==='Enter'&&event.target?.dataset?.surfaceField==='control:search'){
       if(!qualified(event))return;
-      const root=owner(event.target);
+      const root=owner(event.target),route=keyboard(event);if(!route)return;
       const first=[...root.querySelectorAll('[data-surface-control]')].find(item=>item.dataset.surfaceControl.startsWith('entry:')&&!item.disabled);
-      block(event);if(first){first.focus();begin(first,Object.freeze({kind:'keyboard',key:'Enter',code:'Enter'}));if(pending&&current(pending.stamp))invoke(pending);}
+      block(event);if(first){first.focus();begin(first,route);}
       return;
     }
     if(event.key==='Tab'){
@@ -138,7 +139,10 @@
     if(!wasQualified||document.activeElement!==item||item.disabled){
       if(matches(held,item,route))cancel();quarantineTurn();return;
     }
-    begin(item,route);if(event.key==='Enter'&&matches(pending,item,route))invoke(pending);
+    // Keep the current surface alive until the physical release reaches this
+    // document. Enter can open another popup or withdraw this one; activation
+    // on keydown loses its keyup and poisons later WebKit/GTK key delivery.
+    begin(item,route);
   },true);
   document.addEventListener('keyup',event=>{
     if(!activationKey(event)){pairing=null;return;}
@@ -147,7 +151,7 @@
        (item.dataset.surfaceControl.startsWith('menu:')||item.dataset.surfaceControl==='control:menu-close')))return;
     const route=keyboard(event),wasQualified=qualified(event);event.preventDefault();
     const held=pending;
-    if(!route||!matches(held,item,route)||event.key!==' ')return;
+    if(!route||!matches(held,item,route))return;
     if(!wasQualified||document.activeElement!==item||held.canceled||!current(held.stamp)){
       pending=null;quarantineTurn();return;
     }

@@ -1,39 +1,48 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T01:23:02.978127+00:00",
+  "updatedUTC": "2026-10-10T01:38:36.447271+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "default-shortcut-lifecycle",
+    "id": "repeated-taskbar-home",
     "requirements": [
       "ELM-UX-023"
     ],
     "scenarios": [
-      "keyboard-launcher"
+      "keyboard-taskbar-groups"
     ],
     "paths": [
-      "implementation/warlock/native/authority.cpp",
-      "implementation/warlock/native/shortcut-bindings.inc",
-      "implementation/warlock/qa/shortcut-registration.qnt",
+      "implementation/warlock/assets/bar-adapter.js",
+      "implementation/warlock/src/Bar.elm",
+      "implementation/warlock/src/SurfaceController.elm",
+      "implementation/warlock/src/Surface.elm",
+      "implementation/warlock/src/SurfaceRenderer.elm",
+      "implementation/warlock/native/host.c",
+      "implementation/warlock/native/shared-host.c",
+      "implementation/warlock/native/shared-context.h",
       "implementation/warlock/qa/check-search.py",
-      "implementation/warlock/qa/check-native-authority.py",
-      "implementation/warlock/qa/native-shortcut-preferences.py",
-      "implementation/warlock/qa/current-native-pair.json",
+      "implementation/warlock/qa/dense-taskbar-browser.mjs",
+      "implementation/warlock/qa/native-window-feedback.py",
       "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/README.md"
+      "implementation/warlock/README.md",
+      "implementation/warlock/assets/activation.js",
+      "implementation/warlock/qa/activation-release.js",
+      "implementation/warlock/qa/ime-browser.mjs"
     ],
-    "before": "Free default Apps shortcut disappears during native session configuration; inventory reports available but active keep and original keyboard launcher never opens.",
-    "after": "Register approved free defaults after configuration and preserve explicit Keep/selected chords across reload without changing foreign bindings or replaying effects.",
+    "before": "After group activation and repeated Apps dismissal, native Home reaches the bar but the enabled first group does not receive keyboard focus within the original six seconds.",
+    "after": "Current keyboard navigation reaches the first group after repeated surface transitions, preserves current identity/focus and allows the original next group/menu operations without pointer or native focus workarounds.",
     "verification": [
-      "Quint LLM Kit shared-state lifecycle model with reachability and stale/no-replay/foreign-preservation checks; exact owning native ABI build and original keyboard launcher plus conflict/Keep/reload recipient observations, original six-second waits and normal protected cleanup."
+      "Current compiled bar navigation and changed focus/input lifecycle checks; relevant existing Quint focus invariant and exact native keyboard campaign with original six-second waits, actual recipient, zero pointer input and normal owned cleanup. Native AT and independent acceptance remain separate."
     ],
     "status": "implemented-partial",
-    "evidence": "implementation/warlock/qa/evidence/shortcut-registration/manifest.json",
-    "missingObservation": "Combined original keyboard campaign still fails at repeated Home taskbar-group entry after launcher/jump-list/notification/system/settings/group subintervals pass. Customized-binding campaign passes repeated Apps release/focus and native configuration reload, then fails the foreign original-shortcut focus recipient. Whole-host restart/offline rollback, native IME/AT, full combined keyboard journey and independent acceptance remain open."
+    "evidence": "implementation/warlock/qa/evidence/taskbar-home/manifest.json",
+    "observed": "Repeated native Home selects the enabled current taskbar group after real Enter activation and Apps transitions; original group member receives input, repeated group/menu targets remain current, and snap chooser is reached. Enter activates once on matched release; stale/composing/blurred controls cannot activate. The unchanged combined native journey fails later on snap-protocol refusal.",
+    "missingObservation": "Snap remains Refused (snap-protocol) at the original six-second deadline. Remaining switcher/Task View intervals, native AT/IME consumers, independent scenario review and full release hardware/resource/package/deployment remain open. Browser preedit verification does not establish native IME acceptance.",
+    "nextSourceWork": "Repair current snap placement protocol admission while preserving grants, output/work-area revisions, no replay and the original six-second keyboard journey."
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -709,16 +718,34 @@
       "verification": [
         "Actual repeated Apps/context current-lease keydown/keyup and composing/stale negative in the compiled roots/browser. Protected original keyboard-launcher repeated open/dismiss with preserved user override, no pointer/focus workaround or deadline change; AT and independent acceptance separate."
       ]
+    },
+    {
+      "id": "default-shortcut-lifecycle",
+      "requirements": [
+        "ELM-UX-023"
+      ],
+      "scenarios": [
+        "keyboard-launcher"
+      ],
+      "paths": [
+        "implementation/warlock/native/authority.cpp",
+        "implementation/warlock/native/shortcut-bindings.inc",
+        "implementation/warlock/qa/shortcut-registration.qnt",
+        "implementation/warlock/qa/check-search.py",
+        "implementation/warlock/qa/check-native-authority.py",
+        "implementation/warlock/qa/native-shortcut-preferences.py",
+        "implementation/warlock/qa/current-native-pair.json",
+        "implementation/warlock/qa/current-search-build.json",
+        "implementation/warlock/README.md"
+      ],
+      "before": "Free default Apps shortcut disappears during native session configuration; inventory reports available but active keep and original keyboard launcher never opens.",
+      "after": "Register approved free defaults after configuration and preserve explicit Keep/selected chords across reload without changing foreign bindings or replaying effects.",
+      "verification": [
+        "Quint LLM Kit shared-state lifecycle model with reachability and stale/no-replay/foreign-preservation checks; exact owning native ABI build and original keyboard launcher plus conflict/Keep/reload recipient observations, original six-second waits and normal protected cleanup."
+      ],
+      "status": "implemented-partial",
+      "evidence": "implementation/warlock/qa/evidence/shortcut-registration/manifest.json",
+      "missingObservation": "Combined original keyboard campaign still fails at repeated Home taskbar-group entry after launcher/jump-list/notification/system/settings/group subintervals pass. Customized-binding campaign passes repeated Apps release/focus and native configuration reload, then fails the foreign original-shortcut focus recipient. Whole-host restart/offline rollback, native IME/AT, full combined keyboard journey and independent acceptance remain open."
     }
-  ],
-  "nextOriginalSlice": {
-    "id": "repeated-taskbar-home",
-    "requirements": [
-      "ELM-UX-023"
-    ],
-    "scenarios": [
-      "keyboard-taskbar-groups"
-    ],
-    "reason": "Original native keyboard campaign reaches and activates a taskbar group, but repeated Home entry fails its original six-second deadline."
-  }
+  ]
 }
