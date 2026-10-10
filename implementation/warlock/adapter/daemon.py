@@ -15,6 +15,7 @@ from system_menu import Menu as SystemMenu
 from recovery_journal import RecoveryFailure,guarded
 from recovery_store import RecoveryStore as Journal
 from recovery_fault import after_submit
+from workspace_navigation import Navigation
 
 MAX_INPUT=4096
 MAX_EVENT=65536
@@ -81,9 +82,12 @@ def event_socket(client):
  except BaseException:connection.close();raise
 
 
-def handle_request(client,catalog,request,recovery,reconciliation,notifications=None,system_menu=None,explorer=None,jump_lists=None):
+def handle_request(client,catalog,request,recovery,reconciliation,notifications=None,system_menu=None,explorer=None,jump_lists=None,workspace_navigation=None):
  if not isinstance(request,dict):raise Refused('Frontend request object')
  kind=request.get('kind')
+ if kind in {'workspace-navigation','workspace-navigation-recover'}:
+  if workspace_navigation is None:raise Refused('Workspace navigation unavailable')
+  send(guarded(lambda:workspace_navigation.handle(client,request)));return
  if kind=='reconciliation-ready':
   reconciliation.proof_ready(request);return
  if kind in {'catalog-request','application-launch','taskbar-pins-write','shell-settings-request','shell-settings-write','motion-preferences-request','motion-preferences-write','shortcut-preferences-request','shortcut-preferences-write'}:
@@ -121,6 +125,7 @@ def handle_request(client,catalog,request,recovery,reconciliation,notifications=
  if kind=='motion-profile-set':
   canonical(request['requestId']);send(client.motion_profile(request['requestId'],request['profile']));return
  if kind=='window-effect':
+  if workspace_navigation is not None and guarded(workspace_navigation.blocked):raise Refused('Workspace navigation unresolved; window intent not submitted')
   admitted=guarded(lambda:recovery.begin(client.bound,request['intent'],request['effectProtocol']))
   if not admitted:raise Refused('Duplicate durable intent; not resubmitted')
   outcome=client.geometry_effect(request['intent']) if request['effectProtocol']==2 else client.effect(request['intent'])
@@ -197,7 +202,10 @@ def main():
   jump_lists=lifetime.enter_context(JumpLists(catalog.authority))
   hello=client.hello()
   recovery=lifetime.enter_context(guarded(lambda:Journal(config['runtime'],config['instance'],client.bound['lifetime'])))
+  workspace_navigation=guarded(lambda:Navigation(recovery))
+  guarded(lambda:workspace_navigation.attach(client))
   reconciliation=publish_startup(client,hello,recovery)
+  send(guarded(lambda:workspace_navigation.recover(client)))
   chord_request=1;send(client.switcher_journal(str(chord_request)))
   pointer_request=1;send(client.pointer_ownership(str(pointer_request)))
   shortcuts_request=1;send(client.shell_shortcuts(str(shortcuts_request)))
@@ -214,7 +222,7 @@ def main():
      if not data:incoming.finish();return 0
      for line in incoming.feed(data):
       request=json.loads(line,object_pairs_hook=unique)
-      handle_request(client,catalog,request,recovery,reconciliation,notification_service,system_menu,explorer,jump_lists)
+      handle_request(client,catalog,request,recovery,reconciliation,notification_service,system_menu,explorer,jump_lists,workspace_navigation)
       if request.get('kind')=='projection-request':have_snapshot=True;dirty=False
     elif key.data=='notifications':
      notification_service.drain();send(notification_service.observation(client))

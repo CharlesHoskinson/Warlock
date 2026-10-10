@@ -227,9 +227,88 @@ static gboolean admission_mutation_lock(void) {
     struct stat held,current;
     return admission.directory>=0 && admission.entries>=0 && admission_private(admission.lock,FALSE) && fstat(admission.lock,&held)==0 && fstatat(admission.directory,"host-writer.lock",&current,AT_SYMLINK_NOFOLLOW)==0 && held.st_dev==current.st_dev && held.st_ino==current.st_ino && flock(admission.lock,LOCK_EX|LOCK_NB)==0;
 }
+/* A workspace has its own typed durable record in the same writer namespace. */
+static gboolean workspace_admission_row(JsonObject *row) {
+    const char *const fields[]={"identity","generation","monitor","outputOwnershipGeneration"};guint64 id,monitor;
+    return row && surface_fields(row,fields,4) && admission_positive(row,"identity") && surface_uint(json_object_get_member(row,"identity"),&id) && id<=G_MAXINT64 && admission_positive(row,"generation") && surface_uint(json_object_get_member(row,"monitor"),&monitor) && admission_positive(row,"outputOwnershipGeneration");
+}
+static gboolean workspace_admission_record_valid(JsonNode *node) {
+    if(!node || !JSON_NODE_HOLDS_OBJECT(node))return FALSE;
+    JsonObject *record=json_node_get_object(node);const char *const fields[]={"schema","binding","intent","status","reason"};
+    if(!surface_fields(record,fields,5))return FALSE;
+    JsonNode *schema=json_object_get_member(record,"schema"),*bn=json_object_get_member(record,"binding"),*in=json_object_get_member(record,"intent"),*status=json_object_get_member(record,"status"),*reason=json_object_get_member(record,"reason");
+    if(json_node_get_value_type(schema)!=G_TYPE_INT64 || json_node_get_int(schema)!=1 || !JSON_NODE_HOLDS_OBJECT(bn) || !JSON_NODE_HOLDS_OBJECT(in) || !surface_text(status,16,FALSE) || !surface_text(reason,64,FALSE))return FALSE;
+    const char *state=json_node_get_string(status),*text=json_node_get_string(reason);
+    if(!g_str_equal(state,"Pending") && !g_str_equal(state,"Unknown") && !g_str_equal(state,"Committed") && !g_str_equal(state,"Refused"))return FALSE;
+    if(!*text || *text<'a' || *text>'z')return FALSE;
+    for(const char *p=text;*p;p++)if(!(*p>='a'&&*p<='z') && !(*p>='0'&&*p<='9') && *p!='-')return FALSE;
+    JsonObject *bound=json_node_get_object(bn),*intent=json_node_get_object(in);const char *const bindings[]={"lifetime","session","frontend"},*const intents[]={"request","generation","source","destination","context"},*const contexts[]={"lifetime","epoch","output","revision"};
+    if(!surface_fields(bound,bindings,3) || !surface_fields(intent,intents,5))return FALSE;
+    for(guint i=0;i<3;i++)if(!admission_positive(bound,bindings[i]))return FALSE;
+    if(!admission_positive(intent,"request") || !admission_positive(intent,"generation"))return FALSE;
+    JsonNode *source=json_object_get_member(intent,"source"),*destination=json_object_get_member(intent,"destination"),*cn=json_object_get_member(intent,"context");
+    if(!JSON_NODE_HOLDS_OBJECT(source) || !JSON_NODE_HOLDS_OBJECT(destination) || !JSON_NODE_HOLDS_OBJECT(cn) || !workspace_admission_row(json_node_get_object(source)) || !workspace_admission_row(json_node_get_object(destination)))return FALSE;
+    JsonObject *context=json_node_get_object(cn);if(!surface_fields(context,contexts,4))return FALSE;
+    for(guint i=0;i<4;i++)if(!admission_positive(context,contexts[i]))return FALSE;
+    return g_str_equal(json_object_get_string_member(bound,"lifetime"),json_object_get_string_member(context,"lifetime")) && g_str_equal(json_object_get_string_member(bound,"frontend"),json_object_get_string_member(context,"epoch"));
+}
+static JsonNode *workspace_admission_record(JsonNode *request) {
+    if(!request || !JSON_NODE_HOLDS_OBJECT(request))return NULL;
+    JsonObject *object=json_node_get_object(request);const char *const fields[]={"protocolVersion","kind","workspaceProtocol","binding","intent"};
+    if(!surface_fields(object,fields,5))return NULL;
+    JsonNode *pv=json_object_get_member(object,"protocolVersion"),*wp=json_object_get_member(object,"workspaceProtocol"),*kind=json_object_get_member(object,"kind");
+    if(json_node_get_value_type(pv)!=G_TYPE_INT64 || json_node_get_int(pv)!=3 || json_node_get_value_type(wp)!=G_TYPE_INT64 || json_node_get_int(wp)!=1 || !surface_text(kind,32,FALSE) || !g_str_equal(json_node_get_string(kind),"workspace-navigation"))return NULL;
+    JsonObject *record=json_object_new();json_object_set_int_member(record,"schema",1);json_object_set_member(record,"binding",json_node_copy(json_object_get_member(object,"binding")));json_object_set_member(record,"intent",json_node_copy(json_object_get_member(object,"intent")));json_object_set_string_member(record,"status","Pending");json_object_set_string_member(record,"reason","admitted");
+    JsonNode *result=json_node_new(JSON_NODE_OBJECT);json_node_take_object(result,record);
+    if(!workspace_admission_record_valid(result)){json_node_unref(result);return NULL;}return result;
+}
+static JsonNode *workspace_admission_read_file(const char *name,gboolean *missing) {
+    *missing=FALSE;int fd=openat(admission.directory,name,O_RDONLY|O_NONBLOCK|O_NOFOLLOW|O_CLOEXEC);
+    if(fd<0){*missing=errno==ENOENT;return NULL;}
+    if(!admission_private(fd,FALSE)){close(fd);return NULL;}
+    char raw[4097];ssize_t size=read(fd,raw,sizeof(raw));int closed=close(fd);
+    if(size<=0 || size>4096 || closed<0)return NULL;
+    g_autoptr(JsonParser) parser=json_parser_new();AdmissionJson seen={g_hash_table_new_full(g_str_hash,g_str_equal,g_free,NULL),FALSE};
+    gulong handler=g_signal_connect(parser,"object-member",G_CALLBACK(admission_json_member),&seen);
+    gboolean ok=json_parser_load_from_data(parser,raw,size,NULL);g_signal_handler_disconnect(parser,handler);g_hash_table_unref(seen.keys);
+    return ok && !seen.duplicate?json_node_copy(json_parser_get_root(parser)):NULL;
+}
+static gboolean workspace_admission_load(JsonNode **value) {
+    gboolean missing=FALSE,marker_missing=FALSE;
+    *value=workspace_admission_read_file("workspace-navigation-v1.json",&missing);
+    g_autoptr(JsonNode) marker=workspace_admission_read_file("workspace-navigation-v1.initialized",&marker_missing);
+    if(missing && marker_missing)return TRUE; /* No navigation has existed. */
+    if(!*value || !marker || !JSON_NODE_HOLDS_OBJECT(marker))return FALSE;
+    JsonObject *m=json_node_get_object(marker);const char *const mf[]={"schema","lifetime","kind"};
+    if(!surface_fields(m,mf,3) || json_node_get_value_type(json_object_get_member(m,"schema"))!=G_TYPE_INT64 || json_object_get_int_member(m,"schema")!=1 || !admission_positive(m,"lifetime") || !surface_text(json_object_get_member(m,"kind"),64,FALSE) || !g_str_equal(json_object_get_string_member(m,"kind"),"workspace-navigation-initialized") || !g_str_equal(json_object_get_string_member(m,"lifetime"),admission.lifetime))return FALSE;
+    return JSON_NODE_HOLDS_NULL(*value) || (workspace_admission_record_valid(*value) && g_str_equal(json_object_get_string_member(json_object_get_object_member(json_node_get_object(*value),"binding"),"lifetime"),admission.lifetime));
+}
+static gboolean workspace_admission_available(void) {
+    g_autoptr(JsonNode) value=NULL;if(!workspace_admission_load(&value))return FALSE;
+    if(!value || JSON_NODE_HOLDS_NULL(value))return TRUE;
+    const char *status=json_object_get_string_member(json_node_get_object(value),"status");return g_str_equal(status,"Committed") || g_str_equal(status,"Refused");
+}
+static gboolean workspace_admission_write(JsonNode *record) {
+    if(!admission_mutation_lock())return FALSE;
+    guint count=0;g_autoptr(JsonNode) previous=NULL;gboolean ok=workspace_admission_load(&previous) && workspace_admission_available() && admission_scan(NULL,&count) && count==0;
+    if(ok && previous && !JSON_NODE_HOLDS_NULL(previous)){
+        JsonObject *old=json_object_get_object_member(json_node_get_object(previous),"intent"),*next=json_object_get_object_member(json_node_get_object(record),"intent");guint64 a,b,c,d;
+        ok=surface_uint(json_object_get_member(old,"request"),&a) && surface_uint(json_object_get_member(next,"request"),&b) && surface_uint(json_object_get_member(old,"generation"),&c) && surface_uint(json_object_get_member(next,"generation"),&d) && b>a && d>c;
+    }
+    g_autofree char *raw=json_to_string(record,FALSE),*uuid=g_uuid_string_random(),*name=g_strconcat("workspace-host-pending-",uuid,NULL);gsize size=strlen(raw),offset=0;int fd=-1;
+    if(size>4096)ok=FALSE;
+    if(ok){fd=openat(admission.directory,name,O_WRONLY|O_CREAT|O_EXCL|O_NOFOLLOW|O_CLOEXEC,0600);ok=fd>=0;}
+    while(ok && offset<size){ssize_t written=write(fd,raw+offset,size-offset);if(written<0 && errno==EINTR)continue;if(written<=0){ok=FALSE;break;}offset+=(gsize)written;}
+    if(ok)ok=fsync(fd)==0;
+    if(fd>=0 && close(fd)<0)ok=FALSE;
+    if(ok)ok=renameat(admission.directory,name,admission.directory,"workspace-navigation-v1.json")==0;
+    if(ok)ok=fsync(admission.directory)==0;
+    unlinkat(admission.directory,name,0);flock(admission.lock,LOCK_UN);
+    if(ok){g_print("host-workspace-intent-durable: %s\n",raw);fflush(stdout);}return ok;
+}
 static gboolean admission_write(JsonNode *record) {
     if(!admission_mutation_lock())return FALSE;
-    guint count=0;gboolean ok=admission_scan(record,&count) && count<64;
+    guint count=0;gboolean ok=workspace_admission_available() && admission_scan(record,&count) && count<64;
     g_autofree char *key=admission_key(record),*target=g_strconcat(key,".json",NULL),*raw=json_to_string(record,FALSE),*uuid=g_uuid_string_random(),*name=g_strconcat("host-pending-",uuid,NULL);
     gsize size=strlen(raw),offset=0;int fd=-1;if(size>4096)ok=FALSE;
     if(ok){fd=openat(admission.entries,name,O_WRONLY|O_CREAT|O_EXCL|O_NOFOLLOW|O_CLOEXEC,0600);ok=fd>=0;}
@@ -254,17 +333,20 @@ static gboolean admission_retire(JsonNode *terminal) {
     flock(admission.lock,LOCK_UN);return ok;
 }
 static gboolean admission_batch(JsonArray *requests,JsonNode *bound) {
-    admission_storage_failed=FALSE;JsonNode *selected=NULL;
+    admission_storage_failed=FALSE;JsonNode *selected=NULL;gboolean workspace=FALSE;
     for(guint i=0;i<json_array_get_length(requests);i++) {
         JsonNode *request=json_array_get_element(requests,i);
         if (!JSON_NODE_HOLDS_OBJECT(request)) continue;
         JsonNode *kind=json_object_get_member(json_node_get_object(request),"kind");
-        if(!surface_text(kind,32,FALSE) || !g_str_equal(json_node_get_string(kind),"window-effect"))continue;
+        if(!surface_text(kind,32,FALSE))continue;
+        const char *name=json_node_get_string(kind);
+        if(!g_str_equal(name,"window-effect") && !g_str_equal(name,"workspace-navigation"))continue;
         if(selected){json_node_unref(selected);return FALSE;}
-        selected=admission_record(request);if(!selected)return FALSE;
+        workspace=g_str_equal(name,"workspace-navigation");
+        selected=workspace?workspace_admission_record(request):admission_record(request);if(!selected)return FALSE;
         JsonNode *record_binding=json_object_get_member(json_node_get_object(selected),"binding");
         if(!bound || !json_node_equal(record_binding,bound)){json_node_unref(selected);return FALSE;}
     }
     if(!selected)return TRUE;
-    gboolean ok=admission_write(selected);admission_storage_failed=!ok;json_node_unref(selected);return ok;
+    gboolean ok=workspace?workspace_admission_write(selected):admission_write(selected);admission_storage_failed=!ok;json_node_unref(selected);return ok;
 }

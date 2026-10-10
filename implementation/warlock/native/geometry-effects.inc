@@ -95,6 +95,7 @@ std::string performGeometryEffect(Session& session,JsonObject* object) {
     session.lastReply=reply("Unknown","effect-unproven");
     const auto reject=[&](const char* reason){session.lastReply=reply("Refused",reason);return session.lastReply;};
     if(operation!="maximize" && operation!="restore-geometry" && operation!="exit-fullscreen" && operation!="snap" && operation!="transfer-workspace" && operation!="pin" && operation!="unpin") return reject("unsupported-operation");
+    if(workspaceNavigationBlocked())return reject("workspace-navigation-unresolved");
     refreshGeometryFacts();
     if(*output!=outputGeneration || *expected!=geometryRevision) return reject("dependency-mismatch");
     const auto member=std::ranges::find_if(members,[&](const Member& entry){return entry.id==*targetId;});

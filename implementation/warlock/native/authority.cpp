@@ -583,6 +583,7 @@ std::optional<std::vector<PHLWINDOW>> nativeFamily(PHLWINDOW window) {
 }
 bool geometryTargetEligible(const PHLWINDOW& window,int protocol=1);
 #include "geometry.inc"
+#include "workspace-navigation.inc"
 
 PHLWINDOW successor(const std::vector<PHLWINDOW>& family) {
     for (const auto& reference : recentFocus | std::views::reverse) {
@@ -626,6 +627,7 @@ std::string performEffect(Session& session, JsonObject* object, const std::strin
     // identities refuse; exact retry returns its original terminal outcome.
     session.effectRequest=*requestId;session.generation=*generation;session.lastPayload=fingerprint;
     session.lastReply=effectOutcome(session,encoded,"Unknown","effect-unproven");
+    if(workspaceNavigationBlocked()) return reject("workspace-navigation-unresolved");
     if(selection!=switcherSelections.end() && *requestId<selection->second.request)return reject("superseded-switcher-selection");
     if(fenced) {
         const auto& chosen=selection->second;
@@ -920,6 +922,18 @@ std::string observe(eHyprCtlOutputFormat, std::string request) {
                 const auto queriedBinding="{\"lifetime\":"+quote(std::to_string(*queriedNative))+",\"session\":"+quote(std::to_string(*queriedSession))+",\"frontend\":"+quote(std::to_string(*queriedFrontend))+"}";
                 reply="{\"protocolVersion\":3,\"kind\":\"binding-registration\",\"registrationProtocol\":1,\"binding\":"+binding(found->second)+",\"requestId\":"+quote(std::to_string(*requestId))+",\"queriedBinding\":"+queriedBinding+",\"registered\":"+(registered?"true":"false")+"}";
             }
+        } else if(operation=="workspace-navigation-attach" && fields(object,{"protocolVersion","kind","workspaceProtocol","binding"})) {
+            const auto bound=objectMember(object,"binding");const auto protocol=json_object_get_member(object,"workspaceProtocol");const auto found=sessions.find(peer);
+            if(!bound || !fields(bound,{"lifetime","session","frontend"}) || !counter(bound,"lifetime") || !counter(bound,"session") || !counter(bound,"frontend") || !protocol || json_node_get_value_type(protocol)!=G_TYPE_INT64 || json_node_get_int(protocol)!=1)throw std::runtime_error("workspace-navigation-attach-schema");
+            if(found==sessions.end() || found->second.start!=start || *counter(bound,"lifetime")!=lifetime || *counter(bound,"session")!=found->second.id || *counter(bound,"frontend")!=found->second.frontend || !grantRegistry->callerMatches(verifiedPeer(peer,start),{lifetime,found->second.id,found->second.frontend}))reply=error("binding-mismatch");
+            else reply="{\"protocolVersion\":3,\"kind\":\"workspace-navigation-attached\",\"workspaceProtocol\":1,\"binding\":"+binding(found->second)+",\"existingEmptyOnly\":true,\"historyCapacity\":64}";
+        } else if(operation=="workspace-navigation" || operation=="workspace-navigation-state-request") {
+            const bool read=operation=="workspace-navigation-state-request";
+            if(!(read?fields(object,{"protocolVersion","kind","workspaceProtocol","binding","requestId","record"}):fields(object,{"protocolVersion","kind","workspaceProtocol","binding","intent"})))throw std::runtime_error("workspace-navigation-schema");
+            const auto bound=objectMember(object,"binding");const auto protocol=json_object_get_member(object,"workspaceProtocol");const auto found=sessions.find(peer);
+            if(!bound || !fields(bound,{"lifetime","session","frontend"}) || !counter(bound,"lifetime") || !counter(bound,"session") || !counter(bound,"frontend") || !protocol || json_node_get_value_type(protocol)!=G_TYPE_INT64 || json_node_get_int(protocol)!=1 || (read && !counter(object,"requestId")))throw std::runtime_error("workspace-navigation-schema");
+            if(found==sessions.end() || found->second.start!=start || *counter(bound,"lifetime")!=lifetime || *counter(bound,"session")!=found->second.id || *counter(bound,"frontend")!=found->second.frontend || !grantRegistry->callerMatches(verifiedPeer(peer,start),{lifetime,found->second.id,found->second.frontend}))reply=error("binding-mismatch");
+            else reply=read?readWorkspaceNavigation(found->second,object):applyWorkspaceNavigation(found->second,object);
         } else if ((operation=="geometry-attach" || operation=="geometry-facts-request") &&
             (operation=="geometry-attach" ? fields(object,{"protocolVersion","kind","geometryProtocol","binding","requestId"}) : fields(object,{"protocolVersion","kind","geometryProtocol","binding","requestId","minimumWatermark"}))) {
             const auto bound=objectMember(object,"binding");
@@ -1092,7 +1106,7 @@ APICALL EXPORT PLUGIN_DESCRIPTION_INFO PLUGIN_INIT(HANDLE handle) {
     previewSources.clear();clientTrees.clear();popupTrees.clear();familySources.clear();familyStyles.clear();incarnation = sequence = revision = outputGeneration = 0; previousOutputs.clear(); recentFocus.clear(); activationHistory.clear(); previousProjection.clear(); members.clear(); sessions.clear();
     switcherChord={};switcherSerial=0;switcherAlts.clear();switcherTab=switcherStepAvailable=false;switcherSelections.clear();switcherOwnerSession=switcherOwnerFrontend=0;
     factsSequence = factsRevision = 0; previousFacts.clear();
-    geometryPlacements={};effectBarriers={};geometryWorkspaces={};geometryOutputs={};geometryAreas.clear();geometryAreaRevision=geometrySequence=geometryRevision=0;previousGeometry.clear();
+    workspaceNavigationRecords.clear();geometryPlacements={};effectBarriers={};geometryWorkspaces={};geometryOutputs={};geometryAreas.clear();geometryAreaRevision=geometrySequence=geometryRevision=0;previousGeometry.clear();
     for (const auto& window : Desktop::windowState()->windows()) if (window->m_isMapped) birth(window);
     opened = Event::bus()->m_events.window.open.listen([](PHLWINDOW window) { try { birth(window); } catch (...) { members.clear(); Render::SceneTrace::clearBindings(); } });
     closed = Event::bus()->m_events.window.close.listen([](PHLWINDOW window) { forget(window); });
@@ -1128,5 +1142,5 @@ APICALL EXPORT void PLUGIN_EXIT() {
     opened.reset(); closed.reset(); activated.reset(); recentFocus.clear();activationHistory.clear();
     if (command) HyprlandAPI::unregisterHyprCtlCommand(pluginHandle,command);
     command.reset();previewSources.clear();clientTrees.clear();popupTrees.clear();familySources.clear();familyStyles.clear();captureProbes.clear();captureBudget.reset(); members.clear(); sessions.clear();grantRegistry.reset(); Render::SceneTrace::clearBindings();
-    geometryPlacements={};effectBarriers={};geometryWorkspaces={};geometryOutputs={};geometryAreas.clear();geometryAreaRevision=geometrySequence=geometryRevision=0;previousGeometry.clear();
+    workspaceNavigationRecords.clear();geometryPlacements={};effectBarriers={};geometryWorkspaces={};geometryOutputs={};geometryAreas.clear();geometryAreaRevision=geometrySequence=geometryRevision=0;previousGeometry.clear();
 }

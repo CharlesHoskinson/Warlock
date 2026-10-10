@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-f0539f17c1a043c49fa3a68ee0c04c4f.scope",
+    "coreLimit": 1
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/workspace-navigation.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "tests-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/workspace-navigation_test.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/workspace-navigation_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=79571"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "witness-safety",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/workspace-navigation.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--witnesses",
+        "commitWitness",
+        "refusalWitness",
+        "recoveredWitness",
+        "unknownWitness",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79572"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/workspace-navigation.qnt": "be74dcd524b2191c557d9bc51cea559fd3aa674566b3881bc84a59a74e916163",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/workspace-navigation_test.qnt": "03b27d26196b1fcc980c359ea46a20271da62ddd31711e1fff263dbfea99e657"
+  },
+  "scope": "Host/broker durable admission before native dispatch, owner/context refusal, lost ACK, restart exact read without replay, Unknown dismissal. Abstract one navigation and window exclusion; disk atomicity, wire validation, native API/pixels/AT/deadlines require separate evidence.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "witnesses": {
+    "commitWitness": 7,
+    "refusalWitness": 22,
+    "recoveredWitness": 4,
+    "unknownWitness": 5
+  }
+}

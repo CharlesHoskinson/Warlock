@@ -1,0 +1,102 @@
+{
+  "passed": false,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-fcb3d94f851d4d38b1436e17059fb4f8.scope",
+    "coreLimit": 1
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/empty-workspace-navigation.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "tests-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/empty-workspace-navigation_test.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/empty-workspace-navigation_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=79571"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "witness-safety",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/empty-workspace-navigation.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--witnesses",
+        "commitWitness",
+        "refusalWitness",
+        "recoveredWitness",
+        "unknownWitness",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79572"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "real-host-journal-compile",
+      "command": [
+        "gcc",
+        "-std=gnu11",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-function",
+        "-Wno-unused-variable",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock/native",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-navigation-1791658045263724218/host-workspace-fixture.c",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-navigation-1791658045263724218/host-workspace-fixture",
+        "-I/usr/include/json-glib-1.0",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/libmount",
+        "-I/usr/include/blkid",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-ljson-glib-1.0",
+        "-lgio-2.0",
+        "-lgobject-2.0",
+        "-lglib-2.0",
+        "-lm"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/empty-workspace-navigation.qnt": "29d63bb5334f2e23d77c89091d7fc7d74763654880db23c978403c2732bcdb7c",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/empty-workspace-navigation_test.qnt": "3e73053e8e50d5f5e738f18a5bf18caaca07eeb21328edb8b8db0e9a2e1edbfd"
+  },
+  "scope": "Host/broker durable admission before native dispatch, owner/context refusal, lost ACK, restart exact read without replay, Unknown dismissal. Abstract one navigation and window exclusion; disk atomicity, wire validation, native API/pixels/AT/deadlines require separate evidence.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "witnesses": {
+    "commitWitness": 7,
+    "refusalWitness": 22,
+    "recoveredWitness": 4,
+    "unknownWitness": 5
+  },
+  "error": "AssertionError('In file included from /home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-navigation-1791658045263724218/host-workspace-fixture.c:8:\\n/home/hoskinson/omarchy-windows-parity/implementation/warlock/native/host-journal.h: In function \u2018workspace_admission_write\u2019:\\n/home/hoskinson/omarchy-windows-parity/implementation/warlock/native/host-journal.h:302:5: error: this \u2018if\u2019 clause does not guard... [-Werror=misleading-indentation]\\n  302 |     if(ok)ok=fsync(fd)==0;if(fd>=0 && close(fd)<0)ok=FALSE;\\n      |     ^~\\n/home/hoskinson/omarchy-windows-parity/implementation/warlock/native/host-journal.h:302:27: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the \u2018if\u2019\\n  302 |     if(ok)ok=fsync(fd)==0;if(fd>=0 && close(fd)<0)ok=FALSE;\\n      |                           ^~\\ncc1: all warnings being treated as errors\\n')"
+}

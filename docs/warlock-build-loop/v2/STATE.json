@@ -1,14 +1,14 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T18:24:31.934146+00:00",
+  "updatedUTC": "2026-10-10T19:00:38.185775+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "taskview-empty-inventory",
+    "id": "taskview-workspace-navigation",
     "requirements": [
       "ELM-UI-006"
     ],
@@ -16,73 +16,50 @@
       "overview-empty"
     ],
     "paths": [
-      "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/src/TaskView.elm",
+      "implementation/warlock/src/WorkspaceNavigation.elm",
       "implementation/warlock/src/WorkspaceInventory.elm",
-      "implementation/warlock/src/GeometryProjection.elm",
+      "implementation/warlock/src/Desktop.elm",
       "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/native/geometry.inc",
-      "implementation/warlock/adapter/geometry_endpoint.py",
+      "implementation/warlock/native/authority.cpp",
+      "implementation/warlock/native/workspace-navigation.inc",
+      "implementation/warlock/native/host-journal.h",
+      "implementation/warlock/native/host.c",
+      "implementation/warlock/native/shared-host.c",
+      "implementation/warlock/adapter/workspace_navigation.py",
+      "implementation/warlock/adapter/daemon.py",
+      "implementation/warlock/qa/workspace-navigation.qnt",
+      "implementation/warlock/qa/workspace-navigation_test.qnt",
+      "implementation/warlock/qa/check-workspace-navigation.py",
+      "implementation/warlock/qa/check-native-authority.py",
       "implementation/warlock/qa/check-search.py",
-      "implementation/warlock/qa/check-workspace-inventory.py",
-      "implementation/warlock/qa/workspace-inventory.qnt",
-      "implementation/warlock/qa/workspace-inventory_test.qnt",
-      "implementation/warlock/qa/TaskViewReplay.elm",
-      "implementation/warlock/qa/native-taskview-empty.py",
+      "implementation/warlock/qa/WorkspaceNavigationReplay.elm",
+      "implementation/warlock/qa/native-taskview-navigation.py",
       "implementation/warlock/qa/current-native-pair.json",
       "implementation/warlock/qa/current-search-build.json",
       "implementation/warlock/assets/elm.js",
       "implementation/warlock/assets/bar.js",
       "implementation/warlock/assets/popup.js",
-      "implementation/warlock/README.md"
+      "implementation/warlock/README.md",
+      "implementation/warlock/native/geometry-effects.inc",
+      "implementation/warlock/src/Main.elm",
+      "implementation/warlock/qa/empty-workspace-navigation.qnt",
+      "implementation/warlock/qa/empty-workspace-navigation_test.qnt"
     ],
-    "before": "Task View builds workspace rows only from application windows. A current native empty workspace and its active marker cannot be browsed or shown.",
-    "after": "The existing authenticated geometry observation includes current ordinary workspace owners, including empty workspaces. Task View shows their keyboard-browsable markers and an explicit empty selected view with dismissal. Inventory is admitted only with its exact current geometry receipt, and stale/foreign/invalid ownership cannot mix metadata. Native workspace activation remains a separate required part of the original scenario.",
+    "before": "Task View can browse real empty workspaces but cannot navigate the native desktop to them.",
+    "after": "An explicit keyboard/pointer Go action navigates an existing ordinary empty workspace through a typed owner-correlated durable native receipt. Refusal retains the overview and context, Unknown remains visible with read-only recovery and no replay, and dismissal stays available.",
     "verification": [
-      "quint-llm-kit executable model first: correlated inventory/current geometry join, empty browsing, retirement/output/binding invalidation and observation-only dismissal. Compile real roots and original TaskView replay; strict Python/Elm inventory decoder negatives. Build changed native authority against exact owning ABI. Protected native current empty workspace, keyboard browse/pixels/dismissal/focus and zero effects; preserve original deadlines and main desktop. Original scenario remains partial pending actual native navigation/AT/independent acceptance."
+      "quint-llm-kit model before code, initialization, named tests, positive commit/refusal/lost-ack/restart witnesses and sampled safety. Strict transport/journal negatives, compiled real Elm roots and integrated replay. Protected exact ABI native keyboard/pointer navigation, focus/active workspace/pixels/refusal and lost-ack no replay under original deadlines; original scenario remains partial until applicable AT and independent acceptance."
     ],
-    "owner": "root-taskview-empty-inventory",
-    "participantRecord": ".warlock-contributor/taskview-empty-inventory.json",
+    "owner": "root-taskview-workspace-navigation",
+    "participantRecord": ".warlock-contributor/taskview-workspace-navigation.json",
     "disposition": "partial",
     "evidence": {
-      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/manifest.json",
-      "sha256": "1db15121d6231b9dc21f1474298366aa3bda13d9968ac80c9e24176351206f19",
-      "scope": "Task View now exposes actual native ordinary empty-workspace inventory and active marker with no application focus, exact accepted geometry join, keyboard browsing/explicit empty notice and available dismissal. Quint initialization, six named scenarios and sampled safety/four positive witnesses precede code; 17 strict decoder and 42 compiled integrated checks pass, including unchanged refusal checks and Unknown transfer source retention. Original populated native Task View plus real workspace-3 empty marker/focus/pixels/read-only browsing/dismissal pass with normal cleanup and main desktop preserved. Genuine cross-output refusal regression also passes on the new tuple. Local browse is not actual native workspace activation."
+      "path": "implementation/warlock/qa/evidence/taskview-workspace-navigation/manifest.json",
+      "sha256": "71f8207c535606f7c3ac1a4eb5af291a0b462768029ab0a8680c884efb1212a0",
+      "scope": "Actual Task View keyboard and pointer Go to an existing native ordinary empty workspace, exact owner/context-correlated durable native Committed receipts, active destination/no app focus/unchanged window membership, painted Go controls and still-usable empty view/dismissal. Model, strict actual C/Python journal and compiled Elm checks separate from native scope. Original Task View and genuine window-refusal regressions remain passing."
     },
-    "sourceHashes": {
-      "implementation/warlock/src/Desktop.elm": "0a69b647a40508e528fa00d2e1dd8b6b234fa3fd36788156d2a458c3b25bcfe8",
-      "implementation/warlock/src/TaskView.elm": "7665dd48cae39ecdc71f85990eaefc0115fb79fe0462e41199b10ec4ccbfcdbe",
-      "implementation/warlock/src/WorkspaceInventory.elm": "ccae889a9e6b5985a0ea01ab144fbf32c39345ba1712516bf9edd30419d3daf6",
-      "implementation/warlock/src/GeometryProjection.elm": "f1b5708b8b4d1c7c02e46542bc041abb9e8cb0524d965ee4b03ab97f586a544c",
-      "implementation/warlock/src/Surface.elm": "f09125ae4cb8d485113a43c4d63cab40eef5000b6c5b4e7759890e479213fcac",
-      "implementation/warlock/native/geometry.inc": "ca532735a4ddb6f095517ab5b49593860aeaeb1fd1d24018feecf7c52fb8aba6",
-      "implementation/warlock/adapter/geometry_endpoint.py": "193b9ef7ecf114156c02cd527a703e79383cdec83267b612ff406f165cc3e3a4",
-      "implementation/warlock/qa/check-search.py": "91362b4f3797fbd18d99872865c3ca062b20fd0727dfa7fa99acf44f3bb69bda",
-      "implementation/warlock/qa/check-workspace-inventory.py": "e8b557b9e733cc39d8dbcac3e2121bc0c4fe48757c440c6b59fa512104d39ba2",
-      "implementation/warlock/qa/workspace-inventory.qnt": "06d9d052d0f30a453102e1e4502a7f712b4696053c5dc16610d2a48a9b24d4f7",
-      "implementation/warlock/qa/workspace-inventory_test.qnt": "8039e0a0b97f5c841568da6f3d7a761fee91aa44aa3766677003a79f38e81cf6",
-      "implementation/warlock/qa/TaskViewReplay.elm": "3ed7f3c063d0c3f5835483235c0a2a55818ac5e35f79e3cf0354bddc2ea3a3a5",
-      "implementation/warlock/qa/native-taskview-empty.py": "d3f93391108d5eeb2c2a2300eef7e6e21a381f31a4b97345e9ea6bea576c6209",
-      "implementation/warlock/qa/current-native-pair.json": "40c0578bbb8317e41869322ca30bf835e0e025d38959730569dfcf8b12c00ca7",
-      "implementation/warlock/qa/current-search-build.json": "747f915576647d6194e24ac30644e7ef8102e66229a0d525de1fea40636f02ef",
-      "implementation/warlock/assets/elm.js": "e676320d82900595404f2d650671a393d87e5cf5526db1fca4122b3f366d4722",
-      "implementation/warlock/assets/bar.js": "26ef20c9143f87caf7e3d7fc293b248983076f5a7b7a6967cc341d71f7711194",
-      "implementation/warlock/assets/popup.js": "23b0f3e5e223dd5e1d7042ea33dcc1e1f4895997b01ebd7d764a75c15236b56c",
-      "implementation/warlock/README.md": "02b6c447ad2ca3b9f771994b930419f9d1132c1139ea80c96984a3cb5e64a763",
-      "implementation/warlock/src/Shell.elm": "93fdf86ac11ff9c190978fb46557623045a6c697d468a42fc9ba16a4bfa4df48",
-      "implementation/warlock/src/Effects.elm": "873e8824d90828a9927cfd89723c7b7299e11791e3779173815ba720b11a8547",
-      "implementation/warlock/qa/check-native-authority.py": "014cba952d735b40d600cd5e2a498e97a9491bce89fadb69fc1600ddfb6cba32",
-      "implementation/warlock/qa/native-window-feedback.py": "295ba28cf8d9d297b214bd0d6dba19ac3289d861faa953f9fd94b82937473c64",
-      "implementation/warlock/qa/native-taskview-refusal.py": "b719e541c335be6524d7c61a89fb8b5f15556c0aa6f5e041474016938639b4da"
-    },
-    "reviewerDisposition": {
-      "name": "root-taskview-empty-inventory",
-      "independent": false,
-      "disposition": "Owner observed native empty inventory, keyboard browsing/empty view/current marker/pixels/dismissal and matching refusal regression; native GUI empty-workspace activation, applicable AT and independent acceptance remain open."
-    },
-    "missingObservation": "Actual GUI native activation/navigation to an empty workspace still needs a separately correlated native effect. Applicable AT and independent original acceptance remain open.",
-    "observedUTC": "2026-10-10T18:24:31.934146+00:00",
-    "nextSourceWork": "Complete original ELM-UI-006 overview-empty with an explicit typed empty-workspace navigation intent through the existing native authority and durable receipt/recovery path. Bind destination workspace/output owner and current source context; preserve lock/exclusive/pointer guards, Unknown/no replay and truthful partial navigation outcome. Keep local Browse controls distinct from native activation and qualify real keyboard/native/AT navigation to an empty destination. Do not represent an empty workspace by a fake window incarnation."
+    "missingObservation": "Native workspace-specific refusal and lost-ack/restart journeys; applicable AT observations and independent original ELM-UI-006 acceptance.",
+    "nextAction": "Add actual workspace Refused and lost-native-ACK/restart fixtures to this same navigation slice, then applicable AT, preserving the typed receipt and Unknown/no-replay contract. Continue mandatory Task View/workspace journeys without inventing a new control or publication gate."
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -152,1559 +129,6 @@
     "nextSourceWork": "Original UI-019 reachable application recovery on smaller/negative-origin outputs: reproduce an offscreen floating application after output size/origin changes, then fix owning native placement while preserving workspace/size/draft and actual keyboard/taskbar access. Wider asynchronous schedules, hardware/AT/IME, custody/Unknown and release gates remain mandatory."
   },
   "recentSlices": [
-    {
-      "id": "live-output-retirement",
-      "requirements": [
-        "ELM-UI-019"
-      ],
-      "scenarios": [
-        "output-remove"
-      ],
-      "paths": [
-        "implementation/warlock/native/shared-host.c",
-        "implementation/warlock/src/OutputController.elm",
-        "implementation/warlock/src/Desktop.elm",
-        "implementation/warlock/qa/native-output-retirement.py",
-        "implementation/warlock/qa/OutputRetirementReplay.elm",
-        "implementation/warlock/qa/output-retirement.qnt",
-        "implementation/warlock/qa/output-retirement_test.qnt",
-        "implementation/warlock/qa/check-output-retirement.py",
-        "implementation/warlock/qa/check-search.py",
-        "implementation/warlock/qa/current-search-build.json",
-        "implementation/warlock/assets/elm.js",
-        "implementation/warlock/assets/bar.js",
-        "implementation/warlock/assets/popup.js",
-        "implementation/warlock/README.md",
-        "implementation/warlock/native/authority.cpp",
-        "implementation/warlock/qa/current-native-pair.json"
-      ],
-      "before": "Current live popup output retirement/replacement and surviving keyboard recovery are unverified in the runnable tuple.",
-      "after": "Removing an output retires its current popup/input scope; a declared survivor keeps workspace identity and keyboard recovery, and replacement cannot adopt old view actions.",
-      "verification": [
-        "Actual nested output destruction/recreation with a focused typed launcher, surviving keyboard operation and native window/workspace/counter observations at original waits; owning Elm/host changed-target checks and quint-llm-kit retirement model if a policy defect is demonstrated. Physical hardware/AT/independent acceptance remains separate."
-      ],
-      "owner": "root-output-retirement",
-      "participantRecord": ".warlock-contributor/output-retirement.json",
-      "disposition": "partial",
-      "missingObservations": [
-        "Physical hotplug/displays, native AT/IME consumers and independent original UI-019 scenario review remain open. Nested Wayland output evidence is separately labeled.",
-        "All outputs disappearing/returning has compiled/model coverage only; the original outputs-return native scenario remains unadjudicated. Pending preview/capture/effect custody during removal, Unknown reconciliation, protected input and broader transform/device/resource cases remain unqualified.",
-        "The atomic-topology model and consumed-shortcut replay checks do not establish every cross-channel delay. A fresh old native shortcut journal delayed across same-bounds replacement, topology/native generation ordering, and zero-output transport need direct implementation/qualification.",
-        "Full original release journeys, hardware/resource budgets, reproducible packaging and reversible deployment remain open."
-      ],
-      "evidence": {
-        "path": "implementation/warlock/qa/evidence/live-output-retirement/manifest.json",
-        "sha256": "a2982e762b921ce58c1be8764689e13b05fe9f38f2fe251fcbd2993db76f8e6c"
-      },
-      "observed": "Keyboard shortcuts now resolve the actual native keyboard window, mapped shell layer or live popup before choosing an output; an unrecognized focused surface is refused. The real nested output-removal journey dismisses the displaced launcher, preserves workspace identity, keeps the typed query and keyboard recovery on a declared survivor, and operates Refresh with one observed catalog read. Reconnection at identical old bounds receives a new view identity while the retired native shortcut destination stays null. No launch/window-effect replay occurs, and original drag/capture plus all-nine-surface keyboard regressions pass with normal cleanup.",
-      "nextSourceWork": "Exercise actual native zero-output return (UI-019 outputs-return) and inspect delayed pre-retirement shortcut receipts across same-bounds replacement. Implement demonstrated generation/recovery gaps in the existing host/root/authority; preserve original waits, custody and Unknown/no-replay."
-    },
-    {
-      "id": "shortcut-current-output",
-      "requirements": [
-        "ELM-UX-023",
-        "ELM-UI-005"
-      ],
-      "scenarios": [
-        "ux-023",
-        "search-no-match"
-      ],
-      "paths": [
-        "implementation/warlock/src/Shortcuts.elm",
-        "implementation/warlock/src/OutputController.elm",
-        "implementation/warlock/src/Desktop.elm",
-        "implementation/warlock/native/authority.cpp",
-        "implementation/warlock/native/shared-host.c",
-        "implementation/warlock/adapter/effect_endpoint.py",
-        "implementation/warlock/qa/shortcut-output.qnt",
-        "implementation/warlock/qa/shortcut-output_test.qnt",
-        "implementation/warlock/qa/check-shortcut-output.py",
-        "implementation/warlock/qa/ShortcutOutputReplay.elm",
-        "implementation/warlock/qa/check-search.py",
-        "implementation/warlock/qa/native-window-feedback.py",
-        "implementation/warlock/qa/native-shortcut-output.py",
-        "implementation/warlock/qa/current-search-build.json",
-        "implementation/warlock/qa/current-native-pair.json",
-        "implementation/warlock/assets/elm.js",
-        "implementation/warlock/assets/bar.js",
-        "implementation/warlock/assets/popup.js",
-        "implementation/warlock/README.md"
-      ],
-      "before": "The actual two-output Apps chord opens on the initial controller output rather than the currently focused native output; its nested inactive output capture shows blank controls.",
-      "after": "Native shortcut observations retain their exact live output destination; the one Elm output controller chooses the matching current view. The launcher opens and paints on that output, preserving keyboard query/no-match and stale/blocked/retired rejection.",
-      "verification": [
-        "quint-llm-kit current destination/current topology/serial/retirement model and compiled production OutputController replay; exact host/Elm/plugin builds, original two-output drag journey with additive owner/configure/pixels/keyboard no-match observations, unchanged nine-surface keyboard regression and normal cleanup. Native AT/hardware/independent acceptance remain separate."
-      ],
-      "owner": "root-shortcut-output",
-      "participantRecord": ".warlock-contributor/shortcut-output.json",
-      "disposition": "partial",
-      "missingObservations": [
-        "Native AT/IME consumers and independent original scenario review remain open; the broad UX-023 surface requirement and UI-005 search policy are not accepted from these owner observations.",
-        "Output removal/replacement/movement between native journal delivery and host topology delivery, mirrored/rotated/fractional-scale hardware, disabled/DPMS transitions and wider hotplug/lock schedules need direct native qualification. The model abstracts native journal admission and host matching in one receive, not every transport interleaving.",
-        "Initial paint on an occluded output, unrelated output/caption/fullscreen/group/preview paths, resource budgets, representative journeys, reproducible packaging and reversible deployment remain separate release work."
-      ],
-      "evidence": {
-        "path": "implementation/warlock/qa/evidence/shortcut-current-output/manifest.json",
-        "sha256": "bd047458c9f4ad494d2e1c69661f384c09c0c9f968186a6dd5fb5c1b1489febc"
-      },
-      "observed": "Native Apps shortcuts now open on the output of the actual keyboard recipient after a cancelled cross-output drag. The shared Elm controller resolves the press-time live output against current issued view geometry; duplicate, missing, moved, retired, ambiguous and pointer-blocked destinations cannot relocate or replay. A fresh valid shortcut clears only obsolete shortcut-refusal feedback. The original two-output drag/cancel/capture journey passes, followed by actual popup bounds, painted control pixels, physical-keyboard no-match/query/focus retention and Escape without launch or window mutation. The unchanged all-nine-surface keyboard journey passes on the same core/plugin/host tuple with normal cleanup.",
-      "nextSourceWork": "Exercise live output retirement/replacement with an open native popup and retained keyboard query; fix any demonstrated owner/dismissal gap in the existing shared host/controller. Preserve current serial, native effect/custody and original deadline guarantees."
-    },
-    {
-      "id": "native-output-capture-demand",
-      "requirements": [
-        "ELM-UX-021"
-      ],
-      "scenarios": [
-        "ux-021"
-      ],
-      "paths": [
-        "implementation/warlock/native/core/ScreenshareFrame.cpp",
-        "implementation/warlock/qa/nested-capture.qnt",
-        "implementation/warlock/qa/nested-capture_test.qnt",
-        "implementation/warlock/qa/check-nested-capture.py",
-        "implementation/warlock/qa/check-capture-core.py",
-        "implementation/warlock/qa/check-native-authority.py",
-        "implementation/warlock/qa/current-scene-core.json",
-        "implementation/warlock/qa/current-native-pair.json",
-        "implementation/warlock/README.md",
-        "implementation/warlock/qa/native-window-feedback.py"
-      ],
-      "before": "The original two-output native drag journey completes input but combined capture stalls because an occluded nested output has an in-flight parent callback.",
-      "after": "A live nested output capture requests one current native render/commit without waiting for an unrelated parent presentation callback, while preserving lifetime, permissions and native input ownership.",
-      "verification": [
-        "quint-llm-kit incremental live capture/retirement/no synthetic presentation model; exact one-TU owning archive and ABI rebuild; unchanged original two-output input and combined capture at five seconds plus one-output caption regression and cleanup."
-      ],
-      "owner": "root-capture-demand",
-      "participantRecord": ".warlock-contributor/capture-demand.json",
-      "disposition": "partial",
-      "evidence": {
-        "path": "implementation/warlock/qa/evidence/native-output-capture-demand/manifest.json",
-        "sha256": "8d158abdaaca3b02e7dfa6393251a1f029413f4e55d990f47cb9fd213676ad55"
-      },
-      "observed": "The unchanged original two-output move/resize journey now passes native owner retention across taskbar/output, blocked shortcut/effect, exactly-one end, Escape and source-workspace rollback, original five-second combined 1600\u00d7600 capture and cleanup. An initial live nested capture requests one real render/commit without waiting for an occluded parent callback. The same pair passes MAX/snap caption placement/lifecycle/draft regression. No parent presentation is fabricated; external hardware/AT and independent acceptance remain open.",
-      "missingObservations": [
-        "Direct native deferred-capture retirement/output removal, permission/lock, buffer/configuration/device and wider lifecycle races remain unqualified.",
-        "Original fullscreen/tiled/grouped caption restoration, other snap regions/repeated snaps, nondefault thresholds, transforms/constraints and other toolkit/AT evidence remain open.",
-        "The combined image does not establish launcher controls first paint or correct multi-output attachment; the observed blank left popup/right taskbar needs GUI integration work.",
-        "Independent original UX-021 disposition and release-wide native/IME/hardware/resource/journey/package/reversible deployment remain open."
-      ],
-      "nextSourceWork": "Fix observed two-output launcher popup attachment and first paint in the existing host/surface root; taskbar is on the right while its left popup has a blank control area. Preserve native input/effect/custody guarantees and use the actual combined image, per-output geometry and native controls at original deadlines."
-    },
-    {
-      "id": "popup-entry-keyboard-return",
-      "requirements": [
-        "ELM-UX-024",
-        "ELM-UI-011"
-      ],
-      "scenarios": [
-        "ux-024",
-        "focus-scope-nested dismissal"
-      ],
-      "paths": [
-        "implementation/warlock/src/Desktop.elm",
-        "implementation/warlock/src/Surface.elm",
-        "implementation/warlock/src/SurfaceRenderer.elm",
-        "implementation/warlock/native/shared-host.c",
-        "implementation/warlock/native/surface.h",
-        "implementation/warlock/qa/check-search.py",
-        "implementation/warlock/qa/PopupEntryReplay.elm",
-        "implementation/warlock/qa/popup-entry.qnt",
-        "implementation/warlock/qa/popup-entry_test.qnt",
-        "implementation/warlock/qa/check-popup-entry.py",
-        "implementation/warlock/qa/current-search-build.json",
-        "implementation/warlock/assets/elm.js",
-        "implementation/warlock/assets/bar.js",
-        "implementation/warlock/assets/popup.js",
-        "implementation/warlock/README.md",
-        "implementation/warlock/src/CapturedAction.elm",
-        "implementation/warlock/assets/activation.js"
-      ],
-      "before": "Original pointer taskbar Escape retains native focus identity but loses actual GTK keyboard delivery; frontend dismissal and on-demand bar parent assume keyboard entry for every opener.",
-      "after": "Carry pointer versus keyboard popup entry in the single Elm policy; pointer dismissal yields the bar keyboard lease before popup grab teardown, keyboard/nested return retains the eligible bar parent; actual original key receipt follows the opener.",
-      "verification": [
-        "quint-llm-kit sampled entry/parent/dismissal model with named tests and witnesses; compiled actual root/renderer/host and typed origin/dismissal replay; unchanged original native taskbar Escape assertion and original keyboard-only menu/Apps/taskbar return journey, same clocks/no-force/no-replay/custody; relevant modal regression."
-      ],
-      "status": "implemented-partial",
-      "participantRecord": ".warlock-contributor/popup-entry.json",
-      "evidence": {
-        "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/manifest.json",
-        "sha256": "561e5f87e031d777a8f16ed2ec0f24838eebc4b969ba667622ffacc16cec2f51"
-      },
-      "observed": "Captured pointer/keyboard entry controls native parent lease before popup teardown. Original taskbar Escape now restores actual GTK key delivery; all nine keyboard surfaces pass with no injected pointer events. Modal/draft and fullscreen regressions pass normal exits. Additive Quint model and eleven actual Elm checks pass; historical failure preserved.",
-      "missingObservations": [
-        "Independent original UX-024 and UI-011 scenario review; no full original-oracle acceptance inferred",
-        "Native AT focus return and full nested scope stack, opener retirement/replacement/workspace/minimize/restart, protected-input/output races",
-        "Full original GUI journeys, toolkit/hardware/resource gates, reproducible package and reversible deployment/rollback"
-      ],
-      "nextSourceWork": "Original ELM-UX-021/ux-021 native drag/resize ownership, taskbar/output crossing and release/cancel integration: inspect current actual gesture owner and retained failures, then implement demonstrated gap. Continue full GUI release scope and outstanding focus lifecycle/AT gates."
-    },
-    {
-      "id": "modal-recipient-eligibility",
-      "requirements": [
-        "ELM-REN-018"
-      ],
-      "scenarios": [
-        "ren-018"
-      ],
-      "paths": [
-        "implementation/warlock/native/core/ModalRecipient.hpp",
-        "implementation/warlock/qa/modal-eligibility.qnt",
-        "implementation/warlock/qa/modal-eligibility_test.qnt",
-        "implementation/warlock/qa/check-modal-eligibility.py",
-        "implementation/warlock/qa/native-modal-draft-focus.py",
-        "implementation/warlock/qa/modal-draft-fixture.py",
-        "implementation/warlock/qa/check-modal-recipient.cpp",
-        "implementation/warlock/qa/check-modal-recipient.py",
-        "implementation/warlock/qa/current-scene-core.json",
-        "implementation/warlock/qa/current-native-pair.json",
-        "implementation/warlock/qa/current-search-build.json",
-        "implementation/warlock/README.md"
-      ],
-      "before": "Shared native modal selection removes input-blocked descendants before topology resolution, potentially selecting an ancestor while its mapped modal constraint remains. Current draft/unrelated/native no-focus observations are missing.",
-      "after": "Resolve current mapped modal constraints before evaluating the unique deepest recipient; blocked/no-focus or ambiguous leaves refuse without ancestor fallback. Preserve independent eligible-window focus and actual draft text.",
-      "verification": [
-        "quint-llm-kit linked graph/eligibility/draft model with named cases and reachable witnesses; actual owning-header selector replay, exact three-TU core relink and matched plugin rebuild; original modal/MAX journey plus unrelated real GTK hit/key/draft preservation and native no-focus refusal; unchanged fullscreen regression, original deadlines and custody."
-      ],
-      "status": "implemented-partial",
-      "participantRecord": ".warlock-contributor/modal-eligibility.json",
-      "evidence": {
-        "path": "implementation/warlock/qa/evidence/modal-recipient-eligibility/manifest.json",
-        "sha256": "004e896c1ed8fa24a38cd9316b2032808fa2b5f4d51f7541df4d7672bb502402"
-      },
-      "observed": "Shared native selector resolves mapped modal topology before leaf eligibility, refusing blocked/no-focus or ambiguous leaves without ancestor fallback. Actual unrelated GTK click/key preserves the modal incarnation, geometry and unsaved typed draft; painted native no-focus modal excludes click/key to the eligible peer. Original modal/MAX and unchanged fullscreen journeys pass normal owned exits. Additional original taskbar Escape keyboard-return test fails and is retained.",
-      "missingObservations": [
-        "Independent original REN-018/ren-018 disposition; full release remains unaccepted",
-        "Actual mapped native input-blocked modal/monocle schedules: substitute-object blocked cases are algorithm evidence only; allows_input=false is not an input blocker",
-        "Native Qt/Xwayland, nested/ambiguous/cyclic families, workspace changes, actual grab/layer/lock and recipient mutation races, transformed/multiple outputs and AT/IME",
-        "Additional unchanged original taskbar campaign fails EscapeRestoresOriginalNativeRecipient: focus identity remains the opener, but no actual GTK key is delivered. Retain and repair keyboard recipient return without extending timing or forcing focus.",
-        "Wider original hardware/resource/journey evidence, reproducible package and reversible deployment/rollback"
-      ],
-      "nextSourceWork": "Repair the observed original ELM-UI-011/ELM-UX-024 shell dismissal keyboard-recipient path: preserve the identity-bound application opener for pointer entry and the documented bar/parent opener for keyboard entry, with actual native key delivery before claiming return. Re-run the unchanged original taskbar Escape test and keyboard bar-return regression under original timing; do not force focus or weaken the oracle. Then resume remaining native drag/resize, genuine blocker and full GUI/AT/IME/hardware/resource/package/rollback scope."
-    },
-    {
-      "id": "max-modal-activation",
-      "requirements": [
-        "ELM-REN-015",
-        "ELM-GNO-006"
-      ],
-      "scenarios": [
-        "max-modal-focus",
-        "hit-modal-redirect"
-      ],
-      "paths": [
-        "implementation/warlock/native/core/InputManager.cpp",
-        "implementation/warlock/native/core/ViewHitTester.cpp",
-        "implementation/warlock/native/core/ModalRecipient.hpp",
-        "implementation/warlock/native/navigation-modal.hpp",
-        "implementation/warlock/qa/check-scene-core.py",
-        "implementation/warlock/qa/check-native-authority.py",
-        "implementation/warlock/qa/native-window-feedback.py",
-        "implementation/warlock/qa/current-scene-core.json",
-        "implementation/warlock/qa/current-native-pair.json",
-        "implementation/warlock/qa/current-search-build.json",
-        "implementation/warlock/qa/modal-activation.qnt",
-        "implementation/warlock/qa/modal-activation_test.qnt",
-        "implementation/warlock/qa/check-modal-activation.py",
-        "implementation/warlock/qa/native-max-modal-focus.py",
-        "implementation/warlock/README.md"
-      ],
-      "before": "Ordinary MAX hit traversal skips modal-blocked parents and can activate a lower unrelated root at the visible parent point.",
-      "after": "A qualifying ordinary MAX parent click redirects focus to its eligible native modal recipient, preserves constrained paint order, and sends no synthetic modal click.",
-      "verification": [
-        "quint-llm-kit scoped executable activation/refusal/no-click model; retain actual protected pre-change failure; matched owning core/plugin; original native MAX owner point, modal focus/key recipient, no GTK click, family paint, modal retirement and lower-owner fallback with six-second deadlines; regress original two-MAX and no-activation behavior."
-      ],
-      "status": "implemented-partial",
-      "participantRecord": ".warlock-contributor/modal.json",
-      "evidence": "implementation/warlock/qa/evidence/max-modal-focus/manifest.json",
-      "observed": "Committed MAX activation redirects eligible blocked-parent focus to the shared native modal recipient, suppresses press/release and preserves placement/order. Physical modal key/pixels, taskbar activation and retirement recovery observed. Input-hole modal, no-activation and pin/MAX regressions pass. Two direct visible-owner recordings pass behavior then fail normal host exit with outstanding picker custody/journal; native campaign acceptance remains partial.",
-      "missingObservations": [
-        "The two direct visible-owner recordings fail normal host exit with outstanding native picker custody/journal. Resolve actual custody retirement; preserve exit checks and original deadlines.",
-        "Independent original REN-015/max-modal-focus and GNO-006/hit-modal-redirect disposition; both remain partial.",
-        "Native nested/ambiguous/ineligible/cyclic families, stale/failed commit and button/device/map/retirement races, transforms, grabs/layers/constraints, fullscreen and multi-output.",
-        "Full scene/presentation, native AT/IME, measured resource/performance budgets and reproducible package/reversible deployment/rollback."
-      ],
-      "nextSourceWork": "Fix the observed product host picker custody/journal shutdown failure under original ELM-QA-011 client-before-compositor teardown and native resource-retirement obligations. Inspect shared-host/picker shutdown and backend completion; preserve real custody retirement, existing exit failure, core limit, normal cleanup and original deadlines. Re-run the unchanged direct visible-owner journey on the actual fix. Then continue original REN-017 true-fullscreen/pin/menu policy and remaining full GUI release scope. No additional native repetition without a source change or new diagnostic obligation."
-    },
-    {
-      "id": "single-owner-refusal-announcements",
-      "requirements": [
-        "ELM-UI-010"
-      ],
-      "scenarios": [
-        "announce-launch refusal",
-        "announce-transfer refusal",
-        "announce-settings validation failure"
-      ],
-      "before": "All output bars and popup status lines are live regions, while refusal status lacks a separate identity-bound single-owner delivery contract.",
-      "after": "Elm selects one announcement route for typed matched launch, transfer and settings refusal outcomes. Native validates the declared owner and forwards each serial once. Mirrors retain readable visual status without announcing; current receipt repeats and owner changes do not reannounce or request focus. Frozen notification permission/DND/urgency and native speech/braille remain explicit unfinished original scope.",
-      "paths": [
-        "implementation/warlock/src/Announcement.elm",
-        "implementation/warlock/src/OutcomeAnnouncements.elm",
-        "implementation/warlock/src/OutputController.elm",
-        "implementation/warlock/src/Launch.elm",
-        "implementation/warlock/src/Settings.elm",
-        "implementation/warlock/src/Bar.elm",
-        "implementation/warlock/src/Popup.elm",
-        "implementation/warlock/src/SurfaceRenderer.elm",
-        "implementation/warlock/native/announcement-transport.h",
-        "implementation/warlock/native/shared-host.c",
-        "implementation/warlock/assets/elm.js",
-        "implementation/warlock/assets/bar.js",
-        "implementation/warlock/assets/popup.js",
-        "implementation/warlock/assets/bar-adapter.js",
-        "implementation/warlock/assets/popup-adapter.js",
-        "implementation/warlock/assets/shell.css",
-        "implementation/warlock/qa/announcement-owner.qnt",
-        "implementation/warlock/qa/announcement-owner_test.qnt",
-        "implementation/warlock/qa/check-announcement-owner.py",
-        "implementation/warlock/qa/AnnouncementReplay.elm",
-        "implementation/warlock/qa/announcement-browser.mjs",
-        "implementation/warlock/qa/check-search.py",
-        "implementation/warlock/qa/current-search-build.json",
-        "implementation/warlock/qa/native-window-feedback.py",
-        "implementation/warlock/README.md",
-        "implementation/warlock/src/Surface.elm",
-        "implementation/warlock/src/Desktop.elm"
-      ],
-      "verification": [
-        "Use quint-llm-kit quint-modeling and quint-execute-spec: additive root/transport/receiver ownership and serial-dedup model, explicit named positive/negative tests, positive reachability witnesses and sampled safety; preserve all existing original models. Compile actual integrated Elm roots and owning GTK host. Typed matched refusal/repeat/foreign binding/counter and current-owner transport codec tests; multi-view browser live-region/focus/repeated text and stale publication/owner cases. Relevant protected original native refusal route and DOM/correlation counts remain distinct from actual native speech/braille/independent acceptance."
-      ],
-      "status": "implemented-partial",
-      "participantRecord": ".warlock-contributor/announcements.json",
-      "evidence": "implementation/warlock/qa/evidence/announcements/manifest.json",
-      "observed": "Implemented one root-selected refusal announcer and exact native forwarding/dedup; removed launch receipt Focus command. Typed/browser checks and original native transfer/correlation/DOM/cleanup pass. Actual native speech/braille and independent acceptance remain open.",
-      "missingObservations": [
-        "Actual stable-focus native speech and braille, repeated-receipt delivery and reachable recovery through AT.",
-        "Native launch/settings refusal announcement journeys.",
-        "Independent original-scenario acceptance.",
-        "Adapter unavailable and frozen notification relevance/DND/urgency/expiration policy remain separate unfinished scope.",
-        "Bounded model omits transport loss, process restart, timing and full hardware/resource budgets."
-      ],
-      "nextSourceWork": "Extend the same root-owned announcement route to adapter-unavailable and permitted notification outcomes using the frozen relevance/DND/urgency/expiration policy. Model the permission predicates with quint-llm-kit before behavioral changes; preserve visual history, focus and exact notification identities. Actual AT remains a required separate release observation."
-    },
-    {
-      "id": "preview-accessible-descriptions",
-      "requirements": [
-        "ELM-UI-016"
-      ],
-      "scenarios": [
-        "preview-states"
-      ],
-      "before": "Local preview feedback creates independent live regions and fallback repeats Preview unavailable; explicit control aria-label suppresses descendant source-state text in the accessible name.",
-      "after": "Each identity-bound window control exposes its preview source state and fidelity as a passive description; preview churn creates no extra live region, fallback labels appear once, and keyed focus/target geometry stay stable. Full shell announcement ownership and native speech/braille qualification remain required separately.",
-      "paths": [
-        "implementation/warlock/src/PreviewVisual.elm",
-        "implementation/warlock/src/SurfaceRenderer.elm",
-        "implementation/warlock/src/Popup.elm",
-        "implementation/warlock/src/RetainedPreviewPresenter.elm",
-        "implementation/warlock/src/NativePreviewVisual.elm",
-        "implementation/warlock/assets/shell.css",
-        "implementation/warlock/assets/elm.js",
-        "implementation/warlock/assets/bar.js",
-        "implementation/warlock/assets/popup.js",
-        "implementation/warlock/qa/check-search.py",
-        "implementation/warlock/qa/PreviewStateReplay.elm",
-        "implementation/warlock/qa/preview-description-browser.mjs",
-        "implementation/warlock/qa/current-search-build.json",
-        "implementation/warlock/README.md"
-      ],
-      "verification": [
-        "Use quint-llm-kit quint-execute-spec with the unchanged pickerOwnership safety and six explicit named tests; no new state/authority model for a view projection. Compile actual Elm roots and NativePreviewRenderer; original typed preview states and foreign-incarnation/lease/coverage negatives; browser AX focused-control name/description across all preview states, no preview live regions, fallback text once, original geometry and focus retention. Preserve actual native/AT/independent original acceptance as separate missing observations."
-      ],
-      "status": "implemented-partial",
-      "participantRecord": ".warlock-contributor/preview-description.json",
-      "evidence": "implementation/warlock/qa/evidence/preview-descriptions/manifest.json",
-      "observed": "Implemented passive identity-bound preview source-state/fidelity descriptions, removed local preview live regions and duplicate unavailable text. Eleven-state Chromium AX focus/geometry/retirement component checks and original current native picker source/pixel/expiry/cleanup journey pass. Native AT/speech/braille and independent original acceptance remain open.",
-      "nextSourceWork": "Implement a designated single announcement owner for allowlisted correlated shell outcomes across output bars and popup views. Use quint-llm-kit to model owner/receipt correlation before behavioral changes; preserve immutable Elm policy, frozen notification/DND/urgency policy and no focus relocation. Native speech/braille remain explicit original gates."
-    },
-    {
-      "id": "visible-window-feedback",
-      "requirements": [
-        "ELM-UI-007"
-      ],
-      "scenarios": [
-        "restore-pending",
-        "restore-refused",
-        "restore-unknown"
-      ],
-      "before": "Taskbar status is visually hidden; a generic recovery message masks Pending/Unknown.",
-      "after": "Window-action status is visible, distinct and persistent; Refresh remains observation-only.",
-      "state": "implemented; native pointer/status/recovery verified; original keyboard/context/AT verdict pending",
-      "paths": [
-        "src/Surface.elm",
-        "src/SurfaceRenderer.elm",
-        "assets/shell.css"
-      ],
-      "verification": [
-        "typed-state projection and no new effects",
-        "actual compiled views in narrow/wide browser",
-        "native/AT original scenarios before acceptance"
-      ],
-      "evidence": "implementation/warlock/qa/evidence/window-feedback/manifest.json",
-      "additionalEvidence": "implementation/warlock/qa/evidence/window-feedback-native/manifest.json"
-    },
-    {
-      "id": "taskbar-focus-journey",
-      "requirements": [
-        "ELM-UI-004",
-        "ELM-UX-024"
-      ],
-      "scenarios": [
-        "taskbar-group",
-        "ux-024"
-      ],
-      "before": "Popup dismissal has no accepted native focus-return journey; prior focus-related failures remain held.",
-      "after": "A taskbar picker/menu can be traversed and dismissed with focus returning to its eligible original recipient.",
-      "state": "native picker traversal and original recipient observed; original menu/AT verdict pending",
-      "paths": [
-        "implementation/warlock/src/Desktop.elm",
-        "implementation/warlock/native/host.c"
-      ],
-      "verification": [
-        "actual native picker/menu traversal and Escape",
-        "native application keyboard recipient and no accidental window effect"
-      ],
-      "evidence": "implementation/warlock/qa/evidence/taskbar-focus/manifest.json"
-    },
-    {
-      "id": "launcher-search",
-      "requirements": [
-        "ELM-UI-005",
-        "ELM-UX-029"
-      ],
-      "scenarios": [
-        "search-no-match",
-        "search-race",
-        "search-removed",
-        "search-refused",
-        "launcher-refused"
-      ],
-      "before": "Applications is an unfiltered catalog; there is no editable search query.",
-      "after": "Typing filters and ranks current catalog results; current query owns selection and survives refusal; Enter sends one identity-bound launch.",
-      "state": "implemented; compiled and native behavior verified; black popup physical presentation remains open",
-      "paths": [
-        "src/Desktop.elm",
-        "src/Surface.elm",
-        "src/SurfaceRenderer.elm",
-        "src/Catalog.elm",
-        "native/surface.h",
-        "adapter/taskbar_catalog.py"
-      ],
-      "verification": [
-        "compile changed targets and native admission",
-        "current/stale query and current catalog replay",
-        "actual native query/keyboard launch and refusal when ready"
-      ],
-      "evidence": "implementation/warlock/qa/evidence/launcher-search/manifest.json",
-      "missingObservation": "Capture is after Refresh and no-match, despite its original search-refused.png filename. The bar paints the no-match status; the 700x420 applications popup is solid black. DOM, focus acknowledgement and successful input do not prove visible controls. Controlled preview mode was not requested; do not attribute this to or lift the preview curtain without evidence."
-    },
-    {
-      "id": "persistent-catalog-pins",
-      "requirements": [
-        "ELM-UI-004",
-        "ELM-UX-004"
-      ],
-      "scenarios": [
-        "taskbar-zero",
-        "ux-004"
-      ],
-      "before": "Catalog launchers and chosen pin order do not persist in the integrated candidate.",
-      "after": "Users can pin and reorder desktop identities, retain relative order after shell restart, and launch a pinned zero-window identity once.",
-      "state": "implemented; compiled replay, native keyboard pin/reorder, whole shell restart/order/pixels and pointer zero-window launch verified; independent review, popup presentation and applicable AT remain open",
-      "paths": [
-        "src/Pins.elm",
-        "src/Desktop.elm",
-        "src/Surface.elm",
-        "src/SurfaceRenderer.elm",
-        "adapter/taskbar_preferences.py",
-        "adapter/catalog_transport.py",
-        "adapter/daemon.py",
-        "native/host.c",
-        "native/surface.h",
-        "qa/check-search.py",
-        "qa/check-pin-storage.py",
-        "qa/PinsReplay.elm",
-        "qa/pins.qnt",
-        "assets/elm.js",
-        "assets/bar.js",
-        "assets/popup.js",
-        "qa/native-window-feedback.py",
-        "qa/current-search-build.json"
-      ],
-      "verification": [
-        "Typed pin/reorder and catalog reconciliation replay",
-        "Isolated native restart/order and zero-window identity-bound launch recording"
-      ],
-      "evidence": "implementation/warlock/qa/evidence/persistent-pins/manifest.json",
-      "missingObservation": "Independent reviewer, native zero-window keyboard/AT route, and actual launcher popup pixels remain open. Pins after restart are physically visible in the captured native taskbar."
-    },
-    {
-      "id": "popup-reopen-native-presentation",
-      "requirements": [
-        "ELM-UI-004",
-        "ELM-UI-005",
-        "ELM-UX-029"
-      ],
-      "scenarios": [
-        "taskbar-group",
-        "search-no-match",
-        "search-refused",
-        "launcher-refused"
-      ],
-      "paths": [
-        "native/host.c",
-        "native/shared-host.c",
-        "qa/check-search.py",
-        "qa/native-window-feedback.py",
-        "qa/current-search-build.json"
-      ],
-      "before": "First popup paints, but reopening the taskbar picker or launcher after dismissal shows black controls despite current DOM projection.",
-      "after": "A reopened current popup paints its real controls and supports the same keyboard/pointer journey with fresh lease readiness and no stale events or repeated effects.",
-      "verification": [
-        "Compile/relink changed native host units with unchanged CPP objects and compiled Elm assets; existing native host lease/readiness self-tests",
-        "Protected native workspace-2 Task View then reopened taskbar restore with actual control pixels, native receipt/focus/keyboard/membership",
-        "Protected native launcher repeated/refused/no-match popup physical controls; retain original failures and native AT/IME obligations"
-      ],
-      "state": "implemented; current taskbar and launcher native repaint/input journeys pass; independent and applicable AT/IME acceptance remain open",
-      "evidence": "implementation/warlock/qa/evidence/popup-remap/manifest.json"
-    },
-    {
-      "id": "task-view-dismissal-focus",
-      "requirements": [
-        "ELM-UI-006",
-        "ELM-UX-017"
-      ],
-      "scenarios": [
-        "overview-cancel",
-        "ux-017"
-      ],
-      "paths": [
-        "implementation/warlock/src/Desktop.elm",
-        "implementation/warlock/src/TaskView.elm",
-        "implementation/warlock/native/host.c",
-        "implementation/warlock/native/shared-host.c",
-        "implementation/warlock/qa/native-window-feedback.py",
-        "implementation/warlock/qa/check-search.py",
-        "implementation/warlock/qa/current-search-build.json",
-        "implementation/warlock/native/core/SeatManager.cpp",
-        "implementation/warlock/qa/check-focus-core.py",
-        "implementation/warlock/qa/current-focus-core.json",
-        "implementation/warlock/qa/current-native-pair.json",
-        "implementation/warlock/qa/check-native-authority.py"
-      ],
-      "before": "Retained Task View Escape did not deliver keyboard input back to the eligible opener.",
-      "after": "Task View browse is observation-only and Escape returns the native keyboard recipient to its eligible opener.",
-      "verification": [
-        "Current-source native Task View local browsing, actual control pixels and Escape/GTK keyboard recipient; fix eligible focus policy if the retained failure persists.",
-        "Compile one owning compositor TU, preserve ordered archive members and strict dependencies/exports, refresh exact owning authority pair; repeat actual Escape recipient and retirement negative case."
-      ],
-      "state": "implemented; native Escape returns surviving opener keyboard focus; retired opener negative and current-tuple regressions pass; independent/AT remain open",
-      "evidence": "implementation/warlock/qa/evidence/taskview-focus-return/manifest.json"
-    },
-    {
-      "id": "taskbar-primary-actions",
-      "requirements": [
-        "ELM-UI-004"
-      ],
-      "scenarios": [
-        "taskbar-inactive",
-        "taskbar-active",
-        "taskbar-minimized"
-      ],
-      "before": "Single-family primary decision policy exists, but native visible activation, minimize succession and restore cases are not yet adjudicated.",
-      "after": "A native single-family primary action visibly activates inactive windows, minimizes the active family to its eligible MRU successor and restores/activates minimized windows without duplicate launch.",
-      "paths": [
-        "src/Taskbar.elm",
-        "src/TaskbarShell.elm",
-        "src/Surface.elm",
-        "src/Desktop.elm",
-        "native/authority.cpp",
-        "native/host.c",
-        "native/shared-host.c",
-        "qa/native-window-feedback.py",
-        "qa/check-search.py",
-        "qa/current-search-build.json",
-        "qa/check-native-authority.py",
-        "qa/current-native-pair.json",
-        "assets/elm.js",
-        "assets/bar.js",
-        "assets/popup.js"
-      ],
-      "verification": [
-        "Protected native pointer primary actions with exact identities, committed receipts, actual window pixels and GTK keyboard recipient after each action; eligible MRU focus succession and no launches.",
-        "One native stale-context refusal without target mutation or replay; preserve workspace/output membership. Native primary keyboard and applicable AT obligations are separately recorded."
-      ],
-      "state": "implemented state labels; native pointer primary activation/minimize/restore, MRU/desktop focus, exact receipts and physical labels pass; keyboard/AT/independent acceptance pending",
-      "evidence": "implementation/warlock/qa/evidence/taskbar-primary/current-manifest.json"
-    },
-    {
-      "id": "switcher-sequence",
-      "requirements": [
-        "ELM-UI-003",
-        "ELM-UX-012",
-        "ELM-UX-013"
-      ],
-      "scenarios": [
-        "switcher-order",
-        "switcher-cancel",
-        "switcher-membership",
-        "switcher-zero-one",
-        "switcher-retire-arrive",
-        "ux-012",
-        "ux-013"
-      ],
-      "before": "Integrated switcher local controls work, but no global native Alt-Tab entry journal freezes membership before readiness or guards cancelled selection at effect commit.",
-      "after": "Native Alt-Tab entry records exact frozen membership/history and numbered direction/release/cancel; Elm resolves once through the existing native effect path with cancellation guarded at native commit.",
-      "paths": [
-        "src/Switcher.elm",
-        "src/Desktop.elm",
-        "src/Surface.elm",
-        "src/SurfaceController.elm",
-        "src/SurfaceRenderer.elm",
-        "src/Inspection.elm",
-        "src/Effects.elm",
-        "src/TaskbarShell.elm",
-        "native/authority.cpp",
-        "native/host.c",
-        "native/shared-host.c",
-        "native/surface.h",
-        "adapter/daemon.py",
-        "adapter/effect_endpoint.py",
-        "assets/popup-adapter.js",
-        "assets/elm.js",
-        "assets/bar.js",
-        "assets/popup.js",
-        "qa/SwitcherReplay.elm",
-        "qa/switcher.qnt",
-        "qa/check-search.py",
-        "qa/check-native-authority.py",
-        "qa/current-native-pair.json",
-        "qa/current-search-build.json",
-        "qa/native-window-feedback.py",
-        "native/switcher-bindings.lua",
-        "native/core/SeatManager.cpp",
-        "qa/check-focus-core.py",
-        "qa/current-focus-core.json",
-        "native/shared-context.h",
-        "native/shared-context-test.c"
-      ],
-      "verification": [
-        "Compiled real integrated Elm switcher and generation/ordinal replay: A/B/C order, cancellation, zero/one, retirement/new-arrival freeze and early release exactly once.",
-        "Changed owning native authority TU with exact ABI; existing focus succession regression after native history changes.",
-        "Protected native actual switcher controls, local cycling, cancellation, exact chosen activation/restore and current native history; native pre-ready chord journal and AT acceptance remain separately qualified.",
-        "Lease-bound native Escape and renderer physical-release routing; exact native terminal cache retry after later selection preparation.",
-        "Actual one-step selected retirement and two-step buffered retirement before Elm startup; native modal GTK recipient, all-workspace minimized restore and special-workspace exclusion."
-      ],
-      "state": "native global chord, pre-ready retirement, modal and workspace-2 membership observed; lock/other-output/independent/AT remain open",
-      "lastComponentEvidence": "implementation/warlock/qa/evidence/switcher-membership/manifest.json",
-      "lastObservedBehavior": "Buffered physical Tab steps preserve entry-time positions through pre-ready retirement; native modal family activates the modal GTK recipient once, minimized workspace-2 peer restores without transfer, special-workspace root is excluded. Prior current global order/cancel/zero-one/cache-retry regression remains passing.",
-      "nextSourceWork": "Native lock/exclusive-input and other-output membership fixtures, applicable AT and independent scenario verdicts; continue other mandatory GUI slices without treating these remaining acceptance observations as release completion."
-    },
-    {
-      "id": "pinned-window-menus",
-      "requirements": [
-        "ELM-UI-008",
-        "ELM-UX-023"
-      ],
-      "scenarios": [
-        "menu-invocation",
-        "keyboard-menus"
-      ],
-      "before": "A running pinned application presents a bar:pin identity, but context resolution recognizes only bar:group; secondary click, Menu and Shift-F10 do not expose its window menu.",
-      "after": "Current unambiguous running pins resolve to their existing taskbar group and open the same identity-bound native/Elm menu through pointer and keyboard; unavailable, stale and zero-window identities stay refused.",
-      "paths": [
-        "implementation/warlock/src/Surface.elm",
-        "implementation/warlock/src/Desktop.elm",
-        "implementation/warlock/src/Catalog.elm",
-        "implementation/warlock/src/Pins.elm",
-        "implementation/warlock/src/TaskbarShell.elm",
-        "implementation/warlock/qa/PinnedMenuReplay.elm",
-        "implementation/warlock/qa/check-search.py",
-        "implementation/warlock/qa/native-window-feedback.py",
-        "implementation/warlock/qa/current-search-build.json",
-        "implementation/warlock/assets/elm.js",
-        "implementation/warlock/assets/bar.js",
-        "implementation/warlock/assets/popup.js",
-        "implementation/warlock/native/shared-host.c",
-        "implementation/warlock/native/core/SeatManager.cpp",
-        "implementation/warlock/qa/check-focus-core.py",
-        "implementation/warlock/qa/current-focus-core.json",
-        "implementation/warlock/qa/check-native-authority.py",
-        "implementation/warlock/qa/current-native-pair.json",
-        "implementation/warlock/qa/menu-focus.qnt"
-      ],
-      "verification": [
-        "Compiled current Elm roots, fourteen typed pin/menu cases, focus publication model and six return-focus model cases plus 100 safety traces.",
-        "Single owning SeatManager TU relink with unchanged exports/layouts, exact-header native authority rebuild and current source/binary hashes.",
-        "Protected native pin/menu/keyboard/minimize/restore/GTK-recipient and Task View mode-transition campaign; current global Alt-Tab regression. Original dense/enlarged-text, AT and independent observations remain open."
-      ],
-      "state": "implemented native running-pin menu journey; two original scenarios partial",
-      "nextSourceWork": "Implement/qualify dense taskbar overflow and enlarged-text selection reveal for the original ELM-UI-008 fixtures; retain current menu/popup custody and native focus behavior.",
-      "evidence": "implementation/warlock/qa/evidence/pinned-window-menus/manifest.json",
-      "lastObservedBehavior": "Secondary click/Menu/Shift-F10 and arrow/Escape routes, current-revision focus after inactive minimize, exact one restore and actual GTK typing; Task View after menus and current Alt-Tab regression pass."
-    },
-    {
-      "id": "dense-taskbar-overflow",
-      "requirements": [
-        "ELM-UI-008"
-      ],
-      "scenarios": [
-        "overflow-first-last",
-        "overflow-resize",
-        "menu-invocation"
-      ],
-      "paths": [
-        "implementation/warlock/src/SurfaceRenderer.elm",
-        "implementation/warlock/assets/shell.css",
-        "implementation/warlock/assets/bar-adapter.js",
-        "implementation/warlock/native/shared-host.c",
-        "implementation/warlock/qa/check-search.py",
-        "implementation/warlock/qa/native-window-feedback.py",
-        "implementation/warlock/qa/current-search-build.json",
-        "implementation/warlock/assets/elm.js",
-        "implementation/warlock/assets/bar.js",
-        "implementation/warlock/assets/popup.js",
-        "implementation/warlock/qa/dense-taskbar-browser.mjs",
-        "implementation/warlock/assets/context.js",
-        "implementation/warlock/README.md"
-      ],
-      "before": "Fixed 48px controls and 16px text do not adapt to enlarged text, and the bar has no explicit keyboard endpoint navigation or selected-item reveal after resizing.",
-      "after": "A dense bar scales with text, keeps configured order, supports wheel/keyboard endpoints and reveals the selected current item after output resizing; its existing context menus retain focus and identity.",
-      "verification": [
-        "Focused Elm/host build, browser first/last/disabled/order/resize checks at enlarged text, and protected native dense enlarged-text first/last/menu/resize journey."
-      ],
-      "state": "Implemented dense taskbar scaling/navigation; current native and component observations recorded, original AT/independent acceptance open.",
-      "nextSourceWork": "Complete broader dense multi-member picker/action overflow and applicable AT; continue mandatory snap/output, preview, settings/Files and release journeys under original oracles.",
-      "evidence": {
-        "path": "implementation/warlock/qa/evidence/dense-taskbar/manifest.json",
-        "sha256": "b8c2dca5159e2e1a766e998c2487f5748b2f3e8c4351b3b754db109a6fb5afc3"
-      }
-    },
-    {
-      "id": "dense-window-picker",
-      "requirements": [
-        "ELM-UI-008",
-        "ELM-UI-004"
-      ],
-      "scenarios": [
-        "overflow-first-last",
-        "overflow-resize",
-        "menu-invocation",
-        "taskbar-group"
-      ],
-      "paths": [
-        "implementation/warlock/src/SurfaceRenderer.elm",
-        "implementation/warlock/assets/popup-adapter.js",
-        "implementation/warlock/assets/shell.css",
-        "implementation/warlock/qa/check-search.py",
-        "implementation/warlock/qa/dense-taskbar-browser.mjs",
-        "implementation/warlock/qa/native-window-feedback.py",
-        "implementation/warlock/qa/current-search-build.json",
-        "implementation/warlock/assets/elm.js",
-        "implementation/warlock/assets/bar.js",
-        "implementation/warlock/assets/popup.js",
-        "implementation/warlock/README.md"
-      ],
-      "before": "Dense picker members can be reached by Tab, but have no explicit arrow/endpoints or retained logical selection through an ordinary publication.",
-      "after": "Dense picker members and controls remain reachable and visible by arrows and endpoints; current logical focus survives the same lease, and selection activates only the chosen current native member.",
-      "verification": [
-        "Actual compiled Popup browser resize/disabled/lease navigation and protected ten-root enlarged-text native picker/menu/activation/recipient journey."
-      ],
-      "state": "implemented; 30 browser checks, ten-root native keyboard/menu/activation/pixels/recipient and default launcher regression observed; original AT/independent/native popup reflow/action overflow remain open",
-      "nextSourceWork": "Implement and qualify action-menu overflow, then native popup reflow selection continuity and applicable AT.",
-      "evidence": "implementation/warlock/qa/evidence/dense-picker/current-manifest.json"
-    },
-    {
-      "id": "dense-menu-reveal",
-      "requirements": [
-        "ELM-UI-008"
-      ],
-      "scenarios": [
-        "overflow-first-last",
-        "menu-invocation"
-      ],
-      "paths": [
-        "implementation/warlock/assets/context.js",
-        "implementation/warlock/assets/shell.css",
-        "implementation/warlock/qa/check-search.py",
-        "implementation/warlock/qa/dense-taskbar-browser.mjs",
-        "implementation/warlock/qa/native-window-feedback.py",
-        "implementation/warlock/qa/current-search-build.json",
-        "implementation/warlock/assets/elm.js",
-        "implementation/warlock/assets/bar.js",
-        "implementation/warlock/assets/popup.js",
-        "implementation/warlock/README.md",
-        "implementation/warlock/assets/popup-adapter.js"
-      ],
-      "before": "Menu policy selects and focuses an operation, but same-node content growth has no explicit selected-row reveal.",
-      "after": "The current Elm-selected operation stays visibly revealed as a bounded menu overflows or its content and viewport change.",
-      "verification": [
-        "Actual compiled menu projection/navigation/growth/disabled/blur regression and protected short-output 200%-text native endpoint, Tab/Escape and operation-label journey."
-      ],
-      "state": "implemented; native current-operation overflow at 200% text, enabled endpoints, Tab/Escape and label pixels observed; component growth/manual-scroll/Close preservation verified; original AT/independent/native reflow remain open",
-      "nextSourceWork": "Preserve logical menu/picker selection through native active-popup reflow, then obtain applicable AT and independent original-scenario observations.",
-      "evidence": "implementation/warlock/qa/evidence/dense-menu/manifest.json"
-    },
-    {
-      "id": "live-motion-preference",
-      "requirements": [
-        "ELM-UI-014",
-        "ELM-UI-018"
-      ],
-      "scenarios": [
-        "live-motion-minimize",
-        "live-motion-restore",
-        "live-motion-switcher",
-        "live-motion-Task View",
-        "motion-enable",
-        "motion-overlays",
-        "motion-disable"
-      ],
-      "paths": [
-        "implementation/warlock/src/MotionPreferences.elm",
-        "implementation/warlock/src/Motion.elm",
-        "implementation/warlock/src/Desktop.elm",
-        "implementation/warlock/src/Surface.elm",
-        "implementation/warlock/adapter/motion_preferences.py",
-        "implementation/warlock/adapter/catalog_transport.py",
-        "implementation/warlock/adapter/daemon.py",
-        "implementation/warlock/native/authority.cpp",
-        "implementation/warlock/native/motion-profile.inc",
-        "implementation/warlock/native/host.c",
-        "implementation/warlock/qa/LiveMotionReplay.elm",
-        "implementation/warlock/qa/MotionReplay.elm",
-        "implementation/warlock/qa/check-live-motion.py",
-        "implementation/warlock/qa/check-search.py",
-        "implementation/warlock/qa/native-window-feedback.py",
-        "implementation/warlock/qa/motion-profile.qnt",
-        "implementation/warlock/qa/current-search-build.json",
-        "implementation/warlock/qa/current-native-pair.json",
-        "implementation/warlock/assets/elm.js",
-        "implementation/warlock/assets/bar.js",
-        "implementation/warlock/assets/popup.js",
-        "implementation/warlock/README.md"
-      ],
-      "before": "The native motion input has no saved explicit override; current profile changes do not settle a retained accepted native family on its next valid presentation.",
-      "after": "Settings persists a typed system/reduced/full override with exact revision CAS. Confirmed preferences govern live native and shell motion without replay, target/focus/deadline changes or repeated completed motion.",
-      "verification": [
-        "Actual root replay for source precedence, saved/refused/unknown outcomes, existing pending window identity/deadline, disabling without replay and binding retirement; private durable storage/version/CAS tests and bounded motion schedules. Original protected native keyboard save/reset/restart, live minimize/restore and separate overlay/source-change recordings at six-second deadlines; AT and independent acceptance remain explicit."
-      ],
-      "status": "completed-partial",
-      "observed": "Actual Settings three-choice motion override, strict revisioned persistence/reset, source precedence, unknown-write read-only recovery, native accepted-family goal settlement without replay. Actual compiled root/store/model/host and owning ABI closure pass. Native keyboard five saves/resets, actual GTK changes and whole-host Full override restart pass; combined recording fails before a subsequent normal-profile effect because its application control is off-screen. Mid-flight and full original qualification remain open.",
-      "missingObservations": [
-        "Original motion-enable has no observed intermediate restore geometry or exactly-once proxy retirement. Native accepted-family/goal settlement compiles but has not been qualified during a real intermediate frame; no proxy behavior is inferred.",
-        "Original live-motion-minimize/live-motion-restore/live-motion-switcher/live-motion-Task View toggle-during-transition intervals and resource ownership are not established by post-completion GTK changes or the Settings journey.",
-        "Original motion-overlays requires separate switcher, Task View and snap open/navigation/dismissal fixtures. Current native Task View reduced-profile recording is only one interval.",
-        "Original motion-disable post-completion source disable/no-replay is observed, but the subsequent normal-profile window operation was not submitted: the second native campaign stopped at an application button outside the scrolled viewport. Its helper correction is not natively rerun; no third qualification campaign.",
-        "Independent original scenario/requirement review, applicable native AT and full release hardware/resource/journey/package/deployment obligations remain open."
-      ],
-      "investigationStopped": true,
-      "evidence": {
-        "path": "implementation/warlock/qa/evidence/live-motion/manifest.json",
-        "sha256": "9f6e387b3560624a9c1f8577d73ffac529baab4d1d004dd6c947913602492c99",
-        "scope": "Actual Settings three-choice motion override, strict revisioned persistence/reset, source precedence, unknown-write read-only recovery, native accepted-family goal settlement without replay. Actual compiled root/store/model/host and owning ABI closure pass. Native keyboard five saves/resets, actual GTK changes and whole-host Full override restart pass; combined recording fails before a subsequent normal-profile effect because its application control is off-screen. Mid-flight and full original qualification remain open.",
-        "sourceBaseRevision": "eb62e2333cc3816a2f4a2c9a650f7070d7507b17",
-        "sourceTuple": {
-          "core": {
-            "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/focus-core-1791440640372653118/Hyprland",
-            "sha256": "668850f9599a314bce727cb3e4ab96f2605cc23dbae44cbac19bbb7818604898"
-          },
-          "plugin": {
-            "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791489372596689127/elm-window-geometry-authority.so",
-            "sha256": "aea28fae8b9b25321d42bfe1da60e7dfd0ffd468f000df715e1a644094f6d28e"
-          },
-          "aquamarine": {
-            "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
-            "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
-          }
-        },
-        "reviewerDisposition": "Owner-observed partial implementation and native subintervals; original midpoint/proxy/subsequent-profile/overlay/AT and independent acceptance remain open."
-      }
-    },
-    {
-      "id": "observed-pin-max-state",
-      "requirements": [
-        "ELM-UX-016"
-      ],
-      "scenarios": [
-        "ux-016"
-      ],
-      "paths": [
-        "implementation/warlock/src/ActionProjection.elm",
-        "implementation/warlock/src/NativeProvider.elm",
-        "implementation/warlock/src/Provider.elm",
-        "implementation/warlock/src/Taskbar.elm",
-        "implementation/warlock/src/Surface.elm",
-        "implementation/warlock/src/SurfaceRenderer.elm",
-        "implementation/warlock/src/Effects.elm",
-        "implementation/warlock/src/Shell.elm",
-        "implementation/warlock/native/authority.cpp",
-        "implementation/warlock/native/geometry-effects.inc",
-        "implementation/warlock/native/shared-host.c",
-        "implementation/warlock/native/surface.h",
-        "implementation/warlock/qa/check-search.py",
-        "implementation/warlock/qa/check-native-authority.py",
-        "implementation/warlock/qa/current-search-build.json",
-        "implementation/warlock/qa/current-native-pair.json",
-        "implementation/warlock/qa/native-window-feedback.py",
-        "implementation/warlock/assets/elm.js",
-        "implementation/warlock/assets/bar.js",
-        "implementation/warlock/assets/popup.js",
-        "implementation/warlock/README.md",
-        "implementation/warlock/src/MenuBridge.elm",
-        "implementation/warlock/src/GeometryProjection.elm",
-        "implementation/warlock/adapter/geometry_endpoint.py",
-        "implementation/warlock/adapter/daemon.py",
-        "implementation/warlock/native/geometry.inc",
-        "implementation/warlock/native/core/ConfigActions.cpp",
-        "implementation/warlock/qa/check-pin-core.py",
-        "implementation/warlock/qa/current-pin-core.json",
-        "implementation/warlock/qa/PinMaxReplay.elm",
-        "implementation/warlock/qa/native-pin-max.py",
-        "implementation/warlock/native/host-journal.h",
-        "implementation/warlock/adapter/admission_ledger.py",
-        "implementation/warlock/adapter/recovery_journal.py",
-        "implementation/warlock/qa/SnapReplay.elm",
-        "implementation/warlock/qa/SwitcherReplay.elm",
-        "implementation/warlock/qa/TaskViewReplay.elm",
-        "implementation/warlock/native/host.c",
-        "implementation/warlock/assets/shell.css"
-      ],
-      "before": "The integrated native action projection carries focus, minimize and attention but no explicit committed pin/MAX pair. The ordinary window actions do not expose that observed pair for a maximized family.",
-      "after": "Expose supported typed always-on-top intent and show pin/MAX only from correlated current native observations; keep pending/refused/Unknown distinct, preserve geometry, native hit target and no-replay custody.",
-      "verification": [
-        "Compile changed Elm roots and owning native units against the exact ABI. Meaningful replay for pending/stale/Unknown versus correlated state and actual original pin/unpin on a maximized family overlapping a float, native scene/hit target and displayed state agreement."
-      ],
-      "status": "completed-partial",
-      "investigationStopped": true,
-      "missingObservation": "Always-on-top completion predicate exceeds original six seconds; retained in picker-target-stability/manifest.json. No pin/unpin acceptance."
-    },
-    {
-      "id": "settings-first-use-help",
-      "requirements": [
-        "ELM-UI-020",
-        "ELM-UX-023"
-      ],
-      "scenarios": [
-        "first-use",
-        "keyboard-settings"
-      ],
-      "before": "Settings provides preference controls but no dismissible, reusable keyboard guidance or explanation of unconfirmed actions.",
-      "after": "Offer dismissible help within Settings, retain dismissal for this host session, let keyboard users reopen it without saving preferences or replaying mutations.",
-      "paths": [
-        "implementation/warlock/src/Desktop.elm",
-        "implementation/warlock/src/Surface.elm",
-        "implementation/warlock/src/SurfaceRenderer.elm",
-        "implementation/warlock/qa/SettingsReplay.elm",
-        "implementation/warlock/qa/settings-browser.mjs",
-        "implementation/warlock/qa/check-search.py",
-        "implementation/warlock/qa/native-settings-help.py",
-        "implementation/warlock/qa/current-search-build.json",
-        "implementation/warlock/assets/elm.js",
-        "implementation/warlock/assets/bar.js",
-        "implementation/warlock/assets/popup.js",
-        "implementation/warlock/README.md"
-      ],
-      "verification": [
-        "Compile actual Elm roots and existing Settings replay, verify default/dismiss/reopen/stale-view/pending/Unknown behavior and no preference writes; render actual Popup and use real keyboard navigation/dismissal with protected native host. Original shortcut mapping/conflict persistence, offline rollback, AT and independent acceptance remain explicit."
-      ],
-      "status": "implemented-partial",
-      "evidence": "implementation/warlock/qa/evidence/settings-help/manifest.json",
-      "nextSourceWork": "Implement preference-safe first-use enablement and explicit shortcut-conflict choices; offline recovery and AT remain separate original obligations."
-    },
-    {
-      "id": "repeated-launcher-dismissal",
-      "requirements": [
-        "ELM-UX-023"
-      ],
-      "scenarios": [
-        "keyboard-launcher"
-      ],
-      "before": "The actual Apps menu reopens through a preserved user override, but Escape does not close that repeated surface within the original six seconds.",
-      "after": "Dismiss repeated current Apps surfaces on an actual terminal-key release, with current identity/lease and correct native focus restoration; no repeated launch or stale close.",
-      "paths": [
-        "implementation/warlock/assets/popup-adapter.js",
-        "implementation/warlock/src/Popup.elm",
-        "implementation/warlock/src/SurfaceController.elm",
-        "implementation/warlock/src/Surface.elm",
-        "implementation/warlock/native/shared-context.h",
-        "implementation/warlock/native/host.c",
-        "implementation/warlock/qa/check-search.py",
-        "implementation/warlock/qa/native-shortcut-preferences.py",
-        "implementation/warlock/qa/current-search-build.json",
-        "implementation/warlock/assets/elm.js",
-        "implementation/warlock/assets/bar.js",
-        "implementation/warlock/assets/popup.js",
-        "implementation/warlock/README.md",
-        "implementation/warlock/assets/activation.js",
-        "implementation/warlock/qa/launcher-dismissal.js",
-        "implementation/warlock/qa/ime-browser.mjs"
-      ],
-      "verification": [
-        "Actual repeated Apps/context current-lease keydown/keyup and composing/stale negative in the compiled roots/browser. Protected original keyboard-launcher repeated open/dismiss with preserved user override, no pointer/focus workaround or deadline change; AT and independent acceptance separate."
-      ]
-    },
-    {
-      "id": "default-shortcut-lifecycle",
-      "requirements": [
-        "ELM-UX-023"
-      ],
-      "scenarios": [
-        "keyboard-launcher"
-      ],
-      "paths": [
-        "implementation/warlock/native/authority.cpp",
-        "implementation/warlock/native/shortcut-bindings.inc",
-        "implementation/warlock/qa/shortcut-registration.qnt",
-        "implementation/warlock/qa/check-search.py",
-        "implementation/warlock/qa/check-native-authority.py",
-        "implementation/warlock/qa/native-shortcut-preferences.py",
-        "implementation/warlock/qa/current-native-pair.json",
-        "implementation/warlock/qa/current-search-build.json",
-        "implementation/warlock/README.md"
-      ],
-      "before": "Free default Apps shortcut disappears during native session configuration; inventory reports available but active keep and original keyboard launcher never opens.",
-      "after": "Register approved free defaults after configuration and preserve explicit Keep/selected chords across reload without changing foreign bindings or replaying effects.",
-      "verification": [
-        "Quint LLM Kit shared-state lifecycle model with reachability and stale/no-replay/foreign-preservation checks; exact owning native ABI build and original keyboard launcher plus conflict/Keep/reload recipient observations, original six-second waits and normal protected cleanup."
-      ],
-      "status": "implemented-partial",
-      "evidence": "implementation/warlock/qa/evidence/shortcut-registration/manifest.json",
-      "missingObservation": "Combined original keyboard campaign still fails at repeated Home taskbar-group entry after launcher/jump-list/notification/system/settings/group subintervals pass. Customized-binding campaign passes repeated Apps release/focus and native configuration reload, then fails the foreign original-shortcut focus recipient. Whole-host restart/offline rollback, native IME/AT, full combined keyboard journey and independent acceptance remain open."
-    },
-    {
-      "id": "repeated-taskbar-home",
-      "requirements": [
-        "ELM-UX-023"
-      ],
-      "scenarios": [
-        "keyboard-taskbar-groups"
-      ],
-      "paths": [
-        "implementation/warlock/assets/bar-adapter.js",
-        "implementation/warlock/src/Bar.elm",
-        "implementation/warlock/src/SurfaceController.elm",
-        "implementation/warlock/src/Surface.elm",
-        "implementation/warlock/src/SurfaceRenderer.elm",
-        "implementation/warlock/native/host.c",
-        "implementation/warlock/native/shared-host.c",
-        "implementation/warlock/native/shared-context.h",
-        "implementation/warlock/qa/check-search.py",
-        "implementation/warlock/qa/dense-taskbar-browser.mjs",
-        "implementation/warlock/qa/native-window-feedback.py",
-        "implementation/warlock/qa/current-search-build.json",
-        "implementation/warlock/README.md",
-        "implementation/warlock/assets/activation.js",
-        "implementation/warlock/qa/activation-release.js",
-        "implementation/warlock/qa/ime-browser.mjs"
-      ],
-      "before": "After group activation and repeated Apps dismissal, native Home reaches the bar but the enabled first group does not receive keyboard focus within the original six seconds.",
-      "after": "Current keyboard navigation reaches the first group after repeated surface transitions, preserves current identity/focus and allows the original next group/menu operations without pointer or native focus workarounds.",
-      "verification": [
-        "Current compiled bar navigation and changed focus/input lifecycle checks; relevant existing Quint focus invariant and exact native keyboard campaign with original six-second waits, actual recipient, zero pointer input and normal owned cleanup. Native AT and independent acceptance remain separate."
-      ],
-      "status": "implemented-partial",
-      "evidence": "implementation/warlock/qa/evidence/taskbar-home/manifest.json",
-      "observed": "Repeated native Home selects the enabled current taskbar group after real Enter activation and Apps transitions; original group member receives input, repeated group/menu targets remain current, and snap chooser is reached. Enter activates once on matched release; stale/composing/blurred controls cannot activate. The unchanged combined native journey fails later on snap-protocol refusal.",
-      "missingObservation": "Snap remains Refused (snap-protocol) at the original six-second deadline. Remaining switcher/Task View intervals, native AT/IME consumers, independent scenario review and full release hardware/resource/package/deployment remain open. Browser preedit verification does not establish native IME acceptance.",
-      "nextSourceWork": "Repair current snap placement protocol admission while preserving grants, output/work-area revisions, no replay and the original six-second keyboard journey."
-    },
-    {
-      "id": "current-protocol-snap",
-      "requirements": [
-        "ELM-UX-023"
-      ],
-      "scenarios": [
-        "keyboard-snap-chooser"
-      ],
-      "paths": [
-        "implementation/warlock/native/snap-placement.inc",
-        "implementation/warlock/native/authority.cpp",
-        "implementation/warlock/native/geometry-effects.inc",
-        "implementation/warlock/qa/snap-chooser.qnt",
-        "implementation/warlock/qa/check-snap.py",
-        "implementation/warlock/qa/SnapReplay.elm",
-        "implementation/warlock/qa/check-search.py",
-        "implementation/warlock/qa/check-native-authority.py",
-        "implementation/warlock/qa/native-window-feedback.py",
-        "implementation/warlock/qa/current-native-pair.json",
-        "implementation/warlock/qa/current-search-build.json",
-        "implementation/warlock/README.md"
-      ],
-      "before": "Original keyboard journey reaches Right half but current protocol 3 authority returns Refused snap-protocol rather than placing the selected window.",
-      "after": "The current advertised protocol admits snap under the unchanged current grant, output/work-area, geometry, input and no-replay checks; keyboard choice visibly places its target and completes within the original deadline.",
-      "verification": [
-        "Quint LLM Kit execute-spec lightweight path: preserve existing snap state machine and sampled stale/no-replay invariants; actual compiled snap replay/wire/browser, exact owning native authority build and unchanged original keyboard-only journey/cleanup. Native AT and independent acceptance remain separate."
-      ],
-      "status": "implemented-partial",
-      "evidence": "implementation/warlock/qa/evidence/current-protocol-snap/manifest.json",
-      "observed": "Advertised geometry protocol 3 now admits snap alongside protocol 2 with unchanged native current-grant, work-area/output/workspace, geometry feasibility, focus/peer and no-replay checks. Original combined physical keyboard journey passes all nine surfaces at original deadlines: selected-family input, current menu, correlated committed right-half placement, Task View activation/dismissal and held-Alt switching; zero injected pointer events and normal cleanup.",
-      "missingObservation": "Independent original scenario/requirement review and native accessibility/IME consumers remain open. This fixture disables accessibility bridging; browser/Elm checks do not establish native AT. Protocol 2 admission remains in source and typed wire tests, but this current native journey negotiates protocol 3; hardware/multi-output/cadence/resource/full-release packaging and deployment remain separate.",
-      "nextSourceWork": "Next mandatory window behavior slice: inspect remaining pin/MAX completion and workspace transfer protocol admission against original scenarios. Keep native AT and independent keyboard acceptance separate."
-    },
-    {
-      "id": "pin-max-order-stability",
-      "requirements": [
-        "ELM-UX-016"
-      ],
-      "scenarios": [
-        "ux-016"
-      ],
-      "paths": [
-        "implementation/warlock/src/MenuBridge.elm",
-        "implementation/warlock/qa/PinMaxReplay.elm",
-        "implementation/warlock/qa/check-search.py",
-        "implementation/warlock/qa/menu-read-order.qnt",
-        "implementation/warlock/qa/menu-read-order_test.qnt",
-        "implementation/warlock/qa/check-menu-read-order.py",
-        "implementation/warlock/qa/native-pin-max.py",
-        "implementation/warlock/qa/native-window-feedback.py",
-        "implementation/warlock/qa/current-search-build.json",
-        "implementation/warlock/README.md",
-        "implementation/warlock/src/ReceiptRouter.elm",
-        "implementation/warlock/assets/elm.js",
-        "implementation/warlock/assets/bar.js",
-        "implementation/warlock/assets/popup.js"
-      ],
-      "before": "Native MAX menu pin selection is canceled after post-close read merely reorders identical native window facts; no pin request is emitted.",
-      "after": "Pin/unpin of a maximized family completes from fresh correlated observations despite list reordering, while changed complete peer/target facts, stale scope, duplicate/lost outcomes remain guarded. Displayed pin/MAX agrees with actual native state and hit target.",
-      "verification": [
-        "Quint LLM Kit spec-first model for complete fact equality and correlated read/no-replay; actual prepared MenuBridge replay with reordered peer records and changed/stale negatives, changed Elm roots/host and protected original native pin/MAX/pixel-to-GTK hit journey with original six-second waits."
-      ],
-      "status": "implemented-partial",
-      "evidence": "implementation/warlock/qa/evidence/pin-max-order/manifest.json",
-      "observed": "Pin and unpin of a maximized family now traverse the shipped prepared menu and typed receipt/reservation registry. Complete legacy/geometry records compare by unique incarnation, retaining all values. Protected native ux-016 passes maximize/pin/unpin once each, preserved MAX geometry, correlated displayed states and visible pixel/real GTK hit recipients at original deadlines. All functional pin checks pass; shell exit later fails outstanding picker custody.",
-      "missingObservation": "Native shell exits 1 with Outstanding native picker custody/journal; private cleanup passes but normal client exit/plugin unload acceptance is not established for this pin run. Current combined keyboard regression fails repeated Home at original line 779 after six surfaces; earlier all-nine pass remains evidence only for its preceding tuple. Independent original scenario review, stable checked semantics and applicable AT/resource/release gates remain open.",
-      "nextSourceWork": "Repair current picker custody retirement on shell shutdown without extending its drain bound or discarding unacknowledged custody; separately make repeated Home focus reliable."
-    },
-    {
-      "id": "picker-shutdown-retirement",
-      "requirements": [
-        "ELM-DEL-021"
-      ],
-      "scenarios": [
-        "delivery-021"
-      ],
-      "paths": [
-        "implementation/warlock/native/host.c",
-        "implementation/warlock/native/shared-host.c",
-        "implementation/warlock/native/preview-control.h",
-        "implementation/warlock/native/picker-previews.inc",
-        "implementation/warlock/qa/check-search.py",
-        "implementation/warlock/qa/current-search-build.json",
-        "implementation/warlock/qa/native-pin-max.py",
-        "implementation/warlock/qa/native-window-feedback.py",
-        "implementation/warlock/qa/shutdown-preview.qnt",
-        "implementation/warlock/qa/shutdown-preview_test.qnt",
-        "implementation/warlock/qa/check-shutdown-preview.py",
-        "implementation/warlock/README.md"
-      ],
-      "before": "Actual native pin/MAX journey succeeds, but shutdown rejects renderer retirement controls and exits 1 with outstanding picker custody/journal.",
-      "after": "Shutdown seals desktop actions and acquisitions but processes exact owned ordered release/cancel/ack controls within the existing drain bound, retires original native custody and exits normally before module/compositor teardown.",
-      "verification": [
-        "Quint LLM Kit phase/retirement model with reachable drained closure and no new effects/acquisition, malformed/foreign/duplicate/late negative controls through actual shared receiver and preview router, compiled owning host and unchanged native pin/MAX journey with lease/exit/module/cleanup receipts."
-      ],
-      "status": "implemented-partial",
-      "evidence": "implementation/warlock/qa/evidence/picker-shutdown/manifest.json",
-      "nextSourceWork": "Fix intermittent Home target/focus navigation in the real taskbar; independent release-wide closure receipts and AT remain explicit. Shutdown retirement routes and the native pin/MAX journey now pass without weakening close or deadlines.",
-      "observed": "Real WebKit callback + both strict receivers admit only exact owned retirement controls during stop; unchanged native pin/MAX journey, strict close, normal client/helper exit, plugin unload and private cleanup pass. Failed preliminary runs retained."
-    },
-    {
-      "id": "taskbar-native-keyboard-return",
-      "requirements": [
-        "ELM-UX-023"
-      ],
-      "scenarios": [
-        "ux-023",
-        "keyboard-taskbar-groups"
-      ],
-      "before": "After repeated native Apps/picker dismissal, Home arrives at the GTK bar but is intermittently absent from the DOM handler, preventing the next keyboard-only group/menu journey.",
-      "after": "Exact already admitted GTK key replays redirected by a popup grab return once to their live original bar engine, preserving the physical proof and held-key state so the next real Home reaches DOM navigation without pointer input or effect replay.",
-      "paths": [
-        "implementation/warlock/native/host.c",
-        "implementation/warlock/native/shared-host.c",
-        "implementation/warlock/native/shared-context.h",
-        "implementation/warlock/native/shared-context-test.c",
-        "implementation/warlock/assets/bar-adapter.js",
-        "implementation/warlock/qa/check-search.py",
-        "implementation/warlock/qa/current-search-build.json",
-        "implementation/warlock/qa/native-window-feedback.py",
-        "implementation/warlock/qa/bar-keyboard-return.qnt",
-        "implementation/warlock/qa/bar-keyboard-return_test.qnt",
-        "implementation/warlock/qa/check-bar-keyboard-return.py",
-        "implementation/warlock/README.md"
-      ],
-      "verification": [
-        "Quint LLM Kit exact source/signature/replay schedules with positive repeated-return witnesses and native authority/proof preservation; real owning shared-context source tests include all eight immutable signature fields, duplicate, retired, ambiguous and replacement negatives; unchanged original nine-surface native keyboard journey and cleanup at original timings."
-      ],
-      "status": "implemented-partial",
-      "participantRecord": ".warlock-contributor/bar-keyboard-return.json",
-      "evidence": "implementation/warlock/qa/evidence/bar-keyboard-replay/manifest.json",
-      "observed": "Exact original GTK replay returns to its live bar engine once without a new physical proof/held-key transition. Both current full nine-surface native keyboard journeys pass at original timings, with zero pointer injection and normal cleanup.",
-      "nextSourceWork": "Deliver the original native primary taskbar activation/minimize/restore keyboard journey, including real recipients and zero-window catalog launch; independent AT/IME and release-wide closure acceptance remain explicit."
-    },
-    {
-      "id": "taskbar-primary-keyboard",
-      "requirements": [
-        "ELM-UI-004"
-      ],
-      "scenarios": [
-        "taskbar-inactive",
-        "taskbar-active",
-        "taskbar-minimized"
-      ],
-      "paths": [
-        "implementation/warlock/qa/native-window-feedback.py",
-        "implementation/warlock/src/Taskbar.elm",
-        "implementation/warlock/src/TaskbarShell.elm",
-        "implementation/warlock/src/Desktop.elm",
-        "implementation/warlock/src/Surface.elm",
-        "implementation/warlock/native/shared-host.c",
-        "implementation/warlock/native/shared-context.h",
-        "implementation/warlock/assets/bar-adapter.js",
-        "implementation/warlock/assets/activation.js",
-        "implementation/warlock/qa/check-search.py",
-        "implementation/warlock/qa/current-search-build.json",
-        "implementation/warlock/README.md"
-      ],
-      "before": "Primary native activation/minimize/restore has pointer and subsequent real key-recipient evidence, but its original keyboard taskbar activation route is unqualified.",
-      "after": "The same real primary actions execute through keyboard-only taskbar entry and activation, with visible native state, MRU/desktop succession, exact receipts, no duplicate launch and original deadlines; fix a demonstrated product gap if encountered.",
-      "verification": [
-        "Extend the existing protected native primary fixture with actual key-only Apps/Escape/Home/bar traversal and matched Enter activation; retain original native journal, pixel, recipient, membership and cleanup oracles. Reuse the exact compiled source/core/plugin tuple unless product code changes; existing Quint authority/replay properties apply without a new model for a fixture-only addition."
-      ],
-      "status": "implemented-partial",
-      "participantRecord": ".warlock-contributor/primary-keyboard.json",
-      "evidence": "implementation/warlock/qa/evidence/taskbar-primary-keyboard/manifest.json",
-      "observed": "Actual keyboard-only primary actions pass original receipts/pixels/recipient and MRU/desktop succession with zero pointer injection and normal cleanup. Fixture verification only; no new product feature.",
-      "missingObservations": [
-        "Applicable native assistive-technology fixtures.",
-        "Independent original-scenario acceptance.",
-        "Zero-window keyboard launch, refusal and group requirements are separate cases."
-      ],
-      "nextSourceWork": "Keyboard zero-window pinned launch and the remaining observed workspace restore focus gap; native AT and independent original acceptance remain separate."
-    },
-    {
-      "id": "workspace-restore-recipient",
-      "requirements": [
-        "ELM-UI-002",
-        "ELM-UI-006",
-        "ELM-UX-008"
-      ],
-      "scenarios": [
-        "activate-other-workspace",
-        "overview-select",
-        "ux-008",
-        "activation-refused"
-      ],
-      "before": "Workspace restore has historical native evidence, but the current integrated source tuple has not qualified the original Task View and taskbar cross-workspace recipient, visible pixels and refusal journey.",
-      "after": "The original workspace-2 restore selects the preserved workspace, visibly restores the exact family, delivers keyboard input to its eligible target and preserves membership; stale refusal preserves visible focus. Repair a demonstrated current native gap without manual focus workaround.",
-      "paths": [
-        "implementation/warlock/qa/native-window-feedback.py",
-        "implementation/warlock/src/Desktop.elm",
-        "implementation/warlock/src/Taskbar.elm",
-        "implementation/warlock/src/Surface.elm",
-        "implementation/warlock/native/host.c",
-        "implementation/warlock/native/shared-host.c",
-        "implementation/warlock/native/shared-context.h",
-        "implementation/warlock/native/authority.cpp",
-        "implementation/warlock/native/navigation-modal.hpp",
-        "implementation/warlock/native/core/SeatManager.cpp",
-        "implementation/warlock/native/core/ConfigActions.cpp",
-        "implementation/warlock/qa/check-search.py",
-        "implementation/warlock/qa/check-native-authority.py",
-        "implementation/warlock/qa/current-search-build.json",
-        "implementation/warlock/qa/current-native-pair.json",
-        "implementation/warlock/qa/workspace-navigation.qnt",
-        "implementation/warlock/README.md"
-      ],
-      "verification": [
-        "Run unchanged original protected --workspace-navigation on exact current source/core/plugin tuple first. For demonstrated behavioral changes, map existing Quint properties via quint-llm-kit and typecheck/named/witness/safety checks before implementing; compile owning units only. Preserve original deadline, receipts, native pixels, real key recipient, membership, stale refusal and cleanup. Native AT, other-output and independent acceptance remain separate."
-      ],
-      "status": "implemented-partial",
-      "participantRecord": ".warlock-contributor/workspace-restore.json",
-      "evidence": "implementation/warlock/qa/evidence/workspace-restore-current/manifest.json",
-      "observed": "Current original workspace restore passes real recipients, pixels, exact receipts, membership and stale refusal; no product change needed.",
-      "nextSourceWork": "Repair the retained transfer-workspace native journey after establishing its current failing boundary."
-    },
-    {
-      "id": "task-view-transfer-native",
-      "requirements": [
-        "ELM-UX-018"
-      ],
-      "scenarios": [
-        "ux-018",
-        "transfer-refused",
-        "transfer-accepted"
-      ],
-      "before": "The Task View workspace transfer native fixture previously timed out after keyboard destination activation; pinned refusal and committed existing/empty workspace outcomes need current qualification.",
-      "after": "Task View transfer sends one fresh identity-correlated native request, retains workspace 1 with visible pinned refusal, and updates existing/empty destination membership only from matching native acceptance; cancellation emits no mutation.",
-      "paths": [
-        "implementation/warlock/src/Desktop.elm",
-        "implementation/warlock/src/Transfer.elm",
-        "implementation/warlock/src/Shell.elm",
-        "implementation/warlock/src/Effects.elm",
-        "implementation/warlock/native/authority.cpp",
-        "implementation/warlock/native/shared-host.c",
-        "implementation/warlock/native/shared-context.h",
-        "implementation/warlock/native/host.c",
-        "implementation/warlock/qa/native-window-feedback.py",
-        "implementation/warlock/qa/transfer-workspace.qnt",
-        "implementation/warlock/qa/check-transfer-workspace.py",
-        "implementation/warlock/qa/check-search.py",
-        "implementation/warlock/qa/check-native-authority.py",
-        "implementation/warlock/qa/current-search-build.json",
-        "implementation/warlock/qa/current-native-pair.json",
-        "implementation/warlock/qa/TransferReplay.elm",
-        "implementation/warlock/README.md"
-      ],
-      "verification": [
-        "Establish unchanged original --transfer-workspace result on the current exact source/core/plugin pair. Use quint-llm-kit to map existing transfer model to code before changing authority/reducer policy; retain no-replay and receipt correlation. Compile changed targets proportionately; pass original cancellation, pinned refusal, existing/empty workspace acceptance, native observations and normal cleanup with original deadlines. Independent original acceptance and native AT remain separate."
-      ],
-      "status": "implemented-partial",
-      "participantRecord": ".warlock-contributor/transfer-native.json",
-      "evidence": "implementation/warlock/qa/evidence/transfer-current/manifest.json",
-      "observed": "Original native transfer/refusal passes existing and empty workspace destinations, exact receipts, selected-only membership, visible refusal and normal cleanup. Fixture footer corrected; no product policy change.",
-      "nextSourceWork": "Implement requested effects-off and reduced-transparency settings with equivalent focus/state cues under the layered-window design contract."
-    },
-    {
-      "id": "layer-appearance-preferences",
-      "requirements": [
-        "ELM-UX-030",
-        "ELM-UX-027"
-      ],
-      "scenarios": [
-        "ux-030",
-        "ux-027"
-      ],
-      "before": "Settings saves theme and text scale; the agreed WARLOCK-LAYER-010 effects-off and reduced-transparency modes have no qualified user preference route.",
-      "after": "Users can disable soft shell effects and request opaque shell backing through Settings. Only committed validated values apply and survive host restart; unsaved/Unknown/stale values cannot alter appearance. Essential focus, state and outcome cues remain visible. Legacy schema-1 bytes remain unchanged until an explicit successful save upgrades to schema 2.",
-      "paths": [
-        "implementation/warlock/src/Settings.elm",
-        "implementation/warlock/src/Surface.elm",
-        "implementation/warlock/src/SurfaceRenderer.elm",
-        "implementation/warlock/adapter/shell_preferences.py",
-        "implementation/warlock/native/surface.h",
-        "implementation/warlock/assets/appearance.js",
-        "implementation/warlock/assets/shell.css",
-        "implementation/warlock/assets/elm.js",
-        "implementation/warlock/assets/bar.js",
-        "implementation/warlock/assets/popup.js",
-        "implementation/warlock/assets/bar-adapter.js",
-        "implementation/warlock/assets/popup-adapter.js",
-        "implementation/warlock/qa/SettingsReplay.elm",
-        "implementation/warlock/qa/LayerAppearanceReplay.elm",
-        "implementation/warlock/qa/check-settings.py",
-        "implementation/warlock/qa/settings-browser.mjs",
-        "implementation/warlock/qa/layer-appearance-browser.mjs",
-        "implementation/warlock/qa/layer-appearance.qnt",
-        "implementation/warlock/qa/layer-appearance_test.qnt",
-        "implementation/warlock/qa/check-layer-appearance.py",
-        "implementation/warlock/qa/check-search.py",
-        "implementation/warlock/qa/native-window-feedback.py",
-        "implementation/warlock/qa/current-search-build.json",
-        "implementation/warlock/README.md"
-      ],
-      "verification": [
-        "quint-llm-kit additive appearance transaction model: immutable draft/stored/applied flag pairs, exact CAS/receipt, lost receipt/no automatic replay and explicit read reconciliation; preserve existing Settings model. Typecheck, selected named tests, positive witnesses and sampled safety before integration. Extend actual store/Elm/browser checks for legacy preservation, strict booleans, both modes, stale/Unknown and focus/state cues; compile owning roots and GTK units with unchanged native C++ tuple. Native keyboard save/restart and pixels/input evidence remain separate from component checks."
-      ],
-      "status": "implemented-partial",
-      "participantRecord": ".warlock-contributor/layer-appearance.json",
-      "evidence": "implementation/warlock/qa/evidence/layer-appearance/manifest.json",
-      "observed": "Effects-off and reduced-transparency controls implemented; actual keyboard save, whole-host restart, isolated invalid-scale refusal and native named controls/solid focus pass. Twelve browser theme/flag pairs and original nine-surface keyboard regression pass with component/native scopes separated.",
-      "nextSourceWork": "Remove duplicate per-preview live regions and unavailable announcements under the original one-announcement-owner contract; native speech/braille and all-profile qualification remain separate."
-    },
-    {
-      "id": "notification-arrival-permission",
-      "requirements": [
-        "ELM-UI-010"
-      ],
-      "scenarios": [
-        "announce-notification arrival",
-        "announcement-dnd",
-        "announcement-urgency-opt-in"
-      ],
-      "before": "Notification observations retain history and targets but have no typed urgency or user-controlled announcement permission. New shared refusal route intentionally admits no notification source.",
-      "after": "Notification center exposes session-scoped Do not disturb and explicit critical-interruption opt-in. Elm admits new identity-bound arrivals politely by default, suppresses arrivals during DND while retaining history, and permits assertive delivery only for opted-in critical arrivals when DND is off. Refresh, duplicate observations, preference changes and pre-existing history never replay messages or move focus.",
-      "paths": [
-        "implementation/warlock/src/Notifications.elm",
-        "implementation/warlock/src/Desktop.elm",
-        "implementation/warlock/src/Surface.elm",
-        "implementation/warlock/src/OutcomeAnnouncements.elm",
-        "implementation/warlock/src/Announcement.elm",
-        "implementation/warlock/native/announcement-transport.h",
-        "implementation/warlock/adapter/notification_service.py",
-        "implementation/warlock/assets/elm.js",
-        "implementation/warlock/assets/bar.js",
-        "implementation/warlock/assets/popup.js",
-        "implementation/warlock/qa/notification-announcements.qnt",
-        "implementation/warlock/qa/notification-announcements_test.qnt",
-        "implementation/warlock/qa/check-notification-announcements.py",
-        "implementation/warlock/qa/NotificationAnnouncementReplay.elm",
-        "implementation/warlock/qa/check-notifications.py",
-        "implementation/warlock/qa/announcement-browser.mjs",
-        "implementation/warlock/qa/check-search.py",
-        "implementation/warlock/qa/current-search-build.json",
-        "implementation/warlock/qa/native-window-feedback.py",
-        "implementation/warlock/qa/notification-producer.py",
-        "implementation/warlock/README.md",
-        "implementation/warlock/src/SurfaceRenderer.elm",
-        "implementation/warlock/assets/popup-adapter.js"
-      ],
-      "verification": [
-        "quint-llm-kit additive single-Elm permission/identity model: init then one arrival action/witness, DND/opt-in/suppressed/new-identity events with explicit named tests, positive witnesses and sampled safety; preserve original receipt/owner models. Compile actual roots/GTK host; native session-bus urgency metadata and malformed-hint no escalation, typed root arrival/baseline/repeat/batch/focus guards, browser one-route polite/assertive regions and real policy controls. Relevant original protected native notification history/action journey plus named permission controls and exact native notification/announcement correlation; actual stable-focus speech/braille and independent acceptance remain partial."
-      ],
-      "status": "implemented-partial",
-      "participantRecord": ".warlock-contributor/notification-announcements.json",
-      "evidence": "implementation/warlock/qa/evidence/notification-announcements/manifest.json",
-      "observed": "Implemented session DND/critical consent with accessible pressed state, strict native urgency and critical nonexpiration. Permission model/typed/browser and original native notification journey pass. Real keyboard/producer arrivals show suppression/no replay and polite/assertive correlation while retaining the same focused DOM node. Native AT/speech/braille and independent acceptance remain open.",
-      "missingObservations": [
-        "Actual speech and braille, repeated-receipt delivery and reachable recovery/relationships through native AT.",
-        "Independent original-scenario acceptance.",
-        "Native batch/coalescing stress and full physical control/profile qualification.",
-        "Adapter-unavailable and relevant notification expiration/action-refusal announcements remain unfinished scope."
-      ],
-      "nextSourceWork": "Complete adapter-unavailable and relevant notification expiration/expired-action refusal announcement sources. Use quint-llm-kit to model guarded actual focus/user-invocation relevance before implementing, retain exact service/incarnation/request identity and no replay. Then qualify the integrated announcement routes with actual native AT speech/braille and continue the remaining GUI release scope."
-    },
-    {
-      "id": "adapter-unavailable-announcements",
-      "requirements": [
-        "ELM-UI-010"
-      ],
-      "scenarios": [
-        "announce-adapter unavailable"
-      ],
-      "before": "Adapter failures are visually reported through typed catalog/service/preference/connection state, but the shared announcement route has no unavailable source and failed opening reads can reissue Focus.",
-      "after": "Matched adapter failures carry a typed source, binding/request and available service/revision identity into the root-selected polite announcer. Repeated receipts/publications cannot reannounce or request focus. Existing read-only refresh/reconnect/detail controls remain reachable; empty notification-service occupancy can be re-probed on explicit refresh without replacing another owner or replaying actions.",
-      "paths": [
-        "implementation/warlock/src/AdapterNotice.elm",
-        "implementation/warlock/src/Desktop.elm",
-        "implementation/warlock/src/OutcomeAnnouncements.elm",
-        "implementation/warlock/adapter/notification_service.py",
-        "implementation/warlock/assets/elm.js",
-        "implementation/warlock/assets/bar.js",
-        "implementation/warlock/assets/popup.js",
-        "implementation/warlock/qa/adapter-announcements.qnt",
-        "implementation/warlock/qa/adapter-announcements_test.qnt",
-        "implementation/warlock/qa/check-adapter-announcements.py",
-        "implementation/warlock/qa/AdapterAnnouncementReplay.elm",
-        "implementation/warlock/qa/check-notifications.py",
-        "implementation/warlock/qa/announcement-browser.mjs",
-        "implementation/warlock/qa/check-search.py",
-        "implementation/warlock/qa/current-search-build.json",
-        "implementation/warlock/qa/native-window-feedback.py",
-        "implementation/warlock/qa/notification-unavailable-owner.py",
-        "implementation/warlock/README.md",
-        "implementation/warlock/src/Surface.elm"
-      ],
-      "verification": [
-        "quint-llm-kit additive typed failed-read/request/binding/duplicate/no-focus model with incremental initialization and positive witness, explicit named tests and sampled safety; preserve original owner/notification/focus models. Compile actual roots/GTK host, typed available/foreign/stale/failure/repeat branches, browser focus/recovery/one owner. Existing native D-Bus no-replacement/action/no-replay checks plus explicit empty-service re-probe. Protected private native occupied service, actual keyboard refresh/recovery, exact real receipt correlation and retained focused node; duplicated real read receipt is an adversarial transport fixture. Actual native speech/braille, all-provider native matrix and independent acceptance remain partial."
-      ],
-      "status": "implemented-partial",
-      "participantRecord": ".warlock-contributor/adapter-announcements.json",
-      "evidence": "implementation/warlock/qa/evidence/adapter-announcements/manifest.json",
-      "observed": "Matched adapter failures use one polite owner without receipt-triggered Focus. Notification Refresh stays focusable while reading; exact duplicate native receipts are silent. Actual private occupied notification service and keyboard refresh/recovery retain node/control/document focus, measure control pixels and exit normally without replay.",
-      "missingObservations": [
-        "Actual stable-focus speech and braille, repeated-receipt delivery and reachable recovery through native AT.",
-        "Independent original-scenario acceptance.",
-        "Other native provider journeys, spontaneous service loss and applicable transport faults.",
-        "Relevant notification expiration and expired-action refusal announcements remain unfinished scope."
-      ],
-      "nextSourceWork": "Implement relevant notification expiration and expired-action refusal announcement sources. Use quint-llm-kit to model actual focus/user-invocation relevance with exact binding/service/incarnation/request and no replay. Preserve irrelevant-expiry silence and DND policy; then qualify native AT routes and continue the full original GUI scope."
-    },
-    {
-      "id": "notification-expiration-relevance",
-      "requirements": [
-        "ELM-UI-010"
-      ],
-      "scenarios": [
-        "announce-notification expiration",
-        "announce-expired action rejection",
-        "announcement-expiration-irrelevant"
-      ],
-      "before": "Notification expiry updates history and removes native actions, but has no focus/user-invocation relevance input or correlated expiry/refusal message. Removing or disabling a focused action makes the popup move focus to Close.",
-      "after": "The root admits scoped passive popup focus observations and announces only exact focused/user-invoked expiry and matched expired-action refusals, politely when DND permits. The focused unavailable action remains a keyed, aria-disabled non-actionable node until focus leaves. Irrelevant expiry, foreign/stale focus observations and repeated receipts remain silent; reads and Unknown mutations never replay.",
-      "paths": [
-        "implementation/warlock/src/Notifications.elm",
-        "implementation/warlock/src/Desktop.elm",
-        "implementation/warlock/src/OutcomeAnnouncements.elm",
-        "implementation/warlock/src/OutputController.elm",
-        "implementation/warlock/src/Surface.elm",
-        "implementation/warlock/src/SurfaceRenderer.elm",
-        "implementation/warlock/assets/popup-adapter.js",
-        "implementation/warlock/assets/shell.css",
-        "implementation/warlock/assets/elm.js",
-        "implementation/warlock/assets/bar.js",
-        "implementation/warlock/assets/popup.js",
-        "implementation/warlock/native/surface.h",
-        "implementation/warlock/native/shared-host.c",
-        "implementation/warlock/qa/notification-relevance.qnt",
-        "implementation/warlock/qa/notification-relevance_test.qnt",
-        "implementation/warlock/qa/check-notification-relevance.py",
-        "implementation/warlock/qa/NotificationRelevanceReplay.elm",
-        "implementation/warlock/qa/check-search.py",
-        "implementation/warlock/qa/announcement-browser.mjs",
-        "implementation/warlock/qa/native-window-feedback.py",
-        "implementation/warlock/qa/surface-admission.c",
-        "implementation/warlock/qa/current-search-build.json",
-        "implementation/warlock/README.md",
-        "implementation/warlock/adapter/notification_service.py",
-        "implementation/warlock/qa/check-notifications.py"
-      ],
-      "verification": [
-        "Use quint-llm-kit modeling/execution skills: incrementally check matched focus/request/expiry/rejection/DND/no-replay model with explicit named tests and positive witnesses. Compile current roots/GTK C host; strict native focus-only/frame/observation gates; typed root source identity/relevance/foreign/repeat guards; browser real focus and unavailable keyed node semantics. Protected original native notification fixture extends actual expiry/reused-ID queued rejection and physical keyboard focused expiry, irrelevant silence/DND, exact one-owner correlation/unchanged node/control/document focus and no action replay. Preserve owning ABI, existing native deadlines and original checks. Actual speech/braille, full native lifecycle/output/hardware matrix and independent acceptance remain partial."
-      ],
-      "status": "implemented-partial",
-      "participantRecord": ".warlock-contributor/notification-relevance.json",
-      "evidence": "implementation/warlock/qa/evidence/notification-relevance/manifest.json",
-      "observed": "Implemented exact focused/user-invoked expiry and expired-action rejection relevance, passive scoped focus observations and keyed non-actionable focus retention. Original protected native notification journey passes 91 checks including physical expiry, DND/no replay, Enter rejection, departure, irrelevant silence and original held ID-reuse refusal. Nine native keyboard surfaces pass 37 regression checks. Actual AT, wider native lifecycle/pixels and independent acceptance remain open.",
-      "missingObservations": [
-        "Actual stable-focus speech and braille, repeated delivery, readonly control semantics and reachable recovery through native AT.",
-        "Independent original-scenario acceptance.",
-        "Native user-invoked expiry with other focus, wider focus/output/transport/producer lifecycle and retained-control physical pixel qualification.",
-        "Spontaneous service-unavailability outcomes and broader release scope remain open."
-      ],
-      "nextSourceWork": "Implement stable checkable Always on top/pin and MAX controls integrated with existing native geometry authority. Use quint-llm-kit for exact identity, pending/Unknown/refusal and no-replay transitions; preserve original pin/MAX/restore oracles. Native speech/braille announcement qualification and all remaining full GUI release scope remain mandatory."
-    },
-    {
-      "id": "max-committed-scene",
-      "requirements": [
-        "ELM-REN-015"
-      ],
-      "scenarios": [
-        "max-input-region"
-      ],
-      "paths": [
-        "implementation/warlock/native/core/CommittedScene.hpp",
-        "implementation/warlock/native/core/Renderer.cpp",
-        "implementation/warlock/native/core/ViewHitTester.cpp",
-        "implementation/warlock/native/authority.cpp",
-        "implementation/warlock/qa/check-scene-core.py",
-        "implementation/warlock/qa/check-native-authority.py",
-        "implementation/warlock/qa/current-scene-core.json",
-        "implementation/warlock/qa/current-native-pair.json",
-        "implementation/warlock/qa/current-search-build.json",
-        "implementation/warlock/qa/native-window-feedback.py",
-        "implementation/warlock/qa/native-committed-max.py",
-        "implementation/warlock/README.md",
-        "implementation/warlock/native/core/InputManager.cpp"
-      ],
-      "before": "MAX paint and input use separate live traversals; scene-fact revisions and diagnostic draw traces do not prove one committed constrained scene.",
-      "after": "The MAX render and input traversals share one bounded immutable native order snapshot, published only after successful output commit and unchanged structural dependencies. Changed input-region/transform/placement/order facts refuse stale input until a matching frame commits; native hit receipts identify the consumed scene.",
-      "verification": [
-        "Existing quint-llm-kit max-overlap named tests, witnesses and safety unchanged; owning Renderer/HitTester compile and exact relink with explicit additive scene API; actual original native MAX input-hole and pin/MAX regression with committed-scene receipts"
-      ],
-      "status": "implemented-partial",
-      "participantRecord": ".warlock-contributor/scene.json",
-      "evidence": "implementation/warlock/qa/evidence/committed-max-scene/manifest.json",
-      "observed": "Native MAX painting/input now share a successfully committed structurally current window-order snapshot. Original included/excluded physical clicks consume matching committed paint/hit revisions, actual upper pixels and upper/lower GTK press/release/focus recipients. Both return placements and pin/MAX pointer/keyboard regression pass; the existing model remains unchanged and passes before/after. Independent and wider scene/race/exception/AT/resource qualification remain open.",
-      "missingObservations": [
-        "Independent original max-input-region disposition; full constrained-scene/presentation acceptance remains separate.",
-        "Native stale/failed commit, button/cache/grab/layer/retirement schedules, transformed/modal and explicit passthrough/no-activation cases.",
-        "Multi-output/resource gates, full pin/family/fullscreen policy, applicable native AT and release packaging/rollback."
-      ],
-      "nextSourceWork": "Implement and qualify original no-activation/passthrough and stale/failed-frame button/cache paths on the current shared scene; specifically inspect a ready scene with no eligible window and previously cached pointer focus, and preserve legitimate layers, locks, grabs and accepted releases. Then close the original modal/fullscreen/family policy and transformed/multi-output predicates. Preserve two-MAX and pin/MAX behavior, original clocks and matched native pair. Native AT/IME/resources/package/rollback remain mandatory release scope."
-    },
     {
       "id": "max-no-activation",
       "requirements": [
@@ -2451,72 +875,160 @@
       "missingObservation": "Applicable actual Task View AT refusal/focus recovery and independent original acceptance remain open. Other original overview scenarios, including empty-workspace navigation, are separately open.",
       "observedUTC": "2026-10-10T18:07:37.560217+00:00",
       "nextSourceWork": "Original ELM-UI-006 overview-empty: add explicit current native workspace inventory to Task View, including empty workspaces, then use the existing correlated navigation authority. Preserve occupied-window membership, stale/retired workspace guards, output context, native/keyboard/AT oracles and no-replay. Applicable Task View refusal AT/independent acceptance remains separately open."
+    },
+    {
+      "id": "taskview-empty-inventory",
+      "requirements": [
+        "ELM-UI-006"
+      ],
+      "scenarios": [
+        "overview-empty"
+      ],
+      "paths": [
+        "implementation/warlock/src/Desktop.elm",
+        "implementation/warlock/src/TaskView.elm",
+        "implementation/warlock/src/WorkspaceInventory.elm",
+        "implementation/warlock/src/GeometryProjection.elm",
+        "implementation/warlock/src/Surface.elm",
+        "implementation/warlock/native/geometry.inc",
+        "implementation/warlock/adapter/geometry_endpoint.py",
+        "implementation/warlock/qa/check-search.py",
+        "implementation/warlock/qa/check-workspace-inventory.py",
+        "implementation/warlock/qa/workspace-inventory.qnt",
+        "implementation/warlock/qa/workspace-inventory_test.qnt",
+        "implementation/warlock/qa/TaskViewReplay.elm",
+        "implementation/warlock/qa/native-taskview-empty.py",
+        "implementation/warlock/qa/current-native-pair.json",
+        "implementation/warlock/qa/current-search-build.json",
+        "implementation/warlock/assets/elm.js",
+        "implementation/warlock/assets/bar.js",
+        "implementation/warlock/assets/popup.js",
+        "implementation/warlock/README.md"
+      ],
+      "before": "Task View builds workspace rows only from application windows. A current native empty workspace and its active marker cannot be browsed or shown.",
+      "after": "The existing authenticated geometry observation includes current ordinary workspace owners, including empty workspaces. Task View shows their keyboard-browsable markers and an explicit empty selected view with dismissal. Inventory is admitted only with its exact current geometry receipt, and stale/foreign/invalid ownership cannot mix metadata. Native workspace activation remains a separate required part of the original scenario.",
+      "verification": [
+        "quint-llm-kit executable model first: correlated inventory/current geometry join, empty browsing, retirement/output/binding invalidation and observation-only dismissal. Compile real roots and original TaskView replay; strict Python/Elm inventory decoder negatives. Build changed native authority against exact owning ABI. Protected native current empty workspace, keyboard browse/pixels/dismissal/focus and zero effects; preserve original deadlines and main desktop. Original scenario remains partial pending actual native navigation/AT/independent acceptance."
+      ],
+      "owner": "root-taskview-empty-inventory",
+      "participantRecord": ".warlock-contributor/taskview-empty-inventory.json",
+      "disposition": "partial",
+      "evidence": {
+        "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/manifest.json",
+        "sha256": "1db15121d6231b9dc21f1474298366aa3bda13d9968ac80c9e24176351206f19",
+        "scope": "Task View now exposes actual native ordinary empty-workspace inventory and active marker with no application focus, exact accepted geometry join, keyboard browsing/explicit empty notice and available dismissal. Quint initialization, six named scenarios and sampled safety/four positive witnesses precede code; 17 strict decoder and 42 compiled integrated checks pass, including unchanged refusal checks and Unknown transfer source retention. Original populated native Task View plus real workspace-3 empty marker/focus/pixels/read-only browsing/dismissal pass with normal cleanup and main desktop preserved. Genuine cross-output refusal regression also passes on the new tuple. Local browse is not actual native workspace activation."
+      },
+      "sourceHashes": {
+        "implementation/warlock/src/Desktop.elm": "0a69b647a40508e528fa00d2e1dd8b6b234fa3fd36788156d2a458c3b25bcfe8",
+        "implementation/warlock/src/TaskView.elm": "7665dd48cae39ecdc71f85990eaefc0115fb79fe0462e41199b10ec4ccbfcdbe",
+        "implementation/warlock/src/WorkspaceInventory.elm": "ccae889a9e6b5985a0ea01ab144fbf32c39345ba1712516bf9edd30419d3daf6",
+        "implementation/warlock/src/GeometryProjection.elm": "f1b5708b8b4d1c7c02e46542bc041abb9e8cb0524d965ee4b03ab97f586a544c",
+        "implementation/warlock/src/Surface.elm": "f09125ae4cb8d485113a43c4d63cab40eef5000b6c5b4e7759890e479213fcac",
+        "implementation/warlock/native/geometry.inc": "ca532735a4ddb6f095517ab5b49593860aeaeb1fd1d24018feecf7c52fb8aba6",
+        "implementation/warlock/adapter/geometry_endpoint.py": "193b9ef7ecf114156c02cd527a703e79383cdec83267b612ff406f165cc3e3a4",
+        "implementation/warlock/qa/check-search.py": "91362b4f3797fbd18d99872865c3ca062b20fd0727dfa7fa99acf44f3bb69bda",
+        "implementation/warlock/qa/check-workspace-inventory.py": "e8b557b9e733cc39d8dbcac3e2121bc0c4fe48757c440c6b59fa512104d39ba2",
+        "implementation/warlock/qa/workspace-inventory.qnt": "06d9d052d0f30a453102e1e4502a7f712b4696053c5dc16610d2a48a9b24d4f7",
+        "implementation/warlock/qa/workspace-inventory_test.qnt": "8039e0a0b97f5c841568da6f3d7a761fee91aa44aa3766677003a79f38e81cf6",
+        "implementation/warlock/qa/TaskViewReplay.elm": "3ed7f3c063d0c3f5835483235c0a2a55818ac5e35f79e3cf0354bddc2ea3a3a5",
+        "implementation/warlock/qa/native-taskview-empty.py": "d3f93391108d5eeb2c2a2300eef7e6e21a381f31a4b97345e9ea6bea576c6209",
+        "implementation/warlock/qa/current-native-pair.json": "40c0578bbb8317e41869322ca30bf835e0e025d38959730569dfcf8b12c00ca7",
+        "implementation/warlock/qa/current-search-build.json": "747f915576647d6194e24ac30644e7ef8102e66229a0d525de1fea40636f02ef",
+        "implementation/warlock/assets/elm.js": "e676320d82900595404f2d650671a393d87e5cf5526db1fca4122b3f366d4722",
+        "implementation/warlock/assets/bar.js": "26ef20c9143f87caf7e3d7fc293b248983076f5a7b7a6967cc341d71f7711194",
+        "implementation/warlock/assets/popup.js": "23b0f3e5e223dd5e1d7042ea33dcc1e1f4895997b01ebd7d764a75c15236b56c",
+        "implementation/warlock/README.md": "02b6c447ad2ca3b9f771994b930419f9d1132c1139ea80c96984a3cb5e64a763",
+        "implementation/warlock/src/Shell.elm": "93fdf86ac11ff9c190978fb46557623045a6c697d468a42fc9ba16a4bfa4df48",
+        "implementation/warlock/src/Effects.elm": "873e8824d90828a9927cfd89723c7b7299e11791e3779173815ba720b11a8547",
+        "implementation/warlock/qa/check-native-authority.py": "014cba952d735b40d600cd5e2a498e97a9491bce89fadb69fc1600ddfb6cba32",
+        "implementation/warlock/qa/native-window-feedback.py": "295ba28cf8d9d297b214bd0d6dba19ac3289d861faa953f9fd94b82937473c64",
+        "implementation/warlock/qa/native-taskview-refusal.py": "b719e541c335be6524d7c61a89fb8b5f15556c0aa6f5e041474016938639b4da"
+      },
+      "reviewerDisposition": {
+        "name": "root-taskview-empty-inventory",
+        "independent": false,
+        "disposition": "Owner observed native empty inventory, keyboard browsing/empty view/current marker/pixels/dismissal and matching refusal regression; native GUI empty-workspace activation, applicable AT and independent acceptance remain open."
+      },
+      "missingObservation": "Actual GUI native activation/navigation to an empty workspace still needs a separately correlated native effect. Applicable AT and independent original acceptance remain open.",
+      "observedUTC": "2026-10-10T18:24:31.934146+00:00",
+      "nextSourceWork": "Complete original ELM-UI-006 overview-empty with an explicit typed empty-workspace navigation intent through the existing native authority and durable receipt/recovery path. Bind destination workspace/output owner and current source context; preserve lock/exclusive/pointer guards, Unknown/no replay and truthful partial navigation outcome. Keep local Browse controls distinct from native activation and qualify real keyboard/native/AT navigation to an empty destination. Do not represent an empty workspace by a fake window incarnation."
     }
   ],
   "lastSlice": {
-    "id": "taskview-refusal-recovery",
+    "id": "taskview-empty-inventory",
     "requirements": [
       "ELM-UI-006"
     ],
     "scenarios": [
-      "overview-refusal"
+      "overview-empty"
     ],
     "paths": [
       "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/src/OverviewRecovery.elm",
-      "implementation/warlock/qa/overview-recovery.qnt",
-      "implementation/warlock/qa/overview-recovery_test.qnt",
-      "implementation/warlock/qa/check-overview-recovery.py",
-      "implementation/warlock/qa/TaskViewReplay.elm",
-      "implementation/warlock/qa/native-taskview-refusal.py",
+      "implementation/warlock/src/TaskView.elm",
+      "implementation/warlock/src/WorkspaceInventory.elm",
+      "implementation/warlock/src/GeometryProjection.elm",
+      "implementation/warlock/src/Surface.elm",
+      "implementation/warlock/native/geometry.inc",
+      "implementation/warlock/adapter/geometry_endpoint.py",
       "implementation/warlock/qa/check-search.py",
+      "implementation/warlock/qa/check-workspace-inventory.py",
+      "implementation/warlock/qa/workspace-inventory.qnt",
+      "implementation/warlock/qa/workspace-inventory_test.qnt",
+      "implementation/warlock/qa/TaskViewReplay.elm",
+      "implementation/warlock/qa/native-taskview-empty.py",
+      "implementation/warlock/qa/current-native-pair.json",
       "implementation/warlock/qa/current-search-build.json",
       "implementation/warlock/assets/elm.js",
       "implementation/warlock/assets/bar.js",
       "implementation/warlock/assets/popup.js",
       "implementation/warlock/README.md"
     ],
-    "before": "Task View closes before choosing a window and remains closed after native refusal, losing its usable overview context.",
-    "after": "Only the exact issued overview activation refusal restores Task View and its workspace filter after current native state is ready. The original root is focused if still eligible, otherwise a current workspace/all-windows control. Foreign or duplicate outcomes, Unknown, committed actions, changed authority and another active UI cannot reopen or replay.",
+    "before": "Task View builds workspace rows only from application windows. A current native empty workspace and its active marker cannot be browsed or shown.",
+    "after": "The existing authenticated geometry observation includes current ordinary workspace owners, including empty workspaces. Task View shows their keyboard-browsable markers and an explicit empty selected view with dismissal. Inventory is admitted only with its exact current geometry receipt, and stale/foreign/invalid ownership cannot mix metadata. Native workspace activation remains a separate required part of the original scenario.",
     "verification": [
-      "quint-llm-kit model before code: bounded single-choice origin, issued intent, matched refusal and deferred current-UI recovery, positive witnesses and no-replay/duplicate/foreign/Unknown/authority/occupied negatives. Compile actual roots and original TaskView replay. Reuse protected genuine pinned cross-output native refusal fixture; physical Task View/filter/Enter, one exact Refused effect, reopened retained filter, current pixels/focus and observation-only refresh/no automatic retry. Preserve original deadlines, ABI, native effect/custody authority and main desktop."
+      "quint-llm-kit executable model first: correlated inventory/current geometry join, empty browsing, retirement/output/binding invalidation and observation-only dismissal. Compile real roots and original TaskView replay; strict Python/Elm inventory decoder negatives. Build changed native authority against exact owning ABI. Protected native current empty workspace, keyboard browse/pixels/dismissal/focus and zero effects; preserve original deadlines and main desktop. Original scenario remains partial pending actual native navigation/AT/independent acceptance."
     ],
-    "owner": "root-taskview-refusal-recovery",
-    "participantRecord": ".warlock-contributor/taskview-refusal-recovery.json",
+    "owner": "root-taskview-empty-inventory",
+    "participantRecord": ".warlock-contributor/taskview-empty-inventory.json",
     "disposition": "partial",
     "evidence": {
-      "path": "implementation/warlock/qa/evidence/taskview-refusal-recovery/manifest.json",
-      "sha256": "d9a2c5f7610168b0d384fef3ea543e581dd938b2bc2082424ae1e41e549d308a",
-      "scope": "Exact-intent Task View refusal recovery with retained workspace filter, current family/fallback focus, Unknown/foreign/duplicate/authority/other-interface negatives and no replay. Quint initialization, eight named tests and sampled safety/positive witnesses precede production implementation; original 21 plus ten compiled Task View checks pass. Real pinned cross-output Activate refusal returns the filtered popup, current focus and native control pixels. Physical read-only Refresh creates no new effect; Escape restores the peer keyboard recipient; placement, unsaved draft and main desktop survive normal cleanup. Native AT and independent acceptance remain separate."
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/manifest.json",
+      "sha256": "1db15121d6231b9dc21f1474298366aa3bda13d9968ac80c9e24176351206f19",
+      "scope": "Task View now exposes actual native ordinary empty-workspace inventory and active marker with no application focus, exact accepted geometry join, keyboard browsing/explicit empty notice and available dismissal. Quint initialization, six named scenarios and sampled safety/four positive witnesses precede code; 17 strict decoder and 42 compiled integrated checks pass, including unchanged refusal checks and Unknown transfer source retention. Original populated native Task View plus real workspace-3 empty marker/focus/pixels/read-only browsing/dismissal pass with normal cleanup and main desktop preserved. Genuine cross-output refusal regression also passes on the new tuple. Local browse is not actual native workspace activation."
     },
     "sourceHashes": {
-      "implementation/warlock/src/Desktop.elm": "ce481cf60a66a095e97eb72f92a05d46e36ec0acbb60014c651029a9a4606c09",
-      "implementation/warlock/src/OverviewRecovery.elm": "1e34eb2fe6cfffb5662699f11736e6778f9dad0f35b73f58f283488a29fcf8e5",
-      "implementation/warlock/qa/overview-recovery.qnt": "6d6eaa62d4680405e3a5bdd967c3d01b6d5185346914cbac2a2dd526f6a4b557",
-      "implementation/warlock/qa/overview-recovery_test.qnt": "86b9e8624060315332cc3724511dbfe14a2b8c8e9ee0452738bb159c13fcd1cc",
-      "implementation/warlock/qa/check-overview-recovery.py": "40b7cf0e0f6710a7d545f28c5c2311f52403564df2d5e7f0843390f22d9599a7",
-      "implementation/warlock/qa/TaskViewReplay.elm": "d1d4b101a357aae783ecc5ea11f9be034891420ea6de3821c51bfeaf8b9ad36d",
-      "implementation/warlock/qa/native-taskview-refusal.py": "b719e541c335be6524d7c61a89fb8b5f15556c0aa6f5e041474016938639b4da",
-      "implementation/warlock/qa/check-search.py": "c2fdea78b64909232194a0219a28c970af4484406ca6d9a135420a2aafecce64",
-      "implementation/warlock/qa/current-search-build.json": "b4ddf2322f23a49a8cac1be1bdc60a7357049fe072d07b8752e30091ceab758e",
-      "implementation/warlock/assets/elm.js": "fc2095a5fe4d4d369e0d394cce70b296f9a9ccf94fbe3e301806493f6b63af0b",
+      "implementation/warlock/src/Desktop.elm": "0a69b647a40508e528fa00d2e1dd8b6b234fa3fd36788156d2a458c3b25bcfe8",
+      "implementation/warlock/src/TaskView.elm": "7665dd48cae39ecdc71f85990eaefc0115fb79fe0462e41199b10ec4ccbfcdbe",
+      "implementation/warlock/src/WorkspaceInventory.elm": "ccae889a9e6b5985a0ea01ab144fbf32c39345ba1712516bf9edd30419d3daf6",
+      "implementation/warlock/src/GeometryProjection.elm": "f1b5708b8b4d1c7c02e46542bc041abb9e8cb0524d965ee4b03ab97f586a544c",
+      "implementation/warlock/src/Surface.elm": "f09125ae4cb8d485113a43c4d63cab40eef5000b6c5b4e7759890e479213fcac",
+      "implementation/warlock/native/geometry.inc": "ca532735a4ddb6f095517ab5b49593860aeaeb1fd1d24018feecf7c52fb8aba6",
+      "implementation/warlock/adapter/geometry_endpoint.py": "193b9ef7ecf114156c02cd527a703e79383cdec83267b612ff406f165cc3e3a4",
+      "implementation/warlock/qa/check-search.py": "91362b4f3797fbd18d99872865c3ca062b20fd0727dfa7fa99acf44f3bb69bda",
+      "implementation/warlock/qa/check-workspace-inventory.py": "e8b557b9e733cc39d8dbcac3e2121bc0c4fe48757c440c6b59fa512104d39ba2",
+      "implementation/warlock/qa/workspace-inventory.qnt": "06d9d052d0f30a453102e1e4502a7f712b4696053c5dc16610d2a48a9b24d4f7",
+      "implementation/warlock/qa/workspace-inventory_test.qnt": "8039e0a0b97f5c841568da6f3d7a761fee91aa44aa3766677003a79f38e81cf6",
+      "implementation/warlock/qa/TaskViewReplay.elm": "3ed7f3c063d0c3f5835483235c0a2a55818ac5e35f79e3cf0354bddc2ea3a3a5",
+      "implementation/warlock/qa/native-taskview-empty.py": "d3f93391108d5eeb2c2a2300eef7e6e21a381f31a4b97345e9ea6bea576c6209",
+      "implementation/warlock/qa/current-native-pair.json": "40c0578bbb8317e41869322ca30bf835e0e025d38959730569dfcf8b12c00ca7",
+      "implementation/warlock/qa/current-search-build.json": "747f915576647d6194e24ac30644e7ef8102e66229a0d525de1fea40636f02ef",
+      "implementation/warlock/assets/elm.js": "e676320d82900595404f2d650671a393d87e5cf5526db1fca4122b3f366d4722",
       "implementation/warlock/assets/bar.js": "26ef20c9143f87caf7e3d7fc293b248983076f5a7b7a6967cc341d71f7711194",
       "implementation/warlock/assets/popup.js": "23b0f3e5e223dd5e1d7042ea33dcc1e1f4895997b01ebd7d764a75c15236b56c",
-      "implementation/warlock/README.md": "ced61434f5da5486fa50bad69a808c2705b93ba522320ee4230c8736f55fb32b",
-      "implementation/warlock/src/TaskView.elm": "4775c51917d4117bda6b6c21b354d2d8ac018f1902af8b0dcd6489d443f946d8",
-      "implementation/warlock/src/Surface.elm": "2e0678f7ce124cb1e07866dc7ca4d7a9e8c4fd07508fcd8ca9644ce751d12a92",
+      "implementation/warlock/README.md": "02b6c447ad2ca3b9f771994b930419f9d1132c1139ea80c96984a3cb5e64a763",
       "implementation/warlock/src/Shell.elm": "93fdf86ac11ff9c190978fb46557623045a6c697d468a42fc9ba16a4bfa4df48",
       "implementation/warlock/src/Effects.elm": "873e8824d90828a9927cfd89723c7b7299e11791e3779173815ba720b11a8547",
-      "implementation/warlock/qa/native-taskbar-refusal.py": "71b834d4194eb8488b0bbcdcd9360d4c491a1b012c7f9c323e8ab9b52aab9afa",
-      "implementation/warlock/qa/native-window-feedback.py": "295ba28cf8d9d297b214bd0d6dba19ac3289d861faa953f9fd94b82937473c64"
+      "implementation/warlock/qa/check-native-authority.py": "014cba952d735b40d600cd5e2a498e97a9491bce89fadb69fc1600ddfb6cba32",
+      "implementation/warlock/qa/native-window-feedback.py": "295ba28cf8d9d297b214bd0d6dba19ac3289d861faa953f9fd94b82937473c64",
+      "implementation/warlock/qa/native-taskview-refusal.py": "b719e541c335be6524d7c61a89fb8b5f15556c0aa6f5e041474016938639b4da"
     },
     "reviewerDisposition": {
-      "name": "root-taskview-refusal-recovery",
+      "name": "root-taskview-empty-inventory",
       "independent": false,
-      "disposition": "Owner observed production fix and matching genuine native refusal/filter/focus/pixel/no-replay pass; applicable AT and independent original acceptance remain open."
+      "disposition": "Owner observed native empty inventory, keyboard browsing/empty view/current marker/pixels/dismissal and matching refusal regression; native GUI empty-workspace activation, applicable AT and independent acceptance remain open."
     },
-    "missingObservation": "Applicable actual Task View AT refusal/focus recovery and independent original acceptance remain open. Other original overview scenarios, including empty-workspace navigation, are separately open.",
-    "observedUTC": "2026-10-10T18:07:37.560217+00:00",
-    "nextSourceWork": "Original ELM-UI-006 overview-empty: add explicit current native workspace inventory to Task View, including empty workspaces, then use the existing correlated navigation authority. Preserve occupied-window membership, stale/retired workspace guards, output context, native/keyboard/AT oracles and no-replay. Applicable Task View refusal AT/independent acceptance remains separately open."
+    "missingObservation": "Actual GUI native activation/navigation to an empty workspace still needs a separately correlated native effect. Applicable AT and independent original acceptance remain open.",
+    "observedUTC": "2026-10-10T18:24:31.934146+00:00",
+    "nextSourceWork": "Complete original ELM-UI-006 overview-empty with an explicit typed empty-workspace navigation intent through the existing native authority and durable receipt/recovery path. Bind destination workspace/output owner and current source context; preserve lock/exclusive/pointer guards, Unknown/no replay and truthful partial navigation outcome. Keep local Browse controls distinct from native activation and qualify real keyboard/native/AT navigation to an empty destination. Do not represent an empty workspace by a fake window incarnation."
   }
 }

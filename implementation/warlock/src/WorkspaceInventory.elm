@@ -1,4 +1,4 @@
-module WorkspaceInventory exposing (Row, Snapshot, factsDecoder, decode, coherent)
+module WorkspaceInventory exposing (Row, Snapshot, rowDecoder, factsDecoder, decode, coherent)
 
 import Binding
 import Char

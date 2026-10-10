@@ -1,0 +1,603 @@
+{
+  "schema": 1,
+  "observedUTC": "2026-10-10T19:02:29.135917+00:00",
+  "requirements": [
+    "ELM-UI-006"
+  ],
+  "scenarios": [
+    "overview-empty"
+  ],
+  "originalOracle": {
+    "name": "overview-empty",
+    "given": "an open overview",
+    "when": "an empty workspace is selected",
+    "then": "empty destination is navigable and dismissal remains available"
+  },
+  "sourceRevisionBeforeSlice": "53eba667f2c818cf962a3a5bdd1f308c38c5e0d3",
+  "sourceHashes": {
+    "implementation/warlock/src/WorkspaceNavigation.elm": "8313a23008abfa6157324472db852b087b4af09dd3696a33f273d7010634e7f6",
+    "implementation/warlock/src/WorkspaceInventory.elm": "583692398a5038bf17a87c09a7019ddae4059f3f200489342ca89dab50eb3b2e",
+    "implementation/warlock/src/Desktop.elm": "3a9a79593e1594dc4b7bb3123434a59a89ea2f0b5ce7bed6693686c3ada25fef",
+    "implementation/warlock/src/Surface.elm": "3aeafab1ff9b63e24d75fce0d38cf9e78c8df0b3c84846c873296f128a9f3695",
+    "implementation/warlock/native/authority.cpp": "fd01bb16b21c99e312b5501fe5e26ccf18848d9ffa3d97a5598ccb19f9c7a016",
+    "implementation/warlock/native/workspace-navigation.inc": "5d75d09f5ef676df07f8b98b962d8e09468ea5b51398f6e91c9e4865e572ce76",
+    "implementation/warlock/native/host-journal.h": "12064b3985b9842ac496722186fcf82e17ae328d3fcfc6aa67ba256299d1981f",
+    "implementation/warlock/native/host.c": "cde6230199756dfaa193d5e8af5a41470f8b65de3cdd1942e0e0224ab458ccbf",
+    "implementation/warlock/native/shared-host.c": "ecd21caea9511f0662ba67b2ec6e8427a87e1aaa510073dd67c035c1fc5796ce",
+    "implementation/warlock/adapter/workspace_navigation.py": "79508bcb112ec602b6d33daf1050ef54f63afeb7bfe427fa5553e8a4c68bb8a9",
+    "implementation/warlock/adapter/daemon.py": "a593494e4ca89ef467dced5cd946bc5eca9a88db21c591597c19eb2a80cdca31",
+    "implementation/warlock/qa/workspace-navigation.qnt": "91e24c0cde7b481c8d5cb2710c3be7f5d4f5e63963c88a36d32329050bee126c",
+    "implementation/warlock/qa/workspace-navigation_test.qnt": "33d67e30ad62d4206ea835d0ad9e0a23dde8cfdf8b322c1ba6b71602dd98b37d",
+    "implementation/warlock/qa/check-workspace-navigation.py": "d83a70cf555e9d6915bb47d146b5e5bff2502cd4a65537ab04eabaad041a0acd",
+    "implementation/warlock/qa/check-native-authority.py": "69b50ddd1a062a3d78e0df3981a8972ba559f1e48e44e786cab458082d34f8c5",
+    "implementation/warlock/qa/check-search.py": "fbac603788de59c73dc5f8cf6d4dbe885caa7debe482c7e105f55a4428633023",
+    "implementation/warlock/qa/WorkspaceNavigationReplay.elm": "0d6a6eb4f1d1dcdee9e3f172767a3ae2ead28aea3dc5f2eafa56f01381f098c2",
+    "implementation/warlock/qa/native-taskview-navigation.py": "0f7f8238ab4d1f523a42869dc8179082ac614e829fea5a1cc4b6fc02ffc7d05a",
+    "implementation/warlock/qa/current-native-pair.json": "8a274ee9f3180391e3c35cbbe7b30d4f13f0024f68df31e479eb31a2da91caf7",
+    "implementation/warlock/qa/current-search-build.json": "e9d29b4081e0883bb9d8d632b26fe2e8f421459466e7143dbf4de89ec913d34b",
+    "implementation/warlock/assets/elm.js": "487d8f6f70fb5c8682eb499561f3fb5ef10f4d2a842fb28415d755238c16bfaa",
+    "implementation/warlock/assets/bar.js": "26ef20c9143f87caf7e3d7fc293b248983076f5a7b7a6967cc341d71f7711194",
+    "implementation/warlock/assets/popup.js": "23b0f3e5e223dd5e1d7042ea33dcc1e1f4895997b01ebd7d764a75c15236b56c",
+    "implementation/warlock/README.md": "ea2b4cb111d18d2973a061ee3a3dcfecbc2ef4677fc298c44fa76ff10e5b8dd2",
+    "implementation/warlock/native/geometry-effects.inc": "97206695980b48a3d0b212b46051f2f1fd17dc1a95f502f15b727f67b8025f7b",
+    "implementation/warlock/src/Main.elm": "9974f1ee0183e956626f1ea414e7b95aa1d8142e7ca0bbce81ccddc948f51998",
+    "implementation/warlock/qa/empty-workspace-navigation.qnt": "29d63bb5334f2e23d77c89091d7fc7d74763654880db23c978403c2732bcdb7c",
+    "implementation/warlock/qa/empty-workspace-navigation_test.qnt": "3e73053e8e50d5f5e738f18a5bf18caaca07eeb21328edb8b8db0e9a2e1edbfd"
+  },
+  "originalInventory": {
+    "path": "docs/elm-roadmap/requirements.json",
+    "sha256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b"
+  },
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
+      "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791657775676809428/elm-window-geometry-authority.so",
+      "sha256": "ae84313c512d0ba398e7f931c5c877eb69d7635588fbbd11b71a729386fcbfd2"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+      "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791658577338581440/elm-host",
+    "sha256": "37de62b4e8552ce0c61c6fcd416b32cf2a69c5f34d76c4819647c7dc7402e272",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791658577338581440/report.json",
+    "heldBuildSHA256": "7e0b193703a63fd306dfce7484911c2209aa39a6fdcc5a555abead217e0b956f"
+  },
+  "compilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+  "compiledAssets": {
+    "elm.js": "487d8f6f70fb5c8682eb499561f3fb5ef10f4d2a842fb28415d755238c16bfaa",
+    "bar.js": "26ef20c9143f87caf7e3d7fc293b248983076f5a7b7a6967cc341d71f7711194",
+    "popup.js": "23b0f3e5e223dd5e1d7042ea33dcc1e1f4895997b01ebd7d764a75c15236b56c"
+  },
+  "reports": {
+    "modelBeforeCode": {
+      "path": "modelBeforeCode-report.json",
+      "sha256": "895d29506bb6341538ac5a1046a0da7ce2650b231ebcd1bd630ccb79605b1269",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-navigation-1791657311843233455/report.json",
+      "originalSha256": "895d29506bb6341538ac5a1046a0da7ce2650b231ebcd1bd630ccb79605b1269"
+    },
+    "journalAndModel": {
+      "path": "final-journal-and-model-report.json",
+      "sha256": "567478f272bc6cf441cd0d88ca0c0cc28addda80fa5102e0430776c94e86852d",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-navigation-1791658908511146680/report.json",
+      "originalSha256": "567478f272bc6cf441cd0d88ca0c0cc28addda80fa5102e0430776c94e86852d"
+    },
+    "compiled": {
+      "path": "compiled-report.json",
+      "sha256": "7e0b193703a63fd306dfce7484911c2209aa39a6fdcc5a555abead217e0b956f",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791658577338581440/report.json",
+      "originalSha256": "7e0b193703a63fd306dfce7484911c2209aa39a6fdcc5a555abead217e0b956f"
+    },
+    "authority": {
+      "path": "authority-report.json",
+      "sha256": "5220768b5ffabc3ab82937ca78e3a088b639294590b546df73e0cba34c110f50",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791657775676809428/report.json",
+      "originalSha256": "5220768b5ffabc3ab82937ca78e3a088b639294590b546df73e0cba34c110f50"
+    },
+    "nativeNavigation": {
+      "path": "nativeNavigation-report.json",
+      "sha256": "50de80a7bbdd2cc83bae9047b9bed642750348bf90a75e4760784922eefdfccc",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-task-view-1791658612189435850/report.json",
+      "originalSha256": "50de80a7bbdd2cc83bae9047b9bed642750348bf90a75e4760784922eefdfccc"
+    },
+    "windowRefusalRegression": {
+      "path": "windowRefusalRegression-report.json",
+      "sha256": "b002d385cf0447fbf83f4ea8dbc35bfc0c44a35e57839b9353b9f82e9b6dd00f",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-drag-ownership-1791658657894558092/report.json",
+      "originalSha256": "b002d385cf0447fbf83f4ea8dbc35bfc0c44a35e57839b9353b9f82e9b6dd00f"
+    }
+  },
+  "files": [
+    {
+      "path": "modelBeforeCode-report.json",
+      "sha256": "895d29506bb6341538ac5a1046a0da7ce2650b231ebcd1bd630ccb79605b1269",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-navigation-1791657311843233455/report.json",
+      "originalSha256": "895d29506bb6341538ac5a1046a0da7ce2650b231ebcd1bd630ccb79605b1269"
+    },
+    {
+      "path": "modelBeforeCode-typecheck.stdout.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-navigation-1791657311843233455/typecheck.stdout",
+      "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "modelBeforeCode-tests-typecheck.stdout.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-navigation-1791657311843233455/tests-typecheck.stdout",
+      "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "modelBeforeCode-named.stdout.gz",
+      "sha256": "849eb1200f4a376713acfd933c4e2bfdb5a2ef897142e24ce63d06e8fe33b557",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-navigation-1791657311843233455/named.stdout",
+      "originalSha256": "8ffe7963999f0736e6ed5231d57d0bf5812ecec242c6e2725533375095f45bbe"
+    },
+    {
+      "path": "modelBeforeCode-witness-safety.stdout.gz",
+      "sha256": "0fcd2f563e907d909973b4c6d1f0686da49975df1be34212948f4cf8c6cfd00d",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-navigation-1791657311843233455/witness-safety.stdout",
+      "originalSha256": "6f6a057cb83af3f2f80c57986b537402a95832646ac46e8411e35a7a58355e9b"
+    },
+    {
+      "path": "journalAndModel-report.json",
+      "sha256": "01e6d914a9d0cd987b7ec20668bcf99bb2c1b80dbe7090404ffa92d51782088e",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-navigation-1791658068566685400/report.json",
+      "originalSha256": "01e6d914a9d0cd987b7ec20668bcf99bb2c1b80dbe7090404ffa92d51782088e"
+    },
+    {
+      "path": "journalAndModel-typecheck.stdout.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-navigation-1791658068566685400/typecheck.stdout",
+      "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "journalAndModel-tests-typecheck.stdout.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-navigation-1791658068566685400/tests-typecheck.stdout",
+      "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "journalAndModel-named.stdout.gz",
+      "sha256": "71bfce55530693ae40715c15ad4aec2e52972d95626f4dd94861aaa44ec97d1d",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-navigation-1791658068566685400/named.stdout",
+      "originalSha256": "9772d6c23dc092480ce858747d3c79370190d59aeae59dcb71b6feced9261ec8"
+    },
+    {
+      "path": "journalAndModel-witness-safety.stdout.gz",
+      "sha256": "092cd824b4abb009e2deb145931870764da557486f2b0aba65446583061302e0",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-navigation-1791658068566685400/witness-safety.stdout",
+      "originalSha256": "45a9604cf8da6dfe2db77b4c2a5e76a16cf9060e3f8f9d8be74fecfd1b7290ba"
+    },
+    {
+      "path": "journalAndModel-host-compile.stdout.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-navigation-1791658068566685400/host-compile.stdout",
+      "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "compiled-report.json",
+      "sha256": "7e0b193703a63fd306dfce7484911c2209aa39a6fdcc5a555abead217e0b956f",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791658577338581440/report.json",
+      "originalSha256": "7e0b193703a63fd306dfce7484911c2209aa39a6fdcc5a555abead217e0b956f"
+    },
+    {
+      "path": "compiled-compile-Main.stdout.gz",
+      "sha256": "07cf73ed79460db65ce30ebce1f03d6364cd31de290d1b276505b9d84fdeb990",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791658577338581440/compile-Main.stdout",
+      "originalSha256": "183f5857e232f80398b61eea1e968b51e9b270671777d054186fa46651147627"
+    },
+    {
+      "path": "compiled-compile-Bar.stdout.gz",
+      "sha256": "1e394f7fbcbf96ffb1fc1cdc94bfecb4a5087c7c37f2034b2742f6b422f0df57",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791658577338581440/compile-Bar.stdout",
+      "originalSha256": "c739b6d04713994eeec409f2d6abad44074a629c0c9485b274fb9a70200e032c"
+    },
+    {
+      "path": "compiled-compile-Popup.stdout.gz",
+      "sha256": "c8b1d86f80036ea68285d4fef0a5070ca8ab38431495c094427332333cba5dd4",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791658577338581440/compile-Popup.stdout",
+      "originalSha256": "a148dc018a0ee3099beec8c93902597341d1008c42579ae1a8b0c6900e56f542"
+    },
+    {
+      "path": "compiled-compile-search.stdout.gz",
+      "sha256": "1c2ce9bd231781abd54dc70b454c8648f407b998b8f21a37148fb5a188ff2dad",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791658577338581440/compile-search.stdout",
+      "originalSha256": "673fe3fa00ae29b4f5bc3bf92a3f0cb6082253a2854c300336549016aed14569"
+    },
+    {
+      "path": "compiled-typed-search.stdout.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791658577338581440/typed-search.stdout",
+      "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "compiled-compile-empty-workspace-navigation.stdout.gz",
+      "sha256": "4e96a53dca8bc07b7c9d4e3b1605efc92837f7e7a928f0281cba282097412f9c",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791658577338581440/compile-empty-workspace-navigation.stdout",
+      "originalSha256": "8496df8162496952e66623121c6b446133d32d60f8b444dba5c6681699f70fbb"
+    },
+    {
+      "path": "compiled-typed-empty-workspace-navigation.stdout.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791658577338581440/typed-empty-workspace-navigation.stdout",
+      "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "compiled-workspace-inventory-model.stdout.gz",
+      "sha256": "7f2f2dbb9481bd7702e0bfb00f7dd101e95ffe9c7e270b9512225eb94ffcd62c",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791658577338581440/workspace-inventory-model.stdout",
+      "originalSha256": "96b59e0f3cb3e315746ef16eca565607b7b7df95255a2f9b52d9158f92fec2f2"
+    },
+    {
+      "path": "compiled-compile-task-view.stdout.gz",
+      "sha256": "1541ab8344fc902c6ea0bd2a9c161e24c55bd4fe2a61f43912f3171a7d5a50f1",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791658577338581440/compile-task-view.stdout",
+      "originalSha256": "96bf805c2685346bb31b9c587c94b873c89256e50ee14034e86bafef5ee79d0b"
+    },
+    {
+      "path": "compiled-typed-task-view.stdout.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791658577338581440/typed-task-view.stdout",
+      "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "compiled-task-view-model-typecheck.stdout.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791658577338581440/task-view-model-typecheck.stdout",
+      "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "compiled-task-view-model-named.stdout.gz",
+      "sha256": "e0b8b698d190255d4e53954ea04a9e1067d6c4bd6117c2134f0feb81177d7baf",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791658577338581440/task-view-model-named.stdout",
+      "originalSha256": "8c9d1b26e97cd104ee836e36f34a93b64ba6d8616f87ccf0b14f8578f392eb8e"
+    },
+    {
+      "path": "compiled-task-view-model-invariants.stdout.gz",
+      "sha256": "1d1285ec08f9fcca3bea40d6346724d6f5b77827b627779bfc0ef3473bd0c114",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791658577338581440/task-view-model-invariants.stdout",
+      "originalSha256": "2c56c53ff265f964ccb50102e03a75818e2a6d190bad104516cee778e858829f"
+    },
+    {
+      "path": "compiled-focus-model-typecheck.stdout.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791658577338581440/focus-model-typecheck.stdout",
+      "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "compiled-focus-model-named.stdout.gz",
+      "sha256": "7f6a41415a769e588be03b274b59bc0ba2346d33f60e831357c5f0e00427cfa5",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791658577338581440/focus-model-named.stdout",
+      "originalSha256": "aac026f1e9e57e7e5ba4fb62f1d738950d97ce21408a16aaf3a475211ff6b8bd"
+    },
+    {
+      "path": "compiled-focus-model-invariants.stdout.gz",
+      "sha256": "f45d1514eccf5a2de264d47636b5659b87252ab1da064ae3b0f5203c3157480f",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791658577338581440/focus-model-invariants.stdout",
+      "originalSha256": "4a87865290f5de433485745455aba262064cff1e6121b9ff7d4dd61ad1682842"
+    },
+    {
+      "path": "compiled-surface-admission-build.stdout.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791658577338581440/surface-admission-build.stdout",
+      "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "compiled-surface-admission.stdout.gz",
+      "sha256": "44620731d08cb9774ffd2530b8743145f385e8b4211311511ee4aa002708815c",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791658577338581440/surface-admission.stdout",
+      "originalSha256": "0bbe0452223a603302be8deb80a6a1984fc780bde0c56bde99497708b3ef0ded"
+    },
+    {
+      "path": "compiled-host-compile.stdout.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791658577338581440/host-compile.stdout",
+      "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "compiled-host-link.stdout.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791658577338581440/host-link.stdout",
+      "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "compiled-host-self-tests.stdout.gz",
+      "sha256": "f5eff3827e9a79d2ce74e30fe84db4a0e8f01f7c8b97f26b03ef3fe85b98df8f",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791658577338581440/host-self-tests.stdout",
+      "originalSha256": "76634154920f82e11a5ed55791ee70e51660cff84bc6bf9c9d603e39de0d2a94"
+    },
+    {
+      "path": "authority-report.json",
+      "sha256": "5220768b5ffabc3ab82937ca78e3a088b639294590b546df73e0cba34c110f50",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791657775676809428/report.json",
+      "originalSha256": "5220768b5ffabc3ab82937ca78e3a088b639294590b546df73e0cba34c110f50"
+    },
+    {
+      "path": "authority-navigation-authority-compile.stdout.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791657775676809428/navigation-authority-compile.stdout",
+      "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "authority-current-core-exports.stdout.gz",
+      "sha256": "600545f9f7f17dbe7e7c8e77c81866e520516dbcf4556dab1163c2b7bffe2c4f",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791657775676809428/current-core-exports.stdout",
+      "originalSha256": "9f9a0a4cdb59352d54e3854d07a12b3c2b0a68ad193b9912a524ef414026b151"
+    },
+    {
+      "path": "authority-plugin-undefined.stdout.gz",
+      "sha256": "2cf35c3ea512658e186031d1b2d749b5860fe0e329ade50db43c706a0f70cabd",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791657775676809428/plugin-undefined.stdout",
+      "originalSha256": "8b79e435575ee78963657d5f1c710724624ea65852cab5ad9fdbd12d22275a6b"
+    },
+    {
+      "path": "nativeNavigation-report.json",
+      "sha256": "50de80a7bbdd2cc83bae9047b9bed642750348bf90a75e4760784922eefdfccc",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-task-view-1791658612189435850/report.json",
+      "originalSha256": "50de80a7bbdd2cc83bae9047b9bed642750348bf90a75e4760784922eefdfccc"
+    },
+    {
+      "path": "windowRefusalRegression-report.json",
+      "sha256": "b002d385cf0447fbf83f4ea8dbc35bfc0c44a35e57839b9353b9f82e9b6dd00f",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-drag-ownership-1791658657894558092/report.json",
+      "originalSha256": "b002d385cf0447fbf83f4ea8dbc35bfc0c44a35e57839b9353b9f82e9b6dd00f"
+    },
+    {
+      "path": "failed-empty-workspace-navigation-1791657809727237545.json",
+      "sha256": "e1099921abf2c883db07c3e20f4efd9f9bdc499a40d0c0dc2cac3540f974b576",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791657809727237545/report.json",
+      "originalSha256": "e1099921abf2c883db07c3e20f4efd9f9bdc499a40d0c0dc2cac3540f974b576"
+    },
+    {
+      "path": "failed-empty-workspace-navigation-1791657895056255600.json",
+      "sha256": "19dc454ba980db9ca5c03b373b164a3546adb418c8f2aac87ede7fe8c799c52b",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791657895056255600/report.json",
+      "originalSha256": "19dc454ba980db9ca5c03b373b164a3546adb418c8f2aac87ede7fe8c799c52b"
+    },
+    {
+      "path": "failed-empty-workspace-navigation-1791657957814255025.json",
+      "sha256": "9c40e2f3478caea7de1854a6f471673d30d988b6418d1321bdca29852cf29c7f",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791657957814255025/report.json",
+      "originalSha256": "9c40e2f3478caea7de1854a6f471673d30d988b6418d1321bdca29852cf29c7f"
+    },
+    {
+      "path": "failed-empty-workspace-navigation-1791657987539722879.json",
+      "sha256": "b7470da3bfdc072a296a703235af7b6135a843143754bc66768f02e3eec9c457",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791657987539722879/report.json",
+      "originalSha256": "b7470da3bfdc072a296a703235af7b6135a843143754bc66768f02e3eec9c457"
+    },
+    {
+      "path": "failed-workspace-navigation-1791658045263724218.json",
+      "sha256": "a8a8c60467a5921eabe3e2dd8e5533db30b0d9e64b96adbfc9d704684b0d3ce7",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-navigation-1791658045263724218/report.json",
+      "originalSha256": "a8a8c60467a5921eabe3e2dd8e5533db30b0d9e64b96adbfc9d704684b0d3ce7"
+    },
+    {
+      "path": "failed-native-task-view-1791658192381515392.json",
+      "sha256": "e5d5aa05efa830cb31b2c13ae8b26f467dcd82bf0972f5b23ca9563543869209",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-task-view-1791658192381515392/report.json",
+      "originalSha256": "e5d5aa05efa830cb31b2c13ae8b26f467dcd82bf0972f5b23ca9563543869209"
+    },
+    {
+      "path": "failed-native-task-view-1791658337394488292.json",
+      "sha256": "fc1f8c7178ca036b08a16d65e9d99699845f6b51685a92af093d22b025e66ecc",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-task-view-1791658337394488292/report.json",
+      "originalSha256": "fc1f8c7178ca036b08a16d65e9d99699845f6b51685a92af093d22b025e66ecc"
+    },
+    {
+      "path": "failed-native-task-view-1791658452253383581.json",
+      "sha256": "d10d69e716d3a47e90f483a13689fd116a86d43dbee76790f6c0295aa8961d23",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-task-view-1791658452253383581/report.json",
+      "originalSha256": "d10d69e716d3a47e90f483a13689fd116a86d43dbee76790f6c0295aa8961d23"
+    },
+    {
+      "path": "nativeNavigation-0-initial.png",
+      "sha256": "7785edc1035d0d4c1062190da2273f3d7f83972de2dcc6f075eb310da3dce14c",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791658612189524383/popup-initial.png",
+      "originalSha256": "7785edc1035d0d4c1062190da2273f3d7f83972de2dcc6f075eb310da3dce14c"
+    },
+    {
+      "path": "nativeNavigation-1-workspace-two.png",
+      "sha256": "56d27b910504b51f3f79c5543a94d609a8d785c4c7140132e4186dca70ba683b",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791658612189524383/popup-workspace-two.png",
+      "originalSha256": "56d27b910504b51f3f79c5543a94d609a8d785c4c7140132e4186dca70ba683b"
+    },
+    {
+      "path": "nativeNavigation-2-empty-navigation-ready.png",
+      "sha256": "78002f95a12144014ab60aaf86fa4897a0602c2fcdbd156780c87807b180bb83",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791658612189524383/popup-empty-navigation-ready.png",
+      "originalSha256": "78002f95a12144014ab60aaf86fa4897a0602c2fcdbd156780c87807b180bb83"
+    },
+    {
+      "path": "nativeNavigation-warlock.log.gz",
+      "sha256": "536744d4e4da398d48c9024fecbb50fb4b262230e29ce1e9562910110feebe09",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791658612189524383/warlock.log",
+      "originalSha256": "f1af2e0216ebb64db197348d2c2960612ae254c3b253c9d5e66c0c86af721d94"
+    },
+    {
+      "path": "windowRefusalRegression-warlock.log.gz",
+      "sha256": "9e08e7089f9a98bc97dfbe549751ae97b9cbefeea5432fa652f07271f79a23b6",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791658657894653574/warlock.log",
+      "originalSha256": "17dc66052f63adf341194c736bd7926bc3683ec6ef1147a6508adb6559bbe6f1"
+    },
+    {
+      "path": "first-model-workspace-navigation.qnt",
+      "sha256": "be74dcd524b2191c557d9bc51cea559fd3aa674566b3881bc84a59a74e916163",
+      "scope": "Byte-identical first model from recorded pre-code hash; renamed to avoid replacing the existing window navigation model."
+    },
+    {
+      "path": "first-model-workspace-navigation_test.qnt",
+      "sha256": "03b27d26196b1fcc980c359ea46a20271da62ddd31711e1fff263dbfea99e657",
+      "scope": "Byte-identical first model from recorded pre-code hash; renamed to avoid replacing the existing window navigation model."
+    },
+    {
+      "path": "actual-host-journal-fixture.c",
+      "sha256": "e7bc0f78af6e3a4db61aa3747637259e03dc81b1cfd77cc334627a396d1a6e68",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-navigation-1791658068566685400/host-workspace-fixture.c",
+      "originalSha256": "e7bc0f78af6e3a4db61aa3747637259e03dc81b1cfd77cc334627a396d1a6e68"
+    },
+    {
+      "path": "final-journal-and-model-report.json",
+      "sha256": "567478f272bc6cf441cd0d88ca0c0cc28addda80fa5102e0430776c94e86852d",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-navigation-1791658908511146680/report.json",
+      "originalSha256": "567478f272bc6cf441cd0d88ca0c0cc28addda80fa5102e0430776c94e86852d"
+    },
+    {
+      "path": "final-journal-and-model-typecheck.stdout.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-navigation-1791658908511146680/typecheck.stdout",
+      "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "final-journal-and-model-tests-typecheck.stdout.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-navigation-1791658908511146680/tests-typecheck.stdout",
+      "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "final-journal-and-model-compat-tests-typecheck.stdout.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-navigation-1791658908511146680/compat-tests-typecheck.stdout",
+      "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "final-journal-and-model-named.stdout.gz",
+      "sha256": "71bfce55530693ae40715c15ad4aec2e52972d95626f4dd94861aaa44ec97d1d",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-navigation-1791658908511146680/named.stdout",
+      "originalSha256": "9772d6c23dc092480ce858747d3c79370190d59aeae59dcb71b6feced9261ec8"
+    },
+    {
+      "path": "final-journal-and-model-witness-safety.stdout.gz",
+      "sha256": "640cd33d85fc9a06a2453805d523fcd054fc917876d7f453de3fa163c57cb525",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-navigation-1791658908511146680/witness-safety.stdout",
+      "originalSha256": "72114c223917d57bcf19da012f665f47a7c71620f4cc6c40b5622251a1599c3a"
+    },
+    {
+      "path": "final-journal-and-model-host-compile.stdout.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-navigation-1791658908511146680/host-compile.stdout",
+      "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "modelWitnesses": {
+    "commitWitness": 7,
+    "refusalWitness": 22,
+    "recoveredWitness": 4,
+    "unknownWitness": 5
+  },
+  "journalChecks": {
+    "actualHostPersistsBeforeBroker": true,
+    "duplicateHostAdmissionBlocked": true,
+    "hostBlocksWindowDuringNavigation": true,
+    "brokerUnknownBeforeNativeAndExactCommit": true,
+    "duplicateBrokerNeverSubmits": true,
+    "terminalCounterCannotBeReused": true,
+    "lostAckDurableUnknown": true,
+    "restartReadsRetainedExactOutcomeWithoutReplay": true,
+    "hostOnlyCrashNeverDispatches": true,
+    "unknownBlocksNewWorkspaceAdmission": true,
+    "unknownBlocksNewWindowAdmission": true,
+    "mixedMutationBatchRejected": true,
+    "hostRejectsInvalidWorkspaceOwner": true,
+    "hostRejectsJournalSymlink": true,
+    "brokerRejectsJournalSymlink": true,
+    "zeroWorkspace": true,
+    "noncanonicalWorkspace": true,
+    "signedOverflow": true,
+    "zeroOwner": true,
+    "negativeMonitor": true,
+    "foreignEpoch": true,
+    "unknownField": true
+  },
+  "typedChecks": {
+    "goEmptyWorkspaceControl": true,
+    "populatedDestinationCannotGo": true,
+    "activeDestinationCannotGo": true,
+    "oneTypedNavigation": true,
+    "pendingFeedback": true,
+    "duplicateSuppressed": true,
+    "deadlineUnknownNoReplay": true,
+    "unknownCanReopenAndDismiss": true,
+    "unknownCannotMutateWindow": true,
+    "unknownHasReadOnlyRecovery": true,
+    "recoveryDoesNotDuplicateRead": true,
+    "committedExactReceipt": true,
+    "refusedRetainsDestinationContext": true,
+    "foreignCannotSettle": true,
+    "disconnectNeverReplays": true
+  },
+  "originalTaskViewChecks": {
+    "groupsMatchMembership": true,
+    "activeWorkspaceNamed": true,
+    "openingIsObservationOnly": true,
+    "workspaceBrowseIsLocal": true,
+    "staleSelectionInert": true,
+    "unavailableWorkspaceNeverActivates": true,
+    "retiredIdentityNeverSubstitutes": true,
+    "selectionRefreshesBeforeEffect": true,
+    "duplicateChoiceInert": true,
+    "dismissalDoesNotMutate": true,
+    "dismissalDefersDOMFocusUntilFreshRead": true,
+    "independentRevisionNamespacesRemainBrowsable": true,
+    "mixedOutputMembershipWithheld": true,
+    "mixedFocusMembershipWithheld": true,
+    "mixedMinimizedMembershipWithheld": true,
+    "ordinaryRendererAcceptsTaskView": true,
+    "offWorkspaceSelectionRequiresFreshObservation": true,
+    "freshObservationRestoresExactWorkspaceTwoRootOnce": true,
+    "staleNavigationObservationNeverMutates": true,
+    "retiredNavigationRootNeverSubstitutes": true,
+    "duplicateNavigationObservationNeverReplays": true,
+    "matchedRefusalWaitsForFreshRead": true,
+    "exactRefusalRestoresFilteredOverview": true,
+    "restoredEligibleFamilyGetsCurrentFocus": true,
+    "duplicateRefusalCannotReopenOrReplay": true,
+    "committedChoiceStaysClosed": true,
+    "unknownChoiceStaysClosedWithoutReplay": true,
+    "foreignIntentCannotReturn": true,
+    "anotherInterfaceCancelsReturn": true,
+    "replacementAuthorityCannotReturn": true,
+    "retiredFamilyReturnsToAllWindows": true,
+    "unconfirmedTransferRetainsSourceFamilyWithoutInventingNativeOwner": true,
+    "emptyInventoryComesThroughExactRootReceipt": true,
+    "nativeActiveEmptyMarkerDoesNotNeedFocusedWindow": true,
+    "emptyWorkspaceOpensAndBrowsesWithoutEffects": true,
+    "emptyWorkspaceKeepsVisibleDismissal": true,
+    "emptySelectionHasExplicitNotice": true,
+    "emptyWorkspaceDismissalIsReadOnly": true,
+    "foreignGeometryCannotInventEmptyWorkspace": true,
+    "duplicateWorkspacePacketRejectedByRoot": true,
+    "differentGeometrySequenceCannotJoinInventory": true,
+    "retiredEmptySelectionFallsBackToAll": true
+  },
+  "nativeChecks": 71,
+  "refusalRegressionChecks": 62,
+  "nativeEmptyWorkspaceNavigationObserved": true,
+  "nativeRefusalRegressionObserved": true,
+  "cleanupPassed": true,
+  "nativeAcceptance": false,
+  "assistiveTechnologyAccepted": false,
+  "independentAcceptance": false,
+  "fullReleaseAccepted": false,
+  "missingObservations": [
+    "Native workspace lost-ack/restart and workspace refusal journeys.",
+    "Applicable assistive-technology observations and independent original ELM-UI-006 acceptance."
+  ],
+  "modelLimits": "One typed workspace effect abstracted over exact counter/owner identities; host/broker crash and lost ACK schedules, no scene-based inference, no replay. Does not prove disk atomicity, native API behavior, physical pixels, AT, deadlines or general window custody. Sampled, not exhaustive. Existing window-navigation model restored byte-for-byte and retained separately.",
+  "modelSourceMap": {
+    "admit": "native/host-journal.h workspace_admission_write",
+    "reserve": "adapter/workspace_navigation.py Navigation.begin",
+    "commit/refuse/indeterminate": "native/workspace-navigation.inc applyWorkspaceNavigation",
+    "read/restart": "Navigation.recover and readWorkspaceNavigation",
+    "dismiss/foreign/deadline": "WorkspaceNavigation.elm / Desktop.elm"
+  },
+  "compilerManifest": {
+    "path": "implementation/warlock-preview-provider-v143/qa/toolchain.json",
+    "sha256": "fe3d29078d30c6cf9bd431233c5eed1ad4550e2873ff55739d50a5a87a97edaa"
+  }
+}

@@ -80,7 +80,7 @@ try:
   header_prefix=(header_prefix[0],str(scene_report.parent/'owning-headers'));core={'path':scene_record['binary'],'sha256':scene_record['binarySHA256']};assert sha(core['path'])==core['sha256']
  source=OUT/'inputs/native';source.mkdir(parents=True)
  inputs={}
- for name in ('authority.cpp','navigation-modal.hpp','geometry-effects.inc','snap-placement.inc','transfer-workspace.inc','motion-profile.inc','picker-preview.inc','picker-probe-table.hpp','capture-fd-server.inc','geometry.inc','shortcut-bindings.inc'):
+ for name in ('authority.cpp','navigation-modal.hpp','geometry-effects.inc','snap-placement.inc','transfer-workspace.inc','motion-profile.inc','picker-preview.inc','picker-probe-table.hpp','capture-fd-server.inc','geometry.inc','shortcut-bindings.inc','workspace-navigation.inc'):
   p=ROOT/'native'/name;inputs['native/'+name]=sha(p);shutil.copyfile(p,source/name)
  if scene_record:
   p=ROOT/'native/core/CommittedScene.hpp';inputs['native/core/CommittedScene.hpp']=sha(p);(source/'core').mkdir();shutil.copyfile(p,source/'core/CommittedScene.hpp')
@@ -99,7 +99,7 @@ try:
  dependencies={str(pathlib.Path(p).resolve()):sha(p) for p in deps}
  for p,h in dependencies.items():
   if p.startswith(str(source)):
-   assert pathlib.Path(p).name in ('GestureEndPolicy.hpp','ModalRecipient.hpp','CommittedScene.hpp','authority.cpp','navigation-modal.hpp','geometry-effects.inc','snap-placement.inc','transfer-workspace.inc','motion-profile.inc','picker-preview.inc','picker-probe-table.hpp','capture-fd-server.inc','geometry.inc','shortcut-bindings.inc')
+   assert pathlib.Path(p).name in ('GestureEndPolicy.hpp','ModalRecipient.hpp','CommittedScene.hpp','authority.cpp','navigation-modal.hpp','geometry-effects.inc','snap-placement.inc','transfer-workspace.inc','motion-profile.inc','picker-preview.inc','picker-probe-table.hpp','capture-fd-server.inc','geometry.inc','shortcut-bindings.inc','workspace-navigation.inc')
   else:
    inherited=header_prefix[0]+p[len(header_prefix[1]):] if header_prefix and p.startswith(header_prefix[1]+'/') else p
    recorded=preserved.get(inherited)

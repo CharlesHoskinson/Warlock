@@ -1,4 +1,4 @@
-module Desktop exposing (Effect(..), ChoiceToken, choiceToken, Model, Msg(..), PopupOrigin(..), initial, update, ViewStamp, capture, key, taskViewGroups, switcherOpen, canProveCatalogUnsent, pinnedGroup, pinGroups, pinIdentities)
+module Desktop exposing (Effect(..), ChoiceToken, choiceToken, Model, Msg(..), PopupOrigin(..), initial, update, ViewStamp, capture, key, taskViewGroups, workspaceNavigationIntent, workspaceMutation, switcherOpen, canProveCatalogUnsent, pinnedGroup, pinGroups, pinIdentities)
 
 import Menu
 import ActionProjection as Scene
@@ -27,6 +27,7 @@ import Shell
 import Taskbar
 import Effects
 import TaskbarShell
+import WorkspaceNavigation
 import WorkspaceInventory
 import OverviewRecovery
 import TaskView
@@ -79,6 +80,7 @@ type alias Model =
     , open : Bool
     , overview : Bool
     , overviewWorkspace : Maybe String
+    , workspaceNavigation : WorkspaceNavigation.Model
     , workspaceInventory : Maybe WorkspaceInventory.Snapshot
     , overviewRecovery : OverviewRecovery.Model
     , overviewTransfer : Maybe Counter
@@ -168,6 +170,9 @@ type Msg
     | CommitSwitcher ViewStamp
     | CloseSwitcher ViewStamp
     | CloseOverview ViewStamp
+    | OverviewNavigateWorkspace ViewStamp String
+    | RefreshWorkspaceNavigation ViewStamp
+    | WorkspaceNavigationDeadline WorkspaceNavigation.Intent
     | OverviewWorkspace ViewStamp (Maybe String)
     | OverviewChoose ViewStamp Counter
     | OpenOverviewTransfer ViewStamp Counter
@@ -189,11 +194,12 @@ type Effect
     | Send E.Value
     | Arm Launch.PendingToken
     | ArmChoice ChoiceToken
+    | ArmWorkspaceNavigation WorkspaceNavigation.Intent
     | Focus String
 
 initial : Model
 initial =
-    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", popupOrigin = KeyboardEntry, returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, pointer = PointerOwnership.initial, shortcuts = Shortcuts.initial, jumpList = JumpList.initial, jumpEntry = Nothing, jumpOpening = False, jumpExpected = Nothing, jumpBack = False, files = Files.initial, filesOpen = False, filesOpening = False, filesExpected = Nothing, systemMenu = SystemMenu.initial, systemMenuOpen = False, systemMenuOpening = False, systemMenuExpected = Nothing, systemMenuConfirmation = Nothing, notifications = Notifications.initial, notificationsOpen = False, notificationsOpening = False, notificationsExpected = Nothing, motionExpected = Nothing, motion = Motion.initial, settings = Settings.initial, settingsOpen = False, settingsOpening = False, settingsExpected = Nothing, settingsHelp = True, shortcutPreferences = ShortcutPreferences.initial, shortcutExpected = Nothing, open = False, overview = False, overviewWorkspace = Nothing, overviewRecovery = OverviewRecovery.initial, workspaceInventory = Nothing, overviewTransfer = Nothing, snap = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, adapterNotice = Nothing, catalogFailure = Nothing, catalogOpening=False }
+    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", popupOrigin = KeyboardEntry, returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, pointer = PointerOwnership.initial, shortcuts = Shortcuts.initial, jumpList = JumpList.initial, jumpEntry = Nothing, jumpOpening = False, jumpExpected = Nothing, jumpBack = False, files = Files.initial, filesOpen = False, filesOpening = False, filesExpected = Nothing, systemMenu = SystemMenu.initial, systemMenuOpen = False, systemMenuOpening = False, systemMenuExpected = Nothing, systemMenuConfirmation = Nothing, notifications = Notifications.initial, notificationsOpen = False, notificationsOpening = False, notificationsExpected = Nothing, motionExpected = Nothing, motion = Motion.initial, settings = Settings.initial, settingsOpen = False, settingsOpening = False, settingsExpected = Nothing, settingsHelp = True, shortcutPreferences = ShortcutPreferences.initial, shortcutExpected = Nothing, open = False, overview = False, overviewWorkspace = Nothing, overviewRecovery = OverviewRecovery.initial, workspaceInventory = Nothing, workspaceNavigation = WorkspaceNavigation.initial, overviewTransfer = Nothing, snap = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, adapterNotice = Nothing, catalogFailure = Nothing, catalogOpening=False }
 
 taskViewGroups : Model -> Maybe (List TaskView.Workspace)
 taskViewGroups model = TaskView.groupsWith model.workspaceInventory model.windows.shell
@@ -362,7 +368,7 @@ windowBase message model =
             else if changed then windows.shell.binding |> Maybe.map (\binding -> Launch.bind (host binding) model.launch) |> Maybe.withDefault (Launch.disconnect model.launch)
             else model.launch
     in
-    ( (if disconnected || changed then advance else identity) { model | windows = windows, launch = launch, workspaceInventory = inventory
+    ( (if disconnected || changed then advance else identity) { model | windows = windows, launch = launch, workspaceInventory = inventory, workspaceNavigation = if disconnected then WorkspaceNavigation.disconnect model.workspaceNavigation else if changed then windows.shell.binding |> Maybe.map (\binding -> WorkspaceNavigation.bind binding model.workspaceNavigation) |> Maybe.withDefault (WorkspaceNavigation.disconnect model.workspaceNavigation) else model.workspaceNavigation
         , choice = if disconnected || changed || windows.shell.phase==Shell.Exhausted then Nothing else model.choice
         , returnFocus = if disconnected || changed then Nothing else model.returnFocus
         , menuOrigin = if disconnected || changed || (MenuBridge.menuSnapshot windows.menus).menu==Nothing then Nothing else model.menuOrigin
@@ -548,12 +554,49 @@ update message model =
         _ -> updateOrdinary message model
 
 updateOrdinary message model =
-    if (PointerOwnership.blocked model.windows.shell.binding model.pointer && gestureAction message) || (not (Motion.ready model.windows.shell.binding model.motion) && motionGesture message) then (model,[]) else
+    if (WorkspaceNavigation.blocked model.workspaceNavigation && workspaceMutation message) || (PointerOwnership.blocked model.windows.shell.binding model.pointer && gestureAction message) || (not (Motion.ready model.windows.shell.binding model.motion) && motionGesture message) then (model,[]) else
     let (next,effects)=updateAvailable message model
-        (recovered,recoveryEffects)=resumeOverview next
-        (overview,overviewEffects)=syncOverviewWorkspace recovered
+        windowMutation=List.any (\effect -> case effect of
+            WindowEffect (Shell.Send wire) -> D.decodeValue (D.field "kind" D.string) wire==Ok "window-effect"
+            _ -> False) effects
+        feedback=if windowMutation then {next|workspaceNavigation=WorkspaceNavigation.clear next.workspaceNavigation} else next
+        (recovered,recoveryEffects)=resumeOverview feedback
+        (workspace,workspaceEffects)=resumeWorkspaceOverview recovered
+        (overview,overviewEffects)=syncOverviewWorkspace workspace
         (synced,commands)=syncMotion overview
-    in (synced,effects++recoveryEffects++overviewEffects++commands)
+    in (synced,effects++recoveryEffects++workspaceEffects++overviewEffects++commands)
+
+workspaceNavigationIntent model destination =
+    if model.choice/=Nothing || not (Shell.available model.windows.shell) || model.windows.shell.expected/=Nothing || model.windows.shell.geometryExpected/=Nothing || model.presentation==Nothing || (MenuBridge.menuSnapshot model.windows.menus).outstanding>0 || List.any (\transaction -> List.member transaction.status [Effects.Pending,Effects.Unknown]) model.windows.shell.effects.unresolved || (model.windows.shell.effects.transaction |> Maybe.map (\transaction -> List.member transaction.status [Effects.Pending,Effects.Unknown]) |> Maybe.withDefault False) then Nothing else
+        Maybe.map2 (\inventory geometry -> WorkspaceNavigation.propose inventory geometry destination model.workspaceNavigation) model.workspaceInventory model.windows.shell.geometry |> Maybe.andThen identity
+
+workspaceNavigationFrame raw model =
+    let navigation=WorkspaceNavigation.receive raw model.workspaceNavigation
+        changed=navigation/=model.workspaceNavigation
+        terminal=navigation.record |> Maybe.map (\r -> r.status==WorkspaceNavigation.Committed || r.status==WorkspaceNavigation.Refused) |> Maybe.withDefault False
+    in if not changed then (model,[]) else
+        let next=advance {model|workspaceNavigation=navigation}
+        in if terminal then windowBase (TaskbarShell.Native Shell.Refresh) next else (next,[])
+
+workspaceMutation message = case message of
+    CloseOverview _ -> False
+    OpenOverview _ -> False
+    OverviewWorkspace _ _ -> False
+    RefreshWorkspaceNavigation _ -> False
+    WorkspaceNavigationDeadline _ -> False
+    Window (TaskbarShell.Native (Shell.Act _ _ _)) -> True
+    Window (TaskbarShell.Native _) -> False
+    Window (TaskbarShell.Close _ _) -> False
+    Window _ -> True
+    _ -> gestureAction message
+
+resumeWorkspaceOverview model =
+    let navigation=model.workspaceNavigation
+        ready=Shell.available model.windows.shell && model.windows.shell.expected==Nothing && model.windows.shell.geometryExpected==Nothing && model.choice==Nothing && taskViewGroups model/=Nothing
+    in if not navigation.returning || not ready then (model,[]) else
+        let selected=navigation.origin |> Maybe.andThen (\id -> if taskViewGroups model |> Maybe.map (List.any (\g -> g.identity==id)) |> Maybe.withDefault False then Just id else Nothing)
+            next=advance {model|overview=True,overviewWorkspace=selected,returnFocus=Nothing,workspaceNavigation={navigation|returning=False,origin=Nothing}}
+        in (next,[Focus (key next (selected |> Maybe.map ((++) "overview:workspace:") |> Maybe.withDefault "overview:all"))])
 
 -- Restore only display context from an exact terminal refusal. Native action
 -- ownership and Unknown/replay policy remain in Shell/Effects.
@@ -768,8 +811,17 @@ updateAvailable message model =
             let (next,effects)=window value model
                 (synced,commands)=syncSwitcher next
             in if next.windows.picker/=Nothing && next.windows.picker/=model.windows.picker then (retireSwitcher {next | jumpEntry=Nothing,jumpOpening=False,filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,snap=Nothing,open=False,overview=False,expected=Nothing,menuOrigin=Nothing,returnFocus=Nothing},effects) else (synced,effects++commands)
+        WorkspaceNavigationDeadline intent ->
+            (advance {model|workspaceNavigation=WorkspaceNavigation.expire intent model.workspaceNavigation},[])
+        RefreshWorkspaceNavigation stamp ->
+            if capture model/=Just stamp then (model,[]) else
+                let (navigation,wire)=WorkspaceNavigation.recover model.workspaceNavigation
+                    (refreshed,commands)=windowBase (TaskbarShell.Native Shell.Refresh) {model|workspaceNavigation=navigation}
+                in (advance refreshed,commands++(wire |> Maybe.map (Send >> List.singleton) |> Maybe.withDefault []))
         Incoming raw ->
             case D.decodeValue (D.field "kind" D.string) raw of
+                Ok "workspace-navigation-outcome" -> workspaceNavigationFrame raw model
+                Ok "workspace-navigation-recovery" -> workspaceNavigationFrame raw model
                 Ok "motion-preferences" ->
                     let decoder=strict ["protocolVersion","kind","binding","requestId","snapshot"] (D.map4 (\_ binding request snapshot -> {binding=binding,request=request,snapshot=snapshot}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "snapshot" (D.nullable MotionPreferences.decoder)))
                     in case D.decodeValue decoder raw of
@@ -1154,6 +1206,16 @@ updateAvailable message model =
                     (refreshing,commands)=windowBase (TaskbarShell.Native Shell.Refresh) next
                     target=model.windows.shell.binding |> Maybe.map (\binding -> {binding=binding,destination=OverviewOpener,output=model.windows.shell.effects.observed |> Maybe.map (.context >> .output)})
                 in ({refreshing | returnFocus=target},commands)
+        OverviewNavigateWorkspace stamp destination ->
+            if capture model/=Just stamp || not model.overview then (model,[]) else
+            case workspaceNavigationIntent model destination of
+                Just intent ->
+                    let (navigation,wire)=WorkspaceNavigation.begin intent model.workspaceNavigation
+                        next=advance {model|workspaceNavigation=navigation,overview=False,overviewTransfer=Nothing,returnFocus=Nothing,choiceNotice=""}
+                    in case wire of
+                        Just request -> (next,[Send request,ArmWorkspaceNavigation intent])
+                        Nothing -> (model,[])
+                Nothing -> (model,[])
         OverviewWorkspace stamp selected ->
             if capture model/=Just stamp || not model.overview || selected==model.overviewWorkspace then (model,[]) else
             let exists=selected |> Maybe.map (\workspace -> taskViewGroups model |> Maybe.map (List.any (\g -> g.identity==workspace)) |> Maybe.withDefault False) |> Maybe.withDefault True

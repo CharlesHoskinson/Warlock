@@ -1,5 +1,6 @@
 """Focused compiled launcher/search integration, protected CPU scope only."""
 import pathlib,hashlib,json,os,sys,time,shutil,subprocess,shlex,importlib.util,concurrent.futures,http.server,threading
+EMPTYNAV=sys.argv[1:]==['--empty-workspace-navigation']
 INVENTORY=sys.argv[1:]==['--workspace-inventory']
 RECOVERY=sys.argv[1:]==['--overview-recovery']
 RELEVANCE=sys.argv[1:]==['--notification-relevance']
@@ -47,11 +48,11 @@ DENSE=sys.argv[1:]==['--dense-taskbar'] or PICKER
 PINMENUS=sys.argv[1:]==['--pinned-menus'] or (DENSE and not PICKER)
 PRIMARY=(DESCRIPTION and not FALLBACK) or sys.argv[1:]==['--taskbar-primary'] or PINMENUS or PICKER
 SWITCHER=sys.argv[1:]==['--switcher'] or ACCESSIBILITY
-NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'] or LOCALFIELD;POPUP=sys.argv[1:]==['--native-popup'] or QUIESCENT or SHUTDOWN or BARRETURN;TASKVIEW=INVENTORY or RECOVERY or sys.argv[1:]==['--task-view'] or NAV or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION or KEYBOARD or DRAG or IME or TRANSFER or MOTION or PINMAX or ANNOUNCEMENTS;assert not sys.argv[1:] or PINS or POPUP or TASKVIEW or PRIMARY or SWITCHER or PREVIEW
+NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'] or LOCALFIELD;POPUP=sys.argv[1:]==['--native-popup'] or QUIESCENT or SHUTDOWN or BARRETURN;TASKVIEW=EMPTYNAV or INVENTORY or RECOVERY or sys.argv[1:]==['--task-view'] or NAV or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION or KEYBOARD or DRAG or IME or TRANSFER or MOTION or PINMAX or ANNOUNCEMENTS;assert not sys.argv[1:] or PINS or POPUP or TASKVIEW or PRIMARY or SWITCHER or PREVIEW
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143'
 sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
 scope=require_qa_scope();sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
-OUT=ROOT/'qa/runs'/(('workspace-inventory-' if INVENTORY else 'overview-recovery-' if RECOVERY else 'announcements-' if ANNOUNCEMENTS else 'preview-description-' if DESCRIPTION else 'layer-appearance-' if LAYER else 'bar-keyboard-return-' if BARRETURN else 'preview-shutdown-' if SHUTDOWN else 'pin-max-' if PINMAX else 'preview-quiescence-' if QUIESCENT else 'preview-states-' if PREVIEW else 'live-motion-' if LIVE else 'reduced-motion-' if MOTION else 'transfer-workspace-' if TRANSFER else 'ime-' if IME else 'accessibility-' if ACCESSIBILITY else 'high-contrast-' if CONTRAST else 'drag-ownership-' if DRAG else 'keyboard-shell-' if KEYBOARD else 'attention-' if ATTENTION else 'jump-lists-' if JUMP else 'files-' if FILES else 'system-menu-' if SYSTEM else 'notifications-' if NOTIFICATIONS else 'settings-' if SETTINGS else 'snap-chooser-' if SNAP else 'switcher-' if SWITCHER else 'taskbar-primary-' if PRIMARY else 'workspace-navigation-' if NAV else 'task-view-' if TASKVIEW else 'popup-' if POPUP else 'pins-' if PINS else 'search-')+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
+OUT=ROOT/'qa/runs'/(('empty-workspace-navigation-' if EMPTYNAV else 'workspace-inventory-' if INVENTORY else 'overview-recovery-' if RECOVERY else 'announcements-' if ANNOUNCEMENTS else 'preview-description-' if DESCRIPTION else 'layer-appearance-' if LAYER else 'bar-keyboard-return-' if BARRETURN else 'preview-shutdown-' if SHUTDOWN else 'pin-max-' if PINMAX else 'preview-quiescence-' if QUIESCENT else 'preview-states-' if PREVIEW else 'live-motion-' if LIVE else 'reduced-motion-' if MOTION else 'transfer-workspace-' if TRANSFER else 'ime-' if IME else 'accessibility-' if ACCESSIBILITY else 'high-contrast-' if CONTRAST else 'drag-ownership-' if DRAG else 'keyboard-shell-' if KEYBOARD else 'attention-' if ATTENTION else 'jump-lists-' if JUMP else 'files-' if FILES else 'system-menu-' if SYSTEM else 'notifications-' if NOTIFICATIONS else 'settings-' if SETTINGS else 'snap-chooser-' if SNAP else 'switcher-' if SWITCHER else 'taskbar-primary-' if PRIMARY else 'workspace-navigation-' if NAV else 'task-view-' if TASKVIEW else 'popup-' if POPUP else 'pins-' if PINS else 'search-')+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
 for folder in ['src','native','adapter','assets','qa']:
  (INPUT/folder).mkdir()
  for p in (ROOT/folder).iterdir():
@@ -206,7 +207,10 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
   run('transfer-model-typecheck',['quint','typecheck','qa/transfer-workspace.qnt'])
   run('transfer-model-named',['quint','test','qa/transfer-workspace.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79141'])
   run('transfer-model-invariants',['quint','run','qa/transfer-workspace.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79142'])
- if INVENTORY:
+ if EMPTYNAV:
+  run('compile-empty-workspace-navigation',[str(HELD/pinned['compiler']),'make','qa/WorkspaceNavigationReplay.elm','--optimize','--output=assets/empty-workspace-navigation.js'])
+  (INPUT/'qa/empty-workspace-navigation-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.WorkspaceNavigationReplay'));run('typed-empty-workspace-navigation',['node','qa/empty-workspace-navigation-replay.js','assets/empty-workspace-navigation.js',str(OUT/'empty-workspace-navigation.json')]);report['workspaceNavigation']=json.loads((OUT/'empty-workspace-navigation.json').read_text());assert all(report['workspaceNavigation']['checks'].values())
+ if INVENTORY or EMPTYNAV:
   report['workspaceInventoryModel']=json.loads(run('workspace-inventory-model',['/usr/bin/python3','-B','qa/check-workspace-inventory.py']));assert report['workspaceInventoryModel']['passed']
   report.update(requirements=['ELM-UI-006'],scenarios=['overview-empty'],scope='Compiled native empty workspace inventory and browsing; actual navigation, native/AT and original acceptance remain separate.')
  if RECOVERY:
@@ -372,7 +376,11 @@ console.log('Current body-target Escape releases once; stale scope, preedit, rep
     # The authority TU is independently compiled against its owning core; none
     # of these reused GTK host objects link it or include its modal preflight.
     excluded=['native/surface-test.c','native/surface.h','native/host.c','native/shared-host.c','native/shell-bindings.lua','native/shared-context.h','native/shared-context-test.c']+(['native/authority.cpp','native/navigation-modal.hpp'] if NAV or DRAG else [])+(['native/authority.cpp','native/host-journal.h','native/geometry-effects.inc','native/snap-placement.inc','native/motion-profile.inc','native/geometry.inc'] if SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION or KEYBOARD or TRANSFER or MOTION or PINMAX else [])
-    if INVENTORY:
+    if EMPTYNAV:
+     excluded+=['native/authority.cpp','native/geometry-effects.inc','native/host-journal.h','native/workspace-navigation.inc']
+     pair_meta=json.loads((ROOT/'qa/current-native-pair.json').read_text());authority_path=REPO/pair_meta['authorityReport'];assert sha(authority_path)==pair_meta['authorityReportSHA256'];authority=json.loads(authority_path.read_text());assert authority['passed'] and authority['missingSymbols']==[]
+     for name in ['native/authority.cpp','native/geometry-effects.inc','native/workspace-navigation.inc']:assert sha(INPUT/name)==authority['inputs'][name]
+    if INVENTORY or EMPTYNAV:
      excluded+=['native/geometry.inc']
      pair_meta=json.loads((ROOT/'qa/current-native-pair.json').read_text());authority_path=REPO/pair_meta['authorityReport'];assert sha(authority_path)==pair_meta['authorityReportSHA256'];authority=json.loads(authority_path.read_text());assert authority['passed'] and authority['missingSymbols']==[]
      assert sha(INPUT/'native/geometry.inc')==authority['inputs']['native/geometry.inc']

@@ -1,5 +1,6 @@
 module Surface exposing (windowNotice, Control, controls, mode, packet, resolve)
 
+import WorkspaceNavigation
 import Menu
 import Switcher
 import Pins
@@ -236,13 +237,13 @@ controls model =
            ++ List.map row (Switcher.entries model.switcher)
     else if model.overview then
         let
-            transferReady=Shell.available model.windows.shell && model.choice==Nothing
+            transferReady=Shell.available model.windows.shell && model.choice==Nothing && not (WorkspaceNavigation.blocked model.workspaceNavigation)
             scoped message = Desktop.capture model |> Maybe.map message
             groups = Desktop.taskViewGroups model |> Maybe.withDefault []
             workspaceControl group =
                 {id="overview:workspace:"++group.identity,domId=Desktop.key model ("overview:workspace:"++group.identity),label="Workspace "++group.identity,ariaLabel="Browse workspace "++group.identity++(if group.active then "; active workspace" else ""),detail=(if group.active then "Active workspace" else "")++(if model.overviewWorkspace==Just group.identity then " • Selected" else ""),enabled=True,message=scoped (\stamp -> Desktop.OverviewWorkspace stamp (Just group.identity))}
             familyControl group family =
-                let ready=Shell.available model.windows.shell && family.available && not (familyBlocked model family.root)
+                let ready=not (WorkspaceNavigation.blocked model.workspaceNavigation) && Shell.available model.windows.shell && family.available && not (familyBlocked model family.root)
                     identity="overview:family:"++UInt64.string family.root
                     detail="Workspace "++group.identity++" • "++(if familyBlocked model family.root then "Awaiting native confirmation" else if not family.available then "Unavailable for activation" else if family.minimized then "Minimized" else "Open")
                 in {id=identity,domId=Desktop.key model identity,label=family.label,ariaLabel=(if family.minimized then "Restore " else "Activate ")++family.label++" on workspace "++group.identity,detail=detail,enabled=ready,message=if ready then scoped (\stamp -> Desktop.OverviewChoose stamp family.root) else Nothing}
@@ -254,14 +255,20 @@ controls model =
                 Transfer.destinations geometry |> List.filterMap (\destination -> Transfer.propose geometry root destination |> Maybe.map (\_ ->
                     let identity="overview:destination:"++destination
                     in {id=identity,domId=Desktop.key model identity,label="Move to workspace "++destination,ariaLabel="Move selected window to workspace "++destination,detail="",enabled=transferReady,message=if transferReady then scoped (\stamp -> Desktop.OverviewTransfer stamp root destination) else Nothing}))) |> Maybe.withDefault []
+            navigateControl group =
+                let proposed=Desktop.workspaceNavigationIntent model group.identity
+                    ready=proposed/=Nothing && transferReady && model.windows.shell.expected==Nothing && model.windows.shell.geometryExpected==Nothing
+                    id="overview:go:"++group.identity
+                in {id=id,domId=Desktop.key model id,label="Go to workspace "++group.identity,ariaLabel="Go to empty workspace "++group.identity,detail="Switch desktop",enabled=ready,message=if ready then scoped (\stamp -> Desktop.OverviewNavigateWorkspace stamp group.identity) else Nothing}
             workspaceRows group = workspaceControl group ::
+                (if List.isEmpty group.windows && not group.active then [navigateControl group] else []) ++
                 (if model.overviewWorkspace==Nothing || model.overviewWorkspace==Just group.identity then List.concatMap (\family -> [familyControl group family,transferControl family]) group.windows else [])
         in if model.overviewTransfer/=Nothing then
             [{id="control:close",domId=Desktop.key model "overview:transfer-cancel",label="Cancel transfer",ariaLabel="Cancel window transfer",detail="",enabled=True,message=scoped Desktop.CancelOverviewTransfer}]
                 ++ (model.overviewTransfer |> Maybe.map destinationRows |> Maybe.withDefault [])
         else [{id="control:close",domId=Desktop.key model "overview:close",label="Close Task View",ariaLabel="Close Task View and return to windows",detail="",enabled=True,message=scoped Desktop.CloseOverview}
            ,{id="overview:all",domId=Desktop.key model "overview:all",label="All windows",ariaLabel="Browse all workspaces",detail=if model.overviewWorkspace==Nothing then "Selected" else "",enabled=True,message=scoped (\stamp -> Desktop.OverviewWorkspace stamp Nothing)}]
-            ++ List.concatMap workspaceRows groups ++ [recoveryControl "overview:refresh" model]
+            ++ List.concatMap workspaceRows groups ++ [recoveryControl "overview:refresh" model] ++ (if WorkspaceNavigation.blocked model.workspaceNavigation then [{id="overview:workspace-refresh",domId=Desktop.key model "overview:workspace-refresh",label="Refresh workspace status",ariaLabel="Read workspace switch status without repeating the action",detail="",enabled=not model.workspaceNavigation.recovering,message=scoped Desktop.RefreshWorkspaceNavigation}] else [])
     else if model.open then
         let
             scoped build = Desktop.capture model |> Maybe.map build
@@ -370,6 +377,7 @@ barControls model =
 
 notice : Desktop.Model -> String
 notice model =
+    if not model.overview && mode model=="closed" && WorkspaceNavigation.notice model.workspaceNavigation/="" then WorkspaceNavigation.notice model.workspaceNavigation else
     if model.jumpEntry/=Nothing then (if model.jumpExpected/=Nothing then "Reading application actions…" else model.jumpList.notice)
     else if model.filesOpen then (if model.filesExpected/=Nothing then "Reading Files state…" else model.files.notice)
     else if model.systemMenuOpen then (if model.systemMenuExpected/=Nothing then "Reading native system state…" else if model.systemMenuConfirmation/=Nothing then "Confirm or cancel the requested system change." else model.systemMenu.notice)
@@ -380,11 +388,13 @@ notice model =
         else if model.nativeSwitcher/=Nothing then "Alt+Tab: next window. Alt+Shift+Tab: previous. Release Alt: activate. Escape: cancel."
         else "Tab or Right: next window. Shift+Tab or Left: previous. Enter: activate. Escape: cancel."
     else if model.overview then
-        if recoveryNeeded model then windowNotice model else
-        case Desktop.taskViewGroups model of
-            Nothing -> "Waiting for current workspace information. Refresh window status."
-            Just [] -> "No windows to show. Close Task View to return."
-            Just groups -> if model.overviewWorkspace/=Nothing && not (List.any (\group -> model.overviewWorkspace==Just group.identity && not (List.isEmpty group.windows)) groups) then "This workspace has no windows. Browse another workspace or close Task View." else "Choose a window to reveal its workspace, or browse another workspace."
+        let workspaceFeedback=WorkspaceNavigation.notice model.workspaceNavigation
+            emptyNotice=if recoveryNeeded model then windowNotice model else
+                case Desktop.taskViewGroups model of
+                    Nothing -> "Waiting for current workspace information. Refresh window status."
+                    Just [] -> "No windows to show. Close Task View to return."
+                    Just groups -> if model.overviewWorkspace/=Nothing && not (List.any (\group -> model.overviewWorkspace==Just group.identity && not (List.isEmpty group.windows)) groups) then "This workspace has no windows. Go to its desktop, browse another workspace or close Task View." else "Choose a window to reveal its workspace, or browse another workspace."
+        in (if workspaceFeedback=="" then "" else workspaceFeedback++" · ")++emptyNotice
     else if mode model=="menu" then
         case (MenuBridge.menuSnapshot model.windows.menus).menu |> Maybe.map .status of
             Just (Menu.Refused reason) -> reason
@@ -446,7 +456,7 @@ packet publication lease model =
                             if Provider.menuBinding provider/=menu.binding || Just (Provider.nativeBinding provider)/=model.windows.shell.binding then Nothing else
                             Provider.geometryObservation provider |> Maybe.andThen (GeometryProjection.window (Provider.incarnation provider)) |> Maybe.andThen .pin |> Maybe.map .pinned)
                         _ -> Nothing))
-        encode control = E.object ([("id",E.string control.id),("domId",E.string control.domId),("label",E.string control.label),("ariaLabel",E.string control.ariaLabel),("detail",E.string control.detail),("enabled",E.bool (control.enabled && control.message/=Nothing)),("focusOnly",E.bool (model.notificationsOpen && not control.enabled && Notifications.focusedIdentity model.notifications==Just control.id))] ++ (checked control |> Maybe.map (\value -> [("checked",E.bool value)]) |> Maybe.withDefault []))
+        encode control = E.object ([("id",E.string control.id),("domId",E.string control.domId),("label",E.string control.label),("ariaLabel",E.string control.ariaLabel),("detail",E.string control.detail),("enabled",E.bool (control.enabled && control.message/=Nothing && not (WorkspaceNavigation.blocked model.workspaceNavigation && (control.message |> Maybe.map Desktop.workspaceMutation |> Maybe.withDefault False)))),("focusOnly",E.bool (model.notificationsOpen && not control.enabled && Notifications.focusedIdentity model.notifications==Just control.id))] ++ (checked control |> Maybe.map (\value -> [("checked",E.bool value)]) |> Maybe.withDefault []))
     in E.object [("surfaceProtocol",E.int 2),("keyboardParent",E.bool (model.popupOrigin==Desktop.KeyboardEntry)),("motion",E.string (Motion.name (Motion.desired model.motion))),("appearance",Settings.encodeValues (model.settings.snapshot |> Maybe.map .values |> Maybe.withDefault Settings.defaults)),("publication",E.string (UInt64.string publication)),("lease",E.string (UInt64.string lease)),("mode",E.string (mode model)),("status",E.string ((notice model)++(if not model.filesOpen && (model.files.pending/=Nothing || String.startsWith "Files:" model.files.notice) then " · "++model.files.notice else "")++(if model.jumpEntry==Nothing && (model.jumpList.pending/=Nothing || String.startsWith "Application action:" model.jumpList.notice) then " · "++model.jumpList.notice else ""))),("bar",E.list encode (barControls model)),("popup",E.list encode (controls model))]
 
 resolveAction : Counter -> Counter -> D.Value -> Desktop.Model -> Maybe Desktop.Msg

@@ -206,6 +206,8 @@ static gboolean shared_foreground_requests(JsonArray *requests,JsonNode *binding
                     g_utf8_strlen(json_object_get_string_member(intent,"entry"),-1)<=256) return TRUE;
             }
         }
+        g_autoptr(JsonNode) workspace_record=workspace_admission_record(request);
+        if(workspace_record && json_node_equal(json_object_get_member(json_node_get_object(workspace_record),"binding"),binding))return TRUE;
         g_autoptr(JsonNode) record=admission_record(request);
         if (!record) continue;
         JsonObject *object=json_node_get_object(record);

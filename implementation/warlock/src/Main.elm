@@ -34,6 +34,7 @@ commit packet effects =
     let
         timers = List.filterMap (\effect -> case effect of
             Controller.DesktopEffect (Desktop.WindowEffect (Shell.ArmPrepared token)) -> Just (Process.sleep 2000 |> Task.perform (\_ -> Deadline (Desktop.Window (TaskbarShell.ExpirePrepared token))))
+            Controller.DesktopEffect (Desktop.ArmWorkspaceNavigation intent) -> Just (Process.sleep 2000 |> Task.perform (\_ -> Deadline (Desktop.WorkspaceNavigationDeadline intent)))
             Controller.DesktopEffect (Desktop.ArmChoice token) -> Just (Process.sleep 2000 |> Task.perform (\_ -> Deadline (Desktop.ChoiceDeadline token)))
             Controller.DesktopEffect (Desktop.Arm token) -> Just (Process.sleep 10000 |> Task.perform (\_ -> Deadline (Desktop.Deadline token)))
             _ -> Nothing) effects

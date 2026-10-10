@@ -1,0 +1,138 @@
+{
+  "passed": true,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-f52b53164d664e4d8e427f5d423ff7c4.scope",
+    "coreLimit": 1
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/empty-workspace-navigation.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "tests-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/empty-workspace-navigation_test.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "compat-tests-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/workspace-navigation_test.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/empty-workspace-navigation_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=79571"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "witness-safety",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/empty-workspace-navigation.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--witnesses",
+        "commitWitness",
+        "refusalWitness",
+        "recoveredWitness",
+        "unknownWitness",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79572"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "real-host-journal-compile",
+      "command": [
+        "gcc",
+        "-std=gnu11",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-function",
+        "-Wno-unused-variable",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/warlock/native",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-navigation-1791658908511146680/host-workspace-fixture.c",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-navigation-1791658908511146680/host-workspace-fixture",
+        "-I/usr/include/json-glib-1.0",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/libmount",
+        "-I/usr/include/blkid",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-ljson-glib-1.0",
+        "-lgio-2.0",
+        "-lgobject-2.0",
+        "-lglib-2.0",
+        "-lm"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/empty-workspace-navigation.qnt": "29d63bb5334f2e23d77c89091d7fc7d74763654880db23c978403c2732bcdb7c",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/empty-workspace-navigation_test.qnt": "3e73053e8e50d5f5e738f18a5bf18caaca07eeb21328edb8b8db0e9a2e1edbfd",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock/adapter/workspace_navigation.py": "79508bcb112ec602b6d33daf1050ef54f63afeb7bfe427fa5553e8a4c68bb8a9",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock/adapter/daemon.py": "a593494e4ca89ef467dced5cd946bc5eca9a88db21c591597c19eb2a80cdca31",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock/native/host-journal.h": "12064b3985b9842ac496722186fcf82e17ae328d3fcfc6aa67ba256299d1981f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock/native/surface.h": "d7fbd6a79d9aefb232a6f86ce2e3db806d2fd5b913eb90ea5a8cddc0807f4c43"
+  },
+  "scope": "Host/broker durable admission before native dispatch, owner/context refusal, lost ACK, restart exact read without replay, Unknown dismissal. Abstract one navigation and window exclusion; disk atomicity, wire validation, native API/pixels/AT/deadlines require separate evidence.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "witnesses": {
+    "commitWitness": 7,
+    "refusalWitness": 22,
+    "recoveredWitness": 4,
+    "unknownWitness": 5
+  },
+  "bridgeChecks": {
+    "actualHostPersistsBeforeBroker": true,
+    "duplicateHostAdmissionBlocked": true,
+    "hostBlocksWindowDuringNavigation": true,
+    "brokerUnknownBeforeNativeAndExactCommit": true,
+    "duplicateBrokerNeverSubmits": true,
+    "terminalCounterCannotBeReused": true,
+    "lostAckDurableUnknown": true,
+    "restartReadsRetainedExactOutcomeWithoutReplay": true,
+    "hostOnlyCrashNeverDispatches": true,
+    "unknownBlocksNewWorkspaceAdmission": true,
+    "unknownBlocksNewWindowAdmission": true,
+    "mixedMutationBatchRejected": true,
+    "hostRejectsInvalidWorkspaceOwner": true,
+    "hostRejectsJournalSymlink": true,
+    "brokerRejectsJournalSymlink": true,
+    "zeroWorkspace": true,
+    "noncanonicalWorkspace": true,
+    "signedOverflow": true,
+    "zeroOwner": true,
+    "negativeMonitor": true,
+    "foreignEpoch": true,
+    "unknownField": true
+  }
+}
