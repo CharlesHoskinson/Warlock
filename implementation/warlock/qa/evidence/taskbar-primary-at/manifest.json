@@ -1,0 +1,267 @@
+{
+  "schema": 1,
+  "requirement": "ELM-UI-004",
+  "scenarios": [
+    "taskbar-inactive",
+    "taskbar-active",
+    "taskbar-minimized"
+  ],
+  "ears": "The taskbar SHALL follow the INTERACTION.md primary-action table for zero, single and multiple family entries, distinguish application pin from always-on-top, and expose explicit new-instance actions without launching duplicates on ordinary activation.",
+  "verificationScope": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+  "originalRequirements": [
+    {
+      "id": "ELM-UI-004",
+      "capability": "elm-taskbar",
+      "phase": "P3",
+      "pattern": "ubiquitous",
+      "priority": "must",
+      "ears": "The taskbar SHALL follow the INTERACTION.md primary-action table for zero, single and multiple family entries, distinguish application pin from always-on-top, and expose explicit new-instance actions without launching duplicates on ordinary activation.",
+      "task": "Implement taskbar decision table with matching pointer/keyboard routes.",
+      "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+      "legacyEvidence": "docs/elm-roadmap/INTERACTION.md; new coverage: final UI/UX review",
+      "scenarios": [
+        {
+          "name": "taskbar-zero",
+          "given": "a pinned app with zero windows",
+          "when": "primary pointer or keyboard activation occurs",
+          "then": "one launch request is issued"
+        },
+        {
+          "name": "taskbar-inactive",
+          "given": "one inactive member",
+          "when": "primary pointer or keyboard activation occurs",
+          "then": "the member visibly activates"
+        },
+        {
+          "name": "taskbar-minimized",
+          "given": "one minimized member",
+          "when": "primary pointer or keyboard activation occurs",
+          "then": "the member restores and visibly activates"
+        },
+        {
+          "name": "taskbar-active",
+          "given": "one active eligible member",
+          "when": "primary pointer or keyboard activation occurs",
+          "then": "the family minimizes with declared focus succession"
+        },
+        {
+          "name": "taskbar-group",
+          "given": "multiple family entries",
+          "when": "primary pointer or keyboard activation occurs",
+          "then": "a group picker opens without new launch and selecting a member visibly activates it"
+        },
+        {
+          "name": "taskbar-refusal",
+          "given": "native authority refuses the requested action",
+          "when": "primary pointer or keyboard activation occurs",
+          "then": "observed state remains authoritative with feedback"
+        }
+      ],
+      "source": "docs/elm-roadmap/coordinator-requirements.json",
+      "status": "proposed",
+      "taskId": "P3-ELM-UI-004",
+      "accountableOwnerRole": "Elm presentation lead",
+      "verifierRole": "Independent acceptance reviewer"
+    }
+  ],
+  "originalInventory": {
+    "path": "docs/elm-roadmap/requirements.json",
+    "sha256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b"
+  },
+  "frozenInteraction": {
+    "path": "docs/elm-roadmap/INTERACTION.md",
+    "sha256": "2a947a3aa56d7b7b9e7d2f5c1ceb100ac7b8c345a73fd7616c0c4c567d0e01c4"
+  },
+  "disposition": "partial",
+  "requirementAccepted": false,
+  "fullReleaseAccepted": false,
+  "sourceParent": "4098726777b6a729872822bbabbe1b9f840c6024",
+  "sourceHashes": {
+    "implementation/warlock/qa/native-taskbar-primary-at.py": "23daab5d3850f1ee95661e868e40bcf56eb5a316e0d1c452e18c2bf9591336fc",
+    "implementation/warlock/qa/taskbar-at-action.py": "a0175b7334b755ac74428e466e290f44508f77234d6e4f528e95f1b72a08be2e",
+    "implementation/warlock/src/SurfaceRenderer.elm": "e7e8d255cf38c2862a03c951f7caab50fddffa73946ae143dedfe71c1fdbf4c6",
+    "implementation/warlock/assets/activation.js": "06e3de6bcbc27e2b9a5d166fd665706e300ef5d4a29640b9bd70aa0f095a2c3e",
+    "implementation/warlock/README.md": "5e82feec12cb853302a910130bab14628aaf21a88a501268589c68dbcc105cc9",
+    "implementation/warlock/qa/native-window-feedback.py": "295ba28cf8d9d297b214bd0d6dba19ac3289d861faa953f9fd94b82937473c64",
+    "implementation/warlock/qa/accessibility-session.py": "69bc3b33c2b99f0b9d54805e18afcb85ff02314dc9aa4d002f4df409a0e57524",
+    "implementation/warlock/qa/accessibility-inspector.py": "bc4fe7adba15c29f97137b91848971b65b994c1b8f6282109d7edf1e13bd5c27",
+    "implementation/warlock/qa/accessibility-reader.py": "66442e00fcdabbb5a4cc7bb7d283377ee40b42d0f6a1c6ec35c4b93369b782fd",
+    "implementation/warlock/src/Taskbar.elm": "31ed9ce6b37e5b35065f8833e31412657800d894b6d9e9544f380bc16e7aa519",
+    "implementation/warlock/src/TaskbarShell.elm": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+    "implementation/warlock/adapter/taskbar_projection.py": "b9da24de2a910a3d8515f2e8e4de2cb0086bdd0cd26c7f857fcbbdc15978c976"
+  },
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
+      "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791643756770507917/elm-window-geometry-authority.so",
+      "sha256": "049a982418a085a976db6bf08eee3da4ad7c9a4f826a724a8d653d86b15f0378"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+      "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791646018291514576/elm-host",
+    "sha256": "806aa4bcd44f0b67b6e58db7d1e41da41f1956692ff14001d5f19a5b005cecf7",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791646018291514576/report.json",
+    "heldBuildSHA256": "9f124b1d34d907aac9a33c05f3b77ac9c4773afd1cbf85a2de0c53d80e3c501e"
+  },
+  "artifacts": {
+    "failed-role-name": {
+      "path": "implementation/warlock/qa/runs/native-primary-keyboard-1791646832244261812/report.json",
+      "sha256": "288be803198d428e646137aa5b90b1d70544e3e3bff429af6f5e3986441b9fbe",
+      "packet": "failed-role-name.json.gz",
+      "packetSHA256": "96a0b4c4dbe05be58fc6150aa1d1b59fe592b5a48c7d1f97cc5da197d30477b5",
+      "encoding": "gzip",
+      "passed": false
+    },
+    "failed-observer-keyword": {
+      "path": "implementation/warlock/qa/runs/native-primary-keyboard-1791646907108839991/report.json",
+      "sha256": "5246fc6fc89be61ab2157daa1c331c2b6de4009c013748753c9d6355ff49b425",
+      "packet": "failed-observer-keyword.json.gz",
+      "packetSHA256": "859f4d495d2fc9fc028921d7a7b542af7750c0af9f9eed355bda7ff8d4a320f8",
+      "encoding": "gzip",
+      "passed": false
+    },
+    "failed-premature-frame": {
+      "path": "implementation/warlock/qa/runs/native-primary-keyboard-1791646935554856475/report.json",
+      "sha256": "78839d0ad2ed432e47799349ecec8494ac80d83f388437f8cf0fc4f71432e993",
+      "packet": "failed-premature-frame.json.gz",
+      "packetSHA256": "b7308f9fd4ac34d58bff84170ee95576f5cda55c9abd8929d2b61fa94296e159",
+      "encoding": "gzip",
+      "passed": false
+    },
+    "native-at-actions": {
+      "path": "implementation/warlock/qa/runs/native-primary-keyboard-1791647033390561729/report.json",
+      "sha256": "ae563759b4aacd166afe2cb3a3ee1bd94f85986f54718ecc98627c0f43496a09",
+      "packet": "native-at-actions.json.gz",
+      "packetSHA256": "4ce19b6756b02066bd4f4272b0c376d0dcdccd2b46bc73f46052968c9b4e71f1",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "native-physical-enter-at": {
+      "path": "implementation/warlock/qa/runs/native-primary-keyboard-1791647081829780770/report.json",
+      "sha256": "026b545c3a9580d5109b632514b87aceda3dabf732c6cfe7eece052b9e622aed",
+      "packet": "native-physical-enter-at.json.gz",
+      "packetSHA256": "b4df956531073f9bf9f775508f381eceb4def95c3b8c38fdef7cea5af8d53a85",
+      "encoding": "gzip",
+      "passed": true
+    }
+  },
+  "historicalRunners": {
+    "role": {
+      "packet": "historical-role-runner.py.gz",
+      "packetSHA256": "e6a391feda380f08de34ca4a32952c0fdf10cab81af1603ba4d2e4f87a3826e0",
+      "sourceSHA256": "f961520b6d0e586f32b9e378caa7b9325e268dc39132d8e27613d7ffb77466ef",
+      "usedBy": "failed-role-name"
+    },
+    "keyword": {
+      "packet": "historical-keyword-runner.py.gz",
+      "packetSHA256": "2321d2b9b3183a872d73b82575395e9f7ff19caff3533f23e5754aa0113f77e2",
+      "sourceSHA256": "1ae98eb9a26fdb4b032939bcb24171f9b71c10eaae85236f365d84a04d53f6f8",
+      "usedBy": "failed-observer-keyword"
+    },
+    "frame": {
+      "packet": "historical-frame-runner.py.gz",
+      "packetSHA256": "44eef777f9235ffc956866877b7c5cf6fbfd8baa27eec049ee9e0cd83573f705",
+      "sourceSHA256": "4815ba46085447c7278ebae5fac354d323411ce9c0ec35b9cf6cc8191f05368f",
+      "usedBy": "failed-premature-frame"
+    },
+    "role-helper": {
+      "packet": "historical-role-action.py.gz",
+      "packetSHA256": "b13976cdac5f8fd970e0ecb89e5f43ad9266fb7907974175e8ad4e2bc4bcf81a",
+      "sourceSHA256": "fdc79283cd6a121138f218e0345a6f69bae4a24f40862f0c4d02da65798b352e",
+      "usedBy": "failed-role-name"
+    }
+  },
+  "images": [
+    {
+      "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791647033390685884/InactiveActivation.png",
+      "sha256": "cda48311abc138a464ea5fd7ea04d78b1f43b3facdeaa39e2243b74c1fdf957a",
+      "packet": "native-at-actions-InactiveActivation.png",
+      "packetSHA256": "cda48311abc138a464ea5fd7ea04d78b1f43b3facdeaa39e2243b74c1fdf957a",
+      "stage": "InactiveActivation"
+    },
+    {
+      "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791647033390685884/ActiveMinimizeToMRU.png",
+      "sha256": "b799f45486c14a1f111fa371885ed4276eb771d2047541a956a32a83be84bdff",
+      "packet": "native-at-actions-ActiveMinimizeToMRU.png",
+      "packetSHA256": "b799f45486c14a1f111fa371885ed4276eb771d2047541a956a32a83be84bdff",
+      "stage": "ActiveMinimizeToMRU"
+    },
+    {
+      "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791647033390685884/MinimizedRestore.png",
+      "sha256": "9de98c773361b819812f5d08536af939a9671800b4bb992a371653d0ea417174",
+      "packet": "native-at-actions-MinimizedRestore.png",
+      "packetSHA256": "9de98c773361b819812f5d08536af939a9671800b4bb992a371653d0ea417174",
+      "stage": "MinimizedRestore"
+    },
+    {
+      "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791646935554980013/MinimizedRestore.png",
+      "sha256": "818c494ac0ca70e4432a42e2c066ba7d2bc67d79404787b2a4bda85a98d94be7",
+      "packet": "failed-premature-frame-MinimizedRestore.png",
+      "packetSHA256": "818c494ac0ca70e4432a42e2c066ba7d2bc67d79404787b2a4bda85a98d94be7",
+      "stage": "failed premature frame"
+    }
+  ],
+  "logs": {
+    "native-at-actions/at-events.jsonl": {
+      "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791647033390685884/at-events.jsonl",
+      "sha256": "f032648e6048e7187d217e290afc96fab6bda025fc83abc5844539080a83a647",
+      "packet": "native-at-actions-at-events.jsonl.gz",
+      "packetSHA256": "cd7cc4c9f0ed000e9be5c2f788a5f56238d9a5955f826fa30530a030437d9d2a"
+    },
+    "native-at-actions/orca-utterances.jsonl": {
+      "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791647033390685884/orca-utterances.jsonl",
+      "sha256": "6d823b75d6083d356e1509b8d97b1ab8127797e8da52d83ba6855ac0483bd174",
+      "packet": "native-at-actions-orca-utterances.jsonl.gz",
+      "packetSHA256": "4fb1d94b14448ac4422d6dcf6378a2a2209597c1167f9b5b5d57f22191dccafd"
+    },
+    "native-physical-enter-at/at-events.jsonl": {
+      "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791647081829873249/at-events.jsonl",
+      "sha256": "bbc80f95e783f11326d6900771fdd0af05261b367589b247f4b4d5780a3b7574",
+      "packet": "native-physical-enter-at-at-events.jsonl.gz",
+      "packetSHA256": "28c412fdcc6e7c5a6461717eb65168ef07e53630ac3a830456ed526215039eae"
+    },
+    "native-physical-enter-at/orca-utterances.jsonl": {
+      "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791647081829873249/orca-utterances.jsonl",
+      "sha256": "7aaf0520d51ef6329242976d427a84f34a14d546bbeb476c21c3e17a9dc979f7",
+      "packet": "native-physical-enter-at-orca-utterances.jsonl.gz",
+      "packetSHA256": "bdef0f178b4cde73795adeac7963f956af406f9543a9a18dfdb11d4c9776226b"
+    }
+  },
+  "modelByReference": {
+    "manifest": "implementation/warlock/qa/evidence/taskbar-output-focus/manifest.json",
+    "manifestSHA256": "0f99d9a7686abef8a3e3c2184aafa12ef6d964aac7f88ea1861fcf4869fa4ae4",
+    "report": {
+      "path": "implementation/warlock/qa/runs/taskbar-output-focus-1791646015723654864/report.json",
+      "sha256": "c47a1211d23f3a7d078fa68ab45ba8c2c90ba081d5c3049bf5b40c2c54f29a97",
+      "packet": "model-adapter-after.json.gz",
+      "packetSHA256": "916cb4986a7d7ca29bb90ba4b91c2225f38851213ca8db49b7e0ba8613a29d69",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "scope": "Previously qualified quint-llm-kit focus/visibility/custody model and actual adapter regression retained by hash. This turn changes only observation/client scaffolding, not production behavior; no new model or native AT proof is inferred from that model."
+  },
+  "observation": "Actual private GTK/WebKit AT-SPI and Orca now qualify the focused single-family Activate/Minimize/Restore fixture. Five real AT-SPI press actions each commit once, with native focus, MRU/desktop succession, client keyboard recipients and painted/absent application frames preserved. A separate physical-Enter journey passes under actual AT observation. All current taskbar names, native active toggle states and focused controls agree with Orca; the real reader emits Activate/Minimize/Restore names. This verifies existing product behavior; no production code or ABI was changed.",
+  "missingObservations": [
+    "Independent original-scenario review against the exact source/ABI/toolchain and frozen policy remains open.",
+    "This fixture covers focused current AT-SPI press and physical Enter, with silent Orca speech transcript observation. Audible speech, braille, unfocused/cached AT actions, broader AT modes, grouped/zero/refusal taskbar scenarios and other GUI surfaces remain separate obligations.",
+    "Physical hotplug/AT/IME breadth, resource/journey budgets, reproducible package and reversible deployment/rollback remain release obligations."
+  ],
+  "sourceBoundary": "No production source/core/plugin/Elm/GTK/adapter behavior changed or rebuilt. New wrapper composes existing physical primary journey with actual private no-activation AT bus/registry/GTK-WebKit/Orca; actual scoped AT-SPI Action press uses the same current GUI control and effect path. No synthetic Accessible nodes, DOM actions, focus workaround or native effect replacement.",
+  "failedProbeDisposition": {
+    "failed-role-name": "Fixture omitted native button role returned by current AT bridge. Required all-control names never matched; no primary effect launched. Added correct native button alias, without changing product roles/oracle.",
+    "failed-observer-keyword": "Observation check supplied name twice; terminal fixture error before actual AT action, with normal cleanup. Corrected keyword, not product behavior.",
+    "failed-premature-frame": "Three real AT actions committed, but the first restore frame still showed previous Minimized cue. Required actual AT tree state is now observed within the original six-second observation wait before the unchanged physical frame assertions. No synthetic focus, sleep, extra native mutation or extended deadline. Failed report/frame and exact historical runner bytes retained."
+  },
+  "reviewerDisposition": {
+    "name": "root-taskbar-primary-at",
+    "independent": false,
+    "disposition": "Owner-observed actual native AT and physical Enter pass; original independent acceptance pending."
+  }
+}

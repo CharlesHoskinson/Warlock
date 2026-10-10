@@ -135,3 +135,9 @@ After real output removal/replacement, an invisible workspace member now offers 
 The Active cue refers to an eligible visible desktop family. A bar or popup holding keyboard custody keeps that family active; an invisible member remains available for explicit activation. The existing adapter filters only the action projection's focus from coherent native facts. It does not change raw native focus, window membership, effect admission or replay policy.
 
 UI-004 remains partial: applicable native AT and independent acceptance are still required. Sampled Quint/model results remain separate from actual native observations and release acceptance.
+
+## Single-family taskbar native accessibility — October 10
+
+Actual private GTK/WebKit AT-SPI and Orca now qualify the focused single-family Activate/Minimize/Restore fixture. Five real AT-SPI press actions each commit once, with native focus, MRU/desktop succession, client keyboard recipients and painted/absent application frames preserved. A separate physical-Enter journey passes under actual AT observation. All current taskbar names, native active toggle states and focused controls agree with Orca; the real reader emits Activate/Minimize/Restore names. This verifies existing product behavior; no production code or ABI was changed. See [the exact AT observation packet](../../implementation/warlock/qa/evidence/taskbar-primary-at/README.md).
+
+Original UI-004 inactive/active/minimized scenarios remain partial pending independent acceptance. The fixture observes the actual current AT tree before the unchanged physical frame assertion; AT-SPI action acknowledgement alone is not a paint acknowledgement. Original waits and policy remain unchanged. This does not qualify grouped/zero/refusal taskbar AT, audible speech/braille or the whole release.

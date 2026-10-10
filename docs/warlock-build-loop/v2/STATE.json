@@ -1,50 +1,49 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T15:33:02.879099+00:00",
+  "updatedUTC": "2026-10-10T15:50:29.602279+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "taskbar-output-focus",
+    "id": "taskbar-primary-at",
     "requirements": [
       "ELM-UI-004"
     ],
     "scenarios": [
+      "taskbar-inactive",
       "taskbar-active",
-      "taskbar-inactive"
+      "taskbar-minimized"
     ],
     "paths": [
-      "implementation/warlock/adapter/taskbar_projection.py",
-      "implementation/warlock/qa/native-taskbar-output-focus.py",
-      "implementation/warlock/qa/taskbar-output-focus.qnt",
-      "implementation/warlock/qa/taskbar-output-focus_test.qnt",
-      "implementation/warlock/qa/check-taskbar-output-focus.py",
-      "implementation/warlock/README.md",
-      "implementation/warlock/qa/current-search-build.json"
+      "implementation/warlock/qa/native-taskbar-primary-at.py",
+      "implementation/warlock/qa/taskbar-at-action.py",
+      "implementation/warlock/src/SurfaceRenderer.elm",
+      "implementation/warlock/assets/activation.js",
+      "implementation/warlock/README.md"
     ],
-    "before": "After native output retirement the taskbar can present Active/Minimize for a focused pointer whose workspace is not visible.",
-    "after": "The taskbar offers Activate for an invisible inactive member and Minimize for a visible active eligible family, preserving native focus authority, shell keyboard custody and original workspace/draft.",
+    "before": "Single-family primary actions have native pointer and keyboard proof but no actual AT-SPI/Orca primary state/action observations.",
+    "after": "Screen-reader users receive correct Open/Active/Minimized names and native states while using physical keyboard or the real AT-SPI action; activation/minimize/restore commit once with correct native focus, paint and unchanged membership.",
     "verification": [
-      "Reproduce unchanged native output-retirement schedule; inspect raw native facts and actual bar offer before any pin/focus workaround. quint-llm-kit incremental init, ghost negative, shell-custody positive and named/sampled cases before owning projection fix. Real pointer Activate then Minimize with one committed effect each; unchanged original keyboard primary regression and explicit hidden/minimized/coherence negative cases. AT and independent acceptance remain separate."
+      "Compose the original primary keyboard/pointer journey with existing private AT bus, actual WebKit tree and Orca. Observe exact native host PID, operation/name/role/current active state, focused accessible and Orca focus/speech. Exercise actual native AT-SPI action on the scoped current taskbar button and preserve original receipts, MRU/desktop succession, client key recipients, pixels and waits. Model behavioral changes with quint-llm-kit before a demonstrated production fix; do not replace AT evidence with DOM injection. Independent original acceptance and wider AT/release gates remain separate."
     ],
-    "owner": "root-taskbar-output-focus",
-    "participantRecord": ".warlock-contributor/taskbar-output-focus.json",
+    "owner": "root-taskbar-primary-at",
+    "participantRecord": ".warlock-contributor/taskbar-primary-at.json",
     "disposition": "partial",
     "evidence": {
-      "path": "implementation/warlock/qa/evidence/taskbar-output-focus/manifest.json",
-      "sha256": "0f99d9a7686abef8a3e3c2184aafa12ef6d964aac7f88ea1861fcf4869fa4ae4",
-      "scope": "After real output removal/replacement, an invisible workspace member now offers Activate/Open rather than Minimize/Active. Actual taskbar Activate, Minimize and Restore each commit once, with native frames showing 27,048 red application pixels after activation/restoration and zero after minimize. Workspace2, size108x440 and the unsaved draft survive; actual client pointer and physical keyboard editing pass. The unchanged keyboard primary journey passes MRU/desktop succession, and pinned retirement/return plus cross-output/live-owner guards pass the same tuple."
+      "path": "implementation/warlock/qa/evidence/taskbar-primary-at/manifest.json",
+      "sha256": "73e1d7eb5bc823fbc8c1cf68bb55512bfafe32a91d3600292109e0bf44eefaf1",
+      "scope": "Actual private GTK/WebKit AT-SPI and Orca now qualify the focused single-family Activate/Minimize/Restore fixture. Five real AT-SPI press actions each commit once, with native focus, MRU/desktop succession, client keyboard recipients and painted/absent application frames preserved. A separate physical-Enter journey passes under actual AT observation. All current taskbar names, native active toggle states and focused controls agree with Orca; the real reader emits Activate/Minimize/Restore names. This verifies existing product behavior; no production code or ABI was changed."
     },
-    "observed": "After real output removal/replacement, an invisible workspace member now offers Activate/Open rather than Minimize/Active. Actual taskbar Activate, Minimize and Restore each commit once, with native frames showing 27,048 red application pixels after activation/restoration and zero after minimize. Workspace2, size108x440 and the unsaved draft survive; actual client pointer and physical keyboard editing pass. The unchanged keyboard primary journey passes MRU/desktop succession, and pinned retirement/return plus cross-output/live-owner guards pass the same tuple.",
+    "observed": "Actual private GTK/WebKit AT-SPI and Orca now qualify the focused single-family Activate/Minimize/Restore fixture. Five real AT-SPI press actions each commit once, with native focus, MRU/desktop succession, client keyboard recipients and painted/absent application frames preserved. A separate physical-Enter journey passes under actual AT observation. All current taskbar names, native active toggle states and focused controls agree with Orca; the real reader emits Activate/Minimize/Restore names. This verifies existing product behavior; no production code or ABI was changed.",
     "missingObservations": [
-      "Applicable native assistive-technology taskbar fixtures and independent original UI-004 acceptance remain open.",
-      "This projection does not retire a stale native focus pointer or prove all keyboard-recipient/custody, modal/group/fullscreen, hidden-family or other-output schedules. Native admission and raw facts remain authoritative.",
-      "Physical hardware hotplug, AT/IME, resources/journeys, reproducible package and reversible deployment/rollback remain release obligations."
+      "Independent original-scenario review against the exact source/ABI/toolchain and frozen policy remains open.",
+      "This fixture covers focused current AT-SPI press and physical Enter, with silent Orca speech transcript observation. Audible speech, braille, unfocused/cached AT actions, broader AT modes, grouped/zero/refusal taskbar scenarios and other GUI surfaces remain separate obligations.",
+      "Physical hotplug/AT/IME breadth, resource/journey budgets, reproducible package and reversible deployment/rollback remain release obligations."
     ],
-    "nextSourceWork": "Original ELM-UI-004: exercise the real AT-SPI taskbar names, active/open/minimized state and pointer/keyboard primary routes; fix demonstrated accessible state/focus defects in the owning integrated view/host. Preserve current native pointer/keyboard, pinned retirement and authority guards. Independent original acceptance and wider release gates remain separate."
+    "nextSourceWork": "Original ELM-UI-004/taskbar-refusal: reproduce actual taskbar activation of a native pinned family from another output bar, receiving the real implicit-transfer-required refusal. Verify visible Refused feedback, unchanged observed pin/workspace/draft/focus, no replay, and actual keyboard recipient. Fix a demonstrated owning feedback/projection/admission defect with quint-llm-kit before behavioral changes; retain native primary AT and authority guards. Independent acceptance and wider release scope remain open."
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -1966,49 +1965,88 @@
         "Full original hardware/resource/journey evidence, reproducible package and reversible deployment/rollback remain open."
       ],
       "nextSourceWork": "Original UI-019: put native pinned/minimized applications into their state before actual output retirement and return, then reproduce and fix demonstrated owning recovery defects without unpin/workspace/draft/effect replay. Use the original output-return schedule and actual taskbar/client input. Fullscreen/group/modal, transforms/custody/hardware/AT and release gates remain open."
+    },
+    {
+      "id": "pinned-output-retirement",
+      "requirements": [
+        "ELM-UI-019"
+      ],
+      "scenarios": [
+        "outputs-return"
+      ],
+      "paths": [
+        "implementation/warlock/qa/native-state-output-return.py",
+        "implementation/warlock/native/core/WorkspacePlacementController.cpp",
+        "implementation/warlock/qa/pinned-output-retirement.qnt",
+        "implementation/warlock/qa/pinned-output-retirement_test.qnt",
+        "implementation/warlock/qa/check-pinned-output-retirement.py",
+        "implementation/warlock/qa/check-output-placement-core.py",
+        "implementation/warlock/qa/native-window-feedback.py",
+        "implementation/warlock/qa/check-native-authority.py",
+        "implementation/warlock/qa/current-scene-core.json",
+        "implementation/warlock/qa/current-native-pair.json",
+        "implementation/warlock/README.md",
+        "implementation/warlock/native/authority.cpp"
+      ],
+      "before": "Pinned/minimized before actual native output retirement and zero-output return is unqualified. Native workspace migration still leaves pinned windows on the departing monitor path.",
+      "after": "Retain pin/minimized state, original workspace/size/draft and a reachable application across actual output retirement/return, with one actual taskbar Activate/Restore and no old-generation replay. Fix an observed owning migration defect, preserving live-monitor pinned workspace-move semantics.",
+      "verification": [
+        "Use original two-output removal/replacement and all-output disappearance/return schedule with native pinned fixture before zero retirement, retained original deadlines and actual client/taskbar/draft/pixels/cleanup. quint-llm-kit incremental init, legacy retirement witness, live-owner negative case and sampled invariant before implementation. Narrow owning workspace TU relink retains headers/layout/exports and existing Space behavior; actual minimized-before-retirement and prior pinned-usable-area regressions. Hardware/AT/independent and wider custody/fullscreen/group/modal gates remain separate."
+      ],
+      "owner": "root-pinned-output-retirement",
+      "participantRecord": ".warlock-contributor/pinned-output-retirement.json",
+      "disposition": "partial",
+      "evidence": {
+        "path": "implementation/warlock/qa/evidence/pinned-output-retirement/manifest.json",
+        "sha256": "0776ad7e4897d80b4ef4ef118ca8e22c047153e9e2755d730f8940822ec2d4b7"
+      },
+      "observed": "Pinned applications now preserve workspace2, size108x440, pin state and the unsaved draft through the original first output removal, replacement, all-output disappearance and fresh return. Owning workspace migration avoids retired-owner gap callbacks and pinned stay-behind paths; the existing native authority permits explicit same-output navigation to the preserved workspace before pin focus. Actual taskbar Activate/Restore and native pointer/keyboard/draft/pixels pass for pinned and previously minimized applications. Real cross-output pin activation remains Refused without transfer; a live-monitor workspace move retains the pin on its old output. The prior pinned smaller/negative-origin journey passes the exact tuple with normal cleanup.",
+      "missingObservations": [
+        "Independent original UI-019 acceptance and physical hotplug/AT/IME remain open.",
+        "Fullscreen/grouped/modal families, wider scale/rotation/output combinations, concurrent gestures/custody/protected input/Unknown and other native-host/transport schedules remain open. Oversized clients retain their original size; this does not prove whole-client fit.",
+        "Post-first-unplug/pre-zero fixture setup exposed an Active/Minimize cue while pinning selected another active workspace; original taskbar-active focus/visibility/custody must be reproduced and reconciled separately. The final pin/min fixtures are established before the first unplug and validate the broader original journey.",
+        "Full original hardware/resource/journey evidence, reproducible package and reversible deployment/rollback remain open."
+      ],
+      "nextSourceWork": "Original ELM-UI-004 taskbar-active: reproduce the Active/Minimize cue and native focus/visibility/custody after the first output removal, before zero-output reset. Determine whether the active cue and offered action match an eligible current application recipient; fix demonstrated owning focus/projection/admission behavior without a manual focus workaround, workspace/draft reset or effect replay. Retain current pinned/minimized retirement and cross-output/live-owner guard behavior. Original transformed/fullscreen/group/modal, hardware/AT and release gates remain open."
     }
   ],
   "lastSlice": {
-    "id": "pinned-output-retirement",
+    "id": "taskbar-output-focus",
     "requirements": [
-      "ELM-UI-019"
+      "ELM-UI-004"
     ],
     "scenarios": [
-      "outputs-return"
+      "taskbar-active",
+      "taskbar-inactive"
     ],
     "paths": [
-      "implementation/warlock/qa/native-state-output-return.py",
-      "implementation/warlock/native/core/WorkspacePlacementController.cpp",
-      "implementation/warlock/qa/pinned-output-retirement.qnt",
-      "implementation/warlock/qa/pinned-output-retirement_test.qnt",
-      "implementation/warlock/qa/check-pinned-output-retirement.py",
-      "implementation/warlock/qa/check-output-placement-core.py",
-      "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/qa/check-native-authority.py",
-      "implementation/warlock/qa/current-scene-core.json",
-      "implementation/warlock/qa/current-native-pair.json",
+      "implementation/warlock/adapter/taskbar_projection.py",
+      "implementation/warlock/qa/native-taskbar-output-focus.py",
+      "implementation/warlock/qa/taskbar-output-focus.qnt",
+      "implementation/warlock/qa/taskbar-output-focus_test.qnt",
+      "implementation/warlock/qa/check-taskbar-output-focus.py",
       "implementation/warlock/README.md",
-      "implementation/warlock/native/authority.cpp"
+      "implementation/warlock/qa/current-search-build.json"
     ],
-    "before": "Pinned/minimized before actual native output retirement and zero-output return is unqualified. Native workspace migration still leaves pinned windows on the departing monitor path.",
-    "after": "Retain pin/minimized state, original workspace/size/draft and a reachable application across actual output retirement/return, with one actual taskbar Activate/Restore and no old-generation replay. Fix an observed owning migration defect, preserving live-monitor pinned workspace-move semantics.",
+    "before": "After native output retirement the taskbar can present Active/Minimize for a focused pointer whose workspace is not visible.",
+    "after": "The taskbar offers Activate for an invisible inactive member and Minimize for a visible active eligible family, preserving native focus authority, shell keyboard custody and original workspace/draft.",
     "verification": [
-      "Use original two-output removal/replacement and all-output disappearance/return schedule with native pinned fixture before zero retirement, retained original deadlines and actual client/taskbar/draft/pixels/cleanup. quint-llm-kit incremental init, legacy retirement witness, live-owner negative case and sampled invariant before implementation. Narrow owning workspace TU relink retains headers/layout/exports and existing Space behavior; actual minimized-before-retirement and prior pinned-usable-area regressions. Hardware/AT/independent and wider custody/fullscreen/group/modal gates remain separate."
+      "Reproduce unchanged native output-retirement schedule; inspect raw native facts and actual bar offer before any pin/focus workaround. quint-llm-kit incremental init, ghost negative, shell-custody positive and named/sampled cases before owning projection fix. Real pointer Activate then Minimize with one committed effect each; unchanged original keyboard primary regression and explicit hidden/minimized/coherence negative cases. AT and independent acceptance remain separate."
     ],
-    "owner": "root-pinned-output-retirement",
-    "participantRecord": ".warlock-contributor/pinned-output-retirement.json",
+    "owner": "root-taskbar-output-focus",
+    "participantRecord": ".warlock-contributor/taskbar-output-focus.json",
     "disposition": "partial",
     "evidence": {
-      "path": "implementation/warlock/qa/evidence/pinned-output-retirement/manifest.json",
-      "sha256": "0776ad7e4897d80b4ef4ef118ca8e22c047153e9e2755d730f8940822ec2d4b7"
+      "path": "implementation/warlock/qa/evidence/taskbar-output-focus/manifest.json",
+      "sha256": "0f99d9a7686abef8a3e3c2184aafa12ef6d964aac7f88ea1861fcf4869fa4ae4",
+      "scope": "After real output removal/replacement, an invisible workspace member now offers Activate/Open rather than Minimize/Active. Actual taskbar Activate, Minimize and Restore each commit once, with native frames showing 27,048 red application pixels after activation/restoration and zero after minimize. Workspace2, size108x440 and the unsaved draft survive; actual client pointer and physical keyboard editing pass. The unchanged keyboard primary journey passes MRU/desktop succession, and pinned retirement/return plus cross-output/live-owner guards pass the same tuple."
     },
-    "observed": "Pinned applications now preserve workspace2, size108x440, pin state and the unsaved draft through the original first output removal, replacement, all-output disappearance and fresh return. Owning workspace migration avoids retired-owner gap callbacks and pinned stay-behind paths; the existing native authority permits explicit same-output navigation to the preserved workspace before pin focus. Actual taskbar Activate/Restore and native pointer/keyboard/draft/pixels pass for pinned and previously minimized applications. Real cross-output pin activation remains Refused without transfer; a live-monitor workspace move retains the pin on its old output. The prior pinned smaller/negative-origin journey passes the exact tuple with normal cleanup.",
+    "observed": "After real output removal/replacement, an invisible workspace member now offers Activate/Open rather than Minimize/Active. Actual taskbar Activate, Minimize and Restore each commit once, with native frames showing 27,048 red application pixels after activation/restoration and zero after minimize. Workspace2, size108x440 and the unsaved draft survive; actual client pointer and physical keyboard editing pass. The unchanged keyboard primary journey passes MRU/desktop succession, and pinned retirement/return plus cross-output/live-owner guards pass the same tuple.",
     "missingObservations": [
-      "Independent original UI-019 acceptance and physical hotplug/AT/IME remain open.",
-      "Fullscreen/grouped/modal families, wider scale/rotation/output combinations, concurrent gestures/custody/protected input/Unknown and other native-host/transport schedules remain open. Oversized clients retain their original size; this does not prove whole-client fit.",
-      "Post-first-unplug/pre-zero fixture setup exposed an Active/Minimize cue while pinning selected another active workspace; original taskbar-active focus/visibility/custody must be reproduced and reconciled separately. The final pin/min fixtures are established before the first unplug and validate the broader original journey.",
-      "Full original hardware/resource/journey evidence, reproducible package and reversible deployment/rollback remain open."
+      "Applicable native assistive-technology taskbar fixtures and independent original UI-004 acceptance remain open.",
+      "This projection does not retire a stale native focus pointer or prove all keyboard-recipient/custody, modal/group/fullscreen, hidden-family or other-output schedules. Native admission and raw facts remain authoritative.",
+      "Physical hardware hotplug, AT/IME, resources/journeys, reproducible package and reversible deployment/rollback remain release obligations."
     ],
-    "nextSourceWork": "Original ELM-UI-004 taskbar-active: reproduce the Active/Minimize cue and native focus/visibility/custody after the first output removal, before zero-output reset. Determine whether the active cue and offered action match an eligible current application recipient; fix demonstrated owning focus/projection/admission behavior without a manual focus workaround, workspace/draft reset or effect replay. Retain current pinned/minimized retirement and cross-output/live-owner guard behavior. Original transformed/fullscreen/group/modal, hardware/AT and release gates remain open."
+    "nextSourceWork": "Original ELM-UI-004: exercise the real AT-SPI taskbar names, active/open/minimized state and pointer/keyboard primary routes; fix demonstrated accessible state/focus defects in the owning integrated view/host. Preserve current native pointer/keyboard, pinned retirement and authority guards. Independent original acceptance and wider release gates remain separate."
   }
 }

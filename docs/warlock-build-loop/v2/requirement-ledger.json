@@ -4960,32 +4960,34 @@
               "path": "implementation/warlock/qa/evidence/taskbar-output-focus/manifest.json",
               "sha256": "0f99d9a7686abef8a3e3c2184aafa12ef6d964aac7f88ea1861fcf4869fa4ae4",
               "scope": "After real output removal/replacement, an invisible workspace member now offers Activate/Open rather than Minimize/Active. Actual taskbar Activate, Minimize and Restore each commit once, with native frames showing 27,048 red application pixels after activation/restoration and zero after minimize. Workspace2, size108x440 and the unsaved draft survive; actual client pointer and physical keyboard editing pass. The unchanged keyboard primary journey passes MRU/desktop succession, and pinned retirement/return plus cross-output/live-owner guards pass the same tuple."
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/taskbar-primary-at/manifest.json",
+              "sha256": "73e1d7eb5bc823fbc8c1cf68bb55512bfafe32a91d3600292109e0bf44eefaf1",
+              "scope": "Actual private GTK/WebKit AT-SPI and Orca now qualify the focused single-family Activate/Minimize/Restore fixture. Five real AT-SPI press actions each commit once, with native focus, MRU/desktop succession, client keyboard recipients and painted/absent application frames preserved. A separate physical-Enter journey passes under actual AT observation. All current taskbar names, native active toggle states and focused controls agree with Orca; the real reader emits Activate/Minimize/Restore names. This verifies existing product behavior; no production code or ABI was changed."
             }
           ],
-          "missingObservation": "Applicable native assistive-technology taskbar fixtures and independent original UI-004 acceptance remain open.",
+          "missingObservation": "Independent original-scenario review against the exact source/ABI/toolchain and frozen policy remains open. This fixture covers focused current AT-SPI press and physical Enter, with silent Orca speech transcript observation. Audible speech, braille, unfocused/cached AT actions, broader AT modes, grouped/zero/refusal taskbar scenarios and other GUI surfaces remain separate obligations.",
           "reviewerDisposition": {
-            "name": "root-taskbar-output-focus",
+            "name": "root-taskbar-primary-at",
             "independent": false,
-            "disposition": "Owner observed native pass; original acceptance pending."
+            "disposition": "Owner-observed actual native AT and physical Enter pass; original independent acceptance pending."
           },
           "sourceTuple": {
-            "sourceBaseRevision": "c14a1c33415947475322cc74bf72e6cd6f94055d",
+            "sourceBaseRevision": "4098726777b6a729872822bbabbe1b9f840c6024",
             "sourceHashes": {
-              "implementation/warlock/adapter/taskbar_projection.py": "b9da24de2a910a3d8515f2e8e4de2cb0086bdd0cd26c7f857fcbbdc15978c976",
-              "implementation/warlock/qa/native-taskbar-output-focus.py": "79c155877b6b0551c4907ce8914e77a1c1c1c5aa73305bb39e169ae3f74bec5f",
-              "implementation/warlock/qa/taskbar-output-focus.qnt": "6895d40b51bd6bec5d180f0503d6bf7441877a92a460f4a11d96340072702526",
-              "implementation/warlock/qa/taskbar-output-focus_test.qnt": "9074660d19991d688d3125517a2cf646a0131ff41bc22ee45142b070de949b9f",
-              "implementation/warlock/qa/check-taskbar-output-focus.py": "0871b7c2b25cd01ac685f8bba0fb682606057fe3c2d63b35ffb29660aa94744e",
-              "implementation/warlock/README.md": "a95afa10fc5491ab0d430cd6a6b8c0e9cf58e99dcb5ab02877ff3a3f53ef5b86",
-              "implementation/warlock/qa/current-search-build.json": "e1f9f4a4c107028851dc808e9d7935af814020f6b37d6b33e17273588a59d115",
+              "implementation/warlock/qa/native-taskbar-primary-at.py": "23daab5d3850f1ee95661e868e40bcf56eb5a316e0d1c452e18c2bf9591336fc",
+              "implementation/warlock/qa/taskbar-at-action.py": "a0175b7334b755ac74428e466e290f44508f77234d6e4f528e95f1b72a08be2e",
+              "implementation/warlock/src/SurfaceRenderer.elm": "e7e8d255cf38c2862a03c951f7caab50fddffa73946ae143dedfe71c1fdbf4c6",
+              "implementation/warlock/assets/activation.js": "06e3de6bcbc27e2b9a5d166fd665706e300ef5d4a29640b9bd70aa0f095a2c3e",
+              "implementation/warlock/README.md": "5e82feec12cb853302a910130bab14628aaf21a88a501268589c68dbcc105cc9",
+              "implementation/warlock/qa/native-window-feedback.py": "295ba28cf8d9d297b214bd0d6dba19ac3289d861faa953f9fd94b82937473c64",
+              "implementation/warlock/qa/accessibility-session.py": "69bc3b33c2b99f0b9d54805e18afcb85ff02314dc9aa4d002f4df409a0e57524",
+              "implementation/warlock/qa/accessibility-inspector.py": "bc4fe7adba15c29f97137b91848971b65b994c1b8f6282109d7edf1e13bd5c27",
+              "implementation/warlock/qa/accessibility-reader.py": "66442e00fcdabbb5a4cc7bb7d283377ee40b42d0f6a1c6ec35c4b93369b782fd",
               "implementation/warlock/src/Taskbar.elm": "31ed9ce6b37e5b35065f8833e31412657800d894b6d9e9544f380bc16e7aa519",
-              "implementation/warlock/src/ActionProjection.elm": "911faed965465fac4e32f404d75a4d130b4e560cda191c7773eb96749be1d062",
               "implementation/warlock/src/TaskbarShell.elm": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
-              "implementation/warlock/src/Surface.elm": "272a822fca0bd99397797ab340380e17847095d3db736d2dc7500fa93c97f066",
-              "implementation/warlock/adapter/daemon.py": "819b945c7d1c92d6360045db297715ac9ff7ac72024741b8ca3238fc24d08d67",
-              "implementation/warlock/native/authority.cpp": "586cf2dd3ceaee87da9c6f8681e932f2d6a2aeeed9c91fc2e5221f3993b30b00",
-              "implementation/warlock/native/core/WorkspacePlacementController.cpp": "8e53f37f4f554e92b928e713010ec6033fe80fcb87e4cccccafa693a52ae7206",
-              "implementation/warlock/native/core/Space.cpp": "1ab63457ec28f02cfefa8a75c4a14af24a73a99578941090e34b61e25fcf2013"
+              "implementation/warlock/adapter/taskbar_projection.py": "b9da24de2a910a3d8515f2e8e4de2cb0086bdd0cd26c7f857fcbbdc15978c976"
             },
             "nativePair": {
               "core": {
@@ -5028,49 +5030,54 @@
               "path": "implementation/warlock/qa/evidence/taskbar-primary-keyboard/manifest.json",
               "sha256": "b204d30849e0069b4cde48eb27c3f6f3f5a67108fa531a48dd2bb03c82cb605e",
               "scope": "Actual physical keyboard-only primary activation/minimize/restore, native receipts/pixels and actual app-key recipients, MRU/desktop succession, no pointer helper and normal cleanup. Native AT and independent original acceptance remain open."
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/taskbar-primary-at/manifest.json",
+              "sha256": "73e1d7eb5bc823fbc8c1cf68bb55512bfafe32a91d3600292109e0bf44eefaf1",
+              "scope": "Actual private GTK/WebKit AT-SPI and Orca now qualify the focused single-family Activate/Minimize/Restore fixture. Five real AT-SPI press actions each commit once, with native focus, MRU/desktop succession, client keyboard recipients and painted/absent application frames preserved. A separate physical-Enter journey passes under actual AT observation. All current taskbar names, native active toggle states and focused controls agree with Orca; the real reader emits Activate/Minimize/Restore names. This verifies existing product behavior; no production code or ABI was changed."
             }
           ],
-          "missingObservation": "Applicable native assistive-technology fixtures and independent original-scenario acceptance remain open.",
+          "missingObservation": "Independent original-scenario review against the exact source/ABI/toolchain and frozen policy remains open. This fixture covers focused current AT-SPI press and physical Enter, with silent Orca speech transcript observation. Audible speech, braille, unfocused/cached AT actions, broader AT modes, grouped/zero/refusal taskbar scenarios and other GUI surfaces remain separate obligations.",
           "reviewerDisposition": {
-            "name": "root-primary-keyboard",
+            "name": "root-taskbar-primary-at",
             "independent": false,
-            "disposition": "Owner-observed native keyboard and physical pass; original acceptance pending."
+            "disposition": "Owner-observed actual native AT and physical Enter pass; original independent acceptance pending."
           },
           "sourceTuple": {
-            "sourceBaseRevision": "da0ee0e8fed2dc4122513b70b21d4e0d5bf8a519",
+            "sourceBaseRevision": "4098726777b6a729872822bbabbe1b9f840c6024",
             "sourceHashes": {
-              "implementation/warlock/qa/native-window-feedback.py": "80defb323ef4bb4502966f49f878250da8935117e9bf8af7b158054c6ee49627",
+              "implementation/warlock/qa/native-taskbar-primary-at.py": "23daab5d3850f1ee95661e868e40bcf56eb5a316e0d1c452e18c2bf9591336fc",
+              "implementation/warlock/qa/taskbar-at-action.py": "a0175b7334b755ac74428e466e290f44508f77234d6e4f528e95f1b72a08be2e",
+              "implementation/warlock/src/SurfaceRenderer.elm": "e7e8d255cf38c2862a03c951f7caab50fddffa73946ae143dedfe71c1fdbf4c6",
+              "implementation/warlock/assets/activation.js": "06e3de6bcbc27e2b9a5d166fd665706e300ef5d4a29640b9bd70aa0f095a2c3e",
+              "implementation/warlock/README.md": "5e82feec12cb853302a910130bab14628aaf21a88a501268589c68dbcc105cc9",
+              "implementation/warlock/qa/native-window-feedback.py": "295ba28cf8d9d297b214bd0d6dba19ac3289d861faa953f9fd94b82937473c64",
+              "implementation/warlock/qa/accessibility-session.py": "69bc3b33c2b99f0b9d54805e18afcb85ff02314dc9aa4d002f4df409a0e57524",
+              "implementation/warlock/qa/accessibility-inspector.py": "bc4fe7adba15c29f97137b91848971b65b994c1b8f6282109d7edf1e13bd5c27",
+              "implementation/warlock/qa/accessibility-reader.py": "66442e00fcdabbb5a4cc7bb7d283377ee40b42d0f6a1c6ec35c4b93369b782fd",
               "implementation/warlock/src/Taskbar.elm": "31ed9ce6b37e5b35065f8833e31412657800d894b6d9e9544f380bc16e7aa519",
               "implementation/warlock/src/TaskbarShell.elm": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
-              "implementation/warlock/src/Desktop.elm": "0de211c106232d0e79033eb17a105c0e0d668d0fe226011656d90dc66ec2f4dd",
-              "implementation/warlock/src/Surface.elm": "c1956597c3565b396ee0e620902039661dac9ae9bdc70bd8afd0b74ee6a07fe0",
-              "implementation/warlock/native/shared-host.c": "a8f30ce61053c0000a4f526d3efa6e0d144a3e8598319ce4ec00f44e13226298",
-              "implementation/warlock/native/shared-context.h": "6e4924cf86fdf3224acf0547a1d7e06fccbf1b08b5350ddaba41ae0a0117d9be",
-              "implementation/warlock/assets/bar-adapter.js": "9624b022e871cae05bd42257bfc9318d691c57be216502e7f22ff42db9796507",
-              "implementation/warlock/assets/activation.js": "c6571168d163b422461f55f14ed0a332c1effbd0130316b9f6009f0e686d1090",
-              "implementation/warlock/qa/check-search.py": "df0f9251a519afc32f8d30c9fcfdbf77846201f2faab25b79ef6c6c4482060f6",
-              "implementation/warlock/qa/current-search-build.json": "4877915ffe391675706105bb0178fff04f1b31657e2b8c839bad80e2cba44292",
-              "implementation/warlock/README.md": "84ab74c9af1833246f741706505626e2b3d75bf871a5dd402ed981a0b2a88daa"
+              "implementation/warlock/adapter/taskbar_projection.py": "b9da24de2a910a3d8515f2e8e4de2cb0086bdd0cd26c7f857fcbbdc15978c976"
             },
             "nativePair": {
               "core": {
-                "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-core-1791495415110842751/Hyprland",
-                "sha256": "81c9ac609c2900f99c1efbe613b83e949aeae3059a5e4403601581fa96191acf"
+                "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
+                "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
               },
               "plugin": {
-                "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791596429600393566/elm-window-geometry-authority.so",
-                "sha256": "1f5de87c759902cbbca05dfdbba56090641c994cf3c7276671094248465bcac4"
+                "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791643756770507917/elm-window-geometry-authority.so",
+                "sha256": "049a982418a085a976db6bf08eee3da4ad7c9a4f826a724a8d653d86b15f0378"
               },
               "aquamarine": {
-                "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
-                "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+                "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+                "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
               }
             },
             "nativeHost": {
-              "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/bar-keyboard-return-1791598954468402628/elm-host",
-              "sha256": "f2be6fc90a55e3bd46d1de44d9b850ef296f5c607bc39714d3aff406e48eeaa9",
-              "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/bar-keyboard-return-1791598954468402628/report.json",
-              "heldBuildSHA256": "ea249f394d9953a1930a782ae365e01a92d43a0894e12cbac9c8dc570d072ae8"
+              "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791646018291514576/elm-host",
+              "sha256": "806aa4bcd44f0b67b6e58db7d1e41da41f1956692ff14001d5f19a5b005cecf7",
+              "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791646018291514576/report.json",
+              "heldBuildSHA256": "9f124b1d34d907aac9a33c05f3b77ac9c4773afd1cbf85a2de0c53d80e3c501e"
             }
           }
         },
@@ -5098,32 +5105,34 @@
               "path": "implementation/warlock/qa/evidence/taskbar-output-focus/manifest.json",
               "sha256": "0f99d9a7686abef8a3e3c2184aafa12ef6d964aac7f88ea1861fcf4869fa4ae4",
               "scope": "After real output removal/replacement, an invisible workspace member now offers Activate/Open rather than Minimize/Active. Actual taskbar Activate, Minimize and Restore each commit once, with native frames showing 27,048 red application pixels after activation/restoration and zero after minimize. Workspace2, size108x440 and the unsaved draft survive; actual client pointer and physical keyboard editing pass. The unchanged keyboard primary journey passes MRU/desktop succession, and pinned retirement/return plus cross-output/live-owner guards pass the same tuple."
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/taskbar-primary-at/manifest.json",
+              "sha256": "73e1d7eb5bc823fbc8c1cf68bb55512bfafe32a91d3600292109e0bf44eefaf1",
+              "scope": "Actual private GTK/WebKit AT-SPI and Orca now qualify the focused single-family Activate/Minimize/Restore fixture. Five real AT-SPI press actions each commit once, with native focus, MRU/desktop succession, client keyboard recipients and painted/absent application frames preserved. A separate physical-Enter journey passes under actual AT observation. All current taskbar names, native active toggle states and focused controls agree with Orca; the real reader emits Activate/Minimize/Restore names. This verifies existing product behavior; no production code or ABI was changed."
             }
           ],
-          "missingObservation": "Applicable native assistive-technology taskbar fixtures and independent original UI-004 acceptance remain open.",
+          "missingObservation": "Independent original-scenario review against the exact source/ABI/toolchain and frozen policy remains open. This fixture covers focused current AT-SPI press and physical Enter, with silent Orca speech transcript observation. Audible speech, braille, unfocused/cached AT actions, broader AT modes, grouped/zero/refusal taskbar scenarios and other GUI surfaces remain separate obligations.",
           "reviewerDisposition": {
-            "name": "root-taskbar-output-focus",
+            "name": "root-taskbar-primary-at",
             "independent": false,
-            "disposition": "Owner observed native pass; original acceptance pending."
+            "disposition": "Owner-observed actual native AT and physical Enter pass; original independent acceptance pending."
           },
           "sourceTuple": {
-            "sourceBaseRevision": "c14a1c33415947475322cc74bf72e6cd6f94055d",
+            "sourceBaseRevision": "4098726777b6a729872822bbabbe1b9f840c6024",
             "sourceHashes": {
-              "implementation/warlock/adapter/taskbar_projection.py": "b9da24de2a910a3d8515f2e8e4de2cb0086bdd0cd26c7f857fcbbdc15978c976",
-              "implementation/warlock/qa/native-taskbar-output-focus.py": "79c155877b6b0551c4907ce8914e77a1c1c1c5aa73305bb39e169ae3f74bec5f",
-              "implementation/warlock/qa/taskbar-output-focus.qnt": "6895d40b51bd6bec5d180f0503d6bf7441877a92a460f4a11d96340072702526",
-              "implementation/warlock/qa/taskbar-output-focus_test.qnt": "9074660d19991d688d3125517a2cf646a0131ff41bc22ee45142b070de949b9f",
-              "implementation/warlock/qa/check-taskbar-output-focus.py": "0871b7c2b25cd01ac685f8bba0fb682606057fe3c2d63b35ffb29660aa94744e",
-              "implementation/warlock/README.md": "a95afa10fc5491ab0d430cd6a6b8c0e9cf58e99dcb5ab02877ff3a3f53ef5b86",
-              "implementation/warlock/qa/current-search-build.json": "e1f9f4a4c107028851dc808e9d7935af814020f6b37d6b33e17273588a59d115",
+              "implementation/warlock/qa/native-taskbar-primary-at.py": "23daab5d3850f1ee95661e868e40bcf56eb5a316e0d1c452e18c2bf9591336fc",
+              "implementation/warlock/qa/taskbar-at-action.py": "a0175b7334b755ac74428e466e290f44508f77234d6e4f528e95f1b72a08be2e",
+              "implementation/warlock/src/SurfaceRenderer.elm": "e7e8d255cf38c2862a03c951f7caab50fddffa73946ae143dedfe71c1fdbf4c6",
+              "implementation/warlock/assets/activation.js": "06e3de6bcbc27e2b9a5d166fd665706e300ef5d4a29640b9bd70aa0f095a2c3e",
+              "implementation/warlock/README.md": "5e82feec12cb853302a910130bab14628aaf21a88a501268589c68dbcc105cc9",
+              "implementation/warlock/qa/native-window-feedback.py": "295ba28cf8d9d297b214bd0d6dba19ac3289d861faa953f9fd94b82937473c64",
+              "implementation/warlock/qa/accessibility-session.py": "69bc3b33c2b99f0b9d54805e18afcb85ff02314dc9aa4d002f4df409a0e57524",
+              "implementation/warlock/qa/accessibility-inspector.py": "bc4fe7adba15c29f97137b91848971b65b994c1b8f6282109d7edf1e13bd5c27",
+              "implementation/warlock/qa/accessibility-reader.py": "66442e00fcdabbb5a4cc7bb7d283377ee40b42d0f6a1c6ec35c4b93369b782fd",
               "implementation/warlock/src/Taskbar.elm": "31ed9ce6b37e5b35065f8833e31412657800d894b6d9e9544f380bc16e7aa519",
-              "implementation/warlock/src/ActionProjection.elm": "911faed965465fac4e32f404d75a4d130b4e560cda191c7773eb96749be1d062",
               "implementation/warlock/src/TaskbarShell.elm": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
-              "implementation/warlock/src/Surface.elm": "272a822fca0bd99397797ab340380e17847095d3db736d2dc7500fa93c97f066",
-              "implementation/warlock/adapter/daemon.py": "819b945c7d1c92d6360045db297715ac9ff7ac72024741b8ca3238fc24d08d67",
-              "implementation/warlock/native/authority.cpp": "586cf2dd3ceaee87da9c6f8681e932f2d6a2aeeed9c91fc2e5221f3993b30b00",
-              "implementation/warlock/native/core/WorkspacePlacementController.cpp": "8e53f37f4f554e92b928e713010ec6033fe80fcb87e4cccccafa693a52ae7206",
-              "implementation/warlock/native/core/Space.cpp": "1ab63457ec28f02cfefa8a75c4a14af24a73a99578941090e34b61e25fcf2013"
+              "implementation/warlock/adapter/taskbar_projection.py": "b9da24de2a910a3d8515f2e8e4de2cb0086bdd0cd26c7f857fcbbdc15978c976"
             },
             "nativePair": {
               "core": {
