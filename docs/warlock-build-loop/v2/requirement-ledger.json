@@ -3034,9 +3034,35 @@
               },
               "reviewer": "root-scene",
               "disposition": "partial"
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/max-no-activation/manifest.json",
+              "sha256": "178526e4b83ac6413fd687382abbd97b766337a16816be19a1f6ad1a8d288cc1",
+              "scope": "Original upper pixels/lower eligible actual GTK press/release and committed scene identity preserved; additional both-excluded no-activation and eligible recovery, pin/MAX regression. No cached-focus/commit race or independent acceptance claim.",
+              "sourceBaseRevision": "cb8aa81e800716844762730c6235755f093f3469",
+              "sourceHashes": {
+                "implementation/warlock/native/core/InputManager.cpp": "c0dd257e3449370c1d8507f33aac9f04d88bfa4389458df63a921e35eb9d17c8",
+                "implementation/warlock/qa/committed-press.qnt": "365000f8276bdc50879046b166e4700ee64280ad9979cee10a971b050c66397d",
+                "implementation/warlock/qa/committed-press_test.qnt": "ddd9b0abc0dac5a47b9d6a677ada69685a4fbb545311a7a855233a98ee031802",
+                "implementation/warlock/qa/check-committed-press.py": "97df535cc431090d774098964d468ad0918d506318a7218592d4973da6f345a5",
+                "implementation/warlock/qa/native-max-no-activation.py": "e1ca26e2f5a2582d51a214afe65ad7bf933c068ed66fb6e540a431ae7efc3a32",
+                "implementation/warlock/qa/current-scene-core.json": "e5ca494768db2efa8ee17894aa9730f2f10c38c84d15bf2a76c2d2b4116120b9",
+                "implementation/warlock/qa/current-native-pair.json": "84f1494ba402fda5d8edae9f11ca3beec04f315317069a8b48b97a71fa6da13d",
+                "implementation/warlock/README.md": "e1292ea1dfa9026caa16c431af2cf9e8e5f93921c782695d51fea8039d3f0946",
+                "implementation/warlock/qa/native-committed-max.py": "a273ce078f454dcf87ddf9c8d5240a4e01ebbdb500a836bd231e72c0aa11d89e",
+                "implementation/warlock/qa/native-max-input-region.py": "719d0efd13a2f3867dc6e5732c54ca81065c71de5e02a6b9cf70e23d765dddc6",
+                "implementation/warlock/qa/native-window-feedback.py": "a6247750ae49bfef098a5c2840c36d12e5cae4a301144338c58758005e667946",
+                "implementation/warlock/qa/check-scene-core.py": "d1ebccf8cff24cbb11d1b1abca44cd0da205da681b6adb52a67367b90e6bb3cc",
+                "implementation/warlock/qa/check-native-authority.py": "2ce2aeee2d815a6005a6132817eedaa92c207f0f9c4ae57f6a382c7b7ea7608a",
+                "implementation/warlock/native/core/CommittedScene.hpp": "8ab0576ddf0d2f141259b57dd211219455fa6f0fca94e21a077e49fc57fd577f",
+                "implementation/warlock/native/core/Renderer.cpp": "ceefb9b27ed86dad043057590c2558ebf799f71397c5e41071d21d368f1892ef",
+                "implementation/warlock/native/core/ViewHitTester.cpp": "f1e63e71bbeb47b0bb35be67b87d07b0d531fb446ddb4fa8d565029662653fbd"
+              },
+              "reviewer": "root-no-activation",
+              "disposition": "partial"
             }
           ],
-          "missingObservation": "Independent original disposition; full constrained-scene/presentation beyond the observed native window plane; stale/failed commit, button/cache/grab/layer/retirement and transformed/modal/passthrough/no-activation schedules; multi-output/resources, full family/fullscreen/AT and release gates."
+          "missingObservation": "Independent original max-input-region disposition and full constrained-scene/presentation acceptance.; Actual cached pointer focus retained through shape commit; ready eligible-root cache mismatch; stale/failed commit and button/release/device/retirement races.; Transformed/subsurface/modal, passthrough/layer/lock/grab/constraint/fullscreen and multi-output schedules.; Native AT/IME, measured resource/performance budgets and reproducible package/reversible deployment/rollback remain release obligations."
         },
         {
           "name": "max-modal-focus",
@@ -11011,5 +11037,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-10T06:26:53.497953+00:00"
+  "updatedUTC": "2026-10-10T06:43:11.236337+00:00"
 }

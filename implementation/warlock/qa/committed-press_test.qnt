@@ -1,0 +1,22 @@
+module committed_press_test {
+  import committed_press.* from "./committed-press"
+  run eligibleLowerTest = init.then(shape(true,false)).then(commit).then(press)
+    .then(all { assert(s.owner == 0 and lowerReceived and safety), s' = s })
+  run noHitCannotUseCacheTest = init.then(cache(0)).then(shape(false,false))
+    .then(commit).then(press)
+    .then(all { assert(noHitSuppressed and s.focused == 1 and safety), s' = s })
+  run stalePressRefusedTest = init.then(shape(true,false)).then(press)
+    .then(all { assert(s.suppressed and s.presses == 0 and safety), s' = s })
+  run suppressedReleaseCannotReplayTest = init.then(shape(false,false)).then(commit)
+    .then(press).then(shape(true,true)).then(commit).then(release)
+    .then(all { assert(suppressedRelease and s.releases == 0 and safety), s' = s })
+  run acceptedReleaseAfterShapeTest = init.then(press).then(shape(false,false))
+    .then(cache(0)).then(release)
+    .then(all { assert(releaseAfterShape and s.lastRelease == 1 and s.releases == 1 and safety), s' = s })
+  run eligibleRecoveryTest = init.then(shape(false,false)).then(commit).then(press)
+    .then(release).then(shape(true,false)).then(commit).then(press).then(release)
+    .then(all { assert(s.presses == 1 and s.releases == 1 and s.lastRelease == 0 and safety), s' = s })
+  run oldFallthroughCounterexampleTest = init.then(cache(0)).then(shape(false,false))
+    .then(commit).then(legacyNoHitPress)
+    .then(all { assert(not(safety) and s.focused == 0), s' = s })
+}

@@ -422,3 +422,10 @@ A second coherent floating native MAX window now preserves the first MAX placeme
 ## Shared committed MAX window scene
 
 MAX painting and hit traversal now share the native window-order snapshot published after output commit, with exact structural input-region/transform and owner checks before input. The native button owner suppresses a new press on a stale MAX scene while preserving accepted releases and existing layer/grab handling. [Current native scene/press/release evidence](qa/evidence/committed-max-scene/README.md) records matching committed paint/hit revisions, actual upper pixels and lower GTK delivery, both return placements and the pin/MAX regression. The API is a private matched-core authority ABI; it adds no Elm/frontend effect policy. Independent acceptance, broader scene/race/modal/fullscreen/AT/multi-output/resource and release obligations remain open.
+
+
+## MAX no-activation input
+
+An ordinary MAX press with no eligible window in the committed scene now stops before decoration, raise, focus or cached pointer button delivery. Its matching release is suppressed; an eligible later click works normally. Layer focus, session locks, native grabs and pointer constraints retain their existing branches. The protected native recording preserves the original upper-pixels/lower-recipient journey, observes both-excluded pixels with no GTK press/release or click activation, then restores an eligible region and verifies real press/release ownership and both return placements. Pin/MAX pointer and keyboard regression also passes.
+
+The [scoped evidence](qa/evidence/max-no-activation/README.md) maps the added quint-llm-kit model to native admission/release handling. ELM-REN-015 remains partial: retained cached focus at the shape-commit boundary, actual stale/failed-frame and button races, transformed/modal/grab/layer schedules, native AT and independent acceptance remain open.

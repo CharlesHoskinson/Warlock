@@ -1,13 +1,62 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T06:26:53.497953+00:00",
+  "updatedUTC": "2026-10-10T06:43:11.236337+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
+    "id": "max-no-activation",
+    "requirements": [
+      "ELM-REN-015"
+    ],
+    "scenarios": [
+      "max-input-region"
+    ],
+    "paths": [
+      "implementation/warlock/native/core/InputManager.cpp",
+      "implementation/warlock/qa/committed-press.qnt",
+      "implementation/warlock/qa/committed-press_test.qnt",
+      "implementation/warlock/qa/check-committed-press.py",
+      "implementation/warlock/qa/native-max-no-activation.py",
+      "implementation/warlock/qa/current-scene-core.json",
+      "implementation/warlock/qa/current-native-pair.json",
+      "implementation/warlock/README.md"
+    ],
+    "before": "A ready committed MAX scene with no eligible root can fall through to cached pointer button delivery and raise.",
+    "after": "Ordinary MAX presses with no committed eligible root are suppressed with their releases; original lower-eligible clicks and accepted release ownership remain.",
+    "verification": [
+      "quint-llm-kit incremental typecheck/sampled run, explicit named tests and witnesses; rebuild current protected scene core and matched plugin; original two-MAX native included/excluded journey plus both-excluded no-activation and eligible recovery, original deadlines and actual GTK release owners."
+    ],
+    "status": "implemented-partial",
+    "participantRecord": ".warlock-contributor/no-activation.json",
+    "evidence": "implementation/warlock/qa/evidence/max-no-activation/manifest.json",
+    "observed": "Ordinary committed MAX no-hit presses/releases now stop before cached button delivery and activation. Original lower-eligible upper-pixel/committed-scene/GTK-owner journey remains; both-excluded negative, eligible recovery and pin/MAX pointer/keyboard regression pass with normal cleanup. Actual cache/commit races and independent broader acceptance remain open.",
+    "missingObservations": [
+      "Independent original max-input-region disposition and full constrained-scene/presentation acceptance.",
+      "Actual cached pointer focus retained through shape commit; ready eligible-root cache mismatch; stale/failed commit and button/release/device/retirement races.",
+      "Transformed/subsurface/modal, passthrough/layer/lock/grab/constraint/fullscreen and multi-output schedules.",
+      "Native AT/IME, measured resource/performance budgets and reproducible package/reversible deployment/rollback remain release obligations."
+    ],
+    "nextSourceWork": "Advance original ELM-REN-015/max-modal-focus: map blocking modal ownership and qualifying activation to actual native accepted recipient and constrained paint order. Preserve current MAX positive/no-activation/pin behavior. Retained-cache/button/stale/failed-frame, layer/grab/transform and full native AT/resource/package/rollback obligations remain mandatory; switch to another bounded mandatory product slice at the v2 no-progress threshold."
+  },
+  "nextSlices": [
+    "taskbar activation/minimize/restore and popup focus journeys",
+    "persistent catalog pins",
+    "launcher search and refusal recovery",
+    "switcher/Task View/workspaces and snap/output journeys",
+    "authorized visible previews and fallback",
+    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
+    "original native, AT/IME, hardware/resource/journey gates",
+    "reproducible package, reversible deployment/rollback"
+  ],
+  "releaseAccepted": false,
+  "oldTrackerIsCurrent": false,
+  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
+  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
+  "previousSlice": {
     "id": "max-committed-scene",
     "requirements": [
       "ELM-REN-015"
@@ -45,61 +94,6 @@
       "Multi-output/resource gates, full pin/family/fullscreen policy, applicable native AT and release packaging/rollback."
     ],
     "nextSourceWork": "Implement and qualify original no-activation/passthrough and stale/failed-frame button/cache paths on the current shared scene; specifically inspect a ready scene with no eligible window and previously cached pointer focus, and preserve legitimate layers, locks, grabs and accepted releases. Then close the original modal/fullscreen/family policy and transformed/multi-output predicates. Preserve two-MAX and pin/MAX behavior, original clocks and matched native pair. Native AT/IME/resources/package/rollback remain mandatory release scope."
-  },
-  "nextSlices": [
-    "taskbar activation/minimize/restore and popup focus journeys",
-    "persistent catalog pins",
-    "launcher search and refusal recovery",
-    "switcher/Task View/workspaces and snap/output journeys",
-    "authorized visible previews and fallback",
-    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
-    "original native, AT/IME, hardware/resource/journey gates",
-    "reproducible package, reversible deployment/rollback"
-  ],
-  "releaseAccepted": false,
-  "oldTrackerIsCurrent": false,
-  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
-  "previousSlice": {
-    "id": "max-input-region",
-    "requirements": [
-      "ELM-REN-015"
-    ],
-    "scenarios": [
-      "max-input-region"
-    ],
-    "paths": [
-      "implementation/warlock/native/geometry-effects.inc",
-      "implementation/warlock/native/core/FullscreenController.cpp",
-      "implementation/warlock/qa/check-max-core.py",
-      "implementation/warlock/qa/check-native-authority.py",
-      "implementation/warlock/qa/current-max-core.json",
-      "implementation/warlock/qa/current-native-pair.json",
-      "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/qa/native-max-input-region.py",
-      "implementation/warlock/qa/max-overlap.qnt",
-      "implementation/warlock/qa/max-overlap_test.qnt",
-      "implementation/warlock/README.md",
-      "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/native/core/Window.cpp",
-      "implementation/warlock/native/core/ViewHitTester.cpp",
-      "implementation/warlock/qa/check-max-overlap.py"
-    ],
-    "before": "The geometry authority refuses a second MAX; the owning controller also exits a prior floating MAX, so the original two-MAX input-region journey cannot run.",
-    "after": "A second coherent floating MAX preserves the first MAX and its return placement; the original input-hole click is tested against actual upper pixels and lower native recipient, with scene agreement still requiring explicit evidence.",
-    "verification": [
-      "Quint named cases/witnesses/sampled traces; owning controller TU and plugin compile/ABI closure; original protected two-MAX native input-region journey"
-    ],
-    "status": "implemented-partial",
-    "participantRecord": ".warlock-contributor/max-input.json",
-    "evidence": "implementation/warlock/qa/evidence/max-input-region/manifest.json",
-    "observed": "Two floating MAX windows now coexist without changing peer geometry. Actual native upper pixels, included upper GTK recipient and excluded lower GTK recipient/focus pass; both return placements recover. Seven model cases/positive witnesses/sampled safety and 81-check native pin/MAX regression pass. Original committed-scene agreement and independent acceptance remain open.",
-    "missingObservations": [
-      "Native render and hit receipts bound to one committed constrained scene revision, including input region/transform commits.",
-      "Original transformed/modal recipient and explicit passthrough/no-activation exception cases.",
-      "Independent original scenario disposition and applicable native AT/full-release qualification."
-    ],
-    "nextSourceWork": "Implement a native committed constrained-scene identity shared by render and input traversal, with real input-region/transform dependencies and authenticated native receipts. Preserve actual two-MAX, pin/MAX and return-placement behavior. Continue original modal/pass-through/no-activation predicates without using authority dependency revisions as frame-scene proof; full family/fullscreen/AT/IME/hardware/resources/package/rollback stay mandatory."
   },
   "recentSlices": [
     {
@@ -1341,6 +1335,45 @@
         "Spontaneous service-unavailability outcomes and broader release scope remain open."
       ],
       "nextSourceWork": "Implement stable checkable Always on top/pin and MAX controls integrated with existing native geometry authority. Use quint-llm-kit for exact identity, pending/Unknown/refusal and no-replay transitions; preserve original pin/MAX/restore oracles. Native speech/braille announcement qualification and all remaining full GUI release scope remain mandatory."
+    },
+    {
+      "id": "max-committed-scene",
+      "requirements": [
+        "ELM-REN-015"
+      ],
+      "scenarios": [
+        "max-input-region"
+      ],
+      "paths": [
+        "implementation/warlock/native/core/CommittedScene.hpp",
+        "implementation/warlock/native/core/Renderer.cpp",
+        "implementation/warlock/native/core/ViewHitTester.cpp",
+        "implementation/warlock/native/authority.cpp",
+        "implementation/warlock/qa/check-scene-core.py",
+        "implementation/warlock/qa/check-native-authority.py",
+        "implementation/warlock/qa/current-scene-core.json",
+        "implementation/warlock/qa/current-native-pair.json",
+        "implementation/warlock/qa/current-search-build.json",
+        "implementation/warlock/qa/native-window-feedback.py",
+        "implementation/warlock/qa/native-committed-max.py",
+        "implementation/warlock/README.md",
+        "implementation/warlock/native/core/InputManager.cpp"
+      ],
+      "before": "MAX paint and input use separate live traversals; scene-fact revisions and diagnostic draw traces do not prove one committed constrained scene.",
+      "after": "The MAX render and input traversals share one bounded immutable native order snapshot, published only after successful output commit and unchanged structural dependencies. Changed input-region/transform/placement/order facts refuse stale input until a matching frame commits; native hit receipts identify the consumed scene.",
+      "verification": [
+        "Existing quint-llm-kit max-overlap named tests, witnesses and safety unchanged; owning Renderer/HitTester compile and exact relink with explicit additive scene API; actual original native MAX input-hole and pin/MAX regression with committed-scene receipts"
+      ],
+      "status": "implemented-partial",
+      "participantRecord": ".warlock-contributor/scene.json",
+      "evidence": "implementation/warlock/qa/evidence/committed-max-scene/manifest.json",
+      "observed": "Native MAX painting/input now share a successfully committed structurally current window-order snapshot. Original included/excluded physical clicks consume matching committed paint/hit revisions, actual upper pixels and upper/lower GTK press/release/focus recipients. Both return placements and pin/MAX pointer/keyboard regression pass; the existing model remains unchanged and passes before/after. Independent and wider scene/race/exception/AT/resource qualification remain open.",
+      "missingObservations": [
+        "Independent original max-input-region disposition; full constrained-scene/presentation acceptance remains separate.",
+        "Native stale/failed commit, button/cache/grab/layer/retirement schedules, transformed/modal and explicit passthrough/no-activation cases.",
+        "Multi-output/resource gates, full pin/family/fullscreen policy, applicable native AT and release packaging/rollback."
+      ],
+      "nextSourceWork": "Implement and qualify original no-activation/passthrough and stale/failed-frame button/cache paths on the current shared scene; specifically inspect a ready scene with no eligible window and previously cached pointer focus, and preserve legitimate layers, locks, grabs and accepted releases. Then close the original modal/fullscreen/family policy and transformed/multi-output predicates. Preserve two-MAX and pin/MAX behavior, original clocks and matched native pair. Native AT/IME/resources/package/rollback remain mandatory release scope."
     }
   ]
 }

@@ -876,7 +876,7 @@ void CInputManager::processMouseDownNormal(const IPointer::SButtonEvent& e, SP<I
         return;
 
     const auto mouseCoords = g_pInputManager->getMouseCoordsInternal();
-    // A stale MAX scene must not send a new press to cached pointer focus.
+    // A stale or empty MAX hit must not send a new press to cached pointer focus.
     // Releases for accepted presses remain delivered to their existing owner.
     static std::bitset<KEY_MAX + 1> sceneSuppressedButtons;
     if (e.button > KEY_MAX)
@@ -893,6 +893,12 @@ void CInputManager::processMouseDownNormal(const IPointer::SButtonEvent& e, SP<I
         return;
     }
     const auto w           = Desktop::viewState()->hitTest().windowAt(mouseCoords, Desktop::View::ALLOW_FLOATING | Desktop::View::RESERVED_EXTENTS | Desktop::View::INPUT_EXTENTS);
+
+    if (e.state == WL_POINTER_BUTTON_STATE_PRESSED && !m_lastFocusOnLS && !g_pSessionLockManager->isSessionLocked() &&
+        !g_pSeatManager->m_seatGrab && !isConstrained() && inputScene.required && !w) {
+        sceneSuppressedButtons.set(e.button);
+        return;
+    }
 
     if (w && !m_lastFocusOnLS && !g_pSessionLockManager->isSessionLocked() && w->checkInputOnDecos(INPUT_TYPE_BUTTON, mouseCoords, e))
         return;

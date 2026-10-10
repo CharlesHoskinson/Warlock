@@ -1,0 +1,75 @@
+{
+  "passed": true,
+  "scope": "Ordinary MAX button admission and release lifecycle, two abstract roots/one button. Admitted eligible refocus assumed; no native timing, grabs/layers/lock/constraints, pixels, transforms, ABI or presentation acceptance.",
+  "nativeAcceptance": false,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-ca205508f0b74cc2b0c19485ad9a2785.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "committed-press.qnt": "365000f8276bdc50879046b166e4700ee64280ad9979cee10a971b050c66397d",
+    "committed-press_test.qnt": "ddd9b0abc0dac5a47b9d6a677ada69685a4fbb545311a7a855233a98ee031802"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/committed-press.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/committed-press_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=79401"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "witnesses",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/committed-press.qnt",
+        "--backend=typescript",
+        "--witnesses",
+        "lowerReceived",
+        "noHitSuppressed",
+        "releaseAfterShape",
+        "suppressedRelease",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79402"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "safety",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/committed-press.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79403"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "witnessCounts": {
+    "lowerReceived": 138,
+    "noHitSuppressed": 258,
+    "releaseAfterShape": 386,
+    "suppressedRelease": 577
+  }
+}
