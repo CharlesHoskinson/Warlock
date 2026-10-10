@@ -6,6 +6,7 @@ window.receiveTopology = value => app.ports.nativeViews.send(value);
 window.receiveNative = value => app.ports.nativeEvents.send(value);
 window.receiveAction = value => app.ports.rendererActions.send(value);
 window.receiveDismiss = lease => app.ports.nativeDismissals.send(lease);
+window.receiveEscape = value => app.ports.nativeEscapes.send(value);
 window.receiveFocus = value => requestAnimationFrame(() => {
   const node=document.querySelector('.surface-bar');
   if(value.surfaceProtocol!==2 || value.kind!=='surface-focus' || !node || node.dataset.publication!==value.publication || node.dataset.lease!==value.lease) return;

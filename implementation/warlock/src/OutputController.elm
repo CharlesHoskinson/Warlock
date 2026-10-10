@@ -35,7 +35,7 @@ type Model = Model
 type alias CatalogRequest = { binding : Binding.Binding, request : Counter }
 type alias Batch = { scope : Scope, revision : Counter, publication : Counter, lease : Counter, binding : Binding.Binding, wire : String, observations : List (String,Counter), operations : List UnsentOperation.Key, catalogs : List CatalogRequest }
 
-type Event = Disposition D.Value | Topology D.Value | Renderer D.Value | Interaction Desktop.Msg | Dismiss D.Value | Reflow D.Value
+type Event = Disposition D.Value | Topology D.Value | Renderer D.Value | Interaction Desktop.Msg | Dismiss D.Value | Escape D.Value | Reflow D.Value
 
 initial : Model
 initial = Model {announcements=OutcomeAnnouncements.initial,controller=Controller.initial,revision=UInt64.zero,highest=UInt64.zero,views=[],locations=[],selected=Nothing,batches=[],batchExhausted=False,capacityRefused=False}
@@ -182,6 +182,12 @@ updateCore event ((Model model) as current) =
                                     in (Model {model | controller=next,selected=Just callback.scope},ownerEffects++effects++relocation)
                 _ -> (current,[])
         Dismiss raw -> nativePopup Controller.NativeDismiss raw current
+        Escape raw ->
+            let decoder=strict ["scope","publication","lease"] (D.map3 (\scope shown token -> (scope,shown,token)) (D.field "scope" scopeDecoder) (D.field "publication" UInt64.decoder) (D.field "lease" UInt64.decoder))
+                currentPublication=D.decodeValue (D.field "publication" UInt64.decoder) (Controller.frame model.controller) |> Result.toMaybe
+            in case D.decodeValue decoder raw of
+                Ok (scope,publication,token) -> if owner current==Just scope && List.member scope model.views && currentPublication==Just publication then apply (Controller.NativeEscape token) current else (current,[])
+                Err _ -> (current,[])
         Reflow raw -> nativePopup Controller.NativeReflow raw current
 
 nativePopup : (Counter -> Controller.Event) -> D.Value -> Model -> (Model,List Controller.Effect)

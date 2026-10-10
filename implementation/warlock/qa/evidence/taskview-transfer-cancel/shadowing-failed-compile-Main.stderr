@@ -1,0 +1,16 @@
+-- SHADOWING ------------------------------------------ src/OutputController.elm
+
+The name `shown` is first defined here:
+
+187|                 shown=D.decodeValue (D.field "publication" UInt64.decoder) (Controller.frame model.controller) |> Result.toMaybe
+                     ^^^^^
+But then it is defined AGAIN over here:
+
+186|             let decoder=strict ["scope","publication","lease"] (D.map3 (\scope shown token -> (scope,shown,token)) (D.field "scope" scopeDecoder) (D.field "publication" UInt64.decoder) (D.field "lease" UInt64.decoder))
+                                                                                    ^^^^^
+Think of a more helpful name for one of them and you should be all set!
+
+Note: Linters advise against shadowing, so Elm makes “best practices” the
+default. Read <https://elm-lang.org/0.19.2/shadowing> for more details on this
+choice.
+

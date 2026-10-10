@@ -228,6 +228,21 @@ int main(void) {
     one.active=TRUE;CHECK("ambiguous duplicate source is refused",context_keys_admit(&two.context_keys,&original)==1 && !context_replay_source(GTK_WIDGET(popup_view),&original));
     two.context_keys=(ContextKeySource){0};one.context_keys=(ContextKeySource){0};
     CHECK("replacement engine cannot borrow earlier key proof",!context_replay_source(GTK_WIDGET(popup_view),&original));
+    popup_owner=&one;popup_active=TRUE;surface_gate.publication=10;surface_gate.lease=2;surface_gate.closed=0;
+    JsonNode *escape_packet=shared_escape_packet(10,2);
+    CHECK("released overview Escape preserves current scope without retiring grab",escape_packet && popup_active && surface_gate.closed==0);
+    JsonObject *escape_object=json_node_get_object(escape_packet);
+    JsonNode *escape_owner=scope_packet(&one);
+    CHECK("overview Escape carries original publication lease and exact owner",surface_fields(escape_object,(const char*[]){"scope","publication","lease"},3) &&
+        g_str_equal(json_object_get_string_member(escape_object,"publication"),"10") && g_str_equal(json_object_get_string_member(escape_object,"lease"),"2") &&
+        json_node_equal(json_object_get_member(escape_object,"scope"),escape_owner));
+    json_node_unref(escape_owner);
+    json_node_unref(escape_packet);
+    CHECK("overview Escape cannot remint changed publication",!shared_escape_packet(9,2));
+    CHECK("overview Escape cannot borrow changed lease",!shared_escape_packet(10,1));
+    one.active=FALSE;CHECK("retired overview owner cannot emit Escape",!shared_escape_packet(10,2));one.active=TRUE;
+    surface_gate.closed=2;CHECK("retired input lease cannot emit Escape",!shared_escape_packet(10,2));surface_gate.closed=0;
+    popup_active=FALSE;CHECK("withdrawn grab cannot emit Escape",!shared_escape_packet(10,2));
     g_ptr_array_unref(output_views);output_views=NULL;
     g_print("shared-context-checks: %u\n",checks);return 0;
 }

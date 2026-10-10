@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-fd85b665693048e1b1617c08ee6ab9e9.scope",
+    "coreLimit": 1
+  },
+  "initializationOnly": true,
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/overview-transfer-cancel.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "initialization",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/overview-transfer-cancel.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1",
+        "--max-steps=1",
+        "--seed=82710"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/overview-transfer-cancel.qnt": "5a662dd63000bf99b0e1f8cceff406431d4ce9fde7e81e748057c59e15a5cf43"
+  },
+  "scope": "Exact eligible current transfer opener focus on cancellation, valid workspace/All fallback, duplicate/stale/closed/coherence/availability/reservation/capability lifetime. Source revision abstracts current view stamp; no native dispatch, real pixels/input, AT or timing verdict.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

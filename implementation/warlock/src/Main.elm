@@ -21,13 +21,14 @@ port nativeEvents : (D.Value -> msg) -> Sub msg
 port rendererActions : (D.Value -> msg) -> Sub msg
 port nativeReflows : (D.Value -> msg) -> Sub msg
 port nativeDismissals : (D.Value -> msg) -> Sub msg
+port nativeEscapes : (D.Value -> msg) -> Sub msg
 port inspections : E.Value -> Cmd msg
 
 port surfaceCommits : E.Value -> Cmd msg
 
 type alias Model = {controller : Outputs.Model, qa : Bool}
 
-type Msg = Disposition D.Value | Native D.Value | Action D.Value | Dismiss D.Value | Reflow D.Value | Topology D.Value | Deadline Desktop.Msg
+type Msg = Disposition D.Value | Native D.Value | Action D.Value | Dismiss D.Value | Escape D.Value | Reflow D.Value | Topology D.Value | Deadline Desktop.Msg
 
 commit : Maybe E.Value -> List Controller.Effect -> Cmd Msg
 commit packet effects =
@@ -51,6 +52,7 @@ update message model =
             Deadline value -> Just (Outputs.Interaction value)
             Reflow raw -> Just (Outputs.Reflow raw)
             Dismiss raw -> Just (Outputs.Dismiss raw)
+            Escape raw -> Just (Outputs.Escape raw)
     in case event of
         Nothing -> (model,Cmd.none)
         Just value ->
@@ -63,5 +65,5 @@ main = Browser.element
     { init=\qa -> ({controller=Outputs.initial,qa=qa},Cmd.none)
     , update=update
     , view=\_ -> text ""
-    , subscriptions=\_ -> Sub.batch [nativeBatchDispositions Disposition,nativeViews Topology,nativeEvents Native,rendererActions Action,nativeDismissals Dismiss,nativeReflows Reflow]
+    , subscriptions=\_ -> Sub.batch [nativeBatchDispositions Disposition,nativeViews Topology,nativeEvents Native,rendererActions Action,nativeDismissals Dismiss,nativeEscapes Escape,nativeReflows Reflow]
     }

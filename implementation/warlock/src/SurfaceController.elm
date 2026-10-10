@@ -16,7 +16,7 @@ import TaskbarShell
 import UInt64 exposing (Counter)
 
 type Model = Model { recovery : Recovery.Model, desktop : Desktop.Model, publication : Counter, lease : Counter, exhausted : Bool }
-type Event = Interaction Desktop.Msg | Renderer D.Value | NativeDismiss Counter | NativeReflow Counter | NativeRelocate
+type Event = Interaction Desktop.Msg | Renderer D.Value | NativeDismiss Counter | NativeEscape Counter | NativeReflow Counter | NativeRelocate
 type Effect = DesktopEffect Desktop.Effect | Publish E.Value
 
 initial : Model
@@ -152,6 +152,10 @@ update event ((Model model) as current) =
     case event of
         Interaction message -> apply message current
         Renderer raw -> Surface.resolve model.publication model.lease raw model.desktop |> Maybe.map (\message -> apply message current) |> Maybe.withDefault (current,[])
+        NativeEscape token ->
+            if token/=model.lease then (current,[]) else
+                Surface.controls model.desktop |> List.filter (\control -> control.id=="control:close" && control.enabled)
+                    |> List.head |> Maybe.andThen .message |> Maybe.map (\message -> apply message current) |> Maybe.withDefault (current,[])
         NativeRelocate ->
             if Surface.mode model.desktop=="closed" then (current,[]) else
                 case (UInt64.next model.lease,UInt64.next model.publication) of

@@ -1,0 +1,177 @@
+{
+  "schema": 1,
+  "requirements": [
+    "ELM-UI-006"
+  ],
+  "scenarios": [
+    "overview-cancel"
+  ],
+  "sourceBaseRevision": "7ef619e9fcbe1c55d402da3d15d329cea6dc007c",
+  "sourceHashes": {
+    "implementation/warlock/src/Desktop.elm": "9cb07b517ab03a68326446ddecb5091458c97e5602afe576fa6ba43788f3c5e5",
+    "implementation/warlock/src/Surface.elm": "787ee6ab965cb4efa05207b722dcb09602ffa72213aa6eb950e5b37afc74a710",
+    "implementation/warlock/qa/TaskViewReplay.elm": "1181bc1c8872c1b6a6424f04b43d1df5d1f8f31a444ae92d80fb35fbbfd398e0",
+    "implementation/warlock/qa/overview-transfer-cancel.qnt": "61fe11eb3f695ed68226e9dab351146a15564848fbe82b32e8b689c60f2371ca",
+    "implementation/warlock/qa/overview-transfer-cancel_test.qnt": "3a004520e23130a3fa57175d740b8c7e96a6c82d00cf443fa0467651954fb75b",
+    "implementation/warlock/qa/check-overview-transfer-cancel.py": "360ad5ac344b5b64273d1e0f94af85e8801fec567ab215850e4213cd1c046bf1",
+    "implementation/warlock/qa/native-taskview-transfer-cancel.py": "52323c4938a7d63a7db816dd8879381a05bc5ecb1bb58c7f8e8e70cdf409099a",
+    "implementation/warlock/qa/check-search.py": "94bcfd38acce0d5c14392dc66709a2ca0b7045e84e2393f028eb534f9885edbd",
+    "implementation/warlock/qa/current-search-build.json": "b24506c5764d1d982341fdcc494dab44c1b5fef5dcb08d78a23bded3c4ebbf52",
+    "implementation/warlock/assets/elm.js": "5056dab9023368ce4e022dc4146eceeb7dd5217d57217242038413919e1485a6",
+    "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+    "implementation/warlock/assets/popup.js": "a20165e1d339c0d518286cac3e973cdd30f1fe20401295434d8c5361e1aa4b22",
+    "implementation/warlock/README.md": "3937fbe780af97585326da96246f8743b6c3b8cd2605e354f1c3e886f51066f9",
+    "implementation/warlock/src/SurfaceController.elm": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
+    "implementation/warlock/src/Main.elm": "6d797e72117cb0e057638eca1c29bcec8c1fa536221bccd605de48978458cf19",
+    "implementation/warlock/src/OutputController.elm": "d77c9b0a02565677480b35abec7b9ef95c434fdb93afdc57ea0f78912acf8752",
+    "implementation/warlock/assets/adapter.js": "9d99e140af65c67aa5395ce8dc3f3aee42b2b341e039e6514745e14ec9335f96",
+    "implementation/warlock/native/shared-host.c": "b61f7e79da12693a4d30693309fe5dd2147f5760246052d230efed30fdd7d844",
+    "implementation/warlock/native/shared-context.h": "39e735b686769ab2e0600530bb1442b33fdcd68bbbe625131c77bf724b43b229",
+    "implementation/warlock/native/shared-context-test.c": "ee7fa27797a17945cac8419e78f459962609a56b5f2090687c4dfff4f6192883",
+    "implementation/warlock/qa/TaskViewEscapeReplay.elm": "9f95642d106544223fcae61f3b81a684853276ed8b7de461437267d9dba33ac8"
+  },
+  "scope": "Real nested Escape and Cancel return to exact eligible Move control, keyboard Enter reopens it, controls paint, no native window/workspace mutation or replacement, full Escape dismissal restores actual physical keyboard recipient. Current compiled lifetime/freshness guards and model before code.",
+  "missingObservations": [
+    "Applicable original native AT/Orca and independent original acceptance remain open; separately retained WebKit AT traversal failure is unresolved."
+  ],
+  "nativeAcceptance": false,
+  "assistiveTechnologyAccepted": false,
+  "fullReleaseAccepted": false,
+  "nativePair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
+      "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791657775676809428/elm-window-geometry-authority.so",
+      "sha256": "ae84313c512d0ba398e7f931c5c877eb69d7635588fbbd11b71a729386fcbfd2"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+      "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/task-view-1791663822307550341/elm-host",
+    "sha256": "3c8ae483e00d4096bbf06d848426bbb80b1249a856a03fcbd264372dc6cdf34f",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/task-view-1791663822307550341/report.json",
+    "heldBuildSHA256": "90244dac165d619fe9076e3bd8607911a1564290973e6c7eedac1ee4cc99f583"
+  },
+  "quintWorkflow": {
+    "kit": "https://github.com/quint-co/quint-llm-kit",
+    "skill": "/home/hoskinson/.claude/plugins/cache/quint-llm-kit/quint-llm-kit/1.0.0/skills/quint-modeling/SKILL.md",
+    "guideline": "guidelines/from-requirements.md",
+    "implementationSkill": "quint-execute-spec",
+    "modelBeforeImplementation": true,
+    "witnesses": {
+      "originReturnWitness": 159,
+      "filterReturnWitness": 83,
+      "allReturnWitness": 191,
+      "staleHeldWitness": 718,
+      "fullDismissalWitness": 458
+    },
+    "abstraction": "One immutable reducer. Revision abstracts existing current publication/binding admission; coherent means exact joined observations. No native/AT/clock/physical-pixel proof."
+  },
+  "artifacts": [
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-cancel/initial-report.json",
+      "sha256": "6b0dd0bfc5a9f895a17097e00f9270b409e6cedac13b2834bcd55afe8b355fef",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/overview-transfer-cancel-1791663306734369454/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-cancel/initial-overview-transfer-cancel.qnt",
+      "sha256": "5a662dd63000bf99b0e1f8cceff406431d4ce9fde7e81e748057c59e15a5cf43",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/overview-transfer-cancel-1791663306734369454/overview-transfer-cancel.qnt"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-cancel/initial-initialization.stdout",
+      "sha256": "b9c920855f34aee77cada5fc5da5af59ccf9e4134975f0129abca37903982600",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/overview-transfer-cancel-1791663306734369454/initialization.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-cancel/model-report.json",
+      "sha256": "750f89db15a7338cef876bf89951156aafba72622d157c8f72d5af95158e90dd",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/overview-transfer-cancel-1791663443176283015/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-cancel/model-named.stdout",
+      "sha256": "9abbae1a71f270c9e3d96de1511472e9396255693e6c7dfb5348b80e554a66af",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/overview-transfer-cancel-1791663443176283015/named.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-cancel/model-witness-safety.stdout",
+      "sha256": "5ee0929fc8edf476b830958bc9ac554b42e5f14d38a2ca2d06dab564d53e2efd",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/overview-transfer-cancel-1791663443176283015/witness-safety.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-cancel/current-report.json",
+      "sha256": "90244dac165d619fe9076e3bd8607911a1564290973e6c7eedac1ee4cc99f583",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/task-view-1791663822307550341/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-cancel/current-task-view.json",
+      "sha256": "10e47127ad0f8e80dd3a57b7abd04ab3b029194bff55801ca2b9b7523ebbf18d",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/task-view-1791663822307550341/task-view.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-cancel/current-task-view-escape.json",
+      "sha256": "48aba9dcdaa90e88bcaf3eb077966c508ab75cf81e2a3b64c117dff9ca4b960d",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/task-view-1791663822307550341/task-view-escape.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-cancel/current-host-self-tests.stdout",
+      "sha256": "a86e69e3799b40f830f5d75a672aed212899d369c6d498d7be0f32e8b9ee820e",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/task-view-1791663822307550341/host-self-tests.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-cancel/shadowing-failed-report.json",
+      "sha256": "51e10c4b0cb4d3b511d4ca46fa4241cf3ecef3b4bac4661800828a45d900a90d",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/task-view-1791663786210139168/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-cancel/shadowing-failed-compile-Main.stderr",
+      "sha256": "4f53047f12c3e0722fcdf7e595907b67811d9e531341549ed241982cd58617ea",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/task-view-1791663786210139168/compile-Main.stderr"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-cancel/premature-dismissal-build.report.json",
+      "sha256": "63b61394c023cfef3a0ae8b6e11bdadabe38496dd804f34b64d0572c9fd67ca8",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/task-view-1791663528491159827/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-cancel/baseline-native.report.json",
+      "sha256": "55077bd8ac65d70f375000be997b0bc34e8c67aa07e0ce38d1e5b0f05b57b6d6",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-workspace-navigation-1791663263893780033/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-cancel/baseline-native.warlock.log",
+      "sha256": "8a4ba3a9bf2cd59bbaae0a17ba5c47f893ed831ef7543678162ef358185e9603",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791663263893876271/warlock.log"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-cancel/premature-dismissal-native.report.json",
+      "sha256": "b88f0a81730de609d897aa0f106c21fb001b2c7cb89fd60eafbf7383e86a73bd",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-workspace-navigation-1791663572478483610/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-cancel/premature-dismissal-native.warlock.log",
+      "sha256": "8d1a5375ea0b95ace742462226d4b142f2982e5a1c666b3a4f44ba3a0e7f3205",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791663572478579162/warlock.log"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-cancel/current-native.report.json",
+      "sha256": "d974f18bb412b97f6b2af44b25ff752cdffecb24b4fca8af32a134d3ec469728",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-workspace-navigation-1791663854409857537/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-cancel/current-native.warlock.log",
+      "sha256": "61f9598dc7b500edefc30909a38ebfcd4d109d4b2b6e588978b88aa72b0133bc",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791663854409945879/warlock.log"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-transfer-cancel/current-transfer-origin.png",
+      "sha256": "de1e108f78b4727658a7ef6d952d4f63a6e970d4d6b74d4d5fa40e56a80ae853",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791663854409945879/popup-cancelled-transfer-origin.png"
+    }
+  ]
+}

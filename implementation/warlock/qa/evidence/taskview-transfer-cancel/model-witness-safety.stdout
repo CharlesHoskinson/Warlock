@@ -1,0 +1,585 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      available: true,
+      blocked: false,
+      capable: true,
+      coherent: true,
+      focus: 0,
+      focusCommands: 0,
+      lastOriginEligible: false,
+      live: Set(7, 8),
+      mutations: 0,
+      open: true,
+      ready: true,
+      revision: 1,
+      selected: 2,
+      transfer: 7,
+      workspaces: Set(1, 2)
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      available: true,
+      blocked: false,
+      capable: true,
+      coherent: true,
+      focus: 0,
+      focusCommands: 0,
+      lastOriginEligible: false,
+      live: Set(8),
+      mutations: 0,
+      open: true,
+      ready: true,
+      revision: 1,
+      selected: 2,
+      transfer: 7,
+      workspaces: Set(1)
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      available: true,
+      blocked: false,
+      capable: true,
+      coherent: false,
+      focus: 0,
+      focusCommands: 0,
+      lastOriginEligible: false,
+      live: Set(8),
+      mutations: 0,
+      open: true,
+      ready: true,
+      revision: 2,
+      selected: 2,
+      transfer: 0,
+      workspaces: Set(1)
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      available: true,
+      blocked: false,
+      capable: true,
+      coherent: false,
+      focus: 0,
+      focusCommands: 0,
+      lastOriginEligible: false,
+      live: Set(8),
+      mutations: 0,
+      open: true,
+      ready: true,
+      revision: 2,
+      selected: 2,
+      transfer: 0,
+      workspaces: Set(1)
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      available: true,
+      blocked: false,
+      capable: true,
+      coherent: false,
+      focus: 0,
+      focusCommands: 0,
+      lastOriginEligible: false,
+      live: Set(8),
+      mutations: 0,
+      open: true,
+      ready: true,
+      revision: 2,
+      selected: 2,
+      transfer: 0,
+      workspaces: Set(1)
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      available: true,
+      blocked: false,
+      capable: true,
+      coherent: false,
+      focus: 0,
+      focusCommands: 0,
+      lastOriginEligible: false,
+      live: Set(8),
+      mutations: 0,
+      open: true,
+      ready: false,
+      revision: 2,
+      selected: 2,
+      transfer: 0,
+      workspaces: Set(1)
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      available: true,
+      blocked: true,
+      capable: true,
+      coherent: false,
+      focus: 0,
+      focusCommands: 0,
+      lastOriginEligible: false,
+      live: Set(8),
+      mutations: 0,
+      open: true,
+      ready: false,
+      revision: 2,
+      selected: 2,
+      transfer: 0,
+      workspaces: Set(1)
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      available: true,
+      blocked: true,
+      capable: true,
+      coherent: false,
+      focus: 0,
+      focusCommands: 0,
+      lastOriginEligible: false,
+      live: Set(8),
+      mutations: 0,
+      open: true,
+      ready: false,
+      revision: 3,
+      selected: 2,
+      transfer: 0,
+      workspaces: Set(1)
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      available: true,
+      blocked: true,
+      capable: true,
+      coherent: false,
+      focus: 0,
+      focusCommands: 0,
+      lastOriginEligible: false,
+      live: Set(8),
+      mutations: 0,
+      open: true,
+      ready: false,
+      revision: 3,
+      selected: 2,
+      transfer: 0,
+      workspaces: Set(1)
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      available: true,
+      blocked: true,
+      capable: true,
+      coherent: false,
+      focus: 0,
+      focusCommands: 0,
+      lastOriginEligible: false,
+      live: Set(8),
+      mutations: 0,
+      open: true,
+      ready: false,
+      revision: 3,
+      selected: 2,
+      transfer: 0,
+      workspaces: Set(1)
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      available: true,
+      blocked: true,
+      capable: true,
+      coherent: false,
+      focus: 0,
+      focusCommands: 0,
+      lastOriginEligible: false,
+      live: Set(8),
+      mutations: 0,
+      open: true,
+      ready: false,
+      revision: 3,
+      selected: 2,
+      transfer: 0,
+      workspaces: Set(1)
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      available: true,
+      blocked: true,
+      capable: true,
+      coherent: false,
+      focus: 0,
+      focusCommands: 0,
+      lastOriginEligible: false,
+      live: Set(8),
+      mutations: 0,
+      open: true,
+      ready: false,
+      revision: 3,
+      selected: 2,
+      transfer: 0,
+      workspaces: Set(1)
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      available: true,
+      blocked: true,
+      capable: true,
+      coherent: false,
+      focus: 0,
+      focusCommands: 0,
+      lastOriginEligible: false,
+      live: Set(8),
+      mutations: 0,
+      open: false,
+      ready: false,
+      revision: 4,
+      selected: 2,
+      transfer: 0,
+      workspaces: Set(1)
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      available: true,
+      blocked: true,
+      capable: true,
+      coherent: false,
+      focus: 0,
+      focusCommands: 0,
+      lastOriginEligible: false,
+      live: Set(8),
+      mutations: 0,
+      open: false,
+      ready: false,
+      revision: 4,
+      selected: 2,
+      transfer: 0,
+      workspaces: Set(1)
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      available: true,
+      blocked: true,
+      capable: true,
+      coherent: false,
+      focus: 0,
+      focusCommands: 0,
+      lastOriginEligible: false,
+      live: Set(8),
+      mutations: 0,
+      open: false,
+      ready: false,
+      revision: 5,
+      selected: 2,
+      transfer: 0,
+      workspaces: Set(1)
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      available: true,
+      blocked: true,
+      capable: true,
+      coherent: false,
+      focus: 0,
+      focusCommands: 0,
+      lastOriginEligible: false,
+      live: Set(8),
+      mutations: 0,
+      open: false,
+      ready: false,
+      revision: 5,
+      selected: 2,
+      transfer: 0,
+      workspaces: Set(1)
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      available: true,
+      blocked: true,
+      capable: true,
+      coherent: false,
+      focus: 0,
+      focusCommands: 0,
+      lastOriginEligible: false,
+      live: Set(8),
+      mutations: 0,
+      open: false,
+      ready: false,
+      revision: 5,
+      selected: 2,
+      transfer: 0,
+      workspaces: Set(1)
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      available: true,
+      blocked: true,
+      capable: true,
+      coherent: false,
+      focus: 0,
+      focusCommands: 0,
+      lastOriginEligible: false,
+      live: Set(8),
+      mutations: 0,
+      open: false,
+      ready: false,
+      revision: 5,
+      selected: 2,
+      transfer: 0,
+      workspaces: Set(1)
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      available: true,
+      blocked: true,
+      capable: true,
+      coherent: false,
+      focus: 0,
+      focusCommands: 0,
+      lastOriginEligible: false,
+      live: Set(8),
+      mutations: 0,
+      open: false,
+      ready: false,
+      revision: 5,
+      selected: 2,
+      transfer: 0,
+      workspaces: Set(1)
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      available: true,
+      blocked: true,
+      capable: true,
+      coherent: false,
+      focus: 0,
+      focusCommands: 0,
+      lastOriginEligible: false,
+      live: Set(8),
+      mutations: 0,
+      open: false,
+      ready: false,
+      revision: 5,
+      selected: 2,
+      transfer: 0,
+      workspaces: Set(1)
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      available: true,
+      blocked: true,
+      capable: true,
+      coherent: false,
+      focus: 0,
+      focusCommands: 0,
+      lastOriginEligible: false,
+      live: Set(8),
+      mutations: 0,
+      open: false,
+      ready: false,
+      revision: 5,
+      selected: 2,
+      transfer: 0,
+      workspaces: Set(1)
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      available: true,
+      blocked: true,
+      capable: true,
+      coherent: false,
+      focus: 0,
+      focusCommands: 0,
+      lastOriginEligible: false,
+      live: Set(8),
+      mutations: 0,
+      open: false,
+      ready: false,
+      revision: 6,
+      selected: 2,
+      transfer: 0,
+      workspaces: Set(1)
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      available: true,
+      blocked: true,
+      capable: true,
+      coherent: false,
+      focus: 0,
+      focusCommands: 0,
+      lastOriginEligible: false,
+      live: Set(8),
+      mutations: 0,
+      open: false,
+      ready: false,
+      revision: 6,
+      selected: 2,
+      transfer: 0,
+      workspaces: Set(1)
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      available: true,
+      blocked: true,
+      capable: true,
+      coherent: false,
+      focus: 0,
+      focusCommands: 0,
+      lastOriginEligible: false,
+      live: Set(8),
+      mutations: 0,
+      open: false,
+      ready: false,
+      revision: 6,
+      selected: 2,
+      transfer: 0,
+      workspaces: Set(1)
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      available: true,
+      blocked: true,
+      capable: true,
+      coherent: false,
+      focus: 0,
+      focusCommands: 0,
+      lastOriginEligible: false,
+      live: Set(8),
+      mutations: 0,
+      open: false,
+      ready: false,
+      revision: 6,
+      selected: 2,
+      transfer: 0,
+      workspaces: Set(1)
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      available: true,
+      blocked: true,
+      capable: true,
+      coherent: false,
+      focus: 0,
+      focusCommands: 0,
+      lastOriginEligible: false,
+      live: Set(8),
+      mutations: 0,
+      open: false,
+      ready: false,
+      revision: 6,
+      selected: 2,
+      transfer: 0,
+      workspaces: Set(1)
+    }
+}
+
+[ok] No violation found (761ms at 1314 traces/second).
+Trace length statistics: max=26, min=26, average=26.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Witnesses:
+originReturnWitness was witnessed in 159 trace(s) out of 1000 explored (15.90%)
+filterReturnWitness was witnessed in 83 trace(s) out of 1000 explored (8.30%)
+allReturnWitness was witnessed in 191 trace(s) out of 1000 explored (19.10%)
+staleHeldWitness was witnessed in 718 trace(s) out of 1000 explored (71.80%)
+fullDismissalWitness was witnessed in 458 trace(s) out of 1000 explored (45.80%)
+Use --seed=0x14318 --backend=typescript to reproduce.

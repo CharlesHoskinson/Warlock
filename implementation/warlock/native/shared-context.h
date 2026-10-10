@@ -234,10 +234,11 @@ static void terminal_release(GtkWidget *widget,guint key) {
     JsonNode *message=terminal_take(widget,key);
     if(!message)return;
     g_print("surface-terminal-released: key=%u view=%" G_GUINT64_FORMAT " generation=%" G_GUINT64_FORMAT "\n",key,terminal_proof.view_id,terminal_proof.view_generation);fflush(stdout);
-    if(g_strcmp0(json_object_get_string_member(json_node_get_object(message),"kind"),"native-popup-dismiss")==0)
-        // Internal physical intent only: retire the native grab, then let the
-        // existing lease-bound NativeDismiss event reach the Elm policy owner.
-        surface_dismiss();
+    if(g_strcmp0(json_object_get_string_member(json_node_get_object(message),"kind"),"native-popup-dismiss")==0) {
+        const char *mode=json_object_get_string_member(json_node_get_object(surface_snapshot),"mode");
+        if(g_strcmp0(mode,"overview")==0)shared_popup_escape(terminal_proof.publication,terminal_proof.lease);
+        else surface_dismiss();
+    }
     else shared_context_forward(popup_owner,message,TRUE);
     json_node_unref(message);
 }

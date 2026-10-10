@@ -151,6 +151,7 @@ static OutputView *manager_lookup(WebKitUserContentManager *manager) {
     return NULL;
 }
 static void shared_context_forward(OutputView *,JsonNode *,gboolean);
+static void shared_popup_escape(guint64,guint64);
 #include "shared-context.h"
 
 #include "announcement-transport.h"
@@ -243,6 +244,20 @@ static void shared_popup_notify(const char *function,guint64 lease) {
     JsonObject *object=json_object_new();json_object_set_member(object,"scope",scope_packet(popup_owner));
     g_autofree char *token=g_strdup_printf("%" G_GUINT64_FORMAT,lease);json_object_set_string_member(object,"lease",token);
     JsonNode *packet=json_node_new(JSON_NODE_OBJECT);json_node_take_object(packet,object);surface_eval(view,function,packet);json_node_unref(packet);
+}
+static JsonNode *shared_escape_packet(guint64 publication,guint64 lease) {
+    if(!popup_owner || !popup_owner->active || shutting_down || !popup_active ||
+       publication!=surface_gate.publication || lease!=surface_gate.lease || lease<=surface_gate.closed)return NULL;
+    JsonObject *object=json_object_new();json_object_set_member(object,"scope",scope_packet(popup_owner));
+    g_autofree char *shown=g_strdup_printf("%" G_GUINT64_FORMAT,publication),*token=g_strdup_printf("%" G_GUINT64_FORMAT,lease);
+    json_object_set_string_member(object,"publication",shown);json_object_set_string_member(object,"lease",token);
+    JsonNode *packet=json_node_new(JSON_NODE_OBJECT);json_node_take_object(packet,object);return packet;
+}
+static void shared_popup_escape(guint64 publication,guint64 lease) {
+    JsonNode *packet=shared_escape_packet(publication,lease);if(!packet)return;
+    // A consumed physical release is an observation. Elm's current Close
+    // control decides whether to return within Task View or withdraw its grab.
+    surface_eval(view,"receiveEscape",packet);json_node_unref(packet);
 }
 static void shared_topology(void) {
     shared_context_cancel();

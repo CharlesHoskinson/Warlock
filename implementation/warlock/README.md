@@ -642,3 +642,9 @@ The [scoped evidence](qa/evidence/taskview-filter-accessibility/README.md) retai
 If the selected transfer window closes while its workspace remains, Task View now returns to that workspace's browse view with current keyboard focus. If the workspace also disappears, it returns to All windows. Incomplete observations keep the choice intact; another incarnation cannot replace it, and retirement emits no native action.
 
 The [native before/after evidence](qa/evidence/taskview-transfer-retirement/README.md) records the stranded-chooser failure and the corrected filtered view, painted controls, no replacement activation and physical keyboard return after Escape. The new quint-llm-kit model precedes implementation and the original Task View assertions remain passing. Applicable AT and independent original overview-retire acceptance remain open.
+
+### Transfer chooser cancellation — October 10
+
+Escape now returns from the transfer chooser to its same eligible Move control; Enter reopens it, and Cancel returns focus again. A second Escape closes Task View and returns keyboard input to the original native window. If the opener is unavailable, reserved or no longer in the current view, cancellation focuses the current workspace or All control instead. It emits no native mutation and cannot choose another incarnation.
+
+The [native before/after evidence](qa/evidence/taskview-transfer-cancel/README.md) records the original whole-overview dismissal failure, the premature input-retirement failure and the corrected keyboard/pixels/no-mutation journey. Quint modeling preceded the code. Applicable AT and independent original overview-cancel acceptance remain open.

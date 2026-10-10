@@ -1,4 +1,4 @@
-module Desktop exposing (Effect(..), ChoiceToken, choiceToken, Model, Msg(..), PopupOrigin(..), initial, update, ViewStamp, capture, key, taskViewGroups, workspaceNavigationIntent, workspaceMutation, switcherOpen, canProveCatalogUnsent, pinnedGroup, pinGroups, pinIdentities)
+module Desktop exposing (Effect(..), ChoiceToken, choiceToken, Model, Msg(..), PopupOrigin(..), initial, update, ViewStamp, capture, key, taskViewGroups, overviewTransferAvailable, workspaceNavigationIntent, workspaceMutation, switcherOpen, canProveCatalogUnsent, pinnedGroup, pinGroups, pinIdentities)
 
 import Menu
 import ActionProjection as Scene
@@ -203,6 +203,14 @@ initial =
 
 taskViewGroups : Model -> Maybe (List TaskView.Workspace)
 taskViewGroups model = TaskView.groupsWith model.workspaceInventory model.windows.shell
+
+overviewTransferAvailable : Model -> Counter -> Bool
+overviewTransferAvailable model root =
+    model.overview && model.choice==Nothing && Shell.available model.windows.shell && not (WorkspaceNavigation.blocked model.workspaceNavigation)
+        && not (MenuBridge.blockedFor root model.windows.shell model.windows.menus)
+        && (model.windows.shell.geometryCaps |> Maybe.map (\caps -> List.member "transfer-workspace" caps.operations) |> Maybe.withDefault False)
+        && (taskViewGroups model |> Maybe.withDefault [] |> List.filter (\group -> model.overviewWorkspace==Nothing || model.overviewWorkspace==Just group.identity)
+            |> List.concatMap .windows |> List.any (\family -> family.root==root && family.available))
 
 switcherOpen : Model -> Bool
 switcherOpen model = List.member (Switcher.phase model.switcher) [Switcher.Waiting,Switcher.Browsing]
@@ -1226,12 +1234,14 @@ updateAvailable message model =
                 next=advance {model | overviewWorkspace=selected}
             in if not exists then (model,[]) else (next,[Focus (key next (selected |> Maybe.map ((++) "overview:workspace:") |> Maybe.withDefault "overview:all"))])
         OpenOverviewTransfer stamp root ->
-            if capture model/=Just stamp || not model.overview || model.choice/=Nothing || not (Shell.available model.windows.shell) then (model,[]) else
-                let listed=taskViewGroups model |> Maybe.withDefault [] |> List.concatMap .windows |> List.any (\family -> family.root==root && family.available)
-                    enabled=model.windows.shell.geometryCaps |> Maybe.map (\caps -> List.member "transfer-workspace" caps.operations) |> Maybe.withDefault False
-                in if not (listed && enabled) then (model,[]) else (advance {model|overviewTransfer=Just root},[])
+            if capture model/=Just stamp || not (overviewTransferAvailable model root) then (model,[]) else (advance {model|overviewTransfer=Just root},[])
         CancelOverviewTransfer stamp ->
-            if capture model/=Just stamp || not model.overview then (model,[]) else (advance {model|overviewTransfer=Nothing},[])
+            if capture model/=Just stamp || not model.overview || model.overviewTransfer==Nothing then (model,[]) else
+                let next=advance {model|overviewTransfer=Nothing}
+                    origin=model.overviewTransfer |> Maybe.andThen (\root -> if overviewTransferAvailable next root then Just ("overview:transfer:"++UInt64.string root) else Nothing)
+                    workspace=model.overviewWorkspace |> Maybe.andThen (\identity -> taskViewGroups next |> Maybe.andThen (\groups -> if List.any (\group -> group.identity==identity) groups then Just ("overview:workspace:"++identity) else Nothing))
+                    target=origin |> Maybe.withDefault (workspace |> Maybe.withDefault "overview:all")
+                in (next,[Focus (key next target)])
         OverviewTransfer stamp root destination ->
             if capture model/=Just stamp || model.overviewTransfer/=Just root || model.choice/=Nothing then (model,[]) else
             case (model.windows.shell.geometry |> Maybe.andThen (\g -> Transfer.propose g root destination),model.windows.shell.binding,model.windows.shell.effects.observed) of

@@ -111,6 +111,35 @@ result =
         replacementScene=Scene.decode (E.object [("revision",E.string "1"),("focused",E.string "1"),("windows",E.list identity [window "1" "Editor" True,window "3" "Files" True])]) |> Result.toMaybe
         replacementGeometry=geometryWindow (counter "3") "2"
         replacementTransfer=retirementTick {transferOrigin | windows={windows | shell={shell | effects={effects | observed=replacementScene |> Maybe.map (\s -> {context=context,scene=s})},geometry=Maybe.map (\g -> {g | windows=[geometryWindow one "1",{replacementGeometry | workspaceGeneration=Just two}]}) shell.geometry}}}
+        cancelWindows=restorableBase.windows
+        cancelShell=cancelWindows.shell
+        cancelEffects=cancelShell.effects
+        cancelCaps=Just {effects=True,operations=["transfer-workspace"]}
+        cancelOrigin={restorableBase | overview=True,overviewWorkspace=Just "2",overviewTransfer=Just two,workspaceInventory=transferInventory,windows={cancelWindows | shell={cancelShell | geometryCaps=cancelCaps}}}
+        cancelTransfer=scoped Desktop.CancelOverviewTransfer cancelOrigin
+        cancelModel=Tuple.first cancelTransfer
+        cancelAgain=scoped Desktop.CancelOverviewTransfer cancelModel
+        cancelStale=Desktop.capture cancelOrigin |> Maybe.map (\stamp -> apply (Desktop.CancelOverviewTransfer stamp) cancelModel) |> Maybe.withDefault cancelTransfer
+        cancelUnavailable=scoped Desktop.CancelOverviewTransfer {transferOrigin | windows={windows | shell={shell | geometryCaps=cancelCaps}}}
+        cancelIncoherent=scoped Desktop.CancelOverviewTransfer {cancelOrigin | windows={cancelWindows | shell={cancelShell | geometryCaps=cancelCaps,geometry=Maybe.map (\g -> {g | context={context | output=two}}) cancelShell.geometry}}}
+        cancelNoCaps=scoped Desktop.CancelOverviewTransfer {cancelOrigin | windows={cancelWindows | shell={cancelShell | geometryCaps=Just {effects=False,operations=[]}}}}
+        cancelFiltered=scoped Desktop.CancelOverviewTransfer {cancelOrigin | overviewWorkspace=Just "1"}
+        cancelRetired=scoped Desktop.CancelOverviewTransfer {retiredTransfer | windows={windows | shell={shell | geometryCaps=cancelCaps,effects={effects | observed=remainingScene |> Maybe.map (\s -> {context=context,scene=s})},geometry=Maybe.map (\g -> {g | windows=[geometryWindow one "1"]}) shell.geometry}}}
+        cancelReservation={intent={request=one,generation=one,incarnation=two,operation=Effects.Restore,context=context},status=Effects.Unknown,effectProtocol=1}
+        cancelReservedOrigin={cancelOrigin | windows={cancelWindows | shell={cancelShell | geometryCaps=cancelCaps,effects={cancelEffects | unresolved=[cancelReservation]}}}}
+        cancelReserved=scoped Desktop.CancelOverviewTransfer cancelReservedOrigin
+        cancelClosed=scoped Desktop.CancelOverviewTransfer {cancelOrigin | overview=False}
+        cancelAll=scoped Desktop.CancelOverviewTransfer {cancelOrigin | overviewWorkspace=Nothing}
+        cancelChecks=[("cancelTransferReturnsSameCurrentEligibleMoveControl",cancelModel.overview && cancelModel.overviewTransfer==Nothing && cancelModel.overviewWorkspace==Just "2" && focuses (Tuple.second cancelTransfer)==[Desktop.key cancelModel "overview:transfer:2"] && List.isEmpty (mutations (Tuple.second cancelTransfer)) && (Surface.controls cancelModel |> List.any (\control -> control.id=="overview:transfer:2" && control.enabled))),
+            ("duplicateAndStaleTransferCancellationAreInert",Tuple.first cancelAgain==cancelModel && List.isEmpty (Tuple.second cancelAgain) && Tuple.first cancelStale==cancelModel && List.isEmpty (Tuple.second cancelStale)),
+            ("unavailableTransferOriginReturnsCurrentFilter",focuses (Tuple.second cancelUnavailable)==[Desktop.key (Tuple.first cancelUnavailable) "overview:workspace:2"] && List.isEmpty (mutations (Tuple.second cancelUnavailable))),
+            ("incoherentTransferOriginReturnsAlwaysAvailableAll",(Tuple.first cancelIncoherent).overviewTransfer==Nothing && focuses (Tuple.second cancelIncoherent)==[Desktop.key (Tuple.first cancelIncoherent) "overview:all"] && List.isEmpty (mutations (Tuple.second cancelIncoherent))),
+            ("removedTransferCapabilityReturnsCurrentFilter",focuses (Tuple.second cancelNoCaps)==[Desktop.key (Tuple.first cancelNoCaps) "overview:workspace:2"] && List.isEmpty (mutations (Tuple.second cancelNoCaps))),
+            ("filteredOutTransferOriginNeverReceivesFocus",focuses (Tuple.second cancelFiltered)==[Desktop.key (Tuple.first cancelFiltered) "overview:workspace:1"] && not (Desktop.overviewTransferAvailable (Tuple.first cancelFiltered) two)),
+            ("retiredTransferOriginNeverSubstitutes",focuses (Tuple.second cancelRetired)==[Desktop.key (Tuple.first cancelRetired) "overview:workspace:2"] && (Tuple.first cancelRetired).choice==Nothing && List.isEmpty (mutations (Tuple.second cancelRetired))),
+            ("unknownReservedTransferOriginIsNotFocusedOrReplayed",focuses (Tuple.second cancelReserved)==[Desktop.key (Tuple.first cancelReserved) "overview:workspace:2"] && (Tuple.first cancelReserved).windows.shell.effects.unresolved==[cancelReservation] && List.isEmpty (mutations (Tuple.second cancelReserved)) && not (Desktop.overviewTransferAvailable (Tuple.first cancelReserved) two)),
+            ("closedTransferCancelNeverRefocuses",List.isEmpty (Tuple.second cancelClosed)),
+            ("allWorkspaceCancelStillReturnsExactOrigin",focuses (Tuple.second cancelAll)==[Desktop.key (Tuple.first cancelAll) "overview:transfer:2"])]
         retirementChecks=[("retiredTransferReturnsCurrentRetainedWorkspaceFocus",retiredTransferModel.overview && retiredTransferModel.overviewTransfer==Nothing && retiredTransferModel.overviewWorkspace==Just "2" && focuses (Tuple.second retiredTransferResult)==[Desktop.key retiredTransferModel "overview:workspace:2"] && List.isEmpty (mutations (Tuple.second retiredTransferResult))),
             ("retiredTransferChooserHasVisibleBrowseAndDismissal",Surface.controls retiredTransferModel |> List.any (\control -> control.ariaLabel=="Close Task View and return to windows" && control.enabled)),
             ("retiredTransferDoesNotRepeatFocus",List.isEmpty (focuses (Tuple.second duplicateRetirement)) && List.isEmpty (mutations (Tuple.second duplicateRetirement))),
@@ -217,4 +246,4 @@ result =
             ("staleNavigationObservationNeverMutates",Tuple.first navigationStale==navigationPending && List.isEmpty (mutations (Tuple.second navigationStale))),
             ("retiredNavigationRootNeverSubstitutes",(Tuple.first navigationRetired).choice==Nothing && List.isEmpty (mutations (Tuple.second navigationRetired))),
             ("duplicateNavigationObservationNeverReplays",List.isEmpty (mutations (Tuple.second navigationRepeated)))]
-    in E.object [("checks",E.object (List.map (\(name,passed) -> (name,E.bool passed)) (checks++recoveryChecks++inventoryChecks++retirementChecks))),("frame",frame)]
+    in E.object [("checks",E.object (List.map (\(name,passed) -> (name,E.bool passed)) (checks++recoveryChecks++inventoryChecks++retirementChecks++cancelChecks))),("frame",frame)]

@@ -1,0 +1,21 @@
+
+  overviewTransferCancelTests
+    ok currentExactOriginReturnsFocusTest passed 1 test(s)
+    ok nestedEscapeReturnsOriginTest passed 1 test(s)
+    ok nextEscapeClosesOverviewTest passed 1 test(s)
+    ok previousEscapeCannotCloseReturnedOverviewTest passed 1 test(s)
+    ok duplicateCancelIsInertTest passed 1 test(s)
+    ok staleCancelCannotDismissOrRefocusTest passed 1 test(s)
+    ok unavailableOriginReturnsFilterTest passed 1 test(s)
+    ok reservedOriginReturnsFilterTest passed 1 test(s)
+    ok capabilityRemovedReturnsFilterTest passed 1 test(s)
+    ok unreadyOriginReturnsFilterTest passed 1 test(s)
+    ok filteredOutOriginReturnsCurrentFilterTest passed 1 test(s)
+    ok retiredOriginNeverSubstitutesTest passed 1 test(s)
+    ok retiredWorkspaceReturnsAllTest passed 1 test(s)
+    ok incoherentObservationDismissesSafelyToAllTest passed 1 test(s)
+    ok allFilterReturnsExactOriginTest passed 1 test(s)
+    ok closedOverviewNeverRefocusesTest passed 1 test(s)
+    ok changedScopeNeverRemintsOldOpenerTest passed 1 test(s)
+
+  17 passing (16ms)

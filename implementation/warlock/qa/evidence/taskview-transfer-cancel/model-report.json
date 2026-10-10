@@ -1,0 +1,75 @@
+{
+  "passed": true,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-3a0695b129a44531926e4dec8031ef33.scope",
+    "coreLimit": 1
+  },
+  "initializationOnly": false,
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/overview-transfer-cancel.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "tests-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/overview-transfer-cancel_test.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/overview-transfer-cancel_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=82711"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "witness-safety",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/overview-transfer-cancel.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--witnesses",
+        "originReturnWitness",
+        "filterReturnWitness",
+        "allReturnWitness",
+        "staleHeldWitness",
+        "fullDismissalWitness",
+        "--max-samples=1000",
+        "--max-steps=25",
+        "--seed=82712"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/overview-transfer-cancel.qnt": "61fe11eb3f695ed68226e9dab351146a15564848fbe82b32e8b689c60f2371ca",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/overview-transfer-cancel_test.qnt": "3a004520e23130a3fa57175d740b8c7e96a6c82d00cf443fa0467651954fb75b"
+  },
+  "scope": "Exact eligible current transfer opener focus on cancellation, valid workspace/All fallback, duplicate/stale/closed/coherence/availability/reservation/capability lifetime. Source revision abstracts current view stamp; no native dispatch, real pixels/input, AT or timing verdict.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "witnesses": {
+    "originReturnWitness": 159,
+    "filterReturnWitness": 83,
+    "allReturnWitness": 191,
+    "staleHeldWitness": 718,
+    "fullDismissalWitness": 458
+  }
+}

@@ -249,7 +249,7 @@ controls model =
                 in {id=identity,domId=Desktop.key model identity,label=family.label,ariaLabel=(if family.minimized then "Restore " else "Activate ")++family.label++" on workspace "++group.identity,detail=detail,enabled=ready,message=if ready then scoped (\stamp -> Desktop.OverviewChoose stamp family.root) else Nothing}
             transferControl family =
                 let identity="overview:transfer:"++UInt64.string family.root
-                    enabled=transferReady && family.available && not (familyBlocked model family.root) && (model.windows.shell.geometryCaps |> Maybe.map (\caps -> List.member "transfer-workspace" caps.operations) |> Maybe.withDefault False)
+                    enabled=Desktop.overviewTransferAvailable model family.root
                 in {id=identity,domId=Desktop.key model identity,label="Move "++family.label++"…",ariaLabel="Move "++family.label++" to another workspace",detail="",enabled=enabled,message=if enabled then scoped (\stamp -> Desktop.OpenOverviewTransfer stamp family.root) else Nothing}
             destinationRows root = model.windows.shell.geometry |> Maybe.map (\geometry ->
                 Transfer.destinations geometry |> List.filterMap (\destination -> Transfer.propose geometry root destination |> Maybe.map (\_ ->
