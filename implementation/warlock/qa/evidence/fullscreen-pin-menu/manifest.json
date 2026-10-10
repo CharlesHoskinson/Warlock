@@ -1,0 +1,230 @@
+{
+  "schema": 1,
+  "requirements": [
+    "ELM-REN-017"
+  ],
+  "scenarios": [
+    "ren-017"
+  ],
+  "oracle": "the documented fullscreen policy governs each surface",
+  "verification": "Fullscreen/pin/menu matrix independently records pixels, hit and focus.",
+  "sourceParent": "828cbe454ca7f0fcea0bd43b28c531cb152ec44b",
+  "sourceHashes": {
+    "implementation/warlock/src/Effects.elm": "873e8824d90828a9927cfd89723c7b7299e11791e3779173815ba720b11a8547",
+    "implementation/warlock/src/GeometryProjection.elm": "8dd1808685c8f7900b91388406c59a1941e31327d44e28db74367fb730e9b09f",
+    "implementation/warlock/src/Provider.elm": "2ef450a364d23d334e2ba7dfafdc56bbf51649dfb8f2e9f2e0ab1ca600157727",
+    "implementation/warlock/src/MenuBridge.elm": "ec8f531b9437e493f9b29fe1e16d678cd388f560a83ca873448630bbde459b25",
+    "implementation/warlock/src/Surface.elm": "9b1c6201b3f4922bcf7bedb3b3cba948bc10b4a5d1f7128ba3d1bad6732a4894",
+    "implementation/warlock/src/ReceiptRouter.elm": "d059bfef01de050c794c8709a3a38627fddd63815f115c617e78fefaea32ac1f",
+    "implementation/warlock/adapter/geometry_endpoint.py": "efadcb4a145ae7257b1e3baaf533fcd327fc515e5f3d5d31acd69023a899d4c9",
+    "implementation/warlock/adapter/recovery_journal.py": "9cfe06102f03fded5d330b90c317b4c6c32064885ed5a2c8478a87c2e1f25dae",
+    "implementation/warlock/native/authority.cpp": "5e090093efd4a6b8275b27b9033a8317eca5cb94f007bbb429dd09f7065b2ebd",
+    "implementation/warlock/native/geometry-effects.inc": "a8e84fffd6613ffe7d5b8c6b933b56d46e42b6a491e6ad0ff7fcfd4ccadbd112",
+    "implementation/warlock/native/geometry.inc": "fa945f6ba2521d9c54f1fdcd7bc9772b95a1b2e28d0772ef80282eda3ae38dbd",
+    "implementation/warlock/qa/current-native-pair.json": "37ce6199366342c5f7ff97544a91a2aee2a114323fdfd4bb4018dd34d57feac5",
+    "implementation/warlock/qa/current-search-build.json": "1643fb74299eb9c8b1c2a19ddb606e0f733b01de2277da94701cd79221265205",
+    "implementation/warlock/qa/native-fullscreen-pin.py": "1bf234a6d68a011a24aeab593537021de2305c0afd32c50faa2e950c20e73fa4",
+    "implementation/warlock/qa/exit-fullscreen.qnt": "9c2bf12973994318493759f388a53aa37df138597d5252c73309d3098ec2f98e",
+    "implementation/warlock/qa/exit-fullscreen_test.qnt": "5da42e4ff2fcd8ca72e91fecd1bbb9bd51642850848c45477814d98489baf6a5",
+    "implementation/warlock/qa/check-exit-fullscreen.py": "7bd6e6bb12c84afaccc5bd32b49e57fb771d76fbb6faaf6ea33ed49fa0e34ab4",
+    "implementation/warlock/qa/FullscreenExitReplay.elm": "b470cdd52558b6c371cb7af1124c610eb2c84d73b80d16ea92d35507da12e84c",
+    "implementation/warlock/qa/check-search.py": "9810a8d562405c8740f2ec46a02377014dec6db64524222dbc86856e8af514e4",
+    "implementation/warlock/README.md": "47f143f0516703fbf217151117ec723877bfd0ebad286c367b3ec31ae7f67d10",
+    "implementation/warlock/native/shared-host.c": "22c020999c2b05913bb9bab72578758bec2eb6d94769731ebc2bd60171a0e08c",
+    "implementation/warlock/native/host-journal.h": "65cb622a8c58862e855b3170fdf038b052e93502b12c511f4e5cb089fd810de9",
+    "implementation/warlock/assets/elm.js": "5ccfd45b75e00ccf6d80377cae26b7d0ee1c72ee916000342fa3f1c208bf9f4d",
+    "implementation/warlock/assets/bar.js": "a4a9edea8375e28ceae70c32b3a43f45b0c90148786701382a0ee34f0b980dfb",
+    "implementation/warlock/assets/popup.js": "e685ab98313e79412083daa2dff705c7d01cc53f91a6f2fd05e38216048a2206"
+  },
+  "frozenRequirements": {
+    "path": "docs/elm-roadmap/requirements.json",
+    "sha256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
+    "requirements": 242,
+    "scenarios": 417
+  },
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/scene-core-1791616203505769024/Hyprland",
+      "sha256": "5b95e2c22e12ce6ab980d24064ab88b0e0237f0f9b3ef00c6f28720208dc1bb2"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791619512376149980/elm-window-geometry-authority.so",
+      "sha256": "4ab01e113cfbe9f91c7dbbf091ac71d2f2cfc46e3cf0b75a5ee2d4ad5b87f25c"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-max-1791620399653736282/elm-host",
+    "sha256": "302cc8a8421a772c9fa06101bcadadc9652dc37a2bdec138ab0489a3d8c9c2f3",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-max-1791620399653736282/report.json",
+    "heldBuildSHA256": "ccef411a2d870858174b394400e1e934682439d28fd1db22e02aec6337b2b48e"
+  },
+  "nativeRunnerSHA256": "1bf234a6d68a011a24aeab593537021de2305c0afd32c50faa2e950c20e73fa4",
+  "unchangedModalRunnerSHA256": "128df4b9d6b05dbb06c0d7f709c7fd5e5f92e83315999472e12705b4a0761fee",
+  "artifacts": [
+    {
+      "path": "implementation/warlock/qa/evidence/fullscreen-pin-menu/compiled.json",
+      "sha256": "ccef411a2d870858174b394400e1e934682439d28fd1db22e02aec6337b2b48e",
+      "original": "implementation/warlock/qa/runs/pin-max-1791620399653736282/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/fullscreen-pin-menu/native-authority.json",
+      "sha256": "104cf7f1aee11b879345092f61d7b7a8761d6a15a5bec60ecc13b63ebda7a366",
+      "original": "implementation/warlock/qa/runs/native-authority-1791619512376149980/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/fullscreen-pin-menu/native-fullscreen.json",
+      "sha256": "7f9f9024600d90a848d710f158e0d6b5f14a95590396412e57e0cdb06d11b525",
+      "original": "implementation/warlock/qa/runs/native-fullscreen-pin-1791620447301339669/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/fullscreen-pin-menu/native-modal-regression.json",
+      "sha256": "ec376fe7866a00cd1492db48350a0ecdac8f78c2a92c505d8f98a63c87b8ba49",
+      "original": "implementation/warlock/qa/runs/native-max-modal-focus-1791620481721811491/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/fullscreen-pin-menu/native-bar-covered-fail.json",
+      "sha256": "77eedacb0a03fbe38e79ed5dafea6d7dd727e5db2c9197acac77777e5cf2d6de",
+      "original": "implementation/warlock/qa/runs/native-fullscreen-pin-1791619043538471037/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/fullscreen-pin-menu/native-protocol-fail.json",
+      "sha256": "d73c52499490984e4e185f3ef4f453ce242693291e45568fd98bfeec2ccc80af",
+      "original": "implementation/warlock/qa/runs/native-fullscreen-pin-1791619820793483361/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/fullscreen-pin-menu/model-before.json",
+      "sha256": "48300675edaf34268e91021b9892696c28e1e20bca73cd36dd923df47537015b",
+      "original": "implementation/warlock/qa/runs/exit-fullscreen-1791619294921066867/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/fullscreen-pin-menu/model-after.json",
+      "sha256": "97018ec0daf717672c1018af132b08c8abace9b60a6e2290413beac7411f9153",
+      "original": "implementation/warlock/qa/runs/pin-max-1791620399653736282/inputs/qa/runs/exit-fullscreen-1791620399766367377/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/fullscreen-pin-menu/compiled-menu.json",
+      "sha256": "bc0627f1a9aa0c92403648f5ba15ba4663b1191632ddc879a7e42ceb64abcbe5",
+      "original": "implementation/warlock/qa/runs/pin-max-1791620399653736282/fullscreen-exit.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/fullscreen-pin-menu/UnpinnedMax.png",
+      "sha256": "17de71828f683f59ecae50526acb3a52ab074a10e5b2bcc43f01e4cc9c48a068",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791620447301449472/UnpinnedMax.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/fullscreen-pin-menu/AlwaysOnTopUnchecked.png",
+      "sha256": "26de88b6d481e18519e5d0ac5fc76c3b0c3ec0b9e507562823c57626eb655f78",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791620447301449472/AlwaysOnTopUnchecked.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/fullscreen-pin-menu/PinnedMax.png",
+      "sha256": "fc1ff7546a8b7eb70b7f5a1c7c99d29e34e97a1b8aec1c9d6fa8b0dad2572f34",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791620447301449472/PinnedMax.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/fullscreen-pin-menu/AlwaysOnTopChecked.png",
+      "sha256": "3fe3758c03130c71b264d38f5de3ce3d2bc84c44303dee8da2742e25e85ec09a",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791620447301449472/AlwaysOnTopChecked.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/fullscreen-pin-menu/UnpinnedAgain.png",
+      "sha256": "87c5378a0b0ee76e0ff6c94b3e51443382024fdb9acee247da59ba8b3c92b1a7",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791620447301449472/UnpinnedAgain.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/fullscreen-pin-menu/PinnedAboveTrueFullscreen.png",
+      "sha256": "9c8fb91962819698fe63b7bcd8a9c52ea5afa6bbc8f67f9945a22ece8e9565ce",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791620447301449472/PinnedAboveTrueFullscreen.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/fullscreen-pin-menu/TrueFullscreenOutsidePinned.png",
+      "sha256": "a2be7370b4b21576b1c4a2aa9fbed0d36b21b0aa616b5727b0e3c225e3296876",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791620447301449472/TrueFullscreenOutsidePinned.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/fullscreen-pin-menu/PinnedAfterFullscreenExit.png",
+      "sha256": "8b619ba640abe9e88bf31f477c1be0078ca1311af30f643de241d9006d917b83",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791620447301449472/PinnedAfterFullscreenExit.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/fullscreen-pin-menu/named.stdout",
+      "sha256": "2db0f33788f3283460c913fc2e3a77a9f1034e3ecced93dbd9e6648b5d8fee7a",
+      "original": "implementation/warlock/qa/runs/pin-max-1791620399653736282/inputs/qa/runs/exit-fullscreen-1791620399766367377/named.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/fullscreen-pin-menu/witnesses.stdout",
+      "sha256": "a26e4c452f24dfd40db5dffc631f9d93198b38e2c99358485cdb65229ec9bc3f",
+      "original": "implementation/warlock/qa/runs/pin-max-1791620399653736282/inputs/qa/runs/exit-fullscreen-1791620399766367377/witnesses.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/fullscreen-pin-menu/safety.stdout",
+      "sha256": "17ed27038a87e5b76b866c885fdda9161752f7fca70d68046282f7d268166f7d",
+      "original": "implementation/warlock/qa/runs/pin-max-1791620399653736282/inputs/qa/runs/exit-fullscreen-1791620399766367377/safety.stdout"
+    }
+  ],
+  "compressedLogs": [
+    {
+      "path": "implementation/warlock/qa/evidence/fullscreen-pin-menu/native-fullscreen-warlock.log.gz",
+      "sha256": "fbcdce766e475828683784c4ddd6e23760171d5c8030d669e09fd26470ad81a2",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791620447301449472/warlock.log",
+      "originalSHA256": "e53e76abda8f0340edbab3b4463f1703698d3c5049f3b8f5af76d233b1103c92"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/fullscreen-pin-menu/native-modal-regression-warlock.log.gz",
+      "sha256": "1deb5f5cfbbbac56f66288618475bad0786457e01e51085be7ba3216f46e3cff",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791620481721918254/warlock.log",
+      "originalSHA256": "6e3b13b57efb6d39d8dc19dc0f424374a8802d25baacf599b3c21fa981c4030e"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/fullscreen-pin-menu/native-bar-covered-fail-warlock.log.gz",
+      "sha256": "bb2f0542b8d7dbdc5bace4de1fa045650601113decfadba43f4a384fa0046a14",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791619043538575776/warlock.log",
+      "originalSHA256": "708d5946b1a249f7d6888eb271eaaf8ebe3ef8d225af1842b5024d81fcd8ef9f"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/fullscreen-pin-menu/native-protocol-fail-warlock.log.gz",
+      "sha256": "3f20cf09efbd15d289625cc01a66c1a8c821eb7d27929c6e166b85c0f7e625c4",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791619820793600963/warlock.log",
+      "originalSHA256": "355209003686a4f73c18927521b6043334b867af79a078abef393dd1928299e9"
+    }
+  ],
+  "retainedCompilerFixtureFailures": [
+    {
+      "path": "implementation/warlock/qa/runs/pin-max-1791619464798296970/report.json",
+      "sha256": "7c491e40b69de8833c77ca3503eda55f25e69f7c0aebed05209e955df8e089b9"
+    },
+    {
+      "path": "implementation/warlock/qa/runs/pin-max-1791619556788679275/report.json",
+      "sha256": "cf5031aac9df69b8aad707226571347838ec381a01262bc8f51ded7b9c3884bd"
+    },
+    {
+      "path": "implementation/warlock/qa/runs/pin-max-1791619619049391060/report.json",
+      "sha256": "303cb8b39b06ccc0291a3e38166d7b30d1a07e9d805cc31ccd7e1992cc1cf373"
+    },
+    {
+      "path": "implementation/warlock/qa/runs/pin-max-1791619977763647557/report.json",
+      "sha256": "48ba61fe5f06822b170bbb36eaa916482d53c4851f461d2be9b2e95d6ded9dda"
+    }
+  ],
+  "nativeFullscreenPinMenuObserved": true,
+  "nativePinMaxObserved": true,
+  "normalOwnedExitObserved": true,
+  "nativeModalRegressionPassed": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "disposition": {
+    "observer": "root-fullscreen",
+    "status": "partial",
+    "independent": false
+  },
+  "missingObservations": [
+    "Independent original-scenario disposition; ELM-REN-017/ren-017 and release acceptance remain partial",
+    "Actual fullscreen modal/tiled/Xwayland families, nested/ambiguous input recipients and fullscreen/unpin/allowed-over policy cells outside this two-root Wayland fixture",
+    "Actual session lock/exclusive-layer/seat-grab/drag races, transformed or multiple outputs and native AT/IME",
+    "Wider original hardware/resource/journey evidence, reproducible package and reversible deployment/rollback"
+  ]
+}

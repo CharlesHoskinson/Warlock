@@ -8,7 +8,7 @@ from effect_endpoint import Endpoint as LegacyEffectEndpoint
 from endpoint import Refused, binding, canonical, exact
 
 MODES = {'ordinary', 'maximized', 'fullscreen'}
-OPERATIONS = {'maximize', 'restore-geometry', 'snap', 'transfer-workspace', 'pin', 'unpin'}
+OPERATIONS = {'maximize', 'restore-geometry', 'snap', 'transfer-workspace', 'pin', 'unpin', 'exit-fullscreen'}
 WINDOW_FIELDS = ['incarnation', 'owner', 'workspace', 'workspaceGeneration', 'monitor',
                  'outputOwnershipGeneration', 'workAreaRevision', 'workArea',
                  'logicalGeometry', 'visualGeometry', 'nativeMode', 'clientMode',
@@ -58,7 +58,7 @@ class GeometryEndpoint(LegacyEffectEndpoint):
         if type(caps['effectProtocol']) is not int or caps['effectProtocol'] != 2 or type(caps['placementCapacity']) is not int or caps['placementCapacity'] != 256:
             raise Refused('Geometry capability versions/bounds')
         operations = caps['operations']
-        if not isinstance(operations, list) or len(operations) > 6 or any(type(op) is not str or op not in OPERATIONS for op in operations) or len(set(operations)) != len(operations):
+        if not isinstance(operations, list) or len(operations) > 7 or any(type(op) is not str or op not in OPERATIONS for op in operations) or len(set(operations)) != len(operations):
             raise Refused('Geometry operation capabilities')
         if caps['effects'] != bool(operations):
             raise Refused('Geometry effects/operation contradiction')

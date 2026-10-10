@@ -143,6 +143,7 @@ operation action =
         Menu.Restore -> Just Effects.Restore
         Menu.Maximize -> Just Effects.Maximize
         Menu.RestoreGeometry -> Just Effects.RestoreGeometry
+        Menu.ExitFullscreen -> Just Effects.ExitFullscreen
         Menu.AlwaysOnTop desired -> Just (if desired then Effects.Pin else Effects.Unpin)
         _ -> Nothing
 

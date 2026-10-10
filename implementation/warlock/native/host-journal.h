@@ -137,7 +137,7 @@ static JsonNode *admission_record(JsonNode *request) {
     for(guint i=0;i<4;i++) if (!admission_positive(context,contexts[i])) return NULL;
     const char *operation=json_node_get_string(op);
     gint64 protocol=json_node_get_int(ep);
-    gboolean supported=protocol==1 ? (g_str_equal(operation,"minimize") || g_str_equal(operation,"restore") || g_str_equal(operation,"activate")) : (g_str_equal(operation,"maximize") || g_str_equal(operation,"restore-geometry") || g_str_equal(operation,"pin") || g_str_equal(operation,"unpin") || snap || transfer);
+    gboolean supported=protocol==1 ? (g_str_equal(operation,"minimize") || g_str_equal(operation,"restore") || g_str_equal(operation,"activate")) : (g_str_equal(operation,"maximize") || g_str_equal(operation,"restore-geometry") || g_str_equal(operation,"exit-fullscreen") || g_str_equal(operation,"pin") || g_str_equal(operation,"unpin") || snap || transfer);
     if (!supported ||
         !g_str_equal(json_object_get_string_member(b,"lifetime"),json_object_get_string_member(context,"lifetime")) ||
         !g_str_equal(json_object_get_string_member(b,"frontend"),json_object_get_string_member(context,"epoch"))) return NULL;

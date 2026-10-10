@@ -9,7 +9,7 @@ import ActionProjection as Scene
 import UInt64 exposing (Counter)
 
 -- Typed activation/minimize/restore intents. No workspace/scratchpad dispatch.
-type Operation = Minimize | Restore | Activate | Maximize | RestoreGeometry | SnapPlacement Snap.Proposal | TransferWorkspace Transfer.Proposal | Pin | Unpin
+type Operation = Minimize | Restore | Activate | Maximize | RestoreGeometry | ExitFullscreen | SnapPlacement Snap.Proposal | TransferWorkspace Transfer.Proposal | Pin | Unpin
 type Status = Pending | Committed | Refused | Cancelled | Unknown
 
 type alias Context = { lifetime : Counter, epoch : Counter, output : Counter, revision : Counter }
@@ -37,6 +37,7 @@ operationDecoder = D.string |> D.andThen (\name -> case name of
     "activate" -> D.succeed Activate
     "maximize" -> D.succeed Maximize
     "restore-geometry" -> D.succeed RestoreGeometry
+    "exit-fullscreen" -> D.succeed ExitFullscreen
     "pin" -> D.succeed Pin
     "unpin" -> D.succeed Unpin
     _ -> D.fail "Unsupported operation")
@@ -146,6 +147,7 @@ operationName operation = case operation of
     Activate -> "activate"
     Maximize -> "maximize"
     RestoreGeometry -> "restore-geometry"
+    ExitFullscreen -> "exit-fullscreen"
     Pin -> "pin"
     Unpin -> "unpin"
     SnapPlacement _ -> "snap"
@@ -186,6 +188,7 @@ protocol : Operation -> Int
 protocol operation = case operation of
     Maximize -> 2
     RestoreGeometry -> 2
+    ExitFullscreen -> 2
     Pin -> 2
     Unpin -> 2
     SnapPlacement _ -> 2
@@ -207,6 +210,7 @@ beginGeometry caps observed operation incarnation model =
             else if observed.blocked || (case operation of
                 Pin -> not (window.pin |> Maybe.map .eligible |> Maybe.withDefault False)
                 Unpin -> not (window.pin |> Maybe.map .eligible |> Maybe.withDefault False)
+                ExitFullscreen -> not (GeometryProjection.canExitFullscreen window)
                 TransferWorkspace p -> not (Transfer.matches observed incarnation p)
                 _ -> not window.eligible || window.minimized || window.fixedSize) then refuse "Geometry target ineligible"
             else if ((operation==Pin || operation==Unpin) && (window.pin |> Maybe.map (\pin -> pin.pinned==(operation==Pin)) |> Maybe.withDefault True)) then refuse "Pin state already requested or unavailable"

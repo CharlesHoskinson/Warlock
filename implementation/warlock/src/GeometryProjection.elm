@@ -1,4 +1,4 @@
-module GeometryProjection exposing (Capabilities, Context, Mode(..), Snapshot, Window, capabilitiesDecoder, decode, decodeLegacy, window, modeName)
+module GeometryProjection exposing (Capabilities, Context, Mode(..), Snapshot, Window, capabilitiesDecoder, decode, decodeLegacy, window, modeName, canExitFullscreen)
 
 import Binding
 import Char
@@ -42,7 +42,7 @@ capabilitiesDecoder = strict ["observe","effects","effectProtocol","operations",
     (D.map6 (\_ effects _ operations _ _ -> {effects=effects,operations=operations})
         (exact "observe" D.bool True) (D.field "effects" D.bool) (exact "effectProtocol" D.int 2)
         (D.field "operations" (D.list D.string)) (exact "placementCapacity" D.int 256) (exact "canonicalScene" D.bool False))
-    |> D.andThen (\caps -> if List.length caps.operations<=6 && List.all (\op -> List.member op ["maximize","restore-geometry","snap","transfer-workspace","pin","unpin"]) caps.operations && List.length caps.operations==List.length (List.foldl (\x xs -> if List.member x xs then xs else x::xs) [] caps.operations) && caps.effects==not (List.isEmpty caps.operations) then D.succeed caps else D.fail "Geometry capabilities")
+    |> D.andThen (\caps -> if List.length caps.operations<=7 && List.all (\op -> List.member op ["maximize","restore-geometry","snap","transfer-workspace","pin","unpin","exit-fullscreen"]) caps.operations && List.length caps.operations==List.length (List.foldl (\x xs -> if List.member x xs then xs else x::xs) [] caps.operations) && caps.effects==not (List.isEmpty caps.operations) then D.succeed caps else D.fail "Geometry capabilities")
 windowDecoder protocol =
     let identities = D.map8 (\inc owner ws wg mon og wr wa -> {inc=inc,owner=owner,ws=ws,wg=wg,mon=mon,og=og,wr=wr,wa=wa})
             (D.field "incarnation" positive) (D.field "owner" (D.nullable positive)) (D.field "workspace" (D.nullable workspace))
@@ -59,6 +59,11 @@ windowDecoder protocol =
     in strict (["incarnation","owner","workspace","workspaceGeneration","monitor","outputOwnershipGeneration","workAreaRevision","workArea","logicalGeometry","visualGeometry","nativeMode","clientMode","minimized","floating","grouped","fixedSize","constrainedSize","geometryEligible","ordinaryPlacementKnown","capabilities"] ++ (if protocol>=2 then ["sizePolicy"] else []) ++ (if protocol==3 then ["pin"] else []))
         (D.map3 (\i s p -> {incarnation=i.inc,owner=i.owner,workspace=i.ws,workspaceGeneration=i.wg,monitor=i.mon,outputOwnershipGeneration=i.og,workAreaRevision=i.wr,workArea=i.wa,logicalGeometry=s.logical,visualGeometry=s.visual,nativeMode=s.native,clientMode=s.client,minimized=s.minimized,floating=s.floating,grouped=s.grouped,fixedSize=s.fixed,constrainedSize=p.constrained,eligible=p.eligible,placementKnown=p.known,maximize=Tuple.first p.caps,restoreGeometry=Tuple.second p.caps,sizePolicy=p.size,pin=p.pin}) identities state policy)
 window incarnation snapshot = List.filter (\row -> row.incarnation==incarnation) snapshot.windows |> List.head
+-- This is a projection of current negotiated native facts, never effect authority.
+canExitFullscreen row = row.nativeMode==Fullscreen && row.clientMode==Fullscreen
+    && row.owner==Nothing && not row.grouped && not row.minimized
+    && row.workspace/=Nothing && row.monitor/=Nothing
+    && (row.pin |> Maybe.map (\pin -> not pin.pinned) |> Maybe.withDefault False)
 validRows caps blocked rows =
     let ids=List.map .incarnation rows
         unique=List.length ids==List.length (List.foldl (\x xs -> if List.member x xs then xs else x::xs) [] ids)

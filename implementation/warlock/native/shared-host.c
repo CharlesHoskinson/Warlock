@@ -556,7 +556,10 @@ static void shared_add(GdkDisplay *display,GdkMonitor *monitor,gpointer unused) 
     row->engine=shared_child(row->manager);
     row->bar=gtk_window_new(GTK_WINDOW_TOPLEVEL);gtk_window_set_title(GTK_WINDOW(row->bar),"Elm bar");
     gtk_layer_init_for_window(GTK_WINDOW(row->bar));gtk_layer_set_monitor(GTK_WINDOW(row->bar),monitor);gtk_layer_set_namespace(GTK_WINDOW(row->bar),"elm-shell-recovery-v17");
-    gtk_layer_set_layer(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_LAYER_TOP);gtk_layer_set_anchor(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_EDGE_TOP,TRUE);gtk_layer_set_anchor(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_EDGE_LEFT,TRUE);gtk_layer_set_anchor(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_EDGE_RIGHT,TRUE);gtk_layer_set_exclusive_zone(GTK_WINDOW(row->bar),3*shared_text_pixels);gtk_layer_set_keyboard_mode(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_KEYBOARD_MODE_NONE);
+    /* The owned shell remains reachable over true fullscreen. Its reserved
+     * band applies to ordinary/MAX placement; fullscreen keeps output geometry.
+     * Keyboard input still requires the existing explicit popup lease. */
+    gtk_layer_set_layer(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_LAYER_OVERLAY);gtk_layer_set_anchor(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_EDGE_TOP,TRUE);gtk_layer_set_anchor(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_EDGE_LEFT,TRUE);gtk_layer_set_anchor(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_EDGE_RIGHT,TRUE);gtk_layer_set_exclusive_zone(GTK_WINDOW(row->bar),3*shared_text_pixels);gtk_layer_set_keyboard_mode(GTK_WINDOW(row->bar),GTK_LAYER_SHELL_KEYBOARD_MODE_NONE);
     gtk_widget_set_size_request(row->bar,-1,3*shared_text_pixels);gtk_window_resize(GTK_WINDOW(row->bar),1,1);gtk_widget_set_size_request(GTK_WIDGET(row->engine),-1,3*shared_text_pixels);
     gtk_container_add(GTK_CONTAINER(row->bar),GTK_WIDGET(row->engine));
     g_signal_connect(row->bar,"size-allocate",G_CALLBACK(shared_bar_allocated),row);

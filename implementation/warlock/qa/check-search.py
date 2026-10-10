@@ -9,7 +9,8 @@ LAYER=sys.argv[1:]==['--layer-appearance']
 SHUTDOWN=sys.argv[1:]==['--preview-shutdown']
 BARRETURN=sys.argv[1:]==['--bar-keyboard-return']
 SHORTCUTS=sys.argv[1:]==['--shortcut-choices']
-PINMAX=sys.argv[1:]==['--pin-max']
+FULLSCREEN=sys.argv[1:]==['--fullscreen-pin']
+PINMAX=FULLSCREEN or sys.argv[1:]==['--pin-max']
 QUIESCENT=sys.argv[1:]==['--preview-quiescence']
 PREVIEW=DESCRIPTION or sys.argv[1:]==['--preview-states']
 LIVE=sys.argv[1:]==['--live-motion']
@@ -81,6 +82,11 @@ try:
   modelPacket=json.loads(run('shutdown-preview-model',['/usr/bin/python3','-B','qa/check-shutdown-preview.py']))
   assert modelPacket['passed'];report['shutdownPreviewModel']=modelPacket
  if PINMAX:
+  if FULLSCREEN:
+   modelPacket=json.loads(run('fullscreen-exit-model',['/usr/bin/python3','-B','qa/check-exit-fullscreen.py']));assert modelPacket['passed'];report['fullscreenExitModel']=modelPacket
+   run('compile-fullscreen-exit',[str(HELD/pinned['compiler']),'make','qa/FullscreenExitReplay.elm','--optimize','--output=assets/fullscreen-exit.js'])
+   replay=(INPUT/'qa/feedback-replay.js').read_text().replace('Elm.FeedbackReplay','Elm.FullscreenExitReplay');(INPUT/'qa/fullscreen-exit-replay.js').write_text(replay)
+   run('typed-fullscreen-exit',['node','qa/fullscreen-exit-replay.js','assets/fullscreen-exit.js',str(OUT/'fullscreen-exit.json')]);report['fullscreenExit']=json.loads((OUT/'fullscreen-exit.json').read_text());assert all(report['fullscreenExit']['checks'].values())
   modelPacket=json.loads(run('menu-read-order-model',['/usr/bin/python3','-B','qa/check-menu-read-order.py']))
   assert modelPacket['passed'];report['menuReadOrderModel']=modelPacket
   run('compile-pin-max',[str(HELD/pinned['compiler']),'make','qa/PinMaxReplay.elm','--optimize','--output=assets/pin-max.js'])

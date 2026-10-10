@@ -45,7 +45,7 @@ def validate(record):
  exact(intent['context'],['lifetime','epoch','output','revision'])
  for value in intent['context'].values():canonical(value)
  if intent['context']['lifetime']!=record['binding']['lifetime'] or intent['context']['epoch']!=record['binding']['frontend']:raise Refused('Recovery context')
- operations=['minimize','restore','activate'] if protocol==1 else ['maximize','restore-geometry','snap','transfer-workspace','pin','unpin']
+ operations=['minimize','restore','activate'] if protocol==1 else ['maximize','restore-geometry','snap','transfer-workspace','pin','unpin','exit-fullscreen']
  if intent['operation'] not in operations or record['status'] not in ['Pending','Committed','Refused','Unknown']:raise Refused('Recovery outcome')
  return record
 

@@ -1,0 +1,503 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      blocked: false,
+      current: true,
+      eligible: true,
+      focus: 1,
+      mode: 2,
+      mutations: 0,
+      negotiated: true,
+      pin: true,
+      status: 0
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      blocked: false,
+      current: true,
+      eligible: true,
+      focus: 2,
+      mode: 2,
+      mutations: 0,
+      negotiated: true,
+      pin: true,
+      status: 0
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      blocked: false,
+      current: true,
+      eligible: true,
+      focus: 1,
+      mode: 2,
+      mutations: 0,
+      negotiated: true,
+      pin: true,
+      status: 0
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      blocked: true,
+      current: true,
+      eligible: true,
+      focus: 1,
+      mode: 2,
+      mutations: 0,
+      negotiated: true,
+      pin: true,
+      status: 0
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      blocked: true,
+      current: true,
+      eligible: true,
+      focus: 2,
+      mode: 2,
+      mutations: 0,
+      negotiated: true,
+      pin: true,
+      status: 0
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      blocked: true,
+      current: true,
+      eligible: true,
+      focus: 2,
+      mode: 2,
+      mutations: 0,
+      negotiated: true,
+      pin: true,
+      status: 0
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      blocked: true,
+      current: true,
+      eligible: true,
+      focus: 2,
+      mode: 0,
+      mutations: 0,
+      negotiated: true,
+      pin: true,
+      status: 0
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      blocked: true,
+      current: true,
+      eligible: false,
+      focus: 2,
+      mode: 0,
+      mutations: 0,
+      negotiated: true,
+      pin: true,
+      status: 0
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      blocked: true,
+      current: true,
+      eligible: false,
+      focus: 2,
+      mode: 1,
+      mutations: 0,
+      negotiated: true,
+      pin: true,
+      status: 0
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      blocked: true,
+      current: false,
+      eligible: false,
+      focus: 2,
+      mode: 1,
+      mutations: 0,
+      negotiated: true,
+      pin: true,
+      status: 0
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      blocked: true,
+      current: false,
+      eligible: false,
+      focus: 2,
+      mode: 1,
+      mutations: 0,
+      negotiated: true,
+      pin: true,
+      status: 0
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      blocked: true,
+      current: false,
+      eligible: false,
+      focus: 2,
+      mode: 1,
+      mutations: 0,
+      negotiated: true,
+      pin: true,
+      status: 0
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      blocked: true,
+      current: false,
+      eligible: false,
+      focus: 2,
+      mode: 1,
+      mutations: 0,
+      negotiated: true,
+      pin: true,
+      status: 0
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      blocked: true,
+      current: false,
+      eligible: false,
+      focus: 2,
+      mode: 1,
+      mutations: 0,
+      negotiated: true,
+      pin: true,
+      status: 0
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      blocked: true,
+      current: false,
+      eligible: false,
+      focus: 2,
+      mode: 1,
+      mutations: 0,
+      negotiated: true,
+      pin: true,
+      status: 0
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      blocked: true,
+      current: false,
+      eligible: false,
+      focus: 2,
+      mode: 1,
+      mutations: 0,
+      negotiated: true,
+      pin: true,
+      status: 0
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      blocked: true,
+      current: false,
+      eligible: false,
+      focus: 2,
+      mode: 1,
+      mutations: 0,
+      negotiated: false,
+      pin: true,
+      status: 0
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      blocked: true,
+      current: false,
+      eligible: false,
+      focus: 2,
+      mode: 1,
+      mutations: 0,
+      negotiated: false,
+      pin: true,
+      status: 0
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      blocked: true,
+      current: false,
+      eligible: false,
+      focus: 2,
+      mode: 1,
+      mutations: 0,
+      negotiated: false,
+      pin: true,
+      status: 0
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      blocked: true,
+      current: false,
+      eligible: false,
+      focus: 1,
+      mode: 1,
+      mutations: 0,
+      negotiated: false,
+      pin: true,
+      status: 0
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      blocked: true,
+      current: false,
+      eligible: false,
+      focus: 1,
+      mode: 1,
+      mutations: 0,
+      negotiated: false,
+      pin: true,
+      status: 0
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      blocked: true,
+      current: false,
+      eligible: false,
+      focus: 1,
+      mode: 1,
+      mutations: 0,
+      negotiated: false,
+      pin: true,
+      status: 0
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      blocked: true,
+      current: false,
+      eligible: false,
+      focus: 1,
+      mode: 1,
+      mutations: 0,
+      negotiated: false,
+      pin: true,
+      status: 0
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      blocked: true,
+      current: false,
+      eligible: false,
+      focus: 1,
+      mode: 1,
+      mutations: 0,
+      negotiated: false,
+      pin: true,
+      status: 0
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      blocked: true,
+      current: false,
+      eligible: false,
+      focus: 1,
+      mode: 0,
+      mutations: 0,
+      negotiated: false,
+      pin: true,
+      status: 0
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      blocked: true,
+      current: false,
+      eligible: false,
+      focus: 1,
+      mode: 0,
+      mutations: 0,
+      negotiated: false,
+      pin: true,
+      status: 0
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      blocked: true,
+      current: false,
+      eligible: false,
+      focus: 1,
+      mode: 0,
+      mutations: 0,
+      negotiated: false,
+      pin: true,
+      status: 0
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      blocked: true,
+      current: false,
+      eligible: false,
+      focus: 2,
+      mode: 0,
+      mutations: 0,
+      negotiated: false,
+      pin: true,
+      status: 0
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      blocked: true,
+      current: false,
+      eligible: false,
+      focus: 2,
+      mode: 0,
+      mutations: 0,
+      negotiated: false,
+      pin: true,
+      status: 0
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      blocked: true,
+      current: false,
+      eligible: false,
+      focus: 2,
+      mode: 0,
+      mutations: 0,
+      negotiated: false,
+      pin: true,
+      status: 0
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      blocked: true,
+      current: false,
+      eligible: false,
+      focus: 2,
+      mode: 0,
+      mutations: 0,
+      negotiated: false,
+      pin: true,
+      status: 0
+    }
+}
+
+[ok] No violation found (569ms at 1757 traces/second).
+Trace length statistics: max=31, min=31, average=31.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x13757 --backend=typescript to reproduce.

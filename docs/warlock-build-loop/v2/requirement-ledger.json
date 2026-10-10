@@ -3305,14 +3305,54 @@
       "owner": "Native authority lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "ren-017",
           "oracle": "the documented fullscreen policy governs each surface",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/fullscreen-pin-menu/manifest.json",
+              "sha256": "b92791b849166011a0adee56ac4948ef8839421d0e54eb59afff0d4643a279d3",
+              "scope": "Actual true-fullscreen/pinned pixels, GTK press/release and focus; reachable owned overlay bar; context reads without window effects; one negotiated typed Exit fullscreen Committed outcome restores ordinary target geometry and retains peer pin. Original MAX/pin and unchanged direct-owner modal regression pass normal exits and strict cleanup.",
+              "sourceParent": "828cbe454ca7f0fcea0bd43b28c531cb152ec44b",
+              "sourceHashes": {
+                "implementation/warlock/src/Effects.elm": "873e8824d90828a9927cfd89723c7b7299e11791e3779173815ba720b11a8547",
+                "implementation/warlock/src/GeometryProjection.elm": "8dd1808685c8f7900b91388406c59a1941e31327d44e28db74367fb730e9b09f",
+                "implementation/warlock/src/Provider.elm": "2ef450a364d23d334e2ba7dfafdc56bbf51649dfb8f2e9f2e0ab1ca600157727",
+                "implementation/warlock/src/MenuBridge.elm": "ec8f531b9437e493f9b29fe1e16d678cd388f560a83ca873448630bbde459b25",
+                "implementation/warlock/src/Surface.elm": "9b1c6201b3f4922bcf7bedb3b3cba948bc10b4a5d1f7128ba3d1bad6732a4894",
+                "implementation/warlock/src/ReceiptRouter.elm": "d059bfef01de050c794c8709a3a38627fddd63815f115c617e78fefaea32ac1f",
+                "implementation/warlock/adapter/geometry_endpoint.py": "efadcb4a145ae7257b1e3baaf533fcd327fc515e5f3d5d31acd69023a899d4c9",
+                "implementation/warlock/adapter/recovery_journal.py": "9cfe06102f03fded5d330b90c317b4c6c32064885ed5a2c8478a87c2e1f25dae",
+                "implementation/warlock/native/authority.cpp": "5e090093efd4a6b8275b27b9033a8317eca5cb94f007bbb429dd09f7065b2ebd",
+                "implementation/warlock/native/geometry-effects.inc": "a8e84fffd6613ffe7d5b8c6b933b56d46e42b6a491e6ad0ff7fcfd4ccadbd112",
+                "implementation/warlock/native/geometry.inc": "fa945f6ba2521d9c54f1fdcd7bc9772b95a1b2e28d0772ef80282eda3ae38dbd",
+                "implementation/warlock/qa/current-native-pair.json": "37ce6199366342c5f7ff97544a91a2aee2a114323fdfd4bb4018dd34d57feac5",
+                "implementation/warlock/qa/current-search-build.json": "1643fb74299eb9c8b1c2a19ddb606e0f733b01de2277da94701cd79221265205",
+                "implementation/warlock/qa/native-fullscreen-pin.py": "1bf234a6d68a011a24aeab593537021de2305c0afd32c50faa2e950c20e73fa4",
+                "implementation/warlock/qa/exit-fullscreen.qnt": "9c2bf12973994318493759f388a53aa37df138597d5252c73309d3098ec2f98e",
+                "implementation/warlock/qa/exit-fullscreen_test.qnt": "5da42e4ff2fcd8ca72e91fecd1bbb9bd51642850848c45477814d98489baf6a5",
+                "implementation/warlock/qa/check-exit-fullscreen.py": "7bd6e6bb12c84afaccc5bd32b49e57fb771d76fbb6faaf6ea33ed49fa0e34ab4",
+                "implementation/warlock/qa/FullscreenExitReplay.elm": "b470cdd52558b6c371cb7af1124c610eb2c84d73b80d16ea92d35507da12e84c",
+                "implementation/warlock/qa/check-search.py": "9810a8d562405c8740f2ec46a02377014dec6db64524222dbc86856e8af514e4",
+                "implementation/warlock/README.md": "47f143f0516703fbf217151117ec723877bfd0ebad286c367b3ec31ae7f67d10",
+                "implementation/warlock/native/shared-host.c": "22c020999c2b05913bb9bab72578758bec2eb6d94769731ebc2bd60171a0e08c",
+                "implementation/warlock/native/host-journal.h": "65cb622a8c58862e855b3170fdf038b052e93502b12c511f4e5cb089fd810de9",
+                "implementation/warlock/assets/elm.js": "5ccfd45b75e00ccf6d80377cae26b7d0ee1c72ee916000342fa3f1c208bf9f4d",
+                "implementation/warlock/assets/bar.js": "a4a9edea8375e28ceae70c32b3a43f45b0c90148786701382a0ee34f0b980dfb",
+                "implementation/warlock/assets/popup.js": "e685ab98313e79412083daa2dff705c7d01cc53f91a6f2fd05e38216048a2206"
+              },
+              "reviewer": {
+                "observer": "root-fullscreen",
+                "status": "partial",
+                "independent": false
+              },
+              "observedUTC": "2026-10-10T08:23:02.706371+00:00"
+            }
+          ],
+          "missingObservation": "Independent original-scenario disposition; ELM-REN-017/ren-017 and release acceptance remain partial; Actual fullscreen modal/tiled/Xwayland families, nested/ambiguous input recipients and fullscreen/unpin/allowed-over policy cells outside this two-root Wayland fixture; Actual session lock/exclusive-layer/seat-grab/drag races, transformed or multiple outputs and native AT/IME; Wider original hardware/resource/journey evidence, reproducible package and reversible deployment/rollback"
         }
       ]
     },
@@ -11235,5 +11275,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-10T07:48:25.922363+00:00"
+  "updatedUTC": "2026-10-10T08:23:02.706371+00:00"
 }

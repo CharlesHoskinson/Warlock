@@ -44,6 +44,19 @@ bool geometryTargetEligible(const PHLWINDOW& window,int protocol) {
     return true;
 }
 // Exact peer state/readback includes identity, placement and input protection.
+bool fullscreenExitTargetEligible(const PHLWINDOW& window) {
+    if(!window || !window->layoutTarget() || !Desktop::View::validMapped(window) || window->parent() || window->m_group || window->m_isX11 ||
+       !window->m_xdgSurface || !window->m_xdgSurface->m_toplevel || window->m_pinned || window->isHidden() ||
+       Desktop::WindowPolicy::isMinimized(window) || window->onSpecialWorkspace() || !window->m_workspace || !window->m_workspace->m_space ||
+       !window->m_workspace->isVisible() || !window->m_monitor.lock() || window->layoutTarget()->workspace()!=window->m_workspace)
+        return false;
+    const auto modes=Fullscreen::controller()->getFullscreenModes(window);
+    if(modes.internal!=Fullscreen::FSMODE_FULLSCREEN || modes.client!=Fullscreen::FSMODE_FULLSCREEN ||
+       g_pSessionLockManager->isSessionLocked() || !g_pInputManager->m_exclusiveLSes.empty() || g_pSeatManager->m_seatGrab || g_layoutManager->dragController()->target())
+        return false;
+    const auto family=nativeFamily(window);
+    return family && family->size()==1;
+}
 std::string geometryPeers(const PHLWINDOW& excluded) {
     std::string result;
     for(const auto& window:Desktop::windowState()->windows()) if(window!=excluded && window->m_isMapped) {
@@ -81,13 +94,35 @@ std::string performGeometryEffect(Session& session,JsonObject* object) {
     session.effectRequest=*request;session.generation=*generation;session.lastPayload=fingerprint;
     session.lastReply=reply("Unknown","effect-unproven");
     const auto reject=[&](const char* reason){session.lastReply=reply("Refused",reason);return session.lastReply;};
-    if(operation!="maximize" && operation!="restore-geometry" && operation!="snap" && operation!="transfer-workspace" && operation!="pin" && operation!="unpin") return reject("unsupported-operation");
+    if(operation!="maximize" && operation!="restore-geometry" && operation!="exit-fullscreen" && operation!="snap" && operation!="transfer-workspace" && operation!="pin" && operation!="unpin") return reject("unsupported-operation");
     refreshGeometryFacts();
     if(*output!=outputGeneration || *expected!=geometryRevision) return reject("dependency-mismatch");
     const auto member=std::ranges::find_if(members,[&](const Member& entry){return entry.id==*targetId;});
     if(member==members.end() || !member->window.lock()) return reject("stale-incarnation");
     const auto window=member->window.lock();const Elm::Geometry::Target barrier{lifetime,*targetId};
     if(effectBarriers.blocked(barrier)) return reject("native-operation-unresolved");
+    if(operation=="exit-fullscreen") {
+        if(session.geometryProtocol!=3 || !fullscreenExitTargetEligible(window))return reject("fullscreen-exit-ineligible");
+        const auto scope=geometryScope(window);if(!scope)return reject("fullscreen-exit-scope");
+        const auto layoutAware=Fullscreen::controller()->layoutManagedFS(window);
+        const auto oldFocus=Desktop::focusState()->window();const auto oldKeyboard=g_pSeatManager->m_state.keyboardFocus.lock();
+        const auto peers=geometryPeers(window);
+        if(!effectBarriers.begin(barrier))return reject("native-operation-bound");
+        try {
+            // Exact desired state, not a fullscreen toggle or MAX restoration.
+            Fullscreen::controller()->setFullscreenMode(window,Fullscreen::FSMODE_NONE,Fullscreen::FSMODE_NONE,layoutAware);
+            refreshFacts();refreshGeometryFacts(3);notifyEffectChange();
+            const auto live=std::ranges::find_if(members,[&](const Member& entry){return entry.id==*targetId && entry.window.lock()==window;});
+            const auto current=geometryScope(window);const auto modes=Fullscreen::controller()->getFullscreenModes(window);
+            if(live==members.end() || !current || !(current->scope==scope->scope) || current->workspace!=scope->workspace ||
+               current->output!=scope->output || current->outputDependency!=scope->outputDependency || !window->m_isMapped || window->isHidden() ||
+               Desktop::WindowPolicy::isMinimized(window) || window->m_pinned || modes.internal!=Fullscreen::FSMODE_NONE || modes.client!=Fullscreen::FSMODE_NONE ||
+               g_pSessionLockManager->isSessionLocked() || !g_pInputManager->m_exclusiveLSes.empty() || g_pSeatManager->m_seatGrab || g_layoutManager->dragController()->target() ||
+               Desktop::focusState()->window()!=oldFocus || g_pSeatManager->m_state.keyboardFocus.lock()!=oldKeyboard || geometryPeers(window)!=peers)
+                return session.lastReply;
+            effectBarriers.definitive(barrier);session.lastReply=reply("Committed","applied");return session.lastReply;
+        }catch(...){return session.lastReply;}
+    }
     if(transfer)return performTransferEffect(session,*transfer,*targetId,window,barrier,reply,reject);
     if(operation=="pin" || operation=="unpin") {
         if(session.geometryProtocol!=3 || !pinTargetEligible(window))return reject("pin-ineligible");

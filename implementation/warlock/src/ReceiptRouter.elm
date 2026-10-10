@@ -16,7 +16,7 @@ import UnsentOperation
 import UInt64 exposing (Counter)
 
 type alias Context = { lifetime : Counter, epoch : Counter, output : Counter, revision : Counter }
-type Operation = Minimize | Restore | Maximize | RestoreGeometry | Pin | Unpin
+type Operation = Minimize | Restore | Maximize | RestoreGeometry | ExitFullscreen | Pin | Unpin
 type alias Intent = { request : Counter, generation : Counter, incarnation : Counter, operation : Operation, context : Context }
 type alias Key = { native : NativeBinding.Binding, intent : Intent, protocol : Int }
 type alias Entry = { local : Menu.IntentId, binding : Menu.Binding, key : Key }
@@ -57,6 +57,7 @@ operation = D.string |> D.andThen (\value -> case value of
     "restore" -> D.succeed Restore
     "maximize" -> D.succeed Maximize
     "restore-geometry" -> D.succeed RestoreGeometry
+    "exit-fullscreen" -> D.succeed ExitFullscreen
     "pin" -> D.succeed Pin
     "unpin" -> D.succeed Unpin
     _ -> D.fail "Unsupported native menu operation")
@@ -72,7 +73,7 @@ intent = strict ["request","generation","incarnation","operation","context"] (D.
 
 key : D.Decoder Key
 key = D.map3 Key (D.field "binding" NativeBinding.decoder) (D.field "intent" intent) (D.field "effectProtocol" D.int)
-    |> D.andThen (\value -> if value.protocol==(if List.member value.intent.operation [Maximize,RestoreGeometry,Pin,Unpin] then 2 else 1) then D.succeed value else D.fail "Operation protocol mismatch")
+    |> D.andThen (\value -> if value.protocol==(if List.member value.intent.operation [Maximize,RestoreGeometry,ExitFullscreen,Pin,Unpin] then 2 else 1) then D.succeed value else D.fail "Operation protocol mismatch")
 
 command : D.Decoder Key
 command = strict ["protocolVersion","kind","effectProtocol","binding","intent"]
@@ -88,6 +89,7 @@ register (Menu.Dispatch local binding action) provider value ((Model entries) as
                     Menu.Restore -> Just Restore
                     Menu.Maximize -> Just Maximize
                     Menu.RestoreGeometry -> Just RestoreGeometry
+                    Menu.ExitFullscreen -> Just ExitFullscreen
                     Menu.AlwaysOnTop desired -> Just (if desired then Pin else Unpin)
                     _ -> Nothing
                 eligible = List.any (\item -> item.enabled && item.action==action) (Provider.getItems provider)
@@ -169,6 +171,7 @@ reservationKey bound protocolId original =
             Effects.Restore -> Just Restore
             Effects.Maximize -> Just Maximize
             Effects.RestoreGeometry -> Just RestoreGeometry
+            Effects.ExitFullscreen -> Just ExitFullscreen
             Effects.Pin -> Just Pin
             Effects.Unpin -> Just Unpin
             _ -> Nothing

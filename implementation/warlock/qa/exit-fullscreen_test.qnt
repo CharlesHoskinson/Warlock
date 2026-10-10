@@ -1,0 +1,23 @@
+module exit_fullscreen_test {
+  import exit_fullscreen.* from "./exit-fullscreen"
+  run exitCommitsOnceTest = init.then(invoke).then(nativeFinish).then(invoke)
+    .then(all { assert(committedExit and safety), s' = s })
+  run maxIsNotTrueFullscreenTest = init.then(maxMode).then(invoke)
+    .then(all { assert(s.status == 0 and s.mode == 1 and s.mutations == 0), s' = s })
+  run ordinaryCannotExitFullscreenTest = init.then(ordinaryMode).then(invoke)
+    .then(all { assert(s.status == 0 and s.mutations == 0), s' = s })
+  run noNegotiationNoEffectTest = init.then(unsupported).then(invoke)
+    .then(all { assert(s.status == 0 and s.mutations == 0), s' = s })
+  run blockedTargetNoEffectTest = init.then(block).then(invoke)
+    .then(all { assert(s.status == 0 and s.mode == 2), s' = s })
+  run staleCapturedMenuNoEffectTest = init.then(stale).then(invoke)
+    .then(all { assert(s.status == 0 and s.mutations == 0), s' = s })
+  run changedNativeDependencyRefusesTest = init.then(invoke).then(stale).then(nativeFinish)
+    .then(all { assert(s.status == 4 and s.mode == 2 and s.mutations == 0), s' = s })
+  run unknownNeverReplaysTest = init.then(invoke).then(uncertainAfterMutation).then(invoke)
+    .then(all { assert(unknownRetained and s.mutations == 1 and safety), s' = s })
+  run unknownNoMutationStillSealedTest = init.then(invoke).then(unknownBeforeMutation).then(invoke)
+    .then(all { assert(unknownRetained and s.mutations == 0), s' = s })
+  run pinnedFocusAndMenuDoNotExitTest = init.then(pinnedFocus).then(menuRead).then(ownerFocus)
+    .then(all { assert(s.mode == 2 and s.pin and s.mutations == 0), s' = s })
+}

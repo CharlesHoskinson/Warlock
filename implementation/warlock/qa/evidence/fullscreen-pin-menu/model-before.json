@@ -1,0 +1,76 @@
+{
+  "passed": true,
+  "scope": "Sampled explicit fullscreen-exit authority; physical matrix remains separate.",
+  "nativeAcceptance": false,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-5d6b0cbd86db4ec4bf872f04ecb55901.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "qa/exit-fullscreen.qnt": "9c2bf12973994318493759f388a53aa37df138597d5252c73309d3098ec2f98e",
+    "qa/exit-fullscreen_test.qnt": "5da42e4ff2fcd8ca72e91fecd1bbb9bd51642850848c45477814d98489baf6a5",
+    "src/Effects.elm": "805e2dfcd189b0c11acaee0ed2381734d53e793baba6abd68262bde5aeb4ae25",
+    "src/Provider.elm": "3e65d320b85f176b92b2a01ed783c7c26061767b583fb6d6ad52526a4c240ecf",
+    "native/geometry-effects.inc": "78276a901a3d5a47c48e5c6eeb646715fbc72f5d13ae6ba9d7b703d9ec761d04"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/exit-fullscreen.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/exit-fullscreen_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=79701"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "witnesses",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/exit-fullscreen.qnt",
+        "--backend=typescript",
+        "--witnesses",
+        "committedExit",
+        "unknownRetained",
+        "pinnedFullscreenFocus",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79702"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "safety",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/exit-fullscreen.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79703"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "witnessCounts": {
+    "committedExit": 23,
+    "unknownRetained": 72,
+    "pinnedFullscreenFocus": 390
+  }
+}

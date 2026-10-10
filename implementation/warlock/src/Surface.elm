@@ -413,6 +413,7 @@ windowNotice model =
                     Effects.Activate -> "Activate"
                     Effects.Maximize -> "Maximize"
                     Effects.RestoreGeometry -> "Restore size"
+                    Effects.ExitFullscreen -> "Exit fullscreen"
                     Effects.Pin -> "Always on top"
                     Effects.Unpin -> "Unpin window"
                     Effects.SnapPlacement _ -> "Snap"
