@@ -7502,12 +7502,12 @@
       "owner": "Desktop experience lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "in-progress",
+      "status": "partial",
       "scenarios": [
         {
           "name": "ux-016",
           "oracle": "displayed pin/MAX state agrees with native state and visible hit target",
-          "status": "failed",
+          "status": "partial",
           "evidence": [
             {
               "path": "implementation/warlock/qa/evidence/pin-max/manifest.json",
@@ -7518,10 +7518,41 @@
               "path": "implementation/warlock/qa/evidence/picker-target-stability/manifest.json",
               "sha256": "2c25ae57cb13f38e0976957359e19902df90c8dde030d4d0b0bd5ff092b44bb9",
               "scope": "Stable picker context target, exactly one maximize receipt, real MAX pixels and matching native GTK pointer hit, correlated displayed unpinned MAX state. Always-on-top action did not satisfy the original completion predicate within six seconds. Native pin/unpin, preserved MAX geometry and final physical overlap observations remain open."
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/pin-max-order/manifest.json",
+              "sha256": "b3c0111130c7004a9f6f7cec47e57d4c909750d9fc3434002ac7fe1b3ff79072",
+              "scope": "Pin and unpin of a maximized family now traverse the shipped prepared menu and typed receipt/reservation registry. Complete legacy/geometry records compare by unique incarnation, retaining all values. Protected native ux-016 passes maximize/pin/unpin once each, preserved MAX geometry, correlated displayed states and visible pixel/real GTK hit recipients at original deadlines. All functional pin checks pass; shell exit later fails outstanding picker custody.",
+              "sourceBaseRevision": "22ca3c37117b22b1efd14e0fbd36244d784d8cea",
+              "sourceHashes": {
+                "implementation/warlock/src/MenuBridge.elm": "dd7740643c2aae7ee9856c6a488db68a1e5f80e5b4e136a11632a2d3c01a74cd",
+                "implementation/warlock/qa/PinMaxReplay.elm": "a782d14d542cbea45364d9907b766831e84b7435bc6735e4a5bb21bb8399c169",
+                "implementation/warlock/qa/check-search.py": "c6bc41a840ade2aadde82c3e00ed171e42eea94d8d8ddd9c8c0ddeb2fd5caadf",
+                "implementation/warlock/qa/menu-read-order.qnt": "2d5d7d3619e4df4876e3e4c0cfabcf96be02bdfb8edc48bbbdb01f5a0d1d69c4",
+                "implementation/warlock/qa/menu-read-order_test.qnt": "abfe65a787059b42b68873f130d7d7089950694281811ac8d12388673dce8282",
+                "implementation/warlock/qa/check-menu-read-order.py": "31981616b443e79413be3d9044c981e08379dd6fe935a958ae92494721c03f24",
+                "implementation/warlock/qa/native-pin-max.py": "2f6ffe59073bba00c9d8708925d0d6eab729c9262bdb74a8f5fa2e7fdb80bd94",
+                "implementation/warlock/qa/native-window-feedback.py": "d0c45c673ac47751cef680175a79c251674dc19d444eb7eeb3f35dd23ecbd353",
+                "implementation/warlock/qa/current-search-build.json": "02d6cbdacf9229c60488e813d54780f019fcd158994888b707165699b8b2f26f",
+                "implementation/warlock/README.md": "c4726638a7973e39911b27c0b44abad010c06b122d6a90b2b05e81dd86e197cd",
+                "implementation/warlock/src/ReceiptRouter.elm": "9a7c297c1111140e17fd5d8cd157b5e523c516e474ee00a23bcdb0e34dcc0d56",
+                "implementation/warlock/assets/elm.js": "692483d74efd348f2fb35922f686adfd5bdf9c3bed41c1c4b4e601f383d01050",
+                "implementation/warlock/assets/bar.js": "ba3aeafb3b49f3e5a201f9c7efe1c7f79f22fb659271c814cab7465a53168fd2",
+                "implementation/warlock/assets/popup.js": "df70e74116c3dfc52e70ad26ea03233f6b07d77985da84913a76a7a8374fda1f"
+              },
+              "reviewerDisposition": {
+                "name": "root-pin-max-order",
+                "independent": false,
+                "disposition": "Owner-observed functional native pin/MAX/pixel/input success with later shutdown failure and retained keyboard regression; independent acceptance remains open."
+              }
             }
           ],
-          "missingObservation": "Always-on-top action did not satisfy the original completion predicate within six seconds. Native pin/unpin, preserved MAX geometry and final physical overlap observations remain open. Stable observed checked semantics and independent original-scenario acceptance remain open.",
-          "reviewerDisposition": "Owner retained compiled evidence and failed native interaction; no independent GUI acceptance."
+          "missingObservation": "Native shell exits 1 with Outstanding native picker custody/journal; private cleanup passes but normal client exit/plugin unload acceptance is not established for this pin run. Current combined keyboard regression fails repeated Home at original line 779 after six surfaces; earlier all-nine pass remains evidence only for its preceding tuple. Independent original scenario review, stable checked semantics and applicable AT/resource/release gates remain open.",
+          "reviewerDisposition": {
+            "name": "root-pin-max-order",
+            "independent": false,
+            "disposition": "Owner-observed functional native pin/MAX/pixel/input success with later shutdown failure and retained keyboard regression; independent acceptance remains open."
+          }
         }
       ]
     },
@@ -8232,7 +8263,7 @@
         {
           "name": "ux-023",
           "oracle": "each surface can be opened, operated and dismissed without pointer events",
-          "status": "partial",
+          "status": "failed",
           "evidence": [
             {
               "path": "implementation/warlock/qa/evidence/keyboard-shell/manifest.json",
@@ -8293,9 +8324,32 @@
                 "independent": false,
                 "disposition": "Owner-observed passing original keyboard campaign; independent scenario/requirement/release acceptance remains open."
               }
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/pin-max-order/native-keyboard-report.json",
+              "sha256": "b48672f9427c4a20e3541953c20820ed78f1e73764bdc8c07315b63c9dfa4027",
+              "scope": "Actual preceding six surfaces complete; repeated Home still fails on this tuple. No later snap/Task View/switcher completion inferred.",
+              "sourceBaseRevision": "22ca3c37117b22b1efd14e0fbd36244d784d8cea",
+              "sourceHashes": {
+                "implementation/warlock/src/MenuBridge.elm": "dd7740643c2aae7ee9856c6a488db68a1e5f80e5b4e136a11632a2d3c01a74cd",
+                "implementation/warlock/qa/PinMaxReplay.elm": "a782d14d542cbea45364d9907b766831e84b7435bc6735e4a5bb21bb8399c169",
+                "implementation/warlock/qa/check-search.py": "c6bc41a840ade2aadde82c3e00ed171e42eea94d8d8ddd9c8c0ddeb2fd5caadf",
+                "implementation/warlock/qa/menu-read-order.qnt": "2d5d7d3619e4df4876e3e4c0cfabcf96be02bdfb8edc48bbbdb01f5a0d1d69c4",
+                "implementation/warlock/qa/menu-read-order_test.qnt": "abfe65a787059b42b68873f130d7d7089950694281811ac8d12388673dce8282",
+                "implementation/warlock/qa/check-menu-read-order.py": "31981616b443e79413be3d9044c981e08379dd6fe935a958ae92494721c03f24",
+                "implementation/warlock/qa/native-pin-max.py": "2f6ffe59073bba00c9d8708925d0d6eab729c9262bdb74a8f5fa2e7fdb80bd94",
+                "implementation/warlock/qa/native-window-feedback.py": "d0c45c673ac47751cef680175a79c251674dc19d444eb7eeb3f35dd23ecbd353",
+                "implementation/warlock/qa/current-search-build.json": "02d6cbdacf9229c60488e813d54780f019fcd158994888b707165699b8b2f26f",
+                "implementation/warlock/README.md": "c4726638a7973e39911b27c0b44abad010c06b122d6a90b2b05e81dd86e197cd",
+                "implementation/warlock/src/ReceiptRouter.elm": "9a7c297c1111140e17fd5d8cd157b5e523c516e474ee00a23bcdb0e34dcc0d56",
+                "implementation/warlock/assets/elm.js": "692483d74efd348f2fb35922f686adfd5bdf9c3bed41c1c4b4e601f383d01050",
+                "implementation/warlock/assets/bar.js": "ba3aeafb3b49f3e5a201f9c7efe1c7f79f22fb659271c814cab7465a53168fd2",
+                "implementation/warlock/assets/popup.js": "df70e74116c3dfc52e70ad26ea03233f6b07d77985da84913a76a7a8374fda1f"
+              },
+              "reviewerDisposition": "Owner-observed failed integration regression; no independent acceptance."
             }
           ],
-          "missingObservation": "Independent original scenario/requirement review and native accessibility/IME consumers remain open. This fixture disables accessibility bridging; browser/Elm checks do not establish native AT. Protocol 2 admission remains in source and typed wire tests, but this current native journey negotiates protocol 3; hardware/multi-output/cadence/resource/full-release packaging and deployment remain separate."
+          "missingObservation": "Native shell exits 1 with Outstanding native picker custody/journal; private cleanup passes but normal client exit/plugin unload acceptance is not established for this pin run. Current combined keyboard regression fails repeated Home at original line 779 after six surfaces; earlier all-nine pass remains evidence only for its preceding tuple. Independent original scenario review, stable checked semantics and applicable AT/resource/release gates remain open."
         },
         {
           "name": "keyboard-launcher",
@@ -9675,5 +9729,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-10T01:42:31.362689+00:00"
+  "updatedUTC": "2026-10-10T01:53:36.833449+00:00"
 }

@@ -1,0 +1,244 @@
+{
+  "schema": 1,
+  "requirements": [
+    "ELM-UX-016"
+  ],
+  "scenarios": [
+    "ux-016"
+  ],
+  "disposition": "partial",
+  "sourceBaseRevision": "22ca3c37117b22b1efd14e0fbd36244d784d8cea",
+  "sourceHashes": {
+    "implementation/warlock/src/MenuBridge.elm": "dd7740643c2aae7ee9856c6a488db68a1e5f80e5b4e136a11632a2d3c01a74cd",
+    "implementation/warlock/qa/PinMaxReplay.elm": "a782d14d542cbea45364d9907b766831e84b7435bc6735e4a5bb21bb8399c169",
+    "implementation/warlock/qa/check-search.py": "c6bc41a840ade2aadde82c3e00ed171e42eea94d8d8ddd9c8c0ddeb2fd5caadf",
+    "implementation/warlock/qa/menu-read-order.qnt": "2d5d7d3619e4df4876e3e4c0cfabcf96be02bdfb8edc48bbbdb01f5a0d1d69c4",
+    "implementation/warlock/qa/menu-read-order_test.qnt": "abfe65a787059b42b68873f130d7d7089950694281811ac8d12388673dce8282",
+    "implementation/warlock/qa/check-menu-read-order.py": "31981616b443e79413be3d9044c981e08379dd6fe935a958ae92494721c03f24",
+    "implementation/warlock/qa/native-pin-max.py": "2f6ffe59073bba00c9d8708925d0d6eab729c9262bdb74a8f5fa2e7fdb80bd94",
+    "implementation/warlock/qa/native-window-feedback.py": "d0c45c673ac47751cef680175a79c251674dc19d444eb7eeb3f35dd23ecbd353",
+    "implementation/warlock/qa/current-search-build.json": "02d6cbdacf9229c60488e813d54780f019fcd158994888b707165699b8b2f26f",
+    "implementation/warlock/README.md": "c4726638a7973e39911b27c0b44abad010c06b122d6a90b2b05e81dd86e197cd",
+    "implementation/warlock/src/ReceiptRouter.elm": "9a7c297c1111140e17fd5d8cd157b5e523c516e474ee00a23bcdb0e34dcc0d56",
+    "implementation/warlock/assets/elm.js": "692483d74efd348f2fb35922f686adfd5bdf9c3bed41c1c4b4e601f383d01050",
+    "implementation/warlock/assets/bar.js": "ba3aeafb3b49f3e5a201f9c7efe1c7f79f22fb659271c814cab7465a53168fd2",
+    "implementation/warlock/assets/popup.js": "df70e74116c3dfc52e70ad26ea03233f6b07d77985da84913a76a7a8374fda1f"
+  },
+  "scope": "Pin and unpin of a maximized family now traverse the shipped prepared menu and typed receipt/reservation registry. Complete legacy/geometry records compare by unique incarnation, retaining all values. Protected native ux-016 passes maximize/pin/unpin once each, preserved MAX geometry, correlated displayed states and visible pixel/real GTK hit recipients at original deadlines. All functional pin checks pass; shell exit later fails outstanding picker custody.",
+  "quintLLMKit": {
+    "upstream": "https://github.com/quint-co/quint-llm-kit",
+    "skills": [
+      "quint-modeling",
+      "quint-execute-spec"
+    ],
+    "model": "implementation/warlock/qa/menu-read-order.qnt",
+    "requirements": "Original ux-016 correlated presentation plus existing current-authority/no-replay contract. Complete row fingerprints abstract all decoded facts; bounded two-window atomic read model excludes transport authentication, native geometry/pixels/input/ABI. Six named cases, 1000 witness traces and 1000 sampled safety traces, 30 steps; not exhaustive verification.",
+    "witnessCounts": {
+      "reorderedIssued": 85,
+      "changedReadRefused": 468,
+      "unknownRetained": 47
+    }
+  },
+  "reports": {
+    "compiled-report.json": {
+      "path": "implementation/warlock/qa/evidence/pin-max-order/compiled-report.json",
+      "sha256": "2339a10251c2e80f0f663169455176bf471a3bd928f43175c545c9c710f4e5d1",
+      "originalPath": "implementation/warlock/qa/runs/pin-max-1791596991714234724/report.json"
+    },
+    "model-report.json": {
+      "path": "implementation/warlock/qa/evidence/pin-max-order/model-report.json",
+      "sha256": "0dbc490adcba4cf4d7b05066aeb527ec3966c94582973090684f1330da9a2091",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-max-1791596991714234724/inputs/qa/runs/menu-read-order-1791596991801996354/report.json"
+    },
+    "native-pin-report.json": {
+      "path": "implementation/warlock/qa/evidence/pin-max-order/native-pin-report.json",
+      "sha256": "e0deec005ebb6913b480e9eab8c390c2d6b15accb5b8bbef6cc44541b7b2499f",
+      "originalPath": "implementation/warlock/qa/runs/native-pin-max-1791597020793796911/report.json"
+    },
+    "native-keyboard-report.json": {
+      "path": "implementation/warlock/qa/evidence/pin-max-order/native-keyboard-report.json",
+      "sha256": "b48672f9427c4a20e3541953c20820ed78f1e73764bdc8c07315b63c9dfa4027",
+      "originalPath": "implementation/warlock/qa/runs/native-keyboard-shell-1791597073141834029/report.json"
+    },
+    "model-named.stdout": {
+      "path": "implementation/warlock/qa/evidence/pin-max-order/model-named.stdout",
+      "sha256": "33d1868b697785eb0657fd2dd4961563df1f41e52cfcb2da54f78a2b9ba6b3f0",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-max-1791596991714234724/inputs/qa/runs/menu-read-order-1791596991801996354/named.stdout"
+    },
+    "model-witnesses.stdout": {
+      "path": "implementation/warlock/qa/evidence/pin-max-order/model-witnesses.stdout",
+      "sha256": "189d007e436fdd8a7ee17540be9036163f2a7f1d05fae11eb9dc1ee2a33f30d1",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-max-1791596991714234724/inputs/qa/runs/menu-read-order-1791596991801996354/witnesses.stdout"
+    },
+    "model-safety.stdout": {
+      "path": "implementation/warlock/qa/evidence/pin-max-order/model-safety.stdout",
+      "sha256": "97f6a0130cf98d3eafb063d874dd234db69b7a88de95b4b487be62507a69395c",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-max-1791596991714234724/inputs/qa/runs/menu-read-order-1791596991801996354/safety.stdout"
+    }
+  },
+  "retainedBeforeFailure": {
+    "path": "implementation/warlock/qa/evidence/picker-target-stability/native-report.json",
+    "sha256": "c8c440b8fb014724fae64c430ab8b302c89a38171ef8a7fbe136aa47cf5d4ad5"
+  },
+  "nativeObservations": {
+    "successfulChecks": [
+      "OwningPluginLoads",
+      "FixtureFloats",
+      "FixtureSize",
+      "FixturePosition",
+      "OverlapPeerFloats",
+      "OverlapPeerSize",
+      "OverlapPeerPosition",
+      "FixtureFocus",
+      "PointerTargetWithinActualViewport",
+      "feedback-helper-1NormalExit",
+      "PopupPointerWithinOriginalViewport",
+      "feedback-helper-2NormalExit",
+      "ContextOpenNeverActivatesFamily",
+      "PopupPointerWithinOriginalViewport",
+      "feedback-helper-3NormalExit",
+      "ExactNativeMaximizeOnce",
+      "OriginalFixtureMaximizedOverFloat",
+      "feedback-helper-4NormalExit",
+      "UnpinnedMaxVisibleNativeFamilyPixel",
+      "feedback-helper-5NormalExit",
+      "UnpinnedMaxVisiblePixelMatchesRealGTKHit",
+      "PointerTargetWithinActualViewport",
+      "feedback-helper-6NormalExit",
+      "PopupPointerWithinOriginalViewport",
+      "feedback-helper-7NormalExit",
+      "DisplayedUnpinnedMaxIsObserved",
+      "PopupPointerWithinOriginalViewport",
+      "feedback-helper-8NormalExit",
+      "ExactNativeAlways on topOnce",
+      "PinPreservesNativeMaxAndGeometry",
+      "feedback-helper-9NormalExit",
+      "PinnedMaxVisibleNativeFamilyPixel",
+      "feedback-helper-10NormalExit",
+      "PinnedMaxVisiblePixelMatchesRealGTKHit",
+      "PointerTargetWithinActualViewport",
+      "feedback-helper-11NormalExit",
+      "PopupPointerWithinOriginalViewport",
+      "feedback-helper-12NormalExit",
+      "DisplayedPinAndMaxAgreeWithNative",
+      "PopupPointerWithinOriginalViewport",
+      "feedback-helper-13NormalExit",
+      "ExactNativeUnpin windowOnce",
+      "UnpinPreservesNativeMaxAndGeometry",
+      "feedback-helper-14NormalExit",
+      "UnpinnedAgainVisibleNativeFamilyPixel",
+      "feedback-helper-15NormalExit",
+      "UnpinnedAgainVisiblePixelMatchesRealGTKHit",
+      "PointerTargetWithinActualViewport",
+      "feedback-helper-16NormalExit",
+      "PopupPointerWithinOriginalViewport",
+      "feedback-helper-17NormalExit",
+      "DisplayedUnpinKeepsMax",
+      "feedback-helper-18NormalExit",
+      "PinUnpinUsesExactlyThreeSharedWindowIntents",
+      "NoScratchpadOrWorkspaceTransfer",
+      "EveryRegisteredHelperExitedNormally"
+    ],
+    "failedChecks": [
+      {
+        "name": "OwnedClientNormalExit",
+        "passed": false,
+        "pid": 376508,
+        "exitCode": 1,
+        "expectedRegistryStop": false
+      }
+    ],
+    "captures": [
+      {
+        "path": "implementation/warlock/qa/evidence/pin-max-order/UnpinnedMax.png",
+        "sha256": "4983e997eebf8d1924dda322b813741e8daee857c29e62b651507171b3e7dd3a",
+        "point": [
+          250,
+          260
+        ],
+        "rgb": [
+          255,
+          0,
+          0
+        ],
+        "visible": "ELM-AUTHORITY-FIXTURE",
+        "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791597020793926890/UnpinnedMax.png"
+      },
+      {
+        "path": "implementation/warlock/qa/evidence/pin-max-order/PinnedMax.png",
+        "sha256": "5be674d144670562ab90bf8b51f82cabdbbefe26caaf0cddb455deb230f3d2ab",
+        "point": [
+          250,
+          260
+        ],
+        "rgb": [
+          255,
+          0,
+          0
+        ],
+        "visible": "ELM-AUTHORITY-FIXTURE",
+        "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791597020793926890/PinnedMax.png"
+      },
+      {
+        "path": "implementation/warlock/qa/evidence/pin-max-order/UnpinnedAgain.png",
+        "sha256": "a4477bdc74b12536839b49a59d95cb2d2036163bac94868a2ecb18698f06b025",
+        "point": [
+          250,
+          260
+        ],
+        "rgb": [
+          255,
+          0,
+          0
+        ],
+        "visible": "ELM-AUTHORITY-FIXTURE",
+        "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791597020793926890/UnpinnedAgain.png"
+      }
+    ],
+    "sourceTuple": {
+      "core": {
+        "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-core-1791495415110842751/Hyprland",
+        "sha256": "81c9ac609c2900f99c1efbe613b83e949aeae3059a5e4403601581fa96191acf"
+      },
+      "plugin": {
+        "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791596429600393566/elm-window-geometry-authority.so",
+        "sha256": "1f5de87c759902cbbca05dfdbba56090641c994cf3c7276671094248465bcac4"
+      },
+      "aquamarine": {
+        "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+        "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+      }
+    },
+    "nativeHost": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-max-1791596991714234724/elm-host",
+      "sha256": "477b0490a62afbf46cf63b1d83606f95422732dad1356c6e86fe3eb4dc790fb0",
+      "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-max-1791596991714234724/report.json",
+      "heldBuildSHA256": "2339a10251c2e80f0f663169455176bf471a3bd928f43175c545c9c710f4e5d1"
+    },
+    "privateCleanupPassed": true,
+    "mainDesktopActions": false,
+    "error": "AssertionError('OwnedClientNormalExit')",
+    "runtimeLog": {
+      "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791597020793926890/warlock.log",
+      "sha256": "da8aa28df7d7c5738979f97a24161abbf9520ca3157e156b9e75cb2f6f2515fc"
+    }
+  },
+  "integrationRegression": {
+    "requirements": [
+      "ELM-UX-023"
+    ],
+    "scope": "Actual preceding six surfaces complete; repeated Home still fails on this tuple. No later snap/Task View/switcher completion inferred.",
+    "failedOriginalTraceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/native-window-feedback.py\", line 779, in <module>\n    enter_bar();key(102);wait(lambda:(body:=bar_focus()) and any(b['id']==body['focus'] and b['identity'].startswith('bar:group:') for b in body['buttons']));key(28);wait(lambda:body_for('picker'))\n                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/native-window-feedback.py\", line 180, in wait\n    raise RuntimeError('Original observation deadline '+getattr(fn,'__name__',''))\nRuntimeError: Original observation deadline <lambda>\n",
+    "privateCleanupPassed": true
+  },
+  "missingObservations": [
+    "Native shell exits 1 with Outstanding native picker custody/journal; private cleanup passes but normal client exit/plugin unload acceptance is not established for this pin run. Current combined keyboard regression fails repeated Home at original line 779 after six surfaces; earlier all-nine pass remains evidence only for its preceding tuple. Independent original scenario review, stable checked semantics and applicable AT/resource/release gates remain open."
+  ],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "reviewerDisposition": {
+    "name": "root-pin-max-order",
+    "independent": false,
+    "disposition": "Owner-observed functional native pin/MAX/pixel/input success with later shutdown failure and retained keyboard regression; independent acceptance remains open."
+  }
+}

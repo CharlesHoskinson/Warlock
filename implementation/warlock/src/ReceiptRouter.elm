@@ -16,7 +16,7 @@ import UnsentOperation
 import UInt64 exposing (Counter)
 
 type alias Context = { lifetime : Counter, epoch : Counter, output : Counter, revision : Counter }
-type Operation = Minimize | Restore | Maximize | RestoreGeometry
+type Operation = Minimize | Restore | Maximize | RestoreGeometry | Pin | Unpin
 type alias Intent = { request : Counter, generation : Counter, incarnation : Counter, operation : Operation, context : Context }
 type alias Key = { native : NativeBinding.Binding, intent : Intent, protocol : Int }
 type alias Entry = { local : Menu.IntentId, binding : Menu.Binding, key : Key }
@@ -57,6 +57,8 @@ operation = D.string |> D.andThen (\value -> case value of
     "restore" -> D.succeed Restore
     "maximize" -> D.succeed Maximize
     "restore-geometry" -> D.succeed RestoreGeometry
+    "pin" -> D.succeed Pin
+    "unpin" -> D.succeed Unpin
     _ -> D.fail "Unsupported native menu operation")
 
 context : D.Decoder Context
@@ -70,7 +72,7 @@ intent = strict ["request","generation","incarnation","operation","context"] (D.
 
 key : D.Decoder Key
 key = D.map3 Key (D.field "binding" NativeBinding.decoder) (D.field "intent" intent) (D.field "effectProtocol" D.int)
-    |> D.andThen (\value -> if value.protocol==(if value.intent.operation==Maximize || value.intent.operation==RestoreGeometry then 2 else 1) then D.succeed value else D.fail "Operation protocol mismatch")
+    |> D.andThen (\value -> if value.protocol==(if List.member value.intent.operation [Maximize,RestoreGeometry,Pin,Unpin] then 2 else 1) then D.succeed value else D.fail "Operation protocol mismatch")
 
 command : D.Decoder Key
 command = strict ["protocolVersion","kind","effectProtocol","binding","intent"]
@@ -86,6 +88,7 @@ register (Menu.Dispatch local binding action) provider value ((Model entries) as
                     Menu.Restore -> Just Restore
                     Menu.Maximize -> Just Maximize
                     Menu.RestoreGeometry -> Just RestoreGeometry
+                    Menu.AlwaysOnTop desired -> Just (if desired then Pin else Unpin)
                     _ -> Nothing
                 eligible = List.any (\item -> item.enabled && item.action==action) (Provider.getItems provider)
             in if binding/=Provider.getBinding provider || not eligible
@@ -108,9 +111,10 @@ registerPrepared : Menu.Effect -> Provider.Snapshot -> Provider.Snapshot -> D.Va
 registerPrepared (Menu.Dispatch local originalBinding action) original fresh value model =
     let old = Provider.nativeContext original
         new = Provider.nativeContext fresh
+        ordered = List.sortWith (\a b -> UInt64.compare a.incarnation b.incarnation)
         geometrySame = case (Provider.geometryObservation original,Provider.geometryObservation fresh) of
             (Nothing,Nothing) -> True
-            (Just before,Just after) -> before.windows==after.windows && not after.blocked && before.context.output==after.context.output && before.binding==after.binding && UInt64.compare after.context.revision before.context.revision/=LT && UInt64.compare after.sequence before.sequence/=LT
+            (Just before,Just after) -> ordered before.windows==ordered after.windows && not after.blocked && before.context.output==after.context.output && before.binding==after.binding && UInt64.compare after.context.revision before.context.revision/=LT && UInt64.compare after.sequence before.sequence/=LT
             _ -> False
     in if originalBinding/=Provider.getBinding original || Provider.nativeBinding original/=Provider.nativeBinding fresh
         || Provider.incarnation original/=Provider.incarnation fresh || Provider.presentationScope original/=Provider.presentationScope fresh
@@ -165,6 +169,8 @@ reservationKey bound protocolId original =
             Effects.Restore -> Just Restore
             Effects.Maximize -> Just Maximize
             Effects.RestoreGeometry -> Just RestoreGeometry
+            Effects.Pin -> Just Pin
+            Effects.Unpin -> Just Unpin
             _ -> Nothing
     in operationValue |> Maybe.map (\op -> {native=bound,protocol=protocolId,intent={request=original.request,generation=original.generation,incarnation=original.incarnation,operation=op,context=original.context}})
 

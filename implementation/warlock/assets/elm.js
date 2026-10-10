@@ -11947,6 +11947,17 @@ var $author$project$Provider$nativeContext = function (_v0) {
 	var value = _v0;
 	return {eQ: value.P.dK, e0: value.P.e0, y: value.P.e7, eh: value.P.eh};
 };
+var $author$project$MenuBridge$sameWindowFacts = F2(
+	function (before, after) {
+		var ordered = $elm$core$List$sortWith(
+			F2(
+				function (a, b) {
+					return A2($author$project$UInt64$compare, a.ap, b.ap);
+				}));
+		return _Utils_eq(
+			ordered(before),
+			ordered(after));
+	});
 var $author$project$MenuBridge$compatiblePrepared = F2(
 	function (slot, shell) {
 		var original = slot.au.l;
@@ -11961,7 +11972,7 @@ var $author$project$MenuBridge$compatiblePrepared = F2(
 				if (!_v0.b.$) {
 					var before = _v0.a.a;
 					var after = _v0.b.a;
-					return _Utils_eq(before.c, after.c) && (_Utils_eq(before.P.e0, after.P.e0) && (_Utils_eq(before.P.eQ, after.P.eQ) && (_Utils_eq(before.P.y, after.P.y) && ((!(!A2($author$project$UInt64$compare, after.P.eh, before.P.eh))) && ((!(!A2($author$project$UInt64$compare, after.el, before.el))) && ((!after.eH) && _Utils_eq(before.a, after.a)))))));
+					return _Utils_eq(before.c, after.c) && (_Utils_eq(before.P.e0, after.P.e0) && (_Utils_eq(before.P.eQ, after.P.eQ) && (_Utils_eq(before.P.y, after.P.y) && ((!(!A2($author$project$UInt64$compare, after.P.eh, before.P.eh))) && ((!(!A2($author$project$UInt64$compare, after.el, before.el))) && ((!after.eH) && A2($author$project$MenuBridge$sameWindowFacts, before.a, after.a)))))));
 				} else {
 					return false;
 				}
@@ -11975,7 +11986,8 @@ var $author$project$MenuBridge$compatiblePrepared = F2(
 			A2(
 				$elm$core$Maybe$map,
 				function (observed) {
-					return _Utils_eq(observed.P.e0, old.e0) && (_Utils_eq(observed.P.eQ, old.eQ) && (_Utils_eq(observed.P.y, old.y) && ((!(!A2($author$project$UInt64$compare, observed.P.eh, old.eh))) && (_Utils_eq(
+					return _Utils_eq(observed.P.e0, old.e0) && (_Utils_eq(observed.P.eQ, old.eQ) && (_Utils_eq(observed.P.y, old.y) && ((!(!A2($author$project$UInt64$compare, observed.P.eh, old.eh))) && (A2(
+						$author$project$MenuBridge$sameWindowFacts,
 						$author$project$ActionProjection$windows(observed.ej),
 						slot.c9) && _Utils_eq(
 						A2(
@@ -12803,8 +12815,10 @@ var $elm$core$Result$map = F2(
 	});
 var $author$project$ReceiptRouter$Maximize = 2;
 var $author$project$ReceiptRouter$Minimize = 0;
+var $author$project$ReceiptRouter$Pin = 4;
 var $author$project$ReceiptRouter$Restore = 1;
 var $author$project$ReceiptRouter$RestoreGeometry = 3;
+var $author$project$ReceiptRouter$Unpin = 5;
 var $author$project$Provider$actionContext = F2(
 	function (action, snapshot) {
 		var state = snapshot;
@@ -12882,6 +12896,10 @@ var $author$project$ReceiptRouter$operation = A2(
 				return $elm$json$Json$Decode$succeed(2);
 			case 'restore-geometry':
 				return $elm$json$Json$Decode$succeed(3);
+			case 'pin':
+				return $elm$json$Json$Decode$succeed(4);
+			case 'unpin':
+				return $elm$json$Json$Decode$succeed(5);
 			default:
 				return $elm$json$Json$Decode$fail('Unsupported native menu operation');
 		}
@@ -12904,7 +12922,11 @@ var $author$project$ReceiptRouter$key = A2(
 	function (value) {
 		return _Utils_eq(
 			value.ea,
-			((value.ab.bg === 2) || (value.ab.bg === 3)) ? 2 : 1) ? $elm$json$Json$Decode$succeed(value) : $elm$json$Json$Decode$fail('Operation protocol mismatch');
+			A2(
+				$elm$core$List$member,
+				value.ab.bg,
+				_List_fromArray(
+					[2, 3, 4, 5])) ? 2 : 1) ? $elm$json$Json$Decode$succeed(value) : $elm$json$Json$Decode$fail('Operation protocol mismatch');
 	},
 	A4(
 		$elm$json$Json$Decode$map3,
@@ -12992,6 +13014,10 @@ var $author$project$ReceiptRouter$register = F4(
 						return $elm$core$Maybe$Just(2);
 					case 1:
 						return $elm$core$Maybe$Just(3);
+					case 8:
+						var desired = action.a;
+						return $elm$core$Maybe$Just(
+							desired ? 4 : 5);
 					default:
 						return $elm$core$Maybe$Nothing;
 				}
@@ -13033,6 +13059,11 @@ var $author$project$ReceiptRouter$registerPrepared = F5(
 		var local = _v0.a;
 		var originalBinding = _v0.b;
 		var action = _v0.c;
+		var ordered = $elm$core$List$sortWith(
+			F2(
+				function (a, b) {
+					return A2($author$project$UInt64$compare, a.ap, b.ap);
+				}));
 		var old = $author$project$Provider$nativeContext(original);
 		var _new = $author$project$Provider$nativeContext(fresh);
 		var geometrySame = function () {
@@ -13053,7 +13084,9 @@ var $author$project$ReceiptRouter$registerPrepared = F5(
 					if (!_v2.b.$) {
 						var before = _v2.a.a;
 						var after = _v2.b.a;
-						return _Utils_eq(before.a, after.a) && ((!after.eH) && (_Utils_eq(before.P.y, after.P.y) && (_Utils_eq(before.c, after.c) && ((!(!A2($author$project$UInt64$compare, after.P.eh, before.P.eh))) && (!(!A2($author$project$UInt64$compare, after.el, before.el)))))));
+						return _Utils_eq(
+							ordered(before.a),
+							ordered(after.a)) && ((!after.eH) && (_Utils_eq(before.P.y, after.P.y) && (_Utils_eq(before.c, after.c) && ((!(!A2($author$project$UInt64$compare, after.P.eh, before.P.eh))) && (!(!A2($author$project$UInt64$compare, after.el, before.el)))))));
 					} else {
 						break _v2$2;
 					}
@@ -17055,7 +17088,7 @@ var $author$project$MenuBridge$reconcileWithShell = F2(
 														if (!_v5.b.$) {
 															var previousFacts = _v5.a.a;
 															var currentFacts = _v5.b.a;
-															return _Utils_eq(previousFacts.a, currentFacts.a) && (_Utils_eq(previousFacts.c, currentFacts.c) && (_Utils_eq(previousFacts.P.e0, currentFacts.P.e0) && (_Utils_eq(previousFacts.P.eQ, currentFacts.P.eQ) && _Utils_eq(previousFacts.P.y, currentFacts.P.y))));
+															return A2($author$project$MenuBridge$sameWindowFacts, previousFacts.a, currentFacts.a) && (_Utils_eq(previousFacts.c, currentFacts.c) && (_Utils_eq(previousFacts.P.e0, currentFacts.P.e0) && (_Utils_eq(previousFacts.P.eQ, currentFacts.P.eQ) && _Utils_eq(previousFacts.P.y, currentFacts.P.y))));
 														} else {
 															break _v5$2;
 														}
@@ -26228,6 +26261,10 @@ var $author$project$ReceiptRouter$reservationKey = F3(
 					return $elm$core$Maybe$Just(2);
 				case 4:
 					return $elm$core$Maybe$Just(3);
+				case 7:
+					return $elm$core$Maybe$Just(4);
+				case 8:
+					return $elm$core$Maybe$Just(5);
 				default:
 					return $elm$core$Maybe$Nothing;
 			}

@@ -45,6 +45,8 @@ def run(name,args):
  return p.stdout
 try:
  if PINMAX:
+  modelPacket=json.loads(run('menu-read-order-model',['/usr/bin/python3','-B','qa/check-menu-read-order.py']))
+  assert modelPacket['passed'];report['menuReadOrderModel']=modelPacket
   run('compile-pin-max',[str(HELD/pinned['compiler']),'make','qa/PinMaxReplay.elm','--optimize','--output=assets/pin-max.js'])
   replay=(INPUT/'qa/feedback-replay.js').read_text().replace('Elm.FeedbackReplay','Elm.PinMaxReplay');(INPUT/'qa/pin-max-replay.js').write_text(replay)
   run('typed-pin-max',['node','qa/pin-max-replay.js','assets/pin-max.js',str(OUT/'pin-max.json')])

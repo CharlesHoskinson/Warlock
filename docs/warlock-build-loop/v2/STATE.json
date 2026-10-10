@@ -1,44 +1,46 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T01:42:31.362689+00:00",
+  "updatedUTC": "2026-10-10T01:53:36.833449+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "current-protocol-snap",
+    "id": "pin-max-order-stability",
     "requirements": [
-      "ELM-UX-023"
+      "ELM-UX-016"
     ],
     "scenarios": [
-      "keyboard-snap-chooser"
+      "ux-016"
     ],
     "paths": [
-      "implementation/warlock/native/snap-placement.inc",
-      "implementation/warlock/native/authority.cpp",
-      "implementation/warlock/native/geometry-effects.inc",
-      "implementation/warlock/qa/snap-chooser.qnt",
-      "implementation/warlock/qa/check-snap.py",
-      "implementation/warlock/qa/SnapReplay.elm",
+      "implementation/warlock/src/MenuBridge.elm",
+      "implementation/warlock/qa/PinMaxReplay.elm",
       "implementation/warlock/qa/check-search.py",
-      "implementation/warlock/qa/check-native-authority.py",
+      "implementation/warlock/qa/menu-read-order.qnt",
+      "implementation/warlock/qa/menu-read-order_test.qnt",
+      "implementation/warlock/qa/check-menu-read-order.py",
+      "implementation/warlock/qa/native-pin-max.py",
       "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/qa/current-native-pair.json",
       "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/README.md"
+      "implementation/warlock/README.md",
+      "implementation/warlock/src/ReceiptRouter.elm",
+      "implementation/warlock/assets/elm.js",
+      "implementation/warlock/assets/bar.js",
+      "implementation/warlock/assets/popup.js"
     ],
-    "before": "Original keyboard journey reaches Right half but current protocol 3 authority returns Refused snap-protocol rather than placing the selected window.",
-    "after": "The current advertised protocol admits snap under the unchanged current grant, output/work-area, geometry, input and no-replay checks; keyboard choice visibly places its target and completes within the original deadline.",
+    "before": "Native MAX menu pin selection is canceled after post-close read merely reorders identical native window facts; no pin request is emitted.",
+    "after": "Pin/unpin of a maximized family completes from fresh correlated observations despite list reordering, while changed complete peer/target facts, stale scope, duplicate/lost outcomes remain guarded. Displayed pin/MAX agrees with actual native state and hit target.",
     "verification": [
-      "Quint LLM Kit execute-spec lightweight path: preserve existing snap state machine and sampled stale/no-replay invariants; actual compiled snap replay/wire/browser, exact owning native authority build and unchanged original keyboard-only journey/cleanup. Native AT and independent acceptance remain separate."
+      "Quint LLM Kit spec-first model for complete fact equality and correlated read/no-replay; actual prepared MenuBridge replay with reordered peer records and changed/stale negatives, changed Elm roots/host and protected original native pin/MAX/pixel-to-GTK hit journey with original six-second waits."
     ],
     "status": "implemented-partial",
-    "evidence": "implementation/warlock/qa/evidence/current-protocol-snap/manifest.json",
-    "observed": "Advertised geometry protocol 3 now admits snap alongside protocol 2 with unchanged native current-grant, work-area/output/workspace, geometry feasibility, focus/peer and no-replay checks. Original combined physical keyboard journey passes all nine surfaces at original deadlines: selected-family input, current menu, correlated committed right-half placement, Task View activation/dismissal and held-Alt switching; zero injected pointer events and normal cleanup.",
-    "missingObservation": "Independent original scenario/requirement review and native accessibility/IME consumers remain open. This fixture disables accessibility bridging; browser/Elm checks do not establish native AT. Protocol 2 admission remains in source and typed wire tests, but this current native journey negotiates protocol 3; hardware/multi-output/cadence/resource/full-release packaging and deployment remain separate.",
-    "nextSourceWork": "Next mandatory window behavior slice: inspect remaining pin/MAX completion and workspace transfer protocol admission against original scenarios. Keep native AT and independent keyboard acceptance separate."
+    "evidence": "implementation/warlock/qa/evidence/pin-max-order/manifest.json",
+    "observed": "Pin and unpin of a maximized family now traverse the shipped prepared menu and typed receipt/reservation registry. Complete legacy/geometry records compare by unique incarnation, retaining all values. Protected native ux-016 passes maximize/pin/unpin once each, preserved MAX geometry, correlated displayed states and visible pixel/real GTK hit recipients at original deadlines. All functional pin checks pass; shell exit later fails outstanding picker custody.",
+    "missingObservation": "Native shell exits 1 with Outstanding native picker custody/journal; private cleanup passes but normal client exit/plugin unload acceptance is not established for this pin run. Current combined keyboard regression fails repeated Home at original line 779 after six surfaces; earlier all-nine pass remains evidence only for its preceding tuple. Independent original scenario review, stable checked semantics and applicable AT/resource/release gates remain open.",
+    "nextSourceWork": "Repair current picker custody retirement on shell shutdown without extending its drain bound or discarding unacknowledged custody; separately make repeated Home focus reliable."
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -779,6 +781,39 @@
       "observed": "Repeated native Home selects the enabled current taskbar group after real Enter activation and Apps transitions; original group member receives input, repeated group/menu targets remain current, and snap chooser is reached. Enter activates once on matched release; stale/composing/blurred controls cannot activate. The unchanged combined native journey fails later on snap-protocol refusal.",
       "missingObservation": "Snap remains Refused (snap-protocol) at the original six-second deadline. Remaining switcher/Task View intervals, native AT/IME consumers, independent scenario review and full release hardware/resource/package/deployment remain open. Browser preedit verification does not establish native IME acceptance.",
       "nextSourceWork": "Repair current snap placement protocol admission while preserving grants, output/work-area revisions, no replay and the original six-second keyboard journey."
+    },
+    {
+      "id": "current-protocol-snap",
+      "requirements": [
+        "ELM-UX-023"
+      ],
+      "scenarios": [
+        "keyboard-snap-chooser"
+      ],
+      "paths": [
+        "implementation/warlock/native/snap-placement.inc",
+        "implementation/warlock/native/authority.cpp",
+        "implementation/warlock/native/geometry-effects.inc",
+        "implementation/warlock/qa/snap-chooser.qnt",
+        "implementation/warlock/qa/check-snap.py",
+        "implementation/warlock/qa/SnapReplay.elm",
+        "implementation/warlock/qa/check-search.py",
+        "implementation/warlock/qa/check-native-authority.py",
+        "implementation/warlock/qa/native-window-feedback.py",
+        "implementation/warlock/qa/current-native-pair.json",
+        "implementation/warlock/qa/current-search-build.json",
+        "implementation/warlock/README.md"
+      ],
+      "before": "Original keyboard journey reaches Right half but current protocol 3 authority returns Refused snap-protocol rather than placing the selected window.",
+      "after": "The current advertised protocol admits snap under the unchanged current grant, output/work-area, geometry, input and no-replay checks; keyboard choice visibly places its target and completes within the original deadline.",
+      "verification": [
+        "Quint LLM Kit execute-spec lightweight path: preserve existing snap state machine and sampled stale/no-replay invariants; actual compiled snap replay/wire/browser, exact owning native authority build and unchanged original keyboard-only journey/cleanup. Native AT and independent acceptance remain separate."
+      ],
+      "status": "implemented-partial",
+      "evidence": "implementation/warlock/qa/evidence/current-protocol-snap/manifest.json",
+      "observed": "Advertised geometry protocol 3 now admits snap alongside protocol 2 with unchanged native current-grant, work-area/output/workspace, geometry feasibility, focus/peer and no-replay checks. Original combined physical keyboard journey passes all nine surfaces at original deadlines: selected-family input, current menu, correlated committed right-half placement, Task View activation/dismissal and held-Alt switching; zero injected pointer events and normal cleanup.",
+      "missingObservation": "Independent original scenario/requirement review and native accessibility/IME consumers remain open. This fixture disables accessibility bridging; browser/Elm checks do not establish native AT. Protocol 2 admission remains in source and typed wire tests, but this current native journey negotiates protocol 3; hardware/multi-output/cadence/resource/full-release packaging and deployment remain separate.",
+      "nextSourceWork": "Next mandatory window behavior slice: inspect remaining pin/MAX completion and workspace transfer protocol admission against original scenarios. Keep native AT and independent keyboard acceptance separate."
     }
   ]
 }

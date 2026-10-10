@@ -322,7 +322,7 @@ reconcileWithShell shell ((Model state) as model) =
                                 let scope=Provider.presentationScope captured.snapshot
                                     sameGeometry fresh = case (Provider.geometryObservation captured.snapshot,Provider.geometryObservation fresh) of
                                         (Nothing,Nothing) -> True
-                                        (Just previousFacts,Just currentFacts) -> previousFacts.windows==currentFacts.windows
+                                        (Just previousFacts,Just currentFacts) -> sameWindowFacts previousFacts.windows currentFacts.windows
                                             && previousFacts.binding==currentFacts.binding
                                             && previousFacts.context.lifetime==currentFacts.context.lifetime
                                             && previousFacts.context.epoch==currentFacts.context.epoch
@@ -365,15 +365,24 @@ expirePrepared token shell ((Model state) as model) =
         Nothing -> answer model shell [] Nothing
 
 
+{-| Native observation lists may change order when a family is raised. Both
+decoders already require unique incarnations. Compare every fact by identity;
+sorting does not discard changed peer state, titles, geometry or capabilities.
+-}
+sameWindowFacts before after =
+    let ordered = List.sortWith (\a b -> UInt64.compare a.incarnation b.incarnation)
+    in ordered before == ordered after
+
+
 compatiblePrepared : Prepared -> Shell.Model -> Bool
 compatiblePrepared slot shell =
     let original=slot.captured.snapshot
         old=Provider.nativeContext original
         legacy=shell.effects.observed
-        sameLegacy=legacy |> Maybe.map (\observed -> observed.context.lifetime==old.lifetime && observed.context.epoch==old.epoch && observed.context.output==old.output && UInt64.compare observed.context.revision old.revision/=LT && ActionProjection.windows observed.scene==slot.legacyWindows && ActionProjection.rootOf (Provider.incarnation original) observed.scene==Just (Provider.incarnation original)) |> Maybe.withDefault False
+        sameLegacy=legacy |> Maybe.map (\observed -> observed.context.lifetime==old.lifetime && observed.context.epoch==old.epoch && observed.context.output==old.output && UInt64.compare observed.context.revision old.revision/=LT && sameWindowFacts (ActionProjection.windows observed.scene) slot.legacyWindows && ActionProjection.rootOf (Provider.incarnation original) observed.scene==Just (Provider.incarnation original)) |> Maybe.withDefault False
         sameGeometry=case (Provider.geometryObservation original,shell.geometry) of
             (Nothing,_) -> slot.geometryRequest==Nothing
-            (Just before,Just after) -> before.binding==after.binding && before.context.lifetime==after.context.lifetime && before.context.epoch==after.context.epoch && before.context.output==after.context.output && UInt64.compare after.context.revision before.context.revision/=LT && UInt64.compare after.sequence before.sequence/=LT && not after.blocked && before.windows==after.windows
+            (Just before,Just after) -> before.binding==after.binding && before.context.lifetime==after.context.lifetime && before.context.epoch==after.context.epoch && before.context.output==after.context.output && UInt64.compare after.context.revision before.context.revision/=LT && UInt64.compare after.sequence before.sequence/=LT && not after.blocked && sameWindowFacts before.windows after.windows
             _ -> False
     in shell.binding==Just (Provider.nativeBinding original) && shell.geometryCaps==slot.geometryCaps && sameLegacy && sameGeometry
 
