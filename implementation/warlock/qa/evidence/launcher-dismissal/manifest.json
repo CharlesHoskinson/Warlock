@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "requirements": [
+    "ELM-UX-023"
+  ],
+  "scenarios": [
+    "keyboard-launcher"
+  ],
+  "disposition": "partial",
+  "scope": "Actual native Apps Escape release, reopened through chosen and preserved user chords, then three repeated keyboard traversal/dismissal/current bar-focus cycles. Compiled composition and stale/lifecycle negatives. No whole original scenario acceptance.",
+  "sourceBaseRevision": "517b4354894bf1413784efe7e24323c0be3be61c",
+  "sourceHashes": {
+    "implementation/warlock/assets/popup-adapter.js": "6ef58cdf1a5f7c04ecaafd96084328f42b3adc3c74e0fd2e483e0979f172dc61",
+    "implementation/warlock/src/Popup.elm": "94038692d76a8061b26c22967683d7837963d5b4a6a452e25597c8e570f710ff",
+    "implementation/warlock/src/SurfaceController.elm": "399283022f7dd4dc345f313c32655d74cca7dd70cd3e4b0811310cb09711fcd1",
+    "implementation/warlock/src/Surface.elm": "c1956597c3565b396ee0e620902039661dac9ae9bdc70bd8afd0b74ee6a07fe0",
+    "implementation/warlock/native/shared-context.h": "19e1415305fd87a0a74287f5a541b38c80a56df9ab8179a08d357d8cf8f061d1",
+    "implementation/warlock/native/host.c": "e5dca3201f7d7b506476829ddf1c4bf1c92c048445bcea3f4bc1821e4f489e7d",
+    "implementation/warlock/qa/check-search.py": "a7353a74ebedf8c222656b7bce43b74c6df8b871a5deb05e8e1eb0074f3a6c21",
+    "implementation/warlock/qa/native-shortcut-preferences.py": "196f232be13364e94871de1f0f41d7ad3d6c443a3fb0f8b16bc635677ecaa1ea",
+    "implementation/warlock/qa/current-search-build.json": "09412167d69a412282303d562b4c6cbd991fbeecaccf2aae4f07b9bf5283de9f",
+    "implementation/warlock/assets/elm.js": "8add97d2536763124330ad70e0af9abad23c3d175c3b0a80e8f489ed437c5ea1",
+    "implementation/warlock/assets/bar.js": "ba3aeafb3b49f3e5a201f9c7efe1c7f79f22fb659271c814cab7465a53168fd2",
+    "implementation/warlock/assets/popup.js": "df70e74116c3dfc52e70ad26ea03233f6b07d77985da84913a76a7a8374fda1f",
+    "implementation/warlock/README.md": "e9c88dbc3dc7d1bd41953754d217634157b48c754caaa3403ca60dd4f151d849",
+    "implementation/warlock/assets/activation.js": "251fda68ac11102cde496c093f78ef313163d00043bbf5ae877c578d85ea78a5",
+    "implementation/warlock/qa/launcher-dismissal.js": "6e4783005b6794e862ed0b023e24c32b3b9d1adf2067a696ace0d36bbec6fbeb",
+    "implementation/warlock/qa/ime-browser.mjs": "27b5b36e8b5215e58b2d7af5f2aba5b4e55d31f776d49ac5b202e166254e3220"
+  },
+  "reports": {
+    "compiled-report.json": {
+      "path": "implementation/warlock/qa/evidence/launcher-dismissal/compiled-report.json",
+      "sha256": "fdabfc531b104ce36431a62d783d7a69c21df1f363dbbcf2c800c1996f493d15",
+      "originalPath": "implementation/warlock/qa/runs/ime-1791594600635488470/report.json"
+    },
+    "compiled-first-failure.json": {
+      "path": "implementation/warlock/qa/evidence/launcher-dismissal/compiled-first-failure.json",
+      "sha256": "cf5f521a93cd2ace66af168d506a523ab24dc387a058a975a061c9d20e7ab348",
+      "originalPath": "implementation/warlock/qa/runs/ime-1791594581046689865/report.json"
+    },
+    "native-repeated-report.json": {
+      "path": "implementation/warlock/qa/evidence/launcher-dismissal/native-repeated-report.json",
+      "sha256": "1c64b0b19d9950c2e9adccac46f8dbb85cee044416eca682c61dc2fa246bebca",
+      "originalPath": "implementation/warlock/qa/runs/native-shortcut-choices-1791594638827259808/report.json"
+    },
+    "native-original-report.json": {
+      "path": "implementation/warlock/qa/evidence/launcher-dismissal/native-original-report.json",
+      "sha256": "cca2fc9e84dbb45628006cf7aeac4cdd8439516f670077ed37c8465a0fa160f6",
+      "originalPath": "implementation/warlock/qa/runs/native-keyboard-shell-1791594678558346337/report.json"
+    }
+  },
+  "missingObservations": [
+    "The full original keyboard-launcher operation journey did not start: free defaults report available but active keep after session setup. The customized-binding campaign passes repeated Apps traversal/dismissal/bar focus, then fails the preserved default shortcut focus-recipient deadline. Native IME/AT, full launcher operation on this tuple and independent acceptance remain open."
+  ],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "reviewerDisposition": {
+    "name": "root-launcher-dismissal",
+    "independent": false,
+    "disposition": "Owner-observed native subintervals only"
+  }
+}

@@ -7,7 +7,8 @@ PREVIEW=sys.argv[1:]==['--preview-states']
 LIVE=sys.argv[1:]==['--live-motion']
 MOTION=sys.argv[1:]==['--reduced-motion'] or LIVE
 TRANSFER=sys.argv[1:]==['--transfer-workspace']
-IME=sys.argv[1:]==['--ime']
+LAUNCHER=sys.argv[1:]==['--launcher-dismissal']
+IME=sys.argv[1:]==['--ime'] or LAUNCHER
 ACCESSIBILITY=sys.argv[1:]==['--accessibility']
 CONTRAST=sys.argv[1:]==['--high-contrast']
 DRAG=sys.argv[1:]==['--drag-ownership']
@@ -92,7 +93,7 @@ handlers.keydown(event('Escape'));node.dataset.publication='8';handlers.keyup(ev
 handlers.keydown({...event('Enter'),repeat:true});handlers.keyup(event('Enter'));assert.equal(sent.length,1);
 handlers.keydown(event('Tab'));assert.equal(sent.at(-1).id,'control:forward');
 node.dataset.mode='overview';const before=sent.length;handlers.keydown(event('Escape'));assert.equal(sent.length,before);handlers.keyup(event('Escape'));assert.equal(sent.length,before+1);assert.equal(sent.at(-1).id,'control:close');handlers.keyup(event('Escape'));assert.equal(sent.length,before+1);
-node.dataset.mode='applications';handlers.keydown(event('Escape'));handlers.keyup(event('Escape'));assert.equal(sent.length,before+1);
+node.dataset.mode='applications';handlers.keydown(event('Escape'));assert.equal(sent.length,before+1);handlers.keyup(event('Escape'));assert.equal(sent.length,before+2);
 console.log('Actual shipped routing: terminal release once, stale scope cancels, repeat ignored, cycle observation forwarded');
 '''])
   run('compile-switcher',[str(HELD/pinned['compiler']),'make','qa/SwitcherReplay.elm','--optimize','--output=assets/switcher.js'])
@@ -118,6 +119,9 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
   report.update(requirements=['ELM-UX-028'],scenarios=['ime-spike-commit','ime-spike-cancel'],scope='Actual compiled popup composition lifecycle, commit coalescing and field/custody retirement; original native IME candidate and caret evidence remains separate.')
   run('compile-ime',[str(HELD/pinned['compiler']),'make','qa/ImeReplay.elm','--optimize','--output=assets/ime.js'])
   (INPUT/'qa/ime-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.ImeReplay'));run('typed-ime',['node','qa/ime-replay.js','assets/ime.js',str(OUT/'ime.json')]);report['typedIme']=json.loads((OUT/'ime.json').read_text());assert all(report['typedIme']['checks'].values())
+  if LAUNCHER:
+   report.update(requirements=['ELM-UX-023'],scenarios=['keyboard-launcher'],scope='Shipped Apps terminal-release adapters and actual compiled composition/stale behavior; native keyboard/focus and independent acceptance remain separate.')
+   run('launcher-dismissal-routing',['node','qa/launcher-dismissal.js'])
  if TRANSFER:
   report.update(requirements=['ELM-UX-018'],scenarios=['ux-018','transfer-refused','transfer-accepted'],scope='Actual Task View transfer controls and immutable shared transaction/receipt/membership gates; production custody/schema/key checks. Original native transfer/refusal evidence separate.')
   run('compile-transfer',[str(HELD/pinned['compiler']),'make','qa/TransferReplay.elm','--optimize','--output=assets/transfer.js'])

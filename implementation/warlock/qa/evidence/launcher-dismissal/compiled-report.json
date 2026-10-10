@@ -1,0 +1,1607 @@
+{
+  "passed": true,
+  "scope": "Shipped Apps terminal-release adapters and actual compiled composition/stale behavior; native keyboard/focus and independent acceptance remain separate.",
+  "requirements": [
+    "ELM-UX-023"
+  ],
+  "inputs": {
+    "src/ActionProjection.elm": "911faed965465fac4e32f404d75a4d130b4e560cda191c7773eb96749be1d062",
+    "src/Bar.elm": "a10abbe7d0542c642552d90cfa459b353a3843391ce47e06ba94b91afb0b6113",
+    "src/BatchReplay.elm": "6300d3c2e617de14b2fd70a40606ea8c94db435a93f0ae30bd19765f5cdce852",
+    "src/Binding.elm": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b",
+    "src/CapturedAction.elm": "a3e22c7dd5643a1c0424ea1ae09e134bc8b19567de980e57095e08273604fb66",
+    "src/Catalog.elm": "3eadb76212a66986ef2d76292a2f33595f7cd7d47dc90c8982435195f9ea3f02",
+    "src/CatalogReplay.elm": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+    "src/Desktop.elm": "0de211c106232d0e79033eb17a105c0e0d668d0fe226011656d90dc66ec2f4dd",
+    "src/DesktopReplay.elm": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd",
+    "src/Effects.elm": "805e2dfcd189b0c11acaee0ed2381734d53e793baba6abd68262bde5aeb4ae25",
+    "src/GeometryProjection.elm": "9360033076b594b1c4ede65e3a28a351f5097beb10f3e2fda97c536c9c2437dc",
+    "src/GeometrySizePolicy.elm": "46dda2de43642cd33997382e90813c8eeccde80745d79b7d5cd5fd425b062c43",
+    "src/Inspection.elm": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc",
+    "src/Launch.elm": "d629007c019a2fba21d26731ab37ce46de628d072fe89cec395ee55f76d44218",
+    "src/LaunchReplay.elm": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97",
+    "src/Main.elm": "2e9c042c5b2b068dbe582680ed37e6fa766b636d6d1a422297f843d135fb5405",
+    "src/Menu.elm": "c40fcfa24bf9d48044ccbe2c08df0abb7d8b94ee04111776234ecd88792ff4f0",
+    "src/MenuBridge.elm": "809e203a3f49e9e1ed554ba584c01ec1a0a139fc56b48feb1ea42be325199d2e",
+    "src/MenuSurfaceReplay.elm": "7a539b81beddacaf61e85562e9ef2a9346f4d001feb311abe3d41d99129e6c39",
+    "src/NativeActorRetirement.elm": "72302b23ea124f45879b176a959b3a5bbd80edbb986bfec631994051bcae31a6",
+    "src/NativeFamilyPreviewSource.elm": "dc93a0698cb1bc13c37f9e56c221d356f1c6aea3d4651b71df7d4f7c178d8321",
+    "src/NativeFamilyPreviewSourceReplay.elm": "699c1348a7f646dc1eeb03257a3bd92372beacba4b689f8edd71c1b2702ffe99",
+    "src/NativeOutcome.elm": "ffb20d47827d29653552d9a5c7f552491473b8df1cd336e00cc036816ae8b396",
+    "src/NativePreviewAdmission.elm": "ef5c5aa26edbbdd745bacdb29b0b2e60265bb27ded3f82516adb6562656f5a20",
+    "src/NativePreviewDetachment.elm": "39fe1ece48568a5a264d7b018df41322bab97f73cbe0f55a92559ecccb25a47a",
+    "src/NativePreviewPolicy.elm": "99a37f7ea929dcfb746e10d1e7356ba51aa307965bd72165aa708d475e6fec64",
+    "src/NativePreviewProposalIngress.elm": "b3fc80b316a9b0f90e107c65f35cb0e136a9ae4acce441e3fdf2b69d4994285d",
+    "src/NativePreviewRealm.elm": "2a3de2f3eacdf5b00489e5c1f5e5cef058e8f36d74fefecb25a5d3d9ea6024cf",
+    "src/NativePreviewRealmReplay.elm": "7d68ebb6703608184c20fa17f261d553119bf1ccf637274b41d1c1ebfb22e621",
+    "src/NativePreviewReceiver.elm": "4f9625067fbd6f5e1027524dadedfb318779d2963a16fe14e06ccdbf0a92fb92",
+    "src/NativePreviewReceiverReplay.elm": "27ec8515727b39be545b1d19f83bf4d25c42848ae9654c2f00e563f25b43f2b9",
+    "src/NativePreviewRenderer.elm": "91c7bf75e3a73dcc389765196138bc38bee089be7263851c80cd5782fedbc0e3",
+    "src/NativePreviewSource.elm": "9177298d05a999f3a28660df9a76b8be7cafcda523e7cc20fe73bc471b7c37e9",
+    "src/NativePreviewSourceReplay.elm": "d6f26c64fd55fe4943968ff7b0d7774ede6b7c6c62f924b16e96a558fcf6edd8",
+    "src/NativePreviewVisual.elm": "19f42ecd6e4d8b73adf5390eb47170ea2c47d3215b84c146e77f87583c8d3d3b",
+    "src/NativePreviewVisualReplay.elm": "d15bc279a0cbb0af0aa0fa0f85f72f4c3608ffee73a4d68567477d1769c341c6",
+    "src/NativeProvider.elm": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9",
+    "src/OutputController.elm": "edc3e8d07788b6ae3eeae48b00b289fd69b55d358dc2860944dd83cf0f876bb9",
+    "src/OutputReplay.elm": "44f156b65f816400b75d928371fe5bdba675545eba805fee4793422d5b3f73ff",
+    "src/OutputSurfaceReplay.elm": "c5b41a03a57830f9fefbc35d67e05b9a438aa7e8aee3be6367e7365fcbf70c26",
+    "src/Popup.elm": "94038692d76a8061b26c22967683d7837963d5b4a6a452e25597c8e570f710ff",
+    "src/Presentation.elm": "d5e5638753d14da9f4a690ee65bfce1a7d727846c56464b84e27c48448b2eb77",
+    "src/PresentationReplay.elm": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c",
+    "src/PreviewCatalogReplay.elm": "eaf63404fda37b1111a77eb2a16f5ad4737e4c151290f036cee415add5e4e129",
+    "src/PreviewFeedbackReplay.elm": "c54391131b2416266eb25a19602dac0788ea63502d64090bf2be857bb0aceb34",
+    "src/PreviewIdentity.elm": "262240e59eed37d362f921a4e7e89d0bb23c8b0f84fb39f0fddc29faaa3de3b5",
+    "src/PreviewLifecycle.elm": "232ebe2e823a4f9b07444f9afaccd98cdc3de9a592ff220d9975a64952dacf24",
+    "src/PreviewMetadataReplay.elm": "1efedf2492cb9c507be3a5aeb1ee6e371a22b6141aff5156359d6526149d5c3f",
+    "src/PreviewPresenter.elm": "10769b8d9a86e5e5b35f1f292d9837a38b20a0ba636d5baa0ee0c3b8fcdac1cc",
+    "src/PreviewPresenterReplay.elm": "0eb03b99d5d5470936b51ea77de9b102b9742284020d01c469110388efdbc06e",
+    "src/PreviewVisual.elm": "4110504939d5924476f4a691a065866c305515dfca9c067e15d4732dc609a67d",
+    "src/Provider.elm": "70f133d4588b72f9aaa3fb2bf3e3064b6d6e24d10ee685482ff6d54f76889abd",
+    "src/ReceiptRouter.elm": "ffcf85cf38de5665b35b3e2b6eb5a9f261360ec4b226b2fcefc0723cece1a011",
+    "src/ReconciliationFrame.elm": "c44fa50ac86d528b35959d50fc4d85bd9d8983c1e866fdda01ad1854f465004e",
+    "src/ReconciliationTracking.elm": "84482d1bb84160e3bd9e026b2043635c35b76422d6e9066f703411f784b29bf9",
+    "src/Replay.elm": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+    "src/RetainedLegacyPresenterReplay.elm": "f5f7bc30d5efda6629a1de4b11e13ebf25d9be80bbd8573dff9d7d0916375845",
+    "src/RetainedPreviewPresenter.elm": "7e1f806897e4bc728961ef6c19da5cf0d36a2948a2966f329cc8d34a6b0ed506",
+    "src/RetainedPreviewPresenterReplay.elm": "1405187825a060cb5003b66b7bf235802323fe6db2d32af6ddb04d1708577175",
+    "src/ScopedPreviewPresenterReplay.elm": "203f2b74ce723fc3c39208ff91dffde947fbdbaaf7cf1d233b606ac427ba7a05",
+    "src/SharedRecoveryReplay.elm": "f44d52432e1c6c876207c273d8a013fd446b186b85a23d7bf5474943ef26ff8b",
+    "src/Shell.elm": "93fdf86ac11ff9c190978fb46557623045a6c697d468a42fc9ba16a4bfa4df48",
+    "src/ShellReplay.elm": "be85fbef5dda8dd07093b578c4be204d8d92772147e1ffacf80368216b5ba8ca",
+    "src/Surface.elm": "c1956597c3565b396ee0e620902039661dac9ae9bdc70bd8afd0b74ee6a07fe0",
+    "src/SurfaceController.elm": "399283022f7dd4dc345f313c32655d74cca7dd70cd3e4b0811310cb09711fcd1",
+    "src/SurfaceRenderer.elm": "7acd0083ccf4209ea6bde220ad82e9189417f55d3e1d4929ba13ab9fd9bb0025",
+    "src/SurfaceReplay.elm": "476f94f33d9225035a479bd8ae8eb755ae8ac914c29ca533f62913fb378a603a",
+    "src/Taskbar.elm": "31ed9ce6b37e5b35065f8833e31412657800d894b6d9e9544f380bc16e7aa519",
+    "src/TaskbarReplay.elm": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351",
+    "src/TaskbarShell.elm": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+    "src/TaskbarShellReplay.elm": "72ca534bb5adc6d0a02fd68ff9f287cb1815fcb0f68313ce7d0b3033d4ebf130",
+    "src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "src/UnsentOperation.elm": "46e315cc739e097805af3c9358f9ca27a807ef1119c733aa296687342c8238ea",
+    "src/SearchFold.elm": "31664d665778533dc2c141f433398df5bd37be4b689b7369cd894c89d1459241",
+    "src/Pins.elm": "c18f4211444ea54ad5ae65d9e436b4dc3ae404446699812b95dabd7b2c878368",
+    "src/TaskView.elm": "4775c51917d4117bda6b6c21b354d2d8ac018f1902af8b0dcd6489d443f946d8",
+    "src/Switcher.elm": "7523cc13bf794c126cee2d39541d9fbae062ec3b420d5898eed6380792ec3061",
+    "src/Snap.elm": "8ee61de4cd63557d3f2928893ed35ce93f1e3290128847e66ca388aa5d98ec8e",
+    "src/Settings.elm": "8ff941e33dfed8fe3ecb0e050333e04c368e53366ac49b69843bad3b7d80da90",
+    "src/Notifications.elm": "705e0049a8f3193e6be813a0128c493ae9d9f88d1224dec5549ad2b2b631e7aa",
+    "src/SystemMenu.elm": "cf44c66fe51a5d86f14e33a8235e04f178553261229fd51e0d81cbc35c944054",
+    "src/Files.elm": "c2099647bca3b325ca21485bb3a246e0b6d7c2a693d0bcfd5f10dedbad7a89f7",
+    "src/JumpList.elm": "059841cc0669fdc7fd699498ee72d4211a2aa5d69c466d4aade7558e03b0f68c",
+    "src/Shortcuts.elm": "4647b05774e5be60a497c8b98f30b273b2b6b3e5928062d83d0c51993c23bedb",
+    "src/PointerOwnership.elm": "c9590423eb41aff0077c4170ebf287f37a43c1a96d7c19c36e621b283194f492",
+    "src/Transfer.elm": "357a68e70977184ced8be8b8a4c0db6209730e6fe6ad2f4718087a6d6a2c32be",
+    "src/Motion.elm": "e101862bae874426f0cf9aaf02340c6582abdeea21dec38c32003da7f94e8a69",
+    "src/MotionPreferences.elm": "d3130d74c3172cb1808df38efd7a2cc267ba5ae346b564544661d3d539f5c560",
+    "src/ShortcutPreferences.elm": "d9196adaae768e57e2531b78ad2cd8fd22a2a81ad952d27c7c88d0fc72da8322",
+    "native/actor-control-replay.cpp": "337b7e2892ec373a33b2c45bd855aa8b00c97ed88661aafe9aa66e78be3fe409",
+    "native/actor-retirement-channel-test-v1.cpp": "f0c1b35a04325b261217f93d182ee1871a091abff0c44e3688a8c9f17a729812",
+    "native/actor-retirement-channel-test-v2.cpp": "4160343a5ba5939114326e780108ea223a42ca28ac6fb7d4a833695d82e50a66",
+    "native/actor-retirement-test-v2.cpp": "08815578bdf33210f066e80f5506fd1a8a4e1afa8b89c69779a901d225dbf599",
+    "native/actor-retirement-test-v3.cpp": "25e47f56093b84682230628f46d20fb96b2727fa4190524ec3f64e9d08e8f867",
+    "native/actor-retirement-test.cpp": "69ddf372f47b537e4b35481ec9769e8417270a3c84ba8caef98fe3c00b78fea0",
+    "native/admission-test.c": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+    "native/backdrop-denial-test.cpp": "7388e88721724be5280b0df91e982af29bebc2f9a10563690ab5aef8c73bda86",
+    "native/backdrop-fd-test.cpp": "74b2f71f21e823bc3445cd647f86d422071edbd483d2bd89d68b38ce6575f623",
+    "native/backdrop-frame-test.cpp": "687f19e3053f305777f16d854fc2dbf593f4a7131589d522c37de4acfa498fd6",
+    "native/capture-intent-replay-v2.cpp": "41701749fe08424220d4c3292c127df836949c673c8572f6cbb0cd10d78dfa12",
+    "native/capture-intent-replay.cpp": "4cd94eb2cdb4a838c6b49a3fdc72c923d703e6060cea44861e7abb1b5951b170",
+    "native/capture-intent-source-fixture.hpp": "b5340c2ad8541e41325929cf0fc97f53e3961739308f5b2319b3f08be6b6b63a",
+    "native/capture-intent-test.cpp": "d0bb0eb54701d28ceaf989b681c8dc7138fa1137d82985661104ab9aec5295d5",
+    "native/capture-resource-c-test-v2.cpp": "52928c4d2d858fc9a13bbad85c23c95b742869c4f715992f0a59be546f981fac",
+    "native/capture-resource-c-test.cpp": "f90cd514d4c670655c134e858d5896e9b1f7878473ea7790bca8d69aa25a13ad",
+    "native/capture-resource-decoder-test.cpp": "ef03ae536987d83ca0f39c69638dc50ac02273edef5a6da08058b9a95c981800",
+    "native/capture-resource-elm-test.cpp": "6657648c496327b7096ca6e23eea5f3cf708c04cf1118c8fedc815006bc9641d",
+    "native/capture-resource-fd-source-fixture.hpp": "88f8f0062bc4a26d237034752d1b2edbc3214e70878838a068de44f627de774c",
+    "native/capture-resource-fd-test.cpp": "0b2f8214f82a95f463dd6044d546a0f4443fbe95ddb13b8b986d6e42eb799346",
+    "native/capture-resource-replay.cpp": "169d102b0602af1186f9bb1f20283e76851fb4f2de56e592aa4c9d4f6bcdd83d",
+    "native/capture-resource-source-fixture.hpp": "e036e80397869f486bb0b533d9acda24f6acd0ec7169f3d0e77173ba504ae14f",
+    "native/client-command-test.cpp": "ef481b7030d6a41831895fca1a5cba7405d08e22b913fa2f0f6cadccf47c25ab",
+    "native/client-denial-test.cpp": "9c05385a9e1b9da4efe03c414b09d512ab4e3791a33c4ff55fde75e4e0c009f7",
+    "native/client-frame-test.cpp": "233d4520f3bd200cad1f1ea580e9a2eaaf382822b90aa262d4294f8a3bf68d7f",
+    "native/client-import-test.cpp": "c74f47f1e4233681ab63adf3a51396cfa7c8a7fc0769eba9e314ccc82471de4a",
+    "native/client-observation-test.cpp": "bc9a36f1d62669904d5b7003d7b299ad2ee3a836c8f13f381a6669915c74e336",
+    "native/client-producer.cpp": "b332305b3c4cdcb29f72bd2b01e32f233f496e99a37ca576de269aa056c86de6",
+    "native/client-producer.h": "01f005d7899b2f3b13216a702508adfa39b6cbcbde4f84b6fae1ebc2404462b9",
+    "native/client-resume-test.cpp": "c8dfcdc8564bb6bd8cf9284fe3d12d67c30ca9d5a510a58b935021567719ac2d",
+    "native/client-retained-presentation-test.cpp": "680fb60765c220e59974cda9a8af87c60b5935d48fa8e66671f3e74a0e1c0a2d",
+    "native/client_frame.hpp": "ed5d8d15bcb132ea77b81f36aab49249acfb4b0409a6954b95aa4300eda57681",
+    "native/client_import.hpp": "c62c4a591dfb7f551d17987a16f2a317e67a974f83ceffa2dcf6f2529ccd1211",
+    "native/client_producer.hpp": "b93355d804613a68593bfd2447295287ac04c76427007c5772e6244b4c51d990",
+    "native/client_resources.hpp": "89a466bc3d3503e3d47063eda8ce1aa8ae3cab1ae61d820002d5aaa2a4712696",
+    "native/context-keys-test.c": "7b6b6b5ff7f3f9c6c608e8f1f1d916328792ece455dc3ec7c37d1e3a90b850c9",
+    "native/context-keys.h": "2620c6e2b039c248b7a5f5306e9916a5b1dccc98cbdd4a896d903d834850c05f",
+    "native/control-admission-replay-v2.cpp": "d221e0630f48cae7b5211e2230817059b753054ece15e1f40d9ac7b58065df4c",
+    "native/control-admission-replay.cpp": "d3d730789eee580df8ac35bfa8a949039905fded2139dfe30a80c022928db300",
+    "native/control-confirmation-fixture.cpp": "9fbecc43b61202f6e36142a3e799df01b1a31bd32255a2f34b7496d7e75765a6",
+    "native/control-outbox-fixture.cpp": "f9850811275c90b1a72973f70626106d76a59191a627ff307490b343802fa30e",
+    "native/control-quota-fixture.cpp": "9c1bf07df9a17524aba4e817938df7418e7d5ab0d3e791d80fb2872e3a9751a6",
+    "native/control-reservations-replay.cpp": "509e3695bfc46b37357ceb712045e9a03d6b7b2905953197c695944afcd7c268",
+    "native/control-reservations-test-v2.cpp": "ec9010611ac5fc5e8cad459cb2a2a815d34e8b0b88ce64fc3574cf03ade99fc5",
+    "native/control-reservations-test.cpp": "8006cbbcfe28784132308afc03b332bf964a5038f887fd6378bc18abe9065c05",
+    "native/control_reservations.hpp": "a02ce37fd56bd9422c1a4d3ec2ef7894d90f0d9afb2de8362d906511e132ef0a",
+    "native/controlled-preview-host.h": "4d88000dcf82c899b30d6658fa4554da0e8d3078f696c374bfe4405dbbac7dd2",
+    "native/delivery-extension-test.cpp": "4d9ccdff37c8818ec6f70b93393e94a46f1f1b3506606a692549cf24c38972c8",
+    "native/demand.hpp": "3b01ba43bc50719509323e98212cbaa49e33b00b5bdf80297da049ac41332ea2",
+    "native/detachment_journal.hpp": "78545eb8cab615696f312741908c759ef278ab0b34c1409679b21c0e6e0a5e04",
+    "native/dispatch-output-bounds-test.cpp": "90da4858b3832edd3e9068e12b2636725a88a35ee1f433c54f4e3ab73b8cf40c",
+    "native/dynamic-enrollment-test.cpp": "bc8dd70ec9b8b5ce2f428cb82578389f9349d24b3ebdb423ccf725b5fd8c8278",
+    "native/elm-preview-policy.cpp": "09ceea8d2391181d5dc7757f2bec533eb7df4a0db94164711bc31f97248f7780",
+    "native/elm-preview-policy.h": "9f72dcb82e04e4a663c1481dd4f55f5d40fb0fa018356aa4ab0e163af0eda9cb",
+    "native/family-fd-test.cpp": "4129475daf2dbcc997ee804f6f2cc1ae97c373adddc891a95ec6cf043f98291d",
+    "native/family-frame-test.cpp": "7f5421a78f071a081edb32b8db0402c0e8a855df150ecdeeba6298cf94ed840c",
+    "native/family-source-test.cpp": "25c2402f9b6e1c7692633a2b27b69a961284412cf802fb600ad3ff2f97380b9a",
+    "native/family_frame.hpp": "8c1fb4bcd10d15dba3b3dcc82e3b46cd185efbb6101453e54e7d08bb7d5666bb",
+    "native/family_producer.hpp": "05e8ad81dac3841e3ebe2355ec826e36e8326fded94ba6baff1fb9c63c6c9990",
+    "native/family_source.hpp": "73362d6d9c707ab54ab833614d44e28531ad5f480fdfea82e18a1e82351c6bee",
+    "native/family_style_crop_fd.hpp": "bf59599f5ceeb41381a1fd05fb045c52ec3cf47faf4706c38de8dd595f902a53",
+    "native/generated_backdrop_fd.hpp": "3f60c0cffed16e60ec90b8f8365ec3f278d5c8cb41db2ce5b85c4929d018337f",
+    "native/geometry-carrier-test.c": "770835580c7a4a2e21e49a9c3da586ee3ae59e66a92320dd7bb12fa8e516d921",
+    "native/handoff-test.c": "819b5ac3f54f602a48be908bdeaad0d0689ba8a2f95d57aff1593f14e598b96c",
+    "native/host-fault.h": "6a2873a2d5083ee7a2542115452c343cc2cfbd844df022770d0a138424cc1dfc",
+    "native/host-journal.h": "bc6c25b28911a9704e64d56326fa00eeda3b71e61a1084ff0c9e5d90cf609917",
+    "native/host.c": "e5dca3201f7d7b506476829ddf1c4bf1c92c048445bcea3f4bc1821e4f489e7d",
+    "native/imported-admission-test.cpp": "4440d17aea9172b547a66660cb30ebe27df821f627f9fae8861fcdd8d6858d6f",
+    "native/imported-allocation-test.cpp": "c621bf4eb3af2cb9f4dfaed86745f682de465c36815e71ea9020490e1027b781",
+    "native/imported-clients-boundary-test.c": "04b444d7d4d0c8f7f945d6f5e9996cfe3f23455624f6b933359b7ac1ee9737da",
+    "native/imported-clients.cpp": "c60030901bd8695510bcbf758ad501bdeb9198093d5ca4204f7c6144dc9e8d4a",
+    "native/imported-clients.h": "cc719de38edeaa9f9b9f60f079080ab233fd39f2bc20487109bdcf2a044b72ca",
+    "native/imported-control-guard-test.cpp": "2c157817565956b3a21bd97ef5cf84238cb6f45ef4ef7f20e4a420b28e88242e",
+    "native/imported-control-readiness-bytes-test.cpp": "db0a23bd14b32857ce9b2cc15656317815824f382d54c269240f72e87de59653",
+    "native/imported-control-retirement-test-v2.cpp": "0aef0648c3d4a1c53829598351133a1dceda1a25d93b72243c3a8a35eda2bc1c",
+    "native/imported-control-retirement-test.cpp": "ba5d0c4b41a32acbda7a35bef05f4ba2a6ea7e9be79ffac6c1daa6f61f69f904",
+    "native/imported-control-ticket-test-v2.cpp": "918a5eca9ab7c5d215bc6f0b10994deb824b4865240f7213479ed684a42ebecd",
+    "native/imported-control-ticket-test.cpp": "1e7c317a6eafa7865713dcb0f5b45ff0168841177ead8c8c06f886f635123411",
+    "native/imported-controlled-c-test-v2.cpp": "b638f3dc10735ed5d187709d24fef04c84804dc90bdf91b50846e3b9390eea23",
+    "native/imported-controlled-c-test-v3.cpp": "c5b52a66337bfae25483251b3e91b1f98a90eca8ba4b152d6539cd24b78c56e2",
+    "native/imported-controlled-c-test.cpp": "b3e2bea1bc545e3b9bee4bba85761a4fc8d0606ab8dd4bc1c163e7e6ff109fe2",
+    "native/imported-lifecycle-test.cpp": "14e7969e5228d013b590f912605cdd846235de67e8e13a87e644d123136d6a2a",
+    "native/imported-resource-replay-v2.cpp": "64fa1274a65addcfe1c2059933d20887e49337796e630e6f44d5ba15e48af29f",
+    "native/imported-resource-replay.cpp": "8c998821656f06803b0baeee825448598e8938e63e88b05ca25ac4259310dcdf",
+    "native/imported_admission.hpp": "9cd619f5774d8fb40d712f6f073c00c8c337770e7d173413951fadf3dd321c78",
+    "native/imported_clients.hpp": "df4b938e8632ec559de257b8fcd4eff196647e19806feee9de486cb770587217",
+    "native/imported_control_admission.hpp": "f7ba0e45b433013b38d7c370a819c8d2b2b16bdb3c940357e89e3f974d2f260a",
+    "native/imported_enrollment.hpp": "970d2e8027dfdbbbb599f3de7d5132b9e7e27e8e0509622e7ae3ad18eeef380e",
+    "native/imported_feedback.hpp": "6760465caf1b6877aadb62776fa050f7a44848cd4a9061ce89fdbac96604b9aa",
+    "native/imported_lifecycle.hpp": "1d4efa4daa2753e43a822e3727dc78458941d72d03e4e01a1d041eb7f6bd9ded",
+    "native/imported_subjects.hpp": "03e7bfd41bf4ace363d2f95bb1526515c6c9f8bedc69dffdf71fbae13f56f5ff",
+    "native/job-control-replay.cpp": "d56f84788399d7eff263a6b4779f7109bf41c2e86c9c76d95220b9571fef21b5",
+    "native/live-window-detachment-c-test.cpp": "f3af066153a8e77e9f166475f702ef1f6d0de05634b2e2f4677b622d7ed36234",
+    "native/live-window-detachment-cohort-test-v2.cpp": "0185a1e133057b66c96fb7022b3aaa3a5d0744a3e5d310da917c650acb034006",
+    "native/live-window-detachment-cohort-test-v3.cpp": "6ab95f7a816be9b2be9c07748e5f2e501d2f43bfca98a128c2ceff9447556061",
+    "native/live-window-detachment-cohort-test.cpp": "53ddb35217bffe0608870f607d2b342b3dccdd3e69be9c68b0f989f0eb307743",
+    "native/live-window-detachment-fd-test-v2.cpp": "f1befd7e24eab28d0b90ff9382a6714516fb6e03eca572f302bd09fd4e3fa8bf",
+    "native/live-window-detachment-fd-test.cpp": "fb18ff640c1e8d8affa0584f2d23b51e5a1320441d49bd1edc2242c2b974cbbb",
+    "native/live-window-detachment-replay-v2.cpp": "bbce2e7728233e3768fb3cd875a93473e4978dc37aae682452013172f5aa1e07",
+    "native/live-window-detachment-replay.cpp": "ea0746af4877e503ad3c0b860aed0e8ed2e77eb5ecc1f4e9c4ed9fd8e10e2824",
+    "native/local-feedback-test.cpp": "01b247fef9f6378db1616430fb7f04236e584085269542eaa05c4a6581612b29",
+    "native/metadata-icon-test.cpp": "cff027f7a3d29668893aec03be50f5dbae49fb2295606a8e8baad34b64e028d7",
+    "native/native-outbox-fixture-v2.cpp": "a3dea18888534a5226df7368c65261ebf59b372cb547c9002c698430e45a684f",
+    "native/native-outbox-fixture-v3.cpp": "8f1366195bda569df5a7c40dd15d9f5f20434cf8fd8f4b5b486b4d89d40b9283",
+    "native/native-outbox-fixture.cpp": "48db9960636e5c8defa92397a7d71cffd7073f87b0069a0943e533e82eab1972",
+    "native/native-outbox-recovery-fixture.cpp": "7ae7956db4cea25c556ca648d05baf0d99780d86cee8de97130f2d7732067252",
+    "native/next-intent-test.cpp": "6ad459d12146dbe18b6431b3ee863318c10d45a0806f63d9b5400812f20e80b9",
+    "native/next-resume-test.cpp": "f4f00450ca31f382b71af7b7158c40ee199439c9f8c23f3a4062075e190ab152",
+    "native/persistent-policy-lifetime-fixture-v2.cpp": "12ddd81f972e3636cacaed611503f1d25de71594650a785d2c737d337b5e58da",
+    "native/persistent-policy-lifetime-fixture.cpp": "c907dce0a0c12273eb0852c096bf50abb00cfd56eaf32170bd4ddbc260d1022a",
+    "native/persistent-policy-native-fixture-v2.cpp": "06c01e0fa23d994cf59460e52386f1581ff1f0140d1003554879f4df477a0ddb",
+    "native/persistent-policy-native-fixture-v3.cpp": "fe599a8498fc9da638afdefe9e4f4cd7f16ec1ba9db85417f62046064f6b9e61",
+    "native/persistent-policy-native-fixture-v4.cpp": "47be103f61a99ac26a53ff29ca515553493d8269768736e43d81e1fa7f49590a",
+    "native/persistent-policy-native-fixture.cpp": "e19bcb83cae422ef08c34140f18c03f15b5b8a6039dc11489ece2711833a0ea4",
+    "native/policy-driver-fixture.cpp": "602fa3ac350a054ce50418ffbb55e77e0b52b662e593a74d68f3d97ce479725c",
+    "native/policy-driver-output-gate-fixture.cpp": "bd4e4a9341ee03e8a729101f04cddba02a692006a87159d526670f7e87ecd109",
+    "native/policy-driver-output-model-fixture.cpp": "370a82e182f8f26b173c090d42c4c09b5172c5b8e21cda2fd0b25863a782ae1c",
+    "native/policy-driver-positive-fixture.cpp": "51942c33c63490c6d714d49eac997bdd3a1ae994cea6850b1500ed7f7653c6ce",
+    "native/policy-driver-realm-reuse-fixture-v2.cpp": "47e6db9d4fb22bc935499d468f0b66a3008661742c851ae74f8e97f20fa71aa8",
+    "native/policy-driver-realm-reuse-fixture-v3.cpp": "db652a1be8a3450a7d3a5d75a7dcf46cb1e16501cc6ed6f45055f629c3857658",
+    "native/policy-driver-realm-reuse-fixture.cpp": "583fe7ec523f160c4259f70281d0518b94fc9a0fe5c79d6c8d2d5132686c078b",
+    "native/preview-bootstrap-realm-c-test-v2.cpp": "90b56cae9598bb11f4e814acc1c14c23f3cc9302a9d3d6a9edeb68c33362e178",
+    "native/preview-bootstrap-realm-c-test.cpp": "3c8540dc2e796a6a97a9d74350fd8a2342bd8ce7327a1eabb94091dc074d87ac",
+    "native/preview-bootstrap-realm-replay.cpp": "544f71686bd3cc94ba126e711c16814ddd91c87fc901b92f2a5760c42e212f6d",
+    "native/preview-control-delivery.h": "edbcf3127c6fadbdff1eb2c361b50d0e72902a9c9e2ce456b0fb64ac7f6653e3",
+    "native/preview-control.h": "eeb41047554ba5a84f75614a62c1de93e871b3099a12560584150d6c4b6540d8",
+    "native/preview-integration.h": "ffacb4ed6abe6b8019f5bcb489b8abe69f28f863ca9079f29cd1c075a0a49e2a",
+    "native/preview-policy-driver-output-gate.cpp": "b39de43aff3a82a13169ed56eae0430b707056e5d2b667e22e4d6b301135eead",
+    "native/preview-policy-driver.cpp": "4cb727de2343848684fa4a8ca6a9f9c6c58c8fa9dcb3abf7bac108cb590dbbd2",
+    "native/preview-policy-driver.h": "5405ef4ca97dafd30970e39771855d2858083586ae72f0f19beef769badd5e97",
+    "native/preview-provider-bootstrap.cpp": "cd2b1f1c45b2679f87656c7a7749a9cd1060ca0f224c1691ad1dac2350346607",
+    "native/preview-provider-bootstrap.h": "7220bc8df0bc40da2f897e519cff5340bc0eee84582345572b6b5c290a714c35",
+    "native/preview-realm-c-test-v2.cpp": "0ea82913171622a6b77c447e36dbdb6fd9b90226f06a783419177da3db39c170",
+    "native/preview-realm-c-test-v3.cpp": "0be0530292267a38acd9a187eb2c5b6eef5e7e46ffd535aa58fc12b8fb7f6f23",
+    "native/preview-realm-c-test.cpp": "c46bc8fe3d18fad7da4d78d59e3736411833707a21566548145cf4d7b185a7c6",
+    "native/preview-realm-replay-v2.cpp": "1d322f69071df3686a29d9334c117c7bd654be01f88fb4b18b179feb6b7fafee",
+    "native/preview-realm-replay.cpp": "e0fd1d74d53b8aff8d28972fc9b0e56495084b9ea9e6c2da6aecf54b462b4800",
+    "native/preview-uri-api.h": "858bcb120d1c2bba13ab44f2b284450e4f7fca3002119b2a93e211cd0f501e88",
+    "native/preview-uri-router.cpp": "f619de265e26d7b4444cfda8f44a8411972cf79289ec1bcf474931a3736ea620",
+    "native/preview-uri-router.h": "cd0b10eb5b346a7a8d1a3042cd0d10162b8e5943894f4885e62ad0fd9bfc1291",
+    "native/preview-uri-webkit.cpp": "5f22bf0fadcfc984fec41966621e0ca148173fda74eb5a52e39f36b200a412f1",
+    "native/preview-visual-channel.cpp": "dd3238db00121b64ad98879d5a8c982f4689b3e3ae8752e70a83c38b345fdf1d",
+    "native/preview-visual-channel.h": "ac328d43d0d754d0cf73f714d915f4d97ca7018b948431511c13b1cf688f397b",
+    "native/preview_bootstrap_lifetime.hpp": "48135f857ddd138a2c356174d6435a2b0988bffb76e6d89b228e7689072804e6",
+    "native/preview_broker.hpp": "9c57428130093f8d815b7851004f103897deca278bbe4196e2116bec85a323ed",
+    "native/preview_client.hpp": "b4eb7386f0bfae58aaf07816b0b70f7605c921694ff30681bad848abac11fb38",
+    "native/preview_delivery.hpp": "619d3e826112d0b01abafbdbed6cae45e8851ede4ff39301fe4bbe76cd848c1d",
+    "native/preview_fd.hpp": "60fa114f7f2eb819c7a09085ee737c23d21b31f0ba177d967ff99f1425272a60",
+    "native/preview_icons.cpp": "48aa83cc63d4f1f08b9333372cb3f63e0a25bf880cc17567098079284ee79693",
+    "native/preview_icons.hpp": "6af2174049d623e824fdcf66ddd3a18d0b48a2c34c7159c1651dc0e4b53d8a32",
+    "native/preview_metadata.hpp": "1cf84f1094cd8ccca90fcc5c44bed4182716e256792bb542c771c8bc1ce9ad5e",
+    "native/preview_png.hpp": "308007220baf1d7f2ad30569237ffaf7d6427d900ee1243811480402f188e670",
+    "native/preview_retirement.hpp": "b8af8a43d3ca8eeebc8a0b24a9f99b846018db8e17bcb18ea31ffecfed595b0d",
+    "native/preview_uri.cpp": "9ea85c70a77841c5035dce95f61932f92153f607e7be78bbd122819a3c3d8f77",
+    "native/preview_uri.hpp": "4edca24456f4d0c1245a211ddb9de23f35f67436848e7486f1604abd42a31212",
+    "native/preview_wire.hpp": "2b02108a819e97106cbf38e420871bc4ee10656fd6f98905f25c30fd838d283d",
+    "native/provider-delivery-test.cpp": "4e21203fd7acd32ede476df1137b6ea812cb26fa977d05296a884401adfd8fbe",
+    "native/provider-grant-test.cpp": "8f39b5828b946d5fba2f7df689578a50f79cf7daf2e0e8443ab87dfd7b89ac22",
+    "native/provider-ownership-test.cpp": "d79fe711a90d24ac96e8522a33a4dc3582989b40b692aec73109e365e3f44675",
+    "native/qa-reader-control-test.c": "6bd57d3be5b0f3d0e071993e93b188fd0b2a87ae91dada60120f8e9142a07ed5",
+    "native/qa-reader-control.h": "1a504ee3959b78c73a8f9613b6a6c4f9cc51bc198d1dbd3b6fe1fd352684ccf4",
+    "native/realm-ingress-native-fixture.cpp": "e540d3e734cae0a3797bf84ebbf6283b218e2d8a71ae27982248f0f51917fcfe",
+    "native/receiver-extension-test.cpp": "a35501610fadf7cc4935b970c87b683fa9a2216ee2eef3da8cc70afc652b8d59",
+    "native/reconciliation-carrier-test.c": "38210317eff28d8a436e640e971f91df71ffcc3b17e82c27a60ee34f57d9f73d",
+    "native/recovery-presentation-test.c": "812bbab1640e12269bc195979cd319a96a505157ba8f5c637eebfd5561bc8e67",
+    "native/rejected-enrollment-test.cpp": "f38a7da3423eb939f76c8882f2d2b057b9af865fd9cd3d96dbc9741918c99aad",
+    "native/resume-enrollment-test.cpp": "b14e33de4a2c1ff6b8e38737f66d8d6f906aba07e609a67750a5a7055434921d",
+    "native/retained-client-command-replay.cpp": "d43b2f11f03d1b760c5f15c4b61b673a916eb9d8880513ee8cb2c03efc541cad",
+    "native/retained_client_command.hpp": "f07d8b840865595084dd04f8bdaa5e4a89dbd9bee27223cbba5ad0de927aaf15",
+    "native/retirement-elm-channel-test-v2.cpp": "a7cd7cd427e5f8e7360156f0445993584c9602cc5cad466a72201bf6bfac5902",
+    "native/retirement-elm-channel-test-v3.cpp": "0166a6db252a7c2101a26425999f2f85955ddde9014795f241fd56359c5b0a81",
+    "native/retirement-elm-channel-test-v4.cpp": "5ec17c2cacb3ca3cd2dba94766260098485ecdc2f68585f7dee3f2b6ad7fa225",
+    "native/retirement-elm-channel-test.cpp": "38205ebfb02b67ad12a3d454947a0efc93e80f9b8b191143801ab83a4bb47e20",
+    "native/retirement-fair-poll-test.cpp": "50e23ab69570050fc2814549e9146a6f58413ae4f9cd0d090db4c34ceba4f8a5",
+    "native/retirement-observation-test.cpp": "2f60ee0cc71f4cc611f57ca3ffa3ef4a013233a0c9de13144b207729f0a478f8",
+    "native/retirement-poll-replay.cpp": "beefa85561dd03590f7d713d66520072def838907560fab86a348abcb5e773a0",
+    "native/retirement-readiness-replay-v2.cpp": "9f10b45ea7817e6018a00461dcce0e83549f8c054bc7cc3a524dade9c297328c",
+    "native/retirement-readiness-replay-v3.cpp": "b596126e85083244f576797735e54a632832af7de37b0a5c14aa2b38243a9859",
+    "native/retirement-readiness-replay.cpp": "ed336bf6770a5bc130b1d84e8e99e19d0cbb67c5c5133a876c1746ff46e6fb23",
+    "native/retirement_journal.hpp": "c3b5e1173f865e20b72e9282d31b36f5a341645a695385a100885f6ed96d1a10",
+    "native/scoped-presenter-native-fixture-v2.cpp": "fb48cdc742b419208856367ce720e9be0c1b7e27ca5fdb17cca8b2159ce001c9",
+    "native/scoped-presenter-native-fixture-v3.cpp": "77d2c64c972773d3ac112271bdfe6f363b874cb5e3adcd027f426bd6fe9ffd62",
+    "native/scoped-presenter-native-fixture.cpp": "6681cfa09c3aaf3ed623d252fe3d944114459f72ad472f1588d65c2f133bc925",
+    "native/shared-context-test.c": "8cb1d6725456b17df2847fb2dbbf501f34688375bf63d28f693eb67653e83ce9",
+    "native/shared-context.h": "19e1415305fd87a0a74287f5a541b38c80a56df9ab8179a08d357d8cf8f061d1",
+    "native/shared-host.c": "e8e907a2b850142facbf8af1d2abfc519b94e3d06d5889889b15e199a50e5eeb",
+    "native/surface-test.c": "7cde33ca05eacae1aa25cffb1e6507901e14f44ae74304cea90a3dd26fef559e",
+    "native/surface.h": "80e3466a1b982e150e9d3c31e4cb4b360e66ce89d3265783c8f488bbefaea6d1",
+    "native/uri-capability-replay-v2.cpp": "059619893fc04deaf4d55e715b2164c4d32145acd5cf9b1b2dba0289a54c05a4",
+    "native/uri-capability-replay-v3.cpp": "8f6f1bb9577725b9c4a1e0f09aa52a1231deaacb3ecda3c5a57388ae9c48a6d6",
+    "native/uri-capability-replay.cpp": "c2c2371474166feba90b3546725ecef2a8e975be2e4eef6d635aa9e53bda30f6",
+    "native/uri-capability-source-fixture.hpp": "765f4f0a9a96978a98cd1eacebd24f29339eb3b80a681adcd7ec4f4f27b3fb91",
+    "native/uri-capability-test.cpp": "e75092783c472b5da74a32a49433a40fea6c588a3421995b3ef9ad6f1c7dffb5",
+    "native/visual-channel-boundary-fixture.cpp": "6f4937c62c1e28480411b61a1e96a7a7f6d281210aa7a00e5da8520e07b2953c",
+    "native/visual-channel-fixture.cpp": "9d937d481c96980523e8632a67df671a9a564034b7fc111362bbfe15bd639cb7",
+    "native/window-catalog-test.cpp": "c9efe0d6f7f7db6abc38ab717d16d56a014a2804d39281a28bddd7eb030548a6",
+    "native/authority.cpp": "02eb343f93422074ed658d69eaf5a8be66a0804c9ab762b9f61e4d3b14a50495",
+    "native/navigation-modal.hpp": "f3a1fdabeaa4abdaa3bcd839e0a3b62854a844cd791dd338d8f1a3e5bb488c1e",
+    "native/switcher-bindings.lua": "bb5b08c8c98f1699ea6bbec9615098d343299625bc8c0bd59d110576ef6c2f7c",
+    "native/snap-placement.inc": "736badc0ebc3fd423286778539a453f1a704d26b3f41a8fa6416d739b4015d64",
+    "native/geometry-effects.inc": "b299e891fd298394acc654df76924a01d7c1611472cdbec5a2d8dd3b9ca8c797",
+    "native/shell-bindings.lua": "dc439fb1cbaa02aa6140ed6dd9d39310286d50b6f5327c6e4e3f5eec03a49efd",
+    "native/transfer-workspace.inc": "5e1a64474eb248e9ed13d0860d1fe1aa1ec99eb2b3984723645d89e6beddb026",
+    "native/host-journal-test.c": "5d3e286f16a77130ce43b40b66df707c4a9d8bd485615e2e83bbb2d6362b0191",
+    "native/motion-preference.h": "9e288173ae5ecc6a97d89bb03f577b988f5e7e0a1ef380c4667d7abae0fbc2f7",
+    "native/motion-profile.inc": "60ec1e00982bc1e58be76805d4be52faad12c15f5822521dddf4d3042e7c4b62",
+    "native/picker-probe-table.hpp": "82663226635882932bd6ebdb298d63f1ca0be68f7e271b9e56d141cb06e1492f",
+    "native/picker-preview.inc": "dd012861b1f54943bb82d23378766a35d644c9ca561b5a412dd048ee05c3eb00",
+    "native/capture-fd-server.inc": "b81d77ec641f05ecbe90ffbef38fc90935f8ec6d56e636b5bafc04cc7ac31557",
+    "native/picker-previews.h": "3de20eb93294c790dae3e950a8a94221be47613d181bfae7f2dc93468213ab56",
+    "native/picker-previews.inc": "8e0799d2a56b08e7bee8c64fe098168ac2f1f4f3ab8a4b53e9e1363fa0cdcca3",
+    "native/geometry.inc": "fa945f6ba2521d9c54f1fdcd7bc9772b95a1b2e28d0772ef80282eda3ae38dbd",
+    "native/shortcut-bindings.inc": "1639fc1d2aa90f45e7d49eba324fb13bcc8573db8ceb8007f22f5742ee72af21",
+    "adapter/admission_ledger.py": "2faf5eb03dff6993de707f2d7458b929db881f4102bdc1ec467d3f7aaa4413d1",
+    "adapter/catalog_authority.py": "ad20204afd3b203eb956918300c8da4cb4765b3c5ad86e701b0257a54b8fb9cc",
+    "adapter/catalog_transport.py": "43bd1cd1059b87ce4d349d72e4b2a917ac1bdc3dacda2f60563fa621e05a4b84",
+    "adapter/daemon.py": "819b945c7d1c92d6360045db297715ac9ff7ac72024741b8ca3238fc24d08d67",
+    "adapter/delivery_ledger.py": "ce1ff3528b454bdca7412389f5693f69023a5c76bc9586541c1091c1cddc5ca4",
+    "adapter/durable_ledger.py": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+    "adapter/effect_endpoint.py": "1371ff6b27df251677edfb58cd1f7d164361bc6d6f61cb36a2737f101d72dfeb",
+    "adapter/endpoint.py": "e254b870922a46b935de9d85db1de56129838ea2cf73eeb55c9fa16e8539d731",
+    "adapter/geometry_endpoint.py": "17913d31654ab186ae473f131c41581bf41d3d46a0c7fcd1ff660fc4f205823b",
+    "adapter/geometry_size_policy.py": "bcca6dd280911a38ed189e2e8ca6d81ea98c775ef261444f9b1e0f4b9a754888",
+    "adapter/grant_endpoint.py": "4b60a6c7e43aade3f2ce59495600f3b418b781865a7289dae53a189388f5c3f0",
+    "adapter/reconciliation.py": "5f558130f005b722fec187e87a88a8cd69606c786c27beb0decede715c54e5f9",
+    "adapter/recovery_fault.py": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1",
+    "adapter/recovery_journal.py": "bbd6ca5140ec13146182dd36b242f1e383ac2d2731b6f748692bf3563f2b2a8e",
+    "adapter/recovery_store.py": "fa7e852c963bc4602c2066d05e77d47d8535c732775fe04258021accd3cd7be1",
+    "adapter/retirement_ledger.py": "213cbb6ecd5c2218075d2cc98132c1c53680933f3898c757e7ba1848261faec5",
+    "adapter/taskbar_catalog.py": "5414ed1b6fde57a7508c2f3b20658a97006ce3c4203cecbb893fb73de943b9ba",
+    "adapter/taskbar_projection.py": "3dfc3e88bcdeee2d1e39c8f0fac1661b9940d8b2edf54a775fe060321d1a1aca",
+    "adapter/taskbar_preferences.py": "4fde83478c22f7173ef05727a3666ff7ce72076bc05fddfa4fd08705af9a57d2",
+    "adapter/geometry_placement.py": "706899e88f911e1e02bceff8351d6426101ed918d194e7f8ca1f7b707c959614",
+    "adapter/shell_preferences.py": "7e6b319894e5888be00a67ada7b372e5dc1a7119ffabd7c046f4f39b443b0ae6",
+    "adapter/notification_service.py": "068040e66c56ae0d6fafb0c28a3c3e5054d44a7bad321126a2b86b96e2d3b66f",
+    "adapter/system_menu.py": "8e6cba8ae22f821407ab386a0552057de94be3eb03793a87c80817b8c57094e5",
+    "adapter/explorer.py": "5771d66fe29af0aed5e6f81f0d0287374d816ea048bdeaf08ae07a9cdf681e78",
+    "adapter/jump_list.py": "2280c0ab00ff0683c0a28611a99b70ac122887629cafb9226f40c649be581806",
+    "adapter/motion_preferences.py": "ec75685d52f81d5d28f82155b92580015dc897bee6488892c2a8f98e0ffa3633",
+    "adapter/shortcut_preferences.py": "2a8cc047ebfb5040c7dda4f9fd0f9e80a9b1207245458beda3ac26ff2251c185",
+    "assets/activation.js": "251fda68ac11102cde496c093f78ef313163d00043bbf5ae877c578d85ea78a5",
+    "assets/adapter.js": "4569cbf9bcfdcca94f639fd913a6301b858420213adecb723dd591fab4ac98e8",
+    "assets/bar-adapter.js": "dc9f34db9fd382e4b736b0c4a50a641b1e472caadcd6c7da3bb79990e0ea88da",
+    "assets/bar.html": "b88b0b075fc4bcef147357b023823049b5e63e1b49354eb298737ef003328a66",
+    "assets/bar.js": "ba3aeafb3b49f3e5a201f9c7efe1c7f79f22fb659271c814cab7465a53168fd2",
+    "assets/context.js": "a7fccb3fe47e384a6094d87944b9f958c961c24804b92612e8754ea8451c05ce",
+    "assets/controlled-popup-adapter.js": "14d0a8eb0704414a9d7c2e270d23ca7cc2ff8f008e860051f8ab0e31bcab748c",
+    "assets/controlled-popup.html": "1e50055501c563f14762159620e2b56644d88779e5ffeba565d4730ebd4e9e4e",
+    "assets/elm.js": "8add97d2536763124330ad70e0af9abad23c3d175c3b0a80e8f489ed437c5ea1",
+    "assets/index.html": "ba09087a0dda2fbc4a912d2d5d8f8adb90ae553a8027963fdb6b74a7afaa5d1b",
+    "assets/native-preview-control-outbox.js": "183253d5f781cf8527c4e58f31d44653e1b6fe8be58c0bdc89ae714ffb5e4484",
+    "assets/native-preview-proposals.js": "0172bad6c2491f697497cb9f8274ffa99feb8fca1d9942d31fbb2424bb035bf9",
+    "assets/popup-adapter.js": "6ef58cdf1a5f7c04ecaafd96084328f42b3adc3c74e0fd2e483e0979f172dc61",
+    "assets/popup.html": "035cb884860bb1cda77c06773a750c631e5d6f20cf90557989bb37756270c422",
+    "assets/popup.js": "df70e74116c3dfc52e70ad26ea03233f6b07d77985da84913a76a7a8374fda1f",
+    "assets/recovered-native-preview-control-outbox.js": "4d5b641f57080b921789ed7c8f33f0c0303aa286bb444730d6054a53474f0297",
+    "assets/retained-preview-controls.js": "64bb384ee03acbb59619f78f3b931b922ed008d14006133b7294e864b92e93e5",
+    "assets/shell.css": "c221f8bb2089ee23eb0720c223f7a9962fed715be562660c6d7d7ab5105661f3",
+    "assets/appearance.js": "0306235aabfde73e615d55820dde28f5f1f453076e047237efb849ba2aac5a3d",
+    "qa/FeedbackReplay.elm": "8d7e54cb33e1f2f9371d5ebb4da4baba91a1696bfecb62c651d17a1d41306614",
+    "qa/feedback-replay.js": "f140860be28873a9924fff679e4a0d18f1d9d9a2640dc2f0852b1e77facf0112",
+    "qa/check-feedback.py": "9464b7a54fe48aed1ca75015489fa82d335f4264cd9d88870b059184fe2f7bc3",
+    "qa/feedback-browser.mjs": "936b39c907c324d53923a641e825b367969335b2e184e07b81d8657847d1d2ad",
+    "qa/native-window-feedback.py": "d0c45c673ac47751cef680175a79c251674dc19d444eb7eeb3f35dd23ecbd353",
+    "qa/current-feedback-build.json": "6bbb059e99362d59c33ef511c1d91eedd5243c169744da7505431877286eb773",
+    "qa/SearchReplay.elm": "4d8e71a13931e15b811419edeea8fdfb41b28da8776ca4579fcd631cdfae277d",
+    "qa/check-search.py": "a7353a74ebedf8c222656b7bce43b74c6df8b871a5deb05e8e1eb0074f3a6c21",
+    "qa/current-search-build.json": "c5f38055221889ffa5cdd637b5ba27592fa41261cf5f7a090e270b4e17788c1e",
+    "qa/focus-publication.qnt": "7b02f4038a142836a81939e10f95dda7806d8c169de7a5126ddca3052132f9d0",
+    "qa/check-pin-storage.py": "5a436bfae14ea4a0abaae79271e110be96b874aa25d53ce73af7a8d2d1346558",
+    "qa/pins.qnt": "a81e8f4fb9937204f43faebd4de3d546246ab241d4623ba99b1c70469c49f7b1",
+    "qa/PinsReplay.elm": "fc0a790b5528709868d68eb36843d1ce3ca48df75266bf80edeb9414781e2fae",
+    "qa/TaskViewReplay.elm": "c5d0997c2b83a3d6eb56e81dc3eca55a3aa98569c61b02502796bd2437e9645d",
+    "qa/task-view.qnt": "2a679f9c491adc6791b51fb58c71a7f5a9fcea3b27018ce1bb6c4f60933db0bb",
+    "qa/check-native-authority.py": "d06bca4ee340d0f13ed6373a0e38fa444b234e7282932c1c6f7cd59263274e41",
+    "qa/check-navigation-projection.py": "8e4ebd614267abdd46f91786fd995778a6ef98b55807e208b171f114ad1cc32a",
+    "qa/workspace-navigation.qnt": "91e24c0cde7b481c8d5cb2710c3be7f5d4f5e63963c88a36d32329050bee126c",
+    "qa/current-native-pair.json": "5a694e54ac6994e32ecaf8eb2a78a9d8355a93964ec516400b8e020886bd29f9",
+    "qa/check-focus-core.py": "08f56e21163be2f51e2e863d245dabe13fef06717ff325b274cefc2488f9e04d",
+    "qa/current-focus-core.json": "1a113161f65ee02b73a4a5e122c72446b82df78e068d0a4fea7f19203bbd8d21",
+    "qa/SwitcherReplay.elm": "bfc1ef2cc802775da4c3d7672726533a57824b8ce927dc318371093e359a4f09",
+    "qa/switcher.qnt": "f8b2b9b0d08a3aacf5300b2986ae0cd9f53ca795e723fc799a79bcbf165e146a",
+    "qa/PinnedMenuReplay.elm": "561a0dfb93c3e2b7bc8aa200a87741b83fd44fd15456b6cde4c7c8ada39ad37b",
+    "qa/menu-focus.qnt": "87ad97e1c182b5ca98138776a6fcd50567748cb1fd67a6431d9d5be56e06d16a",
+    "qa/dense-taskbar-browser.mjs": "aa0ec17559253de21333ab60a6e1561c44d1b8296298286b61621f9463bb20da",
+    "qa/PopupReflowReplay.elm": "19b1e6e709ab78d8c79825e37cddeb49cde02617e51d286df3971e78bf1b2172",
+    "qa/SnapReplay.elm": "f29d40e9473694f966c00053cf153dc21aaa8e07f32c3e370d6dc058cc25dfc8",
+    "qa/snap-chooser.qnt": "ad575eab3db408cb5b2b2d5d9fa9486cb5afa91c0c409426907effcd2b1093b0",
+    "qa/snap-browser.mjs": "3cbf604050af755d2e02712de389b3c6e0935912bf1e6198b3246ff853d26879",
+    "qa/check-snap.py": "76dd541d746636068184b960f601cb16b6154f5ca48ce6c387084e959bb8f966",
+    "qa/SettingsReplay.elm": "7bdfeee4826187530b1403d157dfcacf1037eb1158b2d2ca274a7cf87525815f",
+    "qa/check-settings.py": "e03f63952f2d66361e6b96b77f6f3c7e7fa54453b890ca2d7eb05aedb2888c6f",
+    "qa/settings-browser.mjs": "b57f88a203065df5cf59ab863d6757139da6b1f9748fd0cd0f5c2b8df0212afa",
+    "qa/settings.qnt": "a171d177b09f2e31ee56e29f75d8bfa37c761bf76588cf942e43d4be3c16ba34",
+    "qa/check-notifications.py": "625f65fe746ff0031fde852dea109dcef158862315219e11129a0387e73d5e3d",
+    "qa/notifications.qnt": "f28e5b1cc02f4599c6e42a783f32e5397c0e390c01913cee890407dcc98380a5",
+    "qa/NotificationsReplay.elm": "e394fd7a466a4d85c20d02dbb1450760763396a1c2e2e206d1e944756a7ec11b",
+    "qa/notifications-browser.mjs": "e80df9b445a8140835a8f3e34b95044da79d60f56ac9f14a43430773b4ff78fe",
+    "qa/notification-producer.py": "28c8f7b1db02cba9afd7f567091f03b75af86049b04328ca752afce1a80faf6d",
+    "qa/system-menu-provider.py": "e91275f8756f2269b2ec73c1c2d5b89fd632f611469502aca770d3e5b76b9e68",
+    "qa/check-system-menu.py": "aab5cc951f4b17b38ff8dd183ada9b22a4c4c75a4f7aa715d6d7d1a845730410",
+    "qa/SystemMenuReplay.elm": "ef691a966db5c845053c2dd1b81e3e0d7f758459c0d1aa59a2268d778b61da5f",
+    "qa/system-menu-browser.mjs": "46ba4feb84e3b3dbcb4c728325be09195a53964cd75d247097c3b776cc6a5cf7",
+    "qa/system-menu.qnt": "49bdff9d446228798c8eb100648d084f9ab5b906a4de5bffeab6637bee83f516",
+    "qa/check-files.py": "0b139e5e7a881a66ad149700b455a1c33721c916e0bb74680427dd7e659aed1b",
+    "qa/FilesReplay.elm": "5e353f83a87e87fde9ea0eb0c85cfe7a1419ac738d647ca0cefb573e62050478",
+    "qa/files.qnt": "e564b7e36d92188a28f93f4061475633bf22211317af713ace19128e866c5aa0",
+    "qa/files-browser.mjs": "12b09fdad64331ac8296f350a31d96b959bd7a865f21e764bcbbf5302a241c0d",
+    "qa/check-jump-lists.py": "bcec6a1b753b4878ca1006d5b6084dc3d873e6d98d3f028cdc8f9a94e1e356af",
+    "qa/JumpListReplay.elm": "2348233902fb1476b895c6ffffa4335dd541618d4ae7d4591d46b29f01a3acb0",
+    "qa/jump-lists.qnt": "9fc806b4887ad88ccc810fecacff43c30530598646d418f2aba00fc49a965417",
+    "qa/jump-lists-browser.mjs": "55da79532acff1a0ebfddecce43333eb2fe2157dab31815ebebf4ff573d7978e",
+    "qa/AttentionReplay.elm": "46ea7fcd9e1a47d01b400738e1fd50cd2da4c7a886f189257f8f14d03d381abc",
+    "qa/check-attention.py": "d848071beb1e2fe5694986a76ec7f74ae669d0ee64c8bf43fdbe0ea85b7bc412",
+    "qa/attention-browser.mjs": "d72a988c0a208b04b7b5274a95acac15aa7f2f87e56b39b7a93a0f1e923d77ea",
+    "qa/KeyboardShortcutsReplay.elm": "bc6d7339ac682d886ab6dd4cf3bee74302d6b1476b19052e3c1a47c9b6451fc6",
+    "qa/check-keyboard-shortcuts.py": "26bd95d5f97b25495ffddae779c6703ce2512aaf8da2f28fe1ecb6d93d9634d2",
+    "qa/keyboard-shortcuts.qnt": "3cff6d0872adf6ee6599091c4f054820ff55b2a610e1be4cedc1464f2b96e90c",
+    "qa/PointerOwnershipReplay.elm": "4636d0433c83815edd84dfd0c09fd49b28a562b5d542b25561285cfc03eb9c57",
+    "qa/check-pointer-ownership.py": "a4b340962613d6becfce6bdc178c6f77bd34a567547c7a35c4c777ca170cd3d7",
+    "qa/accessibility-session.py": "69bc3b33c2b99f0b9d54805e18afcb85ff02314dc9aa4d002f4df409a0e57524",
+    "qa/accessibility-reader.py": "66442e00fcdabbb5a4cc7bb7d283377ee40b42d0f6a1c6ec35c4b93369b782fd",
+    "qa/accessibility-inspector.py": "bc4fe7adba15c29f97137b91848971b65b994c1b8f6282109d7edf1e13bd5c27",
+    "qa/accessibility-browser.mjs": "0152f3000eb5c488ec3fe23441fbbc5f40e594500b4e114cb3e800a3e16c64e9",
+    "qa/ImeReplay.elm": "41a92f4ff4cb5fca34fe2c510c87edfeb3ed8649abf245c941d01d19aa01e9b8",
+    "qa/ime-browser.mjs": "27b5b36e8b5215e58b2d7af5f2aba5b4e55d31f776d49ac5b202e166254e3220",
+    "qa/TransferReplay.elm": "bfbd1e8064e9f24cba2cb71bd8f2cf7beda0892bdb4cff4363b3c593e949dcf1",
+    "qa/transfer-workspace.qnt": "1258181d574c0b537132f405fd0177dc41f9407f96b91ef55cf9dcebefb9c9c3",
+    "qa/check-transfer-workspace.py": "37bf968a380f6e55d3c86f8cbbd40c0480e7a0bc9c9c382448be739b347ed445",
+    "qa/MotionReplay.elm": "c81a02d9644b5d31154017bd77b4cf1f90407d01e2026981a73df18a3a85eb25",
+    "qa/check-motion.py": "99a3590570d8e6671dae44f2241f5a61db939aa5c2d45519bf43b2c700add573",
+    "qa/motion-profile.qnt": "6aa855aa794e13178e48babe025e5ab357293660990862c068e5528f49dc0a7c",
+    "qa/LiveMotionReplay.elm": "b467d8bbd719081942a44a67a49a26b1aea343ab67c229feeb8b81f132d033b5",
+    "qa/check-live-motion.py": "bcd737337e14c13a7b5882adc42197cca84314781e2881e902f9d936481ef397",
+    "qa/PreviewStateReplay.elm": "efefea96e5683b22ae8f7a739245f442293585b0ccce7c810f2b455d2d198847",
+    "qa/picker-ownership.qnt": "b57bc5da5f5ee7d00cfe23ac93269e4b09ee1b25bfea3e93dd57cebb196b9277",
+    "qa/check-preview-states.py": "f235ce161f57d9e7da233578ce1a53ff113c8a827054d8fa9171aed04fb246fa",
+    "qa/native-preview-states.py": "0836abf13375d62bc9bc330ce4dba1602a099cf06ccb332fa533ec89bb699609",
+    "qa/check-pin-core.py": "7a934ef2096d5a76d375470f5e4259212d1c8b246eb1645f27a7d8efd8261cfc",
+    "qa/PinMaxReplay.elm": "370d6af3da784c4cc20ac573c2525fad7ebbff76db4f3ad7b5b358094705b01f",
+    "qa/current-pin-core.json": "36c2ab91e342791794f297abb4272195889292823491eff4740cc5ee55c1d082",
+    "qa/native-pin-max.py": "2f6ffe59073bba00c9d8708925d0d6eab729c9262bdb74a8f5fa2e7fdb80bd94",
+    "qa/native-settings-help.py": "d64a9ed8223e95bb44f5a722a4b6f0ec6b140ba9d198dfffa5c474d2371e5105",
+    "qa/ShortcutPreferencesReplay.elm": "79f023f7ed2379d8761582db541bbde3ad39430422e45ba504314b5cb8909e91",
+    "qa/shortcut-choices.qnt": "c02dc675e25d65b81ed3951f26cea7002630f808a3f5cbb9fb07769d92bfefd7",
+    "qa/check-shortcut-preferences.py": "66c0b961567a3853e5668889cb6754da6e03237b14c2b1e3973a17641fb24ae3",
+    "qa/native-shortcut-preferences.py": "9ffe677f1f9b112f96be0890f91d3e9a058d148ce3792ed6a0276672beb504f1",
+    "qa/launcher-dismissal.js": "6e4783005b6794e862ed0b023e24c32b3b9d1adf2067a696ace0d36bbec6fbeb"
+  },
+  "commands": [
+    {
+      "name": "compile-Main",
+      "exitCode": 0
+    },
+    {
+      "name": "compile-Bar",
+      "exitCode": 0
+    },
+    {
+      "name": "compile-Popup",
+      "exitCode": 0
+    },
+    {
+      "name": "compile-search",
+      "exitCode": 0
+    },
+    {
+      "name": "typed-search",
+      "exitCode": 0
+    },
+    {
+      "name": "compile-ime",
+      "exitCode": 0
+    },
+    {
+      "name": "typed-ime",
+      "exitCode": 0
+    },
+    {
+      "name": "launcher-dismissal-routing",
+      "exitCode": 0
+    },
+    {
+      "name": "focus-model-typecheck",
+      "exitCode": 0
+    },
+    {
+      "name": "focus-model-named",
+      "exitCode": 0
+    },
+    {
+      "name": "focus-model-invariants",
+      "exitCode": 0
+    },
+    {
+      "name": "surface-admission-build",
+      "exitCode": 0
+    },
+    {
+      "name": "surface-admission",
+      "exitCode": 0
+    },
+    {
+      "name": "host-compile",
+      "exitCode": 0
+    },
+    {
+      "name": "host-link",
+      "exitCode": 0
+    },
+    {
+      "name": "host-self-tests",
+      "exitCode": 0
+    },
+    {
+      "name": "ime-browser",
+      "exitCode": 0
+    }
+  ],
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-4d707676706946cbbbeca65003a469c2.scope",
+    "coreLimit": 1
+  },
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "typedSearch": {
+    "refreshClearsSettledRefusal": true,
+    "refreshPreservesUnknown": true,
+    "rank": [
+      "z-exact",
+      "a-prefix",
+      "b-token"
+    ],
+    "keyword": [
+      "z-exact"
+    ],
+    "generic": [
+      "b-token",
+      "z-exact"
+    ],
+    "unicode": [
+      "c-unicode"
+    ],
+    "queryEditHasNoEffects": true,
+    "staleQueryRejected": true,
+    "noMatchStatus": "No matching applications. Change your search or Refresh.",
+    "queryRetained": "nonexistent",
+    "frame": {
+      "surfaceProtocol": 2,
+      "motion": "reduced",
+      "appearance": {
+        "theme": "night",
+        "textScale": 100
+      },
+      "publication": "1",
+      "lease": "1",
+      "mode": "applications",
+      "status": "Choose a matching application.",
+      "bar": [
+        {
+          "id": "bar:applications",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:control:opener",
+          "label": "Applications",
+          "ariaLabel": "Open applications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:overview",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:control:overview-opener",
+          "label": "Task View",
+          "ariaLabel": "Open Task View",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:switcher",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:control:switcher-opener",
+          "label": "Switch windows",
+          "ariaLabel": "Open window switcher",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:notifications",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:notifications:opener",
+          "label": "Notifications",
+          "ariaLabel": "Open notifications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:files",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:files:opener",
+          "label": "Files",
+          "ariaLabel": "Open Files menu",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:system",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:system:opener",
+          "label": "System",
+          "ariaLabel": "Open system menu",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:settings",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:settings:opener",
+          "label": "Settings",
+          "ariaLabel": "Open settings",
+          "detail": "",
+          "enabled": true
+        }
+      ],
+      "popup": [
+        {
+          "id": "control:search",
+          "domId": "launcher-search",
+          "label": "files",
+          "ariaLabel": "Search applications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "control:close",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:control:close",
+          "label": "Windows",
+          "ariaLabel": "Close applications and return to windows",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "control:refresh",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:control:refresh",
+          "label": "Refresh",
+          "ariaLabel": "Refresh applications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "jump:open:z-exact",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:jump:open:z-exact",
+          "label": "Actions for Files",
+          "ariaLabel": "Actions for Files",
+          "detail": "Application actions and recent files",
+          "enabled": true
+        },
+        {
+          "id": "pin:z-exact",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:pin:z-exact",
+          "label": "Pin Files",
+          "ariaLabel": "Pin Files",
+          "detail": "Add to taskbar",
+          "enabled": false
+        },
+        {
+          "id": "entry:z-exact",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:entry:z-exact",
+          "label": "Open Files",
+          "ariaLabel": "Open Files",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "entry:a-prefix",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:entry:a-prefix",
+          "label": "Open Files Plus",
+          "ariaLabel": "Open Files Plus",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "entry:b-token",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:entry:b-token",
+          "label": "Open Explorer",
+          "ariaLabel": "Open Explorer",
+          "detail": "",
+          "enabled": true
+        }
+      ]
+    }
+  },
+  "scenarios": [
+    "keyboard-launcher"
+  ],
+  "typedIme": {
+    "checks": {
+      "startBlocksBeforeFirstPreedit": true,
+      "preeditNeverMarksQuerySent": true,
+      "sameFieldRefreshPreservesPreedit": true,
+      "MatchingObservationCannotAcknowledgeUnsentPreedit": true,
+      "commitSetsOneCurrentScopedQuery": true,
+      "finalInputDoesNotChangeSentQuery": true,
+      "nativeAcknowledgementClearsPending": true,
+      "cancelClearsPreeditWithoutQuery": true,
+      "oldPublicationCannotCommitComposition": true,
+      "closeRetiresLocalComposition": true,
+      "fieldReplacementDoesNotInheritPreedit": true,
+      "finalInputBeforeEndRemainsPreedit": true
+    },
+    "frame": {
+      "surfaceProtocol": 2,
+      "motion": "reduced",
+      "appearance": {
+        "theme": "night",
+        "textScale": 100
+      },
+      "publication": "1",
+      "lease": "1",
+      "mode": "applications",
+      "status": "Type to search applications.",
+      "bar": [
+        {
+          "id": "bar:applications",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:opener",
+          "label": "Applications",
+          "ariaLabel": "Open applications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:overview",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:overview-opener",
+          "label": "Task View",
+          "ariaLabel": "Open Task View",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:switcher",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:switcher-opener",
+          "label": "Switch windows",
+          "ariaLabel": "Open window switcher",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:notifications",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:notifications:opener",
+          "label": "Notifications",
+          "ariaLabel": "Open notifications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:files",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:opener",
+          "label": "Files",
+          "ariaLabel": "Open Files menu",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:system",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:system:opener",
+          "label": "System",
+          "ariaLabel": "Open system menu",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:settings",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:settings:opener",
+          "label": "Settings",
+          "ariaLabel": "Open settings",
+          "detail": "",
+          "enabled": true
+        }
+      ],
+      "popup": [
+        {
+          "id": "control:search",
+          "domId": "launcher-search",
+          "label": "",
+          "ariaLabel": "Search applications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "control:close",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:close",
+          "label": "Windows",
+          "ariaLabel": "Close applications and return to windows",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "control:refresh",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:refresh",
+          "label": "Refresh",
+          "ariaLabel": "Refresh applications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "jump:open:editor",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:jump:open:editor",
+          "label": "Actions for Editor",
+          "ariaLabel": "Actions for Editor",
+          "detail": "Application actions and recent files",
+          "enabled": true
+        },
+        {
+          "id": "pin:editor",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:pin:editor",
+          "label": "Pin Editor",
+          "ariaLabel": "Pin Editor",
+          "detail": "Add to taskbar",
+          "enabled": false
+        },
+        {
+          "id": "entry:editor",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:entry:editor",
+          "label": "Open Editor",
+          "ariaLabel": "Open Editor",
+          "detail": "",
+          "enabled": true
+        }
+      ]
+    },
+    "refreshFrame": {
+      "surfaceProtocol": 2,
+      "motion": "reduced",
+      "appearance": {
+        "theme": "night",
+        "textScale": 100
+      },
+      "publication": "2",
+      "lease": "1",
+      "mode": "applications",
+      "status": "Type to search applications.",
+      "bar": [
+        {
+          "id": "bar:applications",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:opener",
+          "label": "Applications",
+          "ariaLabel": "Open applications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:overview",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:overview-opener",
+          "label": "Task View",
+          "ariaLabel": "Open Task View",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:switcher",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:switcher-opener",
+          "label": "Switch windows",
+          "ariaLabel": "Open window switcher",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:notifications",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:notifications:opener",
+          "label": "Notifications",
+          "ariaLabel": "Open notifications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:files",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:opener",
+          "label": "Files",
+          "ariaLabel": "Open Files menu",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:system",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:system:opener",
+          "label": "System",
+          "ariaLabel": "Open system menu",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:settings",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:settings:opener",
+          "label": "Settings",
+          "ariaLabel": "Open settings",
+          "detail": "",
+          "enabled": true
+        }
+      ],
+      "popup": [
+        {
+          "id": "control:search",
+          "domId": "launcher-search",
+          "label": "",
+          "ariaLabel": "Search applications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "control:close",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:close",
+          "label": "Windows",
+          "ariaLabel": "Close applications and return to windows",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "control:refresh",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:refresh",
+          "label": "Refresh",
+          "ariaLabel": "Refresh applications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "jump:open:editor",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:jump:open:editor",
+          "label": "Actions for Editor",
+          "ariaLabel": "Actions for Editor",
+          "detail": "Application actions and recent files",
+          "enabled": true
+        },
+        {
+          "id": "pin:editor",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:pin:editor",
+          "label": "Pin Editor",
+          "ariaLabel": "Pin Editor",
+          "detail": "Add to taskbar",
+          "enabled": false
+        },
+        {
+          "id": "entry:editor",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:entry:editor",
+          "label": "Open Editor",
+          "ariaLabel": "Open Editor",
+          "detail": "",
+          "enabled": true
+        }
+      ]
+    },
+    "equalFrame": {
+      "surfaceProtocol": 2,
+      "motion": "reduced",
+      "appearance": {
+        "theme": "night",
+        "textScale": 100
+      },
+      "publication": "3",
+      "lease": "1",
+      "mode": "applications",
+      "status": "No matching applications. Change your search or Refresh.",
+      "bar": [
+        {
+          "id": "bar:applications",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:opener",
+          "label": "Applications",
+          "ariaLabel": "Open applications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:overview",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:overview-opener",
+          "label": "Task View",
+          "ariaLabel": "Open Task View",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:switcher",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:switcher-opener",
+          "label": "Switch windows",
+          "ariaLabel": "Open window switcher",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:notifications",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:notifications:opener",
+          "label": "Notifications",
+          "ariaLabel": "Open notifications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:files",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:opener",
+          "label": "Files",
+          "ariaLabel": "Open Files menu",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:system",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:system:opener",
+          "label": "System",
+          "ariaLabel": "Open system menu",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:settings",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:settings:opener",
+          "label": "Settings",
+          "ariaLabel": "Open settings",
+          "detail": "",
+          "enabled": true
+        }
+      ],
+      "popup": [
+        {
+          "id": "control:search",
+          "domId": "launcher-search",
+          "label": "\u00e9",
+          "ariaLabel": "Search applications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "control:close",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:close",
+          "label": "Windows",
+          "ariaLabel": "Close applications and return to windows",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "control:refresh",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:refresh",
+          "label": "Refresh",
+          "ariaLabel": "Refresh applications",
+          "detail": "",
+          "enabled": true
+        }
+      ]
+    },
+    "nextFrame": {
+      "surfaceProtocol": 2,
+      "motion": "reduced",
+      "appearance": {
+        "theme": "night",
+        "textScale": 100
+      },
+      "publication": "4",
+      "lease": "1",
+      "mode": "applications",
+      "status": "Type to search applications.",
+      "bar": [
+        {
+          "id": "bar:applications",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:opener",
+          "label": "Applications",
+          "ariaLabel": "Open applications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:overview",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:overview-opener",
+          "label": "Task View",
+          "ariaLabel": "Open Task View",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:switcher",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:switcher-opener",
+          "label": "Switch windows",
+          "ariaLabel": "Open window switcher",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:notifications",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:notifications:opener",
+          "label": "Notifications",
+          "ariaLabel": "Open notifications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:files",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:opener",
+          "label": "Files",
+          "ariaLabel": "Open Files menu",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:system",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:system:opener",
+          "label": "System",
+          "ariaLabel": "Open system menu",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:settings",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:settings:opener",
+          "label": "Settings",
+          "ariaLabel": "Open settings",
+          "detail": "",
+          "enabled": true
+        }
+      ],
+      "popup": [
+        {
+          "id": "control:search",
+          "domId": "launcher-search",
+          "label": "",
+          "ariaLabel": "Search applications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "control:close",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:close",
+          "label": "Windows",
+          "ariaLabel": "Close applications and return to windows",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "control:refresh",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:refresh",
+          "label": "Refresh",
+          "ariaLabel": "Refresh applications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "jump:open:editor",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:jump:open:editor",
+          "label": "Actions for Editor",
+          "ariaLabel": "Actions for Editor",
+          "detail": "Application actions and recent files",
+          "enabled": true
+        },
+        {
+          "id": "pin:editor",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:pin:editor",
+          "label": "Pin Editor",
+          "ariaLabel": "Pin Editor",
+          "detail": "Add to taskbar",
+          "enabled": false
+        },
+        {
+          "id": "entry:editor",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:entry:editor",
+          "label": "Open Editor",
+          "ariaLabel": "Open Editor",
+          "detail": "",
+          "enabled": true
+        }
+      ]
+    },
+    "ackFrame": {
+      "surfaceProtocol": 2,
+      "motion": "reduced",
+      "appearance": {
+        "theme": "night",
+        "textScale": 100
+      },
+      "publication": "5",
+      "lease": "1",
+      "mode": "applications",
+      "status": "No matching applications. Change your search or Refresh.",
+      "bar": [
+        {
+          "id": "bar:applications",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:opener",
+          "label": "Applications",
+          "ariaLabel": "Open applications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:overview",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:overview-opener",
+          "label": "Task View",
+          "ariaLabel": "Open Task View",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:switcher",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:switcher-opener",
+          "label": "Switch windows",
+          "ariaLabel": "Open window switcher",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:notifications",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:notifications:opener",
+          "label": "Notifications",
+          "ariaLabel": "Open notifications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:files",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:opener",
+          "label": "Files",
+          "ariaLabel": "Open Files menu",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:system",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:system:opener",
+          "label": "System",
+          "ariaLabel": "Open system menu",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:settings",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:settings:opener",
+          "label": "Settings",
+          "ariaLabel": "Open settings",
+          "detail": "",
+          "enabled": true
+        }
+      ],
+      "popup": [
+        {
+          "id": "control:search",
+          "domId": "launcher-search",
+          "label": "\u00e9",
+          "ariaLabel": "Search applications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "control:close",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:close",
+          "label": "Windows",
+          "ariaLabel": "Close applications and return to windows",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "control:refresh",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:refresh",
+          "label": "Refresh",
+          "ariaLabel": "Refresh applications",
+          "detail": "",
+          "enabled": true
+        }
+      ]
+    },
+    "closedFrame": {
+      "surfaceProtocol": 2,
+      "motion": "reduced",
+      "appearance": {
+        "theme": "night",
+        "textScale": 100
+      },
+      "publication": "6",
+      "lease": "1",
+      "mode": "closed",
+      "status": "Connecting\u2026",
+      "bar": [
+        {
+          "id": "bar:applications",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:opener",
+          "label": "Applications",
+          "ariaLabel": "Open applications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:overview",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:overview-opener",
+          "label": "Task View",
+          "ariaLabel": "Open Task View",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:switcher",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:switcher-opener",
+          "label": "Switch windows",
+          "ariaLabel": "Open window switcher",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:notifications",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:notifications:opener",
+          "label": "Notifications",
+          "ariaLabel": "Open notifications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:files",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:opener",
+          "label": "Files",
+          "ariaLabel": "Open Files menu",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:system",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:system:opener",
+          "label": "System",
+          "ariaLabel": "Open system menu",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:settings",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:settings:opener",
+          "label": "Settings",
+          "ariaLabel": "Open settings",
+          "detail": "",
+          "enabled": true
+        }
+      ],
+      "popup": []
+    },
+    "filesFrame": {
+      "surfaceProtocol": 2,
+      "motion": "reduced",
+      "appearance": {
+        "theme": "night",
+        "textScale": 100
+      },
+      "publication": "6",
+      "lease": "1",
+      "mode": "files",
+      "status": "Loading Files\u2026",
+      "bar": [
+        {
+          "id": "bar:applications",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:opener",
+          "label": "Applications",
+          "ariaLabel": "Open applications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:overview",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:overview-opener",
+          "label": "Task View",
+          "ariaLabel": "Open Task View",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:switcher",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:control:switcher-opener",
+          "label": "Switch windows",
+          "ariaLabel": "Open window switcher",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:notifications",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:notifications:opener",
+          "label": "Notifications",
+          "ariaLabel": "Open notifications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:files",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:opener",
+          "label": "Files",
+          "ariaLabel": "Open Files menu",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:system",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:system:opener",
+          "label": "System",
+          "ariaLabel": "Open system menu",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:settings",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:settings:opener",
+          "label": "Settings",
+          "ariaLabel": "Open settings",
+          "detail": "",
+          "enabled": true
+        }
+      ],
+      "popup": [
+        {
+          "id": "control:close",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:close",
+          "label": "Close Files menu",
+          "ariaLabel": "Close Files menu",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "files:refresh",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:refresh",
+          "label": "Refresh Files state",
+          "ariaLabel": "Refresh Files state",
+          "detail": "Read location; never repeat an opening",
+          "enabled": true
+        },
+        {
+          "id": "files:location:state",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:location:state",
+          "label": "No Files window observed.",
+          "ariaLabel": "No Files window observed.",
+          "detail": "",
+          "enabled": false
+        },
+        {
+          "id": "files:home",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:home",
+          "label": "Home",
+          "ariaLabel": "Home",
+          "detail": "",
+          "enabled": false
+        },
+        {
+          "id": "files:collection:recent",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:collection:recent",
+          "label": "Recent",
+          "ariaLabel": "Recent",
+          "detail": "",
+          "enabled": false
+        },
+        {
+          "id": "files:collection:images",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:collection:images",
+          "label": "Images",
+          "ariaLabel": "Images",
+          "detail": "",
+          "enabled": false
+        },
+        {
+          "id": "files:collection:videos",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:collection:videos",
+          "label": "Videos",
+          "ariaLabel": "Videos",
+          "detail": "",
+          "enabled": false
+        },
+        {
+          "id": "files:collection:documents",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:collection:documents",
+          "label": "Documents",
+          "ariaLabel": "Documents",
+          "detail": "",
+          "enabled": false
+        },
+        {
+          "id": "files:collection:downloads",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:collection:downloads",
+          "label": "Downloads",
+          "ariaLabel": "Downloads",
+          "detail": "",
+          "enabled": false
+        },
+        {
+          "id": "files:collection:large",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:collection:large",
+          "label": "Large files",
+          "ariaLabel": "Large files",
+          "detail": "",
+          "enabled": false
+        },
+        {
+          "id": "files:collection:screenshots",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:collection:screenshots",
+          "label": "Screenshots",
+          "ariaLabel": "Screenshots",
+          "detail": "",
+          "enabled": false
+        },
+        {
+          "id": "control:files-path",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:path",
+          "label": "",
+          "ariaLabel": "Folder path",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "files:open-path",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:0:files:open-path",
+          "label": "Open folder",
+          "ariaLabel": "Open folder",
+          "detail": "Open this path in Files",
+          "enabled": false
+        }
+      ]
+    }
+  },
+  "reusedNativeObjects": {
+    "preview_uri.cpp": {
+      "sha256": "06a1fd1c475b6759f0fb40473c4462eba04f62eef7ec6bde6f30308b2bdd06b7",
+      "sourceSHA256": "9ea85c70a77841c5035dce95f61932f92153f607e7be78bbd122819a3c3d8f77",
+      "build": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/settings-1791593903009364193/report.json"
+    },
+    "preview_icons.cpp": {
+      "sha256": "056d2acf41b9a6b5a44e26c4aa1b0592f9e712b6ddf2fdc84385d57da8407c42",
+      "sourceSHA256": "48aa83cc63d4f1f08b9333372cb3f63e0a25bf880cc17567098079284ee79693",
+      "build": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/settings-1791593903009364193/report.json"
+    },
+    "preview-uri-webkit.cpp": {
+      "sha256": "5916cc759dff8170561d2b3897c24f96ffbf61f457b80ebaa730526a36684d5c",
+      "sourceSHA256": "5f22bf0fadcfc984fec41966621e0ca148173fda74eb5a52e39f36b200a412f1",
+      "build": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/settings-1791593903009364193/report.json"
+    },
+    "preview-provider-bootstrap.cpp": {
+      "sha256": "25c9f5fe7a292b7a7223e17d80c4ab77e59524ac9709260d8cf00906c59477bd",
+      "sourceSHA256": "cd2b1f1c45b2679f87656c7a7749a9cd1060ca0f224c1691ad1dac2350346607",
+      "build": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/settings-1791593903009364193/report.json"
+    },
+    "client-producer.cpp": {
+      "sha256": "ec85fc49807b8babb7a9800c02c0f2d3f5627758b5c979bc1f3f4c123ee314d2",
+      "sourceSHA256": "b332305b3c4cdcb29f72bd2b01e32f233f496e99a37ca576de269aa056c86de6",
+      "build": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/settings-1791593903009364193/report.json"
+    },
+    "imported-clients.cpp": {
+      "sha256": "5bb66ebb4c0eac80736e567a09b0854c624300845cfcdb1bc62643b27e52293d",
+      "sourceSHA256": "c60030901bd8695510bcbf758ad501bdeb9198093d5ca4204f7c6144dc9e8d4a",
+      "build": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/settings-1791593903009364193/report.json"
+    },
+    "preview-uri-router.cpp": {
+      "sha256": "664705d977389e11e1873a44c6ee4f412fc5b1195e1f1dc0221bbfd5573a78b6",
+      "sourceSHA256": "f619de265e26d7b4444cfda8f44a8411972cf79289ec1bcf474931a3736ea620",
+      "build": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/settings-1791593903009364193/report.json"
+    },
+    "elm-preview-policy.cpp": {
+      "sha256": "9de1ecf49f7b3e86049a4cf1543d82a2ae2a9ef6c789abc7bd35382afcb8dc37",
+      "sourceSHA256": "09ceea8d2391181d5dc7757f2bec533eb7df4a0db94164711bc31f97248f7780",
+      "build": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/settings-1791593903009364193/report.json"
+    },
+    "preview-visual-channel.cpp": {
+      "sha256": "ebe64245d0c530222cb41a9636d1280d970da1787062b8cf209cf207677638e1",
+      "sourceSHA256": "dd3238db00121b64ad98879d5a8c982f4689b3e3ae8752e70a83c38b345fdf1d",
+      "build": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/settings-1791593903009364193/report.json"
+    },
+    "preview-policy-driver.cpp": {
+      "sha256": "ce9547c68333b4180b42335fd0e37f5e4b3ea169f5778e326be6405414807b54",
+      "sourceSHA256": "4cb727de2343848684fa4a8ca6a9f9c6c58c8fa9dcb3abf7bac108cb590dbbd2",
+      "build": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/settings-1791593903009364193/report.json"
+    }
+  },
+  "binarySHA256": "477b0490a62afbf46cf63b1d83606f95422732dad1356c6e86fe3eb4dc790fb0",
+  "browserSHA256": "60c03e8882f4bb47459a905ede1074e1e746c5b765e437c288e460320540a8a3",
+  "imeBrowser": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/ime-1791594600635488470/ime-browser.json",
+    "sha256": "d142020da03ef36b40dedebafd6efbc6a7b0d0ed93a0530692f867a656c593d0",
+    "checks": [
+      {
+        "name": "Apps Escape keydown retains popup and emits no close"
+      },
+      {
+        "name": "Apps Escape release emits one exact current close"
+      },
+      {
+        "name": "Repeated release cannot emit another close"
+      },
+      {
+        "name": "Actual compiled preedit prevents Escape dismissal"
+      },
+      {
+        "name": "Preedit stays in real field without query dispatch"
+      },
+      {
+        "name": "Same-field observation keeps native input node and preedit"
+      },
+      {
+        "name": "Matching observation cannot clear uncommitted preedit"
+      },
+      {
+        "name": "Final input preceding end does not dispatch preedit"
+      },
+      {
+        "name": "Composition end and final input dispatch exactly one committed query"
+      },
+      {
+        "name": "Commit retains correct caret and focus"
+      },
+      {
+        "name": "Cancellation clears preedit and retains only prior committed text"
+      },
+      {
+        "name": "Other field cannot inherit launcher preedit"
+      },
+      {
+        "name": "No application/window effect is caused by composition"
+      },
+      {
+        "name": "No browser exceptions",
+        "detail": []
+      }
+    ]
+  },
+  "compiledAssets": {
+    "elm.js": "8add97d2536763124330ad70e0af9abad23c3d175c3b0a80e8f489ed437c5ea1",
+    "bar.js": "ba3aeafb3b49f3e5a201f9c7efe1c7f79f22fb659271c814cab7465a53168fd2",
+    "popup.js": "df70e74116c3dfc52e70ad26ea03233f6b07d77985da84913a76a7a8374fda1f"
+  }
+}

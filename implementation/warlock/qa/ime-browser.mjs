@@ -28,9 +28,25 @@ try{
  await call('Page.navigate',{url:base+'/qa/dense-picker.html'});await until('typeof receivePresentation==="function"');
  await evaluate('receivePresentation('+JSON.stringify(packet.frame)+')');await until('!!document.querySelector("[data-surface-field]")');
  await evaluate(`window.imeField=document.querySelector('[data-surface-field]');imeField.focus();window.nativePackets=[];`);
+ const escape=type=>call('Input.dispatchKeyEvent',{type,key:'Escape',code:'Escape',windowsVirtualKeyCode:27});
+ await escape('keyDown');await sleep(60);
+ check('Apps Escape keydown retains popup and emits no close',await evaluate(`nativePackets.every(p=>p.kind!=='surface-action')&&document.activeElement===imeField`));
+ await escape('keyUp');await sleep(60);
+ check('Apps Escape release emits one exact current close',await evaluate(`nativePackets.filter(p=>p.kind==='surface-action').length===1&&nativePackets.find(p=>p.kind==='surface-action').id==='control:close'&&nativePackets.find(p=>p.kind==='surface-action').lease==='1'`));
+ await escape('keyUp');await sleep(40);
+ check('Repeated release cannot emit another close',await evaluate(`nativePackets.filter(p=>p.kind==='surface-action').length===1`));
+ await evaluate('window.nativePackets=[]');
  async function composing(type,value,data=''){await evaluate(`(()=>{imeField.value=${JSON.stringify(value)};imeField.setSelectionRange(imeField.value.length,imeField.value.length);imeField.dispatchEvent(new CompositionEvent(${JSON.stringify(type)},{bubbles:true,data:${JSON.stringify(data)}}));})()`);await sleep(40);}
  async function input(value,isComposing){await evaluate(`(()=>{imeField.value=${JSON.stringify(value)};imeField.dispatchEvent(new InputEvent('input',{bubbles:true,data:${JSON.stringify(value)},isComposing:${isComposing},inputType:'insertCompositionText'}));})()`);await sleep(40);}
  const count=()=>evaluate(`nativePackets.filter(p=>p.kind==='surface-query').length`);
+ await composing('compositionstart','');await input('é',true);
+ await escape('keyDown');await escape('keyUp');await sleep(40);
+ check('Actual compiled preedit prevents Escape dismissal',await evaluate(`!nativePackets.some(p=>p.kind==='surface-action')&&document.querySelector('[data-input-composing]').dataset.inputComposing==='true'`));
+ // Escape may edit/cancel the browser's input value. Start the original IME
+ // commit/cancel oracle on a fresh document, retaining its original text.
+ await call('Page.navigate',{url:base+'/qa/dense-picker.html'});await until('typeof receivePresentation==="function"');
+ await evaluate('receivePresentation('+JSON.stringify(packet.frame)+')');await until('!!document.querySelector("[data-surface-field]")');
+ await evaluate(`window.imeField=document.querySelector('[data-surface-field]');imeField.focus();window.nativePackets=[];`);
  await composing('compositionstart','');await input('é',true);
  check('Preedit stays in real field without query dispatch',await evaluate(`imeField.value==='é'&&document.querySelector('[data-input-composing]').dataset.inputComposing==='true'`)&&await count()===0);
  await evaluate('receivePresentation('+JSON.stringify(packet.refreshFrame)+')');await until('document.querySelector(".surface-popup").dataset.publication==="2"');

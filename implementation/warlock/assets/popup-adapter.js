@@ -73,6 +73,8 @@ app.ports.actions.subscribe(value=>{
 // selection, ordinal bounds and mutation decisions; this is not a global chord
 // journal and cannot attest to input arriving before native popup readiness.
 let switcherTerminal=null;
+const dismissibleModes=['switcher','overview','picker','snap','settings','notifications','system','files','jump','applications'];
+const popupComposing=node=>node.closest?.('[data-input-composing]')?.dataset.inputComposing==='true';
 document.addEventListener('keydown',event=>{
   // Saving or refreshing can disable the focused control and move DOM focus
   // to the body. Escape still belongs to this document's current popup.
@@ -80,9 +82,10 @@ document.addEventListener('keydown',event=>{
     (event.target===document.body || event.target===document.documentElement);
   const node=event.target?.closest?.('.surface-popup') ||
     (bodyEscape ? document.querySelector?.('.surface-popup') : null);
-  const dismissal=event.key==='Escape' && ['switcher','overview','picker','snap','settings', 'notifications','system','files','jump'].includes(node?.dataset.mode);
+  const dismissal=event.key==='Escape' && dismissibleModes.includes(node?.dataset.mode);
   if(!node || (node.dataset.mode!=='switcher' && !dismissal) || event.isComposing ||
-     event.defaultPrevented || event.ctrlKey || event.metaKey) return;
+     popupComposing(node) || event.defaultPrevented || event.ctrlKey || event.metaKey ||
+     (node.dataset.mode==='applications' && (event.altKey || event.shiftKey))) return;
   const id=event.key==='Tab'?(event.shiftKey?'control:reverse':'control:forward'):
     event.key==='ArrowRight'?'control:forward':event.key==='ArrowLeft'?'control:reverse':
     event.key==='Enter'?'control:commit':event.key==='Escape'?'control:close':null;
@@ -102,12 +105,14 @@ document.addEventListener('keyup',event=>{
   const held=switcherTerminal;
   if(!held || held.key!==event.key) return;
   switcherTerminal=null;event.preventDefault();event.stopImmediatePropagation();
-  if(event.isComposing || event.ctrlKey || event.metaKey || !held.node.isConnected ||
-    (held.node.dataset.mode!=='switcher' && !(held.key==='Escape' && ['overview','picker','snap','settings', 'notifications','system','files','jump'].includes(held.node.dataset.mode))) || held.node.dataset.publication!==held.packet.publication ||
+  if(event.isComposing || popupComposing(held.node) || event.ctrlKey || event.metaKey || !held.node.isConnected ||
+    (held.node.dataset.mode==='applications' && (event.altKey || event.shiftKey)) ||
+    (held.node.dataset.mode!=='switcher' && !(held.key==='Escape' && dismissibleModes.includes(held.node.dataset.mode))) || held.node.dataset.publication!==held.packet.publication ||
     held.node.dataset.lease!==held.packet.lease || !held.node.contains(event.target)) return;
   app.ports.requestAction.send(held.packet);
 },true);
 window.addEventListener('blur',()=>{switcherTerminal=null;});
+document.addEventListener('compositionstart',()=>{switcherTerminal=null;},true);
 post({surfaceProtocol:2,kind:'presentation-ready'});
 
 if (window.elmHostQA) {

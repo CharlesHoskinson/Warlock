@@ -1,58 +1,46 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T01:03:04.300527+00:00",
+  "updatedUTC": "2026-10-10T01:12:28.672978+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "first-use-shortcut-choices",
+    "id": "repeated-launcher-dismissal",
     "requirements": [
-      "ELM-UI-020",
       "ELM-UX-023"
     ],
     "scenarios": [
-      "first-use",
-      "keyboard-settings"
+      "keyboard-launcher"
     ],
-    "before": "The candidate installs three default shell shortcuts unconditionally and does not show live conflicts or save an explicit route decision.",
-    "after": "Show current native default/alternate conflicts in Settings; preserve existing bindings, let users explicitly keep them or select a free Warlock chord, persist choices and show correlated saved/native state with no Unknown replay.",
+    "before": "The actual Apps menu reopens through a preserved user override, but Escape does not close that repeated surface within the original six seconds.",
+    "after": "Dismiss repeated current Apps surfaces on an actual terminal-key release, with current identity/lease and correct native focus restoration; no repeated launch or stale close.",
     "paths": [
-      "implementation/warlock/src/ShortcutPreferences.elm",
-      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/assets/popup-adapter.js",
+      "implementation/warlock/src/Popup.elm",
+      "implementation/warlock/src/SurfaceController.elm",
       "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/src/SurfaceRenderer.elm",
-      "implementation/warlock/adapter/shortcut_preferences.py",
-      "implementation/warlock/adapter/catalog_transport.py",
-      "implementation/warlock/adapter/daemon.py",
-      "implementation/warlock/adapter/effect_endpoint.py",
-      "implementation/warlock/native/shortcut-bindings.inc",
-      "implementation/warlock/native/authority.cpp",
-      "implementation/warlock/native/shell-bindings.lua",
+      "implementation/warlock/native/shared-context.h",
       "implementation/warlock/native/host.c",
-      "implementation/warlock/qa/ShortcutPreferencesReplay.elm",
-      "implementation/warlock/qa/check-shortcut-preferences.py",
       "implementation/warlock/qa/check-search.py",
-      "implementation/warlock/qa/check-native-authority.py",
       "implementation/warlock/qa/native-shortcut-preferences.py",
       "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/qa/current-native-pair.json",
       "implementation/warlock/assets/elm.js",
       "implementation/warlock/assets/bar.js",
       "implementation/warlock/assets/popup.js",
       "implementation/warlock/README.md",
-      "implementation/warlock/qa/settings-browser.mjs",
-      "implementation/warlock/qa/shortcut-choices.qnt"
+      "implementation/warlock/assets/activation.js",
+      "implementation/warlock/qa/launcher-dismissal.js",
+      "implementation/warlock/qa/ime-browser.mjs"
     ],
     "verification": [
-      "Actual Elm/root and private-store/native admission checks for live conflict, free alternate, stale fingerprint, revision CAS, Unknown/no-replay and saved restart. Exact owning native authority build and protected keyboard conflict/choice/native recipient journey. Original offline rollback, complete Omarchy inventory, AT and independent acceptance remain explicit."
+      "Actual repeated Apps/context current-lease keydown/keyup and composing/stale negative in the compiled roots/browser. Protected original keyboard-launcher repeated open/dismiss with preserved user override, no pointer/focus workaround or deadline change; AT and independent acceptance separate."
     ],
     "status": "implemented-partial",
-    "investigationStopped": true,
-    "evidence": "implementation/warlock/qa/evidence/shortcut-choices/manifest.json",
-    "nextSourceWork": "Fix repeated launcher keyboard dismissal under keyboard-launcher; then qualify original default meaning, refresh/stale, saved restart, AT and recovery."
+    "evidence": "implementation/warlock/qa/evidence/launcher-dismissal/manifest.json",
+    "missingObservation": "The full original keyboard-launcher operation journey did not start: free defaults report available but active keep after session setup. The customized-binding campaign passes repeated Apps traversal/dismissal/bar focus, then fails the preserved default shortcut focus-recipient deadline. Native IME/AT, full launcher operation on this tuple and independent acceptance remain open."
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -699,13 +687,13 @@
     }
   ],
   "nextOriginalSlice": {
-    "id": "repeated-launcher-dismissal",
+    "id": "default-shortcut-lifecycle",
     "requirements": [
       "ELM-UX-023"
     ],
     "scenarios": [
       "keyboard-launcher"
     ],
-    "reason": "The real preserved F12 override opens Apps, but its subsequent Escape fails the original six-second dismissal deadline. Fix actual terminal-key/input ownership while preserving no replay and current focus/lease."
+    "reason": "Native inventory reports defaults available but active keep after session configuration; free default Apps route does not open within original six seconds."
   }
 }

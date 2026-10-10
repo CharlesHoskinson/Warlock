@@ -118,7 +118,9 @@
     if(event.key==='Escape'){
       pairing=null;
       const root=event.target?.closest?.('.surface-popup');
-      if(!root||root.dataset.mode==='menu'||!qualified(event))return;
+      // The popup adapter owns Apps Escape through its matched release and
+      // composition guard. Never remint a keydown close through this fallback.
+      if(!root||root.dataset.mode==='menu'||root.dataset.mode==='applications'||!qualified(event))return;
       const item=[...root.querySelectorAll('[data-surface-control]')].find(node=>node.dataset.surfaceControl==='control:close');
       const stamp=read(item);block(event);
       if(stamp?.enabled&&current(stamp))deliver(stamp);
