@@ -87,7 +87,10 @@
       if(node){menuResize?.observe(node);const controls=node.querySelector('.surface-controls');if(controls)menuResize?.observe(controls);}
     }
     const selected=node?.querySelector('[aria-current="true"]'),changed=selected!==previousSelection;
-    previousSelection=selected;
+    // Passive resize/reveal observers must not consume a new Elm selection.
+    // The selecting observer still needs to move actual keyboard focus, even
+    // when a utility such as Close was focused before the navigation event.
+    if(select)previousSelection=selected;
     const layout=node&&[node.clientWidth,node.clientHeight,node.scrollHeight].join(':');
     force=force||changed||layout!==previousLayout;previousLayout=layout;
     if(!node||!document.hasFocus())return;

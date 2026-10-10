@@ -1,0 +1,693 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      captured: Map(1 -> 0, 2 -> 0),
+      capturedOrder: [1, 2],
+      capturedScope: 1,
+      delivered: Set(),
+      facts: Map(1 -> 0, 2 -> 0),
+      generation: 0,
+      issued: false,
+      order: [1, 2],
+      readReady: false,
+      rejected: 0,
+      requests: 0,
+      scope: 1,
+      selected: false,
+      unknown: false,
+      unsafe: 0
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      captured: Map(1 -> 0, 2 -> 0),
+      capturedOrder: [1, 2],
+      capturedScope: 1,
+      delivered: Set(),
+      facts: Map(1 -> 0, 2 -> 0),
+      generation: 1,
+      issued: false,
+      order: [1, 2],
+      readReady: false,
+      rejected: 0,
+      requests: 0,
+      scope: 1,
+      selected: true,
+      unknown: false,
+      unsafe: 0
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      captured: Map(1 -> 0, 2 -> 0),
+      capturedOrder: [1, 2],
+      capturedScope: 1,
+      delivered: Set(),
+      facts: Map(1 -> 0, 2 -> 0),
+      generation: 1,
+      issued: false,
+      order: [1, 2],
+      readReady: false,
+      rejected: 0,
+      requests: 0,
+      scope: 1,
+      selected: true,
+      unknown: false,
+      unsafe: 0
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      captured: Map(1 -> 0, 2 -> 0),
+      capturedOrder: [1, 2],
+      capturedScope: 1,
+      delivered: Set(),
+      facts: Map(1 -> 0, 2 -> 0),
+      generation: 1,
+      issued: false,
+      order: [1, 2],
+      readReady: false,
+      rejected: 0,
+      requests: 0,
+      scope: 2,
+      selected: true,
+      unknown: false,
+      unsafe: 0
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      captured: Map(1 -> 0, 2 -> 0),
+      capturedOrder: [1, 2],
+      capturedScope: 1,
+      delivered: Set(),
+      facts: Map(1 -> 0, 2 -> 1),
+      generation: 1,
+      issued: false,
+      order: [1, 2],
+      readReady: false,
+      rejected: 0,
+      requests: 0,
+      scope: 2,
+      selected: true,
+      unknown: false,
+      unsafe: 0
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      captured: Map(1 -> 0, 2 -> 0),
+      capturedOrder: [1, 2],
+      capturedScope: 1,
+      delivered: Set(),
+      facts: Map(1 -> 0, 2 -> 1),
+      generation: 1,
+      issued: false,
+      order: [1, 2],
+      readReady: true,
+      rejected: 0,
+      requests: 0,
+      scope: 2,
+      selected: true,
+      unknown: false,
+      unsafe: 0
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      captured: Map(1 -> 0, 2 -> 0),
+      capturedOrder: [1, 2],
+      capturedScope: 1,
+      delivered: Set(),
+      facts: Map(1 -> 0, 2 -> 1),
+      generation: 1,
+      issued: false,
+      order: [1, 2],
+      readReady: true,
+      rejected: 0,
+      requests: 0,
+      scope: 2,
+      selected: true,
+      unknown: false,
+      unsafe: 0
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      captured: Map(1 -> 0, 2 -> 0),
+      capturedOrder: [1, 2],
+      capturedScope: 1,
+      delivered: Set(),
+      facts: Map(1 -> 0, 2 -> 0),
+      generation: 1,
+      issued: false,
+      order: [1, 2],
+      readReady: false,
+      rejected: 0,
+      requests: 0,
+      scope: 2,
+      selected: true,
+      unknown: false,
+      unsafe: 0
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      captured: Map(1 -> 0, 2 -> 0),
+      capturedOrder: [1, 2],
+      capturedScope: 1,
+      delivered: Set(),
+      facts: Map(1 -> 1, 2 -> 0),
+      generation: 1,
+      issued: false,
+      order: [1, 2],
+      readReady: false,
+      rejected: 0,
+      requests: 0,
+      scope: 2,
+      selected: true,
+      unknown: false,
+      unsafe: 0
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      captured: Map(1 -> 0, 2 -> 0),
+      capturedOrder: [1, 2],
+      capturedScope: 1,
+      delivered: Set(),
+      facts: Map(1 -> 1, 2 -> 0),
+      generation: 1,
+      issued: false,
+      order: [1, 2],
+      readReady: true,
+      rejected: 0,
+      requests: 0,
+      scope: 2,
+      selected: true,
+      unknown: false,
+      unsafe: 0
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      captured: Map(1 -> 0, 2 -> 0),
+      capturedOrder: [1, 2],
+      capturedScope: 1,
+      delivered: Set(),
+      facts: Map(1 -> 1, 2 -> 1),
+      generation: 1,
+      issued: false,
+      order: [1, 2],
+      readReady: false,
+      rejected: 0,
+      requests: 0,
+      scope: 2,
+      selected: true,
+      unknown: false,
+      unsafe: 0
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      captured: Map(1 -> 0, 2 -> 0),
+      capturedOrder: [1, 2],
+      capturedScope: 1,
+      delivered: Set(),
+      facts: Map(1 -> 1, 2 -> 1),
+      generation: 1,
+      issued: false,
+      order: [2, 1],
+      readReady: false,
+      rejected: 0,
+      requests: 0,
+      scope: 2,
+      selected: true,
+      unknown: false,
+      unsafe: 0
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      captured: Map(1 -> 0, 2 -> 0),
+      capturedOrder: [1, 2],
+      capturedScope: 1,
+      delivered: Set(),
+      facts: Map(1 -> 1, 2 -> 1),
+      generation: 1,
+      issued: false,
+      order: [2, 1],
+      readReady: false,
+      rejected: 0,
+      requests: 0,
+      scope: 3,
+      selected: true,
+      unknown: false,
+      unsafe: 0
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      captured: Map(1 -> 0, 2 -> 0),
+      capturedOrder: [1, 2],
+      capturedScope: 1,
+      delivered: Set(),
+      facts: Map(1 -> 1, 2 -> 1),
+      generation: 1,
+      issued: false,
+      order: [2, 1],
+      readReady: false,
+      rejected: 0,
+      requests: 0,
+      scope: 4,
+      selected: true,
+      unknown: false,
+      unsafe: 0
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      captured: Map(1 -> 0, 2 -> 0),
+      capturedOrder: [1, 2],
+      capturedScope: 1,
+      delivered: Set(),
+      facts: Map(1 -> 1, 2 -> 1),
+      generation: 1,
+      issued: false,
+      order: [2, 1],
+      readReady: false,
+      rejected: 0,
+      requests: 0,
+      scope: 5,
+      selected: true,
+      unknown: false,
+      unsafe: 0
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      captured: Map(1 -> 0, 2 -> 0),
+      capturedOrder: [1, 2],
+      capturedScope: 1,
+      delivered: Set(),
+      facts: Map(1 -> 1, 2 -> 1),
+      generation: 1,
+      issued: false,
+      order: [2, 1],
+      readReady: false,
+      rejected: 0,
+      requests: 0,
+      scope: 5,
+      selected: true,
+      unknown: false,
+      unsafe: 0
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      captured: Map(1 -> 0, 2 -> 0),
+      capturedOrder: [1, 2],
+      capturedScope: 1,
+      delivered: Set(),
+      facts: Map(1 -> 1, 2 -> 1),
+      generation: 1,
+      issued: false,
+      order: [2, 1],
+      readReady: false,
+      rejected: 0,
+      requests: 0,
+      scope: 5,
+      selected: true,
+      unknown: false,
+      unsafe: 0
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      captured: Map(1 -> 0, 2 -> 0),
+      capturedOrder: [1, 2],
+      capturedScope: 1,
+      delivered: Set(),
+      facts: Map(1 -> 0, 2 -> 1),
+      generation: 1,
+      issued: false,
+      order: [2, 1],
+      readReady: false,
+      rejected: 0,
+      requests: 0,
+      scope: 5,
+      selected: true,
+      unknown: false,
+      unsafe: 0
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      captured: Map(1 -> 0, 2 -> 0),
+      capturedOrder: [1, 2],
+      capturedScope: 1,
+      delivered: Set(),
+      facts: Map(1 -> 0, 2 -> 0),
+      generation: 1,
+      issued: false,
+      order: [2, 1],
+      readReady: false,
+      rejected: 0,
+      requests: 0,
+      scope: 5,
+      selected: true,
+      unknown: false,
+      unsafe: 0
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      captured: Map(1 -> 0, 2 -> 0),
+      capturedOrder: [1, 2],
+      capturedScope: 1,
+      delivered: Set(),
+      facts: Map(1 -> 1, 2 -> 0),
+      generation: 1,
+      issued: false,
+      order: [2, 1],
+      readReady: false,
+      rejected: 0,
+      requests: 0,
+      scope: 5,
+      selected: true,
+      unknown: false,
+      unsafe: 0
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      captured: Map(1 -> 0, 2 -> 0),
+      capturedOrder: [1, 2],
+      capturedScope: 1,
+      delivered: Set(),
+      facts: Map(1 -> 0, 2 -> 0),
+      generation: 1,
+      issued: false,
+      order: [2, 1],
+      readReady: false,
+      rejected: 0,
+      requests: 0,
+      scope: 5,
+      selected: true,
+      unknown: false,
+      unsafe: 0
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      captured: Map(1 -> 0, 2 -> 0),
+      capturedOrder: [1, 2],
+      capturedScope: 1,
+      delivered: Set(),
+      facts: Map(1 -> 0, 2 -> 1),
+      generation: 1,
+      issued: false,
+      order: [2, 1],
+      readReady: false,
+      rejected: 0,
+      requests: 0,
+      scope: 5,
+      selected: true,
+      unknown: false,
+      unsafe: 0
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      captured: Map(1 -> 0, 2 -> 0),
+      capturedOrder: [1, 2],
+      capturedScope: 1,
+      delivered: Set(),
+      facts: Map(1 -> 0, 2 -> 1),
+      generation: 1,
+      issued: false,
+      order: [2, 1],
+      readReady: false,
+      rejected: 0,
+      requests: 0,
+      scope: 5,
+      selected: true,
+      unknown: false,
+      unsafe: 0
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      captured: Map(1 -> 0, 2 -> 0),
+      capturedOrder: [1, 2],
+      capturedScope: 1,
+      delivered: Set(),
+      facts: Map(1 -> 0, 2 -> 1),
+      generation: 1,
+      issued: false,
+      order: [1, 2],
+      readReady: false,
+      rejected: 0,
+      requests: 0,
+      scope: 5,
+      selected: true,
+      unknown: false,
+      unsafe: 0
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      captured: Map(1 -> 0, 2 -> 0),
+      capturedOrder: [1, 2],
+      capturedScope: 1,
+      delivered: Set(),
+      facts: Map(1 -> 0, 2 -> 1),
+      generation: 1,
+      issued: false,
+      order: [1, 2],
+      readReady: false,
+      rejected: 0,
+      requests: 0,
+      scope: 6,
+      selected: true,
+      unknown: false,
+      unsafe: 0
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      captured: Map(1 -> 0, 2 -> 0),
+      capturedOrder: [1, 2],
+      capturedScope: 1,
+      delivered: Set(),
+      facts: Map(1 -> 1, 2 -> 1),
+      generation: 1,
+      issued: false,
+      order: [1, 2],
+      readReady: false,
+      rejected: 0,
+      requests: 0,
+      scope: 6,
+      selected: true,
+      unknown: false,
+      unsafe: 0
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      captured: Map(1 -> 0, 2 -> 0),
+      capturedOrder: [1, 2],
+      capturedScope: 1,
+      delivered: Set(),
+      facts: Map(1 -> 0, 2 -> 1),
+      generation: 1,
+      issued: false,
+      order: [1, 2],
+      readReady: false,
+      rejected: 0,
+      requests: 0,
+      scope: 6,
+      selected: true,
+      unknown: false,
+      unsafe: 0
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      captured: Map(1 -> 0, 2 -> 0),
+      capturedOrder: [1, 2],
+      capturedScope: 1,
+      delivered: Set(),
+      facts: Map(1 -> 0, 2 -> 0),
+      generation: 1,
+      issued: false,
+      order: [1, 2],
+      readReady: false,
+      rejected: 0,
+      requests: 0,
+      scope: 6,
+      selected: true,
+      unknown: false,
+      unsafe: 0
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      captured: Map(1 -> 0, 2 -> 0),
+      capturedOrder: [1, 2],
+      capturedScope: 1,
+      delivered: Set(),
+      facts: Map(1 -> 0, 2 -> 0),
+      generation: 1,
+      issued: false,
+      order: [1, 2],
+      readReady: true,
+      rejected: 0,
+      requests: 0,
+      scope: 6,
+      selected: true,
+      unknown: false,
+      unsafe: 0
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      captured: Map(1 -> 0, 2 -> 0),
+      capturedOrder: [1, 2],
+      capturedScope: 1,
+      delivered: Set(),
+      facts: Map(1 -> 0, 2 -> 0),
+      generation: 1,
+      issued: false,
+      order: [1, 2],
+      readReady: true,
+      rejected: 0,
+      requests: 0,
+      scope: 6,
+      selected: true,
+      unknown: false,
+      unsafe: 0
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      captured: Map(1 -> 0, 2 -> 0),
+      capturedOrder: [1, 2],
+      capturedScope: 1,
+      delivered: Set(),
+      facts: Map(1 -> 0, 2 -> 0),
+      generation: 1,
+      issued: false,
+      order: [1, 2],
+      readReady: false,
+      rejected: 0,
+      requests: 0,
+      scope: 7,
+      selected: true,
+      unknown: false,
+      unsafe: 0
+    }
+}
+
+[ok] No violation found (759ms at 1318 traces/second).
+Trace length statistics: max=31, min=31, average=31.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Witnesses:
+reorderedIssued was witnessed in 85 trace(s) out of 1000 explored (8.50%)
+changedReadRefused was witnessed in 468 trace(s) out of 1000 explored (46.80%)
+unknownRetained was witnessed in 47 trace(s) out of 1000 explored (4.70%)
+Use --seed=0x13562 --backend=typescript to reproduce.

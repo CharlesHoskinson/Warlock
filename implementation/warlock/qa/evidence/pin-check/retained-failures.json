@@ -1,0 +1,87 @@
+{
+  "failedReports": [
+    {
+      "path": "implementation/warlock/qa/runs/pin-max-1791609373587095103/report.json",
+      "sha256": "fa607c28d6e73d3105376fcca2a8dd7defbc8207789e50e682db1980c98dbb73",
+      "error": "RuntimeError('-- SHADOWING ----------------------------------------------- qa/PinMaxReplay.elm\\n\\nThe name `frame` is first defined here:\\n\\n41| frame publication model = Surface.packet (counter publication) (counter \"1\") (openMenu model)\\n    ^^^^^\\nBut then it is defined AGAIN over here:\\n\\n101|             frame original=E.object [(\"protocolVersion\",E.int 3),(\"kind\",E.string \"effect-outcome\"),(\"effectProtocol\",E.int 2),(\"binding\",Binding.encode binding),(\"intent\",Effects.encodeIntent (if altered then {original|operation=Effects.Unpin} else original)),(\"status\",E.string status),(\"reason\",E.string \"applied\"),(\"revision\",E.string \"2\"),(\"outputGeneration\",E.string \"1\")]\\n                 ^^^^^\\nThink of a more helpful name for one of them and you should be all set!\\n\\nNote: Linters advise against shadowing, so Elm makes \u201cbest practices\u201d the\\ndefault. Read <https://elm-lang.org/0.19.2/shadowing> for more details on this\\nchoice.\\n\\n')",
+      "cleanupPassed": null,
+      "passedChecks": 0,
+      "retainedLocally": true
+    },
+    {
+      "path": "implementation/warlock/qa/runs/pin-max-1791609385962696397/report.json",
+      "sha256": "7c956db6ae021582d8a7c3ea610dd33b87eaecadc671fe5d3244e589ddd502b6",
+      "error": "RuntimeError(\"node:internal/event_target:1152\\n  process.nextTick(() => { throw err; });\\n                           ^\\n\\nReferenceError: Cannot access 'pending' before initialization\\n    at ws.onmessage (file:///home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-max-1791609385962696397/inputs/qa/pin-check-browser.mjs:21:71)\\n    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:872:20)\\n    at WebSocket.dispatchEvent (node:internal/event_target:813:26)\\n    at fireEvent (node:internal/deps/undici/undici:15374:14)\\n    at #onMessage (node:internal/deps/undici/undici:16708:9)\\n    at Object.onMessage (node:internal/deps/undici/undici:16403:76)\\n    at websocketMessageReceived (node:internal/deps/undici/undici:15378:15)\\n    at node:internal/deps/undici/undici:16102:21\\n    at node:internal/deps/undici/undici:15882:11\\n    at afterWrite (node:internal/streams/writable:712:5)\\n\\nNode.js v26.10.0\\n\")",
+      "cleanupPassed": null,
+      "passedChecks": 0,
+      "retainedLocally": true
+    },
+    {
+      "path": "implementation/warlock/qa/runs/pin-max-1791609408189839500/report.json",
+      "sha256": "be98e88186b7e9845733a801dccf8339e7ef82d528db5c4397521c13f915a1bb",
+      "error": "RuntimeError('{\"passed\":false,\"error\":\"TypeError: Cannot read properties of null (reading \\'publication\\')\",\"checks\":4}\\n')",
+      "cleanupPassed": null,
+      "passedChecks": 0,
+      "retainedLocally": true
+    },
+    {
+      "path": "implementation/warlock/qa/runs/pin-max-1791609454187273183/report.json",
+      "sha256": "f0853d374cba228275c7f2d46eae4585874dacc9c2e672a78a0fa402bf6b2045",
+      "error": "RuntimeError('{\"passed\":false,\"error\":\"Error: Keyboard invocation sends one existing identity scoped action without checked authority []\",\"checks\":14}\\n')",
+      "cleanupPassed": null,
+      "passedChecks": 0,
+      "retainedLocally": true
+    },
+    {
+      "path": "implementation/warlock/qa/runs/pin-max-1791609505249960461/report.json",
+      "sha256": "6af1fdfa1133b3bd2090de128ceab3ac950b75f17893697954dad4ebcbc0a3ee",
+      "error": "AssertionError()",
+      "cleanupPassed": null,
+      "passedChecks": 0,
+      "retainedLocally": true
+    },
+    {
+      "path": "implementation/warlock/qa/runs/pin-max-1791609892231810785/report.json",
+      "sha256": "036830ed685107982a3085ede8189505f07a462c135b442f80721df0f085d390",
+      "error": "RuntimeError('{\"passed\":false,\"error\":\"Error: Selected MAX checkbox exposes current selection and actual keyboard focus undefined\",\"checks\":3}\\n')",
+      "cleanupPassed": null,
+      "passedChecks": 0,
+      "retainedLocally": true
+    },
+    {
+      "path": "implementation/warlock/qa/runs/pin-max-1791609936730933390/report.json",
+      "sha256": "a7ab65646c91865757c098cbf18f093513ade7d364b7490e1a31cbed9286e023",
+      "error": "RuntimeError('{\"passed\":false,\"error\":\"Error: Selected MAX checkbox exposes current selection and actual keyboard focus {\\\\\"current\\\\\":\\\\\"false\\\\\",\\\\\"detail\\\\\":\\\\\"Always on topMaximized \u2022 Always on top \u2022 Selected\\\\\",\\\\\"focus\\\\\":\\\\\"menu:1:2\\\\\",\\\\\"checkedIdentity\\\\\":\\\\\"menu:1:2\\\\\"}\",\"checks\":3}\\n')",
+      "cleanupPassed": null,
+      "passedChecks": 0,
+      "retainedLocally": true
+    },
+    {
+      "path": "implementation/warlock/qa/runs/native-pin-max-1791609591966168081/report.json",
+      "sha256": "0f02079bab834da23eaa69d2206e7fca80866d212a53b2c90270865fb21a8267",
+      "error": "RuntimeError('Original observation deadline <lambda>')",
+      "cleanupPassed": true,
+      "passedChecks": 64,
+      "retainedLocally": true
+    },
+    {
+      "path": "implementation/warlock/qa/runs/native-pin-max-1791609668131275861/report.json",
+      "sha256": "c58db19588291e44a5ca0479fe7558489a25ab7a0d228a6f58d75eeb54d5446a",
+      "error": "RuntimeError('Original observation deadline <lambda>')",
+      "cleanupPassed": true,
+      "passedChecks": 68,
+      "retainedLocally": true
+    },
+    {
+      "path": "implementation/warlock/qa/runs/native-pin-max-1791609810888505863/report.json",
+      "sha256": "c54f33909df6d29018c6afe6b5bc54ed28f0df1510629142a2499b9e6f923ed4",
+      "error": "RuntimeError('Original observation deadline <lambda>')",
+      "cleanupPassed": true,
+      "passedChecks": 66,
+      "retainedLocally": true
+    }
+  ],
+  "preflightFailure": "First native invocation rejected the preceding notification build reference before starting a private scene. Verified current assets/host were then installed; no native source or freshness guard was relaxed.",
+  "diagnosis": "Fixture shadowing, expected fail-closed withdrawal/native keyboard proof routing, normal browser-close handling and missing UTF-8 were corrected. Native pointer UX-016 passed before the extra keyboard branch timed out: MAX Selected detail lacked aria-current, leaving actual focus on Close. The typed selection projection and selecting observer were repaired; final original native plus physical keyboard journey passes at unchanged deadlines.",
+  "priorReportsUnmodified": true
+}

@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "scope": "Complete per-incarnation fact equality, atomic correlated reads and no-replay abstraction; no native/ABI/input/pixel claim",
+  "nativeAcceptance": false,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-fb1b185f91ef442390bf3f4ebdfe3892.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "menu-read-order.qnt": "2d5d7d3619e4df4876e3e4c0cfabcf96be02bdfb8edc48bbbdb01f5a0d1d69c4",
+    "menu-read-order_test.qnt": "abfe65a787059b42b68873f130d7d7089950694281811ac8d12388673dce8282"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-max-1791610035073247857/inputs/qa/menu-read-order.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-max-1791610035073247857/inputs/qa/menu-read-order_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=79201"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "witnesses",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-max-1791610035073247857/inputs/qa/menu-read-order.qnt",
+        "--backend=typescript",
+        "--witnesses",
+        "reorderedIssued",
+        "changedReadRefused",
+        "unknownRetained",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79202"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "safety",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-max-1791610035073247857/inputs/qa/menu-read-order.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79203"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "witnessCounts": {
+    "reorderedIssued": 85,
+    "changedReadRefused": 468,
+    "unknownRetained": 47
+  }
+}

@@ -1,0 +1,209 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "Observed unpinned window has one unchecked stable Always on top menu control",
+      "detail": {
+        "label": "Always on top",
+        "checked": "false",
+        "identity": "menu:1:2",
+        "disabled": false,
+        "rect": {
+          "x": 11,
+          "y": 295,
+          "width": 618,
+          "height": 73,
+          "top": 295,
+          "right": 629,
+          "bottom": 368,
+          "left": 11
+        },
+        "publication": "10"
+      }
+    },
+    {
+      "name": "Observed pin keeps label identity actual DOM node and keyboard focus",
+      "detail": {
+        "label": "Always on top",
+        "checked": "true",
+        "identity": "menu:1:2",
+        "disabled": false,
+        "rect": {
+          "x": 11,
+          "y": 295,
+          "width": 618,
+          "height": 73,
+          "top": 295,
+          "right": 629,
+          "bottom": 368,
+          "left": 11
+        },
+        "publication": "11"
+      }
+    },
+    {
+      "name": "Browser accessibility tree exposes checked menu item"
+    },
+    {
+      "name": "Selected MAX checkbox exposes current selection and actual keyboard focus",
+      "detail": {
+        "current": "true",
+        "detail": "Always on topMaximized • Always on top • Selected",
+        "focus": "menu:1:2",
+        "checkedIdentity": "menu:1:2"
+      }
+    },
+    {
+      "name": "Observation alone submits no actions"
+    },
+    {
+      "name": "Wrong boolean fails closed without retaining an actionable checkbox"
+    },
+    {
+      "name": "Wrong boolean recovers only through a fresh valid observation"
+    },
+    {
+      "name": "Wrong mode fails closed without retaining an actionable checkbox"
+    },
+    {
+      "name": "Wrong mode recovers only through a fresh valid observation"
+    },
+    {
+      "name": "Wrong identity fails closed without retaining an actionable checkbox"
+    },
+    {
+      "name": "Wrong identity recovers only through a fresh valid observation"
+    },
+    {
+      "name": "Duplicate checked control fails closed without retaining an actionable checkbox"
+    },
+    {
+      "name": "Duplicate checked control recovers only through a fresh valid observation"
+    },
+    {
+      "name": "Missing current shape fails closed without retaining an actionable checkbox"
+    },
+    {
+      "name": "Missing current shape recovers only through a fresh valid observation"
+    },
+    {
+      "name": "Keyboard invocation uses original scoped native menu navigation without checked authority",
+      "detail": [
+        {
+          "surfaceProtocol": 2,
+          "kind": "surface-menu-navigation",
+          "surface": "popup",
+          "publication": "16",
+          "lease": "1",
+          "key": "Enter"
+        }
+      ]
+    },
+    {
+      "name": "Pointer invocation sends exactly one existing identity scoped action without checked authority",
+      "detail": [
+        {
+          "surface": "popup",
+          "surfaceProtocol": 2,
+          "kind": "surface-action",
+          "publication": "16",
+          "lease": "1",
+          "id": "menu:1:2"
+        }
+      ]
+    },
+    {
+      "name": "Pending observes prior unchecked native state and cannot dispatch",
+      "detail": {
+        "label": "Always on top; Maximized • Awaiting native confirmation",
+        "checked": "false",
+        "identity": "menu:1:2",
+        "disabled": true,
+        "rect": {
+          "x": 11,
+          "y": 325,
+          "width": 618,
+          "height": 73,
+          "top": 325,
+          "right": 629,
+          "bottom": 398,
+          "left": 11
+        },
+        "publication": "17"
+      }
+    },
+    {
+      "name": "Disabled checkbox does not replay an action"
+    },
+    {
+      "name": "High contrast retains a checkbox shape"
+    },
+    {
+      "name": "No browser runtime exceptions",
+      "detail": []
+    }
+  ],
+  "captures": [
+    "AlwaysOnTopChecked.png",
+    "AlwaysOnTopHighContrast.png"
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "observations": {
+    "unchecked": {
+      "label": "Always on top",
+      "checked": "false",
+      "identity": "menu:1:2",
+      "disabled": false,
+      "rect": {
+        "x": 11,
+        "y": 295,
+        "width": 618,
+        "height": 73,
+        "top": 295,
+        "right": 629,
+        "bottom": 368,
+        "left": 11
+      },
+      "publication": "10"
+    },
+    "checked": {
+      "label": "Always on top",
+      "checked": "true",
+      "identity": "menu:1:2",
+      "disabled": false,
+      "rect": {
+        "x": 11,
+        "y": 295,
+        "width": 618,
+        "height": 73,
+        "top": 295,
+        "right": 629,
+        "bottom": 368,
+        "left": 11
+      },
+      "publication": "11"
+    },
+    "pending": {
+      "label": "Always on top; Maximized • Awaiting native confirmation",
+      "checked": "false",
+      "identity": "menu:1:2",
+      "disabled": true,
+      "rect": {
+        "x": 11,
+        "y": 325,
+        "width": 618,
+        "height": 73,
+        "top": 325,
+        "right": 629,
+        "bottom": 398,
+        "left": 11
+      },
+      "publication": "17"
+    }
+  },
+  "browserExitCode": 0,
+  "browserSignal": null
+}

@@ -8137,9 +8137,63 @@
                 "independent": false,
                 "disposition": "Owner-observed full native pin/MAX journey, exact retirement routing, strict close, normal client/helper termination, plugin unload and private cleanup; independent release acceptance remains open."
               }
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/pin-check/manifest.json",
+              "sha256": "c9cd573eb16a83b7c2c776be0811421a655a00293294455bb2f7993dc0312752",
+              "scope": "Stable observed Always on top checkbox and MAX selected-state/actual keyboard focus are implemented. Twenty-eight typed checks and 21 browser checks pass. Original protected native pointer maximize/pin/unpin preserves MAX geometry and matches displayed/native state, overlap pixels and real GTK hit/focus; two actual physical-keyboard checkbox toggles focus the selected operation and invoke exactly once. Native cleanup passes. Independent original acceptance and full pin/family/fullscreen/AT release scope remain open.",
+              "sourceBaseRevision": "28056e8ea9bd8c3c44b3ed1b5b0fedd418dc4620",
+              "sourceHashes": {
+                "implementation/warlock/src/Provider.elm": "3e65d320b85f176b92b2a01ed783c7c26061767b583fb6d6ad52526a4c240ecf",
+                "implementation/warlock/src/Surface.elm": "21442858d072e85621cc511026f3df085165acb5049c33698d48ee824a71b593",
+                "implementation/warlock/src/SurfaceRenderer.elm": "2721a248f62d30c72c1ee0296994a593f09799be5a8aeee8c24f6a946523591b",
+                "implementation/warlock/native/surface.h": "9c6eff2bafedd07ad1d00ad9728280107bd6a9ed1bfa39635e50e0de91eccf9e",
+                "implementation/warlock/assets/popup-adapter.js": "b422e9aa2d3e8dc8b669588b4c7d3e69033da5f20837683df6a7555cfc58cd62",
+                "implementation/warlock/assets/shell.css": "8368a33e4c16e77473005e9db56d7d629ea27463afb546c8f2faae97352164c7",
+                "implementation/warlock/assets/elm.js": "cb6d0ffe6c7e7961d29a15dc3de4f312c958308f5f39e15438c91ecdbd33dfd3",
+                "implementation/warlock/assets/bar.js": "a4a9edea8375e28ceae70c32b3a43f45b0c90148786701382a0ee34f0b980dfb",
+                "implementation/warlock/assets/popup.js": "e685ab98313e79412083daa2dff705c7d01cc53f91a6f2fd05e38216048a2206",
+                "implementation/warlock/qa/PinMaxReplay.elm": "b9c08f31fcc8f970f2a054ea8949853908ad3850e94e383c0d6b2de6e04c3eee",
+                "implementation/warlock/qa/check-search.py": "7824b3a7d5c777288fb1c4a34e163852d91db5bb2666a29820eba4817a5cd5d2",
+                "implementation/warlock/qa/surface-admission.c": "b501f170f1141eb7de2f947ed593328e3c3cebe1bd619cb713b51636be8622d2",
+                "implementation/warlock/qa/native-pin-max.py": "6590ac6e3b429c286cccd12bb0b16da18a9ac89031640a9db2ddb3ee23e175be",
+                "implementation/warlock/qa/pin-check-browser.mjs": "2bc1ed848db7be614a1662262688edb6c8fe39096574c51da5d8f0140649cc43",
+                "implementation/warlock/qa/current-search-build.json": "2757e222e5705aa2cfeee4878cf6a5687e9a7bee5e13b91d40e4b70590e0ab1d",
+                "implementation/warlock/README.md": "deba10b52af0bc5cdee068779b59759ec2d3a671120f7e0c901b180ed7190619",
+                "implementation/warlock/assets/context.js": "25fd5fa812284a83356c150db017cdd69c7d3a7f7a4b4f64038aef605314925d"
+              },
+              "reviewerDisposition": "Root observed scoped native/component results and retained visual/menu captures; independent original acceptance remains open.",
+              "observedUTC": "2026-10-10T05:29:59.968341+00:00"
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/pin-check/manifest-appearance.json",
+              "sha256": "8c9d752b6e1f6e0637dde0f52ebc75285876868e54653ad72b51b81c94ccaaec",
+              "scope": "The preceding native pointer/physical-keyboard MAX pin/unpin, return geometry and pixel/GTK-hit observations remain current by identical production source, compiled Elm assets and native host binary. The 21 browser checks now run on the shipped popup page, including actual high-contrast palette and 200% text with visible checkbox shape. Independent full original acceptance and broader family/fullscreen/AT scope remain open.",
+              "sourceBaseRevision": "28056e8ea9bd8c3c44b3ed1b5b0fedd418dc4620",
+              "sourceHashes": {
+                "implementation/warlock/src/Provider.elm": "3e65d320b85f176b92b2a01ed783c7c26061767b583fb6d6ad52526a4c240ecf",
+                "implementation/warlock/src/Surface.elm": "21442858d072e85621cc511026f3df085165acb5049c33698d48ee824a71b593",
+                "implementation/warlock/src/SurfaceRenderer.elm": "2721a248f62d30c72c1ee0296994a593f09799be5a8aeee8c24f6a946523591b",
+                "implementation/warlock/native/surface.h": "9c6eff2bafedd07ad1d00ad9728280107bd6a9ed1bfa39635e50e0de91eccf9e",
+                "implementation/warlock/assets/popup-adapter.js": "b422e9aa2d3e8dc8b669588b4c7d3e69033da5f20837683df6a7555cfc58cd62",
+                "implementation/warlock/assets/shell.css": "8368a33e4c16e77473005e9db56d7d629ea27463afb546c8f2faae97352164c7",
+                "implementation/warlock/assets/elm.js": "cb6d0ffe6c7e7961d29a15dc3de4f312c958308f5f39e15438c91ecdbd33dfd3",
+                "implementation/warlock/assets/bar.js": "a4a9edea8375e28ceae70c32b3a43f45b0c90148786701382a0ee34f0b980dfb",
+                "implementation/warlock/assets/popup.js": "e685ab98313e79412083daa2dff705c7d01cc53f91a6f2fd05e38216048a2206",
+                "implementation/warlock/qa/PinMaxReplay.elm": "b9c08f31fcc8f970f2a054ea8949853908ad3850e94e383c0d6b2de6e04c3eee",
+                "implementation/warlock/qa/check-search.py": "7824b3a7d5c777288fb1c4a34e163852d91db5bb2666a29820eba4817a5cd5d2",
+                "implementation/warlock/qa/surface-admission.c": "b501f170f1141eb7de2f947ed593328e3c3cebe1bd619cb713b51636be8622d2",
+                "implementation/warlock/qa/native-pin-max.py": "6590ac6e3b429c286cccd12bb0b16da18a9ac89031640a9db2ddb3ee23e175be",
+                "implementation/warlock/qa/pin-check-browser.mjs": "ee1e6e4364d8042c5bb06cf70754fb4f3026cabca22a949c8721807c0760b27d",
+                "implementation/warlock/qa/current-search-build.json": "7ecbfa9aa29070830d23aa514acd21a728452e5fb395453bdb72b74ce38be4e1",
+                "implementation/warlock/README.md": "deba10b52af0bc5cdee068779b59759ec2d3a671120f7e0c901b180ed7190619",
+                "implementation/warlock/assets/context.js": "25fd5fa812284a83356c150db017cdd69c7d3a7f7a4b4f64038aef605314925d"
+              },
+              "reviewerDisposition": "Root observed scoped native/component results and retained visual/menu captures; independent original acceptance remains open.",
+              "observedUTC": "2026-10-10T05:33:20.200851+00:00"
             }
           ],
-          "missingObservation": "Independent original pin scenario review, stable checked semantics and applicable AT/resource/release gates remain open. Combined keyboard reliability is separate and its preceding native regression still fails repeated Home; this shutdown-only change adds no new keyboard claim.",
+          "missingObservation": "Independent original UX-016 acceptance.; Native speech/braille and full checked-menu/focus/recovery semantics through AT.; Full original pin/family/fullscreen, modal/input-region/paint predicates and release hardware/resource/package/rollback scope.",
           "reviewerDisposition": {
             "name": "root-picker-shutdown",
             "independent": false,
@@ -10908,5 +10962,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-10T05:11:12.677882+00:00"
+  "updatedUTC": "2026-10-10T05:33:20.200851+00:00"
 }

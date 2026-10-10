@@ -51,18 +51,36 @@ branch=r'''   elif FOCUS:
     action('Maximize');wait(lambda:root()['fullscreenMode']==1)
     maximum=root()['geometry'];check('OriginalFixtureMaximizedOverFloat',any(row['incarnation']==peer and row['workspace']=='1' for row in facts()['facts']['windows']),maximum=maximum)
     physical_hit('UnpinnedMax')
-    menu=open_menu();check('DisplayedUnpinnedMaxIsObserved',any('Maximized' in b['label'] for b in menu['buttons']) and any(b['accessibleName']=='Always on top' and not b['disabled'] for b in menu['buttons']) and not root()['pinned'],body=menu,native=root())
+    menu=open_menu();check('DisplayedUnpinnedMaxIsObserved',any('Maximized' in b['label'] for b in menu['buttons']) and any(b['accessibleName']=='Always on top' and b.get('role')=='menuitemcheckbox' and b.get('checked')=='false' and not b['disabled'] for b in menu['buttons']) and not root()['pinned'],body=menu,native=root())
+    image=OUTPUT/'AlwaysOnTopUnchecked.png';helper(['/usr/bin/grim',str(image)]);report.setdefault('checkedMenuCaptures',[]).append({'path':str(image),'sha256':sha(image),'checked':False})
     action('Always on top');wait(lambda:root()['pinned'])
     check('PinPreservesNativeMaxAndGeometry',root()['fullscreenMode']==1 and root()['geometry']==maximum,native=root())
     physical_hit('PinnedMax')
-    menu=open_menu();check('DisplayedPinAndMaxAgreeWithNative',any('Always on top' in b['label'] and 'Maximized' in b['label'] for b in menu['buttons']) and any(b['accessibleName']=='Unpin window' and not b['disabled'] for b in menu['buttons']),body=menu,native=root())
-    action('Unpin window');wait(lambda:not root()['pinned'])
+    menu=open_menu();check('DisplayedPinAndMaxAgreeWithNative',any('Always on top' in b['label'] and 'Maximized' in b['label'] for b in menu['buttons']) and any(b['accessibleName']=='Always on top' and b.get('role')=='menuitemcheckbox' and b.get('checked')=='true' and not b['disabled'] for b in menu['buttons']),body=menu,native=root())
+    image=OUTPUT/'AlwaysOnTopChecked.png';helper(['/usr/bin/grim',str(image)]);report.setdefault('checkedMenuCaptures',[]).append({'path':str(image),'sha256':sha(image),'checked':True})
+    action('Always on top');wait(lambda:not root()['pinned'])
     check('UnpinPreservesNativeMaxAndGeometry',root()['fullscreenMode']==1 and root()['geometry']==maximum,native=root())
     physical_hit('UnpinnedAgain')
-    menu=open_menu();check('DisplayedUnpinKeepsMax',any('Maximized' in b['label'] for b in menu['buttons']) and any(b['accessibleName']=='Always on top' and not b['disabled'] for b in menu['buttons']) and not any(b['accessibleName']=='Unpin window' for b in menu['buttons']),body=menu,native=root())
+    menu=open_menu();check('DisplayedUnpinKeepsMax',any('Maximized' in b['label'] for b in menu['buttons']) and any(b['accessibleName']=='Always on top' and b.get('role')=='menuitemcheckbox' and b.get('checked')=='false' and not b['disabled'] for b in menu['buttons']) and not any(b['accessibleName']=='Unpin window' for b in menu['buttons']),body=menu,native=root())
     keyboard=pathlib.Path('/home/hoskinson/window-integration-qa/orca-reader/physical-commands/evdev-keyboard')
     helper([str(keyboard)],'key 1 1\nsleep 50\nkey 1 0\nsleep 100\nsync\n');wait(lambda:(projection() or {}).get('mode')=='closed')
     check('PinUnpinUsesExactlyThreeSharedWindowIntents',[entry['intent']['operation'] for entry in journal()[before:]]==['maximize','pin','unpin'],journal=journal())
+    def keyboard_toggle(pinned):
+     menu=open_menu();before=len(journal())
+     helper([str(keyboard)],'key 15 1\nsleep 50\nkey 15 0\nsleep 100\nsync\n')
+     entered=wait(lambda:body() if (body() or {}).get('focus','').startswith('menu:') else None)
+     check('PhysicalTabEntersPointerOpenedWindowMenu'+str(pinned),entered.get('documentFocused') is True,body=entered)
+     count=2 if not pinned else 1
+     command='key 102 1\nsleep 50\nkey 102 0\nsleep 100\n'
+     command+='key 108 1\nsleep 50\nkey 108 0\nsleep 100\n'*count
+     helper([str(keyboard)],command+'sync\n')
+     selection=wait(lambda:next((b for b in (body() or {}).get('buttons',[]) if b['accessibleName']=='Always on top' and b.get('checked')==str(pinned).lower() and 'Selected' in b['label'] and (body() or {}).get('focus')==b['id']),None))
+     check('KeyboardSelectsObservedCheckbox'+str(pinned),selection.get('role')=='menuitemcheckbox' and not selection['disabled'],body=body())
+     helper([str(keyboard)],'key 28 1\nsleep 50\nkey 28 0\nsleep 100\nsync\n')
+     wait(lambda:len(journal())==before+1 and transaction_state()=='Committed' and (projection() or {}).get('mode')=='closed' and root()['pinned']!=pinned)
+     check('KeyboardCheckboxToggleExactlyOnce'+str(pinned),journal()[-1]['intent']['operation']==('unpin' if pinned else 'pin') and root()['fullscreenMode']==1 and root()['geometry']==maximum,journal=journal(),native=root())
+    keyboard_toggle(False);keyboard_toggle(True)
+    report['nativeCheckedMenuKeyboardObserved']=True
     report['nativePinMaxObserved']=True
 '''
 adapted=original[:start]+branch+original[end:]

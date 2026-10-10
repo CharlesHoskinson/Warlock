@@ -131,3 +131,8 @@ html[data-reduced-transparency="true"] .surface-popup{background:var(--shell-bac
 
 /* Only the Elm-designated announcement route produces live updates. */
 .shell-announcement{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+
+/* Always on top has one stable label and a shape cue in every palette. */
+.popup button[role="menuitemcheckbox"]{position:relative;padding-inline-start:2.5rem}
+.popup button[role="menuitemcheckbox"]::before{content:"";position:absolute;inset-inline-start:.8rem;top:.7rem;width:1rem;height:1rem;border:2px solid currentColor;border-radius:2px}
+.popup button[role="menuitemcheckbox"][aria-checked="true"]::after{content:"";position:absolute;inset-inline-start:1.1rem;top:.8rem;width:.4rem;height:.65rem;border:solid currentColor;border-width:0 2px 2px 0;transform:rotate(45deg)}

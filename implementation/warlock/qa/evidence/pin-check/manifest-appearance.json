@@ -1,0 +1,174 @@
+{
+  "schema": 1,
+  "status": "partial",
+  "requirements": [
+    "ELM-UX-016"
+  ],
+  "scenarios": [
+    "ux-016"
+  ],
+  "originalRequirement": {
+    "id": "ELM-UX-016",
+    "capability": "elm-shell-experience",
+    "pattern": "event-driven",
+    "ears": "WHEN a user toggles always-on-top on a maximized family, the Elm desktop SHALL display pin and maximize state only after correlated native observations.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Elm replay assertion and isolated native recording: displayed pin/MAX state agrees with native state and visible hit target.",
+    "legacyEvidence": "implementation/maximized-stack-v2/native_stack_smoke.py",
+    "task": "Implement pin/MAX intent state with committed-state presentation.",
+    "scenarios": [
+      {
+        "name": "ux-016",
+        "given": "maximized application overlaps floating window",
+        "when": "pin then unpin completes",
+        "then": "displayed pin/MAX state agrees with native state and visible hit target"
+      }
+    ],
+    "source": "docs/elm-roadmap/contributions/experience.json",
+    "status": "proposed",
+    "taskId": "P2-ELM-UX-016",
+    "accountableOwnerRole": "Desktop experience lead",
+    "verifierRole": "Independent acceptance reviewer"
+  },
+  "observedUTC": "2026-10-10T05:32:39.900952+00:00",
+  "sourceBaseRevision": "28056e8ea9bd8c3c44b3ed1b5b0fedd418dc4620",
+  "sourceObservation": "Owned current precommit bytes; not an independent acceptance claim.",
+  "sourceHashes": {
+    "implementation/warlock/src/Provider.elm": "3e65d320b85f176b92b2a01ed783c7c26061767b583fb6d6ad52526a4c240ecf",
+    "implementation/warlock/src/Surface.elm": "21442858d072e85621cc511026f3df085165acb5049c33698d48ee824a71b593",
+    "implementation/warlock/src/SurfaceRenderer.elm": "2721a248f62d30c72c1ee0296994a593f09799be5a8aeee8c24f6a946523591b",
+    "implementation/warlock/native/surface.h": "9c6eff2bafedd07ad1d00ad9728280107bd6a9ed1bfa39635e50e0de91eccf9e",
+    "implementation/warlock/assets/popup-adapter.js": "b422e9aa2d3e8dc8b669588b4c7d3e69033da5f20837683df6a7555cfc58cd62",
+    "implementation/warlock/assets/shell.css": "8368a33e4c16e77473005e9db56d7d629ea27463afb546c8f2faae97352164c7",
+    "implementation/warlock/assets/elm.js": "cb6d0ffe6c7e7961d29a15dc3de4f312c958308f5f39e15438c91ecdbd33dfd3",
+    "implementation/warlock/assets/bar.js": "a4a9edea8375e28ceae70c32b3a43f45b0c90148786701382a0ee34f0b980dfb",
+    "implementation/warlock/assets/popup.js": "e685ab98313e79412083daa2dff705c7d01cc53f91a6f2fd05e38216048a2206",
+    "implementation/warlock/qa/PinMaxReplay.elm": "b9c08f31fcc8f970f2a054ea8949853908ad3850e94e383c0d6b2de6e04c3eee",
+    "implementation/warlock/qa/check-search.py": "7824b3a7d5c777288fb1c4a34e163852d91db5bb2666a29820eba4817a5cd5d2",
+    "implementation/warlock/qa/surface-admission.c": "b501f170f1141eb7de2f947ed593328e3c3cebe1bd619cb713b51636be8622d2",
+    "implementation/warlock/qa/native-pin-max.py": "6590ac6e3b429c286cccd12bb0b16da18a9ac89031640a9db2ddb3ee23e175be",
+    "implementation/warlock/qa/pin-check-browser.mjs": "ee1e6e4364d8042c5bb06cf70754fb4f3026cabca22a949c8721807c0760b27d",
+    "implementation/warlock/qa/current-search-build.json": "7ecbfa9aa29070830d23aa514acd21a728452e5fb395453bdb72b74ce38be4e1",
+    "implementation/warlock/README.md": "deba10b52af0bc5cdee068779b59759ec2d3a671120f7e0c901b180ed7190619",
+    "implementation/warlock/assets/context.js": "25fd5fa812284a83356c150db017cdd69c7d3a7f7a4b4f64038aef605314925d"
+  },
+  "unchangedModels": {
+    "implementation/warlock/qa/menu-read-order.qnt": "2d5d7d3619e4df4876e3e4c0cfabcf96be02bdfb8edc48bbbdb01f5a0d1d69c4",
+    "implementation/warlock/qa/menu-read-order_test.qnt": "abfe65a787059b42b68873f130d7d7089950694281811ac8d12388673dce8282"
+  },
+  "model": {
+    "namedTests": 6,
+    "witnessCounts": {
+      "reorderedIssued": 85,
+      "changedReadRefused": 468,
+      "unknownRetained": 47
+    },
+    "samples": 1000,
+    "steps": 30,
+    "skills": [
+      "/home/hoskinson/.claude/plugins/cache/quint-llm-kit/quint-llm-kit/1.0.0/skills/quint-execute-spec/SKILL.md"
+    ],
+    "scope": "Complete per-incarnation fact equality, atomic correlated reads and no-replay abstraction; no native/ABI/input/pixel claim"
+  },
+  "componentObservations": {
+    "typedChecks": 28,
+    "browserChecks": 21,
+    "browserNativeAcceptance": false,
+    "actualShippedPopupPage": true,
+    "actualHighContrastPaletteAnd200PercentText": true
+  },
+  "nativePair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-core-1791495415110842751/Hyprland",
+      "sha256": "81c9ac609c2900f99c1efbe613b83e949aeae3059a5e4403601581fa96191acf"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791596429600393566/elm-window-geometry-authority.so",
+      "sha256": "1f5de87c759902cbbca05dfdbba56090641c994cf3c7276671094248465bcac4"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-max-1791610035073247857/elm-host",
+    "sha256": "6a8209228eb1dc342bb69931814a46e0ac32c497d4a2c4fe0c4283f23dea90c1",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-max-1791610035073247857/report.json",
+    "heldBuildSHA256": "5119b5520fc3a0d45a3d70bee7dfea1e4e38d02be99df545c9002f6a11fdc495"
+  },
+  "compiledAssets": {
+    "elm.js": "cb6d0ffe6c7e7961d29a15dc3de4f312c958308f5f39e15438c91ecdbd33dfd3",
+    "bar.js": "a4a9edea8375e28ceae70c32b3a43f45b0c90148786701382a0ee34f0b980dfb",
+    "popup.js": "e685ab98313e79412083daa2dff705c7d01cc53f91a6f2fd05e38216048a2206"
+  },
+  "nativeObservations": {
+    "checks": 81,
+    "originalPointerMaxPinUnpinObserved": true,
+    "physicalKeyboardCheckedMenuObserved": true,
+    "cleanupPassed": true,
+    "runnerSHA256": "6590ac6e3b429c286cccd12bb0b16da18a9ac89031640a9db2ddb3ee23e175be",
+    "scope": "Original physical pointer MAX pin/unpin, preserved geometry, native displayed state and pixels/real GTK hit recipients; extra actual physical Tab/Home/Down/Enter checkbox selection/toggle exactly once with actual focus and preserved MAX geometry."
+  },
+  "missingObservations": [
+    "Independent original UX-016 acceptance.",
+    "Native speech/braille and full checked-menu/focus/recovery semantics through AT.",
+    "Full original pin/family/fullscreen, modal/input-region/paint predicates and release hardware/resource/package/rollback scope."
+  ],
+  "reviewerDisposition": "Root observed scoped native/component results and retained visual/menu captures; independent original acceptance remains open.",
+  "nativeAcceptance": false,
+  "assistiveTechnologyAccepted": false,
+  "fullReleaseAccepted": false,
+  "reproduce": [
+    [
+      "PYTHONDONTWRITEBYTECODE=1",
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/window-integration-qa/qa_run.py",
+      "--",
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/check-search.py",
+      "--pin-max"
+    ],
+    [
+      "python3",
+      "-B",
+      "docs/warlock-build-loop/v2/loop.py",
+      "--record",
+      ".warlock-contributor/pin-check.json",
+      "native",
+      "--runner",
+      "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/native-pin-max.py"
+    ]
+  ],
+  "priorPacket": {
+    "path": "implementation/warlock/qa/evidence/pin-check/manifest.json",
+    "sha256": "c9cd573eb16a83b7c2c776be0811421a655a00293294455bb2f7993dc0312752"
+  },
+  "compiledNativeHostMatchesObserved": true,
+  "unchangedProductionSources": true,
+  "files": {
+    "appearance.md": {
+      "sha256": "5ba13a918018725423739f9aac1cf677ba07399029a928f6f3f22a60bdd8f720",
+      "bytes": 1259
+    },
+    "compiled-appearance-report.json": {
+      "sha256": "c44a24f090a2a20488924c42222d579f84ba1c9c2722a38629b82e23dbfc0afa",
+      "bytes": 90536
+    },
+    "browser-appearance-report.json": {
+      "sha256": "00e2d512ccf94fd565d9009075ecd6a29204e7c481e7c3f47dca30765cbc17e5",
+      "bytes": 5282
+    },
+    "browser-shipped-AlwaysOnTopChecked.png": {
+      "sha256": "9f0baff286e1f9fc00b8047c9e11ac5331061f0224067d90316d4acc812fed0c",
+      "bytes": 29758
+    },
+    "browser-shipped-AlwaysOnTopHighContrast.png": {
+      "sha256": "99c879f2977427b17c7e374ea56c891c6f7685cbaef9b31604951fb425c8cb56",
+      "bytes": 53451
+    }
+  }
+}

@@ -436,7 +436,15 @@ windowNotice model =
 packet : Counter -> Counter -> Desktop.Model -> E.Value
 packet publication lease model =
     let
-        encode control = E.object [("id",E.string control.id),("domId",E.string control.domId),("label",E.string control.label),("ariaLabel",E.string control.ariaLabel),("detail",E.string control.detail),("enabled",E.bool (control.enabled && control.message/=Nothing)),("focusOnly",E.bool (model.notificationsOpen && not control.enabled && Notifications.focusedIdentity model.notifications==Just control.id))]
+        checked control =
+            (MenuBridge.menuSnapshot model.windows.menus).menu |> Maybe.andThen (\menu ->
+                List.indexedMap Tuple.pair menu.items |> List.filter (\(index,item) -> control.id=="menu:"++String.fromInt (Menu.menuNumber menu.id)++":"++String.fromInt index) |> List.head
+                    |> Maybe.andThen (\(_,item) -> case item.action of
+                        Menu.AlwaysOnTop _ -> MenuBridge.currentProvider model.windows.menus |> Maybe.andThen (\provider ->
+                            if Provider.menuBinding provider/=menu.binding || Just (Provider.nativeBinding provider)/=model.windows.shell.binding then Nothing else
+                            Provider.geometryObservation provider |> Maybe.andThen (GeometryProjection.window (Provider.incarnation provider)) |> Maybe.andThen .pin |> Maybe.map .pinned)
+                        _ -> Nothing))
+        encode control = E.object ([("id",E.string control.id),("domId",E.string control.domId),("label",E.string control.label),("ariaLabel",E.string control.ariaLabel),("detail",E.string control.detail),("enabled",E.bool (control.enabled && control.message/=Nothing)),("focusOnly",E.bool (model.notificationsOpen && not control.enabled && Notifications.focusedIdentity model.notifications==Just control.id))] ++ (checked control |> Maybe.map (\value -> [("checked",E.bool value)]) |> Maybe.withDefault []))
     in E.object [("surfaceProtocol",E.int 2),("motion",E.string (Motion.name (Motion.desired model.motion))),("appearance",Settings.encodeValues (model.settings.snapshot |> Maybe.map .values |> Maybe.withDefault Settings.defaults)),("publication",E.string (UInt64.string publication)),("lease",E.string (UInt64.string lease)),("mode",E.string (mode model)),("status",E.string ((notice model)++(if not model.filesOpen && (model.files.pending/=Nothing || String.startsWith "Files:" model.files.notice) then " · "++model.files.notice else "")++(if model.jumpEntry==Nothing && (model.jumpList.pending/=Nothing || String.startsWith "Application action:" model.jumpList.notice) then " · "++model.jumpList.notice else ""))),("bar",E.list encode (barControls model)),("popup",E.list encode (controls model))]
 
 resolveAction : Counter -> Counter -> D.Value -> Desktop.Model -> Maybe Desktop.Msg

@@ -15,6 +15,7 @@ import Provider
 import Shell
 import SnapReplay
 import Surface
+import SurfaceRenderer
 import TaskbarShell
 import UInt64
 
@@ -37,6 +38,15 @@ openMenu model =
         |> Result.withDefault model
 controls model = Surface.controls (openMenu model)
 details model = controls model |> List.map .detail |> String.join " "
+openCheckedMenu model =
+    let opened=openMenu model
+    in (MenuBridge.menuSnapshot opened.windows.menus).menu |> Maybe.map (\menu ->
+        let index=List.indexedMap Tuple.pair menu.items |> List.filter (\(_,item) -> case item.action of
+                Menu.AlwaysOnTop _ -> True
+                _ -> False) |> List.head |> Maybe.map Tuple.first |> Maybe.withDefault 0
+        in List.range 1 (index-Maybe.withDefault 0 menu.selected) |> List.foldl (\_ current -> Desktop.update (Desktop.Window (TaskbarShell.MenuEvent (Menu.Navigate menu.id Menu.Down))) current |> Tuple.first) opened) |> Maybe.withDefault opened
+surfaceFrame publication model = Surface.packet (counter publication) (counter "1") (openCheckedMenu model)
+checkedValue raw = D.decodeValue (D.field "popup" (D.list D.value)) raw |> Result.toMaybe |> Maybe.andThen (List.filter (\row -> D.decodeValue (D.field "label" D.string) row==Ok "Always on top") >> List.head) |> Maybe.andThen (D.decodeValue (D.field "checked" D.bool) >> Result.toMaybe)
 refused (_,wire,error) = wire==Nothing && error/=Nothing
 receipt status allocated =
     allocated.transaction |> Maybe.map (\transaction -> E.object [("kind",E.string "receipt"),("effectProtocol",E.int 2),("intent",Effects.encodeIntent transaction.intent),("status",E.string status)]) |> Maybe.withDefault E.null
@@ -120,7 +130,7 @@ result binding =
             ,("PendingNeverShowsOptimisticPin",not (String.contains "Always on top" (details pending)) && String.contains "Maximized" (details pending))
             ,("CommittedReceiptAloneNeverShowsPin",not (String.contains "Always on top" (details committedRoot)))
             ,("CorrelatedObservationShowsPinAndMax",String.contains "Always on top" (details confirmed) && String.contains "Maximized" (details confirmed))
-            ,("ConfirmedPinnedMenuOffersUnpin",List.any (\row -> row.label=="Unpin window" && row.enabled) (controls confirmed))
+            ,("ConfirmedPinnedMenuKeepsAlwaysOnTopLabel",List.any (\row -> row.label=="Always on top" && row.enabled) (controls confirmed) && not (List.any (\row -> row.label=="Unpin window") (controls confirmed)))
             ,("RefusalPreservesObservedUnpinnedMax",rejected.observed==ready.windows.shell.effects.observed)
             ,("DuplicatePendingNeverReplays",refused (Effects.beginGeometry caps observed Effects.Pin (counter "1") allocated))
             ,("UnknownNeverReplays",refused (Effects.beginGeometry caps observed Effects.Pin (counter "1") unknown))
@@ -129,6 +139,11 @@ result binding =
             ,("UnpinPreservesTypedMaxObservation",not (refused unpin) && ((geometry binding True "2").windows |> List.all (\row -> row.nativeMode==Geometry.Maximized)))
             ,("NoPinWithoutNegotiatedCapability",refused (Effects.beginGeometry {effects=True,operations=["maximize","restore-geometry"]} observed Effects.Pin (counter "1") ready.windows.shell.effects))
             ,("ReorderedCompleteFactsIssuePreparedPin",preparedIssued (preparedResult binding "reorder"))
+            ,("ObservedUnpinnedCheckboxIsUnchecked",checkedValue (surfaceFrame "10" ready)==Just False)
+            ,("PendingCheckboxNeverShowsDesiredPin",checkedValue (surfaceFrame "11" pending)==Just False)
+            ,("ReceiptAloneNeverChecksPin",checkedValue (surfaceFrame "12" committedRoot)==Just False)
+            ,("ObservedPinnedCheckboxIsChecked",checkedValue (surfaceFrame "13" confirmed)==Just True)
+            ,("CheckedProjectionUsesShippedStrictRenderer",SurfaceRenderer.decode (surfaceFrame "13" confirmed) |> Result.map (SurfaceRenderer.encode >> checkedValue) |> (==) (Ok (Just True)))
             ,("PreparedPinWaitsForBothCorrelatedReads",preparedResult binding "reorder" |> Maybe.map (\v -> List.isEmpty v.first.effects && MenuBridge.preparedSnapshot v.first.bridge/=Nothing) |> Maybe.withDefault False)
             ,("ChangedPeerTitleRefusesPreparedPin",preparedRefused (preparedResult binding "peer-title"))
             ,("ChangedPeerGeometryRefusesPreparedPin",preparedRefused (preparedResult binding "peer-geometry"))
@@ -139,6 +154,6 @@ result binding =
             ,("DifferentPinOperationCannotSettleReservation",preparedReceipts binding "Committed" True |> Maybe.map (\v -> v.registered==1 && v.remaining==1) |> Maybe.withDefault False)
             ,("UnknownPinRetainsReservation",preparedReceipts binding "Unknown" False |> Maybe.map (\v -> v.registered==1 && v.remaining==1) |> Maybe.withDefault False)]
         probe=preparedResult binding "reorder" |> Maybe.map (\v -> E.object [("firstError",v.first.error |> Maybe.map E.string |> Maybe.withDefault E.null),("error",v.result.error |> Maybe.map E.string |> Maybe.withDefault E.null),("effects",E.int (List.length v.result.effects)),("shell",Shell.encode v.result.shell)]) |> Maybe.withDefault E.null
-    in E.object [("checks",E.object (List.map (\(name,pass) -> (name,E.bool pass)) checks)),("preparedProbe",probe)]
+    in E.object [("checks",E.object (List.map (\(name,pass) -> (name,E.bool pass)) checks)),("preparedProbe",probe),("uncheckedFrame",surfaceFrame "10" ready),("checkedFrame",surfaceFrame "11" confirmed),("pendingFrame",surfaceFrame "12" pending)]
 main : Program () () Never
 main = Platform.worker {init=\_ -> ((),outgoing (D.decodeValue Binding.decoder SnapReplay.bound |> Result.map result |> Result.withDefault (E.object [("checks",E.object [("Binding",E.bool False)])]))),update=\_ model -> (model,Cmd.none),subscriptions=\_ -> Sub.none}

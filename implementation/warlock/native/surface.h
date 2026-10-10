@@ -23,11 +23,11 @@ static gboolean surface_text(JsonNode *node,gsize limit,gboolean empty) {
 static gboolean surface_theme(JsonNode *theme) {
     return surface_text(theme,16,FALSE) && (g_str_equal(json_node_get_string(theme),"night") || g_str_equal(json_node_get_string(theme),"dawn") || g_str_equal(json_node_get_string(theme),"high-contrast"));
 }
-static gboolean surface_controls(JsonNode *node,guint limit,GHashTable *ids,GHashTable *doms,gboolean allow_focus_only) {
+static gboolean surface_controls(JsonNode *node,guint limit,GHashTable *ids,GHashTable *doms,gboolean allow_focus_only,gboolean allow_checked) {
     if (!node || !JSON_NODE_HOLDS_ARRAY(node)) return FALSE;
     JsonArray *array=json_node_get_array(node);
     if (json_array_get_length(array)>limit) return FALSE;
-    const char *const fields[]={"id","domId","label","ariaLabel","detail","enabled","focusOnly"};guint focus_count=0;
+    const char *const fields[]={"id","domId","label","ariaLabel","detail","enabled","focusOnly"};guint focus_count=0,checked_count=0;
     for (guint i=0;i<json_array_get_length(array);i++) {
         JsonNode *item=json_array_get_element(array,i);
         if (!JSON_NODE_HOLDS_OBJECT(item)) return FALSE;
@@ -36,9 +36,14 @@ static gboolean surface_controls(JsonNode *node,guint limit,GHashTable *ids,GHas
         JsonNode *focus_only=json_object_get_member(o,"focusOnly");
         if(!json_object_has_member(o,"enabled") || json_node_get_value_type(json_object_get_member(o,"enabled"))!=G_TYPE_BOOLEAN)return FALSE;
         if(extended && (!focus_only || json_node_get_value_type(focus_only)!=G_TYPE_BOOLEAN || (json_node_get_boolean(focus_only) && (!allow_focus_only || json_object_get_boolean_member(o,"enabled")))))return FALSE;
-        if (!surface_fields(o,fields,extended?7:6) || !surface_text(json_object_get_member(o,"id"),512,FALSE) || !surface_text(json_object_get_member(o,"domId"),1024,FALSE) || !surface_text(json_object_get_member(o,"label"),1024,TRUE) || !surface_text(json_object_get_member(o,"ariaLabel"),1024,FALSE) || !surface_text(json_object_get_member(o,"detail"),128,TRUE) || json_node_get_value_type(json_object_get_member(o,"enabled"))!=G_TYPE_BOOLEAN) return FALSE;
+        gboolean checked=json_object_has_member(o,"checked");
+        JsonNode *checked_node=json_object_get_member(o,"checked");
+        if(checked && (!extended || !allow_checked || !checked_node || json_node_get_value_type(checked_node)!=G_TYPE_BOOLEAN || ++checked_count>1))return FALSE;
+        const char *const checked_fields[]={"id","domId","label","ariaLabel","detail","enabled","focusOnly","checked"};
+        if (!surface_fields(o,checked?checked_fields:fields,checked?8:extended?7:6) || !surface_text(json_object_get_member(o,"id"),512,FALSE) || !surface_text(json_object_get_member(o,"domId"),1024,FALSE) || !surface_text(json_object_get_member(o,"label"),1024,TRUE) || !surface_text(json_object_get_member(o,"ariaLabel"),1024,FALSE) || !surface_text(json_object_get_member(o,"detail"),128,TRUE) || json_node_get_value_type(json_object_get_member(o,"enabled"))!=G_TYPE_BOOLEAN) return FALSE;
         if(extended && json_node_get_boolean(focus_only) && ++focus_count>1)return FALSE;
         const char *id=json_object_get_string_member(o,"id"),*dom=json_object_get_string_member(o,"domId");
+        if(checked && !g_str_has_prefix(id,"menu:"))return FALSE;
         if (g_hash_table_contains(ids,id)||g_hash_table_contains(doms,dom)) return FALSE;
         g_hash_table_add(ids,(gpointer)id);g_hash_table_add(doms,(gpointer)dom);
     }
@@ -68,7 +73,7 @@ static gboolean surface_frame(JsonNode *node,guint64 *pub,guint64 *lease,gboolea
     *open=!g_str_equal(mode,"closed");
     if (*open && (!*lease || (!g_str_equal(mode,"picker") && !g_str_equal(mode,"applications") && !g_str_equal(mode,"menu") && !g_str_equal(mode,"overview") && !g_str_equal(mode,"switcher") && !g_str_equal(mode,"snap") && !g_str_equal(mode,"settings") && !g_str_equal(mode,"notifications") && !g_str_equal(mode,"system") && !g_str_equal(mode,"files") && !g_str_equal(mode,"jump")))) return FALSE;
     g_autoptr(GHashTable) ids=g_hash_table_new(g_str_hash,g_str_equal),doms=g_hash_table_new(g_str_hash,g_str_equal);
-    if (!surface_controls(json_object_get_member(o,"bar"),300,ids,doms,FALSE) || !surface_controls(json_object_get_member(o,"popup"),2150,ids,doms,g_str_equal(mode,"notifications"))) return FALSE;
+    if (!surface_controls(json_object_get_member(o,"bar"),300,ids,doms,FALSE,FALSE) || !surface_controls(json_object_get_member(o,"popup"),2150,ids,doms,g_str_equal(mode,"notifications"),g_str_equal(mode,"menu"))) return FALSE;
     return *open || json_array_get_length(json_object_get_array_member(o,"popup"))==0;
 }
 static gboolean surface_admit(SurfaceGate *gate,JsonNode *frame,guint64 *pub,guint64 *lease,gboolean *open) {
