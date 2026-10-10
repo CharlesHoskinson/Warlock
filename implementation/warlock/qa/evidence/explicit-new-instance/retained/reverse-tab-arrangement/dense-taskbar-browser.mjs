@@ -24,7 +24,7 @@ try{
  await call('Page.enable');await call('Runtime.enable');await viewport(480,96);await call('Page.navigate',{url:base+'/qa/dense.html'});await until('!!window.receivePresentation');
  let pub=0;
  async function show(disabled=-1){const frame={surfaceProtocol:2,publication:String(++pub),lease:'0',mode:'closed',status:'Ready',popup:[],bar:Array.from({length:100},(_,i)=>({id:'bar:pin:app-'+i,domId:'pin:'+pub+':'+i,label:'Application '+i,ariaLabel:'Activate Application '+i,detail:'Pinned; Open',enabled:i!==disabled}))};await evaluate('receivePresentation('+JSON.stringify(frame)+')');await until('document.querySelector(".surface-bar")?.dataset.publication==='+JSON.stringify(frame.publication));await sleep(60);}
- async function key(value,modifiers=0){await call('Input.dispatchKeyEvent',{type:'keyDown',key:value,code:value,modifiers});await call('Input.dispatchKeyEvent',{type:'keyUp',key:value,code:value,modifiers});await sleep(40);}
+ async function key(value){await call('Input.dispatchKeyEvent',{type:'keyDown',key:value,code:value});await call('Input.dispatchKeyEvent',{type:'keyUp',key:value,code:value});await sleep(40);}
  const state=()=>evaluate(`(()=>{const a=document.querySelector('.surface-actions'),f=document.activeElement,r=f.getBoundingClientRect(),v=a.getBoundingClientRect();return {id:f.dataset.surfaceControl,domId:f.id,x:r.x,right:r.right,top:r.top,bottom:r.bottom,left:v.left,viewRight:v.right,viewBottom:v.bottom,scroll:a.scrollLeft,scrollWidth:a.scrollWidth,width:a.clientWidth,font:getComputedStyle(document.body).fontSize,shadow:getComputedStyle(f).boxShadow,order:[...a.children].map(b=>b.dataset.surfaceControl)};})()`);
  const visible=s=>s.x>=s.left-.5&&s.right<=s.viewRight+.5&&s.top>=0&&s.bottom<=s.viewBottom+.5;
  await show();await evaluate(`document.querySelector('[data-surface-control="bar:pin:app-0"]').focus()`);const first=await state();check('Enlarged first item visible with bounded overflow',first.font==='24px'&&visible(first)&&first.scrollWidth>first.width,first);
@@ -98,7 +98,7 @@ try{
  await showMenu(19,false,true);await key('Tab');check('Menu Tab reaches current New instance utility',(await menuState()).id==='control:new-instance:editor'&&pickerVisible(await menuState()));
  await key('Tab');check('Menu Tab reaches current application actions utility',(await menuState()).id==='jump:open:editor'&&pickerVisible(await menuState()));
  await showMenu(19,false,true);check('Application actions utility focus survives ordinary publication',(await menuState()).id==='jump:open:editor'&&pickerVisible(await menuState()));
- await key('Tab',8);check('Reverse Tab reaches New instance utility',(await menuState()).id==='control:new-instance:editor'&&pickerVisible(await menuState()));
+ await key('Tab',{shift:true});check('Reverse Tab reaches New instance utility',(await menuState()).id==='control:new-instance:editor'&&pickerVisible(await menuState()));
  await key('Tab');await key('Enter');check('Application actions utility activation never applies selected window operation',await evaluate(`nativePackets.at(-1).kind==='surface-action'&&nativePackets.at(-1).id==='jump:open:editor'`));
  check('No uncaught browser exceptions',report.errors.length===0,report.errors);report.passed=true;
 }catch(error){report.error=String(error.stack||error);}

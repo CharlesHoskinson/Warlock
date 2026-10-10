@@ -1,13 +1,194 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T23:24:55.160946+00:00",
+  "updatedUTC": "2026-10-10T23:51:05.767512+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
+    "id": "explicit-new-instance",
+    "requirements": [
+      "ELM-UI-004",
+      "ELM-UI-008"
+    ],
+    "scenarios": [
+      "taskbar-inactive",
+      "menu-invocation"
+    ],
+    "paths": [
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/src/Surface.elm",
+      "implementation/warlock/qa/NewInstanceReplay.elm",
+      "implementation/warlock/qa/new-instance.qnt",
+      "implementation/warlock/qa/new-instance_test.qnt",
+      "implementation/warlock/qa/check-search.py",
+      "implementation/warlock/qa/native-window-feedback.py",
+      "implementation/warlock/qa/current-search-build.json",
+      "implementation/warlock/assets/elm.js",
+      "implementation/warlock/assets/bar.js",
+      "implementation/warlock/assets/popup.js",
+      "implementation/warlock/README.md",
+      "implementation/warlock/assets/context.js",
+      "implementation/warlock/qa/dense-taskbar-browser.mjs"
+    ],
+    "before": "The frozen explicit New instance launch action is absent from current application/window menus; ordinary taskbar actions already activate existing windows.",
+    "after": "A labeled New instance control in a uniquely matched window menu or current application actions menu requests one identity-bound native launch; ordinary activation, unavailable/ambiguous identity, stale callbacks and Pending/Unknown never cause duplicate launches.",
+    "verification": [
+      "Use quint-llm-kit before typed reducer changes. Compile production roots and direct NewInstance replay, retain original primary/menu/jump-list assertions, run actual native pointer/keyboard menu selection and exact GIO launch/current receipt plus ordinary activation/no-launch and stale/Unknown negatives; no deadline, grant or window-policy changes."
+    ],
+    "owner": "root-explicit-new-instance",
+    "participantRecord": ".warlock-contributor/explicit-new-instance.json",
+    "sourceHashes": {
+      "implementation/warlock/src/Desktop.elm": "1b5b48fc5ca71c6e11bd54ea6ab723f5a37f4d383d6a59c99d14d83b005d5033",
+      "implementation/warlock/src/Surface.elm": "a660a4641a9f834c6198bce1e8049b3dd0be40cb74be1cfe1d5e14cfd0cdaa1d",
+      "implementation/warlock/qa/NewInstanceReplay.elm": "26e0442ba7428d4c160efd0453d9ca0246dd2abfd46706ec325de11300e61054",
+      "implementation/warlock/qa/new-instance.qnt": "1b44665790edae5be0f680dbb864a7d67eea5a0ca3806a75fded01205f77b186",
+      "implementation/warlock/qa/new-instance_test.qnt": "2c1b87e594e0ab1bc9a436b9deff0f88d68b77f442695c03660040b566e49b60",
+      "implementation/warlock/qa/check-search.py": "faf62c651ea44323fd42908abcbbcf0727c883319ce39733a7df79c4f9ed08bb",
+      "implementation/warlock/qa/native-window-feedback.py": "6f7a07393415d50784f72427b807a21463c0b39e3eacc4327a16690c0f303838",
+      "implementation/warlock/qa/current-search-build.json": "4e2440f0131078d569c7003b41939e83b6c43fecdd37d4540bb8b0590307a514",
+      "implementation/warlock/assets/elm.js": "700524b6a1da72905daeecffd74216143bcf9242ea13c13d01f8bce3e1665be5",
+      "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+      "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
+      "implementation/warlock/README.md": "37004087a0b7a0d5a8702a9b98eaa1380d3976338acf91eeadecb8f266f4c730",
+      "implementation/warlock/assets/context.js": "2ff41ca906dc4e42ae76f65d486cf119b400414dee41ca886f5589709d2b9333",
+      "implementation/warlock/qa/dense-taskbar-browser.mjs": "fa94db43af21efe770dc6998ee98dcf97e9daf610bec8992d192ae2ad97f3deb"
+    },
+    "evidence": [
+      {
+        "requirement": "ELM-UI-004",
+        "scenario": "taskbar-inactive",
+        "oracle": "the member visibly activates",
+        "verificationScope": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+        "scope": "Current primary keyboard activation/minimize/restore preserves original native pixels and real application recipients without launch; explicit New instance uses current catalog authority through native pointer/keyboard window and application-action menus, three exact GIO submissions and removed-entry refusal.",
+        "evidence": [
+          {
+            "path": "implementation/warlock/qa/evidence/explicit-new-instance/manifest.json",
+            "sha256": "2b89d68c7cd44a6dc0bb4904871dc6bb7ee4b9bd441340c6cf49fb44a14eea76"
+          }
+        ],
+        "sourceHashes": {
+          "implementation/warlock/src/Desktop.elm": "1b5b48fc5ca71c6e11bd54ea6ab723f5a37f4d383d6a59c99d14d83b005d5033",
+          "implementation/warlock/src/Surface.elm": "a660a4641a9f834c6198bce1e8049b3dd0be40cb74be1cfe1d5e14cfd0cdaa1d",
+          "implementation/warlock/qa/NewInstanceReplay.elm": "26e0442ba7428d4c160efd0453d9ca0246dd2abfd46706ec325de11300e61054",
+          "implementation/warlock/qa/new-instance.qnt": "1b44665790edae5be0f680dbb864a7d67eea5a0ca3806a75fded01205f77b186",
+          "implementation/warlock/qa/new-instance_test.qnt": "2c1b87e594e0ab1bc9a436b9deff0f88d68b77f442695c03660040b566e49b60",
+          "implementation/warlock/qa/check-search.py": "faf62c651ea44323fd42908abcbbcf0727c883319ce39733a7df79c4f9ed08bb",
+          "implementation/warlock/qa/native-window-feedback.py": "6f7a07393415d50784f72427b807a21463c0b39e3eacc4327a16690c0f303838",
+          "implementation/warlock/qa/current-search-build.json": "4e2440f0131078d569c7003b41939e83b6c43fecdd37d4540bb8b0590307a514",
+          "implementation/warlock/assets/elm.js": "700524b6a1da72905daeecffd74216143bcf9242ea13c13d01f8bce3e1665be5",
+          "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+          "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
+          "implementation/warlock/README.md": "37004087a0b7a0d5a8702a9b98eaa1380d3976338acf91eeadecb8f266f4c730",
+          "implementation/warlock/assets/context.js": "2ff41ca906dc4e42ae76f65d486cf119b400414dee41ca886f5589709d2b9333",
+          "implementation/warlock/qa/dense-taskbar-browser.mjs": "fa94db43af21efe770dc6998ee98dcf97e9daf610bec8992d192ae2ad97f3deb"
+        },
+        "reviewer": "root-explicit-new-instance",
+        "disposition": "partial",
+        "missingObservations": [
+          "Independent original review; applicable New instance native AT, enlarged/dense discovery and wider lifecycle/Unknown schedules; full release package/rollback/resources/hardware."
+        ]
+      },
+      {
+        "requirement": "ELM-UI-008",
+        "scenario": "menu-invocation",
+        "oracle": "secondary click and Menu/Shift-F10 expose labeled operations and Escape returns focus",
+        "verificationScope": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+        "scope": "Actual running-pin secondary click, Menu/Shift-F10, labeled operations and pointer/application versus keyboard/bar Escape return; New instance pointer/keyboard and Application actions keyboard launch with painted current controls; actual Tab utility fix, original compiled and browser discovery retained.",
+        "evidence": [
+          {
+            "path": "implementation/warlock/qa/evidence/explicit-new-instance/manifest.json",
+            "sha256": "2b89d68c7cd44a6dc0bb4904871dc6bb7ee4b9bd441340c6cf49fb44a14eea76"
+          }
+        ],
+        "sourceHashes": {
+          "implementation/warlock/src/Desktop.elm": "1b5b48fc5ca71c6e11bd54ea6ab723f5a37f4d383d6a59c99d14d83b005d5033",
+          "implementation/warlock/src/Surface.elm": "a660a4641a9f834c6198bce1e8049b3dd0be40cb74be1cfe1d5e14cfd0cdaa1d",
+          "implementation/warlock/qa/NewInstanceReplay.elm": "26e0442ba7428d4c160efd0453d9ca0246dd2abfd46706ec325de11300e61054",
+          "implementation/warlock/qa/new-instance.qnt": "1b44665790edae5be0f680dbb864a7d67eea5a0ca3806a75fded01205f77b186",
+          "implementation/warlock/qa/new-instance_test.qnt": "2c1b87e594e0ab1bc9a436b9deff0f88d68b77f442695c03660040b566e49b60",
+          "implementation/warlock/qa/check-search.py": "faf62c651ea44323fd42908abcbbcf0727c883319ce39733a7df79c4f9ed08bb",
+          "implementation/warlock/qa/native-window-feedback.py": "6f7a07393415d50784f72427b807a21463c0b39e3eacc4327a16690c0f303838",
+          "implementation/warlock/qa/current-search-build.json": "4e2440f0131078d569c7003b41939e83b6c43fecdd37d4540bb8b0590307a514",
+          "implementation/warlock/assets/elm.js": "700524b6a1da72905daeecffd74216143bcf9242ea13c13d01f8bce3e1665be5",
+          "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+          "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
+          "implementation/warlock/README.md": "37004087a0b7a0d5a8702a9b98eaa1380d3976338acf91eeadecb8f266f4c730",
+          "implementation/warlock/assets/context.js": "2ff41ca906dc4e42ae76f65d486cf119b400414dee41ca886f5589709d2b9333",
+          "implementation/warlock/qa/dense-taskbar-browser.mjs": "fa94db43af21efe770dc6998ee98dcf97e9daf610bec8992d192ae2ad97f3deb"
+        },
+        "reviewer": "root-explicit-new-instance",
+        "disposition": "partial",
+        "missingObservations": [
+          "Applicable native AT and original enlarged/dense new-action discovery; independent original review; broader lifecycle and full release obligations."
+        ]
+      }
+    ],
+    "sourceTuple": {
+      "sourceBaseRevision": "b6e887efde7cd11667d62e3c272b02773773eb52",
+      "sourceHashes": {
+        "implementation/warlock/src/Desktop.elm": "1b5b48fc5ca71c6e11bd54ea6ab723f5a37f4d383d6a59c99d14d83b005d5033",
+        "implementation/warlock/src/Surface.elm": "a660a4641a9f834c6198bce1e8049b3dd0be40cb74be1cfe1d5e14cfd0cdaa1d",
+        "implementation/warlock/qa/NewInstanceReplay.elm": "26e0442ba7428d4c160efd0453d9ca0246dd2abfd46706ec325de11300e61054",
+        "implementation/warlock/qa/new-instance.qnt": "1b44665790edae5be0f680dbb864a7d67eea5a0ca3806a75fded01205f77b186",
+        "implementation/warlock/qa/new-instance_test.qnt": "2c1b87e594e0ab1bc9a436b9deff0f88d68b77f442695c03660040b566e49b60",
+        "implementation/warlock/qa/check-search.py": "faf62c651ea44323fd42908abcbbcf0727c883319ce39733a7df79c4f9ed08bb",
+        "implementation/warlock/qa/native-window-feedback.py": "6f7a07393415d50784f72427b807a21463c0b39e3eacc4327a16690c0f303838",
+        "implementation/warlock/qa/current-search-build.json": "4e2440f0131078d569c7003b41939e83b6c43fecdd37d4540bb8b0590307a514",
+        "implementation/warlock/assets/elm.js": "700524b6a1da72905daeecffd74216143bcf9242ea13c13d01f8bce3e1665be5",
+        "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+        "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
+        "implementation/warlock/README.md": "37004087a0b7a0d5a8702a9b98eaa1380d3976338acf91eeadecb8f266f4c730",
+        "implementation/warlock/assets/context.js": "2ff41ca906dc4e42ae76f65d486cf119b400414dee41ca886f5589709d2b9333",
+        "implementation/warlock/qa/dense-taskbar-browser.mjs": "fa94db43af21efe770dc6998ee98dcf97e9daf610bec8992d192ae2ad97f3deb"
+      },
+      "nativePair": {
+        "core": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
+          "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
+        },
+        "plugin": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791666305509919483/elm-window-geometry-authority.so",
+          "sha256": "c428e1e6e2b2f9e41b3c5218e3dd37fb6551f09bee6b3531876fb3d3c674948a"
+        },
+        "aquamarine": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+          "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
+        }
+      },
+      "nativeHost": {
+        "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791676052328253053/elm-host",
+        "sha256": "b276c031f945431c10ca128e9e6505f366e14a3ba9cf295362bd36028296eb34",
+        "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791676052328253053/report.json",
+        "heldBuildSHA256": "89e5fbaddb242bcc14ceb19b5147b9fde1991c54916d6a1d22bed45cd95ec3df"
+      },
+      "compiledAssets": {
+        "elm.js": "700524b6a1da72905daeecffd74216143bcf9242ea13c13d01f8bce3e1665be5",
+        "bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+        "popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43"
+      },
+      "evidenceManifestSHA256": "2b89d68c7cd44a6dc0bb4904871dc6bb7ee4b9bd441340c6cf49fb44a14eea76"
+    },
+    "observedOutcome": "Native window/menu and application-action New instance creates three exact current-identity GIO submissions; removed desktop entry refuses the fourth. Original no-launch activation/minimize/restore and actual recipients/pixels pass. Tab utility exclusion fixed. 101 native menu checks, 131 original native primary keyboard checks, 19/19/14 compiled checks, 55 browser checks and 12 named/1000 sampled Quint checks pass; independent/native AT/dense and full release acceptance stay open.",
+    "nextOriginalProductWork": "ELM-UI-020 offline-recovery: inspect original documented rollback oracle and implement reversible predecessor/preference recovery independently of a failed host; preserve full original native AT/IME/hardware/resources/journeys/package scope."
+  },
+  "nextSlices": [
+    "taskbar activation/minimize/restore and popup focus journeys",
+    "persistent catalog pins",
+    "launcher search and refusal recovery",
+    "switcher/Task View/workspaces and snap/output journeys",
+    "authorized visible previews and fallback",
+    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
+    "original native, AT/IME, hardware/resource/journey gates",
+    "reproducible package, reversible deployment/rollback"
+  ],
+  "releaseAccepted": false,
+  "oldTrackerIsCurrent": false,
+  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
+  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
+  "previousSlice": {
     "id": "popup-reflow-current",
     "requirements": [
       "ELM-UI-008"
@@ -160,95 +341,6 @@
     },
     "observedOutcome": "Ready same-view location updates retain picker/menu policy and 200-percent adaptive targets. Original native picker/menu resize journey passes 176 checks including exact final GTK input; primary keyboard regression passes 131; 21 compiled and 50 browser checks pass. AT/independent original acceptance remains partial.",
     "nextOriginalProductWork": "Continue remaining original GUI scenarios, beginning with operation/provider discovery and current context-menu keyboard reachability; do not expand the retained AT/WebKit/IME investigations without a concrete next code change."
-  },
-  "nextSlices": [
-    "taskbar activation/minimize/restore and popup focus journeys",
-    "persistent catalog pins",
-    "launcher search and refusal recovery",
-    "switcher/Task View/workspaces and snap/output journeys",
-    "authorized visible previews and fallback",
-    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
-    "original native, AT/IME, hardware/resource/journey gates",
-    "reproducible package, reversible deployment/rollback"
-  ],
-  "releaseAccepted": false,
-  "oldTrackerIsCurrent": false,
-  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
-  "previousSlice": {
-    "id": "dense-outer-focus",
-    "requirements": [
-      "ELM-UI-008"
-    ],
-    "scenarios": [
-      "overflow-first-last"
-    ],
-    "paths": [
-      "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/assets/bar-adapter.js",
-      "implementation/warlock/assets/shell.css",
-      "implementation/warlock/README.md",
-      "implementation/warlock/qa/dense-taskbar-browser.mjs",
-      "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/assets/elm.js",
-      "implementation/warlock/assets/bar.js",
-      "implementation/warlock/assets/popup.js"
-    ],
-    "before": "The new outer-focus taskbar is not yet observed through the original enlarged native eighteen-pin scrolling/menu/resize journey; its legacy fixture still assumes the old row height.",
-    "after": "All configured entries and first/last menus stay reachable on the current enlarged native row, with complete four-edge focus paint and unchanged action authority.",
-    "verification": [
-      "Original protected native dense-taskbar journey, retain all eighteen identities/order/menu/no-effect/resize checks and native key proof; update only the old row-height expectation to the shipped eight-pixel gutter and add physical outer-ring checks. No new policy/model unless a real production defect requires it."
-    ],
-    "owner": "root-dense-outer-focus",
-    "participantRecord": ".warlock-contributor/dense-outer-focus.json",
-    "sourceHashes": {
-      "implementation/warlock/qa/native-window-feedback.py": "b83a0861f9f3524ff6f8367df351f5bf291c500ee3c007c5fa54e34ffd9b8436",
-      "implementation/warlock/assets/bar-adapter.js": "2f1dd1dfd2f47850a2b455732c114bd98acea976c273c6ec594bef5208d4a68c",
-      "implementation/warlock/assets/shell.css": "d2eff70639eaed0376c02c3441eb71e978e6cd95da8225cde1aee5b342c852a5",
-      "implementation/warlock/README.md": "15c113b424d0abce86163b2e3ee007a07d362c016eafebcde9f6a6742c3338f3",
-      "implementation/warlock/qa/dense-taskbar-browser.mjs": "aa0ec17559253de21333ab60a6e1561c44d1b8296298286b61621f9463bb20da",
-      "implementation/warlock/qa/current-search-build.json": "57bac07a184a05331a8098d37495c1fc29f36c83eb014411bf3d5097f83e8c8b",
-      "implementation/warlock/assets/elm.js": "bd721cfee4c454729cd2847ae0f31869983bce532034118b063b8733688d549d",
-      "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
-      "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43"
-    },
-    "evidence": [
-      {
-        "requirement": "ELM-UI-008",
-        "scenario": "overflow-first-last",
-        "oracle": "all entries are reachable, focus is revealed and labels identify operations",
-        "verificationScope": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
-        "scope": "Implemented actual-document-gated outer bar focus. Native 18-pin 150-percent pointer/keyboard/scroll/resize journey passes with four four-edge captures despite WebKit focus-visible false, inactive-bar suppression, original menus/order/key proof/no effects; original default native action/receipt/pixel/recipient regression and dense/high-contrast browser gates pass.",
-        "evidence": [
-          {
-            "path": "implementation/warlock/qa/evidence/dense-outer-focus/manifest.json",
-            "sha256": "b5e0fcdf80287ea606c4f1aaec87d8a6c27fa070c8704c3b316ea1b17b7cfa2b"
-          }
-        ],
-        "sourceHashes": {
-          "implementation/warlock/qa/native-window-feedback.py": "b83a0861f9f3524ff6f8367df351f5bf291c500ee3c007c5fa54e34ffd9b8436",
-          "implementation/warlock/assets/bar-adapter.js": "2f1dd1dfd2f47850a2b455732c114bd98acea976c273c6ec594bef5208d4a68c",
-          "implementation/warlock/assets/shell.css": "d2eff70639eaed0376c02c3441eb71e978e6cd95da8225cde1aee5b342c852a5",
-          "implementation/warlock/README.md": "15c113b424d0abce86163b2e3ee007a07d362c016eafebcde9f6a6742c3338f3",
-          "implementation/warlock/qa/dense-taskbar-browser.mjs": "aa0ec17559253de21333ab60a6e1561c44d1b8296298286b61621f9463bb20da",
-          "implementation/warlock/qa/current-search-build.json": "57bac07a184a05331a8098d37495c1fc29f36c83eb014411bf3d5097f83e8c8b",
-          "implementation/warlock/assets/elm.js": "bd721cfee4c454729cd2847ae0f31869983bce532034118b063b8733688d549d",
-          "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
-          "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43"
-        },
-        "reviewer": "root-dense-outer-focus",
-        "disposition": "partial",
-        "missingObservations": [
-          "Native AT names/navigation/focus/speech/braille, full providers and multi-member scope, active-popup native reflow and independent original acceptance remain open; retained AT/WebKit reopening crash unresolved."
-        ]
-      }
-    ],
-    "missingObservations": [
-      "Applicable native AT operation names/navigation/focus/speech/braille and independent original acceptance remain open.",
-      "Additional native action providers, complete multi-member scope and active-popup native reflow remain open; retained AT/WebKit reopening failure unresolved."
-    ],
-    "observedOutcome": "Fixed a real native focus-paint loss after pointer-menu use: actual document/control focus now paints the outer bar contour even when WebKit focus-visible is false, and native blur hides it. All 18 pins, first/last menus and resize focus paint pass, as do original default native keyboard effects/receipts/recipients; AT/reflow/independent acceptance remains open.",
-    "nextAction": "Continue ELM-UI-008 overflow-resize with its original protected active-popup native reflow journey. Observe actual popup dimensions, current lease/control focus and paint through small-output/enlarged resize; fix a supported product failure using existing focus/reflow models and quint-llm-kit before any behavioral/authority change. Preserve original six-second waits, key/pointer proof and native effect/custody boundaries. Native AT/WebKit reopening remains a separate retained blocker, not a prerequisite for independent product work."
   },
   "recentSlices": [
     {
@@ -1432,106 +1524,42 @@
       ],
       "observedOutcome": "Fixed a real native focus-paint loss after pointer-menu use: actual document/control focus now paints the outer bar contour even when WebKit focus-visible is false, and native blur hides it. All 18 pins, first/last menus and resize focus paint pass, as do original default native keyboard effects/receipts/recipients; AT/reflow/independent acceptance remains open.",
       "nextAction": "Continue ELM-UI-008 overflow-resize with its original protected active-popup native reflow journey. Observe actual popup dimensions, current lease/control focus and paint through small-output/enlarged resize; fix a supported product failure using existing focus/reflow models and quint-llm-kit before any behavioral/authority change. Preserve original six-second waits, key/pointer proof and native effect/custody boundaries. Native AT/WebKit reopening remains a separate retained blocker, not a prerequisite for independent product work."
-    }
-  ],
-  "lastSlice": {
-    "id": "popup-reflow-current",
-    "requirements": [
-      "ELM-UI-008"
-    ],
-    "scenarios": [
-      "overflow-resize"
-    ],
-    "paths": [
-      "implementation/warlock/native/host.c",
-      "implementation/warlock/native/shared-host.c",
-      "implementation/warlock/assets/popup-adapter.js",
-      "implementation/warlock/assets/shell.css",
-      "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/src/SurfaceController.elm",
-      "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/assets/elm.js",
-      "implementation/warlock/assets/bar.js",
-      "implementation/warlock/assets/popup.js",
-      "implementation/warlock/README.md",
-      "implementation/warlock/qa/dense-taskbar-browser.mjs",
-      "implementation/warlock/qa/PopupReflowReplay.elm",
-      "implementation/warlock/src/OutputController.elm",
-      "implementation/warlock/qa/popup-location-reflow.qnt",
-      "implementation/warlock/qa/popup-location-reflow_test.qnt",
-      "implementation/warlock/qa/check-search.py"
-    ],
-    "before": "Current active-popup native reflow is not qualified on the latest source and focus geometry; original picker/menu output-resize journey remains a release obligation.",
-    "after": "Active enlarged picker and operation selection keeps exact identity/order and native keyboard focus through real output growth and shrink, with readable control pixels and no extra effect or launch.",
-    "verification": [
-      "Original protected popup-reflow native journey and current compiled popup-reflow/focus-model gates if source changes; keep original physical key/pointer proof, exact lease/order/recipient/pixel predicates and six-second waits. Use quint-llm-kit before changing behavioral/lifecycle authority; do not rewrite the original oracle."
-    ],
-    "owner": "root-popup-reflow-current",
-    "participantRecord": ".warlock-contributor/popup-reflow-current.json",
-    "sourceHashes": {
-      "implementation/warlock/native/host.c": "cde6230199756dfaa193d5e8af5a41470f8b65de3cdd1942e0e0224ab458ccbf",
-      "implementation/warlock/native/shared-host.c": "6e7f43b92c08f19ac82f5c93d67ca69d0a11a6c73f01a763a018f2beba282a7a",
-      "implementation/warlock/assets/popup-adapter.js": "050af2a6cfb58195f6999f126ab94f37573231007cb2fcd7d119873969365605",
-      "implementation/warlock/assets/shell.css": "77566e786969cfb4d7c87f2e33cc9f36d2cf4682fdc2da21bf38073340979098",
-      "implementation/warlock/src/Desktop.elm": "8ad8e4797ef13b91add6bce686ebb3bc1f0ec800e4da6328d1d740a3f4961e3f",
-      "implementation/warlock/src/SurfaceController.elm": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
-      "implementation/warlock/qa/native-window-feedback.py": "941c298d010f6cbccc0c20484ba17e34ab881a7a60a34ad549e88ece918f7a6a",
-      "implementation/warlock/qa/current-search-build.json": "de7f04d04d32dcbdb1438b09561c074c8be582edf91b8d97dda043b84f7d8084",
-      "implementation/warlock/assets/elm.js": "461351a07aca1f13fa95b9fbedcdca591c1de579e88bccec610f6358bb20c7db",
-      "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
-      "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
-      "implementation/warlock/README.md": "88d1bbc44c1113e931b235825515659233e825d94b085fdb3c356da7a0177349",
-      "implementation/warlock/qa/dense-taskbar-browser.mjs": "07591ac61867a470d94ae0170187ac6f6ace59f96b0664419e00c0730edbe05e",
-      "implementation/warlock/qa/PopupReflowReplay.elm": "348e49a8f218396d0edb725ebd5891aa59ef11c71bc83c4119a7140107777d49",
-      "implementation/warlock/src/OutputController.elm": "8da2227997dda10570707c456df8b00fcc000291c66a8ec2a48e8d5321cee8dc",
-      "implementation/warlock/qa/popup-location-reflow.qnt": "b3e8bc5361802f6f77ca3c66a8addca9d07660262485c69a93a52760f10cafec",
-      "implementation/warlock/qa/popup-location-reflow_test.qnt": "eb3fdf93a5990ce34347ffe11e4177fe20f20d523d3c4739931e9b49956d017b",
-      "implementation/warlock/qa/check-search.py": "3471d523dba3ed7a1f89c26e685d9df0b6200248e8d20449b932390fcb0f0f3c"
     },
-    "evidence": [
-      {
-        "requirement": "ELM-UI-008",
-        "scenario": "overflow-resize",
-        "oracle": "identity and configured order persist with reachable active selection",
-        "verificationScope": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
-        "scope": "Ready unchanged-view location routing, adaptive 200-percent picker targets and actual-control fresh-lease reveal. Original native 18-pin/ten-root picker/menu grow-shrink journey passes 176 checks with exact order/selection, physical pixels/input retirement, one committed activation, real GTK keyboard input and normal cleanup; default primary regression passes 131. Full compiled output integration, browser and model checks are separately scoped.",
-        "evidence": [
-          {
-            "path": "implementation/warlock/qa/evidence/popup-reflow-current/manifest.json",
-            "sha256": "8a740384ac5ca005299ec5ca89cf08f209b52491da7e628b279aba09411bd053"
-          }
-        ],
-        "sourceHashes": {
-          "implementation/warlock/native/host.c": "cde6230199756dfaa193d5e8af5a41470f8b65de3cdd1942e0e0224ab458ccbf",
-          "implementation/warlock/native/shared-host.c": "6e7f43b92c08f19ac82f5c93d67ca69d0a11a6c73f01a763a018f2beba282a7a",
-          "implementation/warlock/assets/popup-adapter.js": "050af2a6cfb58195f6999f126ab94f37573231007cb2fcd7d119873969365605",
-          "implementation/warlock/assets/shell.css": "77566e786969cfb4d7c87f2e33cc9f36d2cf4682fdc2da21bf38073340979098",
-          "implementation/warlock/src/Desktop.elm": "8ad8e4797ef13b91add6bce686ebb3bc1f0ec800e4da6328d1d740a3f4961e3f",
-          "implementation/warlock/src/SurfaceController.elm": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
-          "implementation/warlock/qa/native-window-feedback.py": "941c298d010f6cbccc0c20484ba17e34ab881a7a60a34ad549e88ece918f7a6a",
-          "implementation/warlock/qa/current-search-build.json": "de7f04d04d32dcbdb1438b09561c074c8be582edf91b8d97dda043b84f7d8084",
-          "implementation/warlock/assets/elm.js": "461351a07aca1f13fa95b9fbedcdca591c1de579e88bccec610f6358bb20c7db",
-          "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
-          "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
-          "implementation/warlock/README.md": "88d1bbc44c1113e931b235825515659233e825d94b085fdb3c356da7a0177349",
-          "implementation/warlock/qa/dense-taskbar-browser.mjs": "07591ac61867a470d94ae0170187ac6f6ace59f96b0664419e00c0730edbe05e",
-          "implementation/warlock/qa/PopupReflowReplay.elm": "348e49a8f218396d0edb725ebd5891aa59ef11c71bc83c4119a7140107777d49",
-          "implementation/warlock/src/OutputController.elm": "8da2227997dda10570707c456df8b00fcc000291c66a8ec2a48e8d5321cee8dc",
-          "implementation/warlock/qa/popup-location-reflow.qnt": "b3e8bc5361802f6f77ca3c66a8addca9d07660262485c69a93a52760f10cafec",
-          "implementation/warlock/qa/popup-location-reflow_test.qnt": "eb3fdf93a5990ce34347ffe11e4177fe20f20d523d3c4739931e9b49956d017b",
-          "implementation/warlock/qa/check-search.py": "3471d523dba3ed7a1f89c26e685d9df0b6200248e8d20449b932390fcb0f0f3c"
-        },
-        "reviewer": "root-popup-reflow-current",
-        "disposition": "partial",
-        "missingObservations": [
-          "Applicable native AT names/navigation/focus/speech/braille and independent original-scenario review; broader output/provider/profile and release-wide hardware/resource/package/rollback acceptance remain open."
-        ]
-      }
-    ],
-    "sourceTuple": {
-      "sourceBaseRevision": "38e347bc4ea8c209683769fe01786631517f4391",
-      "publicBaseRevision": "6bb4c61468f8073d845466166c28b1aae030887b",
+    {
+      "id": "popup-reflow-current",
+      "requirements": [
+        "ELM-UI-008"
+      ],
+      "scenarios": [
+        "overflow-resize"
+      ],
+      "paths": [
+        "implementation/warlock/native/host.c",
+        "implementation/warlock/native/shared-host.c",
+        "implementation/warlock/assets/popup-adapter.js",
+        "implementation/warlock/assets/shell.css",
+        "implementation/warlock/src/Desktop.elm",
+        "implementation/warlock/src/SurfaceController.elm",
+        "implementation/warlock/qa/native-window-feedback.py",
+        "implementation/warlock/qa/current-search-build.json",
+        "implementation/warlock/assets/elm.js",
+        "implementation/warlock/assets/bar.js",
+        "implementation/warlock/assets/popup.js",
+        "implementation/warlock/README.md",
+        "implementation/warlock/qa/dense-taskbar-browser.mjs",
+        "implementation/warlock/qa/PopupReflowReplay.elm",
+        "implementation/warlock/src/OutputController.elm",
+        "implementation/warlock/qa/popup-location-reflow.qnt",
+        "implementation/warlock/qa/popup-location-reflow_test.qnt",
+        "implementation/warlock/qa/check-search.py"
+      ],
+      "before": "Current active-popup native reflow is not qualified on the latest source and focus geometry; original picker/menu output-resize journey remains a release obligation.",
+      "after": "Active enlarged picker and operation selection keeps exact identity/order and native keyboard focus through real output growth and shrink, with readable control pixels and no extra effect or launch.",
+      "verification": [
+        "Original protected popup-reflow native journey and current compiled popup-reflow/focus-model gates if source changes; keep original physical key/pointer proof, exact lease/order/recipient/pixel predicates and six-second waits. Use quint-llm-kit before changing behavioral/lifecycle authority; do not rewrite the original oracle."
+      ],
+      "owner": "root-popup-reflow-current",
+      "participantRecord": ".warlock-contributor/popup-reflow-current.json",
       "sourceHashes": {
         "implementation/warlock/native/host.c": "cde6230199756dfaa193d5e8af5a41470f8b65de3cdd1942e0e0224ab458ccbf",
         "implementation/warlock/native/shared-host.c": "6e7f43b92c08f19ac82f5c93d67ca69d0a11a6c73f01a763a018f2beba282a7a",
@@ -1552,10 +1580,244 @@
         "implementation/warlock/qa/popup-location-reflow_test.qnt": "eb3fdf93a5990ce34347ffe11e4177fe20f20d523d3c4739931e9b49956d017b",
         "implementation/warlock/qa/check-search.py": "3471d523dba3ed7a1f89c26e685d9df0b6200248e8d20449b932390fcb0f0f3c"
       },
-      "supportingSourceHashes": {
-        "DesignLanguage/CURRENT.md": "0a44c8ba957f441b54f726b46eae7588e68f7b48a9c1e66110603e2b16c3fb43"
+      "evidence": [
+        {
+          "requirement": "ELM-UI-008",
+          "scenario": "overflow-resize",
+          "oracle": "identity and configured order persist with reachable active selection",
+          "verificationScope": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+          "scope": "Ready unchanged-view location routing, adaptive 200-percent picker targets and actual-control fresh-lease reveal. Original native 18-pin/ten-root picker/menu grow-shrink journey passes 176 checks with exact order/selection, physical pixels/input retirement, one committed activation, real GTK keyboard input and normal cleanup; default primary regression passes 131. Full compiled output integration, browser and model checks are separately scoped.",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/popup-reflow-current/manifest.json",
+              "sha256": "8a740384ac5ca005299ec5ca89cf08f209b52491da7e628b279aba09411bd053"
+            }
+          ],
+          "sourceHashes": {
+            "implementation/warlock/native/host.c": "cde6230199756dfaa193d5e8af5a41470f8b65de3cdd1942e0e0224ab458ccbf",
+            "implementation/warlock/native/shared-host.c": "6e7f43b92c08f19ac82f5c93d67ca69d0a11a6c73f01a763a018f2beba282a7a",
+            "implementation/warlock/assets/popup-adapter.js": "050af2a6cfb58195f6999f126ab94f37573231007cb2fcd7d119873969365605",
+            "implementation/warlock/assets/shell.css": "77566e786969cfb4d7c87f2e33cc9f36d2cf4682fdc2da21bf38073340979098",
+            "implementation/warlock/src/Desktop.elm": "8ad8e4797ef13b91add6bce686ebb3bc1f0ec800e4da6328d1d740a3f4961e3f",
+            "implementation/warlock/src/SurfaceController.elm": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
+            "implementation/warlock/qa/native-window-feedback.py": "941c298d010f6cbccc0c20484ba17e34ab881a7a60a34ad549e88ece918f7a6a",
+            "implementation/warlock/qa/current-search-build.json": "de7f04d04d32dcbdb1438b09561c074c8be582edf91b8d97dda043b84f7d8084",
+            "implementation/warlock/assets/elm.js": "461351a07aca1f13fa95b9fbedcdca591c1de579e88bccec610f6358bb20c7db",
+            "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+            "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
+            "implementation/warlock/README.md": "88d1bbc44c1113e931b235825515659233e825d94b085fdb3c356da7a0177349",
+            "implementation/warlock/qa/dense-taskbar-browser.mjs": "07591ac61867a470d94ae0170187ac6f6ace59f96b0664419e00c0730edbe05e",
+            "implementation/warlock/qa/PopupReflowReplay.elm": "348e49a8f218396d0edb725ebd5891aa59ef11c71bc83c4119a7140107777d49",
+            "implementation/warlock/src/OutputController.elm": "8da2227997dda10570707c456df8b00fcc000291c66a8ec2a48e8d5321cee8dc",
+            "implementation/warlock/qa/popup-location-reflow.qnt": "b3e8bc5361802f6f77ca3c66a8addca9d07660262485c69a93a52760f10cafec",
+            "implementation/warlock/qa/popup-location-reflow_test.qnt": "eb3fdf93a5990ce34347ffe11e4177fe20f20d523d3c4739931e9b49956d017b",
+            "implementation/warlock/qa/check-search.py": "3471d523dba3ed7a1f89c26e685d9df0b6200248e8d20449b932390fcb0f0f3c"
+          },
+          "reviewer": "root-popup-reflow-current",
+          "disposition": "partial",
+          "missingObservations": [
+            "Applicable native AT names/navigation/focus/speech/braille and independent original-scenario review; broader output/provider/profile and release-wide hardware/resource/package/rollback acceptance remain open."
+          ]
+        }
+      ],
+      "sourceTuple": {
+        "sourceBaseRevision": "38e347bc4ea8c209683769fe01786631517f4391",
+        "publicBaseRevision": "6bb4c61468f8073d845466166c28b1aae030887b",
+        "sourceHashes": {
+          "implementation/warlock/native/host.c": "cde6230199756dfaa193d5e8af5a41470f8b65de3cdd1942e0e0224ab458ccbf",
+          "implementation/warlock/native/shared-host.c": "6e7f43b92c08f19ac82f5c93d67ca69d0a11a6c73f01a763a018f2beba282a7a",
+          "implementation/warlock/assets/popup-adapter.js": "050af2a6cfb58195f6999f126ab94f37573231007cb2fcd7d119873969365605",
+          "implementation/warlock/assets/shell.css": "77566e786969cfb4d7c87f2e33cc9f36d2cf4682fdc2da21bf38073340979098",
+          "implementation/warlock/src/Desktop.elm": "8ad8e4797ef13b91add6bce686ebb3bc1f0ec800e4da6328d1d740a3f4961e3f",
+          "implementation/warlock/src/SurfaceController.elm": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
+          "implementation/warlock/qa/native-window-feedback.py": "941c298d010f6cbccc0c20484ba17e34ab881a7a60a34ad549e88ece918f7a6a",
+          "implementation/warlock/qa/current-search-build.json": "de7f04d04d32dcbdb1438b09561c074c8be582edf91b8d97dda043b84f7d8084",
+          "implementation/warlock/assets/elm.js": "461351a07aca1f13fa95b9fbedcdca591c1de579e88bccec610f6358bb20c7db",
+          "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+          "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
+          "implementation/warlock/README.md": "88d1bbc44c1113e931b235825515659233e825d94b085fdb3c356da7a0177349",
+          "implementation/warlock/qa/dense-taskbar-browser.mjs": "07591ac61867a470d94ae0170187ac6f6ace59f96b0664419e00c0730edbe05e",
+          "implementation/warlock/qa/PopupReflowReplay.elm": "348e49a8f218396d0edb725ebd5891aa59ef11c71bc83c4119a7140107777d49",
+          "implementation/warlock/src/OutputController.elm": "8da2227997dda10570707c456df8b00fcc000291c66a8ec2a48e8d5321cee8dc",
+          "implementation/warlock/qa/popup-location-reflow.qnt": "b3e8bc5361802f6f77ca3c66a8addca9d07660262485c69a93a52760f10cafec",
+          "implementation/warlock/qa/popup-location-reflow_test.qnt": "eb3fdf93a5990ce34347ffe11e4177fe20f20d523d3c4739931e9b49956d017b",
+          "implementation/warlock/qa/check-search.py": "3471d523dba3ed7a1f89c26e685d9df0b6200248e8d20449b932390fcb0f0f3c"
+        },
+        "supportingSourceHashes": {
+          "DesignLanguage/CURRENT.md": "0a44c8ba957f441b54f726b46eae7588e68f7b48a9c1e66110603e2b16c3fb43"
+        },
+        "pair": {
+          "core": {
+            "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
+            "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
+          },
+          "plugin": {
+            "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791666305509919483/elm-window-geometry-authority.so",
+            "sha256": "c428e1e6e2b2f9e41b3c5218e3dd37fb6551f09bee6b3531876fb3d3c674948a"
+          },
+          "aquamarine": {
+            "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+            "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
+          }
+        },
+        "nativeHost": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791674339460650359/elm-host",
+          "sha256": "b276c031f945431c10ca128e9e6505f366e14a3ba9cf295362bd36028296eb34",
+          "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791674339460650359/report.json",
+          "heldBuildSHA256": "5b797a2c1f06f4931aaa66c58768e53bf40fa18ec2b80a0fb8baf0ec13c1f200"
+        },
+        "compiledAssets": {
+          "elm.js": "461351a07aca1f13fa95b9fbedcdca591c1de579e88bccec610f6358bb20c7db",
+          "bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+          "popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43"
+        },
+        "buildReport": {
+          "path": "implementation/warlock/qa/runs/taskbar-primary-1791674339460650359/report.json",
+          "sha256": "5b797a2c1f06f4931aaa66c58768e53bf40fa18ec2b80a0fb8baf0ec13c1f200"
+        }
       },
-      "pair": {
+      "observedOutcome": "Ready same-view location updates retain picker/menu policy and 200-percent adaptive targets. Original native picker/menu resize journey passes 176 checks including exact final GTK input; primary keyboard regression passes 131; 21 compiled and 50 browser checks pass. AT/independent original acceptance remains partial.",
+      "nextOriginalProductWork": "Continue remaining original GUI scenarios, beginning with operation/provider discovery and current context-menu keyboard reachability; do not expand the retained AT/WebKit/IME investigations without a concrete next code change."
+    }
+  ],
+  "lastSlice": {
+    "id": "explicit-new-instance",
+    "requirements": [
+      "ELM-UI-004",
+      "ELM-UI-008"
+    ],
+    "scenarios": [
+      "taskbar-inactive",
+      "menu-invocation"
+    ],
+    "paths": [
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/src/Surface.elm",
+      "implementation/warlock/qa/NewInstanceReplay.elm",
+      "implementation/warlock/qa/new-instance.qnt",
+      "implementation/warlock/qa/new-instance_test.qnt",
+      "implementation/warlock/qa/check-search.py",
+      "implementation/warlock/qa/native-window-feedback.py",
+      "implementation/warlock/qa/current-search-build.json",
+      "implementation/warlock/assets/elm.js",
+      "implementation/warlock/assets/bar.js",
+      "implementation/warlock/assets/popup.js",
+      "implementation/warlock/README.md",
+      "implementation/warlock/assets/context.js",
+      "implementation/warlock/qa/dense-taskbar-browser.mjs"
+    ],
+    "before": "The frozen explicit New instance launch action is absent from current application/window menus; ordinary taskbar actions already activate existing windows.",
+    "after": "A labeled New instance control in a uniquely matched window menu or current application actions menu requests one identity-bound native launch; ordinary activation, unavailable/ambiguous identity, stale callbacks and Pending/Unknown never cause duplicate launches.",
+    "verification": [
+      "Use quint-llm-kit before typed reducer changes. Compile production roots and direct NewInstance replay, retain original primary/menu/jump-list assertions, run actual native pointer/keyboard menu selection and exact GIO launch/current receipt plus ordinary activation/no-launch and stale/Unknown negatives; no deadline, grant or window-policy changes."
+    ],
+    "owner": "root-explicit-new-instance",
+    "participantRecord": ".warlock-contributor/explicit-new-instance.json",
+    "sourceHashes": {
+      "implementation/warlock/src/Desktop.elm": "1b5b48fc5ca71c6e11bd54ea6ab723f5a37f4d383d6a59c99d14d83b005d5033",
+      "implementation/warlock/src/Surface.elm": "a660a4641a9f834c6198bce1e8049b3dd0be40cb74be1cfe1d5e14cfd0cdaa1d",
+      "implementation/warlock/qa/NewInstanceReplay.elm": "26e0442ba7428d4c160efd0453d9ca0246dd2abfd46706ec325de11300e61054",
+      "implementation/warlock/qa/new-instance.qnt": "1b44665790edae5be0f680dbb864a7d67eea5a0ca3806a75fded01205f77b186",
+      "implementation/warlock/qa/new-instance_test.qnt": "2c1b87e594e0ab1bc9a436b9deff0f88d68b77f442695c03660040b566e49b60",
+      "implementation/warlock/qa/check-search.py": "faf62c651ea44323fd42908abcbbcf0727c883319ce39733a7df79c4f9ed08bb",
+      "implementation/warlock/qa/native-window-feedback.py": "6f7a07393415d50784f72427b807a21463c0b39e3eacc4327a16690c0f303838",
+      "implementation/warlock/qa/current-search-build.json": "4e2440f0131078d569c7003b41939e83b6c43fecdd37d4540bb8b0590307a514",
+      "implementation/warlock/assets/elm.js": "700524b6a1da72905daeecffd74216143bcf9242ea13c13d01f8bce3e1665be5",
+      "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+      "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
+      "implementation/warlock/README.md": "37004087a0b7a0d5a8702a9b98eaa1380d3976338acf91eeadecb8f266f4c730",
+      "implementation/warlock/assets/context.js": "2ff41ca906dc4e42ae76f65d486cf119b400414dee41ca886f5589709d2b9333",
+      "implementation/warlock/qa/dense-taskbar-browser.mjs": "fa94db43af21efe770dc6998ee98dcf97e9daf610bec8992d192ae2ad97f3deb"
+    },
+    "evidence": [
+      {
+        "requirement": "ELM-UI-004",
+        "scenario": "taskbar-inactive",
+        "oracle": "the member visibly activates",
+        "verificationScope": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+        "scope": "Current primary keyboard activation/minimize/restore preserves original native pixels and real application recipients without launch; explicit New instance uses current catalog authority through native pointer/keyboard window and application-action menus, three exact GIO submissions and removed-entry refusal.",
+        "evidence": [
+          {
+            "path": "implementation/warlock/qa/evidence/explicit-new-instance/manifest.json",
+            "sha256": "2b89d68c7cd44a6dc0bb4904871dc6bb7ee4b9bd441340c6cf49fb44a14eea76"
+          }
+        ],
+        "sourceHashes": {
+          "implementation/warlock/src/Desktop.elm": "1b5b48fc5ca71c6e11bd54ea6ab723f5a37f4d383d6a59c99d14d83b005d5033",
+          "implementation/warlock/src/Surface.elm": "a660a4641a9f834c6198bce1e8049b3dd0be40cb74be1cfe1d5e14cfd0cdaa1d",
+          "implementation/warlock/qa/NewInstanceReplay.elm": "26e0442ba7428d4c160efd0453d9ca0246dd2abfd46706ec325de11300e61054",
+          "implementation/warlock/qa/new-instance.qnt": "1b44665790edae5be0f680dbb864a7d67eea5a0ca3806a75fded01205f77b186",
+          "implementation/warlock/qa/new-instance_test.qnt": "2c1b87e594e0ab1bc9a436b9deff0f88d68b77f442695c03660040b566e49b60",
+          "implementation/warlock/qa/check-search.py": "faf62c651ea44323fd42908abcbbcf0727c883319ce39733a7df79c4f9ed08bb",
+          "implementation/warlock/qa/native-window-feedback.py": "6f7a07393415d50784f72427b807a21463c0b39e3eacc4327a16690c0f303838",
+          "implementation/warlock/qa/current-search-build.json": "4e2440f0131078d569c7003b41939e83b6c43fecdd37d4540bb8b0590307a514",
+          "implementation/warlock/assets/elm.js": "700524b6a1da72905daeecffd74216143bcf9242ea13c13d01f8bce3e1665be5",
+          "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+          "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
+          "implementation/warlock/README.md": "37004087a0b7a0d5a8702a9b98eaa1380d3976338acf91eeadecb8f266f4c730",
+          "implementation/warlock/assets/context.js": "2ff41ca906dc4e42ae76f65d486cf119b400414dee41ca886f5589709d2b9333",
+          "implementation/warlock/qa/dense-taskbar-browser.mjs": "fa94db43af21efe770dc6998ee98dcf97e9daf610bec8992d192ae2ad97f3deb"
+        },
+        "reviewer": "root-explicit-new-instance",
+        "disposition": "partial",
+        "missingObservations": [
+          "Independent original review; applicable New instance native AT, enlarged/dense discovery and wider lifecycle/Unknown schedules; full release package/rollback/resources/hardware."
+        ]
+      },
+      {
+        "requirement": "ELM-UI-008",
+        "scenario": "menu-invocation",
+        "oracle": "secondary click and Menu/Shift-F10 expose labeled operations and Escape returns focus",
+        "verificationScope": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+        "scope": "Actual running-pin secondary click, Menu/Shift-F10, labeled operations and pointer/application versus keyboard/bar Escape return; New instance pointer/keyboard and Application actions keyboard launch with painted current controls; actual Tab utility fix, original compiled and browser discovery retained.",
+        "evidence": [
+          {
+            "path": "implementation/warlock/qa/evidence/explicit-new-instance/manifest.json",
+            "sha256": "2b89d68c7cd44a6dc0bb4904871dc6bb7ee4b9bd441340c6cf49fb44a14eea76"
+          }
+        ],
+        "sourceHashes": {
+          "implementation/warlock/src/Desktop.elm": "1b5b48fc5ca71c6e11bd54ea6ab723f5a37f4d383d6a59c99d14d83b005d5033",
+          "implementation/warlock/src/Surface.elm": "a660a4641a9f834c6198bce1e8049b3dd0be40cb74be1cfe1d5e14cfd0cdaa1d",
+          "implementation/warlock/qa/NewInstanceReplay.elm": "26e0442ba7428d4c160efd0453d9ca0246dd2abfd46706ec325de11300e61054",
+          "implementation/warlock/qa/new-instance.qnt": "1b44665790edae5be0f680dbb864a7d67eea5a0ca3806a75fded01205f77b186",
+          "implementation/warlock/qa/new-instance_test.qnt": "2c1b87e594e0ab1bc9a436b9deff0f88d68b77f442695c03660040b566e49b60",
+          "implementation/warlock/qa/check-search.py": "faf62c651ea44323fd42908abcbbcf0727c883319ce39733a7df79c4f9ed08bb",
+          "implementation/warlock/qa/native-window-feedback.py": "6f7a07393415d50784f72427b807a21463c0b39e3eacc4327a16690c0f303838",
+          "implementation/warlock/qa/current-search-build.json": "4e2440f0131078d569c7003b41939e83b6c43fecdd37d4540bb8b0590307a514",
+          "implementation/warlock/assets/elm.js": "700524b6a1da72905daeecffd74216143bcf9242ea13c13d01f8bce3e1665be5",
+          "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+          "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
+          "implementation/warlock/README.md": "37004087a0b7a0d5a8702a9b98eaa1380d3976338acf91eeadecb8f266f4c730",
+          "implementation/warlock/assets/context.js": "2ff41ca906dc4e42ae76f65d486cf119b400414dee41ca886f5589709d2b9333",
+          "implementation/warlock/qa/dense-taskbar-browser.mjs": "fa94db43af21efe770dc6998ee98dcf97e9daf610bec8992d192ae2ad97f3deb"
+        },
+        "reviewer": "root-explicit-new-instance",
+        "disposition": "partial",
+        "missingObservations": [
+          "Applicable native AT and original enlarged/dense new-action discovery; independent original review; broader lifecycle and full release obligations."
+        ]
+      }
+    ],
+    "sourceTuple": {
+      "sourceBaseRevision": "b6e887efde7cd11667d62e3c272b02773773eb52",
+      "sourceHashes": {
+        "implementation/warlock/src/Desktop.elm": "1b5b48fc5ca71c6e11bd54ea6ab723f5a37f4d383d6a59c99d14d83b005d5033",
+        "implementation/warlock/src/Surface.elm": "a660a4641a9f834c6198bce1e8049b3dd0be40cb74be1cfe1d5e14cfd0cdaa1d",
+        "implementation/warlock/qa/NewInstanceReplay.elm": "26e0442ba7428d4c160efd0453d9ca0246dd2abfd46706ec325de11300e61054",
+        "implementation/warlock/qa/new-instance.qnt": "1b44665790edae5be0f680dbb864a7d67eea5a0ca3806a75fded01205f77b186",
+        "implementation/warlock/qa/new-instance_test.qnt": "2c1b87e594e0ab1bc9a436b9deff0f88d68b77f442695c03660040b566e49b60",
+        "implementation/warlock/qa/check-search.py": "faf62c651ea44323fd42908abcbbcf0727c883319ce39733a7df79c4f9ed08bb",
+        "implementation/warlock/qa/native-window-feedback.py": "6f7a07393415d50784f72427b807a21463c0b39e3eacc4327a16690c0f303838",
+        "implementation/warlock/qa/current-search-build.json": "4e2440f0131078d569c7003b41939e83b6c43fecdd37d4540bb8b0590307a514",
+        "implementation/warlock/assets/elm.js": "700524b6a1da72905daeecffd74216143bcf9242ea13c13d01f8bce3e1665be5",
+        "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+        "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
+        "implementation/warlock/README.md": "37004087a0b7a0d5a8702a9b98eaa1380d3976338acf91eeadecb8f266f4c730",
+        "implementation/warlock/assets/context.js": "2ff41ca906dc4e42ae76f65d486cf119b400414dee41ca886f5589709d2b9333",
+        "implementation/warlock/qa/dense-taskbar-browser.mjs": "fa94db43af21efe770dc6998ee98dcf97e9daf610bec8992d192ae2ad97f3deb"
+      },
+      "nativePair": {
         "core": {
           "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
           "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
@@ -1570,22 +1832,19 @@
         }
       },
       "nativeHost": {
-        "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791674339460650359/elm-host",
+        "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791676052328253053/elm-host",
         "sha256": "b276c031f945431c10ca128e9e6505f366e14a3ba9cf295362bd36028296eb34",
-        "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791674339460650359/report.json",
-        "heldBuildSHA256": "5b797a2c1f06f4931aaa66c58768e53bf40fa18ec2b80a0fb8baf0ec13c1f200"
+        "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791676052328253053/report.json",
+        "heldBuildSHA256": "89e5fbaddb242bcc14ceb19b5147b9fde1991c54916d6a1d22bed45cd95ec3df"
       },
       "compiledAssets": {
-        "elm.js": "461351a07aca1f13fa95b9fbedcdca591c1de579e88bccec610f6358bb20c7db",
+        "elm.js": "700524b6a1da72905daeecffd74216143bcf9242ea13c13d01f8bce3e1665be5",
         "bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
         "popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43"
       },
-      "buildReport": {
-        "path": "implementation/warlock/qa/runs/taskbar-primary-1791674339460650359/report.json",
-        "sha256": "5b797a2c1f06f4931aaa66c58768e53bf40fa18ec2b80a0fb8baf0ec13c1f200"
-      }
+      "evidenceManifestSHA256": "2b89d68c7cd44a6dc0bb4904871dc6bb7ee4b9bd441340c6cf49fb44a14eea76"
     },
-    "observedOutcome": "Ready same-view location updates retain picker/menu policy and 200-percent adaptive targets. Original native picker/menu resize journey passes 176 checks including exact final GTK input; primary keyboard regression passes 131; 21 compiled and 50 browser checks pass. AT/independent original acceptance remains partial.",
-    "nextOriginalProductWork": "Continue remaining original GUI scenarios, beginning with operation/provider discovery and current context-menu keyboard reachability; do not expand the retained AT/WebKit/IME investigations without a concrete next code change."
+    "observedOutcome": "Native window/menu and application-action New instance creates three exact current-identity GIO submissions; removed desktop entry refuses the fourth. Original no-launch activation/minimize/restore and actual recipients/pixels pass. Tab utility exclusion fixed. 101 native menu checks, 131 original native primary keyboard checks, 19/19/14 compiled checks, 55 browser checks and 12 named/1000 sampled Quint checks pass; independent/native AT/dense and full release acceptance stay open.",
+    "nextOriginalProductWork": "ELM-UI-020 offline-recovery: inspect original documented rollback oracle and implement reversible predecessor/preference recovery independently of a failed host; preserve full original native AT/IME/hardware/resources/journeys/package scope."
   }
 }

@@ -1,4 +1,4 @@
-module Desktop exposing (Effect(..), ChoiceToken, choiceToken, Model, Msg(..), PopupOrigin(..), initial, update, ViewStamp, capture, key, taskViewGroups, overviewTransferAvailable, workspaceNavigationIntent, workspaceMutation, switcherOpen, canProveCatalogUnsent, pinnedGroup, pinGroups, pinIdentities)
+module Desktop exposing (Effect(..), ChoiceToken, choiceToken, Model, Msg(..), PopupOrigin(..), initial, update, ViewStamp, capture, key, taskViewGroups, overviewTransferAvailable, workspaceNavigationIntent, workspaceMutation, switcherOpen, canProveCatalogUnsent, pinnedGroup, pinGroups, pinIdentities, menuApplication, newInstanceAvailable)
 
 import Menu
 import ActionProjection as Scene
@@ -183,6 +183,7 @@ type Msg
     | TogglePin ViewStamp String
     | MovePin ViewStamp String Int
     | CatalogUnsent Binding.Binding Counter
+    | NewInstance ViewStamp String
     | Start Launch.Selection
     | Deadline Launch.PendingToken
     | ChoiceDeadline ChoiceToken
@@ -1294,6 +1295,14 @@ updateAvailable message model =
         MovePin stamp identity direction ->
             if capture model/=Just stamp || not model.open || not (Pins.writable model.pins) then (model,[]) else
                 savePins (Pins.move identity direction (pinIdentities model)) model
+        NewInstance stamp identity ->
+            if capture model/=Just stamp || not (newInstanceAvailable identity model) then (model,[]) else
+                case Launch.select identity model.launch of
+                    Nothing -> (model,[])
+                    Just selection ->
+                        let windows=model.windows
+                            closed=advance (retireSwitcher {model | jumpEntry=Nothing,jumpOpening=False,jumpBack=False,snap=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}})
+                        in update (Start selection) closed
         Start selection ->
             if MenuBridge.preparedSnapshot model.windows.menus/=Nothing then (model,[]) else
             let (launch,intent) = Launch.start selection model.launch
@@ -1353,6 +1362,29 @@ pinGroups identity model =
     case model.applications |> Maybe.andThen (Catalog.lookup identity) of
         Nothing -> []
         Just entry -> TaskbarShell.groups model.windows |> List.filter (\group -> List.any (\family -> family.application==identity || (not (String.isEmpty entry.wmclass) && family.application==entry.wmclass)) group.families)
+
+-- Catalog identity, never a title/name guess, binds both menu projection and
+-- reducer admission. Multiple desktop entries for the same class are ambiguous.
+menuApplication : Model -> Maybe Catalog.Entry
+menuApplication model =
+    MenuBridge.currentProvider model.windows.menus |> Maybe.andThen (\provider ->
+        model.applications |> Maybe.map Catalog.entries |> Maybe.withDefault []
+            |> List.filter (\entry -> pinGroups (Catalog.id entry.identity) model |> List.any (\group -> List.any (\family -> family.root==Provider.incarnation provider) group.families))
+            |> (\matches -> case matches of
+                [entry] -> Just entry
+                _ -> Nothing))
+
+newInstanceAvailable : String -> Model -> Bool
+newInstanceAvailable identity model =
+    let menuReady=(MenuBridge.menuSnapshot model.windows.menus).menu |> Maybe.map (\menu -> menu.status==Menu.Ready) |> Maybe.withDefault False
+        windowEntry=menuApplication model |> Maybe.map (\entry -> Catalog.id entry.identity==identity) |> Maybe.withDefault False
+        windowBlocked=MenuBridge.currentProvider model.windows.menus |> Maybe.map (\provider -> MenuBridge.blockedFor (Provider.incarnation provider) model.windows.shell model.windows.menus) |> Maybe.withDefault True
+        originReady=if model.jumpEntry/=Nothing then model.jumpEntry==Just identity && model.jumpList.pending==Nothing else menuReady && windowEntry && not windowBlocked
+    in Shell.available model.windows.shell && model.choice==Nothing && not model.ownerExhausted
+        && MenuBridge.preparedSnapshot model.windows.menus==Nothing
+        && (model.applications |> Maybe.andThen (Catalog.lookup identity))/=Nothing
+        && not (List.member (Launch.status model.launch) ["Pending","Unknown"])
+        && Launch.select identity model.launch/=Nothing && originReady
 
 readSystemMenu : Model -> (Model,List Effect)
 readSystemMenu model =

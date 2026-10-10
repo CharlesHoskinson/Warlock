@@ -74,6 +74,17 @@ mode model =
     else if model.windows.picker /= Nothing then "picker"
     else "closed"
 
+newInstanceControl : Desktop.Model -> String -> Catalog.Entry -> Control
+newInstanceControl model domId entry =
+    let identity=Catalog.id entry.identity
+        enabled=Desktop.newInstanceAvailable identity model
+        detail=case Launch.status model.launch of
+            "Pending" -> "Waiting for launch confirmation"
+            "Unknown" -> "Previous launch is not confirmed; recover its status first"
+            _ -> entry.name
+    in {id="control:new-instance:"++identity,domId=domId,label="New instance",ariaLabel="Open new instance of "++entry.name,detail=detail,enabled=enabled,
+        message=if enabled then Desktop.capture model |> Maybe.map (\stamp -> Desktop.NewInstance stamp identity) else Nothing}
+
 controls : Desktop.Model -> List Control
 controls model =
     if model.jumpEntry/=Nothing then
@@ -88,6 +99,7 @@ controls model =
         in [control "control:close" "Close application actions" "" True Desktop.CloseJumpList
            ,control "jump:refresh" "Refresh application actions" "Read actions; never repeat a request" (model.jumpExpected==Nothing) Desktop.RefreshJumpList
            ,control "jump:title:state" title "" False Desktop.CloseJumpList]
+           ++(model.jumpEntry |> Maybe.andThen (\identity -> model.applications |> Maybe.andThen (Catalog.lookup identity)) |> Maybe.map (\entry -> [newInstanceControl model (Desktop.key model "jump:new-instance") entry]) |> Maybe.withDefault [])
            ++entries++(if List.isEmpty entries && model.jumpExpected==Nothing then [control "jump:empty:state" "No supported actions or recent files." "" False Desktop.CloseJumpList] else [])
     else if model.filesOpen then
         let scoped message=Desktop.capture model |> Maybe.map message
@@ -305,13 +317,10 @@ controls model =
                         model.windows.shell.geometry |> Maybe.andThen (\geometry -> Snap.open geometry (Provider.incarnation provider))
                             |> Maybe.map (\_ -> {id="control:snap-open",domId=prefix++"snap",label="Snap window",ariaLabel="Open snapping",detail="",enabled=ready,
                                 message=if ready then Desktop.capture model |> Maybe.map (\stamp -> Desktop.OpenSnap stamp (Provider.incarnation provider)) else Nothing}))
-                    applicationActions = MenuBridge.currentProvider model.windows.menus |> Maybe.andThen (\provider ->
-                        model.applications |> Maybe.map Catalog.entries |> Maybe.withDefault []
-                            |> List.filter (\entry -> Desktop.pinGroups (Catalog.id entry.identity) model |> List.any (\group -> List.any (\family -> family.root==Provider.incarnation provider) group.families))
-                            |> (\matches -> case matches of
-                                [entry] -> Just {id="jump:open:"++Catalog.id entry.identity,domId=prefix++"application-actions",label="Application actions",ariaLabel="Actions for "++entry.name,detail="Declared actions and recent files",enabled=ready,message=if ready then Desktop.capture model |> Maybe.map (\stamp -> Desktop.OpenJumpList stamp (Catalog.id entry.identity)) else Nothing}
-                                _ -> Nothing))
-                in {id="control:menu-close",domId=prefix ++ "close",label="Close",ariaLabel="Close window actions",detail="",enabled=True,message=Just (Desktop.Window (TaskbarShell.MenuEvent (Menu.Dismiss menu.id)))} :: List.indexedMap row menu.items ++ (snap |> Maybe.map List.singleton |> Maybe.withDefault []) ++ (applicationActions |> Maybe.map List.singleton |> Maybe.withDefault []) ++ recoveryPopup model
+                    applicationActions = Desktop.menuApplication model |> Maybe.map (\entry ->
+                        {id="jump:open:"++Catalog.id entry.identity,domId=prefix++"application-actions",label="Application actions",ariaLabel="Actions for "++entry.name,detail="Declared actions and recent files",enabled=ready,message=if ready then Desktop.capture model |> Maybe.map (\stamp -> Desktop.OpenJumpList stamp (Catalog.id entry.identity)) else Nothing})
+                    newInstance = Desktop.menuApplication model |> Maybe.map (newInstanceControl model (prefix++"new-instance"))
+                in {id="control:menu-close",domId=prefix ++ "close",label="Close",ariaLabel="Close window actions",detail="",enabled=True,message=Just (Desktop.Window (TaskbarShell.MenuEvent (Menu.Dismiss menu.id)))} :: List.indexedMap row menu.items ++ (snap |> Maybe.map List.singleton |> Maybe.withDefault []) ++ (newInstance |> Maybe.map List.singleton |> Maybe.withDefault []) ++ (applicationActions |> Maybe.map List.singleton |> Maybe.withDefault []) ++ recoveryPopup model
     else
         case model.windows.picker of
             Just picker ->

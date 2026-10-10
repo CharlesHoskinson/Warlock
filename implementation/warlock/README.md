@@ -706,3 +706,26 @@ Earlier small-card, registration, late-reveal and fixture failures remain frozen
 Original ELM-UI-008 overflow-resize acceptance remains partial pending applicable
 native AT and independent review, with broader providers/output profiles and
 release-wide hardware/resource/package obligations separate.
+
+
+## Explicit New instance
+
+A uniquely catalog-matched window menu now offers **New instance**, with an
+accessible name identifying the application. The current application actions
+menu offers the same control even when the desktop entry declares no extra
+actions. It remains separate from declared desktop actions and recent files.
+
+The single Elm reducer rechecks the current view, menu origin and catalog
+identity, retires the popup, then requests the existing identity-bound native
+application launch. Ordinary taskbar activation, minimize and restore keep their
+window-action behavior. Pending and Unknown launches disable New instance;
+stale views, removed identities and ambiguous window-to-catalog matches cannot
+submit through this route. Refusal never becomes an inferred duplicate launch.
+
+The quint-llm-kit model and actual compiled reducer/view checks cover these
+rules. Native pointer, Menu/Shift-F10 and application-action-menu observations,
+exact GIO arguments, receipts and normal cleanup are recorded in
+[New instance evidence](qa/evidence/explicit-new-instance/README.md).
+A Submitted receipt establishes native launch submission. Applicable native AT,
+enlarged/dense menu coverage and independent original UI-004/UI-008 acceptance
+remain separate release obligations.

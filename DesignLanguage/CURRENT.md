@@ -190,3 +190,18 @@ Typing in the launcher now survives the gap between an accepted Elm publication 
 Input text belongs to its current field lease. The popup distinguishes its own Html callbacks from the external action port; this preserves local typing while ordinary captured actions retain exact-publication checks. The repair uses quint-llm-kit, with executable initialization, seven named positive/negative scenarios, sampled safety runs, fifteen compiled field assertions and the unchanged IME/browser regression. No native ABI, effect admission or Unknown/no-replay policy changed.
 
 Original UI-004 taskbar-zero remains partial pending independent acceptance. The fixture does not qualify every application/AT mode or pin/reorder popup paint. Next: original UI-005 search-race with a genuinely delayed old catalog refresh, current query/selection, native pixels and applicable AT observations.
+
+
+## Explicit application instance — October 10
+
+Window actions now include **New instance** when exactly one current catalog
+application matches the window. Its accessible name identifies that application;
+its detail shows the application or the Pending/Unknown launch explanation.
+Application actions expose the same control independently of declared desktop
+actions and recent files. Ordinary taskbar activation continues to select the
+existing family. The Elm reducer retires the popup before requesting the native
+catalog launch and rejects stale, ambiguous, removed, Pending and Unknown choices.
+
+[Evidence and limits](../implementation/warlock/qa/evidence/explicit-new-instance/README.md)
+keep native launch submission distinct from application readiness. Native AT,
+enlarged/dense arrangements and independent original acceptance remain open.

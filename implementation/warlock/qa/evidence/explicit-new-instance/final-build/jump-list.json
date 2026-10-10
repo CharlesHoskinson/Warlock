@@ -1,0 +1,458 @@
+{
+  "checks": {
+    "LauncherHasBoundedKeyboardJumpOpener": true,
+    "OriginalTwoDeclaredActionsShown": true,
+    "UnsupportedActionsAbsent": true,
+    "OnlyOwnedRecentActionShown": true,
+    "ForeignRecentNeverDispatches": true,
+    "UnsupportedActionNeverDispatches": true,
+    "OneExplicitDesktopAction": true,
+    "OwnedRecentDispatchesOnce": true,
+    "PopupClosesBeforeLaunch": true,
+    "SubmissionNeverClaimsApplicationReady": true,
+    "UnknownPersistsWithoutReplay": true,
+    "ForeignApplicationCannotSettleReceipt": true,
+    "ForeignApplicationReadCannotReplaceOpenList": true,
+    "RefreshOnlyReads": true,
+    "CloseReturnsToLauncherWithoutLaunch": true,
+    "OtherPopupRetiresList": true,
+    "StaleViewCannotSubmit": true,
+    "NativeRendererAcceptsJumpMode": true,
+    "AllActionsNamed": true
+  },
+  "frame": {
+    "surfaceProtocol": 2,
+    "keyboardParent": true,
+    "motion": "reduced",
+    "appearance": {
+      "theme": "night",
+      "textScale": 100,
+      "effectsOff": false,
+      "reducedTransparency": false
+    },
+    "publication": "1",
+    "lease": "1",
+    "mode": "jump",
+    "status": "Choose an application action or recent file.",
+    "bar": [
+      {
+        "id": "bar:applications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:control:opener",
+        "label": "Applications",
+        "ariaLabel": "Open applications",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:overview",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:control:overview-opener",
+        "label": "Task View",
+        "ariaLabel": "Open Task View",
+        "detail": "",
+        "enabled": false,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:switcher",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:control:switcher-opener",
+        "label": "Switch windows",
+        "ariaLabel": "Open window switcher",
+        "detail": "",
+        "enabled": false,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:notifications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:notifications:opener",
+        "label": "Notifications",
+        "ariaLabel": "Open notifications",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:files",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:files:opener",
+        "label": "Files",
+        "ariaLabel": "Open Files menu",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:system",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:system:opener",
+        "label": "System",
+        "ariaLabel": "Open system menu",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:settings",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:settings:opener",
+        "label": "Settings",
+        "ariaLabel": "Open settings",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      }
+    ],
+    "popup": [
+      {
+        "id": "control:close",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:close",
+        "label": "Close application actions",
+        "ariaLabel": "Close application actions",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "jump:refresh",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:refresh",
+        "label": "Refresh application actions",
+        "ariaLabel": "Refresh application actions",
+        "detail": "Read actions; never repeat a request",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "jump:title:state",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:title:state",
+        "label": "Actions for Warlock Editor",
+        "ariaLabel": "Actions for Warlock Editor",
+        "detail": "",
+        "enabled": false,
+        "focusOnly": false
+      },
+      {
+        "id": "control:new-instance:warlock-editor",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:new-instance",
+        "label": "New instance",
+        "ariaLabel": "Open new instance of Warlock Editor",
+        "detail": "Warlock Editor",
+        "enabled": false,
+        "focusOnly": false
+      },
+      {
+        "id": "jump:action:desktop:Alpha",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:action:desktop:Alpha",
+        "label": "New document",
+        "ariaLabel": "New document",
+        "detail": "Application action",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "jump:action:desktop:Beta",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:action:desktop:Beta",
+        "label": "Private window",
+        "ariaLabel": "Private window",
+        "detail": "Application action",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "jump:action:recent:owned",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:action:recent:owned",
+        "label": "Open Warlock recent document",
+        "ariaLabel": "Open Warlock recent document",
+        "detail": "Recent file",
+        "enabled": true,
+        "focusOnly": false
+      }
+    ]
+  },
+  "pendingFrame": {
+    "surfaceProtocol": 2,
+    "keyboardParent": true,
+    "motion": "reduced",
+    "appearance": {
+      "theme": "night",
+      "textScale": 100,
+      "effectsOff": false,
+      "reducedTransparency": false
+    },
+    "publication": "2",
+    "lease": "1",
+    "mode": "jump",
+    "status": "Application action: waiting for native submission…",
+    "bar": [
+      {
+        "id": "bar:applications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:control:opener",
+        "label": "Applications",
+        "ariaLabel": "Open applications",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:overview",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:control:overview-opener",
+        "label": "Task View",
+        "ariaLabel": "Open Task View",
+        "detail": "",
+        "enabled": false,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:switcher",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:control:switcher-opener",
+        "label": "Switch windows",
+        "ariaLabel": "Open window switcher",
+        "detail": "",
+        "enabled": false,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:notifications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:notifications:opener",
+        "label": "Notifications",
+        "ariaLabel": "Open notifications",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:files",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:files:opener",
+        "label": "Files",
+        "ariaLabel": "Open Files menu",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:system",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:system:opener",
+        "label": "System",
+        "ariaLabel": "Open system menu",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:settings",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:settings:opener",
+        "label": "Settings",
+        "ariaLabel": "Open settings",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      }
+    ],
+    "popup": [
+      {
+        "id": "control:close",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:close",
+        "label": "Close application actions",
+        "ariaLabel": "Close application actions",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "jump:refresh",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:refresh",
+        "label": "Refresh application actions",
+        "ariaLabel": "Refresh application actions",
+        "detail": "Read actions; never repeat a request",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "jump:title:state",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:title:state",
+        "label": "Actions for Warlock Editor",
+        "ariaLabel": "Actions for Warlock Editor",
+        "detail": "",
+        "enabled": false,
+        "focusOnly": false
+      },
+      {
+        "id": "control:new-instance:warlock-editor",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:new-instance",
+        "label": "New instance",
+        "ariaLabel": "Open new instance of Warlock Editor",
+        "detail": "Warlock Editor",
+        "enabled": false,
+        "focusOnly": false
+      },
+      {
+        "id": "jump:action:desktop:Alpha",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:action:desktop:Alpha",
+        "label": "New document",
+        "ariaLabel": "New document",
+        "detail": "Application action",
+        "enabled": false,
+        "focusOnly": false
+      },
+      {
+        "id": "jump:action:desktop:Beta",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:action:desktop:Beta",
+        "label": "Private window",
+        "ariaLabel": "Private window",
+        "detail": "Application action",
+        "enabled": false,
+        "focusOnly": false
+      },
+      {
+        "id": "jump:action:recent:owned",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:action:recent:owned",
+        "label": "Open Warlock recent document",
+        "ariaLabel": "Open Warlock recent document",
+        "detail": "Recent file",
+        "enabled": false,
+        "focusOnly": false
+      }
+    ]
+  },
+  "unknownFrame": {
+    "surfaceProtocol": 2,
+    "keyboardParent": true,
+    "motion": "reduced",
+    "appearance": {
+      "theme": "night",
+      "textScale": 100,
+      "effectsOff": false,
+      "reducedTransparency": false
+    },
+    "publication": "3",
+    "lease": "1",
+    "mode": "jump",
+    "status": "Application action: not confirmed. Refresh only reads actions; this request will not be repeated.",
+    "bar": [
+      {
+        "id": "bar:applications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:control:opener",
+        "label": "Applications",
+        "ariaLabel": "Open applications",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:overview",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:control:overview-opener",
+        "label": "Task View",
+        "ariaLabel": "Open Task View",
+        "detail": "",
+        "enabled": false,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:switcher",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:control:switcher-opener",
+        "label": "Switch windows",
+        "ariaLabel": "Open window switcher",
+        "detail": "",
+        "enabled": false,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:notifications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:notifications:opener",
+        "label": "Notifications",
+        "ariaLabel": "Open notifications",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:files",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:files:opener",
+        "label": "Files",
+        "ariaLabel": "Open Files menu",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:system",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:system:opener",
+        "label": "System",
+        "ariaLabel": "Open system menu",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:settings",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:settings:opener",
+        "label": "Settings",
+        "ariaLabel": "Open settings",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      }
+    ],
+    "popup": [
+      {
+        "id": "control:close",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:close",
+        "label": "Close application actions",
+        "ariaLabel": "Close application actions",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "jump:refresh",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:refresh",
+        "label": "Refresh application actions",
+        "ariaLabel": "Refresh application actions",
+        "detail": "Read actions; never repeat a request",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "jump:title:state",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:title:state",
+        "label": "Actions for Warlock Editor",
+        "ariaLabel": "Actions for Warlock Editor",
+        "detail": "",
+        "enabled": false,
+        "focusOnly": false
+      },
+      {
+        "id": "control:new-instance:warlock-editor",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:new-instance",
+        "label": "New instance",
+        "ariaLabel": "Open new instance of Warlock Editor",
+        "detail": "Warlock Editor",
+        "enabled": false,
+        "focusOnly": false
+      },
+      {
+        "id": "jump:action:desktop:Alpha",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:action:desktop:Alpha",
+        "label": "New document",
+        "ariaLabel": "New document",
+        "detail": "Application action",
+        "enabled": false,
+        "focusOnly": false
+      },
+      {
+        "id": "jump:action:desktop:Beta",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:action:desktop:Beta",
+        "label": "Private window",
+        "ariaLabel": "Private window",
+        "detail": "Application action",
+        "enabled": false,
+        "focusOnly": false
+      },
+      {
+        "id": "jump:action:recent:owned",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:6:jump:action:recent:owned",
+        "label": "Open Warlock recent document",
+        "ariaLabel": "Open Warlock recent document",
+        "detail": "Recent file",
+        "enabled": false,
+        "focusOnly": false
+      }
+    ]
+  }
+}

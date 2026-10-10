@@ -44,12 +44,13 @@ SYSTEM=sys.argv[1:]==['--system-menu']
 NOTIFICATIONS=RELEVANCE or ADAPTER_ANNOUNCEMENTS or NOTIFICATION_ANNOUNCEMENTS or sys.argv[1:]==['--notifications']
 SETTINGS=LAYER or sys.argv[1:]==['--settings'] or CONTRAST or SHORTCUTS
 SNAP=sys.argv[1:]==['--snap-chooser']
+NEWINSTANCE=sys.argv[1:]==['--new-instance']
 REFLOW=sys.argv[1:]==['--popup-reflow']
 MENU=sys.argv[1:]==['--dense-menu'] or REFLOW
 PICKER=sys.argv[1:]==['--dense-picker'] or MENU
 DENSE=sys.argv[1:]==['--dense-taskbar'] or PICKER
 PINMENUS=sys.argv[1:]==['--pinned-menus'] or (DENSE and not PICKER)
-PRIMARY=(DESCRIPTION and not FALLBACK) or sys.argv[1:]==['--taskbar-primary'] or PINMENUS or PICKER
+PRIMARY=NEWINSTANCE or (DESCRIPTION and not FALLBACK) or sys.argv[1:]==['--taskbar-primary'] or PINMENUS or PICKER
 SWITCHER=sys.argv[1:]==['--switcher'] or ACCESSIBILITY
 NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'] or LOCALFIELD;POPUP=sys.argv[1:]==['--native-popup'] or QUIESCENT or SHUTDOWN or BARRETURN;TASKVIEW=CANCELTRANSFER or RETIREMENT or EMPTYNAV or INVENTORY or RECOVERY or sys.argv[1:]==['--task-view'] or NAV or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION or KEYBOARD or DRAG or IME or TRANSFER or MOTION or PINMAX or ANNOUNCEMENTS;assert not sys.argv[1:] or PINS or POPUP or TASKVIEW or PRIMARY or SWITCHER or PREVIEW
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143'
@@ -174,9 +175,20 @@ console.log(JSON.stringify({paintOpportunityBeforeDispatch:true,ticketPreserved:
   run('focus-model-typecheck',['quint','typecheck','qa/focus-publication.qnt'])
   run('focus-model-named',['quint','test','qa/focus-publication.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79113'])
   run('focus-model-invariants',['quint','run','qa/focus-publication.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79114'])
- if PINMENUS:
+ if NEWINSTANCE:
+  run('new-instance-model-typecheck',['quint','typecheck','qa/new-instance_test.qnt'])
+  run('new-instance-model-named',['quint','test','qa/new-instance_test.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79101'])
+  witnesses=run('new-instance-model-sampled',['quint','run','qa/new-instance.qnt','--backend=typescript','--invariants=safety','--witnesses','windowMenuLaunch','applicationActionsLaunch','ordinaryWithoutLaunch','unknownRetained','--max-samples=1000','--max-steps=25','--seed=79102','--verbosity=1'])
+  import re
+  counts={name:int(count) for name,count in re.findall(r'(\w+) was witnessed in (\d+) trace',witnesses)};assert len(counts)==4 and all(counts.values());report['newInstanceWitnesses']=counts
+  for target,key in [('NewInstanceReplay','new-instance'),('JumpListReplay','jump-list')]:
+   run('compile-'+key,[str(HELD/pinned['compiler']),'make','qa/'+target+'.elm','--optimize','--output=assets/'+key+'.js'])
+   (INPUT/'qa'/ (key+'-replay.js')).write_text(replay.replace('Elm.SearchReplay','Elm.'+target))
+   run('typed-'+key,['node','qa/'+key+'-replay.js','assets/'+key+'.js',str(OUT/(key+'.json'))]);report[key]=json.loads((OUT/(key+'.json')).read_text());assert all(report[key]['checks'].values())
+  report.update(requirements=['ELM-UI-004','ELM-UI-008'],scenarios=['taskbar-inactive','menu-invocation'],scope='Compiled explicit New instance current-catalog/typed-menu admission, original pinned menu and application-action regression; actual native GIO/input/paint and AT acceptance separate')
+ if PINMENUS or NEWINSTANCE:
   run('activation-release-routing',['node','qa/activation-release.js'])
-  report.update(requirements=['ELM-UI-008','ELM-UX-023'],scope='Compiled running-pin context guards and changed native keyboard-parent host; unchanged C++ objects reused by exact hashes; native menu/AT acceptance separate')
+  if not NEWINSTANCE:report.update(requirements=['ELM-UI-008','ELM-UX-023'],scope='Compiled running-pin context guards and changed native keyboard-parent host; unchanged C++ objects reused by exact hashes; native menu/AT acceptance separate')
   run('compile-pinned-menu',[str(HELD/pinned['compiler']),'make','qa/PinnedMenuReplay.elm','--optimize','--output=assets/pinned-menu.js'])
   (INPUT/'qa/pinned-menu-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.PinnedMenuReplay'));run('typed-pinned-menu',['node','qa/pinned-menu-replay.js','assets/pinned-menu.js',str(OUT/'pinned-menu.json')]);report['typedPinnedMenus']=json.loads((OUT/'pinned-menu.json').read_text());assert all(report['typedPinnedMenus']['checks'].values())
  if SWITCHER:
@@ -456,7 +468,7 @@ console.log('Current body-target Escape releases once; stale scope, preedit, rep
    run('popup-context-link',['g++',str(OUT/'popup-context.o'),*[str(OUT/(name+'.o')) for name in units],'-o',str(OUT/'popup-context-tests'),*flags])
    run('popup-context-tests',[str(OUT/'popup-context-tests')])
  run('host-self-tests',[str(OUT/'elm-host'),'--self-test'])
- if PINMAX or ANNOUNCEMENTS or DESCRIPTION or IME or ACCESSIBILITY or DENSE or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION:
+ if NEWINSTANCE or PINMAX or ANNOUNCEMENTS or DESCRIPTION or IME or ACCESSIBILITY or DENSE or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION:
   if DENSE:report.update(requirements=['ELM-UI-008'],scenarios=['overflow-first-last','overflow-resize','menu-invocation'],scope='Current compiled renderer/adapter dense enlarged-text browser journeys and rebuilt scalable native host; native output/menu/AT observations separate')
   (INPUT/'qa/dense.html').write_text('<!doctype html><html style="font-size:24px"><head><meta charset="utf-8"><link rel="stylesheet" href="../assets/shell.css"></head><body class="bar"><div id="app"></div><script>window.nativePackets=[];window.webkit={messageHandlers:{native:{postMessage:s=>nativePackets.push(JSON.parse(s))}}};</script><script src="../assets/bar.js"></script><script src="../assets/bar-adapter.js"></script><script src="../assets/context.js"></script><script src="../assets/activation.js"></script></body></html>')
   (INPUT/'qa/dense-picker.html').write_text('<!doctype html><html style="font-size:24px"><head><meta charset="utf-8"><link rel="stylesheet" href="../assets/shell.css"></head><body class="popup"><div id="app"></div><script>window.nativePackets=[];window.webkit={messageHandlers:{native:{postMessage:s=>nativePackets.push(JSON.parse(s))}}};</script><script src="../assets/popup.js"></script><script src="../assets/popup-adapter.js"></script><script src="../assets/context.js"></script><script src="../assets/activation.js"></script></body></html>')

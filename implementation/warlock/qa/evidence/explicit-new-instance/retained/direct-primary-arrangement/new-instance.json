@@ -1,0 +1,24 @@
+{
+  "checks": {
+    "UniqueWindowMenuHasLabeledNewInstance": true,
+    "PointerAndKeyboardResolveSameTypedAction": true,
+    "StalePublicationRejected": true,
+    "OneIdentityBoundLaunch": true,
+    "CurrentCatalogGeneration": true,
+    "WindowPopupClosesBeforeLaunch": true,
+    "NewInstanceDoesNotIssueWindowAction": true,
+    "PendingDuplicateCannotLaunch": true,
+    "UnknownControlDisabled": true,
+    "UnknownCannotLaunch": true,
+    "UnknownSurvivesCatalogRefresh": true,
+    "ApplicationActionsHasNewInstance": true,
+    "ApplicationActionsLaunchClosesPopup": true,
+    "NewInstanceIsNotADeclaredJumpAction": true,
+    "AmbiguousWindowCatalogHasNoLaunchControl": true,
+    "StaleViewDoesNotDispatch": true,
+    "RemovedCatalogEntryDoesNotDispatch": true,
+    "OrdinaryPrimaryActivationNeverLaunches": false,
+    "RefusalNeverAutomaticallyLaunches": true
+  },
+  "scope": "Actual compiled Desktop/Surface launch policy and current event resolution; native GIO/input/paint and AT acceptance separate."
+}

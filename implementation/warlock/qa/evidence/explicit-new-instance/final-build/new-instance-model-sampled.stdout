@@ -1,0 +1,7 @@
+[ok] No violation found (755ms at 1325 traces/second).
+Witnesses:
+windowMenuLaunch was witnessed in 169 trace(s) out of 1000 explored (16.90%)
+applicationActionsLaunch was witnessed in 85 trace(s) out of 1000 explored (8.50%)
+ordinaryWithoutLaunch was witnessed in 364 trace(s) out of 1000 explored (36.40%)
+unknownRetained was witnessed in 127 trace(s) out of 1000 explored (12.70%)
+Use --seed=0x134fe --backend=typescript to reproduce.

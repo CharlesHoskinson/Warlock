@@ -62,7 +62,7 @@
       if(event.key==='Tab'){
         event.preventDefault();
         const selected=node.querySelector('[aria-current="true"]'),close=node.querySelector('[data-surface-control="control:menu-close"]');
-        const utilities=[...node.querySelectorAll('[data-surface-control^="control:"]:not(:disabled)')].filter(control=>control!==close);
+        const utilities=[...node.querySelectorAll('[data-surface-control]:not(:disabled)')].filter(control=>control!==close&&!control.dataset.surfaceControl.startsWith('menu:'));
         const stops=[close,selected,...utilities].filter(control=>control&&!control.disabled);
         const current=stops.indexOf(item);
         stops[(current+(event.shiftKey?-1:1)+stops.length)%stops.length]?.focus();revealMenu(false,true);return;
@@ -98,7 +98,7 @@
     const focused=control(document.activeElement);
     // Preserve a current enabled utility reached by Tab across unrelated
     // publications; an actual operation-selection change still owns focus.
-    const retainedUtility=focused&&node.contains(focused)&&!focused.disabled&&focused.dataset.surfaceControl.startsWith('control:');
+    const retainedUtility=focused&&node.contains(focused)&&!focused.disabled&&!focused.dataset.surfaceControl.startsWith('menu:');
     if(select&&selected&&!selected.disabled&&(changed||!retainedUtility)&&document.activeElement!==selected){selected.focus({preventScroll:true});force=true;}
     const revealed=control(document.activeElement);
     if(force&&revealed&&node.contains(revealed)&&!revealed.disabled)revealed.scrollIntoView({block:'nearest',inline:'nearest'});

@@ -1,0 +1,310 @@
+{
+  "schema": 1,
+  "generatedUTC": "2026-10-10T23:50:12.539310+00:00",
+  "requirements": [
+    "ELM-UI-004",
+    "ELM-UI-008"
+  ],
+  "scenarios": [
+    "taskbar-inactive",
+    "menu-invocation"
+  ],
+  "originalOracles": {
+    "taskbar-inactive": "the member visibly activates",
+    "menu-invocation": "secondary click and Menu/Shift-F10 expose labeled operations and Escape returns focus"
+  },
+  "sourceBaseRevision": "b6e887efde7cd11667d62e3c272b02773773eb52",
+  "sourceHashes": {
+    "implementation/warlock/src/Desktop.elm": "1b5b48fc5ca71c6e11bd54ea6ab723f5a37f4d383d6a59c99d14d83b005d5033",
+    "implementation/warlock/src/Surface.elm": "a660a4641a9f834c6198bce1e8049b3dd0be40cb74be1cfe1d5e14cfd0cdaa1d",
+    "implementation/warlock/qa/NewInstanceReplay.elm": "26e0442ba7428d4c160efd0453d9ca0246dd2abfd46706ec325de11300e61054",
+    "implementation/warlock/qa/new-instance.qnt": "1b44665790edae5be0f680dbb864a7d67eea5a0ca3806a75fded01205f77b186",
+    "implementation/warlock/qa/new-instance_test.qnt": "2c1b87e594e0ab1bc9a436b9deff0f88d68b77f442695c03660040b566e49b60",
+    "implementation/warlock/qa/check-search.py": "faf62c651ea44323fd42908abcbbcf0727c883319ce39733a7df79c4f9ed08bb",
+    "implementation/warlock/qa/native-window-feedback.py": "6f7a07393415d50784f72427b807a21463c0b39e3eacc4327a16690c0f303838",
+    "implementation/warlock/qa/current-search-build.json": "4e2440f0131078d569c7003b41939e83b6c43fecdd37d4540bb8b0590307a514",
+    "implementation/warlock/assets/elm.js": "700524b6a1da72905daeecffd74216143bcf9242ea13c13d01f8bce3e1665be5",
+    "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+    "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
+    "implementation/warlock/README.md": "37004087a0b7a0d5a8702a9b98eaa1380d3976338acf91eeadecb8f266f4c730",
+    "implementation/warlock/assets/context.js": "2ff41ca906dc4e42ae76f65d486cf119b400414dee41ca886f5589709d2b9333",
+    "implementation/warlock/qa/dense-taskbar-browser.mjs": "fa94db43af21efe770dc6998ee98dcf97e9daf610bec8992d192ae2ad97f3deb"
+  },
+  "supportingSourceHashes": {
+    "DesignLanguage/CURRENT.md": "a951ce2976f0facaee1ad93f2ad16a32700865fdc19510d67c4adc258109c89e"
+  },
+  "scope": "Explicit current-catalog New instance in native window/application-action menus, three exact GIO submissions and removed-entry refusal, ordinary existing-window/no-launch keyboard regression, compiled/model/browser stale/Pending/Unknown and utility navigation checks.",
+  "nativePair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
+      "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791666305509919483/elm-window-geometry-authority.so",
+      "sha256": "c428e1e6e2b2f9e41b3c5218e3dd37fb6551f09bee6b3531876fb3d3c674948a"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+      "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791676052328253053/elm-host",
+    "sha256": "b276c031f945431c10ca128e9e6505f366e14a3ba9cf295362bd36028296eb34",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791676052328253053/report.json",
+    "heldBuildSHA256": "89e5fbaddb242bcc14ceb19b5147b9fde1991c54916d6a1d22bed45cd95ec3df"
+  },
+  "compiledAssets": {
+    "elm.js": "700524b6a1da72905daeecffd74216143bcf9242ea13c13d01f8bce3e1665be5",
+    "bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+    "popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43"
+  },
+  "nativeChecks": 101,
+  "nativePrimaryKeyboardChecks": 131,
+  "compiledNewInstanceChecks": 19,
+  "compiledOriginalJumpChecks": 19,
+  "compiledOriginalPinMenuChecks": 14,
+  "browserChecks": 55,
+  "modelWitnesses": {
+    "windowMenuLaunch": 169,
+    "applicationActionsLaunch": 85,
+    "ordinaryWithoutLaunch": 364,
+    "unknownRetained": 127
+  },
+  "newInstanceRequests": [
+    {
+      "protocolVersion": 3,
+      "kind": "application-launch",
+      "binding": {
+        "lifetime": "9949102894523478361",
+        "session": "3",
+        "frontend": "1"
+      },
+      "intent": {
+        "request": "1",
+        "lifetime": "6537285264780163991",
+        "generation": "1",
+        "entry": "warlock-running-peer"
+      }
+    },
+    {
+      "protocolVersion": 3,
+      "kind": "application-launch",
+      "binding": {
+        "lifetime": "9949102894523478361",
+        "session": "3",
+        "frontend": "1"
+      },
+      "intent": {
+        "request": "2",
+        "lifetime": "6537285264780163991",
+        "generation": "1",
+        "entry": "warlock-running-peer"
+      }
+    },
+    {
+      "protocolVersion": 3,
+      "kind": "application-launch",
+      "binding": {
+        "lifetime": "9949102894523478361",
+        "session": "3",
+        "frontend": "1"
+      },
+      "intent": {
+        "request": "3",
+        "lifetime": "6537285264780163991",
+        "generation": "1",
+        "entry": "warlock-running-peer"
+      }
+    },
+    {
+      "protocolVersion": 3,
+      "kind": "application-launch",
+      "binding": {
+        "lifetime": "9949102894523478361",
+        "session": "3",
+        "frontend": "1"
+      },
+      "intent": {
+        "request": "4",
+        "lifetime": "6537285264780163991",
+        "generation": "1",
+        "entry": "warlock-running-peer"
+      }
+    }
+  ],
+  "newInstanceOutcomes": [
+    {
+      "protocolVersion": 3,
+      "kind": "application-launch-outcome",
+      "binding": {
+        "lifetime": "9949102894523478361",
+        "session": "3",
+        "frontend": "1"
+      },
+      "outcome": {
+        "catalogProtocol": 1,
+        "kind": "launch-outcome",
+        "intent": {
+          "request": "1",
+          "lifetime": "6537285264780163991",
+          "generation": "1",
+          "entry": "warlock-running-peer"
+        },
+        "status": "Submitted",
+        "reason": "native-submission-accepted"
+      }
+    },
+    {
+      "protocolVersion": 3,
+      "kind": "application-launch-outcome",
+      "binding": {
+        "lifetime": "9949102894523478361",
+        "session": "3",
+        "frontend": "1"
+      },
+      "outcome": {
+        "catalogProtocol": 1,
+        "kind": "launch-outcome",
+        "intent": {
+          "request": "2",
+          "lifetime": "6537285264780163991",
+          "generation": "1",
+          "entry": "warlock-running-peer"
+        },
+        "status": "Submitted",
+        "reason": "native-submission-accepted"
+      }
+    },
+    {
+      "protocolVersion": 3,
+      "kind": "application-launch-outcome",
+      "binding": {
+        "lifetime": "9949102894523478361",
+        "session": "3",
+        "frontend": "1"
+      },
+      "outcome": {
+        "catalogProtocol": 1,
+        "kind": "launch-outcome",
+        "intent": {
+          "request": "3",
+          "lifetime": "6537285264780163991",
+          "generation": "1",
+          "entry": "warlock-running-peer"
+        },
+        "status": "Submitted",
+        "reason": "native-submission-accepted"
+      }
+    },
+    {
+      "protocolVersion": 3,
+      "kind": "application-launch-outcome",
+      "binding": {
+        "lifetime": "9949102894523478361",
+        "session": "3",
+        "frontend": "1"
+      },
+      "outcome": {
+        "catalogProtocol": 1,
+        "kind": "launch-outcome",
+        "intent": {
+          "request": "4",
+          "lifetime": "6537285264780163991",
+          "generation": "1",
+          "entry": "warlock-running-peer"
+        },
+        "status": "Refused",
+        "reason": "stale-catalog"
+      }
+    }
+  ],
+  "newInstanceEvents": [
+    {
+      "argv": [
+        "NEW_INSTANCE_PEER"
+      ],
+      "pid": 681767
+    },
+    {
+      "argv": [
+        "NEW_INSTANCE_PEER"
+      ],
+      "pid": 681780
+    },
+    {
+      "argv": [
+        "NEW_INSTANCE_PEER"
+      ],
+      "pid": 681865
+    }
+  ],
+  "reviewerDisposition": {
+    "name": "root-explicit-new-instance",
+    "independent": false,
+    "disposition": "Owner-observed scoped pass; independent original acceptance pending."
+  },
+  "missingObservations": [
+    "Applicable native AT and enlarged/dense new-action discovery/focus",
+    "Independent original scenario/requirement acceptance",
+    "Broader native launch Unknown/lifecycle transport observations",
+    "Full release hardware/resources/journeys/package/reversible deployment and offline rollback"
+  ],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "files": {
+    "README.md": "622778df8a40885e5e5ed2d966cba885a7c05615d17cdd2b3e18fb5c8dc98230",
+    "final-build/NewInstanceReplay.elm": "26e0442ba7428d4c160efd0453d9ca0246dd2abfd46706ec325de11300e61054",
+    "final-build/compile-Bar.stdout": "c739b6d04713994eeec409f2d6abad44074a629c0c9485b274fb9a70200e032c",
+    "final-build/compile-Main.stdout": "183f5857e232f80398b61eea1e968b51e9b270671777d054186fa46651147627",
+    "final-build/compile-Popup.stdout": "fb9f01e07f4c7a30ab10ec91b6437a6a4d9448c93566f14eafeb5814373094b3",
+    "final-build/compile-new-instance.stdout": "14313098a17077078e5e0ffc3c077e12748a69da6d99cd977f65097568bfe425",
+    "final-build/dense-browser.json": "4885ac567e0fb76cdaa1dea7696f989e1a3f2450615a56d5ec626c46c9e4fe27",
+    "final-build/dense-taskbar-browser.mjs": "fa94db43af21efe770dc6998ee98dcf97e9daf610bec8992d192ae2ad97f3deb",
+    "final-build/host-self-tests.stdout": "bc223d304dacddf27a466ae4b799f3c84a2330ac092f5bd9f63ca73a23e31286",
+    "final-build/jump-list.json": "11c71963220381823a6ab2e46252e2a152c2284992f89c781bef0bf6637818bd",
+    "final-build/new-instance-model-named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "final-build/new-instance-model-named.stdout": "42e5fd2ed169dcb23e373ab4b5a81c45cf6430a5dcfbf61867d77d0a17634114",
+    "final-build/new-instance-model-sampled.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "final-build/new-instance-model-sampled.stdout": "e5ca875f4045092e5e3a81b30c461785d619d02012cbb3cf24d4639f2a9d2286",
+    "final-build/new-instance-model-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "final-build/new-instance-model-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "final-build/new-instance.json": "4d956d087f3ca7460e4fa7db036170c481fb80a61f99a8ac2425d81a26fe275a",
+    "final-build/new-instance.qnt": "1b44665790edae5be0f680dbb864a7d67eea5a0ca3806a75fded01205f77b186",
+    "final-build/new-instance_test.qnt": "2c1b87e594e0ab1bc9a436b9deff0f88d68b77f442695c03660040b566e49b60",
+    "final-build/pinned-menu.json": "74adf98ffc38b9d1c6bd534cf286586607d2658154eb3571db1e4e2915afc605",
+    "final-build/report.json": "89e5fbaddb242bcc14ceb19b5147b9fde1991c54916d6a1d22bed45cd95ec3df",
+    "native/new-instance-events.jsonl": "3c589d06c8c34d127f2259a79038a9b06273d4a3c455dc3cce77969bb583f3be",
+    "native/new-instance-recorder.py": "4678fb4e73eab8bd2bcb7f3b97bd6759b4dbaa941850b865901034166b1dd3af",
+    "native/popup-new-instance-application-actions.png": "2e92f97b6fe3e9aae761021e7c724166d313979e028e553c9f923ce76ab17436",
+    "native/popup-new-instance-pointer.png": "fc5f08d27322b4d5394da9e31ca27227029376010a9f0b8aa06915330caa2ada",
+    "native/popup-pinned-window-menu.png": "edc52c0c0f2515eb1f52288dc5ede86db5378ff7d91638a8eb701b21ff5c65ec",
+    "native/report.json": "c1b435b64f26b91148ca7f02dfbce5d235a053888feec2141c7bb4e2b1f36287",
+    "native/warlock.log.gz": "95f0cfad59be866705ae0c0e4407fc2eb532c72e91dbffc985d1d555ffb53178",
+    "primary-keyboard/ActiveMinimizeToDesktop.png": "cdaffb83ccb1b9a9e413a50be3d8ed969c604c5ee5ff7836ef633f4fe09c3531",
+    "primary-keyboard/ActiveMinimizeToMRU.png": "3f16231c01aa28fa4659e466a5a41c7abd25929ef635ed7a93b250d7d7f8fd47",
+    "primary-keyboard/DesktopRestore.png": "eb7279b100f896348e408108272b91512ad7d6a097dd8c2bcb0e6ec274653620",
+    "primary-keyboard/InactiveActivation.png": "1cfba2cdaad0ef682f81c3a2ce78dc6aebb9c25ce47ca6831e888a8366392576",
+    "primary-keyboard/MinimizedRestore.png": "0ba56cf7594cc0b27cf42d4f0814343100bb7d2dee198dc0cdebb0c0da88adc3",
+    "primary-keyboard/outer-focus-0-activate.png": "6da35c180f8f58ea57c80d4922a35dae2c9fdb6a0077a4172f22c4c45783589a",
+    "primary-keyboard/outer-focus-1-minimize.png": "a75fc9e42f84d5e9fbf6fa58e53432f84a37938ae06817d9a4ff01b32b1f92d4",
+    "primary-keyboard/outer-focus-2-restore.png": "d69b869c6b5e9cf426f0be21fc95952a22005f6d15356b68de14e48139c447c5",
+    "primary-keyboard/outer-focus-3-minimize.png": "32715c5b162fbbb0d2d468fb44dbb390fbf5ec6246ed5fb5e4434dd4956d0cb5",
+    "primary-keyboard/outer-focus-4-restore.png": "cbfb163b347e9840b263d92a8aa58f911f0c7ed4107d665cf194ca98ea3c99af",
+    "primary-keyboard/report.json": "2be488f2b5a7a363d5be05947f6bc900d528e1e1264d8f0bcdc45b49dad198ba",
+    "primary-keyboard/warlock.log.gz": "db9fd98c2c65f75c5648be76ff6aa4684e86817e91e471d2a1f0ebf2e7a376ce",
+    "retained/application-actions-before-fix/report.json": "ca9d320b6e8840b9cea36bfb5689babd01719290112e4099034dbcb2997664d5",
+    "retained/direct-primary-arrangement/NewInstanceReplay.elm": "4a9375fefa6dc0e7a50cc7e646e1c7fc5f9c848412563e6f0675f1d9b69adedb",
+    "retained/direct-primary-arrangement/new-instance.json": "200bb56d9ca10a7efff6a12a3d2f90318f300349f86a09ba29b8644ed0bd7f39",
+    "retained/direct-primary-arrangement/report.json": "01d1e52fdf7ab79d4d2cde055ea0e574fe537081420f4ad01e9a8eb905073acd",
+    "retained/legacy-menu-order/report.json": "881873f4201fe204a345b750f40be22e8d10042aa618058ce85fe0e99623cdf9",
+    "retained/legacy-pointer-return/report.json": "9d8eeadd750620fbcc88c475032a6389c0e2c0b381dd29408150f89147dbaca2",
+    "retained/legacy-viewport/report.json": "a42d667d51585b691804b7ac85e4957cabaeb027a6e90f8555b717609f0c9f32",
+    "retained/reverse-tab-arrangement/dense-browser.json": "6cfad0cb810edad6e3cd8cc0cf3bb2924616080550a62a7a1ee790d890d3b111",
+    "retained/reverse-tab-arrangement/dense-taskbar-browser.mjs": "35bdf68c4398b1e2052ef6ec9495858b21582e3fbaae137348245b3ebe5892f2",
+    "retained/reverse-tab-arrangement/new-instance.json": "4d956d087f3ca7460e4fa7db036170c481fb80a61f99a8ac2425d81a26fe275a",
+    "retained/reverse-tab-arrangement/report.json": "038536cdd94374ea5968870abc7808bab9ec2d23a362d5cc8a3c4a80a3beac1a",
+    "retained/window-menu-pass/report.json": "0e98397273b95783e63262ea30e1ba59fa92dceb800c869cc96e069b38865fda",
+    "source.patch": "f5cc493c981d95b6b2f1d7bc5a74a278e5bf0b469b913e464e172d0aab5b3a5e"
+  }
+}

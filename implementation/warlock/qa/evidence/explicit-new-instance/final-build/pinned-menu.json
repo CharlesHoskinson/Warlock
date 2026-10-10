@@ -1,0 +1,19 @@
+{
+  "checks": {
+    "pinnedPointerUsesExistingRoot": true,
+    "pinnedKeyboardUsesExistingRoot": true,
+    "stalePublicationRefused": true,
+    "zeroWindowPinHasNoWindowMenu": true,
+    "missingCatalogRefused": true,
+    "unconfiguredPinRefused": true,
+    "unpinnedGroupStillWorks": true,
+    "hiddenUnpinnedAliasRefused": true,
+    "multiplePinOwnersRefused": true,
+    "multipleApplicationGroupsRefused": true,
+    "multipleFamiliesKeepPickerRoute": true,
+    "inactiveMinimizeRetainsOriginUntilCurrentObservation": true,
+    "activeMinimizeLeavesNativeSuccessorAuthority": true,
+    "invalidMenuSelectionCannotCreateFocusIntent": true
+  },
+  "scope": "Compiled existing context-event resolution only; native pointer/keyboard proof and menu outcome are separate."
+}

@@ -23,12 +23,13 @@ NOTIFICATIONS=sys.argv[1:]==['--notifications']
 SETTINGS=LAYER or sys.argv[1:]==['--settings'] or CONTRAST
 PLACEMENT=sys.argv[1:]==['--snap-placement']
 SNAP=sys.argv[1:]==['--snap-chooser'] or PLACEMENT
+NEWINSTANCE=sys.argv[1:]==['--new-instance']
 REFLOW=sys.argv[1:]==['--popup-reflow']
 DENSEMENU=sys.argv[1:]==['--dense-menu'] or REFLOW
 DENSEPICKER=sys.argv[1:]==['--dense-picker'] or DENSEMENU
 DENSE=sys.argv[1:]==['--dense-taskbar']
 SMALL=DENSE or DENSEPICKER
-PINMENUS=sys.argv[1:]==['--pinned-menus'] or DENSE or SNAP
+PINMENUS=NEWINSTANCE or sys.argv[1:]==['--pinned-menus'] or DENSE or SNAP
 PRIMARYKEY=sys.argv[1:]==['--taskbar-primary-keyboard']
 PRIMARY=sys.argv[1:]==['--taskbar-primary'] or PRIMARYKEY or PINMENUS or ATTENTION or MOTION
 PRE_READY_RETIRE=sys.argv[1:]==['--switcher-pre-ready-retirement']
@@ -213,6 +214,7 @@ if SWITCHER:report.update(requirements=['ELM-UI-003'],scenarios=['switcher-order
 if PRIMARY:report.update(requirements=['ELM-UI-004'],scenarios=['taskbar-inactive','taskbar-active','taskbar-minimized'],scope='Actual pointer single-family activation/minimize/restore, exact native receipt and GTK keyboard recipient, MRU/desktop succession and pixels; primary keyboard and AT acceptance remain pending',nativePrimaryJourneyObserved=False)
 if PRIMARYKEY:report.update(scope='Actual physical keyboard-only primary activation/minimize/restore, native receipts/pixels and actual app-key recipients, MRU/desktop succession, no pointer helper and normal cleanup. Native AT and independent original acceptance remain open.',nativeKeyboardPrimaryJourneyObserved=False)
 if PINMENUS:report.update(requirements=['ELM-UI-008','ELM-UX-023'],scenarios=['menu-invocation','keyboard-menus'],scope='Actual current running pin, native secondary click/Menu/Shift-F10 menus and existing minimize/restore path; dense/enlarged-text, AT and independent acceptance remain open',nativePinnedMenusObserved=False)
+if NEWINSTANCE:report.update(requirements=['ELM-UI-004','ELM-UI-008'],scenarios=['taskbar-inactive','menu-invocation'],scope='Actual current running-pin native secondary-click and Menu/Shift-F10, explicit New instance pointer/keyboard GIO submissions with owned argv, ordinary minimize/restore without launch and stale native catalog refusal. Dense/enlarged-text, AT and independent acceptance remain open',nativeNewInstanceObserved=False)
 if SNAP:report.update(requirements=['ELM-UX-019','ELM-UX-020'],scenarios=['ux-019','ux-020'],scope='Actual native snap chooser presentation/keyboard/output-scale invalidation only; native snap placement authority and accepted half-work-area oracle remain required',nativeSnapChooserObserved=False)
 if LAYER:report.update(requirements=['ELM-UX-030','ELM-UX-027'],scenarios=['ux-030','ux-027'],scope='Native keyboard appearance flag edit/save and whole-host restart, exact Saved receipt, invalid scale refusal and physical controls at enlarged text. Applicable AT, all surfaces and independent acceptance remain separate.')
 if CONTRAST:report.update(requirements=['ELM-UX-027'],scenarios=['ux-027'],scope='Actual native high contrast appearance at enlarged text, named keyboard focus/pixels and committed persistence/restart; all-surface/theme/scale original qualification and native AT remain open.')
@@ -345,6 +347,12 @@ try:
     report['jumpFixture']={'desktop':str(catalog_root/'warlock-editor.desktop'),'desktopSHA256':sha(catalog_root/'warlock-editor.desktop'),'recentSource':str(jump_xbel),'recentSHA256':sha(jump_xbel),'recorder':str(jump_recorder),'recorderSHA256':sha(jump_recorder),'document':str(jump_document),'documentSHA256':sha(jump_document),'canonicalApplicationIdentity':'warlock-editor.desktop','storedBookmarkCommandIgnored':True}
    if PINMENUS:
     (catalog_root/'warlock-running-peer.desktop').write_text('[Desktop Entry]\nType=Application\nName=Peer\nStartupWMClass=warlock-peer-fixture\nExec=/usr/bin/true\n')
+    if NEWINSTANCE:
+     instance_events=OUTPUT/'new-instance-events.jsonl';instance_recorder=OUTPUT/'new-instance-recorder.py'
+     instance_recorder.write_text('import json,os,sys\nwith open(sys.argv[1],"a") as stream:stream.write(json.dumps({"argv":sys.argv[2:],"pid":os.getpid()})+"\\n")\n')
+     instance_desktop=catalog_root/'warlock-running-peer.desktop'
+     instance_desktop.write_text('[Desktop Entry]\nType=Application\nName=Peer\nStartupWMClass=warlock-peer-fixture\nExec=/usr/bin/python3 '+str(instance_recorder)+' '+str(instance_events)+' NEW_INSTANCE_PEER\n')
+     report['newInstanceFixture']={'desktop':str(instance_desktop),'desktopSHA256':sha(instance_desktop),'recorder':str(instance_recorder),'recorderSHA256':sha(instance_recorder),'events':str(instance_events),'canonicalIdentity':'warlock-running-peer'}
    if REFLOW:
     reflow_ids=['warlock-reflow-'+str(i) for i in range(18)]
     for i in range(18):(catalog_root/(reflow_ids[i]+'.desktop')).write_text('[Desktop Entry]\nType=Application\nName=Reflow '+str(i)+'\nExec=/usr/bin/true\n')
@@ -823,6 +831,7 @@ raise SystemExit(daemon.run())
       if SYSTEM:selected=button.get('identity','').endswith(':state') or button['id']==body['focus']
       if UNAVAILABLE:selected=button.get('identity')=='notifications:refresh'
       if NOTIFICATIONS:selected=button['accessibleName']=='Warlock fixture: Expiring notification'
+      if NEWINSTANCE:selected=selected or button['accessibleName']=='Open new instance of Peer'
       if not selected or (button['disabled'] and not (NOTIFICATIONS or SYSTEM or FILES or JUMP)) or button['y']<0 or button['y']+button['height']>box[3]:continue
       left,top=max(0,int(box[0]+button['x'])+12),max(100,int(box[1]+button['y'])+6)
       right,bottom=min(pix.get_width(),int(box[0]+button['x']+min(220,button['width']))-12),min(pix.get_height(),box[1]+box[3],int(box[1]+button['y']+button['height'])-6)
@@ -1064,7 +1073,20 @@ raise SystemExit(daemon.run())
      check('DenseJourneyDoesNotActivateOrLaunch',len(journal())==before and not launches())
      report['nativeDenseTaskbarObserved']=True
     elif PINMENUS:
-     click(wait(lambda:projection().get('openApplications') if projection() else None))
+     if NEWINSTANCE:
+      # The frozen Collector assumes an 800x48 bar. Current native reservation
+      # is 56px; use the current measured DOM viewport, preserving full control
+      # visibility rather than accepting its clipped legacy projection.
+      def native_apps_target():
+       body=bar_body();p=projection()
+       if not body or not p or body['publication']!=p['publication']:return None
+       button=next((b for b in body['buttons'] if b['accessibleName']=='Open applications' and not b['disabled']),None)
+       if not button:return None
+       x,y,w,h=button['x'],button['y'],button['width'],button['height']
+       visible=x>=0 and y>=0 and x+w<=body['viewportWidth'] and y+h<=body['viewportHeight'] and w>0 and h>0
+       return {'visible':visible,'point':[x+w/2,y+h/2],'button':button,'viewport':[body['viewportWidth'],body['viewportHeight']]}
+      click(wait(native_apps_target))
+     else:click(wait(lambda:projection().get('openApplications') if projection() else None))
      wait(lambda:field_value()=='');query([25,18,18,19],'peer');keyboard_button('Pin Peer')
      wait(lambda:any(button['label'].startswith('Peer') and 'Pinned;' in button['label'] for button in (bar_body() or {}).get('buttons',[])))
      keyboard_button('Close applications and return to windows');wait(lambda:(projection() or {}).get('mode')=='closed' and projection()['phase']=='Coherent')
@@ -1072,14 +1094,29 @@ raise SystemExit(daemon.run())
      def menu():
       body=popup_body();p=projection()
       return body if body and p and p.get('mode')=='menu' and body['publication']==p['publication'] and any(button['accessibleName']=='Minimize' for button in body['buttons']) else None
+     def enter_pin_keyboard():
+      helper([str(keyboard)],'key 125 1\nkey 56 1\nkey 57 1\nsleep 50\nkey 57 0\nkey 56 0\nkey 125 0\nsleep 100\nsync\n')
+      wait(lambda:(projection() or {}).get('mode')=='applications');key(1)
+      wait(lambda:(projection() or {}).get('mode')=='closed' and (bar_body() or {}).get('documentFocused'));key(102)
+      for _ in range(len(bar_body()['buttons'])+1):
+       if bar_body()['focus']==pin_button()['id']:break
+       key(106)
+      wait(lambda:bar_body()['documentFocused'] and bar_body()['focus']==pin_button()['id'])
+     pointer_recipient=facts()['facts']['focused']
      before=len(journal());button=wait(pin_button);report['runningPin']=button
      x,y=round(button['x']+button['width']/2),round(button['y']+button['height']/2)
      check('RunningPinPointerTargetWithinBar',0<=x<800 and 0<=y<48,button=button)
      helper([str(POINTER),'800','600'],f'move {x} {y}\nsleep 100\nbutton 273 1\nsleep 50\nbutton 273 0\nsleep 100\n')
      body=wait(menu);check('PinnedSecondaryClickOpensLabeledWindowMenu',len(journal())==before and any(button['accessibleName']=='Minimize' for button in body['buttons']),body=body)
      popup_capture('pinned-window-menu');check('NativeMenuControlsHaveTextPixels',bool(report['popupCaptures'][-1]['controlRegions']) and all(region['brightPixels']>15 for region in report['popupCaptures'][-1]['controlRegions']))
-     key(1);wait(lambda:(projection() or {}).get('mode')=='closed');wait(lambda:(bar_body() or {}).get('focus')==(pin_button() or {}).get('id'))
-     check('MenuEscapeReturnsRunningPinFocus',bar_body()['focus']==pin_button()['id'])
+     key(1);wait(lambda:(projection() or {}).get('mode')=='closed')
+     if NEWINSTANCE:
+      wait(lambda:facts()['facts']['focused']==pointer_recipient)
+      check('PointerMenuEscapePreservesActualApplicationRecipient',facts()['facts']['focused']==pointer_recipient and len(journal())==before and not launches(),before=pointer_recipient,after=facts()['facts']['focused'])
+      enter_pin_keyboard()
+     else:
+      wait(lambda:(bar_body() or {}).get('focus')==(pin_button() or {}).get('id'))
+      check('MenuEscapeReturnsRunningPinFocus',bar_body()['focus']==pin_button()['id'])
      key(127);wait(menu);check('PinnedMenuKeyUsesNativeBarProof',any('surface-context-admitted:' in line and 'origin=bar trigger=keyboard' in line for line in text().splitlines()))
      key(1);wait(lambda:(projection() or {}).get('mode')=='closed');wait(lambda:(bar_body() or {}).get('focus')==(pin_button() or {}).get('id'))
      helper([str(keyboard)],'key 42 1\nkey 68 1\nsleep 50\nkey 68 0\nkey 42 0\nsleep 100\nsync\n');wait(menu)
@@ -1087,7 +1124,12 @@ raise SystemExit(daemon.run())
      def selected_action():
       body=menu()
       return next((button['accessibleName'] for button in body['buttons'] if button['id']==body['focus']),None) if body else None
-     key(108);wait(lambda:selected_action()=='Maximize');key(103);wait(lambda:selected_action()=='Minimize')
+     if NEWINSTANCE:
+      # The current menu includes the existing Always on top operation between
+      # Minimize and Maximize. Observe each labeled physical arrow transition.
+      key(108);wait(lambda:selected_action()=='Always on top');key(108);wait(lambda:selected_action()=='Maximize')
+      key(103);wait(lambda:selected_action()=='Always on top');key(103);wait(lambda:selected_action()=='Minimize')
+     else:key(108);wait(lambda:selected_action()=='Maximize');key(103);wait(lambda:selected_action()=='Minimize')
      check('NativeMenuArrowTraversalReturnsToMinimize',selected_action()=='Minimize' and len(journal())==before)
      for _ in range(12):
       body=menu();focused=next((button for button in body['buttons'] if button['id']==body['focus']),None)
@@ -1117,6 +1159,44 @@ raise SystemExit(daemon.run())
      n=len(events.read_text().splitlines());key(30);delivered=wait(lambda:[json.loads(line) for line in events.read_text().splitlines()[n:]])
      check('TaskViewAfterMenuReturnsApplicationKeyboard',facts()['facts']['focused']==target and any(row['window']=='ELM-ACTIVATION-PEER' and row['kind']=='key' and row['keyval']==97 for row in delivered),events=delivered)
      report['nativePinnedMenusObserved']=True
+     if NEWINSTANCE:
+      import re
+      def instance_rows():return [json.loads(line) for line in instance_events.read_text().splitlines()] if instance_events.exists() else []
+      def launch_outcomes():return [json.loads(line.split(': ',1)[1]) for line in text().splitlines() if line.startswith('backend-frame: ') and json.loads(line.split(': ',1)[1]).get('kind')=='application-launch-outcome']
+      def open_instance_menu():
+       button=wait(pin_button);x,y=round(button['x']+button['width']/2),round(button['y']+button['height']/2)
+       helper([str(POINTER),'800','600'],f'move {x} {y}\nsleep 100\nbutton 273 1\nsleep 50\nbutton 273 0\nsleep 100\n')
+       return wait(menu)
+      def instance_button():return next((button for button in (menu() or {}).get('buttons',[]) if button['accessibleName']=='Open new instance of Peer' and not button['disabled']),None)
+      def click_instance():
+       button=wait(instance_button)
+       rows=[line for line in text().splitlines() if 'xdg_popup' in line and '.configure(' in line]
+       box=tuple(map(int,re.search(r'configure\((-?\d+), (-?\d+), (\d+), (\d+)\)',rows[-1]).groups()))
+       x,y=round(box[0]+button['x']+button['width']/2),round(box[1]+button['y']+button['height']/2)
+       check('NewInstanceActualPointerTargetVisible',button['y']>=0 and button['y']+button['height']<=box[3] and 0<=x<800 and 0<=y<600,button=button,box=box)
+       helper([str(POINTER),'800','600'],f'move {x} {y}\nsleep 100\nbutton 272 1\nsleep 50\nbutton 272 0\nsleep 100\n')
+      check('OrdinaryPinJourneyCreatesNoNewInstance',not launches() and not instance_rows())
+      before_windows=len(journal());membership=sorted((w['incarnation'],w['workspace'],w['monitor']) for w in facts()['facts']['windows'])
+      open_instance_menu();wait(instance_button);popup_capture('new-instance-pointer')
+      capture=report['popupCaptures'][-1];regions=[region for region in capture['controlRegions'] if region['accessibleName']=='Open new instance of Peer'];check('NewInstanceLabeledControlHasNativeTextPixels',len(regions)==1 and regions[0]['brightPixels']>15,capture=capture)
+      click_instance();wait(lambda:(projection() or {}).get('mode')=='closed' and len(launches())==1 and len(instance_rows())==1 and len(launch_outcomes())==1)
+      check('PointerNewInstanceUsesOneCurrentCatalogLaunch',launches()[0]['intent']['entry']=='warlock-running-peer' and instance_rows()[0]['argv']==['NEW_INSTANCE_PEER'] and launch_outcomes()[0]['outcome']['status']=='Submitted',request=launches()[0],outcome=launch_outcomes()[0],events=instance_rows())
+      enter_pin_keyboard()
+      key(127);wait(menu);keyboard_button('Open new instance of Peer',28)
+      wait(lambda:(projection() or {}).get('mode')=='closed' and len(launches())==2 and len(instance_rows())==2 and len(launch_outcomes())==2)
+      check('KeyboardNewInstanceUsesOneFreshRequest',launches()[1]['intent']['entry']=='warlock-running-peer' and launches()[1]['intent']['request']!=launches()[0]['intent']['request'] and instance_rows()[1]['argv']==['NEW_INSTANCE_PEER'] and launch_outcomes()[1]['outcome']['status']=='Submitted',requests=launches(),outcomes=launch_outcomes(),events=instance_rows())
+      open_instance_menu();keyboard_button('Actions for Peer',28)
+      wait(lambda:(projection() or {}).get('mode')=='jump' and any(b['accessibleName']=='Open new instance of Peer' and not b['disabled'] for b in (popup_body() or {}).get('buttons',[])))
+      popup_capture('new-instance-application-actions');capture=report['popupCaptures'][-1];regions=[region for region in capture['controlRegions'] if region['accessibleName']=='Open new instance of Peer'];check('ApplicationActionsNewInstanceHasNativeTextPixels',len(regions)==1 and regions[0]['brightPixels']>15,capture=capture)
+      keyboard_button('Open new instance of Peer',28)
+      wait(lambda:(projection() or {}).get('mode')=='closed' and len(launches())==3 and len(instance_rows())==3 and len(launch_outcomes())==3)
+      check('ApplicationActionsRequestsOneNewInstanceWithoutInventedDesktopAction',instance_rows()[2]['argv']==['NEW_INSTANCE_PEER'] and launch_outcomes()[2]['outcome']['status']=='Submitted' and not any(json.loads(line.split(': ',1)[1]).get('kind')=='jump-list-effect' for line in text().splitlines() if line.startswith('frontend-request: ')),request=launches()[2],outcome=launch_outcomes()[2])
+      check('NewInstanceDoesNotMutateExistingWindowMembership',len(journal())==before_windows and membership==sorted((w['incarnation'],w['workspace'],w['monitor']) for w in facts()['facts']['windows']))
+      open_instance_menu();instance_desktop.unlink();click_instance()
+      wait(lambda:len(launches())==4 and len(launch_outcomes())==4)
+      check('RetiredNativeCatalogRefusesWithoutFallbackLaunch',launch_outcomes()[3]['outcome']['status']=='Refused' and len(instance_rows())==3 and len(journal())==before_windows,outcome=launch_outcomes()[3],events=instance_rows())
+      check('AllNewInstanceReceiptsMatchExactBindingAndIntent',all(request['binding']==outcome['binding'] and request['intent']==outcome['outcome']['intent'] for request,outcome in zip(launches(),launch_outcomes())),requests=launches(),outcomes=launch_outcomes())
+      report['newInstanceRequests']=launches();report['newInstanceOutcomes']=launch_outcomes();report['newInstanceEvents']=instance_rows();report['nativeNewInstanceObserved']=True
      if SNAP:
       before=len(journal());before_launches=len(launches())
       button=wait(pin_button);x,y=round(button['x']+button['width']/2),round(button['y']+button['height']/2)
