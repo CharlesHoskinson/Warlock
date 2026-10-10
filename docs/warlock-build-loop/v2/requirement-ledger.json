@@ -5850,23 +5850,27 @@
             {
               "path": "implementation/warlock/qa/evidence/taskview-workspace-navigation/manifest.json",
               "sha256": "71f8207c535606f7c3ac1a4eb5af291a0b462768029ab0a8680c884efb1212a0"
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/taskview-workspace-recovery/final-manifest.json",
+              "sha256": "9af62f9307130a10bf01d56a98b03b7296aff29d95eae4f5ee4259d15f11fcfc"
             }
           ],
-          "missingObservation": "Native workspace-specific refusal and lost-ack/restart journeys; applicable AT observations and independent original ELM-UI-006 acceptance.",
-          "verificationScope": "Actual Task View keyboard and pointer Go to an existing native ordinary empty workspace, exact owner/context-correlated durable native Committed receipts, active destination/no app focus/unchanged window membership, painted Go controls and still-usable empty view/dismissal. Model, strict actual C/Python journal and compiled Elm checks separate from native scope. Original Task View and genuine window-refusal regressions remain passing.",
-          "evidenceScope": "Actual Task View keyboard and pointer Go to an existing native ordinary empty workspace, exact owner/context-correlated durable native Committed receipts, active destination/no app focus/unchanged window membership, painted Go controls and still-usable empty view/dismissal. Model, strict actual C/Python journal and compiled Elm checks separate from native scope. Original Task View and genuine window-refusal regressions remain passing.",
+          "missingObservation": "Applicable native AT observations and independent original ELM-UI-006 acceptance remain open. Native workspace refusal and both receipt-loss read/reconnect recovery paths now observed.",
+          "verificationScope": "Real keyboard/pointer empty-workspace navigation retained; native pinned-source Refused with current overview selection/focus, observation-only refresh and dismissal; actual native receipt loss before durable settlement/frontend delivery, durable Unknown and exact historical recovery after authenticated reconnect without replay; separate settled receipt loss with painted direct taskbar read and physical pointer recovery to exact Committed outcome. Compiled real roots and route/update regression, unchanged Quint named tests/witnesses/sampled safety remain separately scoped.",
+          "evidenceScope": "Real keyboard/pointer empty-workspace navigation retained; native pinned-source Refused with current overview selection/focus, observation-only refresh and dismissal; actual native receipt loss before durable settlement/frontend delivery, durable Unknown and exact historical recovery after authenticated reconnect without replay; separate settled receipt loss with painted direct taskbar read and physical pointer recovery to exact Committed outcome. Compiled real roots and route/update regression, unchanged Quint named tests/witnesses/sampled safety remain separately scoped.",
           "reviewerDisposition": {
             "name": "root-taskview-workspace-navigation",
             "independent": false,
-            "disposition": "Owner observed native keyboard/pointer empty-workspace navigation, exact durable receipts, pixels, unchanged membership and dismissal; original acceptance remains partial."
+            "disposition": "Owner observed the original empty navigation/dismissal journey plus actual native refusal and exact lost-receipt recovery without replay; AT and independent original acceptance remain missing."
           },
           "sourceTuple": {
-            "baseRevision": "53eba667f2c818cf962a3a5bdd1f308c38c5e0d3",
+            "baseRevision": "cd8f461683bbb24065c842a2585b89d227cb8964",
             "workingTreeSourceHashes": {
               "implementation/warlock/src/WorkspaceNavigation.elm": "8313a23008abfa6157324472db852b087b4af09dd3696a33f273d7010634e7f6",
               "implementation/warlock/src/WorkspaceInventory.elm": "583692398a5038bf17a87c09a7019ddae4059f3f200489342ca89dab50eb3b2e",
               "implementation/warlock/src/Desktop.elm": "3a9a79593e1594dc4b7bb3123434a59a89ea2f0b5ce7bed6693686c3ada25fef",
-              "implementation/warlock/src/Surface.elm": "3aeafab1ff9b63e24d75fce0d38cf9e78c8df0b3c84846c873296f128a9f3695",
+              "implementation/warlock/src/Surface.elm": "314eb94b557d21c3140d9ae9f251b9345d7d01d3c629780bad72c4dd20122ee5",
               "implementation/warlock/native/authority.cpp": "fd01bb16b21c99e312b5501fe5e26ccf18848d9ffa3d97a5598ccb19f9c7a016",
               "implementation/warlock/native/workspace-navigation.inc": "5d75d09f5ef676df07f8b98b962d8e09468ea5b51398f6e91c9e4865e572ce76",
               "implementation/warlock/native/host-journal.h": "12064b3985b9842ac496722186fcf82e17ae328d3fcfc6aa67ba256299d1981f",
@@ -5879,18 +5883,20 @@
               "implementation/warlock/qa/check-workspace-navigation.py": "d83a70cf555e9d6915bb47d146b5e5bff2502cd4a65537ab04eabaad041a0acd",
               "implementation/warlock/qa/check-native-authority.py": "69b50ddd1a062a3d78e0df3981a8972ba559f1e48e44e786cab458082d34f8c5",
               "implementation/warlock/qa/check-search.py": "fbac603788de59c73dc5f8cf6d4dbe885caa7debe482c7e105f55a4428633023",
-              "implementation/warlock/qa/WorkspaceNavigationReplay.elm": "0d6a6eb4f1d1dcdee9e3f172767a3ae2ead28aea3dc5f2eafa56f01381f098c2",
+              "implementation/warlock/qa/WorkspaceNavigationReplay.elm": "92d2907941ebb0530b6f2d77b20fa1a8fe41bd516610daee993f352550284ffe",
               "implementation/warlock/qa/native-taskview-navigation.py": "0f7f8238ab4d1f523a42869dc8179082ac614e829fea5a1cc4b6fc02ffc7d05a",
               "implementation/warlock/qa/current-native-pair.json": "8a274ee9f3180391e3c35cbbe7b30d4f13f0024f68df31e479eb31a2da91caf7",
-              "implementation/warlock/qa/current-search-build.json": "e9d29b4081e0883bb9d8d632b26fe2e8f421459466e7143dbf4de89ec913d34b",
-              "implementation/warlock/assets/elm.js": "487d8f6f70fb5c8682eb499561f3fb5ef10f4d2a842fb28415d755238c16bfaa",
+              "implementation/warlock/qa/current-search-build.json": "d8eeccfe7f55b300d18849e8500dc1f7ab1c05339349164ff348c6650448f835",
+              "implementation/warlock/assets/elm.js": "990b43af2360ac751d79894de1f7b213c76f70c814540d625acffdf03a1420d0",
               "implementation/warlock/assets/bar.js": "26ef20c9143f87caf7e3d7fc293b248983076f5a7b7a6967cc341d71f7711194",
               "implementation/warlock/assets/popup.js": "23b0f3e5e223dd5e1d7042ea33dcc1e1f4895997b01ebd7d764a75c15236b56c",
-              "implementation/warlock/README.md": "ea2b4cb111d18d2973a061ee3a3dcfecbc2ef4677fc298c44fa76ff10e5b8dd2",
+              "implementation/warlock/README.md": "890971cad7eee3c791eceaaad78ac3c686892233158a8cab21ccdf0877e03301",
               "implementation/warlock/native/geometry-effects.inc": "97206695980b48a3d0b212b46051f2f1fd17dc1a95f502f15b727f67b8025f7b",
               "implementation/warlock/src/Main.elm": "9974f1ee0183e956626f1ea414e7b95aa1d8142e7ca0bbce81ccddc948f51998",
               "implementation/warlock/qa/empty-workspace-navigation.qnt": "29d63bb5334f2e23d77c89091d7fc7d74763654880db23c978403c2732bcdb7c",
-              "implementation/warlock/qa/empty-workspace-navigation_test.qnt": "3e73053e8e50d5f5e738f18a5bf18caaca07eeb21328edb8b8db0e9a2e1edbfd"
+              "implementation/warlock/qa/empty-workspace-navigation_test.qnt": "3e73053e8e50d5f5e738f18a5bf18caaca07eeb21328edb8b8db0e9a2e1edbfd",
+              "implementation/warlock/qa/native-workspace-recovery.py": "b55a7335942ef351f5a70858b459d78e4b62ef6d13709d041df600afec23c3bc",
+              "implementation/warlock/qa/workspace-navigation-transport.py": "041364e3c29e7e38b0a1763d5dccc51051837f1411c57632315caeaa3e28ca4d"
             },
             "core": {
               "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
@@ -5905,10 +5911,10 @@
               "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
             },
             "nativeHost": {
-              "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791658577338581440/elm-host",
+              "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791659715261390176/elm-host",
               "sha256": "37de62b4e8552ce0c61c6fcd416b32cf2a69c5f34d76c4819647c7dc7402e272",
-              "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791658577338581440/report.json",
-              "heldBuildSHA256": "7e0b193703a63fd306dfce7484911c2209aa39a6fdcc5a555abead217e0b956f"
+              "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791659715261390176/report.json",
+              "heldBuildSHA256": "97a249f6e5b97c8842703eb3cd36084994d3bc729ecd3687d723342c8edda7d3"
             },
             "compilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948"
           }
@@ -12155,5 +12161,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-10T19:00:38.185775+00:00"
+  "updatedUTC": "2026-10-10T19:20:31.316065+00:00"
 }

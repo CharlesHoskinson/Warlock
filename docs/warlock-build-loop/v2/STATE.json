@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T19:00:38.185775+00:00",
+  "updatedUTC": "2026-10-10T19:20:31.316065+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
@@ -43,7 +43,9 @@
       "implementation/warlock/native/geometry-effects.inc",
       "implementation/warlock/src/Main.elm",
       "implementation/warlock/qa/empty-workspace-navigation.qnt",
-      "implementation/warlock/qa/empty-workspace-navigation_test.qnt"
+      "implementation/warlock/qa/empty-workspace-navigation_test.qnt",
+      "implementation/warlock/qa/native-workspace-recovery.py",
+      "implementation/warlock/qa/workspace-navigation-transport.py"
     ],
     "before": "Task View can browse real empty workspaces but cannot navigate the native desktop to them.",
     "after": "An explicit keyboard/pointer Go action navigates an existing ordinary empty workspace through a typed owner-correlated durable native receipt. Refusal retains the overview and context, Unknown remains visible with read-only recovery and no replay, and dismissal stays available.",
@@ -54,12 +56,12 @@
     "participantRecord": ".warlock-contributor/taskview-workspace-navigation.json",
     "disposition": "partial",
     "evidence": {
-      "path": "implementation/warlock/qa/evidence/taskview-workspace-navigation/manifest.json",
-      "sha256": "71f8207c535606f7c3ac1a4eb5af291a0b462768029ab0a8680c884efb1212a0",
-      "scope": "Actual Task View keyboard and pointer Go to an existing native ordinary empty workspace, exact owner/context-correlated durable native Committed receipts, active destination/no app focus/unchanged window membership, painted Go controls and still-usable empty view/dismissal. Model, strict actual C/Python journal and compiled Elm checks separate from native scope. Original Task View and genuine window-refusal regressions remain passing."
+      "path": "implementation/warlock/qa/evidence/taskview-workspace-recovery/final-manifest.json",
+      "sha256": "9af62f9307130a10bf01d56a98b03b7296aff29d95eae4f5ee4259d15f11fcfc",
+      "scope": "Real keyboard/pointer empty-workspace navigation retained; native pinned-source Refused with current overview selection/focus, observation-only refresh and dismissal; actual native receipt loss before durable settlement/frontend delivery, durable Unknown and exact historical recovery after authenticated reconnect without replay; separate settled receipt loss with painted direct taskbar read and physical pointer recovery to exact Committed outcome. Compiled real roots and route/update regression, unchanged Quint named tests/witnesses/sampled safety remain separately scoped."
     },
-    "missingObservation": "Native workspace-specific refusal and lost-ack/restart journeys; applicable AT observations and independent original ELM-UI-006 acceptance.",
-    "nextAction": "Add actual workspace Refused and lost-native-ACK/restart fixtures to this same navigation slice, then applicable AT, preserving the typed receipt and Unknown/no-replay contract. Continue mandatory Task View/workspace journeys without inventing a new control or publication gate."
+    "missingObservation": "Applicable native AT observations and independent original ELM-UI-006 acceptance remain open. Native workspace refusal and both receipt-loss read/reconnect recovery paths now observed.",
+    "nextAction": "The direct taskbar workspace read fix and native refusal/two receipt-loss recoveries are ready to publish. After two qualification-only records, stop expanding this investigation. Select the original ELM-UI-006 overview-select/overview-cancel native AT-SPI/Orca selection and dismissal slice next, using current Task View and retained exact outcomes. Applicable empty-workspace AT and independent acceptance remain open; include empty controls where applicable without inventing new qualification schedules."
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",

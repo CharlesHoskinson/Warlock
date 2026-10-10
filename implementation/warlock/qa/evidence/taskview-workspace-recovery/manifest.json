@@ -1,0 +1,290 @@
+{
+  "schema": 1,
+  "requirements": [
+    "ELM-UI-006"
+  ],
+  "scenarios": [
+    "overview-empty"
+  ],
+  "oracle": "empty destination is navigable and dismissal remains available",
+  "scope": "Real keyboard/pointer empty-workspace navigation retained; native pinned-source Refused with current overview selection/focus, observation-only refresh and dismissal; actual native receipt loss before durable settlement/frontend delivery, durable Unknown and exact historical recovery after authenticated reconnect without replay; separate settled receipt loss with painted direct taskbar read and physical pointer recovery to exact Committed outcome. Compiled real roots and route/update regression, unchanged Quint named tests/witnesses/sampled safety remain separately scoped.",
+  "owner": "root-taskview-workspace-navigation",
+  "disposition": "partial",
+  "nativeAcceptance": false,
+  "assistiveTechnologyAccepted": false,
+  "independentAcceptance": false,
+  "fullReleaseAccepted": false,
+  "sourceBaseRevision": "cd8f461683bbb24065c842a2585b89d227cb8964",
+  "sourceHashes": {
+    "implementation/warlock/src/WorkspaceNavigation.elm": "8313a23008abfa6157324472db852b087b4af09dd3696a33f273d7010634e7f6",
+    "implementation/warlock/src/WorkspaceInventory.elm": "583692398a5038bf17a87c09a7019ddae4059f3f200489342ca89dab50eb3b2e",
+    "implementation/warlock/src/Desktop.elm": "3a9a79593e1594dc4b7bb3123434a59a89ea2f0b5ce7bed6693686c3ada25fef",
+    "implementation/warlock/src/Surface.elm": "314eb94b557d21c3140d9ae9f251b9345d7d01d3c629780bad72c4dd20122ee5",
+    "implementation/warlock/native/authority.cpp": "fd01bb16b21c99e312b5501fe5e26ccf18848d9ffa3d97a5598ccb19f9c7a016",
+    "implementation/warlock/native/workspace-navigation.inc": "5d75d09f5ef676df07f8b98b962d8e09468ea5b51398f6e91c9e4865e572ce76",
+    "implementation/warlock/native/host-journal.h": "12064b3985b9842ac496722186fcf82e17ae328d3fcfc6aa67ba256299d1981f",
+    "implementation/warlock/native/host.c": "cde6230199756dfaa193d5e8af5a41470f8b65de3cdd1942e0e0224ab458ccbf",
+    "implementation/warlock/native/shared-host.c": "ecd21caea9511f0662ba67b2ec6e8427a87e1aaa510073dd67c035c1fc5796ce",
+    "implementation/warlock/adapter/workspace_navigation.py": "79508bcb112ec602b6d33daf1050ef54f63afeb7bfe427fa5553e8a4c68bb8a9",
+    "implementation/warlock/adapter/daemon.py": "a593494e4ca89ef467dced5cd946bc5eca9a88db21c591597c19eb2a80cdca31",
+    "implementation/warlock/qa/workspace-navigation.qnt": "91e24c0cde7b481c8d5cb2710c3be7f5d4f5e63963c88a36d32329050bee126c",
+    "implementation/warlock/qa/workspace-navigation_test.qnt": "33d67e30ad62d4206ea835d0ad9e0a23dde8cfdf8b322c1ba6b71602dd98b37d",
+    "implementation/warlock/qa/check-workspace-navigation.py": "d83a70cf555e9d6915bb47d146b5e5bff2502cd4a65537ab04eabaad041a0acd",
+    "implementation/warlock/qa/check-native-authority.py": "69b50ddd1a062a3d78e0df3981a8972ba559f1e48e44e786cab458082d34f8c5",
+    "implementation/warlock/qa/check-search.py": "fbac603788de59c73dc5f8cf6d4dbe885caa7debe482c7e105f55a4428633023",
+    "implementation/warlock/qa/WorkspaceNavigationReplay.elm": "92d2907941ebb0530b6f2d77b20fa1a8fe41bd516610daee993f352550284ffe",
+    "implementation/warlock/qa/native-taskview-navigation.py": "0f7f8238ab4d1f523a42869dc8179082ac614e829fea5a1cc4b6fc02ffc7d05a",
+    "implementation/warlock/qa/current-native-pair.json": "8a274ee9f3180391e3c35cbbe7b30d4f13f0024f68df31e479eb31a2da91caf7",
+    "implementation/warlock/qa/current-search-build.json": "d8eeccfe7f55b300d18849e8500dc1f7ab1c05339349164ff348c6650448f835",
+    "implementation/warlock/assets/elm.js": "990b43af2360ac751d79894de1f7b213c76f70c814540d625acffdf03a1420d0",
+    "implementation/warlock/assets/bar.js": "26ef20c9143f87caf7e3d7fc293b248983076f5a7b7a6967cc341d71f7711194",
+    "implementation/warlock/assets/popup.js": "23b0f3e5e223dd5e1d7042ea33dcc1e1f4895997b01ebd7d764a75c15236b56c",
+    "implementation/warlock/README.md": "82fb6f5f2ab476c3adf69424b680697d2d19a1ee01f688048ac5d0263664a5e6",
+    "implementation/warlock/native/geometry-effects.inc": "97206695980b48a3d0b212b46051f2f1fd17dc1a95f502f15b727f67b8025f7b",
+    "implementation/warlock/src/Main.elm": "9974f1ee0183e956626f1ea414e7b95aa1d8142e7ca0bbce81ccddc948f51998",
+    "implementation/warlock/qa/empty-workspace-navigation.qnt": "29d63bb5334f2e23d77c89091d7fc7d74763654880db23c978403c2732bcdb7c",
+    "implementation/warlock/qa/empty-workspace-navigation_test.qnt": "3e73053e8e50d5f5e738f18a5bf18caaca07eeb21328edb8b8db0e9a2e1edbfd",
+    "implementation/warlock/qa/native-workspace-recovery.py": "b55a7335942ef351f5a70858b459d78e4b62ef6d13709d041df600afec23c3bc",
+    "implementation/warlock/qa/workspace-navigation-transport.py": "041364e3c29e7e38b0a1763d5dccc51051837f1411c57632315caeaa3e28ca4d"
+  },
+  "originalRequirements": {
+    "path": "docs/elm-roadmap/requirements.json",
+    "sha256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b"
+  },
+  "nativeTuple": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
+      "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791657775676809428/elm-window-geometry-authority.so",
+      "sha256": "ae84313c512d0ba398e7f931c5c877eb69d7635588fbbd11b71a729386fcbfd2"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+      "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791659715261390176/elm-host",
+    "sha256": "37de62b4e8552ce0c61c6fcd416b32cf2a69c5f34d76c4819647c7dc7402e272",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791659715261390176/report.json",
+    "heldBuildSHA256": "97a249f6e5b97c8842703eb3cd36084994d3bc729ecd3687d723342c8edda7d3"
+  },
+  "compiler": {
+    "path": "implementation/warlock-preview-provider-v143/qa/toolchain/npm-package/node_modules/@elm_binaries/linux_x64/elm",
+    "sha256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948"
+  },
+  "compiledAssets": {
+    "elm.js": "990b43af2360ac751d79894de1f7b213c76f70c814540d625acffdf03a1420d0",
+    "bar.js": "26ef20c9143f87caf7e3d7fc293b248983076f5a7b7a6967cc341d71f7711194",
+    "popup.js": "23b0f3e5e223dd5e1d7042ea33dcc1e1f4895997b01ebd7d764a75c15236b56c"
+  },
+  "reports": {
+    "native": "implementation/warlock/qa/evidence/taskview-workspace-recovery/native-report.json.gz",
+    "compiled": "implementation/warlock/qa/evidence/taskview-workspace-recovery/compiled-report.json.gz",
+    "model": "implementation/warlock/qa/evidence/taskview-workspace-recovery/model-report.json.gz"
+  },
+  "nativeChecks": 150,
+  "cleanupPassed": true,
+  "failedReports": {
+    "native-task-view-1791659394621433397": {
+      "report": "implementation/warlock/qa/evidence/taskview-workspace-recovery/failed-native-task-view-1791659394621433397.json.gz",
+      "error": "KeyError('pinned')",
+      "cleanupPassed": true
+    },
+    "native-task-view-1791659434957479097": {
+      "report": "implementation/warlock/qa/evidence/taskview-workspace-recovery/failed-native-task-view-1791659434957479097.json.gz",
+      "error": "AssertionError('KeyboardReachesBrowse workspace 3')",
+      "cleanupPassed": true
+    },
+    "native-task-view-1791659509381530584": {
+      "report": "implementation/warlock/qa/evidence/taskview-workspace-recovery/failed-native-task-view-1791659509381530584.json.gz",
+      "error": "StopIteration()",
+      "cleanupPassed": true
+    },
+    "native-task-view-1791659766782528974": {
+      "report": "implementation/warlock/qa/evidence/taskview-workspace-recovery/failed-native-task-view-1791659766782528974.json.gz",
+      "error": "RuntimeError('Original observation deadline <lambda>')",
+      "cleanupPassed": true
+    },
+    "empty-workspace-navigation-1791659645295720903": {
+      "report": "implementation/warlock/qa/evidence/taskview-workspace-recovery/failed-empty-workspace-navigation-1791659645295720903.json.gz",
+      "error": "AssertionError()",
+      "cleanupPassed": null
+    }
+  },
+  "preInitializationFailure": "Protected invocation session3810 failed the wrapper helper-replacement count assertion before runtime/report creation; tool transcript retains the failure. No native run/acceptance occurred.",
+  "files": {
+    "implementation/warlock/qa/evidence/taskview-workspace-recovery/native-report.json.gz": {
+      "sha256": "14d063fd11bf3962330f651577626a76db15b801856a363552d7b6bdf75a9c2b",
+      "source": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-task-view-1791659872074563015/report.json",
+      "sourceSHA256": "ee5be0597e197f2d264c1b0214d28d312881fcfa74df00218f064ce425571251"
+    },
+    "implementation/warlock/qa/evidence/taskview-workspace-recovery/compiled-report.json.gz": {
+      "sha256": "398901be48489e6681e99b48f40779ba5ee0b33f3ce59e55aad17aa7c0f17a9a",
+      "source": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791659715261390176/report.json",
+      "sourceSHA256": "97a249f6e5b97c8842703eb3cd36084994d3bc729ecd3687d723342c8edda7d3"
+    },
+    "implementation/warlock/qa/evidence/taskview-workspace-recovery/model-report.json.gz": {
+      "sha256": "ffc1d5e2e2430b51dcb9ab3b556ede60fb0a0f7f6fc2baee8a073db5b254d137",
+      "source": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-navigation-1791659310133391994/report.json",
+      "sourceSHA256": "770563fa271d3a46198aac5f3b43a8e259dfebaac6f1a08181420fd9eab7bae2"
+    },
+    "implementation/warlock/qa/evidence/taskview-workspace-recovery/model-typecheck.stdout.gz": {
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "source": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-navigation-1791659310133391994/typecheck.stdout",
+      "sourceSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "implementation/warlock/qa/evidence/taskview-workspace-recovery/model-tests-typecheck.stdout.gz": {
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "source": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-navigation-1791659310133391994/tests-typecheck.stdout",
+      "sourceSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "implementation/warlock/qa/evidence/taskview-workspace-recovery/model-compat-tests-typecheck.stdout.gz": {
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "source": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-navigation-1791659310133391994/compat-tests-typecheck.stdout",
+      "sourceSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "implementation/warlock/qa/evidence/taskview-workspace-recovery/model-named.stdout.gz": {
+      "sha256": "3f303d2b73000867df629a13f09831201f132fbbf913cf4be255e4190f94bb94",
+      "source": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-navigation-1791659310133391994/named.stdout",
+      "sourceSHA256": "7d9dea58b93a8f68d175c5ff1d8813ec5972a9e46523ced8940047036f8d60e9"
+    },
+    "implementation/warlock/qa/evidence/taskview-workspace-recovery/model-witness-safety.stdout.gz": {
+      "sha256": "adfa185ed36d7f73cbe03a62af772196163478d236d759336033d870cec4b7ea",
+      "source": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/workspace-navigation-1791659310133391994/witness-safety.stdout",
+      "sourceSHA256": "896926262344b7857ed0d31c499f37f5ca76a23ef917fdf2f9424e7b6e32ef2e"
+    },
+    "implementation/warlock/qa/evidence/taskview-workspace-recovery/compiled-compile-Main.stdout.gz": {
+      "sha256": "07cf73ed79460db65ce30ebce1f03d6364cd31de290d1b276505b9d84fdeb990",
+      "source": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791659715261390176/compile-Main.stdout",
+      "sourceSHA256": "183f5857e232f80398b61eea1e968b51e9b270671777d054186fa46651147627"
+    },
+    "implementation/warlock/qa/evidence/taskview-workspace-recovery/compiled-compile-Bar.stdout.gz": {
+      "sha256": "1e394f7fbcbf96ffb1fc1cdc94bfecb4a5087c7c37f2034b2742f6b422f0df57",
+      "source": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791659715261390176/compile-Bar.stdout",
+      "sourceSHA256": "c739b6d04713994eeec409f2d6abad44074a629c0c9485b274fb9a70200e032c"
+    },
+    "implementation/warlock/qa/evidence/taskview-workspace-recovery/compiled-compile-Popup.stdout.gz": {
+      "sha256": "c8b1d86f80036ea68285d4fef0a5070ca8ab38431495c094427332333cba5dd4",
+      "source": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791659715261390176/compile-Popup.stdout",
+      "sourceSHA256": "a148dc018a0ee3099beec8c93902597341d1008c42579ae1a8b0c6900e56f542"
+    },
+    "implementation/warlock/qa/evidence/taskview-workspace-recovery/compiled-typed-empty-workspace-navigation.stdout.gz": {
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "source": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791659715261390176/typed-empty-workspace-navigation.stdout",
+      "sourceSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "implementation/warlock/qa/evidence/taskview-workspace-recovery/compiled-typed-task-view.stdout.gz": {
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "source": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791659715261390176/typed-task-view.stdout",
+      "sourceSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "implementation/warlock/qa/evidence/taskview-workspace-recovery/compiled-host-self-tests.stdout.gz": {
+      "sha256": "6b2c36c18c08caa4460bd434c2121b35bd9a2d1c1ee10667aabdd0ea8e8cde04",
+      "source": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791659715261390176/host-self-tests.stdout",
+      "sourceSHA256": "c783eb73bb243e9a781127ff356ef0035b97448e6039a02ede1fe1f7dcbb8804"
+    },
+    "implementation/warlock/qa/evidence/taskview-workspace-recovery/native-warlock.log.gz": {
+      "sha256": "ecf7fc3ad32332422883f85f8f7cc22b6621c4e5acaa9d98c0c562f73c4d4fd5",
+      "source": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791659872074658070/warlock.log",
+      "sourceSHA256": "6517e6feddd082832c9f9cd1cc4e8cd64e501313506051baf017fcb7e87ece4d"
+    },
+    "implementation/warlock/qa/evidence/taskview-workspace-recovery/native-workspace-navigation-loss.json": {
+      "sha256": "02edce840aea350d43f7c8d626f424cd0f0bd3e96ca7f0e90ba8d5f92bc1cbd3",
+      "source": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791659872074658070/workspace-navigation-loss.json",
+      "sourceSHA256": "02edce840aea350d43f7c8d626f424cd0f0bd3e96ca7f0e90ba8d5f92bc1cbd3"
+    },
+    "implementation/warlock/qa/evidence/taskview-workspace-recovery/native-workspace-navigation-frontend-loss.json": {
+      "sha256": "d0cacde3d094232b8219092735ba34c1f506e5f3359e15bac692e58b68fe0de9",
+      "source": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791659872074658070/workspace-navigation-frontend-loss.json",
+      "sourceSHA256": "d0cacde3d094232b8219092735ba34c1f506e5f3359e15bac692e58b68fe0de9"
+    },
+    "implementation/warlock/qa/evidence/taskview-workspace-recovery/popup-initial.png": {
+      "sha256": "f20e5dadd7a29c7c9804c06c918e39cba83a7ef43d6c3d582c5b412e6f46b388",
+      "source": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791659872074658070/popup-initial.png",
+      "sourceSHA256": "f20e5dadd7a29c7c9804c06c918e39cba83a7ef43d6c3d582c5b412e6f46b388"
+    },
+    "implementation/warlock/qa/evidence/taskview-workspace-recovery/popup-workspace-two.png": {
+      "sha256": "57e81823b56a91eb29ec582c01106579383239aab0f3e163a16301e2f86b66fa",
+      "source": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791659872074658070/popup-workspace-two.png",
+      "sourceSHA256": "57e81823b56a91eb29ec582c01106579383239aab0f3e163a16301e2f86b66fa"
+    },
+    "implementation/warlock/qa/evidence/taskview-workspace-recovery/popup-empty-navigation-ready.png": {
+      "sha256": "0751e49722191666ff02aba64ac3c91215177a43de787a5eba2197745ed4a76b",
+      "source": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791659872074658070/popup-empty-navigation-ready.png",
+      "sourceSHA256": "0751e49722191666ff02aba64ac3c91215177a43de787a5eba2197745ed4a76b"
+    },
+    "implementation/warlock/qa/evidence/taskview-workspace-recovery/popup-workspace-refused.png": {
+      "sha256": "29246ead067a57ad41b568926d7e280e56abe1db8ccc0bdfd3c7d2675c31f904",
+      "source": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791659872074658070/popup-workspace-refused.png",
+      "sourceSHA256": "29246ead067a57ad41b568926d7e280e56abe1db8ccc0bdfd3c7d2675c31f904"
+    },
+    "implementation/warlock/qa/evidence/taskview-workspace-recovery/workspace-unknown.png": {
+      "sha256": "2738cb86570e271abe5e4edb3ed7e131f81b443e9894d84da9c97bbef738fe6a",
+      "source": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791659872074658070/workspace-unknown.png",
+      "sourceSHA256": "2738cb86570e271abe5e4edb3ed7e131f81b443e9894d84da9c97bbef738fe6a"
+    },
+    "implementation/warlock/qa/evidence/taskview-workspace-recovery/workspace-taskbar-read.png": {
+      "sha256": "3078c2ae8616fcddd4d58441d96fdc9d8a1e5b105fd8dd7ecbaeb02e206ec889",
+      "source": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791659872074658070/workspace-taskbar-read.png",
+      "sourceSHA256": "3078c2ae8616fcddd4d58441d96fdc9d8a1e5b105fd8dd7ecbaeb02e206ec889"
+    },
+    "implementation/warlock/qa/evidence/taskview-workspace-recovery/failed-native-task-view-1791659394621433397.json.gz": {
+      "sha256": "a290372a051626904318c120c0c60cf62f3ad504232b43d2d828f213b53b5f4e",
+      "source": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-task-view-1791659394621433397/report.json",
+      "sourceSHA256": "c71b98a600c607cb87774b5446f0f9c23833574ab58d5449b04b872763d0b233"
+    },
+    "implementation/warlock/qa/evidence/taskview-workspace-recovery/failed-native-task-view-1791659394621433397.log.gz": {
+      "sha256": "3595718a5122c1f858baee159cd264471d6698e67b926667dd1177b977520fde",
+      "source": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791659394621520199/warlock.log",
+      "sourceSHA256": "677df066cd124479d628e7f09c784e722f05cb05f6397124a9db62740d3b763a"
+    },
+    "implementation/warlock/qa/evidence/taskview-workspace-recovery/failed-native-task-view-1791659434957479097.json.gz": {
+      "sha256": "cdc31e5a0d769db1ca2f74512026a36eaf4f9272bdc455fdc3400b0085e9967d",
+      "source": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-task-view-1791659434957479097/report.json",
+      "sourceSHA256": "ca6566975d8076bcd2ae8947d8528ce87c634889b60e683b5afbad034bf7eae7"
+    },
+    "implementation/warlock/qa/evidence/taskview-workspace-recovery/failed-native-task-view-1791659434957479097.log.gz": {
+      "sha256": "eebf357ef564e5c02cc6a1ee98f03200c9aced7ca87892fb250ca0fb846102ea",
+      "source": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791659434957582246/warlock.log",
+      "sourceSHA256": "c9128c8cfaca90d7dd949eebbf86c013caf5932896e12dd77e50c8574b15a9e8"
+    },
+    "implementation/warlock/qa/evidence/taskview-workspace-recovery/failed-native-task-view-1791659509381530584.json.gz": {
+      "sha256": "b340528fd643d963fd0e9b51eb1feaddec2aca90e545ecb98891cfa46bb76d08",
+      "source": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-task-view-1791659509381530584/report.json",
+      "sourceSHA256": "666480939248694617dc905b5726a73ab29c1c9f93dafec981a830184901b7fe"
+    },
+    "implementation/warlock/qa/evidence/taskview-workspace-recovery/failed-native-task-view-1791659509381530584.log.gz": {
+      "sha256": "92080db67e8e7e1617d7c2a864d28d3d370e18dbf435a75988f19de6685a78f3",
+      "source": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791659509381642531/warlock.log",
+      "sourceSHA256": "377707b412db9a1239cfced8ae68c462b017bb78f8c4be52518fe487a6e6dc64"
+    },
+    "implementation/warlock/qa/evidence/taskview-workspace-recovery/failed-native-task-view-1791659766782528974.json.gz": {
+      "sha256": "1e32377a3da0427b9b99530ddb456d40ddc59a6dfb0d060305bf08640cc2b52e",
+      "source": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-task-view-1791659766782528974/report.json",
+      "sourceSHA256": "c91d428e8729d6be1b9df2a12244cb5a0dbe883dab0d66521c4064da298dffa6"
+    },
+    "implementation/warlock/qa/evidence/taskview-workspace-recovery/failed-native-task-view-1791659766782528974.log.gz": {
+      "sha256": "1bb852741dd7642b729bf63bc6984e5c1d73ab98267f60ed2495142bb5c8ed5b",
+      "source": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791659766782624429/warlock.log",
+      "sourceSHA256": "07cda9b76a0a2fc18e647ecfaad16cca4b6a01c045617b624a08e525767dfc4a"
+    },
+    "implementation/warlock/qa/evidence/taskview-workspace-recovery/failed-empty-workspace-navigation-1791659645295720903.json.gz": {
+      "sha256": "eef7bfa552504cecd4b70bf05386ad9a24266e92d19fc5303c54b5c51d209c1d",
+      "source": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/empty-workspace-navigation-1791659645295720903/report.json",
+      "sourceSHA256": "2ef272957fb260db334e2694cbc92c6ffe034cd52b636c566b558dd822433dd3"
+    }
+  },
+  "missingObservations": [
+    "Applicable native assistive-technology observations for empty workspace navigation/status recovery/dismissal.",
+    "Independent observed original ELM-UI-006 acceptance."
+  ],
+  "limits": [
+    "Receipt faults are post-native-return losses, before durable settlement or before frontend delivery respectively; no native process restart, plugin reload, physical hardware or disk failure acceptance.",
+    "The unchanged Quint model abstracts one operation and omits disk/native API/pixels/AT/timing.",
+    "The original window-family effect protocol, native authority and pinned ABI are unchanged."
+  ],
+  "updatedUTC": "2026-10-10T19:20:31.316065+00:00"
+}

@@ -79,6 +79,7 @@ result =
          ,("unknownCanReopenAndDismiss",reopened.overview && not (Tuple.first dismissed).overview && not (List.member "workspace-navigation" (sends (Tuple.second dismissed))))
          ,("unknownCannotMutateWindow",List.isEmpty (Tuple.second blockedWindow))
          ,("unknownHasReadOnlyRecovery",List.any (\c -> c.id=="overview:workspace-refresh") (Surface.controls reopened) && (Maybe.map (D.decodeValue (D.field "kind" D.string)) read==Just (Ok "workspace-navigation-recover")))
+         ,("unknownTaskbarRecoversWithoutNavigation",Surface.resolve one one (E.object [("surfaceProtocol",E.int 2),("kind",E.string "surface-action"),("surface",E.string "bar"),("publication",E.string "1"),("lease",E.string "1"),("id",E.string "bar:workspace-refresh")]) unknown |> Maybe.map (\message -> Desktop.update message unknown |> Tuple.second |> sends |> (\kinds -> List.length (List.filter ((==) "workspace-navigation-recover") kinds)==1 && not (List.member "workspace-navigation" kinds) && not (List.member "window-effect" kinds))) |> Maybe.withDefault False)
          ,("recoveryDoesNotDuplicateRead",Navigation.recover recovering |> Tuple.second |> (==) Nothing)
          ,("committedExactReceipt",status committed==Just Navigation.Committed && not (Navigation.blocked committed))
          ,("refusedRetainsDestinationContext",status refused==Just Navigation.Refused && refused.returning && refused.origin==Just "3")
