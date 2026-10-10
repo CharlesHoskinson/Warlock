@@ -1,0 +1,56 @@
+[
+  {
+    "announcementProtocol": 1,
+    "kind": "announcement-projection",
+    "recipient": {
+      "scope": {
+        "id": "1",
+        "generation": "1"
+      },
+      "surface": "popup"
+    },
+    "announcer": {
+      "scope": {
+        "id": "1",
+        "generation": "1"
+      },
+      "surface": "popup"
+    },
+    "publication": "26",
+    "lease": "1",
+    "message": {
+      "interrupt": false,
+      "sequence": "1",
+      "correlation": "{\"outcome\":\"adapter-unavailable\",\"binding\":{\"lifetime\":\"7423520131511815644\",\"session\":\"3\",\"frontend\":\"1\"},\"identity\":{\"adapter\":\"applications\",\"request\":\"7\",\"service\":null,\"revision\":null}}",
+      "text": "Applications unavailable. Refresh applications, then choose again."
+    },
+    "deliver": true
+  },
+  {
+    "announcementProtocol": 1,
+    "kind": "announcement-projection",
+    "recipient": {
+      "scope": {
+        "id": "1",
+        "generation": "1"
+      },
+      "surface": "popup"
+    },
+    "announcer": {
+      "scope": {
+        "id": "1",
+        "generation": "1"
+      },
+      "surface": "popup"
+    },
+    "publication": "28",
+    "lease": "1",
+    "message": {
+      "interrupt": false,
+      "sequence": "2",
+      "correlation": "{\"outcome\":\"adapter-unavailable\",\"binding\":{\"lifetime\":\"7423520131511815644\",\"session\":\"3\",\"frontend\":\"1\"},\"identity\":{\"adapter\":\"applications\",\"request\":\"8\",\"service\":null,\"revision\":null}}",
+      "text": "Applications unavailable. Refresh applications, then choose again."
+    },
+    "deliver": true
+  }
+]

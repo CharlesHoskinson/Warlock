@@ -40,7 +40,9 @@ scoped make root = Desktop.capture (rootDesktop root) |> Maybe.map (\stamp -> st
 scope id = E.object [("id",E.string id),("generation",E.string "1")]
 topology ids revision = E.object [("viewProtocol",E.int 1),("kind",E.string "view-topology"),("revision",E.string revision),("views",E.list scope ids)]
 attached = E.object [("protocolVersion",E.int 3),("kind",E.string "attached"),("binding",bound)]
-openedRoot = Outputs.update (Outputs.Topology (topology ["1","2"] "1")) Outputs.initial |> Tuple.first |> native attached |> scoped Desktop.OpenSettings
+-- Replay arrangement: the production admission gate requires native idle.
+pointerIdle = E.object [("protocolVersion",E.int 3),("kind",E.string "pointer-ownership"),("ownershipProtocol",E.int 1),("binding",bound),("requestId",E.string "1"),("serial",E.string "1"),("state",E.string "idle"),("owner",E.null)]
+openedRoot = Outputs.update (Outputs.Topology (topology ["1","2"] "1")) Outputs.initial |> Tuple.first |> native attached |> native pointerIdle |> scoped Desktop.OpenSettings
 settingsSnapshot = E.object [("schema",E.int 1),("revision",E.string "1"),("values",E.object [("theme",E.string "night"),("textScale",E.int 100)])]
 settingsRead = E.object [("protocolVersion",E.int 3),("kind",E.string "shell-settings"),("binding",bound),("requestId",E.string ((rootDesktop openedRoot).settingsExpected |> Maybe.map UInt64.string |> Maybe.withDefault "0")),("snapshot",settingsSnapshot)]
 settingsReady = native settingsRead openedRoot

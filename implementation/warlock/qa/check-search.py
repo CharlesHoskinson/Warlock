@@ -1,7 +1,8 @@
 """Focused compiled launcher/search integration, protected CPU scope only."""
 import pathlib,hashlib,json,os,sys,time,shutil,subprocess,shlex,importlib.util,concurrent.futures,http.server,threading
 RELEVANCE=sys.argv[1:]==['--notification-relevance']
-ADAPTER_ANNOUNCEMENTS=sys.argv[1:]==['--adapter-announcements']
+LAUNCHER_UNAVAILABLE=sys.argv[1:]==['--launcher-unavailable']
+ADAPTER_ANNOUNCEMENTS=LAUNCHER_UNAVAILABLE or sys.argv[1:]==['--adapter-announcements']
 NOTIFICATION_ANNOUNCEMENTS=sys.argv[1:]==['--notification-announcements']
 ANNOUNCEMENTS=RELEVANCE or ADAPTER_ANNOUNCEMENTS or NOTIFICATION_ANNOUNCEMENTS or sys.argv[1:]==['--announcements']
 DESCRIPTION=sys.argv[1:]==['--preview-description']
@@ -18,7 +19,7 @@ LIVE=sys.argv[1:]==['--live-motion']
 MOTION=sys.argv[1:]==['--reduced-motion'] or LIVE
 TRANSFER=sys.argv[1:]==['--transfer-workspace']
 LAUNCHER=sys.argv[1:]==['--launcher-dismissal']
-LOCALFIELD=sys.argv[1:]==['--local-field']
+LOCALFIELD=LAUNCHER_UNAVAILABLE or sys.argv[1:]==['--local-field']
 IME=sys.argv[1:]==['--ime'] or LAUNCHER or LOCALFIELD
 ACCESSIBILITY=sys.argv[1:]==['--accessibility']
 CONTRAST=sys.argv[1:]==['--high-contrast']
@@ -414,10 +415,14 @@ console.log('Current body-target Escape releases once; stale scope, preedit, rep
   if SNAP:
    run('menu-navigation-regression',['node','qa/dense-taskbar-browser.mjs','http://127.0.0.1:'+str(server.server_port),str(OUT),str(browser)])
    regression=json.loads((OUT/'dense-browser.json').read_text());assert regression['passed'] and regression['browserExitCode']==0;report['menuNavigationRegression']={'path':str(OUT/'dense-browser.json'),'sha256':sha(OUT/'dense-browser.json'),'checks':regression['checks']}
+  if LAUNCHER_UNAVAILABLE:
+   run('ime-browser',['node','qa/ime-browser.mjs','http://127.0.0.1:'+str(server.server_port),str(OUT),str(browser)])
+   child_path=OUT/'ime-browser.json';child=json.loads(child_path.read_text());assert child['passed'] and child['browserExitCode']==0;report['imeBrowser']={'path':str(child_path),'sha256':sha(child_path),'checks':child['checks']}
   if LAYER:
    (OUT/'layer-browser').mkdir()
    run('layer-appearance-browser',['node','qa/layer-appearance-browser.mjs','http://127.0.0.1:'+str(server.server_address[1]),str(OUT),str(browser)])
    child_path=OUT/'layer-browser/report.json';child=json.loads(child_path.read_text());assert child['passed'] and child['browserExitCode']==0;report['layerAppearanceBrowser']={'path':str(child_path),'sha256':sha(child_path),'checks':child['checks']}
+ if LAUNCHER_UNAVAILABLE:report.update(requirements=['ELM-UI-005','ELM-UI-010'],scenarios=['search-unavailable','announce-adapter unavailable'],scope='Matched actual Applications failure adapter notice with retained query, no receipt-triggered focus/effect and fresh read-only recovery; current adapter/local-field/IME/pin models, compiled views and announcement/IME browser regressions. Native/AT and independent acceptance remain separate.')
  if SHORTCUTOUTPUT:report.update(requirements=['ELM-UX-023','ELM-UI-005'],scenarios=['ux-023','search-no-match'],scope='Compiled current-output shortcut routing with typed live destination/current topology, stale/blocked/ambiguous rejection, original serial/pointer/search regressions and owning GTK host. Native/AT acceptance remains separate.')
  if RETIREOUTPUT:report.update(requirements=['ELM-UI-019'],scenarios=['output-remove'],scope='Compiled current root focused-output removal, unrelated output retention, fresh replacement capability and retired action/dismissal/shortcut rejection; owning host and sampled model separate from actual native/hardware/AT acceptance.')
  if ZEROOUTPUT:report.update(requirements=['ELM-UI-019'],scenarios=['outputs-return'],scope='Compiled existing zero-output root reconciliation and changed GTK delayed native-name admission/internal FALLBACK exclusion; sampled scoped retirement model, owning host and strict matched native authority. Actual native/physical/AT acceptance remains separate.')

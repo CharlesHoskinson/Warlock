@@ -25,9 +25,7 @@ serial root = D.decodeValue (D.at ["announcement","sequence"] UInt64.decoder) (O
 scope id = E.object [("id",E.string id),("generation",E.string "1")]
 topology = E.object [("viewProtocol",E.int 1),("kind",E.string "view-topology"),("revision",E.string "1"),("views",E.list scope ["1","2"])]
 attached = E.object [("protocolVersion",E.int 3),("kind",E.string "attached"),("binding",bound)]
--- Replay arrangement: attachment is followed by the first native idle fact.
-pointerIdle = E.object [("protocolVersion",E.int 3),("kind",E.string "pointer-ownership"),("ownershipProtocol",E.int 1),("binding",bound),("requestId",E.string "1"),("serial",E.string "1"),("state",E.string "idle"),("owner",E.null)]
-start = Outputs.update (Outputs.Topology topology) Outputs.initial |> Tuple.first |> step (Desktop.Incoming attached) |> step (Desktop.Incoming pointerIdle)
+start = Outputs.update (Outputs.Topology topology) Outputs.initial |> Tuple.first |> step (Desktop.Incoming attached)
 snapshot available revision = E.object [("service",E.string "9"),("revision",E.string revision),("available",E.bool available),("reason",E.string (if available then "" else "Another notification service is running.")),("entries",E.list identity [])]
 receipt kind owner requestId value = E.object [("protocolVersion",E.int 3),("kind",E.string kind),("binding",owner),("requestId",E.string (UInt64.string requestId)),("snapshot",value)]
 initialUpdate = E.object [("protocolVersion",E.int 3),("kind",E.string "notification-update"),("binding",bound),("snapshot",snapshot False "1")]
@@ -70,12 +68,9 @@ matrix =
         appsBase={base | expected=Just expected,open=True,query="files"}
         appsRaw=receipt "application-catalog" bound expected E.null
         (appsFailed,appsEffects)=Desktop.update (Desktop.Incoming appsRaw) appsBase
-        (appsRetry,appsRetryEffects)=Desktop.capture appsFailed |> Maybe.map (\stamp -> Desktop.update (Desktop.RefreshApplications stamp) appsFailed) |> Maybe.withDefault (appsFailed,[])
+        (appsRetry,appsRetryEffects)=Desktop.capture appsFailed |> Maybe.map (\stamp -> Desktop.update (Desktop.OpenApplications stamp) appsFailed) |> Maybe.withDefault (appsFailed,[])
         recoveredCatalog=E.object [("catalogProtocol",E.int 2),("lifetime",E.string "1"),("generation",E.string "2"),("entries",E.list identity [E.object [("id",E.string "files"),("name",E.string "Files"),("iconHint",E.string ""),("wmclass",E.string ""),("genericName",E.string "File manager"),("keywords",E.list E.string [])]])]
         (appsRecovered,appsRecoveryEffects)=Desktop.update (Desktop.Incoming (receipt "application-catalog" bound (appsRetry.expected |> Maybe.withDefault UInt64.zero) recoveredCatalog)) appsRetry
-        appsNoFocus effects=List.all (\effect -> case effect of
-            Desktop.Focus _ -> False
-            _ -> True) effects
         appNoLaunch effects=List.all (\effect -> case effect of
             Desktop.Send raw -> D.decodeValue (D.field "kind" D.string) raw==Ok "catalog-request"
             Desktop.Focus _ -> True
@@ -90,7 +85,7 @@ matrix =
         (partial,_)=Desktop.update (Desktop.Incoming (receipt "system-menu-snapshot" bound expected (system volume))) systemBase
         (lost,lostEffects)=Desktop.update (Desktop.Incoming (E.object [("protocolVersion",E.int 3),("kind",E.string "host-disconnected")])) base
         (lostAgain,_)=Desktop.update (Desktop.Incoming (E.object [("protocolVersion",E.int 3),("kind",E.string "host-disconnected")])) lost
-    in List.concatMap (\(name,admitted,stable) -> [(name++"MatchedTypedFailure",admitted),(name++"RepeatSilentNoFocus",stable)]) cases ++ [("ApplicationsUnavailablePreservesQueryAndOpenState",appsFailed.query=="files" && appsFailed.open && appsFailed.applications==Nothing && appsFailed.expected==Nothing && List.isEmpty appsEffects),("ApplicationsForeignBindingRejected",Tuple.first (Desktop.update (Desktop.Incoming (receipt "application-catalog" foreign expected E.null)) appsBase)==appsBase),("ApplicationsForeignRequestRejected",Tuple.first (Desktop.update (Desktop.Incoming (receipt "application-catalog" bound (counter "999") E.null)) appsBase)==appsBase),("ApplicationsExplicitRecoveryIsFreshAndReadOnly",appsRetry.expected/=Nothing && appsRetry.expected/=Just expected && appsRecovered.applications/=Nothing && appsRecovered.query=="files" && appNoLaunch appsRetryEffects && appNoLaunch appsRecoveryEffects),("ApplicationsRefreshAndRecoveryDoNotRequestFocus",appsNoFocus appsRetryEffects && appsNoFocus appsRecoveryEffects),("ApplicationsRecoveryDoesNotReannounceFailure",Attention.observe appsFailed appsRecovered appAttention==appAttention),("PartialSystemCapabilityDoesNotAnnounceWholeAdapter",partial.adapterNotice==Nothing),("ConnectionLossTypedOnce",lost.adapterNotice |> Maybe.map .source |> (==) (Just AdapterNotice.Windows)),("RepeatedConnectionLossDoesNotReannounce",lostAgain.adapterNotice==lost.adapterNotice && List.isEmpty lostEffects)]
+    in List.concatMap (\(name,admitted,stable) -> [(name++"MatchedTypedFailure",admitted),(name++"RepeatSilentNoFocus",stable)]) cases ++ [("ApplicationsUnavailablePreservesQueryAndOpenState",appsFailed.query=="files" && appsFailed.open && appsFailed.applications==Nothing && appsFailed.expected==Nothing && List.isEmpty appsEffects),("ApplicationsForeignBindingRejected",Tuple.first (Desktop.update (Desktop.Incoming (receipt "application-catalog" foreign expected E.null)) appsBase)==appsBase),("ApplicationsForeignRequestRejected",Tuple.first (Desktop.update (Desktop.Incoming (receipt "application-catalog" bound (counter "999") E.null)) appsBase)==appsBase),("ApplicationsExplicitRecoveryIsFreshAndReadOnly",appsRetry.expected/=Nothing && appsRetry.expected/=Just expected && appsRecovered.applications/=Nothing && appsRecovered.query=="files" && appNoLaunch appsRetryEffects && appNoLaunch appsRecoveryEffects),("ApplicationsRecoveryDoesNotReannounceFailure",Attention.observe appsFailed appsRecovered appAttention==appAttention),("PartialSystemCapabilityDoesNotAnnounceWholeAdapter",partial.adapterNotice==Nothing),("ConnectionLossTypedOnce",lost.adapterNotice |> Maybe.map .source |> (==) (Just AdapterNotice.Windows)),("RepeatedConnectionLossDoesNotReannounce",lostAgain.adapterNotice==lost.adapterNotice && List.isEmpty lostEffects)]
 result =
     let (_,failureEffects)=Outputs.update (Outputs.Interaction (Desktop.Incoming failureRaw)) opened
         (_,retryEffects)=Outputs.update (Outputs.Interaction (Desktop.capture (current failed) |> Maybe.map Desktop.RefreshNotifications |> Maybe.withDefault (Desktop.Incoming E.null))) failed

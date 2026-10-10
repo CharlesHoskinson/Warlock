@@ -1,0 +1,59 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "Apps Escape keydown retains popup and emits no close"
+    },
+    {
+      "name": "Apps Escape release emits one exact current close"
+    },
+    {
+      "name": "Repeated release cannot emit another close"
+    },
+    {
+      "name": "Compiled preedit prevents Enter launch and keeps search focus"
+    },
+    {
+      "name": "Actual compiled preedit prevents Escape dismissal"
+    },
+    {
+      "name": "Preedit stays in real field without query dispatch"
+    },
+    {
+      "name": "Same-field observation keeps native input node and preedit"
+    },
+    {
+      "name": "Matching observation cannot clear uncommitted preedit"
+    },
+    {
+      "name": "Final input preceding end does not dispatch preedit"
+    },
+    {
+      "name": "Composition end and final input dispatch exactly one committed query"
+    },
+    {
+      "name": "Commit retains correct caret and focus"
+    },
+    {
+      "name": "Cancellation clears preedit and retains only prior committed text"
+    },
+    {
+      "name": "Other field cannot inherit launcher preedit"
+    },
+    {
+      "name": "No application/window effect is caused by composition"
+    },
+    {
+      "name": "No browser exceptions",
+      "detail": []
+    }
+  ],
+  "captures": [
+    "ime-committed-query.png"
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "browserExitCode": 0
+}

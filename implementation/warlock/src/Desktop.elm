@@ -89,6 +89,7 @@ type alias Model =
     , expected : Maybe Counter
     , adapterNotice : Maybe AdapterNotice.Notice
     , catalogFailure : Maybe { binding : Binding.Binding, request : Counter }
+    , catalogOpening : Bool
     }
 
 type PopupOrigin = PointerEntry | KeyboardEntry
@@ -121,6 +122,7 @@ type Msg
     | PresentationOwner (Maybe {outputId : Counter, providerId : Counter})
     | Incoming D.Value
     | OpenApplications ViewStamp
+    | RefreshApplications ViewStamp
     | OpenJumpList ViewStamp String
     | CloseJumpList ViewStamp
     | RefreshJumpList ViewStamp
@@ -187,7 +189,7 @@ type Effect
 
 initial : Model
 initial =
-    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", popupOrigin = KeyboardEntry, returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, pointer = PointerOwnership.initial, shortcuts = Shortcuts.initial, jumpList = JumpList.initial, jumpEntry = Nothing, jumpOpening = False, jumpExpected = Nothing, jumpBack = False, files = Files.initial, filesOpen = False, filesOpening = False, filesExpected = Nothing, systemMenu = SystemMenu.initial, systemMenuOpen = False, systemMenuOpening = False, systemMenuExpected = Nothing, systemMenuConfirmation = Nothing, notifications = Notifications.initial, notificationsOpen = False, notificationsOpening = False, notificationsExpected = Nothing, motionExpected = Nothing, motion = Motion.initial, settings = Settings.initial, settingsOpen = False, settingsOpening = False, settingsExpected = Nothing, settingsHelp = True, shortcutPreferences = ShortcutPreferences.initial, shortcutExpected = Nothing, open = False, overview = False, overviewWorkspace = Nothing, overviewTransfer = Nothing, snap = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, adapterNotice = Nothing, catalogFailure = Nothing }
+    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", popupOrigin = KeyboardEntry, returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, pointer = PointerOwnership.initial, shortcuts = Shortcuts.initial, jumpList = JumpList.initial, jumpEntry = Nothing, jumpOpening = False, jumpExpected = Nothing, jumpBack = False, files = Files.initial, filesOpen = False, filesOpening = False, filesExpected = Nothing, systemMenu = SystemMenu.initial, systemMenuOpen = False, systemMenuOpening = False, systemMenuExpected = Nothing, systemMenuConfirmation = Nothing, notifications = Notifications.initial, notificationsOpen = False, notificationsOpening = False, notificationsExpected = Nothing, motionExpected = Nothing, motion = Motion.initial, settings = Settings.initial, settingsOpen = False, settingsOpening = False, settingsExpected = Nothing, settingsHelp = True, shortcutPreferences = ShortcutPreferences.initial, shortcutExpected = Nothing, open = False, overview = False, overviewWorkspace = Nothing, overviewTransfer = Nothing, snap = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, adapterNotice = Nothing, catalogFailure = Nothing, catalogOpening=False }
 
 switcherOpen : Model -> Bool
 switcherOpen model = List.member (Switcher.phase model.switcher) [Switcher.Waiting,Switcher.Browsing]
@@ -897,9 +899,10 @@ updateAvailable message model =
                     in case D.decodeValue decoder raw of
                         Ok receipt ->
                             if model.windows.shell.phase /= Shell.Detached && model.windows.shell.binding == Just receipt.binding && model.expected == Just receipt.request then
-                                let next = advance {model | launch = Launch.catalog receipt.snapshot model.launch, applications = Catalog.decode receipt.snapshot |> Result.toMaybe, pins = Pins.observe receipt.pins model.pins, expected = Nothing, catalogFailure = Nothing}
+                                let applications = Catalog.decode receipt.snapshot |> Result.toMaybe
+                                    next = advance {model | launch = Launch.catalog receipt.snapshot model.launch, applications = applications, pins = Pins.observe receipt.pins model.pins, expected = Nothing, catalogFailure = Nothing, catalogOpening=False, adapterNotice = AdapterNotice.failedRead AdapterNotice.Applications receipt.binding receipt.request Nothing Nothing (applications==Nothing) model.adapterNotice}
                                     target = "launcher-search"
-                                in (next,if next.open then [Focus target] else [])
+                                in (next,if next.open && model.catalogOpening && applications/=Nothing then [Focus target] else [])
                             else (model,[])
                         Err _ -> (model,[])
                 Ok "taskbar-pins-outcome" ->
@@ -1074,24 +1077,15 @@ updateAvailable message model =
         RefreshSettings stamp ->
             if capture model/=Just stamp || not model.settingsOpen then (model,[]) else readSettings model
         OpenApplications stamp ->
-            if capture model /= Just stamp || MenuBridge.preparedSnapshot model.windows.menus/=Nothing then (model,[]) else
-            let base =
-                    case (MenuBridge.menuSnapshot model.windows.menus).menu of
-                        Nothing -> model
-                        Just menu -> windowBase (TaskbarShell.MenuEvent (Menu.Dismiss menu.id)) model |> Tuple.first
-                windows=base.windows
-                retired = advance (retireSwitcher {base | windows={windows | picker=Nothing}, returnFocus=Nothing, menuOrigin=Nothing, snap=Nothing, jumpEntry=Nothing,jumpOpening=False,filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,open = True, overview = False, applications = Nothing, launch = Launch.catalog E.null model.launch, expected = Nothing, catalogFailure = Nothing})
-            in case (model.windows.shell.binding, UInt64.next model.request) of
-                (Just binding,Just request) ->
-                    if model.windows.shell.phase == Shell.Detached || retired.presentation == Nothing then (retired,[]) else
-                        ({retired | request = request, expected = Just request},[catalogRequest binding request,Focus "launcher-search"])
-                _ -> (retired,[])
+            requestApplications True stamp model
+        RefreshApplications stamp ->
+            if not model.open then (model,[]) else requestApplications False stamp model
         CatalogUnsent binding request ->
             if not (canProveCatalogUnsent binding request model) then (model,[]) else
-                ({model | expected=Nothing,catalogFailure=Just {binding=binding,request=request},adapterNotice=AdapterNotice.failedRead AdapterNotice.Applications binding request Nothing Nothing True model.adapterNotice},[])
+                ({model | expected=Nothing,catalogOpening=False,catalogFailure=Just {binding=binding,request=request},adapterNotice=AdapterNotice.failedRead AdapterNotice.Applications binding request Nothing Nothing True model.adapterNotice},[])
         CloseApplications stamp ->
             if capture model /= Just stamp || not model.open then (model,[]) else
-                let next = advance {model | open = False, expected = Nothing}
+                let next = advance {model | open = False, expected = Nothing, catalogOpening=False}
                 in (next,[Focus (key next "control:opener")])
         OpenOverview stamp ->
             if capture model/=Just stamp || model.choice/=Nothing || not (Shell.available model.windows.shell) || MenuBridge.preparedSnapshot model.windows.menus/=Nothing then (model,[]) else
@@ -1167,6 +1161,24 @@ updateAvailable message model =
         Deadline token -> ({model | launch = Launch.timeout token model.launch},[])
         Acknowledge token -> ({model | launch = Launch.acknowledgeUnknown token model.launch},[])
 
+
+-- Opening Apps owns the initial search focus. An explicit Refresh is a read
+-- within the existing popup: neither its request nor receipt relocates focus.
+-- Both use the same request/catalog authority and retirement rules.
+requestApplications : Bool -> ViewStamp -> Model -> (Model,List Effect)
+requestApplications opening stamp model =
+    if capture model /= Just stamp || MenuBridge.preparedSnapshot model.windows.menus/=Nothing then (model,[]) else
+    let base =
+            case (MenuBridge.menuSnapshot model.windows.menus).menu of
+                Nothing -> model
+                Just menu -> windowBase (TaskbarShell.MenuEvent (Menu.Dismiss menu.id)) model |> Tuple.first
+        windows=base.windows
+        retired = advance (retireSwitcher {base | windows={windows | picker=Nothing}, returnFocus=Nothing, menuOrigin=Nothing, snap=Nothing, jumpEntry=Nothing,jumpOpening=False,filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,open = True, overview = False, applications = Nothing, launch = Launch.catalog E.null model.launch, expected = Nothing, catalogFailure = Nothing, catalogOpening=opening})
+    in case (model.windows.shell.binding, UInt64.next model.request) of
+        (Just binding,Just request) ->
+            if model.windows.shell.phase == Shell.Detached || retired.presentation == Nothing then (retired,[]) else
+                ({retired | request = request, expected = Just request},[catalogRequest binding request]++(if opening then [Focus "launcher-search"] else []))
+        _ -> (retired,[])
 
 catalogRequest : Binding.Binding -> Counter -> Effect
 catalogRequest binding request = Send (E.object [("protocolVersion",E.int 3),("kind",E.string "catalog-request"),("binding",Binding.encode binding),("requestId",E.string (UInt64.string request))])

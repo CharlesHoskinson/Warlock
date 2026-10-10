@@ -282,7 +282,7 @@ controls model =
             jump=entries |> List.head |> Maybe.map (\entry -> {id="jump:open:"++Catalog.id entry.identity,domId=Desktop.key model ("jump:open:"++Catalog.id entry.identity),label="Actions for "++entry.name,ariaLabel="Actions for "++entry.name,detail="Application actions and recent files",enabled=True,message=scoped (\stamp -> Desktop.OpenJumpList stamp (Catalog.id entry.identity))}) |> Maybe.map List.singleton |> Maybe.withDefault []
         in [ {id="control:search",domId="launcher-search",label=model.query,ariaLabel="Search applications",detail="",enabled=True,message=scoped (\stamp -> Desktop.SearchQuery stamp model.query)}
            , {id="control:close",domId=Desktop.key model "control:close",label="Windows",ariaLabel="Close applications and return to windows",detail="",enabled=True,message=scoped Desktop.CloseApplications}
-           , {id="control:refresh",domId=Desktop.key model "control:refresh",label="Refresh",ariaLabel="Refresh applications",detail="",enabled=True,message=scoped Desktop.OpenApplications}
+           , {id="control:refresh",domId=Desktop.key model "control:refresh",label="Refresh",ariaLabel="Refresh applications",detail="",enabled=True,message=scoped Desktop.RefreshApplications}
            ] ++ acknowledge ++ jump ++ pinFirst ++ List.concat (List.indexedMap pinRows pinIds) ++ List.map entryControl entries
     else if (MenuBridge.menuSnapshot model.windows.menus).menu/=Nothing then
         case (MenuBridge.menuSnapshot model.windows.menus).menu of

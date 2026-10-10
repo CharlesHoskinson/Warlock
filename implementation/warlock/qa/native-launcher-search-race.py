@@ -86,7 +86,11 @@ journey = r'''    else:
      query([33,23,38,18,31],'files');wait(lambda:any(b['accessibleName']=='Open Files' and not b['disabled'] for b in (current_body() or {}).get('buttons',[])))
      report['raceInitialQueryBody']=current_body();race_arm.write_text('hold');race_arm.chmod(0o600)
      keyboard_button('Refresh applications',28);wait(race_held.exists)
-     held=json.loads(race_held.read_text());wait(lambda:field_value()=='files' and (current_body() or {}).get('focus')=='launcher-search' and 'Loading applications' in current_body()['text'])
+     held=json.loads(race_held.read_text());wait(lambda:field_value()=='files' and (current_body() or {}).get('focusIdentity')=='control:refresh' and 'Loading applications' in current_body()['text'])
+     # Refresh retains its current focus. Use actual user navigation to edit
+     # the query, rather than a Focus helper or an old automatic-focus premise.
+     for _ in range(2):helper([str(keyboard)],'key 42 1\nkey 15 1\nsleep 50\nkey 15 0\nkey 42 0\nsleep 100\nsync\n')
+     wait(lambda:(current_body() or {}).get('focus')=='launcher-search')
      query([18,32,23,20,24,19],'editor');key(28)
      check('ChangedQueryDuringHeldRefreshCannotLaunch',not launches() and not events() and not journal() and 'Loading applications' in current_body()['text'],body=current_body(),held=held)
      race_editor.write_text(editor_metadata(True));report['searchRaceFixture']['currentDesktopSHA256']=sha(race_editor)
