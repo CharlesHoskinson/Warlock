@@ -1,13 +1,74 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T12:26:49.984237+00:00",
+  "updatedUTC": "2026-10-10T12:43:12.129152+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
+    "id": "live-output-retirement",
+    "requirements": [
+      "ELM-UI-019"
+    ],
+    "scenarios": [
+      "output-remove"
+    ],
+    "paths": [
+      "implementation/warlock/native/shared-host.c",
+      "implementation/warlock/src/OutputController.elm",
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/qa/native-output-retirement.py",
+      "implementation/warlock/qa/OutputRetirementReplay.elm",
+      "implementation/warlock/qa/output-retirement.qnt",
+      "implementation/warlock/qa/output-retirement_test.qnt",
+      "implementation/warlock/qa/check-output-retirement.py",
+      "implementation/warlock/qa/check-search.py",
+      "implementation/warlock/qa/current-search-build.json",
+      "implementation/warlock/assets/elm.js",
+      "implementation/warlock/assets/bar.js",
+      "implementation/warlock/assets/popup.js",
+      "implementation/warlock/README.md",
+      "implementation/warlock/native/authority.cpp",
+      "implementation/warlock/qa/current-native-pair.json"
+    ],
+    "before": "Current live popup output retirement/replacement and surviving keyboard recovery are unverified in the runnable tuple.",
+    "after": "Removing an output retires its current popup/input scope; a declared survivor keeps workspace identity and keyboard recovery, and replacement cannot adopt old view actions.",
+    "verification": [
+      "Actual nested output destruction/recreation with a focused typed launcher, surviving keyboard operation and native window/workspace/counter observations at original waits; owning Elm/host changed-target checks and quint-llm-kit retirement model if a policy defect is demonstrated. Physical hardware/AT/independent acceptance remains separate."
+    ],
+    "owner": "root-output-retirement",
+    "participantRecord": ".warlock-contributor/output-retirement.json",
+    "disposition": "partial",
+    "missingObservations": [
+      "Physical hotplug/displays, native AT/IME consumers and independent original UI-019 scenario review remain open. Nested Wayland output evidence is separately labeled.",
+      "All outputs disappearing/returning has compiled/model coverage only; the original outputs-return native scenario remains unadjudicated. Pending preview/capture/effect custody during removal, Unknown reconciliation, protected input and broader transform/device/resource cases remain unqualified.",
+      "The atomic-topology model and consumed-shortcut replay checks do not establish every cross-channel delay. A fresh old native shortcut journal delayed across same-bounds replacement, topology/native generation ordering, and zero-output transport need direct implementation/qualification.",
+      "Full original release journeys, hardware/resource budgets, reproducible packaging and reversible deployment remain open."
+    ],
+    "evidence": {
+      "path": "implementation/warlock/qa/evidence/live-output-retirement/manifest.json",
+      "sha256": "a2982e762b921ce58c1be8764689e13b05fe9f38f2fe251fcbd2993db76f8e6c"
+    },
+    "observed": "Keyboard shortcuts now resolve the actual native keyboard window, mapped shell layer or live popup before choosing an output; an unrecognized focused surface is refused. The real nested output-removal journey dismisses the displaced launcher, preserves workspace identity, keeps the typed query and keyboard recovery on a declared survivor, and operates Refresh with one observed catalog read. Reconnection at identical old bounds receives a new view identity while the retired native shortcut destination stays null. No launch/window-effect replay occurs, and original drag/capture plus all-nine-surface keyboard regressions pass with normal cleanup.",
+    "nextSourceWork": "Exercise actual native zero-output return (UI-019 outputs-return) and inspect delayed pre-retirement shortcut receipts across same-bounds replacement. Implement demonstrated generation/recovery gaps in the existing host/root/authority; preserve original waits, custody and Unknown/no-replay."
+  },
+  "nextSlices": [
+    "taskbar activation/minimize/restore and popup focus journeys",
+    "persistent catalog pins",
+    "launcher search and refusal recovery",
+    "switcher/Task View/workspaces and snap/output journeys",
+    "authorized visible previews and fallback",
+    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
+    "original native, AT/IME, hardware/resource/journey gates",
+    "reproducible package, reversible deployment/rollback"
+  ],
+  "releaseAccepted": false,
+  "oldTrackerIsCurrent": false,
+  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
+  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
+  "previousSlice": {
     "id": "shortcut-current-output",
     "requirements": [
       "ELM-UX-023",
@@ -58,62 +119,48 @@
     "observed": "Native Apps shortcuts now open on the output of the actual keyboard recipient after a cancelled cross-output drag. The shared Elm controller resolves the press-time live output against current issued view geometry; duplicate, missing, moved, retired, ambiguous and pointer-blocked destinations cannot relocate or replay. A fresh valid shortcut clears only obsolete shortcut-refusal feedback. The original two-output drag/cancel/capture journey passes, followed by actual popup bounds, painted control pixels, physical-keyboard no-match/query/focus retention and Escape without launch or window mutation. The unchanged all-nine-surface keyboard journey passes on the same core/plugin/host tuple with normal cleanup.",
     "nextSourceWork": "Exercise live output retirement/replacement with an open native popup and retained keyboard query; fix any demonstrated owner/dismissal gap in the existing shared host/controller. Preserve current serial, native effect/custody and original deadline guarantees."
   },
-  "nextSlices": [
-    "taskbar activation/minimize/restore and popup focus journeys",
-    "persistent catalog pins",
-    "launcher search and refusal recovery",
-    "switcher/Task View/workspaces and snap/output journeys",
-    "authorized visible previews and fallback",
-    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
-    "original native, AT/IME, hardware/resource/journey gates",
-    "reproducible package, reversible deployment/rollback"
-  ],
-  "releaseAccepted": false,
-  "oldTrackerIsCurrent": false,
-  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
-  "previousSlice": {
-    "id": "native-output-capture-demand",
-    "requirements": [
-      "ELM-UX-021"
-    ],
-    "scenarios": [
-      "ux-021"
-    ],
-    "paths": [
-      "implementation/warlock/native/core/ScreenshareFrame.cpp",
-      "implementation/warlock/qa/nested-capture.qnt",
-      "implementation/warlock/qa/nested-capture_test.qnt",
-      "implementation/warlock/qa/check-nested-capture.py",
-      "implementation/warlock/qa/check-capture-core.py",
-      "implementation/warlock/qa/check-native-authority.py",
-      "implementation/warlock/qa/current-scene-core.json",
-      "implementation/warlock/qa/current-native-pair.json",
-      "implementation/warlock/README.md",
-      "implementation/warlock/qa/native-window-feedback.py"
-    ],
-    "before": "The original two-output native drag journey completes input but combined capture stalls because an occluded nested output has an in-flight parent callback.",
-    "after": "A live nested output capture requests one current native render/commit without waiting for an unrelated parent presentation callback, while preserving lifetime, permissions and native input ownership.",
-    "verification": [
-      "quint-llm-kit incremental live capture/retirement/no synthetic presentation model; exact one-TU owning archive and ABI rebuild; unchanged original two-output input and combined capture at five seconds plus one-output caption regression and cleanup."
-    ],
-    "owner": "root-capture-demand",
-    "participantRecord": ".warlock-contributor/capture-demand.json",
-    "disposition": "partial",
-    "evidence": {
-      "path": "implementation/warlock/qa/evidence/native-output-capture-demand/manifest.json",
-      "sha256": "8d158abdaaca3b02e7dfa6393251a1f029413f4e55d990f47cb9fd213676ad55"
-    },
-    "observed": "The unchanged original two-output move/resize journey now passes native owner retention across taskbar/output, blocked shortcut/effect, exactly-one end, Escape and source-workspace rollback, original five-second combined 1600\u00d7600 capture and cleanup. An initial live nested capture requests one real render/commit without waiting for an occluded parent callback. The same pair passes MAX/snap caption placement/lifecycle/draft regression. No parent presentation is fabricated; external hardware/AT and independent acceptance remain open.",
-    "missingObservations": [
-      "Direct native deferred-capture retirement/output removal, permission/lock, buffer/configuration/device and wider lifecycle races remain unqualified.",
-      "Original fullscreen/tiled/grouped caption restoration, other snap regions/repeated snaps, nondefault thresholds, transforms/constraints and other toolkit/AT evidence remain open.",
-      "The combined image does not establish launcher controls first paint or correct multi-output attachment; the observed blank left popup/right taskbar needs GUI integration work.",
-      "Independent original UX-021 disposition and release-wide native/IME/hardware/resource/journey/package/reversible deployment remain open."
-    ],
-    "nextSourceWork": "Fix observed two-output launcher popup attachment and first paint in the existing host/surface root; taskbar is on the right while its left popup has a blank control area. Preserve native input/effect/custody guarantees and use the actual combined image, per-output geometry and native controls at original deadlines."
-  },
   "recentSlices": [
+    {
+      "id": "native-output-capture-demand",
+      "requirements": [
+        "ELM-UX-021"
+      ],
+      "scenarios": [
+        "ux-021"
+      ],
+      "paths": [
+        "implementation/warlock/native/core/ScreenshareFrame.cpp",
+        "implementation/warlock/qa/nested-capture.qnt",
+        "implementation/warlock/qa/nested-capture_test.qnt",
+        "implementation/warlock/qa/check-nested-capture.py",
+        "implementation/warlock/qa/check-capture-core.py",
+        "implementation/warlock/qa/check-native-authority.py",
+        "implementation/warlock/qa/current-scene-core.json",
+        "implementation/warlock/qa/current-native-pair.json",
+        "implementation/warlock/README.md",
+        "implementation/warlock/qa/native-window-feedback.py"
+      ],
+      "before": "The original two-output native drag journey completes input but combined capture stalls because an occluded nested output has an in-flight parent callback.",
+      "after": "A live nested output capture requests one current native render/commit without waiting for an unrelated parent presentation callback, while preserving lifetime, permissions and native input ownership.",
+      "verification": [
+        "quint-llm-kit incremental live capture/retirement/no synthetic presentation model; exact one-TU owning archive and ABI rebuild; unchanged original two-output input and combined capture at five seconds plus one-output caption regression and cleanup."
+      ],
+      "owner": "root-capture-demand",
+      "participantRecord": ".warlock-contributor/capture-demand.json",
+      "disposition": "partial",
+      "evidence": {
+        "path": "implementation/warlock/qa/evidence/native-output-capture-demand/manifest.json",
+        "sha256": "8d158abdaaca3b02e7dfa6393251a1f029413f4e55d990f47cb9fd213676ad55"
+      },
+      "observed": "The unchanged original two-output move/resize journey now passes native owner retention across taskbar/output, blocked shortcut/effect, exactly-one end, Escape and source-workspace rollback, original five-second combined 1600\u00d7600 capture and cleanup. An initial live nested capture requests one real render/commit without waiting for an occluded parent callback. The same pair passes MAX/snap caption placement/lifecycle/draft regression. No parent presentation is fabricated; external hardware/AT and independent acceptance remain open.",
+      "missingObservations": [
+        "Direct native deferred-capture retirement/output removal, permission/lock, buffer/configuration/device and wider lifecycle races remain unqualified.",
+        "Original fullscreen/tiled/grouped caption restoration, other snap regions/repeated snaps, nondefault thresholds, transforms/constraints and other toolkit/AT evidence remain open.",
+        "The combined image does not establish launcher controls first paint or correct multi-output attachment; the observed blank left popup/right taskbar needs GUI integration work.",
+        "Independent original UX-021 disposition and release-wide native/IME/hardware/resource/journey/package/reversible deployment remain open."
+      ],
+      "nextSourceWork": "Fix observed two-output launcher popup attachment and first paint in the existing host/surface root; taskbar is on the right while its left popup has a blank control area. Preserve native input/effect/custody guarantees and use the actual combined image, per-output geometry and native controls at original deadlines."
+    },
     {
       "id": "popup-entry-keyboard-return",
       "requirements": [

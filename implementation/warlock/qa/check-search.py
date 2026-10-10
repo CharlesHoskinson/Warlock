@@ -22,7 +22,8 @@ IME=sys.argv[1:]==['--ime'] or LAUNCHER
 ACCESSIBILITY=sys.argv[1:]==['--accessibility']
 CONTRAST=sys.argv[1:]==['--high-contrast']
 READINESS=sys.argv[1:]==['--pointer-readiness']
-SHORTCUTOUTPUT=sys.argv[1:]==['--shortcut-output']
+RETIREOUTPUT=sys.argv[1:]==['--output-retirement']
+SHORTCUTOUTPUT=RETIREOUTPUT or sys.argv[1:]==['--shortcut-output']
 DRAG=SHORTCUTOUTPUT or READINESS or sys.argv[1:]==['--drag-ownership']
 KEYBOARD=sys.argv[1:]==['--keyboard-shell']
 ATTENTION=sys.argv[1:]==['--attention']
@@ -200,6 +201,10 @@ console.log('Actual shipped routing: terminal release once, stale scope cancels,
   (INPUT/'qa/shortcut-output-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.ShortcutOutputReplay'));run('typed-shortcut-output',['node','qa/shortcut-output-replay.js','assets/shortcut-output.js',str(OUT/'shortcut-output.json')]);report['typedShortcutOutput']=json.loads((OUT/'shortcut-output.json').read_text());assert all(report['typedShortcutOutput']['checks'].values())
   run('compile-shortcut-regression',[str(HELD/pinned['compiler']),'make','qa/KeyboardShortcutsReplay.elm','--optimize','--output=assets/shortcut-regression.js'])
   (INPUT/'qa/shortcut-regression.js').write_text(replay.replace('Elm.SearchReplay','Elm.KeyboardShortcutsReplay'));run('typed-shortcut-regression',['node','qa/shortcut-regression.js','assets/shortcut-regression.js',str(OUT/'shortcut-regression.json')]);report['typedShortcutRegression']=json.loads((OUT/'shortcut-regression.json').read_text());assert all(report['typedShortcutRegression']['checks'].values())
+ if RETIREOUTPUT:
+  report['outputRetirementModel']=json.loads(run('output-retirement-model',['/usr/bin/python3','-B','qa/check-output-retirement.py']));assert report['outputRetirementModel']['passed']
+  run('compile-output-retirement',[str(HELD/pinned['compiler']),'make','qa/OutputRetirementReplay.elm','--optimize','--output=assets/output-retirement.js'])
+  (INPUT/'qa/output-retirement-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.OutputRetirementReplay'));run('typed-output-retirement',['node','qa/output-retirement-replay.js','assets/output-retirement.js',str(OUT/'output-retirement.json')]);report['typedOutputRetirement']=json.loads((OUT/'output-retirement.json').read_text());assert all(report['typedOutputRetirement']['checks'].values())
  if DRAG:
   report.update(requirements=['ELM-UX-021'],scenarios=['ux-021'],scope='Compiled immutable native pointer ownership/root suppression and strict production decoder; original frozen native_drag invariant model. Actual crossing/native gesture end acceptance separate.')
   run('compile-pointer-ownership',[str(HELD/pinned['compiler']),'make','qa/PointerOwnershipReplay.elm','--optimize','--output=assets/pointer-ownership.js'])
@@ -398,6 +403,7 @@ console.log('Current body-target Escape releases once; stale scope, preedit, rep
    run('layer-appearance-browser',['node','qa/layer-appearance-browser.mjs','http://127.0.0.1:'+str(server.server_address[1]),str(OUT),str(browser)])
    child_path=OUT/'layer-browser/report.json';child=json.loads(child_path.read_text());assert child['passed'] and child['browserExitCode']==0;report['layerAppearanceBrowser']={'path':str(child_path),'sha256':sha(child_path),'checks':child['checks']}
  if SHORTCUTOUTPUT:report.update(requirements=['ELM-UX-023','ELM-UI-005'],scenarios=['ux-023','search-no-match'],scope='Compiled current-output shortcut routing with typed live destination/current topology, stale/blocked/ambiguous rejection, original serial/pointer/search regressions and owning GTK host. Native/AT acceptance remains separate.')
+ if RETIREOUTPUT:report.update(requirements=['ELM-UI-019'],scenarios=['output-remove'],scope='Compiled current root focused-output removal, unrelated output retention, fresh replacement capability and retired action/dismissal/shortcut rejection; owning host and sampled model separate from actual native/hardware/AT acceptance.')
  assert all(sha(ROOT/p)==h for p,h in inputs.items());toolchain.verify();report['compiledAssets']={n:sha(INPUT/'assets'/n) for n in ['elm.js','bar.js','popup.js']};report['passed']=True
 except Exception as error:report['error']=repr(error)
 finally:

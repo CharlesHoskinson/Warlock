@@ -1,0 +1,361 @@
+{
+  "checks": {
+    "FocusedPopupInitiallyOnRight": true,
+    "RemovalDismissesToDeclaredSurvivor": true,
+    "UnrelatedOutputRemovalPreservesPopup": true,
+    "ReplacementCannotReplayShortcut": true,
+    "FreshSurvivorKeyboardShortcutWorks": true,
+    "RetiredDismissCannotCloseFreshPopup": true,
+    "RetiredBarActionCannotOpenPopup": true,
+    "RetiredPopupActionCannotRefresh": true,
+    "AllOutputsGoneHasNoPopupOwner": true,
+    "ReturnedOutputHasFreshDeclaredScope": true,
+    "OutputRetirementCannotIssueWindowMutation": true
+  },
+  "removedFrame": {
+    "viewProtocol": 1,
+    "kind": "view-frame",
+    "revision": "2",
+    "views": [
+      {
+        "id": "1",
+        "generation": "1"
+      }
+    ],
+    "focusOwner": {
+      "id": "1",
+      "generation": "1"
+    },
+    "popupOwner": null,
+    "frame": {
+      "surfaceProtocol": 2,
+      "keyboardParent": true,
+      "motion": "reduced",
+      "appearance": {
+        "theme": "night",
+        "textScale": 100,
+        "effectsOff": false,
+        "reducedTransparency": false
+      },
+      "publication": "12",
+      "lease": "1",
+      "mode": "closed",
+      "status": "Connected",
+      "bar": [
+        {
+          "id": "bar:group:application:documents",
+          "domId": "group:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:1:application:documents",
+          "label": "Document 1",
+          "ariaLabel": "Choose a window from Document 1; 2 windows",
+          "detail": "2 windows",
+          "enabled": false,
+          "focusOnly": false
+        },
+        {
+          "id": "bar:applications",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:control:opener",
+          "label": "Applications",
+          "ariaLabel": "Open applications",
+          "detail": "",
+          "enabled": true,
+          "focusOnly": false
+        },
+        {
+          "id": "bar:overview",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:control:overview-opener",
+          "label": "Task View",
+          "ariaLabel": "Open Task View",
+          "detail": "",
+          "enabled": false,
+          "focusOnly": false
+        },
+        {
+          "id": "bar:switcher",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:control:switcher-opener",
+          "label": "Switch windows",
+          "ariaLabel": "Open window switcher",
+          "detail": "",
+          "enabled": false,
+          "focusOnly": false
+        },
+        {
+          "id": "bar:notifications",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:notifications:opener",
+          "label": "Notifications",
+          "ariaLabel": "Open notifications",
+          "detail": "",
+          "enabled": true,
+          "focusOnly": false
+        },
+        {
+          "id": "bar:files",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:files:opener",
+          "label": "Files",
+          "ariaLabel": "Open Files menu",
+          "detail": "",
+          "enabled": true,
+          "focusOnly": false
+        },
+        {
+          "id": "bar:system",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:opener",
+          "label": "System",
+          "ariaLabel": "Open system menu",
+          "detail": "",
+          "enabled": true,
+          "focusOnly": false
+        },
+        {
+          "id": "bar:settings",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:settings:opener",
+          "label": "Settings",
+          "ariaLabel": "Open settings",
+          "detail": "",
+          "enabled": true,
+          "focusOnly": false
+        }
+      ],
+      "popup": []
+    },
+    "announcer": {
+      "scope": {
+        "id": "1",
+        "generation": "1"
+      },
+      "surface": "bar"
+    },
+    "announcement": null
+  },
+  "replacementFrame": {
+    "viewProtocol": 1,
+    "kind": "view-frame",
+    "revision": "3",
+    "views": [
+      {
+        "id": "1",
+        "generation": "1"
+      },
+      {
+        "id": "3",
+        "generation": "1"
+      }
+    ],
+    "focusOwner": {
+      "id": "1",
+      "generation": "1"
+    },
+    "popupOwner": null,
+    "frame": {
+      "surfaceProtocol": 2,
+      "keyboardParent": true,
+      "motion": "reduced",
+      "appearance": {
+        "theme": "night",
+        "textScale": 100,
+        "effectsOff": false,
+        "reducedTransparency": false
+      },
+      "publication": "13",
+      "lease": "1",
+      "mode": "closed",
+      "status": "Connected",
+      "bar": [
+        {
+          "id": "bar:group:application:documents",
+          "domId": "group:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:1:application:documents",
+          "label": "Document 1",
+          "ariaLabel": "Choose a window from Document 1; 2 windows",
+          "detail": "2 windows",
+          "enabled": false,
+          "focusOnly": false
+        },
+        {
+          "id": "bar:applications",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:control:opener",
+          "label": "Applications",
+          "ariaLabel": "Open applications",
+          "detail": "",
+          "enabled": true,
+          "focusOnly": false
+        },
+        {
+          "id": "bar:overview",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:control:overview-opener",
+          "label": "Task View",
+          "ariaLabel": "Open Task View",
+          "detail": "",
+          "enabled": false,
+          "focusOnly": false
+        },
+        {
+          "id": "bar:switcher",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:control:switcher-opener",
+          "label": "Switch windows",
+          "ariaLabel": "Open window switcher",
+          "detail": "",
+          "enabled": false,
+          "focusOnly": false
+        },
+        {
+          "id": "bar:notifications",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:notifications:opener",
+          "label": "Notifications",
+          "ariaLabel": "Open notifications",
+          "detail": "",
+          "enabled": true,
+          "focusOnly": false
+        },
+        {
+          "id": "bar:files",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:files:opener",
+          "label": "Files",
+          "ariaLabel": "Open Files menu",
+          "detail": "",
+          "enabled": true,
+          "focusOnly": false
+        },
+        {
+          "id": "bar:system",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:opener",
+          "label": "System",
+          "ariaLabel": "Open system menu",
+          "detail": "",
+          "enabled": true,
+          "focusOnly": false
+        },
+        {
+          "id": "bar:settings",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:settings:opener",
+          "label": "Settings",
+          "ariaLabel": "Open settings",
+          "detail": "",
+          "enabled": true,
+          "focusOnly": false
+        }
+      ],
+      "popup": []
+    },
+    "announcer": {
+      "scope": {
+        "id": "1",
+        "generation": "1"
+      },
+      "surface": "bar"
+    },
+    "announcement": null
+  },
+  "returnedFrame": {
+    "viewProtocol": 1,
+    "kind": "view-frame",
+    "revision": "4",
+    "views": [
+      {
+        "id": "3",
+        "generation": "1"
+      }
+    ],
+    "focusOwner": {
+      "id": "3",
+      "generation": "1"
+    },
+    "popupOwner": null,
+    "frame": {
+      "surfaceProtocol": 2,
+      "keyboardParent": true,
+      "motion": "reduced",
+      "appearance": {
+        "theme": "night",
+        "textScale": 100,
+        "effectsOff": false,
+        "reducedTransparency": false
+      },
+      "publication": "16",
+      "lease": "1",
+      "mode": "closed",
+      "status": "Connected",
+      "bar": [
+        {
+          "id": "bar:group:application:documents",
+          "domId": "group:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:1:application:documents",
+          "label": "Document 1",
+          "ariaLabel": "Choose a window from Document 1; 2 windows",
+          "detail": "2 windows",
+          "enabled": false,
+          "focusOnly": false
+        },
+        {
+          "id": "bar:applications",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:control:opener",
+          "label": "Applications",
+          "ariaLabel": "Open applications",
+          "detail": "",
+          "enabled": true,
+          "focusOnly": false
+        },
+        {
+          "id": "bar:overview",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:control:overview-opener",
+          "label": "Task View",
+          "ariaLabel": "Open Task View",
+          "detail": "",
+          "enabled": false,
+          "focusOnly": false
+        },
+        {
+          "id": "bar:switcher",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:control:switcher-opener",
+          "label": "Switch windows",
+          "ariaLabel": "Open window switcher",
+          "detail": "",
+          "enabled": false,
+          "focusOnly": false
+        },
+        {
+          "id": "bar:notifications",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:notifications:opener",
+          "label": "Notifications",
+          "ariaLabel": "Open notifications",
+          "detail": "",
+          "enabled": true,
+          "focusOnly": false
+        },
+        {
+          "id": "bar:files",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:files:opener",
+          "label": "Files",
+          "ariaLabel": "Open Files menu",
+          "detail": "",
+          "enabled": true,
+          "focusOnly": false
+        },
+        {
+          "id": "bar:system",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:system:opener",
+          "label": "System",
+          "ariaLabel": "Open system menu",
+          "detail": "",
+          "enabled": true,
+          "focusOnly": false
+        },
+        {
+          "id": "bar:settings",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:5:settings:opener",
+          "label": "Settings",
+          "ariaLabel": "Open settings",
+          "detail": "",
+          "enabled": true,
+          "focusOnly": false
+        }
+      ],
+      "popup": []
+    },
+    "announcer": {
+      "scope": {
+        "id": "3",
+        "generation": "1"
+      },
+      "surface": "bar"
+    },
+    "announcement": null
+  }
+}

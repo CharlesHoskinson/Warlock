@@ -7751,14 +7751,50 @@
       "owner": "Desktop experience lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "output-remove",
           "oracle": "popup dismisses to eligible focus or rehosts and recovery stays keyboard reachable",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/live-output-retirement/manifest.json",
+              "sha256": "a2982e762b921ce58c1be8764689e13b05fe9f38f2fe251fcbd2993db76f8e6c",
+              "scope": "Keyboard shortcuts now resolve the actual native keyboard window, mapped shell layer or live popup before choosing an output; an unrecognized focused surface is refused. The real nested output-removal journey dismisses the displaced launcher, preserves workspace identity, keeps the typed query and keyboard recovery on a declared survivor, and operates Refresh with one observed catalog read. Reconnection at identical old bounds receives a new view identity while the retired native shortcut destination stays null. No launch/window-effect replay occurs, and original drag/capture plus all-nine-surface keyboard regressions pass with normal cleanup.",
+              "sourceBaseRevision": "11a4b77313317b3663210854e9f361cdb19b6555",
+              "sourceHashes": {
+                "implementation/warlock/native/shared-host.c": "e511725b1b42e94d56c65a871114fe58fab3dd564221ce1201d479f9abddf5ed",
+                "implementation/warlock/src/OutputController.elm": "2a4aa85bdc7ba3b0caa94b8dbfd1538d791ec78f33040a4221a1ef1fb701c53e",
+                "implementation/warlock/src/Desktop.elm": "176ddaf19e5dfb6c2362ac9c9c46d296155cd38e916e4cd28938a591648ed711",
+                "implementation/warlock/qa/native-output-retirement.py": "28c8187484813c53eb461205683404a1fcacdc8f5779eefa4ad293a63a338f1c",
+                "implementation/warlock/qa/OutputRetirementReplay.elm": "05df5b73077b6a3bcb1172fa720d32ef7f991f58ac57982c3dfcef2e4e0f487b",
+                "implementation/warlock/qa/output-retirement.qnt": "c4cf5bb9386823beb7a83a042864d1faca47cb3b1fe230b0455a62722024c3f8",
+                "implementation/warlock/qa/output-retirement_test.qnt": "a18a6859867dc7f88ed7e7c394e14b431c8f224fc8c382a7c7d22bb7937bd056",
+                "implementation/warlock/qa/check-output-retirement.py": "a41ac58552fed3a242eb955506cf3d537f1d840a0463d3dfb4662550bc1a4f15",
+                "implementation/warlock/qa/check-search.py": "83c33040820d8ff59c9b0b22fad52fa6ebf2a22fd0be6c1798da96e1912b232e",
+                "implementation/warlock/qa/current-search-build.json": "69795a418c13e0839e89000dc0e1553f640d19bfb06708dba5711de9ae37b28d",
+                "implementation/warlock/assets/elm.js": "bfbfc8fabf8e4df0bf4baa05493038288677cce5b789dc84c4bbb02f76e1dbd0",
+                "implementation/warlock/assets/bar.js": "1b490122e33ec692c225c2f6936d2e05eb23cc0ec91c9fa0d2a16469c030cff1",
+                "implementation/warlock/assets/popup.js": "c12dc5323bbaaf2d83cff1799b1e0e72c861d012f6db0da39d50adb62648f933",
+                "implementation/warlock/README.md": "2302b512c33e19d67e03e169bcb245df3782693366c79cbc90dc609526345977",
+                "implementation/warlock/native/authority.cpp": "e98d5707fd8e7b44cabb937ef3e2f8dfa5b73088b00f141d5c1477d420097299",
+                "implementation/warlock/qa/current-native-pair.json": "aa685ffa6e5eeba6375831b4c7ad3ad89845f5f12ace90fd0892239644014e86"
+              },
+              "reviewerDisposition": {
+                "name": "root-output-retirement",
+                "independent": false,
+                "disposition": "Owner-observed nested native/compiled/model result; independent acceptance remains open."
+              }
+            }
+          ],
+          "missingObservation": "Physical hotplug/displays, native AT/IME consumers and independent original UI-019 scenario review remain open. Nested Wayland output evidence is separately labeled.; All outputs disappearing/returning has compiled/model coverage only; the original outputs-return native scenario remains unadjudicated. Pending preview/capture/effect custody during removal, Unknown reconciliation, protected input and broader transform/device/resource cases remain unqualified.; The atomic-topology model and consumed-shortcut replay checks do not establish every cross-channel delay. A fresh old native shortcut journal delayed across same-bounds replacement, topology/native generation ordering, and zero-output transport need direct implementation/qualification.; Full original release journeys, hardware/resource budgets, reproducible packaging and reversible deployment remain open.",
+          "observation": "Keyboard shortcuts now resolve the actual native keyboard window, mapped shell layer or live popup before choosing an output; an unrecognized focused surface is refused. The real nested output-removal journey dismisses the displaced launcher, preserves workspace identity, keeps the typed query and keyboard recovery on a declared survivor, and operates Refresh with one observed catalog read. Reconnection at identical old bounds receives a new view identity while the retired native shortcut destination stays null. No launch/window-effect replay occurs, and original drag/capture plus all-nine-surface keyboard regressions pass with normal cleanup.",
+          "reviewerDisposition": {
+            "name": "root-output-retirement",
+            "independent": false,
+            "disposition": "Owner-observed nested native/compiled/model result; independent acceptance remains open."
+          }
         },
         {
           "name": "outputs-return",
@@ -11384,5 +11420,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-10T12:26:49.984237+00:00"
+  "updatedUTC": "2026-10-10T12:43:12.129152+00:00"
 }

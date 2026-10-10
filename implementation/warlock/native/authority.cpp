@@ -2,6 +2,7 @@
 #include "core/GestureEndPolicy.hpp"
 #include <hyprland/src/desktop/state/LayerState.hpp>
 #include <hyprland/src/desktop/view/LayerSurface.hpp>
+#include <hyprland/src/desktop/view/Popup.hpp>
 #include "incarnation-retirement.hpp"
 #include "capture-resources.hpp"
 #include <hyprland/src/render/warlock/screen_shader.hpp>
@@ -393,8 +394,18 @@ void shellShortcut(ShellRoute route) noexcept {
         // Keyboard ownership can remain on a restored window after a cancelled
         // cross-output drag while the pointer's active monitor is elsewhere.
         const auto focused=Desktop::focusState()->window();
-        const auto monitor=focused && focused->wlSurface() && g_pSeatManager->m_state.keyboardFocus.lock()==focused->wlSurface()->resource()
-            ? focused->m_monitor.lock() : Desktop::focusState()->monitor();
+        const auto keyboard=g_pSeatManager->m_state.keyboardFocus.lock();
+        PHLMONITOR monitor;
+        if(!keyboard) monitor=Desktop::focusState()->monitor();
+        else if(focused && focused->wlSurface() && keyboard==focused->wlSurface()->resource()) monitor=focused->m_monitor.lock();
+        else for(const auto& layer:Desktop::layerState()->layers()) {
+            if(layer && layer->m_mapped && layer->resource()==keyboard) {monitor=layer->m_monitor.lock();break;}
+        }
+        if(!monitor && keyboard) {
+            const auto surface=Desktop::View::CWLSurface::fromResource(keyboard);
+            const auto popup=surface ? Desktop::View::CPopup::fromView(surface->view()) : nullptr;
+            if(popup && popup->aliveAndVisible()) monitor=popup->getMonitor();
+        }
         const auto box=shortcutOutputBox(monitor);if(!box)return;
         if(shellShortcuts.size()==64)shellShortcuts.erase(shellShortcuts.begin());
         shellShortcuts.push_back({++shellShortcutSerial,route,monitor,*box});notifyShellShortcuts();
