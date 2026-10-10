@@ -34,12 +34,28 @@ static OutputView *context_engine(GtkWidget *widget) {
     }
     return NULL;
 }
+static ContextKeySignature context_native_signature(GdkEventKey *key) {
+    return (ContextKeySignature){.type=(uint32_t)key->type,.time=key->time,.hardware=key->hardware_keycode,
+        .keyval=key->keyval,.state=key->state,.group=key->group,.window=(uintptr_t)key->window,
+        .device=(uintptr_t)gdk_event_get_device((GdkEvent *)key)};
+}
+static OutputView *context_replay_source(GtkWidget *receiver,const ContextKeySignature *signature) {
+    OutputView *found=NULL;
+    for(guint i=0;output_views && i<output_views->len;i++) {
+        OutputView *row=g_ptr_array_index(output_views,i);
+        if(!row->active || receiver==GTK_WIDGET(row->engine))continue;
+        for(size_t j=0;j<row->context_keys.count;j++) {
+            if(!context_keys_same(&row->context_keys.signatures[j],signature))continue;
+            if(found)return NULL; /* Ambiguous origin cannot authorize routing. */
+            found=row;
+        }
+    }
+    return found;
+}
 static int context_key_admit(GtkWidget *widget,GdkEventKey *key) {
     OutputView *row=context_engine(widget);
     if(!row || !key || (key->type!=GDK_KEY_PRESS && key->type!=GDK_KEY_RELEASE)) return 0;
-    ContextKeySignature signature={.type=(uint32_t)key->type,.time=key->time,.hardware=key->hardware_keycode,
-        .keyval=key->keyval,.state=key->state,.group=key->group,.window=(uintptr_t)key->window,
-        .device=(uintptr_t)gdk_event_get_device((GdkEvent *)key)};
+    ContextKeySignature signature=context_native_signature(key);
     return context_keys_admit(widget==GTK_WIDGET(popup_view)?&popup_context_keys:&row->context_keys,&signature);
 }
 static guint context_key_bit(guint key) {
@@ -55,6 +71,24 @@ static gboolean shared_context_event(GtkWidget *widget,GdkEvent *event,gpointer 
     if(!origin) return FALSE;
     if (context_epoch==G_MAXUINT64) return FALSE;
     if (event->any.send_event) {shared_context_cancel();return FALSE;}
+    if(event->type==GDK_KEY_PRESS || event->type==GDK_KEY_RELEASE) {
+        ContextKeySignature signature=context_native_signature((GdkEventKey *)event);
+        OutputView *source=context_replay_source(widget,&signature);
+        if(source) {
+            /* WebKitGTK replays an unhandled key via gtk_main_do_event. A popup
+             * grab can redirect that same native packet to another engine and
+             * leave the original engine's next-key forwarding flag uncleared.
+             * Complete the replay at its exact live source, once. The source's
+             * normal replay guard prevents any new proof/held-key transition. */
+            if(context_keys_admit(&source->forwarded_context_keys,&signature)>0) {
+                GtkWidget *engine=g_object_ref(GTK_WIDGET(source->engine));
+                if(qa_exit) {g_print("context-key-replay-return: view=%" G_GUINT64_FORMAT " generation=%" G_GUINT64_FORMAT " hardware=%u time=%u\n",
+                    source->id,source->generation,signature.hardware,signature.time);fflush(stdout);}
+                gtk_widget_event(engine,event);g_object_unref(engine);
+            }
+            return TRUE;
+        }
+    }
     // WebKit asynchronously replays unhandled keys through GTK. A replay must
     // neither overwrite a newer physical proof nor clear its held-key state.
     if (event->type==GDK_KEY_PRESS || event->type==GDK_KEY_RELEASE) {

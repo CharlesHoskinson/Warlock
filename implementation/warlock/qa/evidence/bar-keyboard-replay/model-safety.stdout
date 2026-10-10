@@ -1,0 +1,596 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      active: true,
+      capturedGeneration: 1,
+      delivered: 0,
+      generation: 1,
+      pending: false,
+      popup: false,
+      proofs: 0,
+      rejected: 0,
+      routed: 0,
+      routedSig: 0,
+      sig: 0,
+      violations: 0
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      active: false,
+      capturedGeneration: 1,
+      delivered: 0,
+      generation: 1,
+      pending: false,
+      popup: false,
+      proofs: 0,
+      rejected: 0,
+      routed: 0,
+      routedSig: 0,
+      sig: 0,
+      violations: 0
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      active: false,
+      capturedGeneration: 1,
+      delivered: 0,
+      generation: 1,
+      pending: false,
+      popup: false,
+      proofs: 0,
+      rejected: 1,
+      routed: 0,
+      routedSig: 0,
+      sig: 0,
+      violations: 0
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      active: false,
+      capturedGeneration: 1,
+      delivered: 0,
+      generation: 1,
+      pending: false,
+      popup: false,
+      proofs: 0,
+      rejected: 1,
+      routed: 0,
+      routedSig: 0,
+      sig: 0,
+      violations: 0
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      active: false,
+      capturedGeneration: 1,
+      delivered: 0,
+      generation: 1,
+      pending: false,
+      popup: false,
+      proofs: 0,
+      rejected: 2,
+      routed: 0,
+      routedSig: 0,
+      sig: 0,
+      violations: 0
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      active: true,
+      capturedGeneration: 1,
+      delivered: 0,
+      generation: 2,
+      pending: false,
+      popup: false,
+      proofs: 0,
+      rejected: 2,
+      routed: 0,
+      routedSig: 0,
+      sig: 0,
+      violations: 0
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      active: true,
+      capturedGeneration: 1,
+      delivered: 0,
+      generation: 2,
+      pending: false,
+      popup: true,
+      proofs: 0,
+      rejected: 2,
+      routed: 0,
+      routedSig: 0,
+      sig: 0,
+      violations: 0
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      active: true,
+      capturedGeneration: 1,
+      delivered: 0,
+      generation: 3,
+      pending: false,
+      popup: false,
+      proofs: 0,
+      rejected: 2,
+      routed: 0,
+      routedSig: 0,
+      sig: 0,
+      violations: 0
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      active: true,
+      capturedGeneration: 1,
+      delivered: 0,
+      generation: 3,
+      pending: false,
+      popup: false,
+      proofs: 0,
+      rejected: 3,
+      routed: 0,
+      routedSig: 0,
+      sig: 0,
+      violations: 0
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      active: true,
+      capturedGeneration: 1,
+      delivered: 0,
+      generation: 4,
+      pending: false,
+      popup: false,
+      proofs: 0,
+      rejected: 3,
+      routed: 0,
+      routedSig: 0,
+      sig: 0,
+      violations: 0
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      active: true,
+      capturedGeneration: 1,
+      delivered: 0,
+      generation: 4,
+      pending: false,
+      popup: false,
+      proofs: 0,
+      rejected: 4,
+      routed: 0,
+      routedSig: 0,
+      sig: 0,
+      violations: 0
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      active: true,
+      capturedGeneration: 1,
+      delivered: 0,
+      generation: 5,
+      pending: false,
+      popup: false,
+      proofs: 0,
+      rejected: 4,
+      routed: 0,
+      routedSig: 0,
+      sig: 0,
+      violations: 0
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      active: true,
+      capturedGeneration: 1,
+      delivered: 0,
+      generation: 5,
+      pending: false,
+      popup: false,
+      proofs: 0,
+      rejected: 5,
+      routed: 0,
+      routedSig: 0,
+      sig: 0,
+      violations: 0
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      active: true,
+      capturedGeneration: 1,
+      delivered: 0,
+      generation: 5,
+      pending: false,
+      popup: false,
+      proofs: 0,
+      rejected: 6,
+      routed: 0,
+      routedSig: 0,
+      sig: 0,
+      violations: 0
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      active: true,
+      capturedGeneration: 5,
+      delivered: 0,
+      generation: 5,
+      pending: true,
+      popup: false,
+      proofs: 1,
+      rejected: 6,
+      routed: 0,
+      routedSig: 0,
+      sig: 1,
+      violations: 0
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      active: false,
+      capturedGeneration: 5,
+      delivered: 0,
+      generation: 5,
+      pending: true,
+      popup: false,
+      proofs: 1,
+      rejected: 6,
+      routed: 0,
+      routedSig: 0,
+      sig: 1,
+      violations: 0
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      active: false,
+      capturedGeneration: 5,
+      delivered: 0,
+      generation: 5,
+      pending: true,
+      popup: false,
+      proofs: 1,
+      rejected: 6,
+      routed: 0,
+      routedSig: 0,
+      sig: 1,
+      violations: 0
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      active: false,
+      capturedGeneration: 5,
+      delivered: 0,
+      generation: 5,
+      pending: true,
+      popup: false,
+      proofs: 1,
+      rejected: 7,
+      routed: 0,
+      routedSig: 0,
+      sig: 1,
+      violations: 0
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      active: true,
+      capturedGeneration: 5,
+      delivered: 0,
+      generation: 6,
+      pending: false,
+      popup: false,
+      proofs: 1,
+      rejected: 7,
+      routed: 0,
+      routedSig: 0,
+      sig: 1,
+      violations: 0
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      active: false,
+      capturedGeneration: 5,
+      delivered: 0,
+      generation: 6,
+      pending: false,
+      popup: false,
+      proofs: 1,
+      rejected: 7,
+      routed: 0,
+      routedSig: 0,
+      sig: 1,
+      violations: 0
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      active: false,
+      capturedGeneration: 5,
+      delivered: 0,
+      generation: 6,
+      pending: false,
+      popup: false,
+      proofs: 1,
+      rejected: 8,
+      routed: 0,
+      routedSig: 0,
+      sig: 1,
+      violations: 0
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      active: false,
+      capturedGeneration: 5,
+      delivered: 0,
+      generation: 6,
+      pending: false,
+      popup: false,
+      proofs: 1,
+      rejected: 9,
+      routed: 0,
+      routedSig: 0,
+      sig: 1,
+      violations: 0
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      active: false,
+      capturedGeneration: 5,
+      delivered: 0,
+      generation: 6,
+      pending: false,
+      popup: false,
+      proofs: 1,
+      rejected: 10,
+      routed: 0,
+      routedSig: 0,
+      sig: 1,
+      violations: 0
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      active: false,
+      capturedGeneration: 5,
+      delivered: 0,
+      generation: 6,
+      pending: false,
+      popup: false,
+      proofs: 1,
+      rejected: 11,
+      routed: 0,
+      routedSig: 0,
+      sig: 1,
+      violations: 0
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      active: false,
+      capturedGeneration: 5,
+      delivered: 0,
+      generation: 6,
+      pending: false,
+      popup: false,
+      proofs: 1,
+      rejected: 12,
+      routed: 0,
+      routedSig: 0,
+      sig: 1,
+      violations: 0
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      active: false,
+      capturedGeneration: 5,
+      delivered: 0,
+      generation: 6,
+      pending: false,
+      popup: false,
+      proofs: 1,
+      rejected: 13,
+      routed: 0,
+      routedSig: 0,
+      sig: 1,
+      violations: 0
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      active: false,
+      capturedGeneration: 5,
+      delivered: 0,
+      generation: 6,
+      pending: false,
+      popup: false,
+      proofs: 1,
+      rejected: 14,
+      routed: 0,
+      routedSig: 0,
+      sig: 1,
+      violations: 0
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      active: false,
+      capturedGeneration: 5,
+      delivered: 0,
+      generation: 6,
+      pending: false,
+      popup: false,
+      proofs: 1,
+      rejected: 15,
+      routed: 0,
+      routedSig: 0,
+      sig: 1,
+      violations: 0
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      active: false,
+      capturedGeneration: 5,
+      delivered: 0,
+      generation: 6,
+      pending: false,
+      popup: false,
+      proofs: 1,
+      rejected: 15,
+      routed: 0,
+      routedSig: 0,
+      sig: 1,
+      violations: 0
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      active: false,
+      capturedGeneration: 5,
+      delivered: 0,
+      generation: 6,
+      pending: false,
+      popup: false,
+      proofs: 1,
+      rejected: 16,
+      routed: 0,
+      routedSig: 0,
+      sig: 1,
+      violations: 0
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      active: false,
+      capturedGeneration: 5,
+      delivered: 0,
+      generation: 6,
+      pending: false,
+      popup: false,
+      proofs: 1,
+      rejected: 16,
+      routed: 0,
+      routedSig: 0,
+      sig: 1,
+      violations: 0
+    }
+}
+
+[ok] No violation found (686ms at 1458 traces/second).
+Trace length statistics: max=31, min=31, average=31.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x1356d --backend=typescript to reproduce.

@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "scope": "Exact original GTK replay signature/receiver abstraction; native GTK/WebKit timing, physical input, clock wrap and ABI excluded",
+  "nativeAcceptance": false,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-4c44b2fc50b24b2b94095bf54c3410e6.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "bar-keyboard-return.qnt": "7ebae07d0e4cfc53e5a714782517fc1ba8a045507175ef8d621e9bf158c4d299",
+    "bar-keyboard-return_test.qnt": "c4df1738e77fe8f77685d4688426c8debd9395113a1a1ed4d918ba3b55bf28af"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/bar-keyboard-return-1791598954468402628/inputs/qa/bar-keyboard-return.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/bar-keyboard-return-1791598954468402628/inputs/qa/bar-keyboard-return_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=79211"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "witnesses",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/bar-keyboard-return-1791598954468402628/inputs/qa/bar-keyboard-return.qnt",
+        "--backend=typescript",
+        "--witnesses",
+        "repeatedReturn",
+        "originalReplayCompleted",
+        "foreignReplayRefused",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79212"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "safety",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/bar-keyboard-return-1791598954468402628/inputs/qa/bar-keyboard-return.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79213"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "witnessCounts": {
+    "repeatedReturn": 27,
+    "originalReplayCompleted": 401,
+    "foreignReplayRefused": 1000
+  }
+}

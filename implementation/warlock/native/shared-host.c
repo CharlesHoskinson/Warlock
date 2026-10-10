@@ -119,7 +119,7 @@ typedef struct {
     gulong geometry_handler;
     gboolean ready,active;
     gint allocated_height;
-    ContextKeySource context_keys;
+    ContextKeySource context_keys,forwarded_context_keys;
 } OutputView;
 static GPtrArray *output_views;
 static guint64 issued_view,topology_revision=1;
@@ -173,6 +173,7 @@ static void shared_publish(void) {
 static WebKitWebView *shared_focus_target(void) {
     return focus_owner && focus_owner->active ? focus_owner->engine : view;
 }
+
 /* This only retires the bar's input eligibility for the foreground handoff
  * already requested by Elm. Native authority still decides the effect and
  * recipient. No window is focused here, and receipts cannot trigger a replay. */

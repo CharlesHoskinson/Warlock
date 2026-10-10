@@ -8319,7 +8319,7 @@
         {
           "name": "ux-023",
           "oracle": "each surface can be opened, operated and dismissed without pointer events",
-          "status": "failed",
+          "status": "partial",
           "evidence": [
             {
               "path": "implementation/warlock/qa/evidence/keyboard-shell/manifest.json",
@@ -8403,9 +8403,37 @@
                 "implementation/warlock/assets/popup.js": "df70e74116c3dfc52e70ad26ea03233f6b07d77985da84913a76a7a8374fda1f"
               },
               "reviewerDisposition": "Owner-observed failed integration regression; no independent acceptance."
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/bar-keyboard-replay/manifest.json",
+              "sha256": "af974b4107acd090a68217b8c7895bd1bae472d01946581c3b2a7b9d28cd898d",
+              "scope": "Two unchanged original native keyboard-only nine-surface journeys pass after exact once-only cross-receiver GTK replay return to the live source bar engine. Each records six real Home navigations, three canonical replay returns, zero injected pointer events, native committed snap placement and selected application input, normal owned-client/helper exits, plugin unload and private cleanup. Owning native context source tests and scoped named/sampled Quint checks pass. Earlier Home failure and refuted focus-child report retained.",
+              "sourceBaseRevision": "4db947b579ab589ba803a27f2c9c75c6006443ff",
+              "sourceHashes": {
+                "implementation/warlock/native/shared-host.c": "a8f30ce61053c0000a4f526d3efa6e0d144a3e8598319ce4ec00f44e13226298",
+                "implementation/warlock/native/shared-context.h": "6e4924cf86fdf3224acf0547a1d7e06fccbf1b08b5350ddaba41ae0a0117d9be",
+                "implementation/warlock/native/shared-context-test.c": "75edb35929d75c246d6dd552d48d46f7362810a244331c703c04f27a21758e65",
+                "implementation/warlock/qa/check-search.py": "df0f9251a519afc32f8d30c9fcfdbf77846201f2faab25b79ef6c6c4482060f6",
+                "implementation/warlock/qa/current-search-build.json": "4877915ffe391675706105bb0178fff04f1b31657e2b8c839bad80e2cba44292",
+                "implementation/warlock/qa/bar-keyboard-return.qnt": "7ebae07d0e4cfc53e5a714782517fc1ba8a045507175ef8d621e9bf158c4d299",
+                "implementation/warlock/qa/bar-keyboard-return_test.qnt": "c4df1738e77fe8f77685d4688426c8debd9395113a1a1ed4d918ba3b55bf28af",
+                "implementation/warlock/qa/check-bar-keyboard-return.py": "7aa54b9faa6c4e3a83ec2ad379d57a30ffa48430b0ef598d23930ab138918d33",
+                "implementation/warlock/qa/native-window-feedback.py": "d0c45c673ac47751cef680175a79c251674dc19d444eb7eeb3f35dd23ecbd353",
+                "implementation/warlock/README.md": "94d7d305de261893a1998a843e0f0e0737e6983cce6ceb8e1ba9d0ded6475de2"
+              },
+              "reviewerDisposition": {
+                "name": "root-bar-keyboard-return",
+                "independent": false,
+                "disposition": "Owner-observed repeated native all-nine-surface operation/dismissal and real key/effect recipients; independent scenario and native AT/IME acceptance remain open."
+              }
             }
           ],
-          "missingObservation": "Native shell exits 1 with Outstanding native picker custody/journal; private cleanup passes but normal client exit/plugin unload acceptance is not established for this pin run. Current combined keyboard regression fails repeated Home at original line 779 after six surfaces; earlier all-nine pass remains evidence only for its preceding tuple. Independent original scenario review, stable checked semantics and applicable AT/resource/release gates remain open."
+          "missingObservation": "Independent original scenario review and applicable native AT/IME consumers remain open. The current all-nine-surface keyboard recordings pass twice, including taskbar Home after repeated Apps/picker grabs. Hardware/resource/release and deployment acceptance remain separate.",
+          "reviewerDisposition": {
+            "name": "root-bar-keyboard-return",
+            "independent": false,
+            "disposition": "Owner-observed repeated native all-nine-surface operation/dismissal and real key/effect recipients; independent scenario and native AT/IME acceptance remain open."
+          }
         },
         {
           "name": "keyboard-launcher",
@@ -8524,9 +8552,37 @@
                 "independent": false,
                 "disposition": "Owner-observed passing original keyboard campaign; independent scenario/requirement/release acceptance remains open."
               }
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/bar-keyboard-replay/manifest.json",
+              "sha256": "af974b4107acd090a68217b8c7895bd1bae472d01946581c3b2a7b9d28cd898d",
+              "scope": "Two unchanged original native keyboard-only nine-surface journeys pass after exact once-only cross-receiver GTK replay return to the live source bar engine. Each records six real Home navigations, three canonical replay returns, zero injected pointer events, native committed snap placement and selected application input, normal owned-client/helper exits, plugin unload and private cleanup. Owning native context source tests and scoped named/sampled Quint checks pass. Earlier Home failure and refuted focus-child report retained.",
+              "sourceBaseRevision": "4db947b579ab589ba803a27f2c9c75c6006443ff",
+              "sourceHashes": {
+                "implementation/warlock/native/shared-host.c": "a8f30ce61053c0000a4f526d3efa6e0d144a3e8598319ce4ec00f44e13226298",
+                "implementation/warlock/native/shared-context.h": "6e4924cf86fdf3224acf0547a1d7e06fccbf1b08b5350ddaba41ae0a0117d9be",
+                "implementation/warlock/native/shared-context-test.c": "75edb35929d75c246d6dd552d48d46f7362810a244331c703c04f27a21758e65",
+                "implementation/warlock/qa/check-search.py": "df0f9251a519afc32f8d30c9fcfdbf77846201f2faab25b79ef6c6c4482060f6",
+                "implementation/warlock/qa/current-search-build.json": "4877915ffe391675706105bb0178fff04f1b31657e2b8c839bad80e2cba44292",
+                "implementation/warlock/qa/bar-keyboard-return.qnt": "7ebae07d0e4cfc53e5a714782517fc1ba8a045507175ef8d621e9bf158c4d299",
+                "implementation/warlock/qa/bar-keyboard-return_test.qnt": "c4df1738e77fe8f77685d4688426c8debd9395113a1a1ed4d918ba3b55bf28af",
+                "implementation/warlock/qa/check-bar-keyboard-return.py": "7aa54b9faa6c4e3a83ec2ad379d57a30ffa48430b0ef598d23930ab138918d33",
+                "implementation/warlock/qa/native-window-feedback.py": "d0c45c673ac47751cef680175a79c251674dc19d444eb7eeb3f35dd23ecbd353",
+                "implementation/warlock/README.md": "94d7d305de261893a1998a843e0f0e0737e6983cce6ceb8e1ba9d0ded6475de2"
+              },
+              "reviewerDisposition": {
+                "name": "root-bar-keyboard-return",
+                "independent": false,
+                "disposition": "Owner-observed repeated native all-nine-surface operation/dismissal and real key/effect recipients; independent scenario and native AT/IME acceptance remain open."
+              }
             }
           ],
-          "missingObservation": "Independent original scenario/requirement review and native accessibility/IME consumers remain open. This fixture disables accessibility bridging; browser/Elm checks do not establish native AT. Protocol 2 admission remains in source and typed wire tests, but this current native journey negotiates protocol 3; hardware/multi-output/cadence/resource/full-release packaging and deployment remain separate."
+          "missingObservation": "Independent original scenario review and applicable native AT/IME consumers remain open. The current all-nine-surface keyboard recordings pass twice, including taskbar Home after repeated Apps/picker grabs. Hardware/resource/release and deployment acceptance remain separate.",
+          "reviewerDisposition": {
+            "name": "root-bar-keyboard-return",
+            "independent": false,
+            "disposition": "Owner-observed repeated native all-nine-surface operation/dismissal and real key/effect recipients; independent scenario and native AT/IME acceptance remain open."
+          }
         },
         {
           "name": "keyboard-taskbar-groups",
@@ -8621,9 +8677,37 @@
                 "independent": false,
                 "disposition": "Owner-observed passing original keyboard campaign; independent scenario/requirement/release acceptance remains open."
               }
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/bar-keyboard-replay/manifest.json",
+              "sha256": "af974b4107acd090a68217b8c7895bd1bae472d01946581c3b2a7b9d28cd898d",
+              "scope": "Two unchanged original native keyboard-only nine-surface journeys pass after exact once-only cross-receiver GTK replay return to the live source bar engine. Each records six real Home navigations, three canonical replay returns, zero injected pointer events, native committed snap placement and selected application input, normal owned-client/helper exits, plugin unload and private cleanup. Owning native context source tests and scoped named/sampled Quint checks pass. Earlier Home failure and refuted focus-child report retained.",
+              "sourceBaseRevision": "4db947b579ab589ba803a27f2c9c75c6006443ff",
+              "sourceHashes": {
+                "implementation/warlock/native/shared-host.c": "a8f30ce61053c0000a4f526d3efa6e0d144a3e8598319ce4ec00f44e13226298",
+                "implementation/warlock/native/shared-context.h": "6e4924cf86fdf3224acf0547a1d7e06fccbf1b08b5350ddaba41ae0a0117d9be",
+                "implementation/warlock/native/shared-context-test.c": "75edb35929d75c246d6dd552d48d46f7362810a244331c703c04f27a21758e65",
+                "implementation/warlock/qa/check-search.py": "df0f9251a519afc32f8d30c9fcfdbf77846201f2faab25b79ef6c6c4482060f6",
+                "implementation/warlock/qa/current-search-build.json": "4877915ffe391675706105bb0178fff04f1b31657e2b8c839bad80e2cba44292",
+                "implementation/warlock/qa/bar-keyboard-return.qnt": "7ebae07d0e4cfc53e5a714782517fc1ba8a045507175ef8d621e9bf158c4d299",
+                "implementation/warlock/qa/bar-keyboard-return_test.qnt": "c4df1738e77fe8f77685d4688426c8debd9395113a1a1ed4d918ba3b55bf28af",
+                "implementation/warlock/qa/check-bar-keyboard-return.py": "7aa54b9faa6c4e3a83ec2ad379d57a30ffa48430b0ef598d23930ab138918d33",
+                "implementation/warlock/qa/native-window-feedback.py": "d0c45c673ac47751cef680175a79c251674dc19d444eb7eeb3f35dd23ecbd353",
+                "implementation/warlock/README.md": "94d7d305de261893a1998a843e0f0e0737e6983cce6ceb8e1ba9d0ded6475de2"
+              },
+              "reviewerDisposition": {
+                "name": "root-bar-keyboard-return",
+                "independent": false,
+                "disposition": "Owner-observed repeated native all-nine-surface operation/dismissal and real key/effect recipients; independent scenario and native AT/IME acceptance remain open."
+              }
             }
           ],
-          "missingObservation": "Independent original scenario/requirement review and native accessibility/IME consumers remain open. This fixture disables accessibility bridging; browser/Elm checks do not establish native AT. Protocol 2 admission remains in source and typed wire tests, but this current native journey negotiates protocol 3; hardware/multi-output/cadence/resource/full-release packaging and deployment remain separate."
+          "missingObservation": "Independent original scenario review and applicable native AT/IME consumers remain open. The current all-nine-surface keyboard recordings pass twice, including taskbar Home after repeated Apps/picker grabs. Hardware/resource/release and deployment acceptance remain separate.",
+          "reviewerDisposition": {
+            "name": "root-bar-keyboard-return",
+            "independent": false,
+            "disposition": "Owner-observed repeated native all-nine-surface operation/dismissal and real key/effect recipients; independent scenario and native AT/IME acceptance remain open."
+          }
         },
         {
           "name": "keyboard-switcher",
@@ -8689,9 +8773,37 @@
                 "independent": false,
                 "disposition": "Owner-observed passing original keyboard campaign; independent scenario/requirement/release acceptance remains open."
               }
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/bar-keyboard-replay/manifest.json",
+              "sha256": "af974b4107acd090a68217b8c7895bd1bae472d01946581c3b2a7b9d28cd898d",
+              "scope": "Two unchanged original native keyboard-only nine-surface journeys pass after exact once-only cross-receiver GTK replay return to the live source bar engine. Each records six real Home navigations, three canonical replay returns, zero injected pointer events, native committed snap placement and selected application input, normal owned-client/helper exits, plugin unload and private cleanup. Owning native context source tests and scoped named/sampled Quint checks pass. Earlier Home failure and refuted focus-child report retained.",
+              "sourceBaseRevision": "4db947b579ab589ba803a27f2c9c75c6006443ff",
+              "sourceHashes": {
+                "implementation/warlock/native/shared-host.c": "a8f30ce61053c0000a4f526d3efa6e0d144a3e8598319ce4ec00f44e13226298",
+                "implementation/warlock/native/shared-context.h": "6e4924cf86fdf3224acf0547a1d7e06fccbf1b08b5350ddaba41ae0a0117d9be",
+                "implementation/warlock/native/shared-context-test.c": "75edb35929d75c246d6dd552d48d46f7362810a244331c703c04f27a21758e65",
+                "implementation/warlock/qa/check-search.py": "df0f9251a519afc32f8d30c9fcfdbf77846201f2faab25b79ef6c6c4482060f6",
+                "implementation/warlock/qa/current-search-build.json": "4877915ffe391675706105bb0178fff04f1b31657e2b8c839bad80e2cba44292",
+                "implementation/warlock/qa/bar-keyboard-return.qnt": "7ebae07d0e4cfc53e5a714782517fc1ba8a045507175ef8d621e9bf158c4d299",
+                "implementation/warlock/qa/bar-keyboard-return_test.qnt": "c4df1738e77fe8f77685d4688426c8debd9395113a1a1ed4d918ba3b55bf28af",
+                "implementation/warlock/qa/check-bar-keyboard-return.py": "7aa54b9faa6c4e3a83ec2ad379d57a30ffa48430b0ef598d23930ab138918d33",
+                "implementation/warlock/qa/native-window-feedback.py": "d0c45c673ac47751cef680175a79c251674dc19d444eb7eeb3f35dd23ecbd353",
+                "implementation/warlock/README.md": "94d7d305de261893a1998a843e0f0e0737e6983cce6ceb8e1ba9d0ded6475de2"
+              },
+              "reviewerDisposition": {
+                "name": "root-bar-keyboard-return",
+                "independent": false,
+                "disposition": "Owner-observed repeated native all-nine-surface operation/dismissal and real key/effect recipients; independent scenario and native AT/IME acceptance remain open."
+              }
             }
           ],
-          "missingObservation": "Independent original scenario/requirement review and native accessibility/IME consumers remain open. This fixture disables accessibility bridging; browser/Elm checks do not establish native AT. Protocol 2 admission remains in source and typed wire tests, but this current native journey negotiates protocol 3; hardware/multi-output/cadence/resource/full-release packaging and deployment remain separate."
+          "missingObservation": "Independent original scenario review and applicable native AT/IME consumers remain open. The current all-nine-surface keyboard recordings pass twice, including taskbar Home after repeated Apps/picker grabs. Hardware/resource/release and deployment acceptance remain separate.",
+          "reviewerDisposition": {
+            "name": "root-bar-keyboard-return",
+            "independent": false,
+            "disposition": "Owner-observed repeated native all-nine-surface operation/dismissal and real key/effect recipients; independent scenario and native AT/IME acceptance remain open."
+          }
         },
         {
           "name": "keyboard-task-view",
@@ -8757,9 +8869,37 @@
                 "independent": false,
                 "disposition": "Owner-observed passing original keyboard campaign; independent scenario/requirement/release acceptance remains open."
               }
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/bar-keyboard-replay/manifest.json",
+              "sha256": "af974b4107acd090a68217b8c7895bd1bae472d01946581c3b2a7b9d28cd898d",
+              "scope": "Two unchanged original native keyboard-only nine-surface journeys pass after exact once-only cross-receiver GTK replay return to the live source bar engine. Each records six real Home navigations, three canonical replay returns, zero injected pointer events, native committed snap placement and selected application input, normal owned-client/helper exits, plugin unload and private cleanup. Owning native context source tests and scoped named/sampled Quint checks pass. Earlier Home failure and refuted focus-child report retained.",
+              "sourceBaseRevision": "4db947b579ab589ba803a27f2c9c75c6006443ff",
+              "sourceHashes": {
+                "implementation/warlock/native/shared-host.c": "a8f30ce61053c0000a4f526d3efa6e0d144a3e8598319ce4ec00f44e13226298",
+                "implementation/warlock/native/shared-context.h": "6e4924cf86fdf3224acf0547a1d7e06fccbf1b08b5350ddaba41ae0a0117d9be",
+                "implementation/warlock/native/shared-context-test.c": "75edb35929d75c246d6dd552d48d46f7362810a244331c703c04f27a21758e65",
+                "implementation/warlock/qa/check-search.py": "df0f9251a519afc32f8d30c9fcfdbf77846201f2faab25b79ef6c6c4482060f6",
+                "implementation/warlock/qa/current-search-build.json": "4877915ffe391675706105bb0178fff04f1b31657e2b8c839bad80e2cba44292",
+                "implementation/warlock/qa/bar-keyboard-return.qnt": "7ebae07d0e4cfc53e5a714782517fc1ba8a045507175ef8d621e9bf158c4d299",
+                "implementation/warlock/qa/bar-keyboard-return_test.qnt": "c4df1738e77fe8f77685d4688426c8debd9395113a1a1ed4d918ba3b55bf28af",
+                "implementation/warlock/qa/check-bar-keyboard-return.py": "7aa54b9faa6c4e3a83ec2ad379d57a30ffa48430b0ef598d23930ab138918d33",
+                "implementation/warlock/qa/native-window-feedback.py": "d0c45c673ac47751cef680175a79c251674dc19d444eb7eeb3f35dd23ecbd353",
+                "implementation/warlock/README.md": "94d7d305de261893a1998a843e0f0e0737e6983cce6ceb8e1ba9d0ded6475de2"
+              },
+              "reviewerDisposition": {
+                "name": "root-bar-keyboard-return",
+                "independent": false,
+                "disposition": "Owner-observed repeated native all-nine-surface operation/dismissal and real key/effect recipients; independent scenario and native AT/IME acceptance remain open."
+              }
             }
           ],
-          "missingObservation": "Independent original scenario/requirement review and native accessibility/IME consumers remain open. This fixture disables accessibility bridging; browser/Elm checks do not establish native AT. Protocol 2 admission remains in source and typed wire tests, but this current native journey negotiates protocol 3; hardware/multi-output/cadence/resource/full-release packaging and deployment remain separate."
+          "missingObservation": "Independent original scenario review and applicable native AT/IME consumers remain open. The current all-nine-surface keyboard recordings pass twice, including taskbar Home after repeated Apps/picker grabs. Hardware/resource/release and deployment acceptance remain separate.",
+          "reviewerDisposition": {
+            "name": "root-bar-keyboard-return",
+            "independent": false,
+            "disposition": "Owner-observed repeated native all-nine-surface operation/dismissal and real key/effect recipients; independent scenario and native AT/IME acceptance remain open."
+          }
         },
         {
           "name": "keyboard-snap-chooser",
@@ -8825,9 +8965,37 @@
                 "independent": false,
                 "disposition": "Owner-observed passing original keyboard campaign; independent scenario/requirement/release acceptance remains open."
               }
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/bar-keyboard-replay/manifest.json",
+              "sha256": "af974b4107acd090a68217b8c7895bd1bae472d01946581c3b2a7b9d28cd898d",
+              "scope": "Two unchanged original native keyboard-only nine-surface journeys pass after exact once-only cross-receiver GTK replay return to the live source bar engine. Each records six real Home navigations, three canonical replay returns, zero injected pointer events, native committed snap placement and selected application input, normal owned-client/helper exits, plugin unload and private cleanup. Owning native context source tests and scoped named/sampled Quint checks pass. Earlier Home failure and refuted focus-child report retained.",
+              "sourceBaseRevision": "4db947b579ab589ba803a27f2c9c75c6006443ff",
+              "sourceHashes": {
+                "implementation/warlock/native/shared-host.c": "a8f30ce61053c0000a4f526d3efa6e0d144a3e8598319ce4ec00f44e13226298",
+                "implementation/warlock/native/shared-context.h": "6e4924cf86fdf3224acf0547a1d7e06fccbf1b08b5350ddaba41ae0a0117d9be",
+                "implementation/warlock/native/shared-context-test.c": "75edb35929d75c246d6dd552d48d46f7362810a244331c703c04f27a21758e65",
+                "implementation/warlock/qa/check-search.py": "df0f9251a519afc32f8d30c9fcfdbf77846201f2faab25b79ef6c6c4482060f6",
+                "implementation/warlock/qa/current-search-build.json": "4877915ffe391675706105bb0178fff04f1b31657e2b8c839bad80e2cba44292",
+                "implementation/warlock/qa/bar-keyboard-return.qnt": "7ebae07d0e4cfc53e5a714782517fc1ba8a045507175ef8d621e9bf158c4d299",
+                "implementation/warlock/qa/bar-keyboard-return_test.qnt": "c4df1738e77fe8f77685d4688426c8debd9395113a1a1ed4d918ba3b55bf28af",
+                "implementation/warlock/qa/check-bar-keyboard-return.py": "7aa54b9faa6c4e3a83ec2ad379d57a30ffa48430b0ef598d23930ab138918d33",
+                "implementation/warlock/qa/native-window-feedback.py": "d0c45c673ac47751cef680175a79c251674dc19d444eb7eeb3f35dd23ecbd353",
+                "implementation/warlock/README.md": "94d7d305de261893a1998a843e0f0e0737e6983cce6ceb8e1ba9d0ded6475de2"
+              },
+              "reviewerDisposition": {
+                "name": "root-bar-keyboard-return",
+                "independent": false,
+                "disposition": "Owner-observed repeated native all-nine-surface operation/dismissal and real key/effect recipients; independent scenario and native AT/IME acceptance remain open."
+              }
             }
           ],
-          "missingObservation": "Independent original scenario/requirement review and native accessibility/IME consumers remain open. This fixture disables accessibility bridging; browser/Elm checks do not establish native AT. Protocol 2 admission remains in source and typed wire tests, but this current native journey negotiates protocol 3; hardware/multi-output/cadence/resource/full-release packaging and deployment remain separate."
+          "missingObservation": "Independent original scenario review and applicable native AT/IME consumers remain open. The current all-nine-surface keyboard recordings pass twice, including taskbar Home after repeated Apps/picker grabs. Hardware/resource/release and deployment acceptance remain separate.",
+          "reviewerDisposition": {
+            "name": "root-bar-keyboard-return",
+            "independent": false,
+            "disposition": "Owner-observed repeated native all-nine-surface operation/dismissal and real key/effect recipients; independent scenario and native AT/IME acceptance remain open."
+          }
         },
         {
           "name": "keyboard-menus",
@@ -8893,13 +9061,36 @@
                 "independent": false,
                 "disposition": "Owner-observed passing original keyboard campaign; independent scenario/requirement/release acceptance remains open."
               }
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/bar-keyboard-replay/manifest.json",
+              "sha256": "af974b4107acd090a68217b8c7895bd1bae472d01946581c3b2a7b9d28cd898d",
+              "scope": "Two unchanged original native keyboard-only nine-surface journeys pass after exact once-only cross-receiver GTK replay return to the live source bar engine. Each records six real Home navigations, three canonical replay returns, zero injected pointer events, native committed snap placement and selected application input, normal owned-client/helper exits, plugin unload and private cleanup. Owning native context source tests and scoped named/sampled Quint checks pass. Earlier Home failure and refuted focus-child report retained.",
+              "sourceBaseRevision": "4db947b579ab589ba803a27f2c9c75c6006443ff",
+              "sourceHashes": {
+                "implementation/warlock/native/shared-host.c": "a8f30ce61053c0000a4f526d3efa6e0d144a3e8598319ce4ec00f44e13226298",
+                "implementation/warlock/native/shared-context.h": "6e4924cf86fdf3224acf0547a1d7e06fccbf1b08b5350ddaba41ae0a0117d9be",
+                "implementation/warlock/native/shared-context-test.c": "75edb35929d75c246d6dd552d48d46f7362810a244331c703c04f27a21758e65",
+                "implementation/warlock/qa/check-search.py": "df0f9251a519afc32f8d30c9fcfdbf77846201f2faab25b79ef6c6c4482060f6",
+                "implementation/warlock/qa/current-search-build.json": "4877915ffe391675706105bb0178fff04f1b31657e2b8c839bad80e2cba44292",
+                "implementation/warlock/qa/bar-keyboard-return.qnt": "7ebae07d0e4cfc53e5a714782517fc1ba8a045507175ef8d621e9bf158c4d299",
+                "implementation/warlock/qa/bar-keyboard-return_test.qnt": "c4df1738e77fe8f77685d4688426c8debd9395113a1a1ed4d918ba3b55bf28af",
+                "implementation/warlock/qa/check-bar-keyboard-return.py": "7aa54b9faa6c4e3a83ec2ad379d57a30ffa48430b0ef598d23930ab138918d33",
+                "implementation/warlock/qa/native-window-feedback.py": "d0c45c673ac47751cef680175a79c251674dc19d444eb7eeb3f35dd23ecbd353",
+                "implementation/warlock/README.md": "94d7d305de261893a1998a843e0f0e0737e6983cce6ceb8e1ba9d0ded6475de2"
+              },
+              "reviewerDisposition": {
+                "name": "root-bar-keyboard-return",
+                "independent": false,
+                "disposition": "Owner-observed repeated native all-nine-surface operation/dismissal and real key/effect recipients; independent scenario and native AT/IME acceptance remain open."
+              }
             }
           ],
-          "missingObservation": "Independent original scenario/requirement review and native accessibility/IME consumers remain open. This fixture disables accessibility bridging; browser/Elm checks do not establish native AT. Protocol 2 admission remains in source and typed wire tests, but this current native journey negotiates protocol 3; hardware/multi-output/cadence/resource/full-release packaging and deployment remain separate.",
+          "missingObservation": "Independent original scenario review and applicable native AT/IME consumers remain open. The current all-nine-surface keyboard recordings pass twice, including taskbar Home after repeated Apps/picker grabs. Hardware/resource/release and deployment acceptance remain separate.",
           "reviewerDisposition": {
-            "name": "root-pinned-menus",
+            "name": "root-bar-keyboard-return",
             "independent": false,
-            "disposition": "Observed scoped native/compiled behavior; original-scenario acceptance remains pending."
+            "disposition": "Owner-observed repeated native all-nine-surface operation/dismissal and real key/effect recipients; independent scenario and native AT/IME acceptance remain open."
           }
         },
         {
@@ -9049,9 +9240,37 @@
                 "independent": false,
                 "disposition": "Owner-observed passing original keyboard campaign; independent scenario/requirement/release acceptance remains open."
               }
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/bar-keyboard-replay/manifest.json",
+              "sha256": "af974b4107acd090a68217b8c7895bd1bae472d01946581c3b2a7b9d28cd898d",
+              "scope": "Two unchanged original native keyboard-only nine-surface journeys pass after exact once-only cross-receiver GTK replay return to the live source bar engine. Each records six real Home navigations, three canonical replay returns, zero injected pointer events, native committed snap placement and selected application input, normal owned-client/helper exits, plugin unload and private cleanup. Owning native context source tests and scoped named/sampled Quint checks pass. Earlier Home failure and refuted focus-child report retained.",
+              "sourceBaseRevision": "4db947b579ab589ba803a27f2c9c75c6006443ff",
+              "sourceHashes": {
+                "implementation/warlock/native/shared-host.c": "a8f30ce61053c0000a4f526d3efa6e0d144a3e8598319ce4ec00f44e13226298",
+                "implementation/warlock/native/shared-context.h": "6e4924cf86fdf3224acf0547a1d7e06fccbf1b08b5350ddaba41ae0a0117d9be",
+                "implementation/warlock/native/shared-context-test.c": "75edb35929d75c246d6dd552d48d46f7362810a244331c703c04f27a21758e65",
+                "implementation/warlock/qa/check-search.py": "df0f9251a519afc32f8d30c9fcfdbf77846201f2faab25b79ef6c6c4482060f6",
+                "implementation/warlock/qa/current-search-build.json": "4877915ffe391675706105bb0178fff04f1b31657e2b8c839bad80e2cba44292",
+                "implementation/warlock/qa/bar-keyboard-return.qnt": "7ebae07d0e4cfc53e5a714782517fc1ba8a045507175ef8d621e9bf158c4d299",
+                "implementation/warlock/qa/bar-keyboard-return_test.qnt": "c4df1738e77fe8f77685d4688426c8debd9395113a1a1ed4d918ba3b55bf28af",
+                "implementation/warlock/qa/check-bar-keyboard-return.py": "7aa54b9faa6c4e3a83ec2ad379d57a30ffa48430b0ef598d23930ab138918d33",
+                "implementation/warlock/qa/native-window-feedback.py": "d0c45c673ac47751cef680175a79c251674dc19d444eb7eeb3f35dd23ecbd353",
+                "implementation/warlock/README.md": "94d7d305de261893a1998a843e0f0e0737e6983cce6ceb8e1ba9d0ded6475de2"
+              },
+              "reviewerDisposition": {
+                "name": "root-bar-keyboard-return",
+                "independent": false,
+                "disposition": "Owner-observed repeated native all-nine-surface operation/dismissal and real key/effect recipients; independent scenario and native AT/IME acceptance remain open."
+              }
             }
           ],
-          "missingObservation": "Independent original scenario/requirement review and native accessibility/IME consumers remain open. This fixture disables accessibility bridging; browser/Elm checks do not establish native AT. Protocol 2 admission remains in source and typed wire tests, but this current native journey negotiates protocol 3; hardware/multi-output/cadence/resource/full-release packaging and deployment remain separate."
+          "missingObservation": "Independent original scenario review and applicable native AT/IME consumers remain open. The current all-nine-surface keyboard recordings pass twice, including taskbar Home after repeated Apps/picker grabs. Hardware/resource/release and deployment acceptance remain separate.",
+          "reviewerDisposition": {
+            "name": "root-bar-keyboard-return",
+            "independent": false,
+            "disposition": "Owner-observed repeated native all-nine-surface operation/dismissal and real key/effect recipients; independent scenario and native AT/IME acceptance remain open."
+          }
         },
         {
           "name": "keyboard-notifications",
@@ -9117,9 +9336,37 @@
                 "independent": false,
                 "disposition": "Owner-observed passing original keyboard campaign; independent scenario/requirement/release acceptance remains open."
               }
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/bar-keyboard-replay/manifest.json",
+              "sha256": "af974b4107acd090a68217b8c7895bd1bae472d01946581c3b2a7b9d28cd898d",
+              "scope": "Two unchanged original native keyboard-only nine-surface journeys pass after exact once-only cross-receiver GTK replay return to the live source bar engine. Each records six real Home navigations, three canonical replay returns, zero injected pointer events, native committed snap placement and selected application input, normal owned-client/helper exits, plugin unload and private cleanup. Owning native context source tests and scoped named/sampled Quint checks pass. Earlier Home failure and refuted focus-child report retained.",
+              "sourceBaseRevision": "4db947b579ab589ba803a27f2c9c75c6006443ff",
+              "sourceHashes": {
+                "implementation/warlock/native/shared-host.c": "a8f30ce61053c0000a4f526d3efa6e0d144a3e8598319ce4ec00f44e13226298",
+                "implementation/warlock/native/shared-context.h": "6e4924cf86fdf3224acf0547a1d7e06fccbf1b08b5350ddaba41ae0a0117d9be",
+                "implementation/warlock/native/shared-context-test.c": "75edb35929d75c246d6dd552d48d46f7362810a244331c703c04f27a21758e65",
+                "implementation/warlock/qa/check-search.py": "df0f9251a519afc32f8d30c9fcfdbf77846201f2faab25b79ef6c6c4482060f6",
+                "implementation/warlock/qa/current-search-build.json": "4877915ffe391675706105bb0178fff04f1b31657e2b8c839bad80e2cba44292",
+                "implementation/warlock/qa/bar-keyboard-return.qnt": "7ebae07d0e4cfc53e5a714782517fc1ba8a045507175ef8d621e9bf158c4d299",
+                "implementation/warlock/qa/bar-keyboard-return_test.qnt": "c4df1738e77fe8f77685d4688426c8debd9395113a1a1ed4d918ba3b55bf28af",
+                "implementation/warlock/qa/check-bar-keyboard-return.py": "7aa54b9faa6c4e3a83ec2ad379d57a30ffa48430b0ef598d23930ab138918d33",
+                "implementation/warlock/qa/native-window-feedback.py": "d0c45c673ac47751cef680175a79c251674dc19d444eb7eeb3f35dd23ecbd353",
+                "implementation/warlock/README.md": "94d7d305de261893a1998a843e0f0e0737e6983cce6ceb8e1ba9d0ded6475de2"
+              },
+              "reviewerDisposition": {
+                "name": "root-bar-keyboard-return",
+                "independent": false,
+                "disposition": "Owner-observed repeated native all-nine-surface operation/dismissal and real key/effect recipients; independent scenario and native AT/IME acceptance remain open."
+              }
             }
           ],
-          "missingObservation": "Independent original scenario/requirement review and native accessibility/IME consumers remain open. This fixture disables accessibility bridging; browser/Elm checks do not establish native AT. Protocol 2 admission remains in source and typed wire tests, but this current native journey negotiates protocol 3; hardware/multi-output/cadence/resource/full-release packaging and deployment remain separate."
+          "missingObservation": "Independent original scenario review and applicable native AT/IME consumers remain open. The current all-nine-surface keyboard recordings pass twice, including taskbar Home after repeated Apps/picker grabs. Hardware/resource/release and deployment acceptance remain separate.",
+          "reviewerDisposition": {
+            "name": "root-bar-keyboard-return",
+            "independent": false,
+            "disposition": "Owner-observed repeated native all-nine-surface operation/dismissal and real key/effect recipients; independent scenario and native AT/IME acceptance remain open."
+          }
         },
         {
           "name": "keyboard-jump-lists",
@@ -9185,9 +9432,37 @@
                 "independent": false,
                 "disposition": "Owner-observed passing original keyboard campaign; independent scenario/requirement/release acceptance remains open."
               }
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/bar-keyboard-replay/manifest.json",
+              "sha256": "af974b4107acd090a68217b8c7895bd1bae472d01946581c3b2a7b9d28cd898d",
+              "scope": "Two unchanged original native keyboard-only nine-surface journeys pass after exact once-only cross-receiver GTK replay return to the live source bar engine. Each records six real Home navigations, three canonical replay returns, zero injected pointer events, native committed snap placement and selected application input, normal owned-client/helper exits, plugin unload and private cleanup. Owning native context source tests and scoped named/sampled Quint checks pass. Earlier Home failure and refuted focus-child report retained.",
+              "sourceBaseRevision": "4db947b579ab589ba803a27f2c9c75c6006443ff",
+              "sourceHashes": {
+                "implementation/warlock/native/shared-host.c": "a8f30ce61053c0000a4f526d3efa6e0d144a3e8598319ce4ec00f44e13226298",
+                "implementation/warlock/native/shared-context.h": "6e4924cf86fdf3224acf0547a1d7e06fccbf1b08b5350ddaba41ae0a0117d9be",
+                "implementation/warlock/native/shared-context-test.c": "75edb35929d75c246d6dd552d48d46f7362810a244331c703c04f27a21758e65",
+                "implementation/warlock/qa/check-search.py": "df0f9251a519afc32f8d30c9fcfdbf77846201f2faab25b79ef6c6c4482060f6",
+                "implementation/warlock/qa/current-search-build.json": "4877915ffe391675706105bb0178fff04f1b31657e2b8c839bad80e2cba44292",
+                "implementation/warlock/qa/bar-keyboard-return.qnt": "7ebae07d0e4cfc53e5a714782517fc1ba8a045507175ef8d621e9bf158c4d299",
+                "implementation/warlock/qa/bar-keyboard-return_test.qnt": "c4df1738e77fe8f77685d4688426c8debd9395113a1a1ed4d918ba3b55bf28af",
+                "implementation/warlock/qa/check-bar-keyboard-return.py": "7aa54b9faa6c4e3a83ec2ad379d57a30ffa48430b0ef598d23930ab138918d33",
+                "implementation/warlock/qa/native-window-feedback.py": "d0c45c673ac47751cef680175a79c251674dc19d444eb7eeb3f35dd23ecbd353",
+                "implementation/warlock/README.md": "94d7d305de261893a1998a843e0f0e0737e6983cce6ceb8e1ba9d0ded6475de2"
+              },
+              "reviewerDisposition": {
+                "name": "root-bar-keyboard-return",
+                "independent": false,
+                "disposition": "Owner-observed repeated native all-nine-surface operation/dismissal and real key/effect recipients; independent scenario and native AT/IME acceptance remain open."
+              }
             }
           ],
-          "missingObservation": "Independent original scenario/requirement review and native accessibility/IME consumers remain open. This fixture disables accessibility bridging; browser/Elm checks do not establish native AT. Protocol 2 admission remains in source and typed wire tests, but this current native journey negotiates protocol 3; hardware/multi-output/cadence/resource/full-release packaging and deployment remain separate."
+          "missingObservation": "Independent original scenario review and applicable native AT/IME consumers remain open. The current all-nine-surface keyboard recordings pass twice, including taskbar Home after repeated Apps/picker grabs. Hardware/resource/release and deployment acceptance remain separate.",
+          "reviewerDisposition": {
+            "name": "root-bar-keyboard-return",
+            "independent": false,
+            "disposition": "Owner-observed repeated native all-nine-surface operation/dismissal and real key/effect recipients; independent scenario and native AT/IME acceptance remain open."
+          }
         }
       ]
     },
@@ -9785,5 +10060,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-10T02:09:46.884605+00:00"
+  "updatedUTC": "2026-10-10T02:28:13.040324+00:00"
 }

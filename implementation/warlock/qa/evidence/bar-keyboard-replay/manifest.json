@@ -1,0 +1,169 @@
+{
+  "schema": 1,
+  "requirements": [
+    "ELM-UX-023"
+  ],
+  "scenarios": [
+    "ux-023",
+    "keyboard-taskbar-groups"
+  ],
+  "disposition": "partial",
+  "sourceBaseRevision": "4db947b579ab589ba803a27f2c9c75c6006443ff",
+  "sourceHashes": {
+    "implementation/warlock/native/shared-host.c": "a8f30ce61053c0000a4f526d3efa6e0d144a3e8598319ce4ec00f44e13226298",
+    "implementation/warlock/native/shared-context.h": "6e4924cf86fdf3224acf0547a1d7e06fccbf1b08b5350ddaba41ae0a0117d9be",
+    "implementation/warlock/native/shared-context-test.c": "75edb35929d75c246d6dd552d48d46f7362810a244331c703c04f27a21758e65",
+    "implementation/warlock/qa/check-search.py": "df0f9251a519afc32f8d30c9fcfdbf77846201f2faab25b79ef6c6c4482060f6",
+    "implementation/warlock/qa/current-search-build.json": "4877915ffe391675706105bb0178fff04f1b31657e2b8c839bad80e2cba44292",
+    "implementation/warlock/qa/bar-keyboard-return.qnt": "7ebae07d0e4cfc53e5a714782517fc1ba8a045507175ef8d621e9bf158c4d299",
+    "implementation/warlock/qa/bar-keyboard-return_test.qnt": "c4df1738e77fe8f77685d4688426c8debd9395113a1a1ed4d918ba3b55bf28af",
+    "implementation/warlock/qa/check-bar-keyboard-return.py": "7aa54b9faa6c4e3a83ec2ad379d57a30ffa48430b0ef598d23930ab138918d33",
+    "implementation/warlock/qa/native-window-feedback.py": "d0c45c673ac47751cef680175a79c251674dc19d444eb7eeb3f35dd23ecbd353",
+    "implementation/warlock/README.md": "94d7d305de261893a1998a843e0f0e0737e6983cce6ceb8e1ba9d0ded6475de2"
+  },
+  "nativePair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-core-1791495415110842751/Hyprland",
+      "sha256": "81c9ac609c2900f99c1efbe613b83e949aeae3059a5e4403601581fa96191acf"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791596429600393566/elm-window-geometry-authority.so",
+      "sha256": "1f5de87c759902cbbca05dfdbba56090641c994cf3c7276671094248465bcac4"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/bar-keyboard-return-1791598954468402628/elm-host",
+    "sha256": "f2be6fc90a55e3bd46d1de44d9b850ef296f5c607bc39714d3aff406e48eeaa9",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/bar-keyboard-return-1791598954468402628/report.json",
+    "heldBuildSHA256": "ea249f394d9953a1930a782ae365e01a92d43a0894e12cbac9c8dc570d072ae8"
+  },
+  "files": {
+    "compiled-report.json": {
+      "path": "implementation/warlock/qa/evidence/bar-keyboard-replay/compiled-report.json",
+      "sha256": "ea249f394d9953a1930a782ae365e01a92d43a0894e12cbac9c8dc570d072ae8",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/bar-keyboard-return-1791598954468402628/report.json"
+    },
+    "native-report.json": {
+      "path": "implementation/warlock/qa/evidence/bar-keyboard-replay/native-report.json",
+      "sha256": "759003c81fc3b650b14466040179c70ec9a6267aef7cba30c16376623d824440",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-keyboard-shell-1791599010113410397/report.json"
+    },
+    "native-repeat-report.json": {
+      "path": "implementation/warlock/qa/evidence/bar-keyboard-replay/native-repeat-report.json",
+      "sha256": "b9d6b3f8a7d897474607b7399edb64f9ef772810ed422216a730cc5163b7fd07",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-keyboard-shell-1791599055340663261/report.json"
+    },
+    "failed-baseline-report.json": {
+      "path": "implementation/warlock/qa/evidence/bar-keyboard-replay/failed-baseline-report.json",
+      "sha256": "3aefba747c314e9099c0b3d3c1ecd1c5c6a305fa893a50699c91ce5c95ceb598",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-keyboard-shell-1791598433285265286/report.json"
+    },
+    "failed-focus-child-report.json": {
+      "path": "implementation/warlock/qa/evidence/bar-keyboard-replay/failed-focus-child-report.json",
+      "sha256": "5eab4eed08dd3dc43cfc5acd984f222b1000caf8e45a3fe77206e7cef5624edb",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-keyboard-shell-1791598581080793850/report.json"
+    },
+    "model-report.json": {
+      "path": "implementation/warlock/qa/evidence/bar-keyboard-replay/model-report.json",
+      "sha256": "ed5195b3069e59275e2d94ddf099f77e0dea027adc7aea4445d9ba8e876842ce",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/bar-keyboard-return-1791598954468402628/inputs/qa/runs/bar-keyboard-return-1791598954555437876/report.json"
+    },
+    "model-named.stdout": {
+      "path": "implementation/warlock/qa/evidence/bar-keyboard-replay/model-named.stdout",
+      "sha256": "13eabecbd3620222622f23ab006f883937f4f576e073a92f09c4cbcd6b4e03ea",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/bar-keyboard-return-1791598954468402628/inputs/qa/runs/bar-keyboard-return-1791598954555437876/named.stdout"
+    },
+    "model-witnesses.stdout": {
+      "path": "implementation/warlock/qa/evidence/bar-keyboard-replay/model-witnesses.stdout",
+      "sha256": "bf71f06b048df90efaffce0a76981cadec853dd86755eed67e61987a2056e72c",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/bar-keyboard-return-1791598954468402628/inputs/qa/runs/bar-keyboard-return-1791598954555437876/witnesses.stdout"
+    },
+    "model-safety.stdout": {
+      "path": "implementation/warlock/qa/evidence/bar-keyboard-replay/model-safety.stdout",
+      "sha256": "017cd830c44c2a9354157bd257f156accd23df71ba0c2791a976976337294c7e",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/bar-keyboard-return-1791598954468402628/inputs/qa/runs/bar-keyboard-return-1791598954555437876/safety.stdout"
+    },
+    "native-context-tests.stdout": {
+      "path": "implementation/warlock/qa/evidence/bar-keyboard-replay/native-context-tests.stdout",
+      "sha256": "c23298e7915f4e3df9321e842bac0688f35f4c50dba8ef8b03ad4b054b58a2d5",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/bar-keyboard-return-1791598954468402628/popup-context-tests.stdout"
+    },
+    "native-replay.log": {
+      "path": "implementation/warlock/qa/evidence/bar-keyboard-replay/native-replay.log",
+      "sha256": "5bada5d0d6fc49e0eb2ea1158b4551fcaf8631b9aea2ba0c9409111fef4ce4df",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791599010113521132/warlock.log",
+      "originalSHA256": "b46d3faa73200e140945f8dd04ed2acb4355e0df0e01b93e6b11d7efff807ec4",
+      "scope": "Selected unchanged original replay, Home and shutdown lines"
+    },
+    "native-repeat-replay.log": {
+      "path": "implementation/warlock/qa/evidence/bar-keyboard-replay/native-repeat-replay.log",
+      "sha256": "1ac43cd4705e832294a0e473addb14f1ba96a892348767bdd83e88b73475e02f",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791599055340778958/warlock.log",
+      "originalSHA256": "31898a9b5c7b16694af0cf71f906f4dc394e0bcc12546ef60ea81b68b565ec51",
+      "scope": "Selected unchanged original replay, Home and shutdown lines"
+    },
+    "upstream-reference.json": {
+      "path": "implementation/warlock/qa/evidence/bar-keyboard-replay/upstream-reference.json",
+      "sha256": "436f02c07749cfee6dfa666a658d764d8fde2053b447cedc9ff815f954bcc47f"
+    }
+  },
+  "observed": [
+    {
+      "nineSurfaces": [
+        "launcher",
+        "jump-lists",
+        "notifications",
+        "menus",
+        "settings",
+        "taskbar-groups",
+        "snap-chooser",
+        "task-view",
+        "switcher"
+      ],
+      "homeNavigations": 6,
+      "canonicalReplayReturns": 3,
+      "allChecksPassed": true,
+      "cleanupPassed": true,
+      "zeroInjectedPointerEvents": true
+    },
+    {
+      "nineSurfaces": [
+        "launcher",
+        "jump-lists",
+        "notifications",
+        "menus",
+        "settings",
+        "taskbar-groups",
+        "snap-chooser",
+        "task-view",
+        "switcher"
+      ],
+      "homeNavigations": 6,
+      "canonicalReplayReturns": 3,
+      "allChecksPassed": true,
+      "cleanupPassed": true,
+      "zeroInjectedPointerEvents": true
+    }
+  ],
+  "quint": {
+    "namedTests": 8,
+    "sampledTracesPerGate": 1000,
+    "steps": 30,
+    "witnessCounts": {
+      "repeatedReturn": 27,
+      "originalReplayCompleted": 401,
+      "foreignReplayRefused": 1000
+    },
+    "scope": "Atomic exact replay signature/receiver abstraction; GTK/WebKit timing, physical delivery, clock wrap, ABI and AT/IME are outside the model."
+  },
+  "missingObservations": [
+    "Independent original scenario review and native AT/IME consumers.",
+    "Longer resource/hardware/multi-output/journey and reproducible release/deployment acceptance."
+  ],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

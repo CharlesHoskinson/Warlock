@@ -1,43 +1,45 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T02:09:46.884605+00:00",
+  "updatedUTC": "2026-10-10T02:28:13.040324+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "picker-shutdown-retirement",
+    "id": "taskbar-native-keyboard-return",
     "requirements": [
-      "ELM-DEL-021"
+      "ELM-UX-023"
     ],
     "scenarios": [
-      "delivery-021"
+      "ux-023",
+      "keyboard-taskbar-groups"
     ],
+    "before": "After repeated native Apps/picker dismissal, Home arrives at the GTK bar but is intermittently absent from the DOM handler, preventing the next keyboard-only group/menu journey.",
+    "after": "Exact already admitted GTK key replays redirected by a popup grab return once to their live original bar engine, preserving the physical proof and held-key state so the next real Home reaches DOM navigation without pointer input or effect replay.",
     "paths": [
       "implementation/warlock/native/host.c",
       "implementation/warlock/native/shared-host.c",
-      "implementation/warlock/native/preview-control.h",
-      "implementation/warlock/native/picker-previews.inc",
+      "implementation/warlock/native/shared-context.h",
+      "implementation/warlock/native/shared-context-test.c",
+      "implementation/warlock/assets/bar-adapter.js",
       "implementation/warlock/qa/check-search.py",
       "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/qa/native-pin-max.py",
       "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/qa/shutdown-preview.qnt",
-      "implementation/warlock/qa/shutdown-preview_test.qnt",
-      "implementation/warlock/qa/check-shutdown-preview.py",
+      "implementation/warlock/qa/bar-keyboard-return.qnt",
+      "implementation/warlock/qa/bar-keyboard-return_test.qnt",
+      "implementation/warlock/qa/check-bar-keyboard-return.py",
       "implementation/warlock/README.md"
     ],
-    "before": "Actual native pin/MAX journey succeeds, but shutdown rejects renderer retirement controls and exits 1 with outstanding picker custody/journal.",
-    "after": "Shutdown seals desktop actions and acquisitions but processes exact owned ordered release/cancel/ack controls within the existing drain bound, retires original native custody and exits normally before module/compositor teardown.",
     "verification": [
-      "Quint LLM Kit phase/retirement model with reachable drained closure and no new effects/acquisition, malformed/foreign/duplicate/late negative controls through actual shared receiver and preview router, compiled owning host and unchanged native pin/MAX journey with lease/exit/module/cleanup receipts."
+      "Quint LLM Kit exact source/signature/replay schedules with positive repeated-return witnesses and native authority/proof preservation; real owning shared-context source tests include all eight immutable signature fields, duplicate, retired, ambiguous and replacement negatives; unchanged original nine-surface native keyboard journey and cleanup at original timings."
     ],
     "status": "implemented-partial",
-    "evidence": "implementation/warlock/qa/evidence/picker-shutdown/manifest.json",
-    "nextSourceWork": "Fix intermittent Home target/focus navigation in the real taskbar; independent release-wide closure receipts and AT remain explicit. Shutdown retirement routes and the native pin/MAX journey now pass without weakening close or deadlines.",
-    "observed": "Real WebKit callback + both strict receivers admit only exact owned retirement controls during stop; unchanged native pin/MAX journey, strict close, normal client/helper exit, plugin unload and private cleanup pass. Failed preliminary runs retained."
+    "participantRecord": ".warlock-contributor/bar-keyboard-return.json",
+    "evidence": "implementation/warlock/qa/evidence/bar-keyboard-replay/manifest.json",
+    "observed": "Exact original GTK replay returns to its live bar engine once without a new physical proof/held-key transition. Both current full nine-surface native keyboard journeys pass at original timings, with zero pointer injection and normal cleanup.",
+    "nextSourceWork": "Deliver the original native primary taskbar activation/minimize/restore keyboard journey, including real recipients and zero-window catalog launch; independent AT/IME and release-wide closure acceptance remain explicit."
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -846,6 +848,38 @@
       "observed": "Pin and unpin of a maximized family now traverse the shipped prepared menu and typed receipt/reservation registry. Complete legacy/geometry records compare by unique incarnation, retaining all values. Protected native ux-016 passes maximize/pin/unpin once each, preserved MAX geometry, correlated displayed states and visible pixel/real GTK hit recipients at original deadlines. All functional pin checks pass; shell exit later fails outstanding picker custody.",
       "missingObservation": "Native shell exits 1 with Outstanding native picker custody/journal; private cleanup passes but normal client exit/plugin unload acceptance is not established for this pin run. Current combined keyboard regression fails repeated Home at original line 779 after six surfaces; earlier all-nine pass remains evidence only for its preceding tuple. Independent original scenario review, stable checked semantics and applicable AT/resource/release gates remain open.",
       "nextSourceWork": "Repair current picker custody retirement on shell shutdown without extending its drain bound or discarding unacknowledged custody; separately make repeated Home focus reliable."
+    },
+    {
+      "id": "picker-shutdown-retirement",
+      "requirements": [
+        "ELM-DEL-021"
+      ],
+      "scenarios": [
+        "delivery-021"
+      ],
+      "paths": [
+        "implementation/warlock/native/host.c",
+        "implementation/warlock/native/shared-host.c",
+        "implementation/warlock/native/preview-control.h",
+        "implementation/warlock/native/picker-previews.inc",
+        "implementation/warlock/qa/check-search.py",
+        "implementation/warlock/qa/current-search-build.json",
+        "implementation/warlock/qa/native-pin-max.py",
+        "implementation/warlock/qa/native-window-feedback.py",
+        "implementation/warlock/qa/shutdown-preview.qnt",
+        "implementation/warlock/qa/shutdown-preview_test.qnt",
+        "implementation/warlock/qa/check-shutdown-preview.py",
+        "implementation/warlock/README.md"
+      ],
+      "before": "Actual native pin/MAX journey succeeds, but shutdown rejects renderer retirement controls and exits 1 with outstanding picker custody/journal.",
+      "after": "Shutdown seals desktop actions and acquisitions but processes exact owned ordered release/cancel/ack controls within the existing drain bound, retires original native custody and exits normally before module/compositor teardown.",
+      "verification": [
+        "Quint LLM Kit phase/retirement model with reachable drained closure and no new effects/acquisition, malformed/foreign/duplicate/late negative controls through actual shared receiver and preview router, compiled owning host and unchanged native pin/MAX journey with lease/exit/module/cleanup receipts."
+      ],
+      "status": "implemented-partial",
+      "evidence": "implementation/warlock/qa/evidence/picker-shutdown/manifest.json",
+      "nextSourceWork": "Fix intermittent Home target/focus navigation in the real taskbar; independent release-wide closure receipts and AT remain explicit. Shutdown retirement routes and the native pin/MAX journey now pass without weakening close or deadlines.",
+      "observed": "Real WebKit callback + both strict receivers admit only exact owned retirement controls during stop; unchanged native pin/MAX journey, strict close, normal client/helper exit, plugin unload and private cleanup pass. Failed preliminary runs retained."
     }
   ]
 }

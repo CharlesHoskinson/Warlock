@@ -1,6 +1,7 @@
 """Focused compiled launcher/search integration, protected CPU scope only."""
 import pathlib,hashlib,json,os,sys,time,shutil,subprocess,shlex,importlib.util,concurrent.futures,http.server,threading
 SHUTDOWN=sys.argv[1:]==['--preview-shutdown']
+BARRETURN=sys.argv[1:]==['--bar-keyboard-return']
 SHORTCUTS=sys.argv[1:]==['--shortcut-choices']
 PINMAX=sys.argv[1:]==['--pin-max']
 QUIESCENT=sys.argv[1:]==['--preview-quiescence']
@@ -28,11 +29,11 @@ DENSE=sys.argv[1:]==['--dense-taskbar'] or PICKER
 PINMENUS=sys.argv[1:]==['--pinned-menus'] or (DENSE and not PICKER)
 PRIMARY=sys.argv[1:]==['--taskbar-primary'] or PINMENUS or PICKER
 SWITCHER=sys.argv[1:]==['--switcher'] or ACCESSIBILITY
-NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'];POPUP=sys.argv[1:]==['--native-popup'] or QUIESCENT or SHUTDOWN;TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION or KEYBOARD or DRAG or IME or TRANSFER or MOTION or PINMAX;assert not sys.argv[1:] or PINS or POPUP or TASKVIEW or PRIMARY or SWITCHER or PREVIEW
+NAV=sys.argv[1:]==['--workspace-navigation'];PINS=sys.argv[1:]==['--pins'];POPUP=sys.argv[1:]==['--native-popup'] or QUIESCENT or SHUTDOWN or BARRETURN;TASKVIEW=sys.argv[1:]==['--task-view'] or NAV or SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION or KEYBOARD or DRAG or IME or TRANSFER or MOTION or PINMAX;assert not sys.argv[1:] or PINS or POPUP or TASKVIEW or PRIMARY or SWITCHER or PREVIEW
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];HELD=REPO/'implementation/warlock-preview-provider-v143'
 sys.path.insert(0,'/home/hoskinson/window-integration-qa');from qa_launch import require_qa_scope
 scope=require_qa_scope();sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
-OUT=ROOT/'qa/runs'/(('preview-shutdown-' if SHUTDOWN else 'pin-max-' if PINMAX else 'preview-quiescence-' if QUIESCENT else 'preview-states-' if PREVIEW else 'live-motion-' if LIVE else 'reduced-motion-' if MOTION else 'transfer-workspace-' if TRANSFER else 'ime-' if IME else 'accessibility-' if ACCESSIBILITY else 'high-contrast-' if CONTRAST else 'drag-ownership-' if DRAG else 'keyboard-shell-' if KEYBOARD else 'attention-' if ATTENTION else 'jump-lists-' if JUMP else 'files-' if FILES else 'system-menu-' if SYSTEM else 'notifications-' if NOTIFICATIONS else 'settings-' if SETTINGS else 'snap-chooser-' if SNAP else 'switcher-' if SWITCHER else 'taskbar-primary-' if PRIMARY else 'workspace-navigation-' if NAV else 'task-view-' if TASKVIEW else 'popup-' if POPUP else 'pins-' if PINS else 'search-')+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
+OUT=ROOT/'qa/runs'/(('bar-keyboard-return-' if BARRETURN else 'preview-shutdown-' if SHUTDOWN else 'pin-max-' if PINMAX else 'preview-quiescence-' if QUIESCENT else 'preview-states-' if PREVIEW else 'live-motion-' if LIVE else 'reduced-motion-' if MOTION else 'transfer-workspace-' if TRANSFER else 'ime-' if IME else 'accessibility-' if ACCESSIBILITY else 'high-contrast-' if CONTRAST else 'drag-ownership-' if DRAG else 'keyboard-shell-' if KEYBOARD else 'attention-' if ATTENTION else 'jump-lists-' if JUMP else 'files-' if FILES else 'system-menu-' if SYSTEM else 'notifications-' if NOTIFICATIONS else 'settings-' if SETTINGS else 'snap-chooser-' if SNAP else 'switcher-' if SWITCHER else 'taskbar-primary-' if PRIMARY else 'workspace-navigation-' if NAV else 'task-view-' if TASKVIEW else 'popup-' if POPUP else 'pins-' if PINS else 'search-')+str(time.time_ns()));OUT.mkdir(parents=True);INPUT=OUT/'inputs';INPUT.mkdir();inputs={}
 for folder in ['src','native','adapter','assets','qa']:
  (INPUT/folder).mkdir()
  for p in (ROOT/folder).iterdir():
@@ -45,6 +46,9 @@ def run(name,args):
  if p.returncode:raise RuntimeError(p.stderr or p.stdout)
  return p.stdout
 try:
+ if BARRETURN:
+  modelPacket=json.loads(run('bar-keyboard-return-model',['/usr/bin/python3','-B','qa/check-bar-keyboard-return.py']))
+  assert modelPacket['passed'];report['barKeyboardReturnModel']=modelPacket
  if SHUTDOWN:
   modelPacket=json.loads(run('shutdown-preview-model',['/usr/bin/python3','-B','qa/check-shutdown-preview.py']))
   assert modelPacket['passed'];report['shutdownPreviewModel']=modelPacket
@@ -67,6 +71,7 @@ try:
  if PINS:report.update(requirements=['ELM-UI-004','ELM-UX-004'],scope='Compiled identity pins/reorder, private atomic native persistence, current integrated host; native restart/pixels acceptance pending')
  if POPUP:report.update(requirements=['ELM-UI-005','ELM-UX-029','ELM-UX-004'],scope='Changed native popup presentation units compiled/relinked; previously verified compiled Elm assets reused unchanged; actual native pixels acceptance pending')
  if QUIESCENT:report.update(requirements=['ELM-UI-017'],scenarios=['quiesce','reopen'],scope='Changed native preview scheduler compiled/relinked with exact unchanged Elm/C++ assets; actual GLib idle source retirement self-test; native counters and original soak acceptance separate')
+ if BARRETURN:report.update(requirements=['ELM-UX-023'],scenarios=['ux-023','keyboard-taskbar-groups'],scope='Owning exact once-only GTK replay routing back to the original live bar engine; native proof/held-key preservation and exact C++/Elm hashes; actual native key delivery and original nine-surface journey remain separate')
  if SHUTDOWN:report.update(requirements=['ELM-DEL-021'],scenarios=['delivery-021'],scope='Changed owning host retirement-only shutdown routing, ordered negative controls and strict source/ABI reuse; native exit/custody/module/session observations remain separate')
  if TASKVIEW:report.update(requirements=['ELM-UX-017','ELM-UI-006'],scope='Compiled integrated Task View, workspace membership/active marker and guarded native selection; native pixels/input and original acceptance remain separate')
  if PINMAX:report.update(requirements=['ELM-UX-016'],scenarios=['ux-016'],scope='Compiled typed pin/MAX observation, pending/Unknown and exact existing custody path; owning native tuple and physical acceptance separate')
@@ -252,7 +257,7 @@ console.log('Current body-target Escape releases once; stale scope, preedit, rep
     assert all(sha(INPUT/p)==h for p,h in prior['inputs'].items() if p.startswith('native/') and p not in ['native/host.c','native/shared-host.c','native/surface.h','native/authority.cpp','native/shared-context.h','native/shared-context-test.c'])
     assert all('surface.h' not in (INPUT/'native'/name).read_text() for name in units)
    if POPUP:
-    assert all(sha(INPUT/p)==h for p,h in prior['inputs'].items() if p.startswith('native/') and p not in ['native/host.c','native/shared-host.c'])
+    assert all(sha(INPUT/p)==h for p,h in prior['inputs'].items() if p.startswith('native/') and p not in ['native/host.c','native/shared-host.c']+(['native/shared-context.h','native/shared-context-test.c'] if BARRETURN else []))
     assert all(sha(INPUT/'assets'/n)==h for n,h in previous['compiledAssets'].items())
    if PINMENUS or REFLOW:
     # Only the owning GTK host changes; every reused C++ dependency is exact.
@@ -278,7 +283,7 @@ console.log('Current body-target Escape releases once; stale scope, preedit, rep
     futures=[pool.submit(run,name+'-compile',['g++','-std=c++20','-O2','-Wall','-Wextra','-Werror','-Wno-deprecated-declarations','-c','native/'+name,'-o',str(OUT/(name+'.o')),*flags]) for name in units]
     for future in futures:future.result()
   run('host-link',['g++',str(OUT/'host.o'),*[str(OUT/(name+'.o')) for name in units],'-o',str(OUT/'elm-host'),*flags]);report['binarySHA256']=sha(OUT/'elm-host')
-  if SWITCHER or KEYBOARD:
+  if SWITCHER or KEYBOARD or BARRETURN:
    run('popup-context-compile',['cc','-std=c11','-O2','-Wall','-Wextra','-Werror','-Wno-deprecated-declarations','-c','native/shared-context-test.c','-o',str(OUT/'popup-context.o'),*flags])
    run('popup-context-link',['g++',str(OUT/'popup-context.o'),*[str(OUT/(name+'.o')) for name in units],'-o',str(OUT/'popup-context-tests'),*flags])
    run('popup-context-tests',[str(OUT/'popup-context-tests')])

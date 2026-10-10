@@ -208,5 +208,26 @@ int main(void) {
     json_node_unref(nav);
     json_node_unref(menu);
     json_node_unref(request);json_node_unref(surface_snapshot);surface_snapshot=NULL;g_ptr_array_unref(output_views);output_views=NULL;
+    output_views=g_ptr_array_new();g_ptr_array_add(output_views,&one);g_ptr_array_add(output_views,&two);
+    one.active=TRUE;two.active=TRUE;one.context_keys=(ContextKeySource){0};two.context_keys=(ContextKeySource){0};
+    one.forwarded_context_keys=(ContextKeySource){0};
+    ContextKeySignature original={GDK_KEY_PRESS,100,64,GDK_KEY_Alt_L,0,0,111,222};
+    CHECK("native original key admitted once",context_keys_admit(&one.context_keys,&original)==1);
+    CHECK("exact replay identifies its live original bar",context_replay_source(GTK_WIDGET(popup_view),&original)==&one);
+    CHECK("same receiver retains its existing replay path",!context_replay_source(GTK_WIDGET(one.engine),&original));
+    for(guint i=0;i<8;i++) {
+        ContextKeySignature foreign=original;
+        switch(i) {case 0:foreign.type++;break;case 1:foreign.time++;break;case 2:foreign.hardware++;break;case 3:foreign.keyval++;break;
+            case 4:foreign.state++;break;case 5:foreign.group++;break;case 6:foreign.window++;break;case 7:foreign.device++;break;}
+        CHECK("every immutable signature field must match",!context_replay_source(GTK_WIDGET(popup_view),&foreign));
+    }
+    CHECK("exact replay forwarded once",context_keys_admit(&one.forwarded_context_keys,&original)==1);
+    CHECK("duplicate forwarded replay refused",context_keys_admit(&one.forwarded_context_keys,&original)==0);
+    CHECK("forwarding never remints physical proof",one.context_keys.count==1 && context_keys_admit(&one.context_keys,&original)==0);
+    one.active=FALSE;CHECK("retired original engine cannot receive replay",!context_replay_source(GTK_WIDGET(popup_view),&original));
+    one.active=TRUE;CHECK("ambiguous duplicate source is refused",context_keys_admit(&two.context_keys,&original)==1 && !context_replay_source(GTK_WIDGET(popup_view),&original));
+    two.context_keys=(ContextKeySource){0};one.context_keys=(ContextKeySource){0};
+    CHECK("replacement engine cannot borrow earlier key proof",!context_replay_source(GTK_WIDGET(popup_view),&original));
+    g_ptr_array_unref(output_views);output_views=NULL;
     g_print("shared-context-checks: %u\n",checks);return 0;
 }

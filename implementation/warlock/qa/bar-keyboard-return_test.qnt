@@ -1,0 +1,22 @@
+module bar_keyboard_return_test {
+  import bar_keyboard_return.* from "./bar-keyboard-return"
+  run unresolvedReplayLosesNextHomeTest = init.then(physicalModifier).then(openPopup).then(dismiss).then(home)
+    .then(all { assert(s.pending and s.delivered == 0), s' = s })
+  run exactReplayDeliversNextHomeTest = init.then(physicalModifier).then(openPopup)
+    .then(routeReplay(1, 1)).then(dismiss).then(home)
+    .then(all { assert(s.delivered == 1 and s.proofs == 1 and safety), s' = s })
+  run repeatedReturnKeepsWorkingTest = init.then(physicalModifier).then(openPopup).then(routeReplay(1, 1)).then(dismiss).then(home)
+    .then(physicalModifier).then(openPopup).then(routeReplay(2, 1)).then(dismiss).then(home)
+    .then(all { assert(repeatedReturn and safety), s' = s })
+  run duplicateCannotCreateAnotherProofTest = init.then(physicalModifier).then(openPopup).then(routeReplay(1, 1))
+    .then(routeReplay(1, 1)).then(all { assert(s.routed == 1 and s.proofs == 1 and safety), s' = s })
+  run foreignSignatureCannotRouteTest = init.then(physicalModifier).then(openPopup).then(routeReplay(2, 1))
+    .then(all { assert(s.routed == 0 and s.pending), s' = s })
+  run foreignGenerationCannotRouteTest = init.then(physicalModifier).then(openPopup).then(routeReplay(1, 2))
+    .then(all { assert(s.routed == 0 and s.pending), s' = s })
+  run retiredEngineCannotRouteTest = init.then(physicalModifier).then(retireOwner).then(routeReplay(1, 1))
+    .then(all { assert(s.routed == 0 and s.proofs == 1), s' = s })
+  run replacementCannotBorrowOldReplayTest = init.then(physicalModifier).then(retireOwner).then(replaceOwner)
+    .then(routeReplay(1, 1)).then(routeReplay(1, 2))
+    .then(all { assert(s.routed == 0 and s.proofs == 1 and safety), s' = s })
+}
