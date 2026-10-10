@@ -2,13 +2,13 @@
 import hashlib,importlib.util,json,pathlib,resource,shlex,shutil,subprocess,sys,time
 sys.path.insert(0,'/home/hoskinson/window-integration-qa')
 from qa_launch import require_qa_scope
-assert not sys.argv[1:] or sys.argv[1:] in [['--caption'],['--terminal']]
+assert not sys.argv[1:] or sys.argv[1:] in [['--caption'],['--terminal'],['--restoration']]
 mode=sys.argv[1] if sys.argv[1:] else '--keys'
 scope=require_qa_scope();assert resource.getrlimit(resource.RLIMIT_CORE)==(1,1)
 ROOT=pathlib.Path(__file__).resolve().parents[1];REPO=ROOT.parents[1]
 OWNER=REPO/'implementation/maximized-stack-v1/native-core-v2'
 pointer=json.loads((ROOT/'qa/current-scene-core.json').read_text());previous=REPO/pointer['report'];prior=json.loads(previous.read_text());PRIOR=previous.parent
-prefix={'--caption':'caption','--terminal':'gesture-terminal','--keys':'gesture'}[mode]
+prefix={'--caption':'caption','--terminal':'gesture-terminal','--keys':'gesture','--restoration':'caption-restoration'}[mode]
 OUT=ROOT/'qa/runs'/(prefix+'-core-'+str(time.time_ns()));OUT.mkdir()
 sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
 spec=importlib.util.spec_from_file_location('owning_archive',REPO/'implementation/warlock-core-family-crop-v16/qa/archive.py');archive=importlib.util.module_from_spec(spec);spec.loader.exec_module(archive)
@@ -25,12 +25,12 @@ def dependencies(path):
 try:
  assert prior['passed'] and sha(previous)==pointer['reportSHA256'] and sha(prior['binary'])==prior['binarySHA256'] and sha(PRIOR/'libhyprland_lib.a')==prior['archiveSHA256']
  for p,h in {**prior['dependencies'],**prior['linkDependencies']}.items():assert sha(p)==h,p
- units={'--keys':['src/managers/KeybindManager.cpp'],'--caption':['src/desktop/view/Window.cpp'],'--terminal':['src/managers/KeybindManager.cpp','src/desktop/view/Window.cpp','src/layout/supplementary/DragController.cpp','src/managers/input/InputManager.cpp']}[mode]
- primary_header={'--keys':'GestureKeyPolicy.hpp','--caption':'CaptionGesturePolicy.hpp','--terminal':'GestureEndPolicy.hpp'}[mode]
+ units={'--keys':['src/managers/KeybindManager.cpp'],'--caption':['src/desktop/view/Window.cpp'],'--restoration':['src/managers/KeybindManager.cpp','src/desktop/view/Window.cpp','src/layout/supplementary/DragController.cpp'],'--terminal':['src/managers/KeybindManager.cpp','src/desktop/view/Window.cpp','src/layout/supplementary/DragController.cpp','src/managers/input/InputManager.cpp']}[mode]
+ primary_header={'--keys':'GestureKeyPolicy.hpp','--caption':'CaptionGesturePolicy.hpp','--terminal':'GestureEndPolicy.hpp','--restoration':'GestureEndPolicy.hpp'}[mode]
  changed_paths={'native/core/'+pathlib.Path(p).name for p in units}|{'native/core/'+primary_header}
  for p,h in prior['sourceHashes'].items():
   if p not in changed_paths:assert sha(ROOT/p)==h,p
- model_name={'--keys':'gesture-keys','--caption':'caption-gesture','--terminal':'gesture-end'}[mode]
+ model_name={'--keys':'gesture-keys','--caption':'caption-gesture','--terminal':'gesture-end','--restoration':'caption-restoration'}[mode]
  model=json.loads(run(model_name+'-model',['/usr/bin/python3','-B',ROOT/('qa/check-'+model_name+'.py')],REPO));assert model['passed'];r[model_name+'Model']=model
  tree=OUT/'owning-headers';shutil.copytree(PRIOR/'owning-headers',tree)
  for rel,h in prior['owningHeaders'].items():assert sha(tree/rel)==h

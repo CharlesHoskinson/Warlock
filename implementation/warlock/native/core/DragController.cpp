@@ -82,6 +82,7 @@ bool CDragStateController::exclusiveDeviceGrab() const {
 
 bool CDragStateController::updateDragWindow() {
     const auto DRAGGINGTARGET = m_target.lock();
+    const auto origin = WarlockGestureEnd::origin(this, DRAGGINGTARGET);
     const bool WAS_FULLSCREEN = DRAGGINGTARGET->window() ? Fullscreen::controller()->isFullscreen(DRAGGINGTARGET->window()) : false;
 
     if (m_dragThresholdReached) {
@@ -103,9 +104,10 @@ bool CDragStateController::updateDragWindow() {
     m_draggingTiled                   = false;
     m_draggingWindowOriginalFloatSize = DRAGGINGTARGET->lastFloatingSize();
 
-    if (WAS_FULLSCREEN && DRAGGINGTARGET->floating() && m_dragThresholdReached) {
-        const auto MOUSECOORDS = g_pInputManager->getMouseCoordsInternal();
-        DRAGGINGTARGET->setPositionGlobal(CBox{MOUSECOORDS - DRAGGINGTARGET->position().size() / 2.F, DRAGGINGTARGET->position().size()});
+    if (DRAGGINGTARGET->floating() && m_dragMode == MBIND_MOVE && m_dragThresholdReached && origin && (WAS_FULLSCREEN || origin->snapped)) {
+        const auto size = origin->snapped ? origin->snapped->size() : origin->floatingSize;
+        DRAGGINGTARGET->setPositionGlobal(WarlockGestureEnd::anchored(*origin, g_pInputManager->getMouseCoordsInternal(), size));
+        WarlockGestureEnd::captured.restored = true;
     } else if (!DRAGGINGTARGET->floating() && m_dragMode == MBIND_MOVE) {
         Vector2D MINSIZE = DRAGGINGTARGET->minSize().value_or(Vector2D{MIN_WINDOW_SIZE, MIN_WINDOW_SIZE});
         DRAGGINGTARGET->rememberFloatingSize((DRAGGINGTARGET->position().size() * 0.8489).clamp(MINSIZE, Vector2D{}).floor());
@@ -153,11 +155,13 @@ void CDragStateController::dragBegin(SP<ITarget> target, eMouseBindMode mode, st
         return;
     }
 
-    WarlockGestureEnd::begin(this, DRAGGINGTARGET);
+    WarlockGestureEnd::begin(this, DRAGGINGTARGET, g_pInputManager->getMouseCoordsInternal(), exclusiveDeviceGrab && mode == MBIND_MOVE);
 
     // Try to pick up dragged window now if drag_threshold is disabled
     // or at least update dragging related variables for the cursors
-    m_dragThresholdReached = *PDRAGTHRESHOLD <= 0;
+    const auto origin = WarlockGestureEnd::origin(this, DRAGGINGTARGET);
+    const bool restoresCaption = origin && origin->captionRestore;
+    m_dragThresholdReached = *PDRAGTHRESHOLD <= 0 && !restoresCaption;
     if (updateDragWindow())
         return;
 
@@ -223,7 +227,8 @@ void CDragStateController::dragBegin(SP<ITarget> target, eMouseBindMode mode, st
 }
 void CDragStateController::dragEnd() {
     auto draggingTarget = m_target.lock();
-    const auto originSpace = WarlockGestureEnd::takeOrigin(this, draggingTarget);
+    const auto origin = WarlockGestureEnd::takeOrigin(this, draggingTarget);
+    const auto originSpace = origin ? origin->space.lock() : nullptr;
 
     m_mouseMoveEventCount = 1;
 
@@ -257,7 +262,11 @@ void CDragStateController::dragEnd() {
                     g_layoutManager->changeFloatingMode(draggingTarget);
                 draggingTarget->rememberFloatingSize(m_draggingWindowOriginalFloatSize);
             } else if (draggingTarget->floating()) {
-                g_layoutManager->setTargetGeom(CBox{m_beginDragPositionXY, m_beginDragSizeXY}, draggingTarget);
+                g_layoutManager->setTargetGeom(origin->box, draggingTarget);
+                const auto modes = Fullscreen::controller()->getFullscreenModes(draggingTarget->window());
+                if (modes.internal != origin->modes.internal || modes.client != origin->modes.client)
+                    Fullscreen::controller()->setFullscreenMode(draggingTarget->window(), origin->modes.internal, origin->modes.client);
+                draggingTarget->rememberFloatingSize(origin->floatingSize);
             }
             draggingTarget->window()->resetMotionBlur();
             draggingTarget->window()->m_floatingOffset = {};
@@ -268,6 +277,17 @@ void CDragStateController::dragEnd() {
         return;
     }
 
+    // A captured caption click must not rewrite MAX's ordinary floating size
+    // through setTargetGeom, group a window, or redirect focus without motion.
+    if (m_dragMode == MBIND_MOVE && origin && origin->captionRestore && !origin->restored) {
+        finishWithoutDrop();
+        return;
+    }
+    if (origin && origin->modes.internal == Fullscreen::FSMODE_MAXIMIZED && m_dragMode == MBIND_MOVE && origin->restored &&
+        Fullscreen::controller()->getFullscreenModes(draggingTarget->window()).internal == Fullscreen::FSMODE_NONE && WarlockGestureEnd::releaseMaxPlacement)
+        WarlockGestureEnd::releaseMaxPlacement(draggingTarget->window());
+    if (origin && origin->snapped && m_dragMode == MBIND_MOVE && origin->restored)
+        WarlockGestureEnd::forgetSnap(draggingTarget);
     Pointer::Cursor::overrideController->unsetOverride(Pointer::Cursor::CURSOR_OVERRIDE_SPECIAL_ACTION);
     m_target.reset();
     m_wasDraggingWindow = true;
@@ -342,8 +362,11 @@ void CDragStateController::mouseMove(const Vector2D& mousePos) {
         return;
     }
 
-    // Yoink dragged window here instead if using drag_threshold and it has been reached
-    if (*PDRAGTHRESHOLD > 0 && !m_dragThresholdReached) {
+    // Keybind handling resets its threshold observation after a native bind.
+    // Only the captured caption's private phase may defer zero-threshold motion.
+    const auto origin = WarlockGestureEnd::origin(this, DRAGGINGTARGET);
+    const bool pendingCaption = origin && origin->captionRestore && !origin->restored;
+    if ((*PDRAGTHRESHOLD > 0 && !m_dragThresholdReached) || pendingCaption) {
         if ((m_beginDragXY.distanceSq(mousePos) <= std::pow(*PDRAGTHRESHOLD, 2) && m_beginDragXY == m_lastDragXY))
             return;
         m_dragThresholdReached = true;

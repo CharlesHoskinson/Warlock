@@ -1,13 +1,73 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T10:59:07.718406+00:00",
+  "updatedUTC": "2026-10-10T11:41:38.821504+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
+    "id": "native-caption-placement-restoration",
+    "requirements": [
+      "ELM-UX-021"
+    ],
+    "scenarios": [
+      "ux-021"
+    ],
+    "paths": [
+      "implementation/warlock/native/core/DragController.cpp",
+      "implementation/warlock/native/core/GestureEndPolicy.hpp",
+      "implementation/warlock/native/authority.cpp",
+      "implementation/warlock/native/snap-placement.inc",
+      "implementation/warlock/qa/caption-restoration.qnt",
+      "implementation/warlock/qa/caption-restoration_test.qnt",
+      "implementation/warlock/qa/check-caption-restoration.py",
+      "implementation/warlock/qa/native-caption-restoration.py",
+      "implementation/warlock/qa/check-gesture-core.py",
+      "implementation/warlock/qa/check-native-authority.py",
+      "implementation/warlock/qa/native-window-feedback.py",
+      "implementation/warlock/qa/current-scene-core.json",
+      "implementation/warlock/qa/current-native-pair.json",
+      "implementation/warlock/README.md",
+      "implementation/warlock/native/geometry-effects.inc"
+    ],
+    "before": "Native maximized caption restoration centers the ordinary box under the pointer and cancellation snapshots only post-restoration geometry. Negotiated snap placement does not retain an ordinary caption restore box.",
+    "after": "The captured current native owner keeps its fractional horizontal caption press offset while restoring a maximized or snap placement. Escape restores the original geometry, mode and live source space without drop/focus or stale replacement adoption.",
+    "verification": [
+      "Quint-llm-kit incremental original caption/native-drag geometry correspondence with explicit named and reachable witnesses, actual current-pair GTK maximized/snap press fractions and cancel/release readback, old lifecycle negative cases and retained drafts, exact owning changed-TU/plugin rebuild and ABI/dependency provenance. Original full two-output capture and native AT/full release acceptance remain open."
+    ],
+    "owner": "root-caption-restoration",
+    "participantRecord": ".warlock-contributor/caption-restoration.json",
+    "evidence": {
+      "path": "implementation/warlock/qa/evidence/native-caption-placement-restoration/manifest.json",
+      "sha256": "75ace5b6efbb205e97de5fa6d0d0ffc55be5f155dff0164dbe2e8a13734552ea"
+    },
+    "disposition": "partial",
+    "observed": "Native maximized and committed left-half snapped captions now retain placement on a click without movement, restore ordinary size at the original horizontal press fraction, and restore the captured box/modes/source workspace on Escape. Actual quarter- and three-quarter-width drags, one-output pixels, committed release, unsaved drafts and captured-owner retirement/replacement pass. A released MAX caption retires its exact old ordinary placement so the next maximize/restore captures the new box. The admitted restore effect now applies its saved prospective ordinary box after validating live identity/mode/scope. The final caption/lifecycle and original modal/draft regressions pass. Original two-output input and cross-output rollback assertions pass again after separating caption phase from the shared keybind threshold flag; full combined capture still fails at the original five-second limit. UX-021 and the release remain partial.",
+    "missingObservations": [
+      "Original two-output combined capture still fails its unchanged five-second grim limit; bounded one-output images do not substitute for it.",
+      "Native fullscreen/tiled/grouped restoration, the other snap regions/repeated snaps, nondefault thresholds/key traffic, constraints/scale/rotation and resize-mode placement transitions remain unqualified.",
+      "Active-gesture reload/reattachment, source-space loss, hidden/disabled outputs, device/hotplug/lock/grab and wider output/lifecycle schedules, other toolkits, native AT and independent original UX-021 review remain open.",
+      "Full original native/IME/hardware/resource/journey/package/reversible deployment/rollback release gates remain open."
+    ],
+    "nextSourceWork": "Implement the demonstrated original two-output presentation gap in the existing owning renderer/output path at the unchanged capture limit; preserve the actual input passes and failed recording. Keep quint-llm-kit tied to original properties. If no production fix or original verdict is obtained within the workflow limit, record the missing observation and continue another mandatory GUI slice."
+  },
+  "nextSlices": [
+    "taskbar activation/minimize/restore and popup focus journeys",
+    "persistent catalog pins",
+    "launcher search and refusal recovery",
+    "switcher/Task View/workspaces and snap/output journeys",
+    "authorized visible previews and fallback",
+    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
+    "original native, AT/IME, hardware/resource/journey gates",
+    "reproducible package, reversible deployment/rollback"
+  ],
+  "releaseAccepted": false,
+  "oldTrackerIsCurrent": false,
+  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
+  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
+  "previousSlice": {
     "id": "native-gesture-terminal-reasons",
     "requirements": [
       "ELM-UX-021"
@@ -53,64 +113,6 @@
       "Full original native/IME/hardware/resource/journey/package/deployment/rollback release gates remain open."
     ],
     "nextSourceWork": "Implement original maximized/snapped caption restoration and fractional press anchoring with actual native rollback and retained drafts. Use quint-llm-kit against unchanged original caption/native-drag properties. Preserve the failed original combined capture and remaining release gates."
-  },
-  "nextSlices": [
-    "taskbar activation/minimize/restore and popup focus journeys",
-    "persistent catalog pins",
-    "launcher search and refusal recovery",
-    "switcher/Task View/workspaces and snap/output journeys",
-    "authorized visible previews and fallback",
-    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
-    "original native, AT/IME, hardware/resource/journey gates",
-    "reproducible package, reversible deployment/rollback"
-  ],
-  "releaseAccepted": false,
-  "oldTrackerIsCurrent": false,
-  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
-  "previousSlice": {
-    "id": "caption-gesture-admission",
-    "requirements": [
-      "ELM-UX-021"
-    ],
-    "scenarios": [
-      "ux-021"
-    ],
-    "paths": [
-      "implementation/warlock/native/core/Window.cpp",
-      "implementation/warlock/native/core/CaptionGesturePolicy.hpp",
-      "implementation/warlock/qa/caption-gesture.qnt",
-      "implementation/warlock/qa/caption-gesture_test.qnt",
-      "implementation/warlock/qa/check-caption-gesture.py",
-      "implementation/warlock/qa/caption-gesture-fixture.py",
-      "implementation/warlock/qa/native-caption-gesture.py",
-      "implementation/warlock/qa/check-gesture-core.py",
-      "implementation/warlock/qa/check-native-authority.py",
-      "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/qa/current-scene-core.json",
-      "implementation/warlock/qa/current-native-pair.json",
-      "implementation/warlock/README.md",
-      "implementation/warlock/qa/native-max-input-region.py"
-    ],
-    "before": "XDG caption/edge requests consume a valid native press serial, then start a drag without checking the current eligible family recipient or protected-input conditions. Policy may change while the button remains held.",
-    "after": "Current native caption/edge admission uses the existing modal recipient and protected-input policy, requires the requesting window to remain that exact eligible recipient, and never redirects a gesture or replays a consumed press.",
-    "verification": [
-      "quint-llm-kit incremental native grant/current-recipient model plus frozen caption_drag/native_drag named safety checks; actual current-core pre-change GTK/Gdk delayed request counterexample, ordinary caption/edge move/resize, no-focus/modal changes during held press, one-use serial, native owner/end, draft/peer preservation and original clocks/custody; exact one-TU core/plugin rebuild and modal regression. Original two-output combined capture stays failed and release remains partial."
-    ],
-    "status": "implemented-partial",
-    "participantRecord": ".warlock-contributor/caption.json",
-    "evidence": {
-      "path": "implementation/warlock/qa/evidence/caption-gesture-admission/manifest.json",
-      "sha256": "c4d601f76acc6f1738c5be3927c716550efc91241c232fa79f25513cdbe5f0ae"
-    },
-    "observed": "Native caption moves and edge resizes preserve their original owner, finish once on release and keep the unsaved GTK draft. Admission now rechecks the current shared family recipient and protected-input policy after the actual XDG press grant is consumed. Held presses refused after no-focus or a mapped modal cannot replay when eligibility returns. The one-output native addition, matched core/plugin rebuild, Quint checks and unchanged modal/draft regression pass. The original full two-output capture remains failed; UX-021 and the release remain partial.",
-    "missingObservations": [
-      "Original two-output combined capture still fails its unchanged five-second grim limit; the new one-output image does not substitute for it.",
-      "Caption cancellation/geometry rollback, close/reload and incarnation replacement during an active gesture, snapped-caption restoration, device/hotplug/lock and wider output schedules still need native implementation/qualification.",
-      "Protected-input and stale-incarnation admission are modeled/source-checked here; no native lock/grab/device or close/reuse claim. Other toolkit captions, AT and independent original scenario acceptance remain open.",
-      "Full original native/IME/hardware/resource/journey/package/rollback release gates remain open."
-    ],
-    "nextSourceWork": "Original UX-021 close/reload and snapped-caption/cancel integration: exercise the actual owning native drag controller with owner retirement and retained drafts, model the exact demonstrated gap with quint-llm-kit and implement it in the current candidate. Preserve the failed original two-output capture and all other release gates."
   },
   "recentSlices": [
     {

@@ -1,0 +1,379 @@
+{
+  "schema": 1,
+  "requirements": [
+    "ELM-UX-021"
+  ],
+  "scenarios": [
+    "ux-021"
+  ],
+  "originalOracle": "exactly one gesture ends and no shell surface steals the drag",
+  "sourceParent": "a24a205f937aaf7573b4673a4b3bf2d2f729c069",
+  "sourceHashes": {
+    "implementation/warlock/native/core/DragController.cpp": "64ddec65ec07f8e116d5149003019fd64a07cb2b5d422484eded3c00754cbb89",
+    "implementation/warlock/native/core/GestureEndPolicy.hpp": "cba651c875c980c357a6bfe7d5e567da424cf8dd7f11537f8195a74ec52f5946",
+    "implementation/warlock/native/authority.cpp": "604462a1f4d2ac2551ead9b6f54dd2de586662e8b96893bee0dbed1aecc1d78f",
+    "implementation/warlock/native/snap-placement.inc": "3c7e92f10ce480a7512fe845a2155946b624f7a8ca669c90ee4040f09897de2e",
+    "implementation/warlock/qa/caption-restoration.qnt": "2d884dc95e56d7d02f2463bfe0bf6b66ebfd081951b5c11354a52d7f8510496a",
+    "implementation/warlock/qa/caption-restoration_test.qnt": "6d44f692aa27501078d024c57f25164c978997c7bf1b0324cfb62a6e2c31b437",
+    "implementation/warlock/qa/check-caption-restoration.py": "3e0288bacc31be898dbe392b3fca82cbbb179eff640c1b6944d40079098ab791",
+    "implementation/warlock/qa/native-caption-restoration.py": "a66e4a0c2c3f026f2b467c8621344d7fd4610939e0c9d7e381860b2bdea4e7b0",
+    "implementation/warlock/qa/check-gesture-core.py": "31598efe2cb3e9c4310fc1bb7c9778e2bf2efabf7a0f83ea542cfedb117ea346",
+    "implementation/warlock/qa/check-native-authority.py": "36c96f267ed65c9efd787dc710b509757c33a54330b12959db055316dd5d4974",
+    "implementation/warlock/qa/native-window-feedback.py": "98fb7268700715ae3f8769acdeb237b0aabe2f9bb29fe6122c92a6c817df6ebb",
+    "implementation/warlock/qa/current-scene-core.json": "4508636af91ee79fb9031f447574e99b1c03425aef085c5ed1896d5306e83f3f",
+    "implementation/warlock/qa/current-native-pair.json": "220349346b001e0d61259aeb3c68bd1e62eaf80dea427cc199b5893de2fabcb0",
+    "implementation/warlock/README.md": "968bbb0a87d11e7eb1f743d89f9e848e23bb2487883905b9b263a69c14e3959a",
+    "implementation/warlock/native/geometry-effects.inc": "3fb8e9cf84c36885f03cafe5c1fcfcf2cd3ff09bd6d899be23af3fad8bea027e"
+  },
+  "frozenRequirements": {
+    "path": "docs/elm-roadmap/requirements.json",
+    "sha256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
+    "requirements": 242,
+    "scenarios": 417
+  },
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/caption-restoration-core-1791632039383974154/Hyprland",
+      "sha256": "ec3235594badf0d2bde034db7c126fe919ad572d6eafa44f840dc4a34d824c9c"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791632197352173208/elm-window-geometry-authority.so",
+      "sha256": "ed4cb68f306ebd225eb0a0b7c310efc3252d6703fa81eff50bccbf31c60b1ad4"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "currentSceneCore": {
+    "schema": 1,
+    "report": "implementation/warlock/qa/runs/caption-restoration-core-1791632039383974154/report.json",
+    "reportSHA256": "1ec1e806747bb5b900cfd56fb2b631a9af4331e1c3a18dd3f60f023c3ba68827",
+    "binarySHA256": "ec3235594badf0d2bde034db7c126fe919ad572d6eafa44f840dc4a34d824c9c",
+    "nativeAcceptance": false
+  },
+  "unchangedHost": {
+    "report": "implementation/warlock/qa/runs/drag-ownership-1791625062835115910/report.json",
+    "reportSHA256": "f86ab99a265c39952e365276cd790ef312c0621ccd94be43e12b2e0fafd45365",
+    "compiledAssets": {
+      "elm.js": "071739be5596bde5129da1b901b5ae7358065bbe991a17f3749942b5b1b5855a",
+      "bar.js": "1b490122e33ec692c225c2f6936d2e05eb23cc0ec91c9fa0d2a16469c030cff1",
+      "popup.js": "c12dc5323bbaaf2d83cff1799b1e0e72c861d012f6db0da39d50adb62648f933"
+    }
+  },
+  "hostSourceAccounting": "Host C/Elm/assets are unchanged. Three changed authority-only native inputs are checked against the fresh matched authority report, not their historical host-report scan; all other recorded host inputs retain their original hashes. No host compiler/deadline bypass.",
+  "unchangedAdapters": {
+    "implementation/warlock/qa/native-caption-gesture.py": "ca9acdeb0a1c1ec104c91f1e21beaa4e2ea5bcc830a05dc48c6c21d60808abb1",
+    "implementation/warlock/qa/native-gesture-end.py": "9dc064fdb81e828782cde60c735e34392c12e0697bb2331a4b269be829c6f484",
+    "implementation/warlock/qa/caption-gesture-fixture.py": "c5886dbf6d40096d633bb4859d3ec05f254a48e6f305fd57495dc52e40b737e4",
+    "implementation/warlock/qa/native-modal-draft-focus.py": "4a4a1d43362865e7935d64548b752ed51865b670b3bb685b572a3ec21ec687b0"
+  },
+  "artifacts": {
+    "native-before": {
+      "path": "implementation/warlock/qa/runs/native-caption-restoration-1791630405430429204/report.json",
+      "sha256": "27b4b7baa7178a6de4816e6dafcb2910653a3909316819b6d9a0ad92de686473",
+      "packet": "native-before.json.gz",
+      "packetSHA256": "338b2f099fa375aabc3bcf059f8f8486aa2aa1669776a375bdad2d5f61b47ab6",
+      "encoding": "gzip",
+      "passed": false
+    },
+    "size-counterexample": {
+      "path": "implementation/warlock/qa/runs/native-caption-restoration-1791630699609074222/report.json",
+      "sha256": "97e8a75ab743573200f9aaf15e2040b77c64b474d987f6b99828b29f8524d6e6",
+      "packet": "size-counterexample.json.gz",
+      "packetSHA256": "8259f1c51538726ad69c3a750e9e3392faedfa5177d3cba117d1dcab00dfbde3",
+      "encoding": "gzip",
+      "passed": false
+    },
+    "restore-counterexample": {
+      "path": "implementation/warlock/qa/runs/native-caption-restoration-1791630865820237539/report.json",
+      "sha256": "94d73e2c4e13787ec2a7ae59f408640de953f7bcc6efab8471ca43158bbb7f21",
+      "packet": "restore-counterexample.json.gz",
+      "packetSHA256": "df95b87acb0087c7d9070675128293608a5acf9e6c22d5067e11a8bfe6713174",
+      "encoding": "gzip",
+      "passed": false
+    },
+    "remaximize-counterexample": {
+      "path": "implementation/warlock/qa/runs/native-caption-restoration-1791631299800204099/report.json",
+      "sha256": "2d8b99f7cc7e95ac2fd5c0971c3e03993e5eed792a7424e1b4e747e073cc502e",
+      "packet": "remaximize-counterexample.json.gz",
+      "packetSHA256": "3b753b4d33941375db23b99ca304723a75b6f43820e6d0f42689dcba86eb2db7",
+      "encoding": "gzip",
+      "passed": false
+    },
+    "keybind-phase-counterexample": {
+      "path": "implementation/warlock/qa/runs/native-drag-ownership-1791631731675569730/report.json",
+      "sha256": "e6e669a52c09c499400b464f7709e906cb62c241f7fa8ca2e0ba93e2bc82313f",
+      "packet": "keybind-phase-counterexample.json.gz",
+      "packetSHA256": "388e1a56d1d8409897c806828a08ce817ba4a4241aee5f966ab962ea5683e825",
+      "encoding": "gzip",
+      "passed": false
+    },
+    "native-after": {
+      "path": "implementation/warlock/qa/runs/native-caption-restoration-1791632296703197321/report.json",
+      "sha256": "0d39c61c021ded6dacb9708fd8baa7d84d3001575edba27c31c692829cbe43df",
+      "packet": "native-after.json.gz",
+      "packetSHA256": "0518f9f5f7661529871a70ef4c332d87d84ea6c9c09472948427867cce1ec44d",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "original-two-output": {
+      "path": "implementation/warlock/qa/runs/native-drag-ownership-1791632246065683239/report.json",
+      "sha256": "754bcc9260cc6b0e96e5655ba6ae178b1b6c8f4b3e113a1ea945b143805f5433",
+      "packet": "original-two-output.json.gz",
+      "packetSHA256": "c4495146825095186da1f6b35d5c04db1aa447b456289312c6e185168c8c7806",
+      "encoding": "gzip",
+      "passed": false
+    },
+    "native-modal-regression": {
+      "path": "implementation/warlock/qa/runs/native-modal-draft-focus-1791632352317316003/report.json",
+      "sha256": "e9bb17160adf31923dfa3f718fdf82d35cdb694f1e48364c3f91c5203db6913e",
+      "packet": "native-modal-regression.json.gz",
+      "packetSHA256": "18b3330efa4fa5b64da95cc28eec2294cd6354af8ee6026961395efd21367a54",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "core-build": {
+      "path": "implementation/warlock/qa/runs/caption-restoration-core-1791632039383974154/report.json",
+      "sha256": "1ec1e806747bb5b900cfd56fb2b631a9af4331e1c3a18dd3f60f023c3ba68827",
+      "packet": "core-build.json.gz",
+      "packetSHA256": "acde80b0a59d3c856cfb1706812b546088480418aaa59acce627bf00f7c88646",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "plugin-build": {
+      "path": "implementation/warlock/qa/runs/native-authority-1791632197352173208/report.json",
+      "sha256": "7bb4114812f13716cb18f902d13c9398b3952fcbdbfd780df056660ad075f2ff",
+      "packet": "plugin-build.json.gz",
+      "packetSHA256": "19dda3f441f127d2c9e01e2360878b75467589163b3d060b10dfd5962eb125fb",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "core-parent-initial": {
+      "path": "implementation/warlock/qa/runs/caption-restoration-core-1791630523188237403/report.json",
+      "sha256": "12b40c4a00b0a1b6ca38505e2bbdf752c8ca49cd3fb00f248e39dfd26c80406b",
+      "packet": "core-parent-initial.json.gz",
+      "packetSHA256": "ae3c9ec2eabab33c7a8c042cee55c737e7e6e6a8e0c12d446c8e8db973e362e5",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "core-parent-click-fix": {
+      "path": "implementation/warlock/qa/runs/caption-restoration-core-1791630778136912224/report.json",
+      "sha256": "326705059f35187a9640ca105210a2c07fe5c78c797f45e702d870d46f04947e",
+      "packet": "core-parent-click-fix.json.gz",
+      "packetSHA256": "e63b28a0335a8063d2f230398335428ceb0cdc7fab1d705a6cb5cbb4e075644b",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "core-parent-release-fix": {
+      "path": "implementation/warlock/qa/runs/caption-restoration-core-1791631351005352762/report.json",
+      "sha256": "71ae772e0c96315cf24c5a1a17aa4577f57a48fa8dc9dfb10a93332f5a49fe14",
+      "packet": "core-parent-release-fix.json.gz",
+      "packetSHA256": "05340cc09f7347b02715d80d99c6cb09ce0d795b19b3dc1a3390e4b4570de6ad",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "model-initial-syntax-failure": {
+      "path": "implementation/warlock/qa/runs/caption-restoration-1791630247142505830/report.json",
+      "sha256": "c6bb35a54e3522a00ec586b366abcd55ab067b1429211b39cf59e59ba74b73d8",
+      "packet": "model-initial-syntax-failure.json",
+      "packetSHA256": "c6bb35a54e3522a00ec586b366abcd55ab067b1429211b39cf59e59ba74b73d8",
+      "encoding": "json",
+      "passed": false
+    },
+    "model-initial-name-failure": {
+      "path": "implementation/warlock/qa/runs/caption-restoration-1791630254792287501/report.json",
+      "sha256": "a1c3a85d4dfac68e604a88b33393404e0c1cf2231e2b764273329deca9b0b845",
+      "packet": "model-initial-name-failure.json",
+      "packetSHA256": "a1c3a85d4dfac68e604a88b33393404e0c1cf2231e2b764273329deca9b0b845",
+      "encoding": "json",
+      "passed": false
+    },
+    "model-initial-test-effect-failure": {
+      "path": "implementation/warlock/qa/runs/caption-restoration-1791630267835908427/report.json",
+      "sha256": "fa1f711d15b745b8718ae0e3bb660805accb0e5086cb0d79f442835b1477ea93",
+      "packet": "model-initial-test-effect-failure.json",
+      "packetSHA256": "fa1f711d15b745b8718ae0e3bb660805accb0e5086cb0d79f442835b1477ea93",
+      "encoding": "json",
+      "passed": false
+    },
+    "model-init": {
+      "path": "implementation/warlock/qa/runs/caption-restoration-1791630259725248245/report.json",
+      "sha256": "66367ed1c1bd12f619d2b654e59456e84e559eb0ba51323b68f1f8f183ed60e3",
+      "packet": "model-init.json",
+      "packetSHA256": "66367ed1c1bd12f619d2b654e59456e84e559eb0ba51323b68f1f8f183ed60e3",
+      "encoding": "json",
+      "passed": true
+    },
+    "model-before": {
+      "path": "implementation/warlock/qa/runs/caption-restoration-1791630454977271968/report.json",
+      "sha256": "a6d94df1033b835647914dd161b2dd3010670310611b88cc5ac7e30226028b6d",
+      "packet": "model-before.json",
+      "packetSHA256": "a6d94df1033b835647914dd161b2dd3010670310611b88cc5ac7e30226028b6d",
+      "encoding": "json",
+      "passed": true
+    },
+    "model-restore-before": {
+      "path": "implementation/warlock/qa/runs/caption-restoration-1791630969501381309/report.json",
+      "sha256": "7cb1ec764bfc40620e12d2ee90d8d482619e1644b83c6393530c2b047a534113",
+      "packet": "model-restore-before.json",
+      "packetSHA256": "7cb1ec764bfc40620e12d2ee90d8d482619e1644b83c6393530c2b047a534113",
+      "encoding": "json",
+      "passed": true
+    },
+    "model-release-before": {
+      "path": "implementation/warlock/qa/runs/caption-restoration-1791631280430943254/report.json",
+      "sha256": "443388cac2d53c80a06b74d77c6f0123654160a19f77453d28cb0bb7f7bbb282",
+      "packet": "model-release-before.json",
+      "packetSHA256": "443388cac2d53c80a06b74d77c6f0123654160a19f77453d28cb0bb7f7bbb282",
+      "encoding": "json",
+      "passed": true
+    },
+    "model-after": {
+      "path": "implementation/warlock/qa/runs/caption-restoration-1791632039606731390/report.json",
+      "sha256": "6b76e4559b9091c2aded447faa18dbfcf07f8c9d44ac8932c6a2095de7dbfe10",
+      "packet": "model-after.json",
+      "packetSHA256": "6b76e4559b9091c2aded447faa18dbfcf07f8c9d44ac8932c6a2095de7dbfe10",
+      "encoding": "json",
+      "passed": true
+    }
+  },
+  "compressedLogs": {
+    "native-before-fixture.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791630405430537704/fixture.log",
+      "originalSHA256": "851a034fed70b0b98621018e26b732a8902783ed28a80b80e5f55538e6d6be72",
+      "sha256": "247cbb2e22800e34b46b4ea64fc57eb45a5dbddf6eb29009b1b08f6bbb3e4159"
+    },
+    "native-before-fixture-control.events.jsonl.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791630405430537704/fixture-control.events.jsonl",
+      "originalSHA256": "e77ef19ae5d4252e9a63042af3eb5f992a707e7f5902134f6af0710aa8539b26",
+      "sha256": "4abe9779a4c1b524c540b3cddb7a1d256655b94aafc9314fb6b5ed906f0b1703"
+    },
+    "native-after-fixture.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791632296703290991/fixture.log",
+      "originalSHA256": "31cc5909107dce6d5f7fada2f4830c2f8fe090987606621f1a7db9ea9577821e",
+      "sha256": "6ca263fba8bd8d9f4a120e8446971e88311e0424ff7eef52401f41f6c75ba775"
+    },
+    "native-after-fixture-control.events.jsonl.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791632296703290991/fixture-control.events.jsonl",
+      "originalSHA256": "bac1758af516154c46613f77cf7447ca59174d254b171e2c3c3e049ad221a55b",
+      "sha256": "a75e80eeb90cc7c89c6c9044dc3ce9e308585a0a0d76af67572f006085d982f8"
+    },
+    "model-after-named.stdout.gz": {
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/caption-restoration-1791632039606731390/named.stdout",
+      "originalSHA256": "3fccbd7ac8783da9bc60face4536cdbd9832788947b1c2605a5fcc4e593a9e93",
+      "sha256": "d93b446dfe31903fd5cc1d01ff2dd18944a9acc0e07d1a2c30d928560307c1ac"
+    },
+    "model-after-safety.stdout.gz": {
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/caption-restoration-1791632039606731390/safety.stdout",
+      "originalSHA256": "527bc9e213149e96960751b7a9f44b4d7d9b9623d1aa1ac51ead3266b9244225",
+      "sha256": "40713f726c719b13a7aa066ed2673d0f7dae7e60132feb4948d5494699d0fbb4"
+    },
+    "model-after-typecheck.stdout.gz": {
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/caption-restoration-1791632039606731390/typecheck.stdout",
+      "originalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+    },
+    "model-after-witnesses.stdout.gz": {
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/caption-restoration-1791632039606731390/witnesses.stdout",
+      "originalSHA256": "fa8a505a9c5054b30b2b7113c8bd8c6f467fd89b0832e0e7f8c4f3efb602a5a9",
+      "sha256": "b21c6a4d1dda111896d42545be6e32e09997718460ddb7134b5bfe8b5b4c5e70"
+    }
+  },
+  "images": [
+    {
+      "label": "maximize-fraction-quarter",
+      "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791632296703290991/maximize-fraction-quarter.png",
+      "sha256": "a67d2825245597755cc6c13b121118643183163a184ec15b7f30509e5872b721",
+      "geometry": [
+        299,
+        275,
+        406,
+        232
+      ],
+      "packet": "maximize-fraction-quarter.png"
+    },
+    {
+      "label": "maximize-cancel-quarter",
+      "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791632296703290991/maximize-cancel-quarter.png",
+      "sha256": "9f85beb60ec85f74cd8f87ae839fdded82254df47c0673f67ae7af09259c50ba",
+      "geometry": [
+        1,
+        49,
+        798,
+        550
+      ],
+      "packet": "maximize-cancel-quarter.png"
+    },
+    {
+      "label": "snap-fraction-quarter",
+      "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791632296703290991/snap-fraction-quarter.png",
+      "sha256": "aa5de9e6b8a4681e01c541d10939ffffb69e6bba23beae75af84746b5c3a5909",
+      "geometry": [
+        299,
+        276,
+        406,
+        232
+      ],
+      "packet": "snap-fraction-quarter.png"
+    },
+    {
+      "label": "snap-cancel-quarter",
+      "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791632296703290991/snap-cancel-quarter.png",
+      "sha256": "63992fb48dca602523cc5a56957f26225eaa7296866312a7f4b5eac4232a27ba",
+      "geometry": [
+        0,
+        48,
+        400,
+        552
+      ],
+      "packet": "snap-cancel-quarter.png"
+    },
+    {
+      "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791632296703290991/caption-gesture.png",
+      "sha256": "c4facb3ca77d1ad101a0bbbd17a8adbb7b127fa8d96750d389555d23df690592",
+      "packet": "caption-gesture.png"
+    }
+  ],
+  "productPatch": {
+    "packet": "product.patch.gz",
+    "sha256": "852b1b9de07587981d4d86bc64ba2fa7161c141b1cc6e7a92515705a3d83d08f",
+    "uncompressedSHA256": "1c91819fb2eb64216c1454e02d9697c2d379c523c088c4f29fb60e97f932e894"
+  },
+  "originalModelsUnchanged": {
+    "window-behavior-spec/caption_drag.qnt": "990ef55fec4b51bf7f78a59aa2d053c924c275092f71f654d7bdfd9ae8ae83c9",
+    "window-behavior-spec/caption_drag_test.qnt": "23bbaa4bc2504e0299faf65f6fb739da61f1d9c121259d3c6d1d92f5bc396383",
+    "window-behavior-spec/native_drag.qnt": "2e3aa95d3116676cd5dfec0d337fbca9e1774a45f176c07a90dde15473516392",
+    "window-behavior-spec/native_drag_test.qnt": "4d3d35c690e65ace01145008d119c58977a48c01a23103436c0761bcb221194b"
+  },
+  "originalModelEvidence": {
+    "path": "implementation/warlock/qa/evidence/caption-gesture-admission/original-models.json",
+    "sha256": "b249e7f75d626dc11a361d0f16a6b8657ab68ada1d254d4fd45759e147332e2b"
+  },
+  "modelScope": "Quint-llm-kit: executable initialization, eleven explicitly named cases, eight reachable witnesses and sampled safety (1000 traces, 30 steps, seeds 81001/2/3). Integer boxes/modes abstract native doubles/configures and assume live synchronous ownership. Native callbacks/reload, device delivery, output loss, nondefault threshold/key schedules, constraints, other snap regions, fullscreen/tiled/group/AT and hardware remain separate. Original properties unchanged; no exhaustive proof.",
+  "sourceCorrespondence": {
+    "Press": "dragBegin captures exact target/window/live source space, logical box, real pointer, modes and floating size before mutation.",
+    "Motion": "updateDragWindow anchors restoration by captured fraction and vertical offset; private caption phase prevents shared keybind threshold resets from swallowing raw zero-threshold motion.",
+    "Snap": "Only a committed native snap effect stores weak target/window/source space, exact placed box and preceding ordinary box; mismatches cannot restore a stale record.",
+    "Cancel": "Scoped native Cancel restores captured geometry/modes/live source space, without group drop/focus or a second release.",
+    "Release": "A real moved caption uses the existing native release path; exact MAX owner release lets the loaded authority retire its own saved ordinary record. Hook installs after successful init and clears before exit; no frontend effect/retry.",
+    "RestoreOrdinary": "Existing admitted geometry effect validates identity/mode/output scope after fullscreen callback, applies its saved prospective box in that same effect and keeps original definitive/no-replay checks.",
+    "Close/Reopen": "Previous native exact-owner retirement/old serial tests remain in the actual final journey."
+  },
+  "nativeSubsetObserved": true,
+  "nativeCleanupPassed": true,
+  "nativeModalRegressionPassed": true,
+  "originalTwoOutputInputAssertionsPassed": true,
+  "originalTwoOutputFullCampaignPassed": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "disposition": "partial",
+  "observation": "Native maximized and committed left-half snapped captions now retain placement on a click without movement, restore ordinary size at the original horizontal press fraction, and restore the captured box/modes/source workspace on Escape. Actual quarter- and three-quarter-width drags, one-output pixels, committed release, unsaved drafts and captured-owner retirement/replacement pass. A released MAX caption retires its exact old ordinary placement so the next maximize/restore captures the new box. The admitted restore effect now applies its saved prospective ordinary box after validating live identity/mode/scope. The final caption/lifecycle and original modal/draft regressions pass. Original two-output input and cross-output rollback assertions pass again after separating caption phase from the shared keybind threshold flag; full combined capture still fails at the original five-second limit. UX-021 and the release remain partial.",
+  "missingObservations": [
+    "Original two-output combined capture still fails its unchanged five-second grim limit; bounded one-output images do not substitute for it.",
+    "Native fullscreen/tiled/grouped restoration, the other snap regions/repeated snaps, nondefault thresholds/key traffic, constraints/scale/rotation and resize-mode placement transitions remain unqualified.",
+    "Active-gesture reload/reattachment, source-space loss, hidden/disabled outputs, device/hotplug/lock/grab and wider output/lifecycle schedules, other toolkits, native AT and independent original UX-021 review remain open.",
+    "Full original native/IME/hardware/resource/journey/package/reversible deployment/rollback release gates remain open."
+  ],
+  "nextSourceWork": "Implement the demonstrated original two-output presentation gap in the existing owning renderer/output path at the unchanged capture limit; preserve the actual input passes and failed recording. Keep quint-llm-kit tied to original properties. If no production fix or original verdict is obtained within the workflow limit, record the missing observation and continue another mandatory GUI slice."
+}

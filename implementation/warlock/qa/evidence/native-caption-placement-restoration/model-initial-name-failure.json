@@ -1,0 +1,29 @@
+{
+  "passed": false,
+  "scope": "quint-llm-kit sampled original MAX/snap caption fractional anchoring and terminal rollback; native gates separate.",
+  "nativeAcceptance": false,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-692c9c730ad84e51b615c8f14dfab01a.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "qa/caption-restoration.qnt": "9dea745534c78754b3bcb39b8ffde0827ff316cf3360ac8e5403cbcbc2928918",
+    "qa/caption-restoration_test.qnt": "5de5d85364494e5586a86240660fa8365814636c25348927ecbc90cf026ce81c",
+    "native/authority.cpp": "5e090093efd4a6b8275b27b9033a8317eca5cb94f007bbb429dd09f7065b2ebd",
+    "native/snap-placement.inc": "fd7c0480bcf6b09d3e663f9432d8f42400867a95c48afc85c0569a6a6c01a122",
+    "native/core/DragController.cpp": "1c0c0bac4879306f31fd1b96b6a873c84421cb8dd833dc2a87295e39f7f26914",
+    "native/core/GestureEndPolicy.hpp": "c436740335d6c25c6efcbf0897ef556657694c92fa80b57a0bdfc70afcd56763"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/caption-restoration.qnt"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "error": "RuntimeError(\"\\n Error [QNT101]: Built-in name 'enabled' is redefined in module 'caption_restoration'\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/caption-restoration.qnt:16:12\\n  16:   pure def enabled(state:State,e:Event):bool=match e {\\n                 ^^^^^^^\\n\\nerror: parsing failed\\n\")"
+}

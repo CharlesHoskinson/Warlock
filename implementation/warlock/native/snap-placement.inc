@@ -50,6 +50,8 @@ std::string performSnapEffect(Session& session,const SnapSubmission& placement,u
     const auto projected=input?Elm::ProspectiveGeometry::project(*input):std::nullopt;
     const auto conversion=geometryPolicyInputs(window);
     if(!projected || conversion=="null")return reject("snap-size-infeasible");
+    if(!WarlockGestureEnd::canRememberSnap(window->layoutTarget()))return reject("caption-placement-capacity");
+    const auto ordinaryCaptionBox=window->layoutTarget()->position();
     const auto oldFocus=Desktop::focusState()->window();const auto oldKeyboard=g_pSeatManager->m_state.keyboardFocus.lock();
     const auto oldPointer=g_pSeatManager->m_state.pointerFocus.lock();const auto peers=geometryPeers(window);
     if(!effectBarriers.begin(barrier))return reject("native-operation-bound");
@@ -63,6 +65,7 @@ std::string performSnapEffect(Session& session,const SnapSubmission& placement,u
         const auto freshInput=geometryInput(window,Elm::ProspectiveGeometry::Operation::RestoreOrdinary,desired,{});
         const auto fresh=freshInput?Elm::ProspectiveGeometry::project(*freshInput):std::nullopt;
         if(!fresh || geometryPolicyInputs(window)!=conversion || fresh->logical!=projected->logical || fresh->real!=projected->real || fresh->configure!=projected->configure || window->layoutTarget()->position()!=projected->logical || window->geometricBox(Desktop::View::IGeometric::GEOMETRIC_GOAL)!=projected->real || window->m_pendingReportedSize!=projected->real.size() || window->m_pendingReportedSize.floor()!=projected->configure)return session.lastReply;
+        WarlockGestureEnd::rememberSnap(window->layoutTarget(),ordinaryCaptionBox,ordinaryCaptionBox);
         effectBarriers.definitive(barrier);session.lastReply=reply("Committed","applied");
     }catch(...){notifyEffectChange();} // Retain Unknown, never replay or invent rollback.
     return session.lastReply;

@@ -1,0 +1,42 @@
+{
+  "passed": false,
+  "scope": "quint-llm-kit sampled original MAX/snap caption fractional anchoring and terminal rollback; native gates separate.",
+  "nativeAcceptance": false,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-da23a8a0d15140678db5b63b6c0e4b90.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "qa/caption-restoration.qnt": "34d4264c93ab4885cc527467b8ec96001a3f7d76e49a69f7f6ab4828f2aa3a7d",
+    "qa/caption-restoration_test.qnt": "5de5d85364494e5586a86240660fa8365814636c25348927ecbc90cf026ce81c",
+    "native/authority.cpp": "5e090093efd4a6b8275b27b9033a8317eca5cb94f007bbb429dd09f7065b2ebd",
+    "native/snap-placement.inc": "fd7c0480bcf6b09d3e663f9432d8f42400867a95c48afc85c0569a6a6c01a122",
+    "native/core/DragController.cpp": "1c0c0bac4879306f31fd1b96b6a873c84421cb8dd833dc2a87295e39f7f26914",
+    "native/core/GestureEndPolicy.hpp": "c436740335d6c25c6efcbf0897ef556657694c92fa80b57a0bdfc70afcd56763"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/caption-restoration.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/caption-restoration_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=81001"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "error": "RuntimeError('\\n Error [QNT000]: Expected [s] and [] to be the same\\nTrying to unify entities [\\'s\\'] and []\\nTrying to unify Read[_v1285] & Update[\\'s\\'] and Read[\\'s\\']\\nTrying to unify (Read[_v1283] & Update[_v1284], Read[_v1285] & Update[_v1284]) => Read[_v1286] & Update[_v1284] and (Read[_v1261] & Update[\\'s\\'], Read[\\'s\\']) => _e358\\nTrying to infer effect for operator application in then(then(then(then(then(init, fire(Snap)), fire(Press(20))), fire(Motion(100))), fire(Cancel)), assert(and(and(snapCancel, eq(field(s, \"owner\"), 0)), field(s, \"held\"))))\\n\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/caption-restoration_test.qnt:6:21\\n  6:  run snapCancelTest=init.then(fire(Snap)).then(fire(Press(20))).then(fire(Motion(100))).then(fire(Cancel)).then(assert(snapCancel and s.owner==0 and s.held))\\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n\\nerror: typechecking failed\\n')"
+}

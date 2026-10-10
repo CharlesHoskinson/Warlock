@@ -2,25 +2,25 @@
   "schema": 1,
   "pair": {
     "core": {
-      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/gesture-terminal-core-1791629164296848910/Hyprland",
-      "sha256": "1142812c3e06998604b2a0abff144f160c6aa675701d0801836b4f559a9497ad"
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/caption-restoration-core-1791632039383974154/Hyprland",
+      "sha256": "ec3235594badf0d2bde034db7c126fe919ad572d6eafa44f840dc4a34d824c9c"
     },
     "plugin": {
-      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791629242165181971/elm-window-geometry-authority.so",
-      "sha256": "3d62a13a6c1ab1dd59eae4db2cc626fc69e05e7aa10d1e8ebc1f814cd99d2235"
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791632197352173208/elm-window-geometry-authority.so",
+      "sha256": "ed4cb68f306ebd225eb0a0b7c310efc3252d6703fa81eff50bccbf31c60b1ad4"
     },
     "aquamarine": {
       "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
       "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
     }
   },
-  "authorityReport": "implementation/warlock/qa/runs/native-authority-1791629242165181971/report.json",
-  "authorityReportSHA256": "e109928a9a2b92f742a35e622a92db134d0e065da966d83a58ec7ac6766fb599",
+  "authorityReport": "implementation/warlock/qa/runs/native-authority-1791632197352173208/report.json",
+  "authorityReportSHA256": "7bb4114812f13716cb18f902d13c9398b3952fcbdbfd780df056660ad075f2ff",
   "authorityInputs": {
-    "native/authority.cpp": "5e090093efd4a6b8275b27b9033a8317eca5cb94f007bbb429dd09f7065b2ebd",
+    "native/authority.cpp": "604462a1f4d2ac2551ead9b6f54dd2de586662e8b96893bee0dbed1aecc1d78f",
     "native/navigation-modal.hpp": "48a0a3c195425db508b20d1bc869ad588a03f3f3fc5fcba01ac0cd16853db30f",
-    "native/geometry-effects.inc": "a8e84fffd6613ffe7d5b8c6b933b56d46e42b6a491e6ad0ff7fcfd4ccadbd112",
-    "native/snap-placement.inc": "fd7c0480bcf6b09d3e663f9432d8f42400867a95c48afc85c0569a6a6c01a122",
+    "native/geometry-effects.inc": "3fb8e9cf84c36885f03cafe5c1fcfcf2cd3ff09bd6d899be23af3fad8bea027e",
+    "native/snap-placement.inc": "3c7e92f10ce480a7512fe845a2155946b624f7a8ca669c90ee4040f09897de2e",
     "native/transfer-workspace.inc": "5e1a64474eb248e9ed13d0860d1fe1aa1ec99eb2b3984723645d89e6beddb026",
     "native/motion-profile.inc": "60ec1e00982bc1e58be76805d4be52faad12c15f5822521dddf4d3042e7c4b62",
     "native/picker-preview.inc": "dd012861b1f54943bb82d23378766a35d644c9ca561b5a412dd048ee05c3eb00",
@@ -29,7 +29,8 @@
     "native/geometry.inc": "fa945f6ba2521d9c54f1fdcd7bc9772b95a1b2e28d0772ef80282eda3ae38dbd",
     "native/shortcut-bindings.inc": "1103085deb970c048b81f5afbf9848eae64388ad73c741f1bb7780cfbd8e3345",
     "native/core/CommittedScene.hpp": "8ab0576ddf0d2f141259b57dd211219455fa6f0fca94e21a077e49fc57fd577f",
-    "native/core/ModalRecipient.hpp": "08602c2401bc8038cbd9f8ceb89c6cb5bb0a52b1c37f9680231e436da38ef200"
+    "native/core/ModalRecipient.hpp": "08602c2401bc8038cbd9f8ceb89c6cb5bb0a52b1c37f9680231e436da38ef200",
+    "native/core/GestureEndPolicy.hpp": "cba651c875c980c357a6bfe7d5e567da424cf8dd7f11537f8195a74ec52f5946"
   },
   "unchangedRuntimePreflight": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v204/qa/preflight.json",
   "unchangedRuntimePreflightSHA256": "d0b121978e8833ad03da40aab848b8f80442abe5cfc7540d4582a812e1e8cc26",
@@ -51,9 +52,9 @@
   },
   "sceneCoreReport": {
     "schema": 1,
-    "report": "implementation/warlock/qa/runs/gesture-terminal-core-1791629164296848910/report.json",
-    "reportSHA256": "e694e33a38e667c750d2ec2cbb7b302dd53145ca03d734f13ef895db576dafc2",
-    "binarySHA256": "1142812c3e06998604b2a0abff144f160c6aa675701d0801836b4f559a9497ad",
+    "report": "implementation/warlock/qa/runs/caption-restoration-core-1791632039383974154/report.json",
+    "reportSHA256": "1ec1e806747bb5b900cfd56fb2b631a9af4331e1c3a18dd3f60f023c3ba68827",
+    "binarySHA256": "ec3235594badf0d2bde034db7c126fe919ad572d6eafa44f840dc4a34d824c9c",
     "nativeAcceptance": false
   }
 }

@@ -1,4 +1,5 @@
 #include "core/CommittedScene.hpp"
+#include "core/GestureEndPolicy.hpp"
 #include <hyprland/src/desktop/state/LayerState.hpp>
 #include <hyprland/src/desktop/view/LayerSurface.hpp>
 #include "incarnation-retirement.hpp"
@@ -1031,6 +1032,16 @@ std::string observe(eHyprCtlOutputFormat, std::string request) {
     g_object_unref(parser); return reply;
 }
 }
+static void retireNativeCaptionPlacement(const PHLWINDOW& window) noexcept {
+    try {
+        if(!window || !window->m_isMapped || std::this_thread::get_id()!=ownerThread)return;
+        const auto modes=Fullscreen::controller()->getFullscreenModes(window);
+        if(modes.internal!=Fullscreen::FSMODE_NONE || modes.client!=Fullscreen::FSMODE_NONE)return;
+        const auto live=std::ranges::find_if(members,[&](const Member& member){return member.window.lock()==window;});
+        if(live==members.end())return;
+        if(const auto key=Elm::Placement::Identity::fromNative(lifetime,live->id))geometryPlacements.retire(*key);
+    }catch(...){} // Retain a refused/stale placement instead of interrupting native end.
+}
 APICALL EXPORT std::string PLUGIN_API_VERSION() { return HYPRLAND_API_VERSION; }
 APICALL EXPORT PLUGIN_DESCRIPTION_INFO PLUGIN_INIT(HANDLE handle) {
     if (std::string(__hyprland_api_get_hash()) != std::string(__hyprland_api_get_client_hash())) throw std::runtime_error("Owning header mismatch");
@@ -1063,9 +1074,11 @@ APICALL EXPORT PLUGIN_DESCRIPTION_INFO PLUGIN_INIT(HANDLE handle) {
     previewReloaded=Event::bus()->m_events.config.preReload.listen([]{beginShortcutReload();cancelSwitcher();shellShortcuts.clear();notifyShellShortcuts();switcherAlts.clear();switcherTab=switcherStepAvailable=false;revokePreview(false);});
     previewOutputRemoved=Event::bus()->m_events.monitor.removed.listen([](PHLMONITOR){revokePreview(false);});
     startPreviewFdServer();
+    WarlockGestureEnd::releaseMaxPlacement=retireNativeCaptionPlacement;
     return {"elm-observation-authority","Native first-class minimize/restore authority experiment","local","0.2"};
 }
 APICALL EXPORT void PLUGIN_EXIT() {
+    if(WarlockGestureEnd::releaseMaxPlacement==retireNativeCaptionPlacement)WarlockGestureEnd::releaseMaxPlacement=nullptr;
     retireShortcutBindings();
     shellShortcuts.clear();shellShortcutSerial=shellShortcutSession=shellShortcutFrontend=0;
     pointerFrames.reset();

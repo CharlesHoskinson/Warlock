@@ -183,6 +183,15 @@ std::string performGeometryEffect(Session& session,JsonObject* object) {
     try {
         const auto desired=maximize?Fullscreen::FSMODE_MAXIMIZED:Fullscreen::FSMODE_NONE;
         Fullscreen::controller()->setFullscreenMode(window,desired,desired,false);
+        if(!maximize && prospective) {
+            // Native fullscreen exit recenters. This admitted restore owns the
+            // saved ordinary box; apply it in the same effect only if mode,
+            // incarnation and workspace/output scope survived the callback.
+            const auto live=std::ranges::find_if(members,[&](const Member& entry){return entry.id==*targetId && entry.window.lock()==window;});
+            const auto current=geometryScope(window);const auto actual=Fullscreen::controller()->getFullscreenModes(window);
+            if(live==members.end() || !geometryTargetEligible(window,session.geometryProtocol) || !current || !(current->scope==scope->scope) || current->workspace!=scope->workspace || current->output!=scope->output || current->outputDependency!=scope->outputDependency || actual.internal!=desired || actual.client!=desired)return session.lastReply;
+            g_layoutManager->setTargetGeom(prospective->logical,window->layoutTarget());
+        }
         refreshFacts();refreshGeometryFacts();notifyEffectChange();
         // Callbacks may replace identity/owners. Reacquire exact native member.
         const auto live=std::ranges::find_if(members,[&](const Member& entry){return entry.id==*targetId && entry.window.lock()==window;});

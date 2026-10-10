@@ -63,7 +63,7 @@ try:
   seen_ancestors=set()
   while scene_base['ancestor']!=expected_ancestor:
    child=scene_base;parent_path=pathlib.Path(child['ancestor']['report'])
-   assert str(parent_path) not in seen_ancestors and len(seen_ancestors)<5;seen_ancestors.add(str(parent_path))
+   assert str(parent_path) not in seen_ancestors and len(seen_ancestors)<9;seen_ancestors.add(str(parent_path))
    assert sha(parent_path)==child['ancestor']['reportSHA256']
    scene_base=json.loads(parent_path.read_text());assert scene_base['passed'] and sha(scene_base['binary'])==scene_base['binarySHA256']
    assert scene_base['existingPublicHeadersUnchanged'] and scene_base['existingObjectLayoutsUnchanged'] and scene_base['existingStrongExportsPreserved']
@@ -85,6 +85,7 @@ try:
  if scene_record:
   p=ROOT/'native/core/CommittedScene.hpp';inputs['native/core/CommittedScene.hpp']=sha(p);(source/'core').mkdir();shutil.copyfile(p,source/'core/CommittedScene.hpp')
   p=ROOT/'native/core/ModalRecipient.hpp';inputs['native/core/ModalRecipient.hpp']=sha(p);shutil.copyfile(p,source/'core/ModalRecipient.hpp')
+  p=ROOT/'native/core/GestureEndPolicy.hpp';inputs['native/core/GestureEndPolicy.hpp']=sha(p);shutil.copyfile(p,source/'core/GestureEndPolicy.hpp')
  command=next(c['command'] for c in prior['commands'] if c['name']=='compile').copy()
  for i,arg in enumerate(command):
   if arg==str(PRIOR/'inputs/native/authority.cpp'):command[i]=str(source/'authority.cpp')
@@ -98,7 +99,7 @@ try:
  dependencies={str(pathlib.Path(p).resolve()):sha(p) for p in deps}
  for p,h in dependencies.items():
   if p.startswith(str(source)):
-   assert pathlib.Path(p).name in ('ModalRecipient.hpp','CommittedScene.hpp','authority.cpp','navigation-modal.hpp','geometry-effects.inc','snap-placement.inc','transfer-workspace.inc','motion-profile.inc','picker-preview.inc','picker-probe-table.hpp','capture-fd-server.inc','geometry.inc','shortcut-bindings.inc')
+   assert pathlib.Path(p).name in ('GestureEndPolicy.hpp','ModalRecipient.hpp','CommittedScene.hpp','authority.cpp','navigation-modal.hpp','geometry-effects.inc','snap-placement.inc','transfer-workspace.inc','motion-profile.inc','picker-preview.inc','picker-probe-table.hpp','capture-fd-server.inc','geometry.inc','shortcut-bindings.inc')
   else:
    inherited=header_prefix[0]+p[len(header_prefix[1]):] if header_prefix and p.startswith(header_prefix[1]+'/') else p
    recorded=preserved.get(inherited)

@@ -1,0 +1,88 @@
+{
+  "passed": true,
+  "scope": "quint-llm-kit sampled original MAX/snap caption fractional anchoring and terminal rollback; native gates separate.",
+  "nativeAcceptance": false,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-8763a45175014ba28858a929e171559e.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "qa/caption-restoration.qnt": "2d884dc95e56d7d02f2463bfe0bf6b66ebfd081951b5c11354a52d7f8510496a",
+    "qa/caption-restoration_test.qnt": "58d9ff7bc185ce13221e7ab2514ad79310286ef4ba861438043d71fec7272ba7",
+    "native/authority.cpp": "1fa2a6f3c486880ee46e9db5591087d629066a3dc4fcd350f92522e506a7b7d0",
+    "native/geometry-effects.inc": "a8e84fffd6613ffe7d5b8c6b933b56d46e42b6a491e6ad0ff7fcfd4ccadbd112",
+    "native/snap-placement.inc": "3c7e92f10ce480a7512fe845a2155946b624f7a8ca669c90ee4040f09897de2e",
+    "native/core/DragController.cpp": "b5075d603a5d8f57b8b6a89da566323d45c6c888534da87b13abfc83cfe50c9d",
+    "native/core/GestureEndPolicy.hpp": "86d6ee9d5d7045c2112de574944df27bd92660fd03378a6cea39de10d427b985"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/caption-restoration.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/caption-restoration_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=81001"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "witnesses",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/caption-restoration.qnt",
+        "--backend=typescript",
+        "--witnesses",
+        "maxAnchored",
+        "snapAnchored",
+        "maxCancel",
+        "snapCancel",
+        "releasedOrdinary",
+        "closeRetired",
+        "replacementIdle",
+        "ordinaryRestored",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=81002"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "safety",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/caption-restoration.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=81003"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "witnessCounts": {
+    "maxAnchored": 220,
+    "snapAnchored": 253,
+    "maxCancel": 149,
+    "snapCancel": 198,
+    "releasedOrdinary": 669,
+    "closeRetired": 843,
+    "replacementIdle": 994,
+    "ordinaryRestored": 142
+  }
+}

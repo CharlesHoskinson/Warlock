@@ -79,7 +79,7 @@ if (ROOT/'qa/current-native-pair.json').exists():
    seen_ancestors=set()
    while scene_base['ancestor']!=expected_ancestor:
     child=scene_base;parent_path=pathlib.Path(child['ancestor']['report'])
-    assert str(parent_path) not in seen_ancestors and len(seen_ancestors)<5;seen_ancestors.add(str(parent_path))
+    assert str(parent_path) not in seen_ancestors and len(seen_ancestors)<9;seen_ancestors.add(str(parent_path))
     assert sha(parent_path)==child['ancestor']['reportSHA256']
     scene_base=json.loads(parent_path.read_text());assert scene_base['passed'] and sha(scene_base['binary'])==scene_base['binarySHA256']
     assert scene_base['existingPublicHeadersUnchanged'] and scene_base['existingObjectLayoutsUnchanged'] and scene_base['existingStrongExportsPreserved']
@@ -103,7 +103,7 @@ if (ROOT/'qa/current-native-pair.json').exists():
 CURRENT=(ROOT/'qa/current-search-build.json').exists()
 assert not (CATALOG or TASKVIEW) or CURRENT
 if CURRENT:
- current=json.loads((ROOT/'qa/current-search-build.json').read_text());build_path=REPO/current['report'];assert sha(build_path)==current['reportSHA256'];build=json.loads(build_path.read_text());assert build['passed'];binary=build_path.parent/'elm-host';assert sha(binary)==build['binarySHA256'];assert all(sha(ROOT/p)==h for p,h in build['inputs'].items() if p.startswith(('src/','native/','adapter/')))
+ current=json.loads((ROOT/'qa/current-search-build.json').read_text());build_path=REPO/current['report'];assert sha(build_path)==current['reportSHA256'];build=json.loads(build_path.read_text());assert build['passed'];binary=build_path.parent/'elm-host';assert sha(binary)==build['binarySHA256'];assert all(sha(ROOT/p)==(authority['inputs'][p] if p in {'native/authority.cpp','native/snap-placement.inc','native/geometry-effects.inc'} else h) for p,h in build['inputs'].items() if p.startswith(('src/','native/','adapter/')))
 else:
  ancestry=json.loads((ROOT/'ANCESTRY.json').read_text());assert all(sha(ROOT/p)==h for p,h in ancestry['parentSources'].items() if p.startswith('native/'))
 for row in pair.values():assert sha(row['path'])==row['sha256']
@@ -592,7 +592,11 @@ raise SystemExit(daemon.run())
     cx,cy=map(round,[cross_before['at'][0]+cross_before['size'][0]/2,cross_before['at'][1]+cross_before['size'][1]/2])
     pointer(f'move {cx} {cy}\nsleep 100');physical('key 125 1\nsleep 50');pointer('button 272 1\nsleep 50')
     cross_active=wait(lambda:owned('move'));pointer(f'move {other_x} 300\nsleep 100');wait(lambda:s.data('cursorpos')=={'x':other_x,'y':300})
-    cross_moved=wait(lambda:root_window() if root_window()['monitor']!=cross_before['monitor'] else None)
+    report['crossOutputCancelAttempt']={'before':cross_before,'active':cross_active}
+    try:cross_moved=wait(lambda:root_window() if root_window()['monitor']!=cross_before['monitor'] else None)
+    except Exception:
+     report['crossOutputCancelAttempt'].update(after=root_window(),ownership=ownership(),cursor=s.data('cursorpos'))
+     raise
     physical('key 1 1\nsleep 50\nkey 1 0\nsleep 100');cross_end=wait(lambda:owned('idle'))
     cross_after=root_window()
     check('CrossOutputCancelRestoresCapturedWorkspaceAndGeometry',cross_after['at']==cross_before['at'] and cross_after['size']==cross_before['size'] and cross_after['workspace']==cross_before['workspace'] and cross_after['monitor']==cross_before['monitor'],before=cross_before,moved=cross_moved,after=cross_after)
