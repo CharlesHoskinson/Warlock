@@ -887,7 +887,7 @@ updateAvailable message model =
                                 let launch = Launch.receive (host binding) outcome model.launch
                                     refused = Launch.status model.launch=="Pending" && Launch.status launch=="Refused"
                                     next = {model | launch = launch, open = if refused then True else model.open && Launch.status launch /= "Submitted"}
-                                in (next,if refused then [Focus "launcher-search"] else [])
+                                in (next,[])
                             else (model,[])
                         Err _ -> (model,[])
                 _ ->

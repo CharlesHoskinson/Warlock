@@ -8,6 +8,7 @@ import Desktop
 import Json.Decode as D
 import Json.Encode as E
 import Surface
+import OutcomeAnnouncements
 import SurfaceController as Controller
 import SurfaceRenderer
 import UnsentOperation
@@ -17,7 +18,8 @@ import UInt64 exposing (Counter)
 type Scope = Scope Counter Counter
 
 type Model = Model
-    { controller : Controller.Model
+    { announcements : OutcomeAnnouncements.Model
+    , controller : Controller.Model
     , revision : Counter
     , highest : Counter
     , views : List Scope
@@ -33,7 +35,7 @@ type alias Batch = { scope : Scope, revision : Counter, publication : Counter, l
 type Event = Disposition D.Value | Topology D.Value | Renderer D.Value | Interaction Desktop.Msg | Dismiss D.Value | Reflow D.Value
 
 initial : Model
-initial = Model {controller=Controller.initial,revision=UInt64.zero,highest=UInt64.zero,views=[],selected=Nothing,batches=[],batchExhausted=False,capacityRefused=False}
+initial = Model {announcements=OutcomeAnnouncements.initial,controller=Controller.initial,revision=UInt64.zero,highest=UInt64.zero,views=[],selected=Nothing,batches=[],batchExhausted=False,capacityRefused=False}
 
 strict : List String -> D.Decoder a -> D.Decoder a
 strict fields decoder = D.keyValuePairs D.value |> D.andThen (\pairs -> if List.sort (List.map Tuple.first pairs)==List.sort fields then decoder else D.fail "Output view fields")
@@ -62,7 +64,7 @@ owner (Model model) = if Surface.mode (Controller.desktop model.controller)=="cl
 
 frame : Model -> E.Value
 frame ((Model model) as current) = E.object
-    [("viewProtocol",E.int 1),("kind",E.string "view-frame"),("revision",E.string (UInt64.string model.revision)),("views",E.list encodeScope model.views),("focusOwner",model.selected |> Maybe.map encodeScope |> Maybe.withDefault E.null),("popupOwner",owner current |> Maybe.map encodeScope |> Maybe.withDefault E.null),("frame",Controller.frame model.controller)]
+    [("viewProtocol",E.int 1),("kind",E.string "view-frame"),("revision",E.string (UInt64.string model.revision)),("views",E.list encodeScope model.views),("focusOwner",model.selected |> Maybe.map encodeScope |> Maybe.withDefault E.null),("popupOwner",owner current |> Maybe.map encodeScope |> Maybe.withDefault E.null),("frame",Controller.frame model.controller),("announcer",model.selected |> Maybe.map (\scope -> E.object [("scope",encodeScope scope),("surface",E.string (if owner current/=Nothing then "popup" else "bar"))]) |> Maybe.withDefault E.null),("announcement",OutcomeAnnouncements.encode model.announcements)]
 
 lease : Controller.Model -> Maybe Counter
 lease model = SurfaceRenderer.decode (Controller.frame model) |> Result.toMaybe |> Maybe.map SurfaceRenderer.lease
@@ -77,7 +79,7 @@ apply : Controller.Event -> Model -> (Model,List Controller.Effect)
 apply event (Model model) =
     let (next,effects) = Controller.update event model.controller
         changed = (Controller.desktop next).windows.shell.binding/=(Controller.desktop model.controller).windows.shell.binding
-    in (Model {model | controller=next,batches=if changed then [] else model.batches,batchExhausted=if changed then False else model.batchExhausted,capacityRefused=if changed then False else model.capacityRefused},effects)
+    in (track (Model model) (Model {model | controller=next,batches=if changed then [] else model.batches,batchExhausted=if changed then False else model.batchExhausted,capacityRefused=if changed then False else model.capacityRefused}),effects)
 
 assignOwner : Maybe Scope -> Controller.Model -> (Controller.Model,List Controller.Effect)
 assignOwner scope controllerModel =
@@ -85,7 +87,17 @@ assignOwner scope controllerModel =
     in Controller.update (Controller.Interaction (Desktop.PresentationOwner registered)) controllerModel
 
 update : Event -> Model -> (Model,List Controller.Effect)
-update event ((Model model) as current) =
+update event current =
+    let (next,effects) = updateCore event current
+    in (track current next,effects)
+
+track : Model -> Model -> Model
+track (Model before) ((Model after) as result) =
+    if before.announcements/=after.announcements then result else
+        Model {after | announcements=OutcomeAnnouncements.observe (Controller.desktop before.controller) (Controller.desktop after.controller) after.announcements}
+
+updateCore : Event -> Model -> (Model,List Controller.Effect)
+updateCore event ((Model model) as current) =
     case event of
         Disposition raw -> receiveDisposition raw current
         Interaction message -> apply (Controller.Interaction message) current

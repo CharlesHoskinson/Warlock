@@ -1,4 +1,4 @@
-module Settings exposing (Model, Values, Snapshot, Theme(..), initial, defaults, valuesDecoder, decoder, encodeValues, encode, themeName, observe, edit, writable, propose, receive)
+module Settings exposing (SaveOutcome(..), Model, Values, Snapshot, Theme(..), initial, defaults, valuesDecoder, decoder, encodeValues, encode, themeName, observe, edit, writable, propose, receive)
 
 import Json.Decode as D
 import Json.Encode as E
@@ -7,12 +7,13 @@ import UInt64 exposing (Counter)
 type Theme = Night | Dawn | HighContrast
 type alias Values = { theme : Theme, textScale : Int, effectsOff : Bool, reducedTransparency : Bool }
 type alias Snapshot = { schema : Int, revision : Counter, values : Values }
-type alias Model = { snapshot : Maybe Snapshot, draft : Values, pending : Maybe { request : Counter, values : Values }, notice : String }
+type SaveOutcome = Saved | Refused | Unconfirmed
+type alias Model = { outcome : Maybe {request : Counter, result : SaveOutcome}, snapshot : Maybe Snapshot, draft : Values, pending : Maybe { request : Counter, values : Values }, notice : String }
 
 defaults : Values
 defaults = {theme=Night,textScale=100,effectsOff=False,reducedTransparency=False}
 initial : Model
-initial = {snapshot=Nothing,draft=defaults,pending=Nothing,notice="Loading settings…"}
+initial = {outcome=Nothing,snapshot=Nothing,draft=defaults,pending=Nothing,notice="Loading settings…"}
 strict fields child = D.keyValuePairs D.value |> D.andThen (\pairs -> if List.sort (List.map Tuple.first pairs)==List.sort fields then child else D.fail "Settings fields")
 themeName theme = case theme of
     Night -> "night"
@@ -49,7 +50,7 @@ propose : Counter -> Model -> (Model,Maybe E.Value)
 propose request model = case model.snapshot of
     Just current ->
         if not (writable model) || current.values==model.draft then (model,Nothing) else
-            ({model | pending=Just {request=request,values=model.draft},notice="Saving settings…"},Just (encode {current | values=model.draft}))
+            ({model | outcome=Nothing,pending=Just {request=request,values=model.draft},notice="Saving settings…"},Just (encode {current | values=model.draft}))
     Nothing -> (model,Nothing)
 receive : Counter -> String -> Maybe Snapshot -> Model -> Model
 receive request status snapshot model = case model.pending of
@@ -57,6 +58,6 @@ receive request status snapshot model = case model.pending of
     Just pending ->
         if request/=pending.request then model else
         if status=="Saved" && (snapshot |> Maybe.map (\current -> current.values==pending.values && (model.snapshot |> Maybe.map (\old -> UInt64.compare current.revision old.revision==GT) |> Maybe.withDefault False)) |> Maybe.withDefault False) then
-            {model | snapshot=snapshot,pending=Nothing,notice="Settings saved."}
-        else if status=="Refused" then {model | pending=Nothing,notice="Settings change refused. Refresh, then choose again."}
-        else {model | notice="Settings save not confirmed. Refresh to read the stored values; this write will not be repeated."}
+            {model | outcome=Just {request=request,result=Saved},snapshot=snapshot,pending=Nothing,notice="Settings saved."}
+        else if status=="Refused" then {model | outcome=Just {request=request,result=Refused},pending=Nothing,notice="Settings change refused. Refresh, then choose again."}
+        else {model | outcome=Just {request=request,result=Unconfirmed},notice="Settings save not confirmed. Refresh to read the stored values; this write will not be repeated."}

@@ -1,4 +1,4 @@
-module Surface exposing (Control, controls, mode, packet, resolve)
+module Surface exposing (windowNotice, Control, controls, mode, packet, resolve)
 
 import Menu
 import Switcher

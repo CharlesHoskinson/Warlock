@@ -1,0 +1,26 @@
+{
+  "announcementProtocol": 1,
+  "kind": "announcement-projection",
+  "recipient": {
+    "scope": {
+      "id": "1",
+      "generation": "1"
+    },
+    "surface": "bar"
+  },
+  "announcer": {
+    "scope": {
+      "id": "1",
+      "generation": "1"
+    },
+    "surface": "bar"
+  },
+  "publication": "38",
+  "lease": "2",
+  "message": {
+    "sequence": "1",
+    "correlation": "{\"outcome\":\"transfer-refused\",\"binding\":{\"lifetime\":\"9781216642688975902\",\"session\":\"3\",\"frontend\":\"1\"},\"identity\":{\"effectProtocol\":2,\"intent\":{\"request\":\"1\",\"generation\":\"1\",\"incarnation\":\"2\",\"operation\":\"transfer-workspace\",\"context\":{\"lifetime\":\"9781216642688975902\",\"epoch\":\"1\",\"output\":\"1\",\"revision\":\"2\"},\"transfer\":{\"source\":\"1\",\"sourceGeneration\":\"2\",\"destination\":\"2\"}}}}",
+    "text": "Move to workspace 2: refused for ELM-AUTHORITY-FIXTURE. Refresh window status, then choose again."
+  },
+  "deliver": true
+}

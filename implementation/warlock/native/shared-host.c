@@ -153,6 +153,8 @@ static OutputView *manager_lookup(WebKitUserContentManager *manager) {
 static void shared_context_forward(OutputView *,JsonNode *,gboolean);
 #include "shared-context.h"
 
+#include "announcement-transport.h"
+
 static void shared_publish(void) {
     if (!surface_snapshot || shutting_down) return;
     JsonNode *appearance=json_object_get_member(json_node_get_object(surface_snapshot),"appearance");
@@ -168,6 +170,7 @@ static void shared_publish(void) {
         }
         if(row->ready)surface_eval(row->engine,"receivePresentation",surface_snapshot);
     }
+    shared_announcement_publish();
     product_wake();
 }
 static WebKitWebView *shared_focus_target(void) {
@@ -251,8 +254,8 @@ static void topology_advance(void) {
     topology_revision++;shared_topology();
 }
 static gboolean projection_scopes(JsonObject *projection,OutputView **popup,OutputView **focus) {
-    const char *const fields[]={"viewProtocol","kind","revision","views","popupOwner","focusOwner","frame"};guint64 revision;
-    if (!surface_fields(projection,fields,7) || json_node_get_value_type(json_object_get_member(projection,"viewProtocol"))!=G_TYPE_INT64 || json_object_get_int_member(projection,"viewProtocol")!=1 || !surface_text(json_object_get_member(projection,"kind"),32,FALSE) || !g_str_equal(json_object_get_string_member(projection,"kind"),"view-frame") || !surface_uint(json_object_get_member(projection,"revision"),&revision) || revision!=topology_revision) return FALSE;
+    guint64 revision;
+    if (!announcement_fields(projection) || json_node_get_value_type(json_object_get_member(projection,"viewProtocol"))!=G_TYPE_INT64 || json_object_get_int_member(projection,"viewProtocol")!=1 || !surface_text(json_object_get_member(projection,"kind"),32,FALSE) || !g_str_equal(json_object_get_string_member(projection,"kind"),"view-frame") || !surface_uint(json_object_get_member(projection,"revision"),&revision) || revision!=topology_revision) return FALSE;
     JsonNode *vn=json_object_get_member(projection,"views"),*pn=json_object_get_member(projection,"popupOwner"),*fn=json_object_get_member(projection,"focusOwner");
     if (!vn || !JSON_NODE_HOLDS_ARRAY(vn)) return FALSE;
     JsonArray *rows=json_node_get_array(vn);if (json_array_get_length(rows)!=output_views->len || output_views->len>64) return FALSE;
@@ -261,7 +264,7 @@ static gboolean projection_scopes(JsonObject *projection,OutputView **popup,Outp
         for (guint j=0;j<i;j++) if (row==scope_lookup(json_array_get_element(rows,j))) return FALSE;
     }
     *popup=scope_lookup(pn);*focus=scope_lookup(fn);
-    return (*popup || (pn && JSON_NODE_HOLDS_NULL(pn))) && (*focus || (fn && JSON_NODE_HOLDS_NULL(fn))) && (!output_views->len || *focus);
+    return (*popup || (pn && JSON_NODE_HOLDS_NULL(pn))) && (*focus || (fn && JSON_NODE_HOLDS_NULL(fn))) && (!output_views->len || *focus) && announcement_shape(projection);
 }
 /* Negative correlation is not historical surface authority. IDs are allocated
  * densely (++issued_view), generation is immutable 1, and never reused. */
@@ -277,8 +280,8 @@ static gboolean shared_batch_identity(JsonNode *batch,const char *wire,OutputVie
     if (!surface_fields(o,fields,5) || json_node_get_value_type(json_object_get_member(o,"viewProtocol"))!=G_TYPE_INT64 || json_object_get_int_member(o,"viewProtocol")!=1 || !surface_text(json_object_get_member(o,"kind"),32,FALSE) || !g_str_equal(json_object_get_string_member(o,"kind"),"view-commit")) return FALSE;
     JsonNode *pn=json_object_get_member(o,"projection"),*rn=json_object_get_member(o,"requests"),*fn=json_object_get_member(o,"focus");
     if (!pn || !JSON_NODE_HOLDS_OBJECT(pn) || !rn || !JSON_NODE_HOLDS_ARRAY(rn) || !fn || !JSON_NODE_HOLDS_ARRAY(fn)) return FALSE;
-    JsonObject *p=json_node_get_object(pn);const char *const pf[]={"viewProtocol","kind","revision","views","popupOwner","focusOwner","frame"};gboolean open;
-    if (!surface_fields(p,pf,7) || json_node_get_value_type(json_object_get_member(p,"viewProtocol"))!=G_TYPE_INT64 || json_object_get_int_member(p,"viewProtocol")!=1 || !surface_text(json_object_get_member(p,"kind"),32,FALSE) || !g_str_equal(json_object_get_string_member(p,"kind"),"view-frame") || !surface_uint(json_object_get_member(p,"revision"),revision) || !*revision || *revision>topology_revision || !surface_frame(json_object_get_member(p,"frame"),publication,lease,&open)) return FALSE;
+    JsonObject *p=json_node_get_object(pn);gboolean open;
+    if (!announcement_shape(p) || json_node_get_value_type(json_object_get_member(p,"viewProtocol"))!=G_TYPE_INT64 || json_object_get_int_member(p,"viewProtocol")!=1 || !surface_text(json_object_get_member(p,"kind"),32,FALSE) || !g_str_equal(json_object_get_string_member(p,"kind"),"view-frame") || !surface_uint(json_object_get_member(p,"revision"),revision) || !*revision || *revision>topology_revision || !surface_frame(json_object_get_member(p,"frame"),publication,lease,&open)) return FALSE;
     JsonNode *vn=json_object_get_member(p,"views"),*popup=json_object_get_member(p,"popupOwner"),*focus=json_object_get_member(p,"focusOwner");
     if (!vn || !JSON_NODE_HOLDS_ARRAY(vn)) return FALSE;
     JsonArray *views=json_node_get_array(vn);guint count=json_array_get_length(views);if (!count || count>64) return FALSE;
@@ -372,7 +375,7 @@ static void shared_commit(JsonNode *root,const char *original) {
     if (publication==surface_gate.publication && surface_snapshot && !json_array_get_length(json_node_get_array(rn)) && !json_array_get_length(json_node_get_array(fn))) {
         g_autofree char *prior=json_to_string(surface_snapshot,FALSE),*shown=json_to_string(frame,FALSE);
         if (!g_str_equal(prior,shown) || next_popup!=popup_owner) goto refuse;
-        focus_owner=next_focus;shared_publish();g_print("view-commit: topology-only=1\n");fflush(stdout);return;
+        focus_owner=next_focus;announcement_save(projection);shared_publish();g_print("view-commit: topology-only=1\n");fflush(stdout);return;
     }
     JsonObject *legacy=json_object_new();json_object_set_int_member(legacy,"surfaceProtocol",2);json_object_set_string_member(legacy,"kind","surface-commit");
     json_object_set_member(legacy,"frame",json_node_copy(frame));json_object_set_member(legacy,"requests",json_node_copy(rn));json_object_set_member(legacy,"focus",json_node_copy(fn));
@@ -389,6 +392,7 @@ static void shared_commit(JsonNode *root,const char *original) {
     shared_keyboard_parent(popup_owner,frame,json_node_get_array(rn));
     wire=json_to_string(translated,FALSE);SurfaceDisposition disposition=surface_receive(primary_manager,wire,translated);shared_preserve_context_anchor=FALSE;json_node_unref(translated);
     shared_batch_finish(record,disposition);
+    if(disposition==SURFACE_ADMITTED){announcement_save(projection);shared_announcement_publish();}
     g_print("view-commit: popup=%" G_GUINT64_FORMAT " focus=%" G_GUINT64_FORMAT " publication=%" G_GUINT64_FORMAT "\n",popup_owner?popup_owner->id:0,focus_owner?focus_owner->id:0,publication);fflush(stdout);return;
 refuse:
     shared_batch_finish(record,SURFACE_PREFLIGHT_UNSENT);
@@ -481,7 +485,7 @@ static void shared_receive_text(WebKitUserContentManager *manager,const char *te
     if (!origin && manager!=popup_manager) return;
     const char *const ready[]={"surfaceProtocol","kind"};
     if (strlen(text)<=4096 && surface_fields(object,ready,2) && json_node_get_value_type(json_object_get_member(object,"surfaceProtocol"))==G_TYPE_INT64 && json_object_get_int_member(object,"surfaceProtocol")==2 && kind && g_str_equal(kind,"presentation-ready")) {
-        if (origin) {origin->ready=TRUE;shared_publish();} else {popup_ready=TRUE;surface_present();}return;
+        if (origin) {origin->ready=TRUE;shared_publish();} else {popup_ready=TRUE;surface_present();shared_announcement_publish();}return;
     }
     if (strlen(text)>4096) return;
     if (kind && g_str_equal(kind,"context-input-report") && qa_exit) {g_print("context-input-report: %s\n",text);fflush(stdout);return;}
@@ -602,6 +606,22 @@ static void test_projection_capabilities(void) {
     json_object_set_member(object,"focusOwner",scope_packet(&one));
     JsonArray *rows=json_object_get_array_member(object,"views");json_array_remove_element(rows,1);json_array_add_element(rows,scope_packet(&one));g_assert_false(projection_scopes(object,&popup,&focus));
     json_array_remove_element(rows,1);json_array_add_element(rows,scope_packet(&two));json_object_set_string_member(object,"injected","authority");g_assert_false(projection_scopes(object,&popup,&focus));
+    json_object_remove_member(object,"injected");json_object_set_member(object,"popupOwner",json_node_new(JSON_NODE_NULL));
+    g_autoptr(JsonParser) frame_parser=json_parser_new();
+    g_assert_true(json_parser_load_from_data(frame_parser,"{\"surfaceProtocol\":2,\"publication\":\"1\",\"lease\":\"0\",\"mode\":\"closed\",\"status\":\"Ready\",\"bar\":[],\"popup\":[]}",-1,NULL));
+    json_object_set_member(object,"frame",json_node_copy(json_parser_get_root(frame_parser)));
+    JsonObject *announcer=json_object_new();json_object_set_member(announcer,"scope",scope_packet(&one));json_object_set_string_member(announcer,"surface","bar");json_object_set_object_member(object,"announcer",announcer);
+    JsonObject *message=json_object_new();json_object_set_string_member(message,"sequence","1");json_object_set_string_member(message,"correlation","matched-request-1");json_object_set_string_member(message,"text","Action refused. Refresh to read current state.");json_object_set_object_member(object,"announcement",message);
+    g_assert_true(projection_scopes(object,&popup,&focus));
+    json_object_set_string_member(message,"sequence","0");g_assert_false(projection_scopes(object,&popup,&focus));json_object_set_string_member(message,"sequence","1");
+    json_object_set_string_member(message,"text","");g_assert_false(projection_scopes(object,&popup,&focus));json_object_set_string_member(message,"text","Refused");
+    json_object_set_member(announcer,"scope",scope_packet(&two));g_assert_false(projection_scopes(object,&popup,&focus));json_object_set_member(announcer,"scope",scope_packet(&one));
+    json_object_set_string_member(announcer,"surface","popup");g_assert_false(projection_scopes(object,&popup,&focus));json_object_set_string_member(announcer,"surface","bar");
+    json_object_set_int_member(message,"injected",1);g_assert_false(projection_scopes(object,&popup,&focus));json_object_remove_member(message,"injected");
+    json_object_set_int_member(message,"sequence",1);g_assert_false(projection_scopes(object,&popup,&focus));json_object_set_string_member(message,"sequence","1");
+    JsonObject *current_frame=json_object_get_object_member(object,"frame");json_object_set_string_member(current_frame,"mode","settings");json_object_set_string_member(current_frame,"lease","1");json_object_set_member(object,"popupOwner",scope_packet(&two));json_object_set_member(announcer,"scope",scope_packet(&two));json_object_set_string_member(announcer,"surface","popup");
+    g_assert_true(projection_scopes(object,&popup,&focus));
+    json_object_remove_member(object,"announcement");g_assert_false(projection_scopes(object,&popup,&focus));
     g_ptr_array_unref(output_views);output_views=NULL;
 }
 static void test_foreground_handoff(void) {

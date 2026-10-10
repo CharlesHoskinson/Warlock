@@ -1,6 +1,7 @@
 port module Popup exposing (main, Model, Msg(..), Composition(..), initial, update)
 
 import Browser
+import Announcement
 import Html exposing (div, text)
 import Html.Attributes exposing (attribute)
 import Json.Decode as D
@@ -12,6 +13,7 @@ import SurfaceRenderer
 import UInt64
 
 port presentation : (D.Value -> msg) -> Sub msg
+port announcements : (D.Value -> msg) -> Sub msg
 port requestAction : (D.Value -> msg) -> Sub msg
 port actions : E.Value -> Cmd msg
 
@@ -24,12 +26,12 @@ port nativePreviewIssued : (D.Value -> msg) -> Sub msg
 port nativePreviewRetry : (D.Value -> msg) -> Sub msg
 port nativePreviewRetirement : (D.Value -> msg) -> Sub msg
 
-type Msg = Present D.Value | Action E.Value | NativePreview D.Value | NativeGrant D.Value | NativeQuarantine D.Value | NativeClosed D.Value | NativeIssued D.Value | NativeRetry D.Value | NativeRetirement D.Value
+type Msg = Announce D.Value | Present D.Value | Action E.Value | NativePreview D.Value | NativeGrant D.Value | NativeQuarantine D.Value | NativeClosed D.Value | NativeIssued D.Value | NativeRetry D.Value | NativeRetirement D.Value
 type Composition = Idle | Preediting { baseline : String, before : Maybe String }
-type alias Model = { presentation : Presentation.Model, previews : Preview.Model, pendingQuery : Maybe String, composition : Composition, lastQuery : Maybe (String, UInt64.Counter, UInt64.Counter) }
+type alias Model = { announcements : Announcement.Model, presentation : Presentation.Model, previews : Preview.Model, pendingQuery : Maybe String, composition : Composition, lastQuery : Maybe (String, UInt64.Counter, UInt64.Counter) }
 
 initial : Model
-initial = {presentation=Presentation.initial,previews=Preview.initial,pendingQuery=Nothing,composition=Idle,lastQuery=Nothing}
+initial = {announcements=Announcement.initial,presentation=Presentation.initial,previews=Preview.initial,pendingQuery=Nothing,composition=Idle,lastQuery=Nothing}
 
 isComposing : Model -> Bool
 isComposing model = model.composition/=Idle
@@ -37,14 +39,15 @@ isComposing model = model.composition/=Idle
 main : Program () Model Msg
 main = Browser.element
     { init=\_ -> (initial,Cmd.none)
-    , subscriptions=\_ -> Sub.batch [presentation Present,requestAction Action,nativePreviews NativePreview,nativePreviewGrants NativeGrant,nativePreviewQuarantine NativeQuarantine,nativePreviewClosed NativeClosed,nativePreviewIssued NativeIssued,nativePreviewRetry NativeRetry,nativePreviewRetirement NativeRetirement]
-    , view=\model -> div [attribute "data-input-composing" (if isComposing model then "true" else "false")] [Presentation.current model.presentation |> Maybe.map (\snapshot -> SurfaceRenderer.viewWithPreview (\identity -> Preview.visual snapshot identity model.previews) True Action (model.pendingQuery |> Maybe.map (\query -> SurfaceRenderer.pendingQuery query snapshot) |> Maybe.withDefault snapshot)) |> Maybe.withDefault (text "")]
+    , subscriptions=\_ -> Sub.batch [announcements Announce,presentation Present,requestAction Action,nativePreviews NativePreview,nativePreviewGrants NativeGrant,nativePreviewQuarantine NativeQuarantine,nativePreviewClosed NativeClosed,nativePreviewIssued NativeIssued,nativePreviewRetry NativeRetry,nativePreviewRetirement NativeRetirement]
+    , view=\model -> div [attribute "data-input-composing" (if isComposing model then "true" else "false")] [Presentation.current model.presentation |> Maybe.map (\snapshot -> SurfaceRenderer.viewWithPreview (\identity -> Preview.visual snapshot identity model.previews) True Action (model.pendingQuery |> Maybe.map (\query -> SurfaceRenderer.pendingQuery query snapshot) |> Maybe.withDefault snapshot)) |> Maybe.withDefault (text ""),Presentation.current model.presentation |> Maybe.map (\_ -> Announcement.view model.announcements) |> Maybe.withDefault (text "")]
     , update=update
     }
 
 update : Msg -> Model -> (Model, Cmd Msg)
 update message model =
     case message of
+        Announce raw -> ({model | announcements=Announcement.receive True (Presentation.current model.presentation) raw model.announcements},Cmd.none)
         Action value ->
             let kind=D.decodeValue (D.field "kind" D.string) value |> Result.withDefault ""
                 sendQuery query wire current =
@@ -85,7 +88,7 @@ update message model =
                 key = pending |> Maybe.andThen (\query -> Presentation.current acceptedPresentation |> Maybe.map (\snapshot -> (query,SurfaceRenderer.publication snapshot,SurfaceRenderer.lease snapshot)))
                 queryCommand = if composing || key==model.lastQuery then Cmd.none else pending |> Maybe.andThen (\query -> Presentation.query query acceptedPresentation) |> Maybe.map actions |> Maybe.withDefault Cmd.none
                 lastQuery = if not sameField then Nothing else if composing || pending==Nothing then model.lastQuery else key
-            in ({presentation=acceptedPresentation,previews=previews,pendingQuery=pending,composition=composition,lastQuery=lastQuery},Cmd.batch [previewCommands commands,queryCommand])
+            in ({announcements=model.announcements,presentation=acceptedPresentation,previews=previews,pendingQuery=pending,composition=composition,lastQuery=lastQuery},Cmd.batch [previewCommands commands,queryCommand])
         NativePreview raw ->
             let (previews,commands) =
                     case D.decodeValue Realm.envelopeDecoder raw of

@@ -1,0 +1,77 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-a860a6e1d2dc4493bfc47ff650282e55.scope",
+    "coreLimit": 1
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "args": [
+        "quint",
+        "typecheck",
+        "qa/announcement-owner.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "tests-typecheck",
+      "args": [
+        "quint",
+        "typecheck",
+        "qa/announcement-owner_test.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "args": [
+        "quint",
+        "test",
+        "qa/announcement-owner_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=79501"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "witness-safety",
+      "args": [
+        "quint",
+        "run",
+        "qa/announcement-owner.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--witnesses",
+        "requestedWitness",
+        "refusalWitness",
+        "deliveryWitness",
+        "popupWitness",
+        "repeatWitness",
+        "ownerChangeWitness",
+        "visualNotificationWitness",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79502"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "inputs": {
+    "qa/announcement-owner.qnt": "69cea57ad705b44085fc4827227c04e58afa595974069d751555a984b4aa1eb9",
+    "qa/announcement-owner_test.qnt": "d6d3dd0aabb21d51d291d1b8965f049501d070e3b23e6e825eb69805771a7dc4"
+  },
+  "witnesses": {
+    "requestedWitness": 1000,
+    "refusalWitness": 1000,
+    "deliveryWitness": 846,
+    "popupWitness": 524,
+    "repeatWitness": 770,
+    "ownerChangeWitness": 992,
+    "visualNotificationWitness": 986
+  }
+}

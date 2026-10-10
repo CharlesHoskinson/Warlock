@@ -1,4 +1,4 @@
-module Launch exposing (Acknowledgement, Model, PendingToken, Selection, acknowledgeUnknown, bind, catalog, disconnect, init, receive, select, start, status, timeout, pending, uncertain)
+module Launch exposing (refusal, Acknowledgement, Model, PendingToken, Selection, acknowledgeUnknown, bind, catalog, disconnect, init, receive, select, start, status, timeout, pending, uncertain)
 
 import Catalog
 import Json.Decode as D
@@ -294,3 +294,11 @@ status (Model model) =
 
         Settled _ Unknown ->
             "Unknown"
+
+
+-- A settled native refusal, including the exact intent identity. This getter
+-- neither reconstructs a selection nor permits another launch.
+refusal : Model -> Maybe { intent : E.Value, entry : String }
+refusal (Model model) = case model.phase of
+    Settled intent Refused -> Just {intent=E.object [("request",E.string (UInt64.string intent.request)),("lifetime",E.string (UInt64.string intent.lifetime)),("generation",E.string (UInt64.string intent.generation)),("entry",E.string intent.entry)],entry=intent.entry}
+    _ -> Nothing

@@ -1,0 +1,259 @@
+{
+  "schema": 1,
+  "status": "partial",
+  "requirements": [
+    "ELM-UI-010"
+  ],
+  "scenarios": [
+    "announce-launch refusal",
+    "announce-transfer refusal",
+    "announce-settings validation failure"
+  ],
+  "originalRequirement": {
+    "id": "ELM-UI-010",
+    "capability": "elm-accessibility",
+    "phase": "P3",
+    "pattern": "event-driven",
+    "priority": "must",
+    "ears": "WHEN an action needs user attention or a notification changes, the shell SHALL publish concise identity-correlated accessible status without moving focus, deduplicate repeated receipts and apply the frozen notification announcement/interruption policy.",
+    "task": "Implement non-focus-stealing accessible outcomes.",
+    "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+    "legacyEvidence": "docs/elm-roadmap/INTERACTION.md; new coverage: final UI/UX review",
+    "scenarios": [
+      {
+        "name": "announce-launch refusal",
+        "given": "speech and braille active with stable input focus",
+        "when": "launch refusal occurs",
+        "then": "one correlated message appears with reachable detail/recovery and no focus relocation; repeated receipts do not reannounce"
+      },
+      {
+        "name": "announce-transfer refusal",
+        "given": "speech and braille active with stable input focus",
+        "when": "transfer refusal occurs",
+        "then": "one correlated message appears with reachable detail/recovery and no focus relocation; repeated receipts do not reannounce"
+      },
+      {
+        "name": "announce-settings validation failure",
+        "given": "speech and braille active with stable input focus",
+        "when": "settings validation failure occurs",
+        "then": "one correlated message appears with reachable detail/recovery and no focus relocation; repeated receipts do not reannounce"
+      },
+      {
+        "name": "announce-adapter unavailable",
+        "given": "speech and braille active with stable input focus",
+        "when": "adapter unavailable occurs",
+        "then": "one correlated message appears with reachable detail/recovery and no focus relocation; repeated receipts do not reannounce"
+      },
+      {
+        "name": "announce-notification arrival",
+        "given": "speech and braille active with stable input focus and the frozen announcement policy permits this message",
+        "when": "notification arrival occurs",
+        "then": "one correlated message appears with reachable detail/recovery and no focus relocation; repeated receipts do not reannounce"
+      },
+      {
+        "name": "announce-notification expiration",
+        "given": "speech and braille active with stable input focus and the frozen announcement policy permits this message",
+        "when": "notification expiration occurs",
+        "then": "one correlated message appears with reachable detail/recovery and no focus relocation; repeated receipts do not reannounce"
+      },
+      {
+        "name": "announce-expired action rejection",
+        "given": "speech and braille active with stable input focus and the frozen announcement policy permits this message",
+        "when": "expired action rejection occurs",
+        "then": "one correlated message appears with reachable detail/recovery and no focus relocation; repeated receipts do not reannounce"
+      },
+      {
+        "name": "announcement-dnd",
+        "given": "do-not-disturb active with ordinary new notification",
+        "when": "notification arrives",
+        "then": "visual history updates without speech interruption or focus relocation"
+      },
+      {
+        "name": "announcement-expiration-irrelevant",
+        "given": "expired notification is neither focused nor user-invoked",
+        "when": "expiration is processed",
+        "then": "expiration does not announce or move focus"
+      },
+      {
+        "name": "announcement-urgency-opt-in",
+        "given": "user explicitly opted in to this urgency class",
+        "when": "matching urgent notification arrives",
+        "then": "announcement follows the opted-in interruption policy without focus theft"
+      }
+    ],
+    "source": "docs/elm-roadmap/coordinator-requirements.json",
+    "status": "proposed",
+    "taskId": "P3-ELM-UI-010",
+    "accountableOwnerRole": "Accessibility lead",
+    "verifierRole": "Independent acceptance reviewer"
+  },
+  "observedUTC": "2026-10-10T04:09:40.096748+00:00",
+  "sourceBaseRevision": "761ce5f6af0fbfcf5abdcdff3ee45b822003a156",
+  "sourceObservation": "Precommit owned bytes identified below; the base revision precedes this delta. No independent acceptance claimed.",
+  "sourceHashes": {
+    "implementation/warlock/src/Announcement.elm": "f95bf327dca47e9d9f79cde86c8a26c93ead09f4329985e5301d9937c0e2cf67",
+    "implementation/warlock/src/OutcomeAnnouncements.elm": "cee82fdf8ef04f681942d9f4d3bfe8c0e37ef85eae435fd09d2be577ae95116d",
+    "implementation/warlock/src/OutputController.elm": "1afb664b11b5c303177728483c8e7e469830b75d828070130cebc95fb5c9cafd",
+    "implementation/warlock/src/Launch.elm": "dcd7260248ccb0b5bc6001c49319dd51af8c2fae98888919a308ac025ed273a2",
+    "implementation/warlock/src/Settings.elm": "d13f4d63327eae4a80052252c8ba1f1e40db0f69954b46470ccff248e5ba0e7c",
+    "implementation/warlock/src/Bar.elm": "0c232aabc951c82a12223a209bc054b263c3c5c45bc6153a5000194e00db0cbd",
+    "implementation/warlock/src/Popup.elm": "2356b66f953b2ce085e21a42eb7082b69f0549e54d50dc2f4530c3134d3db171",
+    "implementation/warlock/src/SurfaceRenderer.elm": "e9cff451f31485b634f9a7400a8a703446acfb8b800ee5e0a30bfc783dbf7252",
+    "implementation/warlock/native/announcement-transport.h": "67e8e4f9cd9a5e679ba49d71544ce2f84dfc75e6099d1ceae95c532507dfe974",
+    "implementation/warlock/native/shared-host.c": "3f2728689916b20166253d792d3d8519f9a77247d7c3676494d8a815b4342b5b",
+    "implementation/warlock/assets/elm.js": "4ed66d090a97f9d4bd2de3309cbdbf585bdd4f602066cdeffda63ece0893735b",
+    "implementation/warlock/assets/bar.js": "f7773de4787da8d21427a675a81ed7ec1f189caf65e50a395f4115de7dc7d933",
+    "implementation/warlock/assets/popup.js": "85df16eb292447a884f52662c3fdb1d533bce5b6e830370f2cd16625d89ea417",
+    "implementation/warlock/assets/bar-adapter.js": "13dc001c14223183b9f344bdae711175695e11a79854a01b380348bde2c37a6a",
+    "implementation/warlock/assets/popup-adapter.js": "6f71f3b793a3f9eec2c8c038c6af2a28ce47d7d773551496292fafc0ded49019",
+    "implementation/warlock/assets/shell.css": "38de4947cc0fc0b83e174a9d561a926b36a480e0af25839373101898cfa4aa86",
+    "implementation/warlock/qa/announcement-owner.qnt": "69cea57ad705b44085fc4827227c04e58afa595974069d751555a984b4aa1eb9",
+    "implementation/warlock/qa/announcement-owner_test.qnt": "d6d3dd0aabb21d51d291d1b8965f049501d070e3b23e6e825eb69805771a7dc4",
+    "implementation/warlock/qa/check-announcement-owner.py": "5f7aa0064db476bbf9334c3ce319a6aa2f4d09739e1e67b143c867155b335cd4",
+    "implementation/warlock/qa/AnnouncementReplay.elm": "940b974ada565ab6b2acf49901875911b567237340e5d430208bfd60ba1e7c89",
+    "implementation/warlock/qa/announcement-browser.mjs": "6fffd467a14e1392922cfd7eccb77b801c2c7f9dfe0e07509be2c79264b15891",
+    "implementation/warlock/qa/check-search.py": "78c2435bb845a84ed2945cf6eaa4c92eeec79308c587d85ad77f61cdcabe791f",
+    "implementation/warlock/qa/current-search-build.json": "772298f946a864f2d6b115be2bb4244a5c34561900babc7d525ff4cc5d6fc75e",
+    "implementation/warlock/qa/native-window-feedback.py": "28d12785d3c0255ef85f9c5d5586b396db963ebe85882363cc33132748e8bb4e",
+    "implementation/warlock/README.md": "1587bec7ab06583664516572965cea84fbd226fc975e91f64ab21e0913319e0b",
+    "implementation/warlock/src/Surface.elm": "bdf43e7109ebdaf8610fa91bf01af3a663b941a08a14a67a95662a878e024915",
+    "implementation/warlock/src/Desktop.elm": "882d10e85ed4d8138f2eaa54d3cd7129583907ac47fe54b4c61c409759e00845"
+  },
+  "nativePair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-core-1791495415110842751/Hyprland",
+      "sha256": "81c9ac609c2900f99c1efbe613b83e949aeae3059a5e4403601581fa96191acf"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791596429600393566/elm-window-geometry-authority.so",
+      "sha256": "1f5de87c759902cbbca05dfdbba56090641c994cf3c7276671094248465bcac4"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/announcements-1791605240490901615/elm-host",
+    "sha256": "1a6194d9577c40077e6f394550dc596a5f287d14513d49c100b2d31503285153",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/announcements-1791605240490901615/report.json",
+    "heldBuildSHA256": "74d15d20e9279d2a4f7b27dd8a66828d03a6d6bf00e96f4415eacc1f587ebe18"
+  },
+  "compiledAssets": {
+    "elm.js": "4ed66d090a97f9d4bd2de3309cbdbf585bdd4f602066cdeffda63ece0893735b",
+    "bar.js": "f7773de4787da8d21427a675a81ed7ec1f189caf65e50a395f4115de7dc7d933",
+    "popup.js": "85df16eb292447a884f52662c3fdb1d533bce5b6e830370f2cd16625d89ea417"
+  },
+  "model": {
+    "skills": [
+      "quint-llm-kit/quint-modeling",
+      "quint-llm-kit/quint-execute-spec"
+    ],
+    "path": "implementation/warlock/qa/announcement-owner.qnt",
+    "namedTests": 8,
+    "witnesses": {
+      "requestedWitness": 1000,
+      "refusalWitness": 1000,
+      "deliveryWitness": 846,
+      "popupWitness": 524,
+      "repeatWitness": 770,
+      "ownerChangeWitness": 992,
+      "visualNotificationWitness": 986
+    },
+    "samples": 1000,
+    "maxSteps": 30,
+    "seed": 79502,
+    "limits": "Bounded opaque identities and matched-receipt abstraction; no transport loss/process restart, timing, native AT or resource proof."
+  },
+  "componentObservations": {
+    "typedChecks": 12,
+    "browserChecks": 12,
+    "nativeAT": false
+  },
+  "nativeObservations": {
+    "report": "implementation/warlock/qa/runs/native-transfer-workspace-1791605258839723707/report.json",
+    "sha256": "a2a103ce253134217a1ce9e77d433eac83a06b30c37afb7d5e257d3deb803e73",
+    "exactRefusalAnnouncementObserved": true,
+    "cleanupPassed": true,
+    "scope": "Exact native refusal/owner/serial and actual WebKit live-region DOM; native speech/braille and independent UI-010 acceptance remain unverified.",
+    "runnerSHA256": "28d12785d3c0255ef85f9c5d5586b396db963ebe85882363cc33132748e8bb4e"
+  },
+  "missingObservations": [
+    "Actual stable-focus native speech and braille, repeated-receipt delivery and reachable recovery through AT.",
+    "Native launch/settings refusal announcement journeys.",
+    "Independent original-scenario acceptance.",
+    "Adapter unavailable and frozen notification relevance/DND/urgency/expiration policy remain separate unfinished scope.",
+    "Bounded model omits transport loss, process restart, timing and full hardware/resource budgets."
+  ],
+  "reviewerDisposition": "Root observed scoped implementation/component/native transport results; independent original-scenario acceptance remains open.",
+  "nativeAcceptance": false,
+  "assistiveTechnologyAccepted": false,
+  "fullReleaseAccepted": false,
+  "reproduce": [
+    [
+      "PYTHONDONTWRITEBYTECODE=1",
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/window-integration-qa/qa_run.py",
+      "--",
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/check-search.py",
+      "--announcements"
+    ],
+    [
+      "python3",
+      "-B",
+      "docs/warlock-build-loop/v2/loop.py",
+      "--record",
+      ".warlock-contributor/announcements.json",
+      "native",
+      "--runner",
+      "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/native-window-feedback.py",
+      "--",
+      "--transfer-workspace"
+    ]
+  ],
+  "files": {
+    "README.md": {
+      "sha256": "426e4e818aded825d0d8fcb8286544046cdbfe2a5a20e0181c930bd9e3512552",
+      "bytes": 4559
+    },
+    "browser-report.json": {
+      "sha256": "8b10d881d74300de11951d934b68a54af3131b26f084799d2656d30f7c3bde44",
+      "bytes": 13362
+    },
+    "compiled-report.json": {
+      "sha256": "74d15d20e9279d2a4f7b27dd8a66828d03a6d6bf00e96f4415eacc1f587ebe18",
+      "bytes": 120155
+    },
+    "failures.json": {
+      "sha256": "bcdcd8c6ea6ab1a3d304b8ed4532ff1e7f42c5e1f1d53af19746bb3dcf626b73",
+      "bytes": 8041
+    },
+    "model-named.stdout": {
+      "sha256": "1d204ac4bf8a130c7d2cc113fa4b141fbdcc3236c378bfb3ad6c2acb9e6543fd",
+      "bytes": 489
+    },
+    "model-report.json": {
+      "sha256": "e8df22c9802975857bd349acf3e795c68f6b49a071f5b147ebb12f23201a39da",
+      "bytes": 1855
+    },
+    "model-witness-safety.stdout": {
+      "sha256": "9f96c2147bc072fef950f2b5873b2d7f41414b891e6fe70646dd0695746a6a94",
+      "bytes": 13207
+    },
+    "native-announcement.json": {
+      "sha256": "f3dcf78112e6b6b5c70813ccf7e45b0097f6b9417caaddb340560a18d7a4cbe0",
+      "bytes": 968
+    },
+    "native-report.json": {
+      "sha256": "a2a103ce253134217a1ce9e77d433eac83a06b30c37afb7d5e257d3deb803e73",
+      "bytes": 442236
+    },
+    "typed-refusals.json": {
+      "sha256": "c69cf86c2733871a01939e6bfa522b990dcdd872190fc9e1170e8f8d39bed4f9",
+      "bytes": 41819
+    }
+  }
+}

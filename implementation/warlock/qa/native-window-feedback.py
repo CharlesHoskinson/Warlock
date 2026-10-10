@@ -1253,6 +1253,16 @@ raise SystemExit(daemon.run())
      open_transfer();popup_capture('native-transfer-destinations');before=len(transfer_receipts());keyboard_button('Move selected window to workspace 2',28)
      refused=wait(lambda:len(transfer_receipts())==before+1 and transfer_receipts()[-1]);wait(lambda:(projection() or {}).get('phase')=='Coherent' and 'refused' in (bar_body() or {}).get('text','').lower())
      check('NativeRefusalRetainsWorkspaceOneWithVisibleFeedback',refused['status']=='Refused' and refused['reason']=='transfer-family-ineligible' and member()['workspace']=='1',receipt=refused,member=member(),bar=bar_body())
+     def refusal_announcements():
+      return [json.loads(line.split(': ',1)[1]) for line in text().splitlines() if line.startswith('announcement-delivery: ')]
+     cue=wait(lambda:next((cue for cue in refusal_announcements() if json.loads(cue['message']['correlation']).get('outcome')=='transfer-refused'),None))
+     correlation=json.loads(cue['message']['correlation'])
+     check('RefusalAnnouncementMatchesExactNativeReceipt',correlation=={'outcome':'transfer-refused','binding':refused['binding'],'identity':{'effectProtocol':refused['effectProtocol'],'intent':refused['intent']}} and cue['deliver'] and cue['recipient']==cue['announcer'] and cue['recipient']['surface']=='bar',cue=cue,receipt=refused)
+     announced_bar=wait(lambda:next((body for body in [bar_body()] if body and any(a.get('sequence')==cue['message']['sequence'] for a in body.get('announcements',[]))),None))
+     live=announced_bar['announcements']
+     check('OneNativeLiveRegionHasRefusalAndRecovery',len(live)==1 and live[0]['live']=='polite' and live[0]['sequence']==cue['message']['sequence'] and live[0]['correlation']==cue['message']['correlation'] and live[0]['text']==cue['message']['text'] and 'ELM-AUTHORITY-FIXTURE' in live[0]['text'] and 'Refresh window status, then choose again.' in live[0]['text'] and len(refusal_announcements())==1,bar=announced_bar)
+     report['nativeRefusalAnnouncementObserved']=True
+     report['refusalAnnouncementScope']='Exact native refusal/owner/serial and actual WebKit live-region DOM; native speech/braille and independent UI-010 acceptance remain unverified.'
      check('NativeUnpinForAcceptedTransfer',s.ctl('dispatch',"hl.dsp.window.pin({window='"+selector+"'})").strip()=='ok')
      wait(lambda:any(w['title']=='ELM-AUTHORITY-FIXTURE' and not w['pinned'] for w in s.data('clients')))
      open_transfer();before=len(transfer_receipts());keyboard_button('Move selected window to workspace 2',28)

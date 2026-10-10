@@ -44,6 +44,7 @@ document.addEventListener('wheel',event=>{
   const unit=event.deltaMode===1?parseFloat(getComputedStyle(actions).fontSize):event.deltaMode===2?actions.clientWidth:1;
   actions.scrollLeft+=event.deltaY*unit;event.preventDefault();
 },{passive:false});
+window.receiveAnnouncement = value => app.ports.announcements.send(value);
 window.receivePresentation = value => {
   app.ports.presentation.send(value);
   requestAnimationFrame(() => requestAnimationFrame(() => {
@@ -80,7 +81,7 @@ if (window.elmHostQA) {
     const palette={background:getComputedStyle(document.body).backgroundColor,foreground:getComputedStyle(document.body).color};
     const active=document.activeElement,activeStyle=active&&getComputedStyle(active),activeBox=active?.getBoundingClientRect();
     const focusStyle=activeStyle?{color:activeStyle.color,background:activeStyle.backgroundColor,outlineColor:activeStyle.outlineColor,outlineWidth:activeStyle.outlineWidth,outlineOffset:activeStyle.outlineOffset,x:activeBox.x,y:activeBox.y,width:activeBox.width,height:activeBox.height}:null;
-    const body={motionProfile:node?.dataset.motion||null,motionAnimations:document.getAnimations().length,palette,focusStyle,publication:node?.dataset.publication||null,lease:node?.dataset.lease||null,buttons,feedback,focus:document.activeElement?.id||'',documentFocused:document.hasFocus(),selectionAnchor:selectedIdentity,text:document.body.innerText,fontSize:getComputedStyle(document.body).fontSize,theme:document.documentElement.dataset.theme||null,textScale:document.documentElement.dataset.textScale||null,effects:document.documentElement.dataset.effects||null,reducedTransparency:document.documentElement.dataset.reducedTransparency||null,viewportWidth:innerWidth,scrollLeft:actions?.scrollLeft||0,scrollWidth:actions?.scrollWidth||0,clientWidth:actions?.clientWidth||0,actions:actionBox?{x:actionBox.x,y:actionBox.y,width:actionBox.width,height:actionBox.height}:null};
+    const body={announcements:[...document.querySelectorAll(".shell-announcement")].map(n=>({text:n.textContent,sequence:n.querySelector("[data-announcement-sequence]")?.dataset.announcementSequence||null,correlation:n.querySelector("[data-announcement-correlation]")?.dataset.announcementCorrelation||null,live:n.getAttribute("aria-live")})),motionProfile:node?.dataset.motion||null,motionAnimations:document.getAnimations().length,palette,focusStyle,publication:node?.dataset.publication||null,lease:node?.dataset.lease||null,buttons,feedback,focus:document.activeElement?.id||'',documentFocused:document.hasFocus(),selectionAnchor:selectedIdentity,text:document.body.innerText,fontSize:getComputedStyle(document.body).fontSize,theme:document.documentElement.dataset.theme||null,textScale:document.documentElement.dataset.textScale||null,effects:document.documentElement.dataset.effects||null,reducedTransparency:document.documentElement.dataset.reducedTransparency||null,viewportWidth:innerWidth,scrollLeft:actions?.scrollLeft||0,scrollWidth:actions?.scrollWidth||0,clientWidth:actions?.clientWidth||0,actions:actionBox?{x:actionBox.x,y:actionBox.y,width:actionBox.width,height:actionBox.height}:null};
     const current=JSON.stringify(body);if(current!==last){last=current;post({kind:'surface-report',body});}
   });
   document.addEventListener('scroll',observe,true);
