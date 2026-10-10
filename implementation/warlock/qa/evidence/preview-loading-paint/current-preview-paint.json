@@ -1,0 +1,14 @@
+{
+  "checks": {
+    "OriginalAcquireWaitsForPaint": true,
+    "PaintForwardsExactOriginalJobAndDeadline": true,
+    "DuplicatePaintCannotReplayAcquire": true,
+    "ExactCancelRetiresUnsentAcquireImmediately": true,
+    "DifferentRequestCannotCancelPendingAcquire": true,
+    "DifferentBindingCannotCancelPendingAcquire": true,
+    "RepeatedPendingAcquireDoesNotMintAnotherTicket": true,
+    "OldPaintCannotBorrowFreshRequest": true,
+    "ReleaseAndAckNeverWaitForPaint": true,
+    "ForeignNumericExtraPaintCannotCapture": true
+  }
+}

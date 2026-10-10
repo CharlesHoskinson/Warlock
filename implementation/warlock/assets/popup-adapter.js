@@ -194,6 +194,14 @@ if (window.elmHostQA) {
 window.receiveNativePreview = value => app.ports.nativePreviews.send(value);
 window.receiveNativePreviewBatch = values => { for (const value of values) app.ports.nativePreviews.send(value); };
 window.receiveNativePreviewRetirement = value => app.ports.nativePreviewRetirement.send(value);
+app.ports.previewPaintRequests.subscribe(requests => {
+  for (const request of requests) {
+    // Elm retains the original Acquire. Give its Loading view a paint
+    // opportunity before returning this one-use ticket; controls never wait.
+    requestAnimationFrame(() => requestAnimationFrame(() =>
+      app.ports.previewPainted.send(request)));
+  }
+});
 let previewControlOrdinal=0n;
 app.ports.previewCommands.subscribe(value => {
   for (const entry of value) for (const command of entry.commands) {

@@ -1,0 +1,401 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      cancelled: Set(),
+      cancelledBeforeSend: Set(),
+      controls: 0,
+      dispatches: 0,
+      issued: Set(),
+      painted: Set(),
+      pending: Set(),
+      sent: Set()
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      cancelled: Set(),
+      cancelledBeforeSend: Set(),
+      controls: 1,
+      dispatches: 0,
+      issued: Set(),
+      painted: Set(),
+      pending: Set(),
+      sent: Set()
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      cancelled: Set(2),
+      cancelledBeforeSend: Set(),
+      controls: 2,
+      dispatches: 0,
+      issued: Set(),
+      painted: Set(),
+      pending: Set(),
+      sent: Set()
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      cancelled: Set(2),
+      cancelledBeforeSend: Set(),
+      controls: 2,
+      dispatches: 0,
+      issued: Set(),
+      painted: Set(),
+      pending: Set(),
+      sent: Set()
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      cancelled: Set(2),
+      cancelledBeforeSend: Set(),
+      controls: 3,
+      dispatches: 0,
+      issued: Set(),
+      painted: Set(),
+      pending: Set(),
+      sent: Set()
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      cancelled: Set(2),
+      cancelledBeforeSend: Set(),
+      controls: 3,
+      dispatches: 0,
+      issued: Set(),
+      painted: Set(),
+      pending: Set(),
+      sent: Set()
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      cancelled: Set(2),
+      cancelledBeforeSend: Set(),
+      controls: 4,
+      dispatches: 0,
+      issued: Set(),
+      painted: Set(),
+      pending: Set(),
+      sent: Set()
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      cancelled: Set(1, 2),
+      cancelledBeforeSend: Set(),
+      controls: 5,
+      dispatches: 0,
+      issued: Set(),
+      painted: Set(),
+      pending: Set(),
+      sent: Set()
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      cancelled: Set(1, 2),
+      cancelledBeforeSend: Set(),
+      controls: 5,
+      dispatches: 0,
+      issued: Set(),
+      painted: Set(),
+      pending: Set(),
+      sent: Set()
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      cancelled: Set(1, 2),
+      cancelledBeforeSend: Set(),
+      controls: 5,
+      dispatches: 0,
+      issued: Set(),
+      painted: Set(),
+      pending: Set(),
+      sent: Set()
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      cancelled: Set(1, 2),
+      cancelledBeforeSend: Set(),
+      controls: 5,
+      dispatches: 0,
+      issued: Set(1),
+      painted: Set(),
+      pending: Set((1, 1)),
+      sent: Set()
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      cancelled: Set(1, 2),
+      cancelledBeforeSend: Set(),
+      controls: 6,
+      dispatches: 0,
+      issued: Set(1),
+      painted: Set(),
+      pending: Set((1, 1)),
+      sent: Set()
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      cancelled: Set(1, 2),
+      cancelledBeforeSend: Set(),
+      controls: 6,
+      dispatches: 0,
+      issued: Set(1),
+      painted: Set(),
+      pending: Set((1, 1)),
+      sent: Set()
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      cancelled: Set(1, 2),
+      cancelledBeforeSend: Set(),
+      controls: 6,
+      dispatches: 0,
+      issued: Set(1, 2),
+      painted: Set(),
+      pending: Set((1, 1), (2, 2)),
+      sent: Set()
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      cancelled: Set(1, 2),
+      cancelledBeforeSend: Set(1),
+      controls: 7,
+      dispatches: 0,
+      issued: Set(1, 2),
+      painted: Set(),
+      pending: Set((2, 2)),
+      sent: Set()
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      cancelled: Set(1, 2),
+      cancelledBeforeSend: Set(1),
+      controls: 7,
+      dispatches: 0,
+      issued: Set(1, 2),
+      painted: Set(),
+      pending: Set((2, 2)),
+      sent: Set()
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      cancelled: Set(1, 2),
+      cancelledBeforeSend: Set(1),
+      controls: 8,
+      dispatches: 0,
+      issued: Set(1, 2),
+      painted: Set(),
+      pending: Set((2, 2)),
+      sent: Set()
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      cancelled: Set(1, 2),
+      cancelledBeforeSend: Set(1),
+      controls: 9,
+      dispatches: 0,
+      issued: Set(1, 2),
+      painted: Set(),
+      pending: Set((2, 2)),
+      sent: Set()
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      cancelled: Set(1, 2),
+      cancelledBeforeSend: Set(1),
+      controls: 9,
+      dispatches: 0,
+      issued: Set(1, 2),
+      painted: Set(),
+      pending: Set((2, 2)),
+      sent: Set()
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      cancelled: Set(1, 2),
+      cancelledBeforeSend: Set(1),
+      controls: 9,
+      dispatches: 1,
+      issued: Set(1, 2),
+      painted: Set((2, 2)),
+      pending: Set(),
+      sent: Set((2, 2))
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      cancelled: Set(1, 2),
+      cancelledBeforeSend: Set(1),
+      controls: 9,
+      dispatches: 1,
+      issued: Set(1, 2),
+      painted: Set((2, 2)),
+      pending: Set(),
+      sent: Set((2, 2))
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      cancelled: Set(1, 2),
+      cancelledBeforeSend: Set(1),
+      controls: 10,
+      dispatches: 1,
+      issued: Set(1, 2),
+      painted: Set((2, 2)),
+      pending: Set(),
+      sent: Set((2, 2))
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      cancelled: Set(1, 2),
+      cancelledBeforeSend: Set(1),
+      controls: 10,
+      dispatches: 1,
+      issued: Set(1, 2),
+      painted: Set((2, 2)),
+      pending: Set(),
+      sent: Set((2, 2))
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      cancelled: Set(1, 2),
+      cancelledBeforeSend: Set(1),
+      controls: 10,
+      dispatches: 1,
+      issued: Set(1, 2),
+      painted: Set((2, 2)),
+      pending: Set(),
+      sent: Set((2, 2))
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      cancelled: Set(1, 2),
+      cancelledBeforeSend: Set(1),
+      controls: 10,
+      dispatches: 1,
+      issued: Set(1, 2),
+      painted: Set((2, 2)),
+      pending: Set(),
+      sent: Set((2, 2))
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      cancelled: Set(1, 2),
+      cancelledBeforeSend: Set(1),
+      controls: 10,
+      dispatches: 1,
+      issued: Set(1, 2),
+      painted: Set((2, 2)),
+      pending: Set(),
+      sent: Set((2, 2))
+    }
+}
+
+[ok] No violation found (837ms at 1195 traces/second).
+Trace length statistics: max=26, min=26, average=26.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Witnesses:
+paintDispatchWitness was witnessed in 485 trace(s) out of 1000 explored (48.50%)
+cancelledUnsentWitness was witnessed in 447 trace(s) out of 1000 explored (44.70%)
+independentDispatchWitness was witnessed in 213 trace(s) out of 1000 explored (21.30%)
+Use --seed=0x1437c --backend=typescript to reproduce.

@@ -114,7 +114,7 @@ branch=r'''   elif FOCUS:
 '''
 adapted=original[:start]+branch+original[end:]
 adapted=adapted.replace("'native-taskbar-focus-' if FOCUS", "('native-preview-quiescence-' if QUIESCENT else 'native-preview-states-') if FOCUS")
-needle='try:\n with host.PrivateHyprSession'
+needle='try:\n # Each nested Wayland output'
 assert adapted.count(needle)==1
 packet={'originalPath':str(path),'originalSHA256':hashlib.sha256(original.encode()).hexdigest(),'change':'Only original FOCUS observation branch replaced with ordinary authorized picker states, optional actual idle/reopen counters and exact colored family pixel checks; original host/deadlines/isolation/cleanup retained.'}
 adapted=adapted.replace(needle,"report.update(requirements=['ELM-UI-016'],scenarios=['preview-states'],scope='Actual ordinary picker native Loading DOM, Live/Historical/Unavailable and owned color/expiry journey; physical loading and actual AT/independent acceptance separate',nativePreviewRunner="+repr(packet)+")\n"+needle)

@@ -1,0 +1,187 @@
+{
+  "schema": 1,
+  "requirements": [
+    "ELM-UI-016"
+  ],
+  "scenarios": [
+    "preview-states"
+  ],
+  "sourceBaseRevision": "8f78d584dc17b22a3a80bf6b7bc3f956554f4c3e",
+  "sourceHashes": {
+    "implementation/warlock/qa/native-preview-states.py": "86b27dfc762686612a08e9db6356246689e4ae4e766f9d968292a62e3ab80c83",
+    "implementation/warlock/qa/native-preview-loading.py": "1a8fce4abc60824533ccd43d530255e1da00f89198f32a219124533cb5d7e7ae",
+    "implementation/warlock/qa/check-search.py": "1f38480921e82d4141ec12027b821ec06f22e44a75285c6c8f0b6732086c7735",
+    "implementation/warlock/qa/PreviewStateReplay.elm": "28c4ed7976d8f87e9ebabb7ea583a592f3e2037d0069434777a87a9580b9ae93",
+    "implementation/warlock/qa/preview-description-browser.mjs": "05d19ad7b2575cde87376160072bc872a34c59bc142500063f7915a62d900492",
+    "implementation/warlock/src/Popup.elm": "4ab4195bfb96622cf563efaf4a889045553fb2367347b6881e70f53545bae406",
+    "implementation/warlock/src/PreviewPresenter.elm": "10769b8d9a86e5e5b35f1f292d9837a38b20a0ba636d5baa0ee0c3b8fcdac1cc",
+    "implementation/warlock/assets/popup-adapter.js": "5b732f9984715004f356b670250aca65b613ccdd410879fe075d83103ec119f1",
+    "implementation/warlock/native/shared-host.c": "b61f7e79da12693a4d30693309fe5dd2147f5760246052d230efed30fdd7d844",
+    "implementation/warlock/qa/current-search-build.json": "d200a11d2e8e3feb1ec3f29db433a6a05f2f5184a5557195c0fb8adcf13df09f",
+    "implementation/warlock/assets/elm.js": "5056dab9023368ce4e022dc4146eceeb7dd5217d57217242038413919e1485a6",
+    "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+    "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
+    "implementation/warlock/README.md": "90226fc4df61ac2900403711824cf6e6f8a18aba01c3891059f8cc81a002e803",
+    "implementation/warlock/src/PreviewPaintGate.elm": "29336cc6d6b21c3d32fd4967911bb189c42b1569ed877ffe79555ed30a7c7d82",
+    "implementation/warlock/qa/PreviewPaintReplay.elm": "488e33a7e09e5937385be99e7525ba45765cf195e54cf2244627a8e2c799ab18",
+    "implementation/warlock/qa/preview-paint-gate.qnt": "764924b8c5007bc89c69bedfded31f8153c18b0223b7d8859b47f5890c0f4610",
+    "implementation/warlock/qa/preview-paint-gate_test.qnt": "f49a506f58d7d83db6a4998cf636c649349bf5157f121c2fc881cb5e11c044a2",
+    "implementation/warlock/qa/check-preview-paint-gate.py": "fe9e247c2492494a87780a535640ccff4d7c6e6891829e9f9053a07c31ec9195"
+  },
+  "scope": "Issued Acquire receives an actual renderer paint opportunity; retained native Loading screenshot shows matching labels and no red/green source pixels in either card, followed by original authorized Live/Historical/Unavailable journey and normal cleanup.",
+  "missingObservations": [
+    "Actual native AT passive descriptions for all states.",
+    "Broader capacity/fairness and general transient paint consistency.",
+    "Independent original-scenario acceptance."
+  ],
+  "nativeAcceptance": false,
+  "assistiveTechnologyAccepted": false,
+  "fullReleaseAccepted": false,
+  "nativePair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
+      "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791657775676809428/elm-window-geometry-authority.so",
+      "sha256": "ae84313c512d0ba398e7f931c5c877eb69d7635588fbbd11b71a729386fcbfd2"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+      "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-states-1791664848828524014/elm-host",
+    "sha256": "3c8ae483e00d4096bbf06d848426bbb80b1249a856a03fcbd264372dc6cdf34f",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-states-1791664848828524014/report.json",
+    "heldBuildSHA256": "05dc7fd3819977945779460245eb26fd6239bf59ced353f858d88d8e13113a05"
+  },
+  "quintWorkflow": {
+    "kit": "https://github.com/quint-co/quint-llm-kit",
+    "skill": "/home/hoskinson/.claude/plugins/cache/quint-llm-kit/quint-llm-kit/1.0.0/skills/quint-modeling/SKILL.md",
+    "implementationSkill": "quint-execute-spec",
+    "modelBeforeImplementation": true,
+    "witnesses": {
+      "paintDispatchWitness": 485,
+      "cancelledUnsentWitness": 447,
+      "independentDispatchWitness": 213
+    },
+    "abstraction": "Single-use renderer ticket for original issued job and exact unsent cancellation; no physical/native/AT/deadline proof."
+  },
+  "reviewerDisposition": {
+    "name": "root-preview-loading",
+    "independent": false,
+    "disposition": "Owner observed scoped production fix; independent original acceptance remains open."
+  },
+  "artifacts": [
+    {
+      "path": "implementation/warlock/qa/evidence/preview-loading-paint/initial-report.json",
+      "sha256": "d3a90d9f3a56487fd3ae62da857d77b183f324d4ac5a0a18474cc67e22188137",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-paint-gate-1791664473181651687/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/preview-loading-paint/initial-preview-paint-gate.qnt",
+      "sha256": "98769dbd261fbe37a6a76a6c72a286829102f0753e73b824fe2c80949aa3329a",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-paint-gate-1791664473181651687/preview-paint-gate.qnt"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/preview-loading-paint/initial-initialization.stdout",
+      "sha256": "07d27bf6f51ce7027b3184640abf4d6887e12e9e92d5c0dcd0297d578119c2f5",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-paint-gate-1791664473181651687/initialization.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/preview-loading-paint/model-report.json",
+      "sha256": "318f4d41b5ac4bceaca1cb1ff79bc6f42e8595906fb4b96f09934020cc820bf6",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-paint-gate-1791664510303163020/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/preview-loading-paint/model-named.stdout",
+      "sha256": "6aeb9a307242eddb39e2d43481b49618b46ded3335a69633059b573a49447e8b",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-paint-gate-1791664510303163020/named.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/preview-loading-paint/model-witness-safety.stdout",
+      "sha256": "0a66cff628119534d6b3aac2a61e53caceca48bcb07d9851b9688297d3d768ca",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-paint-gate-1791664510303163020/witness-safety.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/preview-loading-paint/current-report.json",
+      "sha256": "05dc7fd3819977945779460245eb26fd6239bf59ced353f858d88d8e13113a05",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-states-1791664848828524014/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/preview-loading-paint/current-preview-paint.json",
+      "sha256": "1cd62b3da4cc1f6d1a2413956710b83ee08d30d3f8da61df830a4b2eca37a2b0",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-states-1791664848828524014/preview-paint.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/preview-loading-paint/current-preview-states.json",
+      "sha256": "07cb6c357f24ffa32d02b591e4fe5b722dee24ad304d2bb2384693164ec356ce",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-states-1791664848828524014/preview-states.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/preview-loading-paint/current-preview-paint-adapter.stdout",
+      "sha256": "55b92108635c489c2ae38357582e50b1dfb2b0a616e9f80468f9669e580e8e02",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-states-1791664848828524014/preview-paint-adapter.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/preview-loading-paint/current-native-report.json",
+      "sha256": "23827c83815f024028b39097b092c8c2e7341dfede64c57f450adb1e55c1fe03",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-preview-loading-1791664881684827057/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/preview-loading-paint/baseline-native-report.json",
+      "sha256": "25c332e1499f6f9257984b741f1ef5a4e4bbed4e12a2aca54dabe873a3c67454",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-preview-states-1791664280435217140/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/preview-loading-paint/compile-failure-report.json",
+      "sha256": "f5c083f1c338cae52dcd99194687f25f1e750dbe7505b1503b6643f9c549b328",
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/preview-states-1791664820709550479/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/preview-loading-paint/current-native-Loading-attempt.png",
+      "sha256": "4718ebd1800abecbca134bd074c7e4b8d33274fa26167891b2c509ae94b0f0b5",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791664881684945346/Loading-attempt.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/preview-loading-paint/current-native-Live.png",
+      "sha256": "eca1b3b6c13f12b667824a53b313cf1bdab80b699cc58f43f0ca01eb203ef9c6",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791664881684945346/Live.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/preview-loading-paint/current-native-Historical.png",
+      "sha256": "fcae8d0f88490ef35fb52a4fe2b296307c14405599e8daca000b0484b51dfd88",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791664881684945346/Historical.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/preview-loading-paint/current-native-Unavailable.png",
+      "sha256": "e2bcf1c7fd5b14314eef9fdb5f638e019795908bc484140de3d68c5afee99b14",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791664881684945346/Unavailable.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/preview-loading-paint/current-native-warlock.log",
+      "sha256": "2a33495e448c85325113d9a5282457a03fc85cdc079d2ebf04f13cff50ad6934",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791664881684945346/warlock.log"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/preview-loading-paint/current-native-host-evidence.json",
+      "sha256": "cd0b83c152035f115097e304b04deea6eb0d77b9c134f824963b53d8a68629e9",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791664881684945346/host-evidence.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/preview-loading-paint/baseline-native-warlock.log",
+      "sha256": "3cec03e66127b23f29d9447a78559f856e072b100442987070a0149b6e892a96",
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791664280435335793/warlock.log"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/preview-loading-paint/README.md",
+      "sha256": "049602d1774a437e62d26b43ed920ab73bb2206939a37256997ca6fd2f94dcad"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/preview-loading-paint/loading-inspection.json",
+      "sha256": "8409790b4833a3336ffbb68ec418f4039c3de18baf008eeae795e8cf861611a4"
+    }
+  ]
+}

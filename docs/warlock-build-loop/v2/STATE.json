@@ -1,13 +1,92 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T20:26:54.573935+00:00",
+  "updatedUTC": "2026-10-10T20:43:11.353982+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
+    "id": "preview-loading-paint",
+    "requirements": [
+      "ELM-UI-016"
+    ],
+    "scenarios": [
+      "preview-states"
+    ],
+    "paths": [
+      "implementation/warlock/qa/native-preview-states.py",
+      "implementation/warlock/qa/native-preview-loading.py",
+      "implementation/warlock/qa/check-search.py",
+      "implementation/warlock/qa/PreviewStateReplay.elm",
+      "implementation/warlock/qa/preview-description-browser.mjs",
+      "implementation/warlock/src/Popup.elm",
+      "implementation/warlock/src/PreviewPresenter.elm",
+      "implementation/warlock/assets/popup-adapter.js",
+      "implementation/warlock/native/shared-host.c",
+      "implementation/warlock/qa/current-search-build.json",
+      "implementation/warlock/assets/elm.js",
+      "implementation/warlock/assets/bar.js",
+      "implementation/warlock/assets/popup.js",
+      "implementation/warlock/README.md",
+      "implementation/warlock/src/PreviewPaintGate.elm",
+      "implementation/warlock/qa/PreviewPaintReplay.elm",
+      "implementation/warlock/qa/preview-paint-gate.qnt",
+      "implementation/warlock/qa/preview-paint-gate_test.qnt",
+      "implementation/warlock/qa/check-preview-paint-gate.py"
+    ],
+    "before": "The latest full native preview journey failed to observe brief Loading reliably. Physical Loading and all-state native AT are unqualified; the retained runner now also mismatches the current shared-launcher boundary.",
+    "after": "Current ordinary picker exposes truthful Loading without foreign pixels, followed by only authorized Live/Historical content and unavailable fallback; verify actual Loading paint and exact state descriptions without changing the original capture/ownership/expiry limits.",
+    "verification": [
+      "Use quint-llm-kit against preserved ownership and lifecycle models; retain original full-state native assertions and failed evidence. Compile actual roots/host and direct changed state/transport tests, then protected native Loading/own-family Live/Historical/Unavailable pixels and appropriate AT where feasible. Keep original deadlines and acceptance scoped."
+    ],
+    "owner": "root-preview-loading",
+    "participantRecord": ".warlock-contributor/preview-loading.json",
+    "evidence": "implementation/warlock/qa/evidence/preview-loading-paint/manifest.json",
+    "sourceHashes": {
+      "implementation/warlock/qa/native-preview-states.py": "86b27dfc762686612a08e9db6356246689e4ae4e766f9d968292a62e3ab80c83",
+      "implementation/warlock/qa/native-preview-loading.py": "1a8fce4abc60824533ccd43d530255e1da00f89198f32a219124533cb5d7e7ae",
+      "implementation/warlock/qa/check-search.py": "1f38480921e82d4141ec12027b821ec06f22e44a75285c6c8f0b6732086c7735",
+      "implementation/warlock/qa/PreviewStateReplay.elm": "28c4ed7976d8f87e9ebabb7ea583a592f3e2037d0069434777a87a9580b9ae93",
+      "implementation/warlock/qa/preview-description-browser.mjs": "05d19ad7b2575cde87376160072bc872a34c59bc142500063f7915a62d900492",
+      "implementation/warlock/src/Popup.elm": "4ab4195bfb96622cf563efaf4a889045553fb2367347b6881e70f53545bae406",
+      "implementation/warlock/src/PreviewPresenter.elm": "10769b8d9a86e5e5b35f1f292d9837a38b20a0ba636d5baa0ee0c3b8fcdac1cc",
+      "implementation/warlock/assets/popup-adapter.js": "5b732f9984715004f356b670250aca65b613ccdd410879fe075d83103ec119f1",
+      "implementation/warlock/native/shared-host.c": "b61f7e79da12693a4d30693309fe5dd2147f5760246052d230efed30fdd7d844",
+      "implementation/warlock/qa/current-search-build.json": "d200a11d2e8e3feb1ec3f29db433a6a05f2f5184a5557195c0fb8adcf13df09f",
+      "implementation/warlock/assets/elm.js": "5056dab9023368ce4e022dc4146eceeb7dd5217d57217242038413919e1485a6",
+      "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+      "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
+      "implementation/warlock/README.md": "90226fc4df61ac2900403711824cf6e6f8a18aba01c3891059f8cc81a002e803",
+      "implementation/warlock/src/PreviewPaintGate.elm": "29336cc6d6b21c3d32fd4967911bb189c42b1569ed877ffe79555ed30a7c7d82",
+      "implementation/warlock/qa/PreviewPaintReplay.elm": "488e33a7e09e5937385be99e7525ba45765cf195e54cf2244627a8e2c799ab18",
+      "implementation/warlock/qa/preview-paint-gate.qnt": "764924b8c5007bc89c69bedfded31f8153c18b0223b7d8859b47f5890c0f4610",
+      "implementation/warlock/qa/preview-paint-gate_test.qnt": "f49a506f58d7d83db6a4998cf636c649349bf5157f121c2fc881cb5e11c044a2",
+      "implementation/warlock/qa/check-preview-paint-gate.py": "fe9e247c2492494a87780a535640ccff4d7c6e6891829e9f9053a07c31ec9195"
+    },
+    "missingObservations": [
+      "Actual native AT passive descriptions for all states.",
+      "Broader capacity/fairness and general transient paint consistency.",
+      "Independent original-scenario acceptance."
+    ],
+    "nextAction": "Select the next bounded mandatory GUI defect; native AT investigation remains limited pending a concrete WebKit dependency fix. Keep original preview capacity and acceptance obligations open."
+  },
+  "nextSlices": [
+    "taskbar activation/minimize/restore and popup focus journeys",
+    "persistent catalog pins",
+    "launcher search and refusal recovery",
+    "switcher/Task View/workspaces and snap/output journeys",
+    "authorized visible previews and fallback",
+    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
+    "original native, AT/IME, hardware/resource/journey gates",
+    "reproducible package, reversible deployment/rollback"
+  ],
+  "releaseAccepted": false,
+  "oldTrackerIsCurrent": false,
+  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
+  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
+  "previousSlice": {
     "id": "taskview-transfer-cancel",
     "requirements": [
       "ELM-UI-006"
@@ -76,57 +155,6 @@
     },
     "missingObservation": "Applicable original native AT/Orca and independent original acceptance remain open; separately retained WebKit AT traversal failure is unresolved.",
     "nextSourceWork": "Publish the actual nested/full Task View cancellation fix, then address original ELM-UI-016 preview-states: inspect the remaining real native Loading/current-live painted-pixel journey and current ownership/custody route. Preserve opacity-0 and ineligible actor restrictions until actual presentation authorization is satisfied. Do not restart the exhausted AT investigation without a concrete dependency fix. Original native/AT/IME/hardware/resource/independent/package/rollback obligations remain open."
-  },
-  "nextSlices": [
-    "taskbar activation/minimize/restore and popup focus journeys",
-    "persistent catalog pins",
-    "launcher search and refusal recovery",
-    "switcher/Task View/workspaces and snap/output journeys",
-    "authorized visible previews and fallback",
-    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
-    "original native, AT/IME, hardware/resource/journey gates",
-    "reproducible package, reversible deployment/rollback"
-  ],
-  "releaseAccepted": false,
-  "oldTrackerIsCurrent": false,
-  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
-  "previousSlice": {
-    "id": "taskview-transfer-retirement",
-    "requirements": [
-      "ELM-UI-006"
-    ],
-    "scenarios": [
-      "overview-retire"
-    ],
-    "paths": [
-      "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/qa/TaskViewReplay.elm",
-      "implementation/warlock/qa/overview-retirement.qnt",
-      "implementation/warlock/qa/overview-retirement_test.qnt",
-      "implementation/warlock/qa/check-overview-retirement.py",
-      "implementation/warlock/qa/native-taskview-retirement.py",
-      "implementation/warlock/qa/check-search.py",
-      "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/assets/elm.js",
-      "implementation/warlock/assets/bar.js",
-      "implementation/warlock/assets/popup.js",
-      "implementation/warlock/README.md"
-    ],
-    "before": "When the chosen transfer member disappears, overviewTransfer retains its retired incarnation and the destination chooser remains open with no targets.",
-    "after": "A coherent exact-member retirement returns Task View to its retained valid workspace filter or All windows, focuses the current browse control and emits no native mutation or replacement selection. Incomplete/mismatched observations cannot declare retirement.",
-    "verification": [
-      "quint-llm-kit executable initialization, named tests and sampled safety/positive reachability before reducer change; original Task View replay and stale/coherence negatives, protected actual member disappearance, current popup focus/pixels/no mutation and dismissal."
-    ],
-    "owner": "root-taskview-retirement",
-    "participantRecord": ".warlock-contributor/taskview-retirement.json",
-    "disposition": "partial",
-    "evidence": {
-      "path": "implementation/warlock/qa/evidence/taskview-transfer-retirement/manifest.json",
-      "sha256": "43ee9e9f67ead0af61eed3c0d2b5908e40c76fa55577a06b7dd44e4f160ed28a"
-    },
-    "missingObservation": "Applicable AT/Orca overview-retire observations and independent original acceptance remain open; the separately retained actual WebKit AT traversal crash is unresolved.",
-    "nextAction": "Publish the coherent transfer-member retirement fix. Continue Task View transfer-cancel keyboard focus return through the exact eligible origin, under original overview-cancel and applicable keyboard focus requirements. The WebKit AT diagnosis is exhausted at two qualification-only iterations; retain its actual failure until a concrete renderer dependency fix can be tested. Independent original acceptance and the complete release remain open."
   },
   "recentSlices": [
     {

@@ -648,3 +648,9 @@ The [native before/after evidence](qa/evidence/taskview-transfer-retirement/READ
 Escape now returns from the transfer chooser to its same eligible Move control; Enter reopens it, and Cancel returns focus again. A second Escape closes Task View and returns keyboard input to the original native window. If the opener is unavailable, reserved or no longer in the current view, cancellation focuses the current workspace or All control instead. It emits no native mutation and cannot choose another incarnation.
 
 The [native before/after evidence](qa/evidence/taskview-transfer-cancel/README.md) records the original whole-overview dismissal failure, the premature input-retirement failure and the corrected keyboard/pixels/no-mutation journey. Quint modeling preceded the code. Applicable AT and independent original overview-cancel acceptance remain open.
+
+### Preview Loading paint — October 10
+
+The picker now gives its Loading view a browser paint opportunity before forwarding an already issued native Acquire. Elm retains the exact original job and deadline behind a single-use ticket; cancellation drops only the matching unsent job immediately. Release and acknowledgement commands remain immediate. The ticket creates no native permission or capture policy.
+
+The [before/after evidence](qa/evidence/preview-loading-paint/README.md) includes the previously missing Loading observation, a current native screenshot showing both Loading cards without either fixture's window pixels, and the unchanged authorized Live/Historical/Unavailable journey. quint-llm-kit modeling preceded implementation. Native assistive-technology descriptions, broader capacity/fairness and independent original ELM-UI-016 acceptance remain open.

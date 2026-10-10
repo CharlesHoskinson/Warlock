@@ -20,7 +20,8 @@ POPUPENTRY=sys.argv[1:]==['--popup-entry']
 FULLSCREEN=sys.argv[1:]==['--fullscreen-pin']
 PINMAX=POPUPENTRY or FULLSCREEN or sys.argv[1:]==['--pin-max']
 QUIESCENT=sys.argv[1:]==['--preview-quiescence']
-PREVIEW=FALLBACK or DESCRIPTION or sys.argv[1:]==['--preview-states']
+PAINT=sys.argv[1:]==['--preview-loading']
+PREVIEW=PAINT or FALLBACK or DESCRIPTION or sys.argv[1:]==['--preview-states']
 LIVE=sys.argv[1:]==['--live-motion']
 MOTION=sys.argv[1:]==['--reduced-motion'] or LIVE
 TRANSFER=sys.argv[1:]==['--transfer-workspace']
@@ -113,6 +114,20 @@ try:
   replay=(INPUT/'qa/feedback-replay.js').read_text().replace('Elm.FeedbackReplay','Elm.PinMaxReplay');(INPUT/'qa/pin-max-replay.js').write_text(replay)
   run('typed-pin-max',['node','qa/pin-max-replay.js','assets/pin-max.js',str(OUT/'pin-max.json')])
   report['pinMax']=json.loads((OUT/'pin-max.json').read_text());assert all(report['pinMax']['checks'].values())
+ if PAINT:
+  report['previewPaintModel']=json.loads(run('preview-paint-model',['/usr/bin/python3','-B','qa/check-preview-paint-gate.py']));assert report['previewPaintModel']['passed']
+  run('compile-preview-paint',[str(HELD/pinned['compiler']),'make','qa/PreviewPaintReplay.elm','--optimize','--output=assets/preview-paint.js'])
+  replay=(INPUT/'qa/feedback-replay.js').read_text().replace('Elm.FeedbackReplay','Elm.PreviewPaintReplay');(INPUT/'qa/preview-paint-replay.js').write_text(replay)
+  run('typed-preview-paint',['node','qa/preview-paint-replay.js','assets/preview-paint.js',str(OUT/'preview-paint.json')]);report['previewPaint']=json.loads((OUT/'preview-paint.json').read_text());assert all(report['previewPaint']['checks'].values())
+  paintAdapter="""const fs=require('fs'),vm=require('vm'),assert=require('assert');
+const source=fs.readFileSync('assets/popup-adapter.js','utf8');
+const start=source.indexOf('app.ports.previewPaintRequests.subscribe'),end=source.indexOf('let previewControlOrdinal',start);
+assert(start>=0 && end>start);let subscribed,frames=[],sent=[];
+vm.runInNewContext(source.slice(start,end),{app:{ports:{previewPaintRequests:{subscribe:f=>subscribed=f},previewPainted:{send:x=>sent.push(x)}}},requestAnimationFrame:f=>frames.push(f)});
+const ticket={ticket:'73'};subscribed([ticket]);assert.equal(sent.length,0);
+frames.shift()();assert.equal(sent.length,0);frames.shift()();assert.deepEqual(sent,[ticket]);assert.equal(frames.length,0);
+console.log(JSON.stringify({paintOpportunityBeforeDispatch:true,ticketPreserved:true}));"""
+  report['previewPaintAdapter']=json.loads(run('preview-paint-adapter',['node','-e',paintAdapter]))
  if PREVIEW:
   report.update(requirements=['ELM-UI-016'],scenarios=['preview-states'],scope='Actual compiled picker source/presenter states, strict legacy isolation, publication revalidation and owning native producer pool/host; physical/native/AT acceptance separate')
   run('compile-preview-states',[str(HELD/pinned['compiler']),'make','qa/PreviewStateReplay.elm','--optimize','--output=assets/preview-states.js'])

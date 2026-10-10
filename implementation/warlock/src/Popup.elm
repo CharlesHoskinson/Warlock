@@ -9,6 +9,7 @@ import Json.Encode as E
 import RetainedPreviewPresenter as Preview
 import NativePreviewRealm as Realm
 import Presentation
+import PreviewPaintGate
 import SurfaceRenderer
 import UInt64
 
@@ -19,6 +20,8 @@ port actions : E.Value -> Cmd msg
 
 port nativePreviews : (D.Value -> msg) -> Sub msg
 port previewCommands : E.Value -> Cmd msg
+port previewPaintRequests : E.Value -> Cmd msg
+port previewPainted : (D.Value -> msg) -> Sub msg
 port nativePreviewGrants : (D.Value -> msg) -> Sub msg
 port nativePreviewQuarantine : (D.Value -> msg) -> Sub msg
 port nativePreviewClosed : (D.Value -> msg) -> Sub msg
@@ -26,12 +29,12 @@ port nativePreviewIssued : (D.Value -> msg) -> Sub msg
 port nativePreviewRetry : (D.Value -> msg) -> Sub msg
 port nativePreviewRetirement : (D.Value -> msg) -> Sub msg
 
-type Msg = Announce D.Value | Present D.Value | Action E.Value | LocalAction E.Value | NativePreview D.Value | NativeGrant D.Value | NativeQuarantine D.Value | NativeClosed D.Value | NativeIssued D.Value | NativeRetry D.Value | NativeRetirement D.Value
+type Msg = Announce D.Value | Present D.Value | Action E.Value | LocalAction E.Value | NativePreview D.Value | PreviewPainted D.Value | NativeGrant D.Value | NativeQuarantine D.Value | NativeClosed D.Value | NativeIssued D.Value | NativeRetry D.Value | NativeRetirement D.Value
 type Composition = Idle | Preediting { baseline : String, before : Maybe String }
-type alias Model = { announcements : Announcement.Model, presentation : Presentation.Model, previews : Preview.Model, pendingQuery : Maybe String, composition : Composition, lastQuery : Maybe (String, UInt64.Counter, UInt64.Counter) }
+type alias Model = { announcements : Announcement.Model, presentation : Presentation.Model, previews : Preview.Model, paintGate : PreviewPaintGate.Model, pendingQuery : Maybe String, composition : Composition, lastQuery : Maybe (String, UInt64.Counter, UInt64.Counter) }
 
 initial : Model
-initial = {announcements=Announcement.initial,presentation=Presentation.initial,previews=Preview.initial,pendingQuery=Nothing,composition=Idle,lastQuery=Nothing}
+initial = {announcements=Announcement.initial,presentation=Presentation.initial,previews=Preview.initial,paintGate=PreviewPaintGate.initial,pendingQuery=Nothing,composition=Idle,lastQuery=Nothing}
 
 isComposing : Model -> Bool
 isComposing model = model.composition/=Idle
@@ -39,7 +42,7 @@ isComposing model = model.composition/=Idle
 main : Program () Model Msg
 main = Browser.element
     { init=\_ -> (initial,Cmd.none)
-    , subscriptions=\_ -> Sub.batch [announcements Announce,presentation Present,requestAction Action,nativePreviews NativePreview,nativePreviewGrants NativeGrant,nativePreviewQuarantine NativeQuarantine,nativePreviewClosed NativeClosed,nativePreviewIssued NativeIssued,nativePreviewRetry NativeRetry,nativePreviewRetirement NativeRetirement]
+    , subscriptions=\_ -> Sub.batch [announcements Announce,presentation Present,requestAction Action,nativePreviews NativePreview,previewPainted PreviewPainted,nativePreviewGrants NativeGrant,nativePreviewQuarantine NativeQuarantine,nativePreviewClosed NativeClosed,nativePreviewIssued NativeIssued,nativePreviewRetry NativeRetry,nativePreviewRetirement NativeRetirement]
     , view=\model -> div [attribute "data-input-composing" (if isComposing model then "true" else "false")] [Presentation.current model.presentation |> Maybe.map (\snapshot -> SurfaceRenderer.viewWithPreview (\identity -> Preview.visual snapshot identity model.previews) True LocalAction (model.pendingQuery |> Maybe.map (\query -> SurfaceRenderer.pendingQuery query snapshot) |> Maybe.withDefault snapshot)) |> Maybe.withDefault (text ""),Presentation.current model.presentation |> Maybe.map (\_ -> Announcement.view model.announcements) |> Maybe.withDefault (text "")]
     , update=update
     }
@@ -47,6 +50,9 @@ main = Browser.element
 update : Msg -> Model -> (Model, Cmd Msg)
 update message model =
     case message of
+        PreviewPainted raw ->
+            let (gate,commands)=PreviewPaintGate.painted raw model.paintGate
+            in ({model | paintGate=gate},previewCommands commands)
         LocalAction value ->
             let kind=D.decodeValue (D.field "kind" D.string) value |> Result.withDefault ""
             in if List.member kind ["surface-query","surface-preedit","surface-composition-start","surface-composition-end"] then
@@ -93,26 +99,32 @@ update message model =
                 key = pending |> Maybe.andThen (\query -> Presentation.current acceptedPresentation |> Maybe.map (\snapshot -> (query,SurfaceRenderer.publication snapshot,SurfaceRenderer.lease snapshot)))
                 queryCommand = if composing || key==model.lastQuery then Cmd.none else pending |> Maybe.andThen (\query -> Presentation.query query acceptedPresentation) |> Maybe.map actions |> Maybe.withDefault Cmd.none
                 lastQuery = if not sameField then Nothing else if composing || pending==Nothing then model.lastQuery else key
-            in ({announcements=model.announcements,presentation=acceptedPresentation,previews=previews,pendingQuery=pending,composition=composition,lastQuery=lastQuery},Cmd.batch [previewCommands commands,queryCommand])
+                (updatedPopup,previewEffects)=emitPreview commands {model | presentation=acceptedPresentation,previews=previews,pendingQuery=pending,composition=composition,lastQuery=lastQuery}
+            in (updatedPopup,Cmd.batch [previewEffects,queryCommand])
         NativePreview raw ->
             let (previews,commands) =
                     case D.decodeValue Realm.envelopeDecoder raw of
                         Ok _ -> Preview.receiveRealm (Presentation.current model.presentation) raw model.previews
                         Err _ -> Preview.receive (Presentation.current model.presentation) raw model.previews
-            in ({model | previews=previews},previewCommands commands)
+            in emitPreview commands {model | previews=previews}
         NativeRetirement raw ->
             let (previews,commands) = Preview.retireLegacy raw model.previews
-            in ({model | previews=previews},previewCommands commands)
+            in emitPreview commands {model | previews=previews}
         NativeGrant raw ->
             let previews = D.decodeValue Realm.grantDecoder raw |> Result.toMaybe |> Maybe.andThen (\grant -> Preview.enrollRealm grant model.previews) |> Maybe.withDefault model.previews
             in ({model | previews=previews},Cmd.none)
         NativeQuarantine raw ->
             let (previews,commands) = D.decodeValue Realm.domainDecoder raw |> Result.map (\domain -> Preview.quarantineRealm domain model.previews) |> Result.withDefault (model.previews,E.list identity [])
-            in ({model | previews=previews},previewCommands commands)
+            in emitPreview commands {model | previews=previews}
         NativeIssued raw -> ({model | previews=Preview.issued raw model.previews},Cmd.none)
         NativeRetry raw ->
             let (previews,commands) = D.decodeValue Realm.domainDecoder raw |> Result.map (\domain -> Preview.retry domain model.previews) |> Result.withDefault (model.previews,E.list identity [])
-            in ({model | previews=previews},previewCommands commands)
+            in emitPreview commands {model | previews=previews}
         NativeClosed raw ->
             let previews = D.decodeValue Realm.domainDecoder raw |> Result.toMaybe |> Maybe.andThen (\domain -> Preview.closeRealm domain model.previews) |> Maybe.withDefault model.previews
             in ({model | previews=previews},Cmd.none)
+
+emitPreview : E.Value -> Model -> (Model,Cmd Msg)
+emitPreview commands model =
+    let (gate,immediate,requests)=PreviewPaintGate.queue commands model.paintGate
+    in ({model | paintGate=gate},Cmd.batch [previewCommands immediate,previewPaintRequests requests])

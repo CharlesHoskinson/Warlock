@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-e5ea15efb4c448deb808be3e5b7970bf.scope",
+    "coreLimit": 1
+  },
+  "initializationOnly": true,
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/preview-paint-gate.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "initialization",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/preview-paint-gate.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1",
+        "--max-steps=1",
+        "--seed=82810"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/preview-paint-gate.qnt": "98769dbd261fbe37a6a76a6c72a286829102f0753e73b824fe2c80949aa3329a"
+  },
+  "scope": "Immutable single-use paint ticket for original Acquire, exact-job cancellation before dispatch, immediate control processing and independent job isolation. No native authorization, pixels, AT, clock or GPU presentation proof.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

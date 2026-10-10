@@ -1,0 +1,71 @@
+{
+  "passed": true,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-36aee76c03214e84a7e2d4cf63eb6f36.scope",
+    "coreLimit": 1
+  },
+  "initializationOnly": false,
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/preview-paint-gate.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "tests-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/preview-paint-gate_test.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/preview-paint-gate_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=82811"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "witness-safety",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/preview-paint-gate.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--witnesses",
+        "paintDispatchWitness",
+        "cancelledUnsentWitness",
+        "independentDispatchWitness",
+        "--max-samples=1000",
+        "--max-steps=25",
+        "--seed=82812"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/preview-paint-gate.qnt": "764924b8c5007bc89c69bedfded31f8153c18b0223b7d8859b47f5890c0f4610",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/preview-paint-gate_test.qnt": "f49a506f58d7d83db6a4998cf636c649349bf5157f121c2fc881cb5e11c044a2"
+  },
+  "scope": "Immutable single-use paint ticket for original Acquire, exact-job cancellation before dispatch, immediate control processing and independent job isolation. No native authorization, pixels, AT, clock or GPU presentation proof.",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "witnesses": {
+    "paintDispatchWitness": 485,
+    "cancelledUnsentWitness": 447,
+    "independentDispatchWitness": 213
+  }
+}
