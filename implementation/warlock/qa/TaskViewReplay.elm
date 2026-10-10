@@ -82,6 +82,7 @@ result =
         model=Tuple.first opened
         groups=TaskView.groups model.windows.shell |> Maybe.withDefault []
         filtered=scoped (\stamp -> Desktop.OverviewWorkspace stamp (Just "2")) model
+        filterStates current = Surface.packet one one current |> D.decodeValue (D.field "popup" (D.list (D.map2 Tuple.pair (D.field "id" D.string) (D.maybe (D.field "checked" D.bool))))) |> Result.withDefault [] |> List.filter (\(id,_) -> id=="overview:all" || String.startsWith "overview:workspace:" id)
         stale=Desktop.capture model |> Maybe.map (\stamp -> apply (Desktop.OverviewChoose stamp one) (Tuple.first filtered)) |> Maybe.withDefault filtered
         selected=scoped (\stamp -> Desktop.OverviewChoose stamp one) model
         duplicate=scoped (\stamp -> Desktop.OverviewChoose stamp one) (Tuple.first selected)
@@ -171,6 +172,8 @@ result =
             ("activeWorkspaceNamed",TaskView.activeWorkspace model.windows.shell==Just "1"),
             ("openingIsObservationOnly",model.overview && List.isEmpty (mutations (Tuple.second opened))),
             ("workspaceBrowseIsLocal",(Tuple.first filtered).overviewWorkspace==Just "2" && List.isEmpty (mutations (Tuple.second filtered))),
+            ("overviewInitialAccessibleFilterSelection",filterStates model==[("overview:all",Just True),("overview:workspace:1",Just False),("overview:workspace:2",Just False)]),
+            ("overviewAccessibleFilterFollowsReadOnlyBrowse",filterStates (Tuple.first filtered)==[("overview:all",Just False),("overview:workspace:1",Just False),("overview:workspace:2",Just True)] && List.isEmpty (mutations (Tuple.second filtered))),
             ("staleSelectionInert",Tuple.first stale==Tuple.first filtered && List.isEmpty (Tuple.second stale)),
             ("unavailableWorkspaceNeverActivates",Tuple.first unavailable==model && List.isEmpty (Tuple.second unavailable)),
             ("retiredIdentityNeverSubstitutes",Tuple.first retired==model && List.isEmpty (Tuple.second retired)),

@@ -1,0 +1,232 @@
+{
+  "checks": {
+    "groupsMatchMembership": true,
+    "activeWorkspaceNamed": true,
+    "openingIsObservationOnly": true,
+    "workspaceBrowseIsLocal": true,
+    "overviewInitialAccessibleFilterSelection": true,
+    "overviewAccessibleFilterFollowsReadOnlyBrowse": true,
+    "staleSelectionInert": true,
+    "unavailableWorkspaceNeverActivates": true,
+    "retiredIdentityNeverSubstitutes": true,
+    "selectionRefreshesBeforeEffect": true,
+    "duplicateChoiceInert": true,
+    "dismissalDoesNotMutate": true,
+    "dismissalDefersDOMFocusUntilFreshRead": true,
+    "independentRevisionNamespacesRemainBrowsable": true,
+    "mixedOutputMembershipWithheld": true,
+    "mixedFocusMembershipWithheld": true,
+    "mixedMinimizedMembershipWithheld": true,
+    "ordinaryRendererAcceptsTaskView": true,
+    "offWorkspaceSelectionRequiresFreshObservation": true,
+    "freshObservationRestoresExactWorkspaceTwoRootOnce": true,
+    "staleNavigationObservationNeverMutates": true,
+    "retiredNavigationRootNeverSubstitutes": true,
+    "duplicateNavigationObservationNeverReplays": true,
+    "matchedRefusalWaitsForFreshRead": true,
+    "exactRefusalRestoresFilteredOverview": true,
+    "restoredEligibleFamilyGetsCurrentFocus": true,
+    "duplicateRefusalCannotReopenOrReplay": true,
+    "committedChoiceStaysClosed": true,
+    "unknownChoiceStaysClosedWithoutReplay": true,
+    "foreignIntentCannotReturn": true,
+    "anotherInterfaceCancelsReturn": true,
+    "replacementAuthorityCannotReturn": true,
+    "retiredFamilyReturnsToAllWindows": true,
+    "unconfirmedTransferRetainsSourceFamilyWithoutInventingNativeOwner": true,
+    "emptyInventoryComesThroughExactRootReceipt": true,
+    "nativeActiveEmptyMarkerDoesNotNeedFocusedWindow": true,
+    "emptyWorkspaceOpensAndBrowsesWithoutEffects": true,
+    "emptyWorkspaceKeepsVisibleDismissal": true,
+    "emptySelectionHasExplicitNotice": true,
+    "emptyWorkspaceDismissalIsReadOnly": true,
+    "foreignGeometryCannotInventEmptyWorkspace": true,
+    "duplicateWorkspacePacketRejectedByRoot": true,
+    "differentGeometrySequenceCannotJoinInventory": true,
+    "retiredEmptySelectionFallsBackToAll": true
+  },
+  "frame": {
+    "surfaceProtocol": 2,
+    "keyboardParent": true,
+    "motion": "reduced",
+    "appearance": {
+      "theme": "night",
+      "textScale": 100,
+      "effectsOff": false,
+      "reducedTransparency": false
+    },
+    "publication": "1",
+    "lease": "1",
+    "mode": "overview",
+    "status": "Choose a window to reveal its workspace, or browse another workspace.",
+    "bar": [
+      {
+        "id": "bar:group:application:Editor",
+        "domId": "group:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:1:application:Editor",
+        "label": "Editor",
+        "ariaLabel": "Minimize Editor; Active",
+        "detail": "Active",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:group:application:Files",
+        "domId": "group:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:1:application:Files",
+        "label": "Files",
+        "ariaLabel": "Unavailable Files; Open",
+        "detail": "Open",
+        "enabled": false,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:applications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:control:opener",
+        "label": "Applications",
+        "ariaLabel": "Open applications",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:overview",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:control:overview-opener",
+        "label": "Task View",
+        "ariaLabel": "Open Task View",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:switcher",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:control:switcher-opener",
+        "label": "Switch windows",
+        "ariaLabel": "Open window switcher",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:notifications",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:notifications:opener",
+        "label": "Notifications",
+        "ariaLabel": "Open notifications",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:files",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:files:opener",
+        "label": "Files",
+        "ariaLabel": "Open Files menu",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:system",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:system:opener",
+        "label": "System",
+        "ariaLabel": "Open system menu",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "bar:settings",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:settings:opener",
+        "label": "Settings",
+        "ariaLabel": "Open settings",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      }
+    ],
+    "popup": [
+      {
+        "id": "control:close",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:overview:close",
+        "label": "Close Task View",
+        "ariaLabel": "Close Task View and return to windows",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "overview:all",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:overview:all",
+        "label": "All windows",
+        "ariaLabel": "Browse all workspaces",
+        "detail": "Selected",
+        "enabled": true,
+        "focusOnly": false,
+        "checked": true
+      },
+      {
+        "id": "overview:workspace:1",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:overview:workspace:1",
+        "label": "Workspace 1",
+        "ariaLabel": "Browse workspace 1; active workspace",
+        "detail": "Active workspace",
+        "enabled": true,
+        "focusOnly": false,
+        "checked": false
+      },
+      {
+        "id": "overview:family:1",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:overview:family:1",
+        "label": "Editor",
+        "ariaLabel": "Activate Editor on workspace 1",
+        "detail": "Workspace 1 • Open",
+        "enabled": true,
+        "focusOnly": false
+      },
+      {
+        "id": "overview:transfer:1",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:overview:transfer:1",
+        "label": "Move Editor…",
+        "ariaLabel": "Move Editor to another workspace",
+        "detail": "",
+        "enabled": false,
+        "focusOnly": false
+      },
+      {
+        "id": "overview:workspace:2",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:overview:workspace:2",
+        "label": "Workspace 2",
+        "ariaLabel": "Browse workspace 2",
+        "detail": "",
+        "enabled": true,
+        "focusOnly": false,
+        "checked": false
+      },
+      {
+        "id": "overview:family:2",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:overview:family:2",
+        "label": "Files",
+        "ariaLabel": "Activate Files on workspace 2",
+        "detail": "Workspace 2 • Unavailable for activation",
+        "enabled": false,
+        "focusOnly": false
+      },
+      {
+        "id": "overview:transfer:2",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:overview:transfer:2",
+        "label": "Move Files…",
+        "ariaLabel": "Move Files to another workspace",
+        "detail": "",
+        "enabled": false,
+        "focusOnly": false
+      },
+      {
+        "id": "overview:refresh",
+        "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:1:overview:refresh",
+        "label": "Refresh window status",
+        "ariaLabel": "Refresh window status; read observations without retrying actions",
+        "detail": "Observation only",
+        "enabled": true,
+        "focusOnly": false
+      }
+    ]
+  }
+}

@@ -630,3 +630,9 @@ The [scoped evidence](qa/evidence/taskview-workspace-navigation/README.md) inclu
 ### Workspace status recovery from the taskbar
 
 When a workspace switch cannot be confirmed, the taskbar now offers **Refresh workspace status**. It reads the exact recorded outcome and never submits the switch again. A refused switch restores Task View's destination selection and dismissal; reconnect can recover a real native outcome lost before durable settlement. The [native recovery evidence](qa/evidence/taskview-workspace-recovery/README.md) also covers a settled receipt lost before frontend delivery and physical pointer use of the painted taskbar recovery control. Applicable assistive technology and independent original ELM-UI-006 acceptance remain open.
+
+### Accessible Task View filter selection — October 10
+
+Task View's selected workspace filter now exposes pressed toggle-button state to native assistive technology, using the existing immutable Elm selection. Strict native admission requires exactly one selected filter and rejects incomplete, conflicting or foreign checked state. Browsing still submits no window or workspace mutation.
+
+The [scoped evidence](qa/evidence/taskview-filter-accessibility/README.md) retains the passing compiled/model/native-admission checks and actual AT-SPI selected-state observation. The full keyboard/Orca journey fails when WebKit crashes while tabbing to workspace 2; its original deadline and normal-client-exit failure remain intact. Native restore, dismissal focus return and independent original ELM-UI-006 acceptance on this updated tuple remain open.

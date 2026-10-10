@@ -453,7 +453,9 @@ packet : Counter -> Counter -> Desktop.Model -> E.Value
 packet publication lease model =
     let
         checked control =
-            (MenuBridge.menuSnapshot model.windows.menus).menu |> Maybe.andThen (\menu ->
+            if model.overview && (control.id=="overview:all" || String.startsWith "overview:workspace:" control.id) then
+                Just (if control.id=="overview:all" then model.overviewWorkspace==Nothing else model.overviewWorkspace==Just (String.dropLeft (String.length "overview:workspace:") control.id))
+            else (MenuBridge.menuSnapshot model.windows.menus).menu |> Maybe.andThen (\menu ->
                 List.indexedMap Tuple.pair menu.items |> List.filter (\(index,item) -> control.id=="menu:"++String.fromInt (Menu.menuNumber menu.id)++":"++String.fromInt index) |> List.head
                     |> Maybe.andThen (\(_,item) -> case item.action of
                         Menu.AlwaysOnTop _ -> MenuBridge.currentProvider model.windows.menus |> Maybe.andThen (\provider ->

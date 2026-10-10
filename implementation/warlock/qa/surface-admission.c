@@ -32,8 +32,26 @@ static void test_checked_menu(void) {
  g_assert_true(surface_action(&gate,a,f,TRUE));json_object_set_boolean_member(row,"enabled",FALSE);g_assert_false(surface_action(&gate,a,f,TRUE));json_object_set_boolean_member(row,"checked",FALSE);g_assert_false(surface_action(&gate,a,f,TRUE));
  json_object_set_boolean_member(json_node_get_object(a),"checked",TRUE);g_assert_false(surface_action(&gate,a,f,TRUE));json_node_unref(a);json_node_unref(f);
 }
+static void test_checked_overview(void) {
+ guint64 pub,lease;gboolean open;JsonNode *f=frame("7","3","overview");JsonObject *o=json_node_get_object(f);JsonArray *rows=json_object_get_array_member(o,"popup");
+ JsonObject *all=json_array_get_object_element(rows,0);
+ json_object_set_string_member(all,"id","overview:all");json_object_set_boolean_member(all,"focusOnly",FALSE);json_object_set_boolean_member(all,"checked",TRUE);
+ JsonNode *copy=json_node_copy(json_array_get_element(rows,0));JsonObject *workspace=json_node_get_object(copy);
+ json_object_set_string_member(workspace,"id","overview:workspace:2");json_object_set_string_member(workspace,"domId","workspace-two");json_object_set_boolean_member(workspace,"checked",FALSE);json_array_add_element(rows,copy);
+ g_assert_true(surface_frame(f,&pub,&lease,&open));
+ json_object_set_boolean_member(workspace,"checked",TRUE);g_assert_false(surface_frame(f,&pub,&lease,&open));json_object_set_boolean_member(workspace,"checked",FALSE);
+ json_object_set_boolean_member(all,"checked",FALSE);g_assert_false(surface_frame(f,&pub,&lease,&open));json_object_set_boolean_member(all,"checked",TRUE);
+ json_object_remove_member(workspace,"checked");g_assert_false(surface_frame(f,&pub,&lease,&open));json_object_set_boolean_member(workspace,"checked",FALSE);
+ json_object_set_string_member(workspace,"id","overview:family:2");g_assert_false(surface_frame(f,&pub,&lease,&open));
+ json_object_set_string_member(workspace,"id","overview:workspace:");g_assert_false(surface_frame(f,&pub,&lease,&open));json_object_set_string_member(workspace,"id","overview:workspace:2");
+ json_object_set_string_member(o,"mode","menu");g_assert_false(surface_frame(f,&pub,&lease,&open));json_object_set_string_member(o,"mode","overview");
+ SurfaceGate gate={7,3,2};JsonNode *a=parse("{\"surfaceProtocol\":2,\"kind\":\"surface-action\",\"surface\":\"popup\",\"publication\":\"7\",\"lease\":\"3\",\"id\":\"overview:workspace:2\"}");
+ g_assert_true(surface_action(&gate,a,f,TRUE));json_object_set_boolean_member(json_node_get_object(a),"checked",TRUE);g_assert_false(surface_action(&gate,a,f,TRUE));
+ json_object_remove_member(all,"checked");json_object_remove_member(workspace,"checked");g_assert_true(surface_frame(f,&pub,&lease,&open));
+ json_node_unref(a);json_node_unref(f);
+}
 int main(int argc,char **argv) {
  g_test_init(&argc,&argv,NULL);
  g_test_add_func("/surface/canonical-uint64",test_counter);g_test_add_func("/surface/publication-close-barrier",test_barrier);g_test_add_func("/surface/actual-manager-origin",test_origin);g_test_add_func("/surface/strict-frame",test_schema);g_test_add_func("/surface/query-is-not-action-authority",test_query);g_test_add_func("/surface/typed-committed-appearance",test_appearance);
- g_test_add_func("/surface/passive-notification-focus-never-action",test_notification_focus);g_test_add_func("/surface/observed-checkbox-never-action-authority",test_checked_menu);return g_test_run();
+ g_test_add_func("/surface/passive-notification-focus-never-action",test_notification_focus);g_test_add_func("/surface/observed-checkbox-never-action-authority",test_checked_menu);g_test_add_func("/surface/overview-filter-selection-never-action-authority",test_checked_overview);return g_test_run();
 }
