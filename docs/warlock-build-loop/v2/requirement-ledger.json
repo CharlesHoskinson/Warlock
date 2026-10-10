@@ -7429,9 +7429,14 @@
               "path": "implementation/warlock/qa/evidence/pin-max/manifest.json",
               "sha256": "3130ce67232719535e9ebdbd820e97fdb101b3dcbc0124c9690286806157e6ed",
               "scope": "Changed Elm roots/host, native authority and owning-core compile; 13 pin/MAX replay checks pass. Native context gesture fails after preview layout change; maximize/pin/unpin and physical overlap oracle not reached. Published unfinished draft."
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/picker-target-stability/manifest.json",
+              "sha256": "2c25ae57cb13f38e0976957359e19902df90c8dde030d4d0b0bd5ff092b44bb9",
+              "scope": "Stable picker context target, exactly one maximize receipt, real MAX pixels and matching native GTK pointer hit, correlated displayed unpinned MAX state. Always-on-top action did not satisfy the original completion predicate within six seconds. Native pin/unpin, preserved MAX geometry and final physical overlap observations remain open."
             }
           ],
-          "missingObservation": "Production layout fix for stable picker targets through preview arrival; original native maximize/pin/unpin and scene/hit/display agreement; native checked semantics and independent original-scenario disposition.",
+          "missingObservation": "Always-on-top action did not satisfy the original completion predicate within six seconds. Native pin/unpin, preserved MAX geometry and final physical overlap observations remain open. Stable observed checked semantics and independent original-scenario acceptance remain open.",
           "reviewerDisposition": "Owner retained compiled evidence and failed native interaction; no independent GUI acceptance."
         }
       ]
@@ -9171,5 +9176,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-08T22:05:15.795704+00:00"
+  "updatedUTC": "2026-10-08T22:23:37.914101+00:00"
 }

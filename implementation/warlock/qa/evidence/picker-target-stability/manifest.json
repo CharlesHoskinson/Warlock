@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "requirements": [
+    "ELM-UX-016"
+  ],
+  "scenarios": [
+    "ux-016"
+  ],
+  "sourceParent": "da00020b5354470441bd83aabe77a46cc96b00ec",
+  "sourceHashes": {
+    "implementation/warlock/assets/shell.css": "c221f8bb2089ee23eb0720c223f7a9962fed715be562660c6d7d7ab5105661f3",
+    "implementation/warlock/qa/native-pin-max.py": "2f6ffe59073bba00c9d8708925d0d6eab729c9262bdb74a8f5fa2e7fdb80bd94"
+  },
+  "evidence": {
+    "compiled-report.json": "9bfa9c4b26d11995c87dead8f87fb80cf20d8e3d08bffd6555b1b0e71cf9aaf7",
+    "native-runner-failure.json": "846f4e694f2ba28c654e48cf92981470d73be718ef960ad49d9b91a65ce4eaed",
+    "native-report.json": "c8c440b8fb014724fae64c430ab8b302c89a38171ef8a7fbe136aa47cf5d4ad5",
+    "UnpinnedMax.png": "4983e997eebf8d1924dda322b813741e8daee857c29e62b651507171b3e7dd3a"
+  },
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "observed": "Stable picker context target, exactly one maximize receipt, real MAX pixels and matching native GTK pointer hit, correlated displayed unpinned MAX state.",
+  "missingObservation": "Always-on-top action did not satisfy the original completion predicate within six seconds. Native pin/unpin, preserved MAX geometry and final physical overlap observations remain open.",
+  "cleanup": "Latest native run: both owned clients exit normally, plugin unloads and private cleanup passes. Earlier runner NameError/cleanup failure remains retained."
+}

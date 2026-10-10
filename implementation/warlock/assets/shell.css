@@ -2,16 +2,21 @@
 
 .popup .window-preview{display:block;margin-bottom:4px}.popup .preview-image{display:block;width:auto;height:auto;max-width:100%;max-height:120px}.popup .preview-title,.popup .preview-state,.popup .preview-fidelity{display:block;font-size:13px;line-height:18px}
 
-/* Keep image and its state beside the action labels in a picker row.
-   Empty, loading and unavailable rows retain their ordinary flow. */
-.popup [data-mode="picker"] button:has(.preview-image){display:grid;grid-template-columns:minmax(0,160px) minmax(0,1fr);grid-template-rows:repeat(4,auto);column-gap:12px;align-items:start}
-.popup [data-mode="picker"] button:has(.preview-image) .window-preview,
-.popup [data-mode="picker"] button:has(.preview-image) .window-preview>span{display:contents}
-.popup [data-mode="picker"] button:has(.preview-image) .preview-image{grid-column:1;grid-row:1 / span 4;align-self:center}
-.popup [data-mode="picker"] button:has(.preview-image) .preview-state{grid-column:2;grid-row:1}
-.popup [data-mode="picker"] button:has(.preview-image) .preview-fidelity{grid-column:2;grid-row:2}
-.popup [data-mode="picker"] button:has(.preview-image) .control-label{grid-column:2;grid-row:3}
-.popup [data-mode="picker"] button:has(.preview-image) .control-detail{grid-column:2;grid-row:4}
+/* ELM-UX-016: preview arrival must not move a pressed family target.
+   Reserve the same thumbnail and text geometry for every source state. */
+.popup [data-mode="picker"] button[data-surface-control^="family:"]{display:grid;grid-template-columns:minmax(0,min(10rem,35%)) minmax(0,1fr);grid-template-rows:repeat(4,minmax(0,1fr));column-gap:12px;align-items:start;height:calc(7.5rem + 14px);min-height:calc(7.5rem + 14px);max-height:calc(7.5rem + 14px)}
+.popup [data-mode="picker"] button[data-surface-control^="family:"] .window-preview,
+.popup [data-mode="picker"] button[data-surface-control^="family:"] .window-preview>span{display:contents}
+.popup [data-mode="picker"] button[data-surface-control^="family:"] .preview-image,
+.popup [data-mode="picker"] button[data-surface-control^="family:"] .preview-icon{grid-column:1;grid-row:1 / span 4;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;align-self:stretch}
+.popup [data-mode="picker"] button[data-surface-control^="family:"] .preview-state,
+.popup [data-mode="picker"] button[data-surface-control^="family:"] .preview-title{grid-column:2;grid-row:1;margin:0}
+.popup [data-mode="picker"] button[data-surface-control^="family:"] .preview-fidelity{grid-column:2;grid-row:2}
+.popup [data-mode="picker"] button[data-surface-control^="family:"] .control-label{grid-column:2;grid-row:3}
+.popup [data-mode="picker"] button[data-surface-control^="family:"] .control-detail{grid-column:2;grid-row:4;margin:0}
+.popup [data-mode="picker"] button[data-surface-control^="family:"] .preview-state,
+.popup [data-mode="picker"] button[data-surface-control^="family:"] .preview-fidelity,
+.popup [data-mode="picker"] button[data-surface-control^="family:"] .control-detail{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
 
 /* ELM-UI-007: action feedback remains visible after its popup has closed.
    Keep all taskbar controls reachable by the existing horizontal overflow. */

@@ -12,6 +12,9 @@ branch=r'''   elif FOCUS:
     gi.require_version('GdkPixbuf','2.0');from gi.repository import GdkPixbuf
     labels={row['label']:row['incarnation'] for row in client.snapshot('510')['windows']}
     primary=labels['ELM-AUTHORITY-FIXTURE'];peer=labels['ELM-ACTIVATION-PEER']
+    def events():
+     path=control.with_suffix('.events.jsonl')
+     return [json.loads(line) for line in path.read_text().splitlines()] if path.exists() else []
     def bodies():return [json.loads(line.split(' ',2)[2])['body'] for line in text().splitlines() if line.startswith('surface-report: origin=popup ')]
     def body():
      current=projection();return next((row for row in reversed(bodies()) if current and row['publication']==current['publication']),None)
