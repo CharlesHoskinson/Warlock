@@ -1,0 +1,77 @@
+{
+  "passed": true,
+  "scope": "quint-llm-kit sampled entry/parent/teardown order; native keys/identity/AT separate.",
+  "nativeAcceptance": false,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-e738404ea51342b4bd0cd7e6432df23b.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "qa/popup-entry.qnt": "098e040bc631a5638ee5dbed8b603f3bf59d6a1aad40a3685ada996cbdd1f242",
+    "qa/popup-entry_test.qnt": "a36cdf28e789d4cbd9163a9611e74531bd13c1eefa81f43327dd9ccdafec6cb9",
+    "src/Desktop.elm": "cc1a171fb066bf57723f0ba141eda75b41c134e3638ed2669429b320428ce3f1",
+    "native/shared-host.c": "22c020999c2b05913bb9bab72578758bec2eb6d94769731ebc2bd60171a0e08c"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/popup-entry.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/popup-entry_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=79901"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "witnesses",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/popup-entry.qnt",
+        "--backend=typescript",
+        "--witnesses",
+        "applicationReturned",
+        "barReturned",
+        "nestedParentReturned",
+        "staleOpenerRefused",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79902"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "safety",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/popup-entry.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79903"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "witnessCounts": {
+    "applicationReturned": 29,
+    "barReturned": 24,
+    "nestedParentReturned": 372,
+    "staleOpenerRefused": 631
+  }
+}

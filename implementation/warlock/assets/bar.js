@@ -1857,9 +1857,9 @@ var _Platform_worker = F4(function(impl, flagDecoder, debugMetadata, args)
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.bf,
-		impl.bm,
-		impl.bl,
+		impl.bh,
+		impl.bo,
+		impl.bn,
 		function() { return function() {} }
 	);
 });
@@ -3943,11 +3943,11 @@ var _Browser_element = _Debugger_element || F4(function(impl, flagDecoder, debug
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.bf,
-		impl.bm,
-		impl.bl,
+		impl.bh,
+		impl.bo,
+		impl.bn,
 		function(sendToApp, initialModel) {
-			var view = impl.bn;
+			var view = impl.bp;
 			/**/
 			var domNode = args['node'];
 			//*/
@@ -3979,12 +3979,12 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.bf,
-		impl.bm,
-		impl.bl,
+		impl.bh,
+		impl.bo,
+		impl.bn,
 		function(sendToApp, initialModel) {
 			var divertHrefToApp = impl.aw && impl.aw(sendToApp)
-			var view = impl.bn;
+			var view = impl.bp;
 			var title = _VirtualDom_doc.title;
 			var bodyNode = _VirtualDom_doc.body;
 			var currNode = _VirtualDom_virtualize(bodyNode);
@@ -3992,7 +3992,7 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 			{
 				_VirtualDom_divertHrefToApp = divertHrefToApp;
 				var doc = view(model);
-				var nextNode = _VirtualDom_node('body')(_List_Nil)(doc.a8);
+				var nextNode = _VirtualDom_node('body')(_List_Nil)(doc.ba);
 				var patches = _VirtualDom_diff(currNode, nextNode);
 				bodyNode = _VirtualDom_applyPatches(bodyNode, currNode, patches, sendToApp);
 				currNode = nextNode;
@@ -4053,8 +4053,8 @@ function _Browser_makeAnimator(model, draw)
 
 function _Browser_application(impl)
 {
-	var onUrlChange = impl.bh;
-	var onUrlRequest = impl.bi;
+	var onUrlChange = impl.bj;
+	var onUrlRequest = impl.bk;
 	var key = function() { key.a(onUrlChange(_Browser_getUrl())); };
 
 	return _Browser_document({
@@ -4074,9 +4074,9 @@ function _Browser_application(impl)
 					var next = $elm$url$Url$fromString(href).a;
 					sendToApp(onUrlRequest(
 						(next
-							&& curr.aV === next.aV
+							&& curr.aW === next.aW
 							&& curr.aJ === next.aJ
-							&& curr.aS.a === next.aS.a
+							&& curr.aT.a === next.aT.a
 						)
 							? $elm$browser$Browser$Internal(next)
 							: $elm$browser$Browser$External(href)
@@ -4084,13 +4084,13 @@ function _Browser_application(impl)
 				}
 			});
 		},
-		bf: function(flags)
+		bh: function(flags)
 		{
-			return A3(impl.bf, flags, _Browser_getUrl(), key);
+			return A3(impl.bh, flags, _Browser_getUrl(), key);
 		},
-		bn: impl.bn,
-		bm: impl.bm,
-		bl: impl.bl
+		bp: impl.bp,
+		bo: impl.bo,
+		bn: impl.bn
 	});
 }
 
@@ -4156,17 +4156,17 @@ var _Browser_decodeEvent = F2(function(decoder, event)
 function _Browser_visibilityInfo()
 {
 	return (typeof _VirtualDom_doc.hidden !== 'undefined')
-		? { bd: 'hidden', a9: 'visibilitychange' }
+		? { bf: 'hidden', bb: 'visibilitychange' }
 		:
 	(typeof _VirtualDom_doc.mozHidden !== 'undefined')
-		? { bd: 'mozHidden', a9: 'mozvisibilitychange' }
+		? { bf: 'mozHidden', bb: 'mozvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.msHidden !== 'undefined')
-		? { bd: 'msHidden', a9: 'msvisibilitychange' }
+		? { bf: 'msHidden', bb: 'msvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.webkitHidden !== 'undefined')
-		? { bd: 'webkitHidden', a9: 'webkitvisibilitychange' }
-		: { bd: 'hidden', a9: 'visibilitychange' };
+		? { bf: 'webkitHidden', bb: 'webkitvisibilitychange' }
+		: { bf: 'hidden', bb: 'visibilitychange' };
 }
 
 
@@ -4247,11 +4247,11 @@ var _Browser_call = F2(function(functionName, id)
 function _Browser_getViewport()
 {
 	return {
-		aZ: _Browser_getScene(),
-		a2: {
-			a4: _Browser_window.pageXOffset,
-			a5: _Browser_window.pageYOffset,
-			a3: _Browser_doc.documentElement.clientWidth,
+		a_: _Browser_getScene(),
+		a4: {
+			a6: _Browser_window.pageXOffset,
+			a7: _Browser_window.pageYOffset,
+			a5: _Browser_doc.documentElement.clientWidth,
 			aI: _Browser_doc.documentElement.clientHeight
 		}
 	};
@@ -4262,7 +4262,7 @@ function _Browser_getScene()
 	var body = _Browser_doc.body;
 	var elem = _Browser_doc.documentElement;
 	return {
-		a3: Math.max(body.scrollWidth, body.offsetWidth, elem.scrollWidth, elem.offsetWidth, elem.clientWidth),
+		a5: Math.max(body.scrollWidth, body.offsetWidth, elem.scrollWidth, elem.offsetWidth, elem.clientWidth),
 		aI: Math.max(body.scrollHeight, body.offsetHeight, elem.scrollHeight, elem.offsetHeight, elem.clientHeight)
 	};
 }
@@ -4286,14 +4286,14 @@ function _Browser_getViewportOf(id)
 	return _Browser_withNode(id, function(node)
 	{
 		return {
-			aZ: {
-				a3: node.scrollWidth,
+			a_: {
+				a5: node.scrollWidth,
 				aI: node.scrollHeight
 			},
-			a2: {
-				a4: node.scrollLeft,
-				a5: node.scrollTop,
-				a3: node.clientWidth,
+			a4: {
+				a6: node.scrollLeft,
+				a7: node.scrollTop,
+				a5: node.clientWidth,
 				aI: node.clientHeight
 			}
 		};
@@ -4324,17 +4324,17 @@ function _Browser_getElement(id)
 		var x = _Browser_window.pageXOffset;
 		var y = _Browser_window.pageYOffset;
 		return {
-			aZ: _Browser_getScene(),
-			a2: {
-				a4: x,
-				a5: y,
-				a3: _Browser_doc.documentElement.clientWidth,
+			a_: _Browser_getScene(),
+			a4: {
+				a6: x,
+				a7: y,
+				a5: _Browser_doc.documentElement.clientWidth,
 				aI: _Browser_doc.documentElement.clientHeight
 			},
-			bb: {
-				a4: x + rect.left,
-				a5: y + rect.top,
-				a3: rect.width,
+			bd: {
+				a6: x + rect.left,
+				a7: y + rect.top,
+				a5: rect.width,
 				aI: rect.height
 			}
 		};
@@ -4908,6 +4908,7 @@ var $elm$core$List$any = F2(
 			}
 		}
 	});
+var $elm$json$Json$Decode$bool = _Json_decodeBool;
 var $elm$core$String$any = _String_any;
 var $elm$json$Json$Decode$fail = _Json_fail;
 var $elm$core$Basics$not = _Basics_not;
@@ -4928,7 +4929,6 @@ var $author$project$SurfaceRenderer$bounded = function (limit) {
 		},
 		$elm$json$Json$Decode$string);
 };
-var $elm$json$Json$Decode$bool = _Json_decodeBool;
 var $elm$json$Json$Decode$field = _Json_decodeField;
 var $elm$json$Json$Decode$keyValuePairs = _Json_decodeKeyValuePairs;
 var $elm$json$Json$Decode$list = _Json_decodeList;
@@ -5263,7 +5263,6 @@ var $elm$core$List$isEmpty = function (xs) {
 		return false;
 	}
 };
-var $elm$json$Json$Decode$map2 = _Json_map2;
 var $elm$json$Json$Decode$map8 = _Json_map8;
 var $elm$core$Result$mapError = F2(
 	function (f, result) {
@@ -5277,10 +5276,6 @@ var $elm$core$Result$mapError = F2(
 		}
 	});
 var $elm$core$Basics$neq = _Utils_notEqual;
-var $elm$core$Tuple$pair = F2(
-	function (a, b) {
-		return _Utils_Tuple2(a, b);
-	});
 var $elm$core$Dict$sizeHelp = F2(
 	function (n, dict) {
 		sizeHelp:
@@ -5368,6 +5363,7 @@ var $author$project$Settings$currentValues = A2(
 		A2($elm$json$Json$Decode$field, 'textScale', $author$project$Settings$scaleDecoder),
 		A2($elm$json$Json$Decode$field, 'effectsOff', $elm$json$Json$Decode$bool),
 		A2($elm$json$Json$Decode$field, 'reducedTransparency', $elm$json$Json$Decode$bool)));
+var $elm$json$Json$Decode$map2 = _Json_map2;
 var $author$project$Settings$legacyValues = A2(
 	$author$project$Settings$strict,
 	_List_fromArray(
@@ -5393,6 +5389,17 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 				$elm$json$Json$Decode$decodeValue,
 				A2($elm$json$Json$Decode$field, 'appearance', $elm$json$Json$Decode$value),
 				raw)));
+	var hasParent = !_Utils_eq(
+		$elm$core$Maybe$Nothing,
+		$elm$core$Result$toMaybe(
+			A2(
+				$elm$json$Json$Decode$decodeValue,
+				A2($elm$json$Json$Decode$field, 'keyboardParent', $elm$json$Json$Decode$value),
+				raw)));
+	var parentDecoder = hasParent ? A2(
+		$elm$json$Json$Decode$field,
+		'keyboardParent',
+		A2($elm$json$Json$Decode$map, $elm$core$Maybe$Just, $elm$json$Json$Decode$bool)) : $elm$json$Json$Decode$succeed($elm$core$Maybe$Nothing);
 	var hasMotion = !_Utils_eq(
 		$elm$core$Maybe$Nothing,
 		$elm$core$Result$toMaybe(
@@ -5421,17 +5428,24 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 			_Utils_ap(
 				legacy ? _List_Nil : _List_fromArray(
 					['appearance']),
-				hasMotion ? _List_fromArray(
-					['motion']) : _List_Nil)),
-		A3(
-			$elm$json$Json$Decode$map2,
-			$elm$core$Tuple$pair,
+				_Utils_ap(
+					hasMotion ? _List_fromArray(
+						['motion']) : _List_Nil,
+					hasParent ? _List_fromArray(
+						['keyboardParent']) : _List_Nil))),
+		A4(
+			$elm$json$Json$Decode$map3,
+			F3(
+				function (motion, parent, record) {
+					return _Utils_Tuple3(motion, parent, record);
+				}),
 			motionDecoder,
+			parentDecoder,
 			A9(
 				$elm$json$Json$Decode$map8,
 				F8(
 					function (version, shown, scoped, current, notice, bar, popup, appearance) {
-						return {k: appearance, i: bar, G: current, w: notice, b: popup, av: scoped, ax: shown, a1: version};
+						return {k: appearance, i: bar, G: current, w: notice, b: popup, av: scoped, ax: shown, a3: version};
 					}),
 				A2($elm$json$Json$Decode$field, 'surfaceProtocol', $elm$json$Json$Decode$int),
 				A2($elm$json$Json$Decode$field, 'publication', $author$project$UInt64$decoder),
@@ -5457,7 +5471,8 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 		$elm$core$Result$andThen,
 		function (_v0) {
 			var motion = _v0.a;
-			var record = _v0.b;
+			var parent = _v0.b;
+			var record = _v0.c;
 			var unique = function (names) {
 				return _Utils_eq(
 					$elm$core$List$length(names),
@@ -5471,7 +5486,7 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 					return $.Q;
 				},
 				all);
-			return ((record.a1 !== 2) || (_Utils_eq(record.ax, $author$project$UInt64$zero) || ((!A2(
+			return ((record.a3 !== 2) || (_Utils_eq(record.ax, $author$project$UInt64$zero) || ((!A2(
 				$elm$core$List$member,
 				record.G,
 				_List_fromArray(
@@ -5519,7 +5534,7 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 						return !_Utils_eq(control.u, $elm$core$Maybe$Nothing);
 					},
 					record.b)) > 1)))))))))))))) ? $elm$core$Result$Err('Invalid presentation scope/identities') : $elm$core$Result$Ok(
-				{k: record.k, i: record.i, aM: record.av, a: record.G, ak: motion, b: record.b, aW: record.ax, C: record.w});
+				{k: record.k, i: record.i, aL: parent, aN: record.av, a: record.G, ak: motion, b: record.b, aX: record.ax, C: record.w});
 		},
 		A2(
 			$elm$core$Result$mapError,
@@ -5528,11 +5543,11 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 };
 var $author$project$SurfaceRenderer$lease = function (_v0) {
 	var snapshot = _v0;
-	return snapshot.aM;
+	return snapshot.aN;
 };
 var $author$project$SurfaceRenderer$publication = function (_v0) {
 	var snapshot = _v0;
-	return snapshot.aW;
+	return snapshot.aX;
 };
 var $author$project$Presentation$accept = F2(
 	function (raw, prior) {
@@ -5550,9 +5565,9 @@ var $author$project$Presentation$accept = F2(
 				model.ap) !== 2) || (!A2(
 				$author$project$UInt64$compare,
 				$author$project$SurfaceRenderer$lease(snapshot),
-				model.aM))) ? prior : {
+				model.aN))) ? prior : {
 				ap: $author$project$SurfaceRenderer$publication(snapshot),
-				aM: $author$project$SurfaceRenderer$lease(snapshot),
+				aN: $author$project$SurfaceRenderer$lease(snapshot),
 				A: $elm$core$Maybe$Just(snapshot)
 			};
 		}
@@ -5565,9 +5580,34 @@ var $author$project$Presentation$current = function (_v0) {
 	return model.A;
 };
 var $author$project$CapturedAction$CapturedAction = $elm$core$Basics$identity;
+var $elm$json$Json$Decode$map7 = _Json_map7;
 var $author$project$CapturedAction$decode = function (raw) {
-	var fields = _List_fromArray(
-		['id', 'kind', 'lease', 'publication', 'surface', 'surfaceProtocol']);
+	var hasTrigger = !_Utils_eq(
+		$elm$core$Maybe$Nothing,
+		$elm$core$Result$toMaybe(
+			A2(
+				$elm$json$Json$Decode$decodeValue,
+				A2($elm$json$Json$Decode$field, 'trigger', $elm$json$Json$Decode$value),
+				raw)));
+	var origin = hasTrigger ? A2(
+		$elm$json$Json$Decode$field,
+		'trigger',
+		A2(
+			$elm$json$Json$Decode$andThen,
+			function (value) {
+				return A2(
+					$elm$core$List$member,
+					value,
+					_List_fromArray(
+						['pointer', 'keyboard'])) ? $elm$json$Json$Decode$succeed(
+					$elm$core$Maybe$Just(value)) : $elm$json$Json$Decode$fail('Action origin');
+			},
+			$elm$json$Json$Decode$string)) : $elm$json$Json$Decode$succeed($elm$core$Maybe$Nothing);
+	var fields = _Utils_ap(
+		_List_fromArray(
+			['id', 'kind', 'lease', 'publication', 'surface', 'surfaceProtocol']),
+		hasTrigger ? _List_fromArray(
+			['trigger']) : _List_Nil);
 	var decoder = A2(
 		$elm$json$Json$Decode$andThen,
 		function (pairs) {
@@ -5580,7 +5620,7 @@ var $author$project$CapturedAction$decode = function (raw) {
 					var version = _v0.a;
 					var kind = _v0.b;
 					var value = _v0.c;
-					return ((version === 2) && ((kind === 'surface-action') && ((!_Utils_eq(value.aW, $author$project$UInt64$zero)) && (A2(
+					return ((version === 2) && ((kind === 'surface-action') && ((!_Utils_eq(value.aX, $author$project$UInt64$zero)) && (A2(
 						$elm$core$List$member,
 						value.am,
 						_List_fromArray(
@@ -5591,21 +5631,22 @@ var $author$project$CapturedAction$decode = function (raw) {
 						},
 						value.Q)))))))) ? $elm$json$Json$Decode$succeed(value) : $elm$json$Json$Decode$fail('Action scope');
 				},
-				A7(
-					$elm$json$Json$Decode$map6,
-					F6(
-						function (version, kind, shown, scoped, role, name) {
+				A8(
+					$elm$json$Json$Decode$map7,
+					F7(
+						function (version, kind, shown, scoped, role, name, trigger) {
 							return _Utils_Tuple3(
 								version,
 								kind,
-								{Q: name, aM: scoped, aW: shown, am: role});
+								{Q: name, aN: scoped, aX: shown, am: role, a2: trigger});
 						}),
 					A2($elm$json$Json$Decode$field, 'surfaceProtocol', $elm$json$Json$Decode$int),
 					A2($elm$json$Json$Decode$field, 'kind', $elm$json$Json$Decode$string),
 					A2($elm$json$Json$Decode$field, 'publication', $author$project$UInt64$decoder),
 					A2($elm$json$Json$Decode$field, 'lease', $author$project$UInt64$decoder),
 					A2($elm$json$Json$Decode$field, 'surface', $elm$json$Json$Decode$string),
-					A2($elm$json$Json$Decode$field, 'id', $elm$json$Json$Decode$string)));
+					A2($elm$json$Json$Decode$field, 'id', $elm$json$Json$Decode$string),
+					origin));
 		},
 		$elm$json$Json$Decode$keyValuePairs($elm$json$Json$Decode$value));
 	return A2($elm$json$Json$Decode$decodeValue, decoder, raw);
@@ -5621,6 +5662,16 @@ var $author$project$SurfaceRenderer$enabled = F3(
 			popup ? snapshot.b : snapshot.i);
 	});
 var $elm$json$Json$Encode$int = _Json_wrap;
+var $elm$core$Maybe$map = F2(
+	function (f, maybe) {
+		if (!maybe.$) {
+			var value = maybe.a;
+			return $elm$core$Maybe$Just(
+				f(value));
+		} else {
+			return $elm$core$Maybe$Nothing;
+		}
+	});
 var $elm$json$Json$Encode$object = function (pairs) {
 	return _Json_wrap(
 		A3(
@@ -5639,32 +5690,56 @@ var $author$project$UInt64$string = function (_v0) {
 	var value = _v0;
 	return value;
 };
+var $elm$core$Maybe$withDefault = F2(
+	function (_default, maybe) {
+		if (!maybe.$) {
+			var value = maybe.a;
+			return value;
+		} else {
+			return _default;
+		}
+	});
 var $author$project$CapturedAction$encode = function (_v0) {
 	var value = _v0;
 	return $elm$json$Json$Encode$object(
-		_List_fromArray(
-			[
-				_Utils_Tuple2(
-				'surface',
-				$elm$json$Json$Encode$string(value.am)),
-				_Utils_Tuple2(
-				'surfaceProtocol',
-				$elm$json$Json$Encode$int(2)),
-				_Utils_Tuple2(
-				'kind',
-				$elm$json$Json$Encode$string('surface-action')),
-				_Utils_Tuple2(
-				'publication',
-				$elm$json$Json$Encode$string(
-					$author$project$UInt64$string(value.aW))),
-				_Utils_Tuple2(
-				'lease',
-				$elm$json$Json$Encode$string(
-					$author$project$UInt64$string(value.aM))),
-				_Utils_Tuple2(
-				'id',
-				$elm$json$Json$Encode$string(value.Q))
-			]));
+		_Utils_ap(
+			_List_fromArray(
+				[
+					_Utils_Tuple2(
+					'surface',
+					$elm$json$Json$Encode$string(value.am)),
+					_Utils_Tuple2(
+					'surfaceProtocol',
+					$elm$json$Json$Encode$int(2)),
+					_Utils_Tuple2(
+					'kind',
+					$elm$json$Json$Encode$string('surface-action')),
+					_Utils_Tuple2(
+					'publication',
+					$elm$json$Json$Encode$string(
+						$author$project$UInt64$string(value.aX))),
+					_Utils_Tuple2(
+					'lease',
+					$elm$json$Json$Encode$string(
+						$author$project$UInt64$string(value.aN))),
+					_Utils_Tuple2(
+					'id',
+					$elm$json$Json$Encode$string(value.Q))
+				]),
+			A2(
+				$elm$core$Maybe$withDefault,
+				_List_Nil,
+				A2(
+					$elm$core$Maybe$map,
+					function (trigger) {
+						return _List_fromArray(
+							[
+								_Utils_Tuple2(
+								'trigger',
+								$elm$json$Json$Encode$string(trigger))
+							]);
+					},
+					value.a2))));
 };
 var $author$project$CapturedAction$identity = function (_v0) {
 	var value = _v0;
@@ -5672,11 +5747,11 @@ var $author$project$CapturedAction$identity = function (_v0) {
 };
 var $author$project$CapturedAction$lease = function (_v0) {
 	var value = _v0;
-	return value.aM;
+	return value.aN;
 };
 var $author$project$CapturedAction$publication = function (_v0) {
 	var value = _v0;
-	return value.aW;
+	return value.aX;
 };
 var $author$project$CapturedAction$surface = function (_v0) {
 	var value = _v0;
@@ -5731,7 +5806,7 @@ var $elm$url$Url$Http = 0;
 var $elm$url$Url$Https = 1;
 var $elm$url$Url$Url = F6(
 	function (protocol, host, port_, path, query, fragment) {
-		return {aH: fragment, aJ: host, aQ: path, aS: port_, aV: protocol, aX: query};
+		return {aH: fragment, aJ: host, aR: path, aT: port_, aW: protocol, aY: query};
 	});
 var $elm$core$String$contains = _String_contains;
 var $elm$core$String$slice = _String_slice;
@@ -5938,17 +6013,7 @@ var $elm$core$Task$perform = F2(
 var $elm$browser$Browser$element = _Browser_element;
 var $author$project$Announcement$Model = $elm$core$Basics$identity;
 var $author$project$Announcement$initial = {F: false, ap: $author$project$UInt64$zero, r: $elm$core$Maybe$Nothing};
-var $author$project$Presentation$initial = {ap: $author$project$UInt64$zero, aM: $author$project$UInt64$zero, A: $elm$core$Maybe$Nothing};
-var $elm$core$Maybe$map = F2(
-	function (f, maybe) {
-		if (!maybe.$) {
-			var value = maybe.a;
-			return $elm$core$Maybe$Just(
-				f(value));
-		} else {
-			return $elm$core$Maybe$Nothing;
-		}
-	});
+var $author$project$Presentation$initial = {ap: $author$project$UInt64$zero, aN: $author$project$UInt64$zero, A: $elm$core$Maybe$Nothing};
 var $elm$core$Platform$Cmd$batch = _Platform_batch;
 var $elm$core$Platform$Cmd$none = $elm$core$Platform$Cmd$batch(_List_Nil);
 var $author$project$Bar$presentation = _Platform_incomingPort('presentation', $elm$json$Json$Decode$value);
@@ -6034,6 +6099,10 @@ var $elm$json$Json$Decode$nullable = function (decoder) {
 				A2($elm$json$Json$Decode$map, $elm$core$Maybe$Just, decoder)
 			]));
 };
+var $elm$core$Tuple$pair = F2(
+	function (a, b) {
+		return _Utils_Tuple2(a, b);
+	});
 var $author$project$Announcement$scope = A2(
 	$author$project$Announcement$strict,
 	_List_fromArray(
@@ -6079,7 +6148,7 @@ var $author$project$Announcement$receive = F4(
 				$elm$json$Json$Decode$map8,
 				F8(
 					function (version, kind, recipient, owner, publication, lease, message, deliver) {
-						return {aE: deliver, aL: kind, aM: lease, r: message, aP: owner, aW: publication, at: recipient, a1: version};
+						return {aE: deliver, aM: kind, aN: lease, r: message, aQ: owner, aX: publication, at: recipient, a3: version};
 					}),
 				A2($elm$json$Json$Decode$field, 'announcementProtocol', $elm$json$Json$Decode$int),
 				A2($elm$json$Json$Decode$field, 'kind', $elm$json$Json$Decode$string),
@@ -6101,17 +6170,17 @@ var $author$project$Announcement$receive = F4(
 		if ((!_v0.a.$) && (!_v0.b.$)) {
 			var current = _v0.a.a;
 			var packet = _v0.b.a;
-			if ((packet.a1 !== 1) || ((packet.aL !== 'announcement-projection') || ((!_Utils_eq(
+			if ((packet.a3 !== 1) || ((packet.aM !== 'announcement-projection') || ((!_Utils_eq(
 				packet.at.b,
 				popup ? 'popup' : 'bar')) || ((!_Utils_eq(
-				packet.aW,
+				packet.aX,
 				$author$project$SurfaceRenderer$publication(current))) || (!_Utils_eq(
-				packet.aM,
+				packet.aN,
 				$author$project$SurfaceRenderer$lease(current))))))) {
 				return prior;
 			} else {
 				if (!_Utils_eq(
-					packet.aP,
+					packet.aQ,
 					$elm$core$Maybe$Just(packet.at))) {
 					return _Utils_update(
 						model,
@@ -6165,15 +6234,6 @@ var $elm$virtual_dom$VirtualDom$keyedNode = function (tag) {
 };
 var $elm$html$Html$Keyed$node = $elm$virtual_dom$VirtualDom$keyedNode;
 var $elm$html$Html$span = _VirtualDom_node('span');
-var $elm$core$Maybe$withDefault = F2(
-	function (_default, maybe) {
-		if (!maybe.$) {
-			var value = maybe.a;
-			return value;
-		} else {
-			return _default;
-		}
-	});
 var $author$project$Announcement$view = function (_v0) {
 	var model = _v0;
 	return (!model.F) ? $elm$html$Html$text('') : A3(
@@ -6851,11 +6911,11 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 													_Utils_Tuple2(
 													'publication',
 													$elm$json$Json$Encode$string(
-														$author$project$UInt64$string(snapshot.aW))),
+														$author$project$UInt64$string(snapshot.aX))),
 													_Utils_Tuple2(
 													'lease',
 													$elm$json$Json$Encode$string(
-														$author$project$UInt64$string(snapshot.aM))),
+														$author$project$UInt64$string(snapshot.aN))),
 													_Utils_Tuple2(
 													'id',
 													$elm$json$Json$Encode$string(item.Q)),
@@ -7108,11 +7168,11 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-publication',
-					$author$project$UInt64$string(snapshot.aW)),
+					$author$project$UInt64$string(snapshot.aX)),
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-lease',
-					$author$project$UInt64$string(snapshot.aM))
+					$author$project$UInt64$string(snapshot.aN))
 				]),
 			_List_fromArray(
 				[
@@ -7240,11 +7300,11 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-publication',
-					$author$project$UInt64$string(snapshot.aW)),
+					$author$project$UInt64$string(snapshot.aX)),
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-lease',
-					$author$project$UInt64$string(snapshot.aM))
+					$author$project$UInt64$string(snapshot.aN))
 				]),
 			_List_fromArray(
 				[
@@ -7300,12 +7360,12 @@ var $author$project$SurfaceRenderer$view = F3(
 	});
 var $author$project$Bar$main = $elm$browser$Browser$element(
 	{
-		bf: function (_v0) {
+		bh: function (_v0) {
 			return _Utils_Tuple2(
 				{W: $author$project$Announcement$initial, K: $author$project$Presentation$initial},
 				$elm$core$Platform$Cmd$none);
 		},
-		bl: function (_v1) {
+		bn: function (_v1) {
 			return $elm$core$Platform$Sub$batch(
 				_List_fromArray(
 					[
@@ -7314,7 +7374,7 @@ var $author$project$Bar$main = $elm$browser$Browser$element(
 						$author$project$Bar$announcements($author$project$Bar$Announce)
 					]));
 		},
-		bm: F2(
+		bo: F2(
 			function (message, model) {
 				switch (message.$) {
 					case 1:
@@ -7353,7 +7413,7 @@ var $author$project$Bar$main = $elm$browser$Browser$element(
 							$elm$core$Platform$Cmd$none);
 				}
 			}),
-		bn: function (model) {
+		bp: function (model) {
 			return A2(
 				$elm$core$Maybe$withDefault,
 				$elm$html$Html$text(''),

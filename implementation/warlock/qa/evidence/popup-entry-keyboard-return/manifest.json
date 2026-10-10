@@ -1,0 +1,389 @@
+{
+  "schema": 1,
+  "requirements": [
+    "ELM-UX-024",
+    "ELM-UI-011"
+  ],
+  "scenarios": [
+    "ux-024",
+    "focus-scope-nested dismissal"
+  ],
+  "sourceParent": "5b1411bfa7beaf6b3de61e708b04fd4b02b595c9",
+  "sourceHashes": {
+    "implementation/warlock/src/Desktop.elm": "2a0a0c56f75e22cf05fa00cced14a2c8572ed995fe144ea5d448eea6364bb877",
+    "implementation/warlock/src/Surface.elm": "272a822fca0bd99397797ab340380e17847095d3db736d2dc7500fa93c97f066",
+    "implementation/warlock/src/SurfaceRenderer.elm": "e7e8d255cf38c2862a03c951f7caab50fddffa73946ae143dedfe71c1fdbf4c6",
+    "implementation/warlock/native/shared-host.c": "8b07777d53a8d719ee63d690be7edd9ba781354e83f348034b38a186badf3d24",
+    "implementation/warlock/native/surface.h": "d7fbd6a79d9aefb232a6f86ce2e3db806d2fd5b913eb90ea5a8cddc0807f4c43",
+    "implementation/warlock/qa/check-search.py": "09b7faeb96c7e174e8ad4684cea9678b5739e28c9372cd69c58d36f1970536b2",
+    "implementation/warlock/qa/PopupEntryReplay.elm": "052bdcb565b3dc76faa375006ecaf69af3e928276534e6247efa62b7cdfaf015",
+    "implementation/warlock/qa/popup-entry.qnt": "098e040bc631a5638ee5dbed8b603f3bf59d6a1aad40a3685ada996cbdd1f242",
+    "implementation/warlock/qa/popup-entry_test.qnt": "a36cdf28e789d4cbd9163a9611e74531bd13c1eefa81f43327dd9ccdafec6cb9",
+    "implementation/warlock/qa/check-popup-entry.py": "7020347a21b1e89036fbb3334744279638d6841e88182e7699b128e38ad0988d",
+    "implementation/warlock/qa/current-search-build.json": "1033cb390af6a66680d53de4848136f33b65b93592af779303c87fc2e980d8e6",
+    "implementation/warlock/assets/elm.js": "0c263d96f72025833cb894e3f74e55e438bbb7fb92c44a76d88beaefd3ef2b1e",
+    "implementation/warlock/assets/bar.js": "1b490122e33ec692c225c2f6936d2e05eb23cc0ec91c9fa0d2a16469c030cff1",
+    "implementation/warlock/assets/popup.js": "c12dc5323bbaaf2d83cff1799b1e0e72c861d012f6db0da39d50adb62648f933",
+    "implementation/warlock/README.md": "1ad50c8d0a1e221cffae91ee45ed7974f5de6c8cdac8b1e90970a378ec92d039",
+    "implementation/warlock/src/CapturedAction.elm": "5c820d0c2f5167c42953b564d422429215e21ddf0a6dc955b3d3fe52b07d93cc",
+    "implementation/warlock/assets/activation.js": "06e3de6bcbc27e2b9a5d166fd665706e300ef5d4a29640b9bd70aa0f095a2c3e"
+  },
+  "frozenRequirements": {
+    "path": "docs/elm-roadmap/requirements.json",
+    "sha256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
+    "requirements": 242,
+    "scenarios": 417
+  },
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/scene-core-1791621191426123207/Hyprland",
+      "sha256": "2ffd686ca77107900647cb6f6f017091c87fe084ed9cd339f1c20d7436f818f6"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791621365267378094/elm-window-geometry-authority.so",
+      "sha256": "3d62a13a6c1ab1dd59eae4db2cc626fc69e05e7aa10d1e8ebc1f814cd99d2235"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-max-1791623308626059469/elm-host",
+    "sha256": "aff4273d7474b3b2adc52cfba6cc2841219f3b9937391ec1192b04ad10d2bbd9",
+    "heldBuild": "implementation/warlock/qa/runs/pin-max-1791623308626059469/report.json",
+    "heldBuildSHA256": "4f3c9e050d9c4337a8b8a78057701587d064f36d3702a915b73a65a2154bc563"
+  },
+  "artifacts": [
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/compiled.json",
+      "sha256": "4f3c9e050d9c4337a8b8a78057701587d064f36d3702a915b73a65a2154bc563",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-max-1791623308626059469/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/model-before.json",
+      "sha256": "1fb1b7a35f7b25fb2bfeaac56e283aa233434d6ef3b1cd770a38e9851126fcea",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/popup-entry-1791622524954140739/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/model-after.json",
+      "sha256": "fdba135baeda97c60c227ec33e9c684b8546c90800925eee493b173ebc0ff65d",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-max-1791623308626059469/inputs/qa/runs/popup-entry-1791623308745708324/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/typecheck.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-max-1791623308626059469/inputs/qa/runs/popup-entry-1791623308745708324/typecheck.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/named.stdout",
+      "sha256": "da20008dc9146a502f1d5764dbd22f0ee618464a3942e2e86b7536ea6213bc3c",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-max-1791623308626059469/inputs/qa/runs/popup-entry-1791623308745708324/named.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/witnesses.stdout",
+      "sha256": "44320d923b0b2c897cd4a91dd35b299d983acbf593ac0126a00be5a81b6aadc4",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-max-1791623308626059469/inputs/qa/runs/popup-entry-1791623308745708324/witnesses.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/safety.stdout",
+      "sha256": "156effbe2318fb690e3b4c09c5873b04c5ad593d2f025c6e874ec009e84949e1",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-max-1791623308626059469/inputs/qa/runs/popup-entry-1791623308745708324/safety.stdout"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/typed-entry.json",
+      "sha256": "819a59ef6658d944bea77cb162aee8533fdb70d99530eed6784574fbb791a7d8",
+      "original": "implementation/warlock/qa/runs/pin-max-1791623308626059469/report.json#popupEntry"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-taskbar-escape.json",
+      "sha256": "27eb138d55193f7e948717d01f25d08fb1f507f1b16aa8f898f15f1fb26962d5",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-taskbar-focus-1791623354261452772/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-keyboard-shell.json",
+      "sha256": "cdf2c38849a7d1b7673c8ee09c82fe661106553f5bf38294f9f475f6ffefb394",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-keyboard-shell-1791623537583841538/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-keyboard-shell-popup-keyboard-shell-finished.png",
+      "sha256": "f07ecc658921fca9161d4fba222eb63b97d7219fb73642f7721f47946c851234",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791623537583929410/popup-keyboard-shell-finished.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-modal-regression.json",
+      "sha256": "6b7cf94875df119796b073d79dea161867b3319eb4c72bc7109cfc41800e78e5",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-modal-draft-focus-1791623580014378760/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-modal-regression-IncludedPoint.png",
+      "sha256": "abec192ffe98240850993e8c173dba76af9015739978c2d3f43d0f7bdc696ff1",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791623580014491826/IncludedPoint.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-modal-regression-ExcludedPoint.png",
+      "sha256": "d11e3e3d8533fa2b18824682cbc61f49e5a102fd752e891ae2ae82de9d928391",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791623580014491826/ExcludedPoint.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-modal-regression-ModalParentPointBefore.png",
+      "sha256": "231f09d9ba45435e160b7a7280271a82f80eb6f28ed569f7a2590b14bdd79b4e",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791623580014491826/ModalParentPointBefore.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-modal-regression-ModalRecipientAfter.png",
+      "sha256": "af097bc18d56afc044a556e44313ff7de255a886e50f23d40d9fb40df50073f1",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791623580014491826/ModalRecipientAfter.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-modal-regression-UnrelatedEligibleWindowWithDraftModal.png",
+      "sha256": "ea7be11b0288e4c95a1aa843bda0a99218d8ca7bb96cbad3b6d13bb0bf8d4446",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791623580014491826/UnrelatedEligibleWindowWithDraftModal.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-modal-regression-NoFocusModalPaint.png",
+      "sha256": "61a4cdcfa832b9218d7f0891a663ec4d7f06dd9da8af52b4ac655662591b7fca",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791623580014491826/NoFocusModalPaint.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-modal-regression-RetiredModalParentEligibleAgain.png",
+      "sha256": "1965b2b9da6b5e0c4438acd8c193122ae788996cc1a2d6c633657a230ed23e21",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791623580014491826/RetiredModalParentEligibleAgain.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-fullscreen-regression.json",
+      "sha256": "25bf3cec8460b229809bf958aa5b44ba3dd6563a597e2856e77fbd1f9dadcf69",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-fullscreen-pin-1791623606633898510/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-fullscreen-regression-UnpinnedMax.png",
+      "sha256": "72b6ae864dbcf256c248475240f1e459395e943bcb5c6035613e568c7f1d15ed",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791623606634004705/UnpinnedMax.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-fullscreen-regression-AlwaysOnTopUnchecked.png",
+      "sha256": "45f421cc7b91d288486dd44fc6dc231f1507e00115f25fcfb68a401f137f8f09",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791623606634004705/AlwaysOnTopUnchecked.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-fullscreen-regression-PinnedMax.png",
+      "sha256": "003276e0db0fa5be50797a639cd448c8c1eb70141b83b087e07fb31ea522b2ca",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791623606634004705/PinnedMax.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-fullscreen-regression-AlwaysOnTopChecked.png",
+      "sha256": "a500ba704afd841478207a7b7fba766bad7b789002f7300b58e286617628dc8c",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791623606634004705/AlwaysOnTopChecked.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-fullscreen-regression-UnpinnedAgain.png",
+      "sha256": "94d5e95ceefd298ddf2e2231480ea0e100ed6d6acdbcb61ed9ff23c01afbc656",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791623606634004705/UnpinnedAgain.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-fullscreen-regression-PinnedAboveTrueFullscreen.png",
+      "sha256": "6679b34e8cbf01403fca0ab230e1c7918d36bf2cd7aa4edc670ab8312a72f51c",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791623606634004705/PinnedAboveTrueFullscreen.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-fullscreen-regression-TrueFullscreenOutsidePinned.png",
+      "sha256": "a0789540dfdbad01bd0a7a3b3630a87bededc62fa4079b88244489f84eab63dd",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791623606634004705/TrueFullscreenOutsidePinned.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-fullscreen-regression-PinnedAfterFullscreenExit.png",
+      "sha256": "786b43bd663685a1a3182c9812f6dd5a770588c09b0c3374986bd2b92504cf93",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791623606634004705/PinnedAfterFullscreenExit.png"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/compiled-fail-1791623146745546025.json",
+      "sha256": "1ee6f2cbfde25a1c4b9420ea6cb673ee0e7f719cec23232c3b02cd6cd16ef872",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-max-1791623146745546025/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/compiled-fail-1791623178013672695.json",
+      "sha256": "1acc67e2604146d9c6a2dda739858509439d210207988f0acdbda7bf18ac9197",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-max-1791623178013672695/report.json"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/compiled-fail-1791623254948540888.json",
+      "sha256": "43c0ee0a0bb6c43176aef3b37a3ebd438ed6ab757247f9bedce71697219de1b2",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-max-1791623254948540888/report.json"
+    }
+  ],
+  "compressedLogs": [
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-taskbar-escape-warlock.log.gz",
+      "sha256": "70a29c96a2c92dc9add0b14183da7510b75a36e0b1645e594cf61c46f0957b00",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791623354261540346/warlock.log",
+      "uncompressedSHA256": "089ca0da0e8172b59778f1631b9f78f68d89def50c1a94cf9075ad214771e24a"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-taskbar-escape-fixture.log.gz",
+      "sha256": "f02c0c8aa9ffbe0804cc5da35c5672d29e90cb3e04944ac8dd4c04aa5617030c",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791623354261540346/fixture.log",
+      "uncompressedSHA256": "9cff5ec331e9c92e8ea7a445a44c39381683aaf7f6c6f2925cce28210292b1a8"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-taskbar-escape-fixture-control.events.jsonl.gz",
+      "sha256": "a760b213a3d6ffd0dfa0539107cdca54da036a805ab3a5d79bbef55eb902f670",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791623354261540346/fixture-control.events.jsonl",
+      "uncompressedSHA256": "5c0fcb9cc31e4ee15b45a1cdc65dbf65e44a6b47892196a567cc5c70aef8b141"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-taskbar-escape-hyprland.log.gz",
+      "sha256": "b550b29b614e3671ee023d26592b056afed39fc2dfab1f2de5d33a7171ac50c6",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791623354261540346/hyprland.log",
+      "uncompressedSHA256": "b61dc731e26983e86925a2342b05246a94ffde72e8748825747d6331ee1d5286"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-taskbar-escape-host-evidence.json.gz",
+      "sha256": "df2325c45062e1ea6d3afc3155ab213afcbf289950e947840c7e34093603df94",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791623354261540346/host-evidence.json",
+      "uncompressedSHA256": "592ec21222184b58039700e1c25aa10fa5dc96292f85b29154cbb26a175e6ba9"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-keyboard-shell-warlock.log.gz",
+      "sha256": "0dd39ffaa018d8277c35794c6c281be0632fe9d4f8112daef7b83d20a51cd3c8",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791623537583929410/warlock.log",
+      "uncompressedSHA256": "7f55f7c0ec23de0d5305a659001af2613d103ffad24bb7a6050ee43d98e22a4c"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-keyboard-shell-fixture.log.gz",
+      "sha256": "7110e97e593ef2b40a9cac0daa7336347147727fe12f72d35737850358c0d80a",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791623537583929410/fixture.log",
+      "uncompressedSHA256": "6f543cc70ebdc6f00cf4a8657c8f26adb500bc5c6c29d0ea11a68170e3238193"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-keyboard-shell-fixture-control.events.jsonl.gz",
+      "sha256": "5ec91319cc69207fce8091e74b6ab0bade785411ab20c3c6d1e09b75dac71791",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791623537583929410/fixture-control.events.jsonl",
+      "uncompressedSHA256": "d54de08810e5a15c0953410198148c6c60aea2686e3c3a3325dc6ad25e670889"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-keyboard-shell-hyprland.log.gz",
+      "sha256": "cab499e4f7151dc23447577908237d3bd6f241e9339b14568da8d6c51892a92a",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791623537583929410/hyprland.log",
+      "uncompressedSHA256": "801b7bfb5ac811c05eac7839ec732ce10389679e3e51af1aaa3f7a4beef3bf41"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-keyboard-shell-host-evidence.json.gz",
+      "sha256": "730e5b81e9452c50c1245acdc69eabc47310bfa6797f6b23c2875c653c86b0b1",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791623537583929410/host-evidence.json",
+      "uncompressedSHA256": "6c383957f09e5a6c82be433ed796d06933fc1987432a362ed74e068d3c5ae254"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-modal-regression-warlock.log.gz",
+      "sha256": "aa3e76d223e02669ee224223569edb77f2c635eb74df4fc0d6af42bd9f2baafc",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791623580014491826/warlock.log",
+      "uncompressedSHA256": "02ba7b0eaf55caae957054d43722469baa52152e1d2c9db151f057905ac4a4b4"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-modal-regression-fixture.log.gz",
+      "sha256": "e1d634b2cafa613b33f269d0bfeee8cd9d7b9b202876c4421de231fef920b2eb",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791623580014491826/fixture.log",
+      "uncompressedSHA256": "3860bab800f1792f12ed95fd16faeba727928b49f8a0e7c08b745569a6211f58"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-modal-regression-fixture-control.events.jsonl.gz",
+      "sha256": "a5ea41295535481cc2ba770d404fa91670f68e10fd3f7c1a7435968e346649d1",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791623580014491826/fixture-control.events.jsonl",
+      "uncompressedSHA256": "26ecd4a0198364f208258ea1f73bc032e58676ffda804696edebe0c6295788ea"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-modal-regression-hyprland.log.gz",
+      "sha256": "4c22b6153793462d59906773ef6a6dfed86dfb6464adcef60cd9445ef94992e1",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791623580014491826/hyprland.log",
+      "uncompressedSHA256": "5cca9fc0bd43ecd125008fc0fdcc6cd6966c1f4ace6288b9ff1d518588baea7b"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-modal-regression-host-evidence.json.gz",
+      "sha256": "79a1db6d1997432e173bc1a5cae717cb9c5afd582ef3d8644b764e7645ab0b79",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791623580014491826/host-evidence.json",
+      "uncompressedSHA256": "a8a8af5c4e26921edb711515777aa271f4f8bd1cd46d4f7868b6c70c9b54ea75"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-fullscreen-regression-warlock.log.gz",
+      "sha256": "32d925f989861e2e4067f3731e7ffca6e29f79a911fae936f63a3c7ddec171c0",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791623606634004705/warlock.log",
+      "uncompressedSHA256": "fddcdb4a2ed6d230de5ffe0d71b6017568b0c1f3ea507a65afcbb072834a803f"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-fullscreen-regression-fixture.log.gz",
+      "sha256": "6b88080aade0b4c35fc6087a3dac7a1b97fb3cfed71a55538a8b59093ec7f279",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791623606634004705/fixture.log",
+      "uncompressedSHA256": "05265adbd8c2fa08a1372f9b39844396fb993d5ad49400fe91b6fec71581fafb"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-fullscreen-regression-fixture-control.events.jsonl.gz",
+      "sha256": "9cbf66f4effd87e3156f1c008faa3595fa516d7a9266a90aedbc99e667a5fc1c",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791623606634004705/fixture-control.events.jsonl",
+      "uncompressedSHA256": "a852866da870f96a3da1d76dbf9fa38dd23257f6c60687f1b98b03acc55cdf2b"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-fullscreen-regression-hyprland.log.gz",
+      "sha256": "cd82570a407749c2d3dac3d1d52b1f7c7ea295489d09257d6fe9ac346d7f3f11",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791623606634004705/hyprland.log",
+      "uncompressedSHA256": "9409422e1844919cb8822eded422a1b72e0343fcf4bebb9d4f190618fe1b0378"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/native-fullscreen-regression-host-evidence.json.gz",
+      "sha256": "d789fcc6c4bd6ab57e8f103b53721f5fbb688482129f16a3df9e8b5ebd382f40",
+      "original": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791623606634004705/host-evidence.json",
+      "uncompressedSHA256": "46cef123ffe3a6c5fcf9aa651a8ddc37ea6a5bcc253d84fa8c8f8db19e22e7b7"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/compiled-fail-1791623146745546025-popup-entry-model.stderr.gz",
+      "sha256": "3e1c7d3aa902d6907534a7f957566549c2a74fc0a8341ca4736d7e564ba76df5",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-max-1791623146745546025/popup-entry-model.stderr",
+      "uncompressedSHA256": "d9f0b6bba8ba4f386b71ecce98aea5cee1bc74639fa34047e094114716c38dca"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/compiled-fail-1791623178013672695-popup-entry-model.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-max-1791623178013672695/popup-entry-model.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/compiled-fail-1791623254948540888-popup-entry-model.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-max-1791623254948540888/popup-entry-model.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/compiled-fail-1791623254948540888-compile-popup-entry.stderr.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-max-1791623254948540888/compile-popup-entry.stderr",
+      "uncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/compiled-fail-1791623254948540888-typed-popup-entry.stderr.gz",
+      "sha256": "5c2a837710d74bd2534a524e2751a355eb740c6884665ed6f2c0de591d3d1fed",
+      "original": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-max-1791623254948540888/typed-popup-entry.stderr",
+      "uncompressedSHA256": "4689a2e0df2a7e7040dfd521540be861ba74ed4994d5ab2d3f62878f699ee331"
+    }
+  ],
+  "retainedOriginalFailure": {
+    "path": "implementation/warlock/qa/evidence/modal-recipient-eligibility/native-taskbar-escape-fail.json",
+    "sha256": "5d0e6190532283198b379e084de13e388ec919b822970501da4c4e48fefbbf92"
+  },
+  "unchangedNativeRunnerHashes": {
+    "implementation/warlock/qa/native-window-feedback.py": "a6247750ae49bfef098a5c2840c36d12e5cae4a301144338c58758005e667946",
+    "implementation/warlock/qa/native-modal-draft-focus.py": "4a4a1d43362865e7935d64548b752ed51865b670b3bb685b572a3ec21ec687b0",
+    "implementation/warlock/qa/native-fullscreen-pin.py": "1bf234a6d68a011a24aeab593537021de2305c0afd32c50faa2e950c20e73fa4"
+  },
+  "modelScope": "Sampled entry/parent/commit ordering, six named cases and four witnesses; no native seat/identity/AT proof",
+  "compiledCheckCount": 11,
+  "nativeTaskbarEscapePassed": true,
+  "nativeKeyboardShellPassed": true,
+  "nativeModalRegressionPassed": true,
+  "nativeFullscreenRegressionPassed": true,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "disposition": "partial",
+  "missingObservations": [
+    "Independent original UX-024 and UI-011 scenario review; no full original-oracle acceptance inferred",
+    "Native AT focus return and full nested scope stack, opener retirement/replacement/workspace/minimize/restart, protected-input/output races",
+    "Full original GUI journeys, toolkit/hardware/resource gates, reproducible package and reversible deployment/rollback"
+  ]
+}

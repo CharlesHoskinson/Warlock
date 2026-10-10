@@ -28,9 +28,9 @@
     (a.kind==='direct'?a.id===b.id:a.kind==='keyboard'?a.key===b.key&&a.code===b.code:true);
   const matches=(held,item,route)=>held&&held.stamp.item===item&&same(held.route,route);
   const block=event=>{event.preventDefault();event.stopImmediatePropagation();};
-  const deliver=stamp=>{
+  const deliver=(stamp,route)=>{
     const value=Object.freeze({surfaceProtocol:2,kind:'surface-action',surface:stamp.surface,
-      publication:stamp.publication,lease:stamp.lease,id:stamp.id});
+      publication:stamp.publication,lease:stamp.lease,id:stamp.id,trigger:route?.kind==='keyboard'?'keyboard':'pointer'});
     window.submitSurfaceAction?.(value);
   };
   const quarantineTurn=()=>{
@@ -83,10 +83,10 @@
       if(!matches(held,item,route)||held.phase!=='released'){block(event);return;}
       const valid=!held.canceled&&current(held.stamp)&&
         (held.route.kind!=='keyboard'||document.activeElement===item&&generated===held);
-      pending=null;quarantineTurn();block(event);if(valid)deliver(held.stamp);return;
+      pending=null;quarantineTurn();block(event);if(valid)deliver(held.stamp,held.route);return;
     }
     const stamp=read(item);block(event);
-    if(!quarantine&&event.detail===0&&stamp?.enabled&&current(stamp))deliver(stamp);
+    if(!quarantine&&event.detail===0&&stamp?.enabled&&current(stamp))deliver(stamp,{kind:'keyboard'});
     // Current atomic detail0 is compatible, never authenticated AT evidence.
   },true);
   const invoke=held=>{
@@ -124,7 +124,7 @@
       if(!root||root.dataset.mode==='menu'||root.dataset.mode==='applications'||!qualified(event))return;
       const item=[...root.querySelectorAll('[data-surface-control]')].find(node=>node.dataset.surfaceControl==='control:close');
       const stamp=read(item);block(event);
-      if(stamp?.enabled&&current(stamp))deliver(stamp);
+      if(stamp?.enabled&&current(stamp))deliver(stamp,{kind:'keyboard'});
       return;
     }
     if(!activationKey(event)){pairing=null;return;}

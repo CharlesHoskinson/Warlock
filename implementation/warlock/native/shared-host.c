@@ -217,9 +217,13 @@ static gboolean shared_foreground_requests(JsonArray *requests,JsonNode *binding
 }
 static void shared_keyboard_parent(OutputView *owner,JsonNode *frame,JsonArray *requests) {
     gboolean foreground=shared_foreground_requests(requests,authority_binding);
-    if (!owner && !foreground) return; /* Escape/background Minimize retains the parent. */
+    JsonObject *object=json_node_get_object(frame);
+    /* Elm supplies UI parent policy, never native input/focus authority. Older
+     * frames retain the declared bar parent. Native owns opener eligibility. */
+    gboolean bar_parent=!json_object_has_member(object,"keyboardParent") || json_object_get_boolean_member(object,"keyboardParent");
+    if (!owner && !foreground && bar_parent) return;
     const char *mode=json_object_get_string_member(json_node_get_object(frame),"mode");
-    gboolean returns_to_bar=g_str_equal(mode,"menu") || g_str_equal(mode,"picker") || g_str_equal(mode,"applications");
+    gboolean returns_to_bar=g_str_equal(mode,"menu") || g_str_equal(mode,"picker") || g_str_equal(mode,"applications") || (g_str_equal(mode,"closed") && bar_parent);
     for (guint i=0;i<output_views->len;i++) {
         OutputView *row=g_ptr_array_index(output_views,i);
         if (!row->active) continue;
@@ -386,10 +390,12 @@ static void shared_commit(JsonNode *root,const char *original) {
         json_node_unref(translated);goto refuse;
     }
     shared_preserve_context_anchor=shared_anchor_for(next_popup,frame);
+    /* Commit the parent keyboard mode before withdrawing the native popup.
+     * Its grab teardown must observe NONE for an application opener. */
+    shared_keyboard_parent(next_popup?next_popup:popup_owner,frame,json_node_get_array(rn));
     if (popup_active && popup_owner!=next_popup) popup_hide();
     popup_owner=next_popup;focus_owner=next_focus;
     owned_monitor=popup_owner?popup_owner->monitor:NULL;window=popup_owner?popup_owner->bar:controller_window;
-    shared_keyboard_parent(popup_owner,frame,json_node_get_array(rn));
     wire=json_to_string(translated,FALSE);SurfaceDisposition disposition=surface_receive(primary_manager,wire,translated);shared_preserve_context_anchor=FALSE;json_node_unref(translated);
     shared_batch_finish(record,disposition);
     if(disposition==SURFACE_ADMITTED){announcement_save(projection);shared_announcement_publish();}

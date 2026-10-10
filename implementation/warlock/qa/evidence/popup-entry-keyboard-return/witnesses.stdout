@@ -1,0 +1,570 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      closing: false,
+      completed: false,
+      depth: 0,
+      focus: 0,
+      keyboardEntry: false,
+      live: true,
+      nestedReturn: false,
+      parentKeyboard: false,
+      policyCommitted: false,
+      protected: false,
+      savedFocus: 0
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      closing: false,
+      completed: false,
+      depth: 1,
+      focus: 2,
+      keyboardEntry: true,
+      live: true,
+      nestedReturn: false,
+      parentKeyboard: true,
+      policyCommitted: false,
+      protected: false,
+      savedFocus: 0
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      closing: true,
+      completed: false,
+      depth: 1,
+      focus: 2,
+      keyboardEntry: true,
+      live: true,
+      nestedReturn: false,
+      parentKeyboard: true,
+      policyCommitted: true,
+      protected: false,
+      savedFocus: 0
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      closing: true,
+      completed: false,
+      depth: 1,
+      focus: 2,
+      keyboardEntry: true,
+      live: false,
+      nestedReturn: false,
+      parentKeyboard: true,
+      policyCommitted: true,
+      protected: false,
+      savedFocus: 0
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      closing: true,
+      completed: false,
+      depth: 1,
+      focus: 2,
+      keyboardEntry: true,
+      live: false,
+      nestedReturn: false,
+      parentKeyboard: true,
+      policyCommitted: true,
+      protected: false,
+      savedFocus: 0
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      closing: false,
+      completed: true,
+      depth: 0,
+      focus: 3,
+      keyboardEntry: true,
+      live: false,
+      nestedReturn: false,
+      parentKeyboard: true,
+      policyCommitted: true,
+      protected: false,
+      savedFocus: 0
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      closing: false,
+      completed: true,
+      depth: 0,
+      focus: 3,
+      keyboardEntry: true,
+      live: false,
+      nestedReturn: false,
+      parentKeyboard: true,
+      policyCommitted: true,
+      protected: false,
+      savedFocus: 0
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      closing: false,
+      completed: true,
+      depth: 0,
+      focus: 3,
+      keyboardEntry: true,
+      live: false,
+      nestedReturn: false,
+      parentKeyboard: true,
+      policyCommitted: true,
+      protected: false,
+      savedFocus: 0
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      closing: false,
+      completed: true,
+      depth: 0,
+      focus: 3,
+      keyboardEntry: true,
+      live: false,
+      nestedReturn: false,
+      parentKeyboard: true,
+      policyCommitted: true,
+      protected: true,
+      savedFocus: 0
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      closing: false,
+      completed: true,
+      depth: 0,
+      focus: 3,
+      keyboardEntry: true,
+      live: false,
+      nestedReturn: false,
+      parentKeyboard: true,
+      policyCommitted: true,
+      protected: true,
+      savedFocus: 0
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      closing: false,
+      completed: true,
+      depth: 0,
+      focus: 3,
+      keyboardEntry: true,
+      live: false,
+      nestedReturn: false,
+      parentKeyboard: true,
+      policyCommitted: true,
+      protected: true,
+      savedFocus: 0
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      closing: false,
+      completed: true,
+      depth: 0,
+      focus: 3,
+      keyboardEntry: true,
+      live: false,
+      nestedReturn: false,
+      parentKeyboard: true,
+      policyCommitted: true,
+      protected: true,
+      savedFocus: 0
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      closing: false,
+      completed: true,
+      depth: 0,
+      focus: 3,
+      keyboardEntry: true,
+      live: false,
+      nestedReturn: false,
+      parentKeyboard: true,
+      policyCommitted: true,
+      protected: true,
+      savedFocus: 0
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      closing: false,
+      completed: true,
+      depth: 0,
+      focus: 3,
+      keyboardEntry: true,
+      live: false,
+      nestedReturn: false,
+      parentKeyboard: true,
+      policyCommitted: true,
+      protected: true,
+      savedFocus: 0
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      closing: false,
+      completed: true,
+      depth: 0,
+      focus: 3,
+      keyboardEntry: true,
+      live: false,
+      nestedReturn: false,
+      parentKeyboard: true,
+      policyCommitted: true,
+      protected: true,
+      savedFocus: 0
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      closing: false,
+      completed: true,
+      depth: 0,
+      focus: 3,
+      keyboardEntry: true,
+      live: false,
+      nestedReturn: false,
+      parentKeyboard: true,
+      policyCommitted: true,
+      protected: true,
+      savedFocus: 0
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      closing: false,
+      completed: true,
+      depth: 0,
+      focus: 3,
+      keyboardEntry: true,
+      live: false,
+      nestedReturn: false,
+      parentKeyboard: true,
+      policyCommitted: true,
+      protected: true,
+      savedFocus: 0
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      closing: false,
+      completed: true,
+      depth: 0,
+      focus: 3,
+      keyboardEntry: true,
+      live: false,
+      nestedReturn: false,
+      parentKeyboard: true,
+      policyCommitted: true,
+      protected: true,
+      savedFocus: 0
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      closing: false,
+      completed: true,
+      depth: 0,
+      focus: 3,
+      keyboardEntry: true,
+      live: false,
+      nestedReturn: false,
+      parentKeyboard: true,
+      policyCommitted: true,
+      protected: true,
+      savedFocus: 0
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      closing: false,
+      completed: true,
+      depth: 0,
+      focus: 3,
+      keyboardEntry: true,
+      live: false,
+      nestedReturn: false,
+      parentKeyboard: true,
+      policyCommitted: true,
+      protected: true,
+      savedFocus: 0
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      closing: false,
+      completed: true,
+      depth: 0,
+      focus: 3,
+      keyboardEntry: true,
+      live: false,
+      nestedReturn: false,
+      parentKeyboard: true,
+      policyCommitted: true,
+      protected: true,
+      savedFocus: 0
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      closing: false,
+      completed: true,
+      depth: 0,
+      focus: 3,
+      keyboardEntry: true,
+      live: false,
+      nestedReturn: false,
+      parentKeyboard: true,
+      policyCommitted: true,
+      protected: true,
+      savedFocus: 0
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      closing: false,
+      completed: true,
+      depth: 0,
+      focus: 3,
+      keyboardEntry: true,
+      live: false,
+      nestedReturn: false,
+      parentKeyboard: true,
+      policyCommitted: true,
+      protected: true,
+      savedFocus: 0
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      closing: false,
+      completed: true,
+      depth: 0,
+      focus: 3,
+      keyboardEntry: true,
+      live: false,
+      nestedReturn: false,
+      parentKeyboard: true,
+      policyCommitted: true,
+      protected: true,
+      savedFocus: 0
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      closing: false,
+      completed: true,
+      depth: 0,
+      focus: 3,
+      keyboardEntry: true,
+      live: false,
+      nestedReturn: false,
+      parentKeyboard: true,
+      policyCommitted: true,
+      protected: true,
+      savedFocus: 0
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      closing: false,
+      completed: true,
+      depth: 0,
+      focus: 3,
+      keyboardEntry: true,
+      live: false,
+      nestedReturn: false,
+      parentKeyboard: true,
+      policyCommitted: true,
+      protected: true,
+      savedFocus: 0
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      closing: false,
+      completed: true,
+      depth: 0,
+      focus: 3,
+      keyboardEntry: true,
+      live: false,
+      nestedReturn: false,
+      parentKeyboard: true,
+      policyCommitted: true,
+      protected: true,
+      savedFocus: 0
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      closing: false,
+      completed: true,
+      depth: 0,
+      focus: 3,
+      keyboardEntry: true,
+      live: false,
+      nestedReturn: false,
+      parentKeyboard: true,
+      policyCommitted: true,
+      protected: true,
+      savedFocus: 0
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      closing: false,
+      completed: true,
+      depth: 0,
+      focus: 3,
+      keyboardEntry: true,
+      live: false,
+      nestedReturn: false,
+      parentKeyboard: true,
+      policyCommitted: true,
+      protected: true,
+      savedFocus: 0
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      closing: false,
+      completed: true,
+      depth: 0,
+      focus: 3,
+      keyboardEntry: true,
+      live: false,
+      nestedReturn: false,
+      parentKeyboard: true,
+      policyCommitted: true,
+      protected: true,
+      savedFocus: 0
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      closing: false,
+      completed: true,
+      depth: 0,
+      focus: 3,
+      keyboardEntry: true,
+      live: false,
+      nestedReturn: false,
+      parentKeyboard: true,
+      policyCommitted: true,
+      protected: true,
+      savedFocus: 0
+    }
+}
+
+[ok] No violation found (608ms at 1645 traces/second).
+Trace length statistics: max=31, min=31, average=31.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Witnesses:
+applicationReturned was witnessed in 29 trace(s) out of 1000 explored (2.90%)
+barReturned was witnessed in 24 trace(s) out of 1000 explored (2.40%)
+nestedParentReturned was witnessed in 372 trace(s) out of 1000 explored (37.20%)
+staleOpenerRefused was witnessed in 631 trace(s) out of 1000 explored (63.10%)
+Use --seed=0x1381e --backend=typescript to reproduce.

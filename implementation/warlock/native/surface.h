@@ -67,7 +67,9 @@ static gboolean surface_frame(JsonNode *node,guint64 *pub,guint64 *lease,gboolea
     }
     JsonNode *motion=json_object_get_member(o,"motion");
     if(motion && (!surface_text(motion,16,FALSE) || (!g_str_equal(json_node_get_string(motion),"reduced") && !g_str_equal(json_node_get_string(motion),"full"))))return FALSE;
-    const char *admitted[9];guint count=7;for(guint i=0;i<7;i++)admitted[i]=names[i];if(appearance)admitted[count++]="appearance";if(motion)admitted[count++]="motion";
+    JsonNode *parent=json_object_get_member(o,"keyboardParent");
+    if(parent && json_node_get_value_type(parent)!=G_TYPE_BOOLEAN)return FALSE;
+    const char *admitted[10];guint count=7;for(guint i=0;i<7;i++)admitted[i]=names[i];if(appearance)admitted[count++]="appearance";if(motion)admitted[count++]="motion";if(parent)admitted[count++]="keyboardParent";
     if (!surface_fields(o,admitted,count) || json_node_get_value_type(json_object_get_member(o,"surfaceProtocol"))!=G_TYPE_INT64 || json_object_get_int_member(o,"surfaceProtocol")!=2 || !surface_uint(json_object_get_member(o,"publication"),pub) || !*pub || !surface_uint(json_object_get_member(o,"lease"),lease) || !surface_text(json_object_get_member(o,"mode"),32,FALSE) || !surface_text(json_object_get_member(o,"status"),1024,TRUE)) return FALSE;
     const char *mode=json_object_get_string_member(o,"mode");
     *open=!g_str_equal(mode,"closed");
@@ -84,7 +86,10 @@ static gboolean surface_action(SurfaceGate *gate,JsonNode *node,JsonNode *frame,
     JsonObject *o=json_node_get_object(node);
     const char *const names[]={"surfaceProtocol","kind","surface","publication","lease","id"};
     guint64 pub,lease;
-    if (!surface_fields(o,names,6) || json_node_get_value_type(json_object_get_member(o,"surfaceProtocol"))!=G_TYPE_INT64 || json_object_get_int_member(o,"surfaceProtocol")!=2 || !surface_text(json_object_get_member(o,"kind"),32,FALSE) || !g_str_equal(json_object_get_string_member(o,"kind"),"surface-action") || !surface_text(json_object_get_member(o,"surface"),16,FALSE) || !g_str_equal(json_object_get_string_member(o,"surface"),popup?"popup":"bar") || !surface_uint(json_object_get_member(o,"publication"),&pub) || pub!=gate->publication || !surface_uint(json_object_get_member(o,"lease"),&lease) || lease!=gate->lease || (popup && lease<=gate->closed) || !surface_text(json_object_get_member(o,"id"),512,FALSE)) return FALSE;
+    JsonNode *trigger=json_object_get_member(o,"trigger");
+    if(trigger && (!surface_text(trigger,16,FALSE) || (!g_str_equal(json_node_get_string(trigger),"pointer") && !g_str_equal(json_node_get_string(trigger),"keyboard"))))return FALSE;
+    const char *action_fields[7];for(guint i=0;i<6;i++)action_fields[i]=names[i];if(trigger)action_fields[6]="trigger";
+    if (!surface_fields(o,action_fields,trigger?7:6) || json_node_get_value_type(json_object_get_member(o,"surfaceProtocol"))!=G_TYPE_INT64 || json_object_get_int_member(o,"surfaceProtocol")!=2 || !surface_text(json_object_get_member(o,"kind"),32,FALSE) || !g_str_equal(json_object_get_string_member(o,"kind"),"surface-action") || !surface_text(json_object_get_member(o,"surface"),16,FALSE) || !g_str_equal(json_object_get_string_member(o,"surface"),popup?"popup":"bar") || !surface_uint(json_object_get_member(o,"publication"),&pub) || pub!=gate->publication || !surface_uint(json_object_get_member(o,"lease"),&lease) || lease!=gate->lease || (popup && lease<=gate->closed) || !surface_text(json_object_get_member(o,"id"),512,FALSE)) return FALSE;
     JsonArray *items=json_object_get_array_member(json_node_get_object(frame),popup?"popup":"bar");
     for (guint i=0;i<json_array_get_length(items);i++) {JsonObject *item=json_array_get_object_element(items,i);if (g_str_equal(json_object_get_string_member(o,"id"),json_object_get_string_member(item,"id")) && json_object_get_boolean_member(item,"enabled")) return TRUE;}
     return FALSE;

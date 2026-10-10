@@ -446,21 +446,29 @@ packet publication lease model =
                             Provider.geometryObservation provider |> Maybe.andThen (GeometryProjection.window (Provider.incarnation provider)) |> Maybe.andThen .pin |> Maybe.map .pinned)
                         _ -> Nothing))
         encode control = E.object ([("id",E.string control.id),("domId",E.string control.domId),("label",E.string control.label),("ariaLabel",E.string control.ariaLabel),("detail",E.string control.detail),("enabled",E.bool (control.enabled && control.message/=Nothing)),("focusOnly",E.bool (model.notificationsOpen && not control.enabled && Notifications.focusedIdentity model.notifications==Just control.id))] ++ (checked control |> Maybe.map (\value -> [("checked",E.bool value)]) |> Maybe.withDefault []))
-    in E.object [("surfaceProtocol",E.int 2),("motion",E.string (Motion.name (Motion.desired model.motion))),("appearance",Settings.encodeValues (model.settings.snapshot |> Maybe.map .values |> Maybe.withDefault Settings.defaults)),("publication",E.string (UInt64.string publication)),("lease",E.string (UInt64.string lease)),("mode",E.string (mode model)),("status",E.string ((notice model)++(if not model.filesOpen && (model.files.pending/=Nothing || String.startsWith "Files:" model.files.notice) then " · "++model.files.notice else "")++(if model.jumpEntry==Nothing && (model.jumpList.pending/=Nothing || String.startsWith "Application action:" model.jumpList.notice) then " · "++model.jumpList.notice else ""))),("bar",E.list encode (barControls model)),("popup",E.list encode (controls model))]
+    in E.object [("surfaceProtocol",E.int 2),("keyboardParent",E.bool (model.popupOrigin==Desktop.KeyboardEntry)),("motion",E.string (Motion.name (Motion.desired model.motion))),("appearance",Settings.encodeValues (model.settings.snapshot |> Maybe.map .values |> Maybe.withDefault Settings.defaults)),("publication",E.string (UInt64.string publication)),("lease",E.string (UInt64.string lease)),("mode",E.string (mode model)),("status",E.string ((notice model)++(if not model.filesOpen && (model.files.pending/=Nothing || String.startsWith "Files:" model.files.notice) then " · "++model.files.notice else "")++(if model.jumpEntry==Nothing && (model.jumpList.pending/=Nothing || String.startsWith "Application action:" model.jumpList.notice) then " · "++model.jumpList.notice else ""))),("bar",E.list encode (barControls model)),("popup",E.list encode (controls model))]
 
 resolveAction : Counter -> Counter -> D.Value -> Desktop.Model -> Maybe Desktop.Msg
 resolveAction publication lease raw model =
     let
-        strict child = D.keyValuePairs D.value |> D.andThen (\pairs -> if List.sort (List.map Tuple.first pairs)==["id","kind","lease","publication","surface","surfaceProtocol"] then child else D.fail "Surface action fields")
-        decoder = strict (D.map6 (\version kind shown scoped identity role -> {version=version,kind=kind,shown=shown,scoped=scoped,identity=identity,role=role}) (D.field "surfaceProtocol" D.int) (D.field "kind" D.string) (D.field "publication" UInt64.decoder) (D.field "lease" UInt64.decoder) (D.field "id" D.string) (D.field "surface" D.string))
+        hasTrigger=D.decodeValue (D.field "trigger" D.value) raw |> Result.toMaybe |> (/=) Nothing
+        trigger=if hasTrigger then D.field "trigger" (D.string |> D.andThen (\value -> if List.member value ["pointer","keyboard"] then D.succeed value else D.fail "Surface action origin")) else D.succeed "keyboard"
+        strict child = D.keyValuePairs D.value |> D.andThen (\pairs -> if List.sort (List.map Tuple.first pairs)==(["id","kind","lease","publication","surface","surfaceProtocol"]++(if hasTrigger then ["trigger"] else [])) then child else D.fail "Surface action fields")
+        decoder = strict (D.map7 (\version kind shown scoped identity role origin -> {version=version,kind=kind,shown=shown,scoped=scoped,identity=identity,role=role,origin=origin}) (D.field "surfaceProtocol" D.int) (D.field "kind" D.string) (D.field "publication" UInt64.decoder) (D.field "lease" UInt64.decoder) (D.field "id" D.string) (D.field "surface" D.string) trigger)
     in case D.decodeValue decoder raw of
         Ok event ->
             if event.version/=2 || event.kind/="surface-action" || event.shown/=publication || event.scoped/=lease then Nothing else
-                (if event.role=="bar" then barControls model else if event.role=="popup" then controls model else []) |> List.filter (\control -> control.id==event.identity && control.enabled) |> List.head |> Maybe.andThen .message
+                (if event.role=="bar" then barControls model else if event.role=="popup" then controls model else []) |> List.filter (\control -> control.id==event.identity && control.enabled) |> List.head |> Maybe.andThen .message |> Maybe.map (if event.role=="bar" then Desktop.SurfaceEntry (if event.origin=="keyboard" then Desktop.KeyboardEntry else Desktop.PointerEntry) else identity)
         Err _ -> Nothing
 
 resolve : Counter -> Counter -> D.Value -> Desktop.Model -> Maybe Desktop.Msg
 resolve publication lease raw model =
+    resolveBase publication lease raw model |> Maybe.map (\message ->
+        if D.decodeValue (D.field "kind" D.string) raw==Ok "surface-context" && D.decodeValue (D.field "surface" D.string) raw==Ok "bar" then
+            Desktop.SurfaceEntry (if D.decodeValue (D.field "trigger" D.string) raw==Ok "keyboard" then Desktop.KeyboardEntry else Desktop.PointerEntry) message
+        else message)
+
+resolveBase publication lease raw model =
     let strict fields child = D.keyValuePairs D.value |> D.andThen (\pairs -> if List.sort (List.map Tuple.first pairs)==List.sort fields then child else D.fail "Surface event fields")
         scopes child = D.map4 (\version shown scoped role -> (version==2 && shown==publication && scoped==lease,role)) (D.field "surfaceProtocol" D.int) (D.field "publication" UInt64.decoder) (D.field "lease" UInt64.decoder) (D.field "surface" D.string) |> D.andThen (\(valid,role) -> if valid then child role else D.fail "Stale surface event")
         context = strict ["surfaceProtocol","kind","surface","publication","lease","id","trigger","x","y"] (scopes (\role -> D.map4 (\identity trigger x y -> (role,identity,trigger)) (D.field "id" D.string) (D.field "trigger" D.string) (D.field "x" D.int) (D.field "y" D.int)))

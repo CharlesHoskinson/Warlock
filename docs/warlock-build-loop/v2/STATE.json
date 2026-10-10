@@ -1,13 +1,75 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T08:44:12.343291+00:00",
+  "updatedUTC": "2026-10-10T09:15:14.389624+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
+    "id": "popup-entry-keyboard-return",
+    "requirements": [
+      "ELM-UX-024",
+      "ELM-UI-011"
+    ],
+    "scenarios": [
+      "ux-024",
+      "focus-scope-nested dismissal"
+    ],
+    "paths": [
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/src/Surface.elm",
+      "implementation/warlock/src/SurfaceRenderer.elm",
+      "implementation/warlock/native/shared-host.c",
+      "implementation/warlock/native/surface.h",
+      "implementation/warlock/qa/check-search.py",
+      "implementation/warlock/qa/PopupEntryReplay.elm",
+      "implementation/warlock/qa/popup-entry.qnt",
+      "implementation/warlock/qa/popup-entry_test.qnt",
+      "implementation/warlock/qa/check-popup-entry.py",
+      "implementation/warlock/qa/current-search-build.json",
+      "implementation/warlock/assets/elm.js",
+      "implementation/warlock/assets/bar.js",
+      "implementation/warlock/assets/popup.js",
+      "implementation/warlock/README.md",
+      "implementation/warlock/src/CapturedAction.elm",
+      "implementation/warlock/assets/activation.js"
+    ],
+    "before": "Original pointer taskbar Escape retains native focus identity but loses actual GTK keyboard delivery; frontend dismissal and on-demand bar parent assume keyboard entry for every opener.",
+    "after": "Carry pointer versus keyboard popup entry in the single Elm policy; pointer dismissal yields the bar keyboard lease before popup grab teardown, keyboard/nested return retains the eligible bar parent; actual original key receipt follows the opener.",
+    "verification": [
+      "quint-llm-kit sampled entry/parent/dismissal model with named tests and witnesses; compiled actual root/renderer/host and typed origin/dismissal replay; unchanged original native taskbar Escape assertion and original keyboard-only menu/Apps/taskbar return journey, same clocks/no-force/no-replay/custody; relevant modal regression."
+    ],
+    "status": "implemented-partial",
+    "participantRecord": ".warlock-contributor/popup-entry.json",
+    "evidence": {
+      "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/manifest.json",
+      "sha256": "561e5f87e031d777a8f16ed2ec0f24838eebc4b969ba667622ffacc16cec2f51"
+    },
+    "observed": "Captured pointer/keyboard entry controls native parent lease before popup teardown. Original taskbar Escape now restores actual GTK key delivery; all nine keyboard surfaces pass with no injected pointer events. Modal/draft and fullscreen regressions pass normal exits. Additive Quint model and eleven actual Elm checks pass; historical failure preserved.",
+    "missingObservations": [
+      "Independent original UX-024 and UI-011 scenario review; no full original-oracle acceptance inferred",
+      "Native AT focus return and full nested scope stack, opener retirement/replacement/workspace/minimize/restart, protected-input/output races",
+      "Full original GUI journeys, toolkit/hardware/resource gates, reproducible package and reversible deployment/rollback"
+    ],
+    "nextSourceWork": "Original ELM-UX-021/ux-021 native drag/resize ownership, taskbar/output crossing and release/cancel integration: inspect current actual gesture owner and retained failures, then implement demonstrated gap. Continue full GUI release scope and outstanding focus lifecycle/AT gates."
+  },
+  "nextSlices": [
+    "taskbar activation/minimize/restore and popup focus journeys",
+    "persistent catalog pins",
+    "launcher search and refusal recovery",
+    "switcher/Task View/workspaces and snap/output journeys",
+    "authorized visible previews and fallback",
+    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
+    "original native, AT/IME, hardware/resource/journey gates",
+    "reproducible package, reversible deployment/rollback"
+  ],
+  "releaseAccepted": false,
+  "oldTrackerIsCurrent": false,
+  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
+  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
+  "previousSlice": {
     "id": "modal-recipient-eligibility",
     "requirements": [
       "ELM-REN-018"
@@ -50,76 +112,50 @@
     ],
     "nextSourceWork": "Repair the observed original ELM-UI-011/ELM-UX-024 shell dismissal keyboard-recipient path: preserve the identity-bound application opener for pointer entry and the documented bar/parent opener for keyboard entry, with actual native key delivery before claiming return. Re-run the unchanged original taskbar Escape test and keyboard bar-return regression under original timing; do not force focus or weaken the oracle. Then resume remaining native drag/resize, genuine blocker and full GUI/AT/IME/hardware/resource/package/rollback scope."
   },
-  "nextSlices": [
-    "taskbar activation/minimize/restore and popup focus journeys",
-    "persistent catalog pins",
-    "launcher search and refusal recovery",
-    "switcher/Task View/workspaces and snap/output journeys",
-    "authorized visible previews and fallback",
-    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
-    "original native, AT/IME, hardware/resource/journey gates",
-    "reproducible package, reversible deployment/rollback"
-  ],
-  "releaseAccepted": false,
-  "oldTrackerIsCurrent": false,
-  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
-  "previousSlice": {
-    "id": "fullscreen-pin-menu-exit",
-    "requirements": [
-      "ELM-REN-017"
-    ],
-    "scenarios": [
-      "ren-017"
-    ],
-    "paths": [
-      "implementation/warlock/src/Effects.elm",
-      "implementation/warlock/src/GeometryProjection.elm",
-      "implementation/warlock/src/Provider.elm",
-      "implementation/warlock/src/MenuBridge.elm",
-      "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/src/ReceiptRouter.elm",
-      "implementation/warlock/adapter/geometry_endpoint.py",
-      "implementation/warlock/adapter/recovery_journal.py",
-      "implementation/warlock/native/authority.cpp",
-      "implementation/warlock/native/geometry-effects.inc",
-      "implementation/warlock/native/geometry.inc",
-      "implementation/warlock/qa/current-native-pair.json",
-      "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/qa/native-fullscreen-pin.py",
-      "implementation/warlock/qa/exit-fullscreen.qnt",
-      "implementation/warlock/qa/exit-fullscreen_test.qnt",
-      "implementation/warlock/qa/check-exit-fullscreen.py",
-      "implementation/warlock/qa/FullscreenExitReplay.elm",
-      "implementation/warlock/qa/check-search.py",
-      "implementation/warlock/README.md",
-      "implementation/warlock/native/shared-host.c",
-      "implementation/warlock/native/host-journal.h",
-      "implementation/warlock/assets/elm.js",
-      "implementation/warlock/assets/bar.js",
-      "implementation/warlock/assets/popup.js"
-    ],
-    "before": "True fullscreen uses native fullscreen/pinned paint and focus exceptions, but the captured window menu has no negotiated ExitFullscreen effect implementation.",
-    "after": "True fullscreen retains its separate native pinned-surface priority and offers a capability-explicit Exit fullscreen menu action through the existing immutable typed effect reducer, exact native barriers/journal and observed native mode transition.",
-    "verification": [
-      "Retain original native pin/MAX journey then actual true-fullscreen+pinned paint/hit/focus/menu matrix and one exact Exit fullscreen action; preserve six-second waits, strict cleanup and ABI. quint-llm-kit model exact capture/negotiation/stale/blocked/Unknown/no-replay cases; compiled actual Elm replay and roots, native authority and owning host build, protected unchanged modal regression."
-    ],
-    "status": "implemented-partial",
-    "participantRecord": ".warlock-contributor/fullscreen.json",
-    "evidence": {
-      "path": "implementation/warlock/qa/evidence/fullscreen-pin-menu/manifest.json",
-      "sha256": "b92791b849166011a0adee56ac4948ef8839421d0e54eb59afff0d4643a279d3"
-    },
-    "observed": "Actual true-fullscreen/pinned pixels, GTK press/release and focus; reachable owned overlay bar; context reads without window effects; one negotiated typed Exit fullscreen Committed outcome restores ordinary target geometry and retains peer pin. Original MAX/pin and unchanged direct-owner modal regression pass normal exits and strict cleanup.",
-    "missingObservations": [
-      "Independent original-scenario disposition; ELM-REN-017/ren-017 and release acceptance remain partial",
-      "Actual fullscreen modal/tiled/Xwayland families, nested/ambiguous input recipients and fullscreen/unpin/allowed-over policy cells outside this two-root Wayland fixture",
-      "Actual session lock/exclusive-layer/seat-grab/drag races, transformed or multiple outputs and native AT/IME",
-      "Wider original hardware/resource/journey evidence, reproducible package and reversible deployment/rollback"
-    ],
-    "nextSourceWork": "Original ELM-REN-018/ren-018 modal family recipient policy: inspect current click/focus routing and implement demonstrated gaps for unrelated eligible-window activation while a draft modal remains open, including real no-focus/input blockers. Preserve full GUI scope and later fullscreen/AT/IME/hardware/resource/package/rollback gates."
-  },
   "recentSlices": [
+    {
+      "id": "modal-recipient-eligibility",
+      "requirements": [
+        "ELM-REN-018"
+      ],
+      "scenarios": [
+        "ren-018"
+      ],
+      "paths": [
+        "implementation/warlock/native/core/ModalRecipient.hpp",
+        "implementation/warlock/qa/modal-eligibility.qnt",
+        "implementation/warlock/qa/modal-eligibility_test.qnt",
+        "implementation/warlock/qa/check-modal-eligibility.py",
+        "implementation/warlock/qa/native-modal-draft-focus.py",
+        "implementation/warlock/qa/modal-draft-fixture.py",
+        "implementation/warlock/qa/check-modal-recipient.cpp",
+        "implementation/warlock/qa/check-modal-recipient.py",
+        "implementation/warlock/qa/current-scene-core.json",
+        "implementation/warlock/qa/current-native-pair.json",
+        "implementation/warlock/qa/current-search-build.json",
+        "implementation/warlock/README.md"
+      ],
+      "before": "Shared native modal selection removes input-blocked descendants before topology resolution, potentially selecting an ancestor while its mapped modal constraint remains. Current draft/unrelated/native no-focus observations are missing.",
+      "after": "Resolve current mapped modal constraints before evaluating the unique deepest recipient; blocked/no-focus or ambiguous leaves refuse without ancestor fallback. Preserve independent eligible-window focus and actual draft text.",
+      "verification": [
+        "quint-llm-kit linked graph/eligibility/draft model with named cases and reachable witnesses; actual owning-header selector replay, exact three-TU core relink and matched plugin rebuild; original modal/MAX journey plus unrelated real GTK hit/key/draft preservation and native no-focus refusal; unchanged fullscreen regression, original deadlines and custody."
+      ],
+      "status": "implemented-partial",
+      "participantRecord": ".warlock-contributor/modal-eligibility.json",
+      "evidence": {
+        "path": "implementation/warlock/qa/evidence/modal-recipient-eligibility/manifest.json",
+        "sha256": "004e896c1ed8fa24a38cd9316b2032808fa2b5f4d51f7541df4d7672bb502402"
+      },
+      "observed": "Shared native selector resolves mapped modal topology before leaf eligibility, refusing blocked/no-focus or ambiguous leaves without ancestor fallback. Actual unrelated GTK click/key preserves the modal incarnation, geometry and unsaved typed draft; painted native no-focus modal excludes click/key to the eligible peer. Original modal/MAX and unchanged fullscreen journeys pass normal owned exits. Additional original taskbar Escape keyboard-return test fails and is retained.",
+      "missingObservations": [
+        "Independent original REN-018/ren-018 disposition; full release remains unaccepted",
+        "Actual mapped native input-blocked modal/monocle schedules: substitute-object blocked cases are algorithm evidence only; allows_input=false is not an input blocker",
+        "Native Qt/Xwayland, nested/ambiguous/cyclic families, workspace changes, actual grab/layer/lock and recipient mutation races, transformed/multiple outputs and AT/IME",
+        "Additional unchanged original taskbar campaign fails EscapeRestoresOriginalNativeRecipient: focus identity remains the opener, but no actual GTK key is delivered. Retain and repair keyboard recipient return without extending timing or forcing focus.",
+        "Wider original hardware/resource/journey evidence, reproducible package and reversible deployment/rollback"
+      ],
+      "nextSourceWork": "Repair the observed original ELM-UI-011/ELM-UX-024 shell dismissal keyboard-recipient path: preserve the identity-bound application opener for pointer entry and the documented bar/parent opener for keyboard entry, with actual native key delivery before claiming return. Re-run the unchanged original taskbar Escape test and keyboard bar-return regression under original timing; do not force focus or weaken the oracle. Then resume remaining native drag/resize, genuine blocker and full GUI/AT/IME/hardware/resource/package/rollback scope."
+    },
     {
       "id": "max-modal-activation",
       "requirements": [

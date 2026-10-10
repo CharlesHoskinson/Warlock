@@ -9,8 +9,9 @@ LAYER=sys.argv[1:]==['--layer-appearance']
 SHUTDOWN=sys.argv[1:]==['--preview-shutdown']
 BARRETURN=sys.argv[1:]==['--bar-keyboard-return']
 SHORTCUTS=sys.argv[1:]==['--shortcut-choices']
+POPUPENTRY=sys.argv[1:]==['--popup-entry']
 FULLSCREEN=sys.argv[1:]==['--fullscreen-pin']
-PINMAX=FULLSCREEN or sys.argv[1:]==['--pin-max']
+PINMAX=POPUPENTRY or FULLSCREEN or sys.argv[1:]==['--pin-max']
 QUIESCENT=sys.argv[1:]==['--preview-quiescence']
 PREVIEW=DESCRIPTION or sys.argv[1:]==['--preview-states']
 LIVE=sys.argv[1:]==['--live-motion']
@@ -81,6 +82,12 @@ try:
  if SHUTDOWN:
   modelPacket=json.loads(run('shutdown-preview-model',['/usr/bin/python3','-B','qa/check-shutdown-preview.py']))
   assert modelPacket['passed'];report['shutdownPreviewModel']=modelPacket
+ if POPUPENTRY:
+  report['popupEntryModel']=json.loads(run('popup-entry-model',['/usr/bin/python3','-B','qa/check-popup-entry.py']));assert report['popupEntryModel']['passed']
+  run('compile-popup-entry',[str(HELD/pinned['compiler']),'make','qa/PopupEntryReplay.elm','--output='+str(OUT/'popup-entry.js')])
+  replay="const fs=require('fs'),vm=require('vm');vm.runInThisContext(fs.readFileSync(process.argv[1],'utf8'));Elm.PopupEntryReplay.init({flags:null}).ports.outgoing.subscribe(v=>{console.log(JSON.stringify(v));process.exit(Object.values(v.checks).every(Boolean)?0:1);});"
+  report['popupEntry']=json.loads(run('typed-popup-entry',['node','-e',replay,str(OUT/'popup-entry.js')]));assert all(report['popupEntry']['checks'].values())
+  run('original-activation-release',['node','qa/activation-release.js'])
  if PINMAX:
   if FULLSCREEN:
    modelPacket=json.loads(run('fullscreen-exit-model',['/usr/bin/python3','-B','qa/check-exit-fullscreen.py']));assert modelPacket['passed'];report['fullscreenExitModel']=modelPacket

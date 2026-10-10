@@ -7094,14 +7094,20 @@
       "owner": "Accessibility lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "focus-scope-nested dismissal",
           "oracle": "native and accessibility focus return to the eligible opener, surviving parent or MRU/desktop fallback; no dead or replacement target activates",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/manifest.json",
+              "sha256": "561e5f87e031d777a8f16ed2ec0f24838eebc4b969ba667622ffacc16cec2f51"
+            }
+          ],
+          "missingObservation": "Independent original UX-024 and UI-011 scenario review; no full original-oracle acceptance inferred; Native AT focus return and full nested scope stack, opener retirement/replacement/workspace/minimize/restart, protected-input/output races; Full original GUI journeys, toolkit/hardware/resource gates, reproducible package and reversible deployment/rollback",
+          "observation": "Captured pointer/keyboard entry controls native parent lease before popup teardown. Original taskbar Escape now restores actual GTK key delivery; all nine keyboard surfaces pass with no injected pointer events. Modal/draft and fullscreen regressions pass normal exits. Additive Quint model and eleven actual Elm checks pass; historical failure preserved."
         },
         {
           "name": "focus-scope-opener closure",
@@ -10560,14 +10566,20 @@
       "owner": "Accessibility lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "ux-024",
           "oracle": "focus follows menu order and returns to original eligible target",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/popup-entry-keyboard-return/manifest.json",
+              "sha256": "561e5f87e031d777a8f16ed2ec0f24838eebc4b969ba667622ffacc16cec2f51"
+            }
+          ],
+          "missingObservation": "Independent original UX-024 and UI-011 scenario review; no full original-oracle acceptance inferred; Native AT focus return and full nested scope stack, opener retirement/replacement/workspace/minimize/restart, protected-input/output races; Full original GUI journeys, toolkit/hardware/resource gates, reproducible package and reversible deployment/rollback",
+          "observation": "Captured pointer/keyboard entry controls native parent lease before popup teardown. Original taskbar Escape now restores actual GTK key delivery; all nine keyboard surfaces pass with no injected pointer events. Modal/draft and fullscreen regressions pass normal exits. Additive Quint model and eleven actual Elm checks pass; historical failure preserved."
         }
       ]
     },
@@ -11302,5 +11314,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-10T08:44:12.343291+00:00"
+  "updatedUTC": "2026-10-10T09:15:14.389624+00:00"
 }

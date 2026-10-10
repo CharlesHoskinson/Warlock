@@ -12,7 +12,7 @@ import PreviewVisual as Preview
 import UInt64 exposing (Counter)
 
 type alias Control = { identity : String, domId : String, label : String, ariaLabel : String, detail : String, enabled : Bool, focusOnly : Bool, checked : Maybe Bool }
-type Snapshot = Snapshot { publication : Counter, lease : Counter, mode : String, status : String, appearance : Settings.Values, motion : String, bar : List Control, popup : List Control }
+type Snapshot = Snapshot { publication : Counter, lease : Counter, keyboardParent : Maybe Bool, mode : String, status : String, appearance : Settings.Values, motion : String, bar : List Control, popup : List Control }
 
 strict : List String -> D.Decoder a -> D.Decoder a
 strict names decoder = D.keyValuePairs D.value |> D.andThen (\fields -> if List.sort (List.map Tuple.first fields)==List.sort names then decoder else D.fail "Presentation fields")
@@ -34,16 +34,18 @@ decode : D.Value -> Result String Snapshot
 decode raw =
     let legacy = D.decodeValue (D.field "appearance" D.value) raw |> Result.toMaybe |> (==) Nothing
         hasMotion = D.decodeValue (D.field "motion" D.value) raw |> Result.toMaybe |> (/=) Nothing
+        hasParent = D.decodeValue (D.field "keyboardParent" D.value) raw |> Result.toMaybe |> (/=) Nothing
+        parentDecoder = if hasParent then D.field "keyboardParent" (D.map Just D.bool) else D.succeed Nothing
         motionDecoder = if hasMotion then D.field "motion" (D.string |> D.andThen (\v -> if List.member v ["reduced","full"] then D.succeed v else D.fail "Motion profile")) else D.succeed "reduced"
-        decoder = strict (["surfaceProtocol","publication","lease","mode","status","bar","popup"] ++ (if legacy then [] else ["appearance"]) ++ (if hasMotion then ["motion"] else []))
-            (D.map2 Tuple.pair motionDecoder (D.map8 (\version shown scoped current notice bar popup appearance -> {version=version,shown=shown,scoped=scoped,current=current,notice=notice,bar=bar,popup=popup,appearance=appearance})
+        decoder = strict (["surfaceProtocol","publication","lease","mode","status","bar","popup"] ++ (if legacy then [] else ["appearance"]) ++ (if hasMotion then ["motion"] else []) ++ (if hasParent then ["keyboardParent"] else []))
+            (D.map3 (\motion parent record -> (motion,parent,record)) motionDecoder parentDecoder (D.map8 (\version shown scoped current notice bar popup appearance -> {version=version,shown=shown,scoped=scoped,current=current,notice=notice,bar=bar,popup=popup,appearance=appearance})
                 (D.field "surfaceProtocol" D.int) (D.field "publication" UInt64.decoder) (D.field "lease" UInt64.decoder) (D.field "mode" (bounded 16)) (D.field "status" (bounded 1024)) (D.field "bar" (controls 300)) (D.field "popup" (controls 2150)) (if legacy then D.succeed Settings.defaults else D.field "appearance" Settings.valuesDecoder)))
-    in D.decodeValue decoder raw |> Result.mapError D.errorToString |> Result.andThen (\(motion,record) ->
+    in D.decodeValue decoder raw |> Result.mapError D.errorToString |> Result.andThen (\(motion,parent,record) ->
         let all = record.bar ++ record.popup
             identities = List.map .identity all
             unique names = List.length names == Set.size (Set.fromList names)
         in if record.version/=2 || record.shown==UInt64.zero || not (List.member record.current ["closed","picker","applications","menu","overview","switcher","snap","settings","notifications","system","files","jump"]) || (record.current/="closed" && record.scoped==UInt64.zero) || (record.current=="closed" && not (List.isEmpty record.popup)) || not (unique identities) || not (unique (List.map .domId all)) || List.any (\control -> String.isEmpty control.identity || String.isEmpty control.domId || (control.focusOnly && control.enabled)) all || List.any .focusOnly record.bar || (List.any .focusOnly record.popup && record.current/="notifications") || List.length (List.filter .focusOnly record.popup)>1 || List.any (\control -> control.checked/=Nothing) record.bar || List.any (\control -> control.checked/=Nothing && (record.current/="menu" || not (String.startsWith "menu:" control.identity))) record.popup || List.length (List.filter (\control -> control.checked/=Nothing) record.popup)>1 then Err "Invalid presentation scope/identities"
-        else Ok (Snapshot {publication=record.shown,lease=record.scoped,mode=record.current,status=record.notice,appearance=record.appearance,motion=motion,bar=record.bar,popup=record.popup}))
+        else Ok (Snapshot {publication=record.shown,lease=record.scoped,keyboardParent=parent,mode=record.current,status=record.notice,appearance=record.appearance,motion=motion,bar=record.bar,popup=record.popup}))
 
 publication : Snapshot -> Counter
 publication (Snapshot snapshot) = snapshot.publication
@@ -51,7 +53,7 @@ publication (Snapshot snapshot) = snapshot.publication
 encode : Snapshot -> E.Value
 encode (Snapshot snapshot) =
     let control row = E.object ([("id",E.string row.identity),("domId",E.string row.domId),("label",E.string row.label),("ariaLabel",E.string row.ariaLabel),("detail",E.string row.detail),("enabled",E.bool row.enabled),("focusOnly",E.bool row.focusOnly)] ++ (row.checked |> Maybe.map (\value -> [("checked",E.bool value)]) |> Maybe.withDefault []))
-    in E.object [("surfaceProtocol",E.int 2),("motion",E.string snapshot.motion),("appearance",Settings.encodeValues snapshot.appearance),("publication",E.string (UInt64.string snapshot.publication)),("lease",E.string (UInt64.string snapshot.lease)),("mode",E.string snapshot.mode),("status",E.string snapshot.status),("bar",E.list control snapshot.bar),("popup",E.list control snapshot.popup)]
+    in E.object ([("surfaceProtocol",E.int 2),("motion",E.string snapshot.motion),("appearance",Settings.encodeValues snapshot.appearance),("publication",E.string (UInt64.string snapshot.publication)),("lease",E.string (UInt64.string snapshot.lease)),("mode",E.string snapshot.mode),("status",E.string snapshot.status),("bar",E.list control snapshot.bar),("popup",E.list control snapshot.popup)] ++ (snapshot.keyboardParent |> Maybe.map (\parent -> [("keyboardParent",E.bool parent)]) |> Maybe.withDefault []))
 
 controlIdentities : Bool -> Snapshot -> List String
 controlIdentities popup (Snapshot snapshot) = List.map .identity (if popup then snapshot.popup else snapshot.bar)

@@ -1,0 +1,15 @@
+{
+  "checks": {
+    "pointerOpensCapturedPicker": true,
+    "keyboardOpensCapturedPicker": true,
+    "pointerClosesWithoutBarFocus": true,
+    "keyboardKeepsCapturedBarReturn": true,
+    "dismissalAddsNoWindowEffect": true,
+    "frameCommitsApplicationParent": true,
+    "frameCommitsKeyboardParent": true,
+    "rendererRetainsParentPolicy": true,
+    "opaqueRelayPreservesUIOrigin": true,
+    "staleActionCannotAdoptOrigin": true,
+    "unknownOriginRefuses": true
+  }
+}

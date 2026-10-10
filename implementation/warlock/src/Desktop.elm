@@ -1,4 +1,4 @@
-module Desktop exposing (Effect(..), ChoiceToken, choiceToken, Model, Msg(..), initial, update, ViewStamp, capture, key, switcherOpen, canProveCatalogUnsent, pinnedGroup, pinGroups, pinIdentities)
+module Desktop exposing (Effect(..), ChoiceToken, choiceToken, Model, Msg(..), PopupOrigin(..), initial, update, ViewStamp, capture, key, switcherOpen, canProveCatalogUnsent, pinnedGroup, pinGroups, pinIdentities)
 
 import Menu
 import ActionProjection as Scene
@@ -36,6 +36,7 @@ type alias Model =
     { windows : TaskbarShell.Model
     , choice : Maybe Choice
     , choiceNotice : String
+    , popupOrigin : PopupOrigin
     , returnFocus : Maybe FocusTarget
     , menuOrigin : Maybe FocusTarget
     , ownerScope : Maybe {outputId : Counter, providerId : Counter}
@@ -90,6 +91,8 @@ type alias Model =
     , catalogFailure : Maybe { binding : Binding.Binding, request : Counter }
     }
 
+type PopupOrigin = PointerEntry | KeyboardEntry
+
 type FocusDestination = TaskbarGroup String | OverviewOpener
 type alias FocusTarget = {binding : Binding.Binding, destination : FocusDestination, output : Maybe Counter}
 
@@ -105,7 +108,8 @@ choiceToken model = model.choice |> Maybe.map .token
 type ViewStamp = ViewStamp (Maybe Binding.Binding) Counter
 
 type Msg
-    = Window TaskbarShell.Msg
+    = SurfaceEntry PopupOrigin Msg
+    | Window TaskbarShell.Msg
     | OpenWindowMenu Shell.Stamp Counter
     | OpenSnap ViewStamp Counter
     | SelectSnap ViewStamp Snap.Region
@@ -182,7 +186,7 @@ type Effect
 
 initial : Model
 initial =
-    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, pointer = PointerOwnership.initial, shortcuts = Shortcuts.initial, jumpList = JumpList.initial, jumpEntry = Nothing, jumpOpening = False, jumpExpected = Nothing, jumpBack = False, files = Files.initial, filesOpen = False, filesOpening = False, filesExpected = Nothing, systemMenu = SystemMenu.initial, systemMenuOpen = False, systemMenuOpening = False, systemMenuExpected = Nothing, systemMenuConfirmation = Nothing, notifications = Notifications.initial, notificationsOpen = False, notificationsOpening = False, notificationsExpected = Nothing, motionExpected = Nothing, motion = Motion.initial, settings = Settings.initial, settingsOpen = False, settingsOpening = False, settingsExpected = Nothing, settingsHelp = True, shortcutPreferences = ShortcutPreferences.initial, shortcutExpected = Nothing, open = False, overview = False, overviewWorkspace = Nothing, overviewTransfer = Nothing, snap = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, adapterNotice = Nothing, catalogFailure = Nothing }
+    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", popupOrigin = KeyboardEntry, returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, pointer = PointerOwnership.initial, shortcuts = Shortcuts.initial, jumpList = JumpList.initial, jumpEntry = Nothing, jumpOpening = False, jumpExpected = Nothing, jumpBack = False, files = Files.initial, filesOpen = False, filesOpening = False, filesExpected = Nothing, systemMenu = SystemMenu.initial, systemMenuOpen = False, systemMenuOpening = False, systemMenuExpected = Nothing, systemMenuConfirmation = Nothing, notifications = Notifications.initial, notificationsOpen = False, notificationsOpening = False, notificationsExpected = Nothing, motionExpected = Nothing, motion = Motion.initial, settings = Settings.initial, settingsOpen = False, settingsOpening = False, settingsExpected = Nothing, settingsHelp = True, shortcutPreferences = ShortcutPreferences.initial, shortcutExpected = Nothing, open = False, overview = False, overviewWorkspace = Nothing, overviewTransfer = Nothing, snap = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, adapterNotice = Nothing, catalogFailure = Nothing }
 
 switcherOpen : Model -> Bool
 switcherOpen model = List.member (Switcher.phase model.switcher) [Switcher.Waiting,Switcher.Browsing]
@@ -414,14 +418,14 @@ window message model =
                             && (TaskbarShell.groups model.windows |> List.concatMap .families |> List.any (\family -> family.root==Provider.incarnation provider && not family.active))
                     _ -> False
                 admitted=MenuBridge.preparedSnapshot model.windows.menus==Nothing && MenuBridge.preparedSnapshot next.windows.menus/=Nothing
-            in if inactiveMinimize && admitted then ({next | returnFocus=model.menuOrigin},effects) else (next,effects)
+            in if inactiveMinimize && admitted then ({next | returnFocus=if model.popupOrigin==KeyboardEntry then model.menuOrigin else Nothing},effects) else (next,effects)
         TaskbarShell.MenuEvent (Menu.Dismiss menuId) ->
             case ((MenuBridge.menuSnapshot model.windows.menus).menu,model.menuOrigin) of
                 (Just menu,Just origin) ->
                     if menu.id/=menuId then (model,[]) else
                     let (closed,effects)=windowBase message model
                         (refreshing,commands)=windowBase (TaskbarShell.Native Shell.Refresh) closed
-                    in ({refreshing | returnFocus=Just origin,menuOrigin=Nothing},effects++commands)
+                    in ({refreshing | returnFocus=if model.popupOrigin==KeyboardEntry then Just origin else Nothing,menuOrigin=Nothing},effects++commands)
                 _ -> windowBase message model
         TaskbarShell.Close scope generation ->
             case (model.windows.picker,model.windows.shell.binding) of
@@ -429,7 +433,7 @@ window message model =
                     let (closed,effects)=windowBase message model
                     in if closed.windows.picker/=Nothing || picker.scope/=scope || picker.generation/=generation then (closed,effects) else
                         let (refreshing,commands)=windowBase (TaskbarShell.Native Shell.Refresh) closed
-                        in ({refreshing | returnFocus=Just {binding=binding,destination=TaskbarGroup picker.key,output=model.windows.shell.effects.observed |> Maybe.map (.context >> .output)}},List.filter (\effect -> case effect of
+                        in ({refreshing | returnFocus=if model.popupOrigin==KeyboardEntry then Just {binding=binding,destination=TaskbarGroup picker.key,output=model.windows.shell.effects.observed |> Maybe.map (.context >> .output)} else Nothing},List.filter (\effect -> case effect of
                             Focus _ -> False
                             _ -> True) effects ++ commands)
                 _ -> windowBase message model
@@ -524,6 +528,11 @@ window message model =
 
 update : Msg -> Model -> ( Model, List Effect )
 update message model =
+    case message of
+        SurfaceEntry origin inner -> update inner {model|popupOrigin=origin}
+        _ -> updateOrdinary message model
+
+updateOrdinary message model =
     if (PointerOwnership.blocked model.windows.shell.binding model.pointer && gestureAction message) || (not (Motion.ready model.windows.shell.binding model.motion) && motionGesture message) then (model,[]) else
     let (next,effects)=updateAvailable message model
         (synced,commands)=syncMotion next
@@ -687,6 +696,7 @@ updateAvailable message model =
                     let (next,reads)=windowBase (TaskbarShell.Native Shell.Refresh) {closed | request=request}
                     in (next,Send (E.object [("protocolVersion",E.int 3),("kind",E.string "switcher-cancel-request"),("binding",Binding.encode binding),("requestId",E.string (UInt64.string request)),("chord",E.string (UInt64.string chord.generation))])::reads)
                 _ -> windowBase (TaskbarShell.Native Shell.Refresh) closed
+        SurfaceEntry _ _ -> (model,[])
         Window value ->
             let (next,effects)=window value model
                 (synced,commands)=syncSwitcher next
@@ -740,7 +750,7 @@ updateAvailable message model =
                         Ok snapshot ->
                             if model.windows.shell.phase==Shell.Detached || model.windows.shell.phase==Shell.Exhausted then (model,[]) else
                             let (shortcuts,route,failure)=Shortcuts.receive model.windows.shell.binding snapshot model.shortcuts
-                                next={model | shortcuts=shortcuts,choiceNotice=failure |> Maybe.withDefault model.choiceNotice}
+                                next={model | popupOrigin=KeyboardEntry,shortcuts=shortcuts,choiceNotice=failure |> Maybe.withDefault model.choiceNotice}
                             in case (route,capture next) of
                                 (Just Shortcuts.Applications,Just stamp) -> update (OpenApplications stamp) next
                                 (Just Shortcuts.System,Just stamp) -> update (OpenSystemMenu stamp) next

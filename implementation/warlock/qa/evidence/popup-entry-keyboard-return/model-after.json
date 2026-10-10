@@ -1,0 +1,77 @@
+{
+  "passed": true,
+  "scope": "quint-llm-kit sampled entry/parent/teardown order; native keys/identity/AT separate.",
+  "nativeAcceptance": false,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-1077b40b6d584c3ab683d00296b77a60.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "qa/popup-entry.qnt": "098e040bc631a5638ee5dbed8b603f3bf59d6a1aad40a3685ada996cbdd1f242",
+    "qa/popup-entry_test.qnt": "a36cdf28e789d4cbd9163a9611e74531bd13c1eefa81f43327dd9ccdafec6cb9",
+    "src/Desktop.elm": "2a0a0c56f75e22cf05fa00cced14a2c8572ed995fe144ea5d448eea6364bb877",
+    "native/shared-host.c": "8b07777d53a8d719ee63d690be7edd9ba781354e83f348034b38a186badf3d24"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-max-1791623308626059469/inputs/qa/popup-entry.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-max-1791623308626059469/inputs/qa/popup-entry_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=79901"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "witnesses",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-max-1791623308626059469/inputs/qa/popup-entry.qnt",
+        "--backend=typescript",
+        "--witnesses",
+        "applicationReturned",
+        "barReturned",
+        "nestedParentReturned",
+        "staleOpenerRefused",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79902"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "safety",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-max-1791623308626059469/inputs/qa/popup-entry.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79903"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "witnessCounts": {
+    "applicationReturned": 29,
+    "barReturned": 24,
+    "nestedParentReturned": 372,
+    "staleOpenerRefused": 631
+  }
+}
