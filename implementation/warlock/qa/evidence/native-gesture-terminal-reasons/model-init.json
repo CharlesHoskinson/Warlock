@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "scope": "quint-llm-kit sampled native press/current recipient admission; native keys/identity/AT separate.",
+  "nativeAcceptance": false,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-661cb6a75d624b50af27b876f0e4913e.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "qa/gesture-end.qnt": "e854624019b3d9315d3e79b590eeed9dc4061aab2b67f461c2ff5a1c7547feaa"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/gesture-end.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "safety",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/gesture-end.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1",
+        "--max-steps=1",
+        "--seed=79933"
+      ],
+      "exitCode": 0
+    }
+  ]
+}

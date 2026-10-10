@@ -1,0 +1,294 @@
+{
+  "schema": 1,
+  "requirements": [
+    "ELM-UX-021"
+  ],
+  "scenarios": [
+    "ux-021"
+  ],
+  "originalOracle": "exactly one gesture ends and no shell surface steals the drag",
+  "sourceParent": "846304aa9d04ec2a06880e982c7e7367c6f0be6a",
+  "sourceHashes": {
+    "implementation/warlock/native/core/DragController.cpp": "1c0c0bac4879306f31fd1b96b6a873c84421cb8dd833dc2a87295e39f7f26914",
+    "implementation/warlock/native/core/GestureEndPolicy.hpp": "c436740335d6c25c6efcbf0897ef556657694c92fa80b57a0bdfc70afcd56763",
+    "implementation/warlock/native/core/KeybindManager.cpp": "2fc7905d6211f7563c6b6b1ffda1d150fea4baa7837df1e3924911d6a786bef8",
+    "implementation/warlock/native/core/Window.cpp": "95fb7c3c98106369047b2f480acb4a4ebaade53baf963934e800bdc7552c9ea9",
+    "implementation/warlock/qa/gesture-end.qnt": "396201570838034173433973db125175340a092b74ef01252b21c4a2de9bf863",
+    "implementation/warlock/qa/gesture-end_test.qnt": "2d16b0ffba67825aa75067164acd28a7796669711fd93780f58f2a06b05cadda",
+    "implementation/warlock/qa/check-gesture-end.py": "82f80a7281c483f44aa00350bbfcf579943209b85deafe1b4d6f7eff8eb63f64",
+    "implementation/warlock/qa/native-gesture-end.py": "9dc064fdb81e828782cde60c735e34392c12e0697bb2331a4b269be829c6f484",
+    "implementation/warlock/qa/caption-gesture-fixture.py": "c5886dbf6d40096d633bb4859d3ec05f254a48e6f305fd57495dc52e40b737e4",
+    "implementation/warlock/qa/check-gesture-core.py": "933c08977637fe023f3a5fa25f1f7ea41e47ee6876e23cfb140f395d0a9c0148",
+    "implementation/warlock/qa/check-native-authority.py": "3ee84dee54013155dc4299287f800a27859fc6412c379972614b763aaf669328",
+    "implementation/warlock/qa/native-window-feedback.py": "b12e19a955eef347f5102ae91c755818518abaf15c4ddd0128848be76114b079",
+    "implementation/warlock/qa/current-scene-core.json": "a37d152365813453d3c2685436897eb76b54045f9cde17621242c3b39e19ad0c",
+    "implementation/warlock/qa/current-native-pair.json": "177bd9092289830a1c55c6b43480a786babcb29fc8cc2294cf79c0d96ae43c3f",
+    "implementation/warlock/README.md": "287fcec2dbd88d47ef9d50101e8f9e50ad7740c90f51e5b80f1c1bd33b865f1d",
+    "implementation/warlock/native/core/InputManager.cpp": "b49d29c80473fb11e3bad9cb7db15c9bfe9683f12f61cff9e03938d1ca706ad3"
+  },
+  "unchangedAdapter": {
+    "path": "implementation/warlock/qa/native-caption-gesture.py",
+    "sha256": "ca9acdeb0a1c1ec104c91f1e21beaa4e2ea5bcc830a05dc48c6c21d60808abb1"
+  },
+  "frozenRequirements": {
+    "path": "docs/elm-roadmap/requirements.json",
+    "sha256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
+    "requirements": 242,
+    "scenarios": 417
+  },
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/gesture-terminal-core-1791629164296848910/Hyprland",
+      "sha256": "1142812c3e06998604b2a0abff144f160c6aa675701d0801836b4f559a9497ad"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791629242165181971/elm-window-geometry-authority.so",
+      "sha256": "3d62a13a6c1ab1dd59eae4db2cc626fc69e05e7aa10d1e8ebc1f814cd99d2235"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "currentSceneCore": {
+    "schema": 1,
+    "report": "implementation/warlock/qa/runs/gesture-terminal-core-1791629164296848910/report.json",
+    "reportSHA256": "e694e33a38e667c750d2ec2cbb7b302dd53145ca03d734f13ef895db576dafc2",
+    "binarySHA256": "1142812c3e06998604b2a0abff144f160c6aa675701d0801836b4f559a9497ad",
+    "nativeAcceptance": false
+  },
+  "currentHost": {
+    "report": "implementation/warlock/qa/runs/drag-ownership-1791625062835115910/report.json",
+    "reportSHA256": "f86ab99a265c39952e365276cd790ef312c0621ccd94be43e12b2e0fafd45365",
+    "compiledAssets": {
+      "elm.js": "071739be5596bde5129da1b901b5ae7358065bbe991a17f3749942b5b1b5855a",
+      "bar.js": "1b490122e33ec692c225c2f6936d2e05eb23cc0ec91c9fa0d2a16469c030cff1",
+      "popup.js": "c12dc5323bbaaf2d83cff1799b1e0e72c861d012f6db0da39d50adb62648f933"
+    }
+  },
+  "artifacts": {
+    "native-before": {
+      "path": "implementation/warlock/qa/runs/native-gesture-end-1791627982040274599/report.json",
+      "sha256": "2fc4cdb45d4f87305d00cc3170b14270b3b3722f512cb5c79db1a1fbdc5f7cba",
+      "packet": "native-before.json.gz",
+      "packetSHA256": "16565b8935eed23d5e4366a702d4a451a25905cad6f59b7946e0060fd435a5d4",
+      "encoding": "gzip",
+      "passed": false
+    },
+    "same-pixel-counterexample": {
+      "path": "implementation/warlock/qa/runs/native-gesture-end-1791628286707209363/report.json",
+      "sha256": "0213de4dc6ce198f1a25f3484b5530c05c1341bf41c91933ac9aab2a80e7f4fb",
+      "packet": "same-pixel-counterexample.json.gz",
+      "packetSHA256": "66f52315c54aeefdd030a21d33c1c7027161adb51bae4a2284be22875db77d94",
+      "encoding": "gzip",
+      "passed": false
+    },
+    "cross-output-counterexample": {
+      "path": "implementation/warlock/qa/runs/native-drag-ownership-1791629033197178745/report.json",
+      "sha256": "2c924031c8a547f68b4e5f34055dbb118ed7b3534ed43738ba6777c8be033205",
+      "packet": "cross-output-counterexample.json.gz",
+      "packetSHA256": "43c1700fe1cab3d1ac861d73a51a455ebefe5ed6ffa7c7f657977f61f91573d0",
+      "encoding": "gzip",
+      "passed": false
+    },
+    "native-after": {
+      "path": "implementation/warlock/qa/runs/native-gesture-end-1791629403626835695/report.json",
+      "sha256": "b26e5ff2dae96d1fe018d362a228e0e5ae94f451562fb809bcea74a44455d114",
+      "packet": "native-after.json.gz",
+      "packetSHA256": "fa1617a39c95697bd346f45feec2ad0d7074e19eebe9e307781b8291110ae781",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "original-two-output": {
+      "path": "implementation/warlock/qa/runs/native-drag-ownership-1791629322989086031/report.json",
+      "sha256": "896f6514000c61d7b1161237d924176c2bebfac6dbcd6f2585d6ae9f85656819",
+      "packet": "original-two-output.json.gz",
+      "packetSHA256": "479329dae7a152f7e8f8a08b2eea2b98eb46592df31afe79091f63d5af4f7e66",
+      "encoding": "gzip",
+      "passed": false
+    },
+    "native-modal-regression": {
+      "path": "implementation/warlock/qa/runs/native-modal-draft-focus-1791629507531466269/report.json",
+      "sha256": "8f6f0290fb26e54c5086fe83aae5c633cd8d67f9b24ec2ffdd92f85149353f77",
+      "packet": "native-modal-regression.json.gz",
+      "packetSHA256": "520115223be132374625b414776f1ea74098dd74237565c6d56304e7be78ec05",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "core-build": {
+      "path": "implementation/warlock/qa/runs/gesture-terminal-core-1791629164296848910/report.json",
+      "sha256": "e694e33a38e667c750d2ec2cbb7b302dd53145ca03d734f13ef895db576dafc2",
+      "packet": "core-build.json.gz",
+      "packetSHA256": "99d3f4cbf00646a5594d00066154dd3a392f258fb47e3694b49dbcc2d7b47b39",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "plugin-build": {
+      "path": "implementation/warlock/qa/runs/native-authority-1791629242165181971/report.json",
+      "sha256": "e109928a9a2b92f742a35e622a92db134d0e065da966d83a58ec7ac6766fb599",
+      "packet": "plugin-build.json.gz",
+      "packetSHA256": "89cfd1d279a0cd599f77ee585e6d81be2f67c1547187e3ec2a13db384674e7f0",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "core-parent-three-tu": {
+      "path": "implementation/warlock/qa/runs/gesture-terminal-core-1791628156971263195/report.json",
+      "sha256": "aa3a7a0e9d39e313f6e4446931284c72be115640f01e33d8140a9381f799eee7",
+      "packet": "core-parent-three-tu.json.gz",
+      "packetSHA256": "776bd38e11132e21c648d42ba84c47862d1d7164f44ec30175e310afa1a323b6",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "core-parent-four-tu": {
+      "path": "implementation/warlock/qa/runs/gesture-terminal-core-1791628593231975370/report.json",
+      "sha256": "8401a34fcfbdd9959f406e2931be022b721aa9fe369425fa50eb9995e713d33d",
+      "packet": "core-parent-four-tu.json.gz",
+      "packetSHA256": "350c1d029225dc719ca52790d70e51a959a4cdea4b5bc748b562e6c5c04cfaa3",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "model-initial-syntax-failure": {
+      "path": "implementation/warlock/qa/runs/gesture-end-1791627841129460872/report.json",
+      "sha256": "ec7bc2ff44cca08b8b01690273c3cb3e4c9a27d78abc1bba9ba0893656ce172e",
+      "packet": "model-initial-syntax-failure.json",
+      "packetSHA256": "ec7bc2ff44cca08b8b01690273c3cb3e4c9a27d78abc1bba9ba0893656ce172e",
+      "encoding": "json",
+      "passed": false
+    },
+    "model-init": {
+      "path": "implementation/warlock/qa/runs/gesture-end-1791627850598672467/report.json",
+      "sha256": "f11a44d722a9a0d903bcb44fe3583abfc4ad837023ae599278a2ff67257d6740",
+      "packet": "model-init.json",
+      "packetSHA256": "f11a44d722a9a0d903bcb44fe3583abfc4ad837023ae599278a2ff67257d6740",
+      "encoding": "json",
+      "passed": true
+    },
+    "model-before": {
+      "path": "implementation/warlock/qa/runs/gesture-end-1791627890650450394/report.json",
+      "sha256": "65410f8d68abaeb16bd986fe66ef5f07d857879fe46b53c0e8f1609d1160f595",
+      "packet": "model-before.json",
+      "packetSHA256": "65410f8d68abaeb16bd986fe66ef5f07d857879fe46b53c0e8f1609d1160f595",
+      "encoding": "json",
+      "passed": true
+    },
+    "model-origin-space-before": {
+      "path": "implementation/warlock/qa/runs/gesture-end-1791629092976010265/report.json",
+      "sha256": "aa1e82999c48fc943f3fb45c4ed8ecefd4b3d6a3a5deff794101656ced341c70",
+      "packet": "model-origin-space-before.json",
+      "packetSHA256": "aa1e82999c48fc943f3fb45c4ed8ecefd4b3d6a3a5deff794101656ced341c70",
+      "encoding": "json",
+      "passed": true
+    },
+    "model-after": {
+      "path": "implementation/warlock/qa/runs/gesture-end-1791629164528129883/report.json",
+      "sha256": "1a8eebf1d75a78fae7b9bda16e7597e99d024a3e1da9daa4c4ab69bcb8a57351",
+      "packet": "model-after.json",
+      "packetSHA256": "1a8eebf1d75a78fae7b9bda16e7597e99d024a3e1da9daa4c4ab69bcb8a57351",
+      "encoding": "json",
+      "passed": true
+    }
+  },
+  "compressedLogs": {
+    "native-before-fixture.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791627982040382825/fixture.log",
+      "originalSHA256": "6dc8c49ca1c39be432ec41e8223a043b727ca97da01b475b066f8812c81fd171",
+      "sha256": "b725b1d014443a981b67917e762ec568745ce6a26f05bd69083f9e09722d4272"
+    },
+    "native-before-fixture-control.events.jsonl.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791627982040382825/fixture-control.events.jsonl",
+      "originalSHA256": "08bbd2b912b2d41cbafb6b4b8d43a40936bf08065cc926cdc0549f782df56da6",
+      "sha256": "48dd58d58bc5a7c9bca96ac3813262cebfcba82995988bad8a7ea5e04fe984fb"
+    },
+    "same-pixel-counterexample-fixture.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791628286707307123/fixture.log",
+      "originalSHA256": "74522033d44844897de1c45fa6183c32c7a8fa03e3423aae373568686cd29ad1",
+      "sha256": "665c0d3e0d1479691b107cd35c101bc5fac03b6b279f011a9a6e954e826aaf8d"
+    },
+    "same-pixel-counterexample-fixture-control.events.jsonl.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791628286707307123/fixture-control.events.jsonl",
+      "originalSHA256": "5b39bc439893783b4cf8cabc661b8911c87dc26524136bbd3e9b6485d7f95c04",
+      "sha256": "5709796c8fea6ae13780c2f6161720de8c0319bf93f2755d2f1d074f3badb667"
+    },
+    "native-after-fixture.log.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791629403626934387/fixture.log",
+      "originalSHA256": "3b01f87f4c4dd486470139badc37f78dd5a941df6e83a1b7ec6f713cb783a4a9",
+      "sha256": "77f4dc322c1793e57b0c73a1d90799fbd3c04b5c5ba051bec5e62e40a3a64b01"
+    },
+    "native-after-fixture-control.events.jsonl.gz": {
+      "originalPath": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791629403626934387/fixture-control.events.jsonl",
+      "originalSHA256": "8e1eeddd64273a856c051197e40313d361493e6c693fbdc5c6299af5d392df36",
+      "sha256": "755ec55b7560d11f2415f6401b663d35e2aee10ad2b4ab893c40d17802902f16"
+    },
+    "model-after-named.stdout.gz": {
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/gesture-end-1791629164528129883/named.stdout",
+      "originalSHA256": "23badb1f6678f03f617e4a480070e2bfbbb158a409c860a9fa4bbaf2a4eb784d",
+      "sha256": "f4ead3e9d107df3af2bf317621f11642c6abcf8f47b53ffa8e3372f048d8e37a"
+    },
+    "model-after-safety.stdout.gz": {
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/gesture-end-1791629164528129883/safety.stdout",
+      "originalSHA256": "1ce4f5ef87538b6931df8603e2a2054345e7bc1d66f0715a1eebac54e45481ca",
+      "sha256": "f689ccaa5339479fa95ac125372d83b07909d1bff102295b1092c8aa3a60ac02"
+    },
+    "model-after-typecheck.stdout.gz": {
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/gesture-end-1791629164528129883/typecheck.stdout",
+      "originalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+    },
+    "model-after-witnesses.stdout.gz": {
+      "originalPath": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/gesture-end-1791629164528129883/witnesses.stdout",
+      "originalSHA256": "98863e8076c507b2f921e8398b3363829ea318742f270eb6c69b48b88100ad5f",
+      "sha256": "1f8a13d921e6eccf7a50f4745c82c9dabc5e27fd5e0c8d980f5bf4e8eb7615cb"
+    }
+  },
+  "captionPixels": {
+    "packet": "caption-gesture.png",
+    "sha256": "82c1453ee815a6c861f9f25f5b4aafe3c56ce0a3d62df0ab6983f6a8fc5cc625"
+  },
+  "productPatch": {
+    "packet": "product.patch.gz",
+    "sha256": "245da5d2079461301995ce5a6371dfd72e209b19d12640b7a93a0846583b0df8",
+    "uncompressedSHA256": "c885a74809787229d059ffdd664125698b424d63d2096205d49192c953df5619",
+    "dragControllerBaseline": {
+      "path": "implementation/maximized-stack-v1/native-core-v2/src/layout/supplementary/DragController.cpp",
+      "sha256": "02560e7a38902cd400c3fa1b229eb6ba2c9494750413116b9277f5e8a818b62c"
+    }
+  },
+  "originalModelsUnchanged": {
+    "window-behavior-spec/caption_drag.qnt": "990ef55fec4b51bf7f78a59aa2d053c924c275092f71f654d7bdfd9ae8ae83c9",
+    "window-behavior-spec/caption_drag_test.qnt": "23bbaa4bc2504e0299faf65f6fb739da61f1d9c121259d3c6d1d92f5bc396383",
+    "window-behavior-spec/native_drag.qnt": "2e3aa95d3116676cd5dfec0d337fbca9e1774a45f176c07a90dde15473516392",
+    "window-behavior-spec/native_drag_test.qnt": "4d3d35c690e65ace01145008d119c58977a48c01a23103436c0761bcb221194b"
+  },
+  "originalModelEvidence": {
+    "path": "implementation/warlock/qa/evidence/caption-gesture-admission/original-models.json",
+    "sha256": "b249e7f75d626dc11a361d0f16a6b8657ab68ada1d254d4fd45759e147332e2b"
+  },
+  "modelScope": "Sampled terminal reason, incarnation, floating geometry and live source-space model; nine explicitly selected named tests and nine reachable witnesses, 1000 traces/30 steps. Native event delivery, layout/float precision, clipping, device/lock/output loss, tiled/fullscreen/MAX/snap and AT are not modeled or accepted. Original properties remain unchanged. No exhaustive proof.",
+  "sourceCorrespondence": {
+    "Begin": "CDragStateController::dragBegin captures exact native target/window/source CSpace before native updates.",
+    "Motion": "Existing native drag geometry and source-space migration; modeled geometry abstracts floating values.",
+    "Release": "Default synchronous release path retains original drop/group behavior.",
+    "EscapePress": "CKeybindManager::onKeyEvent scopes Cancel; dragEnd restores live captured source space and floating box, no drop/focus.",
+    "EscapeRelease": "Existing exact press predicate never ends the next gesture on old Escape release.",
+    "CloseOwner": "CWindow::unmapWindow scopes Retire on exact current drag target window before observers and held-button release.",
+    "Reopen": "Original serial is consumed and cannot start a replacement native incarnation.",
+    "SamePixelPress": "CInputManager::processMouseDownNormal recovers absent current pointer focus through existing real-press scene/refocus path, preserving lock/grab/constraint/full-loose gates."
+  },
+  "nativeSubsetObserved": true,
+  "nativeCleanupPassed": true,
+  "nativeModalRegressionPassed": true,
+  "originalTwoOutputInputAssertionsPassed": true,
+  "originalTwoOutputFullCampaignPassed": false,
+  "nativeAcceptance": false,
+  "assistiveTechnologyAccepted": false,
+  "fullReleaseAccepted": false,
+  "disposition": "partial",
+  "observation": "Escape now restores captured floating move/resize geometry without committing a drop. Cancellation after crossing outputs also restores the live source workspace. Closing the captured owner retires the gesture before button release; a same-title replacement cannot inherit the old press. A new eligible edge press at the same pixel recovers its actual pointer recipient. The current native caption/lifecycle and modal/draft regressions pass. All original two-output input assertions and the new cross-output rollback assertion pass, but the original combined screenshot still times out at five seconds. UX-021 and the release remain partial.",
+  "missingObservations": [
+    "The original full two-output campaign fails its unchanged five-second grim combined capture; the one-output caption image does not replace it.",
+    "Original maximized/fullscreen/tiled/snapped caption restoration, fractional press offsets, active-gesture reload/reattachment/group schedules and wider output/device/hotplug/lock scenarios remain unqualified.",
+    "Expired, hidden or disabled source-space recovery stops without stale geometry; hardware/source-space-loss behavior remains unqualified. Native protected lock/grab/constraint/full-loose same-pixel coverage, other toolkit captions, AT and independent original UX-021 acceptance remain open.",
+    "Full original native/IME/hardware/resource/journey/package/deployment/rollback release gates remain open."
+  ],
+  "nextSourceWork": "Implement original maximized/snapped caption restoration and fractional press anchoring with actual native rollback and retained drafts. Use quint-llm-kit against unchanged original caption/native-drag properties. Preserve the failed original combined capture and remaining release gates."
+}

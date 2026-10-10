@@ -121,6 +121,13 @@ def poll():
             begin('ELM-AUTHORITY-FIXTURE','move','ELM-ACTIVATION-PEER')
         elif request['op']=='query-caption-draft':
             log('ELM-AUTHORITY-FIXTURE','draft',text=entries['ELM-AUTHORITY-FIXTURE'].get_text())
+        elif request['op']=='query-peer-draft':
+            log('ELM-ACTIVATION-PEER','peer-draft',text=entries['ELM-ACTIVATION-PEER'].get_text())
+        elif request['op']=='retire-primary':
+            windows.pop('ELM-AUTHORITY-FIXTURE').destroy()
+        elif request['op']=='replace-primary':
+            assert 'ELM-AUTHORITY-FIXTURE' not in windows
+            create('ELM-AUTHORITY-FIXTURE','red')
         elif request['op'] == 'family':
             windows.pop('ELM-AUTHORITY-FIXTURE').destroy()
             owner = create('SCENE-OWNER', 'red')

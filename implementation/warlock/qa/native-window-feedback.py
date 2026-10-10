@@ -79,13 +79,13 @@ if (ROOT/'qa/current-native-pair.json').exists():
    seen_ancestors=set()
    while scene_base['ancestor']!=expected_ancestor:
     child=scene_base;parent_path=pathlib.Path(child['ancestor']['report'])
-    assert str(parent_path) not in seen_ancestors and len(seen_ancestors)<2;seen_ancestors.add(str(parent_path))
+    assert str(parent_path) not in seen_ancestors and len(seen_ancestors)<5;seen_ancestors.add(str(parent_path))
     assert sha(parent_path)==child['ancestor']['reportSHA256']
     scene_base=json.loads(parent_path.read_text());assert scene_base['passed'] and sha(scene_base['binary'])==scene_base['binarySHA256']
     assert scene_base['existingPublicHeadersUnchanged'] and scene_base['existingObjectLayoutsUnchanged'] and scene_base['existingStrongExportsPreserved']
     assert child['owningHeaders']==scene_base['owningHeaders']
     changes=set(child.get('changedSources',['native/core/KeybindManager.cpp','native/core/GestureKeyPolicy.hpp']))
-    assert changes in ({'native/core/KeybindManager.cpp','native/core/GestureKeyPolicy.hpp'},{'native/core/Window.cpp','native/core/CaptionGesturePolicy.hpp'})
+    assert changes in ({'native/core/KeybindManager.cpp','native/core/GestureKeyPolicy.hpp'},{'native/core/Window.cpp','native/core/CaptionGesturePolicy.hpp'},{'native/core/KeybindManager.cpp','native/core/Window.cpp','native/core/DragController.cpp','native/core/GestureEndPolicy.hpp'},{'native/core/KeybindManager.cpp','native/core/Window.cpp','native/core/DragController.cpp','native/core/InputManager.cpp','native/core/GestureEndPolicy.hpp'})
     assert set(child['sourceHashes'])==set(scene_base['sourceHashes'])|changes
     assert all(child['sourceHashes'][p]==h for p,h in scene_base['sourceHashes'].items() if p not in changes)
     assert all(sha(p)==h for p,h in {**scene_base['dependencies'],**scene_base['linkDependencies']}.items())
@@ -586,6 +586,19 @@ raise SystemExit(daemon.run())
     pointer('button 272 0\nsleep 100');physical('key 125 0\nsleep 100')
     check('ReleaseAfterExplicitCancelCannotEndAgain',ownership()==cancel_end,observation=ownership())
     report['explicitCancel']={'before':cancel_before,'active':cancel_active,'end':cancel_end,'afterPhysicalRelease':ownership()}
+    # Additive rollback across outputs; the original release journeys and
+    # their final combined-capture oracle remain unchanged.
+    cross_before=root_window();other_x=400 if cross_before['monitor']==1 else 1200
+    cx,cy=map(round,[cross_before['at'][0]+cross_before['size'][0]/2,cross_before['at'][1]+cross_before['size'][1]/2])
+    pointer(f'move {cx} {cy}\nsleep 100');physical('key 125 1\nsleep 50');pointer('button 272 1\nsleep 50')
+    cross_active=wait(lambda:owned('move'));pointer(f'move {other_x} 300\nsleep 100');wait(lambda:s.data('cursorpos')=={'x':other_x,'y':300})
+    cross_moved=wait(lambda:root_window() if root_window()['monitor']!=cross_before['monitor'] else None)
+    physical('key 1 1\nsleep 50\nkey 1 0\nsleep 100');cross_end=wait(lambda:owned('idle'))
+    cross_after=root_window()
+    check('CrossOutputCancelRestoresCapturedWorkspaceAndGeometry',cross_after['at']==cross_before['at'] and cross_after['size']==cross_before['size'] and cross_after['workspace']==cross_before['workspace'] and cross_after['monitor']==cross_before['monitor'],before=cross_before,moved=cross_moved,after=cross_after)
+    pointer('button 272 0\nsleep 100');physical('key 125 0\nsleep 100')
+    check('CrossOutputCancelEndsOnceAndNoOldRelease',int(cross_end['serial'])==int(cross_active['serial'])+1 and ownership()==cross_end)
+    report['crossOutputCancel']={'before':cross_before,'moved':cross_moved,'after':cross_after,'active':cross_active,'end':cross_end}
     physical('key 125 1\nkey 56 1\nkey 57 1\nsleep 50\nkey 57 0\nkey 56 0\nkey 125 0\nsleep 100')
     wait(lambda:(projection() or {}).get('mode')=='applications')
     check('FreshAppsShortcutWorksAfterNativeRelease',(projection() or {}).get('mode')=='applications')

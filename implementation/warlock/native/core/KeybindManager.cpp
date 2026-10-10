@@ -1,4 +1,5 @@
 #include "GestureKeyPolicy.hpp"
+#include "GestureEndPolicy.hpp"
 #include "../config/ConfigValue.hpp"
 #include "../config/ConfigManager.hpp"
 #include "../config/legacy/DispatcherTranslator.hpp"
@@ -389,8 +390,10 @@ bool CKeybindManager::onKeyEvent(std::any event, SP<IKeyboard> pKeyboard) {
 
     const bool mouseBindWasActive = bool(g_layoutManager->dragController()->target());
     if (WarlockGesture::cancelKey(mouseBindWasActive, e.state == WL_KEYBOARD_KEY_STATE_PRESSED,
-                                 keysym == XKB_KEY_Escape || internalKeysym == XKB_KEY_Escape))
+                                 keysym == XKB_KEY_Escape || internalKeysym == XKB_KEY_Escape)) {
+        const WarlockGestureEnd::Scope end(g_layoutManager->dragController().get(), WarlockGestureEnd::Reason::Cancel);
         ensureMouseBindState();
+    }
 
     const auto KEY = SPressedKeyWithMods{
         .keysym             = keysym,

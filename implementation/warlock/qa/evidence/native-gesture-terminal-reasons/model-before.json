@@ -1,0 +1,85 @@
+{
+  "passed": true,
+  "scope": "quint-llm-kit sampled native release/cancel/retire semantics; fullscreen/tiled/device/native AT separate.",
+  "nativeAcceptance": false,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-f00212917adf4200ad1258cd0f8d738b.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "qa/gesture-end.qnt": "e854624019b3d9315d3e79b590eeed9dc4061aab2b67f461c2ff5a1c7547feaa",
+    "qa/gesture-end_test.qnt": "2ed59b39e92b719a69e89cf7d4fe73e8c70f824eda218814f53b1196a10c650c",
+    "native/core/Window.cpp": "c8b0ed9862a3a21b2674d6758bd876b8926f52d2be9547bb29665af35b5b872d",
+    "native/core/KeybindManager.cpp": "815cec4c73916b38d3dc9fae19b0566b53ae3073587e6468e62ce0721795f2ee"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/gesture-end.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/gesture-end_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=80001"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "witnesses",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/gesture-end.qnt",
+        "--backend=typescript",
+        "--witnesses",
+        "moving",
+        "resizing",
+        "cancelRestores",
+        "releaseCommits",
+        "retireWithoutDrop",
+        "replacementIdle",
+        "duplicateEndIgnored",
+        "peerKeepsOwner",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=80002"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "safety",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/gesture-end.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=80003"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "witnessCounts": {
+    "moving": 209,
+    "resizing": 191,
+    "cancelRestores": 465,
+    "releaseCommits": 433,
+    "retireWithoutDrop": 486,
+    "replacementIdle": 881,
+    "duplicateEndIgnored": 999,
+    "peerKeepsOwner": 380
+  }
+}

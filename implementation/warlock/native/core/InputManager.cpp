@@ -945,8 +945,13 @@ void CInputManager::processMouseDownNormal(const IPointer::SButtonEvent& e, SP<I
             if (*PFOLLOWMOUSE == 3) // don't refocus on full loose
                 break;
 
+            const bool missingPointerRecipient = !g_pSeatManager->m_state.pointerFocus.lock() && !g_pSeatManager->m_seatGrab &&
+                m_exclusiveLSes.empty() && !g_pSessionLockManager->isSessionLocked();
             if ((g_pSeatManager->m_mouse.expired() || !isConstrained()) /* No constraints */
-                && (w && Desktop::focusState()->window() != w) /* window should change */) {
+                && (w && (Desktop::focusState()->window() != w || missingPointerRecipient))) {
+                // An exclusive caption/edge gesture clears pointer focus. A new
+                // real press on the same window must recover its current hit
+                // recipient even when keyboard focus already names that window.
                 // a bit hacky
                 // if we only pressed one button, allow us to refocus. m_lCurrentlyHeldButtons.size() > 0 will stick the focus
                 if (m_currentlyHeldButtons.size() == 1) {

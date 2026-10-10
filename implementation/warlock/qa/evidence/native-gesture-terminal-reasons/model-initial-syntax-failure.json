@@ -1,0 +1,24 @@
+{
+  "passed": false,
+  "scope": "quint-llm-kit sampled native press/current recipient admission; native keys/identity/AT separate.",
+  "nativeAcceptance": false,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-aacb745bd49d40b288c2e6afebe61ce5.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "qa/gesture-end.qnt": "44f3921b1fe4460193921469db978822ab57ef7c95f50e966bade03178bcdc28"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/gesture-end.qnt"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "error": "RuntimeError('\\n Error [QNT000]: Couldn\\'t unify bool and int\\nTrying to unify bool and int\\nTrying to unify (bool, bool) => bool and (int, bool) => _t284\\n\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/gesture-end.qnt:38:49\\n  38:     and s.ends==s.beforeEnds+if(s.ended) 1 else 0\\n                                                      ^\\n  39:     and ((s.last==\"cancel\" and s.ended) implies cancelRestores)\\n      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n\\nerror: typechecking failed\\n')"
+}

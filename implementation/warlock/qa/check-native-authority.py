@@ -63,13 +63,13 @@ try:
   seen_ancestors=set()
   while scene_base['ancestor']!=expected_ancestor:
    child=scene_base;parent_path=pathlib.Path(child['ancestor']['report'])
-   assert str(parent_path) not in seen_ancestors and len(seen_ancestors)<2;seen_ancestors.add(str(parent_path))
+   assert str(parent_path) not in seen_ancestors and len(seen_ancestors)<5;seen_ancestors.add(str(parent_path))
    assert sha(parent_path)==child['ancestor']['reportSHA256']
    scene_base=json.loads(parent_path.read_text());assert scene_base['passed'] and sha(scene_base['binary'])==scene_base['binarySHA256']
    assert scene_base['existingPublicHeadersUnchanged'] and scene_base['existingObjectLayoutsUnchanged'] and scene_base['existingStrongExportsPreserved']
    assert child['owningHeaders']==scene_base['owningHeaders']
    changes=set(child.get('changedSources',['native/core/KeybindManager.cpp','native/core/GestureKeyPolicy.hpp']))
-   assert changes in ({'native/core/KeybindManager.cpp','native/core/GestureKeyPolicy.hpp'},{'native/core/Window.cpp','native/core/CaptionGesturePolicy.hpp'})
+   assert changes in ({'native/core/KeybindManager.cpp','native/core/GestureKeyPolicy.hpp'},{'native/core/Window.cpp','native/core/CaptionGesturePolicy.hpp'},{'native/core/KeybindManager.cpp','native/core/Window.cpp','native/core/DragController.cpp','native/core/GestureEndPolicy.hpp'},{'native/core/KeybindManager.cpp','native/core/Window.cpp','native/core/DragController.cpp','native/core/InputManager.cpp','native/core/GestureEndPolicy.hpp'})
    assert set(child['sourceHashes'])==set(scene_base['sourceHashes'])|changes
    assert all(child['sourceHashes'][p]==h for p,h in scene_base['sourceHashes'].items() if p not in changes)
    assert all(sha(p)==h for p,h in {**scene_base['dependencies'],**scene_base['linkDependencies']}.items())

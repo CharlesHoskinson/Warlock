@@ -1,13 +1,74 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T10:16:08.095999+00:00",
+  "updatedUTC": "2026-10-10T10:59:07.718406+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
+    "id": "native-gesture-terminal-reasons",
+    "requirements": [
+      "ELM-UX-021"
+    ],
+    "scenarios": [
+      "ux-021"
+    ],
+    "paths": [
+      "implementation/warlock/native/core/DragController.cpp",
+      "implementation/warlock/native/core/GestureEndPolicy.hpp",
+      "implementation/warlock/native/core/KeybindManager.cpp",
+      "implementation/warlock/native/core/Window.cpp",
+      "implementation/warlock/qa/gesture-end.qnt",
+      "implementation/warlock/qa/gesture-end_test.qnt",
+      "implementation/warlock/qa/check-gesture-end.py",
+      "implementation/warlock/qa/native-gesture-end.py",
+      "implementation/warlock/qa/caption-gesture-fixture.py",
+      "implementation/warlock/qa/check-gesture-core.py",
+      "implementation/warlock/qa/check-native-authority.py",
+      "implementation/warlock/qa/native-window-feedback.py",
+      "implementation/warlock/qa/current-scene-core.json",
+      "implementation/warlock/qa/current-native-pair.json",
+      "implementation/warlock/README.md",
+      "implementation/warlock/native/core/InputManager.cpp"
+    ],
+    "before": "Escape ends through the same native commit/drop path as pointer release; close releases held buttons before explicitly ending its drag. The existing caption/native drag models require cancellation rollback and exact captured-owner retirement.",
+    "after": "Typed private release/cancel/retire reasons keep original native ownership. Escape restores captured floating move/resize geometry without drop or focus redirection; owner retirement ends before close-time release and never acts on a replacement. Original snapped/fullscreen/tiled/device/output/lifecycle acceptance remains explicitly separate.",
+    "verification": [
+      "quint-llm-kit incremental terminal reason/current incarnation model with named positive/witness/safety checks; unchanged original caption/native-drag named cases. Actual current-core GTK caption and edge Escape rollback counterexample, move/resize cancellation, exact one end and no second release, current owner close/replacement stale request and peer/draft retention. Exact four-TU owning archive/core/plugin rebuild, original caption admission/native modal regression and original clocks/ABI preserved. Original two-output full capture remains failed. Additive native cross-output cancellation restores the captured live source workspace and geometry; the unchanged-coordinate edge retry recovers only a current eligible actual press without bypassing lock/grab/constraint gates."
+    ],
+    "owner": "root-gesture-end",
+    "participantRecord": ".warlock-contributor/gesture-end.json",
+    "evidence": {
+      "path": "implementation/warlock/qa/evidence/native-gesture-terminal-reasons/manifest.json",
+      "sha256": "cb4d72bc96ccfbc9e7325abf9c1b16a33af982bfa653db64f608dc4430dd1ac3"
+    },
+    "disposition": "partial",
+    "observed": "Escape now restores captured floating move/resize geometry without committing a drop. Cancellation after crossing outputs also restores the live source workspace. Closing the captured owner retires the gesture before button release; a same-title replacement cannot inherit the old press. A new eligible edge press at the same pixel recovers its actual pointer recipient. The current native caption/lifecycle and modal/draft regressions pass. All original two-output input assertions and the new cross-output rollback assertion pass, but the original combined screenshot still times out at five seconds. UX-021 and the release remain partial.",
+    "missingObservations": [
+      "The original full two-output campaign fails its unchanged five-second grim combined capture; the one-output caption image does not replace it.",
+      "Original maximized/fullscreen/tiled/snapped caption restoration, fractional press offsets, active-gesture reload/reattachment/group schedules and wider output/device/hotplug/lock scenarios remain unqualified.",
+      "Expired, hidden or disabled source-space recovery stops without stale geometry; hardware/source-space-loss behavior remains unqualified. Native protected lock/grab/constraint/full-loose same-pixel coverage, other toolkit captions, AT and independent original UX-021 acceptance remain open.",
+      "Full original native/IME/hardware/resource/journey/package/deployment/rollback release gates remain open."
+    ],
+    "nextSourceWork": "Implement original maximized/snapped caption restoration and fractional press anchoring with actual native rollback and retained drafts. Use quint-llm-kit against unchanged original caption/native-drag properties. Preserve the failed original combined capture and remaining release gates."
+  },
+  "nextSlices": [
+    "taskbar activation/minimize/restore and popup focus journeys",
+    "persistent catalog pins",
+    "launcher search and refusal recovery",
+    "switcher/Task View/workspaces and snap/output journeys",
+    "authorized visible previews and fallback",
+    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
+    "original native, AT/IME, hardware/resource/journey gates",
+    "reproducible package, reversible deployment/rollback"
+  ],
+  "releaseAccepted": false,
+  "oldTrackerIsCurrent": false,
+  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
+  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
+  "previousSlice": {
     "id": "caption-gesture-admission",
     "requirements": [
       "ELM-UX-021"
@@ -50,90 +111,6 @@
       "Full original native/IME/hardware/resource/journey/package/rollback release gates remain open."
     ],
     "nextSourceWork": "Original UX-021 close/reload and snapped-caption/cancel integration: exercise the actual owning native drag controller with owner retirement and retained drafts, model the exact demonstrated gap with quint-llm-kit and implement it in the current candidate. Preserve the failed original two-output capture and all other release gates."
-  },
-  "nextSlices": [
-    "taskbar activation/minimize/restore and popup focus journeys",
-    "persistent catalog pins",
-    "launcher search and refusal recovery",
-    "switcher/Task View/workspaces and snap/output journeys",
-    "authorized visible previews and fallback",
-    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
-    "original native, AT/IME, hardware/resource/journey gates",
-    "reproducible package, reversible deployment/rollback"
-  ],
-  "releaseAccepted": false,
-  "oldTrackerIsCurrent": false,
-  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
-  "previousSlice": {
-    "id": "pointer-ownership-readiness",
-    "requirements": [
-      "ELM-UX-021"
-    ],
-    "scenarios": [
-      "ux-021"
-    ],
-    "paths": [
-      "implementation/warlock/src/PointerOwnership.elm",
-      "implementation/warlock/qa/PointerOwnershipReplay.elm",
-      "implementation/warlock/qa/NativePointerFixture.elm",
-      "implementation/warlock/qa/check-search.py",
-      "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/qa/pointer-readiness.qnt",
-      "implementation/warlock/qa/pointer-readiness_test.qnt",
-      "implementation/warlock/qa/check-pointer-readiness.py",
-      "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/assets/elm.js",
-      "implementation/warlock/assets/bar.js",
-      "implementation/warlock/assets/popup.js",
-      "implementation/warlock/README.md",
-      "implementation/warlock/qa/FeedbackReplay.elm",
-      "implementation/warlock/qa/SearchReplay.elm",
-      "implementation/warlock/qa/PinsReplay.elm",
-      "implementation/warlock/qa/TaskViewReplay.elm",
-      "implementation/warlock/qa/SwitcherReplay.elm",
-      "implementation/warlock/qa/PinnedMenuReplay.elm",
-      "implementation/warlock/qa/SnapReplay.elm",
-      "implementation/warlock/qa/SettingsReplay.elm",
-      "implementation/warlock/qa/NotificationsReplay.elm",
-      "implementation/warlock/qa/SystemMenuReplay.elm",
-      "implementation/warlock/qa/FilesReplay.elm",
-      "implementation/warlock/qa/JumpListReplay.elm",
-      "implementation/warlock/qa/AttentionReplay.elm",
-      "implementation/warlock/qa/KeyboardShortcutsReplay.elm",
-      "implementation/warlock/qa/ImeReplay.elm",
-      "implementation/warlock/qa/ShortcutPreferencesReplay.elm",
-      "implementation/warlock/qa/AnnouncementReplay.elm",
-      "implementation/warlock/qa/AdapterAnnouncementReplay.elm",
-      "implementation/warlock/qa/PopupEntryReplay.elm",
-      "implementation/warlock/native/core/KeybindManager.cpp",
-      "implementation/warlock/native/core/GestureKeyPolicy.hpp",
-      "implementation/warlock/qa/check-gesture-core.py",
-      "implementation/warlock/qa/gesture-keys.qnt",
-      "implementation/warlock/qa/gesture-keys_test.qnt",
-      "implementation/warlock/qa/check-gesture-keys.py",
-      "implementation/warlock/qa/current-scene-core.json",
-      "implementation/warlock/qa/current-native-pair.json",
-      "implementation/warlock/qa/check-native-authority.py"
-    ],
-    "before": "Shell policy permits actions without a current-binding native pointer ownership observation, including reattachment during a gesture. Original two-output drag campaign previously stopped before input due private output geometry mismatch.",
-    "after": "Unknown or foreign-binding pointer ownership blocks shell input until a current native idle snapshot; no replay on release. Exercise original two-output move/resize crossing and exactly-one end without changing assertions or timing.",
-    "verification": [
-      "quint-llm-kit readiness/epoch/release model; compiled actual Elm bootstrap/rebind and current drag replay/root integration; unchanged native drag assertions with actual 800x600 private parent output setup, same protected runtime/pair/deadlines; original pointer popup and keyboard regressions."
-    ],
-    "status": "implemented-partial",
-    "participantRecord": ".warlock-contributor/pointer-readiness.json",
-    "evidence": {
-      "path": "implementation/warlock/qa/evidence/pointer-ownership-readiness/manifest.json",
-      "sha256": "5313c21ea1dd5bd84fbab671b8d148a333aa5f080a0137f280e74f37c88ecf0c"
-    },
-    "observed": "Native gesture ownership now waits for a current-binding idle observation before shell input, and the owning key handler preserves active move/resize across ordinary keys and shortcuts until pointer release or explicit Escape. Current two-output input checks pass both crossings, native refusal and exactly-one end; Escape cancellation also ends once. The full drag recording still fails its original final screenshot deadline, so UX-021 remains partial. Keyboard-only and taskbar Escape regressions pass. Caption/edge initiation, broader lifecycle/device/AT and independent acceptance remain open.",
-    "missingObservations": [
-      "The current full two-output native recording fails final original five-second grim capture. All gesture input assertions pass, but no full capture/presentation acceptance is inferred.",
-      "Caption/edge initiation, actual reattachment during an active gesture, close/reload, snap and transition reversal, unrelated button/device/hotplug/lock and wider output schedules",
-      "Native AT and independent original UX-021 scenario review; full original drag/restore/recovery/native/IME/hardware/resource/package/rollback gates"
-    ],
-    "nextSourceWork": "Original UX-021 current native caption/edge initiation and gesture cancellation/close/snap integration: inspect actual owning request serial/recipient and original 52 drag/resize failures, then implement demonstrated gaps. Preserve the failed two-output capture, remaining UI-011 lifecycle/AT and full release scope."
   },
   "recentSlices": [
     {

@@ -1,0 +1,90 @@
+{
+  "passed": true,
+  "scope": "quint-llm-kit sampled native release/cancel/retire semantics; fullscreen/tiled/device/native AT separate.",
+  "nativeAcceptance": false,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-2fa2e9a4ce3841d9b5df497cf639642c.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "qa/gesture-end.qnt": "396201570838034173433973db125175340a092b74ef01252b21c4a2de9bf863",
+    "qa/gesture-end_test.qnt": "2d16b0ffba67825aa75067164acd28a7796669711fd93780f58f2a06b05cadda",
+    "native/core/Window.cpp": "95fb7c3c98106369047b2f480acb4a4ebaade53baf963934e800bdc7552c9ea9",
+    "native/core/KeybindManager.cpp": "2fc7905d6211f7563c6b6b1ffda1d150fea4baa7837df1e3924911d6a786bef8",
+    "native/core/InputManager.cpp": "b49d29c80473fb11e3bad9cb7db15c9bfe9683f12f61cff9e03938d1ca706ad3",
+    "native/core/DragController.cpp": "1c0c0bac4879306f31fd1b96b6a873c84421cb8dd833dc2a87295e39f7f26914",
+    "native/core/GestureEndPolicy.hpp": "c436740335d6c25c6efcbf0897ef556657694c92fa80b57a0bdfc70afcd56763"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/gesture-end.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/gesture-end_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=80001"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "witnesses",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/gesture-end.qnt",
+        "--backend=typescript",
+        "--witnesses",
+        "moving",
+        "resizing",
+        "cancelRestores",
+        "releaseCommits",
+        "retireWithoutDrop",
+        "replacementIdle",
+        "duplicateEndIgnored",
+        "peerKeepsOwner",
+        "crossedCancel",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=80002"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "safety",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/gesture-end.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=80003"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "witnessCounts": {
+    "moving": 209,
+    "resizing": 191,
+    "cancelRestores": 465,
+    "releaseCommits": 433,
+    "retireWithoutDrop": 486,
+    "replacementIdle": 881,
+    "duplicateEndIgnored": 999,
+    "peerKeepsOwner": 380,
+    "crossedCancel": 121
+  }
+}

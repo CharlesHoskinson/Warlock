@@ -66,3 +66,9 @@ Native gesture ownership now waits for a current-binding idle observation before
 
 
 Native caption moves and edge resizes preserve their original owner, finish once on release and keep the unsaved GTK draft. Admission now rechecks the current shared family recipient and protected-input policy after the actual XDG press grant is consumed. Held presses refused after no-focus or a mapped modal cannot replay when eligibility returns. The one-output native addition, matched core/plugin rebuild, Quint checks and unchanged modal/draft regression pass. The original full two-output capture remains failed; UX-021 and the release remain partial. See [caption admission evidence](../implementation/warlock/qa/evidence/caption-gesture-admission/README.md).
+
+## Native gesture cancellation and retirement — October 10
+
+Escape now restores captured floating move/resize geometry without committing a drop. Cancellation after crossing outputs also restores the live source workspace. Closing the captured owner retires the gesture before button release; a same-title replacement cannot inherit the old press. A new eligible edge press at the same pixel recovers its actual pointer recipient. The current native caption/lifecycle and modal/draft regressions pass. All original two-output input assertions and the new cross-output rollback assertion pass, but the original combined screenshot still times out at five seconds. UX-021 and the release remain partial. See [native gesture evidence](../implementation/warlock/qa/evidence/native-gesture-terminal-reasons/README.md).
+
+Maximized, fullscreen, tiled and snapped restoration, wider device/lifecycle schedules, AT and independent scenario acceptance remain open. Cancellation keeps the original owner and never uses release-time grouping or focus redirection.

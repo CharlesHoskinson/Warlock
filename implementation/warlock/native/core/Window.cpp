@@ -1,5 +1,6 @@
 #include "WindowPolicy.hpp"
 #include "CaptionGesturePolicy.hpp"
+#include "GestureEndPolicy.hpp"
 #include <algorithm>
 #include <array>
 #include <cmath>
@@ -2582,6 +2583,14 @@ void CWindow::unmapWindow() {
 
     const auto PMONITOR = m_monitor.lock();
 
+    // Retire only the captured native owner, before close observers or held
+    // button release can mistake retirement for a committed drop.
+    const auto dragTarget = g_layoutManager->dragController()->target();
+    if (dragTarget && dragTarget->window() == m_self.lock()) {
+        const WarlockGestureEnd::Scope end(g_layoutManager->dragController().get(), WarlockGestureEnd::Reason::Retire);
+        CKeybindManager::changeMouseBindMode(MBIND_INVALID);
+    }
+
     m_events.unmap.emit();
     g_pEventManager->postEvent(SHyprIPCEvent{"closewindow", std::format("{:x}", m_self.lock())});
     Event::bus()->m_events.window.close.emit(m_self.lock());
@@ -2641,9 +2650,6 @@ void CWindow::unmapWindow() {
 
         g_pInputManager->releaseAllMouseButtons();
     }
-
-    if (layoutTarget() == g_layoutManager->dragController()->target())
-        CKeybindManager::changeMouseBindMode(MBIND_INVALID);
 
     if (m_group)
         m_group->remove(m_self.lock());
