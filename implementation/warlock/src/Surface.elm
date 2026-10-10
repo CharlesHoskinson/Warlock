@@ -146,6 +146,8 @@ controls model =
                    ++ (if entry.state=="live" then List.map (\item -> action "invoke" item.key item.label) entry.actions ++ [action "dismiss" "" "Dismiss notification"] else [])
         in [control "control:close" "Close notifications" "" True Desktop.CloseNotifications
            ,control "notifications:refresh" "Refresh notifications" "Read current targets; no action is repeated" (model.notificationsExpected==Nothing) Desktop.RefreshNotifications]
+           ++ [control "notifications:dnd" "Do not disturb for this session" (if model.notifications.policy.doNotDisturb then "On · History still updates" else "Off") True (\stamp -> Desktop.ConfigureNotificationPolicy stamp {doNotDisturb=not model.notifications.policy.doNotDisturb,interruptCritical=model.notifications.policy.interruptCritical})
+              ,control "notifications:critical-interrupt" "Allow critical notification interruptions for this session" (if model.notifications.policy.interruptCritical then "On · Only when Do not disturb is off" else "Off · New notifications are polite") True (\stamp -> Desktop.ConfigureNotificationPolicy stamp {doNotDisturb=model.notifications.policy.doNotDisturb,interruptCritical=not model.notifications.policy.interruptCritical})]
            ++ (model.notifications.snapshot |> Maybe.map (\snapshot -> List.concatMap (entryRows snapshot) snapshot.entries) |> Maybe.withDefault [])
     else if model.settingsOpen then
         let scoped message=Desktop.capture model |> Maybe.map message

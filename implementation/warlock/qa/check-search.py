@@ -1,6 +1,7 @@
 """Focused compiled launcher/search integration, protected CPU scope only."""
 import pathlib,hashlib,json,os,sys,time,shutil,subprocess,shlex,importlib.util,concurrent.futures,http.server,threading
-ANNOUNCEMENTS=sys.argv[1:]==['--announcements']
+NOTIFICATION_ANNOUNCEMENTS=sys.argv[1:]==['--notification-announcements']
+ANNOUNCEMENTS=NOTIFICATION_ANNOUNCEMENTS or sys.argv[1:]==['--announcements']
 DESCRIPTION=sys.argv[1:]==['--preview-description']
 LAYER=sys.argv[1:]==['--layer-appearance']
 SHUTDOWN=sys.argv[1:]==['--preview-shutdown']
@@ -22,7 +23,7 @@ ATTENTION=sys.argv[1:]==['--attention']
 JUMP=sys.argv[1:]==['--jump-lists']
 FILES=sys.argv[1:]==['--files']
 SYSTEM=sys.argv[1:]==['--system-menu']
-NOTIFICATIONS=sys.argv[1:]==['--notifications']
+NOTIFICATIONS=NOTIFICATION_ANNOUNCEMENTS or sys.argv[1:]==['--notifications']
 SETTINGS=LAYER or sys.argv[1:]==['--settings'] or CONTRAST or SHORTCUTS
 SNAP=sys.argv[1:]==['--snap-chooser']
 REFLOW=sys.argv[1:]==['--popup-reflow']
@@ -49,6 +50,11 @@ def run(name,args):
  if p.returncode:raise RuntimeError(p.stderr or p.stdout)
  return p.stdout
 try:
+ if NOTIFICATION_ANNOUNCEMENTS:
+  model=json.loads(run('notification-announcements-model',['/usr/bin/python3','-B','qa/check-notification-announcements.py']));assert model['passed'];report['notificationAnnouncementsModel']=model
+  run('compile-notification-announcements',[str(HELD/pinned['compiler']),'make','qa/NotificationAnnouncementReplay.elm','--optimize','--output=assets/notification-announcements.js'])
+  replay=(INPUT/'qa/feedback-replay.js').read_text().replace('Elm.FeedbackReplay','Elm.NotificationAnnouncementReplay');(INPUT/'qa/notification-announcement-replay.js').write_text(replay)
+  run('typed-notification-announcements',['node','qa/notification-announcement-replay.js','assets/notification-announcements.js',str(OUT/'notification-announcements.json')]);report['notificationAnnouncements']=json.loads((OUT/'notification-announcements.json').read_text());assert all(report['notificationAnnouncements']['checks'].values())
  if ANNOUNCEMENTS:
   model=json.loads(run('announcement-owner-model',['/usr/bin/python3','-B','qa/check-announcement-owner.py']));assert model['passed'];report['announcementOwnerModel']=model
   run('compile-announcements',[str(HELD/pinned['compiler']),'make','qa/AnnouncementReplay.elm','--optimize','--output=assets/announcements.js'])
@@ -282,6 +288,12 @@ console.log('Current body-target Escape releases once; stale scope, preedit, rep
     # The authority TU is independently compiled against its owning core; none
     # of these reused GTK host objects link it or include its modal preflight.
     excluded=['native/surface-test.c','native/surface.h','native/host.c','native/shared-host.c','native/shell-bindings.lua','native/shared-context.h','native/shared-context-test.c']+(['native/authority.cpp','native/navigation-modal.hpp'] if NAV or DRAG else [])+(['native/authority.cpp','native/host-journal.h','native/geometry-effects.inc','native/snap-placement.inc','native/motion-profile.inc','native/geometry.inc'] if SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION or KEYBOARD or TRANSFER or MOTION or PINMAX else [])
+    if ANNOUNCEMENTS:
+     # This header belongs exclusively to the C host compiled immediately above;
+     # every reused C++ source/dependency retains its original exact hash.
+     excluded+=['native/announcement-transport.h']
+     assert 'native/announcement-transport.h' in (OUT/'host.d').read_text()
+     assert all('announcement-transport.h' not in (INPUT/'native'/name).read_text() for name in units)
     if SHORTCUTS:
      excluded+=['native/shortcut-bindings.inc']
      assert all('shortcut-bindings.inc' not in (INPUT/'native'/name).read_text() for name in units)
@@ -322,6 +334,7 @@ console.log('Current body-target Escape releases once; stale scope, preedit, rep
   if ANNOUNCEMENTS:
    (INPUT/'qa/announcement-host.html').write_text('<!doctype html><html><body><iframe id="bar1" src="dense.html"></iframe><iframe id="bar2" src="dense.html"></iframe><iframe id="popup" src="dense-picker.html" style="width:640px;height:620px"></iframe></body></html>')
   if ANNOUNCEMENTS:report.update(requirements=['ELM-UI-010'],scenarios=['announce-launch refusal','announce-transfer refusal','announce-settings validation failure'],scope='Integrated typed refusal identity, Elm-selected announcement ownership, native once-only transport and actual multi-view browser focus/live-region projection; native speech/braille/independent acceptance and permitted notification policy remain separate.')
+  if NOTIFICATION_ANNOUNCEMENTS:report.update(requirements=['ELM-UI-010'],scenarios=['announce-notification arrival','announcement-dnd','announcement-urgency-opt-in'],scope='Integrated native urgency facts and Elm session permission, typed/batch/suppression/no-focus and multi-view live-region behavior; actual native GUI/AT and independent acceptance separate.')
   browser_name='announcement-browser' if ANNOUNCEMENTS else 'preview-description-browser' if DESCRIPTION else 'ime-browser' if IME else 'accessibility-browser' if ACCESSIBILITY else 'attention-browser' if ATTENTION else 'jump-lists-browser' if JUMP else 'files-browser' if FILES else 'system-menu-browser' if SYSTEM else 'notifications-browser' if NOTIFICATIONS else 'settings-browser' if SETTINGS else 'snap-browser' if SNAP else 'dense-browser';browser_runner='announcement-browser.mjs' if ANNOUNCEMENTS else 'preview-description-browser.mjs' if DESCRIPTION else 'ime-browser.mjs' if IME else 'accessibility-browser.mjs' if ACCESSIBILITY else 'attention-browser.mjs' if ATTENTION else 'jump-lists-browser.mjs' if JUMP else 'files-browser.mjs' if FILES else 'system-menu-browser.mjs' if SYSTEM else 'notifications-browser.mjs' if NOTIFICATIONS else 'settings-browser.mjs' if SETTINGS else 'snap-browser.mjs' if SNAP else 'dense-taskbar-browser.mjs'
   run(browser_name,['node','qa/'+browser_runner,'http://127.0.0.1:'+str(server.server_port),str(OUT),str(browser)])
   child_path=OUT/(browser_name+'.json');child=json.loads(child_path.read_text());assert child['passed'] and child['browserExitCode']==0;report['announcementBrowser' if ANNOUNCEMENTS else 'previewDescriptionBrowser' if DESCRIPTION else 'imeBrowser' if IME else 'accessibilityBrowser' if ACCESSIBILITY else 'attentionBrowser' if ATTENTION else 'jumpListsBrowser' if JUMP else 'filesBrowser' if FILES else 'systemMenuBrowser' if SYSTEM else 'notificationsBrowser' if NOTIFICATIONS else 'settingsBrowser' if SETTINGS else 'snapBrowser' if SNAP else 'denseBrowser']={'path':str(child_path),'sha256':sha(child_path),'checks':child['checks']}

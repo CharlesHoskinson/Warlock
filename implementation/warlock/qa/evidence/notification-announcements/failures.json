@@ -1,0 +1,32 @@
+[
+  {
+    "report": "implementation/warlock/qa/runs/notification-announcements-model-1791605685341578164/report.json",
+    "sha256": "73ffde98c26b722e1fb377f329c3b3437ec6aa659f2c876016f69bf7b9912114",
+    "error": "\n\n Error [QNT101]: Built-in name 'enabled' is redefined in module 'notificationAnnouncements'\n\n  at /home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/notification-announcements.qnt:27:14\n  27:   action dnd(enabled: bool): bool = all {enabled!=s.dnd,s'={...s,dnd:enabled}}\n                   ^^^^^^^^^^^^^\n\n\n Error [QNT101]: Built-in name 'enabled' is redefined in module 'notificationAnnouncements'\n\n  at /home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/notification-announcements.qnt:28:16\n  28:   action optIn(enabled: bool): bool = all {enabled!=s.optIn,s'={...s,optIn:enabled}}\n                     ^^^^^^^^^^^^^\n\nerror: parsing failed\n",
+    "preservedLocally": true
+  },
+  {
+    "report": "implementation/warlock/qa/runs/announcements-1791605913315913515/report.json",
+    "sha256": "26a0aefb8d8bb0444f5bb3f1ac9067dec21f73919104babede7814a5070ac0ca",
+    "error": "RuntimeError('-- SHADOWING ----------------------------- qa/NotificationAnnouncementReplay.elm\\n\\nThe name `snapshot` is first defined here:\\n\\n26| snapshot revision entries = E.object [(\"service\",E.string \"9\"),(\"revision\",E.string revision),(\"available\",E.bool True),(\"reason\",E.string \"\"),(\"entries\",E.list identity entries)]\\n    ^^^^^^^^\\nBut then it is defined AGAIN over here:\\n\\n27| update snapshot = E.object [(\"protocolVersion\",E.int 3),(\"kind\",E.string \"notification-update\"),(\"binding\",bound),(\"snapshot\",snapshot)]\\n           ^^^^^^^^\\nThink of a more helpful name for one of them and you should be all set!\\n\\nNote: Linters advise against shadowing, so Elm makes \u201cbest practices\u201d the\\ndefault. Read <https://elm-lang.org/0.19.2/shadowing> for more details on this\\nchoice.\\n\\n')",
+    "preservedLocally": true
+  },
+  {
+    "report": "implementation/warlock/qa/runs/announcements-1791605945174979915/report.json",
+    "sha256": "73afb79a61ae6e240cdcf2b004b5c603f0c4eb7c507a49bf50ac0b3ab61000c7",
+    "error": "AssertionError()",
+    "preservedLocally": true
+  },
+  {
+    "report": "implementation/warlock/qa/runs/announcements-1791606004658675819/report.json",
+    "sha256": "8849cc60ecde35eb04d3d5eab8b558fed43a780cf9fad58b8e3327ca626ad206",
+    "error": "RuntimeError('{\"passed\":false,\"checks\":0,\"captures\":[],\"error\":\"Error: {\\\\\"exceptionId\\\\\":1,\\\\\"text\\\\\":\\\\\"Uncaught\\\\\",\\\\\"lineNumber\\\\\":0,\\\\\"columnNumber\\\\\":68,\\\\\"scriptId\\\\\":\\\\\"3\\\\\",\\\\\"stackTrace\\\\\":{\\\\\"callFrames\\\\\":[{\\\\\"functionName\\\\\":\\\\\"\\\\\",\\\\\"scriptId\\\\\":\\\\\"3\\\\\",\\\\\"url\\\\\":\\\\\"\\\\\",\\\\\"lineNumber\\\\\":0,\\\\\"columnNumber\\\\\":68},{\\\\\"functionName\\\\\":\\\\\"\\\\\",\\\\\"scriptId\\\\\":\\\\\"3\\\\\",\\\\\"url\\\\\":\\\\\"\\\\\",\\\\\"lineNumber\\\\\":0,\\\\\"columnNumber\\\\\":24}]},\\\\\"exception\\\\\":{\\\\\"type\\\\\":\\\\\"object\\\\\",\\\\\"subtype\\\\\":\\\\\"error\\\\\",\\\\\"className\\\\\":\\\\\"TypeError\\\\\",\\\\\"description\\\\\":\\\\\"TypeError: Cannot read properties of null (reading \\'contentWindow\\')\\\\\\\\n    at <anonymous>:1:69\\\\\\\\n    at Array.every (<anonymous>)\\\\\\\\n    at <anonymous>:1:25\\\\\",\\\\\"objectId\\\\\":\\\\\"5720292090858036596.2.2\\\\\"}}\\\\n    at evaluate (file:///home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/announcements-1791606004658675819/inputs/qa/announcement-browser.mjs:11:154)\\\\n    at async until (file:///home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/announcements-1791606004658675819/inputs/qa/announcement-browser.mjs:12:60)\\\\n    at async file:///home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/announcements-1791606004658675819/inputs/qa/announcement-browser.mjs:28:70\"}\\n')",
+    "preservedLocally": true
+  },
+  {
+    "report": "implementation/warlock/qa/runs/native-notifications-1791606107883299384/report.json",
+    "sha256": "b92b4a987868df4a7c61a2753c6ef560aa8b142a7bbc8e49f8db1384d3ef32e4",
+    "error": "AssertionError('NativeDndArrivalKeepsHistoryAndFocusWithoutAnnouncement')",
+    "preservedLocally": true
+  }
+]

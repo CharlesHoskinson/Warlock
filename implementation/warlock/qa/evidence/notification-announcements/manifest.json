@@ -1,0 +1,272 @@
+{
+  "schema": 1,
+  "status": "partial",
+  "requirements": [
+    "ELM-UI-010"
+  ],
+  "scenarios": [
+    "announce-notification arrival",
+    "announcement-dnd",
+    "announcement-urgency-opt-in"
+  ],
+  "originalRequirement": {
+    "id": "ELM-UI-010",
+    "capability": "elm-accessibility",
+    "phase": "P3",
+    "pattern": "event-driven",
+    "priority": "must",
+    "ears": "WHEN an action needs user attention or a notification changes, the shell SHALL publish concise identity-correlated accessible status without moving focus, deduplicate repeated receipts and apply the frozen notification announcement/interruption policy.",
+    "task": "Implement non-focus-stealing accessible outcomes.",
+    "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+    "legacyEvidence": "docs/elm-roadmap/INTERACTION.md; new coverage: final UI/UX review",
+    "scenarios": [
+      {
+        "name": "announce-launch refusal",
+        "given": "speech and braille active with stable input focus",
+        "when": "launch refusal occurs",
+        "then": "one correlated message appears with reachable detail/recovery and no focus relocation; repeated receipts do not reannounce"
+      },
+      {
+        "name": "announce-transfer refusal",
+        "given": "speech and braille active with stable input focus",
+        "when": "transfer refusal occurs",
+        "then": "one correlated message appears with reachable detail/recovery and no focus relocation; repeated receipts do not reannounce"
+      },
+      {
+        "name": "announce-settings validation failure",
+        "given": "speech and braille active with stable input focus",
+        "when": "settings validation failure occurs",
+        "then": "one correlated message appears with reachable detail/recovery and no focus relocation; repeated receipts do not reannounce"
+      },
+      {
+        "name": "announce-adapter unavailable",
+        "given": "speech and braille active with stable input focus",
+        "when": "adapter unavailable occurs",
+        "then": "one correlated message appears with reachable detail/recovery and no focus relocation; repeated receipts do not reannounce"
+      },
+      {
+        "name": "announce-notification arrival",
+        "given": "speech and braille active with stable input focus and the frozen announcement policy permits this message",
+        "when": "notification arrival occurs",
+        "then": "one correlated message appears with reachable detail/recovery and no focus relocation; repeated receipts do not reannounce"
+      },
+      {
+        "name": "announce-notification expiration",
+        "given": "speech and braille active with stable input focus and the frozen announcement policy permits this message",
+        "when": "notification expiration occurs",
+        "then": "one correlated message appears with reachable detail/recovery and no focus relocation; repeated receipts do not reannounce"
+      },
+      {
+        "name": "announce-expired action rejection",
+        "given": "speech and braille active with stable input focus and the frozen announcement policy permits this message",
+        "when": "expired action rejection occurs",
+        "then": "one correlated message appears with reachable detail/recovery and no focus relocation; repeated receipts do not reannounce"
+      },
+      {
+        "name": "announcement-dnd",
+        "given": "do-not-disturb active with ordinary new notification",
+        "when": "notification arrives",
+        "then": "visual history updates without speech interruption or focus relocation"
+      },
+      {
+        "name": "announcement-expiration-irrelevant",
+        "given": "expired notification is neither focused nor user-invoked",
+        "when": "expiration is processed",
+        "then": "expiration does not announce or move focus"
+      },
+      {
+        "name": "announcement-urgency-opt-in",
+        "given": "user explicitly opted in to this urgency class",
+        "when": "matching urgent notification arrives",
+        "then": "announcement follows the opted-in interruption policy without focus theft"
+      }
+    ],
+    "source": "docs/elm-roadmap/coordinator-requirements.json",
+    "status": "proposed",
+    "taskId": "P3-ELM-UI-010",
+    "accountableOwnerRole": "Accessibility lead",
+    "verifierRole": "Independent acceptance reviewer"
+  },
+  "observedUTC": "2026-10-10T04:29:13.182909+00:00",
+  "sourceBaseRevision": "b168b59dc6b5dfb42494f30341df48ef4dba6bad",
+  "sourceObservation": "Precommit owned bytes identified below; the base revision precedes this delta. No independent acceptance claimed.",
+  "sourceHashes": {
+    "implementation/warlock/src/Notifications.elm": "f148524d629d1fcedd7e4947fd96b985f1d8883a5e0d1223cade9332bcab74f5",
+    "implementation/warlock/src/Desktop.elm": "e11b593060a7e72977f26c101671abf74444d5c45b2c4d231cb9bdd233b8f7f7",
+    "implementation/warlock/src/Surface.elm": "4d14497e7916d153825c9cb7259eafc65f13af7a6bb7dac8eb3957364a089d28",
+    "implementation/warlock/src/OutcomeAnnouncements.elm": "62c15f57d57a2585b8ee40f30d3ea5d90eaec6d379c65de2826346c518c5e1b5",
+    "implementation/warlock/src/Announcement.elm": "71bc1e29724266c26301716ea0a1c7452f02c9f67e140e1bd1ec33c5166d402f",
+    "implementation/warlock/native/announcement-transport.h": "4f0e27f66ad1bffe7d33211c63e593c20dc7fd4fb3729f69d0c745a21c108b74",
+    "implementation/warlock/adapter/notification_service.py": "ef395d8c16fcfb6456fba120f48bfcbe3e037e62693a5bcfb6813cd0cbc57a91",
+    "implementation/warlock/assets/elm.js": "43214290a3d009d403670c1ab8155b76001fd7286d97fe799497245e79cb4ea8",
+    "implementation/warlock/assets/bar.js": "e57fea4b65aa0b51446a4ff99da907f5f1dfa46a0cb1d4d1364c9a47ca68fc4b",
+    "implementation/warlock/assets/popup.js": "3b202a3fb95bd8ed3a190bc0bbc3d643f062525771b6269c35d1dc19454a98f5",
+    "implementation/warlock/qa/notification-announcements.qnt": "1368bd035906027b0d30a983755aa30192529101782f2600140973ea806e24cb",
+    "implementation/warlock/qa/notification-announcements_test.qnt": "91c5aa5fc3b02597e4f15005a74599ee4c6937c7b8938a8c14f99bcb73fb7481",
+    "implementation/warlock/qa/check-notification-announcements.py": "5ca04721c8a62802ba93dc9b29c4fe7082c5c8d37fd1b1e0b7f876585e0cf9f2",
+    "implementation/warlock/qa/NotificationAnnouncementReplay.elm": "d45fc62d9f4b684aaa5da0b82a02489e05083611f23b9ec5bb033dccf15a2149",
+    "implementation/warlock/qa/check-notifications.py": "4604c53e57c000037041ecd9befeb590be8c4d49755070ed64f2b1d9f2284cec",
+    "implementation/warlock/qa/announcement-browser.mjs": "36c9146f87f2314f8d378cadbee0ebe3eda2b3089a2fce869c3a05d86203fa23",
+    "implementation/warlock/qa/check-search.py": "d27ae28158165935dde0a09f7b7cf622f212c0c195208e3c05ec0430969e0e3e",
+    "implementation/warlock/qa/current-search-build.json": "a256021bde64dabfd458982d4ab3251fc5b676a91bb7902e6a7955aa10a2b441",
+    "implementation/warlock/qa/native-window-feedback.py": "41acee31cf9c9e18543faa982532d6d7e3e1490bc995856a1022dd38cdbea6a5",
+    "implementation/warlock/qa/notification-producer.py": "cc8864b29ef532fb38baaf9b024675f6fe5d8d19bd22ebd4974dd1bd413e4f5f",
+    "implementation/warlock/README.md": "ed6022d024616cb75cd353a5608ae0dc63ee81e23f810bffdab1a23733f25ea6",
+    "implementation/warlock/src/SurfaceRenderer.elm": "d262adb619f822604bf703567ddb86b0b73987798c1e829476f32660fa18f567",
+    "implementation/warlock/assets/popup-adapter.js": "84cbf309cd05087501b189c53ccc0a5646c34eedf5c02c883375942f018f587c"
+  },
+  "nativePair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-core-1791495415110842751/Hyprland",
+      "sha256": "81c9ac609c2900f99c1efbe613b83e949aeae3059a5e4403601581fa96191acf"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791596429600393566/elm-window-geometry-authority.so",
+      "sha256": "1f5de87c759902cbbca05dfdbba56090641c994cf3c7276671094248465bcac4"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/announcements-1791606283433719447/elm-host",
+    "sha256": "4b5bb34bb41a3fbe815e21a18966e65ef7864435bd31cd6b193ce81ef15e2a44",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/announcements-1791606283433719447/report.json",
+    "heldBuildSHA256": "eb1ddba8cf5f598bebfb2f08731e177384247af811c3d7e1057c9a1b7e2453ac"
+  },
+  "compiledAssets": {
+    "elm.js": "43214290a3d009d403670c1ab8155b76001fd7286d97fe799497245e79cb4ea8",
+    "bar.js": "e57fea4b65aa0b51446a4ff99da907f5f1dfa46a0cb1d4d1364c9a47ca68fc4b",
+    "popup.js": "3b202a3fb95bd8ed3a190bc0bbc3d643f062525771b6269c35d1dc19454a98f5"
+  },
+  "policy": {
+    "duration": "Elm shell session; not persisted",
+    "default": "Polite arrivals, critical consent off, DND off",
+    "dnd": "Suppress all new notification announcements while retaining history/actions",
+    "critical": "Assertive only with explicit consent and DND off; no automatic expiration",
+    "batch": "All fresh incarnations retained; mixed urgency stays polite"
+  },
+  "model": {
+    "skills": [
+      "quint-llm-kit/quint-modeling",
+      "quint-llm-kit/quint-execute-spec"
+    ],
+    "path": "implementation/warlock/qa/notification-announcements.qnt",
+    "namedTests": 10,
+    "witnesses": {
+      "arrivalWitness": 1000,
+      "suppressedWitness": 883,
+      "politeCriticalWitness": 586,
+      "interruptWitness": 419,
+      "dndWitness": 1000,
+      "optInWitness": 999,
+      "repeatWitness": 1000,
+      "baselineWitness": 356
+    },
+    "samples": 1000,
+    "maxSteps": 30,
+    "seed": 79502,
+    "limits": "Bounded single-actor admitted single-arrival abstraction; no batch/transport loss/process recovery, timing, native AT or resource proof."
+  },
+  "componentObservations": {
+    "typedChecks": 14,
+    "browserChecks": 20,
+    "nativeAT": false
+  },
+  "nativeObservations": {
+    "report": "implementation/warlock/qa/runs/native-notifications-1791606313484326697/report.json",
+    "sha256": "1d869ae03ef56fe606e83924928704b69d63d6fa59202c7ad2f31a6217b0f861",
+    "policyObserved": true,
+    "focusedDOMNodeIdentityObserved": true,
+    "documentFocusObserved": true,
+    "cleanupPassed": true,
+    "scope": "Real native producer urgency, physical DND/consent controls, exact once-only announcement correlation, actual WebKit polite/assertive region and retained DOM focus; actual speech/braille and independent original acceptance remain open.",
+    "runnerSHA256": "41acee31cf9c9e18543faa982532d6d7e3e1490bc995856a1022dd38cdbea6a5"
+  },
+  "missingObservations": [
+    "Actual speech and braille, repeated-receipt delivery and reachable recovery/relationships through native AT.",
+    "Independent original-scenario acceptance.",
+    "Native batch/coalescing stress and full physical control/profile qualification.",
+    "Adapter-unavailable and relevant notification expiration/action-refusal announcements remain unfinished scope."
+  ],
+  "reviewerDisposition": "Root observed scoped implementation/component/native transport/keyboard/node focus results; independent original-scenario acceptance remains open.",
+  "nativeAcceptance": false,
+  "assistiveTechnologyAccepted": false,
+  "fullReleaseAccepted": false,
+  "reproduce": [
+    [
+      "PYTHONDONTWRITEBYTECODE=1",
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/window-integration-qa/qa_run.py",
+      "--",
+      "/usr/bin/python3",
+      "-B",
+      "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/check-search.py",
+      "--notification-announcements"
+    ],
+    [
+      "python3",
+      "-B",
+      "docs/warlock-build-loop/v2/loop.py",
+      "--record",
+      ".warlock-contributor/notification-announcements.json",
+      "native",
+      "--runner",
+      "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/native-window-feedback.py",
+      "--",
+      "--notifications"
+    ]
+  ],
+  "files": {
+    "README.md": {
+      "sha256": "b1751cd18bbe7095314c6b8c029b34853868115e1805f8a53728920e1f08dd93",
+      "bytes": 5793
+    },
+    "browser-report.json": {
+      "sha256": "1ea3d96185898f8e81476b1e2f4044a01df4a9d9e9c02271a7afd0a79fbafa30",
+      "bytes": 18139
+    },
+    "compiled-report.json": {
+      "sha256": "eb1ddba8cf5f598bebfb2f08731e177384247af811c3d7e1057c9a1b7e2453ac",
+      "bytes": 176211
+    },
+    "failures.json": {
+      "sha256": "81a5bb705abca61c606a180ce5f2f119372c7558b2b9b1ab06d262eb852b3b29",
+      "bytes": 4340
+    },
+    "model-named.stdout": {
+      "sha256": "d451d2aef3eb650c9af184399c8339898c1938d4714dae0fd7a301bd3e7bb359",
+      "bytes": 631
+    },
+    "model-report.json": {
+      "sha256": "d30751dded43970ecdcda2dc57603d07405e8123a3db271358752b15b7400eae",
+      "bytes": 1939
+    },
+    "model-witness-safety.stdout": {
+      "sha256": "baf292aed15f70a5344735ecb01a41e42c6427738469359a0cd15076c32edc02",
+      "bytes": 26966
+    },
+    "native-history.png": {
+      "sha256": "7d201e1ec61c823557f806ea9b6af1088dc412e6fe7a6f1bae2fac341bf71cf3",
+      "bytes": 79619
+    },
+    "native-permission-observations.json": {
+      "sha256": "55a974cab7930f12a9fa10ba64ff2c3384db9cc6fd1292fcf8d12e51454f0076",
+      "bytes": 84473
+    },
+    "native-producer-checks.json": {
+      "sha256": "8c55557ac37d9e38bb3e52538310f3deb2610f257f08a47e363816edc67a2abc",
+      "bytes": 1514
+    },
+    "native-report.json": {
+      "sha256": "1d869ae03ef56fe606e83924928704b69d63d6fa59202c7ad2f31a6217b0f861",
+      "bytes": 506127
+    },
+    "typed-permission.json": {
+      "sha256": "b63896c83d4b9e4ecfb449ae6c7254656a232d4827b39bc805483aabe1279eb3",
+      "bytes": 39084
+    }
+  }
+}

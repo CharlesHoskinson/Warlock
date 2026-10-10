@@ -1,0 +1,1088 @@
+{
+  "checks": {
+    "ordinaryIsPolite": true,
+    "exactRepeatSilent": true,
+    "dndKeepsHistoryWithoutNewSerial": true,
+    "dndOffCannotReplayHistory": true,
+    "criticalWithoutConsentIsPolite": true,
+    "consentCannotReplayPastCritical": true,
+    "optedCriticalIsAssertive": true,
+    "consentDoesNotEscalateOrdinary": true,
+    "dndSilencesOptedCritical": true,
+    "arrivalAndCriticalNeverRequestFocus": true,
+    "initialHistoryIsNotArrival": true,
+    "batchRetainsEveryArrivalIdentity": true,
+    "strictUrgencyRejectsBoolean": true,
+    "policyControlsAreIntegrated": true
+  },
+  "notificationFrame": {
+    "viewProtocol": 1,
+    "kind": "view-frame",
+    "revision": "1",
+    "views": [
+      {
+        "id": "1",
+        "generation": "1"
+      },
+      {
+        "id": "2",
+        "generation": "1"
+      }
+    ],
+    "focusOwner": {
+      "id": "1",
+      "generation": "1"
+    },
+    "popupOwner": {
+      "id": "1",
+      "generation": "1"
+    },
+    "frame": {
+      "surfaceProtocol": 2,
+      "motion": "reduced",
+      "appearance": {
+        "theme": "night",
+        "textScale": 100,
+        "effectsOff": false,
+        "reducedTransparency": false
+      },
+      "publication": "8",
+      "lease": "1",
+      "mode": "notifications",
+      "status": "1 live notifications. Actions apply only to the current notification.",
+      "bar": [
+        {
+          "id": "bar:applications",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:control:opener",
+          "label": "Applications",
+          "ariaLabel": "Open applications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:overview",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:control:overview-opener",
+          "label": "Task View",
+          "ariaLabel": "Open Task View",
+          "detail": "",
+          "enabled": false
+        },
+        {
+          "id": "bar:switcher",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:control:switcher-opener",
+          "label": "Switch windows",
+          "ariaLabel": "Open window switcher",
+          "detail": "",
+          "enabled": false
+        },
+        {
+          "id": "bar:notifications",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:notifications:opener",
+          "label": "Notifications · 1",
+          "ariaLabel": "Open notifications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:files",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:files:opener",
+          "label": "Files",
+          "ariaLabel": "Open Files menu",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:system",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:system:opener",
+          "label": "System",
+          "ariaLabel": "Open system menu",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:settings",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:settings:opener",
+          "label": "Settings",
+          "ariaLabel": "Open settings",
+          "detail": "",
+          "enabled": true
+        }
+      ],
+      "popup": [
+        {
+          "id": "control:close",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:notifications:close",
+          "label": "Close notifications",
+          "ariaLabel": "Close notifications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "notifications:refresh",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:notifications:refresh",
+          "label": "Refresh notifications",
+          "ariaLabel": "Refresh notifications",
+          "detail": "Read current targets; no action is repeated",
+          "enabled": true
+        },
+        {
+          "id": "notifications:dnd",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:notifications:dnd",
+          "label": "Do not disturb for this session",
+          "ariaLabel": "Do not disturb for this session",
+          "detail": "Off",
+          "enabled": true
+        },
+        {
+          "id": "notifications:critical-interrupt",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:notifications:critical-interrupt",
+          "label": "Allow critical notification interruptions for this session",
+          "ariaLabel": "Allow critical notification interruptions for this session",
+          "detail": "Off · New notifications are polite",
+          "enabled": true
+        },
+        {
+          "id": "notification:9:1:summary",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:notification:9:1:summary",
+          "label": "Calendar: Meeting 1",
+          "ariaLabel": "Calendar: Meeting 1",
+          "detail": "Live",
+          "enabled": false
+        },
+        {
+          "id": "notification:9:1:body",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:notification:9:1:body",
+          "label": "Details",
+          "ariaLabel": "Details",
+          "detail": "",
+          "enabled": false
+        },
+        {
+          "id": "notification:9:1:dismiss:",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:8:notification:9:1:dismiss:",
+          "label": "Dismiss notification",
+          "ariaLabel": "Dismiss notification",
+          "detail": "",
+          "enabled": true
+        }
+      ]
+    },
+    "announcer": {
+      "scope": {
+        "id": "1",
+        "generation": "1"
+      },
+      "surface": "popup"
+    },
+    "announcement": {
+      "interrupt": false,
+      "sequence": "1",
+      "correlation": "{\"outcome\":\"notification-arrival\",\"binding\":{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"},\"identity\":{\"service\":\"9\",\"revision\":\"2\",\"incarnations\":[\"1\"]}}",
+      "text": "Calendar: Meeting 1. Open Notifications for details and current actions."
+    }
+  },
+  "dndFrame": {
+    "viewProtocol": 1,
+    "kind": "view-frame",
+    "revision": "1",
+    "views": [
+      {
+        "id": "1",
+        "generation": "1"
+      },
+      {
+        "id": "2",
+        "generation": "1"
+      }
+    ],
+    "focusOwner": {
+      "id": "1",
+      "generation": "1"
+    },
+    "popupOwner": {
+      "id": "1",
+      "generation": "1"
+    },
+    "frame": {
+      "surfaceProtocol": 2,
+      "motion": "reduced",
+      "appearance": {
+        "theme": "night",
+        "textScale": 100,
+        "effectsOff": false,
+        "reducedTransparency": false
+      },
+      "publication": "10",
+      "lease": "1",
+      "mode": "notifications",
+      "status": "2 live notifications. Actions apply only to the current notification.",
+      "bar": [
+        {
+          "id": "bar:applications",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:control:opener",
+          "label": "Applications",
+          "ariaLabel": "Open applications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:overview",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:control:overview-opener",
+          "label": "Task View",
+          "ariaLabel": "Open Task View",
+          "detail": "",
+          "enabled": false
+        },
+        {
+          "id": "bar:switcher",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:control:switcher-opener",
+          "label": "Switch windows",
+          "ariaLabel": "Open window switcher",
+          "detail": "",
+          "enabled": false
+        },
+        {
+          "id": "bar:notifications",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:notifications:opener",
+          "label": "Notifications · 2",
+          "ariaLabel": "Open notifications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:files",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:files:opener",
+          "label": "Files",
+          "ariaLabel": "Open Files menu",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:system",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:system:opener",
+          "label": "System",
+          "ariaLabel": "Open system menu",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:settings",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:settings:opener",
+          "label": "Settings",
+          "ariaLabel": "Open settings",
+          "detail": "",
+          "enabled": true
+        }
+      ],
+      "popup": [
+        {
+          "id": "control:close",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:notifications:close",
+          "label": "Close notifications",
+          "ariaLabel": "Close notifications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "notifications:refresh",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:notifications:refresh",
+          "label": "Refresh notifications",
+          "ariaLabel": "Refresh notifications",
+          "detail": "Read current targets; no action is repeated",
+          "enabled": true
+        },
+        {
+          "id": "notifications:dnd",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:notifications:dnd",
+          "label": "Do not disturb for this session",
+          "ariaLabel": "Do not disturb for this session",
+          "detail": "On · History still updates",
+          "enabled": true
+        },
+        {
+          "id": "notifications:critical-interrupt",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:notifications:critical-interrupt",
+          "label": "Allow critical notification interruptions for this session",
+          "ariaLabel": "Allow critical notification interruptions for this session",
+          "detail": "Off · New notifications are polite",
+          "enabled": true
+        },
+        {
+          "id": "notification:9:2:summary",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:notification:9:2:summary",
+          "label": "Calendar: Meeting 2",
+          "ariaLabel": "Calendar: Meeting 2",
+          "detail": "Live",
+          "enabled": false
+        },
+        {
+          "id": "notification:9:2:body",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:notification:9:2:body",
+          "label": "Details",
+          "ariaLabel": "Details",
+          "detail": "",
+          "enabled": false
+        },
+        {
+          "id": "notification:9:2:dismiss:",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:notification:9:2:dismiss:",
+          "label": "Dismiss notification",
+          "ariaLabel": "Dismiss notification",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "notification:9:1:summary",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:notification:9:1:summary",
+          "label": "Calendar: Meeting 1",
+          "ariaLabel": "Calendar: Meeting 1",
+          "detail": "Live",
+          "enabled": false
+        },
+        {
+          "id": "notification:9:1:body",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:notification:9:1:body",
+          "label": "Details",
+          "ariaLabel": "Details",
+          "detail": "",
+          "enabled": false
+        },
+        {
+          "id": "notification:9:1:dismiss:",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:10:notification:9:1:dismiss:",
+          "label": "Dismiss notification",
+          "ariaLabel": "Dismiss notification",
+          "detail": "",
+          "enabled": true
+        }
+      ]
+    },
+    "announcer": {
+      "scope": {
+        "id": "1",
+        "generation": "1"
+      },
+      "surface": "popup"
+    },
+    "announcement": {
+      "interrupt": false,
+      "sequence": "1",
+      "correlation": "{\"outcome\":\"notification-arrival\",\"binding\":{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"},\"identity\":{\"service\":\"9\",\"revision\":\"2\",\"incarnations\":[\"1\"]}}",
+      "text": "Calendar: Meeting 1. Open Notifications for details and current actions."
+    }
+  },
+  "politeFrame": {
+    "viewProtocol": 1,
+    "kind": "view-frame",
+    "revision": "1",
+    "views": [
+      {
+        "id": "1",
+        "generation": "1"
+      },
+      {
+        "id": "2",
+        "generation": "1"
+      }
+    ],
+    "focusOwner": {
+      "id": "1",
+      "generation": "1"
+    },
+    "popupOwner": {
+      "id": "1",
+      "generation": "1"
+    },
+    "frame": {
+      "surfaceProtocol": 2,
+      "motion": "reduced",
+      "appearance": {
+        "theme": "night",
+        "textScale": 100,
+        "effectsOff": false,
+        "reducedTransparency": false
+      },
+      "publication": "12",
+      "lease": "1",
+      "mode": "notifications",
+      "status": "3 live notifications. Actions apply only to the current notification.",
+      "bar": [
+        {
+          "id": "bar:applications",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:12:control:opener",
+          "label": "Applications",
+          "ariaLabel": "Open applications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:overview",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:12:control:overview-opener",
+          "label": "Task View",
+          "ariaLabel": "Open Task View",
+          "detail": "",
+          "enabled": false
+        },
+        {
+          "id": "bar:switcher",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:12:control:switcher-opener",
+          "label": "Switch windows",
+          "ariaLabel": "Open window switcher",
+          "detail": "",
+          "enabled": false
+        },
+        {
+          "id": "bar:notifications",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:12:notifications:opener",
+          "label": "Notifications · 3",
+          "ariaLabel": "Open notifications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:files",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:12:files:opener",
+          "label": "Files",
+          "ariaLabel": "Open Files menu",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:system",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:12:system:opener",
+          "label": "System",
+          "ariaLabel": "Open system menu",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:settings",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:12:settings:opener",
+          "label": "Settings",
+          "ariaLabel": "Open settings",
+          "detail": "",
+          "enabled": true
+        }
+      ],
+      "popup": [
+        {
+          "id": "control:close",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:12:notifications:close",
+          "label": "Close notifications",
+          "ariaLabel": "Close notifications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "notifications:refresh",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:12:notifications:refresh",
+          "label": "Refresh notifications",
+          "ariaLabel": "Refresh notifications",
+          "detail": "Read current targets; no action is repeated",
+          "enabled": true
+        },
+        {
+          "id": "notifications:dnd",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:12:notifications:dnd",
+          "label": "Do not disturb for this session",
+          "ariaLabel": "Do not disturb for this session",
+          "detail": "Off",
+          "enabled": true
+        },
+        {
+          "id": "notifications:critical-interrupt",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:12:notifications:critical-interrupt",
+          "label": "Allow critical notification interruptions for this session",
+          "ariaLabel": "Allow critical notification interruptions for this session",
+          "detail": "Off · New notifications are polite",
+          "enabled": true
+        },
+        {
+          "id": "notification:9:3:summary",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:12:notification:9:3:summary",
+          "label": "Calendar: Meeting 3",
+          "ariaLabel": "Calendar: Meeting 3",
+          "detail": "Live",
+          "enabled": false
+        },
+        {
+          "id": "notification:9:3:body",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:12:notification:9:3:body",
+          "label": "Details",
+          "ariaLabel": "Details",
+          "detail": "",
+          "enabled": false
+        },
+        {
+          "id": "notification:9:3:dismiss:",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:12:notification:9:3:dismiss:",
+          "label": "Dismiss notification",
+          "ariaLabel": "Dismiss notification",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "notification:9:2:summary",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:12:notification:9:2:summary",
+          "label": "Calendar: Meeting 2",
+          "ariaLabel": "Calendar: Meeting 2",
+          "detail": "Live",
+          "enabled": false
+        },
+        {
+          "id": "notification:9:2:body",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:12:notification:9:2:body",
+          "label": "Details",
+          "ariaLabel": "Details",
+          "detail": "",
+          "enabled": false
+        },
+        {
+          "id": "notification:9:2:dismiss:",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:12:notification:9:2:dismiss:",
+          "label": "Dismiss notification",
+          "ariaLabel": "Dismiss notification",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "notification:9:1:summary",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:12:notification:9:1:summary",
+          "label": "Calendar: Meeting 1",
+          "ariaLabel": "Calendar: Meeting 1",
+          "detail": "Live",
+          "enabled": false
+        },
+        {
+          "id": "notification:9:1:body",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:12:notification:9:1:body",
+          "label": "Details",
+          "ariaLabel": "Details",
+          "detail": "",
+          "enabled": false
+        },
+        {
+          "id": "notification:9:1:dismiss:",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:12:notification:9:1:dismiss:",
+          "label": "Dismiss notification",
+          "ariaLabel": "Dismiss notification",
+          "detail": "",
+          "enabled": true
+        }
+      ]
+    },
+    "announcer": {
+      "scope": {
+        "id": "1",
+        "generation": "1"
+      },
+      "surface": "popup"
+    },
+    "announcement": {
+      "interrupt": false,
+      "sequence": "2",
+      "correlation": "{\"outcome\":\"notification-arrival\",\"binding\":{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"},\"identity\":{\"service\":\"9\",\"revision\":\"4\",\"incarnations\":[\"3\"]}}",
+      "text": "Calendar: Meeting 3. Open Notifications for details and current actions."
+    }
+  },
+  "urgentFrame": {
+    "viewProtocol": 1,
+    "kind": "view-frame",
+    "revision": "1",
+    "views": [
+      {
+        "id": "1",
+        "generation": "1"
+      },
+      {
+        "id": "2",
+        "generation": "1"
+      }
+    ],
+    "focusOwner": {
+      "id": "1",
+      "generation": "1"
+    },
+    "popupOwner": {
+      "id": "1",
+      "generation": "1"
+    },
+    "frame": {
+      "surfaceProtocol": 2,
+      "motion": "reduced",
+      "appearance": {
+        "theme": "night",
+        "textScale": 100,
+        "effectsOff": false,
+        "reducedTransparency": false
+      },
+      "publication": "14",
+      "lease": "1",
+      "mode": "notifications",
+      "status": "4 live notifications. Actions apply only to the current notification.",
+      "bar": [
+        {
+          "id": "bar:applications",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:14:control:opener",
+          "label": "Applications",
+          "ariaLabel": "Open applications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:overview",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:14:control:overview-opener",
+          "label": "Task View",
+          "ariaLabel": "Open Task View",
+          "detail": "",
+          "enabled": false
+        },
+        {
+          "id": "bar:switcher",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:14:control:switcher-opener",
+          "label": "Switch windows",
+          "ariaLabel": "Open window switcher",
+          "detail": "",
+          "enabled": false
+        },
+        {
+          "id": "bar:notifications",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:14:notifications:opener",
+          "label": "Notifications · 4",
+          "ariaLabel": "Open notifications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:files",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:14:files:opener",
+          "label": "Files",
+          "ariaLabel": "Open Files menu",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:system",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:14:system:opener",
+          "label": "System",
+          "ariaLabel": "Open system menu",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:settings",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:14:settings:opener",
+          "label": "Settings",
+          "ariaLabel": "Open settings",
+          "detail": "",
+          "enabled": true
+        }
+      ],
+      "popup": [
+        {
+          "id": "control:close",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:14:notifications:close",
+          "label": "Close notifications",
+          "ariaLabel": "Close notifications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "notifications:refresh",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:14:notifications:refresh",
+          "label": "Refresh notifications",
+          "ariaLabel": "Refresh notifications",
+          "detail": "Read current targets; no action is repeated",
+          "enabled": true
+        },
+        {
+          "id": "notifications:dnd",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:14:notifications:dnd",
+          "label": "Do not disturb for this session",
+          "ariaLabel": "Do not disturb for this session",
+          "detail": "Off",
+          "enabled": true
+        },
+        {
+          "id": "notifications:critical-interrupt",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:14:notifications:critical-interrupt",
+          "label": "Allow critical notification interruptions for this session",
+          "ariaLabel": "Allow critical notification interruptions for this session",
+          "detail": "On · Only when Do not disturb is off",
+          "enabled": true
+        },
+        {
+          "id": "notification:9:4:summary",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:14:notification:9:4:summary",
+          "label": "Calendar: Meeting 4",
+          "ariaLabel": "Calendar: Meeting 4",
+          "detail": "Live",
+          "enabled": false
+        },
+        {
+          "id": "notification:9:4:body",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:14:notification:9:4:body",
+          "label": "Details",
+          "ariaLabel": "Details",
+          "detail": "",
+          "enabled": false
+        },
+        {
+          "id": "notification:9:4:dismiss:",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:14:notification:9:4:dismiss:",
+          "label": "Dismiss notification",
+          "ariaLabel": "Dismiss notification",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "notification:9:3:summary",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:14:notification:9:3:summary",
+          "label": "Calendar: Meeting 3",
+          "ariaLabel": "Calendar: Meeting 3",
+          "detail": "Live",
+          "enabled": false
+        },
+        {
+          "id": "notification:9:3:body",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:14:notification:9:3:body",
+          "label": "Details",
+          "ariaLabel": "Details",
+          "detail": "",
+          "enabled": false
+        },
+        {
+          "id": "notification:9:3:dismiss:",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:14:notification:9:3:dismiss:",
+          "label": "Dismiss notification",
+          "ariaLabel": "Dismiss notification",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "notification:9:2:summary",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:14:notification:9:2:summary",
+          "label": "Calendar: Meeting 2",
+          "ariaLabel": "Calendar: Meeting 2",
+          "detail": "Live",
+          "enabled": false
+        },
+        {
+          "id": "notification:9:2:body",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:14:notification:9:2:body",
+          "label": "Details",
+          "ariaLabel": "Details",
+          "detail": "",
+          "enabled": false
+        },
+        {
+          "id": "notification:9:2:dismiss:",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:14:notification:9:2:dismiss:",
+          "label": "Dismiss notification",
+          "ariaLabel": "Dismiss notification",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "notification:9:1:summary",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:14:notification:9:1:summary",
+          "label": "Calendar: Meeting 1",
+          "ariaLabel": "Calendar: Meeting 1",
+          "detail": "Live",
+          "enabled": false
+        },
+        {
+          "id": "notification:9:1:body",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:14:notification:9:1:body",
+          "label": "Details",
+          "ariaLabel": "Details",
+          "detail": "",
+          "enabled": false
+        },
+        {
+          "id": "notification:9:1:dismiss:",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:14:notification:9:1:dismiss:",
+          "label": "Dismiss notification",
+          "ariaLabel": "Dismiss notification",
+          "detail": "",
+          "enabled": true
+        }
+      ]
+    },
+    "announcer": {
+      "scope": {
+        "id": "1",
+        "generation": "1"
+      },
+      "surface": "popup"
+    },
+    "announcement": {
+      "interrupt": true,
+      "sequence": "3",
+      "correlation": "{\"outcome\":\"notification-arrival\",\"binding\":{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"},\"identity\":{\"service\":\"9\",\"revision\":\"5\",\"incarnations\":[\"4\"]}}",
+      "text": "Calendar: Meeting 4. Open Notifications for details and current actions."
+    }
+  },
+  "ordinaryWithConsentFrame": {
+    "viewProtocol": 1,
+    "kind": "view-frame",
+    "revision": "1",
+    "views": [
+      {
+        "id": "1",
+        "generation": "1"
+      },
+      {
+        "id": "2",
+        "generation": "1"
+      }
+    ],
+    "focusOwner": {
+      "id": "1",
+      "generation": "1"
+    },
+    "popupOwner": {
+      "id": "1",
+      "generation": "1"
+    },
+    "frame": {
+      "surfaceProtocol": 2,
+      "motion": "reduced",
+      "appearance": {
+        "theme": "night",
+        "textScale": 100,
+        "effectsOff": false,
+        "reducedTransparency": false
+      },
+      "publication": "15",
+      "lease": "1",
+      "mode": "notifications",
+      "status": "5 live notifications. Actions apply only to the current notification.",
+      "bar": [
+        {
+          "id": "bar:applications",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:15:control:opener",
+          "label": "Applications",
+          "ariaLabel": "Open applications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:overview",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:15:control:overview-opener",
+          "label": "Task View",
+          "ariaLabel": "Open Task View",
+          "detail": "",
+          "enabled": false
+        },
+        {
+          "id": "bar:switcher",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:15:control:switcher-opener",
+          "label": "Switch windows",
+          "ariaLabel": "Open window switcher",
+          "detail": "",
+          "enabled": false
+        },
+        {
+          "id": "bar:notifications",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:15:notifications:opener",
+          "label": "Notifications · 5",
+          "ariaLabel": "Open notifications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:files",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:15:files:opener",
+          "label": "Files",
+          "ariaLabel": "Open Files menu",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:system",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:15:system:opener",
+          "label": "System",
+          "ariaLabel": "Open system menu",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:settings",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:15:settings:opener",
+          "label": "Settings",
+          "ariaLabel": "Open settings",
+          "detail": "",
+          "enabled": true
+        }
+      ],
+      "popup": [
+        {
+          "id": "control:close",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:15:notifications:close",
+          "label": "Close notifications",
+          "ariaLabel": "Close notifications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "notifications:refresh",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:15:notifications:refresh",
+          "label": "Refresh notifications",
+          "ariaLabel": "Refresh notifications",
+          "detail": "Read current targets; no action is repeated",
+          "enabled": true
+        },
+        {
+          "id": "notifications:dnd",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:15:notifications:dnd",
+          "label": "Do not disturb for this session",
+          "ariaLabel": "Do not disturb for this session",
+          "detail": "Off",
+          "enabled": true
+        },
+        {
+          "id": "notifications:critical-interrupt",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:15:notifications:critical-interrupt",
+          "label": "Allow critical notification interruptions for this session",
+          "ariaLabel": "Allow critical notification interruptions for this session",
+          "detail": "On · Only when Do not disturb is off",
+          "enabled": true
+        },
+        {
+          "id": "notification:9:5:summary",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:15:notification:9:5:summary",
+          "label": "Calendar: Meeting 5",
+          "ariaLabel": "Calendar: Meeting 5",
+          "detail": "Live",
+          "enabled": false
+        },
+        {
+          "id": "notification:9:5:body",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:15:notification:9:5:body",
+          "label": "Details",
+          "ariaLabel": "Details",
+          "detail": "",
+          "enabled": false
+        },
+        {
+          "id": "notification:9:5:dismiss:",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:15:notification:9:5:dismiss:",
+          "label": "Dismiss notification",
+          "ariaLabel": "Dismiss notification",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "notification:9:4:summary",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:15:notification:9:4:summary",
+          "label": "Calendar: Meeting 4",
+          "ariaLabel": "Calendar: Meeting 4",
+          "detail": "Live",
+          "enabled": false
+        },
+        {
+          "id": "notification:9:4:body",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:15:notification:9:4:body",
+          "label": "Details",
+          "ariaLabel": "Details",
+          "detail": "",
+          "enabled": false
+        },
+        {
+          "id": "notification:9:4:dismiss:",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:15:notification:9:4:dismiss:",
+          "label": "Dismiss notification",
+          "ariaLabel": "Dismiss notification",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "notification:9:3:summary",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:15:notification:9:3:summary",
+          "label": "Calendar: Meeting 3",
+          "ariaLabel": "Calendar: Meeting 3",
+          "detail": "Live",
+          "enabled": false
+        },
+        {
+          "id": "notification:9:3:body",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:15:notification:9:3:body",
+          "label": "Details",
+          "ariaLabel": "Details",
+          "detail": "",
+          "enabled": false
+        },
+        {
+          "id": "notification:9:3:dismiss:",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:15:notification:9:3:dismiss:",
+          "label": "Dismiss notification",
+          "ariaLabel": "Dismiss notification",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "notification:9:2:summary",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:15:notification:9:2:summary",
+          "label": "Calendar: Meeting 2",
+          "ariaLabel": "Calendar: Meeting 2",
+          "detail": "Live",
+          "enabled": false
+        },
+        {
+          "id": "notification:9:2:body",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:15:notification:9:2:body",
+          "label": "Details",
+          "ariaLabel": "Details",
+          "detail": "",
+          "enabled": false
+        },
+        {
+          "id": "notification:9:2:dismiss:",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:15:notification:9:2:dismiss:",
+          "label": "Dismiss notification",
+          "ariaLabel": "Dismiss notification",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "notification:9:1:summary",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:15:notification:9:1:summary",
+          "label": "Calendar: Meeting 1",
+          "ariaLabel": "Calendar: Meeting 1",
+          "detail": "Live",
+          "enabled": false
+        },
+        {
+          "id": "notification:9:1:body",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:15:notification:9:1:body",
+          "label": "Details",
+          "ariaLabel": "Details",
+          "detail": "",
+          "enabled": false
+        },
+        {
+          "id": "notification:9:1:dismiss:",
+          "domId": "applications:{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"}:15:notification:9:1:dismiss:",
+          "label": "Dismiss notification",
+          "ariaLabel": "Dismiss notification",
+          "detail": "",
+          "enabled": true
+        }
+      ]
+    },
+    "announcer": {
+      "scope": {
+        "id": "1",
+        "generation": "1"
+      },
+      "surface": "popup"
+    },
+    "announcement": {
+      "interrupt": false,
+      "sequence": "4",
+      "correlation": "{\"outcome\":\"notification-arrival\",\"binding\":{\"lifetime\":\"1\",\"session\":\"1\",\"frontend\":\"1\"},\"identity\":{\"service\":\"9\",\"revision\":\"6\",\"incarnations\":[\"5\"]}}",
+      "text": "Calendar: Meeting 5. Open Notifications for details and current actions."
+    }
+  }
+}

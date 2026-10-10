@@ -1,0 +1,14 @@
+
+  notificationAnnouncementTests
+    ok ordinaryArrivalIsPoliteTest passed 1 test(s)
+    ok dndRetainsHistoryWithoutSpeechTest passed 1 test(s)
+    ok criticalNeedsExplicitConsentTest passed 1 test(s)
+    ok optedInCriticalCanInterruptTest passed 1 test(s)
+    ok optInDoesNotEscalateOrdinaryTest passed 1 test(s)
+    ok dndSuppressesOptedInCriticalTest passed 1 test(s)
+    ok duplicateObservationCannotReplayTest passed 1 test(s)
+    ok turningDndOffDoesNotReplayHistoryTest passed 1 test(s)
+    ok optInCannotReplayPastCriticalTest passed 1 test(s)
+    ok existingHistoryIsBaselineOnlyTest passed 1 test(s)
+
+  10 passing (20ms)

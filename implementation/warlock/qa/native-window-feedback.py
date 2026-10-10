@@ -1457,10 +1457,10 @@ raise SystemExit(daemon.run())
       raw=path.read_text() if path.exists() else ''
       return [json.loads(line) for line in raw[:raw.rfind('\n')+1].splitlines()]
      wait(lambda:any(row['kind']=='ready' for row in producer_events()))
-     def notify(producer_index,summary,label,timeout=0,replaces=0):
+     def notify(producer_index,summary,label,timeout=0,replaces=0,urgency=1):
       global notification_serial
       notification_serial+=1
-      temp=notification_control.with_suffix('.tmp');temp.write_text(json.dumps({'serial':notification_serial,'op':'notify','producer':producer_index,'summary':summary,'label':label,'timeout':timeout,'replaces':replaces}));os.replace(temp,notification_control)
+      temp=notification_control.with_suffix('.tmp');temp.write_text(json.dumps({'serial':notification_serial,'op':'notify','producer':producer_index,'summary':summary,'label':label,'timeout':timeout,'replaces':replaces,'urgency':urgency}));os.replace(temp,notification_control)
       return wait(lambda:next((row['id'] for row in producer_events() if row['kind']=='notified' and row['serial']==notification_serial),None))
      def center_body():
       body=popup_body();p=projection()
@@ -1509,6 +1509,39 @@ raise SystemExit(daemon.run())
      popup_capture('notification-history')
      capture=report['popupCaptures'][-1]
      check('HistoryHasActualNativeTextPixels',any(region['accessibleName']=='Warlock fixture: Expiring notification' and region['brightPixels']>15 for region in capture['controlRegions']),capture=capture)
+     # Extend the original journey using real producer messages and physical
+     # policy controls. No fixture-injected permission or frontend outcome.
+     def notification_cues():
+      return [json.loads(line.split(': ',1)[1]) for line in text().splitlines() if line.startswith('announcement-delivery: ') and json.loads(json.loads(line.split(': ',1)[1])['message']['correlation'])['outcome']=='notification-arrival']
+     def cue_for(identifier):
+      row=notification_row(identifier)
+      return next((cue for cue in notification_cues() if row and row['incarnation'] in json.loads(cue['message']['correlation'])['identity']['incarnations']),None)
+     def assert_arrival(identifier,interrupt,stable_focus):
+      cue=wait(lambda:cue_for(identifier));row=notification_row(identifier);correlation=json.loads(cue['message']['correlation'])
+      body=wait(lambda:(body:=center_body()) and any(a.get('sequence')==cue['message']['sequence'] for a in body.get('announcements',[])) and body)
+      observation=next(frame for frame in reversed(incoming()) if frame.get('kind')=='notification-update' and any(entry['incarnation']==row['incarnation'] for entry in frame['snapshot']['entries']))
+      check('NativeNotificationAnnouncement'+row['summary'],cue['message']['interrupt']==interrupt and cue['recipient']==cue['announcer'] and cue['recipient']['surface']=='popup' and correlation['binding']==observation['binding'] and correlation['identity']['service']==observation['snapshot']['service'] and correlation['identity']['revision']==observation['snapshot']['revision'] and len(body['announcements'])==1 and body['announcements'][0]['live']==('assertive' if interrupt else 'polite') and body['focusNode']==stable_focus['node'] and body['focusIdentity']==stable_focus['identity'] and body['documentFocused'] and sum(c['message']['sequence']==cue['message']['sequence'] for c in notification_cues())==1,cue=cue,body=body,observation=observation)
+     keyboard_button('Do not disturb for this session',28)
+     wait(lambda:(body:=center_body()) and any(b['identity']=='notifications:dnd' and 'On' in b['label'] for b in body['buttons']))
+     stable_focus={'node':center_body()['focusNode'],'identity':center_body()['focusIdentity']};prior_cues=len(notification_cues())
+     silent=notify(0,'DND keeps native history','Open DND history')
+     wait(lambda:(body:=center_body()) and 'DND keeps native history' in body['text'])
+     check('NativeDndArrivalKeepsHistoryAndFocusWithoutAnnouncement',notification_row(silent)['state']=='live' and len(notification_cues())==prior_cues and center_body()['focusNode']==stable_focus['node'] and center_body()['focusIdentity']==stable_focus['identity'] and center_body()['documentFocused'] and cue_for(silent) is None,body=center_body(),row=notification_row(silent))
+     keyboard_button('Do not disturb for this session',28)
+     wait(lambda:(body:=center_body()) and any(b['identity']=='notifications:dnd' and 'Off' in b['label'] for b in body['buttons']))
+     check('NativeDndOffDoesNotReplaySuppressedHistory',len(notification_cues())==prior_cues and cue_for(silent) is None)
+     stable_focus={'node':center_body()['focusNode'],'identity':center_body()['focusIdentity']}
+     unopted=notify(0,'Unopted critical stays polite','Open unopted critical',urgency=2)
+     assert_arrival(unopted,False,stable_focus)
+     keyboard_button('Allow critical notification interruptions for this session',28)
+     wait(lambda:(body:=center_body()) and any(b['identity']=='notifications:critical-interrupt' and 'On' in b['label'] for b in body['buttons']))
+     stable_focus={'node':center_body()['focusNode'],'identity':center_body()['focusIdentity']};prior_cues=len(notification_cues())
+     opted=notify(0,'Opted critical interruption','Open opted critical',urgency=2)
+     assert_arrival(opted,True,stable_focus)
+     ordinary=notify(0,'Ordinary remains polite','Open ordinary notification',urgency=1)
+     assert_arrival(ordinary,False,stable_focus)
+     report['nativeNotificationAnnouncementPolicyObserved']=True
+     report['notificationAnnouncementScope']='Real native producer urgency, physical DND/consent controls, exact once-only announcement correlation, actual WebKit polite/assertive region and retained DOM focus; actual speech/braille and independent original acceptance remain open.'
      key(1);wait(lambda:projection()['mode']=='closed')
      check('NotificationEscapeClosesCenterWithoutWindowEffects',len(journal())==before_effects and not launches())
      notification_serial+=1;notification_control.write_text(json.dumps({'serial':notification_serial,'op':'quit'}));producer.wait(timeout=5)

@@ -25,7 +25,7 @@ try{
 
  await call('Page.enable');await call('Runtime.enable');await viewport(1360,1000);
  const fixture=JSON.parse(fs.readFileSync(path.join(out,'announcements.json'),'utf8'));
- await call('Page.navigate',{url:base+'/qa/announcement-host.html'});await until('["bar1","bar2","popup"].every(id=>typeof document.getElementById(id).contentWindow.receiveAnnouncement==="function")');
+ await call('Page.navigate',{url:base+'/qa/announcement-host.html'});await until('["bar1","bar2","popup"].every(id=>typeof document.getElementById(id)?.contentWindow?.receiveAnnouncement==="function")');
  const windows=['bar1','bar2','popup'];
  async function frame(value){await evaluate(`for(const id of ${JSON.stringify(windows)})document.getElementById(id).contentWindow.receivePresentation(${JSON.stringify(value.frame)});`);await sleep(80);}
  function scope(id){return {id:String(id),generation:'1'};}
@@ -34,7 +34,7 @@ try{
   const packet={announcementProtocol:1,kind:'announcement-projection',recipient,announcer:value.announcer,publication:value.frame.publication,lease:value.frame.lease,message:value.announcement,deliver:deliver&&active};
   await evaluate(`document.getElementById(${JSON.stringify(id)}).contentWindow.receiveAnnouncement(${JSON.stringify(packet)})`);
  }await sleep(80);}
- async function observe(){return evaluate(`(()=>{return ${JSON.stringify(windows)}.map(id=>{const w=document.getElementById(id).contentWindow,d=w.document;return {id,live:[...d.querySelectorAll('[aria-live="polite"]')].map(n=>({text:n.textContent,sequence:n.querySelector('[data-announcement-sequence]')?.dataset.announcementSequence||null,correlation:n.querySelector('[data-announcement-correlation]')?.dataset.announcementCorrelation||null})),visual:[...d.querySelectorAll('.surface-status,.surface-popup>p[role="status"]')].map(n=>({text:n.textContent,live:n.getAttribute('aria-live')})),focus:d.activeElement?.dataset.surfaceControl||null,packets:w.nativePackets||[]};});})()`);}
+ async function observe(){return evaluate(`(()=>{return ${JSON.stringify(windows)}.map(id=>{const w=document.getElementById(id).contentWindow,d=w.document;return {id,live:[...d.querySelectorAll('[aria-live="polite"],[aria-live="assertive"]')].map(n=>({live:n.getAttribute('aria-live'),text:n.textContent,sequence:n.querySelector('[data-announcement-sequence]')?.dataset.announcementSequence||null,correlation:n.querySelector('[data-announcement-correlation]')?.dataset.announcementCorrelation||null})),visual:[...d.querySelectorAll('.surface-status,.surface-popup>p[role="status"]')].map(n=>({text:n.textContent,live:n.getAttribute('aria-live')})),focus:d.activeElement?.dataset.surfaceControl||null,packets:w.nativePackets||[]};});})()`);}
  const first=fixture.settingsFrame;
  await frame(first);await metadata({...first,announcement:null});
  check('Only the designated popup owns a live region before refusal', (await observe()).every(row=>row.live.length===(row.id==='popup'?1:0)));
@@ -60,6 +60,28 @@ try{
  check('Nonowner recipient cannot announce even with a forged delivery flag',await evaluate('spokenMutations.length===2&&document.getElementById("bar1").contentWindow.document.querySelectorAll("[aria-live=polite]").length===0'));
  check('Announcement projection submits no actions or focus effects', (await observe()).every(row=>row.packets.every(p=>!['surface-action','surface-query','window-effect','application-launch','surface-focus'].includes(p.kind))));
  report.observations={first:delivered,relocated,mutations:await evaluate('spokenMutations')};
+ if(fs.existsSync(path.join(out,'notification-announcements.json'))){
+  const notifications=JSON.parse(fs.readFileSync(path.join(out,'notification-announcements.json'),'utf8'));
+  await call('Page.navigate',{url:base+'/qa/announcement-host.html?notifications'});
+  await until('["bar1","bar2","popup"].every(id=>typeof document.getElementById(id)?.contentWindow?.receiveAnnouncement==="function")');
+  await frame(notifications.notificationFrame);await metadata(notifications.notificationFrame,false);
+  const button=identity=>`document.getElementById("popup").contentWindow.document.querySelector('[data-surface-control="${identity}"]')`;
+  check('Session permission controls have readable names and unpressed state',await evaluate(`${button('notifications:dnd')}?.getAttribute('aria-pressed')==='false'&&${button('notifications:critical-interrupt')}?.getAttribute('aria-pressed')==='false'`));
+  await evaluate(`${button('notifications:dnd')}.focus()`);
+  await call('Input.dispatchKeyEvent',{type:'keyDown',key:'Enter',code:'Enter'});await call('Input.dispatchKeyEvent',{type:'keyUp',key:'Enter',code:'Enter'});await sleep(50);
+  check('Actual keyboard submits one current policy control',await evaluate('document.getElementById("popup").contentWindow.nativePackets.filter(p=>p.kind==="surface-action"&&p.id==="notifications:dnd").length===1'));
+  await frame(notifications.dndFrame);await metadata(notifications.dndFrame,false);
+  check('DND updates visual history without replaying a message or moving control focus',await evaluate(`${button('notifications:dnd')}.getAttribute('aria-pressed')==='true'&&document.getElementById("popup").contentWindow.document.activeElement===${button('notifications:dnd')}&&document.getElementById("popup").contentWindow.document.body.textContent.includes('Meeting 2')`) && (await observe()).every(row=>row.live.every(live=>!live.sequence)));
+  await frame(notifications.politeFrame);await metadata(notifications.politeFrame,true);
+  let observed=await observe();check('Unopted critical arrival has one polite owner',observed.every(row=>row.live.length===(row.id==='popup'?1:0))&&observed.find(row=>row.id==='popup').live[0].live==='polite');
+  await frame(notifications.urgentFrame);await metadata(notifications.urgentFrame,true);
+  observed=await observe();check('Opted critical arrival has one assertive owner',observed.every(row=>row.live.length===(row.id==='popup'?1:0))&&observed.find(row=>row.id==='popup').live[0].live==='assertive'&&observed.find(row=>row.id==='popup').live[0].correlation===notifications.urgentFrame.announcement.correlation);
+  await metadata(notifications.urgentFrame,true);check('Repeated urgent delivery retains one serial',await evaluate('document.getElementById("popup").contentWindow.document.querySelectorAll("[data-announcement-sequence]").length===1'));
+  await frame(notifications.ordinaryWithConsentFrame);await metadata(notifications.ordinaryWithConsentFrame,true);
+  observed=await observe();check('Ordinary arrival remains polite with critical consent enabled',observed.find(row=>row.id==='popup').live[0].live==='polite');
+  check('Arrival projections retain the focused policy control',await evaluate(`document.getElementById("popup").contentWindow.document.activeElement===${button('notifications:dnd')}`));
+  report.notificationObservations=observed;
+ }
  check('No browser exceptions',report.errors.length===0,report.errors);report.passed=true;
 }catch(error){report.error=String(error.stack||error);}
 finally{

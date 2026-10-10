@@ -1,28 +1,37 @@
-module Notifications exposing (Model, Snapshot, Entry, Target, initial, decoder, observe, reconcile, target, identity, encodeIntent, live, propose, receive)
+module Notifications exposing (Policy, Urgency(..), Model, Snapshot, Entry, Target, initial, configure, arrivals, critical, decoder, observe, reconcile, target, identity, encodeIntent, live, propose, receive)
 
 import Json.Decode as D
 import Json.Encode as E
 import Set
 import UInt64 exposing (Counter)
 
-type alias Entry = { id : Counter, incarnation : Counter, producer : String, app : String, summary : String, body : String, state : String, actions : List { key : String, label : String } }
+type Urgency = Low | Normal | Critical
+type alias Policy = { doNotDisturb : Bool, interruptCritical : Bool }
+type alias Entry = { urgency : Urgency, id : Counter, incarnation : Counter, producer : String, app : String, summary : String, body : String, state : String, actions : List { key : String, label : String } }
 type alias Snapshot = { service : Counter, revision : Counter, available : Bool, reason : String, entries : List Entry }
 type alias Target = { service : Counter, id : Counter, incarnation : Counter, producer : String, action : String, verb : String }
-type alias Model = { snapshot : Maybe Snapshot, pending : Maybe { request : Counter, target : Target }, spent : List Target, notice : String }
+type alias Model = { policy : Policy, snapshot : Maybe Snapshot, pending : Maybe { request : Counter, target : Target }, spent : List Target, notice : String }
 
 initial : Model
-initial = {snapshot=Nothing,pending=Nothing,spent=[],notice="Loading notifications…"}
+initial = {policy={doNotDisturb=False,interruptCritical=False},snapshot=Nothing,pending=Nothing,spent=[],notice="Loading notifications…"}
 strict fields child = D.keyValuePairs D.value |> D.andThen (\pairs -> if List.sort (List.map Tuple.first pairs)==List.sort fields then child else D.fail "Notification fields")
 positive = UInt64.decoder |> D.andThen (\value -> if value/=UInt64.zero then D.succeed value else D.fail "Notification identity")
 bounded limit = D.string |> D.andThen (\value -> if String.length value<=limit && not (String.any (\c -> Char.toCode c<32 && c/='\n' && c/='\t') value) then D.succeed value else D.fail "Notification text")
 unique values = List.length values==Set.size (Set.fromList values)
 entryDecoder : D.Decoder Entry
-entryDecoder = strict ["id","incarnation","producer","app","summary","body","state","actions"] (D.map8 Entry
-    (D.field "id" positive) (D.field "incarnation" positive)
-    (D.field "producer" (bounded 128 |> D.andThen (\value -> if String.startsWith ":" value then D.succeed value else D.fail "Notification producer")))
-    (D.field "app" (bounded 128)) (D.field "summary" (bounded 256)) (D.field "body" (bounded 1024))
-    (D.field "state" (D.string |> D.andThen (\value -> if List.member value ["live","expired","invoked","dismissed","closed","disconnected","unknown","unavailable"] then D.succeed value else D.fail "Notification state")))
-    (D.field "actions" (D.list (strict ["key","label"] (D.map2 (\key label -> {key=key,label=label}) (D.field "key" (bounded 64)) (D.field "label" (bounded 128)))))))
+entryDecoder =
+    let base = D.map8 (\id incarnation producer app summary body state actions -> {urgency=Normal,id=id,incarnation=incarnation,producer=producer,app=app,summary=summary,body=body,state=state,actions=actions})
+            (D.field "id" positive) (D.field "incarnation" positive)
+            (D.field "producer" (bounded 128 |> D.andThen (\value -> if String.startsWith ":" value then D.succeed value else D.fail "Notification producer")))
+            (D.field "app" (bounded 128)) (D.field "summary" (bounded 256)) (D.field "body" (bounded 1024))
+            (D.field "state" (D.string |> D.andThen (\value -> if List.member value ["live","expired","invoked","dismissed","closed","disconnected","unknown","unavailable"] then D.succeed value else D.fail "Notification state")))
+            (D.field "actions" (D.list (strict ["key","label"] (D.map2 (\key label -> {key=key,label=label}) (D.field "key" (bounded 64)) (D.field "label" (bounded 128))))))
+        urgency = D.int |> D.andThen (\value -> case value of
+            0 -> D.succeed Low
+            1 -> D.succeed Normal
+            2 -> D.succeed Critical
+            _ -> D.fail "Notification urgency")
+    in D.oneOf [strict ["id","incarnation","producer","app","summary","body","state","actions","urgency"] (D.map2 (\entry level -> {entry|urgency=level}) base (D.field "urgency" urgency)),strict ["id","incarnation","producer","app","summary","body","state","actions"] base]
     |> D.andThen (\entry -> if List.length entry.actions<=8 && unique (List.map .key entry.actions) && List.all (\a -> not (String.isEmpty a.key) && not (String.isEmpty a.label)) entry.actions && (entry.state=="live" || List.isEmpty entry.actions) then D.succeed entry else D.fail "Notification action lifecycle")
 decoder : D.Decoder Snapshot
 decoder = strict ["service","revision","available","reason","entries"] (D.map5 Snapshot
@@ -70,3 +79,18 @@ reconcile snapshot model =
             if current.snapshot==Just snapshot && not (List.any (\row -> row.id==pending.target.id && row.incarnation==pending.target.incarnation && row.producer==pending.target.producer && row.state=="live") snapshot.entries) then
                 {current | pending=Nothing,notice="Notification target is no longer live. Its action will not be repeated."}
             else current
+
+
+-- Session controls are explicit user policy, not producer-supplied hints.
+-- Already-observed/suppressed history is never replayed when policy changes.
+configure : Policy -> Model -> Model
+configure policy model = {model|policy=policy}
+critical : Entry -> Bool
+critical entry = entry.urgency==Critical
+arrivals : Model -> Model -> List Entry
+arrivals before after =
+    case (before.snapshot,after.snapshot) of
+        (Just old,Just current) ->
+            if not current.available || current.service/=old.service || UInt64.compare current.revision old.revision/=GT || after.policy.doNotDisturb then [] else
+            current.entries |> List.filter (\entry -> entry.state=="live" && not (List.any (\prior -> prior.incarnation==entry.incarnation) old.entries)) |> List.sortWith (\a b -> UInt64.compare a.incarnation b.incarnation)
+        _ -> []

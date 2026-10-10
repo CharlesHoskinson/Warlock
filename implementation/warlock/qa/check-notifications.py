@@ -22,8 +22,8 @@ def wait(fn):
   time.sleep(.005)
  raise AssertionError('Notification fixture deadline')
 def producer(address):return Gio.DBusConnection.new_for_address_sync(address,Gio.DBusConnectionFlags.AUTHENTICATION_CLIENT|Gio.DBusConnectionFlags.MESSAGE_BUS_CONNECTION,None,None)
-def notify(connection,label,replaces=0,timeout=0):
- return connection.call_sync(NAME,PATH,NAME,'Notify',GLib.Variant('(susssasa{sv}i)',('Fixture',replaces,'',label,'Notification body',['open','Open item'],{},timeout)),GLib.VariantType.new('(u)'),0,2000,None).unpack()[0]
+def notify(connection,label,replaces=0,timeout=0,hints=None):
+ return connection.call_sync(NAME,PATH,NAME,'Notify',GLib.Variant('(susssasa{sv}i)',('Fixture',replaces,'',label,'Notification body',['open','Open item'],hints or {},timeout)),GLib.VariantType.new('(u)'),0,2000,None).unpack()[0]
 def capture(service,identifier,verb='invoke'):
  snapshot=service.snapshot();row=next(r for r in snapshot['entries'] if r['id']==str(identifier))
  return {'service':snapshot['service'],'id':row['id'],'incarnation':row['incarnation'],'producer':row['producer'],'action':'open' if verb=='invoke' else '', 'verb':verb}
@@ -81,6 +81,17 @@ try:
   try:service.read(bad,Client())
   except Refused:rejected=True
   check('Frontend path cannot select notification authority',rejected)
+  for value in (0,1,2):
+   identifier=notify(first,'Urgency '+str(value),hints={'urgency':GLib.Variant('y',value)})
+   check('Native BYTE urgency retained '+str(value),next(row for row in service.snapshot()['entries'] if row['id']==str(identifier))['urgency']==value)
+  critical=notify(first,'Critical retains attention until explicitly closed',timeout=40,hints={'urgency':GLib.Variant('y',2)})
+  time.sleep(.06)
+  check('Native critical notification never expires automatically',next(row for row in service.snapshot()['entries'] if row['id']==str(critical))['state']=='live')
+  for hint in [GLib.Variant('s','critical'),GLib.Variant('i',2),GLib.Variant('b',True),GLib.Variant('y',255)]:
+   identifier=notify(first,'Malformed urgency',hints={'urgency':hint})
+   check('Malformed urgency cannot elevate '+hint.get_type_string()+str(hint.unpack()),next(row for row in service.snapshot()['entries'] if row['id']==str(identifier))['urgency']==1)
+
+
 finally:
  for connection in [first,second]:
   if connection:

@@ -6465,9 +6465,43 @@
         {
           "name": "announce-notification arrival",
           "oracle": "one correlated message appears with reachable detail/recovery and no focus relocation; repeated receipts do not reannounce",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/notification-announcements/manifest.json",
+              "sha256": "f46d831c90cbfe05ae630575597c327b661a7a6baa5497acec4d60fe02685114",
+              "scope": "Actual Elm session policy and strict native urgency; compiled owner/permission/identity/repeat/focus/batch and multi-view browser checks. Original protected native notification action/expiry/ID reuse/pixels/cleanup preserved; physical keyboard DND/critical-consent controls and real producer arrivals show suppression/no replay, exact once-only correlation, WebKit polite/assertive regions and the same actual focused node/control/document. Speech/braille and independent acceptance remain unobserved.",
+              "sourceBaseRevision": "b168b59dc6b5dfb42494f30341df48ef4dba6bad",
+              "sourceHashes": {
+                "implementation/warlock/src/Notifications.elm": "f148524d629d1fcedd7e4947fd96b985f1d8883a5e0d1223cade9332bcab74f5",
+                "implementation/warlock/src/Desktop.elm": "e11b593060a7e72977f26c101671abf74444d5c45b2c4d231cb9bdd233b8f7f7",
+                "implementation/warlock/src/Surface.elm": "4d14497e7916d153825c9cb7259eafc65f13af7a6bb7dac8eb3957364a089d28",
+                "implementation/warlock/src/OutcomeAnnouncements.elm": "62c15f57d57a2585b8ee40f30d3ea5d90eaec6d379c65de2826346c518c5e1b5",
+                "implementation/warlock/src/Announcement.elm": "71bc1e29724266c26301716ea0a1c7452f02c9f67e140e1bd1ec33c5166d402f",
+                "implementation/warlock/native/announcement-transport.h": "4f0e27f66ad1bffe7d33211c63e593c20dc7fd4fb3729f69d0c745a21c108b74",
+                "implementation/warlock/adapter/notification_service.py": "ef395d8c16fcfb6456fba120f48bfcbe3e037e62693a5bcfb6813cd0cbc57a91",
+                "implementation/warlock/assets/elm.js": "43214290a3d009d403670c1ab8155b76001fd7286d97fe799497245e79cb4ea8",
+                "implementation/warlock/assets/bar.js": "e57fea4b65aa0b51446a4ff99da907f5f1dfa46a0cb1d4d1364c9a47ca68fc4b",
+                "implementation/warlock/assets/popup.js": "3b202a3fb95bd8ed3a190bc0bbc3d643f062525771b6269c35d1dc19454a98f5",
+                "implementation/warlock/qa/notification-announcements.qnt": "1368bd035906027b0d30a983755aa30192529101782f2600140973ea806e24cb",
+                "implementation/warlock/qa/notification-announcements_test.qnt": "91c5aa5fc3b02597e4f15005a74599ee4c6937c7b8938a8c14f99bcb73fb7481",
+                "implementation/warlock/qa/check-notification-announcements.py": "5ca04721c8a62802ba93dc9b29c4fe7082c5c8d37fd1b1e0b7f876585e0cf9f2",
+                "implementation/warlock/qa/NotificationAnnouncementReplay.elm": "d45fc62d9f4b684aaa5da0b82a02489e05083611f23b9ec5bb033dccf15a2149",
+                "implementation/warlock/qa/check-notifications.py": "4604c53e57c000037041ecd9befeb590be8c4d49755070ed64f2b1d9f2284cec",
+                "implementation/warlock/qa/announcement-browser.mjs": "36c9146f87f2314f8d378cadbee0ebe3eda2b3089a2fce869c3a05d86203fa23",
+                "implementation/warlock/qa/check-search.py": "d27ae28158165935dde0a09f7b7cf622f212c0c195208e3c05ec0430969e0e3e",
+                "implementation/warlock/qa/current-search-build.json": "a256021bde64dabfd458982d4ab3251fc5b676a91bb7902e6a7955aa10a2b441",
+                "implementation/warlock/qa/native-window-feedback.py": "41acee31cf9c9e18543faa982532d6d7e3e1490bc995856a1022dd38cdbea6a5",
+                "implementation/warlock/qa/notification-producer.py": "cc8864b29ef532fb38baaf9b024675f6fe5d8d19bd22ebd4974dd1bd413e4f5f",
+                "implementation/warlock/README.md": "ed6022d024616cb75cd353a5608ae0dc63ee81e23f810bffdab1a23733f25ea6",
+                "implementation/warlock/src/SurfaceRenderer.elm": "d262adb619f822604bf703567ddb86b0b73987798c1e829476f32660fa18f567",
+                "implementation/warlock/assets/popup-adapter.js": "84cbf309cd05087501b189c53ccc0a5646c34eedf5c02c883375942f018f587c"
+              },
+              "reviewerDisposition": "Root observed scoped implementation/component/native transport/keyboard/node focus results; independent original-scenario acceptance remains open.",
+              "observedUTC": "2026-10-10T04:29:13.182909+00:00"
+            }
+          ],
+          "missingObservation": "Actual speech and braille, repeated-receipt delivery and reachable recovery/relationships through native AT.; Independent original-scenario acceptance.; Native batch/coalescing stress and full physical control/profile qualification."
         },
         {
           "name": "announce-notification expiration",
@@ -6486,9 +6520,43 @@
         {
           "name": "announcement-dnd",
           "oracle": "visual history updates without speech interruption or focus relocation",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/notification-announcements/manifest.json",
+              "sha256": "f46d831c90cbfe05ae630575597c327b661a7a6baa5497acec4d60fe02685114",
+              "scope": "Actual Elm session policy and strict native urgency; compiled owner/permission/identity/repeat/focus/batch and multi-view browser checks. Original protected native notification action/expiry/ID reuse/pixels/cleanup preserved; physical keyboard DND/critical-consent controls and real producer arrivals show suppression/no replay, exact once-only correlation, WebKit polite/assertive regions and the same actual focused node/control/document. Speech/braille and independent acceptance remain unobserved.",
+              "sourceBaseRevision": "b168b59dc6b5dfb42494f30341df48ef4dba6bad",
+              "sourceHashes": {
+                "implementation/warlock/src/Notifications.elm": "f148524d629d1fcedd7e4947fd96b985f1d8883a5e0d1223cade9332bcab74f5",
+                "implementation/warlock/src/Desktop.elm": "e11b593060a7e72977f26c101671abf74444d5c45b2c4d231cb9bdd233b8f7f7",
+                "implementation/warlock/src/Surface.elm": "4d14497e7916d153825c9cb7259eafc65f13af7a6bb7dac8eb3957364a089d28",
+                "implementation/warlock/src/OutcomeAnnouncements.elm": "62c15f57d57a2585b8ee40f30d3ea5d90eaec6d379c65de2826346c518c5e1b5",
+                "implementation/warlock/src/Announcement.elm": "71bc1e29724266c26301716ea0a1c7452f02c9f67e140e1bd1ec33c5166d402f",
+                "implementation/warlock/native/announcement-transport.h": "4f0e27f66ad1bffe7d33211c63e593c20dc7fd4fb3729f69d0c745a21c108b74",
+                "implementation/warlock/adapter/notification_service.py": "ef395d8c16fcfb6456fba120f48bfcbe3e037e62693a5bcfb6813cd0cbc57a91",
+                "implementation/warlock/assets/elm.js": "43214290a3d009d403670c1ab8155b76001fd7286d97fe799497245e79cb4ea8",
+                "implementation/warlock/assets/bar.js": "e57fea4b65aa0b51446a4ff99da907f5f1dfa46a0cb1d4d1364c9a47ca68fc4b",
+                "implementation/warlock/assets/popup.js": "3b202a3fb95bd8ed3a190bc0bbc3d643f062525771b6269c35d1dc19454a98f5",
+                "implementation/warlock/qa/notification-announcements.qnt": "1368bd035906027b0d30a983755aa30192529101782f2600140973ea806e24cb",
+                "implementation/warlock/qa/notification-announcements_test.qnt": "91c5aa5fc3b02597e4f15005a74599ee4c6937c7b8938a8c14f99bcb73fb7481",
+                "implementation/warlock/qa/check-notification-announcements.py": "5ca04721c8a62802ba93dc9b29c4fe7082c5c8d37fd1b1e0b7f876585e0cf9f2",
+                "implementation/warlock/qa/NotificationAnnouncementReplay.elm": "d45fc62d9f4b684aaa5da0b82a02489e05083611f23b9ec5bb033dccf15a2149",
+                "implementation/warlock/qa/check-notifications.py": "4604c53e57c000037041ecd9befeb590be8c4d49755070ed64f2b1d9f2284cec",
+                "implementation/warlock/qa/announcement-browser.mjs": "36c9146f87f2314f8d378cadbee0ebe3eda2b3089a2fce869c3a05d86203fa23",
+                "implementation/warlock/qa/check-search.py": "d27ae28158165935dde0a09f7b7cf622f212c0c195208e3c05ec0430969e0e3e",
+                "implementation/warlock/qa/current-search-build.json": "a256021bde64dabfd458982d4ab3251fc5b676a91bb7902e6a7955aa10a2b441",
+                "implementation/warlock/qa/native-window-feedback.py": "41acee31cf9c9e18543faa982532d6d7e3e1490bc995856a1022dd38cdbea6a5",
+                "implementation/warlock/qa/notification-producer.py": "cc8864b29ef532fb38baaf9b024675f6fe5d8d19bd22ebd4974dd1bd413e4f5f",
+                "implementation/warlock/README.md": "ed6022d024616cb75cd353a5608ae0dc63ee81e23f810bffdab1a23733f25ea6",
+                "implementation/warlock/src/SurfaceRenderer.elm": "d262adb619f822604bf703567ddb86b0b73987798c1e829476f32660fa18f567",
+                "implementation/warlock/assets/popup-adapter.js": "84cbf309cd05087501b189c53ccc0a5646c34eedf5c02c883375942f018f587c"
+              },
+              "reviewerDisposition": "Root observed scoped implementation/component/native transport/keyboard/node focus results; independent original-scenario acceptance remains open.",
+              "observedUTC": "2026-10-10T04:29:13.182909+00:00"
+            }
+          ],
+          "missingObservation": "Actual speech and braille, repeated-receipt delivery and reachable recovery/relationships through native AT.; Independent original-scenario acceptance.; Native batch/coalescing stress and full physical control/profile qualification."
         },
         {
           "name": "announcement-expiration-irrelevant",
@@ -6500,9 +6568,43 @@
         {
           "name": "announcement-urgency-opt-in",
           "oracle": "announcement follows the opted-in interruption policy without focus theft",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/notification-announcements/manifest.json",
+              "sha256": "f46d831c90cbfe05ae630575597c327b661a7a6baa5497acec4d60fe02685114",
+              "scope": "Actual Elm session policy and strict native urgency; compiled owner/permission/identity/repeat/focus/batch and multi-view browser checks. Original protected native notification action/expiry/ID reuse/pixels/cleanup preserved; physical keyboard DND/critical-consent controls and real producer arrivals show suppression/no replay, exact once-only correlation, WebKit polite/assertive regions and the same actual focused node/control/document. Speech/braille and independent acceptance remain unobserved.",
+              "sourceBaseRevision": "b168b59dc6b5dfb42494f30341df48ef4dba6bad",
+              "sourceHashes": {
+                "implementation/warlock/src/Notifications.elm": "f148524d629d1fcedd7e4947fd96b985f1d8883a5e0d1223cade9332bcab74f5",
+                "implementation/warlock/src/Desktop.elm": "e11b593060a7e72977f26c101671abf74444d5c45b2c4d231cb9bdd233b8f7f7",
+                "implementation/warlock/src/Surface.elm": "4d14497e7916d153825c9cb7259eafc65f13af7a6bb7dac8eb3957364a089d28",
+                "implementation/warlock/src/OutcomeAnnouncements.elm": "62c15f57d57a2585b8ee40f30d3ea5d90eaec6d379c65de2826346c518c5e1b5",
+                "implementation/warlock/src/Announcement.elm": "71bc1e29724266c26301716ea0a1c7452f02c9f67e140e1bd1ec33c5166d402f",
+                "implementation/warlock/native/announcement-transport.h": "4f0e27f66ad1bffe7d33211c63e593c20dc7fd4fb3729f69d0c745a21c108b74",
+                "implementation/warlock/adapter/notification_service.py": "ef395d8c16fcfb6456fba120f48bfcbe3e037e62693a5bcfb6813cd0cbc57a91",
+                "implementation/warlock/assets/elm.js": "43214290a3d009d403670c1ab8155b76001fd7286d97fe799497245e79cb4ea8",
+                "implementation/warlock/assets/bar.js": "e57fea4b65aa0b51446a4ff99da907f5f1dfa46a0cb1d4d1364c9a47ca68fc4b",
+                "implementation/warlock/assets/popup.js": "3b202a3fb95bd8ed3a190bc0bbc3d643f062525771b6269c35d1dc19454a98f5",
+                "implementation/warlock/qa/notification-announcements.qnt": "1368bd035906027b0d30a983755aa30192529101782f2600140973ea806e24cb",
+                "implementation/warlock/qa/notification-announcements_test.qnt": "91c5aa5fc3b02597e4f15005a74599ee4c6937c7b8938a8c14f99bcb73fb7481",
+                "implementation/warlock/qa/check-notification-announcements.py": "5ca04721c8a62802ba93dc9b29c4fe7082c5c8d37fd1b1e0b7f876585e0cf9f2",
+                "implementation/warlock/qa/NotificationAnnouncementReplay.elm": "d45fc62d9f4b684aaa5da0b82a02489e05083611f23b9ec5bb033dccf15a2149",
+                "implementation/warlock/qa/check-notifications.py": "4604c53e57c000037041ecd9befeb590be8c4d49755070ed64f2b1d9f2284cec",
+                "implementation/warlock/qa/announcement-browser.mjs": "36c9146f87f2314f8d378cadbee0ebe3eda2b3089a2fce869c3a05d86203fa23",
+                "implementation/warlock/qa/check-search.py": "d27ae28158165935dde0a09f7b7cf622f212c0c195208e3c05ec0430969e0e3e",
+                "implementation/warlock/qa/current-search-build.json": "a256021bde64dabfd458982d4ab3251fc5b676a91bb7902e6a7955aa10a2b441",
+                "implementation/warlock/qa/native-window-feedback.py": "41acee31cf9c9e18543faa982532d6d7e3e1490bc995856a1022dd38cdbea6a5",
+                "implementation/warlock/qa/notification-producer.py": "cc8864b29ef532fb38baaf9b024675f6fe5d8d19bd22ebd4974dd1bd413e4f5f",
+                "implementation/warlock/README.md": "ed6022d024616cb75cd353a5608ae0dc63ee81e23f810bffdab1a23733f25ea6",
+                "implementation/warlock/src/SurfaceRenderer.elm": "d262adb619f822604bf703567ddb86b0b73987798c1e829476f32660fa18f567",
+                "implementation/warlock/assets/popup-adapter.js": "84cbf309cd05087501b189c53ccc0a5646c34eedf5c02c883375942f018f587c"
+              },
+              "reviewerDisposition": "Root observed scoped implementation/component/native transport/keyboard/node focus results; independent original-scenario acceptance remains open.",
+              "observedUTC": "2026-10-10T04:29:13.182909+00:00"
+            }
+          ],
+          "missingObservation": "Actual speech and braille, repeated-receipt delivery and reachable recovery/relationships through native AT.; Independent original-scenario acceptance.; Native batch/coalescing stress and full physical control/profile qualification."
         }
       ]
     },
@@ -10668,5 +10770,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-10T04:09:40.096748+00:00"
+  "updatedUTC": "2026-10-10T04:29:13.182909+00:00"
 }

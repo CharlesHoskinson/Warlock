@@ -30,7 +30,9 @@ static gboolean announcement_shape(JsonObject *projection) {
     if(JSON_NODE_HOLDS_NULL(message))return TRUE;
     if(!JSON_NODE_HOLDS_OBJECT(message))return FALSE;
     const char *const fields[]={"sequence","correlation","text"};JsonObject *body=json_node_get_object(message);guint64 sequence;
-    return surface_fields(body,fields,3) && surface_uint(json_object_get_member(body,"sequence"),&sequence) && sequence && surface_text(json_object_get_member(body,"correlation"),8192,FALSE) && surface_text(json_object_get_member(body,"text"),4096,FALSE);
+    const char *const current[]={"sequence","correlation","text","interrupt"};
+    gboolean extended=json_object_has_member(body,"interrupt");
+    return surface_fields(body,extended?current:fields,extended?4:3) && (!extended || json_node_get_value_type(json_object_get_member(body,"interrupt"))==G_TYPE_BOOLEAN) && surface_uint(json_object_get_member(body,"sequence"),&sequence) && sequence && surface_text(json_object_get_member(body,"correlation"),8192,FALSE) && surface_text(json_object_get_member(body,"text"),4096,FALSE);
 }
 static void announcement_save(JsonObject *projection) {
     if(announcement_projection)json_node_unref(announcement_projection);

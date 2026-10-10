@@ -24,7 +24,7 @@ Use the approved [layer roles](layered-windows/v1/DECISIONS.md): the keyboard-re
 
 Every cue retains a non-color shape or text alternative. High contrast, effects-off, reduced transparency and reduced motion preserve information and usable controls. Measure rendered labels, focus, targets and reflow; a token value or DOM assertion alone is insufficient. Expose complete native control semantics and use one announcement owner. Prefer keyed control identity and explicit focus changes over refocusing on unrelated updates.
 
-Effects-off and reduced transparency are requirements awaiting implementation. Current native shell colors and the snap glow are provisional rather than full layered-token adoption. Inset focus rings avoid clipping but do not close the voted outer-indicator contract. Always on top needs a stable checkable label with observed checked state; current label-swapping and missing checked semantics remain product work. Taskbar Pin/Unpin names application persistence only.
+Effects-off and reduced-transparency preferences now have native keyboard save/restart evidence ([scope](../implementation/warlock/qa/evidence/layer-appearance/README.md)). Current native shell colors and the snap glow are provisional rather than full layered-token adoption. Inset focus rings avoid clipping but do not close the voted outer-indicator contract. Always on top needs a stable checkable label with observed checked state; current label-swapping and missing checked semantics remain product work. Taskbar Pin/Unpin names application persistence only.
 
 ## New and evolving surfaces
 
@@ -35,3 +35,5 @@ Preserve effective Omarchy keywords, commands, bindings and user overrides. The 
 ## Contributor plugin
 
 The [Warlock contributor plugin](../plugins/warlock-contributor/README.md) supports Claude Code, Codex and Grok through one shared offline checker and skill. It scaffolds original-scenario work, protects source ownership and records bounded evidence. The [design contribution guide](CONTRIBUTING.md) explains how to use it for product design changes and for catalog/documentation work. Checker compliance does not accept a GUI feature, and optional host hooks do not replace explicit loop checks.
+
+Notification arrivals share the root-selected announcement owner with matched refusals. The notification center exposes session DND and critical-interruption consent with pressed state; permitted arrivals are polite unless an explicitly allowed critical arrival uses assertive delivery. Native transport/keyboard/current-node focus observations are recorded [here](../implementation/warlock/qa/evidence/notification-announcements/README.md); speech/braille and full notification relevance remain open.

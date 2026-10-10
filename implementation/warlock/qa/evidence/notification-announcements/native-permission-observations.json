@@ -1,0 +1,2301 @@
+[
+  {
+    "name": "NativeDndArrivalKeepsHistoryAndFocusWithoutAnnouncement",
+    "passed": true,
+    "body": {
+      "focusNode": 4,
+      "focusIdentity": "notifications:dnd",
+      "announcements": [
+        {
+          "text": "Warlock fixture: Reuse replacement. Open Notifications for details and current actions.",
+          "sequence": "5",
+          "correlation": "{\"outcome\":\"notification-arrival\",\"binding\":{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"},\"identity\":{\"service\":\"14543321295070971645\",\"revision\":\"10\",\"incarnations\":[\"5\"]}}",
+          "live": "polite"
+        }
+      ],
+      "previews": [],
+      "motionProfile": "full",
+      "motionAnimations": 0,
+      "queryObservations": [],
+      "compositionEvents": [],
+      "composing": false,
+      "palette": {
+        "background": "rgb(23, 32, 42)",
+        "foreground": "rgb(244, 246, 247)"
+      },
+      "focusStyle": {
+        "color": "rgb(244, 246, 247)",
+        "background": "rgb(38, 53, 68)",
+        "outlineColor": "rgb(126, 215, 255)",
+        "outlineWidth": "3px",
+        "outlineOffset": "1px",
+        "x": 11,
+        "y": 61,
+        "width": 678,
+        "height": 54
+      },
+      "publication": "35",
+      "lease": "1",
+      "buttons": [
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:30:notifications:close",
+          "identity": "control:close",
+          "label": "Close notifications",
+          "labelRect": {
+            "x": 24,
+            "y": -26,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Close notifications",
+          "disabled": false,
+          "x": 11,
+          "y": -35,
+          "width": 678,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:30:notifications:refresh",
+          "identity": "notifications:refresh",
+          "label": "Refresh notificationsRead current targets; no action is repeated",
+          "labelRect": {
+            "x": 24,
+            "y": 11,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Refresh notifications",
+          "disabled": false,
+          "x": 11,
+          "y": 4,
+          "width": 678,
+          "height": 54
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:30:notifications:dnd",
+          "identity": "notifications:dnd",
+          "label": "Do not disturb for this sessionOn \u00b7 History still updates",
+          "labelRect": {
+            "x": 24,
+            "y": 68,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Do not disturb for this session",
+          "disabled": false,
+          "x": 11,
+          "y": 61,
+          "width": 678,
+          "height": 54
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:30:notifications:critical-interrupt",
+          "identity": "notifications:critical-interrupt",
+          "label": "Allow critical notification interruptions for this sessionOff \u00b7 New notifications are polite",
+          "labelRect": {
+            "x": 24,
+            "y": 125,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Allow critical notification interruptions for this session",
+          "disabled": false,
+          "x": 11,
+          "y": 118,
+          "width": 678,
+          "height": 54
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:30:notification:14543321295070971645:6:invoke:open",
+          "identity": "notification:14543321295070971645:6:invoke:open",
+          "label": "Open DND history",
+          "labelRect": {
+            "x": 24,
+            "y": 272.5625,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Open DND history",
+          "disabled": false,
+          "x": 11,
+          "y": 263.5625,
+          "width": 678,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:30:notification:14543321295070971645:6:dismiss:",
+          "identity": "notification:14543321295070971645:6:dismiss:",
+          "label": "Dismiss notification",
+          "labelRect": {
+            "x": 24,
+            "y": 311.5625,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Dismiss notification",
+          "disabled": false,
+          "x": 11,
+          "y": 302.5625,
+          "width": 678,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:30:notification:14543321295070971645:2:invoke:open",
+          "identity": "notification:14543321295070971645:2:invoke:open",
+          "label": "Open other notification",
+          "labelRect": {
+            "x": 24,
+            "y": 599.875,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Open other notification",
+          "disabled": false,
+          "x": 11,
+          "y": 590.875,
+          "width": 678,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:30:notification:14543321295070971645:2:dismiss:",
+          "identity": "notification:14543321295070971645:2:dismiss:",
+          "label": "Dismiss notification",
+          "labelRect": {
+            "x": 24,
+            "y": 638.875,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Dismiss notification",
+          "disabled": false,
+          "x": 11,
+          "y": 629.875,
+          "width": 678,
+          "height": 36
+        }
+      ],
+      "content": [
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:30:notification:14543321295070971645:6:summary",
+          "identity": "notification:14543321295070971645:6:summary",
+          "label": "Warlock fixture: DND keeps native historyLive",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 183.1875,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "Warlock fixture: DND keeps native history",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 183.1875,
+          "width": 658.40625,
+          "height": 40
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:30:notification:14543321295070971645:6:body",
+          "identity": "notification:14543321295070971645:6:body",
+          "label": "A real native notification",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 234.375,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "A real native notification",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 234.375,
+          "width": 658.40625,
+          "height": 18
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:30:notification:14543321295070971645:5:summary",
+          "identity": "notification:14543321295070971645:5:summary",
+          "label": "Warlock fixture: Reuse replacementHistory \u00b7 invoked",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 349.75,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "Warlock fixture: Reuse replacement",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 349.75,
+          "width": 658.40625,
+          "height": 40
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:30:notification:14543321295070971645:5:body",
+          "identity": "notification:14543321295070971645:5:body",
+          "label": "A real native notification",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 400.9375,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "A real native notification",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 400.9375,
+          "width": 658.40625,
+          "height": 18
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:30:notification:14543321295070971645:3:summary",
+          "identity": "notification:14543321295070971645:3:summary",
+          "label": "Warlock fixture: Expiring notificationHistory \u00b7 expired",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 430.125,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "Warlock fixture: Expiring notification",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 430.125,
+          "width": 658.40625,
+          "height": 40
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:30:notification:14543321295070971645:3:body",
+          "identity": "notification:14543321295070971645:3:body",
+          "label": "A real native notification",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 481.3125,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "A real native notification",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 481.3125,
+          "width": 658.40625,
+          "height": 18
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:30:notification:14543321295070971645:2:summary",
+          "identity": "notification:14543321295070971645:2:summary",
+          "label": "Warlock fixture: Other producerLive",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 510.5,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "Warlock fixture: Other producer",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 510.5,
+          "width": 658.40625,
+          "height": 40
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:30:notification:14543321295070971645:2:body",
+          "identity": "notification:14543321295070971645:2:body",
+          "label": "A real native notification",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 561.6875,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "A real native notification",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 561.6875,
+          "width": 658.40625,
+          "height": 18
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:30:notification:14543321295070971645:1:summary",
+          "identity": "notification:14543321295070971645:1:summary",
+          "label": "Warlock fixture: Current notificationHistory \u00b7 invoked",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 677.0625,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "Warlock fixture: Current notification",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 677.0625,
+          "width": 658.40625,
+          "height": 40
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:30:notification:14543321295070971645:1:body",
+          "identity": "notification:14543321295070971645:1:body",
+          "label": "A real native notification",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 728.25,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "A real native notification",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 728.25,
+          "width": 658.40625,
+          "height": 18
+        }
+      ],
+      "fields": [],
+      "focus": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:30:notifications:dnd",
+      "documentFocused": true,
+      "fontSize": "16px",
+      "theme": "night",
+      "textScale": "100",
+      "effects": "on",
+      "reducedTransparency": "false",
+      "viewportWidth": 700,
+      "viewportHeight": 420,
+      "scrollTop": 99,
+      "scrollHeight": 864,
+      "text": "Notifications\n2 live notifications. Actions apply only to the current notification.\n\n\nClose notifications\n\nRefresh notifications\nRead current targets; no action is repeated\n\nDo not disturb for this session\nOn \u00b7 History still updates\n\nAllow critical notification interruptions for this session\nOff \u00b7 New notifications are polite\nWarlock fixture: DND keeps native history\nLive\n\nA real native notification\n\n\nOpen DND history\n\nDismiss notification\nWarlock fixture: Reuse replacement\nHistory \u00b7 invoked\n\nA real native notification\n\nWarlock fixture: Expiring notification\nHistory \u00b7 expired\n\nA real native notification\n\nWarlock fixture: Other producer\nLive\n\nA real native notification\n\n\nOpen other notification\n\nDismiss notification\nWarlock fixture: Current notification\nHistory \u00b7 invoked\n\nA real native notification\n\nWarlock fixture: Reuse replacement. Open Notifications for details and current actions."
+    },
+    "row": {
+      "id": "5",
+      "incarnation": "6",
+      "producer": ":1.5",
+      "app": "Warlock fixture",
+      "summary": "DND keeps native history",
+      "body": "A real native notification",
+      "state": "live",
+      "actions": [
+        {
+          "key": "open",
+          "label": "Open DND history"
+        }
+      ],
+      "urgency": 1
+    }
+  },
+  {
+    "name": "NativeDndOffDoesNotReplaySuppressedHistory",
+    "passed": true
+  },
+  {
+    "name": "NativeNotificationAnnouncementUnopted critical stays polite",
+    "passed": true,
+    "cue": {
+      "announcementProtocol": 1,
+      "kind": "announcement-projection",
+      "recipient": {
+        "scope": {
+          "id": "1",
+          "generation": "1"
+        },
+        "surface": "popup"
+      },
+      "announcer": {
+        "scope": {
+          "id": "1",
+          "generation": "1"
+        },
+        "surface": "popup"
+      },
+      "publication": "37",
+      "lease": "1",
+      "message": {
+        "interrupt": false,
+        "sequence": "6",
+        "correlation": "{\"outcome\":\"notification-arrival\",\"binding\":{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"},\"identity\":{\"service\":\"14543321295070971645\",\"revision\":\"13\",\"incarnations\":[\"7\"]}}",
+        "text": "Warlock fixture: Unopted critical stays polite. Open Notifications for details and current actions."
+      },
+      "deliver": true
+    },
+    "body": {
+      "focusNode": 4,
+      "focusIdentity": "notifications:dnd",
+      "announcements": [
+        {
+          "text": "Warlock fixture: Unopted critical stays polite. Open Notifications for details and current actions.",
+          "sequence": "6",
+          "correlation": "{\"outcome\":\"notification-arrival\",\"binding\":{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"},\"identity\":{\"service\":\"14543321295070971645\",\"revision\":\"13\",\"incarnations\":[\"7\"]}}",
+          "live": "polite"
+        }
+      ],
+      "previews": [],
+      "motionProfile": "full",
+      "motionAnimations": 0,
+      "queryObservations": [],
+      "compositionEvents": [],
+      "composing": false,
+      "palette": {
+        "background": "rgb(23, 32, 42)",
+        "foreground": "rgb(244, 246, 247)"
+      },
+      "focusStyle": {
+        "color": "rgb(244, 246, 247)",
+        "background": "rgb(38, 53, 68)",
+        "outlineColor": "rgb(126, 215, 255)",
+        "outlineWidth": "3px",
+        "outlineOffset": "1px",
+        "x": 11,
+        "y": 61,
+        "width": 678,
+        "height": 54
+      },
+      "publication": "37",
+      "lease": "1",
+      "buttons": [
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:32:notifications:close",
+          "identity": "control:close",
+          "label": "Close notifications",
+          "labelRect": {
+            "x": 24,
+            "y": -26,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Close notifications",
+          "disabled": false,
+          "x": 11,
+          "y": -35,
+          "width": 678,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:32:notifications:refresh",
+          "identity": "notifications:refresh",
+          "label": "Refresh notificationsRead current targets; no action is repeated",
+          "labelRect": {
+            "x": 24,
+            "y": 11,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Refresh notifications",
+          "disabled": false,
+          "x": 11,
+          "y": 4,
+          "width": 678,
+          "height": 54
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:32:notifications:dnd",
+          "identity": "notifications:dnd",
+          "label": "Do not disturb for this sessionOff",
+          "labelRect": {
+            "x": 24,
+            "y": 68,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Do not disturb for this session",
+          "disabled": false,
+          "x": 11,
+          "y": 61,
+          "width": 678,
+          "height": 54
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:32:notifications:critical-interrupt",
+          "identity": "notifications:critical-interrupt",
+          "label": "Allow critical notification interruptions for this sessionOff \u00b7 New notifications are polite",
+          "labelRect": {
+            "x": 24,
+            "y": 125,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Allow critical notification interruptions for this session",
+          "disabled": false,
+          "x": 11,
+          "y": 118,
+          "width": 678,
+          "height": 54
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:32:notification:14543321295070971645:7:invoke:open",
+          "identity": "notification:14543321295070971645:7:invoke:open",
+          "label": "Open unopted critical",
+          "labelRect": {
+            "x": 24,
+            "y": 272.5625,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Open unopted critical",
+          "disabled": false,
+          "x": 11,
+          "y": 263.5625,
+          "width": 678,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:32:notification:14543321295070971645:7:dismiss:",
+          "identity": "notification:14543321295070971645:7:dismiss:",
+          "label": "Dismiss notification",
+          "labelRect": {
+            "x": 24,
+            "y": 311.5625,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Dismiss notification",
+          "disabled": false,
+          "x": 11,
+          "y": 302.5625,
+          "width": 678,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:32:notification:14543321295070971645:6:invoke:open",
+          "identity": "notification:14543321295070971645:6:invoke:open",
+          "label": "Open DND history",
+          "labelRect": {
+            "x": 24,
+            "y": 439.125,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Open DND history",
+          "disabled": false,
+          "x": 11,
+          "y": 430.125,
+          "width": 678,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:32:notification:14543321295070971645:6:dismiss:",
+          "identity": "notification:14543321295070971645:6:dismiss:",
+          "label": "Dismiss notification",
+          "labelRect": {
+            "x": 24,
+            "y": 478.125,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Dismiss notification",
+          "disabled": false,
+          "x": 11,
+          "y": 469.125,
+          "width": 678,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:32:notification:14543321295070971645:2:invoke:open",
+          "identity": "notification:14543321295070971645:2:invoke:open",
+          "label": "Open other notification",
+          "labelRect": {
+            "x": 24,
+            "y": 766.4375,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Open other notification",
+          "disabled": false,
+          "x": 11,
+          "y": 757.4375,
+          "width": 678,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:32:notification:14543321295070971645:2:dismiss:",
+          "identity": "notification:14543321295070971645:2:dismiss:",
+          "label": "Dismiss notification",
+          "labelRect": {
+            "x": 24,
+            "y": 805.4375,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Dismiss notification",
+          "disabled": false,
+          "x": 11,
+          "y": 796.4375,
+          "width": 678,
+          "height": 36
+        }
+      ],
+      "content": [
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:32:notification:14543321295070971645:7:summary",
+          "identity": "notification:14543321295070971645:7:summary",
+          "label": "Warlock fixture: Unopted critical stays politeLive",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 183.1875,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "Warlock fixture: Unopted critical stays polite",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 183.1875,
+          "width": 658.40625,
+          "height": 40
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:32:notification:14543321295070971645:7:body",
+          "identity": "notification:14543321295070971645:7:body",
+          "label": "A real native notification",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 234.375,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "A real native notification",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 234.375,
+          "width": 658.40625,
+          "height": 18
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:32:notification:14543321295070971645:6:summary",
+          "identity": "notification:14543321295070971645:6:summary",
+          "label": "Warlock fixture: DND keeps native historyLive",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 349.75,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "Warlock fixture: DND keeps native history",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 349.75,
+          "width": 658.40625,
+          "height": 40
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:32:notification:14543321295070971645:6:body",
+          "identity": "notification:14543321295070971645:6:body",
+          "label": "A real native notification",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 400.9375,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "A real native notification",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 400.9375,
+          "width": 658.40625,
+          "height": 18
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:32:notification:14543321295070971645:5:summary",
+          "identity": "notification:14543321295070971645:5:summary",
+          "label": "Warlock fixture: Reuse replacementHistory \u00b7 invoked",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 516.3125,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "Warlock fixture: Reuse replacement",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 516.3125,
+          "width": 658.40625,
+          "height": 40
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:32:notification:14543321295070971645:5:body",
+          "identity": "notification:14543321295070971645:5:body",
+          "label": "A real native notification",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 567.5,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "A real native notification",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 567.5,
+          "width": 658.40625,
+          "height": 18
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:32:notification:14543321295070971645:3:summary",
+          "identity": "notification:14543321295070971645:3:summary",
+          "label": "Warlock fixture: Expiring notificationHistory \u00b7 expired",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 596.6875,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "Warlock fixture: Expiring notification",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 596.6875,
+          "width": 658.40625,
+          "height": 40
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:32:notification:14543321295070971645:3:body",
+          "identity": "notification:14543321295070971645:3:body",
+          "label": "A real native notification",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 647.875,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "A real native notification",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 647.875,
+          "width": 658.40625,
+          "height": 18
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:32:notification:14543321295070971645:2:summary",
+          "identity": "notification:14543321295070971645:2:summary",
+          "label": "Warlock fixture: Other producerLive",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 677.0625,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "Warlock fixture: Other producer",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 677.0625,
+          "width": 658.40625,
+          "height": 40
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:32:notification:14543321295070971645:2:body",
+          "identity": "notification:14543321295070971645:2:body",
+          "label": "A real native notification",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 728.25,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "A real native notification",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 728.25,
+          "width": 658.40625,
+          "height": 18
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:32:notification:14543321295070971645:1:summary",
+          "identity": "notification:14543321295070971645:1:summary",
+          "label": "Warlock fixture: Current notificationHistory \u00b7 invoked",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 843.625,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "Warlock fixture: Current notification",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 843.625,
+          "width": 658.40625,
+          "height": 40
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:32:notification:14543321295070971645:1:body",
+          "identity": "notification:14543321295070971645:1:body",
+          "label": "A real native notification",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 894.8125,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "A real native notification",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 894.8125,
+          "width": 658.40625,
+          "height": 18
+        }
+      ],
+      "fields": [],
+      "focus": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:32:notifications:dnd",
+      "documentFocused": true,
+      "fontSize": "16px",
+      "theme": "night",
+      "textScale": "100",
+      "effects": "on",
+      "reducedTransparency": "false",
+      "viewportWidth": 700,
+      "viewportHeight": 420,
+      "scrollTop": 99,
+      "scrollHeight": 1031,
+      "text": "Notifications\n3 live notifications. Actions apply only to the current notification.\n\n\nClose notifications\n\nRefresh notifications\nRead current targets; no action is repeated\n\nDo not disturb for this session\nOff\n\nAllow critical notification interruptions for this session\nOff \u00b7 New notifications are polite\nWarlock fixture: Unopted critical stays polite\nLive\n\nA real native notification\n\n\nOpen unopted critical\n\nDismiss notification\nWarlock fixture: DND keeps native history\nLive\n\nA real native notification\n\n\nOpen DND history\n\nDismiss notification\nWarlock fixture: Reuse replacement\nHistory \u00b7 invoked\n\nA real native notification\n\nWarlock fixture: Expiring notification\nHistory \u00b7 expired\n\nA real native notification\n\nWarlock fixture: Other producer\nLive\n\nA real native notification\n\n\nOpen other notification\n\nDismiss notification\nWarlock fixture: Current notification\nHistory \u00b7 invoked\n\nA real native notification\n\nWarlock fixture: Unopted critical stays polite. Open Notifications for details and current actions."
+    },
+    "observation": {
+      "protocolVersion": 3,
+      "kind": "notification-update",
+      "binding": {
+        "lifetime": "2384436987107820707",
+        "session": "3",
+        "frontend": "1"
+      },
+      "snapshot": {
+        "service": "14543321295070971645",
+        "revision": "13",
+        "available": true,
+        "reason": "",
+        "entries": [
+          {
+            "id": "6",
+            "incarnation": "7",
+            "producer": ":1.5",
+            "app": "Warlock fixture",
+            "summary": "Unopted critical stays polite",
+            "body": "A real native notification",
+            "state": "live",
+            "actions": [
+              {
+                "key": "open",
+                "label": "Open unopted critical"
+              }
+            ],
+            "urgency": 2
+          },
+          {
+            "id": "5",
+            "incarnation": "6",
+            "producer": ":1.5",
+            "app": "Warlock fixture",
+            "summary": "DND keeps native history",
+            "body": "A real native notification",
+            "state": "live",
+            "actions": [
+              {
+                "key": "open",
+                "label": "Open DND history"
+              }
+            ],
+            "urgency": 1
+          },
+          {
+            "id": "4",
+            "incarnation": "5",
+            "producer": ":1.5",
+            "app": "Warlock fixture",
+            "summary": "Reuse replacement",
+            "body": "A real native notification",
+            "state": "invoked",
+            "actions": [],
+            "urgency": 1
+          },
+          {
+            "id": "3",
+            "incarnation": "3",
+            "producer": ":1.5",
+            "app": "Warlock fixture",
+            "summary": "Expiring notification",
+            "body": "A real native notification",
+            "state": "expired",
+            "actions": [],
+            "urgency": 1
+          },
+          {
+            "id": "2",
+            "incarnation": "2",
+            "producer": ":1.6",
+            "app": "Warlock fixture",
+            "summary": "Other producer",
+            "body": "A real native notification",
+            "state": "live",
+            "actions": [
+              {
+                "key": "open",
+                "label": "Open other notification"
+              }
+            ],
+            "urgency": 1
+          },
+          {
+            "id": "1",
+            "incarnation": "1",
+            "producer": ":1.5",
+            "app": "Warlock fixture",
+            "summary": "Current notification",
+            "body": "A real native notification",
+            "state": "invoked",
+            "actions": [],
+            "urgency": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "name": "NativeNotificationAnnouncementOpted critical interruption",
+    "passed": true,
+    "cue": {
+      "announcementProtocol": 1,
+      "kind": "announcement-projection",
+      "recipient": {
+        "scope": {
+          "id": "1",
+          "generation": "1"
+        },
+        "surface": "popup"
+      },
+      "announcer": {
+        "scope": {
+          "id": "1",
+          "generation": "1"
+        },
+        "surface": "popup"
+      },
+      "publication": "39",
+      "lease": "1",
+      "message": {
+        "interrupt": true,
+        "sequence": "7",
+        "correlation": "{\"outcome\":\"notification-arrival\",\"binding\":{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"},\"identity\":{\"service\":\"14543321295070971645\",\"revision\":\"14\",\"incarnations\":[\"8\"]}}",
+        "text": "Warlock fixture: Opted critical interruption. Open Notifications for details and current actions."
+      },
+      "deliver": true
+    },
+    "body": {
+      "focusNode": 5,
+      "focusIdentity": "notifications:critical-interrupt",
+      "announcements": [
+        {
+          "text": "Warlock fixture: Opted critical interruption. Open Notifications for details and current actions.",
+          "sequence": "7",
+          "correlation": "{\"outcome\":\"notification-arrival\",\"binding\":{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"},\"identity\":{\"service\":\"14543321295070971645\",\"revision\":\"14\",\"incarnations\":[\"8\"]}}",
+          "live": "assertive"
+        }
+      ],
+      "previews": [],
+      "motionProfile": "full",
+      "motionAnimations": 0,
+      "queryObservations": [],
+      "compositionEvents": [],
+      "composing": false,
+      "palette": {
+        "background": "rgb(23, 32, 42)",
+        "foreground": "rgb(244, 246, 247)"
+      },
+      "focusStyle": {
+        "color": "rgb(244, 246, 247)",
+        "background": "rgb(38, 53, 68)",
+        "outlineColor": "rgb(126, 215, 255)",
+        "outlineWidth": "3px",
+        "outlineOffset": "1px",
+        "x": 11,
+        "y": 118,
+        "width": 678,
+        "height": 54
+      },
+      "publication": "39",
+      "lease": "1",
+      "buttons": [
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:34:notifications:close",
+          "identity": "control:close",
+          "label": "Close notifications",
+          "labelRect": {
+            "x": 24,
+            "y": -26,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Close notifications",
+          "disabled": false,
+          "x": 11,
+          "y": -35,
+          "width": 678,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:34:notifications:refresh",
+          "identity": "notifications:refresh",
+          "label": "Refresh notificationsRead current targets; no action is repeated",
+          "labelRect": {
+            "x": 24,
+            "y": 11,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Refresh notifications",
+          "disabled": false,
+          "x": 11,
+          "y": 4,
+          "width": 678,
+          "height": 54
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:34:notifications:dnd",
+          "identity": "notifications:dnd",
+          "label": "Do not disturb for this sessionOff",
+          "labelRect": {
+            "x": 24,
+            "y": 68,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Do not disturb for this session",
+          "disabled": false,
+          "x": 11,
+          "y": 61,
+          "width": 678,
+          "height": 54
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:34:notifications:critical-interrupt",
+          "identity": "notifications:critical-interrupt",
+          "label": "Allow critical notification interruptions for this sessionOn \u00b7 Only when Do not disturb is off",
+          "labelRect": {
+            "x": 24,
+            "y": 125,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Allow critical notification interruptions for this session",
+          "disabled": false,
+          "x": 11,
+          "y": 118,
+          "width": 678,
+          "height": 54
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:34:notification:14543321295070971645:8:invoke:open",
+          "identity": "notification:14543321295070971645:8:invoke:open",
+          "label": "Open opted critical",
+          "labelRect": {
+            "x": 24,
+            "y": 272.5625,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Open opted critical",
+          "disabled": false,
+          "x": 11,
+          "y": 263.5625,
+          "width": 678,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:34:notification:14543321295070971645:8:dismiss:",
+          "identity": "notification:14543321295070971645:8:dismiss:",
+          "label": "Dismiss notification",
+          "labelRect": {
+            "x": 24,
+            "y": 311.5625,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Dismiss notification",
+          "disabled": false,
+          "x": 11,
+          "y": 302.5625,
+          "width": 678,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:34:notification:14543321295070971645:7:invoke:open",
+          "identity": "notification:14543321295070971645:7:invoke:open",
+          "label": "Open unopted critical",
+          "labelRect": {
+            "x": 24,
+            "y": 439.125,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Open unopted critical",
+          "disabled": false,
+          "x": 11,
+          "y": 430.125,
+          "width": 678,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:34:notification:14543321295070971645:7:dismiss:",
+          "identity": "notification:14543321295070971645:7:dismiss:",
+          "label": "Dismiss notification",
+          "labelRect": {
+            "x": 24,
+            "y": 478.125,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Dismiss notification",
+          "disabled": false,
+          "x": 11,
+          "y": 469.125,
+          "width": 678,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:34:notification:14543321295070971645:6:invoke:open",
+          "identity": "notification:14543321295070971645:6:invoke:open",
+          "label": "Open DND history",
+          "labelRect": {
+            "x": 24,
+            "y": 605.6875,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Open DND history",
+          "disabled": false,
+          "x": 11,
+          "y": 596.6875,
+          "width": 678,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:34:notification:14543321295070971645:6:dismiss:",
+          "identity": "notification:14543321295070971645:6:dismiss:",
+          "label": "Dismiss notification",
+          "labelRect": {
+            "x": 24,
+            "y": 644.6875,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Dismiss notification",
+          "disabled": false,
+          "x": 11,
+          "y": 635.6875,
+          "width": 678,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:34:notification:14543321295070971645:2:invoke:open",
+          "identity": "notification:14543321295070971645:2:invoke:open",
+          "label": "Open other notification",
+          "labelRect": {
+            "x": 24,
+            "y": 933,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Open other notification",
+          "disabled": false,
+          "x": 11,
+          "y": 924,
+          "width": 678,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:34:notification:14543321295070971645:2:dismiss:",
+          "identity": "notification:14543321295070971645:2:dismiss:",
+          "label": "Dismiss notification",
+          "labelRect": {
+            "x": 24,
+            "y": 972,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Dismiss notification",
+          "disabled": false,
+          "x": 11,
+          "y": 963,
+          "width": 678,
+          "height": 36
+        }
+      ],
+      "content": [
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:34:notification:14543321295070971645:8:summary",
+          "identity": "notification:14543321295070971645:8:summary",
+          "label": "Warlock fixture: Opted critical interruptionLive",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 183.1875,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "Warlock fixture: Opted critical interruption",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 183.1875,
+          "width": 658.40625,
+          "height": 40
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:34:notification:14543321295070971645:8:body",
+          "identity": "notification:14543321295070971645:8:body",
+          "label": "A real native notification",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 234.375,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "A real native notification",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 234.375,
+          "width": 658.40625,
+          "height": 18
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:34:notification:14543321295070971645:7:summary",
+          "identity": "notification:14543321295070971645:7:summary",
+          "label": "Warlock fixture: Unopted critical stays politeLive",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 349.75,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "Warlock fixture: Unopted critical stays polite",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 349.75,
+          "width": 658.40625,
+          "height": 40
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:34:notification:14543321295070971645:7:body",
+          "identity": "notification:14543321295070971645:7:body",
+          "label": "A real native notification",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 400.9375,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "A real native notification",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 400.9375,
+          "width": 658.40625,
+          "height": 18
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:34:notification:14543321295070971645:6:summary",
+          "identity": "notification:14543321295070971645:6:summary",
+          "label": "Warlock fixture: DND keeps native historyLive",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 516.3125,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "Warlock fixture: DND keeps native history",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 516.3125,
+          "width": 658.40625,
+          "height": 40
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:34:notification:14543321295070971645:6:body",
+          "identity": "notification:14543321295070971645:6:body",
+          "label": "A real native notification",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 567.5,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "A real native notification",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 567.5,
+          "width": 658.40625,
+          "height": 18
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:34:notification:14543321295070971645:5:summary",
+          "identity": "notification:14543321295070971645:5:summary",
+          "label": "Warlock fixture: Reuse replacementHistory \u00b7 invoked",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 682.875,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "Warlock fixture: Reuse replacement",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 682.875,
+          "width": 658.40625,
+          "height": 40
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:34:notification:14543321295070971645:5:body",
+          "identity": "notification:14543321295070971645:5:body",
+          "label": "A real native notification",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 734.0625,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "A real native notification",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 734.0625,
+          "width": 658.40625,
+          "height": 18
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:34:notification:14543321295070971645:3:summary",
+          "identity": "notification:14543321295070971645:3:summary",
+          "label": "Warlock fixture: Expiring notificationHistory \u00b7 expired",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 763.25,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "Warlock fixture: Expiring notification",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 763.25,
+          "width": 658.40625,
+          "height": 40
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:34:notification:14543321295070971645:3:body",
+          "identity": "notification:14543321295070971645:3:body",
+          "label": "A real native notification",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 814.4375,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "A real native notification",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 814.4375,
+          "width": 658.40625,
+          "height": 18
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:34:notification:14543321295070971645:2:summary",
+          "identity": "notification:14543321295070971645:2:summary",
+          "label": "Warlock fixture: Other producerLive",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 843.625,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "Warlock fixture: Other producer",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 843.625,
+          "width": 658.40625,
+          "height": 40
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:34:notification:14543321295070971645:2:body",
+          "identity": "notification:14543321295070971645:2:body",
+          "label": "A real native notification",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 894.8125,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "A real native notification",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 894.8125,
+          "width": 658.40625,
+          "height": 18
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:34:notification:14543321295070971645:1:summary",
+          "identity": "notification:14543321295070971645:1:summary",
+          "label": "Warlock fixture: Current notificationHistory \u00b7 invoked",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 1010.1875,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "Warlock fixture: Current notification",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 1010.1875,
+          "width": 658.40625,
+          "height": 40
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:34:notification:14543321295070971645:1:body",
+          "identity": "notification:14543321295070971645:1:body",
+          "label": "A real native notification",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 1061.375,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "A real native notification",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 1061.375,
+          "width": 658.40625,
+          "height": 18
+        }
+      ],
+      "fields": [],
+      "focus": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:34:notifications:critical-interrupt",
+      "documentFocused": true,
+      "fontSize": "16px",
+      "theme": "night",
+      "textScale": "100",
+      "effects": "on",
+      "reducedTransparency": "false",
+      "viewportWidth": 700,
+      "viewportHeight": 420,
+      "scrollTop": 99,
+      "scrollHeight": 1198,
+      "text": "Notifications\n4 live notifications. Actions apply only to the current notification.\n\n\nClose notifications\n\nRefresh notifications\nRead current targets; no action is repeated\n\nDo not disturb for this session\nOff\n\nAllow critical notification interruptions for this session\nOn \u00b7 Only when Do not disturb is off\nWarlock fixture: Opted critical interruption\nLive\n\nA real native notification\n\n\nOpen opted critical\n\nDismiss notification\nWarlock fixture: Unopted critical stays polite\nLive\n\nA real native notification\n\n\nOpen unopted critical\n\nDismiss notification\nWarlock fixture: DND keeps native history\nLive\n\nA real native notification\n\n\nOpen DND history\n\nDismiss notification\nWarlock fixture: Reuse replacement\nHistory \u00b7 invoked\n\nA real native notification\n\nWarlock fixture: Expiring notification\nHistory \u00b7 expired\n\nA real native notification\n\nWarlock fixture: Other producer\nLive\n\nA real native notification\n\n\nOpen other notification\n\nDismiss notification\nWarlock fixture: Current notification\nHistory \u00b7 invoked\n\nA real native notification\n\nWarlock fixture: Opted critical interruption. Open Notifications for details and current actions."
+    },
+    "observation": {
+      "protocolVersion": 3,
+      "kind": "notification-update",
+      "binding": {
+        "lifetime": "2384436987107820707",
+        "session": "3",
+        "frontend": "1"
+      },
+      "snapshot": {
+        "service": "14543321295070971645",
+        "revision": "14",
+        "available": true,
+        "reason": "",
+        "entries": [
+          {
+            "id": "7",
+            "incarnation": "8",
+            "producer": ":1.5",
+            "app": "Warlock fixture",
+            "summary": "Opted critical interruption",
+            "body": "A real native notification",
+            "state": "live",
+            "actions": [
+              {
+                "key": "open",
+                "label": "Open opted critical"
+              }
+            ],
+            "urgency": 2
+          },
+          {
+            "id": "6",
+            "incarnation": "7",
+            "producer": ":1.5",
+            "app": "Warlock fixture",
+            "summary": "Unopted critical stays polite",
+            "body": "A real native notification",
+            "state": "live",
+            "actions": [
+              {
+                "key": "open",
+                "label": "Open unopted critical"
+              }
+            ],
+            "urgency": 2
+          },
+          {
+            "id": "5",
+            "incarnation": "6",
+            "producer": ":1.5",
+            "app": "Warlock fixture",
+            "summary": "DND keeps native history",
+            "body": "A real native notification",
+            "state": "live",
+            "actions": [
+              {
+                "key": "open",
+                "label": "Open DND history"
+              }
+            ],
+            "urgency": 1
+          },
+          {
+            "id": "4",
+            "incarnation": "5",
+            "producer": ":1.5",
+            "app": "Warlock fixture",
+            "summary": "Reuse replacement",
+            "body": "A real native notification",
+            "state": "invoked",
+            "actions": [],
+            "urgency": 1
+          },
+          {
+            "id": "3",
+            "incarnation": "3",
+            "producer": ":1.5",
+            "app": "Warlock fixture",
+            "summary": "Expiring notification",
+            "body": "A real native notification",
+            "state": "expired",
+            "actions": [],
+            "urgency": 1
+          },
+          {
+            "id": "2",
+            "incarnation": "2",
+            "producer": ":1.6",
+            "app": "Warlock fixture",
+            "summary": "Other producer",
+            "body": "A real native notification",
+            "state": "live",
+            "actions": [
+              {
+                "key": "open",
+                "label": "Open other notification"
+              }
+            ],
+            "urgency": 1
+          },
+          {
+            "id": "1",
+            "incarnation": "1",
+            "producer": ":1.5",
+            "app": "Warlock fixture",
+            "summary": "Current notification",
+            "body": "A real native notification",
+            "state": "invoked",
+            "actions": [],
+            "urgency": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "name": "NativeNotificationAnnouncementOrdinary remains polite",
+    "passed": true,
+    "cue": {
+      "announcementProtocol": 1,
+      "kind": "announcement-projection",
+      "recipient": {
+        "scope": {
+          "id": "1",
+          "generation": "1"
+        },
+        "surface": "popup"
+      },
+      "announcer": {
+        "scope": {
+          "id": "1",
+          "generation": "1"
+        },
+        "surface": "popup"
+      },
+      "publication": "40",
+      "lease": "1",
+      "message": {
+        "interrupt": false,
+        "sequence": "8",
+        "correlation": "{\"outcome\":\"notification-arrival\",\"binding\":{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"},\"identity\":{\"service\":\"14543321295070971645\",\"revision\":\"15\",\"incarnations\":[\"9\"]}}",
+        "text": "Warlock fixture: Ordinary remains polite. Open Notifications for details and current actions."
+      },
+      "deliver": true
+    },
+    "body": {
+      "focusNode": 5,
+      "focusIdentity": "notifications:critical-interrupt",
+      "announcements": [
+        {
+          "text": "Warlock fixture: Ordinary remains polite. Open Notifications for details and current actions.",
+          "sequence": "8",
+          "correlation": "{\"outcome\":\"notification-arrival\",\"binding\":{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"},\"identity\":{\"service\":\"14543321295070971645\",\"revision\":\"15\",\"incarnations\":[\"9\"]}}",
+          "live": "polite"
+        }
+      ],
+      "previews": [],
+      "motionProfile": "full",
+      "motionAnimations": 0,
+      "queryObservations": [],
+      "compositionEvents": [],
+      "composing": false,
+      "palette": {
+        "background": "rgb(23, 32, 42)",
+        "foreground": "rgb(244, 246, 247)"
+      },
+      "focusStyle": {
+        "color": "rgb(244, 246, 247)",
+        "background": "rgb(38, 53, 68)",
+        "outlineColor": "rgb(126, 215, 255)",
+        "outlineWidth": "3px",
+        "outlineOffset": "1px",
+        "x": 11,
+        "y": 118,
+        "width": 678,
+        "height": 54
+      },
+      "publication": "40",
+      "lease": "1",
+      "buttons": [
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:35:notifications:close",
+          "identity": "control:close",
+          "label": "Close notifications",
+          "labelRect": {
+            "x": 24,
+            "y": -26,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Close notifications",
+          "disabled": false,
+          "x": 11,
+          "y": -35,
+          "width": 678,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:35:notifications:refresh",
+          "identity": "notifications:refresh",
+          "label": "Refresh notificationsRead current targets; no action is repeated",
+          "labelRect": {
+            "x": 24,
+            "y": 11,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Refresh notifications",
+          "disabled": false,
+          "x": 11,
+          "y": 4,
+          "width": 678,
+          "height": 54
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:35:notifications:dnd",
+          "identity": "notifications:dnd",
+          "label": "Do not disturb for this sessionOff",
+          "labelRect": {
+            "x": 24,
+            "y": 68,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Do not disturb for this session",
+          "disabled": false,
+          "x": 11,
+          "y": 61,
+          "width": 678,
+          "height": 54
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:35:notifications:critical-interrupt",
+          "identity": "notifications:critical-interrupt",
+          "label": "Allow critical notification interruptions for this sessionOn \u00b7 Only when Do not disturb is off",
+          "labelRect": {
+            "x": 24,
+            "y": 125,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Allow critical notification interruptions for this session",
+          "disabled": false,
+          "x": 11,
+          "y": 118,
+          "width": 678,
+          "height": 54
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:35:notification:14543321295070971645:9:invoke:open",
+          "identity": "notification:14543321295070971645:9:invoke:open",
+          "label": "Open ordinary notification",
+          "labelRect": {
+            "x": 24,
+            "y": 272.5625,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Open ordinary notification",
+          "disabled": false,
+          "x": 11,
+          "y": 263.5625,
+          "width": 678,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:35:notification:14543321295070971645:9:dismiss:",
+          "identity": "notification:14543321295070971645:9:dismiss:",
+          "label": "Dismiss notification",
+          "labelRect": {
+            "x": 24,
+            "y": 311.5625,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Dismiss notification",
+          "disabled": false,
+          "x": 11,
+          "y": 302.5625,
+          "width": 678,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:35:notification:14543321295070971645:8:invoke:open",
+          "identity": "notification:14543321295070971645:8:invoke:open",
+          "label": "Open opted critical",
+          "labelRect": {
+            "x": 24,
+            "y": 439.125,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Open opted critical",
+          "disabled": false,
+          "x": 11,
+          "y": 430.125,
+          "width": 678,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:35:notification:14543321295070971645:8:dismiss:",
+          "identity": "notification:14543321295070971645:8:dismiss:",
+          "label": "Dismiss notification",
+          "labelRect": {
+            "x": 24,
+            "y": 478.125,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Dismiss notification",
+          "disabled": false,
+          "x": 11,
+          "y": 469.125,
+          "width": 678,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:35:notification:14543321295070971645:7:invoke:open",
+          "identity": "notification:14543321295070971645:7:invoke:open",
+          "label": "Open unopted critical",
+          "labelRect": {
+            "x": 24,
+            "y": 605.6875,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Open unopted critical",
+          "disabled": false,
+          "x": 11,
+          "y": 596.6875,
+          "width": 678,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:35:notification:14543321295070971645:7:dismiss:",
+          "identity": "notification:14543321295070971645:7:dismiss:",
+          "label": "Dismiss notification",
+          "labelRect": {
+            "x": 24,
+            "y": 644.6875,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Dismiss notification",
+          "disabled": false,
+          "x": 11,
+          "y": 635.6875,
+          "width": 678,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:35:notification:14543321295070971645:6:invoke:open",
+          "identity": "notification:14543321295070971645:6:invoke:open",
+          "label": "Open DND history",
+          "labelRect": {
+            "x": 24,
+            "y": 772.25,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Open DND history",
+          "disabled": false,
+          "x": 11,
+          "y": 763.25,
+          "width": 678,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:35:notification:14543321295070971645:6:dismiss:",
+          "identity": "notification:14543321295070971645:6:dismiss:",
+          "label": "Dismiss notification",
+          "labelRect": {
+            "x": 24,
+            "y": 811.25,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Dismiss notification",
+          "disabled": false,
+          "x": 11,
+          "y": 802.25,
+          "width": 678,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:35:notification:14543321295070971645:2:invoke:open",
+          "identity": "notification:14543321295070971645:2:invoke:open",
+          "label": "Open other notification",
+          "labelRect": {
+            "x": 24,
+            "y": 1099.5625,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Open other notification",
+          "disabled": false,
+          "x": 11,
+          "y": 1090.5625,
+          "width": 678,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:35:notification:14543321295070971645:2:dismiss:",
+          "identity": "notification:14543321295070971645:2:dismiss:",
+          "label": "Dismiss notification",
+          "labelRect": {
+            "x": 24,
+            "y": 1138.5625,
+            "width": 652,
+            "height": 18
+          },
+          "accessibleName": "Dismiss notification",
+          "disabled": false,
+          "x": 11,
+          "y": 1129.5625,
+          "width": 678,
+          "height": 36
+        }
+      ],
+      "content": [
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:35:notification:14543321295070971645:9:summary",
+          "identity": "notification:14543321295070971645:9:summary",
+          "label": "Warlock fixture: Ordinary remains politeLive",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 183.1875,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "Warlock fixture: Ordinary remains polite",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 183.1875,
+          "width": 658.40625,
+          "height": 40
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:35:notification:14543321295070971645:9:body",
+          "identity": "notification:14543321295070971645:9:body",
+          "label": "A real native notification",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 234.375,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "A real native notification",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 234.375,
+          "width": 658.40625,
+          "height": 18
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:35:notification:14543321295070971645:8:summary",
+          "identity": "notification:14543321295070971645:8:summary",
+          "label": "Warlock fixture: Opted critical interruptionLive",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 349.75,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "Warlock fixture: Opted critical interruption",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 349.75,
+          "width": 658.40625,
+          "height": 40
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:35:notification:14543321295070971645:8:body",
+          "identity": "notification:14543321295070971645:8:body",
+          "label": "A real native notification",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 400.9375,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "A real native notification",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 400.9375,
+          "width": 658.40625,
+          "height": 18
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:35:notification:14543321295070971645:7:summary",
+          "identity": "notification:14543321295070971645:7:summary",
+          "label": "Warlock fixture: Unopted critical stays politeLive",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 516.3125,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "Warlock fixture: Unopted critical stays polite",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 516.3125,
+          "width": 658.40625,
+          "height": 40
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:35:notification:14543321295070971645:7:body",
+          "identity": "notification:14543321295070971645:7:body",
+          "label": "A real native notification",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 567.5,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "A real native notification",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 567.5,
+          "width": 658.40625,
+          "height": 18
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:35:notification:14543321295070971645:6:summary",
+          "identity": "notification:14543321295070971645:6:summary",
+          "label": "Warlock fixture: DND keeps native historyLive",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 682.875,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "Warlock fixture: DND keeps native history",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 682.875,
+          "width": 658.40625,
+          "height": 40
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:35:notification:14543321295070971645:6:body",
+          "identity": "notification:14543321295070971645:6:body",
+          "label": "A real native notification",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 734.0625,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "A real native notification",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 734.0625,
+          "width": 658.40625,
+          "height": 18
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:35:notification:14543321295070971645:5:summary",
+          "identity": "notification:14543321295070971645:5:summary",
+          "label": "Warlock fixture: Reuse replacementHistory \u00b7 invoked",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 849.4375,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "Warlock fixture: Reuse replacement",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 849.4375,
+          "width": 658.40625,
+          "height": 40
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:35:notification:14543321295070971645:5:body",
+          "identity": "notification:14543321295070971645:5:body",
+          "label": "A real native notification",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 900.625,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "A real native notification",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 900.625,
+          "width": 658.40625,
+          "height": 18
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:35:notification:14543321295070971645:3:summary",
+          "identity": "notification:14543321295070971645:3:summary",
+          "label": "Warlock fixture: Expiring notificationHistory \u00b7 expired",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 929.8125,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "Warlock fixture: Expiring notification",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 929.8125,
+          "width": 658.40625,
+          "height": 40
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:35:notification:14543321295070971645:3:body",
+          "identity": "notification:14543321295070971645:3:body",
+          "label": "A real native notification",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 981,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "A real native notification",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 981,
+          "width": 658.40625,
+          "height": 18
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:35:notification:14543321295070971645:2:summary",
+          "identity": "notification:14543321295070971645:2:summary",
+          "label": "Warlock fixture: Other producerLive",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 1010.1875,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "Warlock fixture: Other producer",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 1010.1875,
+          "width": 658.40625,
+          "height": 40
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:35:notification:14543321295070971645:2:body",
+          "identity": "notification:14543321295070971645:2:body",
+          "label": "A real native notification",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 1061.375,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "A real native notification",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 1061.375,
+          "width": 658.40625,
+          "height": 18
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:35:notification:14543321295070971645:1:summary",
+          "identity": "notification:14543321295070971645:1:summary",
+          "label": "Warlock fixture: Current notificationHistory \u00b7 invoked",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 1176.75,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "Warlock fixture: Current notification",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 1176.75,
+          "width": 658.40625,
+          "height": 40
+        },
+        {
+          "id": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:35:notification:14543321295070971645:1:body",
+          "identity": "notification:14543321295070971645:1:body",
+          "label": "A real native notification",
+          "labelRect": {
+            "x": 20.796875,
+            "y": 1227.9375,
+            "width": 658.40625,
+            "height": 18
+          },
+          "accessibleName": "A real native notification",
+          "disabled": true,
+          "x": 20.796875,
+          "y": 1227.9375,
+          "width": 658.40625,
+          "height": 18
+        }
+      ],
+      "fields": [],
+      "focus": "applications:{\"lifetime\":\"2384436987107820707\",\"session\":\"3\",\"frontend\":\"1\"}:35:notifications:critical-interrupt",
+      "documentFocused": true,
+      "fontSize": "16px",
+      "theme": "night",
+      "textScale": "100",
+      "effects": "on",
+      "reducedTransparency": "false",
+      "viewportWidth": 700,
+      "viewportHeight": 420,
+      "scrollTop": 99,
+      "scrollHeight": 1364,
+      "text": "Notifications\n5 live notifications. Actions apply only to the current notification.\n\n\nClose notifications\n\nRefresh notifications\nRead current targets; no action is repeated\n\nDo not disturb for this session\nOff\n\nAllow critical notification interruptions for this session\nOn \u00b7 Only when Do not disturb is off\nWarlock fixture: Ordinary remains polite\nLive\n\nA real native notification\n\n\nOpen ordinary notification\n\nDismiss notification\nWarlock fixture: Opted critical interruption\nLive\n\nA real native notification\n\n\nOpen opted critical\n\nDismiss notification\nWarlock fixture: Unopted critical stays polite\nLive\n\nA real native notification\n\n\nOpen unopted critical\n\nDismiss notification\nWarlock fixture: DND keeps native history\nLive\n\nA real native notification\n\n\nOpen DND history\n\nDismiss notification\nWarlock fixture: Reuse replacement\nHistory \u00b7 invoked\n\nA real native notification\n\nWarlock fixture: Expiring notification\nHistory \u00b7 expired\n\nA real native notification\n\nWarlock fixture: Other producer\nLive\n\nA real native notification\n\n\nOpen other notification\n\nDismiss notification\nWarlock fixture: Current notification\nHistory \u00b7 invoked\n\nA real native notification\n\nWarlock fixture: Ordinary remains polite. Open Notifications for details and current actions."
+    },
+    "observation": {
+      "protocolVersion": 3,
+      "kind": "notification-update",
+      "binding": {
+        "lifetime": "2384436987107820707",
+        "session": "3",
+        "frontend": "1"
+      },
+      "snapshot": {
+        "service": "14543321295070971645",
+        "revision": "15",
+        "available": true,
+        "reason": "",
+        "entries": [
+          {
+            "id": "8",
+            "incarnation": "9",
+            "producer": ":1.5",
+            "app": "Warlock fixture",
+            "summary": "Ordinary remains polite",
+            "body": "A real native notification",
+            "state": "live",
+            "actions": [
+              {
+                "key": "open",
+                "label": "Open ordinary notification"
+              }
+            ],
+            "urgency": 1
+          },
+          {
+            "id": "7",
+            "incarnation": "8",
+            "producer": ":1.5",
+            "app": "Warlock fixture",
+            "summary": "Opted critical interruption",
+            "body": "A real native notification",
+            "state": "live",
+            "actions": [
+              {
+                "key": "open",
+                "label": "Open opted critical"
+              }
+            ],
+            "urgency": 2
+          },
+          {
+            "id": "6",
+            "incarnation": "7",
+            "producer": ":1.5",
+            "app": "Warlock fixture",
+            "summary": "Unopted critical stays polite",
+            "body": "A real native notification",
+            "state": "live",
+            "actions": [
+              {
+                "key": "open",
+                "label": "Open unopted critical"
+              }
+            ],
+            "urgency": 2
+          },
+          {
+            "id": "5",
+            "incarnation": "6",
+            "producer": ":1.5",
+            "app": "Warlock fixture",
+            "summary": "DND keeps native history",
+            "body": "A real native notification",
+            "state": "live",
+            "actions": [
+              {
+                "key": "open",
+                "label": "Open DND history"
+              }
+            ],
+            "urgency": 1
+          },
+          {
+            "id": "4",
+            "incarnation": "5",
+            "producer": ":1.5",
+            "app": "Warlock fixture",
+            "summary": "Reuse replacement",
+            "body": "A real native notification",
+            "state": "invoked",
+            "actions": [],
+            "urgency": 1
+          },
+          {
+            "id": "3",
+            "incarnation": "3",
+            "producer": ":1.5",
+            "app": "Warlock fixture",
+            "summary": "Expiring notification",
+            "body": "A real native notification",
+            "state": "expired",
+            "actions": [],
+            "urgency": 1
+          },
+          {
+            "id": "2",
+            "incarnation": "2",
+            "producer": ":1.6",
+            "app": "Warlock fixture",
+            "summary": "Other producer",
+            "body": "A real native notification",
+            "state": "live",
+            "actions": [
+              {
+                "key": "open",
+                "label": "Open other notification"
+              }
+            ],
+            "urgency": 1
+          },
+          {
+            "id": "1",
+            "incarnation": "1",
+            "producer": ":1.5",
+            "app": "Warlock fixture",
+            "summary": "Current notification",
+            "body": "A real native notification",
+            "state": "invoked",
+            "actions": [],
+            "urgency": 1
+          }
+        ]
+      }
+    }
+  }
+]

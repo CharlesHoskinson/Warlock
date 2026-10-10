@@ -22,7 +22,7 @@ def tick():
  if request['op']=='quit':loop.quit();return False
  if request['op']=='notify':
   identifier=connections[request['producer']].call_sync('org.freedesktop.Notifications','/org/freedesktop/Notifications','org.freedesktop.Notifications','Notify',
-   GLib.Variant('(susssasa{sv}i)',('Warlock fixture',request.get('replaces',0),'',request['summary'],'A real native notification',['open',request['label']],{},request.get('timeout',0))),GLib.VariantType.new('(u)'),0,2000,None).unpack()[0]
+   GLib.Variant('(susssasa{sv}i)',('Warlock fixture',request.get('replaces',0),'',request['summary'],'A real native notification',['open',request['label']],{'urgency':GLib.Variant('y',request.get('urgency',1))},request.get('timeout',0))),GLib.VariantType.new('(u)'),0,2000,None).unpack()[0]
   emit({'kind':'notified','serial':last,'id':identifier,'producer':request['producer']})
  return True
 GLib.timeout_add(20,tick)

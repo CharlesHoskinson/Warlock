@@ -133,6 +133,7 @@ type Msg
     | OpenNotifications ViewStamp
     | CloseNotifications ViewStamp
     | RefreshNotifications ViewStamp
+    | ConfigureNotificationPolicy ViewStamp Notifications.Policy
     | NotificationAction ViewStamp Notifications.Target
     | OpenSettings ViewStamp
     | CloseSettings ViewStamp
@@ -968,6 +969,9 @@ updateAvailable message model =
                 in (next,[Focus (key next "notifications:opener")])
         RefreshNotifications stamp ->
             if capture model/=Just stamp || not model.notificationsOpen then (model,[]) else readNotifications model
+        ConfigureNotificationPolicy stamp policy ->
+            if capture model/=Just stamp || not model.notificationsOpen || model.notifications.policy==policy then (model,[]) else
+                (advance {model|notifications=Notifications.configure policy model.notifications},[])
         NotificationAction stamp target ->
             if capture model/=Just stamp || not model.notificationsOpen || model.notificationsExpected/=Nothing then (model,[]) else
             case (model.windows.shell.binding,UInt64.next model.request) of

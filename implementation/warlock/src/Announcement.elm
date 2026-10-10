@@ -8,7 +8,7 @@ import Json.Encode as E
 import SurfaceRenderer
 import UInt64 exposing (Counter)
 
-type alias Message = { sequence : Counter, correlation : String, text : String }
+type alias Message = { interrupt : Bool, sequence : Counter, correlation : String, text : String }
 type Model = Model { last : Counter, active : Bool, message : Maybe Message }
 initial : Model
 initial = Model {last=UInt64.zero,active=False,message=Nothing}
@@ -17,8 +17,10 @@ positive = UInt64.decoder |> D.andThen (\n -> if n/=UInt64.zero then D.succeed n
 bounded limit = D.string |> D.andThen (\value -> if not (String.isEmpty value) && String.length value<=limit && not (String.any (\c -> Char.toCode c<32) value) then D.succeed value else D.fail "Bounded announcement text")
 scope = strict ["id","generation"] (D.map2 Tuple.pair (D.field "id" positive) (D.field "generation" positive))
 route = strict ["scope","surface"] (D.map2 Tuple.pair (D.field "scope" scope) (D.field "surface" (D.string |> D.andThen (\value -> if List.member value ["bar","popup"] then D.succeed value else D.fail "Announcement surface"))))
-messageDecoder = strict ["sequence","correlation","text"] (D.map3 Message (D.field "sequence" positive) (D.field "correlation" (bounded 2048)) (D.field "text" (bounded 1024)))
-encodeMessage message = E.object [("sequence",E.string (UInt64.string message.sequence)),("correlation",E.string message.correlation),("text",E.string message.text)]
+messageDecoder =
+    let legacy = D.map3 (\sequence correlation value -> {sequence=sequence,correlation=correlation,text=value,interrupt=False}) (D.field "sequence" positive) (D.field "correlation" (bounded 2048)) (D.field "text" (bounded 1024))
+    in D.oneOf [strict ["sequence","correlation","text","interrupt"] (D.map2 (\message interrupt -> {message|interrupt=interrupt}) legacy (D.field "interrupt" D.bool)),strict ["sequence","correlation","text"] legacy]
+encodeMessage message = E.object [("interrupt",E.bool message.interrupt),("sequence",E.string (UInt64.string message.sequence)),("correlation",E.string message.correlation),("text",E.string message.text)]
 
 -- Scoped presentation facts only: no action, focus command, receipt policy or
 -- announcement queue lives in a view. Native delivery is not proof of speech.
@@ -42,5 +44,5 @@ receive popup snapshot raw ((Model model) as prior) =
 view : Model -> Html msg
 view (Model model) =
     if not model.active then text "" else
-        Keyed.node "span" [class "shell-announcement",attribute "role" "status",attribute "aria-live" "polite",attribute "aria-atomic" "true"]
+        Keyed.node "span" [class "shell-announcement",attribute "role" "status",attribute "aria-live" (if model.message |> Maybe.map .interrupt |> Maybe.withDefault False then "assertive" else "polite"),attribute "aria-atomic" "true"]
             (model.message |> Maybe.map (\message -> [(UInt64.string message.sequence,Html.span [attribute "data-announcement-sequence" (UInt64.string message.sequence),attribute "data-announcement-correlation" message.correlation] [text message.text])]) |> Maybe.withDefault [])

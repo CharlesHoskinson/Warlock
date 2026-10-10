@@ -101,8 +101,9 @@ under ELM-UX-030; independent and applicable release acceptance remain separate.
 
 The Notifications button opens the current native notification center. It shows
 plain notification text, live actions, and bounded retired history. Incoming
-notifications never open a popup or steal focus; the center announces status
-politely while open. Producer actions use exact service, unique bus producer,
+notifications never open a popup or steal focus. Permitted new arrivals use
+one root-selected announcement owner; the notification center provides session
+DND and critical-interruption controls. Producer actions use exact service, unique bus producer,
 numeric ID and native incarnation, consume their target before signal emission,
 and cannot repeat after a lost receipt. Refresh reads current targets without
 replaying actions. Expiry, dismissal, replacement and producer disconnect retire
@@ -367,4 +368,17 @@ Each new refusal has a monotonic serial and the owning binding/request identity;
 
 The additive model follows quint-llm-kit’s modeling and implementation skills. Eight explicitly selected tests and positive witnesses accompany sampled safety checks; existing authority models remain unchanged. Actual compiled roots, twelve typed checks and a three-view browser fixture pass. The protected original native transfer journey also observes one identity-matched refusal in the real WebKit live-region DOM, then passes cancellation and successful existing/empty-workspace transfers with normal cleanup. See [the evidence and abstraction limits](qa/evidence/announcements/README.md).
 
-ELM-UI-010 and WARLOCK-DL-011 remain partial. Native launch/settings announcement delivery, actual stable-focus speech/braille, independent acceptance, adapter-unavailable outcomes and the frozen notification relevance/DND/urgency policy remain required. Unpermitted notification count/history changes do not produce an announcement through this new route. Browser/live-region DOM checks establish no audible or braille delivery.
+ELM-UI-010 and WARLOCK-DL-011 remain partial. Native launch/settings announcement delivery, actual stable-focus speech/braille, independent acceptance, adapter-unavailable outcomes and notification expiration/action-refusal relevance remain required. Notification arrival/DND/critical-consent behavior is described below. Unpermitted notification count/history changes do not produce an announcement through this new route. Browser/live-region DOM checks establish no audible or braille delivery.
+
+
+## Notification announcement permissions
+
+The notification center now includes **Do not disturb for this session** and **Allow critical notification interruptions for this session**, with stable keyed controls, visible On/Off detail and accessible pressed state. Both reset with the Elm shell session. DND suppresses new notification announcements while retaining current history/actions. Turning it off or enabling critical consent never replays previously observed notifications.
+
+New arrivals are polite by default. Explicit critical consent permits assertive delivery for critical arrivals while DND is off; ordinary arrivals remain polite. Native retains the [standard urgency levels](https://specifications.freedesktop.org/notification/latest/urgency-levels.html) from a [BYTE urgency hint](https://specifications.freedesktop.org/notification/latest/hints.html). Missing/legacy or malformed hints cannot elevate urgency. Critical notifications remain live until explicitly closed, dismissed, invoked or disconnected, rather than expiring automatically.
+
+The Elm root correlates an arrival with the current binding, notification service, admitted revision and fresh native incarnation. Initial history, repeated/older snapshots and policy edits create no announcement. Simultaneous arrivals are coalesced into one bounded message retaining every incarnation, concise summaries and a route to details; mixed-urgency batches stay polite. Native still validates the one declared owner and forwards each serial once.
+
+The quint-llm-kit permission model, actual compiled root/view checks and protected native notification journey pass. Native keyboard controls demonstrate DND suppression, no history replay, unopted critical politeness, opted critical assertive delivery and ordinary politeness. Real WebKit reports retain the same focused node/control identity and document focus; current event-stamped DOM IDs are allowed to change. Existing producer action, expiry, reused-ID refusal and normal cleanup observations are preserved. See [scoped evidence](qa/evidence/notification-announcements/README.md).
+
+The selected three ELM-UI-010 scenarios remain partial: actual speech/braille and independent original acceptance are not established by DOM/native transport observations. Adapter unavailability, relevant notification expiration and expired-action refusal announcements still need implementation/qualification. The controls are session policy, not persisted settings or a guarantee of native AT delivery.

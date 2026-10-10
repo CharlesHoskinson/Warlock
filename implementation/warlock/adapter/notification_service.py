@@ -97,10 +97,12 @@ class Service:
    else:
     identifier=replaces;self.rows.remove(previous)
    self.serial+=1
+   urgency=hints.get('urgency',1) if type(hints.get('urgency',1)) is int and hints.get('urgency',1) in (0,1,2) else 1
    duration=5000 if timeout==-1 else timeout
    self.rows.append({'id':str(identifier),'incarnation':str(self.serial),'producer':sender,'app':app or 'Application',
                      'summary':summary,'body':body,'state':'live','actions':pairs,
-                     'deadline':None if duration==0 else time.monotonic()+duration/1000})
+                     'urgency':urgency,
+                     'deadline':None if urgency==2 or duration==0 else time.monotonic()+duration/1000})
    self.changed();self.schedule_expiry();return identifier
  def effect(self,request,client):
   exact(request,['protocolVersion','kind','binding','requestId','intent'])
@@ -154,7 +156,13 @@ class Service:
   try:
    if method=='GetCapabilities':result=GLib.Variant('(as)',(['actions','body'],))
    elif method=='GetServerInformation':result=GLib.Variant('(ssss)',('Warlock','Warlock contributors','1','1.3'))
-   elif method=='Notify':result=GLib.Variant('(u)',(self.notify(sender,*parameters.unpack()),))
+   elif method=='Notify':
+    args=list(parameters.unpack());hints=dict(args[6])
+    urgency=parameters.get_child_value(6).lookup_value('urgency',None)
+    # Only the standard BYTE hint can elevate urgency. Malformed hints remain
+    # ordinary; producers never choose DND or interruption permission.
+    if urgency is not None and urgency.get_type_string()!='y':hints.pop('urgency',None)
+    args[6]=hints;result=GLib.Variant('(u)',(self.notify(sender,*args),))
    elif method=='CloseNotification':
     with self.lock:
      self.expire();identifier=parameters.unpack()[0]
