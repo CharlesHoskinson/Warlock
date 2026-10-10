@@ -28,7 +28,7 @@ try{
  const packet=JSON.parse(fs.readFileSync(path.join(out,'settings.json'),'utf8'));
  await evaluate('receivePresentation('+JSON.stringify(packet.frame)+')');
  await until(`document.querySelector('.surface-popup[data-mode="settings"]')?.dataset.publication==="1"`);
- check('Actual settings popup renders named controls',await evaluate(`document.querySelector("h1").textContent==="Settings" && document.querySelectorAll('[data-surface-control]').length===10`));
+ check('Actual settings popup renders named controls',await evaluate(`document.querySelector("h1").textContent==="Settings" && JSON.stringify([...document.querySelectorAll('[data-surface-control]')].map(b=>b.dataset.surfaceControl))===${JSON.stringify(JSON.stringify(packet.frame.popup.filter(row=>!row.id.startsWith('settings:help:text:')).map(row=>row.id)))}`));
  check('Loaded appearance is current, not an unsaved draft',await evaluate(`document.documentElement.dataset.theme==="night" && document.documentElement.dataset.textScale==="100"`));
  check('Save disabled without changes',await evaluate(`document.querySelector('[data-surface-control="settings:save"]').disabled`));
  check('Current theme and scale exposed semantically',await evaluate(`document.querySelector('[data-surface-control="settings:theme:night"]').getAttribute('aria-current')==='true' && document.querySelector('[data-surface-control="settings:scale:100"]').getAttribute('aria-current')==='true'`));
@@ -36,7 +36,9 @@ try{
  await evaluate(`document.querySelector('[data-surface-control="settings:theme:night"]').focus()`);
  await key('End');check('End reaches refresh and skips disabled Save',await evaluate(`document.activeElement.dataset.surfaceControl==='settings:refresh'`));
  await key('Home');check('Home reveals Close',await evaluate(`document.activeElement.dataset.surfaceControl==='control:close' && document.activeElement.getBoundingClientRect().top>=0`));
- await key('ArrowDown');check('Arrow reaches first theme',await evaluate(`document.activeElement.dataset.surfaceControl==='settings:theme:night'`));
+ await key('ArrowDown');check('Arrow reaches dismissible help',await evaluate(`document.activeElement.dataset.surfaceControl==='settings:help' && document.activeElement.getAttribute('aria-expanded')==='true'`));
+ check('Guidance is readable text rather than disabled controls',await evaluate(`document.querySelectorAll('[data-settings-help]').length===3 && [...document.querySelectorAll('[data-settings-help]')].every(row=>row.tagName==='P' && !row.hasAttribute('disabled') && !row.hasAttribute('data-surface-control'))`));
+ await evaluate(`document.querySelector('[data-surface-control="settings:theme:night"]').focus()`);
  await key('ArrowDown');await key('Enter');check('Keyboard theme dispatch uses exact current identity once',await evaluate(`nativePackets.filter(p=>p.kind==='surface-action' && p.id==='settings:theme:dawn' && p.publication==='1' && p.lease==='1').length===1`));
  check('Dispatch alone cannot optimistically apply theme',await evaluate(`document.documentElement.dataset.theme==='night'`));
  await evaluate('receivePresentation('+JSON.stringify(packet.savedFrame)+')');
@@ -72,6 +74,14 @@ try{
  await evaluate('receivePresentation('+JSON.stringify({...packet.savedFrame,publication:'15'})+')');await until(`document.documentElement.dataset.theme==='dawn'`);
  const invalid=structuredClone(packet.savedFrame);invalid.publication='16';invalid.appearance.textScale=77;await evaluate('receivePresentation('+JSON.stringify(invalid)+')');await sleep(80);
  check('Invalid presentation scale cannot change appearance',await evaluate(`document.querySelector('.surface-popup')===null && document.documentElement.dataset.textScale==='150'`));
+ await evaluate('receivePresentation('+JSON.stringify(packet.helpDismissedFrame)+')');await until(`document.querySelector('.surface-popup')?.dataset.publication==='20'`);
+ await evaluate(`document.querySelector('[data-surface-control="settings:help"]').focus()`);
+ check('Dismissed help keeps a keyboard reachable reopening control',await evaluate(`document.querySelectorAll('[data-settings-help]').length===0 && document.activeElement.getAttribute('aria-expanded')==='false' && document.activeElement.textContent.includes('Show help')`));
+ await key('Enter');check('Help Enter emits one current scoped action',await evaluate(`nativePackets.filter(p=>p.kind==='surface-action' && p.id==='settings:help' && p.publication==='20' && p.lease==='1').length===1`));
+ await evaluate('receivePresentation('+JSON.stringify(packet.helpReopenedFrame)+')');await until(`document.querySelector('.surface-popup')?.dataset.publication==='21'`);
+ check('Reopening help retains the same focused identity and reveals it',await evaluate(`document.activeElement.dataset.surfaceControl==='settings:help' && document.activeElement.getAttribute('aria-expanded')==='true' && document.querySelectorAll('[data-settings-help]').length===3 && document.activeElement.getBoundingClientRect().top>=0 && document.activeElement.getBoundingClientRect().bottom<=innerHeight+1`));
+ await key('End');check('Help does not trap preference navigation',await evaluate(`document.activeElement.dataset.surfaceControl==='settings:refresh'`));
+ await capture('settings-keyboard-help');
  check('No browser exceptions',report.errors.length===0,report.errors);report.passed=true;
 }catch(error){report.error=String(error.stack||error);}
 finally{

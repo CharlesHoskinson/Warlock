@@ -6832,14 +6832,50 @@
       "owner": "Desktop experience lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "first-use",
           "oracle": "mapping or explicit conflict choice persists, help remains available and component works",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/settings-help/manifest.json",
+              "sha256": "79147a5480f229d6a030062a075ce7db68005136f511bf2a6fc8a263976a6ea2",
+              "scope": "Optional Settings help, default offer, session dismissal and reopening through the same focused control. Actual compiled roots/replay/browser and native keyboard open/edit/dismiss/reopen/navigation/Escape with zero pointer events, unchanged preference/window effect counts and normal owned cleanup. No whole requirement or release acceptance.",
+              "sourceBaseRevision": "56fe1184df84071821378a72ba9132e89ef89856",
+              "sourceHashes": {
+                "implementation/warlock/src/Desktop.elm": "d23094f4df62969e463e901a5f05e24a2253bd872cbb5289852726ddca6f803b",
+                "implementation/warlock/src/Surface.elm": "6ddcd0dd912aae0bf2b30e881161ab98b60b8585cfaa439988b8de0aab302cd0",
+                "implementation/warlock/src/SurfaceRenderer.elm": "eee7a58bce3182e3ab74784b73b85ec36be434a23c7755b14694b6c5574b54d5",
+                "implementation/warlock/qa/SettingsReplay.elm": "7bdfeee4826187530b1403d157dfcacf1037eb1158b2d2ca274a7cf87525815f",
+                "implementation/warlock/qa/settings-browser.mjs": "a9d0b225eb797ce3b9cc2b7174476d577d81db10d03ba80b598a49d0840c821a",
+                "implementation/warlock/qa/check-search.py": "ca9dc360e337720402e524e53dd996a8fe3a9583c6073449dd80839bc84352cf",
+                "implementation/warlock/qa/native-settings-help.py": "d64a9ed8223e95bb44f5a722a4b6f0ec6b140ba9d198dfffa5c474d2371e5105",
+                "implementation/warlock/qa/current-search-build.json": "e3ec7366d8e3caf87ea4945206318b5219cf248b53f99b6cc7e2a3d3270cfa07",
+                "implementation/warlock/assets/elm.js": "b83630f9c920411033725c9892319ae64cbb7af28b09315d398090c7e4ed7882",
+                "implementation/warlock/assets/bar.js": "c1e10427b081fa7430d5481fcdbe5ec19da0832665b33f4036b9cf253e3ad1a9",
+                "implementation/warlock/assets/popup.js": "2e3f3ab9d56279fcee7e3638e10063f39701d0020d8d2b8133ba352712fa3669",
+                "implementation/warlock/README.md": "a695531b5814085ea5d604ffbb8ae07f1232501fd8f99c0150bcf54af9f12901"
+              },
+              "sourceTuple": {
+                "core": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-core-1791495415110842751/Hyprland",
+                  "sha256": "81c9ac609c2900f99c1efbe613b83e949aeae3059a5e4403601581fa96191acf"
+                },
+                "plugin": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791495598695532678/elm-window-geometry-authority.so",
+                  "sha256": "9ea5b6c567b1332d7f0eeee5ecaae71145c7bdd04e83351006e7fc1cac050eec"
+                },
+                "aquamarine": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+                  "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+                }
+              },
+              "reviewerDisposition": "Owner observed bounded implementation and native keyboard interval; independent acceptance not obtained."
+            }
+          ],
+          "missingObservation": "Shortcut mappings and explicit conflict-choice persistence are not implemented by this help panel. First-use enablement outside Settings and cross-restart dismissal are not established. Offline rollback without the failed host, native AT and independent original-scenario dispositions remain open. The bounded keyboard journey operates help and an unsaved theme edit; it does not requalify every Settings save/refresh/motion operation or all nine keyboard surfaces."
         },
         {
           "name": "offline-recovery",
@@ -8490,9 +8526,44 @@
                 "independent": false,
                 "disposition": "Owner partial observations and failed combined original journey; independent acceptance remains open."
               }
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/settings-help/manifest.json",
+              "sha256": "79147a5480f229d6a030062a075ce7db68005136f511bf2a6fc8a263976a6ea2",
+              "scope": "Optional Settings help, default offer, session dismissal and reopening through the same focused control. Actual compiled roots/replay/browser and native keyboard open/edit/dismiss/reopen/navigation/Escape with zero pointer events, unchanged preference/window effect counts and normal owned cleanup. No whole requirement or release acceptance.",
+              "sourceBaseRevision": "56fe1184df84071821378a72ba9132e89ef89856",
+              "sourceHashes": {
+                "implementation/warlock/src/Desktop.elm": "d23094f4df62969e463e901a5f05e24a2253bd872cbb5289852726ddca6f803b",
+                "implementation/warlock/src/Surface.elm": "6ddcd0dd912aae0bf2b30e881161ab98b60b8585cfaa439988b8de0aab302cd0",
+                "implementation/warlock/src/SurfaceRenderer.elm": "eee7a58bce3182e3ab74784b73b85ec36be434a23c7755b14694b6c5574b54d5",
+                "implementation/warlock/qa/SettingsReplay.elm": "7bdfeee4826187530b1403d157dfcacf1037eb1158b2d2ca274a7cf87525815f",
+                "implementation/warlock/qa/settings-browser.mjs": "a9d0b225eb797ce3b9cc2b7174476d577d81db10d03ba80b598a49d0840c821a",
+                "implementation/warlock/qa/check-search.py": "ca9dc360e337720402e524e53dd996a8fe3a9583c6073449dd80839bc84352cf",
+                "implementation/warlock/qa/native-settings-help.py": "d64a9ed8223e95bb44f5a722a4b6f0ec6b140ba9d198dfffa5c474d2371e5105",
+                "implementation/warlock/qa/current-search-build.json": "e3ec7366d8e3caf87ea4945206318b5219cf248b53f99b6cc7e2a3d3270cfa07",
+                "implementation/warlock/assets/elm.js": "b83630f9c920411033725c9892319ae64cbb7af28b09315d398090c7e4ed7882",
+                "implementation/warlock/assets/bar.js": "c1e10427b081fa7430d5481fcdbe5ec19da0832665b33f4036b9cf253e3ad1a9",
+                "implementation/warlock/assets/popup.js": "2e3f3ab9d56279fcee7e3638e10063f39701d0020d8d2b8133ba352712fa3669",
+                "implementation/warlock/README.md": "a695531b5814085ea5d604ffbb8ae07f1232501fd8f99c0150bcf54af9f12901"
+              },
+              "sourceTuple": {
+                "core": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-core-1791495415110842751/Hyprland",
+                  "sha256": "81c9ac609c2900f99c1efbe613b83e949aeae3059a5e4403601581fa96191acf"
+                },
+                "plugin": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791495598695532678/elm-window-geometry-authority.so",
+                  "sha256": "9ea5b6c567b1332d7f0eeee5ecaae71145c7bdd04e83351006e7fc1cac050eec"
+                },
+                "aquamarine": {
+                  "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+                  "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+                }
+              },
+              "reviewerDisposition": "Owner observed bounded implementation and native keyboard interval; independent acceptance not obtained."
             }
           ],
-          "missingObservation": "Combined original ux-023 remains failed: after completed group activation/dismissal, a repeated Home press does not select the current taskbar group within the original six-second deadline. No forced focus, reordered journey or deadline extension qualifies it. Remaining keyboard-switcher, keyboard-task-view and keyboard-snap-chooser intervals were not reached in this combined native campaign. Menus has observed global System entry/refresh/dismissal; keyboard window-context and snap entry remain unreached in this campaign. Native AT/IME consumers and independent original-scenario acceptance remain open; this private campaign disables accessibility bridging. Full Omarchy vocabulary/keybindings, multi-output/device/resource and release gates remain separate mandatory work."
+          "missingObservation": "Offline rollback without the failed host, native AT and independent original-scenario dispositions remain open. The bounded keyboard journey operates help and an unsaved theme edit; it does not requalify every Settings save/refresh/motion operation or all nine keyboard surfaces."
         },
         {
           "name": "keyboard-notifications",
@@ -9176,5 +9247,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-08T22:23:37.914101+00:00"
+  "updatedUTC": "2026-10-10T00:36:54.622540+00:00"
 }

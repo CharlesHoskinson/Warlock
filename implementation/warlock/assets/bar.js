@@ -4927,7 +4927,7 @@ var $author$project$SurfaceRenderer$bounded = function (limit) {
 };
 var $author$project$SurfaceRenderer$Control = F6(
 	function (identity, domId, label, ariaLabel, detail, enabled) {
-		return {U: ariaLabel, h: detail, p: domId, D: enabled, J: identity, v: label};
+		return {U: ariaLabel, g: detail, m: domId, D: enabled, J: identity, q: label};
 	});
 var $elm$json$Json$Decode$bool = _Json_decodeBool;
 var $elm$json$Json$Decode$field = _Json_decodeField;
@@ -5368,7 +5368,7 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 				$elm$json$Json$Decode$map8,
 				F8(
 					function (version, shown, scoped, current, notice, bar, popup, appearance) {
-						return {t: appearance, o: bar, O: current, r: notice, f: popup, ad: scoped, af: shown, aI: version};
+						return {u: appearance, p: bar, O: current, s: notice, f: popup, ad: scoped, af: shown, aI: version};
 					}),
 				A2($elm$json$Json$Decode$field, 'surfaceProtocol', $elm$json$Json$Decode$int),
 				A2($elm$json$Json$Decode$field, 'publication', $author$project$UInt64$decoder),
@@ -5401,7 +5401,7 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 					$elm$core$Set$size(
 						$elm$core$Set$fromList(names)));
 			};
-			var all = _Utils_ap(record.o, record.f);
+			var all = _Utils_ap(record.p, record.f);
 			var identities = A2(
 				$elm$core$List$map,
 				function ($) {
@@ -5416,15 +5416,15 @@ var $author$project$SurfaceRenderer$decode = function (raw) {
 				A2(
 					$elm$core$List$map,
 					function ($) {
-						return $.p;
+						return $.m;
 					},
 					all))) || A2(
 				$elm$core$List$any,
 				function (control) {
-					return $elm$core$String$isEmpty(control.J) || $elm$core$String$isEmpty(control.p);
+					return $elm$core$String$isEmpty(control.J) || $elm$core$String$isEmpty(control.m);
 				},
 				all)))))))) ? $elm$core$Result$Err('Invalid presentation scope/identities') : $elm$core$Result$Ok(
-				{t: record.t, o: record.o, _: record.ad, a: record.O, V: motion, f: record.f, W: record.af, z: record.r});
+				{u: record.u, p: record.p, _: record.ad, a: record.O, V: motion, f: record.f, W: record.af, z: record.s});
 		},
 		A2(
 			$elm$core$Result$mapError,
@@ -5522,7 +5522,7 @@ var $author$project$SurfaceRenderer$enabled = F3(
 			function (control) {
 				return _Utils_eq(control.J, identity) && control.D;
 			},
-			popup ? snapshot.f : snapshot.o);
+			popup ? snapshot.f : snapshot.p);
 	});
 var $elm$json$Json$Encode$int = _Json_wrap;
 var $elm$json$Json$Encode$object = function (pairs) {
@@ -5979,15 +5979,15 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 		var control = function (item) {
 			var switcherOption = popup && ((snapshot.a === 'switcher') && A2($elm$core$String$startsWith, 'switcher:family:', item.J));
 			var kind = (A2($elm$core$String$startsWith, 'bar:group:', item.J) || A2($elm$core$String$startsWith, 'bar:pin:', item.J)) ? 'control-group' : ((item.J === 'bar:recovery-refresh') ? 'control-recovery' : 'control-utility');
-			var active = (!popup) && ((A2($elm$core$String$startsWith, 'bar:group:', item.J) || A2($elm$core$String$startsWith, 'bar:pin:', item.J)) && (A2($elm$core$String$contains, 'Active', item.h) && (!A2($elm$core$String$contains, 'Attention; ', item.h))));
-			if (popup && ((snapshot.a === 'notifications') && (A2($elm$core$String$endsWith, ':summary', item.J) || A2($elm$core$String$endsWith, ':body', item.J)))) {
+			var active = (!popup) && ((A2($elm$core$String$startsWith, 'bar:group:', item.J) || A2($elm$core$String$startsWith, 'bar:pin:', item.J)) && (A2($elm$core$String$contains, 'Active', item.g) && (!A2($elm$core$String$contains, 'Attention; ', item.g))));
+			if (popup && ((snapshot.a === 'settings') && A2($elm$core$String$startsWith, 'settings:help:text:', item.J))) {
 				return A2(
 					$elm$html$Html$p,
 					_List_fromArray(
 						[
 							$elm$html$Html$Attributes$class('notification-text'),
-							$elm$html$Html$Attributes$id(item.p),
-							A2($elm$html$Html$Attributes$attribute, 'data-notification-content', item.J)
+							$elm$html$Html$Attributes$id(item.m),
+							A2($elm$html$Html$Attributes$attribute, 'data-settings-help', item.J)
 						]),
 					_List_fromArray(
 						[
@@ -5999,7 +5999,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 								]),
 							_List_fromArray(
 								[
-									$elm$html$Html$text(item.v)
+									$elm$html$Html$text(item.q)
 								])),
 							A2(
 							$elm$html$Html$span,
@@ -6009,25 +6009,18 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 								]),
 							_List_fromArray(
 								[
-									$elm$html$Html$text(item.h)
+									$elm$html$Html$text(item.g)
 								]))
 						]));
 			} else {
-				if (popup && (A2(
-					$elm$core$List$member,
-					snapshot.a,
-					_List_fromArray(
-						['system', 'files', 'jump'])) && A2($elm$core$String$endsWith, ':state', item.J))) {
+				if (popup && ((snapshot.a === 'notifications') && (A2($elm$core$String$endsWith, ':summary', item.J) || A2($elm$core$String$endsWith, ':body', item.J)))) {
 					return A2(
 						$elm$html$Html$p,
 						_List_fromArray(
 							[
 								$elm$html$Html$Attributes$class('notification-text'),
-								$elm$html$Html$Attributes$id(item.p),
-								A2(
-								$elm$html$Html$Attributes$attribute,
-								(snapshot.a === 'jump') ? 'data-jump-content' : ((snapshot.a === 'files') ? 'data-files-content' : 'data-system-content'),
-								item.J)
+								$elm$html$Html$Attributes$id(item.m),
+								A2($elm$html$Html$Attributes$attribute, 'data-notification-content', item.J)
 							]),
 						_List_fromArray(
 							[
@@ -6039,7 +6032,17 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 									]),
 								_List_fromArray(
 									[
-										$elm$html$Html$text(item.v)
+										$elm$html$Html$text(item.q)
+									])),
+								A2(
+								$elm$html$Html$span,
+								_List_fromArray(
+									[
+										$elm$html$Html$Attributes$class('control-detail')
+									]),
+								_List_fromArray(
+									[
+										$elm$html$Html$text(item.g)
 									]))
 							]));
 				} else {
@@ -6047,140 +6050,20 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 						$elm$core$List$member,
 						snapshot.a,
 						_List_fromArray(
-							['applications', 'files'])) && _Utils_eq(
-						item.J,
-						$author$project$SurfaceRenderer$fieldIdentity(current)))) {
-						var packet = F2(
-							function (inputKind, query) {
-								return send(
-									$elm$json$Json$Encode$object(
-										_List_fromArray(
-											[
-												_Utils_Tuple2(
-												'surfaceProtocol',
-												$elm$json$Json$Encode$int(2)),
-												_Utils_Tuple2(
-												'kind',
-												$elm$json$Json$Encode$string(inputKind)),
-												_Utils_Tuple2(
-												'surface',
-												$elm$json$Json$Encode$string('popup')),
-												_Utils_Tuple2(
-												'publication',
-												$elm$json$Json$Encode$string(
-													$author$project$UInt64$string(snapshot.W))),
-												_Utils_Tuple2(
-												'lease',
-												$elm$json$Json$Encode$string(
-													$author$project$UInt64$string(snapshot._))),
-												_Utils_Tuple2(
-												'id',
-												$elm$json$Json$Encode$string(item.J)),
-												_Utils_Tuple2(
-												'query',
-												$elm$json$Json$Encode$string(query))
-											])));
-							});
-						var edit = A3(
-							$elm$json$Json$Decode$map2,
-							F2(
-								function (query, composing) {
-									return A2(
-										packet,
-										composing ? 'surface-preedit' : 'surface-query',
-										query);
-								}),
-							A2(
-								$elm$json$Json$Decode$at,
-								_List_fromArray(
-									['target', 'value']),
-								$elm$json$Json$Decode$string),
-							$elm$json$Json$Decode$oneOf(
-								_List_fromArray(
-									[
-										A2($elm$json$Json$Decode$field, 'isComposing', $elm$json$Json$Decode$bool),
-										$elm$json$Json$Decode$succeed(false)
-									])));
-						var composition = function (inputKind) {
-							return A2(
-								$elm$json$Json$Decode$map,
-								packet(inputKind),
-								A2(
-									$elm$json$Json$Decode$at,
-									_List_fromArray(
-										['target', 'value']),
-									$elm$json$Json$Decode$string));
-						};
+							['system', 'files', 'jump'])) && A2($elm$core$String$endsWith, ':state', item.J))) {
 						return A2(
-							$elm$html$Html$input,
+							$elm$html$Html$p,
 							_List_fromArray(
 								[
-									$elm$html$Html$Attributes$class('launcher-search'),
-									$elm$html$Html$Attributes$id(item.p),
-									$elm$html$Html$Attributes$type_(
-									(snapshot.a === 'files') ? 'text' : 'search'),
-									$elm$html$Html$Attributes$placeholder(
-									(snapshot.a === 'files') ? '/path/to/folder or ~/Documents' : 'Search applications'),
-									$elm$html$Html$Attributes$value(item.v),
-									A2($elm$html$Html$Attributes$attribute, 'aria-label', item.U),
-									A2($elm$html$Html$Attributes$attribute, 'data-surface-field', item.J),
-									A2($elm$html$Html$Attributes$attribute, 'autocomplete', 'off'),
-									$elm$html$Html$Attributes$disabled(!item.D),
-									A2($elm$html$Html$Events$on, 'input', edit),
+									$elm$html$Html$Attributes$class('notification-text'),
+									$elm$html$Html$Attributes$id(item.m),
 									A2(
-									$elm$html$Html$Events$on,
-									'compositionstart',
-									composition('surface-composition-start')),
-									A2(
-									$elm$html$Html$Events$on,
-									'compositionend',
-									composition('surface-composition-end'))
+									$elm$html$Html$Attributes$attribute,
+									(snapshot.a === 'jump') ? 'data-jump-content' : ((snapshot.a === 'files') ? 'data-files-content' : 'data-system-content'),
+									item.J)
 								]),
-							_List_Nil);
-					} else {
-						return A2(
-							$elm$html$Html$button,
-							_Utils_ap(
-								_List_fromArray(
-									[
-										$elm$html$Html$Attributes$class(kind),
-										$elm$html$Html$Attributes$id(item.p),
-										A2(
-										$elm$html$Html$Attributes$attribute,
-										'data-window-state',
-										(kind !== 'control-group') ? 'none' : (A2($elm$core$String$contains, 'Attention; ', item.h) ? 'attention' : (A2($elm$core$String$contains, 'Active', item.h) ? 'active' : (A2($elm$core$String$contains, 'Minimized', item.h) ? 'minimized' : 'open')))),
-										A2($elm$html$Html$Attributes$attribute, 'aria-label', item.U),
-										$elm$html$Html$Attributes$disabled(!item.D),
-										A2($elm$html$Html$Attributes$attribute, 'data-surface-control', item.J),
-										A2(
-										$elm$html$Html$Attributes$attribute,
-										'role',
-										switcherOption ? 'option' : ((popup && (snapshot.a === 'menu')) ? 'menuitem' : 'button')),
-										A2(
-										$elm$html$Html$Attributes$attribute,
-										'aria-current',
-										(((!popup) && ((kind === 'control-group') && (A2($elm$core$String$contains, 'Active', item.h) && (!A2($elm$core$String$contains, 'Attention; ', item.h))))) || (popup && (A2(
-											$elm$core$List$member,
-											snapshot.a,
-											_List_fromArray(
-												['menu', 'switcher', 'snap', 'settings', 'notifications', 'system', 'files', 'jump'])) && (item.h === 'Selected')))) ? 'true' : 'false')
-									]),
-								switcherOption ? _List_fromArray(
-									[
-										A2(
-										$elm$html$Html$Attributes$attribute,
-										'aria-selected',
-										(item.h === 'Selected') ? 'true' : 'false')
-									]) : (((!popup) && (kind === 'control-group')) ? _List_fromArray(
-									[
-										A2(
-										$elm$html$Html$Attributes$attribute,
-										'aria-pressed',
-										active ? 'true' : 'false')
-									]) : _List_Nil)),
 							_List_fromArray(
 								[
-									preview(item.J),
 									A2(
 									$elm$html$Html$span,
 									_List_fromArray(
@@ -6189,19 +6072,178 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 										]),
 									_List_fromArray(
 										[
-											$elm$html$Html$text(item.v)
-										])),
-									A2(
-									$elm$html$Html$span,
-									_List_fromArray(
-										[
-											$elm$html$Html$Attributes$class('control-detail')
-										]),
-									_List_fromArray(
-										[
-											$elm$html$Html$text(item.h)
+											$elm$html$Html$text(item.q)
 										]))
 								]));
+					} else {
+						if (popup && (A2(
+							$elm$core$List$member,
+							snapshot.a,
+							_List_fromArray(
+								['applications', 'files'])) && _Utils_eq(
+							item.J,
+							$author$project$SurfaceRenderer$fieldIdentity(current)))) {
+							var packet = F2(
+								function (inputKind, query) {
+									return send(
+										$elm$json$Json$Encode$object(
+											_List_fromArray(
+												[
+													_Utils_Tuple2(
+													'surfaceProtocol',
+													$elm$json$Json$Encode$int(2)),
+													_Utils_Tuple2(
+													'kind',
+													$elm$json$Json$Encode$string(inputKind)),
+													_Utils_Tuple2(
+													'surface',
+													$elm$json$Json$Encode$string('popup')),
+													_Utils_Tuple2(
+													'publication',
+													$elm$json$Json$Encode$string(
+														$author$project$UInt64$string(snapshot.W))),
+													_Utils_Tuple2(
+													'lease',
+													$elm$json$Json$Encode$string(
+														$author$project$UInt64$string(snapshot._))),
+													_Utils_Tuple2(
+													'id',
+													$elm$json$Json$Encode$string(item.J)),
+													_Utils_Tuple2(
+													'query',
+													$elm$json$Json$Encode$string(query))
+												])));
+								});
+							var edit = A3(
+								$elm$json$Json$Decode$map2,
+								F2(
+									function (query, composing) {
+										return A2(
+											packet,
+											composing ? 'surface-preedit' : 'surface-query',
+											query);
+									}),
+								A2(
+									$elm$json$Json$Decode$at,
+									_List_fromArray(
+										['target', 'value']),
+									$elm$json$Json$Decode$string),
+								$elm$json$Json$Decode$oneOf(
+									_List_fromArray(
+										[
+											A2($elm$json$Json$Decode$field, 'isComposing', $elm$json$Json$Decode$bool),
+											$elm$json$Json$Decode$succeed(false)
+										])));
+							var composition = function (inputKind) {
+								return A2(
+									$elm$json$Json$Decode$map,
+									packet(inputKind),
+									A2(
+										$elm$json$Json$Decode$at,
+										_List_fromArray(
+											['target', 'value']),
+										$elm$json$Json$Decode$string));
+							};
+							return A2(
+								$elm$html$Html$input,
+								_List_fromArray(
+									[
+										$elm$html$Html$Attributes$class('launcher-search'),
+										$elm$html$Html$Attributes$id(item.m),
+										$elm$html$Html$Attributes$type_(
+										(snapshot.a === 'files') ? 'text' : 'search'),
+										$elm$html$Html$Attributes$placeholder(
+										(snapshot.a === 'files') ? '/path/to/folder or ~/Documents' : 'Search applications'),
+										$elm$html$Html$Attributes$value(item.q),
+										A2($elm$html$Html$Attributes$attribute, 'aria-label', item.U),
+										A2($elm$html$Html$Attributes$attribute, 'data-surface-field', item.J),
+										A2($elm$html$Html$Attributes$attribute, 'autocomplete', 'off'),
+										$elm$html$Html$Attributes$disabled(!item.D),
+										A2($elm$html$Html$Events$on, 'input', edit),
+										A2(
+										$elm$html$Html$Events$on,
+										'compositionstart',
+										composition('surface-composition-start')),
+										A2(
+										$elm$html$Html$Events$on,
+										'compositionend',
+										composition('surface-composition-end'))
+									]),
+								_List_Nil);
+						} else {
+							return A2(
+								$elm$html$Html$button,
+								_Utils_ap(
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$class(kind),
+											$elm$html$Html$Attributes$id(item.m),
+											A2(
+											$elm$html$Html$Attributes$attribute,
+											'data-window-state',
+											(kind !== 'control-group') ? 'none' : (A2($elm$core$String$contains, 'Attention; ', item.g) ? 'attention' : (A2($elm$core$String$contains, 'Active', item.g) ? 'active' : (A2($elm$core$String$contains, 'Minimized', item.g) ? 'minimized' : 'open')))),
+											A2($elm$html$Html$Attributes$attribute, 'aria-label', item.U),
+											$elm$html$Html$Attributes$disabled(!item.D),
+											A2($elm$html$Html$Attributes$attribute, 'data-surface-control', item.J),
+											A2(
+											$elm$html$Html$Attributes$attribute,
+											'role',
+											switcherOption ? 'option' : ((popup && (snapshot.a === 'menu')) ? 'menuitem' : 'button')),
+											A2(
+											$elm$html$Html$Attributes$attribute,
+											'aria-current',
+											(((!popup) && ((kind === 'control-group') && (A2($elm$core$String$contains, 'Active', item.g) && (!A2($elm$core$String$contains, 'Attention; ', item.g))))) || (popup && (A2(
+												$elm$core$List$member,
+												snapshot.a,
+												_List_fromArray(
+													['menu', 'switcher', 'snap', 'settings', 'notifications', 'system', 'files', 'jump'])) && (item.g === 'Selected')))) ? 'true' : 'false')
+										]),
+									_Utils_ap(
+										(popup && ((snapshot.a === 'settings') && (item.J === 'settings:help'))) ? _List_fromArray(
+											[
+												A2(
+												$elm$html$Html$Attributes$attribute,
+												'aria-expanded',
+												(item.g === 'Expanded') ? 'true' : 'false')
+											]) : _List_Nil,
+										switcherOption ? _List_fromArray(
+											[
+												A2(
+												$elm$html$Html$Attributes$attribute,
+												'aria-selected',
+												(item.g === 'Selected') ? 'true' : 'false')
+											]) : (((!popup) && (kind === 'control-group')) ? _List_fromArray(
+											[
+												A2(
+												$elm$html$Html$Attributes$attribute,
+												'aria-pressed',
+												active ? 'true' : 'false')
+											]) : _List_Nil))),
+								_List_fromArray(
+									[
+										preview(item.J),
+										A2(
+										$elm$html$Html$span,
+										_List_fromArray(
+											[
+												$elm$html$Html$Attributes$class('control-label')
+											]),
+										_List_fromArray(
+											[
+												$elm$html$Html$text(item.q)
+											])),
+										A2(
+										$elm$html$Html$span,
+										_List_fromArray(
+											[
+												$elm$html$Html$Attributes$class('control-detail')
+											]),
+										_List_fromArray(
+											[
+												$elm$html$Html$text(item.g)
+											]))
+									]));
+						}
 					}
 				}
 			}
@@ -6222,7 +6264,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 								[
 									$elm$html$Html$Attributes$class('overview-workspace'),
 									A2($elm$html$Html$Attributes$attribute, 'role', 'group'),
-									A2($elm$html$Html$Attributes$attribute, 'aria-labelledby', first.p)
+									A2($elm$html$Html$Attributes$attribute, 'aria-labelledby', first.m)
 								]),
 							A2(
 								$elm$core$List$map,
@@ -6249,11 +6291,11 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-theme',
-					$author$project$Settings$themeName(snapshot.t.ai)),
+					$author$project$Settings$themeName(snapshot.u.ai)),
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-text-scale',
-					$elm$core$String$fromInt(snapshot.t.Y)),
+					$elm$core$String$fromInt(snapshot.u.Y)),
 					$elm$html$Html$Attributes$class('surface-popup'),
 					A2($elm$html$Html$Attributes$attribute, 'data-mode', snapshot.a),
 					A2(
@@ -6374,11 +6416,11 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-theme',
-					$author$project$Settings$themeName(snapshot.t.ai)),
+					$author$project$Settings$themeName(snapshot.u.ai)),
 					A2(
 					$elm$html$Html$Attributes$attribute,
 					'data-text-scale',
-					$elm$core$String$fromInt(snapshot.t.Y)),
+					$elm$core$String$fromInt(snapshot.u.Y)),
 					$elm$html$Html$Attributes$class('surface-bar'),
 					A2(
 					$elm$html$Html$Attributes$attribute,
@@ -6409,7 +6451,7 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 									'control:' + item.J,
 									control(item));
 							},
-							snapshot.o))),
+							snapshot.p))),
 					_Utils_Tuple2(
 					'status',
 					A2(

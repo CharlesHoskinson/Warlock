@@ -158,8 +158,15 @@ controls model =
                 MotionPreferences.Reduce -> "reduced"
                 MotionPreferences.Full -> "full")) (MotionPreferences.label selected) (if model.motion.preferences.draft==selected then "Selected" else "") motionReady (\stamp -> Desktop.EditMotionPreference stamp selected)
             changed=model.settings.snapshot |> Maybe.map (\current -> current.values/=model.settings.draft) |> Maybe.withDefault False
+            guidance =
+                if not model.settingsHelp then [] else
+                    [control "settings:help:text:keyboard" "Keyboard navigation" "Tab and Shift+Tab move focus. Arrows move through lists; Home/End reach endpoints. Enter chooses; Escape closes." False Desktop.ToggleSettingsHelp
+                    ,control "settings:help:text:preferences" "Keeping your preferences" "Save settings applies theme and text size. Motion has a separate Save control. Dismissing help keeps unsaved edits." False Desktop.ToggleSettingsHelp
+                    ,control "settings:help:text:recovery" "When an action is not confirmed" "Pending is waiting; Refused did not proceed; Unknown is unconfirmed. Refresh reads state without repeating an action." False Desktop.ToggleSettingsHelp]
         in [control "control:close" "Close settings" "" True Desktop.CloseSettings
-           ,control "settings:motion" (Motion.notice model.motion) model.motion.preferences.notice False Desktop.RefreshMotionPreference
+           ,control "settings:help" (if model.settingsHelp then "Dismiss help" else "Show help") (if model.settingsHelp then "Expanded" else "Collapsed") True Desktop.ToggleSettingsHelp]
+           ++guidance
+           ++[control "settings:motion" (Motion.notice model.motion) model.motion.preferences.notice False Desktop.RefreshMotionPreference
            ,motionOption MotionPreferences.System,motionOption MotionPreferences.Reduce,motionOption MotionPreferences.Full
            ,control "settings:motion:save" "Save motion preference" "Apply and keep across restart" (motionReady && model.motion.preferences.draft/=MotionPreferences.selected model.motion.preferences) Desktop.SaveMotionPreference
            ,control "settings:motion:refresh" "Refresh motion preference" "Read stored preference; no write is repeated" (model.motionExpected==Nothing) Desktop.RefreshMotionPreference

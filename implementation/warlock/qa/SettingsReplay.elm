@@ -54,6 +54,16 @@ result =
         contrastSaving=dispatch Desktop.SaveSettings contrastEdited |> Tuple.first
         contrastRequest=contrastSaving.settings.pending |> Maybe.map .request |> Maybe.withDefault UInt64.zero
         contrastSaved=native (outcome contrastRequest "Saved" (snapshot "2" "high-contrast" 150)) contrastSaving
+        (helpDismissed,helpDismissEffects)=dispatch Desktop.ToggleSettingsHelp edited
+        (helpReopened,helpReopenEffects)=dispatch Desktop.ToggleSettingsHelp helpDismissed
+        (helpClosed,_)=dispatch Desktop.CloseSettings helpDismissed
+        (settingsReopened,_)=dispatch Desktop.OpenSettings helpClosed
+        (helpUnknown,helpUnknownEffects)=dispatch Desktop.ToggleSettingsHelp unknown
+        (helpPending,helpPendingEffects)=dispatch Desktop.ToggleSettingsHelp saving
+        staleHelp=case Desktop.capture read of
+            Just stamp -> Desktop.update (Desktop.ToggleSettingsHelp stamp) edited |> Tuple.first
+            Nothing -> edited
+        helpRows model=Surface.controls model |> List.filter (\control -> String.startsWith "settings:help:text:" control.id)
         frame=Surface.packet (counter "1") (counter "1") read
         savedFrame=Surface.packet (counter "2") (counter "1") committed
         checked name value=(name,E.bool value)
@@ -84,6 +94,13 @@ result =
             ,checked "contrastDecoderIsTyped" (D.decodeValue Settings.valuesDecoder (Settings.encodeValues {theme=Settings.HighContrast,textScale=200})==Ok {theme=Settings.HighContrast,textScale=200})
             ,checked "contrastDraftDoesNotApplyBeforeReceipt" (appearance contrastEdited==Just {theme=Settings.Night,textScale=100})
             ,checked "contrastCorrelatedReceiptApplies" (appearance contrastSaved==Just {theme=Settings.HighContrast,textScale=150})
+            ,checked "helpOfferedWithoutOnboardingGate" (read.settingsHelp && List.length (helpRows read)==3 && Settings.writable read.settings)
+            ,checked "helpDismissalKeepsDraftWithoutEffects" (not helpDismissed.settingsHelp && helpDismissed.settings==edited.settings && List.isEmpty helpDismissEffects && List.isEmpty (helpRows helpDismissed))
+            ,checked "helpReopensWithoutEffects" (helpReopened.settingsHelp && List.length (helpRows helpReopened)==3 && helpReopened.settings==edited.settings && List.isEmpty helpReopenEffects)
+            ,checked "settingsReopenKeepsSessionDismissal" (not settingsReopened.settingsHelp)
+            ,checked "helpDoesNotResolveUnknownOrReplay" (helpUnknown.settings==unknown.settings && helpUnknown.settings.pending/=Nothing && List.isEmpty helpUnknownEffects)
+            ,checked "helpAvailableWhilePending" (helpPending.settings==saving.settings && List.isEmpty helpPendingEffects)
+            ,checked "staleHelpCannotToggle" (staleHelp==edited)
             ,checked "allSettingsHaveNames" (List.all (\c -> not (String.isEmpty c.ariaLabel)) (Surface.controls read))]
-    in E.object [("checks",E.object checks),("frame",frame),("savedFrame",savedFrame),("appearanceFrames",E.list identity appearanceFrames)]
+    in E.object [("checks",E.object checks),("frame",frame),("savedFrame",savedFrame),("helpDismissedFrame",Surface.packet (counter "20") (counter "1") helpDismissed),("helpReopenedFrame",Surface.packet (counter "21") (counter "1") helpReopened),("appearanceFrames",E.list identity appearanceFrames)]
 main = Platform.worker {init=\() -> ((),outgoing result),update=\_ model -> (model,Cmd.none),subscriptions=\_ -> Sub.none}
