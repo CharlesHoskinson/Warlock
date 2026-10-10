@@ -3011,9 +3011,32 @@
               },
               "reviewer": "root-max-input",
               "disposition": "partial"
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/committed-max-scene/manifest.json",
+              "sha256": "df22674601d5ad14e6ea1e416c3813e24611b196de11201976902e0e32432598",
+              "scope": "Native MAX paint consumes captured window order; output commit plus unchanged structural surface/input/transform/owner facts publish the scene. Actual included/excluded point receipts match that committed scene revision, upper pixels and upper/lower GTK press/release/focus recipients. Both return placements and current pin/MAX pointer/keyboard regression pass. Full scene/presentation/race/exception and independent acceptance remain open.",
+              "sourceBaseRevision": "78c25a5c7ad23d5733778e102dfe7a8cfc813300",
+              "sourceHashes": {
+                "implementation/warlock/native/core/CommittedScene.hpp": "8ab0576ddf0d2f141259b57dd211219455fa6f0fca94e21a077e49fc57fd577f",
+                "implementation/warlock/native/core/Renderer.cpp": "ceefb9b27ed86dad043057590c2558ebf799f71397c5e41071d21d368f1892ef",
+                "implementation/warlock/native/core/ViewHitTester.cpp": "f1e63e71bbeb47b0bb35be67b87d07b0d531fb446ddb4fa8d565029662653fbd",
+                "implementation/warlock/native/authority.cpp": "f7c7445c47a61f2fffd5ed41e8cc48f8028e5499f059b072990a48376db99c07",
+                "implementation/warlock/qa/check-scene-core.py": "d1ebccf8cff24cbb11d1b1abca44cd0da205da681b6adb52a67367b90e6bb3cc",
+                "implementation/warlock/qa/check-native-authority.py": "2ce2aeee2d815a6005a6132817eedaa92c207f0f9c4ae57f6a382c7b7ea7608a",
+                "implementation/warlock/qa/current-scene-core.json": "a6db9b6c6343d1e53dacd82955125968d174402d69a0465d366fa4da4f3c0184",
+                "implementation/warlock/qa/current-native-pair.json": "582efa2532e3b0069da332c6b7f6301330f6dadae7c69e6920291341f5c4b4eb",
+                "implementation/warlock/qa/current-search-build.json": "93ee86cca75ef9bf5e6d7ff74786f90455dd71a04056b5589f8c1ed12da133e7",
+                "implementation/warlock/qa/native-window-feedback.py": "a6247750ae49bfef098a5c2840c36d12e5cae4a301144338c58758005e667946",
+                "implementation/warlock/qa/native-committed-max.py": "a273ce078f454dcf87ddf9c8d5240a4e01ebbdb500a836bd231e72c0aa11d89e",
+                "implementation/warlock/README.md": "6a69bd5b71fe8db8bfa25aa7796f4c7f1441d51375b2ec1c93b3a6b63e0bd7a0",
+                "implementation/warlock/native/core/InputManager.cpp": "7aad5c692729ea1e53a14c87b57a757eab5107ae1a0c849dae13a53e5862a266"
+              },
+              "reviewer": "root-scene",
+              "disposition": "partial"
             }
           ],
-          "missingObservation": "Native render/hit receipts bound to one committed constrained scene revision including input-region/transform changes; original transformed/modal and explicit passthrough/no-activation cases; applicable native AT and independent acceptance."
+          "missingObservation": "Independent original disposition; full constrained-scene/presentation beyond the observed native window plane; stale/failed commit, button/cache/grab/layer/retirement and transformed/modal/passthrough/no-activation schedules; multi-output/resources, full family/fullscreen/AT and release gates."
         },
         {
           "name": "max-modal-focus",
@@ -10988,5 +11011,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-10T05:55:02.595193+00:00"
+  "updatedUTC": "2026-10-10T06:26:53.497953+00:00"
 }

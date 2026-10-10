@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "scope": "Two coherent floating MAX placements, abstract input-hole traversal and stale-paint rejection; no native/ABI/transform/input/pixel/committed-scene claim",
+  "nativeAcceptance": false,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-01d3fecc464f4ee297e4b74cb7b5d678.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "max-overlap.qnt": "b42f598d9cd54c25d0dc23c3c4ead9919b1e25a926b99006b3f8d440a6655a30",
+    "max-overlap_test.qnt": "711ad185c846f3f593a4ea58cfbe61181ea791037f70039c3661e8e125b9b8bb"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/max-overlap.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/max-overlap_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=79301"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "witnesses",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/max-overlap.qnt",
+        "--backend=typescript",
+        "--witnesses",
+        "bothMax",
+        "holeLower",
+        "stalePaintRefused",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79302"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "safety",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/max-overlap.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=79303"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "witnessCounts": {
+    "bothMax": 192,
+    "holeLower": 2,
+    "stalePaintRefused": 43
+  }
+}

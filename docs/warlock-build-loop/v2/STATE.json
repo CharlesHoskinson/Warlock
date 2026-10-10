@@ -1,13 +1,66 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T05:55:02.595193+00:00",
+  "updatedUTC": "2026-10-10T06:26:53.497953+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
+    "id": "max-committed-scene",
+    "requirements": [
+      "ELM-REN-015"
+    ],
+    "scenarios": [
+      "max-input-region"
+    ],
+    "paths": [
+      "implementation/warlock/native/core/CommittedScene.hpp",
+      "implementation/warlock/native/core/Renderer.cpp",
+      "implementation/warlock/native/core/ViewHitTester.cpp",
+      "implementation/warlock/native/authority.cpp",
+      "implementation/warlock/qa/check-scene-core.py",
+      "implementation/warlock/qa/check-native-authority.py",
+      "implementation/warlock/qa/current-scene-core.json",
+      "implementation/warlock/qa/current-native-pair.json",
+      "implementation/warlock/qa/current-search-build.json",
+      "implementation/warlock/qa/native-window-feedback.py",
+      "implementation/warlock/qa/native-committed-max.py",
+      "implementation/warlock/README.md",
+      "implementation/warlock/native/core/InputManager.cpp"
+    ],
+    "before": "MAX paint and input use separate live traversals; scene-fact revisions and diagnostic draw traces do not prove one committed constrained scene.",
+    "after": "The MAX render and input traversals share one bounded immutable native order snapshot, published only after successful output commit and unchanged structural dependencies. Changed input-region/transform/placement/order facts refuse stale input until a matching frame commits; native hit receipts identify the consumed scene.",
+    "verification": [
+      "Existing quint-llm-kit max-overlap named tests, witnesses and safety unchanged; owning Renderer/HitTester compile and exact relink with explicit additive scene API; actual original native MAX input-hole and pin/MAX regression with committed-scene receipts"
+    ],
+    "status": "implemented-partial",
+    "participantRecord": ".warlock-contributor/scene.json",
+    "evidence": "implementation/warlock/qa/evidence/committed-max-scene/manifest.json",
+    "observed": "Native MAX painting/input now share a successfully committed structurally current window-order snapshot. Original included/excluded physical clicks consume matching committed paint/hit revisions, actual upper pixels and upper/lower GTK press/release/focus recipients. Both return placements and pin/MAX pointer/keyboard regression pass; the existing model remains unchanged and passes before/after. Independent and wider scene/race/exception/AT/resource qualification remain open.",
+    "missingObservations": [
+      "Independent original max-input-region disposition; full constrained-scene/presentation acceptance remains separate.",
+      "Native stale/failed commit, button/cache/grab/layer/retirement schedules, transformed/modal and explicit passthrough/no-activation cases.",
+      "Multi-output/resource gates, full pin/family/fullscreen policy, applicable native AT and release packaging/rollback."
+    ],
+    "nextSourceWork": "Implement and qualify original no-activation/passthrough and stale/failed-frame button/cache paths on the current shared scene; specifically inspect a ready scene with no eligible window and previously cached pointer focus, and preserve legitimate layers, locks, grabs and accepted releases. Then close the original modal/fullscreen/family policy and transformed/multi-output predicates. Preserve two-MAX and pin/MAX behavior, original clocks and matched native pair. Native AT/IME/resources/package/rollback remain mandatory release scope."
+  },
+  "nextSlices": [
+    "taskbar activation/minimize/restore and popup focus journeys",
+    "persistent catalog pins",
+    "launcher search and refusal recovery",
+    "switcher/Task View/workspaces and snap/output journeys",
+    "authorized visible previews and fallback",
+    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
+    "original native, AT/IME, hardware/resource/journey gates",
+    "reproducible package, reversible deployment/rollback"
+  ],
+  "releaseAccepted": false,
+  "oldTrackerIsCurrent": false,
+  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
+  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
+  "previousSlice": {
     "id": "max-input-region",
     "requirements": [
       "ELM-REN-015"
@@ -47,63 +100,6 @@
       "Independent original scenario disposition and applicable native AT/full-release qualification."
     ],
     "nextSourceWork": "Implement a native committed constrained-scene identity shared by render and input traversal, with real input-region/transform dependencies and authenticated native receipts. Preserve actual two-MAX, pin/MAX and return-placement behavior. Continue original modal/pass-through/no-activation predicates without using authority dependency revisions as frame-scene proof; full family/fullscreen/AT/IME/hardware/resources/package/rollback stay mandatory."
-  },
-  "nextSlices": [
-    "taskbar activation/minimize/restore and popup focus journeys",
-    "persistent catalog pins",
-    "launcher search and refusal recovery",
-    "switcher/Task View/workspaces and snap/output journeys",
-    "authorized visible previews and fallback",
-    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
-    "original native, AT/IME, hardware/resource/journey gates",
-    "reproducible package, reversible deployment/rollback"
-  ],
-  "releaseAccepted": false,
-  "oldTrackerIsCurrent": false,
-  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
-  "previousSlice": {
-    "id": "stable-observed-always-on-top",
-    "requirements": [
-      "ELM-UX-016"
-    ],
-    "scenarios": [
-      "ux-016"
-    ],
-    "before": "Always on top changes its label to Unpin window after pinning and has no checked control semantics. The observed native pin/MAX and original prepared custody path already exist.",
-    "after": "Always on top retains its label and keyed control identity and exposes a checkmark plus menuitemcheckbox/aria-checked from exact observed native pin state. Pending/Unknown and stale controls cannot replay; application pins retain their separate wording. Original native MAX pin/unpin and real overlap hit oracle remain binding.",
-    "paths": [
-      "implementation/warlock/src/Provider.elm",
-      "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/src/SurfaceRenderer.elm",
-      "implementation/warlock/native/surface.h",
-      "implementation/warlock/assets/popup-adapter.js",
-      "implementation/warlock/assets/shell.css",
-      "implementation/warlock/assets/elm.js",
-      "implementation/warlock/assets/bar.js",
-      "implementation/warlock/assets/popup.js",
-      "implementation/warlock/qa/PinMaxReplay.elm",
-      "implementation/warlock/qa/check-search.py",
-      "implementation/warlock/qa/surface-admission.c",
-      "implementation/warlock/qa/native-pin-max.py",
-      "implementation/warlock/qa/pin-check-browser.mjs",
-      "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/README.md",
-      "implementation/warlock/assets/context.js"
-    ],
-    "verification": [
-      "Use installed quint-llm-kit execute-spec lightweight workflow against unchanged menu-read-order model: explicit named, positive witnesses and safety before/after code. Compile actual Elm roots/GTK host; typed checked projection and negative renderer/native shape admission; browser same keyed node/AX checked state and no checked-state action authority; protected original native-pin-max.py physical pin/unpin/geometry/paint/hit with checked label observations and unchanged deadlines. Native speech/braille and full pin/family/fullscreen campaign remain open."
-    ],
-    "status": "implemented-partial",
-    "participantRecord": ".warlock-contributor/pin-check.json",
-    "evidence": "implementation/warlock/qa/evidence/pin-check/manifest-appearance.json",
-    "observed": "Stable observed Always on top checkbox and MAX selected-state/actual keyboard focus are implemented. Twenty-eight typed checks and 21 browser checks pass. Original protected native pointer maximize/pin/unpin preserves MAX geometry and matches displayed/native state, overlap pixels and real GTK hit/focus; two actual physical-keyboard checkbox toggles focus the selected operation and invoke exactly once. Native cleanup passes. Independent original acceptance and full pin/family/fullscreen/AT release scope remain open. Browser qualification additionally uses the actual shipped popup page and its high-contrast palette/200% text projector, with identical production/native hashes.",
-    "missingObservations": [
-      "Independent original UX-016 acceptance.",
-      "Native speech/braille and full checked-menu/focus/recovery semantics through AT.",
-      "Full original pin/family/fullscreen, modal/input-region/paint predicates and release hardware/resource/package/rollback scope."
-    ],
-    "nextSourceWork": "Complete the remaining original MAX/pin family, fullscreen and painted/input-order predicates on the current coherent native tuple. Select one original REN-015/016/017/018 behavior, inspect its exact original campaign and implement actual missing scene behavior before extending qualification. Preserve original pin blockers, MAX return geometry, drafts, source/core/plugin ABI and deadlines. Native AT/IME/hardware/resources and package/rollback remain mandatory release scope."
   },
   "recentSlices": [
     {

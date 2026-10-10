@@ -46,16 +46,28 @@ try:
   assert pin_core['passed'] and pin_core['existingPublicHeadersUnchanged'] and pin_core['existingObjectLayoutsUnchanged'] and sha(ROOT/'native/core/ConfigActions.cpp')==pin_core['sourceSHA256']
   assert pin_core['ancestor']=={'report':str(focus_report),'reportSHA256':sha(focus_report)} and pin_core['owningHeaders']==focus_core['owningHeaders']
   header_prefix=(header_prefix[0],str(pin_report.parent/'owning-headers'));core={'path':pin_core['binary'],'sha256':pin_core['binarySHA256']};assert sha(core['path'])==core['sha256']
+ scene_pointer=ROOT/'qa/current-scene-core.json'
+ scene_meta=json.loads(scene_pointer.read_text()) if scene_pointer.exists() else None
+ scene_record=json.loads((REPO/scene_meta['report']).read_text()) if scene_meta else None
  max_path=ROOT/'qa/current-max-core.json'
  if max_path.exists():
   maximum=json.loads(max_path.read_text());max_report=REPO/maximum['report'];assert sha(max_report)==maximum['reportSHA256'];max_core=json.loads(max_report.read_text())
-  assert max_core['passed'] and max_core['existingPublicHeadersUnchanged'] and max_core['existingObjectLayoutsUnchanged'] and sha(ROOT/'native/core/FullscreenController.cpp')==max_core['sourceSHA256'] and all(sha(ROOT/p)==h for p,h in max_core['sourceHashes'].items())
+  assert max_core['passed'] and max_core['existingPublicHeadersUnchanged'] and max_core['existingObjectLayoutsUnchanged'] and sha(ROOT/'native/core/FullscreenController.cpp')==max_core['sourceSHA256'] and all(sha((max_report.parent/'owning-headers/src/desktop/state/ViewHitTester.cpp') if scene_record and p=='native/core/ViewHitTester.cpp' else ROOT/p)==h for p,h in max_core['sourceHashes'].items())
   assert max_core['ancestor']=={'report':str(pin_report),'reportSHA256':sha(pin_report)} and max_core['owningHeaders']==pin_core['owningHeaders']
   header_prefix=(header_prefix[0],str(max_report.parent/'owning-headers'));core={'path':max_core['binary'],'sha256':max_core['binarySHA256']};assert sha(core['path'])==core['sha256']
+ if scene_record:
+  scene_report=REPO/scene_meta['report'];assert sha(scene_report)==scene_meta['reportSHA256']
+  assert scene_record['passed'] and scene_record['existingPublicHeadersUnchanged'] and scene_record['existingObjectLayoutsUnchanged'] and scene_record['existingStrongExportsPreserved']
+  assert scene_record['ancestor']=={'report':str(max_report),'reportSHA256':sha(max_report)} and scene_record['owningHeaders']==max_core['owningHeaders']
+  assert all(sha(ROOT/p)==h for p,h in scene_record['sourceHashes'].items())
+  assert all(sha(p)==h for p,h in scene_record['dependencies'].items()) and all(sha(p)==h for p,h in scene_record['linkDependencies'].items())
+  header_prefix=(header_prefix[0],str(scene_report.parent/'owning-headers'));core={'path':scene_record['binary'],'sha256':scene_record['binarySHA256']};assert sha(core['path'])==core['sha256']
  source=OUT/'inputs/native';source.mkdir(parents=True)
  inputs={}
  for name in ('authority.cpp','navigation-modal.hpp','geometry-effects.inc','snap-placement.inc','transfer-workspace.inc','motion-profile.inc','picker-preview.inc','picker-probe-table.hpp','capture-fd-server.inc','geometry.inc','shortcut-bindings.inc'):
   p=ROOT/'native'/name;inputs['native/'+name]=sha(p);shutil.copyfile(p,source/name)
+ if scene_record:
+  p=ROOT/'native/core/CommittedScene.hpp';inputs['native/core/CommittedScene.hpp']=sha(p);(source/'core').mkdir();shutil.copyfile(p,source/'core/CommittedScene.hpp')
  command=next(c['command'] for c in prior['commands'] if c['name']=='compile').copy()
  for i,arg in enumerate(command):
   if arg==str(PRIOR/'inputs/native/authority.cpp'):command[i]=str(source/'authority.cpp')
@@ -69,7 +81,7 @@ try:
  dependencies={str(pathlib.Path(p).resolve()):sha(p) for p in deps}
  for p,h in dependencies.items():
   if p.startswith(str(source)):
-   assert pathlib.Path(p).name in ('authority.cpp','navigation-modal.hpp','geometry-effects.inc','snap-placement.inc','transfer-workspace.inc','motion-profile.inc','picker-preview.inc','picker-probe-table.hpp','capture-fd-server.inc','geometry.inc','shortcut-bindings.inc')
+   assert pathlib.Path(p).name in ('CommittedScene.hpp','authority.cpp','navigation-modal.hpp','geometry-effects.inc','snap-placement.inc','transfer-workspace.inc','motion-profile.inc','picker-preview.inc','picker-probe-table.hpp','capture-fd-server.inc','geometry.inc','shortcut-bindings.inc')
   else:
    inherited=header_prefix[0]+p[len(header_prefix[1]):] if header_prefix and p.startswith(header_prefix[1]+'/') else p
    recorded=preserved.get(inherited)

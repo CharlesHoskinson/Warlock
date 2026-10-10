@@ -1,3 +1,4 @@
+#include "core/CommittedScene.hpp"
 #include <hyprland/src/desktop/state/LayerState.hpp>
 #include <hyprland/src/desktop/view/LayerSurface.hpp>
 #include "incarnation-retirement.hpp"
@@ -457,6 +458,27 @@ std::string sceneFacts(bool includeAttention=true) {
 }
 std::string traceNumbers(const std::array<double,5>& values) {
     std::string result="[";for(size_t i=0;i<values.size();++i){if(i)result+=',';result+=std::to_string(values[i]);}return result+"]";
+}
+std::string committedSceneTrace() {
+    const auto memberId=[](const PHLWINDOW& window) {
+        const auto found=std::find_if(members.begin(),members.end(),[&](const Member& member){return window && member.window.lock()==window;});
+        return found==members.end()?std::string("null"):quote(std::to_string(found->id));
+    };
+    std::string result="{\"scope\":\"native-window-plane\",\"scenes\":[";size_t count=0;
+    for(const auto& observation:Render::CommittedScene::observations()) {
+        if(count++) result+=',';
+        const auto monitor=observation.snapshot.monitor.lock();
+        result+="{\"monitor\":"+quote(std::to_string(monitor->m_id))+",\"sceneRevision\":"+quote(std::to_string(observation.snapshot.revision))+",\"outputCommitted\":true,\"ready\":"+std::string(observation.ready?"true":"false")+",\"order\":[";
+        size_t windows=0;for(const auto& window:observation.snapshot.order) {if(windows++) result+=',';result+=memberId(window.lock());}
+        result+="]}";
+    }
+    result+="],\"hits\":[";count=0;
+    for(const auto& hit:Render::CommittedScene::hits()) {
+        if(count++) result+=',';
+        const auto monitor=hit.monitor.lock();
+        result+="{\"sequence\":"+quote(std::to_string(hit.sequence))+",\"monitor\":"+(monitor?quote(std::to_string(monitor->m_id)):std::string("null"))+",\"sceneRevision\":"+quote(std::to_string(hit.revision))+",\"ready\":"+std::string(hit.ready?"true":"false")+",\"recipient\":"+memberId(hit.recipient.lock())+",\"point\":["+std::to_string(hit.point[0])+","+std::to_string(hit.point[1])+"],\"properties\":"+std::to_string(hit.properties)+"}";
+    }
+    return result+"]}";
 }
 std::string renderTrace(const std::vector<Render::SceneTrace::Frame>& frames) {
     std::string result="[";size_t count=0;
@@ -956,7 +978,7 @@ std::string observe(eHyprCtlOutputFormat, std::string request) {
                 if(!found->second.geometryEnabled) reply=error("geometry-negotiation-required");
                 else reply=performGeometryEffect(found->second,object);
             } else reply=performEffect(found->second,object,payload);
-        } else if ((operation == "snapshot-request" || operation == "scene-facts-request" || operation == "activation-history-request" || operation == "render-trace-request" || operation == "retain-render-trace-request" || operation == "retained-render-trace-request") && (fields(object,{"protocolVersion","kind","binding","requestId","minimumWatermark"}) || (operation=="scene-facts-request" && fields(object,{"protocolVersion","kind","binding","requestId","minimumWatermark","attentionProtocol"})))) {
+        } else if ((operation == "committed-scene-request" || operation == "snapshot-request" || operation == "scene-facts-request" || operation == "activation-history-request" || operation == "render-trace-request" || operation == "retain-render-trace-request" || operation == "retained-render-trace-request") && (fields(object,{"protocolVersion","kind","binding","requestId","minimumWatermark"}) || (operation=="scene-facts-request" && fields(object,{"protocolVersion","kind","binding","requestId","minimumWatermark","attentionProtocol"})))) {
             const auto attentionVersion=json_object_get_member(object,"attentionProtocol");
             const bool attention=attentionVersion!=nullptr;
             if(attention && (!JSON_NODE_HOLDS_VALUE(attentionVersion) || json_node_get_value_type(attentionVersion)!=G_TYPE_INT64 || json_node_get_int(attentionVersion)!=1)) throw std::runtime_error("attention-version");
@@ -974,6 +996,12 @@ std::string observe(eHyprCtlOutputFormat, std::string request) {
             if (!native || !sessionId || !frontend || found == sessions.end() || found->second.start != start ||
                 *native != lifetime || *sessionId != found->second.id || *frontend != found->second.frontend || !grantRegistry->callerMatches(verifiedPeer(peer,start),{lifetime,*sessionId,*frontend})) {
                 reply = error("binding-mismatch");
+            } else if(operation=="committed-scene-request") {
+                if(activeSequence==std::numeric_limits<uint64_t>::max() || *floor>activeSequence+1) reply=error("watermark-unavailable");
+                else {
+                    refreshFacts();
+                    reply="{\"protocolVersion\":3,\"kind\":\"committed-scene\",\"sceneProtocol\":1,\"binding\":"+binding(found->second)+",\"requestId\":"+quote(std::to_string(*requestId))+",\"observations\":"+committedSceneTrace()+"}";
+                }
             } else if(trace) {
                 refreshOutputs();
                 auto& retained=found->second.retained;

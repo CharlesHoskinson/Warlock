@@ -2,22 +2,22 @@
   "schema": 1,
   "pair": {
     "core": {
-      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/max-core-1791611447208487848/Hyprland",
-      "sha256": "935bacda219faad6b44d30fc94ebf5e715db98bd499df0e2929de570b5e22f3b"
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/scene-core-1791612828915458166/Hyprland",
+      "sha256": "c8d205f60cc7f994b9e7dc19b8fe3634e763bddfaaeff165379a217580a9d7d9"
     },
     "plugin": {
-      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791611480287047016/elm-window-geometry-authority.so",
-      "sha256": "a7321a9a9560b9e6befd81c7ee233ac7d9ebb3e4bcd8f8c79fb453c883b98134"
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791612942101839310/elm-window-geometry-authority.so",
+      "sha256": "ca62b1c6f49626540ab71b006e335ca6ba5f97057b27c01f2672b4c9adb97954"
     },
     "aquamarine": {
       "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
       "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
     }
   },
-  "authorityReport": "implementation/warlock/qa/runs/native-authority-1791611480287047016/report.json",
-  "authorityReportSHA256": "b0630b78b8fb7663d7481d1a324634e4e4eff0b69d82e5e03f637a9eb8265372",
+  "authorityReport": "implementation/warlock/qa/runs/native-authority-1791612942101839310/report.json",
+  "authorityReportSHA256": "edcd9fc290cdbb7a6d36cfb383398e163a2b94038f7b92e5e2ae66baeabf41c5",
   "authorityInputs": {
-    "native/authority.cpp": "08d13f3b6ca6b67c1bd1ac78e36a4c59c7d4e2468d41fdbcac6a7ab95dddd081",
+    "native/authority.cpp": "f7c7445c47a61f2fffd5ed41e8cc48f8028e5499f059b072990a48376db99c07",
     "native/navigation-modal.hpp": "f3a1fdabeaa4abdaa3bcd839e0a3b62854a844cd791dd338d8f1a3e5bb488c1e",
     "native/geometry-effects.inc": "78276a901a3d5a47c48e5c6eeb646715fbc72f5d13ae6ba9d7b703d9ec761d04",
     "native/snap-placement.inc": "fd7c0480bcf6b09d3e663f9432d8f42400867a95c48afc85c0569a6a6c01a122",
@@ -27,7 +27,8 @@
     "native/picker-probe-table.hpp": "82663226635882932bd6ebdb298d63f1ca0be68f7e271b9e56d141cb06e1492f",
     "native/capture-fd-server.inc": "b81d77ec641f05ecbe90ffbef38fc90935f8ec6d56e636b5bafc04cc7ac31557",
     "native/geometry.inc": "fa945f6ba2521d9c54f1fdcd7bc9772b95a1b2e28d0772ef80282eda3ae38dbd",
-    "native/shortcut-bindings.inc": "1103085deb970c048b81f5afbf9848eae64388ad73c741f1bb7780cfbd8e3345"
+    "native/shortcut-bindings.inc": "1103085deb970c048b81f5afbf9848eae64388ad73c741f1bb7780cfbd8e3345",
+    "native/core/CommittedScene.hpp": "8ab0576ddf0d2f141259b57dd211219455fa6f0fca94e21a077e49fc57fd577f"
   },
   "unchangedRuntimePreflight": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-client-provider-native-v204/qa/preflight.json",
   "unchangedRuntimePreflightSHA256": "d0b121978e8833ad03da40aab848b8f80442abe5cfc7540d4582a812e1e8cc26",
@@ -45,6 +46,13 @@
     "report": "implementation/warlock/qa/runs/max-core-1791611447208487848/report.json",
     "reportSHA256": "42b5cb5227d28d99101967484fb0910f5dd19f199697a82b49d78a3be24a2d45",
     "binarySHA256": "935bacda219faad6b44d30fc94ebf5e715db98bd499df0e2929de570b5e22f3b",
+    "nativeAcceptance": false
+  },
+  "sceneCoreReport": {
+    "schema": 1,
+    "report": "implementation/warlock/qa/runs/scene-core-1791612828915458166/report.json",
+    "reportSHA256": "eaf69c9280696787c58e90d5f619681cb09c18a5bfa4c543eca5620e71384769",
+    "binarySHA256": "c8d205f60cc7f994b9e7dc19b8fe3634e763bddfaaeff165379a217580a9d7d9",
     "nativeAcceptance": false
   }
 }

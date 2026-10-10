@@ -68,9 +68,15 @@ if (ROOT/'qa/current-native-pair.json').exists():
   if 'maxCoreReport' in native_pair:
    maximum=native_pair['maxCoreReport'];max_path=REPO/maximum['report'];assert sha(max_path)==maximum['reportSHA256'];max_core=json.loads(max_path.read_text())
    assert max_core['passed'] and max_core['existingPublicHeadersUnchanged'] and max_core['existingObjectLayoutsUnchanged'] and max_core['owningHeaders']==pin_core['owningHeaders']
-   assert sha(ROOT/'native/core/FullscreenController.cpp')==max_core['sourceSHA256'] and all(sha(ROOT/p)==h for p,h in max_core['sourceHashes'].items()) and max_core['ancestor']=={'report':str(pin_path),'reportSHA256':sha(pin_path)}
+   assert sha(ROOT/'native/core/FullscreenController.cpp')==max_core['sourceSHA256'] and all(sha((max_path.parent/'owning-headers/src/desktop/state/ViewHitTester.cpp') if 'sceneCoreReport' in native_pair and p=='native/core/ViewHitTester.cpp' else ROOT/p)==h for p,h in max_core['sourceHashes'].items()) and max_core['ancestor']=={'report':str(pin_path),'reportSHA256':sha(pin_path)}
    assert all(sha(p)==h for p,h in max_core['dependencies'].items()) and all(sha(p)==h for p,h in max_core['linkDependencies'].items())
    qualified_core=max_core
+  if 'sceneCoreReport' in native_pair:
+   scene=native_pair['sceneCoreReport'];scene_path=REPO/scene['report'];assert sha(scene_path)==scene['reportSHA256'];scene_core=json.loads(scene_path.read_text())
+   assert scene_core['passed'] and scene_core['existingPublicHeadersUnchanged'] and scene_core['existingObjectLayoutsUnchanged'] and scene_core['existingStrongExportsPreserved'] and scene_core['owningHeaders']==max_core['owningHeaders']
+   assert scene_core['ancestor']=={'report':str(max_path),'reportSHA256':sha(max_path)} and all(sha(ROOT/p)==h for p,h in scene_core['sourceHashes'].items())
+   assert all(sha(p)==h for p,h in scene_core['dependencies'].items()) and all(sha(p)==h for p,h in scene_core['linkDependencies'].items())
+   qualified_core=scene_core
   assert native_pair['pair']['core']=={'path':qualified_core['binary'],'sha256':qualified_core['binarySHA256']}
   ancestor_path=pathlib.Path(focus_core['ancestor']['report']);assert sha(ancestor_path)==focus_core['ancestor']['reportSHA256'];ancestor=json.loads(ancestor_path.read_text())
   assert pair['core']=={'path':ancestor['binary'],'sha256':ancestor['binarySHA256']}

@@ -1,3 +1,4 @@
+#include "CommittedScene.hpp"
 #include "ViewHitTester.hpp"
 #include "FocusState.hpp"
 #include "ViewStateTracker.hpp"
@@ -31,6 +32,12 @@ PHLWINDOW CViewHitTester::windowAt(const Vector2D& pos, uint16_t properties, PHL
     if (!PMONITOR)
         return nullptr;
 
+    const auto inputScene = Render::CommittedScene::inputOrder(PMONITOR);
+    if (inputScene.required && !inputScene.ready) {
+        Render::CommittedScene::hit(PMONITOR, inputScene, nullptr, {pos.x,pos.y}, properties);
+        return nullptr;
+    }
+    auto resolve = [&]() -> PHLWINDOW {
     static auto PRESIZEONBORDER       = CConfigValue<Config::INTEGER>("general:resize_on_border");
     static auto PBORDERSIZE           = CConfigValue<Config::INTEGER>("general:border_size");
     static auto PBORDERGRABEXTEND     = CConfigValue<Config::INTEGER>("general:extend_border_grab_area");
@@ -42,7 +49,7 @@ PHLWINDOW CViewHitTester::windowAt(const Vector2D& pos, uint16_t properties, PHL
     const bool  DO_FOLLOW_MOUSE_CHECK = properties & FOLLOW_MOUSE_CHECK;
     const auto  HITBOX_SHRINK         = DO_FOLLOW_MOUSE_CHECK ? *PFOLLOWMOUSESHRINK : 0;
     const auto  LASTFOCUSED           = focusState()->window();
-    const auto& WINDOWS               = m_tracker.windows();
+    const auto& WINDOWS               = inputScene.required ? inputScene.order : m_tracker.windows();
 
     const auto  isShadowedByModal = [](PHLWINDOW w) -> bool {
         return *PMODALPARENTBLOCKING && w->m_xdgSurface && w->m_xdgSurface->m_toplevel && w->m_xdgSurface->m_toplevel->anyChildModal();
@@ -268,6 +275,11 @@ PHLWINDOW CViewHitTester::windowAt(const Vector2D& pos, uint16_t properties, PHL
     }
 
     return windowForWorkspace(false);
+    };
+    const auto recipient = resolve();
+    if (inputScene.required && !Render::CommittedScene::hit(PMONITOR, inputScene, recipient, {pos.x,pos.y}, properties))
+        return nullptr;
+    return recipient;
 }
 
 SP<CWLSurfaceResource> CViewHitTester::windowSurfaceAt(const Vector2D& pos, PHLWINDOW window, Vector2D& surfaceLocal) const {

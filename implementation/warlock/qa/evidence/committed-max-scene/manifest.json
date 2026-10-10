@@ -1,0 +1,964 @@
+{
+  "schema": 1,
+  "requirement": "ELM-REN-015",
+  "scenario": "max-input-region",
+  "oracle": "paint retains the upper pixels, native hit chooses the eligible lower input surface, and the scene revision agrees",
+  "disposition": "partial",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "sourceBaseRevision": "78c25a5c7ad23d5733778e102dfe7a8cfc813300",
+  "sourceHashes": {
+    "implementation/warlock/native/core/CommittedScene.hpp": "8ab0576ddf0d2f141259b57dd211219455fa6f0fca94e21a077e49fc57fd577f",
+    "implementation/warlock/native/core/Renderer.cpp": "ceefb9b27ed86dad043057590c2558ebf799f71397c5e41071d21d368f1892ef",
+    "implementation/warlock/native/core/ViewHitTester.cpp": "f1e63e71bbeb47b0bb35be67b87d07b0d531fb446ddb4fa8d565029662653fbd",
+    "implementation/warlock/native/authority.cpp": "f7c7445c47a61f2fffd5ed41e8cc48f8028e5499f059b072990a48376db99c07",
+    "implementation/warlock/qa/check-scene-core.py": "d1ebccf8cff24cbb11d1b1abca44cd0da205da681b6adb52a67367b90e6bb3cc",
+    "implementation/warlock/qa/check-native-authority.py": "2ce2aeee2d815a6005a6132817eedaa92c207f0f9c4ae57f6a382c7b7ea7608a",
+    "implementation/warlock/qa/current-scene-core.json": "a6db9b6c6343d1e53dacd82955125968d174402d69a0465d366fa4da4f3c0184",
+    "implementation/warlock/qa/current-native-pair.json": "582efa2532e3b0069da332c6b7f6301330f6dadae7c69e6920291341f5c4b4eb",
+    "implementation/warlock/qa/current-search-build.json": "93ee86cca75ef9bf5e6d7ff74786f90455dd71a04056b5589f8c1ed12da133e7",
+    "implementation/warlock/qa/native-window-feedback.py": "a6247750ae49bfef098a5c2840c36d12e5cae4a301144338c58758005e667946",
+    "implementation/warlock/qa/native-committed-max.py": "a273ce078f454dcf87ddf9c8d5240a4e01ebbdb500a836bd231e72c0aa11d89e",
+    "implementation/warlock/README.md": "6a69bd5b71fe8db8bfa25aa7796f4c7f1441d51375b2ec1c93b3a6b63e0bd7a0",
+    "implementation/warlock/native/core/InputManager.cpp": "7aad5c692729ea1e53a14c87b57a757eab5107ae1a0c849dae13a53e5862a266"
+  },
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/scene-core-1791612828915458166/Hyprland",
+      "sha256": "c8d205f60cc7f994b9e7dc19b8fe3634e763bddfaaeff165379a217580a9d7d9"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791612942101839310/elm-window-geometry-authority.so",
+      "sha256": "ca62b1c6f49626540ab71b006e335ca6ba5f97057b27c01f2672b4c9adb97954"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "reports": {
+    "core": {
+      "original": "implementation/warlock/qa/runs/scene-core-1791612828915458166/report.json",
+      "originalSHA256": "eaf69c9280696787c58e90d5f619681cb09c18a5bfa4c543eca5620e71384769",
+      "retained": "implementation/warlock/qa/evidence/committed-max-scene/core-report.json",
+      "sha256": "eaf69c9280696787c58e90d5f619681cb09c18a5bfa4c543eca5620e71384769"
+    },
+    "authority": {
+      "original": "implementation/warlock/qa/runs/native-authority-1791612942101839310/report.json",
+      "originalSHA256": "edcd9fc290cdbb7a6d36cfb383398e163a2b94038f7b92e5e2ae66baeabf41c5",
+      "retained": "implementation/warlock/qa/evidence/committed-max-scene/authority-report.json",
+      "sha256": "edcd9fc290cdbb7a6d36cfb383398e163a2b94038f7b92e5e2ae66baeabf41c5"
+    },
+    "compiled": {
+      "original": "implementation/warlock/qa/runs/pin-max-1791612646830560893/report.json",
+      "originalSHA256": "eb166c34f53ae4ca1dc04c597d911c03bfe0ca15015335bc1d5082d654a3a0b6",
+      "retained": "implementation/warlock/qa/evidence/committed-max-scene/compiled-report.json",
+      "sha256": "eb166c34f53ae4ca1dc04c597d911c03bfe0ca15015335bc1d5082d654a3a0b6"
+    },
+    "model-before": {
+      "original": "implementation/warlock/qa/runs/max-overlap-1791612124189531138/report.json",
+      "originalSHA256": "1110e6541e725e027b7eb900272b03fb0a725f7acaad2eb0fb2a810176f00362",
+      "retained": "implementation/warlock/qa/evidence/committed-max-scene/model-before-report.json",
+      "sha256": "1110e6541e725e027b7eb900272b03fb0a725f7acaad2eb0fb2a810176f00362"
+    },
+    "model-after": {
+      "original": "implementation/warlock/qa/runs/max-overlap-1791613136619878555/report.json",
+      "originalSHA256": "262651490451846bccf018a287e73b33b4fc2ec78fb158befd10706e9eb619e7",
+      "retained": "implementation/warlock/qa/evidence/committed-max-scene/model-after-report.json",
+      "sha256": "262651490451846bccf018a287e73b33b4fc2ec78fb158befd10706e9eb619e7"
+    },
+    "native": {
+      "original": "implementation/warlock/qa/runs/native-committed-max-1791613164624780912/report.json",
+      "originalSHA256": "a16e3a985b49cfc038e9c7fa3add88d877f35096ef826975f17cd052ce13639f",
+      "retained": "implementation/warlock/qa/evidence/committed-max-scene/native-report.json",
+      "sha256": "a16e3a985b49cfc038e9c7fa3add88d877f35096ef826975f17cd052ce13639f"
+    },
+    "pin-regression": {
+      "original": "implementation/warlock/qa/runs/native-pin-max-1791613307408456145/report.json",
+      "originalSHA256": "6a337576ae4114624fea587cc31410a9c7bc3ba4c780cfedb745ed760602cca2",
+      "retained": "implementation/warlock/qa/evidence/committed-max-scene/pin-regression-report.json",
+      "sha256": "6a337576ae4114624fea587cc31410a9c7bc3ba4c780cfedb745ed760602cca2"
+    }
+  },
+  "retainedFailedBuilds": [
+    {
+      "path": "implementation/warlock/qa/runs/scene-core-1791612304927756555/report.json",
+      "sha256": "b47cf56de266c90d897e689b012ccc1347443da3b7c0d47c1b1f1a27798cf160"
+    },
+    {
+      "path": "implementation/warlock/qa/runs/native-authority-1791612525378649152/report.json",
+      "sha256": "398f9a08c8326fd22a590557c1b34aaeb1ba3fe17dc6bd9588c1cb8a86dff04f"
+    }
+  ],
+  "nativeChecks": 73,
+  "pinRegressionChecks": 81,
+  "nativeCommittedWindowSceneObserved": true,
+  "fullConstrainedSceneAccepted": false,
+  "sceneReceipts": [
+    {
+      "name": "IncludedPoint",
+      "paintScene": {
+        "monitor": "0",
+        "sceneRevision": "4",
+        "outputCommitted": true,
+        "ready": true,
+        "order": [
+          "2",
+          "1"
+        ]
+      },
+      "hitReceipts": [
+        {
+          "sequence": "25",
+          "monitor": "0",
+          "sceneRevision": "4",
+          "ready": true,
+          "recipient": "1",
+          "point": [
+            201.0,
+            229.0
+          ],
+          "properties": 19
+        },
+        {
+          "sequence": "26",
+          "monitor": "0",
+          "sceneRevision": "4",
+          "ready": true,
+          "recipient": "1",
+          "point": [
+            201.0,
+            229.0
+          ],
+          "properties": 19
+        }
+      ],
+      "observationsAfter": {
+        "scope": "native-window-plane",
+        "scenes": [
+          {
+            "monitor": "0",
+            "sceneRevision": "4",
+            "outputCommitted": true,
+            "ready": true,
+            "order": [
+              "2",
+              "1"
+            ]
+          }
+        ],
+        "hits": [
+          {
+            "sequence": "1",
+            "monitor": "0",
+            "sceneRevision": "1",
+            "ready": true,
+            "recipient": null,
+            "point": [
+              57.0,
+              24.0
+            ],
+            "properties": 128
+          },
+          {
+            "sequence": "2",
+            "monitor": "0",
+            "sceneRevision": "1",
+            "ready": true,
+            "recipient": null,
+            "point": [
+              57.0,
+              24.0
+            ],
+            "properties": 19
+          },
+          {
+            "sequence": "3",
+            "monitor": "0",
+            "sceneRevision": "1",
+            "ready": true,
+            "recipient": null,
+            "point": [
+              57.0,
+              24.0
+            ],
+            "properties": 19
+          },
+          {
+            "sequence": "4",
+            "monitor": "0",
+            "sceneRevision": "1",
+            "ready": true,
+            "recipient": null,
+            "point": [
+              57.0,
+              24.0
+            ],
+            "properties": 128
+          },
+          {
+            "sequence": "5",
+            "monitor": "0",
+            "sceneRevision": "1",
+            "ready": true,
+            "recipient": null,
+            "point": [
+              400.0,
+              218.0
+            ],
+            "properties": 128
+          },
+          {
+            "sequence": "6",
+            "monitor": "0",
+            "sceneRevision": "1",
+            "ready": true,
+            "recipient": "2",
+            "point": [
+              400.0,
+              218.0
+            ],
+            "properties": 19
+          },
+          {
+            "sequence": "7",
+            "monitor": "0",
+            "sceneRevision": "1",
+            "ready": true,
+            "recipient": null,
+            "point": [
+              400.0,
+              218.0
+            ],
+            "properties": 128
+          },
+          {
+            "sequence": "8",
+            "monitor": "0",
+            "sceneRevision": "1",
+            "ready": true,
+            "recipient": "2",
+            "point": [
+              400.0,
+              218.0
+            ],
+            "properties": 19
+          },
+          {
+            "sequence": "9",
+            "monitor": "0",
+            "sceneRevision": "1",
+            "ready": true,
+            "recipient": null,
+            "point": [
+              400.0,
+              218.0
+            ],
+            "properties": 128
+          },
+          {
+            "sequence": "10",
+            "monitor": "0",
+            "sceneRevision": "1",
+            "ready": true,
+            "recipient": null,
+            "point": [
+              400.0,
+              304.0
+            ],
+            "properties": 128
+          },
+          {
+            "sequence": "11",
+            "monitor": "0",
+            "sceneRevision": "1",
+            "ready": true,
+            "recipient": "2",
+            "point": [
+              400.0,
+              304.0
+            ],
+            "properties": 19
+          },
+          {
+            "sequence": "12",
+            "monitor": "0",
+            "sceneRevision": "1",
+            "ready": true,
+            "recipient": null,
+            "point": [
+              400.0,
+              304.0
+            ],
+            "properties": 128
+          },
+          {
+            "sequence": "13",
+            "monitor": "0",
+            "sceneRevision": "1",
+            "ready": true,
+            "recipient": "2",
+            "point": [
+              400.0,
+              304.0
+            ],
+            "properties": 19
+          },
+          {
+            "sequence": "14",
+            "monitor": "0",
+            "sceneRevision": "2",
+            "ready": true,
+            "recipient": null,
+            "point": [
+              57.0,
+              24.0
+            ],
+            "properties": 128
+          },
+          {
+            "sequence": "15",
+            "monitor": "0",
+            "sceneRevision": "2",
+            "ready": true,
+            "recipient": null,
+            "point": [
+              57.0,
+              24.0
+            ],
+            "properties": 19
+          },
+          {
+            "sequence": "16",
+            "monitor": "0",
+            "sceneRevision": "2",
+            "ready": true,
+            "recipient": null,
+            "point": [
+              57.0,
+              24.0
+            ],
+            "properties": 19
+          },
+          {
+            "sequence": "17",
+            "monitor": "0",
+            "sceneRevision": "2",
+            "ready": true,
+            "recipient": null,
+            "point": [
+              57.0,
+              24.0
+            ],
+            "properties": 128
+          },
+          {
+            "sequence": "18",
+            "monitor": "0",
+            "sceneRevision": "2",
+            "ready": true,
+            "recipient": null,
+            "point": [
+              400.0,
+              218.0
+            ],
+            "properties": 128
+          },
+          {
+            "sequence": "19",
+            "monitor": "0",
+            "sceneRevision": "2",
+            "ready": true,
+            "recipient": "1",
+            "point": [
+              400.0,
+              218.0
+            ],
+            "properties": 19
+          },
+          {
+            "sequence": "20",
+            "monitor": "0",
+            "sceneRevision": "2",
+            "ready": true,
+            "recipient": null,
+            "point": [
+              400.0,
+              218.0
+            ],
+            "properties": 128
+          },
+          {
+            "sequence": "21",
+            "monitor": "0",
+            "sceneRevision": "2",
+            "ready": true,
+            "recipient": null,
+            "point": [
+              400.0,
+              218.0
+            ],
+            "properties": 128
+          },
+          {
+            "sequence": "22",
+            "monitor": "0",
+            "sceneRevision": "2",
+            "ready": true,
+            "recipient": "1",
+            "point": [
+              400.0,
+              218.0
+            ],
+            "properties": 19
+          },
+          {
+            "sequence": "23",
+            "monitor": "0",
+            "sceneRevision": "3",
+            "ready": true,
+            "recipient": null,
+            "point": [
+              201.0,
+              229.0
+            ],
+            "properties": 128
+          },
+          {
+            "sequence": "24",
+            "monitor": "0",
+            "sceneRevision": "3",
+            "ready": true,
+            "recipient": "1",
+            "point": [
+              201.0,
+              229.0
+            ],
+            "properties": 275
+          },
+          {
+            "sequence": "25",
+            "monitor": "0",
+            "sceneRevision": "4",
+            "ready": true,
+            "recipient": "1",
+            "point": [
+              201.0,
+              229.0
+            ],
+            "properties": 19
+          },
+          {
+            "sequence": "26",
+            "monitor": "0",
+            "sceneRevision": "4",
+            "ready": true,
+            "recipient": "1",
+            "point": [
+              201.0,
+              229.0
+            ],
+            "properties": 19
+          }
+        ]
+      },
+      "actualGTKPressed": {
+        "window": "ELM-ACTIVATION-PEER",
+        "kind": "pressed",
+        "button": 1,
+        "x": 200.0,
+        "y": 180.0
+      }
+    },
+    {
+      "name": "ExcludedPoint",
+      "paintScene": {
+        "monitor": "0",
+        "sceneRevision": "5",
+        "outputCommitted": true,
+        "ready": true,
+        "order": [
+          "2",
+          "1"
+        ]
+      },
+      "hitReceipts": [
+        {
+          "sequence": "29",
+          "monitor": "0",
+          "sceneRevision": "5",
+          "ready": true,
+          "recipient": "2",
+          "point": [
+            101.0,
+            139.0
+          ],
+          "properties": 19
+        }
+      ],
+      "observationsAfter": {
+        "scope": "native-window-plane",
+        "scenes": [
+          {
+            "monitor": "0",
+            "sceneRevision": "6",
+            "outputCommitted": true,
+            "ready": true,
+            "order": [
+              "1",
+              "2"
+            ]
+          }
+        ],
+        "hits": [
+          {
+            "sequence": "1",
+            "monitor": "0",
+            "sceneRevision": "1",
+            "ready": true,
+            "recipient": null,
+            "point": [
+              57.0,
+              24.0
+            ],
+            "properties": 128
+          },
+          {
+            "sequence": "2",
+            "monitor": "0",
+            "sceneRevision": "1",
+            "ready": true,
+            "recipient": null,
+            "point": [
+              57.0,
+              24.0
+            ],
+            "properties": 19
+          },
+          {
+            "sequence": "3",
+            "monitor": "0",
+            "sceneRevision": "1",
+            "ready": true,
+            "recipient": null,
+            "point": [
+              57.0,
+              24.0
+            ],
+            "properties": 19
+          },
+          {
+            "sequence": "4",
+            "monitor": "0",
+            "sceneRevision": "1",
+            "ready": true,
+            "recipient": null,
+            "point": [
+              57.0,
+              24.0
+            ],
+            "properties": 128
+          },
+          {
+            "sequence": "5",
+            "monitor": "0",
+            "sceneRevision": "1",
+            "ready": true,
+            "recipient": null,
+            "point": [
+              400.0,
+              218.0
+            ],
+            "properties": 128
+          },
+          {
+            "sequence": "6",
+            "monitor": "0",
+            "sceneRevision": "1",
+            "ready": true,
+            "recipient": "2",
+            "point": [
+              400.0,
+              218.0
+            ],
+            "properties": 19
+          },
+          {
+            "sequence": "7",
+            "monitor": "0",
+            "sceneRevision": "1",
+            "ready": true,
+            "recipient": null,
+            "point": [
+              400.0,
+              218.0
+            ],
+            "properties": 128
+          },
+          {
+            "sequence": "8",
+            "monitor": "0",
+            "sceneRevision": "1",
+            "ready": true,
+            "recipient": "2",
+            "point": [
+              400.0,
+              218.0
+            ],
+            "properties": 19
+          },
+          {
+            "sequence": "9",
+            "monitor": "0",
+            "sceneRevision": "1",
+            "ready": true,
+            "recipient": null,
+            "point": [
+              400.0,
+              218.0
+            ],
+            "properties": 128
+          },
+          {
+            "sequence": "10",
+            "monitor": "0",
+            "sceneRevision": "1",
+            "ready": true,
+            "recipient": null,
+            "point": [
+              400.0,
+              304.0
+            ],
+            "properties": 128
+          },
+          {
+            "sequence": "11",
+            "monitor": "0",
+            "sceneRevision": "1",
+            "ready": true,
+            "recipient": "2",
+            "point": [
+              400.0,
+              304.0
+            ],
+            "properties": 19
+          },
+          {
+            "sequence": "12",
+            "monitor": "0",
+            "sceneRevision": "1",
+            "ready": true,
+            "recipient": null,
+            "point": [
+              400.0,
+              304.0
+            ],
+            "properties": 128
+          },
+          {
+            "sequence": "13",
+            "monitor": "0",
+            "sceneRevision": "1",
+            "ready": true,
+            "recipient": "2",
+            "point": [
+              400.0,
+              304.0
+            ],
+            "properties": 19
+          },
+          {
+            "sequence": "14",
+            "monitor": "0",
+            "sceneRevision": "2",
+            "ready": true,
+            "recipient": null,
+            "point": [
+              57.0,
+              24.0
+            ],
+            "properties": 128
+          },
+          {
+            "sequence": "15",
+            "monitor": "0",
+            "sceneRevision": "2",
+            "ready": true,
+            "recipient": null,
+            "point": [
+              57.0,
+              24.0
+            ],
+            "properties": 19
+          },
+          {
+            "sequence": "16",
+            "monitor": "0",
+            "sceneRevision": "2",
+            "ready": true,
+            "recipient": null,
+            "point": [
+              57.0,
+              24.0
+            ],
+            "properties": 19
+          },
+          {
+            "sequence": "17",
+            "monitor": "0",
+            "sceneRevision": "2",
+            "ready": true,
+            "recipient": null,
+            "point": [
+              57.0,
+              24.0
+            ],
+            "properties": 128
+          },
+          {
+            "sequence": "18",
+            "monitor": "0",
+            "sceneRevision": "2",
+            "ready": true,
+            "recipient": null,
+            "point": [
+              400.0,
+              218.0
+            ],
+            "properties": 128
+          },
+          {
+            "sequence": "19",
+            "monitor": "0",
+            "sceneRevision": "2",
+            "ready": true,
+            "recipient": "1",
+            "point": [
+              400.0,
+              218.0
+            ],
+            "properties": 19
+          },
+          {
+            "sequence": "20",
+            "monitor": "0",
+            "sceneRevision": "2",
+            "ready": true,
+            "recipient": null,
+            "point": [
+              400.0,
+              218.0
+            ],
+            "properties": 128
+          },
+          {
+            "sequence": "21",
+            "monitor": "0",
+            "sceneRevision": "2",
+            "ready": true,
+            "recipient": null,
+            "point": [
+              400.0,
+              218.0
+            ],
+            "properties": 128
+          },
+          {
+            "sequence": "22",
+            "monitor": "0",
+            "sceneRevision": "2",
+            "ready": true,
+            "recipient": "1",
+            "point": [
+              400.0,
+              218.0
+            ],
+            "properties": 19
+          },
+          {
+            "sequence": "23",
+            "monitor": "0",
+            "sceneRevision": "3",
+            "ready": true,
+            "recipient": null,
+            "point": [
+              201.0,
+              229.0
+            ],
+            "properties": 128
+          },
+          {
+            "sequence": "24",
+            "monitor": "0",
+            "sceneRevision": "3",
+            "ready": true,
+            "recipient": "1",
+            "point": [
+              201.0,
+              229.0
+            ],
+            "properties": 275
+          },
+          {
+            "sequence": "25",
+            "monitor": "0",
+            "sceneRevision": "4",
+            "ready": true,
+            "recipient": "1",
+            "point": [
+              201.0,
+              229.0
+            ],
+            "properties": 19
+          },
+          {
+            "sequence": "26",
+            "monitor": "0",
+            "sceneRevision": "4",
+            "ready": true,
+            "recipient": "1",
+            "point": [
+              201.0,
+              229.0
+            ],
+            "properties": 19
+          },
+          {
+            "sequence": "27",
+            "monitor": "0",
+            "sceneRevision": "4",
+            "ready": true,
+            "recipient": null,
+            "point": [
+              101.0,
+              139.0
+            ],
+            "properties": 128
+          },
+          {
+            "sequence": "28",
+            "monitor": "0",
+            "sceneRevision": "4",
+            "ready": true,
+            "recipient": "2",
+            "point": [
+              101.0,
+              139.0
+            ],
+            "properties": 275
+          },
+          {
+            "sequence": "29",
+            "monitor": "0",
+            "sceneRevision": "5",
+            "ready": true,
+            "recipient": "2",
+            "point": [
+              101.0,
+              139.0
+            ],
+            "properties": 19
+          },
+          {
+            "sequence": "30",
+            "monitor": "0",
+            "sceneRevision": "6",
+            "ready": true,
+            "recipient": "2",
+            "point": [
+              101.0,
+              139.0
+            ],
+            "properties": 19
+          }
+        ]
+      },
+      "actualGTKPressed": {
+        "window": "ELM-AUTHORITY-FIXTURE",
+        "kind": "pressed",
+        "button": 1,
+        "x": 100.0,
+        "y": 90.0
+      }
+    }
+  ],
+  "addedNativeExports": [
+    [
+      "T",
+      "_ZN6Render14CommittedScene10inputOrderERKN9Hyprutils6Memory14CSharedPointerIN7Monitor8CMonitorEEE"
+    ],
+    [
+      "T",
+      "_ZN6Render14CommittedScene10paintOrderERKN9Hyprutils6Memory14CSharedPointerIN7Monitor8CMonitorEEE"
+    ],
+    [
+      "T",
+      "_ZN6Render14CommittedScene12observationsEv"
+    ],
+    [
+      "T",
+      "_ZN6Render14CommittedScene3hitERKN9Hyprutils6Memory14CSharedPointerIN7Monitor8CMonitorEEERKNS0_5InputERKNS3_IN7Desktop4View7CWindowEEERKSt5arrayIdLm2EEt"
+    ],
+    [
+      "T",
+      "_ZN6Render14CommittedScene4hitsEv"
+    ],
+    [
+      "T",
+      "_ZN6Render14CommittedScene5beginERKN9Hyprutils6Memory14CSharedPointerIN7Monitor8CMonitorEEE"
+    ],
+    [
+      "T",
+      "_ZN6Render14CommittedScene6finishERKN9Hyprutils6Memory14CSharedPointerIN7Monitor8CMonitorEEEb"
+    ],
+    [
+      "W",
+      "_ZN6Render14CommittedScene8SnapshotD1Ev"
+    ],
+    [
+      "W",
+      "_ZN6Render14CommittedScene8SnapshotD2Ev"
+    ],
+    [
+      "W",
+      "_ZNSt22_Optional_payload_baseIN6Render14CommittedScene8SnapshotEE14_M_move_assignEOS3_"
+    ],
+    [
+      "W",
+      "_ZNSt6vectorIN6Render14CommittedScene3HitESaIS2_EED1Ev"
+    ],
+    [
+      "W",
+      "_ZNSt6vectorIN6Render14CommittedScene3HitESaIS2_EED2Ev"
+    ],
+    [
+      "W",
+      "_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_appendEPKcm"
+    ]
+  ],
+  "missingObservations": [
+    "Independent original max-input-region disposition; full constrained-scene/presentation acceptance remains separate.",
+    "Native stale/failed commit, button/cache/grab/layer/retirement schedules, transformed/modal and explicit passthrough/no-activation cases.",
+    "Multi-output/resource gates, full pin/family/fullscreen policy, applicable native AT and release packaging/rollback."
+  ],
+  "artifacts": {
+    "core-report.json": "eaf69c9280696787c58e90d5f619681cb09c18a5bfa4c543eca5620e71384769",
+    "authority-report.json": "edcd9fc290cdbb7a6d36cfb383398e163a2b94038f7b92e5e2ae66baeabf41c5",
+    "compiled-report.json": "eb166c34f53ae4ca1dc04c597d911c03bfe0ca15015335bc1d5082d654a3a0b6",
+    "model-before-report.json": "1110e6541e725e027b7eb900272b03fb0a725f7acaad2eb0fb2a810176f00362",
+    "model-after-report.json": "262651490451846bccf018a287e73b33b4fc2ec78fb158befd10706e9eb619e7",
+    "native-report.json": "a16e3a985b49cfc038e9c7fa3add88d877f35096ef826975f17cd052ce13639f",
+    "pin-regression-report.json": "6a337576ae4114624fea587cc31410a9c7bc3ba4c780cfedb745ed760602cca2",
+    "IncludedPoint.png": "91f82a2afe6f6073b417920af235e5768f09139876f20cdd633f702b12c753e6",
+    "ExcludedPoint.png": "6652a27a75c1ba95ea376e809f9c8904ee1326dac4e3289c8904acd956d56d25",
+    "model-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "model-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "model-named.stdout": "b4ce2323b3a59b70bef36b413b51ec32a907af6cf8ede923ecc2197f9702e9e9",
+    "model-named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "model-witnesses.stdout": "caa63e5c076f28dce79eb48b719a8cef3bb613a78c31b9391127d9ace43f8591",
+    "model-witnesses.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "model-safety.stdout": "c9de4f4134551bc5e6c3ebd208150b0759d2c0226f893823c251645804664601",
+    "model-safety.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "README.md": "42c2a71cff0534f0c479ab6053eed3634d0cfbe9175c348dd5e4d1eb27031475"
+  }
+}
