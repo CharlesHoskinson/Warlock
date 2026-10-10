@@ -86,7 +86,7 @@ def handle_request(client,catalog,request,recovery,reconciliation,notifications=
  kind=request.get('kind')
  if kind=='reconciliation-ready':
   reconciliation.proof_ready(request);return
- if kind in {'catalog-request','application-launch','taskbar-pins-write','shell-settings-request','shell-settings-write','motion-preferences-request','motion-preferences-write'}:
+ if kind in {'catalog-request','application-launch','taskbar-pins-write','shell-settings-request','shell-settings-write','motion-preferences-request','motion-preferences-write','shortcut-preferences-request','shortcut-preferences-write'}:
   send(catalog.handle(request));return
  if kind in {'jump-list-request','jump-list-effect'}:
   if jump_lists is None:raise Refused('Application actions unavailable')

@@ -4,6 +4,7 @@ import Menu
 import Switcher
 import Pins
 import Settings
+import ShortcutPreferences
 import Motion
 import MotionPreferences
 import Notifications
@@ -158,6 +159,21 @@ controls model =
                 MotionPreferences.Reduce -> "reduced"
                 MotionPreferences.Full -> "full")) (MotionPreferences.label selected) (if model.motion.preferences.draft==selected then "Selected" else "") motionReady (\stamp -> Desktop.EditMotionPreference stamp selected)
             changed=model.settings.snapshot |> Maybe.map (\current -> current.values/=model.settings.draft) |> Maybe.withDefault False
+            shortcutReady=ShortcutPreferences.writable model.shortcutPreferences && model.shortcutExpected==Nothing
+            shortcutRoute route =
+                let label=ShortcutPreferences.label route
+                    observed=model.shortcutPreferences.inventory |> Maybe.map (ShortcutPreferences.row route)
+                    option selected suffix enabled=control ("settings:shortcuts:"++route++":"++ShortcutPreferences.name selected) suffix (if ShortcutPreferences.choices route model.shortcutPreferences.draft==selected then "Selected" else "") (shortcutReady && enabled) (\stamp -> Desktop.EditShortcutChoice stamp route selected)
+                    state=observed |> Maybe.map (\row -> label++": "++(if row.active==ShortcutPreferences.Keep then "existing shortcut preserved" else if row.active==ShortcutPreferences.Default then row.defaultChord else row.alternateChord)) |> Maybe.withDefault (label++": live bindings unavailable")
+                in [control ("settings:shortcuts:"++route++":state") state "" False Desktop.RefreshShortcutChoices
+                   ,option ShortcutPreferences.Keep ("Keep existing shortcut for "++label) True
+                   ,option ShortcutPreferences.Default ("Use "++label++" default") (observed |> Maybe.map .defaultAvailable |> Maybe.withDefault False)
+                   ,control ("settings:shortcuts:"++route++":default:state") (observed |> Maybe.map (\row -> row.defaultChord++(if row.defaultAvailable then " · Available" else " · Unavailable: existing binding")) |> Maybe.withDefault "Default unavailable") "" False Desktop.RefreshShortcutChoices
+                   ,option ShortcutPreferences.Alternate ("Use "++label++" alternative") (observed |> Maybe.map .alternateAvailable |> Maybe.withDefault False)
+                   ,control ("settings:shortcuts:"++route++":alternate:state") (observed |> Maybe.map (\row -> row.alternateChord++(if row.alternateAvailable then " · Available" else " · Unavailable: existing binding")) |> Maybe.withDefault "Alternative unavailable") "" False Desktop.RefreshShortcutChoices]
+            shortcutControls=control "settings:shortcuts:notice:state" model.shortcutPreferences.notice "" False Desktop.RefreshShortcutChoices :: (List.concatMap shortcutRoute ["applications","system","notifications"])
+                ++[control "settings:shortcuts:save" "Save shortcut choices" "Apply only the free chosen chords; preserve existing bindings" (model.shortcutExpected==Nothing && ShortcutPreferences.ready model.shortcutPreferences && ShortcutPreferences.changed model.shortcutPreferences) Desktop.SaveShortcutChoices
+                  ,control "settings:shortcuts:refresh" "Refresh shortcut choices" "Read stored choices and live bindings without repeating an action" (model.shortcutExpected==Nothing) Desktop.RefreshShortcutChoices]
             guidance =
                 if not model.settingsHelp then [] else
                     [control "settings:help:text:keyboard" "Keyboard navigation" "Tab and Shift+Tab move focus. Arrows move through lists; Home/End reach endpoints. Enter chooses; Escape closes." False Desktop.ToggleSettingsHelp
@@ -173,6 +189,7 @@ controls model =
            ,theme Settings.Night "Night theme",theme Settings.Dawn "Dawn theme",theme Settings.HighContrast "High contrast theme"]++List.map scale [100,125,150,200]
            ++[control "settings:save" "Save settings" "Apply and keep across restart" (ready && changed) Desktop.SaveSettings
              ,control "settings:refresh" "Refresh settings" "Read stored values; discard unsaved changes" (model.settingsExpected==Nothing) Desktop.RefreshSettings]
+           ++shortcutControls
     else if model.snap/=Nothing then
         case model.snap of
             Nothing -> []
@@ -346,7 +363,7 @@ notice model =
     else if model.filesOpen then (if model.filesExpected/=Nothing then "Reading Files state…" else model.files.notice)
     else if model.systemMenuOpen then (if model.systemMenuExpected/=Nothing then "Reading native system state…" else if model.systemMenuConfirmation/=Nothing then "Confirm or cancel the requested system change." else model.systemMenu.notice)
     else if model.notificationsOpen then (if model.notificationsExpected/=Nothing then "Loading notifications…" else model.notifications.notice)
-    else if model.settingsOpen then (if model.settingsExpected/=Nothing then "Loading settings…" else model.settings.notice)
+    else if model.settingsOpen then (if model.settingsExpected/=Nothing then "Loading settings…" else model.settings.notice)++" · "++model.shortcutPreferences.notice
     else if Desktop.switcherOpen model then
         if Switcher.phase model.switcher==Switcher.Waiting then "Loading window activation history…"
         else if model.nativeSwitcher/=Nothing then "Alt+Tab: next window. Alt+Shift+Tab: previous. Release Alt: activate. Escape: cancel."

@@ -8,6 +8,7 @@ from pathlib import Path
 from catalog_authority import Authority,Refused as CatalogRefused
 from shell_preferences import Store as SettingsStore
 from motion_preferences import Store as MotionStore
+from shortcut_preferences import Store as ShortcutStore,snapshot as shortcut_snapshot,fingerprint as shortcut_fingerprint,ROUTES
 from taskbar_preferences import Store
 from endpoint import Refused,binding,canonical,exact
 
@@ -15,7 +16,7 @@ MAX_OUTPUT=1048576
 
 class CatalogTransport:
  def __init__(self,client,roots=None):
-  self.client=client;self.preferences=Store();self.settings=SettingsStore();self.motion=MotionStore()
+  self.client=client;self.preferences=Store();self.settings=SettingsStore();self.motion=MotionStore();self.shortcuts=ShortcutStore()
   if roots is None:
    roots={'dataHome':os.environ.get('XDG_DATA_HOME',str(Path.home()/'.local/share')),'dataDirs':os.environ.get('XDG_DATA_DIRS','/usr/local/share:/usr/share').split(':'),'cacheDir':str(Path(os.environ.get('XDG_CACHE_HOME',str(Path.home()/'.cache')))/'elm-desktop/catalog')}
   exact(roots,['dataHome','dataDirs','cacheDir'])
@@ -28,6 +29,31 @@ class CatalogTransport:
   self.client.verify_process();self.client.verify_paths()
  def handle(self,request):
   kind=request.get('kind')
+  if kind in {'shortcut-preferences-request','shortcut-preferences-write'}:
+   write=kind=='shortcut-preferences-write'
+   exact(request,['protocolVersion','kind','binding','requestId',*(['proposal'] if write else [])]);canonical(request['requestId']);self.verify(request)
+   observation=self.client.shortcut_bindings(request['requestId']);inventory=observation['inventory']
+   snapshot=None
+   if write:
+    proposal=request['proposal'];exact(proposal,['preferences','fingerprint']);shortcut_snapshot(proposal['preferences']);shortcut_fingerprint(proposal['fingerprint'])
+    selected=proposal['preferences']['choices']
+    admitted=proposal['fingerprint']==inventory['fingerprint'] and all(selected[r]=='keep' or selected[r]=='default' and inventory[r]['defaultAvailable'] or selected[r]=='alternate' and inventory[r]['alternateAvailable'] for r in ROUTES)
+    if not admitted:status='Refused'
+    else:
+     try:status,snapshot=self.shortcuts.save(proposal['preferences'])
+     except (OSError,ValueError,Refused):status='Refused'
+     if status=='Saved':
+      # No retry after submission. A lost native receipt retires this transport;
+      # Elm retains Unknown until an explicit read reconciles file/live state.
+      applied=self.client.shortcut_bindings(request['requestId'],snapshot['choices'],proposal['fingerprint']);inventory=applied['inventory']
+      status='Saved' if applied['status']=='Applied' else 'Stored' if applied['status']=='Refused' else 'Unknown'
+   else:
+    try:snapshot=self.shortcuts.read()
+    except (OSError,ValueError,Refused):snapshot=None
+   self.verify(request)
+   frame={'protocolVersion':3,'kind':'shortcut-preferences-outcome' if write else 'shortcut-preferences','binding':self.client.bound,'requestId':request['requestId'],'snapshot':snapshot,'inventory':inventory}
+   if write:frame['status']=status
+   return frame
   if kind in {'motion-preferences-request','motion-preferences-write'}:
    write=kind=='motion-preferences-write'
    exact(request,['protocolVersion','kind','binding','requestId',*(['proposal'] if write else [])]);canonical(request['requestId']);self.verify(request)

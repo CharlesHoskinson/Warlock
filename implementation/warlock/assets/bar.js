@@ -5980,14 +5980,17 @@ var $author$project$SurfaceRenderer$viewWithPreview = F4(
 			var switcherOption = popup && ((snapshot.a === 'switcher') && A2($elm$core$String$startsWith, 'switcher:family:', item.J));
 			var kind = (A2($elm$core$String$startsWith, 'bar:group:', item.J) || A2($elm$core$String$startsWith, 'bar:pin:', item.J)) ? 'control-group' : ((item.J === 'bar:recovery-refresh') ? 'control-recovery' : 'control-utility');
 			var active = (!popup) && ((A2($elm$core$String$startsWith, 'bar:group:', item.J) || A2($elm$core$String$startsWith, 'bar:pin:', item.J)) && (A2($elm$core$String$contains, 'Active', item.g) && (!A2($elm$core$String$contains, 'Attention; ', item.g))));
-			if (popup && ((snapshot.a === 'settings') && A2($elm$core$String$startsWith, 'settings:help:text:', item.J))) {
+			if (popup && ((snapshot.a === 'settings') && (A2($elm$core$String$startsWith, 'settings:help:text:', item.J) || (A2($elm$core$String$startsWith, 'settings:shortcuts:', item.J) && A2($elm$core$String$endsWith, ':state', item.J))))) {
 				return A2(
 					$elm$html$Html$p,
 					_List_fromArray(
 						[
 							$elm$html$Html$Attributes$class('notification-text'),
 							$elm$html$Html$Attributes$id(item.m),
-							A2($elm$html$Html$Attributes$attribute, 'data-settings-help', item.J)
+							A2(
+							$elm$html$Html$Attributes$attribute,
+							A2($elm$core$String$startsWith, 'settings:help:text:', item.J) ? 'data-settings-help' : 'data-shortcut-state',
+							item.J)
 						]),
 					_List_fromArray(
 						[

@@ -11,6 +11,7 @@ import Notifications
 import JumpList
 import PointerOwnership
 import Shortcuts
+import ShortcutPreferences
 import Files
 import SystemMenu
 import MenuBridge
@@ -67,6 +68,8 @@ type alias Model =
     , settingsOpen : Bool
     , settingsOpening : Bool
     , settingsExpected : Maybe Counter
+    , shortcutPreferences : ShortcutPreferences.Model
+    , shortcutExpected : Maybe Counter
     , settingsHelp : Bool
     , query : String
     , open : Bool
@@ -134,6 +137,9 @@ type Msg
     | OpenSettings ViewStamp
     | CloseSettings ViewStamp
     | ToggleSettingsHelp ViewStamp
+    | EditShortcutChoice ViewStamp String ShortcutPreferences.Choice
+    | SaveShortcutChoices ViewStamp
+    | RefreshShortcutChoices ViewStamp
     | EditSettings ViewStamp Settings.Values
     | SaveSettings ViewStamp
     | EditMotionPreference ViewStamp MotionPreferences.Override
@@ -172,7 +178,7 @@ type Effect
 
 initial : Model
 initial =
-    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, pointer = PointerOwnership.initial, shortcuts = Shortcuts.initial, jumpList = JumpList.initial, jumpEntry = Nothing, jumpOpening = False, jumpExpected = Nothing, jumpBack = False, files = Files.initial, filesOpen = False, filesOpening = False, filesExpected = Nothing, systemMenu = SystemMenu.initial, systemMenuOpen = False, systemMenuOpening = False, systemMenuExpected = Nothing, systemMenuConfirmation = Nothing, notifications = Notifications.initial, notificationsOpen = False, notificationsOpening = False, notificationsExpected = Nothing, motionExpected = Nothing, motion = Motion.initial, settings = Settings.initial, settingsOpen = False, settingsOpening = False, settingsExpected = Nothing, settingsHelp = True, open = False, overview = False, overviewWorkspace = Nothing, overviewTransfer = Nothing, snap = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, catalogFailure = Nothing }
+    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, pointer = PointerOwnership.initial, shortcuts = Shortcuts.initial, jumpList = JumpList.initial, jumpEntry = Nothing, jumpOpening = False, jumpExpected = Nothing, jumpBack = False, files = Files.initial, filesOpen = False, filesOpening = False, filesExpected = Nothing, systemMenu = SystemMenu.initial, systemMenuOpen = False, systemMenuOpening = False, systemMenuExpected = Nothing, systemMenuConfirmation = Nothing, notifications = Notifications.initial, notificationsOpen = False, notificationsOpening = False, notificationsExpected = Nothing, motionExpected = Nothing, motion = Motion.initial, settings = Settings.initial, settingsOpen = False, settingsOpening = False, settingsExpected = Nothing, settingsHelp = True, shortcutPreferences = ShortcutPreferences.initial, shortcutExpected = Nothing, open = False, overview = False, overviewWorkspace = Nothing, overviewTransfer = Nothing, snap = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, catalogFailure = Nothing }
 
 switcherOpen : Model -> Bool
 switcherOpen model = List.member (Switcher.phase model.switcher) [Switcher.Waiting,Switcher.Browsing]
@@ -327,6 +333,7 @@ windowBase message model =
         read = if changed && not disconnected then windows.shell.binding |> Maybe.andThen (\binding -> UInt64.next model.request |> Maybe.map (\request -> (binding,request))) else Nothing
         settingsRead = read |> Maybe.andThen (\(binding,request) -> UInt64.next request |> Maybe.map (\next -> (binding,next)))
         motionRead = settingsRead |> Maybe.andThen (\(binding,request) -> UInt64.next request |> Maybe.map (\next -> (binding,next)))
+        shortcutsRead = motionRead |> Maybe.andThen (\(binding,request) -> UInt64.next request |> Maybe.map (\next -> (binding,next)))
         launch =
             if disconnected then Launch.disconnect model.launch
             else if changed then windows.shell.binding |> Maybe.map (\binding -> Launch.bind (host binding) model.launch) |> Maybe.withDefault (Launch.disconnect model.launch)
@@ -373,11 +380,13 @@ windowBase message model =
         , settingsOpen = if disconnected || changed || windows.shell.phase==Shell.Exhausted then False else model.settingsOpen
         , settingsOpening = if disconnected || changed || windows.shell.phase==Shell.Exhausted then False else model.settingsOpening
         , settingsExpected = if disconnected || changed then settingsRead |> Maybe.map Tuple.second else model.settingsExpected
-        , request = motionRead |> Maybe.map Tuple.second |> Maybe.withDefault (settingsRead |> Maybe.map Tuple.second |> Maybe.withDefault (read |> Maybe.map Tuple.second |> Maybe.withDefault model.request))
+        , shortcutPreferences = if disconnected || changed then ShortcutPreferences.initial else model.shortcutPreferences
+        , shortcutExpected = if disconnected || changed then shortcutsRead |> Maybe.map Tuple.second else model.shortcutExpected
+        , request = shortcutsRead |> Maybe.map Tuple.second |> Maybe.withDefault (motionRead |> Maybe.map Tuple.second |> Maybe.withDefault (settingsRead |> Maybe.map Tuple.second |> Maybe.withDefault (read |> Maybe.map Tuple.second |> Maybe.withDefault model.request)))
         , applications = if disconnected || changed then Nothing else model.applications
         , expected = if disconnected || changed then read |> Maybe.map Tuple.second else model.expected
         , catalogFailure = if disconnected || changed then Nothing else model.catalogFailure
-      }, (read |> Maybe.map (\(binding,request) -> [catalogRequest binding request]) |> Maybe.withDefault []) ++ (settingsRead |> Maybe.map (\(binding,request) -> [settingsRequest binding request]) |> Maybe.withDefault []) ++ (motionRead |> Maybe.map (\(binding,request) -> [motionPreferencesRequest binding request]) |> Maybe.withDefault []) ++ List.map WindowEffect effects ++
+      }, (read |> Maybe.map (\(binding,request) -> [catalogRequest binding request]) |> Maybe.withDefault []) ++ (settingsRead |> Maybe.map (\(binding,request) -> [settingsRequest binding request]) |> Maybe.withDefault []) ++ (motionRead |> Maybe.map (\(binding,request) -> [motionPreferencesRequest binding request]) |> Maybe.withDefault []) ++ (shortcutsRead |> Maybe.map (\(binding,request) -> [shortcutPreferencesRequest binding request]) |> Maybe.withDefault []) ++ List.map WindowEffect effects ++
         (case (model.windows.picker,windows.picker,message) of
             (prior,Just picker,_) ->
                 if (prior |> Maybe.map .generation)==Just picker.generation then [] else
@@ -818,6 +827,21 @@ updateAvailable message model =
                                 let notifications=Notifications.receive receipt.request receipt.status receipt.snapshot model.notifications
                                 in if notifications==model.notifications then (model,[]) else (advance {model | notifications=notifications},[])
                         Err _ -> (model,[])
+                Ok "shortcut-preferences" ->
+                    let decoder=strict ["protocolVersion","kind","binding","requestId","snapshot","inventory"] (D.map5 (\_ binding request snapshot inventory -> {binding=binding,request=request,snapshot=snapshot,inventory=inventory}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "snapshot" (D.nullable ShortcutPreferences.decoder)) (D.field "inventory" ShortcutPreferences.inventoryDecoder))
+                    in case D.decodeValue decoder raw of
+                        Ok receipt ->
+                            if model.windows.shell.binding/=Just receipt.binding || model.shortcutExpected/=Just receipt.request then (model,[]) else
+                                (advance {model | shortcutPreferences=ShortcutPreferences.observe receipt.snapshot (Just receipt.inventory) model.shortcutPreferences,shortcutExpected=Nothing},[])
+                        Err _ -> (model,[])
+                Ok "shortcut-preferences-outcome" ->
+                    let decoder=strict ["protocolVersion","kind","binding","requestId","status","snapshot","inventory"] (D.map6 (\_ binding request status snapshot inventory -> {binding=binding,request=request,status=status,snapshot=snapshot,inventory=inventory}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "status" D.string) (D.field "snapshot" (D.nullable ShortcutPreferences.decoder)) (D.field "inventory" ShortcutPreferences.inventoryDecoder))
+                    in case D.decodeValue decoder raw of
+                        Ok receipt ->
+                            if model.windows.shell.binding/=Just receipt.binding then (model,[]) else
+                                let preferences=ShortcutPreferences.receive receipt.request receipt.status receipt.snapshot (Just receipt.inventory) model.shortcutPreferences
+                                in if preferences==model.shortcutPreferences then (model,[]) else (advance {model | shortcutPreferences=preferences},[])
+                        Err _ -> (model,[])
                 Ok "shell-settings" ->
                     let decoder=strict ["protocolVersion","kind","binding","requestId","snapshot"] (D.map4 (\_ binding request snapshot -> {binding=binding,request=request,snapshot=snapshot}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "snapshot" (D.nullable Settings.decoder)))
                     in case D.decodeValue decoder raw of
@@ -958,7 +982,8 @@ updateAvailable message model =
             let windows=model.windows
                 next=advance (retireSwitcher {model | jumpEntry=Nothing,jumpOpening=False,filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=True,settingsOpening=True,open=False,overview=False,snap=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}})
                 (reading,commands)=readSettings next
-            in (reading,commands++[Focus (key reading "settings:close")])
+                (shortcutsReading,shortcutCommands)=readShortcutPreferences reading
+            in (shortcutsReading,commands++shortcutCommands++[Focus (key shortcutsReading "settings:close")])
         CloseSettings stamp ->
             if capture model/=Just stamp || not model.settingsOpen then (model,[]) else
                 let next=advance {model | jumpEntry=Nothing,jumpOpening=False,filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False}
@@ -966,6 +991,21 @@ updateAvailable message model =
         ToggleSettingsHelp stamp ->
             if capture model/=Just stamp || not model.settingsOpen then (model,[]) else
                 (advance {model | settingsHelp=not model.settingsHelp},[])
+        EditShortcutChoice stamp route choice ->
+            if capture model/=Just stamp || not model.settingsOpen || model.shortcutExpected/=Nothing then (model,[]) else
+                let preferences=ShortcutPreferences.edit route choice model.shortcutPreferences
+                in if preferences==model.shortcutPreferences then (model,[]) else (advance {model | shortcutPreferences=preferences},[])
+        SaveShortcutChoices stamp ->
+            if capture model/=Just stamp || not model.settingsOpen || model.shortcutExpected/=Nothing then (model,[]) else
+            case (model.windows.shell.binding,UInt64.next model.request) of
+                (Just binding,Just request) ->
+                    let (preferences,proposal)=ShortcutPreferences.propose request model.shortcutPreferences
+                    in case proposal of
+                        Nothing -> (model,[])
+                        Just value -> (advance {model | shortcutPreferences=preferences,request=request},[Send (E.object [("protocolVersion",E.int 3),("kind",E.string "shortcut-preferences-write"),("binding",Binding.encode binding),("requestId",E.string (UInt64.string request)),("proposal",value)])])
+                _ -> (model,[])
+        RefreshShortcutChoices stamp ->
+            if capture model/=Just stamp || not model.settingsOpen || model.shortcutExpected/=Nothing then (model,[]) else readShortcutPreferences model
         EditSettings stamp values ->
             if capture model/=Just stamp || not model.settingsOpen then (model,[]) else
                 (advance {model | settings=Settings.edit values model.settings},[])
@@ -1144,6 +1184,15 @@ readMotionPreferences : Model -> (Model,List Effect)
 readMotionPreferences model =
     case (model.windows.shell.binding,UInt64.next model.request) of
         (Just binding,Just request) -> (advance {model | request=request,motionExpected=Just request},[motionPreferencesRequest binding request])
+        _ -> (model,[])
+
+shortcutPreferencesRequest : Binding.Binding -> Counter -> Effect
+shortcutPreferencesRequest binding request = Send (E.object [("protocolVersion",E.int 3),("kind",E.string "shortcut-preferences-request"),("binding",Binding.encode binding),("requestId",E.string (UInt64.string request))])
+
+readShortcutPreferences : Model -> (Model,List Effect)
+readShortcutPreferences model =
+    case (model.windows.shell.binding,UInt64.next model.request) of
+        (Just binding,Just request) -> (advance {model | request=request,shortcutExpected=Just request},[shortcutPreferencesRequest binding request])
         _ -> (model,[])
 
 settingsRequest : Binding.Binding -> Counter -> Effect

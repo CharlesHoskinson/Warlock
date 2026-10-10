@@ -1,12 +1,8 @@
--- Source only; activate with the matching Warlock authority in a candidate
--- session. These match the frozen Omarchy routes, flags and modifier masks.
--- Load user overrides after defaults. Other Omarchy routes remain unchanged.
-hl.bind("SUPER + ALT + SPACE", function() hl.plugin.warlock.apps_menu() end,
-        {description="Apps menu"})
-hl.bind("SUPER + ESCAPE", function() hl.plugin.warlock.system_menu() end,
-        {description="System menu"})
-hl.bind("SUPER + SHIFT + ALT + comma", function() hl.plugin.warlock.notification_history() end,
-        {description="Open notification history"})
+-- Source only: activate with the matching Warlock native authority.
+-- The authority installs the three approved shell chords only when their live
+-- bindings are free. Explicit persisted decisions are edited in Settings.
+-- It never removes or disables existing/user bindings. Other Omarchy routes
+-- and overrides keep their meaning; no Lua callbacks overwrite these chords.
 
 -- Native controller owns move/resize throughout the pointer gesture.
 -- Omarchy defaults; adopted user Alt additions remain available as well.

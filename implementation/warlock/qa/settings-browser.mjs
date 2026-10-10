@@ -28,7 +28,7 @@ try{
  const packet=JSON.parse(fs.readFileSync(path.join(out,'settings.json'),'utf8'));
  await evaluate('receivePresentation('+JSON.stringify(packet.frame)+')');
  await until(`document.querySelector('.surface-popup[data-mode="settings"]')?.dataset.publication==="1"`);
- check('Actual settings popup renders named controls',await evaluate(`document.querySelector("h1").textContent==="Settings" && JSON.stringify([...document.querySelectorAll('[data-surface-control]')].map(b=>b.dataset.surfaceControl))===${JSON.stringify(JSON.stringify(packet.frame.popup.filter(row=>!row.id.startsWith('settings:help:text:')).map(row=>row.id)))}`));
+ check('Actual settings popup renders named controls',await evaluate(`document.querySelector("h1").textContent==="Settings" && JSON.stringify([...document.querySelectorAll('[data-surface-control]')].map(b=>b.dataset.surfaceControl))===${JSON.stringify(JSON.stringify(packet.frame.popup.filter(row=>!row.id.startsWith('settings:help:text:') && !(row.id.startsWith('settings:shortcuts:') && row.id.endsWith(':state'))).map(row=>row.id)))}`));
  check('Loaded appearance is current, not an unsaved draft',await evaluate(`document.documentElement.dataset.theme==="night" && document.documentElement.dataset.textScale==="100"`));
  check('Save disabled without changes',await evaluate(`document.querySelector('[data-surface-control="settings:save"]').disabled`));
  check('Current theme and scale exposed semantically',await evaluate(`document.querySelector('[data-surface-control="settings:theme:night"]').getAttribute('aria-current')==='true' && document.querySelector('[data-surface-control="settings:scale:100"]').getAttribute('aria-current')==='true'`));

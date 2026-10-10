@@ -392,6 +392,7 @@ std::string shellShortcutJournal(const Session& session,uint64_t request) {
     }
     return "{\"protocolVersion\":3,\"kind\":\"shell-shortcuts\",\"shortcutProtocol\":1,\"binding\":"+binding(session)+",\"requestId\":"+quote(std::to_string(request))+",\"serial\":"+quote(std::to_string(shellShortcutSerial))+",\"blocked\":"+(blocked?"true":"false")+",\"events\":"+events+"]}";
 }
+#include "shortcut-bindings.inc"
 int switcherForward(lua_State*){switcherStep(1);return 0;}
 int switcherReverse(lua_State*){switcherStep(-1);return 0;}
 void switcherKey(IKeyboard::SKeyEvent event,Event::SCallbackInfo& info) {
@@ -903,6 +904,18 @@ std::string observe(eHyprCtlOutputFormat, std::string request) {
                 }
                 reply=shellShortcutJournal(found->second,*requestId);
             }
+        } else if ((operation=="shortcut-bindings-request" && fields(object,{"protocolVersion","kind","binding","requestId"})) || (operation=="shortcut-bindings-apply" && fields(object,{"protocolVersion","kind","binding","requestId","choices","fingerprint"}))) {
+            const auto bound=objectMember(object,"binding");const auto requestId=counter(object,"requestId");const auto found=sessions.find(peer);
+            if(!bound || !fields(bound,{"lifetime","session","frontend"}) || !requestId)throw std::runtime_error("shortcut-bindings-schema");
+            const auto native=counter(bound,"lifetime"),sessionId=counter(bound,"session"),frontend=counter(bound,"frontend");
+            if(!native || !sessionId || !frontend || found==sessions.end() || found->second.start!=start || *native!=lifetime || *sessionId!=found->second.id || *frontend!=found->second.frontend || !grantRegistry->callerMatches(verifiedPeer(peer,start),{lifetime,*sessionId,*frontend}))reply=error("binding-mismatch");
+            else if(operation=="shortcut-bindings-request")reply=shortcutBindingsReply(found->second,*requestId,"shortcut-bindings");
+            else {
+                auto* choices=objectMember(object,"choices");auto* fingerprintNode=json_object_get_member(object,"fingerprint");
+                std::string fingerprint=fingerprintNode && json_node_get_value_type(fingerprintNode)==G_TYPE_STRING?json_node_get_string(fingerprintNode):"";
+                if(!choices || !fields(choices,{"applications","system","notifications"}) || fingerprint.size()!=64 || fingerprint.find_first_not_of("0123456789abcdef")!=std::string::npos)throw std::runtime_error("shortcut-bindings-apply-schema");
+                reply=applyShortcutBindings(found->second,*requestId,choices,fingerprint);
+            }
         } else if(((operation=="switcher-journal-request" || operation=="switcher-journal-observe-request") && fields(object,{"protocolVersion","kind","binding","requestId"})) ||
                   (operation=="switcher-selection-request" && fields(object,{"protocolVersion","kind","binding","requestId","chord","root"})) ||
                   (operation=="switcher-cancel-request" && fields(object,{"protocolVersion","kind","binding","requestId","chord"}))) {
@@ -1014,6 +1027,7 @@ APICALL EXPORT PLUGIN_DESCRIPTION_INFO PLUGIN_INIT(HANDLE handle) {
     switcherKeys=Event::bus()->m_events.input.keyboard.key.listen(switcherKey);
     if(!HyprlandAPI::addLuaFunction(handle,"warlock","apps_menu",appsMenu) || !HyprlandAPI::addLuaFunction(handle,"warlock","system_menu",systemMenu) || !HyprlandAPI::addLuaFunction(handle,"warlock","notification_history",notificationHistory))throw std::runtime_error("Shell shortcut binding registration failed");
     if(!HyprlandAPI::addLuaFunction(handle,"warlock","switcher_forward",switcherForward) || !HyprlandAPI::addLuaFunction(handle,"warlock","switcher_reverse",switcherReverse))throw std::runtime_error("Switcher binding registration failed");
+    registerShortcutBindings(handle);
     command = HyprlandAPI::registerHyprCtlCommand(handle,{"elm_observe ",false,observe});
     if (!command) throw std::runtime_error("Authority command registration failed");
     previewPrivacy=previewRendering=1;previewObservation=0;
@@ -1024,6 +1038,7 @@ APICALL EXPORT PLUGIN_DESCRIPTION_INFO PLUGIN_INIT(HANDLE handle) {
     return {"elm-observation-authority","Native first-class minimize/restore authority experiment","local","0.2"};
 }
 APICALL EXPORT void PLUGIN_EXIT() {
+    retireShortcutBindings();
     shellShortcuts.clear();shellShortcutSerial=shellShortcutSession=shellShortcutFrontend=0;
     pointerFrames.reset();
     switcherKeys.reset();switcherSelections.clear();switcherAlts.clear();switcherChord={};switcherOwnerSession=switcherOwnerFrontend=0;

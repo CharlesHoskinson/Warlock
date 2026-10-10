@@ -1,13 +1,74 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-10T00:36:54.622540+00:00",
+  "updatedUTC": "2026-10-10T01:03:04.300527+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
+    "id": "first-use-shortcut-choices",
+    "requirements": [
+      "ELM-UI-020",
+      "ELM-UX-023"
+    ],
+    "scenarios": [
+      "first-use",
+      "keyboard-settings"
+    ],
+    "before": "The candidate installs three default shell shortcuts unconditionally and does not show live conflicts or save an explicit route decision.",
+    "after": "Show current native default/alternate conflicts in Settings; preserve existing bindings, let users explicitly keep them or select a free Warlock chord, persist choices and show correlated saved/native state with no Unknown replay.",
+    "paths": [
+      "implementation/warlock/src/ShortcutPreferences.elm",
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/src/Surface.elm",
+      "implementation/warlock/src/SurfaceRenderer.elm",
+      "implementation/warlock/adapter/shortcut_preferences.py",
+      "implementation/warlock/adapter/catalog_transport.py",
+      "implementation/warlock/adapter/daemon.py",
+      "implementation/warlock/adapter/effect_endpoint.py",
+      "implementation/warlock/native/shortcut-bindings.inc",
+      "implementation/warlock/native/authority.cpp",
+      "implementation/warlock/native/shell-bindings.lua",
+      "implementation/warlock/native/host.c",
+      "implementation/warlock/qa/ShortcutPreferencesReplay.elm",
+      "implementation/warlock/qa/check-shortcut-preferences.py",
+      "implementation/warlock/qa/check-search.py",
+      "implementation/warlock/qa/check-native-authority.py",
+      "implementation/warlock/qa/native-shortcut-preferences.py",
+      "implementation/warlock/qa/current-search-build.json",
+      "implementation/warlock/qa/current-native-pair.json",
+      "implementation/warlock/assets/elm.js",
+      "implementation/warlock/assets/bar.js",
+      "implementation/warlock/assets/popup.js",
+      "implementation/warlock/README.md",
+      "implementation/warlock/qa/settings-browser.mjs",
+      "implementation/warlock/qa/shortcut-choices.qnt"
+    ],
+    "verification": [
+      "Actual Elm/root and private-store/native admission checks for live conflict, free alternate, stale fingerprint, revision CAS, Unknown/no-replay and saved restart. Exact owning native authority build and protected keyboard conflict/choice/native recipient journey. Original offline rollback, complete Omarchy inventory, AT and independent acceptance remain explicit."
+    ],
+    "status": "implemented-partial",
+    "investigationStopped": true,
+    "evidence": "implementation/warlock/qa/evidence/shortcut-choices/manifest.json",
+    "nextSourceWork": "Fix repeated launcher keyboard dismissal under keyboard-launcher; then qualify original default meaning, refresh/stale, saved restart, AT and recovery."
+  },
+  "nextSlices": [
+    "taskbar activation/minimize/restore and popup focus journeys",
+    "persistent catalog pins",
+    "launcher search and refusal recovery",
+    "switcher/Task View/workspaces and snap/output journeys",
+    "authorized visible previews and fallback",
+    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
+    "original native, AT/IME, hardware/resource/journey gates",
+    "reproducible package, reversible deployment/rollback"
+  ],
+  "releaseAccepted": false,
+  "oldTrackerIsCurrent": false,
+  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
+  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
+  "previousSlice": {
     "id": "settings-first-use-help",
     "requirements": [
       "ELM-UI-020",
@@ -39,78 +100,6 @@
     "status": "implemented-partial",
     "evidence": "implementation/warlock/qa/evidence/settings-help/manifest.json",
     "nextSourceWork": "Implement preference-safe first-use enablement and explicit shortcut-conflict choices; offline recovery and AT remain separate original obligations."
-  },
-  "nextSlices": [
-    "taskbar activation/minimize/restore and popup focus journeys",
-    "persistent catalog pins",
-    "launcher search and refusal recovery",
-    "switcher/Task View/workspaces and snap/output journeys",
-    "authorized visible previews and fallback",
-    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
-    "original native, AT/IME, hardware/resource/journey gates",
-    "reproducible package, reversible deployment/rollback"
-  ],
-  "releaseAccepted": false,
-  "oldTrackerIsCurrent": false,
-  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
-  "previousSlice": {
-    "id": "observed-pin-max-state",
-    "requirements": [
-      "ELM-UX-016"
-    ],
-    "scenarios": [
-      "ux-016"
-    ],
-    "paths": [
-      "implementation/warlock/src/ActionProjection.elm",
-      "implementation/warlock/src/NativeProvider.elm",
-      "implementation/warlock/src/Provider.elm",
-      "implementation/warlock/src/Taskbar.elm",
-      "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/src/SurfaceRenderer.elm",
-      "implementation/warlock/src/Effects.elm",
-      "implementation/warlock/src/Shell.elm",
-      "implementation/warlock/native/authority.cpp",
-      "implementation/warlock/native/geometry-effects.inc",
-      "implementation/warlock/native/shared-host.c",
-      "implementation/warlock/native/surface.h",
-      "implementation/warlock/qa/check-search.py",
-      "implementation/warlock/qa/check-native-authority.py",
-      "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/qa/current-native-pair.json",
-      "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/assets/elm.js",
-      "implementation/warlock/assets/bar.js",
-      "implementation/warlock/assets/popup.js",
-      "implementation/warlock/README.md",
-      "implementation/warlock/src/MenuBridge.elm",
-      "implementation/warlock/src/GeometryProjection.elm",
-      "implementation/warlock/adapter/geometry_endpoint.py",
-      "implementation/warlock/adapter/daemon.py",
-      "implementation/warlock/native/geometry.inc",
-      "implementation/warlock/native/core/ConfigActions.cpp",
-      "implementation/warlock/qa/check-pin-core.py",
-      "implementation/warlock/qa/current-pin-core.json",
-      "implementation/warlock/qa/PinMaxReplay.elm",
-      "implementation/warlock/qa/native-pin-max.py",
-      "implementation/warlock/native/host-journal.h",
-      "implementation/warlock/adapter/admission_ledger.py",
-      "implementation/warlock/adapter/recovery_journal.py",
-      "implementation/warlock/qa/SnapReplay.elm",
-      "implementation/warlock/qa/SwitcherReplay.elm",
-      "implementation/warlock/qa/TaskViewReplay.elm",
-      "implementation/warlock/native/host.c",
-      "implementation/warlock/assets/shell.css"
-    ],
-    "before": "The integrated native action projection carries focus, minimize and attention but no explicit committed pin/MAX pair. The ordinary window actions do not expose that observed pair for a maximized family.",
-    "after": "Expose supported typed always-on-top intent and show pin/MAX only from correlated current native observations; keep pending/refused/Unknown distinct, preserve geometry, native hit target and no-replay custody.",
-    "verification": [
-      "Compile changed Elm roots and owning native units against the exact ABI. Meaningful replay for pending/stale/Unknown versus correlated state and actual original pin/unpin on a maximized family overlapping a float, native scene/hit target and displayed state agreement."
-    ],
-    "status": "completed-partial",
-    "investigationStopped": true,
-    "missingObservation": "Always-on-top completion predicate exceeds original six seconds; retained in picker-target-stability/manifest.json. No pin/unpin acceptance."
   },
   "recentSlices": [
     {
@@ -674,16 +663,49 @@
       "status": "completed-partial",
       "investigationStopped": true,
       "missingObservation": "Always-on-top completion predicate exceeds original six seconds; retained in picker-target-stability/manifest.json. No pin/unpin acceptance."
+    },
+    {
+      "id": "settings-first-use-help",
+      "requirements": [
+        "ELM-UI-020",
+        "ELM-UX-023"
+      ],
+      "scenarios": [
+        "first-use",
+        "keyboard-settings"
+      ],
+      "before": "Settings provides preference controls but no dismissible, reusable keyboard guidance or explanation of unconfirmed actions.",
+      "after": "Offer dismissible help within Settings, retain dismissal for this host session, let keyboard users reopen it without saving preferences or replaying mutations.",
+      "paths": [
+        "implementation/warlock/src/Desktop.elm",
+        "implementation/warlock/src/Surface.elm",
+        "implementation/warlock/src/SurfaceRenderer.elm",
+        "implementation/warlock/qa/SettingsReplay.elm",
+        "implementation/warlock/qa/settings-browser.mjs",
+        "implementation/warlock/qa/check-search.py",
+        "implementation/warlock/qa/native-settings-help.py",
+        "implementation/warlock/qa/current-search-build.json",
+        "implementation/warlock/assets/elm.js",
+        "implementation/warlock/assets/bar.js",
+        "implementation/warlock/assets/popup.js",
+        "implementation/warlock/README.md"
+      ],
+      "verification": [
+        "Compile actual Elm roots and existing Settings replay, verify default/dismiss/reopen/stale-view/pending/Unknown behavior and no preference writes; render actual Popup and use real keyboard navigation/dismissal with protected native host. Original shortcut mapping/conflict persistence, offline rollback, AT and independent acceptance remain explicit."
+      ],
+      "status": "implemented-partial",
+      "evidence": "implementation/warlock/qa/evidence/settings-help/manifest.json",
+      "nextSourceWork": "Implement preference-safe first-use enablement and explicit shortcut-conflict choices; offline recovery and AT remain separate original obligations."
     }
   ],
   "nextOriginalSlice": {
-    "id": "preference-safe-first-use",
+    "id": "repeated-launcher-dismissal",
     "requirements": [
-      "ELM-UI-020"
+      "ELM-UX-023"
     ],
     "scenarios": [
-      "first-use"
+      "keyboard-launcher"
     ],
-    "reason": "Dismissible help is integrated and native keyboard interval observed. Next implement explicit shortcut-conflict choice with validated persistence; preserve effective Omarchy/user bindings."
+    "reason": "The real preserved F12 override opens Apps, but its subsequent Escape fails the original six-second dismissal deadline. Fix actual terminal-key/input ownership while preserving no replay and current focus/lease."
   }
 }

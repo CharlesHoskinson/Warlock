@@ -1,0 +1,70 @@
+{
+  "schema": 1,
+  "requirements": [
+    "ELM-UI-020",
+    "ELM-UX-023"
+  ],
+  "scenarios": [
+    "first-use",
+    "keyboard-settings"
+  ],
+  "sourceParent": "9b640f9c0b171bd722ae4e647e8df2a0956ef558",
+  "sourceHashes": {
+    "implementation/warlock/src/ShortcutPreferences.elm": "d9196adaae768e57e2531b78ad2cd8fd22a2a81ad952d27c7c88d0fc72da8322",
+    "implementation/warlock/src/Desktop.elm": "0de211c106232d0e79033eb17a105c0e0d668d0fe226011656d90dc66ec2f4dd",
+    "implementation/warlock/src/Surface.elm": "c1956597c3565b396ee0e620902039661dac9ae9bdc70bd8afd0b74ee6a07fe0",
+    "implementation/warlock/src/SurfaceRenderer.elm": "7acd0083ccf4209ea6bde220ad82e9189417f55d3e1d4929ba13ab9fd9bb0025",
+    "implementation/warlock/adapter/shortcut_preferences.py": "2a8cc047ebfb5040c7dda4f9fd0f9e80a9b1207245458beda3ac26ff2251c185",
+    "implementation/warlock/adapter/catalog_transport.py": "43bd1cd1059b87ce4d349d72e4b2a917ac1bdc3dacda2f60563fa621e05a4b84",
+    "implementation/warlock/adapter/daemon.py": "819b945c7d1c92d6360045db297715ac9ff7ac72024741b8ca3238fc24d08d67",
+    "implementation/warlock/adapter/effect_endpoint.py": "1371ff6b27df251677edfb58cd1f7d164361bc6d6f61cb36a2737f101d72dfeb",
+    "implementation/warlock/native/shortcut-bindings.inc": "1639fc1d2aa90f45e7d49eba324fb13bcc8573db8ceb8007f22f5742ee72af21",
+    "implementation/warlock/native/authority.cpp": "02eb343f93422074ed658d69eaf5a8be66a0804c9ab762b9f61e4d3b14a50495",
+    "implementation/warlock/native/shell-bindings.lua": "dc439fb1cbaa02aa6140ed6dd9d39310286d50b6f5327c6e4e3f5eec03a49efd",
+    "implementation/warlock/native/host.c": "e5dca3201f7d7b506476829ddf1c4bf1c92c048445bcea3f4bc1821e4f489e7d",
+    "implementation/warlock/qa/ShortcutPreferencesReplay.elm": "79f023f7ed2379d8761582db541bbde3ad39430422e45ba504314b5cb8909e91",
+    "implementation/warlock/qa/check-shortcut-preferences.py": "66c0b961567a3853e5668889cb6754da6e03237b14c2b1e3973a17641fb24ae3",
+    "implementation/warlock/qa/check-search.py": "64b8a7de5efeb9592f68693eff1d0ead22a3a3766a101c59315fac093915dd1a",
+    "implementation/warlock/qa/check-native-authority.py": "d06bca4ee340d0f13ed6373a0e38fa444b234e7282932c1c6f7cd59263274e41",
+    "implementation/warlock/qa/native-shortcut-preferences.py": "9ffe677f1f9b112f96be0890f91d3e9a058d148ce3792ed6a0276672beb504f1",
+    "implementation/warlock/qa/current-search-build.json": "c5f38055221889ffa5cdd637b5ba27592fa41261cf5f7a090e270b4e17788c1e",
+    "implementation/warlock/qa/current-native-pair.json": "5a694e54ac6994e32ecaf8eb2a78a9d8355a93964ec516400b8e020886bd29f9",
+    "implementation/warlock/assets/elm.js": "8add97d2536763124330ad70e0af9abad23c3d175c3b0a80e8f489ed437c5ea1",
+    "implementation/warlock/assets/bar.js": "ba3aeafb3b49f3e5a201f9c7efe1c7f79f22fb659271c814cab7465a53168fd2",
+    "implementation/warlock/assets/popup.js": "df70e74116c3dfc52e70ad26ea03233f6b07d77985da84913a76a7a8374fda1f",
+    "implementation/warlock/README.md": "d2bc98b01e99e89762eeaa311ca2eba278577264f6ecaf5e87044230209159ff",
+    "implementation/warlock/qa/settings-browser.mjs": "b57f88a203065df5cf59ab863d6757139da6b1f9748fd0cd0f5c2b8df0212afa",
+    "implementation/warlock/qa/shortcut-choices.qnt": "c02dc675e25d65b81ed3951f26cea7002630f808a3f5cbb9fb07769d92bfefd7"
+  },
+  "evidence": {
+    "compiled-report.json": "2682c73d153cfd1474f01203d3150ad2e2693fb498b7e41f4f62d3ce603b769b",
+    "authority-report.json": "b20d6daf58e8d0090d1af9b2e8b1c3b107b2d900ac65eb5228e7ea83f796a7e6",
+    "native-report.json": "e263b5c16601e46270584dc0d76072086c2666d75fc4f8dde28a19a1bb1278f5",
+    "native-first-failure.json": "0f63dde8b8b6cd9635a6460ec37801e42f373b587b93aaed6e24759f5c90b50e",
+    "shortcut-choices-saved.png": "7c52d522a1ac6a83fe0011d226d578e7bec2d03026a7b4769578261fdfd42b3d"
+  },
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/pin-core-1791495415110842751/Hyprland",
+      "sha256": "81c9ac609c2900f99c1efbe613b83e949aeae3059a5e4403601581fa96191acf"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791593805484663441/elm-window-geometry-authority.so",
+      "sha256": "207372097fa4babf3118012e284142efe2c6ea31092db21dd5e9cc1ffad4b2be"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "scope": "Three fixed shell routes have immutable explicit choices, actual private CAS storage and live native conflict/configuration fingerprint admission. Native observes disabled conflicting default, one saved alternative/default/keep set, exact preserved two customized bindings, reusable help and actual alternative/user override Apps entry. Repeated Apps dismissal fails at six seconds; cleanup passes. No original requirement/release acceptance.",
+  "missingObservations": [
+    "Native repeated Apps dismissal fails after the preserved F12 override; the original default invocation, later read-only refresh and stale/duplicate native interval are not reached.",
+    "Whole-host and authority restart of saved choices, live configuration reload/receipt retirement over repeated frontend lifetimes, native AT and independent first-use/keyboard-settings acceptance remain open.",
+    "Complete effective Omarchy command/keyword/binding inventory, first-use enablement beyond these three routes and offline rollback without the failed host remain open."
+  ],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "investigationStopped": true,
+  "progressRecordLimit": "Two qualification-only iterations trigger a slice change. The contributor classifier does not count authored .inc changes as production progress; the actual native generation fix is retained, and no timer override was used."
+}

@@ -1,5 +1,6 @@
 """Focused compiled launcher/search integration, protected CPU scope only."""
 import pathlib,hashlib,json,os,sys,time,shutil,subprocess,shlex,importlib.util,concurrent.futures,http.server,threading
+SHORTCUTS=sys.argv[1:]==['--shortcut-choices']
 PINMAX=sys.argv[1:]==['--pin-max']
 QUIESCENT=sys.argv[1:]==['--preview-quiescence']
 PREVIEW=sys.argv[1:]==['--preview-states']
@@ -16,7 +17,7 @@ JUMP=sys.argv[1:]==['--jump-lists']
 FILES=sys.argv[1:]==['--files']
 SYSTEM=sys.argv[1:]==['--system-menu']
 NOTIFICATIONS=sys.argv[1:]==['--notifications']
-SETTINGS=sys.argv[1:]==['--settings'] or CONTRAST
+SETTINGS=sys.argv[1:]==['--settings'] or CONTRAST or SHORTCUTS
 SNAP=sys.argv[1:]==['--snap-chooser']
 REFLOW=sys.argv[1:]==['--popup-reflow']
 MENU=sys.argv[1:]==['--dense-menu'] or REFLOW
@@ -199,6 +200,13 @@ console.log('Current body-target Escape releases once; stale scope, preedit, rep
   run('compile-snap',[str(HELD/pinned['compiler']),'make','qa/SnapReplay.elm','--optimize','--output=assets/snap.js'])
   (INPUT/'qa/snap-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.SnapReplay'));run('typed-snap',['node','qa/snap-replay.js','assets/snap.js',str(OUT/'snap.json')]);report['typedSnap']=json.loads((OUT/'snap.json').read_text());assert all(report['typedSnap']['checks'].values())
   run('snap-model-typecheck',['quint','typecheck','qa/snap-chooser.qnt']);run('snap-model-named',['quint','test','qa/snap-chooser.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79121']);run('snap-model-invariants',['quint','run','qa/snap-chooser.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79122'])
+ if SHORTCUTS:
+  run('shortcut-preference-store',['/usr/bin/python3','-B','qa/check-shortcut-preferences.py'])
+  run('compile-shortcut-preferences',[str(HELD/pinned['compiler']),'make','qa/ShortcutPreferencesReplay.elm','--optimize','--output=assets/shortcut-preferences.js'])
+  (INPUT/'qa/shortcut-preferences-replay.js').write_text(replay.replace('Elm.SearchReplay','Elm.ShortcutPreferencesReplay'))
+  run('typed-shortcut-preferences',['node','qa/shortcut-preferences-replay.js','assets/shortcut-preferences.js',str(OUT/'shortcut-preferences.json')]);report['shortcutPreferences']=json.loads((OUT/'shortcut-preferences.json').read_text());assert all(report['shortcutPreferences']['checks'].values())
+  run('shortcut-choice-model-typecheck',['quint','typecheck','qa/shortcut-choices.qnt']);run('shortcut-choice-model-named',['quint','test','qa/shortcut-choices.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79201']);run('shortcut-choice-model-invariants',['quint','run','qa/shortcut-choices.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79202'])
+  report.update(requirements=['ELM-UI-020','ELM-UX-023'],scenarios=['first-use','keyboard-settings'],scope='Compiled actual Settings shortcut choices, live conflict/readback admission, private CAS storage and pending/Unknown no-replay; native original keyboard/conflict/restoration, AT and independent acceptance separate.')
  if NAV:
   run('navigation-projection',['/usr/bin/python3','-B','qa/check-navigation-projection.py'])
   run('navigation-model-typecheck',['quint','typecheck','qa/workspace-navigation.qnt']);run('navigation-model-named',['quint','test','qa/workspace-navigation.qnt','--backend=typescript','--match=Test$','--max-samples=1','--seed=79103']);run('navigation-model-invariants',['quint','run','qa/workspace-navigation.qnt','--backend=typescript','--invariants=safety','--max-samples=100','--max-steps=20','--seed=79104'])
@@ -239,6 +247,9 @@ console.log('Current body-target Escape releases once; stale scope, preedit, rep
     # The authority TU is independently compiled against its owning core; none
     # of these reused GTK host objects link it or include its modal preflight.
     excluded=['native/surface-test.c','native/surface.h','native/host.c','native/shared-host.c','native/shell-bindings.lua','native/shared-context.h','native/shared-context-test.c']+(['native/authority.cpp','native/navigation-modal.hpp'] if NAV or DRAG else [])+(['native/authority.cpp','native/host-journal.h','native/geometry-effects.inc','native/snap-placement.inc','native/motion-profile.inc','native/geometry.inc'] if SNAP or SETTINGS or NOTIFICATIONS or SYSTEM or FILES or JUMP or ATTENTION or KEYBOARD or TRANSFER or MOTION or PINMAX else [])
+    if SHORTCUTS:
+     excluded+=['native/shortcut-bindings.inc']
+     assert all('shortcut-bindings.inc' not in (INPUT/'native'/name).read_text() for name in units)
     assert all(sha(INPUT/p)==h for p,h in prior['inputs'].items() if p.startswith('native/') and p not in excluded)
     assert all('surface.h' not in (INPUT/'native'/name).read_text() for name in units)
    object_path=prior_path;object_report=prior;seen=set()

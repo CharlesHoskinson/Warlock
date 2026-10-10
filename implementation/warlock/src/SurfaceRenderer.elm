@@ -83,8 +83,8 @@ viewWithPreview preview popup send ((Snapshot snapshot) as current) =
             let switcherOption = popup && snapshot.mode=="switcher" && String.startsWith "switcher:family:" item.identity
                 active = not popup && (String.startsWith "bar:group:" item.identity || String.startsWith "bar:pin:" item.identity) && String.contains "Active" item.detail && not (String.contains "Attention; " item.detail)
                 kind = if String.startsWith "bar:group:" item.identity || String.startsWith "bar:pin:" item.identity then "control-group" else if item.identity=="bar:recovery-refresh" then "control-recovery" else "control-utility"
-            in if popup && snapshot.mode=="settings" && String.startsWith "settings:help:text:" item.identity then
-                p [class "notification-text",id item.domId,attribute "data-settings-help" item.identity] [span [class "control-label"] [text item.label],span [class "control-detail"] [text item.detail]]
+            in if popup && snapshot.mode=="settings" && (String.startsWith "settings:help:text:" item.identity || (String.startsWith "settings:shortcuts:" item.identity && String.endsWith ":state" item.identity)) then
+                p [class "notification-text",id item.domId,attribute (if String.startsWith "settings:help:text:" item.identity then "data-settings-help" else "data-shortcut-state") item.identity] [span [class "control-label"] [text item.label],span [class "control-detail"] [text item.detail]]
             else if popup && snapshot.mode=="notifications" && (String.endsWith ":summary" item.identity || String.endsWith ":body" item.identity) then
                 p [class "notification-text",id item.domId,attribute "data-notification-content" item.identity] [span [class "control-label"] [text item.label],span [class "control-detail"] [text item.detail]]
             else if popup && List.member snapshot.mode ["system","files","jump"] && String.endsWith ":state" item.identity then

@@ -184,11 +184,11 @@ recipient checks pass in an isolated desktop; native accessibility consumers and
 independent ELM-UX-009 acceptance remain open. Use `--attention` with the protected
 component and native runners for this slice.
 
-The candidate's `native/shell-bindings.lua` adopts three recorded Omarchy
-keyboard routes: Super+Alt+Space opens Applications, Super+Escape opens System,
-and Super+Shift+Alt+Comma opens notification history. Load it with the matching
-Warlock authority and load user overrides afterwards. These source bindings
-have not been installed in the user's desktop configuration.
+The candidate authority registers three approved Omarchy shell routes only when their live chords are free: Super+Alt+Space opens Applications, Super+Escape opens System, and Super+Shift+Alt+Comma opens notification history. `native/shell-bindings.lua` retains the move/resize source bindings; it no longer unconditionally installs these three shell chords. No candidate bindings are installed on the user's desktop.
+
+Settings displays native default/alternative availability and observed active mappings. Choose **Keep existing shortcut**, the free default, or its displayed free alternative for each route; **Save shortcut choices** stores the decisions privately and applies only the fixed admitted chords. Existing bindings are never removed or disabled. Native foreign/configuration fingerprints and store revision CAS reject stale choices; a lost outcome retains Unknown until an explicit read, with no automatic retry. Saving is optional; the bar routes and help remain usable.
+
+The bounded native campaign observes a real default conflict, disabled default selection, one explicit save, byte-equivalent customized bindings, help reopening, the chosen alternative and the preserved F12 fixture override. Repeated Apps dismissal fails at the original six-second deadline, so later original-shortcut invocation, refresh/stale-request and whole-host restart intervals remain unqualified. Stored choice/fresh-store and strict stale/Unknown checks pass in the compiled/transport scope. Native AT, offline rollback and the complete effective Omarchy inventory remain open. See [shortcut choice evidence](qa/evidence/shortcut-choices/README.md).
 
 The native callbacks publish fixed typed navigation events through a bounded
 64-event journal, scoped to its admitted live frontend. The broker strictly

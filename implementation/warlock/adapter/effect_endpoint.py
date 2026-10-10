@@ -102,6 +102,26 @@ class Endpoint(ReadOnlyEndpoint):
   # A grouped/retiring target may have no mapped root identity. Active state
   # still blocks shell input; null never turns a native grab into idle.
   return r
+ def shortcut_bindings(self,request_id,choices=None,fingerprint=None):
+  from shortcut_preferences import ROUTES,choices as valid_choices,fingerprint as valid_fingerprint
+  canonical(request_id)
+  apply=choices is not None
+  payload={'protocolVersion':3,'kind':'shortcut-bindings-apply' if apply else 'shortcut-bindings-request','binding':self.bound,'requestId':request_id}
+  if apply:
+   valid_choices(choices);valid_fingerprint(fingerprint)
+   if 'undecided' in choices.values():raise Refused('Unresolved shortcut choices')
+   payload.update(choices=choices,fingerprint=fingerprint)
+  r=self.request(payload)
+  exact(r,['protocolVersion','kind','binding','requestId','inventory',*(['status'] if apply else [])])
+  if type(r['protocolVersion']) is not int or r['protocolVersion']!=3 or r['kind']!=('shortcut-bindings-outcome' if apply else 'shortcut-bindings') or binding(r['binding'])!=self.bound or r['requestId']!=request_id:raise Refused('Shortcut binding correlation')
+  if apply and r['status'] not in ('Applied','Refused','Unknown'):raise Refused('Shortcut binding outcome')
+  inventory=r['inventory'];exact(inventory,['fingerprint',*ROUTES]);valid_fingerprint(inventory['fingerprint'])
+  chords={'applications':('SUPER + ALT + SPACE','SUPER + CTRL + ALT + SPACE'),'system':('SUPER + ESCAPE','SUPER + CTRL + ESCAPE'),'notifications':('SUPER + SHIFT + ALT + comma','SUPER + CTRL + ALT + comma')}
+  for route in ROUTES:
+   row=inventory[route];exact(row,['defaultChord','alternateChord','defaultAvailable','alternateAvailable','active'])
+   if (row['defaultChord'],row['alternateChord'])!=chords[route] or type(row['defaultAvailable']) is not bool or type(row['alternateAvailable']) is not bool or row['active'] not in ('keep','default','alternate'):raise Refused('Shortcut binding inventory')
+   if row['active']=='default' and not row['defaultAvailable'] or row['active']=='alternate' and not row['alternateAvailable']:raise Refused('Shortcut active conflict')
+  return r
  def shell_shortcuts(self,request_id):
   canonical(request_id)
   r=self.request({'protocolVersion':3,'kind':'shell-shortcuts-request','binding':self.bound,'requestId':request_id})
