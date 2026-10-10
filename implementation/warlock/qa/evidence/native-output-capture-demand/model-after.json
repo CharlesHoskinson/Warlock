@@ -1,0 +1,74 @@
+{
+  "passed": true,
+  "scope": "quint-llm-kit sampled live nested-output capture requests and real output commit; no synthetic presentation; native gates separate.",
+  "nativeAcceptance": false,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-03e1c9719dee465082eba79dafbf20f4.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "qa/nested-capture.qnt": "433a8daa4a65bbcc8ce8efef1b8ccf30b67d2d639bcdb093ef64742e6ffff5a5",
+    "qa/nested-capture_test.qnt": "28d7361a4cbcb15ea0a777ea8c3ead4c4f0c3e8a47a8ba8d7be63b2fa1b612d7",
+    "native/core/ScreenshareFrame.cpp": "7e6cc61f16d00c337cdce799fc52b9dd09af671360684617b394c1cb15216e5a"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/nested-capture.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/nested-capture_test.qnt",
+        "--backend=typescript",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=82001"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "witnesses",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/nested-capture.qnt",
+        "--backend=typescript",
+        "--witnesses",
+        "bothCopied",
+        "retiredNotCopied",
+        "notSyntheticPresentation",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=82002"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "safety",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/nested-capture.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--seed=82003"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "witnessCounts": {
+    "bothCopied": 18,
+    "retiredNotCopied": 141,
+    "notSyntheticPresentation": 199
+  }
+}

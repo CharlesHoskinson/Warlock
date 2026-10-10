@@ -1,0 +1,292 @@
+{
+  "schema": 1,
+  "requirement": "ELM-UX-021",
+  "scenario": "ux-021",
+  "oracle": "exactly one gesture ends and no shell surface steals the drag",
+  "verificationScope": "Elm replay assertion and isolated native recording: exactly one gesture ends and no shell surface steals the drag.",
+  "disposition": "partial",
+  "requirementAccepted": false,
+  "fullReleaseAccepted": false,
+  "sourceParent": "062af9078fbc6b8fa547aa2338e7cb7fd381f57e",
+  "sourceHashes": {
+    "implementation/warlock/native/core/ScreenshareFrame.cpp": "7e6cc61f16d00c337cdce799fc52b9dd09af671360684617b394c1cb15216e5a",
+    "implementation/warlock/qa/nested-capture.qnt": "433a8daa4a65bbcc8ce8efef1b8ccf30b67d2d639bcdb093ef64742e6ffff5a5",
+    "implementation/warlock/qa/nested-capture_test.qnt": "28d7361a4cbcb15ea0a777ea8c3ead4c4f0c3e8a47a8ba8d7be63b2fa1b612d7",
+    "implementation/warlock/qa/check-nested-capture.py": "4860a0cc2d5e0b5242a026f1dc22e94496e4ef554b9c89f8087f23b8027339da",
+    "implementation/warlock/qa/check-capture-core.py": "3aad2fdaeb5c5af95c1c3e5219d848851cfa6025625e202aafd44042d9cd6a7b",
+    "implementation/warlock/qa/check-native-authority.py": "118c3aab3634760be1040f6998c5ade9d0061ffd32e198575bcad4f8320cfec8",
+    "implementation/warlock/qa/current-scene-core.json": "6e333dc84e356e095dc51a72fd2441c88ca04cac17e702b2604867f9c2df2208",
+    "implementation/warlock/qa/current-native-pair.json": "98ed2aa0dfbaec51f3b6c94c0a94d9655e5fe4e32fe59f5e0c8e491d5d53cf88",
+    "implementation/warlock/README.md": "6fe1b7b95e2934fce1166c7ab202e1ffc4dbea3317a0da2c164d0d5e79568fc9",
+    "implementation/warlock/qa/native-window-feedback.py": "3d0424b6c1daf94c2d777244fb8a9b3cd039497f28fe55b73f7298f6f9e5b29b"
+  },
+  "artifacts": {
+    "original-before": {
+      "path": "implementation/warlock/qa/runs/native-drag-ownership-1791632246065683239/report.json",
+      "sha256": "754bcc9260cc6b0e96e5655ba6ae178b1b6c8f4b3e113a1ea945b143805f5433",
+      "packet": "original-before.json.gz",
+      "packetSHA256": "c4495146825095186da1f6b35d5c04db1aa447b456289312c6e185168c8c7806",
+      "encoding": "gzip",
+      "passed": false
+    },
+    "weak-owner-counterexample": {
+      "path": "implementation/warlock/qa/runs/native-drag-ownership-1791633306712368331/report.json",
+      "sha256": "224f867fd1d4a33d6ee84fca10a310dbaf6d89e0b5e4bdd6b435a7b10b2ac91d",
+      "packet": "weak-owner-counterexample.json.gz",
+      "packetSHA256": "9a18d933a7c6687db6150c31c434383f3f24a0a4b2da36ea7e699c8406cecf84",
+      "encoding": "gzip",
+      "passed": false
+    },
+    "native-after": {
+      "path": "implementation/warlock/qa/runs/native-drag-ownership-1791633662421407955/report.json",
+      "sha256": "67bd3ba24addfcc2f088651c243d80fa931200b4161dc1e50c75457acda441b9",
+      "packet": "native-after.json.gz",
+      "packetSHA256": "8be8f1d3c3d9989e47b08a5abb81f1baf1a60e98e495ab71b528255a059fb006",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "caption-regression": {
+      "path": "implementation/warlock/qa/runs/native-caption-restoration-1791633692498483999/report.json",
+      "sha256": "13f3265addc2044a48eb428fced86a7d6120bea7600be0024c4e839b065a3681",
+      "packet": "caption-regression.json.gz",
+      "packetSHA256": "82d5e622188f19401fa72f2d1add13dee7f0e311f8751a3bcd334d1f79deb23a",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "core-parent": {
+      "path": "implementation/warlock/qa/runs/capture-demand-core-1791633261084641553/report.json",
+      "sha256": "ba64c3693d2990e2db4f61c9fbc7369c0710c6bf7ff39a141858ce1dc247f129",
+      "packet": "core-parent.json.gz",
+      "packetSHA256": "94e97ee117b5b46fd8d71d65f0559e69b0b8fe1b8721e1cc244e776c7d21081f",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "core-after": {
+      "path": "implementation/warlock/qa/runs/capture-demand-core-1791633599455082376/report.json",
+      "sha256": "1b322eb49ad2f3d728c5d624ad2775d11491fa830bc85bda358cfd44d65c72ab",
+      "packet": "core-after.json.gz",
+      "packetSHA256": "cd24287fc78b5b47eaa3d888133c936159bfc45a799f8fa15c6e6ad90d3c2d4f",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "plugin-after": {
+      "path": "implementation/warlock/qa/runs/native-authority-1791633625313854326/report.json",
+      "sha256": "278d599dbe9361a11a2e705c3fa47da0c10d027c90af2a52a4cdb95a52cc1513",
+      "packet": "plugin-after.json.gz",
+      "packetSHA256": "c1de4cd3da89457419130fc6e896dab30d17e16c352bcb0f92226d1f4311f1f9",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "model-init": {
+      "path": "implementation/warlock/qa/runs/nested-capture-1791633198109758655/report.json",
+      "sha256": "d338ebe541ce9cfaa3199f6206b35a1c5fa398faaa415aea74eb90627fa81c95",
+      "packet": "model-init.json",
+      "packetSHA256": "d338ebe541ce9cfaa3199f6206b35a1c5fa398faaa415aea74eb90627fa81c95",
+      "encoding": "json",
+      "passed": true
+    },
+    "model-after": {
+      "path": "implementation/warlock/qa/runs/nested-capture-1791633599674467053/report.json",
+      "sha256": "d174ad268095103c8329f321e64d337050956f0591f2d5b8271c59607c58ee4c",
+      "packet": "model-after.json",
+      "packetSHA256": "d174ad268095103c8329f321e64d337050956f0591f2d5b8271c59607c58ee4c",
+      "encoding": "json",
+      "passed": true
+    },
+    "drag-two-output.png": {
+      "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791633662421497995/drag-two-output.png",
+      "sha256": "63e4dd80715b617b6fa78d653a60faf90954876dd59a745276276863b6bce375",
+      "packet": "drag-two-output.png",
+      "packetSHA256": "63e4dd80715b617b6fa78d653a60faf90954876dd59a745276276863b6bce375",
+      "encoding": "png"
+    },
+    "caption-gesture.png": {
+      "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791633692498593513/caption-gesture.png",
+      "sha256": "208eb31f456782f22f8da46474721c82f534f3b39055f6046d4bf6c1b44eee03",
+      "packet": "caption-gesture.png",
+      "packetSHA256": "208eb31f456782f22f8da46474721c82f534f3b39055f6046d4bf6c1b44eee03",
+      "encoding": "png"
+    },
+    "maximize-fraction-quarter.png": {
+      "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791633692498593513/maximize-fraction-quarter.png",
+      "sha256": "f92b861841d32e28dd99d573a9f49456cc2ad5e9d349b3f7905144f829e1ad8e",
+      "packet": "maximize-fraction-quarter.png",
+      "packetSHA256": "f92b861841d32e28dd99d573a9f49456cc2ad5e9d349b3f7905144f829e1ad8e",
+      "encoding": "png"
+    },
+    "maximize-cancel-quarter.png": {
+      "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791633692498593513/maximize-cancel-quarter.png",
+      "sha256": "3ed7bf22d26f8c012dd2405a688ff9c23fcdbb2d38e459f9c49a0d3095b55b90",
+      "packet": "maximize-cancel-quarter.png",
+      "packetSHA256": "3ed7bf22d26f8c012dd2405a688ff9c23fcdbb2d38e459f9c49a0d3095b55b90",
+      "encoding": "png"
+    },
+    "snap-fraction-quarter.png": {
+      "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791633692498593513/snap-fraction-quarter.png",
+      "sha256": "93162e40555b07c52ba1fde19031f78e40a8a3b4b54e3c15e445c7dd26fe26b4",
+      "packet": "snap-fraction-quarter.png",
+      "packetSHA256": "93162e40555b07c52ba1fde19031f78e40a8a3b4b54e3c15e445c7dd26fe26b4",
+      "encoding": "png"
+    },
+    "snap-cancel-quarter.png": {
+      "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791633692498593513/snap-cancel-quarter.png",
+      "sha256": "110de06a7649915092ffa4ff0709000dc3ca5f14ab769c9b0b9f9d3dee48a3d7",
+      "packet": "snap-cancel-quarter.png",
+      "packetSHA256": "110de06a7649915092ffa4ff0709000dc3ca5f14ab769c9b0b9f9d3dee48a3d7",
+      "encoding": "png"
+    },
+    "native-after-before-initial-gate": {
+      "path": "implementation/warlock/qa/runs/native-drag-ownership-1791633393677366086/report.json",
+      "sha256": "efe26e12fda67fd110e560802be98b3c48ca858549ae8f2234b5473d18268ccb",
+      "packet": "before-initial-gate-native-after.json.gz",
+      "packetSHA256": "c264b063c10621afe6567b29431b0de27ac7fd102c72f37a6d4063cac7d8beb0",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "caption-regression-before-initial-gate": {
+      "path": "implementation/warlock/qa/runs/native-caption-restoration-1791633425457117328/report.json",
+      "sha256": "1c978c4d00511284261a0a88001379ef3eb095d2333e7f0c8099e51fa20ce298",
+      "packet": "before-initial-gate-caption-regression.json.gz",
+      "packetSHA256": "48818bf1ce9b0bb789a7279302026f449271e47f4cb8dccef96434f75350c7d8",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "core-after-before-initial-gate": {
+      "path": "implementation/warlock/qa/runs/capture-demand-core-1791633343446075541/report.json",
+      "sha256": "7f7aa4b84039f4f8a760149b4770d2fe6d872788213bf6a64c61ffa7e50803c4",
+      "packet": "before-initial-gate-core-after.json.gz",
+      "packetSHA256": "75c97e0ee0316ccd456cf3af74d41f86c7d9c62b40704627d4756e2d4b25a8e8",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "plugin-after-before-initial-gate": {
+      "path": "implementation/warlock/qa/runs/native-authority-1791633365839637020/report.json",
+      "sha256": "51947765e5182a611a5a76ebc51ee7f39c4634c2c50df0da6c0670a2ac5333dc",
+      "packet": "before-initial-gate-plugin-after.json.gz",
+      "packetSHA256": "efe173c0108fd662ccf210ee9515837d41a5206657ed2af48456125193f0d3c0",
+      "encoding": "gzip",
+      "passed": true
+    },
+    "model-after-before-initial-gate": {
+      "path": "implementation/warlock/qa/runs/nested-capture-1791633343664544339/report.json",
+      "sha256": "107053de84470991bcc0ade34cafd0a102ec7a9b5aed3a1557444f251d1d6117",
+      "packet": "before-initial-gate-model-after.json",
+      "packetSHA256": "107053de84470991bcc0ade34cafd0a102ec7a9b5aed3a1557444f251d1d6117",
+      "encoding": "json",
+      "passed": true
+    },
+    "drag-two-output.png-before-initial-gate": {
+      "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791633393677494371/drag-two-output.png",
+      "sha256": "d719ad80976ff989f25727f2efcc50ce268d3ef7066f5a638e851de591b7050b",
+      "packet": "before-initial-gate-drag-two-output.png",
+      "packetSHA256": "d719ad80976ff989f25727f2efcc50ce268d3ef7066f5a638e851de591b7050b",
+      "encoding": "png"
+    },
+    "caption-gesture.png-before-initial-gate": {
+      "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791633425457202287/caption-gesture.png",
+      "sha256": "6ff553a186b84d75c62f9ca59edeea86e487b53c5230b0a4c7ffc2264f060558",
+      "packet": "before-initial-gate-caption-gesture.png",
+      "packetSHA256": "6ff553a186b84d75c62f9ca59edeea86e487b53c5230b0a4c7ffc2264f060558",
+      "encoding": "png"
+    },
+    "maximize-fraction-quarter.png-before-initial-gate": {
+      "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791633425457202287/maximize-fraction-quarter.png",
+      "sha256": "4f3ff425a43e00ede5fa0654e8879ad6700d8c2ae4b45ce79d6eded85b368202",
+      "packet": "before-initial-gate-maximize-fraction-quarter.png",
+      "packetSHA256": "4f3ff425a43e00ede5fa0654e8879ad6700d8c2ae4b45ce79d6eded85b368202",
+      "encoding": "png"
+    },
+    "maximize-cancel-quarter.png-before-initial-gate": {
+      "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791633425457202287/maximize-cancel-quarter.png",
+      "sha256": "11f291b233fde64dc36bda606f8d77f28b7cbcf988afd5c5281bf5a31f769b45",
+      "packet": "before-initial-gate-maximize-cancel-quarter.png",
+      "packetSHA256": "11f291b233fde64dc36bda606f8d77f28b7cbcf988afd5c5281bf5a31f769b45",
+      "encoding": "png"
+    },
+    "snap-fraction-quarter.png-before-initial-gate": {
+      "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791633425457202287/snap-fraction-quarter.png",
+      "sha256": "0161b3c78149b60f10dc81cc363279be671a92d90fbaa7acae2d2cafb9d8af55",
+      "packet": "before-initial-gate-snap-fraction-quarter.png",
+      "packetSHA256": "0161b3c78149b60f10dc81cc363279be671a92d90fbaa7acae2d2cafb9d8af55",
+      "encoding": "png"
+    },
+    "snap-cancel-quarter.png-before-initial-gate": {
+      "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791633425457202287/snap-cancel-quarter.png",
+      "sha256": "5596681772f4a424adf7e8e3fb4ce50fc172265bd5a4d0eacbc68747292a4d8a",
+      "packet": "before-initial-gate-snap-cancel-quarter.png",
+      "packetSHA256": "5596681772f4a424adf7e8e3fb4ce50fc172265bd5a4d0eacbc68747292a4d8a",
+      "encoding": "png"
+    }
+  },
+  "compressedLogs": {
+    "model-named.stdout.gz": {
+      "path": "implementation/warlock/qa/runs/nested-capture-1791633599674467053/named.stdout",
+      "sha256": "2718bef1755e3f7d863977ede83132d258d40ea97d1111836d4ad15e84f8d703",
+      "packetSHA256": "07412791d16709908188ca0f754661f0c0ed55f876d2d5c570719b76bb05b9c6"
+    },
+    "model-safety.stdout.gz": {
+      "path": "implementation/warlock/qa/runs/nested-capture-1791633599674467053/safety.stdout",
+      "sha256": "56e88678440ed874856f55eeeacfb01337364ba4b2c366180a2be337226f3a56",
+      "packetSHA256": "732892e72dde144692157e0761f1342410aaef89d2cdb576eea42ae1e3fea2ce"
+    },
+    "model-typecheck.stdout.gz": {
+      "path": "implementation/warlock/qa/runs/nested-capture-1791633599674467053/typecheck.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "packetSHA256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+    },
+    "model-witnesses.stdout.gz": {
+      "path": "implementation/warlock/qa/runs/nested-capture-1791633599674467053/witnesses.stdout",
+      "sha256": "d0484b233df79c54502b31da961b41c2498f9d769e86d59c39eb8bc181211a85",
+      "packetSHA256": "7801fa8a85b0f53176a6b7d45c0d08eded32b8e0e28ad7cdbdb5fad2af0d53c1"
+    },
+    "before-initial-gate-model-named.stdout.gz": {
+      "path": "implementation/warlock/qa/runs/nested-capture-1791633343664544339/named.stdout",
+      "sha256": "3765d03d0d954eb9654197cafc729175cb8ef975e395ae7ffcd3fea3f30c8cc1",
+      "packetSHA256": "3ecfdc401ab7ad996548d795143f7f13cc86b90540b8075d7470309ba3ee91b7"
+    },
+    "before-initial-gate-model-safety.stdout.gz": {
+      "path": "implementation/warlock/qa/runs/nested-capture-1791633343664544339/safety.stdout",
+      "sha256": "6f97c3a76ddd6357acee8cd37f320732891fd836d10df71d19bb8355c28d01f9",
+      "packetSHA256": "6b3ab7c99676b81a6530620d8b06657a1409851763009f102a2d5b3e18c7ac3f"
+    },
+    "before-initial-gate-model-typecheck.stdout.gz": {
+      "path": "implementation/warlock/qa/runs/nested-capture-1791633343664544339/typecheck.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "packetSHA256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+    },
+    "before-initial-gate-model-witnesses.stdout.gz": {
+      "path": "implementation/warlock/qa/runs/nested-capture-1791633343664544339/witnesses.stdout",
+      "sha256": "dda240d5c24f96e4d5ace043a8a2c1f69ea543133f5247424da40f9dde3db411",
+      "packetSHA256": "45e82badcde599419a3d0cad9e57f3daf594c3650aa6df084a2266401eed1cec"
+    }
+  },
+  "tuple": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/capture-demand-core-1791633599455082376/Hyprland",
+      "sha256": "7b954e5c6b818cdc6dfe8c8edd9e6c1be98a7e293b07c3e97fe0621135d1e42c"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791633625313854326/elm-window-geometry-authority.so",
+      "sha256": "ed4cb68f306ebd225eb0a0b7c310efc3252d6703fa81eff50bccbf31c60b1ad4"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "observed": "The unchanged original two-output move/resize journey now passes native owner retention across taskbar/output, blocked shortcut/effect, exactly-one end, Escape and source-workspace rollback, original five-second combined 1600\u00d7600 capture and cleanup. An initial live nested capture requests one real render/commit without waiting for an occluded parent callback. The same pair passes MAX/snap caption placement/lifecycle/draft regression. No parent presentation is fabricated; external hardware/AT and independent acceptance remain open.",
+  "missingObservations": [
+    "Direct native deferred-capture retirement/output removal, permission/lock, buffer/configuration/device and wider lifecycle races remain unqualified.",
+    "Original fullscreen/tiled/grouped caption restoration, other snap regions/repeated snaps, nondefault thresholds, transforms/constraints and other toolkit/AT evidence remain open.",
+    "The combined image does not establish launcher controls first paint or correct multi-output attachment; the observed blank left popup/right taskbar needs GUI integration work.",
+    "Independent original UX-021 disposition and release-wide native/IME/hardware/resource/journey/package/reversible deployment remain open."
+  ],
+  "correspondence": {
+    "request": "CScreenshareFrame::share validates the initial buffer then schedules one weak frame idle; later streaming frames use ordinary scheduling",
+    "retire": "frame->done(), weak expiration and live enabled output gates",
+    "demand": "owning renderMonitor with real output commit; original onOutputCommit -> copy",
+    "parentDone": "unchanged Aquamarine parent callback; no synthetic presentation",
+    "failure": "unchanged buffer/permission/copy and commit handling"
+  },
+  "modelLimits": "Two outputs, owning-thread idle interleavings and successful native copy abstracted. No native permission/buffer/hardware/pixel/latency acceptance."
+}

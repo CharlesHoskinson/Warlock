@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "scope": "quint-llm-kit sampled live nested-output capture requests and real output commit; no synthetic presentation; native gates separate.",
+  "nativeAcceptance": false,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-e0beff1c6594466192fd97b78922e04d.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "qa/nested-capture.qnt": "5983c446231ac9ade817c5a9b8fd0e9617c02ec2ea4ce6705522f7e546b79380"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/nested-capture.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "initial",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/nested-capture.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1",
+        "--max-steps=1",
+        "--seed=82000"
+      ],
+      "exitCode": 0
+    }
+  ]
+}

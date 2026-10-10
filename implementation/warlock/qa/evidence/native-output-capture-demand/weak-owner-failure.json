@@ -1,0 +1,9 @@
+{
+  "log": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791633306712461426/hyprland.log",
+  "sha256": "8d407169204fd20934fefb095b6ace6ab773e1a4740b0c1fc1537278ddf7d19f",
+  "fatalLines": [
+    "Assertion failed: impl_->lockable() (tried to lock a CWeakPointer over a CUniquePointer) @ /usr/include/hyprutils/memory/WeakPtr.hpp:180",
+    "terminate called without an active exception"
+  ],
+  "scope": "Unique-owned frame cannot be promoted by weak.lock(); corrected idle uses only its live weak pointer on the owning thread."
+}
