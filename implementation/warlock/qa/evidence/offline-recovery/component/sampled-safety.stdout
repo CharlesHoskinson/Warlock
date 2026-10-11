@@ -1,0 +1,421 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      candidateValid: true,
+      generation: 1,
+      host: NoHost,
+      phase: Idle,
+      preferences: Compatible,
+      priorValid: true,
+      recovered: false,
+      rollbacks: 0,
+      route: Predecessor,
+      starts: 0
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      candidateValid: true,
+      generation: 2,
+      host: NoHost,
+      phase: Idle,
+      preferences: CandidateValues,
+      priorValid: true,
+      recovered: false,
+      rollbacks: 0,
+      route: Candidate,
+      starts: 0
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      candidateValid: false,
+      generation: 2,
+      host: NoHost,
+      phase: Idle,
+      preferences: CandidateValues,
+      priorValid: true,
+      recovered: false,
+      rollbacks: 0,
+      route: Candidate,
+      starts: 0
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      candidateValid: false,
+      generation: 2,
+      host: NoHost,
+      phase: Staged,
+      preferences: CandidateValues,
+      priorValid: true,
+      recovered: false,
+      rollbacks: 0,
+      route: Candidate,
+      starts: 0
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      candidateValid: false,
+      generation: 3,
+      host: NoHost,
+      phase: Applied,
+      preferences: Compatible,
+      priorValid: true,
+      recovered: true,
+      rollbacks: 1,
+      route: Predecessor,
+      starts: 0
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      candidateValid: false,
+      generation: 3,
+      host: PredecessorHost,
+      phase: Applied,
+      preferences: Compatible,
+      priorValid: true,
+      recovered: true,
+      rollbacks: 1,
+      route: Predecessor,
+      starts: 1
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      candidateValid: false,
+      generation: 3,
+      host: NoHost,
+      phase: Applied,
+      preferences: Compatible,
+      priorValid: true,
+      recovered: true,
+      rollbacks: 1,
+      route: Predecessor,
+      starts: 1
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      candidateValid: false,
+      generation: 3,
+      host: PredecessorHost,
+      phase: Applied,
+      preferences: Compatible,
+      priorValid: true,
+      recovered: true,
+      rollbacks: 1,
+      route: Predecessor,
+      starts: 2
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      candidateValid: false,
+      generation: 3,
+      host: NoHost,
+      phase: Applied,
+      preferences: Compatible,
+      priorValid: true,
+      recovered: true,
+      rollbacks: 1,
+      route: Predecessor,
+      starts: 2
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      candidateValid: false,
+      generation: 3,
+      host: PredecessorHost,
+      phase: Applied,
+      preferences: Compatible,
+      priorValid: true,
+      recovered: true,
+      rollbacks: 1,
+      route: Predecessor,
+      starts: 3
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      candidateValid: false,
+      generation: 3,
+      host: NoHost,
+      phase: Applied,
+      preferences: Compatible,
+      priorValid: true,
+      recovered: true,
+      rollbacks: 1,
+      route: Predecessor,
+      starts: 3
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      candidateValid: false,
+      generation: 3,
+      host: PredecessorHost,
+      phase: Applied,
+      preferences: Compatible,
+      priorValid: true,
+      recovered: true,
+      rollbacks: 1,
+      route: Predecessor,
+      starts: 4
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      candidateValid: false,
+      generation: 3,
+      host: NoHost,
+      phase: Applied,
+      preferences: Compatible,
+      priorValid: true,
+      recovered: true,
+      rollbacks: 1,
+      route: Predecessor,
+      starts: 4
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      candidateValid: false,
+      generation: 3,
+      host: PredecessorHost,
+      phase: Applied,
+      preferences: Compatible,
+      priorValid: true,
+      recovered: true,
+      rollbacks: 1,
+      route: Predecessor,
+      starts: 5
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      candidateValid: false,
+      generation: 3,
+      host: NoHost,
+      phase: Applied,
+      preferences: Compatible,
+      priorValid: true,
+      recovered: true,
+      rollbacks: 1,
+      route: Predecessor,
+      starts: 5
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      candidateValid: false,
+      generation: 3,
+      host: PredecessorHost,
+      phase: Applied,
+      preferences: Compatible,
+      priorValid: true,
+      recovered: true,
+      rollbacks: 1,
+      route: Predecessor,
+      starts: 6
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      candidateValid: false,
+      generation: 3,
+      host: NoHost,
+      phase: Applied,
+      preferences: Compatible,
+      priorValid: true,
+      recovered: true,
+      rollbacks: 1,
+      route: Predecessor,
+      starts: 6
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      candidateValid: false,
+      generation: 3,
+      host: PredecessorHost,
+      phase: Applied,
+      preferences: Compatible,
+      priorValid: true,
+      recovered: true,
+      rollbacks: 1,
+      route: Predecessor,
+      starts: 7
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      candidateValid: false,
+      generation: 3,
+      host: NoHost,
+      phase: Applied,
+      preferences: Compatible,
+      priorValid: true,
+      recovered: true,
+      rollbacks: 1,
+      route: Predecessor,
+      starts: 7
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      candidateValid: false,
+      generation: 3,
+      host: PredecessorHost,
+      phase: Applied,
+      preferences: Compatible,
+      priorValid: true,
+      recovered: true,
+      rollbacks: 1,
+      route: Predecessor,
+      starts: 8
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      candidateValid: false,
+      generation: 3,
+      host: NoHost,
+      phase: Applied,
+      preferences: Compatible,
+      priorValid: true,
+      recovered: true,
+      rollbacks: 1,
+      route: Predecessor,
+      starts: 8
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      candidateValid: false,
+      generation: 3,
+      host: PredecessorHost,
+      phase: Applied,
+      preferences: Compatible,
+      priorValid: true,
+      recovered: true,
+      rollbacks: 1,
+      route: Predecessor,
+      starts: 9
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      candidateValid: false,
+      generation: 3,
+      host: PredecessorHost,
+      phase: Applied,
+      preferences: Compatible,
+      priorValid: false,
+      recovered: true,
+      rollbacks: 1,
+      route: Predecessor,
+      starts: 9
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      candidateValid: false,
+      generation: 3,
+      host: NoHost,
+      phase: Applied,
+      preferences: Compatible,
+      priorValid: false,
+      recovered: true,
+      rollbacks: 1,
+      route: Predecessor,
+      starts: 9
+    }
+}
+
+[ok] No violation found (201ms at 4975 traces/second).
+Trace length statistics: max=24, min=3, average=4.99
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Witnesses:
+predecessorStarted was witnessed in 430 trace(s) out of 1000 explored (43.00%)
+failedHostRecovered was witnessed in 38 trace(s) out of 1000 explored (3.80%)
+damagedCandidateRecovered was witnessed in 93 trace(s) out of 1000 explored (9.30%)
+uncertainSelectionObserved was witnessed in 43 trace(s) out of 1000 explored (4.30%)
+stagingCrashRetainsCandidate was witnessed in 107 trace(s) out of 1000 explored (10.70%)
+Use --seed=0x193b9 --backend=typescript to reproduce.

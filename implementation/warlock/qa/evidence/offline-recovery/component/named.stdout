@@ -1,0 +1,14 @@
+
+  offline_recovery_test
+    ok initialPredecessorTest passed 1 test(s)
+    ok failedHostRollbackTest passed 1 test(s)
+    ok damagedCandidateDoesNotBlockRecoveryTest passed 1 test(s)
+    ok activeHostCannotSwitchTest passed 1 test(s)
+    ok missingPriorCannotRollbackTest passed 1 test(s)
+    ok privateStagingNeverChangesSelectionTest passed 1 test(s)
+    ok stagingCrashKeepsOldPreferencesTest passed 1 test(s)
+    ok unknownCannotStartOrReplayTest passed 1 test(s)
+    ok readReconcilesUnknownTest passed 1 test(s)
+    ok repeatedRollbackIsNoOpTest passed 1 test(s)
+
+  10 passing (9ms)

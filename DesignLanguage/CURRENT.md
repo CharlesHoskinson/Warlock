@@ -205,3 +205,16 @@ catalog launch and rejects stale, ambiguous, removed, Pending and Unknown choice
 [Evidence and limits](../implementation/warlock/qa/evidence/explicit-new-instance/README.md)
 keep native launch submission distinct from application readiness. Native AT,
 enlarged/dense arrangements and independent original acceptance remain open.
+
+
+## Recovery outside the failed host
+
+[Offline component recovery](../implementation/warlock/RECOVERY.md) is available
+from a terminal independently of Elm and dismissed onboarding. Recovery retains
+explicit shortcut decisions, pins, appearance and motion as one compatible copy;
+it preserves candidate state and selects one predecessor route atomically. A
+live managed host prevents a competing launch. Unknown publication outcomes are
+reconciled by observation before proceeding. The private native drill proves a
+retained Warlock predecessor, keyboard controls and surviving application
+identities; accepted Omarchy fallback, package completeness, main-session rollback,
+AT and independent acceptance remain open. See the [evidence packet](../implementation/warlock/qa/evidence/offline-recovery/README.md).

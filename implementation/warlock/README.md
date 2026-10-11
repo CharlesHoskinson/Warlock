@@ -8,6 +8,13 @@ This candidate is not installed on the user's desktop. Its component results, na
 
 Current implementation status and remaining behavior are in the [feature-completion checklist](../../docs/warlock-roadmap/FEATURE-COMPLETION.md). Current design guidance and the [contributor plugin section](../../DesignLanguage/catalog/index.html#contributors) distinguish the editable product from frozen browser examples.
 
+[Offline component recovery](RECOVERY.md) now retains reviewed predecessor and
+candidate commands plus compatible preference copies outside Elm. The local
+command restores the predecessor selection after a managed host exits, preserves
+candidate state, and refuses competing managed hosts. This is preparation for
+reversible deployment; accepted Omarchy fallback and full release packaging remain
+open. See [recovery evidence](qa/evidence/offline-recovery/README.md).
+
 Always on top and MAX use typed native intents, observed geometry protocol 3 and confirmed labels through the existing custody/no-replay route. Stable picker geometry and checkable state now pass the original pointer/keyboard pin/MAX journey. Two floating MAX roots coexist, share committed paint/input order and recover their return placements; actual input-hole passthrough and no-activation exceptions are recorded. Clicking an eligible modal-blocked MAX parent now focuses its accepted modal without forwarding a GTK button event, and retiring the modal restores parent clicking. See [current modal evidence](qa/evidence/max-modal-focus/README.md), [no-activation evidence](qa/evidence/max-no-activation/README.md) and [pin/MAX evidence](qa/evidence/pin-check/README.md). Wider family/fullscreen/race/AT and independent acceptance remain open. Earlier failed [picker](qa/evidence/picker-target-stability/README.md) and [draft](qa/evidence/pin-max/README.md) evidence remains historical. Taskbar application pins are a separate preference feature.
 
 Settings now offers optional keyboard and recovery help. Use **Dismiss help** to hide it and **Show help** to reopen it; the same control retains keyboard focus. Dismissal lasts for the host session, including closing and reopening Settings. Help works while preference writes are pending or unconfirmed and does not send effects, save preferences or discard an unsaved draft. Shortcut-conflict persistence, native AT and offline rollback remain unfinished. See [Settings help evidence](qa/evidence/settings-help/README.md).

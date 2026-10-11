@@ -1,0 +1,133 @@
+{
+  "schema": 1,
+  "generatedUTC": "2026-10-11T00:10:17.367343+00:00",
+  "requirements": [
+    "ELM-UI-020"
+  ],
+  "scenarios": [
+    "offline-recovery"
+  ],
+  "oracle": "predecessor and compatible preferences recover without the failed host",
+  "sourceBaseRevision": "9fef88392745fb839e80238b638e5915c0b3fc95",
+  "sourceHashes": {
+    "implementation/warlock/adapter/recovery_profile.py": "651220f844591d5206b2f3f0f48fc2a652c7010d55cf796c1fda37cdc6adf6e8",
+    "implementation/warlock/qa/offline-recovery.qnt": "b6c2fb024c1d3e8be87e1ae7290896667eecc2cee1aae81b87337d6c5d3a4848",
+    "implementation/warlock/qa/offline-recovery_test.qnt": "74c6f02d0e549714d3f973c30180a6d44c24d0b2ac17df063cc73c59095e7815",
+    "implementation/warlock/qa/check-offline-recovery.py": "273ed2ab2331bda4acbb92aa35758d2916d4a7ec3c340f3cf8505c9938f97bdf",
+    "implementation/warlock/RECOVERY.md": "94f582f2480da12808267fb360520b3af8630fe91065818a7fe0eb9fc955cc7b",
+    "implementation/warlock/README.md": "41db8c455e1156f98252973f1993220b12dee763619adf2bd05fb9471be0bf8c",
+    "implementation/warlock/qa/native-offline-recovery.py": "b1ad35e679d8bc729214bfced02deaf5eccc346e1f0b4cc013d72f347ff42c84"
+  },
+  "scope": "Actual private native host loss after dismissed help, standalone CLI rollback, distinct retained Warlock predecessor, compatible preference readback, native controls/physical keyboard and surviving applications. Accepted Omarchy deployment, AT and independent acceptance remain open.",
+  "componentChecks": 40,
+  "nativeChecks": 47,
+  "modelNamedTests": 10,
+  "witnessCounts": {
+    "predecessorStarted": 430,
+    "failedHostRecovered": 38,
+    "damagedCandidateRecovered": 93,
+    "uncertainSelectionObserved": 43,
+    "stagingCrashRetainsCandidate": 107
+  },
+  "nativePair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
+      "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791666305509919483/elm-window-geometry-authority.so",
+      "sha256": "c428e1e6e2b2f9e41b3c5218e3dd37fb6551f09bee6b3531876fb3d3c674948a"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+      "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791676052328253053/elm-host",
+    "sha256": "b276c031f945431c10ca128e9e6505f366e14a3ba9cf295362bd36028296eb34",
+    "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791676052328253053/report.json",
+    "heldBuildSHA256": "89e5fbaddb242bcc14ceb19b5147b9fde1991c54916d6a1d22bed45cd95ec3df"
+  },
+  "predecessor": {
+    "path": "/home/hoskinson/window-integration-qa/warlock-window-feedback-1791677293128207213/recovery-profile",
+    "manifestSHA256": "827e69fc6511b3432a5d58952b93931212d1594085085dff2df5e668a984d909",
+    "baselineHashes": {
+      "taskbar.json": "4472894f8884c31f6c6c060310a9c47644d0bec63f044ee63c7c5232dfaf93d0",
+      "settings.json": "ff4efa4630572b1622bb8c2161dbdefed98672116e6cb47dea827dae23ba5ee0",
+      "shortcuts.json": "1c4b39224d4e2c862fd9d583027fe3fce0214b91bcdf1273999cad7c08bac99a",
+      "motion.json": "1adc1845509513e2cf84f3cbccc4f82e051a1f575b2356d5b1a545614c2f3fc9"
+    },
+    "predecessorBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791674339460650359/report.json",
+    "predecessorBuildSHA256": "5b797a2c1f06f4931aaa66c58768e53bf40fa18ec2b80a0fb8baf0ec13c1f200",
+    "predecessorAssets": {
+      "elm.js": "461351a07aca1f13fa95b9fbedcdca591c1de579e88bccec610f6358bb20c7db",
+      "bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+      "popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43"
+    },
+    "candidateAssets": {
+      "elm.js": "700524b6a1da72905daeecffd74216143bcf9242ea13c13d01f8bce3e1665be5",
+      "bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+      "popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43"
+    },
+    "acceptedOmarchyPredecessor": false
+  },
+  "nativeFixturePassed": true,
+  "cleanupPassed": true,
+  "nativeATObserved": false,
+  "scenarioAccepted": false,
+  "requirementAccepted": false,
+  "fullReleaseAccepted": false,
+  "missingObservations": [
+    "Accepted Omarchy predecessor and full release package/dependency completeness.",
+    "Main-session reversible deployment with existing user drafts.",
+    "Applicable native AT and independent original-scenario acceptance."
+  ],
+  "files": {
+    "README.md": "b4103a4412b1531e2a325dc164a9efaacc04d1fd168175a81c75ed90e5150d2f",
+    "component/candidate.json": "0ea8598f7bc00a29b3985deecad9152e18ac767b6d5daa1bc08b0c3eee7febe5",
+    "component/held-host.stdout": "f587328f421451f9c801a2c5bc78461a43fbbeb288a8c6c73a9ff43a8929e1bd",
+    "component/host-events.jsonl": "e9afa3fc0b63c8e9ca3b665c6c7deae05fef63dc8dcd3e2fb29ba464fda5db09",
+    "component/lost-manager.stdout": "ed1a545bb85e55816bbf9566b028b2a0bc456b88f49f6f266c0401048824194b",
+    "component/named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "component/named.stdout": "93daef2800eaeb8156852e72c469447fc56e4361c84db8311d88c33e8a6011b1",
+    "component/predecessor.json": "8231db9f9158cb21960ae60e93acaf697f9b35b5074489bcf5543b57c2bc0f59",
+    "component/profile-host.py": "1f3114c58e3f2f0397406ecd295037d350e12e5a55419dd11a8dc68c59465cc3",
+    "component/report.json": "213959d78eddab229fd9c993f4a723c0c2e190f48d8357a4ef5f2256613da952",
+    "component/sampled-safety.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "component/sampled-safety.stdout": "44ce8f839022c2ed92c273e2e86f1aed7a063242e8555b595e1e7172292a0f79",
+    "component/typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "component/typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "failures/native-1791677145174571380.json": "57a558bbefb0df9980ba59d810fe73833d9bde7bfac41a25bab9bde75ed712ae",
+    "failures/native-1791677145174571380.png": "b2c3fab8e9fe5a5a4714c30d48d1bb37920e55b2d5421d936220b698d0cf233d",
+    "failures/native-1791677215994408184.json": "2fea1e3fc7ba1433e2950f5cf1716b08ae6bb4e4e5379f71eaa9128f72141944",
+    "failures/native-1791677215994408184.png": "bbad5697284077f7dd875da3ba2a8be024e3c4eeb54e56871a09632270abeab2",
+    "history/component-before-inherited-lock.json": "03ddef2c9590c1fd7824f5686467262e06049586fb2fcb6b499c4f793e59f416",
+    "native/authority-config.json": "87d9bb4f7403f8014c544babfa9ac940ba2f4e2377339444b7e13e0871091b53",
+    "native/catalog-fixture-backend.py": "cdd3c30ea433c97676d5d2a325b7e6d0e04fba9464e1e10d4b2348cb43fbb630",
+    "native/chord-keyboard.log": "6bfddcb78e161412b572a21ab9c1b9af39809a4b3b6e0204909b4c48949b994d",
+    "native/feedback-helper-1.log": "98d08a9d3479e49cc7efe8f646f64cfa679d4a7984706b3ce356cf13c709acd5",
+    "native/feedback-helper-2.log": "b2b81df8ed2f74e4fe36626d25cd0d356dd5c701525b3b4ff2351531f0d6ddc3",
+    "native/feedback-helper-3.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native/fixture-control.events.jsonl": "d684f484b987181ec357c6ff4bbcfde876f8d8da29a231d3be85b720705695f0",
+    "native/host-evidence.json": "9b1c0666a6f0b771c317a1ea99e64095b07e8a7efa6b9f0c3c899de1898914b2",
+    "native/popup-offline-recovered-predecessor-settings.png": "288f8af346e88ad9f301b93dcf39b4bfa1b3c41378c9f95142a90c269a1a0d24",
+    "native/predecessor-backend.py": "6db888d605c33df6d42dbbad017b0705e0b6259b56f9404a57b269dfa0138204",
+    "native/report.json": "81fa3c56ebcb9281bf7a22b4da2cc37ee2a1ff4f8aceb1e52460c7a7f4da7459",
+    "native/search-broker-config.json": "60f3691948b06b18c77d3c84c4b842e0a1f808f871ca90b6d13e923c1a2e166d",
+    "native/warlock-predecessor-recovered.log.gz": "0727bb529f86cd028f96e6b50cd09e7fd6ccd413c0613e5350d3dc6865dd62af",
+    "native/warlock.log.gz": "e69ae7ebaf0d936e2937cbdad8ee4e1b973cdf151d8ce5e294db03d236980f7f",
+    "profile/baseline/motion.json": "1adc1845509513e2cf84f3cbccc4f82e051a1f575b2356d5b1a545614c2f3fc9",
+    "profile/baseline/settings.json": "ff4efa4630572b1622bb8c2161dbdefed98672116e6cb47dea827dae23ba5ee0",
+    "profile/baseline/shortcuts.json": "1c4b39224d4e2c862fd9d583027fe3fce0214b91bcdf1273999cad7c08bac99a",
+    "profile/baseline/taskbar.json": "4472894f8884c31f6c6c060310a9c47644d0bec63f044ee63c7c5232dfaf93d0",
+    "profile/preserved-candidate-settings.json": "6eec86fac746e4515f39213b464096edd7b6f6a4b8d0d709d59b98c6f679793f",
+    "profile/profile.json": "827e69fc6511b3432a5d58952b93931212d1594085085dff2df5e668a984d909",
+    "profile/recovered/motion.json": "1adc1845509513e2cf84f3cbccc4f82e051a1f575b2356d5b1a545614c2f3fc9",
+    "profile/recovered/settings.json": "ff4efa4630572b1622bb8c2161dbdefed98672116e6cb47dea827dae23ba5ee0",
+    "profile/recovered/shortcuts.json": "1c4b39224d4e2c862fd9d583027fe3fce0214b91bcdf1273999cad7c08bac99a",
+    "profile/recovered/taskbar.json": "4472894f8884c31f6c6c060310a9c47644d0bec63f044ee63c7c5232dfaf93d0",
+    "profile/selection.json": "700da053e23fa1bbc4ef2963b52dabf43e7093d03d56751a9516c1265694fc84",
+    "source.patch": "f84ff0efb18c0c37ae64f7d72527c706bd98660c87486dbb9bcd58742e7ba760"
+  }
+}

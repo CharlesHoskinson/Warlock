@@ -1,0 +1,111 @@
+{
+  "passed": true,
+  "scope": "Production offline profile/CLI and real managed local child processes; no native GUI predecessor or independent release qualification.",
+  "modelSHA256": "b6c2fb024c1d3e8be87e1ae7290896667eecc2cee1aae81b87337d6c5d3a4848",
+  "witnessCounts": {
+    "predecessorStarted": 430,
+    "failedHostRecovered": 38,
+    "damagedCandidateRecovered": 93,
+    "uncertainSelectionObserved": 43,
+    "stagingCrashRetainsCandidate": 107
+  },
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "cli": [
+    {
+      "operation": "prepare",
+      "exitCode": 0,
+      "stdout": "{\"status\": \"Prepared\", \"schema\": 1, \"route\": \"predecessor\", \"stateHome\": \"predecessor-state\"}\n",
+      "stderr": ""
+    },
+    {
+      "operation": "status",
+      "exitCode": 0,
+      "stdout": "{\"status\": \"Observed\", \"route\": \"predecessor\", \"schema\": 1, \"stateHome\": \"predecessor-state\"}\n",
+      "stderr": ""
+    },
+    {
+      "operation": "activate",
+      "exitCode": 0,
+      "stdout": "{\"status\": \"Selected\", \"schema\": 1, \"route\": \"candidate\", \"stateHome\": \"candidate-state\"}\n",
+      "stderr": ""
+    },
+    {
+      "operation": "run",
+      "exitCode": 17,
+      "stdout": "{\"status\": \"Exited\", \"route\": \"candidate\", \"exitCode\": 17}\n",
+      "stderr": ""
+    },
+    {
+      "operation": "rollback",
+      "exitCode": 0,
+      "stdout": "{\"status\": \"Recovered\", \"schema\": 1, \"route\": \"predecessor\", \"stateHome\": \"rollback-8fc45f5fdaeebed2f0c141c7\"}\n",
+      "stderr": ""
+    },
+    {
+      "operation": "rollback",
+      "exitCode": 0,
+      "stdout": "{\"status\": \"Unchanged\", \"route\": \"predecessor\", \"schema\": 1, \"stateHome\": \"rollback-8fc45f5fdaeebed2f0c141c7\"}\n",
+      "stderr": ""
+    },
+    {
+      "operation": "run",
+      "exitCode": 0,
+      "stdout": "{\"status\": \"Exited\", \"route\": \"predecessor\", \"exitCode\": 0}\n",
+      "stderr": ""
+    }
+  ],
+  "checks": [
+    "SeedValidatedAppearance",
+    "SeedExplicitShortcutDecisions",
+    "SeedMotion",
+    "SeedPins",
+    "PrepareRetainsPredecessorWithoutLaunching",
+    "SourcePreferencesRemainByteExact",
+    "OnlyPreferencesCopiedNoRequestJournal",
+    "PrivateProfileAndCopies",
+    "StatusDoesNotChangeSelection",
+    "ExplicitActivationSelectsCandidate",
+    "ActualManagedCandidateFailed",
+    "CandidateHasItsOwnSavedPreferences",
+    "MissingCandidateResourceDoesNotBlockRollback",
+    "FailedHostNotContactedOrRestartedByRollback",
+    "AllCompatiblePreferenceBytesRestoredAtomically",
+    "InvalidCandidateStatePreserved",
+    "RepeatedRollbackDoesNotResetOrReplay",
+    "ActualPredecessorStartsWithoutCandidate",
+    "PredecessorReadsApprovedPreferences",
+    "LiveManagedHostCannotRollback",
+    "LiveManagedHostCannotActivate",
+    "SecondManagedHostCannotStart",
+    "ReadOnlyStatusWorksWhileHostRuns",
+    "OwnedManagedHostAndGroupRetired",
+    "RecoveryAfterOwnedHostStops",
+    "ManagerLossLeavesActualChildAlive",
+    "LiveChildKeepsLockAfterManagerLoss",
+    "ManagerLossCannotStartCompetingHost",
+    "RollbackAfterActualOrphanHostExit",
+    "PreRenameFailureIsRefused",
+    "PreRenameFailurePreservesCandidateSelection",
+    "PostRenameFailureIsUnknown",
+    "ReadReconcilesUnknownWithoutLaunching",
+    "ReconciledRollbackDoesNotRepeat",
+    "ChangedBaselineCannotRecover",
+    "ChangedBaselineKeepsCandidateSelected",
+    "SymlinkProfileRefused",
+    "ExistingProfileCannotBeOverwritten",
+    "UnknownSourceSchemaPreserved",
+    "UnknownSourceRemainsUntouched"
+  ],
+  "modelNamedTests": 10,
+  "sourceHashes": {
+    "adapter/recovery_profile.py": "651220f844591d5206b2f3f0f48fc2a652c7010d55cf796c1fda37cdc6adf6e8",
+    "qa/offline-recovery.qnt": "b6c2fb024c1d3e8be87e1ae7290896667eecc2cee1aae81b87337d6c5d3a4848",
+    "qa/offline-recovery_test.qnt": "74c6f02d0e549714d3f973c30180a6d44c24d0b2ac17df063cc73c59095e7815"
+  },
+  "missingObservations": [
+    "Actual predecessor shell pixels/input and surviving application drafts on the exact native tuple.",
+    "Full reproducible release package/dependency inventory and main-session deployment/rollback drill.",
+    "Independent original-scenario review."
+  ]
+}

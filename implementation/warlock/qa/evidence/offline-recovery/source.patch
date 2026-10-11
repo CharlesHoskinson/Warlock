@@ -1,0 +1,1033 @@
+diff --git c/implementation/warlock/README.md i/implementation/warlock/README.md
+index 54d21e6..c492703 100644
+--- c/implementation/warlock/README.md
++++ i/implementation/warlock/README.md
+@@ -8,6 +8,13 @@ This candidate is not installed on the user's desktop. Its component results, na
+ 
+ Current implementation status and remaining behavior are in the [feature-completion checklist](../../docs/warlock-roadmap/FEATURE-COMPLETION.md). Current design guidance and the [contributor plugin section](../../DesignLanguage/catalog/index.html#contributors) distinguish the editable product from frozen browser examples.
+ 
++[Offline component recovery](RECOVERY.md) now retains reviewed predecessor and
++candidate commands plus compatible preference copies outside Elm. The local
++command restores the predecessor selection after a managed host exits, preserves
++candidate state, and refuses competing managed hosts. This is preparation for
++reversible deployment; accepted Omarchy fallback and full release packaging remain
++open. See [recovery evidence](qa/evidence/offline-recovery/README.md).
++
+ Always on top and MAX use typed native intents, observed geometry protocol 3 and confirmed labels through the existing custody/no-replay route. Stable picker geometry and checkable state now pass the original pointer/keyboard pin/MAX journey. Two floating MAX roots coexist, share committed paint/input order and recover their return placements; actual input-hole passthrough and no-activation exceptions are recorded. Clicking an eligible modal-blocked MAX parent now focuses its accepted modal without forwarding a GTK button event, and retiring the modal restores parent clicking. See [current modal evidence](qa/evidence/max-modal-focus/README.md), [no-activation evidence](qa/evidence/max-no-activation/README.md) and [pin/MAX evidence](qa/evidence/pin-check/README.md). Wider family/fullscreen/race/AT and independent acceptance remain open. Earlier failed [picker](qa/evidence/picker-target-stability/README.md) and [draft](qa/evidence/pin-max/README.md) evidence remains historical. Taskbar application pins are a separate preference feature.
+ 
+ Settings now offers optional keyboard and recovery help. Use **Dismiss help** to hide it and **Show help** to reopen it; the same control retains keyboard focus. Dismissal lasts for the host session, including closing and reopening Settings. Help works while preference writes are pending or unconfirmed and does not send effects, save preferences or discard an unsaved draft. Shortcut-conflict persistence, native AT and offline rollback remain unfinished. See [Settings help evidence](qa/evidence/settings-help/README.md).
+diff --git c/implementation/warlock/RECOVERY.md i/implementation/warlock/RECOVERY.md
+new file mode 100644
+index 0000000..6dbac41
+--- /dev/null
++++ i/implementation/warlock/RECOVERY.md
+@@ -0,0 +1,61 @@
++# Recovering a shell component offline
++
++`adapter/recovery_profile.py` runs outside Elm using Python and retained local
++resources. It makes no network or native window-effect request. Prepare a profile
++before trying a component so its compatible preferences survive a host failure.
++
++A reviewed release supplies two command descriptors. Each JSON object contains
++exactly `schema: 1`, an `argv` array starting with an absolute executable, an
++absolute `cwd`, and `files` mapping the executable and required local resources
++to SHA-256. Arguments are passed directly without shell expansion. Hashes are
++rechecked before launch. Release review must establish dependency completeness
++and predecessor acceptance; an arbitrary descriptor is not an accepted package.
++
++Substitute the absolute profile, descriptor and source state paths below. The
++source state is the existing `XDG_STATE_HOME` root containing `warlock/`, usually
++`~/.local/state`. Run from the candidate directory.
++
++```sh
++python3 -B adapter/recovery_profile.py --profile /absolute/profile prepare \
++  --predecessor /absolute/predecessor.json \
++  --candidate /absolute/candidate.json --source-state /absolute/state
++python3 -B adapter/recovery_profile.py --profile /absolute/profile activate
++python3 -B adapter/recovery_profile.py --profile /absolute/profile run
++```
++
++Prepare exclusively creates the profile. It takes one validated copy of pins,
++appearance, motion and explicit shortcut choices under the production stores'
++shared lock. Compatible legacy appearance bytes remain verbatim. Unknown schemas
++are refused and preserved. Each route receives separate state. Window journals,
++pending operations and grants are never copied. Onboarding is not required.
++
++After the candidate host exits, use a terminal or recovery console:
++
++```sh
++python3 -B adapter/recovery_profile.py --profile /absolute/profile rollback
++python3 -B adapter/recovery_profile.py --profile /absolute/profile status
++python3 -B adapter/recovery_profile.py --profile /absolute/profile run
++```
++
++Rollback checks only the retained predecessor and prior preferences. It stages
++a fresh compatible state directory and publishes the entire route/state selection
++with one atomic rename. It neither starts a host nor contacts the failed candidate.
++Changed or incompatible candidate preferences remain in their own directory.
++Repeated rollback leaves the selected state unchanged, including later edits.
++
++Run holds the profile lock for the host lifetime. Activation, rollback and a
++second launch refuse while it runs; status can observe without changing the
++selection. A pre-rename failure keeps the old route. A successful rename followed
++by failed directory synchronization reports `Unknown`, exit code 3. Inspect
++status to reconcile; do not blindly repeat a host operation. Every launch also
++validates and synchronizes a fresh selection observation before starting.
++
++Only the explicitly selected private profile changes. These commands never
++restart the compositor, edit `/usr/share/omarchy`, replace desktop configuration,
++or recover application connections after a compositor crash. Deployment must
++route the component exclusively through this launcher and retire previous
++interactive hosts first. Unmanaged hosts cannot be inferred from a profile lock.
++
++Component and private native evidence qualify only their recorded scope. The
++accepted Omarchy predecessor, full package, main-session rollback, AT and
++independent release review remain separate gates.
+diff --git c/implementation/warlock/adapter/recovery_profile.py i/implementation/warlock/adapter/recovery_profile.py
+new file mode 100644
+index 0000000..2452091
+--- /dev/null
++++ i/implementation/warlock/adapter/recovery_profile.py
+@@ -0,0 +1,430 @@
++#!/usr/bin/env python3
++"""Offline component selection and compatible preference recovery.
++
++This local operator command never contacts Elm, the native authority or the
++network. It launches only a reviewed, hash-checked local descriptor. Window
++policy and effect journals are deliberately absent from recovery profiles.
++"""
++import argparse
++import contextlib
++import fcntl
++import hashlib
++import json
++import os
++from pathlib import Path
++import secrets
++import signal
++import stat
++import subprocess
++import sys
++import time
++
++from endpoint import Refused, exact, unique
++from taskbar_preferences import Store as PinStore
++from shell_preferences import snapshot as settings_snapshot
++from shortcut_preferences import snapshot as shortcuts_snapshot
++from motion_preferences import snapshot as motion_snapshot
++
++PREFERENCES = ('taskbar.json', 'settings.json', 'shortcuts.json', 'motion.json')
++BOUND = 65536
++
++
++class CommitUnknown(Exception):
++    """Selection was renamed, but its directory sync was not confirmed."""
++
++
++def digest(body):
++    return hashlib.sha256(body).hexdigest()
++
++
++def private(fd, directory=False):
++    info = os.fstat(fd)
++    valid_type = stat.S_ISDIR(info.st_mode) if directory else stat.S_ISREG(info.st_mode)
++    if (not valid_type or info.st_uid != os.getuid() or info.st_mode & 0o077
++            or (not directory and info.st_nlink != 1)):
++        raise Refused('Recovery storage must be private, owned and unlinked')
++
++
++def absolute(value):
++    if not isinstance(value, (str, Path)):
++        raise Refused('Recovery path must be text')
++    path = Path(value)
++    if not path.is_absolute() or '..' in path.parts:
++        raise Refused('Recovery paths must be absolute without traversal')
++    return path
++
++
++def directory(path):
++    if path.resolve() != path:
++        raise Refused('Recovery storage cannot traverse symlinks')
++    fd = os.open(path, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW)
++    try:
++        private(fd, True)
++        return fd
++    except BaseException:
++        os.close(fd)
++        raise
++
++
++def read_at(fd, name):
++    child = os.open(name, os.O_RDONLY | os.O_NOFOLLOW, dir_fd=fd)
++    try:
++        private(child)
++        body = os.read(child, BOUND + 1)
++        if len(body) > BOUND:
++            raise Refused('Recovery metadata byte bound')
++        return body
++    finally:
++        os.close(child)
++
++
++def write_at(fd, name, body):
++    if len(body) > BOUND:
++        raise Refused('Recovery metadata byte bound')
++    child = os.open(name, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW,
++                    0o600, dir_fd=fd)
++    with os.fdopen(child, 'wb') as stream:
++        stream.write(body)
++        stream.flush()
++        os.fsync(stream.fileno())
++
++
++def decode(body):
++    return json.loads(body, object_pairs_hook=unique)
++
++
++def encode(value):
++    return (json.dumps(value, ensure_ascii=False, sort_keys=True,
++                       separators=(',', ':')) + '\n').encode()
++
++
++def artifact_sha(path):
++    path = absolute(path)
++    with path.open('rb') as stream:
++        if not stat.S_ISREG(os.fstat(stream.fileno()).st_mode):
++            raise Refused('Recovery artifact must be a regular file')
++        return hashlib.file_digest(stream, 'sha256').hexdigest()
++
++
++def descriptor(value):
++    exact(value, ['schema', 'argv', 'cwd', 'files'])
++    if type(value['schema']) is not int or value['schema'] != 1:
++        raise Refused('Unsupported recovery command schema')
++    argv = value['argv']
++    if (not isinstance(argv, list) or not 1 <= len(argv) <= 128
++            or any(type(arg) is not str or not arg or '\0' in arg or '\n' in arg
++                   or len(arg) > 8192 for arg in argv)):
++        raise Refused('Recovery command must be a bounded argv array')
++    executable = absolute(argv[0])
++    if not os.access(executable, os.X_OK):
++        raise Refused('Recovery executable is unavailable')
++    if not absolute(value['cwd']).is_dir():
++        raise Refused('Recovery working directory is unavailable')
++    files = value['files']
++    if not isinstance(files, dict) or not 1 <= len(files) <= 4096 or argv[0] not in files:
++        raise Refused('Recovery descriptor must hash its executable and resources')
++    for name, expected in files.items():
++        if (type(expected) is not str or len(expected) != 64
++                or any(c not in '0123456789abcdef' for c in expected)
++                or artifact_sha(name) != expected):
++            raise Refused('Recovery artifact changed: ' + name)
++    return value
++
++
++def preference(name, body):
++    # Production validators accept compatible legacy appearance without rewriting
++    # the original byte copy. Unknown schemas remain untouched in their source.
++    if len(body) > (16384 if name == 'taskbar.json' else 4096):
++        raise Refused('Preference storage byte bound: ' + name)
++    value = decode(body)
++    if name == 'taskbar.json':
++        exact(value, ['schema', 'revision', 'identities'])
++        if type(value['schema']) is not int or value['schema'] != 1:
++            raise Refused('Unsupported pin preference schema')
++        from taskbar_preferences import snapshot
++        snapshot({key: value[key] for key in ('revision', 'identities')})
++    else:
++        {'settings.json': settings_snapshot, 'shortcuts.json': shortcuts_snapshot,
++         'motion.json': motion_snapshot}[name](value)
++    return body
++
++
++class Profile:
++    def __init__(self, path):
++        self.path = absolute(path)
++
++    @contextlib.contextmanager
++    def locked(self):
++        root = directory(self.path)
++        lock = None
++        try:
++            lock = os.open('profile.lock', os.O_RDWR | os.O_CREAT | os.O_NOFOLLOW,
++                           0o600, dir_fd=root)
++            private(lock)
++            try:
++                fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
++            except BlockingIOError:
++                raise Refused('Managed component is running or recovery is in progress')
++            yield root, lock
++        finally:
++            if lock is not None:
++                os.close(lock)
++            os.close(root)
++
++    def manifest(self, root):
++        value = decode(read_at(root, 'profile.json'))
++        exact(value, ['schema', 'predecessor', 'candidate', 'baseline'])
++        if type(value['schema']) is not int or value['schema'] != 1:
++            raise Refused('Unsupported recovery profile schema')
++        exact(value['baseline'], PREFERENCES)
++        return value
++
++    def selection(self, root):
++        value = decode(read_at(root, 'selection.json'))
++        exact(value, ['schema', 'route', 'stateHome'])
++        if (type(value['schema']) is not int or value['schema'] != 1
++                or value['route'] not in ('candidate', 'predecessor')
++                or type(value['stateHome']) is not str
++                or not (value['stateHome'] in ('candidate-state', 'predecessor-state')
++                        or (value['stateHome'].startswith('rollback-')
++                            and len(value['stateHome']) == 33
++                            and all(c in '0123456789abcdef' for c in value['stateHome'][9:])))):
++            raise Refused('Invalid component selection')
++        return value
++
++    def baseline(self, manifest):
++        fd = directory(self.path / 'baseline')
++        try:
++            bodies = {}
++            for name, expected in manifest['baseline'].items():
++                if expected is None:
++                    try:
++                        read_at(fd, name)
++                    except FileNotFoundError:
++                        continue
++                    raise Refused('Unexpected retained preference: ' + name)
++                body = read_at(fd, name)
++                if digest(body) != expected:
++                    raise Refused('Retained preference changed: ' + name)
++                bodies[name] = preference(name, body)
++            return bodies
++        finally:
++            os.close(fd)
++
++    def copy_state(self, name, bodies):
++        state_home = self.path / name
++        state_home.mkdir(mode=0o700)
++        stored = state_home / 'warlock'
++        stored.mkdir(mode=0o700)
++        fd = directory(stored)
++        try:
++            for filename, body in bodies.items():
++                write_at(fd, filename, body)
++            os.fsync(fd)
++        finally:
++            os.close(fd)
++        fd = directory(state_home)
++        try:
++            os.fsync(fd)
++        finally:
++            os.close(fd)
++
++    def publish(self, root, value):
++        temporary = 'selection-' + secrets.token_hex(12) + '.tmp'
++        renamed = False
++        try:
++            write_at(root, temporary, encode(value))
++            os.rename(temporary, 'selection.json', src_dir_fd=root, dst_dir_fd=root)
++            renamed = True
++            os.fsync(root)
++        except OSError as error:
++            if renamed:
++                raise CommitUnknown('Selection renamed; run status to reconcile before proceeding') from error
++            raise
++        finally:
++            if not renamed:
++                try:
++                    os.unlink(temporary, dir_fd=root)
++                except FileNotFoundError:
++                    pass
++
++    def prepare(self, predecessor, candidate, source_state):
++        predecessor, candidate = descriptor(predecessor), descriptor(candidate)
++        source = absolute(source_state)
++        if source.resolve() != source:
++            raise Refused('Preference source cannot traverse symlinks')
++        # All four existing stores share this exact lock. Take one coherent copy;
++        # never copy window outcomes, pending requests, grants or recovery journals.
++        store = PinStore(str(source))
++        fd, lock = store._open()
++        try:
++            bodies = {}
++            for name in PREFERENCES:
++                try:
++                    bodies[name] = preference(name, read_at(fd, name))
++                except FileNotFoundError:
++                    pass
++        finally:
++            os.close(lock)
++            os.close(fd)
++        if self.path.resolve() != self.path:
++            raise Refused('Profile cannot traverse symlinks')
++        self.path.mkdir(mode=0o700)  # Exclusive creation; never replaces a profile.
++        with self.locked() as (root, lock):
++            (self.path / 'baseline').mkdir(mode=0o700)
++            fd = directory(self.path / 'baseline')
++            try:
++                for name, body in bodies.items():
++                    write_at(fd, name, body)
++                os.fsync(fd)
++            finally:
++                os.close(fd)
++            self.copy_state('predecessor-state', bodies)
++            self.copy_state('candidate-state', bodies)
++            manifest = {'schema': 1, 'predecessor': predecessor, 'candidate': candidate,
++                        'baseline': {name: digest(bodies[name]) if name in bodies else None
++                                     for name in PREFERENCES}}
++            write_at(root, 'profile.json', encode(manifest))
++            selected = {'schema': 1, 'route': 'predecessor', 'stateHome': 'predecessor-state'}
++            self.publish(root, selected)
++            return {'status': 'Prepared', **selected}
++
++    def status(self):
++        # Read-only reconciliation of a possibly uncertain rename; fsync confirms
++        # the observed directory entry, without selecting or launching anything.
++        root = directory(self.path)
++        try:
++            value = self.selection(root)
++            manifest = self.manifest(root)
++            descriptor(manifest[value['route']])
++            self.validate_state(value)
++            os.fsync(root)
++            return {'status': 'Observed', **value}
++        finally:
++            os.close(root)
++
++    def validate_state(self, selected):
++        fd = directory(self.path / selected['stateHome'] / 'warlock')
++        try:
++            for name in PREFERENCES:
++                try:
++                    preference(name, read_at(fd, name))
++                except FileNotFoundError:
++                    pass
++        finally:
++            os.close(fd)
++
++    def activate(self):
++        with self.locked() as (root, lock):
++            current = self.selection(root)
++            manifest = self.manifest(root)
++            descriptor(manifest['candidate'])
++            descriptor(manifest['predecessor'])
++            self.baseline(manifest)
++            if current['route'] == 'candidate':
++                os.fsync(root)
++                return {'status': 'Unchanged', **current}
++            selected = {'schema': 1, 'route': 'candidate', 'stateHome': 'candidate-state'}
++            self.validate_state(selected)
++            self.publish(root, selected)
++            return {'status': 'Selected', **selected}
++
++    def rollback(self):
++        with self.locked() as (root, lock):
++            current = self.selection(root)
++            manifest = self.manifest(root)
++            # Never validate the failed candidate's files, state or IPC.
++            descriptor(manifest['predecessor'])
++            if current['route'] == 'predecessor':
++                self.validate_state(current)
++                os.fsync(root)
++                return {'status': 'Unchanged', **current}
++            bodies = self.baseline(manifest)
++            state_home = 'rollback-' + secrets.token_hex(12)
++            self.copy_state(state_home, bodies)
++            selected = {'schema': 1, 'route': 'predecessor', 'stateHome': state_home}
++            self.publish(root, selected)
++            return {'status': 'Recovered', **selected}
++
++    def run(self):
++        with self.locked() as (root, lock):
++            selected = self.selection(root)
++            manifest = self.manifest(root)
++            command = descriptor(manifest[selected['route']])
++            self.validate_state(selected)
++            os.fsync(root)  # Fresh observation reconciles selection before start.
++            env = {**os.environ, 'XDG_STATE_HOME': str(self.path / selected['stateHome'])}
++            process = subprocess.Popen(command['argv'], cwd=command['cwd'], env=env,
++                                       start_new_session=True, pass_fds=(lock,))
++            previous = {}
++            def interrupted(signum, frame):
++                raise KeyboardInterrupt
++            try:
++                for signum in (signal.SIGTERM, signal.SIGINT):
++                    previous[signum] = signal.signal(signum, interrupted)
++                # Retain the group leader's zombie until cleanup: its PID cannot
++                # be recycled into an unrelated process group before killpg.
++                os.waitid(os.P_PID, process.pid, os.WEXITED | os.WNOWAIT)
++            finally:
++                for signum, handler in previous.items():
++                    signal.signal(signum, handler)
++                try:
++                    os.killpg(process.pid, signal.SIGTERM)
++                except ProcessLookupError:
++                    pass
++                deadline = time.monotonic() + 2
++                while group_members(process.pid) and time.monotonic() < deadline:
++                    time.sleep(0.02)
++                if group_members(process.pid):
++                    os.killpg(process.pid, signal.SIGKILL)
++                code = process.wait(timeout=3)
++            return {'status': 'Exited', 'route': selected['route'], 'exitCode': code}
++
++
++def group_members(group):
++    live = []
++    for path in Path('/proc').iterdir():
++        if not path.name.isdecimal():
++            continue
++        try:
++            fields = (path / 'stat').read_text().rpartition(') ')[2].split()
++            if fields[0] != 'Z' and int(fields[2]) == group:
++                live.append(int(path.name))
++        except (FileNotFoundError, ProcessLookupError, PermissionError):
++            pass
++    return live
++
++
++def main(argv=None):
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument('--profile', required=True)
++    sub = parser.add_subparsers(dest='operation', required=True)
++    prepare = sub.add_parser('prepare')
++    prepare.add_argument('--predecessor', required=True)
++    prepare.add_argument('--candidate', required=True)
++    prepare.add_argument('--source-state', required=True)
++    for operation in ('status', 'activate', 'rollback', 'run'):
++        sub.add_parser(operation)
++    args = parser.parse_args(argv)
++    try:
++        profile = Profile(args.profile)
++        if args.operation == 'prepare':
++            result = profile.prepare(decode(Path(args.predecessor).read_bytes()),
++                                     decode(Path(args.candidate).read_bytes()), args.source_state)
++        else:
++            result = getattr(profile, args.operation)()
++        print(json.dumps(result), flush=True)
++        return result.get('exitCode', 0) if result.get('exitCode', 0) >= 0 else 1
++    except CommitUnknown as error:
++        print(json.dumps({'status': 'Unknown', 'detail': str(error)}), flush=True)
++        return 3
++    except (Refused, OSError, ValueError) as error:
++        print(json.dumps({'status': 'Refused', 'detail': str(error)}), flush=True)
++        return 2
++    except KeyboardInterrupt:
++        print(json.dumps({'status': 'Stopped'}), flush=True)
++        return 130
++
++
++if __name__ == '__main__':
++    raise SystemExit(main())
+diff --git c/implementation/warlock/qa/check-offline-recovery.py i/implementation/warlock/qa/check-offline-recovery.py
+new file mode 100644
+index 0000000..c5c0ee7
+--- /dev/null
++++ i/implementation/warlock/qa/check-offline-recovery.py
+@@ -0,0 +1,259 @@
++"""Protected offline recovery model and actual profile/CLI observations."""
++import hashlib
++import json
++from pathlib import Path
++import subprocess
++import sys
++import time
++import os
++import signal
++import stat
++from unittest.mock import patch
++
++ROOT = Path(__file__).resolve().parents[1]
++OUT = ROOT / 'qa/runs' / ('offline-recovery-' + str(time.time_ns()))
++OUT.mkdir(parents=True)
++
++def command(name, argv):
++    result = subprocess.run(argv, text=True, capture_output=True, timeout=180)
++    (OUT / (name + '.stdout')).write_text(result.stdout)
++    (OUT / (name + '.stderr')).write_text(result.stderr)
++    assert result.returncode == 0, result.stdout + result.stderr
++    return result.stdout
++
++spec = ROOT / 'qa/offline-recovery.qnt'
++tests = ROOT / 'qa/offline-recovery_test.qnt'
++command('typecheck', ['quint', 'typecheck', str(tests)])
++command('named', ['quint', 'test', str(tests), '--backend=typescript',
++    '--match=^(initialPredecessorTest|failedHostRollbackTest|damagedCandidateDoesNotBlockRecoveryTest|activeHostCannotSwitchTest|missingPriorCannotRollbackTest|privateStagingNeverChangesSelectionTest|stagingCrashKeepsOldPreferencesTest|unknownCannotStartOrReplayTest|readReconcilesUnknownTest|repeatedRollbackIsNoOpTest)$',
++    '--max-samples=1', '--seed=79601'])
++output = command('sampled-safety', ['quint', 'run', str(spec), '--backend=typescript',
++    '--invariants=safety', '--witnesses', 'predecessorStarted',
++    'failedHostRecovered', 'damagedCandidateRecovered',
++    'uncertainSelectionObserved', 'stagingCrashRetainsCandidate',
++    '--max-samples=1000', '--max-steps=30', '--seed=79602'])
++import re
++witnesses = {name: int(count) for name, count in re.findall(
++    r'(\w+) was witnessed in (\d+) trace', output)}
++assert len(witnesses) == 5 and all(witnesses.values()), output
++report = {'passed': True, 'scope': 'Executable recovery profile initialization.',
++    'modelSHA256': hashlib.sha256(spec.read_bytes()).hexdigest(),
++    'witnessCounts': witnesses,
++    'nativeAcceptance': False, 'fullReleaseAccepted': False}
++if sys.argv[1:] != ['--model-only']:
++    assert not sys.argv[1:], 'Unknown check mode'
++    sys.path.insert(0, str(ROOT / 'adapter'))
++    import recovery_profile as recovery
++    from shell_preferences import Store as SettingsStore
++    from shortcut_preferences import Store as ShortcutsStore
++    from motion_preferences import Store as MotionStore
++    from taskbar_preferences import Store as PinsStore
++    checks = []
++    def check(name, value):
++        assert value, name
++        checks.append(name)
++    def refuses(name, fn):
++        try:
++            fn()
++        except (recovery.Refused, OSError, ValueError):
++            checks.append(name)
++            return
++        raise AssertionError(name)
++    source = OUT / 'source-state'
++    source.mkdir(mode=0o700)
++    settings = SettingsStore(str(source)); old = settings.read()
++    status, saved = settings.save({**old, 'values': {**old['values'], 'theme': 'dawn',
++        'textScale': 150, 'effectsOff': True}})
++    check('SeedValidatedAppearance', status == 'Saved')
++    shortcuts = ShortcutsStore(str(source)); old = shortcuts.read()
++    status, approved = shortcuts.save({**old, 'choices': {
++        'applications': 'alternate', 'system': 'default', 'notifications': 'keep'}})
++    check('SeedExplicitShortcutDecisions', status == 'Saved')
++    motion = MotionStore(str(source)); old = motion.read()
++    check('SeedMotion', motion.save({**old, 'override': 'reduced'})[0] == 'Saved')
++    pins = PinsStore(str(source)); old = pins.read()
++    check('SeedPins', pins.save({**old, 'identities': ['warlock-editor', 'warlock-peer']})[0] == 'Saved')
++    baseline = {name: (source / 'warlock' / name).read_bytes() for name in recovery.PREFERENCES}
++    executable = '/usr/bin/python3'
++    events = OUT / 'host-events.jsonl'
++    fixture = OUT / 'profile-host.py'
++    fixture.write_text('''import json,os,pathlib,sys,time
++sys.path.insert(0,sys.argv[1])
++from shell_preferences import Store
++from shortcut_preferences import Store as Shortcuts
++from motion_preferences import Store as Motion
++from taskbar_preferences import Store as Pins
++role=sys.argv[2]
++store=Store(); appearance=store.read()
++with open(sys.argv[3],'a') as stream:
++ stream.write(json.dumps({'role':role,'pid':os.getpid(),'appearance':appearance,
++  'shortcuts':Shortcuts().read(),'motion':Motion().read(),'pins':Pins().read(),
++  'stateHome':os.environ['XDG_STATE_HOME']})+'\\n');stream.flush()
++if role=='candidate':
++ status,value=store.save({**appearance,'values':{**appearance['values'],'theme':'high-contrast'}})
++ assert status=='Saved'
++ sys.exit(17)
++if role=='hold':
++ print('ready',flush=True)
++ time.sleep(30)
++''')
++    def desc(role, path=fixture):
++        return {'schema': 1, 'argv': [executable, '-B', str(path),
++            str(ROOT / 'adapter'), role, str(events)], 'cwd': str(OUT),
++            'files': {executable: recovery.artifact_sha(executable),
++                      str(path): recovery.artifact_sha(str(path))}}
++    predecessor, candidate = desc('predecessor'), desc('candidate')
++    tool = str(ROOT / 'adapter/recovery_profile.py')
++    for name, value in [('predecessor', predecessor), ('candidate', candidate)]:
++        (OUT / (name + '.json')).write_text(json.dumps(value))
++    profile = OUT / 'profile'
++    def cli(operation, *args, expected=0, target=profile):
++        result = subprocess.run([executable, '-B', tool, '--profile', str(target),
++            operation, *args], text=True, capture_output=True, timeout=10)
++        row = {'operation': operation, 'exitCode': result.returncode,
++               'stdout': result.stdout, 'stderr': result.stderr}
++        report.setdefault('cli', []).append(row)
++        assert result.returncode == expected, row
++        return json.loads(result.stdout)
++    prepared = cli('prepare', '--predecessor', str(OUT / 'predecessor.json'),
++        '--candidate', str(OUT / 'candidate.json'), '--source-state', str(source))
++    check('PrepareRetainsPredecessorWithoutLaunching', prepared['route'] == 'predecessor'
++          and not events.exists())
++    check('SourcePreferencesRemainByteExact', all((source / 'warlock' / name).read_bytes() == body
++          for name, body in baseline.items()))
++    check('OnlyPreferencesCopiedNoRequestJournal', set((profile / 'baseline').iterdir()) ==
++          {profile / 'baseline' / name for name in recovery.PREFERENCES})
++    check('PrivateProfileAndCopies', all(stat.S_IMODE(p.stat().st_mode) ==
++          (0o700 if p.is_dir() else 0o600) for p in profile.rglob('*')))
++    before = (profile / 'selection.json').read_bytes()
++    check('StatusDoesNotChangeSelection', cli('status')['route'] == 'predecessor'
++          and (profile / 'selection.json').read_bytes() == before)
++    check('ExplicitActivationSelectsCandidate', cli('activate')['route'] == 'candidate')
++    observed = cli('run', expected=17)
++    check('ActualManagedCandidateFailed', observed['route'] == 'candidate' and observed['exitCode'] == 17)
++    check('CandidateHasItsOwnSavedPreferences', SettingsStore(str(profile / 'candidate-state')).read()['values']['theme'] == 'high-contrast')
++    broken = profile / 'candidate-state/warlock/settings.json'
++    broken.write_text('{"schema":99,"preserved":"future schema"}')
++    broken_before = broken.read_bytes()
++    candidate_only = OUT / 'candidate-only.txt'; candidate_only.write_text('retained artifact')
++    candidate['files'][str(candidate_only)] = recovery.artifact_sha(str(candidate_only))
++    # Retain an independently prepared profile for the missing-candidate drill.
++    candidate_profile = recovery.Profile(OUT / 'missing-candidate-profile')
++    candidate_profile.prepare(predecessor, candidate, str(source))
++    candidate_profile.activate(); candidate_only.unlink()
++    recovered_missing = candidate_profile.rollback()
++    check('MissingCandidateResourceDoesNotBlockRollback', recovered_missing['status'] == 'Recovered')
++    recovered = cli('rollback')
++    restored_home = profile / recovered['stateHome']
++    check('FailedHostNotContactedOrRestartedByRollback', recovered['status'] == 'Recovered'
++          and len(events.read_text().splitlines()) == 1)
++    check('AllCompatiblePreferenceBytesRestoredAtomically', all(
++          (restored_home / 'warlock' / name).read_bytes() == body for name, body in baseline.items()))
++    check('InvalidCandidateStatePreserved', broken.read_bytes() == broken_before)
++    selection = (profile / 'selection.json').read_bytes()
++    check('RepeatedRollbackDoesNotResetOrReplay', cli('rollback')['status'] == 'Unchanged'
++          and (profile / 'selection.json').read_bytes() == selection
++          and len(events.read_text().splitlines()) == 1)
++    check('ActualPredecessorStartsWithoutCandidate', cli('run')['route'] == 'predecessor')
++    restored = json.loads(events.read_text().splitlines()[-1])
++    check('PredecessorReadsApprovedPreferences', restored['appearance'] == saved
++          and restored['shortcuts'] == approved and restored['motion']['override'] == 'reduced'
++          and restored['pins']['identities'] == ['warlock-editor', 'warlock-peer'])
++    # Real managed child holds the profile lock, unlike a mocked host-liveness flag.
++    hold = recovery.Profile(OUT / 'held-profile')
++    hold.prepare(desc('hold'), desc('hold'), str(source)); hold.activate()
++    held_log = (OUT / 'held-host.stdout').open('w')
++    managed = subprocess.Popen([executable, '-B', tool, '--profile', str(hold.path), 'run'],
++                               stdout=held_log, stderr=subprocess.STDOUT)
++    try:
++        deadline = time.monotonic() + 5
++        while 'ready' not in (OUT / 'held-host.stdout').read_text():
++            assert managed.poll() is None and time.monotonic() < deadline
++            time.sleep(0.02)
++        refuses('LiveManagedHostCannotRollback', hold.rollback)
++        refuses('LiveManagedHostCannotActivate', hold.activate)
++        refuses('SecondManagedHostCannotStart', hold.run)
++        check('ReadOnlyStatusWorksWhileHostRuns', hold.status()['route'] == 'candidate')
++    finally:
++        managed.send_signal(signal.SIGTERM)
++        managed.wait(timeout=8); held_log.close()
++    check('OwnedManagedHostAndGroupRetired', managed.returncode == 130)
++    check('RecoveryAfterOwnedHostStops', hold.rollback()['status'] == 'Recovered')
++    lost = recovery.Profile(OUT / 'manager-loss-profile')
++    lost.prepare(desc('hold'), desc('hold'), str(source)); lost.activate()
++    lost_log = (OUT / 'lost-manager.stdout').open('w')
++    manager = subprocess.Popen([executable, '-B', tool, '--profile', str(lost.path), 'run'],
++        stdout=lost_log, stderr=subprocess.STDOUT)
++    child_pid = None
++    try:
++        deadline = time.monotonic() + 5
++        while 'ready' not in (OUT / 'lost-manager.stdout').read_text():
++            assert manager.poll() is None and time.monotonic() < deadline
++            time.sleep(0.02)
++        child_pid = json.loads(events.read_text().splitlines()[-1])['pid']
++        manager.kill(); manager.wait(timeout=5)
++        check('ManagerLossLeavesActualChildAlive', Path('/proc', str(child_pid)).exists())
++        refuses('LiveChildKeepsLockAfterManagerLoss', lost.rollback)
++        refuses('ManagerLossCannotStartCompetingHost', lost.run)
++    finally:
++        if manager.poll() is None:
++            manager.terminate(); manager.wait(timeout=8)
++        if child_pid is not None and Path('/proc', str(child_pid)).exists():
++            os.kill(child_pid, signal.SIGTERM)
++        lost_log.close()
++    deadline = time.monotonic() + 5
++    while True:
++        try:
++            result = lost.rollback()
++            break
++        except recovery.Refused:
++            assert time.monotonic() < deadline
++            time.sleep(0.02)
++    check('RollbackAfterActualOrphanHostExit', result['status'] == 'Recovered')
++    # Fault injection checks the actual publication boundary, not a fake model file.
++    fault = recovery.Profile(OUT / 'fault-profile')
++    fault.prepare(predecessor, predecessor, str(source)); fault.activate()
++    old_selection = (fault.path / 'selection.json').read_bytes()
++    with patch('recovery_profile.os.rename', side_effect=OSError('before rename')):
++        refuses('PreRenameFailureIsRefused', fault.rollback)
++    check('PreRenameFailurePreservesCandidateSelection', (fault.path / 'selection.json').read_bytes() == old_selection)
++    real_fsync = os.fsync
++    root_inode = fault.path.stat().st_ino
++    def sync_fault(fd):
++        if stat.S_ISDIR(os.fstat(fd).st_mode) and os.fstat(fd).st_ino == root_inode:
++            raise OSError('selection directory sync lost')
++        return real_fsync(fd)
++    unknown = False
++    with patch('recovery_profile.os.fsync', side_effect=sync_fault):
++        try:
++            fault.rollback()
++        except recovery.CommitUnknown:
++            unknown = True
++    check('PostRenameFailureIsUnknown', unknown)
++    check('ReadReconcilesUnknownWithoutLaunching', fault.status()['route'] == 'predecessor')
++    check('ReconciledRollbackDoesNotRepeat', fault.rollback()['status'] == 'Unchanged')
++    damaged = recovery.Profile(OUT / 'damaged-prior-profile')
++    damaged.prepare(predecessor, predecessor, str(source)); damaged.activate()
++    prior_path = damaged.path / 'baseline/settings.json'
++    prior_path.write_text('{}')
++    before = (damaged.path / 'selection.json').read_bytes()
++    refuses('ChangedBaselineCannotRecover', damaged.rollback)
++    check('ChangedBaselineKeepsCandidateSelected', (damaged.path / 'selection.json').read_bytes() == before)
++    symlink = OUT / 'linked-profile'; symlink.symlink_to(profile, target_is_directory=True)
++    refuses('SymlinkProfileRefused', lambda: recovery.Profile(symlink).status())
++    refuses('ExistingProfileCannotBeOverwritten', lambda: recovery.Profile(profile).prepare(predecessor, predecessor, str(source)))
++    source_before = (source / 'warlock/settings.json').read_bytes()
++    (source / 'warlock/settings.json').write_text('{"schema":999,"future":true}')
++    refuses('UnknownSourceSchemaPreserved', lambda: recovery.Profile(OUT / 'future-profile').prepare(predecessor, predecessor, str(source)))
++    check('UnknownSourceRemainsUntouched', (source / 'warlock/settings.json').read_text() == '{"schema":999,"future":true}'
++          and not (OUT / 'future-profile').exists())
++    (source / 'warlock/settings.json').write_bytes(source_before)
++    report.update(scope='Production offline profile/CLI and real managed local child processes; no native GUI predecessor or independent release qualification.',
++                  checks=checks, modelNamedTests=10,
++                  sourceHashes={str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
++                    for path in [ROOT / 'adapter/recovery_profile.py', spec, tests]},
++                  missingObservations=['Actual predecessor shell pixels/input and surviving application drafts on the exact native tuple.',
++                    'Full reproducible release package/dependency inventory and main-session deployment/rollback drill.',
++                    'Independent original-scenario review.'])
++(OUT / 'report.json').write_text(json.dumps(report, indent=2) + '\n')
++print(json.dumps({'passed': True, 'report': str(OUT / 'report.json')}))
+diff --git c/implementation/warlock/qa/native-offline-recovery.py i/implementation/warlock/qa/native-offline-recovery.py
+new file mode 100644
+index 0000000..0e0ff88
+--- /dev/null
++++ i/implementation/warlock/qa/native-offline-recovery.py
+@@ -0,0 +1,140 @@
++"""Actual retained Warlock predecessor recovery in the protected private session.
++
++Preserve the original six-second observations, physical keyboard, native pair,
++application fixtures and cleanup. This is not an accepted Omarchy deployment.
++"""
++import hashlib
++import pathlib
++import sys
++
++assert not sys.argv[1:]
++path = pathlib.Path(__file__).with_name('native-window-feedback.py')
++original = path.read_text()
++launch_start = original.index("   web=s.host.launch('warlock',")
++launch_end = original.index('   def text():\n', launch_start)
++launch = r'''   from recovery_profile import Profile,descriptor
++   from shell_preferences import Store as RecoverySettings
++   from shortcut_preferences import Store as RecoveryShortcuts
++   from motion_preferences import Store as RecoveryMotion
++   from taskbar_preferences import Store as RecoveryPins
++   recovery_source=pathlib.Path(env['XDG_STATE_HOME'])
++   saved_store=RecoverySettings(str(recovery_source));old=saved_store.read()
++   saved_status,saved_settings=saved_store.save({**old,'values':{**old['values'],'theme':'dawn','effectsOff':True}})
++   check('RecoverySourceAppearanceValidated',saved_status=='Saved')
++   shortcut_store=RecoveryShortcuts(str(recovery_source));old=shortcut_store.read()
++   shortcut_status,saved_shortcuts=shortcut_store.save({**old,'choices':{'applications':'alternate','system':'keep','notifications':'keep'}})
++   check('RecoverySourceShortcutChoicesValidated',shortcut_status=='Saved')
++   motion_store=RecoveryMotion(str(recovery_source));old=motion_store.read()
++   check('RecoverySourceMotionValidated',motion_store.save({**old,'override':'reduced'})[0]=='Saved')
++   pins_store=RecoveryPins(str(recovery_source));old=pins_store.read()
++   check('RecoverySourcePinsValidated',pins_store.save({**old,'identities':['warlock-editor']})[0]=='Saved')
++   recovery_baseline={name:(recovery_source/'warlock'/name).read_bytes() for name in ['taskbar.json','settings.json','shortcuts.json','motion.json']}
++   prior_manifest=json.loads((ROOT/'qa/evidence/popup-reflow-current/manifest.json').read_text())
++   prior_build=pathlib.Path(prior_manifest['nativeHost']['heldBuild'])
++   check('RetainedPredecessorBuildUnchanged',sha(prior_build)==prior_manifest['nativeHost']['heldBuildSHA256'])
++   prior_report=json.loads(prior_build.read_text());check('RetainedPredecessorBuildPassed',prior_report['passed'])
++   prior_inputs=prior_build.parent/'inputs';prior_assets=prior_inputs/'assets'
++   check('RetainedPredecessorCompiledAssetsUnchanged',all(sha(prior_assets/name)==value for name,value in prior_manifest['compiledAssets'].items()))
++   check('PredecessorAndCandidateAreDifferentElmRevisions',sha(prior_assets/'elm.js')!=sha(assets/'elm.js'))
++   prior_backend=OUTPUT/'predecessor-backend.py'
++   prior_backend.write_text('import os,sys\nfrom pathlib import Path\nassert Path(sys.argv[1]).read_text()=='+repr(config_path.read_text())+'\nos.execv("/usr/bin/python3",["/usr/bin/python3","-B",'+repr(str(prior_inputs/'adapter/daemon.py'))+','+repr(str(broker_config))+'])\n')
++   candidate_args=[str(binary),'--assets',str(assets),'--authority-config',str(config_path),'--backend',str(backend_fixture),'--qa-exit-after-render','--qa-stay-open','--surface-experiment']
++   prior_args=[prior_manifest['nativeHost']['path'],'--assets',str(prior_assets),'--authority-config',str(config_path),'--backend',str(prior_backend),'--qa-exit-after-render','--qa-stay-open','--surface-experiment']
++   def recovery_descriptor(argv,resource_root,adapter_root,backend):
++    files={str(p):sha(p) for p in [pathlib.Path(argv[0]),pathlib.Path('/usr/bin/python3'),backend,config_path,broker_config]}
++    for folder in [resource_root,adapter_root]:
++     for resource in folder.rglob('*'):
++      if resource.is_file():files[str(resource)]=sha(resource)
++    for row in pair.values():files[row['path']]=row['sha256']
++    return descriptor({'schema':1,'argv':argv,'cwd':str(OUTPUT),'files':files})
++   recovery_profile=Profile(OUTPUT/'recovery-profile')
++   prepared=recovery_profile.prepare(recovery_descriptor(prior_args,prior_assets,prior_inputs/'adapter',prior_backend),recovery_descriptor(candidate_args,assets,ROOT/'adapter',backend_fixture),str(recovery_source))
++   check('OfflineProfilePreparedBeforeHost',prepared['route']=='predecessor')
++   check('CandidateRouteExplicitlySelected',recovery_profile.activate()['route']=='candidate')
++   recovery_command=['/usr/bin/python3','-B',str(ROOT/'adapter/recovery_profile.py'),'--profile',str(recovery_profile.path)]
++   report['recoveryProfile']={'path':str(recovery_profile.path),'manifestSHA256':sha(recovery_profile.path/'profile.json'),'baselineHashes':{name:hashlib.sha256(body).hexdigest() for name,body in recovery_baseline.items()},'predecessorBuild':str(prior_build),'predecessorBuildSHA256':sha(prior_build),'predecessorAssets':prior_manifest['compiledAssets'],'candidateAssets':current['compiledAssets'],'acceptedOmarchyPredecessor':False}
++   web=s.host.launch('warlock',recovery_command+['run'],env=env);apps.append(web);recovery_managers=[web];log=OUTPUT/'warlock.log';collector=Collector()
++   def stop_recovery_manager(manager):
++    children=pathlib.Path('/proc',str(manager.pid),'task',str(manager.pid),'children').read_text().split()
++    matches=[int(pid) for pid in children if sha(pathlib.Path('/proc',pid,'exe'))==sha(binary)]
++    assert len(matches)==1,children
++    os.kill(matches[0],signal.SIGTERM);manager.wait(timeout=5)
++'''
++adapted = original[:launch_start] + launch + original[launch_end:]
++start = adapted.index('     # Establish the original attached, observed surface before user input.\n')
++end = adapted.index('    elif DENSE:\n', start)
++branch = r'''     wait(lambda:closed() and bool(frames('shell-shortcuts')))
++     def recovery_settings():return body_for('settings')
++     def help_button(label):
++      body=recovery_settings()
++      return next((b for b in body['buttons'] if b['accessibleName']==label and not b['disabled']),None) if body else None
++     bar_route('Open settings');wait(lambda:help_button('Dismiss help'))
++     keyboard_button('Dismiss help',28);wait(lambda:help_button('Show help'))
++     check('GuidanceDismissedBeforeActualHostLoss','Keyboard navigation' not in recovery_settings()['text'])
++     key(1);wait(closed)
++     native_before=facts()['facts'];windows_before=[w['incarnation'] for w in native_before['windows']]
++     requests_before=len(journal())
++     candidate_home=recovery_profile.path/'candidate-state'
++     candidate_settings=RecoverySettings(str(candidate_home));old=candidate_settings.read()
++     check('CandidateEditSavedSeparately',candidate_settings.save({**old,'values':{**old['values'],'theme':'high-contrast'}})[0]=='Saved')
++     def managed_host_pid(manager):
++      children=pathlib.Path('/proc',str(manager.pid),'task',str(manager.pid),'children').read_text().split()
++      matches=[int(pid) for pid in children if sha(pathlib.Path('/proc',pid,'exe'))==sha(binary)]
++      check('OneExactOwnedHostBelowRecoveryManager',len(matches)==1,children=children)
++      return matches[0]
++     candidate_host_pid=managed_host_pid(web)
++     os.kill(candidate_host_pid,signal.SIGTERM)
++     wait(lambda:web.poll() is not None)
++     check('UnexpectedCandidateHostExitObserved',web.returncode==0 and not pathlib.Path('/proc',str(candidate_host_pid)).exists(),hostPid=candidate_host_pid,managerPid=web.pid,exitCode=web.returncode)
++     check('ApplicationsSurviveHostLoss',[w['incarnation'] for w in facts()['facts']['windows']]==windows_before and fixture.poll() is None)
++     broken_state=candidate_home/'warlock/settings.json';broken_state.write_text('{"schema":999,"preserved":"candidate failed"}')
++     broken_bytes=broken_state.read_bytes()
++     helper(recovery_command+['rollback'])
++     rollback_result=json.loads((OUTPUT/('feedback-helper-'+str(sequence)+'.log')).read_text().splitlines()[-1])
++     check('DocumentedOfflineRollbackSucceededWithoutHost',rollback_result['status']=='Recovered' and web.poll()==0,result=rollback_result)
++     helper(recovery_command+['status'])
++     status_result=json.loads((OUTPUT/('feedback-helper-'+str(sequence)+'.log')).read_text().splitlines()[-1])
++     restored_home=recovery_profile.path/status_result['stateHome']
++     check('CompatiblePreferenceBytesRecovered',all((restored_home/'warlock'/name).read_bytes()==body for name,body in recovery_baseline.items()))
++     check('DamagedCandidatePreferencesPreserved',broken_state.read_bytes()==broken_bytes)
++     web=s.host.launch('warlock-predecessor-recovered',recovery_command+['run'],env=env);apps.append(web);recovery_managers.append(web);log=OUTPUT/'warlock-predecessor-recovered.log';collector=Collector()
++     wait(lambda:closed() and bool(frames('shell-shortcuts')))
++     check('NativePredecessorRecoversWithoutWindowEffectReplay',not journal() and [w['incarnation'] for w in facts()['facts']['windows']]==windows_before)
++     bar_route('Open settings');wait(lambda:recovery_settings() and frames('shell-settings') and frames('shortcut-preferences') and frames('motion-preferences'))
++     check('PredecessorObservedCompatibleSettings',frames('shell-settings')[-1]['snapshot']==saved_settings)
++     check('PredecessorObservedExplicitShortcutChoices',frames('shortcut-preferences')[-1]['snapshot']==saved_shortcuts)
++     check('PredecessorObservedCompatibleMotion',frames('motion-preferences')[-1]['snapshot']['override']=='reduced')
++     keyboard_button('Dismiss help',28);wait(lambda:help_button('Show help'))
++     popup_capture('offline-recovered-predecessor-settings')
++     capture=report['popupCaptures'][-1]
++     check('RecoveredPredecessorHasPaintedNativeControls',bool(capture['controlRegions']) and all(r['area']>0 and r['brightPixels']>30 and r['paintedPixels']>.9*r['area'] for r in capture['controlRegions']),capture=capture)
++     key(1);wait(closed)
++     wait(lambda:facts()['facts']['focused']==native_before['focused'])
++     check('RecoveredPredecessorAcceptsPhysicalKeyboardDismissal',closed() and facts()['facts']['focused']==native_before['focused'],expected=native_before['focused'],facts=facts())
++     helper(recovery_command+['rollback'])
++     # Active predecessor owns the profile, so a second rollback must refuse.
++'''
++# Refusal helper is a deliberate negative; do not weaken the original helper's
++# normal-exit oracle. Exercise it directly and retain its exact nonzero outcome.
++branch = branch[:branch.index("     helper(recovery_command+['rollback'])\n     # Active predecessor")]
++branch += r'''     locked_result=subprocess.run(recovery_command+['rollback'],env=env,text=True,capture_output=True,timeout=5)
++     report['activePredecessorRollback']={'exitCode':locked_result.returncode,'stdout':locked_result.stdout,'stderr':locked_result.stderr}
++     check('ActivePredecessorPreventsCompetingRecovery',locked_result.returncode==2 and json.loads(locked_result.stdout)['status']=='Refused')
++     predecessor_pid=managed_host_pid(web);os.kill(predecessor_pid,signal.SIGTERM);wait(lambda:web.poll() is not None)
++     check('RecoveredPredecessorNormalOwnedExit',web.returncode==0)
++     check('ApplicationDraftsRemainConnectedAfterDrill',[w['incarnation'] for w in facts()['facts']['windows']]==windows_before and fixture.poll() is None)
++     report['nativeOfflineRecoveryObserved']=True
++     report['missingObservations']=['Accepted Omarchy predecessor and full release package/dependency completeness.','Main-session reversible deployment with existing user drafts.','Applicable native AT and independent original-scenario acceptance.']
++'''
++adapted = adapted[:start] + branch + adapted[end:]
++cleanup = "     else:owned=next(row for p,row in s.host.processes if p is proc);s.host.stop(owned,proc);proc.wait(timeout=5)"
++assert adapted.count(cleanup) == 1
++adapted = adapted.replace(cleanup, "     elif proc in globals().get('recovery_managers',[]):stop_recovery_manager(proc)\n" + cleanup)
++adapted = adapted.replace("'native-keyboard-shell-' if KEYBOARD", "'native-offline-recovery-' if KEYBOARD")
++needle = '\ntry:\n'
++assert adapted.count(needle) == 1
++packet = {'originalPath': str(path), 'originalSHA256': hashlib.sha256(original.encode()).hexdigest(),
++    'change': 'Use production recovery profiles for current/retained host launches; replace only the keyboard journey with original offline-recovery. Exact private native pair, clocks and normal cleanup retained.'}
++adapted = adapted.replace(needle, "\nreport.update(requirements=['ELM-UI-020'],scenarios=['offline-recovery'],scope='Actual private native host loss after dismissed help, standalone CLI rollback, distinct retained Warlock predecessor, compatible preference readback, native controls/physical keyboard and surviving applications. Accepted Omarchy deployment, AT and independent acceptance remain open.',nativeOfflineRecoveryObserved=False,recoveryRunner=" + repr(packet) + ")\n" + needle)
++sys.argv = [str(path), '--keyboard-shell']
++exec(compile(adapted, str(path), 'exec'), globals())
+diff --git c/implementation/warlock/qa/offline-recovery.qnt i/implementation/warlock/qa/offline-recovery.qnt
+new file mode 100644
+index 0000000..f107f4a
+--- /dev/null
++++ i/implementation/warlock/qa/offline-recovery.qnt
+@@ -0,0 +1,55 @@
++// ELM-UI-020 offline-recovery, ARCHITECTURE.md packaged preference copies.
++// One recovery manager coordinates local files through an exclusive profile
++// lock. No host messages, network, window effects or implicit restart.
++// Atomic grain: staging is private; selection publication is one rename.
++// Filesystem/hash validation and native presentation need real-code evidence.
++module offline_recovery {
++  type Route = Predecessor | Candidate
++  type Host = NoHost | PredecessorHost | CandidateHost
++  type Phase = Idle | Staged | Applied | Unknown
++  type Preferences = Compatible | CandidateValues
++  type State = {route:Route, host:Host, phase:Phase, preferences:Preferences,
++    priorValid:bool, candidateValid:bool, generation:int, rollbacks:int,
++    starts:int, recovered:bool}
++  var s:State
++  action init = s'={route:Predecessor,host:NoHost,phase:Idle,
++    preferences:Compatible,priorValid:true,candidateValid:true,
++    generation:1,rollbacks:0,starts:0,recovered:false}
++  pure def canStart(st:State):bool = st.host==NoHost and
++    st.phase!=Staged and st.phase!=Unknown and
++    (if(st.route==Predecessor) st.priorValid else st.candidateValid)
++  pure def start(st:State):State = {...st,
++    host:if(st.route==Predecessor) PredecessorHost else CandidateHost,
++    starts:st.starts+1}
++  action startSelected = all {canStart(s),s'=start(s)}
++  action hostExit = all {s.host!=NoHost,s'={...s,host:NoHost}}
++  action activate = all {s.host==NoHost,s.phase!=Staged,
++    s.phase!=Unknown,s.route==Predecessor,s.candidateValid,s.priorValid,
++    s'={...s,route:Candidate,preferences:CandidateValues,recovered:false,
++      phase:Idle,generation:s.generation+1}}
++  pure def canStage(st:State):bool = st.host==NoHost and
++    st.route==Candidate and st.priorValid and st.phase==Idle
++  action stageRollback = all {canStage(s),s'={...s,phase:Staged}}
++  pure def commit(st:State,result:Phase):State = {...st,route:Predecessor,
++    preferences:Compatible,phase:result,generation:st.generation+1,
++    rollbacks:st.rollbacks+1,recovered:true}
++  action commitRollback(result:Phase):bool = all {s.phase==Staged,
++    Set(Applied,Unknown).contains(result),s'=commit(s,result)}
++  action crashBeforeCommit = all {s.phase==Staged,s'={...s,phase:Idle}}
++  action observe = all {s.phase==Unknown,s'={...s,phase:Applied}}
++  action damageCandidate = all {s.candidateValid,s'={...s,candidateValid:false}}
++  action damagePrior = all {s.priorValid,s.phase!=Staged,
++    s'={...s,priorValid:false}}
++  val safety = (s.host!=PredecessorHost or s.route==Predecessor) and
++    (s.host!=CandidateHost or s.route==Candidate) and
++    (not(s.recovered) or s.preferences==Compatible)
++  val predecessorStarted = s.host==PredecessorHost and s.starts>0
++  val failedHostRecovered = s.recovered and s.host==PredecessorHost
++  val damagedCandidateRecovered = s.recovered and not(s.candidateValid)
++  val uncertainSelectionObserved = s.phase==Unknown and s.recovered
++  val stagingCrashRetainsCandidate = s.generation==2 and s.route==Candidate
++    and s.phase==Idle and s.rollbacks==0 and s.starts>0
++  action step = any {startSelected,hostExit,activate,stageRollback,
++    commitRollback(Applied),commitRollback(Unknown),crashBeforeCommit,
++    observe,damageCandidate,damagePrior}
++}
+diff --git c/implementation/warlock/qa/offline-recovery_test.qnt i/implementation/warlock/qa/offline-recovery_test.qnt
+new file mode 100644
+index 0000000..a7147bb
+--- /dev/null
++++ i/implementation/warlock/qa/offline-recovery_test.qnt
+@@ -0,0 +1,34 @@
++module offline_recovery_test {
++  import offline_recovery.* from "./offline-recovery"
++  run initialPredecessorTest = init.then(startSelected).then(all {
++    assert(predecessorStarted and safety), s'=s})
++  run failedHostRollbackTest = init.then(activate).then(startSelected)
++    .then(hostExit).then(stageRollback).then(commitRollback(Applied))
++    .then(startSelected).then(all {assert(failedHostRecovered and
++      s.rollbacks==1 and safety),s'=s})
++  run damagedCandidateDoesNotBlockRecoveryTest = init.then(activate)
++    .then(damageCandidate).then(stageRollback).then(commitRollback(Applied))
++    .then(startSelected).then(all {assert(damagedCandidateRecovered and
++      failedHostRecovered and safety),s'=s})
++  run activeHostCannotSwitchTest = init.then(activate).then(startSelected)
++    .then(all {assert(not(canStage(s)) and not(canStart(s)) and safety),s'=s})
++  run missingPriorCannotRollbackTest = init.then(activate).then(damagePrior)
++    .then(all {assert(not(canStage(s)) and s.route==Candidate and safety),s'=s})
++  run privateStagingNeverChangesSelectionTest = init.then(activate)
++    .then(stageRollback).then(all {assert(s.route==Candidate and
++      s.preferences==CandidateValues and not(canStart(s)) and safety),s'=s})
++  run stagingCrashKeepsOldPreferencesTest = init.then(activate)
++    .then(startSelected).then(hostExit).then(stageRollback)
++    .then(crashBeforeCommit).then(all {assert(stagingCrashRetainsCandidate
++      and s.preferences==CandidateValues and safety),s'=s})
++  run unknownCannotStartOrReplayTest = init.then(activate)
++    .then(stageRollback).then(commitRollback(Unknown)).then(all {
++      assert(uncertainSelectionObserved and not(canStart(s)) and
++        not(canStage(s)) and safety),s'=s})
++  run readReconcilesUnknownTest = init.then(activate).then(stageRollback)
++    .then(commitRollback(Unknown)).then(observe).then(startSelected)
++    .then(all {assert(failedHostRecovered and s.rollbacks==1 and safety),s'=s})
++  run repeatedRollbackIsNoOpTest = init.then(activate).then(stageRollback)
++    .then(commitRollback(Applied)).then(all {assert(not(canStage(s)) and
++      s.rollbacks==1 and s.generation==3 and safety),s'=s})
++}

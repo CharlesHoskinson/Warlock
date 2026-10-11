@@ -8832,9 +8832,40 @@
         {
           "name": "offline-recovery",
           "oracle": "predecessor and compatible preferences recover without the failed host",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/offline-recovery/manifest.json",
+              "sha256": "f7ae99c3766216d360554c9253ebb41567af366f3313f07d058da34ebaf1712c"
+            }
+          ],
+          "missingObservation": "Accepted Omarchy predecessor and full reproducible release package/dependency inventory.; Main-session reversible deployment preserving actual user drafts.; Applicable native AT and independent original-scenario review.",
+          "priorObservations": [
+            {
+              "name": "offline-recovery",
+              "oracle": "predecessor and compatible preferences recover without the failed host",
+              "status": "unadjudicated",
+              "evidence": [],
+              "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+            }
+          ],
+          "evidenceScope": "Production offline CLI and retained predecessor native drill: 40 file/process checks, ten named Quint tests/1000 samples/five witnesses, 47 protected native checks and normal cleanup; actual host loss after help dismissal, restored preferences/native controls/physical keyboard, application identities survive.",
+          "verificationScope": "Frozen threshold/policy plus independently observed named fixtures, native counters or user/AT records as applicable; hashes and failure outcomes retained.",
+          "sourceHashes": {
+            "implementation/warlock/adapter/recovery_profile.py": "651220f844591d5206b2f3f0f48fc2a652c7010d55cf796c1fda37cdc6adf6e8",
+            "implementation/warlock/qa/offline-recovery.qnt": "b6c2fb024c1d3e8be87e1ae7290896667eecc2cee1aae81b87337d6c5d3a4848",
+            "implementation/warlock/qa/offline-recovery_test.qnt": "74c6f02d0e549714d3f973c30180a6d44c24d0b2ac17df063cc73c59095e7815",
+            "implementation/warlock/qa/check-offline-recovery.py": "273ed2ab2331bda4acbb92aa35758d2916d4a7ec3c340f3cf8505c9938f97bdf",
+            "implementation/warlock/RECOVERY.md": "94f582f2480da12808267fb360520b3af8630fe91065818a7fe0eb9fc955cc7b",
+            "implementation/warlock/README.md": "41db8c455e1156f98252973f1993220b12dee763619adf2bd05fb9471be0bf8c",
+            "implementation/warlock/qa/native-offline-recovery.py": "b1ad35e679d8bc729214bfced02deaf5eccc346e1f0b4cc013d72f347ff42c84"
+          },
+          "reviewer": {
+            "name": "root-offline-recovery",
+            "independent": false,
+            "disposition": "partial"
+          },
+          "scenarioAccepted": false
         }
       ]
     },
@@ -12531,5 +12562,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-10T23:51:05.767512+00:00"
+  "updatedUTC": "2026-10-11T00:11:02.124604+00:00"
 }
