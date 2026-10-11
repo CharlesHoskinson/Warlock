@@ -1,0 +1,388 @@
+{
+  "passed": true,
+  "requirements": [
+    "ELM-DEL-003"
+  ],
+  "scenarios": [
+    "delivery-003"
+  ],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "checks": [
+    {
+      "name": "OriginalInputLockVerifies",
+      "passed": true
+    },
+    {
+      "name": "FreshRelocatedSourceSnapshotVerifies",
+      "passed": true
+    },
+    {
+      "name": "ManifestBuildCompleted",
+      "passed": true
+    },
+    {
+      "name": "AllThreeCompiledProductionAssetsMatch",
+      "passed": true
+    },
+    {
+      "name": "DirectCompiledReducerRegressionPasses",
+      "passed": true
+    },
+    {
+      "name": "CurrentExactNativePairRetained",
+      "passed": true
+    },
+    {
+      "name": "RebuiltHostMatchesQualifiedArtifactBytes",
+      "passed": true
+    },
+    {
+      "name": "ArchiveAndEmbeddedPayloadManifestExist",
+      "passed": true
+    },
+    {
+      "name": "RequiredAquamarineLoaderAliasRetained",
+      "passed": true
+    },
+    {
+      "name": "AlteredActualBuildSourceRefused",
+      "passed": true
+    },
+    {
+      "name": "RestoredDependencyVerifiesWithoutRebaseline",
+      "passed": true
+    },
+    {
+      "name": "ChangedArtifactAliasRefusedEvenWithSameBytes",
+      "passed": true
+    }
+  ],
+  "alteredDependencyOutcome": "Locked input changed: /home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/release-input-lock-1791678249220638764/input-candidate/src/Main.elm",
+  "inputCount": 9149,
+  "originalLockSHA256": "7cb941d21eb4ac9ffedfbfc672d3742f05a5c004b36eff8ab8673ba556b6dfda",
+  "relocatedLockSHA256": "4f571f80597728828dbc545149402fffde609bb19c941f65d0f4c011157aa03b",
+  "builderSHA256": "0b85633bcfa79647fdb1d4619f579e16f916de955d621ad07b06fe1190f7d9a6",
+  "rebuiltHostSHA256": "b276c031f945431c10ca128e9e6505f366e14a3ba9cf295362bd36028296eb34",
+  "compiledAssets": {
+    "elm.js": "700524b6a1da72905daeecffd74216143bcf9242ea13c13d01f8bce3e1665be5",
+    "bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+    "popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43"
+  },
+  "archiveSHA256": "754c79538cdad3205550d27f7879e862a51056d76940cfc088829cd01d10d8e2",
+  "packageManifest": {
+    "schema": 1,
+    "nativePair": {
+      "core": {
+        "path": "native/Hyprland",
+        "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
+      },
+      "plugin": {
+        "path": "native/elm-window-geometry-authority.so",
+        "sha256": "c428e1e6e2b2f9e41b3c5218e3dd37fb6551f09bee6b3531876fb3d3c674948a"
+      },
+      "aquamarine": {
+        "path": "native/libaquamarine.so.0.15.0",
+        "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
+      }
+    },
+    "inputContentSHA256": "f7bf4c9fb3fde49984af634ef7ea0a25c44f3353b641a948b1cad4b00618da22",
+    "files": {
+      "adapter/admission_ledger.py": {
+        "sha256": "2faf5eb03dff6993de707f2d7458b929db881f4102bdc1ec467d3f7aaa4413d1",
+        "symlink": null
+      },
+      "adapter/catalog_authority.py": {
+        "sha256": "ad20204afd3b203eb956918300c8da4cb4765b3c5ad86e701b0257a54b8fb9cc",
+        "symlink": null
+      },
+      "adapter/catalog_transport.py": {
+        "sha256": "43bd1cd1059b87ce4d349d72e4b2a917ac1bdc3dacda2f60563fa621e05a4b84",
+        "symlink": null
+      },
+      "adapter/daemon.py": {
+        "sha256": "a593494e4ca89ef467dced5cd946bc5eca9a88db21c591597c19eb2a80cdca31",
+        "symlink": null
+      },
+      "adapter/delivery_ledger.py": {
+        "sha256": "ce1ff3528b454bdca7412389f5693f69023a5c76bc9586541c1091c1cddc5ca4",
+        "symlink": null
+      },
+      "adapter/durable_ledger.py": {
+        "sha256": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+        "symlink": null
+      },
+      "adapter/effect_endpoint.py": {
+        "sha256": "09d01f26c6f6925051c2368972d97d67c03dea065002b9eda2335fff61e0e9b1",
+        "symlink": null
+      },
+      "adapter/endpoint.py": {
+        "sha256": "e254b870922a46b935de9d85db1de56129838ea2cf73eeb55c9fa16e8539d731",
+        "symlink": null
+      },
+      "adapter/explorer.py": {
+        "sha256": "5771d66fe29af0aed5e6f81f0d0287374d816ea048bdeaf08ae07a9cdf681e78",
+        "symlink": null
+      },
+      "adapter/geometry_endpoint.py": {
+        "sha256": "193b9ef7ecf114156c02cd527a703e79383cdec83267b612ff406f165cc3e3a4",
+        "symlink": null
+      },
+      "adapter/geometry_placement.py": {
+        "sha256": "706899e88f911e1e02bceff8351d6426101ed918d194e7f8ca1f7b707c959614",
+        "symlink": null
+      },
+      "adapter/geometry_size_policy.py": {
+        "sha256": "bcca6dd280911a38ed189e2e8ca6d81ea98c775ef261444f9b1e0f4b9a754888",
+        "symlink": null
+      },
+      "adapter/grant_endpoint.py": {
+        "sha256": "4b60a6c7e43aade3f2ce59495600f3b418b781865a7289dae53a189388f5c3f0",
+        "symlink": null
+      },
+      "adapter/jump_list.py": {
+        "sha256": "2280c0ab00ff0683c0a28611a99b70ac122887629cafb9226f40c649be581806",
+        "symlink": null
+      },
+      "adapter/motion_preferences.py": {
+        "sha256": "ec75685d52f81d5d28f82155b92580015dc897bee6488892c2a8f98e0ffa3633",
+        "symlink": null
+      },
+      "adapter/notification_service.py": {
+        "sha256": "129c864f275282320274ab417bdbc2a7a919096c2ce2b58d0438b18988fc334b",
+        "symlink": null
+      },
+      "adapter/reconciliation.py": {
+        "sha256": "5f558130f005b722fec187e87a88a8cd69606c786c27beb0decede715c54e5f9",
+        "symlink": null
+      },
+      "adapter/recovery_fault.py": {
+        "sha256": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1",
+        "symlink": null
+      },
+      "adapter/recovery_journal.py": {
+        "sha256": "9cfe06102f03fded5d330b90c317b4c6c32064885ed5a2c8478a87c2e1f25dae",
+        "symlink": null
+      },
+      "adapter/recovery_profile.py": {
+        "sha256": "651220f844591d5206b2f3f0f48fc2a652c7010d55cf796c1fda37cdc6adf6e8",
+        "symlink": null
+      },
+      "adapter/recovery_store.py": {
+        "sha256": "fa7e852c963bc4602c2066d05e77d47d8535c732775fe04258021accd3cd7be1",
+        "symlink": null
+      },
+      "adapter/release_builder.py": {
+        "sha256": "0b85633bcfa79647fdb1d4619f579e16f916de955d621ad07b06fe1190f7d9a6",
+        "symlink": null
+      },
+      "adapter/retirement_ledger.py": {
+        "sha256": "213cbb6ecd5c2218075d2cc98132c1c53680933f3898c757e7ba1848261faec5",
+        "symlink": null
+      },
+      "adapter/shell_preferences.py": {
+        "sha256": "333895ca91c20e206cebf645206584213d08cb02553bb10a1758f5308f04c7fa",
+        "symlink": null
+      },
+      "adapter/shortcut_preferences.py": {
+        "sha256": "2a8cc047ebfb5040c7dda4f9fd0f9e80a9b1207245458beda3ac26ff2251c185",
+        "symlink": null
+      },
+      "adapter/system_menu.py": {
+        "sha256": "8e6cba8ae22f821407ab386a0552057de94be3eb03793a87c80817b8c57094e5",
+        "symlink": null
+      },
+      "adapter/taskbar_catalog.py": {
+        "sha256": "5414ed1b6fde57a7508c2f3b20658a97006ce3c4203cecbb893fb73de943b9ba",
+        "symlink": null
+      },
+      "adapter/taskbar_preferences.py": {
+        "sha256": "4fde83478c22f7173ef05727a3666ff7ce72076bc05fddfa4fd08705af9a57d2",
+        "symlink": null
+      },
+      "adapter/taskbar_projection.py": {
+        "sha256": "b9da24de2a910a3d8515f2e8e4de2cb0086bdd0cd26c7f857fcbbdc15978c976",
+        "symlink": null
+      },
+      "adapter/workspace_navigation.py": {
+        "sha256": "79508bcb112ec602b6d33daf1050ef54f63afeb7bfe427fa5553e8a4c68bb8a9",
+        "symlink": null
+      },
+      "assets/activation.js": {
+        "sha256": "06e3de6bcbc27e2b9a5d166fd665706e300ef5d4a29640b9bd70aa0f095a2c3e",
+        "symlink": null
+      },
+      "assets/adapter.js": {
+        "sha256": "9d99e140af65c67aa5395ce8dc3f3aee42b2b341e039e6514745e14ec9335f96",
+        "symlink": null
+      },
+      "assets/appearance.js": {
+        "sha256": "99b01609571af35328d7b69034f647f25651fb59d9d59928063a7e8c83a9b3f6",
+        "symlink": null
+      },
+      "assets/bar-adapter.js": {
+        "sha256": "2f1dd1dfd2f47850a2b455732c114bd98acea976c273c6ec594bef5208d4a68c",
+        "symlink": null
+      },
+      "assets/bar.html": {
+        "sha256": "b88b0b075fc4bcef147357b023823049b5e63e1b49354eb298737ef003328a66",
+        "symlink": null
+      },
+      "assets/bar.js": {
+        "sha256": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+        "symlink": null
+      },
+      "assets/context.js": {
+        "sha256": "2ff41ca906dc4e42ae76f65d486cf119b400414dee41ca886f5589709d2b9333",
+        "symlink": null
+      },
+      "assets/controlled-popup-adapter.js": {
+        "sha256": "14d0a8eb0704414a9d7c2e270d23ca7cc2ff8f008e860051f8ab0e31bcab748c",
+        "symlink": null
+      },
+      "assets/controlled-popup.html": {
+        "sha256": "1e50055501c563f14762159620e2b56644d88779e5ffeba565d4730ebd4e9e4e",
+        "symlink": null
+      },
+      "assets/elm.js": {
+        "sha256": "700524b6a1da72905daeecffd74216143bcf9242ea13c13d01f8bce3e1665be5",
+        "symlink": null
+      },
+      "assets/index.html": {
+        "sha256": "ba09087a0dda2fbc4a912d2d5d8f8adb90ae553a8027963fdb6b74a7afaa5d1b",
+        "symlink": null
+      },
+      "assets/native-preview-control-outbox.js": {
+        "sha256": "183253d5f781cf8527c4e58f31d44653e1b6fe8be58c0bdc89ae714ffb5e4484",
+        "symlink": null
+      },
+      "assets/native-preview-proposals.js": {
+        "sha256": "0172bad6c2491f697497cb9f8274ffa99feb8fca1d9942d31fbb2424bb035bf9",
+        "symlink": null
+      },
+      "assets/popup-adapter.js": {
+        "sha256": "050af2a6cfb58195f6999f126ab94f37573231007cb2fcd7d119873969365605",
+        "symlink": null
+      },
+      "assets/popup.html": {
+        "sha256": "035cb884860bb1cda77c06773a750c631e5d6f20cf90557989bb37756270c422",
+        "symlink": null
+      },
+      "assets/popup.js": {
+        "sha256": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
+        "symlink": null
+      },
+      "assets/recovered-native-preview-control-outbox.js": {
+        "sha256": "4d5b641f57080b921789ed7c8f33f0c0303aa286bb444730d6054a53474f0297",
+        "symlink": null
+      },
+      "assets/retained-preview-controls.js": {
+        "sha256": "64bb384ee03acbb59619f78f3b931b922ed008d14006133b7294e864b92e93e5",
+        "symlink": null
+      },
+      "assets/shell.css": {
+        "sha256": "77566e786969cfb4d7c87f2e33cc9f36d2cf4682fdc2da21bf38073340979098",
+        "symlink": null
+      },
+      "elm-host": {
+        "sha256": "b276c031f945431c10ca128e9e6505f366e14a3ba9cf295362bd36028296eb34",
+        "symlink": null
+      },
+      "native/Hyprland": {
+        "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428",
+        "symlink": null
+      },
+      "native/elm-window-geometry-authority.so": {
+        "sha256": "c428e1e6e2b2f9e41b3c5218e3dd37fb6551f09bee6b3531876fb3d3c674948a",
+        "symlink": null
+      },
+      "native/libaquamarine.so.0.15.0": {
+        "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3",
+        "symlink": null
+      },
+      "native/libaquamarine.so.14": {
+        "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3",
+        "symlink": "libaquamarine.so.0.15.0"
+      }
+    },
+    "target": "Arch Linux with Omarchy, x86_64",
+    "installable": false,
+    "nativeAcceptance": false,
+    "fullReleaseAccepted": false
+  },
+  "nativePair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
+      "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791666305509919483/elm-window-geometry-authority.so",
+      "sha256": "c428e1e6e2b2f9e41b3c5218e3dd37fb6551f09bee6b3531876fb3d3c674948a"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+      "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
+    }
+  },
+  "toolVersions": {
+    "cc": {
+      "path": "/usr/bin/cc",
+      "version": "cc (GCC) 16.2.1 20260810\nCopyright (C) 2026 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE."
+    },
+    "g++": {
+      "path": "/usr/bin/g++",
+      "version": "g++ (GCC) 16.2.1 20260810\nCopyright (C) 2026 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE."
+    },
+    "pkg-config": {
+      "path": "/usr/bin/pkg-config",
+      "version": "3.0.7"
+    },
+    "node": {
+      "path": "/home/hoskinson/.local/share/mise/installs/node/latest/bin/node",
+      "version": "v26.10.0"
+    },
+    "python3": {
+      "path": "/usr/bin/python3",
+      "version": "Python 3.14.7"
+    },
+    "quint": {
+      "path": "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+      "version": "0.33.0"
+    },
+    "as": {
+      "path": "/usr/bin/as",
+      "version": "GNU assembler (GNU Binutils) 2.47\nCopyright (C) 2026 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or later.\nThis program has absolutely no warranty.\nThis assembler was configured for a target of `x86_64-pc-linux-gnu'."
+    },
+    "ld": {
+      "path": "/usr/bin/ld",
+      "version": "GNU ld (GNU Binutils) 2.47\nCopyright (C) 2026 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or (at your option) a later version.\nThis program has absolutely no warranty."
+    },
+    "ar": {
+      "path": "/usr/bin/ar",
+      "version": "GNU ar (GNU Binutils) 2.47\nCopyright (C) 2026 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or (at your option) any later version.\nThis program has absolutely no warranty."
+    },
+    "ldd": {
+      "path": "/usr/bin/ldd",
+      "version": null
+    },
+    "bash": {
+      "path": "/usr/bin/bash",
+      "version": null
+    },
+    "env": {
+      "path": "/usr/bin/env",
+      "version": null
+    },
+    "elm": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v143/qa/toolchain/npm-package/node_modules/@elm_binaries/linux_x64/elm",
+      "version": "0.19.2"
+    }
+  },
+  "scope": "Fixed manifest rebuild of three production Elm roots and all eleven native host units, native self-tests and compiled reducer; retained core/plugin artifacts and actual consumed-source/alias tamper refusal. No complete upstream source-provenance, offline clean reproducibility, native GUI or redistribution acceptance.",
+  "missingObservations": [
+    "Complete compiler/build-tool upstream source provenance and redistribution disposition.",
+    "Two clean isolated offline builds and distributable comparison.",
+    "Native acceptance of a newly compiled host and full main-session deployment.",
+    "Independent original-scenario review."
+  ]
+}

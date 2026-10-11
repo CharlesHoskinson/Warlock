@@ -218,3 +218,16 @@ reconciled by observation before proceeding. The private native drill proves a
 retained Warlock predecessor, keyboard controls and surviving application
 identities; accepted Omarchy fallback, package completeness, main-session rollback,
 AT and independent acceptance remain open. See the [evidence packet](../implementation/warlock/qa/evidence/offline-recovery/README.md).
+
+
+## Release artifacts and current qualification
+
+[The release builder](../implementation/warlock/RELEASE.md) now produces a local
+archive containing the current Elm views/adapters, byte-identical native host and
+exact core/plugin/Aquamarine tuple. Its embedded manifest records payload hashes;
+the reviewed input lock includes sources, compiler/packages, tools and native
+dependencies. Changed source or artifact selection refuses a build. The archive
+is a prepared candidate: source provenance/notices, isolated offline
+reproducibility, full native/AT/IME/hardware/resources and reversible main-session
+deployment remain required. These build observations do not upgrade browser
+specimens or component evidence to release acceptance.

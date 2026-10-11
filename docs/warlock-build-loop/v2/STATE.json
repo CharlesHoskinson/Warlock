@@ -1,13 +1,86 @@
 {
   "schema": 1,
   "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-11T00:11:02.128699+00:00",
+  "updatedUTC": "2026-10-11T00:35:13.651123+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
+    "id": "release-input-lock",
+    "requirements": [
+      "ELM-DEL-003"
+    ],
+    "scenarios": [
+      "delivery-003"
+    ],
+    "paths": [
+      "implementation/warlock/adapter/release_builder.py",
+      "implementation/warlock/qa/check-release-builder.py",
+      "implementation/warlock/build-lock.json",
+      "implementation/warlock/RELEASE.md",
+      "implementation/warlock/README.md"
+    ],
+    "before": "Candidate QA independently pins Elm and native artifacts but no release builder owns one verified input lock and rebuild recipe.",
+    "after": "The release builder captures source/package/tool/native inputs and rejects changed bytes before rebuilding Elm assets and the native host against the retained exact core/plugin tuple.",
+    "verification": [
+      "Protected real rebuild from the manifest, compiled production views and direct replay/native self-tests; deliberate altered dependency hash rejected before output creation. Source provenance, clean offline reproducibility and native qualification remain explicit."
+    ],
+    "owner": "root-release-input-lock",
+    "participantRecord": ".warlock-contributor/release-input-lock.json",
+    "sourceHashes": {
+      "implementation/warlock/adapter/release_builder.py": "c463482e4a4874e985c2c1927c6324551baef396e57dfca4ac52b1f56258f1b2",
+      "implementation/warlock/qa/check-release-builder.py": "e225833b81a28853118bc16c2a31b8db2634f32dcc8af796f4d90ffd6c7f7d05",
+      "implementation/warlock/build-lock.json": "9efeec2bf540c86dedeae2b5fd5006ad4071e806a0b4f4ea9f2624d8f7c796b2",
+      "implementation/warlock/RELEASE.md": "44ff1873b6f94d265b8c2417ca20d8291bb829bdfa8ee30184d23f07986fcecd",
+      "implementation/warlock/README.md": "b30eb5c7735f973f3f4834e99ace91c70b96f9f6477cfde199d1a9496b2485e9"
+    },
+    "evidence": [
+      {
+        "path": "implementation/warlock/qa/evidence/release-input-lock/manifest.json",
+        "sha256": "46944d678e22e8bfad47e117e77c996bc7ae22b27a4401e2d3f0008ad66707ec"
+      }
+    ],
+    "observedOutcome": "Fixed manifest-driven build verifies 9223 inputs, rebuilds three Elm roots/all eleven native host units, passes eighteen build phases/native self-tests/nineteen compiled reducer checks and twelve package/tamper observations; existing assets/host reproduced byte-for-byte, persisted lock verifies in a separate protected process, 26 MB archive assembled locally.",
+    "sourceTuple": {
+      "sourceBaseRevision": "fe99d3a47b704d72583f8d11b75a6d65c73f2ef6",
+      "nativePair": {
+        "core": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
+          "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
+        },
+        "plugin": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791666305509919483/elm-window-geometry-authority.so",
+          "sha256": "c428e1e6e2b2f9e41b3c5218e3dd37fb6551f09bee6b3531876fb3d3c674948a"
+        },
+        "aquamarine": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+          "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
+        }
+      },
+      "hostSHA256": "b276c031f945431c10ca128e9e6505f366e14a3ba9cf295362bd36028296eb34",
+      "byteIdentityReuse": true,
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false
+    },
+    "nextOriginalProductWork": "ELM-DEL-004 delivery-004: two clean isolated offline manifest builds with closed input/cache mounts and distributable hash comparison; retain original blocking disposition for any difference. Complete upstream provenance/SBOM/notices, accepted Omarchy fallback, native AT/IME/hardware/resources/journeys and main-session deployment remain required."
+  },
+  "nextSlices": [
+    "taskbar activation/minimize/restore and popup focus journeys",
+    "persistent catalog pins",
+    "launcher search and refusal recovery",
+    "switcher/Task View/workspaces and snap/output journeys",
+    "authorized visible previews and fallback",
+    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
+    "original native, AT/IME, hardware/resource/journey gates",
+    "reproducible package, reversible deployment/rollback"
+  ],
+  "releaseAccepted": false,
+  "oldTrackerIsCurrent": false,
+  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
+  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
+  "previousSlice": {
     "id": "offline-recovery",
     "requirements": [
       "ELM-UI-020"
@@ -67,187 +140,6 @@
       "fullReleaseAccepted": false
     },
     "nextOriginalProductWork": "ELM-DEL-003 delivery-003: implement reproducible hash-pinned package/build inputs using current coherent source and recovery descriptors. Accepted Omarchy predecessor, dependency/redistribution, native AT/IME/hardware/resources/journeys and main-session rollback remain required."
-  },
-  "nextSlices": [
-    "taskbar activation/minimize/restore and popup focus journeys",
-    "persistent catalog pins",
-    "launcher search and refusal recovery",
-    "switcher/Task View/workspaces and snap/output journeys",
-    "authorized visible previews and fallback",
-    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
-    "original native, AT/IME, hardware/resource/journey gates",
-    "reproducible package, reversible deployment/rollback"
-  ],
-  "releaseAccepted": false,
-  "oldTrackerIsCurrent": false,
-  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
-  "previousSlice": {
-    "id": "explicit-new-instance",
-    "requirements": [
-      "ELM-UI-004",
-      "ELM-UI-008"
-    ],
-    "scenarios": [
-      "taskbar-inactive",
-      "menu-invocation"
-    ],
-    "paths": [
-      "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/qa/NewInstanceReplay.elm",
-      "implementation/warlock/qa/new-instance.qnt",
-      "implementation/warlock/qa/new-instance_test.qnt",
-      "implementation/warlock/qa/check-search.py",
-      "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/qa/current-search-build.json",
-      "implementation/warlock/assets/elm.js",
-      "implementation/warlock/assets/bar.js",
-      "implementation/warlock/assets/popup.js",
-      "implementation/warlock/README.md",
-      "implementation/warlock/assets/context.js",
-      "implementation/warlock/qa/dense-taskbar-browser.mjs"
-    ],
-    "before": "The frozen explicit New instance launch action is absent from current application/window menus; ordinary taskbar actions already activate existing windows.",
-    "after": "A labeled New instance control in a uniquely matched window menu or current application actions menu requests one identity-bound native launch; ordinary activation, unavailable/ambiguous identity, stale callbacks and Pending/Unknown never cause duplicate launches.",
-    "verification": [
-      "Use quint-llm-kit before typed reducer changes. Compile production roots and direct NewInstance replay, retain original primary/menu/jump-list assertions, run actual native pointer/keyboard menu selection and exact GIO launch/current receipt plus ordinary activation/no-launch and stale/Unknown negatives; no deadline, grant or window-policy changes."
-    ],
-    "owner": "root-explicit-new-instance",
-    "participantRecord": ".warlock-contributor/explicit-new-instance.json",
-    "sourceHashes": {
-      "implementation/warlock/src/Desktop.elm": "1b5b48fc5ca71c6e11bd54ea6ab723f5a37f4d383d6a59c99d14d83b005d5033",
-      "implementation/warlock/src/Surface.elm": "a660a4641a9f834c6198bce1e8049b3dd0be40cb74be1cfe1d5e14cfd0cdaa1d",
-      "implementation/warlock/qa/NewInstanceReplay.elm": "26e0442ba7428d4c160efd0453d9ca0246dd2abfd46706ec325de11300e61054",
-      "implementation/warlock/qa/new-instance.qnt": "1b44665790edae5be0f680dbb864a7d67eea5a0ca3806a75fded01205f77b186",
-      "implementation/warlock/qa/new-instance_test.qnt": "2c1b87e594e0ab1bc9a436b9deff0f88d68b77f442695c03660040b566e49b60",
-      "implementation/warlock/qa/check-search.py": "faf62c651ea44323fd42908abcbbcf0727c883319ce39733a7df79c4f9ed08bb",
-      "implementation/warlock/qa/native-window-feedback.py": "6f7a07393415d50784f72427b807a21463c0b39e3eacc4327a16690c0f303838",
-      "implementation/warlock/qa/current-search-build.json": "4e2440f0131078d569c7003b41939e83b6c43fecdd37d4540bb8b0590307a514",
-      "implementation/warlock/assets/elm.js": "700524b6a1da72905daeecffd74216143bcf9242ea13c13d01f8bce3e1665be5",
-      "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
-      "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
-      "implementation/warlock/README.md": "37004087a0b7a0d5a8702a9b98eaa1380d3976338acf91eeadecb8f266f4c730",
-      "implementation/warlock/assets/context.js": "2ff41ca906dc4e42ae76f65d486cf119b400414dee41ca886f5589709d2b9333",
-      "implementation/warlock/qa/dense-taskbar-browser.mjs": "fa94db43af21efe770dc6998ee98dcf97e9daf610bec8992d192ae2ad97f3deb"
-    },
-    "evidence": [
-      {
-        "requirement": "ELM-UI-004",
-        "scenario": "taskbar-inactive",
-        "oracle": "the member visibly activates",
-        "verificationScope": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
-        "scope": "Current primary keyboard activation/minimize/restore preserves original native pixels and real application recipients without launch; explicit New instance uses current catalog authority through native pointer/keyboard window and application-action menus, three exact GIO submissions and removed-entry refusal.",
-        "evidence": [
-          {
-            "path": "implementation/warlock/qa/evidence/explicit-new-instance/manifest.json",
-            "sha256": "2b89d68c7cd44a6dc0bb4904871dc6bb7ee4b9bd441340c6cf49fb44a14eea76"
-          }
-        ],
-        "sourceHashes": {
-          "implementation/warlock/src/Desktop.elm": "1b5b48fc5ca71c6e11bd54ea6ab723f5a37f4d383d6a59c99d14d83b005d5033",
-          "implementation/warlock/src/Surface.elm": "a660a4641a9f834c6198bce1e8049b3dd0be40cb74be1cfe1d5e14cfd0cdaa1d",
-          "implementation/warlock/qa/NewInstanceReplay.elm": "26e0442ba7428d4c160efd0453d9ca0246dd2abfd46706ec325de11300e61054",
-          "implementation/warlock/qa/new-instance.qnt": "1b44665790edae5be0f680dbb864a7d67eea5a0ca3806a75fded01205f77b186",
-          "implementation/warlock/qa/new-instance_test.qnt": "2c1b87e594e0ab1bc9a436b9deff0f88d68b77f442695c03660040b566e49b60",
-          "implementation/warlock/qa/check-search.py": "faf62c651ea44323fd42908abcbbcf0727c883319ce39733a7df79c4f9ed08bb",
-          "implementation/warlock/qa/native-window-feedback.py": "6f7a07393415d50784f72427b807a21463c0b39e3eacc4327a16690c0f303838",
-          "implementation/warlock/qa/current-search-build.json": "4e2440f0131078d569c7003b41939e83b6c43fecdd37d4540bb8b0590307a514",
-          "implementation/warlock/assets/elm.js": "700524b6a1da72905daeecffd74216143bcf9242ea13c13d01f8bce3e1665be5",
-          "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
-          "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
-          "implementation/warlock/README.md": "37004087a0b7a0d5a8702a9b98eaa1380d3976338acf91eeadecb8f266f4c730",
-          "implementation/warlock/assets/context.js": "2ff41ca906dc4e42ae76f65d486cf119b400414dee41ca886f5589709d2b9333",
-          "implementation/warlock/qa/dense-taskbar-browser.mjs": "fa94db43af21efe770dc6998ee98dcf97e9daf610bec8992d192ae2ad97f3deb"
-        },
-        "reviewer": "root-explicit-new-instance",
-        "disposition": "partial",
-        "missingObservations": [
-          "Independent original review; applicable New instance native AT, enlarged/dense discovery and wider lifecycle/Unknown schedules; full release package/rollback/resources/hardware."
-        ]
-      },
-      {
-        "requirement": "ELM-UI-008",
-        "scenario": "menu-invocation",
-        "oracle": "secondary click and Menu/Shift-F10 expose labeled operations and Escape returns focus",
-        "verificationScope": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
-        "scope": "Actual running-pin secondary click, Menu/Shift-F10, labeled operations and pointer/application versus keyboard/bar Escape return; New instance pointer/keyboard and Application actions keyboard launch with painted current controls; actual Tab utility fix, original compiled and browser discovery retained.",
-        "evidence": [
-          {
-            "path": "implementation/warlock/qa/evidence/explicit-new-instance/manifest.json",
-            "sha256": "2b89d68c7cd44a6dc0bb4904871dc6bb7ee4b9bd441340c6cf49fb44a14eea76"
-          }
-        ],
-        "sourceHashes": {
-          "implementation/warlock/src/Desktop.elm": "1b5b48fc5ca71c6e11bd54ea6ab723f5a37f4d383d6a59c99d14d83b005d5033",
-          "implementation/warlock/src/Surface.elm": "a660a4641a9f834c6198bce1e8049b3dd0be40cb74be1cfe1d5e14cfd0cdaa1d",
-          "implementation/warlock/qa/NewInstanceReplay.elm": "26e0442ba7428d4c160efd0453d9ca0246dd2abfd46706ec325de11300e61054",
-          "implementation/warlock/qa/new-instance.qnt": "1b44665790edae5be0f680dbb864a7d67eea5a0ca3806a75fded01205f77b186",
-          "implementation/warlock/qa/new-instance_test.qnt": "2c1b87e594e0ab1bc9a436b9deff0f88d68b77f442695c03660040b566e49b60",
-          "implementation/warlock/qa/check-search.py": "faf62c651ea44323fd42908abcbbcf0727c883319ce39733a7df79c4f9ed08bb",
-          "implementation/warlock/qa/native-window-feedback.py": "6f7a07393415d50784f72427b807a21463c0b39e3eacc4327a16690c0f303838",
-          "implementation/warlock/qa/current-search-build.json": "4e2440f0131078d569c7003b41939e83b6c43fecdd37d4540bb8b0590307a514",
-          "implementation/warlock/assets/elm.js": "700524b6a1da72905daeecffd74216143bcf9242ea13c13d01f8bce3e1665be5",
-          "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
-          "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
-          "implementation/warlock/README.md": "37004087a0b7a0d5a8702a9b98eaa1380d3976338acf91eeadecb8f266f4c730",
-          "implementation/warlock/assets/context.js": "2ff41ca906dc4e42ae76f65d486cf119b400414dee41ca886f5589709d2b9333",
-          "implementation/warlock/qa/dense-taskbar-browser.mjs": "fa94db43af21efe770dc6998ee98dcf97e9daf610bec8992d192ae2ad97f3deb"
-        },
-        "reviewer": "root-explicit-new-instance",
-        "disposition": "partial",
-        "missingObservations": [
-          "Applicable native AT and original enlarged/dense new-action discovery; independent original review; broader lifecycle and full release obligations."
-        ]
-      }
-    ],
-    "sourceTuple": {
-      "sourceBaseRevision": "b6e887efde7cd11667d62e3c272b02773773eb52",
-      "sourceHashes": {
-        "implementation/warlock/src/Desktop.elm": "1b5b48fc5ca71c6e11bd54ea6ab723f5a37f4d383d6a59c99d14d83b005d5033",
-        "implementation/warlock/src/Surface.elm": "a660a4641a9f834c6198bce1e8049b3dd0be40cb74be1cfe1d5e14cfd0cdaa1d",
-        "implementation/warlock/qa/NewInstanceReplay.elm": "26e0442ba7428d4c160efd0453d9ca0246dd2abfd46706ec325de11300e61054",
-        "implementation/warlock/qa/new-instance.qnt": "1b44665790edae5be0f680dbb864a7d67eea5a0ca3806a75fded01205f77b186",
-        "implementation/warlock/qa/new-instance_test.qnt": "2c1b87e594e0ab1bc9a436b9deff0f88d68b77f442695c03660040b566e49b60",
-        "implementation/warlock/qa/check-search.py": "faf62c651ea44323fd42908abcbbcf0727c883319ce39733a7df79c4f9ed08bb",
-        "implementation/warlock/qa/native-window-feedback.py": "6f7a07393415d50784f72427b807a21463c0b39e3eacc4327a16690c0f303838",
-        "implementation/warlock/qa/current-search-build.json": "4e2440f0131078d569c7003b41939e83b6c43fecdd37d4540bb8b0590307a514",
-        "implementation/warlock/assets/elm.js": "700524b6a1da72905daeecffd74216143bcf9242ea13c13d01f8bce3e1665be5",
-        "implementation/warlock/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
-        "implementation/warlock/assets/popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
-        "implementation/warlock/README.md": "37004087a0b7a0d5a8702a9b98eaa1380d3976338acf91eeadecb8f266f4c730",
-        "implementation/warlock/assets/context.js": "2ff41ca906dc4e42ae76f65d486cf119b400414dee41ca886f5589709d2b9333",
-        "implementation/warlock/qa/dense-taskbar-browser.mjs": "fa94db43af21efe770dc6998ee98dcf97e9daf610bec8992d192ae2ad97f3deb"
-      },
-      "nativePair": {
-        "core": {
-          "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
-          "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
-        },
-        "plugin": {
-          "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791666305509919483/elm-window-geometry-authority.so",
-          "sha256": "c428e1e6e2b2f9e41b3c5218e3dd37fb6551f09bee6b3531876fb3d3c674948a"
-        },
-        "aquamarine": {
-          "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
-          "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
-        }
-      },
-      "nativeHost": {
-        "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791676052328253053/elm-host",
-        "sha256": "b276c031f945431c10ca128e9e6505f366e14a3ba9cf295362bd36028296eb34",
-        "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/taskbar-primary-1791676052328253053/report.json",
-        "heldBuildSHA256": "89e5fbaddb242bcc14ceb19b5147b9fde1991c54916d6a1d22bed45cd95ec3df"
-      },
-      "compiledAssets": {
-        "elm.js": "700524b6a1da72905daeecffd74216143bcf9242ea13c13d01f8bce3e1665be5",
-        "bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
-        "popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43"
-      },
-      "evidenceManifestSHA256": "2b89d68c7cd44a6dc0bb4904871dc6bb7ee4b9bd441340c6cf49fb44a14eea76"
-    },
-    "observedOutcome": "Native window/menu and application-action New instance creates three exact current-identity GIO submissions; removed desktop entry refuses the fourth. Original no-launch activation/minimize/restore and actual recipients/pixels pass. Tab utility exclusion fixed. 101 native menu checks, 131 original native primary keyboard checks, 19/19/14 compiled checks, 55 browser checks and 12 named/1000 sampled Quint checks pass; independent/native AT/dense and full release acceptance stay open.",
-    "nextOriginalProductWork": "ELM-UI-020 offline-recovery: inspect original documented rollback oracle and implement reversible predecessor/preference recovery independently of a failed host; preserve full original native AT/IME/hardware/resources/journeys/package scope."
   },
   "recentSlices": [
     {
@@ -1752,50 +1644,107 @@
       },
       "observedOutcome": "Native window/menu and application-action New instance creates three exact current-identity GIO submissions; removed desktop entry refuses the fourth. Original no-launch activation/minimize/restore and actual recipients/pixels pass. Tab utility exclusion fixed. 101 native menu checks, 131 original native primary keyboard checks, 19/19/14 compiled checks, 55 browser checks and 12 named/1000 sampled Quint checks pass; independent/native AT/dense and full release acceptance stay open.",
       "nextOriginalProductWork": "ELM-UI-020 offline-recovery: inspect original documented rollback oracle and implement reversible predecessor/preference recovery independently of a failed host; preserve full original native AT/IME/hardware/resources/journeys/package scope."
+    },
+    {
+      "id": "offline-recovery",
+      "requirements": [
+        "ELM-UI-020"
+      ],
+      "scenarios": [
+        "offline-recovery"
+      ],
+      "paths": [
+        "implementation/warlock/adapter/recovery_profile.py",
+        "implementation/warlock/qa/offline-recovery.qnt",
+        "implementation/warlock/qa/offline-recovery_test.qnt",
+        "implementation/warlock/qa/check-offline-recovery.py",
+        "implementation/warlock/RECOVERY.md",
+        "implementation/warlock/README.md",
+        "implementation/warlock/qa/native-offline-recovery.py"
+      ],
+      "before": "No standalone offline rollback command retains a predecessor route and compatible preference copy outside the failed Elm host.",
+      "after": "A local recovery profile preserves reviewed predecessor and candidate commands plus validated prior preferences; documented rollback atomically selects the predecessor with a compatible copy without the failed host, while refusing concurrent managed hosts.",
+      "verification": [
+        "Quint initialization, named lifecycle and sampled safety/witnesses; real production profile CLI over private owned files, damaged candidate, missing predecessor, concurrent host and atomic-failure negatives; private native predecessor restoration remains independently qualified."
+      ],
+      "owner": "root-offline-recovery",
+      "participantRecord": ".warlock-contributor/offline-recovery.json",
+      "sourceHashes": {
+        "implementation/warlock/adapter/recovery_profile.py": "651220f844591d5206b2f3f0f48fc2a652c7010d55cf796c1fda37cdc6adf6e8",
+        "implementation/warlock/qa/offline-recovery.qnt": "b6c2fb024c1d3e8be87e1ae7290896667eecc2cee1aae81b87337d6c5d3a4848",
+        "implementation/warlock/qa/offline-recovery_test.qnt": "74c6f02d0e549714d3f973c30180a6d44c24d0b2ac17df063cc73c59095e7815",
+        "implementation/warlock/qa/check-offline-recovery.py": "273ed2ab2331bda4acbb92aa35758d2916d4a7ec3c340f3cf8505c9938f97bdf",
+        "implementation/warlock/RECOVERY.md": "94f582f2480da12808267fb360520b3af8630fe91065818a7fe0eb9fc955cc7b",
+        "implementation/warlock/README.md": "41db8c455e1156f98252973f1993220b12dee763619adf2bd05fb9471be0bf8c",
+        "implementation/warlock/qa/native-offline-recovery.py": "b1ad35e679d8bc729214bfced02deaf5eccc346e1f0b4cc013d72f347ff42c84"
+      },
+      "evidence": [
+        {
+          "path": "implementation/warlock/qa/evidence/offline-recovery/manifest.json",
+          "sha256": "f7ae99c3766216d360554c9253ebb41567af366f3313f07d058da34ebaf1712c"
+        }
+      ],
+      "observedOutcome": "Production offline CLI and retained predecessor native drill: 40 file/process checks, ten named Quint tests/1000 samples/five witnesses, 47 protected native checks and normal cleanup; actual host loss after help dismissal, restored preferences/native controls/physical keyboard, application identities survive.",
+      "sourceTuple": {
+        "sourceBaseRevision": "9fef88392745fb839e80238b638e5915c0b3fc95",
+        "nativePair": {
+          "core": {
+            "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
+            "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
+          },
+          "plugin": {
+            "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791666305509919483/elm-window-geometry-authority.so",
+            "sha256": "c428e1e6e2b2f9e41b3c5218e3dd37fb6551f09bee6b3531876fb3d3c674948a"
+          },
+          "aquamarine": {
+            "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+            "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
+          }
+        },
+        "nativeAcceptance": false,
+        "fullReleaseAccepted": false
+      },
+      "nextOriginalProductWork": "ELM-DEL-003 delivery-003: implement reproducible hash-pinned package/build inputs using current coherent source and recovery descriptors. Accepted Omarchy predecessor, dependency/redistribution, native AT/IME/hardware/resources/journeys and main-session rollback remain required."
     }
   ],
   "lastSlice": {
-    "id": "offline-recovery",
+    "id": "release-input-lock",
     "requirements": [
-      "ELM-UI-020"
+      "ELM-DEL-003"
     ],
     "scenarios": [
-      "offline-recovery"
+      "delivery-003"
     ],
     "paths": [
-      "implementation/warlock/adapter/recovery_profile.py",
-      "implementation/warlock/qa/offline-recovery.qnt",
-      "implementation/warlock/qa/offline-recovery_test.qnt",
-      "implementation/warlock/qa/check-offline-recovery.py",
-      "implementation/warlock/RECOVERY.md",
-      "implementation/warlock/README.md",
-      "implementation/warlock/qa/native-offline-recovery.py"
+      "implementation/warlock/adapter/release_builder.py",
+      "implementation/warlock/qa/check-release-builder.py",
+      "implementation/warlock/build-lock.json",
+      "implementation/warlock/RELEASE.md",
+      "implementation/warlock/README.md"
     ],
-    "before": "No standalone offline rollback command retains a predecessor route and compatible preference copy outside the failed Elm host.",
-    "after": "A local recovery profile preserves reviewed predecessor and candidate commands plus validated prior preferences; documented rollback atomically selects the predecessor with a compatible copy without the failed host, while refusing concurrent managed hosts.",
+    "before": "Candidate QA independently pins Elm and native artifacts but no release builder owns one verified input lock and rebuild recipe.",
+    "after": "The release builder captures source/package/tool/native inputs and rejects changed bytes before rebuilding Elm assets and the native host against the retained exact core/plugin tuple.",
     "verification": [
-      "Quint initialization, named lifecycle and sampled safety/witnesses; real production profile CLI over private owned files, damaged candidate, missing predecessor, concurrent host and atomic-failure negatives; private native predecessor restoration remains independently qualified."
+      "Protected real rebuild from the manifest, compiled production views and direct replay/native self-tests; deliberate altered dependency hash rejected before output creation. Source provenance, clean offline reproducibility and native qualification remain explicit."
     ],
-    "owner": "root-offline-recovery",
-    "participantRecord": ".warlock-contributor/offline-recovery.json",
+    "owner": "root-release-input-lock",
+    "participantRecord": ".warlock-contributor/release-input-lock.json",
     "sourceHashes": {
-      "implementation/warlock/adapter/recovery_profile.py": "651220f844591d5206b2f3f0f48fc2a652c7010d55cf796c1fda37cdc6adf6e8",
-      "implementation/warlock/qa/offline-recovery.qnt": "b6c2fb024c1d3e8be87e1ae7290896667eecc2cee1aae81b87337d6c5d3a4848",
-      "implementation/warlock/qa/offline-recovery_test.qnt": "74c6f02d0e549714d3f973c30180a6d44c24d0b2ac17df063cc73c59095e7815",
-      "implementation/warlock/qa/check-offline-recovery.py": "273ed2ab2331bda4acbb92aa35758d2916d4a7ec3c340f3cf8505c9938f97bdf",
-      "implementation/warlock/RECOVERY.md": "94f582f2480da12808267fb360520b3af8630fe91065818a7fe0eb9fc955cc7b",
-      "implementation/warlock/README.md": "41db8c455e1156f98252973f1993220b12dee763619adf2bd05fb9471be0bf8c",
-      "implementation/warlock/qa/native-offline-recovery.py": "b1ad35e679d8bc729214bfced02deaf5eccc346e1f0b4cc013d72f347ff42c84"
+      "implementation/warlock/adapter/release_builder.py": "c463482e4a4874e985c2c1927c6324551baef396e57dfca4ac52b1f56258f1b2",
+      "implementation/warlock/qa/check-release-builder.py": "e225833b81a28853118bc16c2a31b8db2634f32dcc8af796f4d90ffd6c7f7d05",
+      "implementation/warlock/build-lock.json": "9efeec2bf540c86dedeae2b5fd5006ad4071e806a0b4f4ea9f2624d8f7c796b2",
+      "implementation/warlock/RELEASE.md": "44ff1873b6f94d265b8c2417ca20d8291bb829bdfa8ee30184d23f07986fcecd",
+      "implementation/warlock/README.md": "b30eb5c7735f973f3f4834e99ace91c70b96f9f6477cfde199d1a9496b2485e9"
     },
     "evidence": [
       {
-        "path": "implementation/warlock/qa/evidence/offline-recovery/manifest.json",
-        "sha256": "f7ae99c3766216d360554c9253ebb41567af366f3313f07d058da34ebaf1712c"
+        "path": "implementation/warlock/qa/evidence/release-input-lock/manifest.json",
+        "sha256": "46944d678e22e8bfad47e117e77c996bc7ae22b27a4401e2d3f0008ad66707ec"
       }
     ],
-    "observedOutcome": "Production offline CLI and retained predecessor native drill: 40 file/process checks, ten named Quint tests/1000 samples/five witnesses, 47 protected native checks and normal cleanup; actual host loss after help dismissal, restored preferences/native controls/physical keyboard, application identities survive.",
+    "observedOutcome": "Fixed manifest-driven build verifies 9223 inputs, rebuilds three Elm roots/all eleven native host units, passes eighteen build phases/native self-tests/nineteen compiled reducer checks and twelve package/tamper observations; existing assets/host reproduced byte-for-byte, persisted lock verifies in a separate protected process, 26 MB archive assembled locally.",
     "sourceTuple": {
-      "sourceBaseRevision": "9fef88392745fb839e80238b638e5915c0b3fc95",
+      "sourceBaseRevision": "fe99d3a47b704d72583f8d11b75a6d65c73f2ef6",
       "nativePair": {
         "core": {
           "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
@@ -1810,9 +1759,11 @@
           "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
         }
       },
+      "hostSHA256": "b276c031f945431c10ca128e9e6505f366e14a3ba9cf295362bd36028296eb34",
+      "byteIdentityReuse": true,
       "nativeAcceptance": false,
       "fullReleaseAccepted": false
     },
-    "nextOriginalProductWork": "ELM-DEL-003 delivery-003: implement reproducible hash-pinned package/build inputs using current coherent source and recovery descriptors. Accepted Omarchy predecessor, dependency/redistribution, native AT/IME/hardware/resources/journeys and main-session rollback remain required."
+    "nextOriginalProductWork": "ELM-DEL-004 delivery-004: two clean isolated offline manifest builds with closed input/cache mounts and distributable hash comparison; retain original blocking disposition for any difference. Complete upstream provenance/SBOM/notices, accepted Omarchy fallback, native AT/IME/hardware/resources/journeys and main-session deployment remain required."
   }
 }

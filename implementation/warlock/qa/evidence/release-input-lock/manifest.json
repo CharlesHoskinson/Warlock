@@ -1,0 +1,129 @@
+{
+  "schema": 1,
+  "generatedUTC": "2026-10-11T00:34:09.368041+00:00",
+  "requirements": [
+    "ELM-DEL-003"
+  ],
+  "scenarios": [
+    "delivery-003"
+  ],
+  "oracle": "every build input resolves to a pinned hashed artifact",
+  "sourceBaseRevision": "fe99d3a47b704d72583f8d11b75a6d65c73f2ef6",
+  "sourceHashes": {
+    "implementation/warlock/adapter/release_builder.py": "c463482e4a4874e985c2c1927c6324551baef396e57dfca4ac52b1f56258f1b2",
+    "implementation/warlock/qa/check-release-builder.py": "e225833b81a28853118bc16c2a31b8db2634f32dcc8af796f4d90ffd6c7f7d05",
+    "implementation/warlock/build-lock.json": "9efeec2bf540c86dedeae2b5fd5006ad4071e806a0b4f4ea9f2624d8f7c796b2",
+    "implementation/warlock/RELEASE.md": "44ff1873b6f94d265b8c2417ca20d8291bb829bdfa8ee30184d23f07986fcecd",
+    "implementation/warlock/README.md": "b30eb5c7735f973f3f4834e99ace91c70b96f9f6477cfde199d1a9496b2485e9"
+  },
+  "lock": {
+    "path": "implementation/warlock/build-lock.json",
+    "sha256": "9efeec2bf540c86dedeae2b5fd5006ad4071e806a0b4f4ea9f2624d8f7c796b2",
+    "inputs": 9223
+  },
+  "scope": "Fixed manifest rebuild of three production Elm roots and all eleven native host units, native self-tests and compiled reducer; retained core/plugin artifacts and actual consumed-source/alias tamper refusal. No complete upstream source-provenance, offline clean reproducibility, native GUI or redistribution acceptance.",
+  "buildPhases": 18,
+  "checks": 12,
+  "compiledReducerChecks": 19,
+  "compiledAssets": {
+    "elm.js": "700524b6a1da72905daeecffd74216143bcf9242ea13c13d01f8bce3e1665be5",
+    "bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+    "popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43"
+  },
+  "hostSHA256": "b276c031f945431c10ca128e9e6505f366e14a3ba9cf295362bd36028296eb34",
+  "existingHostBuild": {
+    "report": "implementation/warlock/qa/runs/taskbar-primary-1791676052328253053/report.json",
+    "reportSHA256": "89e5fbaddb242bcc14ceb19b5147b9fde1991c54916d6a1d22bed45cd95ec3df",
+    "byteIdentical": true
+  },
+  "nativePair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
+      "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791666305509919483/elm-window-geometry-authority.so",
+      "sha256": "c428e1e6e2b2f9e41b3c5218e3dd37fb6551f09bee6b3531876fb3d3c674948a"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+      "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
+    }
+  },
+  "archive": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/release-input-lock-1791678462103705379/build/warlock-candidate.tar",
+    "sha256": "6e018cf6e602e5adf5e3d3edc2e955a84126720fd796d5f6ea4b88dc3436e8e8",
+    "bytes": 26030080,
+    "published": false
+  },
+  "scenarioAccepted": false,
+  "requirementAccepted": false,
+  "fullReleaseAccepted": false,
+  "missingObservations": [
+    "Complete compiler/build-tool upstream source provenance and redistribution disposition.",
+    "Two clean isolated offline builds and distributable comparison.",
+    "Native acceptance of a newly compiled host and full main-session deployment.",
+    "Independent original-scenario review.",
+    "Closed input inventory verified in isolated offline environments and package SBOM/notices/redistribution disposition."
+  ],
+  "files": {
+    "README.md": "e8bd17057261bdf94251c346ecd51d80de378877c99d08a2357ebc71e6df8913",
+    "build-report.json": "fba1ddbd9ce5cbbaae400746cc753cf578f0942f75b2cb8fc58bef0f934c5963",
+    "cross-scope-verify.json": "72cb3a3babeec2d4112eb73d7576a8a86844d9429879d7277ccd7470ddb2f940",
+    "cross-scope-verify.stderr": "218cddfca9c1b7dbcebc0efbd628a436d924a188c35dd3e1dda64f477cab75c6",
+    "cross-scope-verify.stdout": "d62ee4f3270ff70a12e3953e71779bbec70cb1e6465e41e6bde7908f10ad6791",
+    "history/report-1791678019248643272.json": "d5907559852c49712b4000926aa01018a4b8ee187413801789c2740308608844",
+    "history/report-1791678249220638764.json": "cf047bb8fffa0bcfe8092b5eed2e738fc83c28a1635e4bddc30da696f4d8aa5d",
+    "logs/client-producer.cpp.d": "8ee5ca88d626f00553d218ed9cd7c0bfb1d8df33ea392486d9da4726f129a21f",
+    "logs/compile-Bar.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/compile-Bar.stdout": "c739b6d04713994eeec409f2d6abad44074a629c0c9485b274fb9a70200e032c",
+    "logs/compile-Main.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/compile-Main.stdout": "183f5857e232f80398b61eea1e968b51e9b270671777d054186fa46651147627",
+    "logs/compile-NewInstanceReplay.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/compile-NewInstanceReplay.stdout": "f174480cb7294d4e7056135fd36e4d7dc2dfeb4a08ce00b00c8bdad71ce67a89",
+    "logs/compile-Popup.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/compile-Popup.stdout": "fb9f01e07f4c7a30ab10ec91b6437a6a4d9448c93566f14eafeb5814373094b3",
+    "logs/compile-client-producer.cpp.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/compile-client-producer.cpp.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/compile-elm-preview-policy.cpp.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/compile-elm-preview-policy.cpp.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/compile-imported-clients.cpp.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/compile-imported-clients.cpp.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/compile-preview-policy-driver.cpp.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/compile-preview-policy-driver.cpp.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/compile-preview-provider-bootstrap.cpp.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/compile-preview-provider-bootstrap.cpp.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/compile-preview-uri-router.cpp.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/compile-preview-uri-router.cpp.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/compile-preview-uri-webkit.cpp.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/compile-preview-uri-webkit.cpp.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/compile-preview-visual-channel.cpp.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/compile-preview-visual-channel.cpp.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/compile-preview_icons.cpp.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/compile-preview_icons.cpp.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/compile-preview_uri.cpp.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/compile-preview_uri.cpp.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/compile-shared-host.c.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/compile-shared-host.c.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/elm-preview-policy.cpp.d": "e2c30b5e0b1a94ac789e2eea04206d5b5844864c6401db6d64d8e38f7f1b903e",
+    "logs/host-self-test.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/host-self-test.stdout": "3a49b455f1ec5749d7a79a5f4eef54fa41da762aa57be9b6a7958fc56d1b0c20",
+    "logs/imported-clients.cpp.d": "09362f28c43d5e8a011f5f8da76576438a0d488c5036ecced5af9c4e7949e0a1",
+    "logs/link-host.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/link-host.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/preview-policy-driver.cpp.d": "b124a89c609dc4b33a28cb190cc5645666a3b814fe8ffcadf375fef8fe8ed967",
+    "logs/preview-provider-bootstrap.cpp.d": "3dc48ec5a6227eb2367f48d1310990fa0745e34ecb5d0da76a48e64432471928",
+    "logs/preview-uri-router.cpp.d": "fff18207edf31765a7cbbcd42545da10b68119fb4e58fec9e2cd0f919e7cb30f",
+    "logs/preview-uri-webkit.cpp.d": "f49d2fd330c56508c8f532d7fed6b2448c124f193a1af705aa5bba6cd2ecc4c6",
+    "logs/preview-visual-channel.cpp.d": "7cb2a6582c0141015743e2357ef9b149453275a5a756b8cd1a3039a750964afe",
+    "logs/preview_icons.cpp.d": "7cc8fee12d377f225740f1cdb34ae9bc21d30418290431ecff51315d52d31c9b",
+    "logs/preview_uri.cpp.d": "9206e775aa330ff7587619e0b667e60e24405e12ab9011da6352d3823a73f862",
+    "logs/shared-host.c.d": "d1438e81fbb2bc5d533a47e0a4ba341182d5731ccf00183c13cc11de87f725cd",
+    "logs/typed-NewInstanceReplay.stderr": "4689a2e0df2a7e7040dfd521540be861ba74ed4994d5ab2d3f62878f699ee331",
+    "logs/typed-NewInstanceReplay.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "new-instance.json": "4d956d087f3ca7460e4fa7db036170c481fb80a61f99a8ac2425d81a26fe275a",
+    "package-MANIFEST.json": "bf941a16ea020bd80f6d485e28a837fcb68388f084bc6ecfb93401faa8f7d9d9",
+    "report.json": "78668383e9f93ec82c4a8b0aa58b706d833160c32c00c93ec9639b9478b4f727",
+    "source.patch": "7f480d1278e56199764d556af74556d984bb2c52e69e3f0e55ad564a70a03c3e"
+  }
+}

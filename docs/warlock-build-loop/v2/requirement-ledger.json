@@ -760,14 +760,43 @@
       "owner": "Release integration lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "delivery-003",
           "oracle": "every build input resolves to a pinned hashed artifact",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/release-input-lock/manifest.json",
+              "sha256": "46944d678e22e8bfad47e117e77c996bc7ae22b27a4401e2d3f0008ad66707ec"
+            }
+          ],
+          "missingObservation": "Complete compiler/build-tool upstream source provenance and closed offline input inventory.; Two clean isolated offline builds and identical distributable hashes or original blocking disposition.; SBOM, upstream notices and reviewed redistribution; full native/AT/IME/hardware/resources/deployment gates and independent review.",
+          "priorObservations": [
+            {
+              "name": "delivery-003",
+              "oracle": "every build input resolves to a pinned hashed artifact",
+              "status": "unadjudicated",
+              "evidence": [],
+              "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+            }
+          ],
+          "evidenceScope": "Fixed manifest-driven build verifies 9223 inputs, rebuilds three Elm roots/all eleven native host units, passes eighteen build phases/native self-tests/nineteen compiled reducer checks and twelve package/tamper observations; existing assets/host reproduced byte-for-byte, persisted lock verifies in a separate protected process, 26 MB archive assembled locally.",
+          "verificationScope": "Rebuild with the manifest and reject one altered dependency hash.",
+          "sourceHashes": {
+            "implementation/warlock/adapter/release_builder.py": "c463482e4a4874e985c2c1927c6324551baef396e57dfca4ac52b1f56258f1b2",
+            "implementation/warlock/qa/check-release-builder.py": "e225833b81a28853118bc16c2a31b8db2634f32dcc8af796f4d90ffd6c7f7d05",
+            "implementation/warlock/build-lock.json": "9efeec2bf540c86dedeae2b5fd5006ad4071e806a0b4f4ea9f2624d8f7c796b2",
+            "implementation/warlock/RELEASE.md": "44ff1873b6f94d265b8c2417ca20d8291bb829bdfa8ee30184d23f07986fcecd",
+            "implementation/warlock/README.md": "b30eb5c7735f973f3f4834e99ace91c70b96f9f6477cfde199d1a9496b2485e9"
+          },
+          "reviewer": {
+            "name": "root-release-input-lock",
+            "independent": false,
+            "disposition": "partial"
+          },
+          "scenarioAccepted": false
         }
       ]
     },
@@ -12562,5 +12591,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-11T00:11:02.124604+00:00"
+  "updatedUTC": "2026-10-11T00:35:13.646927+00:00"
 }

@@ -1,0 +1,135 @@
+{
+  "passed": true,
+  "requirements": [
+    "ELM-DEL-003"
+  ],
+  "scenarios": [
+    "delivery-003"
+  ],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "checks": [
+    {
+      "name": "OriginalInputLockVerifies",
+      "passed": true
+    },
+    {
+      "name": "FreshRelocatedSourceSnapshotVerifies",
+      "passed": true
+    },
+    {
+      "name": "ManifestBuildCompleted",
+      "passed": true
+    },
+    {
+      "name": "AllThreeCompiledProductionAssetsMatch",
+      "passed": true
+    },
+    {
+      "name": "DirectCompiledReducerRegressionPasses",
+      "passed": true
+    },
+    {
+      "name": "CurrentExactNativePairRetained",
+      "passed": true
+    },
+    {
+      "name": "AlteredActualBuildSourceRefused",
+      "passed": true
+    },
+    {
+      "name": "RestoredDependencyVerifiesWithoutRebaseline",
+      "passed": true
+    },
+    {
+      "name": "ChangedArtifactAliasRefusedEvenWithSameBytes",
+      "passed": true
+    }
+  ],
+  "alteredDependencyOutcome": "Locked input changed: /home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/release-input-lock-1791678019248643272/input-candidate/src/Main.elm",
+  "inputCount": 9148,
+  "originalLockSHA256": "31cfef2597ce26bef978b4b9a9e55cb443e4f31df5c17f4201745248e8c4e5c1",
+  "relocatedLockSHA256": "ffede801b779268bc04a5085c8065e11a0789edad4ace1488b4f43aa3a499f01",
+  "builderSHA256": "264d148fb953a7b1d7f7929c1536f202113b91a0b7ca0b6068c54134c8964ae1",
+  "rebuiltHostSHA256": "b276c031f945431c10ca128e9e6505f366e14a3ba9cf295362bd36028296eb34",
+  "compiledAssets": {
+    "elm.js": "700524b6a1da72905daeecffd74216143bcf9242ea13c13d01f8bce3e1665be5",
+    "bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+    "popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43"
+  },
+  "nativePair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
+      "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791666305509919483/elm-window-geometry-authority.so",
+      "sha256": "c428e1e6e2b2f9e41b3c5218e3dd37fb6551f09bee6b3531876fb3d3c674948a"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+      "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
+    }
+  },
+  "toolVersions": {
+    "cc": {
+      "path": "/usr/bin/cc",
+      "version": "cc (GCC) 16.2.1 20260810\nCopyright (C) 2026 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE."
+    },
+    "g++": {
+      "path": "/usr/bin/g++",
+      "version": "g++ (GCC) 16.2.1 20260810\nCopyright (C) 2026 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE."
+    },
+    "pkg-config": {
+      "path": "/usr/bin/pkg-config",
+      "version": "3.0.7"
+    },
+    "node": {
+      "path": "/home/hoskinson/.local/share/mise/installs/node/latest/bin/node",
+      "version": "v26.10.0"
+    },
+    "python3": {
+      "path": "/usr/bin/python3",
+      "version": "Python 3.14.7"
+    },
+    "quint": {
+      "path": "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+      "version": "0.33.0"
+    },
+    "as": {
+      "path": "/usr/bin/as",
+      "version": "GNU assembler (GNU Binutils) 2.47\nCopyright (C) 2026 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or later.\nThis program has absolutely no warranty.\nThis assembler was configured for a target of `x86_64-pc-linux-gnu'."
+    },
+    "ld": {
+      "path": "/usr/bin/ld",
+      "version": "GNU ld (GNU Binutils) 2.47\nCopyright (C) 2026 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or (at your option) a later version.\nThis program has absolutely no warranty."
+    },
+    "ar": {
+      "path": "/usr/bin/ar",
+      "version": "GNU ar (GNU Binutils) 2.47\nCopyright (C) 2026 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or (at your option) any later version.\nThis program has absolutely no warranty."
+    },
+    "ldd": {
+      "path": "/usr/bin/ldd",
+      "version": null
+    },
+    "bash": {
+      "path": "/usr/bin/bash",
+      "version": null
+    },
+    "env": {
+      "path": "/usr/bin/env",
+      "version": null
+    },
+    "elm": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock-preview-provider-v143/qa/toolchain/npm-package/node_modules/@elm_binaries/linux_x64/elm",
+      "version": "0.19.2"
+    }
+  },
+  "scope": "Fixed manifest rebuild of three production Elm roots and all eleven native host units, native self-tests and compiled reducer; retained core/plugin artifacts and actual consumed-source/alias tamper refusal. No complete upstream source-provenance, offline clean reproducibility, native GUI or redistribution acceptance.",
+  "missingObservations": [
+    "Complete compiler/build-tool upstream source provenance and redistribution disposition.",
+    "Two clean isolated offline builds and distributable comparison.",
+    "Native acceptance of a newly compiled host and full main-session deployment.",
+    "Independent original-scenario review."
+  ]
+}

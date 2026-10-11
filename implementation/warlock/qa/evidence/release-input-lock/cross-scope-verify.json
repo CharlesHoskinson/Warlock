@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/window-integration-qa/qa_run.py",
+    "--",
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock/adapter/release_builder.py",
+    "verify",
+    "--lock",
+    "/home/hoskinson/omarchy-windows-parity/implementation/warlock/build-lock.json",
+    "--sha256",
+    "9efeec2bf540c86dedeae2b5fd5006ad4071e806a0b4f4ea9f2624d8f7c796b2"
+  ],
+  "exitCode": 0,
+  "lockSHA256": "9efeec2bf540c86dedeae2b5fd5006ad4071e806a0b4f4ea9f2624d8f7c796b2"
+}
