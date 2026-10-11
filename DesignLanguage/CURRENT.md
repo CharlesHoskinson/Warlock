@@ -231,3 +231,17 @@ is a prepared candidate: source provenance/notices, isolated offline
 reproducibility, full native/AT/IME/hardware/resources and reversible main-session
 deployment remain required. These build observations do not upgrade browser
 specimens or component evidence to release acceptance.
+
+
+## Offline candidate rebuilds
+
+[The offline release campaign](../implementation/warlock/qa/evidence/offline-reproducibility/README.md)
+now rebuilds the fixed candidate recipe twice with closed read-only locked inputs
+and separate network/filesystem/process namespaces. Both actual payload and
+archive hashes agree; altered files, archives or same-content loader aliases
+block release. Existing Elm assets, native host and the exact native tuple retain
+their bytes, so this package work introduces no new visual specimen or authority.
+The preserved build logs and source/input hashes qualify the recorded owner
+observation only. Independent acceptance, complete source provenance/SBOM/notices,
+native AT/IME/hardware/resources/journeys, accepted Omarchy fallback and reversible
+main-session deployment remain required.

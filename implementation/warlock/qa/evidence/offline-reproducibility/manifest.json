@@ -1,0 +1,272 @@
+{
+  "schema": 1,
+  "generatedUTC": "2026-10-11T00:58:41.182985+00:00",
+  "requirements": [
+    "ELM-DEL-004"
+  ],
+  "scenarios": [
+    "delivery-004"
+  ],
+  "oracle": "distributable hashes match or release is blocked",
+  "sourceBaseRevision": "e8e98fb361409025d2724dd4ea60cd1a9d4aab5c",
+  "sourceHashes": {
+    "implementation/warlock/adapter/release_repro.py": "68107841f4514394091740799c6b2b1983a2e6a4708e3a490e40b61729f38986",
+    "implementation/warlock/adapter/release_builder.py": "ba96d41441bee2a2632af02bcff4ef1be6e57405ca744b6cc6a53b6f6ffa7763",
+    "implementation/warlock/qa/check-release-repro.py": "f6913a8e47336cb470494fe352202f818b0a55fc2b0b90dead19d29972b787ac",
+    "implementation/warlock/build-lock.json": "9507f772afbedaf6ff11bf184e57513066f402d954a753599de87c05ca465358",
+    "implementation/warlock/RELEASE.md": "973ad17b82ecbd24ce304f2e1d73815531b82cdd82bcd726d629a04360207190",
+    "implementation/warlock/README.md": "64d15cee43b3e43f63126e7609fa53d6c4f6d3e2653dbba6bcb90d5242dcfdfe"
+  },
+  "lock": {
+    "path": "implementation/warlock/build-lock.json",
+    "sha256": "9507f772afbedaf6ff11bf184e57513066f402d954a753599de87c05ca465358",
+    "inputs": 9226,
+    "aliases": 246
+  },
+  "scope": "Two fresh isolated offline fixed-recipe builds, actual payload/archive/alias comparison and tamper refusal; retained exact native tuple, no full release acceptance.",
+  "archives": [
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/offline-reproducibility-1791680158984706263/pair/A/artifacts/warlock-candidate.tar",
+      "sha256": "43e050f6a67a3bab8b1e7549bcc453dc6443d1cd8faa15c96cd91aa237e64744",
+      "bytes": 26040320,
+      "published": false
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/offline-reproducibility-1791680158984706263/pair/B/artifacts/warlock-candidate.tar",
+      "sha256": "43e050f6a67a3bab8b1e7549bcc453dc6443d1cd8faa15c96cd91aa237e64744",
+      "bytes": 26040320,
+      "published": false
+    }
+  ],
+  "payloadFileCount": 56,
+  "buildPhasesPerBuild": 18,
+  "compiledReducerChecksPerBuild": 19,
+  "compiledAssets": {
+    "elm.js": "700524b6a1da72905daeecffd74216143bcf9242ea13c13d01f8bce3e1665be5",
+    "bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+    "popup.js": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43"
+  },
+  "hostSHA256": "b276c031f945431c10ca128e9e6505f366e14a3ba9cf295362bd36028296eb34",
+  "existingHostBuild": {
+    "report": "implementation/warlock/qa/runs/taskbar-primary-1791676052328253053/report.json",
+    "reportSHA256": "89e5fbaddb242bcc14ceb19b5147b9fde1991c54916d6a1d22bed45cd95ec3df",
+    "byteIdentical": true
+  },
+  "nativePair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
+      "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791666305509919483/elm-window-geometry-authority.so",
+      "sha256": "c428e1e6e2b2f9e41b3c5218e3dd37fb6551f09bee6b3531876fb3d3c674948a"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+      "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
+    }
+  },
+  "historicalRuns": [
+    {
+      "path": "implementation/warlock/qa/runs/offline-reproducibility-1791679306869120787",
+      "files": {},
+      "currentEvidence": false
+    },
+    {
+      "path": "implementation/warlock/qa/runs/offline-reproducibility-1791679857936114690",
+      "files": {
+        "implementation/warlock/qa/runs/offline-reproducibility-1791679857936114690/build-lock.json": "ce897ca2053e3e00a3d486276a6b040d40ed7ba3e39bc311da397add78451833",
+        "implementation/warlock/qa/runs/offline-reproducibility-1791679857936114690/pair/A/sandbox.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "implementation/warlock/qa/runs/offline-reproducibility-1791679857936114690/pair/A/sandbox.stderr": "3332648706e2c4a8f8e7243825c4792053d1ca6c00f05641535b07e7e181c5ca",
+        "implementation/warlock/qa/runs/offline-reproducibility-1791679857936114690/pair/A/sandbox-args.json": "40e2cc87e967a99263764c00d77e26a9379e0d499a6afe607c713e2f18053ab2"
+      },
+      "currentEvidence": false
+    },
+    {
+      "path": "implementation/warlock/qa/runs/offline-reproducibility-1791679931521226182",
+      "files": {
+        "implementation/warlock/qa/runs/offline-reproducibility-1791679931521226182/build-lock.json": "336ba355699824c166ef625211e457699a95f8c75ea44ce9c91faba3de4cc67e",
+        "implementation/warlock/qa/runs/offline-reproducibility-1791679931521226182/pair/A/sandbox.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "implementation/warlock/qa/runs/offline-reproducibility-1791679931521226182/pair/A/sandbox.stderr": "fca4e89b2de649a34157973d8c109defd5563418e58b3940baac822b1a028fca",
+        "implementation/warlock/qa/runs/offline-reproducibility-1791679931521226182/pair/A/sandbox-args.json": "1c4be1f1920018157ff978dcca8e67d94d576f3b06a1431deb97c452909cdb55"
+      },
+      "currentEvidence": false
+    },
+    {
+      "path": "implementation/warlock/qa/runs/offline-reproducibility-1791679965109002939",
+      "files": {
+        "implementation/warlock/qa/runs/offline-reproducibility-1791679965109002939/build-lock.json": "b26b70578daa69eafd341d9c20737bb47ce9a0d5f9ec795c3da55393263c1689",
+        "implementation/warlock/qa/runs/offline-reproducibility-1791679965109002939/pair/A/sandbox.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "implementation/warlock/qa/runs/offline-reproducibility-1791679965109002939/pair/A/sandbox.stderr": "a7e413d64f629dd2e332475fbfa2505413d1389f476f8259cc453c6ea30740ea",
+        "implementation/warlock/qa/runs/offline-reproducibility-1791679965109002939/pair/A/sandbox-args.json": "cb1433be06e1a0b3d2bbd9486c86dd285739580f3f963d550db98cb2e58f836e"
+      },
+      "currentEvidence": false
+    },
+    {
+      "path": "implementation/warlock/qa/runs/offline-reproducibility-1791679991318581290",
+      "files": {
+        "implementation/warlock/qa/runs/offline-reproducibility-1791679991318581290/build-lock.json": "4f9555d3043896f48fbccffe88a5bf679347d7c80a3eb623fb484fed5213f211",
+        "implementation/warlock/qa/runs/offline-reproducibility-1791679991318581290/pair/A/sandbox.stdout": "18ae365918b5c7837fb3d222092dc27b21ac0e6aad4c98474f044d3b070272c5",
+        "implementation/warlock/qa/runs/offline-reproducibility-1791679991318581290/pair/A/sandbox.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "implementation/warlock/qa/runs/offline-reproducibility-1791679991318581290/pair/A/sandbox-args.json": "246cb2e3c0995a0d0d87e9be82c30ceccc3a284ef8b0f68b4aa07a9a8057471c",
+        "implementation/warlock/qa/runs/offline-reproducibility-1791679991318581290/pair/A/artifacts/link-host.stderr": "c3fc83355aabf81aa3c78237a24c1c93e3d42a3bcb560d7d119fe11b9c1eb2e7"
+      },
+      "currentEvidence": false
+    },
+    {
+      "path": "implementation/warlock/qa/runs/offline-reproducibility-1791680041217629820",
+      "files": {
+        "implementation/warlock/qa/runs/offline-reproducibility-1791680041217629820/build-lock.json": "58b758885fe5a5ca1f41ac3f3c4938a9eba6d77bdca46180b4b2ace3ff49a5d9",
+        "implementation/warlock/qa/runs/offline-reproducibility-1791680041217629820/pair/A/sandbox.stdout": "b4d4e04f8572ec4617cd723fdd47a446705430386239cd4d0d69ef5974d33dbe",
+        "implementation/warlock/qa/runs/offline-reproducibility-1791680041217629820/pair/A/sandbox.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "implementation/warlock/qa/runs/offline-reproducibility-1791680041217629820/pair/A/sandbox-args.json": "7ffbf27bdb6b879be99c975448904a680194ca530bd571e218ec55285c264859",
+        "implementation/warlock/qa/runs/offline-reproducibility-1791680041217629820/pair/A/artifacts/link-host.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "currentEvidence": false
+    }
+  ],
+  "scenarioAccepted": false,
+  "requirementAccepted": false,
+  "fullReleaseAccepted": false,
+  "missingObservations": [
+    "Independent original-scenario acceptance review.",
+    "Complete compiler/build-tool upstream source provenance, SBOM/notices/redistribution disposition.",
+    "Full native AT/IME/hardware/resources/journeys, accepted Omarchy fallback and reversible main-session deployment."
+  ],
+  "files": {
+    "A/environment.json": "3142bf8ef7dd13a6ea29a045eb4a946c7262ce564bdfe81b3e18ee53ed97f3c4",
+    "A/logs/client-producer.cpp.d": "c1ac9dea794bd5d489927d28e2cf4b230d86fb3192a42277fc14cb14b13c388f",
+    "A/logs/compile-Bar.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "A/logs/compile-Bar.stdout": "c739b6d04713994eeec409f2d6abad44074a629c0c9485b274fb9a70200e032c",
+    "A/logs/compile-Main.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "A/logs/compile-Main.stdout": "183f5857e232f80398b61eea1e968b51e9b270671777d054186fa46651147627",
+    "A/logs/compile-NewInstanceReplay.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "A/logs/compile-NewInstanceReplay.stdout": "7161bec4d886d1774f69eb0a5c019bc68574ef2c85e832d3612b82bbfc036ef4",
+    "A/logs/compile-Popup.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "A/logs/compile-Popup.stdout": "fb9f01e07f4c7a30ab10ec91b6437a6a4d9448c93566f14eafeb5814373094b3",
+    "A/logs/compile-client-producer.cpp.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "A/logs/compile-client-producer.cpp.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "A/logs/compile-elm-preview-policy.cpp.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "A/logs/compile-elm-preview-policy.cpp.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "A/logs/compile-imported-clients.cpp.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "A/logs/compile-imported-clients.cpp.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "A/logs/compile-preview-policy-driver.cpp.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "A/logs/compile-preview-policy-driver.cpp.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "A/logs/compile-preview-provider-bootstrap.cpp.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "A/logs/compile-preview-provider-bootstrap.cpp.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "A/logs/compile-preview-uri-router.cpp.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "A/logs/compile-preview-uri-router.cpp.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "A/logs/compile-preview-uri-webkit.cpp.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "A/logs/compile-preview-uri-webkit.cpp.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "A/logs/compile-preview-visual-channel.cpp.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "A/logs/compile-preview-visual-channel.cpp.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "A/logs/compile-preview_icons.cpp.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "A/logs/compile-preview_icons.cpp.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "A/logs/compile-preview_uri.cpp.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "A/logs/compile-preview_uri.cpp.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "A/logs/compile-shared-host.c.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "A/logs/compile-shared-host.c.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "A/logs/elm-preview-policy.cpp.d": "9c450d1d9596235be6e96d79d41e0ad2f47644339a32af92c5e0ad1b01e0dae0",
+    "A/logs/host-self-test.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "A/logs/host-self-test.stdout": "f08535cc879cc51219b726954ec6fad2758e61512e3637500a2d2a2ac1fb2c54",
+    "A/logs/imported-clients.cpp.d": "ac296d9df6512482bba6a6a926ff1a9113822576f85477bcc401c31e69438487",
+    "A/logs/link-host.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "A/logs/link-host.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "A/logs/preview-policy-driver.cpp.d": "9e0c2c19edaa6e0a514477d04baf8dc631406c8363c5f8b8814dbdff4a647625",
+    "A/logs/preview-provider-bootstrap.cpp.d": "342fdf62057452638f279b90d57aba9b0ff8b9555804e6b11ee6046cd0c30700",
+    "A/logs/preview-uri-router.cpp.d": "d503b271d03218f0104b0a3c003f95a4ebb52ae585424d982a16f085c4b41c88",
+    "A/logs/preview-uri-webkit.cpp.d": "a052281d0526be72ee40ab6510e32faef0acb61d6bb7901a3cf0a48733c4fd6a",
+    "A/logs/preview-visual-channel.cpp.d": "d7830afd5e6c2be934c87e4b4f1844ac0d235fa0d3afbd6e9e162adfca11c7f3",
+    "A/logs/preview_icons.cpp.d": "af527b01e96121d4e4bfc24573efe2fd546c33e3784af6e55634866695236ddb",
+    "A/logs/preview_uri.cpp.d": "f064a6e3c3fc1a1e9d3466163dee98205f47191357cfacb03a25012f31f28f2c",
+    "A/logs/shared-host.c.d": "9f011781ff05c1c3358929170529ed1c09aff727b92d58536b257ab08b254b34",
+    "A/logs/typed-NewInstanceReplay.stderr": "4689a2e0df2a7e7040dfd521540be861ba74ed4994d5ab2d3f62878f699ee331",
+    "A/logs/typed-NewInstanceReplay.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "A/new-instance.json": "4d956d087f3ca7460e4fa7db036170c481fb80a61f99a8ac2425d81a26fe275a",
+    "A/package-MANIFEST.json": "a560d2c2b4839a1a19ba8725614722eb78ebf502830f7d8b249d691e2613e385",
+    "A/report.json": "39777077f85d712d4955b926ff2c2865840b4bcd2865185d3a5905ec507d0aee",
+    "A/sandbox-args.json": "7345a928952d4ca8d7478875d94e38e8424da695327dd977e4833fc79874449e",
+    "A/sandbox.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "A/sandbox.stdout": "b4d4e04f8572ec4617cd723fdd47a446705430386239cd4d0d69ef5974d33dbe",
+    "B/environment.json": "1ce8ea833a4eb5335808b80f31fc0a40c9dd20d72d909821ce8a1873d01913ed",
+    "B/logs/client-producer.cpp.d": "c1ac9dea794bd5d489927d28e2cf4b230d86fb3192a42277fc14cb14b13c388f",
+    "B/logs/compile-Bar.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "B/logs/compile-Bar.stdout": "c739b6d04713994eeec409f2d6abad44074a629c0c9485b274fb9a70200e032c",
+    "B/logs/compile-Main.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "B/logs/compile-Main.stdout": "183f5857e232f80398b61eea1e968b51e9b270671777d054186fa46651147627",
+    "B/logs/compile-NewInstanceReplay.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "B/logs/compile-NewInstanceReplay.stdout": "7161bec4d886d1774f69eb0a5c019bc68574ef2c85e832d3612b82bbfc036ef4",
+    "B/logs/compile-Popup.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "B/logs/compile-Popup.stdout": "fb9f01e07f4c7a30ab10ec91b6437a6a4d9448c93566f14eafeb5814373094b3",
+    "B/logs/compile-client-producer.cpp.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "B/logs/compile-client-producer.cpp.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "B/logs/compile-elm-preview-policy.cpp.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "B/logs/compile-elm-preview-policy.cpp.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "B/logs/compile-imported-clients.cpp.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "B/logs/compile-imported-clients.cpp.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "B/logs/compile-preview-policy-driver.cpp.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "B/logs/compile-preview-policy-driver.cpp.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "B/logs/compile-preview-provider-bootstrap.cpp.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "B/logs/compile-preview-provider-bootstrap.cpp.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "B/logs/compile-preview-uri-router.cpp.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "B/logs/compile-preview-uri-router.cpp.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "B/logs/compile-preview-uri-webkit.cpp.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "B/logs/compile-preview-uri-webkit.cpp.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "B/logs/compile-preview-visual-channel.cpp.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "B/logs/compile-preview-visual-channel.cpp.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "B/logs/compile-preview_icons.cpp.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "B/logs/compile-preview_icons.cpp.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "B/logs/compile-preview_uri.cpp.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "B/logs/compile-preview_uri.cpp.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "B/logs/compile-shared-host.c.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "B/logs/compile-shared-host.c.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "B/logs/elm-preview-policy.cpp.d": "9c450d1d9596235be6e96d79d41e0ad2f47644339a32af92c5e0ad1b01e0dae0",
+    "B/logs/host-self-test.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "B/logs/host-self-test.stdout": "1fc0409abbacf624b4b6f8fc9006faa1609950d43b019ced16da6d5d3e722378",
+    "B/logs/imported-clients.cpp.d": "ac296d9df6512482bba6a6a926ff1a9113822576f85477bcc401c31e69438487",
+    "B/logs/link-host.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "B/logs/link-host.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "B/logs/preview-policy-driver.cpp.d": "9e0c2c19edaa6e0a514477d04baf8dc631406c8363c5f8b8814dbdff4a647625",
+    "B/logs/preview-provider-bootstrap.cpp.d": "342fdf62057452638f279b90d57aba9b0ff8b9555804e6b11ee6046cd0c30700",
+    "B/logs/preview-uri-router.cpp.d": "d503b271d03218f0104b0a3c003f95a4ebb52ae585424d982a16f085c4b41c88",
+    "B/logs/preview-uri-webkit.cpp.d": "a052281d0526be72ee40ab6510e32faef0acb61d6bb7901a3cf0a48733c4fd6a",
+    "B/logs/preview-visual-channel.cpp.d": "d7830afd5e6c2be934c87e4b4f1844ac0d235fa0d3afbd6e9e162adfca11c7f3",
+    "B/logs/preview_icons.cpp.d": "af527b01e96121d4e4bfc24573efe2fd546c33e3784af6e55634866695236ddb",
+    "B/logs/preview_uri.cpp.d": "f064a6e3c3fc1a1e9d3466163dee98205f47191357cfacb03a25012f31f28f2c",
+    "B/logs/shared-host.c.d": "9f011781ff05c1c3358929170529ed1c09aff727b92d58536b257ab08b254b34",
+    "B/logs/typed-NewInstanceReplay.stderr": "4689a2e0df2a7e7040dfd521540be861ba74ed4994d5ab2d3f62878f699ee331",
+    "B/logs/typed-NewInstanceReplay.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "B/new-instance.json": "4d956d087f3ca7460e4fa7db036170c481fb80a61f99a8ac2425d81a26fe275a",
+    "B/package-MANIFEST.json": "a560d2c2b4839a1a19ba8725614722eb78ebf502830f7d8b249d691e2613e385",
+    "B/report.json": "39777077f85d712d4955b926ff2c2865840b4bcd2865185d3a5905ec507d0aee",
+    "B/sandbox-args.json": "609ba9c694c1b51900dce91e21e269e431a7d33a1ac61ee6a2b07baacb27055a",
+    "B/sandbox.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "B/sandbox.stdout": "b4d4e04f8572ec4617cd723fdd47a446705430386239cd4d0d69ef5974d33dbe",
+    "README.md": "47047027611224f618964c78af4900094cd943422354d4c79d957406d3a08843",
+    "cross-scope-verify.stderr": "b738075d12f065d31a45379875420efb9e672aa9efde990ca94c8a2739b58526",
+    "cross-scope-verify.stdout": "a02f334e591c01cfd25a6ca3eee173518a9847076074fe60bd10b33660f523cc",
+    "history/1791679306869120787/report.json": "7d81d2d35fb162d52483cb65edd7386af4620e17ef1b29a2cd324ac3f95daa11",
+    "history/1791679857936114690/pair/A/sandbox.stderr": "3332648706e2c4a8f8e7243825c4792053d1ca6c00f05641535b07e7e181c5ca",
+    "history/1791679857936114690/pair/A/sandbox.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "history/1791679857936114690/report.json": "fee00e969dc7276e016d69db211471c887b94f2cfaec5a9c593d255e891c9a4e",
+    "history/1791679931521226182/pair/A/sandbox.stderr": "fca4e89b2de649a34157973d8c109defd5563418e58b3940baac822b1a028fca",
+    "history/1791679931521226182/pair/A/sandbox.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "history/1791679931521226182/report.json": "8d3032377d0d5a97f69c6420e404be20996a7d12bbd49ad12de4f2ac3f0f234e",
+    "history/1791679965109002939/pair/A/sandbox.stderr": "a7e413d64f629dd2e332475fbfa2505413d1389f476f8259cc453c6ea30740ea",
+    "history/1791679965109002939/pair/A/sandbox.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "history/1791679965109002939/report.json": "e3f88de86d9e1cafe21eebb572591d3388afcae9b2c29c8de1f107c162501e27",
+    "history/1791679991318581290/pair/A/artifacts/link-host.stderr": "c3fc83355aabf81aa3c78237a24c1c93e3d42a3bcb560d7d119fe11b9c1eb2e7",
+    "history/1791679991318581290/pair/A/sandbox.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "history/1791679991318581290/pair/A/sandbox.stdout": "18ae365918b5c7837fb3d222092dc27b21ac0e6aad4c98474f044d3b070272c5",
+    "history/1791679991318581290/report.json": "42293c819e77714f283f55269a53c31065afedb0490786591bf38008b9255a5b",
+    "history/1791680041217629820/pair/A/artifacts/link-host.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "history/1791680041217629820/pair/A/sandbox.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "history/1791680041217629820/pair/A/sandbox.stdout": "b4d4e04f8572ec4617cd723fdd47a446705430386239cd4d0d69ef5974d33dbe",
+    "history/1791680041217629820/report.json": "da6861453cf7272305b6d394dc9aa8b98f1af35440da7a827fc0e1f3dfd3f5ef",
+    "probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "probe.stdout": "2686696893e99ecff914b8c0097a289c728c19f4c6cb0ec17c41363b8feddc15",
+    "report.json": "6fd3793ad56e07a3d75cc502e4a4c11ebd1750641a0a3670be87887b39b73701",
+    "reproducibility-report.json": "038b99a90aaa9363cb44af343e31942922842c12d0d37d16a6d959f2d4ee8d0e",
+    "source.patch": "874a119e4b4a26c117971f800343a489fd51ce83a7ee190565878242da5ba239"
+  }
+}

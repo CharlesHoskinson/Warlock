@@ -1,0 +1,71 @@
+{
+  "matched": true,
+  "releaseBlocked": false,
+  "differentInputs": [],
+  "distributableDifferences": [],
+  "archiveHashes": [
+    "43e050f6a67a3bab8b1e7549bcc453dc6443d1cd8faa15c96cd91aa237e64744",
+    "43e050f6a67a3bab8b1e7549bcc453dc6443d1cd8faa15c96cd91aa237e64744"
+  ],
+  "inputContentHashes": [
+    "5b0f502a0e14279e2f763f4c7594eb95477f546d1ccf7775e76a8ccd59ca4210",
+    "5b0f502a0e14279e2f763f4c7594eb95477f546d1ccf7775e76a8ccd59ca4210"
+  ],
+  "payloadFileCount": 56,
+  "builds": [
+    {
+      "label": "A",
+      "exitCode": 0,
+      "argumentsSHA256": "0c2d84696471b330fc4a526eba38892c4f1f1fd98a0b4741af4e21a0434f989e",
+      "environment": {
+        "namespaces": {
+          "net": "net:[4026533355]",
+          "mnt": "mnt:[4026533351]",
+          "pid": "pid:[4026533354]"
+        },
+        "networkBlocked": true,
+        "readOnlySource": true,
+        "hostMarkerHidden": true,
+        "coreLimit": [
+          1,
+          1
+        ],
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-18ed3d45949b41169034100ffad40394.scope\n"
+      }
+    },
+    {
+      "label": "B",
+      "exitCode": 0,
+      "argumentsSHA256": "7cb4f68bd29bb05c35ad877a282979d78b3855584f2ef50e2b368e1e937b2242",
+      "environment": {
+        "namespaces": {
+          "net": "net:[4026533408]",
+          "mnt": "mnt:[4026533352]",
+          "pid": "pid:[4026533370]"
+        },
+        "networkBlocked": true,
+        "readOnlySource": true,
+        "hostMarkerHidden": true,
+        "coreLimit": [
+          1,
+          1
+        ],
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-18ed3d45949b41169034100ffad40394.scope\n"
+      }
+    }
+  ],
+  "parentNamespaces": {
+    "net": "net:[4026531833]",
+    "mnt": "mnt:[4026531832]",
+    "pid": "pid:[4026531836]"
+  },
+  "snapshot": {
+    "canonicalFiles": 9064,
+    "symlinks": 246,
+    "lockSHA256": "9507f772afbedaf6ff11bf184e57513066f402d954a753599de87c05ca465358",
+    "inputFileHashesSHA256": "8a3716cf2d3d33fe03024ae9c026dea1bb2cf3a27adccc37b9390ec59828dc7a"
+  },
+  "lockSHA256": "9507f772afbedaf6ff11bf184e57513066f402d954a753599de87c05ca465358",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

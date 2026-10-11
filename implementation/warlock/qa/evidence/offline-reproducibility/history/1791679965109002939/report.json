@@ -1,0 +1,100 @@
+{
+  "passed": false,
+  "probe": {
+    "passed": true,
+    "command": [
+      "/usr/bin/bwrap",
+      "--unshare-user",
+      "--unshare-pid",
+      "--unshare-net",
+      "--unshare-ipc",
+      "--unshare-uts",
+      "--die-with-parent",
+      "--new-session",
+      "--ro-bind",
+      "/usr",
+      "/usr",
+      "--symlink",
+      "usr/lib",
+      "/lib",
+      "--symlink",
+      "usr/lib",
+      "/lib64",
+      "--symlink",
+      "usr/bin",
+      "/bin",
+      "--dir",
+      "/etc",
+      "--ro-bind",
+      "/etc/ld.so.cache",
+      "/etc/ld.so.cache",
+      "--proc",
+      "/proc",
+      "--dev",
+      "/dev",
+      "--tmpfs",
+      "/tmp",
+      "--",
+      "/usr/bin/python3",
+      "-B",
+      "-c",
+      "import errno,json,os,pathlib,resource,socket,sys\nconnection=socket.socket();connection.settimeout(1)\ntry:connection.connect(('127.0.0.1',int(sys.argv[1])));blocked=False\nexcept OSError as error:blocked=True;reason=error.errno\nconnection.close()\ntry:fd=os.open('/usr/bin/python3',os.O_WRONLY);os.close(fd);read_only=False\nexcept OSError as error:read_only=error.errno in (errno.EROFS,errno.EACCES)\nprint(json.dumps({'namespaces':{n:os.readlink('/proc/self/ns/'+n) for n in ('net','mnt','pid')},\n 'networkBlocked':blocked,'readOnlyInputs':read_only,'coreLimit':list(resource.getrlimit(resource.RLIMIT_CORE)),\n 'cgroup':pathlib.Path('/proc/self/cgroup').read_text(),'hiddenHostSource':not pathlib.Path(sys.argv[2]).exists()}))\n",
+      "59013",
+      "/home/hoskinson/omarchy-windows-parity/implementation/warlock"
+    ],
+    "exitCode": 0,
+    "parentNamespaces": {
+      "net": "net:[4026531833]",
+      "mnt": "mnt:[4026531832]",
+      "pid": "pid:[4026531836]"
+    },
+    "nativeAcceptance": false,
+    "fullReleaseAccepted": false,
+    "observed": {
+      "namespaces": {
+        "net": "net:[4026533355]",
+        "mnt": "mnt:[4026533351]",
+        "pid": "pid:[4026533354]"
+      },
+      "networkBlocked": true,
+      "readOnlyInputs": true,
+      "coreLimit": [
+        1,
+        1
+      ],
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-f90361d4beed459dbf7a39dae5a63a90.scope\n",
+      "hiddenHostSource": true
+    }
+  },
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "lockSHA256": "b26b70578daa69eafd341d9c20737bb47ce9a0d5f9ec795c3da55393263c1689",
+  "inputCount": 9199,
+  "pair": {
+    "matched": false,
+    "releaseBlocked": true,
+    "error": "Offline build A failed: Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/warlock/adapter/release_repro.py\", line 209, in <module>\n    raise SystemExit(main())\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/warlock/adapter/release_repro.py\", line 179, in main\n    parser = argparse.ArgumentParser(description=__doc__)\n  File \"/usr/lib/python3.14/argparse.py\", line 1919, in __init__\n    self.add_argument(\n  File \"/usr/lib/python3.14/argparse.py\", line 1557, in add_argument\n    formatter = self._get_validation_formatter()\n  File \"/usr/lib/python3.14/argparse.py\", line 2740, in _get_validation_formatter\n    self._cached_formatter = self._get_formatter()\n  File \"/usr/lib/python3.14/argparse.py\", line 2732, in _get_formatter\n    formatter = self.formatter_class(prog=self.prog)\n  File \"/usr/lib/python3.14/argparse.py\", line 182, in __init__\n    self._set_color(color)\n  File \"/usr/lib/python3.14/argparse.py\", line 200, in _set_color\n    from _colorize import can_colorize, decolor, get_theme\nModuleNotFoundError: No module named '_colorize'\n",
+    "builds": [
+      {
+        "label": "A",
+        "exitCode": 1,
+        "argumentsSHA256": "40f2b01017596ee8b564a80d92104d62817182e8440b5032ae507748cc1d5144"
+      }
+    ],
+    "parentNamespaces": {
+      "net": "net:[4026531833]",
+      "mnt": "mnt:[4026531832]",
+      "pid": "pid:[4026531836]"
+    },
+    "snapshot": {
+      "canonicalFiles": 9038,
+      "symlinks": 245,
+      "lockSHA256": "b26b70578daa69eafd341d9c20737bb47ce9a0d5f9ec795c3da55393263c1689",
+      "inputFileHashesSHA256": "9ae1e1fc217570e141fc314c9a0afae79ff67b4e54b91ff4595a4c782851c222"
+    },
+    "lockSHA256": "b26b70578daa69eafd341d9c20737bb47ce9a0d5f9ec795c3da55393263c1689",
+    "nativeAcceptance": false,
+    "fullReleaseAccepted": false
+  },
+  "error": "Two offline builds did not match; see pair logs"
+}

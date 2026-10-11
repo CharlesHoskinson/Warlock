@@ -1,0 +1,250 @@
+{
+  "passed": true,
+  "probe": {
+    "passed": true,
+    "command": [
+      "/usr/bin/bwrap",
+      "--unshare-user",
+      "--unshare-pid",
+      "--unshare-net",
+      "--unshare-ipc",
+      "--unshare-uts",
+      "--die-with-parent",
+      "--new-session",
+      "--ro-bind",
+      "/usr",
+      "/usr",
+      "--symlink",
+      "usr/lib",
+      "/lib",
+      "--symlink",
+      "usr/lib",
+      "/lib64",
+      "--symlink",
+      "usr/bin",
+      "/bin",
+      "--dir",
+      "/etc",
+      "--ro-bind",
+      "/etc/ld.so.cache",
+      "/etc/ld.so.cache",
+      "--proc",
+      "/proc",
+      "--dev",
+      "/dev",
+      "--tmpfs",
+      "/tmp",
+      "--",
+      "/usr/bin/python3",
+      "-B",
+      "-c",
+      "import errno,json,os,pathlib,resource,socket,sys\nconnection=socket.socket();connection.settimeout(1)\ntry:connection.connect(('127.0.0.1',int(sys.argv[1])));blocked=False\nexcept OSError as error:blocked=True;reason=error.errno\nconnection.close()\ntry:fd=os.open('/usr/bin/python3',os.O_WRONLY);os.close(fd);read_only=False\nexcept OSError as error:read_only=error.errno in (errno.EROFS,errno.EACCES)\nprint(json.dumps({'namespaces':{n:os.readlink('/proc/self/ns/'+n) for n in ('net','mnt','pid')},\n 'networkBlocked':blocked,'readOnlyInputs':read_only,'coreLimit':list(resource.getrlimit(resource.RLIMIT_CORE)),\n 'cgroup':pathlib.Path('/proc/self/cgroup').read_text(),'hiddenHostSource':not pathlib.Path(sys.argv[2]).exists()}))\n",
+      "36377",
+      "/home/hoskinson/omarchy-windows-parity/implementation/warlock"
+    ],
+    "exitCode": 0,
+    "parentNamespaces": {
+      "net": "net:[4026531833]",
+      "mnt": "mnt:[4026531832]",
+      "pid": "pid:[4026531836]"
+    },
+    "nativeAcceptance": false,
+    "fullReleaseAccepted": false,
+    "observed": {
+      "namespaces": {
+        "net": "net:[4026533355]",
+        "mnt": "mnt:[4026533351]",
+        "pid": "pid:[4026533354]"
+      },
+      "networkBlocked": true,
+      "readOnlyInputs": true,
+      "coreLimit": [
+        1,
+        1
+      ],
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-18ed3d45949b41169034100ffad40394.scope\n",
+      "hiddenHostSource": true
+    }
+  },
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "lockSHA256": "9507f772afbedaf6ff11bf184e57513066f402d954a753599de87c05ca465358",
+  "inputCount": 9226,
+  "pair": {
+    "matched": true,
+    "releaseBlocked": false,
+    "differentInputs": [],
+    "distributableDifferences": [],
+    "archiveHashes": [
+      "43e050f6a67a3bab8b1e7549bcc453dc6443d1cd8faa15c96cd91aa237e64744",
+      "43e050f6a67a3bab8b1e7549bcc453dc6443d1cd8faa15c96cd91aa237e64744"
+    ],
+    "inputContentHashes": [
+      "5b0f502a0e14279e2f763f4c7594eb95477f546d1ccf7775e76a8ccd59ca4210",
+      "5b0f502a0e14279e2f763f4c7594eb95477f546d1ccf7775e76a8ccd59ca4210"
+    ],
+    "payloadFileCount": 56,
+    "builds": [
+      {
+        "label": "A",
+        "exitCode": 0,
+        "argumentsSHA256": "0c2d84696471b330fc4a526eba38892c4f1f1fd98a0b4741af4e21a0434f989e",
+        "environment": {
+          "namespaces": {
+            "net": "net:[4026533355]",
+            "mnt": "mnt:[4026533351]",
+            "pid": "pid:[4026533354]"
+          },
+          "networkBlocked": true,
+          "readOnlySource": true,
+          "hostMarkerHidden": true,
+          "coreLimit": [
+            1,
+            1
+          ],
+          "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-18ed3d45949b41169034100ffad40394.scope\n"
+        }
+      },
+      {
+        "label": "B",
+        "exitCode": 0,
+        "argumentsSHA256": "7cb4f68bd29bb05c35ad877a282979d78b3855584f2ef50e2b368e1e937b2242",
+        "environment": {
+          "namespaces": {
+            "net": "net:[4026533408]",
+            "mnt": "mnt:[4026533352]",
+            "pid": "pid:[4026533370]"
+          },
+          "networkBlocked": true,
+          "readOnlySource": true,
+          "hostMarkerHidden": true,
+          "coreLimit": [
+            1,
+            1
+          ],
+          "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-18ed3d45949b41169034100ffad40394.scope\n"
+        }
+      }
+    ],
+    "parentNamespaces": {
+      "net": "net:[4026531833]",
+      "mnt": "mnt:[4026531832]",
+      "pid": "pid:[4026531836]"
+    },
+    "snapshot": {
+      "canonicalFiles": 9064,
+      "symlinks": 246,
+      "lockSHA256": "9507f772afbedaf6ff11bf184e57513066f402d954a753599de87c05ca465358",
+      "inputFileHashesSHA256": "8a3716cf2d3d33fe03024ae9c026dea1bb2cf3a27adccc37b9390ec59828dc7a"
+    },
+    "lockSHA256": "9507f772afbedaf6ff11bf184e57513066f402d954a753599de87c05ca465358",
+    "nativeAcceptance": false,
+    "fullReleaseAccepted": false
+  },
+  "archiveMismatch": {
+    "matched": false,
+    "releaseBlocked": true,
+    "differentInputs": [],
+    "distributableDifferences": [
+      {
+        "kind": "changed-recorded-archive",
+        "side": 1,
+        "expected": "43e050f6a67a3bab8b1e7549bcc453dc6443d1cd8faa15c96cd91aa237e64744",
+        "actual": "4daeeabfe3fe0e2f3fd5fb5a35317c2859b71d9ed5d556cbaedae1c77864d173"
+      },
+      {
+        "kind": "archive",
+        "hashes": [
+          "43e050f6a67a3bab8b1e7549bcc453dc6443d1cd8faa15c96cd91aa237e64744",
+          "4daeeabfe3fe0e2f3fd5fb5a35317c2859b71d9ed5d556cbaedae1c77864d173"
+        ]
+      }
+    ],
+    "archiveHashes": [
+      "43e050f6a67a3bab8b1e7549bcc453dc6443d1cd8faa15c96cd91aa237e64744",
+      "4daeeabfe3fe0e2f3fd5fb5a35317c2859b71d9ed5d556cbaedae1c77864d173"
+    ],
+    "inputContentHashes": [
+      "5b0f502a0e14279e2f763f4c7594eb95477f546d1ccf7775e76a8ccd59ca4210",
+      "5b0f502a0e14279e2f763f4c7594eb95477f546d1ccf7775e76a8ccd59ca4210"
+    ],
+    "payloadFileCount": 56
+  },
+  "payloadMismatch": {
+    "matched": false,
+    "releaseBlocked": true,
+    "differentInputs": [],
+    "distributableDifferences": [
+      {
+        "kind": "changed-recorded-payload",
+        "side": 1
+      },
+      {
+        "kind": "payload",
+        "path": "assets/bar.js",
+        "hashes": [
+          "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+          "6445d925c096b17a1cba7322e7b70fdeb258d3de712972f31f70243dbf76e3b2"
+        ]
+      }
+    ],
+    "archiveHashes": [
+      "43e050f6a67a3bab8b1e7549bcc453dc6443d1cd8faa15c96cd91aa237e64744",
+      "43e050f6a67a3bab8b1e7549bcc453dc6443d1cd8faa15c96cd91aa237e64744"
+    ],
+    "inputContentHashes": [
+      "5b0f502a0e14279e2f763f4c7594eb95477f546d1ccf7775e76a8ccd59ca4210",
+      "5b0f502a0e14279e2f763f4c7594eb95477f546d1ccf7775e76a8ccd59ca4210"
+    ],
+    "payloadFileCount": 56
+  },
+  "aliasMismatch": {
+    "matched": false,
+    "releaseBlocked": true,
+    "differentInputs": [],
+    "distributableDifferences": [
+      {
+        "kind": "changed-recorded-symlinks",
+        "side": 1,
+        "expected": {
+          "native/libaquamarine.so.14": "libaquamarine.so.0.15.0"
+        },
+        "actual": {
+          "native/libaquamarine.so.14": "./libaquamarine.so.0.15.0"
+        }
+      },
+      {
+        "kind": "payload-link",
+        "path": "native/libaquamarine.so.14",
+        "targets": [
+          "libaquamarine.so.0.15.0",
+          "./libaquamarine.so.0.15.0"
+        ]
+      }
+    ],
+    "archiveHashes": [
+      "43e050f6a67a3bab8b1e7549bcc453dc6443d1cd8faa15c96cd91aa237e64744",
+      "43e050f6a67a3bab8b1e7549bcc453dc6443d1cd8faa15c96cd91aa237e64744"
+    ],
+    "inputContentHashes": [
+      "5b0f502a0e14279e2f763f4c7594eb95477f546d1ccf7775e76a8ccd59ca4210",
+      "5b0f502a0e14279e2f763f4c7594eb95477f546d1ccf7775e76a8ccd59ca4210"
+    ],
+    "payloadFileCount": 56
+  },
+  "restoredComparison": {
+    "matched": true,
+    "releaseBlocked": false,
+    "differentInputs": [],
+    "distributableDifferences": [],
+    "archiveHashes": [
+      "43e050f6a67a3bab8b1e7549bcc453dc6443d1cd8faa15c96cd91aa237e64744",
+      "43e050f6a67a3bab8b1e7549bcc453dc6443d1cd8faa15c96cd91aa237e64744"
+    ],
+    "inputContentHashes": [
+      "5b0f502a0e14279e2f763f4c7594eb95477f546d1ccf7775e76a8ccd59ca4210",
+      "5b0f502a0e14279e2f763f4c7594eb95477f546d1ccf7775e76a8ccd59ca4210"
+    ],
+    "payloadFileCount": 56
+  }
+}

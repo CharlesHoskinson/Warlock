@@ -1,0 +1,216 @@
+{
+  "passed": true,
+  "probe": {
+    "passed": true,
+    "command": [
+      "/usr/bin/bwrap",
+      "--unshare-user",
+      "--unshare-pid",
+      "--unshare-net",
+      "--unshare-ipc",
+      "--unshare-uts",
+      "--die-with-parent",
+      "--new-session",
+      "--ro-bind",
+      "/usr",
+      "/usr",
+      "--symlink",
+      "usr/lib",
+      "/lib",
+      "--symlink",
+      "usr/lib",
+      "/lib64",
+      "--symlink",
+      "usr/bin",
+      "/bin",
+      "--dir",
+      "/etc",
+      "--ro-bind",
+      "/etc/ld.so.cache",
+      "/etc/ld.so.cache",
+      "--proc",
+      "/proc",
+      "--dev",
+      "/dev",
+      "--tmpfs",
+      "/tmp",
+      "--",
+      "/usr/bin/python3",
+      "-B",
+      "-c",
+      "import errno,json,os,pathlib,resource,socket,sys\nconnection=socket.socket();connection.settimeout(1)\ntry:connection.connect(('127.0.0.1',int(sys.argv[1])));blocked=False\nexcept OSError as error:blocked=True;reason=error.errno\nconnection.close()\ntry:fd=os.open('/usr/bin/python3',os.O_WRONLY);os.close(fd);read_only=False\nexcept OSError as error:read_only=error.errno in (errno.EROFS,errno.EACCES)\nprint(json.dumps({'namespaces':{n:os.readlink('/proc/self/ns/'+n) for n in ('net','mnt','pid')},\n 'networkBlocked':blocked,'readOnlyInputs':read_only,'coreLimit':list(resource.getrlimit(resource.RLIMIT_CORE)),\n 'cgroup':pathlib.Path('/proc/self/cgroup').read_text(),'hiddenHostSource':not pathlib.Path(sys.argv[2]).exists()}))\n",
+      "43717",
+      "/home/hoskinson/omarchy-windows-parity/implementation/warlock"
+    ],
+    "exitCode": 0,
+    "parentNamespaces": {
+      "net": "net:[4026531833]",
+      "mnt": "mnt:[4026531832]",
+      "pid": "pid:[4026531836]"
+    },
+    "nativeAcceptance": false,
+    "fullReleaseAccepted": false,
+    "observed": {
+      "namespaces": {
+        "net": "net:[4026533355]",
+        "mnt": "mnt:[4026533351]",
+        "pid": "pid:[4026533354]"
+      },
+      "networkBlocked": true,
+      "readOnlyInputs": true,
+      "coreLimit": [
+        1,
+        1
+      ],
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-8a1d10e4f69749c99fcaaa49c6ca1494.scope\n",
+      "hiddenHostSource": true
+    }
+  },
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "lockSHA256": "58b758885fe5a5ca1f41ac3f3c4938a9eba6d77bdca46180b4b2ace3ff49a5d9",
+  "inputCount": 9226,
+  "pair": {
+    "matched": true,
+    "releaseBlocked": false,
+    "differentInputs": [],
+    "distributableDifferences": [],
+    "archiveHashes": [
+      "40c48f1f49ea1af1988a13d5c6d71daf411278c5206af699151b8cd754623cd1",
+      "40c48f1f49ea1af1988a13d5c6d71daf411278c5206af699151b8cd754623cd1"
+    ],
+    "inputContentHashes": [
+      "ae627d1c040256840f42adf4617429810cd38516389341ca56e3ca17f5502586",
+      "ae627d1c040256840f42adf4617429810cd38516389341ca56e3ca17f5502586"
+    ],
+    "payloadFileCount": 56,
+    "builds": [
+      {
+        "label": "A",
+        "exitCode": 0,
+        "argumentsSHA256": "4e5d4d2c9567e7de66913a93a907bc6e842cd54fa41a426e5ed86af7311de61c",
+        "environment": {
+          "namespaces": {
+            "net": "net:[4026533355]",
+            "mnt": "mnt:[4026533351]",
+            "pid": "pid:[4026533354]"
+          },
+          "networkBlocked": true,
+          "readOnlySource": true,
+          "hostMarkerHidden": true,
+          "coreLimit": [
+            1,
+            1
+          ],
+          "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-8a1d10e4f69749c99fcaaa49c6ca1494.scope\n"
+        }
+      },
+      {
+        "label": "B",
+        "exitCode": 0,
+        "argumentsSHA256": "9ed518affd7ddce4827d0aeb08a6904dea3183f36908c9b2d0bcacd260d22b7e",
+        "environment": {
+          "namespaces": {
+            "net": "net:[4026533408]",
+            "mnt": "mnt:[4026533352]",
+            "pid": "pid:[4026533370]"
+          },
+          "networkBlocked": true,
+          "readOnlySource": true,
+          "hostMarkerHidden": true,
+          "coreLimit": [
+            1,
+            1
+          ],
+          "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-8a1d10e4f69749c99fcaaa49c6ca1494.scope\n"
+        }
+      }
+    ],
+    "parentNamespaces": {
+      "net": "net:[4026531833]",
+      "mnt": "mnt:[4026531832]",
+      "pid": "pid:[4026531836]"
+    },
+    "snapshot": {
+      "canonicalFiles": 9064,
+      "symlinks": 246,
+      "lockSHA256": "58b758885fe5a5ca1f41ac3f3c4938a9eba6d77bdca46180b4b2ace3ff49a5d9",
+      "inputFileHashesSHA256": "05a12fac5c592c967f33a1985d2a9e51ccfaf5db32813854691bdef94dc22bd4"
+    },
+    "lockSHA256": "58b758885fe5a5ca1f41ac3f3c4938a9eba6d77bdca46180b4b2ace3ff49a5d9",
+    "nativeAcceptance": false,
+    "fullReleaseAccepted": false
+  },
+  "archiveMismatch": {
+    "matched": false,
+    "releaseBlocked": true,
+    "differentInputs": [],
+    "distributableDifferences": [
+      {
+        "kind": "changed-recorded-archive",
+        "side": 1,
+        "expected": "40c48f1f49ea1af1988a13d5c6d71daf411278c5206af699151b8cd754623cd1",
+        "actual": "04a3d94ad928969585134c815b6db5c4b4122d2224e37676f3c63679e0fc40db"
+      },
+      {
+        "kind": "archive",
+        "hashes": [
+          "40c48f1f49ea1af1988a13d5c6d71daf411278c5206af699151b8cd754623cd1",
+          "04a3d94ad928969585134c815b6db5c4b4122d2224e37676f3c63679e0fc40db"
+        ]
+      }
+    ],
+    "archiveHashes": [
+      "40c48f1f49ea1af1988a13d5c6d71daf411278c5206af699151b8cd754623cd1",
+      "04a3d94ad928969585134c815b6db5c4b4122d2224e37676f3c63679e0fc40db"
+    ],
+    "inputContentHashes": [
+      "ae627d1c040256840f42adf4617429810cd38516389341ca56e3ca17f5502586",
+      "ae627d1c040256840f42adf4617429810cd38516389341ca56e3ca17f5502586"
+    ],
+    "payloadFileCount": 56
+  },
+  "payloadMismatch": {
+    "matched": false,
+    "releaseBlocked": true,
+    "differentInputs": [],
+    "distributableDifferences": [
+      {
+        "kind": "changed-recorded-payload",
+        "side": 1
+      },
+      {
+        "kind": "payload",
+        "path": "assets/bar.js",
+        "hashes": [
+          "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+          "6445d925c096b17a1cba7322e7b70fdeb258d3de712972f31f70243dbf76e3b2"
+        ]
+      }
+    ],
+    "archiveHashes": [
+      "40c48f1f49ea1af1988a13d5c6d71daf411278c5206af699151b8cd754623cd1",
+      "40c48f1f49ea1af1988a13d5c6d71daf411278c5206af699151b8cd754623cd1"
+    ],
+    "inputContentHashes": [
+      "ae627d1c040256840f42adf4617429810cd38516389341ca56e3ca17f5502586",
+      "ae627d1c040256840f42adf4617429810cd38516389341ca56e3ca17f5502586"
+    ],
+    "payloadFileCount": 56
+  },
+  "restoredComparison": {
+    "matched": true,
+    "releaseBlocked": false,
+    "differentInputs": [],
+    "distributableDifferences": [],
+    "archiveHashes": [
+      "40c48f1f49ea1af1988a13d5c6d71daf411278c5206af699151b8cd754623cd1",
+      "40c48f1f49ea1af1988a13d5c6d71daf411278c5206af699151b8cd754623cd1"
+    ],
+    "inputContentHashes": [
+      "ae627d1c040256840f42adf4617429810cd38516389341ca56e3ca17f5502586",
+      "ae627d1c040256840f42adf4617429810cd38516389341ca56e3ca17f5502586"
+    ],
+    "payloadFileCount": 56
+  }
+}

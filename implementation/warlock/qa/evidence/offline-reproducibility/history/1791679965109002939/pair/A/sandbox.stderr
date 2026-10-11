@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/home/hoskinson/omarchy-windows-parity/implementation/warlock/adapter/release_repro.py", line 209, in <module>
+    raise SystemExit(main())
+  File "/home/hoskinson/omarchy-windows-parity/implementation/warlock/adapter/release_repro.py", line 179, in main
+    parser = argparse.ArgumentParser(description=__doc__)
+  File "/usr/lib/python3.14/argparse.py", line 1919, in __init__
+    self.add_argument(
+  File "/usr/lib/python3.14/argparse.py", line 1557, in add_argument
+    formatter = self._get_validation_formatter()
+  File "/usr/lib/python3.14/argparse.py", line 2740, in _get_validation_formatter
+    self._cached_formatter = self._get_formatter()
+  File "/usr/lib/python3.14/argparse.py", line 2732, in _get_formatter
+    formatter = self.formatter_class(prog=self.prog)
+  File "/usr/lib/python3.14/argparse.py", line 182, in __init__
+    self._set_color(color)
+  File "/usr/lib/python3.14/argparse.py", line 200, in _set_color
+    from _colorize import can_colorize, decolor, get_theme
+ModuleNotFoundError: No module named '_colorize'

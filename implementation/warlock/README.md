@@ -17,10 +17,13 @@ open. See [recovery evidence](qa/evidence/offline-recovery/README.md).
 
 [Manifest-driven release builds](RELEASE.md) now verify a pinned local input set,
 rebuild the three Elm roots and complete native host, and assemble an archive with
-payload hashes and the retained exact core/plugin/Aquamarine tuple. The current
-protected build reproduces existing asset and host bytes and rejects an altered
-consumed source. The archive remains unqualified for installation pending complete
-provenance, redistribution, clean offline rebuild and full release gates.
+payload hashes and the retained exact core/plugin/Aquamarine tuple. The protected
+build reproduces existing asset and host bytes and rejects an altered consumed
+source. The reproducibility command builds the locked recipe twice in fresh
+offline namespaces and blocks changed archives, payloads or loader aliases. The
+archive remains unqualified for installation pending complete provenance,
+redistribution, independent reproducibility review and full release gates. See
+[offline build evidence](qa/evidence/offline-reproducibility/README.md).
 
 Always on top and MAX use typed native intents, observed geometry protocol 3 and confirmed labels through the existing custody/no-replay route. Stable picker geometry and checkable state now pass the original pointer/keyboard pin/MAX journey. Two floating MAX roots coexist, share committed paint/input order and recover their return placements; actual input-hole passthrough and no-activation exceptions are recorded. Clicking an eligible modal-blocked MAX parent now focuses its accepted modal without forwarding a GTK button event, and retiring the modal restores parent clicking. See [current modal evidence](qa/evidence/max-modal-focus/README.md), [no-activation evidence](qa/evidence/max-no-activation/README.md) and [pin/MAX evidence](qa/evidence/pin-check/README.md). Wider family/fullscreen/race/AT and independent acceptance remain open. Earlier failed [picker](qa/evidence/picker-target-stability/README.md) and [draft](qa/evidence/pin-max/README.md) evidence remains historical. Taskbar application pins are a separate preference feature.
 

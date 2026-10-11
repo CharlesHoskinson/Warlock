@@ -796,7 +796,14 @@
             "independent": false,
             "disposition": "partial"
           },
-          "scenarioAccepted": false
+          "scenarioAccepted": false,
+          "currentTupleNote": "The original input-lock packet is historical after builder/lock changes. Its exact source hashes and original observations remain unchanged. Current two-build and lock observations are recorded under ELM-DEL-004; complete source provenance and independent acceptance remain open. No original DEL-003 verdict is upgraded by this cross-reference.",
+          "relatedCurrentEvidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/offline-reproducibility/manifest.json",
+              "sha256": "4134b2212792b5ecf39e220aa2b7327d7fae3f52f9abf0d8e351ef087bbc9497"
+            }
+          ]
         }
       ]
     },
@@ -808,14 +815,44 @@
       "owner": "Release integration lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "delivery-004",
           "oracle": "distributable hashes match or release is blocked",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/offline-reproducibility/manifest.json",
+              "sha256": "4134b2212792b5ecf39e220aa2b7327d7fae3f52f9abf0d8e351ef087bbc9497"
+            }
+          ],
+          "missingObservation": "Independent original-scenario acceptance review.; Complete upstream compiler/build-tool source provenance and SBOM/notices/redistribution disposition.; Full native AT/IME/hardware/resources/journeys, accepted Omarchy fallback and reversible main-session deployment.",
+          "priorObservations": [
+            {
+              "name": "delivery-004",
+              "oracle": "distributable hashes match or release is blocked",
+              "status": "unadjudicated",
+              "evidence": [],
+              "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+            }
+          ],
+          "evidenceScope": "Two clean offline fixed-recipe builds match all 56 payload hashes and the 26040320-byte archive hash. Each rebuilds three Elm roots and eleven native host units, with 18 phases and 19 compiled reducer checks. Actual isolated namespaces, blocked parent network socket, read-only source and hidden host marker are observed. Actual archive, payload and same-content loader-alias changes block release; restored artifacts match. The current 9226-input lock independently verifies in another protected process. No upstream native-core rebuild or full release acceptance.",
+          "verificationScope": "Compare SHA-256 manifests and retain differing build logs.",
+          "sourceHashes": {
+            "implementation/warlock/adapter/release_repro.py": "68107841f4514394091740799c6b2b1983a2e6a4708e3a490e40b61729f38986",
+            "implementation/warlock/adapter/release_builder.py": "ba96d41441bee2a2632af02bcff4ef1be6e57405ca744b6cc6a53b6f6ffa7763",
+            "implementation/warlock/qa/check-release-repro.py": "f6913a8e47336cb470494fe352202f818b0a55fc2b0b90dead19d29972b787ac",
+            "implementation/warlock/build-lock.json": "9507f772afbedaf6ff11bf184e57513066f402d954a753599de87c05ca465358",
+            "implementation/warlock/RELEASE.md": "973ad17b82ecbd24ce304f2e1d73815531b82cdd82bcd726d629a04360207190",
+            "implementation/warlock/README.md": "64d15cee43b3e43f63126e7609fa53d6c4f6d3e2653dbba6bcb90d5242dcfdfe"
+          },
+          "reviewer": {
+            "name": "root-offline-reproducibility",
+            "independent": false,
+            "disposition": "partial"
+          },
+          "scenarioAccepted": false
         }
       ]
     },
@@ -12591,5 +12628,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-11T00:35:13.646927+00:00"
+  "updatedUTC": "2026-10-11T00:59:42.674239+00:00"
 }

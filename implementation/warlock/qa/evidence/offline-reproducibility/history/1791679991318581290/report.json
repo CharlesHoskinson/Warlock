@@ -1,0 +1,100 @@
+{
+  "passed": false,
+  "probe": {
+    "passed": true,
+    "command": [
+      "/usr/bin/bwrap",
+      "--unshare-user",
+      "--unshare-pid",
+      "--unshare-net",
+      "--unshare-ipc",
+      "--unshare-uts",
+      "--die-with-parent",
+      "--new-session",
+      "--ro-bind",
+      "/usr",
+      "/usr",
+      "--symlink",
+      "usr/lib",
+      "/lib",
+      "--symlink",
+      "usr/lib",
+      "/lib64",
+      "--symlink",
+      "usr/bin",
+      "/bin",
+      "--dir",
+      "/etc",
+      "--ro-bind",
+      "/etc/ld.so.cache",
+      "/etc/ld.so.cache",
+      "--proc",
+      "/proc",
+      "--dev",
+      "/dev",
+      "--tmpfs",
+      "/tmp",
+      "--",
+      "/usr/bin/python3",
+      "-B",
+      "-c",
+      "import errno,json,os,pathlib,resource,socket,sys\nconnection=socket.socket();connection.settimeout(1)\ntry:connection.connect(('127.0.0.1',int(sys.argv[1])));blocked=False\nexcept OSError as error:blocked=True;reason=error.errno\nconnection.close()\ntry:fd=os.open('/usr/bin/python3',os.O_WRONLY);os.close(fd);read_only=False\nexcept OSError as error:read_only=error.errno in (errno.EROFS,errno.EACCES)\nprint(json.dumps({'namespaces':{n:os.readlink('/proc/self/ns/'+n) for n in ('net','mnt','pid')},\n 'networkBlocked':blocked,'readOnlyInputs':read_only,'coreLimit':list(resource.getrlimit(resource.RLIMIT_CORE)),\n 'cgroup':pathlib.Path('/proc/self/cgroup').read_text(),'hiddenHostSource':not pathlib.Path(sys.argv[2]).exists()}))\n",
+      "42013",
+      "/home/hoskinson/omarchy-windows-parity/implementation/warlock"
+    ],
+    "exitCode": 0,
+    "parentNamespaces": {
+      "net": "net:[4026531833]",
+      "mnt": "mnt:[4026531832]",
+      "pid": "pid:[4026531836]"
+    },
+    "nativeAcceptance": false,
+    "fullReleaseAccepted": false,
+    "observed": {
+      "namespaces": {
+        "net": "net:[4026533355]",
+        "mnt": "mnt:[4026533351]",
+        "pid": "pid:[4026533354]"
+      },
+      "networkBlocked": true,
+      "readOnlyInputs": true,
+      "coreLimit": [
+        1,
+        1
+      ],
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-152042d4ee14485783b221216fbe6c97.scope\n",
+      "hiddenHostSource": true
+    }
+  },
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "lockSHA256": "4f9555d3043896f48fbccffe88a5bf679347d7c80a3eb623fb484fed5213f211",
+  "inputCount": 9225,
+  "pair": {
+    "matched": false,
+    "releaseBlocked": true,
+    "error": "Offline build A failed: {\"matched\": false, \"releaseBlocked\": true, \"error\": \"Build failed: link-host\\n/usr/bin/ld: cannot find -latomic: No such file or directory\\ncollect2: error: ld returned 1 exit status\\n\"}\n",
+    "builds": [
+      {
+        "label": "A",
+        "exitCode": 2,
+        "argumentsSHA256": "cbbc8e56e3c78527f44f543da22c78e78f36030a49ec031d045fa618b4fbea6d"
+      }
+    ],
+    "parentNamespaces": {
+      "net": "net:[4026531833]",
+      "mnt": "mnt:[4026531832]",
+      "pid": "pid:[4026531836]"
+    },
+    "snapshot": {
+      "canonicalFiles": 9064,
+      "symlinks": 245,
+      "lockSHA256": "4f9555d3043896f48fbccffe88a5bf679347d7c80a3eb623fb484fed5213f211",
+      "inputFileHashesSHA256": "f79cd758004d9426c6dacf7b345b7e089d5cb396476eb75a3ddf2206cd0f9a42"
+    },
+    "lockSHA256": "4f9555d3043896f48fbccffe88a5bf679347d7c80a3eb623fb484fed5213f211",
+    "nativeAcceptance": false,
+    "fullReleaseAccepted": false
+  },
+  "error": "Two offline builds did not match; see pair logs"
+}

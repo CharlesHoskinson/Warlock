@@ -1,0 +1,15 @@
+{
+  "namespaces": {
+    "net": "net:[4026533355]",
+    "mnt": "mnt:[4026533351]",
+    "pid": "pid:[4026533354]"
+  },
+  "networkBlocked": true,
+  "readOnlySource": true,
+  "hostMarkerHidden": true,
+  "coreLimit": [
+    1,
+    1
+  ],
+  "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-18ed3d45949b41169034100ffad40394.scope\n"
+}

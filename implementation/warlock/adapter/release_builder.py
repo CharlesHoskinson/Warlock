@@ -24,7 +24,7 @@ UNITS = ('preview_uri.cpp', 'preview_icons.cpp', 'preview-uri-webkit.cpp',
          'preview-provider-bootstrap.cpp', 'client-producer.cpp',
          'imported-clients.cpp', 'preview-uri-router.cpp',
          'elm-preview-policy.cpp', 'preview-visual-channel.cpp', 'preview-policy-driver.cpp')
-TOOLS = ('cc', 'g++', 'pkg-config', 'node', 'python3', 'quint', 'as', 'ld', 'ar', 'ldd', 'bash', 'env')
+TOOLS = ('cc', 'g++', 'pkg-config', 'node', 'python3', 'quint', 'as', 'ld', 'ar', 'ldd', 'bash', 'env', 'bwrap')
 ENV_KEYS = ('PATH', 'LD_LIBRARY_PATH', 'LD_PRELOAD', 'CPATH', 'C_INCLUDE_PATH',
             'CPLUS_INCLUDE_PATH', 'LIBRARY_PATH', 'COMPILER_PATH',
             'GCC_EXEC_PREFIX', 'PKG_CONFIG_PATH', 'PKG_CONFIG_LIBDIR',
@@ -69,16 +69,37 @@ def run(argv, cwd=None, env=None):
     return result.stdout
 
 
-def native_dependencies(candidate, tools, flags):
+def native_dependencies(candidate, tools, flags, spellings=False):
     result = set()
     for source, compiler, standard in [('shared-host.c', 'cc', 'c11')] + [
             (name, 'g++', 'c++20') for name in UNITS]:
         body = run([tools[compiler]['path'], '-std=' + standard, '-M', '-MT',
                     'locked-object', 'native/' + source, *flags], cwd=candidate)
         dependencies = shlex.split(body.replace('\\\n', ' ').split(':', 1)[1])
-        result.update(str((candidate / name).resolve()) if not Path(name).is_absolute()
-                      else str(Path(name).resolve()) for name in dependencies)
+        for name in dependencies:
+            path = candidate / name if not Path(name).is_absolute() else Path(name)
+            result.add(str(path.absolute() if spellings else path.resolve()))
     return sorted(result)
+
+
+def path_links(paths):
+    """Retain directory/leaf link chains needed to resolve locked file names."""
+    links = {}
+    checked = set()
+    def inspect(path):
+        for prefix in reversed([path, *path.parents]):
+            key = str(prefix)
+            if key in checked:
+                continue
+            checked.add(key)
+            if prefix.is_symlink():
+                target = os.readlink(prefix)
+                location = str(prefix.parent.resolve() / prefix.name)
+                links[location] = target
+                inspect(Path(target) if Path(target).is_absolute() else prefix.parent / target)
+    for name in paths:
+        inspect(Path(name))
+    return dict(sorted(links.items()))
 
 
 def add(files, path, role, expected=None):
@@ -97,6 +118,23 @@ def add(files, path, role, expected=None):
 
 
 def add_dynamic(files, path):
+    # ldd can print a canonical /usr/lib64 loader path even when PT_INTERP
+    # actually requests /lib64. Retain the executable's real lookup spelling.
+    with Path(path).open('rb') as stream:
+        header = stream.read(64)
+        if header[:4] == b'\x7fELF':
+            if header[4:6] != b'\x02\x01':
+                raise ChangedInput('Unsupported ELF class/encoding: ' + str(path))
+            offset = int.from_bytes(header[32:40], 'little')
+            size = int.from_bytes(header[54:56], 'little')
+            count = int.from_bytes(header[56:58], 'little')
+            for index in range(count):
+                stream.seek(offset + index * size)
+                program = stream.read(size)
+                if int.from_bytes(program[:4], 'little') == 3:  # PT_INTERP
+                    stream.seek(int.from_bytes(program[8:16], 'little'))
+                    loader = stream.read(int.from_bytes(program[32:40], 'little'))
+                    add(files, loader.rstrip(b'\0').decode(), 'elf-interpreter')
     result = subprocess.run(['/usr/bin/ldd', str(path)], text=True, capture_output=True)
     if result.returncode and ('not a dynamic executable' in result.stderr + result.stdout
                               or 'statically linked' in result.stdout):
@@ -109,6 +147,9 @@ def add_dynamic(files, path):
 
 def capture(repo):
     require_scope()
+    # Exercise CLI initialization before collecting Python's lazy dependencies;
+    # QA may call capture() directly while an isolated build enters main().
+    argparse.ArgumentParser(description=__doc__).parse_args([])
     repo = Path(repo).resolve()
     candidate = repo / 'implementation/warlock'
     held = repo / 'implementation/warlock-preview-provider-v143'
@@ -137,7 +178,7 @@ def capture(repo):
             raise ChangedInput('Missing build/test tool: ' + name)
         add(files, executable, 'build-or-test-tool')
         tools[name] = {'path': str(Path(executable).absolute()), 'version': None}
-    for name in ('cc', 'g++', 'pkg-config', 'node', 'python3', 'quint', 'as', 'ld', 'ar'):
+    for name in ('cc', 'g++', 'pkg-config', 'node', 'python3', 'quint', 'as', 'ld', 'ar', 'bwrap'):
         tools[name]['version'] = run([tools[name]['path'], '--version']).strip()
     tools['elm'] = {'path': str(compiler), 'version': run([str(compiler), '--version']).strip()}
     # Pin the installed Quint distribution and its Node dependencies, not only its
@@ -162,13 +203,17 @@ def capture(repo):
     dependencies = native_dependencies(candidate, tools, flags)
     for path in dependencies:
         add(files, path, 'host-compile-dependency')
+    for path in native_dependencies(candidate, tools, flags, spellings=True):
+        add(files, path, 'host-header-path-spelling')
     for name in ('crtbeginS.o', 'crtendS.o', 'libgcc.a', 'libgcc_s.so',
-                 'libstdc++.so', 'libc.so', 'libm.so', 'liblto_plugin.so',
+                 'libstdc++.so', 'libatomic.so', 'libc.so', 'libm.so', 'liblto_plugin.so',
                  'Scrt1.o', 'crti.o', 'crtn.o'):
         path = run([tools['g++']['path'], '-print-file-name=' + name]).strip()
         if not Path(path).is_absolute():
             raise ChangedInput('Unresolved link input: ' + name)
         add(files, path, 'host-link-input')
+        if name == 'libatomic.so':
+            add_dynamic(files, path)
     pair_path = candidate / 'qa/current-native-pair.json'
     pair_meta = read(pair_path)
     add(files, pair_path, 'native-pair-manifest')
@@ -224,6 +269,7 @@ def capture(repo):
             'flags': flags, 'hostDependencies': dependencies, 'nativePair': pair_meta['pair'],
             'loaderAliases': loader_aliases,
             'environment': {key: os.environ.get(key) for key in ENV_KEYS}, 'inputs': dict(sorted(files.items())),
+            'symlinks': path_links(files),
             'scope': 'Fixed Elm assets/native host rebuild with retained exact core/plugin/Aquamarine artifacts.',
             'nativeAcceptance': False, 'fullReleaseAccepted': False,
             'missingObservations': ['Complete compiler/build-tool upstream source provenance and redistribution disposition.',
@@ -240,6 +286,9 @@ def verify(manifest):
     for name, row in manifest['inputs'].items():
         if str(Path(name).resolve()) != row['resolved'] or sha(name) != row['sha256']:
             raise ChangedInput('Locked input changed: ' + name)
+    for name, target in manifest.get('symlinks', {}).items():
+        if not Path(name).is_symlink() or os.readlink(name) != target:
+            raise ChangedInput('Locked filesystem link changed: ' + name)
     candidate = Path(manifest['candidate'])
     if native_dependencies(candidate, manifest['tools'], manifest['flags']) != manifest['hostDependencies']:
         raise ChangedInput('Native header resolution changed')

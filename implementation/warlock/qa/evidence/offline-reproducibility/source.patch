@@ -1,0 +1,574 @@
+diff --git c/implementation/warlock/README.md i/implementation/warlock/README.md
+index 40e12ab..a591f64 100644
+--- c/implementation/warlock/README.md
++++ i/implementation/warlock/README.md
+@@ -17,10 +17,13 @@ open. See [recovery evidence](qa/evidence/offline-recovery/README.md).
+ 
+ [Manifest-driven release builds](RELEASE.md) now verify a pinned local input set,
+ rebuild the three Elm roots and complete native host, and assemble an archive with
+-payload hashes and the retained exact core/plugin/Aquamarine tuple. The current
+-protected build reproduces existing asset and host bytes and rejects an altered
+-consumed source. The archive remains unqualified for installation pending complete
+-provenance, redistribution, clean offline rebuild and full release gates.
++payload hashes and the retained exact core/plugin/Aquamarine tuple. The protected
++build reproduces existing asset and host bytes and rejects an altered consumed
++source. The reproducibility command builds the locked recipe twice in fresh
++offline namespaces and blocks changed archives, payloads or loader aliases. The
++archive remains unqualified for installation pending complete provenance,
++redistribution, independent reproducibility review and full release gates. See
++[offline build evidence](qa/evidence/offline-reproducibility/README.md).
+ 
+ Always on top and MAX use typed native intents, observed geometry protocol 3 and confirmed labels through the existing custody/no-replay route. Stable picker geometry and checkable state now pass the original pointer/keyboard pin/MAX journey. Two floating MAX roots coexist, share committed paint/input order and recover their return placements; actual input-hole passthrough and no-activation exceptions are recorded. Clicking an eligible modal-blocked MAX parent now focuses its accepted modal without forwarding a GTK button event, and retiring the modal restores parent clicking. See [current modal evidence](qa/evidence/max-modal-focus/README.md), [no-activation evidence](qa/evidence/max-no-activation/README.md) and [pin/MAX evidence](qa/evidence/pin-check/README.md). Wider family/fullscreen/race/AT and independent acceptance remain open. Earlier failed [picker](qa/evidence/picker-target-stability/README.md) and [draft](qa/evidence/pin-max/README.md) evidence remains historical. Taskbar application pins are a separate preference feature.
+ 
+diff --git c/implementation/warlock/RELEASE.md i/implementation/warlock/RELEASE.md
+index 91288e7..625dd56 100644
+--- c/implementation/warlock/RELEASE.md
++++ i/implementation/warlock/RELEASE.md
+@@ -43,14 +43,46 @@ Archive entries use fixed ordering, timestamps, ownership and modes; local build
+ paths and raw logs stay outside the distributable. This deterministic assembly
+ does not prove two clean isolated offline rebuilds until that campaign runs.
+ 
+-The current protected build reproduces the existing Elm assets and native host
++`adapter/release_repro.py run` runs the complete recipe twice in fresh Bubblewrap
++network, mount, PID, IPC and UTS namespaces. It copies only locked canonical
++files and recorded filesystem aliases into a verified input snapshot, mounts
++that snapshot read-only, and gives each build a separate empty output directory
++and temporary filesystem. Both recipes receive the same `/build` path; no host
++package directory, desktop socket or mutable cache is exposed. ELF interpreter
++lookup paths and implicit compiler link inputs belong to the lock too.
++
++Run it through the same protected launcher, replacing the builder command above
++with this command and supplying a new absolute output directory:
++
++```sh
++/usr/bin/python3 -B \
++  /home/hoskinson/omarchy-windows-parity/implementation/warlock/adapter/release_repro.py \
++  run --lock /home/hoskinson/omarchy-windows-parity/implementation/warlock/build-lock.json \
++  --sha256 REVIEWED_LOCK_SHA256 --output /absolute/new-reproducibility-directory
++```
++
++The command verifies the reviewed lock before staging, checks isolation against
++a listening parent socket and a host-only marker, and verifies inputs within
++each build before and after compilation. The report retains namespace/core-limit
++observations, the input snapshot identity, both build logs and SHA-256 comparisons
++of actual payload files and archives. A build failure, input identity difference,
++changed recorded artifact or distributable mismatch blocks release and returns
++nonzero. Matching hashes qualify this build observation only; other release
++gates and independent acceptance remain separate.
++
++The original protected build reproduces the existing Elm assets and native host
+ bytes. Its direct reducer and native self-tests pass. A real consumed source
+ alteration is rejected before output creation, and restoration verifies against
+-the original lock. See [the input-lock evidence](qa/evidence/release-input-lock/README.md).
++that original lock. See [the input-lock evidence](qa/evidence/release-input-lock/README.md).
++The subsequent [offline campaign](qa/evidence/offline-reproducibility/README.md)
++rebuilds the updated locked recipe in two fresh isolated filesystems, compares
++all payload and archive hashes, and exercises deliberate archive, payload and
++same-content loader-alias mismatches. The original input-lock packet remains
++historical; the new packet identifies the current lock and source tuple.
+ 
+ The package is explicitly **not installable or release accepted**. Complete
+ compiler/build-tool upstream source provenance, SBOM and redistribution notices,
+-two isolated offline builds, full native/AT/IME/hardware/resource acceptance,
++independent reproducibility review, full native/AT/IME/hardware/resource acceptance,
+ accepted Omarchy fallback and main-session deployment remain required. Preparing
+ this archive neither activates a shell nor restarts the compositor. Use the
+ [offline recovery contract](RECOVERY.md) when preparing the eventual reviewed
+diff --git c/implementation/warlock/adapter/release_builder.py i/implementation/warlock/adapter/release_builder.py
+index 4a124f3..ee8bd96 100644
+--- c/implementation/warlock/adapter/release_builder.py
++++ i/implementation/warlock/adapter/release_builder.py
+@@ -24,7 +24,7 @@ UNITS = ('preview_uri.cpp', 'preview_icons.cpp', 'preview-uri-webkit.cpp',
+          'preview-provider-bootstrap.cpp', 'client-producer.cpp',
+          'imported-clients.cpp', 'preview-uri-router.cpp',
+          'elm-preview-policy.cpp', 'preview-visual-channel.cpp', 'preview-policy-driver.cpp')
+-TOOLS = ('cc', 'g++', 'pkg-config', 'node', 'python3', 'quint', 'as', 'ld', 'ar', 'ldd', 'bash', 'env')
++TOOLS = ('cc', 'g++', 'pkg-config', 'node', 'python3', 'quint', 'as', 'ld', 'ar', 'ldd', 'bash', 'env', 'bwrap')
+ ENV_KEYS = ('PATH', 'LD_LIBRARY_PATH', 'LD_PRELOAD', 'CPATH', 'C_INCLUDE_PATH',
+             'CPLUS_INCLUDE_PATH', 'LIBRARY_PATH', 'COMPILER_PATH',
+             'GCC_EXEC_PREFIX', 'PKG_CONFIG_PATH', 'PKG_CONFIG_LIBDIR',
+@@ -69,18 +69,39 @@ def run(argv, cwd=None, env=None):
+     return result.stdout
+ 
+ 
+-def native_dependencies(candidate, tools, flags):
++def native_dependencies(candidate, tools, flags, spellings=False):
+     result = set()
+     for source, compiler, standard in [('shared-host.c', 'cc', 'c11')] + [
+             (name, 'g++', 'c++20') for name in UNITS]:
+         body = run([tools[compiler]['path'], '-std=' + standard, '-M', '-MT',
+                     'locked-object', 'native/' + source, *flags], cwd=candidate)
+         dependencies = shlex.split(body.replace('\\\n', ' ').split(':', 1)[1])
+-        result.update(str((candidate / name).resolve()) if not Path(name).is_absolute()
+-                      else str(Path(name).resolve()) for name in dependencies)
++        for name in dependencies:
++            path = candidate / name if not Path(name).is_absolute() else Path(name)
++            result.add(str(path.absolute() if spellings else path.resolve()))
+     return sorted(result)
+ 
+ 
++def path_links(paths):
++    """Retain directory/leaf link chains needed to resolve locked file names."""
++    links = {}
++    checked = set()
++    def inspect(path):
++        for prefix in reversed([path, *path.parents]):
++            key = str(prefix)
++            if key in checked:
++                continue
++            checked.add(key)
++            if prefix.is_symlink():
++                target = os.readlink(prefix)
++                location = str(prefix.parent.resolve() / prefix.name)
++                links[location] = target
++                inspect(Path(target) if Path(target).is_absolute() else prefix.parent / target)
++    for name in paths:
++        inspect(Path(name))
++    return dict(sorted(links.items()))
++
++
+ def add(files, path, role, expected=None):
+     path = Path(path).absolute()
+     actual = sha(path)
+@@ -97,6 +118,23 @@ def add(files, path, role, expected=None):
+ 
+ 
+ def add_dynamic(files, path):
++    # ldd can print a canonical /usr/lib64 loader path even when PT_INTERP
++    # actually requests /lib64. Retain the executable's real lookup spelling.
++    with Path(path).open('rb') as stream:
++        header = stream.read(64)
++        if header[:4] == b'\x7fELF':
++            if header[4:6] != b'\x02\x01':
++                raise ChangedInput('Unsupported ELF class/encoding: ' + str(path))
++            offset = int.from_bytes(header[32:40], 'little')
++            size = int.from_bytes(header[54:56], 'little')
++            count = int.from_bytes(header[56:58], 'little')
++            for index in range(count):
++                stream.seek(offset + index * size)
++                program = stream.read(size)
++                if int.from_bytes(program[:4], 'little') == 3:  # PT_INTERP
++                    stream.seek(int.from_bytes(program[8:16], 'little'))
++                    loader = stream.read(int.from_bytes(program[32:40], 'little'))
++                    add(files, loader.rstrip(b'\0').decode(), 'elf-interpreter')
+     result = subprocess.run(['/usr/bin/ldd', str(path)], text=True, capture_output=True)
+     if result.returncode and ('not a dynamic executable' in result.stderr + result.stdout
+                               or 'statically linked' in result.stdout):
+@@ -109,6 +147,9 @@ def add_dynamic(files, path):
+ 
+ def capture(repo):
+     require_scope()
++    # Exercise CLI initialization before collecting Python's lazy dependencies;
++    # QA may call capture() directly while an isolated build enters main().
++    argparse.ArgumentParser(description=__doc__).parse_args([])
+     repo = Path(repo).resolve()
+     candidate = repo / 'implementation/warlock'
+     held = repo / 'implementation/warlock-preview-provider-v143'
+@@ -137,7 +178,7 @@ def capture(repo):
+             raise ChangedInput('Missing build/test tool: ' + name)
+         add(files, executable, 'build-or-test-tool')
+         tools[name] = {'path': str(Path(executable).absolute()), 'version': None}
+-    for name in ('cc', 'g++', 'pkg-config', 'node', 'python3', 'quint', 'as', 'ld', 'ar'):
++    for name in ('cc', 'g++', 'pkg-config', 'node', 'python3', 'quint', 'as', 'ld', 'ar', 'bwrap'):
+         tools[name]['version'] = run([tools[name]['path'], '--version']).strip()
+     tools['elm'] = {'path': str(compiler), 'version': run([str(compiler), '--version']).strip()}
+     # Pin the installed Quint distribution and its Node dependencies, not only its
+@@ -162,13 +203,17 @@ def capture(repo):
+     dependencies = native_dependencies(candidate, tools, flags)
+     for path in dependencies:
+         add(files, path, 'host-compile-dependency')
++    for path in native_dependencies(candidate, tools, flags, spellings=True):
++        add(files, path, 'host-header-path-spelling')
+     for name in ('crtbeginS.o', 'crtendS.o', 'libgcc.a', 'libgcc_s.so',
+-                 'libstdc++.so', 'libc.so', 'libm.so', 'liblto_plugin.so',
++                 'libstdc++.so', 'libatomic.so', 'libc.so', 'libm.so', 'liblto_plugin.so',
+                  'Scrt1.o', 'crti.o', 'crtn.o'):
+         path = run([tools['g++']['path'], '-print-file-name=' + name]).strip()
+         if not Path(path).is_absolute():
+             raise ChangedInput('Unresolved link input: ' + name)
+         add(files, path, 'host-link-input')
++        if name == 'libatomic.so':
++            add_dynamic(files, path)
+     pair_path = candidate / 'qa/current-native-pair.json'
+     pair_meta = read(pair_path)
+     add(files, pair_path, 'native-pair-manifest')
+@@ -224,6 +269,7 @@ def capture(repo):
+             'flags': flags, 'hostDependencies': dependencies, 'nativePair': pair_meta['pair'],
+             'loaderAliases': loader_aliases,
+             'environment': {key: os.environ.get(key) for key in ENV_KEYS}, 'inputs': dict(sorted(files.items())),
++            'symlinks': path_links(files),
+             'scope': 'Fixed Elm assets/native host rebuild with retained exact core/plugin/Aquamarine artifacts.',
+             'nativeAcceptance': False, 'fullReleaseAccepted': False,
+             'missingObservations': ['Complete compiler/build-tool upstream source provenance and redistribution disposition.',
+@@ -240,6 +286,9 @@ def verify(manifest):
+     for name, row in manifest['inputs'].items():
+         if str(Path(name).resolve()) != row['resolved'] or sha(name) != row['sha256']:
+             raise ChangedInput('Locked input changed: ' + name)
++    for name, target in manifest.get('symlinks', {}).items():
++        if not Path(name).is_symlink() or os.readlink(name) != target:
++            raise ChangedInput('Locked filesystem link changed: ' + name)
+     candidate = Path(manifest['candidate'])
+     if native_dependencies(candidate, manifest['tools'], manifest['flags']) != manifest['hostDependencies']:
+         raise ChangedInput('Native header resolution changed')
+diff --git c/implementation/warlock/adapter/release_repro.py i/implementation/warlock/adapter/release_repro.py
+new file mode 100644
+index 0000000..212ea70
+--- /dev/null
++++ i/implementation/warlock/adapter/release_repro.py
+@@ -0,0 +1,230 @@
++#!/usr/bin/env python3
++"""ELM-DEL-004: two clean offline builds and a retained comparison verdict."""
++import argparse
++import errno
++import hashlib
++import json
++import os
++from pathlib import Path
++import resource
++import shutil
++import socket
++import subprocess
++import sys
++
++import release_builder as builder
++
++
++def observe(manifest, parent_port, hidden_marker):
++    builder.require_scope()
++    network = socket.socket(); network.settimeout(1)
++    try:
++        network.connect(('127.0.0.1', parent_port))
++        blocked = False
++    except OSError:
++        blocked = True
++    finally:
++        network.close()
++    source = Path(manifest['candidate']) / 'native/shared-host.c'
++    try:
++        fd = os.open(source, os.O_WRONLY); os.close(fd)
++        read_only = False
++    except OSError as error:
++        read_only = error.errno in (errno.EROFS, errno.EACCES)
++    return {'namespaces': {name: os.readlink('/proc/self/ns/' + name)
++                           for name in ('net', 'mnt', 'pid')},
++            'networkBlocked': blocked, 'readOnlySource': read_only,
++            'hostMarkerHidden': not Path(hidden_marker).exists(),
++            'coreLimit': list(resource.getrlimit(resource.RLIMIT_CORE)),
++            'cgroup': Path('/proc/self/cgroup').read_text()}
++
++
++def prepare_snapshot(manifest, lock, snapshot):
++    """Copy only hash-locked files and aliases, never an entire host directory."""
++    snapshot.mkdir(mode=0o700)
++    canonical = {row['resolved'] for row in manifest['inputs'].values()}
++    expected = {row['resolved']: row['sha256'] for row in manifest['inputs'].values()}
++    for name in sorted(canonical):
++        target = snapshot / name.lstrip('/')
++        target.parent.mkdir(parents=True, exist_ok=True)
++        shutil.copyfile(name, target)
++        target.chmod(Path(name).stat().st_mode & 0o777)
++        if builder.sha(target) != expected[name]:
++            raise builder.ChangedInput('Locked input changed during snapshot: ' + name)
++    for name, target in sorted(manifest['symlinks'].items(),
++                               key=lambda item: (item[0].count('/'), item[0])):
++        path = snapshot / name.lstrip('/')
++        path.parent.mkdir(parents=True, exist_ok=True)
++        path.symlink_to(target)
++    for name in ('build', 'proc', 'dev', 'tmp'):
++        (snapshot / name).mkdir(exist_ok=True)
++    shutil.copyfile(lock, snapshot / 'input-lock.json')
++    if builder.sha(snapshot / 'input-lock.json') != builder.sha(lock):
++        raise builder.ChangedInput('Lock changed during snapshot')
++    return {'canonicalFiles': len(canonical), 'symlinks': len(manifest['symlinks']),
++            'lockSHA256': builder.sha(snapshot / 'input-lock.json'),
++            'inputFileHashesSHA256': hashlib.sha256(json.dumps(
++                sorted(expected.items()), separators=(',', ':')).encode()).hexdigest()}
++
++
++def sandbox_args(manifest, snapshot, output, port, marker):
++    # The root contains only verified inputs and explicit aliases. No desktop
++    # socket, host directory or mutable package cache is bound.
++    args = ['--unshare-user', '--unshare-pid', '--unshare-net', '--unshare-ipc',
++            '--unshare-uts', '--die-with-parent', '--new-session', '--clearenv']
++    args += ['--ro-bind', str(snapshot), '/', '--bind', str(output), '/build',
++             '--proc', '/proc', '--dev', '/dev', '--tmpfs', '/tmp']
++    for name, value in manifest['environment'].items():
++        if value is not None:
++            args += ['--setenv', name, value]
++    # Retain HOME's value; its host contents are absent from the new filesystem.
++    if os.environ.get('HOME'):
++        args += ['--setenv', 'HOME', os.environ['HOME']]
++    for name, value in {'PYTHONDONTWRITEBYTECODE': '1', 'XDG_CACHE_HOME': '/tmp/cache',
++                        'XDG_CONFIG_HOME': '/tmp/config', 'XDG_DATA_HOME': '/tmp/data',
++                        'XDG_STATE_HOME': '/tmp/state'}.items():
++        args += ['--setenv', name, value]
++    args += ['--chdir', manifest['candidate'], '--',
++             manifest['tools']['python3']['path'], '-B',
++             str(Path(manifest['candidate']) / 'adapter/release_repro.py'), 'inside',
++             '--lock', '/input-lock.json', '--sha256', builder.sha(snapshot / 'input-lock.json'),
++             '--output', '/build/artifacts', '--parent-port', str(port),
++             '--host-marker', str(marker)]
++    return args
++
++
++def compare(left, right):
++    """Compare real payloads/archives and reject changed recorded artifacts."""
++    inputs = []
++    states = []
++    for directory in (Path(left), Path(right)):
++        report = builder.read(directory / 'report.json')
++        real = {str(p.relative_to(directory / 'package')): builder.sha(p)
++                for p in sorted((directory / 'package').rglob('*')) if p.is_file()}
++        links = {str(p.relative_to(directory / 'package')): os.readlink(p)
++                 for p in sorted((directory / 'package').rglob('*')) if p.is_symlink()}
++        states.append({'directory': str(directory), 'payload': real,
++                       'links': links,
++                       'archive': builder.sha(directory / 'warlock-candidate.tar'),
++                       'report': report})
++    differences = []
++    for index, state in enumerate(states):
++        if not state['report']['passed']:
++            differences.append({'kind': 'failed-build', 'side': index})
++        if state['payload'] != state['report']['payload']:
++            differences.append({'kind': 'changed-recorded-payload', 'side': index})
++        expected_links = {name: row['symlink'] for name, row in
++                          state['report']['packageManifest']['files'].items()
++                          if row['symlink'] is not None}
++        if state['links'] != expected_links:
++            differences.append({'kind': 'changed-recorded-symlinks', 'side': index,
++                                'expected': expected_links, 'actual': state['links']})
++        if state['archive'] != state['report']['archiveSHA256']:
++            differences.append({'kind': 'changed-recorded-archive', 'side': index,
++                'expected': state['report']['archiveSHA256'], 'actual': state['archive']})
++    for name in sorted(set(states[0]['payload']) | set(states[1]['payload'])):
++        hashes = [state['payload'].get(name) for state in states]
++        if hashes[0] != hashes[1]:
++            differences.append({'kind': 'payload', 'path': name, 'hashes': hashes})
++    if states[0]['archive'] != states[1]['archive']:
++        differences.append({'kind': 'archive', 'hashes': [s['archive'] for s in states]})
++    for name in sorted(set(states[0]['links']) | set(states[1]['links'])):
++        targets = [state['links'].get(name) for state in states]
++        if targets[0] != targets[1]:
++            differences.append({'kind': 'payload-link', 'path': name, 'targets': targets})
++    identities = [s['report']['packageManifest']['inputContentSHA256'] for s in states]
++    if identities[0] != identities[1]:
++        inputs.append({'kind': 'input-content', 'hashes': identities})
++    return {'matched': not differences and not inputs, 'releaseBlocked': bool(differences or inputs),
++            'differentInputs': inputs, 'distributableDifferences': differences,
++            'archiveHashes': [s['archive'] for s in states],
++            'inputContentHashes': identities, 'payloadFileCount': len(states[0]['payload'])}
++
++
++def run_pair(manifest, lock, output):
++    builder.verify(manifest)
++    output = Path(output).absolute(); output.mkdir(mode=0o700)
++    marker = output / 'host-only-marker'; marker.write_text('private host filesystem marker')
++    listener = socket.socket(); listener.bind(('127.0.0.1', 0)); listener.listen()
++    port = listener.getsockname()[1]
++    with socket.create_connection(('127.0.0.1', port), timeout=1):
++        accepted, _ = listener.accept(); accepted.close()
++    parent = {name: os.readlink('/proc/self/ns/' + name) for name in ('net', 'mnt', 'pid')}
++    results = []
++    verdict = {'matched': False, 'releaseBlocked': True}
++    snapshot_report = None
++    try:
++        snapshot = output / 'locked-root'
++        snapshot_report = prepare_snapshot(manifest, lock, snapshot)
++        for label in ('A', 'B'):
++            folder = output / label; folder.mkdir(mode=0o700)
++            args = sandbox_args(manifest, snapshot, folder, port, marker)
++            command = [manifest['tools']['bwrap']['path'], *args]
++            (folder / 'sandbox-args.json').write_text(json.dumps(args, indent=2) + '\n')
++            row = {'label': label, 'exitCode': None,
++                   'argumentsSHA256': hashlib.sha256(json.dumps(args).encode()).hexdigest()}
++            results.append(row)
++            try:
++                child = subprocess.run(command, text=True, capture_output=True, timeout=600)
++            except subprocess.TimeoutExpired as error:
++                row['timedOut'] = True
++                for name, body in (('stdout', error.stdout), ('stderr', error.stderr)):
++                    (folder / ('sandbox.' + name)).write_text(
++                        body.decode(errors='replace') if isinstance(body, bytes) else body or '')
++                raise
++            (folder / 'sandbox.stdout').write_text(child.stdout)
++            (folder / 'sandbox.stderr').write_text(child.stderr)
++            row['exitCode'] = child.returncode
++            if child.returncode:
++                raise builder.ChangedInput('Offline build ' + label + ' failed: ' + child.stderr + child.stdout)
++            observed = builder.read(folder / 'environment.json')
++            row['environment'] = observed
++            if (not all(observed['namespaces'][name] != parent[name] for name in parent)
++                    or not observed['networkBlocked'] or not observed['readOnlySource']
++                    or not observed['hostMarkerHidden'] or observed['coreLimit'] != [1, 1]):
++                raise builder.ChangedInput('Offline build isolation observation failed: ' + label)
++        verdict = compare(output / 'A/artifacts', output / 'B/artifacts')
++    except (builder.ChangedInput, OSError, subprocess.TimeoutExpired) as error:
++        verdict['error'] = str(error)
++    finally:
++        listener.close()
++    report = {**verdict, 'builds': results, 'parentNamespaces': parent,
++              'snapshot': snapshot_report,
++              'lockSHA256': builder.sha(lock), 'nativeAcceptance': False,
++              'fullReleaseAccepted': False}
++    (output / 'reproducibility-report.json').write_text(json.dumps(report, indent=2) + '\n')
++    return report
++
++
++def main(argv=None):
++    parser = argparse.ArgumentParser(description=__doc__)
++    sub = parser.add_subparsers(dest='operation', required=True)
++    for name in ('inside', 'run'):
++        item = sub.add_parser(name); item.add_argument('--lock', required=True)
++        item.add_argument('--sha256', required=True); item.add_argument('--output', required=True)
++        if name == 'inside':
++            item.add_argument('--parent-port', required=True, type=int)
++            item.add_argument('--host-marker', required=True)
++    args = parser.parse_args(argv)
++    try:
++        if builder.sha(args.lock) != args.sha256:
++            raise builder.ChangedInput('Release lock identity changed')
++        manifest = builder.read(args.lock)
++        if args.operation == 'inside':
++            observed = observe(manifest, args.parent_port, args.host_marker)
++            (Path(args.output).parent / 'environment.json').write_text(json.dumps(observed, indent=2) + '\n')
++            if not all(observed[key] for key in ('networkBlocked', 'readOnlySource', 'hostMarkerHidden')):
++                raise builder.ChangedInput('Sandbox pre-build isolation failed')
++            builder.build(manifest, args.output)
++            result = {'passed': True, 'output': args.output}
++        else:
++            result = run_pair(manifest, Path(args.lock).absolute(), args.output)
++        print(json.dumps(result), flush=True)
++        return 4 if result.get('releaseBlocked') else 0
++    except (builder.ChangedInput, OSError, ValueError) as error:
++        print(json.dumps({'matched': False, 'releaseBlocked': True, 'error': str(error)}), flush=True)
++        return 2
++
++
++if __name__ == '__main__':
++    raise SystemExit(main())
+diff --git c/implementation/warlock/qa/check-release-repro.py i/implementation/warlock/qa/check-release-repro.py
+new file mode 100644
+index 0000000..b65125c
+--- /dev/null
++++ i/implementation/warlock/qa/check-release-repro.py
+@@ -0,0 +1,120 @@
++"""Protected offline namespace and two-build reproducibility observations."""
++import json
++import os
++from pathlib import Path
++import resource
++import socket
++import subprocess
++import sys
++import time
++
++ROOT = Path(__file__).resolve().parents[1]
++OUT = ROOT / 'qa/runs' / ('offline-reproducibility-' + str(time.time_ns()))
++OUT.mkdir(parents=True)
++sys.path.insert(0, str(ROOT / 'adapter'))
++import release_builder as builder
++import release_repro as repro
++builder.require_scope()
++
++listener = socket.socket()
++listener.bind(('127.0.0.1', 0)); listener.listen()
++port = listener.getsockname()[1]
++with socket.create_connection(('127.0.0.1', port), timeout=1):
++    accepted, _ = listener.accept(); accepted.close()
++parent = {name: os.readlink('/proc/self/ns/' + name) for name in ('net', 'mnt', 'pid')}
++program = '''import errno,json,os,pathlib,resource,socket,sys
++connection=socket.socket();connection.settimeout(1)
++try:connection.connect(('127.0.0.1',int(sys.argv[1])));blocked=False
++except OSError as error:blocked=True;reason=error.errno
++connection.close()
++try:fd=os.open('/usr/bin/python3',os.O_WRONLY);os.close(fd);read_only=False
++except OSError as error:read_only=error.errno in (errno.EROFS,errno.EACCES)
++print(json.dumps({'namespaces':{n:os.readlink('/proc/self/ns/'+n) for n in ('net','mnt','pid')},
++ 'networkBlocked':blocked,'readOnlyInputs':read_only,'coreLimit':list(resource.getrlimit(resource.RLIMIT_CORE)),
++ 'cgroup':pathlib.Path('/proc/self/cgroup').read_text(),'hiddenHostSource':not pathlib.Path(sys.argv[2]).exists()}))
++'''
++command = ['/usr/bin/bwrap', '--unshare-user', '--unshare-pid', '--unshare-net',
++    '--unshare-ipc', '--unshare-uts', '--die-with-parent', '--new-session',
++    '--ro-bind', '/usr', '/usr', '--symlink', 'usr/lib', '/lib',
++    '--symlink', 'usr/lib', '/lib64', '--symlink', 'usr/bin', '/bin',
++    '--dir', '/etc', '--ro-bind', '/etc/ld.so.cache', '/etc/ld.so.cache',
++    '--proc', '/proc', '--dev', '/dev', '--tmpfs', '/tmp',
++    '--', '/usr/bin/python3', '-B', '-c', program, str(port), str(ROOT)]
++result = subprocess.run(command, text=True, capture_output=True, timeout=20)
++listener.close()
++(OUT / 'probe.stdout').write_text(result.stdout)
++(OUT / 'probe.stderr').write_text(result.stderr)
++report = {'passed': False, 'command': command, 'exitCode': result.returncode,
++    'parentNamespaces': parent, 'nativeAcceptance': False, 'fullReleaseAccepted': False}
++if result.returncode == 0:
++    observed = json.loads(result.stdout)
++    report.update(observed=observed, passed=all(observed['namespaces'][name] != parent[name]
++        for name in parent) and observed['networkBlocked'] and observed['readOnlyInputs']
++        and observed['hiddenHostSource'] and observed['coreLimit'] == [1, 1]
++        and 'qa-harness.slice/qa-harness-' in observed['cgroup'])
++(OUT / 'report.json').write_text(json.dumps(report, indent=2) + '\n')
++if '--probe' in sys.argv or not report['passed']:
++    print(json.dumps({'passed': report['passed'], 'report': str(OUT / 'report.json')}))
++    raise SystemExit(not report['passed'])
++
++full = {'passed': False, 'probe': report, 'nativeAcceptance': False,
++        'fullReleaseAccepted': False}
++try:
++    manifest = builder.capture(ROOT.parents[1])
++    lock = OUT / 'build-lock.json'
++    lock.write_text(json.dumps(manifest, indent=2) + '\n')
++    full['lockSHA256'] = builder.sha(lock)
++    full['inputCount'] = builder.verify(manifest)
++    print(json.dumps({'phase': 'locked-inputs', 'inputs': full['inputCount'],
++                      'report': str(OUT / 'report.json')}), flush=True)
++    pair = repro.run_pair(manifest, lock, OUT / 'pair')
++    full['pair'] = pair
++    if not pair['matched'] or pair['releaseBlocked']:
++        raise builder.ChangedInput('Two offline builds did not match; see pair logs')
++    left, right = OUT / 'pair/A/artifacts', OUT / 'pair/B/artifacts'
++    archive = right / 'warlock-candidate.tar'
++    length, original = archive.stat().st_size, builder.sha(archive)
++    try:
++        with archive.open('ab') as stream:
++            stream.write(b'Intentional QA archive mismatch\n')
++        negative = repro.compare(left, right)
++        full['archiveMismatch'] = negative
++        if not negative['releaseBlocked'] or negative['matched']:
++            raise builder.ChangedInput('Different actual archive did not block release')
++    finally:
++        with archive.open('r+b') as stream:
++            stream.truncate(length)
++    if builder.sha(archive) != original:
++        raise builder.ChangedInput('QA failed to restore original archive')
++    asset = right / 'package/assets/bar.js'
++    original_bytes = asset.read_bytes()
++    try:
++        asset.write_bytes(original_bytes + b'\n/* Intentional QA payload mismatch */\n')
++        negative = repro.compare(left, right)
++        full['payloadMismatch'] = negative
++        if (not negative['releaseBlocked'] or negative['matched'] or
++                not any(row.get('path') == 'assets/bar.js'
++                        for row in negative['distributableDifferences'])):
++            raise builder.ChangedInput('Different actual payload did not block release')
++    finally:
++        asset.write_bytes(original_bytes)
++    alias = right / 'package/native/libaquamarine.so.14'
++    target = os.readlink(alias)
++    try:
++        alias.unlink(); alias.symlink_to('./' + target)
++        negative = repro.compare(left, right)
++        full['aliasMismatch'] = negative
++        if (not negative['releaseBlocked'] or negative['matched'] or
++                not any(row.get('kind') == 'payload-link'
++                        for row in negative['distributableDifferences'])):
++            raise builder.ChangedInput('Changed loader alias did not block release')
++    finally:
++        alias.unlink(); alias.symlink_to(target)
++    full['restoredComparison'] = repro.compare(left, right)
++    full['passed'] = full['restoredComparison']['matched']
++except (builder.ChangedInput, OSError, ValueError, subprocess.TimeoutExpired) as error:
++    full['error'] = str(error)
++finally:
++    (OUT / 'report.json').write_text(json.dumps(full, indent=2) + '\n')
++print(json.dumps({'passed': full['passed'], 'report': str(OUT / 'report.json')}), flush=True)
++raise SystemExit(not full['passed'])
