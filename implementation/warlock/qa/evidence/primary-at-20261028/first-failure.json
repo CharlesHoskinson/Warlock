@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "requirement": "ELM-UI-004",
+  "scenarios": [
+    "taskbar-inactive",
+    "taskbar-active",
+    "taskbar-minimized"
+  ],
+  "disposition": "blocked",
+  "report": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-primary-at/native-primary-keyboard-1793214468797988219/report.json",
+    "sha256": "0cecb23a404d89eaf8729e19837afbef4e8e472498bc098009e3e98af33bdb19"
+  },
+  "scope": "First actual private AT attempt reaches reader registration; strict actual process mapping refuses unlisted GStreamer/liborc provider before any taskbar AT action. Secondary pre-fixture NameError masks primary cause at outer exception; both retained. No original taskbar AT verdict or product defect established.",
+  "primaryFailure": "Actual mapped provider not qualified: /usr/lib/liborc-0.4.so.0.44.0",
+  "outerError": "NameError(\"name 'fixture' is not defined\")",
+  "fullTraceback": "Traceback (most recent call last):\n  File \"/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-primary-keyboard/native-primary-keyboard.py\", line 225, in <module>\n    fcitx=s.host.launch('ime-fcitx',['/usr/bin/fcitx5','-D','--disable','all','--enable','dbus,dbusfrontend,keyboard,unicode,classicui,wayland','-u','classicui','--verbose','key_trace=5'],env=fcitx_env);apps.append(fcitx)\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-primary-keyboard/native-primary-keyboard.py\", line 157, in wait\n    raise RuntimeError('Original observation deadline '+getattr(fn,'__name__',''))\n                     ^^^^\n  File \"/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-primary-keyboard/native-primary-keyboard.py\", line 225, in <lambda>\n    fcitx=s.host.launch('ime-fcitx',['/usr/bin/fcitx5','-D','--disable','all','--enable','dbus,dbusfrontend,keyboard,unicode,classicui,wayland','-u','classicui','--verbose','key_trace=5'],env=fcitx_env);apps.append(fcitx)\n                ^^^^^^^^^^^^\n  File \"/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-primary-keyboard/native-primary-keyboard.py\", line 222, in at_observe\n    config_home=pathlib.Path(env['XDG_CONFIG_HOME']);assert config_home.resolve().is_relative_to(s.host.runtime.resolve());profile=config_home/'fcitx5/profile';profile.parent.mkdir(mode=0o700,parents=True,exist_ok=True)\n                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/charles/.local/state/warlock-team/20261028/native-rebuild/at-prefix-host/guard.py\", line 52, in validate_process\n    return _process_maps(pid,start,validate())\n  File \"/home/charles/.local/state/warlock-team/20261028/native-rebuild/at-prefix-host/guard.py\", line 47, in _process_maps\n    if expected is None or sha(resolved)!=expected:raise RuntimeError('Unpinned AT mapped provider: '+name)\n                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Unpinned AT mapped provider: /usr/lib/liborc-0.4.so.0.44.0\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-primary-keyboard/native-primary-keyboard.py\", line 2354, in <module>\nNameError: name 'fixture' is not defined\n",
+  "checks": [
+    {
+      "name": "OwningPluginLoads",
+      "passed": true
+    }
+  ],
+  "cleanupPassed": true,
+  "sourceTuple": {
+    "sourceBaseRevision": "9addd6cf1c5cfe7a3ea1934334c2fa24186d43d1",
+    "core": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-build/Hyprland",
+      "sha256": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e"
+    },
+    "plugin": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/authority/elm-window-geometry-authority.so",
+      "sha256": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c"
+    },
+    "host": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/elm-host",
+      "sha256": "4377b11ce0afe9e1072210666aa872118b032995275a20657058771e5e6c8347",
+      "heldBuild": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/host-build-report.json",
+      "heldBuildSHA256": "691806471ff599503a20067aa0b90bf914b93a1ee5985198cdc79fb92ff975bf"
+    },
+    "wrapperSHA256": "5d0b551fdd0aaa75d2bcccf4d77f0e8ddf8df70d5d9d728f7c9cbb3909461bdf",
+    "compiledSourceSHA256": "67f4622fd399bbc59ca03d6ca1bf689e2afa9572f52e3a8a3700355999a382be",
+    "guardSHA256": "1772d7c7b7a6ecabde6a4b4e729b68d42bd35d3b2ac2afb62dcb116d0266c747",
+    "packetSHA256": "8bb6bd274593ef6d2623e74938213f1b4c0f29329f31a07c6f29f8d0f6f3bc9e"
+  },
+  "missingObservations": [
+    "Qualify actual Orca sound.py GStreamer namespace provider closure without starting media pipeline.",
+    "Fix secondary pre-fixture cleanup/reporting NameError while retaining primary error and all original oracles/deadlines.",
+    "Real focused AT-SPI taskbar actions, accessible names/focus/state/Orca transcript and exact native receipts/recipients/pixels remain unobserved on this tuple."
+  ],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

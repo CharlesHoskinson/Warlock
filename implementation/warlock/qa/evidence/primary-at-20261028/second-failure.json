@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "requirement": "ELM-UI-004",
+  "scenarios": [
+    "taskbar-inactive",
+    "taskbar-active",
+    "taskbar-minimized"
+  ],
+  "disposition": "blocked",
+  "report": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-primary-at/native-primary-keyboard-1793215082472811918/report.json",
+    "sha256": "f43abe8672c1decf71b8d04cfe0e9aa71b706f3de4de81ff57cf570a349db535"
+  },
+  "scope": "Second actual AT attempt still stops before actions: v2 strict map guard refuses only actual GIO module libdconfsettings.so. Previous secondary pre-fixture NameError is fixed; original guard, actions and deadlines are not relaxed.",
+  "error": "RuntimeError('Unpinned AT mapped providers: [\"/usr/lib/gio/modules/libdconfsettings.so\"]')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-primary-keyboard/native-primary-keyboard.py\", line 226, in <module>\n    wait(lambda:fcitx.poll() is not None or 'Loaded addon dbusfrontend' in (OUTPUT/'ime-fcitx.log').read_text(errors='replace'))\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-primary-keyboard/native-primary-keyboard.py\", line 157, in wait\n    raise RuntimeError('Original observation deadline '+getattr(fn,'__name__',''))\n                     ^^^^\n  File \"/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-primary-keyboard/native-primary-keyboard.py\", line 226, in <lambda>\n    wait(lambda:fcitx.poll() is not None or 'Loaded addon dbusfrontend' in (OUTPUT/'ime-fcitx.log').read_text(errors='replace'))\n                ~~~~~~~~~~^^\n  File \"/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-primary-keyboard/native-primary-keyboard.py\", line 223, in at_observe\n    profile.write_text('[Groups/0]\\nName=Default\\nDefault Layout=us\\nDefaultIM=keyboard-us\\n[Groups/0/Items/0]\\nName=keyboard-us\\nLayout=\\n[GroupOrder]\\n0=Default\\n');profile.chmod(0o600)\n                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/charles/.local/state/warlock-team/20261028/native-rebuild/at-prefix-host/guard-v2.py\", line 53, in validate_process\n    return _process_maps(pid,start,validate())\n  File \"/home/charles/.local/state/warlock-team/20261028/native-rebuild/at-prefix-host/guard-v2.py\", line 49, in _process_maps\n    if unknown:raise RuntimeError('Unpinned AT mapped providers: '+json.dumps(sorted(set(unknown))))\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Unpinned AT mapped providers: [\"/usr/lib/gio/modules/libdconfsettings.so\"]\n",
+  "cleanupPassed": true,
+  "checks": [
+    {
+      "name": "OwningPluginLoads",
+      "passed": true
+    },
+    {
+      "name": "OwnedClientNormalExit",
+      "passed": true
+    },
+    {
+      "name": "OwnedClientNormalExit",
+      "passed": true
+    },
+    {
+      "name": "OwnedClientNormalExit",
+      "passed": true
+    },
+    {
+      "name": "OwnedClientNormalExit",
+      "passed": true
+    },
+    {
+      "name": "OwningPluginUnloads",
+      "passed": true
+    }
+  ],
+  "sourceIdentity": {
+    "wrapperSHA256": "1d1d02580df3d7ee37ee1acf4719d7b296e652789e27f14a6c833e44f824b24f",
+    "guardSHA256": "9817ed09f044b136d9b567994d47c60583e2a8bdbf9dbb0b2c5b853bb5548f96",
+    "packetSHA256": "ae0be682e4b72de05924ab598b6f5d977cfedaa7edda6b492b76b3100e89747e"
+  },
+  "missingObservations": [
+    "Qualify actual installed GIO module closure while preserving unknown-provider refusal.",
+    "All original focused taskbar AT actions/names/focus/state/transcript and matching native outcomes remain unobserved."
+  ],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

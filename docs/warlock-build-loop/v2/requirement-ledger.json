@@ -5397,6 +5397,31 @@
                 "Independent final original scenario review and remaining UI004 cases."
               ],
               "scenarioAccepted": false
+            },
+            {
+              "disposition": "blocked",
+              "evidence": {
+                "path": "implementation/warlock/qa/evidence/primary-at-20261028/first-failure.json",
+                "sha256": "06fd17af987079d407d9a99633059512c7a40a6df6e02e3c34fdbe2b4e094bce"
+              },
+              "scope": "First focused AT attempt stops at strict actual Orca/GStreamer provider qualification before taskbar actions; secondary pre-fixture NameError recorded separately. Prior pointer/keyboard passes remain valid; no production AT behavior verdict.",
+              "missingObservations": [
+                "Qualify actual sound.py/Gst provider closure and preserve primary error before fixture initialization.",
+                "Focused current AT-SPI actions/names/focus/state/Orca transcript with native receipts/recipient/pixels remain open."
+              ],
+              "scenarioAccepted": false
+            },
+            {
+              "disposition": "blocked",
+              "evidence": {
+                "path": "implementation/warlock/qa/evidence/primary-at-20261028/second-failure.json",
+                "sha256": "1b05ce59c69b9577ae5dffabd2c550816ab9d099f790702994dd9cdda8c849ca"
+              },
+              "scope": "Actual second AT attempt refuses unqualified GIO libdconfsettings module before taskbar actions; pre-fixture reporting NameError is fixed. No AT behavior accepted.",
+              "scenarioAccepted": false,
+              "missingObservations": [
+                "Original focused AT actions/names/focus/state/Orca transcript with exact native effects remain unobserved."
+              ]
             }
           ]
         },
@@ -5586,6 +5611,31 @@
                 "Independent final original scenario review and remaining UI004 cases."
               ],
               "scenarioAccepted": false
+            },
+            {
+              "disposition": "blocked",
+              "evidence": {
+                "path": "implementation/warlock/qa/evidence/primary-at-20261028/first-failure.json",
+                "sha256": "06fd17af987079d407d9a99633059512c7a40a6df6e02e3c34fdbe2b4e094bce"
+              },
+              "scope": "First focused AT attempt stops at strict actual Orca/GStreamer provider qualification before taskbar actions; secondary pre-fixture NameError recorded separately. Prior pointer/keyboard passes remain valid; no production AT behavior verdict.",
+              "missingObservations": [
+                "Qualify actual sound.py/Gst provider closure and preserve primary error before fixture initialization.",
+                "Focused current AT-SPI actions/names/focus/state/Orca transcript with native receipts/recipient/pixels remain open."
+              ],
+              "scenarioAccepted": false
+            },
+            {
+              "disposition": "blocked",
+              "evidence": {
+                "path": "implementation/warlock/qa/evidence/primary-at-20261028/second-failure.json",
+                "sha256": "1b05ce59c69b9577ae5dffabd2c550816ab9d099f790702994dd9cdda8c849ca"
+              },
+              "scope": "Actual second AT attempt refuses unqualified GIO libdconfsettings module before taskbar actions; pre-fixture reporting NameError is fixed. No AT behavior accepted.",
+              "scenarioAccepted": false,
+              "missingObservations": [
+                "Original focused AT actions/names/focus/state/Orca transcript with exact native effects remain unobserved."
+              ]
             }
           ]
         },
@@ -5738,6 +5788,31 @@
                 "Independent final original scenario review and remaining UI004 cases."
               ],
               "scenarioAccepted": false
+            },
+            {
+              "disposition": "blocked",
+              "evidence": {
+                "path": "implementation/warlock/qa/evidence/primary-at-20261028/first-failure.json",
+                "sha256": "06fd17af987079d407d9a99633059512c7a40a6df6e02e3c34fdbe2b4e094bce"
+              },
+              "scope": "First focused AT attempt stops at strict actual Orca/GStreamer provider qualification before taskbar actions; secondary pre-fixture NameError recorded separately. Prior pointer/keyboard passes remain valid; no production AT behavior verdict.",
+              "missingObservations": [
+                "Qualify actual sound.py/Gst provider closure and preserve primary error before fixture initialization.",
+                "Focused current AT-SPI actions/names/focus/state/Orca transcript with native receipts/recipient/pixels remain open."
+              ],
+              "scenarioAccepted": false
+            },
+            {
+              "disposition": "blocked",
+              "evidence": {
+                "path": "implementation/warlock/qa/evidence/primary-at-20261028/second-failure.json",
+                "sha256": "1b05ce59c69b9577ae5dffabd2c550816ab9d099f790702994dd9cdda8c849ca"
+              },
+              "scope": "Actual second AT attempt refuses unqualified GIO libdconfsettings module before taskbar actions; pre-fixture reporting NameError is fixed. No AT behavior accepted.",
+              "scenarioAccepted": false,
+              "missingObservations": [
+                "Original focused AT actions/names/focus/state/Orca transcript with exact native effects remain unobserved."
+              ]
             }
           ]
         },
