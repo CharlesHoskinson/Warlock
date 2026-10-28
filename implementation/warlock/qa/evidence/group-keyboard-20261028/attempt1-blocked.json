@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "requirement": "ELM-UI-004",
+  "scenario": "taskbar-group",
+  "disposition": "blocked",
+  "report": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-three-group-keyboard/native-three-group-keyboard-1793215824886166318/report.json",
+    "sha256": "8ae46425d226c5c14e5fd57a2af146c0a29d0ce8c228ee39c9b7de997fb06fd6"
+  },
+  "scope": "First actual group-keyboard attempt stops before keyboard/group action: catalog setup flag routes into unrelated generic launcher test; strict group target guard refuses Open applications, zero helpers invoked. Demonstrated QA dispatch defect, no product defect or keyboard verdict.",
+  "error": "AssertionError('ThreeGroupPointerTargetStillCurrent')",
+  "checks": [
+    {
+      "name": "OwningPluginLoads",
+      "passed": true
+    },
+    {
+      "name": "FixtureFloats",
+      "passed": true
+    },
+    {
+      "name": "FixtureSize",
+      "passed": true
+    },
+    {
+      "name": "FixturePosition",
+      "passed": true
+    },
+    {
+      "name": "ThreeGroupPointerTargetStillCurrent",
+      "passed": false
+    },
+    {
+      "name": "OwnedClientNormalExit",
+      "passed": true
+    },
+    {
+      "name": "OwnedClientNormalExit",
+      "passed": true
+    },
+    {
+      "name": "OwningPluginUnloads",
+      "passed": true
+    }
+  ],
+  "helpers": [],
+  "cleanupPassed": true,
+  "rootAssessment": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-three-group-keyboard/root-attempt1-assessment.json",
+    "sha256": "72617e03146b2a6b580ef82041303954359a07ea83e7241ff133689dc6427a05"
+  },
+  "runnerSHA256": "9d29b159d7c0018e231a626e071c1c312398536c8cc36edef462307e28acdd4e",
+  "missingObservations": [
+    "Exclude THREE_GROUP from generic catalog journey while retaining catalog setup/shortcut binding.",
+    "Actual keyboard-primary group opening, three-row reveal and exact selected activation/recipient remain unobserved."
+  ],
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false
+}

@@ -5824,6 +5824,11 @@
             {
               "path": "implementation/warlock/qa/evidence/keyboard-handoff/manifest.json",
               "sha256": "66c41da0aa2ffb9dfe56752b0e18841cff05e6d7256550a9bf3aa86d22b90de8"
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/group-keyboard-20261028/manifest.json",
+              "sha256": "db2da99648d38076e4441c87f2d5d3995110896b416281da4bad42a5308576da",
+              "scope": "Actual keyboard-primary group opening and member selection: genuine shortcut/Escape/Home/Enter, three rows physically revealed using End/Home/Down under current publication22/lease2, exact one chosen activation/Committed receipt/actual recipient, no pointer helpers/launch, normal cleanup. Matching AT remains open."
             }
           ],
           "missingObservation": "Applicable assistive-technology navigation, operation names and focus observations; Independent original-scenario review against exact source/ABI/toolchain",
@@ -5971,6 +5976,48 @@
               },
               "missingObservations": [
                 "Matching keyboard-primary activation/selection and applicable AT on this tuple; other UI004 obligations remain independent."
+              ],
+              "scenarioAccepted": false
+            },
+            {
+              "disposition": "partial",
+              "evidence": {
+                "path": "implementation/warlock/qa/evidence/group-keyboard-20261028/manifest.json",
+                "sha256": "db2da99648d38076e4441c87f2d5d3995110896b416281da4bad42a5308576da"
+              },
+              "scope": "Actual keyboard-primary group opening and member selection: genuine shortcut/Escape/Home/Enter, three rows physically revealed using End/Home/Down under current publication22/lease2, exact one chosen activation/Committed receipt/actual recipient, no pointer helpers/launch, normal cleanup. Matching AT remains open.",
+              "reviewerDisposition": {
+                "name": "quint-5",
+                "independent": true,
+                "disposition": "partial",
+                "path": "implementation/warlock/qa/evidence/group-keyboard-20261028/independent-review.md",
+                "sha256": "18351beee349370bffe866ce4cc65f8acad280dfda2c662b53d627d08da09736"
+              },
+              "sourceTuple": {
+                "sourceBaseRevision": "3c531ae3a7c11c7e6322be985c7bb2891ca2dff1",
+                "core": {
+                  "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-build/Hyprland",
+                  "sha256": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e"
+                },
+                "plugin": {
+                  "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/authority/elm-window-geometry-authority.so",
+                  "sha256": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c"
+                },
+                "aquamarine": {
+                  "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/lib/libaquamarine.so.0.15.0",
+                  "sha256": "667a22d535aade4e4a26134e39028a87fb3f963c28b7bf7ff79da684bb014ecd"
+                },
+                "host": {
+                  "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/elm-host",
+                  "sha256": "4377b11ce0afe9e1072210666aa872118b032995275a20657058771e5e6c8347",
+                  "heldBuild": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/host-build-report.json",
+                  "heldBuildSHA256": "691806471ff599503a20067aa0b90bf914b93a1ee5985198cdc79fb92ff975bf"
+                },
+                "runnerSHA256": "ac67e15dd821e842e3bb235db1eca85f56907b76647065edd96e94a663ae8b8f"
+              },
+              "missingObservations": [
+                "Applicable AT group invocation/selection and announcements on this tuple.",
+                "Independent final full UI004 requirement acceptance and remaining original cases."
               ],
               "scenarioAccepted": false
             }
@@ -13312,5 +13359,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-28T18:50:56.291961+00:00"
+  "updatedUTC": "2026-10-28T19:49:09.051978+00:00"
 }
