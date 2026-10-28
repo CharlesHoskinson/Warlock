@@ -1,37 +1,36 @@
 {
   "schema": 1,
   "owner": "sol",
-  "updatedUTC": "2026-10-28T18:30:44.568112+00:00",
+  "updatedUTC": "2026-10-28T18:42:38.907598+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "native-taskbar-workspace2",
+    "id": "native-taskbar-primary-keyboard",
     "requirements": [
-      "ELM-UX-008",
       "ELM-UI-004"
     ],
     "scenarios": [
-      "ux-008",
+      "taskbar-inactive",
+      "taskbar-active",
       "taskbar-minimized"
     ],
     "paths": [
-      "implementation/warlock/qa/native-taskbar-workspace2-portable.py",
+      "implementation/warlock/qa/native-taskbar-primary-keyboard-portable.py",
       "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/qa/WorkspaceNavigationReplay.elm",
       "implementation/warlock/src/Desktop.elm",
       "implementation/warlock/src/Surface.elm",
       "implementation/warlock/README.md"
     ],
-    "before": "Original exactly-three-entry example accepted on observed tuple; minimized workspace2 icon restore and exact no-scratchpad membership remain unobserved on this fresh tuple.",
-    "after": "Original minimized workspace2 member selected through taskbar icon route restores with one bound committed Restore receipt, exact workspace2 membership and native recipient/pixel evidence without scratchpad conversion.",
+    "before": "Current fresh tuple primary pointer journeys pass; actual keyboard-triggered primary activation/minimize/restore parity remains unobserved on this tuple.",
+    "after": "Original physical keyboard primary route performs activate/minimize/restore with exact one bound committed effect, MRU/desktop succession, actual recipient/pixels and zero pointer action, keeping separate AT and remaining UI004 obligations.",
     "verification": [
-      "Original ELM-UX-008 Elm replay plus isolated native recording of minimized workspace2 icon route with exact Restore receipt/member identity/no scratchpad; preserve original TaskViewRestore and TaskbarRestore assertions and deadlines, explicit picker route where applicable. UI004 matching keyboard/AT remains separate."
+      "Original five-action primary keyboard recording on exact fresh tuple with native shortcut/Enter invocation, zero pointer helpers, exact bound receipts, actual native state/cues/pixels/recipient, MRU/desktop succession and normal cleanup. Applicable AT and other UI004 scenarios remain separate."
     ],
     "owner": "sol",
-    "participantRecord": ".warlock-contributor/native-workspace2.json"
+    "participantRecord": ".warlock-contributor/native-primary-keyboard.json"
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -1924,48 +1923,51 @@
     "nextOriginalProductWork": "Restore and qualify a fresh coherent native source/core/plugin/host tuple for original taskbar activation/minimize/restore recipients: ELM-UI-004 / ELM-UX-005 / ELM-UX-008. Root owns serialized protected native execution; source reconstruction/build evidence stays separate from GUI acceptance."
   },
   "previousActiveSlice": {
-    "id": "native-taskbar-three-group",
+    "id": "native-taskbar-workspace2",
     "requirements": [
-      "ELM-UI-004",
-      "ELM-UX-005"
+      "ELM-UX-008",
+      "ELM-UI-004"
     ],
     "scenarios": [
-      "taskbar-group",
-      "ux-005"
+      "ux-008",
+      "taskbar-minimized"
     ],
     "paths": [
-      "implementation/warlock/qa/native-taskbar-three-group-portable.py",
+      "implementation/warlock/qa/native-taskbar-workspace2-portable.py",
       "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/qa/TaskbarReplay.elm",
+      "implementation/warlock/qa/WorkspaceNavigationReplay.elm",
       "implementation/warlock/src/Desktop.elm",
       "implementation/warlock/src/Surface.elm",
       "implementation/warlock/README.md"
     ],
-    "before": "Fresh tuple pointer primary/refusal pass; exactly three native family entries and selected-only activation remain unobserved on this fresh tuple.",
-    "after": "Original three-entry family opens an exact three-member picker and activates only the selected incarnation with one bound effect, native recipient evidence and no new launch.",
+    "before": "Original exactly-three-entry example accepted on observed tuple; minimized workspace2 icon restore and exact no-scratchpad membership remain unobserved on this fresh tuple.",
+    "after": "Original minimized workspace2 member selected through taskbar icon route restores with one bound committed Restore receipt, exact workspace2 membership and native recipient/pixel evidence without scratchpad conversion.",
     "verification": [
-      "Original ELM-UX-005 Elm replay assertion plus protected isolated native recording: exactly three identities, only selected activation and actual input recipient, no extra launch; preserve original taskbar-group pointer/keyboard/AT obligations without inferring unobserved modes."
+      "Original ELM-UX-008 Elm replay plus isolated native recording of minimized workspace2 icon route with exact Restore receipt/member identity/no scratchpad; preserve original TaskViewRestore and TaskbarRestore assertions and deadlines, explicit picker route where applicable. UI004 matching keyboard/AT remains separate."
     ],
     "owner": "sol",
-    "participantRecord": ".warlock-contributor/native-three-group.json",
-    "outcome": "ELM-UX-005 accepted; ELM-UI-004 group partial",
-    "sourceRevision": "85d1531f3",
-    "evidence": "implementation/warlock/qa/evidence/three-group-20261028/manifest.json"
+    "participantRecord": ".warlock-contributor/native-workspace2.json",
+    "outcome": "ELM-UX-008 accepted on grouped-icon route; UI004 minimized partial",
+    "sourceRevision": "12cf352b13181437391098889b8d9a05f97b0ce8",
+    "evidence": "implementation/warlock/qa/evidence/workspace2-20261028/manifest.json"
   },
   "lastNativeObservation": {
-    "report": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-three-group/native-three-group-1793211533240005715/report.json",
-    "sha256": "4109f8b024bbeee268986729a77f57c78e28e4db933c263e5b44c0cbe035fc9a",
-    "scope": "51nativechecks, threephysicalreveals,7compiledDesktopchecks, one selectedactivation; independentquint5review on committedsource85d1531f3.",
+    "report": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-workspace2/native-workspace2-1793212296704211777/report.json",
+    "sha256": "b29b7f8104b210389d60946ea972c219eb7b7c79511baf1f7d05dbc5825eb386",
+    "scope": "52nativechecks plus10compiledDesktopassertions; groupedtaskbaricon/picker restores workspace2 with exact receipt/membership/pixels/recipient, independentliteralreview on source12cf.",
     "observedScenarios": [
-      "taskbar-group",
-      "ux-005"
+      "ux-008",
+      "taskbar-minimized"
     ],
-    "requirementAccepted": [
-      "ELM-UX-005"
+    "requirementAccepted": false,
+    "acceptedRequirements": [
+      "ELM-UX-008"
     ],
     "remaining": [
-      "UI004group matching keyboard-primary/AT",
-      "Other original requirements and fullrelease"
+      "UI004 keyboard-primary/AT and other cases",
+      "UI002 separate navigation receipt obligations",
+      "Native singleton direct-icon path not observed",
+      "Full release obligations"
     ]
   },
   "priorActiveSlices": [
@@ -2028,6 +2030,35 @@
       "participantRecord": ".warlock-contributor/native-refusal.json",
       "outcome": "partial",
       "observation": "Actual original pinned-refusal POINTER journey60checksPASS; keyboard-primary and AT remainopen; reportac9208da..."
+    },
+    {
+      "id": "native-taskbar-three-group",
+      "requirements": [
+        "ELM-UI-004",
+        "ELM-UX-005"
+      ],
+      "scenarios": [
+        "taskbar-group",
+        "ux-005"
+      ],
+      "paths": [
+        "implementation/warlock/qa/native-taskbar-three-group-portable.py",
+        "implementation/warlock/qa/native-window-feedback.py",
+        "implementation/warlock/qa/TaskbarReplay.elm",
+        "implementation/warlock/src/Desktop.elm",
+        "implementation/warlock/src/Surface.elm",
+        "implementation/warlock/README.md"
+      ],
+      "before": "Fresh tuple pointer primary/refusal pass; exactly three native family entries and selected-only activation remain unobserved on this fresh tuple.",
+      "after": "Original three-entry family opens an exact three-member picker and activates only the selected incarnation with one bound effect, native recipient evidence and no new launch.",
+      "verification": [
+        "Original ELM-UX-005 Elm replay assertion plus protected isolated native recording: exactly three identities, only selected activation and actual input recipient, no extra launch; preserve original taskbar-group pointer/keyboard/AT obligations without inferring unobserved modes."
+      ],
+      "owner": "sol",
+      "participantRecord": ".warlock-contributor/native-three-group.json",
+      "outcome": "ELM-UX-005 accepted; ELM-UI-004 group partial",
+      "sourceRevision": "85d1531f3",
+      "evidence": "implementation/warlock/qa/evidence/three-group-20261028/manifest.json"
     }
   ]
 }
