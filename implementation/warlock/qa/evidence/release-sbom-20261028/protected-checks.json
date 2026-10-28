@@ -1,0 +1,40 @@
+{
+  "commands": [
+    "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/home/charles/Warlock/window-integration-qa /usr/bin/python3 -B window-integration-qa/qa_run.py -- /usr/bin/python3 -B implementation/warlock/qa/check-release-compliance-integration.py",
+    "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/home/charles/Warlock/window-integration-qa /usr/bin/python3 -B window-integration-qa/qa_run.py -- /usr/bin/python3 -B implementation/warlock/qa/check-release-sbom.py",
+    "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/home/charles/Warlock/window-integration-qa /usr/bin/python3 -B window-integration-qa/qa_run.py -- /usr/bin/python3 -B /home/charles/.local/state/warlock-team/20261028/check-current-release-catalogs.py"
+  ],
+  "results": [
+    {
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "dac58f",
+        "wall_time_seconds": 0.030505315,
+        "exit_code": 0,
+        "original_token_count": 207,
+        "output": "Running as unit: qa-harness-d88ac803295848b7892f361a197644e3.scope; invocation ID: 0e18ae7be2ad4db99a1b4e67804020fe\n{\"passed\": true, \"checks\": [\"LockedEvidencePresent\", \"RelocatedCandidateRetainsSourceRoot\", \"OldLockRefused\", \"ChangedNoticeRefused\", \"ReviewMetadataAndNoticesPackaged\", \"ActualArchiveMatchesManifest\", \"ReceiptRequired\", \"IncompleteReceiptRefused\", \"ReviewedAssetMutationRefusedWithMatchingTransport\", \"MetadataRewriteRefusedWithMatchingTransport\", \"NoticeMutationRefusedWithMatchingTransport\", \"LinkRetargetRefusedWithMatchingTransport\", \"EscapingLinkRefusedWithMatchingTransport\", \"StandaloneEscapingLinkRefused\", \"RestoredPayloadPasses\", \"MetadataDeterministic\", \"UnownedPayloadBlocks\", \"ChangedCatalogRefused\", \"UnknownDispositionBlocks\"], \"scope\": \"Synthetic fixture only; no release or legal acceptance.\"}\n"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "cdd7ca",
+        "wall_time_seconds": 0.078579374,
+        "exit_code": 0,
+        "original_token_count": 213,
+        "output": "Running as unit: qa-harness-70eaaa9faef34d329135b7139f2678fc.scope; invocation ID: 1a729448a56f4c959903931bafdaeb04\nPASS deterministic baseline\nPASS unaccounted shipped file\nPASS duplicate mapping\nPASS changed notice\nPASS unknown review\nPASS same-content symlink retarget\nPASS escaping symlink\nPASS unsafe mapped path\nPASS unreviewed notice applicability\nPASS disconnected shipped attribution\nPASS isolated zero-file cycle\nPASS malformed category []\nPASS malformed contains [{}]\nPASS malformed contains ['missing-component']\nPASS inventory traversal error\nPASS changed source notice\nPASS duplicate JSON keys\nPASS restoration\nPASS archive matches package\nPASS archive missing file\nPASS archive duplicate member\nPASS archive member type mismatch\nPASS archive/package content mismatch\nPASS current catalogs retain unknown dispositions and block review\n"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "ed767f",
+        "wall_time_seconds": 0.04173229,
+        "exit_code": 0,
+        "original_token_count": 694,
+        "output": "Running as unit: qa-harness-6760b31db364438fbccf9a493736472c.scope; invocation ID: 1fa4171b929841a3887ac8b207b7fe67\n{\"passed\": true, \"scope\": \"Actual available candidate assets, adapters and notices, with historical native artifacts deliberately absent; no complete package or native/release acceptance.\", \"protectedScope\": {\"cgroup\": \"0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-6760b31db364438fbccf9a493736472c.scope\", \"coreLimit\": 1}, \"inventoryEntries\": 61, \"components\": 19, \"releaseBlocked\": true, \"errors\": [\"component elm-browser-1.0.2: redistribution disposition incomplete\", \"component elm-compiler-0.19.2: redistribution disposition incomplete\", \"component elm-compiler-generated-runtime: redistribution disposition incomplete\", \"component elm-core-1.0.5: redistribution disposition incomplete\", \"component elm-html-1.0.0: redistribution disposition incomplete\", \"component elm-json-1.1.3: redistribution disposition incomplete\", \"component elm-npm-installer-0.19.2-0: redistribution disposition incomplete\", \"component elm-retained-notices: notice applicability review incomplete\", \"component elm-retained-notices: redistribution disposition incomplete\", \"component elm-time-1.0.0: redistribution disposition incomplete\", \"component elm-url-1.0.0: redistribution disposition incomplete\", \"component elm-virtual-dom-1.0.3: redistribution disposition incomplete\", \"component native-aquamarine: redistribution disposition incomplete\", \"component native-generated-host: notice applicability review incomplete\", \"component native-generated-host: redistribution disposition incomplete\", \"component native-hyprland-core: redistribution disposition incomplete\", \"component native-window-authority-plugin: notice applicability review incomplete\", \"component native-window-authority-plugin: redistribution disposition incomplete\", \"component warlock-adapter-sources: notice applicability review incomplete\", \"component warlock-adapter-sources: redistribution disposition incomplete\", \"component warlock-external-build-tools: notice applicability review incomplete\", \"component warlock-external-build-tools: redistribution disposition incomplete\", \"component warlock-generated-elm-assets: notice applicability review incomplete\", \"component warlock-generated-elm-assets: redistribution disposition incomplete\", \"component warlock-web-assets: notice applicability review incomplete\", \"component warlock-web-assets: redistribution disposition incomplete\", \"payload entry elm-host: missing\", \"payload entry native/Hyprland: missing\", \"payload entry native/elm-window-geometry-authority.so: missing\", \"payload entry native/libaquamarine.so.0.15.0: missing\", \"payload entry native/libaquamarine.so.14: missing\"], \"freshnessErrors\": []}\n"
+      }
+    }
+  ],
+  "scope": "Lead direct final protected checks; synthetic package fixtures plus actual available-byte projection, no complete candidate or native acceptance."
+}

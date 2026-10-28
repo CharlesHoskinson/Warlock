@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://warlock.invalid/release/catalog-schema.json",
+  "title": "Warlock redistribution component catalog v1",
+  "description": "Recorded evidence and review assertions, not a legal determination. Provenance paths are repository-relative; notice paths are candidate- and payload-relative. All hashes are SHA-256.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "components"],
+  "properties": {
+    "schema": {"const": 1},
+    "components": {"type": "array", "items": {"$ref": "#/$defs/component"}}
+  },
+  "$defs": {
+    "path": {"type": "string", "minLength": 1, "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.?(/|$))(?!.*//)[^\\\\]+$"},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "evidence": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/path"}, "sha256": {"$ref": "#/$defs/hash"}}},
+    "disposition": {"type": "object", "additionalProperties": false, "required": ["status", "evidence"], "properties": {"status": {"enum": ["reviewed", "unreviewed", "unknown"]}, "evidence": {"type": "string"}}},
+    "file": {"oneOf": [
+      {"type": "object", "additionalProperties": false, "required": ["path", "type", "sha256"], "properties": {"path": {"$ref": "#/$defs/path"}, "type": {"const": "file"}, "sha256": {"$ref": "#/$defs/hash"}}},
+      {"type": "object", "additionalProperties": false, "required": ["path", "type", "target"], "properties": {"path": {"$ref": "#/$defs/path"}, "type": {"const": "symlink"}, "target": {"type": "string", "minLength": 1}}}
+    ]},
+    "component": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "scope", "category", "provenance", "notices", "disposition", "files"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"},
+        "scope": {"enum": ["shipped", "build"]},
+        "category": {"enum": ["compiler", "package", "host", "native-library", "asset", "other"]},
+        "provenance": {"type": "array", "items": {"$ref": "#/$defs/evidence"}},
+        "notices": {"type": "array", "items": {"$ref": "#/$defs/evidence"}},
+        "disposition": {"$ref": "#/$defs/disposition"},
+        "notice_disposition": {"$ref": "#/$defs/disposition"},
+        "files": {"type": "array", "items": {"$ref": "#/$defs/file"}},
+        "contains": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "notes": {"type": "string"}
+      }
+    }
+  }
+}

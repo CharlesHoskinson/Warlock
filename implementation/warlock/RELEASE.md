@@ -80,6 +80,16 @@ all payload and archive hashes, and exercises deliberate archive, payload and
 same-content loader-alias mismatches. The original input-lock packet remains
 historical; the new packet identifies the current lock and source tuple.
 
+The builder now requires the [component and notice review](release/COMPLIANCE.md)
+before packaging. Its catalogs pin source evidence and exact payload ownership;
+unknown dispositions block the archive and retain a diagnostic report. A passing
+gate includes the SBOM, notice texts and disposition records, followed by an
+exact archive audit bound to the original in-memory review receipt. Later
+payload or metadata changes refuse even with a matching rewritten manifest and
+archive. The initial catalogs remain unapproved, and the historical
+lock cannot authorize this changed recipe. Focused protected checks cover the
+production gate and mutation refusals; a real candidate cross-check remains open.
+
 The package is explicitly **not installable or release accepted**. Complete
 compiler/build-tool upstream source provenance, SBOM and redistribution notices,
 independent reproducibility review, full native/AT/IME/hardware/resource acceptance,

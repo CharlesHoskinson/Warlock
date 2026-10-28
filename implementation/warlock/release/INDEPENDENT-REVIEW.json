@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "requirement": "ELM-DEL-005",
+  "scenario": "delivery-005",
+  "reviewer": "terra-5",
+  "independentOfImplementation": true,
+  "sourceBase": "4fb7c28395b68fb9fac0a537e2e627db0ea041a9",
+  "disposition": "blocked",
+  "scenarioAccepted": false,
+  "fullReleaseAccepted": false,
+  "observations": [
+    {
+      "path": "implementation/warlock/qa/evidence/release-input-lock/package-MANIFEST.json",
+      "sha256": "bf941a16ea020bd80f6d485e28a837fcb68388f084bc6ecfb93401faa8f7d9d9",
+      "finding": "Historical manifest records payload hashes and native alias target but does not list itself or provide an SBOM, notices, or reviewed redistribution dispositions. It is evidence of a past build, not access to the actual candidate package."
+    },
+    {
+      "path": "implementation/warlock/qa/current-native-pair.json",
+      "sha256": "63e9196840e52de55603a258e21a1d596615477ecc74862c6256630fecd621dd",
+      "finding": "Recorded core, plugin, and Aquamarine paths and hashes identify the historical ABI tuple; the referenced binaries are unavailable in this snapshot, so their contents and provenance were not independently checked."
+    },
+    {
+      "path": "implementation/warlock/build-lock.json",
+      "sha256": "9507f772afbedaf6ff11bf184e57513066f402d954a753599de87c05ca465358",
+      "finding": "A hash-pinned build-input inventory does not itself establish upstream provenance, project grant, notice completeness, or redistribution permission."
+    }
+  ],
+  "remaining": [
+    "Independently cross-check a real candidate package and its archive against its SBOM, included notices and evidence-backed dispositions.",
+    "Resolve the missing original native artifacts and source tuple without changing the recorded ABI pair or rebaselining hashes.",
+    "Obtain and review the applicable project grant and complete compiler, package, host, native library and bundled asset provenance and redistribution dispositions."
+  ],
+  "followup": {
+    "scope": "Independent protected synthetic fixture checks and current catalog inspection; no actual candidate package or legal acceptance.",
+    "qa": "implementation/warlock/qa/check-release-sbom.py",
+    "qaSHA256": "8aceb9a4f5379c855e0c4409b1f27b0d2090549a0a635c970127246316cd9a1f",
+    "complianceSHA256": "51f7557b4a741106f3b7ffc16df09ae86aa90ca580578ea40a1ff175d4a48964",
+    "builderSHA256": "217b23b0d60dc010cc78cab2c7d507f50a3f9c8dd055a257274122b9a0d42bf8",
+    "catalogHashes": {
+      "release/language-components.json": "0c7af19114b950678ace7db98359db8f52d388536a9eed7a9efb1e2d3434fc9d",
+      "release/native-components.json": "de21a8d2b59825bf45cb71b8ef3c4070513a091ab2cac966cb72653d3a658d89"
+    },
+    "result": "24 checks passed, including isolated attribution cycle, traversal error, malformed category and relations, archive duplicate, missing file and type/content mismatch; current catalogs contain unknown dispositions and review blocks. Traversal error is injected; real package traversal and native artifacts were not available.",
+    "evidence": "/home/charles/.local/state/warlock-team/20261028/handoffs/terra-5-final-qa.stdout",
+    "evidenceSHA256": "150d982b3361c3a40c742dcacfb6eb61ffb8274e9a8c75934750b0dfd8e8fc6b"
+  }
+}

@@ -1,13 +1,154 @@
 {
   "schema": 1,
-  "owner": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
-  "updatedUTC": "2026-10-11T00:59:42.674239+00:00",
+  "owner": "sol",
+  "updatedUTC": "2026-10-28T16:37:43.658017+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
+    "id": "release-sbom",
+    "requirements": [
+      "ELM-DEL-005"
+    ],
+    "scenarios": [
+      "delivery-005"
+    ],
+    "paths": [
+      "implementation/warlock/RELEASE.md",
+      "implementation/warlock/README.md",
+      "implementation/warlock/release/COMPLIANCE.md",
+      "implementation/warlock/adapter/release_builder.py",
+      "implementation/warlock/adapter/release_compliance.py",
+      "implementation/warlock/qa/check-release-compliance.py",
+      "implementation/warlock/qa/check-release-compliance-integration.py",
+      "implementation/warlock/qa/check-release-sbom.py",
+      "implementation/warlock/release/catalog-schema.json",
+      "implementation/warlock/release/INDEPENDENT-REVIEW.json",
+      "implementation/warlock/release/native-components.json",
+      "implementation/warlock/release/language-components.json",
+      "implementation/warlock/release/notices/language/elm-browser-1.0.2.txt",
+      "implementation/warlock/release/notices/language/elm-compiler-0.19.2.txt",
+      "implementation/warlock/release/notices/language/elm-core-1.0.5.txt",
+      "implementation/warlock/release/notices/language/elm-html-1.0.0.txt",
+      "implementation/warlock/release/notices/language/elm-json-1.1.3.txt",
+      "implementation/warlock/release/notices/language/elm-time-1.0.0.txt",
+      "implementation/warlock/release/notices/language/elm-url-1.0.0.txt",
+      "implementation/warlock/release/notices/language/elm-virtual-dom-1.0.3.txt",
+      "implementation/warlock/release/notices/native/aquamarine-LICENSE",
+      "implementation/warlock/release/notices/native/hyprland-LICENSE",
+      "implementation/warlock/qa/release-inventory.qnt",
+      "implementation/warlock/qa/release-inventory_test.qnt",
+      "implementation/warlock/qa/release-inventory-model.md",
+      "implementation/warlock/qa/check-release-inventory-model.py",
+      "implementation/warlock/qa/release-provenance.qnt",
+      "implementation/warlock/qa/release-provenance_test.qnt",
+      "implementation/warlock/qa/release-provenance-model.md",
+      "implementation/warlock/qa/check-release-provenance-model.py",
+      "implementation/warlock/qa/release-packaging.qnt",
+      "implementation/warlock/qa/release-packaging_test.qnt",
+      "implementation/warlock/qa/release-packaging-model.md",
+      "implementation/warlock/qa/check-release-packaging-model.py",
+      "implementation/warlock/qa/release-transport.qnt",
+      "implementation/warlock/qa/release-transport_test.qnt",
+      "implementation/warlock/qa/release-transport-model.md",
+      "implementation/warlock/qa/check-release-transport-model.py",
+      "implementation/warlock/qa/release-composed.qnt",
+      "implementation/warlock/qa/release-composed_test.qnt",
+      "implementation/warlock/qa/release-composed-model.md",
+      "implementation/warlock/qa/check-release-composed-model.py"
+    ],
+    "before": "Candidate archive has no shipped-component SBOM, upstream notice collection or reviewed redistribution gate.",
+    "after": "Candidate release packaging inventories every shipped file and relevant build component, embeds source-backed notices and a reviewed disposition record, and refuses incomplete or stale review.",
+    "verification": [
+      "Protected production compliance API and actual candidate inventory cross-check; changed file, missing notice, duplicate mapping and incomplete review negatives; independent original-scenario review records remaining tuple and rights gaps."
+    ],
+    "owner": "sol",
+    "participantRecord": ".warlock-contributor/slice.json",
+    "sourceHashes": {
+      "implementation/warlock/RELEASE.md": "d6a29f21cec10d68944160987cfb8267785adf54e5d5406973629346cff82257",
+      "implementation/warlock/README.md": "e64df83658b28db29a3a0aa1af80da2cbd44f88391e9791c92470cde98e9331e",
+      "implementation/warlock/release/COMPLIANCE.md": "91d55bc25d3eca011f9e58ce4f71781baf3a7171e0ebfdd7984f647a7923c477",
+      "implementation/warlock/adapter/release_builder.py": "640b47a214286ca9ec3fcda74d98d895610202befd49e9b8bcce51706e9a9919",
+      "implementation/warlock/adapter/release_compliance.py": "51f7557b4a741106f3b7ffc16df09ae86aa90ca580578ea40a1ff175d4a48964",
+      "implementation/warlock/qa/check-release-compliance.py": "8c29079b356b63a8c50bbb09e085a13fd432a02551c18415b05cfcf3c08c013c",
+      "implementation/warlock/qa/check-release-compliance-integration.py": "9a51c6e5cf58039a117bb0c6d7fa8e13f7aee6090e448f58bf94078cbc379844",
+      "implementation/warlock/qa/check-release-sbom.py": "8aceb9a4f5379c855e0c4409b1f27b0d2090549a0a635c970127246316cd9a1f",
+      "implementation/warlock/release/catalog-schema.json": "dc34e6b1affae217d0585fcbf73ddb0ebc574d4ee58c9b154fe26bcec58f46e5",
+      "implementation/warlock/release/INDEPENDENT-REVIEW.json": "e146bdb575076cfa40b9989e6294614d6aaad10ce990c939b57a0f761068ed4c",
+      "implementation/warlock/release/native-components.json": "de21a8d2b59825bf45cb71b8ef3c4070513a091ab2cac966cb72653d3a658d89",
+      "implementation/warlock/release/language-components.json": "f73e5ee36e22fbb008cc79a101edb93512f1810a1433e6a6a34fe2d5c90b46e4",
+      "implementation/warlock/release/notices/language/elm-browser-1.0.2.txt": "d33481c057f582207d41425b1b3ecb740291f9f9c86b21e9a045cd3bea0f6ac8",
+      "implementation/warlock/release/notices/language/elm-compiler-0.19.2.txt": "22bd883c0b78625bb39a21b96d38ddcb8469863b51718b8bda1ce46441f5bfce",
+      "implementation/warlock/release/notices/language/elm-core-1.0.5.txt": "431192066654a9060d29033714fa19eb6f7749031710957c55cf8b8d8bd246c3",
+      "implementation/warlock/release/notices/language/elm-html-1.0.0.txt": "ac3cefe90f27c4cc550da6eda13d18e1fadb0151b5d9dd99619ea1a10dc6eaad",
+      "implementation/warlock/release/notices/language/elm-json-1.1.3.txt": "ac3cefe90f27c4cc550da6eda13d18e1fadb0151b5d9dd99619ea1a10dc6eaad",
+      "implementation/warlock/release/notices/language/elm-time-1.0.0.txt": "a1c31dacffb1a470cb3aaf4844904114b9bc5ebf091e113b2d46bc4953c2c2ea",
+      "implementation/warlock/release/notices/language/elm-url-1.0.0.txt": "1c818d8c5f129ee90e6a855c9edd16d9c6bd25e2959b1aeaeb8626e7c539cc9b",
+      "implementation/warlock/release/notices/language/elm-virtual-dom-1.0.3.txt": "c63bca41c3a19de3b16ede979ca1dfeb2ce0db93a62f4555dbb61ae3ee777425",
+      "implementation/warlock/release/notices/native/aquamarine-LICENSE": "52d07f3457591b4496ae2e79b05efd63c7df72135666fa12428d83078c4c0de5",
+      "implementation/warlock/release/notices/native/hyprland-LICENSE": "e01df754903af0ab26babb317b5f5a62dd95f770b733c5275414dd3245d00ae7",
+      "implementation/warlock/qa/release-inventory.qnt": "06fa3a255a414e3a7a78e12095a9149772d4d7ab9097aab6826ff6937dd121b7",
+      "implementation/warlock/qa/release-inventory_test.qnt": "3acceeb0dba230a72e987fb432982491bc6655fb7efc7b3964e568c2f90522eb",
+      "implementation/warlock/qa/release-inventory-model.md": "4943d1db05c47fa39eb328ddf72c2828fed112616c8ed135df01e322a3dbb7ac",
+      "implementation/warlock/qa/check-release-inventory-model.py": "5177c8e769d482eb6ae214425d5de962a197b1bd23267e34a1fe67852c92fc49",
+      "implementation/warlock/qa/release-provenance.qnt": "4707d4f785cbf67babbd50212765eee4eab688fc09a1e145e400cc4172598076",
+      "implementation/warlock/qa/release-provenance_test.qnt": "f6e14b8b9777d98e76b2c7e1953ca3e20a3cb5158f2380073fc84a9033293b03",
+      "implementation/warlock/qa/release-provenance-model.md": "1a1328ac94bf363efeff21dfd2593f950e0fa98022cf0180966ca08b7ff2a453",
+      "implementation/warlock/qa/check-release-provenance-model.py": "efb661b7e803323afaa6415b57d702f1e2b30e36b493ebdd884e982331007897",
+      "implementation/warlock/qa/release-packaging.qnt": "d28c7bb016dbf74e470e228d1790b27e6931d525bc1ae67c367984cb18097d4b",
+      "implementation/warlock/qa/release-packaging_test.qnt": "1b333dab6933722c6fa5215db638154b883d0fa52978d39ceb6795f9cfc3c90c",
+      "implementation/warlock/qa/release-packaging-model.md": "0d4b43c5590e4cbfac28e37c7157438b1f87db44279fb4b2244a6f51a1ab8402",
+      "implementation/warlock/qa/check-release-packaging-model.py": "b48a5af5a22ab00b19fb4d92bd5d6c787de021c81ad80306a409c05ebc21e1b0",
+      "implementation/warlock/qa/release-transport.qnt": "be90f48d0e164d9fb39a3c14f70267127eb5a5ba31660499a5262ae9428cdb76",
+      "implementation/warlock/qa/release-transport_test.qnt": "41752245c97ac8ab1db47bca9540522330fb18c4a3f1ee298447814cf51d8c8a",
+      "implementation/warlock/qa/release-transport-model.md": "55870294e394a2b78e83966b8ccf7d8181c55398d383421b9c06377349736d2d",
+      "implementation/warlock/qa/check-release-transport-model.py": "37a08befbc2a75c038df07946d7c5b61f4cac37100633cc49e064dc09e584743",
+      "implementation/warlock/qa/release-composed.qnt": "4f0692d113fa70cd7bfe4c0d46c7c1eba8d71986f9d5397f8f91399a673ac923",
+      "implementation/warlock/qa/release-composed_test.qnt": "5f62d1cbac88c7b0435f3481a08ece93ea7685f1b45076b4686d719951a045b4",
+      "implementation/warlock/qa/release-composed-model.md": "9e700c49449bbe554eafd4279b9d066142c4cf171d13125daedbaade52a52ab9",
+      "implementation/warlock/qa/check-release-composed-model.py": "4c12d2617ee2e8d796bf792f954b8430d729721e28939d55ca373a877a9db218"
+    },
+    "evidence": [
+      {
+        "path": "implementation/warlock/qa/evidence/release-sbom-20261028/manifest.json",
+        "sha256": "f8f29ac4861b06aae577152255200af3b6197c643e67f5ac5a163d458177bde9"
+      },
+      {
+        "path": "implementation/warlock/qa/evidence/release-sbom-20261028/protected-checks.json",
+        "sha256": "7ee97ebfcc0925140174f69d82f11bec1e944f555443451686ef1395bbc4a524"
+      },
+      {
+        "path": "implementation/warlock/qa/evidence/release-sbom-20261028/before-fix.txt",
+        "sha256": "afd02c726ebd83b565e01e7927acde6eabd20d91adc7384efee3982d7afb39a1"
+      }
+    ],
+    "observedOutcome": "Packaging now inventories source-backed components/notices and rejects incomplete reviews. A reproduced review-to-manifest mutation gap is fixed with immutable reviewed inventory/metadata receipt binding and safe final exact archive audit. Direct protected regressions pass; available authored bytes match catalogs. Five bounded models expose correspondence limits. Real complete package, native tuple/provenance and independent original acceptance remain open.",
+    "sourceTuple": {
+      "sourceBaseRevision": "4fb7c28395b68fb9fac0a537e2e627db0ea041a9",
+      "python": "3.14.8 (main, Oct  2 2026, 10:23:31) [GCC 16.2.1 20260810]",
+      "nativePairAvailability": "Historical exact tuple missing; separate reviewed native rebuild in progress, no substitute acceptance.",
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false
+    },
+    "nextOriginalProductWork": "Restore and qualify a fresh coherent native source/core/plugin/host tuple for original taskbar activation/minimize/restore recipients: ELM-UI-004 / ELM-UX-005 / ELM-UX-008. Root owns serialized protected native execution; source reconstruction/build evidence stays separate from GUI acceptance."
+  },
+  "nextSlices": [
+    "taskbar activation/minimize/restore and popup focus journeys",
+    "persistent catalog pins",
+    "launcher search and refusal recovery",
+    "switcher/Task View/workspaces and snap/output journeys",
+    "authorized visible previews and fallback",
+    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
+    "original native, AT/IME, hardware/resource/journey gates",
+    "reproducible package, reversible deployment/rollback"
+  ],
+  "releaseAccepted": false,
+  "oldTrackerIsCurrent": false,
+  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
+  "hostGoal": "User explicitly requested and root armed the full Warlock completion loop on 2026-10-28; root host goal lifecycle is authoritative, no full completion inferred from this partial slice.",
+  "previousSlice": {
     "id": "offline-reproducibility",
     "requirements": [
       "ELM-DEL-004"
@@ -68,79 +209,6 @@
       "fullReleaseAccepted": false
     },
     "nextOriginalProductWork": "ELM-DEL-005 delivery-005: source-backed package SBOM, upstream notices and reviewed redistribution disposition for every shipped component. Independent reproducibility review, accepted Omarchy fallback, native AT/IME/hardware/resources/journeys and reversible main-session deployment remain required."
-  },
-  "nextSlices": [
-    "taskbar activation/minimize/restore and popup focus journeys",
-    "persistent catalog pins",
-    "launcher search and refusal recovery",
-    "switcher/Task View/workspaces and snap/output journeys",
-    "authorized visible previews and fallback",
-    "settings/notifications/Files/right-click and design-language/Omarchy adoption",
-    "original native, AT/IME, hardware/resource/journey gates",
-    "reproducible package, reversible deployment/rollback"
-  ],
-  "releaseAccepted": false,
-  "oldTrackerIsCurrent": false,
-  "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "Created via create_goal after AAR completion and workflow installation; see goal tool for actual lifecycle.",
-  "previousSlice": {
-    "id": "release-input-lock",
-    "requirements": [
-      "ELM-DEL-003"
-    ],
-    "scenarios": [
-      "delivery-003"
-    ],
-    "paths": [
-      "implementation/warlock/adapter/release_builder.py",
-      "implementation/warlock/qa/check-release-builder.py",
-      "implementation/warlock/build-lock.json",
-      "implementation/warlock/RELEASE.md",
-      "implementation/warlock/README.md"
-    ],
-    "before": "Candidate QA independently pins Elm and native artifacts but no release builder owns one verified input lock and rebuild recipe.",
-    "after": "The release builder captures source/package/tool/native inputs and rejects changed bytes before rebuilding Elm assets and the native host against the retained exact core/plugin tuple.",
-    "verification": [
-      "Protected real rebuild from the manifest, compiled production views and direct replay/native self-tests; deliberate altered dependency hash rejected before output creation. Source provenance, clean offline reproducibility and native qualification remain explicit."
-    ],
-    "owner": "root-release-input-lock",
-    "participantRecord": ".warlock-contributor/release-input-lock.json",
-    "sourceHashes": {
-      "implementation/warlock/adapter/release_builder.py": "c463482e4a4874e985c2c1927c6324551baef396e57dfca4ac52b1f56258f1b2",
-      "implementation/warlock/qa/check-release-builder.py": "e225833b81a28853118bc16c2a31b8db2634f32dcc8af796f4d90ffd6c7f7d05",
-      "implementation/warlock/build-lock.json": "9efeec2bf540c86dedeae2b5fd5006ad4071e806a0b4f4ea9f2624d8f7c796b2",
-      "implementation/warlock/RELEASE.md": "44ff1873b6f94d265b8c2417ca20d8291bb829bdfa8ee30184d23f07986fcecd",
-      "implementation/warlock/README.md": "b30eb5c7735f973f3f4834e99ace91c70b96f9f6477cfde199d1a9496b2485e9"
-    },
-    "evidence": [
-      {
-        "path": "implementation/warlock/qa/evidence/release-input-lock/manifest.json",
-        "sha256": "46944d678e22e8bfad47e117e77c996bc7ae22b27a4401e2d3f0008ad66707ec"
-      }
-    ],
-    "observedOutcome": "Fixed manifest-driven build verifies 9223 inputs, rebuilds three Elm roots/all eleven native host units, passes eighteen build phases/native self-tests/nineteen compiled reducer checks and twelve package/tamper observations; existing assets/host reproduced byte-for-byte, persisted lock verifies in a separate protected process, 26 MB archive assembled locally.",
-    "sourceTuple": {
-      "sourceBaseRevision": "fe99d3a47b704d72583f8d11b75a6d65c73f2ef6",
-      "nativePair": {
-        "core": {
-          "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
-          "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
-        },
-        "plugin": {
-          "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791666305509919483/elm-window-geometry-authority.so",
-          "sha256": "c428e1e6e2b2f9e41b3c5218e3dd37fb6551f09bee6b3531876fb3d3c674948a"
-        },
-        "aquamarine": {
-          "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
-          "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
-        }
-      },
-      "hostSHA256": "b276c031f945431c10ca128e9e6505f366e14a3ba9cf295362bd36028296eb34",
-      "byteIdentityReuse": true,
-      "nativeAcceptance": false,
-      "fullReleaseAccepted": false
-    },
-    "nextOriginalProductWork": "ELM-DEL-004 delivery-004: two clean isolated offline manifest builds with closed input/cache mounts and distributable hash comparison; retain original blocking disposition for any difference. Complete upstream provenance/SBOM/notices, accepted Omarchy fallback, native AT/IME/hardware/resources/journeys and main-session deployment remain required."
   },
   "recentSlices": [
     {
@@ -1765,68 +1833,195 @@
         "fullReleaseAccepted": false
       },
       "nextOriginalProductWork": "ELM-DEL-004 delivery-004: two clean isolated offline manifest builds with closed input/cache mounts and distributable hash comparison; retain original blocking disposition for any difference. Complete upstream provenance/SBOM/notices, accepted Omarchy fallback, native AT/IME/hardware/resources/journeys and main-session deployment remain required."
+    },
+    {
+      "id": "offline-reproducibility",
+      "requirements": [
+        "ELM-DEL-004"
+      ],
+      "scenarios": [
+        "delivery-004"
+      ],
+      "paths": [
+        "implementation/warlock/adapter/release_repro.py",
+        "implementation/warlock/adapter/release_builder.py",
+        "implementation/warlock/qa/check-release-repro.py",
+        "implementation/warlock/build-lock.json",
+        "implementation/warlock/RELEASE.md",
+        "implementation/warlock/README.md"
+      ],
+      "before": "The release builder has one verified local rebuild, but no two clean isolated offline builds or enforced comparison gate.",
+      "after": "A release reproducibility command runs two clean network-isolated locked builds, compares payload/archive hashes, and records release-blocking differences with logs.",
+      "verification": [
+        "Protected actual namespace/network probes, two fresh read-only-input offline builds, complete distributable SHA comparison and an intentionally differing payload negative; no compositor restart or native qualification inferred."
+      ],
+      "owner": "root-offline-reproducibility",
+      "participantRecord": ".warlock-contributor/offline-reproducibility.json",
+      "sourceHashes": {
+        "implementation/warlock/adapter/release_repro.py": "68107841f4514394091740799c6b2b1983a2e6a4708e3a490e40b61729f38986",
+        "implementation/warlock/adapter/release_builder.py": "ba96d41441bee2a2632af02bcff4ef1be6e57405ca744b6cc6a53b6f6ffa7763",
+        "implementation/warlock/qa/check-release-repro.py": "f6913a8e47336cb470494fe352202f818b0a55fc2b0b90dead19d29972b787ac",
+        "implementation/warlock/build-lock.json": "9507f772afbedaf6ff11bf184e57513066f402d954a753599de87c05ca465358",
+        "implementation/warlock/RELEASE.md": "973ad17b82ecbd24ce304f2e1d73815531b82cdd82bcd726d629a04360207190",
+        "implementation/warlock/README.md": "64d15cee43b3e43f63126e7609fa53d6c4f6d3e2653dbba6bcb90d5242dcfdfe"
+      },
+      "evidence": [
+        {
+          "path": "implementation/warlock/qa/evidence/offline-reproducibility/manifest.json",
+          "sha256": "4134b2212792b5ecf39e220aa2b7327d7fae3f52f9abf0d8e351ef087bbc9497"
+        }
+      ],
+      "observedOutcome": "Two clean offline fixed-recipe builds match all 56 payload hashes and the 26040320-byte archive hash. Each rebuilds three Elm roots and eleven native host units, with 18 phases and 19 compiled reducer checks. Actual isolated namespaces, blocked parent network socket, read-only source and hidden host marker are observed. Actual archive, payload and same-content loader-alias changes block release; restored artifacts match. The current 9226-input lock independently verifies in another protected process. No upstream native-core rebuild or full release acceptance.",
+      "sourceTuple": {
+        "sourceBaseRevision": "e8e98fb361409025d2724dd4ea60cd1a9d4aab5c",
+        "nativePair": {
+          "core": {
+            "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
+            "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
+          },
+          "plugin": {
+            "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791666305509919483/elm-window-geometry-authority.so",
+            "sha256": "c428e1e6e2b2f9e41b3c5218e3dd37fb6551f09bee6b3531876fb3d3c674948a"
+          },
+          "aquamarine": {
+            "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
+            "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
+          }
+        },
+        "hostSHA256": "b276c031f945431c10ca128e9e6505f366e14a3ba9cf295362bd36028296eb34",
+        "archiveSHA256": "43e050f6a67a3bab8b1e7549bcc453dc6443d1cd8faa15c96cd91aa237e64744",
+        "byteIdentityReuse": true,
+        "nativeAcceptance": false,
+        "fullReleaseAccepted": false
+      },
+      "nextOriginalProductWork": "ELM-DEL-005 delivery-005: source-backed package SBOM, upstream notices and reviewed redistribution disposition for every shipped component. Independent reproducibility review, accepted Omarchy fallback, native AT/IME/hardware/resources/journeys and reversible main-session deployment remain required."
     }
   ],
   "lastSlice": {
-    "id": "offline-reproducibility",
+    "id": "release-sbom",
     "requirements": [
-      "ELM-DEL-004"
+      "ELM-DEL-005"
     ],
     "scenarios": [
-      "delivery-004"
+      "delivery-005"
     ],
     "paths": [
-      "implementation/warlock/adapter/release_repro.py",
-      "implementation/warlock/adapter/release_builder.py",
-      "implementation/warlock/qa/check-release-repro.py",
-      "implementation/warlock/build-lock.json",
       "implementation/warlock/RELEASE.md",
-      "implementation/warlock/README.md"
+      "implementation/warlock/README.md",
+      "implementation/warlock/release/COMPLIANCE.md",
+      "implementation/warlock/adapter/release_builder.py",
+      "implementation/warlock/adapter/release_compliance.py",
+      "implementation/warlock/qa/check-release-compliance.py",
+      "implementation/warlock/qa/check-release-compliance-integration.py",
+      "implementation/warlock/qa/check-release-sbom.py",
+      "implementation/warlock/release/catalog-schema.json",
+      "implementation/warlock/release/INDEPENDENT-REVIEW.json",
+      "implementation/warlock/release/native-components.json",
+      "implementation/warlock/release/language-components.json",
+      "implementation/warlock/release/notices/language/elm-browser-1.0.2.txt",
+      "implementation/warlock/release/notices/language/elm-compiler-0.19.2.txt",
+      "implementation/warlock/release/notices/language/elm-core-1.0.5.txt",
+      "implementation/warlock/release/notices/language/elm-html-1.0.0.txt",
+      "implementation/warlock/release/notices/language/elm-json-1.1.3.txt",
+      "implementation/warlock/release/notices/language/elm-time-1.0.0.txt",
+      "implementation/warlock/release/notices/language/elm-url-1.0.0.txt",
+      "implementation/warlock/release/notices/language/elm-virtual-dom-1.0.3.txt",
+      "implementation/warlock/release/notices/native/aquamarine-LICENSE",
+      "implementation/warlock/release/notices/native/hyprland-LICENSE",
+      "implementation/warlock/qa/release-inventory.qnt",
+      "implementation/warlock/qa/release-inventory_test.qnt",
+      "implementation/warlock/qa/release-inventory-model.md",
+      "implementation/warlock/qa/check-release-inventory-model.py",
+      "implementation/warlock/qa/release-provenance.qnt",
+      "implementation/warlock/qa/release-provenance_test.qnt",
+      "implementation/warlock/qa/release-provenance-model.md",
+      "implementation/warlock/qa/check-release-provenance-model.py",
+      "implementation/warlock/qa/release-packaging.qnt",
+      "implementation/warlock/qa/release-packaging_test.qnt",
+      "implementation/warlock/qa/release-packaging-model.md",
+      "implementation/warlock/qa/check-release-packaging-model.py",
+      "implementation/warlock/qa/release-transport.qnt",
+      "implementation/warlock/qa/release-transport_test.qnt",
+      "implementation/warlock/qa/release-transport-model.md",
+      "implementation/warlock/qa/check-release-transport-model.py",
+      "implementation/warlock/qa/release-composed.qnt",
+      "implementation/warlock/qa/release-composed_test.qnt",
+      "implementation/warlock/qa/release-composed-model.md",
+      "implementation/warlock/qa/check-release-composed-model.py"
     ],
-    "before": "The release builder has one verified local rebuild, but no two clean isolated offline builds or enforced comparison gate.",
-    "after": "A release reproducibility command runs two clean network-isolated locked builds, compares payload/archive hashes, and records release-blocking differences with logs.",
+    "before": "Candidate archive has no shipped-component SBOM, upstream notice collection or reviewed redistribution gate.",
+    "after": "Candidate release packaging inventories every shipped file and relevant build component, embeds source-backed notices and a reviewed disposition record, and refuses incomplete or stale review.",
     "verification": [
-      "Protected actual namespace/network probes, two fresh read-only-input offline builds, complete distributable SHA comparison and an intentionally differing payload negative; no compositor restart or native qualification inferred."
+      "Protected production compliance API and actual candidate inventory cross-check; changed file, missing notice, duplicate mapping and incomplete review negatives; independent original-scenario review records remaining tuple and rights gaps."
     ],
-    "owner": "root-offline-reproducibility",
-    "participantRecord": ".warlock-contributor/offline-reproducibility.json",
+    "owner": "sol",
+    "participantRecord": ".warlock-contributor/slice.json",
     "sourceHashes": {
-      "implementation/warlock/adapter/release_repro.py": "68107841f4514394091740799c6b2b1983a2e6a4708e3a490e40b61729f38986",
-      "implementation/warlock/adapter/release_builder.py": "ba96d41441bee2a2632af02bcff4ef1be6e57405ca744b6cc6a53b6f6ffa7763",
-      "implementation/warlock/qa/check-release-repro.py": "f6913a8e47336cb470494fe352202f818b0a55fc2b0b90dead19d29972b787ac",
-      "implementation/warlock/build-lock.json": "9507f772afbedaf6ff11bf184e57513066f402d954a753599de87c05ca465358",
-      "implementation/warlock/RELEASE.md": "973ad17b82ecbd24ce304f2e1d73815531b82cdd82bcd726d629a04360207190",
-      "implementation/warlock/README.md": "64d15cee43b3e43f63126e7609fa53d6c4f6d3e2653dbba6bcb90d5242dcfdfe"
+      "implementation/warlock/RELEASE.md": "d6a29f21cec10d68944160987cfb8267785adf54e5d5406973629346cff82257",
+      "implementation/warlock/README.md": "e64df83658b28db29a3a0aa1af80da2cbd44f88391e9791c92470cde98e9331e",
+      "implementation/warlock/release/COMPLIANCE.md": "91d55bc25d3eca011f9e58ce4f71781baf3a7171e0ebfdd7984f647a7923c477",
+      "implementation/warlock/adapter/release_builder.py": "640b47a214286ca9ec3fcda74d98d895610202befd49e9b8bcce51706e9a9919",
+      "implementation/warlock/adapter/release_compliance.py": "51f7557b4a741106f3b7ffc16df09ae86aa90ca580578ea40a1ff175d4a48964",
+      "implementation/warlock/qa/check-release-compliance.py": "8c29079b356b63a8c50bbb09e085a13fd432a02551c18415b05cfcf3c08c013c",
+      "implementation/warlock/qa/check-release-compliance-integration.py": "9a51c6e5cf58039a117bb0c6d7fa8e13f7aee6090e448f58bf94078cbc379844",
+      "implementation/warlock/qa/check-release-sbom.py": "8aceb9a4f5379c855e0c4409b1f27b0d2090549a0a635c970127246316cd9a1f",
+      "implementation/warlock/release/catalog-schema.json": "dc34e6b1affae217d0585fcbf73ddb0ebc574d4ee58c9b154fe26bcec58f46e5",
+      "implementation/warlock/release/INDEPENDENT-REVIEW.json": "e146bdb575076cfa40b9989e6294614d6aaad10ce990c939b57a0f761068ed4c",
+      "implementation/warlock/release/native-components.json": "de21a8d2b59825bf45cb71b8ef3c4070513a091ab2cac966cb72653d3a658d89",
+      "implementation/warlock/release/language-components.json": "f73e5ee36e22fbb008cc79a101edb93512f1810a1433e6a6a34fe2d5c90b46e4",
+      "implementation/warlock/release/notices/language/elm-browser-1.0.2.txt": "d33481c057f582207d41425b1b3ecb740291f9f9c86b21e9a045cd3bea0f6ac8",
+      "implementation/warlock/release/notices/language/elm-compiler-0.19.2.txt": "22bd883c0b78625bb39a21b96d38ddcb8469863b51718b8bda1ce46441f5bfce",
+      "implementation/warlock/release/notices/language/elm-core-1.0.5.txt": "431192066654a9060d29033714fa19eb6f7749031710957c55cf8b8d8bd246c3",
+      "implementation/warlock/release/notices/language/elm-html-1.0.0.txt": "ac3cefe90f27c4cc550da6eda13d18e1fadb0151b5d9dd99619ea1a10dc6eaad",
+      "implementation/warlock/release/notices/language/elm-json-1.1.3.txt": "ac3cefe90f27c4cc550da6eda13d18e1fadb0151b5d9dd99619ea1a10dc6eaad",
+      "implementation/warlock/release/notices/language/elm-time-1.0.0.txt": "a1c31dacffb1a470cb3aaf4844904114b9bc5ebf091e113b2d46bc4953c2c2ea",
+      "implementation/warlock/release/notices/language/elm-url-1.0.0.txt": "1c818d8c5f129ee90e6a855c9edd16d9c6bd25e2959b1aeaeb8626e7c539cc9b",
+      "implementation/warlock/release/notices/language/elm-virtual-dom-1.0.3.txt": "c63bca41c3a19de3b16ede979ca1dfeb2ce0db93a62f4555dbb61ae3ee777425",
+      "implementation/warlock/release/notices/native/aquamarine-LICENSE": "52d07f3457591b4496ae2e79b05efd63c7df72135666fa12428d83078c4c0de5",
+      "implementation/warlock/release/notices/native/hyprland-LICENSE": "e01df754903af0ab26babb317b5f5a62dd95f770b733c5275414dd3245d00ae7",
+      "implementation/warlock/qa/release-inventory.qnt": "06fa3a255a414e3a7a78e12095a9149772d4d7ab9097aab6826ff6937dd121b7",
+      "implementation/warlock/qa/release-inventory_test.qnt": "3acceeb0dba230a72e987fb432982491bc6655fb7efc7b3964e568c2f90522eb",
+      "implementation/warlock/qa/release-inventory-model.md": "4943d1db05c47fa39eb328ddf72c2828fed112616c8ed135df01e322a3dbb7ac",
+      "implementation/warlock/qa/check-release-inventory-model.py": "5177c8e769d482eb6ae214425d5de962a197b1bd23267e34a1fe67852c92fc49",
+      "implementation/warlock/qa/release-provenance.qnt": "4707d4f785cbf67babbd50212765eee4eab688fc09a1e145e400cc4172598076",
+      "implementation/warlock/qa/release-provenance_test.qnt": "f6e14b8b9777d98e76b2c7e1953ca3e20a3cb5158f2380073fc84a9033293b03",
+      "implementation/warlock/qa/release-provenance-model.md": "1a1328ac94bf363efeff21dfd2593f950e0fa98022cf0180966ca08b7ff2a453",
+      "implementation/warlock/qa/check-release-provenance-model.py": "efb661b7e803323afaa6415b57d702f1e2b30e36b493ebdd884e982331007897",
+      "implementation/warlock/qa/release-packaging.qnt": "d28c7bb016dbf74e470e228d1790b27e6931d525bc1ae67c367984cb18097d4b",
+      "implementation/warlock/qa/release-packaging_test.qnt": "1b333dab6933722c6fa5215db638154b883d0fa52978d39ceb6795f9cfc3c90c",
+      "implementation/warlock/qa/release-packaging-model.md": "0d4b43c5590e4cbfac28e37c7157438b1f87db44279fb4b2244a6f51a1ab8402",
+      "implementation/warlock/qa/check-release-packaging-model.py": "b48a5af5a22ab00b19fb4d92bd5d6c787de021c81ad80306a409c05ebc21e1b0",
+      "implementation/warlock/qa/release-transport.qnt": "be90f48d0e164d9fb39a3c14f70267127eb5a5ba31660499a5262ae9428cdb76",
+      "implementation/warlock/qa/release-transport_test.qnt": "41752245c97ac8ab1db47bca9540522330fb18c4a3f1ee298447814cf51d8c8a",
+      "implementation/warlock/qa/release-transport-model.md": "55870294e394a2b78e83966b8ccf7d8181c55398d383421b9c06377349736d2d",
+      "implementation/warlock/qa/check-release-transport-model.py": "37a08befbc2a75c038df07946d7c5b61f4cac37100633cc49e064dc09e584743",
+      "implementation/warlock/qa/release-composed.qnt": "4f0692d113fa70cd7bfe4c0d46c7c1eba8d71986f9d5397f8f91399a673ac923",
+      "implementation/warlock/qa/release-composed_test.qnt": "5f62d1cbac88c7b0435f3481a08ece93ea7685f1b45076b4686d719951a045b4",
+      "implementation/warlock/qa/release-composed-model.md": "9e700c49449bbe554eafd4279b9d066142c4cf171d13125daedbaade52a52ab9",
+      "implementation/warlock/qa/check-release-composed-model.py": "4c12d2617ee2e8d796bf792f954b8430d729721e28939d55ca373a877a9db218"
     },
     "evidence": [
       {
-        "path": "implementation/warlock/qa/evidence/offline-reproducibility/manifest.json",
-        "sha256": "4134b2212792b5ecf39e220aa2b7327d7fae3f52f9abf0d8e351ef087bbc9497"
+        "path": "implementation/warlock/qa/evidence/release-sbom-20261028/manifest.json",
+        "sha256": "f8f29ac4861b06aae577152255200af3b6197c643e67f5ac5a163d458177bde9"
+      },
+      {
+        "path": "implementation/warlock/qa/evidence/release-sbom-20261028/protected-checks.json",
+        "sha256": "7ee97ebfcc0925140174f69d82f11bec1e944f555443451686ef1395bbc4a524"
+      },
+      {
+        "path": "implementation/warlock/qa/evidence/release-sbom-20261028/before-fix.txt",
+        "sha256": "afd02c726ebd83b565e01e7927acde6eabd20d91adc7384efee3982d7afb39a1"
       }
     ],
-    "observedOutcome": "Two clean offline fixed-recipe builds match all 56 payload hashes and the 26040320-byte archive hash. Each rebuilds three Elm roots and eleven native host units, with 18 phases and 19 compiled reducer checks. Actual isolated namespaces, blocked parent network socket, read-only source and hidden host marker are observed. Actual archive, payload and same-content loader-alias changes block release; restored artifacts match. The current 9226-input lock independently verifies in another protected process. No upstream native-core rebuild or full release acceptance.",
+    "observedOutcome": "Packaging now inventories source-backed components/notices and rejects incomplete reviews. A reproduced review-to-manifest mutation gap is fixed with immutable reviewed inventory/metadata receipt binding and safe final exact archive audit. Direct protected regressions pass; available authored bytes match catalogs. Five bounded models expose correspondence limits. Real complete package, native tuple/provenance and independent original acceptance remain open.",
     "sourceTuple": {
-      "sourceBaseRevision": "e8e98fb361409025d2724dd4ea60cd1a9d4aab5c",
-      "nativePair": {
-        "core": {
-          "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-placement-core-1791643488806562235/Hyprland",
-          "sha256": "bae8317a93312ffee6c83d31a38e988c01b4baad80da6e04f4fb160c54517428"
-        },
-        "plugin": {
-          "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/native-authority-1791666305509919483/elm-window-geometry-authority.so",
-          "sha256": "c428e1e6e2b2f9e41b3c5218e3dd37fb6551f09bee6b3531876fb3d3c674948a"
-        },
-        "aquamarine": {
-          "path": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/output-transport-1791637476981206198/libaquamarine.so.0.15.0",
-          "sha256": "baac541b2f537077f811e94098046bd7126ed1501417b427fd09dd2cddf8c6f3"
-        }
-      },
-      "hostSHA256": "b276c031f945431c10ca128e9e6505f366e14a3ba9cf295362bd36028296eb34",
-      "archiveSHA256": "43e050f6a67a3bab8b1e7549bcc453dc6443d1cd8faa15c96cd91aa237e64744",
-      "byteIdentityReuse": true,
+      "sourceBaseRevision": "4fb7c28395b68fb9fac0a537e2e627db0ea041a9",
+      "python": "3.14.8 (main, Oct  2 2026, 10:23:31) [GCC 16.2.1 20260810]",
+      "nativePairAvailability": "Historical exact tuple missing; separate reviewed native rebuild in progress, no substitute acceptance.",
       "nativeAcceptance": false,
       "fullReleaseAccepted": false
     },
-    "nextOriginalProductWork": "ELM-DEL-005 delivery-005: source-backed package SBOM, upstream notices and reviewed redistribution disposition for every shipped component. Independent reproducibility review, accepted Omarchy fallback, native AT/IME/hardware/resources/journeys and reversible main-session deployment remain required."
+    "nextOriginalProductWork": "Restore and qualify a fresh coherent native source/core/plugin/host tuple for original taskbar activation/minimize/restore recipients: ELM-UI-004 / ELM-UX-005 / ELM-UX-008. Root owns serialized protected native execution; source reconstruction/build evidence stays separate from GUI acceptance."
   }
 }

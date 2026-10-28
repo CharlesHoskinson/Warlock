@@ -1,0 +1,202 @@
+{
+  "schema": 1,
+  "requirement": "ELM-DEL-005",
+  "scenario": "delivery-005",
+  "oracle": "all shipped components and applicable notices are accounted for",
+  "verification": "Cross-check package files, SBOM components and license dispositions.",
+  "observedUTC": "2026-10-28T16:36:02.961319+00:00",
+  "sourceBaseRevision": "4fb7c28395b68fb9fac0a537e2e627db0ea041a9",
+  "sourceHashes": {
+    "implementation/warlock/README.md": "e64df83658b28db29a3a0aa1af80da2cbd44f88391e9791c92470cde98e9331e",
+    "implementation/warlock/RELEASE.md": "d6a29f21cec10d68944160987cfb8267785adf54e5d5406973629346cff82257",
+    "implementation/warlock/release/COMPLIANCE.md": "91d55bc25d3eca011f9e58ce4f71781baf3a7171e0ebfdd7984f647a7923c477",
+    "implementation/warlock/adapter/release_builder.py": "640b47a214286ca9ec3fcda74d98d895610202befd49e9b8bcce51706e9a9919",
+    "implementation/warlock/adapter/release_compliance.py": "51f7557b4a741106f3b7ffc16df09ae86aa90ca580578ea40a1ff175d4a48964",
+    "implementation/warlock/qa/check-release-compliance.py": "8c29079b356b63a8c50bbb09e085a13fd432a02551c18415b05cfcf3c08c013c",
+    "implementation/warlock/qa/check-release-compliance-integration.py": "9a51c6e5cf58039a117bb0c6d7fa8e13f7aee6090e448f58bf94078cbc379844",
+    "implementation/warlock/qa/check-release-sbom.py": "8aceb9a4f5379c855e0c4409b1f27b0d2090549a0a635c970127246316cd9a1f",
+    "implementation/warlock/release/catalog-schema.json": "dc34e6b1affae217d0585fcbf73ddb0ebc574d4ee58c9b154fe26bcec58f46e5",
+    "implementation/warlock/release/INDEPENDENT-REVIEW.json": "e146bdb575076cfa40b9989e6294614d6aaad10ce990c939b57a0f761068ed4c",
+    "implementation/warlock/release/native-components.json": "de21a8d2b59825bf45cb71b8ef3c4070513a091ab2cac966cb72653d3a658d89",
+    "implementation/warlock/release/language-components.json": "f73e5ee36e22fbb008cc79a101edb93512f1810a1433e6a6a34fe2d5c90b46e4",
+    "implementation/warlock/release/notices/language/elm-browser-1.0.2.txt": "d33481c057f582207d41425b1b3ecb740291f9f9c86b21e9a045cd3bea0f6ac8",
+    "implementation/warlock/release/notices/language/elm-compiler-0.19.2.txt": "22bd883c0b78625bb39a21b96d38ddcb8469863b51718b8bda1ce46441f5bfce",
+    "implementation/warlock/release/notices/language/elm-core-1.0.5.txt": "431192066654a9060d29033714fa19eb6f7749031710957c55cf8b8d8bd246c3",
+    "implementation/warlock/release/notices/language/elm-html-1.0.0.txt": "ac3cefe90f27c4cc550da6eda13d18e1fadb0151b5d9dd99619ea1a10dc6eaad",
+    "implementation/warlock/release/notices/language/elm-json-1.1.3.txt": "ac3cefe90f27c4cc550da6eda13d18e1fadb0151b5d9dd99619ea1a10dc6eaad",
+    "implementation/warlock/release/notices/language/elm-time-1.0.0.txt": "a1c31dacffb1a470cb3aaf4844904114b9bc5ebf091e113b2d46bc4953c2c2ea",
+    "implementation/warlock/release/notices/language/elm-url-1.0.0.txt": "1c818d8c5f129ee90e6a855c9edd16d9c6bd25e2959b1aeaeb8626e7c539cc9b",
+    "implementation/warlock/release/notices/language/elm-virtual-dom-1.0.3.txt": "c63bca41c3a19de3b16ede979ca1dfeb2ce0db93a62f4555dbb61ae3ee777425",
+    "implementation/warlock/release/notices/native/aquamarine-LICENSE": "52d07f3457591b4496ae2e79b05efd63c7df72135666fa12428d83078c4c0de5",
+    "implementation/warlock/release/notices/native/hyprland-LICENSE": "e01df754903af0ab26babb317b5f5a62dd95f770b733c5275414dd3245d00ae7",
+    "implementation/warlock/qa/release-inventory.qnt": "06fa3a255a414e3a7a78e12095a9149772d4d7ab9097aab6826ff6937dd121b7",
+    "implementation/warlock/qa/release-inventory_test.qnt": "3acceeb0dba230a72e987fb432982491bc6655fb7efc7b3964e568c2f90522eb",
+    "implementation/warlock/qa/release-inventory-model.md": "4943d1db05c47fa39eb328ddf72c2828fed112616c8ed135df01e322a3dbb7ac",
+    "implementation/warlock/qa/check-release-inventory-model.py": "5177c8e769d482eb6ae214425d5de962a197b1bd23267e34a1fe67852c92fc49",
+    "implementation/warlock/qa/release-provenance.qnt": "4707d4f785cbf67babbd50212765eee4eab688fc09a1e145e400cc4172598076",
+    "implementation/warlock/qa/release-provenance_test.qnt": "f6e14b8b9777d98e76b2c7e1953ca3e20a3cb5158f2380073fc84a9033293b03",
+    "implementation/warlock/qa/release-provenance-model.md": "1a1328ac94bf363efeff21dfd2593f950e0fa98022cf0180966ca08b7ff2a453",
+    "implementation/warlock/qa/check-release-provenance-model.py": "efb661b7e803323afaa6415b57d702f1e2b30e36b493ebdd884e982331007897",
+    "implementation/warlock/qa/release-packaging.qnt": "d28c7bb016dbf74e470e228d1790b27e6931d525bc1ae67c367984cb18097d4b",
+    "implementation/warlock/qa/release-packaging_test.qnt": "1b333dab6933722c6fa5215db638154b883d0fa52978d39ceb6795f9cfc3c90c",
+    "implementation/warlock/qa/release-packaging-model.md": "0d4b43c5590e4cbfac28e37c7157438b1f87db44279fb4b2244a6f51a1ab8402",
+    "implementation/warlock/qa/check-release-packaging-model.py": "b48a5af5a22ab00b19fb4d92bd5d6c787de021c81ad80306a409c05ebc21e1b0",
+    "implementation/warlock/qa/release-transport.qnt": "be90f48d0e164d9fb39a3c14f70267127eb5a5ba31660499a5262ae9428cdb76",
+    "implementation/warlock/qa/release-transport_test.qnt": "41752245c97ac8ab1db47bca9540522330fb18c4a3f1ee298447814cf51d8c8a",
+    "implementation/warlock/qa/release-transport-model.md": "55870294e394a2b78e83966b8ccf7d8181c55398d383421b9c06377349736d2d",
+    "implementation/warlock/qa/check-release-transport-model.py": "37a08befbc2a75c038df07946d7c5b61f4cac37100633cc49e064dc09e584743",
+    "implementation/warlock/qa/release-composed.qnt": "4f0692d113fa70cd7bfe4c0d46c7c1eba8d71986f9d5397f8f91399a673ac923",
+    "implementation/warlock/qa/release-composed_test.qnt": "5f62d1cbac88c7b0435f3481a08ece93ea7685f1b45076b4686d719951a045b4",
+    "implementation/warlock/qa/release-composed-model.md": "9e700c49449bbe554eafd4279b9d066142c4cf171d13125daedbaade52a52ab9",
+    "implementation/warlock/qa/check-release-composed-model.py": "4c12d2617ee2e8d796bf792f954b8430d729721e28939d55ca373a877a9db218"
+  },
+  "observedBehavior": "Production packaging refuses unaccounted or unreviewed contents, pins source/notices, generates SBOM/dispositions for a passing controlled package, and binds final exact archive audit to immutable reviewed inventory and metadata identities.",
+  "defect": {
+    "beforeBuilderSHA256": "217b23b0d60dc010cc78cab2c7d507f50a3f9c8dd055a257274122b9a0d42bf8",
+    "afterBuilderSHA256": "640b47a214286ca9ec3fcda74d98d895610202befd49e9b8bcce51706e9a9919",
+    "observation": "Actual pre-fix production probe accepted changed payload and a consistent new manifest/archive with a stale embedded review. The corrected receipt-aware audit refuses that schedule, changed metadata/notices and alias retarget/escape.",
+    "evidence": {
+      "path": "implementation/warlock/qa/evidence/release-sbom-20261028/before-fix.txt",
+      "sha256": "afd02c726ebd83b565e01e7927acde6eabd20d91adc7384efee3982d7afb39a1"
+    }
+  },
+  "protectedChecks": {
+    "path": "implementation/warlock/qa/evidence/release-sbom-20261028/protected-checks.json",
+    "sha256": "7ee97ebfcc0925140174f69d82f11bec1e944f555443451686ef1395bbc4a524",
+    "scope": "Lead direct final protected checks; synthetic package fixtures plus actual available-byte projection, no complete candidate or native acceptance."
+  },
+  "actualAvailablePayload": {
+    "passed": true,
+    "scope": "Actual available candidate assets, adapters and notices, with historical native artifacts deliberately absent; no complete package or native/release acceptance.",
+    "protectedScope": {
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-6760b31db364438fbccf9a493736472c.scope",
+      "coreLimit": 1
+    },
+    "inventoryEntries": 61,
+    "components": 19,
+    "releaseBlocked": true,
+    "errors": [
+      "component elm-browser-1.0.2: redistribution disposition incomplete",
+      "component elm-compiler-0.19.2: redistribution disposition incomplete",
+      "component elm-compiler-generated-runtime: redistribution disposition incomplete",
+      "component elm-core-1.0.5: redistribution disposition incomplete",
+      "component elm-html-1.0.0: redistribution disposition incomplete",
+      "component elm-json-1.1.3: redistribution disposition incomplete",
+      "component elm-npm-installer-0.19.2-0: redistribution disposition incomplete",
+      "component elm-retained-notices: notice applicability review incomplete",
+      "component elm-retained-notices: redistribution disposition incomplete",
+      "component elm-time-1.0.0: redistribution disposition incomplete",
+      "component elm-url-1.0.0: redistribution disposition incomplete",
+      "component elm-virtual-dom-1.0.3: redistribution disposition incomplete",
+      "component native-aquamarine: redistribution disposition incomplete",
+      "component native-generated-host: notice applicability review incomplete",
+      "component native-generated-host: redistribution disposition incomplete",
+      "component native-hyprland-core: redistribution disposition incomplete",
+      "component native-window-authority-plugin: notice applicability review incomplete",
+      "component native-window-authority-plugin: redistribution disposition incomplete",
+      "component warlock-adapter-sources: notice applicability review incomplete",
+      "component warlock-adapter-sources: redistribution disposition incomplete",
+      "component warlock-external-build-tools: notice applicability review incomplete",
+      "component warlock-external-build-tools: redistribution disposition incomplete",
+      "component warlock-generated-elm-assets: notice applicability review incomplete",
+      "component warlock-generated-elm-assets: redistribution disposition incomplete",
+      "component warlock-web-assets: notice applicability review incomplete",
+      "component warlock-web-assets: redistribution disposition incomplete",
+      "payload entry elm-host: missing",
+      "payload entry native/Hyprland: missing",
+      "payload entry native/elm-window-geometry-authority.so: missing",
+      "payload entry native/libaquamarine.so.0.15.0: missing",
+      "payload entry native/libaquamarine.so.14: missing"
+    ],
+    "freshnessErrors": []
+  },
+  "models": [
+    {
+      "owner": "quint-1",
+      "model": "implementation/warlock/qa/release-inventory.qnt",
+      "tests": "implementation/warlock/qa/release-inventory_test.qnt",
+      "correspondence": "implementation/warlock/qa/release-inventory-model.md",
+      "explicitNamedTestsObserved": 10,
+      "sampleScope": "1000-trace bounded sampled safety; packaging retained two safety runs. Exact commands, seeds, witnesses and scope in correspondence and handoff.",
+      "handoff": "/home/charles/.local/state/warlock-team/20261028/handoffs/quint-1.json",
+      "handoffSHA256": "d8daccdbaa0f6045c8ac210b29da9376f93b93b575ec3b81ff96e1e01b7f8fef"
+    },
+    {
+      "owner": "quint-2",
+      "model": "implementation/warlock/qa/release-provenance.qnt",
+      "tests": "implementation/warlock/qa/release-provenance_test.qnt",
+      "correspondence": "implementation/warlock/qa/release-provenance-model.md",
+      "explicitNamedTestsObserved": 7,
+      "sampleScope": "1000-trace bounded sampled safety; packaging retained two safety runs. Exact commands, seeds, witnesses and scope in correspondence and handoff.",
+      "handoff": "/home/charles/.local/state/warlock-team/20261028/handoffs/quint-2.json",
+      "handoffSHA256": "5e9ab394ff827bc055ee747e7ecb322f23fe0576e3950b1b0591fa476c26eff0"
+    },
+    {
+      "owner": "quint-3",
+      "model": "implementation/warlock/qa/release-packaging.qnt",
+      "tests": "implementation/warlock/qa/release-packaging_test.qnt",
+      "correspondence": "implementation/warlock/qa/release-packaging-model.md",
+      "explicitNamedTestsObserved": 14,
+      "sampleScope": "1000-trace bounded sampled safety; packaging retained two safety runs. Exact commands, seeds, witnesses and scope in correspondence and handoff.",
+      "handoff": "/home/charles/.local/state/warlock-team/20261028/handoffs/quint-3.json",
+      "handoffSHA256": "feea26432ad4c8c13471a3df520d7a3b2ade9f8acca79a7dbcec00cd33746e95"
+    },
+    {
+      "owner": "quint-4",
+      "model": "implementation/warlock/qa/release-transport.qnt",
+      "tests": "implementation/warlock/qa/release-transport_test.qnt",
+      "correspondence": "implementation/warlock/qa/release-transport-model.md",
+      "explicitNamedTestsObserved": 10,
+      "sampleScope": "1000-trace bounded sampled safety; packaging retained two safety runs. Exact commands, seeds, witnesses and scope in correspondence and handoff.",
+      "handoff": "/home/charles/.local/state/warlock-team/20261028/handoffs/quint-4.json",
+      "handoffSHA256": "795749f8edae81487b72bb57e4a7f9ff1060ecb69a64ae9ee3a93407b66a848b"
+    },
+    {
+      "owner": "quint-5",
+      "model": "implementation/warlock/qa/release-composed.qnt",
+      "tests": "implementation/warlock/qa/release-composed_test.qnt",
+      "correspondence": "implementation/warlock/qa/release-composed-model.md",
+      "explicitNamedTestsObserved": 9,
+      "sampleScope": "1000-trace bounded sampled safety; packaging retained two safety runs. Exact commands, seeds, witnesses and scope in correspondence and handoff.",
+      "handoff": "/home/charles/.local/state/warlock-team/20261028/handoffs/quint-5.json",
+      "handoffSHA256": "4d528f78cff737248b7e827ff61cd0b8dad6698b0cb2b4c075336306ac67f7df"
+    }
+  ],
+  "modelLimits": [
+    "Sampled conditional model consistency, not a formal or semantic implementation proof.",
+    "Several snapshot invariants restate atomic decision predicates; ideal coherent review/scan observations and intra-function filesystem interleavings are outside these models.",
+    "Private exclusive output and point-in-time validation are explicit; later external mutation can stale a receipt and must be rechecked at eventual publication."
+  ],
+  "independentReview": {
+    "originalScenarioDisposition": "blocked",
+    "reviewers": [
+      "terra-5",
+      "quint-5"
+    ],
+    "scope": "Actual protected controlled-function negatives, fixed receipt regression and frozen peer model audit; no real complete package acceptance.",
+    "artifact": "implementation/warlock/release/INDEPENDENT-REVIEW.json",
+    "artifactSHA256": "e146bdb575076cfa40b9989e6294614d6aaad10ce990c939b57a0f761068ed4c"
+  },
+  "graphGate": {
+    "builtAt": "2026-10-28T16:32:07.206942+00:00",
+    "files": 235,
+    "nodes": 5643,
+    "edges": 14233,
+    "staleFiles": 0,
+    "retrievalSmoke": [
+      "release_compliance -> release_compliance.py passed",
+      "release_builder -> release_builder.py passed"
+    ],
+    "scope": "Navigation and retrieval only; lexical Quint declarations and partial C++ AST do not prove behavior."
+  },
+  "disposition": "partial",
+  "requirementAccepted": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "missingObservations": [
+    "A complete real candidate package and archive cross-check against all original delivery-005 obligations; historical exact host/core/plugin/Aquamarine artifacts remain absent from the recorded tuple.",
+    "Complete compiler/native source correspondence, applicable project grants, notice-applicability and redistribution review; all catalog dispositions remain unknown.",
+    "Independent original-scenario acceptance; native desktop, AT/IME, hardware/resources, representative journeys and reversible deployment remain separate release obligations."
+  ],
+  "ownership": "Completed worker/model handoffs explicitly transferred to Sol with exact current AgentBus grants and contributor extend; prior per-owner parallel dirty-path failures retained."
+}

@@ -4,6 +4,13 @@ This is the active editable product source. It was materialized once from held G
 
 Follow `docs/warlock-build-loop/v2/INSTRUCTIONS.md`. Generated builds/browser profiles live in ignored `.build/` / `qa/runs/`; commit only minimal reports needed by a bounded claim. Use the held pinned compiler/toolchain by verified reference, not another toolchain copy. Changed Main/Bar/Popup must be rebuilt as one asset package before native qualification.
 
+Release packaging now includes a [component and notice review gate](release/COMPLIANCE.md).
+It checks exact payload ownership, source and notice hashes, embedded component
+relationships and redistribution dispositions before producing an archive.
+The initial catalogs retain unknown dispositions and missing native-source
+observations, so the current package remains blocked for release. Focused
+protected mutation checks qualify the gate's behavior, not a complete release.
+
 This candidate is not installed on the user's desktop. Its component results, native scenario acceptance and full release acceptance are separate. Preserve inherited ABI manifests and verify the current recorded core/plugin/Aquamarine pair before loading native code; numbering alone is not ABI proof. Authorized native picker previews have bounded recordings, while full transition, resource and release acceptance remain open.
 
 Current implementation status and remaining behavior are in the [feature-completion checklist](../../docs/warlock-roadmap/FEATURE-COMPLETION.md). Current design guidance and the [contributor plugin section](../../DesignLanguage/catalog/index.html#contributors) distinguish the editable product from frozen browser examples.

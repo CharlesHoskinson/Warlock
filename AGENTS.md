@@ -41,6 +41,31 @@ CPU tests and Quint model results are separate claims.
   subdirectory and update the manifest, then rescan plugins.
 - No AI attribution in commits or PRs.
 
+## Graph navigation and living journal
+
+The user requested iterative Graphify navigation patterned after ProjectFenrir,
+RTX 5080 acceleration, and a living LLM Wiki journal. On this host:
+
+- Use `warlock-ctx q "question"`, `explain SYMBOL`, or `impact SYMBOL` before
+  exploring a new implementation question. `hq "question"` uses CUDA embeddings
+  to seed Graphify traversal. Default output is a conservative 1500-token estimate.
+  Make at most two graph calls per question, then read at most three bounded
+  source windows with `warlock-ctx show relative/path:LINE`.
+- After each code/model wave, run `warlock-ctx update`, then `warlock-ctx eval`
+  before the integration gate. Check `stats` and stale warnings. Graph artifacts
+  live outside this checkout at `~/.local/share/warlock-graph/graphify-out/`.
+  Serialize updates. A retrieval smoke pass is not a correctness proof.
+- Source beats the graph. Verify pointers and use bounded `rg` when extraction
+  is missing or partial. Elm/Quint declarations are explicitly lexical; C/C++
+  macro extraction may be partial. Never compress edit targets, Quint models
+  or original requirement registers. GPU embeddings do not make AST parsing GPU based.
+- Maintain `~/wiki/topics/warlock/`: append meaningful decisions, failures,
+  verified outcomes and ideas to `log.md`; preserve immutable `raw/notes/`
+  observations and refresh linked status/articles/indexes. Validate with
+  `~/.local/share/llm-wiki/scripts/llm-wiki lint ~/wiki/topics/warlock --json`.
+  Distinguish proposed ideas, implementation, bounded checks and original
+  acceptance. Store neither credentials nor full conversation transcripts.
+
 ## Privileged operations
 
 Use the user's graphical askpass mode, not plain sudo or a request that the user

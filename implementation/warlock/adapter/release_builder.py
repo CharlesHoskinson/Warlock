@@ -17,6 +17,7 @@ import stat
 import subprocess
 import sys
 import tarfile
+from typing import NamedTuple
 
 PACKAGES = ('gtk+-3.0', 'webkit2gtk-4.1', 'gtk-layer-shell-0',
             'json-glib-1.0', 'gio-unix-2.0')
@@ -25,6 +26,8 @@ UNITS = ('preview_uri.cpp', 'preview_icons.cpp', 'preview-uri-webkit.cpp',
          'imported-clients.cpp', 'preview-uri-router.cpp',
          'elm-preview-policy.cpp', 'preview-visual-channel.cpp', 'preview-policy-driver.cpp')
 TOOLS = ('cc', 'g++', 'pkg-config', 'node', 'python3', 'quint', 'as', 'ld', 'ar', 'ldd', 'bash', 'env', 'bwrap')
+COMPLIANCE_METADATA = tuple('release/compliance/' + name for name in ('SBOM.json', 'dispositions.json', 'review.json'))
+COMPLIANCE_CATALOGS = ('release/native-components.json', 'release/language-components.json')
 ENV_KEYS = ('PATH', 'LD_LIBRARY_PATH', 'LD_PRELOAD', 'CPATH', 'C_INCLUDE_PATH',
             'CPLUS_INCLUDE_PATH', 'LIBRARY_PATH', 'COMPILER_PATH',
             'GCC_EXEC_PREFIX', 'PKG_CONFIG_PATH', 'PKG_CONFIG_LIBDIR',
@@ -145,6 +148,17 @@ def add_dynamic(files, path):
         add(files, name, 'dynamic-library')
 
 
+def safe_relative(root, name):
+    path = Path(name)
+    if not isinstance(name, str) or path.is_absolute() or not path.parts or '..' in path.parts:
+        raise ChangedInput('Unsafe compliance input path: ' + str(name))
+    root = Path(root).resolve()
+    result = root / path
+    if not result.resolve().is_relative_to(root):
+        raise ChangedInput('Compliance input escapes source root: ' + name)
+    return result
+
+
 def capture(repo):
     require_scope()
     # Exercise CLI initialization before collecting Python's lazy dependencies;
@@ -155,12 +169,18 @@ def capture(repo):
     held = repo / 'implementation/warlock-preview-provider-v143'
     files = {}
     sources = []
-    for folder in ('src', 'native', 'adapter', 'assets', 'qa'):
+    for folder in ('src', 'native', 'adapter', 'assets', 'qa', 'release'):
         iterator = (candidate / folder).rglob('*') if folder != 'qa' else (candidate / folder).iterdir()
         for path in sorted(iterator):
             if path.is_file() and '__pycache__' not in path.parts:
                 add(files, path, 'candidate-source')
                 sources.append(str(path.relative_to(candidate)))
+    for name in COMPLIANCE_CATALOGS:
+        catalog = read(candidate / name)
+        for component in catalog.get('components', []):
+            for evidence in component.get('provenance', []):
+                path = safe_relative(repo, evidence['path'])
+                add(files, path, 'compliance-provenance', evidence['sha256'])
     add(files, candidate / 'elm.json', 'candidate-source')
     sources.append('elm.json')
     toolchain_path = held / 'qa/toolchain.json'
@@ -263,7 +283,7 @@ def capture(repo):
     for path in (Path('/home/hoskinson/window-integration-qa/qa_launch.py'),
                  Path('/home/hoskinson/window-integration-qa/qa_run.py')):
         add(files, path, 'protected-launcher')
-    return {'schema': 1, 'candidate': str(candidate), 'sources': sorted(sources),
+    return {'schema': 1, 'candidate': str(candidate), 'sourceRoot': str(repo), 'sources': sorted(sources),
             'tools': tools, 'elmHome': str(held / toolchain['elmHome']),
             'elmPackages': toolchain['elmDependencies'], 'nativePackages': pkg_versions,
             'flags': flags, 'hostDependencies': dependencies, 'nativePair': pair_meta['pair'],
@@ -295,7 +315,148 @@ def verify(manifest):
     return len(manifest['inputs'])
 
 
+def check_compliance_lock(manifest):
+    """An older lock cannot authorize a package without pinned review inputs."""
+    candidate = Path(manifest['candidate'])
+    if not manifest.get('sourceRoot') or not Path(manifest['sourceRoot']).is_absolute():
+        raise ChangedInput('Release lock lacks compliance source root')
+    repo = Path(manifest['sourceRoot'])
+    sources = set(manifest.get('sources', []))
+    inputs = manifest.get('inputs', {})
+    module = 'adapter/release_compliance.py'
+    if module not in sources or str(candidate / module) not in inputs:
+        raise ChangedInput('Release lock lacks compliance implementation')
+    for name in COMPLIANCE_CATALOGS:
+        path = candidate / name
+        if name not in sources or str(path) not in inputs:
+            raise ChangedInput('Release lock lacks compliance catalog: ' + name)
+        if sha(path) != inputs[str(path)]['sha256']:
+            raise ChangedInput('Locked compliance catalog changed: ' + name)
+        for component in read(path).get('components', []):
+            for evidence in component.get('provenance', []):
+                source = safe_relative(repo, evidence['path'])
+                if str(source) not in inputs or inputs[str(source)]['sha256'] != evidence['sha256']:
+                    raise ChangedInput('Release lock lacks compliance provenance: ' + evidence['path'])
+            for evidence in component.get('notices', []):
+                source = safe_relative(candidate, evidence['path'])
+                relative = str(source.relative_to(candidate))
+                if relative not in sources or str(source) not in inputs or inputs[str(source)]['sha256'] != evidence['sha256']:
+                    raise ChangedInput('Release lock lacks compliance notice: ' + evidence['path'])
+
+
+class ComplianceReceipt(NamedTuple):
+    # Only immutable primitives: no live review object or on-disk authority.
+    inventory: tuple
+    metadata: tuple
+
+
+def inventory_identity(rows):
+    return tuple((row['path'], row['type'], row.get('sha256', row.get('target')))
+                 for row in rows)
+
+
+def package_compliance(payload, workspace, manifest, output):
+    """Review actual payload before adding deterministic, non-self-hashed metadata."""
+    import release_compliance
+    module = 'adapter/release_compliance.py'
+    expected = manifest['inputs'][str(Path(manifest['candidate']) / module)]['sha256']
+    if sha(release_compliance.__file__) != expected or sha(workspace / module) != expected:
+        raise ChangedInput('Compliance implementation changed')
+    notices = workspace / 'release/notices'
+    if notices.exists():
+        shutil.copytree(notices, payload / 'release/notices')
+    catalogs = [workspace / name for name in COMPLIANCE_CATALOGS]
+    review = release_compliance.review(payload, catalogs, Path(manifest['sourceRoot']))
+    (output / 'compliance-report.json').write_text(json.dumps(review, indent=2, sort_keys=True) + '\n')
+    if not review['ok']:
+        raise ChangedInput('Redistribution review blocked; see compliance-report.json: ' + '; '.join(review['errors']))
+    if any(row['path'] == 'MANIFEST.json' or row['path'].startswith('release/compliance/') for row in review['inventory']):
+        raise ChangedInput('Reserved compliance or manifest path present before review')
+    metadata = payload / 'release/compliance'
+    metadata.mkdir(parents=True, exist_ok=False)
+    components = review['components']
+    documents = {
+        'SBOM.json': {'schema': 1, 'components': components, 'inventory': review['inventory'],
+                      'inventoryBoundary': 'Pre-metadata payload; generated release/compliance files and MANIFEST.json are accounted for by the package manifest and archive audit to avoid self-hashes.'},
+        'dispositions.json': {'schema': 1, 'components': [
+            {'id': c['id'], 'disposition': c['disposition']} for c in components]},
+        'review.json': review,
+    }
+    metadata_hashes = []
+    for name in ('SBOM.json', 'dispositions.json', 'review.json'):
+        content = (json.dumps(documents[name], indent=2, sort_keys=True) + '\n').encode()
+        (metadata / name).write_bytes(content)
+        metadata_hashes.append(('release/compliance/' + name, hashlib.sha256(content).hexdigest()))
+    # Re-inventory after generating metadata to catch changed or unexpected files.
+    errors = []
+    actual = release_compliance._inventory(payload, errors)
+    generated = {'release/compliance/' + name for name in documents}
+    original = [row for row in actual if row['path'] not in generated]
+    if errors or original != review['inventory'] or {row['path'] for row in actual if row['path'] in generated} != generated:
+        raise ChangedInput('Payload changed during compliance review')
+    metadata_rows = {row['path']: row for row in actual if row['path'] in generated}
+    if any(metadata_rows.get(name) != {'path': name, 'type': 'file', 'sha256': digest}
+           for name, digest in metadata_hashes):
+        raise ChangedInput('Generated compliance metadata changed')
+    receipt = ComplianceReceipt(inventory_identity(review['inventory']), tuple(metadata_hashes))
+    return {'ok': True, 'report': 'compliance-report.json',
+            'metadata': list(COMPLIANCE_METADATA), 'receipt': receipt}
+
+
+def audit_archive(archive, payload, package_manifest, receipt=None):
+    """Audit a point-in-time private output; later external writes remain possible."""
+    import release_compliance
+    payload = Path(payload)
+    errors = []
+    inventory = release_compliance._inventory(payload, errors)
+    if errors:
+        raise ChangedInput('Unsafe payload inventory: ' + '; '.join(errors))
+    metadata_dir = payload / 'release/compliance'
+    if receipt is None and (metadata_dir.exists() or metadata_dir.is_symlink()):
+        raise ChangedInput('Compliance receipt required')
+    if receipt is not None:
+        if (type(receipt) is not ComplianceReceipt or type(receipt.inventory) is not tuple
+                or type(receipt.metadata) is not tuple
+                or any(type(row) is not tuple or len(row) != 3
+                       or any(type(value) is not str for value in row)
+                       or row[1] not in ('file', 'symlink') for row in receipt.inventory)
+                or any(type(row) is not tuple or len(row) != 2 for row in receipt.metadata)
+                or tuple(row[0] for row in receipt.metadata) != COMPLIANCE_METADATA
+                or any(not isinstance(row[1], str) or re.fullmatch(r'[0-9a-f]{64}', row[1]) is None for row in receipt.metadata)):
+            raise ChangedInput('Invalid compliance receipt')
+        original = [row for row in inventory if row['path'] != 'MANIFEST.json'
+                    and row['path'] not in COMPLIANCE_METADATA]
+        if inventory_identity(original) != receipt.inventory:
+            raise ChangedInput('Payload changed after compliance review')
+        actual_metadata = {row['path']: row for row in inventory if row['path'] in COMPLIANCE_METADATA}
+        if any(actual_metadata.get(name) != {'path': name, 'type': 'file', 'sha256': digest}
+               for name, digest in receipt.metadata):
+            raise ChangedInput('Compliance metadata changed after review')
+    expected = {'warlock/' + str(p.relative_to(payload)): p for p in payload.rglob('*')}
+    with tarfile.open(archive, 'r') as stream:
+        members = stream.getmembers()
+        names = [member.name for member in members]
+        if len(names) != len(set(names)) or set(names) != set(expected):
+            raise ChangedInput('Archive inventory differs from package')
+        for member in members:
+            path = expected[member.name]
+            if path.is_symlink():
+                if not member.issym() or member.linkname != os.readlink(path):
+                    raise ChangedInput('Archive link changed: ' + member.name)
+            elif path.is_dir():
+                if not member.isdir():
+                    raise ChangedInput('Archive directory changed: ' + member.name)
+            elif not member.isfile() or hashlib.sha256(stream.extractfile(member).read()).hexdigest() != sha(path):
+                raise ChangedInput('Archive file changed: ' + member.name)
+    expected_files = {str(p.relative_to(payload)): {'sha256': sha(p),
+        'symlink': os.readlink(p) if p.is_symlink() else None}
+        for p in sorted(payload.rglob('*')) if p.is_file() and p.relative_to(payload).as_posix() != 'MANIFEST.json'}
+    if expected_files != package_manifest['files'] or read(payload / 'MANIFEST.json') != package_manifest:
+        raise ChangedInput('Package changed after manifest')
+
+
 def build(manifest, output):
+    check_compliance_lock(manifest)
     count = verify(manifest)  # Fail before creating any build/output files.
     output = Path(output).absolute()
     output.mkdir(mode=0o700)
@@ -364,6 +525,8 @@ def build(manifest, output):
             raise ChangedInput('Native pair changed during packaging: ' + role)
     for alias, target in manifest['loaderAliases'].items():
         (payload / 'native' / alias).symlink_to(target)
+    compliance = package_compliance(payload, workspace, manifest, output)
+    verify(manifest)
     input_identity = sorted((row['sha256'], row['size'], row['roles']) for row in manifest['inputs'].values())
     package_manifest = {'schema': 1, 'nativePair': packaged_pair,
         'inputContentSHA256': hashlib.sha256(json.dumps(input_identity, separators=(',', ':')).encode()).hexdigest(),
@@ -386,11 +549,14 @@ def build(manifest, output):
                     stream.addfile(item, body)
             else:
                 stream.addfile(item)
+    audit_archive(archive, payload, package_manifest, compliance['receipt'])
+    verify(manifest)
     report = {'passed': True, 'inputCount': count, 'commands': commands,
               'compiledAssets': {name: sha(payload / 'assets' / name) for name in ('elm.js', 'bar.js', 'popup.js')},
               'hostSHA256': sha(payload / 'elm-host'),
               'nativePair': manifest['nativePair'], 'typedChecks': read(output / 'new-instance.json')['checks'],
               'packageManifest': package_manifest, 'archiveSHA256': sha(archive),
+              'compliance': {key: value for key, value in compliance.items() if key != 'receipt'},
               'payload': {str(p.relative_to(payload)): sha(p) for p in sorted(payload.rglob('*')) if p.is_file()},
               'installable': False, 'nativeAcceptance': False, 'fullReleaseAccepted': False,
               'missingObservations': manifest['missingObservations']}
