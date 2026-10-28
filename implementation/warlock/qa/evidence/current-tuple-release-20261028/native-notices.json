@@ -1,0 +1,2252 @@
+{
+  "accountingPassed": true,
+  "reviewedComponents": [
+    "elm-browser-1.0.2",
+    "elm-core-1.0.5",
+    "elm-html-1.0.0",
+    "elm-json-1.1.3",
+    "elm-time-1.0.0",
+    "elm-url-1.0.0",
+    "elm-virtual-dom-1.0.3",
+    "native-glaze-headers",
+    "native-udis86-static"
+  ],
+  "releaseAccepted": false,
+  "scope": "Actual immutable v4 A staged payload against current nine scoped catalog dispositions; no new distributable or two-build comparison.",
+  "scopeEvidence": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-68711d5bb4b1460eb961e82b9b02d9fe.scope",
+    "coreLimit": 1
+  },
+  "sourceHashes": {
+    "/home/charles/Warlock/implementation/warlock/release/native-components.json": "7999fb2fc69e936b3b496a0d8fef505088afe24fd8a3c564fccc84dd8a13b1b0",
+    "/home/charles/Warlock/implementation/warlock/release/language-components.json": "dae1b362a3f08f919dab425f2f8a1230b74c72af03c5a9b2f925d261dee40719",
+    "/home/charles/Warlock/implementation/warlock/adapter/release_compliance.py": "51f7557b4a741106f3b7ffc16df09ae86aa90ca580578ea40a1ff175d4a48964",
+    "/home/charles/Warlock/implementation/warlock/release/component-reviews-20261028.json": "0526d5a1650ba6ffba59d192742c24e5c99d21dae3c1250d20a7233abc9d7fb9",
+    "/home/charles/Warlock/implementation/warlock/release/elm-upstream-source-20261028.json": "6967b373112615d2f2956d1fa7e646534adb7ac135e3c8da9aada977508c2189",
+    "/home/charles/Warlock/implementation/warlock/release/native-attribution-20261028.json": "a44e3515f8253f2f2ab55c8e964e70f807de6edd443e56febb79b113b8476d9b"
+  },
+  "review": {
+    "schema": 1,
+    "ok": false,
+    "inventory": [
+      {
+        "path": "adapter/admission_ledger.py",
+        "type": "file",
+        "sha256": "2faf5eb03dff6993de707f2d7458b929db881f4102bdc1ec467d3f7aaa4413d1"
+      },
+      {
+        "path": "adapter/catalog_authority.py",
+        "type": "file",
+        "sha256": "ad20204afd3b203eb956918300c8da4cb4765b3c5ad86e701b0257a54b8fb9cc"
+      },
+      {
+        "path": "adapter/catalog_transport.py",
+        "type": "file",
+        "sha256": "43bd1cd1059b87ce4d349d72e4b2a917ac1bdc3dacda2f60563fa621e05a4b84"
+      },
+      {
+        "path": "adapter/daemon.py",
+        "type": "file",
+        "sha256": "a593494e4ca89ef467dced5cd946bc5eca9a88db21c591597c19eb2a80cdca31"
+      },
+      {
+        "path": "adapter/delivery_ledger.py",
+        "type": "file",
+        "sha256": "ce1ff3528b454bdca7412389f5693f69023a5c76bc9586541c1091c1cddc5ca4"
+      },
+      {
+        "path": "adapter/durable_ledger.py",
+        "type": "file",
+        "sha256": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0"
+      },
+      {
+        "path": "adapter/effect_endpoint.py",
+        "type": "file",
+        "sha256": "09d01f26c6f6925051c2368972d97d67c03dea065002b9eda2335fff61e0e9b1"
+      },
+      {
+        "path": "adapter/endpoint.py",
+        "type": "file",
+        "sha256": "e254b870922a46b935de9d85db1de56129838ea2cf73eeb55c9fa16e8539d731"
+      },
+      {
+        "path": "adapter/explorer.py",
+        "type": "file",
+        "sha256": "5771d66fe29af0aed5e6f81f0d0287374d816ea048bdeaf08ae07a9cdf681e78"
+      },
+      {
+        "path": "adapter/geometry_endpoint.py",
+        "type": "file",
+        "sha256": "193b9ef7ecf114156c02cd527a703e79383cdec83267b612ff406f165cc3e3a4"
+      },
+      {
+        "path": "adapter/geometry_placement.py",
+        "type": "file",
+        "sha256": "706899e88f911e1e02bceff8351d6426101ed918d194e7f8ca1f7b707c959614"
+      },
+      {
+        "path": "adapter/geometry_size_policy.py",
+        "type": "file",
+        "sha256": "bcca6dd280911a38ed189e2e8ca6d81ea98c775ef261444f9b1e0f4b9a754888"
+      },
+      {
+        "path": "adapter/grant_endpoint.py",
+        "type": "file",
+        "sha256": "4b60a6c7e43aade3f2ce59495600f3b418b781865a7289dae53a189388f5c3f0"
+      },
+      {
+        "path": "adapter/jump_list.py",
+        "type": "file",
+        "sha256": "2280c0ab00ff0683c0a28611a99b70ac122887629cafb9226f40c649be581806"
+      },
+      {
+        "path": "adapter/motion_preferences.py",
+        "type": "file",
+        "sha256": "ec75685d52f81d5d28f82155b92580015dc897bee6488892c2a8f98e0ffa3633"
+      },
+      {
+        "path": "adapter/notification_service.py",
+        "type": "file",
+        "sha256": "129c864f275282320274ab417bdbc2a7a919096c2ce2b58d0438b18988fc334b"
+      },
+      {
+        "path": "adapter/reconciliation.py",
+        "type": "file",
+        "sha256": "5f558130f005b722fec187e87a88a8cd69606c786c27beb0decede715c54e5f9"
+      },
+      {
+        "path": "adapter/recovery_fault.py",
+        "type": "file",
+        "sha256": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1"
+      },
+      {
+        "path": "adapter/recovery_journal.py",
+        "type": "file",
+        "sha256": "9cfe06102f03fded5d330b90c317b4c6c32064885ed5a2c8478a87c2e1f25dae"
+      },
+      {
+        "path": "adapter/recovery_profile.py",
+        "type": "file",
+        "sha256": "651220f844591d5206b2f3f0f48fc2a652c7010d55cf796c1fda37cdc6adf6e8"
+      },
+      {
+        "path": "adapter/recovery_store.py",
+        "type": "file",
+        "sha256": "fa7e852c963bc4602c2066d05e77d47d8535c732775fe04258021accd3cd7be1"
+      },
+      {
+        "path": "adapter/release_builder.py",
+        "type": "file",
+        "sha256": "43dfc887228de8a755964a0aaa8b645d9fb8f4a4a4a288b7ff48d7b1844d630a"
+      },
+      {
+        "path": "adapter/release_compliance.py",
+        "type": "file",
+        "sha256": "51f7557b4a741106f3b7ffc16df09ae86aa90ca580578ea40a1ff175d4a48964"
+      },
+      {
+        "path": "adapter/release_repro.py",
+        "type": "file",
+        "sha256": "68107841f4514394091740799c6b2b1983a2e6a4708e3a490e40b61729f38986"
+      },
+      {
+        "path": "adapter/release_tuple.py",
+        "type": "file",
+        "sha256": "4de13ed2c11e37261bb443a9506b5026aba00e785c2539ec4745960badcdd9cc"
+      },
+      {
+        "path": "adapter/retirement_ledger.py",
+        "type": "file",
+        "sha256": "213cbb6ecd5c2218075d2cc98132c1c53680933f3898c757e7ba1848261faec5"
+      },
+      {
+        "path": "adapter/shell_preferences.py",
+        "type": "file",
+        "sha256": "333895ca91c20e206cebf645206584213d08cb02553bb10a1758f5308f04c7fa"
+      },
+      {
+        "path": "adapter/shortcut_preferences.py",
+        "type": "file",
+        "sha256": "2a8cc047ebfb5040c7dda4f9fd0f9e80a9b1207245458beda3ac26ff2251c185"
+      },
+      {
+        "path": "adapter/system_menu.py",
+        "type": "file",
+        "sha256": "8e6cba8ae22f821407ab386a0552057de94be3eb03793a87c80817b8c57094e5"
+      },
+      {
+        "path": "adapter/taskbar_catalog.py",
+        "type": "file",
+        "sha256": "5414ed1b6fde57a7508c2f3b20658a97006ce3c4203cecbb893fb73de943b9ba"
+      },
+      {
+        "path": "adapter/taskbar_preferences.py",
+        "type": "file",
+        "sha256": "4fde83478c22f7173ef05727a3666ff7ce72076bc05fddfa4fd08705af9a57d2"
+      },
+      {
+        "path": "adapter/taskbar_projection.py",
+        "type": "file",
+        "sha256": "b9da24de2a910a3d8515f2e8e4de2cb0086bdd0cd26c7f857fcbbdc15978c976"
+      },
+      {
+        "path": "adapter/workspace_navigation.py",
+        "type": "file",
+        "sha256": "79508bcb112ec602b6d33daf1050ef54f63afeb7bfe427fa5553e8a4c68bb8a9"
+      },
+      {
+        "path": "assets/activation.js",
+        "type": "file",
+        "sha256": "06e3de6bcbc27e2b9a5d166fd665706e300ef5d4a29640b9bd70aa0f095a2c3e"
+      },
+      {
+        "path": "assets/adapter.js",
+        "type": "file",
+        "sha256": "9d99e140af65c67aa5395ce8dc3f3aee42b2b341e039e6514745e14ec9335f96"
+      },
+      {
+        "path": "assets/appearance.js",
+        "type": "file",
+        "sha256": "99b01609571af35328d7b69034f647f25651fb59d9d59928063a7e8c83a9b3f6"
+      },
+      {
+        "path": "assets/bar-adapter.js",
+        "type": "file",
+        "sha256": "2f1dd1dfd2f47850a2b455732c114bd98acea976c273c6ec594bef5208d4a68c"
+      },
+      {
+        "path": "assets/bar.html",
+        "type": "file",
+        "sha256": "b88b0b075fc4bcef147357b023823049b5e63e1b49354eb298737ef003328a66"
+      },
+      {
+        "path": "assets/bar.js",
+        "type": "file",
+        "sha256": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725"
+      },
+      {
+        "path": "assets/context.js",
+        "type": "file",
+        "sha256": "2ff41ca906dc4e42ae76f65d486cf119b400414dee41ca886f5589709d2b9333"
+      },
+      {
+        "path": "assets/controlled-popup-adapter.js",
+        "type": "file",
+        "sha256": "14d0a8eb0704414a9d7c2e270d23ca7cc2ff8f008e860051f8ab0e31bcab748c"
+      },
+      {
+        "path": "assets/controlled-popup.html",
+        "type": "file",
+        "sha256": "1e50055501c563f14762159620e2b56644d88779e5ffeba565d4730ebd4e9e4e"
+      },
+      {
+        "path": "assets/elm.js",
+        "type": "file",
+        "sha256": "700524b6a1da72905daeecffd74216143bcf9242ea13c13d01f8bce3e1665be5"
+      },
+      {
+        "path": "assets/index.html",
+        "type": "file",
+        "sha256": "ba09087a0dda2fbc4a912d2d5d8f8adb90ae553a8027963fdb6b74a7afaa5d1b"
+      },
+      {
+        "path": "assets/native-preview-control-outbox.js",
+        "type": "file",
+        "sha256": "183253d5f781cf8527c4e58f31d44653e1b6fe8be58c0bdc89ae714ffb5e4484"
+      },
+      {
+        "path": "assets/native-preview-proposals.js",
+        "type": "file",
+        "sha256": "0172bad6c2491f697497cb9f8274ffa99feb8fca1d9942d31fbb2424bb035bf9"
+      },
+      {
+        "path": "assets/popup-adapter.js",
+        "type": "file",
+        "sha256": "050af2a6cfb58195f6999f126ab94f37573231007cb2fcd7d119873969365605"
+      },
+      {
+        "path": "assets/popup.html",
+        "type": "file",
+        "sha256": "035cb884860bb1cda77c06773a750c631e5d6f20cf90557989bb37756270c422"
+      },
+      {
+        "path": "assets/popup.js",
+        "type": "file",
+        "sha256": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43"
+      },
+      {
+        "path": "assets/recovered-native-preview-control-outbox.js",
+        "type": "file",
+        "sha256": "4d5b641f57080b921789ed7c8f33f0c0303aa286bb444730d6054a53474f0297"
+      },
+      {
+        "path": "assets/retained-preview-controls.js",
+        "type": "file",
+        "sha256": "64bb384ee03acbb59619f78f3b931b922ed008d14006133b7294e864b92e93e5"
+      },
+      {
+        "path": "assets/shell.css",
+        "type": "file",
+        "sha256": "77566e786969cfb4d7c87f2e33cc9f36d2cf4682fdc2da21bf38073340979098"
+      },
+      {
+        "path": "elm-host",
+        "type": "file",
+        "sha256": "4377b11ce0afe9e1072210666aa872118b032995275a20657058771e5e6c8347"
+      },
+      {
+        "path": "native/Hyprland",
+        "type": "file",
+        "sha256": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e"
+      },
+      {
+        "path": "native/elm-window-geometry-authority.so",
+        "type": "file",
+        "sha256": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c"
+      },
+      {
+        "path": "native/libaquamarine.so.0.15.0",
+        "type": "file",
+        "sha256": "667a22d535aade4e4a26134e39028a87fb3f963c28b7bf7ff79da684bb014ecd"
+      },
+      {
+        "path": "native/libaquamarine.so.14",
+        "type": "symlink",
+        "target": "libaquamarine.so.0.15.0"
+      },
+      {
+        "path": "release/notices/language/elm-browser-1.0.2.txt",
+        "type": "file",
+        "sha256": "d33481c057f582207d41425b1b3ecb740291f9f9c86b21e9a045cd3bea0f6ac8"
+      },
+      {
+        "path": "release/notices/language/elm-compiler-0.19.2.txt",
+        "type": "file",
+        "sha256": "22bd883c0b78625bb39a21b96d38ddcb8469863b51718b8bda1ce46441f5bfce"
+      },
+      {
+        "path": "release/notices/language/elm-core-1.0.5.txt",
+        "type": "file",
+        "sha256": "431192066654a9060d29033714fa19eb6f7749031710957c55cf8b8d8bd246c3"
+      },
+      {
+        "path": "release/notices/language/elm-html-1.0.0.txt",
+        "type": "file",
+        "sha256": "ac3cefe90f27c4cc550da6eda13d18e1fadb0151b5d9dd99619ea1a10dc6eaad"
+      },
+      {
+        "path": "release/notices/language/elm-json-1.1.3.txt",
+        "type": "file",
+        "sha256": "ac3cefe90f27c4cc550da6eda13d18e1fadb0151b5d9dd99619ea1a10dc6eaad"
+      },
+      {
+        "path": "release/notices/language/elm-time-1.0.0.txt",
+        "type": "file",
+        "sha256": "a1c31dacffb1a470cb3aaf4844904114b9bc5ebf091e113b2d46bc4953c2c2ea"
+      },
+      {
+        "path": "release/notices/language/elm-url-1.0.0.txt",
+        "type": "file",
+        "sha256": "1c818d8c5f129ee90e6a855c9edd16d9c6bd25e2959b1aeaeb8626e7c539cc9b"
+      },
+      {
+        "path": "release/notices/language/elm-virtual-dom-1.0.3.txt",
+        "type": "file",
+        "sha256": "c63bca41c3a19de3b16ede979ca1dfeb2ce0db93a62f4555dbb61ae3ee777425"
+      },
+      {
+        "path": "release/notices/native/aquamarine-LICENSE",
+        "type": "file",
+        "sha256": "52d07f3457591b4496ae2e79b05efd63c7df72135666fa12428d83078c4c0de5"
+      },
+      {
+        "path": "release/notices/native/glaze-LICENSE",
+        "type": "file",
+        "sha256": "5d49e66411a0807a7c8d6b911b9a26b59e940c71aebe561a3ad8b0b80ac4b7b6"
+      },
+      {
+        "path": "release/notices/native/hyprland-LICENSE",
+        "type": "file",
+        "sha256": "e01df754903af0ab26babb317b5f5a62dd95f770b733c5275414dd3245d00ae7"
+      },
+      {
+        "path": "release/notices/native/udis86-LICENSE",
+        "type": "file",
+        "sha256": "1070640aab24327354da44507627d1db6c67482a6facc8375a758796a05e3dff"
+      }
+    ],
+    "components": [
+      {
+        "id": "elm-browser-1.0.2",
+        "category": "package",
+        "scope": "shipped",
+        "provenance": [
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/elm.json",
+            "sha256": "f50e12cb6b89a97ef18dde0c64fa92aa78469c412c19d64ca1c56931a1fbc52f"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/LICENSE",
+            "sha256": "d33481c057f582207d41425b1b3ecb740291f9f9c86b21e9a045cd3bea0f6ac8"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Browser/AnimationManager.elm",
+            "sha256": "b5eec62b6f9e2e94f5f1b573228e332784580fddc5898c732c4f5c48f4a5a854"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Browser/Dom.elm",
+            "sha256": "03bee2960770cea5b6ee2a208f33622432b8a1ae12e77412cf84b67a453ac2a7"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Browser/Events.elm",
+            "sha256": "b72f8970ee085dab3c7e5504f661e21ed6cefaea21890899d9cd32ebc7f2bd4f"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Browser/Navigation.elm",
+            "sha256": "329085431ef02615190706903d090364097ed3ddaf466370918af69379354706"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Browser.elm",
+            "sha256": "2722873214de2d381a02e037dd56f764c522c0b4ccbbfb3edccce69e0c3c32a5"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Debugger/Expando.elm",
+            "sha256": "c93b00af7bf99c8929db06cdfaf7c6b26b955ac576e62ee4fe2c0be6e4f01a6b"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Debugger/History.elm",
+            "sha256": "4ef4701403e4b960a902a12f20f5feb3ac8881850ba7a71ca6c50f363c60caa9"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Debugger/Main.elm",
+            "sha256": "4513896c62d0ba2f3f27bae3cf39145af8e5ccf428abde16db782ed1c7db3b6a"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Debugger/Metadata.elm",
+            "sha256": "733be27ac5b7651c55b62161f24c508c9a62cf69a481672f17a0c58068591cd8"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Debugger/Overlay.elm",
+            "sha256": "cbb5380cc49af503a462d4e1c0112fe6d46653fc34d8948243f5782591094b47"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Debugger/Report.elm",
+            "sha256": "2323bbd81acaaf3b6077d66fda4fd12a15b1d9c21e9571ab21f0b7c069a5d096"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Elm/Kernel/Browser.js",
+            "sha256": "ae20f6a08a7926cc4f19290da136a4e39d9993076db91fa85f54d7d0f244eb0d"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Elm/Kernel/Browser.server.js",
+            "sha256": "e5e2a7ad542e5b222ac71f989e3f29a43035b44e6fcc8a7af0341585a35c9ee5"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2/src/Elm/Kernel/Debugger.js",
+            "sha256": "c74f81f8684fbafeba01b90273f575b3a66fcf317c129074b1244a07845f0c97"
+          },
+          {
+            "path": "implementation/warlock/release/component-reviews-20261028.json",
+            "sha256": "0526d5a1650ba6ffba59d192742c24e5c99d21dae3c1250d20a7233abc9d7fb9"
+          },
+          {
+            "path": "implementation/warlock/release/elm-upstream-source-20261028.json",
+            "sha256": "6967b373112615d2f2956d1fa7e646534adb7ac135e3c8da9aada977508c2189"
+          }
+        ],
+        "notices": [
+          {
+            "path": "release/notices/language/elm-browser-1.0.2.txt",
+            "sha256": "d33481c057f582207d41425b1b3ecb740291f9f9c86b21e9a045cd3bea0f6ac8"
+          }
+        ],
+        "disposition": {
+          "status": "reviewed",
+          "evidence": "Independent Quint4/Quint5 evidence and root review are recorded in release/component-reviews-20261028.json. Scoped to the exact source/notice identities and conservative attribution in staged offline v4 A. Preserve the complete notices and continuing non-endorsement conditions; no project grant, compiler/runtime approval or release acceptance is inferred."
+        },
+        "files": []
+      },
+      {
+        "id": "elm-compiler-0.19.2",
+        "category": "compiler",
+        "scope": "build",
+        "provenance": [
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain.json",
+            "sha256": "fe3d29078d30c6cf9bd431233c5eed1ad4550e2873ff55739d50a5a87a97edaa"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/npm-package/node_modules/@elm_binaries/linux_x64/elm",
+            "sha256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/npm-package/package-lock.json",
+            "sha256": "a2a339e6df901717a4fd0a4d88e1430e22d35bbe1641d339d5e4c477c93f22f0"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/npm-package/node_modules/elm/package.json",
+            "sha256": "40261a256c19b122c95d519f1796e7d3d3b9ace02fa86fea040ec06dabf45600"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/npm-package/node_modules/@elm_binaries/linux_x64/package.json",
+            "sha256": "3781fc4d4589f36037bece84c62b8ea05c7fc751b35c2b1b52cd4fa71e15302d"
+          }
+        ],
+        "notices": [
+          {
+            "path": "release/notices/language/elm-compiler-0.19.2.txt",
+            "sha256": "22bd883c0b78625bb39a21b96d38ddcb8469863b51718b8bda1ce46441f5bfce"
+          }
+        ],
+        "disposition": {
+          "status": "unknown",
+          "evidence": "npm metadata identifies 0.19.2-0 and declares BSD-3-Clause; upstream compiler tag 0.19.2 LICENSE https://raw.githubusercontent.com/elm/compiler/0.19.2/LICENSE was retrieved and retained. The cached binary has not been independently linked to that tagged source or distribution archive; source/binary provenance and redistribution review are unresolved."
+        },
+        "files": []
+      },
+      {
+        "id": "elm-compiler-generated-runtime",
+        "category": "other",
+        "scope": "shipped",
+        "provenance": [
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/npm-package/node_modules/@elm_binaries/linux_x64/elm",
+            "sha256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain.json",
+            "sha256": "fe3d29078d30c6cf9bd431233c5eed1ad4550e2873ff55739d50a5a87a97edaa"
+          }
+        ],
+        "notices": [
+          {
+            "path": "release/notices/language/elm-compiler-0.19.2.txt",
+            "sha256": "22bd883c0b78625bb39a21b96d38ddcb8469863b51718b8bda1ce46441f5bfce"
+          }
+        ],
+        "disposition": {
+          "status": "unknown",
+          "evidence": "Generated Elm JavaScript includes compiler runtime scaffolding; exact source attribution, copyright and provenance of the cached compiler binary and redistribution review remain unresolved. Tagged compiler LICENSE is retained as potentially applicable, not a determination."
+        },
+        "files": []
+      },
+      {
+        "id": "elm-core-1.0.5",
+        "category": "package",
+        "scope": "shipped",
+        "provenance": [
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/elm.json",
+            "sha256": "db814e9f01c211e63d3b86e2546e924aaba8be2ee2b12299ab81456e9a268993"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/LICENSE",
+            "sha256": "431192066654a9060d29033714fa19eb6f7749031710957c55cf8b8d8bd246c3"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Array.elm",
+            "sha256": "1f60be42ecfeaae7dab6e5f6887c49ecdc4089e4348b6f9694e095bd0f434eac"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Basics.elm",
+            "sha256": "649e41513480066f951eef04931a1caea463d3b052cb4a86182c6fcd87e980f2"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Bitwise.elm",
+            "sha256": "0b3c9aef28504672f08209b26e24390aa65ee8a7ae97e71ba84770ff56d25978"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Char.elm",
+            "sha256": "90db4547054916b2e71b364e3253f50f551e03627ce7e8ae53d1fb1ae667e387"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Debug.elm",
+            "sha256": "1407cfff0d9882dc4b6557c7b99f8bbb6f19dbf345ae919c87daf0ca979fd4fe"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Dict.elm",
+            "sha256": "2afc5fcbc080b98903d9b05a98eb0efbf65265eb42ed076b2d442d9e4aca14e5"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/JsArray.elm",
+            "sha256": "bfa0bc6ae1b5b5786f1224b9c0eb476380e9818af53523fdda4b0c30eb60a0d2"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Basics.js",
+            "sha256": "30364c4d72f08888cb16a5ecdd6f04bcf66e6a7d5902ece907c9c01f1ca4d55d"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Bitwise.js",
+            "sha256": "41a1e83136e4a5222bd11dd372c508b33815fe45c8795fe4e8c78a5acfeb35d8"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Char.js",
+            "sha256": "b77e57164741ab7e5e1b78cdfdeffb125c665eb748ea5d5ac62318435b7105b7"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Debug.js",
+            "sha256": "8371e580481da98ca6ccaed2638053ffcee4bee04e2b5c8b86e2ea5c955fc462"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/JsArray.js",
+            "sha256": "888aa1150c7ef8b485f835de1cebc5f69056d547155e624a8aa77a18bf102dd3"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/List.js",
+            "sha256": "975268b3694443d66e3e68c4dac9a8bb20e6b84f324046b12222e51b64eaa687"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Platform.js",
+            "sha256": "569148a4e6b9371214da1e54285a6a4bfdd1cb42220886f2392a46d8f84e5863"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Process.js",
+            "sha256": "50554f94246d84921109584196c7c43f90775ff4256ce4df363b44f7794065da"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Process.server.js",
+            "sha256": "823d7abb8d78ea9f88488d9b1eeb2d2b049544f05d8223862e7cef76c1c1db34"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Scheduler.js",
+            "sha256": "bdc18efab541e63edd65173fd995e35edc0fefe182fdb46c914b56734e2dbe6a"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/String.js",
+            "sha256": "037260f1df8da6007eb54f9464167ce59e9332b804013127a5e036f0919e266b"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Elm/Kernel/Utils.js",
+            "sha256": "cc6c6c94d8e8c0ba0041ab09fabf6235c2cc4ab220d54257e6c7c4ffa7876017"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/List.elm",
+            "sha256": "79e513a52ab45ab98f3a5ad9c87779c2cb29519c5adcf91ab3b70fb5de234f41"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Maybe.elm",
+            "sha256": "35aa285d930a4da6d918717209f230667ab127d357f69d6ea3dbab31e567f5aa"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Platform/Cmd.elm",
+            "sha256": "015c3c2469abeb1cfcf757017d4448c0e453da972fb846f93a91768488e7dfd5"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Platform/Sub.elm",
+            "sha256": "fdb296916f45f3ed0096959e5d727b32a05e7459ef5cc95f00e76951221499dd"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Platform.elm",
+            "sha256": "71d83575a51451379e81fc2712e925a5fc242286c5c971259ff1740274f7e527"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Process.elm",
+            "sha256": "a6af86afca70423a8ec9092c34f5b4b4247cb25dc67074864cdcab8c895d0455"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Result.elm",
+            "sha256": "1efa7ed54dfcfc31c35ffae770afc6b9b095e063b325d80f5e5550600ded746b"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Set.elm",
+            "sha256": "765ce399f1ed4c92bb47fe0af07808875a2377fdc89f951d513b6f55e5744f85"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/String.elm",
+            "sha256": "e7300d71211211e5e0b8b1b3bcd0d6407416a498bcfb682b26a8642fa965e4a0"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Task.elm",
+            "sha256": "f546ccb07a58b26fcf791ed45a6236e80e45aaed00c29cbaeced5dcd6da034fa"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5/src/Tuple.elm",
+            "sha256": "b970211ee185cf3184634702aa54f6ec33e2aafb8930caead713ee7929236b46"
+          },
+          {
+            "path": "implementation/warlock/release/component-reviews-20261028.json",
+            "sha256": "0526d5a1650ba6ffba59d192742c24e5c99d21dae3c1250d20a7233abc9d7fb9"
+          },
+          {
+            "path": "implementation/warlock/release/elm-upstream-source-20261028.json",
+            "sha256": "6967b373112615d2f2956d1fa7e646534adb7ac135e3c8da9aada977508c2189"
+          }
+        ],
+        "notices": [
+          {
+            "path": "release/notices/language/elm-core-1.0.5.txt",
+            "sha256": "431192066654a9060d29033714fa19eb6f7749031710957c55cf8b8d8bd246c3"
+          }
+        ],
+        "disposition": {
+          "status": "reviewed",
+          "evidence": "Independent Quint4/Quint5 evidence and root review are recorded in release/component-reviews-20261028.json. Scoped to the exact source/notice identities and conservative attribution in staged offline v4 A. Preserve the complete notices and continuing non-endorsement conditions; no project grant, compiler/runtime approval or release acceptance is inferred."
+        },
+        "files": []
+      },
+      {
+        "id": "elm-html-1.0.0",
+        "category": "package",
+        "scope": "shipped",
+        "provenance": [
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/html/1.0.0/elm.json",
+            "sha256": "84dbb28e88ffbaf32e0e7ce11b8d14ccc97c0798b2d0945ed94668c12a0b9e25"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/html/1.0.0/LICENSE",
+            "sha256": "ac3cefe90f27c4cc550da6eda13d18e1fadb0151b5d9dd99619ea1a10dc6eaad"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/html/1.0.0/src/Html/Attributes.elm",
+            "sha256": "b4ff344168f9199de2bfee5f8e3c1441c621692ddc99a5ce7e380f3014e6d367"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/html/1.0.0/src/Html/Events.elm",
+            "sha256": "d633d86ecee6195d6bea6f7c8b49a5df3befecd8e9589745055dc5f30b0cef9e"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/html/1.0.0/src/Html/Keyed.elm",
+            "sha256": "346e9fe65945ccedc250e5d5cc739fe3505dc9be37bcb93fd311527964b55ff7"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/html/1.0.0/src/Html/Lazy.elm",
+            "sha256": "e6ec7de40a8c6318a055898a144e8cc56b2c9b32f7694be1bf223e98db6cd031"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/html/1.0.0/src/Html.elm",
+            "sha256": "2e567c415bfeb2a743b0c6fee980383b3e378785247b3e930f77aa98e1dbb4d9"
+          },
+          {
+            "path": "implementation/warlock/release/component-reviews-20261028.json",
+            "sha256": "0526d5a1650ba6ffba59d192742c24e5c99d21dae3c1250d20a7233abc9d7fb9"
+          },
+          {
+            "path": "implementation/warlock/release/elm-upstream-source-20261028.json",
+            "sha256": "6967b373112615d2f2956d1fa7e646534adb7ac135e3c8da9aada977508c2189"
+          }
+        ],
+        "notices": [
+          {
+            "path": "release/notices/language/elm-html-1.0.0.txt",
+            "sha256": "ac3cefe90f27c4cc550da6eda13d18e1fadb0151b5d9dd99619ea1a10dc6eaad"
+          }
+        ],
+        "disposition": {
+          "status": "reviewed",
+          "evidence": "Independent Quint4/Quint5 evidence and root review are recorded in release/component-reviews-20261028.json. Scoped to the exact source/notice identities and conservative attribution in staged offline v4 A. Preserve the complete notices and continuing non-endorsement conditions; no project grant, compiler/runtime approval or release acceptance is inferred."
+        },
+        "files": []
+      },
+      {
+        "id": "elm-json-1.1.3",
+        "category": "package",
+        "scope": "shipped",
+        "provenance": [
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/json/1.1.3/elm.json",
+            "sha256": "b6c2ce9de7bd7ed70de7a111e87c449ec3aa7819bf6c48953ce7221e776f7a3e"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/json/1.1.3/LICENSE",
+            "sha256": "ac3cefe90f27c4cc550da6eda13d18e1fadb0151b5d9dd99619ea1a10dc6eaad"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/json/1.1.3/src/Elm/Kernel/Json.js",
+            "sha256": "17d5536d6f22be1614a73837368e2a61439ebfa9dd0ff732880ee544baa41af2"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/json/1.1.3/src/Json/Decode.elm",
+            "sha256": "f68189c7da6b1fb23c08878296b0e55575480ac0632adfc6d7ba76f8617672ea"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/json/1.1.3/src/Json/Encode.elm",
+            "sha256": "9cdf3d660f182aed97117205e72388e2bb0d0ad795b4749975fa2c639b808a2a"
+          },
+          {
+            "path": "implementation/warlock/release/component-reviews-20261028.json",
+            "sha256": "0526d5a1650ba6ffba59d192742c24e5c99d21dae3c1250d20a7233abc9d7fb9"
+          },
+          {
+            "path": "implementation/warlock/release/elm-upstream-source-20261028.json",
+            "sha256": "6967b373112615d2f2956d1fa7e646534adb7ac135e3c8da9aada977508c2189"
+          }
+        ],
+        "notices": [
+          {
+            "path": "release/notices/language/elm-json-1.1.3.txt",
+            "sha256": "ac3cefe90f27c4cc550da6eda13d18e1fadb0151b5d9dd99619ea1a10dc6eaad"
+          }
+        ],
+        "disposition": {
+          "status": "reviewed",
+          "evidence": "Independent Quint4/Quint5 evidence and root review are recorded in release/component-reviews-20261028.json. Scoped to the exact source/notice identities and conservative attribution in staged offline v4 A. Preserve the complete notices and continuing non-endorsement conditions; no project grant, compiler/runtime approval or release acceptance is inferred."
+        },
+        "files": []
+      },
+      {
+        "id": "elm-npm-installer-0.19.2-0",
+        "category": "other",
+        "scope": "build",
+        "provenance": [
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/npm-package/package-lock.json",
+            "sha256": "a2a339e6df901717a4fd0a4d88e1430e22d35bbe1641d339d5e4c477c93f22f0"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/npm-package/node_modules/elm/package.json",
+            "sha256": "40261a256c19b122c95d519f1796e7d3d3b9ace02fa86fea040ec06dabf45600"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/npm-package/node_modules/elm/install.js",
+            "sha256": "2ca03540f6b59935137e4eb2dd3f2d6374aa064f0d6f49f7421feb7b3534ac5d"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/npm-package/node_modules/elm/binary.js",
+            "sha256": "43e17364dd32cf7a3a8613cdd38e909604f9037b8bb43d54071ab0bf9b637e62"
+          }
+        ],
+        "notices": [
+          {
+            "path": "release/notices/language/elm-compiler-0.19.2.txt",
+            "sha256": "22bd883c0b78625bb39a21b96d38ddcb8469863b51718b8bda1ce46441f5bfce"
+          }
+        ],
+        "disposition": {
+          "status": "unknown",
+          "evidence": "Npm metadata declares BSD-3-Clause; archive integrity is recorded in package-lock, but the retained files have not been independently verified against the original archive, tagged source or reviewed for redistribution."
+        },
+        "files": []
+      },
+      {
+        "id": "elm-retained-notices",
+        "category": "other",
+        "scope": "shipped",
+        "provenance": [
+          {
+            "path": "implementation/warlock/release/notices/language/elm-browser-1.0.2.txt",
+            "sha256": "d33481c057f582207d41425b1b3ecb740291f9f9c86b21e9a045cd3bea0f6ac8"
+          },
+          {
+            "path": "implementation/warlock/release/notices/language/elm-compiler-0.19.2.txt",
+            "sha256": "22bd883c0b78625bb39a21b96d38ddcb8469863b51718b8bda1ce46441f5bfce"
+          },
+          {
+            "path": "implementation/warlock/release/notices/language/elm-core-1.0.5.txt",
+            "sha256": "431192066654a9060d29033714fa19eb6f7749031710957c55cf8b8d8bd246c3"
+          },
+          {
+            "path": "implementation/warlock/release/notices/language/elm-html-1.0.0.txt",
+            "sha256": "ac3cefe90f27c4cc550da6eda13d18e1fadb0151b5d9dd99619ea1a10dc6eaad"
+          },
+          {
+            "path": "implementation/warlock/release/notices/language/elm-json-1.1.3.txt",
+            "sha256": "ac3cefe90f27c4cc550da6eda13d18e1fadb0151b5d9dd99619ea1a10dc6eaad"
+          },
+          {
+            "path": "implementation/warlock/release/notices/language/elm-time-1.0.0.txt",
+            "sha256": "a1c31dacffb1a470cb3aaf4844904114b9bc5ebf091e113b2d46bc4953c2c2ea"
+          },
+          {
+            "path": "implementation/warlock/release/notices/language/elm-url-1.0.0.txt",
+            "sha256": "1c818d8c5f129ee90e6a855c9edd16d9c6bd25e2959b1aeaeb8626e7c539cc9b"
+          },
+          {
+            "path": "implementation/warlock/release/notices/language/elm-virtual-dom-1.0.3.txt",
+            "sha256": "c63bca41c3a19de3b16ede979ca1dfeb2ce0db93a62f4555dbb61ae3ee777425"
+          }
+        ],
+        "notices": [],
+        "disposition": {
+          "status": "unknown",
+          "evidence": "Exact notices retained from cached package LICENSE files and compiler upstream tag; applicability, completeness and redistribution review remain unresolved."
+        },
+        "files": [
+          {
+            "path": "release/notices/language/elm-browser-1.0.2.txt",
+            "type": "file",
+            "sha256": "d33481c057f582207d41425b1b3ecb740291f9f9c86b21e9a045cd3bea0f6ac8"
+          },
+          {
+            "path": "release/notices/language/elm-compiler-0.19.2.txt",
+            "type": "file",
+            "sha256": "22bd883c0b78625bb39a21b96d38ddcb8469863b51718b8bda1ce46441f5bfce"
+          },
+          {
+            "path": "release/notices/language/elm-core-1.0.5.txt",
+            "type": "file",
+            "sha256": "431192066654a9060d29033714fa19eb6f7749031710957c55cf8b8d8bd246c3"
+          },
+          {
+            "path": "release/notices/language/elm-html-1.0.0.txt",
+            "type": "file",
+            "sha256": "ac3cefe90f27c4cc550da6eda13d18e1fadb0151b5d9dd99619ea1a10dc6eaad"
+          },
+          {
+            "path": "release/notices/language/elm-json-1.1.3.txt",
+            "type": "file",
+            "sha256": "ac3cefe90f27c4cc550da6eda13d18e1fadb0151b5d9dd99619ea1a10dc6eaad"
+          },
+          {
+            "path": "release/notices/language/elm-time-1.0.0.txt",
+            "type": "file",
+            "sha256": "a1c31dacffb1a470cb3aaf4844904114b9bc5ebf091e113b2d46bc4953c2c2ea"
+          },
+          {
+            "path": "release/notices/language/elm-url-1.0.0.txt",
+            "type": "file",
+            "sha256": "1c818d8c5f129ee90e6a855c9edd16d9c6bd25e2959b1aeaeb8626e7c539cc9b"
+          },
+          {
+            "path": "release/notices/language/elm-virtual-dom-1.0.3.txt",
+            "type": "file",
+            "sha256": "c63bca41c3a19de3b16ede979ca1dfeb2ce0db93a62f4555dbb61ae3ee777425"
+          }
+        ]
+      },
+      {
+        "id": "elm-time-1.0.0",
+        "category": "package",
+        "scope": "shipped",
+        "provenance": [
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/time/1.0.0/elm.json",
+            "sha256": "03445516f62e4a779b7267e25f053732f57bda580b871f99a3e53a7979b2dfa4"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/time/1.0.0/LICENSE",
+            "sha256": "a1c31dacffb1a470cb3aaf4844904114b9bc5ebf091e113b2d46bc4953c2c2ea"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/time/1.0.0/src/Elm/Kernel/Time.js",
+            "sha256": "cc59eff642bd2dc98ffde4a99ed0c682821e09a4601c083338d442b15ccd5cb1"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/time/1.0.0/src/Elm/Kernel/Time.server.js",
+            "sha256": "888d36edbd6d8fe5e69a3802c56f93a1341f0dcfa14e9be1ab10de3c188602c8"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/time/1.0.0/src/Time.elm",
+            "sha256": "e4c55a925c664c25b8ffcd1510c827793d670ec159dc18af3ebd7f642ee4e638"
+          },
+          {
+            "path": "implementation/warlock/release/component-reviews-20261028.json",
+            "sha256": "0526d5a1650ba6ffba59d192742c24e5c99d21dae3c1250d20a7233abc9d7fb9"
+          },
+          {
+            "path": "implementation/warlock/release/elm-upstream-source-20261028.json",
+            "sha256": "6967b373112615d2f2956d1fa7e646534adb7ac135e3c8da9aada977508c2189"
+          }
+        ],
+        "notices": [
+          {
+            "path": "release/notices/language/elm-time-1.0.0.txt",
+            "sha256": "a1c31dacffb1a470cb3aaf4844904114b9bc5ebf091e113b2d46bc4953c2c2ea"
+          }
+        ],
+        "disposition": {
+          "status": "reviewed",
+          "evidence": "Independent Quint4/Quint5 evidence and root review are recorded in release/component-reviews-20261028.json. Scoped to the exact source/notice identities and conservative attribution in staged offline v4 A. Preserve the complete notices and continuing non-endorsement conditions; no project grant, compiler/runtime approval or release acceptance is inferred."
+        },
+        "files": []
+      },
+      {
+        "id": "elm-url-1.0.0",
+        "category": "package",
+        "scope": "shipped",
+        "provenance": [
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/url/1.0.0/elm.json",
+            "sha256": "b2c089bbe199a8431fd53635a55fdc10e7ee4bb4a993064688f74812dc94dc5e"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/url/1.0.0/LICENSE",
+            "sha256": "1c818d8c5f129ee90e6a855c9edd16d9c6bd25e2959b1aeaeb8626e7c539cc9b"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/url/1.0.0/src/Elm/Kernel/Url.js",
+            "sha256": "56250d3bec1cbc6c8974514ea56040043b237b058cb8cdad54a8b32e33676922"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/url/1.0.0/src/Url/Builder.elm",
+            "sha256": "e4922467375bcedd187bbd811b5dfd49b7f9b6a08063b7ef411f2ad0aa6e8dad"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/url/1.0.0/src/Url/Parser/Internal.elm",
+            "sha256": "91cec106bc5eb47ae5b1ff86ac1589989785080805bc4e38dd187ec22dbbfc26"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/url/1.0.0/src/Url/Parser/Query.elm",
+            "sha256": "2b14aab77b663bef2b9434fccc3ca6c102990b9cf87dea650ae8341a9325bf4e"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/url/1.0.0/src/Url/Parser.elm",
+            "sha256": "0a42ac79944c28778c0e32510cd089e7d80e6d202937238f829d4de2d942d028"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/url/1.0.0/src/Url.elm",
+            "sha256": "c1dad01869f5a4fe29406b3409508ec4754bf8125cc01ef5106b2e369c5c647c"
+          },
+          {
+            "path": "implementation/warlock/release/component-reviews-20261028.json",
+            "sha256": "0526d5a1650ba6ffba59d192742c24e5c99d21dae3c1250d20a7233abc9d7fb9"
+          },
+          {
+            "path": "implementation/warlock/release/elm-upstream-source-20261028.json",
+            "sha256": "6967b373112615d2f2956d1fa7e646534adb7ac135e3c8da9aada977508c2189"
+          }
+        ],
+        "notices": [
+          {
+            "path": "release/notices/language/elm-url-1.0.0.txt",
+            "sha256": "1c818d8c5f129ee90e6a855c9edd16d9c6bd25e2959b1aeaeb8626e7c539cc9b"
+          }
+        ],
+        "disposition": {
+          "status": "reviewed",
+          "evidence": "Independent Quint4/Quint5 evidence and root review are recorded in release/component-reviews-20261028.json. Scoped to the exact source/notice identities and conservative attribution in staged offline v4 A. Preserve the complete notices and continuing non-endorsement conditions; no project grant, compiler/runtime approval or release acceptance is inferred."
+        },
+        "files": []
+      },
+      {
+        "id": "elm-virtual-dom-1.0.3",
+        "category": "package",
+        "scope": "shipped",
+        "provenance": [
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/virtual-dom/1.0.3/elm.json",
+            "sha256": "f00299c02b546533702cacd34ed0eef09bf2bbba138585bb86a79e6b0fd11a83"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/virtual-dom/1.0.3/LICENSE",
+            "sha256": "c63bca41c3a19de3b16ede979ca1dfeb2ce0db93a62f4555dbb61ae3ee777425"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/virtual-dom/1.0.3/src/Elm/Kernel/VirtualDom.js",
+            "sha256": "9246c8591d9b511468e8257b60c8495020164a5fd58f21d523722775292095db"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/virtual-dom/1.0.3/src/Elm/Kernel/VirtualDom.server.js",
+            "sha256": "68c145d1f3ae40618e023b4109edc3f474f12c83af9ad5a3cfa2232f7cfd0bd9"
+          },
+          {
+            "path": "implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/virtual-dom/1.0.3/src/VirtualDom.elm",
+            "sha256": "85f06afbc5f418f69c424ecc9b61969cc460444f97987054fb14d2a944d3bba8"
+          },
+          {
+            "path": "implementation/warlock/release/component-reviews-20261028.json",
+            "sha256": "0526d5a1650ba6ffba59d192742c24e5c99d21dae3c1250d20a7233abc9d7fb9"
+          },
+          {
+            "path": "implementation/warlock/release/elm-upstream-source-20261028.json",
+            "sha256": "6967b373112615d2f2956d1fa7e646534adb7ac135e3c8da9aada977508c2189"
+          }
+        ],
+        "notices": [
+          {
+            "path": "release/notices/language/elm-virtual-dom-1.0.3.txt",
+            "sha256": "c63bca41c3a19de3b16ede979ca1dfeb2ce0db93a62f4555dbb61ae3ee777425"
+          }
+        ],
+        "disposition": {
+          "status": "reviewed",
+          "evidence": "Independent Quint4/Quint5 evidence and root review are recorded in release/component-reviews-20261028.json. Scoped to the exact source/notice identities and conservative attribution in staged offline v4 A. Preserve the complete notices and continuing non-endorsement conditions; no project grant, compiler/runtime approval or release acceptance is inferred."
+        },
+        "files": []
+      },
+      {
+        "id": "native-aquamarine",
+        "category": "native-library",
+        "scope": "shipped",
+        "provenance": [
+          {
+            "path": "implementation/warlock/qa/current-native-pair.json",
+            "sha256": "63e9196840e52de55603a258e21a1d596615477ecc74862c6256630fecd621dd"
+          },
+          {
+            "path": "implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/inputs/candidate/LICENSE",
+            "sha256": "52d07f3457591b4496ae2e79b05efd63c7df72135666fa12428d83078c4c0de5"
+          },
+          {
+            "path": "window-integration-qa/aquamarine-version-guard-v1/upstream/aquamarine-0.15.0/LICENSE",
+            "sha256": "52d07f3457591b4496ae2e79b05efd63c7df72135666fa12428d83078c4c0de5"
+          },
+          {
+            "path": "implementation/warlock/build-lock.json",
+            "sha256": "9507f772afbedaf6ff11bf184e57513066f402d954a753599de87c05ca465358"
+          },
+          {
+            "path": "implementation/warlock/release/native-tuple-20261028.json",
+            "sha256": "bc225242e30baf4a5b8b1182cef6fdc716cc9c67de90dc35674f90c5fa87830b"
+          }
+        ],
+        "notices": [
+          {
+            "path": "release/notices/native/aquamarine-LICENSE",
+            "sha256": "52d07f3457591b4496ae2e79b05efd63c7df72135666fa12428d83078c4c0de5"
+          }
+        ],
+        "disposition": {
+          "status": "unknown",
+          "evidence": "Current derivative artifact identity is recorded in native-tuple-20261028.json; historical pair/lock references and previous note below are retained as history, not evidence that the old binary equals this derivative. Full redistribution review remains unresolved. Previous historical note: Recorded native binary and referenced native build report are unavailable in this snapshot; binary-to-complete-source and redistribution review remain unresolved. Other than the packaged Aquamarine library, dynamic system libraries are external runtime dependencies; the builder does not copy them. The build lock records an aggregate dynamic-library input set for tools and native inputs, not per-binary attribution. Archived candidate and upstream license texts match by hash; exact shipped binary source lineage is not established."
+        },
+        "files": [
+          {
+            "path": "native/libaquamarine.so.0.15.0",
+            "type": "file",
+            "sha256": "667a22d535aade4e4a26134e39028a87fb3f963c28b7bf7ff79da684bb014ecd"
+          },
+          {
+            "path": "native/libaquamarine.so.14",
+            "type": "symlink",
+            "target": "libaquamarine.so.0.15.0"
+          },
+          {
+            "path": "release/notices/native/aquamarine-LICENSE",
+            "type": "file",
+            "sha256": "52d07f3457591b4496ae2e79b05efd63c7df72135666fa12428d83078c4c0de5"
+          }
+        ]
+      },
+      {
+        "id": "native-generated-host",
+        "category": "host",
+        "scope": "shipped",
+        "provenance": [
+          {
+            "path": "implementation/warlock/native/shared-host.c",
+            "sha256": "6e7f43b92c08f19ac82f5c93d67ca69d0a11a6c73f01a763a018f2beba282a7a"
+          },
+          {
+            "path": "implementation/warlock/qa/evidence/offline-reproducibility/manifest.json",
+            "sha256": "4134b2212792b5ecf39e220aa2b7327d7fae3f52f9abf0d8e351ef087bbc9497"
+          },
+          {
+            "path": "implementation/warlock/build-lock.json",
+            "sha256": "9507f772afbedaf6ff11bf184e57513066f402d954a753599de87c05ca465358"
+          },
+          {
+            "path": "implementation/warlock/release/native-tuple-20261028.json",
+            "sha256": "bc225242e30baf4a5b8b1182cef6fdc716cc9c67de90dc35674f90c5fa87830b"
+          }
+        ],
+        "notices": [],
+        "disposition": {
+          "status": "unknown",
+          "evidence": "Current derivative artifact identity is recorded in native-tuple-20261028.json; historical pair/lock references and previous note below are retained as history, not evidence that the old binary equals this derivative. Full redistribution review remains unresolved. Previous historical note: Project-generated host source has no identified project license or reviewed grant. Digest is the retained offline build evidence identity, not proof of any current candidate. Host dynamic libraries are external runtime dependencies, not bundled; the build lock records an aggregate dynamic-library input set for tools and native inputs, not per-binary attribution."
+        },
+        "files": [
+          {
+            "path": "elm-host",
+            "type": "file",
+            "sha256": "4377b11ce0afe9e1072210666aa872118b032995275a20657058771e5e6c8347"
+          }
+        ]
+      },
+      {
+        "id": "native-glaze-headers",
+        "category": "native-library",
+        "scope": "shipped",
+        "provenance": [
+          {
+            "path": "implementation/warlock/release/native-attribution-20261028.json",
+            "sha256": "a44e3515f8253f2f2ab55c8e964e70f807de6edd443e56febb79b113b8476d9b"
+          },
+          {
+            "path": "implementation/warlock/release/notices/native/glaze-LICENSE",
+            "sha256": "5d49e66411a0807a7c8d6b911b9a26b59e940c71aebe561a3ad8b0b80ac4b7b6"
+          },
+          {
+            "path": "implementation/warlock/release/component-reviews-20261028.json",
+            "sha256": "0526d5a1650ba6ffba59d192742c24e5c99d21dae3c1250d20a7233abc9d7fb9"
+          }
+        ],
+        "notices": [
+          {
+            "path": "release/notices/native/glaze-LICENSE",
+            "sha256": "5d49e66411a0807a7c8d6b911b9a26b59e940c71aebe561a3ad8b0b80ac4b7b6"
+          }
+        ],
+        "disposition": {
+          "status": "reviewed",
+          "evidence": "Independent Quint4/Quint5 evidence and root review are recorded in release/component-reviews-20261028.json. Scoped to the exact source/notice identities and conservative attribution in staged offline v4 A. Preserve the complete notices and continuing non-endorsement conditions; no project grant, compiler/runtime approval or release acceptance is inferred."
+        },
+        "files": [
+          {
+            "path": "release/notices/native/glaze-LICENSE",
+            "type": "file",
+            "sha256": "5d49e66411a0807a7c8d6b911b9a26b59e940c71aebe561a3ad8b0b80ac4b7b6"
+          }
+        ],
+        "notes": "Conservative contained header attribution. Retained Ninja dependencies identify 23 Glaze headers for InputCapture.cpp; particular emitted bytes are not inferred."
+      },
+      {
+        "id": "native-hyprland-core",
+        "category": "native-library",
+        "scope": "shipped",
+        "provenance": [
+          {
+            "path": "implementation/warlock/qa/current-native-pair.json",
+            "sha256": "63e9196840e52de55603a258e21a1d596615477ecc74862c6256630fecd621dd"
+          },
+          {
+            "path": "implementation/warlock/native/core/WorkspacePlacementController.cpp",
+            "sha256": "8e53f37f4f554e92b928e713010ec6033fe80fcb87e4cccccafa693a52ae7206"
+          },
+          {
+            "path": "window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/LICENSE",
+            "sha256": "e01df754903af0ab26babb317b5f5a62dd95f770b733c5275414dd3245d00ae7"
+          },
+          {
+            "path": "implementation/warlock/build-lock.json",
+            "sha256": "9507f772afbedaf6ff11bf184e57513066f402d954a753599de87c05ca465358"
+          },
+          {
+            "path": "implementation/warlock/release/native-tuple-20261028.json",
+            "sha256": "bc225242e30baf4a5b8b1182cef6fdc716cc9c67de90dc35674f90c5fa87830b"
+          }
+        ],
+        "notices": [
+          {
+            "path": "release/notices/native/hyprland-LICENSE",
+            "sha256": "e01df754903af0ab26babb317b5f5a62dd95f770b733c5275414dd3245d00ae7"
+          }
+        ],
+        "disposition": {
+          "status": "unknown",
+          "evidence": "Current derivative artifact identity is recorded in native-tuple-20261028.json; historical pair/lock references and previous note below are retained as history, not evidence that the old binary equals this derivative. Full redistribution review remains unresolved. Previous historical note: Recorded native binary and referenced native build report are unavailable in this snapshot; binary-to-complete-source and redistribution review remain unresolved. Other than the packaged Aquamarine library, dynamic system libraries are external runtime dependencies; the builder does not copy them. The build lock records an aggregate dynamic-library input set for tools and native inputs, not per-binary attribution. The archived Hyprland license is a candidate notice, not proof of exact source lineage. The current WorkspacePlacementController.cpp matches one locked owning-header source hash only."
+        },
+        "files": [
+          {
+            "path": "native/Hyprland",
+            "type": "file",
+            "sha256": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e"
+          },
+          {
+            "path": "release/notices/native/hyprland-LICENSE",
+            "type": "file",
+            "sha256": "e01df754903af0ab26babb317b5f5a62dd95f770b733c5275414dd3245d00ae7"
+          }
+        ],
+        "contains": [
+          "native-udis86-static",
+          "native-glaze-headers"
+        ]
+      },
+      {
+        "id": "native-udis86-static",
+        "category": "native-library",
+        "scope": "shipped",
+        "provenance": [
+          {
+            "path": "implementation/warlock/release/native-attribution-20261028.json",
+            "sha256": "a44e3515f8253f2f2ab55c8e964e70f807de6edd443e56febb79b113b8476d9b"
+          },
+          {
+            "path": "implementation/warlock/release/notices/native/udis86-LICENSE",
+            "sha256": "1070640aab24327354da44507627d1db6c67482a6facc8375a758796a05e3dff"
+          },
+          {
+            "path": "implementation/warlock/release/component-reviews-20261028.json",
+            "sha256": "0526d5a1650ba6ffba59d192742c24e5c99d21dae3c1250d20a7233abc9d7fb9"
+          }
+        ],
+        "notices": [
+          {
+            "path": "release/notices/native/udis86-LICENSE",
+            "sha256": "1070640aab24327354da44507627d1db6c67482a6facc8375a758796a05e3dff"
+          }
+        ],
+        "disposition": {
+          "status": "reviewed",
+          "evidence": "Independent Quint4/Quint5 evidence and root review are recorded in release/component-reviews-20261028.json. Scoped to the exact source/notice identities and conservative attribution in staged offline v4 A. Preserve the complete notices and continuing non-endorsement conditions; no project grant, compiler/runtime approval or release acceptance is inferred."
+        },
+        "files": [
+          {
+            "path": "release/notices/native/udis86-LICENSE",
+            "type": "file",
+            "sha256": "1070640aab24327354da44507627d1db6c67482a6facc8375a758796a05e3dff"
+          }
+        ],
+        "notes": "Conservative contained dependency attribution. The static archive is named by the core link recipe."
+      },
+      {
+        "id": "native-window-authority-plugin",
+        "category": "native-library",
+        "scope": "shipped",
+        "provenance": [
+          {
+            "path": "implementation/warlock/qa/current-native-pair.json",
+            "sha256": "63e9196840e52de55603a258e21a1d596615477ecc74862c6256630fecd621dd"
+          },
+          {
+            "path": "implementation/warlock/native/authority.cpp",
+            "sha256": "2293da138a4c0b27e5f848f4db5842b2a2f0fc17c4fdbf33e7d0f5d5787305fa"
+          },
+          {
+            "path": "implementation/warlock/build-lock.json",
+            "sha256": "9507f772afbedaf6ff11bf184e57513066f402d954a753599de87c05ca465358"
+          },
+          {
+            "path": "implementation/warlock/release/native-tuple-20261028.json",
+            "sha256": "bc225242e30baf4a5b8b1182cef6fdc716cc9c67de90dc35674f90c5fa87830b"
+          }
+        ],
+        "notices": [],
+        "disposition": {
+          "status": "unknown",
+          "evidence": "Current derivative artifact identity is recorded in native-tuple-20261028.json; historical pair/lock references and previous note below are retained as history, not evidence that the old binary equals this derivative. Full redistribution review remains unresolved. Previous historical note: Recorded native binary and referenced native build report are unavailable in this snapshot; binary-to-complete-source and redistribution review remain unresolved. Other than the packaged Aquamarine library, dynamic system libraries are external runtime dependencies; the builder does not copy them. The build lock records an aggregate dynamic-library input set for tools and native inputs, not per-binary attribution. Authority source hash matches the pair metadata; no project license or reviewed grant was located."
+        },
+        "files": [
+          {
+            "path": "native/elm-window-geometry-authority.so",
+            "type": "file",
+            "sha256": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c"
+          }
+        ]
+      },
+      {
+        "id": "warlock-adapter-sources",
+        "category": "other",
+        "scope": "shipped",
+        "provenance": [
+          {
+            "path": "implementation/warlock/adapter/admission_ledger.py",
+            "sha256": "2faf5eb03dff6993de707f2d7458b929db881f4102bdc1ec467d3f7aaa4413d1"
+          },
+          {
+            "path": "implementation/warlock/adapter/catalog_authority.py",
+            "sha256": "ad20204afd3b203eb956918300c8da4cb4765b3c5ad86e701b0257a54b8fb9cc"
+          },
+          {
+            "path": "implementation/warlock/adapter/catalog_transport.py",
+            "sha256": "43bd1cd1059b87ce4d349d72e4b2a917ac1bdc3dacda2f60563fa621e05a4b84"
+          },
+          {
+            "path": "implementation/warlock/adapter/daemon.py",
+            "sha256": "a593494e4ca89ef467dced5cd946bc5eca9a88db21c591597c19eb2a80cdca31"
+          },
+          {
+            "path": "implementation/warlock/adapter/delivery_ledger.py",
+            "sha256": "ce1ff3528b454bdca7412389f5693f69023a5c76bc9586541c1091c1cddc5ca4"
+          },
+          {
+            "path": "implementation/warlock/adapter/durable_ledger.py",
+            "sha256": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0"
+          },
+          {
+            "path": "implementation/warlock/adapter/effect_endpoint.py",
+            "sha256": "09d01f26c6f6925051c2368972d97d67c03dea065002b9eda2335fff61e0e9b1"
+          },
+          {
+            "path": "implementation/warlock/adapter/endpoint.py",
+            "sha256": "e254b870922a46b935de9d85db1de56129838ea2cf73eeb55c9fa16e8539d731"
+          },
+          {
+            "path": "implementation/warlock/adapter/explorer.py",
+            "sha256": "5771d66fe29af0aed5e6f81f0d0287374d816ea048bdeaf08ae07a9cdf681e78"
+          },
+          {
+            "path": "implementation/warlock/adapter/geometry_endpoint.py",
+            "sha256": "193b9ef7ecf114156c02cd527a703e79383cdec83267b612ff406f165cc3e3a4"
+          },
+          {
+            "path": "implementation/warlock/adapter/geometry_placement.py",
+            "sha256": "706899e88f911e1e02bceff8351d6426101ed918d194e7f8ca1f7b707c959614"
+          },
+          {
+            "path": "implementation/warlock/adapter/geometry_size_policy.py",
+            "sha256": "bcca6dd280911a38ed189e2e8ca6d81ea98c775ef261444f9b1e0f4b9a754888"
+          },
+          {
+            "path": "implementation/warlock/adapter/grant_endpoint.py",
+            "sha256": "4b60a6c7e43aade3f2ce59495600f3b418b781865a7289dae53a189388f5c3f0"
+          },
+          {
+            "path": "implementation/warlock/adapter/jump_list.py",
+            "sha256": "2280c0ab00ff0683c0a28611a99b70ac122887629cafb9226f40c649be581806"
+          },
+          {
+            "path": "implementation/warlock/adapter/motion_preferences.py",
+            "sha256": "ec75685d52f81d5d28f82155b92580015dc897bee6488892c2a8f98e0ffa3633"
+          },
+          {
+            "path": "implementation/warlock/adapter/notification_service.py",
+            "sha256": "129c864f275282320274ab417bdbc2a7a919096c2ce2b58d0438b18988fc334b"
+          },
+          {
+            "path": "implementation/warlock/adapter/reconciliation.py",
+            "sha256": "5f558130f005b722fec187e87a88a8cd69606c786c27beb0decede715c54e5f9"
+          },
+          {
+            "path": "implementation/warlock/adapter/recovery_fault.py",
+            "sha256": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1"
+          },
+          {
+            "path": "implementation/warlock/adapter/recovery_journal.py",
+            "sha256": "9cfe06102f03fded5d330b90c317b4c6c32064885ed5a2c8478a87c2e1f25dae"
+          },
+          {
+            "path": "implementation/warlock/adapter/recovery_profile.py",
+            "sha256": "651220f844591d5206b2f3f0f48fc2a652c7010d55cf796c1fda37cdc6adf6e8"
+          },
+          {
+            "path": "implementation/warlock/adapter/recovery_store.py",
+            "sha256": "fa7e852c963bc4602c2066d05e77d47d8535c732775fe04258021accd3cd7be1"
+          },
+          {
+            "path": "implementation/warlock/adapter/release_builder.py",
+            "sha256": "43dfc887228de8a755964a0aaa8b645d9fb8f4a4a4a288b7ff48d7b1844d630a"
+          },
+          {
+            "path": "implementation/warlock/adapter/release_compliance.py",
+            "sha256": "51f7557b4a741106f3b7ffc16df09ae86aa90ca580578ea40a1ff175d4a48964"
+          },
+          {
+            "path": "implementation/warlock/adapter/release_repro.py",
+            "sha256": "68107841f4514394091740799c6b2b1983a2e6a4708e3a490e40b61729f38986"
+          },
+          {
+            "path": "implementation/warlock/adapter/retirement_ledger.py",
+            "sha256": "213cbb6ecd5c2218075d2cc98132c1c53680933f3898c757e7ba1848261faec5"
+          },
+          {
+            "path": "implementation/warlock/adapter/shell_preferences.py",
+            "sha256": "333895ca91c20e206cebf645206584213d08cb02553bb10a1758f5308f04c7fa"
+          },
+          {
+            "path": "implementation/warlock/adapter/shortcut_preferences.py",
+            "sha256": "2a8cc047ebfb5040c7dda4f9fd0f9e80a9b1207245458beda3ac26ff2251c185"
+          },
+          {
+            "path": "implementation/warlock/adapter/system_menu.py",
+            "sha256": "8e6cba8ae22f821407ab386a0552057de94be3eb03793a87c80817b8c57094e5"
+          },
+          {
+            "path": "implementation/warlock/adapter/taskbar_catalog.py",
+            "sha256": "5414ed1b6fde57a7508c2f3b20658a97006ce3c4203cecbb893fb73de943b9ba"
+          },
+          {
+            "path": "implementation/warlock/adapter/taskbar_preferences.py",
+            "sha256": "4fde83478c22f7173ef05727a3666ff7ce72076bc05fddfa4fd08705af9a57d2"
+          },
+          {
+            "path": "implementation/warlock/adapter/taskbar_projection.py",
+            "sha256": "b9da24de2a910a3d8515f2e8e4de2cb0086bdd0cd26c7f857fcbbdc15978c976"
+          },
+          {
+            "path": "implementation/warlock/adapter/workspace_navigation.py",
+            "sha256": "79508bcb112ec602b6d33daf1050ef54f63afeb7bfe427fa5553e8a4c68bb8a9"
+          },
+          {
+            "path": "implementation/warlock/adapter/release_tuple.py",
+            "sha256": "4de13ed2c11e37261bb443a9506b5026aba00e785c2539ec4745960badcdd9cc"
+          }
+        ],
+        "notices": [],
+        "disposition": {
+          "status": "unknown",
+          "evidence": "These staged adapter scripts include build tools. Authorship, third-party material, project license grant and independent redistribution disposition have not been established."
+        },
+        "files": [
+          {
+            "path": "adapter/admission_ledger.py",
+            "type": "file",
+            "sha256": "2faf5eb03dff6993de707f2d7458b929db881f4102bdc1ec467d3f7aaa4413d1"
+          },
+          {
+            "path": "adapter/catalog_authority.py",
+            "type": "file",
+            "sha256": "ad20204afd3b203eb956918300c8da4cb4765b3c5ad86e701b0257a54b8fb9cc"
+          },
+          {
+            "path": "adapter/catalog_transport.py",
+            "type": "file",
+            "sha256": "43bd1cd1059b87ce4d349d72e4b2a917ac1bdc3dacda2f60563fa621e05a4b84"
+          },
+          {
+            "path": "adapter/daemon.py",
+            "type": "file",
+            "sha256": "a593494e4ca89ef467dced5cd946bc5eca9a88db21c591597c19eb2a80cdca31"
+          },
+          {
+            "path": "adapter/delivery_ledger.py",
+            "type": "file",
+            "sha256": "ce1ff3528b454bdca7412389f5693f69023a5c76bc9586541c1091c1cddc5ca4"
+          },
+          {
+            "path": "adapter/durable_ledger.py",
+            "type": "file",
+            "sha256": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0"
+          },
+          {
+            "path": "adapter/effect_endpoint.py",
+            "type": "file",
+            "sha256": "09d01f26c6f6925051c2368972d97d67c03dea065002b9eda2335fff61e0e9b1"
+          },
+          {
+            "path": "adapter/endpoint.py",
+            "type": "file",
+            "sha256": "e254b870922a46b935de9d85db1de56129838ea2cf73eeb55c9fa16e8539d731"
+          },
+          {
+            "path": "adapter/explorer.py",
+            "type": "file",
+            "sha256": "5771d66fe29af0aed5e6f81f0d0287374d816ea048bdeaf08ae07a9cdf681e78"
+          },
+          {
+            "path": "adapter/geometry_endpoint.py",
+            "type": "file",
+            "sha256": "193b9ef7ecf114156c02cd527a703e79383cdec83267b612ff406f165cc3e3a4"
+          },
+          {
+            "path": "adapter/geometry_placement.py",
+            "type": "file",
+            "sha256": "706899e88f911e1e02bceff8351d6426101ed918d194e7f8ca1f7b707c959614"
+          },
+          {
+            "path": "adapter/geometry_size_policy.py",
+            "type": "file",
+            "sha256": "bcca6dd280911a38ed189e2e8ca6d81ea98c775ef261444f9b1e0f4b9a754888"
+          },
+          {
+            "path": "adapter/grant_endpoint.py",
+            "type": "file",
+            "sha256": "4b60a6c7e43aade3f2ce59495600f3b418b781865a7289dae53a189388f5c3f0"
+          },
+          {
+            "path": "adapter/jump_list.py",
+            "type": "file",
+            "sha256": "2280c0ab00ff0683c0a28611a99b70ac122887629cafb9226f40c649be581806"
+          },
+          {
+            "path": "adapter/motion_preferences.py",
+            "type": "file",
+            "sha256": "ec75685d52f81d5d28f82155b92580015dc897bee6488892c2a8f98e0ffa3633"
+          },
+          {
+            "path": "adapter/notification_service.py",
+            "type": "file",
+            "sha256": "129c864f275282320274ab417bdbc2a7a919096c2ce2b58d0438b18988fc334b"
+          },
+          {
+            "path": "adapter/reconciliation.py",
+            "type": "file",
+            "sha256": "5f558130f005b722fec187e87a88a8cd69606c786c27beb0decede715c54e5f9"
+          },
+          {
+            "path": "adapter/recovery_fault.py",
+            "type": "file",
+            "sha256": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1"
+          },
+          {
+            "path": "adapter/recovery_journal.py",
+            "type": "file",
+            "sha256": "9cfe06102f03fded5d330b90c317b4c6c32064885ed5a2c8478a87c2e1f25dae"
+          },
+          {
+            "path": "adapter/recovery_profile.py",
+            "type": "file",
+            "sha256": "651220f844591d5206b2f3f0f48fc2a652c7010d55cf796c1fda37cdc6adf6e8"
+          },
+          {
+            "path": "adapter/recovery_store.py",
+            "type": "file",
+            "sha256": "fa7e852c963bc4602c2066d05e77d47d8535c732775fe04258021accd3cd7be1"
+          },
+          {
+            "path": "adapter/release_builder.py",
+            "type": "file",
+            "sha256": "43dfc887228de8a755964a0aaa8b645d9fb8f4a4a4a288b7ff48d7b1844d630a"
+          },
+          {
+            "path": "adapter/release_compliance.py",
+            "type": "file",
+            "sha256": "51f7557b4a741106f3b7ffc16df09ae86aa90ca580578ea40a1ff175d4a48964"
+          },
+          {
+            "path": "adapter/release_repro.py",
+            "type": "file",
+            "sha256": "68107841f4514394091740799c6b2b1983a2e6a4708e3a490e40b61729f38986"
+          },
+          {
+            "path": "adapter/retirement_ledger.py",
+            "type": "file",
+            "sha256": "213cbb6ecd5c2218075d2cc98132c1c53680933f3898c757e7ba1848261faec5"
+          },
+          {
+            "path": "adapter/shell_preferences.py",
+            "type": "file",
+            "sha256": "333895ca91c20e206cebf645206584213d08cb02553bb10a1758f5308f04c7fa"
+          },
+          {
+            "path": "adapter/shortcut_preferences.py",
+            "type": "file",
+            "sha256": "2a8cc047ebfb5040c7dda4f9fd0f9e80a9b1207245458beda3ac26ff2251c185"
+          },
+          {
+            "path": "adapter/system_menu.py",
+            "type": "file",
+            "sha256": "8e6cba8ae22f821407ab386a0552057de94be3eb03793a87c80817b8c57094e5"
+          },
+          {
+            "path": "adapter/taskbar_catalog.py",
+            "type": "file",
+            "sha256": "5414ed1b6fde57a7508c2f3b20658a97006ce3c4203cecbb893fb73de943b9ba"
+          },
+          {
+            "path": "adapter/taskbar_preferences.py",
+            "type": "file",
+            "sha256": "4fde83478c22f7173ef05727a3666ff7ce72076bc05fddfa4fd08705af9a57d2"
+          },
+          {
+            "path": "adapter/taskbar_projection.py",
+            "type": "file",
+            "sha256": "b9da24de2a910a3d8515f2e8e4de2cb0086bdd0cd26c7f857fcbbdc15978c976"
+          },
+          {
+            "path": "adapter/workspace_navigation.py",
+            "type": "file",
+            "sha256": "79508bcb112ec602b6d33daf1050ef54f63afeb7bfe427fa5553e8a4c68bb8a9"
+          },
+          {
+            "path": "adapter/release_tuple.py",
+            "type": "file",
+            "sha256": "4de13ed2c11e37261bb443a9506b5026aba00e785c2539ec4745960badcdd9cc"
+          }
+        ]
+      },
+      {
+        "id": "warlock-external-build-tools",
+        "category": "other",
+        "scope": "build",
+        "provenance": [
+          {
+            "path": "implementation/warlock/build-lock.json",
+            "sha256": "9507f772afbedaf6ff11bf184e57513066f402d954a753599de87c05ca465358"
+          }
+        ],
+        "notices": [],
+        "disposition": {
+          "status": "unknown",
+          "evidence": "The frozen build lock records cc, g++, pkg-config, Node, Python, Quint, as, ld, ar, ldd, bash, env and bubblewrap identities and input hashes where recorded. Their original paths may be unavailable; actual distributions, licenses, notices, source correspondence and review require separate evidence. They are build dependencies, not claimed as shipped payload."
+        },
+        "files": []
+      },
+      {
+        "id": "warlock-generated-elm-assets",
+        "category": "asset",
+        "scope": "shipped",
+        "provenance": [
+          {
+            "path": "implementation/warlock/elm.json",
+            "sha256": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208"
+          },
+          {
+            "path": "implementation/warlock/adapter/release_builder.py",
+            "sha256": "43dfc887228de8a755964a0aaa8b645d9fb8f4a4a4a288b7ff48d7b1844d630a"
+          },
+          {
+            "path": "implementation/warlock/qa/evidence/offline-reproducibility/manifest.json",
+            "sha256": "4134b2212792b5ecf39e220aa2b7327d7fae3f52f9abf0d8e351ef087bbc9497"
+          },
+          {
+            "path": "implementation/warlock/src/ActionProjection.elm",
+            "sha256": "911faed965465fac4e32f404d75a4d130b4e560cda191c7773eb96749be1d062"
+          },
+          {
+            "path": "implementation/warlock/src/AdapterNotice.elm",
+            "sha256": "32c4c13e599e843aa6da4a2302cb44da233226eb79d2561f551d0640fe9dd409"
+          },
+          {
+            "path": "implementation/warlock/src/Announcement.elm",
+            "sha256": "71bc1e29724266c26301716ea0a1c7452f02c9f67e140e1bd1ec33c5166d402f"
+          },
+          {
+            "path": "implementation/warlock/src/Bar.elm",
+            "sha256": "0c232aabc951c82a12223a209bc054b263c3c5c45bc6153a5000194e00db0cbd"
+          },
+          {
+            "path": "implementation/warlock/src/BatchReplay.elm",
+            "sha256": "6300d3c2e617de14b2fd70a40606ea8c94db435a93f0ae30bd19765f5cdce852"
+          },
+          {
+            "path": "implementation/warlock/src/Binding.elm",
+            "sha256": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b"
+          },
+          {
+            "path": "implementation/warlock/src/CapturedAction.elm",
+            "sha256": "5c820d0c2f5167c42953b564d422429215e21ddf0a6dc955b3d3fe52b07d93cc"
+          },
+          {
+            "path": "implementation/warlock/src/Catalog.elm",
+            "sha256": "3eadb76212a66986ef2d76292a2f33595f7cd7d47dc90c8982435195f9ea3f02"
+          },
+          {
+            "path": "implementation/warlock/src/CatalogReplay.elm",
+            "sha256": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9"
+          },
+          {
+            "path": "implementation/warlock/src/Desktop.elm",
+            "sha256": "1b5b48fc5ca71c6e11bd54ea6ab723f5a37f4d383d6a59c99d14d83b005d5033"
+          },
+          {
+            "path": "implementation/warlock/src/DesktopReplay.elm",
+            "sha256": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd"
+          },
+          {
+            "path": "implementation/warlock/src/Effects.elm",
+            "sha256": "873e8824d90828a9927cfd89723c7b7299e11791e3779173815ba720b11a8547"
+          },
+          {
+            "path": "implementation/warlock/src/Files.elm",
+            "sha256": "c2099647bca3b325ca21485bb3a246e0b6d7c2a693d0bcfd5f10dedbad7a89f7"
+          },
+          {
+            "path": "implementation/warlock/src/GeometryProjection.elm",
+            "sha256": "f1b5708b8b4d1c7c02e46542bc041abb9e8cb0524d965ee4b03ab97f586a544c"
+          },
+          {
+            "path": "implementation/warlock/src/GeometrySizePolicy.elm",
+            "sha256": "46dda2de43642cd33997382e90813c8eeccde80745d79b7d5cd5fd425b062c43"
+          },
+          {
+            "path": "implementation/warlock/src/Inspection.elm",
+            "sha256": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc"
+          },
+          {
+            "path": "implementation/warlock/src/JumpList.elm",
+            "sha256": "059841cc0669fdc7fd699498ee72d4211a2aa5d69c466d4aade7558e03b0f68c"
+          },
+          {
+            "path": "implementation/warlock/src/Launch.elm",
+            "sha256": "dcd7260248ccb0b5bc6001c49319dd51af8c2fae98888919a308ac025ed273a2"
+          },
+          {
+            "path": "implementation/warlock/src/LaunchReplay.elm",
+            "sha256": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97"
+          },
+          {
+            "path": "implementation/warlock/src/Main.elm",
+            "sha256": "6d797e72117cb0e057638eca1c29bcec8c1fa536221bccd605de48978458cf19"
+          },
+          {
+            "path": "implementation/warlock/src/Menu.elm",
+            "sha256": "c40fcfa24bf9d48044ccbe2c08df0abb7d8b94ee04111776234ecd88792ff4f0"
+          },
+          {
+            "path": "implementation/warlock/src/MenuBridge.elm",
+            "sha256": "ec8f531b9437e493f9b29fe1e16d678cd388f560a83ca873448630bbde459b25"
+          },
+          {
+            "path": "implementation/warlock/src/MenuSurfaceReplay.elm",
+            "sha256": "7a539b81beddacaf61e85562e9ef2a9346f4d001feb311abe3d41d99129e6c39"
+          },
+          {
+            "path": "implementation/warlock/src/Motion.elm",
+            "sha256": "e101862bae874426f0cf9aaf02340c6582abdeea21dec38c32003da7f94e8a69"
+          },
+          {
+            "path": "implementation/warlock/src/MotionPreferences.elm",
+            "sha256": "d3130d74c3172cb1808df38efd7a2cc267ba5ae346b564544661d3d539f5c560"
+          },
+          {
+            "path": "implementation/warlock/src/NativeActorRetirement.elm",
+            "sha256": "72302b23ea124f45879b176a959b3a5bbd80edbb986bfec631994051bcae31a6"
+          },
+          {
+            "path": "implementation/warlock/src/NativeFamilyPreviewSource.elm",
+            "sha256": "dc93a0698cb1bc13c37f9e56c221d356f1c6aea3d4651b71df7d4f7c178d8321"
+          },
+          {
+            "path": "implementation/warlock/src/NativeFamilyPreviewSourceReplay.elm",
+            "sha256": "699c1348a7f646dc1eeb03257a3bd92372beacba4b689f8edd71c1b2702ffe99"
+          },
+          {
+            "path": "implementation/warlock/src/NativeOutcome.elm",
+            "sha256": "ffb20d47827d29653552d9a5c7f552491473b8df1cd336e00cc036816ae8b396"
+          },
+          {
+            "path": "implementation/warlock/src/NativePreviewAdmission.elm",
+            "sha256": "ef5c5aa26edbbdd745bacdb29b0b2e60265bb27ded3f82516adb6562656f5a20"
+          },
+          {
+            "path": "implementation/warlock/src/NativePreviewDetachment.elm",
+            "sha256": "39fe1ece48568a5a264d7b018df41322bab97f73cbe0f55a92559ecccb25a47a"
+          },
+          {
+            "path": "implementation/warlock/src/NativePreviewPolicy.elm",
+            "sha256": "99a37f7ea929dcfb746e10d1e7356ba51aa307965bd72165aa708d475e6fec64"
+          },
+          {
+            "path": "implementation/warlock/src/NativePreviewProposalIngress.elm",
+            "sha256": "b3fc80b316a9b0f90e107c65f35cb0e136a9ae4acce441e3fdf2b69d4994285d"
+          },
+          {
+            "path": "implementation/warlock/src/NativePreviewRealm.elm",
+            "sha256": "2a3de2f3eacdf5b00489e5c1f5e5cef058e8f36d74fefecb25a5d3d9ea6024cf"
+          },
+          {
+            "path": "implementation/warlock/src/NativePreviewRealmReplay.elm",
+            "sha256": "7d68ebb6703608184c20fa17f261d553119bf1ccf637274b41d1c1ebfb22e621"
+          },
+          {
+            "path": "implementation/warlock/src/NativePreviewReceiver.elm",
+            "sha256": "4f9625067fbd6f5e1027524dadedfb318779d2963a16fe14e06ccdbf0a92fb92"
+          },
+          {
+            "path": "implementation/warlock/src/NativePreviewReceiverReplay.elm",
+            "sha256": "27ec8515727b39be545b1d19f83bf4d25c42848ae9654c2f00e563f25b43f2b9"
+          },
+          {
+            "path": "implementation/warlock/src/NativePreviewRenderer.elm",
+            "sha256": "91c7bf75e3a73dcc389765196138bc38bee089be7263851c80cd5782fedbc0e3"
+          },
+          {
+            "path": "implementation/warlock/src/NativePreviewSource.elm",
+            "sha256": "9177298d05a999f3a28660df9a76b8be7cafcda523e7cc20fe73bc471b7c37e9"
+          },
+          {
+            "path": "implementation/warlock/src/NativePreviewSourceReplay.elm",
+            "sha256": "d6f26c64fd55fe4943968ff7b0d7774ede6b7c6c62f924b16e96a558fcf6edd8"
+          },
+          {
+            "path": "implementation/warlock/src/NativePreviewVisual.elm",
+            "sha256": "807da8e07317469ac03c37907ba8c8830b1b3a7fa93fa3a488ecb525b973886d"
+          },
+          {
+            "path": "implementation/warlock/src/NativePreviewVisualReplay.elm",
+            "sha256": "d15bc279a0cbb0af0aa0fa0f85f72f4c3608ffee73a4d68567477d1769c341c6"
+          },
+          {
+            "path": "implementation/warlock/src/NativeProvider.elm",
+            "sha256": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9"
+          },
+          {
+            "path": "implementation/warlock/src/Notifications.elm",
+            "sha256": "b37bff9f104d80eb1d1ea99f297c4d859b9d5744d7b0c05f6c89fa51581bc244"
+          },
+          {
+            "path": "implementation/warlock/src/OutcomeAnnouncements.elm",
+            "sha256": "158b22f574983da656838c4388c93cca1c7d9b044aaae83ee21153eae29b7586"
+          },
+          {
+            "path": "implementation/warlock/src/OutputController.elm",
+            "sha256": "8da2227997dda10570707c456df8b00fcc000291c66a8ec2a48e8d5321cee8dc"
+          },
+          {
+            "path": "implementation/warlock/src/OutputReplay.elm",
+            "sha256": "44f156b65f816400b75d928371fe5bdba675545eba805fee4793422d5b3f73ff"
+          },
+          {
+            "path": "implementation/warlock/src/OutputSurfaceReplay.elm",
+            "sha256": "c5b41a03a57830f9fefbc35d67e05b9a438aa7e8aee3be6367e7365fcbf70c26"
+          },
+          {
+            "path": "implementation/warlock/src/OverviewRecovery.elm",
+            "sha256": "1e34eb2fe6cfffb5662699f11736e6778f9dad0f35b73f58f283488a29fcf8e5"
+          },
+          {
+            "path": "implementation/warlock/src/Pins.elm",
+            "sha256": "c18f4211444ea54ad5ae65d9e436b4dc3ae404446699812b95dabd7b2c878368"
+          },
+          {
+            "path": "implementation/warlock/src/PointerOwnership.elm",
+            "sha256": "7e6d9f3e1ad79670383f58502449533d8a0857d38c6b62538eb89855a70b3ef3"
+          },
+          {
+            "path": "implementation/warlock/src/Popup.elm",
+            "sha256": "4ab4195bfb96622cf563efaf4a889045553fb2367347b6881e70f53545bae406"
+          },
+          {
+            "path": "implementation/warlock/src/Presentation.elm",
+            "sha256": "8c3463230d93b768f48784a37ae9e4da7a225defa6f209b3100258af5196c0e9"
+          },
+          {
+            "path": "implementation/warlock/src/PresentationReplay.elm",
+            "sha256": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c"
+          },
+          {
+            "path": "implementation/warlock/src/PreviewCatalogReplay.elm",
+            "sha256": "eaf63404fda37b1111a77eb2a16f5ad4737e4c151290f036cee415add5e4e129"
+          },
+          {
+            "path": "implementation/warlock/src/PreviewFeedbackReplay.elm",
+            "sha256": "c54391131b2416266eb25a19602dac0788ea63502d64090bf2be857bb0aceb34"
+          },
+          {
+            "path": "implementation/warlock/src/PreviewIdentity.elm",
+            "sha256": "262240e59eed37d362f921a4e7e89d0bb23c8b0f84fb39f0fddc29faaa3de3b5"
+          },
+          {
+            "path": "implementation/warlock/src/PreviewLifecycle.elm",
+            "sha256": "232ebe2e823a4f9b07444f9afaccd98cdc3de9a592ff220d9975a64952dacf24"
+          },
+          {
+            "path": "implementation/warlock/src/PreviewMetadataReplay.elm",
+            "sha256": "1efedf2492cb9c507be3a5aeb1ee6e371a22b6141aff5156359d6526149d5c3f"
+          },
+          {
+            "path": "implementation/warlock/src/PreviewPaintGate.elm",
+            "sha256": "29336cc6d6b21c3d32fd4967911bb189c42b1569ed877ffe79555ed30a7c7d82"
+          },
+          {
+            "path": "implementation/warlock/src/PreviewPresenter.elm",
+            "sha256": "10769b8d9a86e5e5b35f1f292d9837a38b20a0ba636d5baa0ee0c3b8fcdac1cc"
+          },
+          {
+            "path": "implementation/warlock/src/PreviewPresenterReplay.elm",
+            "sha256": "0eb03b99d5d5470936b51ea77de9b102b9742284020d01c469110388efdbc06e"
+          },
+          {
+            "path": "implementation/warlock/src/PreviewVisual.elm",
+            "sha256": "5c285bd8c6fde00b4e1082edfd10e59e281264a4f45b15cea9b5ce0920dd039a"
+          },
+          {
+            "path": "implementation/warlock/src/Provider.elm",
+            "sha256": "2ef450a364d23d334e2ba7dfafdc56bbf51649dfb8f2e9f2e0ab1ca600157727"
+          },
+          {
+            "path": "implementation/warlock/src/ReceiptRouter.elm",
+            "sha256": "d059bfef01de050c794c8709a3a38627fddd63815f115c617e78fefaea32ac1f"
+          },
+          {
+            "path": "implementation/warlock/src/ReconciliationFrame.elm",
+            "sha256": "c44fa50ac86d528b35959d50fc4d85bd9d8983c1e866fdda01ad1854f465004e"
+          },
+          {
+            "path": "implementation/warlock/src/ReconciliationTracking.elm",
+            "sha256": "84482d1bb84160e3bd9e026b2043635c35b76422d6e9066f703411f784b29bf9"
+          },
+          {
+            "path": "implementation/warlock/src/Replay.elm",
+            "sha256": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f"
+          },
+          {
+            "path": "implementation/warlock/src/RetainedLegacyPresenterReplay.elm",
+            "sha256": "f5f7bc30d5efda6629a1de4b11e13ebf25d9be80bbd8573dff9d7d0916375845"
+          },
+          {
+            "path": "implementation/warlock/src/RetainedPreviewPresenter.elm",
+            "sha256": "3446188256b8422ff79fc177c46871a8dc102f4f06522584e252216727f3c4a8"
+          },
+          {
+            "path": "implementation/warlock/src/RetainedPreviewPresenterReplay.elm",
+            "sha256": "1405187825a060cb5003b66b7bf235802323fe6db2d32af6ddb04d1708577175"
+          },
+          {
+            "path": "implementation/warlock/src/ScopedPreviewPresenterReplay.elm",
+            "sha256": "203f2b74ce723fc3c39208ff91dffde947fbdbaaf7cf1d233b606ac427ba7a05"
+          },
+          {
+            "path": "implementation/warlock/src/SearchFold.elm",
+            "sha256": "31664d665778533dc2c141f433398df5bd37be4b689b7369cd894c89d1459241"
+          },
+          {
+            "path": "implementation/warlock/src/Settings.elm",
+            "sha256": "d13f4d63327eae4a80052252c8ba1f1e40db0f69954b46470ccff248e5ba0e7c"
+          },
+          {
+            "path": "implementation/warlock/src/SharedRecoveryReplay.elm",
+            "sha256": "f44d52432e1c6c876207c273d8a013fd446b186b85a23d7bf5474943ef26ff8b"
+          },
+          {
+            "path": "implementation/warlock/src/Shell.elm",
+            "sha256": "93fdf86ac11ff9c190978fb46557623045a6c697d468a42fc9ba16a4bfa4df48"
+          },
+          {
+            "path": "implementation/warlock/src/ShellReplay.elm",
+            "sha256": "be85fbef5dda8dd07093b578c4be204d8d92772147e1ffacf80368216b5ba8ca"
+          },
+          {
+            "path": "implementation/warlock/src/ShortcutPreferences.elm",
+            "sha256": "d9196adaae768e57e2531b78ad2cd8fd22a2a81ad952d27c7c88d0fc72da8322"
+          },
+          {
+            "path": "implementation/warlock/src/Shortcuts.elm",
+            "sha256": "cfa79040387114e79b7a6cf51ca31aa4fbe569372ff1948105265adf90cd97a7"
+          },
+          {
+            "path": "implementation/warlock/src/Snap.elm",
+            "sha256": "8ee61de4cd63557d3f2928893ed35ce93f1e3290128847e66ca388aa5d98ec8e"
+          },
+          {
+            "path": "implementation/warlock/src/Surface.elm",
+            "sha256": "a660a4641a9f834c6198bce1e8049b3dd0be40cb74be1cfe1d5e14cfd0cdaa1d"
+          },
+          {
+            "path": "implementation/warlock/src/SurfaceController.elm",
+            "sha256": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998"
+          },
+          {
+            "path": "implementation/warlock/src/SurfaceRenderer.elm",
+            "sha256": "48e03f50fd509ea0e42e23d7a1aa26396122350ab824c8dc179952b5bfd28c63"
+          },
+          {
+            "path": "implementation/warlock/src/SurfaceReplay.elm",
+            "sha256": "476f94f33d9225035a479bd8ae8eb755ae8ac914c29ca533f62913fb378a603a"
+          },
+          {
+            "path": "implementation/warlock/src/Switcher.elm",
+            "sha256": "7523cc13bf794c126cee2d39541d9fbae062ec3b420d5898eed6380792ec3061"
+          },
+          {
+            "path": "implementation/warlock/src/SystemMenu.elm",
+            "sha256": "cf44c66fe51a5d86f14e33a8235e04f178553261229fd51e0d81cbc35c944054"
+          },
+          {
+            "path": "implementation/warlock/src/TaskView.elm",
+            "sha256": "7665dd48cae39ecdc71f85990eaefc0115fb79fe0462e41199b10ec4ccbfcdbe"
+          },
+          {
+            "path": "implementation/warlock/src/Taskbar.elm",
+            "sha256": "31ed9ce6b37e5b35065f8833e31412657800d894b6d9e9544f380bc16e7aa519"
+          },
+          {
+            "path": "implementation/warlock/src/TaskbarReplay.elm",
+            "sha256": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351"
+          },
+          {
+            "path": "implementation/warlock/src/TaskbarShell.elm",
+            "sha256": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26"
+          },
+          {
+            "path": "implementation/warlock/src/TaskbarShellReplay.elm",
+            "sha256": "72ca534bb5adc6d0a02fd68ff9f287cb1815fcb0f68313ce7d0b3033d4ebf130"
+          },
+          {
+            "path": "implementation/warlock/src/Transfer.elm",
+            "sha256": "357a68e70977184ced8be8b8a4c0db6209730e6fe6ad2f4718087a6d6a2c32be"
+          },
+          {
+            "path": "implementation/warlock/src/UInt64.elm",
+            "sha256": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa"
+          },
+          {
+            "path": "implementation/warlock/src/UnsentOperation.elm",
+            "sha256": "46e315cc739e097805af3c9358f9ca27a807ef1119c733aa296687342c8238ea"
+          },
+          {
+            "path": "implementation/warlock/src/WorkspaceInventory.elm",
+            "sha256": "583692398a5038bf17a87c09a7019ddae4059f3f200489342ca89dab50eb3b2e"
+          },
+          {
+            "path": "implementation/warlock/src/WorkspaceNavigation.elm",
+            "sha256": "8313a23008abfa6157324472db852b087b4af09dd3696a33f273d7010634e7f6"
+          }
+        ],
+        "notices": [],
+        "disposition": {
+          "status": "unknown",
+          "evidence": "Three Elm bundles are combined output of project sources, compiler runtime and selected dependency code. The dependency graph is conservative, not proof every package contributes bytes. Project grant, exact generated-code attribution, upstream source linkage and independent redistribution review remain unresolved."
+        },
+        "contains": [
+          "elm-compiler-generated-runtime",
+          "elm-browser-1.0.2",
+          "elm-core-1.0.5",
+          "elm-html-1.0.0",
+          "elm-json-1.1.3",
+          "elm-time-1.0.0",
+          "elm-url-1.0.0",
+          "elm-virtual-dom-1.0.3"
+        ],
+        "files": [
+          {
+            "path": "assets/bar.js",
+            "type": "file",
+            "sha256": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725"
+          },
+          {
+            "path": "assets/elm.js",
+            "type": "file",
+            "sha256": "700524b6a1da72905daeecffd74216143bcf9242ea13c13d01f8bce3e1665be5"
+          },
+          {
+            "path": "assets/popup.js",
+            "type": "file",
+            "sha256": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43"
+          }
+        ]
+      },
+      {
+        "id": "warlock-web-assets",
+        "category": "asset",
+        "scope": "shipped",
+        "provenance": [
+          {
+            "path": "implementation/warlock/assets/activation.js",
+            "sha256": "06e3de6bcbc27e2b9a5d166fd665706e300ef5d4a29640b9bd70aa0f095a2c3e"
+          },
+          {
+            "path": "implementation/warlock/assets/adapter.js",
+            "sha256": "9d99e140af65c67aa5395ce8dc3f3aee42b2b341e039e6514745e14ec9335f96"
+          },
+          {
+            "path": "implementation/warlock/assets/appearance.js",
+            "sha256": "99b01609571af35328d7b69034f647f25651fb59d9d59928063a7e8c83a9b3f6"
+          },
+          {
+            "path": "implementation/warlock/assets/bar-adapter.js",
+            "sha256": "2f1dd1dfd2f47850a2b455732c114bd98acea976c273c6ec594bef5208d4a68c"
+          },
+          {
+            "path": "implementation/warlock/assets/bar.html",
+            "sha256": "b88b0b075fc4bcef147357b023823049b5e63e1b49354eb298737ef003328a66"
+          },
+          {
+            "path": "implementation/warlock/assets/context.js",
+            "sha256": "2ff41ca906dc4e42ae76f65d486cf119b400414dee41ca886f5589709d2b9333"
+          },
+          {
+            "path": "implementation/warlock/assets/controlled-popup-adapter.js",
+            "sha256": "14d0a8eb0704414a9d7c2e270d23ca7cc2ff8f008e860051f8ab0e31bcab748c"
+          },
+          {
+            "path": "implementation/warlock/assets/controlled-popup.html",
+            "sha256": "1e50055501c563f14762159620e2b56644d88779e5ffeba565d4730ebd4e9e4e"
+          },
+          {
+            "path": "implementation/warlock/assets/index.html",
+            "sha256": "ba09087a0dda2fbc4a912d2d5d8f8adb90ae553a8027963fdb6b74a7afaa5d1b"
+          },
+          {
+            "path": "implementation/warlock/assets/native-preview-control-outbox.js",
+            "sha256": "183253d5f781cf8527c4e58f31d44653e1b6fe8be58c0bdc89ae714ffb5e4484"
+          },
+          {
+            "path": "implementation/warlock/assets/native-preview-proposals.js",
+            "sha256": "0172bad6c2491f697497cb9f8274ffa99feb8fca1d9942d31fbb2424bb035bf9"
+          },
+          {
+            "path": "implementation/warlock/assets/popup-adapter.js",
+            "sha256": "050af2a6cfb58195f6999f126ab94f37573231007cb2fcd7d119873969365605"
+          },
+          {
+            "path": "implementation/warlock/assets/popup.html",
+            "sha256": "035cb884860bb1cda77c06773a750c631e5d6f20cf90557989bb37756270c422"
+          },
+          {
+            "path": "implementation/warlock/assets/recovered-native-preview-control-outbox.js",
+            "sha256": "4d5b641f57080b921789ed7c8f33f0c0303aa286bb444730d6054a53474f0297"
+          },
+          {
+            "path": "implementation/warlock/assets/retained-preview-controls.js",
+            "sha256": "64bb384ee03acbb59619f78f3b931b922ed008d14006133b7294e864b92e93e5"
+          },
+          {
+            "path": "implementation/warlock/assets/shell.css",
+            "sha256": "77566e786969cfb4d7c87f2e33cc9f36d2cf4682fdc2da21bf38073340979098"
+          }
+        ],
+        "notices": [],
+        "disposition": {
+          "status": "unknown",
+          "evidence": "Source ownership, third-party attribution and redistribution grant have not been independently established. The inspected assets tree contains no font or icon files; system-ui references the host font, not a bundled font. Dynamic icon/preview content is outside the static payload inventory."
+        },
+        "files": [
+          {
+            "path": "assets/activation.js",
+            "type": "file",
+            "sha256": "06e3de6bcbc27e2b9a5d166fd665706e300ef5d4a29640b9bd70aa0f095a2c3e"
+          },
+          {
+            "path": "assets/adapter.js",
+            "type": "file",
+            "sha256": "9d99e140af65c67aa5395ce8dc3f3aee42b2b341e039e6514745e14ec9335f96"
+          },
+          {
+            "path": "assets/appearance.js",
+            "type": "file",
+            "sha256": "99b01609571af35328d7b69034f647f25651fb59d9d59928063a7e8c83a9b3f6"
+          },
+          {
+            "path": "assets/bar-adapter.js",
+            "type": "file",
+            "sha256": "2f1dd1dfd2f47850a2b455732c114bd98acea976c273c6ec594bef5208d4a68c"
+          },
+          {
+            "path": "assets/bar.html",
+            "type": "file",
+            "sha256": "b88b0b075fc4bcef147357b023823049b5e63e1b49354eb298737ef003328a66"
+          },
+          {
+            "path": "assets/context.js",
+            "type": "file",
+            "sha256": "2ff41ca906dc4e42ae76f65d486cf119b400414dee41ca886f5589709d2b9333"
+          },
+          {
+            "path": "assets/controlled-popup-adapter.js",
+            "type": "file",
+            "sha256": "14d0a8eb0704414a9d7c2e270d23ca7cc2ff8f008e860051f8ab0e31bcab748c"
+          },
+          {
+            "path": "assets/controlled-popup.html",
+            "type": "file",
+            "sha256": "1e50055501c563f14762159620e2b56644d88779e5ffeba565d4730ebd4e9e4e"
+          },
+          {
+            "path": "assets/index.html",
+            "type": "file",
+            "sha256": "ba09087a0dda2fbc4a912d2d5d8f8adb90ae553a8027963fdb6b74a7afaa5d1b"
+          },
+          {
+            "path": "assets/native-preview-control-outbox.js",
+            "type": "file",
+            "sha256": "183253d5f781cf8527c4e58f31d44653e1b6fe8be58c0bdc89ae714ffb5e4484"
+          },
+          {
+            "path": "assets/native-preview-proposals.js",
+            "type": "file",
+            "sha256": "0172bad6c2491f697497cb9f8274ffa99feb8fca1d9942d31fbb2424bb035bf9"
+          },
+          {
+            "path": "assets/popup-adapter.js",
+            "type": "file",
+            "sha256": "050af2a6cfb58195f6999f126ab94f37573231007cb2fcd7d119873969365605"
+          },
+          {
+            "path": "assets/popup.html",
+            "type": "file",
+            "sha256": "035cb884860bb1cda77c06773a750c631e5d6f20cf90557989bb37756270c422"
+          },
+          {
+            "path": "assets/recovered-native-preview-control-outbox.js",
+            "type": "file",
+            "sha256": "4d5b641f57080b921789ed7c8f33f0c0303aa286bb444730d6054a53474f0297"
+          },
+          {
+            "path": "assets/retained-preview-controls.js",
+            "type": "file",
+            "sha256": "64bb384ee03acbb59619f78f3b931b922ed008d14006133b7294e864b92e93e5"
+          },
+          {
+            "path": "assets/shell.css",
+            "type": "file",
+            "sha256": "77566e786969cfb4d7c87f2e33cc9f36d2cf4682fdc2da21bf38073340979098"
+          }
+        ]
+      }
+    ],
+    "errors": [
+      "component elm-compiler-0.19.2: redistribution disposition incomplete",
+      "component elm-compiler-generated-runtime: redistribution disposition incomplete",
+      "component elm-npm-installer-0.19.2-0: redistribution disposition incomplete",
+      "component elm-retained-notices: notice applicability review incomplete",
+      "component elm-retained-notices: redistribution disposition incomplete",
+      "component native-aquamarine: redistribution disposition incomplete",
+      "component native-generated-host: notice applicability review incomplete",
+      "component native-generated-host: redistribution disposition incomplete",
+      "component native-hyprland-core: redistribution disposition incomplete",
+      "component native-window-authority-plugin: notice applicability review incomplete",
+      "component native-window-authority-plugin: redistribution disposition incomplete",
+      "component warlock-adapter-sources: notice applicability review incomplete",
+      "component warlock-adapter-sources: redistribution disposition incomplete",
+      "component warlock-external-build-tools: notice applicability review incomplete",
+      "component warlock-external-build-tools: redistribution disposition incomplete",
+      "component warlock-generated-elm-assets: notice applicability review incomplete",
+      "component warlock-generated-elm-assets: redistribution disposition incomplete",
+      "component warlock-web-assets: notice applicability review incomplete",
+      "component warlock-web-assets: redistribution disposition incomplete"
+    ]
+  }
+}

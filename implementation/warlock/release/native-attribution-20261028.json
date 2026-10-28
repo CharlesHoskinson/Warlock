@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "scope": "Current local attribution witnesses and exact retained license texts; no redistribution approval or complete historical source-to-binary proof.",
+  "udis86": {
+    "license": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-source/subprojects/udis86/LICENSE",
+      "sha256": "1070640aab24327354da44507627d1db6c67482a6facc8375a758796a05e3dff"
+    },
+    "archive": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-build/subprojects/udis86/libudis86/liblibudis86.a",
+      "sha256": "c658d729da0e67209d2e9261e921ec78d2e273da892ca944976a99d92b8a829a"
+    },
+    "linkRecipe": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-build/build.ninja",
+      "sha256": "dc64c8d18dde88a81574469f5be96072762a33427cdb659e007e90bb157828db"
+    },
+    "archiveNamedByCoreLink": true
+  },
+  "glaze": {
+    "license": {
+      "path": "/home/charles/Warlock/implementation/maximized-stack-v1/native-core-v2/build/_deps/glaze-src/LICENSE",
+      "sha256": "5d49e66411a0807a7c8d6b911b9a26b59e940c71aebe561a3ad8b0b80ac4b7b6"
+    },
+    "source": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-source/src/protocols/InputCapture.cpp",
+      "sha256": "d034a7f2dd7c5010bfb52cc4db7717119a6c1482efe2dfeeae9da2fadab1a0fb"
+    },
+    "dependencyCommand": [
+      "ninja",
+      "-C",
+      "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-build",
+      "-t",
+      "deps",
+      "CMakeFiles/hyprland_lib.dir/src/protocols/InputCapture.cpp.o"
+    ],
+    "dependencyStdoutSHA256": "4cb31d191baae01de5e234d7cdfb7c838bd23c5a34afd9ffd3a993d391e7f934",
+    "object": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-build/CMakeFiles/hyprland_lib.dir/src/protocols/InputCapture.cpp.o",
+      "sha256": "f46db9ade029ea083206abec8c3bb3c984c930c065845bf713174b529b87427e"
+    },
+    "headers": {
+      "/home/charles/Warlock/implementation/maximized-stack-v1/native-core-v2/build/_deps/glaze-src/include/glaze/core/context.hpp": "7dda5b962067fe895b396389c7ebf101cc387fba351ee5afd022055370843504",
+      "/home/charles/Warlock/implementation/maximized-stack-v1/native-core-v2/build/_deps/glaze-src/include/glaze/util/parse.hpp": "14611857f8817098b0fe18c65dff40e1025e89d43b4377d31c2d8558aaf20d88",
+      "/home/charles/Warlock/implementation/maximized-stack-v1/native-core-v2/build/_deps/glaze-src/include/glaze/core/meta.hpp": "a9e162ebb199088c4f328edfd98e81fce50371120f9d4fcf1403632a9416f9e3",
+      "/home/charles/Warlock/implementation/maximized-stack-v1/native-core-v2/build/_deps/glaze-src/include/glaze/core/opts.hpp": "0c948a8aaf7d78338f8942f14f39c3a1095a89724f16f59afb8b10f042688cfa",
+      "/home/charles/Warlock/implementation/maximized-stack-v1/native-core-v2/build/_deps/glaze-src/include/glaze/core/optimization_level.hpp": "ce340f01e99019407fc1e6d10e9bf98fe606c49e48dd7402c86dfe3327538ee9",
+      "/home/charles/Warlock/implementation/maximized-stack-v1/native-core-v2/build/_deps/glaze-src/include/glaze/core/traits.hpp": "4f36a76f432b82ab095c3ed3c4d7b89848d0880849368a0e0eddcc58edb0bf95",
+      "/home/charles/Warlock/implementation/maximized-stack-v1/native-core-v2/build/_deps/glaze-src/include/glaze/util/inline.hpp": "32ffed83eb7d51b2855039487164691300dc5534f052564e51d9fde32a92aaa5",
+      "/home/charles/Warlock/implementation/maximized-stack-v1/native-core-v2/build/_deps/glaze-src/include/glaze/util/type_traits.hpp": "2b29474f7da45d68b69116d8ce1c0f43fac4ae6535a8f6c2008f07dc29c6e396",
+      "/home/charles/Warlock/implementation/maximized-stack-v1/native-core-v2/build/_deps/glaze-src/include/glaze/reflection/get_name.hpp": "889a75fdf6ea083cec5556be809612f662690e1b9b3a87b2cabfca1f2c4e904c",
+      "/home/charles/Warlock/implementation/maximized-stack-v1/native-core-v2/build/_deps/glaze-src/include/glaze/core/feature_test.hpp": "3d62ee5ebe9dbef648d140dd7bde80129ef74f1b0f3a9d2993e17b215de6dd2b",
+      "/home/charles/Warlock/implementation/maximized-stack-v1/native-core-v2/build/_deps/glaze-src/include/glaze/reflection/to_tuple.hpp": "76030393702a1dee4e2a8395bff087f1b0073580370085f8371d94268f4e0a71",
+      "/home/charles/Warlock/implementation/maximized-stack-v1/native-core-v2/build/_deps/glaze-src/include/glaze/tuplet/tuple.hpp": "2adbcacb7a4e23c6f53fd2f533fba13e97bbd4f7c4425c48c1f2409904473d89",
+      "/home/charles/Warlock/implementation/maximized-stack-v1/native-core-v2/build/_deps/glaze-src/include/glaze/util/string_literal.hpp": "671e3592b3e673a6304480e16a4b202eadd9ab5cc4093fc1199842ec575105ba",
+      "/home/charles/Warlock/implementation/maximized-stack-v1/native-core-v2/build/_deps/glaze-src/include/glaze/reflection/requires_key.hpp": "f6931d3d624adedb0783ced5077bf23c19fb2ebd01c89cf6d78c203a612f28ca",
+      "/home/charles/Warlock/implementation/maximized-stack-v1/native-core-v2/build/_deps/glaze-src/include/glaze/util/for_each.hpp": "c0a73424f5c2e81508de99fa6523c334aa1e3b6d10464f0035f6270311878b35",
+      "/home/charles/Warlock/implementation/maximized-stack-v1/native-core-v2/build/_deps/glaze-src/include/glaze/util/utility.hpp": "2e0acf32baa01527bf3b303555e2ba6b6478eaaf3560e17141777b9687f884bc",
+      "/home/charles/Warlock/implementation/maximized-stack-v1/native-core-v2/build/_deps/glaze-src/include/glaze/util/variant.hpp": "9aa7510becd453ab4fd64e515a06f3335011dd2fed138c1921b11f3d94145a39",
+      "/home/charles/Warlock/implementation/maximized-stack-v1/native-core-v2/build/_deps/glaze-src/include/glaze/version.hpp": "5c8db02f473bb456fc7775762cda3a0c6f4ada38fb8793f744861b426a03927a",
+      "/home/charles/Warlock/implementation/maximized-stack-v1/native-core-v2/build/_deps/glaze-src/include/glaze/util/atoi.hpp": "07de78051f6442208df7b2af4927938478393937f519873034fda51170b4f961",
+      "/home/charles/Warlock/implementation/maximized-stack-v1/native-core-v2/build/_deps/glaze-src/include/glaze/util/bit.hpp": "a9ea5239a360fd2d69cee6bb375eadf28a112b750ae0a6bb4c3bc6331296526a",
+      "/home/charles/Warlock/implementation/maximized-stack-v1/native-core-v2/build/_deps/glaze-src/include/glaze/util/compare.hpp": "5a18fef61b36348307c13ca8cb91f882c74c8bf0df837300504fe7fc21e553b3",
+      "/home/charles/Warlock/implementation/maximized-stack-v1/native-core-v2/build/_deps/glaze-src/include/glaze/util/convert.hpp": "f65f8d08dfe098d411adcb1cae143375549d8cb6c11966596ba94c256fe20506",
+      "/home/charles/Warlock/implementation/maximized-stack-v1/native-core-v2/build/_deps/glaze-src/include/glaze/util/expected.hpp": "94558daf3b841aaf1c1d3d2ce6698756fb43b2cd733faa65780037eb48dedd81"
+    }
+  },
+  "limitations": [
+    "Dependency records show inputs, not which particular header bytes survive compilation.",
+    "Complete at-build compiler/tool/dependency provenance and independent notice applicability remain separate.",
+    "The earlier fact-summary Glaze digest omitted characters; this document records the digest measured directly from the license file."
+  ]
+}

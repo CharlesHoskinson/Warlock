@@ -1,0 +1,90 @@
+{
+  "schema": 1,
+  "recordedUTC": "2026-10-28T22:27:12.927835+00:00",
+  "requirements": [
+    "ELM-DEL-003",
+    "ELM-DEL-004",
+    "ELM-DEL-005"
+  ],
+  "disposition": "partial-observed-component-specific-reviews",
+  "scenarioAccepted": false,
+  "requirementAccepted": false,
+  "releaseAccepted": false,
+  "actualStagedPackage": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/offline-pair-v4/A/artifacts/package",
+  "rawCurrentCatalogReview": {
+    "path": "native-notices.json",
+    "sha256": "a603c8bfaa008c7cae415c315a3ff91bbc43e2c3626e466fe9a42612aec1ea90"
+  },
+  "preservedEvidence": [
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/protected-capture-v4.stdout",
+      "sha256": "661e4ad92fba2d1f6434ba7edadb44ffdc41379b541623ea5e0f35c914dbf6d6"
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/protected-verify-v4.stdout",
+      "sha256": "48c5769a16a560f4c342c2c28225e85ff4b6b0f263ef749e6f3d4523400cfe9b"
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/current-input-lock-v4.json",
+      "sha256": "6c97d8a86d190fbfcdf99f452d1b79452b32f244c85260066e7ac901515b0442"
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/offline-pair-v4/reproducibility-report.json",
+      "sha256": "72492948223f2f0bc000c27db0a104e20c9b509856d831648c98e5b4527aaa74"
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/offline-pair-v4/A/artifacts/compliance-report.json",
+      "sha256": "b85d9a608ae3b939cf9347a68b928530bd8c6ea1107ee50c699d7c7d9f30b94e"
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/protected-nine-component-review.stderr",
+      "sha256": "f31a122ff0b142697d54e21279503ad7fccefe846e8a016a02492488212ed399"
+    }
+  ],
+  "currentSourceHashes": {
+    "/home/charles/Warlock/implementation/warlock/release/native-components.json": "7999fb2fc69e936b3b496a0d8fef505088afe24fd8a3c564fccc84dd8a13b1b0",
+    "/home/charles/Warlock/implementation/warlock/release/language-components.json": "dae1b362a3f08f919dab425f2f8a1230b74c72af03c5a9b2f925d261dee40719",
+    "/home/charles/Warlock/implementation/warlock/adapter/release_compliance.py": "51f7557b4a741106f3b7ffc16df09ae86aa90ca580578ea40a1ff175d4a48964",
+    "/home/charles/Warlock/implementation/warlock/release/component-reviews-20261028.json": "0526d5a1650ba6ffba59d192742c24e5c99d21dae3c1250d20a7233abc9d7fb9",
+    "/home/charles/Warlock/implementation/warlock/release/elm-upstream-source-20261028.json": "6967b373112615d2f2956d1fa7e646534adb7ac135e3c8da9aada977508c2189",
+    "/home/charles/Warlock/implementation/warlock/release/native-attribution-20261028.json": "a44e3515f8253f2f2ab55c8e964e70f807de6edd443e56febb79b113b8476d9b"
+  },
+  "componentCount": 21,
+  "reviewedComponents": [
+    "elm-browser-1.0.2",
+    "elm-core-1.0.5",
+    "elm-html-1.0.0",
+    "elm-json-1.1.3",
+    "elm-time-1.0.0",
+    "elm-url-1.0.0",
+    "elm-virtual-dom-1.0.3",
+    "native-glaze-headers",
+    "native-udis86-static"
+  ],
+  "remainingUnreviewedComponents": [
+    "elm-compiler-0.19.2",
+    "elm-compiler-generated-runtime",
+    "elm-npm-installer-0.19.2-0",
+    "elm-retained-notices",
+    "native-aquamarine",
+    "native-generated-host",
+    "native-hyprland-core",
+    "native-window-authority-plugin",
+    "warlock-adapter-sources",
+    "warlock-external-build-tools",
+    "warlock-generated-elm-assets",
+    "warlock-web-assets"
+  ],
+  "remainingReviewErrorCount": 19,
+  "observed": [
+    "Both exact udis86 and Glaze notices are present in the actual v4 A staged package.",
+    "The host matches selected SHA4377b11 and the nineteen compiled reducer checks pass.",
+    "Nine independent scoped component reviews were adopted and checked by the production review API; all twenty-one payload components remain accounted for."
+  ],
+  "limits": [
+    "The v4 campaign stopped after build A at review; build B and a two-distributable hash comparison did not run.",
+    "The v4 lock is preserved before adoption of the nine later catalog dispositions; no relabeling as a current post-review lock.",
+    "Independent component reviews retain all notice and non-endorsement conditions.",
+    "No original project grant, compiler/runtime permission, whole-requirement acceptance or release approval is inferred."
+  ]
+}

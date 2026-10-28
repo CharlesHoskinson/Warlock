@@ -1,0 +1,746 @@
+{
+  "schema": 1,
+  "scope": "Exact tag-resolved official source archives compared as data, no executable content run. Not license approval or proof of compiler output attribution.",
+  "packages": [
+    {
+      "name": "elm/browser",
+      "version": "1.0.2",
+      "passed": true,
+      "refURL": "https://api.github.com/repos/elm/browser/git/ref/tags/1.0.2",
+      "tagObjectChain": [
+        {
+          "type": "tag",
+          "sha": "64fe1a0f6435461853ed3e46f6c97bb1c2a05abc",
+          "url": "https://api.github.com/repos/elm/browser/git/ref/tags/1.0.2",
+          "responseSHA256": "0c8dc11db1180a4464159548f2247dac723820ec2d1738f41f7841139f6d1754"
+        },
+        {
+          "type": "tag-object",
+          "sha": "64fe1a0f6435461853ed3e46f6c97bb1c2a05abc",
+          "url": "https://api.github.com/repos/elm/browser/git/tags/64fe1a0f6435461853ed3e46f6c97bb1c2a05abc",
+          "responseSHA256": "0f9a094ecdaad7dacf151f76d662cf5c33029a74feb05fbc1ba51e56975ce9ae",
+          "target": "53e3caa265fd9da3ec9880d47bb95eed6fe24ee6",
+          "targetType": "commit"
+        }
+      ],
+      "commit": "53e3caa265fd9da3ec9880d47bb95eed6fe24ee6",
+      "archiveURL": "https://codeload.github.com/elm/browser/tar.gz/53e3caa265fd9da3ec9880d47bb95eed6fe24ee6",
+      "archiveSHA256": "f75f3dd23b41450fa64b8032f8b5a0b22d1bfe05b1aaf1f080a7a02c07d61827",
+      "localPath": "/home/charles/Warlock/implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/browser/1.0.2",
+      "localFileCount": 16,
+      "upstreamFileCount": 16,
+      "matchedFileCount": 16,
+      "localOnly": [],
+      "upstreamOnly": [],
+      "differing": [],
+      "unsupportedArchiveMembers": [],
+      "files": [
+        {
+          "path": "LICENSE",
+          "localSHA256": "d33481c057f582207d41425b1b3ecb740291f9f9c86b21e9a045cd3bea0f6ac8",
+          "upstreamSHA256": "d33481c057f582207d41425b1b3ecb740291f9f9c86b21e9a045cd3bea0f6ac8"
+        },
+        {
+          "path": "elm.json",
+          "localSHA256": "f50e12cb6b89a97ef18dde0c64fa92aa78469c412c19d64ca1c56931a1fbc52f",
+          "upstreamSHA256": "f50e12cb6b89a97ef18dde0c64fa92aa78469c412c19d64ca1c56931a1fbc52f"
+        },
+        {
+          "path": "src/Browser.elm",
+          "localSHA256": "2722873214de2d381a02e037dd56f764c522c0b4ccbbfb3edccce69e0c3c32a5",
+          "upstreamSHA256": "2722873214de2d381a02e037dd56f764c522c0b4ccbbfb3edccce69e0c3c32a5"
+        },
+        {
+          "path": "src/Browser/AnimationManager.elm",
+          "localSHA256": "b5eec62b6f9e2e94f5f1b573228e332784580fddc5898c732c4f5c48f4a5a854",
+          "upstreamSHA256": "b5eec62b6f9e2e94f5f1b573228e332784580fddc5898c732c4f5c48f4a5a854"
+        },
+        {
+          "path": "src/Browser/Dom.elm",
+          "localSHA256": "03bee2960770cea5b6ee2a208f33622432b8a1ae12e77412cf84b67a453ac2a7",
+          "upstreamSHA256": "03bee2960770cea5b6ee2a208f33622432b8a1ae12e77412cf84b67a453ac2a7"
+        },
+        {
+          "path": "src/Browser/Events.elm",
+          "localSHA256": "b72f8970ee085dab3c7e5504f661e21ed6cefaea21890899d9cd32ebc7f2bd4f",
+          "upstreamSHA256": "b72f8970ee085dab3c7e5504f661e21ed6cefaea21890899d9cd32ebc7f2bd4f"
+        },
+        {
+          "path": "src/Browser/Navigation.elm",
+          "localSHA256": "329085431ef02615190706903d090364097ed3ddaf466370918af69379354706",
+          "upstreamSHA256": "329085431ef02615190706903d090364097ed3ddaf466370918af69379354706"
+        },
+        {
+          "path": "src/Debugger/Expando.elm",
+          "localSHA256": "c93b00af7bf99c8929db06cdfaf7c6b26b955ac576e62ee4fe2c0be6e4f01a6b",
+          "upstreamSHA256": "c93b00af7bf99c8929db06cdfaf7c6b26b955ac576e62ee4fe2c0be6e4f01a6b"
+        },
+        {
+          "path": "src/Debugger/History.elm",
+          "localSHA256": "4ef4701403e4b960a902a12f20f5feb3ac8881850ba7a71ca6c50f363c60caa9",
+          "upstreamSHA256": "4ef4701403e4b960a902a12f20f5feb3ac8881850ba7a71ca6c50f363c60caa9"
+        },
+        {
+          "path": "src/Debugger/Main.elm",
+          "localSHA256": "4513896c62d0ba2f3f27bae3cf39145af8e5ccf428abde16db782ed1c7db3b6a",
+          "upstreamSHA256": "4513896c62d0ba2f3f27bae3cf39145af8e5ccf428abde16db782ed1c7db3b6a"
+        },
+        {
+          "path": "src/Debugger/Metadata.elm",
+          "localSHA256": "733be27ac5b7651c55b62161f24c508c9a62cf69a481672f17a0c58068591cd8",
+          "upstreamSHA256": "733be27ac5b7651c55b62161f24c508c9a62cf69a481672f17a0c58068591cd8"
+        },
+        {
+          "path": "src/Debugger/Overlay.elm",
+          "localSHA256": "cbb5380cc49af503a462d4e1c0112fe6d46653fc34d8948243f5782591094b47",
+          "upstreamSHA256": "cbb5380cc49af503a462d4e1c0112fe6d46653fc34d8948243f5782591094b47"
+        },
+        {
+          "path": "src/Debugger/Report.elm",
+          "localSHA256": "2323bbd81acaaf3b6077d66fda4fd12a15b1d9c21e9571ab21f0b7c069a5d096",
+          "upstreamSHA256": "2323bbd81acaaf3b6077d66fda4fd12a15b1d9c21e9571ab21f0b7c069a5d096"
+        },
+        {
+          "path": "src/Elm/Kernel/Browser.js",
+          "localSHA256": "ae20f6a08a7926cc4f19290da136a4e39d9993076db91fa85f54d7d0f244eb0d",
+          "upstreamSHA256": "ae20f6a08a7926cc4f19290da136a4e39d9993076db91fa85f54d7d0f244eb0d"
+        },
+        {
+          "path": "src/Elm/Kernel/Browser.server.js",
+          "localSHA256": "e5e2a7ad542e5b222ac71f989e3f29a43035b44e6fcc8a7af0341585a35c9ee5",
+          "upstreamSHA256": "e5e2a7ad542e5b222ac71f989e3f29a43035b44e6fcc8a7af0341585a35c9ee5"
+        },
+        {
+          "path": "src/Elm/Kernel/Debugger.js",
+          "localSHA256": "c74f81f8684fbafeba01b90273f575b3a66fcf317c129074b1244a07845f0c97",
+          "upstreamSHA256": "c74f81f8684fbafeba01b90273f575b3a66fcf317c129074b1244a07845f0c97"
+        }
+      ],
+      "licenseSHA256": "d33481c057f582207d41425b1b3ecb740291f9f9c86b21e9a045cd3bea0f6ac8",
+      "metadataSHA256": "f50e12cb6b89a97ef18dde0c64fa92aa78469c412c19d64ca1c56931a1fbc52f",
+      "metadataLicense": "BSD-3-Clause",
+      "metadataName": "elm/browser",
+      "metadataVersion": "1.0.2",
+      "copyright": [
+        "Copyright 2017-present Evan Czaplicki",
+        "1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.",
+        "2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution."
+      ],
+      "notice": {
+        "path": "/home/charles/Warlock/implementation/warlock/release/notices/language/elm-browser-1.0.2.txt",
+        "sha256": "d33481c057f582207d41425b1b3ecb740291f9f9c86b21e9a045cd3bea0f6ac8",
+        "byteMatchesUpstream": true
+      }
+    },
+    {
+      "name": "elm/core",
+      "version": "1.0.5",
+      "passed": true,
+      "refURL": "https://api.github.com/repos/elm/core/git/ref/tags/1.0.5",
+      "tagObjectChain": [
+        {
+          "type": "tag",
+          "sha": "544f8c4999469d0a8f30aca602c72f9f7cbc90ba",
+          "url": "https://api.github.com/repos/elm/core/git/ref/tags/1.0.5",
+          "responseSHA256": "33862c2906ce08d361cf6375ed562b80b06db8b09dbfb37de8915e1108c31bb7"
+        },
+        {
+          "type": "tag-object",
+          "sha": "544f8c4999469d0a8f30aca602c72f9f7cbc90ba",
+          "url": "https://api.github.com/repos/elm/core/git/tags/544f8c4999469d0a8f30aca602c72f9f7cbc90ba",
+          "responseSHA256": "6e28d2bc49dc52895f7e748c896f9cf9d6a4519b28507d7823da81ef8e84efcb",
+          "target": "84f38891468e8e153fc85a9b63bdafd81b24664e",
+          "targetType": "commit"
+        }
+      ],
+      "commit": "84f38891468e8e153fc85a9b63bdafd81b24664e",
+      "archiveURL": "https://codeload.github.com/elm/core/tar.gz/84f38891468e8e153fc85a9b63bdafd81b24664e",
+      "archiveSHA256": "c5bdccf9246942e24ac0f7e51a710dd8421ce3b078893b9025243aa0592691bb",
+      "localPath": "/home/charles/Warlock/implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/core/1.0.5",
+      "localFileCount": 32,
+      "upstreamFileCount": 32,
+      "matchedFileCount": 32,
+      "localOnly": [],
+      "upstreamOnly": [],
+      "differing": [],
+      "unsupportedArchiveMembers": [],
+      "files": [
+        {
+          "path": "LICENSE",
+          "localSHA256": "431192066654a9060d29033714fa19eb6f7749031710957c55cf8b8d8bd246c3",
+          "upstreamSHA256": "431192066654a9060d29033714fa19eb6f7749031710957c55cf8b8d8bd246c3"
+        },
+        {
+          "path": "elm.json",
+          "localSHA256": "db814e9f01c211e63d3b86e2546e924aaba8be2ee2b12299ab81456e9a268993",
+          "upstreamSHA256": "db814e9f01c211e63d3b86e2546e924aaba8be2ee2b12299ab81456e9a268993"
+        },
+        {
+          "path": "src/Array.elm",
+          "localSHA256": "1f60be42ecfeaae7dab6e5f6887c49ecdc4089e4348b6f9694e095bd0f434eac",
+          "upstreamSHA256": "1f60be42ecfeaae7dab6e5f6887c49ecdc4089e4348b6f9694e095bd0f434eac"
+        },
+        {
+          "path": "src/Basics.elm",
+          "localSHA256": "649e41513480066f951eef04931a1caea463d3b052cb4a86182c6fcd87e980f2",
+          "upstreamSHA256": "649e41513480066f951eef04931a1caea463d3b052cb4a86182c6fcd87e980f2"
+        },
+        {
+          "path": "src/Bitwise.elm",
+          "localSHA256": "0b3c9aef28504672f08209b26e24390aa65ee8a7ae97e71ba84770ff56d25978",
+          "upstreamSHA256": "0b3c9aef28504672f08209b26e24390aa65ee8a7ae97e71ba84770ff56d25978"
+        },
+        {
+          "path": "src/Char.elm",
+          "localSHA256": "90db4547054916b2e71b364e3253f50f551e03627ce7e8ae53d1fb1ae667e387",
+          "upstreamSHA256": "90db4547054916b2e71b364e3253f50f551e03627ce7e8ae53d1fb1ae667e387"
+        },
+        {
+          "path": "src/Debug.elm",
+          "localSHA256": "1407cfff0d9882dc4b6557c7b99f8bbb6f19dbf345ae919c87daf0ca979fd4fe",
+          "upstreamSHA256": "1407cfff0d9882dc4b6557c7b99f8bbb6f19dbf345ae919c87daf0ca979fd4fe"
+        },
+        {
+          "path": "src/Dict.elm",
+          "localSHA256": "2afc5fcbc080b98903d9b05a98eb0efbf65265eb42ed076b2d442d9e4aca14e5",
+          "upstreamSHA256": "2afc5fcbc080b98903d9b05a98eb0efbf65265eb42ed076b2d442d9e4aca14e5"
+        },
+        {
+          "path": "src/Elm/JsArray.elm",
+          "localSHA256": "bfa0bc6ae1b5b5786f1224b9c0eb476380e9818af53523fdda4b0c30eb60a0d2",
+          "upstreamSHA256": "bfa0bc6ae1b5b5786f1224b9c0eb476380e9818af53523fdda4b0c30eb60a0d2"
+        },
+        {
+          "path": "src/Elm/Kernel/Basics.js",
+          "localSHA256": "30364c4d72f08888cb16a5ecdd6f04bcf66e6a7d5902ece907c9c01f1ca4d55d",
+          "upstreamSHA256": "30364c4d72f08888cb16a5ecdd6f04bcf66e6a7d5902ece907c9c01f1ca4d55d"
+        },
+        {
+          "path": "src/Elm/Kernel/Bitwise.js",
+          "localSHA256": "41a1e83136e4a5222bd11dd372c508b33815fe45c8795fe4e8c78a5acfeb35d8",
+          "upstreamSHA256": "41a1e83136e4a5222bd11dd372c508b33815fe45c8795fe4e8c78a5acfeb35d8"
+        },
+        {
+          "path": "src/Elm/Kernel/Char.js",
+          "localSHA256": "b77e57164741ab7e5e1b78cdfdeffb125c665eb748ea5d5ac62318435b7105b7",
+          "upstreamSHA256": "b77e57164741ab7e5e1b78cdfdeffb125c665eb748ea5d5ac62318435b7105b7"
+        },
+        {
+          "path": "src/Elm/Kernel/Debug.js",
+          "localSHA256": "8371e580481da98ca6ccaed2638053ffcee4bee04e2b5c8b86e2ea5c955fc462",
+          "upstreamSHA256": "8371e580481da98ca6ccaed2638053ffcee4bee04e2b5c8b86e2ea5c955fc462"
+        },
+        {
+          "path": "src/Elm/Kernel/JsArray.js",
+          "localSHA256": "888aa1150c7ef8b485f835de1cebc5f69056d547155e624a8aa77a18bf102dd3",
+          "upstreamSHA256": "888aa1150c7ef8b485f835de1cebc5f69056d547155e624a8aa77a18bf102dd3"
+        },
+        {
+          "path": "src/Elm/Kernel/List.js",
+          "localSHA256": "975268b3694443d66e3e68c4dac9a8bb20e6b84f324046b12222e51b64eaa687",
+          "upstreamSHA256": "975268b3694443d66e3e68c4dac9a8bb20e6b84f324046b12222e51b64eaa687"
+        },
+        {
+          "path": "src/Elm/Kernel/Platform.js",
+          "localSHA256": "569148a4e6b9371214da1e54285a6a4bfdd1cb42220886f2392a46d8f84e5863",
+          "upstreamSHA256": "569148a4e6b9371214da1e54285a6a4bfdd1cb42220886f2392a46d8f84e5863"
+        },
+        {
+          "path": "src/Elm/Kernel/Process.js",
+          "localSHA256": "50554f94246d84921109584196c7c43f90775ff4256ce4df363b44f7794065da",
+          "upstreamSHA256": "50554f94246d84921109584196c7c43f90775ff4256ce4df363b44f7794065da"
+        },
+        {
+          "path": "src/Elm/Kernel/Process.server.js",
+          "localSHA256": "823d7abb8d78ea9f88488d9b1eeb2d2b049544f05d8223862e7cef76c1c1db34",
+          "upstreamSHA256": "823d7abb8d78ea9f88488d9b1eeb2d2b049544f05d8223862e7cef76c1c1db34"
+        },
+        {
+          "path": "src/Elm/Kernel/Scheduler.js",
+          "localSHA256": "bdc18efab541e63edd65173fd995e35edc0fefe182fdb46c914b56734e2dbe6a",
+          "upstreamSHA256": "bdc18efab541e63edd65173fd995e35edc0fefe182fdb46c914b56734e2dbe6a"
+        },
+        {
+          "path": "src/Elm/Kernel/String.js",
+          "localSHA256": "037260f1df8da6007eb54f9464167ce59e9332b804013127a5e036f0919e266b",
+          "upstreamSHA256": "037260f1df8da6007eb54f9464167ce59e9332b804013127a5e036f0919e266b"
+        },
+        {
+          "path": "src/Elm/Kernel/Utils.js",
+          "localSHA256": "cc6c6c94d8e8c0ba0041ab09fabf6235c2cc4ab220d54257e6c7c4ffa7876017",
+          "upstreamSHA256": "cc6c6c94d8e8c0ba0041ab09fabf6235c2cc4ab220d54257e6c7c4ffa7876017"
+        },
+        {
+          "path": "src/List.elm",
+          "localSHA256": "79e513a52ab45ab98f3a5ad9c87779c2cb29519c5adcf91ab3b70fb5de234f41",
+          "upstreamSHA256": "79e513a52ab45ab98f3a5ad9c87779c2cb29519c5adcf91ab3b70fb5de234f41"
+        },
+        {
+          "path": "src/Maybe.elm",
+          "localSHA256": "35aa285d930a4da6d918717209f230667ab127d357f69d6ea3dbab31e567f5aa",
+          "upstreamSHA256": "35aa285d930a4da6d918717209f230667ab127d357f69d6ea3dbab31e567f5aa"
+        },
+        {
+          "path": "src/Platform.elm",
+          "localSHA256": "71d83575a51451379e81fc2712e925a5fc242286c5c971259ff1740274f7e527",
+          "upstreamSHA256": "71d83575a51451379e81fc2712e925a5fc242286c5c971259ff1740274f7e527"
+        },
+        {
+          "path": "src/Platform/Cmd.elm",
+          "localSHA256": "015c3c2469abeb1cfcf757017d4448c0e453da972fb846f93a91768488e7dfd5",
+          "upstreamSHA256": "015c3c2469abeb1cfcf757017d4448c0e453da972fb846f93a91768488e7dfd5"
+        },
+        {
+          "path": "src/Platform/Sub.elm",
+          "localSHA256": "fdb296916f45f3ed0096959e5d727b32a05e7459ef5cc95f00e76951221499dd",
+          "upstreamSHA256": "fdb296916f45f3ed0096959e5d727b32a05e7459ef5cc95f00e76951221499dd"
+        },
+        {
+          "path": "src/Process.elm",
+          "localSHA256": "a6af86afca70423a8ec9092c34f5b4b4247cb25dc67074864cdcab8c895d0455",
+          "upstreamSHA256": "a6af86afca70423a8ec9092c34f5b4b4247cb25dc67074864cdcab8c895d0455"
+        },
+        {
+          "path": "src/Result.elm",
+          "localSHA256": "1efa7ed54dfcfc31c35ffae770afc6b9b095e063b325d80f5e5550600ded746b",
+          "upstreamSHA256": "1efa7ed54dfcfc31c35ffae770afc6b9b095e063b325d80f5e5550600ded746b"
+        },
+        {
+          "path": "src/Set.elm",
+          "localSHA256": "765ce399f1ed4c92bb47fe0af07808875a2377fdc89f951d513b6f55e5744f85",
+          "upstreamSHA256": "765ce399f1ed4c92bb47fe0af07808875a2377fdc89f951d513b6f55e5744f85"
+        },
+        {
+          "path": "src/String.elm",
+          "localSHA256": "e7300d71211211e5e0b8b1b3bcd0d6407416a498bcfb682b26a8642fa965e4a0",
+          "upstreamSHA256": "e7300d71211211e5e0b8b1b3bcd0d6407416a498bcfb682b26a8642fa965e4a0"
+        },
+        {
+          "path": "src/Task.elm",
+          "localSHA256": "f546ccb07a58b26fcf791ed45a6236e80e45aaed00c29cbaeced5dcd6da034fa",
+          "upstreamSHA256": "f546ccb07a58b26fcf791ed45a6236e80e45aaed00c29cbaeced5dcd6da034fa"
+        },
+        {
+          "path": "src/Tuple.elm",
+          "localSHA256": "b970211ee185cf3184634702aa54f6ec33e2aafb8930caead713ee7929236b46",
+          "upstreamSHA256": "b970211ee185cf3184634702aa54f6ec33e2aafb8930caead713ee7929236b46"
+        }
+      ],
+      "licenseSHA256": "431192066654a9060d29033714fa19eb6f7749031710957c55cf8b8d8bd246c3",
+      "metadataSHA256": "db814e9f01c211e63d3b86e2546e924aaba8be2ee2b12299ab81456e9a268993",
+      "metadataLicense": "BSD-3-Clause",
+      "metadataName": "elm/core",
+      "metadataVersion": "1.0.5",
+      "copyright": [
+        "Copyright 2014-present Evan Czaplicki",
+        "1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.",
+        "2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution."
+      ],
+      "notice": {
+        "path": "/home/charles/Warlock/implementation/warlock/release/notices/language/elm-core-1.0.5.txt",
+        "sha256": "431192066654a9060d29033714fa19eb6f7749031710957c55cf8b8d8bd246c3",
+        "byteMatchesUpstream": true
+      }
+    },
+    {
+      "name": "elm/html",
+      "version": "1.0.0",
+      "passed": true,
+      "refURL": "https://api.github.com/repos/elm/html/git/ref/tags/1.0.0",
+      "tagObjectChain": [
+        {
+          "type": "tag",
+          "sha": "889b1a9d0e921507f78e1faeb07f0525940a4a4a",
+          "url": "https://api.github.com/repos/elm/html/git/ref/tags/1.0.0",
+          "responseSHA256": "ebf514a52abb8a3d70d096b533bece0957927a2db7205a7c9e4466566d889fef"
+        },
+        {
+          "type": "tag-object",
+          "sha": "889b1a9d0e921507f78e1faeb07f0525940a4a4a",
+          "url": "https://api.github.com/repos/elm/html/git/tags/889b1a9d0e921507f78e1faeb07f0525940a4a4a",
+          "responseSHA256": "2afeb835d8b2581b506e283f980d60c65ac5a20fbd40a004b9dfd5aebda49892",
+          "target": "97f28cb847d816a6684bca3eba21e7dbd705ec4c",
+          "targetType": "commit"
+        }
+      ],
+      "commit": "97f28cb847d816a6684bca3eba21e7dbd705ec4c",
+      "archiveURL": "https://codeload.github.com/elm/html/tar.gz/97f28cb847d816a6684bca3eba21e7dbd705ec4c",
+      "archiveSHA256": "45dd7110bcaae64b1246d6e78b3bc957785fdae75dc0805caf9d5e668c3b1a14",
+      "localPath": "/home/charles/Warlock/implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/html/1.0.0",
+      "localFileCount": 7,
+      "upstreamFileCount": 7,
+      "matchedFileCount": 7,
+      "localOnly": [],
+      "upstreamOnly": [],
+      "differing": [],
+      "unsupportedArchiveMembers": [],
+      "files": [
+        {
+          "path": "LICENSE",
+          "localSHA256": "ac3cefe90f27c4cc550da6eda13d18e1fadb0151b5d9dd99619ea1a10dc6eaad",
+          "upstreamSHA256": "ac3cefe90f27c4cc550da6eda13d18e1fadb0151b5d9dd99619ea1a10dc6eaad"
+        },
+        {
+          "path": "elm.json",
+          "localSHA256": "84dbb28e88ffbaf32e0e7ce11b8d14ccc97c0798b2d0945ed94668c12a0b9e25",
+          "upstreamSHA256": "84dbb28e88ffbaf32e0e7ce11b8d14ccc97c0798b2d0945ed94668c12a0b9e25"
+        },
+        {
+          "path": "src/Html.elm",
+          "localSHA256": "2e567c415bfeb2a743b0c6fee980383b3e378785247b3e930f77aa98e1dbb4d9",
+          "upstreamSHA256": "2e567c415bfeb2a743b0c6fee980383b3e378785247b3e930f77aa98e1dbb4d9"
+        },
+        {
+          "path": "src/Html/Attributes.elm",
+          "localSHA256": "b4ff344168f9199de2bfee5f8e3c1441c621692ddc99a5ce7e380f3014e6d367",
+          "upstreamSHA256": "b4ff344168f9199de2bfee5f8e3c1441c621692ddc99a5ce7e380f3014e6d367"
+        },
+        {
+          "path": "src/Html/Events.elm",
+          "localSHA256": "d633d86ecee6195d6bea6f7c8b49a5df3befecd8e9589745055dc5f30b0cef9e",
+          "upstreamSHA256": "d633d86ecee6195d6bea6f7c8b49a5df3befecd8e9589745055dc5f30b0cef9e"
+        },
+        {
+          "path": "src/Html/Keyed.elm",
+          "localSHA256": "346e9fe65945ccedc250e5d5cc739fe3505dc9be37bcb93fd311527964b55ff7",
+          "upstreamSHA256": "346e9fe65945ccedc250e5d5cc739fe3505dc9be37bcb93fd311527964b55ff7"
+        },
+        {
+          "path": "src/Html/Lazy.elm",
+          "localSHA256": "e6ec7de40a8c6318a055898a144e8cc56b2c9b32f7694be1bf223e98db6cd031",
+          "upstreamSHA256": "e6ec7de40a8c6318a055898a144e8cc56b2c9b32f7694be1bf223e98db6cd031"
+        }
+      ],
+      "licenseSHA256": "ac3cefe90f27c4cc550da6eda13d18e1fadb0151b5d9dd99619ea1a10dc6eaad",
+      "metadataSHA256": "84dbb28e88ffbaf32e0e7ce11b8d14ccc97c0798b2d0945ed94668c12a0b9e25",
+      "metadataLicense": "BSD-3-Clause",
+      "metadataName": "elm/html",
+      "metadataVersion": "1.0.0",
+      "copyright": [
+        "Copyright (c) 2014-present, Evan Czaplicki",
+        "* Redistributions of source code must retain the above copyright",
+        "copyright notice, this list of conditions and the following"
+      ],
+      "notice": {
+        "path": "/home/charles/Warlock/implementation/warlock/release/notices/language/elm-html-1.0.0.txt",
+        "sha256": "ac3cefe90f27c4cc550da6eda13d18e1fadb0151b5d9dd99619ea1a10dc6eaad",
+        "byteMatchesUpstream": true
+      }
+    },
+    {
+      "name": "elm/json",
+      "version": "1.1.3",
+      "passed": true,
+      "refURL": "https://api.github.com/repos/elm/json/git/ref/tags/1.1.3",
+      "tagObjectChain": [
+        {
+          "type": "tag",
+          "sha": "e8115dd58982f6aaf834811e507629026b16b317",
+          "url": "https://api.github.com/repos/elm/json/git/ref/tags/1.1.3",
+          "responseSHA256": "c9a9e754e1a596ae7de8a6a89419d214f43cb49e7f619b5a477e963d8b5c93af"
+        },
+        {
+          "type": "tag-object",
+          "sha": "e8115dd58982f6aaf834811e507629026b16b317",
+          "url": "https://api.github.com/repos/elm/json/git/tags/e8115dd58982f6aaf834811e507629026b16b317",
+          "responseSHA256": "8aa730718208a607d3c00ac5e2b464cd6e72e43fe947926342a10f3bc78d1200",
+          "target": "063aaf05e0dc5a642bacbdaae59c33dcfd116898",
+          "targetType": "commit"
+        }
+      ],
+      "commit": "063aaf05e0dc5a642bacbdaae59c33dcfd116898",
+      "archiveURL": "https://codeload.github.com/elm/json/tar.gz/063aaf05e0dc5a642bacbdaae59c33dcfd116898",
+      "archiveSHA256": "32a4dfb2493f38f5da357af97bd67450e312684a6e96976c2eb403002411dfcb",
+      "localPath": "/home/charles/Warlock/implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/json/1.1.3",
+      "localFileCount": 5,
+      "upstreamFileCount": 5,
+      "matchedFileCount": 5,
+      "localOnly": [],
+      "upstreamOnly": [],
+      "differing": [],
+      "unsupportedArchiveMembers": [],
+      "files": [
+        {
+          "path": "LICENSE",
+          "localSHA256": "ac3cefe90f27c4cc550da6eda13d18e1fadb0151b5d9dd99619ea1a10dc6eaad",
+          "upstreamSHA256": "ac3cefe90f27c4cc550da6eda13d18e1fadb0151b5d9dd99619ea1a10dc6eaad"
+        },
+        {
+          "path": "elm.json",
+          "localSHA256": "b6c2ce9de7bd7ed70de7a111e87c449ec3aa7819bf6c48953ce7221e776f7a3e",
+          "upstreamSHA256": "b6c2ce9de7bd7ed70de7a111e87c449ec3aa7819bf6c48953ce7221e776f7a3e"
+        },
+        {
+          "path": "src/Elm/Kernel/Json.js",
+          "localSHA256": "17d5536d6f22be1614a73837368e2a61439ebfa9dd0ff732880ee544baa41af2",
+          "upstreamSHA256": "17d5536d6f22be1614a73837368e2a61439ebfa9dd0ff732880ee544baa41af2"
+        },
+        {
+          "path": "src/Json/Decode.elm",
+          "localSHA256": "f68189c7da6b1fb23c08878296b0e55575480ac0632adfc6d7ba76f8617672ea",
+          "upstreamSHA256": "f68189c7da6b1fb23c08878296b0e55575480ac0632adfc6d7ba76f8617672ea"
+        },
+        {
+          "path": "src/Json/Encode.elm",
+          "localSHA256": "9cdf3d660f182aed97117205e72388e2bb0d0ad795b4749975fa2c639b808a2a",
+          "upstreamSHA256": "9cdf3d660f182aed97117205e72388e2bb0d0ad795b4749975fa2c639b808a2a"
+        }
+      ],
+      "licenseSHA256": "ac3cefe90f27c4cc550da6eda13d18e1fadb0151b5d9dd99619ea1a10dc6eaad",
+      "metadataSHA256": "b6c2ce9de7bd7ed70de7a111e87c449ec3aa7819bf6c48953ce7221e776f7a3e",
+      "metadataLicense": "BSD-3-Clause",
+      "metadataName": "elm/json",
+      "metadataVersion": "1.1.3",
+      "copyright": [
+        "Copyright (c) 2014-present, Evan Czaplicki",
+        "* Redistributions of source code must retain the above copyright",
+        "copyright notice, this list of conditions and the following"
+      ],
+      "notice": {
+        "path": "/home/charles/Warlock/implementation/warlock/release/notices/language/elm-json-1.1.3.txt",
+        "sha256": "ac3cefe90f27c4cc550da6eda13d18e1fadb0151b5d9dd99619ea1a10dc6eaad",
+        "byteMatchesUpstream": true
+      }
+    },
+    {
+      "name": "elm/time",
+      "version": "1.0.0",
+      "passed": true,
+      "refURL": "https://api.github.com/repos/elm/time/git/ref/tags/1.0.0",
+      "tagObjectChain": [
+        {
+          "type": "tag",
+          "sha": "dd3770389fd1b97a078df3d7300a93cf951d55ee",
+          "url": "https://api.github.com/repos/elm/time/git/ref/tags/1.0.0",
+          "responseSHA256": "78c03777bdf9064717db5ff91745c39f22f6a854d5c2a4fce3713e10984eaedb"
+        },
+        {
+          "type": "tag-object",
+          "sha": "dd3770389fd1b97a078df3d7300a93cf951d55ee",
+          "url": "https://api.github.com/repos/elm/time/git/tags/dd3770389fd1b97a078df3d7300a93cf951d55ee",
+          "responseSHA256": "8869913263c2dd9ad44cf9c4b86c086493bd5afaf5b3946ce4d15c1a79081080",
+          "target": "7b97ef513b289d7b88704fcfc5a0807f7eb4f5ce",
+          "targetType": "commit"
+        }
+      ],
+      "commit": "7b97ef513b289d7b88704fcfc5a0807f7eb4f5ce",
+      "archiveURL": "https://codeload.github.com/elm/time/tar.gz/7b97ef513b289d7b88704fcfc5a0807f7eb4f5ce",
+      "archiveSHA256": "37c863999e59587ef4af8a746e60f5a3418ba76ffbd8ad14a7c6f9c03f92764c",
+      "localPath": "/home/charles/Warlock/implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/time/1.0.0",
+      "localFileCount": 5,
+      "upstreamFileCount": 5,
+      "matchedFileCount": 5,
+      "localOnly": [],
+      "upstreamOnly": [],
+      "differing": [],
+      "unsupportedArchiveMembers": [],
+      "files": [
+        {
+          "path": "LICENSE",
+          "localSHA256": "a1c31dacffb1a470cb3aaf4844904114b9bc5ebf091e113b2d46bc4953c2c2ea",
+          "upstreamSHA256": "a1c31dacffb1a470cb3aaf4844904114b9bc5ebf091e113b2d46bc4953c2c2ea"
+        },
+        {
+          "path": "elm.json",
+          "localSHA256": "03445516f62e4a779b7267e25f053732f57bda580b871f99a3e53a7979b2dfa4",
+          "upstreamSHA256": "03445516f62e4a779b7267e25f053732f57bda580b871f99a3e53a7979b2dfa4"
+        },
+        {
+          "path": "src/Elm/Kernel/Time.js",
+          "localSHA256": "cc59eff642bd2dc98ffde4a99ed0c682821e09a4601c083338d442b15ccd5cb1",
+          "upstreamSHA256": "cc59eff642bd2dc98ffde4a99ed0c682821e09a4601c083338d442b15ccd5cb1"
+        },
+        {
+          "path": "src/Elm/Kernel/Time.server.js",
+          "localSHA256": "888d36edbd6d8fe5e69a3802c56f93a1341f0dcfa14e9be1ab10de3c188602c8",
+          "upstreamSHA256": "888d36edbd6d8fe5e69a3802c56f93a1341f0dcfa14e9be1ab10de3c188602c8"
+        },
+        {
+          "path": "src/Time.elm",
+          "localSHA256": "e4c55a925c664c25b8ffcd1510c827793d670ec159dc18af3ebd7f642ee4e638",
+          "upstreamSHA256": "e4c55a925c664c25b8ffcd1510c827793d670ec159dc18af3ebd7f642ee4e638"
+        }
+      ],
+      "licenseSHA256": "a1c31dacffb1a470cb3aaf4844904114b9bc5ebf091e113b2d46bc4953c2c2ea",
+      "metadataSHA256": "03445516f62e4a779b7267e25f053732f57bda580b871f99a3e53a7979b2dfa4",
+      "metadataLicense": "BSD-3-Clause",
+      "metadataName": "elm/time",
+      "metadataVersion": "1.0.0",
+      "copyright": [
+        "Copyright (c) 2018-present, Evan Czaplicki",
+        "* Redistributions of source code must retain the above copyright",
+        "copyright notice, this list of conditions and the following"
+      ],
+      "notice": {
+        "path": "/home/charles/Warlock/implementation/warlock/release/notices/language/elm-time-1.0.0.txt",
+        "sha256": "a1c31dacffb1a470cb3aaf4844904114b9bc5ebf091e113b2d46bc4953c2c2ea",
+        "byteMatchesUpstream": true
+      }
+    },
+    {
+      "name": "elm/url",
+      "version": "1.0.0",
+      "passed": true,
+      "refURL": "https://api.github.com/repos/elm/url/git/ref/tags/1.0.0",
+      "tagObjectChain": [
+        {
+          "type": "tag",
+          "sha": "6e859aa540dcfc1da0de6986a541750d51f94e40",
+          "url": "https://api.github.com/repos/elm/url/git/ref/tags/1.0.0",
+          "responseSHA256": "d7c1ca9d3a88677fc23198d966c4bc9a1222f159bf16eaf005d2c423ed83595d"
+        },
+        {
+          "type": "tag-object",
+          "sha": "6e859aa540dcfc1da0de6986a541750d51f94e40",
+          "url": "https://api.github.com/repos/elm/url/git/tags/6e859aa540dcfc1da0de6986a541750d51f94e40",
+          "responseSHA256": "84f1c5ca5c8ce276f6855d602616df1edd1b7abc000cd71616fbbcbc752264ee",
+          "target": "384b1dcf84065a500a71402ec367f3982b35093d",
+          "targetType": "commit"
+        }
+      ],
+      "commit": "384b1dcf84065a500a71402ec367f3982b35093d",
+      "archiveURL": "https://codeload.github.com/elm/url/tar.gz/384b1dcf84065a500a71402ec367f3982b35093d",
+      "archiveSHA256": "d6077c74bfd69b259215bc4a6e26e9104a896a15dbdbb56d35ab179ee0603413",
+      "localPath": "/home/charles/Warlock/implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/url/1.0.0",
+      "localFileCount": 8,
+      "upstreamFileCount": 8,
+      "matchedFileCount": 8,
+      "localOnly": [],
+      "upstreamOnly": [],
+      "differing": [],
+      "unsupportedArchiveMembers": [],
+      "files": [
+        {
+          "path": "LICENSE",
+          "localSHA256": "1c818d8c5f129ee90e6a855c9edd16d9c6bd25e2959b1aeaeb8626e7c539cc9b",
+          "upstreamSHA256": "1c818d8c5f129ee90e6a855c9edd16d9c6bd25e2959b1aeaeb8626e7c539cc9b"
+        },
+        {
+          "path": "elm.json",
+          "localSHA256": "b2c089bbe199a8431fd53635a55fdc10e7ee4bb4a993064688f74812dc94dc5e",
+          "upstreamSHA256": "b2c089bbe199a8431fd53635a55fdc10e7ee4bb4a993064688f74812dc94dc5e"
+        },
+        {
+          "path": "src/Elm/Kernel/Url.js",
+          "localSHA256": "56250d3bec1cbc6c8974514ea56040043b237b058cb8cdad54a8b32e33676922",
+          "upstreamSHA256": "56250d3bec1cbc6c8974514ea56040043b237b058cb8cdad54a8b32e33676922"
+        },
+        {
+          "path": "src/Url.elm",
+          "localSHA256": "c1dad01869f5a4fe29406b3409508ec4754bf8125cc01ef5106b2e369c5c647c",
+          "upstreamSHA256": "c1dad01869f5a4fe29406b3409508ec4754bf8125cc01ef5106b2e369c5c647c"
+        },
+        {
+          "path": "src/Url/Builder.elm",
+          "localSHA256": "e4922467375bcedd187bbd811b5dfd49b7f9b6a08063b7ef411f2ad0aa6e8dad",
+          "upstreamSHA256": "e4922467375bcedd187bbd811b5dfd49b7f9b6a08063b7ef411f2ad0aa6e8dad"
+        },
+        {
+          "path": "src/Url/Parser.elm",
+          "localSHA256": "0a42ac79944c28778c0e32510cd089e7d80e6d202937238f829d4de2d942d028",
+          "upstreamSHA256": "0a42ac79944c28778c0e32510cd089e7d80e6d202937238f829d4de2d942d028"
+        },
+        {
+          "path": "src/Url/Parser/Internal.elm",
+          "localSHA256": "91cec106bc5eb47ae5b1ff86ac1589989785080805bc4e38dd187ec22dbbfc26",
+          "upstreamSHA256": "91cec106bc5eb47ae5b1ff86ac1589989785080805bc4e38dd187ec22dbbfc26"
+        },
+        {
+          "path": "src/Url/Parser/Query.elm",
+          "localSHA256": "2b14aab77b663bef2b9434fccc3ca6c102990b9cf87dea650ae8341a9325bf4e",
+          "upstreamSHA256": "2b14aab77b663bef2b9434fccc3ca6c102990b9cf87dea650ae8341a9325bf4e"
+        }
+      ],
+      "licenseSHA256": "1c818d8c5f129ee90e6a855c9edd16d9c6bd25e2959b1aeaeb8626e7c539cc9b",
+      "metadataSHA256": "b2c089bbe199a8431fd53635a55fdc10e7ee4bb4a993064688f74812dc94dc5e",
+      "metadataLicense": "BSD-3-Clause",
+      "metadataName": "elm/url",
+      "metadataVersion": "1.0.0",
+      "copyright": [
+        "Copyright (c) 2016, Evan Czaplicki",
+        "* Redistributions of source code must retain the above copyright notice, this",
+        "* Redistributions in binary form must reproduce the above copyright notice,"
+      ],
+      "notice": {
+        "path": "/home/charles/Warlock/implementation/warlock/release/notices/language/elm-url-1.0.0.txt",
+        "sha256": "1c818d8c5f129ee90e6a855c9edd16d9c6bd25e2959b1aeaeb8626e7c539cc9b",
+        "byteMatchesUpstream": true
+      }
+    },
+    {
+      "name": "elm/virtual-dom",
+      "version": "1.0.3",
+      "passed": true,
+      "refURL": "https://api.github.com/repos/elm/virtual-dom/git/ref/tags/1.0.3",
+      "tagObjectChain": [
+        {
+          "type": "tag",
+          "sha": "48ee0251916e7b6854610c4f457e155bfa38d822",
+          "url": "https://api.github.com/repos/elm/virtual-dom/git/ref/tags/1.0.3",
+          "responseSHA256": "fc8dfc91b78e0605e1d2d6a77b99bc49e230b959c422de5b355bef226618f790"
+        },
+        {
+          "type": "tag-object",
+          "sha": "48ee0251916e7b6854610c4f457e155bfa38d822",
+          "url": "https://api.github.com/repos/elm/virtual-dom/git/tags/48ee0251916e7b6854610c4f457e155bfa38d822",
+          "responseSHA256": "d9f01fb9b97d5e20fb909cc08b6ccb2ab8a2793352018d765a1ebe2e2b738f21",
+          "target": "962f55501704292d8b2b66695fc1f587b5185ef7",
+          "targetType": "commit"
+        }
+      ],
+      "commit": "962f55501704292d8b2b66695fc1f587b5185ef7",
+      "archiveURL": "https://codeload.github.com/elm/virtual-dom/tar.gz/962f55501704292d8b2b66695fc1f587b5185ef7",
+      "archiveSHA256": "14d1083fa064c25041e7e64381cad22e07fe535db77271349bb487f4eda83048",
+      "localPath": "/home/charles/Warlock/implementation/warlock-preview-provider-v143/qa/toolchain/elm-home/0.19.2/packages/elm/virtual-dom/1.0.3",
+      "localFileCount": 5,
+      "upstreamFileCount": 5,
+      "matchedFileCount": 5,
+      "localOnly": [],
+      "upstreamOnly": [],
+      "differing": [],
+      "unsupportedArchiveMembers": [],
+      "files": [
+        {
+          "path": "LICENSE",
+          "localSHA256": "c63bca41c3a19de3b16ede979ca1dfeb2ce0db93a62f4555dbb61ae3ee777425",
+          "upstreamSHA256": "c63bca41c3a19de3b16ede979ca1dfeb2ce0db93a62f4555dbb61ae3ee777425"
+        },
+        {
+          "path": "elm.json",
+          "localSHA256": "f00299c02b546533702cacd34ed0eef09bf2bbba138585bb86a79e6b0fd11a83",
+          "upstreamSHA256": "f00299c02b546533702cacd34ed0eef09bf2bbba138585bb86a79e6b0fd11a83"
+        },
+        {
+          "path": "src/Elm/Kernel/VirtualDom.js",
+          "localSHA256": "9246c8591d9b511468e8257b60c8495020164a5fd58f21d523722775292095db",
+          "upstreamSHA256": "9246c8591d9b511468e8257b60c8495020164a5fd58f21d523722775292095db"
+        },
+        {
+          "path": "src/Elm/Kernel/VirtualDom.server.js",
+          "localSHA256": "68c145d1f3ae40618e023b4109edc3f474f12c83af9ad5a3cfa2232f7cfd0bd9",
+          "upstreamSHA256": "68c145d1f3ae40618e023b4109edc3f474f12c83af9ad5a3cfa2232f7cfd0bd9"
+        },
+        {
+          "path": "src/VirtualDom.elm",
+          "localSHA256": "85f06afbc5f418f69c424ecc9b61969cc460444f97987054fb14d2a944d3bba8",
+          "upstreamSHA256": "85f06afbc5f418f69c424ecc9b61969cc460444f97987054fb14d2a944d3bba8"
+        }
+      ],
+      "licenseSHA256": "c63bca41c3a19de3b16ede979ca1dfeb2ce0db93a62f4555dbb61ae3ee777425",
+      "metadataSHA256": "f00299c02b546533702cacd34ed0eef09bf2bbba138585bb86a79e6b0fd11a83",
+      "metadataLicense": "BSD-3-Clause",
+      "metadataName": "elm/virtual-dom",
+      "metadataVersion": "1.0.3",
+      "copyright": [
+        "Copyright (c) 2016-present, Evan Czaplicki",
+        "* Redistributions of source code must retain the above copyright",
+        "copyright notice, this list of conditions and the following"
+      ],
+      "notice": {
+        "path": "/home/charles/Warlock/implementation/warlock/release/notices/language/elm-virtual-dom-1.0.3.txt",
+        "sha256": "c63bca41c3a19de3b16ede979ca1dfeb2ce0db93a62f4555dbb61ae3ee777425",
+        "byteMatchesUpstream": true
+      }
+    }
+  ]
+}

@@ -97,3 +97,26 @@ accepted Omarchy fallback and main-session deployment remain required. Preparing
 this archive neither activates a shell nor restarts the compositor. Use the
 [offline recovery contract](RECOVERY.md) when preparing the eventual reviewed
 component launch and rollback routes.
+
+For a reviewed derivative native tuple, `capture` additionally accepts both
+`--native-tuple /absolute/tuple.json` and `--native-tuple-sha256 SHA256`.
+Without these flags the original historical pair remains the default. The
+selected tuple must describe the core, authority plugin, Aquamarine, host,
+source/build reports and exact private loader alias; their recorded inputs are
+checked and captured. The new lock preserves the selected host and Elm asset
+identities and refuses a rebuild that changes them. Capture is not acceptance:
+current native build receipts do not attest every original core/Aquamarine
+compiler, source and dependency input, and complete provenance remains open.
+Unknown redistribution dispositions continue to block the actual package.
+
+Use the unchanged protected launcher from this checkout, with
+`PYTHONDONTWRITEBYTECODE=1` and `PYTHONPATH=/home/charles/Warlock/window-integration-qa`.
+Capture a *new* reviewed lock; never overwrite the frozen historical lock. Run
+`qa/check-release-tuple.py /absolute/tuple.json SHA256` through that same
+launcher to check the actual selection and refusals. After independent review,
+use the resulting reviewed lock hash for `release_repro.py run`; two clean
+isolated offline builds and a full SBOM/notice review remain separate gates.
+The capture environment must resolve both the selected core and plugin to the
+selected Aquamarine SONAME alias. Set the reviewed private library search path
+before capture; it is locked and must be identical during verify/build. A
+same-SONAME system library, changed alias or changed resolution is refused.

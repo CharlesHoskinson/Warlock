@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "recordedUTC": "2026-10-28T22:24:32.006505+00:00",
+  "scope": "Nine component-specific source and accompanying-notice reviews for the actual offline v4 A staged package. No whole-project grant or release acceptance.",
+  "reviewedComponents": [
+    "native-udis86-static",
+    "native-glaze-headers",
+    "elm-browser-1.0.2",
+    "elm-core-1.0.5",
+    "elm-html-1.0.0",
+    "elm-json-1.1.3",
+    "elm-time-1.0.0",
+    "elm-url-1.0.0",
+    "elm-virtual-dom-1.0.3"
+  ],
+  "continuingConditions": [
+    "Keep complete copyright, conditions, permission notices and disclaimers with source and binary distributions as applicable.",
+    "Respect the existing non-endorsement conditions; no extra permission or project grant is inferred.",
+    "Recheck these identities if inputs change; final archive/package review remains mandatory."
+  ],
+  "sourceComparison": {
+    "path": "implementation/warlock/release/elm-upstream-source-20261028.json",
+    "sha256": "6967b373112615d2f2956d1fa7e646534adb7ac135e3c8da9aada977508c2189"
+  },
+  "independentEvidence": [
+    {
+      "path": "implementation/warlock/qa/evidence/current-tuple-release-20261028/native-notice-review.md",
+      "sha256": "d4e9f98bee177629919dd0e1307b0c948ac5efd2ec8121cdb1cb7e408e95e281"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/current-tuple-release-20261028/elm-package-review.md",
+      "sha256": "c6a503520c9f2fb4c53af1a7cb70f3587d9b3954bacd2634ab9bbeed14f36045"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/current-tuple-release-20261028/elm-package-review.json",
+      "sha256": "b39e7d830abad3bc4b6b034e0f80d28dcae2c57165db26fabf34fb206701444a"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/current-tuple-release-20261028/native-dependency-witness.txt",
+      "sha256": "4cb31d191baae01de5e234d7cdfb7c838bd23c5a34afd9ffd3a993d391e7f934"
+    }
+  ],
+  "stagedComplianceReport": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/offline-pair-v4/A/artifacts/compliance-report.json",
+    "sha256": "b85d9a608ae3b939cf9347a68b928530bd8c6ea1107ee50c699d7c7d9f30b94e"
+  },
+  "limits": [
+    "No claim that particular header/package bytes survive compilation.",
+    "Compiler/runtime provenance, project grant, other components and full delivery acceptance remain separate.",
+    "Build B did not run; no two-distributable hash comparison or release approval."
+  ]
+}

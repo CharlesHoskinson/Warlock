@@ -17,6 +17,7 @@ import stat
 import subprocess
 import sys
 import tarfile
+import tempfile
 from typing import NamedTuple
 
 PACKAGES = ('gtk+-3.0', 'webkit2gtk-4.1', 'gtk-layer-shell-0',
@@ -35,7 +36,7 @@ ENV_KEYS = ('PATH', 'LD_LIBRARY_PATH', 'LD_PRELOAD', 'CPATH', 'C_INCLUDE_PATH',
 
 
 def require_scope():
-    sys.path.insert(0, '/home/hoskinson/window-integration-qa')
+    sys.path.insert(0, str(Path(__file__).resolve().parents[3] / 'window-integration-qa'))
     from qa_launch import require_qa_scope
     return require_qa_scope()
 
@@ -120,7 +121,7 @@ def add(files, path, role, expected=None):
     files[name] = row
 
 
-def add_dynamic(files, path):
+def add_dynamic(files, path, required_aquamarine=None):
     # ldd can print a canonical /usr/lib64 loader path even when PT_INTERP
     # actually requests /lib64. Retain the executable's real lookup spelling.
     with Path(path).open('rb') as stream:
@@ -144,8 +145,50 @@ def add_dynamic(files, path):
         return
     if result.returncode or 'not found' in result.stdout:
         raise ChangedInput('Unresolved dynamic dependency: ' + str(path))
+    if required_aquamarine is not None:
+        found = re.findall(r'^\s*libaquamarine\.so\.14\s*=>\s*(/\S+)\s+\(', result.stdout, re.MULTILINE)
+        if found != [str(required_aquamarine)]:
+            raise ChangedInput('Native loader did not select the reviewed Aquamarine alias: ' + str(path))
     for name in re.findall(r'(?:=>\s+|^\s*)(/\S+)\s+\(', result.stdout, re.MULTILINE):
         add(files, name, 'dynamic-library')
+
+
+def native_link_inputs(files, candidate, tools, flags):
+    """Ask the selected linker which files it opens with the host link flags.
+
+    DT_NEEDED alone omits linker-script inputs such as libmvec.so.1 in an
+    AS_NEEDED group. The disposable object is a probe, never a package input;
+    the actual isolated host rebuild still establishes whether closure holds.
+    """
+    source = 'int main() { return 0; }\n'
+    inputs = set()
+    with tempfile.TemporaryDirectory(prefix='warlock-link-inputs-') as temporary:
+        directory = Path(temporary).resolve()
+        unit = directory / 'probe.cpp'
+        unit.write_text(source)
+        obj = directory / 'probe.o'
+        run([tools['g++']['path'], '-c', str(unit), '-o', str(obj)], cwd=candidate)
+        trace = run([tools['g++']['path'], str(obj), '-o', str(directory / 'probe'),
+                     '-Wl,--trace', *flags], cwd=candidate)
+        for line in trace.splitlines():
+            path = Path(line.strip())
+            if not path.is_absolute() or not path.is_file():
+                raise ChangedInput('Unrecognized native linker input: ' + line)
+            resolved = path.resolve()
+            if resolved.is_relative_to(directory):
+                if resolved != obj:
+                    raise ChangedInput('Unexpected probe linker input: ' + line)
+                continue
+            inputs.add(str(resolved))
+    if not inputs:
+        raise ChangedInput('Native linker trace contained no retained inputs')
+    for name in sorted(inputs):
+        add(files, name, 'host-link-trace-input')
+        add_dynamic(files, name)
+    return {'driver': tools['g++']['path'], 'flags': flags,
+            'probeSourceSHA256': hashlib.sha256(source.encode()).hexdigest(),
+            'inputs': sorted(inputs),
+            'scope': 'Same-driver/flags probe; actual host build closure remains separately verified.'}
 
 
 def safe_relative(root, name):
@@ -159,8 +202,10 @@ def safe_relative(root, name):
     return result
 
 
-def capture(repo):
+def capture(repo, native_tuple=None, native_tuple_sha256=None):
     require_scope()
+    if bool(native_tuple) != bool(native_tuple_sha256):
+        raise ChangedInput('Both --native-tuple and --native-tuple-sha256 are required')
     # Exercise CLI initialization before collecting Python's lazy dependencies;
     # QA may call capture() directly while an isolated build enters main().
     argparse.ArgumentParser(description=__doc__).parse_args([])
@@ -203,7 +248,10 @@ def capture(repo):
     tools['elm'] = {'path': str(compiler), 'version': run([str(compiler), '--version']).strip()}
     # Pin the installed Quint distribution and its Node dependencies, not only its
     # small shebang entry. The build's decisive replay uses the pinned Node tool.
-    quint_modules = Path(tools['quint']['path']).parent.parent
+    quint_entry = Path(tools['quint']['path']).resolve(strict=True)
+    quint_modules = next((p for p in quint_entry.parents if p.name == 'node_modules'), None)
+    if quint_modules is None:
+        raise ChangedInput('Quint executable has no identifiable Node dependency tree')
     for path in sorted(quint_modules.rglob('*')):
         if path.is_file() and not path.is_symlink():
             add(files, path, 'quint-distribution')
@@ -234,29 +282,41 @@ def capture(repo):
         add(files, path, 'host-link-input')
         if name == 'libatomic.so':
             add_dynamic(files, path)
-    pair_path = candidate / 'qa/current-native-pair.json'
-    pair_meta = read(pair_path)
-    add(files, pair_path, 'native-pair-manifest')
-    reports = [pair_meta['authorityReport'], pair_meta['sceneCoreReport']['report'],
-               pair_meta['outputTransportReport']['report']]
-    report_hashes = [pair_meta['authorityReportSHA256'], pair_meta['sceneCoreReport']['reportSHA256'],
-                     pair_meta['outputTransportReport']['reportSHA256']]
-    loader_aliases = {}
-    for name, expected in zip(reports, report_hashes):
-        path = repo / name
-        add(files, path, 'native-build-provenance', expected)
-        report = read(path)
-        if not report['passed']:
-            raise ChangedInput('Native input has a failed build: ' + name)
-        for field in ('dependencies', 'linkDependencies', 'retainedObjects', 'linkLibraries'):
-            for artifact, expected_hash in report.get(field, {}).items():
-                add(files, artifact, 'native-source-or-artifact', expected_hash)
-        if 'loaderSymlink' in report:
-            link = report['loaderSymlink']
-            loader_aliases[Path(link['path']).name] = Path(pair_meta['pair']['aquamarine']['path']).name
-    for row in pair_meta['pair'].values():
-        add(files, row['path'], 'retained-native-pair', row['sha256'])
-        add_dynamic(files, row['path'])
+    tuple_reference = None
+    if native_tuple:
+        import release_tuple
+        pair, loader_aliases, tuple_reference = release_tuple.capture(
+            repo, native_tuple, native_tuple_sha256,
+            lambda path, role, expected=None: add(files, path, role, expected), read, sha)
+        alias_name = next(iter(loader_aliases))
+        alias = Path(pair['aquamarine']['path']).parent / alias_name
+        for role, row in pair.items():
+            add_dynamic(files, row['path'], alias if role in ('core', 'plugin') else None)
+    else:
+        pair_path = candidate / 'qa/current-native-pair.json'
+        pair_meta = read(pair_path)
+        add(files, pair_path, 'native-pair-manifest')
+        reports = [pair_meta['authorityReport'], pair_meta['sceneCoreReport']['report'],
+                   pair_meta['outputTransportReport']['report']]
+        report_hashes = [pair_meta['authorityReportSHA256'], pair_meta['sceneCoreReport']['reportSHA256'],
+                         pair_meta['outputTransportReport']['reportSHA256']]
+        loader_aliases = {}
+        for name, expected in zip(reports, report_hashes):
+            path = repo / name
+            add(files, path, 'native-build-provenance', expected)
+            report = read(path)
+            if not report['passed']:
+                raise ChangedInput('Native input has a failed build: ' + name)
+            for field in ('dependencies', 'linkDependencies', 'retainedObjects', 'linkLibraries'):
+                for artifact, expected_hash in report.get(field, {}).items():
+                    add(files, artifact, 'native-source-or-artifact', expected_hash)
+            if 'loaderSymlink' in report:
+                link = report['loaderSymlink']
+                loader_aliases[Path(link['path']).name] = Path(pair_meta['pair']['aquamarine']['path']).name
+        for row in pair_meta['pair'].values():
+            add(files, row['path'], 'retained-native-pair', row['sha256'])
+            add_dynamic(files, row['path'])
+        pair = pair_meta['pair']
     for row in tools.values():
         add_dynamic(files, row['path'])
     # Explicit -l inputs resolve through the captured link dependency set; name
@@ -269,6 +329,7 @@ def capture(repo):
                 raise ChangedInput('Unresolved host library: ' + name)
             add(files, path, 'host-link-library')
             add_dynamic(files, path)
+    link_trace = native_link_inputs(files, candidate, tools, flags)
     for module in list(sys.modules.values()):
         for attribute in ('__file__', '__cached__'):
             filename = getattr(module, attribute, None)
@@ -280,21 +341,27 @@ def capture(repo):
             add(files, path, 'build-runtime-data')
     for path in Path('/etc/ld.so.conf.d').glob('*.conf'):
         add(files, path, 'build-runtime-data')
-    for path in (Path('/home/hoskinson/window-integration-qa/qa_launch.py'),
-                 Path('/home/hoskinson/window-integration-qa/qa_run.py')):
+    for path in (repo / 'window-integration-qa/qa_launch.py',
+                 repo / 'window-integration-qa/qa_run.py'):
         add(files, path, 'protected-launcher')
+    locked_links = path_links(files)
+    if tuple_reference and locked_links.get(tuple_reference['loaderAlias']['path']) != tuple_reference['loaderAlias']['target']:
+        raise ChangedInput('Native loader alias changed during capture')
     return {'schema': 1, 'candidate': str(candidate), 'sourceRoot': str(repo), 'sources': sorted(sources),
             'tools': tools, 'elmHome': str(held / toolchain['elmHome']),
             'elmPackages': toolchain['elmDependencies'], 'nativePackages': pkg_versions,
-            'flags': flags, 'hostDependencies': dependencies, 'nativePair': pair_meta['pair'],
+            'flags': flags, 'hostDependencies': dependencies, 'nativePair': pair,
+            'nativeLinkInputTrace': link_trace,
+            **({'nativeTupleReference': tuple_reference} if tuple_reference else {}),
             'loaderAliases': loader_aliases,
             'environment': {key: os.environ.get(key) for key in ENV_KEYS}, 'inputs': dict(sorted(files.items())),
-            'symlinks': path_links(files),
+            'symlinks': locked_links,
             'scope': 'Fixed Elm assets/native host rebuild with retained exact core/plugin/Aquamarine artifacts.',
             'nativeAcceptance': False, 'fullReleaseAccepted': False,
             'missingObservations': ['Complete compiler/build-tool upstream source provenance and redistribution disposition.',
                 'Two clean isolated offline builds and distributable comparison.',
-                'Native acceptance of a newly compiled host and full main-session deployment.']}
+                'Native acceptance of a newly compiled host and full main-session deployment.'] +
+                ([tuple_reference['missingObservation']] if tuple_reference else [])}
 
 
 def verify(manifest):
@@ -309,6 +376,9 @@ def verify(manifest):
     for name, target in manifest.get('symlinks', {}).items():
         if not Path(name).is_symlink() or os.readlink(name) != target:
             raise ChangedInput('Locked filesystem link changed: ' + name)
+    reference = manifest.get('nativeTupleReference')
+    if reference and manifest.get('symlinks', {}).get(reference['loaderAlias']['path']) != reference['loaderAlias']['target']:
+        raise ChangedInput('Selected tuple loader alias missing from lock')
     candidate = Path(manifest['candidate'])
     if native_dependencies(candidate, manifest['tools'], manifest['flags']) != manifest['hostDependencies']:
         raise ChangedInput('Native header resolution changed')
@@ -488,13 +558,24 @@ def build(manifest, output):
         execute('compile-' + module, [tools['elm']['path'], 'make', 'src/' + module + '.elm',
                                      '--optimize', '--output=assets/' + asset + '.js'])
     flags = manifest['flags']; objects = []
+    reference = manifest.get('nativeTupleReference')
+    # Compile the verified staged sources while preserving the selected host's
+    # __FILE__ strings, which were produced with absolute source filenames.
+    macro_flags = (['-fmacro-prefix-map=native/=' + reference['hostSourcePrefix']]
+                   if reference else [])
     for name, compiler, standard in [('shared-host.c', 'cc', 'c11')] + [(name, 'g++', 'c++20') for name in UNITS]:
         obj = output / (name + '.o'); objects.append(str(obj))
         execute('compile-' + name, [tools[compiler]['path'], '-std=' + standard, '-O2',
-            '-Wall', '-Wextra', '-Werror', '-Wno-deprecated-declarations', '-MD',
+            '-Wall', '-Wextra', '-Werror', '-Wno-deprecated-declarations', *macro_flags, '-MD',
             '-MF', str(output / (name + '.d')), '-c', 'native/' + name, '-o', str(obj), *flags])
     execute('link-host', [tools['g++']['path'], *objects, '-o', str(output / 'elm-host'), *flags])
     execute('host-self-test', [str(output / 'elm-host'), '--self-test'])
+    if reference and sha(output / 'elm-host') != reference['hostSHA256']:
+        raise ChangedInput('Rebuilt host differs from selected tuple')
+    if reference:
+        for name, expected in reference['assets'].items():
+            if sha(workspace / name) != expected:
+                raise ChangedInput('Rebuilt asset differs from selected tuple: ' + name)
     # Keep a real typed reducer regression in the release build, using the same
     # pinned source/compiler/Node tuple rather than only syntax-checking assets.
     elm_info = read(workspace / 'elm.json'); elm_info['source-directories'] = ['src', 'qa']
@@ -568,6 +649,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest='operation', required=True)
     cap = sub.add_parser('capture'); cap.add_argument('--repo', required=True); cap.add_argument('--output', required=True)
+    cap.add_argument('--native-tuple'); cap.add_argument('--native-tuple-sha256')
     for name in ('verify', 'build'):
         item = sub.add_parser(name); item.add_argument('--lock', required=True); item.add_argument('--sha256', required=True)
         if name == 'build':
@@ -575,7 +657,7 @@ def main(argv=None):
     args = parser.parse_args(argv)
     try:
         if args.operation == 'capture':
-            value = capture(args.repo)
+            value = capture(args.repo, args.native_tuple, args.native_tuple_sha256)
             with Path(args.output).open('x') as stream:
                 stream.write(json.dumps(value, indent=2) + '\n')
             print(json.dumps({'passed': True, 'inputs': len(value['inputs']), 'lockSHA256': sha(args.output)}))
@@ -589,7 +671,7 @@ def main(argv=None):
                 result = build(manifest, args.output)
                 print(json.dumps({'passed': result['passed'], 'report': str(Path(args.output) / 'report.json')}))
         return 0
-    except (ChangedInput, OSError, ValueError) as error:
+    except (ChangedInput, OSError, ValueError, KeyError, TypeError, IndexError) as error:
         print(json.dumps({'passed': False, 'error': str(error)}))
         return 2
 

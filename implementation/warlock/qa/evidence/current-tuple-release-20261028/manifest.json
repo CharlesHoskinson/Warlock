@@ -1,0 +1,301 @@
+{
+  "schema": 1,
+  "atUTC": "2026-10-28T22:00:48.215594+00:00",
+  "requirements": [
+    "ELM-DEL-003",
+    "ELM-DEL-004"
+  ],
+  "disposition": "partial-observed-not-accepted",
+  "scenarioAccepted": false,
+  "requirementAccepted": false,
+  "releaseAccepted": false,
+  "sourceBaseRevision": "f0ad0954146bb03a5e8c7fd45a91ee6dcb89c7ea",
+  "currentWorkingSourceHashes": {
+    "implementation/warlock/adapter/release_builder.py": "43dfc887228de8a755964a0aaa8b645d9fb8f4a4a4a288b7ff48d7b1844d630a",
+    "implementation/warlock/adapter/release_tuple.py": "4de13ed2c11e37261bb443a9506b5026aba00e785c2539ec4745960badcdd9cc",
+    "implementation/warlock/qa/check-release-tuple.py": "a94a8ca32cacbd0de8c36aa4de1a4504f5c36ebeeac660fee0cf74aba2baa19d",
+    "implementation/warlock/RELEASE.md": "78992e6f3f6e92b5bf64cbc95a39207dcf6b04c1613e6d8c6feadb0989aa47c4",
+    "implementation/warlock/release/language-components.json": "54d87ac12b263fa7722d29652650376347ad5c2584598cbbfb36b3e6965fc4d5",
+    "implementation/warlock/release/native-components.json": "a0f4db65a857c600da515443c0e39f551d9ff951a7cc2b998d9a597e7a9003bb",
+    "implementation/warlock/release/native-tuple-20261028.json": "bc225242e30baf4a5b8b1182cef6fdc716cc9c67de90dc35674f90c5fa87830b"
+  },
+  "protectedReceipts": [
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/protected-capture-first.stderr",
+      "sha256": "868a8b05e7a0c3234b918c1e9192a7c733a8f67d008a396c0137c0d36e3d2ff9",
+      "bytes": 116
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/protected-capture-first.stdout",
+      "sha256": "06dfcf8855a5330c18766a4b616119a9bf2a64722dbd3aca0f4ac3fb7098701a",
+      "bytes": 129
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/protected-capture-second.stderr",
+      "sha256": "aef598eaccb5f5d765402ed1a4a0ca5f3fa014697108202ebcaafd53924de68b",
+      "bytes": 116
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/protected-capture-second.stdout",
+      "sha256": "a168c32cdf61704bd7daa087cf57394572fc377fb4d6efa3942208758b53c927",
+      "bytes": 116
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/protected-capture-v2.stderr",
+      "sha256": "e31c89f53aa2441891315703941931a99016ff3c33a7c4befdc4deb90897e5cf",
+      "bytes": 116
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/protected-capture-v2.stdout",
+      "sha256": "c82ffc3e287ddc08a5330a5e93f3cc614628e423e2b932e660a478c89f50298e",
+      "bytes": 116
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/protected-capture-v3.stderr",
+      "sha256": "f91388ed5fd71746e4f091c90cde7f4c036fec289c79c742dfb54e93abd013eb",
+      "bytes": 116
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/protected-capture-v3.stdout",
+      "sha256": "d630ecfdbda5b7315273b74c36c75e62f2e57ac8a4ead59cc8daf6dac2a514d0",
+      "bytes": 116
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/protected-catalog-accounting.stderr",
+      "sha256": "5c2c143310f51a9f24961cbd59857e92705ba9591a47e0842c4fb638c12d242d",
+      "bytes": 116
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/protected-catalog-accounting.stdout",
+      "sha256": "211b483fece14354b0752bed259992bd499d55ab959d4ef028614529096ed2f2",
+      "bytes": 98032
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/protected-link-trace-first.stderr",
+      "sha256": "c01a9b7f361a98529df2ec33e10c57c93b0f4670c0797f9a31edf6dd33b3522a",
+      "bytes": 116
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/protected-link-trace-first.stdout",
+      "sha256": "7c9d7f4f9fe24656402b6cddea8064b8348c1b9c5b1f47adb72ce4646d0887ba",
+      "bytes": 487
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/protected-offline-first.stderr",
+      "sha256": "bfd26f8ad268ee436b0bbc17361acbd8abaac7027dde46c0106e8c54f4f3e76f",
+      "bytes": 116
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/protected-offline-first.stdout",
+      "sha256": "c3123a75544fb5fef6edb4c0cd1733ddbe66f44b8d14db19da4957c2c6bf7552",
+      "bytes": 895
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/protected-offline-v2.stderr",
+      "sha256": "0e040aed58a84f37b2430325b752a783119c3139632803d45b6f5cba6d37103d",
+      "bytes": 116
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/protected-offline-v2.stdout",
+      "sha256": "18810656f78aefcaa508255a5d56896e1cb9c12b1735e10ee2573f82f79df5ca",
+      "bytes": 788
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/protected-offline-v3.stderr",
+      "sha256": "cd5ee0f2c51aba907218f082ab513d2662d6d564f64bc448768b88d0abef2915",
+      "bytes": 116
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/protected-offline-v3.stdout",
+      "sha256": "a5c52571a7d69a1af2af8abe53003c20cb95aa78a2cdf8d973c9a11fa91ff1d9",
+      "bytes": 3039
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/protected-selection-first.stderr",
+      "sha256": "0c94b906a80d3fe0e4080d5bc3f187c2bde36f9b971b779491cc1119c60206c0",
+      "bytes": 925
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/protected-selection-first.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/protected-selection-second.stderr",
+      "sha256": "413a8e1c1382c675e5730d8e0d3623135b2e756ebecb8fe912c1077c324f2521",
+      "bytes": 116
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/protected-selection-second.stdout",
+      "sha256": "0fe2d0c6e7951b45b1758707eb09360bea7e12339a8d8aa6810ed3cfdbcf52b2",
+      "bytes": 377
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/protected-verify-first.stderr",
+      "sha256": "d81d6baa05848ffa4540f562d940be47f92227e726496d48ae82c101a0b3d635",
+      "bytes": 116
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/protected-verify-first.stdout",
+      "sha256": "e8f99d088028c0acb2157b44e5b366dbfba53a338e51d61d441234f40aeddee8",
+      "bytes": 34
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/protected-verify-v2.stderr",
+      "sha256": "55aff39df11aa1ccec21c9e07e1bb09f7ac69ecb97d6d0012eeda30c037c9cc0",
+      "bytes": 116
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/protected-verify-v2.stdout",
+      "sha256": "f831530fe37619e16882a41e54abf368d8d843cfb345a36667cf681a8948e2bc",
+      "bytes": 34
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/protected-verify-v3.stderr",
+      "sha256": "c69312e7511d993abe01142b27b3b7804db91f5c61863b18132d93c3bff49722",
+      "bytes": 116
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/protected-verify-v3.stdout",
+      "sha256": "f831530fe37619e16882a41e54abf368d8d843cfb345a36667cf681a8948e2bc",
+      "bytes": 34
+    }
+  ],
+  "preservedLocks": [
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/current-input-lock-v2.json",
+      "sha256": "0bd2b94629350c9742d1a4ac1b3629bc968700fba0f96469e7ed2130716d4b27",
+      "bytes": 4618270
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/current-input-lock-v3.json",
+      "sha256": "546c339cb7fa9c5bec1fca0ef0cbcade78bd1051a82f4003a6e26667124e100c",
+      "bytes": 4618350
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/current-input-lock.json",
+      "sha256": "c58ad51420e54ebf88b5aa6810176bfe9864cdee5661167d09009df50bbd9865",
+      "bytes": 4609170
+    }
+  ],
+  "campaigns": [
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/offline-pair-first/reproducibility-report.json",
+      "sha256": "4392a4f4b30d96c5e08b790ba419d0b83328bc6830066fa754e8a4f6681fdd67",
+      "bytes": 983,
+      "name": "offline-pair-first",
+      "matched": false,
+      "releaseBlocked": true,
+      "builds": [
+        {
+          "label": "A",
+          "exitCode": 2,
+          "argumentsSHA256": "b69865c981a9941c8abcd86ad80c58869ba2d5c3ed01f9a54d6cac64b844470a"
+        }
+      ],
+      "lockSHA256": "c58ad51420e54ebf88b5aa6810176bfe9864cdee5661167d09009df50bbd9865",
+      "error": "Offline build A failed: {\"matched\": false, \"releaseBlocked\": true, \"error\": \"Build failed: link-host\\n/usr/bin/ld: cannot find /usr/lib/libmvec.so.1: No such file or directory\\ncollect2: error: ld returned 1 exit status\\n\"}\n",
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "retainedArtifacts": [
+        {
+          "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/offline-pair-first/A/environment.json",
+          "sha256": "fe88963573b333e491a29fea8a89db68b18b74ad27a2dc7377c48ccc93411b7e",
+          "bytes": 375
+        }
+      ]
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/offline-pair-v2/reproducibility-report.json",
+      "sha256": "31d063b0d7867fcbf1d08655775974455c3344e78df5040e6f90990a81954cfe",
+      "bytes": 876,
+      "name": "offline-pair-v2",
+      "matched": false,
+      "releaseBlocked": true,
+      "builds": [
+        {
+          "label": "A",
+          "exitCode": 2,
+          "argumentsSHA256": "b4df53d6a76b00379ded76341826228315aaaee818f62733c6edb1ba5eb9205b"
+        }
+      ],
+      "lockSHA256": "0bd2b94629350c9742d1a4ac1b3629bc968700fba0f96469e7ed2130716d4b27",
+      "error": "Offline build A failed: {\"matched\": false, \"releaseBlocked\": true, \"error\": \"Rebuilt host differs from selected tuple\"}\n",
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "retainedArtifacts": [
+        {
+          "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/offline-pair-v2/A/environment.json",
+          "sha256": "dd85d07da832ebaf97e301009a02dda1e77814996cab8af58193ffa64a578460",
+          "bytes": 375
+        }
+      ]
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/offline-pair-v3/reproducibility-report.json",
+      "sha256": "dec23ccce1d57946424727d19f6be76fc2da8fcb2076ac75995b71201a1ece9f",
+      "bytes": 3127,
+      "name": "offline-pair-v3",
+      "matched": false,
+      "releaseBlocked": true,
+      "builds": [
+        {
+          "label": "A",
+          "exitCode": 2,
+          "argumentsSHA256": "4e2939d396fe051f3a703e6282994aec32ff8f284aba9160c1280735061198ce"
+        }
+      ],
+      "lockSHA256": "546c339cb7fa9c5bec1fca0ef0cbcade78bd1051a82f4003a6e26667124e100c",
+      "error": "Offline build A failed: {\"matched\": false, \"releaseBlocked\": true, \"error\": \"Redistribution review blocked; see compliance-report.json: component elm-browser-1.0.2: redistribution disposition incomplete; component elm-compiler-0.19.2: redistribution disposition incomplete; component elm-compiler-generated-runtime: redistribution disposition incomplete; component elm-core-1.0.5: redistribution disposition incomplete; component elm-html-1.0.0: redistribution disposition incomplete; component elm-json-1.1.3: redistribution disposition incomplete; component elm-npm-installer-0.19.2-0: redistribution disposition incomplete; component elm-retained-notices: notice applicability review incomplete; component elm-retained-notices: redistribution disposition incomplete; component elm-time-1.0.0: redistribution disposition incomplete; component elm-url-1.0.0: redistribution disposition incomplete; component elm-virtual-dom-1.0.3: redistribution disposition incomplete; component native-aquamarine: redistribution disposition incomplete; component native-generated-host: notice applicability review incomplete; component native-generated-host: redistribution disposition incomplete; component native-hyprland-core: redistribution disposition incomplete; component native-window-authority-plugin: notice applicability review incomplete; component native-window-authority-plugin: redistribution disposition incomplete; component warlock-adapter-sources: notice applicability review incomplete; component warlock-adapter-sources: redistribution disposition incomplete; component warlock-external-build-tools: notice applicability review incomplete; component warlock-external-build-tools: redistribution disposition incomplete; component warlock-generated-elm-assets: notice applicability review incomplete; component warlock-generated-elm-assets: redistribution disposition incomplete; component warlock-web-assets: notice applicability review incomplete; component warlock-web-assets: redistribution disposition incomplete; payload entry adapter/release_builder.py: identity mismatch; payload entry adapter/release_tuple.py: unaccounted; payload entry elm-host: identity mismatch; payload entry native/Hyprland: identity mismatch; payload entry native/elm-window-geometry-authority.so: identity mismatch; payload entry native/libaquamarine.so.0.15.0: identity mismatch\"}\n",
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "retainedArtifacts": [
+        {
+          "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/offline-pair-v3/A/environment.json",
+          "sha256": "93c9a66118d46901e7806e00d8f4f26141bf49965da9b78f2dd4da4ed7fc9bbd",
+          "bytes": 375
+        },
+        {
+          "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/offline-pair-v3/A/artifacts/compliance-report.json",
+          "sha256": "31c2f6af4d5441432499c9ad696c54b006c3d902bb0087df8bbcbe8d289de37f",
+          "bytes": 91081
+        }
+      ]
+    }
+  ],
+  "observed": [
+    "Actual explicit current tuple selection passes production negative guards. JSON is parsed from the same pinned bytes, and mandatory recorded digests are validated.",
+    "Actual new input captures and separate verifications pass. The historical product lock is unchanged. All three private locks and failed campaigns remain preserved.",
+    "Actual GNU linker tracing records 38 inputs, including the script-only libmvec dependency, and excludes the scratch probe artifact.",
+    "Offline build A in campaign v3 reproduces the exact selected host and all three Elm assets. Nineteen typed NewInstance checks pass; they do not establish native New instance or AT acceptance.",
+    "The current staged package accounting covers 19 components. Only 26 incomplete license and notice review errors remain; payload identity and unaccounted-file errors are cleared."
+  ],
+  "missingObservations": [
+    "Two completed isolated offline builds with distributables and a final hash comparison. Build B did not run in any of the three retained campaigns.",
+    "Complete source, license and notice dispositions for all 19 components, supported by exact primary evidence and the scope of retained grants.",
+    "Independent original-scenario dispositions for ELM-DEL-003 and ELM-DEL-004. The current evidence remains partial and does not claim either scenario accepted.",
+    "The broader original product, native behavior and full release obligations remain separate and unaccepted."
+  ],
+  "scopeNotes": [
+    "Matched false in these reports means build A failed and build B was not run. No two completed, divergent distributable hashes were observed.",
+    "Exact host and Elm asset reproduction is observed for the selected v3 build path. Historical core binary reproduction and native GUI acceptance are not inferred.",
+    "All three lock and report histories are immutable snapshots. Later catalog changes make the v3 lock historical; it must not be relabeled as the current catalog snapshot.",
+    "The seven working source hashes identify the frozen implementation and catalogs at this evidence snapshot. They are not a claim that these source files were already committed in sourceBaseRevision.",
+    "The private proposal and original raw reports remain unchanged. The canonical accounting and independent review files preserve their exact source bytes."
+  ],
+  "canonicalProposal": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/canonical-manifest-proposal.json",
+    "sha256": "0831ce53f6adcadfc0cbd18e6d1fcdca0051fda254f915e7b6ebe249abc801c9",
+    "preserved": true
+  },
+  "catalogAccounting": {
+    "path": "catalog-accounting.json",
+    "sha256": "211b483fece14354b0752bed259992bd499d55ab959d4ef028614529096ed2f2",
+    "scope": "Actual staged package accounting passes for 19 components. Payload identity and unaccounted-file errors are cleared. The remaining 26 incomplete license and notice review errors still block compliance."
+  },
+  "independentReview": {
+    "path": "independent-review.json",
+    "sha256": "830d6400f052da0ab82de2870e86076811198b6a81d188ac5b1f136dc82ca9fa",
+    "scope": "Read-only source review of the staged macro filename mapping and retained exact host hash guard. This is not independent acceptance of a completed package or two-build comparison."
+  }
+}

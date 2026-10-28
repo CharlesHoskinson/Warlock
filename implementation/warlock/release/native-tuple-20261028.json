@@ -1,0 +1,87 @@
+{
+  "schema": 1,
+  "kind": "new derivative native tuple; not historical binary reproduction",
+  "sourceBase": "0ecc8725ae27989da4049ce04d2e6f20add9e080",
+  "readyForRootReview": true,
+  "nativeAcceptance": false,
+  "pluginLoaded": false,
+  "slots": {
+    "core": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-build/Hyprland",
+      "sha256": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e"
+    },
+    "aquamarine": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/lib/libaquamarine.so.0.15.0",
+      "sha256": "667a22d535aade4e4a26134e39028a87fb3f963c28b7bf7ff79da684bb014ecd",
+      "sonameAlias": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/lib/libaquamarine.so.14",
+      "aliasTarget": "libaquamarine.so.0.15.0"
+    },
+    "authority": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/authority/elm-window-geometry-authority.so",
+      "sha256": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c",
+      "report": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/authority/authority-build-report.json",
+        "sha256": "efa8ad035d2f9bb9a2864f091407df0bdb97685dfae6e512b914a9f32c06280b"
+      },
+      "staticClosureOnly": true,
+      "loaded": false
+    },
+    "host": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/elm-host",
+      "sha256": "4377b11ce0afe9e1072210666aa872118b032995275a20657058771e5e6c8347",
+      "assets": {
+        "assets/elm.js": {
+          "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/assets/elm.js",
+          "sha256": "700524b6a1da72905daeecffd74216143bcf9242ea13c13d01f8bce3e1665be5"
+        },
+        "assets/bar.js": {
+          "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/assets/bar.js",
+          "sha256": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725"
+        },
+        "assets/popup.js": {
+          "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/assets/popup.js",
+          "sha256": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43"
+        }
+      },
+      "report": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/host-build-report.json",
+        "sha256": "691806471ff599503a20067aa0b90bf914b93a1ee5985198cdc79fb92ff975bf"
+      }
+    }
+  },
+  "reports": {
+    "core-build-report.json": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-build-report.json",
+      "sha256": "2bde3fd0d6a0878c2e63eca285ee9f8b9fe5c769dca2762497dfb0f6dfae53bf"
+    },
+    "core-source-manifest.json": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-source-manifest.json",
+      "sha256": "155a018fe9a4bd25dbf0dca97026a4df60e0cfc3fae3ef18b832b43034aff50c"
+    },
+    "core-consumed-source-snapshot.json": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-consumed-source-snapshot.json",
+      "sha256": "adc4beee73dd3fe557d527c0a28e8eb0ed12ef889e348e3152e2fc28b7c31b8e"
+    },
+    "new-core-qualification.json": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/new-core-qualification.json",
+      "sha256": "5793098b5f432343352625fd94e095b0e84010a413e44759d6c58eb753c693a9"
+    },
+    "aquamarine-build-report.json": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/aquamarine-build-report.json",
+      "sha256": "28b5fff017735f0a3daddd9335691ada1faa6087e028665c6fde48a448ca3d4d"
+    },
+    "authority/authority-build-report.json": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/authority/authority-build-report.json",
+      "sha256": "efa8ad035d2f9bb9a2864f091407df0bdb97685dfae6e512b914a9f32c06280b"
+    },
+    "host/host-build-report.json": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/host-build-report.json",
+      "sha256": "691806471ff599503a20067aa0b90bf914b93a1ee5985198cdc79fb92ff975bf"
+    }
+  },
+  "limitations": [
+    "Recorded hashes and static symbol closure do not prove plugin compatibility or native GUI behavior.",
+    "Historical tuple and original deadlines remain unchanged.",
+    "Upstream systemAquamarine host pkg-config metadata is distinct from loaded private library identity."
+  ]
+}
