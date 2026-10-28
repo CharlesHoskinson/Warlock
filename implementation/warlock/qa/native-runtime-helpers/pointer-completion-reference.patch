@@ -1,0 +1,59 @@
+--- /home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-refusal/history-before-pointer-completion/native-window-feedback.py
++++ /home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-refusal/native-window-feedback.py
+@@ -59,6 +59,10 @@
+ OUTPUT=pathlib.Path.home()/'window-integration-qa'/('warlock-window-feedback-'+str(time.time_ns()))
+ focus_host=None
+ POINTER=REPO/'installed/home/.local/share/hypr-window-controls/qa/virtual-pointer';FIXTURE=RUNTIME/'fixture.py'
++completion_report=pathlib.Path('/home/charles/.local/state/warlock-team/20261028/native-rebuild/pointer-completion/build-report.json');assert sha(completion_report)=='571a4e91b8da30c49788e4e86746da8a65f7bbb38b229725ee8811579f96bcc4'
++completion=json.loads(completion_report.read_text());assert completion['passed'] is True
++for path,h in {**completion['inputs'],**completion['tools']}.items():assert sha(path)==h
++POINTER=pathlib.Path(completion['binary']['path']);assert sha(POINTER)==completion['binary']['sha256']
+ retirement_fixture=None
+ primary_fixture=None
+ label_fixture=None
+@@ -492,9 +496,17 @@
+      report['persistentInput']['commands'].append(commands)
+      wait(lambda:(OUTPUT/'chord-keyboard.log').read_text().splitlines().count('ready')>before)
+     def pointer(commands):
++     deadline=time.monotonic()+6
+      assert drag_pointer.poll() is None
+-     raw=(commands+'\n').encode();assert len(raw)<=4096 and os.write(drag_writer,raw)==len(raw)
++     token=len(report['dragPointerCommands'])+1
++     raw=(commands+'\nsync '+str(token)+'\n').encode();assert len(raw)<=4096 and os.write(drag_writer,raw)==len(raw)
+      report['dragPointerCommands'].append(commands)
++     def acknowledged():
++      assert drag_pointer.poll() is None
++      return (OUTPUT/'drag-pointer.log').read_text().splitlines().count('ready '+str(token))==1
++     wait(acknowledged,max(0,deadline-time.monotonic()))
++     report.setdefault('pointerCompletion',[]).append({'token':token,'binarySHA256':sha(POINTER),'acknowledgedAfterRealRoundtrip':True,'remainingSeconds':max(0,deadline-time.monotonic())})
++     return deadline
+     def ownership():return client.pointer_ownership('470')
+     def owned(state):
+      value=ownership();return value if value['state']==state else None
+@@ -511,13 +523,13 @@
+     for name,button,modifier,points in [('MoveAcrossTaskbarAndOutput',272,125,[(200,580),(1000,350)]),('ResizeAcrossTaskbarAndOutput',273,56,[(1000,580),(700,550)])]:
+      before=ownership();window_before=root_window();x,y=map(round,[window_before['at'][0]+window_before['size'][0]/2,window_before['at'][1]+window_before['size'][1]/2])
+      check(name+'StartsIdle',before['state']=='idle')
+-     pointer(f'move {x} {y}\nsleep 100');physical(f'key {modifier} 1\nsleep 50');pointer(f'button {button} 1\nsleep 50\nmove {x+10} {y+10}\nsleep 100')
+-     state='move' if button==272 else 'resize';active=wait(lambda:owned(state));wait(lambda:received_owner(state,active['serial']))
++     pointer(f'move {x} {y}\nsleep 100');physical(f'key {modifier} 1\nsleep 50');pointer_deadline=pointer(f'button {button} 1\nsleep 50\nmove {x+10} {y+10}\nsleep 100')
++     state='move' if button==272 else 'resize';active=wait(lambda:owned(state),max(0,pointer_deadline-time.monotonic()));wait(lambda:received_owner(state,active['serial']))
+      check(name+'NativeOwnerIsOriginalWindow',active['owner']==target and int(active['serial'])==int(before['serial'])+1,observation=active)
+      crossings=[]
+      for px,py in points:
+-      pointer(f'move {px} {py}\nsleep 100')
+-      wait(lambda:s.data('cursorpos')=={'x':px,'y':py})
++      pointer_deadline=pointer(f'move {px} {py}\nsleep 100')
++      wait(lambda:s.data('cursorpos')=={'x':px,'y':py},max(0,pointer_deadline-time.monotonic()))
+       current=ownership();crossings.append({'point':[px,py],'owner':current,'projection':projection()})
+       check(name+'CrossingRetainsNativeOwner',current['state']==state and current['owner']==target and current['serial']==active['serial'] and (projection() or {}).get('mode')=='closed',point=[px,py],observation=current)
+      # Both adopted modifiers are exercised. Super or Alt is already held.
+@@ -526,7 +538,7 @@
+      check(name+'AppsShortcutCannotStealGesture',ownership()==active and (projection() or {}).get('mode')=='closed',observation=ownership(),projection=projection())
+      outcome=private_effect('minimize',target,expected_status='Refused')
+      check(name+'CompetingNativeEffectRefused',outcome['status']=='Refused' and outcome['reason']=='native-pointer-owned' and ownership()==active,result=outcome)
+-     pointer(f'button {button} 0\nsleep 100');ended=wait(lambda:owned('idle'));physical(f'key {modifier} 0\nsleep 100');wait(lambda:received_owner('idle',ended['serial']))
++     pointer_deadline=pointer(f'button {button} 0\nsleep 100');ended=wait(lambda:owned('idle'),max(0,pointer_deadline-time.monotonic()));physical(f'key {modifier} 0\nsleep 100');wait(lambda:received_owner('idle',ended['serial']))
+      check(name+'ExactlyOneNativeEnd',int(ended['serial'])==int(active['serial'])+1 and ended['owner'] is None and not current_window()['minimized'],before=before,active=active,end=ended)
+      after=root_window();check(name+'NativeGeometryChanged',after['at']!=window_before['at'] if button==272 else after['size']!=window_before['size'],before=window_before,after=after)
+      report['gestures'].append({'name':name,'before':before,'active':active,'crossings':crossings,'end':ended,'windowBefore':window_before,'windowAfter':after})

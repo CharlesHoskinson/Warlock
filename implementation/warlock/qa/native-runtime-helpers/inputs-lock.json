@@ -1,0 +1,1297 @@
+{
+  "schema": 1,
+  "inputs": {
+    "generated:kiosk-shell.c": {
+      "sha256": "3e6b4a55d3e8dfe7259c60c3db91e1d6c031e07d6d14ce34f47a4dbecd17871b",
+      "evidence": [
+        "two-output:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "package:config.h": {
+      "sha256": "93f34776b082c284437d0655ebfb2e0221ae83434027612535071ddfa14449cf",
+      "evidence": [
+        "two-output:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "package:fresh_runtime.py": {
+      "sha256": "faf539bef8cb4550dce552f0629ba325b1f73c9cac4d0a3bdacade9b0c3a4c6d",
+      "evidence": [
+        "package"
+      ]
+    },
+    "package:pointer-completion-reference.patch": {
+      "sha256": "987e27322fbc9bcffa830891a027f4d543386166e74f6d15188d4ab6ffbe2996",
+      "evidence": [
+        "package"
+      ]
+    },
+    "package:qa-shell.patch": {
+      "sha256": "df54c2d25f0e6801f4c9a47edaab46ee5044fa4f94226bf53ff2ae4f75595483",
+      "evidence": [
+        "package"
+      ]
+    },
+    "package:virtual_pointer.c": {
+      "sha256": "6486e89894eaabae30ef50dab4b591a4e98ad6656c10a15bb8ab8e8a8fcf5d95",
+      "evidence": [
+        "pointer:inputs"
+      ]
+    },
+    "repo:installed/home/.local/share/hypr-window-controls/qa/virtual-pointer-client.c": {
+      "sha256": "a72e9b38dd5ed0c49fae22aa2f01883aea76075ad33f6399d9b2033df4330675",
+      "evidence": [
+        "pointer:inputs"
+      ]
+    },
+    "repo:installed/home/.local/share/hypr-window-controls/qa/virtual-pointer-client.h": {
+      "sha256": "0dcb6107cf948a007dcef0a6b2192e4f7b9166c0f57b499ca49b7aaf48adc56c",
+      "evidence": [
+        "pointer:inputs"
+      ]
+    },
+    "repo:installed/home/.local/share/hypr-window-controls/qa/virtual_pointer.c": {
+      "sha256": "81df29f1208435c5c3afe5b0157194a82fc822fcc773b1430d030b3232e307e4",
+      "evidence": [
+        "pointer:inputs"
+      ]
+    },
+    "repo:window-integration-qa/private-weston-host-v2/prefix/usr/bin/weston": {
+      "sha256": "92eb1efcb198121871916f6de2899fc7671bfe4f6b72a89c05c904ba26306ae3",
+      "evidence": [
+        "provider:providers"
+      ]
+    },
+    "repo:window-integration-qa/private-weston-host-v2/prefix/usr/include/libweston-15/libweston/colorimetry.h": {
+      "sha256": "b9c37c40c7c141593794a7364ac7ebac7da420d15166dc8c47b8f2d8b9d5d085",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "repo:window-integration-qa/private-weston-host-v2/prefix/usr/include/libweston-15/libweston/config-parser.h": {
+      "sha256": "c86584c14a040b91f1a668e3d6566b69770ec7018b59908a158e629d8725629a",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "repo:window-integration-qa/private-weston-host-v2/prefix/usr/include/libweston-15/libweston/desktop.h": {
+      "sha256": "bcb0b0c254b238bd459ec39aa5068cb6510caa4c56f61a60eba3f21591934bce",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "repo:window-integration-qa/private-weston-host-v2/prefix/usr/include/libweston-15/libweston/libweston.h": {
+      "sha256": "0617ab52ae75427e05db7ec421d215f1c6ad0bb03b92ae90e107c499913a49bb",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "repo:window-integration-qa/private-weston-host-v2/prefix/usr/include/libweston-15/libweston/linalg-3.h": {
+      "sha256": "1cbbdd45549aafe3fd9a7620d2c0cabcc7fdc114d42bdd7a0485fb1134a65709",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "repo:window-integration-qa/private-weston-host-v2/prefix/usr/include/libweston-15/libweston/linalg-types.h": {
+      "sha256": "5374e7a0cec6844d38a9b62a89c3bac4ff4f479c1d07dfd3a77c570593679da5",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "repo:window-integration-qa/private-weston-host-v2/prefix/usr/include/libweston-15/libweston/matrix.h": {
+      "sha256": "91da1fcb7364ba9590aa717295445e6223dd7aec383cd8583d66209b7c082e81",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "repo:window-integration-qa/private-weston-host-v2/prefix/usr/include/libweston-15/libweston/plugin-registry.h": {
+      "sha256": "233c62630d02b59b7f9834127eafb1428edf943f40dc71f6b98ed1c82778bec0",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "repo:window-integration-qa/private-weston-host-v2/prefix/usr/include/libweston-15/libweston/shell-utils.h": {
+      "sha256": "42053bc32fdd3d414c3f1167242af7c1bbfa3ba785414c1623307eb23d1eb392",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "repo:window-integration-qa/private-weston-host-v2/prefix/usr/include/libweston-15/libweston/windowed-output-api.h": {
+      "sha256": "e6b3413fba39733a8adb3b557d6d08d763372aa6ec29a73fd70e8f9d6b31c0ee",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "repo:window-integration-qa/private-weston-host-v2/prefix/usr/include/libweston-15/libweston/xwayland-api.h": {
+      "sha256": "d96ca5a56a5608710f9c4212ea74f09bca171aab7df99f2685028b93eb590d83",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "repo:window-integration-qa/private-weston-host-v2/prefix/usr/include/libweston-15/libweston/zalloc.h": {
+      "sha256": "baf4e089d4e0a9850c02aaa161651bbfdb079e134144373a215714a70bd15d3a",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "repo:window-integration-qa/private-weston-host-v2/prefix/usr/lib/libweston-15.so.0": {
+      "sha256": "4f69699a64ef12138ead0bb24a1a19ecd5b87a0d723e3bc06a5d0af9177aa300",
+      "evidence": [
+        "two-output:inputs"
+      ]
+    },
+    "repo:window-integration-qa/private-weston-host-v2/prefix/usr/lib/libweston-15.so.0.0.1": {
+      "sha256": "4f69699a64ef12138ead0bb24a1a19ecd5b87a0d723e3bc06a5d0af9177aa300",
+      "evidence": [
+        "provider:providers"
+      ]
+    },
+    "repo:window-integration-qa/private-weston-host-v2/prefix/usr/lib/weston/kiosk-shell.so": {
+      "sha256": "5c92f4390642acf8594bdb399f648e5aba6e4b1fcf8226fd7ef2e6896720b17a",
+      "evidence": [
+        "two-output:inputs"
+      ]
+    },
+    "repo:window-integration-qa/private-weston-host-v2/prefix/usr/lib/weston/libexec_weston.so.0.0.0": {
+      "sha256": "ddd1ba3516f9ca6272890701712ca904e3a68141ff356a5b5d513eb090931107",
+      "evidence": [
+        "two-output:inputs",
+        "provider:providers"
+      ]
+    },
+    "repo:window-integration-qa/private-weston-host-v2/primary/weston-15.0.1/frontend/weston.h": {
+      "sha256": "fefbb8d00105209f8a9c6d8233c1ce60fc0953eece3faa8ae14046c65433193d",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "repo:window-integration-qa/private-weston-host-v2/primary/weston-15.0.1/kiosk-shell/kiosk-shell-grab.c": {
+      "sha256": "96949bcc36a8568667e6cf43d72d5a6d7b2be8b152f5a0b54e21cef610cb1f2e",
+      "evidence": [
+        "two-output:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "repo:window-integration-qa/private-weston-host-v2/primary/weston-15.0.1/kiosk-shell/kiosk-shell-grab.h": {
+      "sha256": "d526be02248a4a518b3719832759f07c61b49ff7d80eec839c17997fa93493dc",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "repo:window-integration-qa/private-weston-host-v2/primary/weston-15.0.1/kiosk-shell/kiosk-shell.c": {
+      "sha256": "bd20d8a053f3eb66d82272bbbc4aa04486511ef8bd5325396a81b637e7970f2d",
+      "evidence": [
+        "two-output:inputs"
+      ]
+    },
+    "repo:window-integration-qa/private-weston-host-v2/primary/weston-15.0.1/kiosk-shell/kiosk-shell.h": {
+      "sha256": "344823c0e134ebb8a4286a1ad3b4464f7fac3aa072e24859570415c606cf4354",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "repo:window-integration-qa/private-weston-host-v2/primary/weston-15.0.1/shared/helpers.h": {
+      "sha256": "e9393bd40e0f050a0022a4a1ea4141a3d687c2a6bb98118f06fc443109c24ce1",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/bin/gcc": {
+      "sha256": "8aac907d6fbf40394b424b5fa4a2ad1aa291dac7d3a0315c5b415c1f5ace1287",
+      "evidence": [
+        "pointer:tools",
+        "two-output:tools"
+      ]
+    },
+    "system:/usr/bin/ld": {
+      "sha256": "4d83828f709f0eade25bcae2f4a2508c47db2f01b58daaca5c1c4cefce897847",
+      "evidence": [
+        "pointer:tools"
+      ]
+    },
+    "system:/usr/bin/ldd": {
+      "sha256": "94f332c23cf00596d0387d6f54693664f9a53334d65953b2ff308057cc8530b1",
+      "evidence": [
+        "two-output:tools"
+      ]
+    },
+    "system:/usr/bin/nm": {
+      "sha256": "b16707aadd1c1953f51fa32d462b2d463a54031f7a743d63e8333c6bf3985abd",
+      "evidence": [
+        "two-output:tools"
+      ]
+    },
+    "system:/usr/bin/pkgconf": {
+      "sha256": "998694c643efb51d0fca9cbf7f809ccf34338ad7e4d3470a6317ead835a9c877",
+      "evidence": [
+        "pointer:tools",
+        "two-output:tools"
+      ]
+    },
+    "system:/usr/include/alloca.h": {
+      "sha256": "cb5ea6285def24864da9698db30ba6fbff156e263625e1be33064f94a8dc64b3",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/asm-generic/bitsperlong.h": {
+      "sha256": "3a8e58cc67210c5a2b3bf24c84a96328e974dfe94206c74e5478d3142c991cf7",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/asm-generic/int-ll64.h": {
+      "sha256": "d5812a5b146927c557f106dd1648794b3b433d4e37e26410abbbb351837a649b",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/asm-generic/ioctl.h": {
+      "sha256": "c61365a9b4282a9ac583ce3d417e09e8dfce75458b64d45179640c82eafa7eed",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/asm-generic/ioctls.h": {
+      "sha256": "456d8d175500bae6f73a66a023a71044f9cb077ab17531a7bf8df1509cc8dae3",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/asm-generic/posix_types.h": {
+      "sha256": "f9b2bcd020a7041ca71acdc66ed04113d37d4141eba74a26f9a9fd81286c14fe",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/asm-generic/sockios.h": {
+      "sha256": "3e46cdcb281f87f1b532901e6388eed77fa687c3c5c56f72aceb8640696a4ef9",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/asm-generic/types.h": {
+      "sha256": "09b4477d655ddd2c5657e83a0761700d6706f012c7365f310a6b0a6696936a10",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/asm/bitsperlong.h": {
+      "sha256": "8ef5efeb3f25ae47ce03ba892f5caf77631b1257715fc12de72c21e61db17e43",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/asm/ioctl.h": {
+      "sha256": "9c6ca9e365296a6b66747cbebdcf76972b8cce7aab91e55bf4ab1f3581df9c2a",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/asm/ioctls.h": {
+      "sha256": "857d11a8415a18e7a6ccf23640cf9bddf245a5f90c43b3014d08d3ae19faf952",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/asm/posix_types.h": {
+      "sha256": "983090c7e5e7eaff27114ec216889a8ad26e40ad8fbb78b8ae6c09391dc61543",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/asm/posix_types_64.h": {
+      "sha256": "5cdabc01dac0a3e9731ac16353210a615ca44e85b6ec9eafd2e79206e0b26c76",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/asm/sockios.h": {
+      "sha256": "ac496b3bcc37452f0caa104b2205a8a19dde0196a7791988b3b74e23c2174c1e",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/asm/types.h": {
+      "sha256": "b6bdcd528bce555b2ecb58e8a1624e3e13e09312c31318023c4e86b957e2b01f",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/assert.h": {
+      "sha256": "69ff83e8e7eaf3a10bd1ee12366caee30b375294f2a1f32cc4a4a3d1caac4a02",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/atomic_wide_counter.h": {
+      "sha256": "7d508b02d7ed3a94c1a556779fdd590fd2e0668a34b0d736e40eab6df7d60154",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/byteswap.h": {
+      "sha256": "6462236f7c0743d1fd371e12fd318c7f65595604744bbd564d2942096e96fd07",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/confname.h": {
+      "sha256": "dbed2d3724ad68fac2eeb79b553ef113c008c4f3f787e1acec1b874802497182",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/endian.h": {
+      "sha256": "112b43d5b891adcb526fbbbd582625d1d92d68612f8251dc2ee5b47ba488899f",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/endianness.h": {
+      "sha256": "659a7060004eda113671a38852c4d1e9cb97a35932bcd1d8540f98c09c180747",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/environments.h": {
+      "sha256": "26080a9c9e54409330a6e05c9022e03d97c066ea0412fb5a2d04e5f0e527f441",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/floatn-common.h": {
+      "sha256": "8d5c5517e58c6d7ac4c915037f3af518fadc41ceb47999ee3387e4fb91cb4eaa",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/floatn.h": {
+      "sha256": "00524c02db9c4aa6dce6cdee90183bfca40fb254a93f0ea22a397f3355711d1f",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/flt-eval-method.h": {
+      "sha256": "a6f8c3b06e50fc4f0df226abbab5bdcfe73a596b0a22b4ade08fb2fd2293b8d1",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/fp-fast.h": {
+      "sha256": "e779cf7b858bc3bb506b0145832f66dc31bef4a75dd00edd64f290c81cfcf331",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/fp-logb.h": {
+      "sha256": "44fb675f5fd2fee75005ede827719e61fd169f31d27bb9f8de3a42e3fb6b79dc",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/getopt_core.h": {
+      "sha256": "238ff9f16662d515d6b191662965bb27e208b04dc929d04a69399de41bcd7d45",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/getopt_posix.h": {
+      "sha256": "660e8e89f9b4df5722c3ac2d57320bdf1c1fafcff17db9f0e57c681fcc8d3a79",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/ioctl-types.h": {
+      "sha256": "47d69497b51e09373d9dbb6abb8de035b473c5fb28b65f39c6f8d8b5e17a964e",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/ioctls.h": {
+      "sha256": "45c895168d2ca95093ce3ae3907e60def97ec0ab55c719444b346b0674497297",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/iscanonical.h": {
+      "sha256": "6d36b036d25df4e90d0a98b474a572836fc00d13862b288bbea9135cf33e7d3c",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/libc-header-start.h": {
+      "sha256": "9ec1af1a58b5d6431708a7ca71ef65944622921ca6fce878ae2ab486f3145296",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/libm-simd-decl-stubs.h": {
+      "sha256": "bff48d9c0882ed7b833047e463d6f56878c7827cff13b9e9720bbc6a88467bf9",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/long-double.h": {
+      "sha256": "9b3fe370666b72e74d2c19c9fa44bd18a72f671e5ca24fbf4cca6a29b114459d",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/math-vector.h": {
+      "sha256": "fcf87dafedf439e56ba593a614b78216e3d7a51a661528ee4c6749ef52fda04a",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/mathcalls-helper-functions.h": {
+      "sha256": "7587e45507eb8280820251e66530b1341d8eac5d1347a5ee5d99d9bdbf3c58b0",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/mathcalls-macros.h": {
+      "sha256": "502a8c7704161110b71b5533d39a20ee986c4abd9ea3321a3e6ebab7c0480d6a",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/mathcalls-narrow.h": {
+      "sha256": "a1b6bb2f135f2b90e69f525a0b6bb53854403d104efabeeacb22ea3167a5a454",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/mathcalls.h": {
+      "sha256": "2cd79b60f1e381ef50d2d9aac13f0a780025f14ac88f04aba50c880b50c06376",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/posix_opt.h": {
+      "sha256": "b2825f0ce2b045cff606a35ca14c2e47d990d94cf0092c9a8c7d25042feaff83",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/pthreadtypes-arch.h": {
+      "sha256": "1e4016c31b2b5412c4984f7f12f6659cf93ec5c55cad21dfb0ecf2813ba3116c",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/pthreadtypes.h": {
+      "sha256": "aa3af8683d56aa08f5fcedf866212c48f227f1f9f7045944f7977c0ad58ffe81",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/select.h": {
+      "sha256": "e879dad16c60061ac0ef11e917ddcb39b0ccb6fa082f7033479c3ce96fc18eef",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/stdint-intn.h": {
+      "sha256": "ed15fd5be7a39b8145b2beb08fd4a316bb72f0bd5ebca707399b4f5b0c0bf304",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/stdint-least.h": {
+      "sha256": "24c527a005947517a1d3032fdf161577e5a62184f4419066a2112a79ab2da788",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/stdint-uintn.h": {
+      "sha256": "f0d1ad8c0effab436bebd7a4c177a28a567f0faaae69877e9ccbe3d631a7cd68",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/stdio.h": {
+      "sha256": "60242f346c3dcfd974e423c05cc4f7c82192026611c0dbe1c50ea850a9dc4fbe",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/stdio_lim.h": {
+      "sha256": "7f6274022abc6b0a4970c9c78280abdf548660656e76f066949fedbfe6445920",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/stdlib-bsearch.h": {
+      "sha256": "8866b8758a96c4bb80fb901bece064216ab2e0791edace0c696318871a5c2e4e",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/stdlib-float.h": {
+      "sha256": "8900ab8d754778a6df25a040202726097d29f65954c4525de4542abef79c0c01",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/struct_mutex.h": {
+      "sha256": "dca410963a519c04fa3ed4175b13d0baaf20c22723c67414cf2433b00237d1e3",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/struct_rwlock.h": {
+      "sha256": "309124e37fac2b64a00fd0a93973fef769943cfeb36e8fc8678f83f705635255",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/thread-shared-types.h": {
+      "sha256": "2c1bcabe7b6b7e9192feb703d888f4e871749070b8fb30f96878386e869ff21b",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/time.h": {
+      "sha256": "7c8d7e65c0b95928b7f6ec32308b9d21a5373afac19b97bf9becb17281fd3c15",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/time64.h": {
+      "sha256": "c502af2b2d265699b53ccb52e7a20521ab3ec4d346deb1366f494d1e22354ff9",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/timesize.h": {
+      "sha256": "9d075412fa9c84e68a59e22944daad36905cb2eb19c3a7613d652b85ece4f207",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/timex.h": {
+      "sha256": "3e630d5280638ac300a05cf10d3e70e368c9738928550db550c1d6a1e639f194",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/types.h": {
+      "sha256": "3fcf066dbf9fac9c5a15ff6327ca6a437e955e9aa571de1c3347cd0f4da4f93d",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/types/FILE.h": {
+      "sha256": "37515f78be386f2edad4746f2947c928f480728c56d9a94e25302ebbdaef3c96",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/types/__FILE.h": {
+      "sha256": "26c909942e8a6bc82725e9c402f393aed9e32d94190257ddf71e1b5f819b4e5e",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/types/__fpos64_t.h": {
+      "sha256": "8afae3abf006beb39fd9d4d4bae38745cdf08a91e6217ddf25833c8d4b04751b",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/types/__fpos_t.h": {
+      "sha256": "603e58ab31ed75b7e0ab09a2ca94e99955f7fbc63310466321ce27c906227eb4",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/types/__locale_t.h": {
+      "sha256": "293f874c654c206b3f18021510b2612487177d9010a333b9313991ae1877fc96",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/types/__mbstate_t.h": {
+      "sha256": "c561df72d5b987ccbd022059fdb1bcb6899c3e94b403997a0576ef3e1afb0f94",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/types/__sigset_t.h": {
+      "sha256": "05291a7d38bb1d0da1ed01c09fe85fa2b1f4d5bc708e06bb930efec672db08d5",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/types/clock_t.h": {
+      "sha256": "81e60e8a8d99b28bc723c14b156d7f7fc8ff663d98a857a3f5aea90431f577e3",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/types/clockid_t.h": {
+      "sha256": "dcd64d184855b245e5c7acf21910a0aaca590f1faf094e400da5d30551d11eb0",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/types/cookie_io_functions_t.h": {
+      "sha256": "68dd9728ed4cb7d36d745e4131588a700fd2071f7218a93637a6d4035df4dd4f",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/types/locale_t.h": {
+      "sha256": "8675fb9fc99a2763f278421e4adf57ecc8838ac5668b2db3cac52fabb440d802",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/types/once_flag.h": {
+      "sha256": "1cda55270e969dca774272ec5e2dbf417442bc40183e4fbfeab3f0e22a31f4da",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/types/sigset_t.h": {
+      "sha256": "3db5ded9d98a694e8c7196a06690b2e816ec6bb82689940d281f6504533f37e1",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/types/struct_FILE.h": {
+      "sha256": "5e9432ad4ca91afc6849cc610093b81721f425e24f38bb60e756ffa37a09a075",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/types/struct_itimerspec.h": {
+      "sha256": "d6299fbc46fc57e7d14635cd5cf69125710ed021ab7305586c84644a03a39f8e",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/types/struct_timespec.h": {
+      "sha256": "798e773d0c7f3796033c043910db2b093d1e43116c4b3d2cf3be85f8c4304cf1",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/types/struct_timeval.h": {
+      "sha256": "6585bf0dcd3d5a780d6246da841031f9b314ceb7400a3210f34815f5da93b1fa",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/types/struct_tm.h": {
+      "sha256": "e7bdda3f42eb0633850ed150fef0a0cf6193cbba8fa740e7505925424a595566",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/types/time_t.h": {
+      "sha256": "d1cc45e24a80009117f61ee4ae9cae5d12f69f38d691e0a933f989f7a1d27bb0",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/types/timer_t.h": {
+      "sha256": "d96a2452da0d933941273d11d1048ea525f033306892835b0a7a0999b13853aa",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/typesizes.h": {
+      "sha256": "a52fb9d6cca3d305618b036183fe11fbb1789afea64f5436197bbb058e5edf0f",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/uintn-identity.h": {
+      "sha256": "9546f287d641234edb1dc1082032b7256f9dae76b2244cef63d0769d5b4d536b",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/unistd_ext.h": {
+      "sha256": "40f5c4a876a8cd22796eb07359505082515db6ef4540b07be0e88c5925579d8f",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/waitflags.h": {
+      "sha256": "e9d5a8255131a9b555f35b04c5a1596bb3cdc96e6fd518cf43c473cbf41b6016",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/waitstatus.h": {
+      "sha256": "cc93cc0c23d21e2695414318d79124a5ca08e1a0ea60f81c2842a7a566b06711",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/wchar.h": {
+      "sha256": "9a3e6e246753da1e142227f6a81a9d0064cbb3189073c367263a491b4044373f",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/bits/wordsize.h": {
+      "sha256": "948177c0fc84c4746588f62252029880ec4c6f88b743ba55d952f980303ebfbb",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/endian.h": {
+      "sha256": "5eef32c1a3965adcc0f4a838c8b631f4f42541e0de1692bb424de75d22b656ff",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/features-time64.h": {
+      "sha256": "c7c33cddd4ffbbca1eb0de042131a51201a42f29139820d0a36c1e1dd0d16ba5",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/features.h": {
+      "sha256": "5ac21294ba6a85013ead693eba6b5587ddbb8afd6922e4fb351e858b14833a12",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/gnu/stubs-64.h": {
+      "sha256": "3836bee19ddace5e06e967be88015d8492335daa08ce39a236618f520ccc40db",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/gnu/stubs.h": {
+      "sha256": "ef444295a0a9e8f5c40918399a00cc91ba0bd79774110cdf6e652baa6cfadb2e",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/inttypes.h": {
+      "sha256": "f7b6d71ce5912c40209b716a7e681f69f208b97809397f33fdcedf3eb8ff6e13",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/linux/close_range.h": {
+      "sha256": "54f02dee64fba028529c5265273d23a96629f3217d6abc31574ef7cce5a63f70",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/linux/input-event-codes.h": {
+      "sha256": "cb5b8c90d09f31bb6ffeb96d430c36c40726514b0f484928b5341358536677cd",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/linux/input.h": {
+      "sha256": "b897ee97661da7f134a6ea8cc62f9592bbfae43cdf3335c2ad6e8d3b7312d4d1",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/linux/ioctl.h": {
+      "sha256": "ba73b5892de6605e6c40b151820e367dfcb98cbdb3f8f468c5ef2bd8437df873",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/linux/posix_types.h": {
+      "sha256": "bc68636a383418f235d3457e4b21cf27cefc7c7f3edea4c1f6706f1018db196f",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/linux/sockios.h": {
+      "sha256": "69c8cd1427d631cd4950536c189ef4737fd9b6dd6c3833c628551dea55f6b240",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/linux/stddef.h": {
+      "sha256": "8de0ac8eae3695cbf769f27069f44dd622f9bb4ba2ca8e35e4af8c2a14f0bf5f",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/linux/types.h": {
+      "sha256": "03cba5fa5bd26f706db74707d3175d7f931b16a4c2a13b958ab8df71ff50cd73",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/math.h": {
+      "sha256": "c727536544246f3c48d2d116cae82e02539bdec1b905799bf93579ba35527ecf",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/pixman-1/pixman-version.h": {
+      "sha256": "eebbff4b66cbcc98b3ffa16c68a919d4a16dfcffb86cd1fb85faea4f07bcd76b",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/pixman-1/pixman.h": {
+      "sha256": "af49363cee8b2340a215e1ea477761c2c867905c17abe129e5778bfc65033f53",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/stdc-predef.h": {
+      "sha256": "383ff8bd7dcc87deefedd062637f4afe28f85f8be443beda8b41d15e45ef1679",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/stdint.h": {
+      "sha256": "fbd21c7a64b876eddd4e179172fb58a4921fd616d103b8107a28a54cf687289b",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/stdio.h": {
+      "sha256": "7b9d4ea5a3d988998113785f389c635428dbfd25f503197d81688ec9ef0149fa",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/stdlib.h": {
+      "sha256": "936ffcdf6161aa702d9fe433879e59b039731effebea7a9c02506da183a99d02",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/string.h": {
+      "sha256": "6284f89702acd61ff489bc6d20b38f6a942c438783076b9b64633d073be3337d",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/strings.h": {
+      "sha256": "9103b78ed40bae6ad74f43ea4536f96d2f1405adcd52c070a66614207f1429dd",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/sys/cdefs.h": {
+      "sha256": "a5a71b01109709190529d0c3532751869d05db6a5e8ce01c8c73229b797cfb83",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/sys/ioctl.h": {
+      "sha256": "4bb1546bcb000fba3968e65997f63bbb456f9542ad3cd579a82a099fcdf96165",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/sys/select.h": {
+      "sha256": "9becffb0018558dd368e025bffb8cb75d6b531cb8d18806e859172991a41f1a5",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/sys/time.h": {
+      "sha256": "e27ab62d4f0749c0ba7b8b597a471dd35d8ac35a7e9f79a40a7d7318b5337e63",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/sys/ttydefaults.h": {
+      "sha256": "23dbc1caef6d19508707ffb8aef4498beba70340c87440dfafcf4f3c9dd6589f",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/sys/types.h": {
+      "sha256": "25d29436b206e2b36e3fbe7057fa8b9822fa9f0f7823659c489a8fc71c8cd1db",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/time.h": {
+      "sha256": "e27a0238aa4cbec65b5d3b94dfffa1f127415e1c33d95565a8a4acd8cf935f60",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/unistd.h": {
+      "sha256": "ba5298d74a8f21968b08d1a59ed493c63e8344198ab03df127e8015428a109ea",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/wayland-client-core.h": {
+      "sha256": "936e6d191144358aec15edf1271781ea333a15da96e81bb9c99d137292a8403b",
+      "evidence": [
+        "pointer:inputs"
+      ]
+    },
+    "system:/usr/include/wayland-client-protocol.h": {
+      "sha256": "09d49cd7a692a122a76d0bf5cc1dabd5b5f84c2af634353ffbe67d4ee23fb0e4",
+      "evidence": [
+        "pointer:inputs"
+      ]
+    },
+    "system:/usr/include/wayland-client.h": {
+      "sha256": "e9dd1fb014aa6ad848cb7d241cc223b1a70fc0b17fed5997262024e4c05532f7",
+      "evidence": [
+        "pointer:inputs"
+      ]
+    },
+    "system:/usr/include/wayland-server-core.h": {
+      "sha256": "f5ef7113e406057c41404a15b19307afaac7adb445f72269e30eca072bf928cd",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/wayland-server-protocol.h": {
+      "sha256": "7ed8e780f7f1c2183ade2542d7fbf7ca8aa536ce893021928497a99f4c4f113d",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/wayland-server.h": {
+      "sha256": "b57f978e9c28c3f73f92362cc9b741d0b8f00824fb0afe66eaaac47f979cda28",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/wayland-util.h": {
+      "sha256": "f336a00a03fcf442a59dc9e5fcce3fc94b2cbfcbcf0befba018be3657b7ea381",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/wayland-version.h": {
+      "sha256": "35578b408ab6a91bea914a1b6e462c5b85018ee1c4f83ce89ddc5b36d4ad74ed",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/xkbcommon/xkbcommon-compat.h": {
+      "sha256": "fb0384a704897c0dcfcc49f021ad38fadbbedc3307d5390f4f0d1019e3d1a4d9",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/xkbcommon/xkbcommon-keysyms.h": {
+      "sha256": "13023369f65a17411606084e3e09557b4886aeb15f89affba4aaa86490a463f3",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/xkbcommon/xkbcommon-names.h": {
+      "sha256": "a5b0ed01c8b1816da8b5ed29cf776eb2ad1f707cf03ff74e62e36a5ca9009f61",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/include/xkbcommon/xkbcommon.h": {
+      "sha256": "17e58db5edc299d13b4365adce6c6d805e16642977ffaacf98d9be0c4c7071ff",
+      "evidence": [
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdarg.h": {
+      "sha256": "173a81bfbe88a2da5ed5d238e14e0eaca61b090ee6d7b12b5f9614daeea21600",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdbool.h": {
+      "sha256": "f2a112e8b2128fb1d76e7c0b625cec8760955ebeae5cdf6b419ccf0c6d62768f",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stddef.h": {
+      "sha256": "868352506950054491b9c76a4e2814f4f3601d227d3dea62a3e75875f327f2c1",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdint.h": {
+      "sha256": "64ab730bb09eba38f01a62174fb8371ef281778ac33f141a6fa4217a9b39466a",
+      "evidence": [
+        "pointer:inputs",
+        "two-output:dependencies"
+      ]
+    },
+    "system:/usr/lib/ld-linux-x86-64.so.2": {
+      "sha256": "f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757",
+      "evidence": [
+        "provider:providers"
+      ]
+    },
+    "system:/usr/lib/libaudit.so.1.0.0": {
+      "sha256": "16813308197ab091526836d4d9ee79b7780a49e63a0ee1d7e01da2b662d057c3",
+      "evidence": [
+        "provider:providers"
+      ]
+    },
+    "system:/usr/lib/libc.so.6": {
+      "sha256": "02c8c3d06180beee9c7d0392aa85736c7d19f274a81e7f8f0b3d9e28e0641524",
+      "evidence": [
+        "provider:providers"
+      ]
+    },
+    "system:/usr/lib/libcap-ng.so.0.0.0": {
+      "sha256": "bc91f6b0794de524f4e155cf04a40470e9e53cb2a38fb0d84aaea05e09c61d11",
+      "evidence": [
+        "provider:providers"
+      ]
+    },
+    "system:/usr/lib/libdisplay-info.so.0.3.0": {
+      "sha256": "98f632c36bdd89d75914200cb6d1b3cfce8b21067e73845b8a6c4d959903f97f",
+      "evidence": [
+        "provider:providers"
+      ]
+    },
+    "system:/usr/lib/libdrm.so.2.134.0": {
+      "sha256": "8b97afc5e15a07442768b302660cf844b0962623f8dcecbaebccadf288c611b1",
+      "evidence": [
+        "provider:providers"
+      ]
+    },
+    "system:/usr/lib/libevdev.so.2.3.0": {
+      "sha256": "334ae388be71eef9f2115901c4260104c5462f557c222568c0f6d9d0bccd188b",
+      "evidence": [
+        "provider:providers"
+      ]
+    },
+    "system:/usr/lib/libffi.so.8.5.0": {
+      "sha256": "b38bb3a55ba04dfbb5be68e881a72385d6c30010afffb1cf1dfc373b72c2278c",
+      "evidence": [
+        "provider:providers"
+      ]
+    },
+    "system:/usr/lib/libgcc_s.so.1": {
+      "sha256": "e618cb9c90c2eb3a1dad1cfea5b6c1eebcf2e799ad805976f4ae47bdd61c716a",
+      "evidence": [
+        "provider:providers"
+      ]
+    },
+    "system:/usr/lib/libglib-2.0.so.0.9000.1": {
+      "sha256": "1e8739af791b1a2f1f01fc7c6f3b9158888387d5a816195475e406438d41b688",
+      "evidence": [
+        "provider:providers"
+      ]
+    },
+    "system:/usr/lib/libgobject-2.0.so.0.9000.1": {
+      "sha256": "ec51ca8b317565beecf3b370743491a9da108f885ddb0a01976c3eac1711dd67",
+      "evidence": [
+        "provider:providers"
+      ]
+    },
+    "system:/usr/lib/libgudev-1.0.so.0.3.0": {
+      "sha256": "ff8211ad76137468565b703139a961f24a7fec069f252990b6a85190868d3833",
+      "evidence": [
+        "provider:providers"
+      ]
+    },
+    "system:/usr/lib/libinput.so.10.13.0": {
+      "sha256": "05159049aede1599eff71fdfdc6a1e597e609e92d715de23c06dabe6e1865277",
+      "evidence": [
+        "provider:providers"
+      ]
+    },
+    "system:/usr/lib/liblua5.4.so.5.4.9": {
+      "sha256": "45eb418acdd907c3164ac9f56b01625e323689d3f5d28c13f620e3ee26d51f19",
+      "evidence": [
+        "provider:providers"
+      ]
+    },
+    "system:/usr/lib/libm.so.6": {
+      "sha256": "965106704753eefe8c31ae7da6daba3ead3d18c52b19b5fcc41178bcc4aa999d",
+      "evidence": [
+        "provider:providers"
+      ]
+    },
+    "system:/usr/lib/libmtdev.so.1.0.0": {
+      "sha256": "f941d4873a8b84906eac55ec75cd247d0c35d2880be3c2ff1c91a8b88d544210",
+      "evidence": [
+        "provider:providers"
+      ]
+    },
+    "system:/usr/lib/libpam.so.0.85.1": {
+      "sha256": "a5f547ec7c5c6e5ec814f2596b47f68d5948e7be18c6254b0b2e5cd55cbda7eb",
+      "evidence": [
+        "provider:providers"
+      ]
+    },
+    "system:/usr/lib/libpcre2-8.so.0.16.1": {
+      "sha256": "bfe4fd9948f4ad1e907ec22525515f578eb9eeb181a44741948d99746d0f8e58",
+      "evidence": [
+        "provider:providers"
+      ]
+    },
+    "system:/usr/lib/libpixman-1.so.0.46.4": {
+      "sha256": "97d04f1a534e26e26cf993a350b13ddc33fa4f9741444b08c27bc04582c70fd8",
+      "evidence": [
+        "provider:providers"
+      ]
+    },
+    "system:/usr/lib/libudev.so.1.7.15": {
+      "sha256": "dd636932094404444ce8319c89d6074936322f96a8f80e08e22f71c295a84d9d",
+      "evidence": [
+        "provider:providers"
+      ]
+    },
+    "system:/usr/lib/libwacom.so.9.0.0": {
+      "sha256": "7eaaac1804a0b2c0b59722a9aba27f4759e3e286e5b2d1ca2ed6d448faf115cb",
+      "evidence": [
+        "provider:providers"
+      ]
+    },
+    "system:/usr/lib/libwayland-client.so.0.26.0": {
+      "sha256": "39c83ae7b73d22f18b4f81da14749c4535c304b7e62910a2f1aae682f279cc9d",
+      "evidence": [
+        "provider:providers"
+      ]
+    },
+    "system:/usr/lib/libwayland-server.so.0.26.0": {
+      "sha256": "7e89d8a177a78343a7cf92e3c1c756dc98a437489de4861ff6de907c7e48af89",
+      "evidence": [
+        "provider:providers"
+      ]
+    },
+    "system:/usr/lib/libxkbcommon.so.0.13.2": {
+      "sha256": "e475adbf5abd181b1bdfdeba70ad4d501cb296bbf05b13e8649fd71b3989ee07",
+      "evidence": [
+        "provider:providers"
+      ]
+    },
+    "system:/usr/bin/patch": {
+      "sha256": "58f374f8e9f7ca5e913e44bbacff3f389ba12c384ea9b522481b3e6e0fb25328",
+      "evidence": [
+        "recipe tool"
+      ]
+    },
+    "system:/usr/bin/cc": {
+      "sha256": "8aac907d6fbf40394b424b5fa4a2ad1aa291dac7d3a0315c5b415c1f5ace1287",
+      "evidence": [
+        "executable spelling verified"
+      ]
+    },
+    "system:/usr/bin/pkg-config": {
+      "sha256": "998694c643efb51d0fca9cbf7f809ccf34338ad7e4d3470a6317ead835a9c877",
+      "evidence": [
+        "executable spelling verified"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "path": "pointer-completion/build-report.json",
+      "sha256": "571a4e91b8da30c49788e4e86746da8a65f7bbb38b229725ee8811579f96bcc4"
+    },
+    {
+      "path": "taskbar-parent-two-output/build-attempt-1793209905513915395/report.json",
+      "sha256": "ee0e0142661f8cdafeb30e600370aa9c74a4ecc8ca918a55307c5e2d020aaf6f"
+    },
+    {
+      "path": "taskbar-parent-two-output/cpu-check.json",
+      "sha256": "c2b1d14aef1c1d4aeb18184815b73cb3ee7f57a0bc32969091b49929ef5492bb"
+    }
+  ],
+  "nativeAcceptance": false,
+  "note": "Reviewed historical input pins are evidence; this lock requires independent review and an out-of-band trusted hash.",
+  "pkgConfig": {
+    "pointerFlags": [
+      "-lwayland-client",
+      "-lm"
+    ],
+    "shellCflagsStdoutSHA256": "589be5344b7274a0387622c52eb8eef2d8013a991562ce5f332685b11148079d"
+  }
+}

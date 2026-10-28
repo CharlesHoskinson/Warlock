@@ -6,7 +6,7 @@ import sys
 
 REPO = Path(__file__).resolve().parents[3]
 TARGET = Path('/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-three-group/native-three-group.py')
-EXPECTED_SHA256 = 'b4d8d3e0472410d78a4d0af39f2e62c83cac7e3b247412d3fb797b2f7f33ff9d'
+EXPECTED_SHA256 = '689add64e00edac7e5f69ae602922c5f91b4e6e092d522aa04fbdd079d81addd'
 
 
 def checked_payload():

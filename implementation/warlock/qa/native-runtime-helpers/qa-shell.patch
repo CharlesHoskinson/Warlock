@@ -1,0 +1,60 @@
+--- window-integration-qa/private-weston-host-v2/primary/weston-15.0.1/kiosk-shell/kiosk-shell.c	2026-10-28 07:58:23.887220734 -0600
++++ /home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-parent-two-output/kiosk-shell.c	2026-10-28 11:50:33.421795147 -0600
+@@ -37,6 +37,7 @@
+ #include <libweston/shell-utils.h>
+ 
+ #include <libweston/xwayland-api.h>
++#include <libweston/windowed-output-api.h>
+ 
+ static struct kiosk_shell_surface *
+ get_kiosk_shell_surface(struct weston_surface *surface)
+@@ -246,6 +247,29 @@
+ 	if (shsurf->output)
+ 		return shsurf->output;
+ 
++	/* QA-only: explicit parent placement for the two nested AQ outputs. */
++	app_id = weston_desktop_surface_get_app_id(shsurf->desktop_surface);
++	const char *title = weston_desktop_surface_get_title(shsurf->desktop_surface);
++	if (app_id && title && strcmp(app_id, "aquamarine") == 0) {
++		const char *wanted = NULL;
++		if (strcmp(title, "aquamarine - WAYLAND-1") == 0)
++			wanted = "headless";
++		else if (strcmp(title, "aquamarine - WAYLAND-2") == 0)
++			wanted = "warlock-qa-headless-2";
++		if (wanted) {
++			wl_list_for_each(shoutput, &shsurf->shell->output_list, link) {
++				if (shoutput->output->name && strcmp(shoutput->output->name, wanted) == 0) {
++					weston_log("QA parent placement %s -> %s\n", title, wanted);
++					shsurf->appid_output_assigned = true;
++					return shoutput;
++				}
++			}
++			weston_log("QA parent placement unavailable %s -> %s\n", title, wanted);
++			weston_compositor_exit_with_code(shsurf->shell->compositor, 1);
++			return NULL;
++		}
++	}
++
+ 	/* Check if we have a designated output for this app. */
+ 	app_id = weston_desktop_surface_get_app_id(shsurf->desktop_surface);
+ 	if (app_id) {
+@@ -1530,6 +1554,19 @@
+ 	wl_signal_add(&ec->session_signal, &shell->session_listener);
+ 	screenshooter_create(ec);
+ 
++	/* Use the owning headless backend API; the frontend has no headless
++	 * --output-count option. Frontend head notifications create/configure
++	 * the real second output with the same width and height as the first. */
++	const struct weston_windowed_output_api *qa_api =
++		weston_windowed_output_get_api(ec, WESTON_WINDOWED_OUTPUT_HEADLESS);
++	if (!qa_api || !ec->primary_backend ||
++	    weston_get_backend_type(ec->primary_backend) != WESTON_BACKEND_HEADLESS ||
++	    qa_api->create_head(ec->primary_backend, "warlock-qa-headless-2") < 0) {
++		weston_log("QA cannot create second headless head\n");
++		return -1;
++	}
++	weston_log("QA second headless head requested\n");
++
+ 	kiosk_shell_add_bindings(shell);
+ 
+ 	return 0;
