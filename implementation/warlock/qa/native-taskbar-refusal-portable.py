@@ -7,8 +7,8 @@ import sys
 REPO = Path(__file__).resolve().parents[3]
 DIRECTORY = Path('/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-refusal')
 PINS = {
-    'native-taskbar-refusal.py': 'c8e2bedc6657b365318054c2b9181dcb63c75b2b0e17a54e9ca6ed0f787d549a',
-    'native-window-feedback.py': 'ad3ba0929b40f96619859a3bea601aae3dad74c1e5740b849dc9347e767dc9b0',
+    'native-taskbar-refusal.py': 'c5187ab058533c3b0f4bec43283a5d9969e96baa7a8cc1e882da7da382968824',
+    'native-window-feedback.py': 'a49aeb783d6e382f412121632a63c59733ea96c9013fbea9c6dda488e58b0fa9',
 }
 
 
