@@ -1,0 +1,751 @@
+{
+  "schema": 1,
+  "requirements": [
+    "ELM-UI-004"
+  ],
+  "scenarios": [
+    "taskbar-refusal"
+  ],
+  "disposition": "partial",
+  "rawReport": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-refusal-at/native-refusal-at-1793219131645665304/report.json",
+    "sha256": "06d0fe780b5f4d41f9277f1f3dce4c03b7e7eb59523fcd11c3c38628ffc1616f"
+  },
+  "runner": {
+    "sha256": "c365e79d6778b02c3b5cae553fcda6c0cf6fa48f80d16874bc9147f2452a8a9c",
+    "actionHelperSHA256": "9d595c84fdf30dff8df5f559363519ae290b510eebe20c36ff5143d1a7a7cb68",
+    "baseKeyboardSHA256": "39f9e814293352db22733f26c0f7c7d0d69002b1438b6c5966e35e615c28db26"
+  },
+  "checksPassed": 75,
+  "cleanupPassed": true,
+  "sourceInputsRehashed": 366,
+  "sourceInputsChanged": [],
+  "nativePair": {
+    "core": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-build/Hyprland",
+      "sha256": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e"
+    },
+    "plugin": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/authority/elm-window-geometry-authority.so",
+      "sha256": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c"
+    },
+    "aquamarine": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/lib/libaquamarine.so.0.15.0",
+      "sha256": "667a22d535aade4e4a26134e39028a87fb3f963c28b7bf7ff79da684bb014ecd"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/elm-host",
+    "sha256": "4377b11ce0afe9e1072210666aa872118b032995275a20657058771e5e6c8347",
+    "heldBuild": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/host-build-report.json",
+    "heldBuildSHA256": "691806471ff599503a20067aa0b90bf914b93a1ee5985198cdc79fb92ff975bf"
+  },
+  "runtimeByReference": {
+    "root": "/home/charles/Warlock/implementation/warlock-client-provider-native-v204",
+    "freshAdapter": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-parent-two-output/fresh_two_output.py",
+    "freshAdapterSHA256": "f0897191b217eb47a15253b9bc64290734d6a0c16fa5efd7a965f4738f1daf24",
+    "parentAdapterSHA256": "e045634bd023f07977c398ef0057b9fdee3a1e1718d51c879e221ee353e28ae9",
+    "tupleSHA256": "bc225242e30baf4a5b8b1182cef6fdc716cc9c67de90dc35674f90c5fa87830b",
+    "foundationSHA256": "08b24bd93cbb63ec097900915379b32e90d9dcca7156d04fe8ee959efaff264f"
+  },
+  "actualActions": [
+    {
+      "kind": "activate",
+      "receipt": {
+        "passed": true,
+        "source": "actual-at-spi-action",
+        "before": {
+          "pid": 204362,
+          "identity": "414",
+          "name": "Activate ELM-AUTHORITY-FIXTURE; Open",
+          "domId": "group:{\"lifetime\":\"16926290577583047330\",\"session\":\"3\",\"frontend\":\"1\"}:2:7:application:GTK Application",
+          "role": "toggle button",
+          "states": [
+            "enabled",
+            "focusable",
+            "focused",
+            "sensitive",
+            "showing",
+            "visible"
+          ]
+        },
+        "action": "press",
+        "actionIndex": 0,
+        "syntheticNodes": false,
+        "injectedDomEvents": false
+      },
+      "publication": "75",
+      "lease": "2",
+      "origin": [
+        0,
+        0
+      ]
+    },
+    {
+      "kind": "recovery",
+      "receipt": {
+        "passed": true,
+        "source": "actual-at-spi-action",
+        "before": {
+          "pid": 204362,
+          "identity": "1220",
+          "name": "Refresh window status; read observations without retrying actions",
+          "domId": "applications:{\"lifetime\":\"16926290577583047330\",\"session\":\"3\",\"frontend\":\"1\"}:25:bar:recovery-refresh",
+          "role": "button",
+          "states": [
+            "enabled",
+            "focusable",
+            "focused",
+            "sensitive",
+            "showing",
+            "visible"
+          ]
+        },
+        "action": "press",
+        "actionIndex": 0,
+        "syntheticNodes": false,
+        "injectedDomEvents": false
+      },
+      "publication": "85",
+      "lease": "3",
+      "origin": [
+        0,
+        0
+      ]
+    }
+  ],
+  "accessibleRefusalFeedback": [
+    {
+      "pid": 204362,
+      "role": "status bar",
+      "name": "Activate: refused for ELM-AUTHORITY-FIXTURE. Refresh window status, then choose again.",
+      "states": [
+        "enabled",
+        "sensitive",
+        "showing",
+        "visible"
+      ]
+    },
+    {
+      "pid": 204362,
+      "role": "status bar",
+      "name": "Activate: refused for ELM-AUTHORITY-FIXTURE. Refresh window status, then choose again.",
+      "states": [
+        "enabled",
+        "sensitive",
+        "showing",
+        "visible"
+      ]
+    }
+  ],
+  "mappedProviders": {
+    "reader": {
+      "pid": 204290,
+      "start": "9724601",
+      "packetSHA256": "78016e94c06d11f71c5ba18694fadd876cd17d0d8643b361009733ba4ab57726",
+      "count": 123
+    },
+    "inspector": {
+      "pid": 204286,
+      "start": "9724593",
+      "packetSHA256": "78016e94c06d11f71c5ba18694fadd876cd17d0d8643b361009733ba4ab57726",
+      "count": 59
+    }
+  },
+  "decisiveNativeChecks": [
+    {
+      "name": "ActualTaskbarGetsPinnedNativeRefusalOnce",
+      "passed": true,
+      "request": {
+        "protocolVersion": 3,
+        "kind": "window-effect",
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "16926290577583047330",
+          "session": "3",
+          "frontend": "1"
+        },
+        "intent": {
+          "request": "1",
+          "generation": "1",
+          "incarnation": "2",
+          "operation": "activate",
+          "context": {
+            "lifetime": "16926290577583047330",
+            "epoch": "1",
+            "output": "2",
+            "revision": "7"
+          }
+        }
+      },
+      "receipts": [
+        {
+          "protocolVersion": 3,
+          "kind": "effect-outcome",
+          "effectProtocol": 1,
+          "binding": {
+            "lifetime": "16926290577583047330",
+            "session": "3",
+            "frontend": "1"
+          },
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "2",
+            "operation": "activate",
+            "context": {
+              "lifetime": "16926290577583047330",
+              "epoch": "1",
+              "output": "2",
+              "revision": "7"
+            }
+          },
+          "status": "Refused",
+          "reason": "implicit-transfer-required",
+          "revision": "7",
+          "outputGeneration": "2"
+        }
+      ]
+    },
+    {
+      "name": "RefusalPreservesAuthoritativeNativeWindowsAndFocus",
+      "passed": true,
+      "target": {
+        "address": "0x56505fc65730",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          840,
+          230
+        ],
+        "size": [
+          108,
+          440
+        ],
+        "workspace": {
+          "id": 2,
+          "name": "2"
+        },
+        "floating": true,
+        "monitor": 1,
+        "class": "GTK Application",
+        "title": "ELM-AUTHORITY-FIXTURE",
+        "initialClass": "GTK Application",
+        "initialTitle": "ELM-AUTHORITY-FIXTURE",
+        "pid": 204322,
+        "xwayland": false,
+        "pinned": true,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [],
+        "swallowing": "0x0",
+        "focusHistoryID": 1,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "18000000"
+      },
+      "peer": {
+        "address": "0x56505fd7c910",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          21,
+          77
+        ],
+        "size": [
+          758,
+          502
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "floating": false,
+        "monitor": 0,
+        "class": "warlock-refusal-peer",
+        "title": "ELM-ACTIVATION-PEER",
+        "initialClass": "warlock-refusal-peer",
+        "initialTitle": "ELM-ACTIVATION-PEER",
+        "pid": 204540,
+        "xwayland": false,
+        "pinned": false,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [],
+        "swallowing": "0x0",
+        "focusHistoryID": 0,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "18000002"
+      },
+      "facts": {
+        "protocolVersion": 3,
+        "kind": "scene-facts",
+        "binding": {
+          "lifetime": "16926290577583047330",
+          "session": "1",
+          "frontend": "1"
+        },
+        "requestId": "441",
+        "sequence": "42",
+        "revision": "7",
+        "outputGeneration": "2",
+        "facts": {
+          "focused": "3",
+          "windows": [
+            {
+              "incarnation": "2",
+              "owner": null,
+              "application": "GTK Application",
+              "stackPosition": 0,
+              "workspace": "2",
+              "monitor": "1",
+              "geometry": [
+                840.0,
+                230.0,
+                108.0,
+                440.0
+              ],
+              "fullscreenMode": 0,
+              "workspaceVisible": true,
+              "hidden": false,
+              "pinned": true,
+              "allowedOverFullscreen": true,
+              "renderOverFullscreen": true,
+              "acceptsInput": true,
+              "shouldRenderAny": true,
+              "shouldRenderOwnMonitor": true,
+              "minimized": false
+            },
+            {
+              "incarnation": "3",
+              "owner": null,
+              "application": "warlock-refusal-peer",
+              "stackPosition": 1,
+              "workspace": "1",
+              "monitor": "0",
+              "geometry": [
+                21.0,
+                77.0,
+                758.0,
+                502.0
+              ],
+              "fullscreenMode": 0,
+              "workspaceVisible": true,
+              "hidden": false,
+              "pinned": false,
+              "allowedOverFullscreen": true,
+              "renderOverFullscreen": true,
+              "acceptsInput": true,
+              "shouldRenderAny": true,
+              "shouldRenderOwnMonitor": true,
+              "minimized": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "PinnedRefusalKeepsUnsavedDraft",
+      "passed": true,
+      "draft": {
+        "window": "ELM-AUTHORITY-FIXTURE",
+        "kind": "draft",
+        "text": "UNSAVED-WARLOCK-REFUSAL-DRAFT"
+      }
+    },
+    {
+      "name": "RefusalPreservesActualPeerKeyboardRecipient",
+      "passed": true,
+      "observation": {
+        "targetEvents": [],
+        "peerEvents": [
+          {
+            "window": "ELM-ACTIVATION-PEER",
+            "kind": "key",
+            "keyval": 97,
+            "keycode": 38
+          },
+          {
+            "window": "ELM-ACTIVATION-PEER",
+            "kind": "draft",
+            "text": "a"
+          }
+        ],
+        "bar": {
+          "announcements": [
+            {
+              "text": "",
+              "sequence": null,
+              "correlation": null,
+              "live": "polite"
+            }
+          ],
+          "motionProfile": "full",
+          "motionAnimations": 0,
+          "palette": {
+            "background": "rgb(23, 32, 42)",
+            "foreground": "rgb(244, 246, 247)"
+          },
+          "focusStyle": {
+            "visible": false,
+            "style": "none",
+            "color": "rgb(244, 246, 247)",
+            "background": "rgb(23, 32, 42)",
+            "outlineColor": "rgb(244, 246, 247)",
+            "outlineWidth": "3px",
+            "outlineOffset": "0px",
+            "x": 0,
+            "y": 0,
+            "width": 800,
+            "height": 56
+          },
+          "publication": "82",
+          "lease": "2",
+          "buttons": [
+            {
+              "id": "applications:{\"lifetime\":\"16926290577583047330\",\"session\":\"3\",\"frontend\":\"1\"}:22:bar:recovery-refresh",
+              "identity": "bar:recovery-refresh",
+              "label": "Refresh window statusObservation only",
+              "accessibleName": "Refresh window status; read observations without retrying actions",
+              "disabled": false,
+              "x": 3,
+              "y": 3,
+              "width": 120,
+              "height": 46
+            },
+            {
+              "id": "group:{\"lifetime\":\"16926290577583047330\",\"session\":\"3\",\"frontend\":\"1\"}:2:7:application:GTK Application",
+              "identity": "bar:group:application:GTK Application",
+              "label": "ELM-AUTHORITY-FIXTUREOpen",
+              "accessibleName": "Activate ELM-AUTHORITY-FIXTURE; Open",
+              "disabled": false,
+              "x": 129,
+              "y": 3,
+              "width": 128,
+              "height": 46
+            },
+            {
+              "id": "group:{\"lifetime\":\"16926290577583047330\",\"session\":\"3\",\"frontend\":\"1\"}:2:7:application:warlock-refusal-peer",
+              "identity": "bar:group:application:warlock-refusal-peer",
+              "label": "ELM-ACTIVATION-PEERActive",
+              "accessibleName": "Minimize ELM-ACTIVATION-PEER; Active",
+              "disabled": false,
+              "x": 263,
+              "y": 3,
+              "width": 128,
+              "height": 46
+            },
+            {
+              "id": "applications:{\"lifetime\":\"16926290577583047330\",\"session\":\"3\",\"frontend\":\"1\"}:22:control:opener",
+              "identity": "bar:applications",
+              "label": "Applications",
+              "accessibleName": "Open applications",
+              "disabled": false,
+              "x": 397,
+              "y": 3,
+              "width": 80,
+              "height": 46
+            },
+            {
+              "id": "applications:{\"lifetime\":\"16926290577583047330\",\"session\":\"3\",\"frontend\":\"1\"}:22:control:overview-opener",
+              "identity": "bar:overview",
+              "label": "Task View",
+              "accessibleName": "Open Task View",
+              "disabled": false,
+              "x": 483,
+              "y": 3,
+              "width": 80,
+              "height": 46
+            },
+            {
+              "id": "applications:{\"lifetime\":\"16926290577583047330\",\"session\":\"3\",\"frontend\":\"1\"}:22:control:switcher-opener",
+              "identity": "bar:switcher",
+              "label": "Switch windows",
+              "accessibleName": "Open window switcher",
+              "disabled": false,
+              "x": 569,
+              "y": 3,
+              "width": 80,
+              "height": 46
+            },
+            {
+              "id": "applications:{\"lifetime\":\"16926290577583047330\",\"session\":\"3\",\"frontend\":\"1\"}:22:notifications:opener",
+              "identity": "bar:notifications",
+              "label": "Notifications",
+              "accessibleName": "Open notifications",
+              "disabled": false,
+              "x": 655,
+              "y": 3,
+              "width": 80,
+              "height": 46
+            },
+            {
+              "id": "applications:{\"lifetime\":\"16926290577583047330\",\"session\":\"3\",\"frontend\":\"1\"}:22:files:opener",
+              "identity": "bar:files",
+              "label": "Files",
+              "accessibleName": "Open Files menu",
+              "disabled": false,
+              "x": 741,
+              "y": 3,
+              "width": 80,
+              "height": 46
+            },
+            {
+              "id": "applications:{\"lifetime\":\"16926290577583047330\",\"session\":\"3\",\"frontend\":\"1\"}:22:system:opener",
+              "identity": "bar:system",
+              "label": "System",
+              "accessibleName": "Open system menu",
+              "disabled": false,
+              "x": 827,
+              "y": 3,
+              "width": 80,
+              "height": 46
+            },
+            {
+              "id": "applications:{\"lifetime\":\"16926290577583047330\",\"session\":\"3\",\"frontend\":\"1\"}:22:settings:opener",
+              "identity": "bar:settings",
+              "label": "Settings",
+              "accessibleName": "Open settings",
+              "disabled": false,
+              "x": 913,
+              "y": 3,
+              "width": 80,
+              "height": 46
+            }
+          ],
+          "feedback": {
+            "text": "Activate: refused for ELM-AUTHORITY-FIXTURE. Refresh window status, then choose again.",
+            "accessibleName": "Activate: refused for ELM-AUTHORITY-FIXTURE. Refresh window status, then choose again.",
+            "live": "off",
+            "atomic": "true",
+            "x": 544,
+            "y": 0,
+            "width": 256,
+            "height": 56,
+            "clip": "none",
+            "display": "flex"
+          },
+          "focus": "",
+          "documentFocused": false,
+          "selectionAnchor": "bar:group:application:GTK Application",
+          "text": "Refresh window status\nObservation only\nELM-AUTHORITY-FIXTURE\nOpen\nELM-ACTIVATION-PEER\nActive\nApplications\nTask View\nSwitch windows\nNotifications\nFiles\nSystem\nSettings\nActivate: refused for ELM-AUTHORITY-FIXTURE. Refresh window status, then choose again.",
+          "fontSize": "16px",
+          "theme": "night",
+          "textScale": "100",
+          "effects": "on",
+          "reducedTransparency": "false",
+          "viewportWidth": 800,
+          "viewportHeight": 56,
+          "scrollLeft": 0,
+          "scrollWidth": 1002,
+          "clientWidth": 540,
+          "actions": {
+            "x": 0,
+            "y": 0,
+            "width": 540,
+            "height": 56
+          }
+        }
+      }
+    },
+    {
+      "name": "ActualRecoveryReadsWithoutRetryingRefusedAction",
+      "passed": true,
+      "reads": [
+        {
+          "protocolVersion": 3,
+          "kind": "projection-request",
+          "binding": {
+            "lifetime": "16926290577583047330",
+            "session": "3",
+            "frontend": "1"
+          },
+          "requestId": "34"
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "geometry-facts-request",
+          "geometryProtocol": 3,
+          "binding": {
+            "lifetime": "16926290577583047330",
+            "session": "3",
+            "frontend": "1"
+          },
+          "requestId": "35",
+          "minimumWatermark": "16"
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "projection-request",
+          "binding": {
+            "lifetime": "16926290577583047330",
+            "session": "3",
+            "frontend": "1"
+          },
+          "requestId": "36"
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "geometry-facts-request",
+          "geometryProtocol": 3,
+          "binding": {
+            "lifetime": "16926290577583047330",
+            "session": "3",
+            "frontend": "1"
+          },
+          "requestId": "37",
+          "minimumWatermark": "17"
+        }
+      ],
+      "facts": {
+        "protocolVersion": 3,
+        "kind": "scene-facts",
+        "binding": {
+          "lifetime": "16926290577583047330",
+          "session": "1",
+          "frontend": "1"
+        },
+        "requestId": "441",
+        "sequence": "48",
+        "revision": "7",
+        "outputGeneration": "2",
+        "facts": {
+          "focused": "3",
+          "windows": [
+            {
+              "incarnation": "2",
+              "owner": null,
+              "application": "GTK Application",
+              "stackPosition": 0,
+              "workspace": "2",
+              "monitor": "1",
+              "geometry": [
+                840.0,
+                230.0,
+                108.0,
+                440.0
+              ],
+              "fullscreenMode": 0,
+              "workspaceVisible": true,
+              "hidden": false,
+              "pinned": true,
+              "allowedOverFullscreen": true,
+              "renderOverFullscreen": true,
+              "acceptsInput": true,
+              "shouldRenderAny": true,
+              "shouldRenderOwnMonitor": true,
+              "minimized": false
+            },
+            {
+              "incarnation": "3",
+              "owner": null,
+              "application": "warlock-refusal-peer",
+              "stackPosition": 1,
+              "workspace": "1",
+              "monitor": "0",
+              "geometry": [
+                21.0,
+                77.0,
+                758.0,
+                502.0
+              ],
+              "fullscreenMode": 0,
+              "workspaceVisible": true,
+              "hidden": false,
+              "pinned": false,
+              "allowedOverFullscreen": true,
+              "renderOverFullscreen": true,
+              "acceptsInput": true,
+              "shouldRenderAny": true,
+              "shouldRenderOwnMonitor": true,
+              "minimized": false
+            }
+          ]
+        }
+      },
+      "target": {
+        "address": "0x56505fc65730",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          840,
+          230
+        ],
+        "size": [
+          108,
+          440
+        ],
+        "workspace": {
+          "id": 2,
+          "name": "2"
+        },
+        "floating": true,
+        "monitor": 1,
+        "class": "GTK Application",
+        "title": "ELM-AUTHORITY-FIXTURE",
+        "initialClass": "GTK Application",
+        "initialTitle": "ELM-AUTHORITY-FIXTURE",
+        "pid": 204322,
+        "xwayland": false,
+        "pinned": true,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [],
+        "swallowing": "0x0",
+        "focusHistoryID": 1,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "18000000"
+      }
+    },
+    {
+      "name": "RefusalDoesNotReplayOrLaunch",
+      "passed": true
+    },
+    {
+      "name": "RefusalRecoveryIntervalUsesZeroInjectedPointerEvents",
+      "passed": true,
+      "priorPointerCommands": 17,
+      "currentPointerCommands": 17,
+      "priorPointerHelpers": 0
+    }
+  ],
+  "capture": {
+    "path": "/home/charles/window-integration-qa/warlock-window-feedback-1793219131645759396/taskbar-native-refused.png",
+    "sha256": "b0e087dd6de6034a9355d7e9b9a7452ed24e268bfee4073c8f5610754649212a"
+  },
+  "rootVisualReview": "Viewed actual two-output capture: readable refusal feedback and focused observation-only Refresh on source output, green peer entry a, pinned narrow red target on other output. Full draft preservation derives from actual event/state assertion; narrow target clips displayed string. Capture hash checked.",
+  "scope": "Real selected-output AT-SPI activation produces one correlated Refused implicit-transfer-required native outcome; target/peer geometry, pin, focus and unsaved draft preserved. Accessible status bars expose refusal text with showing/visible states. Real AT refresh issues projection/facts reads without effect replay or launch. Escape and actual peer key recipient retained. Original pointer drag/cancel prefix contains17commands; refusal/recovery interval adds none. Strict private AT services/process-start/provider qualification and owned cleanup pass. Automatic announcement, audible speech, braille and full UI004/release are unaccepted.",
+  "missingObservations": [
+    "Independent original taskbar-refusal adjudication combining pointer60, keyboard63 and AT75 on equal366source tuple.",
+    "Explicit New instance, application pin versus native always-on-top and remaining full requirement/release obligations."
+  ]
+}

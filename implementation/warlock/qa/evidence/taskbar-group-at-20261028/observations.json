@@ -1,0 +1,160 @@
+{
+  "schema": 1,
+  "requirements": [
+    "ELM-UI-004"
+  ],
+  "scenarios": [
+    "taskbar-group"
+  ],
+  "disposition": "partial",
+  "rawReport": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-three-group-at/native-three-group-keyboard-1793218585254298965/report.json",
+    "sha256": "bd07929376dda24388c873aa82e00c25595ee21211a7074713952555f8446d25"
+  },
+  "runner": {
+    "sha256": "fbc9f78dfc5acc7fdc7d80b1e09e8e5dc390f5688eecb25ec4ad99c15429e5fc",
+    "popupActionSHA256": "31dae79554dd35ef62d50bf19a04658bb3f177d7ffb9020a8f6292ae622c63e2",
+    "baseGroupSHA256": "ac67e15dd821e842e3bb235db1eca85f56907b76647065edd96e94a663ae8b8f"
+  },
+  "checksPassed": 66,
+  "cleanupPassed": true,
+  "sourceInputsRehashed": 366,
+  "sourceInputsChanged": [],
+  "nativePair": {
+    "core": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-build/Hyprland",
+      "sha256": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e"
+    },
+    "plugin": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/authority/elm-window-geometry-authority.so",
+      "sha256": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c"
+    },
+    "aquamarine": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/lib/libaquamarine.so.0.15.0",
+      "sha256": "667a22d535aade4e4a26134e39028a87fb3f963c28b7bf7ff79da684bb014ecd"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/elm-host",
+    "sha256": "4377b11ce0afe9e1072210666aa872118b032995275a20657058771e5e6c8347",
+    "heldBuild": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/host-build-report.json",
+    "heldBuildSHA256": "691806471ff599503a20067aa0b90bf914b93a1ee5985198cdc79fb92ff975bf"
+  },
+  "runtimeByReference": {
+    "root": "/home/charles/Warlock/implementation/warlock-client-provider-native-v204",
+    "freshAdapter": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-qa/fresh_candidate.py",
+    "freshAdapterSHA256": "cb29ebe89b051223037264a366b9616815284b88e3cc452bc18a8993680eb8ab",
+    "parentAdapterSHA256": "e045634bd023f07977c398ef0057b9fdee3a1e1718d51c879e221ee353e28ae9",
+    "tupleSHA256": "bc225242e30baf4a5b8b1182cef6fdc716cc9c67de90dc35674f90c5fa87830b",
+    "foundationSHA256": "08b24bd93cbb63ec097900915379b32e90d9dcca7156d04fe8ee959efaff264f"
+  },
+  "actualActions": [
+    {
+      "stage": "OpenGroup",
+      "receipt": {
+        "passed": true,
+        "source": "actual-at-spi-action",
+        "before": {
+          "pid": 201878,
+          "identity": "275",
+          "name": "Choose a window from ELM-CHORD-THIRD; Active; 3 windows",
+          "role": "toggle button",
+          "states": [
+            "active",
+            "enabled",
+            "focusable",
+            "focused",
+            "pressed",
+            "sensitive",
+            "showing",
+            "visible"
+          ]
+        },
+        "action": "press",
+        "actionIndex": 0,
+        "syntheticNodes": false,
+        "injectedDomEvents": false
+      },
+      "publication": "21",
+      "lease": "1",
+      "controlIdentity": "bar:group:application:GTK Application"
+    },
+    {
+      "stage": "SelectMember",
+      "receipt": {
+        "passed": true,
+        "source": "actual-at-spi-action",
+        "before": {
+          "pid": 201878,
+          "identity": "442",
+          "name": "Activate ELM-ACTIVATION-PEER",
+          "domId": "picker:{\"lifetime\":\"3572511293494519704\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:1:2",
+          "role": "button",
+          "states": [
+            "enabled",
+            "focusable",
+            "focused",
+            "sensitive",
+            "showing",
+            "visible"
+          ]
+        },
+        "action": "press",
+        "actionIndex": 0,
+        "syntheticNodes": false,
+        "injectedDomEvents": false
+      },
+      "publication": "22",
+      "lease": "2",
+      "controlIdentity": "family:2"
+    }
+  ],
+  "mappedProviders": {
+    "reader": {
+      "pid": 201811,
+      "start": "9669946",
+      "packetSHA256": "78016e94c06d11f71c5ba18694fadd876cd17d0d8643b361009733ba4ab57726",
+      "count": 123
+    },
+    "inspector": {
+      "pid": 201801,
+      "start": "9669938",
+      "packetSHA256": "78016e94c06d11f71c5ba18694fadd876cd17d0d8643b361009733ba4ab57726",
+      "count": 59
+    }
+  },
+  "captures": [
+    {
+      "path": "/home/charles/window-integration-qa/warlock-window-feedback-1793218585254425043/three-group-picker.png",
+      "sha256": "a7856cf4f81fe9a045211b2482e1c76b969901b83fbf8f553c83425cca53a37c"
+    },
+    {
+      "path": "/home/charles/window-integration-qa/warlock-window-feedback-1793218585254425043/three-group-selected.png",
+      "sha256": "b50c6a6140be427da450fe326044d2cce15471466c71015cd4bdfc5cbb714579"
+    },
+    {
+      "path": "/home/charles/window-integration-qa/warlock-window-feedback-1793218585254425043/three-group-last.png",
+      "sha256": "35b953a896f3836c980b46fdf34863566fd64d03514d31f9045f994ac5b05034"
+    },
+    {
+      "path": "/home/charles/window-integration-qa/warlock-window-feedback-1793218585254425043/three-group-first.png",
+      "sha256": "fd95be5d063477fa4442dbb441b1e0f62fefb73ce4b090c3e77abfd920241074"
+    },
+    {
+      "path": "/home/charles/window-integration-qa/warlock-window-feedback-1793218585254425043/three-group-middle.png",
+      "sha256": "69cb6c440d6506fc59cb74a1099c26b3fe898c29f1c689f7d8399e9d6ff1ab44"
+    }
+  ],
+  "rootVisualReview": "Viewed first/middle/last focused rows and dismissed selected desktop. Full activation titles and focused row outlines visible; exact recipient and focus supported by native facts and actual client events, not pixels alone. All five capture hashes verified.",
+  "preservedFailure": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-three-group-at/native-three-group-keyboard-1793218303605122424/report.json",
+    "sha256": "3e597e8238894a80b8e3dadcf435719f8d3624660f764cbf9657e2ebe65d82a0",
+    "result": "Actual group opening and physical row reveal passed, but AT observation expected group ancestry while actual native WebKit exported panel. No selection verdict; cleanup passed.",
+    "history": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-three-group-at/history/first-native-trial"
+  },
+  "scope": "Real AT-SPI press opens current toolbar group and selects exact focused popup member, three current accessible names/roles and visible rows, exactly one committed native activation and selected GTK key recipient, no other history reorder/launch/pointer injection. Popup action binds owned PID, AT identity/name, exact current picker DOM attribute, actual window/document/panel ancestry and current publication/lease/focus/visible bounds. Strict private AT runtime maps and owned cleanup pass. Silent Orca requests do not establish audible output or braille.",
+  "missingObservations": [
+    "Independent original taskbar-group acceptance review combining pointer51, keyboard53 and AT66 reports on equal source tuple.",
+    "Refusal AT, explicit New instance and remaining whole-requirement/release gates."
+  ]
+}
