@@ -5197,6 +5197,11 @@
               "path": "implementation/warlock/qa/evidence/native-taskbar-20261028/observations.json",
               "sha256": "6beaf7c35bc5a7d1c8b172f9cb581b647f59e0e4c91e5b58c7918ea36613c782",
               "scope": "Fresh tuple original primary pointer observation only; historical keyboard/AT packets retained separately."
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/primary-keyboard-20261028/manifest.json",
+              "sha256": "8b0615d8b3373303b03508599770ad3ec0aed032c2d00ed8000b0477532ef064",
+              "scope": "Actual native shortcut and Enter trigger five primary actions with no injected pointer helper events: activation/minimize-to-MRU/restore/minimize-to-desktop/restore, each one bound Committed receipt; actual recipients/state pixels, five outer focus-ring geometry/paint/contrast checks and normal cleanup. Matching AT remains open."
             }
           ],
           "missingObservation": "Independent original review; applicable New instance native AT, enlarged/dense discovery and wider lifecycle/Unknown schedules; full release package/rollback/resources/hardware.",
@@ -5354,6 +5359,44 @@
                 "Applicable assistive-technology activation and announcements",
                 "Other ELM-UI-004 scenarios and independent final scenario acceptance"
               ]
+            },
+            {
+              "disposition": "partial",
+              "evidence": {
+                "path": "implementation/warlock/qa/evidence/primary-keyboard-20261028/manifest.json",
+                "sha256": "8b0615d8b3373303b03508599770ad3ec0aed032c2d00ed8000b0477532ef064"
+              },
+              "scope": "Actual native shortcut and Enter trigger five primary actions with no injected pointer helper events: activation/minimize-to-MRU/restore/minimize-to-desktop/restore, each one bound Committed receipt; actual recipients/state pixels, five outer focus-ring geometry/paint/contrast checks and normal cleanup. Matching AT remains open.",
+              "sourceTuple": {
+                "sourceRevision": "e2611ecb70cf1346d9ac01c6ea2348930c09878c",
+                "core": {
+                  "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-build/Hyprland",
+                  "sha256": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e"
+                },
+                "plugin": {
+                  "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/authority/elm-window-geometry-authority.so",
+                  "sha256": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c"
+                },
+                "aquamarine": {
+                  "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/lib/libaquamarine.so.0.15.0",
+                  "sha256": "667a22d535aade4e4a26134e39028a87fb3f963c28b7bf7ff79da684bb014ecd"
+                },
+                "host": {
+                  "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/elm-host",
+                  "sha256": "4377b11ce0afe9e1072210666aa872118b032995275a20657058771e5e6c8347",
+                  "heldBuild": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/host-build-report.json",
+                  "heldBuildSHA256": "691806471ff599503a20067aa0b90bf914b93a1ee5985198cdc79fb92ff975bf"
+                },
+                "toolchain": {
+                  "compilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948"
+                },
+                "runnerSHA256": "67f4622fd399bbc59ca03d6ca1bf689e2afa9572f52e3a8a3700355999a382be"
+              },
+              "missingObservations": [
+                "Applicable current focused AT invocation/names/focus/toggle/announcements on this tuple.",
+                "Independent final original scenario review and remaining UI004 cases."
+              ],
+              "scenarioAccepted": false
             }
           ]
         },
@@ -5386,6 +5429,11 @@
               "path": "implementation/warlock/qa/evidence/native-taskbar-20261028/observations.json",
               "sha256": "6beaf7c35bc5a7d1c8b172f9cb581b647f59e0e4c91e5b58c7918ea36613c782",
               "scope": "Fresh tuple original primary pointer observation only; historical keyboard/AT packets retained separately."
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/primary-keyboard-20261028/manifest.json",
+              "sha256": "8b0615d8b3373303b03508599770ad3ec0aed032c2d00ed8000b0477532ef064",
+              "scope": "Actual native shortcut and Enter trigger five primary actions with no injected pointer helper events: activation/minimize-to-MRU/restore/minimize-to-desktop/restore, each one bound Committed receipt; actual recipients/state pixels, five outer focus-ring geometry/paint/contrast checks and normal cleanup. Matching AT remains open."
             }
           ],
           "missingObservation": "Independent original-scenario review against the exact source/ABI/toolchain and frozen policy remains open. This fixture covers focused current AT-SPI press and physical Enter, with silent Orca speech transcript observation. Audible speech, braille, unfocused/cached AT actions, broader AT modes, grouped/zero/refusal taskbar scenarios and other GUI surfaces remain separate obligations.",
@@ -5500,6 +5548,44 @@
                 "Matching keyboard-primary/AT and independent full UI004 acceptance remain open."
               ],
               "scenarioAccepted": false
+            },
+            {
+              "disposition": "partial",
+              "evidence": {
+                "path": "implementation/warlock/qa/evidence/primary-keyboard-20261028/manifest.json",
+                "sha256": "8b0615d8b3373303b03508599770ad3ec0aed032c2d00ed8000b0477532ef064"
+              },
+              "scope": "Actual native shortcut and Enter trigger five primary actions with no injected pointer helper events: activation/minimize-to-MRU/restore/minimize-to-desktop/restore, each one bound Committed receipt; actual recipients/state pixels, five outer focus-ring geometry/paint/contrast checks and normal cleanup. Matching AT remains open.",
+              "sourceTuple": {
+                "sourceRevision": "e2611ecb70cf1346d9ac01c6ea2348930c09878c",
+                "core": {
+                  "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-build/Hyprland",
+                  "sha256": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e"
+                },
+                "plugin": {
+                  "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/authority/elm-window-geometry-authority.so",
+                  "sha256": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c"
+                },
+                "aquamarine": {
+                  "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/lib/libaquamarine.so.0.15.0",
+                  "sha256": "667a22d535aade4e4a26134e39028a87fb3f963c28b7bf7ff79da684bb014ecd"
+                },
+                "host": {
+                  "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/elm-host",
+                  "sha256": "4377b11ce0afe9e1072210666aa872118b032995275a20657058771e5e6c8347",
+                  "heldBuild": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/host-build-report.json",
+                  "heldBuildSHA256": "691806471ff599503a20067aa0b90bf914b93a1ee5985198cdc79fb92ff975bf"
+                },
+                "toolchain": {
+                  "compilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948"
+                },
+                "runnerSHA256": "67f4622fd399bbc59ca03d6ca1bf689e2afa9572f52e3a8a3700355999a382be"
+              },
+              "missingObservations": [
+                "Applicable current focused AT invocation/names/focus/toggle/announcements on this tuple.",
+                "Independent final original scenario review and remaining UI004 cases."
+              ],
+              "scenarioAccepted": false
             }
           ]
         },
@@ -5537,6 +5623,11 @@
               "path": "implementation/warlock/qa/evidence/native-taskbar-20261028/observations.json",
               "sha256": "6beaf7c35bc5a7d1c8b172f9cb581b647f59e0e4c91e5b58c7918ea36613c782",
               "scope": "Fresh tuple original primary pointer observation only; historical keyboard/AT packets retained separately."
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/primary-keyboard-20261028/manifest.json",
+              "sha256": "8b0615d8b3373303b03508599770ad3ec0aed032c2d00ed8000b0477532ef064",
+              "scope": "Actual native shortcut and Enter trigger five primary actions with no injected pointer helper events: activation/minimize-to-MRU/restore/minimize-to-desktop/restore, each one bound Committed receipt; actual recipients/state pixels, five outer focus-ring geometry/paint/contrast checks and normal cleanup. Matching AT remains open."
             }
           ],
           "missingObservation": "Independent original-scenario review against the exact source/ABI/toolchain and frozen policy remains open. This fixture covers focused current AT-SPI press and physical Enter, with silent Orca speech transcript observation. Audible speech, braille, unfocused/cached AT actions, broader AT modes, grouped/zero/refusal taskbar scenarios and other GUI surfaces remain separate obligations.",
@@ -5609,6 +5700,44 @@
                 "Applicable assistive-technology activation and announcements",
                 "Other ELM-UI-004 scenarios and independent final scenario acceptance"
               ]
+            },
+            {
+              "disposition": "partial",
+              "evidence": {
+                "path": "implementation/warlock/qa/evidence/primary-keyboard-20261028/manifest.json",
+                "sha256": "8b0615d8b3373303b03508599770ad3ec0aed032c2d00ed8000b0477532ef064"
+              },
+              "scope": "Actual native shortcut and Enter trigger five primary actions with no injected pointer helper events: activation/minimize-to-MRU/restore/minimize-to-desktop/restore, each one bound Committed receipt; actual recipients/state pixels, five outer focus-ring geometry/paint/contrast checks and normal cleanup. Matching AT remains open.",
+              "sourceTuple": {
+                "sourceRevision": "e2611ecb70cf1346d9ac01c6ea2348930c09878c",
+                "core": {
+                  "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-build/Hyprland",
+                  "sha256": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e"
+                },
+                "plugin": {
+                  "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/authority/elm-window-geometry-authority.so",
+                  "sha256": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c"
+                },
+                "aquamarine": {
+                  "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/lib/libaquamarine.so.0.15.0",
+                  "sha256": "667a22d535aade4e4a26134e39028a87fb3f963c28b7bf7ff79da684bb014ecd"
+                },
+                "host": {
+                  "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/elm-host",
+                  "sha256": "4377b11ce0afe9e1072210666aa872118b032995275a20657058771e5e6c8347",
+                  "heldBuild": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/host-build-report.json",
+                  "heldBuildSHA256": "691806471ff599503a20067aa0b90bf914b93a1ee5985198cdc79fb92ff975bf"
+                },
+                "toolchain": {
+                  "compilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948"
+                },
+                "runnerSHA256": "67f4622fd399bbc59ca03d6ca1bf689e2afa9572f52e3a8a3700355999a382be"
+              },
+              "missingObservations": [
+                "Applicable current focused AT invocation/names/focus/toggle/announcements on this tuple.",
+                "Independent final original scenario review and remaining UI004 cases."
+              ],
+              "scenarioAccepted": false
             }
           ]
         },
@@ -13108,5 +13237,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-28T18:41:43.680982+00:00"
+  "updatedUTC": "2026-10-28T18:50:56.291961+00:00"
 }

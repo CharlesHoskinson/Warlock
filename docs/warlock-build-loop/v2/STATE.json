@@ -1,14 +1,14 @@
 {
   "schema": 1,
   "owner": "sol",
-  "updatedUTC": "2026-10-28T18:42:38.907598+00:00",
+  "updatedUTC": "2026-10-28T18:52:17.715768+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "native-taskbar-primary-keyboard",
+    "id": "native-taskbar-primary-at",
     "requirements": [
       "ELM-UI-004"
     ],
@@ -18,19 +18,22 @@
       "taskbar-minimized"
     ],
     "paths": [
-      "implementation/warlock/qa/native-taskbar-primary-keyboard-portable.py",
+      "implementation/warlock/qa/native-taskbar-primary-at-portable.py",
       "implementation/warlock/qa/native-window-feedback.py",
+      "implementation/warlock/qa/accessibility-reader.py",
+      "implementation/warlock/qa/accessibility-session.py",
+      "implementation/warlock/qa/accessibility-inspector.py",
       "implementation/warlock/src/Desktop.elm",
       "implementation/warlock/src/Surface.elm",
       "implementation/warlock/README.md"
     ],
-    "before": "Current fresh tuple primary pointer journeys pass; actual keyboard-triggered primary activation/minimize/restore parity remains unobserved on this tuple.",
-    "after": "Original physical keyboard primary route performs activate/minimize/restore with exact one bound committed effect, MRU/desktop succession, actual recipient/pixels and zero pointer action, keeping separate AT and remaining UI004 obligations.",
+    "before": "Fresh native pointer and keyboard-primary journeys pass; focused AT press, accessible names/focus/state and Orca transcript remain unobserved on this tuple.",
+    "after": "Original focused current AT-SPI primary actions produce exact committed native effects with actual recipients/pixels and correct accessible names/focus/toggle/Orca transcript in a qualified private AT environment.",
     "verification": [
-      "Original five-action primary keyboard recording on exact fresh tuple with native shortcut/Enter invocation, zero pointer helpers, exact bound receipts, actual native state/cues/pixels/recipient, MRU/desktop succession and normal cleanup. Applicable AT and other UI004 scenarios remain separate."
+      "Preserve original focused AT primary fixture/native oracle/deadlines, private bus/session scope/normalcleanup and exact fresh tuple; real AT action/name/focus/state plus silent Orca speech transcript where original requires, with audible speech/braille and broader AT modes explicitly separate."
     ],
     "owner": "sol",
-    "participantRecord": ".warlock-contributor/native-primary-keyboard.json"
+    "participantRecord": ".warlock-contributor/native-primary-at.json"
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -1923,51 +1926,46 @@
     "nextOriginalProductWork": "Restore and qualify a fresh coherent native source/core/plugin/host tuple for original taskbar activation/minimize/restore recipients: ELM-UI-004 / ELM-UX-005 / ELM-UX-008. Root owns serialized protected native execution; source reconstruction/build evidence stays separate from GUI acceptance."
   },
   "previousActiveSlice": {
-    "id": "native-taskbar-workspace2",
+    "id": "native-taskbar-primary-keyboard",
     "requirements": [
-      "ELM-UX-008",
       "ELM-UI-004"
     ],
     "scenarios": [
-      "ux-008",
+      "taskbar-inactive",
+      "taskbar-active",
       "taskbar-minimized"
     ],
     "paths": [
-      "implementation/warlock/qa/native-taskbar-workspace2-portable.py",
+      "implementation/warlock/qa/native-taskbar-primary-keyboard-portable.py",
       "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/qa/WorkspaceNavigationReplay.elm",
       "implementation/warlock/src/Desktop.elm",
       "implementation/warlock/src/Surface.elm",
       "implementation/warlock/README.md"
     ],
-    "before": "Original exactly-three-entry example accepted on observed tuple; minimized workspace2 icon restore and exact no-scratchpad membership remain unobserved on this fresh tuple.",
-    "after": "Original minimized workspace2 member selected through taskbar icon route restores with one bound committed Restore receipt, exact workspace2 membership and native recipient/pixel evidence without scratchpad conversion.",
+    "before": "Current fresh tuple primary pointer journeys pass; actual keyboard-triggered primary activation/minimize/restore parity remains unobserved on this tuple.",
+    "after": "Original physical keyboard primary route performs activate/minimize/restore with exact one bound committed effect, MRU/desktop succession, actual recipient/pixels and zero pointer action, keeping separate AT and remaining UI004 obligations.",
     "verification": [
-      "Original ELM-UX-008 Elm replay plus isolated native recording of minimized workspace2 icon route with exact Restore receipt/member identity/no scratchpad; preserve original TaskViewRestore and TaskbarRestore assertions and deadlines, explicit picker route where applicable. UI004 matching keyboard/AT remains separate."
+      "Original five-action primary keyboard recording on exact fresh tuple with native shortcut/Enter invocation, zero pointer helpers, exact bound receipts, actual native state/cues/pixels/recipient, MRU/desktop succession and normal cleanup. Applicable AT and other UI004 scenarios remain separate."
     ],
     "owner": "sol",
-    "participantRecord": ".warlock-contributor/native-workspace2.json",
-    "outcome": "ELM-UX-008 accepted on grouped-icon route; UI004 minimized partial",
-    "sourceRevision": "12cf352b13181437391098889b8d9a05f97b0ce8",
-    "evidence": "implementation/warlock/qa/evidence/workspace2-20261028/manifest.json"
+    "participantRecord": ".warlock-contributor/native-primary-keyboard.json",
+    "outcome": "131originalkeyboardchecks pass; UI004threecases partial untilAT/finalreview",
+    "evidence": "implementation/warlock/qa/evidence/primary-keyboard-20261028/manifest.json"
   },
   "lastNativeObservation": {
-    "report": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-workspace2/native-workspace2-1793212296704211777/report.json",
-    "sha256": "b29b7f8104b210389d60946ea972c219eb7b7c79511baf1f7d05dbc5825eb386",
-    "scope": "52nativechecks plus10compiledDesktopassertions; groupedtaskbaricon/picker restores workspace2 with exact receipt/membership/pixels/recipient, independentliteralreview on source12cf.",
+    "report": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-primary-keyboard/native-primary-keyboard-1793212982313162176/report.json",
+    "sha256": "49f7df3d8b15cb1a5079cb849df0ea8c8ddd17ad195c70bae758f630769e8da7",
+    "scope": "131originalnativekeyboardprimarychecks; shortcut/Enter actuallytriggersfiveactions, fiveboundCommittedreceipts, zeroInjectedPointer, actualrecipient/cues/pixels andouterfocusgeometry/paint/contrast.",
     "observedScenarios": [
-      "ux-008",
+      "taskbar-inactive",
+      "taskbar-active",
       "taskbar-minimized"
     ],
     "requirementAccepted": false,
-    "acceptedRequirements": [
-      "ELM-UX-008"
-    ],
-    "remaining": [
-      "UI004 keyboard-primary/AT and other cases",
-      "UI002 separate navigation receipt obligations",
-      "Native singleton direct-icon path not observed",
-      "Full release obligations"
+    "missingObservations": [
+      "Matching applicable focused AT on freshprivateenvironment",
+      "Independent final originalcase acceptance andremainingUI004cases",
+      "Other originalrequirements/fullrelease obligations"
     ]
   },
   "priorActiveSlices": [
@@ -2059,6 +2057,35 @@
       "outcome": "ELM-UX-005 accepted; ELM-UI-004 group partial",
       "sourceRevision": "85d1531f3",
       "evidence": "implementation/warlock/qa/evidence/three-group-20261028/manifest.json"
+    },
+    {
+      "id": "native-taskbar-workspace2",
+      "requirements": [
+        "ELM-UX-008",
+        "ELM-UI-004"
+      ],
+      "scenarios": [
+        "ux-008",
+        "taskbar-minimized"
+      ],
+      "paths": [
+        "implementation/warlock/qa/native-taskbar-workspace2-portable.py",
+        "implementation/warlock/qa/native-window-feedback.py",
+        "implementation/warlock/qa/WorkspaceNavigationReplay.elm",
+        "implementation/warlock/src/Desktop.elm",
+        "implementation/warlock/src/Surface.elm",
+        "implementation/warlock/README.md"
+      ],
+      "before": "Original exactly-three-entry example accepted on observed tuple; minimized workspace2 icon restore and exact no-scratchpad membership remain unobserved on this fresh tuple.",
+      "after": "Original minimized workspace2 member selected through taskbar icon route restores with one bound committed Restore receipt, exact workspace2 membership and native recipient/pixel evidence without scratchpad conversion.",
+      "verification": [
+        "Original ELM-UX-008 Elm replay plus isolated native recording of minimized workspace2 icon route with exact Restore receipt/member identity/no scratchpad; preserve original TaskViewRestore and TaskbarRestore assertions and deadlines, explicit picker route where applicable. UI004 matching keyboard/AT remains separate."
+      ],
+      "owner": "sol",
+      "participantRecord": ".warlock-contributor/native-workspace2.json",
+      "outcome": "ELM-UX-008 accepted on grouped-icon route; UI004 minimized partial",
+      "sourceRevision": "12cf352b13181437391098889b8d9a05f97b0ce8",
+      "evidence": "implementation/warlock/qa/evidence/workspace2-20261028/manifest.json"
     }
   ]
 }
