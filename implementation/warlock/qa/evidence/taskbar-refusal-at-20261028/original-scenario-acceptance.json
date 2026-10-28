@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "requirement": "ELM-UI-004",
+  "scenario": "taskbar-refusal",
+  "scenarioAccepted": true,
+  "requirementAccepted": false,
+  "originalOracle": {
+    "name": "taskbar-refusal",
+    "given": "native authority refuses the requested action",
+    "when": "primary pointer or keyboard activation occurs",
+    "then": "observed state remains authoritative with feedback"
+  },
+  "verificationScope": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+  "sourceTuple": {
+    "sourceRevision": "fc904f02a65057c8cfc6bc5590efe472ad68dba4",
+    "core": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-build/Hyprland",
+      "sha256": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e"
+    },
+    "plugin": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/authority/elm-window-geometry-authority.so",
+      "sha256": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c"
+    },
+    "aquamarine": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/lib/libaquamarine.so.0.15.0",
+      "sha256": "667a22d535aade4e4a26134e39028a87fb3f963c28b7bf7ff79da684bb014ecd"
+    },
+    "host": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/elm-host",
+      "sha256": "4377b11ce0afe9e1072210666aa872118b032995275a20657058771e5e6c8347",
+      "heldBuild": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/host-build-report.json",
+      "heldBuildSHA256": "691806471ff599503a20067aa0b90bf914b93a1ee5985198cdc79fb92ff975bf"
+    },
+    "runner": {
+      "sha256": "c365e79d6778b02c3b5cae553fcda6c0cf6fa48f80d16874bc9147f2452a8a9c",
+      "actionHelperSHA256": "9d595c84fdf30dff8df5f559363519ae290b510eebe20c36ff5143d1a7a7cb68",
+      "baseKeyboardSHA256": "39f9e814293352db22733f26c0f7c7d0d69002b1438b6c5966e35e615c28db26"
+    },
+    "toolchain": {
+      "compilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948"
+    }
+  },
+  "scope": "Accept exactly the original taskbar-refusal example on the observed equal366source tuple using named pointer, native keyboard-primary and actual AT-SPI action recordings, independently reviewed against the frozen original policy.",
+  "reports": [
+    {
+      "mode": "pointer",
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-refusal/native-refusal-1793210737472380023/report.json",
+      "sha256": "ac9208da292cd894a37d0365cafa52571ef6ce24789da378862fb7c6212f566f",
+      "checks": 60
+    },
+    {
+      "mode": "keyboard",
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-refusal-keyboard/native-refusal-keyboard-1793216636442666772/report.json",
+      "sha256": "787cee9f8482e3ec48a486a3efecf7d1b9ad810fedb2521271d437fb5082286a",
+      "checks": 63
+    },
+    {
+      "mode": "at",
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-refusal-at/native-refusal-at-1793219131645665304/report.json",
+      "sha256": "06d0fe780b5f4d41f9277f1f3dce4c03b7e7eb59523fcd11c3c38628ffc1616f",
+      "checks": 75
+    }
+  ],
+  "equalSourceInputsRechecked": 366,
+  "canonicalObservation": {
+    "path": "implementation/warlock/qa/evidence/taskbar-refusal-at-20261028/observations.json",
+    "sha256": "685b581c4c59c8ead5b08e96ecd9bce28ed7ce5b91560de3b1e8cae78bd0946a"
+  },
+  "independentReview": {
+    "name": "quint-5",
+    "independent": true,
+    "disposition": "accepted",
+    "path": "implementation/warlock/qa/evidence/taskbar-refusal-at-20261028/independent-disposition.md",
+    "sha256": "0fc911f2bf04f38de1969957eadfce7bb344d8929a397aa8b23dc7f9f14919ba"
+  },
+  "preservation": "Original pending/partial canonical observation and failed attempts remain byte-identical. This sidecar records later combined exact original-scenario disposition.",
+  "limits": "Group proof concerns current named three-entry selection, not every app/preview/AT schedule. Refusal proof preserves full draft by event assertion where narrow captures clip; zero pointer applies only to refusal/recovery interval after original drag prefix. Silent Orca requests are not audible/braille.",
+  "remainingRequirementObligations": [
+    "Explicit New instance and application-pin versus native always-on-top EARS clauses remain separately adjudicated.",
+    "Whole UI004 and release are not accepted simply because six named examples now pass."
+  ],
+  "fullReleaseAccepted": false
+}

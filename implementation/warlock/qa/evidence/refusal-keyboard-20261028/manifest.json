@@ -1,0 +1,820 @@
+{
+  "schema": 1,
+  "requirement": "ELM-UI-004",
+  "scenario": "taskbar-refusal",
+  "disposition": "partial",
+  "report": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-refusal-keyboard/native-refusal-keyboard-1793216636442666772/report.json",
+    "sha256": "787cee9f8482e3ec48a486a3efecf7d1b9ad810fedb2521271d437fb5082286a"
+  },
+  "scope": "Historical keyboard-only refusal/recovery interval: actual keyboard control activation and read-only recovery, exact one bound native Refused outcome, preserved focus/geometry/full draft event value, actual peer keys after legitimate Escape, no replay/launch; original17-pointer-command drag prefix retained, zero pointer only in tested interval.",
+  "checks": [
+    {
+      "name": "OwningPluginLoads",
+      "passed": true
+    },
+    {
+      "name": "CreateSecondWaylandOutput",
+      "passed": true
+    },
+    {
+      "name": "TwoNativeOutputsHaveOriginalCrossingGeometry",
+      "passed": true
+    },
+    {
+      "name": "FixtureFloats",
+      "passed": true
+    },
+    {
+      "name": "FixtureSize",
+      "passed": true
+    },
+    {
+      "name": "FixturePosition",
+      "passed": true
+    },
+    {
+      "name": "FixtureFocus",
+      "passed": true
+    },
+    {
+      "name": "TwoParentOutputPlacementObserved",
+      "passed": true
+    },
+    {
+      "name": "MoveAcrossTaskbarAndOutputStartsIdle",
+      "passed": true
+    },
+    {
+      "name": "MoveAcrossTaskbarAndOutputNativeOwnerIsOriginalWindow",
+      "passed": true
+    },
+    {
+      "name": "MoveAcrossTaskbarAndOutputCrossingRetainsNativeOwner",
+      "passed": true
+    },
+    {
+      "name": "MoveAcrossTaskbarAndOutputCrossingRetainsNativeOwner",
+      "passed": true
+    },
+    {
+      "name": "MoveAcrossTaskbarAndOutputAppsShortcutCannotStealGesture",
+      "passed": true
+    },
+    {
+      "name": "ControlledNativeFixtureminimize",
+      "passed": true
+    },
+    {
+      "name": "MoveAcrossTaskbarAndOutputCompetingNativeEffectRefused",
+      "passed": true
+    },
+    {
+      "name": "MoveAcrossTaskbarAndOutputExactlyOneNativeEnd",
+      "passed": true
+    },
+    {
+      "name": "MoveAcrossTaskbarAndOutputNativeGeometryChanged",
+      "passed": true
+    },
+    {
+      "name": "ResizeAcrossTaskbarAndOutputStartsIdle",
+      "passed": true
+    },
+    {
+      "name": "ResizeAcrossTaskbarAndOutputNativeOwnerIsOriginalWindow",
+      "passed": true
+    },
+    {
+      "name": "ResizeAcrossTaskbarAndOutputCrossingRetainsNativeOwner",
+      "passed": true
+    },
+    {
+      "name": "ResizeAcrossTaskbarAndOutputCrossingRetainsNativeOwner",
+      "passed": true
+    },
+    {
+      "name": "ResizeAcrossTaskbarAndOutputAppsShortcutCannotStealGesture",
+      "passed": true
+    },
+    {
+      "name": "ControlledNativeFixtureminimize",
+      "passed": true
+    },
+    {
+      "name": "ResizeAcrossTaskbarAndOutputCompetingNativeEffectRefused",
+      "passed": true
+    },
+    {
+      "name": "ResizeAcrossTaskbarAndOutputExactlyOneNativeEnd",
+      "passed": true
+    },
+    {
+      "name": "ResizeAcrossTaskbarAndOutputNativeGeometryChanged",
+      "passed": true
+    },
+    {
+      "name": "ExplicitEscapeStartsOriginalNativeOwner",
+      "passed": true
+    },
+    {
+      "name": "ExplicitEscapeEndsGestureExactlyOnce",
+      "passed": true
+    },
+    {
+      "name": "ReleaseAfterExplicitCancelCannotEndAgain",
+      "passed": true
+    },
+    {
+      "name": "CrossOutputCancelRestoresCapturedWorkspaceAndGeometry",
+      "passed": true
+    },
+    {
+      "name": "CrossOutputCancelEndsOnceAndNoOldRelease",
+      "passed": true
+    },
+    {
+      "name": "FreshAppsShortcutWorksAfterNativeRelease",
+      "passed": true
+    },
+    {
+      "name": "feedback-helper-1NormalExit",
+      "passed": true
+    },
+    {
+      "name": "PinActualTargetOnLiveOutput",
+      "passed": true
+    },
+    {
+      "name": "PinnedRefusalFixtureRetainsPlacement",
+      "passed": true
+    },
+    {
+      "name": "SelectOtherOutputForPeerFixture",
+      "passed": true
+    },
+    {
+      "name": "InitializeActiveOtherOutputPeer",
+      "passed": true
+    },
+    {
+      "name": "RefusalKeyboardTargetCurrentAndFullyContained",
+      "passed": true
+    },
+    {
+      "name": "KeyboardCurrentOtherOutputControlactivate",
+      "passed": true
+    },
+    {
+      "name": "KeyboardNavigationDoesNotLaunchOrDispatchactivate",
+      "passed": true
+    },
+    {
+      "name": "ActualTaskbarGetsPinnedNativeRefusalOnce",
+      "passed": true
+    },
+    {
+      "name": "RefusalPreservesAuthoritativeNativeWindowsAndFocus",
+      "passed": true
+    },
+    {
+      "name": "CurrentTaskbarRefusalFeedbackVisible",
+      "passed": true
+    },
+    {
+      "name": "RefusedReadOnlyRecoveryVisibleWithoutScrolling",
+      "passed": true
+    },
+    {
+      "name": "RefusedTargetRemainsInactiveActivate",
+      "passed": true
+    },
+    {
+      "name": "PinnedRefusalKeepsUnsavedDraft",
+      "passed": true
+    },
+    {
+      "name": "RefusalCannotSendKeysToPinnedInactiveTarget",
+      "passed": true
+    },
+    {
+      "name": "RefusalPreservesActualPeerKeyboardRecipient",
+      "passed": true
+    },
+    {
+      "name": "RecoveryKeyboardCurrentAndFullyContained",
+      "passed": true
+    },
+    {
+      "name": "KeyboardCurrentOtherOutputControlrecovery",
+      "passed": true
+    },
+    {
+      "name": "KeyboardNavigationDoesNotLaunchOrDispatchrecovery",
+      "passed": true
+    },
+    {
+      "name": "ActualRecoveryReadsWithoutRetryingRefusedAction",
+      "passed": true
+    },
+    {
+      "name": "feedback-helper-2NormalExit",
+      "passed": true
+    },
+    {
+      "name": "RefusalDoesNotReplayOrLaunch",
+      "passed": true
+    },
+    {
+      "name": "RefusalRecoveryIntervalUsesZeroInjectedPointerEvents",
+      "passed": true
+    },
+    {
+      "name": "OnlyExplicitNativeGestureCanChangeOutput",
+      "passed": true
+    },
+    {
+      "name": "EveryRegisteredHelperExitedNormally",
+      "passed": true
+    },
+    {
+      "name": "PersistentPointerNormalExit",
+      "passed": true
+    },
+    {
+      "name": "PersistentKeyboardNormalExit",
+      "passed": true
+    },
+    {
+      "name": "OwnedClientNormalExit",
+      "passed": true
+    },
+    {
+      "name": "OwnedClientNormalExit",
+      "passed": true
+    },
+    {
+      "name": "OwnedClientNormalExit",
+      "passed": true
+    },
+    {
+      "name": "OwningPluginUnloads",
+      "passed": true
+    }
+  ],
+  "nativeRefusal": {
+    "name": "ActualTaskbarGetsPinnedNativeRefusalOnce",
+    "passed": true,
+    "request": {
+      "protocolVersion": 3,
+      "kind": "window-effect",
+      "effectProtocol": 1,
+      "binding": {
+        "lifetime": "825183784989288541",
+        "session": "3",
+        "frontend": "1"
+      },
+      "intent": {
+        "request": "1",
+        "generation": "1",
+        "incarnation": "2",
+        "operation": "activate",
+        "context": {
+          "lifetime": "825183784989288541",
+          "epoch": "1",
+          "output": "2",
+          "revision": "7"
+        }
+      }
+    },
+    "receipts": [
+      {
+        "protocolVersion": 3,
+        "kind": "effect-outcome",
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "825183784989288541",
+          "session": "3",
+          "frontend": "1"
+        },
+        "intent": {
+          "request": "1",
+          "generation": "1",
+          "incarnation": "2",
+          "operation": "activate",
+          "context": {
+            "lifetime": "825183784989288541",
+            "epoch": "1",
+            "output": "2",
+            "revision": "7"
+          }
+        },
+        "status": "Refused",
+        "reason": "implicit-transfer-required",
+        "revision": "7",
+        "outputGeneration": "2"
+      }
+    ]
+  },
+  "keyboardControls": [
+    {
+      "kind": "activate",
+      "publication": "75",
+      "lease": "2",
+      "body": {
+        "announcements": [
+          {
+            "text": "",
+            "sequence": null,
+            "correlation": null,
+            "live": "polite"
+          }
+        ],
+        "motionProfile": "full",
+        "motionAnimations": 0,
+        "palette": {
+          "background": "rgb(23, 32, 42)",
+          "foreground": "rgb(244, 246, 247)"
+        },
+        "focusStyle": {
+          "visible": true,
+          "style": "solid",
+          "color": "rgb(244, 246, 247)",
+          "background": "rgb(38, 53, 68)",
+          "outlineColor": "rgb(126, 215, 255)",
+          "outlineWidth": "3px",
+          "outlineOffset": "0px",
+          "x": 3,
+          "y": 3,
+          "width": 128,
+          "height": 46
+        },
+        "publication": "75",
+        "lease": "2",
+        "buttons": [
+          {
+            "id": "group:{\"lifetime\":\"825183784989288541\",\"session\":\"3\",\"frontend\":\"1\"}:2:7:application:GTK Application",
+            "identity": "bar:group:application:GTK Application",
+            "label": "ELM-AUTHORITY-FIXTUREOpen",
+            "accessibleName": "Activate ELM-AUTHORITY-FIXTURE; Open",
+            "disabled": false,
+            "x": 3,
+            "y": 3,
+            "width": 128,
+            "height": 46
+          },
+          {
+            "id": "group:{\"lifetime\":\"825183784989288541\",\"session\":\"3\",\"frontend\":\"1\"}:2:7:application:warlock-refusal-peer",
+            "identity": "bar:group:application:warlock-refusal-peer",
+            "label": "ELM-ACTIVATION-PEERActive",
+            "accessibleName": "Minimize ELM-ACTIVATION-PEER; Active",
+            "disabled": false,
+            "x": 137,
+            "y": 3,
+            "width": 128,
+            "height": 46
+          },
+          {
+            "id": "applications:{\"lifetime\":\"825183784989288541\",\"session\":\"3\",\"frontend\":\"1\"}:22:control:opener",
+            "identity": "bar:applications",
+            "label": "Applications",
+            "accessibleName": "Open applications",
+            "disabled": false,
+            "x": 271,
+            "y": 3,
+            "width": 80,
+            "height": 46
+          },
+          {
+            "id": "applications:{\"lifetime\":\"825183784989288541\",\"session\":\"3\",\"frontend\":\"1\"}:22:control:overview-opener",
+            "identity": "bar:overview",
+            "label": "Task View",
+            "accessibleName": "Open Task View",
+            "disabled": false,
+            "x": 357,
+            "y": 3,
+            "width": 80,
+            "height": 46
+          },
+          {
+            "id": "applications:{\"lifetime\":\"825183784989288541\",\"session\":\"3\",\"frontend\":\"1\"}:22:control:switcher-opener",
+            "identity": "bar:switcher",
+            "label": "Switch windows",
+            "accessibleName": "Open window switcher",
+            "disabled": false,
+            "x": 443,
+            "y": 3,
+            "width": 80,
+            "height": 46
+          },
+          {
+            "id": "applications:{\"lifetime\":\"825183784989288541\",\"session\":\"3\",\"frontend\":\"1\"}:22:notifications:opener",
+            "identity": "bar:notifications",
+            "label": "Notifications",
+            "accessibleName": "Open notifications",
+            "disabled": false,
+            "x": 529,
+            "y": 3,
+            "width": 80,
+            "height": 46
+          },
+          {
+            "id": "applications:{\"lifetime\":\"825183784989288541\",\"session\":\"3\",\"frontend\":\"1\"}:22:files:opener",
+            "identity": "bar:files",
+            "label": "Files",
+            "accessibleName": "Open Files menu",
+            "disabled": false,
+            "x": 615,
+            "y": 3,
+            "width": 80,
+            "height": 46
+          },
+          {
+            "id": "applications:{\"lifetime\":\"825183784989288541\",\"session\":\"3\",\"frontend\":\"1\"}:22:system:opener",
+            "identity": "bar:system",
+            "label": "System",
+            "accessibleName": "Open system menu",
+            "disabled": false,
+            "x": 701,
+            "y": 3,
+            "width": 80,
+            "height": 46
+          },
+          {
+            "id": "applications:{\"lifetime\":\"825183784989288541\",\"session\":\"3\",\"frontend\":\"1\"}:22:settings:opener",
+            "identity": "bar:settings",
+            "label": "Settings",
+            "accessibleName": "Open settings",
+            "disabled": false,
+            "x": 787,
+            "y": 3,
+            "width": 80,
+            "height": 46
+          }
+        ],
+        "feedback": {
+          "text": "Connected",
+          "accessibleName": "Connected",
+          "live": "off",
+          "atomic": "true",
+          "x": 544,
+          "y": 0,
+          "width": 256,
+          "height": 56,
+          "clip": "none",
+          "display": "flex"
+        },
+        "focus": "group:{\"lifetime\":\"825183784989288541\",\"session\":\"3\",\"frontend\":\"1\"}:2:7:application:GTK Application",
+        "documentFocused": true,
+        "selectionAnchor": "bar:group:application:GTK Application",
+        "text": "ELM-AUTHORITY-FIXTURE\nOpen\nELM-ACTIVATION-PEER\nActive\nApplications\nTask View\nSwitch windows\nNotifications\nFiles\nSystem\nSettings\nConnected",
+        "fontSize": "16px",
+        "theme": "night",
+        "textScale": "100",
+        "effects": "on",
+        "reducedTransparency": "false",
+        "viewportWidth": 800,
+        "viewportHeight": 56,
+        "scrollLeft": 0,
+        "scrollWidth": 876,
+        "clientWidth": 540,
+        "actions": {
+          "x": 0,
+          "y": 0,
+          "width": 540,
+          "height": 56
+        }
+      },
+      "control": {
+        "key": "application:GTK Application",
+        "domId": "group:{\"lifetime\":\"825183784989288541\",\"session\":\"3\",\"frontend\":\"1\"}:2:7:application:GTK Application",
+        "title": "ELM-AUTHORITY-FIXTURE",
+        "active": false,
+        "expanded": false,
+        "disabled": false,
+        "label": "Activate ELM-AUTHORITY-FIXTURE; Open",
+        "point": [
+          67.0,
+          26.0
+        ],
+        "rect": [
+          3,
+          3,
+          128,
+          46
+        ],
+        "clip": [
+          0,
+          0,
+          800,
+          56
+        ],
+        "visible": true
+      },
+      "button": {
+        "id": "group:{\"lifetime\":\"825183784989288541\",\"session\":\"3\",\"frontend\":\"1\"}:2:7:application:GTK Application",
+        "identity": "bar:group:application:GTK Application",
+        "label": "ELM-AUTHORITY-FIXTUREOpen",
+        "accessibleName": "Activate ELM-AUTHORITY-FIXTURE; Open",
+        "disabled": false,
+        "x": 3,
+        "y": 3,
+        "width": 128,
+        "height": 46
+      },
+      "origin": [
+        0,
+        0
+      ]
+    },
+    {
+      "kind": "recovery",
+      "publication": "85",
+      "lease": "3",
+      "body": {
+        "announcements": [
+          {
+            "text": "",
+            "sequence": null,
+            "correlation": null,
+            "live": "polite"
+          }
+        ],
+        "motionProfile": "full",
+        "motionAnimations": 0,
+        "palette": {
+          "background": "rgb(23, 32, 42)",
+          "foreground": "rgb(244, 246, 247)"
+        },
+        "focusStyle": {
+          "visible": true,
+          "style": "solid",
+          "color": "rgb(244, 246, 247)",
+          "background": "rgb(38, 53, 68)",
+          "outlineColor": "rgb(126, 215, 255)",
+          "outlineWidth": "3px",
+          "outlineOffset": "0px",
+          "x": 3,
+          "y": 3,
+          "width": 120,
+          "height": 46
+        },
+        "publication": "85",
+        "lease": "3",
+        "buttons": [
+          {
+            "id": "applications:{\"lifetime\":\"825183784989288541\",\"session\":\"3\",\"frontend\":\"1\"}:25:bar:recovery-refresh",
+            "identity": "bar:recovery-refresh",
+            "label": "Refresh window statusObservation only",
+            "accessibleName": "Refresh window status; read observations without retrying actions",
+            "disabled": false,
+            "x": 3,
+            "y": 3,
+            "width": 120,
+            "height": 46
+          },
+          {
+            "id": "group:{\"lifetime\":\"825183784989288541\",\"session\":\"3\",\"frontend\":\"1\"}:2:7:application:GTK Application",
+            "identity": "bar:group:application:GTK Application",
+            "label": "ELM-AUTHORITY-FIXTUREOpen",
+            "accessibleName": "Activate ELM-AUTHORITY-FIXTURE; Open",
+            "disabled": false,
+            "x": 129,
+            "y": 3,
+            "width": 128,
+            "height": 46
+          },
+          {
+            "id": "group:{\"lifetime\":\"825183784989288541\",\"session\":\"3\",\"frontend\":\"1\"}:2:7:application:warlock-refusal-peer",
+            "identity": "bar:group:application:warlock-refusal-peer",
+            "label": "ELM-ACTIVATION-PEERActive",
+            "accessibleName": "Minimize ELM-ACTIVATION-PEER; Active",
+            "disabled": false,
+            "x": 263,
+            "y": 3,
+            "width": 128,
+            "height": 46
+          },
+          {
+            "id": "applications:{\"lifetime\":\"825183784989288541\",\"session\":\"3\",\"frontend\":\"1\"}:25:control:opener",
+            "identity": "bar:applications",
+            "label": "Applications",
+            "accessibleName": "Open applications",
+            "disabled": false,
+            "x": 397,
+            "y": 3,
+            "width": 80,
+            "height": 46
+          },
+          {
+            "id": "applications:{\"lifetime\":\"825183784989288541\",\"session\":\"3\",\"frontend\":\"1\"}:25:control:overview-opener",
+            "identity": "bar:overview",
+            "label": "Task View",
+            "accessibleName": "Open Task View",
+            "disabled": false,
+            "x": 483,
+            "y": 3,
+            "width": 80,
+            "height": 46
+          },
+          {
+            "id": "applications:{\"lifetime\":\"825183784989288541\",\"session\":\"3\",\"frontend\":\"1\"}:25:control:switcher-opener",
+            "identity": "bar:switcher",
+            "label": "Switch windows",
+            "accessibleName": "Open window switcher",
+            "disabled": false,
+            "x": 569,
+            "y": 3,
+            "width": 80,
+            "height": 46
+          },
+          {
+            "id": "applications:{\"lifetime\":\"825183784989288541\",\"session\":\"3\",\"frontend\":\"1\"}:25:notifications:opener",
+            "identity": "bar:notifications",
+            "label": "Notifications",
+            "accessibleName": "Open notifications",
+            "disabled": false,
+            "x": 655,
+            "y": 3,
+            "width": 80,
+            "height": 46
+          },
+          {
+            "id": "applications:{\"lifetime\":\"825183784989288541\",\"session\":\"3\",\"frontend\":\"1\"}:25:files:opener",
+            "identity": "bar:files",
+            "label": "Files",
+            "accessibleName": "Open Files menu",
+            "disabled": false,
+            "x": 741,
+            "y": 3,
+            "width": 80,
+            "height": 46
+          },
+          {
+            "id": "applications:{\"lifetime\":\"825183784989288541\",\"session\":\"3\",\"frontend\":\"1\"}:25:system:opener",
+            "identity": "bar:system",
+            "label": "System",
+            "accessibleName": "Open system menu",
+            "disabled": false,
+            "x": 827,
+            "y": 3,
+            "width": 80,
+            "height": 46
+          },
+          {
+            "id": "applications:{\"lifetime\":\"825183784989288541\",\"session\":\"3\",\"frontend\":\"1\"}:25:settings:opener",
+            "identity": "bar:settings",
+            "label": "Settings",
+            "accessibleName": "Open settings",
+            "disabled": false,
+            "x": 913,
+            "y": 3,
+            "width": 80,
+            "height": 46
+          }
+        ],
+        "feedback": {
+          "text": "Activate: refused for ELM-AUTHORITY-FIXTURE. Refresh window status, then choose again.",
+          "accessibleName": "Activate: refused for ELM-AUTHORITY-FIXTURE. Refresh window status, then choose again.",
+          "live": "off",
+          "atomic": "true",
+          "x": 544,
+          "y": 0,
+          "width": 256,
+          "height": 56,
+          "clip": "none",
+          "display": "flex"
+        },
+        "focus": "applications:{\"lifetime\":\"825183784989288541\",\"session\":\"3\",\"frontend\":\"1\"}:25:bar:recovery-refresh",
+        "documentFocused": true,
+        "selectionAnchor": "bar:recovery-refresh",
+        "text": "Refresh window status\nObservation only\nELM-AUTHORITY-FIXTURE\nOpen\nELM-ACTIVATION-PEER\nActive\nApplications\nTask View\nSwitch windows\nNotifications\nFiles\nSystem\nSettings\nActivate: refused for ELM-AUTHORITY-FIXTURE. Refresh window status, then choose again.",
+        "fontSize": "16px",
+        "theme": "night",
+        "textScale": "100",
+        "effects": "on",
+        "reducedTransparency": "false",
+        "viewportWidth": 800,
+        "viewportHeight": 56,
+        "scrollLeft": 0,
+        "scrollWidth": 1002,
+        "clientWidth": 540,
+        "actions": {
+          "x": 0,
+          "y": 0,
+          "width": 540,
+          "height": 56
+        }
+      },
+      "control": null,
+      "button": {
+        "id": "applications:{\"lifetime\":\"825183784989288541\",\"session\":\"3\",\"frontend\":\"1\"}:25:bar:recovery-refresh",
+        "identity": "bar:recovery-refresh",
+        "label": "Refresh window statusObservation only",
+        "accessibleName": "Refresh window status; read observations without retrying actions",
+        "disabled": false,
+        "x": 3,
+        "y": 3,
+        "width": 120,
+        "height": 46
+      },
+      "origin": [
+        0,
+        0
+      ]
+    }
+  ],
+  "capture": {
+    "path": "/home/charles/window-integration-qa/warlock-window-feedback-1793216636442799516/taskbar-native-refused.png",
+    "sha256": "e10dc6f73e6aa85b3120bbc548d61f954be37f8f0f5d70eaaf82a179a7b02fec",
+    "feedback": {
+      "text": "Activate: refused for ELM-AUTHORITY-FIXTURE. Refresh window status, then choose again.",
+      "accessibleName": "Activate: refused for ELM-AUTHORITY-FIXTURE. Refresh window status, then choose again.",
+      "live": "off",
+      "atomic": "true",
+      "x": 544,
+      "y": 0,
+      "width": 256,
+      "height": 56,
+      "clip": "none",
+      "display": "flex"
+    },
+    "sourceOutput": {
+      "id": 0,
+      "name": "WAYLAND-1",
+      "description": "",
+      "make": "",
+      "model": "",
+      "serial": "",
+      "width": 800,
+      "height": 600,
+      "physicalWidth": 0,
+      "physicalHeight": 0,
+      "refreshRate": 60.0,
+      "x": 0,
+      "y": 0,
+      "activeWorkspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "specialWorkspace": {
+        "id": 0,
+        "name": ""
+      },
+      "reserved": [
+        0,
+        56,
+        0,
+        0
+      ],
+      "scale": 1,
+      "transform": 0,
+      "focused": true,
+      "dpmsStatus": true,
+      "vrr": false,
+      "solitary": "0",
+      "solitaryBlockedBy": [
+        "NOTIFICATION",
+        "WINDOWED",
+        "CANDIDATE"
+      ],
+      "activelyTearing": false,
+      "tearingBlockedBy": [
+        "NOT_TORN",
+        "USER",
+        "SUPPORT",
+        "CANDIDATE",
+        "HW_CURSOR"
+      ],
+      "directScanoutTo": "0",
+      "directScanoutBlockedBy": [
+        "USER",
+        "CANDIDATE"
+      ],
+      "disabled": false,
+      "currentFormat": "XRGB8888",
+      "mirrorOf": "none",
+      "availableModes": [],
+      "colorManagementPreset": "srgb",
+      "sdrBrightness": 1,
+      "sdrSaturation": 1,
+      "sdrMinLuminance": 0.2,
+      "sdrMaxLuminance": 80,
+      "hardwareCursorsInUse": true
+    },
+    "retainedPath": "implementation/warlock/qa/evidence/refusal-keyboard-20261028/taskbar-native-refused.png"
+  },
+  "independentReview": {
+    "name": "quint-5",
+    "path": "implementation/warlock/qa/evidence/refusal-keyboard-20261028/independent-review.md",
+    "sha256": "bb06c21602dac3a201d846117d5bb91010ecb832674563db2997524f62cda459",
+    "disposition": "partial"
+  },
+  "rootAssessment": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-refusal-keyboard/root-native-pass-assessment.json",
+    "sha256": "d5b1fefff6f50edcb2493fb99596e9e70a96bf98affc4b18a6e2b7ebad23b667"
+  },
+  "cleanupPassed": true,
+  "limits": "Full draft text is established by event assertion, not its narrow clipped capture. AT was unobserved at this run and adjudicated later. Underlying runner hash a49 differs from wrapper39f/compiled48b9; original report preserved.",
+  "fullReleaseAccepted": false
+}
