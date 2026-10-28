@@ -5683,7 +5683,52 @@
             }
           ],
           "verificationScope": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
-          "evidenceScope": "Owner-observed native picker activation/input after reflow and background-Minimize/Escape/Restore guards. Original applicable AT and independent acceptance remain open."
+          "evidenceScope": "Owner-observed native picker activation/input after reflow and background-Minimize/Escape/Restore guards. Original applicable AT and independent acceptance remain open.",
+          "freshTupleObservations": [
+            {
+              "disposition": "partial",
+              "evidence": {
+                "path": "implementation/warlock/qa/evidence/three-group-20261028/manifest.json",
+                "sha256": "23366c668e9c23b3a910fc4b0e197f27f488929b7579e12fd91f03a8567e30b9"
+              },
+              "scope": "Specific original three-window example on the observed source/native tuple: seven compiled current Desktop assertions and51actual native checks; all three labels physically revealed through real keyboard scrolling, then only selected incarnation2 activated.",
+              "sourceTuple": {
+                "sourceRevision": "85d1531f3eb61617228b4eb8ad7dab8373ad40c8",
+                "sourceBaseRevision": "4fb7c28395b68fb9fac0a537e2e627db0ea041a9",
+                "core": {
+                  "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-build/Hyprland",
+                  "sha256": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e"
+                },
+                "plugin": {
+                  "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/authority/elm-window-geometry-authority.so",
+                  "sha256": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c"
+                },
+                "aquamarine": {
+                  "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/lib/libaquamarine.so.0.15.0",
+                  "sha256": "667a22d535aade4e4a26134e39028a87fb3f963c28b7bf7ff79da684bb014ecd"
+                },
+                "host": {
+                  "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/elm-host",
+                  "sha256": "4377b11ce0afe9e1072210666aa872118b032995275a20657058771e5e6c8347",
+                  "heldBuild": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/host-build-report.json",
+                  "heldBuildSHA256": "691806471ff599503a20067aa0b90bf914b93a1ee5985198cdc79fb92ff975bf"
+                },
+                "toolchain": {
+                  "compilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+                  "compilerVersion": "0.19.2",
+                  "nativeQualificationReport": {
+                    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/new-core-qualification.json",
+                    "sha256": "5793098b5f432343352625fd94e095b0e84010a413e44759d6c58eb753c693a9"
+                  }
+                },
+                "nativeRunnerSHA256": "689add64e00edac7e5f69ae602922c5f91b4e6e092d522aa04fbdd079d81addd"
+              },
+              "missingObservations": [
+                "Matching keyboard-primary activation/selection and applicable AT on this tuple; other UI004 obligations remain independent."
+              ],
+              "scenarioAccepted": false
+            }
+          ]
         },
         {
           "name": "taskbar-refusal",
@@ -9309,15 +9354,68 @@
       "capability": "elm-taskbar",
       "owner": "Elm presentation lead",
       "verifier": "Independent acceptance reviewer",
-      "requirementAccepted": false,
-      "status": "unadjudicated",
+      "requirementAccepted": true,
+      "status": "accepted",
       "scenarios": [
         {
           "name": "ux-005",
           "oracle": "three entries appear and only selected incarnation receives activation",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "accepted",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/three-group-20261028/manifest.json",
+              "sha256": "23366c668e9c23b3a910fc4b0e197f27f488929b7579e12fd91f03a8567e30b9",
+              "scope": "Specific original three-window example on the observed source/native tuple: seven compiled current Desktop assertions and51actual native checks; all three labels physically revealed through real keyboard scrolling, then only selected incarnation2 activated."
+            }
+          ],
+          "missingObservation": null,
+          "priorObservations": [
+            {
+              "status": "unadjudicated",
+              "evidence": [],
+              "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+            }
+          ],
+          "sourceTuple": {
+            "sourceRevision": "85d1531f3eb61617228b4eb8ad7dab8373ad40c8",
+            "sourceBaseRevision": "4fb7c28395b68fb9fac0a537e2e627db0ea041a9",
+            "core": {
+              "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-build/Hyprland",
+              "sha256": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e"
+            },
+            "plugin": {
+              "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/authority/elm-window-geometry-authority.so",
+              "sha256": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c"
+            },
+            "aquamarine": {
+              "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/lib/libaquamarine.so.0.15.0",
+              "sha256": "667a22d535aade4e4a26134e39028a87fb3f963c28b7bf7ff79da684bb014ecd"
+            },
+            "host": {
+              "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/elm-host",
+              "sha256": "4377b11ce0afe9e1072210666aa872118b032995275a20657058771e5e6c8347",
+              "heldBuild": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/host-build-report.json",
+              "heldBuildSHA256": "691806471ff599503a20067aa0b90bf914b93a1ee5985198cdc79fb92ff975bf"
+            },
+            "toolchain": {
+              "compilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+              "compilerVersion": "0.19.2",
+              "nativeQualificationReport": {
+                "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/new-core-qualification.json",
+                "sha256": "5793098b5f432343352625fd94e095b0e84010a413e44759d6c58eb753c693a9"
+              }
+            },
+            "nativeRunnerSHA256": "689add64e00edac7e5f69ae602922c5f91b4e6e092d522aa04fbdd079d81addd"
+          },
+          "verificationScope": "Elm replay assertion and isolated native recording: three entries appear and only selected incarnation receives activation.",
+          "reviewerDisposition": {
+            "name": "quint-5",
+            "independent": true,
+            "disposition": "accepted",
+            "path": "implementation/warlock/qa/evidence/three-group-20261028/independent-review.md",
+            "sha256": "b1bd791acf752a38f7ad15e60cc1a2004c333f530760d122167d09558ae40ed4",
+            "integrationDisposition": "All selected source files now committed at sourceTuple.sourceRevision; exact reviewed fixture installed and actual installed-location seven-check replay passes."
+          }
         }
       ]
     },
@@ -12887,5 +12985,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-28T18:08:45.398668+00:00"
+  "updatedUTC": "2026-10-28T18:28:18.571451+00:00"
 }

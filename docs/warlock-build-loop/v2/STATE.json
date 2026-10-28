@@ -1,37 +1,37 @@
 {
   "schema": 1,
   "owner": "sol",
-  "updatedUTC": "2026-10-28T18:11:14.815892+00:00",
+  "updatedUTC": "2026-10-28T18:30:44.568112+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "native-taskbar-three-group",
+    "id": "native-taskbar-workspace2",
     "requirements": [
-      "ELM-UI-004",
-      "ELM-UX-005"
+      "ELM-UX-008",
+      "ELM-UI-004"
     ],
     "scenarios": [
-      "taskbar-group",
-      "ux-005"
+      "ux-008",
+      "taskbar-minimized"
     ],
     "paths": [
-      "implementation/warlock/qa/native-taskbar-three-group-portable.py",
+      "implementation/warlock/qa/native-taskbar-workspace2-portable.py",
       "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/qa/TaskbarReplay.elm",
+      "implementation/warlock/qa/WorkspaceNavigationReplay.elm",
       "implementation/warlock/src/Desktop.elm",
       "implementation/warlock/src/Surface.elm",
       "implementation/warlock/README.md"
     ],
-    "before": "Fresh tuple pointer primary/refusal pass; exactly three native family entries and selected-only activation remain unobserved on this fresh tuple.",
-    "after": "Original three-entry family opens an exact three-member picker and activates only the selected incarnation with one bound effect, native recipient evidence and no new launch.",
+    "before": "Original exactly-three-entry example accepted on observed tuple; minimized workspace2 icon restore and exact no-scratchpad membership remain unobserved on this fresh tuple.",
+    "after": "Original minimized workspace2 member selected through taskbar icon route restores with one bound committed Restore receipt, exact workspace2 membership and native recipient/pixel evidence without scratchpad conversion.",
     "verification": [
-      "Original ELM-UX-005 Elm replay assertion plus protected isolated native recording: exactly three identities, only selected activation and actual input recipient, no extra launch; preserve original taskbar-group pointer/keyboard/AT obligations without inferring unobserved modes."
+      "Original ELM-UX-008 Elm replay plus isolated native recording of minimized workspace2 icon route with exact Restore receipt/member identity/no scratchpad; preserve original TaskViewRestore and TaskbarRestore assertions and deadlines, explicit picker route where applicable. UI004 matching keyboard/AT remains separate."
     ],
     "owner": "sol",
-    "participantRecord": ".warlock-contributor/native-three-group.json"
+    "participantRecord": ".warlock-contributor/native-workspace2.json"
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -1924,43 +1924,48 @@
     "nextOriginalProductWork": "Restore and qualify a fresh coherent native source/core/plugin/host tuple for original taskbar activation/minimize/restore recipients: ELM-UI-004 / ELM-UX-005 / ELM-UX-008. Root owns serialized protected native execution; source reconstruction/build evidence stays separate from GUI acceptance."
   },
   "previousActiveSlice": {
-    "id": "native-taskbar-refusal",
+    "id": "native-taskbar-three-group",
     "requirements": [
-      "ELM-UI-004"
+      "ELM-UI-004",
+      "ELM-UX-005"
     ],
     "scenarios": [
-      "taskbar-refusal"
+      "taskbar-group",
+      "ux-005"
     ],
     "paths": [
-      "implementation/warlock/qa/native-taskbar-refusal.py",
-      "implementation/warlock/native/authority.cpp",
-      "implementation/warlock/native/shared-host.c",
+      "implementation/warlock/qa/native-taskbar-three-group-portable.py",
+      "implementation/warlock/qa/native-window-feedback.py",
+      "implementation/warlock/qa/TaskbarReplay.elm",
       "implementation/warlock/src/Desktop.elm",
       "implementation/warlock/src/Surface.elm",
       "implementation/warlock/README.md"
     ],
-    "before": "Fresh native primary pointer actions pass, but actual two-output pinned refusal, feedback, focus/draft preservation and read-only recovery remain unobserved on the new tuple.",
-    "after": "Original pinned implicit-transfer refusal runs on the fresh tuple with output-specific measured geometry, authoritative feedback and preserved focus/drafts without transfer or replay.",
+    "before": "Fresh tuple pointer primary/refusal pass; exactly three native family entries and selected-only activation remain unobserved on this fresh tuple.",
+    "after": "Original three-entry family opens an exact three-member picker and activates only the selected incarnation with one bound effect, native recipient evidence and no new launch.",
     "verification": [
-      "Preserve original native-taskbar-refusal assertions/deadlines; select actual clicked output and current native/DOM lease; existing pinned-output model witness plus real bound Refused receipt, feedback, draft/focus and no-effect/no-replay observations. Keyboard-primary and AT remain separate."
+      "Original ELM-UX-005 Elm replay assertion plus protected isolated native recording: exactly three identities, only selected activation and actual input recipient, no extra launch; preserve original taskbar-group pointer/keyboard/AT obligations without inferring unobserved modes."
     ],
     "owner": "sol",
-    "participantRecord": ".warlock-contributor/native-refusal.json",
-    "outcome": "partial",
-    "observation": "Actual original pinned-refusal POINTER journey60checksPASS; keyboard-primary and AT remainopen; reportac9208da..."
+    "participantRecord": ".warlock-contributor/native-three-group.json",
+    "outcome": "ELM-UX-005 accepted; ELM-UI-004 group partial",
+    "sourceRevision": "85d1531f3",
+    "evidence": "implementation/warlock/qa/evidence/three-group-20261028/manifest.json"
   },
   "lastNativeObservation": {
-    "report": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-refusal/native-refusal-1793210737472380023/report.json",
-    "sha256": "ac9208da292cd894a37d0365cafa52571ef6ce24789da378862fb7c6212f566f",
-    "scope": "Original pointer refusal60checks, oneboundRefusedreceipt/paintedfeedback/read-onlyrecovery/focusdraft/noreplay, normalcleanup; recipientkeys are not keyboard-primary.",
+    "report": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-three-group/native-three-group-1793211533240005715/report.json",
+    "sha256": "4109f8b024bbeee268986729a77f57c78e28e4db933c263e5b44c0cbe035fc9a",
+    "scope": "51nativechecks, threephysicalreveals,7compiledDesktopchecks, one selectedactivation; independentquint5review on committedsource85d1531f3.",
     "observedScenarios": [
-      "taskbar-refusal"
+      "taskbar-group",
+      "ux-005"
     ],
-    "requirementAccepted": false,
-    "missingObservations": [
-      "Matching keyboard-primary route",
-      "Applicable assistive technology",
-      "Independent final acceptance/remaining obligations"
+    "requirementAccepted": [
+      "ELM-UX-005"
+    ],
+    "remaining": [
+      "UI004group matching keyboard-primary/AT",
+      "Other original requirements and fullrelease"
     ]
   },
   "priorActiveSlices": [
@@ -1997,6 +2002,32 @@
       "owner": "sol",
       "participantRecord": ".warlock-contributor/native-taskbar.json",
       "stoppedInvestigation": "45-minute no-progress guard reached during migration QA; old timer/records retained. Actual pointer trial subsequently passed; matching keyboard/AT and other original cases remain open."
+    },
+    {
+      "id": "native-taskbar-refusal",
+      "requirements": [
+        "ELM-UI-004"
+      ],
+      "scenarios": [
+        "taskbar-refusal"
+      ],
+      "paths": [
+        "implementation/warlock/qa/native-taskbar-refusal.py",
+        "implementation/warlock/native/authority.cpp",
+        "implementation/warlock/native/shared-host.c",
+        "implementation/warlock/src/Desktop.elm",
+        "implementation/warlock/src/Surface.elm",
+        "implementation/warlock/README.md"
+      ],
+      "before": "Fresh native primary pointer actions pass, but actual two-output pinned refusal, feedback, focus/draft preservation and read-only recovery remain unobserved on the new tuple.",
+      "after": "Original pinned implicit-transfer refusal runs on the fresh tuple with output-specific measured geometry, authoritative feedback and preserved focus/drafts without transfer or replay.",
+      "verification": [
+        "Preserve original native-taskbar-refusal assertions/deadlines; select actual clicked output and current native/DOM lease; existing pinned-output model witness plus real bound Refused receipt, feedback, draft/focus and no-effect/no-replay observations. Keyboard-primary and AT remain separate."
+      ],
+      "owner": "sol",
+      "participantRecord": ".warlock-contributor/native-refusal.json",
+      "outcome": "partial",
+      "observation": "Actual original pinned-refusal POINTER journey60checksPASS; keyboard-primary and AT remainopen; reportac9208da..."
     }
   ]
 }
