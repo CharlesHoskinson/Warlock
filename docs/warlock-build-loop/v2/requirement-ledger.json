@@ -3946,15 +3946,61 @@
       "owner": "Native authority lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "in-progress",
       "scenarios": [
         {
           "name": "revision-007",
           "oracle": "their strings remain distinct and numeric representations are rejected",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "accepted",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/lossless-authority-20261028/acceptance.json",
+              "sha256": "b0a4a2f81000cbed1a9dd98aa25dc506ffe7f28f4936e78ab87568fb7b49cd5a",
+              "scope": "Independent original revision-007 scenario accepted on the observed protected protocol fixture tuple only; exact raw observations and verbatim reviewer disposition retained."
+            }
+          ],
+          "missingObservation": null,
+          "priorObservations": [
+            {
+              "name": "revision-007",
+              "oracle": "their strings remain distinct and numeric representations are rejected",
+              "status": "unadjudicated",
+              "evidence": [],
+              "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+            }
+          ],
+          "verificationScope": "Protected protocol fixture with positive/negative receipts, exact source/tool tuple and frozen fixture deadline; original verification permits protocol.",
+          "evidenceScope": "Two synthetic native-incarnation representation strings9007199254740993/9007199254740994 through actual compiled Elm worker ports using production Effects and ActionProjection decoder/encoder; nine numeric JSON rejections. No running-compositor identity generation, Main/adapter.js/native authority or absolute-deadline route inferred.",
+          "reviewerDisposition": {
+            "name": "quint-2",
+            "independent": true,
+            "disposition": "accepted-original-scenario-protocol-tuple",
+            "path": "implementation/warlock/qa/evidence/lossless-authority-20261028/independent-review.md",
+            "sha256": "079354d6766a68a4326d9f68e8847cbaa6af289ba4b32ee682a96c774756437e"
+          },
+          "sourceTuple": {
+            "sourceBaseRevision": "6ea38d54fb0a1933a995d450b8ac8132446aff75",
+            "sourceInputSnapshot": "Pre-evidence101-entry hash map in exact raw observations; fixture sources identified by full hashes, not claimed present in sourceBaseRevision",
+            "fixtures": {
+              "implementation/warlock/qa/LosslessBridgeReplay.elm": "1394ece458cd0799ea4e03b11b08f2d8e9deff6b6ae3f21b64f1cd816809699d",
+              "implementation/warlock/qa/check-lossless-bridge.py": "6d7f5f0f511f9afdb5a929a5bf86275b1a092064a048efc990334d79ec714c13",
+              "implementation/warlock/qa/lossless-bridge-replay.cjs": "271cae6c105ad4e8f084ded9f59f4b4948c8dd2e65455cb80d15924a63a36328"
+            },
+            "toolchain": {
+              "compilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+              "toolchainManifestSHA256": "fe3d29078d30c6cf9bd431233c5eed1ad4550e2873ff55739d50a5a87a97edaa",
+              "node": "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+              "nodeSHA256": "caa24debe02770c92a70677e2a62ca98890150e7ac1c17bcfe31bcc98cc89943"
+            },
+            "compiledWorkerSHA256": "b4b557f404cf2e950697764258b1289e733b9fe295eb58ed8eb3bedcdec859fd",
+            "rawObservationSHA256": "3d6c022392da9cdc6ee4eef7d328b248aea1b3c256b4fb32ecb2ff695bbc8e66",
+            "mode": "protected-protocol-fixture; no native tuple run"
+          }
         }
+      ],
+      "remainingEarsObligations": [
+        "Actual production Main.nativeEvents/assets/adapter.js and native authority parser/transport/native-produced identity correspondence remain unexercised by this worker fixture.",
+        "Applicable absolute native deadline string retention/numeric rejection remains unobserved; fixture watchdog is not native clock/deadline proof."
       ]
     },
     {
@@ -14108,5 +14154,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-28T20:37:15.234338+00:00"
+  "updatedUTC": "2026-10-28T21:30:16.434107+00:00"
 }

@@ -1,0 +1,70 @@
+{
+  "requirement": "ELM-REV-007",
+  "scenario": "revision-007",
+  "disposition": "partial-observed-pending-independent-original-review",
+  "scenarioAccepted": false,
+  "requirementAccepted": false,
+  "releaseAccepted": false,
+  "recordedUTC": "2026-10-28T21:28:54.909005+00:00",
+  "sourceBaseRevision": "6ea38d54fb0a1933a995d450b8ac8132446aff75",
+  "rawObservation": {
+    "path": "observations.json",
+    "sha256": "3d6c022392da9cdc6ee4eef7d328b248aea1b3c256b4fb32ecb2ff695bbc8e66",
+    "preservation": "Exact protected-first.stdout bytes; inherited scope/missing fields retained unchanged"
+  },
+  "protectedStderr": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/lossless-authority/protected-first.stderr",
+    "sha256": "db68cb9e514c253a436339fa1e0dcabbc754591586f6471bde9530ad703d5fbd",
+    "scopeEvidence": {
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-895b3c0e86694648b3c046589208b786.scope",
+      "coreLimit": 1
+    }
+  },
+  "observed": {
+    "exit": 0,
+    "caseCount": 11,
+    "positiveCases": 2,
+    "numericRejectionCases": 9,
+    "strictlyAbove2Pow53StringIncarnations": [
+      "9007199254740993",
+      "9007199254740994"
+    ],
+    "route": "Compiled Platform.worker real Elm ports with product ActionProjection and Effects decoders/encoder, Node JSON transport and Python endpoint.canonical. Not production Main/adapter.js or native authority parser.",
+    "compiledSHA256": "b4b557f404cf2e950697764258b1289e733b9fe295eb58ed8eb3bedcdec859fd"
+  },
+  "fixtures": {
+    "implementation/warlock/qa/LosslessBridgeReplay.elm": "1394ece458cd0799ea4e03b11b08f2d8e9deff6b6ae3f21b64f1cd816809699d",
+    "implementation/warlock/qa/check-lossless-bridge.py": "6d7f5f0f511f9afdb5a929a5bf86275b1a092064a048efc990334d79ec714c13",
+    "implementation/warlock/qa/lossless-bridge-replay.cjs": "271cae6c105ad4e8f084ded9f59f4b4948c8dd2e65455cb80d15924a63a36328"
+  },
+  "toolchain": {
+    "compilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+    "toolchainManifestSHA256": "fe3d29078d30c6cf9bd431233c5eed1ad4550e2873ff55739d50a5a87a97edaa",
+    "node": "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+    "nodeSHA256": "caa24debe02770c92a70677e2a62ca98890150e7ac1c17bcfe31bcc98cc89943"
+  },
+  "sourceInputScope": {
+    "rawSourceMapCount": 101,
+    "snapshot": "Pre-evidence product input map recorded by the executed fixture; no claim that it includes later canonical evidence files",
+    "recordedFilesRecheckedBeforeCanonicalWrite": true,
+    "changedRecordedFiles": []
+  },
+  "limits": [
+    "Main.nativeEvents / production adapter.js correspondence",
+    "Native authority counter parser and actual native-generated source identity",
+    "Absolute deadline field and original native deadline; 3000ms Node watchdog matches existing feedback-replay.js and is only this fixture timeout",
+    "Independent review and original requirement acceptance",
+    "The 3000ms Node watchdog is fixture execution containment, not an observed native absolute deadline or original native-clock proof.",
+    "No product defect found in exercised paths; real compiled Platform.worker ports are not production Main/adapter.js/native authority evidence.",
+    "Current native assets elm.js and owning native tuple were not rebuilt or modified by this protocol fixture."
+  ],
+  "independentReview": {
+    "status": "pending",
+    "reviewer": "existing Quint2 thread",
+    "execution": "No additional test or native run requested"
+  },
+  "previousStoppedMandatoryObligations": [
+    "ELM-UI-004 explicit New instance renderer crash unresolved; required routes remain unaccepted",
+    "ELM-UI-004 application-pin/native-top independence fixture stopped after two qualification failures; full cross-kind observation remains missing"
+  ]
+}
