@@ -1,0 +1,1124 @@
+{
+  "schema": 1,
+  "requirement": "ELM-UI-004",
+  "scenario": "taskbar-zero",
+  "scenarioAccepted": true,
+  "requirementAccepted": false,
+  "originalOracle": {
+    "name": "taskbar-zero",
+    "given": "a pinned app with zero windows",
+    "when": "primary pointer or keyboard activation occurs",
+    "then": "one launch request is issued"
+  },
+  "verificationScope": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+  "sourceTuple": {
+    "sourceRevision": "f04e4f45571ae5e69179593864b63a97b420d32f",
+    "core": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-build/Hyprland",
+      "sha256": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e"
+    },
+    "plugin": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/authority/elm-window-geometry-authority.so",
+      "sha256": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c"
+    },
+    "aquamarine": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/lib/libaquamarine.so.0.15.0",
+      "sha256": "667a22d535aade4e4a26134e39028a87fb3f963c28b7bf7ff79da684bb014ecd"
+    },
+    "host": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/elm-host",
+      "sha256": "4377b11ce0afe9e1072210666aa872118b032995275a20657058771e5e6c8347",
+      "heldBuild": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/host-build-report.json",
+      "heldBuildSHA256": "691806471ff599503a20067aa0b90bf914b93a1ee5985198cdc79fb92ff975bf"
+    },
+    "toolchain": {
+      "compilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948"
+    },
+    "runner": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-zero/native-taskbar-zero.py",
+      "sha256": "e4167a8dba29cb529e2e08212fec61668772b86e28ab5370155238e3175090b6",
+      "originalZeroFixtureSHA256": "61826a72860ec24cc1a615476bb1812490ba7494a76469ef5c25110acbd4acbe",
+      "pinnedBaseKeyboardRunnerSHA256": "67f4622fd399bbc59ca03d6ca1bf689e2afa9572f52e3a8a3700355999a382be"
+    }
+  },
+  "scope": "Exact original zero-window pinned-app example observed in fresh pointer, physical Enter and actual AT-SPI action sessions: one bound catalog/GIO application-launch request and Submitted outcome per route, real GTK family/recipient/pixels, no duplicate launch on subsequent ordinary activation/minimize/restore.",
+  "canonicalObservation": {
+    "path": "implementation/warlock/qa/evidence/taskbar-zero-fresh-20261028/observations.json",
+    "sha256": "d2fde62e5399a14e2671da706d0dda20829afa963bd1d20085d602666fb7615e"
+  },
+  "runs": [
+    {
+      "mode": "pointer",
+      "report": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-zero/native-primary-keyboard-1793217706889564690/report.json",
+        "sha256": "1714f2a3939b636aa8b7a0040830025552951b3843a9f74cdb672871f49e7854"
+      },
+      "checksPassed": 93,
+      "cleanupPassed": true,
+      "sourceInputsRehashed": 366,
+      "sourceInputsChanged": [],
+      "zeroEditorPixels": {
+        "path": "/home/charles/window-integration-qa/warlock-window-feedback-1793217706889640065/zero-editor-active.png",
+        "sha256": "f41ebbea7732796851958894f5ca4303ae6880e7254539b1beacebffc47b439d",
+        "greenPixels": 268368,
+        "region": [
+          31,
+          100,
+          769,
+          569
+        ]
+      },
+      "restartedPinCapture": {
+        "path": "/home/charles/window-integration-qa/warlock-window-feedback-1793217706889640065/pins-after-restart.png",
+        "sha256": "a99a9f1d47a36362d61647250d10ead41c20626d99fae76f1295494e5903e04c"
+      },
+      "zeroAtAction": null,
+      "mappedProviders": {
+        "reader": {
+          "pid": 195950,
+          "start": "9582110",
+          "packetSHA256": "78016e94c06d11f71c5ba18694fadd876cd17d0d8643b361009733ba4ab57726",
+          "count": 123
+        },
+        "inspector": {
+          "pid": 195946,
+          "start": "9582102",
+          "packetSHA256": "78016e94c06d11f71c5ba18694fadd876cd17d0d8643b361009733ba4ab57726",
+          "count": 59
+        }
+      },
+      "decisiveChecks": [
+        {
+          "name": "PinnedEditorInitiallyHasZeroNativeMembers",
+          "passed": true,
+          "facts": {
+            "protocolVersion": 3,
+            "kind": "scene-facts",
+            "binding": {
+              "lifetime": "16033911273693788381",
+              "session": "1",
+              "frontend": "1"
+            },
+            "requestId": "441",
+            "sequence": "9",
+            "revision": "1",
+            "outputGeneration": "1",
+            "facts": {
+              "focused": "2",
+              "windows": [
+                {
+                  "incarnation": "2",
+                  "owner": null,
+                  "application": "GTK Application",
+                  "stackPosition": 0,
+                  "workspace": "1",
+                  "monitor": "0",
+                  "geometry": [
+                    40.0,
+                    100.0,
+                    320.0,
+                    240.0
+                  ],
+                  "fullscreenMode": 0,
+                  "workspaceVisible": true,
+                  "hidden": false,
+                  "pinned": false,
+                  "allowedOverFullscreen": true,
+                  "renderOverFullscreen": true,
+                  "acceptsInput": true,
+                  "shouldRenderAny": true,
+                  "shouldRenderOwnMonitor": true,
+                  "minimized": false
+                }
+              ]
+            }
+          },
+          "button": {
+            "id": "applications:{\"lifetime\":\"16033911273693788381\",\"session\":\"5\",\"frontend\":\"1\"}:12:pin:warlock-editor",
+            "identity": "bar:pin:warlock-editor",
+            "label": "EditorPinned launcher",
+            "accessibleName": "Open Editor",
+            "disabled": false,
+            "x": 3,
+            "y": 3,
+            "width": 128,
+            "height": 46
+          }
+        },
+        {
+          "name": "CurrentZeroWindowPinIssuesOneIdentityBoundLaunch",
+          "passed": true,
+          "requests": [
+            {
+              "protocolVersion": 3,
+              "kind": "application-launch",
+              "binding": {
+                "lifetime": "16033911273693788381",
+                "session": "5",
+                "frontend": "1"
+              },
+              "intent": {
+                "request": "1",
+                "lifetime": "10629664997439119145",
+                "generation": "1",
+                "entry": "warlock-editor"
+              }
+            }
+          ]
+        },
+        {
+          "name": "NativeGioSubmissionConfirmed",
+          "passed": true,
+          "outcomes": [
+            {
+              "protocolVersion": 3,
+              "kind": "application-launch-outcome",
+              "binding": {
+                "lifetime": "16033911273693788381",
+                "session": "5",
+                "frontend": "1"
+              },
+              "outcome": {
+                "catalogProtocol": 1,
+                "kind": "launch-outcome",
+                "intent": {
+                  "request": "1",
+                  "lifetime": "10629664997439119145",
+                  "generation": "1",
+                  "entry": "warlock-editor"
+                },
+                "status": "Submitted",
+                "reason": "native-submission-accepted"
+              }
+            }
+          ]
+        },
+        {
+          "name": "LaunchedApplicationUsesExactCatalogStartupIdentity",
+          "passed": true,
+          "window": {
+            "incarnation": "3",
+            "owner": null,
+            "application": "warlock-zero-editor",
+            "stackPosition": 1,
+            "workspace": "1",
+            "monitor": "0",
+            "geometry": [
+              21.0,
+              77.0,
+              758.0,
+              502.0
+            ],
+            "fullscreenMode": 0,
+            "workspaceVisible": true,
+            "hidden": false,
+            "pinned": false,
+            "allowedOverFullscreen": true,
+            "renderOverFullscreen": true,
+            "acceptsInput": true,
+            "shouldRenderAny": true,
+            "shouldRenderOwnMonitor": true,
+            "minimized": false
+          },
+          "events": [
+            {
+              "window": "WARLOCK-ZERO-EDITOR",
+              "kind": "process-start",
+              "pid": 196403
+            }
+          ]
+        },
+        {
+          "name": "LaunchedEditorActuallyReceivesKeyboard",
+          "passed": true,
+          "events": [
+            {
+              "window": "WARLOCK-ZERO-EDITOR",
+              "kind": "key",
+              "keyval": 97,
+              "keycode": 38
+            }
+          ]
+        },
+        {
+          "name": "ActiveRunningPinMinimizesWithoutNewLaunch",
+          "passed": true,
+          "request": {
+            "protocolVersion": 3,
+            "kind": "window-effect",
+            "effectProtocol": 1,
+            "binding": {
+              "lifetime": "16033911273693788381",
+              "session": "5",
+              "frontend": "1"
+            },
+            "intent": {
+              "request": "3",
+              "generation": "3",
+              "incarnation": "3",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "16033911273693788381",
+                "epoch": "1",
+                "output": "1",
+                "revision": "4"
+              }
+            }
+          },
+          "facts": {
+            "protocolVersion": 3,
+            "kind": "scene-facts",
+            "binding": {
+              "lifetime": "16033911273693788381",
+              "session": "1",
+              "frontend": "1"
+            },
+            "requestId": "441",
+            "sequence": "37",
+            "revision": "5",
+            "outputGeneration": "1",
+            "facts": {
+              "focused": "2",
+              "windows": [
+                {
+                  "incarnation": "2",
+                  "owner": null,
+                  "application": "GTK Application",
+                  "stackPosition": 0,
+                  "workspace": "1",
+                  "monitor": "0",
+                  "geometry": [
+                    40.0,
+                    100.0,
+                    320.0,
+                    240.0
+                  ],
+                  "fullscreenMode": 0,
+                  "workspaceVisible": true,
+                  "hidden": false,
+                  "pinned": false,
+                  "allowedOverFullscreen": true,
+                  "renderOverFullscreen": true,
+                  "acceptsInput": true,
+                  "shouldRenderAny": true,
+                  "shouldRenderOwnMonitor": true,
+                  "minimized": false
+                },
+                {
+                  "incarnation": "3",
+                  "owner": null,
+                  "application": "warlock-zero-editor",
+                  "stackPosition": 1,
+                  "workspace": "1",
+                  "monitor": "0",
+                  "geometry": [
+                    21.0,
+                    77.0,
+                    758.0,
+                    502.0
+                  ],
+                  "fullscreenMode": 0,
+                  "workspaceVisible": true,
+                  "hidden": false,
+                  "pinned": false,
+                  "allowedOverFullscreen": true,
+                  "renderOverFullscreen": true,
+                  "acceptsInput": false,
+                  "shouldRenderAny": false,
+                  "shouldRenderOwnMonitor": false,
+                  "minimized": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "GioLaunchedOwnedEditorExitsNormally",
+          "passed": true,
+          "events": [
+            {
+              "window": "WARLOCK-ZERO-EDITOR",
+              "kind": "process-start",
+              "pid": 196403
+            },
+            {
+              "window": "WARLOCK-ZERO-EDITOR",
+              "kind": "key",
+              "keyval": 65515,
+              "keycode": 133
+            },
+            {
+              "window": "WARLOCK-ZERO-EDITOR",
+              "kind": "key",
+              "keyval": 65513,
+              "keycode": 64
+            },
+            {
+              "window": "WARLOCK-ZERO-EDITOR",
+              "kind": "key",
+              "keyval": 97,
+              "keycode": 38
+            },
+            {
+              "window": "WARLOCK-ZERO-EDITOR",
+              "kind": "key",
+              "keyval": 65515,
+              "keycode": 133
+            },
+            {
+              "window": "WARLOCK-ZERO-EDITOR",
+              "kind": "key",
+              "keyval": 65513,
+              "keycode": 64
+            },
+            {
+              "window": "WARLOCK-ZERO-EDITOR",
+              "kind": "normal-exit",
+              "exitCode": 0
+            }
+          ],
+          "pid": 196403,
+          "start": "9583492"
+        }
+      ]
+    },
+    {
+      "mode": "keyboard",
+      "report": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-zero/native-primary-keyboard-1793217758639207847/report.json",
+        "sha256": "bd06aed6fae80959831ff1111016408b68cb10d3222b0ca846e701acc738eb52"
+      },
+      "checksPassed": 96,
+      "cleanupPassed": true,
+      "sourceInputsRehashed": 366,
+      "sourceInputsChanged": [],
+      "zeroEditorPixels": {
+        "path": "/home/charles/window-integration-qa/warlock-window-feedback-1793217758639314505/zero-editor-active.png",
+        "sha256": "6915e6df44a8fd4d8223985a0657ec0ef4201afb0d029b1988774fc7c5061821",
+        "greenPixels": 268368,
+        "region": [
+          31,
+          100,
+          769,
+          569
+        ]
+      },
+      "restartedPinCapture": {
+        "path": "/home/charles/window-integration-qa/warlock-window-feedback-1793217758639314505/pins-after-restart.png",
+        "sha256": "c133ea231cd0c7fb4150eba9c1985f9eb148a9984abd051d9242aa22129872cc"
+      },
+      "zeroAtAction": null,
+      "mappedProviders": {
+        "reader": {
+          "pid": 196740,
+          "start": "9587283",
+          "packetSHA256": "78016e94c06d11f71c5ba18694fadd876cd17d0d8643b361009733ba4ab57726",
+          "count": 123
+        },
+        "inspector": {
+          "pid": 196736,
+          "start": "9587275",
+          "packetSHA256": "78016e94c06d11f71c5ba18694fadd876cd17d0d8643b361009733ba4ab57726",
+          "count": 59
+        }
+      },
+      "decisiveChecks": [
+        {
+          "name": "PinnedEditorInitiallyHasZeroNativeMembers",
+          "passed": true,
+          "facts": {
+            "protocolVersion": 3,
+            "kind": "scene-facts",
+            "binding": {
+              "lifetime": "1265024573656868584",
+              "session": "1",
+              "frontend": "1"
+            },
+            "requestId": "441",
+            "sequence": "9",
+            "revision": "1",
+            "outputGeneration": "1",
+            "facts": {
+              "focused": "2",
+              "windows": [
+                {
+                  "incarnation": "2",
+                  "owner": null,
+                  "application": "GTK Application",
+                  "stackPosition": 0,
+                  "workspace": "1",
+                  "monitor": "0",
+                  "geometry": [
+                    40.0,
+                    100.0,
+                    320.0,
+                    240.0
+                  ],
+                  "fullscreenMode": 0,
+                  "workspaceVisible": true,
+                  "hidden": false,
+                  "pinned": false,
+                  "allowedOverFullscreen": true,
+                  "renderOverFullscreen": true,
+                  "acceptsInput": true,
+                  "shouldRenderAny": true,
+                  "shouldRenderOwnMonitor": true,
+                  "minimized": false
+                }
+              ]
+            }
+          },
+          "button": {
+            "id": "applications:{\"lifetime\":\"1265024573656868584\",\"session\":\"5\",\"frontend\":\"1\"}:12:pin:warlock-editor",
+            "identity": "bar:pin:warlock-editor",
+            "label": "EditorPinned launcher",
+            "accessibleName": "Open Editor",
+            "disabled": false,
+            "x": 3,
+            "y": 3,
+            "width": 128,
+            "height": 46
+          }
+        },
+        {
+          "name": "CurrentZeroWindowPinIssuesOneIdentityBoundLaunch",
+          "passed": true,
+          "requests": [
+            {
+              "protocolVersion": 3,
+              "kind": "application-launch",
+              "binding": {
+                "lifetime": "1265024573656868584",
+                "session": "5",
+                "frontend": "1"
+              },
+              "intent": {
+                "request": "1",
+                "lifetime": "12048697022377147503",
+                "generation": "1",
+                "entry": "warlock-editor"
+              }
+            }
+          ]
+        },
+        {
+          "name": "NativeGioSubmissionConfirmed",
+          "passed": true,
+          "outcomes": [
+            {
+              "protocolVersion": 3,
+              "kind": "application-launch-outcome",
+              "binding": {
+                "lifetime": "1265024573656868584",
+                "session": "5",
+                "frontend": "1"
+              },
+              "outcome": {
+                "catalogProtocol": 1,
+                "kind": "launch-outcome",
+                "intent": {
+                  "request": "1",
+                  "lifetime": "12048697022377147503",
+                  "generation": "1",
+                  "entry": "warlock-editor"
+                },
+                "status": "Submitted",
+                "reason": "native-submission-accepted"
+              }
+            }
+          ]
+        },
+        {
+          "name": "LaunchedApplicationUsesExactCatalogStartupIdentity",
+          "passed": true,
+          "window": {
+            "incarnation": "3",
+            "owner": null,
+            "application": "warlock-zero-editor",
+            "stackPosition": 1,
+            "workspace": "1",
+            "monitor": "0",
+            "geometry": [
+              21.0,
+              77.0,
+              758.0,
+              502.0
+            ],
+            "fullscreenMode": 0,
+            "workspaceVisible": true,
+            "hidden": false,
+            "pinned": false,
+            "allowedOverFullscreen": true,
+            "renderOverFullscreen": true,
+            "acceptsInput": true,
+            "shouldRenderAny": true,
+            "shouldRenderOwnMonitor": true,
+            "minimized": false
+          },
+          "events": [
+            {
+              "window": "WARLOCK-ZERO-EDITOR",
+              "kind": "process-start",
+              "pid": 197248
+            }
+          ]
+        },
+        {
+          "name": "LaunchedEditorActuallyReceivesKeyboard",
+          "passed": true,
+          "events": [
+            {
+              "window": "WARLOCK-ZERO-EDITOR",
+              "kind": "key",
+              "keyval": 97,
+              "keycode": 38
+            }
+          ]
+        },
+        {
+          "name": "ActiveRunningPinMinimizesWithoutNewLaunch",
+          "passed": true,
+          "request": {
+            "protocolVersion": 3,
+            "kind": "window-effect",
+            "effectProtocol": 1,
+            "binding": {
+              "lifetime": "1265024573656868584",
+              "session": "5",
+              "frontend": "1"
+            },
+            "intent": {
+              "request": "3",
+              "generation": "3",
+              "incarnation": "3",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "1265024573656868584",
+                "epoch": "1",
+                "output": "1",
+                "revision": "4"
+              }
+            }
+          },
+          "facts": {
+            "protocolVersion": 3,
+            "kind": "scene-facts",
+            "binding": {
+              "lifetime": "1265024573656868584",
+              "session": "1",
+              "frontend": "1"
+            },
+            "requestId": "441",
+            "sequence": "39",
+            "revision": "5",
+            "outputGeneration": "1",
+            "facts": {
+              "focused": "2",
+              "windows": [
+                {
+                  "incarnation": "2",
+                  "owner": null,
+                  "application": "GTK Application",
+                  "stackPosition": 0,
+                  "workspace": "1",
+                  "monitor": "0",
+                  "geometry": [
+                    40.0,
+                    100.0,
+                    320.0,
+                    240.0
+                  ],
+                  "fullscreenMode": 0,
+                  "workspaceVisible": true,
+                  "hidden": false,
+                  "pinned": false,
+                  "allowedOverFullscreen": true,
+                  "renderOverFullscreen": true,
+                  "acceptsInput": true,
+                  "shouldRenderAny": true,
+                  "shouldRenderOwnMonitor": true,
+                  "minimized": false
+                },
+                {
+                  "incarnation": "3",
+                  "owner": null,
+                  "application": "warlock-zero-editor",
+                  "stackPosition": 1,
+                  "workspace": "1",
+                  "monitor": "0",
+                  "geometry": [
+                    21.0,
+                    77.0,
+                    758.0,
+                    502.0
+                  ],
+                  "fullscreenMode": 0,
+                  "workspaceVisible": true,
+                  "hidden": false,
+                  "pinned": false,
+                  "allowedOverFullscreen": true,
+                  "renderOverFullscreen": true,
+                  "acceptsInput": false,
+                  "shouldRenderAny": false,
+                  "shouldRenderOwnMonitor": false,
+                  "minimized": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "GioLaunchedOwnedEditorExitsNormally",
+          "passed": true,
+          "events": [
+            {
+              "window": "WARLOCK-ZERO-EDITOR",
+              "kind": "process-start",
+              "pid": 197248
+            },
+            {
+              "window": "WARLOCK-ZERO-EDITOR",
+              "kind": "key",
+              "keyval": 65515,
+              "keycode": 133
+            },
+            {
+              "window": "WARLOCK-ZERO-EDITOR",
+              "kind": "key",
+              "keyval": 65513,
+              "keycode": 64
+            },
+            {
+              "window": "WARLOCK-ZERO-EDITOR",
+              "kind": "key",
+              "keyval": 97,
+              "keycode": 38
+            },
+            {
+              "window": "WARLOCK-ZERO-EDITOR",
+              "kind": "key",
+              "keyval": 65515,
+              "keycode": 133
+            },
+            {
+              "window": "WARLOCK-ZERO-EDITOR",
+              "kind": "key",
+              "keyval": 65513,
+              "keycode": 64
+            },
+            {
+              "window": "WARLOCK-ZERO-EDITOR",
+              "kind": "normal-exit",
+              "exitCode": 0
+            }
+          ],
+          "pid": 197248,
+          "start": "9588813"
+        }
+      ]
+    },
+    {
+      "mode": "at-action",
+      "report": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-zero/native-primary-keyboard-1793217802987694125/report.json",
+        "sha256": "b938a41ec44dadf8b03fc4d6ea4b5f87b7e3f5bb0e6cde16d7e830ba73afe2ef"
+      },
+      "checksPassed": 97,
+      "cleanupPassed": true,
+      "sourceInputsRehashed": 366,
+      "sourceInputsChanged": [],
+      "zeroEditorPixels": {
+        "path": "/home/charles/window-integration-qa/warlock-window-feedback-1793217802987787517/zero-editor-active.png",
+        "sha256": "53498c5cd83c8212a323ea6597fe9c50ec49afb3ee5c2dda5d7183568ab6e931",
+        "greenPixels": 268368,
+        "region": [
+          31,
+          100,
+          769,
+          569
+        ]
+      },
+      "restartedPinCapture": {
+        "path": "/home/charles/window-integration-qa/warlock-window-feedback-1793217802987787517/pins-after-restart.png",
+        "sha256": "3770bb1294d38216379ca102ad8755992c45f1b9daad0519fb266b7d0fd726ca"
+      },
+      "zeroAtAction": {
+        "passed": true,
+        "source": "actual-at-spi-action",
+        "before": {
+          "pid": 197928,
+          "identity": "275",
+          "name": "Open Editor",
+          "role": "toggle button",
+          "states": [
+            "enabled",
+            "focusable",
+            "focused",
+            "sensitive",
+            "showing",
+            "visible"
+          ]
+        },
+        "action": "press",
+        "actionIndex": 0,
+        "syntheticNodes": false,
+        "injectedDomEvents": false
+      },
+      "mappedProviders": {
+        "reader": {
+          "pid": 197585,
+          "start": "9591720",
+          "packetSHA256": "78016e94c06d11f71c5ba18694fadd876cd17d0d8643b361009733ba4ab57726",
+          "count": 123
+        },
+        "inspector": {
+          "pid": 197581,
+          "start": "9591712",
+          "packetSHA256": "78016e94c06d11f71c5ba18694fadd876cd17d0d8643b361009733ba4ab57726",
+          "count": 59
+        }
+      },
+      "decisiveChecks": [
+        {
+          "name": "PinnedEditorInitiallyHasZeroNativeMembers",
+          "passed": true,
+          "facts": {
+            "protocolVersion": 3,
+            "kind": "scene-facts",
+            "binding": {
+              "lifetime": "8659897123641739022",
+              "session": "1",
+              "frontend": "1"
+            },
+            "requestId": "441",
+            "sequence": "9",
+            "revision": "1",
+            "outputGeneration": "1",
+            "facts": {
+              "focused": "2",
+              "windows": [
+                {
+                  "incarnation": "2",
+                  "owner": null,
+                  "application": "GTK Application",
+                  "stackPosition": 0,
+                  "workspace": "1",
+                  "monitor": "0",
+                  "geometry": [
+                    40.0,
+                    100.0,
+                    320.0,
+                    240.0
+                  ],
+                  "fullscreenMode": 0,
+                  "workspaceVisible": true,
+                  "hidden": false,
+                  "pinned": false,
+                  "allowedOverFullscreen": true,
+                  "renderOverFullscreen": true,
+                  "acceptsInput": true,
+                  "shouldRenderAny": true,
+                  "shouldRenderOwnMonitor": true,
+                  "minimized": false
+                }
+              ]
+            }
+          },
+          "button": {
+            "id": "applications:{\"lifetime\":\"8659897123641739022\",\"session\":\"5\",\"frontend\":\"1\"}:12:pin:warlock-editor",
+            "identity": "bar:pin:warlock-editor",
+            "label": "EditorPinned launcher",
+            "accessibleName": "Open Editor",
+            "disabled": false,
+            "x": 3,
+            "y": 3,
+            "width": 128,
+            "height": 46
+          }
+        },
+        {
+          "name": "CurrentZeroWindowPinIssuesOneIdentityBoundLaunch",
+          "passed": true,
+          "requests": [
+            {
+              "protocolVersion": 3,
+              "kind": "application-launch",
+              "binding": {
+                "lifetime": "8659897123641739022",
+                "session": "5",
+                "frontend": "1"
+              },
+              "intent": {
+                "request": "1",
+                "lifetime": "8023565658457585980",
+                "generation": "1",
+                "entry": "warlock-editor"
+              }
+            }
+          ]
+        },
+        {
+          "name": "NativeGioSubmissionConfirmed",
+          "passed": true,
+          "outcomes": [
+            {
+              "protocolVersion": 3,
+              "kind": "application-launch-outcome",
+              "binding": {
+                "lifetime": "8659897123641739022",
+                "session": "5",
+                "frontend": "1"
+              },
+              "outcome": {
+                "catalogProtocol": 1,
+                "kind": "launch-outcome",
+                "intent": {
+                  "request": "1",
+                  "lifetime": "8023565658457585980",
+                  "generation": "1",
+                  "entry": "warlock-editor"
+                },
+                "status": "Submitted",
+                "reason": "native-submission-accepted"
+              }
+            }
+          ]
+        },
+        {
+          "name": "LaunchedApplicationUsesExactCatalogStartupIdentity",
+          "passed": true,
+          "window": {
+            "incarnation": "3",
+            "owner": null,
+            "application": "warlock-zero-editor",
+            "stackPosition": 1,
+            "workspace": "1",
+            "monitor": "0",
+            "geometry": [
+              21.0,
+              77.0,
+              758.0,
+              502.0
+            ],
+            "fullscreenMode": 0,
+            "workspaceVisible": true,
+            "hidden": false,
+            "pinned": false,
+            "allowedOverFullscreen": true,
+            "renderOverFullscreen": true,
+            "acceptsInput": true,
+            "shouldRenderAny": true,
+            "shouldRenderOwnMonitor": true,
+            "minimized": false
+          },
+          "events": [
+            {
+              "window": "WARLOCK-ZERO-EDITOR",
+              "kind": "process-start",
+              "pid": 198095
+            }
+          ]
+        },
+        {
+          "name": "LaunchedEditorActuallyReceivesKeyboard",
+          "passed": true,
+          "events": [
+            {
+              "window": "WARLOCK-ZERO-EDITOR",
+              "kind": "key",
+              "keyval": 97,
+              "keycode": 38
+            }
+          ]
+        },
+        {
+          "name": "ActiveRunningPinMinimizesWithoutNewLaunch",
+          "passed": true,
+          "request": {
+            "protocolVersion": 3,
+            "kind": "window-effect",
+            "effectProtocol": 1,
+            "binding": {
+              "lifetime": "8659897123641739022",
+              "session": "5",
+              "frontend": "1"
+            },
+            "intent": {
+              "request": "3",
+              "generation": "3",
+              "incarnation": "3",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "8659897123641739022",
+                "epoch": "1",
+                "output": "1",
+                "revision": "4"
+              }
+            }
+          },
+          "facts": {
+            "protocolVersion": 3,
+            "kind": "scene-facts",
+            "binding": {
+              "lifetime": "8659897123641739022",
+              "session": "1",
+              "frontend": "1"
+            },
+            "requestId": "441",
+            "sequence": "40",
+            "revision": "5",
+            "outputGeneration": "1",
+            "facts": {
+              "focused": "2",
+              "windows": [
+                {
+                  "incarnation": "2",
+                  "owner": null,
+                  "application": "GTK Application",
+                  "stackPosition": 0,
+                  "workspace": "1",
+                  "monitor": "0",
+                  "geometry": [
+                    40.0,
+                    100.0,
+                    320.0,
+                    240.0
+                  ],
+                  "fullscreenMode": 0,
+                  "workspaceVisible": true,
+                  "hidden": false,
+                  "pinned": false,
+                  "allowedOverFullscreen": true,
+                  "renderOverFullscreen": true,
+                  "acceptsInput": true,
+                  "shouldRenderAny": true,
+                  "shouldRenderOwnMonitor": true,
+                  "minimized": false
+                },
+                {
+                  "incarnation": "3",
+                  "owner": null,
+                  "application": "warlock-zero-editor",
+                  "stackPosition": 1,
+                  "workspace": "1",
+                  "monitor": "0",
+                  "geometry": [
+                    21.0,
+                    77.0,
+                    758.0,
+                    502.0
+                  ],
+                  "fullscreenMode": 0,
+                  "workspaceVisible": true,
+                  "hidden": false,
+                  "pinned": false,
+                  "allowedOverFullscreen": true,
+                  "renderOverFullscreen": true,
+                  "acceptsInput": false,
+                  "shouldRenderAny": false,
+                  "shouldRenderOwnMonitor": false,
+                  "minimized": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "GioLaunchedOwnedEditorExitsNormally",
+          "passed": true,
+          "events": [
+            {
+              "window": "WARLOCK-ZERO-EDITOR",
+              "kind": "process-start",
+              "pid": 198095
+            },
+            {
+              "window": "WARLOCK-ZERO-EDITOR",
+              "kind": "key",
+              "keyval": 65515,
+              "keycode": 133
+            },
+            {
+              "window": "WARLOCK-ZERO-EDITOR",
+              "kind": "key",
+              "keyval": 65513,
+              "keycode": 64
+            },
+            {
+              "window": "WARLOCK-ZERO-EDITOR",
+              "kind": "key",
+              "keyval": 97,
+              "keycode": 38
+            },
+            {
+              "window": "WARLOCK-ZERO-EDITOR",
+              "kind": "key",
+              "keyval": 65515,
+              "keycode": 133
+            },
+            {
+              "window": "WARLOCK-ZERO-EDITOR",
+              "kind": "key",
+              "keyval": 65513,
+              "keycode": 64
+            },
+            {
+              "window": "WARLOCK-ZERO-EDITOR",
+              "kind": "normal-exit",
+              "exitCode": 0
+            }
+          ],
+          "pid": 198095,
+          "start": "9593232"
+        }
+      ]
+    }
+  ],
+  "equalSourceInputsRechecked": 366,
+  "captures": [
+    {
+      "mode": "pointer",
+      "path": "implementation/warlock/qa/evidence/taskbar-zero-fresh-20261028/pointer-zero-editor-active.png",
+      "sha256": "f41ebbea7732796851958894f5ca4303ae6880e7254539b1beacebffc47b439d"
+    },
+    {
+      "mode": "pointer",
+      "path": "implementation/warlock/qa/evidence/taskbar-zero-fresh-20261028/pointer-pins-after-restart.png",
+      "sha256": "a99a9f1d47a36362d61647250d10ead41c20626d99fae76f1295494e5903e04c"
+    },
+    {
+      "mode": "keyboard",
+      "path": "implementation/warlock/qa/evidence/taskbar-zero-fresh-20261028/keyboard-zero-editor-active.png",
+      "sha256": "6915e6df44a8fd4d8223985a0657ec0ef4201afb0d029b1988774fc7c5061821"
+    },
+    {
+      "mode": "keyboard",
+      "path": "implementation/warlock/qa/evidence/taskbar-zero-fresh-20261028/keyboard-pins-after-restart.png",
+      "sha256": "c133ea231cd0c7fb4150eba9c1985f9eb148a9984abd051d9242aa22129872cc"
+    },
+    {
+      "mode": "at-action",
+      "path": "implementation/warlock/qa/evidence/taskbar-zero-fresh-20261028/at-zero-editor-active.png",
+      "sha256": "53498c5cd83c8212a323ea6597fe9c50ec49afb3ee5c2dda5d7183568ab6e931"
+    },
+    {
+      "mode": "at-action",
+      "path": "implementation/warlock/qa/evidence/taskbar-zero-fresh-20261028/at-pins-after-restart.png",
+      "sha256": "3770bb1294d38216379ca102ad8755992c45f1b9daad0519fb266b7d0fd726ca"
+    }
+  ],
+  "independentReview": {
+    "name": "quint-5",
+    "independent": true,
+    "disposition": "accepted",
+    "path": "implementation/warlock/qa/evidence/taskbar-zero-fresh-20261028/independent-disposition.md",
+    "sha256": "b0366370da45439b4fd769511c7fa43257bcf250938b947501c9187ea5ab4c9f"
+  },
+  "preservation": "Original pending/partial observation and before-zero cached-ID failure retained unchanged; this sidecar records later independent original-scenario disposition.",
+  "remainingRequirementObligations": [
+    "Group and refusal applicable AT adjudication.",
+    "Explicit New instance and application-pin versus native always-on-top distinction/EARS clauses require separate evidence mapping.",
+    "Whole UI004 and full release remain unaccepted."
+  ],
+  "fullReleaseAccepted": false
+}
