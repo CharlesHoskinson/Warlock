@@ -1,0 +1,441 @@
+{
+  "schema": 1,
+  "atUTC": "2026-10-28T23:37:05.888618+00:00",
+  "requirement": "ELM-UI-004",
+  "scope": "Supporting evidence for the original EARS distinction between application pin and native always-on-top. No new scenario is invented, and the six accepted original named scenarios are unchanged.",
+  "disposition": "partial observed; stopped after native failure and bounded source review",
+  "scenarioAccepted": false,
+  "requirementAccepted": false,
+  "nativeAcceptance": false,
+  "releaseAccepted": false,
+  "sourceBaseRevision": "91228b021f30dd58742952b26972ed835a534ebc",
+  "rawObservation": {
+    "path": "observations.json",
+    "sha256": "2f196f223efb750f0fbe829d2e71bb35c667b36b3d3a1d028c8e5002bb5d2d26",
+    "preservedExact": true
+  },
+  "independentReview": {
+    "path": "independent-review.json",
+    "sha256": "d105f92dee219909bfe069daed875f540e3a219489368b69907f7631c8bd0a49",
+    "originalMarkdownSHA256": "68c0206b1071c9cdb1ea2d05cff923916474089f12632b24f5a3e9b914a98186"
+  },
+  "fixtureSources": {
+    "qualifiedRunner": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-pin-semantics/qualified-pin-v2/runner.py",
+      "sha256": "1ea7804ef28deb4ce5b29d44cd0cafb29658a9025d5d13b0a92b01b9fa32e297"
+    },
+    "retainedQueryRunner": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-pin-semantics/retained-peer-v2/runner.py",
+      "sha256": "bc15f7eabc40e1c41680ea7c969254d8a2779fe46f621056a68e952cca839159"
+    },
+    "retainedQueryBranch": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-pin-semantics/retained-peer-v2/branch.txt",
+      "sha256": "dde72e32e7552dc6382a36a8ff757a408262af093754f8d4c84ed286de3a96e8"
+    },
+    "currentCandidate": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/source-coherence-20261028/terra-2/fresh_candidate-v1.py",
+      "sha256": "23d66e343e37bead000ed155bbf46f8dcecb47bed09946ed62afe8f052169b00"
+    },
+    "sourceCoherencePreflight": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/source-coherence-20261028/terra-2/preflight-v1.json",
+      "sha256": "ae8d3fdb03bbbed5e4b42fd91225dfba1891142e1403389d74112d2b0f945b89"
+    },
+    "sourceCoherenceAddendum": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/source-coherence-20261028/terra-2/addendum-v1.json",
+      "sha256": "051cb5c76896ce4db6edc0b94042181d4614fd163a8f36e3239634522f532e63"
+    },
+    "sourceCoherenceReview": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-3/source-coherence-20261028/review.json",
+      "sha256": "6d67bfaa2dfda256baa2a33195554f8a642f0d836a819afdd0ae9b733ccfc187"
+    },
+    "bindingReview": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-3/qualified-pin-binding/v2/review.json",
+      "sha256": "3302e9bb2ce4566f05e3b13e4cf17e35e26911d2d311465acbb079155f74ad96"
+    },
+    "guardReview": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-4/pin-return-retained-query/v2/review.md",
+      "sha256": "d08692e6777208fd27217888bcaec1a7d26a778e2a7a86259f3202f4036bd9e4"
+    },
+    "lifecycleReview": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-1/pin-keyboard-popup-lifecycle/review.md",
+      "sha256": "457b31ea936aa0da013931b11531201426416f7570ca3789af1a02d6ff3ed149"
+    }
+  },
+  "entrypoint": {
+    "path": "implementation/warlock/qa/native-taskbar-pin-independence-portable.py",
+    "sha256": "f342726a82248878db315d5f2ac8e8d8ed0cf3b64742df57fe60d6c12c35358a"
+  },
+  "protectedQualificationReceipts": {
+    "currentQualification": {
+      "stdout": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/source-coherence-20261028/root-validation-v1/protected.stdout",
+        "sha256": "da5624fe1802d5fbe59ced2ce6501da6f82c6cf0d30f96729d13d343dd57fa76"
+      },
+      "stderr": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/source-coherence-20261028/root-validation-v1/protected.stderr",
+        "sha256": "e5f9eaae8cba9a19546a50d2d56a14d15f403ea17ce86e51f2b5be940c0fc8c7"
+      }
+    },
+    "retainedQueryGuards": {
+      "stdout": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-pin-semantics/retained-peer-check-v2/protected.stdout",
+        "sha256": "9c544a6b40b7fb4fb821999c9be2f98de4bf5b1b06df7f03204c5a75fe856135"
+      },
+      "stderr": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-pin-semantics/retained-peer-check-v2/protected.stderr",
+        "sha256": "4d948978bda0caa3fa18c488217c6ba8819bceb812a10ffa1932c78845b4e764"
+      }
+    },
+    "qualifiedBinding": {
+      "stdout": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-pin-semantics/qualified-pin-v2/protected.stdout",
+        "sha256": "b03456f1d70f2932316a9726626ad0532742cdf902880a7e5cfa44ad2eff5773"
+      },
+      "stderr": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-pin-semantics/qualified-pin-v2/protected.stderr",
+        "sha256": "77d28a5c0935c1a544a67e1c255ee74ca622f1c9cc28a429e8cdad1441fa5f9a"
+      }
+    }
+  },
+  "actualSelectedChecks": [
+    {
+      "name": "RetainedPeerSearchUsesCurrentLease",
+      "passed": true,
+      "lease": "1",
+      "initialPublication": "20",
+      "finalPublication": "24",
+      "initialDraft": ""
+    },
+    {
+      "name": "ApplicationPinPreservesNativePin Peerkeyboard",
+      "passed": true,
+      "request": {
+        "protocolVersion": 3,
+        "kind": "taskbar-pins-write",
+        "binding": {
+          "lifetime": "3732305899978578145",
+          "session": "3",
+          "frontend": "1"
+        },
+        "requestId": "7",
+        "proposal": {
+          "revision": "1",
+          "identities": [
+            "warlock-running-peer"
+          ]
+        }
+      },
+      "receipt": {
+        "protocolVersion": 3,
+        "kind": "taskbar-pins-outcome",
+        "binding": {
+          "lifetime": "3732305899978578145",
+          "session": "3",
+          "frontend": "1"
+        },
+        "requestId": "7",
+        "status": "Saved",
+        "preferences": {
+          "revision": "2",
+          "identities": [
+            "warlock-running-peer"
+          ]
+        }
+      },
+      "stored": {
+        "schema": 1,
+        "revision": "2",
+        "identities": [
+          "warlock-running-peer"
+        ]
+      },
+      "nativePinned": false
+    },
+    {
+      "name": "RetainedPeerSearchUsesCurrentLease",
+      "passed": true,
+      "lease": "2",
+      "initialPublication": "32",
+      "finalPublication": "32",
+      "initialDraft": "peer"
+    },
+    {
+      "name": "ApplicationPinPreservesNativeUnpin Peerpointer",
+      "passed": true,
+      "request": {
+        "protocolVersion": 3,
+        "kind": "taskbar-pins-write",
+        "binding": {
+          "lifetime": "3732305899978578145",
+          "session": "3",
+          "frontend": "1"
+        },
+        "requestId": "9",
+        "proposal": {
+          "revision": "2",
+          "identities": []
+        }
+      },
+      "receipt": {
+        "protocolVersion": 3,
+        "kind": "taskbar-pins-outcome",
+        "binding": {
+          "lifetime": "3732305899978578145",
+          "session": "3",
+          "frontend": "1"
+        },
+        "requestId": "9",
+        "status": "Saved",
+        "preferences": {
+          "revision": "3",
+          "identities": []
+        }
+      },
+      "stored": {
+        "schema": 1,
+        "revision": "3",
+        "identities": []
+      },
+      "nativePinned": false
+    },
+    {
+      "name": "RetainedPeerSearchUsesCurrentLease",
+      "passed": true,
+      "lease": "3",
+      "initialPublication": "40",
+      "finalPublication": "40",
+      "initialDraft": "peer"
+    },
+    {
+      "name": "ApplicationPinPreservesNativePin Peerpointer",
+      "passed": true,
+      "request": {
+        "protocolVersion": 3,
+        "kind": "taskbar-pins-write",
+        "binding": {
+          "lifetime": "3732305899978578145",
+          "session": "3",
+          "frontend": "1"
+        },
+        "requestId": "11",
+        "proposal": {
+          "revision": "3",
+          "identities": [
+            "warlock-running-peer"
+          ]
+        }
+      },
+      "receipt": {
+        "protocolVersion": 3,
+        "kind": "taskbar-pins-outcome",
+        "binding": {
+          "lifetime": "3732305899978578145",
+          "session": "3",
+          "frontend": "1"
+        },
+        "requestId": "11",
+        "status": "Saved",
+        "preferences": {
+          "revision": "4",
+          "identities": [
+            "warlock-running-peer"
+          ]
+        }
+      },
+      "stored": {
+        "schema": 1,
+        "revision": "4",
+        "identities": [
+          "warlock-running-peer"
+        ]
+      },
+      "nativePinned": false
+    },
+    {
+      "name": "NativeAlwaysOnTopPreservesApplicationPinspointerTrue",
+      "passed": true,
+      "request": {
+        "protocolVersion": 3,
+        "kind": "window-effect",
+        "effectProtocol": 2,
+        "binding": {
+          "lifetime": "3732305899978578145",
+          "session": "3",
+          "frontend": "1"
+        },
+        "intent": {
+          "request": "1",
+          "generation": "1",
+          "incarnation": "2",
+          "operation": "pin",
+          "context": {
+            "lifetime": "3732305899978578145",
+            "epoch": "1",
+            "output": "1",
+            "revision": "1"
+          }
+        }
+      },
+      "receipt": {
+        "protocolVersion": 3,
+        "kind": "effect-outcome",
+        "effectProtocol": 2,
+        "binding": {
+          "lifetime": "3732305899978578145",
+          "session": "3",
+          "frontend": "1"
+        },
+        "intent": {
+          "request": "1",
+          "generation": "1",
+          "incarnation": "2",
+          "operation": "pin",
+          "context": {
+            "lifetime": "3732305899978578145",
+            "epoch": "1",
+            "output": "1",
+            "revision": "1"
+          }
+        },
+        "status": "Committed",
+        "reason": "applied",
+        "revision": "2",
+        "outputGeneration": "1"
+      },
+      "stored": {
+        "schema": 1,
+        "revision": "4",
+        "identities": [
+          "warlock-running-peer"
+        ]
+      },
+      "nativePinned": true
+    },
+    {
+      "name": "RetainedPeerSearchUsesCurrentLease",
+      "passed": true,
+      "lease": "5",
+      "initialPublication": "56",
+      "finalPublication": "56",
+      "initialDraft": "peer"
+    },
+    {
+      "name": "ApplicationPinPreservesNativeUnpin Peerkeyboard",
+      "passed": true,
+      "request": {
+        "protocolVersion": 3,
+        "kind": "taskbar-pins-write",
+        "binding": {
+          "lifetime": "3732305899978578145",
+          "session": "3",
+          "frontend": "1"
+        },
+        "requestId": "13",
+        "proposal": {
+          "revision": "4",
+          "identities": []
+        }
+      },
+      "receipt": {
+        "protocolVersion": 3,
+        "kind": "taskbar-pins-outcome",
+        "binding": {
+          "lifetime": "3732305899978578145",
+          "session": "3",
+          "frontend": "1"
+        },
+        "requestId": "13",
+        "status": "Saved",
+        "preferences": {
+          "revision": "5",
+          "identities": []
+        }
+      },
+      "stored": {
+        "schema": 1,
+        "revision": "5",
+        "identities": []
+      },
+      "nativePinned": true
+    },
+    {
+      "name": "RetainedPeerSearchUsesCurrentLease",
+      "passed": true,
+      "lease": "6",
+      "initialPublication": "64",
+      "finalPublication": "64",
+      "initialDraft": "peer"
+    },
+    {
+      "name": "ApplicationPinPreservesNativePin Peerkeyboard",
+      "passed": true,
+      "request": {
+        "protocolVersion": 3,
+        "kind": "taskbar-pins-write",
+        "binding": {
+          "lifetime": "3732305899978578145",
+          "session": "3",
+          "frontend": "1"
+        },
+        "requestId": "15",
+        "proposal": {
+          "revision": "5",
+          "identities": [
+            "warlock-running-peer"
+          ]
+        }
+      },
+      "receipt": {
+        "protocolVersion": 3,
+        "kind": "taskbar-pins-outcome",
+        "binding": {
+          "lifetime": "3732305899978578145",
+          "session": "3",
+          "frontend": "1"
+        },
+        "requestId": "15",
+        "status": "Saved",
+        "preferences": {
+          "revision": "6",
+          "identities": [
+            "warlock-running-peer"
+          ]
+        }
+      },
+      "stored": {
+        "schema": 1,
+        "revision": "6",
+        "identities": [
+          "warlock-running-peer"
+        ]
+      },
+      "nativePinned": true
+    },
+    {
+      "name": "KeyboardContextTargetsCurrentPin",
+      "passed": true
+    }
+  ],
+  "observed": [
+    "Five current retained-peer search checks pass: the first starts empty and four reuse the existing peer draft.",
+    "Five application pin or unpin changes have matching Saved receipts and persisted revisions while preserving the observed native pin state, including changes while native top is true.",
+    "One pointer always-on-top change commits for the selected incarnation and preserves the application pin.",
+    "The keyboard path targets the current pin, then the original menu wait expires. Three shared-renderer termination callbacks follow the keyboard popup configure/commit boundary; the host exits1. No NewInstance or GIO launch occurs in this fixture."
+  ],
+  "failure": {
+    "primary": "Original menu observation deadline after KeyboardContextTargetsCurrentPin.",
+    "secondary": "AssertionError('OwnedClientNormalExit')",
+    "cleanupPassed": true,
+    "interpretation": "Cleanup success is teardown only; the host normal-exit check failed. Reason0 and three per-view callbacks do not establish an OS signal, stack, process count or cause.",
+    "atReached": false,
+    "nativePinIndependenceObserved": false
+  },
+  "limits": [
+    "Keyboard native-top completion, AT actions, normal host exit and complete original EARS independence remain unobserved.",
+    "Only one application-pin identity was used; broader multi-item ordering behavior is not established.",
+    "Native source ownership review found no supported causal defect. Pointer y=-30 also appears on earlier normal leases and is not a supported cause.",
+    "Raw sourceInputs, tuple fields, runner metadata and private evidence paths remain unchanged. The raw snapshot is not relabeled as current after canonical evidence is added.",
+    "Old 21:18 pin stop and 22:41 diagnostic return histories remain preserved. The 85101 diagnostic invocation failed before GUI on source coherence; no attach or stack was obtained.",
+    "All4721 qualification checks remain strict through a reviewed one-entry nonconsumed packaging-source addendum; no consumed native source or ABI check is waived."
+  ]
+}
