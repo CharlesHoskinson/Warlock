@@ -1,0 +1,103 @@
+{
+  "schema": 1,
+  "requirement": "ELM-UI-004",
+  "scenarioDispositions": {
+    "taskbar-inactive": "accepted",
+    "taskbar-active": "accepted",
+    "taskbar-minimized": "accepted"
+  },
+  "requirementAccepted": false,
+  "sourceTuple": {
+    "sourceRevision": "332af34c53dc139d1b0a1f96a7857074feec9eca",
+    "core": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-build/Hyprland",
+      "sha256": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e"
+    },
+    "plugin": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/authority/elm-window-geometry-authority.so",
+      "sha256": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c"
+    },
+    "aquamarine": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/lib/libaquamarine.so.0.15.0",
+      "sha256": "667a22d535aade4e4a26134e39028a87fb3f963c28b7bf7ff79da684bb014ecd"
+    },
+    "host": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/elm-host",
+      "sha256": "4377b11ce0afe9e1072210666aa872118b032995275a20657058771e5e6c8347",
+      "heldBuild": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/host-build-report.json",
+      "heldBuildSHA256": "691806471ff599503a20067aa0b90bf914b93a1ee5985198cdc79fb92ff975bf"
+    },
+    "toolchain": {
+      "compilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948"
+    },
+    "atWrapperSHA256": "6e33c94e4c8d077b1ef4530f98273609ce4a6f48207f412c72336f7f72346ffc",
+    "atCompiledSourceSHA256": "becfd2e6558f16577258ad04f811d4193142804b621ad4f2ca52f74a91f7975e",
+    "guardSHA256": "117e56afe2a72e686fa2fcaedd18204da593af51e8be495764cd7e75d500d148",
+    "packetSHA256": "78016e94c06d11f71c5ba18694fadd876cd17d0d8643b361009733ba4ab57726"
+  },
+  "reports": [
+    {
+      "mode": "pointer",
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-qa/native-primary-1793208770312713293/report.json",
+      "sha256": "3eeb21dc62ed6e080561b1c36486cf148fb1ef1c31125a198a0bc1cf17321951",
+      "checks": 80,
+      "cleanupPassed": true
+    },
+    {
+      "mode": "keyboard",
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-primary-keyboard/native-primary-keyboard-1793212982313162176/report.json",
+      "sha256": "49f7df3d8b15cb1a5079cb849df0ea8c8ddd17ad195c70bae758f630769e8da7",
+      "checks": 131,
+      "cleanupPassed": true
+    },
+    {
+      "mode": "at",
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-primary-at/native-primary-keyboard-1793216956358362671/report.json",
+      "sha256": "4567423321b2ba606370c89681c38fc890ebcd694ff28d97f9d9565a3b824522",
+      "checks": 184,
+      "cleanupPassed": true
+    }
+  ],
+  "equalSourceInputsRechecked": 366,
+  "canonicalObservation": {
+    "path": "implementation/warlock/qa/evidence/primary-at-return-20261028/observations.json",
+    "sha256": "5cfb8f4d564ff79507fd3c1f51b34a848a69e2894603c342b7b150c573ad02a6"
+  },
+  "independentReview": {
+    "name": "quint-5",
+    "independent": true,
+    "disposition": "accepted",
+    "path": "implementation/warlock/qa/evidence/primary-at-return-20261028/independent-original-disposition.md",
+    "sha256": "303855c175d81a2afedc5b5ac4504f10532d591558af3203cdd45f8ddd836a12"
+  },
+  "originalOracles": [
+    {
+      "name": "taskbar-inactive",
+      "given": "one inactive member",
+      "when": "primary pointer or keyboard activation occurs",
+      "then": "the member visibly activates"
+    },
+    {
+      "name": "taskbar-minimized",
+      "given": "one minimized member",
+      "when": "primary pointer or keyboard activation occurs",
+      "then": "the member restores and visibly activates"
+    },
+    {
+      "name": "taskbar-active",
+      "given": "one active eligible member",
+      "when": "primary pointer or keyboard activation occurs",
+      "then": "the family minimizes with declared focus succession"
+    }
+  ],
+  "verificationScope": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+  "scope": "Accept exactly the original inactive, active and minimized single-member examples on the observed tuple: matching pointer, native keyboard-primary and actual current focused AT-SPI action routes, exact bound native receipts/focus/MRU-or-desktop/presentation/recipients and named AT state/Orca speech-request observations.",
+  "reportMetadataClarification": "Inherited fixture.nativeATObserved=false and underlying runnerSHA67f do not describe actual top-level AT action mode; original raw report remains unchanged. Actual five AT-SPI press records and top-level observed flags establish this route. Silent speech requests are not audible speech/braille.",
+  "preservation": "Prior pending/partial observations, both failed loader attempts and stopped timer remain unchanged; this sidecar records the later combined independent scenario disposition.",
+  "remainingRequirementObligations": [
+    "Zero-window pointer/keyboard/AT fresh tuple verification in progress.",
+    "Group and refusal applicable AT; explicit New instance and pin distinctions require their own adjudication.",
+    "Broader UI004 and release obligations remain unaccepted."
+  ],
+  "fullReleaseAccepted": false
+}

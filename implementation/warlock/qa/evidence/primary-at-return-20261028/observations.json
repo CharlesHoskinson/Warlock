@@ -1,0 +1,264 @@
+{
+  "schema": 1,
+  "observedUTC": "2026-10-28T19:51:38.270987+00:00",
+  "requirements": [
+    "ELM-UI-004"
+  ],
+  "scenarios": [
+    "taskbar-inactive",
+    "taskbar-active",
+    "taskbar-minimized"
+  ],
+  "disposition": "partial",
+  "rawReport": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-primary-at/native-primary-keyboard-1793216956358362671/report.json",
+    "sha256": "4567423321b2ba606370c89681c38fc890ebcd694ff28d97f9d9565a3b824522"
+  },
+  "runner": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-primary-at/native-primary-at.py",
+    "sha256": "6e33c94e4c8d077b1ef4530f98273609ce4a6f48207f412c72336f7f72346ffc",
+    "baseKeyboardRunnerSHA256": "67f4622fd399bbc59ca03d6ca1bf689e2afa9572f52e3a8a3700355999a382be"
+  },
+  "nativePair": {
+    "core": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-build/Hyprland",
+      "sha256": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e"
+    },
+    "plugin": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/authority/elm-window-geometry-authority.so",
+      "sha256": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c"
+    },
+    "aquamarine": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/lib/libaquamarine.so.0.15.0",
+      "sha256": "667a22d535aade4e4a26134e39028a87fb3f963c28b7bf7ff79da684bb014ecd"
+    }
+  },
+  "nativeHost": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/elm-host",
+    "sha256": "4377b11ce0afe9e1072210666aa872118b032995275a20657058771e5e6c8347",
+    "heldBuild": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/host-build-report.json",
+    "heldBuildSHA256": "691806471ff599503a20067aa0b90bf914b93a1ee5985198cdc79fb92ff975bf"
+  },
+  "runtimeByReference": {
+    "root": "/home/charles/Warlock/implementation/warlock-client-provider-native-v204",
+    "freshAdapter": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-qa/fresh_candidate.py",
+    "freshAdapterSHA256": "cb29ebe89b051223037264a366b9616815284b88e3cc452bc18a8993680eb8ab",
+    "parentAdapterSHA256": "e045634bd023f07977c398ef0057b9fdee3a1e1718d51c879e221ee353e28ae9",
+    "tupleSHA256": "bc225242e30baf4a5b8b1182cef6fdc716cc9c67de90dc35674f90c5fa87830b",
+    "foundationSHA256": "08b24bd93cbb63ec097900915379b32e90d9dcca7156d04fe8ee959efaff264f"
+  },
+  "checks": {
+    "total": 184,
+    "failed": []
+  },
+  "actualAtActions": [
+    {
+      "name": "ActualAtSpiPrimaryActionInvoked",
+      "passed": true,
+      "receipt": {
+        "passed": true,
+        "source": "actual-at-spi-action",
+        "before": {
+          "pid": 191607,
+          "identity": "283",
+          "name": "Activate ELM-ACTIVATION-PEER; Open",
+          "role": "toggle button",
+          "states": [
+            "enabled",
+            "focusable",
+            "focused",
+            "sensitive",
+            "showing",
+            "visible"
+          ]
+        },
+        "action": "press",
+        "actionIndex": 0,
+        "syntheticNodes": false,
+        "injectedDomEvents": false
+      }
+    },
+    {
+      "name": "ActualAtSpiPrimaryActionInvoked",
+      "passed": true,
+      "receipt": {
+        "passed": true,
+        "source": "actual-at-spi-action",
+        "before": {
+          "pid": 191607,
+          "identity": "283",
+          "name": "Minimize ELM-ACTIVATION-PEER; Active",
+          "role": "toggle button",
+          "states": [
+            "active",
+            "enabled",
+            "focusable",
+            "focused",
+            "pressed",
+            "sensitive",
+            "showing",
+            "visible"
+          ]
+        },
+        "action": "press",
+        "actionIndex": 0,
+        "syntheticNodes": false,
+        "injectedDomEvents": false
+      }
+    },
+    {
+      "name": "ActualAtSpiPrimaryActionInvoked",
+      "passed": true,
+      "receipt": {
+        "passed": true,
+        "source": "actual-at-spi-action",
+        "before": {
+          "pid": 191607,
+          "identity": "283",
+          "name": "Restore ELM-ACTIVATION-PEER; Minimized",
+          "role": "toggle button",
+          "states": [
+            "enabled",
+            "focusable",
+            "focused",
+            "sensitive",
+            "showing",
+            "visible"
+          ]
+        },
+        "action": "press",
+        "actionIndex": 0,
+        "syntheticNodes": false,
+        "injectedDomEvents": false
+      }
+    },
+    {
+      "name": "ActualAtSpiPrimaryActionInvoked",
+      "passed": true,
+      "receipt": {
+        "passed": true,
+        "source": "actual-at-spi-action",
+        "before": {
+          "pid": 191607,
+          "identity": "283",
+          "name": "Minimize ELM-ACTIVATION-PEER; Active",
+          "role": "toggle button",
+          "states": [
+            "active",
+            "enabled",
+            "focusable",
+            "focused",
+            "pressed",
+            "sensitive",
+            "showing",
+            "visible"
+          ]
+        },
+        "action": "press",
+        "actionIndex": 0,
+        "syntheticNodes": false,
+        "injectedDomEvents": false
+      }
+    },
+    {
+      "name": "ActualAtSpiPrimaryActionInvoked",
+      "passed": true,
+      "receipt": {
+        "passed": true,
+        "source": "actual-at-spi-action",
+        "before": {
+          "pid": 191607,
+          "identity": "283",
+          "name": "Restore ELM-ACTIVATION-PEER; Minimized",
+          "role": "toggle button",
+          "states": [
+            "enabled",
+            "focusable",
+            "focused",
+            "sensitive",
+            "showing",
+            "visible"
+          ]
+        },
+        "action": "press",
+        "actionIndex": 0,
+        "syntheticNodes": false,
+        "injectedDomEvents": false
+      }
+    }
+  ],
+  "actualAtSnapshotCount": 16,
+  "mappedProviderQualification": {
+    "reader": {
+      "pid": 191521,
+      "start": "9507057",
+      "packetSHA256": "78016e94c06d11f71c5ba18694fadd876cd17d0d8643b361009733ba4ab57726",
+      "mappedProviderCount": 123
+    },
+    "inspector": {
+      "pid": 191517,
+      "start": "9507049",
+      "packetSHA256": "78016e94c06d11f71c5ba18694fadd876cd17d0d8643b361009733ba4ab57726",
+      "mappedProviderCount": 59
+    }
+  },
+  "isolation": {
+    "systemBusRemainsRefusing": true,
+    "servicesExplicitlyOwned": true,
+    "activationDisabled": true,
+    "freshPrefixPacketSHA256": "78016e94c06d11f71c5ba18694fadd876cd17d0d8643b361009733ba4ab57726"
+  },
+  "primaryCaptures": [
+    {
+      "stage": "InactiveActivation",
+      "path": "/home/charles/window-integration-qa/warlock-window-feedback-1793216956358466081/InactiveActivation.png",
+      "sha256": "2b96b5249074d28d42f6e3b46801e618b2bea1e1a000696ea5e9d3a1f420ef3e"
+    },
+    {
+      "stage": "ActiveMinimizeToMRU",
+      "path": "/home/charles/window-integration-qa/warlock-window-feedback-1793216956358466081/ActiveMinimizeToMRU.png",
+      "sha256": "8b511c487e172f681e9b6e07a14514f57952b60a9af04ed85e50bb6af2617856"
+    },
+    {
+      "stage": "MinimizedRestore",
+      "path": "/home/charles/window-integration-qa/warlock-window-feedback-1793216956358466081/MinimizedRestore.png",
+      "sha256": "e7e0ae7b74138a92e79ede4925326f0445d57ecaa14d5772f31c5dc565fd2fd4"
+    },
+    {
+      "stage": "ActiveMinimizeToDesktop",
+      "path": "/home/charles/window-integration-qa/warlock-window-feedback-1793216956358466081/ActiveMinimizeToDesktop.png",
+      "sha256": "b4a0dca722997da1d7c6801c158344063a6548ff5c08ca3b9c32d49ea0fdd9b6"
+    },
+    {
+      "stage": "DesktopRestore",
+      "path": "/home/charles/window-integration-qa/warlock-window-feedback-1793216956358466081/DesktopRestore.png",
+      "sha256": "9061ce565d7a935213ff5e2b9f52dcfb7a97249c9c66ac77b7b755460897f6b4"
+    }
+  ],
+  "rootVerification": {
+    "sourceHashesRechecked": 366,
+    "changedSourceInputs": [],
+    "allPrimaryCaptureHashesRechecked": true,
+    "capturesViewed": [
+      "InactiveActivation",
+      "DesktopRestore"
+    ],
+    "visualObservation": "Actual green peer visibly active and restored, with aa in restored client entry; corresponding minimized scene checks and actual key recipient are in raw report.",
+    "cleanupPassed": true
+  },
+  "reportMetadataClarification": {
+    "accessibilityFixture.nativeATObserved": false,
+    "nativeAtActionPrimaryJourneyObserved": true,
+    "nativeTaskbarPrimaryAtObserved": true,
+    "explanation": "Inherited generic fixture flag remains false; five actual Atspi press receipts and dedicated primary-AT observation flags are the bounded evidence. Report runnerSHA256 names its underlying keyboard base; the reviewed outer runtime hash is explicitly pinned above. Raw bytes are preserved."
+  },
+  "scope": "Real native AT-SPI press on five focused current primary controls, native effects/receipts, MRU/desktop focus succession, actual GTK key recipients, physical pixels and Orca focus/name/state observations. Silent speech-request transcript is not audible output or braille. Hardware keyboard, unrelated AT actions and complete UI004/release are unaccepted.",
+  "missingObservations": [
+    "Independent original-scenario review of these actual primary AT actions.",
+    "Applicable group/zero/refusal AT routes and broader full requirement verification.",
+    "Audible speech/braille and other accessibility/release obligations where required."
+  ],
+  "priorStoppedRecord": ".warlock-contributor/native-primary-at.json",
+  "priorStoppedRecordPreservedSHA256": "a9f9a34f561694f3f0596286351ce2ac12beb27584f1f0d17cf42a8636c4ed5f",
+  "returnRationale": "Concrete pre-existing GIO v3 provider fix and two intervening delivered keyboard original journeys; this was one actual native return, no further qualification expansion."
+}
