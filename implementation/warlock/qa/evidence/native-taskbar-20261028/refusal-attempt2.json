@@ -1,0 +1,113 @@
+{
+  "schema": 1,
+  "requirement": "ELM-UI-004",
+  "scenario": "taskbar-refusal",
+  "disposition": "blocked",
+  "requirementAccepted": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "report": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-refusal/native-refusal-1793210179284491601/report.json",
+    "sha256": "b3432ce0ab5c5d475705dd3fdb8baddc5abebf5bfb79b04fdfa9c80a2e54c073"
+  },
+  "checks": [
+    {
+      "name": "OwningPluginLoads",
+      "passed": true
+    },
+    {
+      "name": "CreateSecondWaylandOutput",
+      "passed": true
+    },
+    {
+      "name": "TwoNativeOutputsHaveOriginalCrossingGeometry",
+      "passed": true
+    },
+    {
+      "name": "FixtureFloats",
+      "passed": true
+    },
+    {
+      "name": "FixtureSize",
+      "passed": true
+    },
+    {
+      "name": "FixturePosition",
+      "passed": true
+    },
+    {
+      "name": "FixtureFocus",
+      "passed": true
+    },
+    {
+      "name": "TwoParentOutputPlacementObserved",
+      "passed": true
+    },
+    {
+      "name": "MoveAcrossTaskbarAndOutputStartsIdle",
+      "passed": true
+    },
+    {
+      "name": "MoveAcrossTaskbarAndOutputNativeOwnerIsOriginalWindow",
+      "passed": true
+    },
+    {
+      "name": "MoveAcrossTaskbarAndOutputCrossingRetainsNativeOwner",
+      "passed": true
+    },
+    {
+      "name": "MoveAcrossTaskbarAndOutputCrossingRetainsNativeOwner",
+      "passed": false
+    },
+    {
+      "name": "PersistentPointerNormalExit",
+      "passed": true
+    },
+    {
+      "name": "PersistentKeyboardNormalExit",
+      "passed": true
+    },
+    {
+      "name": "OwnedClientNormalExit",
+      "passed": true
+    },
+    {
+      "name": "OwnedClientNormalExit",
+      "passed": true
+    },
+    {
+      "name": "OwningPluginUnloads",
+      "passed": true
+    }
+  ],
+  "error": "AssertionError('MoveAcrossTaskbarAndOutputCrossingRetainsNativeOwner')",
+  "pair": {
+    "core": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-build/Hyprland",
+      "sha256": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e"
+    },
+    "plugin": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/authority/elm-window-geometry-authority.so",
+      "sha256": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c"
+    },
+    "aquamarine": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/lib/libaquamarine.so.0.15.0",
+      "sha256": "667a22d535aade4e4a26134e39028a87fb3f963c28b7bf7ff79da684bb014ecd"
+    }
+  },
+  "host": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/elm-host",
+    "sha256": "4377b11ce0afe9e1072210666aa872118b032995275a20657058771e5e6c8347",
+    "heldBuild": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/host-build-report.json",
+    "heldBuildSHA256": "691806471ff599503a20067aa0b90bf914b93a1ee5985198cdc79fb92ff975bf"
+  },
+  "cleanupPassed": true,
+  "scope": "Actual second trial: original two-parent placement and initial coherence pass, native drag owner starts and survives first crossing. Later combined owner/projection check fails before any refusal action. Native owner loss is not established by this combined assertion.",
+  "missingObservations": [
+    "Separate native owner from current selected-output projection/epoch at second crossing1000,350.",
+    "Complete unchanged original drag prerequisites and actual pinned cross-output refusal with exact receipt, focus/draft, feedback and read-only recovery/no replay.",
+    "Matching primary keyboard route, applicable AT and independent final original acceptance."
+  ],
+  "originalDeadlinePreserved": true,
+  "productFixClaimed": false
+}

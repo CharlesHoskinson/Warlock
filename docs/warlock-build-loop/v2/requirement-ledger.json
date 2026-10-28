@@ -5192,6 +5192,11 @@
               "path": "implementation/warlock/qa/evidence/explicit-new-instance/manifest.json",
               "sha256": "2b89d68c7cd44a6dc0bb4904871dc6bb7ee4b9bd441340c6cf49fb44a14eea76",
               "scope": "Current primary keyboard activation/minimize/restore preserves original native pixels and real application recipients without launch; explicit New instance uses current catalog authority through native pointer/keyboard window and application-action menus, three exact GIO submissions and removed-entry refusal."
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/native-taskbar-20261028/observations.json",
+              "sha256": "6beaf7c35bc5a7d1c8b172f9cb581b647f59e0e4c91e5b58c7918ea36613c782",
+              "scope": "Fresh tuple original primary pointer observation only; historical keyboard/AT packets retained separately."
             }
           ],
           "missingObservation": "Independent original review; applicable New instance native AT, enlarged/dense discovery and wider lifecycle/Unknown schedules; full release package/rollback/resources/hardware.",
@@ -5321,6 +5326,35 @@
                 }
               }
             }
+          ],
+          "freshTupleObservations": [
+            {
+              "observedUTC": "2026-10-28T17:32:50Z",
+              "disposition": "partial",
+              "evidence": {
+                "path": "implementation/warlock/qa/evidence/native-taskbar-20261028/observations.json",
+                "sha256": "6beaf7c35bc5a7d1c8b172f9cb581b647f59e0e4c91e5b58c7918ea36613c782"
+              },
+              "scope": "Fresh rebuilt tuple: original primary POINTER journey all80checks pass with exact bound Committed receipts, actual pixels/state cues/input recipient and normal cleanup.",
+              "reportSHA256": "3eeb21dc62ed6e080561b1c36486cf148fb1ef1c31125a198a0bc1cf17321951",
+              "sourceTuple": {
+                "core": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e",
+                "aquamarine": "667a22d535aade4e4a26134e39028a87fb3f963c28b7bf7ff79da684bb014ecd",
+                "plugin": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c",
+                "host": "4377b11ce0afe9e1072210666aa872118b032995275a20657058771e5e6c8347"
+              },
+              "reviewerDisposition": {
+                "reviewer": "root",
+                "independentFromExternalImplementers": true,
+                "finalAcceptance": false,
+                "scope": "Original oracle and all366source hashes cross-check; missing matching keyboard-primary and AT on this fresh tuple."
+              },
+              "missingObservations": [
+                "Keyboard-triggered primary route equivalence",
+                "Applicable assistive-technology activation and announcements",
+                "Other ELM-UI-004 scenarios and independent final scenario acceptance"
+              ]
+            }
           ]
         },
         {
@@ -5347,6 +5381,11 @@
               "path": "implementation/warlock/qa/evidence/taskbar-primary-at/manifest.json",
               "sha256": "73e1d7eb5bc823fbc8c1cf68bb55512bfafe32a91d3600292109e0bf44eefaf1",
               "scope": "Actual private GTK/WebKit AT-SPI and Orca now qualify the focused single-family Activate/Minimize/Restore fixture. Five real AT-SPI press actions each commit once, with native focus, MRU/desktop succession, client keyboard recipients and painted/absent application frames preserved. A separate physical-Enter journey passes under actual AT observation. All current taskbar names, native active toggle states and focused controls agree with Orca; the real reader emits Activate/Minimize/Restore names. This verifies existing product behavior; no production code or ABI was changed."
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/native-taskbar-20261028/observations.json",
+              "sha256": "6beaf7c35bc5a7d1c8b172f9cb581b647f59e0e4c91e5b58c7918ea36613c782",
+              "scope": "Fresh tuple original primary pointer observation only; historical keyboard/AT packets retained separately."
             }
           ],
           "missingObservation": "Independent original-scenario review against the exact source/ABI/toolchain and frozen policy remains open. This fixture covers focused current AT-SPI press and physical Enter, with silent Orca speech transcript observation. Audible speech, braille, unfocused/cached AT actions, broader AT modes, grouped/zero/refusal taskbar scenarios and other GUI surfaces remain separate obligations.",
@@ -5391,7 +5430,36 @@
               "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791646018291514576/report.json",
               "heldBuildSHA256": "9f124b1d34d907aac9a33c05f3b77ac9c4773afd1cbf85a2de0c53d80e3c501e"
             }
-          }
+          },
+          "freshTupleObservations": [
+            {
+              "observedUTC": "2026-10-28T17:32:50Z",
+              "disposition": "partial",
+              "evidence": {
+                "path": "implementation/warlock/qa/evidence/native-taskbar-20261028/observations.json",
+                "sha256": "6beaf7c35bc5a7d1c8b172f9cb581b647f59e0e4c91e5b58c7918ea36613c782"
+              },
+              "scope": "Fresh rebuilt tuple: original primary POINTER journey all80checks pass with exact bound Committed receipts, actual pixels/state cues/input recipient and normal cleanup.",
+              "reportSHA256": "3eeb21dc62ed6e080561b1c36486cf148fb1ef1c31125a198a0bc1cf17321951",
+              "sourceTuple": {
+                "core": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e",
+                "aquamarine": "667a22d535aade4e4a26134e39028a87fb3f963c28b7bf7ff79da684bb014ecd",
+                "plugin": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c",
+                "host": "4377b11ce0afe9e1072210666aa872118b032995275a20657058771e5e6c8347"
+              },
+              "reviewerDisposition": {
+                "reviewer": "root",
+                "independentFromExternalImplementers": true,
+                "finalAcceptance": false,
+                "scope": "Original oracle and all366source hashes cross-check; missing matching keyboard-primary and AT on this fresh tuple."
+              },
+              "missingObservations": [
+                "Keyboard-triggered primary route equivalence",
+                "Applicable assistive-technology activation and announcements",
+                "Other ELM-UI-004 scenarios and independent final scenario acceptance"
+              ]
+            }
+          ]
         },
         {
           "name": "taskbar-active",
@@ -5422,6 +5490,11 @@
               "path": "implementation/warlock/qa/evidence/taskbar-primary-at/manifest.json",
               "sha256": "73e1d7eb5bc823fbc8c1cf68bb55512bfafe32a91d3600292109e0bf44eefaf1",
               "scope": "Actual private GTK/WebKit AT-SPI and Orca now qualify the focused single-family Activate/Minimize/Restore fixture. Five real AT-SPI press actions each commit once, with native focus, MRU/desktop succession, client keyboard recipients and painted/absent application frames preserved. A separate physical-Enter journey passes under actual AT observation. All current taskbar names, native active toggle states and focused controls agree with Orca; the real reader emits Activate/Minimize/Restore names. This verifies existing product behavior; no production code or ABI was changed."
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/native-taskbar-20261028/observations.json",
+              "sha256": "6beaf7c35bc5a7d1c8b172f9cb581b647f59e0e4c91e5b58c7918ea36613c782",
+              "scope": "Fresh tuple original primary pointer observation only; historical keyboard/AT packets retained separately."
             }
           ],
           "missingObservation": "Independent original-scenario review against the exact source/ABI/toolchain and frozen policy remains open. This fixture covers focused current AT-SPI press and physical Enter, with silent Orca speech transcript observation. Audible speech, braille, unfocused/cached AT actions, broader AT modes, grouped/zero/refusal taskbar scenarios and other GUI surfaces remain separate obligations.",
@@ -5466,7 +5539,36 @@
               "heldBuild": "/home/hoskinson/omarchy-windows-parity/implementation/warlock/qa/runs/drag-ownership-1791646018291514576/report.json",
               "heldBuildSHA256": "9f124b1d34d907aac9a33c05f3b77ac9c4773afd1cbf85a2de0c53d80e3c501e"
             }
-          }
+          },
+          "freshTupleObservations": [
+            {
+              "observedUTC": "2026-10-28T17:32:50Z",
+              "disposition": "partial",
+              "evidence": {
+                "path": "implementation/warlock/qa/evidence/native-taskbar-20261028/observations.json",
+                "sha256": "6beaf7c35bc5a7d1c8b172f9cb581b647f59e0e4c91e5b58c7918ea36613c782"
+              },
+              "scope": "Fresh rebuilt tuple: original primary POINTER journey all80checks pass with exact bound Committed receipts, actual pixels/state cues/input recipient and normal cleanup.",
+              "reportSHA256": "3eeb21dc62ed6e080561b1c36486cf148fb1ef1c31125a198a0bc1cf17321951",
+              "sourceTuple": {
+                "core": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e",
+                "aquamarine": "667a22d535aade4e4a26134e39028a87fb3f963c28b7bf7ff79da684bb014ecd",
+                "plugin": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c",
+                "host": "4377b11ce0afe9e1072210666aa872118b032995275a20657058771e5e6c8347"
+              },
+              "reviewerDisposition": {
+                "reviewer": "root",
+                "independentFromExternalImplementers": true,
+                "finalAcceptance": false,
+                "scope": "Original oracle and all366source hashes cross-check; missing matching keyboard-primary and AT on this fresh tuple."
+              },
+              "missingObservations": [
+                "Keyboard-triggered primary route equivalence",
+                "Applicable assistive-technology activation and announcements",
+                "Other ELM-UI-004 scenarios and independent final scenario acceptance"
+              ]
+            }
+          ]
         },
         {
           "name": "taskbar-group",
@@ -5645,7 +5747,36 @@
             "toolchain": {
               "compilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948"
             }
-          }
+          },
+          "freshTupleObservations": [
+            {
+              "disposition": "blocked",
+              "evidence": {
+                "path": "implementation/warlock/qa/evidence/native-taskbar-20261028/observations.json",
+                "sha256": "6beaf7c35bc5a7d1c8b172f9cb581b647f59e0e4c91e5b58c7918ea36613c782"
+              },
+              "scope": "Original drag/refusal assertions were not reached; initial six-second coherent projection wait expired. Parent callback starvation is a hypothesis under focused actual two-output fixture correction.",
+              "reportSHA256": "b23eea503e0cd5dded2512b4ccf53a733728acf8a77f9a2aa1b98ac6a2b93cee",
+              "cleanupPassed": true,
+              "originalDeadlinePreserved": true,
+              "scenarioAccepted": false
+            },
+            {
+              "disposition": "blocked",
+              "evidence": {
+                "path": "implementation/warlock/qa/evidence/native-taskbar-20261028/refusal-attempt2.json",
+                "sha256": "1989329a128fa5787afcd91cbdb4f3485f56664366a4bec570df5059d1a30565"
+              },
+              "scope": "Actual second trial: original two-parent placement and initial coherence pass, native drag owner starts and survives first crossing. Later combined owner/projection check fails before any refusal action. Native owner loss is not established by this combined assertion.",
+              "missingObservations": [
+                "Separate native owner from current selected-output projection/epoch at second crossing1000,350.",
+                "Complete unchanged original drag prerequisites and actual pinned cross-output refusal with exact receipt, focus/draft, feedback and read-only recovery/no replay.",
+                "Matching primary keyboard route, applicable AT and independent final original acceptance."
+              ],
+              "cleanupPassed": true,
+              "scenarioAccepted": false
+            }
+          ]
         }
       ]
     },
@@ -12721,5 +12852,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-28T16:37:43.658017+00:00"
+  "updatedUTC": "2026-10-28T17:57:32.797879+00:00"
 }
