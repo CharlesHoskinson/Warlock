@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "requirements": [
+    "ELM-UI-004",
+    "ELM-UI-005"
+  ],
+  "status": "implemented-component-verified-native-unverified",
+  "scenarioAccepted": false,
+  "requirementAccepted": false,
+  "releaseAccepted": false,
+  "files": {
+    "native-build-report.json.gz": {
+      "sha256": "1530b85902ea2df511083cadad28750b5bed1492225b63df82bb6c2bcb1b8ff1",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-host-rebuild-v1/output/report.json",
+      "originalSHA256": "13b8a65807161faed1766a68df680d4a892f556449eb361dedc0d50a6fc3b46a"
+    },
+    "build-host.py": {
+      "sha256": "3e393072d4e7c1468884fa2fd1ae345be363df5e86a821107eb3d554f104eac4",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-host-rebuild-v1/build-host.py",
+      "originalSHA256": "3e393072d4e7c1468884fa2fd1ae345be363df5e86a821107eb3d554f104eac4"
+    },
+    "host-self-tests.stdout": {
+      "sha256": "b489b108dfc1135108db09b27085bc1d623ea0d91acd5ee8505f7d69260139ac",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-host-rebuild-v1/host-self-tests.stdout",
+      "originalSHA256": "b489b108dfc1135108db09b27085bc1d623ea0d91acd5ee8505f7d69260139ac"
+    },
+    "model-report.json.gz": {
+      "sha256": "62060d829b41a96171ecfbf2470baf5aa794c1334dd02068e80a783f44b12644",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-1/launch-lifecycle-current/stage2/protected-report.json",
+      "originalSHA256": "6974f02da77927a3a049ef4533ac191f6ff55f22f1adc669ea06eeb098ee1354"
+    },
+    "model-correspondence.md": {
+      "sha256": "ae4cb6db72ceee44b3bba6218461ca137816a6adfdd89f506e4bb20704f5bd33",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-1/launch-lifecycle-current/stage2/README.md",
+      "originalSHA256": "ae4cb6db72ceee44b3bba6218461ca137816a6adfdd89f506e4bb20704f5bd33"
+    },
+    "controller-preflight-report.json.gz": {
+      "sha256": "9163e63681cefc7ccd55581f08582cae85a36290bbd47e6c38121c01b7522f94",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-pin-semantics/admission-audit/protected-retry.stdout",
+      "originalSHA256": "204e26c1a98c8237332fbc7141f65a06d3655681056af8fee82ce15721601b79"
+    },
+    "first-harness-failure.json.gz": {
+      "sha256": "29a35b2ff7a40477312aff64a3c4f34aa950f0af349ef4270a53d0458d1eb144",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-pin-semantics/admission-audit/first-attempt/protected.stdout",
+      "originalSHA256": "5249a4c723d716ea60cb5f7e709999820353f0c9ac312d4a81016d577fd91718"
+    },
+    "first-harness.c": {
+      "sha256": "e12de4f580b4fb448213067698c0112a7c5eba235faf6155cc322ec7d6a82a13",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-pin-semantics/admission-audit/first-attempt/preflight.c",
+      "originalSHA256": "e12de4f580b4fb448213067698c0112a7c5eba235faf6155cc322ec7d6a82a13"
+    },
+    "first-check-admission.py": {
+      "sha256": "069dbbf5c794272362c0dff867e8f1301d3468bab213a76c0e2de77a5488b9f9",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-pin-semantics/admission-audit/first-attempt/check-admission.py",
+      "originalSHA256": "069dbbf5c794272362c0dff867e8f1301d3468bab213a76c0e2de77a5488b9f9"
+    },
+    "LaunchAdmissionReplay.elm": {
+      "sha256": "a7f0b55fd279c17ba734262836359ffd7d850c87a1d8336ac8150ab61e02f08c",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-pin-semantics/admission-audit/LaunchAdmissionReplay.elm",
+      "originalSHA256": "a7f0b55fd279c17ba734262836359ffd7d850c87a1d8336ac8150ab61e02f08c"
+    },
+    "preflight.c": {
+      "sha256": "3433ba576eb9952683ee59ccd7bbf5ffa5c957a832f876df33834fe5b44d8ece",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-pin-semantics/admission-audit/preflight.c",
+      "originalSHA256": "3433ba576eb9952683ee59ccd7bbf5ffa5c957a832f876df33834fe5b44d8ece"
+    },
+    "check-admission.py": {
+      "sha256": "eff9cffc69fc5dbacd32266a7ab35f63da583687ef572fc674813c6a89503933",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-pin-semantics/admission-audit/check-admission.py",
+      "originalSHA256": "eff9cffc69fc5dbacd32266a7ab35f63da583687ef572fc674813c6a89503933"
+    },
+    "run-replay.cjs": {
+      "sha256": "2b38c8e5e2e9c756a56496a8ca74dd35e9fe9f53bf59b517804399a2d2ee0f03",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-pin-semantics/admission-audit/run-replay.cjs",
+      "originalSHA256": "2b38c8e5e2e9c756a56496a8ca74dd35e9fe9f53bf59b517804399a2d2ee0f03"
+    },
+    "independent-source-review.md": {
+      "sha256": "eba2a2d984e610869e605338d93b7f91a564abf68be4339d88982de1097faabc",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-2/taskbar-host-qualified/source-review.md",
+      "originalSHA256": "eba2a2d984e610869e605338d93b7f91a564abf68be4339d88982de1097faabc"
+    }
+  },
+  "sourceSHA256": {
+    "implementation/warlock/native/host.c": "f78d1ba337dff920e50e79e7324d5467cfbfe240a3b4d03c7d4239f52b17850a",
+    "implementation/warlock/src/Desktop.elm": "a503d926599b5aa194956a1208fdc0004fb829442cd523c5372d41fd1fab0404"
+  },
+  "hostSHA256": "e0a2f0464b090f77c744c7fe7fc8e356a9d0f1ce2ad8a648040379dd2f7c0558",
+  "observations": [
+    "All11 native host translation units compiled and linked; existing host selftests20 pass.",
+    "Quint stage2 typechecks2, all17 named tests pass; safety1000 sampledtraces/all7witnesses reached, seed0x2e4654fd2b70b. Not exhaustive.",
+    "Actual compiled OutputController packet has one bound Files launch and Apps frame; exact old/current C preflight13checks each pass oldreject/newadmit and bounded negatives.",
+    "First harness compilation failure retained; correction only references3 unused static functions and pins immutable old Git revision; compiler warning flags unchanged."
+  ],
+  "models": {
+    "surface_launch.qnt": "29a11a4fcc6906d316dc4de81bfc84a9e30134fd5134542e424307e4c49a3ca1",
+    "surface_launch_test.qnt": "2c36c26ed07e83f4798e6baeec522bbacc1abb1958f8516f8f065946694a6ee7"
+  },
+  "missingObservations": [
+    "Current native success/refusal and guarded real Orca focus/retry",
+    "Explicit NewInstance keyboard/applicable AT and full applicationpin/nativeTop independence",
+    "Renderer rootcause/repair and whole release deployment/package gates"
+  ],
+  "limits": [
+    "Transport admission is not backend authorization or replay proof; existing backend guards remain.",
+    "Preflight refusal preserves gate/queue; popup failure after admission can advance frame without dispatch.",
+    "A stale legacy comment before popup_open still describes blanket open-effect ban; executable guard and source/model review document narrowexception. Correct during next native source wave."
+  ]
+}

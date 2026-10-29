@@ -5,8 +5,8 @@ from pathlib import Path
 import sys
 
 REPO = Path(__file__).resolve().parents[3]
-TARGET = Path('/home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-pending-source-qualified-v1/runner.py')
-EXPECTED_SHA256 = '655b2f30a2eefe7434796f57088d32a6cc937509a624c309e2c99792585918fc'
+TARGET = Path('/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-host-refused-qualified-v1/runner.py')
+EXPECTED_SHA256 = 'b202e287311f09c8d326d767b9d83ca3fe2a1a21f9edffa80ff2e7e3a3b8c051'
 
 
 MODE_ARGS = ['--refused']

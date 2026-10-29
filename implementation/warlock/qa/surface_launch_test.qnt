@@ -1,0 +1,20 @@
+module surface_launch_test {
+  import surface_launch.* from "./surface_launch"
+  run appsExceptionTest = init.expect(not(oldAdmission(s,batch("applications",1,1,List("application-launch")))) and candidateAdmission(s,batch("applications",1,1,List("application-launch")))).then(preflightAccept(batch("applications",1,1,List("application-launch")))).then(commitFrame).then(enqueue).expect(s.queued == 1 and s.enqueued)
+  run closedLaunchTest = init.expect(oldAdmission(s,batch("closed",1,0,List("application-launch"))) and candidateAdmission(s,batch("closed",1,0,List("application-launch")))).then(preflightAccept(batch("closed",1,0,List("application-launch")))).then(commitFrame).then(enqueue).expect(s.queued == 1)
+  run wrongModeTest = init.then(preflightReject(batch("menu",1,1,List("application-launch")))).expect(s.preflightRefused and s.publication == 0 and s.queued == 0)
+  run otherModeTest = init.then(preflightReject(batch("other",1,1,List("application-launch")))).expect(s.preflightRefused and s.queued == 0)
+  run duplicateLaunchTest = init.then(preflightReject(batch("applications",1,1,List("application-launch","application-launch")))).expect(s.preflightRefused and s.queued == 0)
+  run companionEffectTest = init.then(preflightReject(batch("applications",1,1,List("application-launch","window-effect")))).expect(s.preflightRefused and s.queued == 0)
+  run companionObservationTest = init.then(preflightReject(batch("applications",1,1,List("application-launch","projection-request")))).expect(s.preflightRefused and s.queued == 0)
+  run openWindowEffectTest = init.then(preflightReject(batch("applications",1,1,List("window-effect")))).expect(s.preflightRefused and s.queued == 0)
+  run stalePublicationTest = init.then(preflightReject(batch("applications",0,1,List("application-launch")))).expect(s.preflightRefused and s.publication == 0)
+  run staleLeaseTest = init.then(preflightAccept(batch("applications",1,2,List("projection-request")))).then(commitFrame).then(enqueue).expect(not(frameAdmitted(s,batch("applications",2,1,List("application-launch")))))
+  run staleViewTest = init.then(preflightAccept(batch("applications",1,2,List("projection-request")))).then(commitFrame).expect(viewCurrent(s,1,2) and not(viewCurrent(s,0,2)) and not(viewCurrent(s,1,1)))
+  run closedLeaseTest = init.then(preflightAccept(batch("applications",1,1,List("projection-request")))).then(commitFrame).then(enqueue).then(retirePopup).then(preflightReject(batch("applications",2,1,List("application-launch")))).expect(s.preflightRefused and s.closed == 1 and not(viewCurrent(s,1,1)))
+  run unreadyTest = init.then(setLoad(0,0,false)).then(preflightReject(batch("applications",1,1,List("application-launch")))).expect(s.queued == 0 and s.preflightRefused)
+  run overflowTest = init.then(setLoad(15,1,true)).then(preflightReject(batch("applications",1,1,List("application-launch")))).expect(s.queued == 15 and s.active == 1 and s.preflightRefused)
+  run invalidBatchTest = init.then(preflightReject({ ...batch("closed",1,0,List("projection-request","window-effect")), valid: false })).expect(s.queued == 0 and s.publication == 0 and s.preflightRefused)
+  run popupFailureTest = init.then(preflightAccept(batch("applications",1,1,List("application-launch")))).then(commitFrame).then(popupFail).expect(s.popupFailed and s.publication == 1 and s.lease == 1 and s.queued == 0 and not(s.enqueued))
+  run allOrNoneTest = init.then(preflightReject(batch("applications",1,1,List("projection-request","window-effect")))).expect(s.queued == 0 and s.publication == 0 and s.preflightRefused)
+}

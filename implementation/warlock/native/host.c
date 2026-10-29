@@ -814,11 +814,16 @@ static gboolean surface_preflight(SurfaceGate *gate,JsonNode *root,guint queued,
     JsonArray *req=json_node_get_array(rn),*focus=json_node_get_array(fn);
     guint count=json_array_get_length(req);
     if (count>16 || count+queued+active>16 || json_array_get_length(focus)>16) return FALSE;
+    /* Applications retains its mapped context while one launch is Pending.
+     * This transport exception grants no backend launch authority and permits
+     * no companion request or other popup mutation. */
+    gboolean applications_launch = open && count==1
+        && g_str_equal(json_object_get_string_member(json_node_get_object(frame),"mode"),"applications");
     /* Validate the entire commit before mutating surfaces, backend or queues. */
     for (guint i=0;i<count;i++) {
         JsonNode *item=json_array_get_element(req,i);const char *rk=request_kind(item);
         g_autofree char *wire=json_to_string(item,FALSE);
-        if (!rk || strlen(wire)>4096 || (!observation_kind(rk) && !g_str_equal(rk,"projection-request") && !g_str_equal(rk,"activation-history-request") && !g_str_equal(rk,"switcher-selection-request") && !g_str_equal(rk,"switcher-cancel-request") && !g_str_equal(rk,"catalog-request") && !g_str_equal(rk,"taskbar-pins-write") && !g_str_equal(rk,"jump-list-request") && !g_str_equal(rk,"jump-list-effect") && !g_str_equal(rk,"files-request") && !g_str_equal(rk,"files-open") && !g_str_equal(rk,"system-menu-request") && !g_str_equal(rk,"system-menu-effect") && !g_str_equal(rk,"notification-request") && !g_str_equal(rk,"notification-effect") && !g_str_equal(rk,"shortcut-preferences-request") && !g_str_equal(rk,"shortcut-preferences-write") && !g_str_equal(rk,"shell-settings-request") && !g_str_equal(rk,"shell-settings-write") && !g_str_equal(rk,"motion-profile-set") && !g_str_equal(rk,"motion-preferences-request") && !g_str_equal(rk,"motion-preferences-write") && !g_str_equal(rk,"application-launch") && !g_str_equal(rk,"workspace-navigation") && !g_str_equal(rk,"workspace-navigation-recover") && !g_str_equal(rk,"window-effect") && !g_str_equal(rk,"host-reconnect")) || (open && (g_str_equal(rk,"application-launch") || g_str_equal(rk,"workspace-navigation") || g_str_equal(rk,"window-effect") || g_str_equal(rk,"files-open") || g_str_equal(rk,"jump-list-effect")))) return FALSE;
+        if (!rk || strlen(wire)>4096 || (!observation_kind(rk) && !g_str_equal(rk,"projection-request") && !g_str_equal(rk,"activation-history-request") && !g_str_equal(rk,"switcher-selection-request") && !g_str_equal(rk,"switcher-cancel-request") && !g_str_equal(rk,"catalog-request") && !g_str_equal(rk,"taskbar-pins-write") && !g_str_equal(rk,"jump-list-request") && !g_str_equal(rk,"jump-list-effect") && !g_str_equal(rk,"files-request") && !g_str_equal(rk,"files-open") && !g_str_equal(rk,"system-menu-request") && !g_str_equal(rk,"system-menu-effect") && !g_str_equal(rk,"notification-request") && !g_str_equal(rk,"notification-effect") && !g_str_equal(rk,"shortcut-preferences-request") && !g_str_equal(rk,"shortcut-preferences-write") && !g_str_equal(rk,"shell-settings-request") && !g_str_equal(rk,"shell-settings-write") && !g_str_equal(rk,"motion-profile-set") && !g_str_equal(rk,"motion-preferences-request") && !g_str_equal(rk,"motion-preferences-write") && !g_str_equal(rk,"application-launch") && !g_str_equal(rk,"workspace-navigation") && !g_str_equal(rk,"workspace-navigation-recover") && !g_str_equal(rk,"window-effect") && !g_str_equal(rk,"host-reconnect")) || (open && ((g_str_equal(rk,"application-launch") && !applications_launch) || g_str_equal(rk,"workspace-navigation") || g_str_equal(rk,"window-effect") || g_str_equal(rk,"files-open") || g_str_equal(rk,"jump-list-effect")))) return FALSE;
         if (g_str_equal(rk,"host-reconnect") && count!=1) return FALSE;
         if (!ready && !g_str_equal(rk,"host-reconnect")) return FALSE;
     }
@@ -993,7 +998,11 @@ static void test_surface_preflight(void) {
     g_assert_false(surface_preflight(&gate,root,0,0,TRUE,&out));while(json_array_get_length(array)>1) json_array_remove_element(array,1);
     JsonObject *request=json_array_get_object_element(array,0);JsonObject *binding=json_object_get_object_member(request,"binding");g_autofree char *large=g_strnfill(4096,'x');json_object_set_string_member(binding,"payload",large);g_assert_false(surface_preflight(&gate,root,0,0,TRUE,&out));json_object_remove_member(binding,"payload");
     JsonObject *frame=json_object_get_object_member(o,"frame");json_object_set_string_member(frame,"publication","10");g_assert_false(surface_preflight(&gate,root,0,0,TRUE,&out));json_object_set_string_member(frame,"publication","11");
-    json_object_set_string_member(frame,"mode","applications");json_object_set_string_member(request,"kind","application-launch");json_object_remove_member(request,"requestId");json_object_set_object_member(request,"intent",json_object_new());g_assert_false(surface_preflight(&gate,root,0,0,TRUE,&out));
+    json_object_set_string_member(frame,"mode","applications");json_object_set_string_member(request,"kind","application-launch");json_object_remove_member(request,"requestId");json_object_set_object_member(request,"intent",json_object_new());
+    /* Preflight is transport admission; the backend still owns intent validation. */
+    g_assert_true(surface_preflight(&gate,root,0,0,TRUE,&out));
+    json_array_add_element(array,json_node_copy(json_array_get_element(array,0)));g_assert_false(surface_preflight(&gate,root,0,0,TRUE,&out));json_array_remove_element(array,1);
+    json_object_set_string_member(frame,"mode","menu");g_assert_false(surface_preflight(&gate,root,0,0,TRUE,&out));
     json_object_set_string_member(frame,"mode","notifications");json_array_remove_element(array,0);
     JsonNode *notification=test_json("{\"protocolVersion\":3,\"kind\":\"notification-effect\",\"binding\":{},\"requestId\":\"1\",\"intent\":{\"service\":\"9\",\"id\":\"1\",\"incarnation\":\"7\",\"producer\":\":1.5\",\"action\":\"open\",\"verb\":\"invoke\"}}");
     json_array_add_element(array,notification);g_assert_true(surface_preflight(&gate,root,0,0,TRUE,&out));

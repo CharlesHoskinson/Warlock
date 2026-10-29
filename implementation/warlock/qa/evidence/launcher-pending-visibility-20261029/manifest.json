@@ -65,5 +65,8 @@
   "limits": [
     "Source review and compiled checks do not accept original native or AT scenario.",
     "Prior accepted scenario evidence retains its immutable old source tuple; no automatic new-tuple acceptance."
-  ]
+  ],
+  "verbatimReviewCorrections": {
+    "source-review.md": "Verbatim independent review has a malformed Surface.elm digest. Actual unchanged Surface SHA256 a660a4641a9f834c6198bce1e8049b3dd0be40cb74be1cfe1d5e14cfd0cdaa1d; retained compiled source map pins it. No original review bytes altered."
+  }
 }

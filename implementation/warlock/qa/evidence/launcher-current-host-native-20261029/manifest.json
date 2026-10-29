@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "requirements": [
+    "ELM-UI-005",
+    "ELM-UX-029"
+  ],
+  "status": "accepted-original-search-refused-on-observed-tuple",
+  "scenarioAccepted": true,
+  "requirementAccepted": false,
+  "releaseAccepted": false,
+  "files": {
+    "accepted-native-report.json.gz": {
+      "sha256": "da72f545874288b3fa9d9ca180478c7dfd7bd63401977a62776df4f9a4b17640",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-host-accepted-qualified-v1/native-launcher-accepted-1793296851944394549/report.json",
+      "originalSHA256": "b5acacc69a199e8fd4dff1489fa8c2b225bd27c44d7dfac34bfb0b4d57abd6ce"
+    },
+    "accepted-full.png": {
+      "sha256": "c4e12eb896d2dbc9f5b92b069077274a3c1be20748adcf633cf473e1c4656cf2",
+      "originalPath": "/home/charles/window-integration-qa/warlock-window-feedback-1793296851944495556/launcher-accepted-full.png"
+    },
+    "refused-native-report.json.gz": {
+      "sha256": "721630493aa5cd227a60b1f1a2d673de23c9ac9dfc378e0844f8b2d92c6ae866",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-host-refused-qualified-v1/native-launcher-refused-1793296917094054587/report.json",
+      "originalSHA256": "6d6aa0af248565f5bf00beed0b4cc2d3b192b4764d2809058b6ea3abee154ea4"
+    },
+    "refused-full.png": {
+      "sha256": "e19e3bf69d0a271e2b712210fae14d8a69d2292162921f5fbec17e8910424a9b",
+      "originalPath": "/home/charles/window-integration-qa/warlock-window-feedback-1793296917094164980/launcher-refused-full.png"
+    },
+    "refused-orca-utterances.jsonl": {
+      "sha256": "cfba068ce74e9da1203588e5c22eadae1fedf408c28f3ee7aeb11897ac573430",
+      "originalPath": "/home/charles/window-integration-qa/warlock-window-feedback-1793296917094164980/orca-utterances.jsonl"
+    },
+    "fresh_candidate.py": {
+      "sha256": "23d242edece059f98170a6df8757822d807776458dbb256dce4281fcd0a691b1",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-host-qualified-terra-2-v1/fresh_candidate.py"
+    },
+    "source-qualification.json": {
+      "sha256": "4e730912b0289c82f5fb400b2b5c0018225438530f434382742a2add3e1cd237",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-host-qualified-terra-2-v1/handoff.json"
+    },
+    "independent-disposition.md": {
+      "sha256": "84546d082a464b1b94cb83d6ebf07112aba17ebbbc477210ef6cc3d4612b47ec",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-5/search-refused-current-host/independent-disposition.md"
+    }
+  },
+  "observations": {
+    "accepted": {
+      "passed": true,
+      "cleanupPassed": true,
+      "checks": 32,
+      "runtimeEvidenceDirectory": "/home/charles/window-integration-qa/warlock-window-feedback-1793296851944495556"
+    },
+    "refused": {
+      "passed": true,
+      "cleanupPassed": true,
+      "checks": 41,
+      "runtimeEvidenceDirectory": "/home/charles/window-integration-qa/warlock-window-feedback-1793296917094164980"
+    }
+  },
+  "sourceSHA256": {
+    "Desktop.elm": "a503d926599b5aa194956a1208fdc0004fb829442cd523c5372d41fd1fab0404",
+    "native/host.c": "f78d1ba337dff920e50e79e7324d5467cfbfe240a3b4d03c7d4239f52b17850a"
+  },
+  "hostSHA256": "e0a2f0464b090f77c744c7fe7fc8e356a9d0f1ce2ad8a648040379dd2f7c0558",
+  "sessions": {
+    "accepted": {
+      "session": 73980,
+      "exit": 0,
+      "unit": "qa-harness-62c35e706ec94c649ae0dc750aa00153.scope",
+      "invocation": "5ccc874d016e475784ce1d7667782bc2"
+    },
+    "refused": {
+      "session": 74204,
+      "exit": 0,
+      "unit": "qa-harness-541f36292c964536a95a2a66b1d33849.scope",
+      "invocation": "47652fb4080249ec8b1dca156aabab39"
+    }
+  },
+  "observedBehavior": "Successful physical Enter sends one correlated bound Submitted request to actual GIO recipient and paints success. Refused launch preserves native files query and actual logical invoker focus; real AT search/refusal nodes and actual Orca focus agree before navigation, physical keyboard reaches Refresh, guarded real AT-SPI press issues one fresh current catalog read without replacement launch.",
+  "limits": [
+    "No mandatory exact search-field focus invented: physical Enter promotes result before dispatch.",
+    "Captured refusal image precedes retry navigation; no postretry screenshot claimed.",
+    "Orca focus and structured speech logs do not prove audible sound or braille. Direct AT Text query value not claimed.",
+    "Earlier failing AT observation and unsent preflight regression remain frozen separately.",
+    "No whole UI005, all unchanged scenarios on newtuple, renderer cause, hardware/resources/IME/journeys, deployment or release acceptance."
+  ],
+  "acceptedScenario": "search-refused",
+  "independentReview": {
+    "name": "quint-5",
+    "independent": true,
+    "disposition": "accepted",
+    "file": "independent-disposition.md",
+    "sha256": "84546d082a464b1b94cb83d6ebf07112aba17ebbbc477210ef6cc3d4612b47ec"
+  }
+}

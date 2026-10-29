@@ -1,0 +1,89 @@
+{
+  "task": "ELM-UI-004 taskbar launch lifecycle, rebuilt native host qualification",
+  "historicalTupleSHA256": "bc225242e30baf4a5b8b1182cef6fdc716cc9c67de90dc35674f90c5fa87830b",
+  "hostReport": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-host-rebuild-v1/output/report.json",
+    "sha256": "13b8a65807161faed1766a68df680d4a892f556449eb361dedc0d50a6fc3b46a",
+    "rootReportedUnit": "qa-harness-bfed7884e7c444c4b75f4f36b63f2d26",
+    "rootReportedInvocation": "1e9a4fcb0c3b4c088be9216477476d29",
+    "hostSHA256": "e0a2f0464b090f77c744c7fe7fc8e356a9d0f1ce2ad8a648040379dd2f7c0558",
+    "nativeAcceptance": false
+  },
+  "assetsReport": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-pending-visibility-fix/assets-build-v1/report.json",
+    "sha256": "d31ddf1174986d902e8c2cecfcbc25bc5e0d9e743c465afadb6d159208eec606",
+    "assets": {
+      "assets/bar.js": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-pending-visibility-fix/assets-build-v1/assets/bar.js",
+        "sha256": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725"
+      },
+      "assets/elm.js": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-pending-visibility-fix/assets-build-v1/assets/elm.js",
+        "sha256": "4ae3a349be491ce4f2aef2af7b3258cb4e044a9fc3d8e5d0ea1931a88551cbae"
+      },
+      "assets/popup.js": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-pending-visibility-fix/assets-build-v1/assets/popup.js",
+        "sha256": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43"
+      }
+    }
+  },
+  "reviewedSourceChanges": {
+    "Desktop.elm": [
+      "1b5b48fc5ca71c6e11bd54ea6ab723f5a37f4d383d6a59c99d14d83b005d5033",
+      "a503d926599b5aa194956a1208fdc0004fb829442cd523c5372d41fd1fab0404"
+    ],
+    "host.c": [
+      "cde6230199756dfaa193d5e8af5a41470f8b65de3cdd1942e0e0224ab458ccbf",
+      "f78d1ba337dff920e50e79e7324d5467cfbfe240a3b4d03c7d4239f52b17850a"
+    ]
+  },
+  "files": {
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-host-qualified-terra-2-v1/fresh_candidate.py": "23d242edece059f98170a6df8757822d807776458dbb256dce4281fcd0a691b1",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-host-qualified-terra-2-v1/fresh_candidate.diff": "35694a15f0f6a98bdb26e0317f5931105e7198bf0c3e3ca5d44d61043743bdbd",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-host-refused-qualified-v1/runner.py": "b202e287311f09c8d326d767b9d83ca3fe2a1a21f9edffa80ff2e7e3a3b8c051",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-host-refused-qualified-v1/runner.diff": "232d51b7877cfed0d3572f2a4d6d037ef6be41fedf29b95beeb78b6eb0584804",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-host-refused-qualified-v1/search-branch.txt": "0a7cd9efd24eb3c0b79db441b84c585a60d1a3980ac29ca2508a8a963b308a90",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-host-accepted-qualified-v1/runner.py": "f4a6e74eb45ccc1aebd25839c7723423d62ebb387b5265792bd2eb6a660b1dee",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-host-accepted-qualified-v1/runner.diff": "7a4398d1e95bf53e2e0926fc3dc0b55f07fad5e0d2d5e65e700bd2fde220423b",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-host-accepted-qualified-v1/search-branch.txt": "0a7cd9efd24eb3c0b79db441b84c585a60d1a3980ac29ca2508a8a963b308a90"
+  },
+  "rootCommands": {
+    "refused": [
+      "python3",
+      "-B",
+      "docs/warlock-build-loop/v2/loop.py",
+      "--record",
+      ".warlock-contributor/taskbar-launch-lifecycle-current.json",
+      "native",
+      "--runner",
+      "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-host-refused-qualified-v1/runner.py",
+      "--",
+      "--refused"
+    ],
+    "accepted": [
+      "python3",
+      "-B",
+      "docs/warlock-build-loop/v2/loop.py",
+      "--record",
+      ".warlock-contributor/taskbar-launch-lifecycle-current.json",
+      "native",
+      "--runner",
+      "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-host-accepted-qualified-v1/runner.py",
+      "--",
+      "--accepted"
+    ]
+  },
+  "readOnlyChecks": [
+    "Report SHA and output SHA verified, all 23 command exits and stdout/stderr hashes checked.",
+    "Rehashed 239 native sources, historical dependency map, 1317 fresh dependency paths, 23 outputs, 144 providers, five compiler-support tools, 100 asset sources and 19 asset files; exactly all 11 depfile coverage matched fresh dependency path set.",
+    "All frozen preflight rows checked against actual bytes; all mismatches fall only on Desktop and host.c paths with reviewed exact old/current hashes; adapter checks every occurrence without assuming count.",
+    "Adapter, each runner and original framework with unchanged branch parsed as Python AST; no QA, build or native execution."
+  ],
+  "limits": [
+    "Fresh dependency paths and compiler support tool hashes first observed after compilation, not historical pre-build byte identity.",
+    "Historical asset receipt references old host.c and old binary; treated as history, new host receipt and current bytes are independently qualified.",
+    "Host provider paths/bytes checked against actual current receipt; historical provider byte identity not inferred.",
+    "Native actual Elm/preflight witness and Q1 stage2 remain pending; no native or original acceptance claimed.",
+    "Accepted runner report labels UX029 launcher-accepted, rejected runner UI005 search-refused; unchanged original branch and 6sec/5sec guards."
+  ]
+}

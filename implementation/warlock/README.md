@@ -70,19 +70,28 @@ retry; restoring the metadata recovers Files without automatic launch. The
 are preserved. Original `search-race` is independently accepted after an actual
 delayed old catalog reply, changed query and generation-2 AT dispatch; see
 [race evidence](qa/evidence/search-race-current-20261029/manifest.json).
-`search-refused` remains open: query and logical invoker focus return, but the
-current real Orca observation loses focus after the pending popup is withdrawn.
-The failed recording is preserved. The candidate now keeps Apps mapped during
-Pending and respects explicit dismissal when its refusal arrives; Submitted and
-New Instance still close the popup. All three Elm roots compile, the unchanged
-19 New Instance checks and 16 focused visibility/lifecycle checks pass. See
-[component evidence](qa/evidence/launcher-pending-visibility-20261029/manifest.json).
-The first changed-source native regression reaches the focused result on Enter
-keydown, then times out before any launch/outcome observation; cleanup passes.
-See the [retained native failure](qa/evidence/launcher-pending-native-regression-20261029/manifest.json).
-Real Orca focus/retry and successful native dispatch on this changed source
-remain unverified; earlier scenario acceptance refers to its recorded old tuple.
-Whole UI-005 remains unaccepted.
+The rebuilt candidate now passes native success and refusal regressions. Physical
+Enter submits one bound launch to GIO and paints success. On refusal, the query
+and logical invoker focus remain; real Orca focus agrees before navigation, and
+keyboard navigation plus an actual AT-SPI Refresh action recovers the current
+catalog without another launch. See the
+[current native observations](qa/evidence/launcher-current-host-native-20261029/manifest.json).
+Original `search-refused` is independently accepted on this rebuilt tuple.
+Earlier accepted scenarios retain their recorded source tuples; they are not
+automatically requalified by this change.
+
+Apps stays mapped during Pending, respects explicit dismissal when refusal
+arrives, and closes on Submitted. New Instance still closes its source popup.
+Native preflight permits exactly one application-launch with an Apps frame;
+other open-popup effect restrictions remain. All three Elm roots compile,
+19 unchanged New Instance checks and 16 focused lifecycle checks pass, and the
+rebuilt host passes its 20 self-tests. Actual compiled Elm commits pass the
+old-versus-new C admission checks. The scoped Quint model passes 17 named tests
+and sampled safety with positive witnesses. See the
+[admission repair evidence](qa/evidence/apps-launch-admission-20261029/manifest.json).
+The earlier [Orca failure](qa/evidence/search-refused-at-current-20261029/manifest.json)
+and [unsent preflight regression](qa/evidence/launcher-pending-native-regression-20261029/manifest.json)
+remain preserved. Whole UI-005 remains unaccepted.
 
 The installed Omarchy predecessor now has a bounded private startup observation:
 its menu, workspaces and clock paint, and its owned process group retires without
