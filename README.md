@@ -31,12 +31,13 @@ normal GitHub integration does not activate the candidate. The loop includes
 regular publication, README upkeep and reversible Omarchy trials with draft
 preservation and rollback verified before activation.
 
-October 29 launcher checkpoint: the original ELM-UX-029 `launcher-accepted`
-scenario is independently accepted on the current observed tuple: searching,
-physical Enter, one bound native submission, one actual GIO recipient and
-painted success feedback. The refused journey remains partial: its native
-refusal and preserved query were recorded, but a fixture focus condition timed
-out before the screenshot. The whole launcher requirement remains open.
+October 29 launcher checkpoint: original ELM-UX-029 is independently accepted
+on the recorded tuple. Search and physical Enter produce one identity-bound
+request, with painted success for an accepted native submission and painted
+failure for a refusal. Refusal preserves the query and selected-entry focus,
+with no duplicate request or launched recipient. The earlier focus-dependent
+capture failure remains preserved. Other search, IME and release obligations
+remain separately open.
 
 An isolated startup trial also shows the installed Omarchy predecessor's menu,
 workspaces and clock, with complete owned-process cleanup. Full candidate

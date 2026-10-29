@@ -29,14 +29,15 @@ IME candidate-selection/cancellation campaign stopped before GUI execution and
 does not establish that behavior. Reversible Omarchy trials remain part of the
 integration loop; this checkout is not a ready-to-install release.
 
-October 29 launcher evidence independently accepts ELM-UX-029
-`launcher-accepted`: the focused compiled Desktop/Surface replay passes, and
-the isolated native search/Enter journey records one identity-bound Submitted
-outcome, one real GIO recipient and visibly painted “Launch submitted.”
-The refused trial records one correlated refusal and preserved query; its
-focus-specific fixture wait expires before screenshot capture. Refusal paint
-remains unaccepted, and the whole requirement stays open. This stopped run
-does not establish a renderer failure or a product defect.
+October 29 launcher evidence independently accepts both original ELM-UX-029
+scenarios and the whole original requirement on the recorded tuple. The focused
+compiled Desktop/Surface replay passes. Native search/Enter records one bound
+Submitted outcome, one real GIO recipient and painted “Launch submitted.”
+The denied journey records one correlated Refused outcome and painted failure,
+preserving the query and selected-entry focus with no duplicate or recipient
+through capture. Correcting an extra fixture-only focus condition enabled that
+recording; production policy was unchanged. The earlier timed-out report stays
+historical. Wider search, AT/IME and release requirements remain separate.
 
 The installed Omarchy predecessor now has a bounded private startup observation:
 its menu, workspaces and clock paint, and its owned process group retires without
