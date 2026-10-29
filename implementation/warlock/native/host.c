@@ -472,17 +472,40 @@ static gboolean deadline(gpointer unused) {
     gtk_main_quit();
     return G_SOURCE_REMOVE;
 }
-static void evaluate_done(GObject *object,GAsyncResult *result,gpointer unused) {
-    (void)unused;
+/* Diagnostic context is copied at dispatch and owned by its async completion.
+ * It never carries payloads or participates in surface authority decisions. */
+typedef struct {
+    char *receiver;
+    guint64 publication;
+    guint64 lease;
+} DeliveryContext;
+static void evaluate_done(GObject *object,GAsyncResult *result,gpointer data) {
+    DeliveryContext *context=data;
     GError *error=NULL;
     JSCValue *value=webkit_web_view_evaluate_javascript_finish(WEBKIT_WEB_VIEW(object),result,&error);
-    if (error) { g_printerr("Native delivery failed: %s\n",error->message); g_error_free(error); failed=TRUE; if(!renderer_failure_drain_hook || !renderer_failure_drain_hook())gtk_main_quit(); }
+    if (error) {
+        g_printerr("Native delivery context: receiver=%s publication=%" G_GUINT64_FORMAT
+                   " lease=%" G_GUINT64_FORMAT " domain=%s code=%d\n",
+                   context ? context->receiver : "unknown",
+                   context ? context->publication : 0,context ? context->lease : 0,
+                   g_quark_to_string(error->domain),error->code);
+        g_printerr("Native delivery failed: %s\n",error->message); g_error_free(error); failed=TRUE; if(!renderer_failure_drain_hook || !renderer_failure_drain_hook())gtk_main_quit();
+    }
     if (value) g_object_unref(value);
+    if (context) { g_free(context->receiver);g_free(context); }
+}
+static void evaluate_delivery(WebKitWebView *target,const char *script,
+                              const char *source_uri,const char *receiver) {
+    DeliveryContext *context=g_new0(DeliveryContext,1);
+    context->receiver=g_strndup(receiver,80);
+    context->publication=surface_gate.publication;
+    context->lease=surface_gate.lease;
+    webkit_web_view_evaluate_javascript(target,script,-1,NULL,source_uri,NULL,evaluate_done,context);
 }
 static void deliver(const char *text) {
     if (shutting_down) return;
     g_autofree char *script=g_strdup_printf("window.receiveNative(%s);",text);
-    webkit_web_view_evaluate_javascript(view,script,-1,NULL,"elm-shell://app/adapter.js",NULL,evaluate_done,NULL);
+    evaluate_delivery(view,script,"elm-shell://app/adapter.js","receiveNative");
 }
 static void gpu_done(GObject *object,GAsyncResult *result,gpointer unused) {
     (void)unused;GError *error=NULL;
@@ -647,7 +670,7 @@ static void terminated(WebKitWebView *webview,WebKitWebProcessTerminationReason 
 static void surface_eval(WebKitWebView *target,const char *function,JsonNode *value) {
     g_autofree char *wire=json_to_string(value,FALSE);
     g_autofree char *script=g_strdup_printf("window.%s(%s);",function,wire);
-    webkit_web_view_evaluate_javascript(target,script,-1,NULL,NULL,NULL,evaluate_done,NULL);
+    evaluate_delivery(target,script,NULL,function);
 }
 static void surface_present(void) {
     if(controlled_surface_notice && surface_snapshot)controlled_surface_notice(surface_snapshot);
@@ -681,7 +704,7 @@ static void surface_dismiss(void) {
     guint64 lease=surface_gate.lease;popup_hide();
     if (shared_popup_notice) {shared_popup_notice("receiveDismiss",lease);return;}
     g_autofree char *script=g_strdup_printf("window.receiveDismiss(\"%" G_GUINT64_FORMAT "\");",lease);
-    webkit_web_view_evaluate_javascript(view,script,-1,NULL,NULL,NULL,evaluate_done,NULL);
+    evaluate_delivery(view,script,NULL,"receiveDismiss");
 }
 static JsonNode *surface_focus_packet(JsonNode *targets) {
     JsonObject *obj=json_object_new();json_object_set_int_member(obj,"surfaceProtocol",2);
@@ -1083,7 +1106,7 @@ static void output_geometry_changed(GObject *object,GParamSpec *property,gpointe
        scoped native wrapper. popup_hide clears all native readiness first. */
     guint64 retired=surface_gate.lease;popup_hide();
     g_autofree char *script=g_strdup_printf("window.receiveReflow(\"%" G_GUINT64_FORMAT "\");",retired);
-    webkit_web_view_evaluate_javascript(view,script,-1,NULL,NULL,NULL,evaluate_done,NULL);
+    evaluate_delivery(view,script,NULL,"receiveReflow");
     g_print("output-popup-reflow: logical=%d,%d popup=%d,%d lease=%" G_GUINT64_FORMAT "\n",geometry.width,geometry.height,width,height,surface_gate.lease);fflush(stdout);
 }
 static void output_removed(GdkDisplay *display,GdkMonitor *monitor,gpointer unused) {

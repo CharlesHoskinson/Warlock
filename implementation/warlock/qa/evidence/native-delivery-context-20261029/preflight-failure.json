@@ -1,0 +1,19 @@
+{
+  "scope": "Root tool-observed protected preflight, no private native session created",
+  "session": 73180,
+  "unit": "qa-harness-e470e26312834dda9c6d229e38b3042c.scope",
+  "invocation": "1f378e87fad04fc8993ce7dc42adc9ea",
+  "exit": 1,
+  "failure": "RuntimeError: Historical addendum differs",
+  "diagnosis": "Authored currentSHA256 literal omitted a4 from immutable release_builder current digest. Corrected assertion only.",
+  "sourceBytes": {
+    "verify_current.py": "55000c90c8021c60cc78477681ed14178a6b3c4aa886a059acaefe0eb4a3811a",
+    "runtime_candidate.py": "8f5ca72f1c5cdb166ed78a2f583a2771b348f038e9ddf74e7270e62f220bdb52",
+    "fresh_candidate.py": "ccfbdcc04bd728d926587722c19d5c1901e516899f6c9c829aa07f0056e5974d",
+    "runner.py": "ba2a4d3255c5d4fd36901732990d4fc6faac2bf794d9fa6a31f8000a80a24bc4",
+    "native-delivery-diagnostics.py": "7ab6f45845087130f772b17763f6471a30c2e55203dce1f0eb0b15f561d4c5a7"
+  },
+  "nativeObservation": false,
+  "requirementAccepted": false,
+  "custody": "Executed source bytes reconstructed by reversing the single literal correction and dependent pins; all five digests match the independently reviewed executed packet."
+}

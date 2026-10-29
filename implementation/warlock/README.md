@@ -80,6 +80,18 @@ failed readiness and owned-client exit checks; cleanup completes. Saved choices,
 host restart, help through AT-SPI and post-restart recipients were not reached.
 First-use remains partial, with no new native acceptance or deployment.
 
+The current host adds failure-only delivery diagnostics: bounded receiver name,
+dispatch publication/lease, and WebKit error domain/code. It preserves the scripts
+and failure/drain policy. Its changed C unit and relink pass with retained assets
+and ten C++ objects, and the rebuilt host passes all 20 self-tests. A subsequent [current-source native diagnostic](qa/evidence/native-delivery-context-20261029/manifest.json)
+reaches customized bindings and the keyboard Settings opener, then fails before
+guidance. Multiple receivers report WebKitJavascriptError code 601, Unsupported
+result type; host normal-exit fails while owned cleanup completes. The receiver
+and dispatch stamp narrow the observed boundary without identifying the unsupported
+value or explaining renderer termination. Saved choices, restart and AT help are
+not reached. Two qualification attempts are retained; this investigation is stopped
+while the separately selected architecture work proceeds. First-use stays partial.
+
 The [original deadline/restart bridge probe](qa/evidence/deadline-restart-20261029/manifest.json)
 is not qualified. After a corrected fixture asset pin, the current Elm policy
 compiles, but the C++ fixture fails on an incompatible capture reservation type.

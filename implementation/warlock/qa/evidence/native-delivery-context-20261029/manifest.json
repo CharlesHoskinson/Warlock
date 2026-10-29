@@ -1,0 +1,183 @@
+{
+  "scope": "Bounded diagnostic build, source review and one actual current private native first-use failure after one corrected preflight failure; no causal fix or acceptance",
+  "requirements": [
+    "ELM-UI-020"
+  ],
+  "scenarios": [
+    "first-use"
+  ],
+  "requirementAccepted": false,
+  "nativeAcceptance": false,
+  "sourceHashes": {
+    "implementation/warlock/native/host.c": "56f0952d61f3ce57e7c2cb1122c640dc7548495bfab9b02677961b98266aa022",
+    "implementation/warlock/native/shared-host.c": "5d0d43c61574f292842bc34b2e3363cd5e7a215239e609bcb9780d475a9a8bbc",
+    "implementation/warlock/src/Shell.elm": "f14b7fe3bfbf1a57f335f98914c988938c235823ba4596c067cf744776c4a9ae",
+    "implementation/warlock/qa/native-delivery-diagnostics.py": "b9cbab48e46a54f44df1378d1967f0d3de9fb981fc7475b8cb07a4d13010505e"
+  },
+  "inputs": {
+    "native-report.json": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/first-use-delivery-current-root-v1/first-use-direct-1793312517818424283/report.json",
+      "sha256": "e9d4330dcc0db96522395134753de18a18222d73c95c4582d8f26de133a5962e"
+    },
+    "build-report.json": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/first-use-delivery-context-root-v1/output/report.json",
+      "sha256": "65b7e0fe87f775b6489a2092f355856cd273ec4461114897ddfeed177b721987"
+    },
+    "self-tests.stdout": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/first-use-delivery-context-root-v1/output/self-tests.stdout",
+      "sha256": "7a5858c19048392684165c532abb4ea4dacfd2e582945aec91c3fb2e682a53e0"
+    },
+    "self-tests.stderr": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/first-use-delivery-context-root-v1/output/self-tests.stderr",
+      "sha256": "a68a229966e10ccf03b7a2f394c687d722a656dbb3101ed173dcf05b760ba116"
+    },
+    "diagnostic-source-review.md": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-5/first-use-delivery-context/source-review.md",
+      "sha256": "cbd2f81d357e89cb4295a5850785ed57e60f531f661a3f18d06724c4bd5f574e"
+    },
+    "adapter-source-review.md": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-5/first-use-delivery-context/remediated-adapter-source-review.md",
+      "sha256": "e0294c5548414a161cfb971a5857edfc65f36888d2afe359231e3a64e0bac7ae"
+    },
+    "preflight-failure.json": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/first-use-delivery-current-root-v1/failed-qualification-1/observed-outcome.json",
+      "sha256": "a41228a10290ee3c987ed2d254f20b4c58ad15e0270b8dcdc4c7d6fd4a0d7055"
+    },
+    "historical_checks.py": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/first-use-delivery-historical-terra2-v1/historical_checks.py",
+      "sha256": "0b3306903ace3396835950220dee0920f2199ee73983545c0b79daea9cece3e3"
+    },
+    "deltas.json": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/first-use-delivery-current-root-v1/deltas.json",
+      "sha256": "4554553d5cc6aebb87185836def0a5c490f287a9b03b067de6909617ca78196b"
+    },
+    "verify_current.py": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/first-use-delivery-current-root-v1/verify_current.py",
+      "sha256": "07bb955b9f0e7171230f441c805651a27abd7393cbb97e25910a21658761a476"
+    },
+    "runtime_candidate.py": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/first-use-delivery-current-root-v1/runtime_candidate.py",
+      "sha256": "a082002671a7d9eda128af1d4230dabe1dd98dc94ad792aa939720b183b5b8ae"
+    },
+    "fresh_candidate.py": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/first-use-delivery-current-root-v1/fresh_candidate.py",
+      "sha256": "a4f481d6b1452ce50ed3623008766fe13fd13b961adbb87d07296a6e58272350"
+    },
+    "runner.py": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/first-use-delivery-current-root-v1/runner.py",
+      "sha256": "5ae3d659cd8bd902fce78ab6e38de2cc3f7e7c4203a20d277c98f47a8bdeeeaf"
+    },
+    "failed-qualification-1/verify_current.py": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/first-use-delivery-current-root-v1/failed-qualification-1/verify_current.py",
+      "sha256": "55000c90c8021c60cc78477681ed14178a6b3c4aa886a059acaefe0eb4a3811a"
+    },
+    "failed-qualification-1/runtime_candidate.py": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/first-use-delivery-current-root-v1/failed-qualification-1/runtime_candidate.py",
+      "sha256": "8f5ca72f1c5cdb166ed78a2f583a2771b348f038e9ddf74e7270e62f220bdb52"
+    },
+    "failed-qualification-1/fresh_candidate.py": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/first-use-delivery-current-root-v1/failed-qualification-1/fresh_candidate.py",
+      "sha256": "ccfbdcc04bd728d926587722c19d5c1901e516899f6c9c829aa07f0056e5974d"
+    },
+    "failed-qualification-1/runner.py": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/first-use-delivery-current-root-v1/failed-qualification-1/runner.py",
+      "sha256": "ba2a4d3255c5d4fd36901732990d4fc6faac2bf794d9fa6a31f8000a80a24bc4"
+    },
+    "failed-qualification-1/native-delivery-diagnostics.py": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/first-use-delivery-current-root-v1/failed-qualification-1/native-delivery-diagnostics.py",
+      "sha256": "7ab6f45845087130f772b17763f6471a30c2e55203dce1f0eb0b15f561d4c5a7"
+    }
+  },
+  "preservedFiles": {
+    "native-report.json": "e9d4330dcc0db96522395134753de18a18222d73c95c4582d8f26de133a5962e",
+    "build-report.json": "65b7e0fe87f775b6489a2092f355856cd273ec4461114897ddfeed177b721987",
+    "self-tests.stdout": "7a5858c19048392684165c532abb4ea4dacfd2e582945aec91c3fb2e682a53e0",
+    "self-tests.stderr": "a68a229966e10ccf03b7a2f394c687d722a656dbb3101ed173dcf05b760ba116",
+    "diagnostic-source-review.md": "cbd2f81d357e89cb4295a5850785ed57e60f531f661a3f18d06724c4bd5f574e",
+    "adapter-source-review.md": "e0294c5548414a161cfb971a5857edfc65f36888d2afe359231e3a64e0bac7ae",
+    "preflight-failure.json": "a41228a10290ee3c987ed2d254f20b4c58ad15e0270b8dcdc4c7d6fd4a0d7055",
+    "historical_checks.py": "0b3306903ace3396835950220dee0920f2199ee73983545c0b79daea9cece3e3",
+    "deltas.json": "4554553d5cc6aebb87185836def0a5c490f287a9b03b067de6909617ca78196b",
+    "verify_current.py": "07bb955b9f0e7171230f441c805651a27abd7393cbb97e25910a21658761a476",
+    "runtime_candidate.py": "a082002671a7d9eda128af1d4230dabe1dd98dc94ad792aa939720b183b5b8ae",
+    "fresh_candidate.py": "a4f481d6b1452ce50ed3623008766fe13fd13b961adbb87d07296a6e58272350",
+    "runner.py": "5ae3d659cd8bd902fce78ab6e38de2cc3f7e7c4203a20d277c98f47a8bdeeeaf",
+    "delivery-errors.log": "ea0961410bff31cec6b5cd4daa29ab21ca2be35ea32873578709f92f80da8986",
+    "failed-qualification-1/verify_current.py": "55000c90c8021c60cc78477681ed14178a6b3c4aa886a059acaefe0eb4a3811a",
+    "failed-qualification-1/runtime_candidate.py": "8f5ca72f1c5cdb166ed78a2f583a2771b348f038e9ddf74e7270e62f220bdb52",
+    "failed-qualification-1/fresh_candidate.py": "ccfbdcc04bd728d926587722c19d5c1901e516899f6c9c829aa07f0056e5974d",
+    "failed-qualification-1/runner.py": "ba2a4d3255c5d4fd36901732990d4fc6faac2bf794d9fa6a31f8000a80a24bc4",
+    "failed-qualification-1/native-delivery-diagnostics.py": "7ab6f45845087130f772b17763f6471a30c2e55203dce1f0eb0b15f561d4c5a7"
+  },
+  "native": {
+    "exit": 1,
+    "error": "AssertionError('OwnedClientNormalExit')",
+    "checks": [
+      {
+        "name": "OwningPluginLoads",
+        "passed": true
+      },
+      {
+        "name": "FixtureFloats",
+        "passed": true
+      },
+      {
+        "name": "FixtureSize",
+        "passed": true
+      },
+      {
+        "name": "FixturePosition",
+        "passed": true
+      },
+      {
+        "name": "FixtureFocus",
+        "passed": true
+      },
+      {
+        "name": "ActualConflictingCustomBindings",
+        "passed": true
+      },
+      {
+        "name": "KeyboardBarRouteOpen settings",
+        "passed": true
+      },
+      {
+        "name": "PersistentKeyboardNormalExit",
+        "passed": true
+      },
+      {
+        "name": "OwnedClientNormalExit",
+        "passed": false
+      }
+    ],
+    "cleanupPassed": true,
+    "runtimeGone": true,
+    "remainingDescendants": [],
+    "fullLog": {
+      "path": "/home/charles/window-integration-qa/warlock-window-feedback-1793312517818538696/warlock.log",
+      "sha256": "e0b31af0432b73ded611d1af3b57f1fe974788426b1c27b67a6b932b9eed47c4",
+      "excerpt": "delivery-errors.log"
+    },
+    "observation": "Multiple actual receiver failures report WebKitJavascriptError code601 Unsupported result type before Web process termination. Context publication/lease is dispatch-time global gate only; not payload or target-view proof.",
+    "notReached": [
+      "guidance",
+      "dismissal",
+      "conflict Save",
+      "saved choices",
+      "host restart",
+      "AT Show help",
+      "post-restart recipients"
+    ]
+  },
+  "stop": "Two qualification attempts reached; do not continue this investigation or rerun unchanged. Preserve next missing observable: actual unsupported value/cause and whether it explains termination. Proceed to separately selected architecture refactor.",
+  "referencedUnchanged": {
+    "framework": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-new-instance/compiled-runtime.py",
+      "sha256": "bb12e30c5e59c653441e18e580f5404f89ddb34a7d6cdb26629c6a0f63af5f4e"
+    },
+    "branch": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/first-use-direct-terra2-v2/branch.inc",
+      "sha256": "c0f51f5ba7de7641230b13cd370af93842d58e584195ef84ab54f48e0cb7fd7b"
+    }
+  }
+}
