@@ -1,0 +1,118 @@
+{
+  "schema": 1,
+  "requirements": [
+    "ELM-ARC-013"
+  ],
+  "scenarios": [
+    "architecture-013"
+  ],
+  "sourceRevision": "061db9732c1c9c932338d3faa3b275fe0aea3607",
+  "status": "stopped-before-bridge-execution",
+  "scenarioAccepted": false,
+  "requirementAccepted": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "observed": "First protected run stopped before any build command on a mistyped hash; current committed and held control-outbox bytes agree. Corrected protected run compiled optimized current Elm policy and obtained flags, then fixture compilation failed: capture-resources.hpp requires pointer-like exported reservation while fixture ResourceProbe contains value ResourceReservation. Actual bridge/restart/deadline trace never ran. Runtime product defect is not established.",
+  "attempts": [
+    {
+      "unit": "qa-harness-92b4f7c25f57453883f14119880a3e9c.scope",
+      "invocation": "59afdc03485e4ff589e0dfdaa50124b7",
+      "exitCode": 1,
+      "report": "preflight-failure.json"
+    },
+    {
+      "unit": "qa-harness-e6cb35b6e8584fe1b528efd5a691dd68.scope",
+      "invocation": "8bebb3a281a2478c826d52eda8d6eba0",
+      "exitCode": 1,
+      "report": "compile-failure.json"
+    }
+  ],
+  "missing": [
+    "actual matching original job/terminal receipts through real bridge retirement and rebind",
+    "near-cutoff and expired original-deadline observations",
+    "independent scenario and whole EARS acceptance"
+  ],
+  "stop": "Two qualification-only iterations. Preserve exact blockers, no additional compatibility helper/unchanged retry/renamed capture-resource investigation; select independent mandatory behavior. Full goal remains active.",
+  "limits": [
+    "Fixture time would be modeled monotonic source, not a physical clock.",
+    "A diagnostic run would not itself accept all retries, queueing, reconciliation and frontend restart.",
+    "No production source fix, actual WebKit execution, native GUI, deployment or release acceptance."
+  ],
+  "files": [
+    {
+      "path": "preflight-failure.json",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc013-frontend-deadline-root-v2/probe-1793307436405770921/report.json",
+      "sha256": "83f7f676966697278f314c4dda13be4905a5672b125ffecda22e058c49f1eff9"
+    },
+    {
+      "path": "compile-failure.json",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc013-frontend-deadline-root-v3/probe-1793307481945472946/report.json",
+      "sha256": "212f81adbd0e126f89f65cfd036c15d61b8adb632de653ab4a3ddb37a339a7e8"
+    },
+    {
+      "path": "compile-0.stderr",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc013-frontend-deadline-root-v3/probe-1793307481945472946/compile-0.stderr",
+      "sha256": "add4440b80529deabca558eccc9e109332032788c321028d6ba40b10271ab844"
+    },
+    {
+      "path": "elm-policy.stdout",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc013-frontend-deadline-root-v3/probe-1793307481945472946/elm-policy.stdout",
+      "sha256": "0546f66c444fe01ddce5a9842089b3fda8e7d2da67fcfd45a6d4d64a308077a6"
+    },
+    {
+      "path": "probe-v2.py",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc013-frontend-deadline-root-v2/probe.py",
+      "sha256": "76f412f1d59d5017b1dda3d8e7886d7233f08137da57b73990ccd6615b33331e"
+    },
+    {
+      "path": "probe-v3.py",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc013-frontend-deadline-root-v3/probe.py",
+      "sha256": "c735d76dc5eb307e31efa17815328ed56c4d3d37ff5414b8e733fb98d29cabd4"
+    },
+    {
+      "path": "same-stamp-realm-fixture.cpp",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc013-frontend-deadline-root-v2/same-stamp-realm-fixture.cpp",
+      "sha256": "b9a6858ba309317bc69290562d9d626bd8d776030328102e68d67d3c800f9455"
+    },
+    {
+      "path": "same-stamp-roundtrip.js",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc013-frontend-deadline-root-v2/same-stamp-roundtrip.js",
+      "sha256": "405928a0f871070cb5dae95cada3d0b655b4aa16edd9c2ecb44960951beb3744"
+    },
+    {
+      "path": "source-evidence-map.md",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-5/arc013-current/source-evidence-map.md",
+      "sha256": "89984ae2661a8aeb2e13d31b2517a9531fb5953f3bbc23b1dc98a889a0cd3be3"
+    },
+    {
+      "path": "source-assessment.md",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-5/arc013-current/v2-source-assessment.md",
+      "sha256": "82d4a10d43350c1beab69696b3c06faabca5cb7aaa8070b363642ede50ca6238"
+    },
+    {
+      "path": "source-review-stop.md",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-5/arc013-current/frozen-probe-source-review.md",
+      "sha256": "f5473a435e485cc382ecb6cdf6820a27518a8b9c3cdd360f39232f86a0dd2c75"
+    },
+    {
+      "path": "source-review-v2.md",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-5/arc013-current/root-v2-delta-review.md",
+      "sha256": "aff784187201e4410c474c0ece87d60e9b217f650b88d546fe6cc1886417704d"
+    },
+    {
+      "path": "pin-confirmation.md",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-5/arc013-current/root-v3-pin-confirmation.md",
+      "sha256": "cded141feb282a388c078966cbfa124ec37476da328bc251b614d10fdc0530f1"
+    },
+    {
+      "path": "independent-stop-review.md",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-5/arc013-current/actual-qualification-stop-review.md",
+      "sha256": "326f9cae17677af546ca84bb07f5a601e787a9122af842003a5c18dd9fb4059d"
+    }
+  ],
+  "reviewer": {
+    "name": "quint-5",
+    "disposition": "stop after qualification2, original deadline/restart unaccepted",
+    "path": "independent-stop-review.md"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "requirementAccepted": false,
+  "fullReleaseAccepted": false,
+  "actualWebKit": false,
+  "clock": "monotonic modeled fixture source, not hardware time",
+  "commands": [],
+  "error": "RuntimeError('Pinned input changed: /home/charles/Warlock/implementation/warlock/assets/native-preview-control-outbox.js')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc013-frontend-deadline-root-v2/probe.py\", line 37, in main\n    for p,h in PINS.items():check(p,h)\n                            ~~~~~^^^^^\n  File \"/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc013-frontend-deadline-root-v2/probe.py\", line 14, in check\n    if sha(path)!=digest:raise RuntimeError('Pinned input changed: '+str(path))\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Pinned input changed: /home/charles/Warlock/implementation/warlock/assets/native-preview-control-outbox.js\n"
+}

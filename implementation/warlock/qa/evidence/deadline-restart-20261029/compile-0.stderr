@@ -1,0 +1,20 @@
+In file included from /home/charles/Warlock/implementation/warlock/native/capture-resource-fd-source-fixture.hpp:2,
+                 from /home/charles/.local/state/warlock-team/20261028/native-rebuild/arc013-frontend-deadline-root-v2/same-stamp-realm-fixture.cpp:1:
+/home/charles/Warlock/implementation/warlock/native/capture-resources.hpp: In instantiation of 'auto preview::resources::execute(Map&, Peer, Binding, Target, uint64_t, uint64_t, bool, Operation, uint64_t, uint64_t&, Prepare&&) [with Map = std::map<int, ResourceProbe>; Peer = int; Prepare = std::__cxx11::basic_string<char> (&)(const Result&); uint64_t = long unsigned int]':
+/home/charles/Warlock/implementation/warlock/native/capture-resource-fd-source-fixture.hpp:192:57:   required from here
+  192 |                         text=preview::resources::execute(captures,peer.pid,preview::resources::Binding{UINT64_MAX,uint64_t(peer.pid),frontend},
+      |                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  193 |                             preview::resources::Target{capture,subject},id,9007199254740993ULL+id*1000000ULL,locked,action,transfer,resourceSequence,preview::resources::wire);
+      |                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/charles/Warlock/implementation/warlock/native/capture-resources.hpp:57:50: error: no match for 'operator&&' (operand types are 'uint64_t' {aka 'long unsigned int'} and 'ResourceReservation')
+   57 |                 require(probe.exported->transfer && probe.exported->reservation && probe.exported->reservation->bytes(),"Actual original native export reservation");
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  • there is 1 candidate
+    • candidate 1: 'operator&&(bool, bool)' (built-in)
+      • no known conversion for argument 2 from 'ResourceReservation' to 'bool'
+/home/charles/Warlock/implementation/warlock/native/capture-resources.hpp:57:84: error: base operand of '->' has non-pointer type 'ResourceReservation'
+   57 |                 require(probe.exported->transfer && probe.exported->reservation && probe.exported->reservation->bytes(),"Actual original native export reservation");
+      |                                                                                    ^~~~~
+/home/charles/Warlock/implementation/warlock/native/capture-resources.hpp:58:83: error: base operand of '->' has non-pointer type 'ResourceReservation'
+   58 |                 result.exportTransfer=probe.exported->transfer;result.exportBytes=probe.exported->reservation->bytes();
+      |                                                                                   ^~~~~

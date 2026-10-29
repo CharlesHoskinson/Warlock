@@ -1,0 +1,5 @@
+# ARC013 root-v3 pin-only confirmation
+
+**CONFIRMED.** Exact v2/v3 diff has two changes: fixture/JS paths now reference the same frozen root-v2 files, retaining their `b9a6858b...` and `405928a0...` pins, and the outbox expected SHA is corrected from `183253d5f781cf8527c4e58f31d44653e1b6fe8be58c0bdc89ce4e3f5e4484` to `183253d5f781cf8527c4e58f31d44653e1b6fe8be58c0bdc89ae714ffb5e4484`. No oracle or other runner code changes appear in the diff. The full current HEAD git blob, working-tree outbox and held v143 outbox each independently hash to the corrected value. The root-v3 runner hashes to `c735d76dc5eb307e31efa17815328ed56c4d3d37ff5414b8e733fb98d29cabd4`.
+
+Retained v2 report `probe-1793307436405770921/report.json` has zero commands and identifies the earlier outbox pin mismatch before execution; it is qualification 1, not product defect evidence. This comparison makes no claim about the later running/completed diagnostic or original scenario. No tests, QA, compiler, model, GUI, product/STATE/ledger changes or extra qualification were performed.

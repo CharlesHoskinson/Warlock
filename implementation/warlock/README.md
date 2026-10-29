@@ -80,6 +80,13 @@ failed readiness and owned-client exit checks; cleanup completes. Saved choices,
 host restart, help through AT-SPI and post-restart recipients were not reached.
 First-use remains partial, with no new native acceptance or deployment.
 
+The [original deadline/restart bridge probe](qa/evidence/deadline-restart-20261029/manifest.json)
+is not qualified. After a corrected fixture asset pin, the current Elm policy
+compiles, but the C++ fixture fails on an incompatible capture reservation type.
+No restart/deadline trace ran, and ELM-ARC-013 remains unadjudicated. Both failed
+attempts and source reviews are retained; this investigation is stopped under the
+loop limit while independent mandatory work continues.
+
 Original ELM-UX-004 pin-order persistence is independently accepted on the
 recorded tuple: the current compiled replay and actual native pin, reorder,
 private storage and shell restart preserve Editor and Files in the chosen order.
