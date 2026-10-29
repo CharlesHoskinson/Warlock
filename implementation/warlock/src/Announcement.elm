@@ -4,11 +4,11 @@ import Html exposing (Html, text)
 import Html.Attributes exposing (attribute, class)
 import Html.Keyed as Keyed
 import Json.Decode as D
-import Json.Encode as E
+import AnnouncementMessage
 import SurfaceRenderer
 import UInt64 exposing (Counter)
 
-type alias Message = { interrupt : Bool, sequence : Counter, correlation : String, text : String }
+type alias Message = AnnouncementMessage.Message
 type Model = Model { last : Counter, active : Bool, message : Maybe Message }
 initial : Model
 initial = Model {last=UInt64.zero,active=False,message=Nothing}
@@ -20,7 +20,7 @@ route = strict ["scope","surface"] (D.map2 Tuple.pair (D.field "scope" scope) (D
 messageDecoder =
     let legacy = D.map3 (\sequence correlation value -> {sequence=sequence,correlation=correlation,text=value,interrupt=False}) (D.field "sequence" positive) (D.field "correlation" (bounded 2048)) (D.field "text" (bounded 1024))
     in D.oneOf [strict ["sequence","correlation","text","interrupt"] (D.map2 (\message interrupt -> {message|interrupt=interrupt}) legacy (D.field "interrupt" D.bool)),strict ["sequence","correlation","text"] legacy]
-encodeMessage message = E.object [("interrupt",E.bool message.interrupt),("sequence",E.string (UInt64.string message.sequence)),("correlation",E.string message.correlation),("text",E.string message.text)]
+encodeMessage = AnnouncementMessage.encodeMessage
 
 -- Scoped presentation facts only: no action, focus command, receipt policy or
 -- announcement queue lives in a view. Native delivery is not proof of speech.

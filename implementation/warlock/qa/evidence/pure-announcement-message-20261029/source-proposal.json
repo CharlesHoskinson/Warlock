@@ -1,0 +1,21 @@
+{
+  "scope": "Private three-file source proposal, not applied, compiled or tested",
+  "baselineRevision": "abe216442c84d858f0c676b48e9bf1704e14ce51",
+  "baselineSources": {
+    "Announcement.elm": "71bc1e29724266c26301716ea0a1c7452f02c9f67e140e1bd1ec33c5166d402f",
+    "OutcomeAnnouncements.elm": "158b22f574983da656838c4388c93cca1c7d9b044aaae83ee21153eae29b7586"
+  },
+  "proposedSources": {
+    "AnnouncementMessage.elm": "fb0f5231bff5beffe0a877046d38bba1bb87bd3d8e786449800093ae38ab2075",
+    "Announcement.elm": "a1e6660c082c7c68657e356c2e4742cd8fd60e843192b88fa0609fb696a40f9f",
+    "OutcomeAnnouncements.elm": "c7fd2828c42b7cbc0f3b6fc705c26a551530d1eb22ed325e892a0e1faca6ca7e"
+  },
+  "originalRequirement": "ELM-UI-010",
+  "suggestedOriginalScenarios": [
+    "announce-launch refusal",
+    "announce-transfer refusal",
+    "announce-settings validation failure"
+  ],
+  "nativeAcceptance": false,
+  "requirementAccepted": false
+}

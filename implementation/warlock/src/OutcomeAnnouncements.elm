@@ -1,6 +1,6 @@
 module OutcomeAnnouncements exposing (Model, initial, observe, encode)
 
-import Announcement
+import AnnouncementMessage
 import AdapterNotice
 import Binding
 import Catalog
@@ -16,7 +16,7 @@ import UInt64 exposing (Counter)
 -- One policy in the integration root. Views never infer attention from copy,
 -- count changes, rendering, publications or focus. Notifications are admitted
 -- only from fresh identities and explicit DND/critical-interruption policy.
-type Model = Model Counter (Maybe Announcement.Message)
+type Model = Model Counter (Maybe AnnouncementMessage.Message)
 
 initial : Model
 initial = Model UInt64.zero Nothing
@@ -58,4 +58,4 @@ observe before after ((Model sequence _) as prior) =
         _ -> prior
 
 encode : Model -> E.Value
-encode (Model _ current) = current |> Maybe.map Announcement.encodeMessage |> Maybe.withDefault E.null
+encode (Model _ current) = current |> Maybe.map AnnouncementMessage.encodeMessage |> Maybe.withDefault E.null

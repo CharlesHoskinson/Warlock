@@ -1,0 +1,629 @@
+{
+  "scope": "Static lexical imports from actual OutputController, not runtime or native proof",
+  "nodes": [
+    "ActionProjection",
+    "AdapterNotice",
+    "AnnouncementMessage",
+    "Binding",
+    "Catalog",
+    "Char",
+    "Desktop",
+    "Dict",
+    "Effects",
+    "Files",
+    "GeometryProjection",
+    "GeometrySizePolicy",
+    "Json.Decode",
+    "Json.Encode",
+    "JumpList",
+    "Launch",
+    "Menu",
+    "MenuBridge",
+    "Motion",
+    "MotionPreferences",
+    "NativeOutcome",
+    "NativeProvider",
+    "Notifications",
+    "OutcomeAnnouncements",
+    "OutputController",
+    "OverviewRecovery",
+    "Pins",
+    "PointerOwnership",
+    "Provider",
+    "ReceiptRouter",
+    "ReconciliationFrame",
+    "ReconciliationTracking",
+    "SearchFold",
+    "Set",
+    "Settings",
+    "Shell",
+    "ShortcutPreferences",
+    "Shortcuts",
+    "Snap",
+    "Surface",
+    "SurfaceController",
+    "SurfaceSnapshot",
+    "Switcher",
+    "SystemMenu",
+    "TaskView",
+    "Taskbar",
+    "TaskbarShell",
+    "Transfer",
+    "UInt64",
+    "UnsentOperation",
+    "WorkspaceInventory",
+    "WorkspaceNavigation"
+  ],
+  "localModules": {
+    "ActionProjection": {
+      "path": "implementation/warlock/src/ActionProjection.elm",
+      "sha256": "911faed965465fac4e32f404d75a4d130b4e560cda191c7773eb96749be1d062",
+      "imports": [
+        "Dict",
+        "Json.Decode",
+        "UInt64"
+      ]
+    },
+    "AdapterNotice": {
+      "path": "implementation/warlock/src/AdapterNotice.elm",
+      "sha256": "32c4c13e599e843aa6da4a2302cb44da233226eb79d2561f551d0640fe9dd409",
+      "imports": [
+        "Binding",
+        "Json.Encode",
+        "UInt64"
+      ]
+    },
+    "AnnouncementMessage": {
+      "path": "implementation/warlock/src/AnnouncementMessage.elm",
+      "sha256": "fb0f5231bff5beffe0a877046d38bba1bb87bd3d8e786449800093ae38ab2075",
+      "imports": [
+        "Json.Encode",
+        "UInt64"
+      ]
+    },
+    "Binding": {
+      "path": "implementation/warlock/src/Binding.elm",
+      "sha256": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b",
+      "imports": [
+        "Json.Decode",
+        "Json.Encode",
+        "UInt64"
+      ]
+    },
+    "Catalog": {
+      "path": "implementation/warlock/src/Catalog.elm",
+      "sha256": "3eadb76212a66986ef2d76292a2f33595f7cd7d47dc90c8982435195f9ea3f02",
+      "imports": [
+        "Dict",
+        "SearchFold",
+        "Json.Decode",
+        "Json.Encode",
+        "UInt64"
+      ]
+    },
+    "Desktop": {
+      "path": "implementation/warlock/src/Desktop.elm",
+      "sha256": "a503d926599b5aa194956a1208fdc0004fb829442cd523c5372d41fd1fab0404",
+      "imports": [
+        "Menu",
+        "ActionProjection",
+        "Switcher",
+        "Pins",
+        "Settings",
+        "Motion",
+        "MotionPreferences",
+        "Notifications",
+        "AdapterNotice",
+        "JumpList",
+        "PointerOwnership",
+        "Shortcuts",
+        "ShortcutPreferences",
+        "Files",
+        "SystemMenu",
+        "MenuBridge",
+        "NativeProvider",
+        "Provider",
+        "Binding",
+        "Catalog",
+        "Json.Decode",
+        "Json.Encode",
+        "Launch",
+        "Shell",
+        "Taskbar",
+        "Effects",
+        "TaskbarShell",
+        "WorkspaceNavigation",
+        "WorkspaceInventory",
+        "OverviewRecovery",
+        "TaskView",
+        "Transfer",
+        "Snap",
+        "UInt64"
+      ]
+    },
+    "Effects": {
+      "path": "implementation/warlock/src/Effects.elm",
+      "sha256": "873e8824d90828a9927cfd89723c7b7299e11791e3779173815ba720b11a8547",
+      "imports": [
+        "Transfer",
+        "Snap",
+        "GeometryProjection",
+        "Json.Decode",
+        "Json.Encode",
+        "ActionProjection",
+        "UInt64"
+      ]
+    },
+    "Files": {
+      "path": "implementation/warlock/src/Files.elm",
+      "sha256": "c2099647bca3b325ca21485bb3a246e0b6d7c2a693d0bcfd5f10dedbad7a89f7",
+      "imports": [
+        "Json.Decode",
+        "Json.Encode",
+        "UInt64"
+      ]
+    },
+    "GeometryProjection": {
+      "path": "implementation/warlock/src/GeometryProjection.elm",
+      "sha256": "f1b5708b8b4d1c7c02e46542bc041abb9e8cb0524d965ee4b03ab97f586a544c",
+      "imports": [
+        "Binding",
+        "Char",
+        "GeometrySizePolicy",
+        "Json.Decode",
+        "UInt64",
+        "WorkspaceInventory"
+      ]
+    },
+    "GeometrySizePolicy": {
+      "path": "implementation/warlock/src/GeometrySizePolicy.elm",
+      "sha256": "46dda2de43642cd33997382e90813c8eeccde80745d79b7d5cd5fd425b062c43",
+      "imports": [
+        "Json.Decode"
+      ]
+    },
+    "JumpList": {
+      "path": "implementation/warlock/src/JumpList.elm",
+      "sha256": "059841cc0669fdc7fd699498ee72d4211a2aa5d69c466d4aade7558e03b0f68c",
+      "imports": [
+        "Json.Decode",
+        "Json.Encode",
+        "UInt64"
+      ]
+    },
+    "Launch": {
+      "path": "implementation/warlock/src/Launch.elm",
+      "sha256": "dcd7260248ccb0b5bc6001c49319dd51af8c2fae98888919a308ac025ed273a2",
+      "imports": [
+        "Catalog",
+        "Json.Decode",
+        "Json.Encode",
+        "UInt64"
+      ]
+    },
+    "Menu": {
+      "path": "implementation/warlock/src/Menu.elm",
+      "sha256": "c40fcfa24bf9d48044ccbe2c08df0abb7d8b94ee04111776234ecd88792ff4f0",
+      "imports": []
+    },
+    "MenuBridge": {
+      "path": "implementation/warlock/src/MenuBridge.elm",
+      "sha256": "ec8f531b9437e493f9b29fe1e16d678cd388f560a83ca873448630bbde459b25",
+      "imports": [
+        "ActionProjection",
+        "Binding",
+        "Effects",
+        "GeometryProjection",
+        "Json.Decode",
+        "Json.Encode",
+        "Menu",
+        "NativeProvider",
+        "Provider",
+        "ReceiptRouter",
+        "Shell",
+        "UnsentOperation",
+        "UInt64"
+      ]
+    },
+    "Motion": {
+      "path": "implementation/warlock/src/Motion.elm",
+      "sha256": "e101862bae874426f0cf9aaf02340c6582abdeea21dec38c32003da7f94e8a69",
+      "imports": [
+        "Binding",
+        "MotionPreferences",
+        "Json.Decode",
+        "Json.Encode",
+        "UInt64"
+      ]
+    },
+    "MotionPreferences": {
+      "path": "implementation/warlock/src/MotionPreferences.elm",
+      "sha256": "d3130d74c3172cb1808df38efd7a2cc267ba5ae346b564544661d3d539f5c560",
+      "imports": [
+        "Json.Decode",
+        "Json.Encode",
+        "UInt64"
+      ]
+    },
+    "NativeOutcome": {
+      "path": "implementation/warlock/src/NativeOutcome.elm",
+      "sha256": "ffb20d47827d29653552d9a5c7f552491473b8df1cd336e00cc036816ae8b396",
+      "imports": [
+        "Binding",
+        "Effects",
+        "Json.Decode",
+        "UInt64"
+      ]
+    },
+    "NativeProvider": {
+      "path": "implementation/warlock/src/NativeProvider.elm",
+      "sha256": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9",
+      "imports": [
+        "ActionProjection",
+        "GeometryProjection",
+        "Binding",
+        "Json.Decode",
+        "Json.Encode",
+        "Provider",
+        "Shell",
+        "UInt64"
+      ]
+    },
+    "Notifications": {
+      "path": "implementation/warlock/src/Notifications.elm",
+      "sha256": "b37bff9f104d80eb1d1ea99f297c4d859b9d5744d7b0c05f6c89fa51581bc244",
+      "imports": [
+        "Json.Decode",
+        "Json.Encode",
+        "Set",
+        "UInt64"
+      ]
+    },
+    "OutcomeAnnouncements": {
+      "path": "implementation/warlock/src/OutcomeAnnouncements.elm",
+      "sha256": "c7fd2828c42b7cbc0f3b6fc705c26a551530d1eb22ed325e892a0e1faca6ca7e",
+      "imports": [
+        "AnnouncementMessage",
+        "AdapterNotice",
+        "Binding",
+        "Catalog",
+        "Desktop",
+        "Effects",
+        "Json.Encode",
+        "Launch",
+        "Notifications",
+        "Settings",
+        "Surface",
+        "UInt64"
+      ]
+    },
+    "OutputController": {
+      "path": "implementation/warlock/src/OutputController.elm",
+      "sha256": "aaf1729287ff61595a237201b261e7c1ce11c8f2353c620171f48aff99d86f38",
+      "imports": [
+        "Binding",
+        "Shortcuts",
+        "PointerOwnership",
+        "MenuBridge",
+        "Shell",
+        "TaskbarShell",
+        "Desktop",
+        "Json.Decode",
+        "Json.Encode",
+        "Surface",
+        "OutcomeAnnouncements",
+        "SurfaceController",
+        "SurfaceSnapshot",
+        "UnsentOperation",
+        "UInt64"
+      ]
+    },
+    "OverviewRecovery": {
+      "path": "implementation/warlock/src/OverviewRecovery.elm",
+      "sha256": "1e34eb2fe6cfffb5662699f11736e6778f9dad0f35b73f58f283488a29fcf8e5",
+      "imports": [
+        "Binding",
+        "Effects",
+        "UInt64"
+      ]
+    },
+    "Pins": {
+      "path": "implementation/warlock/src/Pins.elm",
+      "sha256": "c18f4211444ea54ad5ae65d9e436b4dc3ae404446699812b95dabd7b2c878368",
+      "imports": [
+        "Json.Decode",
+        "Json.Encode",
+        "UInt64"
+      ]
+    },
+    "PointerOwnership": {
+      "path": "implementation/warlock/src/PointerOwnership.elm",
+      "sha256": "7e6d9f3e1ad79670383f58502449533d8a0857d38c6b62538eb89855a70b3ef3",
+      "imports": [
+        "Binding",
+        "Json.Decode",
+        "UInt64"
+      ]
+    },
+    "Provider": {
+      "path": "implementation/warlock/src/Provider.elm",
+      "sha256": "2ef450a364d23d334e2ba7dfafdc56bbf51649dfb8f2e9f2e0ab1ca600157727",
+      "imports": [
+        "Binding",
+        "Char",
+        "Json.Decode",
+        "Json.Encode",
+        "Menu",
+        "GeometryProjection",
+        "Set",
+        "UInt64"
+      ]
+    },
+    "ReceiptRouter": {
+      "path": "implementation/warlock/src/ReceiptRouter.elm",
+      "sha256": "d059bfef01de050c794c8709a3a38627fddd63815f115c617e78fefaea32ac1f",
+      "imports": [
+        "Effects",
+        "Binding",
+        "Char",
+        "Json.Decode",
+        "Menu",
+        "Provider",
+        "UnsentOperation",
+        "UInt64"
+      ]
+    },
+    "ReconciliationFrame": {
+      "path": "implementation/warlock/src/ReconciliationFrame.elm",
+      "sha256": "c44fa50ac86d528b35959d50fc4d85bd9d8983c1e866fdda01ad1854f465004e",
+      "imports": [
+        "Binding",
+        "Effects",
+        "Json.Decode",
+        "UInt64"
+      ]
+    },
+    "ReconciliationTracking": {
+      "path": "implementation/warlock/src/ReconciliationTracking.elm",
+      "sha256": "84482d1bb84160e3bd9e026b2043635c35b76422d6e9066f703411f784b29bf9",
+      "imports": [
+        "Binding",
+        "Effects",
+        "Json.Decode",
+        "ReconciliationFrame",
+        "Shell",
+        "UInt64"
+      ]
+    },
+    "SearchFold": {
+      "path": "implementation/warlock/src/SearchFold.elm",
+      "sha256": "31664d665778533dc2c141f433398df5bd37be4b689b7369cd894c89d1459241",
+      "imports": [
+        "Dict"
+      ]
+    },
+    "Settings": {
+      "path": "implementation/warlock/src/Settings.elm",
+      "sha256": "d13f4d63327eae4a80052252c8ba1f1e40db0f69954b46470ccff248e5ba0e7c",
+      "imports": [
+        "Json.Decode",
+        "Json.Encode",
+        "UInt64"
+      ]
+    },
+    "Shell": {
+      "path": "implementation/warlock/src/Shell.elm",
+      "sha256": "f14b7fe3bfbf1a57f335f98914c988938c235823ba4596c067cf744776c4a9ae",
+      "imports": [
+        "UnsentOperation",
+        "Binding",
+        "Effects",
+        "GeometryProjection",
+        "NativeOutcome",
+        "Json.Decode",
+        "Json.Encode",
+        "UInt64"
+      ]
+    },
+    "ShortcutPreferences": {
+      "path": "implementation/warlock/src/ShortcutPreferences.elm",
+      "sha256": "d9196adaae768e57e2531b78ad2cd8fd22a2a81ad952d27c7c88d0fc72da8322",
+      "imports": [
+        "Json.Decode",
+        "Json.Encode",
+        "UInt64"
+      ]
+    },
+    "Shortcuts": {
+      "path": "implementation/warlock/src/Shortcuts.elm",
+      "sha256": "cfa79040387114e79b7a6cf51ca31aa4fbe569372ff1948105265adf90cd97a7",
+      "imports": [
+        "Binding",
+        "Json.Decode",
+        "UInt64"
+      ]
+    },
+    "Snap": {
+      "path": "implementation/warlock/src/Snap.elm",
+      "sha256": "8ee61de4cd63557d3f2928893ed35ce93f1e3290128847e66ca388aa5d98ec8e",
+      "imports": [
+        "Json.Decode",
+        "Json.Encode",
+        "GeometryProjection",
+        "UInt64"
+      ]
+    },
+    "Surface": {
+      "path": "implementation/warlock/src/Surface.elm",
+      "sha256": "a660a4641a9f834c6198bce1e8049b3dd0be40cb74be1cfe1d5e14cfd0cdaa1d",
+      "imports": [
+        "WorkspaceNavigation",
+        "Menu",
+        "Switcher",
+        "Pins",
+        "Settings",
+        "ShortcutPreferences",
+        "Motion",
+        "MotionPreferences",
+        "Notifications",
+        "JumpList",
+        "Files",
+        "SystemMenu",
+        "MenuBridge",
+        "Provider",
+        "Catalog",
+        "Desktop",
+        "Effects",
+        "Json.Decode",
+        "Json.Encode",
+        "Launch",
+        "Shell",
+        "Taskbar",
+        "TaskbarShell",
+        "TaskView",
+        "Transfer",
+        "Snap",
+        "GeometryProjection",
+        "UInt64"
+      ]
+    },
+    "SurfaceController": {
+      "path": "implementation/warlock/src/SurfaceController.elm",
+      "sha256": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
+      "imports": [
+        "Menu",
+        "Binding",
+        "ReconciliationFrame",
+        "ReconciliationTracking",
+        "Effects",
+        "MenuBridge",
+        "Desktop",
+        "Switcher",
+        "Json.Decode",
+        "Json.Encode",
+        "Surface",
+        "Shell",
+        "TaskbarShell",
+        "UInt64"
+      ]
+    },
+    "SurfaceSnapshot": {
+      "path": "implementation/warlock/src/SurfaceSnapshot.elm",
+      "sha256": "58298ea43fffba3da6bcc64f1456b47bcde3607d476ef99465be0c98c2b433d7",
+      "imports": [
+        "Json.Decode",
+        "Json.Encode",
+        "Set",
+        "Settings",
+        "UInt64"
+      ]
+    },
+    "Switcher": {
+      "path": "implementation/warlock/src/Switcher.elm",
+      "sha256": "7523cc13bf794c126cee2d39541d9fbae062ec3b420d5898eed6380792ec3061",
+      "imports": [
+        "Dict",
+        "Taskbar",
+        "UInt64"
+      ]
+    },
+    "SystemMenu": {
+      "path": "implementation/warlock/src/SystemMenu.elm",
+      "sha256": "cf44c66fe51a5d86f14e33a8235e04f178553261229fd51e0d81cbc35c944054",
+      "imports": [
+        "Json.Decode",
+        "Json.Encode",
+        "UInt64"
+      ]
+    },
+    "TaskView": {
+      "path": "implementation/warlock/src/TaskView.elm",
+      "sha256": "7665dd48cae39ecdc71f85990eaefc0115fb79fe0462e41199b10ec4ccbfcdbe",
+      "imports": [
+        "Effects",
+        "ActionProjection",
+        "GeometryProjection",
+        "Shell",
+        "Taskbar",
+        "WorkspaceInventory"
+      ]
+    },
+    "Taskbar": {
+      "path": "implementation/warlock/src/Taskbar.elm",
+      "sha256": "31ed9ce6b37e5b35065f8833e31412657800d894b6d9e9544f380bc16e7aa519",
+      "imports": [
+        "ActionProjection",
+        "Effects",
+        "Json.Encode",
+        "UInt64"
+      ]
+    },
+    "TaskbarShell": {
+      "path": "implementation/warlock/src/TaskbarShell.elm",
+      "sha256": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+      "imports": [
+        "Shell",
+        "Json.Encode",
+        "Json.Decode",
+        "Menu",
+        "MenuBridge",
+        "Provider",
+        "NativeOutcome",
+        "Taskbar",
+        "UInt64"
+      ]
+    },
+    "Transfer": {
+      "path": "implementation/warlock/src/Transfer.elm",
+      "sha256": "357a68e70977184ced8be8b8a4c0db6209730e6fe6ad2f4718087a6d6a2c32be",
+      "imports": [
+        "Char",
+        "GeometryProjection",
+        "Json.Decode",
+        "Json.Encode",
+        "UInt64"
+      ]
+    },
+    "UInt64": {
+      "path": "implementation/warlock/src/UInt64.elm",
+      "sha256": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+      "imports": [
+        "Json.Decode"
+      ]
+    },
+    "UnsentOperation": {
+      "path": "implementation/warlock/src/UnsentOperation.elm",
+      "sha256": "46e315cc739e097805af3c9358f9ca27a807ef1119c733aa296687342c8238ea",
+      "imports": [
+        "Binding",
+        "Effects",
+        "Json.Decode",
+        "Json.Encode"
+      ]
+    },
+    "WorkspaceInventory": {
+      "path": "implementation/warlock/src/WorkspaceInventory.elm",
+      "sha256": "583692398a5038bf17a87c09a7019ddae4059f3f200489342ca89dab50eb3b2e",
+      "imports": [
+        "Binding",
+        "Char",
+        "Json.Decode",
+        "UInt64"
+      ]
+    },
+    "WorkspaceNavigation": {
+      "path": "implementation/warlock/src/WorkspaceNavigation.elm",
+      "sha256": "8313a23008abfa6157324472db852b087b4af09dd3696a33f273d7010634e7f6",
+      "imports": [
+        "Binding",
+        "GeometryProjection",
+        "Json.Decode",
+        "Json.Encode",
+        "UInt64",
+        "WorkspaceInventory"
+      ]
+    }
+  },
+  "forbiddenHtmlOrBrowser": [],
+  "main": "Main remains a Browser/Html entry point and is outside this pure policy claim."
+}

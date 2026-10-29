@@ -931,3 +931,23 @@ presentation-sequence assertions, and the unchanged seven group-selection and
 eleven output-retirement checks. These are bounded CPU/source results; they do
 not establish native taskbar/preview/AT acceptance or repair the renderer failure.
 The seed is `0x5eed1234`; no randomized sequence coverage or shrinking is claimed.
+
+### Pure announcement values and retained notification failure
+
+`AnnouncementMessage` now owns the existing message record and encoder. Outcome
+policy imports it directly; `Announcement` forwards the prior API and preserves
+its receiver and HTML view. Static lexical traversal now finds no Html/Browser
+imports reachable from `OutputController`; Main remains a Browser entry point.
+This is an ownership refactor, not a new validated message type.
+
+[Verification and failures](qa/evidence/pure-announcement-message-20261029/manifest.json)
+record fresh optimized Main/Bar/Popup builds, 216 encoder cases (200 seeded
+combinations, ten fixed encoding cases and six invalid-counter construction
+cases), and twelve passing refusal-announcement assertions. The notification
+replay fails six of fourteen assertions. An exact pre-extraction two-file
+baseline produces byte-identical output, so that replay failure predates this
+refactor. The assertions remain unchanged; DND/urgency behavior is not newly
+accepted. Closed replay frames suggest setup/control reachability needs diagnosis;
+the cause remains open. Both failed runs are retained and that investigation is
+stopped under the bounded loop rule. No native speech/braille/focus or release
+acceptance follows from these component checks.

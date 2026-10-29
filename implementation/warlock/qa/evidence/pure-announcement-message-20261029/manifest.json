@@ -1,0 +1,123 @@
+{
+  "scope": "Pure value/encoder dependency extraction; current encoder and refusal replay pass, notification replay retains byte-identical pre-existing failure. Overall current suite is NOT passing.",
+  "requirement": "ELM-UI-010",
+  "scenarios": [
+    "announce-launch refusal",
+    "announce-transfer refusal",
+    "announce-settings validation failure"
+  ],
+  "requirementAccepted": false,
+  "nativeAcceptance": false,
+  "currentSuitePassed": false,
+  "sourceHashes": {
+    "src/AnnouncementMessage.elm": "fb0f5231bff5beffe0a877046d38bba1bb87bd3d8e786449800093ae38ab2075",
+    "src/Announcement.elm": "a1e6660c082c7c68657e356c2e4742cd8fd60e843192b88fa0609fb696a40f9f",
+    "src/OutcomeAnnouncements.elm": "c7fd2828c42b7cbc0f3b6fc705c26a551530d1eb22ed325e892a0e1faca6ca7e",
+    "qa/AnnouncementMessageContracts.elm": "0761e96356884698bc2c303ed26c461e8ba229e15f7c73984fc85e3f0e57a07d",
+    "qa/announcement-message-contracts.cjs": "5183abd77dad75f63ca264df346810bb0c96619ed790c92f45cfd4a8aa37c932",
+    "qa/check-announcement-message-contracts.py": "6f71c38ed4cf75eb5d868f9bdad936ae73c4c2ce6760ad6cbbb3ac2407e4bb5b"
+  },
+  "observed": {
+    "productionRoots": [
+      "Main",
+      "Bar",
+      "Popup"
+    ],
+    "encoderCaseCount": 216,
+    "generatedCases": 200,
+    "seed": "0x0a110c10",
+    "fixedEncoderCases": 10,
+    "invalidCounterConstructionCases": 6,
+    "encoderFailures": [],
+    "refusalReplayChecksPassed": 12,
+    "notificationReplayTotal": 14,
+    "notificationReplayFailures": [
+      "dndKeepsHistoryWithoutNewSerial",
+      "criticalWithoutConsentIsPolite",
+      "optedCriticalIsAssertive",
+      "consentDoesNotEscalateOrdinary",
+      "dndSilencesOptedCritical",
+      "policyControlsAreIntegrated"
+    ],
+    "preExtractionSourceRevision": "abe216442",
+    "exactTwoBaselineOverrides": {
+      "Announcement.elm": "71bc1e29724266c26301716ea0a1c7452f02c9f67e140e1bd1ec33c5166d402f",
+      "OutcomeAnnouncements.elm": "158b22f574983da656838c4388c93cca1c7d9b044aaae83ee21153eae29b7586"
+    },
+    "wholeNotificationOutputByteIdentical": true,
+    "notificationOutputSHA256": "11b7eb5cb01c30244e33d9479d19bcaf49c4c1ddd4dbac8bf898d2b84e8ac3dd"
+  },
+  "limits": [
+    "No notification policy fix or waiver; closed emitted frames suggest setup/control reachability but cause unproven.",
+    "Message stays an existing public record alias and extensible encoder, not a new opaque validated constructor.",
+    "Encoder accepts some values rejected by unchanged receiver bounds; test input counter construction is not native/receiver admission.",
+    "No randomized event sequences or shrinker; failures retain full inputs.",
+    "Original native focus, keyboard, audible/braille and notification oracles remain open where unobserved.",
+    "Two qualification attempts reached; stop expanding notification investigation and select separate mandatory behavior debt."
+  ],
+  "graph": {
+    "builtUTC": "2026-10-29T22:54:33.440584+00:00",
+    "sha256": "4b89f33316ed9624bcd91a021b8c2d3b0d5681853f4a12a648f708db32fc40d9",
+    "GPU": "RTX5080Laptop CUDA",
+    "scope": "Navigation only; partial C parsing and lexical Elm."
+  },
+  "artifacts": {
+    "roots-build.json": "aa73031b7642dba0433247f5d78f969938fcf9038fbb63d27fb6e538904fd449",
+    "current-suite.json": "983056816f0850e693ce0014017933f201d6a1bf76dbc41e0be6e8e4f3fe2cb7",
+    "pre-extraction-suite.json": "1b623151f5ed49d551eb3b90dec172cb3b8b0dddc9b628d802a9a983159310a0",
+    "encoder-properties.json": "159dbfb0376165d3fb97f4f25afc4a266480717840fa472d555280bd4f75284c",
+    "refusal-replay.json": "356b423eb717455d142a2bc87fff901586b3180c44e9ec4e3cd0fb2b28a45b9b",
+    "notification-current.json": "11b7eb5cb01c30244e33d9479d19bcaf49c4c1ddd4dbac8bf898d2b84e8ac3dd",
+    "notification-baseline.json": "11b7eb5cb01c30244e33d9479d19bcaf49c4c1ddd4dbac8bf898d2b84e8ac3dd",
+    "baseline-runner.py": "fbede02ca159ba513d7ec6101eb8659cc7bf7392e06e733a791336e4f7f7b05f",
+    "BaselineAnnouncement.elm": "19df5f453cf7d831520bb1d92c63966cc4d4a8269af0234a9c3792df5d38abae",
+    "source-proposal.json": "6579dee9332418f3254e709da408116c23bf2bf0aa9b41ee1ff3a17fba74a580",
+    "architecture-review.md": "41bb4652a06bb8721a172fdaeae38c4ff1c2d376d2480c0b9ade0bd1954a140a",
+    "current-compile-AnnouncementMessageContracts.stdout": "0d445c06a1b53aa98e0e7c05c348661e76e1d9d0aa4ed046f0865e5b69d9212d",
+    "current-run-properties.stdout": "159dbfb0376165d3fb97f4f25afc4a266480717840fa472d555280bd4f75284c",
+    "current-compile-AnnouncementReplay.stdout": "2fda16457c5b6418a0f28e54de3f48c5b065c569ea09e29eb8de66ebbc63ba55",
+    "current-run-AnnouncementReplay.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "current-compile-NotificationAnnouncementReplay.stdout": "7d7f559ab95f33754214b699f7ac4664469a7ba8261eae35babc4b688e3de8a5",
+    "current-run-NotificationAnnouncementReplay.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "current-compile-AnnouncementMessageContracts.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "current-run-properties.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "current-compile-AnnouncementReplay.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "current-run-AnnouncementReplay.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "current-compile-NotificationAnnouncementReplay.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "current-run-NotificationAnnouncementReplay.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "baseline-compile-NotificationAnnouncementReplay.stdout": "e8cf59d8ebc8ba266e51e90c94e89471ecec9715bb7646faac70e5c9b256200b",
+    "baseline-run-NotificationAnnouncementReplay.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "baseline-compile-NotificationAnnouncementReplay.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "baseline-run-NotificationAnnouncementReplay.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "policy-import-closure.json": "6dfac9eb03054e42c0df08c68848d2b141c399275e419148d527f5e416feb451"
+  },
+  "sourcePathsByReference": {
+    "roots-build.json": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/announcement-message-build-root-v1/output/report.json",
+    "current-suite.json": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/announcement-contracts-1793314514348559091/report.json",
+    "pre-extraction-suite.json": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/announcement-policy-baseline-1793314684720600558/report.json",
+    "encoder-properties.json": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/announcement-contracts-1793314514348559091/run-properties.stdout",
+    "refusal-replay.json": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/announcement-contracts-1793314514348559091/AnnouncementReplay.json",
+    "notification-current.json": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/announcement-contracts-1793314514348559091/NotificationAnnouncementReplay.json",
+    "notification-baseline.json": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/announcement-policy-baseline-1793314684720600558/NotificationAnnouncementReplay.json",
+    "baseline-runner.py": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/announcement-policy-baseline-root-v1/check-baseline.py",
+    "BaselineAnnouncement.elm": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/announcement-contracts-1793314514348559091/workspace/qa/BaselineAnnouncement.elm",
+    "source-proposal.json": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/announcement-message-astra-v1/proposal.json",
+    "architecture-review.md": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/announcement-message-astra-v1/PROPOSAL.md",
+    "current-compile-AnnouncementMessageContracts.stdout": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/announcement-contracts-1793314514348559091/compile-AnnouncementMessageContracts.stdout",
+    "current-run-properties.stdout": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/announcement-contracts-1793314514348559091/run-properties.stdout",
+    "current-compile-AnnouncementReplay.stdout": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/announcement-contracts-1793314514348559091/compile-AnnouncementReplay.stdout",
+    "current-run-AnnouncementReplay.stdout": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/announcement-contracts-1793314514348559091/run-AnnouncementReplay.stdout",
+    "current-compile-NotificationAnnouncementReplay.stdout": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/announcement-contracts-1793314514348559091/compile-NotificationAnnouncementReplay.stdout",
+    "current-run-NotificationAnnouncementReplay.stdout": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/announcement-contracts-1793314514348559091/run-NotificationAnnouncementReplay.stdout",
+    "current-compile-AnnouncementMessageContracts.stderr": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/announcement-contracts-1793314514348559091/compile-AnnouncementMessageContracts.stderr",
+    "current-run-properties.stderr": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/announcement-contracts-1793314514348559091/run-properties.stderr",
+    "current-compile-AnnouncementReplay.stderr": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/announcement-contracts-1793314514348559091/compile-AnnouncementReplay.stderr",
+    "current-run-AnnouncementReplay.stderr": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/announcement-contracts-1793314514348559091/run-AnnouncementReplay.stderr",
+    "current-compile-NotificationAnnouncementReplay.stderr": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/announcement-contracts-1793314514348559091/compile-NotificationAnnouncementReplay.stderr",
+    "current-run-NotificationAnnouncementReplay.stderr": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/announcement-contracts-1793314514348559091/run-NotificationAnnouncementReplay.stderr",
+    "baseline-compile-NotificationAnnouncementReplay.stdout": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/announcement-policy-baseline-1793314684720600558/compile-NotificationAnnouncementReplay.stdout",
+    "baseline-run-NotificationAnnouncementReplay.stdout": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/announcement-policy-baseline-1793314684720600558/run-NotificationAnnouncementReplay.stdout",
+    "baseline-compile-NotificationAnnouncementReplay.stderr": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/announcement-policy-baseline-1793314684720600558/compile-NotificationAnnouncementReplay.stderr",
+    "baseline-run-NotificationAnnouncementReplay.stderr": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/announcement-policy-baseline-1793314684720600558/run-NotificationAnnouncementReplay.stderr"
+  }
+}
