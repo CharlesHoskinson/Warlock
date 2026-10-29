@@ -6986,7 +6986,7 @@
         {
           "name": "search-no-match",
           "oracle": "no-match message and query remain reachable without launch",
-          "status": "partial",
+          "status": "accepted",
           "evidence": [
             {
               "path": "implementation/warlock/qa/evidence/launcher-search/manifest.json",
@@ -7034,15 +7034,119 @@
                 "independent": false,
                 "disposition": "Owner-observed native/compiled/model result; independent acceptance remains open."
               }
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/search-no-match-20261029/manifest.json",
+              "sha256": "ebf696398e7a07bc660ed0215335e5783368da6900909d6cd9daf3999fd0bb50",
+              "scope": "Independent literal no-match acceptance using exact current compiled/native/keyboard/real AT observation; no new launch during no-match interval."
             }
           ],
-          "missingObservation": "Native AT/IME consumers and independent original scenario review remain open; the broad UX-023 surface requirement and UI-005 search policy are not accepted from these owner observations.; Output removal/replacement/movement between native journal delivery and host topology delivery, mirrored/rotated/fractional-scale hardware, disabled/DPMS transitions and wider hotplug/lock schedules need direct native qualification. The model abstracts native journal admission and host matching in one receive, not every transport interleaving.; Initial paint on an occluded output, unrelated output/caption/fullscreen/group/preview paths, resource budgets, representative journeys, reproducible packaging and reversible deployment remain separate release work.",
+          "missingObservation": null,
           "reviewerDisposition": {
-            "name": "root-shortcut-output",
-            "independent": false,
-            "disposition": "Owner-observed native/compiled/model result; independent acceptance remains open."
+            "name": "quint-5",
+            "independent": true,
+            "disposition": "accepted-original-search-no-match",
+            "path": "implementation/warlock/qa/evidence/search-no-match-20261029/independent-review.md",
+            "sha256": "e2178b3598177459c1f08804d95366115af5e562eef3a7c4e85b9e4cff3d84b7"
           },
-          "observation": "Native Apps shortcuts now open on the output of the actual keyboard recipient after a cancelled cross-output drag. The shared Elm controller resolves the press-time live output against current issued view geometry; duplicate, missing, moved, retired, ambiguous and pointer-blocked destinations cannot relocate or replay. A fresh valid shortcut clears only obsolete shortcut-refusal feedback. The original two-output drag/cancel/capture journey passes, followed by actual popup bounds, painted control pixels, physical-keyboard no-match/query/focus retention and Escape without launch or window mutation. The unchanged all-nine-surface keyboard journey passes on the same core/plugin/host tuple with normal cleanup."
+          "observation": "Native Apps shortcuts now open on the output of the actual keyboard recipient after a cancelled cross-output drag. The shared Elm controller resolves the press-time live output against current issued view geometry; duplicate, missing, moved, retired, ambiguous and pointer-blocked destinations cannot relocate or replay. A fresh valid shortcut clears only obsolete shortcut-refusal feedback. The original two-output drag/cancel/capture journey passes, followed by actual popup bounds, painted control pixels, physical-keyboard no-match/query/focus retention and Escape without launch or window mutation. The unchanged all-nine-surface keyboard journey passes on the same core/plugin/host tuple with normal cleanup.",
+          "priorObservations": [
+            {
+              "name": "search-no-match",
+              "oracle": "no-match message and query remain reachable without launch",
+              "status": "partial",
+              "evidence": [
+                {
+                  "path": "implementation/warlock/qa/evidence/launcher-search/manifest.json",
+                  "sha256": "c36810d3418807d241e9cc36b3d8a1b78796737135c5c7bcd05123dd631d9d43",
+                  "scope": "Compiled current-query/ranking and scoped admission; actual native typing, one identity-bound Enter request, refused stale catalog, preserved query/focus and observation-only refresh/no replacement. Popup pixels are black; native visual/AT/IME acceptance is withheld."
+                },
+                {
+                  "path": "implementation/warlock/qa/evidence/popup-reopen/manifest.json",
+                  "sha256": "307d4a39e5e5593eda5d546079c22d67bab09787b581a54a40c6784938b79796",
+                  "scope": "Native search/refusal input and DOM work; initial and filtered controls paint. After actual close/reopen, refusal and no-match control interiors are black. Neither hide before detach nor GL initialization repaired it. Two attempted fixes are retired; no current GUI acceptance."
+                },
+                {
+                  "path": "implementation/warlock/qa/evidence/popup-remap/manifest.json",
+                  "sha256": "9a13918f1b4d2464987bfdef9dd85ca7e4ee701be171169e04bd5466d4b1bf5e",
+                  "scope": "Current reopened taskbar controls paint and select a workspace-2 restore with one correlated native receipt, membership/output preserved, actual GTK keyboard recipient and restored pixels. Launcher initial, filtered, reopened refused and no-match controls paint; native Enter submits one identity-bound launch, refusal preserves query/focus, refresh never launches a replacement."
+                },
+                {
+                  "path": "implementation/warlock/qa/evidence/shortcut-current-output/manifest.json",
+                  "sha256": "bd047458c9f4ad494d2e1c69661f384c09c0c9f968186a6dd5fb5c1b1489febc",
+                  "scope": "Native Apps shortcuts now open on the output of the actual keyboard recipient after a cancelled cross-output drag. The shared Elm controller resolves the press-time live output against current issued view geometry; duplicate, missing, moved, retired, ambiguous and pointer-blocked destinations cannot relocate or replay. A fresh valid shortcut clears only obsolete shortcut-refusal feedback. The original two-output drag/cancel/capture journey passes, followed by actual popup bounds, painted control pixels, physical-keyboard no-match/query/focus retention and Escape without launch or window mutation. The unchanged all-nine-surface keyboard journey passes on the same core/plugin/host tuple with normal cleanup.",
+                  "sourceBaseRevision": "0155b0a1bc28c7ade2bc88a7f56a691791a912c7",
+                  "sourceHashes": {
+                    "implementation/warlock/src/Shortcuts.elm": "05399194936c24b85e5cda505eed47fae163109a5e8a6a513f9008c420b9309d",
+                    "implementation/warlock/src/OutputController.elm": "2a4aa85bdc7ba3b0caa94b8dbfd1538d791ec78f33040a4221a1ef1fb701c53e",
+                    "implementation/warlock/src/Desktop.elm": "176ddaf19e5dfb6c2362ac9c9c46d296155cd38e916e4cd28938a591648ed711",
+                    "implementation/warlock/native/authority.cpp": "4dc251499eaff2e78f87fb1fda93be98fcac251333ff80a3fe25943a6819968e",
+                    "implementation/warlock/native/shared-host.c": "e511725b1b42e94d56c65a871114fe58fab3dd564221ce1201d479f9abddf5ed",
+                    "implementation/warlock/adapter/effect_endpoint.py": "c2d2bf6cf3170f57743fa1d136c4c7c9983a1b978f7e286d819ab79ca7b502a5",
+                    "implementation/warlock/qa/shortcut-output.qnt": "63058352261e32a87267a79b7a53895fd497ca48061785cd493821f856fec153",
+                    "implementation/warlock/qa/shortcut-output_test.qnt": "ef30bc8b1c6ee7195ce587738125440dcbe1959d100bb5d2bfb173125b865f83",
+                    "implementation/warlock/qa/check-shortcut-output.py": "03669ea6b298d9820bcc39ef2ae96c13858aecaa10848761052ed76b022e218a",
+                    "implementation/warlock/qa/ShortcutOutputReplay.elm": "7699e70f9179a4952945b2b89cdf1ab7da32454c62c5d0c7fb1c44c19b9fc619",
+                    "implementation/warlock/qa/check-search.py": "f088a87c2ba64ef33ea098df215180ca7080ba141efecbf5d802d2a6efeab5f3",
+                    "implementation/warlock/qa/native-window-feedback.py": "3ad96b5fb47a7b1edc37c2ddc84e9b0ccd1db724e13b52da7817c3df5085c25a",
+                    "implementation/warlock/qa/native-shortcut-output.py": "44d0167f0161ac36d903ef295792e8718710e076dfc057c82b7f46c685188454",
+                    "implementation/warlock/qa/current-search-build.json": "2407cb4c95d4e059c0156e6d82cdb807054b50a4f3a17a2318f92274c96cad1c",
+                    "implementation/warlock/qa/current-native-pair.json": "eb970c734aaa4961cdee9c1adda8c0eb06f40ccbfb795edc90f986d8f5d72431",
+                    "implementation/warlock/assets/elm.js": "bfbfc8fabf8e4df0bf4baa05493038288677cce5b789dc84c4bbb02f76e1dbd0",
+                    "implementation/warlock/assets/bar.js": "1b490122e33ec692c225c2f6936d2e05eb23cc0ec91c9fa0d2a16469c030cff1",
+                    "implementation/warlock/assets/popup.js": "c12dc5323bbaaf2d83cff1799b1e0e72c861d012f6db0da39d50adb62648f933",
+                    "implementation/warlock/README.md": "ff78ee69bf7dfc997e64b023eacd986a048493d132bea52057111981139f2035"
+                  },
+                  "reviewerDisposition": {
+                    "name": "root-shortcut-output",
+                    "independent": false,
+                    "disposition": "Owner-observed native/compiled/model result; independent acceptance remains open."
+                  }
+                }
+              ],
+              "missingObservation": "Native AT/IME consumers and independent original scenario review remain open; the broad UX-023 surface requirement and UI-005 search policy are not accepted from these owner observations.; Output removal/replacement/movement between native journal delivery and host topology delivery, mirrored/rotated/fractional-scale hardware, disabled/DPMS transitions and wider hotplug/lock schedules need direct native qualification. The model abstracts native journal admission and host matching in one receive, not every transport interleaving.; Initial paint on an occluded output, unrelated output/caption/fullscreen/group/preview paths, resource budgets, representative journeys, reproducible packaging and reversible deployment remain separate release work.",
+              "reviewerDisposition": {
+                "name": "root-shortcut-output",
+                "independent": false,
+                "disposition": "Owner-observed native/compiled/model result; independent acceptance remains open."
+              },
+              "observation": "Native Apps shortcuts now open on the output of the actual keyboard recipient after a cancelled cross-output drag. The shared Elm controller resolves the press-time live output against current issued view geometry; duplicate, missing, moved, retired, ambiguous and pointer-blocked destinations cannot relocate or replay. A fresh valid shortcut clears only obsolete shortcut-refusal feedback. The original two-output drag/cancel/capture journey passes, followed by actual popup bounds, painted control pixels, physical-keyboard no-match/query/focus retention and Escape without launch or window mutation. The unchanged all-nine-surface keyboard journey passes on the same core/plugin/host tuple with normal cleanup."
+            }
+          ],
+          "verificationScope": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+          "sourceTuple": {
+            "sourceRevision": "3d317c0aee5f88b00e3f74006610979372e1bbde",
+            "runtimeSourceHashes": {
+              "src/Desktop.elm": "1b5b48fc5ca71c6e11bd54ea6ab723f5a37f4d383d6a59c99d14d83b005d5033",
+              "src/Surface.elm": "a660a4641a9f834c6198bce1e8049b3dd0be40cb74be1cfe1d5e14cfd0cdaa1d",
+              "src/AdapterNotice.elm": "32c4c13e599e843aa6da4a2302cb44da233226eb79d2561f551d0640fe9dd409",
+              "adapter/catalog_authority.py": "ad20204afd3b203eb956918300c8da4cb4765b3c5ad86e701b0257a54b8fb9cc",
+              "adapter/catalog_transport.py": "43bd1cd1059b87ce4d349d72e4b2a917ac1bdc3dacda2f60563fa621e05a4b84"
+            },
+            "core": {
+              "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-build/Hyprland",
+              "sha256": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e"
+            },
+            "plugin": {
+              "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/authority/elm-window-geometry-authority.so",
+              "sha256": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c"
+            },
+            "aquamarine": {
+              "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/lib/libaquamarine.so.0.15.0",
+              "sha256": "667a22d535aade4e4a26134e39028a87fb3f963c28b7bf7ff79da684bb014ecd"
+            },
+            "host": {
+              "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/elm-host",
+              "sha256": "4377b11ce0afe9e1072210666aa872118b032995275a20657058771e5e6c8347",
+              "heldBuild": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/host-build-report.json",
+              "heldBuildSHA256": "691806471ff599503a20067aa0b90bf914b93a1ee5985198cdc79fb92ff975bf"
+            },
+            "toolchain": {
+              "toolchainManifestSHA256": "fe3d29078d30c6cf9bd431233c5eed1ad4550e2873ff55739d50a5a87a97edaa",
+              "compilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+              "nodeSHA256": "caa24debe02770c92a70677e2a62ca98890150e7ac1c17bcfe31bcc98cc89943"
+            }
+          }
         },
         {
           "name": "search-unavailable",
@@ -14597,5 +14701,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-29T16:10:51.567019+00:00"
+  "updatedUTC": "2026-10-29T16:15:16.218564+00:00"
 }

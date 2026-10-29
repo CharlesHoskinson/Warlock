@@ -1,37 +1,39 @@
 {
   "schema": 1,
   "owner": "sol",
-  "updatedUTC": "2026-10-29T15:50:01.346101+00:00",
+  "updatedUTC": "2026-10-29T16:11:58.073263+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "launcher-selected-identity-removed",
+    "id": "launcher-empty-unavailable-recovery",
     "requirements": [
       "ELM-UI-005"
     ],
     "scenarios": [
-      "search-removed"
+      "search-no-match",
+      "search-unavailable"
     ],
     "paths": [
       "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/src/Launch.elm",
-      "implementation/warlock/src/Catalog.elm",
+      "implementation/warlock/src/Surface.elm",
+      "implementation/warlock/src/AdapterNotice.elm",
       "implementation/warlock/adapter/catalog_authority.py",
-      "implementation/warlock/qa/SearchRemovedReplay.elm",
-      "implementation/warlock/qa/native-launcher-removed-portable.py",
+      "implementation/warlock/adapter/catalog_transport.py",
+      "implementation/warlock/qa/native-launcher-unavailable-portable.py",
       "implementation/warlock/README.md"
     ],
-    "before": "Selected identity removal before Enter has historical partial evidence only. Current UX029 refusal demonstrates native removal/refusal but does not observe current read-only Refresh reconciliation to no-match with physical result and independent original UI005 disposition.",
-    "after": "A removed selected catalog identity cannot launch a replacement; query remains and reachable Refresh reconciles current selection to current catalog/no-match. Fix only an observed source defect.",
+    "before": "Current search-removed accepted. Same actual current44check nativeAT record may cover original no-match but requires its own independent disposition. Unavailable provider/retry has historical source/pair evidence only; actual current genuine provider-failure, query retention and keyboard/AT retry require qualification.",
+    "after": "No matching applications leaves query/recovery reachable without launch. A genuine unavailable catalog visibly exposes keyboard and actual AT retry; explicit recovery preserves current query and never launches automatically. Fix only observed source defects.",
     "verification": [
-      "Focused current compiled Desktop/Launch/Catalog removed-identity replay with exact generation and stale-selection negatives; protected current-tuple physical Enter and read-only Refresh with actual receipts/no recipient, reconciled selection and independently viewed native pixels.",
-      "Original UI005 named native/keyboard/applicable AT and frozen product-policy oracle remain authoritative. Existing UX029 evidence may cover unchanged intervals; no extra unrelated IME gate, no whole UI005 or release claim. Original6sec5sec/core1/owning ABI/normalcleanup."
+      "Review exact original no-match oracle against retained current compiled/native/AT44 evidence without automatic acceptance or rerun. Preserve prior partial reports.",
+      "For search-unavailable reuse genuine owned desktop metadata beyond unchanged512-unit limit from existing native-launcher-unavailable.py, actual nullsnapshot/currentbinding/query/refusalstate, physical keyboard and real guardedATRefresh retry, restored valid metadata/currentcatalog and no launch/window effect. Exact owning source/pair/toolchain and original6sec5sec/core1/privatebus/normalcleanup.",
+      "No whole UI005, native search-race schedule, AT refusal interval, IME, renderer-fix, hardware/resource/release/mainOmarchy claim."
     ],
-    "owner": "root-search-removed",
-    "participantRecord": ".warlock-contributor/launcher-selected-identity-removed.json"
+    "owner": "root-launcher-recovery",
+    "participantRecord": ".warlock-contributor/launcher-empty-unavailable-recovery.json"
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -1929,6 +1931,33 @@
       "owner": "root-pin-order",
       "participantRecord": ".warlock-contributor/application-pin-order-current-evidence.json",
       "outcome": "Independent quint-5 accepts original ux-004 and whole ELM-UX-004: actual current compiled replay13 and retained physical pin/reorder/storage/restart evidence. Relevant runtime and binary tuple match; unrelated release_builder-only source drift retained. Claim recorded against immutable source revision; canonical manifest/ledger integration pending root review."
+    },
+    {
+      "id": "launcher-selected-identity-removed",
+      "requirements": [
+        "ELM-UI-005"
+      ],
+      "scenarios": [
+        "search-removed"
+      ],
+      "paths": [
+        "implementation/warlock/src/Desktop.elm",
+        "implementation/warlock/src/Launch.elm",
+        "implementation/warlock/src/Catalog.elm",
+        "implementation/warlock/adapter/catalog_authority.py",
+        "implementation/warlock/qa/SearchRemovedReplay.elm",
+        "implementation/warlock/qa/native-launcher-removed-portable.py",
+        "implementation/warlock/README.md"
+      ],
+      "before": "Selected identity removal before Enter has historical partial evidence only. Current UX029 refusal demonstrates native removal/refusal but does not observe current read-only Refresh reconciliation to no-match with physical result and independent original UI005 disposition.",
+      "after": "A removed selected catalog identity cannot launch a replacement; query remains and reachable Refresh reconciles current selection to current catalog/no-match. Fix only an observed source defect.",
+      "verification": [
+        "Focused current compiled Desktop/Launch/Catalog removed-identity replay with exact generation and stale-selection negatives; protected current-tuple physical Enter and read-only Refresh with actual receipts/no recipient, reconciled selection and independently viewed native pixels.",
+        "Original UI005 named native/keyboard/applicable AT and frozen product-policy oracle remain authoritative. Existing UX029 evidence may cover unchanged intervals; no extra unrelated IME gate, no whole UI005 or release claim. Original6sec5sec/core1/owning ABI/normalcleanup."
+      ],
+      "owner": "root-search-removed",
+      "participantRecord": ".warlock-contributor/launcher-selected-identity-removed.json",
+      "outcome": "COMPLETE exact original UI005/search-removed accepted independently after current compiled14, nativekeyboard36 and real AT44. Actual Search/no-match/Orca focusedRefresh/realpress/correlatedcatalog/no replacement observed; direct ATText query value not claimed. Source/evidencee4a0bc5ed +ledger3d317c0ae published; wholeUI005 remains partial."
     }
   ],
   "lastSlice": {

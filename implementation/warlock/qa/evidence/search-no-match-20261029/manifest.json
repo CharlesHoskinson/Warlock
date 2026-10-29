@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "requirement": "ELM-UI-005",
+  "scenario": "search-no-match",
+  "status": "accepted-on-observed-tuple",
+  "scenarioAccepted": true,
+  "requirementAccepted": false,
+  "releaseAccepted": false,
+  "oracle": "no-match message and query remain reachable without launch",
+  "verificationScope": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+  "independentReview": {
+    "file": "independent-review.md",
+    "sha256": "e2178b3598177459c1f08804d95366115af5e562eef3a7c4e85b9e4cff3d84b7",
+    "name": "quint-5",
+    "independent": true,
+    "disposition": "accepted-original-search-no-match"
+  },
+  "sharedEvidence": {
+    "path": "implementation/warlock/qa/evidence/search-removed-at-20261029/manifest.json",
+    "sha256": "a22bcbc208c6b9d1e17372c243ff04857d9c02432168ecbd8e5c737604ed3612",
+    "scope": "Same actual current compiled14/nativekeyboard/AT44 evidence independently reviewed against separate original no-match oracle. No additional QA run or automatic carry-over acceptance."
+  },
+  "observation": "Current query files against generation2 catalog containing Editor only remains visible with no-match message and reachable current Refresh. Real Search/no-match AT nodes, Orca focus and real AT Refresh retain that state with no new launch or recipient. Earlier one Files launch request was refused before no-match interval; zero whole-session requests are not claimed.",
+  "sourceTuple": {
+    "sourceRevision": "3d317c0aee5f88b00e3f74006610979372e1bbde",
+    "runtimeSourceHashes": {
+      "src/Desktop.elm": "1b5b48fc5ca71c6e11bd54ea6ab723f5a37f4d383d6a59c99d14d83b005d5033",
+      "src/Surface.elm": "a660a4641a9f834c6198bce1e8049b3dd0be40cb74be1cfe1d5e14cfd0cdaa1d",
+      "src/AdapterNotice.elm": "32c4c13e599e843aa6da4a2302cb44da233226eb79d2561f551d0640fe9dd409",
+      "adapter/catalog_authority.py": "ad20204afd3b203eb956918300c8da4cb4765b3c5ad86e701b0257a54b8fb9cc",
+      "adapter/catalog_transport.py": "43bd1cd1059b87ce4d349d72e4b2a917ac1bdc3dacda2f60563fa621e05a4b84"
+    },
+    "core": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-build/Hyprland",
+      "sha256": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e"
+    },
+    "plugin": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/authority/elm-window-geometry-authority.so",
+      "sha256": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c"
+    },
+    "aquamarine": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/lib/libaquamarine.so.0.15.0",
+      "sha256": "667a22d535aade4e4a26134e39028a87fb3f963c28b7bf7ff79da684bb014ecd"
+    },
+    "host": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/elm-host",
+      "sha256": "4377b11ce0afe9e1072210666aa872118b032995275a20657058771e5e6c8347",
+      "heldBuild": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/host-build-report.json",
+      "heldBuildSHA256": "691806471ff599503a20067aa0b90bf914b93a1ee5985198cdc79fb92ff975bf"
+    },
+    "toolchain": {
+      "toolchainManifestSHA256": "fe3d29078d30c6cf9bd431233c5eed1ad4550e2873ff55739d50a5a87a97edaa",
+      "compilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+      "nodeSHA256": "caa24debe02770c92a70677e2a62ca98890150e7ac1c17bcfe31bcc98cc89943"
+    }
+  },
+  "missingObservationsForNamedScenario": [],
+  "limits": [
+    "No direct AT Text query-value, no-match announcement, audible/braille or general AT acceptance.",
+    "Image is after keyboard Refresh and before AT press; post-AT body/receipt observed without new image.",
+    "Other UI005 unavailable/race/refused scenarios and whole requirement remain open.",
+    "No all-catalog/all-schedule, IME, renderer fix, hardware/resource, main deployment or release acceptance."
+  ]
+}

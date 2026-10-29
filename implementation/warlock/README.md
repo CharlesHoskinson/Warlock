@@ -56,7 +56,10 @@ compiled replay, actual keyboard/native journey, and real AT-SPI Refresh action
 with current Search/no-match nodes and Orca focus. See the
 [observations and limits](qa/evidence/search-removed-at-20261029/manifest.json).
 Direct query-value reading through AT Text, no-match announcements and the
-other UI-005 scenarios remain separate obligations.
+`search-unavailable`, `search-race` and `search-refused` remain open.
+The original `search-no-match` scenario has its own
+[independent acceptance](qa/evidence/search-no-match-20261029/manifest.json)
+using the same current query/message and keyboard/AT observations.
 
 The installed Omarchy predecessor now has a bounded private startup observation:
 its menu, workspaces and clock paint, and its owned process group retires without
