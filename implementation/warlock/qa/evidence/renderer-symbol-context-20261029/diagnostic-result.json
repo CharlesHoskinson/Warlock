@@ -1,0 +1,37 @@
+{
+  "candidateSignals": [
+    "SIGABRT"
+  ],
+  "observedStops": [
+    "SIGABRT"
+  ],
+  "snapshots": [
+    {
+      "candidate": "SIGABRT",
+      "index": 1,
+      "mappingEvidence": {
+        "maps": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-new-instance/diagnostics/ancestor-qualified-symbols-v1/diagnostic-maps-1.txt",
+        "modules": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-new-instance/diagnostics/ancestor-qualified-symbols-v1/diagnostic-modules-1.json",
+        "objects": 200,
+        "buildIds": 0
+      }
+    }
+  ],
+  "preReleaseMappings": {
+    "maps": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-new-instance/diagnostics/ancestor-qualified-symbols-v1/diagnostic-maps-0.txt",
+    "modules": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-new-instance/diagnostics/ancestor-qualified-symbols-v1/diagnostic-modules-0.json",
+    "objects": 200,
+    "buildIds": 0
+  },
+  "solibStatus": "",
+  "gdbExitEvents": [
+    {
+      "exitCode": null,
+      "exitSignal": "6"
+    }
+  ],
+  "rendererProcessDeathObserved": true,
+  "source": "ancestor diagnostic",
+  "diagnosticOnly": true,
+  "acceptance": false
+}

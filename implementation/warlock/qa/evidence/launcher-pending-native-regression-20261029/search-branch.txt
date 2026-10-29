@@ -1,0 +1,114 @@
+    else:
+     click(wait(lambda:(projection() or {}).get('openApplications')))
+     wait(lambda:field_value()=='' and (popup_body() or {}).get('focus')=='launcher-search')
+     check('EmptyCatalogSearchIsCurrent',not launches() and not journal())
+     for code in [33,23,38,18,31]:key(code)
+     def search_current():
+      body=popup_body();p=projection()
+      if not body or not p or p.get('phase')!='Coherent' or p.get('mode')!='applications' or body.get('publication')!=p.get('publication') or not body.get('lease') or not body.get('documentFocused') or body.get('focus')!='launcher-search':return None
+      fields=[f for f in body.get('fields',[]) if f.get('id')=='launcher-search' and not f.get('disabled') and f.get('value')=='files']
+      choices=[b for b in body.get('buttons',[]) if b.get('identity')=='entry:warlock-files' and b.get('accessibleName')=='Open Files' and not b.get('disabled')]
+      return (body,choices[0]) if len(fields)==1 and len(choices)==1 else None
+     selected,button=wait(search_current);lease=selected['lease'];publication=selected['publication'];identity=button['identity']
+     check('SearchSelectsOneCurrentEntry',identity=='entry:warlock-files' and not launches() and not journal(),body=selected)
+     report['launcherSelected']={'lease':lease,'publication':publication,'identity':identity,'entry':'warlock-files'}
+     if LAUNCHER_MODE=='refused':desktop.unlink()
+     current=search_current();check('CurrentFocusedSelectionBeforePhysicalEnter',bool(current and current[0]['lease']==lease and current[0]['publication']==publication and current[1]['identity']==identity))
+     refusal_pre_enter=current[0];report['refusalPreEnterFocus']={'body':refusal_pre_enter,'focus':refusal_pre_enter.get('focus'),'focusIdentity':refusal_pre_enter.get('focusIdentity')}
+     # Reuse the original keyboard-shell persistent FIFO lifecycle for keydown
+     # and keyup on the same owned Wayland virtual keyboard.
+     refusal_fifo=OUTPUT/'refusal-keyboard.fifo';os.mkfifo(refusal_fifo,0o600);chord_writer=os.open(refusal_fifo,os.O_RDWR|os.O_NOFOLLOW)
+     refusal_wrapper=OUTPUT/'refusal-keyboard-input.py';refusal_wrapper.write_text('import os,stat,sys\nfd=os.open(sys.argv[1],os.O_RDONLY|os.O_NOFOLLOW)\nst=os.fstat(fd)\nassert stat.S_ISFIFO(st.st_mode) and st.st_uid==os.getuid() and stat.S_IMODE(st.st_mode)==0o600\nos.dup2(fd,0);os.close(fd)\nos.execv(sys.argv[2],[sys.argv[2]])\n')
+     chord_keyboard=s.host.launch('chord-keyboard',['/usr/bin/python3','-B',str(refusal_wrapper),str(refusal_fifo),str(keyboard)],env=s.env)
+     report['refusalPersistentInput']={'wrapper':str(refusal_wrapper),'sha256':sha(refusal_wrapper),'fifoMode':'0600','commands':[]}
+     def refusal_physical(commands):
+      assert chord_keyboard.poll() is None
+      log_path=OUTPUT/'chord-keyboard.log';before_ready=log_path.read_text().splitlines().count('ready');raw_commands=(commands+'\nsync\n').encode()
+      assert len(raw_commands)<=4096 and os.write(chord_writer,raw_commands)==len(raw_commands)
+      report['refusalPersistentInput']['commands'].append(commands);wait(lambda:log_path.read_text().splitlines().count('ready')>before_ready)
+     refusal_physical('key 28 1')
+     def refusal_invoker_after_keydown():
+      body=popup_body();p=projection()
+      if not body or not p or p.get('phase')!='Coherent' or p.get('mode')!='applications' or body.get('lease')!=lease or body.get('publication')!=publication or p.get('publication')!=publication or not body.get('documentFocused') or body.get('focusIdentity')!=identity:return None
+      entries=[item for item in body.get('buttons',[]) if item.get('identity')==identity and item.get('id')==body.get('focus') and not item.get('disabled')]
+      fields=[item for item in body.get('fields',[]) if item.get('id')=='launcher-search' and item.get('value')=='files']
+      return body if len(entries)==1 and len(fields)==1 and not launches() and not journal() else None
+     refusal_invoker=wait(refusal_invoker_after_keydown);check('ActualFocusedInvokerAfterKeydownBeforeDispatch',not launches() and not journal() and refusal_invoker['focusIdentity']==identity,body=refusal_invoker)
+     report['refusalActualInvokerBeforeDispatch']={'body':refusal_invoker,'identity':identity,'launchCount':len(launches())}
+     refusal_physical('key 28 0\nsleep 100')
+     def outcomes():return [json.loads(line.split(': ',1)[1]) for line in text().splitlines() if line.startswith('backend-frame: ') and json.loads(line.split(': ',1)[1]).get('kind')=='application-launch-outcome']
+     wait(lambda:len(launches())==1 and len(outcomes())==1)
+     request=launches()[0];response=outcomes()[0];outcome=response['outcome']
+     check('OneIdentityBoundCorrelatedNativeOutcome',request['intent']['entry']=='warlock-files' and response['binding']==request['binding'] and outcome['intent']==request['intent'] and outcome['status']==('Submitted' if LAUNCHER_MODE=='accepted' else 'Refused') and len(launches())==1 and len(outcomes())==1 and not journal(),request=request,response=response)
+     if LAUNCHER_MODE=='accepted':
+      def recipients():
+       if not LAUNCH_EVENTS.exists():return []
+       return [json.loads(line) for line in LAUNCH_EVENTS.read_text().splitlines() if line]
+      wait(lambda:len(recipients())==1)
+      check('OneActualGioRecipient',len(recipients())==1 and recipients()[0]['marker']=='launcher-fixture' and outcome.get('reason')=='native-submission-accepted',recipients=recipients())
+      def success_bar():
+       body=bar_body();p=projection();feedback=(body or {}).get('feedback') or {}
+       if not body or not p or p.get('phase')!='Coherent' or body.get('publication')!=p.get('publication'):return None
+       if feedback.get('text')!='Launch submitted.' or feedback.get('display')=='none' or feedback.get('clip')!='none' or feedback.get('width',0)<=0 or feedback.get('height',0)<=0:return None
+       if feedback.get('x',-1)<0 or feedback.get('y',-1)<0 or feedback['x']+feedback['width']>body['viewportWidth'] or feedback['y']+feedback['height']>body['viewportHeight']:return None
+       return body
+      visible=wait(success_bar);check('CorrelatedSuccessSurfaceReportsNoRefusal','refused' not in visible.get('text','').lower(),bar=visible)
+      screenshot=OUTPUT/'launcher-accepted-full.png';helper(['/usr/bin/grim',str(screenshot)]);import gi;gi.require_version('GdkPixbuf','2.0');from gi.repository import GdkPixbuf;image=GdkPixbuf.Pixbuf.new_from_file(str(screenshot));check('FullPrivateOutputCaptureDimensions',(image.get_width(),image.get_height())==(800,600))
+      after=wait(success_bar);check('NoDuplicateAfterSuccessCapture',len(launches())==1 and len(outcomes())==1 and len(recipients())==1 and not journal(),bar=after)
+      report['launcherVisualEvidence']={'path':str(screenshot),'sha256':sha(screenshot),'barBefore':visible,'barAfter':after,'manualPaintedSuccessReviewRequired':True,'nativeAcceptance':False}
+     else:
+      def refusal_popup():
+       body=popup_body();p=projection()
+       return body if body and p and p.get('phase')=='Coherent' and p.get('mode')=='applications' and body.get('publication')==p.get('publication') and body.get('lease') and 'refused' in body.get('text','').lower() and body.get('documentFocused') and (body.get('focus')=='launcher-search' or any(item.get('id')==body.get('focus') and item.get('identity')==identity for item in body.get('buttons',[]))) else None
+      refused=wait(refusal_popup);check('RefusalPreservesSearchWithoutDuplicate',field_value()=='files' and len(launches())==1 and len(outcomes())==1 and not journal(),body=refused)
+      check('RefusalRestoresActualLogicalInvokerAndQuery',refused.get('focusIdentity')==refusal_invoker.get('focusIdentity')==identity and any(f.get('id')=='launcher-search' and f.get('value')=='files' for f in refused.get('fields',[])),invoker=refusal_invoker,refused=refused)
+      report['refusalBeforeNavigationFocus']={'body':refused,'focus':refused.get('focus'),'focusIdentity':refused.get('focusIdentity'),'sameLogicalInvoker':True,'doesNotClaimUninterruptedPendingFocus':True}
+      screenshot=OUTPUT/'launcher-refused-full.png';helper(['/usr/bin/grim',str(screenshot)]);import gi;gi.require_version('GdkPixbuf','2.0');from gi.repository import GdkPixbuf;image=GdkPixbuf.Pixbuf.new_from_file(str(screenshot));check('FullPrivateOutputCaptureDimensions',(image.get_width(),image.get_height())==(800,600))
+      check('NoDuplicateOrRecipientAfterRefusalCapture',len(launches())==1 and len(outcomes())==1 and not LAUNCH_EVENTS.exists() and not journal(),body=wait(refusal_popup))
+      report['launcherVisualEvidence']={'path':str(screenshot),'sha256':sha(screenshot),'popup':refused,'manualPaintedRefusalReviewRequired':True,'nativeAcceptance':False}
+      def refusal_current():
+       body=popup_body();p=projection()
+       if not body or not p or p.get('phase')!='Coherent' or p.get('mode')!='applications' or body.get('publication')!=p.get('publication') or body.get('lease')!=refused['lease'] or not body.get('documentFocused') or 'refused' not in body.get('text','').lower():return None
+       fields=[f for f in body.get('fields',[]) if f.get('id')=='launcher-search' and not f.get('disabled') and f.get('value')=='files']
+       return body if len(fields)==1 else None
+      refusal_body=wait(refusal_current);refusal_pre_nav_focus=refusal_body['focus'];refusal_pub=refusal_body['publication'];refusal_lease=refusal_body['lease']
+      def refusal_at_observation():
+       snapshot_at=at_observe();reader_at=(snapshot_at.get('reader') or {}).get('focus') or {};nodes_at=[n for n in snapshot_at['nodes'] if n.get('pid')==web.pid and any(a.get('role')=='document web' for a in n.get('ancestors',[]))]
+       focus_at=[n for n in nodes_at if (n.get('attributes') or {}).get('id')==refusal_pre_nav_focus and n.get('identity') and {'focused','showing','visible'}<=set(n.get('states',[]))]
+       search_at=[n for n in nodes_at if n.get('name')=='Search applications' and (n.get('attributes') or {}).get('id')=='launcher-search' and {'enabled','sensitive','showing','visible'}<=set(n.get('states',[]))]
+       statuses_at=[n for n in nodes_at if 'refused' in n.get('name','').lower() and {'showing','visible'}<=set(n.get('states',[]))]
+       return (snapshot_at,focus_at[0],search_at[0],statuses_at) if len(focus_at)==1 and len(search_at)==1 and statuses_at and reader_at.get('identity')==focus_at[0]['identity'] else None
+      refusal_at_snapshot,refusal_at_focus,refusal_at_search,refusal_at_status=wait(refusal_at_observation);refusal_current_body=wait(refusal_current)
+      check('ActualATRefusedSearchAndFocusedReaderBeforeNavigation',refusal_current_body['lease']==refusal_lease and refusal_current_body['publication']==refusal_pub and refusal_current_body['focus']==refusal_pre_nav_focus,focus=refusal_at_focus,search=refusal_at_search,status=refusal_at_status,reader=refusal_at_snapshot['reader'],snapshot=refusal_at_snapshot)
+      def refusal_refresh_focused():
+       body=refusal_current();buttons=[x for x in (body or {}).get('buttons',[]) if x.get('identity')=='control:refresh' and x.get('accessibleName')=='Refresh applications' and not x.get('disabled')]
+       return (body,buttons[0]) if len(buttons)==1 and body.get('focus')==buttons[0]['id'] else None
+      for refusal_tab_index in range(len(refusal_current_body['buttons'])+2):
+       if refusal_refresh_focused():break
+       key(15)
+      refusal_refresh_body,refusal_refresh_button=wait(refusal_refresh_focused);refusal_refresh_id=refusal_refresh_button['id'];refusal_refresh_pub=refusal_refresh_body['publication']
+      check('PhysicalKeyboardReachesRefusalRefresh',refusal_refresh_body['lease']==refusal_lease and refusal_refresh_body['focus']==refusal_refresh_id,body=refusal_refresh_body)
+      def refusal_at_refresh_observation():
+       snapshot_at=at_observe();reader_at=(snapshot_at.get('reader') or {}).get('focus') or {};nodes_at=[n for n in snapshot_at['nodes'] if n.get('pid')==web.pid and any(a.get('role')=='document web' for a in n.get('ancestors',[]))]
+       matches_at=[n for n in nodes_at if n.get('name')=='Refresh applications' and n.get('identity') and (n.get('attributes') or {}).get('id')==refusal_refresh_id and {'focused','enabled','sensitive','showing','visible'}<=set(n.get('states',[]))]
+       return (snapshot_at,matches_at[0]) if len(matches_at)==1 and reader_at.get('identity')==matches_at[0]['identity'] else None
+      refusal_at_retry_snapshot,refusal_at_retry_node=wait(refusal_at_refresh_observation);refusal_current_pair=wait(refusal_refresh_focused)
+      check('ActualATCurrentRefusalRetry',refusal_current_pair[0]['lease']==refusal_lease and refusal_current_pair[0]['publication']==refusal_refresh_pub and refusal_current_pair[1]['id']==refusal_refresh_id,node=refusal_at_retry_node,reader=refusal_at_retry_snapshot['reader'])
+      refusal_prior_reads=len(requests('catalog-request'))
+      def refusal_catalog_frames():return [json.loads(line.split(': ',1)[1]) for line in text().splitlines() if line.startswith('backend-frame: ') and json.loads(line.split(': ',1)[1]).get('kind')=='application-catalog']
+      refusal_prior_frames=len(refusal_catalog_frames());refusal_action_path=OUTPUT/'refusal-at-refresh.json'
+      helper(['/usr/bin/python3','-B',str(AT_ACTION),str(web.pid),refusal_at_retry_node['identity'],'Refresh applications',refusal_refresh_id,str(refusal_action_path)])
+      refusal_action=json.loads(refusal_action_path.read_text());check('ActualATRefusalRefreshAction',refusal_action.get('passed') is True and refusal_action.get('source')=='actual-at-spi-action' and refusal_action['before']['pid']==web.pid and refusal_action['before']['identity']==refusal_at_retry_node['identity'] and refusal_action['before']['domId']==refusal_refresh_id,receipt=refusal_action)
+      refusal_refresh_request=wait(lambda:requests('catalog-request')[-1] if len(requests('catalog-request'))==refusal_prior_reads+1 else None)
+      def refusal_catalog_receipt():
+       matches=[f for f in refusal_catalog_frames()[refusal_prior_frames:] if f.get('requestId')==refusal_refresh_request['requestId'] and f.get('binding')==refusal_refresh_request['binding']]
+       return matches[0] if len(matches)==1 else None
+      refusal_receipt=wait(refusal_catalog_receipt)
+      def refusal_reconciled():
+       body=popup_body();p=projection()
+       if not body or not p or p.get('phase')!='Coherent' or p.get('mode')!='applications' or body.get('publication')!=p.get('publication') or body.get('lease')!=refusal_lease or not body.get('documentFocused'):return None
+       fields=[f for f in body.get('fields',[]) if f.get('id')=='launcher-search' and not f.get('disabled') and f.get('value')=='files'];entries=[v for v in body.get('buttons',[]) if v.get('identity','').startswith('entry:') and not v.get('disabled')]
+       return body if len(fields)==1 and not entries and 'No matching applications' in body.get('text','') else None
+      refusal_after=wait(refusal_reconciled);check('ATRefusalRetryCurrentCatalogNoReplacementLaunch',refusal_refresh_request['binding']==request['binding'] and refusal_receipt['snapshot']['lifetime']==request['intent']['lifetime'] and refusal_receipt['snapshot']['generation']!=request['intent']['generation'] and all(e['id']!='warlock-files' for e in refusal_receipt['snapshot']['entries']) and len(requests('catalog-request'))==refusal_prior_reads+1 and len(launches())==1 and len(outcomes())==1 and not LAUNCH_EVENTS.exists() and not journal(),request=refusal_refresh_request,receipt=refusal_receipt,body=refusal_after)
+      report['refusalAT']={'beforeNavigation':refusal_at_snapshot,'retrySnapshot':refusal_at_retry_snapshot,'action':refusal_action,'catalogRequest':refusal_refresh_request,'catalogReceipt':refusal_receipt,'after':refusal_after,'directATSearchValueObserved':False,'nativeATAcceptance':False,'focusPolicyReviewRequired':True}
+     report['launcherFixtureAssertionsPassed']=True

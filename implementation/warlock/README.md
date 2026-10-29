@@ -24,7 +24,10 @@ establish continuous GUI transport or whole-release acceptance.
 All six original ELM-UI-004 taskbar scenarios and requirements ELM-UX-005 /
 ELM-UX-008 are accepted in the delivery ledger. Additional taskbar obligations
 remain open: keyboard context-menu reopening has a retained shared WebKit
-renderer failure, and NewInstance/full pin semantics are incomplete. The current
+renderer failure, and NewInstance/full pin semantics are incomplete. A newer
+[owned renderer diagnostic](qa/evidence/renderer-symbol-context-20261029/manifest.json)
+captures libc abort frames and WebKit library ranges; its concrete cause and
+mapped build identities remain unresolved. Its native child still fails. The current
 IME candidate-selection/cancellation campaign stopped before GUI execution and
 does not establish that behavior. Reversible Omarchy trials remain part of the
 integration loop; this checkout is not a ready-to-install release.
@@ -74,7 +77,10 @@ Pending and respects explicit dismissal when its refusal arrives; Submitted and
 New Instance still close the popup. All three Elm roots compile, the unchanged
 19 New Instance checks and 16 focused visibility/lifecycle checks pass. See
 [component evidence](qa/evidence/launcher-pending-visibility-20261029/manifest.json).
-Real Orca focus/retry and relevant native regressions on this changed source
+The first changed-source native regression reaches the focused result on Enter
+keydown, then times out before any launch/outcome observation; cleanup passes.
+See the [retained native failure](qa/evidence/launcher-pending-native-regression-20261029/manifest.json).
+Real Orca focus/retry and successful native dispatch on this changed source
 remain unverified; earlier scenario acceptance refers to its recorded old tuple.
 Whole UI-005 remains unaccepted.
 

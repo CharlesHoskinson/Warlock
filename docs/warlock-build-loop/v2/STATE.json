@@ -1,40 +1,37 @@
 {
   "schema": 1,
   "owner": "sol",
-  "updatedUTC": "2026-10-29T16:29:52.817661+00:00",
+  "updatedUTC": "2026-10-29T17:39:16.204299+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "launcher-query-race-refusal",
+    "id": "taskbar-launch-lifecycle-current",
     "requirements": [
-      "ELM-UI-005"
+      "ELM-UI-004"
     ],
     "scenarios": [
-      "search-race",
-      "search-refused"
+      "taskbar-inactive",
+      "taskbar-zero"
     ],
     "paths": [
       "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/src/Launch.elm",
-      "implementation/warlock/src/Catalog.elm",
       "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/assets/popup-adapter.js",
-      "implementation/warlock/adapter/catalog_authority.py",
+      "implementation/warlock/src/Pins.elm",
+      "implementation/warlock/src/Launch.elm",
       "implementation/warlock/README.md"
     ],
-    "before": "Three UI005 scenarios are independently accepted on current compiled/native/AT tuple. Search-race and search-refused retain historical partial evidence: current delayed-old-catalog/current-query dispatch schedule and actual AT refusal/focus/retry interval remain unobserved. Prior removed/unavailable AT intervals start after refusal; do not reuse them as AT refusal evidence.",
-    "after": "Only current-query/current-catalog-generation selections dispatch across delayed old reads, and an actual launch refusal preserves query and policy-defined focus with accessible refusal and reachable retry. Investigate exact pre-action/dispatch/outcome focus against frozen policy; fix only a demonstrated product violation.",
+    "before": "Ordinary six taskbar scenarios accepted on recorded tuples, whole UI004 still open: explicit NewInstance native keyboard/AT and application-pin versus native always-on-top independence need original EARS coverage. Retained renderer abort blocks context route; new Desktop launch lifecycle has actual compiled NI19 and focused16 but changed-source native regressions pending.",
+    "after": "Explicit NewInstance issues exactly one identity-bound launch while ordinary activation does not duplicate; application pin and native always-on-top remain independent in both directions. Resolve evidenced renderer failure only after trustworthy owned unwind/ELF observations, preserve draft/input/focus.",
     "verification": [
-      "Read exact original race/refused oracles and frozen INTERACTION matching/ranking/focus policy. Current compiled query/ranking/stale-selection replay where decisive; unchanged production modules need no invented new model.",
-      "Requalify existing actual held-catalog native race schedule on owning source/pair, current query/currentgeneration selection, genuine delayed old receipt and exactly current intended dispatch/recipient; actual keyboard/applicable AT observations.",
-      "Reuse current actual refused identity-bound launch stimulus, observe actual accessible refusal and pre/post focus, use genuine guarded AT Refresh/retry before leaving refused state, preserve query and no duplicate/replacement effect. Original6sec5sec/core1/privatebuses/pinnedmappedproviders/normalcleanup.",
-      "Keep whole UI005 unaccepted until all five scenarios plus full frozen matching/ranking/state obligations reviewed. No UI010/audio/braille/IME/rendererfix/hardware/resources/release/mainactivation acceptance invented."
+      "Read original UI004 primary action/EARS and graph source references. Reuse current NI19 as component evidence; no relabel as native.",
+      "Source-qualified changed-asset integration regression for existing launch success/refusal paths, retaining prior failure and original guarded AT oracle; do not expand prior refusal investigation or infer full UI005 acceptance.",
+      "Prepare minimum new owned renderer ELF/load-address/unwind observable only if it materially resolves prior missing diagnostic; never repeat unchanged trial or weaken core1/ptrace/sandbox/deadlines. Actual native keyboard/applicable AT for explicit NewInstance and both pin/top independence directions remain mandatory."
     ],
-    "owner": "root-launcher-current-query",
-    "participantRecord": ".warlock-contributor/launcher-query-race-refusal.json"
+    "owner": "root-taskbar-launch-lifecycle",
+    "participantRecord": ".warlock-contributor/taskbar-launch-lifecycle-current.json"
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -2118,29 +2115,34 @@
     "nextOriginalProductWork": "Restore and qualify a fresh coherent native source/core/plugin/host tuple for original taskbar activation/minimize/restore recipients: ELM-UI-004 / ELM-UX-005 / ELM-UX-008. Root owns serialized protected native execution; source reconstruction/build evidence stays separate from GUI acceptance."
   },
   "previousActiveSlice": {
-    "id": "native-taskbar-group-keyboard",
+    "id": "launcher-query-race-refusal",
     "requirements": [
-      "ELM-UI-004"
+      "ELM-UI-005"
     ],
     "scenarios": [
-      "taskbar-group"
+      "search-race",
+      "search-refused"
     ],
     "paths": [
-      "implementation/warlock/qa/native-taskbar-group-keyboard-portable.py",
-      "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/qa/ThreeGroupReplay.elm",
       "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/src/Launch.elm",
+      "implementation/warlock/src/Catalog.elm",
       "implementation/warlock/src/Surface.elm",
+      "implementation/warlock/assets/popup-adapter.js",
+      "implementation/warlock/adapter/catalog_authority.py",
       "implementation/warlock/README.md"
     ],
-    "before": "Three-entry pointer/group browsing passes, but keyboard-primary group opening and member selection without pointer injection remain unobserved on this tuple; AT qualification reached its no-progress guard.",
-    "after": "Original three-entry family group opens and selects its intended member through real native keyboard focus/Enter, with exact selected native effect/receipt/recipient and no pointer events or launches.",
+    "before": "Three UI005 scenarios are independently accepted on current compiled/native/AT tuple. Search-race and search-refused retain historical partial evidence: current delayed-old-catalog/current-query dispatch schedule and actual AT refusal/focus/retry interval remain unobserved. Prior removed/unavailable AT intervals start after refusal; do not reuse them as AT refusal evidence.",
+    "after": "Only current-query/current-catalog-generation selections dispatch across delayed old reads, and an actual launch refusal preserves query and policy-defined focus with accessible refusal and reachable retry. Investigate exact pre-action/dispatch/outcome focus against frozen policy; fix only a demonstrated product violation.",
     "verification": [
-      "Reuse exact3group native oracle/currentlease/reveal/selected-only activation; keyboard-native primary invocation using legitimate original shortcut/Enter, zero pointer helpers, exactreceipt/actualfocus/keyrecipient/paint/no launch; preserve oneoutputfresh tuple/deadlines/cleanup. AT remains separate."
+      "Read exact original race/refused oracles and frozen INTERACTION matching/ranking/focus policy. Current compiled query/ranking/stale-selection replay where decisive; unchanged production modules need no invented new model.",
+      "Requalify existing actual held-catalog native race schedule on owning source/pair, current query/currentgeneration selection, genuine delayed old receipt and exactly current intended dispatch/recipient; actual keyboard/applicable AT observations.",
+      "Reuse current actual refused identity-bound launch stimulus, observe actual accessible refusal and pre/post focus, use genuine guarded AT Refresh/retry before leaving refused state, preserve query and no duplicate/replacement effect. Original6sec5sec/core1/privatebuses/pinnedmappedproviders/normalcleanup.",
+      "Keep whole UI005 unaccepted until all five scenarios plus full frozen matching/ranking/state obligations reviewed. No UI010/audio/braille/IME/rendererfix/hardware/resources/release/mainactivation acceptance invented."
     ],
-    "owner": "sol",
-    "participantRecord": ".warlock-contributor/native-group-keyboard.json",
-    "outcome": "53 native keyboard-group checks pass; independent bounded partial review, AT still open; integration follows during next native run."
+    "owner": "root-launcher-current-query",
+    "participantRecord": ".warlock-contributor/launcher-query-race-refusal.json",
+    "outcome": "Stopped after two recorded qualification-only iterations (Desktop was already recorded before compiled verification, so later production-fix record had no new source delta). Actual candidate a503 compiled Main/Bar/Popup, NI19 and focused16 pass; retained evidence launcher-pending-visibility-20261029 and pushed6d5c997e7. No further refusal investigation expansion. Current-source real Orca focus/AT retry and post-change native dispatch remain missing; regression may run at integration milestone without inventing acceptance."
   },
   "lastNativeObservation": {
     "report": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-primary-at/native-primary-keyboard-1793215082472811918/report.json",
@@ -2524,6 +2526,36 @@
       "owner": "root-renderer-diagnostic",
       "participantRecord": ".warlock-contributor/renderer-owned-diagnostic-matched-source.json",
       "outcome": "STOP2qualification. Matchedsource normal-userGDBattach reachedactualownedrenderer. First controlSIGCONT endedfatal-onlycapture; second configuredcontrolpass andcapturedactualSIGABRT/exitSignal6/death. Nativefixturestillmenu deadline/hostexit1; cleanprivatecleanup. Unsymbolized/unwind-incomplete stackwithno loadaddresses/causalassert leavesproductioncauseunresolved, nofix/GUIacceptance."
+    },
+    {
+      "id": "launcher-query-race-refusal",
+      "requirements": [
+        "ELM-UI-005"
+      ],
+      "scenarios": [
+        "search-race",
+        "search-refused"
+      ],
+      "paths": [
+        "implementation/warlock/src/Desktop.elm",
+        "implementation/warlock/src/Launch.elm",
+        "implementation/warlock/src/Catalog.elm",
+        "implementation/warlock/src/Surface.elm",
+        "implementation/warlock/assets/popup-adapter.js",
+        "implementation/warlock/adapter/catalog_authority.py",
+        "implementation/warlock/README.md"
+      ],
+      "before": "Three UI005 scenarios are independently accepted on current compiled/native/AT tuple. Search-race and search-refused retain historical partial evidence: current delayed-old-catalog/current-query dispatch schedule and actual AT refusal/focus/retry interval remain unobserved. Prior removed/unavailable AT intervals start after refusal; do not reuse them as AT refusal evidence.",
+      "after": "Only current-query/current-catalog-generation selections dispatch across delayed old reads, and an actual launch refusal preserves query and policy-defined focus with accessible refusal and reachable retry. Investigate exact pre-action/dispatch/outcome focus against frozen policy; fix only a demonstrated product violation.",
+      "verification": [
+        "Read exact original race/refused oracles and frozen INTERACTION matching/ranking/focus policy. Current compiled query/ranking/stale-selection replay where decisive; unchanged production modules need no invented new model.",
+        "Requalify existing actual held-catalog native race schedule on owning source/pair, current query/currentgeneration selection, genuine delayed old receipt and exactly current intended dispatch/recipient; actual keyboard/applicable AT observations.",
+        "Reuse current actual refused identity-bound launch stimulus, observe actual accessible refusal and pre/post focus, use genuine guarded AT Refresh/retry before leaving refused state, preserve query and no duplicate/replacement effect. Original6sec5sec/core1/privatebuses/pinnedmappedproviders/normalcleanup.",
+        "Keep whole UI005 unaccepted until all five scenarios plus full frozen matching/ranking/state obligations reviewed. No UI010/audio/braille/IME/rendererfix/hardware/resources/release/mainactivation acceptance invented."
+      ],
+      "owner": "root-launcher-current-query",
+      "participantRecord": ".warlock-contributor/launcher-query-race-refusal.json",
+      "outcome": "Stopped after two recorded qualification-only iterations (Desktop was already recorded before compiled verification, so later production-fix record had no new source delta). Actual candidate a503 compiled Main/Bar/Popup, NI19 and focused16 pass; retained evidence launcher-pending-visibility-20261029 and pushed6d5c997e7. No further refusal investigation expansion. Current-source real Orca focus/AT retry and post-change native dispatch remain missing; regression may run at integration milestone without inventing acceptance."
     }
   ]
 }

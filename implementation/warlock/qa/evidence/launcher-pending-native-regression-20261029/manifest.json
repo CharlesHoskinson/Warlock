@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "requirement": "ELM-UI-005",
+  "scenario": "search-refused",
+  "status": "failed-integration-regression-before-outcome",
+  "scenarioAccepted": false,
+  "requirementAccepted": false,
+  "releaseAccepted": false,
+  "files": {
+    "failed-native-report.json.gz": {
+      "sha256": "97f059c387177e3b852e69dc81abcfdcdfd3d876df7d27af7f9476d84fdfa125",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-pending-source-qualified-v1/native-launcher-refused-1793295608066472003/report.json",
+      "originalSHA256": "4b6f6448debd1169870cf1288129d7a2de8ff33ddf87e03df528984b56bedf70"
+    },
+    "fresh_candidate.py": {
+      "sha256": "9047be2e62947e68621b1bb7fa32403dd930b97cba444d67c82e501a1c4b311f",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-pending-source-qualified-v1/fresh_candidate.py",
+      "originalSHA256": "9047be2e62947e68621b1bb7fa32403dd930b97cba444d67c82e501a1c4b311f"
+    },
+    "runner.diff": {
+      "sha256": "fede4a85eca29d5fb9340aa06384b255806db44dd4b848f92e552763bd0abfe2",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-pending-source-qualified-v1/runner.diff",
+      "originalSHA256": "fede4a85eca29d5fb9340aa06384b255806db44dd4b848f92e552763bd0abfe2"
+    },
+    "runner.py": {
+      "sha256": "655b2f30a2eefe7434796f57088d32a6cc937509a624c309e2c99792585918fc",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-pending-source-qualified-v1/runner.py",
+      "originalSHA256": "655b2f30a2eefe7434796f57088d32a6cc937509a624c309e2c99792585918fc"
+    },
+    "search-branch.txt": {
+      "sha256": "0a7cd9efd24eb3c0b79db441b84c585a60d1a3980ac29ca2508a8a963b308a90",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-pending-source-qualified-v1/search-branch.txt",
+      "originalSHA256": "0a7cd9efd24eb3c0b79db441b84c585a60d1a3980ac29ca2508a8a963b308a90"
+    },
+    "source-review.md": {
+      "sha256": "6a20ba0b9d13aa5dd1383f787cbcd6ce32ae474562f3110aa208d1908e4c3b71",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-2/launcher-pending-qualified/source-review.md",
+      "originalSHA256": "6a20ba0b9d13aa5dd1383f787cbcd6ce32ae474562f3110aa208d1908e4c3b71"
+    }
+  },
+  "sourceRevision": "6d5c997e7",
+  "desktopSHA256": "a503d926599b5aa194956a1208fdc0004fb829442cd523c5372d41fd1fab0404",
+  "session": 18399,
+  "unit": "qa-harness-7bb62da24693468295df861cee4e6338.scope",
+  "invocation": "577ac9ae3b3d4faaac1d8f2e0aff85b0",
+  "exit": 1,
+  "passed": false,
+  "cleanupPassed": true,
+  "error": "RuntimeError('Original observation deadline <lambda>')",
+  "observations": "Actual current query and focused result on physical Enter keydown before dispatch passed. Original launch/outcome wait then expired. Refusal and real AT focus/retry observation were not reached. No production-cause attribution.",
+  "runtimeEvidenceDirectory": "/home/charles/window-integration-qa/warlock-window-feedback-1793295608066594185",
+  "limits": [
+    "Retained unchanged six-second observation and five-second helpers.",
+    "No acceptance or proof of Pending visibility effect inferred.",
+    "Earlier failed original AT observation remains preserved separately."
+  ],
+  "reportingCorrection": "Raw nativeHost.heldBuild points to new asset build receipt, not a new native host compilation. Original host ELF/build provenance is separately retained by strict adapter and asset receipt."
+}

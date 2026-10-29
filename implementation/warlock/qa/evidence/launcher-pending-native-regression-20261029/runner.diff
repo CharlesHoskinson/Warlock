@@ -1,0 +1,13 @@
+--- /home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-refused-invoker-current-v1/runner.py
++++ /home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-pending-source-qualified-v1/runner.py
+@@ -5,8 +5,8 @@
+ BASE=HERE.parent
+ FRAMEWORK=BASE/'taskbar-new-instance/compiled-runtime.py'
+ FRAMEWORK_SHA='bb12e30c5e59c653441e18e580f5404f89ddb34a7d6cdb26629c6a0f63af5f4e'
+-CANDIDATE=BASE/'source-coherence-20261028/terra-2/fresh_candidate-v1.py'
+-CANDIDATE_SHA='23d66e343e37bead000ed155bbf46f8dcecb47bed09946ed62afe8f052169b00'
++CANDIDATE=BASE/'launcher-pending-source-qualified-v1/fresh_candidate.py'
++CANDIDATE_SHA='9047be2e62947e68621b1bb7fa32403dd930b97cba444d67c82e501a1c4b311f'
+ BRANCH=HERE/'search-branch.txt'
+ BRANCH_SHA='0a7cd9efd24eb3c0b79db441b84c585a60d1a3980ac29ca2508a8a963b308a90'
+ RECIPIENT=BASE/'launcher-refused-painted-v1/launch-recipient.py'
