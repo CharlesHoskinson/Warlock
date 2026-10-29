@@ -1,41 +1,39 @@
 {
   "schema": 1,
   "owner": "sol",
-  "updatedUTC": "2026-10-29T18:10:03.031654+00:00",
+  "updatedUTC": "2026-10-29T19:06:40.385385+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "taskbar-renderer-abort-cause",
+    "id": "omarchy-profile-offline-rollback",
     "requirements": [
-      "ELM-UI-004"
+      "ELM-UI-020"
     ],
     "scenarios": [
-      "taskbar-inactive",
-      "taskbar-zero"
+      "offline-recovery"
     ],
     "paths": [
-      "implementation/warlock/native/host.c",
-      "implementation/warlock/native/shared-host.c",
-      "implementation/warlock/native/shared-context.h",
-      "implementation/warlock/assets/activation.js",
-      "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/qa/native-taskbar-new-instance-diagnostic-portable.py",
+      "implementation/warlock/adapter/recovery_profile.py",
+      "implementation/warlock/qa/offline-recovery.qnt",
+      "implementation/warlock/qa/offline-recovery_test.qnt",
+      "implementation/warlock/qa/check-offline-recovery.py",
+      "implementation/warlock/qa/native-omarchy-recovery-portable.py",
+      "implementation/warlock/qa/native-omarchy-profile-rollback.py",
+      "implementation/warlock/RECOVERY.md",
       "implementation/warlock/README.md"
     ],
-    "before": "Ordinary taskbar scenarios are accepted, but explicit New Instance and keyboard/application-pin/native-top journeys still encounter a retained WebKit renderer SIGABRT after a later popup/Menu-key interaction. The owned diagnostic now has libc raise/abort and WebKit library ranges; exact assertion and mapped build identity remain unresolved. The shared Apps launch admission defect is repaired and native refusal/AT recovery is accepted separately.",
-    "after": "Identify the concrete renderer event or lifetime defect from exact retained executable/library evidence, repair only an evidenced cause, and verify explicit New Instance plus application-pin/native-top independence through original native keyboard and applicable AT routes with normal cleanup and drafts preserved.",
+    "before": "Actual installed Omarchy predecessor guarded startup is observed, but production Profile prepare/candidate failure/standalone offline rollback/compatible preferences and retained drafts remain unobserved. Combined descriptor/resource closure and existing65536-byte metadata capacity must be measured; partial lower bounds are not a runnable package or demonstrated product defect.",
+    "after": "A reviewed bounded private profile prepares actual installed Omarchy predecessor and current Warlock candidate, preserves approved compatible preference copies and drafts, observes candidate failure and standalone offline rollback without the failed host, and restarts predecessor with normal owned cleanup. Repair only demonstrated profile/closure defects; preserve current main desktop.",
     "verification": [
-      "Apply diagnose-crash skill; use retained owned signal, stack, maps, exact installed ELF hashes and available local symbol metadata before any new GUI run. Distinguish confirmed identity, inference and missing evidence. No repeat of unchanged diagnostic or generic debugger infrastructure.",
-      "If exact debug metadata is needed, retrieve only the matching official symbol artifact; no process-memory upload, core-limit, ptrace/sysctl or sandbox relaxation. An inferred symbol match is not proof of mapped-byte identity or cause.",
-      "Any new native trial requires a distinct missing observable, reviewed exact source/ABI/provider tuple, original six-second observations/five-second helpers and normal owned cleanup. Preserve prior failures.",
-      "Fix the stale pre-popup comment about the old blanket open-launch ban in the next genuine native source wave; rebuild and qualify changed inputs. Keep all original 242 requirements and 417 scenarios, packaging, journeys and reversible Omarchy deployment obligations."
+      "Use installed Omarchy skill and actual predecessor startup guard. Measure exact required executable/resource/provider closure and actual encoded profile before changing any byte/count bound; do not omit mandatory resources or assume incompleteness is proved.",
+      "Use existing offline-recovery Quint spec/source correspondence and relevant protected component regressions if profile behavior changes. No new authority or weakened original oracle to fit a fixture.",
+      "Root sole protected native executor; current coherent core/plugin/host/assets/provider tuple, actual parent Wayland/private buses/core1, original six-second/five-second oracles, real preference copies/retained owned draft and candidate failure/standalone rollback/owned normal cleanup. Isolated profile only; no main compositor restart, user config replacement or ready-release claim."
     ],
-    "owner": "root-taskbar-renderer-cause",
-    "participantRecord": ".warlock-contributor/taskbar-renderer-abort-cause.json"
+    "owner": "root-omarchy-profile",
+    "participantRecord": ".warlock-contributor/omarchy-profile-offline-rollback.json"
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -2048,6 +2046,39 @@
       "owner": "root-launcher-refused-rebuilt",
       "participantRecord": ".warlock-contributor/launcher-refused-rebuilt-verdict.json",
       "outcome": "Original ELM-UI-005/search-refused independently accepted by Quint5 on source b8049bb20b041d46fd2880aac92752da35d7f267 and rebuilt host e0a2. Actual native refusal has 41 passing checks, retained query and logical invoker focus, real Orca focus, and guarded AT Refresh to current catalog without replacement launch. All five named scenarios now have accepted observations on their recorded tuples; whole UI005 remains unaccepted pending relevant freshness and full frozen-policy review."
+    },
+    {
+      "id": "launcher-frozen-policy-states",
+      "requirements": [
+        "ELM-UI-005"
+      ],
+      "scenarios": [
+        "search-no-match",
+        "search-unavailable",
+        "search-race",
+        "search-removed",
+        "search-refused"
+      ],
+      "paths": [
+        "implementation/warlock/src/Catalog.elm",
+        "implementation/warlock/src/SearchFold.elm",
+        "implementation/warlock/src/Surface.elm",
+        "implementation/warlock/adapter/taskbar_catalog.py",
+        "implementation/warlock/adapter/catalog_authority.py",
+        "implementation/warlock/qa/SearchReplay.elm",
+        "implementation/warlock/qa/check-search.py",
+        "implementation/warlock/README.md"
+      ],
+      "before": "All five named scenarios have independent acceptance on recorded tuples; full UI005 remains open because complete frozen matching/ranking and initial/loading state obligations have not been independently reconciled with current implementation and native evidence.",
+      "after": "Current launcher applies exact, prefix and token-prefix ranking over localized metadata with stable identity tie breaks, exposes distinct initial/loading/no-match/unavailable states, and retains accepted query-generation/refusal behavior. Repair only demonstrated gaps and obtain independent whole-EARS verdict or precise missing observations.",
+      "verification": [
+        "Read literal UI005 and frozen INTERACTION policy, current typed search and state projections. Reuse five exact accepted native/keyboard/AT observations with relevant source correspondence; do not rerun five journeys merely to manufacture fresh counts.",
+        "Protected current compiled replay for missing literal policy witnesses and meaningful stale/lifecycle cases. Existing Quint correspondence where authority changes; no invented new model for independent view coverage. Native state presentation/AT verification only where existing observations do not establish original scope.",
+        "Retain all stopped renderer/New Instance and pin/top obligations; full242/417, packaging/journeys/resources/hardware/IME and reversible deployment remain mandatory."
+      ],
+      "owner": "root-launcher-policy",
+      "participantRecord": ".warlock-contributor/launcher-frozen-policy-states.json",
+      "outcome": "Whole original UI005 independently accepted after current compiled ranking/actual locale adapter-to-search and native initial/held-loading paint/keyboard/AT. Exact independent review bbe84bd8 binds current367native sources and supports bounded older named-scenario tuple reuse. Five named scenario ledger objects unchanged; evidence source revision4070beb50440077dcf36842ade7c5887173604e5. Renderer/New Instance/pin-top/IME and full release remain open."
     }
   ],
   "lastSlice": {
@@ -2621,6 +2652,37 @@
       "owner": "root-launcher-current-query",
       "participantRecord": ".warlock-contributor/launcher-query-race-refusal.json",
       "outcome": "Stopped after two recorded qualification-only iterations (Desktop was already recorded before compiled verification, so later production-fix record had no new source delta). Actual candidate a503 compiled Main/Bar/Popup, NI19 and focused16 pass; retained evidence launcher-pending-visibility-20261029 and pushed6d5c997e7. No further refusal investigation expansion. Current-source real Orca focus/AT retry and post-change native dispatch remain missing; regression may run at integration milestone without inventing acceptance."
+    },
+    {
+      "id": "taskbar-renderer-abort-cause",
+      "requirements": [
+        "ELM-UI-004"
+      ],
+      "scenarios": [
+        "taskbar-inactive",
+        "taskbar-zero"
+      ],
+      "paths": [
+        "implementation/warlock/native/host.c",
+        "implementation/warlock/native/shared-host.c",
+        "implementation/warlock/native/shared-context.h",
+        "implementation/warlock/assets/activation.js",
+        "implementation/warlock/src/Desktop.elm",
+        "implementation/warlock/src/Surface.elm",
+        "implementation/warlock/qa/native-taskbar-new-instance-diagnostic-portable.py",
+        "implementation/warlock/README.md"
+      ],
+      "before": "Ordinary taskbar scenarios are accepted, but explicit New Instance and keyboard/application-pin/native-top journeys still encounter a retained WebKit renderer SIGABRT after a later popup/Menu-key interaction. The owned diagnostic now has libc raise/abort and WebKit library ranges; exact assertion and mapped build identity remain unresolved. The shared Apps launch admission defect is repaired and native refusal/AT recovery is accepted separately.",
+      "after": "Identify the concrete renderer event or lifetime defect from exact retained executable/library evidence, repair only an evidenced cause, and verify explicit New Instance plus application-pin/native-top independence through original native keyboard and applicable AT routes with normal cleanup and drafts preserved.",
+      "verification": [
+        "Apply diagnose-crash skill; use retained owned signal, stack, maps, exact installed ELF hashes and available local symbol metadata before any new GUI run. Distinguish confirmed identity, inference and missing evidence. No repeat of unchanged diagnostic or generic debugger infrastructure.",
+        "If exact debug metadata is needed, retrieve only the matching official symbol artifact; no process-memory upload, core-limit, ptrace/sysctl or sandbox relaxation. An inferred symbol match is not proof of mapped-byte identity or cause.",
+        "Any new native trial requires a distinct missing observable, reviewed exact source/ABI/provider tuple, original six-second observations/five-second helpers and normal owned cleanup. Preserve prior failures.",
+        "Fix the stale pre-popup comment about the old blanket open-launch ban in the next genuine native source wave; rebuild and qualify changed inputs. Keep all original 242 requirements and 417 scenarios, packaging, journeys and reversible Omarchy deployment obligations."
+      ],
+      "owner": "root-taskbar-renderer-cause",
+      "participantRecord": ".warlock-contributor/taskbar-renderer-abort-cause.json",
+      "outcome": "DOM keyup discipline implemented and published in 1c40aa955 with 34 actual-script component checks and 33 named model tests. Current protected native trial24533 fails despite same-bar keyup preceding context/popup; original keyboard/AT New Instance and pin/top independence remain missing. Exact report/log preserved. No demonstrated further cause; pivot to remaining mandatory launcher policy/state obligations rather than expand debugger investigation."
     }
   ]
 }

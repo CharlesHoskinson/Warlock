@@ -6980,8 +6980,8 @@
       "capability": "elm-shell-experience",
       "owner": "Desktop experience lead",
       "verifier": "Independent acceptance reviewer",
-      "requirementAccepted": false,
-      "status": "in-progress",
+      "requirementAccepted": true,
+      "status": "accepted",
       "scenarios": [
         {
           "name": "search-no-match",
@@ -7853,7 +7853,59 @@
             "assetBuildSHA256": "d31ddf1174986d902e8c2cecfcbc25bc5e0d9e743c465afadb6d159208eec606"
           }
         }
-      ]
+      ],
+      "priorRequirementObservations": [
+        {
+          "archivedUTC": "2026-10-29T19:05:04.013613+00:00",
+          "requirementAccepted": false,
+          "status": "in-progress",
+          "basis": "All five named scenarios accepted; whole matching/localized metadata/initial-loading observations were pending. Scenario records preserved unchanged."
+        }
+      ],
+      "remainingEarsObligations": [],
+      "requirementEvidence": [
+        {
+          "path": "implementation/warlock/qa/evidence/launcher-policy-states-20261029/manifest.json",
+          "sha256": "f3c2301fccd10caeef805a62a2aa6aa6f48b7cb2b3875852ab85e479e4bea643",
+          "scope": "Whole original UI005: five accepted named scenarios plus current ranking/actual locale adapter-to-search and native initial/held-loading paint/keyboard/AT with independent relevant source correspondence."
+        }
+      ],
+      "requirementReviewerDisposition": {
+        "name": "quint-5",
+        "independent": true,
+        "disposition": "accepted-whole-original-ears-relevant-observed-tuples",
+        "path": "implementation/warlock/qa/evidence/launcher-policy-states-20261029/independent-whole-review.md",
+        "sha256": "bbe84bd8bcf212da912a65b882a0dc3bef4a453a926bed4c2efb2c0ec9fc6c68"
+      },
+      "requirementSourceTuple": {
+        "sourceRevision": "4070beb50440077dcf36842ade7c5887173604e5",
+        "sourceHashes": {
+          "implementation/warlock/README.md": "abc659825720dd050c57c17a42021d5826b02f449b6d3626e963989e4f059ef4",
+          "implementation/warlock/adapter/catalog_authority.py": "ad20204afd3b203eb956918300c8da4cb4765b3c5ad86e701b0257a54b8fb9cc",
+          "implementation/warlock/adapter/taskbar_catalog.py": "5414ed1b6fde57a7508c2f3b20658a97006ce3c4203cecbb893fb73de943b9ba",
+          "implementation/warlock/qa/CatalogLocaleReplay.elm": "04c1e1d72099705a429853886e5246cc679ef21b472d4661bfd1447ff4e83737",
+          "implementation/warlock/qa/SearchReplay.elm": "a5392d9eb33e7c9f4c702ba1c5dbe6981a1df592d20c41a9d657cc53d6c0914f",
+          "implementation/warlock/qa/check-search.py": "a73eb547450d176c06ea4035b8fabc44391c75ee7181054bdfff1475f6961138",
+          "implementation/warlock/qa/native-launcher-policy-states.py": "2c13ae125153f1a393b613a096ac0aba6e9acf7a17d5bccbfb3f237945827d50",
+          "implementation/warlock/src/Catalog.elm": "3eadb76212a66986ef2d76292a2f33595f7cd7d47dc90c8982435195f9ea3f02",
+          "implementation/warlock/src/SearchFold.elm": "31664d665778533dc2c141f433398df5bd37be4b689b7369cd894c89d1459241",
+          "implementation/warlock/src/Surface.elm": "a660a4641a9f834c6198bce1e8049b3dd0be40cb74be1cfe1d5e14cfd0cdaa1d"
+        },
+        "core": {
+          "sha256": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e"
+        },
+        "plugin": {
+          "sha256": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c"
+        },
+        "toolchain": {
+          "elmCompilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+          "nativeBuildReportSHA256": "13b8a65807161faed1766a68df680d4a892f556449eb361dedc0d50a6fc3b46a",
+          "assetBuildReportSHA256": "69d5b85ad1137c3e851127c2cf5b4d9dcfe16f16e46568cbf106d2f165c77955"
+        },
+        "hostSHA256": "e0a2f0464b090f77c744c7fe7fc8e356a9d0f1ce2ad8a648040379dd2f7c0558",
+        "historicalScenarioLimits": "Earlier race/removed/no-match/unavailable remain original tuple observations, independently reused for unaffected relevant clauses. No claim that delayed old reply/current Editor dispatch was rerun on current host. See independent-whole-review.md."
+      },
+      "acceptanceLimits": "Earlier race/removed/no-match/unavailable remain original tuple observations, independently reused for unaffected relevant clauses. No claim that delayed old reply/current Editor dispatch was rerun on current host. See independent-whole-review.md. No universal schedules/catalogs, IME, audible/braille, renderer fix or release acceptance."
     },
     {
       "id": "ELM-UI-006",
@@ -15068,5 +15120,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-29T18:08:38.540930+00:00"
+  "updatedUTC": "2026-10-29T19:05:04.013613+00:00"
 }

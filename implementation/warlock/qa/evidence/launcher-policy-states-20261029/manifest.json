@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "requirement": "ELM-UI-005",
-  "status": "current-component-verified-whole-requirement-unaccepted",
-  "requirementAccepted": false,
+  "status": "accepted-original-whole-ears-relevant-observed-tuples",
+  "requirementAccepted": true,
   "releaseAccepted": false,
   "files": {
     "current-compiled-report.json.gz": {
@@ -104,6 +104,11 @@
       "sha256": "c87c604d924ce9ecfb516f90d6d608a46fdb96021363ee5ed49340ba1ae24d32",
       "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-5/ui005-policy-current/source-evidence-review.md",
       "originalSHA256": "c87c604d924ce9ecfb516f90d6d608a46fdb96021363ee5ed49340ba1ae24d32"
+    },
+    "independent-whole-review.md": {
+      "sha256": "bbe84bd8bcf212da912a65b882a0dc3bef4a453a926bed4c2efb2c0ec9fc6c68",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-5/ui005-whole-current/independent-disposition.md",
+      "originalSHA256": "bbe84bd8bcf212da912a65b882a0dc3bef4a453a926bed4c2efb2c0ec9fc6c68"
     }
   },
   "observations": [
@@ -113,11 +118,10 @@
     "Protected locale adapter-to-compiled-matching fixture passes: unit qa-harness-d648030ae74d4daab13b5915da36eb16.scope invocation9f54d9eb7b0f4c5bbc69f112c08dcd6d, report f108161fad62094b1f1645d402f3f4dcb6979e3fa0276e4e4cf5524e532a5a78. Four controlled LC_ALL/LC_MESSAGES/LANG/C cases exercise actual isolated desktop metadata, locale precedence/fallback and shared-cache changes through real Authority.snapshot into compiled Catalog.decode/search. Localized names/generic names/keywords, stable identity ties, multiword matches, absent and native-only Exec negatives pass; numeric authority generation is rejected. 148 source hashes unchanged. No command is launched.",
     "First locale fixture fails because root expected IDs with .desktop suffix; actual established adapter strips the suffix at taskbar_catalog.py87. Original failure, driver and actual compiled results are preserved; corrected expectation changes no production behavior or matching oracle.",
     "Protected native initial/held-loading trial passes with normal owned cleanup. Initial publication20/lease1 shows empty focused launcher-search and actual visible AT status Type to search applications.; Loading publication33/lease1 shows editor with actual visible AT status Loading applications\u2026 and matching AT reader/entry identity322. Genuine catalog frame remains held through physical Enter and both observations with no dispatch/recipient, then the exact held frame is released through the original daemon send path. Same-publication popup/bar live lease is checked before and after capture. Root viewed both actual full-output images; independent review remains pending.",
-    "Independent v1 source review stopped missing current popup lease binding before execution; v2 adds live bar publication/lease equality and independent delta review found no source stop. Both reviews retained; v1 never executed."
+    "Independent v1 source review stopped missing current popup lease binding before execution; v2 adds live bar publication/lease equality and independent delta review found no source stop. Both reviews retained; v1 never executed.",
+    "Independent quint-5 whole original UI005 acceptance after independently viewing both native images and rehashing all 367 native source inputs. Five named scenario dispositions remain their original observed scopes and tuples; unchanged query/generation logic and current changed-boundary receipts support explicit bounded reuse. This is one whole-requirement adjudication, not five newly executed scenarios."
   ],
-  "missingObservations": [
-    "Independent original whole-EARS disposition on actual native state images/AT, current compiled/locale receipts and relevant five-scenario source correspondence"
-  ],
+  "missingObservations": [],
   "limits": [
     "All five named scenario acceptances remain their original recorded scopes and tuples. No ledger acceptance changed.",
     "No new production behavior defect demonstrated. Matching/view source unchanged; additional checks close specific coverage gaps.",
@@ -134,5 +138,40 @@
     "rawReportSHA256": "ae2947f8c96fe5ed6296a2d30ffe4975673a2bd72e1442672def59bb8ef49b00",
     "nativeAcceptance": false,
     "independentReviewPending": true
+  },
+  "independentWholeReview": {
+    "name": "quint-5",
+    "independent": true,
+    "disposition": "accepted-whole-original-ears-relevant-observed-tuples",
+    "path": "implementation/warlock/qa/evidence/launcher-policy-states-20261029/independent-whole-review.md",
+    "sha256": "bbe84bd8bcf212da912a65b882a0dc3bef4a453a926bed4c2efb2c0ec9fc6c68"
+  },
+  "sourceTuple": {
+    "sourceRevision": "4070beb50440077dcf36842ade7c5887173604e5",
+    "sourceHashes": {
+      "implementation/warlock/README.md": "abc659825720dd050c57c17a42021d5826b02f449b6d3626e963989e4f059ef4",
+      "implementation/warlock/adapter/catalog_authority.py": "ad20204afd3b203eb956918300c8da4cb4765b3c5ad86e701b0257a54b8fb9cc",
+      "implementation/warlock/adapter/taskbar_catalog.py": "5414ed1b6fde57a7508c2f3b20658a97006ce3c4203cecbb893fb73de943b9ba",
+      "implementation/warlock/qa/CatalogLocaleReplay.elm": "04c1e1d72099705a429853886e5246cc679ef21b472d4661bfd1447ff4e83737",
+      "implementation/warlock/qa/SearchReplay.elm": "a5392d9eb33e7c9f4c702ba1c5dbe6981a1df592d20c41a9d657cc53d6c0914f",
+      "implementation/warlock/qa/check-search.py": "a73eb547450d176c06ea4035b8fabc44391c75ee7181054bdfff1475f6961138",
+      "implementation/warlock/qa/native-launcher-policy-states.py": "2c13ae125153f1a393b613a096ac0aba6e9acf7a17d5bccbfb3f237945827d50",
+      "implementation/warlock/src/Catalog.elm": "3eadb76212a66986ef2d76292a2f33595f7cd7d47dc90c8982435195f9ea3f02",
+      "implementation/warlock/src/SearchFold.elm": "31664d665778533dc2c141f433398df5bd37be4b689b7369cd894c89d1459241",
+      "implementation/warlock/src/Surface.elm": "a660a4641a9f834c6198bce1e8049b3dd0be40cb74be1cfe1d5e14cfd0cdaa1d"
+    },
+    "core": {
+      "sha256": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e"
+    },
+    "plugin": {
+      "sha256": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c"
+    },
+    "toolchain": {
+      "elmCompilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+      "nativeBuildReportSHA256": "13b8a65807161faed1766a68df680d4a892f556449eb361dedc0d50a6fc3b46a",
+      "assetBuildReportSHA256": "69d5b85ad1137c3e851127c2cf5b4d9dcfe16f16e46568cbf106d2f165c77955"
+    },
+    "hostSHA256": "e0a2f0464b090f77c744c7fe7fc8e356a9d0f1ce2ad8a648040379dd2f7c0558",
+    "historicalScenarioLimits": "Earlier race/removed/no-match/unavailable remain original tuple observations, independently reused for unaffected relevant clauses. No claim that delayed old reply/current Editor dispatch was rerun on current host. See independent-whole-review.md."
   }
 }

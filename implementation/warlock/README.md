@@ -58,8 +58,10 @@ A protected fixture also passes four controlled locale selections through the re
 desktop catalog adapter into compiled search, including shared-cache locale changes.
 A protected native trial also passes initial and genuinely held-loading states,
 with painted focused search fields, actual accessible status names and no launch
-while loading. Whole ELM-UI-005 awaits independent review of those observations
-and relevant source correspondence; its five named scenarios retain their recorded acceptances.
+while loading. Independent review accepts the whole original ELM-UI-005 requirement using those
+observations and explicit relevant source correspondence. Its five named scenario
+records retain their original observed tuples; the older late-response race was
+not rerun on the current host. This does not accept IME or the full release.
 
 Original ELM-UX-004 pin-order persistence is independently accepted on the
 recorded tuple: the current compiled replay and actual native pin, reorder,
