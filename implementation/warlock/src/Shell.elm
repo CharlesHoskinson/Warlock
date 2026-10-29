@@ -32,7 +32,7 @@ type Phase = Detached | Reconciling | Ready | Exhausted
 type Stamp = Stamp Binding Counter Counter
 type Msg = ReconciliationFull | RecoveredUnknown Int Effects.Intent | ReservationReleased Bool Binding Int Effects.Intent | Incoming D.Value | Refresh | Reconnect | Ignore | GeometryAttach | GeometryRefresh | Act Stamp Effects.Operation Counter | UnsentObservations (List (String,Counter)) | SupersedeObservations Bool | UnsentOperations (List UnsentOperation.Key) | RegistrationRefused (List UnsentOperation.Key) (List (String,Counter)) | RegistrationAvailable Bool
 type Effect = Send E.Value | RestartBackend | ArmPrepared Counter
-type alias Model = { reconciliationFull : Bool, effects : Effects.Model, binding : Maybe Binding, request : Counter, expected : Maybe Counter, phase : Phase, reconnecting : Bool, notice : String, geometry : Maybe GeometryProjection.Snapshot, geometryCaps : Maybe GeometryProjection.Capabilities, geometryExpected : Maybe Counter, geometryAttachExpected : Maybe Counter, attachNeeded : Bool, recoveryFailure : Maybe RecoveryFailure, issued : List { binding : Binding, protocol : Int, intent : Effects.Intent }, notificationQueued : Bool, projectionRetryQueued : Bool, transportRefused : Bool, deferNotifications : Bool }
+type alias Model = { decoderRefusal : Maybe String, reconciliationFull : Bool, effects : Effects.Model, binding : Maybe Binding, request : Counter, expected : Maybe Counter, phase : Phase, reconnecting : Bool, notice : String, geometry : Maybe GeometryProjection.Snapshot, geometryCaps : Maybe GeometryProjection.Capabilities, geometryExpected : Maybe Counter, geometryAttachExpected : Maybe Counter, attachNeeded : Bool, recoveryFailure : Maybe RecoveryFailure, issued : List { binding : Binding, protocol : Int, intent : Effects.Intent }, notificationQueued : Bool, projectionRetryQueued : Bool, transportRefused : Bool, deferNotifications : Bool }
 stampKey : Stamp -> String
 stampKey (Stamp binding output revision) = E.encode 0 (Binding.encode binding) ++ ":" ++ UInt64.string output ++ ":" ++ UInt64.string revision
 capture : Model -> Maybe Stamp
@@ -47,11 +47,22 @@ stampDecoder : D.Decoder Stamp
 stampDecoder = strict ["binding","output","revision"] (D.map3 Stamp (D.field "binding" Binding.decoder) (D.field "output" positive) (D.field "revision" positive))
 
 initial : Model
-initial = { reconciliationFull=False, effects = Effects.empty, binding = Nothing, request = UInt64.zero, expected = Nothing, phase = Detached, reconnecting = True, notice = "Connecting…", geometry=Nothing,geometryCaps=Nothing,geometryExpected=Nothing,geometryAttachExpected=Nothing,attachNeeded=False,issued=[],notificationQueued=False,projectionRetryQueued=False,transportRefused=False,deferNotifications=False,recoveryFailure=Nothing }
+initial = { decoderRefusal=Nothing, reconciliationFull=False, effects = Effects.empty, binding = Nothing, request = UInt64.zero, expected = Nothing, phase = Detached, reconnecting = True, notice = "Connecting…", geometry=Nothing,geometryCaps=Nothing,geometryExpected=Nothing,geometryAttachExpected=Nothing,attachNeeded=False,issued=[],notificationQueued=False,projectionRetryQueued=False,transportRefused=False,deferNotifications=False,recoveryFailure=Nothing }
 strict : List String -> D.Decoder a -> D.Decoder a
 strict fields decoder = D.keyValuePairs D.value |> D.andThen (\pairs -> if List.sort (List.map Tuple.first pairs) == List.sort fields then decoder else D.fail "Unexpected fields")
 version : D.Decoder ()
 version = D.field "protocolVersion" D.int |> D.andThen (\v -> if v == 3 then D.succeed () else D.fail "Protocol version")
+-- Diagnostics are separate from the authority, request and presentation state.
+rejectEnvelope : D.Value -> Model -> (Model,List Effect)
+rejectEnvelope raw model =
+    let reason = case D.decodeValue version raw of
+            Err _ -> "Native envelope rejected: missing or unsupported protocol version."
+            Ok _ -> "Native envelope rejected: malformed fields."
+    in rejectReason reason model
+
+rejectReason : String -> Model -> (Model,List Effect)
+rejectReason reason model = ({model | decoderRefusal=Just reason},[])
+
 refresh : Model -> (Model,List Effect)
 refresh model =
     case ( model.binding, UInt64.next model.request ) of
@@ -155,26 +166,29 @@ update msg model =
                         Ok reason ->
                             let detached = disconnect model
                             in ({detached | recoveryFailure=Just reason,notice=recoveryNotice reason},[])
-                        Err _ -> (model,[])
-                Ok "host-disconnected" -> (disconnect model,[])
+                        Err _ -> rejectEnvelope raw model
+                Ok "host-disconnected" ->
+                    case D.decodeValue (strict ["protocolVersion","kind"] version) raw of
+                        Ok _ -> (disconnect model,[])
+                        Err _ -> rejectEnvelope raw model
                 Ok "host-refresh" ->
                     case D.decodeValue (strict ["protocolVersion","kind"] version) raw of
                         Ok _ -> notificationRefresh model
-                        Err _ -> (model,[])
+                        Err _ -> rejectEnvelope raw model
                 Ok "attached" ->
                     case D.decodeValue (D.map2 (\_ binding -> binding) version (D.field "binding" Binding.decoder)) raw of
                         Ok binding ->
                             if model.phase /= Detached || not model.reconnecting || (model.binding |> Maybe.map (Binding.replaces binding >> not) |> Maybe.withDefault False) then (model,[]) else
                                 let detached = disconnect model
                                 in refresh { detached | binding = Just binding, phase = Reconciling, reconnecting = False, recoveryFailure=Nothing, notice = "Updating window information…" }
-                        Err _ -> (disconnect model,[])
+                        Err _ -> rejectEnvelope raw model
                 Ok "projection-unavailable" ->
                     let decoder = strict ["protocolVersion","kind","binding","requestId","reason"]
                             (D.map4 (\_ binding request _ -> (binding,request)) version (D.field "binding" Binding.decoder)
                                 (D.field "requestId" positive)
                                 (D.field "reason" D.string |> D.andThen (\reason -> if reason=="scene-changed" then D.succeed () else D.fail "Projection terminal reason")))
                     in case D.decodeValue decoder raw of
-                        Err _ -> (model,[])
+                        Err _ -> rejectEnvelope raw model
                         Ok (binding,request) ->
                             if model.phase==Detached || model.phase==Exhausted || model.binding/=Just binding || model.expected/=Just request then (model,[]) else
                                 drainNotifications {model|expected=Nothing,projectionRetryQueued=True,notificationQueued=True,phase=Reconciling}
@@ -186,19 +200,20 @@ update msg model =
                                 case D.decodeValue (D.map2 (\context scene -> E.object [("kind",E.string "snapshot"),("context",context),("scene",scene)]) (D.field "context" D.value) (D.field "scene" D.value)) raw of
                                     Ok snapshot ->
                                         let (effects,_,error) = Effects.apply snapshot model.effects
-                                        in drainNotifications {model | effects = effects, phase = if error == Nothing then Ready else Reconciling, expected = if error == Nothing then Nothing else model.expected, notice = if error == Nothing then "Connected" else "Window information could not be verified."}
-                                    Err _ -> (model,[])
-                        Err _ -> (model,[])
+                                        in if error/=Nothing then rejectEnvelope raw model else
+                                            drainNotifications {model | effects = effects, phase = Ready, expected = Nothing, notice = "Connected"}
+                                    Err _ -> rejectEnvelope raw model
+                        Err _ -> rejectEnvelope raw model
                 Ok "host-geometry-negotiate" ->
                     case D.decodeValue (strict ["protocolVersion","kind"] version) raw of
-                        Err _ -> (model,[])
+                        Err _ -> rejectEnvelope raw model
                         Ok _ -> if model.geometryCaps/=Nothing || model.geometryAttachExpected/=Nothing then (model,[]) else geometryRequest True model
                 Ok "geometry-unavailable" ->
                     let decoder = strict ["protocolVersion","kind","binding","requestId","reason"]
                             (D.map4 (\_ binding request reason -> {binding=binding,request=request,reason=reason}) version (D.field "binding" Binding.decoder) (D.field "requestId" positive)
                                 (D.field "reason" D.string |> D.andThen (\reason -> if String.length reason<=256 then D.succeed reason else D.fail "Geometry refusal reason")))
                     in case D.decodeValue decoder raw of
-                        Err _ -> (model,[])
+                        Err _ -> rejectEnvelope raw model
                         Ok refusal -> if model.binding/=Just refusal.binding || model.geometryAttachExpected/=Just refusal.request then (model,[]) else
                             drainNotifications {model|geometryCaps=Just {effects=False,operations=[]},geometry=Nothing,geometryAttachExpected=Nothing,attachNeeded=False,geometryExpected=Nothing}
                 Ok "geometry-attached" ->
@@ -208,12 +223,12 @@ update msg model =
                                 (D.field "binding" Binding.decoder) (D.field "requestId" positive) (D.field "capabilities" GeometryProjection.capabilitiesDecoder))
                     in case D.decodeValue decoder raw of
                         Ok value -> if model.binding/=Just value.binding || model.geometryAttachExpected/=Just value.request || model.phase==Detached then (model,[]) else geometryRequest False {model|geometryCaps=Just value.caps,geometry=Nothing,geometryAttachExpected=Nothing,attachNeeded=False}
-                        Err _ -> (model,[])
+                        Err _ -> rejectEnvelope raw model
                 Ok "geometry-facts" ->
                     case model.geometryCaps of
-                        Nothing -> (model,[])
+                        Nothing -> rejectReason "Native geometry facts rejected: no negotiated capabilities." model
                         Just caps -> case GeometryProjection.decode caps raw of
-                            Err _ -> (model,[])
+                            Err _ -> rejectEnvelope raw model
                             Ok observed ->
                                 let newer=case model.geometry of
                                         Nothing -> True
@@ -226,19 +241,22 @@ update msg model =
                             if model.phase/=Reconciling || model.binding/=Just binding then (model,[]) else
                                 let (effects,_,_)=Effects.apply (E.object [("kind",E.string "recover-watermarks"),("request",E.string (UInt64.string request)),("generation",E.string (UInt64.string generation))]) model.effects
                                 in ({model|effects=effects},[])
-                        Err _ -> (model,[])
+                        Err _ -> rejectEnvelope raw model
                 Ok "host-uncertain" ->
                     let decoder=D.oneOf
                             [ strict ["protocolVersion","kind","binding","intent"] (D.map3 (\_ binding intent -> (binding,intent,1)) version (D.field "binding" Binding.decoder) (D.field "intent" D.value))
                             , strict ["protocolVersion","kind","binding","intent","effectProtocol"] (D.map4 (\_ binding intent protocolId -> (binding,intent,protocolId)) version (D.field "binding" Binding.decoder) (D.field "intent" D.value) (D.field "effectProtocol" D.int)) ]
                     in case D.decodeValue decoder raw of
                         Ok (binding,intent,protocolId) ->
-                            if model.binding/=Just binding || model.phase/=Reconciling || (D.decodeValue (D.at ["context","lifetime"] positive) intent |> Result.map (\life -> Binding.sameLifetime life binding))/=Ok True then (model,[]) else
-                                let (effects,_,error)=Effects.apply (E.object [("kind",E.string "recover"),("intent",intent),("effectProtocol",E.int protocolId)]) model.effects
-                                in if error/=Nothing then (model,[]) else ({model|effects=effects,notice="The previous window change could not be confirmed."},[])
-                        Err _ -> (model,[])
+                            case D.decodeValue Effects.intentDecoder intent of
+                                Err _ -> rejectEnvelope raw model
+                                Ok _ ->
+                                    if model.binding/=Just binding || model.phase/=Reconciling || (D.decodeValue (D.at ["context","lifetime"] positive) intent |> Result.map (\life -> Binding.sameLifetime life binding))/=Ok True then (model,[]) else
+                                        let (effects,_,error)=Effects.apply (E.object [("kind",E.string "recover"),("intent",intent),("effectProtocol",E.int protocolId)]) model.effects
+                                        in if error/=Nothing then rejectEnvelope raw model else ({model|effects=effects,notice="The previous window change could not be confirmed."},[])
+                        Err _ -> rejectEnvelope raw model
                 Ok "effect-outcome" ->
-                    if not (NativeOutcome.valid raw) then (model,[]) else
+                    if not (NativeOutcome.valid raw) then rejectEnvelope raw model else
                     case D.decodeValue (D.map4 (\_ binding protocolId receipt -> (binding,protocolId,receipt)) version (D.field "binding" Binding.decoder) (D.field "effectProtocol" D.int)
                         (D.map3 (\intent outcome protocolId -> E.object [("kind",E.string "receipt"),("intent",intent),("status",outcome),("effectProtocol",protocolId)]) (D.field "intent" D.value) (D.field "status" D.value) (D.field "effectProtocol" D.value))) raw of
                         Ok (binding,protocolId,receipt) ->
@@ -248,16 +266,17 @@ update msg model =
                             in if not known then (model,[]) else
                                 let (effects,_,error) = Effects.apply receipt model.effects
                                     retained = if D.decodeValue (D.field "status" D.string) raw==Ok "Unknown" then model.issued else List.filter (exact >> not) model.issued
-                                in if error /= Nothing then (model,[]) else
+                                in if error /= Nothing then rejectEnvelope raw model else
                                     let current = case model.effects.transaction of
                                             Nothing -> False
                                             Just transaction -> transaction.effectProtocol==protocolId && Just transaction.intent==receivedIntent
                                     in if not current || model.phase==Detached || model.binding/=Just binding then ({model|effects=effects,issued=retained},[]) else
                                     refreshObservations {model|effects=effects,issued=retained}
-                        Err _ -> (model,[])
-                _ -> (model,[])
+                        Err _ -> rejectEnvelope raw model
+                Ok _ -> (model,[])
+                Err _ -> rejectEnvelope raw model
 encode : Model -> E.Value
-encode model = E.object [("phase",E.string (case model.phase of
+encode model = E.object [("decoderRefusal",Maybe.map E.string model.decoderRefusal |> Maybe.withDefault E.null),("phase",E.string (case model.phase of
     Detached -> "Detached"
     Reconciling -> "Reconciling"
     Ready -> "Ready"

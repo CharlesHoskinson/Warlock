@@ -1,0 +1,33 @@
+{
+  "passed": false,
+  "requirementAccepted": false,
+  "nativeAcceptance": false,
+  "commands": [
+    {
+      "argv": [
+        "/home/charles/Warlock/implementation/warlock-preview-provider-v143/qa/toolchain/npm-package/node_modules/@elm_binaries/linux_x64/elm",
+        "make",
+        "src/DecoderReplay.elm",
+        "--optimize",
+        "--output=/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-decoder-terra2-v1/run-1793307895413018404/decoder.js"
+      ],
+      "cwd": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-decoder-terra2-v1/run-1793307895413018404/work",
+      "exit": 0,
+      "stdoutSHA256": "cd5de5be75689ab326c1aded633bc4f2a3e8ac29810aedff0336d3f06800885a",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-decoder-terra2-v1/replay.js",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-decoder-terra2-v1/run-1793307895413018404/decoder.js"
+      ],
+      "cwd": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-decoder-terra2-v1/run-1793307895413018404/work",
+      "exit": 1,
+      "stdoutSHA256": "e220b1db60f3025c3ca72a7739d2516f82889c70a113daf6e31034d5edf9024c",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "error": "RuntimeError('replay failed; retained output')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-decoder-terra2-v1/probe.py\", line 31, in main\n    if p.returncode: raise RuntimeError(name+' failed; retained output')\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: replay failed; retained output\n"
+}

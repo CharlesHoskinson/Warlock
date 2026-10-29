@@ -1,0 +1,176 @@
+{
+  "schema": 1,
+  "requirements": [
+    "ELM-ARC-004"
+  ],
+  "scenarios": [
+    "decoder-native-to-elm"
+  ],
+  "sourceParentRevision": "9cf82701287eb5acff07de5b42424bff3e0ac92c",
+  "status": "bridge-and-build-pass-independent-named-scenario-accepted-pending-immutable-source-claim",
+  "scenarioAccepted": false,
+  "requirementAccepted": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "scope": "Actual compiled Shell.update, valid bound Reconciling prior with outstanding projection request. 17 invalid messages preserve full prior Model after normalizing ONLY separate decoderRefusal, return no commands and record bounded reason. Valid refresh/disconnect and two unrelated-policy/version controls retain ordinary routing. No invented Ready prerequisite or claim of populated Ready scene/pending effect.",
+  "productChange": "Bounded decoderRefusal diagnostic with prior operational state intact; malformed attachment no longer disconnects. Invalid nested recovery intent and unnegotiated geometry facts record rejection. Valid disconnect strictly v3; matching fatal host overflow notice now includes version3.",
+  "tests": {
+    "cases": 21,
+    "checks": {
+      "validPrior": true,
+      "originalInvalid": true,
+      "validRefresh": true,
+      "validDisconnect": true,
+      "unknownPolicyPreserved": true
+    },
+    "baseline": "Actual compiled original source failed missing-refusal oracle and malformed attachment changed state; original bytes pinned at sourceParentRevision before edits.",
+    "firstPatch": "18-case pass belongs to earlier Shell540981; retained as historical component, not current-source verification.",
+    "currentShellSHA256": "f14b7fe3bfbf1a57f335f98914c988938c235823ba4596c067cf744776c4a9ae"
+  },
+  "build": {
+    "passed": true,
+    "elmEntryPoints": [
+      "Main",
+      "Bar",
+      "Popup"
+    ],
+    "changedNativeUnit": "shared-host.c includes host.c",
+    "retainedCppObjects": 10,
+    "hostSHA256": "c898cafdeaacf1bb45dde8f246e9bb5950a4006991f88ca96ccd2660dc13e689",
+    "sourceHashes": {
+      "native/host.c": "acfd6fe74d3ffb055a1143c03f9a7739968225fe51a49ee604e0169ca74dd551"
+    },
+    "report": "build-report.json"
+  },
+  "protectedScopes": [
+    {
+      "unit": "qa-harness-896dfb8bb011481486ace1c1a9014a2a.scope",
+      "invocation": "9f5117d83f864847b30e65334a59719e",
+      "exitCode": 1,
+      "evidence": "baseline-report.json"
+    },
+    {
+      "unit": "qa-harness-ec27b04323cf43d2a060f36df3f8b7c6.scope",
+      "invocation": "32b9f81542cb45f09511b0b034aca571",
+      "exitCode": 0,
+      "evidence": "first-patched-report.json"
+    },
+    {
+      "unit": "qa-harness-ebe18e5b365945658cd71f983b08318a.scope",
+      "invocation": "bc756308b6754f8c8b37dc43a2d85cc5",
+      "exitCode": 0,
+      "evidence": "current-report.json"
+    },
+    {
+      "unit": "qa-harness-e0f015dfd54845599e8076dfa3f11702.scope",
+      "invocation": "9c32782323004cecb9698834be4bc3e0",
+      "exitCode": 0,
+      "evidence": "build-report.json"
+    }
+  ],
+  "limits": [
+    "Bridge verification is explicitly permitted by the original scenario.",
+    "No actual compositor action or renderer execution; empty negative command lists are compiled bridge evidence.",
+    "Host receive-side architecture-004 and whole requirement remain unadjudicated.",
+    "No new Quint model: diagnostic storage and typed decoder refusal do not change effect authority; existing workspace inventory model does not prove this boundary.",
+    "New host/assets have not been loaded for native GUI qualification or main-session deployment."
+  ],
+  "files": [
+    {
+      "path": "baseline-report.json",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-decoder-terra2-v1/run-1793307895413018404/report.json",
+      "sha256": "ff7eb091da42f25ee3564f1ac816a7ef24f7fe31256dd19890f3a6e75f78510c"
+    },
+    {
+      "path": "baseline-replay.json",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-decoder-terra2-v1/run-1793307895413018404/replay.stdout",
+      "sha256": "e220b1db60f3025c3ca72a7739d2516f82889c70a113daf6e31034d5edf9024c"
+    },
+    {
+      "path": "baseline-worker.elm",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-decoder-terra2-v1/DecoderReplay.elm",
+      "sha256": "3e9a5ffef5d320eccdf14d67c849c1e1762ff10511aad1e41e0228f1a1e4c0f3"
+    },
+    {
+      "path": "baseline-replay.js",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-decoder-terra2-v1/replay.js",
+      "sha256": "7eb7fc9ae8b6623ec42ab76c46999b8901e778729556c7fe077071b18b5d8f53"
+    },
+    {
+      "path": "baseline-probe.py",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-decoder-terra2-v1/probe.py",
+      "sha256": "73b9fa4f921d3d804067f2ee9333fb3472825792ce6d219d79b7bc3b93822936"
+    },
+    {
+      "path": "baseline-pins.json",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-decoder-terra2-v1/pins.json",
+      "sha256": "f4bea063d0c94f28562357f2ebb91021a1e4edffd1a89cf795137098666de381"
+    },
+    {
+      "path": "first-patched-report.json",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-decoder-root-v2/run-1793308063917180034/report.json",
+      "sha256": "9d29688e3fb8990d35d220b1dbe989f6244c36d530b1d3590ed9851f8c337418"
+    },
+    {
+      "path": "current-report.json",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-decoder-root-v3/run-1793308237739507133/report.json",
+      "sha256": "225288de7a79ea4a875d996a6791331630ecacbeb7685ae2311f84bc569988d1"
+    },
+    {
+      "path": "current-worker.elm",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-decoder-root-v3/DecoderReplay.elm",
+      "sha256": "0fd60356632c0dbb27f5d4c4f8b2717111885cbb1d01066692057fefad59dd41"
+    },
+    {
+      "path": "current-replay.js",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-decoder-root-v3/replay.js",
+      "sha256": "173a08e43289f8c58ef4d8c398cb33ada5892c2496b044058bf65030700da8ea"
+    },
+    {
+      "path": "current-probe.py",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-decoder-root-v3/probe.py",
+      "sha256": "4323e07c6f7e74f426fb8059811f93f239d6273485d4b06cc9e9483f3fa75bf2"
+    },
+    {
+      "path": "current-pins.json",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-decoder-root-v3/pins.json",
+      "sha256": "62a264a1dca571356740352e6667660c49407e48e0a42931acce5d60be9acba4"
+    },
+    {
+      "path": "build.py",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-build-terra2-v1/build.py",
+      "sha256": "f41c141cadf4694d2b73c845cf5988cc3fe9d42659645652810885a687169424"
+    },
+    {
+      "path": "build-report.json",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-build-terra2-v1/output/report.json",
+      "sha256": "1c35c3c24cbc2011176affe84191f111bbc96caa4ea32a17ff737dd32f658ef6"
+    },
+    {
+      "path": "source-predicate.md",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-5/arc004-current/source-predicate.md",
+      "sha256": "852dc36ebcbe42366939ae71ac94b6c607ba3dc61d49b6c2c12b533dc146c540"
+    },
+    {
+      "path": "source-review-first-patch.md",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-5/arc004-current/production-diff-review.md",
+      "sha256": "e1a613b41eca46dfa5797478ee678a4f7ff5479a0a3c4e22164b6c06f2622799"
+    },
+    {
+      "path": "first-patched-review.md",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-5/arc004-current/patched-18-evidence-review.md",
+      "sha256": "7583dd345b6807894f6776a84bde23cce501f6aa645e555caecf3511e70bbf8e"
+    },
+    {
+      "path": "independent-scenario-review.md",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-5/arc004-current/current-21-build-disposition.md",
+      "sha256": "4ec9b9a6a4210ad698fc5aacc74be9b8d2b5766c9d3bc3145381e048f2532a1d"
+    }
+  ],
+  "independentDisposition": {
+    "reviewer": "quint-5",
+    "disposition": "accepted exact decoder-native-to-elm on current hashed working sources",
+    "review": "independent-scenario-review.md",
+    "immutableSourceClaim": "Recorded separately after source/evidence commit; no requirement-wide or native GUI acceptance."
+  }
+}

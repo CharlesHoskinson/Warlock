@@ -87,6 +87,16 @@ No restart/deadline trace ran, and ELM-ARC-013 remains unadjudicated. Both faile
 attempts and source reviews are retained; this investigation is stopped under the
 loop limit while independent mandatory work continues.
 
+Malformed recognized native envelopes now record a bounded rejection reason
+without changing the shell’s operational state or emitting an effect intent.
+The [compiled decoder regression](qa/evidence/decoder-refusal-20261029/manifest.json)
+passes 21 cases, including malformed attachment/disconnect/recovery frames and
+valid refresh, disconnect and unrelated-policy controls. All three Elm entry points
+rebuild, and the changed C host unit recompiles and relinks with the ten unchanged
+C++ objects. Independent review accepts the original `decoder-native-to-elm` scenario on this
+recorded bridge tuple. The host-facing `architecture-004` scenario, the whole
+requirement, native GUI and release acceptance remain separate.
+
 Original ELM-UX-004 pin-order persistence is independently accepted on the
 recorded tuple: the current compiled replay and actual native pin, reorder,
 private storage and shell restart preserve Editor and Files in the chosen order.
