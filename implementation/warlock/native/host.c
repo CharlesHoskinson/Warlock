@@ -530,6 +530,9 @@ static gboolean preview_retirement_only(JsonNode *root) {
     const char *name=json_node_get_string(kind);
     return g_str_equal(name,"cancel") || g_str_equal(name,"release") || g_str_equal(name,"acknowledge");
 }
+static void preview_refuse(const char *reason) {
+    g_print("preview-refused: %s\n",reason);fflush(stdout);
+}
 static gboolean preview_route_commands(WebKitUserContentManager *manager,const char *text,JsonNode *root) {
     if (!text || !root || !JSON_NODE_HOLDS_OBJECT(root)) return FALSE;
     JsonObject *obj=json_node_get_object(root);JsonNode *kind=json_object_get_member(obj,"kind");
@@ -537,14 +540,15 @@ static gboolean preview_route_commands(WebKitUserContentManager *manager,const c
     JsonNode *version=json_object_get_member(obj,"previewProtocol"),*entries=json_object_get_member(obj,"entries");
     if(strlen(text)>4096 || preview_owner!=g_thread_self() || !manager || manager!=popup_manager || !popup_view ||
        !version || json_node_get_value_type(version)!=G_TYPE_INT64 || !entries || !JSON_NODE_HOLDS_ARRAY(entries) ||
-       json_array_get_length(json_node_get_array(entries))!=1 || !native_preview_handler)return TRUE;
+       json_array_get_length(json_node_get_array(entries))!=1 || !native_preview_handler) {preview_refuse("origin-or-schema");return TRUE;}
     if(json_node_get_int(version)==1) {
         const char *const fields[]={"previewProtocol","kind","entries"};
         if(!preview_controls.ordered && surface_fields(obj,fields,3) && (!shutting_down || preview_retirement_only(root)))native_preview_handler(popup_view,root);
+        else preview_refuse("legacy-or-retirement");
     }else if(json_node_get_int(version)==2) {
         const char *const fields[]={"previewProtocol","kind","controlOrdinal","entries"};guint64 ordinal;
         if(!surface_fields(obj,fields,4) || !surface_uint(json_object_get_member(obj,"controlOrdinal"),&ordinal) ||
-           !preview_control_next(&preview_controls,ordinal))return TRUE;
+           !preview_control_next(&preview_controls,ordinal)) {preview_refuse("ordinal-or-schema");return TRUE;}
         /* Hold this packet until its handler returns. Nested transport
          * delivery cannot replay or overtake it. Effect/ACK success is separate;
          * the aggregate transaction still verifies every original obligation. */
@@ -553,8 +557,9 @@ static gboolean preview_route_commands(WebKitUserContentManager *manager,const c
         // It receives no native effect or retirement proof; rejecting it must
         // not strand the following exact release/cancel/ack controls.
         if(!shutting_down || preview_retirement_only(root))native_preview_handler(popup_view,root);
+        else preview_refuse("retirement");
         preview_control_delivered(&preview_controls,ordinal);
-    }
+    } else preview_refuse("version");
     return TRUE;
 }
 static void receive(WebKitUserContentManager *manager,WebKitJavascriptResult *result,gpointer unused) {

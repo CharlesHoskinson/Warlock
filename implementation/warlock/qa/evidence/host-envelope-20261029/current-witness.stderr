@@ -1,0 +1,39 @@
+case=malformed-json state_unchanged=1 refusal_recorded=1 log=view-refused: duplicate-or-malformed-json
+
+case=non-object state_unchanged=1 refusal_recorded=1 log=view-refused: non-object
+
+case=unsupported-version state_unchanged=1 refusal_recorded=1 log=view-refused: commit-preflight
+
+case=null-text state_unchanged=1 refusal_recorded=1 log=view-refused: missing-text
+
+case=scalar-root state_unchanged=1 refusal_recorded=1 log=view-refused: non-object
+
+case=duplicate-field state_unchanged=1 refusal_recorded=1 log=view-refused: duplicate-or-malformed-json
+
+case=transport-bound state_unchanged=1 refusal_recorded=1 log=view-refused: transport-bound
+
+case=control-bound state_unchanged=1 refusal_recorded=1 log=view-refused: control-bound
+
+case=foreign-origin state_unchanged=1 refusal_recorded=1 log=view-refused: origin
+
+case=typed-number state_unchanged=1 refusal_recorded=1 log=view-refused: type
+
+case=typed-null state_unchanged=1 refusal_recorded=1 log=view-refused: type
+
+case=unsupported-preview-version state_unchanged=1 refusal_recorded=1 log=preview-refused: version
+
+case=malformed-preview-version state_unchanged=1 refusal_recorded=1 log=preview-refused: origin-or-schema
+
+case=malformed-legacy-preview state_unchanged=1 refusal_recorded=1 log=preview-refused: legacy-or-retirement
+
+case=malformed-preview-ordinal state_unchanged=1 refusal_recorded=1 log=preview-refused: ordinal-or-schema
+
+positive=current-preview-router handler_calls=1 returned=1
+case=shutdown-non-preview state_unchanged=1 refusal_recorded=1 log=view-refused: shutdown
+
+case=retirement-acquire state_unchanged=1 refusal_recorded=1 log=preview-refused: retirement
+
+positive=retirement-delivery delivered=1 handler_calls=1 returned=1
+case=popup-not-ready state_unchanged=1 refusal_recorded=1 log=view-refused: popup-not-ready
+
+positive=existing-shared-preview-router returned=1

@@ -1,0 +1,241 @@
+{
+  "schema": 1,
+  "requirements": [
+    "ELM-ARC-004"
+  ],
+  "scenarios": [
+    "architecture-004"
+  ],
+  "sourceParentRevision": "6d4e9433656c9000b7ce06d01945d1fef1c8a2b8",
+  "status": "final-bridge-build-pass-independent-whole-acceptance-pending-immutable-adoption",
+  "scenarioAccepted": false,
+  "requirementAccepted": false,
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "independentReview": {
+    "name": "quint-5",
+    "disposition": "accepted original whole ARC004 on finite source-correlated bridge evidence; immutable source adoption separate",
+    "path": "final-18-whole-disposition.md",
+    "sha256": "40b04ce3ba4323814245b29802aa084bbbe4f79f0698b291b3893f0f1e849461"
+  },
+  "observations": {
+    "baseline": "Actual non-object [] returned with unchanged observed state but no refusal; retained failure d566aa70.",
+    "firstPass": "11-case155363 pass belongs to intermediate Shared add8/host acfd and is historical.",
+    "previewBaseline": "Actual previewProtocol9 no handler/no reason; validprotocol1 handler1, retained failure cce20e62.",
+    "current": "18 negative actual shared-host/JSC/preview/lifecycle cases passed90c06efa; actual logs and checked gate/queues/backend unchanged. Valid preview handler1; denied ordered acquire does not invoke handler, but delivery floor advances1 as required. No live backend/compositor launched.",
+    "currentBuild": "Final C unit/relink/provider checks pass631119b4, hosta2745c50, unchanged19 assets/10CPPobjects; no Elm rebuild implied.",
+    "currentSelfTests": "Final production binary --self-test:20/20 pass, stdout7d46b815; old16154 selftests retained separately."
+  },
+  "sourceHashes": {
+    "native/host.c": "33a04ad5eaf91be944feb891e6a358e3bbff9106b54966bd5ca5da6f2f39dbbe",
+    "native/shared-host.c": "5d0d43c61574f292842bc34b2e3363cd5e7a215239e609bcb9780d475a9a8bbc"
+  },
+  "decoderComposition": {
+    "acceptance": "implementation/warlock/qa/evidence/decoder-refusal-20261029/scenario-acceptance.json",
+    "sourceRevision": "cdb5e9fd9752ab07625234851a066c91692cef86",
+    "actualReportSHA256": "225288de7a79ea4a875d996a6791331630ecacbeb7685ae2311f84bc569988d1",
+    "scope": "17 invalid/four controls compiled Shell f14b remains unchanged. Later native logging/typed-value extraction preserves routing order; independent final whole review explicitly accepts source correspondence rather than claiming a rerun."
+  },
+  "finalProtectedScopes": [
+    {
+      "unit": "qa-harness-4d85ce83d72b41a0bf2503d7a501aaa6.scope",
+      "invocation": "1669b5c7d4d34b77912653c8c748470e",
+      "exitCode": 0,
+      "kind": "current18casewitness"
+    },
+    {
+      "unit": "qa-harness-741a4065e31a475a86a38b2caa611c3d.scope",
+      "invocation": "c9a4c17aba3d4360b13d259efad33ef3",
+      "exitCode": 0,
+      "kind": "currentproductionhostbuild"
+    },
+    {
+      "unit": "qa-harness-bc0c604d83254f2296d3d3cd25f31030.scope",
+      "invocation": "ee807b09eed344719ad96aecee5514ca",
+      "exitCode": 0,
+      "kind": "current20selftests"
+    }
+  ],
+  "limits": [
+    "Original permits native OR bridge verification; no native GUI/compositor/main-session deployment is inferred.",
+    "Finite observed failures and matching source composition, not exhaustive proof of all JSON or schedules.",
+    "All prior failed/accepted records retain their own source tuple; the final whole adoption is a separate immutable claim."
+  ],
+  "files": [
+    {
+      "path": "baseline-report.json",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-host-admission-terra2-v1/output/report.json",
+      "sha256": "d566aa708b1f5235ddd5ff09276a2cfda0b9982040e22f95d223955812e8dc8f"
+    },
+    {
+      "path": "baseline-witness.stderr",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-host-admission-terra2-v1/output/witness.stderr",
+      "sha256": "c56a178b0abe63373e89f987c25337068b9f8e363fea4991e9c8fa0d0fbfeba4"
+    },
+    {
+      "path": "baseline-witness.stdout",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-host-admission-terra2-v1/output/witness.stdout",
+      "sha256": "821040e7b3b99b2ca155f9a7e82019fed6357ba99e8c28828419a331c3168286"
+    },
+    {
+      "path": "baseline-probe.py",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-host-admission-terra2-v1/probe.py",
+      "sha256": "6d527e477dde6b454d8851653852cf9514d9e62b1570c0477241994d8249f7f4"
+    },
+    {
+      "path": "baseline-host-witness.c",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-host-admission-terra2-v1/host-witness.c",
+      "sha256": "6a7e0ce09a39593d22176131aea8069122d8355faa5622951bbddb51f7ee5f1d"
+    },
+    {
+      "path": "first-pass-report.json",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-host-admission-root-v2/output/report.json",
+      "sha256": "1553630240625be0cd7174440c0e8b00161ffb18f66d2e552bac6a3dcb6605d8"
+    },
+    {
+      "path": "first-pass-witness.stderr",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-host-admission-root-v2/output/witness.stderr",
+      "sha256": "39a8abd834310b1191bb9b40a32222824a52e8456ce3ccbef8a2b08389be74d9"
+    },
+    {
+      "path": "first-pass-witness.stdout",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-host-admission-root-v2/output/witness.stdout",
+      "sha256": "821040e7b3b99b2ca155f9a7e82019fed6357ba99e8c28828419a331c3168286"
+    },
+    {
+      "path": "first-pass-probe.py",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-host-admission-root-v2/probe.py",
+      "sha256": "9a02cf248eb01777d40103d4911a84c0a2cb33552651559c233c8d87e62d8632"
+    },
+    {
+      "path": "first-pass-host-witness.c",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-host-admission-root-v2/host-witness.c",
+      "sha256": "a9ad28b86d0871bdc194477e3cc6fa13d0214361dc4977c6ee52f2c501efe72e"
+    },
+    {
+      "path": "preview-baseline-report.json",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-host-admission-root-v3/output/report.json",
+      "sha256": "cce20e62ae0b93bac3d8d5f15cbf8843e4b38be9aa0dbca76f7123b083433071"
+    },
+    {
+      "path": "preview-baseline-witness.stderr",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-host-admission-root-v3/output/witness.stderr",
+      "sha256": "68313703c287129ae1c57169251be2279fd757231ad71e492661888af31d11d8"
+    },
+    {
+      "path": "preview-baseline-witness.stdout",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-host-admission-root-v3/output/witness.stdout",
+      "sha256": "821040e7b3b99b2ca155f9a7e82019fed6357ba99e8c28828419a331c3168286"
+    },
+    {
+      "path": "preview-baseline-probe.py",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-host-admission-root-v3/probe.py",
+      "sha256": "e9b48ef4c3eacc759ff16d62d2579ce72e34618d9fd134df0121f4d2545b768d"
+    },
+    {
+      "path": "preview-baseline-host-witness.c",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-host-admission-root-v3/host-witness.c",
+      "sha256": "ab7092b04346d3097bc7f5c7632167b6165f59ac6672333029a199a3e3348b89"
+    },
+    {
+      "path": "current-report.json",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-host-admission-root-v4/output/report.json",
+      "sha256": "90c06efae3bb46b0a73990e59c34aed818131fa3a77a7d03aabf267de806d972"
+    },
+    {
+      "path": "current-witness.stderr",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-host-admission-root-v4/output/witness.stderr",
+      "sha256": "8bab6e35ab8be9e0f3da48317652b6f22d56dd09fea2eebfa20b2d101930c87c"
+    },
+    {
+      "path": "current-witness.stdout",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-host-admission-root-v4/output/witness.stdout",
+      "sha256": "f3fec4313d9a4a951144f51c422985ddcabc2c202b2bd0a3bd280ec97ed02fff"
+    },
+    {
+      "path": "current-probe.py",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-host-admission-root-v4/probe.py",
+      "sha256": "8306cd34e7063212ab07482bd90bef974828ff502c956a2f470acaeb1c26fab0"
+    },
+    {
+      "path": "current-host-witness.c",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-host-admission-root-v4/host-witness.c",
+      "sha256": "c0df8bf8174adbff24dc8040a53ccdf676f8eb8e35b9511c32f7a8f5e5915642"
+    },
+    {
+      "path": "first-build-report.json",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-host-build-terra2-v1/output/report.json",
+      "sha256": "afa1cd62db572baef848c61edd737af5b9888d8a643365247e4236c1ed173f67"
+    },
+    {
+      "path": "first-build-driver.py",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-host-build-terra2-v1/build-host.py",
+      "sha256": "d1e7621b47ebe1f296a899765744143e05b15cd9b68423d4c64c378345a2f473"
+    },
+    {
+      "path": "first-build-self-tests.stdout",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-host-build-terra2-v1/output/self-tests.stdout",
+      "sha256": "6bdf7cd1be99a040d15bf4296eee870fc68b4eb4a3b075dc84570f3730e91311"
+    },
+    {
+      "path": "first-build-self-tests.stderr",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-host-build-terra2-v1/output/self-tests.stderr",
+      "sha256": "3a836df30ae63bce12e103326ff02bf214f0e4d51a8a99d68157711fb16a1266"
+    },
+    {
+      "path": "current-build-report.json",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-host-build-root-v2/output/report.json",
+      "sha256": "631119b4d55f094cc02bc5dddce23a3298d5cbf0c73f565ad5d9c49abd4768da"
+    },
+    {
+      "path": "current-build-driver.py",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-host-build-root-v2/build-host.py",
+      "sha256": "7a665bf7d4f053f4d8641ceaf2e1aef29d53400d98bbfb7b09e549d9bf14b04d"
+    },
+    {
+      "path": "current-build-self-tests.stdout",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-host-build-root-v2/output/self-tests.stdout",
+      "sha256": "7d46b815a9bfae5205456102df242870da95b9dee649b4d0f617871cc3f63596"
+    },
+    {
+      "path": "current-build-self-tests.stderr",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-host-build-root-v2/output/self-tests.stderr",
+      "sha256": "fa63e0615834d8e793d5750985ff14fb406739120c5c0bade095b766d216820e"
+    },
+    {
+      "path": "source-predicate.md",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-5/arc004-host-current/source-predicate.md",
+      "sha256": "f023c7f24d4fb84be32c7b1e909019e8539a06d84dd0afa04fadc67cd2b6513d"
+    },
+    {
+      "path": "baseline-source-review.md",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-5/arc004-host-current/baseline-source-review.md",
+      "sha256": "d7de75656a8317b9b05dea7e8a497002005217f5f2662a90ce78c50c9f2cb0d6"
+    },
+    {
+      "path": "current-diff-review.md",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-5/arc004-host-current/current-diff-review.md",
+      "sha256": "bc836726079956ab43c4e8c0e2dc28657e8fca26decd483d13f4d376bb3e3f57"
+    },
+    {
+      "path": "current-11-evidence-disposition.md",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-5/arc004-host-current/current-11-evidence-disposition.md",
+      "sha256": "559e6801c490a89e1a071f7baccc30ed972ffda577a2ec8b38a05d6eed255d68"
+    },
+    {
+      "path": "whole-arc004-build-disposition.md",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-5/arc004-host-current/whole-arc004-build-disposition.md",
+      "sha256": "8e475eed310ecc2fe826ae491c5f3f4dc473e172a6a4c362c81fbebae0029dfd"
+    },
+    {
+      "path": "final-18-whole-disposition.md",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-5/arc004-host-current/final-18-whole-disposition.md",
+      "sha256": "40b04ce3ba4323814245b29802aa084bbbe4f79f0698b291b3893f0f1e849461"
+    },
+    {
+      "path": "first-patch-shared-host.c",
+      "sha256": "add8a73915bf2dc3ee8b20516b8c7085a05fd518e7459385def8ec83cabb27cb",
+      "scope": "Exact intermediate source restored from final source by removing two later logging-only lines; digest matches earlier executed source."
+    }
+  ]
+}

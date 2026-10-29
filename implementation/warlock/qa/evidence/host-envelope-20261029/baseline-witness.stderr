@@ -1,0 +1,6 @@
+case=malformed-json state_unchanged=1 refusal_recorded=1 log=view-refused: duplicate-or-malformed-json
+
+case=non-object state_unchanged=1 refusal_recorded=0 log=
+case=unsupported-version state_unchanged=1 refusal_recorded=1 log=view-refused: commit-preflight
+
+positive=existing-shared-preview-router returned=1

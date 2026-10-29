@@ -488,12 +488,17 @@ static void shared_context_forward(OutputView *origin,JsonNode *action,gboolean 
     json_object_set_member(object,"scope",scope_packet(origin));json_object_set_member(object,"action",json_node_copy(action));
     JsonNode *packet=json_node_new(JSON_NODE_OBJECT);json_node_take_object(packet,object);surface_eval(view,"receiveAction",packet);json_node_unref(packet);
 }
+static void shared_refuse(const char *reason) {
+    /* Only fixed internal reason codes reach this diagnostic; never log input. */
+    g_print("view-refused: %s\n",reason);fflush(stdout);
+}
 static void shared_receive_text(WebKitUserContentManager *manager,const char *text) {
-    if (!text || strlen(text)>1048576) return;
+    if (!text) {shared_refuse("missing-text");return;}
+    if (strlen(text)>1048576) {shared_refuse("transport-bound");return;}
     g_autoptr(JsonParser) parser=json_parser_new();if (!strict_json_load(parser,text)) {g_print("view-refused: duplicate-or-malformed-json\n");fflush(stdout);return;}
-    JsonNode *root=json_parser_get_root(parser);if (!JSON_NODE_HOLDS_OBJECT(root)) return;
+    JsonNode *root=json_parser_get_root(parser);if (!JSON_NODE_HOLDS_OBJECT(root)) {shared_refuse("non-object");return;}
     JsonObject *object=json_node_get_object(root);const char *kind=surface_text(json_object_get_member(object,"kind"),32,FALSE)?json_object_get_string_member(object,"kind"):NULL;
-    if(shutting_down) {preview_route_commands(manager,text,root);return;}
+    if(shutting_down) {if(!preview_route_commands(manager,text,root))shared_refuse("shutdown");return;}
     if(controlled_receive(manager,text,object))return;
     if (preview_route_commands(manager,text,root)) return;
     if(manager==popup_manager && kind && g_str_equal(kind,"preview-image-report")) {
@@ -514,12 +519,12 @@ static void shared_receive_text(WebKitUserContentManager *manager,const char *te
         if(!qa_delay_controller_commit(root,text)) {shared_commit(root,text);}
         return;
     }
-    if (!origin && manager!=popup_manager) return;
+    if (!origin && manager!=popup_manager) {shared_refuse("origin");return;}
     const char *const ready[]={"surfaceProtocol","kind"};
     if (strlen(text)<=4096 && surface_fields(object,ready,2) && json_node_get_value_type(json_object_get_member(object,"surfaceProtocol"))==G_TYPE_INT64 && json_object_get_int_member(object,"surfaceProtocol")==2 && kind && g_str_equal(kind,"presentation-ready")) {
         if (origin) {origin->ready=TRUE;shared_publish();} else {popup_ready=TRUE;surface_present();shared_announcement_publish();}return;
     }
-    if (strlen(text)>4096) return;
+    if (strlen(text)>4096) {shared_refuse("control-bound");return;}
     if (kind && g_str_equal(kind,"context-input-report") && qa_exit) {g_print("context-input-report: %s\n",text);fflush(stdout);return;}
     if (kind && g_str_equal(kind,"surface-context")) {if(!shared_context_receive(manager,root)){g_print("surface-context-refused: origin-or-proof\n");fflush(stdout);}return;}
     if (kind && g_str_equal(kind,"surface-menu-navigation")) {if(!shared_navigation_receive(manager,root)){g_print("surface-menu-navigation-refused\n");
@@ -533,14 +538,17 @@ static void shared_receive_text(WebKitUserContentManager *manager,const char *te
     if (manager==popup_manager) {
         if (surface_ack(object,"presentation-applied",FALSE) || surface_ack(object,"focus-applied",TRUE)) {client_wake();imported_wake();product_wake();return;}
         if (surface_popup_ready()) shared_forward(popup_owner,root,TRUE);
+        else shared_refuse("popup-not-ready");
     } else shared_forward(origin,root,FALSE);
+}
+static void shared_receive_value(WebKitUserContentManager *manager,JSCValue *value) {
+    if (!value || !jsc_value_is_string(value)) {shared_refuse("type");return;}
+    g_autofree char *text=jsc_value_to_string(value);shared_receive_text(manager,text);
 }
 static void shared_receive(WebKitUserContentManager *manager,WebKitJavascriptResult *result,gpointer unused) {
     (void)unused;
-    /* Teardown controls must reach the same strict text router. That router
-     * seals other messages and admits only exact owned retirement controls. */
-    JSCValue *value=webkit_javascript_result_get_js_value(result);if (!jsc_value_is_string(value)) return;
-    g_autofree char *text=jsc_value_to_string(value);shared_receive_text(manager,text);
+    /* Teardown controls still pass through the same strict text router. */
+    shared_receive_value(manager,webkit_javascript_result_get_js_value(result));
 }
 static void shared_geometry(GObject *object,GParamSpec *property,gpointer data) {
     (void)property;OutputView *row=data;

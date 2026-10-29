@@ -1,0 +1,25 @@
+case=malformed-json state_unchanged=1 refusal_recorded=1 log=view-refused: duplicate-or-malformed-json
+
+case=non-object state_unchanged=1 refusal_recorded=1 log=view-refused: non-object
+
+case=unsupported-version state_unchanged=1 refusal_recorded=1 log=view-refused: commit-preflight
+
+case=null-text state_unchanged=1 refusal_recorded=1 log=view-refused: missing-text
+
+case=scalar-root state_unchanged=1 refusal_recorded=1 log=view-refused: non-object
+
+case=duplicate-field state_unchanged=1 refusal_recorded=1 log=view-refused: duplicate-or-malformed-json
+
+case=transport-bound state_unchanged=1 refusal_recorded=1 log=view-refused: transport-bound
+
+case=control-bound state_unchanged=1 refusal_recorded=1 log=view-refused: control-bound
+
+case=foreign-origin state_unchanged=1 refusal_recorded=1 log=view-refused: origin
+
+case=typed-number state_unchanged=1 refusal_recorded=1 log=view-refused: type
+
+case=typed-null state_unchanged=1 refusal_recorded=1 log=view-refused: type
+
+case=unsupported-preview-version state_unchanged=1 refusal_recorded=0 log=
+positive=current-preview-router handler_calls=1 returned=1
+positive=existing-shared-preview-router returned=1

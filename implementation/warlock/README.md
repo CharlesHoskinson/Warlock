@@ -94,8 +94,17 @@ passes 21 cases, including malformed attachment/disconnect/recovery frames and
 valid refresh, disconnect and unrelated-policy controls. All three Elm entry points
 rebuild, and the changed C host unit recompiles and relinks with the ten unchanged
 C++ objects. Independent review accepts the original `decoder-native-to-elm` scenario on this
-recorded bridge tuple. The host-facing `architecture-004` scenario, the whole
-requirement, native GUI and release acceptance remain separate.
+recorded bridge tuple. The host-facing result and whole-requirement composition are recorded below;
+native GUI and release acceptance remain separate.
+
+The shared host now records bounded reasons at previously silent envelope and
+preview-command rejection gates. The [host bridge witness](qa/evidence/host-envelope-20261029/manifest.json)
+passes 18 negative cases with actual refusal logs and unchanged checked host
+state. Valid preview routing and denied-acquisition delivery ordering are retained.
+The final production host rebuild and all 20 existing self-tests pass.
+Independent review accepts [whole ELM-ARC-004](qa/evidence/host-envelope-20261029/whole-requirement-acceptance.json)
+using both original directions and explicit source correspondence. This is bounded
+bridge/build acceptance, not a live compositor, native GUI or release result.
 
 Original ELM-UX-004 pin-order persistence is independently accepted on the
 recorded tuple: the current compiled replay and actual native pin, reorder,
