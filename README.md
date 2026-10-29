@@ -31,6 +31,13 @@ normal GitHub integration does not activate the candidate. The loop includes
 regular publication, README upkeep and reversible Omarchy trials with draft
 preservation and rollback verified before activation.
 
+October 29 launcher checkpoint: the original ELM-UX-029 `launcher-accepted`
+scenario is independently accepted on the current observed tuple: searching,
+physical Enter, one bound native submission, one actual GIO recipient and
+painted success feedback. The refused journey remains partial: its native
+refusal and preserved query were recorded, but a fixture focus condition timed
+out before the screenshot. The whole launcher requirement remains open.
+
 Warlock is the name of the Elm-based window-system project. See the [brand identity](docs/warlock-brand/README.md), [design philosophy](docs/warlock-brand/PHILOSOPHY.md), and [research implementation plan](docs/elm-roadmap/research/20261005-design-adoption/WORKPLAN.md). Original archival names and evidence remain preserved.
 
 The [design-language documentation](DesignLanguage/README.md) and
@@ -102,8 +109,9 @@ Read [AGENTS.md](AGENTS.md) and the handoff before running tests. Native tests m
 use the protected QA launcher and run serially. A passing model or CPU suite does
 not establish native acceptance. Current evidence is recorded with source hashes
 and explicit missing observations; historical check counts do not certify the
-current candidate. The pin/MAX draft compiles but its native context interaction
-failed when preview arrival moved a target between press and release.
+current candidate. Historical pin/MAX failures remain preserved alongside later
+bounded native results; consult the current product README and delivery ledger
+for their exact scope and remaining obligations.
 
 ## Contributing
 

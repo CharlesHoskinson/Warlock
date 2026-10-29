@@ -29,6 +29,15 @@ IME candidate-selection/cancellation campaign stopped before GUI execution and
 does not establish that behavior. Reversible Omarchy trials remain part of the
 integration loop; this checkout is not a ready-to-install release.
 
+October 29 launcher evidence independently accepts ELM-UX-029
+`launcher-accepted`: the focused compiled Desktop/Surface replay passes, and
+the isolated native search/Enter journey records one identity-bound Submitted
+outcome, one real GIO recipient and visibly painted “Launch submitted.”
+The refused trial records one correlated refusal and preserved query; its
+focus-specific fixture wait expires before screenshot capture. Refusal paint
+remains unaccepted, and the whole requirement stays open. This stopped run
+does not establish a renderer failure or a product defect.
+
 Current implementation status and remaining behavior are in the [feature-completion checklist](../../docs/warlock-roadmap/FEATURE-COMPLETION.md). Current design guidance and the [contributor plugin section](../../DesignLanguage/catalog/index.html#contributors) distinguish the editable product from frozen browser examples.
 
 [Offline component recovery](RECOVERY.md) now retains reviewed predecessor and

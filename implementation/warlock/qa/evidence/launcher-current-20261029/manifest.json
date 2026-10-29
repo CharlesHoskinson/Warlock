@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "requirement": "ELM-UX-029",
+  "status": "partial",
+  "requirementAccepted": false,
+  "releaseAccepted": false,
+  "scenarioDispositions": {
+    "launcher-accepted": "accepted-on-observed-tuple",
+    "launcher-refused": "partial-missing-painted-capture-and-unreached-postcapture-check"
+  },
+  "independentReview": {
+    "file": "independent-review.md",
+    "sha256": "8a9789b20b2f94a31bcc77a7100aee9a7506fb9bd27c4d7d398c408c5e3b1a6c",
+    "exactReviewerBytes": true
+  },
+  "rootAdoption": {
+    "launcherAccepted": "Root read the complete independent review, viewed the exact full accepted image and adopts the original accepted scenario.",
+    "launcherRefused": "Partial only. No rerun after the expired investigation threshold.",
+    "adoptedUTC": "2026-10-29T13:58:09.838144+00:00"
+  },
+  "replay": {
+    "file": "replay-observations.json",
+    "sha256": "174e7416e60f152186dc312aadb5045d95d80cf7b3061584401c16906e542ff9",
+    "passed": true,
+    "checkCount": 10,
+    "sourceCount": 101,
+    "compiledSHA256": "a7f4e62458f0b7d98abe2a38ac4c0e484563048f89807ac3ed1d1ea47bce2d91",
+    "scope": "Actual compiled Desktop/Surface Elm replay via worker ports; physical input and paint come from separate native evidence."
+  },
+  "reports": {
+    "accepted": {
+      "file": "native-accepted-report.json.gz",
+      "encoding": "gzip",
+      "sha256": "c76ccfe746cb681e4ef70ba73bb02ff32632135dcd716f4fd19876b13fb197f1",
+      "expandedRawSHA256": "c638faee603151a7c390ae02b7c2ff9453209993cf8bffb7c2c4447bd1790d3f",
+      "exactExpandedRawBytes": true,
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-current-v2/native-launcher-accepted-1793234851688580873/report.json"
+    },
+    "refused": {
+      "file": "native-refused-report.json.gz",
+      "encoding": "gzip",
+      "sha256": "e01ee41499c4ff715fd7f85daad10e88029fbd6993ec9c1a3c5fe37d552c8dc9",
+      "expandedRawSHA256": "8a27aa3d93f37f98316414041220abdfd38ffe5422d21682c98311ac7769be5f",
+      "exactExpandedRawBytes": true,
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-current-v2/native-launcher-refused-1793234889636573220/report.json"
+    }
+  },
+  "acceptedImage": {
+    "file": "launcher-accepted-full.png",
+    "sha256": "9a5f5c5ed697bf754731c58bacb40c14561d6c8cfdfb98c35e4f27e0c673268a",
+    "source": "/home/charles/window-integration-qa/warlock-window-feedback-1793234851688657479/launcher-accepted-full.png",
+    "scope": "Actual full private compositor capture independently viewed by root and Quint5; Launch submitted is painted without refusal feedback."
+  },
+  "observedAccepted": [
+    "27 native checks pass, including trusted typed files/current entry selection and physical Enter.",
+    "One full-binding/intent correlated Submitted outcome, one actual GIO fixture recipient and no duplicate through capture.",
+    "Actual painted success, no refusal feedback, normal owned helper/host exits, plugin unload and cleanup."
+  ],
+  "observedRefused": [
+    "20 reached native checks pass, including physical Enter and one full-binding/intent correlated Refused/stale-catalog outcome.",
+    "Root and Quint5 log inspection finds refusal text and query files reported at publication30/lease2, with focus on entry:warlock-files.",
+    "The fixture required launcher-search focus and its original six-second wait expired before capture; exact search-field focus is not in the original scenario.",
+    "No renderer failure was observed; owned host/helpers exit normally, plugin unload and cleanup pass."
+  ],
+  "missingRefused": [
+    "Actual refusal screenshot and independent observation of painted feedback.",
+    "Post-capture no-duplicate/no-recipient assertion was not reached. One request appears in the retained log through the stopped run."
+  ],
+  "runtimeLogReferences": {
+    "accepted": {
+      "path": "/home/charles/window-integration-qa/warlock-window-feedback-1793234851688657479/warlock.log",
+      "sha256": "5f42a46cb90671ca8f6b21354a5e6fd9d706957e139c191092f6ba916452dfc6"
+    },
+    "refused": {
+      "path": "/home/charles/window-integration-qa/warlock-window-feedback-1793234889636672626/warlock.log",
+      "sha256": "7c03aa4f371cb8e54de050352473b78b78412425569509184126682d5e114df5"
+    }
+  },
+  "sourceTuple": {
+    "currentSourceCount": 367,
+    "currentHashesMatchAtPreparation": true,
+    "sourceInputs": "Full identical source maps are retained inside the compressed exact reports.",
+    "pair": {
+      "core": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-build/Hyprland",
+        "sha256": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e"
+      },
+      "plugin": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/authority/elm-window-geometry-authority.so",
+        "sha256": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c"
+      },
+      "aquamarine": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/lib/libaquamarine.so.0.15.0",
+        "sha256": "667a22d535aade4e4a26134e39028a87fb3f963c28b7bf7ff79da684bb014ecd"
+      }
+    },
+    "host": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/elm-host",
+      "sha256": "4377b11ce0afe9e1072210666aa872118b032995275a20657058771e5e6c8347",
+      "heldBuild": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/host-build-report.json",
+      "heldBuildSHA256": "691806471ff599503a20067aa0b90bf914b93a1ee5985198cdc79fb92ff975bf"
+    },
+    "runtimeByReference": {
+      "root": "/home/charles/Warlock/implementation/warlock-client-provider-native-v204",
+      "freshAdapter": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/source-coherence-20261028/terra-2/fresh_candidate-v1.py",
+      "freshAdapterSHA256": "23d66e343e37bead000ed155bbf46f8dcecb47bed09946ed62afe8f052169b00",
+      "parentAdapterSHA256": "e045634bd023f07977c398ef0057b9fdee3a1e1718d51c879e221ee353e28ae9",
+      "tupleSHA256": "bc225242e30baf4a5b8b1182cef6fdc716cc9c67de90dc35674f90c5fa87830b",
+      "foundationSHA256": "08b24bd93cbb63ec097900915379b32e90d9dcca7156d04fe8ee959efaff264f"
+    },
+    "entrypointSHA256": {
+      "native-launcher-accepted-portable.py": "e10da43521d6400ce4786b4ec15d3597774c5050687a947523898a44b377b1d8",
+      "native-launcher-refused-portable.py": "2aa9fcb7881e19410fb54a3ec512a12688a7a20ee7e10496bd577f6a7bca6a36"
+    },
+    "underlyingFrameworkSHA256": "bb12e30c5e59c653441e18e580f5404f89ddb34a7d6cdb26629c6a0f63af5f4e",
+    "scope": "The inherited report runner hash identifies its underlying framework; the independent review separately pins the actual v2 runner/search/recipient sources."
+  },
+  "historicalFlags": "Raw nativeAcceptance, launcherAcceptance and popupPresentationAccepted flags remain unchanged as pre-independent-review observations. This separate manifest records the later named accepted-scenario adjudication.",
+  "limits": [
+    "Whole ELM-UX-029 and release remain unaccepted.",
+    "AT/IME are not extra preconditions of these original UX029 scenarios; their separate original requirements remain open.",
+    "DOM refusal text is reported state, not proof of physical paint. The timed-out run does not establish a product defect.",
+    "The expired slice is stopped; source, deadlines, original timer and failed report remain preserved.",
+    "This evidence does not qualify a main-session deployment or general application readiness."
+  ]
+}

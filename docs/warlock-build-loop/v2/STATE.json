@@ -1,35 +1,34 @@
 {
   "schema": 1,
   "owner": "sol",
-  "updatedUTC": "2026-10-28T19:27:54.428404+00:00",
+  "updatedUTC": "2026-10-29T13:51:19.833786+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "native-taskbar-group-keyboard",
+    "id": "omarchy-predecessor-offline-recovery",
     "requirements": [
-      "ELM-UI-004"
+      "ELM-UI-020"
     ],
     "scenarios": [
-      "taskbar-group"
+      "offline-recovery"
     ],
     "paths": [
-      "implementation/warlock/qa/native-taskbar-group-keyboard-portable.py",
-      "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/qa/ThreeGroupReplay.elm",
-      "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/README.md"
+      "implementation/warlock/RECOVERY.md",
+      "implementation/warlock/qa/native-omarchy-recovery-portable.py",
+      "implementation/warlock/qa/evidence/omarchy-recovery-20261029/manifest.json",
+      "implementation/warlock/qa/evidence/omarchy-recovery-20261029/independent-review.md"
     ],
-    "before": "Three-entry pointer/group browsing passes, but keyboard-primary group opening and member selection without pointer injection remain unobserved on this tuple; AT qualification reached its no-progress guard.",
-    "after": "Original three-entry family group opens and selects its intended member through real native keyboard focus/Enter, with exact selected native effect/receipt/recipient and no pointer events or launches.",
+    "before": "Existing recovery profile has historical Warlock predecessor proof, explicitly no accepted actual installed Omarchy predecessor; user requested reversible Omarchy testing and draft preservation.",
+    "after": "Prepare and qualify actual installed Omarchy predecessor descriptor and current candidate in a fresh isolated Wayland/DBus profile, preserve compatible preference copies and drafts, observe failure followed by standalone rollback and normal cleanup. Do not activate main desktop or claim full deployment from static descriptors.",
     "verification": [
-      "Reuse exact3group native oracle/currentlease/reveal/selected-only activation; keyboard-native primary invocation using legitimate original shortcut/Enter, zero pointer helpers, exactreceipt/actualfocus/keyrecipient/paint/no launch; preserve oneoutputfresh tuple/deadlines/cleanup. AT remains separate."
+      "Review exact actual executable/resource/dependency closure and source identities before protected execution; real installed predecessor, no historical Warlock substitute.",
+      "Protected serialized native offline rollback with independent observed predecessor presentation, preserved compatible preferences/drafts and retired candidate ownership; original deadlines and core1."
     ],
-    "owner": "sol",
-    "participantRecord": ".warlock-contributor/native-group-keyboard.json"
+    "owner": "root-omarchy-recovery",
+    "participantRecord": ".warlock-contributor/omarchy-predecessor-offline-recovery.json"
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -1792,6 +1791,118 @@
         "fullReleaseAccepted": false
       },
       "nextOriginalProductWork": "ELM-DEL-005 delivery-005: source-backed package SBOM, upstream notices and reviewed redistribution disposition for every shipped component. Independent reproducibility review, accepted Omarchy fallback, native AT/IME/hardware/resources/journeys and reversible main-session deployment remain required."
+    },
+    {
+      "id": "release-current-native-tuple",
+      "requirements": [
+        "ELM-DEL-003",
+        "ELM-DEL-004"
+      ],
+      "scenarios": [
+        "delivery-003",
+        "delivery-004"
+      ],
+      "paths": [
+        "implementation/warlock/adapter/release_builder.py",
+        "implementation/warlock/adapter/release_tuple.py",
+        "implementation/warlock/qa/check-release-tuple.py",
+        "implementation/warlock/RELEASE.md"
+      ],
+      "before": "Release capture hardcodes unavailable historical native pair/reports and launcher paths; cannot capture current coherent native tuple for actual reproducible packaging.",
+      "after": "Explicit hash-pinned current tuple selection captures verified artifact/source/build provenance and loader alias inputs using current protected launcher paths; historical lock and pair remain unchanged. Fresh capture verifies or fails with exact missing inputs, then two isolated offline builds can proceed under same scope.",
+      "verification": [
+        "Protected CPU source-bound tuple selection positive/current artifact and negative altered tuple/artifact/report/alias/source tests; real current capture and verify, retain exact blocked facts if closure incomplete. Original delivery-003/004 verdicts require actual locked rebuilds/comparison and independent review; fixture-only pass is not full acceptance. Preserve all historical native tuples/locks/deadlines and stopped mandatory renderer/pin work."
+      ],
+      "owner": "root-release",
+      "participantRecord": ".warlock-contributor/release-current-native-tuple.json",
+      "outcome": "Partial release delivery: actual host/assets reproduce; nine scoped component reviews adopted and nineteen review errors remain. Project-grant question pending. Full distributable comparison and release approval remain open."
+    },
+    {
+      "id": "native-newinstance-renderer-return",
+      "requirements": [
+        "ELM-UI-004"
+      ],
+      "scenarios": [
+        "taskbar-inactive"
+      ],
+      "paths": [
+        "implementation/warlock/qa/native-taskbar-new-instance-diagnostic-portable.py",
+        "implementation/warlock/native/shared-host.c",
+        "implementation/warlock/native/host.c"
+      ],
+      "before": "Two retained NewInstance trials reproduce a shared WebKit renderer crash after first pointer launch/retirement, before keyboard or AT NewInstance. Old20:37 record/failures remain immutable. Accepted REV007 and concrete package/linker/host fixes were delivered since the stop; fidelity recommends one diagnostic return.",
+      "after": "One bounded diagnostic captures exact owned-renderer fatal signal/stack enabling a causal product fix, followed by original uninstrumented behavior verification. Diagnostic output alone never accepts native behavior.",
+      "verification": [
+        "Hash-pinned supervisor-v1 and runner51aa; unchanged host4377/native tuple and core limit1; one private scene, original six/five-second waits, bounded handshake outside those waits. Root-only graphical sudo askpass and fixed-purpose GDB supervisor, exact PID/start/UID/cgroup/ancestry/executable checks with pidfd stop and pre/post-attach validation; residual numeric attach race acknowledged. No core, frame arguments, locals, memory dump or policy change.",
+        "Stop after this diagnostic if no actionable cause/verdict. Preserve original failure, original20:37 timer and all packets. Existing accepted taskbar-inactive remains accepted on its recorded tuple; this selected scenario is only an anchor for the additional NewInstance EARS obligation."
+      ],
+      "owner": "root-native",
+      "participantRecord": ".warlock-contributor/native-newinstance-renderer-return.json",
+      "status": "stopped-investigation",
+      "observed": "One ancestor-v2 attempted native command stopped before GUI at frozen source preflight: one changed packaging-only inventory hash. No attachment, stack, product fix or original verdict. Preserve all old evidence and original22:41:31 timer; no further diagnostic expansion.",
+      "missingObservations": [
+        "Causal renderer signal/stack and original uninstrumented NewInstance P/K/AT behavior remain unverified."
+      ]
+    },
+    {
+      "id": "taskbar-pin-retained-draft-return",
+      "requirements": [
+        "ELM-UI-004"
+      ],
+      "scenarios": [
+        "taskbar-inactive"
+      ],
+      "paths": [
+        "implementation/warlock/qa/native-taskbar-pin-independence-portable.py",
+        "implementation/warlock/qa/evidence/taskbar-pin-return-20261028/observations.json",
+        "implementation/warlock/qa/evidence/taskbar-pin-return-20261028/manifest.json",
+        "implementation/warlock/qa/evidence/taskbar-pin-return-20261028/independent-review.json"
+      ],
+      "before": "Pin-independence fixture stalled because reopening Apps correctly preserves peer search draft; previous apps cleanup-name collision fixed privately. Original21:18 stopped record and failures preserved.",
+      "after": "Reviewed fixture reuses existing peer without typing, types only into focused empty query, refuses unexpected retained drafts, then observes application pin vs native Always on top independently through pointer, physical keyboard and actual AT.",
+      "verification": [
+        "Protected direct fixture behavioral/guard negatives; reviewed current-source qualification addendum retains frozen tuple/evidence and strict hashes. Original6sec/5sec waits, owned normal cleanup and exact Saved/Committed receipts. No broad requirement acceptance from fixture checks.",
+        "Existing taskbar-inactive acceptance remains unchanged; it anchors additional UI004 EARS only. Stop after bounded failed qualification per v2; no NewInstance diagnostic retry or timer reset."
+      ],
+      "owner": "root-native",
+      "participantRecord": ".warlock-contributor/taskbar-pin-retained-draft-return.json",
+      "status": "stopped-investigation",
+      "observed": "Retained draft fixture repaired and current source qualification passed. Native5appPin/unpin and pointer nativeTop independence checks pass; keyboardmenu sharedrenderer crash prevents completion/AT. Bounded source review supplies no supported causalfix. Twoqualification stop, original23:22:36 timer and all reports retained.",
+      "evidence": "implementation/warlock/qa/evidence/taskbar-pin-return-20261028/manifest.json",
+      "missingObservations": [
+        "Normal host exit and full keyboard/AT appPin versus nativeTop independence.",
+        "Causal sharedrenderer failure and NewInstance EARS remain unresolved."
+      ]
+    },
+    {
+      "id": "ime-candidate-presentation-source-return",
+      "requirements": [
+        "ELM-UX-028"
+      ],
+      "scenarios": [
+        "ime-spike-commit",
+        "ime-spike-cancel"
+      ],
+      "paths": [
+        "implementation/warlock/native/host.c",
+        "implementation/warlock/native/shared-host.c",
+        "implementation/warlock/assets/popup-adapter.js",
+        "implementation/warlock/qa/native-window-feedback.py",
+        "implementation/warlock/qa/native-ime-candidate-portable.py"
+      ],
+      "before": "Retained native Fcitx GTK/WebKit directpreedit/Unicodecommit passed, but externalcandidate_layers barrier expired at original6seconds and cancellationwasunreached. Prior twoqualificationIME stop/evidence preserved.",
+      "after": "Identify and fix demonstrated host/Fcitx candidatepresentation integration defect, then observe actualcandidate commit and cancellation preserving field/caret and no unintended launch. No blindthirdcampaign or DOM-only substitute.",
+      "verification": [
+        "Read retained original failedcandidate report/engine log, exact native host focus/caret and Fcitx display/surface route. Source diagnosis precedes any protected retry; no relaxedtimeout/sandbox/inputmethod or inventedoracle.",
+        "Compile changed realentrypoints/nativeunits and directmeaningful boundaryregression. Use Quintmodel/correspondence if authority/reducer changes. Originalcandidate interaction/nativecancel requires actualisolatedrecording; componentpass insufficient."
+      ],
+      "owner": "root-ime",
+      "participantRecord": ".warlock-contributor/ime-candidate-presentation-source-return.json",
+      "status": "stopped-investigation",
+      "observed": "Passive GTK popup observation support built and controlled guards passed. Actual native27065 stopped before GUI because inherited framework rejects IME mode and requires owning AT wrapper injection. No candidate recording or native acceptance. Preserve all prior reports and source reviews; second qualification stop, original timer unchanged.",
+      "missingObservations": [
+        "Compatible actual IME entrypoint with owning wrapper context, then physical candidate commit/cancel, full images and independent native review."
+      ]
     }
   ],
   "lastSlice": {
@@ -1922,34 +2033,29 @@
     "nextOriginalProductWork": "Restore and qualify a fresh coherent native source/core/plugin/host tuple for original taskbar activation/minimize/restore recipients: ELM-UI-004 / ELM-UX-005 / ELM-UX-008. Root owns serialized protected native execution; source reconstruction/build evidence stays separate from GUI acceptance."
   },
   "previousActiveSlice": {
-    "id": "native-taskbar-primary-at",
+    "id": "native-taskbar-group-keyboard",
     "requirements": [
       "ELM-UI-004"
     ],
     "scenarios": [
-      "taskbar-inactive",
-      "taskbar-active",
-      "taskbar-minimized"
+      "taskbar-group"
     ],
     "paths": [
-      "implementation/warlock/qa/native-taskbar-primary-at-portable.py",
+      "implementation/warlock/qa/native-taskbar-group-keyboard-portable.py",
       "implementation/warlock/qa/native-window-feedback.py",
-      "implementation/warlock/qa/accessibility-reader.py",
-      "implementation/warlock/qa/accessibility-session.py",
-      "implementation/warlock/qa/accessibility-inspector.py",
+      "implementation/warlock/qa/ThreeGroupReplay.elm",
       "implementation/warlock/src/Desktop.elm",
       "implementation/warlock/src/Surface.elm",
       "implementation/warlock/README.md"
     ],
-    "before": "Fresh native pointer and keyboard-primary journeys pass; focused AT press, accessible names/focus/state and Orca transcript remain unobserved on this tuple.",
-    "after": "Original focused current AT-SPI primary actions produce exact committed native effects with actual recipients/pixels and correct accessible names/focus/toggle/Orca transcript in a qualified private AT environment.",
+    "before": "Three-entry pointer/group browsing passes, but keyboard-primary group opening and member selection without pointer injection remain unobserved on this tuple; AT qualification reached its no-progress guard.",
+    "after": "Original three-entry family group opens and selects its intended member through real native keyboard focus/Enter, with exact selected native effect/receipt/recipient and no pointer events or launches.",
     "verification": [
-      "Preserve original focused AT primary fixture/native oracle/deadlines, private bus/session scope/normalcleanup and exact fresh tuple; real AT action/name/focus/state plus silent Orca speech transcript where original requires, with audible speech/braille and broader AT modes explicitly separate."
+      "Reuse exact3group native oracle/currentlease/reveal/selected-only activation; keyboard-native primary invocation using legitimate original shortcut/Enter, zero pointer helpers, exactreceipt/actualfocus/keyrecipient/paint/no launch; preserve oneoutputfresh tuple/deadlines/cleanup. AT remains separate."
     ],
     "owner": "sol",
-    "participantRecord": ".warlock-contributor/native-primary-at.json",
-    "outcome": "blocked before AT actions; two qualification iterations without progress",
-    "stoppedInvestigation": "Contributor check requires another bounded mandatory slice; oldrecord/timer/failures/v3ready preserved, no ATacceptance."
+    "participantRecord": ".warlock-contributor/native-group-keyboard.json",
+    "outcome": "53 native keyboard-group checks pass; independent bounded partial review, AT still open; integration follows during next native run."
   },
   "lastNativeObservation": {
     "report": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-primary-at/native-primary-keyboard-1793215082472811918/report.json",
@@ -2105,6 +2211,161 @@
       "participantRecord": ".warlock-contributor/native-primary-keyboard.json",
       "outcome": "131originalkeyboardchecks pass; UI004threecases partial untilAT/finalreview",
       "evidence": "implementation/warlock/qa/evidence/primary-keyboard-20261028/manifest.json"
+    },
+    {
+      "id": "native-taskbar-primary-at",
+      "requirements": [
+        "ELM-UI-004"
+      ],
+      "scenarios": [
+        "taskbar-inactive",
+        "taskbar-active",
+        "taskbar-minimized"
+      ],
+      "paths": [
+        "implementation/warlock/qa/native-taskbar-primary-at-portable.py",
+        "implementation/warlock/qa/native-window-feedback.py",
+        "implementation/warlock/qa/accessibility-reader.py",
+        "implementation/warlock/qa/accessibility-session.py",
+        "implementation/warlock/qa/accessibility-inspector.py",
+        "implementation/warlock/src/Desktop.elm",
+        "implementation/warlock/src/Surface.elm",
+        "implementation/warlock/README.md"
+      ],
+      "before": "Fresh native pointer and keyboard-primary journeys pass; focused AT press, accessible names/focus/state and Orca transcript remain unobserved on this tuple.",
+      "after": "Original focused current AT-SPI primary actions produce exact committed native effects with actual recipients/pixels and correct accessible names/focus/toggle/Orca transcript in a qualified private AT environment.",
+      "verification": [
+        "Preserve original focused AT primary fixture/native oracle/deadlines, private bus/session scope/normalcleanup and exact fresh tuple; real AT action/name/focus/state plus silent Orca speech transcript where original requires, with audible speech/braille and broader AT modes explicitly separate."
+      ],
+      "owner": "sol",
+      "participantRecord": ".warlock-contributor/native-primary-at.json",
+      "outcome": "blocked before AT actions; two qualification iterations without progress",
+      "stoppedInvestigation": "Contributor check requires another bounded mandatory slice; oldrecord/timer/failures/v3ready preserved, no ATacceptance."
+    },
+    {
+      "id": "lossless-production-deadline-route",
+      "requirements": [
+        "ELM-REV-007"
+      ],
+      "scenarios": [
+        "revision-007"
+      ],
+      "paths": [
+        "implementation/warlock/qa/DeadlineBridgeReplay.elm",
+        "implementation/warlock/qa/deadline-bridge-replay.cjs",
+        "implementation/warlock/qa/check-deadline-bridge.py",
+        "implementation/warlock/qa/evidence/lossless-deadline-20261029/observations.json",
+        "implementation/warlock/qa/evidence/lossless-deadline-20261029/manifest.json",
+        "implementation/warlock/qa/evidence/lossless-deadline-20261029/independent-review.md"
+      ],
+      "before": "The original adjacent-incarnation protocol example is accepted, but production PreviewLifecycle native scope/request deadline decoding through Acquire encoding lacks a protected positive/negative receipt.",
+      "after": "Verify adjacent canonical deadlines above 2^53 remain distinct through actual production decoders, init/open/request/update and encoded Acquire commands, with numeric JSON rejection and unchanged strict deadline admission. Fix only a demonstrated production defect.",
+      "verification": [
+        "Protected compiled Elm worker and actual JS ports with exact production source tuple, frozen scope clock/deadlines, explicit positive and numeric/malformed rejection receipts; direct-route checks must reach Acquire rather than merely echo fields.",
+        "Independent source/receipt review. Preserve accepted revision-007 evidence and whole-requirement limits; protocol evidence does not prove Main/native clock provenance or full release behavior."
+      ],
+      "owner": "root-deadline",
+      "participantRecord": ".warlock-contributor/lossless-production-deadline-route.json",
+      "outcome": "Whole original REV007 accepted by independent protected-protocol review; adoption3eeb8efe9, published2a96f1b52. No further investigation. Contributor record retains two qualification iterations because whole requirement adoption did not change original scenario claim."
+    },
+    {
+      "id": "launcher-accepted-refused-current-tuple",
+      "requirements": [
+        "ELM-UX-029"
+      ],
+      "scenarios": [
+        "launcher-accepted",
+        "launcher-refused"
+      ],
+      "paths": [
+        "implementation/warlock/qa/native-launcher-accepted-portable.py",
+        "implementation/warlock/qa/native-launcher-refused-portable.py",
+        "implementation/warlock/qa/evidence/launcher-current-20261029/manifest.json",
+        "implementation/warlock/qa/evidence/launcher-current-20261029/independent-review.md"
+      ],
+      "before": "Current native taskbar zero-pin launch does not establish searched-entry Enter and visible success. Historical launcher refusal uses another native tuple; original accepted scenario unadjudicated.",
+      "after": "Demonstrate search/current catalog selection plus physical Enter produces one identity-bound native launch, visible correlated success without refusal, and a separate refused launch displays feedback without duplicate launch. Fix only an observed production defect.",
+      "verification": [
+        "Original Elm replay assertion plus isolated native recording with actual production source/core/plugin tuple; frozen six-second observations, five-second helper bounds and core limit1.",
+        "Record exact catalog/request/outcome/recipient identities and pixels; no injected policy receipts or fabricated frame; independent review of original accepted/refused oracle."
+      ],
+      "owner": "root-launcher",
+      "participantRecord": ".warlock-contributor/launcher-current-tuple.json",
+      "outcome": "STOP execution after host continuation gap exceeded45min. Existing protected replay10PASS and nativeacceptedPASS awaiting independent original-scenario adjudication. Refused1correlated outcome/query retained but exactfixture searchfocus condition failed before screenshot; no renderer failure, preservepartial. No rerun/expansion."
+    }
+  ],
+  "lastCompletedBoundedSlice": {
+    "id": "lossless-authority-port-roundtrip",
+    "requirements": [
+      "ELM-REV-007"
+    ],
+    "scenarios": [
+      "revision-007"
+    ],
+    "paths": [
+      "implementation/warlock/qa/LosslessBridgeReplay.elm",
+      "implementation/warlock/qa/check-lossless-bridge.py",
+      "implementation/warlock/qa/lossless-bridge-replay.cjs",
+      "implementation/warlock/src/UInt64.elm",
+      "implementation/warlock/src/Effects.elm",
+      "implementation/warlock/src/Provider.elm",
+      "implementation/warlock/adapter/endpoint.py"
+    ],
+    "before": "Original lossless authority bridge scenario is unadjudicated; canonical decoders exist but exact adjacent above2^53 Elm/JS port receipts and cross-field numeric rejection need original verification.",
+    "after": "Real compiled Elm/JS ports preserve distinct canonical above2^53 incarnations and reject numeric authority identities, generations, revisions and absolute deadlines with explicit protected protocol receipts.",
+    "verification": [
+      "Original revision-007 permits protected native OR protocol fixture. Use unchanged qa_run, explicit source tuple and frozen deadlines, actual compiled Elm ports and production Python/native boundary as applicable; no GUI acceptance or full bridge proof inferred. Independent original oracle review required. Preserve stopped NewInstance and pin-independence obligations."
+    ],
+    "owner": "root-protocol",
+    "participantRecord": ".warlock-contributor/lossless-authority-port-roundtrip.json",
+    "outcome": "Independent original revision-007 accepted on protected protocol fixture; full REV007 remains open. Exact11case raw/review retained."
+  },
+  "stoppedInvestigations": [
+    {
+      "id": "native-taskbar-new-instance",
+      "requirements": [
+        "ELM-UI-004"
+      ],
+      "scenarios": [
+        "taskbar-inactive"
+      ],
+      "paths": [
+        "implementation/warlock/qa/native-taskbar-new-instance-portable.py",
+        "implementation/warlock/qa/native-taskbar-new-instance-at-portable.py",
+        "implementation/warlock/qa/new-instance.qnt",
+        "implementation/warlock/src/Desktop.elm",
+        "implementation/warlock/src/Surface.elm"
+      ],
+      "before": "Six original primary scenarios have independent verdicts; explicit New instance and application-pin/native-top EARS clauses still require current-tuple supporting evidence.",
+      "after": "Explicit pointer, keyboard and real AT menu actions submit one exact catalog launch each with real GTK lifecycle; ordinary pin actions do not duplicate launches, retired catalog refuses, and application pin does not change native pin flags.",
+      "verification": [
+        "Reviewed1a16 wrapper/fbc859 menu helper/current core-plugin-host/qualified ATv3. Preserve original newinstance receipt/no-duplicate/retired-catalog/normal-cleanup and six/five-second oracles. Two fresh sessions default pointer+keyboard and actualAT variant. UI008 dense and broader native always-on-top remain separate; existing Quint correspondence audit pending."
+      ],
+      "owner": "root-native",
+      "participantRecord": ".warlock-contributor/native-taskbar-new-instance.json",
+      "outcome": "Stopped after two failed qualification native trials; renderer crash unresolved, no NewInstance acceptance; reviewed supervisor unexecuted."
+    },
+    {
+      "id": "native-taskbar-pin-independence",
+      "requirements": [
+        "ELM-UI-004"
+      ],
+      "scenarios": [
+        "taskbar-inactive"
+      ],
+      "paths": [
+        "implementation/warlock/qa/native-taskbar-pin-independence-portable.py",
+        "implementation/warlock/src/Desktop.elm",
+        "implementation/warlock/src/Surface.elm"
+      ],
+      "before": "Application pin and native always-on-top have distinct source authorities; current native cross-kind independence evidence is missing. NewInstance renderer crash remains mandatory unresolved.",
+      "after": "Persisted application pin/order and native always-on-top remain independent in both directions, including app pin/unpin while native top is true, through pointer, keyboard and real applicable AT controls.",
+      "verification": [
+        "Reviewed f7f8 private fixture with pinned runtime, current native tuple and AT guard v3. Preserve six/five second waits, exact identities/current publication/lease/owner, actual Saved/Committed receipts, no duplicate launch, normal host/client cleanup. Supporting original EARS evidence only; no new scenario name, no reversal of accepted taskbar-inactive, no dense UI008 or release claim."
+      ],
+      "owner": "root-native",
+      "participantRecord": ".warlock-contributor/native-taskbar-pin-independence.json",
+      "outcome": "Stopped after two qualification attempts; pin cross-kind evidence unobserved, first setup containment failure then popup timeout and apps namespace collision. Exact fixture fixes prepared for later return; no acceptance."
     }
   ]
 }
