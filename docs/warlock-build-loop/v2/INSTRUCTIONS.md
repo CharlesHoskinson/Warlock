@@ -40,6 +40,10 @@ At each completed, reviewed integration batch, reconcile the authorized GitHub b
 
 At integration milestones, assess a reversible Omarchy trial using the Omarchy skill. Prepare and verify installation, draft preservation, rollback and a bounded smoke test before activation. Use an isolated trial when main-session readiness is missing; do not restart the user's main compositor incidentally or deploy a known failing path as ready. Record the exact blocker and continue independent product work when a trial cannot proceed. Keep the living wiki synchronized with published batches and actual deployment outcomes.
 
+## Standing architecture review
+
+User authorization added October 29, 2026: keep the [Astra-supervised architectural review and staged refactor](ARCHITECTURE-REVIEW.md) in this completion loop alongside the twelve existing team roles. Study GNOME/KDE primary sources and current Warlock boundaries, adopt justified FRP/Elm lessons, and review architecture at sprint boundaries and integration batches. Preserve the original Windows-like taskbar, pinning and preview experience and all original acceptance obligations. The review must produce concrete ownership/dependency decisions and reversible production migration steps; research does not replace delivery. Coordinate through authenticated AgentBus, report actual worker liveness, and preserve product/native WIP limits.
+
 ## Stop waste, preserve progress
 
 After two consecutive qualification-only iterations, or 45 minutes without a production fix or an original-scenario verdict, stop expanding that investigation. Record the exact missing observation and pick another bounded mandatory product slice. The timer never authorizes bypassing a safety boundary. A failed scenario is useful diagnosis, not a delivered feature.
