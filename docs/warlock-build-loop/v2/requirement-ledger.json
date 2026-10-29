@@ -335,8 +335,15 @@
           "name": "architecture-013",
           "oracle": "the deadline remains unchanged",
           "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/deadline-restart-20261029/manifest.json",
+              "sha256": "12c8a9a42ee3218cc8198a050930741fdd77282f3d07d80fd03dd5bc824611f5",
+              "sourceRevision": "1047919bf91d666fccab7c8560b97d036f670253",
+              "scope": "Two failed qualification attempts; no bridge/restart/deadline execution or scenario acceptance; independent quint-5 stop review retained."
+            }
+          ],
+          "missingObservation": "Original same-request deadline across actual renderer-restart bridge transition, exact receipts and all applicable retries/queue/reconciliation EARS remain unobserved. Qualification stopped after badpin then typed capture-fixture compile failure; source readiness and Elm compile are not scenario acceptance."
         }
       ]
     },
@@ -15126,5 +15133,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-29T20:39:20.219369+00:00"
+  "updatedUTC": "2026-10-29T21:01:47.661490+00:00"
 }

@@ -1,42 +1,38 @@
 {
   "schema": 1,
   "owner": "sol",
-  "updatedUTC": "2026-10-29T20:39:20.219369+00:00",
+  "updatedUTC": "2026-10-29T21:01:47.661490+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "original-deadline-frontend-restart",
+    "id": "decoder-native-envelope-refusal",
     "requirements": [
-      "ELM-ARC-013"
+      "ELM-ARC-004"
     ],
     "scenarios": [
-      "architecture-013"
+      "decoder-native-to-elm"
     ],
     "paths": [
-      "implementation/warlock/native/imported_admission.hpp",
-      "implementation/warlock/native/imported-admission-test.cpp",
-      "implementation/warlock/native/authority.cpp",
-      "implementation/warlock/native/host.c",
-      "implementation/warlock/adapter/durable_ledger.py",
       "implementation/warlock/src/Shell.elm",
-      "implementation/warlock/src/Effects.elm",
-      "implementation/warlock/qa/check-deadline-bridge.py",
-      "implementation/warlock/qa/deadline-bridge-replay.cjs",
-      "implementation/warlock/qa/check-deadline-restart.py",
+      "implementation/warlock/src/ShellReplay.elm",
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/native/host.c",
+      "implementation/warlock/qa/check-decoder-refusal.py",
+      "implementation/warlock/qa/decoder-refusal.cjs",
       "implementation/warlock/README.md"
     ],
-    "before": "Original architecture-013 is unadjudicated. Existing immutable admission and durable effect records do not yet supply an independently adjudicated original near-deadline renderer-restart witness.",
-    "after": "Actual production bridge lifecycle retains the original absolute acceptance deadline through retries, queueing, reconciliation and frontend restart. A near-cutoff restart neither renews the request nor revives expired work. Repair only demonstrated violations; original bridge verification is permitted.",
+    "before": "Current Shell malformed host-refresh/version failures are silent and malformed attachment disconnects prior model; original decoder refusal/preserve/no-effect oracle is unadjudicated. Establish actual compiled baseline before repair.",
+    "after": "Malformed and unsupported-version native envelopes record a bounded rejection reason, preserve prior authority/model fields and emit no effect intent; valid current messages continue through existing trusted routes.",
     "verification": [
-      "Read original whole EARS and architecture-013 scenario; trace actual request owner, native clock/deadline, queue, retry, frontend retirement/rebind and durable reconciliation. No synthetic reconstruction passed off as renderer restart.",
-      "Reuse existing Quint models and source correspondence; exact compiled production bridge/lifecycle witness with matching receipt and source hashes, positive near-expiry case and attempted-renewal/expired refusal. Root sole protected CPU executor after review; no WebKit/Profile/native GUI retry.",
-      "Whole requirement requires all applicable original EARS and scenario obligations, not canonical-string codec alone. Full 242/417, actual native AT/IME/hardware/resources/journeys/package and reversible deployment remain open."
+      "Read original ARC004 and decoder-native-to-elm, current typed decoder and host messages; preserve trust boundaries and legitimate lifecycle signals. No speculative rejection of valid messages belonging to other subsystems.",
+      "Compile actual ShellReplay/current Shell via held verified Elm compiler and Node; valid prior state followed by malformed/missing/unsupported versions and a valid recovery/control case. Compare all prior state except separately recorded refusal, command list empty, exact source hashes and receipts.",
+      "Use existing applicable Quint/source correspondence; no new behavioral model for diagnostic-only boundary change unless authority policy changes. Root sole protected CPU executor; no renderer, C++ capture fixture or Profile retry. Whole architecture-004 and release remain separate."
     ],
-    "owner": "root-deadline-restart",
-    "participantRecord": ".warlock-contributor/original-deadline-frontend-restart.json"
+    "owner": "root-decoder-refusal",
+    "participantRecord": ".warlock-contributor/decoder-native-envelope-refusal.json"
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -2751,6 +2747,38 @@
       "owner": "root-first-use-direct",
       "participantRecord": ".warlock-contributor/first-use-persisted-choices-direct-restart.json",
       "outcome": "Stopped this bounded investigation after actual direct trial94006 failed before guidance, report86580f58 retained and published16b69dd5c. One qualification, not two; pivot avoids unchanged retry behind known renderer barrier. Original first-use remains partial; saved choices/restart/help/AT/recipients unobserved. No whole-goal pause."
+    },
+    {
+      "id": "original-deadline-frontend-restart",
+      "requirements": [
+        "ELM-ARC-013"
+      ],
+      "scenarios": [
+        "architecture-013"
+      ],
+      "paths": [
+        "implementation/warlock/native/imported_admission.hpp",
+        "implementation/warlock/native/imported-admission-test.cpp",
+        "implementation/warlock/native/authority.cpp",
+        "implementation/warlock/native/host.c",
+        "implementation/warlock/adapter/durable_ledger.py",
+        "implementation/warlock/src/Shell.elm",
+        "implementation/warlock/src/Effects.elm",
+        "implementation/warlock/qa/check-deadline-bridge.py",
+        "implementation/warlock/qa/deadline-bridge-replay.cjs",
+        "implementation/warlock/qa/check-deadline-restart.py",
+        "implementation/warlock/README.md"
+      ],
+      "before": "Original architecture-013 is unadjudicated. Existing immutable admission and durable effect records do not yet supply an independently adjudicated original near-deadline renderer-restart witness.",
+      "after": "Actual production bridge lifecycle retains the original absolute acceptance deadline through retries, queueing, reconciliation and frontend restart. A near-cutoff restart neither renews the request nor revives expired work. Repair only demonstrated violations; original bridge verification is permitted.",
+      "verification": [
+        "Read original whole EARS and architecture-013 scenario; trace actual request owner, native clock/deadline, queue, retry, frontend retirement/rebind and durable reconciliation. No synthetic reconstruction passed off as renderer restart.",
+        "Reuse existing Quint models and source correspondence; exact compiled production bridge/lifecycle witness with matching receipt and source hashes, positive near-expiry case and attempted-renewal/expired refusal. Root sole protected CPU executor after review; no WebKit/Profile/native GUI retry.",
+        "Whole requirement requires all applicable original EARS and scenario obligations, not canonical-string codec alone. Full 242/417, actual native AT/IME/hardware/resources/journeys/package and reversible deployment remain open."
+      ],
+      "owner": "root-deadline-restart",
+      "participantRecord": ".warlock-contributor/original-deadline-frontend-restart.json",
+      "outcome": "STOP after two qualification-only attempts; published1047919bf. First83f7f676 failed beforecommands on mistypedassetpin. Corrected212f81ad compiledElm0 then fixturecompile1 capture-resources reservationpointer/value mismatch. No bridge/deadline/restart trace executed, no runtimeproductdefect or acceptance. Do not expand compatibility helper/retry/renamedinvestigation; fullgoalactive."
     }
   ]
 }
