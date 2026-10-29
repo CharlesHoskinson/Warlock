@@ -1,40 +1,40 @@
 {
   "schema": 1,
   "owner": "sol",
-  "updatedUTC": "2026-10-29T22:50:35.815263+00:00",
+  "updatedUTC": "2026-10-29T23:10:24.588080+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "pure-announcement-message-contract",
+    "id": "shortcut-draft-refresh-preservation",
     "requirements": [
-      "ELM-UI-010"
+      "ELM-UI-020"
     ],
     "scenarios": [
-      "announce-launch refusal",
-      "announce-transfer refusal",
-      "announce-settings validation failure"
+      "first-use"
     ],
     "paths": [
-      "implementation/warlock/src/AnnouncementMessage.elm",
-      "implementation/warlock/src/Announcement.elm",
-      "implementation/warlock/src/OutcomeAnnouncements.elm",
-      "implementation/warlock/qa/AnnouncementMessageContracts.elm",
-      "implementation/warlock/qa/announcement-message-contracts.cjs",
-      "implementation/warlock/qa/check-announcement-message-contracts.py",
+      "implementation/warlock/src/ShortcutPreferences.elm",
+      "implementation/warlock/qa/ShortcutDraftReplay.elm",
+      "implementation/warlock/qa/ShortcutDraftProperties.elm",
+      "implementation/warlock/qa/shortcut-draft.qnt",
+      "implementation/warlock/qa/shortcut-draft_test.qnt",
+      "implementation/warlock/qa/shortcut-draft-contracts.cjs",
+      "implementation/warlock/qa/check-shortcut-draft.py",
       "implementation/warlock/README.md"
     ],
-    "before": "OutputController transitively imports Html through OutcomeAnnouncements to Announcement, because the existing public announcement Message record and encoder live alongside receiver/view code. Snapshot migration already removed the other direct policy/render contract dependency.",
-    "after": "A pure AnnouncementMessage value/encoder module owns the exact existing public record alias and extensible encoder; Announcement forwards those APIs and retains byte-identical receiver validation/routing/view. OutcomeAnnouncements imports the pure module; refuse/notify/DND/correlation/sequence/focus policy is unchanged. Remove remaining policy-to-Html import path without claiming a new validated opaque message type.",
+    "before": "Source-derived DEBT05: matched preference reads overwrite an unsaved editor draft and clear any pending save. Existing native-admission model does not cover draft lifecycle. Actual baseline failure with valid editor/read preconditions must be captured before production change.",
+    "after": "Retain unsaved choices through refresh/reopen/read failure, update observed inventory, and block Save until affected changed-store choices are explicitly confirmed. Never auto-save or apply on read. A pending save remains unresolved unless read confirms both stored and live intended choices; actual Desktop binding/request guards remain intact.",
     "verification": [
-      "Fresh optimized Main Bar Popup build with exact current source/compiler/cache provenance. Compile and run actual AnnouncementReplay and NotificationAnnouncementReplay assertions plus bounded seeded differential old/new/public-facade encoder checks, including extensible-record input and canonical counter/string/interrupt preservation.",
-      "Preserve existing receiver bounds and native authority, publication/lease, deduplication, critical opt-in/DND and no-focus semantics. Invalid receiver strings may be encoder-equivalence inputs, not receiver-admission claims. No model change for pure alias/encoder move, no native rerun or original AT/audible/braille acceptance from CPU tests.",
-      "Independent exact source delta/caller/import closure review, actual report hashes and original scenario scope. Update DEBT02 and Diataxis/wiki, refresh Graphify CUDA/eval; do not silently reuse old three-root source report after changes. No further renderer diagnostic investigation under this slice."
+      "Select actual original UI020 first-use support plus explicit user draft-preservation contract. Execute production Desktop/ShortcutPreferences baseline replay with valid positive controls; preserve demonstrated failures and actual source hashes before changing production logic. Do not confuse harness readiness failure with draft loss.",
+      "Review new local Quint editor model from source: one editor, read/action boundaries explicit, same/new revision, inventory, per-route confirmation, Waiting/Unknown read reconciliation, foreign receipts and no read-issued writes. Keep existing native shortcut-choices model unchanged; typecheck/run named witnesses/sampled invariants before code implementation, then check implementation correspondence.",
+      "Fresh optimized Main Bar Popup compile; actual draft replay plus existing ShortcutPreferencesReplay and bounded seeded production-reducer sequence properties with valid positive controls, stale/foreign receipts and pending mismatch/exact reads. Preserve counters, native/fingerprint admission and no replay. Actual UI020 native guidance/save/restart/AT/offline recovery remain unaccepted by CPU/model checks.",
+      "Update Graphify CUDA/eval, README/Diataxis/debt/wiki and publish owned reviewed delta. Native renderer and stopped notification investigations are separate; no unchanged native/profile/notification fixture retry."
     ],
-    "owner": "root-announcement-message",
-    "participantRecord": ".warlock-contributor/pure-announcement-message-contract.json"
+    "owner": "root-shortcut-draft",
+    "participantRecord": ".warlock-contributor/shortcut-draft-refresh-preservation.json"
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -2504,38 +2504,34 @@
     }
   ],
   "lastCompletedBoundedSlice": {
-    "id": "pure-surface-snapshot-contract",
+    "id": "pure-announcement-message-contract",
     "requirements": [
-      "ELM-UI-004",
-      "ELM-UX-005",
-      "ELM-UI-016"
+      "ELM-UI-010"
     ],
     "scenarios": [
-      "taskbar-group",
-      "ux-005",
-      "preview-states"
+      "announce-launch refusal",
+      "announce-transfer refusal",
+      "announce-settings validation failure"
     ],
     "paths": [
-      "implementation/warlock/src/SurfaceSnapshot.elm",
-      "implementation/warlock/src/SurfaceRenderer.elm",
-      "implementation/warlock/src/OutputController.elm",
-      "implementation/warlock/src/Presentation.elm",
-      "implementation/warlock/src/Main.elm",
-      "implementation/warlock/qa/SurfaceSnapshotContracts.elm",
-      "implementation/warlock/qa/snapshot-contracts.cjs",
-      "implementation/warlock/qa/check-snapshot-contracts.py",
+      "implementation/warlock/src/AnnouncementMessage.elm",
+      "implementation/warlock/src/Announcement.elm",
+      "implementation/warlock/src/OutcomeAnnouncements.elm",
+      "implementation/warlock/qa/AnnouncementMessageContracts.elm",
+      "implementation/warlock/qa/announcement-message-contracts.cjs",
+      "implementation/warlock/qa/check-announcement-message-contracts.py",
       "implementation/warlock/README.md"
     ],
-    "before": "Policy coordination and presentation admission import the HTML renderer to obtain validated snapshot protocol values. The snapshot decoder/accessors/action envelope are mixed with HTML rendering; source-reviewed Astra proposal removes this concrete dependency without changing original taskbar/member selection or preview behavior.",
-    "after": "One pure opaque SurfaceSnapshot contract owns the unchanged codec, accessors, local overlay and action envelope. OutputController and Presentation depend directly on it; SurfaceRenderer renders read-only details and forwards existing API for compatibility. Existing local-edit exception, uint64 identities, wire semantics, DOM and preview provenance remain unchanged. Residual Announcement HTML edge remains explicit.",
+    "before": "OutputController transitively imports Html through OutcomeAnnouncements to Announcement, because the existing public announcement Message record and encoder live alongside receiver/view code. Snapshot migration already removed the other direct policy/render contract dependency.",
+    "after": "A pure AnnouncementMessage value/encoder module owns the exact existing public record alias and extensible encoder; Announcement forwards those APIs and retains byte-identical receiver validation/routing/view. OutcomeAnnouncements imports the pure module; refuse/notify/DND/correlation/sequence/focus policy is unchanged. Remove remaining policy-to-Html import path without claiming a new validated opaque message type.",
     "verification": [
-      "Compile actual Main Bar Popup roots with pinned current Elm compiler/cache; compile applicable existing surface/presentation/output replay workers with unchanged assertions. No native units or renderer cause change; no native rerun or GUI acceptance from this extraction.",
-      "Production-route valid/invalid/lifecycle and deterministic seeded properties compare normalized encodings, actions, disabled/missing identity, stale publication/lease refusal, canonical uint64, pending query/IME and same-lease local-edit exception. Preserve raw-parser duplicate-key limits and pendingQuery overlay bounds caveat; do not add permissive builder or duplicate decoder.",
-      "Source equivalence review plus actual root/replay/property outputs; update Graphify CUDA/eval and documentation/debt. Pure Snapshot imports no Html Browser ports Process Task; only direct policy dependency removed, residual Announcement path remains. Preserve original scenarios/acceptance on relevant immutable tuples."
+      "Fresh optimized Main Bar Popup build with exact current source/compiler/cache provenance. Compile and run actual AnnouncementReplay and NotificationAnnouncementReplay assertions plus bounded seeded differential old/new/public-facade encoder checks, including extensible-record input and canonical counter/string/interrupt preservation.",
+      "Preserve existing receiver bounds and native authority, publication/lease, deduplication, critical opt-in/DND and no-focus semantics. Invalid receiver strings may be encoder-equivalence inputs, not receiver-admission claims. No model change for pure alias/encoder move, no native rerun or original AT/audible/braille acceptance from CPU tests.",
+      "Independent exact source delta/caller/import closure review, actual report hashes and original scenario scope. Update DEBT02 and Diataxis/wiki, refresh Graphify CUDA/eval; do not silently reuse old three-root source report after changes. No further renderer diagnostic investigation under this slice."
     ],
-    "owner": "root-surface-snapshot",
-    "participantRecord": ".warlock-contributor/pure-surface-snapshot-contract.json",
-    "outcome": "Delivered abe216442 pure Snapshot extraction:3optimizedroots,221codecframes/15fixedPresentationchecks/7group/11retirement pass, independent source+actualevidence review. No original GUI/native acceptance; renderer failure remains."
+    "owner": "root-announcement-message",
+    "participantRecord": ".warlock-contributor/pure-announcement-message-contract.json",
+    "outcome": "Published a7d61506a pure announcement value extraction and actual 3-root/216encoder/12refusal passes; six notification checks byte-identical failing before/after exactabe216twofilebaseline. Bothfailures preserved, DEBT12 causeopen, notification investigation STOP2. No native/scenario promotion."
   },
   "stoppedInvestigations": [
     {
@@ -2794,6 +2790,11 @@
       "id": "first-use-native-delivery-context",
       "record": ".warlock-contributor/first-use-native-delivery-context.json",
       "outcome": "Published36c804af2 diagnostics/build20selftests and actual e9d433 native failure; first preflight typo + second native failure; two qualification STOP. Receiver/domain/code observed but value/cause unproven. No further unchanged run; first-use partial."
+    },
+    {
+      "id": "pure-announcement-message-contract",
+      "record": ".warlock-contributor/pure-announcement-message-contract.json",
+      "outcome": "Published a7d61506a pure announcement value extraction and actual 3-root/216encoder/12refusal passes; six notification checks byte-identical failing before/after exactabe216twofilebaseline. Bothfailures preserved, DEBT12 causeopen, notification investigation STOP2. No native/scenario promotion."
     }
   ],
   "architectureReview": {
