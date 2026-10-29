@@ -3945,8 +3945,8 @@
       "capability": "elm-native-bridge",
       "owner": "Native authority lead",
       "verifier": "Independent acceptance reviewer",
-      "requirementAccepted": false,
-      "status": "in-progress",
+      "requirementAccepted": true,
+      "status": "accepted",
       "scenarios": [
         {
           "name": "revision-007",
@@ -3998,10 +3998,35 @@
           }
         }
       ],
-      "remainingEarsObligations": [
-        "Actual production Main.nativeEvents/assets/adapter.js and native authority parser/transport/native-produced identity correspondence remain unexercised by this worker fixture.",
-        "Applicable absolute native deadline string retention/numeric rejection remains unobserved; fixture watchdog is not native clock/deadline proof."
-      ]
+      "remainingEarsObligations": [],
+      "priorRequirementObservations": [
+        {
+          "archivedUTC": "2026-10-29T00:38:24.718291+00:00",
+          "requirementAccepted": false,
+          "status": "in-progress",
+          "remainingEarsObligations": [
+            "Actual production Main.nativeEvents/assets/adapter.js and native authority parser/transport/native-produced identity correspondence remain unexercised by this worker fixture.",
+            "Applicable absolute native deadline string retention/numeric rejection remains unobserved; fixture watchdog is not native clock/deadline proof."
+          ],
+          "basis": "Requirement-level state after the earlier partial evidence; superseded by independent whole-EARS adjudication. Original scenario object and historical partial manifests are unchanged."
+        }
+      ],
+      "requirementEvidence": [
+        {
+          "path": "implementation/warlock/qa/evidence/lossless-deadline-20261029/whole-requirement-acceptance.json",
+          "sha256": "14d9621b3e33904e245076c0e758774ef68debea796454866c3cf769292671b0",
+          "scope": "Whole original ELM-REV-007 canonical-string codec EARS accepted on current source tuple using permitted protected protocol fixtures and verified composition; release remains unaccepted."
+        }
+      ],
+      "requirementReviewerDisposition": {
+        "name": "quint-5",
+        "independent": true,
+        "disposition": "accepted-whole-original-ears-current-source-protocol",
+        "path": "implementation/warlock/qa/evidence/lossless-deadline-20261029/whole-requirement-review.md",
+        "sha256": "06e842344495c6ec659e833789865520f77c86b100c5c13ebadcaaf10e0e0e27"
+      },
+      "verificationScope": "Protected protocol fixtures with explicit positive/negative receipts, fixed source/tool tuples and frozen fixture deadlines, plus independently verified composition into the finite schema classes. Original verification permits protocol.",
+      "acceptanceLimits": "Codec EARS acceptance does not claim actual native clock/retry or continuous GUI transport. Other original behavioral obligations, failed evidence and release gates remain separately tracked; they are not additional codec acceptance preconditions."
     },
     {
       "id": "ELM-REV-008",
@@ -14154,5 +14179,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-28T21:30:16.434107+00:00"
+  "updatedUTC": "2026-10-29T00:38:24.718291+00:00"
 }

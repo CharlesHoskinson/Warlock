@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "requirement": "ELM-REV-007",
+  "status": "accepted",
+  "requirementAccepted": true,
+  "releaseAccepted": false,
+  "nativeGUIAcceptance": false,
+  "acceptedUTC": "2026-10-29T00:38:24.718291+00:00",
+  "scope": "Whole original canonical-string codec EARS for the current source tuple, using its permitted protected protocol-fixture verification and independently reviewed source composition. This is not exhaustive proof of all executions or whole-Warlock completion.",
+  "normativeSource": {
+    "path": "docs/elm-roadmap/requirements.json",
+    "sha256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
+    "ears": "The bridge SHALL encode authority identities, generations, revisions and absolute native deadlines as lossless schema-defined canonical strings and reject numeric JSON values for those fields.",
+    "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline."
+  },
+  "independentDisposition": {
+    "reviewer": "quint-5",
+    "independent": true,
+    "disposition": "accepted-whole-original-ears-current-source-protocol",
+    "path": "whole-requirement-review.md",
+    "sha256": "06e842344495c6ec659e833789865520f77c86b100c5c13ebadcaaf10e0e0e27",
+    "exactReviewerBytes": true
+  },
+  "rootAdoption": {
+    "status": "adopted",
+    "adoptedUTC": "2026-10-29T00:38:24.718291+00:00",
+    "basis": "Root read the complete independent disposition and independently inspected authority counter/binding, UInt64 decoder, Binding decoder/encoder, Provider native/context/target/item/envelope composition and Python endpoint canonical validation. Root adopted the original EARS under its literal protected protocol verification."
+  },
+  "evidence": [
+    {
+      "path": "implementation/warlock/qa/evidence/lossless-authority-20261028/observations.json",
+      "sha256": "3d6c022392da9cdc6ee4eef7d328b248aea1b3c256b4fb32ecb2ff695bbc8e66",
+      "receiptCount": 11,
+      "scope": "Actual compiled Effects and ActionProjection Elm/JS ports plus Python canonical primitive; original revision-007 scenario remains independently accepted."
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/lossless-deadline-20261029/observations.json",
+      "sha256": "98f0504aab46254df52a3545362fac354500b57d3816c7aba8b09411459ed847",
+      "receiptCount": 39,
+      "scope": "Production PreviewLifecycle worker decoders, update and encoder; positive large-string pairs, isolated numeric negatives and fixed deadline controls."
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/lossless-deadline-20261029/native-observations.json",
+      "sha256": "592e291038436f715cf78d14a44728fa870c5a3a066c69d1e38867ab8ad83782",
+      "receiptCount": 152,
+      "scope": "Production native wire encoder/decoders, fourteen counters, direct numeric rejections and semantically reserialized retained worker commands."
+    }
+  ],
+  "sourceComposition": {
+    "sourceBaseRevision": "1aade477456db5ef208cba07a1ad3fd54c65b576",
+    "sha256": {
+      "src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+      "src/Binding.elm": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b",
+      "src/Effects.elm": "873e8824d90828a9927cfd89723c7b7299e11791e3779173815ba720b11a8547",
+      "src/ActionProjection.elm": "911faed965465fac4e32f404d75a4d130b4e560cda191c7773eb96749be1d062",
+      "src/PointerOwnership.elm": "7e6d9f3e1ad79670383f58502449533d8a0857d38c6b62538eb89855a70b3ef3",
+      "src/Provider.elm": "2ef450a364d23d334e2ba7dfafdc56bbf51649dfb8f2e9f2e0ab1ca600157727",
+      "src/PreviewIdentity.elm": "262240e59eed37d362f921a4e7e89d0bb23c8b0f84fb39f0fddc29faaa3de3b5",
+      "src/PreviewLifecycle.elm": "232ebe2e823a4f9b07444f9afaccd98cdc3de9a592ff220d9975a64952dacf24",
+      "native/authority.cpp": "2293da138a4c0b27e5f848f4db5842b2a2f0fc17c4fdbf33e7d0f5d5787305fa",
+      "native/preview_wire.hpp": "2b02108a819e97106cbf38e420871bc4ee10656fd6f98905f25c30fd838d283d",
+      "native/preview_client.hpp": "b4eb7386f0bfae58aaf07816b0b70f7605c921694ff30681bad848abac11fb38",
+      "adapter/endpoint.py": "e254b870922a46b935de9d85db1de56129838ea2cf73eeb55c9fa16e8539d731",
+      "adapter/effect_endpoint.py": "09d01f26c6f6925051c2368972d97d67c03dea065002b9eda2335fff61e0e9b1",
+      "assets/adapter.js": "9d99e140af65c67aa5395ce8dc3f3aee42b2b341e039e6514745e14ec9335f96",
+      "assets/popup-adapter.js": "050af2a6cfb58195f6999f126ab94f37573231007cb2fcd7d119873969365605"
+    },
+    "basis": "The finite schema/counter classes in the independent review use the exercised strict canonical primitives or the separately exercised native string/decimal path. PointerOwnership and Provider envelope composition is source-reviewed, not falsely claimed as executed by the first worker. General authority and Python endpoint implementations and JavaScript forwarders were reviewed directly; no separate lossy numeric mapping was found.",
+    "reviewedSourceSnapshots": "Independent reviewer rehashed first worker 101/101, deadline worker 100/100, native source pins 8/8, fixture sources 2/2, compile dependencies 706/706 and linked providers 69/69."
+  },
+  "originalScenario": {
+    "name": "revision-007",
+    "status": "accepted",
+    "change": "The entire pre-existing ledger scenario object is preserved unchanged.",
+    "scenarioArrayCanonicalJSONSHA256": "882063c78d5c7ce993a4430fbb53f361f205b777fae84a9761163c82709f79f6"
+  },
+  "historicalPartialEvidence": {
+    "unchanged": true,
+    "paths": [
+      "implementation/warlock/qa/evidence/lossless-authority-20261028/manifest.json",
+      "implementation/warlock/qa/evidence/lossless-deadline-20261029/manifest.json",
+      "implementation/warlock/qa/evidence/lossless-deadline-20261029/native-manifest.json"
+    ],
+    "basis": "These describe their earlier exercised scopes and pending review at the time. This new sidecar records the later whole-EARS adjudication without rewriting them."
+  },
+  "limits": [
+    "Protected fixtures and source composition establish the original codec EARS on this tuple, not all possible executions or future source changes.",
+    "No actual native clock reading, retry behavior, continuous GUI/Popup-host transport or exhaustive implementation proof is claimed. Such separate behavioral obligations remain with their own requirements where applicable; they are not invented preconditions for this codec acceptance.",
+    "PointerOwnership and Provider envelopes are covered by independently reviewed composition of tested strict primitives; their high-value envelope paths are not claimed separately executed.",
+    "Retained worker commands in the native harness are semantically reserialized objects, not original JavaScript wire-byte captures.",
+    "Fixture watchdogs, source tuples and fixed input deadlines remain preserved; synthetic timestamps are not native clock measurements.",
+    "The original failed native harness link and stopped IME, NewInstance and pin investigations remain preserved. No release, desktop deployment or whole-Warlock completion follows."
+  ]
+}
