@@ -13,6 +13,22 @@ protected mutation checks qualify the gate's behavior, not a complete release.
 
 This candidate is not installed on the user's desktop. Its component results, native scenario acceptance and full release acceptance are separate. Preserve inherited ABI manifests and verify the current recorded core/plugin/Aquamarine pair before loading native code; numbering alone is not ABI proof. Authorized native picker previews have bounded recordings, while full transition, resource and release acceptance remain open.
 
+October 28 integration checkpoint: ELM-REV-007's complete original canonical-string
+codec requirement is accepted for the recorded source tuple. Protected fixtures
+retain 11 authority-port, 39 production deadline-route and 152 native-wire
+receipts, with independent review of their source composition. See the
+[whole-requirement acceptance](qa/evidence/lossless-deadline-20261029/whole-requirement-acceptance.json)
+for exact hashes and limits. These results do not measure the native clock or
+establish continuous GUI transport or whole-release acceptance.
+
+All six original ELM-UI-004 taskbar scenarios and requirements ELM-UX-005 /
+ELM-UX-008 are accepted in the delivery ledger. Additional taskbar obligations
+remain open: keyboard context-menu reopening has a retained shared WebKit
+renderer failure, and NewInstance/full pin semantics are incomplete. The current
+IME candidate-selection/cancellation campaign stopped before GUI execution and
+does not establish that behavior. Reversible Omarchy trials remain part of the
+integration loop; this checkout is not a ready-to-install release.
+
 Current implementation status and remaining behavior are in the [feature-completion checklist](../../docs/warlock-roadmap/FEATURE-COMPLETION.md). Current design guidance and the [contributor plugin section](../../DesignLanguage/catalog/index.html#contributors) distinguish the editable product from frozen browser examples.
 
 [Offline component recovery](RECOVERY.md) now retains reviewed predecessor and

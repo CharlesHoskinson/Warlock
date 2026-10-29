@@ -15,6 +15,22 @@ mean unimplemented. The [October 3 handoff](docs/HANDOFF.md), historical
 [requirements](window-behavior-spec/requirements.md) and
 [status](window-behavior-spec/PARITY_STATUS.md) remain archival records.
 
+Current integration checkpoint (October 28, 2026): all six original taskbar
+scenarios under ELM-UI-004 are accepted, while that requirement's remaining
+obligations stay open. ELM-UX-005 and ELM-UX-008 are accepted. ELM-REV-007's
+canonical-string bridge requirement is now accepted on the recorded source
+tuple using protected protocol fixtures and independent source review; see the
+[acceptance record](implementation/warlock/qa/evidence/lossless-deadline-20261029/whole-requirement-acceptance.json).
+
+The current candidate is **not installed in the main Omarchy session**.
+Keyboard context-menu reopening still has a retained shared WebKit renderer
+failure; NewInstance, full pin semantics and IME candidate/cancellation journeys
+remain incomplete. Current packaging still has redistribution-review and fresh
+two-build reproducibility gates. Use the protected QA workflow for testing;
+normal GitHub integration does not activate the candidate. The loop includes
+regular publication, README upkeep and reversible Omarchy trials with draft
+preservation and rollback verified before activation.
+
 Warlock is the name of the Elm-based window-system project. See the [brand identity](docs/warlock-brand/README.md), [design philosophy](docs/warlock-brand/PHILOSOPHY.md), and [research implementation plan](docs/elm-roadmap/research/20261005-design-adoption/WORKPLAN.md). Original archival names and evidence remain preserved.
 
 The [design-language documentation](DesignLanguage/README.md) and
