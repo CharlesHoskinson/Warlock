@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "requirement": "ELM-UX-029",
+  "status": "accepted-on-observed-tuple",
+  "independentScenarioDisposition": {
+    "launcher-refused": "accepted",
+    "launcher-accepted": "prior acceptance unchanged"
+  },
+  "independentRequirementDisposition": "accepted-whole-original-ELM-UX-029-on-observed-tuple",
+  "rootAdoption": {
+    "status": "adopted",
+    "adoptedUTC": "2026-10-29T14:49:08.442981+00:00",
+    "basis": "Root read the complete independent refusal and whole-UX029 disposition, viewed the actual refusal image/correlation/post-capture checks and rehashed all101 replay inputs. Root adopts the original refused scenario and whole original ELM-UX-029 on the observed tuple."
+  },
+  "releaseAccepted": false,
+  "nativeReport": {
+    "file": "native-report.json.gz",
+    "encoding": "gzip",
+    "sha256": "7d53c148743772659593dbb2562c724792ac22160ab73510834b481a02937903",
+    "expandedRawSHA256": "ef6cb2a7bccb30c3a90dae8a8b2a11699e2c009c9c7993ef4f203c424c9270f3",
+    "exactExpandedRawBytes": true,
+    "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-refused-painted-v1/native-launcher-refused-1793284918144533364/report.json"
+  },
+  "image": {
+    "file": "full.png",
+    "sha256": "aaf27cdf9ab52e462bdc75fccdb3c6d1266fec47869faa22c2d85902dd3f579e",
+    "exactRawBytes": true,
+    "source": "/home/charles/window-integration-qa/warlock-window-feedback-1793284918144602813/launcher-refused-full.png",
+    "independentReview": "Root and Quint5 viewed actual painted refusal, retained files query and selected entry focus."
+  },
+  "independentReview": {
+    "file": "independent-review.md",
+    "sha256": "55120f5f0da6b1b361cf6a8c9d0792e3814d958b1ffb6329e2535708cf63b2cf",
+    "exactReviewerBytes": true
+  },
+  "observed": {
+    "passed": true,
+    "checkCount": 26,
+    "cleanupPassed": true,
+    "currentSelection": {
+      "lease": "1",
+      "publication": "25",
+      "identity": "entry:warlock-files",
+      "entry": "warlock-files"
+    },
+    "observations": [
+      "Physical typed search and Enter cause one full-binding and intent-correlated actual Refused/stale-catalog outcome.",
+      "Actual private entry removal creates the stale-catalog denial; no synthetic policy outcome is inserted.",
+      "Full private capture visibly shows refusal and retained files query with actual document/selected-entry focus.",
+      "After capture the assertion verifies one request and one outcome, no GIO recipient file and no window-effect journal.",
+      "Owned helper and host exits, plugin unload and cleanup are normal."
+    ]
+  },
+  "protectedExecution": {
+    "session": 45472,
+    "outerExitCode": 0,
+    "outerExitObservedBy": "Root coordinator",
+    "unit": "qa-harness-fa767c6d699f4e2295eae8adea6510ab.scope",
+    "invocation": "7184aa65af4b43d097652f7df1cfa071",
+    "limits": "Original six-second observation, five-second helper and protected core limit1 retained."
+  },
+  "replay": {
+    "path": "implementation/warlock/qa/evidence/launcher-current-20261029/replay-observations.json",
+    "sha256": "174e7416e60f152186dc312aadb5045d95d80cf7b3061584401c16906e542ff9",
+    "checks": 10,
+    "compiledSHA256": "a7f4e62458f0b7d98abe2a38ac4c0e484563048f89807ac3ed1d1ea47bce2d91",
+    "scope": "Existing actual compiled Desktop/Surface worker assertions; all101 recorded inputs independently rehashed by reviewer."
+  },
+  "priorAcceptedEvidence": {
+    "manifest": "implementation/warlock/qa/evidence/launcher-current-20261029/manifest.json",
+    "manifestSHA256": "6c94b088b21aa926c7a47fa39d70877aa09578a2c72ab58c0800ee96aaf82ea8",
+    "reviewSHA256": "8a9789b20b2f94a31bcc77a7100aee9a7506fb9bd27c4d7d398c408c5e3b1a6c",
+    "imageSHA256": "9a5f5c5ed697bf754731c58bacb40c14561d6c8cfdfb98c35e4f27e0c673268a",
+    "scope": "Prior launcher-accepted remains unchanged. Historical refused partial and expired record are preserved."
+  },
+  "sourceTuple": {
+    "sourceCount": 367,
+    "currentSourceHashesMatchAtPreparation": true,
+    "sourceInputs": "Complete source map retained in exact compressed native report.",
+    "pair": {
+      "core": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-build/Hyprland",
+        "sha256": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e"
+      },
+      "plugin": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/authority/elm-window-geometry-authority.so",
+        "sha256": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c"
+      },
+      "aquamarine": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/lib/libaquamarine.so.0.15.0",
+        "sha256": "667a22d535aade4e4a26134e39028a87fb3f963c28b7bf7ff79da684bb014ecd"
+      }
+    },
+    "host": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/elm-host",
+      "sha256": "4377b11ce0afe9e1072210666aa872118b032995275a20657058771e5e6c8347",
+      "heldBuild": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/host-build-report.json",
+      "heldBuildSHA256": "691806471ff599503a20067aa0b90bf914b93a1ee5985198cdc79fb92ff975bf"
+    },
+    "runtimeByReference": {
+      "root": "/home/charles/Warlock/implementation/warlock-client-provider-native-v204",
+      "freshAdapter": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/source-coherence-20261028/terra-2/fresh_candidate-v1.py",
+      "freshAdapterSHA256": "23d66e343e37bead000ed155bbf46f8dcecb47bed09946ed62afe8f052169b00",
+      "parentAdapterSHA256": "e045634bd023f07977c398ef0057b9fdee3a1e1718d51c879e221ee353e28ae9",
+      "tupleSHA256": "bc225242e30baf4a5b8b1182cef6fdc716cc9c67de90dc35674f90c5fa87830b",
+      "foundationSHA256": "08b24bd93cbb63ec097900915379b32e90d9dcca7156d04fe8ee959efaff264f"
+    },
+    "underlyingFrameworkSHA256": "bb12e30c5e59c653441e18e580f5404f89ddb34a7d6cdb26629c6a0f63af5f4e",
+    "actualRunnerSHA256": "9ccddba53213a1576394f02dff6adcaf98ecf48ce8e24f4ce24155d23b0c377d",
+    "actualBranchSHA256": "144d4c383b888591fdbea0f0f30e6dafb5d8da54c022bb8449c25d27c843206e"
+  },
+  "fixtureDelta": "Only the extra refusal observation condition is corrected to permit actual document-focused search OR current selected entry. Original oracle never requires exact search-field focus. Correlation, query, viewport, deadlines, helper and post-capture assertions remain; production and model code are unchanged.",
+  "historicalRawFlags": "Raw nativeAcceptance/launcherAcceptance/manual-review flags remain as recorded before independent review; this new proposal records the later independent disposition separately.",
+  "limits": [
+    "Bounded acceptance on the observed source/native tuple is not universal correctness for every catalog, application or failure.",
+    "No AT/IME or unrelated ranking/clock gate is invented for original UX029; separate original requirements remain tracked.",
+    "No full release, Omarchy recovery/rollback, main-desktop activation or package acceptance follows.",
+    "No ledger/STATE or prior accepted scenario/historical partial record is changed by this private packet."
+  ],
+  "requirementAccepted": true,
+  "scenarioDispositions": {
+    "launcher-refused": "accepted",
+    "launcher-accepted": "prior accepted scenario object unchanged"
+  }
+}

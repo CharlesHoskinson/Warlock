@@ -13704,8 +13704,8 @@
       "capability": "elm-shell-experience",
       "owner": "Desktop experience lead",
       "verifier": "Independent acceptance reviewer",
-      "requirementAccepted": false,
-      "status": "in-progress",
+      "requirementAccepted": true,
+      "status": "accepted",
       "scenarios": [
         {
           "name": "launcher-accepted",
@@ -13763,7 +13763,7 @@
         {
           "name": "launcher-refused",
           "oracle": "one request is refused and the UI shows that refusal without a duplicate launch",
-          "status": "partial",
+          "status": "accepted",
           "evidence": [
             {
               "path": "implementation/warlock/qa/evidence/launcher-search/manifest.json",
@@ -13784,15 +13784,20 @@
               "path": "implementation/warlock/qa/evidence/launcher-current-20261029/manifest.json",
               "sha256": "6c94b088b21aa926c7a47fa39d70877aa09578a2c72ab58c0800ee96aaf82ea8",
               "scope": "Original launcher accepted independently accepted on current tuple; separate refusal is partial with missing capture and unreached postcapture checks."
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/launcher-refused-painted-20261029/manifest.json",
+              "sha256": "36c9f49729c3f64ffa4fec21dc2bcf3c571a84f6ae29cb2663a990f6e443ec20",
+              "scope": "Original launcher-refused and whole ELM-UX-029 independently accepted on observed tuple using ten compiled replay assertions, actual correlated native accepted/refused journeys and independently viewed full paint captures."
             }
           ],
-          "missingObservation": "Actual painted refusal capture and independent visual observation; the post-capture no-duplicate/no-recipient assertion was not reached. One correlated refusal and reported DOM text/query are observed. Search-field focus is not an original scenario requirement. Applicable AT/IME obligations remain separate, not prerequisites of this UX029 scenario.",
+          "missingObservation": null,
           "reviewerDisposition": {
             "name": "quint-5",
             "independent": true,
-            "path": "implementation/warlock/qa/evidence/launcher-current-20261029/independent-review.md",
-            "sha256": "8a9789b20b2f94a31bcc77a7100aee9a7506fb9bd27c4d7d398c408c5e3b1a6c",
-            "disposition": "partial-original-launcher-refused"
+            "disposition": "accepted-original-launcher-refused-and-whole-ears",
+            "path": "implementation/warlock/qa/evidence/launcher-refused-painted-20261029/independent-review.md",
+            "sha256": "55120f5f0da6b1b361cf6a8c9d0792e3814d958b1ffb6329e2535708cf63b2cf"
           },
           "priorObservations": [
             {
@@ -13818,10 +13823,105 @@
               ],
               "missingObservation": "Independent original-scenario reviewer disposition; applicable AT/IME coverage. Other original search/catalog and release scenarios remain separately open.",
               "reviewerDisposition": "Owner observed current native pixels/input/receipts; independent acceptance pending."
+            },
+            {
+              "name": "launcher-refused",
+              "oracle": "one request is refused and the UI shows that refusal without a duplicate launch",
+              "status": "partial",
+              "evidence": [
+                {
+                  "path": "implementation/warlock/qa/evidence/launcher-search/manifest.json",
+                  "sha256": "c36810d3418807d241e9cc36b3d8a1b78796737135c5c7bcd05123dd631d9d43",
+                  "scope": "Compiled current-query/ranking and scoped admission; actual native typing, one identity-bound Enter request, refused stale catalog, preserved query/focus and observation-only refresh/no replacement. Popup pixels are black; native visual/AT/IME acceptance is withheld."
+                },
+                {
+                  "path": "implementation/warlock/qa/evidence/popup-reopen/manifest.json",
+                  "sha256": "307d4a39e5e5593eda5d546079c22d67bab09787b581a54a40c6784938b79796",
+                  "scope": "Native search/refusal input and DOM work; initial and filtered controls paint. After actual close/reopen, refusal and no-match control interiors are black. Neither hide before detach nor GL initialization repaired it. Two attempted fixes are retired; no current GUI acceptance."
+                },
+                {
+                  "path": "implementation/warlock/qa/evidence/popup-remap/manifest.json",
+                  "sha256": "9a13918f1b4d2464987bfdef9dd85ca7e4ee701be171169e04bd5466d4b1bf5e",
+                  "scope": "Current reopened taskbar controls paint and select a workspace-2 restore with one correlated native receipt, membership/output preserved, actual GTK keyboard recipient and restored pixels. Launcher initial, filtered, reopened refused and no-match controls paint; native Enter submits one identity-bound launch, refusal preserves query/focus, refresh never launches a replacement."
+                },
+                {
+                  "path": "implementation/warlock/qa/evidence/launcher-current-20261029/manifest.json",
+                  "sha256": "6c94b088b21aa926c7a47fa39d70877aa09578a2c72ab58c0800ee96aaf82ea8",
+                  "scope": "Original launcher accepted independently accepted on current tuple; separate refusal is partial with missing capture and unreached postcapture checks."
+                }
+              ],
+              "missingObservation": "Actual painted refusal capture and independent visual observation; the post-capture no-duplicate/no-recipient assertion was not reached. One correlated refusal and reported DOM text/query are observed. Search-field focus is not an original scenario requirement. Applicable AT/IME obligations remain separate, not prerequisites of this UX029 scenario.",
+              "reviewerDisposition": {
+                "name": "quint-5",
+                "independent": true,
+                "path": "implementation/warlock/qa/evidence/launcher-current-20261029/independent-review.md",
+                "sha256": "8a9789b20b2f94a31bcc77a7100aee9a7506fb9bd27c4d7d398c408c5e3b1a6c",
+                "disposition": "partial-original-launcher-refused"
+              },
+              "priorObservations": [
+                {
+                  "name": "launcher-refused",
+                  "oracle": "one request is refused and the UI shows that refusal without a duplicate launch",
+                  "status": "partial",
+                  "evidence": [
+                    {
+                      "path": "implementation/warlock/qa/evidence/launcher-search/manifest.json",
+                      "sha256": "c36810d3418807d241e9cc36b3d8a1b78796737135c5c7bcd05123dd631d9d43",
+                      "scope": "Compiled current-query/ranking and scoped admission; actual native typing, one identity-bound Enter request, refused stale catalog, preserved query/focus and observation-only refresh/no replacement. Popup pixels are black; native visual/AT/IME acceptance is withheld."
+                    },
+                    {
+                      "path": "implementation/warlock/qa/evidence/popup-reopen/manifest.json",
+                      "sha256": "307d4a39e5e5593eda5d546079c22d67bab09787b581a54a40c6784938b79796",
+                      "scope": "Native search/refusal input and DOM work; initial and filtered controls paint. After actual close/reopen, refusal and no-match control interiors are black. Neither hide before detach nor GL initialization repaired it. Two attempted fixes are retired; no current GUI acceptance."
+                    },
+                    {
+                      "path": "implementation/warlock/qa/evidence/popup-remap/manifest.json",
+                      "sha256": "9a13918f1b4d2464987bfdef9dd85ca7e4ee701be171169e04bd5466d4b1bf5e",
+                      "scope": "Current reopened taskbar controls paint and select a workspace-2 restore with one correlated native receipt, membership/output preserved, actual GTK keyboard recipient and restored pixels. Launcher initial, filtered, reopened refused and no-match controls paint; native Enter submits one identity-bound launch, refusal preserves query/focus, refresh never launches a replacement."
+                    }
+                  ],
+                  "missingObservation": "Independent original-scenario reviewer disposition; applicable AT/IME coverage. Other original search/catalog and release scenarios remain separately open.",
+                  "reviewerDisposition": "Owner observed current native pixels/input/receipts; independent acceptance pending."
+                }
+              ]
             }
-          ]
+          ],
+          "verificationScope": "Original Elm replay assertion and isolated native recording: one identity-bound request, actual displayed refusal and post-capture no duplicate or recipient; exact search-field focus is not an original precondition.",
+          "sourceTuple": {
+            "nativeReport": "implementation/warlock/qa/evidence/launcher-refused-painted-20261029/native-report.json.gz",
+            "expandedRawSHA256": "ef6cb2a7bccb30c3a90dae8a8b2a11699e2c009c9c7993ef4f203c424c9270f3",
+            "image": "implementation/warlock/qa/evidence/launcher-refused-painted-20261029/full.png",
+            "imageSHA256": "aaf27cdf9ab52e462bdc75fccdb3c6d1266fec47869faa22c2d85902dd3f579e",
+            "currentSourceCount": 367,
+            "replaySHA256": "174e7416e60f152186dc312aadb5045d95d80cf7b3061584401c16906e542ff9"
+          }
         }
-      ]
+      ],
+      "priorRequirementObservations": [
+        {
+          "archivedUTC": "2026-10-29T14:49:08.442981+00:00",
+          "requirementAccepted": false,
+          "status": "in-progress",
+          "remainingEarsObligations": [],
+          "basis": "Prior whole-requirement partial state preserved before actual painted refusal and final post-capture evidence. Accepted scenario object remains unchanged."
+        }
+      ],
+      "remainingEarsObligations": [],
+      "requirementEvidence": [
+        {
+          "path": "implementation/warlock/qa/evidence/launcher-refused-painted-20261029/manifest.json",
+          "sha256": "36c9f49729c3f64ffa4fec21dc2bcf3c571a84f6ae29cb2663a990f6e443ec20",
+          "scope": "Original launcher-refused and whole ELM-UX-029 independently accepted on observed tuple using ten compiled replay assertions, actual correlated native accepted/refused journeys and independently viewed full paint captures."
+        }
+      ],
+      "requirementReviewerDisposition": {
+        "name": "quint-5",
+        "independent": true,
+        "disposition": "accepted-whole-original-ears-observed-tuple",
+        "path": "implementation/warlock/qa/evidence/launcher-refused-painted-20261029/independent-review.md",
+        "sha256": "55120f5f0da6b1b361cf6a8c9d0792e3814d958b1ffb6329e2535708cf63b2cf"
+      },
+      "acceptanceLimits": "Bounded original UX029 acceptance on observed source/native tuple, not universal catalog/application correctness, AT/IME, Omarchy recovery, main-session deployment or release acceptance. Historical partial records remain unchanged."
     },
     {
       "id": "ELM-UX-030",
@@ -14262,5 +14362,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-29T13:58:09.838144+00:00"
+  "updatedUTC": "2026-10-29T14:49:08.442981+00:00"
 }
