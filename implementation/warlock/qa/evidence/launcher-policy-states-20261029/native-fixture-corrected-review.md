@@ -1,0 +1,7 @@
+# UI005 initial/loading v2: narrow independent delta review
+
+No source stop found in the reviewed v2 delta. `policy_current_body` now requires the latest bar and popup publications equal the collector's coherent current Applications projection, and a nonempty popup lease equal the bar lease. The existing collector validates the matching bar lease against current inspection/native epoch; the check is used both before and after each capture/AT observation. A missing or mismatched bar report refuses, rather than silently relaxing the oracle. The prior v1 finding is resolved for this source path.
+
+Actual SHA-256: runner 0669e7a8a73c20f63f58a97398b88adc076a134d5b5984b60d3a9a0eb04d44c0; branch 7bddb1a139b8b3930fafbb224402110e3b29c7a231ea32c2a7cd95fc7f68ba6e; unchanged held fixture 3eeac469fffb5c5b44f554718a19d72597b72008a725740aefa835a7358f3b5b; repository wrapper 2c13ae125153f1a393b613a096ac0aba6e9acf7a17d5bccbfb3f237945827d50. Diff confirms runner changes only branch hash and branch changes only the current bar/publication/lease predicate. Wrapper requires protected scope, no arguments, symlink-free target, exact runner hash, and passes `--policy-states`.
+
+This resolves the specific source-review stop only. AT status-name exposure remains an unobserved expectation that must fail honestly; full screenshots and actual AT/focus/receipt/cleanup need independent observed review. No QA/native run or original UI005 acceptance by this reviewer.

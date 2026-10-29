@@ -24,6 +24,16 @@ main : Program () () Never
 main = Platform.worker {init=\_ -> ((),outgoing result),update=\_ state -> (state,Cmd.none),subscriptions=\_ -> Sub.none}
 result =
     let ids query = base.applications |> Maybe.map (Catalog.search query >> List.map (.identity >> Catalog.id)) |> Maybe.withDefault []
+        tieEntries=[entry "z-archive" "Archive" "" [],entry "a-archive" "Archive" "" []]
+        tieSnapshot rows=E.object [("catalogProtocol",E.int 2),("lifetime",E.string "1"),("generation",E.string "1"),("entries",E.list identity rows)] |> Catalog.decode |> Result.toMaybe
+        tieIds rows=tieSnapshot rows |> Maybe.map (Catalog.search "archive" >> List.map (.identity >> Catalog.id)) |> Maybe.withDefault []
+        localizedEntries=[entry "localized" "Dateien" "Dokument manager" ["Privat ordner"],entry "decoy" "Dateien" "Dokument manager" ["Privat"]]
+        localizedIds query=tieSnapshot localizedEntries |> Maybe.map (Catalog.search query >> List.map (.identity >> Catalog.id)) |> Maybe.withDefault []
+        initial={base | query="",expected=Nothing}
+        loading={initial | applications=Nothing,expected=Just one}
+        frameStatus model=D.decodeValue (D.field "status" D.string) (Surface.packet one one model) |> Result.withDefault ""
+        initialStatus=frameStatus initial
+        loadingStatus=frameStatus loading
         stamp=Desktop.capture base
         searched=stamp |> Maybe.map (\s -> Desktop.update (Desktop.SearchQuery s "files") base) |> Maybe.withDefault (base,[])
         stale=stamp |> Maybe.map (\s -> Desktop.update (Desktop.SearchQuery s "old") (Tuple.first searched)) |> Maybe.withDefault searched
@@ -31,4 +41,9 @@ result =
         refused=Tuple.second started |> Maybe.map (\intent -> Launch.receive "fixture-host" (E.object [("catalogProtocol",E.int 1),("kind",E.string "launch-outcome"),("intent",intent),("status",E.string "Refused"),("reason",E.string "stale-catalog")]) (Tuple.first started)) |> Maybe.withDefault base.launch
         unknown=Launch.pending (Tuple.first started) |> Maybe.map (\token -> Launch.timeout token (Tuple.first started)) |> Maybe.withDefault base.launch
         noMatch=Desktop.capture (Tuple.first searched) |> Maybe.map (\s -> Desktop.update (Desktop.SearchQuery s "nonexistent") (Tuple.first searched) |> Tuple.first) |> Maybe.withDefault base
-    in E.object [("refreshClearsSettledRefusal",E.bool (Launch.status refused=="Refused" && Launch.status (Launch.catalog snapshot refused)=="Idle")),("refreshPreservesUnknown",E.bool (Launch.status (Launch.catalog snapshot unknown)=="Unknown")),("rank",E.list E.string (ids "FILES")),("keyword",E.list E.string (ids "folders")),("generic",E.list E.string (ids "manager")),("unicode",E.list E.string (ids "STRASSE")),("queryEditHasNoEffects",E.bool (List.isEmpty (Tuple.second searched))),("staleQueryRejected",E.bool (Tuple.first stale==Tuple.first searched && List.isEmpty (Tuple.second stale))),("noMatchStatus",E.string (D.decodeValue (D.field "status" D.string) (Surface.packet one one noMatch) |> Result.withDefault "")),("queryRetained",E.string noMatch.query),("frame",Surface.packet one one (Tuple.first searched))]
+    in E.object [("policyChecks",E.object
+        [("sameRankStableIdentity",E.bool (tieIds tieEntries==["a-archive","z-archive"] && tieIds (List.reverse tieEntries)==["a-archive","z-archive"]))
+        ,("multiwordLocalizedFields",E.bool (localizedIds "DATEI DOKU ORDN"==["localized"] && localizedIds "DATEI DOKU ABSENT"==[]))
+        ,("initialAndLoadingDistinct",E.bool (Surface.mode initial=="applications" && Surface.mode loading=="applications" && initialStatus=="Type to search applications." && loadingStatus=="Loading applications…" && initialStatus/=loadingStatus))])
+        ,("initialStatus",E.string initialStatus),("loadingStatus",E.string loadingStatus)
+        ,("refreshClearsSettledRefusal",E.bool (Launch.status refused=="Refused" && Launch.status (Launch.catalog snapshot refused)=="Idle")),("refreshPreservesUnknown",E.bool (Launch.status (Launch.catalog snapshot unknown)=="Unknown")),("rank",E.list E.string (ids "FILES")),("keyword",E.list E.string (ids "folders")),("generic",E.list E.string (ids "manager")),("unicode",E.list E.string (ids "STRASSE")),("queryEditHasNoEffects",E.bool (List.isEmpty (Tuple.second searched))),("staleQueryRejected",E.bool (Tuple.first stale==Tuple.first searched && List.isEmpty (Tuple.second stale))),("noMatchStatus",E.string (D.decodeValue (D.field "status" D.string) (Surface.packet one one noMatch) |> Result.withDefault "")),("queryRetained",E.string noMatch.query),("frame",Surface.packet one one (Tuple.first searched))]

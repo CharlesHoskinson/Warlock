@@ -51,6 +51,16 @@ through capture. Correcting an extra fixture-only focus condition enabled that
 recording; production policy was unchanged. The earlier timed-out report stays
 historical. Wider search, AT/IME and release requirements remain separate.
 
+The current [launcher policy replay](qa/evidence/launcher-policy-states-20261029/manifest.json)
+passes the existing search checks plus stable identity ties, multiword matching
+across localized wire fields, and distinct initial/loading status projections.
+A protected fixture also passes four controlled locale selections through the real
+desktop catalog adapter into compiled search, including shared-cache locale changes.
+A protected native trial also passes initial and genuinely held-loading states,
+with painted focused search fields, actual accessible status names and no launch
+while loading. Whole ELM-UI-005 awaits independent review of those observations
+and relevant source correspondence; its five named scenarios retain their recorded acceptances.
+
 Original ELM-UX-004 pin-order persistence is independently accepted on the
 recorded tuple: the current compiled replay and actual native pin, reorder,
 private storage and shell restart preserve Editor and Files in the chosen order.

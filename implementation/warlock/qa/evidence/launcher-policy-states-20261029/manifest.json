@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "requirement": "ELM-UI-005",
+  "status": "current-component-verified-whole-requirement-unaccepted",
+  "requirementAccepted": false,
+  "releaseAccepted": false,
+  "files": {
+    "current-compiled-report.json.gz": {
+      "sha256": "541f27df48ee9b9f65ff7b159a2ccc0d9049d93a0b099ea6115fe784832abb6f",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-policy-current/output-v2/report.json",
+      "originalSHA256": "399b4309aae4c5a127363142bb70ddca81cf402773456e4a83eab6d4f188b15c"
+    },
+    "check-current-policy.py": {
+      "sha256": "2a641b66b06b48b2e90b4d136d38854a53829dfb9c1f85555185a80ec15fc03d",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-policy-current/check-v2.py",
+      "originalSHA256": "2a641b66b06b48b2e90b4d136d38854a53829dfb9c1f85555185a80ec15fc03d"
+    },
+    "first-harness-failure-report.json.gz": {
+      "sha256": "1b5d5acbdbdd05857c47e6ac111594d02db229c1929b6c28299de0f64e24ed13",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-policy-current/output/report.json",
+      "originalSHA256": "edc3468560af6d5e3c4e0916e83d4b5b2421038ced9fb6bd75f83eaa286cca91"
+    },
+    "first-harness-failure.txt": {
+      "sha256": "a3fa96630e3fcbc1e53a7fd6040fdabe0ded96f27a1912bff4cc90114614d35b",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-policy-current/output/failure.txt",
+      "originalSHA256": "a3fa96630e3fcbc1e53a7fd6040fdabe0ded96f27a1912bff4cc90114614d35b"
+    },
+    "independent-evidence-map.md": {
+      "sha256": "c82b27e5f310d6b06165fcd979e6db1e012f28a60b878c61324a2f2cea1fb479",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-5/ui005-whole-policy/source-evidence-map.md",
+      "originalSHA256": "c82b27e5f310d6b06165fcd979e6db1e012f28a60b878c61324a2f2cea1fb479"
+    },
+    "locale-compiled-report.json.gz": {
+      "sha256": "3a74d6d692d455d2bd98ca47262383575b175cbe4d37d8c44450362f5a18f4eb",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-policy-current/output-locale-v2/report.json",
+      "originalSHA256": "f108161fad62094b1f1645d402f3f4dcb6979e3fa0276e4e4cf5524e532a5a78"
+    },
+    "check-locale-route.py": {
+      "sha256": "b2b606cf4156c2fb4625282b3dd061955717b4ea4ed9dc52b08c05ad5369fbaa",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-policy-current/check-locale-v2.py",
+      "originalSHA256": "b2b606cf4156c2fb4625282b3dd061955717b4ea4ed9dc52b08c05ad5369fbaa"
+    },
+    "locale-first-harness-failure.json.gz": {
+      "sha256": "2a04748d0fb57f94629a8be97c110808e119430eb02dee613782ce5fa9bf7aac",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-policy-current/output-locale-v1/report.json",
+      "originalSHA256": "15755ce4afb818079ddd82165e26b6a0d8f91b26701886b783328b4a68242cf1"
+    },
+    "check-locale-first-harness.py": {
+      "sha256": "86eb0aad9121fe79801b48f88da46e76a14268ccff9cadd99f7188b35bd1d081",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-policy-current/check-locale-v1.py",
+      "originalSHA256": "86eb0aad9121fe79801b48f88da46e76a14268ccff9cadd99f7188b35bd1d081"
+    },
+    "locale-first-actual-result.json": {
+      "sha256": "b2225d80b50fe60d382694dc0bb108ba9201b420fd6788c99501e57c6bb4ee14",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-policy-current/output-locale-v1/all-precedence-result.json",
+      "originalSHA256": "b2225d80b50fe60d382694dc0bb108ba9201b420fd6788c99501e57c6bb4ee14"
+    },
+    "locale-first-harness-failure.txt": {
+      "sha256": "2446580eef7723f978fb3615dbdd9326a0c44489bb79c712d15d8ab2f96f6c87",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-policy-current/output-locale-v1/failure.txt",
+      "originalSHA256": "2446580eef7723f978fb3615dbdd9326a0c44489bb79c712d15d8ab2f96f6c87"
+    },
+    "native-states-report.json.gz": {
+      "sha256": "5b370834f87c670ef5e98dc197a9f2d6b5448c2a17b036b5d433250d40612929",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-frozen-policy-states-root-v2/native-launcher-policy-states-1793300291613703594/report.json",
+      "originalSHA256": "ae2947f8c96fe5ed6296a2d30ffe4975673a2bd72e1442672def59bb8ef49b00"
+    },
+    "native-states-runner.py": {
+      "sha256": "0669e7a8a73c20f63f58a97398b88adc076a134d5b5984b60d3a9a0eb04d44c0",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-frozen-policy-states-root-v2/runner.py",
+      "originalSHA256": "0669e7a8a73c20f63f58a97398b88adc076a134d5b5984b60d3a9a0eb04d44c0"
+    },
+    "native-states-branch.txt": {
+      "sha256": "7bddb1a139b8b3930fafbb224402110e3b29c7a231ea32c2a7cd95fc7f68ba6e",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-frozen-policy-states-root-v2/search-branch.txt",
+      "originalSHA256": "7bddb1a139b8b3930fafbb224402110e3b29c7a231ea32c2a7cd95fc7f68ba6e"
+    },
+    "held-catalog-fixture.txt": {
+      "sha256": "3eeac469fffb5c5b44f554718a19d72597b72008a725740aefa835a7358f3b5b",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-frozen-policy-states-root-v2/race-fixture.txt",
+      "originalSHA256": "3eeac469fffb5c5b44f554718a19d72597b72008a725740aefa835a7358f3b5b"
+    },
+    "native-fixture-initial-stop.md": {
+      "sha256": "7097d98d2bfae94e8afd0f7ad11803f0f00f91da51020540cf64d982a95766c7",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-2/launcher-frozen-policy-states/source-review.md",
+      "originalSHA256": "7097d98d2bfae94e8afd0f7ad11803f0f00f91da51020540cf64d982a95766c7"
+    },
+    "native-fixture-corrected-review.md": {
+      "sha256": "a3daa66d5ea13e7a05ad5dbad81614b52de2a7444a65c9b2dd55518a80ece894",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-2/launcher-frozen-policy-states-v2/source-review.md",
+      "originalSHA256": "a3daa66d5ea13e7a05ad5dbad81614b52de2a7444a65c9b2dd55518a80ece894"
+    },
+    "native-initial.png": {
+      "sha256": "5cbc4b5e39ac0a15da72fd2ccb1012a2370f9dd0aacd194fdbcb275d97493d96",
+      "originalPath": "/home/charles/window-integration-qa/warlock-window-feedback-1793300291613787018/policy-initial-full.png",
+      "originalSHA256": "5cbc4b5e39ac0a15da72fd2ccb1012a2370f9dd0aacd194fdbcb275d97493d96"
+    },
+    "native-loading.png": {
+      "sha256": "2bca7e77794531fe7d07072e3763a072e1ca23131d0cf00afbde8dd1b438ba08",
+      "originalPath": "/home/charles/window-integration-qa/warlock-window-feedback-1793300291613787018/policy-loading-full.png",
+      "originalSHA256": "2bca7e77794531fe7d07072e3763a072e1ca23131d0cf00afbde8dd1b438ba08"
+    },
+    "independent-current-component-review.md": {
+      "sha256": "c87c604d924ce9ecfb516f90d6d608a46fdb96021363ee5ed49340ba1ae24d32",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-5/ui005-policy-current/source-evidence-review.md",
+      "originalSHA256": "c87c604d924ce9ecfb516f90d6d608a46fdb96021363ee5ed49340ba1ae24d32"
+    }
+  },
+  "observations": [
+    "Protected current SearchReplay compilation/replay terminal0 on unit qa-harness-d7152b9ff71c45729b928509e976246f.scope invocation9abe5fc7cf6743dc83e93a5121ac8818. All original rank/metadata/Unicode/current-query/refusal/Unknown/no-match assertions and three additional literal policy witnesses pass.",
+    "Same-rank exact matches sort on stable desktop identity in both catalog input orders; multiword queries require all terms across already-localized name/generic/keywords; initial and loading Surface.packet statuses are distinct. These are component observations, not native presentation or actual locale selection.",
+    "First protected trial compiled successfully but replay failed because root driver assumed nonexistent /usr/bin/node. Retained unchanged. Corrected driver uses installed Node and retains its path/hash; new output directory preserves first failure.",
+    "Protected locale adapter-to-compiled-matching fixture passes: unit qa-harness-d648030ae74d4daab13b5915da36eb16.scope invocation9f54d9eb7b0f4c5bbc69f112c08dcd6d, report f108161fad62094b1f1645d402f3f4dcb6979e3fa0276e4e4cf5524e532a5a78. Four controlled LC_ALL/LC_MESSAGES/LANG/C cases exercise actual isolated desktop metadata, locale precedence/fallback and shared-cache changes through real Authority.snapshot into compiled Catalog.decode/search. Localized names/generic names/keywords, stable identity ties, multiword matches, absent and native-only Exec negatives pass; numeric authority generation is rejected. 148 source hashes unchanged. No command is launched.",
+    "First locale fixture fails because root expected IDs with .desktop suffix; actual established adapter strips the suffix at taskbar_catalog.py87. Original failure, driver and actual compiled results are preserved; corrected expectation changes no production behavior or matching oracle.",
+    "Protected native initial/held-loading trial passes with normal owned cleanup. Initial publication20/lease1 shows empty focused launcher-search and actual visible AT status Type to search applications.; Loading publication33/lease1 shows editor with actual visible AT status Loading applications\u2026 and matching AT reader/entry identity322. Genuine catalog frame remains held through physical Enter and both observations with no dispatch/recipient, then the exact held frame is released through the original daemon send path. Same-publication popup/bar live lease is checked before and after capture. Root viewed both actual full-output images; independent review remains pending.",
+    "Independent v1 source review stopped missing current popup lease binding before execution; v2 adds live bar publication/lease equality and independent delta review found no source stop. Both reviews retained; v1 never executed."
+  ],
+  "missingObservations": [
+    "Independent original whole-EARS disposition on actual native state images/AT, current compiled/locale receipts and relevant five-scenario source correspondence"
+  ],
+  "limits": [
+    "All five named scenario acceptances remain their original recorded scopes and tuples. No ledger acceptance changed.",
+    "No new production behavior defect demonstrated. Matching/view source unchanged; additional checks close specific coverage gaps.",
+    "Renderer failure, New Instance, pin/top independence, IME, packaging and reversible deployment remain separately open.",
+    "Locale evidence covers four controlled finite locale selections through the real parser and cache, not all locales, installed system locale behavior or native localized rendering."
+  ],
+  "nativeTrial": {
+    "passed": true,
+    "cleanupPassed": true,
+    "checkCount": 46,
+    "execSession": 87424,
+    "unit": "qa-harness-6013512320204e318e0e965726668469.scope",
+    "invocation": "1e18b3ffebe14b91a63ba30a8b074631",
+    "rawReportSHA256": "ae2947f8c96fe5ed6296a2d30ffe4975673a2bd72e1442672def59bb8ef49b00",
+    "nativeAcceptance": false,
+    "independentReviewPending": true
+  }
+}

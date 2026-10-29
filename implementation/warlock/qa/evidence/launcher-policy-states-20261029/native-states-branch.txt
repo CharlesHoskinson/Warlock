@@ -1,0 +1,43 @@
+    else:
+     report.update(requirements=['ELM-UI-005'],scenarios=[],scope='Current initial and genuine held-loading states; real keyboard, popup pixels and actual AT snapshot. Named scenario and whole-requirement acceptance remain separate.',popupPresentationAccepted=False,launcherAcceptance=False)
+     report['policyStatesInputs']=RACE_INPUTS
+     def policy_current_body():
+      value=popup_body();projection_value=projection();bar_value=bar_body()
+      return value if value and projection_value and projection_value.get('phase')=='Coherent' and projection_value.get('mode')=='applications' and value.get('publication')==projection_value.get('publication') and bar_value and bar_value.get('publication')==value.get('publication') and value.get('lease') and value.get('lease')==bar_value.get('lease') and value.get('documentFocused') else None
+     def policy_body_for(expected_query,expected_status):
+      value=policy_current_body()
+      if not value or value.get('focus')!='launcher-search' or expected_status not in value.get('text',''):return None
+      matches=[row for row in value.get('fields',[]) if row.get('id')=='launcher-search' and not row.get('disabled') and row.get('value')==expected_query]
+      return value if len(matches)==1 else None
+     def policy_no_launch():return not launches() and not journal() and not race_events.exists() and not LAUNCH_EVENTS.exists()
+     def policy_capture(stage,expected_query,expected_status):
+      captured=wait(lambda:policy_body_for(expected_query,expected_status))
+      check('Policy'+stage+'BeforeCaptureNoDispatch',policy_no_launch(),body=captured)
+      image_path=OUTPUT/('policy-'+stage.lower()+'-full.png');helper(['/usr/bin/grim',str(image_path)])
+      import gi;gi.require_version('GdkPixbuf','2.0');from gi.repository import GdkPixbuf
+      image=GdkPixbuf.Pixbuf.new_from_file(str(image_path));check('Policy'+stage+'CaptureOutputDimensions',(image.get_width(),image.get_height())==(800,600))
+      def actual_accessible():
+       snapshot_at=at_observe();reader_at=(snapshot_at.get('reader') or {}).get('focus') or {}
+       nodes_at=[node for node in snapshot_at.get('nodes',[]) if node.get('pid')==web.pid and any(parent.get('role')=='document web' for parent in node.get('ancestors',[]))]
+       fields_at=[node for node in nodes_at if node.get('name')=='Search applications' and (node.get('attributes') or {}).get('id')=='launcher-search' and node.get('identity') and {'focused','enabled','sensitive','showing','visible'}<=set(node.get('states',[]))]
+       status_at=[node for node in nodes_at if expected_status in (node.get('name') or '') and {'showing','visible'}<=set(node.get('states',[]))]
+       return (snapshot_at,fields_at[0],status_at) if len(fields_at)==1 and status_at and reader_at.get('identity')==fields_at[0]['identity'] and reader_at.get('name')=='Search applications' else None
+      snapshot_at,field_at,status_at=wait(actual_accessible)
+      after=wait(lambda:policy_body_for(expected_query,expected_status))
+      check('Policy'+stage+'ActualATFocusAndCurrentSurface',after.get('lease')==captured.get('lease') and after.get('publication')==captured.get('publication') and after.get('focus')==captured.get('focus') and policy_no_launch(),body=after,field=field_at,status=status_at,reader=snapshot_at.get('reader'),snapshot=snapshot_at)
+      report.setdefault('policyStates',{})[stage]={'bodyBefore':captured,'bodyAfter':after,'atSnapshot':snapshot_at,'atField':field_at,'atStatus':status_at,'image':{'path':str(image_path),'sha256':sha(image_path),'manualVisualReviewRequired':True},'directATSearchValueObserved':False,'nativeAcceptance':False}
+     helper([str(keyboard)],'key 125 1\nkey 56 1\nkey 57 1\nsleep 50\nkey 57 0\nkey 56 0\nkey 125 0\nsleep 100\nsync\n')
+     wait(lambda:policy_body_for('','Type to search applications.'))
+     policy_capture('Initial','','Type to search applications.')
+     query([33,23,38,18,31],'files');wait(lambda:any(b.get('accessibleName')=='Open Files' and not b.get('disabled') for b in (policy_current_body() or {}).get('buttons',[])))
+     race_arm.write_text('hold');race_arm.chmod(0o600);keyboard_button('Refresh applications',28);wait(race_held.exists)
+     policy_held_frame=json.loads(race_held.read_text());wait(lambda:field_value()=='files' and (policy_current_body() or {}).get('focusIdentity')=='control:refresh' and 'Loading applications' in policy_current_body()['text'])
+     for _ in range(2):helper([str(keyboard)],'key 42 1\nkey 15 1\nsleep 50\nkey 15 0\nkey 42 0\nsleep 100\nsync\n')
+     wait(lambda:(policy_current_body() or {}).get('focus')=='launcher-search')
+     query([18,32,23,20,24,19],'editor');key(28)
+     check('ChangedQueryDuringGenuineHeldRefreshCannotLaunch',race_held.exists() and not race_delivered.exists() and policy_no_launch() and bool(policy_body_for('editor','Loading applications')),held=policy_held_frame,body=policy_current_body())
+     policy_capture('Loading','editor','Loading applications')
+     check('HeldCatalogStillUndeliveredAfterStateObservation',race_held.exists() and not race_delivered.exists() and policy_no_launch(),held=policy_held_frame)
+     race_release.write_text('release');race_release.chmod(0o600);wait(race_delivered.exists)
+     check('GenuineHeldCatalogReleasedWithoutLaunch',json.loads(race_delivered.read_text())==policy_held_frame and policy_no_launch(),held=policy_held_frame,delivered=json.loads(race_delivered.read_text()))
+     report['policyHeldCatalog']={'held':policy_held_frame,'delivered':json.loads(race_delivered.read_text()),'requestAlreadyGenuine':True,'noSyntheticCatalog':True}

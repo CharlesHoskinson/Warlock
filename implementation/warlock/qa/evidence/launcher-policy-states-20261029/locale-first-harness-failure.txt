@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-policy-current/check-locale-v1.py", line 46, in main
+    assert all([e['id'] for e in r['entries']]==(expected_ids if i<4 else []) for i,r in enumerate(rows['results']))
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

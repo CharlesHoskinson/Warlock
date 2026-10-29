@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-policy-current/check.py", line 27, in main
+    run('replay',['/usr/bin/node',OUT/'replay.js',OUT/'search.js',OUT/'replay.json'])
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-policy-current/check.py", line 21, in run
+    proc=subprocess.run([str(x) for x in args],cwd=workspace,env=env,stdout=subprocess.PIPE,stderr=subprocess.PIPE,timeout=180)
+  File "/usr/lib/python3.14/subprocess.py", line 555, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/subprocess.py", line 1990, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: '/usr/bin/node'
