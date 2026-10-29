@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "owner": "sol",
-  "updatedUTC": "2026-10-29T22:26:44.083931+00:00",
+  "updatedUTC": "2026-10-29T22:29:47.456885+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
@@ -2810,5 +2810,31 @@
     "scope": "Changed domain transitions, protocol boundaries, reducers, persistence and architecture refactors",
     "evidence": "Explicit original contracts; meaningful production-route fuzz properties, seeds and retained failures; native acceptance remains separate",
     "webResearch": "Scrapling for browsing and downloads"
+  },
+  "knowledgeLoop": {
+    "status": "active",
+    "repoWiki": "wiki/warlock",
+    "externalJournal": "/home/charles/wiki/topics/warlock",
+    "research": "docs/warlock-build-loop/v2/ELM-ARCHITECTURE-RESEARCH.md",
+    "contracts": "docs/warlock-build-loop/v2/FUZZING-CONTRACTS.md",
+    "webTool": "Scrapling",
+    "cadence": [
+      "Meaningful failure or verified outcome",
+      "Architecture decision and sprint boundary",
+      "Reviewed integration and deployment batch"
+    ],
+    "record": [
+      "Lessons and proposed ideas",
+      "Primary-source findings and current versus historical Elm distinctions",
+      "Adopted/rejected/deferred decisions",
+      "Actual contracts, fuzz seeds and preserved counterexamples",
+      "Original scenario evidence, limitations and next implementation step"
+    ],
+    "owners": {
+      "architecture": "/root/astra_architecture",
+      "coordinationAndWiki": "/root/sol_lead",
+      "integrationAndProtectedQA": "/root"
+    },
+    "acceptance": "Documentation, research, fuzzing and types do not replace original native or release gates."
   }
 }
