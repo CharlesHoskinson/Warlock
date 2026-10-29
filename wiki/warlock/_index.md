@@ -18,6 +18,6 @@ Versioned lessons, ideas, architectural decisions and verified outcomes for the 
 
 ## Statistics
 
-1 raw observation; 3 compiled articles. No target architecture or release acceptance is created by this wiki.
+2 raw observations; 3 compiled articles. No target architecture or release acceptance is created by this wiki.
 
 [Inbox](inbox/_index.md) · [Curated outputs](output/_index.md)

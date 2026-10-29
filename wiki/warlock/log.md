@@ -13,3 +13,11 @@ Root verifies Scrapling 0.5 with fetchers/rag and an actual official Elm GET 200
 ## 2026-10-29 — Reviewed Elm architecture study available
 
 Root and Astra review the source-linked Elm architecture study, including precise prerequisite-observation wording. The research landing now links it and distinguishes current TEA from historical concurrency/asynchronous/push-pull/spacetime-leak papers. Concrete pure SurfaceSnapshot proposal and residual Announcement HTML edge are explicit; pending-query/local-edit and raw-parser behavior remain preserved. No target adoption, extraction implementation, native acceptance or cause is inferred. Standing fuzzing/contracts workflow publication `9af5` is recorded as a fact, not a separate Git receipt or feature count.
+
+## 2026-10-29 — Shortcut draft debt is actually reproduced
+
+Update DEBT-05 and the reference/wiki status from source-derived to reproduced. Actual unchanged-production Desktop replay report `a6bc101e…` records fifteen checks, ten positive controls and exactly five expected preservation failures; compilation/execution succeed and the baseline helper remains RED. Model validation and fix are pending, with no native/first-use acceptance or disk-loss/restart claim. Keep this evidence distinction while the selected contract/model is refined; no policy test is weakened.
+
+The later local-model validation passes 26 named checks and six invariants in 1,000 sampled 20-step traces, after retaining source-review and executable-witness failures. Only then is reducer `0d46b1cd…` authored. Documentation distinguishes those bounded checks and source change from still-pending implementation correspondence, build, actual production regression and native acceptance.
+
+Before publishing this documentation batch, later actual results become available: current reducer `d8c1a63f…` (local compiler-shadowing rename only) passes fresh roots `094092cd…`, original and legacy 15 checks each, and 200 seeded 26–30-event production sequences in report `497e7789…`. An earlier candidate trace-shadowing failure is retained. Independent implementation review and original native acceptance remain pending; no private QA artifacts are copied here.

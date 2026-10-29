@@ -5,7 +5,7 @@ updated: 2026-10-29
 tags: [warlock, architecture, evidence]
 category: concept
 volatility: warm
-sources: [raw/notes/2026-10-29-knowledge-space-and-delivery-observation.md]
+sources: [raw/notes/2026-10-29-shortcut-draft-production-baseline.md, raw/notes/2026-10-29-knowledge-space-and-delivery-observation.md]
 summary: "Separate established evidence-handling lessons from architecture proposals awaiting selection."
 ---
 
@@ -28,7 +28,7 @@ summary: "Separate established evidence-handling lessons from architecture propo
 | --- | --- | --- |
 | Extract a pure surface snapshot protocol from rendering | Remove policy-to-HTML dependency while keeping opaque snapshot/decoder/accessors and wire authority | Confirm actual caller graph, exact exposed API and a reversible first slice; compile relevant roots and run applicable existing replays |
 | Centralize current build/package source enumeration | Reduce duplicated lists without changing provenance or produced artifacts | Map actual consumers and compiler/link order; preserve locked inputs and reproducibility checks |
-| Preserve unsaved shortcut editor intent across same-revision reads | Avoid overwriting local draft during Refresh or reopen | Reproduce the source-derived schedule; define changed-revision conflict and pending/Unknown semantics; never auto-save or replay |
+| Preserve unsaved shortcut editor intent across same-revision reads | Avoid overwriting local draft during Refresh or reopen | Actual compiled baseline now reproduces five contracts with ten positive controls. Refined local model named/sampled checks pass and a correction is authored; fresh roots and original/legacy 15-check replays plus 200 seeded production sequences now pass; independent implementation review and native acceptance remain pending. Never auto-save or replay |
 | Offer discoverable first-enable guidance without mandatory onboarding | Meet the original first-enable offer while preserving optional desktop use | Assess exact original source gap and pre-Settings usable Apps witness; no forced modal or focus theft inferred |
 
 These proposals are not accepted behavior or instructions to start concurrent product work. Root selects ownership and one reversible implementation slice after Astra synthesis. Preserve saved data, live draft scope, current identities, Unknown/no-replay and native custody.
@@ -43,3 +43,7 @@ These proposals are not accepted behavior or instructions to start concurrent pr
 ## Reviewed architecture study
 
 The [Elm architecture study](../../../../docs/warlock-build-loop/v2/ELM-ARCHITECTURE-RESEARCH.md) is reviewed and available. Keep current 0.19 TEA separate from historical Signal-era papers. A pure snapshot codec can invert the direct controller-to-renderer dependency, but residual announcement rendering remains an explicit next seam. Preserve existing pending-query/local-edit behavior and raw-parser duplicate-key validation; normalized codec idempotence is not identity of every input encoding. A correlated prerequisite observation, which may be a receipt, state or retirement fact, must justify dependent effects; acknowledgement alone is not universal completion proof. No proposed extraction or reviewed study establishes native acceptance.
+
+## A real baseline changes the debt disposition
+
+The [draft baseline](../../raw/notes/2026-10-29-shortcut-draft-production-baseline.md) turns DEBT-05 from a source hypothesis into a reproduced local editor/reconciliation defect. Keep both the five expected RED contracts and ten positive controls; a failing test alone would not distinguish an unreachable operation. Do not turn that reproduction into a completed fix, validated abstract model or native scenario acceptance. Stored preferences, local unsaved intent and active native bindings remain separate states.
