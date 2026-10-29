@@ -27,7 +27,16 @@ remain open: keyboard context-menu reopening has a retained shared WebKit
 renderer failure, and NewInstance/full pin semantics are incomplete. A newer
 [owned renderer diagnostic](qa/evidence/renderer-symbol-context-20261029/manifest.json)
 captures libc abort frames and WebKit library ranges; its concrete cause and
-mapped build identities remain unresolved. Its native child still fails. The current
+mapped build identities remain unresolved. Its native child still fails. Keyboard
+Menu/Shift-F10 openers now wait for matching keyup in the original document
+before sending the existing context request. The actual script passes 34 mock DOM
+checks; a scoped Quint model passes 33 named tests and sampled safety. All three
+Elm roots rebuild with the changed context asset and unchanged native host.
+[The current native keyboard trial fails](qa/evidence/context-keyup-repair-20261029/manifest.json):
+Menu release now reaches the original bar before popup opening, but the later menu
+deadline and owned-client normal-exit check still fail. Pointer New Instance reaches
+a real owned GTK window with normal exit; that partial result does not accept the
+full journey. The renderer cause and remaining New Instance/pin-top obligations stay open. The current
 IME candidate-selection/cancellation campaign stopped before GUI execution and
 does not establish that behavior. Reversible Omarchy trials remain part of the
 integration loop; this checkout is not a ready-to-install release.

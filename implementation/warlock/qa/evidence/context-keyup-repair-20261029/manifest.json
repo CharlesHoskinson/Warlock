@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "requirement": "ELM-UI-004",
+  "status": "implemented-component-verified-native-failed",
+  "scenarioAccepted": false,
+  "requirementAccepted": false,
+  "releaseAccepted": false,
+  "files": {
+    "component-report.json": {
+      "sha256": "0a6ba92c750baca326a23df92e2671d0a530153c4e369c8a5669ddf60952e051",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/context-keyup-repair/component.stdout",
+      "originalSHA256": "0a6ba92c750baca326a23df92e2671d0a530153c4e369c8a5669ddf60952e051"
+    },
+    "check-context.js": {
+      "sha256": "7f8bb40e96264516718a708efcc444f36813d0aa70804d855f42b647171bd054",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/context-keyup-repair/check-context-root.js",
+      "originalSHA256": "7f8bb40e96264516718a708efcc444f36813d0aa70804d855f42b647171bd054"
+    },
+    "model-report.json.gz": {
+      "sha256": "bf0ffb4d0ac68e81a2178a212367a06d57e4c318758de4f546510972a735006e",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-1/dom-keyup-opener/stage2-corrected/protected-report.json",
+      "originalSHA256": "50d4e1a8a73d11a647c365caaaef634009079c84bce90d29226a9bf17e764cb0"
+    },
+    "model-correspondence.md": {
+      "sha256": "4067af735c6e277e3c5da9547337a987797baf6e815808913f2ced59224efc3f",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-1/dom-keyup-opener/stage2-corrected/README.md",
+      "originalSHA256": "4067af735c6e277e3c5da9547337a987797baf6e815808913f2ced59224efc3f"
+    },
+    "initial-model.qnt": {
+      "sha256": "c2767684c5528a29bec45439d087a73cedbc599493666e98ec27c7c1770f1979",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-1/dom-keyup-opener/stage1/dom_opener.qnt",
+      "originalSHA256": "c2767684c5528a29bec45439d087a73cedbc599493666e98ec27c7c1770f1979"
+    },
+    "initial-model-run.stdout.gz": {
+      "sha256": "d181a888bf4d985e9145ad5bc83d577ee47daaa00a58d46c8b7319971167b473",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-1/dom-keyup-opener/stage1/run.stdout",
+      "originalSHA256": "8123db2a85b2a2057973badd6291733016957518746ebb681e85d9b303bbc653"
+    },
+    "old-ordering-counterexample.stdout.gz": {
+      "sha256": "0fbc6aa5ac873fefa6181485b58b7debf90529a7a11945bc63ca4fdd0b60c840",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-1/dom-keyup-opener/stage1/expected-old-counterexample.stdout",
+      "originalSHA256": "d83f65ba0e160a18b89df6e46778b058d68ed22a075b41455533aa78b21e8729"
+    },
+    "asset-build-report.json.gz": {
+      "sha256": "95cc4d0db9f4a1df0a108ec659bcdb6c099304718768996bf7180acf895177cb",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/context-keyup-assets-v1/output/report.json",
+      "originalSHA256": "69d5b85ad1137c3e851127c2cf5b4d9dcfe16f16e46568cbf106d2f165c77955"
+    },
+    "build-assets.py": {
+      "sha256": "2b3ffe36d4a0709d66370c8a7ae7bd1fa8ffad2e81b244780415c6180b2e15a8",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/context-keyup-assets-v1/build-assets.py",
+      "originalSHA256": "2b3ffe36d4a0709d66370c8a7ae7bd1fa8ffad2e81b244780415c6180b2e15a8"
+    },
+    "independent-source-review.md": {
+      "sha256": "f06e1e243b0dea2c76a6ea2494e55cb1755eb0bbff44296ed7d37bdcab44d450",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-2/context-keyup-qualified/source-review.md"
+    },
+    "native-keyboard-failure-report.json.gz": {
+      "sha256": "9cc64f9df9bf6e14ef02bf292091f22bbd5e59c377ff2d0ac58c6d39007c46d6",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/context-keyup-qualified-terra-2-v1/native-new-instance-keyboard-1793299294154176471/report.json",
+      "originalSHA256": "69ab8850e0bf9f71cb90b6db76ded032fbc8ecc94b5eb3cc9a4a3fb1767cd48f"
+    },
+    "native-keyboard-warlock.log.gz": {
+      "sha256": "385e23a2f4416976e21daa7b103b3086cefbd0222a1b4b0d79405f51c1bfba2e",
+      "originalPath": "/home/charles/window-integration-qa/warlock-window-feedback-1793299294154288692/warlock.log",
+      "originalSHA256": "9c716caca23af23eadd14cbc314608c8cc35c415b1752d83dfa95fb05d517ce1"
+    }
+  },
+  "contextSHA256": "e843e72479a6e499a99f4369f145530e8e097c576e7d08926a6a912dbd50bc8d",
+  "hostSHA256": "e0a2f0464b090f77c744c7fe7fc8e356a9d0f1ce2ad8a648040379dd2f7c0558",
+  "observations": [
+    "The actual context script passes 34 mock DOM checks; this does not prove event trust or native delivery.",
+    "Initial model: candidate ordering safety across 100 traces, with both old and new witnesses positive; intentional old-policy counterexample retained.",
+    "Corrected model: two typechecks, all 33 named tests and safety across 1,000 sampled traces pass, with all five witnesses positive; seed 0x1c99a71fbf4860.",
+    "Main, Bar and Popup were rebuilt. Generated bytes match the prior receipt; context.js is the sole changed static asset. The native host, 239 native inputs and dependency/provider tuple are unchanged.",
+    "Current protected native keyboard journey fails. Pointer New Instance reaches one current catalog launch and an owned GTK root with normal exit; later keyboard menu times out and owned-client normal-exit check fails; cleanup passes.",
+    "Retained log lines 6119/6124 record Menu down/up in the same bar engine, then context admission at 6125 and popup opening at 6158. Three Web process terminated: 0 entries follow at 6208\u20136210. The corrected opener ordering alone does not resolve the failure. No signal or unique assertion is inferred from those termination messages."
+  ],
+  "models": {
+    "dom_opener.qnt": "16c824051ac10264c17b40c2b2a1921bcf961f0d4d62bf923796ac8582515710",
+    "dom_opener_test.qnt": "747ab5d65b20da3997cf7a11eb01ecd9e1df9e54a50cc185ab271c72528bdd0e"
+  },
+  "missingObservations": [
+    "Original native New Instance keyboard/AT journey and normal renderer/owned-client exit",
+    "Application-pin versus native-top independence in both directions",
+    "No unique WebKit assertion or mapped-library identity proven by the prior stripped stack"
+  ],
+  "limits": [
+    "The previous unexecuted stage2 draft improperly included native epoch in frontend eligibility; corrected before CLI execution, with prior draft retained privately.",
+    "A participant summary said 35 component checks; the actual retained report has 34.",
+    "Pointer behavior is checked separately by actual JS component test; model covers keyboard opener only.",
+    "No proof of upstream crash cause, whole requirement or release acceptance."
+  ],
+  "independentSourceReview": {
+    "name": "quint-2",
+    "disposition": "no-source-stop-for-native-trial",
+    "file": "independent-source-review.md",
+    "sha256": "f06e1e243b0dea2c76a6ea2494e55cb1755eb0bbff44296ed7d37bdcab44d450"
+  },
+  "nativeTrial": {
+    "session": 24533,
+    "terminalStatus": 1,
+    "passed": false,
+    "cleanupPassed": true,
+    "error": "OwnedClientNormalExit",
+    "originalObservation": "Original six-second keyboard-menu deadline before keyboard New Instance/AT action",
+    "sourceQualification": "d1c69b53e0386ed2de96215294c3289d831c98ca12bfadff873c86ff5133ad9f",
+    "runnerSHA256": "8d522ad5492ebff48424107eb921efce17e2f4d90c02a99cd750d08462d6a979",
+    "unit": "qa-harness-52abc2a90baf4464be8e1ffdd2691f26.scope",
+    "invocation": "518e9dfe1f8d4a7188483b7d0cb58d4f"
+  }
+}

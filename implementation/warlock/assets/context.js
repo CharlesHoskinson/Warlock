@@ -1,6 +1,6 @@
 'use strict';
 (() => {
-  let pressed = null;
+  let pressed = null, keyPressed = null, composing = false;
   const owner = element => element?.closest('.surface-bar,.surface-popup');
   const control = element => element?.closest('[data-surface-control]');
   const stamp = node => node && ({publication:node.dataset.publication,lease:node.dataset.lease});
@@ -20,7 +20,7 @@
   document.addEventListener('contextmenu',event => { if(owner(event.target)) event.preventDefault(); });
   document.addEventListener('mousedown',event => {
     diagnostic('press',event);
-    pressed=null;
+    pressed=null;keyPressed=null;
     if(!event.isTrusted || event.button!==2 || event.buttons!==2) return;
     const item=control(event.target),node=owner(item);
     if(!item || !node || item.disabled) return;
@@ -38,15 +38,32 @@
     if((event.clientX-pending.x)**2+(event.clientY-pending.y)**2>25) return;
     event.preventDefault();invoke(item,node,'pointer',Math.round(event.clientX),Math.round(event.clientY));
   },true);
-  window.addEventListener('blur',()=>{pressed=null;});
-  for(const name of ['scroll','dragstart']) document.addEventListener(name,()=>{pressed=null;},true);
+  window.addEventListener('blur',()=>{pressed=null;keyPressed=null;});
+  for(const name of ['scroll','dragstart']) document.addEventListener(name,()=>{pressed=null;keyPressed=null;},true);
+  document.addEventListener('focusout',()=>{keyPressed=null;},true);
+  document.addEventListener('compositionstart',()=>{composing=true;keyPressed=null;},true);
+  document.addEventListener('compositionend',()=>{composing=false;keyPressed=null;},true);
+  document.addEventListener('keyup',event => {
+    const pending=keyPressed;
+    // Shift may be released before F10; the modifier was qualified on press.
+    if(pending && event.key==='Shift') return;
+    keyPressed=null;
+    if(!pending || !event.isTrusted || event.isComposing || composing || event.defaultPrevented || event.ctrlKey || event.altKey || event.metaKey || event.key!==pending.key || event.code!==pending.code) return;
+    const item=control(event.target),node=owner(item);
+    if(!document.hasFocus() || document.activeElement!==pending.item || item!==pending.item || node!==pending.node || !item.isConnected || !node.isConnected || item.disabled || item.id!==pending.id || item.dataset.surfaceControl!==pending.control || !same(pending.shown,stamp(node))) return;
+    event.preventDefault();invoke(item,node,'keyboard',0,0);
+  },true);
   document.addEventListener('keydown',event => {
     diagnostic('key',event);
     const contextKey=event.key==='ContextMenu' || (event.key==='F10' && event.shiftKey);
+    if(keyPressed) {
+      if(event.isTrusted && event.repeat && event.key===keyPressed.key && event.code===keyPressed.code) {event.preventDefault();return;}
+      keyPressed=null;
+    }
     // WebKit can retain repeat=true after the key release went to a grabbed
     // popup. Context requests still need the native fresh physical-key proof;
     // its held-key guard rejects genuine repeats across both surfaces.
-    if(!event.isTrusted || (event.repeat&&!contextKey) || event.isComposing || event.defaultPrevented || event.ctrlKey || event.altKey || event.metaKey) return;
+    if(!event.isTrusted || (event.repeat&&!contextKey) || event.isComposing || composing || event.defaultPrevented || event.ctrlKey || event.altKey || event.metaKey) return;
     const menu=document.querySelector('.surface-popup[data-mode="menu"]');
     // Dismissal belongs to the live popup, including when a disabled row blurs focus.
     if(event.key==='Escape' && menu){
@@ -55,8 +72,8 @@
     const item=control(document.activeElement),node=owner(item);
     if(!item || !node) return;
     if(contextKey) {
-      if(item.disabled) return;
-      event.preventDefault();invoke(item,node,'keyboard',0,0);return;
+      if(item.disabled || !item.isConnected || !node.isConnected || !document.hasFocus() || control(event.target)!==item) return;
+      event.preventDefault();keyPressed={item,node,shown:stamp(node),id:item.id,control:item.dataset.surfaceControl,key:event.key,code:event.code};return;
     }
     if(node.dataset.mode==='menu') {
       if(event.key==='Tab'){
@@ -104,7 +121,12 @@
     if(force&&revealed&&node.contains(revealed)&&!revealed.disabled)revealed.scrollIntoView({block:'nearest',inline:'nearest'});
   };
   const menuResize=window.ResizeObserver&&new ResizeObserver(()=>requestAnimationFrame(()=>revealMenu(false,true)));
-  new MutationObserver(()=>revealMenu(true)).observe(document.body,{subtree:true,childList:true,attributes:true});
+  new MutationObserver(records=>{
+    if(keyPressed && records.some(record =>
+      (record.type==='attributes' && (record.target===keyPressed.node || record.target===keyPressed.item)) ||
+      (record.type==='childList' && [...record.removedNodes].some(node => node===keyPressed.item || node===keyPressed.node || node.contains?.(keyPressed.item) || node.contains?.(keyPressed.node))))) keyPressed=null;
+    revealMenu(true);
+  }).observe(document.body,{subtree:true,childList:true,attributes:true});
   window.addEventListener('resize',()=>requestAnimationFrame(()=>revealMenu(false,true)));
   window.addEventListener('focus',()=>revealMenu(true,true));
 })();
