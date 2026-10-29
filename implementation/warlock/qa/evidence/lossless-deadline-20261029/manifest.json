@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "requirement": "ELM-REV-007",
+  "observation": "Production PreviewLifecycle deadline protocol route",
+  "status": "partial",
+  "protocolObservation": "pass",
+  "requirementAccepted": false,
+  "nativeAcceptance": false,
+  "releaseAccepted": false,
+  "originalScenario": {
+    "name": "revision-007",
+    "disposition": "Prior accepted scenario and its first 11-case evidence are unchanged. This is additional ubiquitous EARS evidence, not a new scenario.",
+    "priorObservationsSHA256": "3d6c022392da9cdc6ee4eef7d328b248aea1b3c256b4fb32ecb2ff695bbc8e66"
+  },
+  "observations": {
+    "file": "observations.json",
+    "sha256": "98f0504aab46254df52a3545362fac354500b57d3816c7aba8b09411459ed847",
+    "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/lossless-authority/deadline-route-v1/protected-installed.stdout",
+    "exactRawBytes": true
+  },
+  "independentReview": {
+    "file": "independent-review.md",
+    "sha256": "73e10d8b719a5b4a6273ca302200c4bca415f3467a865813440a256143293c02",
+    "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-2/production-deadline-route/final-review.md",
+    "exactRawBytes": true,
+    "disposition": "PASS for the bounded installed PreviewLifecycle worker/JS deadline protocol observation."
+  },
+  "protectedExecution": {
+    "exitCode": 0,
+    "exitObservedBy": "Root coordinator; independent reviewer did not rerun.",
+    "unit": "qa-harness-79cb9bd1b5a14b2782662c22f5d675d3.scope",
+    "invocation": "1c8ae492a9d9458aa6818f7c4d0b53c4",
+    "reportedCoreLimit": 1,
+    "stderr": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/lossless-authority/deadline-route-v1/protected-installed.stderr",
+      "sha256": "668d0c95cd94aa220f5dba58110906d376b68c8e2ecacfeedd843c271c30b2c8"
+    },
+    "actualInnerCommands": "Exact compiler and Node argv, outputs and exits are preserved in observations.json."
+  },
+  "installedQAFileSHA256": {
+    "DeadlineBridgeReplay.elm": "e7a0dd41a597a8298bef90c7122ea9a63d9d982ef0ad4dade1bd078a722e5468",
+    "deadline-bridge-replay.cjs": "bd6632d1da77611874ec07b27e41b90f7743747b9aac49303625fc2d93c41753",
+    "check-deadline-bridge.py": "e7fb7ac8687914d623f06496c527c32151ee8399e26661d1c19cd2ce74421c40"
+  },
+  "sourceTuple": {
+    "recordedSourceCount": 100,
+    "sourceHashes": "Complete executed source snapshot is preserved in observations.json. All 100 entries were independently rehashed at integration with no changed or missing file.",
+    "compilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+    "nodeSHA256": "caa24debe02770c92a70677e2a62ca98890150e7ac1c17bcfe31bcc98cc89943",
+    "compiledSHA256": "ae4077d5132d8e9df313696e319eada214ac8c2d89785912275042e6dd6e6a6f",
+    "casesJSONSHA256": "3bb920980c53aa04b567116f1037ff671d8c00831a6c3d323a7aa4e244d4b0cb",
+    "toolchainManifestSHA256": "fe3d29078d30c6cf9bd431233c5eed1ad4550e2873ff55739d50a5a87a97edaa"
+  },
+  "receiptCounts": {
+    "acquire": 5,
+    "none": 2,
+    "cancel": 1,
+    "reject": 31,
+    "total": 39,
+    "failed": 0
+  },
+  "observed": [
+    "Actual compiled Elm worker input/output ports and JavaScript JSON traverse production PreviewLifecycle scopeDecoder and eventDecoder, init and update for Open, Request and Clock, then encodeCommands.",
+    "Four large-string positive cases preserve exact adjacent deadline strings in complete Acquire jobs; synthetic policy pairs use now plus 2000000000 nanoseconds.",
+    "Equal and expired deadlines emit no Acquire. A matching clock reaching the original deadline emits Cancel with the same complete job.",
+    "A coherent canonical-string negative baseline actually emits Acquire. Each of 31 numeric cases changes one field and is rejected at the expected production decoder stage with no commands."
+  ],
+  "frozenTiming": {
+    "syntheticPolicyIntervalNs": "2000000000",
+    "javascriptResponseWatchdogMs": 3000,
+    "scope": "The input arithmetic and watchdog are fixture values, not an observed native absolute clock, native start event or retry deadline."
+  },
+  "missing": [
+    "Production Main and adapter transport are not exercised.",
+    "Native wire ingress and egress are not executed.",
+    "Actual native clock, deadline start event and retry preservation are not observed.",
+    "All other deadline-bearing fields and whole ubiquitous requirement coverage remain open."
+  ],
+  "scope": "Bounded source-bound protocol observation only. No product defect, native feature, whole requirement or release acceptance is inferred."
+}
