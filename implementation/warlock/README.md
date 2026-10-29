@@ -51,7 +51,12 @@ The focused search-removal regression is available as
 `qa/check-search-removed.py` through the protected CPU launcher. It compiles
 the current Desktop, Launch, Catalog and Surface logic and checks stale
 selection rejection, correlated refusal and explicit Refresh to no-match.
-Native presentation and applicable accessibility remain separate gates.
+Original UI-005 `search-removed` is now independently accepted using the
+compiled replay, actual keyboard/native journey, and real AT-SPI Refresh action
+with current Search/no-match nodes and Orca focus. See the
+[observations and limits](qa/evidence/search-removed-at-20261029/manifest.json).
+Direct query-value reading through AT Text, no-match announcements and the
+other UI-005 scenarios remain separate obligations.
 
 The installed Omarchy predecessor now has a bounded private startup observation:
 its menu, workspaces and clock paint, and its owned process group retires without

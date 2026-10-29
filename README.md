@@ -44,6 +44,11 @@ Two applications retain their exact identities and chosen order across an actual
 shell restart, supported by the current compiled replay and native recording.
 Application-pin versus always-on-top independence remains a separate open gate.
 
+Original UI-005 `search-removed` is independently accepted: a removed selected
+application cannot launch a replacement, and keyboard/AT Refresh reconciles
+the current catalog while preserving the query. Other launcher scenarios and
+whole UI-005 remain open.
+
 An isolated startup trial also shows the installed Omarchy predecessor's menu,
 workspaces and clock, with complete owned-process cleanup. Full candidate
 rollback and preference/draft recovery are still open; this has not deployed
