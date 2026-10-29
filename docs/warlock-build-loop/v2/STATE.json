@@ -1,40 +1,35 @@
 {
   "schema": 1,
   "owner": "sol",
-  "updatedUTC": "2026-10-29T23:10:24.588080+00:00",
+  "updatedUTC": "2026-10-29T23:52:57.158723+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "shortcut-draft-refresh-preservation",
+    "id": "attention-current-native-state",
     "requirements": [
-      "ELM-UI-020"
+      "ELM-UX-009"
     ],
     "scenarios": [
-      "first-use"
+      "ux-009"
     ],
     "paths": [
-      "implementation/warlock/src/ShortcutPreferences.elm",
-      "implementation/warlock/qa/ShortcutDraftReplay.elm",
-      "implementation/warlock/qa/ShortcutDraftProperties.elm",
-      "implementation/warlock/qa/shortcut-draft.qnt",
-      "implementation/warlock/qa/shortcut-draft_test.qnt",
-      "implementation/warlock/qa/shortcut-draft-contracts.cjs",
-      "implementation/warlock/qa/check-shortcut-draft.py",
+      "implementation/warlock/qa/check-attention-current.py",
+      "implementation/warlock/qa/AttentionReplay.elm",
+      "implementation/warlock/qa/native-attention-current.py",
       "implementation/warlock/README.md"
     ],
-    "before": "Source-derived DEBT05: matched preference reads overwrite an unsaved editor draft and clear any pending save. Existing native-admission model does not cover draft lifecycle. Actual baseline failure with valid editor/read preconditions must be captured before production change.",
-    "after": "Retain unsaved choices through refresh/reopen/read failure, update observed inventory, and block Save until affected changed-store choices are explicitly confirmed. Never auto-save or apply on read. A pending save remains unresolved unless read confirms both stored and live intended choices; actual Desktop binding/request guards remain intact.",
+    "before": "Attention behavior exists with historical native evidence; current source tuple and independent native accessible-state distinction remain unqualified.",
+    "after": "Qualify original current native active-versus-attention pixels and accessible state without focus theft; repair only demonstrated production defects, preserve original oracle and prior evidence.",
     "verification": [
-      "Select actual original UI020 first-use support plus explicit user draft-preservation contract. Execute production Desktop/ShortcutPreferences baseline replay with valid positive controls; preserve demonstrated failures and actual source hashes before changing production logic. Do not confuse harness readiness failure with draft loss.",
-      "Review new local Quint editor model from source: one editor, read/action boundaries explicit, same/new revision, inventory, per-route confirmation, Waiting/Unknown read reconciliation, foreign receipts and no read-issued writes. Keep existing native shortcut-choices model unchanged; typecheck/run named witnesses/sampled invariants before code implementation, then check implementation correspondence.",
-      "Fresh optimized Main Bar Popup compile; actual draft replay plus existing ShortcutPreferencesReplay and bounded seeded production-reducer sequence properties with valid positive controls, stale/foreign receipts and pending mismatch/exact reads. Preserve counters, native/fingerprint admission and no replay. Actual UI020 native guidance/save/restart/AT/offline recovery remain unaccepted by CPU/model checks.",
-      "Update Graphify CUDA/eval, README/Diataxis/debt/wiki and publish owned reviewed delta. Native renderer and stopped notification investigations are separate; no unchanged native/profile/notification fixture retry."
+      "Run existing actual production AttentionReplay and strict native observation/join checks through protected CPU launcher with exact fresh current three-root build and held compiler. Existing model unchanged unless behavior changes.",
+      "Review genuine GTK urgency fixture, unchanged original deadlines, private cleanup, exact owning core/plugin/Aquamarine/host/assets; observe actual AT export for accessible state, not DOM alone. No unchanged shared-renderer/Profile investigation or main-session changes.",
+      "Preserve failures, investigation limits, independent exact original ux-009 review before acceptance, Graphify CUDA/eval and documentation/wiki."
     ],
-    "owner": "root-shortcut-draft",
-    "participantRecord": ".warlock-contributor/shortcut-draft-refresh-preservation.json"
+    "owner": "root-attention-current",
+    "participantRecord": ".warlock-contributor/attention-current-native-state.json"
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -2880,5 +2875,40 @@
       ]
     },
     "completion": "Not established by an inventory, document or linter; original product/release acceptance remains required."
-  }
+  },
+  "sliceSelectionHistory": [
+    {
+      "atUTC": "2026-10-29T23:52:57.158714+00:00",
+      "slice": {
+        "id": "shortcut-draft-refresh-preservation",
+        "requirements": [
+          "ELM-UI-020"
+        ],
+        "scenarios": [
+          "first-use"
+        ],
+        "paths": [
+          "implementation/warlock/src/ShortcutPreferences.elm",
+          "implementation/warlock/qa/ShortcutDraftReplay.elm",
+          "implementation/warlock/qa/ShortcutDraftProperties.elm",
+          "implementation/warlock/qa/shortcut-draft.qnt",
+          "implementation/warlock/qa/shortcut-draft_test.qnt",
+          "implementation/warlock/qa/shortcut-draft-contracts.cjs",
+          "implementation/warlock/qa/check-shortcut-draft.py",
+          "implementation/warlock/README.md"
+        ],
+        "before": "Source-derived DEBT05: matched preference reads overwrite an unsaved editor draft and clear any pending save. Existing native-admission model does not cover draft lifecycle. Actual baseline failure with valid editor/read preconditions must be captured before production change.",
+        "after": "Retain unsaved choices through refresh/reopen/read failure, update observed inventory, and block Save until affected changed-store choices are explicitly confirmed. Never auto-save or apply on read. A pending save remains unresolved unless read confirms both stored and live intended choices; actual Desktop binding/request guards remain intact.",
+        "verification": [
+          "Select actual original UI020 first-use support plus explicit user draft-preservation contract. Execute production Desktop/ShortcutPreferences baseline replay with valid positive controls; preserve demonstrated failures and actual source hashes before changing production logic. Do not confuse harness readiness failure with draft loss.",
+          "Review new local Quint editor model from source: one editor, read/action boundaries explicit, same/new revision, inventory, per-route confirmation, Waiting/Unknown read reconciliation, foreign receipts and no read-issued writes. Keep existing native shortcut-choices model unchanged; typecheck/run named witnesses/sampled invariants before code implementation, then check implementation correspondence.",
+          "Fresh optimized Main Bar Popup compile; actual draft replay plus existing ShortcutPreferencesReplay and bounded seeded production-reducer sequence properties with valid positive controls, stale/foreign receipts and pending mismatch/exact reads. Preserve counters, native/fingerprint admission and no replay. Actual UI020 native guidance/save/restart/AT/offline recovery remain unaccepted by CPU/model checks.",
+          "Update Graphify CUDA/eval, README/Diataxis/debt/wiki and publish owned reviewed delta. Native renderer and stopped notification investigations are separate; no unchanged native/profile/notification fixture retry."
+        ],
+        "owner": "root-shortcut-draft",
+        "participantRecord": ".warlock-contributor/shortcut-draft-refresh-preservation.json"
+      },
+      "outcome": "Bounded draft fix integrated c5cf882f1; original native UI020 remains open."
+    }
+  ]
 }
