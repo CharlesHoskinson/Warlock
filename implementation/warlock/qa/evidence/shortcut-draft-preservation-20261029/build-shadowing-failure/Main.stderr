@@ -1,0 +1,16 @@
+-- SHADOWING - /home/charles/Warlock/implementation/warlock/src/ShortcutPreferences.elm
+
+The name `pending` is first defined here:
+
+92|                 pending = if settled then Nothing else model.pending
+                    ^^^^^^^
+But then it is defined AGAIN over here:
+
+85|                 settled = model.pending |> Maybe.map (\pending -> current.choices==pending.choices && liveMatches pending.choices native) |> Maybe.withDefault False
+                                                           ^^^^^^^
+Think of a more helpful name for one of them and you should be all set!
+
+Note: Linters advise against shadowing, so Elm makes “best practices” the
+default. Read <https://elm-lang.org/0.19.2/shadowing> for more details on this
+choice.
+

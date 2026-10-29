@@ -1,0 +1,15 @@
+
+ Error [QNT000]: mismatched input '=' expecting ':'
+
+  at /home/charles/Warlock/implementation/warlock/qa/shortcut-draft.qnt:105:62
+  105:   action storedReceipt(binding: int, request: int, f: Facts) = all {matches(s, binding, request), s' = outcome(s, f, false)}
+                                                                    ^
+
+
+ Error [QNT000]: extraneous input 'action' expecting {<EOF>, 'module', DOCCOMMENT}
+
+  at /home/charles/Warlock/implementation/warlock/qa/shortcut-draft.qnt:106:3
+  106:   action savedReceipt(binding: int, request: int, f: Facts) = all {matches(s, binding, request), s' = outcome(s, f, true)}
+         ^^^^^^
+
+error: parsing failed

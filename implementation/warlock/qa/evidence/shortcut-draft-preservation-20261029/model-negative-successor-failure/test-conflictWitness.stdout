@@ -1,0 +1,16 @@
+
+  ShortcutDraft_test
+    1) conflictWitness failed after 1 test(s)
+
+  1 failed
+
+  1) conflictWitness:
+       Error [QNT502]: Variable s not set
+        at /home/charles/Warlock/implementation/warlock/qa/shortcut-draft.qnt:50:18
+        50:   val editable = s.phase == Editing and s.inventory and s.expectedRequest == 0
+                             ^
+    Use --seed=0x4410c7039283 --match=conflictWitness to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/charles/Warlock/implementation/warlock/qa/shortcut-draft_test.qnt

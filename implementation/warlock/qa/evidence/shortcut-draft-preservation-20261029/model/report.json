@@ -1,0 +1,737 @@
+{
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-943ff39a16224dd1bfac8ab2c6611bc0.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node": "caa24debe02770c92a70677e2a62ca98890150e7ac1c17bcfe31bcc98cc89943",
+    "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js": "952a50a28932282528b5c9b86ac5542405d85da4f80876aabe8cb8c7d5a6d0e8",
+    "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft.qnt": "87bbbdc9610ecf93445ead0d4cf12f1609405a0568e09c4afdf2c8122dd97018",
+    "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft_test.qnt": "665ec15f43b80b3e0066de5f4deae0d9aaf36cac5a46bb695b3ad78eecfff450",
+    "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/package.json": "c73e78964221e9e8cbe273568ccdad152370fc35786fb82219c64347c71e57dc",
+    "/home/charles/.local/state/warlock-team/20261028/tooling/package-lock.json": "630f4926b18579f08be780630a94a7c4d398b4bcc6f9844def990ff6a7112903"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "typecheck",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft.qnt"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "initial-run",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "run",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft.qnt",
+        "--main",
+        "ShortcutDraft",
+        "--invariant",
+        "readPreservesIntent",
+        "--max-samples=1",
+        "--max-steps=1",
+        "--backend=typescript",
+        "--seed=20261029"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "fc19f450d785ad2d7fc537a8892b8e923e12a21b3d9ca194eebe5c3bf05f6b18",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "typecheck-tests",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "typecheck",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft_test.qnt"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-baselineBugWitness",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft_test.qnt",
+        "--main",
+        "ShortcutDraft_test",
+        "--backend=typescript",
+        "--match",
+        "^baselineBugWitness$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "62fbd2bbb9ecfbe6d8f2de92524d11bf3b73efe80f00e09edc14e89d5a95525f",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-dirtySameWitness",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft_test.qnt",
+        "--main",
+        "ShortcutDraft_test",
+        "--backend=typescript",
+        "--match",
+        "^dirtySameWitness$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "fe2c7a27934ca0814695674b00a6c6d37f74af585bd953bcd4a2618e5dcd4de1",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-cleanReadWitness",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft_test.qnt",
+        "--main",
+        "ShortcutDraft_test",
+        "--backend=typescript",
+        "--match",
+        "^cleanReadWitness$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "1753caf6627a926fb0fb663f66f2dee5366a19ea9870f3e82876a668545973e2",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-conflictWitness",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft_test.qnt",
+        "--main",
+        "ShortcutDraft_test",
+        "--backend=typescript",
+        "--match",
+        "^conflictWitness$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "22abe26f4104703d6de511423cb323e0a6a051c1e70d2198bfc111615816976b",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-unavailableWitness",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft_test.qnt",
+        "--main",
+        "ShortcutDraft_test",
+        "--backend=typescript",
+        "--match",
+        "^unavailableWitness$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "d4513f48006a741fd8b415d53da42aaf1291ecd83b9a6c7f7aeae3f97b4f881f",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-failedReadWitness",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft_test.qnt",
+        "--main",
+        "ShortcutDraft_test",
+        "--backend=typescript",
+        "--match",
+        "^failedReadWitness$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "2d4c3ca43b320c7a8d506695e5101f9bee7f981740272caedd0bb26b7c78cc17",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-waitingMismatchWitness",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft_test.qnt",
+        "--main",
+        "ShortcutDraft_test",
+        "--backend=typescript",
+        "--match",
+        "^waitingMismatchWitness$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "c709708694e944ba6da3e01a26f9f02984268c5405d0f37c830e960bf9aca4bc",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-storedMismatchWitness",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft_test.qnt",
+        "--main",
+        "ShortcutDraft_test",
+        "--backend=typescript",
+        "--match",
+        "^storedMismatchWitness$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "b4547d383acd437a9e8940600a9f330f9ac55541d337cc37bb95f58e7c264167",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-unknownMismatchWitness",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft_test.qnt",
+        "--main",
+        "ShortcutDraft_test",
+        "--backend=typescript",
+        "--match",
+        "^unknownMismatchWitness$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "361db44c50f6e993ba4dcb0eb92ea42a201758c9116208cf51864d14c3d2816a",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-waitingExactWitness",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft_test.qnt",
+        "--main",
+        "ShortcutDraft_test",
+        "--backend=typescript",
+        "--match",
+        "^waitingExactWitness$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "04637bab269f938d0c5cdaaf3bb04c099b353cc9e7d8202aa21c6063beefdfbb",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-unknownExactWitness",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft_test.qnt",
+        "--main",
+        "ShortcutDraft_test",
+        "--backend=typescript",
+        "--match",
+        "^unknownExactWitness$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "e9252f774457f19d24ba85098a80350366bf0fcccae8b11eb45082d642a2148e",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-staleStoredWitness",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft_test.qnt",
+        "--main",
+        "ShortcutDraft_test",
+        "--backend=typescript",
+        "--match",
+        "^staleStoredWitness$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "72c96ebe38f9e77d0064000f1914c20bdf9881c422cd94df3a0df471ac58b6ce",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-staleSavedWitness",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft_test.qnt",
+        "--main",
+        "ShortcutDraft_test",
+        "--backend=typescript",
+        "--match",
+        "^staleSavedWitness$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "05bf640b3e1a83e64ff54aab2c02efba9738d17bdca24906dd422487659efc2a",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-savedRequiresNativeWitness",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft_test.qnt",
+        "--main",
+        "ShortcutDraft_test",
+        "--backend=typescript",
+        "--match",
+        "^savedRequiresNativeWitness$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "7b3065f74da22dc4d6397af202ca5089d7a1162460479499660355d0eb810179",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-staleReadWitness",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft_test.qnt",
+        "--main",
+        "ShortcutDraft_test",
+        "--backend=typescript",
+        "--match",
+        "^staleReadWitness$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "75a8a75364301fc16bced5b637c960677b41b4f8b4130ca924bacbd7fa76fe6a",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-metadataOnlyReadWitness",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft_test.qnt",
+        "--main",
+        "ShortcutDraft_test",
+        "--backend=typescript",
+        "--match",
+        "^metadataOnlyReadWitness$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "895fea3bfbb7339b487d67040b91a70e3044abd4586a8ae1ef61901c2e3d23e7",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-defaultUnavailableWitness",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft_test.qnt",
+        "--main",
+        "ShortcutDraft_test",
+        "--backend=typescript",
+        "--match",
+        "^defaultUnavailableWitness$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "af7415cfd18b5219a57c660d8bd70ad6c8de17551c6681e521315b2ba54a7ce5",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-foreignWriteBindingWitness",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft_test.qnt",
+        "--main",
+        "ShortcutDraft_test",
+        "--backend=typescript",
+        "--match",
+        "^foreignWriteBindingWitness$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "0b32ef499e7e5fb81e8b155a09b427f9e180eda8e7c4f87489720f338aec6c8b",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-foreignWriteRequestWitness",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft_test.qnt",
+        "--main",
+        "ShortcutDraft_test",
+        "--backend=typescript",
+        "--match",
+        "^foreignWriteRequestWitness$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "bb8a554f31433e4b65c57dff1b89036c5e2bc28d5a9267adb108cae46772c1c0",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-storedOnlyKeepsConflictWitness",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft_test.qnt",
+        "--main",
+        "ShortcutDraft_test",
+        "--backend=typescript",
+        "--match",
+        "^storedOnlyKeepsConflictWitness$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "644644273a99291286790958416a882e1d6205249e68ccac6e0bd82925f3357d",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-duplicateWriteWitness",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft_test.qnt",
+        "--main",
+        "ShortcutDraft_test",
+        "--backend=typescript",
+        "--match",
+        "^duplicateWriteWitness$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "fd261bf4dec6f262af540f358a6e3a2a2792195d4e396ee5d2ef6f13846b9e39",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-foreignWitness",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft_test.qnt",
+        "--main",
+        "ShortcutDraft_test",
+        "--backend=typescript",
+        "--match",
+        "^foreignWitness$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "b6b6821ebc1e6763a68fb587a3b4708942b8e36e625ecd35bec06e692ed526ed",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-conflictCannotSubmitWitness",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft_test.qnt",
+        "--main",
+        "ShortcutDraft_test",
+        "--backend=typescript",
+        "--match",
+        "^conflictCannotSubmitWitness$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "d2999aae98279904506cf135f5e04de70068ab0b0fcc091b853ef5cedc96cb99",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-unavailableCannotSubmitWitness",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft_test.qnt",
+        "--main",
+        "ShortcutDraft_test",
+        "--backend=typescript",
+        "--match",
+        "^unavailableCannotSubmitWitness$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "275d2ee042673a11b190f0114b08d293bd7c69e7259377c00940c45b70628430",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-unavailableDefaultCannotSubmitWitness",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft_test.qnt",
+        "--main",
+        "ShortcutDraft_test",
+        "--backend=typescript",
+        "--match",
+        "^unavailableDefaultCannotSubmitWitness$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "8951490d8ad9176f02ba0251a202ffd0a2e9821e445ec07359ac007e298f34e8",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-unavailableDefaultCannotEditWitness",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft_test.qnt",
+        "--main",
+        "ShortcutDraft_test",
+        "--backend=typescript",
+        "--match",
+        "^unavailableDefaultCannotEditWitness$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "86e1f0650ee1feed2d7225e7cd900bd5c770d116bae91ea1230ea32dfa15e5fa",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "sample-readPreservesIntent",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "run",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft.qnt",
+        "--main",
+        "ShortcutDraft",
+        "--invariant",
+        "readPreservesIntent",
+        "--max-samples=1000",
+        "--max-steps=20",
+        "--backend=typescript",
+        "--seed=20261029"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "718500ddb198fffde00c4903424b0487d6aa810f6021afd2f0b9b74ff74927c9",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "sample-readNeverSubmits",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "run",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft.qnt",
+        "--main",
+        "ShortcutDraft",
+        "--invariant",
+        "readNeverSubmits",
+        "--max-samples=1000",
+        "--max-steps=20",
+        "--backend=typescript",
+        "--seed=20261029"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "718500ddb198fffde00c4903424b0487d6aa810f6021afd2f0b9b74ff74927c9",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "sample-readNeverRollsBack",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "run",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft.qnt",
+        "--main",
+        "ShortcutDraft",
+        "--invariant",
+        "readNeverRollsBack",
+        "--max-samples=1000",
+        "--max-steps=20",
+        "--backend=typescript",
+        "--seed=20261029"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "9a0918eeeada209e74c3dfa248cb610e2fbefa7283c98107b74193519828679c",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "sample-pendingIntentStable",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "run",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft.qnt",
+        "--main",
+        "ShortcutDraft",
+        "--invariant",
+        "pendingIntentStable",
+        "--max-samples=1000",
+        "--max-steps=20",
+        "--backend=typescript",
+        "--seed=20261029"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "aa65b40ddd6abb4243c46f8112482dc09503d1983da19f6a12295abc1a6036b6",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "sample-conflictBlocksSave",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "run",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft.qnt",
+        "--main",
+        "ShortcutDraft",
+        "--invariant",
+        "conflictBlocksSave",
+        "--max-samples=1000",
+        "--max-steps=20",
+        "--backend=typescript",
+        "--seed=20261029"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "a8a2caeef0fb8bb0903a54d3b191097e01726f6a7927186031643af47eda9494",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "sample-pendingBlocksSave",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "run",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft.qnt",
+        "--main",
+        "ShortcutDraft",
+        "--invariant",
+        "pendingBlocksSave",
+        "--max-samples=1000",
+        "--max-steps=20",
+        "--backend=typescript",
+        "--seed=20261029"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "9ab267328b1fe3c4d86726d23d8ec9103086e65e4664f115795f8fe582df458d",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "seed": 20261029,
+  "sampleBudgetPerInvariant": 1000,
+  "stepBudget": 20,
+  "limit": "Bounded local editor model and explicit named witnesses, not exhaustive proof or native implementation acceptance.",
+  "namedWitnesses": [
+    "baselineBugWitness",
+    "dirtySameWitness",
+    "cleanReadWitness",
+    "conflictWitness",
+    "unavailableWitness",
+    "failedReadWitness",
+    "waitingMismatchWitness",
+    "storedMismatchWitness",
+    "unknownMismatchWitness",
+    "waitingExactWitness",
+    "unknownExactWitness",
+    "staleStoredWitness",
+    "staleSavedWitness",
+    "savedRequiresNativeWitness",
+    "staleReadWitness",
+    "metadataOnlyReadWitness",
+    "defaultUnavailableWitness",
+    "foreignWriteBindingWitness",
+    "foreignWriteRequestWitness",
+    "storedOnlyKeepsConflictWitness",
+    "duplicateWriteWitness",
+    "foreignWitness",
+    "conflictCannotSubmitWitness",
+    "unavailableCannotSubmitWitness",
+    "unavailableDefaultCannotSubmitWitness",
+    "unavailableDefaultCannotEditWitness"
+  ],
+  "sampledInvariants": [
+    "readPreservesIntent",
+    "readNeverSubmits",
+    "readNeverRollsBack",
+    "pendingIntentStable",
+    "conflictBlocksSave",
+    "pendingBlocksSave"
+  ],
+  "outputs": {
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/shortcut-draft.qnt": "87bbbdc9610ecf93445ead0d4cf12f1609405a0568e09c4afdf2c8122dd97018",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/shortcut-draft_test.qnt": "665ec15f43b80b3e0066de5f4deae0d9aaf36cac5a46bb695b3ad78eecfff450",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/initial-run.stdout": "fc19f450d785ad2d7fc537a8892b8e923e12a21b3d9ca194eebe5c3bf05f6b18",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/initial-run.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/typecheck-tests.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/typecheck-tests.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-baselineBugWitness.stdout": "62fbd2bbb9ecfbe6d8f2de92524d11bf3b73efe80f00e09edc14e89d5a95525f",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-baselineBugWitness.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-dirtySameWitness.stdout": "fe2c7a27934ca0814695674b00a6c6d37f74af585bd953bcd4a2618e5dcd4de1",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-dirtySameWitness.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-cleanReadWitness.stdout": "1753caf6627a926fb0fb663f66f2dee5366a19ea9870f3e82876a668545973e2",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-cleanReadWitness.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-conflictWitness.stdout": "22abe26f4104703d6de511423cb323e0a6a051c1e70d2198bfc111615816976b",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-conflictWitness.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-unavailableWitness.stdout": "d4513f48006a741fd8b415d53da42aaf1291ecd83b9a6c7f7aeae3f97b4f881f",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-unavailableWitness.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-failedReadWitness.stdout": "2d4c3ca43b320c7a8d506695e5101f9bee7f981740272caedd0bb26b7c78cc17",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-failedReadWitness.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-waitingMismatchWitness.stdout": "c709708694e944ba6da3e01a26f9f02984268c5405d0f37c830e960bf9aca4bc",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-waitingMismatchWitness.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-storedMismatchWitness.stdout": "b4547d383acd437a9e8940600a9f330f9ac55541d337cc37bb95f58e7c264167",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-storedMismatchWitness.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-unknownMismatchWitness.stdout": "361db44c50f6e993ba4dcb0eb92ea42a201758c9116208cf51864d14c3d2816a",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-unknownMismatchWitness.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-waitingExactWitness.stdout": "04637bab269f938d0c5cdaaf3bb04c099b353cc9e7d8202aa21c6063beefdfbb",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-waitingExactWitness.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-unknownExactWitness.stdout": "e9252f774457f19d24ba85098a80350366bf0fcccae8b11eb45082d642a2148e",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-unknownExactWitness.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-staleStoredWitness.stdout": "72c96ebe38f9e77d0064000f1914c20bdf9881c422cd94df3a0df471ac58b6ce",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-staleStoredWitness.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-staleSavedWitness.stdout": "05bf640b3e1a83e64ff54aab2c02efba9738d17bdca24906dd422487659efc2a",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-staleSavedWitness.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-savedRequiresNativeWitness.stdout": "7b3065f74da22dc4d6397af202ca5089d7a1162460479499660355d0eb810179",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-savedRequiresNativeWitness.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-staleReadWitness.stdout": "75a8a75364301fc16bced5b637c960677b41b4f8b4130ca924bacbd7fa76fe6a",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-staleReadWitness.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-metadataOnlyReadWitness.stdout": "895fea3bfbb7339b487d67040b91a70e3044abd4586a8ae1ef61901c2e3d23e7",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-metadataOnlyReadWitness.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-defaultUnavailableWitness.stdout": "af7415cfd18b5219a57c660d8bd70ad6c8de17551c6681e521315b2ba54a7ce5",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-defaultUnavailableWitness.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-foreignWriteBindingWitness.stdout": "0b32ef499e7e5fb81e8b155a09b427f9e180eda8e7c4f87489720f338aec6c8b",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-foreignWriteBindingWitness.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-foreignWriteRequestWitness.stdout": "bb8a554f31433e4b65c57dff1b89036c5e2bc28d5a9267adb108cae46772c1c0",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-foreignWriteRequestWitness.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-storedOnlyKeepsConflictWitness.stdout": "644644273a99291286790958416a882e1d6205249e68ccac6e0bd82925f3357d",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-storedOnlyKeepsConflictWitness.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-duplicateWriteWitness.stdout": "fd261bf4dec6f262af540f358a6e3a2a2792195d4e396ee5d2ef6f13846b9e39",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-duplicateWriteWitness.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-foreignWitness.stdout": "b6b6821ebc1e6763a68fb587a3b4708942b8e36e625ecd35bec06e692ed526ed",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-foreignWitness.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-conflictCannotSubmitWitness.stdout": "d2999aae98279904506cf135f5e04de70068ab0b0fcc091b853ef5cedc96cb99",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-conflictCannotSubmitWitness.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-unavailableCannotSubmitWitness.stdout": "275d2ee042673a11b190f0114b08d293bd7c69e7259377c00940c45b70628430",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-unavailableCannotSubmitWitness.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-unavailableDefaultCannotSubmitWitness.stdout": "8951490d8ad9176f02ba0251a202ffd0a2e9821e445ec07359ac007e298f34e8",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-unavailableDefaultCannotSubmitWitness.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-unavailableDefaultCannotEditWitness.stdout": "86e1f0650ee1feed2d7225e7cd900bd5c770d116bae91ea1230ea32dfa15e5fa",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/test-unavailableDefaultCannotEditWitness.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/sample-readPreservesIntent.stdout": "718500ddb198fffde00c4903424b0487d6aa810f6021afd2f0b9b74ff74927c9",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/sample-readPreservesIntent.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/sample-readNeverSubmits.stdout": "718500ddb198fffde00c4903424b0487d6aa810f6021afd2f0b9b74ff74927c9",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/sample-readNeverSubmits.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/sample-readNeverRollsBack.stdout": "9a0918eeeada209e74c3dfa248cb610e2fbefa7283c98107b74193519828679c",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/sample-readNeverRollsBack.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/sample-pendingIntentStable.stdout": "aa65b40ddd6abb4243c46f8112482dc09503d1983da19f6a12295abc1a6036b6",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/sample-pendingIntentStable.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/sample-conflictBlocksSave.stdout": "a8a2caeef0fb8bb0903a54d3b191097e01726f6a7927186031643af47eda9494",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/sample-conflictBlocksSave.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/sample-pendingBlocksSave.stdout": "9ab267328b1fe3c4d86726d23d8ec9103086e65e4664f115795f8fe582df458d",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v5/output/sample-pendingBlocksSave.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "passed": false,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-4e35c1aed7434b169a65f3841a281592.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node": "caa24debe02770c92a70677e2a62ca98890150e7ac1c17bcfe31bcc98cc89943",
+    "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js": "952a50a28932282528b5c9b86ac5542405d85da4f80876aabe8cb8c7d5a6d0e8",
+    "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft.qnt": "ad4a9651178cf03c8bcb8ba112de7465e9e94a7ce6d189c816899d5ba3199dd0",
+    "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft_test.qnt": "405bb19c8a2745eecd30feacc33c37918841f5c1b38a9631af7d6ba5b6202370",
+    "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/package.json": "c73e78964221e9e8cbe273568ccdad152370fc35786fb82219c64347c71e57dc",
+    "/home/charles/.local/state/warlock-team/20261028/tooling/package-lock.json": "630f4926b18579f08be780630a94a7c4d398b4bcc6f9844def990ff6a7112903"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "typecheck",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft.qnt"
+      ],
+      "exit": 1,
+      "stdoutSHA256": "786ebbd37271efae0665877b6d32bec588a45fba031a54fc4ee1781728c37ae9",
+      "stderrSHA256": "e891d7d16e12ef6b5a72909f78a037a03a0f85291e46fef15f1c32790675b6cd"
+    }
+  ],
+  "seed": 20261029,
+  "sampleBudgetPerInvariant": 1000,
+  "stepBudget": 20,
+  "limit": "Bounded local editor model and explicit named witnesses, not exhaustive proof or native implementation acceptance.",
+  "error": "RuntimeError('typecheck failed')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v2/check.py\", line 27, in <module>\n    if p.returncode:raise RuntimeError(name+' failed')\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: typecheck failed\n",
+  "outputs": {
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v2/output/shortcut-draft.qnt": "ad4a9651178cf03c8bcb8ba112de7465e9e94a7ce6d189c816899d5ba3199dd0",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v2/output/shortcut-draft_test.qnt": "405bb19c8a2745eecd30feacc33c37918841f5c1b38a9631af7d6ba5b6202370",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v2/output/typecheck.stdout": "786ebbd37271efae0665877b6d32bec588a45fba031a54fc4ee1781728c37ae9",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v2/output/typecheck.stderr": "e891d7d16e12ef6b5a72909f78a037a03a0f85291e46fef15f1c32790675b6cd"
+  }
+}

@@ -1,0 +1,69 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      alternateA: true,
+      alternateB: true,
+      audit:
+        { a: 0, b: 0, preserve: false, read: false, revision: 1, submitted: 0 },
+      binding: 1,
+      conflictA: false,
+      conflictB: false,
+      defaultA: true,
+      defaultB: true,
+      draftA: 0,
+      draftB: 0,
+      expectedRequest: 0,
+      inventory: true,
+      nativeA: 0,
+      nativeB: 0,
+      nextRequest: 0,
+      pendingA: 0,
+      pendingB: 0,
+      pendingRequest: 0,
+      phase: Editing,
+      revision: 1,
+      storedA: 0,
+      storedB: 0,
+      submitted: 0
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      alternateA: true,
+      alternateB: true,
+      audit:
+        { a: 0, b: 0, preserve: false, read: false, revision: 1, submitted: 0 },
+      binding: 1,
+      conflictA: false,
+      conflictB: false,
+      defaultA: true,
+      defaultB: true,
+      draftA: 0,
+      draftB: 0,
+      expectedRequest: 0,
+      inventory: true,
+      nativeA: 0,
+      nativeB: 0,
+      nextRequest: 0,
+      pendingA: 0,
+      pendingB: 0,
+      pendingRequest: 0,
+      phase: Editing,
+      revision: 1,
+      storedA: 0,
+      storedB: 0,
+      submitted: 0
+    }
+}
+
+[ok] No violation found (5ms at 200 traces/second).
+Trace length statistics: max=2, min=2, average=2.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x13528a5 --backend=typescript to reproduce.

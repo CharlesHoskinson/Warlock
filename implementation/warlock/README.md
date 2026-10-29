@@ -951,3 +951,5 @@ accepted. Closed replay frames suggest setup/control reachability needs diagnosi
 the cause remains open. Both failed runs are retained and that investigation is
 stopped under the bounded loop rule. No native speech/braille/focus or release
 acceptance follows from these component checks.
+
+October 29 shortcut draft preservation: matched reads, refresh/reopen and read failures now retain local intent. Changed stored routes require explicit per-route confirmation before Save; uncertain saves settle only on an exact stored-and-live match, and late Stored receipts cannot roll back a newer observation. Reads do not issue writes. The [retained baseline and current evidence](qa/evidence/shortcut-draft-preservation-20261029/LIMITS.md) records the original five failures, the same 15 Desktop assertions now passing, the existing 15-check regression, 200 seeded production-reducer sequences, 26 named Quint traces and six sampled invariants. Main, Bar and Popup compile from one current source tuple. These bounded checks do not establish native first-use/restart/AT acceptance or crash-durable draft storage.

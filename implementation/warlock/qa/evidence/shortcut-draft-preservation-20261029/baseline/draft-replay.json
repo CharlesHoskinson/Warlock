@@ -1,0 +1,19 @@
+{
+  "checks": {
+    "preconditionDirtyAlternate": true,
+    "refreshRequestIsLive": true,
+    "foreignBindingIgnored": true,
+    "foreignRequestIgnored": true,
+    "matchedReadDoesNotWrite": true,
+    "sameRevisionRetainsDirty": false,
+    "reopenOnlyReads": true,
+    "reopenRetainsDirty": false,
+    "invalidInventoryKeepsIntentAndBlocksReady": false,
+    "changedRevisionKeepsLocalIntent": false,
+    "unknownSaveWasSubmittedOnce": true,
+    "unknownRefreshDoesNotWrite": true,
+    "unknownMismatchStaysPending": false,
+    "unknownExactReadDoesNotWrite": true,
+    "unknownExactSettles": true
+  }
+}

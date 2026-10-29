@@ -1,0 +1,77 @@
+{
+  "passed": false,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-0b67b3df5ef5447fb5747c2a9f556507.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node": "caa24debe02770c92a70677e2a62ca98890150e7ac1c17bcfe31bcc98cc89943",
+    "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js": "952a50a28932282528b5c9b86ac5542405d85da4f80876aabe8cb8c7d5a6d0e8",
+    "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft.qnt": "87bbbdc9610ecf93445ead0d4cf12f1609405a0568e09c4afdf2c8122dd97018",
+    "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft_test.qnt": "efa307191ff74f871b26122fb20b8c9f23ab0e547a20c302eefc58285240a59f",
+    "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/package.json": "c73e78964221e9e8cbe273568ccdad152370fc35786fb82219c64347c71e57dc",
+    "/home/charles/.local/state/warlock-team/20261028/tooling/package-lock.json": "630f4926b18579f08be780630a94a7c4d398b4bcc6f9844def990ff6a7112903"
+  },
+  "commands": [
+    {
+      "name": "typecheck",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "typecheck",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft.qnt"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "initial-run",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "run",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft.qnt",
+        "--main",
+        "ShortcutDraft",
+        "--invariant",
+        "readPreservesIntent",
+        "--max-samples=1",
+        "--max-steps=1",
+        "--backend=typescript",
+        "--seed=20261029"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "fc19f450d785ad2d7fc537a8892b8e923e12a21b3d9ca194eebe5c3bf05f6b18",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "typecheck-tests",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "typecheck",
+        "/home/charles/Warlock/implementation/warlock/qa/shortcut-draft_test.qnt"
+      ],
+      "exit": 1,
+      "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSHA256": "495694505b0f924fb83daa5ab725a2cc8ae946e53159c1821d6a8a6383a5b3ec"
+    }
+  ],
+  "seed": 20261029,
+  "sampleBudgetPerInvariant": 1000,
+  "stepBudget": 20,
+  "limit": "Bounded local editor model and explicit named witnesses, not exhaustive proof or native implementation acceptance.",
+  "error": "RuntimeError('typecheck-tests failed')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v4/check.py\", line 27, in <module>\n    if p.returncode:raise RuntimeError(name+' failed')\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: typecheck-tests failed\n",
+  "outputs": {
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v4/output/shortcut-draft.qnt": "87bbbdc9610ecf93445ead0d4cf12f1609405a0568e09c4afdf2c8122dd97018",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v4/output/shortcut-draft_test.qnt": "efa307191ff74f871b26122fb20b8c9f23ab0e547a20c302eefc58285240a59f",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v4/output/typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v4/output/typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v4/output/initial-run.stdout": "fc19f450d785ad2d7fc537a8892b8e923e12a21b3d9ca194eebe5c3bf05f6b18",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v4/output/initial-run.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v4/output/typecheck-tests.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-model-root-v4/output/typecheck-tests.stderr": "495694505b0f924fb83daa5ab725a2cc8ae946e53159c1821d6a8a6383a5b3ec"
+  }
+}
