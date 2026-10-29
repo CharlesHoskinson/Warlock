@@ -1,0 +1,76 @@
+{
+  "claimSchema": 1,
+  "claims": [
+    {
+      "requirement": "ELM-ARC-004",
+      "scenario": "decoder-native-to-elm",
+      "oracle": "decoder records refusal, preserves the prior model and emits no effect intent",
+      "verificationScope": "Preserved scenario report with native or bridge trace showing: no compositor action occurs and a reason is recorded; failure injection and artifact hashes included.",
+      "scope": "Current compiled production Shell native-to-Elm decoder; exact 21-case bridge trace and current three Elm roots/C unit/relink build. Full prior operational Model preserved with only separate refusal diagnostic; zero negative commands. Valid attached Reconciling prior satisfies literal original given. Host-facing architecture-004, whole ARC004, native GUI and universal-state/release acceptance remain separate.",
+      "evidence": [
+        {
+          "path": "implementation/warlock/qa/evidence/decoder-refusal-20261029/manifest.json",
+          "sha256": "c069a48bf668c96bf8905a5240c87e237c0ac3fede1ee7e379c671875a780f05"
+        }
+      ],
+      "sourceHashes": {
+        "implementation/warlock/src/Shell.elm": "f14b7fe3bfbf1a57f335f98914c988938c235823ba4596c067cf744776c4a9ae",
+        "implementation/warlock/src/ShellReplay.elm": "be85fbef5dda8dd07093b578c4be204d8d92772147e1ffacf80368216b5ba8ca",
+        "implementation/warlock/src/Desktop.elm": "a503d926599b5aa194956a1208fdc0004fb829442cd523c5372d41fd1fab0404",
+        "implementation/warlock/native/host.c": "acfd6fe74d3ffb055a1143c03f9a7739968225fe51a49ee604e0169ca74dd551",
+        "implementation/warlock/qa/check-decoder-refusal.py": "6b0909322b240074dbed347b80d8094a0546486ee159dbeb97e4037e47ae52a0",
+        "implementation/warlock/qa/decoder-refusal.cjs": "173a08e43289f8c58ef4d8c398cb33ada5892c2496b044058bf65030700da8ea",
+        "implementation/warlock/README.md": "814eb3f393c84df07f9556c93668a21e25ca8eb92c251f2f10fa4f12b8421c95"
+      },
+      "reviewer": {
+        "name": "quint-5",
+        "independent": true,
+        "disposition": "accepted",
+        "review": "implementation/warlock/qa/evidence/decoder-refusal-20261029/independent-scenario-review.md",
+        "reviewSHA256": "4ec9b9a6a4210ad698fc5aacc74be9b8d2b5766c9d3bc3145381e048f2532a1d"
+      },
+      "disposition": "accepted",
+      "missingObservations": [],
+      "sourceTuple": {
+        "sourceRevision": "cdb5e9fd9752ab07625234851a066c91692cef86",
+        "core": {
+          "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-build/Hyprland",
+          "sha256": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e",
+          "execution": "Referenced and hash-checked during build; not executed by this bridge fixture"
+        },
+        "plugin": {
+          "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/authority/elm-window-geometry-authority.so",
+          "sha256": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c",
+          "report": {
+            "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/authority/authority-build-report.json",
+            "sha256": "efa8ad035d2f9bb9a2864f091407df0bdb97685dfae6e512b914a9f32c06280b"
+          },
+          "staticClosureOnly": true,
+          "loaded": false,
+          "execution": "Referenced and hash-checked during build; not loaded by this bridge fixture"
+        },
+        "toolchain": {
+          "compilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+          "heldManifestSHA256": "fe3d29078d30c6cf9bd431233c5eed1ad4550e2873ff55739d50a5a87a97edaa",
+          "nodeSHA256": "caa24debe02770c92a70677e2a62ca98890150e7ac1c17bcfe31bcc98cc89943"
+        }
+      },
+      "compositionSourceHashes": {
+        "implementation/warlock/src/ActionProjection.elm": "911faed965465fac4e32f404d75a4d130b4e560cda191c7773eb96749be1d062",
+        "implementation/warlock/src/Binding.elm": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b",
+        "implementation/warlock/src/Effects.elm": "873e8824d90828a9927cfd89723c7b7299e11791e3779173815ba720b11a8547",
+        "implementation/warlock/src/GeometryProjection.elm": "f1b5708b8b4d1c7c02e46542bc041abb9e8cb0524d965ee4b03ab97f586a544c",
+        "implementation/warlock/src/GeometrySizePolicy.elm": "46dda2de43642cd33997382e90813c8eeccde80745d79b7d5cd5fd425b062c43",
+        "implementation/warlock/src/NativeOutcome.elm": "ffb20d47827d29653552d9a5c7f552491473b8df1cd336e00cc036816ae8b396",
+        "implementation/warlock/src/Snap.elm": "8ee61de4cd63557d3f2928893ed35ce93f1e3290128847e66ca388aa5d98ec8e",
+        "implementation/warlock/src/Transfer.elm": "357a68e70977184ced8be8b8a4c0db6209730e6fe6ad2f4718087a6d6a2c32be",
+        "implementation/warlock/src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+        "implementation/warlock/src/UnsentOperation.elm": "46e315cc739e097805af3c9358f9ca27a807ef1119c733aa296687342c8238ea",
+        "implementation/warlock/src/WorkspaceInventory.elm": "583692398a5038bf17a87c09a7019ddae4059f3f200489342ca89dab50eb3b2e",
+        "implementation/warlock/elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208"
+      }
+    }
+  ],
+  "sourceRevision": "cdb5e9fd9752ab07625234851a066c91692cef86",
+  "basis": "Independent exact original scenario review on identical hashed inputs, now bound to immutable source commit. Finite bridge observations and matching source composition, not universal/native GUI/whole requirement proof."
+}

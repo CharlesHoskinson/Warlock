@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "owner": "sol",
-  "updatedUTC": "2026-10-29T21:01:47.661490+00:00",
+  "updatedUTC": "2026-10-29T21:16:14.818054+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
@@ -32,7 +32,8 @@
       "Use existing applicable Quint/source correspondence; no new behavioral model for diagnostic-only boundary change unless authority policy changes. Root sole protected CPU executor; no renderer, C++ capture fixture or Profile retry. Whole architecture-004 and release remain separate."
     ],
     "owner": "root-decoder-refusal",
-    "participantRecord": ".warlock-contributor/decoder-native-envelope-refusal.json"
+    "participantRecord": ".warlock-contributor/decoder-native-envelope-refusal.json",
+    "outcome": "Completed bounded production fix and exact original decoder-native-to-elm acceptance on source cdb5e9fd9752ab07625234851a066c91692cef86: current21 bridge cases/3 Elm roots/changed native C unit and relink pass; independent quint-5 literal acceptance with immutable source/receipt binding. Valid bound Reconciling prior, no universal/nativeGUI/wholeARC004/release claim. Host-facing architecture-004 remains unadjudicated; preserve all prior stopped investigations."
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -2502,30 +2503,32 @@
     }
   ],
   "lastCompletedBoundedSlice": {
-    "id": "lossless-authority-port-roundtrip",
+    "id": "decoder-native-envelope-refusal",
     "requirements": [
-      "ELM-REV-007"
+      "ELM-ARC-004"
     ],
     "scenarios": [
-      "revision-007"
+      "decoder-native-to-elm"
     ],
     "paths": [
-      "implementation/warlock/qa/LosslessBridgeReplay.elm",
-      "implementation/warlock/qa/check-lossless-bridge.py",
-      "implementation/warlock/qa/lossless-bridge-replay.cjs",
-      "implementation/warlock/src/UInt64.elm",
-      "implementation/warlock/src/Effects.elm",
-      "implementation/warlock/src/Provider.elm",
-      "implementation/warlock/adapter/endpoint.py"
+      "implementation/warlock/src/Shell.elm",
+      "implementation/warlock/src/ShellReplay.elm",
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/native/host.c",
+      "implementation/warlock/qa/check-decoder-refusal.py",
+      "implementation/warlock/qa/decoder-refusal.cjs",
+      "implementation/warlock/README.md"
     ],
-    "before": "Original lossless authority bridge scenario is unadjudicated; canonical decoders exist but exact adjacent above2^53 Elm/JS port receipts and cross-field numeric rejection need original verification.",
-    "after": "Real compiled Elm/JS ports preserve distinct canonical above2^53 incarnations and reject numeric authority identities, generations, revisions and absolute deadlines with explicit protected protocol receipts.",
+    "before": "Current Shell malformed host-refresh/version failures are silent and malformed attachment disconnects prior model; original decoder refusal/preserve/no-effect oracle is unadjudicated. Establish actual compiled baseline before repair.",
+    "after": "Malformed and unsupported-version native envelopes record a bounded rejection reason, preserve prior authority/model fields and emit no effect intent; valid current messages continue through existing trusted routes.",
     "verification": [
-      "Original revision-007 permits protected native OR protocol fixture. Use unchanged qa_run, explicit source tuple and frozen deadlines, actual compiled Elm ports and production Python/native boundary as applicable; no GUI acceptance or full bridge proof inferred. Independent original oracle review required. Preserve stopped NewInstance and pin-independence obligations."
+      "Read original ARC004 and decoder-native-to-elm, current typed decoder and host messages; preserve trust boundaries and legitimate lifecycle signals. No speculative rejection of valid messages belonging to other subsystems.",
+      "Compile actual ShellReplay/current Shell via held verified Elm compiler and Node; valid prior state followed by malformed/missing/unsupported versions and a valid recovery/control case. Compare all prior state except separately recorded refusal, command list empty, exact source hashes and receipts.",
+      "Use existing applicable Quint/source correspondence; no new behavioral model for diagnostic-only boundary change unless authority policy changes. Root sole protected CPU executor; no renderer, C++ capture fixture or Profile retry. Whole architecture-004 and release remain separate."
     ],
-    "owner": "root-protocol",
-    "participantRecord": ".warlock-contributor/lossless-authority-port-roundtrip.json",
-    "outcome": "Independent original revision-007 accepted on protected protocol fixture; full REV007 remains open. Exact11case raw/review retained."
+    "owner": "root-decoder-refusal",
+    "participantRecord": ".warlock-contributor/decoder-native-envelope-refusal.json",
+    "outcome": "Completed bounded production fix and exact original decoder-native-to-elm acceptance on source cdb5e9fd9752ab07625234851a066c91692cef86: current21 bridge cases/3 Elm roots/changed native C unit and relink pass; independent quint-5 literal acceptance with immutable source/receipt binding. Valid bound Reconciling prior, no universal/nativeGUI/wholeARC004/release claim. Host-facing architecture-004 remains unadjudicated; preserve all prior stopped investigations."
   },
   "stoppedInvestigations": [
     {

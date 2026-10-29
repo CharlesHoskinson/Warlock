@@ -81,7 +81,7 @@
       "owner": "Native authority lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "architecture-004",
@@ -93,9 +93,65 @@
         {
           "name": "decoder-native-to-elm",
           "oracle": "decoder records refusal, preserves the prior model and emits no effect intent",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "accepted",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/decoder-refusal-20261029/scenario-acceptance.json",
+              "sha256": "412c18922efdebba6437ad685d2e8b1f235099c5c19dfe0d4b7615a65739e9ea",
+              "scope": "Current compiled production Shell native-to-Elm decoder; exact 21-case bridge trace and current three Elm roots/C unit/relink build. Full prior operational Model preserved with only separate refusal diagnostic; zero negative commands. Valid attached Reconciling prior satisfies literal original given. Host-facing architecture-004, whole ARC004, native GUI and universal-state/release acceptance remain separate.",
+              "sourceRevision": "cdb5e9fd9752ab07625234851a066c91692cef86",
+              "reviewerDisposition": {
+                "name": "quint-5",
+                "independent": true,
+                "disposition": "accepted",
+                "review": "implementation/warlock/qa/evidence/decoder-refusal-20261029/independent-scenario-review.md",
+                "reviewSHA256": "4ec9b9a6a4210ad698fc5aacc74be9b8d2b5766c9d3bc3145381e048f2532a1d"
+              }
+            }
+          ],
+          "missingObservation": "",
+          "verificationScope": "Preserved scenario report with native or bridge trace showing: no compositor action occurs and a reason is recorded; failure injection and artifact hashes included.",
+          "scope": "Current compiled production Shell native-to-Elm decoder; exact 21-case bridge trace and current three Elm roots/C unit/relink build. Full prior operational Model preserved with only separate refusal diagnostic; zero negative commands. Valid attached Reconciling prior satisfies literal original given. Host-facing architecture-004, whole ARC004, native GUI and universal-state/release acceptance remain separate.",
+          "sourceHashes": {
+            "implementation/warlock/src/Shell.elm": "f14b7fe3bfbf1a57f335f98914c988938c235823ba4596c067cf744776c4a9ae",
+            "implementation/warlock/src/ShellReplay.elm": "be85fbef5dda8dd07093b578c4be204d8d92772147e1ffacf80368216b5ba8ca",
+            "implementation/warlock/src/Desktop.elm": "a503d926599b5aa194956a1208fdc0004fb829442cd523c5372d41fd1fab0404",
+            "implementation/warlock/native/host.c": "acfd6fe74d3ffb055a1143c03f9a7739968225fe51a49ee604e0169ca74dd551",
+            "implementation/warlock/qa/check-decoder-refusal.py": "6b0909322b240074dbed347b80d8094a0546486ee159dbeb97e4037e47ae52a0",
+            "implementation/warlock/qa/decoder-refusal.cjs": "173a08e43289f8c58ef4d8c398cb33ada5892c2496b044058bf65030700da8ea",
+            "implementation/warlock/README.md": "814eb3f393c84df07f9556c93668a21e25ca8eb92c251f2f10fa4f12b8421c95"
+          },
+          "sourceTuple": {
+            "sourceRevision": "cdb5e9fd9752ab07625234851a066c91692cef86",
+            "core": {
+              "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-build/Hyprland",
+              "sha256": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e",
+              "execution": "Referenced and hash-checked during build; not executed by this bridge fixture"
+            },
+            "plugin": {
+              "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/authority/elm-window-geometry-authority.so",
+              "sha256": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c",
+              "report": {
+                "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/authority/authority-build-report.json",
+                "sha256": "efa8ad035d2f9bb9a2864f091407df0bdb97685dfae6e512b914a9f32c06280b"
+              },
+              "staticClosureOnly": true,
+              "loaded": false,
+              "execution": "Referenced and hash-checked during build; not loaded by this bridge fixture"
+            },
+            "toolchain": {
+              "compilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+              "heldManifestSHA256": "fe3d29078d30c6cf9bd431233c5eed1ad4550e2873ff55739d50a5a87a97edaa",
+              "nodeSHA256": "caa24debe02770c92a70677e2a62ca98890150e7ac1c17bcfe31bcc98cc89943"
+            }
+          },
+          "reviewerDisposition": {
+            "name": "quint-5",
+            "independent": true,
+            "disposition": "accepted",
+            "review": "implementation/warlock/qa/evidence/decoder-refusal-20261029/independent-scenario-review.md",
+            "reviewSHA256": "4ec9b9a6a4210ad698fc5aacc74be9b8d2b5766c9d3bc3145381e048f2532a1d"
+          }
         }
       ]
     },
@@ -15133,5 +15189,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-29T21:01:47.661490+00:00"
+  "updatedUTC": "2026-10-29T21:16:14.818054+00:00"
 }
