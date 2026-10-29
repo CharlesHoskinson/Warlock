@@ -1,46 +1,42 @@
 {
   "schema": 1,
   "owner": "sol",
-  "updatedUTC": "2026-10-29T20:23:44.004014+00:00",
+  "updatedUTC": "2026-10-29T20:39:20.219369+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "first-use-persisted-choices-direct-restart",
+    "id": "original-deadline-frontend-restart",
     "requirements": [
-      "ELM-UI-020"
+      "ELM-ARC-013"
     ],
     "scenarios": [
-      "first-use"
+      "architecture-013"
     ],
     "paths": [
-      "implementation/warlock/src/ShortcutPreferences.elm",
-      "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/adapter/shortcut_preferences.py",
+      "implementation/warlock/native/imported_admission.hpp",
+      "implementation/warlock/native/imported-admission-test.cpp",
       "implementation/warlock/native/authority.cpp",
-      "implementation/warlock/native/shared-host.c",
-      "implementation/warlock/native/shell-bindings.lua",
-      "implementation/warlock/qa/shortcut-choices.qnt",
-      "implementation/warlock/qa/shortcut-generation.qnt",
-      "implementation/warlock/qa/shortcut-generation_test.qnt",
-      "implementation/warlock/qa/check-shortcut-preferences.py",
-      "implementation/warlock/qa/native-shortcut-preferences.py",
-      "implementation/warlock/qa/native-shortcut-generation.py",
-      "implementation/warlock/qa/native-first-use-current.py",
+      "implementation/warlock/native/host.c",
+      "implementation/warlock/adapter/durable_ledger.py",
+      "implementation/warlock/src/Shell.elm",
+      "implementation/warlock/src/Effects.elm",
+      "implementation/warlock/qa/check-deadline-bridge.py",
+      "implementation/warlock/qa/deadline-bridge-replay.cjs",
+      "implementation/warlock/qa/check-deadline-restart.py",
       "implementation/warlock/README.md"
     ],
-    "before": "Originalfirst-use remains partial: actualcustomconflict/choice/help/reload/refresh/customrecipient/stale-duplicate records exist, but exact current direct host/authority restart of persistedchoices, applicableactualAT and independentliteralverdict remain unadjudicated. Managed-profile candidate-startupabort/offline recovery investigation is stopped separately.",
-    "after": "With actual customizednativebindings, explicit chosen mappings persist across a directly managed current host and applicable authority restart; help is dismissible/reachable and the chosen/kept actualrecipients work with keyboard and applicableAT, without altering foreign bindings or duplicatingeffects. Reuse unaffectedexisting evidence and fix only demonstratedviolations.",
+    "before": "Original architecture-013 is unadjudicated. Existing immutable admission and durable effect records do not yet supply an independently adjudicated original near-deadline renderer-restart witness.",
+    "after": "Actual production bridge lifecycle retains the original absolute acceptance deadline through retries, queueing, reconciliation and frontend restart. A near-cutoff restart neither renews the request nor revives expired work. Repair only demonstrated violations; original bridge verification is permitted.",
     "verification": [
-      "Read originalfirst-use and frozenINTERACTION mapping/conflict/help policy, currentshortcut choices/generation specs and exact existing native manifests. Reconcile existingactualrestart evidence beforeadding observations; no automatictuplepromotion or broad scenario rerun.",
-      "Use ordinarydirect qualifiedhost launch and currentowning core/plugin/host/assets/provider tuple. This is not a retry or renamed continuation of stoppedProfile startup/offline rollback. Preserve original6sec/5sec/privatebuses/core1/sourceoracles and userdrafts.",
-      "Smallest current native/keyboard/applicableAT persisted-choice restart/help/realrecipient observations only where missing. ExistingQuint/sourcecorrespondence constrains actualpolicy changes; no newmodel for testorview-only adaptation. FullUI020/offline recovery, UI004renderer, packageclosure andmain deployment remain separatelyopen."
+      "Read original whole EARS and architecture-013 scenario; trace actual request owner, native clock/deadline, queue, retry, frontend retirement/rebind and durable reconciliation. No synthetic reconstruction passed off as renderer restart.",
+      "Reuse existing Quint models and source correspondence; exact compiled production bridge/lifecycle witness with matching receipt and source hashes, positive near-expiry case and attempted-renewal/expired refusal. Root sole protected CPU executor after review; no WebKit/Profile/native GUI retry.",
+      "Whole requirement requires all applicable original EARS and scenario obligations, not canonical-string codec alone. Full 242/417, actual native AT/IME/hardware/resources/journeys/package and reversible deployment remain open."
     ],
-    "owner": "root-first-use-direct",
-    "participantRecord": ".warlock-contributor/first-use-persisted-choices-direct-restart.json"
+    "owner": "root-deadline-restart",
+    "participantRecord": ".warlock-contributor/original-deadline-frontend-restart.json"
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -2719,6 +2715,42 @@
       "owner": "root-omarchy-profile",
       "participantRecord": ".warlock-contributor/omarchy-profile-offline-rollback.json",
       "outcome": "STOP after verified profile-capacity production fix e787737f5 and two post-fix qualifications. First full original trial2955 failed before guidance/draft: same-session profile77648 prepared and installedQS initialeffectiveclock observed, candidate selected then managerreportedchildexit-6 beforeUIreadiness; originaldeadline/normalexitfailed, cleanuptrue. Raw3ba6b2c9/canonical omarchy-profile-full-trial-20261029 retainall sources/gates/initialimage. Actualstartupcause unknown; no plannedforcedfailure/draft/rollback/recoveredcontrol or originalUI020 acceptance. Do not expandthisProfile-startup/rollback investigation withoutnewconcreteprogress or distinctrequiredobservation; fullgoal remainsactive."
+    },
+    {
+      "id": "first-use-persisted-choices-direct-restart",
+      "requirements": [
+        "ELM-UI-020"
+      ],
+      "scenarios": [
+        "first-use"
+      ],
+      "paths": [
+        "implementation/warlock/src/ShortcutPreferences.elm",
+        "implementation/warlock/src/Desktop.elm",
+        "implementation/warlock/src/Surface.elm",
+        "implementation/warlock/adapter/shortcut_preferences.py",
+        "implementation/warlock/native/authority.cpp",
+        "implementation/warlock/native/shared-host.c",
+        "implementation/warlock/native/shell-bindings.lua",
+        "implementation/warlock/qa/shortcut-choices.qnt",
+        "implementation/warlock/qa/shortcut-generation.qnt",
+        "implementation/warlock/qa/shortcut-generation_test.qnt",
+        "implementation/warlock/qa/check-shortcut-preferences.py",
+        "implementation/warlock/qa/native-shortcut-preferences.py",
+        "implementation/warlock/qa/native-shortcut-generation.py",
+        "implementation/warlock/qa/native-first-use-current.py",
+        "implementation/warlock/README.md"
+      ],
+      "before": "Originalfirst-use remains partial: actualcustomconflict/choice/help/reload/refresh/customrecipient/stale-duplicate records exist, but exact current direct host/authority restart of persistedchoices, applicableactualAT and independentliteralverdict remain unadjudicated. Managed-profile candidate-startupabort/offline recovery investigation is stopped separately.",
+      "after": "With actual customizednativebindings, explicit chosen mappings persist across a directly managed current host and applicable authority restart; help is dismissible/reachable and the chosen/kept actualrecipients work with keyboard and applicableAT, without altering foreign bindings or duplicatingeffects. Reuse unaffectedexisting evidence and fix only demonstratedviolations.",
+      "verification": [
+        "Read originalfirst-use and frozenINTERACTION mapping/conflict/help policy, currentshortcut choices/generation specs and exact existing native manifests. Reconcile existingactualrestart evidence beforeadding observations; no automatictuplepromotion or broad scenario rerun.",
+        "Use ordinarydirect qualifiedhost launch and currentowning core/plugin/host/assets/provider tuple. This is not a retry or renamed continuation of stoppedProfile startup/offline rollback. Preserve original6sec/5sec/privatebuses/core1/sourceoracles and userdrafts.",
+        "Smallest current native/keyboard/applicableAT persisted-choice restart/help/realrecipient observations only where missing. ExistingQuint/sourcecorrespondence constrains actualpolicy changes; no newmodel for testorview-only adaptation. FullUI020/offline recovery, UI004renderer, packageclosure andmain deployment remain separatelyopen."
+      ],
+      "owner": "root-first-use-direct",
+      "participantRecord": ".warlock-contributor/first-use-persisted-choices-direct-restart.json",
+      "outcome": "Stopped this bounded investigation after actual direct trial94006 failed before guidance, report86580f58 retained and published16b69dd5c. One qualification, not two; pivot avoids unchanged retry behind known renderer barrier. Original first-use remains partial; saved choices/restart/help/AT/recipients unobserved. No whole-goal pause."
     }
   ]
 }
