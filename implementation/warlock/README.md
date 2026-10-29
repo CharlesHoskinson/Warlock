@@ -64,7 +64,13 @@ Original `search-unavailable` is also independently accepted: a genuine owned
 metadata failure shows unavailable with retained query and keyboard/real AT
 retry; restoring the metadata recovers Files without automatic launch. The
 [first fixture failure and corrected recording](qa/evidence/search-unavailable-current-20261029/manifest.json)
-are preserved. `search-race`, `search-refused` and whole UI-005 remain open.
+are preserved. Original `search-race` is independently accepted after an actual
+delayed old catalog reply, changed query and generation-2 AT dispatch; see
+[race evidence](qa/evidence/search-race-current-20261029/manifest.json).
+`search-refused` remains open: query and logical invoker focus return, but the
+current real Orca observation loses focus after the pending popup is withdrawn.
+The failed recording is preserved; a pending-visibility fix is under investigation.
+Whole UI-005 remains unaccepted.
 
 The installed Omarchy predecessor now has a bounded private startup observation:
 its menu, workspaces and clock paint, and its owned process group retires without

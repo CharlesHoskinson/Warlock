@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "requirement": "ELM-UI-005",
+  "scope": "Current compiled frozen matching/ranking/query/recovery component observation; no native or original scenario acceptance.",
+  "passed": true,
+  "replay": {
+    "file": "replay-observations.json",
+    "sha256": "338e7324e1bd193d2d40fcb3f06069f7fd4112c0d5621b7eef3997cf4e8c4aa2",
+    "compiledSHA256": "0fe60b1ec7f16254b2e194787ad01ad9a03126eac0ab1d5a5d0bb44e53920ac4",
+    "recordedSourceCount": 101
+  },
+  "worker": "implementation/warlock/qa/SearchReplay.elm",
+  "workerSHA256": "81fd5f7ecd7b7b2d4a895f942f5c4794a2e466ee1bda939e35ae8a66877b222b",
+  "policy": "docs/elm-roadmap/INTERACTION.md",
+  "policySHA256": "2a947a3aa56d7b7b9e7d2f5c1ceb100ac7b8c345a73fd7616c0c4c567d0e01c4",
+  "observed": [
+    "Exact > prefix > token, stable desktop identity breaks generic-token ties.",
+    "Display name, generic name and declared keyword fixtures; Unicode STRASSE matches Stra\u00dfe.",
+    "Current query projection, stale-query rejection, no query-edit effect and preserved no-match query.",
+    "Explicit refresh clears settled Refused and preserves Unknown without effect replay."
+  ],
+  "limits": [
+    "Provided localized-looking strings, not OS locale selection or every catalog/permutation.",
+    "No delayed native catalog race, physical keyboard/AT refusal, native presentation or whole UI005 acceptance."
+  ],
+  "protectedExecution": "Terminal0; exact commands, source and fixture hashes, held compiler/toolchain identity and raw outputs retained in replay observations."
+}

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "requirement": "ELM-UI-005",
+  "scenario": "search-race",
+  "status": "accepted-on-observed-tuple",
+  "scenarioAccepted": true,
+  "requirementAccepted": false,
+  "releaseAccepted": false,
+  "oracle": "only current-generation results and selection can dispatch",
+  "verificationScope": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+  "independentReview": {
+    "file": "independent-review.md",
+    "sha256": "ea3a7f3c2c0738493f32062c877eacc5c636ee7bbd4a010870ac784d937516d3",
+    "name": "quint-5",
+    "independent": true,
+    "disposition": "accepted-original-search-race"
+  },
+  "native": {
+    "file": "native-report.json.gz",
+    "sha256": "fee8d422c88c6171bef77b10bc8fa2d6583dec328c6217fe89d9f45684578997",
+    "expandedRawSHA256": "4fe0118904910382963814f7cadd71b8f7850efa9c713b6414f7b0bd256daac7",
+    "checks": 52,
+    "passed": true,
+    "cleanupPassed": true,
+    "sourceCount": 367,
+    "allRecordedSourceInputsCurrent": true,
+    "unit": "qa-harness-9341241d0baf415cb64918d3269e256f.scope",
+    "invocation": "d4bc04028fd6497692274c79e027d73a",
+    "pair": {
+      "core": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-build/Hyprland",
+        "sha256": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e"
+      },
+      "plugin": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/authority/elm-window-geometry-authority.so",
+        "sha256": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c"
+      },
+      "aquamarine": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/lib/libaquamarine.so.0.15.0",
+        "sha256": "667a22d535aade4e4a26134e39028a87fb3f963c28b7bf7ff79da684bb014ecd"
+      }
+    },
+    "host": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/elm-host",
+      "sha256": "4377b11ce0afe9e1072210666aa872118b032995275a20657058771e5e6c8347",
+      "heldBuild": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/host-build-report.json",
+      "heldBuildSHA256": "691806471ff599503a20067aa0b90bf914b93a1ee5985198cdc79fb92ff975bf"
+    },
+    "runtimeTuple": {
+      "root": "/home/charles/Warlock/implementation/warlock-client-provider-native-v204",
+      "freshAdapter": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/source-coherence-20261028/terra-2/fresh_candidate-v1.py",
+      "freshAdapterSHA256": "23d66e343e37bead000ed155bbf46f8dcecb47bed09946ed62afe8f052169b00",
+      "parentAdapterSHA256": "e045634bd023f07977c398ef0057b9fdee3a1e1718d51c879e221ee353e28ae9",
+      "tupleSHA256": "bc225242e30baf4a5b8b1182cef6fdc716cc9c67de90dc35674f90c5fa87830b",
+      "foundationSHA256": "08b24bd93cbb63ec097900915379b32e90d9dcca7156d04fe8ee959efaff264f"
+    }
+  },
+  "capture": {
+    "file": "current-after-old-reply.png",
+    "sha256": "a11635983e9938cbfbb5a0a5c3e829c24021c40af94226fd1d0df873f5cfe140"
+  },
+  "observations": "Physical query files\u2192editor while genuine request7/generation1 response held; request8/generation2 current A Current Editor wins. Deliver exact old response without changing current query/publication/selection. Fresh postcapture current lease/publication/focus/AT identity revalidated; real AT-SPI press dispatches one generation2 Editor intent and actual GIO recipient argv CURRENT_EDITOR.",
+  "ranking": {
+    "path": "implementation/warlock/qa/evidence/launcher-ranking-current-20261029/manifest.json",
+    "sha256": "d8b6a61dcd3f7bd347a2e59d352bde59da047807e4c78176403acf2963562358",
+    "scope": "Separate current compiled frozen matching/ranking/query component pass, not native proof."
+  },
+  "missingObservationsForNamedScenario": [],
+  "limits": [
+    "Mixed physical keyboard edit/refresh/selection plus actual AT launch; no separate keyboard-Enter launch or all interleavings.",
+    "Recorder normalExit is self-reported marker, not independently waited child exit. Host/registered helpers/owned fixture normal cleanup separately observed.",
+    "Direct AT Text query-value, audible speech/braille and locale selection are not claimed.",
+    "No whole UI005/search-refused, renderer fix, IME/hardware/resources/journeys, deployment or release acceptance."
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "requirement": "ELM-UI-005",
+  "scenario": "search-refused",
+  "status": "failed-at-focus-observation",
+  "scenarioAccepted": false,
+  "requirementAccepted": false,
+  "releaseAccepted": false,
+  "report": {
+    "file": "failed-native-report.json.gz",
+    "sha256": "eaf05e65dedc695f6f9c0dd71b9c99f7cf39b2a833773c5cd00cac2632c3714b",
+    "expandedRawSHA256": "c2ec96ce85ec54033b93eae0cf46ad2e2f326eaca28b8a9fc6a19a7c115e3e01"
+  },
+  "lastAT": {
+    "file": "at-last-observation.json",
+    "sha256": "2a513828b86dccba30db1ca1408076b914552694e7b0381eb5524a6d13f8d395"
+  },
+  "observations": "Actual physical keydown focuses result before dispatch; keyup submits one genuine refused launch. Query and logical invoker restored before navigation. Real visible AT Search/refusal/focused result nodes exist, but actual Orca focus and active_window are null at original six-second observation deadline; retry action not reached. Cleanup and owned keyboard/clients normal.",
+  "hypothesis": "Test retaining existing Apps popup while launch Pending to avoid losing reader context on withdrawal/remap; no cause or fix established yet.",
+  "limits": [
+    "Do not replace missing AT focus with DOM/pixels or navigation workaround.",
+    "No uninterrupted Pending native focus, refused acceptance or whole UI005 claim."
+  ]
+}
