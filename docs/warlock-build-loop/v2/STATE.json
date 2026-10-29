@@ -1,39 +1,36 @@
 {
   "schema": 1,
   "owner": "sol",
-  "updatedUTC": "2026-10-29T21:16:14.818054+00:00",
+  "updatedUTC": "2026-10-29T21:20:05.194763+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "decoder-native-envelope-refusal",
+    "id": "host-invalid-envelope-refusal",
     "requirements": [
       "ELM-ARC-004"
     ],
     "scenarios": [
-      "decoder-native-to-elm"
+      "architecture-004"
     ],
     "paths": [
-      "implementation/warlock/src/Shell.elm",
-      "implementation/warlock/src/ShellReplay.elm",
-      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/native/shared-host.c",
       "implementation/warlock/native/host.c",
-      "implementation/warlock/qa/check-decoder-refusal.py",
-      "implementation/warlock/qa/decoder-refusal.cjs",
+      "implementation/warlock/qa/check-host-envelope.py",
+      "implementation/warlock/qa/host-envelope.c",
       "implementation/warlock/README.md"
     ],
-    "before": "Current Shell malformed host-refresh/version failures are silent and malformed attachment disconnects prior model; original decoder refusal/preserve/no-effect oracle is unadjudicated. Establish actual compiled baseline before repair.",
-    "after": "Malformed and unsupported-version native envelopes record a bounded rejection reason, preserve prior authority/model fields and emit no effect intent; valid current messages continue through existing trusted routes.",
+    "before": "Original host-facing architecture-004 remains unadjudicated. Current shared_receive_text and shared_receive have silent null/bound/non-object/non-string rejection paths; actual malformed/unsupported no-forward/reason receipt is not yet adjudicated. Native-to-Elm decoder scenario remains independently accepted on immutable cdb5e9 source.",
+    "after": "Invalid host envelopes are refused before forwarding or effect admission with explicit bounded reasons; legitimate messages and trust/lifetime/ownership gates retain their behavior. Establish actual production host bridge trace and fix only demonstrated reason/admission gaps.",
     "verification": [
-      "Read original ARC004 and decoder-native-to-elm, current typed decoder and host messages; preserve trust boundaries and legitimate lifecycle signals. No speculative rejection of valid messages belonging to other subsystems.",
-      "Compile actual ShellReplay/current Shell via held verified Elm compiler and Node; valid prior state followed by malformed/missing/unsupported versions and a valid recovery/control case. Compare all prior state except separately recorded refusal, command list empty, exact source hashes and receipts.",
-      "Use existing applicable Quint/source correspondence; no new behavioral model for diagnostic-only boundary change unless authority policy changes. Root sole protected CPU executor; no renderer, C++ capture fixture or Profile retry. Whole architecture-004 and release remain separate."
+      "Original ELM-ARC-004 permits native OR bridge verification. Exercise actual current shared host receive/admission route with malformed and unsupported protocol failure injection, reason receipt and observed zero backend queue/action submission; retain hashes and a valid schema control. Do not infer physical native execution from a bridge fixture.",
+      "Use existing self-tests or a minimal source-included current C fixture and retained verified objects/providers. No WebKit GUI, incompatible capture fixture, Profile retry, native ABI relabeling, fabricated compositor counters or broad new framework. Root sole protected CPU executor after review.",
+      "Compile changed C unit and relink if production host changes; preserve current 21-case decoder acceptance tuple and requalify only relevant evidence. Whole requirement needs independent review of both original directions/EARS, not automatic promotion from decoder pass."
     ],
-    "owner": "root-decoder-refusal",
-    "participantRecord": ".warlock-contributor/decoder-native-envelope-refusal.json",
-    "outcome": "Completed bounded production fix and exact original decoder-native-to-elm acceptance on source cdb5e9fd9752ab07625234851a066c91692cef86: current21 bridge cases/3 Elm roots/changed native C unit and relink pass; independent quint-5 literal acceptance with immutable source/receipt binding. Valid bound Reconciling prior, no universal/nativeGUI/wholeARC004/release claim. Host-facing architecture-004 remains unadjudicated; preserve all prior stopped investigations."
+    "owner": "root-host-envelope",
+    "participantRecord": ".warlock-contributor/host-invalid-envelope-refusal.json"
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
