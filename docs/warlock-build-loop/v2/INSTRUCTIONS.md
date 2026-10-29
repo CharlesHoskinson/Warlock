@@ -44,6 +44,10 @@ At integration milestones, assess a reversible Omarchy trial using the Omarchy s
 
 User requirement added October 29, 2026: follow [Fuzzing and contracts for Warlock](FUZZING-CONTRACTS.md). Changed domain transitions and refactors declare original-requirement preconditions, postconditions and invariants. Use opaque validated custom types and explicit boundary errors, plus meaningful property/sequence fuzzing with reproducible seeds, positive controls, retained counterexamples and proportional protected execution. Tests must exercise actual production routes and preserve effect admission/lifetime semantics. Neither types, fuzzing nor sampled Quint checks substitute for original native acceptance.
 
+## Retroactive debt and Diátaxis documentation
+
+User requirement added October 29, 2026: apply the adopted architecture and QA practices retroactively to existing active code, using the [retrofit debt register](RETROFIT.md), and maintain [Warlock's Diátaxis documentation](../../warlock/index.md). At each sprint select a bounded original-scenario migration, audit existing state/effect/lifetime ownership and contracts, add missing production-route property/lifecycle coverage, and update the relevant tutorial/how-to/reference/explanation. Preserve historical evidence and acceptance relevance; do not infer implementation or native correctness from a debt table or docs lint. Carry open debt forward alongside feature delivery under existing WIP limits.
+
 ## Living knowledge and Elm research cadence
 
 User requirement added October 29, 2026: keep the versioned [Warlock LLM wiki](../../../wiki/warlock/_index.md), external `~/wiki/topics/warlock/` journal, and [Elm architecture research](ELM-ARCHITECTURE-RESEARCH.md) in the active completion loop. After meaningful failures, decisions and integration batches, record concise lessons, ideas, verified outcomes and unresolved questions; distinguish proposal, implementation, component checks and original acceptance. Link authoritative evidence/source revisions and primary papers instead of copying full transcripts or copyrighted material. Validate the wiki with its existing lint tool.

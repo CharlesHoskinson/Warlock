@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "owner": "sol",
-  "updatedUTC": "2026-10-29T22:29:47.456885+00:00",
+  "updatedUTC": "2026-10-29T22:33:29.400628+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
@@ -2836,5 +2836,29 @@
       "integrationAndProtectedQA": "/root"
     },
     "acceptance": "Documentation, research, fuzzing and types do not replace original native or release gates."
+  },
+  "retroactiveQuality": {
+    "status": "in-progress",
+    "register": "docs/warlock-build-loop/v2/RETROFIT.md",
+    "scope": "Existing active candidate code as well as new edits; archived source and frozen evidence preserved",
+    "cadence": "Every selected migration, sprint boundary and reviewed integration",
+    "required": [
+      "Ownership and dependency assessment",
+      "Original preconditions/postconditions/invariants and Quint correspondence",
+      "Applicable production-route fuzz/negative/lifecycle checks with seeds and retained failures",
+      "Current source/build/native evidence and independent review",
+      "Diataxis documentation and wiki lessons updated"
+    ],
+    "documentation": {
+      "framework": "Diataxis",
+      "root": "docs/warlock",
+      "quadrants": [
+        "tutorials",
+        "how-to",
+        "reference",
+        "explanation"
+      ]
+    },
+    "completion": "Not established by an inventory, document or linter; original product/release acceptance remains required."
   }
 }

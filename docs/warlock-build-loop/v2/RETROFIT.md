@@ -1,0 +1,45 @@
+# Retroactive architecture, QA and documentation debt
+
+Standing user requirement, October 29, 2026: apply the new architecture and QA workflow to existing Warlock code and build documentation using Diátaxis. This register tracks work, not completion claims. Full original requirements and scenarios remain authoritative. [Architecture review](ARCHITECTURE-REVIEW.md), [research](ELM-ARCHITECTURE-RESEARCH.md), [contracts/fuzzing](FUZZING-CONTRACTS.md), and the [product documentation](../../warlock/index.md) form the standing process.
+
+## Retrofitting existing code
+
+Inventory the active candidate's Elm, native, adapter, asset and release/QA modules by existing ownership and original requirement. Archived versions and frozen evidence remain historical; do not rewrite them to conform to new style. Audit existing code as well as new edits. An absent contract/test is an open evidence gap, not proof of a product bug. A prior accepted scenario is not automatically invalidated by a documentation policy change; requalify relevant changed behavior and dependencies.
+
+For each bounded migration, identify its original scenarios and observed coupling/defect; map state, event, effect, subscription and native resource owners; record preconditions, postconditions and preserved invariants; and check implementation/model correspondence. Prefer opaque validated domain values and explicit boundary errors. Distinguish construction guarantees from local overlays and from native authority that can expire after decoding.
+
+Exercise actual production transitions with applicable existing replays, valid reachability witnesses and meaningful negative/lifecycle/property tests. Add missing sequence fuzzing with recorded seed/budget/minimized failures for the changed risk; preserve counterexamples and source/tool hashes. Compile changed roots/units, relink when required, and use protected native/AT/IME/resource observations for claims that need them. A module move or passing model alone does not discharge retroactive QA debt.
+
+Update the appropriate documentation quadrant and wiki lessons with the actual change and evidence. Record the decision, remaining gap and next migration. Close a debt item only with source revision, proportional verification and independent review. A debt item can span several original scenarios; do not replace the original acceptance ledger with this register.
+
+Product work stays WIP=1 and native QA WIP=1. Parallel agents may prepare disjoint proposals/reviews and documentation; root integrates selected production changes. Deliver the shortest justified production improvement, not an endless audit or blanket rewrite. Keep original deadlines, Unknown/no-replay, ABI identity, drafts and preserved failures.
+
+## Initial register
+
+These entries are observations/proposals as of October 29, not a completed whole-code audit. Track unreviewed ownership areas and newly found debt as the retrofit proceeds.
+
+| ID | Existing area and evidence | Required retroactive work / next action | Status |
+| --- | --- | --- | --- |
+| DEBT-01 | SurfaceRenderer owns snapshot codec and HTML; OutputController/Presentation import it | Extract opaque pure SurfaceSnapshot, preserve codec/action/local-edit semantics; compile actual roots and run production-route equivalence, negative/lifecycle and seeded property checks. Original UI004/UX005/UI016 remain unchanged. | Source-reviewed proposal; not implemented |
+| DEBT-02 | OutcomeAnnouncements imports Html-bearing Announcement message/encoding | Follow-up pure message-value seam; explicitly retain this residual dependency during DEBT-01. Preserve announcements and accessible behavior. | Identified; deferred until selected |
+| DEBT-03 | Build/package input lists and qualification depend on multiple immutable historical receipts | Consolidate a reviewed current production target/recipe without losing exact source, tool, object order, provider and ABI checks; keep old evidence immutable. | Source-mapped proposal; not implemented |
+| DEBT-04 | shared-host.c textually includes host.c; native callbacks/globals share lifecycle | Map actual resource owners and extract one owner at a time; preserve ordering, failure/drain policy and callback custody before changing scheduling. Native regression required for changed ownership. | Identified; no lifecycle repair claimed |
+| DEBT-05 | Source review suggests Refresh/read may replace unsaved shortcut draft at unchanged stored revision | Reproduce against production reducer, define same-/changed-revision contracts and conflict handling; never auto-save/apply/replay. Preserve minimized sequence and add regression if defect established. | Source-derived candidate; not runtime-proved |
+| DEBT-06 | First-enable guidance/help and optional-use witnesses are incomplete | Assess visible keyboard-reachable offer and use-before-onboarding against original UI020; preserve explicit shortcut choices and separate offline recovery. | Original behavior/evidence gap; open |
+| DEBT-07 | Current native trial reports WebKitJavascriptError601 across several receivers and host exit1 before guidance | Retain actual receiver/error evidence; unsupported value and termination cause unproven. Existing investigation stopped after two qualifications; do not retry unchanged or call diagnostics a repair. | Observed failure; unresolved |
+| DEBT-08 | Loading/authorized-historical/current-live/unavailable preview and pin/top behavior has separate remaining native obligations | Preserve Windows-like semantics in every migration; review original applicable native, keyboard, accessibility and resource oracles. | Incomplete original obligations |
+| DEBT-09 | AT/IME/resource and representative whole-system journeys remain separate gates | Connect relevant current implementation routes, models and actual observations; do not infer from HTML or generic fuzzer passes. | Incomplete original obligations |
+| DEBT-10 | Reproducible packaging, draft preservation and reversible Omarchy deployment incomplete | Prove current package composition, isolated install, actual draft survival and rollback before treating a main-session trial as ready. | Incomplete original release obligations |
+| DEBT-11 | Product docs and engineering lessons scattered between source, handoffs and external journal | Maintain versioned Diátaxis docs and LLM wiki, link authoritative status/evidence and review command correctness at integration. | Initial documentation being written; ongoing |
+
+## Diátaxis documentation contract
+
+Use the [primary Diátaxis framework](https://diataxis.fr/): tutorials teach through a guided learning experience; how-to guides help accomplish a defined task; reference provides accurate lookup material; explanation develops understanding and rationale. Keep each page's purpose clear and link across quadrants instead of mixing a long procedure with design discussion.
+
+Write against actual current behavior and the intended reader. Name machine-specific prerequisites, version/source identity and meaningful limits. Tutorials must not require deploying a known failing host to the user's desktop; use a bounded safe learning path. How-to commands must be checked against the repository's actual tools and protection rules. Reference distinguishes implemented, verified and proposed interfaces. Explanation records decisions and rejected alternatives without presenting proposals as delivered architecture.
+
+At each sprint/integration gate, update documentation for the changed behavior, contract, build, test or deployment path; check local links and command/source consistency. Use Scrapling for research/downloads. Documentation lint and reviewed commands are documentation evidence, not GUI acceptance. Maintain lessons/ideas in the wiki; keep durable product instructions in the appropriate Diátaxis quadrant.
+
+## Completion evidence
+
+The retrofit is complete only when the active ownership inventory and its applicable original boundaries have been assessed, relevant debt has been implemented or explicitly adjudicated against original requirements, proportional QA and independent review cover actual source, documentation matches the delivered system, and original release gates are satisfied. This page, a table status or a green linter does not establish that result.
