@@ -1,35 +1,35 @@
 {
   "schema": 1,
   "owner": "sol",
-  "updatedUTC": "2026-10-29T23:52:57.158723+00:00",
+  "updatedUTC": "2026-10-29T23:58:26.511206+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "attention-current-native-state",
+    "id": "current-frontend-build-recipe",
     "requirements": [
-      "ELM-UX-009"
+      "ELM-DEL-003"
     ],
     "scenarios": [
-      "ux-009"
+      "delivery-003"
     ],
     "paths": [
-      "implementation/warlock/qa/check-attention-current.py",
-      "implementation/warlock/qa/AttentionReplay.elm",
-      "implementation/warlock/qa/native-attention-current.py",
-      "implementation/warlock/README.md"
+      "implementation/warlock/adapter/current_build.py",
+      "implementation/warlock/qa/check-current-build.py",
+      "implementation/warlock/README.md",
+      "implementation/warlock/RELEASE.md"
     ],
-    "before": "Attention behavior exists with historical native evidence; current source tuple and independent native accessible-state distinction remain unqualified.",
-    "after": "Qualify original current native active-versus-attention pixels and accessible state without focus theft; repair only demonstrated production defects, preserve original oracle and prior evidence.",
+    "before": "Current native qualification and component suites repeatedly require handwritten wrappers to replace old Elm build/source receipts; historical release builder correctly refuses differing current assets. No reusable reviewed current frontend lock/build/validate API exists.",
+    "after": "A reusable current frontend recipe captures exact source/static/toolchain inputs, builds three roots and validates current source and generated output hashes using explicitly reviewed lock/report digests. Preserve historical native tuple guards and separate complete native composition, provenance, offline and release acceptance.",
     "verification": [
-      "Run existing actual production AttentionReplay and strict native observation/join checks through protected CPU launcher with exact fresh current three-root build and held compiler. Existing model unchanged unless behavior changes.",
-      "Review genuine GTK urgency fixture, unchanged original deadlines, private cleanup, exact owning core/plugin/Aquamarine/host/assets; observe actual AT export for accessible state, not DOM alone. No unchanged shared-renderer/Profile investigation or main-session changes.",
-      "Preserve failures, investigation limits, independent exact original ux-009 review before acceptance, Graphify CUDA/eval and documentation/wiki."
+      "Protected fresh actual Main Bar Popup build with held compiler/cache and exact reviewed input lock. Reject altered source/tool/cache/static/output hashes, malformed manifests and stale/foreign receipts in meaningful isolated tests without mutating frozen held inputs. Retain timeouts/raw failures.",
+      "Independent architecture and input/output closure review, consume current frontend receipt in applicable selected QA without rebasing historical native evidence. No full DEL003 acceptance from frontend-only recipe, native object order/provider/ABI and full tool source provenance remain separate.",
+      "Update Graphify CUDA/eval and README/release/Diataxis/wiki. No unchanged native attention or renderer/Profile retries; the native attention gap remains explicit."
     ],
-    "owner": "root-attention-current",
-    "participantRecord": ".warlock-contributor/attention-current-native-state.json"
+    "owner": "root-current-build",
+    "participantRecord": ".warlock-contributor/current-frontend-build-recipe.json"
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -2909,6 +2909,34 @@
         "participantRecord": ".warlock-contributor/shortcut-draft-refresh-preservation.json"
       },
       "outcome": "Bounded draft fix integrated c5cf882f1; original native UI020 remains open."
+    },
+    {
+      "atUTC": "2026-10-29T23:58:26.511197+00:00",
+      "slice": {
+        "id": "attention-current-native-state",
+        "requirements": [
+          "ELM-UX-009"
+        ],
+        "scenarios": [
+          "ux-009"
+        ],
+        "paths": [
+          "implementation/warlock/qa/check-attention-current.py",
+          "implementation/warlock/qa/AttentionReplay.elm",
+          "implementation/warlock/qa/native-attention-current.py",
+          "implementation/warlock/README.md"
+        ],
+        "before": "Attention behavior exists with historical native evidence; current source tuple and independent native accessible-state distinction remain unqualified.",
+        "after": "Qualify original current native active-versus-attention pixels and accessible state without focus theft; repair only demonstrated production defects, preserve original oracle and prior evidence.",
+        "verification": [
+          "Run existing actual production AttentionReplay and strict native observation/join checks through protected CPU launcher with exact fresh current three-root build and held compiler. Existing model unchanged unless behavior changes.",
+          "Review genuine GTK urgency fixture, unchanged original deadlines, private cleanup, exact owning core/plugin/Aquamarine/host/assets; observe actual AT export for accessible state, not DOM alone. No unchanged shared-renderer/Profile investigation or main-session changes.",
+          "Preserve failures, investigation limits, independent exact original ux-009 review before acceptance, Graphify CUDA/eval and documentation/wiki."
+        ],
+        "owner": "root-attention-current",
+        "participantRecord": ".warlock-contributor/attention-current-native-state.json"
+      },
+      "outcome": "Current CPU12+11 passed with pinned adapter imports; native fixture NOTREADY current recipe+real AT gap. Evidence b6fb6bf6a. Two qualification iterations stop investigation."
     }
   ]
 }
