@@ -1,34 +1,44 @@
 {
   "schema": 1,
   "owner": "sol",
-  "updatedUTC": "2026-10-29T22:33:29.400628+00:00",
+  "updatedUTC": "2026-10-29T22:37:07.303388+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "first-use-native-delivery-context",
+    "id": "pure-surface-snapshot-contract",
     "requirements": [
-      "ELM-UI-020"
+      "ELM-UI-004",
+      "ELM-UX-005",
+      "ELM-UI-016"
     ],
     "scenarios": [
-      "first-use"
+      "taskbar-group",
+      "ux-005",
+      "preview-states"
     ],
     "paths": [
-      "implementation/warlock/native/host.c",
-      "implementation/warlock/qa/native-delivery-diagnostics.py",
+      "implementation/warlock/src/SurfaceSnapshot.elm",
+      "implementation/warlock/src/SurfaceRenderer.elm",
+      "implementation/warlock/src/OutputController.elm",
+      "implementation/warlock/src/Presentation.elm",
+      "implementation/warlock/src/Main.elm",
+      "implementation/warlock/qa/SurfaceSnapshotContracts.elm",
+      "implementation/warlock/qa/snapshot-contracts.cjs",
+      "implementation/warlock/qa/check-snapshot-contracts.py",
       "implementation/warlock/README.md"
     ],
-    "before": "Actual direct first-use trial86580f58 fails before guidance with repeated Native delivery failed Unsupported result type and Web process termination. Bounded source read found no supported unserializable receiver return or causal repair. Current generic callback records only message, leaving exact receiver/dispatch scope and WebKit error domain/code unobserved.",
-    "after": "Retain callback failure behavior while recording the bounded receiver, dispatch publication/lease and actual WebKit error domain/code for failed native delivery. Use one current coherent private native first-use observation to identify the actual failing boundary, then fix only a demonstrated cause. Original first-use acceptance stays partial until its own full oracle passes.",
+    "before": "Policy coordination and presentation admission import the HTML renderer to obtain validated snapshot protocol values. The snapshot decoder/accessors/action envelope are mixed with HTML rendering; source-reviewed Astra proposal removes this concrete dependency without changing original taskbar/member selection or preview behavior.",
+    "after": "One pure opaque SurfaceSnapshot contract owns the unchanged codec, accessors, local overlay and action envelope. OutputController and Presentation depend directly on it; SurfaceRenderer renders read-only details and forwards existing API for compatibility. Existing local-edit exception, uint64 identities, wire semantics, DOM and preview provenance remain unchanged. Residual Announcement HTML edge remains explicit.",
     "verification": [
-      "Supporting diagnostic task resolves concrete native first-use blocker. No hypothesis-as-cause or speculative void/result-type repair; no debugger/symbol research, stopped Profile retry or unchanged native rerun. This distinct required observable is the receiver/error identity missing from retained failure.",
-      "Source-review async context lifetime and unchanged evaluate_finish/failed/drain/quit behavior. Recompile changed current C unit/relink using exact unchanged assets/10 C++ objects and provider/source hashes; current core/authority/AQ owning ABI remains mandatory. No new model for diagnostics-only state.",
-      "Root sole protected native executor after exact current tuple/runner review. Preserve original six-second observations/five-second helpers, core1, private buses/runtime, no DRM/XWayland/software fallback or main-session/user-draft mutation. Observe one actual delivery failure context or actual successful first-use progression; no native acceptance from instrumentation/builds alone."
+      "Compile actual Main Bar Popup roots with pinned current Elm compiler/cache; compile applicable existing surface/presentation/output replay workers with unchanged assertions. No native units or renderer cause change; no native rerun or GUI acceptance from this extraction.",
+      "Production-route valid/invalid/lifecycle and deterministic seeded properties compare normalized encodings, actions, disabled/missing identity, stale publication/lease refusal, canonical uint64, pending query/IME and same-lease local-edit exception. Preserve raw-parser duplicate-key limits and pendingQuery overlay bounds caveat; do not add permissive builder or duplicate decoder.",
+      "Source equivalence review plus actual root/replay/property outputs; update Graphify CUDA/eval and documentation/debt. Pure Snapshot imports no Html Browser ports Process Task; only direct policy dependency removed, residual Announcement path remains. Preserve original scenarios/acceptance on relevant immutable tuples."
     ],
-    "owner": "root-native-delivery-context",
-    "participantRecord": ".warlock-contributor/first-use-native-delivery-context.json"
+    "owner": "root-surface-snapshot",
+    "participantRecord": ".warlock-contributor/pure-surface-snapshot-contract.json"
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -2498,30 +2508,27 @@
     }
   ],
   "lastCompletedBoundedSlice": {
-    "id": "host-invalid-envelope-refusal",
+    "id": "first-use-native-delivery-context",
     "requirements": [
-      "ELM-ARC-004"
+      "ELM-UI-020"
     ],
     "scenarios": [
-      "architecture-004"
+      "first-use"
     ],
     "paths": [
-      "implementation/warlock/native/shared-host.c",
       "implementation/warlock/native/host.c",
-      "implementation/warlock/qa/check-host-envelope.py",
-      "implementation/warlock/qa/host-envelope.c",
+      "implementation/warlock/qa/native-delivery-diagnostics.py",
       "implementation/warlock/README.md"
     ],
-    "before": "Original host-facing architecture-004 remains unadjudicated. Current shared_receive_text and shared_receive have silent null/bound/non-object/non-string rejection paths; actual malformed/unsupported no-forward/reason receipt is not yet adjudicated. Native-to-Elm decoder scenario remains independently accepted on immutable cdb5e9 source.",
-    "after": "Invalid host envelopes are refused before forwarding or effect admission with explicit bounded reasons; legitimate messages and trust/lifetime/ownership gates retain their behavior. Establish actual production host bridge trace and fix only demonstrated reason/admission gaps.",
+    "before": "Actual direct first-use trial86580f58 fails before guidance with repeated Native delivery failed Unsupported result type and Web process termination. Bounded source read found no supported unserializable receiver return or causal repair. Current generic callback records only message, leaving exact receiver/dispatch scope and WebKit error domain/code unobserved.",
+    "after": "Retain callback failure behavior while recording the bounded receiver, dispatch publication/lease and actual WebKit error domain/code for failed native delivery. Use one current coherent private native first-use observation to identify the actual failing boundary, then fix only a demonstrated cause. Original first-use acceptance stays partial until its own full oracle passes.",
     "verification": [
-      "Original ELM-ARC-004 permits native OR bridge verification. Exercise actual current shared host receive/admission route with malformed and unsupported protocol failure injection, reason receipt and observed zero backend queue/action submission; retain hashes and a valid schema control. Do not infer physical native execution from a bridge fixture.",
-      "Use existing self-tests or a minimal source-included current C fixture and retained verified objects/providers. No WebKit GUI, incompatible capture fixture, Profile retry, native ABI relabeling, fabricated compositor counters or broad new framework. Root sole protected CPU executor after review.",
-      "Compile changed C unit and relink if production host changes; preserve current 21-case decoder acceptance tuple and requalify only relevant evidence. Whole requirement needs independent review of both original directions/EARS, not automatic promotion from decoder pass."
+      "Supporting diagnostic task resolves concrete native first-use blocker. No hypothesis-as-cause or speculative void/result-type repair; no debugger/symbol research, stopped Profile retry or unchanged native rerun. This distinct required observable is the receiver/error identity missing from retained failure.",
+      "Source-review async context lifetime and unchanged evaluate_finish/failed/drain/quit behavior. Recompile changed current C unit/relink using exact unchanged assets/10 C++ objects and provider/source hashes; current core/authority/AQ owning ABI remains mandatory. No new model for diagnostics-only state.",
+      "Root sole protected native executor after exact current tuple/runner review. Preserve original six-second observations/five-second helpers, core1, private buses/runtime, no DRM/XWayland/software fallback or main-session/user-draft mutation. Observe one actual delivery failure context or actual successful first-use progression; no native acceptance from instrumentation/builds alone."
     ],
-    "owner": "root-host-envelope",
-    "participantRecord": ".warlock-contributor/host-invalid-envelope-refusal.json",
-    "outcome": "Completed actual host reason fixes and original architecture-004 + wholeARC004 acceptance; immutable source69eb9b2f80cfa63b9bfa7c55b01f7072a8a2ba3c, source-verified independent quint-5 review40b04. Both nonobject/preview9 failures retained, current18bridge/finalCunit-relink20selftests pass. Decoder object and its cdb5e9 tuple preserved, explicit source correspondence only. Full242/417 goal remains active; nativeGUI/renderer, AT/IME/hardware/resources/journeys/package/reversibledeployment and other requirements remain separate."
+    "owner": "root-native-delivery-context",
+    "participantRecord": ".warlock-contributor/first-use-native-delivery-context.json"
   },
   "stoppedInvestigations": [
     {
@@ -2775,6 +2782,11 @@
       "owner": "root-deadline-restart",
       "participantRecord": ".warlock-contributor/original-deadline-frontend-restart.json",
       "outcome": "STOP after two qualification-only attempts; published1047919bf. First83f7f676 failed beforecommands on mistypedassetpin. Corrected212f81ad compiledElm0 then fixturecompile1 capture-resources reservationpointer/value mismatch. No bridge/deadline/restart trace executed, no runtimeproductdefect or acceptance. Do not expand compatibility helper/retry/renamedinvestigation; fullgoalactive."
+    },
+    {
+      "id": "first-use-native-delivery-context",
+      "record": ".warlock-contributor/first-use-native-delivery-context.json",
+      "outcome": "Published36c804af2 diagnostics/build20selftests and actual e9d433 native failure; first preflight typo + second native failure; two qualification STOP. Receiver/domain/code observed but value/cause unproven. No further unchanged run; first-use partial."
     }
   ],
   "architectureReview": {
