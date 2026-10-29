@@ -32,6 +32,14 @@ Use [quint-llm-kit](https://github.com/quint-co/quint-llm-kit) for behavioral mo
 5. **Record the result.** Add the source revision, immutable evidence reference/hash, exact oracle, evidence scope, missing observations and reviewer disposition to the scenario row. Close a scenario only when its own obligations pass, and a requirement only when all applicable scenarios and verification obligations pass. Source changes invalidate only relevant evidence, not every unrelated accepted scenario.
 6. **Commit the actual delta and continue.** Publish owned changes in a normal batch under existing authorization. No separate publication-receipt commit, no copied QA trees, no new public version counters. Retain failed reports locally and commit the minimal auditable report/evidence needed by the claim. Do not discard evidence required for reproducibility.
 
+## Standing integration and Omarchy trial cadence
+
+User authorization reaffirmed October 28, 2026: merge integrated work regularly to GitHub, keep the README current, and deploy to Omarchy when possible for hands-on testing. This remains part of every loop continuation while the user is away; being AFK is not a pause request.
+
+At each completed, reviewed integration batch, reconcile the authorized GitHub branch and publish owned commits through the normal repository merge workflow. Preserve concurrent work and failed evidence; never force-push or include undeclared experimental files. Update the README whenever verified behavior, setup, test instructions, known blockers or deployment status changes. Do not present component acceptance as a finished release.
+
+At integration milestones, assess a reversible Omarchy trial using the Omarchy skill. Prepare and verify installation, draft preservation, rollback and a bounded smoke test before activation. Use an isolated trial when main-session readiness is missing; do not restart the user's main compositor incidentally or deploy a known failing path as ready. Record the exact blocker and continue independent product work when a trial cannot proceed. Keep the living wiki synchronized with published batches and actual deployment outcomes.
+
 ## Stop waste, preserve progress
 
 After two consecutive qualification-only iterations, or 45 minutes without a production fix or an original-scenario verdict, stop expanding that investigation. Record the exact missing observation and pick another bounded mandatory product slice. The timer never authorizes bypassing a safety boundary. A failed scenario is useful diagnosis, not a delivered feature.
