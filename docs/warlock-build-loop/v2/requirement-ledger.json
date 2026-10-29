@@ -10442,23 +10442,104 @@
       "capability": "elm-taskbar",
       "owner": "Elm presentation lead",
       "verifier": "Independent acceptance reviewer",
-      "requirementAccepted": false,
-      "status": "in-progress",
+      "requirementAccepted": true,
+      "status": "accepted",
       "scenarios": [
         {
           "name": "ux-004",
           "oracle": "both identities retain the chosen relative order",
-          "status": "partial",
+          "status": "accepted",
           "evidence": [
             {
               "path": "implementation/warlock/qa/evidence/persistent-pins/manifest.json",
               "sha256": "19bbb3b496b2d9acb0df551907009a14064f7ca93389d576a266cacb6c705387",
               "scope": "Compiled Elm pin/reorder/current receipt and restart replay; actual keyboard pin/reorder with atomic private storage; whole shell restart preserves exact Editor/Files order, native taskbar text pixels; pointer zero-window Editor activation submits one identity-bound GIO launch."
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/pin-order-current-20261029/manifest.json",
+              "sha256": "70d0f418d2f587b8b26d54cf90a858877a832890aa3f4cd6dbe6a1ae8bdc9297",
+              "scope": "Original identity/order persistence across real shell restart independently accepted on relevant observed tuple, with explicit packaging-only source drift."
             }
           ],
-          "missingObservation": "Independent original-scenario reviewer disposition.; Physical presentation of launcher/pin/reorder popup controls: this run captures the restarted taskbar only; the retained earlier launcher popup is black."
+          "missingObservation": null,
+          "priorObservations": [
+            {
+              "name": "ux-004",
+              "oracle": "both identities retain the chosen relative order",
+              "status": "partial",
+              "evidence": [
+                {
+                  "path": "implementation/warlock/qa/evidence/persistent-pins/manifest.json",
+                  "sha256": "19bbb3b496b2d9acb0df551907009a14064f7ca93389d576a266cacb6c705387",
+                  "scope": "Compiled Elm pin/reorder/current receipt and restart replay; actual keyboard pin/reorder with atomic private storage; whole shell restart preserves exact Editor/Files order, native taskbar text pixels; pointer zero-window Editor activation submits one identity-bound GIO launch."
+                }
+              ],
+              "missingObservation": "Independent original-scenario reviewer disposition.; Physical presentation of launcher/pin/reorder popup controls: this run captures the restarted taskbar only; the retained earlier launcher popup is black."
+            }
+          ],
+          "reviewerDisposition": {
+            "name": "quint-5",
+            "independent": true,
+            "disposition": "accepted-original-ux004-and-whole-ears",
+            "path": "implementation/warlock/qa/evidence/pin-order-current-20261029/independent-review.md",
+            "sha256": "5d7fd0db6da1c7801eea5f39a8deca321db47321c12c681a39757557c3c39cdc"
+          },
+          "verificationScope": "Current13-assertion compiled Elm replay plus retained isolated native pin/reorder/real restart and independently viewed order image. Native full-source equality is explicitly false; relevant runtime correspondence is established.",
+          "nativeFullSourceCurrent": false,
+          "sourceTuple": {
+            "sourceRevision": "a8ed646675495201e62d8a445655296d723a0513",
+            "core": {
+              "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-build/Hyprland",
+              "sha256": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e"
+            },
+            "plugin": {
+              "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/authority/elm-window-geometry-authority.so",
+              "sha256": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c"
+            },
+            "toolchain": {
+              "manifestSHA256": "fe3d29078d30c6cf9bd431233c5eed1ad4550e2873ff55739d50a5a87a97edaa",
+              "compilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+              "nodeSHA256": "caa24debe02770c92a70677e2a62ca98890150e7ac1c17bcfe31bcc98cc89943"
+            },
+            "aquamarine": {
+              "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/lib/libaquamarine.so.0.15.0",
+              "sha256": "667a22d535aade4e4a26134e39028a87fb3f963c28b7bf7ff79da684bb014ecd"
+            },
+            "host": {
+              "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/elm-host",
+              "sha256": "4377b11ce0afe9e1072210666aa872118b032995275a20657058771e5e6c8347",
+              "heldBuild": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/host-build-report.json",
+              "heldBuildSHA256": "691806471ff599503a20067aa0b90bf914b93a1ee5985198cdc79fb92ff975bf"
+            },
+            "nativeFullSourceMapCurrent": false,
+            "unrelatedNativeSourceDrift": [
+              "adapter/release_builder.py"
+            ]
+          }
         }
-      ]
+      ],
+      "priorRequirementObservations": [
+        {
+          "archivedUTC": "2026-10-29T15:49:58.841830+00:00",
+          "requirementAccepted": false,
+          "status": "in-progress",
+          "scope": "Entire historical scenario partial/missing notes are retained in priorObservations."
+        }
+      ],
+      "requirementEvidence": [
+        {
+          "path": "implementation/warlock/qa/evidence/pin-order-current-20261029/manifest.json",
+          "sha256": "70d0f418d2f587b8b26d54cf90a858877a832890aa3f4cd6dbe6a1ae8bdc9297",
+          "scope": "Original whole ELM-UX-004 application pin desktop identity and relative order across shell restart, not UI004 native window pin/top behavior."
+        }
+      ],
+      "requirementReviewerDisposition": {
+        "name": "quint-5",
+        "independent": true,
+        "path": "implementation/warlock/qa/evidence/pin-order-current-20261029/independent-review.md",
+        "sha256": "5d7fd0db6da1c7801eea5f39a8deca321db47321c12c681a39757557c3c39cdc",
+        "disposition": "accepted-whole-original-ears-relevant-observed-tuple"
+      }
     },
     {
       "id": "ELM-UX-005",
@@ -14362,5 +14443,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-29T14:49:08.442981+00:00"
+  "updatedUTC": "2026-10-29T15:49:58.841830+00:00"
 }

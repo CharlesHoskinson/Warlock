@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "requirement": "ELM-UX-004",
+  "scenario": "ux-004",
+  "status": "accepted-on-relevant-observed-tuple",
+  "requirementAccepted": true,
+  "releaseAccepted": false,
+  "scope": "Original application desktop-identity pin/order persistence across shell restart, using current compiled replay and retained real native pin/reorder/restart evidence.",
+  "independentReview": {
+    "file": "independent-review.md",
+    "sha256": "5d7fd0db6da1c7801eea5f39a8deca321db47321c12c681a39757557c3c39cdc",
+    "exactReviewerBytes": true
+  },
+  "replay": {
+    "file": "replay-observations.json",
+    "sha256": "d3949a002d0783367fe93d0bbb03a3db3ce99a831536ea0519c0ae6dab971900",
+    "checks": 13,
+    "recordedSourceCount": 103,
+    "compiledSHA256": "c911675db334c2fed0c17b472b2a017e756567de4063ef7ba456c610410d7741",
+    "scope": "Actual Desktop/Pins/Surface worker ports. Saved receipts are synthetic replay inputs, not native storage or paint."
+  },
+  "nativeEvidence": {
+    "pointerReport": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-zero/native-primary-keyboard-1793217706889564690/report.json",
+      "sha256": "1714f2a3939b636aa8b7a0040830025552951b3843a9f74cdb672871f49e7854"
+    },
+    "keyboardReport": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-zero/native-primary-keyboard-1793217758639207847/report.json",
+      "sha256": "bd06aed6fae80959831ff1111016408b68cb10d3222b0ca846e701acc738eb52"
+    },
+    "canonicalZeroModes": {
+      "path": "implementation/warlock/qa/evidence/taskbar-zero-fresh-20261028/observations.json",
+      "sha256": "d2fde62e5399a14e2671da706d0dda20829afa963bd1d20085d602666fb7615e"
+    },
+    "image": {
+      "path": "/home/charles/window-integration-qa/warlock-window-feedback-1793217758639314505/pins-after-restart.png",
+      "sha256": "c133ea231cd0c7fb4150eba9c1985f9eb148a9984abd051d9242aa22129872cc",
+      "independentReview": "Actual restarted bar visibly has Editor left of Files; identity/storage/order are supplied by report and backend receipts."
+    },
+    "observations": [
+      "Actual physical Pin Files, Pin Editor and Move Editor left actions receive matching Saved outcomes.",
+      "Stored schema1 revision4 order is warlock-editor then warlock-files.",
+      "The first real shell exits normally, a fresh shell uses the same private state and retains both identities in the chosen order.",
+      "ActualRestartRetainsBothIdentitiesInChosenOrder and RestartDoesNotReplayPinWriteOrLaunch pass before the separately instructed user zero-window launch.",
+      "No restart-induced launch is inferred from a later deliberate user activation."
+    ],
+    "pair": {
+      "core": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-build/Hyprland",
+        "sha256": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e"
+      },
+      "plugin": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/authority/elm-window-geometry-authority.so",
+        "sha256": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c"
+      },
+      "aquamarine": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/lib/libaquamarine.so.0.15.0",
+        "sha256": "667a22d535aade4e4a26134e39028a87fb3f963c28b7bf7ff79da684bb014ecd"
+      }
+    },
+    "host": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/elm-host",
+      "sha256": "4377b11ce0afe9e1072210666aa872118b032995275a20657058771e5e6c8347",
+      "heldBuild": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/host-build-report.json",
+      "heldBuildSHA256": "691806471ff599503a20067aa0b90bf914b93a1ee5985198cdc79fb92ff975bf"
+    },
+    "runtimeTuple": {
+      "root": "/home/charles/Warlock/implementation/warlock-client-provider-native-v204",
+      "freshAdapter": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-qa/fresh_candidate.py",
+      "freshAdapterSHA256": "cb29ebe89b051223037264a366b9616815284b88e3cc452bc18a8993680eb8ab",
+      "parentAdapterSHA256": "e045634bd023f07977c398ef0057b9fdee3a1e1718d51c879e221ee353e28ae9",
+      "tupleSHA256": "bc225242e30baf4a5b8b1182cef6fdc716cc9c67de90dc35674f90c5fa87830b",
+      "foundationSHA256": "08b24bd93cbb63ec097900915379b32e90d9dcca7156d04fe8ee959efaff264f"
+    },
+    "retainedRawReport": {
+      "file": "native-pin-order-report.json.gz",
+      "sha256": "039ce012efc55066a702036d7ce0022ca225738fc8ee9e8f5d9bdfd5330e6181",
+      "expandedRawSHA256": "1714f2a3939b636aa8b7a0040830025552951b3843a9f74cdb672871f49e7854",
+      "scope": "Unmodified actual native report, including source map, exact pin writes, storage and restart observations."
+    }
+  },
+  "nativeFullSourceCurrent": false,
+  "nativeSourceDrift": [
+    {
+      "path": "adapter/release_builder.py",
+      "recordedSHA256": "640b47a214286ca9ec3fcda74d98d895610202befd49e9b8bcce51706e9a9919",
+      "currentSHA256": "43dfc887228de8a755964a0aaa8b645d9fb8f4a4a4a288b7ff48d7b1844d630a"
+    }
+  ],
+  "relevantRuntimeSource": {
+    "src/Pins.elm": {
+      "recordedSHA256": "c18f4211444ea54ad5ae65d9e436b4dc3ae404446699812b95dabd7b2c878368",
+      "currentSHA256": "c18f4211444ea54ad5ae65d9e436b4dc3ae404446699812b95dabd7b2c878368",
+      "matches": true
+    },
+    "src/Desktop.elm": {
+      "recordedSHA256": "1b5b48fc5ca71c6e11bd54ea6ab723f5a37f4d383d6a59c99d14d83b005d5033",
+      "currentSHA256": "1b5b48fc5ca71c6e11bd54ea6ab723f5a37f4d383d6a59c99d14d83b005d5033",
+      "matches": true
+    },
+    "src/Surface.elm": {
+      "recordedSHA256": "a660a4641a9f834c6198bce1e8049b3dd0be40cb74be1cfe1d5e14cfd0cdaa1d",
+      "currentSHA256": "a660a4641a9f834c6198bce1e8049b3dd0be40cb74be1cfe1d5e14cfd0cdaa1d",
+      "matches": true
+    },
+    "adapter/taskbar_preferences.py": {
+      "recordedSHA256": "4fde83478c22f7173ef05727a3666ff7ce72076bc05fddfa4fd08705af9a57d2",
+      "currentSHA256": "4fde83478c22f7173ef05727a3666ff7ce72076bc05fddfa4fd08705af9a57d2",
+      "matches": true
+    },
+    "adapter/daemon.py": {
+      "recordedSHA256": "a593494e4ca89ef467dced5cd946bc5eca9a88db21c591597c19eb2a80cdca31",
+      "currentSHA256": "a593494e4ca89ef467dced5cd946bc5eca9a88db21c591597c19eb2a80cdca31",
+      "matches": true
+    },
+    "adapter/catalog_transport.py": {
+      "recordedSHA256": "43bd1cd1059b87ce4d349d72e4b2a917ac1bdc3dacda2f60563fa621e05a4b84",
+      "currentSHA256": "43bd1cd1059b87ce4d349d72e4b2a917ac1bdc3dacda2f60563fa621e05a4b84",
+      "matches": true
+    }
+  },
+  "sourceRelevance": "Packaging release_builder.py is not in the running pin path. Production daemon routes taskbar-pins-write through catalog_transport to taskbar_preferences.Store; locked CAS save, atomic rename and returned revisions match actual storage and Saved receipts. Relevant Elm/runtime bytes and actual core/plugin/Aquamarine/host hashes match. The entire old source map is not relabelled current.",
+  "reviewDigestCorrections": [
+    {
+      "path": "src/Surface.elm",
+      "quotedDigest": "a660a4641a9f834c6198bce1e8049b3dd0be40cb74be1d5e14cfd0cdaa1d",
+      "actualSHA256": "a660a4641a9f834c6198bce1e8049b3dd0be40cb74be1cfe1d5e14cfd0cdaa1d",
+      "scope": "Verbatim review retained; actual runtime/current digest is recorded directly from source and raw report."
+    }
+  ],
+  "historicalEvidence": "Persistent-pins partial manifest and all native reports/images/flags/reviews remain unchanged. This is a new original-scope adjudication, not a rerun.",
+  "limits": [
+    "No all-catalog/all-schedule or formal all-execution proof is claimed.",
+    "No UI004 New instance or app-pin/native-always-on-top independence acceptance follows.",
+    "No Omarchy profile rollback, main-session deployment or release acceptance follows.",
+    "Unrelated historical popup-paint limits remain with their own scopes; they are not invented prerequisites of this identity/order-after-restart oracle.",
+    "No QA, source/model, STATE or actual ledger edit by this private preparation."
+  ],
+  "sourceRevision": "a8ed646675495201e62d8a445655296d723a0513"
+}

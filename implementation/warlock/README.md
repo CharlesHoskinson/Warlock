@@ -39,6 +39,14 @@ through capture. Correcting an extra fixture-only focus condition enabled that
 recording; production policy was unchanged. The earlier timed-out report stays
 historical. Wider search, AT/IME and release requirements remain separate.
 
+Original ELM-UX-004 pin-order persistence is independently accepted on the
+recorded tuple: the current compiled replay and actual native pin, reorder,
+private storage and shell restart preserve Editor and Files in the chosen order.
+See [pin-order evidence](qa/evidence/pin-order-current-20261029/independent-review.md).
+The native recording retains an unrelated release-builder source change; its
+pin runtime sources and core/plugin/host still match. This acceptance does not
+close application-pin versus always-on-top independence or New instance.
+
 The installed Omarchy predecessor now has a bounded private startup observation:
 its menu, workspaces and clock paint, and its owned process group retires without
 leftovers. This used private default-derived configuration. Actual candidate

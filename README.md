@@ -39,6 +39,11 @@ with no duplicate request or launched recipient. The earlier focus-dependent
 capture failure remains preserved. Other search, IME and release obligations
 remain separately open.
 
+October 29 pin-order checkpoint: original ELM-UX-004 is independently accepted.
+Two applications retain their exact identities and chosen order across an actual
+shell restart, supported by the current compiled replay and native recording.
+Application-pin versus always-on-top independence remains a separate open gate.
+
 An isolated startup trial also shows the installed Omarchy predecessor's menu,
 workspaces and clock, with complete owned-process cleanup. Full candidate
 rollback and preference/draft recovery are still open; this has not deployed

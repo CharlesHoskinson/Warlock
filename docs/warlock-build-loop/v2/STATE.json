@@ -1,33 +1,37 @@
 {
   "schema": 1,
   "owner": "sol",
-  "updatedUTC": "2026-10-29T15:30:06.059010+00:00",
+  "updatedUTC": "2026-10-29T15:50:01.346101+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "application-pin-order-current-evidence",
+    "id": "launcher-selected-identity-removed",
     "requirements": [
-      "ELM-UX-004"
+      "ELM-UI-005"
     ],
     "scenarios": [
-      "ux-004"
+      "search-removed"
     ],
     "paths": [
-      "implementation/warlock/src/Pins.elm",
-      "implementation/warlock/adapter/taskbar_preferences.py",
-      "implementation/warlock/qa/PinsReplay.elm"
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/src/Launch.elm",
+      "implementation/warlock/src/Catalog.elm",
+      "implementation/warlock/adapter/catalog_authority.py",
+      "implementation/warlock/qa/SearchRemovedReplay.elm",
+      "implementation/warlock/qa/native-launcher-removed-portable.py",
+      "implementation/warlock/README.md"
     ],
-    "before": "Original pin/order persistence is partial: older native reorder/restart evidence lacks independent current-source adjudication. Current taskbar-zero pointer/keyboard/AT evidence maycover actual two-identity reorder/restart and visiblecontrols, but mustmatch originalUX004 replay+nativeverification ratherthan count oldUI004acceptanceagain.",
-    "after": "Establish current-source compiledordering replay plus actual user pin/reorder and shellrestart preserving exactdesktopidentities/relativeorder. Reuse demonstrably source-current evidence or run only missing decisivecase; fix only an observed persistence defect. Keep nativeAlwaysOnTop independence andotherUI004obligations separate.",
+    "before": "Selected identity removal before Enter has historical partial evidence only. Current UX029 refusal demonstrates native removal/refusal but does not observe current read-only Refresh reconciliation to no-match with physical result and independent original UI005 disposition.",
+    "after": "A removed selected catalog identity cannot launch a replacement; query remains and reachable Refresh reconciles current selection to current catalog/no-match. Fix only an observed source defect.",
     "verification": [
-      "Original Elm replay assertion and isolated native recording: both identities retain chosen relative order. Inspect exactsourcehashes, userinputs/saveorder, actualrestart/readback and physicalresult; independentreviewagainstoriginaloracle.",
-      "Current source/pair/toolchain identity and normalcleanup required. No extraAT/IME requirement addedtoUX004; historicalfailurespreserved, model/producerchecksnotGUIacceptance. Nativeifneededserializedprotected/core1/original6sec5sec."
+      "Focused current compiled Desktop/Launch/Catalog removed-identity replay with exact generation and stale-selection negatives; protected current-tuple physical Enter and read-only Refresh with actual receipts/no recipient, reconciled selection and independently viewed native pixels.",
+      "Original UI005 named native/keyboard/applicable AT and frozen product-policy oracle remain authoritative. Existing UX029 evidence may cover unchanged intervals; no extra unrelated IME gate, no whole UI005 or release claim. Original6sec5sec/core1/owning ABI/normalcleanup."
     ],
-    "owner": "root-pin-order",
-    "participantRecord": ".warlock-contributor/application-pin-order-current-evidence.json"
+    "owner": "root-search-removed",
+    "participantRecord": ".warlock-contributor/launcher-selected-identity-removed.json"
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -1902,6 +1906,29 @@
       "missingObservations": [
         "Compatible actual IME entrypoint with owning wrapper context, then physical candidate commit/cancel, full images and independent native review."
       ]
+    },
+    {
+      "id": "application-pin-order-current-evidence",
+      "requirements": [
+        "ELM-UX-004"
+      ],
+      "scenarios": [
+        "ux-004"
+      ],
+      "paths": [
+        "implementation/warlock/src/Pins.elm",
+        "implementation/warlock/adapter/taskbar_preferences.py",
+        "implementation/warlock/qa/PinsReplay.elm"
+      ],
+      "before": "Original pin/order persistence is partial: older native reorder/restart evidence lacks independent current-source adjudication. Current taskbar-zero pointer/keyboard/AT evidence maycover actual two-identity reorder/restart and visiblecontrols, but mustmatch originalUX004 replay+nativeverification ratherthan count oldUI004acceptanceagain.",
+      "after": "Establish current-source compiledordering replay plus actual user pin/reorder and shellrestart preserving exactdesktopidentities/relativeorder. Reuse demonstrably source-current evidence or run only missing decisivecase; fix only an observed persistence defect. Keep nativeAlwaysOnTop independence andotherUI004obligations separate.",
+      "verification": [
+        "Original Elm replay assertion and isolated native recording: both identities retain chosen relative order. Inspect exactsourcehashes, userinputs/saveorder, actualrestart/readback and physicalresult; independentreviewagainstoriginaloracle.",
+        "Current source/pair/toolchain identity and normalcleanup required. No extraAT/IME requirement addedtoUX004; historicalfailurespreserved, model/producerchecksnotGUIacceptance. Nativeifneededserializedprotected/core1/original6sec5sec."
+      ],
+      "owner": "root-pin-order",
+      "participantRecord": ".warlock-contributor/application-pin-order-current-evidence.json",
+      "outcome": "Independent quint-5 accepts original ux-004 and whole ELM-UX-004: actual current compiled replay13 and retained physical pin/reorder/storage/restart evidence. Relevant runtime and binary tuple match; unrelated release_builder-only source drift retained. Claim recorded against immutable source revision; canonical manifest/ledger integration pending root review."
     }
   ],
   "lastSlice": {
