@@ -1,14 +1,14 @@
 {
   "schema": 1,
   "owner": "sol",
-  "updatedUTC": "2026-10-29T17:39:16.204299+00:00",
+  "updatedUTC": "2026-10-29T18:10:03.031654+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "taskbar-launch-lifecycle-current",
+    "id": "taskbar-renderer-abort-cause",
     "requirements": [
       "ELM-UI-004"
     ],
@@ -17,21 +17,25 @@
       "taskbar-zero"
     ],
     "paths": [
+      "implementation/warlock/native/host.c",
+      "implementation/warlock/native/shared-host.c",
+      "implementation/warlock/native/shared-context.h",
+      "implementation/warlock/assets/activation.js",
       "implementation/warlock/src/Desktop.elm",
       "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/src/Pins.elm",
-      "implementation/warlock/src/Launch.elm",
+      "implementation/warlock/qa/native-taskbar-new-instance-diagnostic-portable.py",
       "implementation/warlock/README.md"
     ],
-    "before": "Ordinary six taskbar scenarios accepted on recorded tuples, whole UI004 still open: explicit NewInstance native keyboard/AT and application-pin versus native always-on-top independence need original EARS coverage. Retained renderer abort blocks context route; new Desktop launch lifecycle has actual compiled NI19 and focused16 but changed-source native regressions pending.",
-    "after": "Explicit NewInstance issues exactly one identity-bound launch while ordinary activation does not duplicate; application pin and native always-on-top remain independent in both directions. Resolve evidenced renderer failure only after trustworthy owned unwind/ELF observations, preserve draft/input/focus.",
+    "before": "Ordinary taskbar scenarios are accepted, but explicit New Instance and keyboard/application-pin/native-top journeys still encounter a retained WebKit renderer SIGABRT after a later popup/Menu-key interaction. The owned diagnostic now has libc raise/abort and WebKit library ranges; exact assertion and mapped build identity remain unresolved. The shared Apps launch admission defect is repaired and native refusal/AT recovery is accepted separately.",
+    "after": "Identify the concrete renderer event or lifetime defect from exact retained executable/library evidence, repair only an evidenced cause, and verify explicit New Instance plus application-pin/native-top independence through original native keyboard and applicable AT routes with normal cleanup and drafts preserved.",
     "verification": [
-      "Read original UI004 primary action/EARS and graph source references. Reuse current NI19 as component evidence; no relabel as native.",
-      "Source-qualified changed-asset integration regression for existing launch success/refusal paths, retaining prior failure and original guarded AT oracle; do not expand prior refusal investigation or infer full UI005 acceptance.",
-      "Prepare minimum new owned renderer ELF/load-address/unwind observable only if it materially resolves prior missing diagnostic; never repeat unchanged trial or weaken core1/ptrace/sandbox/deadlines. Actual native keyboard/applicable AT for explicit NewInstance and both pin/top independence directions remain mandatory."
+      "Apply diagnose-crash skill; use retained owned signal, stack, maps, exact installed ELF hashes and available local symbol metadata before any new GUI run. Distinguish confirmed identity, inference and missing evidence. No repeat of unchanged diagnostic or generic debugger infrastructure.",
+      "If exact debug metadata is needed, retrieve only the matching official symbol artifact; no process-memory upload, core-limit, ptrace/sysctl or sandbox relaxation. An inferred symbol match is not proof of mapped-byte identity or cause.",
+      "Any new native trial requires a distinct missing observable, reviewed exact source/ABI/provider tuple, original six-second observations/five-second helpers and normal owned cleanup. Preserve prior failures.",
+      "Fix the stale pre-popup comment about the old blanket open-launch ban in the next genuine native source wave; rebuild and qualify changed inputs. Keep all original 242 requirements and 417 scenarios, packaging, journeys and reversible Omarchy deployment obligations."
     ],
-    "owner": "root-taskbar-launch-lifecycle",
-    "participantRecord": ".warlock-contributor/taskbar-launch-lifecycle-current.json"
+    "owner": "root-taskbar-renderer-cause",
+    "participantRecord": ".warlock-contributor/taskbar-renderer-abort-cause.json"
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -1985,6 +1989,65 @@
       "owner": "root-launcher-recovery",
       "participantRecord": ".warlock-contributor/launcher-empty-unavailable-recovery.json",
       "outcome": "COMPLETE original search-no-match and search-unavailable accepted independently. No-match reuses exact current14/AT44 tuple; unavailable actual42checks genuine513>512metadatafailure/keyboard+realATretry/recovery/zeroautomaticlaunch with normalcleanup. Firstfixturecontrolshadowfailure preserved; onlylocalrenamefixedfixture, productionunchanged. Source/evidencef76eaa665 andledger7d12bbcd3 pushed. Properacceptedclaims2 recorded atimmutablef76fullsource7paths. WholeUI005 stillpartial: race/refused remain."
+    },
+    {
+      "id": "taskbar-launch-lifecycle-current",
+      "requirements": [
+        "ELM-UI-004"
+      ],
+      "scenarios": [
+        "taskbar-inactive",
+        "taskbar-zero"
+      ],
+      "paths": [
+        "implementation/warlock/src/Desktop.elm",
+        "implementation/warlock/src/Surface.elm",
+        "implementation/warlock/src/Pins.elm",
+        "implementation/warlock/src/Launch.elm",
+        "implementation/warlock/README.md"
+      ],
+      "before": "Ordinary six taskbar scenarios accepted on recorded tuples, whole UI004 still open: explicit NewInstance native keyboard/AT and application-pin versus native always-on-top independence need original EARS coverage. Retained renderer abort blocks context route; new Desktop launch lifecycle has actual compiled NI19 and focused16 but changed-source native regressions pending.",
+      "after": "Explicit NewInstance issues exactly one identity-bound launch while ordinary activation does not duplicate; application pin and native always-on-top remain independent in both directions. Resolve evidenced renderer failure only after trustworthy owned unwind/ELF observations, preserve draft/input/focus.",
+      "verification": [
+        "Read original UI004 primary action/EARS and graph source references. Reuse current NI19 as component evidence; no relabel as native.",
+        "Source-qualified changed-asset integration regression for existing launch success/refusal paths, retaining prior failure and original guarded AT oracle; do not expand prior refusal investigation or infer full UI005 acceptance.",
+        "Prepare minimum new owned renderer ELF/load-address/unwind observable only if it materially resolves prior missing diagnostic; never repeat unchanged trial or weaken core1/ptrace/sandbox/deadlines. Actual native keyboard/applicable AT for explicit NewInstance and both pin/top independence directions remain mandatory."
+      ],
+      "owner": "root-taskbar-launch-lifecycle",
+      "participantRecord": ".warlock-contributor/taskbar-launch-lifecycle-current.json",
+      "outcome": "Concrete shared launch lifecycle repair: Desktopa503 AppsPending conflicted with native blanket open-launch ban. nativehost.c f78d1ba singleton Apps launch exception compiled all11hoste0a2, selftests20, actual Elm\u2192old/new C13checks each, model17+1000traces/7witnesses. Native success32 and refused41 pass/cleanuptrue; Q5 accepts exact originalsearch-refused onnewtuple. Source/evidence committed b8049bb20b041d46fd2880aac92752da35d7f267. Original UI004 explicit NI/keyboardAT/pin-top independence/renderer cause remain open; no UI004wholeacceptance inferred."
+    },
+    {
+      "id": "launcher-refused-rebuilt-verdict",
+      "requirements": [
+        "ELM-UI-005"
+      ],
+      "scenarios": [
+        "search-refused"
+      ],
+      "paths": [
+        "implementation/warlock/src/Desktop.elm",
+        "implementation/warlock/src/Launch.elm",
+        "implementation/warlock/src/Catalog.elm",
+        "implementation/warlock/src/Surface.elm",
+        "implementation/warlock/native/host.c",
+        "implementation/warlock/assets/popup-adapter.js",
+        "implementation/warlock/adapter/catalog_authority.py",
+        "implementation/warlock/README.md",
+        "implementation/warlock/qa/native-launcher-refused-at-portable.py",
+        "implementation/warlock/qa/native-launcher-accepted-portable.py",
+        "implementation/warlock/qa/surface_launch.qnt",
+        "implementation/warlock/qa/surface_launch_test.qnt"
+      ],
+      "before": "The original search-refused scenario retained a failed Orca observation. The Pending visibility and native singleton-launch repair now passes native success and refusal with independent review, while the ledger still records the earlier failure.",
+      "after": "Adopt the exact original search-refused verdict on the immutable source and native tuple, preserve all earlier failures, and keep whole requirement and release acceptance separate.",
+      "verification": [
+        "Actual native success73980 and refused74204 terminal0/cleanuptrue; current367sourceinputs/core/plugin/AQ/newe0a2host verified by rootandQ5. RealOrcafocus417 before navigation and ATSPIRefresh352/currentcataloggen2/no replacementlaunch.",
+        "Record literal originaloracle andexactverification, current sourcehashes from immutableGit b8049bb20b041d46fd2880aac92752da35d7f267, canonicalcompressedraw/captures/Q5review. No reexecutionforadministrativeadoption or originaldeadlinechange."
+      ],
+      "owner": "root-launcher-refused-rebuilt",
+      "participantRecord": ".warlock-contributor/launcher-refused-rebuilt-verdict.json",
+      "outcome": "Original ELM-UI-005/search-refused independently accepted by Quint5 on source b8049bb20b041d46fd2880aac92752da35d7f267 and rebuilt host e0a2. Actual native refusal has 41 passing checks, retained query and logical invoker focus, real Orca focus, and guarded AT Refresh to current catalog without replacement launch. All five named scenarios now have accepted observations on their recorded tuples; whole UI005 remains unaccepted pending relevant freshness and full frozen-policy review."
     }
   ],
   "lastSlice": {
@@ -2115,12 +2178,11 @@
     "nextOriginalProductWork": "Restore and qualify a fresh coherent native source/core/plugin/host tuple for original taskbar activation/minimize/restore recipients: ELM-UI-004 / ELM-UX-005 / ELM-UX-008. Root owns serialized protected native execution; source reconstruction/build evidence stays separate from GUI acceptance."
   },
   "previousActiveSlice": {
-    "id": "launcher-query-race-refusal",
+    "id": "launcher-refused-rebuilt-verdict",
     "requirements": [
       "ELM-UI-005"
     ],
     "scenarios": [
-      "search-race",
       "search-refused"
     ],
     "paths": [
@@ -2128,21 +2190,24 @@
       "implementation/warlock/src/Launch.elm",
       "implementation/warlock/src/Catalog.elm",
       "implementation/warlock/src/Surface.elm",
+      "implementation/warlock/native/host.c",
       "implementation/warlock/assets/popup-adapter.js",
       "implementation/warlock/adapter/catalog_authority.py",
-      "implementation/warlock/README.md"
+      "implementation/warlock/README.md",
+      "implementation/warlock/qa/native-launcher-refused-at-portable.py",
+      "implementation/warlock/qa/native-launcher-accepted-portable.py",
+      "implementation/warlock/qa/surface_launch.qnt",
+      "implementation/warlock/qa/surface_launch_test.qnt"
     ],
-    "before": "Three UI005 scenarios are independently accepted on current compiled/native/AT tuple. Search-race and search-refused retain historical partial evidence: current delayed-old-catalog/current-query dispatch schedule and actual AT refusal/focus/retry interval remain unobserved. Prior removed/unavailable AT intervals start after refusal; do not reuse them as AT refusal evidence.",
-    "after": "Only current-query/current-catalog-generation selections dispatch across delayed old reads, and an actual launch refusal preserves query and policy-defined focus with accessible refusal and reachable retry. Investigate exact pre-action/dispatch/outcome focus against frozen policy; fix only a demonstrated product violation.",
+    "before": "The original search-refused scenario retained a failed Orca observation. The Pending visibility and native singleton-launch repair now passes native success and refusal with independent review, while the ledger still records the earlier failure.",
+    "after": "Adopt the exact original search-refused verdict on the immutable source and native tuple, preserve all earlier failures, and keep whole requirement and release acceptance separate.",
     "verification": [
-      "Read exact original race/refused oracles and frozen INTERACTION matching/ranking/focus policy. Current compiled query/ranking/stale-selection replay where decisive; unchanged production modules need no invented new model.",
-      "Requalify existing actual held-catalog native race schedule on owning source/pair, current query/currentgeneration selection, genuine delayed old receipt and exactly current intended dispatch/recipient; actual keyboard/applicable AT observations.",
-      "Reuse current actual refused identity-bound launch stimulus, observe actual accessible refusal and pre/post focus, use genuine guarded AT Refresh/retry before leaving refused state, preserve query and no duplicate/replacement effect. Original6sec5sec/core1/privatebuses/pinnedmappedproviders/normalcleanup.",
-      "Keep whole UI005 unaccepted until all five scenarios plus full frozen matching/ranking/state obligations reviewed. No UI010/audio/braille/IME/rendererfix/hardware/resources/release/mainactivation acceptance invented."
+      "Actual native success73980 and refused74204 terminal0/cleanuptrue; current367sourceinputs/core/plugin/AQ/newe0a2host verified by rootandQ5. RealOrcafocus417 before navigation and ATSPIRefresh352/currentcataloggen2/no replacementlaunch.",
+      "Record literal originaloracle andexactverification, current sourcehashes from immutableGit b8049bb20b041d46fd2880aac92752da35d7f267, canonicalcompressedraw/captures/Q5review. No reexecutionforadministrativeadoption or originaldeadlinechange."
     ],
-    "owner": "root-launcher-current-query",
-    "participantRecord": ".warlock-contributor/launcher-query-race-refusal.json",
-    "outcome": "Stopped after two recorded qualification-only iterations (Desktop was already recorded before compiled verification, so later production-fix record had no new source delta). Actual candidate a503 compiled Main/Bar/Popup, NI19 and focused16 pass; retained evidence launcher-pending-visibility-20261029 and pushed6d5c997e7. No further refusal investigation expansion. Current-source real Orca focus/AT retry and post-change native dispatch remain missing; regression may run at integration milestone without inventing acceptance."
+    "owner": "root-launcher-refused-rebuilt",
+    "participantRecord": ".warlock-contributor/launcher-refused-rebuilt-verdict.json",
+    "outcome": "Original ELM-UI-005/search-refused independently accepted by Quint5 on source b8049bb20b041d46fd2880aac92752da35d7f267 and rebuilt host e0a2. Actual native refusal has 41 passing checks, retained query and logical invoker focus, real Orca focus, and guarded AT Refresh to current catalog without replacement launch. All five named scenarios now have accepted observations on their recorded tuples; whole UI005 remains unaccepted pending relevant freshness and full frozen-policy review."
   },
   "lastNativeObservation": {
     "report": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-primary-at/native-primary-keyboard-1793215082472811918/report.json",
