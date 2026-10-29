@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 1,
+  "requirement": "ELM-UI-020",
+  "scenario": "offline-recovery",
+  "status": "capacity-fix-verified-real-preparation-only",
+  "scenarioAccepted": false,
+  "requirementAccepted": false,
+  "releaseAccepted": false,
+  "files": {
+    "original-capacity-failure.json.gz": {
+      "sha256": "64554e3b83316ec5cd766e4d866d03c6f30780d70b782e4501b858b61acf8170",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/omarchy-profile-measure-terra-2-v1/profile-prepare-1793301796817080134/report.json",
+      "originalSHA256": "191265a54b07e13f1fc89c70f66443495ee7359c5aa210a1da47861c628dfe71"
+    },
+    "original-76694-manifest.json.gz": {
+      "sha256": "17867c463645a3905f4832be759f1f5284f119634af3fb53322444e04b980643",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/omarchy-profile-measure-terra-2-v1/profile-prepare-1793301796817080134/actual-profile-manifest.json",
+      "originalSHA256": "2aedc25e50b8cb59ea2fedfde4e1eb00e1fd0b74bc08751d444abfbd2ffe7d07"
+    },
+    "original-measurement.json": {
+      "sha256": "3bc931ee5cb01ee4c2f98b8fd0aca8b8b37a3a7545f0994d0775695830024cad",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/omarchy-profile-measure-terra-2-v1/profile-prepare-1793301796817080134/actual-profile-measurement.json",
+      "originalSHA256": "3bc931ee5cb01ee4c2f98b8fd0aca8b8b37a3a7545f0994d0775695830024cad"
+    },
+    "original-prepare-result.json": {
+      "sha256": "065cef6c0768087fd7f009758f4c24c1541bcd2e02336b17dd0a2ccd78bcd480",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/omarchy-profile-measure-terra-2-v1/profile-prepare-1793301796817080134/prepare-result.json",
+      "originalSHA256": "065cef6c0768087fd7f009758f4c24c1541bcd2e02336b17dd0a2ccd78bcd480"
+    },
+    "intermediate-isolation-failure.json.gz": {
+      "sha256": "5c2c4f2d73bbc3e1cccd1f3e29dab2b6aa36e739e057e3a13a66e4f81a28a4bb",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/omarchy-profile-measure-terra-2-v2/profile-prepare-1793302329475066611/report.json",
+      "originalSHA256": "7dfdaf67ee6d3c8708c9b13c8b4a707cf7e33ced7dacb9621aa6b17d97deb313"
+    },
+    "current-preparation-report.json.gz": {
+      "sha256": "2f55ae7a716ab3fe373335d3cd41aa8d2b7cf0cd186c167de239544276ba1265",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/omarchy-profile-measure-root-v3/profile-prepare-1793302557945681012/report.json",
+      "originalSHA256": "b98deadbbd3e45c903b41ae25c847f18f0e7d11a70012ffde74b6a117157423f"
+    },
+    "current-76676-manifest.json.gz": {
+      "sha256": "ab3907cec44cd35093ef68fe654d360ef2654a09d5d77ac4194e216fe9670117",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/omarchy-profile-measure-root-v3/profile-prepare-1793302557945681012/actual-profile-manifest.json",
+      "originalSHA256": "573c6a235957152972744a81503cdde56b5634d52646ab15f11330a3e48615a2"
+    },
+    "current-measurement.json": {
+      "sha256": "3b8ac734444aff57a2b4aa547baeb4ea171e52a612c766aaa9be976b06d4a377",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/omarchy-profile-measure-root-v3/profile-prepare-1793302557945681012/actual-profile-measurement.json",
+      "originalSHA256": "3b8ac734444aff57a2b4aa547baeb4ea171e52a612c766aaa9be976b06d4a377"
+    },
+    "current-prepare-result.json": {
+      "sha256": "945780b064a313999fc271e90e403f2a084854bd7d9d03ad1d1db3f8f4b3a1da",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/omarchy-profile-measure-root-v3/profile-prepare-1793302557945681012/prepare-result.json",
+      "originalSHA256": "945780b064a313999fc271e90e403f2a084854bd7d9d03ad1d1db3f8f4b3a1da"
+    },
+    "component-report.json.gz": {
+      "sha256": "d510399ac9bb808bb228b0f7eb090ad86efa549b8ce0d27ca5ef0ce925a894c4",
+      "originalPath": "/home/charles/Warlock/implementation/warlock/qa/runs/offline-recovery-1793301994620449705/report.json",
+      "originalSHA256": "2d528536839b9bd7a23b695294023ced277e8cae4ef4781fc5ba766c137c60fc"
+    },
+    "quint-named.stdout": {
+      "sha256": "3b5e3d52e36ae7034d6369b1ff2f03b220ede075ec4c24583239b97a4f453c42",
+      "originalPath": "/home/charles/Warlock/implementation/warlock/qa/runs/offline-recovery-1793301994620449705/named.stdout",
+      "originalSHA256": "3b5e3d52e36ae7034d6369b1ff2f03b220ede075ec4c24583239b97a4f453c42"
+    },
+    "quint-sampled.stdout.gz": {
+      "sha256": "3db395c304e59a5bfe31ca2241f0e02386bba79c80f5f83a124503bd63725691",
+      "originalPath": "/home/charles/Warlock/implementation/warlock/qa/runs/offline-recovery-1793301994620449705/sampled-safety.stdout",
+      "originalSHA256": "8e7ca4302b9193dfa896eea4b42ec73208a217a91d08ceeef08dd96834ef8b14"
+    },
+    "prepare-runner.py": {
+      "sha256": "07a28ef50be34b8f3323552cc30913233d2815acbde9686e02dff9c1f1c43b84",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/omarchy-profile-measure-root-v3/runner.py",
+      "originalSHA256": "07a28ef50be34b8f3323552cc30913233d2815acbde9686e02dff9c1f1c43b84"
+    },
+    "prepare-worker.py": {
+      "sha256": "afc87ee77c69f6d3c8bcbda8fa9869f00199f62c0f529a4a1540408d360eecad",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/omarchy-profile-measure-root-v3/prepare-worker.py",
+      "originalSHA256": "afc87ee77c69f6d3c8bcbda8fa9869f00199f62c0f529a4a1540408d360eecad"
+    },
+    "source-qualification.py": {
+      "sha256": "6b9b460c7255e7b3c57ee79741e0c5943f421c761c854b35106114396190cf75",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/omarchy-profile-measure-root-v3/fresh_candidate.py",
+      "originalSHA256": "6b9b460c7255e7b3c57ee79741e0c5943f421c761c854b35106114396190cf75"
+    },
+    "independent-source-initial.md": {
+      "sha256": "84021a2631af122d907719afce2dda9eda65362fe9083e359a8558aa15fc7770",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-2/omarchy-profile-measure/source-review.md",
+      "originalSHA256": "84021a2631af122d907719afce2dda9eda65362fe9083e359a8558aa15fc7770"
+    },
+    "independent-source-v2.md": {
+      "sha256": "8606286347003f9323c5ddfba71181f985c3286a1c2ba35d85b43cda1e84620b",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-2/omarchy-profile-measure-v2/source-review.md",
+      "originalSHA256": "8606286347003f9323c5ddfba71181f985c3286a1c2ba35d85b43cda1e84620b"
+    },
+    "independent-source-v3.md": {
+      "sha256": "5563f64618cbde1f1c74586c682e6bb80d126142936ea84b0760a6f61b1fca07",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-2/omarchy-profile-measure-v3/source-review.md",
+      "originalSHA256": "5563f64618cbde1f1c74586c682e6bb80d126142936ea84b0760a6f61b1fca07"
+    }
+  },
+  "sourceHashes": {
+    "implementation/warlock/adapter/recovery_profile.py": "ace346503b5afd2c691748e7c2e1c25394fd81cc0a90be60525ff6cd85a78142",
+    "implementation/warlock/qa/check-offline-recovery.py": "a6be948f7737dff2b365fece9a2489c4e83a8547ecead557d5fca62803eb89f1",
+    "implementation/warlock/qa/offline-recovery.qnt": "b6c2fb024c1d3e8be87e1ae7290896667eecc2cee1aae81b87337d6c5d3a4848",
+    "implementation/warlock/qa/offline-recovery_test.qnt": "74c6f02d0e549714d3f973c30180a6d44c24d0b2ac17df063cc73c59095e7815",
+    "implementation/warlock/qa/native-omarchy-profile-rollback.py": "c438aea34d5b126ab6014a9e7016de8bc440ba4c3bdc121fefa48331956ce2c3"
+  },
+  "limitsBytes": {
+    "profileCommandManifest": 1048576,
+    "otherMetadata": 65536,
+    "preferences": "Existing per-store bounds remain unchanged."
+  },
+  "trials": [
+    {
+      "phase": "original-capacity-refusal",
+      "session": 38151,
+      "terminal": 1,
+      "unit": "qa-harness-7ed75cdc7dcf4c3f97dc2fad760bf865.scope",
+      "invocation": "5c0cf6fd32774840a2233fbd3a3c813b",
+      "passed": false,
+      "prepareInvoked": true,
+      "manifestBytes": 76694,
+      "manifestBound": 65536,
+      "normalCleanup": true
+    },
+    {
+      "phase": "component-and-unchanged-model",
+      "session": 64368,
+      "terminal": 0,
+      "unit": "qa-harness-24e24c7da52143ac8ba2595de8e159c5.scope",
+      "invocation": "7c9c1b005dcf4493baf2d929a5e444de",
+      "passed": true,
+      "profileChecks": 47,
+      "explicitNamedModelTests": 10,
+      "sampledTraces": 1000,
+      "witnessCounts": {
+        "predecessorStarted": 430,
+        "failedHostRecovered": 38,
+        "damagedCandidateRecovered": 93,
+        "uncertainSelectionObserved": 43,
+        "stagingCrashRetainsCandidate": 107
+      }
+    },
+    {
+      "phase": "intermediate-fixture-isolation-failure",
+      "session": 27508,
+      "terminal": 1,
+      "unit": "qa-harness-01bb653edbff4c4c8d61d753ea9c086f.scope",
+      "invocation": "4f81932175c94399ae0860ba88a23f26",
+      "passed": false,
+      "prepareInvoked": false,
+      "unexpectedDescendantsRemovedByOuterHost": 3,
+      "remainingDescendants": [],
+      "runtimeGone": true
+    },
+    {
+      "phase": "corrected-current-real-preparation",
+      "session": 32343,
+      "terminal": 0,
+      "unit": "qa-harness-61328e22bf6d4bb98cdabd7acf9d9702.scope",
+      "invocation": "6efab18d103748c3b1ffc593fb4cbf72",
+      "passed": true,
+      "prepareInvoked": true,
+      "manifestBytes": 76676,
+      "manifestBound": 1048576,
+      "otherMetadataBound": 65536,
+      "predecessorFiles": 449,
+      "candidateFiles": 204,
+      "normalCleanup": true
+    }
+  ],
+  "observations": [
+    "Actual validated resource inventories plus four coherent preference digests exceeded the old shared metadata limit; real production Profile.prepare refused at profile.json write. This is a measured selected-profile capacity defect, not proof of full release closure.",
+    "The production fix enlarges only profile.json reads and writes. Default control/selection metadata and stricter preference limits, descriptor validation, resource hashes, locking, managed-child ownership, atomic selection and Unknown reconciliation are unchanged. Existing Quint model is unchanged.",
+    "All original model and Profile/CLI/lifecycle/fault cases plus new large-resource and hard-bound rejection cases pass. Sampled safety and positive witnesses do not prove filesystem or native GUI behavior.",
+    "The first repeat correctly stopped at the activation-free bus guard: the new module facade had shadowed the host class instead of replacing the original module binding used by the inherited session constructor. The one-line fixture correction targets host.original; all actual bus-peer/socket/audio/system-bus and timeout guards remain mandatory. Failed cleanup with unexpected children remains a failed result even though the outer host removed them.",
+    "Corrected real preparation passes under the same five-second worker boundary; measured and persisted manifests are byte-equal, preference baseline digests match the failed trial, and cleanup has no unexpected or remaining descendants. Neither component is launched by this phase."
+  ],
+  "missingObservations": [
+    "Actual current candidate guidance dismissal and later host failure/absence",
+    "Actual owned editable GTK draft content through sequential failure/rollback/predecessor checkpoints",
+    "Standalone documented offline rollback and usable installed Omarchy predecessor with source-backed retained effective preference observation",
+    "Independent original offline-recovery verdict, complete reproducible release dependency closure, applicable wider AT/IME and main-session deployment"
+  ]
+}

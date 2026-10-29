@@ -1,0 +1,22 @@
+{
+  "phase": "actual Profile.prepare only; no activation, candidate launch or rollback",
+  "nativeAcceptance": false,
+  "offlineRecoveryObserved": false,
+  "passed": false,
+  "prepareInvoked": true,
+  "measurement": {
+    "bytes": 76694,
+    "sha256": "2aedc25e50b8cb59ea2fedfde4e1eb00e1fd0b74bc08751d444abfbd2ffe7d07",
+    "bound": 65536,
+    "candidateFiles": 204,
+    "predecessorFiles": 449,
+    "baselineHashes": {
+      "taskbar.json": "4472894f8884c31f6c6c060310a9c47644d0bec63f044ee63c7c5232dfaf93d0",
+      "settings.json": "ff4efa4630572b1622bb8c2161dbdefed98672116e6cb47dea827dae23ba5ee0",
+      "shortcuts.json": "1c4b39224d4e2c862fd9d583027fe3fce0214b91bcdf1273999cad7c08bac99a",
+      "motion.json": "1adc1845509513e2cf84f3cbccc4f82e051a1f575b2356d5b1a545614c2f3fc9"
+    }
+  },
+  "error": "Refused('Recovery metadata byte bound')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/charles/.local/state/warlock-team/20261028/native-rebuild/omarchy-profile-measure-terra-2-v1/prepare-worker.py\", line 41, in main\n    result['prepareResult']=recovery.Profile(Path(packet['profile'])).prepare(predecessor,candidate,str(state))\n                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/charles/Warlock/implementation/warlock/adapter/recovery_profile.py\", line 287, in prepare\n    write_at(root, 'profile.json', encode(manifest))\n    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/charles/Warlock/implementation/warlock/adapter/recovery_profile.py\", line 83, in write_at\n    raise Refused('Recovery metadata byte bound')\nendpoint.Refused: Recovery metadata byte bound\n"
+}

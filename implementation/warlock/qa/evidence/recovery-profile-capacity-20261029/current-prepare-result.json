@@ -1,0 +1,27 @@
+{
+  "phase": "actual Profile.prepare only; no activation, candidate launch or rollback",
+  "nativeAcceptance": false,
+  "offlineRecoveryObserved": false,
+  "passed": true,
+  "prepareInvoked": true,
+  "measurement": {
+    "bytes": 76676,
+    "sha256": "573c6a235957152972744a81503cdde56b5634d52646ab15f11330a3e48615a2",
+    "bound": 1048576,
+    "otherMetadataBound": 65536,
+    "candidateFiles": 204,
+    "predecessorFiles": 449,
+    "baselineHashes": {
+      "taskbar.json": "4472894f8884c31f6c6c060310a9c47644d0bec63f044ee63c7c5232dfaf93d0",
+      "settings.json": "ff4efa4630572b1622bb8c2161dbdefed98672116e6cb47dea827dae23ba5ee0",
+      "shortcuts.json": "1c4b39224d4e2c862fd9d583027fe3fce0214b91bcdf1273999cad7c08bac99a",
+      "motion.json": "1adc1845509513e2cf84f3cbccc4f82e051a1f575b2356d5b1a545614c2f3fc9"
+    }
+  },
+  "prepareResult": {
+    "status": "Prepared",
+    "schema": 1,
+    "route": "predecessor",
+    "stateHome": "predecessor-state"
+  }
+}

@@ -27,6 +27,9 @@ from motion_preferences import snapshot as motion_snapshot
 
 PREFERENCES = ('taskbar.json', 'settings.json', 'shortcuts.json', 'motion.json')
 BOUND = 65536
+# Two reviewed command/resource inventories share one profile manifest.
+# Selection records and preference copies retain their existing smaller bounds.
+PROFILE_BOUND = 1024 * 1024
 
 
 class CommitUnknown(Exception):
@@ -66,20 +69,20 @@ def directory(path):
         raise
 
 
-def read_at(fd, name):
+def read_at(fd, name, bound=BOUND):
     child = os.open(name, os.O_RDONLY | os.O_NOFOLLOW, dir_fd=fd)
     try:
         private(child)
-        body = os.read(child, BOUND + 1)
-        if len(body) > BOUND:
+        body = os.read(child, bound + 1)
+        if len(body) > bound:
             raise Refused('Recovery metadata byte bound')
         return body
     finally:
         os.close(child)
 
 
-def write_at(fd, name, body):
-    if len(body) > BOUND:
+def write_at(fd, name, body, bound=BOUND):
+    if len(body) > bound:
         raise Refused('Recovery metadata byte bound')
     child = os.open(name, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW,
                     0o600, dir_fd=fd)
@@ -172,7 +175,7 @@ class Profile:
             os.close(root)
 
     def manifest(self, root):
-        value = decode(read_at(root, 'profile.json'))
+        value = decode(read_at(root, 'profile.json', PROFILE_BOUND))
         exact(value, ['schema', 'predecessor', 'candidate', 'baseline'])
         if type(value['schema']) is not int or value['schema'] != 1:
             raise Refused('Unsupported recovery profile schema')
@@ -284,7 +287,7 @@ class Profile:
             manifest = {'schema': 1, 'predecessor': predecessor, 'candidate': candidate,
                         'baseline': {name: digest(bodies[name]) if name in bodies else None
                                      for name in PREFERENCES}}
-            write_at(root, 'profile.json', encode(manifest))
+            write_at(root, 'profile.json', encode(manifest), PROFILE_BOUND)
             selected = {'schema': 1, 'route': 'predecessor', 'stateHome': 'predecessor-state'}
             self.publish(root, selected)
             return {'status': 'Prepared', **selected}

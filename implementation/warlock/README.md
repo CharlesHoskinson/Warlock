@@ -63,6 +63,12 @@ observations and explicit relevant source correspondence. Its five named scenari
 records retain their original observed tuples; the older late-response race was
 not rerun on the current host. This does not accept IME or the full release.
 
+The [recovery profile capacity fix](qa/evidence/recovery-profile-capacity-20261029/manifest.json)
+allows the measured resource-heavy profile to prepare without enlarging control
+or preference limits. The repeated real preparation and existing recovery model/CLI
+checks pass. This has not yet exercised candidate failure, editable draft survival
+or an actual Omarchy rollback; ELM-UI-020 remains open.
+
 Original ELM-UX-004 pin-order persistence is independently accepted on the
 recorded tuple: the current compiled replay and actual native pin, reorder,
 private storage and shell restart preserve Editor and Files in the chosen order.

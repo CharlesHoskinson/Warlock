@@ -125,6 +125,40 @@ if role=='hold':
           {profile / 'baseline' / name for name in recovery.PREFERENCES})
     check('PrivateProfileAndCopies', all(stat.S_IMODE(p.stat().st_mode) ==
           (0o700 if p.is_dir() else 0o600) for p in profile.rglob('*')))
+    # Resource-heavy command inventories must not widen small control records.
+    resources = OUT / 'command-resources'; resources.mkdir(mode=0o700)
+    resource_hashes = {}
+    for index in range(256):
+        resource = resources / ('resource-' + str(index))
+        resource.write_bytes(str(index).encode())
+        resource_hashes[str(resource)] = recovery.artifact_sha(resource)
+    large_predecessor = {**predecessor, 'files': {**predecessor['files'], **resource_hashes}}
+    large_candidate = {**candidate, 'files': {**candidate['files'], **resource_hashes}}
+    large = recovery.Profile(OUT / 'resource-profile')
+    large.prepare(large_predecessor, large_candidate, str(source))
+    large_manifest = (large.path / 'profile.json').read_bytes()
+    check('ResourceManifestBeyondOldControlBoundPrepares', recovery.BOUND < len(large_manifest)
+          <= recovery.PROFILE_BOUND and large.status()['route'] == 'predecessor')
+    large.activate(); large_result = large.rollback()
+    check('LargerManifestRetainsOfflinePreferenceRecovery', large_result['status'] == 'Recovered'
+          and all((large.path / large_result['stateHome'] / 'warlock' / name).read_bytes()
+                  == body for name, body in baseline.items()) and not events.exists())
+    control = large.path / 'selection.json'; control_before = control.read_bytes()
+    control.write_bytes(control_before + b' ' * (recovery.BOUND + 1 - len(control_before)))
+    refuses('SelectionStillRejectsBeyondOriginalBound', large.status)
+    control.write_bytes(control_before)
+    manifest_path = large.path / 'profile.json'
+    manifest_path.write_bytes(large_manifest + b' ' * (recovery.PROFILE_BOUND + 1 - len(large_manifest)))
+    refuses('CommandManifestRetainsSeparateHardReadBound', large.status)
+    manifest_path.write_bytes(large_manifest)
+    fd = recovery.directory(large.path)
+    try:
+        refuses('ControlWriteRetainsOriginalBound', lambda: recovery.write_at(fd, 'oversized-control', b'x' * (recovery.BOUND + 1)))
+        refuses('CommandWriteRetainsSeparateHardBound', lambda: recovery.write_at(fd, 'oversized-command', b'x' * (recovery.PROFILE_BOUND + 1), recovery.PROFILE_BOUND))
+    finally:
+        os.close(fd)
+    check('OversizedMetadataWritesLeaveNoFiles', not (large.path / 'oversized-control').exists()
+          and not (large.path / 'oversized-command').exists() and large.status()['route'] == 'predecessor')
     before = (profile / 'selection.json').read_bytes()
     check('StatusDoesNotChangeSelection', cli('status')['route'] == 'predecessor'
           and (profile / 'selection.json').read_bytes() == before)

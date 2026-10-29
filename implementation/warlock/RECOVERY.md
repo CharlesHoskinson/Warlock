@@ -75,9 +75,14 @@ compatibility. The first run's parent-only shutdown left a child for the
 protected host to remove; that failed report and limited bar capture remain
 preserved alongside the corrected startup observation.
 
-The actual combined predecessor/candidate profile must still be measured and
-validated against the 65,536-byte metadata bound. The resource inventory is
-partial; a static lower-bound estimate is not a complete runnable package.
-Candidate failure, standalone rollback, compatible preferences and draft
-preservation, conflicting-owner refusal and main-session deployment remain
-open. See the [bounded Omarchy evidence](qa/evidence/omarchy-predecessor-startup-20261029/manifest.json).
+Command manifests (`profile.json`) have a separate 1,048,576-byte limit.
+Selection/control metadata retains its 65,536-byte limit, and preference copies
+retain their stricter store bounds. A measured 76,694-byte private profile was
+refused by the old shared limit; after the fix, the repeated real preparation
+accepts its 76,676-byte manifest with the same four preference baselines. Neither
+component was launched by this phase. The conservative resource inventory is
+partial and does not establish a complete runnable release package.
+Candidate failure, standalone rollback, effective predecessor preferences and
+editable draft preservation, conflicting-owner refusal and main-session
+deployment remain open. See the
+[capacity evidence](qa/evidence/recovery-profile-capacity-20261029/manifest.json). See the [bounded Omarchy evidence](qa/evidence/omarchy-predecessor-startup-20261029/manifest.json).
