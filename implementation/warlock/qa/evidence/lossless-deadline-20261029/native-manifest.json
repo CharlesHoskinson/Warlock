@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "requirement": "ELM-REV-007",
+  "observation": "Production native deadline wire protocol",
+  "status": "partial",
+  "nativeWireProtocolObservation": "pass",
+  "requirementAccepted": false,
+  "nativeGUIAcceptance": false,
+  "releaseAccepted": false,
+  "originalScenario": "Previously accepted revision-007 and the committed 39-receipt production worker evidence remain unchanged. This is additional ubiquitous EARS evidence, not a new scenario.",
+  "observations": {
+    "file": "native-observations.json",
+    "sha256": "592e291038436f715cf78d14a44728fa870c5a3a066c69d1e38867ab8ad83782",
+    "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/lossless-authority/native-deadline-wire-v1/protected-linked.stdout",
+    "exactRawBytes": true
+  },
+  "independentReview": {
+    "file": "native-independent-review.md",
+    "sha256": "9e208eb3612174b2e56673164fbb9704180f45b905d2d36d871fd59cb1e90824",
+    "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-2/native-deadline-wire-v1/final-review.md",
+    "exactRawBytes": true,
+    "disposition": "PASS for the bounded native wire protocol observation."
+  },
+  "protectedExecution": {
+    "exitCode": 0,
+    "exitObservedBy": "Root coordinator; independent reviewer did not rerun.",
+    "unit": "qa-harness-5c2bab3f4dfe454e9e4dfbc2450705a3.scope",
+    "invocation": "ce97ca982a8742f387063351f16a8c08",
+    "reportedCoreLimit": 1,
+    "stderr": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/lossless-authority/native-deadline-wire-v1/protected-linked.stderr",
+      "sha256": "2eb6744a88d1d47be5f4051ef70a1d6d5fdb4c3936d572d6ee9a057c8d739b7d"
+    },
+    "actualSubprocessCount": 20,
+    "actualCommands": "Exact per-unit dependency scans and compilation, production URI linkage, ldd and harness argv, outputs and exits are preserved in native-observations.json."
+  },
+  "installedQAFileSHA256": {
+    "native-deadline-wire.cpp": "a5312cf08e0d1bb808baf77c49cde91ae50b15f0f7310c22946ebaf193eaa492",
+    "check-native-deadline-wire.py": "e10c965c88da7ff03acb546ac3d8f98dcec9b2372eb5183a579a474f9c3001be"
+  },
+  "inputEvidence": {
+    "file": "observations.json",
+    "sha256": "98f0504aab46254df52a3545362fac354500b57d3816c7aba8b09411459ed847",
+    "scope": "Three actual retained worker Acquire/Cancel objects are semantically reserialized into native protocol inputs. These are not original JavaScript wire-byte captures."
+  },
+  "receiptCounts": {
+    "total": 152,
+    "passed": 152,
+    "failed": 0,
+    "uniqueNames": 152,
+    "firstAcquire": 31,
+    "secondAcquire": 31,
+    "secondCancel": 31,
+    "distinctNativeJobFirst": 15,
+    "distinctNativeJobSecond": 15,
+    "coherentNumericBaseline": 15,
+    "directNumericTypeRejections": 14
+  },
+  "checkedJobCounters": [
+    "binding.lifetime",
+    "binding.session",
+    "binding.frontend",
+    "context.lifetime",
+    "context.incarnation",
+    "context.output",
+    "context.privacy",
+    "context.rendering",
+    "context.scene",
+    "context.content",
+    "request",
+    "origin",
+    "clock",
+    "deadline"
+  ],
+  "buildTuple": {
+    "sourcePins": {
+      "native/preview_wire.hpp": "2b02108a819e97106cbf38e420871bc4ee10656fd6f98905f25c30fd838d283d",
+      "native/preview_client.hpp": "b4eb7386f0bfae58aaf07816b0b70f7605c921694ff30681bad848abac11fb38",
+      "native/client_producer.hpp": "b93355d804613a68593bfd2447295287ac04c76427007c5772e6244b4c51d990",
+      "native/preview_broker.hpp": "9c57428130093f8d815b7851004f103897deca278bbe4196e2116bec85a323ed",
+      "native/preview_uri.cpp": "9ea85c70a77841c5035dce95f61932f92153f607e7be78bbd122819a3c3d8f77",
+      "qa/check-deadline-bridge.py": "e7fb7ac8687914d623f06496c527c32151ee8399e26661d1c19cd2ce74421c40",
+      "qa/DeadlineBridgeReplay.elm": "e7a0dd41a597a8298bef90c7122ea9a63d9d982ef0ad4dade1bd078a722e5468",
+      "qa/deadline-bridge-replay.cjs": "bd6632d1da77611874ec07b27e41b90f7743747b9aac49303625fc2d93c41753"
+    },
+    "compileDependencyCount": 706,
+    "linkedProviderCount": 69,
+    "toolCount": 6,
+    "packageMetadataCount": 3,
+    "compiledSHA256": "2aff63178872e34852c0b2c8b42a474c4430724bc5e168547c303c3ced59618b",
+    "checks": "Recorded source pins, fixture sources, 706 dependencies, 69 linked providers, six tools and three package metadata files were independently rehashed at integration with no changed or missing file. The wrapper checks source inputs before and after its build/run. Temporary object, binary and dependency-file paths are recorded ephemeral outputs, not claimed surviving artifacts. Captured ldd providers are not exhaustive operating-system or compiler provenance."
+  },
+  "failureHistory": [
+    {
+      "stdout": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/lossless-authority/native-deadline-wire-v1/protected-installed.stdout",
+      "stdoutSHA256": "848f12d1d2d5f1e34dd2cca14d34eb4fd3b6c019b5a5fd612ec4ed112a2e5800",
+      "stderr": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/lossless-authority/native-deadline-wire-v1/protected-installed.stderr",
+      "stderrSHA256": "59f9b697612a0b2826a298a3a4473ac45124a483b0b017369a0e7156666f7faa",
+      "result": "Initial link failed on unresolved production preview::uri::encode. No codec assertion executed. Root then compiled and linked the actual pinned native/preview_uri.cpp with per-unit dependencies; no stub or decoder waiver. Old failure evidence is preserved.",
+      "installedChecker": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/lossless-authority/native-deadline-wire-v1/failed-first-installed-checker.py",
+        "sha256": "1ec78d750e13cd15420558c608e580d64eaed9fe215ffd7f4983976bfab90438"
+      }
+    }
+  ],
+  "observed": [
+    "The compiled harness includes actual production client_producer.hpp and calls decodeJob, decodeClientCommand and Wire.job. Independent expected literals are compared across all 14 counters.",
+    "Retained worker Acquire/Cancel semantics decode with exact expected family and job; changed expected-deadline controls are rejected.",
+    "Two distinct native-only jobs preserve independently checked large counter strings and adjacent deadline strings through the production encoder and parser.",
+    "A coherent all-string-1 job successfully decodes. Changing only one of its 14 fields to JSON number 1 requires the production decodeJob Native string field rejection before expected-job comparison."
+  ],
+  "missing": [
+    "Continuous Popup, adapter and native host transport is not exercised. Main.nativeEvents is a separate route; no coverage of it is inferred.",
+    "Actual native clock reading, start event and deadline retention through retry are not observed.",
+    "Other deadline-bearing fields and whole ubiquitous ELM-REV-007 coverage remain unestablished.",
+    "No native GUI, full requirement or release acceptance follows from the protocol observation."
+  ],
+  "frozenTiming": "The supplied worker intervals and JavaScript watchdog remain fixture values, not observed native clock or timing proof. This native harness tests codec behavior and does not change the original policy deadline or scenario."
+}
