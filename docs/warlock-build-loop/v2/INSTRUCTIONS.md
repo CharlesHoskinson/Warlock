@@ -40,6 +40,10 @@ At each completed, reviewed integration batch, reconcile the authorized GitHub b
 
 At integration milestones, assess a reversible Omarchy trial using the Omarchy skill. Prepare and verify installation, draft preservation, rollback and a bounded smoke test before activation. Use an isolated trial when main-session readiness is missing; do not restart the user's main compositor incidentally or deploy a known failing path as ready. Record the exact blocker and continue independent product work when a trial cannot proceed. Keep the living wiki synchronized with published batches and actual deployment outcomes.
 
+## Fuzzing and Elm contracts
+
+User requirement added October 29, 2026: follow [Fuzzing and contracts for Warlock](FUZZING-CONTRACTS.md). Changed domain transitions and refactors declare original-requirement preconditions, postconditions and invariants. Use opaque validated custom types and explicit boundary errors, plus meaningful property/sequence fuzzing with reproducible seeds, positive controls, retained counterexamples and proportional protected execution. Tests must exercise actual production routes and preserve effect admission/lifetime semantics. Neither types, fuzzing nor sampled Quint checks substitute for original native acceptance.
+
 ## Standing architecture review
 
 User authorization added October 29, 2026: keep the [Astra-supervised architectural review and staged refactor](ARCHITECTURE-REVIEW.md) in this completion loop alongside the twelve existing team roles. Study GNOME/KDE primary sources and current Warlock boundaries, adopt justified FRP/Elm lessons, and review architecture at sprint boundaries and integration batches. Preserve the original Windows-like taskbar, pinning and preview experience and all original acceptance obligations. The review must produce concrete ownership/dependency decisions and reversible production migration steps; research does not replace delivery. Coordinate through authenticated AgentBus, report actual worker liveness, and preserve product/native WIP limits.

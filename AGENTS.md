@@ -66,6 +66,11 @@ RTX 5080 acceleration, and a living LLM Wiki journal. On this host:
   Distinguish proposed ideas, implementation, bounded checks and original
   acceptance. Store neither credentials nor full conversation transcripts.
 
+## Research and contract testing
+
+- User standing instruction: use Scrapling for all web browsing and downloads. The installed CLI is `scrapling`; use captured source material and primary references. If a required fetch is unavailable, report the actual limitation rather than silently changing tools. Do not copy full copyrighted papers into the repository.
+- User standing instruction: include fuzzing and Elm-style design by contract in development/refactoring. Follow `docs/warlock-build-loop/v2/FUZZING-CONTRACTS.md`: validated opaque types, explicit errors and invariants, production-route property/sequence tests, reproducible seeds and retained counterexamples, protected proportional QA. Preserve original scenario obligations and Quint correspondence.
+
 ## Privileged operations
 
 Use the user's graphical askpass mode, not plain sudo or a request that the user

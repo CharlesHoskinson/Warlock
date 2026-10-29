@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "owner": "sol",
-  "updatedUTC": "2026-10-29T22:19:39.641511+00:00",
+  "updatedUTC": "2026-10-29T22:26:44.083931+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
@@ -2804,5 +2804,11 @@
     "productionWIPLimit": 1,
     "nativeWIPLimit": 1,
     "acceptance": "Review and proposals do not establish production, native or release acceptance."
+  },
+  "developmentContracts": {
+    "instruction": "docs/warlock-build-loop/v2/FUZZING-CONTRACTS.md",
+    "scope": "Changed domain transitions, protocol boundaries, reducers, persistence and architecture refactors",
+    "evidence": "Explicit original contracts; meaningful production-route fuzz properties, seeds and retained failures; native acceptance remains separate",
+    "webResearch": "Scrapling for browsing and downloads"
   }
 }
