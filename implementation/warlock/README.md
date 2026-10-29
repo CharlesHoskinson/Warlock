@@ -915,3 +915,19 @@ exact GIO arguments, receipts and normal cleanup are recorded in
 A Submitted receipt establishes native launch submission. Applicable native AT,
 enlarged/dense menu coverage and independent original UI-004/UI-008 acceptance
 remain separate release obligations.
+
+### Pure surface snapshot contract
+
+`SurfaceSnapshot` now owns the opaque validated presentation value, codec and
+action envelope. `OutputController` and `Presentation` import this pure contract;
+`SurfaceRenderer` renders its read-only details and forwards its previous API.
+The existing decoder/action logic and render body are preserved. The indirect
+announcement-to-HTML dependency remains a separate later migration.
+
+[Recorded verification](qa/evidence/pure-surface-snapshot-20261029/manifest.json)
+includes optimized Main/Bar/Popup compilation, 221 differential codec cases
+(200 seeded valid applications frames and 21 fixed boundaries), 15 fixed
+presentation-sequence assertions, and the unchanged seven group-selection and
+eleven output-retirement checks. These are bounded CPU/source results; they do
+not establish native taskbar/preview/AT acceptance or repair the renderer failure.
+The seed is `0x5eed1234`; no randomized sequence coverage or shrinking is claimed.

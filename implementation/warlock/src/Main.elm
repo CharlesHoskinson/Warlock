@@ -9,7 +9,6 @@ import Json.Encode as E
 import Process
 import Shell
 import SurfaceController as Controller
-import SurfaceRenderer
 import Task
 import TaskbarShell
 import OutputController as Outputs

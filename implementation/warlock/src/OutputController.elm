@@ -12,7 +12,7 @@ import Json.Encode as E
 import Surface
 import OutcomeAnnouncements
 import SurfaceController as Controller
-import SurfaceRenderer
+import SurfaceSnapshot
 import UnsentOperation
 import UInt64 exposing (Counter)
 
@@ -70,13 +70,13 @@ frame ((Model model) as current) = E.object
     [("viewProtocol",E.int 1),("kind",E.string "view-frame"),("revision",E.string (UInt64.string model.revision)),("views",E.list encodeScope model.views),("focusOwner",model.selected |> Maybe.map encodeScope |> Maybe.withDefault E.null),("popupOwner",owner current |> Maybe.map encodeScope |> Maybe.withDefault E.null),("frame",Controller.frame model.controller),("announcer",model.selected |> Maybe.map (\scope -> E.object [("scope",encodeScope scope),("surface",E.string (if owner current/=Nothing then "popup" else "bar"))]) |> Maybe.withDefault E.null),("announcement",OutcomeAnnouncements.encode model.announcements)]
 
 lease : Controller.Model -> Maybe Counter
-lease model = SurfaceRenderer.decode (Controller.frame model) |> Result.toMaybe |> Maybe.map SurfaceRenderer.lease
+lease model = SurfaceSnapshot.decode (Controller.frame model) |> Result.toMaybe |> Maybe.map SurfaceSnapshot.lease
 
 freshRelocationPossible : Controller.Model -> Bool
 freshRelocationPossible model =
-    case SurfaceRenderer.decode (Controller.frame model) of
+    case SurfaceSnapshot.decode (Controller.frame model) of
         Err _ -> False
-        Ok snapshot -> UInt64.next (SurfaceRenderer.lease snapshot)/=Nothing && (UInt64.next (SurfaceRenderer.publication snapshot) |> Maybe.andThen UInt64.next)/=Nothing
+        Ok snapshot -> UInt64.next (SurfaceSnapshot.lease snapshot)/=Nothing && (UInt64.next (SurfaceSnapshot.publication snapshot) |> Maybe.andThen UInt64.next)/=Nothing
 
 apply : Controller.Event -> Model -> (Model,List Controller.Effect)
 apply event (Model model) =
@@ -174,14 +174,14 @@ updateCore event ((Model model) as current) =
         Renderer raw ->
             let decoder = strict ["viewProtocol","kind","scope","action"]
                     (D.map4 (\version kind scope action -> {version=version,kind=kind,scope=scope,action=action}) (D.field "viewProtocol" D.int) (D.field "kind" D.string) (D.field "scope" scopeDecoder) (D.field "action" D.value))
-            in case (D.decodeValue decoder raw,SurfaceRenderer.decode (Controller.frame model.controller)) of
+            in case (D.decodeValue decoder raw,SurfaceSnapshot.decode (Controller.frame model.controller)) of
                 (Ok callback,Ok snapshot) ->
                     if callback.version/=1 || callback.kind/="view-action" || not (List.member callback.scope model.views) then (current,[]) else
                         let popup = D.decodeValue (D.field "surface" D.string) callback.action==Ok "popup"
                             ownerChange = not popup && model.selected/=Just callback.scope
                             canMove = not ownerChange || freshRelocationPossible model.controller
                         in if (popup && owner current/=Just callback.scope) || not canMove then (current,[]) else
-                            case Surface.resolve (SurfaceRenderer.publication snapshot) (SurfaceRenderer.lease snapshot) callback.action (Controller.desktop model.controller) of
+                            case Surface.resolve (SurfaceSnapshot.publication snapshot) (SurfaceSnapshot.lease snapshot) callback.action (Controller.desktop model.controller) of
                                 Nothing -> (current,[])
                                 Just message ->
                                     let (assigned,ownerEffects)=assignOwner (Just callback.scope) model.controller
@@ -246,9 +246,9 @@ register effects ((Model model) as current) =
                         _ -> Nothing) catalogEffects
                     presentation = E.object [("viewProtocol",E.int 1),("kind",E.string "view-commit"),("projection",frame catalogSettled),("requests",E.list (\value -> value) []),("focus",E.list (\value -> value) catalogFocus)]
                 in (catalogSettled,Just presentation)
-            else case (binding,SurfaceRenderer.decode (Controller.frame model.controller)) of
+            else case (binding,SurfaceSnapshot.decode (Controller.frame model.controller)) of
                 (Just authority,Ok snapshot) ->
-                    let batch = {scope=scoped,revision=model.revision,publication=SurfaceRenderer.publication snapshot,lease=SurfaceRenderer.lease snapshot,binding=authority,wire=text,observations=observations,operations=operations,catalogs=catalogs}
+                    let batch = {scope=scoped,revision=model.revision,publication=SurfaceSnapshot.publication snapshot,lease=SurfaceSnapshot.lease snapshot,binding=authority,wire=text,observations=observations,operations=operations,catalogs=catalogs}
                     in (Model {model|batches=batch::model.batches},Just packet)
                 _ -> (current,Nothing)
 

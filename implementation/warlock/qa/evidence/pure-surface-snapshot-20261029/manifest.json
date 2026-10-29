@@ -1,0 +1,173 @@
+{
+  "scope": "Reviewed production dependency inversion with actual three-root compile, bounded differential properties and unchanged production replays. No original/native/AT/IME/release acceptance.",
+  "requirements": [
+    "ELM-UI-004",
+    "ELM-UX-005",
+    "ELM-UI-016"
+  ],
+  "scenarios": [
+    "taskbar-group",
+    "ux-005",
+    "preview-states"
+  ],
+  "requirementAccepted": false,
+  "nativeAcceptance": false,
+  "sourceHashes": {
+    "src/SurfaceSnapshot.elm": "58298ea43fffba3da6bcc64f1456b47bcde3607d476ef99465be0c98c2b433d7",
+    "src/SurfaceRenderer.elm": "f6c653573c1b73b32df132ada5033a1e34aa2cfa1a2dcbb42be4320a4a98a7b8",
+    "src/OutputController.elm": "aaf1729287ff61595a237201b261e7c1ce11c8f2353c620171f48aff99d86f38",
+    "src/Presentation.elm": "8c635b330641c4c06895357bdaee430b8eeed9b8ae88a83742f703c9f23a5dd6",
+    "src/Main.elm": "7f5ddbe6fedf775e143b684ec60c9bfbdf15606414ed4fafc2c5553b514821c2",
+    "qa/SurfaceSnapshotContracts.elm": "859e33eb242203120e8b2b8fb680431ff24ef707b2c43913185ae4b1d36b9d53",
+    "qa/snapshot-contracts.cjs": "95f69e25bb5552f46bd301189ad478a66243b140cde87695f1d0eeeb4f7450c9",
+    "qa/check-snapshot-contracts.py": "e809edf215c593f2910f3a922995571e7adacee95e550983d990e63f4f4ada4c"
+  },
+  "baseline": {
+    "revision": "36c804af2",
+    "path": "implementation/warlock/src/SurfaceRenderer.elm",
+    "sha256": "48e03f50fd509ea0e42e23d7a1aa26396122350ab824c8dc179952b5bfd28c63",
+    "fixture": "BaselineSurfaceRenderer.elm",
+    "transformation": "Only module declaration renamed for differential worker."
+  },
+  "observed": {
+    "productionRoots": [
+      "Main",
+      "Bar",
+      "Popup"
+    ],
+    "propertyCases": 221,
+    "seed": "0x5eed1234",
+    "randomizedValidApplicationsFrames": 200,
+    "fixedBoundaryFrames": 21,
+    "fixedPresentationSequenceAssertions": 15,
+    "ThreeGroupReplayAssertions": 7,
+    "OutputRetirementReplayAssertions": 11,
+    "failures": [],
+    "shrinking": "No shrinker, complete failing inputs are logged if any; no minimized failure claimed."
+  },
+  "limits": [
+    "Not randomized sequence fuzzing, exhaustive protocol coverage or full model/effect-list differential proof.",
+    "Parsed Elm JSON values cannot establish raw duplicate-key rejection.",
+    "pendingQuery overlay retains existing arbitrary-string API; construction decoder bounds are not separately revalidated.",
+    "Direct policy-to-renderer dependency removed; OutcomeAnnouncements to Announcement to Html remains.",
+    "Original native/keyboard/AT preview/taskbar obligations and renderer first-use failure remain separate."
+  ],
+  "artifacts": {
+    "roots-build.json": {
+      "sha256": "58eb125aec928bdb2b6a71cbe6b93e5f1d11db5ba350df2ed7f5a4ab8b4a50fb",
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/surface-snapshot-build-root-v1/output/report.json"
+    },
+    "contracts-report.json": {
+      "sha256": "5dc799746edec60cc3a01023f661db4b24d2d8e510fca1b823c0d3bbc3c26c07",
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/snapshot-contracts-1793313858480943893/report.json"
+    },
+    "properties.json": {
+      "sha256": "1f4a435a68814e4a2302185c980daaaa57279c17012c746536f2aaea82c37799",
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/snapshot-contracts-1793313858480943893/run-properties.stdout"
+    },
+    "ThreeGroupReplay.json": {
+      "sha256": "198232d4e16727462083fcd07c2cb09a94103232980aed480f2fb191b8be965d",
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/snapshot-contracts-1793313858480943893/ThreeGroupReplay.json"
+    },
+    "OutputRetirementReplay.json": {
+      "sha256": "fae04447d2443859286085f0231e2fb127bf0664d59df0da98432df05d52da6c",
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/snapshot-contracts-1793313858480943893/OutputRetirementReplay.json"
+    },
+    "BaselineSurfaceRenderer.elm": {
+      "sha256": "a9dc0421a9648ae95237b679873bb1d9480f344d5d13abe11cb80506da9ebdfb",
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/snapshot-contracts-1793313858480943893/workspace/qa/BaselineSurfaceRenderer.elm"
+    },
+    "architecture-source-review.md": {
+      "sha256": "06bcb9fe958561f720ae6a451fff2b59b032356a278bd3cfcd6233516059d335",
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/surface-snapshot-root-v1/ASTRA-REVIEW.md"
+    },
+    "terra-source-review.md": {
+      "sha256": "d2f4978386db2d434ce0062774c88707d11a0f89af65b5c88c28946081468369",
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/architecture-astra/terra-4/SNAPSHOT-PROPOSAL-REVIEW.md"
+    },
+    "quint-boundary-review.md": {
+      "sha256": "2aaa4f48f2ac4cc68d5c6324c7149fa453f0b32d9e670ebc7a623521574417c1",
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/architecture-astra/quint-2/SNAPSHOT-BOUNDARY-REVIEW.md"
+    },
+    "roots-Main.stdout": {
+      "sha256": "c771822e267c6c4663e42ced74aff9021670d4dd0c912649d78ce4005f799c72",
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/surface-snapshot-build-root-v1/output/Main.stdout"
+    },
+    "roots-Main.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/surface-snapshot-build-root-v1/output/Main.stderr"
+    },
+    "roots-Bar.stdout": {
+      "sha256": "6b294ba88aea8ceac8b191d8ab973ddca26abbbb4ed18cb8c5e379c7ccbfed19",
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/surface-snapshot-build-root-v1/output/Bar.stdout"
+    },
+    "roots-Bar.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/surface-snapshot-build-root-v1/output/Bar.stderr"
+    },
+    "roots-Popup.stdout": {
+      "sha256": "94aa38650e1972557c037815171bf96b718071e57492688f1adeb377057f1ddd",
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/surface-snapshot-build-root-v1/output/Popup.stdout"
+    },
+    "roots-Popup.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/surface-snapshot-build-root-v1/output/Popup.stderr"
+    },
+    "compile-SurfaceSnapshotContracts.stdout": {
+      "sha256": "a5e9d7ab78926f9928586506c46b56c77753ac90be9e46065838057aef3f92de",
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/snapshot-contracts-1793313858480943893/compile-SurfaceSnapshotContracts.stdout"
+    },
+    "run-properties.stdout": {
+      "sha256": "1f4a435a68814e4a2302185c980daaaa57279c17012c746536f2aaea82c37799",
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/snapshot-contracts-1793313858480943893/run-properties.stdout"
+    },
+    "compile-ThreeGroupReplay.stdout": {
+      "sha256": "685cc922f0718ed20bd90012a39aaa6759fc2c3c77ab811800d502ad3d4a1f87",
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/snapshot-contracts-1793313858480943893/compile-ThreeGroupReplay.stdout"
+    },
+    "run-ThreeGroupReplay.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/snapshot-contracts-1793313858480943893/run-ThreeGroupReplay.stdout"
+    },
+    "compile-OutputRetirementReplay.stdout": {
+      "sha256": "9cf4948e81a02a0def5e2478e4ad62f2c69e2fda5701dc0cd8806fc94844b09e",
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/snapshot-contracts-1793313858480943893/compile-OutputRetirementReplay.stdout"
+    },
+    "run-OutputRetirementReplay.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/snapshot-contracts-1793313858480943893/run-OutputRetirementReplay.stdout"
+    },
+    "compile-SurfaceSnapshotContracts.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/snapshot-contracts-1793313858480943893/compile-SurfaceSnapshotContracts.stderr"
+    },
+    "run-properties.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/snapshot-contracts-1793313858480943893/run-properties.stderr"
+    },
+    "compile-ThreeGroupReplay.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/snapshot-contracts-1793313858480943893/compile-ThreeGroupReplay.stderr"
+    },
+    "run-ThreeGroupReplay.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/snapshot-contracts-1793313858480943893/run-ThreeGroupReplay.stderr"
+    },
+    "compile-OutputRetirementReplay.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/snapshot-contracts-1793313858480943893/compile-OutputRetirementReplay.stderr"
+    },
+    "run-OutputRetirementReplay.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/snapshot-contracts-1793313858480943893/run-OutputRetirementReplay.stderr"
+    }
+  },
+  "graph": {
+    "builtUTC": "2026-10-29T22:43:46.790136+00:00",
+    "sha256": "98e288df93ee96b8ca390ab22c08349e789336b83a720050d3b07d38f8613e7b",
+    "device": "NVIDIA GeForce RTX 5080 Laptop GPU CUDA",
+    "retrievalChecksPassed": 3,
+    "staleFilesAtGate": 0,
+    "limitation": "Source navigation only; C macro coverage partial and Elm lexical."
+  }
+}

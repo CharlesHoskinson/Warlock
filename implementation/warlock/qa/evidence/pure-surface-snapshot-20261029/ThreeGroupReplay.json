@@ -1,0 +1,51 @@
+{
+  "checks": {
+    "pickerOpensWithoutEffect": true,
+    "threeDistinctSelectableRoots": true,
+    "staleScopeDoesNotChoose": true,
+    "selectionRequestsFreshProjection": true,
+    "exactOneSelectedActivation": true,
+    "noLaunch": true,
+    "noAutomaticReplay": true
+  },
+  "familyIds": [
+    "family:1",
+    "family:2",
+    "family:3"
+  ],
+  "wires": [
+    {
+      "protocolVersion": 3,
+      "kind": "projection-request",
+      "binding": {
+        "lifetime": "1",
+        "session": "1",
+        "frontend": "1"
+      },
+      "requestId": "1"
+    },
+    {
+      "protocolVersion": 3,
+      "kind": "window-effect",
+      "effectProtocol": 1,
+      "binding": {
+        "lifetime": "1",
+        "session": "1",
+        "frontend": "1"
+      },
+      "intent": {
+        "request": "1",
+        "generation": "1",
+        "incarnation": "2",
+        "operation": "activate",
+        "context": {
+          "lifetime": "1",
+          "epoch": "1",
+          "output": "1",
+          "revision": "1"
+        }
+      }
+    }
+  ],
+  "scope": "Synthetic admitted scene; actual Desktop and Surface handlers; no native or GUI acceptance"
+}

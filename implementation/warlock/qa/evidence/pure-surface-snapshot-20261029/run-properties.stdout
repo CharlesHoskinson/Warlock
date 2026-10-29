@@ -1,0 +1,23 @@
+{
+  "seed": "0x5eed1234",
+  "budget": 200,
+  "caseCount": 221,
+  "sequenceChecks": {
+    "firstAccepted": true,
+    "nextAccepted": true,
+    "staleIgnored": true,
+    "duplicateIgnored": true,
+    "oldExternalEditRejected": true,
+    "sameLeaseLocalEditRebased": true,
+    "futureEditRejected": true,
+    "wrongLeaseRejected": true,
+    "wrongIdentityRejected": true,
+    "localQueryIsNotAction": true,
+    "invalidClearsSnapshot": true,
+    "freshFrameRecovers": true,
+    "currentCapturedButtonAccepted": true,
+    "oldCapturedButtonRejectedAfterNewPublication": true,
+    "oldCapturedButtonRejectedAfterLeaseRetirement": true
+  },
+  "failures": []
+}
