@@ -1,34 +1,35 @@
 {
   "schema": 1,
   "owner": "sol",
-  "updatedUTC": "2026-10-29T13:51:19.833786+00:00",
+  "updatedUTC": "2026-10-29T14:40:18.999520+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "omarchy-predecessor-offline-recovery",
+    "id": "launcher-refused-painted-feedback",
     "requirements": [
-      "ELM-UI-020"
+      "ELM-UX-029"
     ],
     "scenarios": [
-      "offline-recovery"
+      "launcher-refused"
     ],
     "paths": [
-      "implementation/warlock/RECOVERY.md",
-      "implementation/warlock/qa/native-omarchy-recovery-portable.py",
-      "implementation/warlock/qa/evidence/omarchy-recovery-20261029/manifest.json",
-      "implementation/warlock/qa/evidence/omarchy-recovery-20261029/independent-review.md"
+      "implementation/warlock/qa/native-launcher-refused-painted-portable.py",
+      "implementation/warlock/qa/evidence/launcher-refused-painted-20261029/manifest.json",
+      "implementation/warlock/qa/evidence/launcher-refused-painted-20261029/independent-review.md",
+      "implementation/warlock/qa/evidence/launcher-refused-painted-20261029/native-report.json.gz",
+      "implementation/warlock/qa/evidence/launcher-refused-painted-20261029/full.png"
     ],
-    "before": "Existing recovery profile has historical Warlock predecessor proof, explicitly no accepted actual installed Omarchy predecessor; user requested reversible Omarchy testing and draft preservation.",
-    "after": "Prepare and qualify actual installed Omarchy predecessor descriptor and current candidate in a fresh isolated Wayland/DBus profile, preserve compatible preference copies and drafts, observe failure followed by standalone rollback and normal cleanup. Do not activate main desktop or claim full deployment from static descriptors.",
+    "before": "The current native run recorded one correlated refusal and retained query, but a fixture-only search-field-focus condition blocked capture despite actual focus on the selected entry. Accepted launch scenario already independently accepted; refusal paint and postcapture no-duplicate check remain missing.",
+    "after": "Correct only the extra fixture focus assumption to permit the actually retained current selected entry or search field, preserve identity/query/source/deadlines, and observe genuine painted refusal with one request and no recipient or duplicate through capture. Fix product code only if a production defect is demonstrated.",
     "verification": [
-      "Review exact actual executable/resource/dependency closure and source identities before protected execution; real installed predecessor, no historical Warlock substitute.",
-      "Protected serialized native offline rollback with independent observed predecessor presentation, preserved compatible preferences/drafts and retired candidate ownership; original deadlines and core1."
+      "Reuse source-current protected compiled Desktop/Surface replay evidence after rehashing its101inputs; no behavior/model changes.",
+      "One protected current-tuple physical search/Enter denied native journey, exact correlated Refused outcome, actual full capture independently viewed, preserved query/current focused context and postcapture one-request/no-recipient checks. Original6sec5sec/core1 guards unchanged."
     ],
-    "owner": "root-omarchy-recovery",
-    "participantRecord": ".warlock-contributor/omarchy-predecessor-offline-recovery.json"
+    "owner": "root-launcher-refused",
+    "participantRecord": ".warlock-contributor/launcher-refused-painted-feedback.json"
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -2366,6 +2367,30 @@
       "owner": "root-native",
       "participantRecord": ".warlock-contributor/native-taskbar-pin-independence.json",
       "outcome": "Stopped after two qualification attempts; pin cross-kind evidence unobserved, first setup containment failure then popup timeout and apps namespace collision. Exact fixture fixes prepared for later return; no acceptance."
+    },
+    {
+      "id": "omarchy-predecessor-offline-recovery",
+      "requirements": [
+        "ELM-UI-020"
+      ],
+      "scenarios": [
+        "offline-recovery"
+      ],
+      "paths": [
+        "implementation/warlock/RECOVERY.md",
+        "implementation/warlock/qa/native-omarchy-recovery-portable.py",
+        "implementation/warlock/qa/evidence/omarchy-recovery-20261029/manifest.json",
+        "implementation/warlock/qa/evidence/omarchy-recovery-20261029/independent-review.md"
+      ],
+      "before": "Existing recovery profile has historical Warlock predecessor proof, explicitly no accepted actual installed Omarchy predecessor; user requested reversible Omarchy testing and draft preservation.",
+      "after": "Prepare and qualify actual installed Omarchy predecessor descriptor and current candidate in a fresh isolated Wayland/DBus profile, preserve compatible preference copies and drafts, observe failure followed by standalone rollback and normal cleanup. Do not activate main desktop or claim full deployment from static descriptors.",
+      "verification": [
+        "Review exact actual executable/resource/dependency closure and source identities before protected execution; real installed predecessor, no historical Warlock substitute.",
+        "Protected serialized native offline rollback with independent observed predecessor presentation, preserved compatible preferences/drafts and retired candidate ownership; original deadlines and core1."
+      ],
+      "owner": "root-omarchy-recovery",
+      "participantRecord": ".warlock-contributor/omarchy-predecessor-offline-recovery.json",
+      "outcome": "STOP after two startup-only qualifications. Installed Omarchy startup second native trial passed with independently viewed clock/menu and owned-group cleanup, first failure retained. Full profile/candidate failure/rollback/preferences/drafts/UI020 acceptance remain missing; no main activation."
     }
   ]
 }

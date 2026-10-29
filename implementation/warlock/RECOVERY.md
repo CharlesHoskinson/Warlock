@@ -59,3 +59,25 @@ interactive hosts first. Unmanaged hosts cannot be inferred from a profile lock.
 Component and private native evidence qualify only their recorded scope. The
 accepted Omarchy predecessor, full package, main-session rollback, AT and
 independent release review remain separate gates.
+
+On October 29, the installed Omarchy Quickshell predecessor started in a
+protected private compositor/session bus with a new private HOME. The observed
+menu, workspaces and clock painted, and the retry retired its entire owned
+process group without escalation or remaining descendants. This qualifies
+guarded startup only. It did not prepare or switch a production recovery
+profile, fail the candidate, or exercise offline rollback.
+
+The trial used a stock theme and a private layout derived from packaged
+defaults. Named startup helpers were refused independently of asynchronous
+configuration loading; system-bus and audio endpoints were private/refusing.
+It neither imported the user's customization nor established preference
+compatibility. The first run's parent-only shutdown left a child for the
+protected host to remove; that failed report and limited bar capture remain
+preserved alongside the corrected startup observation.
+
+The actual combined predecessor/candidate profile must still be measured and
+validated against the 65,536-byte metadata bound. The resource inventory is
+partial; a static lower-bound estimate is not a complete runnable package.
+Candidate failure, standalone rollback, compatible preferences and draft
+preservation, conflicting-owner refusal and main-session deployment remain
+open. See the [bounded Omarchy evidence](qa/evidence/omarchy-predecessor-startup-20261029/manifest.json).

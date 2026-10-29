@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "requirement": "ELM-UI-020",
+  "scope": "Guarded private installed Omarchy predecessor startup observation only. No production Profile or rollback execution.",
+  "status": "startup-observed-only",
+  "startupObserved": true,
+  "requirementAccepted": false,
+  "acceptedOmarchyPredecessor": false,
+  "offlineRecoveryObserved": false,
+  "rollbackAccepted": false,
+  "fullGUIAcceptance": false,
+  "mainDesktopActivation": false,
+  "releaseAccepted": false,
+  "attempts": [
+    {
+      "name": "first",
+      "report": {
+        "file": "first-report.json",
+        "sha256": "e67862d190cb5ce73f563f491970bdad1c993a6d831bf6ceb298a9ef1d3b8ed9",
+        "exactRawBytes": true
+      },
+      "image": {
+        "file": "first-full.png",
+        "sha256": "e68ec6886efc72f12bfc59a6b8b9c39dab9a85ef5eeed91e756594b967f3a344",
+        "exactRawBytes": true
+      },
+      "protectedUnit": "qa-harness-54528146b5bd47feb5a6b580c0f8d26d.scope",
+      "invocation": "27d6c5c7bf8443b5b34527f428e159ba",
+      "outerExitCode": 1,
+      "outerExitObservedBy": "Root coordinator",
+      "passed": false,
+      "startupObserved": true,
+      "checkCount": 9,
+      "cleanup": {
+        "cleanupErrors": [],
+        "unexpectedInnerDescendants": [
+          {
+            "pid": 361176,
+            "start": "16169232",
+            "pgid": 361083
+          }
+        ],
+        "remainingDescendants": [],
+        "runtimeGone": true
+      }
+    },
+    {
+      "name": "retry",
+      "report": {
+        "file": "retry-report.json",
+        "sha256": "f93ddf5c5f474659d858483f297395d31aba963b2efb0b548a73bdf2b701c4dc",
+        "exactRawBytes": true
+      },
+      "image": {
+        "file": "retry-full.png",
+        "sha256": "43967e41b37986437984b3820f30be3151ee01a7d35ab379aa5f15c60086feae",
+        "exactRawBytes": true
+      },
+      "protectedUnit": "qa-harness-fe8063b23d354a59ab6264f01f235cf3.scope",
+      "invocation": "4ac55adad77f4a598dd0447648ea0c36",
+      "outerExitCode": 0,
+      "outerExitObservedBy": "Root coordinator",
+      "passed": true,
+      "startupObserved": true,
+      "checkCount": 10,
+      "cleanup": {
+        "cleanupErrors": [],
+        "unexpectedInnerDescendants": [],
+        "remainingDescendants": [],
+        "runtimeGone": true
+      }
+    }
+  ],
+  "independentReview": {
+    "file": "independent-review.md",
+    "sha256": "41ecd7f847d7c02c0fbd786fe09281517264efa320efe73ded1a4aacc6b13009",
+    "exactReviewerBytes": true
+  },
+  "rootAdoption": "Root read the full independent review and adopts the startup-only observed result. UI020, predecessor, full GUI and rollback qualification are not adopted.",
+  "firstFailure": "Nine startup checks passed, but an owned Quickshell helper remained after parent TERM. The outer host cleaned all descendants and runtime; the attempt still failed. First frame showed only bar/dash, not full widget paint.",
+  "retryObservation": "Ten checks passed, including actual read-only owned-instance clock/menu geometry before capture. Root viewed the full image with menu, workspaces, clock and widgets. Owned group retired on TERM, exit -15, no escalation, empty remaining descendants and runtime gone. This is not proof of profile recovery.",
+  "sourceReferences": {
+    "startup-runner.py": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/omarchy-recovery-trial-v1/startup-runner.py",
+      "sha256": "2321feeb8001423afe682650ee63de752be7cc572f5128cfeee88c7cddeabb26"
+    },
+    "startup-runner-cleanup.py": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/omarchy-recovery-trial-v1/startup-runner-cleanup.py",
+      "sha256": "70c5c0be3a4d012c622c55eed3f8eb9894ccf04a7606440e3334c47e8ba90567"
+    },
+    "boundary.py": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/omarchy-recovery-trial-v1/boundary.py",
+      "sha256": "55483418f93b85cdb2ab4b63a03adb15d5b9883947152c37a2f95c6b4263cbe8"
+    },
+    "exec-predecessor.py": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/omarchy-recovery-trial-v1/exec-predecessor.py",
+      "sha256": "5caf5229e4f8d9e74c233a2820b44c6f7f25dd51bff842c22ba358fed305b058"
+    },
+    "startup.py": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/omarchy-recovery-trial-v1/startup.py",
+      "sha256": "5cc732e734190371024a6e2a20483b2f4ffc5d518e2ccc3ec1867e0fe98b8bea"
+    },
+    "private-shell.json": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/omarchy-recovery-trial-v1/private-shell.json",
+      "sha256": "f1f862c25a20461662720ff360da74e5902c74afa0518b609819fb225ce62a3f"
+    },
+    "refuse-bin/checkupdates": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/omarchy-recovery-trial-v1/refuse-bin/checkupdates",
+      "sha256": "8b088b86905f0074ee6696c52d8d81dbb0d3a0fbb8b3dec8ce2df2e32f82aa22",
+      "scope": "Exact named PATH-refusal contents retained privately; no system resource copied."
+    },
+    "refuse-bin/omarchy-agent-usage-update": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/omarchy-recovery-trial-v1/refuse-bin/omarchy-agent-usage-update",
+      "sha256": "8b088b86905f0074ee6696c52d8d81dbb0d3a0fbb8b3dec8ce2df2e32f82aa22",
+      "scope": "Exact named PATH-refusal contents retained privately; no system resource copied."
+    },
+    "refuse-bin/omarchy-update-available": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/omarchy-recovery-trial-v1/refuse-bin/omarchy-update-available",
+      "sha256": "8b088b86905f0074ee6696c52d8d81dbb0d3a0fbb8b3dec8ce2df2e32f82aa22",
+      "scope": "Exact named PATH-refusal contents retained privately; no system resource copied."
+    },
+    "refuse-bin/pkill": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/omarchy-recovery-trial-v1/refuse-bin/pkill",
+      "sha256": "8b088b86905f0074ee6696c52d8d81dbb0d3a0fbb8b3dec8ce2df2e32f82aa22",
+      "scope": "Exact named PATH-refusal contents retained privately; no system resource copied."
+    }
+  },
+  "descriptorReference": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/omarchy-recovery-predecessor-v1/predecessor-descriptor-proposal.json",
+    "sha256": "1a60b21da78072bc198d36bf130098572efff5dac9cddb20edc437f35cb8b02c",
+    "fileReferenceCount": 439,
+    "closure": "partial",
+    "scope": "Metadata references installed binary and public resources; no system QML/resources are redistributed in this archive."
+  },
+  "archiveReproducibilityLimit": "Helper and resource source references remain hashed private archival inputs, not a fresh-checkout installer or complete package. The two exact report/image pairs and review are self-contained observed evidence only.",
+  "originalTimer": "Root retains 13:51:20 progress time and records qualification two STOP. No timer reset, new execution or ledger acceptance is implied by this archival manifest.",
+  "limits": [
+    "No candidate guidance dismissal/failure, production Profile prepare/activate/run/rollback or compatible preference/draft preservation was observed.",
+    "No main-session activation, desktop configuration change, full predecessor capability review or package installability is claimed.",
+    "The retry uses guarded named PATH refusals and private buses; optional disabled routes are outside this startup observation.",
+    "Descriptor closure is partial. Actual source/runtime references are not blanket proof of all optional capabilities.",
+    "Historical first failure and both source versions remain retained. No further Omarchy execution is authorized by this packet."
+  ],
+  "retainedRunnerMissingObservations": [
+    "candidate guidance dismissal and failure",
+    "actual profile candidate selection and offline rollback",
+    "compatible preferences and draft preservation",
+    "predecessor operation and independent screenshot review"
+  ],
+  "remainingOriginalObservations": [
+    "candidate guidance dismissal and failure",
+    "actual profile candidate selection and offline rollback",
+    "compatible preferences and draft preservation",
+    "predecessor operation beyond the bounded startup observation"
+  ],
+  "completedBoundedReview": "Independent startup screenshot review is complete. The retained raw runner missing-observation lists and acceptance flags remain unchanged."
+}

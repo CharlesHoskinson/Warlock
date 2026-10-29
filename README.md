@@ -38,6 +38,11 @@ painted success feedback. The refused journey remains partial: its native
 refusal and preserved query were recorded, but a fixture focus condition timed
 out before the screenshot. The whole launcher requirement remains open.
 
+An isolated startup trial also shows the installed Omarchy predecessor's menu,
+workspaces and clock, with complete owned-process cleanup. Full candidate
+rollback and preference/draft recovery are still open; this has not deployed
+Warlock into the main desktop session.
+
 Warlock is the name of the Elm-based window-system project. See the [brand identity](docs/warlock-brand/README.md), [design philosophy](docs/warlock-brand/PHILOSOPHY.md), and [research implementation plan](docs/elm-roadmap/research/20261005-design-adoption/WORKPLAN.md). Original archival names and evidence remain preserved.
 
 The [design-language documentation](DesignLanguage/README.md) and

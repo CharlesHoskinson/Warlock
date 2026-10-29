@@ -1,0 +1,85 @@
+{
+  "scope": "Guarded private predecessor startup only; no profile or rollback, no UI-020 acceptance",
+  "nativeAcceptance": false,
+  "offlineRecoveryObserved": false,
+  "startupObserved": true,
+  "passed": false,
+  "manualPixelReviewRequired": true,
+  "descriptorSHA256": "1a60b21da78072bc198d36bf130098572efff5dac9cddb20edc437f35cb8b02c",
+  "descriptorClosure": "partial",
+  "checks": [
+    {
+      "name": "ActivationFreeSessionBus",
+      "passed": true
+    },
+    {
+      "name": "PrivateBusPeerMatchesOwnedProcess",
+      "passed": true
+    },
+    {
+      "name": "PrivatePathGuardsAndRouting",
+      "passed": true
+    },
+    {
+      "name": "OwnedExactQuickshellProcess",
+      "passed": true,
+      "pid": 361083
+    },
+    {
+      "name": "OwnedPrivateOmarchyBar",
+      "passed": true,
+      "bar": {
+        "address": "0x5618fc03fe90",
+        "x": 0,
+        "y": 0,
+        "w": 800,
+        "h": 26,
+        "alpha": 1,
+        "namespace": "omarchy-bar",
+        "pid": 361083
+      }
+    },
+    {
+      "name": "GrimNormalExit",
+      "passed": true
+    },
+    {
+      "name": "FullPrivateScreenshotSize",
+      "passed": true
+    },
+    {
+      "name": "QuickshellAndBarRemainOwnedAfterCapture",
+      "passed": true
+    },
+    {
+      "name": "OwnedQuickshellExited",
+      "passed": true,
+      "exitCode": -15
+    }
+  ],
+  "capture": {
+    "path": "/home/charles/window-integration-qa/omarchy-predecessor-startup-1793283577730355401/omarchy-predecessor-startup-full.png",
+    "sha256": "e68ec6886efc72f12bfc59a6b8b9c39dab9a85ef5eeed91e756594b967f3a344",
+    "manualVisualReviewRequired": true
+  },
+  "error": "RuntimeError('private host cleanup invariant failed')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/charles/.local/state/warlock-team/20261028/native-rebuild/omarchy-recovery-trial-v1/startup-runner.py\", line 59, in main\n    with host.PrivateHyprSession(output,dict(os.environ),800,600,LUA,mesa_vendor=True) as s:\n         ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/charles/Warlock/window-integration-qa/private-weston-host-v2/weston_host.py\", line 226, in __exit__\n    def __exit__(self,kind,error,trace):return self.host.__exit__(kind,error,trace)\n                                               ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^\n  File \"/home/charles/Warlock/window-integration-qa/private-weston-host-v2/weston_host.py\", line 153, in __exit__\n    if kind is None and (self.evidence['cleanupErrors'] or self.evidence['unexpectedInnerDescendants'] or self.evidence['remainingDescendants'] or not self.evidence['runtimeGone']):raise RuntimeError('private host cleanup invariant failed')\n                                                                                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: private host cleanup invariant failed\n",
+  "cleanup": {
+    "cleanupErrors": [],
+    "unexpectedInnerDescendants": [
+      {
+        "pid": 361176,
+        "start": "16169232",
+        "pgid": 361083
+      }
+    ],
+    "remainingDescendants": [],
+    "runtimeGone": true
+  },
+  "missingObservations": [
+    "candidate guidance dismissal and failure",
+    "actual profile candidate selection and offline rollback",
+    "compatible preferences and draft preservation",
+    "predecessor operation and independent screenshot review"
+  ]
+}

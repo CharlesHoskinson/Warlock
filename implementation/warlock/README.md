@@ -38,6 +38,12 @@ focus-specific fixture wait expires before screenshot capture. Refusal paint
 remains unaccepted, and the whole requirement stays open. This stopped run
 does not establish a renderer failure or a product defect.
 
+The installed Omarchy predecessor now has a bounded private startup observation:
+its menu, workspaces and clock paint, and its owned process group retires without
+leftovers. This used private default-derived configuration. Actual candidate
+failure, profile rollback and compatible preference/draft recovery remain
+unverified; the main desktop is unchanged. See [recovery status](RECOVERY.md).
+
 Current implementation status and remaining behavior are in the [feature-completion checklist](../../docs/warlock-roadmap/FEATURE-COMPLETION.md). Current design guidance and the [contributor plugin section](../../DesignLanguage/catalog/index.html#contributors) distinguish the editable product from frozen browser examples.
 
 [Offline component recovery](RECOVERY.md) now retains reviewed predecessor and

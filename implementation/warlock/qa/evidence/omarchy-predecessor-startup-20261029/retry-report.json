@@ -1,0 +1,230 @@
+{
+  "scope": "Guarded private predecessor startup only; no profile or rollback, no UI-020 acceptance",
+  "nativeAcceptance": false,
+  "offlineRecoveryObserved": false,
+  "startupObserved": true,
+  "passed": true,
+  "manualPixelReviewRequired": true,
+  "descriptorSHA256": "1a60b21da78072bc198d36bf130098572efff5dac9cddb20edc437f35cb8b02c",
+  "descriptorClosure": "partial",
+  "checks": [
+    {
+      "name": "ActivationFreeSessionBus",
+      "passed": true
+    },
+    {
+      "name": "PrivateBusPeerMatchesOwnedProcess",
+      "passed": true
+    },
+    {
+      "name": "PrivatePathGuardsAndRouting",
+      "passed": true
+    },
+    {
+      "name": "OwnedExactQuickshellProcess",
+      "passed": true,
+      "pid": 363235
+    },
+    {
+      "name": "OwnedPrivateOmarchyBar",
+      "passed": true,
+      "bar": {
+        "address": "0x5632d14cd040",
+        "x": 0,
+        "y": 0,
+        "w": 800,
+        "h": 26,
+        "alpha": 1,
+        "namespace": "omarchy-bar",
+        "pid": 363235
+      }
+    },
+    {
+      "name": "ActualVisibleClockAndMenuWidgets",
+      "passed": true,
+      "widgets": [
+        {
+          "id": "omarchy.clock",
+          "section": "center",
+          "x": 341,
+          "y": 0,
+          "width": 118,
+          "height": 26,
+          "visible": true,
+          "itemVisible": true,
+          "itemWidth": 118,
+          "itemHeight": 26
+        },
+        {
+          "id": "omarchy.menu",
+          "section": "left",
+          "x": 8,
+          "y": 0,
+          "width": 27,
+          "height": 26,
+          "visible": true,
+          "itemVisible": true,
+          "itemWidth": 27,
+          "itemHeight": 26
+        },
+        {
+          "id": "omarchy.workspaces",
+          "section": "left",
+          "x": 35,
+          "y": 0,
+          "width": 106,
+          "height": 26,
+          "visible": true,
+          "itemVisible": true,
+          "itemWidth": 106,
+          "itemHeight": 26
+        },
+        {
+          "id": "omarchy.indicators",
+          "section": "center",
+          "x": 341,
+          "y": 13,
+          "width": 0,
+          "height": 26,
+          "visible": false,
+          "itemVisible": true,
+          "itemWidth": 0,
+          "itemHeight": 26
+        },
+        {
+          "id": "omarchy.tray",
+          "section": "right",
+          "x": 711,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "visible": false,
+          "itemVisible": false,
+          "itemWidth": 0,
+          "itemHeight": 26
+        },
+        {
+          "id": "omarchy.bluetooth",
+          "section": "right",
+          "x": 711,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "visible": false,
+          "itemVisible": false,
+          "itemWidth": 27,
+          "itemHeight": 26
+        },
+        {
+          "id": "omarchy.network",
+          "section": "right",
+          "x": 711,
+          "y": 0,
+          "width": 27,
+          "height": 26,
+          "visible": true,
+          "itemVisible": true,
+          "itemWidth": 27,
+          "itemHeight": 26
+        },
+        {
+          "id": "omarchy.audio",
+          "section": "right",
+          "x": 738,
+          "y": 0,
+          "width": 27,
+          "height": 26,
+          "visible": true,
+          "itemVisible": true,
+          "itemWidth": 27,
+          "itemHeight": 26
+        },
+        {
+          "id": "omarchy.monitor",
+          "section": "right",
+          "x": 765,
+          "y": 0,
+          "width": 27,
+          "height": 26,
+          "visible": true,
+          "itemVisible": true,
+          "itemWidth": 27,
+          "itemHeight": 26
+        },
+        {
+          "id": "omarchy.power",
+          "section": "right",
+          "x": 711,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "visible": false,
+          "itemVisible": false,
+          "itemWidth": 0,
+          "itemHeight": 0
+        },
+        {
+          "id": "omarchy.keyboard-layout",
+          "section": "center",
+          "x": 459,
+          "y": 13,
+          "width": 0,
+          "height": 0,
+          "visible": false,
+          "itemVisible": false,
+          "itemWidth": 12,
+          "itemHeight": 26
+        },
+        {
+          "id": "omarchy.weather",
+          "section": "center",
+          "x": 459,
+          "y": 13,
+          "width": 0,
+          "height": 0,
+          "visible": false,
+          "itemVisible": false,
+          "itemWidth": 21,
+          "itemHeight": 26
+        }
+      ],
+      "ipcAttempts": 1
+    },
+    {
+      "name": "GrimNormalExit",
+      "passed": true
+    },
+    {
+      "name": "FullPrivateScreenshotSize",
+      "passed": true
+    },
+    {
+      "name": "QuickshellAndBarRemainOwnedAfterCapture",
+      "passed": true
+    },
+    {
+      "name": "OwnedQuickshellGroupRetired",
+      "passed": true,
+      "exitCode": -15,
+      "escalated": false,
+      "remaining": []
+    }
+  ],
+  "capture": {
+    "path": "/home/charles/window-integration-qa/omarchy-predecessor-startup-1793284259986895976/omarchy-predecessor-startup-full.png",
+    "sha256": "43967e41b37986437984b3820f30be3151ee01a7d35ab379aa5f15c60086feae",
+    "manualVisualReviewRequired": true
+  },
+  "cleanup": {
+    "cleanupErrors": [],
+    "unexpectedInnerDescendants": [],
+    "remainingDescendants": [],
+    "runtimeGone": true
+  },
+  "missingObservations": [
+    "candidate guidance dismissal and failure",
+    "actual profile candidate selection and offline rollback",
+    "compatible preferences and draft preservation",
+    "predecessor operation and independent screenshot review"
+  ]
+}
