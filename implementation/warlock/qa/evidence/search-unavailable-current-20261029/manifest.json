@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "requirement": "ELM-UI-005",
+  "scenario": "search-unavailable",
+  "status": "accepted-on-observed-tuple",
+  "scenarioAccepted": true,
+  "requirementAccepted": false,
+  "releaseAccepted": false,
+  "oracle": "unavailable state exposes keyboard retry without automatic launch",
+  "verificationScope": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+  "independentReview": {
+    "file": "independent-review.md",
+    "sha256": "9fef025b6fc2652a9b2059ba470c6a56abc7e5c3a6826e32b733d076affc676b",
+    "name": "quint-5",
+    "independent": true,
+    "disposition": "accepted-original-search-unavailable"
+  },
+  "native": {
+    "file": "native-report.json.gz",
+    "sha256": "cf836ace81e568d3373aabb2a3d0cca82be2167749cb597728d5b229cc1867c6",
+    "expandedRawSHA256": "9d5f2a25069fee2fc16c3ec1af5aff3fd4225f39bef8d84484af803a77e53569",
+    "checks": 42,
+    "passed": true,
+    "cleanupPassed": true,
+    "recordedSourceCount": 367,
+    "allRecordedSourceInputsCurrent": true,
+    "unit": "qa-harness-a78c5c48637c4e2c9df66209f9c94e3a.scope",
+    "invocation": "cf263bd000004240b22d4192f4e0ac18",
+    "pair": {
+      "core": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-build/Hyprland",
+        "sha256": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e"
+      },
+      "plugin": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/authority/elm-window-geometry-authority.so",
+        "sha256": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c"
+      },
+      "aquamarine": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/lib/libaquamarine.so.0.15.0",
+        "sha256": "667a22d535aade4e4a26134e39028a87fb3f963c28b7bf7ff79da684bb014ecd"
+      }
+    },
+    "host": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/elm-host",
+      "sha256": "4377b11ce0afe9e1072210666aa872118b032995275a20657058771e5e6c8347",
+      "heldBuild": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/host-build-report.json",
+      "heldBuildSHA256": "691806471ff599503a20067aa0b90bf914b93a1ee5985198cdc79fb92ff975bf"
+    },
+    "runtimeTuple": {
+      "root": "/home/charles/Warlock/implementation/warlock-client-provider-native-v204",
+      "freshAdapter": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/source-coherence-20261028/terra-2/fresh_candidate-v1.py",
+      "freshAdapterSHA256": "23d66e343e37bead000ed155bbf46f8dcecb47bed09946ed62afe8f052169b00",
+      "parentAdapterSHA256": "e045634bd023f07977c398ef0057b9fdee3a1e1718d51c879e221ee353e28ae9",
+      "tupleSHA256": "bc225242e30baf4a5b8b1182cef6fdc716cc9c67de90dc35674f90c5fa87830b",
+      "foundationSHA256": "08b24bd93cbb63ec097900915379b32e90d9dcca7156d04fe8ee959efaff264f"
+    },
+    "actualATAction": {
+      "passed": true,
+      "source": "actual-at-spi-action",
+      "before": {
+        "pid": 389222,
+        "identity": "325",
+        "name": "Refresh applications",
+        "domId": "applications:{\"lifetime\":\"2076541117790886876\",\"session\":\"3\",\"frontend\":\"1\"}:21:control:refresh",
+        "role": "button",
+        "states": [
+          "enabled",
+          "focusable",
+          "focused",
+          "sensitive",
+          "showing",
+          "visible"
+        ]
+      },
+      "action": "press",
+      "actionIndex": 0,
+      "syntheticNodes": false,
+      "injectedDomEvents": false
+    }
+  },
+  "observations": [
+    "Actual current query files before genuine owned Editor desktop metadata grows to513 ASCII UTF16units above unchanged512 bound. Production Authority throws ValueError-derived Refused; unchanged transport produces correlated null snapshot, no fabricated/duplicate frames.",
+    "Physical keyboard Refresh request7 yields unavailable, query files and focused reachable Refresh without launch.",
+    "Actual visible Search/unavailable nodes, current Orca focus/ATidentity/DOM id, real AT-SPI press and correlated request8 nullsnapshot/no launch observed through qualified reader/inspector mappings.",
+    "Restore exact valid owned metadata; physical Refresh request9 returns current generation2 catalog including Files, query preserved and no automatic launch/recipient/window effect through recovered capture."
+  ],
+  "captures": [
+    {
+      "file": "unavailable-full.png",
+      "sha256": "5d124707e78f02666a03735b61eab126802a65f3cb8154ed72d4586de9c656d6"
+    },
+    {
+      "file": "recovered-full.png",
+      "sha256": "81961ae4bd4d3d6b790245fcaa1e64547dd82593029963c6992bdd0162bc4537"
+    }
+  ],
+  "firstFailedTrial": {
+    "file": "first-fixture-failure-report.json.gz",
+    "sha256": "091397dd17e5d8a5d94df1938e4030f8f68619119c5645c1f89cf2e64821b962",
+    "expandedRawSHA256": "5a9fb17dd6a031247af4023864646750944535759d82529f83a2497e9808d80c",
+    "scope": "Failed late fixture_control call after branch control dict shadowed framework control Path. Feature observations do not turn first failed campaign into a pass; cleanup true, raw report/source preserved."
+  },
+  "fixtureCorrection": {
+    "file": "fixture-correction.json",
+    "sha256": "cb4455430dee2a4359061b55fe4c6eb1ec5aedc191a595c9d4c3a39e5a583db6",
+    "diff": "fixture-correction.diff",
+    "diffSHA256": "f9e54152fd93b540959a6faf82a84d339196cfbadcb7fdf4c586bbd0081ea4fb",
+    "scope": "Only rename branch control to retry_control, fresh namespace and runner hash binding. No production/oracle/guard/deadline changes."
+  },
+  "fixtureSourceReview": {
+    "file": "fixture-source-review.md",
+    "sha256": "4a11ce1f474e6e46bd971a0e015f89463faa685206fc6bf35d51af6082ce852f",
+    "scope": "Q2 reviewed original fixture; root reviewed exact one-name correction and Q5 independently reviewed resulting source and actual evidence."
+  },
+  "sourceBaseRevision": "9c881352cf1e1d19754b45716066f5ea91e3a6e8",
+  "selectedSourceHashes": {
+    "implementation/warlock/src/Desktop.elm": "1b5b48fc5ca71c6e11bd54ea6ab723f5a37f4d383d6a59c99d14d83b005d5033",
+    "implementation/warlock/src/Surface.elm": "a660a4641a9f834c6198bce1e8049b3dd0be40cb74be1cfe1d5e14cfd0cdaa1d",
+    "implementation/warlock/src/AdapterNotice.elm": "32c4c13e599e843aa6da4a2302cb44da233226eb79d2561f551d0640fe9dd409",
+    "implementation/warlock/adapter/catalog_authority.py": "ad20204afd3b203eb956918300c8da4cb4765b3c5ad86e701b0257a54b8fb9cc",
+    "implementation/warlock/adapter/catalog_transport.py": "43bd1cd1059b87ce4d349d72e4b2a917ac1bdc3dacda2f60563fa621e05a4b84",
+    "implementation/warlock/qa/native-launcher-unavailable-portable.py": "752e5620b0ac114daa37210afe76709d22208f41a8aa860d69d1956891d3e5ae",
+    "implementation/warlock/README.md": "f2089118c2d0c7f59bd964ff172f54feafa11f92c63c3aa8d9219db0fa9b1809"
+  },
+  "toolchain": {
+    "toolchainManifestSHA256": "fe3d29078d30c6cf9bd431233c5eed1ad4550e2873ff55739d50a5a87a97edaa",
+    "compilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+    "nodeSHA256": "caa24debe02770c92a70677e2a62ca98890150e7ac1c17bcfe31bcc98cc89943",
+    "hostBuildSHA256": "691806471ff599503a20067aa0b90bf914b93a1ee5985198cdc79fb92ff975bf"
+  },
+  "missingObservationsForNamedScenario": [],
+  "limits": [
+    "Specific genuine invalid-metadata read failure during existing query, not every failure cause or initial/spontaneous service loss.",
+    "Direct AT Text query value, audible speech/braille and UI010 announcement acceptance are not observed or claimed.",
+    "Raw manual-review/acceptance flags remain unchanged; independent disposition supplies exact named acceptance.",
+    "No whole UI005/search-race/search-refused, renderer fix, IME/hardware/resources/journeys, main Omarchy activation, packaging/rollback or release acceptance."
+  ]
+}

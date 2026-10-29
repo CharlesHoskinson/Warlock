@@ -1,0 +1,11 @@
+{
+  "scope": "One observed fixture namespace repair only; keep genuine failure/retry/recovery, helper deadlines, guards and all assertions unchanged.",
+  "delta": "Rename top-level local control dict to retry_control so framework fixture_control retains its control Path. Runner branch hash/fresh HERE namespace only other changes.",
+  "files": {
+    "runner.py": "24ae3df31a54e4e9ef40ebdbd655406f582e4ada0018359f4c9fbf64fe978292",
+    "search-branch.txt": "7887b2d1a31b6eec47a55d8458698d77d90de6abc3217f6860064523911d6c88",
+    "runner.py.diff": "a6de641fbbe222e5e5eea2e23d2b5d5702f66fd4fa57d63691e106990383edaf",
+    "search-branch.txt.diff": "f9e54152fd93b540959a6faf82a84d339196cfbadcb7fdf4c586bbd0081ea4fb"
+  },
+  "priorFailedReport": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-unavailable-current-v1/native-launcher-unavailable-1793290797625580585/report.json"
+}

@@ -1,0 +1,11 @@
+--- /home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-unavailable-current-v1/search-branch.txt
++++ /home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-unavailable-control-name-v1/search-branch.txt
+@@ -29,7 +29,7 @@
+      image=OUTPUT/'search-unavailable-full.png';helper(['/usr/bin/grim',str(image)]);import gi;gi.require_version('GdkPixbuf','2.0');from gi.repository import GdkPixbuf;pix=GdkPixbuf.Pixbuf.new_from_file(str(image));check('UnavailableFullCaptureSize',(pix.get_width(),pix.get_height())==(800,600))
+      check('UnavailableRetainsFocusAndNoAutomaticLaunch',bool(unavailable()) and no_launch(),body=unavailable())
+      report['unavailableCapture']={'path':str(image),'sha256':sha(image),'manualVisualReviewRequired':True,'nativeAcceptance':False}
+-     current=wait(unavailable);control=refresh(current);lease=current['lease'];publication=current['publication'];domid=control['id']
++     current=wait(unavailable);retry_control=refresh(current);lease=current['lease'];publication=current['publication'];domid=retry_control['id']
+      check('UnavailableKeyboardFocusAtRefresh',current['focus']==domid and current.get('focusIdentity')=='control:refresh',body=current)
+      def actual_accessible():
+       observation=at_observe();reader=(observation.get('reader') or {}).get('focus') or {};nodes=[n for n in observation['nodes'] if n.get('pid')==web.pid and any(a.get('role')=='document web' for a in n.get('ancestors',[]))]

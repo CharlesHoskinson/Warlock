@@ -55,11 +55,16 @@ Original UI-005 `search-removed` is now independently accepted using the
 compiled replay, actual keyboard/native journey, and real AT-SPI Refresh action
 with current Search/no-match nodes and Orca focus. See the
 [observations and limits](qa/evidence/search-removed-at-20261029/manifest.json).
-Direct query-value reading through AT Text, no-match announcements and the
-`search-unavailable`, `search-race` and `search-refused` remain open.
+Direct query-value reading through AT Text and no-match announcements were
+not observed in this recording.
 The original `search-no-match` scenario has its own
 [independent acceptance](qa/evidence/search-no-match-20261029/manifest.json)
 using the same current query/message and keyboard/AT observations.
+Original `search-unavailable` is also independently accepted: a genuine owned
+metadata failure shows unavailable with retained query and keyboard/real AT
+retry; restoring the metadata recovers Files without automatic launch. The
+[first fixture failure and corrected recording](qa/evidence/search-unavailable-current-20261029/manifest.json)
+are preserved. `search-race`, `search-refused` and whole UI-005 remain open.
 
 The installed Omarchy predecessor now has a bounded private startup observation:
 its menu, workspaces and clock paint, and its owned process group retires without

@@ -44,9 +44,10 @@ Two applications retain their exact identities and chosen order across an actual
 shell restart, supported by the current compiled replay and native recording.
 Application-pin versus always-on-top independence remains a separate open gate.
 
-Original UI-005 `search-removed` is independently accepted: a removed selected
-application cannot launch a replacement, and keyboard/AT Refresh reconciles
-the current catalog while preserving the query. Other launcher scenarios and
+Original UI-005 `search-removed`, `search-no-match` and `search-unavailable`
+are independently accepted. The recordings show no replacement or automatic
+launch, preserved query, and reachable keyboard/AT Refresh through no-match
+and genuine provider failure/recovery. `search-race`, `search-refused` and
 whole UI-005 remain open.
 
 An isolated startup trial also shows the installed Omarchy predecessor's menu,
