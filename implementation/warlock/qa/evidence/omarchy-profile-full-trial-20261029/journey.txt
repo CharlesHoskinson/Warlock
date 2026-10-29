@@ -1,0 +1,63 @@
+     wait(lambda:closed() and bool(frames('shell-shortcuts')))
+     def recovery_settings():return body_for('settings')
+     def help_button(label):
+      body=recovery_settings()
+      return next((b for b in body['buttons'] if b['accessibleName']==label and not b['disabled']),None) if body else None
+     bar_route('Open settings');wait(lambda:help_button('Dismiss help'))
+     keyboard_button('Dismiss help',28);wait(lambda:help_button('Show help'))
+     check('GuidanceDismissedBeforeActualHostLoss','Keyboard navigation' not in recovery_settings()['text'])
+     key(1);wait(closed)
+     draft=draft_module.Draft(s,client,wait,live['validated_environment'](),OUTPUT/'recovery-owned-draft.log',live['candidate']['files']['/usr/bin/python3']);apps.append(draft.proc)
+     actual=next(r for r in s.data('clients') if r.get('pid')==draft.pid and r.get('address')==draft.address)
+     x,y=actual['at'];w,h=actual['size'];check('DraftHasPhysicalTarget',w>40 and h>40,x=x,y=y,width=w,height=h)
+     px,py=round(x+w/2),round(y+h/2)
+     check('DraftTargetInsideOutput',0<=px<800 and 0<=py<600)
+     helper([str(POINTER),'800','600'],f'move {px} {py}\nsleep 100\nbutton 272 1\nsleep 50\nbutton 272 0\nsleep 100\nsync\n')
+     expected_draft='warlock draft '+str(os.getpid())
+     codes={'w':17,'a':30,'r':19,'l':38,'o':24,'c':46,'k':37,' ':57,'d':32,'f':33,'t':20,**{str(i):i+1 for i in range(1,10)},'0':11}
+     draft_input=''.join(f'key {codes[c]} 1\nsleep 50\nkey {codes[c]} 0\nsleep 100\n' for c in expected_draft)
+     typed=draft.type_and_verify(physical,draft_input,expected_draft)
+     check('ActualPhysicalDraftInput',typed['text']==expected_draft and typed['focused'] is True,record=typed,providers=draft.providers)
+     draft.snapshot('before-candidate-loss',expected_draft)
+     before_facts=facts()['facts'];before_journal=journal();candidate_home=profile/'candidate-state'
+     from shell_preferences import Store as RecoverySettings
+     candidate_settings=RecoverySettings(str(candidate_home));old=candidate_settings.read()
+     check('CandidateEditSavedSeparately',candidate_settings.save({**old,'values':{**old['values'],'theme':'high-contrast'}})[0]=='Saved')
+     failure=stop_managed(web,candidate_identity,failure=True)
+     check('CandidateForcedFailureObserved',failure.get('exitCode')==-signal.SIGKILL,result=failure)
+     report['candidateFailure']={'identity':candidate_identity,'stimulus':'SIGKILL of verified owned candidate child','actualResult':failure,'managerExit':web.returncode}
+     check('CandidateManagerAndHostAbsent',web.poll() is not None and not pathlib.Path('/proc',str(candidate_identity['pid'])).exists())
+     draft.snapshot('after-candidate-loss',expected_draft)
+     broken_state=candidate_home/'warlock/settings.json';broken_state.write_text('{"schema":999,"preserved":"candidate failed"}');broken_bytes=broken_state.read_bytes()
+     check('OfflineRollbackRecoveredWithoutCandidate',recovery_helper('rollback').get('status')=='Recovered')
+     status=recovery_helper('status');check('PredecessorSelected',status.get('route')=='predecessor',result=status)
+     check('DamagedCandidateBytesPreserved',broken_state.read_bytes()==broken_bytes)
+     restored=profile/status['stateHome'];check('FourWarlockStoreBytesRetained',all((restored/'warlock'/n).read_bytes()==b for n,b in live['baselineBytes'].items()))
+     draft.snapshot('after-offline-rollback',expected_draft)
+     recovered=managed('omarchy-recovered');recovered_qs=owned_child(recovered,'/usr/bin/quickshell',qs_hash)
+     after_pref=predecessor_observe(recovered_qs);report['clockAfter']={'observation':after_pref,'capture':clock_capture('after',after_pref)}
+     check('NonemptyClockPreferenceRetainedAndEffective',before_pref['clockFormat'] and before_pref['clockFormat']==after_pref['clockFormat'],before=before_pref,after=after_pref)
+     def dispatch_menu(x,y):
+      helper([str(POINTER),'800','600'],f'move {x} {y}\nsleep 100\nbutton 272 1\nsleep 50\nbutton 272 0\nsleep 100\nsync\n')
+     def wait_menu(pid):
+      def found():
+       layers=s.data('layers');rows=[r for output in layers.values() for level in output.get('levels',{}).values() for r in level if r.get('namespace')=='omarchy-menu' and r.get('pid')==pid and r.get('w',0)>0 and r.get('h',0)>0 and r.get('alpha',0)>0]
+       return rows[0] if len(rows)==1 else None
+      return wait(found)
+     check('RecoveredMenuClosedBeforePhysicalPress',not [r for output in s.data('layers').values() for level in output.get('levels',{}).values() for r in level if r.get('namespace')=='omarchy-menu' and r.get('pid')==recovered_qs['pid'] and r.get('w',0)>0 and r.get('h',0)>0 and r.get('alpha',0)>0])
+     report['physicalOmarchyMenu']=preference.activate_menu(lambda:predecessor_observe(recovered_qs),dispatch_menu,wait_menu)
+     menu_image=OUTPUT/'omarchy-recovered-menu.png';helper(['/usr/bin/grim',str(menu_image)])
+     import gi;gi.require_version('GdkPixbuf','2.0');from gi.repository import GdkPixbuf
+     menu_pixels=GdkPixbuf.Pixbuf.new_from_file(str(menu_image))
+     check('RecoveredMenuCaptureOutputDimensions',menu_pixels.get_width()==800 and menu_pixels.get_height()==600)
+     report['physicalOmarchyMenu']['capture']={'path':str(menu_image),'sha256':sha(menu_image),'manualVisualReviewRequired':True}
+     draft.snapshot('after-omarchy-operation',expected_draft)
+     check('NoReplayedFrontendWindowEffects',journal()==before_journal and {w['incarnation'] for w in facts()['facts']['windows']}=={w['incarnation'] for w in before_facts['windows']})
+     check('SameDraftAfterAllFourCheckpoints',len(draft.checkpoints)==4 and len({r['incarnation'] for r in draft.checkpoints})==1,checkpoints=draft.checkpoints)
+     check('RecoveredPredecessorHoldsProfileLock',recovery_helper('rollback',2).get('status')=='Refused')
+     stop_managed(recovered,recovered_qs)
+     draft.send_signal(signal.SIGTERM);draft.proc.wait(timeout=5)
+     check('OwnedDraftNormalExit',draft.proc.returncode==0 and any(r.get('kind')=='destroy' and r.get('pid')==draft.pid and str(r.get('processStart'))==draft.start for r in draft.records()))
+     draft.close_pidfd()
+     report['offlineRecoveryObserved']=True
+     report['preferenceScope']='Predecessor private clock configuration retained and effective; Warlock stores retained as bytes only; no approved common mapping or shortcut migration established.'

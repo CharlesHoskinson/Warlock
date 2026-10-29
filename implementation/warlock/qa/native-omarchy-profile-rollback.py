@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Measure actual recovery profile preparation on the reviewed private tuple; no hosts launched."""
+"""Run the reviewed original offline recovery journey in one private session."""
 import hashlib
 from pathlib import Path
 import sys
 REPO = Path(__file__).resolve().parents[3]
-TARGET = Path('/home/charles/.local/state/warlock-team/20261028/native-rebuild/omarchy-profile-measure-root-v3/runner.py')
-EXPECTED_SHA256 = '07a28ef50be34b8f3323552cc30913233d2815acbde9686e02dff9c1f1c43b84'
+TARGET = Path('/home/charles/.local/state/warlock-team/20261028/native-rebuild/omarchy-full-recovery-root-v5/runner.py')
+EXPECTED_SHA256 = 'fed7a6c5b67a3e0aa7ba536dc9ba14b24f40d864d6fa03b22b22bdf1afabeb60'
 
 def main():
     if sys.argv[1:]:

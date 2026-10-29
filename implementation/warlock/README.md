@@ -67,7 +67,11 @@ The [recovery profile capacity fix](qa/evidence/recovery-profile-capacity-202610
 allows the measured resource-heavy profile to prepare without enlarging control
 or preference limits. The repeated real preparation and existing recovery model/CLI
 checks pass. This has not yet exercised candidate failure, editable draft survival
-or an actual Omarchy rollback; ELM-UI-020 remains open.
+or an actual Omarchy rollback; ELM-UI-020 remains open. A later
+[full private trial](qa/evidence/omarchy-profile-full-trial-20261029/manifest.json)
+starts the installed predecessor with its configured clock, then the managed
+candidate exits with reported code -6 before guidance or draft checks. The
+readiness deadline and exit check fail; cleanup completes. Its cause is unresolved.
 
 Original ELM-UX-004 pin-order persistence is independently accepted on the
 recorded tuple: the current compiled replay and actual native pin, reorder,

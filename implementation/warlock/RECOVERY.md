@@ -86,3 +86,10 @@ Candidate failure, standalone rollback, effective predecessor preferences and
 editable draft preservation, conflicting-owner refusal and main-session
 deployment remain open. See the
 [capacity evidence](qa/evidence/recovery-profile-capacity-20261029/manifest.json). See the [bounded Omarchy evidence](qa/evidence/omarchy-predecessor-startup-20261029/manifest.json).
+
+A later full private profile trial prepares a 77,648-byte manifest and observes
+the installed predecessor's nonempty effective clock configuration. After it
+stops and selects the candidate, the candidate exits with reported code -6
+before UI readiness. The guidance, editable draft, planned failure and rollback
+steps are not reached. The first full trial remains failed with clean protected
+cleanup; see the [full-trial evidence](qa/evidence/omarchy-profile-full-trial-20261029/manifest.json).

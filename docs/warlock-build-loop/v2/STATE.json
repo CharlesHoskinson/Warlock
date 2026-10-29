@@ -1,39 +1,46 @@
 {
   "schema": 1,
   "owner": "sol",
-  "updatedUTC": "2026-10-29T19:06:40.385385+00:00",
+  "updatedUTC": "2026-10-29T20:23:44.004014+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "omarchy-profile-offline-rollback",
+    "id": "first-use-persisted-choices-direct-restart",
     "requirements": [
       "ELM-UI-020"
     ],
     "scenarios": [
-      "offline-recovery"
+      "first-use"
     ],
     "paths": [
-      "implementation/warlock/adapter/recovery_profile.py",
-      "implementation/warlock/qa/offline-recovery.qnt",
-      "implementation/warlock/qa/offline-recovery_test.qnt",
-      "implementation/warlock/qa/check-offline-recovery.py",
-      "implementation/warlock/qa/native-omarchy-recovery-portable.py",
-      "implementation/warlock/qa/native-omarchy-profile-rollback.py",
-      "implementation/warlock/RECOVERY.md",
+      "implementation/warlock/src/ShortcutPreferences.elm",
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/src/Surface.elm",
+      "implementation/warlock/adapter/shortcut_preferences.py",
+      "implementation/warlock/native/authority.cpp",
+      "implementation/warlock/native/shared-host.c",
+      "implementation/warlock/native/shell-bindings.lua",
+      "implementation/warlock/qa/shortcut-choices.qnt",
+      "implementation/warlock/qa/shortcut-generation.qnt",
+      "implementation/warlock/qa/shortcut-generation_test.qnt",
+      "implementation/warlock/qa/check-shortcut-preferences.py",
+      "implementation/warlock/qa/native-shortcut-preferences.py",
+      "implementation/warlock/qa/native-shortcut-generation.py",
+      "implementation/warlock/qa/native-first-use-current.py",
       "implementation/warlock/README.md"
     ],
-    "before": "Actual installed Omarchy predecessor guarded startup is observed, but production Profile prepare/candidate failure/standalone offline rollback/compatible preferences and retained drafts remain unobserved. Combined descriptor/resource closure and existing65536-byte metadata capacity must be measured; partial lower bounds are not a runnable package or demonstrated product defect.",
-    "after": "A reviewed bounded private profile prepares actual installed Omarchy predecessor and current Warlock candidate, preserves approved compatible preference copies and drafts, observes candidate failure and standalone offline rollback without the failed host, and restarts predecessor with normal owned cleanup. Repair only demonstrated profile/closure defects; preserve current main desktop.",
+    "before": "Originalfirst-use remains partial: actualcustomconflict/choice/help/reload/refresh/customrecipient/stale-duplicate records exist, but exact current direct host/authority restart of persistedchoices, applicableactualAT and independentliteralverdict remain unadjudicated. Managed-profile candidate-startupabort/offline recovery investigation is stopped separately.",
+    "after": "With actual customizednativebindings, explicit chosen mappings persist across a directly managed current host and applicable authority restart; help is dismissible/reachable and the chosen/kept actualrecipients work with keyboard and applicableAT, without altering foreign bindings or duplicatingeffects. Reuse unaffectedexisting evidence and fix only demonstratedviolations.",
     "verification": [
-      "Use installed Omarchy skill and actual predecessor startup guard. Measure exact required executable/resource/provider closure and actual encoded profile before changing any byte/count bound; do not omit mandatory resources or assume incompleteness is proved.",
-      "Use existing offline-recovery Quint spec/source correspondence and relevant protected component regressions if profile behavior changes. No new authority or weakened original oracle to fit a fixture.",
-      "Root sole protected native executor; current coherent core/plugin/host/assets/provider tuple, actual parent Wayland/private buses/core1, original six-second/five-second oracles, real preference copies/retained owned draft and candidate failure/standalone rollback/owned normal cleanup. Isolated profile only; no main compositor restart, user config replacement or ready-release claim."
+      "Read originalfirst-use and frozenINTERACTION mapping/conflict/help policy, currentshortcut choices/generation specs and exact existing native manifests. Reconcile existingactualrestart evidence beforeadding observations; no automatictuplepromotion or broad scenario rerun.",
+      "Use ordinarydirect qualifiedhost launch and currentowning core/plugin/host/assets/provider tuple. This is not a retry or renamed continuation of stoppedProfile startup/offline rollback. Preserve original6sec/5sec/privatebuses/core1/sourceoracles and userdrafts.",
+      "Smallest current native/keyboard/applicableAT persisted-choice restart/help/realrecipient observations only where missing. ExistingQuint/sourcecorrespondence constrains actualpolicy changes; no newmodel for testorview-only adaptation. FullUI020/offline recovery, UI004renderer, packageclosure andmain deployment remain separatelyopen."
     ],
-    "owner": "root-omarchy-profile",
-    "participantRecord": ".warlock-contributor/omarchy-profile-offline-rollback.json"
+    "owner": "root-first-use-direct",
+    "participantRecord": ".warlock-contributor/first-use-persisted-choices-direct-restart.json"
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -2683,6 +2690,35 @@
       "owner": "root-taskbar-renderer-cause",
       "participantRecord": ".warlock-contributor/taskbar-renderer-abort-cause.json",
       "outcome": "DOM keyup discipline implemented and published in 1c40aa955 with 34 actual-script component checks and 33 named model tests. Current protected native trial24533 fails despite same-bar keyup preceding context/popup; original keyboard/AT New Instance and pin/top independence remain missing. Exact report/log preserved. No demonstrated further cause; pivot to remaining mandatory launcher policy/state obligations rather than expand debugger investigation."
+    },
+    {
+      "id": "omarchy-profile-offline-rollback",
+      "requirements": [
+        "ELM-UI-020"
+      ],
+      "scenarios": [
+        "offline-recovery"
+      ],
+      "paths": [
+        "implementation/warlock/adapter/recovery_profile.py",
+        "implementation/warlock/qa/offline-recovery.qnt",
+        "implementation/warlock/qa/offline-recovery_test.qnt",
+        "implementation/warlock/qa/check-offline-recovery.py",
+        "implementation/warlock/qa/native-omarchy-recovery-portable.py",
+        "implementation/warlock/qa/native-omarchy-profile-rollback.py",
+        "implementation/warlock/RECOVERY.md",
+        "implementation/warlock/README.md"
+      ],
+      "before": "Actual installed Omarchy predecessor guarded startup is observed, but production Profile prepare/candidate failure/standalone offline rollback/compatible preferences and retained drafts remain unobserved. Combined descriptor/resource closure and existing65536-byte metadata capacity must be measured; partial lower bounds are not a runnable package or demonstrated product defect.",
+      "after": "A reviewed bounded private profile prepares actual installed Omarchy predecessor and current Warlock candidate, preserves approved compatible preference copies and drafts, observes candidate failure and standalone offline rollback without the failed host, and restarts predecessor with normal owned cleanup. Repair only demonstrated profile/closure defects; preserve current main desktop.",
+      "verification": [
+        "Use installed Omarchy skill and actual predecessor startup guard. Measure exact required executable/resource/provider closure and actual encoded profile before changing any byte/count bound; do not omit mandatory resources or assume incompleteness is proved.",
+        "Use existing offline-recovery Quint spec/source correspondence and relevant protected component regressions if profile behavior changes. No new authority or weakened original oracle to fit a fixture.",
+        "Root sole protected native executor; current coherent core/plugin/host/assets/provider tuple, actual parent Wayland/private buses/core1, original six-second/five-second oracles, real preference copies/retained owned draft and candidate failure/standalone rollback/owned normal cleanup. Isolated profile only; no main compositor restart, user config replacement or ready-release claim."
+      ],
+      "owner": "root-omarchy-profile",
+      "participantRecord": ".warlock-contributor/omarchy-profile-offline-rollback.json",
+      "outcome": "STOP after verified profile-capacity production fix e787737f5 and two post-fix qualifications. First full original trial2955 failed before guidance/draft: same-session profile77648 prepared and installedQS initialeffectiveclock observed, candidate selected then managerreportedchildexit-6 beforeUIreadiness; originaldeadline/normalexitfailed, cleanuptrue. Raw3ba6b2c9/canonical omarchy-profile-full-trial-20261029 retainall sources/gates/initialimage. Actualstartupcause unknown; no plannedforcedfailure/draft/rollback/recoveredcontrol or originalUI020 acceptance. Do not expandthisProfile-startup/rollback investigation withoutnewconcreteprogress or distinctrequiredobservation; fullgoal remainsactive."
     }
   ]
 }

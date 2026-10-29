@@ -1,0 +1,95 @@
+   # Prepare the exact descriptors in this live session, then observe the
+   # predecessor-owned preference before activating the candidate.
+   import system_isolation as recovery_isolation
+   recovery_run=OUT/'profile-live';recovery_run.mkdir(mode=0o700)
+   live=materializer.materialize(s,recovery_run,host,boundary,recovery_isolation,start_time)
+   report['profileMaterialization']={'measurement':live['measurement'],'prepareResult':live['prepareResult'],'runtimeInputHashes':live['runtimeInputHashes'],'sourceQualification':live['sourceQualification'],'baselineDigests':live['baselineDigests'],'inventoryScope':'bounded conservative trial; no full dynamic closure'}
+   profile=live['profile'];recovery_cmd=['/usr/bin/python3','-B',str(ROOT/'adapter/recovery_profile.py'),'--profile',str(profile)]
+   def recovery_helper(op,expected=0):
+    global sequence
+    sequence+=1;name='recovery-cli-'+str(sequence)
+    proc=s.host.launch(name,recovery_cmd+[op],env=live['validated_environment']())
+    try:proc.wait(timeout=5)
+    except BaseException:
+     owned=next(row for p,row in s.host.processes if p is proc);s.host.stop(owned,proc);proc.wait(timeout=5);raise
+    raw=(OUTPUT/(name+'.log')).read_text(errors='replace');rows=[]
+    for line in raw.splitlines():
+     try:rows.append(json.loads(line))
+     except ValueError:pass
+    check('RecoveryCLI'+op+str(sequence),proc.returncode==expected and bool(rows),exitCode=proc.returncode,output=rows)
+    return rows[-1]
+   def managed(name):
+    if name not in ('omarchy-before','warlock','omarchy-recovered'):raise RuntimeError('Unknown managed recovery role')
+    manager=s.host.launch(name,recovery_cmd+['run'],env=live['validated_environment']());apps.append(manager)
+    manager.recovery_route='candidate' if name=='warlock' else 'predecessor'
+    return manager
+   def owned_child(manager,expected_exe,expected_hash):
+    def child():
+     if manager.poll() is not None:raise RuntimeError('Profile manager exited before child readiness')
+     p=pathlib.Path('/proc',str(manager.pid),'task',str(manager.pid),'children')
+     if not p.exists():return None
+     matches=[]
+     for token in p.read_text().split():
+      pid=int(token);exe=pathlib.Path('/proc',token,'exe')
+      try:
+       if exe.resolve()==pathlib.Path(expected_exe).resolve() and sha(exe)==expected_hash:matches.append(pid)
+      except (FileNotFoundError,ProcessLookupError):continue
+     return matches[0] if len(matches)==1 else None
+    pid=wait(child);return {'pid':pid,'start':str(start_time(pid)),'exe':expected_exe,'sha256':expected_hash,'managerPid':manager.pid,'managerStart':str(start_time(manager.pid)),'route':manager.recovery_route}
+   def stop_managed(manager,identity,failure=False):
+    pid=identity['pid'];pidfd=os.pidfd_open(pid,0)
+    try:
+     check('ManagedChildIdentityBeforeStop',manager.poll() is None and str(start_time(manager.pid))==identity['managerStart'] and str(start_time(pid))==identity['start'] and int(pathlib.Path('/proc',str(pid),'stat').read_text().rpartition(') ')[2].split()[1])==manager.pid and sha('/proc/'+str(pid)+'/exe')==identity['sha256'])
+     if failure and identity['route']!='candidate':raise RuntimeError('Failure stimulus is restricted to owned candidate')
+     delivered=signal.SIGKILL if failure else signal.SIGTERM
+     signal.pidfd_send_signal(pidfd,delivered,None,0)
+    finally:
+     os.close(pidfd)
+    manager.wait(timeout=5)
+    check('ManagedChildAbsentAfterStop',not pathlib.Path('/proc',str(pid)).exists(),pid=pid,managerPid=manager.pid,managerExit=manager.returncode)
+    raw=(OUTPUT/(next(row['name'] for proc,row in s.host.processes if proc is manager)+'.log')).read_text(errors='replace');rows=[]
+    for line in raw.splitlines():
+     try:rows.append(json.loads(line))
+     except ValueError:pass
+    check('ManagedGroupExited',bool(rows) and rows[-1].get('status')=='Exited' and rows[-1].get('route')==identity['route'] and rows[-1].get('exitCode') in ((-signal.SIGKILL,) if failure else (0,-signal.SIGTERM)) and manager.returncode==(0 if rows[-1].get('exitCode')==0 else 1),result=rows[-1] if rows else None)
+    recovery_expected_exits[manager.pid]=manager.returncode
+    report.setdefault('managedStops',[]).append({'identity':identity,'result':rows[-1],'managerExit':manager.returncode,'deliberateSignal':delivered,'plannedCandidateFailure':failure})
+    return rows[-1]
+   def predecessor_observe(identity):
+    deadline=time.monotonic()+6
+    def ipc(argv,ipc_env,timeout=5):
+     global sequence
+     remaining=deadline-time.monotonic()
+     if remaining<=0:raise RuntimeError('Original six-second Omarchy observation deadline')
+     sequence+=1;name='omarchy-readonly-ipc-'+str(sequence)
+     proc=s.host.launch(name,argv,env=ipc_env)
+     try:proc.wait(timeout=min(timeout,remaining))
+     except BaseException:
+      owned=next(row for p,row in s.host.processes if p is proc);s.host.stop(owned,proc);proc.wait(timeout=5);raise
+     if time.monotonic()>deadline:raise RuntimeError('Omarchy IPC exceeded observation deadline')
+     return {'returncode':proc.returncode,'stdout':(OUTPUT/(name+'.log')).read_text(errors='replace')}
+    last=None
+    while time.monotonic()<deadline:
+     try:
+      value=preference.observe_predecessor(s,live['validated_environment'](),identity['pid'],identity['start'],sha(live['privateConfig']),ipc)
+      if time.monotonic()>deadline:raise RuntimeError('Omarchy observation deadline expired')
+      return value
+     except RuntimeError as error:
+      last=str(error);s.guard();time.sleep(.025)
+    raise RuntimeError('Original six-second Omarchy observation deadline: '+str(last))
+   def clock_capture(name,observation):
+    image=OUTPUT/('omarchy-clock-'+name+'.png');helper(['/usr/bin/grim',str(image)])
+    import gi;gi.require_version('GdkPixbuf','2.0');from gi.repository import GdkPixbuf
+    pix=GdkPixbuf.Pixbuf.new_from_file(str(image));data=pix.get_pixels();stride=pix.get_rowstride();channels=pix.get_n_channels();bar=observation['bar'];clock=observation['clock']
+    x=int(bar.get('x',0)+clock['x']);y=int(bar.get('y',0)+clock['y']);w=int(clock['width']);h=int(clock['height'])
+    check('ClockRegionInsideCapturedOutput'+name,pix.get_width()==800 and pix.get_height()==600 and x>=0 and y>=0 and w>0 and h>0 and x+w<=800 and y+h<=600)
+    colors={bytes(data[yy*stride+xx*channels:yy*stride+xx*channels+3]) for yy in range(y,y+h) for xx in range(x,x+w)}
+    check('ActualClockRegionPainted'+name,len(colors)>1,colors=len(colors))
+    return {'path':str(image),'sha256':sha(image),'region':[x,y,w,h],'distinctColors':len(colors),'manualVisualReviewRequired':True}
+   qs_hash=sha('/usr/bin/quickshell')
+   predecessor_first=managed('omarchy-before');first_qs=owned_child(predecessor_first,'/usr/bin/quickshell',qs_hash)
+   before_pref=predecessor_observe(first_qs);report['clockBefore']={'observation':before_pref,'capture':clock_capture('before',before_pref)}
+   check('RunningPredecessorHoldsProfileLock',recovery_helper('rollback',2).get('status')=='Refused')
+   stop_managed(predecessor_first,first_qs)
+   check('CandidateRouteExplicitlySelected',recovery_helper('activate').get('route')=='candidate')
+   web=managed('warlock');candidate_identity=owned_child(web,str(binary),sha(binary));log=OUTPUT/'warlock.log';collector=Collector()
