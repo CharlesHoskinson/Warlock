@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "requirements": [
+    "ELM-UI-020"
+  ],
+  "scenarios": [
+    "first-use"
+  ],
+  "sourceRevision": "8c269409f5795c21e553a2dec2cbb079660b57b7",
+  "status": "failed-before-guidance",
+  "nativeAcceptance": false,
+  "scenarioAccepted": false,
+  "assistiveTechnologyAccepted": false,
+  "fullReleaseAccepted": false,
+  "trial": {
+    "terminalExitCode": 1,
+    "unit": "qa-harness-b62ebc4e72fb41f68624d9aeda6f5aac.scope",
+    "invocation": "000a10ce605f4e65b056d808544c5f72",
+    "checks": 9,
+    "cleanupPassed": true,
+    "runtimeGone": true
+  },
+  "observed": "Actual customized bindings and physical keyboard Settings opener observed. Before settings controls appeared, original six-second observation deadline failed; host log records unsupported native-delivery result and Web process termination. Owned client PID461253 exited1; cleanup completed. No unique renderer cause inferred.",
+  "notReached": [
+    "guidance dismissal",
+    "saved shortcut choices",
+    "host or authority restart",
+    "actual AT-SPI help action",
+    "post-restart physical recipients",
+    "screenshots"
+  ],
+  "limits": [
+    "Historical reload evidence remains on its own older tuple.",
+    "Source readiness is not native acceptance.",
+    "No Profile/offline retry or main-session deployment.",
+    "Frozen qualification wrapper retains documented checked-source/import interval under shared filesystem assumptions."
+  ],
+  "files": [
+    {
+      "path": "current-native-report.json",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/first-use-direct-terra2-v2/first-use-direct-1793306139791642932/report.json",
+      "sha256": "86580f586f7fa447466ec54f7aee9e84ce45b6b2fa0c424d24a429c3f676f08e"
+    },
+    {
+      "path": "current-warlock.log",
+      "originalPath": "/home/charles/window-integration-qa/warlock-window-feedback-1793306139791719757/warlock.log",
+      "sha256": "88413fc2e975d7f1a94bc9abcbf704cba04e9a72a76bd87400a5caf90510c329"
+    },
+    {
+      "path": "runner-v1.py",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/first-use-direct-terra2-v1/runner.py",
+      "sha256": "ec90b20d7281be66120476ca4e993bfa819e5f197d725ceb6dbaeed1a8726a2b"
+    },
+    {
+      "path": "branch-v1.inc",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/first-use-direct-terra2-v1/branch.inc",
+      "sha256": "0e01ff9adf903771486feee29888212ca851ad2a2732cc556d831b0f99ebde52"
+    },
+    {
+      "path": "handoff-v1.json",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/first-use-direct-terra2-v1/handoff.json",
+      "sha256": "1984e906419436781f500d417065509990981bf4948a43bf76cb638df99d514f"
+    },
+    {
+      "path": "runner-v2.py",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/first-use-direct-terra2-v2/runner.py",
+      "sha256": "6e1695061da0ef5be424f75aaa9d63593ee6a8d6348dc619c7050b82267d0084"
+    },
+    {
+      "path": "branch-v2.inc",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/first-use-direct-terra2-v2/branch.inc",
+      "sha256": "c0f51f5ba7de7641230b13cd370af93842d58e584195ef84ab54f48e0cb7fd7b"
+    },
+    {
+      "path": "handoff-v2.json",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/first-use-direct-terra2-v2/handoff.json",
+      "sha256": "885968c7c19d1f72b03b83ad8c53157191f77182ebec215dab1a4531dc27814e"
+    },
+    {
+      "path": "at-action.py",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-pin-semantics/at-action.py",
+      "sha256": "e4ce2c23b852a1bea40c27d0c47f68e810705531a8e41f8ae8ae046ce76cb157"
+    },
+    {
+      "path": "source-evidence-map.md",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-5/first-use-direct-current/source-evidence-map.md",
+      "sha256": "72bf8a1e1ee27954e70eb48d77ad38072d2fe8f6bb7b9e95c6496d9cd790adc5"
+    },
+    {
+      "path": "source-review-v1.md",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-5/first-use-direct-current/composed-source-review.md",
+      "sha256": "920216054095148aa75eaaf896e932e292c1ec9efb43a9981e3cafb7ae4d6866"
+    },
+    {
+      "path": "source-review-v2.md",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-5/first-use-direct-current/v2-source-review.md",
+      "sha256": "f2d6cb9f7f667ee37d5fa4cefa2cb53c8091382b03b0553c0c724068695cb073"
+    },
+    {
+      "path": "independent-failure-review.md",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-5/first-use-direct-current/actual-failure-review.md",
+      "sha256": "22285a7dd1c4fcf07fd410c00dd53089260aa3661a7f4fba124fe81ef7021034"
+    }
+  ],
+  "reviewer": {
+    "name": "quint-5",
+    "disposition": "partial, actual trial failed; no acceptance",
+    "review": "independent-failure-review.md"
+  }
+}

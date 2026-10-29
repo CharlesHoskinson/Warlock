@@ -73,6 +73,13 @@ starts the installed predecessor with its configured clock, then the managed
 candidate exits with reported code -6 before guidance or draft checks. The
 readiness deadline and exit check fail; cleanup completes. Its cause is unresolved.
 
+A separate [direct first-use trial](qa/evidence/first-use-direct-20261029/manifest.json)
+observes the customized bindings and keyboard Settings opener, then fails before
+guidance appears. Native-delivery errors and Web process termination precede the
+failed readiness and owned-client exit checks; cleanup completes. Saved choices,
+host restart, help through AT-SPI and post-restart recipients were not reached.
+First-use remains partial, with no new native acceptance or deployment.
+
 Original ELM-UX-004 pin-order persistence is independently accepted on the
 recorded tuple: the current compiled replay and actual native pin, reorder,
 private storage and shell restart preserve Editor and Files in the chosen order.

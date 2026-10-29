@@ -1,0 +1,44 @@
+{
+  "status": "SOURCE-REVIEW-READY",
+  "scope": "ELM-UI-020 first-use direct host and native authority restart, private session; source only",
+  "files": [
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/first-use-direct-terra2-v1/runner.py",
+      "sha256": "ec90b20d7281be66120476ca4e993bfa819e5f197d725ceb6dbaeed1a8726a2b"
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/first-use-direct-terra2-v1/branch.inc",
+      "sha256": "0e01ff9adf903771486feee29888212ca851ad2a2732cc556d831b0f99ebde52"
+    }
+  ],
+  "currentQualification": [
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/omarchy-profile-measure-root-v3/fresh_candidate.py",
+      "sha256": "6b9b460c7255e7b3c57ee79741e0c5943f421c761c854b35106114396190cf75"
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/at-prefix-host/guard-v3.py",
+      "sha256": "117e56afe2a72e686fa2fcaedd18204da593af51e8be495764cd7e75d500d148"
+    }
+  ],
+  "historicalEvidence": [
+    {
+      "path": "/home/charles/Warlock/implementation/warlock/qa/evidence/shortcut-reload-dismissal/manifest.json",
+      "sha256": "8f7a1dc5599e544dcd7f7657a506c5969ca02134fd0ab4041c1dc167610106da"
+    },
+    {
+      "path": "/home/charles/Warlock/implementation/warlock/qa/evidence/shortcut-reload-dismissal/current-native-report.json",
+      "sha256": "fd6196e2215e0be32479f0cd1ceec73a16ef3475ddb6b4d04a3251e8b55fecb3"
+    }
+  ],
+  "historicalBoundary": "Original native shortcut choices report covers conflict, explicit save, help, keyboard custom recipient, config reload, refresh and stale/duplicate refusal; old tuple, no whole host/authority restart or AT acceptance.",
+  "mechanism": "Direct e0 host, exact owning plugin unload/reload, new authority lifetime, newly started Python backend binding, saved revision and selected current controls before any reapply, conditional explicit physical reapply if native active mapping differs, physical chosen shortcut to actual component and real guarded AT focus. No Profile/rollback.",
+  "limits": [
+    "No QA, native, GUI, build, component or test execution; AST and static anchor checks only.",
+    "Independent root/Q2 source review and root-protected execution required.",
+    "AT provider identity/focus, authority unload/reload and current renderer behavior are actual runtime unknowns.",
+    "Applicable native AT observations do not claim all AT/IME or independent original acceptance.",
+    "Legacy offline Profile failure and original deadlines remain retained; no Profile operation or qualification here."
+  ],
+  "rootCommand": "python3 -B docs/warlock-build-loop/v2/loop.py --record .warlock-contributor/first-use-persisted-choices-direct-restart.json native --runner /home/charles/.local/state/warlock-team/20261028/native-rebuild/first-use-direct-terra2-v1/runner.py"
+}
