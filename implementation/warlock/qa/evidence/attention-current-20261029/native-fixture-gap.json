@@ -1,0 +1,154 @@
+{
+  "status": "NOT_READY",
+  "reason": "Strict 4721/367/historical verifier still pins prior Elm sources and old 1c35 assets; requires exact reviewed extension against 094 receipt before actual candidate can be used. No production or private runner assembled.",
+  "report": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/shortcut-draft-build-root-v2/output/report.json",
+    "sha256": "094092cd57c79b604e9ea3777cd0c45564883a73a2efc44147f1d49e16405984"
+  },
+  "changedAndNewElmSources": [
+    {
+      "path": "/home/charles/Warlock/implementation/warlock/src/Announcement.elm",
+      "old": "71bc1e29724266c26301716ea0a1c7452f02c9f67e140e1bd1ec33c5166d402f",
+      "current": "a1e6660c082c7c68657e356c2e4742cd8fd60e843192b88fa0609fb696a40f9f"
+    },
+    {
+      "path": "/home/charles/Warlock/implementation/warlock/src/Main.elm",
+      "old": "6d797e72117cb0e057638eca1c29bcec8c1fa536221bccd605de48978458cf19",
+      "current": "7f5ddbe6fedf775e143b684ec60c9bfbdf15606414ed4fafc2c5553b514821c2"
+    },
+    {
+      "path": "/home/charles/Warlock/implementation/warlock/src/OutcomeAnnouncements.elm",
+      "old": "158b22f574983da656838c4388c93cca1c7d9b044aaae83ee21153eae29b7586",
+      "current": "c7fd2828c42b7cbc0f3b6fc705c26a551530d1eb22ed325e892a0e1faca6ca7e"
+    },
+    {
+      "path": "/home/charles/Warlock/implementation/warlock/src/OutputController.elm",
+      "old": "8da2227997dda10570707c456df8b00fcc000291c66a8ec2a48e8d5321cee8dc",
+      "current": "aaf1729287ff61595a237201b261e7c1ce11c8f2353c620171f48aff99d86f38"
+    },
+    {
+      "path": "/home/charles/Warlock/implementation/warlock/src/Presentation.elm",
+      "old": "8c3463230d93b768f48784a37ae9e4da7a225defa6f209b3100258af5196c0e9",
+      "current": "8c635b330641c4c06895357bdaee430b8eeed9b8ae88a83742f703c9f23a5dd6"
+    },
+    {
+      "path": "/home/charles/Warlock/implementation/warlock/src/ShortcutPreferences.elm",
+      "old": "d9196adaae768e57e2531b78ad2cd8fd22a2a81ad952d27c7c88d0fc72da8322",
+      "current": "d8c1a63f199612161e078e0f6c7f75cbbfa190953e19325e50169debc425dcec"
+    },
+    {
+      "path": "/home/charles/Warlock/implementation/warlock/src/SurfaceRenderer.elm",
+      "old": "48e03f50fd509ea0e42e23d7a1aa26396122350ab824c8dc179952b5bfd28c63",
+      "current": "f6c653573c1b73b32df132ada5033a1e34aa2cfa1a2dcbb42be4320a4a98a7b8"
+    },
+    {
+      "path": "/home/charles/Warlock/implementation/warlock/src/SurfaceSnapshot.elm",
+      "old": null,
+      "current": "58298ea43fffba3da6bcc64f1456b47bcde3607d476ef99465be0c98c2b433d7"
+    },
+    {
+      "path": "/home/charles/Warlock/implementation/warlock/src/AnnouncementMessage.elm",
+      "old": null,
+      "current": "fb0f5231bff5beffe0a877046d38bba1bb87bd3d8e786449800093ae38ab2075"
+    }
+  ],
+  "additionalPreflightRows": [
+    {
+      "index": 3035,
+      "path": "/home/charles/Warlock/implementation/warlock/src/Announcement.elm",
+      "label": "host sourceHashes",
+      "expected": "71bc1e29724266c26301716ea0a1c7452f02c9f67e140e1bd1ec33c5166d402f",
+      "current": "a1e6660c082c7c68657e356c2e4742cd8fd60e843192b88fa0609fb696a40f9f"
+    },
+    {
+      "index": 3052,
+      "path": "/home/charles/Warlock/implementation/warlock/src/Main.elm",
+      "label": "host sourceHashes",
+      "expected": "6d797e72117cb0e057638eca1c29bcec8c1fa536221bccd605de48978458cf19",
+      "current": "7f5ddbe6fedf775e143b684ec60c9bfbdf15606414ed4fafc2c5553b514821c2"
+    },
+    {
+      "index": 3077,
+      "path": "/home/charles/Warlock/implementation/warlock/src/OutcomeAnnouncements.elm",
+      "label": "host sourceHashes",
+      "expected": "158b22f574983da656838c4388c93cca1c7d9b044aaae83ee21153eae29b7586",
+      "current": "c7fd2828c42b7cbc0f3b6fc705c26a551530d1eb22ed325e892a0e1faca6ca7e"
+    },
+    {
+      "index": 3078,
+      "path": "/home/charles/Warlock/implementation/warlock/src/OutputController.elm",
+      "label": "host sourceHashes",
+      "expected": "8da2227997dda10570707c456df8b00fcc000291c66a8ec2a48e8d5321cee8dc",
+      "current": "aaf1729287ff61595a237201b261e7c1ce11c8f2353c620171f48aff99d86f38"
+    },
+    {
+      "index": 3085,
+      "path": "/home/charles/Warlock/implementation/warlock/src/Presentation.elm",
+      "label": "host sourceHashes",
+      "expected": "8c3463230d93b768f48784a37ae9e4da7a225defa6f209b3100258af5196c0e9",
+      "current": "8c635b330641c4c06895357bdaee430b8eeed9b8ae88a83742f703c9f23a5dd6"
+    },
+    {
+      "index": 3110,
+      "path": "/home/charles/Warlock/implementation/warlock/src/ShortcutPreferences.elm",
+      "label": "host sourceHashes",
+      "expected": "d9196adaae768e57e2531b78ad2cd8fd22a2a81ad952d27c7c88d0fc72da8322",
+      "current": "d8c1a63f199612161e078e0f6c7f75cbbfa190953e19325e50169debc425dcec"
+    },
+    {
+      "index": 3115,
+      "path": "/home/charles/Warlock/implementation/warlock/src/SurfaceRenderer.elm",
+      "label": "host sourceHashes",
+      "expected": "48e03f50fd509ea0e42e23d7a1aa26396122350ab824c8dc179952b5bfd28c63",
+      "current": "f6c653573c1b73b32df132ada5033a1e34aa2cfa1a2dcbb42be4320a4a98a7b8"
+    }
+  ],
+  "additional367Rows": [
+    {
+      "path": "src/Announcement.elm",
+      "old": "71bc1e29724266c26301716ea0a1c7452f02c9f67e140e1bd1ec33c5166d402f",
+      "current": "a1e6660c082c7c68657e356c2e4742cd8fd60e843192b88fa0609fb696a40f9f"
+    },
+    {
+      "path": "src/Main.elm",
+      "old": "6d797e72117cb0e057638eca1c29bcec8c1fa536221bccd605de48978458cf19",
+      "current": "7f5ddbe6fedf775e143b684ec60c9bfbdf15606414ed4fafc2c5553b514821c2"
+    },
+    {
+      "path": "src/OutcomeAnnouncements.elm",
+      "old": "158b22f574983da656838c4388c93cca1c7d9b044aaae83ee21153eae29b7586",
+      "current": "c7fd2828c42b7cbc0f3b6fc705c26a551530d1eb22ed325e892a0e1faca6ca7e"
+    },
+    {
+      "path": "src/OutputController.elm",
+      "old": "8da2227997dda10570707c456df8b00fcc000291c66a8ec2a48e8d5321cee8dc",
+      "current": "aaf1729287ff61595a237201b261e7c1ce11c8f2353c620171f48aff99d86f38"
+    },
+    {
+      "path": "src/Presentation.elm",
+      "old": "8c3463230d93b768f48784a37ae9e4da7a225defa6f209b3100258af5196c0e9",
+      "current": "8c635b330641c4c06895357bdaee430b8eeed9b8ae88a83742f703c9f23a5dd6"
+    },
+    {
+      "path": "src/ShortcutPreferences.elm",
+      "old": "d9196adaae768e57e2531b78ad2cd8fd22a2a81ad952d27c7c88d0fc72da8322",
+      "current": "d8c1a63f199612161e078e0f6c7f75cbbfa190953e19325e50169debc425dcec"
+    },
+    {
+      "path": "src/SurfaceRenderer.elm",
+      "old": "48e03f50fd509ea0e42e23d7a1aa26396122350ab824c8dc179952b5bfd28c63",
+      "current": "f6c653573c1b73b32df132ada5033a1e34aa2cfa1a2dcbb42be4320a4a98a7b8"
+    }
+  ],
+  "referenceHashes": {
+    "/home/charles/Warlock/implementation/warlock/qa/native-window-feedback.py": "6f7a07393415d50784f72427b807a21463c0b39e3eacc4327a16690c0f303838",
+    "/home/charles/Warlock/implementation/warlock/qa/accessibility-session.py": "69bc3b33c2b99f0b9d54805e18afcb85ff02314dc9aa4d002f4df409a0e57524",
+    "/home/charles/Warlock/implementation/warlock/qa/accessibility-inspector.py": "bc4fe7adba15c29f97137b91848971b65b994c1b8f6282109d7edf1e13bd5c27",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/first-use-delivery-current-root-v1/fresh_candidate.py": "a4f481d6b1452ce50ed3623008766fe13fd13b961adbb87d07296a6e58272350",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/first-use-delivery-current-root-v1/runtime_candidate.py": "a082002671a7d9eda128af1d4230dabe1dd98dc94ad792aa939720b183b5b8ae",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/first-use-delivery-current-root-v1/verify_current.py": "07bb955b9f0e7171230f441c805651a27abd7393cbb97e25910a21658761a476",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/first-use-delivery-context-root-v1/output/report.json": "65b7e0fe87f775b6489a2092f355856cd273ec4461114897ddfeed177b721987",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/first-use-delivery-context-root-v1/output/elm-host": "a6b0f0cdfaf9d1fbf35494501fe623c88e889497c14b6fc9f65a7cc6ac5cba97"
+  },
+  "nativeAcceptance": false
+}
