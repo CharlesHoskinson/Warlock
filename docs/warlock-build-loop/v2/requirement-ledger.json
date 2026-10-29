@@ -7199,10 +7199,78 @@
               "path": "implementation/warlock/qa/evidence/launcher-search/manifest.json",
               "sha256": "c36810d3418807d241e9cc36b3d8a1b78796737135c5c7bcd05123dd631d9d43",
               "scope": "Compiled current-query/ranking and scoped admission; actual native typing, one identity-bound Enter request, refused stale catalog, preserved query/focus and observation-only refresh/no replacement. Popup pixels are black; native visual/AT/IME acceptance is withheld."
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/search-removed-current-20261029/manifest.json",
+              "sha256": "f5ab581fef5cd3f5821fa416ffe419978d511efedde6af5c7234703e997c6cd1",
+              "scope": "Actual selected Files desktop removed before physical Enter; one identity-bound Refused/stale-catalog and no recipient. Physical keyboard Refresh returns correlated catalog generation2 without removed identity, preserves query files, paints no-match and current Refresh focus, and produces no replacement launch through capture. Current compiled and native keyboard evidence independently reviewed; applicable AT remains missing."
             }
           ],
-          "missingObservation": "Native catalog identity removal before Enter produces one refusal, never a replacement; Refresh reconciles to no-match. Physical popup presentation and independent verdict remain.",
-          "reviewerDisposition": "Owner records partial observations; independent acceptance pending."
+          "missingObservation": "Applicable actual assistive-technology observation of current search/no-match, focus and reachable Refresh semantics.",
+          "reviewerDisposition": {
+            "name": "quint-5",
+            "independent": true,
+            "disposition": "partial",
+            "path": "implementation/warlock/qa/evidence/search-removed-current-20261029/independent-review.md",
+            "sha256": "0ab5e307ceb687b93e1a82d4b6c1cdc5634dc02d0a68d1ed4dcfbd569bb7fd2b"
+          },
+          "priorObservations": [
+            {
+              "name": "search-removed",
+              "oracle": "no replacement entry launches and selection reconciles",
+              "status": "partial",
+              "evidence": [
+                {
+                  "path": "implementation/warlock/qa/evidence/launcher-search/manifest.json",
+                  "sha256": "c36810d3418807d241e9cc36b3d8a1b78796737135c5c7bcd05123dd631d9d43",
+                  "scope": "Compiled current-query/ranking and scoped admission; actual native typing, one identity-bound Enter request, refused stale catalog, preserved query/focus and observation-only refresh/no replacement. Popup pixels are black; native visual/AT/IME acceptance is withheld."
+                }
+              ],
+              "missingObservation": "Native catalog identity removal before Enter produces one refusal, never a replacement; Refresh reconciles to no-match. Physical popup presentation and independent verdict remain.",
+              "reviewerDisposition": "Owner records partial observations; independent acceptance pending."
+            }
+          ],
+          "verificationScope": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+          "sourceTuple": {
+            "sourceBaseRevision": "a00fe778bc70709a82bacb89e330d45187c2d49c",
+            "selectedSourceHashes": {
+              "implementation/warlock/src/Desktop.elm": "1b5b48fc5ca71c6e11bd54ea6ab723f5a37f4d383d6a59c99d14d83b005d5033",
+              "implementation/warlock/src/Launch.elm": "dcd7260248ccb0b5bc6001c49319dd51af8c2fae98888919a308ac025ed273a2",
+              "implementation/warlock/src/Catalog.elm": "3eadb76212a66986ef2d76292a2f33595f7cd7d47dc90c8982435195f9ea3f02",
+              "implementation/warlock/adapter/catalog_authority.py": "ad20204afd3b203eb956918300c8da4cb4765b3c5ad86e701b0257a54b8fb9cc",
+              "implementation/warlock/qa/SearchRemovedReplay.elm": "46d3f10ec705c471e717539138fb2041eff8a6e8bc5468906a8380f5a5dd5a2f",
+              "implementation/warlock/qa/native-launcher-removed-portable.py": "ee30d6eb5e2fc43bd9d131222353833f5bb3facc2e012653e21a0147a772fc1f",
+              "implementation/warlock/README.md": "592a10a7823ff7a43594c2432695b14161614d1de858ee5568d94e208ccf59f8",
+              "implementation/warlock/qa/check-search-removed.py": "2bd9db70bc41c15c51bb82869cdaa47d0f12e8cff66b696c8bb737a6167d99bf",
+              "implementation/warlock/qa/search-removed-replay.cjs": "ae12f1dc6b6c6116d098dbffaf40e530a7b7988aea9c06d7aa3d44874ea1ba5b"
+            },
+            "pair": {
+              "core": {
+                "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-build/Hyprland",
+                "sha256": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e"
+              },
+              "plugin": {
+                "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/authority/elm-window-geometry-authority.so",
+                "sha256": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c"
+              },
+              "aquamarine": {
+                "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/lib/libaquamarine.so.0.15.0",
+                "sha256": "667a22d535aade4e4a26134e39028a87fb3f963c28b7bf7ff79da684bb014ecd"
+              }
+            },
+            "host": {
+              "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/elm-host",
+              "sha256": "4377b11ce0afe9e1072210666aa872118b032995275a20657058771e5e6c8347",
+              "heldBuild": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/host-build-report.json",
+              "heldBuildSHA256": "691806471ff599503a20067aa0b90bf914b93a1ee5985198cdc79fb92ff975bf"
+            },
+            "toolchain": {
+              "toolchainManifestSHA256": "fe3d29078d30c6cf9bd431233c5eed1ad4550e2873ff55739d50a5a87a97edaa",
+              "compilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+              "nodeSHA256": "caa24debe02770c92a70677e2a62ca98890150e7ac1c17bcfe31bcc98cc89943"
+            },
+            "nativeAll367RecordedInputsCurrent": true
+          }
         },
         {
           "name": "search-refused",
@@ -14443,5 +14511,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-29T15:49:58.841830+00:00"
+  "updatedUTC": "2026-10-29T16:00:07.910967+00:00"
 }

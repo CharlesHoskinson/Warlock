@@ -47,6 +47,12 @@ The native recording retains an unrelated release-builder source change; its
 pin runtime sources and core/plugin/host still match. This acceptance does not
 close application-pin versus always-on-top independence or New instance.
 
+The focused search-removal regression is available as
+`qa/check-search-removed.py` through the protected CPU launcher. It compiles
+the current Desktop, Launch, Catalog and Surface logic and checks stale
+selection rejection, correlated refusal and explicit Refresh to no-match.
+Native presentation and applicable accessibility remain separate gates.
+
 The installed Omarchy predecessor now has a bounded private startup observation:
 its menu, workspaces and clock paint, and its owned process group retires without
 leftovers. This used private default-derived configuration. Actual candidate

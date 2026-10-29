@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "requirement": "ELM-UI-005",
+  "scenario": "search-removed",
+  "status": "partial",
+  "scenarioAccepted": false,
+  "requirementAccepted": false,
+  "releaseAccepted": false,
+  "oracle": "no replacement entry launches and selection reconciles",
+  "verificationScope": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+  "observed": "Actual selected Files desktop removed before physical Enter; one identity-bound Refused/stale-catalog and no recipient. Physical keyboard Refresh returns correlated catalog generation2 without removed identity, preserves query files, paints no-match and current Refresh focus, and produces no replacement launch through capture.",
+  "missingObservations": [
+    "Applicable actual assistive-technology observation of current search/no-match, focus and reachable Refresh semantics."
+  ],
+  "compiledReplay": {
+    "file": "repository-replay-observations.json",
+    "sha256": "3bb4376cb0508216405ac4a6ce44ef35d82391510237fdfd8fce5517d005535f",
+    "checks": 14,
+    "compiledSHA256": "38fa3a6d0b22738423bcb0b637983a31d2a776f2f5183c3b0f7d391c21147ca8",
+    "recordedSourceCount": 101,
+    "scope": "Actual compiled Elm Desktop/Launch/Catalog/Surface worker ports; synthetic refresh-before-stale-action and refusal/refresh schedule. Not native input or storage."
+  },
+  "native": {
+    "file": "native-keyboard-report.json.gz",
+    "sha256": "d38905ab55c978402c6814977d0823003d248d5ac27541d49e26aad348b7ca9c",
+    "expandedRawSHA256": "c260d3775ba5f27cf0954aebba65e7aaea624cbecea68090129b3e707f968ebe",
+    "checks": 36,
+    "passed": true,
+    "cleanupPassed": true,
+    "sourceCount": 367,
+    "allRecordedSourceInputsCurrent": true,
+    "unit": "qa-harness-08525c36c79e4ea791017a31e4dea3db.scope",
+    "invocation": "d5d9bb6fd83e4202801f1dee79a41130",
+    "pair": {
+      "core": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-build/Hyprland",
+        "sha256": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e"
+      },
+      "plugin": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/authority/elm-window-geometry-authority.so",
+        "sha256": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c"
+      },
+      "aquamarine": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/lib/libaquamarine.so.0.15.0",
+        "sha256": "667a22d535aade4e4a26134e39028a87fb3f963c28b7bf7ff79da684bb014ecd"
+      }
+    },
+    "host": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/elm-host",
+      "sha256": "4377b11ce0afe9e1072210666aa872118b032995275a20657058771e5e6c8347",
+      "heldBuild": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/host/host-build-report.json",
+      "heldBuildSHA256": "691806471ff599503a20067aa0b90bf914b93a1ee5985198cdc79fb92ff975bf"
+    },
+    "runtimeTuple": {
+      "root": "/home/charles/Warlock/implementation/warlock-client-provider-native-v204",
+      "freshAdapter": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/source-coherence-20261028/terra-2/fresh_candidate-v1.py",
+      "freshAdapterSHA256": "23d66e343e37bead000ed155bbf46f8dcecb47bed09946ed62afe8f052169b00",
+      "parentAdapterSHA256": "e045634bd023f07977c398ef0057b9fdee3a1e1718d51c879e221ee353e28ae9",
+      "tupleSHA256": "bc225242e30baf4a5b8b1182cef6fdc716cc9c67de90dc35674f90c5fa87830b",
+      "foundationSHA256": "08b24bd93cbb63ec097900915379b32e90d9dcca7156d04fe8ee959efaff264f"
+    },
+    "accessibilityEnabled": false
+  },
+  "captures": [
+    {
+      "file": "refused-full.png",
+      "sha256": "ee06998d74ab4d6a4856dd3b042267b3a644e889a4b6d3ecb0e257665c9829c1"
+    },
+    {
+      "file": "reconciled-full.png",
+      "sha256": "bd05237165717dd696195e406d66a1fd8ef769b5a48c783cfaeae6bdad803c32"
+    }
+  ],
+  "independentReview": {
+    "file": "independent-review.md",
+    "sha256": "0ab5e307ceb687b93e1a82d4b6c1cdc5634dc02d0a68d1ed4dcfbd569bb7fd2b",
+    "name": "quint-5",
+    "disposition": "partial",
+    "independent": true
+  },
+  "sourceBaseRevision": "a00fe778bc70709a82bacb89e330d45187c2d49c",
+  "selectedSourceHashes": {
+    "implementation/warlock/src/Desktop.elm": "1b5b48fc5ca71c6e11bd54ea6ab723f5a37f4d383d6a59c99d14d83b005d5033",
+    "implementation/warlock/src/Launch.elm": "dcd7260248ccb0b5bc6001c49319dd51af8c2fae98888919a308ac025ed273a2",
+    "implementation/warlock/src/Catalog.elm": "3eadb76212a66986ef2d76292a2f33595f7cd7d47dc90c8982435195f9ea3f02",
+    "implementation/warlock/adapter/catalog_authority.py": "ad20204afd3b203eb956918300c8da4cb4765b3c5ad86e701b0257a54b8fb9cc",
+    "implementation/warlock/qa/SearchRemovedReplay.elm": "46d3f10ec705c471e717539138fb2041eff8a6e8bc5468906a8380f5a5dd5a2f",
+    "implementation/warlock/qa/native-launcher-removed-portable.py": "ee30d6eb5e2fc43bd9d131222353833f5bb3facc2e012653e21a0147a772fc1f",
+    "implementation/warlock/README.md": "592a10a7823ff7a43594c2432695b14161614d1de858ee5568d94e208ccf59f8",
+    "implementation/warlock/qa/check-search-removed.py": "2bd9db70bc41c15c51bb82869cdaa47d0f12e8cff66b696c8bb737a6167d99bf",
+    "implementation/warlock/qa/search-removed-replay.cjs": "ae12f1dc6b6c6116d098dbffaf40e530a7b7988aea9c06d7aa3d44874ea1ba5b"
+  },
+  "toolchain": {
+    "toolchainManifestSHA256": "fe3d29078d30c6cf9bd431233c5eed1ad4550e2873ff55739d50a5a87a97edaa",
+    "compilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+    "nodeSHA256": "caa24debe02770c92a70677e2a62ca98890150e7ac1c17bcfe31bcc98cc89943"
+  },
+  "failedFixture": {
+    "file": "first-replay-fixture-failure.json",
+    "sha256": "5f32969d09492bda8a97ce1928d735629c06ac02740878f8d1eb282e7b54d31c",
+    "scope": "First worker omitted actual catalog preferences so pin-unavailable status masked no-match;12/14checks passed. Corrected only fixture preferences and retained failure; production reducer unchanged."
+  },
+  "limits": [
+    "No native refresh-before-Enter schedule is claimed; that ordering is compiled replay only.",
+    "Native empty-result reconciliation does not prove every matching-replacement schedule.",
+    "No real AT is inferred from DOM, pixels, compiled replay or accessibility-disabled native run.",
+    "No whole UI005, IME, shared renderer crash fix, main Omarchy activation or release acceptance."
+  ]
+}
