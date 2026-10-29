@@ -1,0 +1,806 @@
+candidate=SIGABRT
+
+Thread 56 (LWP 372347 "WebKitWebProces"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f653d3ff9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000000000000000 in ?? ()
+
+Thread 55 (LWP 372348 "EventDispatcher"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561d112e5 in ?? ()
+#2  0x00007f64f47ff9c8 in ?? ()
+#3  0x0000000000000000 in ?? ()
+
+Thread 54 (LWP 372349 "rruptDispatcher"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561d112e5 in ?? ()
+#2  0x00007f64f3ffe9c8 in ?? ()
+#3  0x0000000000000000 in ?? ()
+
+Thread 53 (LWP 372350 "ReceiveQueue"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561d112e5 in ?? ()
+#2  0x00007f64f37fd9c8 in ?? ()
+#3  0x0000000000000000 in ?? ()
+
+Thread 52 (LWP 372353 "ReceiveQueue"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561d112e5 in ?? ()
+#2  0x00007f64f2ffc9c8 in ?? ()
+#3  0x0000000000000000 in ?? ()
+
+Thread 51 (LWP 372354 "pool-spawner"):
+#0  0x00007f6561d1e46d in ?? ()
+#1  0x00007f655e08bbde in ?? ()
+#2  0x0000000000000000 in ?? ()
+
+Thread 50 (LWP 372355 "gmain"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561d119d7 in ?? ()
+#2  0x00007f64f1ffa9c8 in ?? ()
+#3  0x0000000000000000 in ?? ()
+
+Thread 49 (LWP 372356 "pool-0"):
+#0  0x00007f6561d1e46d in ?? ()
+#1  0x00007f655e08cc1c in ?? ()
+#2  0x000000003b9ac932 in ?? ()
+#3  0x000000000000000e in ?? ()
+#4  0x00000000000284e6 in ?? ()
+#5  0x000000002eb19216 in ?? ()
+#6  0x000000000000000e in ?? ()
+#7  0x000000003b9ac932 in ?? ()
+#8  0x000000001dcd6488 in ?? ()
+#9  0xe3c66667397cc300 in ?? ()
+#10 0x000055d569b432e0 in ?? ()
+#11 0x000055d569b432e0 in ?? ()
+
+Thread 48 (LWP 372358 "gdbus"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561d119d7 in ?? ()
+#2  0x00007f64f0ff89c8 in ?? ()
+#3  0x0000000000000000 in ?? ()
+
+Thread 47 (LWP 372359 "pool-1"):
+#0  0x00007f6561d1e46d in ?? ()
+#1  0x00007f655e08cc1c in ?? ()
+#2  0x000000003b9ac845 in ?? ()
+#3  0x000000000000000e in ?? ()
+#4  0x00000000000284e6 in ?? ()
+#5  0x000000002f0836b3 in ?? ()
+#6  0x000000000000000e in ?? ()
+#7  0x000000003b9ac845 in ?? ()
+#8  0x000000001dcd6284 in ?? ()
+#9  0xe3c66667397cc300 in ?? ()
+#10 0x000055d569b432e0 in ?? ()
+#11 0x000055d569b432e0 in ?? ()
+
+Thread 46 (LWP 372360 "WebKitW:disk$0"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f64d37fe9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000000004e4aa7c in ?? ()
+#5  0x00007f64d37fe6c0 in ?? ()
+#6  0x0000000000000000 in ?? ()
+
+Thread 45 (LWP 372361 "WebKitWebP:sh0"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f64d2ffd9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x00000000000000f0 in ?? ()
+#5  0x00007f64d2ffd6c0 in ?? ()
+#6  0x00007f64ac02e0d0 in ?? ()
+#7  0x00007ffd64abdc90 in ?? ()
+#8  0x00007f64d2ffbe90 in ?? ()
+#9  0x00007f6561c974ec in ?? ()
+#10 0x000055d569ba93b4 in ?? ()
+#11 0x000055d569ba93b4 in ?? ()
+
+Thread 44 (LWP 372362 "eadedCompositor"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561d112e5 in ?? ()
+#2  0x00007f64d27fc9c8 in ?? ()
+#3  0x0000000000000000 in ?? ()
+
+Thread 43 (LWP 372363 "WebKit:traceq0"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f64d1ffb9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000003000000030 in ?? ()
+#5  0x00007f64d1ffb6c0 in ?? ()
+#6  0x00007f64d1ff9de0 in ?? ()
+#7  0xe3c66667397cc300 in ?? ()
+#8  0x00007f64d1ff9e90 in ?? ()
+#9  0x00007f6561c974ec in ?? ()
+#10 0x00007f64b0004578 in ?? ()
+#11 0x00007f64b0004578 in ?? ()
+
+Thread 42 (LWP 372364 "WebKitWe:gdrv0"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f64d17fa9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000003000000030 in ?? ()
+#5  0x00007f64d17fa6c0 in ?? ()
+#6  0x00007f64d17f8de0 in ?? ()
+#7  0xe3c66667397cc300 in ?? ()
+#8  0x00007f64d17f8e90 in ?? ()
+#9  0x00007f6561c974ec in ?? ()
+#10 0x00007f64b001bbd8 in ?? ()
+#11 0x00007f64b001bbd8 in ?? ()
+
+Thread 41 (LWP 372365 "WebKit:traceq0"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f64d0df99c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000003000000030 in ?? ()
+#5  0x00007f64d0df96c0 in ?? ()
+#6  0x00007f64d0df7de0 in ?? ()
+#7  0xe3c66667397cc300 in ?? ()
+#8  0x00007f64d0df7e90 in ?? ()
+#9  0x00007f6561c974ec in ?? ()
+#10 0x00007f64b020a388 in ?? ()
+#11 0x00007f64b020a388 in ?? ()
+
+Thread 40 (LWP 372366 "WebKitWe:gdrv0"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f64ba1ff9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000003000000030 in ?? ()
+#5  0x00007f64ba1ff6c0 in ?? ()
+#6  0x00007f64ba1fdde0 in ?? ()
+#7  0xe3c66667397cc300 in ?? ()
+#8  0x00007f64ba1fde90 in ?? ()
+#9  0x00007f6561c974ec in ?? ()
+#10 0x00007f64b0221878 in ?? ()
+#11 0x00007f64b0221878 in ?? ()
+
+Thread 39 (LWP 372367 "eadedCompositor"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f64b99fe9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000000000000020 in ?? ()
+#5  0x00007f64b99fe6c0 in ?? ()
+#6  0x0000000000000016 in ?? ()
+#7  0x00007f64d27fa901 in ?? ()
+#8  0x00007f64b99fcf70 in ?? ()
+#9  0x00007f6561ca0800 in ?? ()
+#10 0x00007f6561ca0740 in ?? ()
+#11 0x00007f6494000880 in ?? ()
+
+Thread 38 (LWP 372368 "eadedCompositor"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f64b91fd9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000003000000020 in ?? ()
+#5  0x00007f64b91fd6c0 in ?? ()
+#6  0x00007f64b91fbf20 in ?? ()
+#7  0xe3c66667397cc300 in ?? ()
+#8  0x00007f64b91fbf70 in ?? ()
+#9  0x00007f6561ca0800 in ?? ()
+#10 0x00007f6561ca0740 in ?? ()
+#11 0x00007f6494000880 in ?? ()
+
+Thread 37 (LWP 372369 "WebKit:traceq0"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f64b89fc9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000003000000030 in ?? ()
+#5  0x00007f64b89fc6c0 in ?? ()
+#6  0x00007f64b89fade0 in ?? ()
+#7  0xe3c66667397cc300 in ?? ()
+#8  0x00007f64b89fae90 in ?? ()
+#9  0x00007f6561c974ec in ?? ()
+#10 0x000055d569c36148 in ?? ()
+#11 0x000055d569c36148 in ?? ()
+
+Thread 36 (LWP 372370 "WebKitWe:gdrv0"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f6493fff9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000003000000030 in ?? ()
+#5  0x00007f6493fff6c0 in ?? ()
+#6  0x00007f6493ffdde0 in ?? ()
+#7  0xe3c66667397cc300 in ?? ()
+#8  0x00007f6493ffde90 in ?? ()
+#9  0x00007f6561c974ec in ?? ()
+#10 0x000055d569c4c998 in ?? ()
+#11 0x000055d569c4c998 in ?? ()
+
+Thread 35 (LWP 372371 "WebKitWebProces"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f64937fe9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000000000000020 in ?? ()
+#5  0x00007f64937fe6c0 in ?? ()
+#6  0x0000000000000016 in ?? ()
+#7  0x00007ffd64abeb01 in ?? ()
+#8  0x00007f64937fcf70 in ?? ()
+#9  0x00007f6561ca0800 in ?? ()
+#10 0x00007f6561ca0740 in ?? ()
+#11 0x00007f6484000880 in ?? ()
+
+Thread 34 (LWP 372372 "WebKitWebProces"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f6492ffd9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000003000000020 in ?? ()
+#5  0x00007f6492ffd6c0 in ?? ()
+#6  0x00007f6492ffbf20 in ?? ()
+#7  0xe3c66667397cc300 in ?? ()
+#8  0x00007f6492ffbf70 in ?? ()
+#9  0x00007f6561ca0800 in ?? ()
+#10 0x00007f6561ca0740 in ?? ()
+#11 0x00007f6484000880 in ?? ()
+
+Thread 33 (LWP 372374 "eadedCompositor"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561d112e5 in ?? ()
+#2  0x00007f64927fc9c8 in ?? ()
+#3  0x0000000000000000 in ?? ()
+
+Thread 32 (LWP 372375 "WebKit:traceq0"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f6491ffb9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000003000000030 in ?? ()
+#5  0x00007f6491ffb6c0 in ?? ()
+#6  0x00007f6491ff9de0 in ?? ()
+#7  0xe3c66667397cc300 in ?? ()
+#8  0x00007f6491ff9e90 in ?? ()
+#9  0x00007f6561c974ec in ?? ()
+#10 0x00007f6488004208 in ?? ()
+#11 0x00007f6488004208 in ?? ()
+
+Thread 31 (LWP 372376 "WebKitWe:gdrv0"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f64917fa9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000003000000030 in ?? ()
+#5  0x00007f64917fa6c0 in ?? ()
+#6  0x00007f64917f8de0 in ?? ()
+#7  0xe3c66667397cc300 in ?? ()
+#8  0x00007f64917f8e90 in ?? ()
+#9  0x00007f6561c974ec in ?? ()
+#10 0x00007f648801b808 in ?? ()
+#11 0x00007f648801b808 in ?? ()
+
+Thread 30 (LWP 372377 "eadedCompositor"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f6490ff99c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000000000000020 in ?? ()
+#5  0x00007f6490ff96c0 in ?? ()
+#6  0x0000000000000000 in ?? ()
+
+Thread 29 (LWP 372378 "eadedCompositor"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f647bfff9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000003000000020 in ?? ()
+#5  0x00007f647bfff6c0 in ?? ()
+#6  0x00007f647bffdf20 in ?? ()
+#7  0xe3c66667397cc300 in ?? ()
+#8  0x00007f647bffdf70 in ?? ()
+#9  0x00007f6561ca0800 in ?? ()
+#10 0x00007f6561ca0740 in ?? ()
+#11 0x000055d569dfb1e0 in ?? ()
+
+Thread 28 (LWP 372379 "eadedCompositor"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561d112e5 in ?? ()
+#2  0x00007f647b7fe9c8 in ?? ()
+#3  0x0000000000000000 in ?? ()
+
+Thread 27 (LWP 372381 "WebKit:traceq0"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f647affd9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000003000000030 in ?? ()
+#5  0x00007f647affd6c0 in ?? ()
+#6  0x00007f647affbde0 in ?? ()
+#7  0xe3c66667397cc300 in ?? ()
+#8  0x00007f647affbe90 in ?? ()
+#9  0x00007f6561c974ec in ?? ()
+#10 0x00007f6480004508 in ?? ()
+#11 0x00007f6480004508 in ?? ()
+
+Thread 26 (LWP 372382 "WebKitWe:gdrv0"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f647a7fc9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000003000000030 in ?? ()
+#5  0x00007f647a7fc6c0 in ?? ()
+#6  0x00007f647a7fade0 in ?? ()
+#7  0xe3c66667397cc300 in ?? ()
+#8  0x00007f647a7fae90 in ?? ()
+#9  0x00007f6561c974ec in ?? ()
+#10 0x00007f648001bb38 in ?? ()
+#11 0x00007f648001bb38 in ?? ()
+
+Thread 25 (LWP 372383 "eadedCompositor"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f6479ffb9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000000000000020 in ?? ()
+#5  0x00007f6479ffb6c0 in ?? ()
+#6  0x0000000000000000 in ?? ()
+
+Thread 24 (LWP 372384 "eadedCompositor"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f64797fa9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000003000000020 in ?? ()
+#5  0x00007f64797fa6c0 in ?? ()
+#6  0x00007f64797f8f20 in ?? ()
+#7  0xe3c66667397cc300 in ?? ()
+#8  0x00007f64797f8f70 in ?? ()
+#9  0x00007f6561ca0800 in ?? ()
+#10 0x00007f6561ca0740 in ?? ()
+#11 0x00007f64840008b0 in ?? ()
+
+Thread 23 (LWP 372385 "Core: Scrolling"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561d112e5 in ?? ()
+#2  0x00007f6478ff99c8 in ?? ()
+#3  0x0000000000000000 in ?? ()
+
+Thread 22 (LWP 372386 "SkiaCPUWorker"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f64787f89c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0xe3c66667397cc300 in ?? ()
+#5  0x00007f64787f86c0 in ?? ()
+#6  0x0000000000000000 in ?? ()
+
+Thread 21 (LWP 372387 "JITWorker"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f6477ff79c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000000000000000 in ?? ()
+
+Thread 20 (LWP 372388 "JITWorker"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f64777f69c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000000000000000 in ?? ()
+
+Thread 19 (LWP 372393 "JITWorker"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f6476ff59c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000000000000000 in ?? ()
+
+Thread 18 (LWP 372395 "SkiaCPUWorker"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f64767f49c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x00007f64940107e0 in ?? ()
+#5  0x00007f64767f46c0 in ?? ()
+#6  0x00007f64767f2ce0 in ?? ()
+#7  0x00007f64940108b0 in ?? ()
+#8  0x00007f64767f2d30 in ?? ()
+#9  0x00007f6561c974ec in ?? ()
+#10 0x00007f6539940150 in ?? ()
+#11 0x00007f6539940150 in ?? ()
+
+Thread 17 (LWP 372396 "SkiaCPUWorker"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f6475ff39c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x00007f649c008120 in ?? ()
+#5  0x00007f6475ff36c0 in ?? ()
+#6  0x00007f6475ff1ce0 in ?? ()
+#7  0x00007f649c0081f0 in ?? ()
+#8  0x00007f6475ff1d30 in ?? ()
+#9  0x00007f6561c974ec in ?? ()
+#10 0x00007f6539948150 in ?? ()
+#11 0x00007f6539948150 in ?? ()
+
+Thread 16 (LWP 372397 "WebKitW:disk$1"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f64757f29c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000000005032f17 in ?? ()
+#5  0x00007f64757f26c0 in ?? ()
+#6  0x0000000000000000 in ?? ()
+
+Thread 15 (LWP 372402 "HeapHelper"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f6472dff9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x00000000000284ef in ?? ()
+#5  0x00007f6472dff6c0 in ?? ()
+#6  0x7ff0000000000000 in ?? ()
+#7  0xe3c66667397cc300 in ?? ()
+#8  0x00007f6472dfdd30 in ?? ()
+#9  0x00007f6561c97702 in ?? ()
+#10 0xe3c66667397cc300 in ?? ()
+#11 0x0000000000000437 in ?? ()
+
+Thread 14 (LWP 372403 "HeapHelper"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f64725fe9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x00007f64725fcc48 in ?? ()
+#5  0x00007f64725fe6c0 in ?? ()
+#6  0x7ff0000000000000 in ?? ()
+#7  0xe3c6666700000000 in ?? ()
+#8  0x00007f64725fcd30 in ?? ()
+#9  0x00007f6561c97702 in ?? ()
+#10 0xe3c66667397cc300 in ?? ()
+#11 0x00000000000003a0 in ?? ()
+
+Thread 13 (LWP 372404 "HeapHelper"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f6471dfd9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x00007f6471dfbc48 in ?? ()
+#5  0x00007f6471dfd6c0 in ?? ()
+#6  0x7ff0000000000000 in ?? ()
+#7  0xe3c6666700000000 in ?? ()
+#8  0x00007f6471dfbd30 in ?? ()
+#9  0x00007f6561c97702 in ?? ()
+#10 0xe3c66667397cc300 in ?? ()
+#11 0x00000000000003eb in ?? ()
+
+Thread 12 (LWP 372405 "HeapHelper"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f64715fc9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x00007f64715fac48 in ?? ()
+#5  0x00007f64715fc6c0 in ?? ()
+#6  0x7ff0000000000000 in ?? ()
+#7  0xe3c6666700000000 in ?? ()
+#8  0x00007f64715fad30 in ?? ()
+#9  0x00007f6561c97702 in ?? ()
+#10 0xe3c66667397cc300 in ?? ()
+#11 0x000000000000030f in ?? ()
+
+Thread 11 (LWP 372406 "HeapHelper"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f6470dfb9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x00007f6470df9c48 in ?? ()
+#5  0x00007f6470dfb6c0 in ?? ()
+#6  0x7ff0000000000000 in ?? ()
+#7  0xe3c6666700000000 in ?? ()
+#8  0x00007f6470df9d30 in ?? ()
+#9  0x00007f6561c97702 in ?? ()
+#10 0xe3c66667397cc300 in ?? ()
+#11 0x00000000000003ff in ?? ()
+
+Thread 10 (LWP 372407 "HeapHelper"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f64705fa9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x00000000000284ef in ?? ()
+#5  0x00007f64705fa6c0 in ?? ()
+#6  0x7ff0000000000000 in ?? ()
+#7  0xe3c66667397cc300 in ?? ()
+#8  0x00007f64705f8d30 in ?? ()
+#9  0x00007f6561c97702 in ?? ()
+#10 0xe3c66667397cc300 in ?? ()
+#11 0x000000000000040c in ?? ()
+
+Thread 9 (LWP 372408 "HeapHelper"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f646fdf99c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x00000000000284ef in ?? ()
+#5  0x00007f646fdf96c0 in ?? ()
+#6  0x7ff0000000000000 in ?? ()
+#7  0xe3c66667397cc300 in ?? ()
+#8  0x00007f646fdf7d30 in ?? ()
+#9  0x00007f6561c97702 in ?? ()
+#10 0xe3c66667397cc300 in ?? ()
+#11 0x000000000000032f in ?? ()
+
+Thread 8 (LWP 372409 "ollector Thread"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f646f5f89c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x00007f646f5f6c80 in ?? ()
+#5  0x00007f646f5f86c0 in ?? ()
+#6  0x00000000000284ef in ?? ()
+#7  0x0000000008f48c1d in ?? ()
+#8  0x00007f646f5f6d30 in ?? ()
+#9  0x00007f6561c97702 in ?? ()
+#10 0x00007f646f5f6d00 in ?? ()
+#11 0x0000000000000033 in ?? ()
+
+Thread 7 (LWP 372414 "SkiaCPUWorker"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f646edf79c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x00007f64a8019d90 in ?? ()
+#5  0x00007f646edf76c0 in ?? ()
+#6  0x00007f646edf5ce0 in ?? ()
+#7  0x00007f64a8019e60 in ?? ()
+#8  0x00007f646edf5d30 in ?? ()
+#9  0x00007f6561c974ec in ?? ()
+#10 0x00007f65398282d4 in ?? ()
+#11 0x00007f65398282d4 in ?? ()
+
+Thread 6 (LWP 372415 "SkiaCPUWorker"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f646e5f69c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x00007f64b0396be0 in ?? ()
+#5  0x00007f646e5f66c0 in ?? ()
+#6  0x00007f646e5f4ce0 in ?? ()
+#7  0x00007f64b0396cb0 in ?? ()
+#8  0x00007f646e5f4d30 in ?? ()
+#9  0x00007f6561c974ec in ?? ()
+#10 0x00007f653982c450 in ?? ()
+#11 0x00007f653982c450 in ?? ()
+
+Thread 5 (LWP 372418 "DataURLDecoder"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561d112e5 in ?? ()
+#2  0x00007f646b9ff9c8 in ?? ()
+#3  0x0000000000000000 in ?? ()
+
+Thread 4 (LWP 372421 "SkiaCPUWorker"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f646b1fe9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x00007f64ac020ca0 in ?? ()
+#5  0x00007f646b1fe6c0 in ?? ()
+#6  0x00007f646b1fcce0 in ?? ()
+#7  0x00007f64ac020d70 in ?? ()
+#8  0x00007f646b1fcd30 in ?? ()
+#9  0x00007f6561c974ec in ?? ()
+#10 0x00007f65399b0154 in ?? ()
+#11 0x00007f65399b0154 in ?? ()
+
+Thread 3 (LWP 372422 "SkiaCPUWorker"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f646a9fd9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x00007f64b4003f60 in ?? ()
+#5  0x00007f646a9fd6c0 in ?? ()
+#6  0x00007f646a9fbce0 in ?? ()
+#7  0x00007f64b4004030 in ?? ()
+#8  0x00007f646a9fbd30 in ?? ()
+#9  0x00007f6561c974ec in ?? ()
+#10 0x00007f65399b4154 in ?? ()
+#11 0x00007f65399b4154 in ?? ()
+
+Thread 2 (LWP 372639 "SkiaCPUWorker"):
+#0  0x00007f6561ca08f2 in ?? ()
+#1  0x00007f6561c94c79 in ?? ()
+#2  0x00007f6467fff9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x00007f6467ffdd40 in ?? ()
+#5  0x00007f6467fff6c0 in ?? ()
+#6  0x0000000000000000 in ?? ()
+
+Thread 1 (LWP 372341 "WebKitWebProces"):
+#0  0x00007f6561c9a11c in ?? ()
+#1  0x00000068397cc300 in ?? ()
+#2  0x00007f6539b0b180 in ?? ()
+#3  0x0000000000000008 in ?? ()
+#4  0xe3c66667397cc300 in ?? ()
+#5  0x0000000000000006 in ?? ()
+#6  0x00007f6539b1d600 in ?? ()
+#7  0x00007ffd64abfb10 in ?? ()
+#8  0x00007f6561c3e5d0 in ?? ()
+#9  0x00007f646c40b100 in ?? ()
+#10 0x00007f653bee0400 in ?? ()
+#11 0x00007ffd64abfbd0 in ?? ()
+
+Error reading attached process's symbol file.
+: No such file or directory.
+From                To                  Syms Read   Shared Object Library
+                                        No          /usr/lib/libwebkit2gtk-4.1.so.0
+                                        No          /usr/lib/libc.so.6
+                                        No          /usr/lib/libgio-2.0.so.0
+                                        No          /usr/lib/libgmodule-2.0.so.0
+                                        No          /usr/lib/libepoxy.so.0
+                                        No          /usr/lib/libgtk-3.so.0
+                                        No          /usr/lib/libgdk-3.so.0
+                                        No          /usr/lib/libpango-1.0.so.0
+                                        No          /usr/lib/libharfbuzz.so.0
+                                        No          /usr/lib/libatk-1.0.so.0
+                                        No          /usr/lib/libcairo.so.2
+                                        No          /usr/lib/libz.so.1
+                                        No          /usr/lib/libfreetype.so.6
+                                        No          /usr/lib/libfontconfig.so.1
+                                        No          /usr/lib/libwebpmux.so.3
+                                        No          /usr/lib/libexpat.so.1
+                                        No          /usr/lib/libgobject-2.0.so.0
+                                        No          /usr/lib/libjavascriptcoregtk-4.1.so.0
+                                        No          /usr/lib/libicui18n.so.78
+                                        No          /usr/lib/libsystemd.so.0
+                                        No          /usr/lib/libjpeg.so.8
+                                        No          /usr/lib/libpng16.so.16
+                                        No          /usr/lib/libglib-2.0.so.0
+                                        No          /usr/lib/libicuuc.so.78
+                                        No          /usr/lib/libxml2.so.16
+                                        No          /usr/lib/libsqlite3.so.0
+                                        No          /usr/lib/libxslt.so.1
+                                        No          /usr/lib/liblcms2.so.2
+                                        No          /usr/lib/libgcrypt.so.20
+                                        No          /usr/lib/libgstallocators-1.0.so.0
+                                        No          /usr/lib/libgstapp-1.0.so.0
+                                        No          /usr/lib/libgstbase-1.0.so.0
+                                        No          /usr/lib/libgstreamer-1.0.so.0
+                                        No          /usr/lib/libgstpbutils-1.0.so.0
+                                        No          /usr/lib/libgstaudio-1.0.so.0
+                                        No          /usr/lib/libgsttag-1.0.so.0
+                                        No          /usr/lib/libgstvideo-1.0.so.0
+                                        No          /usr/lib/libgstgl-1.0.so.0
+                                        No          /usr/lib/libgstfft-1.0.so.0
+                                        No          /usr/lib/libwebpdemux.so.2
+                                        No          /usr/lib/libwebp.so.7
+                                        No          /usr/lib/libjxl.so.0.12
+                                        No          /usr/lib/libavif.so.16
+                                        No          /usr/lib/libharfbuzz-icu.so.0
+                                        No          /usr/lib/libsoup-3.0.so.0
+                                        No          /usr/lib/libX11.so.6
+                                        No          /usr/lib/libwayland-server.so.0
+                                        No          /usr/lib/libwayland-client.so.0
+                                        No          /usr/lib/libm.so.6
+                                        No          /usr/lib/libmanette-0.2.so.0
+                                        No          /usr/lib/libseccomp.so.2
+                                        No          /usr/lib/libenchant-2.so.2
+                                        No          /usr/lib/libgbm.so.1
+                                        No          /usr/lib/libdrm.so.2
+                                        No          /usr/lib/libtasn1.so.6
+                                        No          /usr/lib/libhyphen.so.0
+                                        No          /usr/lib/libsecret-1.so.0
+                                        No          /usr/lib/libstdc++.so.6
+                                        No          /usr/lib/libgcc_s.so.1
+                                        No          /lib64/ld-linux-x86-64.so.2
+                                        No          /usr/lib/libmount.so.1
+                                        No          /usr/lib/libpangocairo-1.0.so.0
+                                        No          /usr/lib/libpangoft2-1.0.so.0
+                                        No          /usr/lib/libfribidi.so.0
+                                        No          /usr/lib/libcairo-gobject.so.2
+                                        No          /usr/lib/libgdk_pixbuf-2.0.so.0
+                                        No          /usr/lib/libXi.so.6
+                                        No          /usr/lib/libatk-bridge-2.0.so.0
+                                        No          /usr/lib/libcloudproviders.so.0
+                                        No          /usr/lib/libtinysparql-3.0.so.0
+                                        No          /usr/lib/libXfixes.so.3
+                                        No          /usr/lib/libxkbcommon.so.0
+                                        No          /usr/lib/libwayland-cursor.so.0
+                                        No          /usr/lib/libwayland-egl.so.1
+                                        No          /usr/lib/libXext.so.6
+                                        No          /usr/lib/libXcursor.so.1
+                                        No          /usr/lib/libXdamage.so.1
+                                        No          /usr/lib/libXcomposite.so.1
+                                        No          /usr/lib/libXrandr.so.2
+                                        No          /usr/lib/libXinerama.so.1
+                                        No          /usr/lib/libthai.so.0
+                                        No          /usr/lib/libgraphite2.so.3
+                                        No          /usr/lib/libXrender.so.1
+                                        No          /usr/lib/libxcb.so.1
+                                        No          /usr/lib/libxcb-render.so.0
+                                        No          /usr/lib/libxcb-shm.so.0
+                                        No          /usr/lib/libpixman-1.so.0
+                                        No          /usr/lib/libbz2.so.1.0
+                                        No          /usr/lib/libbrotlidec.so.1
+                                        No          /usr/lib/libffi.so.8
+                                        No          /usr/lib/libatomic.so.1
+                                        No          /usr/lib/libpcre2-8.so.0
+                                        No          /usr/lib/libicudata.so.78
+                                        No          /usr/lib/libgpg-error.so.0
+                                        No          /usr/lib/libunwind.so.8
+                                        No          /usr/lib/libdw.so.1
+                                        No          /usr/lib/liborc-0.4.so.0
+                                        No          /usr/lib/libEGL.so.1
+                                        No          /usr/lib/libGLX.so.0
+                                        No          /usr/lib/libX11-xcb.so.1
+                                        No          /usr/lib/libgudev-1.0.so.0
+                                        No          /usr/lib/libsharpyuv.so.0
+                                        No          /usr/lib/libjxl_cms.so.0.12
+                                        No          /usr/lib/libhwy.so.1
+                                        No          /usr/lib/libbrotlienc.so.1
+                                        No          /usr/lib/libyuv.so
+                                        No          /usr/lib/libdav1d.so.7
+                                        No          /usr/lib/librav1e.so.0.8
+                                        No          /usr/lib/libSvtAv1Enc.so.4
+                                        No          /usr/lib/libaom.so.3
+                                        No          /usr/lib/libpsl.so.5
+                                        No          /usr/lib/libzstd.so.1
+                                        No          /usr/lib/libgssapi_krb5.so.2
+                                        No          /usr/lib/libnghttp2.so.14
+                                        No          /usr/lib/libhidapi-hidraw.so.0
+                                        No          /usr/lib/libevdev.so.2
+                                        No          /usr/lib/libtss2-esys.so.0
+                                        No          /usr/lib/libtss2-mu.so.0
+                                        No          /usr/lib/libtss2-rc.so.0
+                                        No          /usr/lib/libtss2-tctildr.so.0
+                                        No          /usr/lib/libblkid.so.1
+                                        No          /usr/lib/libglycin-2.so.0
+                                        No          /usr/lib/libatspi.so.0
+                                        No          /usr/lib/libdbus-1.so.3
+                                        No          /usr/lib/libjson-glib-1.0.so.0
+                                        No          /usr/lib/libdatrie.so.1
+                                        No          /usr/lib/libXau.so.6
+                                        No          /usr/lib/libXdmcp.so.6
+                                        No          /usr/lib/libbrotlicommon.so.1
+                                        No          /usr/lib/liblzma.so.5
+                                        No          /usr/lib/libelf.so.1
+                                        No          /usr/lib/libGLdispatch.so.0
+                                        No          /usr/lib/libudev.so.1
+                                        No          /usr/lib/libunistring.so.5
+                                        No          /usr/lib/libidn2.so.0
+                                        No          /usr/lib/libkrb5.so.3
+                                        No          /usr/lib/libk5crypto.so.3
+                                        No          /usr/lib/libcom_err.so.2
+                                        No          /usr/lib/libkrb5support.so.0
+                                        No          /usr/lib/libkeyutils.so.1
+                                        No          /usr/lib/libresolv.so.2
+                                        No          /usr/lib/libcrypto.so.3
+                                        No          /usr/lib/libtss2-sys.so.1
+                                        No          /usr/lib/libGLX_nvidia.so.0
+                                        No          /usr/lib/libnvidia-glsi.so.615.78.08
+                                        No          /usr/lib/libnvidia-tls.so.615.78.08
+                                        No          /usr/lib/libnvidia-glcore.so.615.78.08
+                                        No          /usr/lib/libdl.so.2
+                                        No          /usr/lib/libpthread.so.0
+                                        No          /usr/lib/librt.so.1
+                                        No          /usr/lib/libnvidia-gpucomp.so.615.78.08
+                                        No          /usr/lib/webkit2gtk-4.1/injected-bundle/libwebkit2gtkinjectedbundle.so
+                                        No          /usr/lib/gio/modules/libgvfsdbus.so
+                                        No          /usr/lib/gvfs/libgvfscommon.so
+                                        No          /usr/lib/gbm/dri_gbm.so
+                                        No          /usr/lib/libgallium-26.2.5-arch1.1.so
+                                        No          /usr/lib/libLLVM.so.23.1
+                                        No          /usr/lib/libSPIRV-Tools.so
+                                        No          /usr/lib/libsensors.so.5
+                                        No          /usr/lib/libxcb-randr.so.0
+                                        No          /usr/lib/libxcb-sync.so.1
+                                        No          /usr/lib/libxcb-present.so.0
+                                        No          /usr/lib/libxshmfence.so.1
+                                        No          /usr/lib/libxcb-xfixes.so.0
+                                        No          /usr/lib/libxcb-dri3.so.0
+                                        No          /usr/lib/libdrm_amdgpu.so.1
+                                        No          /usr/lib/libdrm_intel.so.1
+                                        No          /usr/lib/libedit.so.0
+                                        No          /usr/lib/libpciaccess.so.0
+                                        No          /usr/lib/libncursesw.so.6
+                                        No          /usr/lib/libEGL_mesa.so.0
+                                        No          /usr/lib/libGLESv2.so.2

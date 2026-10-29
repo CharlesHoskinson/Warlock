@@ -1,34 +1,33 @@
 {
   "schema": 1,
   "owner": "sol",
-  "updatedUTC": "2026-10-29T14:56:43.191779+00:00",
+  "updatedUTC": "2026-10-29T15:30:06.059010+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "renderer-owned-diagnostic-matched-source",
+    "id": "application-pin-order-current-evidence",
     "requirements": [
-      "ELM-UI-004"
+      "ELM-UX-004"
     ],
     "scenarios": [
-      "taskbar-inactive"
+      "ux-004"
     ],
     "paths": [
-      "implementation/warlock/qa/native-taskbar-new-instance-diagnostic-portable.py",
-      "implementation/warlock/qa/evidence/renderer-owned-diagnostic-20261029/manifest.json",
-      "implementation/warlock/qa/evidence/renderer-owned-diagnostic-20261029/independent-review.md",
-      "implementation/warlock/README.md"
+      "implementation/warlock/src/Pins.elm",
+      "implementation/warlock/adapter/taskbar_preferences.py",
+      "implementation/warlock/qa/PinsReplay.elm"
     ],
-    "before": "Ordinary taskbar scenarios remain accepted, but explicit NewInstance/application-pin context journeys reproduce a sharedWebKit renderer failure. Prior ancestorGDB trial stopped PRE-GUI at old sourcequalification release_builder mismatch; current qualifiedsource23d66e nowpasses andhasrunactualGUI repeatedly. No causalstack captured.",
-    "after": "Return the previously reviewed normal-user ancestor debugger through the now-matched sourcequalification, capture the owning renderer stack at actual failure, then fix only an evidenced production defect. Preserve originalaccepted ordinary taskbar evidence and keep wholeUI004 open until allremainingEARS/native/keyboard/AT obligations pass.",
+    "before": "Original pin/order persistence is partial: older native reorder/restart evidence lacks independent current-source adjudication. Current taskbar-zero pointer/keyboard/AT evidence maycover actual two-identity reorder/restart and visiblecontrols, but mustmatch originalUX004 replay+nativeverification ratherthan count oldUI004acceptanceagain.",
+    "after": "Establish current-source compiledordering replay plus actual user pin/reorder and shellrestart preserving exactdesktopidentities/relativeorder. Reuse demonstrably source-current evidence or run only missing decisivecase; fix only an observed persistence defect. Keep nativeAlwaysOnTop independence andotherUI004obligations separate.",
     "verification": [
-      "Protected serial native diagnostic with exact current core/plugin/AQ/host/source, normal-user ancestorGDB and core1; no sysctl/ptrace/sandbox relaxation, DRM/XWayland/software fallback or main desktop mutation.",
-      "Keep original6sec observations/5sec helpers; debugger trace is diagnostic evidence, not timing/nativeGUI acceptance. Retain allpriorfailures and actualsourcecoherencereceipt. At most2qualificationcycles/45min without productionfix/originalverdict."
+      "Original Elm replay assertion and isolated native recording: both identities retain chosen relative order. Inspect exactsourcehashes, userinputs/saveorder, actualrestart/readback and physicalresult; independentreviewagainstoriginaloracle.",
+      "Current source/pair/toolchain identity and normalcleanup required. No extraAT/IME requirement addedtoUX004; historicalfailurespreserved, model/producerchecksnotGUIacceptance. Nativeifneededserializedprotected/core1/original6sec5sec."
     ],
-    "owner": "root-renderer-diagnostic",
-    "participantRecord": ".warlock-contributor/renderer-owned-diagnostic-matched-source.json"
+    "owner": "root-pin-order",
+    "participantRecord": ".warlock-contributor/application-pin-order-current-evidence.json"
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -2415,6 +2414,30 @@
       "owner": "root-omarchy-recovery",
       "participantRecord": ".warlock-contributor/omarchy-predecessor-offline-recovery.json",
       "outcome": "STOP after two startup-only qualifications. Installed Omarchy startup second native trial passed with independently viewed clock/menu and owned-group cleanup, first failure retained. Full profile/candidate failure/rollback/preferences/drafts/UI020 acceptance remain missing; no main activation."
+    },
+    {
+      "id": "renderer-owned-diagnostic-matched-source",
+      "requirements": [
+        "ELM-UI-004"
+      ],
+      "scenarios": [
+        "taskbar-inactive"
+      ],
+      "paths": [
+        "implementation/warlock/qa/native-taskbar-new-instance-diagnostic-portable.py",
+        "implementation/warlock/qa/evidence/renderer-owned-diagnostic-20261029/manifest.json",
+        "implementation/warlock/qa/evidence/renderer-owned-diagnostic-20261029/independent-review.md",
+        "implementation/warlock/README.md"
+      ],
+      "before": "Ordinary taskbar scenarios remain accepted, but explicit NewInstance/application-pin context journeys reproduce a sharedWebKit renderer failure. Prior ancestorGDB trial stopped PRE-GUI at old sourcequalification release_builder mismatch; current qualifiedsource23d66e nowpasses andhasrunactualGUI repeatedly. No causalstack captured.",
+      "after": "Return the previously reviewed normal-user ancestor debugger through the now-matched sourcequalification, capture the owning renderer stack at actual failure, then fix only an evidenced production defect. Preserve originalaccepted ordinary taskbar evidence and keep wholeUI004 open until allremainingEARS/native/keyboard/AT obligations pass.",
+      "verification": [
+        "Protected serial native diagnostic with exact current core/plugin/AQ/host/source, normal-user ancestorGDB and core1; no sysctl/ptrace/sandbox relaxation, DRM/XWayland/software fallback or main desktop mutation.",
+        "Keep original6sec observations/5sec helpers; debugger trace is diagnostic evidence, not timing/nativeGUI acceptance. Retain allpriorfailures and actualsourcecoherencereceipt. At most2qualificationcycles/45min without productionfix/originalverdict."
+      ],
+      "owner": "root-renderer-diagnostic",
+      "participantRecord": ".warlock-contributor/renderer-owned-diagnostic-matched-source.json",
+      "outcome": "STOP2qualification. Matchedsource normal-userGDBattach reachedactualownedrenderer. First controlSIGCONT endedfatal-onlycapture; second configuredcontrolpass andcapturedactualSIGABRT/exitSignal6/death. Nativefixturestillmenu deadline/hostexit1; cleanprivatecleanup. Unsymbolized/unwind-incomplete stackwithno loadaddresses/causalassert leavesproductioncauseunresolved, nofix/GUIacceptance."
     }
   ]
 }

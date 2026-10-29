@@ -1,0 +1,24 @@
+{
+  "candidateSignals": [
+    "SIGABRT"
+  ],
+  "observedStops": [
+    "SIGABRT"
+  ],
+  "snapshots": [
+    {
+      "candidate": "SIGABRT",
+      "index": 1
+    }
+  ],
+  "gdbExitEvents": [
+    {
+      "exitCode": null,
+      "exitSignal": "6"
+    }
+  ],
+  "rendererProcessDeathObserved": true,
+  "source": "ancestor diagnostic",
+  "diagnosticOnly": true,
+  "acceptance": false
+}

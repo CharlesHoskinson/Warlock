@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "requirement": "ELM-UI-004",
+  "status": "diagnostic-only-stopped-no-cause",
+  "diagnosticOnly": true,
+  "nativeScenarioAccepted": false,
+  "requirementAccepted": false,
+  "guiAcceptance": false,
+  "releaseAccepted": false,
+  "originalProgressUTC": "2026-10-29T14:56:43Z",
+  "stop": "Two qualification-only attempts stopped. No further models, runs or diagnostic source expansion. Existing ordinary UI004 acceptances are unchanged; renderer-related original obligations remain open.",
+  "firstAttempt": {
+    "ready": {
+      "file": "first-ready.json",
+      "sha256": "42ff8167bf1dbccf8b4254d88d975e49e85e2d79f3fbdf99ffc1f6486822b927"
+    },
+    "result": {
+      "file": "first-result.json",
+      "sha256": "bf806129dcc70a3d80ced067b7075d3418d31546afcd67e51eeb4d3914a30c9a"
+    },
+    "session": {
+      "file": "first-session.json",
+      "sha256": "8e6c87e31c0ba0213a8cda51c2917719e43d84faf5c3af66e645c73b97739cc4"
+    },
+    "observation": "Actual GUI and owned renderer attach reached, but an observed SIGCONT control stop ended the fatal-only capture loop; debugger detached without a fatal capture. Native child exit1 remains failure.",
+    "unit": "qa-harness-93471e9c81bf4c9ba961216862d3c198.scope",
+    "invocation": "8c54d7389adf49e6bbcf3673a831de25"
+  },
+  "secondAttempt": {
+    "ready": {
+      "file": "sigcont-ready.json",
+      "sha256": "c72f8aec6da8c6cfbcaca55bd1cbe64a1139441d58a24ccca4bf99ddf35b24b6"
+    },
+    "result": {
+      "file": "sigcont-result.json",
+      "sha256": "aece9f828f61566c991eb728ff6a2fb28a4e6d61265e92dad3bf18d2954a2a78"
+    },
+    "session": {
+      "file": "sigcont-session.json",
+      "sha256": "bd7372cc0e8b0f30b3bc318078a6680c7c62ae1d3a449fb0683321d90b924ce6"
+    },
+    "observation": "Minimal fresh derivative passes SIGCONT without stopping, retains fatal capture and ownership/deadline guards. Actual SIGABRT stop, exit signal6 and renderer process death are recorded. Controller terminal0 means diagnostic completion only; native child exit1 and native host/menu failure remain.",
+    "unit": "qa-harness-be64375d63584e02ada9c00ec408ee61.scope",
+    "invocation": "8477a866bc7b418ca626bd870826f019"
+  },
+  "stack": {
+    "file": "sigabrt-stack.log",
+    "sha256": "8b85576e41e0d0df07f11f482d4cd9ea8709ec17de372fe3720f5e0b26d2eedc",
+    "bytes": 32450,
+    "scope": "Bounded GDB stack text only, not a core or memory dump. Frames unresolved, shared-library/symbol information unavailable; no trustworthy causal callchain or production cause follows."
+  },
+  "sourceReferences": {
+    "file": "source-references.json",
+    "sha256": "4423ae3af3f49df68d2b8c4ff40e3627eeb6eed3b9dd873f1cb08491ca0eea0c"
+  },
+  "independentReview": {
+    "file": "independent-review.md",
+    "sha256": "32e28be6b0e91dd03140682a53df2edbdb0e7c3b49b88585afdb7a8ab7b9b01b",
+    "exactReviewerBytes": true,
+    "disposition": "Owned SIGABRT/death observed; no reliable causal stack, native scenario failure and no acceptance."
+  },
+  "limits": [
+    "Instrumented actual GUI/process observations are not native scenario or general GUI acceptance.",
+    "Native menu observation deadline and host failure persist; cleanup success is teardown only.",
+    "Three WebKit termination callbacks do not identify three independent crashes or an assertion cause.",
+    "Signal6 records renderer termination but does not explain why abort occurred. No production fix is claimed.",
+    "No core, privileged data, memory/register dump, ptrace policy change or new diagnostic infrastructure is included.",
+    "Next original pin/order/restart work does not waive unresolved shared-renderer/NewInstance/keyboard/AT obligations."
+  ],
+  "reviewTranscriptionCorrection": {
+    "source": "Exact review is preserved verbatim. Its runtime log digest has a 67-character transcription error.",
+    "path": "/home/charles/window-integration-qa/warlock-window-feedback-1793286977508915465/warlock.log",
+    "quotedDigest": "41fb2caba7fc7378e6f2d1dcbddc515cdb016f91576794e4bf041d1f02751797927",
+    "actualSHA256": "41fb2caba7fc7378e6f2d1dcbddc515cdb016f91576794e4bf041d1f6f0d106f",
+    "scope": "Correction of an archival reference, not a change to signal/stack/native-failure findings."
+  }
+}
