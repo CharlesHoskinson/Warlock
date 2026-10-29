@@ -69,7 +69,13 @@ delayed old catalog reply, changed query and generation-2 AT dispatch; see
 [race evidence](qa/evidence/search-race-current-20261029/manifest.json).
 `search-refused` remains open: query and logical invoker focus return, but the
 current real Orca observation loses focus after the pending popup is withdrawn.
-The failed recording is preserved; a pending-visibility fix is under investigation.
+The failed recording is preserved. The candidate now keeps Apps mapped during
+Pending and respects explicit dismissal when its refusal arrives; Submitted and
+New Instance still close the popup. All three Elm roots compile, the unchanged
+19 New Instance checks and 16 focused visibility/lifecycle checks pass. See
+[component evidence](qa/evidence/launcher-pending-visibility-20261029/manifest.json).
+Real Orca focus/retry and relevant native regressions on this changed source
+remain unverified; earlier scenario acceptance refers to its recorded old tuple.
 Whole UI-005 remains unaccepted.
 
 The installed Omarchy predecessor now has a bounded private startup observation:

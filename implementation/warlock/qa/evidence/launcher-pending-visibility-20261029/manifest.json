@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "requirement": "ELM-UI-005",
+  "scenario": "search-refused",
+  "status": "implemented-component-verified-native-unverified",
+  "scenarioAccepted": false,
+  "requirementAccepted": false,
+  "releaseAccepted": false,
+  "sourceSHA256": {
+    "implementation/warlock/src/Desktop.elm": "a503d926599b5aa194956a1208fdc0004fb829442cd523c5372d41fd1fab0404"
+  },
+  "files": {
+    "asset-build-report.json.gz": {
+      "sha256": "ff1bd19f8d916ab679ae52983609a0b2c5de1b76ae00c051819eaaafe05ecc51",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-pending-visibility-fix/assets-build-v1/report.json",
+      "originalSHA256": "d31ddf1174986d902e8c2cecfcbc25bc5e0d9e743c465afadb6d159208eec606"
+    },
+    "visibility-report.json.gz": {
+      "sha256": "1b78180289fe9304697e229ec6561904f70362616b56c9b9032d120532292f6f",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-pending-visibility-fix/visibility-protected.stdout",
+      "originalSHA256": "5a9dec25560f1e8ed0b03d83c1633c47b720b6ec40cfd491a900c759de42293f"
+    },
+    "build-assets.py": {
+      "sha256": "1a4394fceb89e49b1be5a13cf744a0df910678b086995bec75fbc72ea68fcb49",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-pending-visibility-fix/build-assets.py",
+      "originalSHA256": "1a4394fceb89e49b1be5a13cf744a0df910678b086995bec75fbc72ea68fcb49"
+    },
+    "LauncherVisibilityReplay.elm": {
+      "sha256": "80b1531d437d6bb74dfdaa3cf931429556a53f75bc8a09712f2f8f5814f2e8a5",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-pending-visibility-fix/LauncherVisibilityReplay.elm",
+      "originalSHA256": "80b1531d437d6bb74dfdaa3cf931429556a53f75bc8a09712f2f8f5814f2e8a5"
+    },
+    "check-launcher-visibility.py": {
+      "sha256": "38580ae9cffe72985393f07768d747c5fe3ef5e51c99405a7e2d1e0ff975e0e8",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-pending-visibility-fix/check-launcher-visibility.py",
+      "originalSHA256": "38580ae9cffe72985393f07768d747c5fe3ef5e51c99405a7e2d1e0ff975e0e8"
+    },
+    "launcher-visibility-replay.cjs": {
+      "sha256": "befe7c16029950532e49bcc8a74e58ce1cebbe533da5e2d69815cc5aeee05c5d",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/launcher-pending-visibility-fix/launcher-visibility-replay.cjs",
+      "originalSHA256": "befe7c16029950532e49bcc8a74e58ce1cebbe533da5e2d69815cc5aeee05c5d"
+    },
+    "source-review.md": {
+      "sha256": "ed6ef38f78a257d53a488b98548eda4d8d00f32454f93828a7f2319849969db1",
+      "originalPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/model-review/quint-4/refused-pending-visibility/candidate-review.md",
+      "originalSHA256": "ed6ef38f78a257d53a488b98548eda4d8d00f32454f93828a7f2319849969db1"
+    }
+  },
+  "observations": [
+    "Main, Bar and Popup compiled with retained pinned Elm toolchain as one fresh asset package.",
+    "Unchanged NewInstanceReplay passes all19 assertions.",
+    "Focused compiled actual Desktop/Launch/Surface replay passes all16 checks including Pending visible, explicit dismissal, non-Apps recovery, correlated refusal, Submitted closure and duplicate suppression."
+  ],
+  "nativeReuseLimit": "Existing host ELF reused after compiled dependency, tuple, dynamic provider path and current byte checks. Historical ldd did not capture all historical provider byte hashes. No new native compilation claimed.",
+  "missingObservations": [
+    "Actual current-source native refusal with real Orca focus and reachable AT retry",
+    "Relevant post-change current-generation native dispatch regression"
+  ],
+  "buildSession": {
+    "session": 77397,
+    "exit": 0,
+    "unit": "qa-harness-2ee9b9455c8c44d39b249c8be93bd467.scope",
+    "invocation": "2b40f1efbd8b42aaa0c4859d423f99ac"
+  },
+  "limits": [
+    "Source review and compiled checks do not accept original native or AT scenario.",
+    "Prior accepted scenario evidence retains its immutable old source tuple; no automatic new-tuple acceptance."
+  ]
+}

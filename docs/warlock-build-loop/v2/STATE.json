@@ -1,39 +1,40 @@
 {
   "schema": 1,
   "owner": "sol",
-  "updatedUTC": "2026-10-29T16:11:58.073263+00:00",
+  "updatedUTC": "2026-10-29T16:29:52.817661+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "launcher-empty-unavailable-recovery",
+    "id": "launcher-query-race-refusal",
     "requirements": [
       "ELM-UI-005"
     ],
     "scenarios": [
-      "search-no-match",
-      "search-unavailable"
+      "search-race",
+      "search-refused"
     ],
     "paths": [
       "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/src/Launch.elm",
+      "implementation/warlock/src/Catalog.elm",
       "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/src/AdapterNotice.elm",
+      "implementation/warlock/assets/popup-adapter.js",
       "implementation/warlock/adapter/catalog_authority.py",
-      "implementation/warlock/adapter/catalog_transport.py",
-      "implementation/warlock/qa/native-launcher-unavailable-portable.py",
       "implementation/warlock/README.md"
     ],
-    "before": "Current search-removed accepted. Same actual current44check nativeAT record may cover original no-match but requires its own independent disposition. Unavailable provider/retry has historical source/pair evidence only; actual current genuine provider-failure, query retention and keyboard/AT retry require qualification.",
-    "after": "No matching applications leaves query/recovery reachable without launch. A genuine unavailable catalog visibly exposes keyboard and actual AT retry; explicit recovery preserves current query and never launches automatically. Fix only observed source defects.",
+    "before": "Three UI005 scenarios are independently accepted on current compiled/native/AT tuple. Search-race and search-refused retain historical partial evidence: current delayed-old-catalog/current-query dispatch schedule and actual AT refusal/focus/retry interval remain unobserved. Prior removed/unavailable AT intervals start after refusal; do not reuse them as AT refusal evidence.",
+    "after": "Only current-query/current-catalog-generation selections dispatch across delayed old reads, and an actual launch refusal preserves query and policy-defined focus with accessible refusal and reachable retry. Investigate exact pre-action/dispatch/outcome focus against frozen policy; fix only a demonstrated product violation.",
     "verification": [
-      "Review exact original no-match oracle against retained current compiled/native/AT44 evidence without automatic acceptance or rerun. Preserve prior partial reports.",
-      "For search-unavailable reuse genuine owned desktop metadata beyond unchanged512-unit limit from existing native-launcher-unavailable.py, actual nullsnapshot/currentbinding/query/refusalstate, physical keyboard and real guardedATRefresh retry, restored valid metadata/currentcatalog and no launch/window effect. Exact owning source/pair/toolchain and original6sec5sec/core1/privatebus/normalcleanup.",
-      "No whole UI005, native search-race schedule, AT refusal interval, IME, renderer-fix, hardware/resource/release/mainOmarchy claim."
+      "Read exact original race/refused oracles and frozen INTERACTION matching/ranking/focus policy. Current compiled query/ranking/stale-selection replay where decisive; unchanged production modules need no invented new model.",
+      "Requalify existing actual held-catalog native race schedule on owning source/pair, current query/currentgeneration selection, genuine delayed old receipt and exactly current intended dispatch/recipient; actual keyboard/applicable AT observations.",
+      "Reuse current actual refused identity-bound launch stimulus, observe actual accessible refusal and pre/post focus, use genuine guarded AT Refresh/retry before leaving refused state, preserve query and no duplicate/replacement effect. Original6sec5sec/core1/privatebuses/pinnedmappedproviders/normalcleanup.",
+      "Keep whole UI005 unaccepted until all five scenarios plus full frozen matching/ranking/state obligations reviewed. No UI010/audio/braille/IME/rendererfix/hardware/resources/release/mainactivation acceptance invented."
     ],
-    "owner": "root-launcher-recovery",
-    "participantRecord": ".warlock-contributor/launcher-empty-unavailable-recovery.json"
+    "owner": "root-launcher-current-query",
+    "participantRecord": ".warlock-contributor/launcher-query-race-refusal.json"
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -1958,6 +1959,35 @@
       "owner": "root-search-removed",
       "participantRecord": ".warlock-contributor/launcher-selected-identity-removed.json",
       "outcome": "COMPLETE exact original UI005/search-removed accepted independently after current compiled14, nativekeyboard36 and real AT44. Actual Search/no-match/Orca focusedRefresh/realpress/correlatedcatalog/no replacement observed; direct ATText query value not claimed. Source/evidencee4a0bc5ed +ledger3d317c0ae published; wholeUI005 remains partial."
+    },
+    {
+      "id": "launcher-empty-unavailable-recovery",
+      "requirements": [
+        "ELM-UI-005"
+      ],
+      "scenarios": [
+        "search-no-match",
+        "search-unavailable"
+      ],
+      "paths": [
+        "implementation/warlock/src/Desktop.elm",
+        "implementation/warlock/src/Surface.elm",
+        "implementation/warlock/src/AdapterNotice.elm",
+        "implementation/warlock/adapter/catalog_authority.py",
+        "implementation/warlock/adapter/catalog_transport.py",
+        "implementation/warlock/qa/native-launcher-unavailable-portable.py",
+        "implementation/warlock/README.md"
+      ],
+      "before": "Current search-removed accepted. Same actual current44check nativeAT record may cover original no-match but requires its own independent disposition. Unavailable provider/retry has historical source/pair evidence only; actual current genuine provider-failure, query retention and keyboard/AT retry require qualification.",
+      "after": "No matching applications leaves query/recovery reachable without launch. A genuine unavailable catalog visibly exposes keyboard and actual AT retry; explicit recovery preserves current query and never launches automatically. Fix only observed source defects.",
+      "verification": [
+        "Review exact original no-match oracle against retained current compiled/native/AT44 evidence without automatic acceptance or rerun. Preserve prior partial reports.",
+        "For search-unavailable reuse genuine owned desktop metadata beyond unchanged512-unit limit from existing native-launcher-unavailable.py, actual nullsnapshot/currentbinding/query/refusalstate, physical keyboard and real guardedATRefresh retry, restored valid metadata/currentcatalog and no launch/window effect. Exact owning source/pair/toolchain and original6sec5sec/core1/privatebus/normalcleanup.",
+        "No whole UI005, native search-race schedule, AT refusal interval, IME, renderer-fix, hardware/resource/release/mainOmarchy claim."
+      ],
+      "owner": "root-launcher-recovery",
+      "participantRecord": ".warlock-contributor/launcher-empty-unavailable-recovery.json",
+      "outcome": "COMPLETE original search-no-match and search-unavailable accepted independently. No-match reuses exact current14/AT44 tuple; unavailable actual42checks genuine513>512metadatafailure/keyboard+realATretry/recovery/zeroautomaticlaunch with normalcleanup. Firstfixturecontrolshadowfailure preserved; onlylocalrenamefixedfixture, productionunchanged. Source/evidencef76eaa665 andledger7d12bbcd3 pushed. Properacceptedclaims2 recorded atimmutablef76fullsource7paths. WholeUI005 stillpartial: race/refused remain."
     }
   ],
   "lastSlice": {

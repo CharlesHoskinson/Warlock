@@ -45,6 +45,7 @@ type alias Model =
     , ownerScope : Maybe {outputId : Counter, providerId : Counter}
     , ownerExhausted : Bool
     , launch : Launch.Model
+    , launchFromApplications : Bool
     , applications : Maybe Catalog.Snapshot
     , pins : Pins.Model
     , pointer : PointerOwnership.Model
@@ -200,7 +201,7 @@ type Effect
 
 initial : Model
 initial =
-    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", popupOrigin = KeyboardEntry, returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, applications = Nothing, query = "", pins = Pins.initial, pointer = PointerOwnership.initial, shortcuts = Shortcuts.initial, jumpList = JumpList.initial, jumpEntry = Nothing, jumpOpening = False, jumpExpected = Nothing, jumpBack = False, files = Files.initial, filesOpen = False, filesOpening = False, filesExpected = Nothing, systemMenu = SystemMenu.initial, systemMenuOpen = False, systemMenuOpening = False, systemMenuExpected = Nothing, systemMenuConfirmation = Nothing, notifications = Notifications.initial, notificationsOpen = False, notificationsOpening = False, notificationsExpected = Nothing, motionExpected = Nothing, motion = Motion.initial, settings = Settings.initial, settingsOpen = False, settingsOpening = False, settingsExpected = Nothing, settingsHelp = True, shortcutPreferences = ShortcutPreferences.initial, shortcutExpected = Nothing, open = False, overview = False, overviewWorkspace = Nothing, overviewRecovery = OverviewRecovery.initial, workspaceInventory = Nothing, workspaceNavigation = WorkspaceNavigation.initial, overviewTransfer = Nothing, snap = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, adapterNotice = Nothing, catalogFailure = Nothing, catalogOpening=False }
+    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", popupOrigin = KeyboardEntry, returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, launchFromApplications = False, applications = Nothing, query = "", pins = Pins.initial, pointer = PointerOwnership.initial, shortcuts = Shortcuts.initial, jumpList = JumpList.initial, jumpEntry = Nothing, jumpOpening = False, jumpExpected = Nothing, jumpBack = False, files = Files.initial, filesOpen = False, filesOpening = False, filesExpected = Nothing, systemMenu = SystemMenu.initial, systemMenuOpen = False, systemMenuOpening = False, systemMenuExpected = Nothing, systemMenuConfirmation = Nothing, notifications = Notifications.initial, notificationsOpen = False, notificationsOpening = False, notificationsExpected = Nothing, motionExpected = Nothing, motion = Motion.initial, settings = Settings.initial, settingsOpen = False, settingsOpening = False, settingsExpected = Nothing, settingsHelp = True, shortcutPreferences = ShortcutPreferences.initial, shortcutExpected = Nothing, open = False, overview = False, overviewWorkspace = Nothing, overviewRecovery = OverviewRecovery.initial, workspaceInventory = Nothing, workspaceNavigation = WorkspaceNavigation.initial, overviewTransfer = Nothing, snap = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, adapterNotice = Nothing, catalogFailure = Nothing, catalogOpening=False }
 
 taskViewGroups : Model -> Maybe (List TaskView.Workspace)
 taskViewGroups model = TaskView.groupsWith model.workspaceInventory model.windows.shell
@@ -1052,7 +1053,7 @@ updateAvailable message model =
                             if model.windows.shell.phase /= Shell.Detached && model.windows.shell.binding == Just binding then
                                 let launch = Launch.receive (host binding) outcome model.launch
                                     refused = Launch.status model.launch=="Pending" && Launch.status launch=="Refused"
-                                    next = {model | launch = launch, open = if refused then True else model.open && Launch.status launch /= "Submitted"}
+                                    next = {model | launch = launch, open = if refused && not model.launchFromApplications then True else model.open && Launch.status launch /= "Submitted"}
                                 in (next,[])
                             else (model,[])
                         Err _ -> (model,[])
@@ -1301,14 +1302,14 @@ updateAvailable message model =
                     Nothing -> (model,[])
                     Just selection ->
                         let windows=model.windows
-                            closed=advance (retireSwitcher {model | jumpEntry=Nothing,jumpOpening=False,jumpBack=False,snap=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}})
+                            closed=advance (retireSwitcher {model | open=False,jumpEntry=Nothing,jumpOpening=False,jumpBack=False,snap=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing,menus=MenuBridge.retireChoices windows.menus}})
                         in update (Start selection) closed
         Start selection ->
             if MenuBridge.preparedSnapshot model.windows.menus/=Nothing then (model,[]) else
             let (launch,intent) = Launch.start selection model.launch
             in case (intent,model.windows.shell.binding) of
                 (Just wire,Just binding) ->
-                    (retireSwitcher {model | launch = launch, open = False, overview = False, expected = Nothing},Send (E.object [("protocolVersion",E.int 3),("kind",E.string "application-launch"),("binding",Binding.encode binding),("intent",wire)]) :: (Launch.pending launch |> Maybe.map (Arm >> List.singleton) |> Maybe.withDefault []))
+                    (retireSwitcher {model | launch = launch, launchFromApplications = model.open, overview = False, expected = Nothing},Send (E.object [("protocolVersion",E.int 3),("kind",E.string "application-launch"),("binding",Binding.encode binding),("intent",wire)]) :: (Launch.pending launch |> Maybe.map (Arm >> List.singleton) |> Maybe.withDefault []))
                 _ -> ({model | launch = launch},[])
         Deadline token -> ({model | launch = Launch.timeout token model.launch},[])
         Acknowledge token -> ({model | launch = Launch.acknowledgeUnknown token model.launch},[])
