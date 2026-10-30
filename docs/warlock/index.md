@@ -9,6 +9,7 @@ Choose a page for the work you are doing:
 | Learn the contribution process safely | [Tutorial: your first evidence-grounded contribution](tutorials/first-contribution.md) |
 | Learn how to find a real source boundary | [Tutorial: navigate a policy-to-native route](tutorials/source-navigation.md) |
 | Carry out an agreed implementation task | [How to contribute a selected slice](how-to/contribute-selected-slice.md) |
+| Apply architecture and QA practices to existing code | [How to retrofit an existing boundary](how-to/retrofit-existing-code.md) |
 | Build the current frontend from a reviewed lock | [How to build the current frontend](how-to/build-current-frontend.md) |
 | Validate current frontend/native composition | [How to validate a current composition](how-to/validate-current-composition.md) |
 | Prepare proportionate protected verification | [How to verify a selected change](how-to/verify-selected-change.md) |
