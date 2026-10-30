@@ -8,7 +8,6 @@ library
   other-modules: Warlock.Platform.Descriptor, Warlock.Platform.Resolver.Internal
   build-depends: base >= 4.16 && < 5, bytestring, containers, unix, cryptohash-sha256 == 0.11.102.1
   pkgconfig-depends: glib-2.0
-  build-tool-depends: hsc2hs:hsc2hs
   default-language: Haskell2010
   ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates
 
@@ -19,6 +18,5 @@ test-suite held-document-controls
   other-modules: Warlock.Http.Document, Warlock.Platform.Resolver, Warlock.Platform.Resolver.Internal, Warlock.Platform.Descriptor
   build-depends: base >= 4.16 && < 5, bytestring, containers, unix, cryptohash-sha256 == 0.11.102.1, directory, filepath
   pkgconfig-depends: glib-2.0
-  build-tool-depends: hsc2hs:hsc2hs
   default-language: Haskell2010
   ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -threaded

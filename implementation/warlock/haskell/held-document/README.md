@@ -26,9 +26,13 @@ bytes only after consuming-handle closure succeeds. Read the bounded premises an
 retained failed runs in [qualification.json](qualification.json).
 
 The retained protected direct GHC build used GHC9.6.7, unix2.8.6.0,
-cryptohash-sha2560.11.102.1, hsc2hs and installed GLib headers/libraries. The Cabal
-file declares the source interface; a canonical-path Cabal/offline build has not
-been run. Root serializes any checks through the existing protected QA launcher.
+cryptohash-sha2560.11.102.1, hsc2hs and installed GLib headers/libraries. The corrected Cabal definition also passed a fresh private offline build with
+repositories disabled and thirteen tests. The project explicitly selected
+`--with-hsc2hs=/usr/bin/hsc2hs` and dynamic GHC linking; the compiler preprocessor
+remains a pinned toolchain input. The package definition no longer requires an
+unavailable package-index executable for that already selected compiler tool.
+This verifies the package build path using installed host dependencies; it does
+not establish two clean reproducible builds, source closure or a release. Root serializes any checks through the existing protected QA launcher.
 Do not run the library's tests as a native campaign or infer browser acceptance.
 
 This README provides API reference, a caller integration how-to and the ownership

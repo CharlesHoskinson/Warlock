@@ -11,7 +11,7 @@
     "src/Warlock/Platform/Descriptor.hs": "221af8008db858225b9bffee7a86bd15ee93ce6484b289200a4e79bb2034cf64",
     "src/Warlock/Platform/Resolver.hs": "7f751443f003932fbc7ec11a8e2957999ecb332b3e07decfc3280628bd0100d0",
     "src/Warlock/Platform/Resolver/Internal.hsc": "57c830620d19ae019dc9fd18252ef6f31f1df19d270d2771bc81697e6f6fd3be",
-    "held-document.cabal": "fbd0f958dd9d618a2f53dca4d37c2d71e9273b487a93c67c506be8c10c0473b0",
+    "held-document.cabal": "18b6764b0b2bb634c226448fd150f1cfb67e273708ed0c7f833c4b4e8ea2876b",
     "test/Main.hs": "735ef78224bb13e05a5c02c966b12b9811c758339c33e3fa3c618feef3bad501"
   },
   "evidence": [
@@ -34,6 +34,10 @@
     {
       "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/astra-held-document-review-v3/correspondence.json",
       "sha256": "d14d0d1fcde529db4cb11cae690933ea9be704983d76e9ea63da05cefc9b7cee"
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/held-document-cabal-1793398220054397776/report.json",
+      "sha256": "ecda37ccc75aea4448b5f20f386205af32ab5adc2ef94b6c0ce10a4230eff163"
     }
   ],
   "observations": [
@@ -43,7 +47,9 @@
   ],
   "retainedFailures": [
     "Original test lambda parse error: resolver-compile-1793397070268203162.",
-    "Root test-only overbroad whitespace edit changed quoted HTML: resolver-controls-1793397085611763964 and diagnostic1793397152233045662. Corrected test changes exactly four afterConsumer lambda spacing sites; production source unchanged."
+    "Root test-only overbroad whitespace edit changed quoted HTML: resolver-controls-1793397085611763964 and diagnostic1793397152233045662. Corrected test changes exactly four afterConsumer lambda spacing sites; production source unchanged.",
+    "Offline package solver rejected explicit hsc2hs package executable1793398142130794452; legacy build-tools also required index1793398182982403829.",
+    "Initial successful private build1793398197226208871 omitted symlink-target source pins; repeated with resolved source hashes1793398220054397776."
   ],
   "limits": [
     "Caller must independently establish trusted root, complete path/link pins, identities, exact size, content hash and source provenance.",
@@ -51,6 +57,13 @@
     "FIFO case measures refusal; no-open reasoning is source-based, not syscall tracing.",
     "Close-failure case deliberately closes early and observes EBADF; not arbitrary kernel close failure injection.",
     "No full dependency closure/ABI/loader, GTK/WebKit/browser/native, offline packaging or original scenario acceptance.",
-    "Published bytes match qualified inputs; canonical-path Cabal build not executed. Development tools and system libraries are not shipped authored source."
-  ]
+    "Source/test/Cabal bytes match latest respective qualified inputs; protected private project build is not a portable release/toolchain closure."
+  ],
+  "buildDefinitionCorrection": {
+    "beforeSHA256": "fbd0f958dd9d618a2f53dca4d37c2d71e9273b487a93c67c506be8c10c0473b0",
+    "afterSHA256": "18b6764b0b2bb634c226448fd150f1cfb67e273708ed0c7f833c4b4e8ea2876b",
+    "change": "Use GHC-selected hsc2hs preprocessor, explicitly pinned by --with-hsc2hs=/usr/bin/hsc2hs in protected private Cabal project, instead of requiring an unavailable package-index executable. Compiler tool remains a recorded build input.",
+    "qualified": "Fresh private build/cache, offline and active-repositories none; exact current source/test/Cabal bytes pinned, thirteen tests passed. Relocated private Cabal input, canonical source/test bytes.",
+    "notQualified": "No two-clean-build hash comparison, fully rebuilt toolchain/source closure or release acceptance."
+  }
 }
