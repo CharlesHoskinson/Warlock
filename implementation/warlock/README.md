@@ -370,10 +370,12 @@ Attention is read through the existing native authority's opt-in observation
 version, keyed to the same binding, incarnation and scene revision. Legacy native
 read shapes remain available. Elm joins only coherent bracketing facts and
 rejects contradictory same-revision observations. A click cannot invent attention
-or active state. Actual native GTK attention, visible pixels, activation and key
-recipient checks pass in an isolated desktop; native accessibility consumers and
-independent ELM-UX-009 acceptance remain open. Use `--attention` with the protected
-component and native runners for this slice.
+or active state. Original ELM-UX-009 is independently accepted on the [current
+evidenced tuple](qa/evidence/attention-native-composed-20261030/LIMITS.md): native
+GTK urgency, distinct physical pixels, actual AT-SPI toggle states, physical
+activation, urgency clearance and real key recipient pass. Broader accessibility
+and release gates remain separate. Use the pinned `qa/native-attention-current.py`
+through a selected protected v2 native loop; its prerequisites are machine-local.
 
 The candidate authority registers three approved Omarchy shell routes only when their live chords are free: Super+Alt+Space opens Applications, Super+Escape opens System, and Super+Shift+Alt+Comma opens notification history. `native/shell-bindings.lua` retains the move/resize source bindings; it no longer unconditionally installs these three shell chords. No candidate bindings are installed on the user's desktop.
 
@@ -954,7 +956,7 @@ acceptance follows from these component checks.
 
 October 29 shortcut draft preservation: matched reads, refresh/reopen and read failures now retain local intent. Changed stored routes require explicit per-route confirmation before Save; uncertain saves settle only on an exact stored-and-live match, and late Stored receipts cannot roll back a newer observation. Reads do not issue writes. The [retained baseline and current evidence](qa/evidence/shortcut-draft-preservation-20261029/LIMITS.md) records the original five failures, the same 15 Desktop assertions now passing, the existing 15-check regression, 200 seeded production-reducer sequences, 26 named Quint traces and six sampled invariants. Main, Bar and Popup compile from one current source tuple. These bounded checks do not establish native first-use/restart/AT acceptance or crash-durable draft storage.
 
-Current attention qualification: the [current CPU evidence and native fixture gap](qa/evidence/attention-current-20261029/LIMITS.md) retain all 12 attention replay and 11 strict observation/join checks passing against the current three-root source tuple. The final helper hashes the executed adapter modules as well as Elm inputs. No new native attention recording was launched: the historical native recipe needs explicit current source/asset integration and real AT snapshots. UX-009 remains partial; the next engineering task is the reusable current build recipe, preserving frozen receipts.
+Current attention qualification: [current CPU evidence](qa/evidence/attention-current-20261029/LIMITS.md) retains 12 production replay and 11 strict observation/join checks. The [composed native journey](qa/evidence/attention-native-composed-20261030/LIMITS.md) now passes all 52 checks, including actual AT attention/active/activated states and native focus, urgency clearance and keyboard recipient. Independent review accepts original UX-009 on this exact tuple. Both earlier fixture failures remain failed; broader AT/IME, renderer, output/theme, resource and release gates remain open.
 
 The current frontend recipe is implemented at `adapter/current_build.py`: capture a proposed input lock, build all three roots through protected QA using its reviewed digest, and validate the reviewed report against current inputs and assets. See [the current frontend build procedure](../../docs/warlock/how-to/build-current-frontend.md). Historical native and release qualification remains separate; implementation and test status must be read from the retained current evidence rather than inferred from command availability.
 

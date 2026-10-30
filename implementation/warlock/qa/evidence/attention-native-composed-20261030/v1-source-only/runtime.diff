@@ -1,0 +1,41 @@
+--- retained/runtime_candidate.py
++++ private/runtime_candidate.py
+@@ -44,17 +44,31 @@
+ 
+ VERIFY_CURRENT_SHA='07bb955b9f0e7171230f441c805651a27abd7393cbb97e25910a21658761a476'
+ def verify_tuple():
+-    verifier=Path(__file__).resolve().parent/'verify_current.py'
+-    body=verifier.read_bytes()
+-    if hashlib.sha256(body).hexdigest()!=VERIFY_CURRENT_SHA:raise RuntimeError('Current verifier changed')
+-    spec=importlib.util.spec_from_loader('delivery_current_receipt_verifier',loader=None)
+-    m=importlib.util.module_from_spec(spec);m.__file__=str(verifier)
+-    exec(compile(body,str(verifier),'exec'),m.__dict__)
++    import sys
++    adapter=REPO/'implementation/warlock/adapter'
++    for name,expected in [('current_build','d4e5af280a275f9a777322ee60f1f34bf21751b6726edcaa4e4105a02da4dbc7'),('current_native','d69b87930e9fd5fea307652ce16ad045688d87aed683fb84e3a6bbae551ebf74')]:
++        path=adapter/(name+'.py');body=path.read_bytes()
++        if hashlib.sha256(body).hexdigest()!=expected:raise RuntimeError('Composition source changed '+name)
++        spec=importlib.util.spec_from_loader(name,loader=None);module=importlib.util.module_from_spec(spec);module.__file__=str(path)
++        sys.modules[name]=module;exec(compile(body,str(path),'exec'),module.__dict__)
++    current_native=sys.modules['current_native']
++    receipt=BASE/'current-build-contracts-1793318770694864206/build/report.json'
++    lock=BASE/'current-native-capture-1793319690247072588/native-lock.json'
++    value=current_native.validate_composition(receipt,'613b4592a37982cedb881ba7edfd68d23349130a057ec9b0e62e213b2b17161d',lock,'56a088c4d83b205f0738954eb6c829b9635703628e14d92a433aa7a5a47351ca')
+     for name,h in HELPERS.items():checked(RUNTIME/name,h)
+     checked(COLLECTOR,COLLECTOR_SHA)
+     checked(REPO/'installed/home/.local/share/hypr-window-controls/qa/virtual-pointer','b092c3369d88b4d61fce80607614a5ec02258e0b774f0b10504a23385cb24434')
+     checked(REPO/'window-integration-qa/orca-reader/physical-commands/evdev-keyboard','7bb54790faf1c47ab3a4184d84fa07fc1ab34c44d762ef457696f147777e95c0')
+-    return m.verify_tuple()
++    old=BASE/'fresh-pair/tuple.json';raw=old.read_bytes()
++    if hashlib.sha256(raw).hexdigest()!=TUPLE_SHA:raise RuntimeError('Historical tuple changed')
++    tup=json.loads(raw)
++    for name in ('core','authority','aquamarine'):
++        if value['slots'][name]!=tup['slots'][name]:raise RuntimeError('Native slot differs '+name)
++    tup['slots']['host']=dict(value['slots']['host'])
++    directory=Path(value['assets']['directory']);outputs=value['assets']['files']
++    tup['slots']['host']['assets']={'assets/'+name:{'path':str(directory/name),'sha256':outputs[name]} for name in ('elm.js','bar.js','popup.js')}
++    tup['sourceQualification']={'kind':'production current native composition','nativeLockSHA256':'56a088c4d83b205f0738954eb6c829b9635703628e14d92a433aa7a5a47351ca','frontendReportSHA256':'613b4592a37982cedb881ba7edfd68d23349130a057ec9b0e62e213b2b17161d','nativeAcceptance':False}
++    return tup
+ 
+ checked(PARENT,PARENT_SHA)
+ spec=importlib.util.spec_from_file_location('fresh_weston_parent',PARENT)
