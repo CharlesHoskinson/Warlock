@@ -1,0 +1,116 @@
+{
+  "scope": "Notification replay fixture admission repair with unchanged production policy and unchanged original assertions; bounded component checks only.",
+  "requirements": [
+    "ELM-UI-010"
+  ],
+  "scenarios": [
+    "announce-notification arrival",
+    "announcement-dnd",
+    "announcement-urgency-opt-in"
+  ],
+  "nativeAcceptance": false,
+  "requirementAccepted": false,
+  "releaseAccepted": false,
+  "sourceBaseRevision": "8a26e3ac173446986b27684e0b6ae85b6081feb1",
+  "sourceHashes": {
+    "implementation/warlock/qa/NotificationAnnouncementReplay.elm": "9ea32f5578f73534d6dd94d92a519f32ddb7f317a1dd753d0e6f7e1e61e581ed"
+  },
+  "files": {
+    "LIMITS.md": {
+      "sha256": "18504cd5760d36ba8bd22fb56c2fd78ded36cb4a532c2b8b189b72879174e993",
+      "size": 2802
+    },
+    "compile.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "compile.stdout": {
+      "sha256": "041a56f4cbc7b0b3265bed10a6cd41fa611fff297935c7b5abead5ee484e0f92",
+      "size": 1063
+    },
+    "executed-runner.py": {
+      "sha256": "688ca981bae7841b37313ca61e88e9d0d1da6554a225c17ada4aad13fe3bd838",
+      "size": 6388
+    },
+    "failed-NotificationAnnouncementReplay.elm": {
+      "sha256": "e5493a30e10e8d6ed77348199273f891374ceca67a81c2a134e009adaa146f2e",
+      "size": 9089
+    },
+    "failed-compile-report.json": {
+      "sha256": "9844ab12c2a09d794c9f4dde787830aa95265bccd45def2fb70917c737d579af",
+      "size": 42722
+    },
+    "failed-compile.stderr": {
+      "sha256": "4068189e50b11420f07bf081181e135568d584d7a18a14489e3b519329c34a5b",
+      "size": 882
+    },
+    "failed-compile.stdout": {
+      "sha256": "6119ed63bf2ea5b386931f9edd4ca21c6b56856fd290bbddb2a3f30a4dea5c5c",
+      "size": 849
+    },
+    "model-typecheck.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "model-typecheck.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "named-tests.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "named-tests.stdout": {
+      "sha256": "d8df9f23fc6e7e05b9dd759df8856e3a36c1cd07525eedde7bf3c45ab0268474",
+      "size": 631
+    },
+    "notification.json": {
+      "sha256": "cd5000d23013b20611417717c0062042bf2ba82f9e5f28d061eaf6c1d1b5c712",
+      "size": 42616
+    },
+    "quint-version.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "quint-version.stdout": {
+      "sha256": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+      "size": 7
+    },
+    "replay.cjs": {
+      "sha256": "578665bb24eaf8df80cfc51d814cc2ea994d8c5ab099d8571ff99aaf18a05b9f",
+      "size": 421
+    },
+    "replay.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "replay.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "report.json": {
+      "sha256": "6c56c14aaf97a3f497781cb7589cdda85e1162927a23fb1f1bb003931c26a4ad",
+      "size": 48494
+    },
+    "reviewer.md": {
+      "sha256": "156f0c0676b9a59ba110a8a64f42d1d6a7469bbca632d36b4f6fb2c0c2b5ed42",
+      "size": 2911
+    },
+    "safety-witnesses.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "safety-witnesses.stdout": {
+      "sha256": "3248989e20b1c46b707782e1524a75f7f5631492cebca45c5cb77aaa12554dd8",
+      "size": 26966
+    },
+    "tests-typecheck.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "tests-typecheck.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    }
+  }
+}

@@ -1040,3 +1040,6 @@ ABI aliases, providers, objects and recipes remain unchanged; only the current
 Effects role and generated Main bundle change. Exactly eight catalog hash fields
 are updated while permission/notice decisions remain unchanged. Native runtime,
 clean A/B reproduction, installation and release acceptance remain separate.
+
+
+Notification QA checkpoint (October 30): the [notification replay admission correction](qa/evidence/notification-admission-20261030/LIMITS.md) supplies the current native idle observation missing from the old fixture. All fourteen original and ten added admission/reachability checks pass; unchanged notification-model tests and bounded samples pass. Production policy is unchanged. Native speech/braille and original UI-010 acceptance remain open.

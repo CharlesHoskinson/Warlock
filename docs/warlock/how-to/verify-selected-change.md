@@ -36,3 +36,8 @@ Before the root execution gate, confirm no conflicting QA process, a successful 
 Record exact invocation/source/tool hashes, stdout/stderr and assertion scope. Separate build success, actual behavior, normal exit and teardown. If a harness fails before the intended operation, retain that failure and say the original observation was not reached. Never infer a cause from one generic error or rerun unchanged after a mandatory stop.
 
 For new loader/manifest checks, consume the captured bytes whose hashes were verified. Keep historical source/receipts as historical and explicitly version actual current deltas; do not monkeypatch hashes or relabel old ABI artifacts. A current package lock is not full release acceptance.
+
+
+## Establish admission before testing a policy
+
+Use actual incoming facts to reach the state a test needs. Attachment does not itself authorize gestures: a current native pointer-idle observation is required. Check that opening allocated its read, the matching receipt settled it, and the policy actually changed before asserting downstream behavior. Keep missing, foreign, busy and stale-fact controls so a setup correction cannot weaken admission. The [notification replay repair](../../../implementation/warlock/qa/evidence/notification-admission-20261030/LIMITS.md) preserves all original expectations while adding these witnesses. Its model covers policy history; its passing replay does not establish native speech/braille or physical focus.

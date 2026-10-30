@@ -26,7 +26,18 @@ entry id urgency = E.object [("id",E.string id),("incarnation",E.string id),("pr
 snapshot revision entries = E.object [("service",E.string "9"),("revision",E.string revision),("available",E.bool True),("reason",E.string ""),("entries",E.list identity entries)]
 update value = E.object [("protocolVersion",E.int 3),("kind",E.string "notification-update"),("binding",bound),("snapshot",value)]
 observe revision entries root = step (Desktop.Incoming (update (snapshot revision entries))) root
-start = Outputs.update (Outputs.Topology topology) Outputs.initial |> Tuple.first |> step (Desktop.Incoming attached)
+-- Arrange native ownership through the same strict incoming route as production.
+-- Attachment alone deliberately cannot authorize shell gestures.
+pointer owner ownershipSerial state = E.object [("protocolVersion",E.int 3),("kind",E.string "pointer-ownership"),("ownershipProtocol",E.int 1),("binding",owner),("requestId",E.string "1"),("serial",E.string ownershipSerial),("state",E.string state),("owner",if state=="idle" then E.null else E.string "7")]
+attachedRoot = Outputs.update (Outputs.Topology topology) Outputs.initial |> Tuple.first |> step (Desktop.Incoming attached)
+start = step (Desktop.Incoming (pointer bound "1" "idle")) attachedRoot
+foreign = E.object [("lifetime",E.string "1"),("session",E.string "1"),("frontend",E.string "2")]
+withoutOwnership = scoped Desktop.OpenNotifications attachedRoot
+foreignOwnership = step (Desktop.Incoming (pointer foreign "1" "idle")) attachedRoot |> scoped Desktop.OpenNotifications
+moving = step (Desktop.Incoming (pointer bound "2" "move")) start
+staleIdle = step (Desktop.Incoming (pointer bound "1" "idle")) moving |> scoped Desktop.OpenNotifications
+busyOwnership = scoped Desktop.OpenNotifications moving
+freshIdle = step (Desktop.Incoming (pointer bound "3" "idle")) moving |> scoped Desktop.OpenNotifications
 ready = observe "1" [] start
 ordinary = observe "2" [entry "1" 1] ready
 repeat = observe "2" [entry "1" 1] ordinary
@@ -50,7 +61,17 @@ result =
     let (_,arrivalEffects)=Outputs.update (Outputs.Interaction (Desktop.Incoming (update (snapshot "2" [entry "1" 1])))) ready
         (_,criticalEffects)=Outputs.update (Outputs.Interaction (Desktop.Incoming (update (snapshot "5" [entry "4" 2,entry "3" 2,entry "2" 1,entry "1" 1])))) consenting
         baseline=observe "1" [entry "1" 1] start
-        checks = [("ordinaryIsPolite",serial ordinary==counter "1" && not (interrupt ordinary))
+        checks = [("attachedBindingReached",(current attachedRoot).windows.shell.binding/=Nothing)
+            ,("missingOwnershipBlocksOpening",not (current withoutOwnership).notificationsOpen && (current withoutOwnership).notificationsExpected==Nothing)
+            ,("foreignOwnershipBlocksOpening",not (current foreignOwnership).notificationsOpen && (current foreignOwnership).notificationsExpected==Nothing)
+            ,("busyOwnershipBlocksOpening",not (current busyOwnership).notificationsOpen && (current busyOwnership).notificationsExpected==Nothing)
+            ,("staleIdleCannotReleaseBusy",not (current staleIdle).notificationsOpen && (current staleIdle).notificationsExpected==Nothing)
+            ,("freshIdleAllowsOpening",(current freshIdle).notificationsOpen && (current freshIdle).notificationsExpected/=Nothing)
+            ,("notificationReadReached",(current opened).notificationsOpen && (current opened).notificationsExpected/=Nothing)
+            ,("matchingSnapshotSettlesRead",(current loaded).notificationsOpen && not (current loaded).notificationsOpening && (current loaded).notificationsExpected==Nothing)
+            ,("dndPolicyReached",(current dndRoot).notifications.policy==policy True False)
+            ,("criticalConsentReached",(current consenting).notifications.policy==policy False True)
+            ,("ordinaryIsPolite",serial ordinary==counter "1" && not (interrupt ordinary))
             ,("exactRepeatSilent",repeat==ordinary)
             ,("dndKeepsHistoryWithoutNewSerial",serial suppressed==serial ordinary && ((current suppressed).notifications.snapshot |> Maybe.map (.entries >> List.length))==Just 2)
             ,("dndOffCannotReplayHistory",serial unsilenced==serial suppressed)
