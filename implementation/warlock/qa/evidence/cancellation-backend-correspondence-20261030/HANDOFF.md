@@ -1,0 +1,7 @@
+# Handoff — published Python cancellation custody
+
+Disposition: READY for bounded published Python source/model correspondence; no demonstrated concrete blocking trace in reviewed paths. Not host-route enablement, C/native/Elm integration, original EARS, release or deployment acceptance.
+
+Review: `REVIEW.md`, SHA-256 `421d72b93dbb5cd04f7525322d5998f1853018dfaa88fe4f9591bb1d51b7efea`. Published Git HEAD/origin `648c30a9385b96228b16a48ca858b4fe13c6194c`; all seven public source hashes, three retained public report hashes, independent review hashes, original requirement scope, precise source/model relations, independent manifest check and limits appear there. All 57 manifest entries matched. Existing model 53 explicit named tests / 5000 sampled 30-step traces; late release/historical/same-target-next/old-queued-dropped sample counts zero, explicit named witnesses separate. No new QA, model, product or public file edits; no C proposal review.
+
+Positive/negative evidence is actual published Python/V7/store/coordinator with strict native and C writer doubles. Sequence claims are limited to the retained routes; model trusted terminal, proof/digest, ACK sink, OS and C receiver assumptions remain explicit. Full ARC007/008/012/013, native Busy/resource, physical Escape, deadline origin, authenticated transport, enabled host/Elm path and release remain independently open. Root owns continued C/Elm and protected qualification; prior stopped histories and original requirements stay unchanged.
