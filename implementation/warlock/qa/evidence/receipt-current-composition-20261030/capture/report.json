@@ -1,0 +1,58 @@
+{
+  "checks": [
+    {
+      "name": "Current frontend and unchanged native role observation succeeds",
+      "passed": true
+    },
+    {
+      "name": "All original preflight and source deltas retained",
+      "passed": true
+    },
+    {
+      "name": "Historical eight and current two additions explicit",
+      "passed": true
+    },
+    {
+      "name": "One reviewed static asset delta explicit",
+      "passed": true
+    },
+    {
+      "name": "One reviewed release adapter delta explicit",
+      "passed": true
+    },
+    {
+      "name": "Effects historical Git and tested current source roles explicit",
+      "passed": true
+    },
+    {
+      "name": "Executed source unchanged check-current-native.py",
+      "passed": true
+    },
+    {
+      "name": "Executed source unchanged current_native.py",
+      "passed": true
+    },
+    {
+      "name": "Executed source unchanged current_build.py",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "/home/charles/Warlock/implementation/warlock/adapter/current_build.py": "d4e5af280a275f9a777322ee60f1f34bf21751b6726edcaa4e4105a02da4dbc7",
+    "/home/charles/Warlock/implementation/warlock/adapter/current_native.py": "2605b6b989b027fd4e1398bb250d8063ad97bfd947fbf71b40b1880fc0b96765",
+    "/home/charles/Warlock/implementation/warlock/qa/check-current-native.py": "396997bfb366e9215703aca81e0a783410646f7e649e1bd35f18e12912e252f6"
+  },
+  "limit": "Read-only original/current role validation and fixed/seeded declared-lock mutations; frozen host/object/provider/ABI inputs are never modified. No native code is loaded.",
+  "nativeAcceptance": false,
+  "passed": true,
+  "proposedLock": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-native-capture-1793334328418274792/native-lock.json",
+    "sha256": "a04cea52dfbca05c21420c4b2705e75278d46640a9ebc81fe9aa4672005346ac"
+  },
+  "releaseAccepted": false,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-9f1ad14382e640f1b5b9b01792c6a5fa.scope",
+    "coreLimit": 1
+  },
+  "seed": 20261030
+}

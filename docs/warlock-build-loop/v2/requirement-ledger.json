@@ -1045,6 +1045,23 @@
             {
               "path": "implementation/warlock/qa/evidence/release-input-lock/manifest.json",
               "sha256": "46944d678e22e8bfad47e117e77c996bc7ae22b27a4401e2d3f0008ad66707ec"
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/receipt-current-composition-20261030/manifest.json",
+              "sha256": "bfd18d0dee48035049d7385da4972386ad7a14beb925aee5a80493106c83688d",
+              "scope": "The receipt-corrected frontend 80ab and reviewed static composition a04 pass capture 9, composition contracts 51 and actual release-tuple consumer checks 23. Historical Effects bytes remain separate from the current role. Native artifacts, ABI aliases, providers, objects and recipes are unchanged; all 19 assets remain declared and only elm.js changes. Exactly eight catalog hashes are updated, with every other decision unchanged. This is static qualification: no native load, clean A/B build, upstream source closure, redistribution or full DEL003/release acceptance.",
+              "sourceHashes": {
+                "implementation/warlock/adapter/current_native.py": "2605b6b989b027fd4e1398bb250d8063ad97bfd947fbf71b40b1880fc0b96765",
+                "implementation/warlock/qa/check-current-native.py": "396997bfb366e9215703aca81e0a783410646f7e649e1bd35f18e12912e252f6",
+                "implementation/warlock/release/current-native-composition-20261030.json": "a04cea52dfbca05c21420c4b2705e75278d46640a9ebc81fe9aa4672005346ac"
+              },
+              "disposition": "partial",
+              "independentReview": {
+                "path": "implementation/warlock/qa/evidence/receipt-current-composition-20261030/ASTRA-FINAL-DISPOSITION.md",
+                "sha256": "a020347cf2ac65496cbd57c9492b375c4271287352378fb94b816d718f967ab4",
+                "name": "/root/astra_architecture",
+                "scope": "Bounded static qualification only"
+              }
             }
           ],
           "missingObservation": "Complete compiler/build-tool upstream source provenance and closed offline input inventory.; Two clean isolated offline builds and identical distributable hashes or original blocking disposition.; SBOM, upstream notices and reviewed redistribution; full native/AT/IME/hardware/resources/deployment gates and independent review.",
@@ -15988,5 +16005,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-30T04:20:06.686176+00:00"
+  "updatedUTC": "2026-10-30T04:33:09.749455+00:00"
 }

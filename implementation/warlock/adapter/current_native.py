@@ -38,7 +38,7 @@ REFERENCES={
 SLOTS={'core':'b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e',
        'authority':'9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c',
        'aquamarine':'667a22d535aade4e4a26134e39028a87fb3f963c28b7bf7ff79da684bb014ecd'}
-CHANGED_ELM=('Announcement.elm','Main.elm','OutcomeAnnouncements.elm','OutputController.elm',
+CHANGED_ELM=('Announcement.elm','Effects.elm','Main.elm','OutcomeAnnouncements.elm','OutputController.elm',
              'Presentation.elm','ShortcutPreferences.elm','SurfaceRenderer.elm')
 ADDED_ELM=('AnnouncementMessage.elm','SurfaceSnapshot.elm')
 # Reviewed runtime-only asset seam. Historical native/compiler inputs and

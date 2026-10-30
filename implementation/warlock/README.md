@@ -1033,5 +1033,10 @@ and 200 production-route parameter cases (31 checks each) pass. The original
 failed state and test-fixture compile failure are retained. Actual native delivery,
 Cancelled wire semantics, full proof-based recovery/release and full ARC007
 acceptance remain separate. The prior native composition receipt predates this
-Effects change; qualify a fresh composition before using the new frontend assets
-in a native/release campaign.
+Effects change. The [reviewed static successor](qa/evidence/receipt-current-composition-20261030/LIMITS.md)
+is now a04cea52…, with protected capture 9, composition contracts 51 and actual
+release selection 23 passing against frontend receipt 80ab7efe…. Native artifacts,
+ABI aliases, providers, objects and recipes remain unchanged; only the current
+Effects role and generated Main bundle change. Exactly eight catalog hash fields
+are updated while permission/notice decisions remain unchanged. Native runtime,
+clean A/B reproduction, installation and release acceptance remain separate.

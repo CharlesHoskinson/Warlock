@@ -16,7 +16,7 @@ env PYTHONDONTWRITEBYTECODE=1 \
     --output /absolute/private/new-native-lock.json
 ```
 
-Capture validates the frontend through `current_build.validate_report` and retains explicit current/historical source roles. The original native recipe, preflight, source inventory, object ordering, dependency/provider and ABI checks remain. Only the seven explicitly supported historical Elm files are resolved as old bytes from the pinned Git revision; current frontend bytes are checked separately. Unexpected source changes, additions, removals or native drift require a separately reviewed implementation/build change.
+Capture validates the frontend through `current_build.validate_report` and retains explicit current/historical source roles. The original native recipe, preflight, source inventory, object ordering, dependency/provider and ABI checks remain. Only the eight explicitly supported historical Elm files are resolved as old bytes from the pinned Git revision; current frontend bytes are checked separately. Unexpected source changes, additions, removals or native drift require a separately reviewed implementation/build change.
 
 Review the new lock and its exact digest before consuming it. It is a proposal, and its existence does not establish runtime correctness. Consume the reviewed lock with:
 
@@ -34,3 +34,5 @@ env PYTHONDONTWRITEBYTECODE=1 \
 Poll each protected process to terminal and send the successful QA RELEASE receipt. Validation checks the lock's current file/resolution identities, explicit aliases and source/receipt roles again. Preserve immutable lock and report files while they are being read. It returns the selected native slots and current assets; a later runtime adapter must consume those values without silently selecting another host or asset directory.
 
 This implementation deliberately supports the currently recorded unchanged native tuple and exact known frontend deltas. It depends on machine-local private artifacts, historical Git objects and workspace links. It is not a portable package recipe. The retained renderer failure, actual native attention pixels/AT export, complete native runtime compatibility, tool upstream-source closure, offline reproducibility, compliance and release acceptance remain separate. See [status and evidence](../reference/status-and-evidence.md) and [verification](verify-selected-change.md).
+
+The [receipt-corrected composition qualification](../../../implementation/warlock/qa/evidence/receipt-current-composition-20261030/LIMITS.md) records the current a04 lock and fresh 80ab frontend receipt. The public `qa/check-current-native.py` now includes current role counts, the retained static/adapter negatives and explicit Effects history/current checks; use its `--mode capture` and `--mode test` with the reviewed frontend/lock arguments for proportional protected checks. Its historical receipts remain unchanged.

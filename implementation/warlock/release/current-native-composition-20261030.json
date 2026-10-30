@@ -9,7 +9,7 @@
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/lib/libaquamarine.so.14": "libaquamarine.so.0.15.0"
   },
   "assets": {
-    "directory": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/pin-scrollport-build-root-v1/assets",
+    "directory": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/receipt-current-build-1793333212775066294/frontend/assets",
     "files": {
       "activation.js": "06e3de6bcbc27e2b9a5d166fd665706e300ef5d4a29640b9bd70aa0f095a2c3e",
       "adapter.js": "9d99e140af65c67aa5395ce8dc3f3aee42b2b341e039e6514745e14ec9335f96",
@@ -20,7 +20,7 @@
       "context.js": "e843e72479a6e499a99f4369f145530e8e097c576e7d08926a6a912dbd50bc8d",
       "controlled-popup-adapter.js": "14d0a8eb0704414a9d7c2e270d23ca7cc2ff8f008e860051f8ab0e31bcab748c",
       "controlled-popup.html": "1e50055501c563f14762159620e2b56644d88779e5ffeba565d4730ebd4e9e4e",
-      "elm.js": "fcf9a508a9061248eb0223d9cb3023ac3d00a1e82a5b05d865946771ab34157f",
+      "elm.js": "7cc7c8bb2018cdec12cd381acc8f434e4532fd20c9bda006984e181a8aaddb43",
       "index.html": "ba09087a0dda2fbc4a912d2d5d8f8adb90ae553a8027963fdb6b74a7afaa5d1b",
       "native-preview-control-outbox.js": "183253d5f781cf8527c4e58f31d44653e1b6fe8be58c0bdc89ae714ffb5e4484",
       "native-preview-proposals.js": "0172bad6c2491f697497cb9f8274ffa99feb8fca1d9942d31fbb2424bb035bf9",
@@ -1055,8 +1055,8 @@
     "/usr/lib/glib-2.0/include/glibconfig.h": "d429121996bceac5c91cce9e3648cb89f384ac31a6600ae5f1acfd4dd7ca74d3"
   },
   "frontend": {
-    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/pin-scrollport-build-root-v1/report.json",
-    "sha256": "65b909422a1866a9df8f118b134ea42778fd69564aed070bdb92c0975f3818d8"
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/receipt-current-build-1793333212775066294/frontend/report.json",
+    "sha256": "80ab7efec7eb9f7d5448cbf94260aa5f90b32e75f1b155294c2559c149475c11"
   },
   "frontendAdditions": {
     "/home/charles/Warlock/implementation/warlock/src/AnnouncementMessage.elm": "fb0f5231bff5beffe0a877046d38bba1bb87bd3d8e786449800093ae38ab2075",
@@ -1066,6 +1066,10 @@
     "/home/charles/Warlock/implementation/warlock/src/Announcement.elm": {
       "current": "a1e6660c082c7c68657e356c2e4742cd8fd60e843192b88fa0609fb696a40f9f",
       "old": "71bc1e29724266c26301716ea0a1c7452f02c9f67e140e1bd1ec33c5166d402f"
+    },
+    "/home/charles/Warlock/implementation/warlock/src/Effects.elm": {
+      "current": "80c574e8c564c28a1fb11f1f89bb5bfa7ac97a92474bbf027a737324bb2a82cd",
+      "old": "873e8824d90828a9927cfd89723c7b7299e11791e3779173815ba720b11a8547"
     },
     "/home/charles/Warlock/implementation/warlock/src/Main.elm": {
       "current": "7f5ddbe6fedf775e143b684ec60c9bfbdf15606414ed4fafc2c5553b514821c2",
@@ -1093,8 +1097,8 @@
     }
   },
   "frontendLock": {
-    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/pin-scrollport-frontend-lock-root-v1.json",
-    "sha256": "8f35f73022732f33f156f52488e327cf8cd5d6604be7d27cea0325ca2e054199"
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/receipt-lifecycle-frontend-lock-root-v1.json",
+    "sha256": "5f4f11fd1ea60de151083decbb6741b7f676aefce9ad7dd9bf1c72edee1ea7bf"
   },
   "frontendStaticChanges": {
     "/home/charles/Warlock/implementation/warlock/assets/popup-adapter.js": {
@@ -1239,6 +1243,10 @@
     "src/Announcement.elm": {
       "current": "a1e6660c082c7c68657e356c2e4742cd8fd60e843192b88fa0609fb696a40f9f",
       "old": "71bc1e29724266c26301716ea0a1c7452f02c9f67e140e1bd1ec33c5166d402f"
+    },
+    "src/Effects.elm": {
+      "current": "80c574e8c564c28a1fb11f1f89bb5bfa7ac97a92474bbf027a737324bb2a82cd",
+      "old": "873e8824d90828a9927cfd89723c7b7299e11791e3779173815ba720b11a8547"
     },
     "src/Main.elm": {
       "current": "7f5ddbe6fedf775e143b684ec60c9bfbdf15606414ed4fafc2c5553b514821c2",
@@ -3138,8 +3146,6 @@
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/new-core-exports.txt": "3700407643b3260b12e386263607fff2b78e18c0fd251a259e2930262dd458c9",
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/new-core-qualification.json": "5793098b5f432343352625fd94e095b0e84010a413e44759d6c58eb753c693a9",
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/parent-host/foundation-result.json": "08b24bd93cbb63ec097900915379b32e90d9dcca7156d04fe8ee959efaff264f",
-    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/pin-scrollport-build-root-v1/report.json": "65b909422a1866a9df8f118b134ea42778fd69564aed070bdb92c0975f3818d8",
-    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/pin-scrollport-frontend-lock-root-v1.json": "8f35f73022732f33f156f52488e327cf8cd5d6604be7d27cea0325ca2e054199",
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/include/aquamarine/allocator/Allocator.hpp": "083dbe1602b1a9689f9fb079faca3ba3638cb7d8adf756865536ff29bae60288",
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/include/aquamarine/allocator/Swapchain.hpp": "2509a5fcf5109dbce99b1c1c0f5c620a17c9f5f508902e4f5124d4f56feb377b",
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/include/aquamarine/backend/Backend.hpp": "48c5f2e8d9d20112de335f720e083b62dfd4217c28641ef0534b7f3a2697a6d8",
@@ -3150,6 +3156,8 @@
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/include/aquamarine/misc/Attachment.hpp": "f6765ffab5093ba5d715a618b8a875bc61a2fa173ad7e410eca74f9fa515f517",
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/include/aquamarine/output/Output.hpp": "1568dcf54e01fc42079b5d68d7189d135f3a2c57aceed9cd0d3f58c964a5a37d",
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/lib/libaquamarine.so.0.15.0": "667a22d535aade4e4a26134e39028a87fb3f963c28b7bf7ff79da684bb014ecd",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/receipt-current-build-1793333212775066294/frontend/report.json": "80ab7efec7eb9f7d5448cbf94260aa5f90b32e75f1b155294c2559c149475c11",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/receipt-lifecycle-frontend-lock-root-v1.json": "5f4f11fd1ea60de151083decbb6741b7f676aefce9ad7dd9bf1c72edee1ea7bf",
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/offline-pair-v4/A/artifacts/link-host.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/offline-pair-v4/A/artifacts/link-host.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/offline-pair-v4/A/artifacts/package/assets/bar.js": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
@@ -3378,7 +3386,7 @@
     "/home/charles/Warlock/implementation/warlock/adapter/catalog_authority.py": "ad20204afd3b203eb956918300c8da4cb4765b3c5ad86e701b0257a54b8fb9cc",
     "/home/charles/Warlock/implementation/warlock/adapter/catalog_transport.py": "43bd1cd1059b87ce4d349d72e4b2a917ac1bdc3dacda2f60563fa621e05a4b84",
     "/home/charles/Warlock/implementation/warlock/adapter/current_build.py": "d4e5af280a275f9a777322ee60f1f34bf21751b6726edcaa4e4105a02da4dbc7",
-    "/home/charles/Warlock/implementation/warlock/adapter/current_native.py": "8bc7a0c1244192ea8c94f2388933eb056a0a8ad8888a1f879913e2c6d27fff69",
+    "/home/charles/Warlock/implementation/warlock/adapter/current_native.py": "2605b6b989b027fd4e1398bb250d8063ad97bfd947fbf71b40b1880fc0b96765",
     "/home/charles/Warlock/implementation/warlock/adapter/daemon.py": "a593494e4ca89ef467dced5cd946bc5eca9a88db21c591597c19eb2a80cdca31",
     "/home/charles/Warlock/implementation/warlock/adapter/delivery_ledger.py": "ce1ff3528b454bdca7412389f5693f69023a5c76bc9586541c1091c1cddc5ca4",
     "/home/charles/Warlock/implementation/warlock/adapter/durable_ledger.py": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
@@ -3683,7 +3691,7 @@
     "/home/charles/Warlock/implementation/warlock/src/CatalogReplay.elm": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
     "/home/charles/Warlock/implementation/warlock/src/Desktop.elm": "a503d926599b5aa194956a1208fdc0004fb829442cd523c5372d41fd1fab0404",
     "/home/charles/Warlock/implementation/warlock/src/DesktopReplay.elm": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd",
-    "/home/charles/Warlock/implementation/warlock/src/Effects.elm": "873e8824d90828a9927cfd89723c7b7299e11791e3779173815ba720b11a8547",
+    "/home/charles/Warlock/implementation/warlock/src/Effects.elm": "80c574e8c564c28a1fb11f1f89bb5bfa7ac97a92474bbf027a737324bb2a82cd",
     "/home/charles/Warlock/implementation/warlock/src/Files.elm": "c2099647bca3b325ca21485bb3a246e0b6d7c2a693d0bcfd5f10dedbad7a89f7",
     "/home/charles/Warlock/implementation/warlock/src/GeometryProjection.elm": "f1b5708b8b4d1c7c02e46542bc041abb9e8cb0524d965ee4b03ab97f586a544c",
     "/home/charles/Warlock/implementation/warlock/src/GeometrySizePolicy.elm": "46dda2de43642cd33997382e90813c8eeccde80745d79b7d5cd5fd425b062c43",
@@ -5809,6 +5817,13 @@
       "label": "host sourceHashes",
       "old": "1b5b48fc5ca71c6e11bd54ea6ab723f5a37f4d383d6a59c99d14d83b005d5033",
       "path": "/home/charles/Warlock/implementation/warlock/src/Desktop.elm"
+    },
+    {
+      "current": "80c574e8c564c28a1fb11f1f89bb5bfa7ac97a92474bbf027a737324bb2a82cd",
+      "index": 3044,
+      "label": "host sourceHashes",
+      "old": "873e8824d90828a9927cfd89723c7b7299e11791e3779173815ba720b11a8547",
+      "path": "/home/charles/Warlock/implementation/warlock/src/Effects.elm"
     },
     {
       "current": "7f5ddbe6fedf775e143b684ec60c9bfbdf15606414ed4fafc2c5553b514821c2",
@@ -7972,8 +7987,6 @@
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/new-core-exports.txt": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/new-core-exports.txt",
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/new-core-qualification.json": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/new-core-qualification.json",
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/parent-host/foundation-result.json": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/parent-host/foundation-result.json",
-    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/pin-scrollport-build-root-v1/report.json": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/pin-scrollport-build-root-v1/report.json",
-    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/pin-scrollport-frontend-lock-root-v1.json": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/pin-scrollport-frontend-lock-root-v1.json",
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/include/aquamarine/allocator/Allocator.hpp": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/include/aquamarine/allocator/Allocator.hpp",
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/include/aquamarine/allocator/Swapchain.hpp": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/include/aquamarine/allocator/Swapchain.hpp",
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/include/aquamarine/backend/Backend.hpp": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/include/aquamarine/backend/Backend.hpp",
@@ -7984,6 +7997,8 @@
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/include/aquamarine/misc/Attachment.hpp": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/include/aquamarine/misc/Attachment.hpp",
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/include/aquamarine/output/Output.hpp": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/include/aquamarine/output/Output.hpp",
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/lib/libaquamarine.so.0.15.0": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/lib/libaquamarine.so.0.15.0",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/receipt-current-build-1793333212775066294/frontend/report.json": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/receipt-current-build-1793333212775066294/frontend/report.json",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/receipt-lifecycle-frontend-lock-root-v1.json": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/receipt-lifecycle-frontend-lock-root-v1.json",
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/offline-pair-v4/A/artifacts/link-host.stderr": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/offline-pair-v4/A/artifacts/link-host.stderr",
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/offline-pair-v4/A/artifacts/link-host.stdout": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/offline-pair-v4/A/artifacts/link-host.stdout",
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/offline-pair-v4/A/artifacts/package/assets/bar.js": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/release-current-tuple/offline-pair-v4/A/artifacts/package/assets/bar.js",

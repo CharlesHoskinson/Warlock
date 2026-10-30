@@ -1,0 +1,261 @@
+{
+  "schema": 1,
+  "components": [
+    {
+      "id": "native-hyprland-core",
+      "category": "native-library",
+      "scope": "shipped",
+      "provenance": [
+        {
+          "path": "implementation/warlock/qa/current-native-pair.json",
+          "sha256": "63e9196840e52de55603a258e21a1d596615477ecc74862c6256630fecd621dd"
+        },
+        {
+          "path": "implementation/warlock/native/core/WorkspacePlacementController.cpp",
+          "sha256": "8e53f37f4f554e92b928e713010ec6033fe80fcb87e4cccccafa693a52ae7206"
+        },
+        {
+          "path": "window-behavior-spec/pin-maximized-core-v3-hit-fallback/core/LICENSE",
+          "sha256": "e01df754903af0ab26babb317b5f5a62dd95f770b733c5275414dd3245d00ae7"
+        },
+        {
+          "path": "implementation/warlock/build-lock.json",
+          "sha256": "9507f772afbedaf6ff11bf184e57513066f402d954a753599de87c05ca465358"
+        },
+        {
+          "path": "implementation/warlock/release/native-tuple-20261028.json",
+          "sha256": "bc225242e30baf4a5b8b1182cef6fdc716cc9c67de90dc35674f90c5fa87830b"
+        }
+      ],
+      "notices": [
+        {
+          "path": "release/notices/native/hyprland-LICENSE",
+          "sha256": "e01df754903af0ab26babb317b5f5a62dd95f770b733c5275414dd3245d00ae7"
+        }
+      ],
+      "disposition": {
+        "status": "unknown",
+        "evidence": "Current derivative artifact identity is recorded in native-tuple-20261028.json; historical pair/lock references and previous note below are retained as history, not evidence that the old binary equals this derivative. Full redistribution review remains unresolved. Previous historical note: Recorded native binary and referenced native build report are unavailable in this snapshot; binary-to-complete-source and redistribution review remain unresolved. Other than the packaged Aquamarine library, dynamic system libraries are external runtime dependencies; the builder does not copy them. The build lock records an aggregate dynamic-library input set for tools and native inputs, not per-binary attribution. The archived Hyprland license is a candidate notice, not proof of exact source lineage. The current WorkspacePlacementController.cpp matches one locked owning-header source hash only."
+      },
+      "files": [
+        {
+          "path": "native/Hyprland",
+          "type": "file",
+          "sha256": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e"
+        },
+        {
+          "path": "release/notices/native/hyprland-LICENSE",
+          "type": "file",
+          "sha256": "e01df754903af0ab26babb317b5f5a62dd95f770b733c5275414dd3245d00ae7"
+        }
+      ],
+      "contains": [
+        "native-udis86-static",
+        "native-glaze-headers"
+      ]
+    },
+    {
+      "id": "native-window-authority-plugin",
+      "category": "native-library",
+      "scope": "shipped",
+      "provenance": [
+        {
+          "path": "implementation/warlock/qa/current-native-pair.json",
+          "sha256": "63e9196840e52de55603a258e21a1d596615477ecc74862c6256630fecd621dd"
+        },
+        {
+          "path": "implementation/warlock/native/authority.cpp",
+          "sha256": "2293da138a4c0b27e5f848f4db5842b2a2f0fc17c4fdbf33e7d0f5d5787305fa"
+        },
+        {
+          "path": "implementation/warlock/build-lock.json",
+          "sha256": "9507f772afbedaf6ff11bf184e57513066f402d954a753599de87c05ca465358"
+        },
+        {
+          "path": "implementation/warlock/release/native-tuple-20261028.json",
+          "sha256": "bc225242e30baf4a5b8b1182cef6fdc716cc9c67de90dc35674f90c5fa87830b"
+        }
+      ],
+      "notices": [],
+      "disposition": {
+        "status": "unknown",
+        "evidence": "Current derivative artifact identity is recorded in native-tuple-20261028.json; historical pair/lock references and previous note below are retained as history, not evidence that the old binary equals this derivative. Full redistribution review remains unresolved. Previous historical note: Recorded native binary and referenced native build report are unavailable in this snapshot; binary-to-complete-source and redistribution review remain unresolved. Other than the packaged Aquamarine library, dynamic system libraries are external runtime dependencies; the builder does not copy them. The build lock records an aggregate dynamic-library input set for tools and native inputs, not per-binary attribution. Authority source hash matches the pair metadata; no project license or reviewed grant was located."
+      },
+      "files": [
+        {
+          "path": "native/elm-window-geometry-authority.so",
+          "type": "file",
+          "sha256": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c"
+        }
+      ]
+    },
+    {
+      "id": "native-aquamarine",
+      "category": "native-library",
+      "scope": "shipped",
+      "provenance": [
+        {
+          "path": "implementation/warlock/qa/current-native-pair.json",
+          "sha256": "63e9196840e52de55603a258e21a1d596615477ecc74862c6256630fecd621dd"
+        },
+        {
+          "path": "implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/inputs/candidate/LICENSE",
+          "sha256": "52d07f3457591b4496ae2e79b05efd63c7df72135666fa12428d83078c4c0de5"
+        },
+        {
+          "path": "window-integration-qa/aquamarine-version-guard-v1/upstream/aquamarine-0.15.0/LICENSE",
+          "sha256": "52d07f3457591b4496ae2e79b05efd63c7df72135666fa12428d83078c4c0de5"
+        },
+        {
+          "path": "implementation/warlock/build-lock.json",
+          "sha256": "9507f772afbedaf6ff11bf184e57513066f402d954a753599de87c05ca465358"
+        },
+        {
+          "path": "implementation/warlock/release/native-tuple-20261028.json",
+          "sha256": "bc225242e30baf4a5b8b1182cef6fdc716cc9c67de90dc35674f90c5fa87830b"
+        }
+      ],
+      "notices": [
+        {
+          "path": "release/notices/native/aquamarine-LICENSE",
+          "sha256": "52d07f3457591b4496ae2e79b05efd63c7df72135666fa12428d83078c4c0de5"
+        }
+      ],
+      "disposition": {
+        "status": "unknown",
+        "evidence": "Current derivative artifact identity is recorded in native-tuple-20261028.json; historical pair/lock references and previous note below are retained as history, not evidence that the old binary equals this derivative. Full redistribution review remains unresolved. Previous historical note: Recorded native binary and referenced native build report are unavailable in this snapshot; binary-to-complete-source and redistribution review remain unresolved. Other than the packaged Aquamarine library, dynamic system libraries are external runtime dependencies; the builder does not copy them. The build lock records an aggregate dynamic-library input set for tools and native inputs, not per-binary attribution. Archived candidate and upstream license texts match by hash; exact shipped binary source lineage is not established."
+      },
+      "files": [
+        {
+          "path": "native/libaquamarine.so.0.15.0",
+          "type": "file",
+          "sha256": "667a22d535aade4e4a26134e39028a87fb3f963c28b7bf7ff79da684bb014ecd"
+        },
+        {
+          "path": "native/libaquamarine.so.14",
+          "type": "symlink",
+          "target": "libaquamarine.so.0.15.0"
+        },
+        {
+          "path": "release/notices/native/aquamarine-LICENSE",
+          "type": "file",
+          "sha256": "52d07f3457591b4496ae2e79b05efd63c7df72135666fa12428d83078c4c0de5"
+        }
+      ]
+    },
+    {
+      "id": "native-generated-host",
+      "category": "host",
+      "scope": "shipped",
+      "provenance": [
+        {
+          "path": "implementation/warlock/native/shared-host.c",
+          "sha256": "5d0d43c61574f292842bc34b2e3363cd5e7a215239e609bcb9780d475a9a8bbc"
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/offline-reproducibility/manifest.json",
+          "sha256": "4134b2212792b5ecf39e220aa2b7327d7fae3f52f9abf0d8e351ef087bbc9497"
+        },
+        {
+          "path": "implementation/warlock/build-lock.json",
+          "sha256": "9507f772afbedaf6ff11bf184e57513066f402d954a753599de87c05ca465358"
+        },
+        {
+          "path": "implementation/warlock/release/native-tuple-20261028.json",
+          "sha256": "bc225242e30baf4a5b8b1182cef6fdc716cc9c67de90dc35674f90c5fa87830b"
+        },
+        {
+          "path": "implementation/warlock/release/current-native-composition-20261030.json",
+          "sha256": "159926b838187ef3d3b610ed119673293f138da9a53e4f382e787f3f69ad9afb"
+        }
+      ],
+      "notices": [],
+      "disposition": {
+        "status": "unknown",
+        "evidence": "Current derivative artifact identity is recorded in native-tuple-20261028.json; historical pair/lock references and previous note below are retained as history, not evidence that the old binary equals this derivative. Full redistribution review remains unresolved. Previous historical note: Project-generated host source has no identified project license or reviewed grant. Digest is the retained offline build evidence identity, not proof of any current candidate. Host dynamic libraries are external runtime dependencies, not bundled; the build lock records an aggregate dynamic-library input set for tools and native inputs, not per-binary attribution."
+      },
+      "files": [
+        {
+          "path": "elm-host",
+          "type": "file",
+          "sha256": "a6b0f0cdfaf9d1fbf35494501fe623c88e889497c14b6fc9f65a7cc6ac5cba97"
+        }
+      ],
+      "notes": "Current expected project source/payload identities are declared against reviewed composition159926b838187ef3d3b610ed119673293f138da9a53e4f382e787f3f69ad9afb and frontend65b909422a1866a9df8f118b134ea42778fd69564aed070bdb92c0975f3818d8. Historical disposition text, old locks and earlier native tuple references are retained as history, not proof of current identity or a redistribution grant. Rebuilt host/assets, package audit and two isolated builds remain unproven."
+    },
+    {
+      "id": "native-udis86-static",
+      "category": "native-library",
+      "scope": "shipped",
+      "provenance": [
+        {
+          "path": "implementation/warlock/release/native-attribution-20261028.json",
+          "sha256": "a44e3515f8253f2f2ab55c8e964e70f807de6edd443e56febb79b113b8476d9b"
+        },
+        {
+          "path": "implementation/warlock/release/notices/native/udis86-LICENSE",
+          "sha256": "1070640aab24327354da44507627d1db6c67482a6facc8375a758796a05e3dff"
+        },
+        {
+          "path": "implementation/warlock/release/component-reviews-20261028.json",
+          "sha256": "0526d5a1650ba6ffba59d192742c24e5c99d21dae3c1250d20a7233abc9d7fb9"
+        }
+      ],
+      "notices": [
+        {
+          "path": "release/notices/native/udis86-LICENSE",
+          "sha256": "1070640aab24327354da44507627d1db6c67482a6facc8375a758796a05e3dff"
+        }
+      ],
+      "disposition": {
+        "status": "reviewed",
+        "evidence": "Independent Quint4/Quint5 evidence and root review are recorded in release/component-reviews-20261028.json. Scoped to the exact source/notice identities and conservative attribution in staged offline v4 A. Preserve the complete notices and continuing non-endorsement conditions; no project grant, compiler/runtime approval or release acceptance is inferred."
+      },
+      "files": [
+        {
+          "path": "release/notices/native/udis86-LICENSE",
+          "type": "file",
+          "sha256": "1070640aab24327354da44507627d1db6c67482a6facc8375a758796a05e3dff"
+        }
+      ],
+      "notes": "Conservative contained dependency attribution. The static archive is named by the core link recipe."
+    },
+    {
+      "id": "native-glaze-headers",
+      "category": "native-library",
+      "scope": "shipped",
+      "provenance": [
+        {
+          "path": "implementation/warlock/release/native-attribution-20261028.json",
+          "sha256": "a44e3515f8253f2f2ab55c8e964e70f807de6edd443e56febb79b113b8476d9b"
+        },
+        {
+          "path": "implementation/warlock/release/notices/native/glaze-LICENSE",
+          "sha256": "5d49e66411a0807a7c8d6b911b9a26b59e940c71aebe561a3ad8b0b80ac4b7b6"
+        },
+        {
+          "path": "implementation/warlock/release/component-reviews-20261028.json",
+          "sha256": "0526d5a1650ba6ffba59d192742c24e5c99d21dae3c1250d20a7233abc9d7fb9"
+        }
+      ],
+      "notices": [
+        {
+          "path": "release/notices/native/glaze-LICENSE",
+          "sha256": "5d49e66411a0807a7c8d6b911b9a26b59e940c71aebe561a3ad8b0b80ac4b7b6"
+        }
+      ],
+      "disposition": {
+        "status": "reviewed",
+        "evidence": "Independent Quint4/Quint5 evidence and root review are recorded in release/component-reviews-20261028.json. Scoped to the exact source/notice identities and conservative attribution in staged offline v4 A. Preserve the complete notices and continuing non-endorsement conditions; no project grant, compiler/runtime approval or release acceptance is inferred."
+      },
+      "files": [
+        {
+          "path": "release/notices/native/glaze-LICENSE",
+          "type": "file",
+          "sha256": "5d49e66411a0807a7c8d6b911b9a26b59e940c71aebe561a3ad8b0b80ac4b7b6"
+        }
+      ],
+      "notes": "Conservative contained header attribution. Retained Ninja dependencies identify 23 Glaze headers for InputCapture.cpp; particular emitted bytes are not inferred."
+    }
+  ]
+}
