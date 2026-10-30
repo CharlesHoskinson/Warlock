@@ -1,14 +1,14 @@
 {
   "schema": 1,
   "owner": "sol",
-  "updatedUTC": "2026-10-29T23:58:26.511206+00:00",
+  "updatedUTC": "2026-10-30T00:15:01.336871+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "current-frontend-build-recipe",
+    "id": "current-native-frontend-composition",
     "requirements": [
       "ELM-DEL-003"
     ],
@@ -16,20 +16,20 @@
       "delivery-003"
     ],
     "paths": [
-      "implementation/warlock/adapter/current_build.py",
-      "implementation/warlock/qa/check-current-build.py",
+      "implementation/warlock/adapter/current_native.py",
+      "implementation/warlock/qa/check-current-native.py",
       "implementation/warlock/README.md",
       "implementation/warlock/RELEASE.md"
     ],
-    "before": "Current native qualification and component suites repeatedly require handwritten wrappers to replace old Elm build/source receipts; historical release builder correctly refuses differing current assets. No reusable reviewed current frontend lock/build/validate API exists.",
-    "after": "A reusable current frontend recipe captures exact source/static/toolchain inputs, builds three roots and validates current source and generated output hashes using explicitly reviewed lock/report digests. Preserve historical native tuple guards and separate complete native composition, provenance, offline and release acceptance.",
+    "before": "The reviewed current frontend receipt cannot yet be composed through a reusable production validator with the existing unchanged native host/ABI tuple; historical verifier binds older frontend sources and assets.",
+    "after": "Validate an explicit reviewed current-native composition lock binding current frontend, unchanged native host/source/dependency/provider/object order and exact core/plugin/Aquamarine identities. Preserve all historical guards and resolve historical source bytes separately from current frontend; reject unreviewed drift and leave original native/AT/release acceptance open.",
     "verification": [
-      "Protected fresh actual Main Bar Popup build with held compiler/cache and exact reviewed input lock. Reject altered source/tool/cache/static/output hashes, malformed manifests and stale/foreign receipts in meaningful isolated tests without mutating frozen held inputs. Retain timeouts/raw failures.",
-      "Independent architecture and input/output closure review, consume current frontend receipt in applicable selected QA without rebasing historical native evidence. No full DEL003 acceptance from frontend-only recipe, native object order/provider/ABI and full tool source provenance remain separate.",
-      "Update Graphify CUDA/eval and README/release/Diataxis/wiki. No unchanged native attention or renderer/Profile retries; the native attention gap remains explicit."
+      "Protected production composition validation against exact reviewed frontend/native locks and immutable prior receipts; verify all historical source/preflight rows with exact old/current deltas, source bytes from immutable Git when applicable. No native GUI launch or unchanged investigation retry.",
+      "Negative contract checks for wrong receipt/hash/source/asset/registry/native object/order/provider/tuple/alias/unknown delta using disposable metadata/artifacts, no frozen runtime inputs changed. Existing native recipe assertions remain authoritative; no automated newnative requalification inferred.",
+      "Independent source-role/guard review, Graphify CUDA/eval, README/release/Diataxis/wiki and regular owned GitHub integration. FullDEL003 provenance/offline/compliance and runtime/original gates remain separate."
     ],
-    "owner": "root-current-build",
-    "participantRecord": ".warlock-contributor/current-frontend-build-recipe.json"
+    "owner": "root-current-native",
+    "participantRecord": ".warlock-contributor/current-native-frontend-composition.json"
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -2937,6 +2937,34 @@
         "participantRecord": ".warlock-contributor/attention-current-native-state.json"
       },
       "outcome": "Current CPU12+11 passed with pinned adapter imports; native fixture NOTREADY current recipe+real AT gap. Evidence b6fb6bf6a. Two qualification iterations stop investigation."
+    },
+    {
+      "atUTC": "2026-10-30T00:15:01.336860+00:00",
+      "slice": {
+        "id": "current-frontend-build-recipe",
+        "requirements": [
+          "ELM-DEL-003"
+        ],
+        "scenarios": [
+          "delivery-003"
+        ],
+        "paths": [
+          "implementation/warlock/adapter/current_build.py",
+          "implementation/warlock/qa/check-current-build.py",
+          "implementation/warlock/README.md",
+          "implementation/warlock/RELEASE.md"
+        ],
+        "before": "Current native qualification and component suites repeatedly require handwritten wrappers to replace old Elm build/source receipts; historical release builder correctly refuses differing current assets. No reusable reviewed current frontend lock/build/validate API exists.",
+        "after": "A reusable current frontend recipe captures exact source/static/toolchain inputs, builds three roots and validates current source and generated output hashes using explicitly reviewed lock/report digests. Preserve historical native tuple guards and separate complete native composition, provenance, offline and release acceptance.",
+        "verification": [
+          "Protected fresh actual Main Bar Popup build with held compiler/cache and exact reviewed input lock. Reject altered source/tool/cache/static/output hashes, malformed manifests and stale/foreign receipts in meaningful isolated tests without mutating frozen held inputs. Retain timeouts/raw failures.",
+          "Independent architecture and input/output closure review, consume current frontend receipt in applicable selected QA without rebasing historical native evidence. No full DEL003 acceptance from frontend-only recipe, native object order/provider/ABI and full tool source provenance remain separate.",
+          "Update Graphify CUDA/eval and README/release/Diataxis/wiki. No unchanged native attention or renderer/Profile retries; the native attention gap remains explicit."
+        ],
+        "owner": "root-current-build",
+        "participantRecord": ".warlock-contributor/current-frontend-build-recipe.json"
+      },
+      "outcome": "Current frontend recipe implemented and published bd549f0db; actual3root/19assets/34checks passed, nativecomposition remains separate."
     }
   ]
 }
