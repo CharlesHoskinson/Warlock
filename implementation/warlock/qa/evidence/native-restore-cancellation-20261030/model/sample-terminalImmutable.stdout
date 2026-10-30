@@ -1,0 +1,1960 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      audit:
+        {
+          active: false,
+          key: 0,
+          peerRetired: 0,
+          peerToken: false,
+          prior: Absent
+        },
+      cursorA: 0,
+      cursorB: 0,
+      high:
+        {
+          acked: false,
+          deadline: 5,
+          front: NoRequest,
+          key: 3,
+          mutations: 0,
+          owner: 1,
+          phase: Absent,
+          pid: 33,
+          retired: 0,
+          seq: 2,
+          token: false
+        },
+      now: 0,
+      old:
+        {
+          acked: false,
+          deadline: 3,
+          front: NoRequest,
+          key: 1,
+          mutations: 0,
+          owner: 1,
+          phase: Absent,
+          pid: 11,
+          retired: 0,
+          seq: 1,
+          token: false
+        },
+      peer:
+        {
+          acked: false,
+          deadline: 4,
+          front: NoRequest,
+          key: 2,
+          mutations: 0,
+          owner: 2,
+          phase: Absent,
+          pid: 22,
+          retired: 0,
+          seq: 1,
+          token: false
+        },
+      slotA: 0,
+      slotB: 0,
+      waiterReleased: false
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      audit:
+        {
+          active: false,
+          key: 0,
+          peerRetired: 0,
+          peerToken: false,
+          prior: Absent
+        },
+      cursorA: 0,
+      cursorB: 0,
+      high:
+        {
+          acked: false,
+          deadline: 5,
+          front: NoRequest,
+          key: 3,
+          mutations: 0,
+          owner: 1,
+          phase: Absent,
+          pid: 33,
+          retired: 0,
+          seq: 2,
+          token: false
+        },
+      now: 0,
+      old:
+        {
+          acked: false,
+          deadline: 3,
+          front: NoRequest,
+          key: 1,
+          mutations: 0,
+          owner: 1,
+          phase: Absent,
+          pid: 11,
+          retired: 0,
+          seq: 1,
+          token: false
+        },
+      peer:
+        {
+          acked: false,
+          deadline: 4,
+          front: NoRequest,
+          key: 2,
+          mutations: 0,
+          owner: 2,
+          phase: Absent,
+          pid: 22,
+          retired: 0,
+          seq: 1,
+          token: false
+        },
+      slotA: 0,
+      slotB: 0,
+      waiterReleased: false
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      audit:
+        {
+          active: true,
+          key: 1,
+          peerRetired: 0,
+          peerToken: false,
+          prior: Absent
+        },
+      cursorA: 1,
+      cursorB: 0,
+      high:
+        {
+          acked: false,
+          deadline: 5,
+          front: NoRequest,
+          key: 3,
+          mutations: 0,
+          owner: 1,
+          phase: Absent,
+          pid: 33,
+          retired: 0,
+          seq: 2,
+          token: false
+        },
+      now: 0,
+      old:
+        {
+          acked: false,
+          deadline: 3,
+          front: Pending,
+          key: 1,
+          mutations: 0,
+          owner: 1,
+          phase: Prepared,
+          pid: 11,
+          retired: 0,
+          seq: 1,
+          token: true
+        },
+      peer:
+        {
+          acked: false,
+          deadline: 4,
+          front: NoRequest,
+          key: 2,
+          mutations: 0,
+          owner: 2,
+          phase: Absent,
+          pid: 22,
+          retired: 0,
+          seq: 1,
+          token: false
+        },
+      slotA: 1,
+      slotB: 0,
+      waiterReleased: false
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      audit:
+        {
+          active: false,
+          key: 1,
+          peerRetired: 0,
+          peerToken: false,
+          prior: Absent
+        },
+      cursorA: 1,
+      cursorB: 0,
+      high:
+        {
+          acked: false,
+          deadline: 5,
+          front: NoRequest,
+          key: 3,
+          mutations: 0,
+          owner: 1,
+          phase: Absent,
+          pid: 33,
+          retired: 0,
+          seq: 2,
+          token: false
+        },
+      now: 0,
+      old:
+        {
+          acked: false,
+          deadline: 3,
+          front: Pending,
+          key: 1,
+          mutations: 0,
+          owner: 1,
+          phase: Prepared,
+          pid: 11,
+          retired: 0,
+          seq: 1,
+          token: true
+        },
+      peer:
+        {
+          acked: false,
+          deadline: 4,
+          front: NoRequest,
+          key: 2,
+          mutations: 0,
+          owner: 2,
+          phase: Absent,
+          pid: 22,
+          retired: 0,
+          seq: 1,
+          token: false
+        },
+      slotA: 1,
+      slotB: 0,
+      waiterReleased: false
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      audit:
+        {
+          active: true,
+          key: 1,
+          peerRetired: 0,
+          peerToken: false,
+          prior: Prepared
+        },
+      cursorA: 1,
+      cursorB: 0,
+      high:
+        {
+          acked: false,
+          deadline: 5,
+          front: NoRequest,
+          key: 3,
+          mutations: 0,
+          owner: 1,
+          phase: Absent,
+          pid: 33,
+          retired: 0,
+          seq: 2,
+          token: false
+        },
+      now: 0,
+      old:
+        {
+          acked: false,
+          deadline: 3,
+          front: TransportUnknown,
+          key: 1,
+          mutations: 0,
+          owner: 1,
+          phase: Prepared,
+          pid: 11,
+          retired: 0,
+          seq: 1,
+          token: true
+        },
+      peer:
+        {
+          acked: false,
+          deadline: 4,
+          front: NoRequest,
+          key: 2,
+          mutations: 0,
+          owner: 2,
+          phase: Absent,
+          pid: 22,
+          retired: 0,
+          seq: 1,
+          token: false
+        },
+      slotA: 1,
+      slotB: 0,
+      waiterReleased: false
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      audit:
+        {
+          active: true,
+          key: 1,
+          peerRetired: 0,
+          peerToken: false,
+          prior: Prepared
+        },
+      cursorA: 1,
+      cursorB: 0,
+      high:
+        {
+          acked: false,
+          deadline: 5,
+          front: NoRequest,
+          key: 3,
+          mutations: 0,
+          owner: 1,
+          phase: Absent,
+          pid: 33,
+          retired: 0,
+          seq: 2,
+          token: false
+        },
+      now: 0,
+      old:
+        {
+          acked: false,
+          deadline: 3,
+          front: TransportUnknown,
+          key: 1,
+          mutations: 0,
+          owner: 1,
+          phase: Prepared,
+          pid: 11,
+          retired: 0,
+          seq: 1,
+          token: true
+        },
+      peer:
+        {
+          acked: false,
+          deadline: 4,
+          front: NoRequest,
+          key: 2,
+          mutations: 0,
+          owner: 2,
+          phase: Absent,
+          pid: 22,
+          retired: 0,
+          seq: 1,
+          token: false
+        },
+      slotA: 1,
+      slotB: 0,
+      waiterReleased: false
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      audit:
+        {
+          active: true,
+          key: 1,
+          peerRetired: 0,
+          peerToken: false,
+          prior: Prepared
+        },
+      cursorA: 1,
+      cursorB: 0,
+      high:
+        {
+          acked: false,
+          deadline: 5,
+          front: NoRequest,
+          key: 3,
+          mutations: 0,
+          owner: 1,
+          phase: Absent,
+          pid: 33,
+          retired: 0,
+          seq: 2,
+          token: false
+        },
+      now: 0,
+      old:
+        {
+          acked: false,
+          deadline: 3,
+          front: TransportUnknown,
+          key: 1,
+          mutations: 0,
+          owner: 1,
+          phase: Prepared,
+          pid: 11,
+          retired: 0,
+          seq: 1,
+          token: true
+        },
+      peer:
+        {
+          acked: false,
+          deadline: 4,
+          front: NoRequest,
+          key: 2,
+          mutations: 0,
+          owner: 2,
+          phase: Absent,
+          pid: 22,
+          retired: 0,
+          seq: 1,
+          token: false
+        },
+      slotA: 1,
+      slotB: 0,
+      waiterReleased: false
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      audit:
+        {
+          active: true,
+          key: 1,
+          peerRetired: 0,
+          peerToken: false,
+          prior: Prepared
+        },
+      cursorA: 1,
+      cursorB: 0,
+      high:
+        {
+          acked: false,
+          deadline: 5,
+          front: NoRequest,
+          key: 3,
+          mutations: 0,
+          owner: 1,
+          phase: Absent,
+          pid: 33,
+          retired: 0,
+          seq: 2,
+          token: false
+        },
+      now: 0,
+      old:
+        {
+          acked: false,
+          deadline: 3,
+          front: TransportUnknown,
+          key: 1,
+          mutations: 0,
+          owner: 1,
+          phase: Prepared,
+          pid: 11,
+          retired: 0,
+          seq: 1,
+          token: true
+        },
+      peer:
+        {
+          acked: false,
+          deadline: 4,
+          front: NoRequest,
+          key: 2,
+          mutations: 0,
+          owner: 2,
+          phase: Absent,
+          pid: 22,
+          retired: 0,
+          seq: 1,
+          token: false
+        },
+      slotA: 1,
+      slotB: 0,
+      waiterReleased: false
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      audit:
+        {
+          active: true,
+          key: 1,
+          peerRetired: 0,
+          peerToken: false,
+          prior: Prepared
+        },
+      cursorA: 1,
+      cursorB: 0,
+      high:
+        {
+          acked: false,
+          deadline: 5,
+          front: NoRequest,
+          key: 3,
+          mutations: 0,
+          owner: 1,
+          phase: Absent,
+          pid: 33,
+          retired: 0,
+          seq: 2,
+          token: false
+        },
+      now: 0,
+      old:
+        {
+          acked: false,
+          deadline: 3,
+          front: TransportUnknown,
+          key: 1,
+          mutations: 0,
+          owner: 1,
+          phase: Refused,
+          pid: 11,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      peer:
+        {
+          acked: false,
+          deadline: 4,
+          front: NoRequest,
+          key: 2,
+          mutations: 0,
+          owner: 2,
+          phase: Absent,
+          pid: 22,
+          retired: 0,
+          seq: 1,
+          token: false
+        },
+      slotA: 1,
+      slotB: 0,
+      waiterReleased: false
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      audit:
+        {
+          active: true,
+          key: 2,
+          peerRetired: 1,
+          peerToken: false,
+          prior: Absent
+        },
+      cursorA: 1,
+      cursorB: 1,
+      high:
+        {
+          acked: false,
+          deadline: 5,
+          front: NoRequest,
+          key: 3,
+          mutations: 0,
+          owner: 1,
+          phase: Absent,
+          pid: 33,
+          retired: 0,
+          seq: 2,
+          token: false
+        },
+      now: 0,
+      old:
+        {
+          acked: false,
+          deadline: 3,
+          front: TransportUnknown,
+          key: 1,
+          mutations: 0,
+          owner: 1,
+          phase: Refused,
+          pid: 11,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      peer:
+        {
+          acked: false,
+          deadline: 4,
+          front: Pending,
+          key: 2,
+          mutations: 0,
+          owner: 2,
+          phase: Prepared,
+          pid: 22,
+          retired: 0,
+          seq: 1,
+          token: true
+        },
+      slotA: 1,
+      slotB: 2,
+      waiterReleased: false
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      audit:
+        {
+          active: false,
+          key: 2,
+          peerRetired: 1,
+          peerToken: false,
+          prior: Absent
+        },
+      cursorA: 1,
+      cursorB: 1,
+      high:
+        {
+          acked: false,
+          deadline: 5,
+          front: NoRequest,
+          key: 3,
+          mutations: 0,
+          owner: 1,
+          phase: Absent,
+          pid: 33,
+          retired: 0,
+          seq: 2,
+          token: false
+        },
+      now: 0,
+      old:
+        {
+          acked: false,
+          deadline: 3,
+          front: TransportUnknown,
+          key: 1,
+          mutations: 0,
+          owner: 1,
+          phase: Refused,
+          pid: 11,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      peer:
+        {
+          acked: false,
+          deadline: 4,
+          front: Pending,
+          key: 2,
+          mutations: 0,
+          owner: 2,
+          phase: Prepared,
+          pid: 22,
+          retired: 0,
+          seq: 1,
+          token: true
+        },
+      slotA: 1,
+      slotB: 2,
+      waiterReleased: false
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      audit:
+        {
+          active: true,
+          key: 2,
+          peerRetired: 1,
+          peerToken: false,
+          prior: Prepared
+        },
+      cursorA: 1,
+      cursorB: 1,
+      high:
+        {
+          acked: false,
+          deadline: 5,
+          front: NoRequest,
+          key: 3,
+          mutations: 0,
+          owner: 1,
+          phase: Absent,
+          pid: 33,
+          retired: 0,
+          seq: 2,
+          token: false
+        },
+      now: 0,
+      old:
+        {
+          acked: false,
+          deadline: 3,
+          front: TransportUnknown,
+          key: 1,
+          mutations: 0,
+          owner: 1,
+          phase: Refused,
+          pid: 11,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      peer:
+        {
+          acked: false,
+          deadline: 4,
+          front: Pending,
+          key: 2,
+          mutations: 0,
+          owner: 2,
+          phase: Cancelled,
+          pid: 22,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      slotA: 1,
+      slotB: 2,
+      waiterReleased: false
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      audit:
+        {
+          active: true,
+          key: 2,
+          peerRetired: 1,
+          peerToken: false,
+          prior: Cancelled
+        },
+      cursorA: 1,
+      cursorB: 1,
+      high:
+        {
+          acked: false,
+          deadline: 5,
+          front: NoRequest,
+          key: 3,
+          mutations: 0,
+          owner: 1,
+          phase: Absent,
+          pid: 33,
+          retired: 0,
+          seq: 2,
+          token: false
+        },
+      now: 0,
+      old:
+        {
+          acked: false,
+          deadline: 3,
+          front: TransportUnknown,
+          key: 1,
+          mutations: 0,
+          owner: 1,
+          phase: Refused,
+          pid: 11,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      peer:
+        {
+          acked: false,
+          deadline: 4,
+          front: Pending,
+          key: 2,
+          mutations: 0,
+          owner: 2,
+          phase: Cancelled,
+          pid: 22,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      slotA: 1,
+      slotB: 2,
+      waiterReleased: false
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      audit:
+        {
+          active: true,
+          key: 1,
+          peerRetired: 1,
+          peerToken: false,
+          prior: Refused
+        },
+      cursorA: 1,
+      cursorB: 1,
+      high:
+        {
+          acked: false,
+          deadline: 5,
+          front: NoRequest,
+          key: 3,
+          mutations: 0,
+          owner: 1,
+          phase: Absent,
+          pid: 33,
+          retired: 0,
+          seq: 2,
+          token: false
+        },
+      now: 0,
+      old:
+        {
+          acked: false,
+          deadline: 3,
+          front: TransportUnknown,
+          key: 1,
+          mutations: 0,
+          owner: 1,
+          phase: Refused,
+          pid: 11,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      peer:
+        {
+          acked: false,
+          deadline: 4,
+          front: Pending,
+          key: 2,
+          mutations: 0,
+          owner: 2,
+          phase: Cancelled,
+          pid: 22,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      slotA: 1,
+      slotB: 2,
+      waiterReleased: false
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      audit:
+        {
+          active: true,
+          key: 2,
+          peerRetired: 1,
+          peerToken: false,
+          prior: Cancelled
+        },
+      cursorA: 1,
+      cursorB: 1,
+      high:
+        {
+          acked: false,
+          deadline: 5,
+          front: NoRequest,
+          key: 3,
+          mutations: 0,
+          owner: 1,
+          phase: Absent,
+          pid: 33,
+          retired: 0,
+          seq: 2,
+          token: false
+        },
+      now: 0,
+      old:
+        {
+          acked: false,
+          deadline: 3,
+          front: TransportUnknown,
+          key: 1,
+          mutations: 0,
+          owner: 1,
+          phase: Refused,
+          pid: 11,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      peer:
+        {
+          acked: true,
+          deadline: 4,
+          front: Pending,
+          key: 2,
+          mutations: 0,
+          owner: 2,
+          phase: Cancelled,
+          pid: 22,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      slotA: 1,
+      slotB: 0,
+      waiterReleased: false
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      audit:
+        {
+          active: true,
+          key: 1,
+          peerRetired: 1,
+          peerToken: false,
+          prior: Refused
+        },
+      cursorA: 1,
+      cursorB: 1,
+      high:
+        {
+          acked: false,
+          deadline: 5,
+          front: NoRequest,
+          key: 3,
+          mutations: 0,
+          owner: 1,
+          phase: Absent,
+          pid: 33,
+          retired: 0,
+          seq: 2,
+          token: false
+        },
+      now: 0,
+      old:
+        {
+          acked: false,
+          deadline: 3,
+          front: TransportUnknown,
+          key: 1,
+          mutations: 0,
+          owner: 1,
+          phase: Refused,
+          pid: 11,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      peer:
+        {
+          acked: true,
+          deadline: 4,
+          front: Pending,
+          key: 2,
+          mutations: 0,
+          owner: 2,
+          phase: Cancelled,
+          pid: 22,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      slotA: 1,
+      slotB: 0,
+      waiterReleased: false
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      audit:
+        {
+          active: true,
+          key: 1,
+          peerRetired: 1,
+          peerToken: false,
+          prior: Refused
+        },
+      cursorA: 1,
+      cursorB: 1,
+      high:
+        {
+          acked: false,
+          deadline: 5,
+          front: NoRequest,
+          key: 3,
+          mutations: 0,
+          owner: 1,
+          phase: Absent,
+          pid: 33,
+          retired: 0,
+          seq: 2,
+          token: false
+        },
+      now: 0,
+      old:
+        {
+          acked: false,
+          deadline: 3,
+          front: TransportUnknown,
+          key: 1,
+          mutations: 0,
+          owner: 1,
+          phase: Refused,
+          pid: 11,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      peer:
+        {
+          acked: true,
+          deadline: 4,
+          front: Pending,
+          key: 2,
+          mutations: 0,
+          owner: 2,
+          phase: Cancelled,
+          pid: 22,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      slotA: 1,
+      slotB: 0,
+      waiterReleased: false
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      audit:
+        {
+          active: true,
+          key: 1,
+          peerRetired: 1,
+          peerToken: false,
+          prior: Refused
+        },
+      cursorA: 1,
+      cursorB: 1,
+      high:
+        {
+          acked: false,
+          deadline: 5,
+          front: NoRequest,
+          key: 3,
+          mutations: 0,
+          owner: 1,
+          phase: Absent,
+          pid: 33,
+          retired: 0,
+          seq: 2,
+          token: false
+        },
+      now: 0,
+      old:
+        {
+          acked: false,
+          deadline: 3,
+          front: FrontRefused,
+          key: 1,
+          mutations: 0,
+          owner: 1,
+          phase: Refused,
+          pid: 11,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      peer:
+        {
+          acked: true,
+          deadline: 4,
+          front: Pending,
+          key: 2,
+          mutations: 0,
+          owner: 2,
+          phase: Cancelled,
+          pid: 22,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      slotA: 1,
+      slotB: 0,
+      waiterReleased: false
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      audit:
+        {
+          active: true,
+          key: 1,
+          peerRetired: 1,
+          peerToken: false,
+          prior: Refused
+        },
+      cursorA: 1,
+      cursorB: 1,
+      high:
+        {
+          acked: false,
+          deadline: 5,
+          front: NoRequest,
+          key: 3,
+          mutations: 0,
+          owner: 1,
+          phase: Absent,
+          pid: 33,
+          retired: 0,
+          seq: 2,
+          token: false
+        },
+      now: 0,
+      old:
+        {
+          acked: false,
+          deadline: 3,
+          front: FrontRefused,
+          key: 1,
+          mutations: 0,
+          owner: 1,
+          phase: Refused,
+          pid: 11,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      peer:
+        {
+          acked: true,
+          deadline: 4,
+          front: Pending,
+          key: 2,
+          mutations: 0,
+          owner: 2,
+          phase: Cancelled,
+          pid: 22,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      slotA: 1,
+      slotB: 0,
+      waiterReleased: false
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      audit:
+        {
+          active: true,
+          key: 1,
+          peerRetired: 1,
+          peerToken: false,
+          prior: Refused
+        },
+      cursorA: 1,
+      cursorB: 1,
+      high:
+        {
+          acked: false,
+          deadline: 5,
+          front: NoRequest,
+          key: 3,
+          mutations: 0,
+          owner: 1,
+          phase: Absent,
+          pid: 33,
+          retired: 0,
+          seq: 2,
+          token: false
+        },
+      now: 0,
+      old:
+        {
+          acked: false,
+          deadline: 3,
+          front: TransportUnknown,
+          key: 1,
+          mutations: 0,
+          owner: 1,
+          phase: Refused,
+          pid: 11,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      peer:
+        {
+          acked: true,
+          deadline: 4,
+          front: Pending,
+          key: 2,
+          mutations: 0,
+          owner: 2,
+          phase: Cancelled,
+          pid: 22,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      slotA: 1,
+      slotB: 0,
+      waiterReleased: false
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      audit:
+        {
+          active: false,
+          key: 1,
+          peerRetired: 1,
+          peerToken: false,
+          prior: Refused
+        },
+      cursorA: 1,
+      cursorB: 1,
+      high:
+        {
+          acked: false,
+          deadline: 5,
+          front: NoRequest,
+          key: 3,
+          mutations: 0,
+          owner: 1,
+          phase: Absent,
+          pid: 33,
+          retired: 0,
+          seq: 2,
+          token: false
+        },
+      now: 1,
+      old:
+        {
+          acked: false,
+          deadline: 3,
+          front: TransportUnknown,
+          key: 1,
+          mutations: 0,
+          owner: 1,
+          phase: Refused,
+          pid: 11,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      peer:
+        {
+          acked: true,
+          deadline: 4,
+          front: Pending,
+          key: 2,
+          mutations: 0,
+          owner: 2,
+          phase: Cancelled,
+          pid: 22,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      slotA: 1,
+      slotB: 0,
+      waiterReleased: false
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      audit:
+        {
+          active: false,
+          key: 1,
+          peerRetired: 1,
+          peerToken: false,
+          prior: Refused
+        },
+      cursorA: 1,
+      cursorB: 1,
+      high:
+        {
+          acked: false,
+          deadline: 5,
+          front: NoRequest,
+          key: 3,
+          mutations: 0,
+          owner: 1,
+          phase: Absent,
+          pid: 33,
+          retired: 0,
+          seq: 2,
+          token: false
+        },
+      now: 1,
+      old:
+        {
+          acked: false,
+          deadline: 3,
+          front: TransportUnknown,
+          key: 1,
+          mutations: 0,
+          owner: 1,
+          phase: Refused,
+          pid: 11,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      peer:
+        {
+          acked: true,
+          deadline: 4,
+          front: Pending,
+          key: 2,
+          mutations: 0,
+          owner: 2,
+          phase: Cancelled,
+          pid: 22,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      slotA: 1,
+      slotB: 0,
+      waiterReleased: false
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      audit:
+        {
+          active: true,
+          key: 1,
+          peerRetired: 1,
+          peerToken: false,
+          prior: Refused
+        },
+      cursorA: 1,
+      cursorB: 1,
+      high:
+        {
+          acked: false,
+          deadline: 5,
+          front: NoRequest,
+          key: 3,
+          mutations: 0,
+          owner: 1,
+          phase: Absent,
+          pid: 33,
+          retired: 0,
+          seq: 2,
+          token: false
+        },
+      now: 1,
+      old:
+        {
+          acked: false,
+          deadline: 3,
+          front: TransportUnknown,
+          key: 1,
+          mutations: 0,
+          owner: 1,
+          phase: Refused,
+          pid: 11,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      peer:
+        {
+          acked: true,
+          deadline: 4,
+          front: Pending,
+          key: 2,
+          mutations: 0,
+          owner: 2,
+          phase: Cancelled,
+          pid: 22,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      slotA: 1,
+      slotB: 0,
+      waiterReleased: false
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      audit:
+        {
+          active: false,
+          key: 1,
+          peerRetired: 1,
+          peerToken: false,
+          prior: Refused
+        },
+      cursorA: 1,
+      cursorB: 1,
+      high:
+        {
+          acked: false,
+          deadline: 5,
+          front: NoRequest,
+          key: 3,
+          mutations: 0,
+          owner: 1,
+          phase: Absent,
+          pid: 33,
+          retired: 0,
+          seq: 2,
+          token: false
+        },
+      now: 1,
+      old:
+        {
+          acked: false,
+          deadline: 3,
+          front: TransportUnknown,
+          key: 1,
+          mutations: 0,
+          owner: 1,
+          phase: Refused,
+          pid: 11,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      peer:
+        {
+          acked: true,
+          deadline: 4,
+          front: Pending,
+          key: 2,
+          mutations: 0,
+          owner: 2,
+          phase: Cancelled,
+          pid: 22,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      slotA: 1,
+      slotB: 0,
+      waiterReleased: false
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      audit:
+        {
+          active: false,
+          key: 1,
+          peerRetired: 1,
+          peerToken: false,
+          prior: Refused
+        },
+      cursorA: 1,
+      cursorB: 1,
+      high:
+        {
+          acked: false,
+          deadline: 5,
+          front: NoRequest,
+          key: 3,
+          mutations: 0,
+          owner: 1,
+          phase: Absent,
+          pid: 33,
+          retired: 0,
+          seq: 2,
+          token: false
+        },
+      now: 2,
+      old:
+        {
+          acked: false,
+          deadline: 3,
+          front: TransportUnknown,
+          key: 1,
+          mutations: 0,
+          owner: 1,
+          phase: Refused,
+          pid: 11,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      peer:
+        {
+          acked: true,
+          deadline: 4,
+          front: Pending,
+          key: 2,
+          mutations: 0,
+          owner: 2,
+          phase: Cancelled,
+          pid: 22,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      slotA: 1,
+      slotB: 0,
+      waiterReleased: false
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      audit:
+        {
+          active: true,
+          key: 1,
+          peerRetired: 1,
+          peerToken: false,
+          prior: Refused
+        },
+      cursorA: 1,
+      cursorB: 1,
+      high:
+        {
+          acked: false,
+          deadline: 5,
+          front: NoRequest,
+          key: 3,
+          mutations: 0,
+          owner: 1,
+          phase: Absent,
+          pid: 33,
+          retired: 0,
+          seq: 2,
+          token: false
+        },
+      now: 2,
+      old:
+        {
+          acked: false,
+          deadline: 3,
+          front: FrontRefused,
+          key: 1,
+          mutations: 0,
+          owner: 1,
+          phase: Refused,
+          pid: 11,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      peer:
+        {
+          acked: true,
+          deadline: 4,
+          front: Pending,
+          key: 2,
+          mutations: 0,
+          owner: 2,
+          phase: Cancelled,
+          pid: 22,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      slotA: 1,
+      slotB: 0,
+      waiterReleased: false
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      audit:
+        {
+          active: false,
+          key: 1,
+          peerRetired: 1,
+          peerToken: false,
+          prior: Refused
+        },
+      cursorA: 1,
+      cursorB: 1,
+      high:
+        {
+          acked: false,
+          deadline: 5,
+          front: NoRequest,
+          key: 3,
+          mutations: 0,
+          owner: 1,
+          phase: Absent,
+          pid: 33,
+          retired: 0,
+          seq: 2,
+          token: false
+        },
+      now: 3,
+      old:
+        {
+          acked: false,
+          deadline: 3,
+          front: FrontRefused,
+          key: 1,
+          mutations: 0,
+          owner: 1,
+          phase: Refused,
+          pid: 11,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      peer:
+        {
+          acked: true,
+          deadline: 4,
+          front: Pending,
+          key: 2,
+          mutations: 0,
+          owner: 2,
+          phase: Cancelled,
+          pid: 22,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      slotA: 1,
+      slotB: 0,
+      waiterReleased: false
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      audit:
+        {
+          active: false,
+          key: 1,
+          peerRetired: 1,
+          peerToken: false,
+          prior: Refused
+        },
+      cursorA: 1,
+      cursorB: 1,
+      high:
+        {
+          acked: false,
+          deadline: 5,
+          front: NoRequest,
+          key: 3,
+          mutations: 0,
+          owner: 1,
+          phase: Absent,
+          pid: 33,
+          retired: 0,
+          seq: 2,
+          token: false
+        },
+      now: 3,
+      old:
+        {
+          acked: false,
+          deadline: 3,
+          front: FrontRefused,
+          key: 1,
+          mutations: 0,
+          owner: 1,
+          phase: Refused,
+          pid: 11,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      peer:
+        {
+          acked: true,
+          deadline: 4,
+          front: Pending,
+          key: 2,
+          mutations: 0,
+          owner: 2,
+          phase: Cancelled,
+          pid: 22,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      slotA: 1,
+      slotB: 0,
+      waiterReleased: false
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      audit:
+        {
+          active: false,
+          key: 1,
+          peerRetired: 1,
+          peerToken: false,
+          prior: Refused
+        },
+      cursorA: 1,
+      cursorB: 1,
+      high:
+        {
+          acked: false,
+          deadline: 5,
+          front: NoRequest,
+          key: 3,
+          mutations: 0,
+          owner: 1,
+          phase: Absent,
+          pid: 33,
+          retired: 0,
+          seq: 2,
+          token: false
+        },
+      now: 4,
+      old:
+        {
+          acked: false,
+          deadline: 3,
+          front: FrontRefused,
+          key: 1,
+          mutations: 0,
+          owner: 1,
+          phase: Refused,
+          pid: 11,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      peer:
+        {
+          acked: true,
+          deadline: 4,
+          front: Pending,
+          key: 2,
+          mutations: 0,
+          owner: 2,
+          phase: Cancelled,
+          pid: 22,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      slotA: 1,
+      slotB: 0,
+      waiterReleased: false
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      audit:
+        {
+          active: true,
+          key: 2,
+          peerRetired: 1,
+          peerToken: false,
+          prior: Cancelled
+        },
+      cursorA: 1,
+      cursorB: 1,
+      high:
+        {
+          acked: false,
+          deadline: 5,
+          front: NoRequest,
+          key: 3,
+          mutations: 0,
+          owner: 1,
+          phase: Absent,
+          pid: 33,
+          retired: 0,
+          seq: 2,
+          token: false
+        },
+      now: 4,
+      old:
+        {
+          acked: false,
+          deadline: 3,
+          front: FrontRefused,
+          key: 1,
+          mutations: 0,
+          owner: 1,
+          phase: Refused,
+          pid: 11,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      peer:
+        {
+          acked: true,
+          deadline: 4,
+          front: Pending,
+          key: 2,
+          mutations: 0,
+          owner: 2,
+          phase: Cancelled,
+          pid: 22,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      slotA: 1,
+      slotB: 0,
+      waiterReleased: false
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      audit:
+        {
+          active: true,
+          key: 1,
+          peerRetired: 1,
+          peerToken: false,
+          prior: Refused
+        },
+      cursorA: 1,
+      cursorB: 1,
+      high:
+        {
+          acked: false,
+          deadline: 5,
+          front: NoRequest,
+          key: 3,
+          mutations: 0,
+          owner: 1,
+          phase: Absent,
+          pid: 33,
+          retired: 0,
+          seq: 2,
+          token: false
+        },
+      now: 4,
+      old:
+        {
+          acked: false,
+          deadline: 3,
+          front: TransportUnknown,
+          key: 1,
+          mutations: 0,
+          owner: 1,
+          phase: Refused,
+          pid: 11,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      peer:
+        {
+          acked: true,
+          deadline: 4,
+          front: Pending,
+          key: 2,
+          mutations: 0,
+          owner: 2,
+          phase: Cancelled,
+          pid: 22,
+          retired: 1,
+          seq: 1,
+          token: false
+        },
+      slotA: 1,
+      slotB: 0,
+      waiterReleased: false
+    }
+}
+
+[ok] No violation found (1780ms at 562 traces/second).
+Trace length statistics: max=31, min=31, average=31.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x13528a6 --backend=typescript to reproduce.

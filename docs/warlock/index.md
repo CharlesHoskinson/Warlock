@@ -19,6 +19,7 @@ Choose a page for the work you are doing:
 | Understand recorded acceptance and open gates | [Status and evidence reference](reference/status-and-evidence.md) |
 | Understand active and attention indicators | [Explanation: taskbar attention](explanation/taskbar-attention.md) |
 | Understand application pinning and window top state | [Explanation: application pin and always-on-top](explanation/application-pin-and-always-on-top.md) |
+| Look up the staged native cancellation interface | [Native Restore cancellation protocol](reference/cancellation-protocol.md) |
 | Understand ownership and lifecycle decisions | [Explanation: authority, presentation and lifetimes](explanation/ownership-and-lifetimes.md) |
 
 This structure follows [Diátaxis](https://diataxis.fr/): tutorials teach through a bounded exercise; how-to guides address a concrete task; reference provides lookup facts; explanation develops the reasons behind the system. Root retrieved the official source using Scrapling. The docs are not an installation/deployment claim.

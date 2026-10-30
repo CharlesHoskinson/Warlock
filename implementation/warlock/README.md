@@ -1043,3 +1043,6 @@ clean A/B reproduction, installation and release acceptance remain separate.
 
 
 Notification QA checkpoint (October 30): the [notification replay admission correction](qa/evidence/notification-admission-20261030/LIMITS.md) supplies the current native idle observation missing from the old fixture. All fourteen original and ten added admission/reachability checks pass; unchanged notification-model tests and bounded samples pass. Production policy is unchanged. Native speech/braille and original UI-010 acceptance remain open.
+
+
+Native cancellation source checkpoint (October 30): an [opt-in Restore lifecycle channel](../../docs/warlock/reference/cancellation-protocol.md) now owns Prepare/Commit/Cancel/query/ACK decisions with exact identity, bounded capacity and typed execution. Component tests and owning-ABI compile/static provider closure pass; [evidence and limits](qa/evidence/native-restore-cancellation-20261030/LIMITS.md) distinguish those checks from native acceptance. The plugin is not loaded and the production host/adapter/Elm path is not wired. Old composition locks remain historical after this native source change; a new current native tuple, durable custody, physical Escape and original runtime/resource gates remain required before deployment.

@@ -1,0 +1,698 @@
+{
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-5d08d3960cf144f2b23f472128ec5a88.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node": "caa24debe02770c92a70677e2a62ca98890150e7ac1c17bcfe31bcc98cc89943",
+    "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js": "952a50a28932282528b5c9b86ac5542405d85da4f80876aabe8cb8c7d5a6d0e8",
+    "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/package.json": "c73e78964221e9e8cbe273568ccdad152370fc35786fb82219c64347c71e57dc",
+    "/home/charles/.local/state/warlock-team/20261028/tooling/package-lock.json": "630f4926b18579f08be780630a94a7c4d398b4bcc6f9844def990ff6a7112903",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/native-cancellation-root-model-v3/native-cancellation.qnt": "a5916995e5f01e70be5844136e9b9a83a3eacc6ffc404f0e41abd87276bcf559",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/native-cancellation-root-model-v3/native-cancellation_test.qnt": "40746078d1c1bf2b06df6b00b738a7b8b1d90b5350b45688885b64a423221044"
+  },
+  "driverSHA256": "2f1a9d9e63bafa6867a7060c915fd8bf8e02f9ebdc7a45f4b86454ade8df416b",
+  "commands": [
+    {
+      "name": "version",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "--version"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "typecheck-native-cancellation.qnt",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "typecheck",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/native-cancellation-root-model-v3/native-cancellation.qnt"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "typecheck-native-cancellation_test.qnt",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "typecheck",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/native-cancellation-root-model-v3/native-cancellation_test.qnt"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "initial-run",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "run",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/native-cancellation-root-model-v3/native-cancellation.qnt",
+        "--main",
+        "NativeCancellation",
+        "--invariant",
+        "cancelledNoMutation",
+        "--max-samples=1",
+        "--max-steps=1",
+        "--backend=typescript",
+        "--seed=20261030"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "c03ffd744855b5c47fec9b77ab276e2c9258ce90191f33673850634ba5aea46c",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-cancelFirstTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/native-cancellation-root-model-v3/native-cancellation_test.qnt",
+        "--main",
+        "NativeCancellation_test",
+        "--backend=typescript",
+        "--match",
+        "^cancelFirstTest$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "19456de2defad504c74dbb73ef561c46bbb6b5a836886164c00cc31eb73b911a",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-commitFirstTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/native-cancellation-root-model-v3/native-cancellation_test.qnt",
+        "--main",
+        "NativeCancellation_test",
+        "--backend=typescript",
+        "--match",
+        "^commitFirstTest$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "e72af2189a5eca8cddc8213359c4d5685b2860ffb2271bde23b5481025c8ccb6",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-lostPrepareAckCancelTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/native-cancellation-root-model-v3/native-cancellation_test.qnt",
+        "--main",
+        "NativeCancellation_test",
+        "--backend=typescript",
+        "--match",
+        "^lostPrepareAckCancelTest$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "bde55f85bb460daa87a2c37bf3a619ec33e12a944d72d02606bc09159a478d4a",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-unknownCannotCancelTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/native-cancellation-root-model-v3/native-cancellation_test.qnt",
+        "--main",
+        "NativeCancellation_test",
+        "--backend=typescript",
+        "--match",
+        "^unknownCannotCancelTest$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "bf59ba7ea3bf47e209a448decfdc0eafbad6f9c84f96fb1770dfc17f9858201e",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-unknownCannotAckTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/native-cancellation-root-model-v3/native-cancellation_test.qnt",
+        "--main",
+        "NativeCancellation_test",
+        "--backend=typescript",
+        "--match",
+        "^unknownCannotAckTest$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "6cf64b4a82b5d05a56041ab3638497a117c57392be1e16f05ed91d4e28bc62b5",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-unknownBlocksHigherTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/native-cancellation-root-model-v3/native-cancellation_test.qnt",
+        "--main",
+        "NativeCancellation_test",
+        "--backend=typescript",
+        "--match",
+        "^unknownBlocksHigherTest$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "edd97c735c6637fae0902dafe766ca9174bd5692b0c048fa43ee396bdd3414aa",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-exactRetryQueryTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/native-cancellation-root-model-v3/native-cancellation_test.qnt",
+        "--main",
+        "NativeCancellation_test",
+        "--backend=typescript",
+        "--match",
+        "^exactRetryQueryTest$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "879652f63ba04caa9cf010a91ba88416160ac5ecb0b025c7777e745e4cc2b603",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-foreignPeerTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/native-cancellation-root-model-v3/native-cancellation_test.qnt",
+        "--main",
+        "NativeCancellation_test",
+        "--backend=typescript",
+        "--match",
+        "^foreignPeerTest$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "3bfb7653462c5f623b655106c3996d7f5f0b3d8468890241ee439d95920eef39",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-foreignOwnerRefusedTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/native-cancellation-root-model-v3/native-cancellation_test.qnt",
+        "--main",
+        "NativeCancellation_test",
+        "--backend=typescript",
+        "--match",
+        "^foreignOwnerRefusedTest$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "b06028c05ab23aece7ae6aba50dd29423ee330e74d166b36542ad4b49327b966",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-wrongMetadataRefusedTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/native-cancellation-root-model-v3/native-cancellation_test.qnt",
+        "--main",
+        "NativeCancellation_test",
+        "--backend=typescript",
+        "--match",
+        "^wrongMetadataRefusedTest$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "c3be0313216ee5622d456aeac6b4aa47e3228aec140d26a4e18f899f810f3e79",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-wrongDeadlineRefusedTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/native-cancellation-root-model-v3/native-cancellation_test.qnt",
+        "--main",
+        "NativeCancellation_test",
+        "--backend=typescript",
+        "--match",
+        "^wrongDeadlineRefusedTest$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "02f9dc7c048356164e40f77b901c1ba35990b196e18e2bcf1c666f3a325f0e83",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-higherBusyNoCursorTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/native-cancellation-root-model-v3/native-cancellation_test.qnt",
+        "--main",
+        "NativeCancellation_test",
+        "--backend=typescript",
+        "--match",
+        "^higherBusyNoCursorTest$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "e7fa89f161b414cad5bee8105eafaa5086701e621eb83f89155fd2d8442ef768",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-directBusyTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/native-cancellation-root-model-v3/native-cancellation_test.qnt",
+        "--main",
+        "NativeCancellation_test",
+        "--backend=typescript",
+        "--match",
+        "^directBusyTest$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "6286f756e0d4f09bb66d4724fc9611933d4465ed5eb8cf23c66c3266dfadb055",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-peerIndependentDirectTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/native-cancellation-root-model-v3/native-cancellation_test.qnt",
+        "--main",
+        "NativeCancellation_test",
+        "--backend=typescript",
+        "--match",
+        "^peerIndependentDirectTest$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "0b146f5370253981cd0af039d9a5b13a0aea6680b760d8e699624a260b110526",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-terminalUnackedBusyTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/native-cancellation-root-model-v3/native-cancellation_test.qnt",
+        "--main",
+        "NativeCancellation_test",
+        "--backend=typescript",
+        "--match",
+        "^terminalUnackedBusyTest$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "d506a5a57cadca4dd37d0e0887eb24252a7a3dae71bbf3610e7404dd02b0d30f",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-terminalUnackedDirectBusyTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/native-cancellation-root-model-v3/native-cancellation_test.qnt",
+        "--main",
+        "NativeCancellation_test",
+        "--backend=typescript",
+        "--match",
+        "^terminalUnackedDirectBusyTest$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "b4b1e0727356124562fdba1142c9d95a8a616c395130b66338edd55161ed394d",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-durableRequiredTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/native-cancellation-root-model-v3/native-cancellation_test.qnt",
+        "--main",
+        "NativeCancellation_test",
+        "--backend=typescript",
+        "--match",
+        "^durableRequiredTest$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "2c662c3dddd062b932d65478f697371aade5323f04814509a83d3c4e99e0d7e4",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-ackThenHigherOldExpiredTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/native-cancellation-root-model-v3/native-cancellation_test.qnt",
+        "--main",
+        "NativeCancellation_test",
+        "--backend=typescript",
+        "--match",
+        "^ackThenHigherOldExpiredTest$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "80e588fc787f0077130ca2d20f48efa51e2e91bcb49d2cf56c37ffd2bff3fae4",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-expiryDeadlineTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/native-cancellation-root-model-v3/native-cancellation_test.qnt",
+        "--main",
+        "NativeCancellation_test",
+        "--backend=typescript",
+        "--match",
+        "^expiryDeadlineTest$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "082e8c2f39b31814e08952eb09c9486a21da7a91df1394df65cfe809cc688fc0",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-cancelledPrerequisiteWithheldTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/native-cancellation-root-model-v3/native-cancellation_test.qnt",
+        "--main",
+        "NativeCancellation_test",
+        "--backend=typescript",
+        "--match",
+        "^cancelledPrerequisiteWithheldTest$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "36596a53c344b5fe366adbae06b4a9943d7d27e1aaa7cd344d252a3c91ca0f37",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-wrongKeyCommitWithheldTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/native-cancellation-root-model-v3/native-cancellation_test.qnt",
+        "--main",
+        "NativeCancellation_test",
+        "--backend=typescript",
+        "--match",
+        "^wrongKeyCommitWithheldTest$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "f9b1c39c2e0d8d379edb31d0e514aee763d67bd16731947d8dc7dad398128c40",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-exactCommittedReleasesTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/native-cancellation-root-model-v3/native-cancellation_test.qnt",
+        "--main",
+        "NativeCancellation_test",
+        "--backend=typescript",
+        "--match",
+        "^exactCommittedReleasesTest$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "4bce38a206b69ff21aea463f33378dd9d4480599bc2c3cf1f0a5456d02ea204d",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-brokenLateCancelTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/native-cancellation-root-model-v3/native-cancellation_test.qnt",
+        "--main",
+        "NativeCancellation_test",
+        "--backend=typescript",
+        "--match",
+        "^brokenLateCancelTest$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "dd46d1c3709ccdee1f16cd8e1aadf41dcfa173ce461c0a5b643281bc38534a86",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-brokenWrongOwnerReleaseTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/native-cancellation-root-model-v3/native-cancellation_test.qnt",
+        "--main",
+        "NativeCancellation_test",
+        "--backend=typescript",
+        "--match",
+        "^brokenWrongOwnerReleaseTest$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "10cb3a87ef062cba8dfd880265d9fecc6980bf1c8e0958935aaded9dff712593",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "sample-cancelledNoMutation",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "run",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/native-cancellation-root-model-v3/native-cancellation.qnt",
+        "--main",
+        "NativeCancellation",
+        "--invariant",
+        "cancelledNoMutation",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--backend=typescript",
+        "--seed=20261030"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "58118b77431cec01f26351626d8355be2162735c89da6f1643f096d7aeffc8e3",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "sample-peerUntouched",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "run",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/native-cancellation-root-model-v3/native-cancellation.qnt",
+        "--main",
+        "NativeCancellation",
+        "--invariant",
+        "peerUntouched",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--backend=typescript",
+        "--seed=20261030"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "5a0dfdb53c249df95a566b94385ae865030c5f6ebb12111af6ccc290432c5495",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "sample-terminalImmutable",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "run",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/native-cancellation-root-model-v3/native-cancellation.qnt",
+        "--main",
+        "NativeCancellation",
+        "--invariant",
+        "terminalImmutable",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--backend=typescript",
+        "--seed=20261030"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "6f8a33c1f6d676cc65e2e6cbb728c8e35b3bc74d29663094b475cc81bd186b64",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "sample-noDuplicateWork",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "run",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/native-cancellation-root-model-v3/native-cancellation.qnt",
+        "--main",
+        "NativeCancellation",
+        "--invariant",
+        "noDuplicateWork",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--backend=typescript",
+        "--seed=20261030"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "22c48aecd78b0cf8e88abf2e8f42aa313d0faebc9470a7c3b79d5f23afc8505e",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "sample-fixedMetadata",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "run",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/native-cancellation-root-model-v3/native-cancellation.qnt",
+        "--main",
+        "NativeCancellation",
+        "--invariant",
+        "fixedMetadata",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--backend=typescript",
+        "--seed=20261030"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "25001ae9fe4926d651d6f29ea4e50c41395eaaf6d477cb72aa3ece7c555e96fa",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "sample-capacity",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "run",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/native-cancellation-root-model-v3/native-cancellation.qnt",
+        "--main",
+        "NativeCancellation",
+        "--invariant",
+        "capacity",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--backend=typescript",
+        "--seed=20261030"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "6fd4367fa072deedb7ac5f95e733dac511e4fdb489fd70c851111d18f6b64d83",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "sample-dependencySafe",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "run",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/native-cancellation-root-model-v3/native-cancellation.qnt",
+        "--main",
+        "NativeCancellation",
+        "--invariant",
+        "dependencySafe",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--backend=typescript",
+        "--seed=20261030"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "999cf956bbff2d35da44a5c6b7a3459f16c6afd3361933ecd68b5d6b3375e139",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "seed": 20261030,
+  "nativeAcceptance": false,
+  "fullCorrectnessProved": false,
+  "toolDependencyClosureClaimed": false,
+  "modelScope": "Bounded decision-owner lifecycle only; typed navigation, compensation, allocation failures, retirement, global-capacity isolation and actual direct execution are not proved.",
+  "outputs": {
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck-native-cancellation.qnt.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck-native-cancellation.qnt.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck-native-cancellation_test.qnt.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck-native-cancellation_test.qnt.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "initial-run.stdout": "c03ffd744855b5c47fec9b77ab276e2c9258ce90191f33673850634ba5aea46c",
+    "initial-run.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-cancelFirstTest.stdout": "19456de2defad504c74dbb73ef561c46bbb6b5a836886164c00cc31eb73b911a",
+    "test-cancelFirstTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-commitFirstTest.stdout": "e72af2189a5eca8cddc8213359c4d5685b2860ffb2271bde23b5481025c8ccb6",
+    "test-commitFirstTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-lostPrepareAckCancelTest.stdout": "bde55f85bb460daa87a2c37bf3a619ec33e12a944d72d02606bc09159a478d4a",
+    "test-lostPrepareAckCancelTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-unknownCannotCancelTest.stdout": "bf59ba7ea3bf47e209a448decfdc0eafbad6f9c84f96fb1770dfc17f9858201e",
+    "test-unknownCannotCancelTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-unknownCannotAckTest.stdout": "6cf64b4a82b5d05a56041ab3638497a117c57392be1e16f05ed91d4e28bc62b5",
+    "test-unknownCannotAckTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-unknownBlocksHigherTest.stdout": "edd97c735c6637fae0902dafe766ca9174bd5692b0c048fa43ee396bdd3414aa",
+    "test-unknownBlocksHigherTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-exactRetryQueryTest.stdout": "879652f63ba04caa9cf010a91ba88416160ac5ecb0b025c7777e745e4cc2b603",
+    "test-exactRetryQueryTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-foreignPeerTest.stdout": "3bfb7653462c5f623b655106c3996d7f5f0b3d8468890241ee439d95920eef39",
+    "test-foreignPeerTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-foreignOwnerRefusedTest.stdout": "b06028c05ab23aece7ae6aba50dd29423ee330e74d166b36542ad4b49327b966",
+    "test-foreignOwnerRefusedTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-wrongMetadataRefusedTest.stdout": "c3be0313216ee5622d456aeac6b4aa47e3228aec140d26a4e18f899f810f3e79",
+    "test-wrongMetadataRefusedTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-wrongDeadlineRefusedTest.stdout": "02f9dc7c048356164e40f77b901c1ba35990b196e18e2bcf1c666f3a325f0e83",
+    "test-wrongDeadlineRefusedTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-higherBusyNoCursorTest.stdout": "e7fa89f161b414cad5bee8105eafaa5086701e621eb83f89155fd2d8442ef768",
+    "test-higherBusyNoCursorTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-directBusyTest.stdout": "6286f756e0d4f09bb66d4724fc9611933d4465ed5eb8cf23c66c3266dfadb055",
+    "test-directBusyTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-peerIndependentDirectTest.stdout": "0b146f5370253981cd0af039d9a5b13a0aea6680b760d8e699624a260b110526",
+    "test-peerIndependentDirectTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-terminalUnackedBusyTest.stdout": "d506a5a57cadca4dd37d0e0887eb24252a7a3dae71bbf3610e7404dd02b0d30f",
+    "test-terminalUnackedBusyTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-terminalUnackedDirectBusyTest.stdout": "b4b1e0727356124562fdba1142c9d95a8a616c395130b66338edd55161ed394d",
+    "test-terminalUnackedDirectBusyTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-durableRequiredTest.stdout": "2c662c3dddd062b932d65478f697371aade5323f04814509a83d3c4e99e0d7e4",
+    "test-durableRequiredTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-ackThenHigherOldExpiredTest.stdout": "80e588fc787f0077130ca2d20f48efa51e2e91bcb49d2cf56c37ffd2bff3fae4",
+    "test-ackThenHigherOldExpiredTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-expiryDeadlineTest.stdout": "082e8c2f39b31814e08952eb09c9486a21da7a91df1394df65cfe809cc688fc0",
+    "test-expiryDeadlineTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-cancelledPrerequisiteWithheldTest.stdout": "36596a53c344b5fe366adbae06b4a9943d7d27e1aaa7cd344d252a3c91ca0f37",
+    "test-cancelledPrerequisiteWithheldTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-wrongKeyCommitWithheldTest.stdout": "f9b1c39c2e0d8d379edb31d0e514aee763d67bd16731947d8dc7dad398128c40",
+    "test-wrongKeyCommitWithheldTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-exactCommittedReleasesTest.stdout": "4bce38a206b69ff21aea463f33378dd9d4480599bc2c3cf1f0a5456d02ea204d",
+    "test-exactCommittedReleasesTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-brokenLateCancelTest.stdout": "dd46d1c3709ccdee1f16cd8e1aadf41dcfa173ce461c0a5b643281bc38534a86",
+    "test-brokenLateCancelTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-brokenWrongOwnerReleaseTest.stdout": "10cb3a87ef062cba8dfd880265d9fecc6980bf1c8e0958935aaded9dff712593",
+    "test-brokenWrongOwnerReleaseTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-cancelledNoMutation.stdout": "58118b77431cec01f26351626d8355be2162735c89da6f1643f096d7aeffc8e3",
+    "sample-cancelledNoMutation.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-peerUntouched.stdout": "5a0dfdb53c249df95a566b94385ae865030c5f6ebb12111af6ccc290432c5495",
+    "sample-peerUntouched.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-terminalImmutable.stdout": "6f8a33c1f6d676cc65e2e6cbb728c8e35b3bc74d29663094b475cc81bd186b64",
+    "sample-terminalImmutable.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-noDuplicateWork.stdout": "22c48aecd78b0cf8e88abf2e8f42aa313d0faebc9470a7c3b79d5f23afc8505e",
+    "sample-noDuplicateWork.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-fixedMetadata.stdout": "25001ae9fe4926d651d6f29ea4e50c41395eaaf6d477cb72aa3ece7c555e96fa",
+    "sample-fixedMetadata.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-capacity.stdout": "6fd4367fa072deedb7ac5f95e733dac511e4fdb489fd70c851111d18f6b64d83",
+    "sample-capacity.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-dependencySafe.stdout": "999cf956bbff2d35da44a5c6b7a3459f16c6afd3361933ecd68b5d6b3375e139",
+    "sample-dependencySafe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

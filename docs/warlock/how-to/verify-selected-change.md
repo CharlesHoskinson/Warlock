@@ -41,3 +41,8 @@ For new loader/manifest checks, consume the captured bytes whose hashes were ver
 ## Establish admission before testing a policy
 
 Use actual incoming facts to reach the state a test needs. Attachment does not itself authorize gestures: a current native pointer-idle observation is required. Check that opening allocated its read, the matching receipt settled it, and the policy actually changed before asserting downstream behavior. Keep missing, foreign, busy and stale-fact controls so a setup correction cannot weaken admission. The [notification replay repair](../../../implementation/warlock/qa/evidence/notification-admission-20261030/LIMITS.md) preserves all original expectations while adding these witnesses. Its model covers policy history; its passing replay does not establish native speech/braille or physical focus.
+
+
+## Native source changes require a new tuple
+
+A passing standalone owner test is not a dispatcher or compositor observation. Compile the actual changed authority against the exact owning headers/core, capture its fresh dependency closure and resolve strong symbols against recorded providers. Verify the integrated source matches those compiled bytes. Preserve old composition locks; do not extend an unchanged-native waiver to new native code. Before loading, prepare a reviewed new source/core/plugin/runtime composition and its original native fixture. The [staged cancellation implementation](../../../implementation/warlock/qa/evidence/native-restore-cancellation-20261030/LIMITS.md) records this distinction and its remaining bridge/physical-input obligations.

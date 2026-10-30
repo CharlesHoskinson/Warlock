@@ -1,0 +1,133 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      audit:
+        {
+          active: false,
+          key: 0,
+          peerRetired: 0,
+          peerToken: false,
+          prior: Absent
+        },
+      cursorA: 0,
+      cursorB: 0,
+      high:
+        {
+          acked: false,
+          deadline: 5,
+          front: NoRequest,
+          key: 3,
+          mutations: 0,
+          owner: 1,
+          phase: Absent,
+          pid: 33,
+          retired: 0,
+          seq: 2,
+          token: false
+        },
+      now: 0,
+      old:
+        {
+          acked: false,
+          deadline: 3,
+          front: NoRequest,
+          key: 1,
+          mutations: 0,
+          owner: 1,
+          phase: Absent,
+          pid: 11,
+          retired: 0,
+          seq: 1,
+          token: false
+        },
+      peer:
+        {
+          acked: false,
+          deadline: 4,
+          front: NoRequest,
+          key: 2,
+          mutations: 0,
+          owner: 2,
+          phase: Absent,
+          pid: 22,
+          retired: 0,
+          seq: 1,
+          token: false
+        },
+      slotA: 0,
+      slotB: 0,
+      waiterReleased: false
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      audit:
+        {
+          active: false,
+          key: 0,
+          peerRetired: 0,
+          peerToken: false,
+          prior: Absent
+        },
+      cursorA: 0,
+      cursorB: 0,
+      high:
+        {
+          acked: false,
+          deadline: 5,
+          front: NoRequest,
+          key: 3,
+          mutations: 0,
+          owner: 1,
+          phase: Absent,
+          pid: 33,
+          retired: 0,
+          seq: 2,
+          token: false
+        },
+      now: 0,
+      old:
+        {
+          acked: false,
+          deadline: 3,
+          front: NoRequest,
+          key: 1,
+          mutations: 0,
+          owner: 1,
+          phase: Absent,
+          pid: 11,
+          retired: 0,
+          seq: 1,
+          token: false
+        },
+      peer:
+        {
+          acked: false,
+          deadline: 4,
+          front: NoRequest,
+          key: 2,
+          mutations: 0,
+          owner: 2,
+          phase: Absent,
+          pid: 22,
+          retired: 0,
+          seq: 1,
+          token: false
+        },
+      slotA: 0,
+      slotB: 0,
+      waiterReleased: false
+    }
+}
+
+[ok] No violation found (5ms at 200 traces/second).
+Trace length statistics: max=2, min=2, average=2.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x13528a6 --backend=typescript to reproduce.

@@ -51,6 +51,11 @@
 #include <set>
 #include <thread>
 
+#include "effect_cancellation_parser.hpp"
+#include <ctime>
+#include <cstdio>
+#include <cstring>
+
 #include "binding-registration.hpp"
 #include "grant-registry.hpp"
 #include "preview_capture.hpp"
@@ -118,7 +123,7 @@ struct AcceptedMotion {
 };
 Elm::Placement::Records geometryPlacements;
 Elm::Geometry::Barriers effectBarriers;
-struct Session { std::string start; uint64_t id; uint64_t frontend; uint64_t effectRequest=0, generation=0; std::string lastPayload, lastReply; std::vector<Render::SceneTrace::Frame> retained; int geometryProtocol=0; bool geometryEnabled=false; uint64_t geometryFrontend=0; std::set<std::string> geometryOperations{}; bool reducedMotion=true; uint64_t motionRequest=0; pid_t presentationPid=0; std::string presentationStart{}; AcceptedMotion motion{}; };
+struct Session { std::string start; uint64_t id; uint64_t frontend; uint64_t effectRequest=0, generation=0; std::string lastPayload, lastReply; std::vector<Render::SceneTrace::Frame> retained; int geometryProtocol=0; bool geometryEnabled=false; uint64_t geometryFrontend=0; std::set<std::string> geometryOperations{}; bool reducedMotion=true; uint64_t motionRequest=0; pid_t presentationPid=0; std::string presentationStart{}; AcceptedMotion motion{}; uint64_t cancellationFrontend=0; warlock::cancellation::Record cancellationJournal{}; bool cancellationRetained=false; };
 std::map<pid_t, Session> sessions;
 enum class ShellRoute {Applications,System,Notifications};
 struct ShellShortcut {uint64_t serial;ShellRoute route;PHLMONITORREF monitor;std::array<int32_t,4> box;uint64_t outputGeneration;};
@@ -602,74 +607,136 @@ std::string effectOutcome(const Session& session, const std::string& intent, con
 }
 #include "motion-profile.inc"
 
-std::string performEffect(Session& session, JsonObject* object, const std::string&) {
-    JsonObject* intent=objectMember(object,"intent");
-    if(!intent || !fields(intent,{"request","generation","incarnation","operation","context"})) return error("effect-schema");
-    const auto requestId=counter(intent,"request"), generation=counter(intent,"generation"), target=counter(intent,"incarnation");
-    JsonObject* context=objectMember(intent,"context");
-    if(!requestId || !generation || !target || !context || !fields(context,{"lifetime","epoch","output","revision"})) return error("effect-schema");
-    const auto native=counter(context,"lifetime"), epoch=counter(context,"epoch"), output=counter(context,"output"), expected=counter(context,"revision");
-    JsonNode* operationNode=json_object_get_member(intent,"operation");
-    if(!native || !epoch || !output || !expected || !operationNode || !JSON_NODE_HOLDS_VALUE(operationNode) || json_node_get_value_type(operationNode)!=G_TYPE_STRING) return error("effect-schema");
-    const std::string operation=json_node_get_string(operationNode);
-    gchar* raw=json_to_string(json_object_get_member(object,"intent"),FALSE);std::string encoded(raw);g_free(raw);
+// Internal execution evidence. No caller may supply a terminal status string.
+enum class EffectProgress { NoNativeMutation, NativeMutationStarted };
+enum class EffectDecision { RefusedBeforeMutation, RefusedAfterProvedCompensation, CommittedObserved, ExecutionUncertain };
+enum class EffectReason { Unproven, Applied, AmbiguousOrIneligibleRestoreFocus, DependencyMismatch, ExclusiveInput, FamilyStateMismatch, ImplicitTransferRequired, IneligibleFamily, IneligibleWorkspaceOwner, InvalidFamily, InvalidFamilyRoot, MixedFamilyWorkspaceOwner, NativeOperationBound, NativeOperationUnresolved, NativePointerOwned, NavigationFamilyStateChanged, NavigationRecipientChanged, NavigationRefused, SeatGrab, StaleIncarnation, StateBound, SupersededSwitcherSelection, SwitcherCancelledOrRetired, UnsupportedOperation, WorkspaceNavigationUnresolved };
+struct EffectDecisionFacts { uint64_t revision, outputGeneration; EffectReason reason; };
+struct ValidatedEffectIntent;
+struct EffectExecutionEvidence;
+class EffectExecutionResult {
+  public:
+    EffectDecision decision() const { return decision_; }
+    EffectProgress progress() const { return progress_; }
+    const EffectDecisionFacts& facts() const { return facts_; }
+  private:
+    EffectExecutionResult(EffectDecision decision, EffectProgress progress, EffectDecisionFacts facts)
+        : decision_(decision), progress_(progress), facts_(facts) {}
+    EffectDecision decision_;
+    EffectProgress progress_;
+    EffectDecisionFacts facts_;
+    friend EffectExecutionResult executeValidatedEffect(Session&, const ValidatedEffectIntent&, EffectExecutionEvidence*);
+};
+struct EffectExecutionEvidence {
+    EffectProgress progress=EffectProgress::NoNativeMutation;
+    std::optional<EffectExecutionResult> provenTerminal;
+};
+struct ValidatedEffectIntent {
+    uint64_t request, generation, target, native, epoch, output, expected;
+    std::string operation, encoded, fingerprint;
+};
+static const char* effectReasonText(EffectReason reason) {
+    switch(reason) {
+    case EffectReason::Unproven: return "effect-unproven";
+    case EffectReason::Applied: return "applied";
+    case EffectReason::AmbiguousOrIneligibleRestoreFocus: return "ambiguous-or-ineligible-restore-focus";
+    case EffectReason::DependencyMismatch: return "dependency-mismatch";
+    case EffectReason::ExclusiveInput: return "exclusive-input";
+    case EffectReason::FamilyStateMismatch: return "family-state-mismatch";
+    case EffectReason::ImplicitTransferRequired: return "implicit-transfer-required";
+    case EffectReason::IneligibleFamily: return "ineligible-family";
+    case EffectReason::IneligibleWorkspaceOwner: return "ineligible-workspace-owner";
+    case EffectReason::InvalidFamily: return "invalid-family";
+    case EffectReason::InvalidFamilyRoot: return "invalid-family-root";
+    case EffectReason::MixedFamilyWorkspaceOwner: return "mixed-family-workspace-owner";
+    case EffectReason::NativeOperationBound: return "native-operation-bound";
+    case EffectReason::NativeOperationUnresolved: return "native-operation-unresolved";
+    case EffectReason::NativePointerOwned: return "native-pointer-owned";
+    case EffectReason::NavigationFamilyStateChanged: return "navigation-family-state-changed";
+    case EffectReason::NavigationRecipientChanged: return "navigation-recipient-changed";
+    case EffectReason::NavigationRefused: return "navigation-refused";
+    case EffectReason::SeatGrab: return "seat-grab";
+    case EffectReason::StaleIncarnation: return "stale-incarnation";
+    case EffectReason::StateBound: return "state-bound";
+    case EffectReason::SupersededSwitcherSelection: return "superseded-switcher-selection";
+    case EffectReason::SwitcherCancelledOrRetired: return "switcher-cancelled-or-retired";
+    case EffectReason::UnsupportedOperation: return "unsupported-operation";
+    case EffectReason::WorkspaceNavigationUnresolved: return "workspace-navigation-unresolved";
+    }
+    return "effect-unproven";
+}
+// The owner must install its uncertainty fallback and cross its gate before
+// entering this function. This function neither pumps nor yields an event loop.
+EffectExecutionResult executeValidatedEffect(Session& session, const ValidatedEffectIntent& plan, EffectExecutionEvidence* evidence=nullptr) {
+    if(evidence) *evidence={};
+    const auto *requestId=&plan.request,*generation=&plan.generation,*target=&plan.target,*native=&plan.native,*epoch=&plan.epoch,*output=&plan.output,*expected=&plan.expected;
+    (void)native; (void)epoch;
+    const auto& operation=plan.operation;const auto& encoded=plan.encoded;const auto& fingerprint=plan.fingerprint;
     const auto selection=switcherSelections.find(session.id);
     const bool fenced=selection!=switcherSelections.end() && selection->second.request==*requestId;
-    // Retry identity belongs to the immutable effect intent. A newer selection
-    // preparation must never change the already recorded terminal reply.
-    const std::string fingerprint="1:"+quote(operation)+":"+std::to_string(*requestId)+":"+std::to_string(*generation)+":"+std::to_string(*target)+":"+std::to_string(*native)+":"+std::to_string(*epoch)+":"+std::to_string(*output)+":"+std::to_string(*expected);
-    if(*native!=lifetime || *epoch!=session.frontend) return effectOutcome(session,encoded,"Refused","authority-mismatch");
-    if(*requestId==session.effectRequest) return fingerprint==session.lastPayload ? session.lastReply : effectOutcome(session,encoded,"Refused","request-reuse");
-    if(*requestId<session.effectRequest || *generation<=session.generation) return effectOutcome(session,encoded,"Refused","operation-order");
+    EffectProgress progress=EffectProgress::NoNativeMutation;
+    const auto started=[&]() {progress=EffectProgress::NativeMutationStarted;if(evidence)evidence->progress=progress;};
+    const auto observed=[&](EffectDecision decision,EffectReason reason) {return EffectExecutionResult{decision,progress,{factsRevision,outputGeneration,reason}};};
+    const auto uncertain=[&]() {return observed(EffectDecision::ExecutionUncertain,EffectReason::Unproven);};
+    bool compensated=false;
+    EffectExecutionResult committed=uncertain();
     refreshFacts();
-    const auto reject=[&](const char* reason) {session.lastReply=effectOutcome(session,encoded,"Refused",reason);return session.lastReply;};
+    const auto reject=[&](EffectReason reason) {
+        session.lastReply=effectOutcome(session,encoded,"Refused",effectReasonText(reason));
+        const auto result=observed(compensated ? EffectDecision::RefusedAfterProvedCompensation :
+            progress==EffectProgress::NoNativeMutation ? EffectDecision::RefusedBeforeMutation : EffectDecision::ExecutionUncertain,reason);
+        if(evidence && result.decision()!=EffectDecision::ExecutionUncertain)evidence->provenTerminal=result;
+        return result;
+    };
     // The journal is bounded to one request per authenticated peer/epoch. Older
     // identities refuse; exact retry returns its original terminal outcome.
-    session.effectRequest=*requestId;session.generation=*generation;session.lastPayload=fingerprint;
+    session.effectRequest=*requestId;session.generation=*generation;
+    if(session.cancellationRetained && *requestId>session.cancellationJournal.key.intent.request)session.cancellationRetained=false;
+    session.lastPayload=fingerprint;
     session.lastReply=effectOutcome(session,encoded,"Unknown","effect-unproven");
-    if(workspaceNavigationBlocked()) return reject("workspace-navigation-unresolved");
-    if(selection!=switcherSelections.end() && *requestId<selection->second.request)return reject("superseded-switcher-selection");
+    if(workspaceNavigationBlocked()) return reject(EffectReason::WorkspaceNavigationUnresolved);
+    if(selection!=switcherSelections.end() && *requestId<selection->second.request)return reject(EffectReason::SupersededSwitcherSelection);
     if(fenced) {
         const auto& chosen=selection->second;
-        if(chosen.generation!=switcherChord.generation || chosen.root!=*target || switcherChord.ownerSession!=session.id || switcherChord.ownerFrontend!=session.frontend || switcherChord.cancelled || switcherChord.consumed || std::ranges::find(switcherChord.roots,*target)==switcherChord.roots.end() || operation=="minimize")return reject("switcher-cancelled-or-retired");
+        if(chosen.generation!=switcherChord.generation || chosen.root!=*target || switcherChord.ownerSession!=session.id || switcherChord.ownerFrontend!=session.frontend || switcherChord.cancelled || switcherChord.consumed || std::ranges::find(switcherChord.roots,*target)==switcherChord.roots.end() || operation=="minimize")return reject(EffectReason::SwitcherCancelledOrRetired);
         // This callback never pumps the event loop. Consume before the first
         // possible mutation; Unknown cannot make the chord executable again.
-        switcherChord.consumed=true;notifySwitcher();
+        started();switcherChord.consumed=true;notifySwitcher();
     }
-    if(operation!="minimize" && operation!="restore" && operation!="activate") return reject("unsupported-operation");
-    if(*output!=outputGeneration || *expected!=factsRevision) return reject("dependency-mismatch");
-    if(g_layoutManager->dragController()->target()) return reject("native-pointer-owned");
-    if(g_pSessionLockManager->isSessionLocked() || !g_pInputManager->m_exclusiveLSes.empty()) return reject("exclusive-input");
+    if(operation!="minimize" && operation!="restore" && operation!="activate") return reject(EffectReason::UnsupportedOperation);
+    if(*output!=outputGeneration || *expected!=factsRevision) return reject(EffectReason::DependencyMismatch);
+    if(g_layoutManager->dragController()->target()) return reject(EffectReason::NativePointerOwned);
+    if(g_pSessionLockManager->isSessionLocked() || !g_pInputManager->m_exclusiveLSes.empty()) return reject(EffectReason::ExclusiveInput);
     const auto member=std::find_if(members.begin(),members.end(),[&](const Member& entry){return entry.id==*target;});
-    if(member==members.end() || !member->window.lock() || !member->window.lock()->m_isMapped) return reject("stale-incarnation");
+    if(member==members.end() || !member->window.lock() || !member->window.lock()->m_isMapped) return reject(EffectReason::StaleIncarnation);
     const auto targetWindow=member->window.lock();const auto family=nativeFamily(targetWindow);
-    if(!family.has_value() || family->empty()) return reject("invalid-family");
+    if(!family.has_value() || family->empty()) return reject(EffectReason::InvalidFamily);
     for(const auto& window:*family) {
-        for(const auto& entry:members) if(entry.window.lock()==window && effectBarriers.blocked({lifetime,entry.id})) return reject("native-operation-unresolved");
+        for(const auto& entry:members) if(entry.window.lock()==window && effectBarriers.blocked({lifetime,entry.id})) return reject(EffectReason::NativeOperationUnresolved);
     }
     const bool minimize=operation=="minimize";
     const bool activate=operation=="activate";
     const auto destination=targetWindow->m_workspace;
     const auto destinationMonitor=targetWindow->m_monitor.lock();
-    if(!destination || destination->m_id<=0 || !destinationMonitor || !destinationMonitor->m_enabled || destination->m_monitor.lock()!=destinationMonitor) return reject("ineligible-workspace-owner");
+    if(!destination || destination->m_id<=0 || !destinationMonitor || !destinationMonitor->m_enabled || destination->m_monitor.lock()!=destinationMonitor) return reject(EffectReason::IneligibleWorkspaceOwner);
     const bool navigating=!destination->isVisible();
     const auto previousWorkspace=destinationMonitor->m_activeWorkspace;
     for(const auto& window : *family) {
-        if(!window->m_workspace || window->onSpecialWorkspace() || window->isHidden() || (minimize && !window->m_workspace->isVisible())) return reject("ineligible-family");
-        if(window->m_workspace!=destination || window->m_monitor.lock()!=destinationMonitor) return reject("mixed-family-workspace-owner");
+        if(!window->m_workspace || window->onSpecialWorkspace() || window->isHidden() || (minimize && !window->m_workspace->isVisible())) return reject(EffectReason::IneligibleFamily);
+        if(window->m_workspace!=destination || window->m_monitor.lock()!=destinationMonitor) return reject(EffectReason::MixedFamilyWorkspaceOwner);
         // The core's pinned focus path can reassign workspace membership.
         // Same-output explicit navigation selects this preserved workspace
         // before focus; another focus output would still implicitly transfer it.
         const auto focusMonitor=Desktop::focusState()->monitor();
-        if(!minimize && window->m_pinned && (!focusMonitor || focusMonitor!=destinationMonitor || (!navigating && focusMonitor->m_activeWorkspace!=destination))) return reject("implicit-transfer-required");
-        if(Desktop::WindowPolicy::isMinimized(window)!=(operation=="restore")) return reject("family-state-mismatch");
+        if(!minimize && window->m_pinned && (!focusMonitor || focusMonitor!=destinationMonitor || (!navigating && focusMonitor->m_activeWorkspace!=destination))) return reject(EffectReason::ImplicitTransferRequired);
+        if(Desktop::WindowPolicy::isMinimized(window)!=(operation=="restore")) return reject(EffectReason::FamilyStateMismatch);
     }
     PHLWINDOW restoreFocus=nullptr;
     if(!minimize) {
         const auto root=std::find_if(family->begin(),family->end(),[&](const auto& window){return !window->parent() || std::ranges::find(*family,window->parent())==family->end();});
-        if(root==family->end()) return reject("invalid-family-root");
+        if(root==family->end()) return reject(EffectReason::InvalidFamilyRoot);
         const auto predicted=WarlockNavigationModal::focusRecipient(*root,!activate,navigating);
-        if(!predicted.has_value() || !*predicted || (*predicted)->m_ruleApplicator->noFocus().valueOrDefault()) return reject("ambiguous-or-ineligible-restore-focus");
+        if(!predicted.has_value() || !*predicted || (*predicted)->m_ruleApplicator->noFocus().valueOrDefault()) return reject(EffectReason::AmbiguousOrIneligibleRestoreFocus);
         restoreFocus=*predicted;
     }
     const auto beforeMutationRevision=factsRevision;
@@ -680,11 +747,11 @@ std::string performEffect(Session& session, JsonObject* object, const std::strin
     if(protectedGrab) {
         // Background minimize cannot redirect focus or mutate the grab owner.
         // Refuse unknown/own-client grabs and every focus-changing operation.
-        if(!minimize || focusedFamily || !oldKeyboard || !protectedGrab->accepts(oldKeyboard)) return reject("seat-grab");
+        if(!minimize || focusedFamily || !oldKeyboard || !protectedGrab->accepts(oldKeyboard)) return reject(EffectReason::SeatGrab);
         const auto pointer=g_pSeatManager->m_state.pointerFocus.lock();
         for(const auto& window : *family) {
             const auto surface=window->wlSurface()->resource();
-            if(!surface || protectedGrab->accepts(surface) || surface->client()==oldKeyboard->client() || (pointer && surface->client()==pointer->client())) return reject("seat-grab");
+            if(!surface || protectedGrab->accepts(surface) || surface->client()==oldKeyboard->client() || (pointer && surface->client()==pointer->client())) return reject(EffectReason::SeatGrab);
         }
     }
     const auto nextFocus=minimize && focusedFamily ? successor(*family) : oldFocus;
@@ -692,7 +759,7 @@ std::string performEffect(Session& session, JsonObject* object, const std::strin
     std::vector<Elm::Geometry::Target> reserved;
     for(const auto& window:*family) {
         const auto entry=std::ranges::find_if(members,[&](const Member& e){return e.window.lock()==window;});
-        if(entry==members.end() || !effectBarriers.begin({lifetime,entry->id})) {for(auto id:reserved) effectBarriers.definitive(id);return reject("native-operation-bound");}
+        if(entry==members.end() || !effectBarriers.begin({lifetime,entry->id})) {for(auto id:reserved) effectBarriers.definitive(id);return reject(EffectReason::NativeOperationBound);}
         reserved.push_back({lifetime,entry->id});
     }
     const auto membershipCurrent=[&]() {
@@ -713,12 +780,12 @@ std::string performEffect(Session& session, JsonObject* object, const std::strin
         return recipient.has_value() && *recipient==window;
     };
     bool navigated=false, navigationChanged=false;
-    const auto refuseAfterNavigation=[&](const char* reason) {
+    const auto refuseAfterNavigation=[&](EffectReason reason) {
         refreshFacts();
         if(!navigationChanged) {release();return reject(reason);}
         // Refusal after navigation is definitive only with observed usable focus
         // and unchanged family state. Never compensate an uncertain window effect.
-        if(!membershipCurrent() || std::ranges::any_of(*family,[&](const auto& w){return Desktop::WindowPolicy::isMinimized(w)!=(operation=="restore");}) || *output!=outputGeneration || g_pSessionLockManager->isSessionLocked() || !g_pInputManager->m_exclusiveLSes.empty() || g_pSeatManager->m_seatGrab) return session.lastReply;
+        if(!membershipCurrent() || std::ranges::any_of(*family,[&](const auto& w){return Desktop::WindowPolicy::isMinimized(w)!=(operation=="restore");}) || *output!=outputGeneration || g_pSessionLockManager->isSessionLocked() || !g_pInputManager->m_exclusiveLSes.empty() || g_pSeatManager->m_seatGrab) return uncertain();
         auto fallback=Desktop::focusState()->window();
         if(!receiverEligible(fallback) || std::ranges::find(*family,fallback)!=family->end()) {
             fallback=nullptr;
@@ -728,35 +795,35 @@ std::string performEffect(Session& session, JsonObject* object, const std::strin
             }
         }
         if(!fallback && previousWorkspace && previousWorkspace->m_id>0 && !previousWorkspace->m_isSpecialWorkspace && previousWorkspace->m_monitor.lock()==destinationMonitor && destinationMonitor->m_activeWorkspace==destination && destination->isVisible()) {
-            destinationMonitor->changeWorkspace(previousWorkspace,false,true,true);
-            if(!previousWorkspace->isVisible() || destinationMonitor->m_activeWorkspace!=previousWorkspace || *output!=outputGeneration) return session.lastReply;
+            started();destinationMonitor->changeWorkspace(previousWorkspace,false,true,true);
+            if(!previousWorkspace->isVisible() || destinationMonitor->m_activeWorkspace!=previousWorkspace || *output!=outputGeneration) return uncertain();
             if(receiverEligible(oldFocus)) fallback=oldFocus;
         }
-        if(!fallback) return session.lastReply;
-        Desktop::focusState()->fullWindowFocus(fallback,Desktop::FOCUS_REASON_DESKTOP_STATE_CHANGE);
+        if(!fallback) return uncertain();
+        started();Desktop::focusState()->fullWindowFocus(fallback,Desktop::FOCUS_REASON_DESKTOP_STATE_CHANGE);
         refreshFacts();notifyEffectChange();
-        if(!membershipCurrent() || *output!=outputGeneration || g_pSessionLockManager->isSessionLocked() || !g_pInputManager->m_exclusiveLSes.empty() || g_pSeatManager->m_seatGrab || std::ranges::any_of(*family,[&](const auto& w){return Desktop::WindowPolicy::isMinimized(w)!=(operation=="restore");}) || !receiverEligible(fallback) || Desktop::focusState()->window()!=fallback || g_pSeatManager->m_state.keyboardFocus.lock()!=fallback->wlSurface()->resource()) return session.lastReply;
-        release();return reject(reason);
+        if(!membershipCurrent() || *output!=outputGeneration || g_pSessionLockManager->isSessionLocked() || !g_pInputManager->m_exclusiveLSes.empty() || g_pSeatManager->m_seatGrab || std::ranges::any_of(*family,[&](const auto& w){return Desktop::WindowPolicy::isMinimized(w)!=(operation=="restore");}) || !receiverEligible(fallback) || Desktop::focusState()->window()!=fallback || g_pSeatManager->m_state.keyboardFocus.lock()!=fallback->wlSurface()->resource()) return uncertain();
+        release();compensated=true;return reject(reason);
     };
     try {
         // No event-loop pumping or external dispatch occurs in this callback.
         if(navigating) {
             // Navigate the preserved owner, never changeWorkspaceOnCurrentMonitor
             // or move a family. noFocus prevents a minimized target receiving keys.
-            destinationMonitor->changeWorkspace(destination,false,true,true);
+            started();destinationMonitor->changeWorkspace(destination,false,true,true);
             navigationChanged=destinationMonitor->m_activeWorkspace!=previousWorkspace || Desktop::focusState()->window()!=oldFocus || g_pSeatManager->m_state.keyboardFocus.lock()!=oldKeyboard;
             navigated=destination->isVisible() && destinationMonitor->m_activeWorkspace==destination;
             refreshFacts();notifyEffectChange();
-            if(!navigated || !membershipCurrent() || *output!=outputGeneration || g_pSessionLockManager->isSessionLocked() || !g_pInputManager->m_exclusiveLSes.empty() || g_pSeatManager->m_seatGrab) return refuseAfterNavigation("navigation-refused");
-            if(std::ranges::any_of(*family,[&](const auto& w){return Desktop::WindowPolicy::isMinimized(w)!=(operation=="restore");})) return refuseAfterNavigation("navigation-family-state-changed");
+            if(!navigated || !membershipCurrent() || *output!=outputGeneration || g_pSessionLockManager->isSessionLocked() || !g_pInputManager->m_exclusiveLSes.empty() || g_pSeatManager->m_seatGrab) return refuseAfterNavigation(EffectReason::NavigationRefused);
+            if(std::ranges::any_of(*family,[&](const auto& w){return Desktop::WindowPolicy::isMinimized(w)!=(operation=="restore");})) return refuseAfterNavigation(EffectReason::NavigationFamilyStateChanged);
             auto root=std::find_if(family->begin(),family->end(),[&](const auto& w){return !w->parent() || std::ranges::find(*family,w->parent())==family->end();});
             const auto currentRecipient=root==family->end() ? std::optional<PHLWINDOW>{} : SceneModal::focusRecipient(*root,!activate);
-            if(!currentRecipient.has_value() || *currentRecipient!=restoreFocus || restoreFocus->m_ruleApplicator->noFocus().valueOrDefault()) return refuseAfterNavigation("navigation-recipient-changed");
+            if(!currentRecipient.has_value() || *currentRecipient!=restoreFocus || restoreFocus->m_ruleApplicator->noFocus().valueOrDefault()) return refuseAfterNavigation(EffectReason::NavigationRecipientChanged);
         }
         // Damage before exclusions so old pixels are actually repainted.
-        for(const auto& window : *family) g_pHyprRenderer->damageWindow(window,true);
+        started();for(const auto& window : *family) g_pHyprRenderer->damageWindow(window,true);
         if(!activate) {
-            if(!Desktop::WindowPolicy::applyMinimized(*family,minimize)) return refuseAfterNavigation("state-bound");
+            if(!Desktop::WindowPolicy::applyMinimized(*family,minimize)) return refuseAfterNavigation(EffectReason::StateBound);
             for(const auto& window : *family) window->setSuspended(minimize);
         }
         if(minimize) {
@@ -771,20 +838,230 @@ std::string performEffect(Session& session, JsonObject* object, const std::strin
         if(session.reducedMotion) settleReducedMotion(*family,previousWorkspace,destination);
         refreshFacts();
         if(factsRevision!=beforeMutationRevision) notifyEffectChange();
-        if(!membershipCurrent() || *output!=outputGeneration || g_pSessionLockManager->isSessionLocked() || !g_pInputManager->m_exclusiveLSes.empty() || g_pSeatManager->m_seatGrab!=protectedGrab || (!minimize && !destination->isVisible())) return session.lastReply;
-        if((minimize && focusedFamily && Desktop::focusState()->window()!=nextFocus) || (!minimize && Desktop::focusState()->window()!=restoreFocus)) return session.lastReply;
+        if(!membershipCurrent() || *output!=outputGeneration || g_pSessionLockManager->isSessionLocked() || !g_pInputManager->m_exclusiveLSes.empty() || g_pSeatManager->m_seatGrab!=protectedGrab || (!minimize && !destination->isVisible())) return uncertain();
+        if((minimize && focusedFamily && Desktop::focusState()->window()!=nextFocus) || (!minimize && Desktop::focusState()->window()!=restoreFocus)) return uncertain();
         const auto actualKeyboard=g_pSeatManager->m_state.keyboardFocus.lock();
         if(minimize && !focusedFamily) {
-            if(Desktop::focusState()->window()!=oldFocus || actualKeyboard!=oldKeyboard || g_pSeatManager->m_seatGrab!=protectedGrab) return session.lastReply;
+            if(Desktop::focusState()->window()!=oldFocus || actualKeyboard!=oldKeyboard || g_pSeatManager->m_seatGrab!=protectedGrab) return uncertain();
         } else {
             const auto intended=minimize ? nextFocus : restoreFocus;
-            if(actualKeyboard!=(intended ? intended->wlSurface()->resource() : nullptr)) return session.lastReply;
+            if(actualKeyboard!=(intended ? intended->wlSurface()->resource() : nullptr)) return uncertain();
         }
         for(auto id:reserved) effectBarriers.definitive(id);
         session.lastReply=effectOutcome(session,encoded,"Committed","applied");
+        committed=observed(EffectDecision::CommittedObserved,EffectReason::Applied);
+        if(evidence)evidence->provenTerminal=committed;
         retainAcceptedMotion(session,encoded,*family,previousWorkspace,destination);
         motionTransitionObserved(session,encoded,*family,previousWorkspace,destination);
-    } catch (...) { notifyEffectChange(); /* Preserve Unknown after unproven partial mutation. */ }
+    } catch (...) {
+        // Keep legacy notification/exception behavior. Evidence is already fixed
+        // if the native postconditions and cached Committed reply were proved.
+        notifyEffectChange();
+        if(evidence && evidence->provenTerminal)return *evidence->provenTerminal;
+        if(committed.decision()==EffectDecision::CommittedObserved)return committed;
+        return uncertain();
+    }
+    return committed;
+}
+
+// Opt-in cancellation is a native decision owner, independent of delivery.
+namespace Cancellation=warlock::cancellation;
+static std::optional<Cancellation::OwnerId> cancellationIdentity(pid_t peer,const Session& session) noexcept {
+    uint64_t start{};auto converted=std::from_chars(session.start.data(),session.start.data()+session.start.size(),start);
+    if(peer<=0 || !start || converted.ec!=std::errc{} || converted.ptr!=session.start.data()+session.start.size())return std::nullopt;
+    return Cancellation::OwnerId{static_cast<uint64_t>(peer),start,lifetime,session.id,session.frontend};
+}
+static std::optional<Cancellation::OwnerId> cancellationIdentity(const Session& session) noexcept {
+    for(const auto& entry:sessions)if(&entry.second==&session)return cancellationIdentity(entry.first,session);
+    return std::nullopt;
+}
+static uint64_t cancellationNow() noexcept {
+    timespec value{};if(clock_gettime(CLOCK_MONOTONIC,&value)!=0 || value.tv_sec<0 || value.tv_nsec<0)return 0;
+    const auto seconds=static_cast<uint64_t>(value.tv_sec);
+    if(seconds>(std::numeric_limits<uint64_t>::max()-static_cast<uint64_t>(value.tv_nsec))/1000000000ULL)return 0;
+    return seconds*1000000000ULL+static_cast<uint64_t>(value.tv_nsec);
+}
+// No untrusted strings are interpolated. Full intent is canonical typed data.
+static bool cancellationIdentityJson(char* output,std::size_t capacity,const Cancellation::Key& key) noexcept {
+    const auto& o=key.owner;const auto& i=key.intent;
+    const int n=std::snprintf(output,capacity,
+        "\"binding\":{\"lifetime\":\"%llu\",\"session\":\"%llu\",\"frontend\":\"%llu\"},\"intent\":{\"request\":\"%llu\",\"generation\":\"%llu\",\"incarnation\":\"%llu\",\"operation\":\"restore\",\"context\":{\"lifetime\":\"%llu\",\"epoch\":\"%llu\",\"output\":\"%llu\",\"revision\":\"%llu\"}}",
+        (unsigned long long)o.lifetime,(unsigned long long)o.session,(unsigned long long)o.frontend,
+        (unsigned long long)i.request,(unsigned long long)i.generation,(unsigned long long)i.incarnation,
+        (unsigned long long)i.lifetime,(unsigned long long)i.epoch,(unsigned long long)i.output,(unsigned long long)i.revision);
+    return n>0 && static_cast<std::size_t>(n)<capacity;
+}
+static const char* cancellationReason(Cancellation::Facts facts) noexcept {
+    switch(facts.reason) {
+        case Cancellation::Reason::Cancelled:return "cancelled-before-commit";
+        case Cancellation::Reason::Deadline:return "original-deadline-expired";
+        case Cancellation::Reason::Applied:return "applied";
+        case Cancellation::Reason::Unproven:return "effect-unproven";
+        case Cancellation::Reason::NativeRefusal:return facts.detail;
+    }
+    return nullptr;
+}
+static bool formatCancellation(Cancellation::Buffer& buffer,const Cancellation::Key& key,uint64_t id,uint64_t deadline,Cancellation::Phase phase,Cancellation::Facts facts) noexcept {
+    char identity[1024];if(!id || !deadline || !cancellationIdentityJson(identity,sizeof identity,key))return false;
+    int n=-1;
+    if(phase==Cancellation::Phase::Prepared) {
+        n=std::snprintf(buffer.data.data(),buffer.data.size(),"{\"protocolVersion\":3,\"kind\":\"effect-prepared\",\"cancellationProtocol\":1,\"effectProtocol\":1,%s,\"preparedId\":\"%llu\",\"deadlineMonotonicNs\":\"%llu\"}",identity,(unsigned long long)id,(unsigned long long)deadline);
+    } else {
+        const char* status=phase==Cancellation::Phase::Cancelled?"Cancelled":phase==Cancellation::Phase::Committed?"Committed":phase==Cancellation::Phase::Refused?"Refused":"Unknown";
+        const auto* reason=cancellationReason(facts);if(!reason || !facts.revision || !facts.outputGeneration)return false;
+        const auto size=std::strlen(reason);if(!size || size>128)return false;
+        for(std::size_t j=0;j<size;++j)if(!((reason[j]>='a' && reason[j]<='z') || reason[j]=='-'))return false;
+        n=std::snprintf(buffer.data.data(),buffer.data.size(),"{\"protocolVersion\":3,\"kind\":\"effect-outcome\",\"cancellationProtocol\":1,\"effectProtocol\":1,%s,\"preparedId\":\"%llu\",\"deadlineMonotonicNs\":\"%llu\",\"status\":\"%s\",\"reason\":\"%s\",\"revision\":\"%llu\",\"outputGeneration\":\"%llu\"}",identity,(unsigned long long)id,(unsigned long long)deadline,status,reason,(unsigned long long)facts.revision,(unsigned long long)facts.outputGeneration);
+    }
+    if(n<0 || static_cast<std::size_t>(n)>=buffer.data.size())return false;
+    buffer.size=static_cast<std::size_t>(n);return true;
+}
+// The preparation resource is Owner's own per-key token. No family barrier,
+// window, preview helper or unrelated resource is released by this owner.
+static Cancellation::Owner cancellationOwner(formatCancellation,nullptr,nullptr);
+static bool cancellationBusy(const Session& session) noexcept {
+    const auto owner=cancellationIdentity(session);return !owner || cancellationOwner.busy(*owner);
+}
+static void retireCancellation(pid_t peer,const Session& session) noexcept {
+    if(const auto owner=cancellationIdentity(peer,session))cancellationOwner.retireOwner(*owner);
+}
+static std::string cancellationFingerprint(const Cancellation::Key& key) {
+    const auto& i=key.intent;
+    return "1:"+quote("restore")+":"+std::to_string(i.request)+":"+std::to_string(i.generation)+":"+std::to_string(i.incarnation)+":"+std::to_string(i.lifetime)+":"+std::to_string(i.epoch)+":"+std::to_string(i.output)+":"+std::to_string(i.revision);
+}
+static ValidatedEffectIntent cancellationPlan(const Cancellation::Key& key) {
+    char identity[1024];if(!cancellationIdentityJson(identity,sizeof identity,key))throw std::runtime_error("cancellation-key-bound");
+    const char* intent=std::strstr(identity,"\"intent\":");if(!intent)throw std::runtime_error("cancellation-key");
+    const auto& i=key.intent;
+    return {i.request,i.generation,i.incarnation,i.lifetime,i.epoch,i.output,i.revision,"restore",std::string(intent+9),cancellationFingerprint(key)};
+}
+struct CancellationExecution {
+    Session* session;
+    const Cancellation::Key* key;
+    const ValidatedEffectIntent* plan;
+    EffectExecutionEvidence evidence{};
+};
+static Cancellation::ExecutionResult cancellationExecute(void* opaque,const Cancellation::Owner::CommitPermit& permit) noexcept {
+    auto& context=*static_cast<CancellationExecution*>(opaque);
+    const auto map=[](const EffectExecutionResult& result) {
+        const auto decision=result.decision()==EffectDecision::RefusedBeforeMutation?Cancellation::Decision::RefusedBeforeMutation:
+            result.decision()==EffectDecision::RefusedAfterProvedCompensation?Cancellation::Decision::RefusedAfterProvedCompensation:
+            result.decision()==EffectDecision::CommittedObserved?Cancellation::Decision::CommittedObserved:Cancellation::Decision::ExecutionUncertain;
+        const auto progress=result.progress()==EffectProgress::NoNativeMutation?Cancellation::Progress::NoNativeMutation:Cancellation::Progress::NativeMutationStarted;
+        const auto& facts=result.facts();
+        return Cancellation::ExecutionResult{decision,progress,{facts.revision,facts.outputGeneration,
+            decision==Cancellation::Decision::CommittedObserved?Cancellation::Reason::Applied:
+            decision==Cancellation::Decision::ExecutionUncertain?Cancellation::Reason::Unproven:Cancellation::Reason::NativeRefusal,effectReasonText(facts.reason)}};
+    };
+    if(!permit.matches(*context.key))return {Cancellation::Decision::ExecutionUncertain,Cancellation::Progress::NoNativeMutation,{factsRevision,outputGeneration,Cancellation::Reason::Unproven,nullptr}};
+    try {return map(executeValidatedEffect(*context.session,*context.plan,&context.evidence));}
+    catch (...) {
+        // A proven native terminal survives ancillary notification/transport errors.
+        if(context.evidence.provenTerminal)return map(*context.evidence.provenTerminal);
+        return {Cancellation::Decision::ExecutionUncertain,
+            context.evidence.progress==EffectProgress::NoNativeMutation?Cancellation::Progress::NoNativeMutation:Cancellation::Progress::NativeMutationStarted,
+            {factsRevision,outputGeneration,Cancellation::Reason::Unproven,nullptr}};
+    }
+}
+static std::string cancellationWire(const Cancellation::Record& record) {
+    if(!record.replyReady)return error("cancellation-reply-unavailable");
+    return std::string(record.reply.data.data(),record.reply.size);
+}
+static std::string cancellationAckWire(const Cancellation::Record& record) {
+    char identity[1024];if(!cancellationIdentityJson(identity,sizeof identity,record.key))return error("cancellation-key-bound");
+    return "{\"protocolVersion\":3,\"kind\":\"effect-decision-acknowledged\",\"cancellationProtocol\":1,\"effectProtocol\":1,"+std::string(identity)+",\"preparedId\":"+quote(std::to_string(record.id))+",\"deadlineMonotonicNs\":"+quote(std::to_string(record.deadline))+"}";
+}
+static bool cancellationCached(const Session& session,const Cancellation::Parsed& request) noexcept {
+    const auto& r=session.cancellationJournal;
+    return session.cancellationRetained && r.key==request.key && r.deadline==request.deadline &&
+        (request.kind==Cancellation::Kind::Prepare || r.id==request.preparedId) &&
+        session.effectRequest==r.key.intent.request && session.generation==r.key.intent.generation;
+}
+static std::string dispatchCancellation(JsonObject* object,pid_t peer,const std::string& start,const std::string& raw) {
+    (void)object; // parseWire owns exact raw-message duplicate/NUL validation.
+    // This path has no free-form strings: reject NUL escapes before C-string
+    // decoding can truncate kind/operation/canonical counter identity.
+    if(raw.find("\\u0000")!=std::string::npos || raw.find('\0')!=std::string::npos)return error("cancellation-schema");
+    const auto found=sessions.find(peer);if(found==sessions.end() || found->second.start!=start)return error("binding-mismatch");
+    auto& session=found->second;const auto owner=cancellationIdentity(peer,session);if(!owner)return error("unverified-peer");
+    const auto request=Cancellation::parseWire(raw,owner->peer,owner->start);
+    if(!request)return error("cancellation-schema");
+    if(request->key.owner!=*owner || !grantRegistry->callerMatches(verifiedPeer(peer,start),{owner->lifetime,owner->session,owner->frontend}))return error("binding-mismatch");
+    if(request->kind==Cancellation::Kind::Negotiate) {
+        session.cancellationFrontend=session.frontend;
+        return "{\"protocolVersion\":3,\"kind\":\"effect-cancellation-capabilities\",\"binding\":"+binding(session)+",\"requestId\":"+quote(std::to_string(request->requestId))+",\"cancellationProtocol\":1,\"effectProtocol\":1,\"operations\":[\"restore\"],\"maxPreparedPerSession\":1,\"maxPreparedGlobal\":64,\"deadlineClock\":\"CLOCK_MONOTONIC\"}";
+    }
+    if(session.cancellationFrontend!=session.frontend)return error("cancellation-negotiation-required");
+    const auto& key=request->key;
+    // A higher logical preparation supersedes old cached-query eligibility even
+    // before Commit updates the legacy numeric cursor.
+    const bool busy=cancellationOwner.busy(*owner);
+    if(!busy && cancellationCached(session,*request))return request->kind==Cancellation::Kind::Ack?cancellationAckWire(session.cancellationJournal):cancellationWire(session.cancellationJournal);
+    Cancellation::Result result;
+    if(request->kind==Cancellation::Kind::Prepare) {
+        // Reserve all later Session journal copying capacity before acknowledging.
+        session.lastReply.reserve(4096);session.lastPayload.reserve(1024);
+        refreshFacts();if(!factsRevision || !outputGeneration)return error("cancellation-facts-unavailable");
+        result=cancellationOwner.prepare(key,request->deadline,cancellationNow(),session.effectRequest,session.generation);
+        if(result.error==Cancellation::Error::None && result.record && session.cancellationRetained && result.record->key.intent.request>session.cancellationJournal.key.intent.request)session.cancellationRetained=false;
+    } else {
+        result=cancellationOwner.lookup(key,request->preparedId,request->deadline);
+        if(result.error!=Cancellation::Error::None || !result.record)return error("cancellation-key-mismatch");
+        switch(request->kind) {
+            case Cancellation::Kind::Cancel:
+                result=cancellationOwner.cancel(key,request->preparedId,request->deadline,{factsRevision,outputGeneration,Cancellation::Reason::Cancelled,nullptr});break;
+            case Cancellation::Kind::Commit: {
+                if(result.record->phase!=Cancellation::Phase::Prepared)return cancellationWire(*result.record);
+                // Prepare reserves only Owner's logical slot. Never rewrite or
+                // roll back Session cursors to bypass legacy ordering.
+                if(key.intent.request<=session.effectRequest || key.intent.generation<=session.generation)return error("cancellation-order-mismatch");
+                const auto plan=cancellationPlan(key);CancellationExecution context{&session,&key,&plan,{}};
+                result=cancellationOwner.commit(key,request->preparedId,request->deadline,cancellationNow(),{factsRevision,outputGeneration,Cancellation::Reason::Unproven,nullptr},cancellationExecute,&context);break;
+            }
+            case Cancellation::Kind::Ack: {
+                if(result.record->phase!=Cancellation::Phase::Committed && result.record->phase!=Cancellation::Phase::Refused && result.record->phase!=Cancellation::Phase::Cancelled)return error("cancellation-unacknowledgeable");
+                if(!result.record->replyReady)return error("cancellation-reply-unavailable");
+                // Allocate reply/fingerprint before the nonthrowing record handoff.
+                const auto response=cancellationAckWire(*result.record);auto fingerprint=cancellationFingerprint(key);
+                std::string cachedReply(result.record->reply.data.data(),result.record->reply.size);
+                if(key.intent.request<session.effectRequest || key.intent.generation<session.generation)return error("cancellation-order-mismatch");
+                result=cancellationOwner.acknowledge(key,request->preparedId,request->deadline,session.cancellationJournal);
+                if(result.error!=Cancellation::Error::None || !result.record)return error("cancellation-unacknowledgeable");
+                // All allocation occurred while the known decision still owned its slot.
+                // Fixed Record copy and string ownership transfers cannot throw.
+                session.lastReply.swap(cachedReply);session.lastPayload.swap(fingerprint);
+                session.effectRequest=key.intent.request;session.generation=key.intent.generation;session.cancellationRetained=true;
+                return response;
+            }
+            case Cancellation::Kind::Query:break;
+            default:return error("cancellation-schema");
+        }
+    }
+    if(result.error!=Cancellation::Error::None || !result.record)return error("cancellation-admission-refused");
+    return cancellationWire(*result.record);
+}
+
+std::string performEffect(Session& session, JsonObject* object, const std::string&) {
+    if(cancellationBusy(session))return error("cancellation-owner-busy");
+    JsonObject* intent=objectMember(object,"intent");
+    if(!intent || !fields(intent,{"request","generation","incarnation","operation","context"})) return error("effect-schema");
+    const auto requestId=counter(intent,"request"), generation=counter(intent,"generation"), target=counter(intent,"incarnation");
+    JsonObject* context=objectMember(intent,"context");
+    if(!requestId || !generation || !target || !context || !fields(context,{"lifetime","epoch","output","revision"})) return error("effect-schema");
+    const auto native=counter(context,"lifetime"), epoch=counter(context,"epoch"), output=counter(context,"output"), expected=counter(context,"revision");
+    JsonNode* operationNode=json_object_get_member(intent,"operation");
+    if(!native || !epoch || !output || !expected || !operationNode || !JSON_NODE_HOLDS_VALUE(operationNode) || json_node_get_value_type(operationNode)!=G_TYPE_STRING) return error("effect-schema");
+    const std::string operation=json_node_get_string(operationNode);
+    gchar* raw=json_to_string(json_object_get_member(object,"intent"),FALSE);std::string encoded(raw);g_free(raw);
+    // Retry identity belongs to the immutable effect intent. A newer selection
+    // preparation must never change the already recorded terminal reply.
+    const std::string fingerprint="1:"+quote(operation)+":"+std::to_string(*requestId)+":"+std::to_string(*generation)+":"+std::to_string(*target)+":"+std::to_string(*native)+":"+std::to_string(*epoch)+":"+std::to_string(*output)+":"+std::to_string(*expected);
+    if(*native!=lifetime || *epoch!=session.frontend) return effectOutcome(session,encoded,"Refused","authority-mismatch");
+    if(session.cancellationRetained && session.cancellationJournal.key.intent.request==*requestId && *requestId==session.effectRequest)return error("preparation-required");
+    if(*requestId==session.effectRequest) return fingerprint==session.lastPayload ? session.lastReply : effectOutcome(session,encoded,"Refused","request-reuse");
+    if(*requestId<session.effectRequest || *generation<=session.generation) return effectOutcome(session,encoded,"Refused","operation-order");
+    const ValidatedEffectIntent plan{*requestId,*generation,*target,*native,*epoch,*output,*expected,operation,encoded,fingerprint};
+    (void)executeValidatedEffect(session,plan);
     return session.lastReply;
 }
 
@@ -834,18 +1111,20 @@ std::string observe(eHyprCtlOutputFormat, std::string request) {
             // Retire dead/reused PIDs, bound registration independently of windows.
             std::erase_if(sessions,[](const auto& entry) {
                 if(startTime(entry.first)==entry.second.start) return false;
-                switcherSelections.erase(entry.second.id);erasePeerCaptures(entry.first);grantRegistry->detach(verifiedPeer(entry.first,entry.second.start));return true;
+                retireCancellation(entry.first,entry.second);switcherSelections.erase(entry.second.id);erasePeerCaptures(entry.first);grantRegistry->detach(verifiedPeer(entry.first,entry.second.start));return true;
             });
             if(std::ranges::any_of(captureProbes,[&](const auto& item){return item.first.peer==peer && item.second.exported;})) throw std::runtime_error("preview-import-outstanding");
             erasePeerCaptures(peer);
+            const auto previousSession=sessions.find(peer);
             const auto admitted=grantRegistry->hello(verifiedPeer(peer,start));
             if(admitted.status!=Elm::GrantRetirement::Status::Admitted) throw std::runtime_error("grant-bound-or-exhausted");
+            if(previousSession!=sessions.end())retireCancellation(peer,previousSession->second);
             if(!sessions.contains(peer)) sessions.emplace(peer,Session{start,admitted.binding.session,admitted.binding.frontend,0,0,"","",{}});
             auto& session=sessions.at(peer);
             session.id=admitted.binding.session;session.frontend=admitted.binding.frontend;
             switcherSelections.erase(session.id);
             session.reducedMotion=true;session.motionRequest=0;session.presentationPid=parentPid(peer);session.presentationStart=startTime(session.presentationPid);
-            session.motion={};
+            session.motion={};session.cancellationFrontend=0;session.cancellationRetained=false;session.cancellationJournal={};
             session.geometryProtocol=0;session.geometryEnabled=false;session.geometryFrontend=0;session.geometryOperations.clear();session.retained.clear(); session.effectRequest=0; session.generation=0; session.lastPayload.clear(); session.lastReply.clear();
             reply = "{\"protocolVersion\":3,\"kind\":\"attached\",\"binding\":" + binding(session) +
                 ",\"previewFdAddress\":"+quote(previewFdAddress)+",\"compositor\":{\"pid\":" + std::to_string(getpid()) + ",\"instance\":" + quote(g_pCompositor->m_instanceSignature) +
@@ -1023,12 +1302,15 @@ std::string observe(eHyprCtlOutputFormat, std::string request) {
                     reply="{\"protocolVersion\":3,\"kind\":\"switcher-selection\",\"binding\":"+binding(found->second)+",\"requestId\":"+quote(std::to_string(*requestId))+"}";
                 }
             }
+        } else if(operation=="effect-cancellation-negotiate" || operation=="effect-prepare" || operation=="effect-commit" || operation=="effect-cancel" || operation=="effect-decision-request" || operation=="effect-decision-ack") {
+            reply=dispatchCancellation(object,peer,start,payload);
         } else if(operation=="window-effect" && fields(object,{"protocolVersion","kind","binding","effectProtocol","intent"})) {
             const auto bound=objectMember(object,"binding");
             const auto found=sessions.find(peer);const auto effectProtocol=json_object_get_member(object,"effectProtocol");
             if(!bound || !fields(bound,{"lifetime","session","frontend"}) || !effectProtocol || !JSON_NODE_HOLDS_VALUE(effectProtocol) || json_node_get_value_type(effectProtocol)!=G_TYPE_INT64 || (json_node_get_int(effectProtocol)!=1 && json_node_get_int(effectProtocol)!=2)) throw std::runtime_error("effect-schema");
             const auto native=counter(bound,"lifetime"),sessionId=counter(bound,"session"),frontend=counter(bound,"frontend");
             if(!native || !sessionId || !frontend || found==sessions.end() || found->second.start!=start || *native!=lifetime || *sessionId!=found->second.id || *frontend!=found->second.frontend || !grantRegistry->callerMatches(verifiedPeer(peer,start),{lifetime,*sessionId,*frontend})) reply=error("binding-mismatch");
+            else if(cancellationBusy(found->second)) reply=error("cancellation-owner-busy");
             else if(json_node_get_int(effectProtocol)==2) {
                 if(!found->second.geometryEnabled) reply=error("geometry-negotiation-required");
                 else reply=performGeometryEffect(found->second,object);
@@ -1106,6 +1388,7 @@ APICALL EXPORT PLUGIN_DESCRIPTION_INFO PLUGIN_INIT(HANDLE handle) {
     previewSources.clear();clientTrees.clear();popupTrees.clear();familySources.clear();familyStyles.clear();incarnation = sequence = revision = outputGeneration = 0; previousOutputs.clear(); recentFocus.clear(); activationHistory.clear(); previousProjection.clear(); members.clear(); sessions.clear();
     switcherChord={};switcherSerial=0;switcherAlts.clear();switcherTab=switcherStepAvailable=false;switcherSelections.clear();switcherOwnerSession=switcherOwnerFrontend=0;
     factsSequence = factsRevision = 0; previousFacts.clear();
+    cancellationOwner=Cancellation::Owner(formatCancellation,nullptr,nullptr);
     workspaceNavigationRecords.clear();geometryPlacements={};effectBarriers={};geometryWorkspaces={};geometryOutputs={};geometryAreas.clear();geometryAreaRevision=geometrySequence=geometryRevision=0;previousGeometry.clear();
     for (const auto& window : Desktop::windowState()->windows()) if (window->m_isMapped) birth(window);
     opened = Event::bus()->m_events.window.open.listen([](PHLWINDOW window) { try { birth(window); } catch (...) { members.clear(); Render::SceneTrace::clearBindings(); } });
@@ -1142,5 +1425,6 @@ APICALL EXPORT void PLUGIN_EXIT() {
     opened.reset(); closed.reset(); activated.reset(); recentFocus.clear();activationHistory.clear();
     if (command) HyprlandAPI::unregisterHyprCtlCommand(pluginHandle,command);
     command.reset();previewSources.clear();clientTrees.clear();popupTrees.clear();familySources.clear();familyStyles.clear();captureProbes.clear();captureBudget.reset(); members.clear(); sessions.clear();grantRegistry.reset(); Render::SceneTrace::clearBindings();
+    cancellationOwner=Cancellation::Owner(formatCancellation,nullptr,nullptr);
     workspaceNavigationRecords.clear();geometryPlacements={};effectBarriers={};geometryWorkspaces={};geometryOutputs={};geometryAreas.clear();geometryAreaRevision=geometrySequence=geometryRevision=0;previousGeometry.clear();
 }
