@@ -345,16 +345,56 @@
         {
           "name": "architecture-007",
           "oracle": "its state is Unknown rather than Committed",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "accepted",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/receipt-status-adjudication-20261030/manifest.json",
+              "sha256": "09c5156139a96756aa597221fc3a34d581eeadd677b0c1a7d37e269e32f4b128",
+              "scope": "Actual pending request passes through host-disconnected with no receipt/proof before checkpoint; same full intent is Unknown, disconnected, issued correlation retained and no new window mutation. Accepted only literal original allowed bridge fixture, not physical native disconnection. No new runtime execution during adjudication. Cancelled, whole ARC007, native composition/delivery, full proof-release and release acceptance remain excluded.",
+              "sourceRevision": "a4168e63302ba0872c49e62cd4a3e76144ed1efa",
+              "independentReview": {
+                "name": "/root/astra_architecture",
+                "independent": true,
+                "disposition": "accepted",
+                "evidence": {
+                  "path": "implementation/warlock/qa/evidence/receipt-status-adjudication-20261030/INDEPENDENT-REVIEW.md",
+                  "sha256": "5c256187e977a46e13a2fbc1bb20613a9140a239e902560869015a10e4c4d4d7"
+                }
+              },
+              "acceptanceRecord": {
+                "path": "docs/warlock-build-loop/v2/receipt-status-acceptance-20261030.json",
+                "sha256": "b4b8a66fe4e04815e92220bf37e8e4736af6ed8a8a2aed87fb81c2e87f42b0b7"
+              }
+            }
+          ],
+          "missingObservation": ""
         },
         {
           "name": "receipt-pending",
           "oracle": "the correlated request has exactly state Pending and no other request changes",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "accepted",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/receipt-status-adjudication-20261030/manifest.json",
+              "sha256": "09c5156139a96756aa597221fc3a34d581eeadd677b0c1a7d37e269e32f4b128",
+              "scope": "Actual captured production begin creates distinct request2/incarnation2 Pending while request1 remains represented. Independent review compares retained complete old unresolved/issued entries in projected vs newer and finds exact value equality. This equality is trace inspection, not a newly run assertion across200 variants; executed checks assert Pending/differentintent/oldpresence. Accepted only literal original bridge fixture. No new runtime execution during adjudication. Cancelled, whole ARC007, native composition/delivery, full proof-release and release acceptance remain excluded.",
+              "sourceRevision": "a4168e63302ba0872c49e62cd4a3e76144ed1efa",
+              "independentReview": {
+                "name": "/root/astra_architecture",
+                "independent": true,
+                "disposition": "accepted",
+                "evidence": {
+                  "path": "implementation/warlock/qa/evidence/receipt-status-adjudication-20261030/INDEPENDENT-REVIEW.md",
+                  "sha256": "5c256187e977a46e13a2fbc1bb20613a9140a239e902560869015a10e4c4d4d7"
+                }
+              },
+              "acceptanceRecord": {
+                "path": "docs/warlock-build-loop/v2/receipt-status-acceptance-20261030.json",
+                "sha256": "b4b8a66fe4e04815e92220bf37e8e4736af6ed8a8a2aed87fb81c2e87f42b0b7"
+              }
+            }
+          ],
+          "missingObservation": ""
         },
         {
           "name": "receipt-committed",
@@ -386,9 +426,29 @@
         {
           "name": "receipt-refused",
           "oracle": "the correlated request has exactly state Refused and no other request changes",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "accepted",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/receipt-status-adjudication-20261030/manifest.json",
+              "sha256": "09c5156139a96756aa597221fc3a34d581eeadd677b0c1a7d37e269e32f4b128",
+              "scope": "Actual exact Refused wire settles request1 Refused; production route preserves independently admitted newer Pending transaction and its issued/unresolved entries/current scene/counters, emits no new mutation and ignores terminal duplicate/foreign identities. This is original bridge fixture state/correlation, not actual native refusal or reason validation. No new runtime execution during adjudication. Cancelled, whole ARC007, native composition/delivery, full proof-release and release acceptance remain excluded.",
+              "sourceRevision": "a4168e63302ba0872c49e62cd4a3e76144ed1efa",
+              "independentReview": {
+                "name": "/root/astra_architecture",
+                "independent": true,
+                "disposition": "accepted",
+                "evidence": {
+                  "path": "implementation/warlock/qa/evidence/receipt-status-adjudication-20261030/INDEPENDENT-REVIEW.md",
+                  "sha256": "5c256187e977a46e13a2fbc1bb20613a9140a239e902560869015a10e4c4d4d7"
+                }
+              },
+              "acceptanceRecord": {
+                "path": "docs/warlock-build-loop/v2/receipt-status-acceptance-20261030.json",
+                "sha256": "b4b8a66fe4e04815e92220bf37e8e4736af6ed8a8a2aed87fb81c2e87f42b0b7"
+              }
+            }
+          ],
+          "missingObservation": ""
         },
         {
           "name": "receipt-cancelled",
@@ -15928,5 +15988,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-30T04:15:05.938476+00:00"
+  "updatedUTC": "2026-10-30T04:20:06.686176+00:00"
 }

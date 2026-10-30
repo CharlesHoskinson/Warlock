@@ -1,0 +1,194 @@
+{
+  "claimSchema": 1,
+  "claims": [
+    {
+      "requirement": "ELM-ARC-007",
+      "scenario": "architecture-007",
+      "oracle": "its state is Unknown rather than Committed",
+      "verificationScope": "Preserved scenario report with native or bridge trace showing: its state is Unknown rather than Committed; artifact hashes and matching scenario receipts included.",
+      "scope": "Actual pending request passes through host-disconnected with no receipt/proof before checkpoint; same full intent is Unknown, disconnected, issued correlation retained and no new window mutation. Accepted only literal original allowed bridge fixture, not physical native disconnection. No new runtime execution during adjudication. Cancelled, whole ARC007, native composition/delivery, full proof-release and release acceptance remain excluded.",
+      "evidence": [
+        {
+          "path": "implementation/warlock/qa/evidence/receipt-status-adjudication-20261030/manifest.json",
+          "sha256": "09c5156139a96756aa597221fc3a34d581eeadd677b0c1a7d37e269e32f4b128"
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/receipt-status-adjudication-20261030/INDEPENDENT-REVIEW.md",
+          "sha256": "5c256187e977a46e13a2fbc1bb20613a9140a239e902560869015a10e4c4d4d7"
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/receipt-output-lifecycle-20261030/manifest.json",
+          "sha256": "ddf29dd1735db8ceaa3bd3363e60adf07889c0d7c353972708cd2f6fa583ee1c"
+        }
+      ],
+      "sourceHashes": {
+        "implementation/warlock/src/Effects.elm": "80c574e8c564c28a1fb11f1f89bb5bfa7ac97a92474bbf027a737324bb2a82cd",
+        "implementation/warlock/qa/ReceiptOutputLifecycleReplay.elm": "f84ee49b10aee296e88155cb734be1f07c770ca00a890fb3d1d16d38d3212a3b",
+        "implementation/warlock/qa/receipt-sequences.cjs": "c24a78d84381d62b9f78320881604a0398a95e348ff8da7f7fa06af53bcdc8d5"
+      },
+      "reviewer": {
+        "name": "/root/astra_architecture",
+        "independent": true,
+        "disposition": "accepted",
+        "evidence": {
+          "path": "implementation/warlock/qa/evidence/receipt-status-adjudication-20261030/INDEPENDENT-REVIEW.md",
+          "sha256": "5c256187e977a46e13a2fbc1bb20613a9140a239e902560869015a10e4c4d4d7"
+        }
+      },
+      "disposition": "accepted",
+      "missingObservations": [],
+      "sourceTuple": {
+        "sourceRevision": "a4168e63302ba0872c49e62cd4a3e76144ed1efa",
+        "core": {
+          "loaded": false,
+          "reason": "Original permits bridge fixture; no compositor core loaded in this accepted observation."
+        },
+        "plugin": {
+          "loaded": false,
+          "reason": "No native authority plugin loaded; exact protocol outcome supplied by the bridge fixture."
+        },
+        "toolchain": {
+          "elmCompilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+          "nodeSHA256": "caa24debe02770c92a70677e2a62ca98890150e7ac1c17bcfe31bcc98cc89943",
+          "heldManifestSHA256": "fe3d29078d30c6cf9bd431233c5eed1ad4550e2873ff55739d50a5a87a97edaa"
+        },
+        "frontendReport": {
+          "path": "implementation/warlock/qa/evidence/receipt-output-lifecycle-20261030/frontend/report.json",
+          "sha256": "80ab7efec7eb9f7d5448cbf94260aa5f90b32e75f1b155294c2559c149475c11"
+        },
+        "scope": "Production Elm bridge fixture only; no native tuple claimed.",
+        "fullSourceIdentityRecord": {
+          "path": "docs/warlock-build-loop/v2/receipt-committed-acceptance-20261030.json",
+          "sha256": "569ac090e13e2aa42ec1465eea0b695a764f9450b62c716fba7d0fedd9793ad2"
+        }
+      },
+      "observer": "root-receipt-status-adjudication"
+    },
+    {
+      "requirement": "ELM-ARC-007",
+      "scenario": "receipt-pending",
+      "oracle": "the correlated request has exactly state Pending and no other request changes",
+      "verificationScope": "Preserved scenario report with native or bridge trace showing: its state is Unknown rather than Committed; artifact hashes and matching scenario receipts included.",
+      "scope": "Actual captured production begin creates distinct request2/incarnation2 Pending while request1 remains represented. Independent review compares retained complete old unresolved/issued entries in projected vs newer and finds exact value equality. This equality is trace inspection, not a newly run assertion across200 variants; executed checks assert Pending/differentintent/oldpresence. Accepted only literal original bridge fixture. No new runtime execution during adjudication. Cancelled, whole ARC007, native composition/delivery, full proof-release and release acceptance remain excluded.",
+      "evidence": [
+        {
+          "path": "implementation/warlock/qa/evidence/receipt-status-adjudication-20261030/manifest.json",
+          "sha256": "09c5156139a96756aa597221fc3a34d581eeadd677b0c1a7d37e269e32f4b128"
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/receipt-status-adjudication-20261030/INDEPENDENT-REVIEW.md",
+          "sha256": "5c256187e977a46e13a2fbc1bb20613a9140a239e902560869015a10e4c4d4d7"
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/receipt-output-lifecycle-20261030/manifest.json",
+          "sha256": "ddf29dd1735db8ceaa3bd3363e60adf07889c0d7c353972708cd2f6fa583ee1c"
+        }
+      ],
+      "sourceHashes": {
+        "implementation/warlock/src/Effects.elm": "80c574e8c564c28a1fb11f1f89bb5bfa7ac97a92474bbf027a737324bb2a82cd",
+        "implementation/warlock/qa/ReceiptOutputLifecycleReplay.elm": "f84ee49b10aee296e88155cb734be1f07c770ca00a890fb3d1d16d38d3212a3b",
+        "implementation/warlock/qa/receipt-sequences.cjs": "c24a78d84381d62b9f78320881604a0398a95e348ff8da7f7fa06af53bcdc8d5"
+      },
+      "reviewer": {
+        "name": "/root/astra_architecture",
+        "independent": true,
+        "disposition": "accepted",
+        "evidence": {
+          "path": "implementation/warlock/qa/evidence/receipt-status-adjudication-20261030/INDEPENDENT-REVIEW.md",
+          "sha256": "5c256187e977a46e13a2fbc1bb20613a9140a239e902560869015a10e4c4d4d7"
+        }
+      },
+      "disposition": "accepted",
+      "missingObservations": [],
+      "sourceTuple": {
+        "sourceRevision": "a4168e63302ba0872c49e62cd4a3e76144ed1efa",
+        "core": {
+          "loaded": false,
+          "reason": "Original permits bridge fixture; no compositor core loaded in this accepted observation."
+        },
+        "plugin": {
+          "loaded": false,
+          "reason": "No native authority plugin loaded; exact protocol outcome supplied by the bridge fixture."
+        },
+        "toolchain": {
+          "elmCompilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+          "nodeSHA256": "caa24debe02770c92a70677e2a62ca98890150e7ac1c17bcfe31bcc98cc89943",
+          "heldManifestSHA256": "fe3d29078d30c6cf9bd431233c5eed1ad4550e2873ff55739d50a5a87a97edaa"
+        },
+        "frontendReport": {
+          "path": "implementation/warlock/qa/evidence/receipt-output-lifecycle-20261030/frontend/report.json",
+          "sha256": "80ab7efec7eb9f7d5448cbf94260aa5f90b32e75f1b155294c2559c149475c11"
+        },
+        "scope": "Production Elm bridge fixture only; no native tuple claimed.",
+        "fullSourceIdentityRecord": {
+          "path": "docs/warlock-build-loop/v2/receipt-committed-acceptance-20261030.json",
+          "sha256": "569ac090e13e2aa42ec1465eea0b695a764f9450b62c716fba7d0fedd9793ad2"
+        }
+      },
+      "observer": "root-receipt-status-adjudication"
+    },
+    {
+      "requirement": "ELM-ARC-007",
+      "scenario": "receipt-refused",
+      "oracle": "the correlated request has exactly state Refused and no other request changes",
+      "verificationScope": "Preserved scenario report with native or bridge trace showing: its state is Unknown rather than Committed; artifact hashes and matching scenario receipts included.",
+      "scope": "Actual exact Refused wire settles request1 Refused; production route preserves independently admitted newer Pending transaction and its issued/unresolved entries/current scene/counters, emits no new mutation and ignores terminal duplicate/foreign identities. This is original bridge fixture state/correlation, not actual native refusal or reason validation. No new runtime execution during adjudication. Cancelled, whole ARC007, native composition/delivery, full proof-release and release acceptance remain excluded.",
+      "evidence": [
+        {
+          "path": "implementation/warlock/qa/evidence/receipt-status-adjudication-20261030/manifest.json",
+          "sha256": "09c5156139a96756aa597221fc3a34d581eeadd677b0c1a7d37e269e32f4b128"
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/receipt-status-adjudication-20261030/INDEPENDENT-REVIEW.md",
+          "sha256": "5c256187e977a46e13a2fbc1bb20613a9140a239e902560869015a10e4c4d4d7"
+        },
+        {
+          "path": "implementation/warlock/qa/evidence/receipt-output-lifecycle-20261030/manifest.json",
+          "sha256": "ddf29dd1735db8ceaa3bd3363e60adf07889c0d7c353972708cd2f6fa583ee1c"
+        }
+      ],
+      "sourceHashes": {
+        "implementation/warlock/src/Effects.elm": "80c574e8c564c28a1fb11f1f89bb5bfa7ac97a92474bbf027a737324bb2a82cd",
+        "implementation/warlock/qa/ReceiptOutputLifecycleReplay.elm": "f84ee49b10aee296e88155cb734be1f07c770ca00a890fb3d1d16d38d3212a3b",
+        "implementation/warlock/qa/receipt-sequences.cjs": "c24a78d84381d62b9f78320881604a0398a95e348ff8da7f7fa06af53bcdc8d5"
+      },
+      "reviewer": {
+        "name": "/root/astra_architecture",
+        "independent": true,
+        "disposition": "accepted",
+        "evidence": {
+          "path": "implementation/warlock/qa/evidence/receipt-status-adjudication-20261030/INDEPENDENT-REVIEW.md",
+          "sha256": "5c256187e977a46e13a2fbc1bb20613a9140a239e902560869015a10e4c4d4d7"
+        }
+      },
+      "disposition": "accepted",
+      "missingObservations": [],
+      "sourceTuple": {
+        "sourceRevision": "a4168e63302ba0872c49e62cd4a3e76144ed1efa",
+        "core": {
+          "loaded": false,
+          "reason": "Original permits bridge fixture; no compositor core loaded in this accepted observation."
+        },
+        "plugin": {
+          "loaded": false,
+          "reason": "No native authority plugin loaded; exact protocol outcome supplied by the bridge fixture."
+        },
+        "toolchain": {
+          "elmCompilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+          "nodeSHA256": "caa24debe02770c92a70677e2a62ca98890150e7ac1c17bcfe31bcc98cc89943",
+          "heldManifestSHA256": "fe3d29078d30c6cf9bd431233c5eed1ad4550e2873ff55739d50a5a87a97edaa"
+        },
+        "frontendReport": {
+          "path": "implementation/warlock/qa/evidence/receipt-output-lifecycle-20261030/frontend/report.json",
+          "sha256": "80ab7efec7eb9f7d5448cbf94260aa5f90b32e75f1b155294c2559c149475c11"
+        },
+        "scope": "Production Elm bridge fixture only; no native tuple claimed.",
+        "fullSourceIdentityRecord": {
+          "path": "docs/warlock-build-loop/v2/receipt-committed-acceptance-20261030.json",
+          "sha256": "569ac090e13e2aa42ec1465eea0b695a764f9450b62c716fba7d0fedd9793ad2"
+        }
+      },
+      "observer": "root-receipt-status-adjudication"
+    }
+  ]
+}
