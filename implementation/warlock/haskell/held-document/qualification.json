@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "status": "bounded component qualification; integration preparation",
+  "originalRequirement": "ELM-DEL-003",
+  "originalScenario": "delivery-003",
+  "originalAccepted": false,
+  "nativeAccepted": false,
+  "releaseAccepted": false,
+  "sourceHashes": {
+    "src/Warlock/Http/Document.hs": "b0a0f0187349d1ad79300999c87c3e4d0b481568764b081b7c15742b54bbe2f5",
+    "src/Warlock/Platform/Descriptor.hs": "221af8008db858225b9bffee7a86bd15ee93ce6484b289200a4e79bb2034cf64",
+    "src/Warlock/Platform/Resolver.hs": "7f751443f003932fbc7ec11a8e2957999ecb332b3e07decfc3280628bd0100d0",
+    "src/Warlock/Platform/Resolver/Internal.hsc": "57c830620d19ae019dc9fd18252ef6f31f1df19d270d2771bc81697e6f6fd3be",
+    "held-document.cabal": "fbd0f958dd9d618a2f53dca4d37c2d71e9273b487a93c67c506be8c10c0473b0",
+    "test/Main.hs": "735ef78224bb13e05a5c02c966b12b9811c758339c33e3fa3c618feef3bad501"
+  },
+  "evidence": [
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/resolver-compile-1793397188808388678/report.json",
+      "sha256": "2adbacfcec176151c2cf686196f4d8017ea4358d8886ce6ec4a2a13364895da2"
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/resolver-controls-1793397192866232071/report.json",
+      "sha256": "ff855054b21c4ea7a7208d0a6564420b6685708fd948a2d86b6efaba5624e749"
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/astra-held-document-review-v3/REVIEW.md",
+      "sha256": "31c8500e3c3dfc264d916165305bd416131f920b157e014adcdd67ff76468386"
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/astra-held-document-review-v3/inputs.json",
+      "sha256": "b162c58716d8a06ec4642bdfc5085b082108a8b4ebe870a1577abc1843e019a8"
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/astra-held-document-review-v3/correspondence.json",
+      "sha256": "d14d0d1fcde529db4cb11cae690933ea9be704983d76e9ea63da05cefc9b7cee"
+    }
+  ],
+  "observations": [
+    "Strict GHC/hsc2hs compilation with warnings treated as errors passed.",
+    "13 owned-tempdir controls passed; exact declared-size regression discriminates size from hash/limit failures.",
+    "Independent review found no narrow integration blocker, subject to caller/root/procfs premises."
+  ],
+  "retainedFailures": [
+    "Original test lambda parse error: resolver-compile-1793397070268203162.",
+    "Root test-only overbroad whitespace edit changed quoted HTML: resolver-controls-1793397085611763964 and diagnostic1793397152233045662. Corrected test changes exactly four afterConsumer lambda spacing sites; production source unchanged."
+  ],
+  "limits": [
+    "Caller must independently establish trusted root, complete path/link pins, identities, exact size, content hash and source provenance.",
+    "Current procfs and private process FD table/bootstrap assumptions; no universal hostile same-user ABA, mount or source-authority proof.",
+    "FIFO case measures refusal; no-open reasoning is source-based, not syscall tracing.",
+    "Close-failure case deliberately closes early and observes EBADF; not arbitrary kernel close failure injection.",
+    "No full dependency closure/ABI/loader, GTK/WebKit/browser/native, offline packaging or original scenario acceptance.",
+    "Published bytes match qualified inputs; canonical-path Cabal build not executed. Development tools and system libraries are not shipped authored source."
+  ]
+}
