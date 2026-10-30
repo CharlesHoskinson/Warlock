@@ -1062,3 +1062,16 @@ Native cancellation source checkpoint (October 30): an [opt-in Restore lifecycle
 
 
 Native cancellation client checkpoint (October 30): the strict effect-endpoint API now negotiates and validates the full native lifecycle without legacy fallback. [Focused codec and real native evidence](qa/evidence/native-cancellation-client-20261030/LIMITS.md) covers 200 seeded reply-parameter cases and actual GTK cancel-first/commit-first with state preserved after late opposing requests, fsynced fixture receipts before ACK, and normal private-process exits. The earlier shutdown failure remains recorded. Physical Escape, per-generation retirement and production durable daemon/Elm routing are still open; the candidate is not deployed in the main session.
+
+
+Cancellation storage checkpoint (October 30): an explicit internal V7 opt-in now
+preserves native terminal certificates before exact admission retirement and ACK
+permission, with permanent attempt guards and funded future certificate capacity.
+[The protected store runner](qa/check-cancellation-store.py) passes real
+filesystem/restart/fault/capacity checks using strict response doubles; the
+[recorded evidence](qa/evidence/cancellation-store-20261030/LIMITS.md) retains the
+reproduced restart/provenance defects and independent repairs. The reduced model
+passes 24 named tests and nine bounded safety samples. The daemon still uses the
+legacy store; coordinator/C/Elm routing, historical UI receipts, physical Escape,
+all-slot/resource and deployment acceptance remain open. See the
+[store test guide](../../docs/warlock/how-to/test-cancellation-store.md).

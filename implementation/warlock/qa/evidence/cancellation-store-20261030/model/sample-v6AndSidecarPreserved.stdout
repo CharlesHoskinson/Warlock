@@ -1,0 +1,2208 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      a:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 100,
+          durable: Empty,
+          file: false,
+          key: 1,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 11,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 1,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      autoReplay: 0,
+      b:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 200,
+          durable: Empty,
+          file: false,
+          key: 2,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 22,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 2,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      currentGrant: 1,
+      everCommitA: false,
+      everCommitB: false,
+      markerValid: true,
+      migrationValidated: true,
+      oldV6: 7,
+      poisoned: false,
+      predecessorValid: true,
+      sidecar: 9,
+      wanted: Empty,
+      wantedOperation: NoOperation,
+      writeKey: 0,
+      writer: Idle
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      a:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 100,
+          durable: Empty,
+          file: false,
+          key: 1,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 11,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 1,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      autoReplay: 0,
+      b:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 200,
+          durable: Empty,
+          file: false,
+          key: 2,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 22,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 2,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      currentGrant: 1,
+      everCommitA: false,
+      everCommitB: false,
+      markerValid: true,
+      migrationValidated: true,
+      oldV6: 7,
+      poisoned: true,
+      predecessorValid: false,
+      sidecar: 9,
+      wanted: Empty,
+      wantedOperation: NoOperation,
+      writeKey: 0,
+      writer: Idle
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      a:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 100,
+          durable: Empty,
+          file: false,
+          key: 1,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 11,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 1,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      autoReplay: 0,
+      b:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 200,
+          durable: Empty,
+          file: false,
+          key: 2,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 22,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 2,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      currentGrant: 2,
+      everCommitA: false,
+      everCommitB: false,
+      markerValid: true,
+      migrationValidated: true,
+      oldV6: 7,
+      poisoned: true,
+      predecessorValid: false,
+      sidecar: 9,
+      wanted: Empty,
+      wantedOperation: NoOperation,
+      writeKey: 0,
+      writer: Idle
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      a:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 100,
+          durable: Empty,
+          file: false,
+          key: 1,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 11,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 1,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      autoReplay: 0,
+      b:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 200,
+          durable: Empty,
+          file: false,
+          key: 2,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 22,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 2,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      currentGrant: 2,
+      everCommitA: false,
+      everCommitB: false,
+      markerValid: true,
+      migrationValidated: true,
+      oldV6: 7,
+      poisoned: true,
+      predecessorValid: false,
+      sidecar: 9,
+      wanted: Empty,
+      wantedOperation: NoOperation,
+      writeKey: 0,
+      writer: Idle
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      a:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 100,
+          durable: Empty,
+          file: false,
+          key: 1,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 11,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 1,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      autoReplay: 0,
+      b:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 200,
+          durable: Empty,
+          file: false,
+          key: 2,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 22,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 2,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      currentGrant: 2,
+      everCommitA: false,
+      everCommitB: false,
+      markerValid: true,
+      migrationValidated: true,
+      oldV6: 7,
+      poisoned: true,
+      predecessorValid: false,
+      sidecar: 9,
+      wanted: Empty,
+      wantedOperation: NoOperation,
+      writeKey: 0,
+      writer: Idle
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      a:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 100,
+          durable: Empty,
+          file: false,
+          key: 1,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 11,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 1,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      autoReplay: 0,
+      b:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 200,
+          durable: Empty,
+          file: false,
+          key: 2,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 22,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 2,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      currentGrant: 2,
+      everCommitA: false,
+      everCommitB: false,
+      markerValid: true,
+      migrationValidated: true,
+      oldV6: 7,
+      poisoned: true,
+      predecessorValid: false,
+      sidecar: 9,
+      wanted: Empty,
+      wantedOperation: NoOperation,
+      writeKey: 0,
+      writer: Idle
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      a:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 100,
+          durable: Empty,
+          file: false,
+          key: 1,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 11,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 1,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      autoReplay: 0,
+      b:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 200,
+          durable: Empty,
+          file: false,
+          key: 2,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 22,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 2,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      currentGrant: 2,
+      everCommitA: false,
+      everCommitB: false,
+      markerValid: false,
+      migrationValidated: true,
+      oldV6: 7,
+      poisoned: true,
+      predecessorValid: false,
+      sidecar: 9,
+      wanted: Empty,
+      wantedOperation: NoOperation,
+      writeKey: 0,
+      writer: Idle
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      a:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 100,
+          durable: Empty,
+          file: false,
+          key: 1,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 11,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 1,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      autoReplay: 0,
+      b:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 200,
+          durable: Empty,
+          file: false,
+          key: 2,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 22,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 2,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      currentGrant: 2,
+      everCommitA: false,
+      everCommitB: false,
+      markerValid: false,
+      migrationValidated: true,
+      oldV6: 7,
+      poisoned: true,
+      predecessorValid: false,
+      sidecar: 9,
+      wanted: Empty,
+      wantedOperation: NoOperation,
+      writeKey: 0,
+      writer: Idle
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      a:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 100,
+          durable: Empty,
+          file: false,
+          key: 1,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 11,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 1,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      autoReplay: 0,
+      b:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 200,
+          durable: Empty,
+          file: false,
+          key: 2,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 22,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 2,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      currentGrant: 2,
+      everCommitA: false,
+      everCommitB: false,
+      markerValid: false,
+      migrationValidated: true,
+      oldV6: 7,
+      poisoned: true,
+      predecessorValid: false,
+      sidecar: 9,
+      wanted: Empty,
+      wantedOperation: NoOperation,
+      writeKey: 0,
+      writer: Idle
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      a:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 100,
+          durable: Empty,
+          file: false,
+          key: 1,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 11,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 1,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      autoReplay: 0,
+      b:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 200,
+          durable: Empty,
+          file: false,
+          key: 2,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 22,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 2,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      currentGrant: 2,
+      everCommitA: false,
+      everCommitB: false,
+      markerValid: false,
+      migrationValidated: true,
+      oldV6: 7,
+      poisoned: true,
+      predecessorValid: false,
+      sidecar: 9,
+      wanted: Empty,
+      wantedOperation: NoOperation,
+      writeKey: 0,
+      writer: Idle
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      a:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 100,
+          durable: Empty,
+          file: false,
+          key: 1,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 11,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 1,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      autoReplay: 0,
+      b:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 200,
+          durable: Empty,
+          file: false,
+          key: 2,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 22,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 2,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      currentGrant: 2,
+      everCommitA: false,
+      everCommitB: false,
+      markerValid: false,
+      migrationValidated: true,
+      oldV6: 7,
+      poisoned: true,
+      predecessorValid: false,
+      sidecar: 9,
+      wanted: Empty,
+      wantedOperation: NoOperation,
+      writeKey: 0,
+      writer: Idle
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      a:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 100,
+          durable: Empty,
+          file: false,
+          key: 1,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 11,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 1,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      autoReplay: 0,
+      b:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 200,
+          durable: Empty,
+          file: false,
+          key: 2,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 22,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 2,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      currentGrant: 2,
+      everCommitA: false,
+      everCommitB: false,
+      markerValid: false,
+      migrationValidated: true,
+      oldV6: 7,
+      poisoned: true,
+      predecessorValid: false,
+      sidecar: 9,
+      wanted: Empty,
+      wantedOperation: NoOperation,
+      writeKey: 0,
+      writer: Idle
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      a:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 100,
+          durable: Empty,
+          file: false,
+          key: 1,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 11,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 1,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      autoReplay: 0,
+      b:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 200,
+          durable: Empty,
+          file: false,
+          key: 2,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 22,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 2,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      currentGrant: 2,
+      everCommitA: false,
+      everCommitB: false,
+      markerValid: false,
+      migrationValidated: true,
+      oldV6: 7,
+      poisoned: true,
+      predecessorValid: false,
+      sidecar: 9,
+      wanted: Empty,
+      wantedOperation: NoOperation,
+      writeKey: 0,
+      writer: Idle
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      a:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 100,
+          durable: Empty,
+          file: false,
+          key: 1,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 11,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 1,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      autoReplay: 0,
+      b:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 200,
+          durable: Empty,
+          file: false,
+          key: 2,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 22,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 2,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      currentGrant: 2,
+      everCommitA: false,
+      everCommitB: false,
+      markerValid: false,
+      migrationValidated: true,
+      oldV6: 7,
+      poisoned: true,
+      predecessorValid: false,
+      sidecar: 9,
+      wanted: Empty,
+      wantedOperation: NoOperation,
+      writeKey: 0,
+      writer: Idle
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      a:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 100,
+          durable: Empty,
+          file: false,
+          key: 1,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 11,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 1,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      autoReplay: 0,
+      b:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 200,
+          durable: Empty,
+          file: false,
+          key: 2,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 22,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 2,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      currentGrant: 2,
+      everCommitA: false,
+      everCommitB: false,
+      markerValid: false,
+      migrationValidated: true,
+      oldV6: 7,
+      poisoned: true,
+      predecessorValid: false,
+      sidecar: 9,
+      wanted: Empty,
+      wantedOperation: NoOperation,
+      writeKey: 0,
+      writer: Idle
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      a:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 100,
+          durable: Empty,
+          file: false,
+          key: 1,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 11,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 1,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      autoReplay: 0,
+      b:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 200,
+          durable: Empty,
+          file: false,
+          key: 2,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 22,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 2,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      currentGrant: 2,
+      everCommitA: false,
+      everCommitB: false,
+      markerValid: false,
+      migrationValidated: true,
+      oldV6: 7,
+      poisoned: true,
+      predecessorValid: false,
+      sidecar: 9,
+      wanted: Empty,
+      wantedOperation: NoOperation,
+      writeKey: 0,
+      writer: Idle
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      a:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 100,
+          durable: Empty,
+          file: false,
+          key: 1,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 11,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 1,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      autoReplay: 0,
+      b:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 200,
+          durable: Empty,
+          file: false,
+          key: 2,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 22,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 2,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      currentGrant: 2,
+      everCommitA: false,
+      everCommitB: false,
+      markerValid: false,
+      migrationValidated: true,
+      oldV6: 7,
+      poisoned: true,
+      predecessorValid: false,
+      sidecar: 9,
+      wanted: Empty,
+      wantedOperation: NoOperation,
+      writeKey: 0,
+      writer: Idle
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      a:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 100,
+          durable: Empty,
+          file: false,
+          key: 1,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 11,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 1,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      autoReplay: 0,
+      b:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 200,
+          durable: Empty,
+          file: false,
+          key: 2,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 22,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 2,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      currentGrant: 2,
+      everCommitA: false,
+      everCommitB: false,
+      markerValid: false,
+      migrationValidated: true,
+      oldV6: 7,
+      poisoned: true,
+      predecessorValid: false,
+      sidecar: 9,
+      wanted: Empty,
+      wantedOperation: NoOperation,
+      writeKey: 0,
+      writer: Idle
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      a:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 100,
+          durable: Empty,
+          file: false,
+          key: 1,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 11,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 1,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      autoReplay: 0,
+      b:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 200,
+          durable: Empty,
+          file: false,
+          key: 2,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 22,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 2,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      currentGrant: 2,
+      everCommitA: false,
+      everCommitB: false,
+      markerValid: false,
+      migrationValidated: true,
+      oldV6: 7,
+      poisoned: true,
+      predecessorValid: false,
+      sidecar: 9,
+      wanted: Empty,
+      wantedOperation: NoOperation,
+      writeKey: 0,
+      writer: Idle
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      a:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 100,
+          durable: Empty,
+          file: false,
+          key: 1,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 11,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 1,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      autoReplay: 0,
+      b:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 200,
+          durable: Empty,
+          file: false,
+          key: 2,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 22,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 2,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      currentGrant: 2,
+      everCommitA: false,
+      everCommitB: false,
+      markerValid: false,
+      migrationValidated: true,
+      oldV6: 7,
+      poisoned: true,
+      predecessorValid: false,
+      sidecar: 9,
+      wanted: Empty,
+      wantedOperation: NoOperation,
+      writeKey: 0,
+      writer: Idle
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      a:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 100,
+          durable: Empty,
+          file: false,
+          key: 1,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 11,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 1,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      autoReplay: 0,
+      b:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 200,
+          durable: Empty,
+          file: false,
+          key: 2,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 22,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 2,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      currentGrant: 2,
+      everCommitA: false,
+      everCommitB: false,
+      markerValid: false,
+      migrationValidated: true,
+      oldV6: 7,
+      poisoned: true,
+      predecessorValid: false,
+      sidecar: 9,
+      wanted: Empty,
+      wantedOperation: NoOperation,
+      writeKey: 0,
+      writer: Idle
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      a:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 100,
+          durable: Empty,
+          file: false,
+          key: 1,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 11,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 1,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      autoReplay: 0,
+      b:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 200,
+          durable: Empty,
+          file: false,
+          key: 2,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 22,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 2,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      currentGrant: 2,
+      everCommitA: false,
+      everCommitB: false,
+      markerValid: false,
+      migrationValidated: true,
+      oldV6: 7,
+      poisoned: true,
+      predecessorValid: false,
+      sidecar: 9,
+      wanted: Empty,
+      wantedOperation: NoOperation,
+      writeKey: 0,
+      writer: Idle
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      a:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 100,
+          durable: Empty,
+          file: false,
+          key: 1,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 11,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 1,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      autoReplay: 0,
+      b:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 200,
+          durable: Empty,
+          file: false,
+          key: 2,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 22,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 2,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      currentGrant: 2,
+      everCommitA: false,
+      everCommitB: false,
+      markerValid: false,
+      migrationValidated: true,
+      oldV6: 7,
+      poisoned: true,
+      predecessorValid: false,
+      sidecar: 9,
+      wanted: Empty,
+      wantedOperation: NoOperation,
+      writeKey: 0,
+      writer: Idle
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      a:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 100,
+          durable: Empty,
+          file: false,
+          key: 1,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 11,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 1,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      autoReplay: 0,
+      b:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 200,
+          durable: Empty,
+          file: false,
+          key: 2,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 22,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 2,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      currentGrant: 2,
+      everCommitA: false,
+      everCommitB: false,
+      markerValid: false,
+      migrationValidated: true,
+      oldV6: 7,
+      poisoned: true,
+      predecessorValid: false,
+      sidecar: 9,
+      wanted: Empty,
+      wantedOperation: NoOperation,
+      writeKey: 0,
+      writer: Idle
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      a:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 100,
+          durable: Empty,
+          file: false,
+          key: 1,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 11,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 1,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      autoReplay: 0,
+      b:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 200,
+          durable: Empty,
+          file: false,
+          key: 2,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 22,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 2,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      currentGrant: 2,
+      everCommitA: false,
+      everCommitB: false,
+      markerValid: false,
+      migrationValidated: true,
+      oldV6: 7,
+      poisoned: true,
+      predecessorValid: false,
+      sidecar: 9,
+      wanted: Empty,
+      wantedOperation: NoOperation,
+      writeKey: 0,
+      writer: Idle
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      a:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 100,
+          durable: Empty,
+          file: false,
+          key: 1,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 11,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 1,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      autoReplay: 0,
+      b:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 200,
+          durable: Empty,
+          file: false,
+          key: 2,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 22,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 2,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      currentGrant: 2,
+      everCommitA: false,
+      everCommitB: false,
+      markerValid: false,
+      migrationValidated: true,
+      oldV6: 7,
+      poisoned: true,
+      predecessorValid: false,
+      sidecar: 9,
+      wanted: Empty,
+      wantedOperation: NoOperation,
+      writeKey: 0,
+      writer: Idle
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      a:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 100,
+          durable: Empty,
+          file: false,
+          key: 1,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 11,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 1,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      autoReplay: 0,
+      b:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 200,
+          durable: Empty,
+          file: false,
+          key: 2,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 22,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 2,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      currentGrant: 2,
+      everCommitA: false,
+      everCommitB: false,
+      markerValid: false,
+      migrationValidated: true,
+      oldV6: 7,
+      poisoned: true,
+      predecessorValid: false,
+      sidecar: 9,
+      wanted: Empty,
+      wantedOperation: NoOperation,
+      writeKey: 0,
+      writer: Idle
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      a:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 100,
+          durable: Empty,
+          file: false,
+          key: 1,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 11,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 1,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      autoReplay: 0,
+      b:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 200,
+          durable: Empty,
+          file: false,
+          key: 2,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 22,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 2,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      currentGrant: 2,
+      everCommitA: false,
+      everCommitB: false,
+      markerValid: false,
+      migrationValidated: true,
+      oldV6: 7,
+      poisoned: true,
+      predecessorValid: false,
+      sidecar: 9,
+      wanted: Empty,
+      wantedOperation: NoOperation,
+      writeKey: 0,
+      writer: Idle
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      a:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 100,
+          durable: Empty,
+          file: false,
+          key: 1,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 11,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 1,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      autoReplay: 0,
+      b:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 200,
+          durable: Empty,
+          file: false,
+          key: 2,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 22,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 2,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      currentGrant: 2,
+      everCommitA: false,
+      everCommitB: false,
+      markerValid: false,
+      migrationValidated: true,
+      oldV6: 7,
+      poisoned: true,
+      predecessorValid: false,
+      sidecar: 9,
+      wanted: Empty,
+      wantedOperation: NoOperation,
+      writeKey: 0,
+      writer: Idle
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      a:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 100,
+          durable: Empty,
+          file: false,
+          key: 1,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 11,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 1,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      autoReplay: 0,
+      b:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 200,
+          durable: Empty,
+          file: false,
+          key: 2,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 22,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 2,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      currentGrant: 2,
+      everCommitA: false,
+      everCommitB: false,
+      markerValid: false,
+      migrationValidated: true,
+      oldV6: 7,
+      poisoned: true,
+      predecessorValid: false,
+      sidecar: 9,
+      wanted: Empty,
+      wantedOperation: NoOperation,
+      writeKey: 0,
+      writer: Idle
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      a:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 100,
+          durable: Empty,
+          file: false,
+          key: 1,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 11,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 1,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      autoReplay: 0,
+      b:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 200,
+          durable: Empty,
+          file: false,
+          key: 2,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 22,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 2,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      currentGrant: 2,
+      everCommitA: false,
+      everCommitB: false,
+      markerValid: false,
+      migrationValidated: true,
+      oldV6: 7,
+      poisoned: true,
+      predecessorValid: false,
+      sidecar: 9,
+      wanted: Empty,
+      wantedOperation: NoOperation,
+      writeKey: 0,
+      writer: Idle
+    }
+}
+
+[ok] No violation found (2178ms at 459 traces/second).
+Trace length statistics: max=31, min=31, average=31.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x13528a6 --backend=typescript to reproduce.

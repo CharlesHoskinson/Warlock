@@ -5,7 +5,12 @@ from recovery_journal import Journal,validate,effect_protocol
 from endpoint import binding,exact,Refused
 class RecoveryStore:
  namespace_path=staticmethod(Journal.namespace_path)
- def __init__(self,runtime,instance,lifetime):self.ledger=Ledger(runtime,instance,lifetime)
+ def __init__(self,runtime,instance,lifetime,*,cancellation=False):
+  if type(cancellation) is not bool:raise Refused('Cancellation selection type')
+  if cancellation:
+   from cancellation_ledger import CancellationLedger
+   self.ledger=CancellationLedger(runtime,instance,lifetime)
+  else:self.ledger=Ledger(runtime,instance,lifetime)
  @property
  def fd(self):return self.ledger.fd
  @property
@@ -39,6 +44,16 @@ class RecoveryStore:
   return [{'protocolVersion':3,'kind':'host-admission-settled','binding':copy.deepcopy(bound),'record':copy.deepcopy(r)} for r in state['settled']]
  def uncertain(self,bound):
   frames=self.recovery_frames(bound)[1:];return frames[0] if frames else None
+ def cancellation_attach(self,bound):return self.ledger.cancellation_attach(bound)
+ def cancellation_detach(self):return self.ledger.cancellation_detach()
+ def cancellation_reserve(self,bound,intent,deadline):return self.ledger.cancellation_reserve(bound,intent,deadline)
+ def cancellation_attempt(self,key,operation):return self.ledger.cancellation_attempt(key,operation)
+ def cancellation_observe(self,key,evidence):return self.ledger.cancellation_observe(key,evidence)
+ def cancellation_finish(self,key):return self.ledger.cancellation_finish(key)
+ def cancellation_ack_pending(self,key):return self.ledger.cancellation_ack_pending(key)
+ def cancellation_acknowledged(self,key,ack):return self.ledger.cancellation_acknowledged(key,ack)
+ def cancellation_snapshot(self,bound):return self.ledger.cancellation_snapshot(bound)
+ def cancellation_recovery_frames(self,bound):return self.ledger.cancellation_recovery_frames(bound)
  def close(self):self.ledger.close()
  def __enter__(self):return self
  def __exit__(self,*args):self.close()

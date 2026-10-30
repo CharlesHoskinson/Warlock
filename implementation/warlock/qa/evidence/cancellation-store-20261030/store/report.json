@@ -1,0 +1,203 @@
+{
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-33a5de536d0647c1b86d9d418d23a6bf.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "adapter/cancellation_ledger.py": "313165249e35ccf5f0f68bac7acb868d181a4bbd5daa1626c39c79b53b327981",
+    "adapter/cancellation_legacy.py": "ad23d4e7c856120885625e8621887a4517acfcfc4d78b21a96986bd160a1ce86",
+    "adapter/recovery_store.py": "3257927b706471357d7461b1f71935cb46dfe44b8f4e112418816eb49aaa22f5",
+    "adapter/cancellation_endpoint.py": "42247d6a560093b8a46a3369065d7debfe78baa94b78b67490a61c96fafab6f0",
+    "adapter/effect_endpoint.py": "e01aa144ef2b80cf1b259fd45a926ec9ee6e101040402134efeef1ad184667ca",
+    "adapter/endpoint.py": "e254b870922a46b935de9d85db1de56129838ea2cf73eeb55c9fa16e8539d731",
+    "adapter/recovery_journal.py": "9cfe06102f03fded5d330b90c317b4c6c32064885ed5a2c8478a87c2e1f25dae",
+    "adapter/durable_ledger.py": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+    "adapter/admission_ledger.py": "2faf5eb03dff6993de707f2d7458b929db881f4102bdc1ec467d3f7aaa4413d1",
+    "adapter/retirement_ledger.py": "213cbb6ecd5c2218075d2cc98132c1c53680933f3898c757e7ba1848261faec5",
+    "adapter/delivery_ledger.py": "ce1ff3528b454bdca7412389f5693f69023a5c76bc9586541c1091c1cddc5ca4",
+    "adapter/workspace_navigation.py": "79508bcb112ec602b6d33daf1050ef54f63afeb7bfe427fa5553e8a4c68bb8a9",
+    "qa/cancellation-store-cases/base.py": "7ad250404fd4ba41e8d7c09ee36750952576cf71c33209f254ee4a26f5bf0c09",
+    "qa/cancellation-store-cases/capacity.py": "2458b30c1707a4c55f58ffeba9db8f70457f4edb2c6f4c72be05eee2601ae057",
+    "qa/cancellation-store-cases/faults.py": "82d23b24a1109afc7cad8717e8f155107cea82f14d07425244fac9b489545e90",
+    "qa/cancellation-store-cases/fixture.py": "3ad01b398692cdf052cd10f1e6ce7459e0ab9b10ea237529364c2d36dc65baac",
+    "qa/cancellation-store-cases/legacy_restart.py": "2443b431fbc3c003963081bb9528159debc3eb893c86ef4a65daa849a5e00639",
+    "qa/cancellation-store-cases/provenance.py": "73216f9a3ca6fe8e14acd1002455bfaf4f54ab478adbdb3fc5f70f7de3bdb853",
+    "qa/cancellation-store-cases/provenance_positive.py": "039a8ef815ad9b84cb473a09f15e4abfbcab4da8ce8cfcc03d9f0e455251f23c",
+    "qa/cancellation-store-cases/typed_restart.py": "012a5c7db8ab7a3c36fdb7f62ca8f6b088bbeff262e45bbc59d086ab09822644",
+    "qa/check-cancellation-store.py": "20d07be554662f6f8399415c46865941474bd7a699f7ac3a27ab2096066ef1b9"
+  },
+  "commands": [
+    {
+      "name": "base",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/charles/Warlock/implementation/warlock/qa/cancellation-store-cases/base.py"
+      ],
+      "exitCode": 0,
+      "stdoutSHA256": "0db02d3a9971e73689ba9cd03c3291cd0428310d55c7e916ac5a2d512d71596b",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "observations": {
+        "passed": true,
+        "checks": 36,
+        "nativeAcceptance": false,
+        "powerLossProved": false,
+        "scope": "Actual shared admission files and V7 filesystem/client transitions with explicit native response doubles; no C/Elm/native resource or physical input claim."
+      }
+    },
+    {
+      "name": "legacy_restart",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/charles/Warlock/implementation/warlock/qa/cancellation-store-cases/legacy_restart.py",
+        "--expect-fixed"
+      ],
+      "exitCode": 0,
+      "stdoutSHA256": "76a9a4f5298bdd6fed22f12545d13bec6b28b83c089c35a39d664eca7862b481",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "observations": {
+        "passed": true,
+        "defectReproduced": false,
+        "results": [
+          {
+            "cancellation": false,
+            "entries": [
+              "Unknown"
+            ],
+            "latest": "Unknown",
+            "readIntent": "Unknown",
+            "intentUnchanged": true,
+            "watermarksUnchanged": true,
+            "frozenV6Unchanged": true
+          },
+          {
+            "cancellation": true,
+            "entries": [
+              "Unknown"
+            ],
+            "latest": "Unknown",
+            "readIntent": "Unknown",
+            "intentUnchanged": true,
+            "watermarksUnchanged": true,
+            "frozenV6Unchanged": true
+          }
+        ],
+        "scope": "Actual ordinary legacy begin/reopen, no native execution or typed cancellation mutation."
+      }
+    },
+    {
+      "name": "typed_restart",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/charles/Warlock/implementation/warlock/qa/cancellation-store-cases/typed_restart.py"
+      ],
+      "exitCode": 0,
+      "stdoutSHA256": "d4f197710f4e835f65e6e0f2a8980b6905441e2f7d0ca699d83edb8a8eaa8d9e",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "observations": {
+        "passed": true,
+        "checks": 9,
+        "nativeAcceptance": false,
+        "scope": "Actual typed restart custody normalization, immutable keys, no replay and informational reporting with strict response double only."
+      }
+    },
+    {
+      "name": "provenance",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/charles/Warlock/implementation/warlock/qa/cancellation-store-cases/provenance.py",
+        "--expect-fixed"
+      ],
+      "exitCode": 0,
+      "stdoutSHA256": "d4fe2acd310d1bb38e0a87885f45a6bb3c8a5f252a4a989a016faaec5e314ca9",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "observations": {
+        "passed": true,
+        "expectedDefectReproduced": false,
+        "observations": [
+          {
+            "case": "unattempted-prepare",
+            "acceptedWithoutDurableAttempt": false
+          },
+          {
+            "case": "unattempted-commit",
+            "acceptedWithoutDurableAttempt": false
+          }
+        ],
+        "scope": "Actual store with strictly correlated native-response doubles supplied out of order; no actual native mutation/transport/daemon bug claimed."
+      }
+    },
+    {
+      "name": "provenance_positive",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/charles/Warlock/implementation/warlock/qa/cancellation-store-cases/provenance_positive.py"
+      ],
+      "exitCode": 0,
+      "stdoutSHA256": "083c9b46e6aa61f46fa3625ab565aa54dca9ac17cee50920223aed49d400e0ea",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "observations": {
+        "passed": true,
+        "checks": 23,
+        "nativeAcceptance": false,
+        "scope": "Actual store valid explicitCommit/native-ownedCancel controls and persisted missing-marker corruption refusal; native response doubles only."
+      }
+    },
+    {
+      "name": "faults",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/charles/Warlock/implementation/warlock/qa/cancellation-store-cases/faults.py"
+      ],
+      "exitCode": 0,
+      "stdoutSHA256": "6604ccf048393fa70e0d40575843037acc94c761c876f2cba75b0834b207c3a0",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "observations": {
+        "passed": true,
+        "checks": 99,
+        "faultCases": [
+          "write-zero",
+          "file-sync",
+          "close",
+          "replace",
+          "directory-sync",
+          "retire-unlink",
+          "retire-directory-sync",
+          "retire-write-sync",
+          "ack-pending-sync"
+        ],
+        "nativeAcceptance": false,
+        "powerLossProved": false,
+        "scope": "Actual private store syscall failures/poison/reopen with strict native response double; no transport/native/power-loss proof."
+      }
+    },
+    {
+      "name": "capacity",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/charles/Warlock/implementation/warlock/qa/cancellation-store-cases/capacity.py"
+      ],
+      "exitCode": 0,
+      "stdoutSHA256": "25311622fa6211899dc58813e7d22999696bf773a6ca91ea1b4e07802cbc6001",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "observations": {
+        "passed": true,
+        "checks": 239,
+        "terminalPairs": 26,
+        "nativeAcceptance": false,
+        "scope": "Actual maximum-counter finite strict-terminal pairs, exact funded byte boundary and unrelated legacy write exclusion; strict response doubles, not all64slot/hardware ENOSPC or native proof."
+      }
+    }
+  ],
+  "nativeAcceptance": false,
+  "originalAcceptance": false,
+  "completeRuntimeClosureClaimed": false,
+  "limits": "Actual opt-in store with filesystem faults, exact capacity boundaries and strict native-response doubles; daemon/C/Elm consumers disabled. No actual native transport, all64-slot, power-loss or release proof."
+}

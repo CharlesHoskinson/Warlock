@@ -34,3 +34,34 @@ The opt-in Python API is available through `effect_endpoint.Endpoint`: `cancella
 The [strict-client/native evidence](../../../implementation/warlock/qa/evidence/native-cancellation-client-20261030/LIMITS.md) records 533 codec assertions with 200 seeded reply-parameter cases, unchanged pointer regression, and 34 actual native checks on the owning compositor-only tuple. Cancel-first/commit-first and the subsequent late opposing requests preserve the appropriate real window state and exact receipt. Original ARC012 cases remain partial because generation retirement and physical Escape witnesses are missing.
 
 Methods take the full validated prepared/outcome dictionary, preserve its original absolute deadline and return fresh validated native dictionaries. An exact repeated Prepare may recover a prior terminal; it does not execute. Unknown and Prepared cannot be ACKed. The caller must durably retain a known terminal before ACK; the client cannot inspect its storage. A `Refused` exception from validation/transport is not a native Refused certificate and must not be used to guess whether submission happened. See [the protected QA how-to](../how-to/test-native-cancellation.md).
+
+## Optional durable store
+
+`RecoveryStore(runtime, instance, lifetime, cancellation=True)` selects the V7
+store. The default remains the existing legacy store; the production daemon does
+not select V7 in this stage. No frontend option grants this internal capability.
+
+| API | Storage contract |
+| --- | --- |
+| `cancellation_attach(bound)` / `cancellation_detach()` | Caller authenticates the current connection; attach starts with no rights to historical records. |
+| `cancellation_reserve(bound, intent, deadline)` | Requires exact durable host Pending and workspace exclusion; stores immutable identity/deadline and funds future certificate bytes before first prepare permission. Duplicate admission never grants replay. |
+| `cancellation_attempt(key, operation)` | Persists prepare/commit/cancel attempt before transport. Commit is permanently consumed for this key. |
+| `cancellation_observe(key, evidence)` | Accepts only typed, correlated native evidence after durable prepare; Committed also needs durable commit. Native-certified Cancelled does not need a local Cancel marker. |
+| `cancellation_finish(key)` | Confirms stored full terminal certificate, retires exact host admission with directory sync, then persists local retirement. |
+| `cancellation_ack_pending(key)` / `cancellation_acknowledged(key, ack)` | Persist ACK permission only after certificate and retirement barriers; retain exact native ACK afterward. The store makes no native calls. |
+| `cancellation_snapshot(bound)` / `cancellation_recovery_frames(bound)` | Historical information only. Reports preserve original ownership and explicitly deny execution authority. |
+
+V6 predecessor bytes stay frozen. V7 preserves strict legacy statuses; Cancelled
+is a distinct typed certificate destination. Startup turns legacy Pending custody
+into Unknown while keeping typed original Pending keys unchanged. A restart or
+reattachment cannot recreate native mutation permission from disk.
+
+Every write reserves each retained record's maximum possible certificate growth,
+using actual strict wire shapes and finite reasons. The one-MiB envelope and
+64-retained-record bound remain; compaction and all-slot qualification are open.
+`host-cancellation-recovery` is a distinct informational DTO with a current outer
+delivery binding and unchanged historical record inside. Its C/Elm consumer is
+not implemented, so historical certificates do not yet reach the live UI.
+
+See [the store test guide](../how-to/test-cancellation-store.md) and
+[store evidence](../../../implementation/warlock/qa/evidence/cancellation-store-20261030/LIMITS.md).

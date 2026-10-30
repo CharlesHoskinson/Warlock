@@ -70,3 +70,19 @@ The [notification admission correction](../../../implementation/warlock/qa/evide
 ## Native cancellation client and original-scope disposition
 
 The strict opt-in client passes 533 assertions, including 200 seeded malformed/correlation reply-parameter cases, plus unchanged pointer decoding checks. The real compositor-only fixture passes 34 checks with actual GTK Cancelled-before/Committed-before states, identical late-opposing receipts, fixture fsync-before-ACK and explicit normal exits. The earlier shutdown-syntax failure remains preserved. [Independent review](../../../implementation/warlock/qa/evidence/native-cancellation-client-20261030/INDEPENDENT-REVIEW.md) classifies all three ARC012 scenarios partial: physical Escape and per-generation retirement are still missing. No original acceptance or full production cancellation workflow is inferred.
+
+
+## Optional cancellation persistence
+
+The [V7 store evidence](../../../implementation/warlock/qa/evidence/cancellation-store-20261030/LIMITS.md)
+now records an internal opt-in with full certificate-before-retirement/ACK
+ordering, immutable typed identity, permanent attempt gates and future terminal
+byte reservation. Actual protected store cases cover restart, nine syscall
+faults, finite maximum-counter terminal pairs and funded capacity boundaries;
+the reduced model passes 24 named tests and nine bounded samples. Reproduced
+private restart/provenance failures and specific repairs are retained.
+
+The default daemon still uses V6; coordinator/C/Elm lifecycle and recovery
+consumers remain unwired. No new original ARC007/008/012/013 verdict, native
+transport proof, physical Escape, all-slot/resource or release acceptance follows
+from these store checks. [Protocol reference](cancellation-protocol.md).

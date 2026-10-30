@@ -1,0 +1,8 @@
+--- before/cancellation_legacy.py
++++ after/cancellation_legacy.py
+@@ -1,4 +1,4 @@
+-"""Private V7 locked legacy seams; unexecuted proposal, no native transport.
++"""Locked legacy seams for the opt-in V7 store; no native transport.
+ 
+ Caller owns Journal's writer lock and ONE host_guard for every entry point.
+ Borrowed views never acquire/close locks, run legacy constructors, or graft an

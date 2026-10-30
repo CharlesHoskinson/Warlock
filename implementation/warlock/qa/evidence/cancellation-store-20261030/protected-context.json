@@ -1,0 +1,41 @@
+{
+  "basis": "Root-observed unchanged protected launcher terminal output; these identities are recorded observations, not cryptographic tool attestation.",
+  "runs": [
+    {
+      "kind": "restart-red",
+      "scope": "qa-harness-6cd5787d7a254cfd86bc788cb17dd63a.scope",
+      "invocation": "bc94c0bf326e41aaadcdc2c9355231b3",
+      "terminalExit": 0,
+      "interpretation": "Expected defect reproduced, not a passing behavior oracle."
+    },
+    {
+      "kind": "provenance-red",
+      "scope": "qa-harness-05612dce75d446968dc0bdcc826a6b0d.scope",
+      "invocation": "79fd031a1b714f23885b580e3c8793d4",
+      "terminalExit": 0,
+      "interpretation": "Two expected response-double prerequisite gaps reproduced."
+    },
+    {
+      "kind": "model",
+      "scope": "qa-harness-e18256ca39d0485c9af364d95081dc45.scope",
+      "invocation": "09a1eefc9d2c42028c66629cf9e39d88",
+      "terminalExit": 0
+    },
+    {
+      "kind": "final-integrated-store",
+      "scope": "qa-harness-33a5de536d0647c1b86d9d418d23a6bf.scope",
+      "invocation": "a672b3b2b9354df68a3feb3e15b889e2",
+      "terminalExit": 0
+    }
+  ],
+  "completeRuntimeClosureClaimed": false,
+  "daemonEnabled": false,
+  "sourceHashes": {
+    "implementation/warlock/adapter/cancellation_ledger.py": "313165249e35ccf5f0f68bac7acb868d181a4bbd5daa1626c39c79b53b327981",
+    "implementation/warlock/adapter/cancellation_legacy.py": "ad23d4e7c856120885625e8621887a4517acfcfc4d78b21a96986bd160a1ce86",
+    "implementation/warlock/adapter/recovery_store.py": "3257927b706471357d7461b1f71935cb46dfe44b8f4e112418816eb49aaa22f5",
+    "implementation/warlock/qa/check-cancellation-store.py": "20d07be554662f6f8399415c46865941474bd7a699f7ac3a27ab2096066ef1b9",
+    "implementation/warlock/qa/cancellation-durability.qnt": "4990608d4fee052d6232d6cf94e6b2e6e67934fe43b112dcde49d7b01b7038bb",
+    "implementation/warlock/qa/cancellation-durability_test.qnt": "8fd71aaf4d35b15129ac6d667a72547e97ce6708c7d8c6260f08551a5d66db5f"
+  }
+}

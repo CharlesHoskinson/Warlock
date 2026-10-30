@@ -1,0 +1,19 @@
+{
+  "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-durability-quint2-v3",
+  "files": {
+    "cancellation-durability.qnt": "4990608d4fee052d6232d6cf94e6b2e6e67934fe43b112dcde49d7b01b7038bb",
+    "cancellation-durability_test.qnt": "8fd71aaf4d35b15129ac6d667a72547e97ce6708c7d8c6260f08551a5d66db5f"
+  },
+  "testCount": 24,
+  "invariants": [
+    "ackAfterRetirement",
+    "noAutomaticReplay",
+    "cancelledNoMutation",
+    "immutableOriginals",
+    "v6AndSidecarPreserved",
+    "uncertaintyNotAcked",
+    "sentCommitRequiresDurableAttempt",
+    "durableAttemptHasVisibleEvidence",
+    "confirmedCommitAttemptNeverClears"
+  ]
+}

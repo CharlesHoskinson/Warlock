@@ -14,6 +14,7 @@ Choose a page for the work you are doing:
 | Validate current frontend/native composition | [How to validate a current composition](how-to/validate-current-composition.md) |
 | Check an explicitly selected current release build | [How to check current release reproducibility](how-to/check-current-release-reproducibility.md) |
 | Audit an existing result without executing it | [How to read recorded evidence](how-to/read-recorded-evidence.md) |
+| Verify optional cancellation persistence and failure handling | [How to test the cancellation store](how-to/test-cancellation-store.md) |
 | Exercise the staged native cancellation client | [How to test native cancellation](how-to/test-native-cancellation.md) |
 | Prepare proportionate protected verification | [How to verify a selected change](how-to/verify-selected-change.md) |
 | Look up settings schemas, migration backups and failure outcomes | [Appearance settings storage](reference/settings-storage.md) |

@@ -59,3 +59,21 @@ The [first native implementation](../../../implementation/warlock/qa/evidence/na
 
 
 The [actual native ordering fixture](../../../implementation/warlock/qa/evidence/native-cancellation-client-20261030/LIMITS.md) now exercises this owner through the strict effect endpoint API. It fsyncs its own terminal receipt before ACK, then observes the appropriate real minimized/restored state after late opposing requests. This is a useful custody witness for that fixture caller; production daemon recovery has its own schema, crash/migration and transport obligations. A client correlation cache is not durable storage. Likewise final process cleanup does not prove retirement of only a cancelled generation. The remaining original resource and physical Escape witnesses stay explicit.
+
+## Durable cancellation custody
+
+The optional V7 store keeps the original admission identity separate from the
+local uncertainty of owning it after a restart. Legacy custody becomes Unknown;
+the original typed Pending key remains available to correlate a native receipt.
+Disk history alone cannot attach a new native capability.
+
+A native terminal certificate must survive durably before its exact admission is
+removed. Admission-directory durability and local retirement must then complete
+before ACK permits the native owner to release custody. This ordering makes
+interrupted cleanup repairable from a retained certificate without replaying an
+effect. Funding future certificate size at admission prevents other ledger growth
+from consuming the space needed to record an already decided outcome.
+
+[The protocol reference](../reference/cancellation-protocol.md) lists the current
+interfaces. The daemon and C/Elm consumers still require integration; these
+storage rules do not establish a finished cancellation workflow.

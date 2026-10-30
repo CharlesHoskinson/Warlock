@@ -1,0 +1,75 @@
+--- before/cancellation_ledger.py
++++ after/cancellation_ledger.py
+@@ -1,8 +1,8 @@
+-"""Strict cancellation wire DTO only. No storage, admission, transport or ACK.
+-
+-PROPOSAL: this module uses the current production cancellation client validators.
+-Parsing is not an authenticated native observation, ownership proof, persistence,
+-or permission to commit/cancel/ack. Store transitions await a frozen contract.
++"""Opt-in V7 cancellation custody, strict evidence and durable attempt gates.
++
++The authenticated coordinator supplies native evidence; decoding cannot establish
++transport identity. Legacy persistence remains the default. This store performs
++no native calls and does not enable the daemon or frontend cancellation route.
+ """
+ from copy import deepcopy
+ from dataclasses import dataclass, replace
+@@ -271,6 +271,20 @@
+                 for item in state['cancellations']:
+                     if item['stage'] in ('TerminalStored', 'AdmissionRetired'):
+                         legacy_helpers.finish_certificate_locked(self, directory, item['key'])
++                # Preserve the legacy restart contract in the active V7 view.
++                # Only custody status changes: typed admission keys and native
++                # evidence remain immutable, and no old capability is attached.
++                legacy = self._sync(directory)
++                changed = False
++                for row in legacy['entries']:
++                    if row['status'] == 'Pending':
++                        row['status'] = 'Unknown'
++                        changed = True
++                if legacy['latest'] is not None and legacy['latest']['status'] == 'Pending':
++                    legacy['latest']['status'] = 'Unknown'
++                    changed = True
++                if changed:
++                    self._save(legacy)
+         except BaseException:
+             self.poisoned = True
+             self.close()
+@@ -302,6 +316,10 @@
+         if record['lastOperation'] is not None and record['lastOperation'] not in kinds:
+             raise Refused('V7 last operation without attempt')
+         prepared = record['prepared']; observed = record['lastObserved']; cert = record['certificate']
++        if (prepared is not None or observed is not None or cert is not None or 'commit' in kinds or 'cancel' in kinds) and 'prepare' not in kinds:
++            raise Refused('V7 native evidence requires durable preparation attempt')
++        if ('commit' in kinds or 'cancel' in kinds) and prepared is None:
++            raise Refused('V7 mutation attempt requires exact prepared receipt')
+         prepared_id = None
+         if prepared is not None:
+             expected = ExpectedKey.from_values(bound, admission['intent'], record['deadlineMonotonicNs'])
+@@ -322,6 +340,8 @@
+             outcome = parse_receipt(response, key, phase='established' if prepared_id else 'initial')
+             if not outcome.terminal or cert['sha256'] != hashlib.sha256(encoded(response)).hexdigest():
+                 raise Refused('V7 terminal certificate correlation')
++            if response['status'] == 'Committed' and not record['commitAttempted']:
++                raise Refused('V7 committed receipt requires durable commit attempt')
+             if observed != response:
+                 raise Refused('V7 terminal observation mismatch')
+         if (record['stage'] in ('TerminalStored', 'AdmissionRetired')) != (cert is not None):
+@@ -442,6 +462,8 @@
+             state = self._current_v7_locked()
+             record = self._record_locked(state, identifier)
+             self._require_live_record(record)
++            if 'prepare' not in record['attemptedKinds']:
++                raise Refused('Native observation before durable preparation attempt')
+             if evidence.key != identifier or evidence.admission() != record['admission']:
+                 raise Refused('V7 native evidence admission mismatch')
+             response = evidence.response.value()
+@@ -450,6 +472,8 @@
+             known_id = old_prepared['preparedId'] if old_prepared is not None else None
+             expected = ExpectedKey.from_values(bound, intent, record['deadlineMonotonicNs'], known_id)
+             receipt = parse_receipt(response, expected, phase='established' if known_id else 'initial')
++            if receipt.status == 'Committed' and not record['commitAttempted']:
++                raise Refused('Committed observation before durable commit attempt')
+             old_observed = record['lastObserved']
+             if old_observed is not None and old_observed['preparedId'] != response['preparedId']:
+                 self.poisoned = True

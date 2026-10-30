@@ -1,0 +1,149 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      a:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 100,
+          durable: Empty,
+          file: false,
+          key: 1,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 11,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 1,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      autoReplay: 0,
+      b:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 200,
+          durable: Empty,
+          file: false,
+          key: 2,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 22,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 2,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      currentGrant: 1,
+      everCommitA: false,
+      everCommitB: false,
+      markerValid: true,
+      migrationValidated: true,
+      oldV6: 7,
+      poisoned: false,
+      predecessorValid: true,
+      sidecar: 9,
+      wanted: Empty,
+      wantedOperation: NoOperation,
+      writeKey: 0,
+      writer: Idle
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      a:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 100,
+          durable: Empty,
+          file: false,
+          key: 1,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 11,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 1,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      autoReplay: 0,
+      b:
+        {
+          absenceSynced: true,
+          ackEvidence: false,
+          binding: 1,
+          commitAttempted: false,
+          deadline: 200,
+          durable: Empty,
+          file: false,
+          key: 2,
+          lastOperation: NoOperation,
+          live: false,
+          mutations: 0,
+          native: NativeAbsent,
+          nativeAck: 0,
+          pid: 22,
+          preparedEvidence: false,
+          sendsCancel: 0,
+          sendsCommit: 0,
+          sendsPrepare: 0,
+          target: 2,
+          terminalEvidence: false,
+          visible: Empty,
+          visibleCommitAttempted: false
+        },
+      currentGrant: 1,
+      everCommitA: false,
+      everCommitB: false,
+      markerValid: true,
+      migrationValidated: true,
+      oldV6: 7,
+      poisoned: true,
+      predecessorValid: false,
+      sidecar: 9,
+      wanted: Empty,
+      wantedOperation: NoOperation,
+      writeKey: 0,
+      writer: Idle
+    }
+}
+
+[ok] No violation found (5ms at 200 traces/second).
+Trace length statistics: max=2, min=2, average=2.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x13528a6 --backend=typescript to reproduce.
