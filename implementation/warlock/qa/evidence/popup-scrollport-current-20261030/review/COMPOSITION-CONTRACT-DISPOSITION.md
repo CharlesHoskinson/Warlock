@@ -1,0 +1,16 @@
+# Current static-asset composition contract disposition
+
+ACCEPTED as bounded CPU composition-contract evidence. SOURCE_READY for the two runtime-binding derivative files only. This does not establish runnable pin-independence fixture readiness or native acceptance. Reviewer read source/evidence and hashes; ran no QA and edited no public files.
+
+The protected report current-native-test-1793325067822823192/report.json has SHA256 01963a28eea433dc0f75ea939aa35b3445ae62d7ada3ff64aa05355ca10fd85c. It records45 passing checks, no failures, coreLimit1 and qa-harness-6908b15341eb46f487aa20c6ef6125b8.scope. Reviewed lock is ba97d48eaa4f8c093c63f4b6b6e46d9d2ad602f95ffae16cda226af550d8bcd0. Native/release claims remain false. Seed20261030 selects16 declared input hashes, not randomized native event sequences or exhaustive dependency coverage.
+
+Read actual executed driver and compared it with public check-current-native.py: private root-path adaptation, capture counts15/12 and explicit static delta check, plus exactly three test-mode additions. Existing42 cases remain. The three additions remove frontendStaticChanges, replace its old digest, or replace its current digest in separately retained candidate lock JSON files. Cases19/20/21 alter only that metadata field and production validate_composition rejects each with Current composition or historical/current role inventory differs. Candidate files are rehashed before consumption, so these checks reach semantic composition comparison rather than merely failing a stale outer digest. Frozen native files are not mutated. Final original composition still validates.
+
+Archived executed-check.py, executed-current-native.py and executed-current-build.py hashes match the report input map and current reviewed sources: f5659e830adb605d1a033b982db848d29fa53e0817cab7d0d66f34dfc55dbb5c; 4d22ddd511a69bb10caa4c624d030cf69953591024e0d38bd99dc0c1d9ab4edc; d4e5af280a275f9a777322ee60f1f34bf21751b6726edcaa4e4105a02da4dbc7 respectively. This supports role/provenance validation for the new static observation asset, not full DEL003 release reproducibility or behavioral ABI acceptance.
+
+Runtime binding derivative source review:
+
+* pin-top-runtime-root-v1/runtime_candidate.py SHA2564532b20394a62db96d70923b4efcff10bee0b07c5263efdf6b189d0da1b3a69e
+* pin-top-runtime-root-v1/fresh_candidate.py SHA2566e1f46eae9fb5fe9e08ff0db1f8746fdbba34adf4af2afa2253d9b4a2be0dfa7
+
+Compared against accepted attention-v5 source: only verify_tuple's current_native API hash, frontend receipt path/hash, native lock path/hash, and matching sourceQualification metadata change. The facade changes only RUNTIME_SHA. Runtime suffix, ownership-depth facade, strict helper pins, session isolation and native mechanism code are byte-identical. The derivative points to reviewed frontend65b909422a1866a9df8f118b134ea42778fd69564aed070bdb92c0975f3818d8 and native lockba97d48e...; all assets still pass the production composition API even though the legacy return tuple exposes only three root bundles. No new native trial was inspected or inferred. The complete fixture still needs the actual exact-object popup join, current-control/AT guards and runnable entrypoint reviewed separately. Old accepted attention-v5 remains tied to its original immutable tuple.

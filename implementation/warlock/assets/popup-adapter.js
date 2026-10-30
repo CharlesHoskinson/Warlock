@@ -172,6 +172,11 @@ if (window.elmHostQA) {
       const r=item.getBoundingClientRect(),label=item.querySelector('.control-label')?.getBoundingClientRect();return {id:item.id,identity:item.dataset.notificationContent||item.dataset.systemContent||item.dataset.filesContent||item.dataset.jumpContent,label:item.textContent,labelRect:label?{x:label.x,y:label.y,width:label.width,height:label.height}:null,accessibleName:item.querySelector('.control-label')?.textContent||'',disabled:true,x:r.x,y:r.y,width:r.width,height:r.height};
     });
     const node=document.querySelector('.surface-bar,.surface-popup');
+    // QA observes the actual scroll container's client box, excluding borders
+    // and reserved scrollbar space. Viewport bounds alone cannot establish
+    // that a control is fully visible inside this container.
+    const scrollBox=node?.getBoundingClientRect();
+    const scrollport=node&&scrollBox?{x:scrollBox.x+node.clientLeft,y:scrollBox.y+node.clientTop,width:node.clientWidth,height:node.clientHeight}:null;
     const fields=[...document.querySelectorAll('[data-surface-field]')].map(field=>({id:field.id,value:field.value,accessibleName:field.getAttribute('aria-label'),disabled:field.disabled,caretStart:field.selectionStart,caretEnd:field.selectionEnd}));
     const palette={background:getComputedStyle(document.body).backgroundColor,foreground:getComputedStyle(document.body).color};
     const active=document.activeElement,activeStyle=active&&getComputedStyle(active),activeBox=active?.getBoundingClientRect();
@@ -182,6 +187,8 @@ if (window.elmHostQA) {
     });
     if(active&&!focusNodes.has(active))focusNodes.set(active,++focusNodeSerial);
     const body={focusNode:active?focusNodes.get(active):null,focusIdentity:active?.dataset.surfaceControl||null,announcements:[...document.querySelectorAll(".shell-announcement")].map(n=>({text:n.textContent,sequence:n.querySelector("[data-announcement-sequence]")?.dataset.announcementSequence||null,correlation:n.querySelector("[data-announcement-correlation]")?.dataset.announcementCorrelation||null,live:n.getAttribute("aria-live")})),previews,motionProfile:node?.dataset.motion||null,motionAnimations:document.getAnimations().length,queryObservations:window.imeQueryObservations||[],compositionEvents,composing:document.querySelector('[data-input-composing]')?.dataset.inputComposing==='true',palette,focusStyle,publication:node?.dataset.publication||null,lease:node?.dataset.lease||null,buttons,content,fields,focus:document.activeElement?.id||'',documentFocused:document.hasFocus(),fontSize:getComputedStyle(document.body).fontSize,theme:document.documentElement.dataset.theme||null,textScale:document.documentElement.dataset.textScale||null,effects:document.documentElement.dataset.effects||null,reducedTransparency:document.documentElement.dataset.reducedTransparency||null,viewportWidth:innerWidth,viewportHeight:innerHeight,scrollTop:node?.scrollTop||0,scrollHeight:node?.scrollHeight||0,text:document.body.innerText};
+    body.scrollport=scrollport;
+    body.mode=node?.dataset.mode||null;
     const current=JSON.stringify(body);if(current!==last){last=current;post({kind:'surface-report',body});}
   });
   for(const type of ['compositionstart','compositionupdate','compositionend','input'])document.addEventListener(type,event=>{

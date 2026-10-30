@@ -963,3 +963,20 @@ The current frontend recipe is implemented at `adapter/current_build.py`: captur
 The [current recipe evidence](qa/evidence/current-frontend-build-20261030/LIMITS.md) retains the initial private-registry ownership failure and a corrected protected run passing 34 checks, including a real three-root build and actual disposable input/output mutations. Independent source review covers the 229-input lock and registry lifecycle. This provides a reusable replacement for frontend build wrappers; reviewed native composition and full release input/provenance qualification remain open.
 
 `adapter/current_native.py` now validates an explicitly reviewed current frontend/native composition while preserving historical guards and resolving historical source bytes separately. The [composition evidence](qa/evidence/current-native-composition-20261030/LIMITS.md) retains the 4,105-input capture and 42 passing contract checks, including sixteen seeded declared-hash mutations. Follow the [composition procedure](../../docs/warlock/how-to/validate-current-composition.md). No native code was loaded; actual window-system, AT, known renderer and release gates remain open.
+
+## Current popup visibility observation
+
+The private QA popup report now includes its actual client scrollport and mode in
+the same frame as control rectangles, publication and lease. This read-only
+observation excludes border and scrollbar space; it changes no control policy.
+The fresh three-root frontend build passes. Composition validation explicitly
+separates the reviewed current popup asset from historical source bytes verified
+in Git, while retaining all native binary, object, provider and dependency pins.
+All 45 bounded composition checks pass, including three static-role rejection
+cases. The initial historical/current asset-role refusal remains preserved in
+[the evidence](qa/evidence/popup-scrollport-current-20261030/LIMITS.md).
+
+These checks do not observe a live popup or accept application-pin versus
+always-on-top independence. Exact native popup ownership, current geometry,
+applicable input/AT actions and normal cleanup remain required. See
+[the ownership explanation](../../docs/warlock/explanation/application-pin-and-always-on-top.md).
