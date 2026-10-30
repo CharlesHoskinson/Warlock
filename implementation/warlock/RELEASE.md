@@ -120,3 +120,7 @@ The capture environment must resolve both the selected core and plugin to the
 selected Aquamarine SONAME alias. Set the reviewed private library search path
 before capture; it is locked and must be identical during verify/build. A
 same-SONAME system library, changed alias or changed resolution is refused.
+
+## Current frontend recipe
+
+`adapter/current_build.py` provides capture/build/validate for a separately reviewed current frontend lock and report. It preserves the historical release builder's native tuple and asset equality checks; its three-root output is not an accepted release package. Follow the [current frontend procedure](../../docs/warlock/how-to/build-current-frontend.md). Native host object composition/ABI/provider identity, upstream source provenance, offline two-build reproducibility and compliance remain separate.

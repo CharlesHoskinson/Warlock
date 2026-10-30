@@ -1,0 +1,61 @@
+{
+  "checks": [
+    {
+      "name": "Reviewed current lock validates",
+      "passed": true
+    },
+    {
+      "error": "Current frontend inventory or recipe differs from reviewed lock",
+      "name": "Changed source dependency hash refused",
+      "passed": true
+    },
+    {
+      "error": "Current frontend inventory or recipe differs from reviewed lock",
+      "name": "Changed held dependency hash refused",
+      "passed": true
+    },
+    {
+      "error": "Current frontend inventory or recipe differs from reviewed lock",
+      "name": "Unlisted source refused",
+      "passed": true
+    },
+    {
+      "error": "Current frontend inventory or recipe differs from reviewed lock",
+      "name": "Unlisted cache input refused",
+      "passed": true
+    },
+    {
+      "error": "Current frontend inventory or recipe differs from reviewed lock",
+      "name": "Changed root recipe refused",
+      "passed": true
+    },
+    {
+      "error": "Duplicate JSON key: schema",
+      "name": "Duplicate JSON keys refused",
+      "passed": true
+    },
+    {
+      "error": "Receipt/lock digest differs: /home/charles/.local/state/warlock-team/20261028/native-rebuild/current-build-lock-root-v2.json",
+      "name": "Wrong reviewed lock digest refused",
+      "passed": true
+    },
+    {
+      "name": "Actual Main Bar Popup optimized compilation succeeds",
+      "passed": false
+    }
+  ],
+  "error": "AssertionError('Actual Main Bar Popup optimized compilation succeeds')",
+  "inputs": {
+    "/home/charles/Warlock/implementation/warlock/adapter/current_build.py": "18d77ee4d5649a433a67224d658374c268bf3fbc9bd4052a70fbadb5d8e1bfb7",
+    "/home/charles/Warlock/implementation/warlock/qa/check-current-build.py": "9b10fc86528b7715b39b0e2a8c6d848ea026b3031ee08bae253d9afe2f18f4f8"
+  },
+  "limit": "Current frontend recipe and actual bounded mutation checks, not native tuple composition, complete upstream source provenance or offline reproducibility.",
+  "nativeAcceptance": false,
+  "passed": false,
+  "releaseAccepted": false,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-e52757270ea84d8e871e01b7cd962d4e.scope",
+    "coreLimit": 1
+  },
+  "traceback": "Traceback (most recent call last):\n  File \"/home/charles/Warlock/implementation/warlock/qa/check-current-build.py\", line 52, in main\n    yes('Actual Main Bar Popup optimized compilation succeeds',result['passed'] and len(result['commands'])==3 and all(c['exit']==0 for c in result['commands']))\n    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/charles/Warlock/implementation/warlock/qa/check-current-build.py\", line 28, in yes\n    if not condition: raise AssertionError(name)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Actual Main Bar Popup optimized compilation succeeds\n"
+}

@@ -1,0 +1,188 @@
+{
+  "buildReceipt": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-build-contracts-1793318770694864206/build/report.json",
+    "sha256": "613b4592a37982cedb881ba7edfd68d23349130a057ec9b0e62e213b2b17161d"
+  },
+  "checks": [
+    {
+      "name": "Reviewed current lock validates",
+      "passed": true
+    },
+    {
+      "error": "Current frontend inventory or recipe differs from reviewed lock",
+      "name": "Changed source dependency hash refused",
+      "passed": true
+    },
+    {
+      "error": "Current frontend inventory or recipe differs from reviewed lock",
+      "name": "Changed held dependency hash refused",
+      "passed": true
+    },
+    {
+      "error": "Current frontend inventory or recipe differs from reviewed lock",
+      "name": "Unlisted source refused",
+      "passed": true
+    },
+    {
+      "error": "Current frontend inventory or recipe differs from reviewed lock",
+      "name": "Unlisted cache input refused",
+      "passed": true
+    },
+    {
+      "error": "Current frontend inventory or recipe differs from reviewed lock",
+      "name": "Changed root recipe refused",
+      "passed": true
+    },
+    {
+      "error": "Duplicate JSON key: schema",
+      "name": "Duplicate JSON keys refused",
+      "passed": true
+    },
+    {
+      "error": "Receipt/lock digest differs: /home/charles/.local/state/warlock-team/20261028/native-rebuild/current-build-lock-root-v5.json",
+      "name": "Wrong reviewed lock digest refused",
+      "passed": true
+    },
+    {
+      "name": "Actual Main Bar Popup optimized compilation succeeds",
+      "passed": true
+    },
+    {
+      "name": "Current report validates actual inputs and outputs",
+      "passed": true
+    },
+    {
+      "error": "Current compiled output differs",
+      "name": "Changed compiled elm.js refused",
+      "passed": true
+    },
+    {
+      "error": "Current compiled output differs",
+      "name": "Changed compiled bar.js refused",
+      "passed": true
+    },
+    {
+      "error": "Current compiled output differs",
+      "name": "Changed compiled popup.js refused",
+      "passed": true
+    },
+    {
+      "error": "Current compiled output differs",
+      "name": "Changed static asset refused",
+      "passed": true
+    },
+    {
+      "error": "Compiler log differs",
+      "name": "Changed compiler log refused",
+      "passed": true
+    },
+    {
+      "error": "Registry artifact differs",
+      "name": "Changed registry snapshot refused",
+      "passed": true
+    },
+    {
+      "error": "Final private registry differs",
+      "name": "Changed final private registry refused",
+      "passed": true
+    },
+    {
+      "error": "Private cache input differs: 0.19.2/packages/elm/browser/1.0.2/LICENSE",
+      "name": "Changed non-registry private cache input refused",
+      "passed": true
+    },
+    {
+      "error": "Staged source differs: src/Main.elm",
+      "name": "Changed staged source refused",
+      "passed": true
+    },
+    {
+      "error": "Private cache inventory differs",
+      "name": "Unlisted private cache file refused",
+      "passed": true
+    },
+    {
+      "error": "Staged source inventory differs",
+      "name": "Unlisted staged source refused",
+      "passed": true
+    },
+    {
+      "error": "Current compiled output differs",
+      "name": "Unlisted output refused",
+      "passed": true
+    },
+    {
+      "error": "Receipt/lock digest differs: /home/charles/.local/state/warlock-team/20261028/native-rebuild/current-build-contracts-1793318770694864206/build/report.json",
+      "name": "Wrong reviewed report digest refused",
+      "passed": true
+    },
+    {
+      "error": "Not a passing current frontend receipt",
+      "name": "Failed receipt refused",
+      "passed": true
+    },
+    {
+      "error": "Missing successful root build",
+      "name": "Foreign root receipt refused",
+      "passed": true
+    },
+    {
+      "error": "Compiler command/environment differs",
+      "name": "Foreign compiler command refused",
+      "passed": true
+    },
+    {
+      "error": "Compiler command/environment differs",
+      "name": "Foreign compiler environment refused",
+      "passed": true
+    },
+    {
+      "error": "Registry input chain differs",
+      "name": "Broken registry chain refused",
+      "passed": true
+    },
+    {
+      "error": "Compiler command/environment differs",
+      "name": "Timed-out receipt refused",
+      "passed": true
+    },
+    {
+      "error": "Frontend receipt raises native/release claims",
+      "name": "Raised native claim refused",
+      "passed": true
+    },
+    {
+      "error": "Frontend receipt raises native/release claims",
+      "name": "Raised release claim refused",
+      "passed": true
+    },
+    {
+      "name": "Restored original report remains valid",
+      "passed": true
+    },
+    {
+      "name": "Driver input unchanged check-current-build.py",
+      "passed": true
+    },
+    {
+      "name": "Driver input unchanged current_build.py",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "/home/charles/Warlock/implementation/warlock/adapter/current_build.py": "d4e5af280a275f9a777322ee60f1f34bf21751b6726edcaa4e4105a02da4dbc7",
+    "/home/charles/Warlock/implementation/warlock/qa/check-current-build.py": "4f80a091356bf43bb9ec94c0e4ca8b2aa055c9da6bfca7e47c4752e015bfba71"
+  },
+  "limit": "Current frontend recipe and actual bounded mutation checks, not native tuple composition, complete upstream source provenance or offline reproducibility.",
+  "lock": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-build-lock-root-v5.json",
+    "sha256": "abd0b33788b81c3c268a440b6d3f51e2bb27744aba8683bd9963b9f8ea6169c4"
+  },
+  "nativeAcceptance": false,
+  "passed": true,
+  "releaseAccepted": false,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-99edb6e28a22423abf93503810306b4d.scope",
+    "coreLimit": 1
+  }
+}
