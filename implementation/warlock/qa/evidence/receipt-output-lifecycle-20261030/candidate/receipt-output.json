@@ -1,0 +1,3516 @@
+{
+  "initialSeed": 1705492499,
+  "algorithm": "xorshift32",
+  "cases": 200,
+  "checksPerCase": 31,
+  "representative": {
+    "index": 0,
+    "seed": 689452769,
+    "fullResult": {
+      "seed": 689452769,
+      "case": {
+        "inputIntent": {
+          "request": "1",
+          "generation": "1",
+          "incarnation": "1",
+          "operation": "minimize",
+          "context": {
+            "lifetime": "1",
+            "epoch": "1",
+            "output": "1",
+            "revision": "1"
+          }
+        },
+        "checks": {
+          "readyPendingActuallyEmitsOne": true,
+          "topologyAdmitsNewOutput": true,
+          "newerDifferentIncarnationActuallyPending": true,
+          "disconnectMakesUnknownWithoutEffect": true,
+          "validatedUnknownRecordNormalizesMatchingReservation": true
+        },
+        "initialProjection": {
+          "protocolVersion": 3,
+          "kind": "action-projection",
+          "binding": {
+            "lifetime": "1",
+            "session": "1",
+            "frontend": "1"
+          },
+          "requestId": "1",
+          "context": {
+            "lifetime": "1",
+            "epoch": "1",
+            "output": "1",
+            "revision": "1"
+          },
+          "scene": {
+            "revision": "1",
+            "focused": "1",
+            "windows": [
+              {
+                "incarnation": "1",
+                "label": "Document 1",
+                "owner": null,
+                "application": "documents",
+                "minimized": false,
+                "available": true
+              },
+              {
+                "incarnation": "2",
+                "label": "Document 2",
+                "owner": null,
+                "application": "documents",
+                "minimized": false,
+                "available": true
+              }
+            ]
+          }
+        },
+        "topology": {
+          "viewProtocol": 2,
+          "kind": "view-topology",
+          "revision": "2",
+          "views": [
+            {
+              "id": "2",
+              "generation": "1"
+            }
+          ],
+          "locations": [
+            {
+              "scope": {
+                "id": "2",
+                "generation": "1"
+              },
+              "box": [
+                800,
+                0,
+                800,
+                600
+              ]
+            }
+          ]
+        },
+        "pending": {
+          "observedContext": {
+            "lifetime": "1",
+            "epoch": "1",
+            "output": "1",
+            "revision": "1"
+          },
+          "transaction": {
+            "intent": {
+              "request": "1",
+              "generation": "1",
+              "incarnation": "1",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "1",
+                "epoch": "1",
+                "output": "1",
+                "revision": "1"
+              }
+            },
+            "status": "Pending",
+            "protocol": 1
+          },
+          "unresolved": [
+            {
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "1",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "1",
+                  "epoch": "1",
+                  "output": "1",
+                  "revision": "1"
+                }
+              },
+              "status": "Pending",
+              "protocol": 1
+            }
+          ],
+          "issued": [
+            {
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "1",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "1",
+                  "epoch": "1",
+                  "output": "1",
+                  "revision": "1"
+                }
+              },
+              "protocol": 1,
+              "binding": {
+                "lifetime": "1",
+                "session": "1",
+                "frontend": "1"
+              }
+            }
+          ],
+          "request": "1",
+          "generation": "1",
+          "observed": {
+            "windows": [
+              {
+                "incarnation": "1",
+                "minimized": false
+              },
+              {
+                "incarnation": "2",
+                "minimized": false
+              }
+            ],
+            "connected": true,
+            "request": "1",
+            "generation": "1",
+            "transaction": {
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "1",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "1",
+                  "epoch": "1",
+                  "output": "1",
+                  "revision": "1"
+                }
+              },
+              "status": "Pending"
+            }
+          },
+          "decoderRefusal": null
+        },
+        "projected": {
+          "observedContext": {
+            "lifetime": "1",
+            "epoch": "1",
+            "output": "2",
+            "revision": "2"
+          },
+          "transaction": {
+            "intent": {
+              "request": "1",
+              "generation": "1",
+              "incarnation": "1",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "1",
+                "epoch": "1",
+                "output": "1",
+                "revision": "1"
+              }
+            },
+            "status": "Unknown",
+            "protocol": 1
+          },
+          "unresolved": [
+            {
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "1",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "1",
+                  "epoch": "1",
+                  "output": "1",
+                  "revision": "1"
+                }
+              },
+              "status": "Pending",
+              "protocol": 1
+            }
+          ],
+          "issued": [
+            {
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "1",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "1",
+                  "epoch": "1",
+                  "output": "1",
+                  "revision": "1"
+                }
+              },
+              "protocol": 1,
+              "binding": {
+                "lifetime": "1",
+                "session": "1",
+                "frontend": "1"
+              }
+            }
+          ],
+          "request": "1",
+          "generation": "1",
+          "observed": {
+            "windows": [
+              {
+                "incarnation": "1",
+                "minimized": false
+              },
+              {
+                "incarnation": "2",
+                "minimized": false
+              }
+            ],
+            "connected": true,
+            "request": "1",
+            "generation": "1",
+            "transaction": {
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "1",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "1",
+                  "epoch": "1",
+                  "output": "1",
+                  "revision": "1"
+                }
+              },
+              "status": "Unknown"
+            }
+          },
+          "decoderRefusal": null
+        },
+        "newer": {
+          "observedContext": {
+            "lifetime": "1",
+            "epoch": "1",
+            "output": "2",
+            "revision": "2"
+          },
+          "transaction": {
+            "intent": {
+              "request": "2",
+              "generation": "2",
+              "incarnation": "2",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "1",
+                "epoch": "1",
+                "output": "2",
+                "revision": "2"
+              }
+            },
+            "status": "Pending",
+            "protocol": 1
+          },
+          "unresolved": [
+            {
+              "intent": {
+                "request": "2",
+                "generation": "2",
+                "incarnation": "2",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "1",
+                  "epoch": "1",
+                  "output": "2",
+                  "revision": "2"
+                }
+              },
+              "status": "Pending",
+              "protocol": 1
+            },
+            {
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "1",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "1",
+                  "epoch": "1",
+                  "output": "1",
+                  "revision": "1"
+                }
+              },
+              "status": "Pending",
+              "protocol": 1
+            }
+          ],
+          "issued": [
+            {
+              "intent": {
+                "request": "2",
+                "generation": "2",
+                "incarnation": "2",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "1",
+                  "epoch": "1",
+                  "output": "2",
+                  "revision": "2"
+                }
+              },
+              "protocol": 1,
+              "binding": {
+                "lifetime": "1",
+                "session": "1",
+                "frontend": "1"
+              }
+            },
+            {
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "1",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "1",
+                  "epoch": "1",
+                  "output": "1",
+                  "revision": "1"
+                }
+              },
+              "protocol": 1,
+              "binding": {
+                "lifetime": "1",
+                "session": "1",
+                "frontend": "1"
+              }
+            }
+          ],
+          "request": "2",
+          "generation": "2",
+          "observed": {
+            "windows": [
+              {
+                "incarnation": "1",
+                "minimized": false
+              },
+              {
+                "incarnation": "2",
+                "minimized": false
+              }
+            ],
+            "connected": true,
+            "request": "2",
+            "generation": "2",
+            "transaction": {
+              "intent": {
+                "request": "2",
+                "generation": "2",
+                "incarnation": "2",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "1",
+                  "epoch": "1",
+                  "output": "2",
+                  "revision": "2"
+                }
+              },
+              "status": "Pending"
+            }
+          },
+          "decoderRefusal": null
+        },
+        "disconnected": {
+          "observedContext": {
+            "lifetime": "1",
+            "epoch": "1",
+            "output": "1",
+            "revision": "1"
+          },
+          "transaction": {
+            "intent": {
+              "request": "1",
+              "generation": "1",
+              "incarnation": "1",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "1",
+                "epoch": "1",
+                "output": "1",
+                "revision": "1"
+              }
+            },
+            "status": "Unknown",
+            "protocol": 1
+          },
+          "unresolved": [
+            {
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "1",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "1",
+                  "epoch": "1",
+                  "output": "1",
+                  "revision": "1"
+                }
+              },
+              "status": "Unknown",
+              "protocol": 1
+            }
+          ],
+          "issued": [
+            {
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "1",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "1",
+                  "epoch": "1",
+                  "output": "1",
+                  "revision": "1"
+                }
+              },
+              "protocol": 1,
+              "binding": {
+                "lifetime": "1",
+                "session": "1",
+                "frontend": "1"
+              }
+            }
+          ],
+          "request": "1",
+          "generation": "1",
+          "observed": {
+            "windows": [
+              {
+                "incarnation": "1",
+                "minimized": false
+              },
+              {
+                "incarnation": "2",
+                "minimized": false
+              }
+            ],
+            "connected": false,
+            "request": "1",
+            "generation": "1",
+            "transaction": {
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "1",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "1",
+                  "epoch": "1",
+                  "output": "1",
+                  "revision": "1"
+                }
+              },
+              "status": "Unknown"
+            }
+          },
+          "decoderRefusal": null
+        },
+        "unknownRecoveryInput": {
+          "protocolVersion": 3,
+          "kind": "host-reservation-unknown",
+          "binding": {
+            "lifetime": "1",
+            "session": "1",
+            "frontend": "1"
+          },
+          "record": {
+            "schema": 2,
+            "effectProtocol": 1,
+            "binding": {
+              "lifetime": "1",
+              "session": "1",
+              "frontend": "1"
+            },
+            "intent": {
+              "request": "1",
+              "generation": "1",
+              "incarnation": "1",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "1",
+                "epoch": "1",
+                "output": "1",
+                "revision": "1"
+              }
+            },
+            "status": "Unknown"
+          }
+        },
+        "recovered": {
+          "observedContext": {
+            "lifetime": "1",
+            "epoch": "1",
+            "output": "2",
+            "revision": "2"
+          },
+          "transaction": {
+            "intent": {
+              "request": "1",
+              "generation": "1",
+              "incarnation": "1",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "1",
+                "epoch": "1",
+                "output": "1",
+                "revision": "1"
+              }
+            },
+            "status": "Unknown",
+            "protocol": 1
+          },
+          "unresolved": [
+            {
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "1",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "1",
+                  "epoch": "1",
+                  "output": "1",
+                  "revision": "1"
+                }
+              },
+              "status": "Unknown",
+              "protocol": 1
+            }
+          ],
+          "issued": [
+            {
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "1",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "1",
+                  "epoch": "1",
+                  "output": "1",
+                  "revision": "1"
+                }
+              },
+              "protocol": 1,
+              "binding": {
+                "lifetime": "1",
+                "session": "1",
+                "frontend": "1"
+              }
+            }
+          ],
+          "request": "1",
+          "generation": "1",
+          "observed": {
+            "windows": [
+              {
+                "incarnation": "1",
+                "minimized": false
+              },
+              {
+                "incarnation": "2",
+                "minimized": false
+              }
+            ],
+            "connected": true,
+            "request": "1",
+            "generation": "1",
+            "transaction": {
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "1",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "1",
+                  "epoch": "1",
+                  "output": "1",
+                  "revision": "1"
+                }
+              },
+              "status": "Unknown"
+            }
+          },
+          "decoderRefusal": null
+        },
+        "receipts": {
+          "Unknown": {
+            "wire": {
+              "protocolVersion": 3,
+              "kind": "effect-outcome",
+              "effectProtocol": 1,
+              "binding": {
+                "lifetime": "1",
+                "session": "1",
+                "frontend": "1"
+              },
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "1",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "1",
+                  "epoch": "1",
+                  "output": "1",
+                  "revision": "1"
+                }
+              },
+              "status": "Unknown",
+              "reason": "applied",
+              "revision": "2",
+              "outputGeneration": "1"
+            },
+            "sameAuthority": {
+              "observedContext": {
+                "lifetime": "1",
+                "epoch": "1",
+                "output": "1",
+                "revision": "1"
+              },
+              "transaction": {
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "1",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "1",
+                    "epoch": "1",
+                    "output": "1",
+                    "revision": "1"
+                  }
+                },
+                "status": "Unknown",
+                "protocol": 1
+              },
+              "unresolved": [
+                {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "status": "Unknown",
+                  "protocol": 1
+                }
+              ],
+              "issued": [
+                {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "protocol": 1,
+                  "binding": {
+                    "lifetime": "1",
+                    "session": "1",
+                    "frontend": "1"
+                  }
+                }
+              ],
+              "request": "1",
+              "generation": "1",
+              "observed": {
+                "windows": [
+                  {
+                    "incarnation": "1",
+                    "minimized": false
+                  },
+                  {
+                    "incarnation": "2",
+                    "minimized": false
+                  }
+                ],
+                "connected": true,
+                "request": "1",
+                "generation": "1",
+                "transaction": {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "status": "Unknown"
+                }
+              },
+              "decoderRefusal": null
+            },
+            "afterOutput": {
+              "observedContext": {
+                "lifetime": "1",
+                "epoch": "1",
+                "output": "2",
+                "revision": "2"
+              },
+              "transaction": {
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "1",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "1",
+                    "epoch": "1",
+                    "output": "1",
+                    "revision": "1"
+                  }
+                },
+                "status": "Unknown",
+                "protocol": 1
+              },
+              "unresolved": [
+                {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "status": "Unknown",
+                  "protocol": 1
+                }
+              ],
+              "issued": [
+                {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "protocol": 1,
+                  "binding": {
+                    "lifetime": "1",
+                    "session": "1",
+                    "frontend": "1"
+                  }
+                }
+              ],
+              "request": "1",
+              "generation": "1",
+              "observed": {
+                "windows": [
+                  {
+                    "incarnation": "1",
+                    "minimized": false
+                  },
+                  {
+                    "incarnation": "2",
+                    "minimized": false
+                  }
+                ],
+                "connected": true,
+                "request": "1",
+                "generation": "1",
+                "transaction": {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "status": "Unknown"
+                }
+              },
+              "decoderRefusal": null
+            },
+            "afterNewTransaction": {
+              "observedContext": {
+                "lifetime": "1",
+                "epoch": "1",
+                "output": "2",
+                "revision": "2"
+              },
+              "transaction": {
+                "intent": {
+                  "request": "2",
+                  "generation": "2",
+                  "incarnation": "2",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "1",
+                    "epoch": "1",
+                    "output": "2",
+                    "revision": "2"
+                  }
+                },
+                "status": "Pending",
+                "protocol": 1
+              },
+              "unresolved": [
+                {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "status": "Pending",
+                  "protocol": 1
+                },
+                {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "status": "Unknown",
+                  "protocol": 1
+                }
+              ],
+              "issued": [
+                {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "protocol": 1,
+                  "binding": {
+                    "lifetime": "1",
+                    "session": "1",
+                    "frontend": "1"
+                  }
+                },
+                {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "protocol": 1,
+                  "binding": {
+                    "lifetime": "1",
+                    "session": "1",
+                    "frontend": "1"
+                  }
+                }
+              ],
+              "request": "2",
+              "generation": "2",
+              "observed": {
+                "windows": [
+                  {
+                    "incarnation": "1",
+                    "minimized": false
+                  },
+                  {
+                    "incarnation": "2",
+                    "minimized": false
+                  }
+                ],
+                "connected": true,
+                "request": "2",
+                "generation": "2",
+                "transaction": {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "status": "Pending"
+                }
+              },
+              "decoderRefusal": null
+            },
+            "afterDisconnect": {
+              "observedContext": {
+                "lifetime": "1",
+                "epoch": "1",
+                "output": "1",
+                "revision": "1"
+              },
+              "transaction": {
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "1",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "1",
+                    "epoch": "1",
+                    "output": "1",
+                    "revision": "1"
+                  }
+                },
+                "status": "Unknown",
+                "protocol": 1
+              },
+              "unresolved": [
+                {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "status": "Unknown",
+                  "protocol": 1
+                }
+              ],
+              "issued": [
+                {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "protocol": 1,
+                  "binding": {
+                    "lifetime": "1",
+                    "session": "1",
+                    "frontend": "1"
+                  }
+                }
+              ],
+              "request": "1",
+              "generation": "1",
+              "observed": {
+                "windows": [
+                  {
+                    "incarnation": "1",
+                    "minimized": false
+                  },
+                  {
+                    "incarnation": "2",
+                    "minimized": false
+                  }
+                ],
+                "connected": false,
+                "request": "1",
+                "generation": "1",
+                "transaction": {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "status": "Unknown"
+                }
+              },
+              "decoderRefusal": null
+            },
+            "checks": {
+              "sameExactStatusAndOwnership": true,
+              "disconnectedExactStatusAndOwnership": true,
+              "lateExactStatusAndOwnership": true,
+              "newTransactionAndOtherRecordsPreserved": true,
+              "terminalDuplicateNoop": true
+            }
+          },
+          "Refused": {
+            "wire": {
+              "protocolVersion": 3,
+              "kind": "effect-outcome",
+              "effectProtocol": 1,
+              "binding": {
+                "lifetime": "1",
+                "session": "1",
+                "frontend": "1"
+              },
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "1",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "1",
+                  "epoch": "1",
+                  "output": "1",
+                  "revision": "1"
+                }
+              },
+              "status": "Refused",
+              "reason": "applied",
+              "revision": "2",
+              "outputGeneration": "1"
+            },
+            "sameAuthority": {
+              "observedContext": {
+                "lifetime": "1",
+                "epoch": "1",
+                "output": "1",
+                "revision": "1"
+              },
+              "transaction": {
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "1",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "1",
+                    "epoch": "1",
+                    "output": "1",
+                    "revision": "1"
+                  }
+                },
+                "status": "Refused",
+                "protocol": 1
+              },
+              "unresolved": [],
+              "issued": [],
+              "request": "1",
+              "generation": "1",
+              "observed": {
+                "windows": [
+                  {
+                    "incarnation": "1",
+                    "minimized": false
+                  },
+                  {
+                    "incarnation": "2",
+                    "minimized": false
+                  }
+                ],
+                "connected": true,
+                "request": "1",
+                "generation": "1",
+                "transaction": {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "status": "Refused"
+                }
+              },
+              "decoderRefusal": null
+            },
+            "afterOutput": {
+              "observedContext": {
+                "lifetime": "1",
+                "epoch": "1",
+                "output": "2",
+                "revision": "2"
+              },
+              "transaction": {
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "1",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "1",
+                    "epoch": "1",
+                    "output": "1",
+                    "revision": "1"
+                  }
+                },
+                "status": "Refused",
+                "protocol": 1
+              },
+              "unresolved": [],
+              "issued": [],
+              "request": "1",
+              "generation": "1",
+              "observed": {
+                "windows": [
+                  {
+                    "incarnation": "1",
+                    "minimized": false
+                  },
+                  {
+                    "incarnation": "2",
+                    "minimized": false
+                  }
+                ],
+                "connected": true,
+                "request": "1",
+                "generation": "1",
+                "transaction": {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "status": "Refused"
+                }
+              },
+              "decoderRefusal": null
+            },
+            "afterNewTransaction": {
+              "observedContext": {
+                "lifetime": "1",
+                "epoch": "1",
+                "output": "2",
+                "revision": "2"
+              },
+              "transaction": {
+                "intent": {
+                  "request": "2",
+                  "generation": "2",
+                  "incarnation": "2",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "1",
+                    "epoch": "1",
+                    "output": "2",
+                    "revision": "2"
+                  }
+                },
+                "status": "Pending",
+                "protocol": 1
+              },
+              "unresolved": [
+                {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "status": "Pending",
+                  "protocol": 1
+                }
+              ],
+              "issued": [
+                {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "protocol": 1,
+                  "binding": {
+                    "lifetime": "1",
+                    "session": "1",
+                    "frontend": "1"
+                  }
+                }
+              ],
+              "request": "2",
+              "generation": "2",
+              "observed": {
+                "windows": [
+                  {
+                    "incarnation": "1",
+                    "minimized": false
+                  },
+                  {
+                    "incarnation": "2",
+                    "minimized": false
+                  }
+                ],
+                "connected": true,
+                "request": "2",
+                "generation": "2",
+                "transaction": {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "status": "Pending"
+                }
+              },
+              "decoderRefusal": null
+            },
+            "afterDisconnect": {
+              "observedContext": {
+                "lifetime": "1",
+                "epoch": "1",
+                "output": "1",
+                "revision": "1"
+              },
+              "transaction": {
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "1",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "1",
+                    "epoch": "1",
+                    "output": "1",
+                    "revision": "1"
+                  }
+                },
+                "status": "Refused",
+                "protocol": 1
+              },
+              "unresolved": [],
+              "issued": [],
+              "request": "1",
+              "generation": "1",
+              "observed": {
+                "windows": [
+                  {
+                    "incarnation": "1",
+                    "minimized": false
+                  },
+                  {
+                    "incarnation": "2",
+                    "minimized": false
+                  }
+                ],
+                "connected": false,
+                "request": "1",
+                "generation": "1",
+                "transaction": {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "status": "Refused"
+                }
+              },
+              "decoderRefusal": null
+            },
+            "checks": {
+              "sameExactStatusAndOwnership": true,
+              "disconnectedExactStatusAndOwnership": true,
+              "lateExactStatusAndOwnership": true,
+              "newTransactionAndOtherRecordsPreserved": true,
+              "terminalDuplicateNoop": true
+            }
+          },
+          "Committed": {
+            "wire": {
+              "protocolVersion": 3,
+              "kind": "effect-outcome",
+              "effectProtocol": 1,
+              "binding": {
+                "lifetime": "1",
+                "session": "1",
+                "frontend": "1"
+              },
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "1",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "1",
+                  "epoch": "1",
+                  "output": "1",
+                  "revision": "1"
+                }
+              },
+              "status": "Committed",
+              "reason": "applied",
+              "revision": "2",
+              "outputGeneration": "1"
+            },
+            "sameAuthority": {
+              "observedContext": {
+                "lifetime": "1",
+                "epoch": "1",
+                "output": "1",
+                "revision": "1"
+              },
+              "transaction": {
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "1",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "1",
+                    "epoch": "1",
+                    "output": "1",
+                    "revision": "1"
+                  }
+                },
+                "status": "Committed",
+                "protocol": 1
+              },
+              "unresolved": [],
+              "issued": [],
+              "request": "1",
+              "generation": "1",
+              "observed": {
+                "windows": [
+                  {
+                    "incarnation": "1",
+                    "minimized": false
+                  },
+                  {
+                    "incarnation": "2",
+                    "minimized": false
+                  }
+                ],
+                "connected": true,
+                "request": "1",
+                "generation": "1",
+                "transaction": {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "status": "Committed"
+                }
+              },
+              "decoderRefusal": null
+            },
+            "afterOutput": {
+              "observedContext": {
+                "lifetime": "1",
+                "epoch": "1",
+                "output": "2",
+                "revision": "2"
+              },
+              "transaction": {
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "1",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "1",
+                    "epoch": "1",
+                    "output": "1",
+                    "revision": "1"
+                  }
+                },
+                "status": "Committed",
+                "protocol": 1
+              },
+              "unresolved": [],
+              "issued": [],
+              "request": "1",
+              "generation": "1",
+              "observed": {
+                "windows": [
+                  {
+                    "incarnation": "1",
+                    "minimized": false
+                  },
+                  {
+                    "incarnation": "2",
+                    "minimized": false
+                  }
+                ],
+                "connected": true,
+                "request": "1",
+                "generation": "1",
+                "transaction": {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "status": "Committed"
+                }
+              },
+              "decoderRefusal": null
+            },
+            "afterNewTransaction": {
+              "observedContext": {
+                "lifetime": "1",
+                "epoch": "1",
+                "output": "2",
+                "revision": "2"
+              },
+              "transaction": {
+                "intent": {
+                  "request": "2",
+                  "generation": "2",
+                  "incarnation": "2",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "1",
+                    "epoch": "1",
+                    "output": "2",
+                    "revision": "2"
+                  }
+                },
+                "status": "Pending",
+                "protocol": 1
+              },
+              "unresolved": [
+                {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "status": "Pending",
+                  "protocol": 1
+                }
+              ],
+              "issued": [
+                {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "protocol": 1,
+                  "binding": {
+                    "lifetime": "1",
+                    "session": "1",
+                    "frontend": "1"
+                  }
+                }
+              ],
+              "request": "2",
+              "generation": "2",
+              "observed": {
+                "windows": [
+                  {
+                    "incarnation": "1",
+                    "minimized": false
+                  },
+                  {
+                    "incarnation": "2",
+                    "minimized": false
+                  }
+                ],
+                "connected": true,
+                "request": "2",
+                "generation": "2",
+                "transaction": {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "status": "Pending"
+                }
+              },
+              "decoderRefusal": null
+            },
+            "afterDisconnect": {
+              "observedContext": {
+                "lifetime": "1",
+                "epoch": "1",
+                "output": "1",
+                "revision": "1"
+              },
+              "transaction": {
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "1",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "1",
+                    "epoch": "1",
+                    "output": "1",
+                    "revision": "1"
+                  }
+                },
+                "status": "Committed",
+                "protocol": 1
+              },
+              "unresolved": [],
+              "issued": [],
+              "request": "1",
+              "generation": "1",
+              "observed": {
+                "windows": [
+                  {
+                    "incarnation": "1",
+                    "minimized": false
+                  },
+                  {
+                    "incarnation": "2",
+                    "minimized": false
+                  }
+                ],
+                "connected": false,
+                "request": "1",
+                "generation": "1",
+                "transaction": {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "status": "Committed"
+                }
+              },
+              "decoderRefusal": null
+            },
+            "checks": {
+              "sameExactStatusAndOwnership": true,
+              "disconnectedExactStatusAndOwnership": true,
+              "lateExactStatusAndOwnership": true,
+              "newTransactionAndOtherRecordsPreserved": true,
+              "terminalDuplicateNoop": true
+            }
+          }
+        },
+        "foreign": {
+          "binding": {
+            "input": {
+              "protocolVersion": 3,
+              "kind": "effect-outcome",
+              "effectProtocol": 1,
+              "binding": {
+                "lifetime": "1",
+                "session": "99",
+                "frontend": "1"
+              },
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "1",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "1",
+                  "epoch": "1",
+                  "output": "1",
+                  "revision": "1"
+                }
+              },
+              "status": "Committed",
+              "reason": "applied",
+              "revision": "2",
+              "outputGeneration": "1"
+            },
+            "after": {
+              "observedContext": {
+                "lifetime": "1",
+                "epoch": "1",
+                "output": "2",
+                "revision": "2"
+              },
+              "transaction": {
+                "intent": {
+                  "request": "2",
+                  "generation": "2",
+                  "incarnation": "2",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "1",
+                    "epoch": "1",
+                    "output": "2",
+                    "revision": "2"
+                  }
+                },
+                "status": "Pending",
+                "protocol": 1
+              },
+              "unresolved": [
+                {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "status": "Pending",
+                  "protocol": 1
+                },
+                {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "status": "Pending",
+                  "protocol": 1
+                }
+              ],
+              "issued": [
+                {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "protocol": 1,
+                  "binding": {
+                    "lifetime": "1",
+                    "session": "1",
+                    "frontend": "1"
+                  }
+                },
+                {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "protocol": 1,
+                  "binding": {
+                    "lifetime": "1",
+                    "session": "1",
+                    "frontend": "1"
+                  }
+                }
+              ],
+              "request": "2",
+              "generation": "2",
+              "observed": {
+                "windows": [
+                  {
+                    "incarnation": "1",
+                    "minimized": false
+                  },
+                  {
+                    "incarnation": "2",
+                    "minimized": false
+                  }
+                ],
+                "connected": true,
+                "request": "2",
+                "generation": "2",
+                "transaction": {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "status": "Pending"
+                }
+              },
+              "decoderRefusal": null
+            },
+            "unchangedCorrelationNoMutation": true
+          },
+          "request": {
+            "input": {
+              "protocolVersion": 3,
+              "kind": "effect-outcome",
+              "effectProtocol": 1,
+              "binding": {
+                "lifetime": "1",
+                "session": "1",
+                "frontend": "1"
+              },
+              "intent": {
+                "request": "52869",
+                "generation": "1",
+                "incarnation": "1",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "1",
+                  "epoch": "1",
+                  "output": "1",
+                  "revision": "1"
+                }
+              },
+              "status": "Committed",
+              "reason": "applied",
+              "revision": "2",
+              "outputGeneration": "1"
+            },
+            "after": {
+              "observedContext": {
+                "lifetime": "1",
+                "epoch": "1",
+                "output": "2",
+                "revision": "2"
+              },
+              "transaction": {
+                "intent": {
+                  "request": "2",
+                  "generation": "2",
+                  "incarnation": "2",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "1",
+                    "epoch": "1",
+                    "output": "2",
+                    "revision": "2"
+                  }
+                },
+                "status": "Pending",
+                "protocol": 1
+              },
+              "unresolved": [
+                {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "status": "Pending",
+                  "protocol": 1
+                },
+                {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "status": "Pending",
+                  "protocol": 1
+                }
+              ],
+              "issued": [
+                {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "protocol": 1,
+                  "binding": {
+                    "lifetime": "1",
+                    "session": "1",
+                    "frontend": "1"
+                  }
+                },
+                {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "protocol": 1,
+                  "binding": {
+                    "lifetime": "1",
+                    "session": "1",
+                    "frontend": "1"
+                  }
+                }
+              ],
+              "request": "2",
+              "generation": "2",
+              "observed": {
+                "windows": [
+                  {
+                    "incarnation": "1",
+                    "minimized": false
+                  },
+                  {
+                    "incarnation": "2",
+                    "minimized": false
+                  }
+                ],
+                "connected": true,
+                "request": "2",
+                "generation": "2",
+                "transaction": {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "status": "Pending"
+                }
+              },
+              "decoderRefusal": null
+            },
+            "unchangedCorrelationNoMutation": true
+          },
+          "generation": {
+            "input": {
+              "protocolVersion": 3,
+              "kind": "effect-outcome",
+              "effectProtocol": 1,
+              "binding": {
+                "lifetime": "1",
+                "session": "1",
+                "frontend": "1"
+              },
+              "intent": {
+                "request": "1",
+                "generation": "52869",
+                "incarnation": "1",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "1",
+                  "epoch": "1",
+                  "output": "1",
+                  "revision": "1"
+                }
+              },
+              "status": "Committed",
+              "reason": "applied",
+              "revision": "2",
+              "outputGeneration": "1"
+            },
+            "after": {
+              "observedContext": {
+                "lifetime": "1",
+                "epoch": "1",
+                "output": "2",
+                "revision": "2"
+              },
+              "transaction": {
+                "intent": {
+                  "request": "2",
+                  "generation": "2",
+                  "incarnation": "2",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "1",
+                    "epoch": "1",
+                    "output": "2",
+                    "revision": "2"
+                  }
+                },
+                "status": "Pending",
+                "protocol": 1
+              },
+              "unresolved": [
+                {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "status": "Pending",
+                  "protocol": 1
+                },
+                {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "status": "Pending",
+                  "protocol": 1
+                }
+              ],
+              "issued": [
+                {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "protocol": 1,
+                  "binding": {
+                    "lifetime": "1",
+                    "session": "1",
+                    "frontend": "1"
+                  }
+                },
+                {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "protocol": 1,
+                  "binding": {
+                    "lifetime": "1",
+                    "session": "1",
+                    "frontend": "1"
+                  }
+                }
+              ],
+              "request": "2",
+              "generation": "2",
+              "observed": {
+                "windows": [
+                  {
+                    "incarnation": "1",
+                    "minimized": false
+                  },
+                  {
+                    "incarnation": "2",
+                    "minimized": false
+                  }
+                ],
+                "connected": true,
+                "request": "2",
+                "generation": "2",
+                "transaction": {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "status": "Pending"
+                }
+              },
+              "decoderRefusal": null
+            },
+            "unchangedCorrelationNoMutation": true
+          },
+          "incarnation": {
+            "input": {
+              "protocolVersion": 3,
+              "kind": "effect-outcome",
+              "effectProtocol": 1,
+              "binding": {
+                "lifetime": "1",
+                "session": "1",
+                "frontend": "1"
+              },
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "52869",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "1",
+                  "epoch": "1",
+                  "output": "1",
+                  "revision": "1"
+                }
+              },
+              "status": "Committed",
+              "reason": "applied",
+              "revision": "2",
+              "outputGeneration": "1"
+            },
+            "after": {
+              "observedContext": {
+                "lifetime": "1",
+                "epoch": "1",
+                "output": "2",
+                "revision": "2"
+              },
+              "transaction": {
+                "intent": {
+                  "request": "2",
+                  "generation": "2",
+                  "incarnation": "2",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "1",
+                    "epoch": "1",
+                    "output": "2",
+                    "revision": "2"
+                  }
+                },
+                "status": "Pending",
+                "protocol": 1
+              },
+              "unresolved": [
+                {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "status": "Pending",
+                  "protocol": 1
+                },
+                {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "status": "Pending",
+                  "protocol": 1
+                }
+              ],
+              "issued": [
+                {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "protocol": 1,
+                  "binding": {
+                    "lifetime": "1",
+                    "session": "1",
+                    "frontend": "1"
+                  }
+                },
+                {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "protocol": 1,
+                  "binding": {
+                    "lifetime": "1",
+                    "session": "1",
+                    "frontend": "1"
+                  }
+                }
+              ],
+              "request": "2",
+              "generation": "2",
+              "observed": {
+                "windows": [
+                  {
+                    "incarnation": "1",
+                    "minimized": false
+                  },
+                  {
+                    "incarnation": "2",
+                    "minimized": false
+                  }
+                ],
+                "connected": true,
+                "request": "2",
+                "generation": "2",
+                "transaction": {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "status": "Pending"
+                }
+              },
+              "decoderRefusal": null
+            },
+            "unchangedCorrelationNoMutation": true
+          },
+          "operation": {
+            "input": {
+              "protocolVersion": 3,
+              "kind": "effect-outcome",
+              "effectProtocol": 1,
+              "binding": {
+                "lifetime": "1",
+                "session": "1",
+                "frontend": "1"
+              },
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "1",
+                "operation": "restore",
+                "context": {
+                  "lifetime": "1",
+                  "epoch": "1",
+                  "output": "1",
+                  "revision": "1"
+                }
+              },
+              "status": "Committed",
+              "reason": "applied",
+              "revision": "2",
+              "outputGeneration": "1"
+            },
+            "after": {
+              "observedContext": {
+                "lifetime": "1",
+                "epoch": "1",
+                "output": "2",
+                "revision": "2"
+              },
+              "transaction": {
+                "intent": {
+                  "request": "2",
+                  "generation": "2",
+                  "incarnation": "2",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "1",
+                    "epoch": "1",
+                    "output": "2",
+                    "revision": "2"
+                  }
+                },
+                "status": "Pending",
+                "protocol": 1
+              },
+              "unresolved": [
+                {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "status": "Pending",
+                  "protocol": 1
+                },
+                {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "status": "Pending",
+                  "protocol": 1
+                }
+              ],
+              "issued": [
+                {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "protocol": 1,
+                  "binding": {
+                    "lifetime": "1",
+                    "session": "1",
+                    "frontend": "1"
+                  }
+                },
+                {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "protocol": 1,
+                  "binding": {
+                    "lifetime": "1",
+                    "session": "1",
+                    "frontend": "1"
+                  }
+                }
+              ],
+              "request": "2",
+              "generation": "2",
+              "observed": {
+                "windows": [
+                  {
+                    "incarnation": "1",
+                    "minimized": false
+                  },
+                  {
+                    "incarnation": "2",
+                    "minimized": false
+                  }
+                ],
+                "connected": true,
+                "request": "2",
+                "generation": "2",
+                "transaction": {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "status": "Pending"
+                }
+              },
+              "decoderRefusal": null
+            },
+            "unchangedCorrelationNoMutation": true
+          },
+          "lifetime": {
+            "input": {
+              "protocolVersion": 3,
+              "kind": "effect-outcome",
+              "effectProtocol": 1,
+              "binding": {
+                "lifetime": "1",
+                "session": "1",
+                "frontend": "1"
+              },
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "1",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "52869",
+                  "epoch": "1",
+                  "output": "1",
+                  "revision": "1"
+                }
+              },
+              "status": "Committed",
+              "reason": "applied",
+              "revision": "2",
+              "outputGeneration": "1"
+            },
+            "after": {
+              "observedContext": {
+                "lifetime": "1",
+                "epoch": "1",
+                "output": "2",
+                "revision": "2"
+              },
+              "transaction": {
+                "intent": {
+                  "request": "2",
+                  "generation": "2",
+                  "incarnation": "2",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "1",
+                    "epoch": "1",
+                    "output": "2",
+                    "revision": "2"
+                  }
+                },
+                "status": "Pending",
+                "protocol": 1
+              },
+              "unresolved": [
+                {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "status": "Pending",
+                  "protocol": 1
+                },
+                {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "status": "Pending",
+                  "protocol": 1
+                }
+              ],
+              "issued": [
+                {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "protocol": 1,
+                  "binding": {
+                    "lifetime": "1",
+                    "session": "1",
+                    "frontend": "1"
+                  }
+                },
+                {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "protocol": 1,
+                  "binding": {
+                    "lifetime": "1",
+                    "session": "1",
+                    "frontend": "1"
+                  }
+                }
+              ],
+              "request": "2",
+              "generation": "2",
+              "observed": {
+                "windows": [
+                  {
+                    "incarnation": "1",
+                    "minimized": false
+                  },
+                  {
+                    "incarnation": "2",
+                    "minimized": false
+                  }
+                ],
+                "connected": true,
+                "request": "2",
+                "generation": "2",
+                "transaction": {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "status": "Pending"
+                }
+              },
+              "decoderRefusal": null
+            },
+            "unchangedCorrelationNoMutation": true
+          },
+          "epoch": {
+            "input": {
+              "protocolVersion": 3,
+              "kind": "effect-outcome",
+              "effectProtocol": 1,
+              "binding": {
+                "lifetime": "1",
+                "session": "1",
+                "frontend": "1"
+              },
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "1",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "1",
+                  "epoch": "52869",
+                  "output": "1",
+                  "revision": "1"
+                }
+              },
+              "status": "Committed",
+              "reason": "applied",
+              "revision": "2",
+              "outputGeneration": "1"
+            },
+            "after": {
+              "observedContext": {
+                "lifetime": "1",
+                "epoch": "1",
+                "output": "2",
+                "revision": "2"
+              },
+              "transaction": {
+                "intent": {
+                  "request": "2",
+                  "generation": "2",
+                  "incarnation": "2",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "1",
+                    "epoch": "1",
+                    "output": "2",
+                    "revision": "2"
+                  }
+                },
+                "status": "Pending",
+                "protocol": 1
+              },
+              "unresolved": [
+                {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "status": "Pending",
+                  "protocol": 1
+                },
+                {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "status": "Pending",
+                  "protocol": 1
+                }
+              ],
+              "issued": [
+                {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "protocol": 1,
+                  "binding": {
+                    "lifetime": "1",
+                    "session": "1",
+                    "frontend": "1"
+                  }
+                },
+                {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "protocol": 1,
+                  "binding": {
+                    "lifetime": "1",
+                    "session": "1",
+                    "frontend": "1"
+                  }
+                }
+              ],
+              "request": "2",
+              "generation": "2",
+              "observed": {
+                "windows": [
+                  {
+                    "incarnation": "1",
+                    "minimized": false
+                  },
+                  {
+                    "incarnation": "2",
+                    "minimized": false
+                  }
+                ],
+                "connected": true,
+                "request": "2",
+                "generation": "2",
+                "transaction": {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "status": "Pending"
+                }
+              },
+              "decoderRefusal": null
+            },
+            "unchangedCorrelationNoMutation": true
+          },
+          "output": {
+            "input": {
+              "protocolVersion": 3,
+              "kind": "effect-outcome",
+              "effectProtocol": 1,
+              "binding": {
+                "lifetime": "1",
+                "session": "1",
+                "frontend": "1"
+              },
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "1",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "1",
+                  "epoch": "1",
+                  "output": "52869",
+                  "revision": "1"
+                }
+              },
+              "status": "Committed",
+              "reason": "applied",
+              "revision": "2",
+              "outputGeneration": "1"
+            },
+            "after": {
+              "observedContext": {
+                "lifetime": "1",
+                "epoch": "1",
+                "output": "2",
+                "revision": "2"
+              },
+              "transaction": {
+                "intent": {
+                  "request": "2",
+                  "generation": "2",
+                  "incarnation": "2",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "1",
+                    "epoch": "1",
+                    "output": "2",
+                    "revision": "2"
+                  }
+                },
+                "status": "Pending",
+                "protocol": 1
+              },
+              "unresolved": [
+                {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "status": "Pending",
+                  "protocol": 1
+                },
+                {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "status": "Pending",
+                  "protocol": 1
+                }
+              ],
+              "issued": [
+                {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "protocol": 1,
+                  "binding": {
+                    "lifetime": "1",
+                    "session": "1",
+                    "frontend": "1"
+                  }
+                },
+                {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "protocol": 1,
+                  "binding": {
+                    "lifetime": "1",
+                    "session": "1",
+                    "frontend": "1"
+                  }
+                }
+              ],
+              "request": "2",
+              "generation": "2",
+              "observed": {
+                "windows": [
+                  {
+                    "incarnation": "1",
+                    "minimized": false
+                  },
+                  {
+                    "incarnation": "2",
+                    "minimized": false
+                  }
+                ],
+                "connected": true,
+                "request": "2",
+                "generation": "2",
+                "transaction": {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "status": "Pending"
+                }
+              },
+              "decoderRefusal": null
+            },
+            "unchangedCorrelationNoMutation": true
+          },
+          "revision": {
+            "input": {
+              "protocolVersion": 3,
+              "kind": "effect-outcome",
+              "effectProtocol": 1,
+              "binding": {
+                "lifetime": "1",
+                "session": "1",
+                "frontend": "1"
+              },
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "1",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "1",
+                  "epoch": "1",
+                  "output": "1",
+                  "revision": "52869"
+                }
+              },
+              "status": "Committed",
+              "reason": "applied",
+              "revision": "2",
+              "outputGeneration": "1"
+            },
+            "after": {
+              "observedContext": {
+                "lifetime": "1",
+                "epoch": "1",
+                "output": "2",
+                "revision": "2"
+              },
+              "transaction": {
+                "intent": {
+                  "request": "2",
+                  "generation": "2",
+                  "incarnation": "2",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "1",
+                    "epoch": "1",
+                    "output": "2",
+                    "revision": "2"
+                  }
+                },
+                "status": "Pending",
+                "protocol": 1
+              },
+              "unresolved": [
+                {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "status": "Pending",
+                  "protocol": 1
+                },
+                {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "status": "Pending",
+                  "protocol": 1
+                }
+              ],
+              "issued": [
+                {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "protocol": 1,
+                  "binding": {
+                    "lifetime": "1",
+                    "session": "1",
+                    "frontend": "1"
+                  }
+                },
+                {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "protocol": 1,
+                  "binding": {
+                    "lifetime": "1",
+                    "session": "1",
+                    "frontend": "1"
+                  }
+                }
+              ],
+              "request": "2",
+              "generation": "2",
+              "observed": {
+                "windows": [
+                  {
+                    "incarnation": "1",
+                    "minimized": false
+                  },
+                  {
+                    "incarnation": "2",
+                    "minimized": false
+                  }
+                ],
+                "connected": true,
+                "request": "2",
+                "generation": "2",
+                "transaction": {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "status": "Pending"
+                }
+              },
+              "decoderRefusal": null
+            },
+            "unchangedCorrelationNoMutation": true
+          },
+          "protocol": {
+            "input": {
+              "protocolVersion": 3,
+              "kind": "effect-outcome",
+              "effectProtocol": 2,
+              "binding": {
+                "lifetime": "1",
+                "session": "1",
+                "frontend": "1"
+              },
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "1",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "1",
+                  "epoch": "1",
+                  "output": "1",
+                  "revision": "1"
+                }
+              },
+              "status": "Committed",
+              "reason": "applied",
+              "revision": "2",
+              "outputGeneration": "1"
+            },
+            "after": {
+              "observedContext": {
+                "lifetime": "1",
+                "epoch": "1",
+                "output": "2",
+                "revision": "2"
+              },
+              "transaction": {
+                "intent": {
+                  "request": "2",
+                  "generation": "2",
+                  "incarnation": "2",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "1",
+                    "epoch": "1",
+                    "output": "2",
+                    "revision": "2"
+                  }
+                },
+                "status": "Pending",
+                "protocol": 1
+              },
+              "unresolved": [
+                {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "status": "Pending",
+                  "protocol": 1
+                },
+                {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "status": "Pending",
+                  "protocol": 1
+                }
+              ],
+              "issued": [
+                {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "protocol": 1,
+                  "binding": {
+                    "lifetime": "1",
+                    "session": "1",
+                    "frontend": "1"
+                  }
+                },
+                {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "protocol": 1,
+                  "binding": {
+                    "lifetime": "1",
+                    "session": "1",
+                    "frontend": "1"
+                  }
+                }
+              ],
+              "request": "2",
+              "generation": "2",
+              "observed": {
+                "windows": [
+                  {
+                    "incarnation": "1",
+                    "minimized": false
+                  },
+                  {
+                    "incarnation": "2",
+                    "minimized": false
+                  }
+                ],
+                "connected": true,
+                "request": "2",
+                "generation": "2",
+                "transaction": {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "status": "Pending"
+                }
+              },
+              "decoderRefusal": null
+            },
+            "unchangedCorrelationNoMutation": true
+          },
+          "malformed": {
+            "input": {
+              "protocolVersion": 3,
+              "kind": "effect-outcome",
+              "effectProtocol": 1,
+              "binding": {
+                "lifetime": "1",
+                "session": "1",
+                "frontend": "1"
+              },
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "1",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "1",
+                  "epoch": "1",
+                  "output": "1",
+                  "revision": "1"
+                }
+              },
+              "status": "Committed",
+              "reason": "applied",
+              "revision": "2",
+              "outputGeneration": "1",
+              "unexpected": true
+            },
+            "after": {
+              "observedContext": {
+                "lifetime": "1",
+                "epoch": "1",
+                "output": "2",
+                "revision": "2"
+              },
+              "transaction": {
+                "intent": {
+                  "request": "2",
+                  "generation": "2",
+                  "incarnation": "2",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "1",
+                    "epoch": "1",
+                    "output": "2",
+                    "revision": "2"
+                  }
+                },
+                "status": "Pending",
+                "protocol": 1
+              },
+              "unresolved": [
+                {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "status": "Pending",
+                  "protocol": 1
+                },
+                {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "status": "Pending",
+                  "protocol": 1
+                }
+              ],
+              "issued": [
+                {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "protocol": 1,
+                  "binding": {
+                    "lifetime": "1",
+                    "session": "1",
+                    "frontend": "1"
+                  }
+                },
+                {
+                  "intent": {
+                    "request": "1",
+                    "generation": "1",
+                    "incarnation": "1",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  },
+                  "protocol": 1,
+                  "binding": {
+                    "lifetime": "1",
+                    "session": "1",
+                    "frontend": "1"
+                  }
+                }
+              ],
+              "request": "2",
+              "generation": "2",
+              "observed": {
+                "windows": [
+                  {
+                    "incarnation": "1",
+                    "minimized": false
+                  },
+                  {
+                    "incarnation": "2",
+                    "minimized": false
+                  }
+                ],
+                "connected": true,
+                "request": "2",
+                "generation": "2",
+                "transaction": {
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "2",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "1",
+                      "epoch": "1",
+                      "output": "2",
+                      "revision": "2"
+                    }
+                  },
+                  "status": "Pending"
+                }
+              },
+              "decoderRefusal": null
+            },
+            "unchangedCorrelationNoMutation": true
+          }
+        },
+        "cancelledShapeDiagnosticOnly": false
+      }
+    }
+  },
+  "scope": "fixed production route per case with varied valid foreign counter and receipt-case ordering",
+  "failures": []
+}

@@ -1,0 +1,64 @@
+{
+  "checks": {
+    "validReadyAndOneActuallyEmittedEffect": true,
+    "sameAuthorityExactReceiptCommits": true,
+    "retirementActuallyRequestedProjection": true,
+    "newOutputActuallyAdmitted": true,
+    "mismatchedReceiptPreservesCorrelatedState": true,
+    "noNewWindowEffectOnTopologyOrLateReceipt": true
+  },
+  "pending": {
+    "status": "Pending",
+    "unresolved": [
+      {
+        "intent": {
+          "request": "1",
+          "generation": "1",
+          "incarnation": "1",
+          "operation": "minimize",
+          "context": {
+            "lifetime": "1",
+            "epoch": "1",
+            "output": "1",
+            "revision": "1"
+          }
+        },
+        "status": "Pending",
+        "protocol": 1
+      }
+    ],
+    "issued": 1,
+    "expected": null
+  },
+  "projected": {
+    "status": "Unknown",
+    "unresolved": [
+      {
+        "intent": {
+          "request": "1",
+          "generation": "1",
+          "incarnation": "1",
+          "operation": "minimize",
+          "context": {
+            "lifetime": "1",
+            "epoch": "1",
+            "output": "1",
+            "revision": "1"
+          }
+        },
+        "status": "Pending",
+        "protocol": 1
+      }
+    ],
+    "issued": 1,
+    "expected": null
+  },
+  "lateExactCommitted": {
+    "status": "Unknown",
+    "unresolved": [],
+    "issued": 0,
+    "expected": "3"
+  },
+  "cancelledPassesNativeOutcomeShape": false,
+  "note": "Report actual states; a matching late native outcome after output change must be independently judged against the original correlation contract."
+}

@@ -123,7 +123,10 @@ apply value model =
                     settled t = if exact t then {t|status=status} else t
                     unresolved = if status==Unknown then List.map settled model.unresolved else List.filter (exact >> not) model.unresolved
                 in if not found || not (List.member protocolId [1,2]) || (protocol intent.operation/=protocolId) then refuse "Stale, mismatched or terminal receipt"
-                   else ({model|unresolved=unresolved,transaction=Maybe.map (\t -> if model.observed |> Maybe.map (\observed -> sameAuthority observed.context intent.context) |> Maybe.withDefault False then settled t else t) model.transaction},Nothing,Nothing))
+                   -- Outcome ownership follows the exact intent/protocol, even
+                   -- when the observed output has changed. This settles no
+                   -- other transaction and never changes the observed scene.
+                   else ({model|unresolved=unresolved,transaction=Maybe.map settled model.transaction},Nothing,Nothing))
         Ok "recover-watermarks" ->
             decoded (strict ["kind","request","generation"] (D.map2 Tuple.pair (D.field "request" UInt64.decoder) (D.field "generation" UInt64.decoder))) (\(request,generation) ->
                 let maximum old new=if UInt64.compare old new==LT then new else old

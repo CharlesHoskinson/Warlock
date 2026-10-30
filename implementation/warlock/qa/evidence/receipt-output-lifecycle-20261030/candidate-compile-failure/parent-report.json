@@ -1,0 +1,29 @@
+{
+  "passed": false,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-a33eb9dbbd774836a0ab0e280c90969d.scope",
+    "coreLimit": 1
+  },
+  "driverSHA256": "075bfaaddefe614551526eb5ab33188edb8bfe86b958f238d9086eaf899a57fb",
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "buildReceipt": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/receipt-current-build-1793333212775066294/frontend/report.json",
+    "sha256": "80ab7efec7eb9f7d5448cbf94260aa5f90b32e75f1b155294c2559c149475c11"
+  },
+  "command": {
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/charles/.local/state/warlock-team/20261028/native-rebuild/receipt-lifecycle-root-v1/run-candidate.py",
+      "--build-report",
+      "/home/charles/.local/state/warlock-team/20261028/native-rebuild/receipt-current-build-1793333212775066294/frontend/report.json",
+      "--build-sha256",
+      "80ab7efec7eb9f7d5448cbf94260aa5f90b32e75f1b155294c2559c149475c11"
+    ],
+    "exit": 1,
+    "driverSHA256": "199d8f46d7148ec131b4e007855a3513e0cb542ab7203312a8505f27c0bfcb68"
+  },
+  "error": "RuntimeError('Compiled production regression failed')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/charles/.local/state/warlock-team/20261028/native-rebuild/receipt-lifecycle-root-v1/build-and-check.py\", line 26, in main\n    if result.returncode:raise RuntimeError('Compiled production regression failed')\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Compiled production regression failed\n"
+}

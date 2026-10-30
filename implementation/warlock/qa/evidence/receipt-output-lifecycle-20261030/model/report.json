@@ -1,0 +1,425 @@
+{
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-f2172ab33fb04a559b3e3056b065d010.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node": "caa24debe02770c92a70677e2a62ca98890150e7ac1c17bcfe31bcc98cc89943",
+    "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js": "952a50a28932282528b5c9b86ac5542405d85da4f80876aabe8cb8c7d5a6d0e8",
+    "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/package.json": "c73e78964221e9e8cbe273568ccdad152370fc35786fb82219c64347c71e57dc",
+    "/home/charles/.local/state/warlock-team/20261028/tooling/package-lock.json": "630f4926b18579f08be780630a94a7c4d398b4bcc6f9844def990ff6a7112903",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/receipt-lifecycle-root-model-v2/receipt-lifecycle.qnt": "ce5978f5e226ca40281bd6140861aa765d79c194620c63bb9c6b4af40256cdcb",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/receipt-lifecycle-root-model-v2/receipt-lifecycle_test.qnt": "e27fcdde2317a2b799f886a35930cb54ac11e6e9602a4679bc9a13b257550722"
+  },
+  "driverSHA256": "0f1da3472285ef8e5cbdb31f9b9bbb1c1ad76d4eaee2fc73ec114c844e9b3c47",
+  "commands": [
+    {
+      "name": "version",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "--version"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "typecheck-receipt-lifecycle.qnt",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "typecheck",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/receipt-lifecycle-root-model-v2/receipt-lifecycle.qnt"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "typecheck-receipt-lifecycle_test.qnt",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "typecheck",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/receipt-lifecycle-root-model-v2/receipt-lifecycle_test.qnt"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "initial-run",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "run",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/receipt-lifecycle-root-model-v2/receipt-lifecycle.qnt",
+        "--main",
+        "ReceiptLifecycle",
+        "--invariant",
+        "receiptPreservesSceneCounters",
+        "--max-samples=1",
+        "--max-steps=1",
+        "--backend=typescript",
+        "--seed=20261030"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "05f5b8efff15199f378d8bb0f20e715c408d8455c24697141a302d41f9b2caa2",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-sameOutputCommitTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/receipt-lifecycle-root-model-v2/receipt-lifecycle_test.qnt",
+        "--main",
+        "ReceiptLifecycle_test",
+        "--backend=typescript",
+        "--match",
+        "^sameOutputCommitTest$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "63129d40307a2a4fe99000b419b2bd7fd648d91b799ea42d3f01bb27ae7dd5c1",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-outputChangedLateCommitTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/receipt-lifecycle-root-model-v2/receipt-lifecycle_test.qnt",
+        "--main",
+        "ReceiptLifecycle_test",
+        "--backend=typescript",
+        "--match",
+        "^outputChangedLateCommitTest$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "da16448daffda2a2c0b0b2d2dae5c37e97027e9935f30858eb35bc0ffa77579a",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-brokenBaselineWitnessTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/receipt-lifecycle-root-model-v2/receipt-lifecycle_test.qnt",
+        "--main",
+        "ReceiptLifecycle_test",
+        "--backend=typescript",
+        "--match",
+        "^brokenBaselineWitnessTest$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "5ccada5b18f4e8f51bfc0125cdb0ec926fb5335d2fb4c4d6f8258b94c035678d",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-unrelatedNewCurrentTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/receipt-lifecycle-root-model-v2/receipt-lifecycle_test.qnt",
+        "--main",
+        "ReceiptLifecycle_test",
+        "--backend=typescript",
+        "--match",
+        "^unrelatedNewCurrentTest$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "5db9d58e493d11e4054ebacba3bb371c53f88381c4d6f99c9d9ad2b25b09b5b1",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-foreignBindingTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/receipt-lifecycle-root-model-v2/receipt-lifecycle_test.qnt",
+        "--main",
+        "ReceiptLifecycle_test",
+        "--backend=typescript",
+        "--match",
+        "^foreignBindingTest$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "2250613e7b111f49913443c60dda1fc2c1faf7ac7401b5bf731060236bf02e5d",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-foreignProtocolTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/receipt-lifecycle-root-model-v2/receipt-lifecycle_test.qnt",
+        "--main",
+        "ReceiptLifecycle_test",
+        "--backend=typescript",
+        "--match",
+        "^foreignProtocolTest$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "22641c7a73271c3d69b190be8f1f84d7bb7ef7d2ca8e62c8313a9189f9b4b8a7",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-foreignIntentTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/receipt-lifecycle-root-model-v2/receipt-lifecycle_test.qnt",
+        "--main",
+        "ReceiptLifecycle_test",
+        "--backend=typescript",
+        "--match",
+        "^foreignIntentTest$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "a8491baf991235bdea9cc5c0e3b21b9349001b755a9c36adb5530edf833c8429",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-duplicateTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/receipt-lifecycle-root-model-v2/receipt-lifecycle_test.qnt",
+        "--main",
+        "ReceiptLifecycle_test",
+        "--backend=typescript",
+        "--match",
+        "^duplicateTest$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "1596495af55ef8eb844cde742dbfac86637c78777f51cfd0a242ca4b54a14a07",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-disconnectUnknownTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/receipt-lifecycle-root-model-v2/receipt-lifecycle_test.qnt",
+        "--main",
+        "ReceiptLifecycle_test",
+        "--backend=typescript",
+        "--match",
+        "^disconnectUnknownTest$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "0c5febb3f4cfba482155893dea0c582900adc88efee6769747a812cf72b36093",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-unknownReceiptTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/receipt-lifecycle-root-model-v2/receipt-lifecycle_test.qnt",
+        "--main",
+        "ReceiptLifecycle_test",
+        "--backend=typescript",
+        "--match",
+        "^unknownReceiptTest$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "cd6e84dd34d3086f44ab1a3387e23a4aea8042b8873fed626b18713d74a3551c",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-validatedRecoveryReleaseTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/receipt-lifecycle-root-model-v2/receipt-lifecycle_test.qnt",
+        "--main",
+        "ReceiptLifecycle_test",
+        "--backend=typescript",
+        "--match",
+        "^validatedRecoveryReleaseTest$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "207bc62e459cfc2ef54c3d4fa8128bb155a5e8e38b7edf15aa4467ed6a02fea2",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-refusalTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/receipt-lifecycle-root-model-v2/receipt-lifecycle_test.qnt",
+        "--main",
+        "ReceiptLifecycle_test",
+        "--backend=typescript",
+        "--match",
+        "^refusalTest$"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "2d89d5f1efe7f6118ff46775fd62d049b588c9b4219b358bfb87234908786a39",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "sample-receiptPreservesSceneCounters",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "run",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/receipt-lifecycle-root-model-v2/receipt-lifecycle.qnt",
+        "--main",
+        "ReceiptLifecycle",
+        "--invariant",
+        "receiptPreservesSceneCounters",
+        "--max-samples=1000",
+        "--max-steps=20",
+        "--backend=typescript",
+        "--seed=20261030"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "831a731a4409263d6a55b9bf0fd5a8c343463fdb29ad572f71e2e0bc7834a2ad",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "sample-otherCurrentPreserved",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "run",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/receipt-lifecycle-root-model-v2/receipt-lifecycle.qnt",
+        "--main",
+        "ReceiptLifecycle",
+        "--invariant",
+        "otherCurrentPreserved",
+        "--max-samples=1000",
+        "--max-steps=20",
+        "--backend=typescript",
+        "--seed=20261030"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "7d50e4159579d7d79e491a5cca886509eb6e300db373311f5d1e95bed633b80d",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "sample-exactCurrentTerminalSettled",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "run",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/receipt-lifecycle-root-model-v2/receipt-lifecycle.qnt",
+        "--main",
+        "ReceiptLifecycle",
+        "--invariant",
+        "exactCurrentTerminalSettled",
+        "--max-samples=1000",
+        "--max-steps=20",
+        "--backend=typescript",
+        "--seed=20261030"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "0814943cc4f44639c2cffe064157d77e7c3e584bc34fcf00a16620f972111713",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "sample-pendingHasReservation",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "run",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/receipt-lifecycle-root-model-v2/receipt-lifecycle.qnt",
+        "--main",
+        "ReceiptLifecycle",
+        "--invariant",
+        "pendingHasReservation",
+        "--max-samples=1000",
+        "--max-steps=20",
+        "--backend=typescript",
+        "--seed=20261030"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "0814943cc4f44639c2cffe064157d77e7c3e584bc34fcf00a16620f972111713",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "sample-bounded",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "run",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/receipt-lifecycle-root-model-v2/receipt-lifecycle.qnt",
+        "--main",
+        "ReceiptLifecycle",
+        "--invariant",
+        "bounded",
+        "--max-samples=1000",
+        "--max-steps=20",
+        "--backend=typescript",
+        "--seed=20261030"
+      ],
+      "exit": 0,
+      "stdoutSHA256": "f3f7ea31047dc6a009b2256a2ed614dbd90531a7e1abe7457e4c91cfa3bfa660",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "seed": 20261030,
+  "nativeAcceptance": false,
+  "fullCorrectnessProved": false,
+  "toolDependencyClosureClaimed": false,
+  "outputs": {
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck-receipt-lifecycle.qnt.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck-receipt-lifecycle.qnt.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck-receipt-lifecycle_test.qnt.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck-receipt-lifecycle_test.qnt.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "initial-run.stdout": "05f5b8efff15199f378d8bb0f20e715c408d8455c24697141a302d41f9b2caa2",
+    "initial-run.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-sameOutputCommitTest.stdout": "63129d40307a2a4fe99000b419b2bd7fd648d91b799ea42d3f01bb27ae7dd5c1",
+    "test-sameOutputCommitTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-outputChangedLateCommitTest.stdout": "da16448daffda2a2c0b0b2d2dae5c37e97027e9935f30858eb35bc0ffa77579a",
+    "test-outputChangedLateCommitTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-brokenBaselineWitnessTest.stdout": "5ccada5b18f4e8f51bfc0125cdb0ec926fb5335d2fb4c4d6f8258b94c035678d",
+    "test-brokenBaselineWitnessTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-unrelatedNewCurrentTest.stdout": "5db9d58e493d11e4054ebacba3bb371c53f88381c4d6f99c9d9ad2b25b09b5b1",
+    "test-unrelatedNewCurrentTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-foreignBindingTest.stdout": "2250613e7b111f49913443c60dda1fc2c1faf7ac7401b5bf731060236bf02e5d",
+    "test-foreignBindingTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-foreignProtocolTest.stdout": "22641c7a73271c3d69b190be8f1f84d7bb7ef7d2ca8e62c8313a9189f9b4b8a7",
+    "test-foreignProtocolTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-foreignIntentTest.stdout": "a8491baf991235bdea9cc5c0e3b21b9349001b755a9c36adb5530edf833c8429",
+    "test-foreignIntentTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-duplicateTest.stdout": "1596495af55ef8eb844cde742dbfac86637c78777f51cfd0a242ca4b54a14a07",
+    "test-duplicateTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-disconnectUnknownTest.stdout": "0c5febb3f4cfba482155893dea0c582900adc88efee6769747a812cf72b36093",
+    "test-disconnectUnknownTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-unknownReceiptTest.stdout": "cd6e84dd34d3086f44ab1a3387e23a4aea8042b8873fed626b18713d74a3551c",
+    "test-unknownReceiptTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-validatedRecoveryReleaseTest.stdout": "207bc62e459cfc2ef54c3d4fa8128bb155a5e8e38b7edf15aa4467ed6a02fea2",
+    "test-validatedRecoveryReleaseTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-refusalTest.stdout": "2d89d5f1efe7f6118ff46775fd62d049b588c9b4219b358bfb87234908786a39",
+    "test-refusalTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-receiptPreservesSceneCounters.stdout": "831a731a4409263d6a55b9bf0fd5a8c343463fdb29ad572f71e2e0bc7834a2ad",
+    "sample-receiptPreservesSceneCounters.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-otherCurrentPreserved.stdout": "7d50e4159579d7d79e491a5cca886509eb6e300db373311f5d1e95bed633b80d",
+    "sample-otherCurrentPreserved.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-exactCurrentTerminalSettled.stdout": "0814943cc4f44639c2cffe064157d77e7c3e584bc34fcf00a16620f972111713",
+    "sample-exactCurrentTerminalSettled.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-pendingHasReservation.stdout": "0814943cc4f44639c2cffe064157d77e7c3e584bc34fcf00a16620f972111713",
+    "sample-pendingHasReservation.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-bounded.stdout": "f3f7ea31047dc6a009b2256a2ed614dbd90531a7e1abe7457e4c91cfa3bfa660",
+    "sample-bounded.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

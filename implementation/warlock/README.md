@@ -1024,3 +1024,14 @@ packages after the documented wrapper-to-compiler placement. This resolves the
 bounded distribution-byte question. Compiler source-to-binary provenance,
 project license grants and redistribution decisions remain unresolved; no release
 acceptance follows. [Retained evidence and limits](qa/evidence/elm-distribution-20261030/LIMITS.md).
+
+A [late receipt correction](qa/evidence/receipt-output-lifecycle-20261030/LIMITS.md)
+now settles an exactly correlated window outcome after output retirement or
+disconnection while preserving a newer transaction and the current scene.
+A fresh three-root build, 12 named model tests, five bounded invariant samples
+and 200 production-route parameter cases (31 checks each) pass. The original
+failed state and test-fixture compile failure are retained. Actual native delivery,
+Cancelled wire semantics, full proof-based recovery/release and full ARC007
+acceptance remain separate. The prior native composition receipt predates this
+Effects change; qualify a fresh composition before using the new frontend assets
+in a native/release campaign.

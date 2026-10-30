@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "requirement": "ELM-ARC-007",
+  "scenario": "receipt-committed",
+  "sourceRevision": "4c15587c78d6d82c7fb54f79dec49193c8107e19",
+  "reportPath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/receipt-output-current-cpu-1793332444826191664/report.json",
+  "reportSHA256": "e458fbb9242bc5888ccf85bc24eef6981bf1b48857831b3c4037853535bb8577",
+  "tracePath": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/receipt-output-current-cpu-1793332444826191664/receipt-output.json",
+  "traceSHA256": "d00e7ad6c5f0d788953d35a377c55b4a04c8bb8100cf99f3f6b083bc3bebbf4a",
+  "productionRouteReachable": true,
+  "originalOracle": "The correlated request has exactly state Committed and no other request changes.",
+  "expectedStatus": "Committed",
+  "actualStatus": "Unknown",
+  "unresolvedAfterExactOutcome": [],
+  "issuedAfterExactOutcome": 0,
+  "originalOracleSatisfied": false,
+  "nativeDeliveryObserved": false,
+  "productSourceChanged": false,
+  "review": "Astra independently identified this as receipt bookkeeping defect; explicit minimal correction preserves full intent/protocol match and scene authority."
+}

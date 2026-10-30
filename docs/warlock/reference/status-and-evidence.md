@@ -43,3 +43,7 @@ The [popup visibility observation and static-role fix](../../../implementation/w
 ## Compiler distribution evidence
 
 The [Elm distribution report](../../../implementation/warlock/release/elm-distribution-20261030.json) and [retained checks/review](../../../implementation/warlock/qa/evidence/elm-distribution-20261030/LIMITS.md) establish only two selected npm archive identities and their eight installed-file mappings. All 28 protected checks pass. The sole byte replacement is the documented installer wrapper-to-platform-compiler placement. Source-to-binary provenance, historical installation, license decisions and whole delivery-005 acceptance remain unresolved.
+
+## Late receipt after output retirement
+
+The [receipt lifecycle evidence](../../../implementation/warlock/qa/evidence/receipt-output-lifecycle-20261030/LIMITS.md) preserves the original compiled production failure, the exact-match correction, a fresh three-root build, 12 named Quint tests, five bounded invariant samples and 200 fixed-route parameter cases with 31 checks each. The failed test-worker shadowing compile is retained. These cases vary foreign identities and receipt-case ordering; they are not randomized interleaving fuzz or exhaustive verification. Native delivery, Cancelled wire semantics and the complete proof-based recovery/release journey remain separate gates. The earlier native composition receipt predates this Effects change and requires a fresh reviewed composition before use with these frontend assets.

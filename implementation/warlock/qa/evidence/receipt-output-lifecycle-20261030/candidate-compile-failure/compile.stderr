@@ -1,0 +1,32 @@
+-- SHADOWING ------------------------------- qa/ReceiptOutputLifecycleReplay.elm
+
+The name `result` is first defined here:
+
+55| result seed =
+    ^^^^^^
+But then it is defined AGAIN over here:
+
+36| exact intent result = wire Fixture.bound 1 intent result []
+                 ^^^^^^
+Think of a more helpful name for one of them and you should be all set!
+
+Note: Linters advise against shadowing, so Elm makes “best practices” the
+default. Read <https://elm-lang.org/0.19.2/shadowing> for more details on this
+choice.
+
+-- SHADOWING ------------------------------- qa/ReceiptOutputLifecycleReplay.elm
+
+The name `result` is first defined here:
+
+55| result seed =
+    ^^^^^^
+But then it is defined AGAIN over here:
+
+32| wire binding protocol intent result extra = E.object
+                                 ^^^^^^
+Think of a more helpful name for one of them and you should be all set!
+
+Note: Linters advise against shadowing, so Elm makes “best practices” the
+default. Read <https://elm-lang.org/0.19.2/shadowing> for more details on this
+choice.
+
