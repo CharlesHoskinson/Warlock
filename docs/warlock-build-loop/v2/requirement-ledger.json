@@ -564,28 +564,103 @@
       "owner": "Native authority lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "architecture-012",
           "oracle": "restore is absent and owned helpers retire",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/native-cancellation-client-20261030/manifest.json",
+              "sha256": "35921f27d8f62295150de9f44efbd6b0134c747bf741af08ca97356799033c64",
+              "scope": "Actual native Restore-only controlled orderings, full receipt correlation, state after late opposing operations and normal final cleanup; original resource/Escape obligations remain incomplete. No original acceptance or production durable daemon/Elm routing.",
+              "sourceBaseRevision": "90d08547e1ad23fda46f06d562a2000f04772d68",
+              "sourceHashes": {
+                "implementation/warlock/adapter/cancellation_endpoint.py": "42247d6a560093b8a46a3369065d7debfe78baa94b78b67490a61c96fafab6f0",
+                "implementation/warlock/adapter/effect_endpoint.py": "e01aa144ef2b80cf1b259fd45a926ec9ee6e101040402134efeef1ad184667ca",
+                "implementation/warlock/qa/check-cancellation-endpoint.py": "ba75b5046328d8c1ebf850879285ab9989e6d04b7b8e1be04b140a6c2ceb23e6",
+                "implementation/warlock/qa/native-cancellation-orders.py": "f099aa936de3b1abc188e2e5f259c736394d58cdfd1fc44cf5f17466578553eb",
+                "implementation/warlock/native/authority.cpp": "2730c6e3605ae4a0c0ed2bc75eae1282854e2ffde369386f6992968e26a262e5",
+                "implementation/warlock/native/effect_cancellation.hpp": "8d5f54f3af56c2111b9a4a6581801f67dc2379469a73ee3affadd43125c9c78a",
+                "implementation/warlock/native/effect_cancellation_parser.hpp": "1dc6e297adcff53e9ccd5ea064cd708c4e31e1ca2fd9b450c06afb656ded93d1"
+              },
+              "independentReview": {
+                "name": "/root/astra_architecture",
+                "independent": true,
+                "disposition": "partial",
+                "evidence": {
+                  "path": "implementation/warlock/qa/evidence/native-cancellation-client-20261030/INDEPENDENT-REVIEW.md",
+                  "sha256": "da35f7f20911d285cde177984683cf91907123282032337cc3d82e799bb6fd87"
+                }
+              }
+            }
+          ],
+          "missingObservation": "Physical Escape is not exercised; owned helpers are not observed retiring at that cancellation boundary. Native authenticated API cancellation and absent restore are only partial evidence."
         },
         {
           "name": "cancel-before-commit",
           "oracle": "no mutation occurs and only the cancelled generation resources retire",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/native-cancellation-client-20261030/manifest.json",
+              "sha256": "35921f27d8f62295150de9f44efbd6b0134c747bf741af08ca97356799033c64",
+              "scope": "Actual native Restore-only controlled orderings, full receipt correlation, state after late opposing operations and normal final cleanup; original resource/Escape obligations remain incomplete. No original acceptance or production durable daemon/Elm routing.",
+              "sourceBaseRevision": "90d08547e1ad23fda46f06d562a2000f04772d68",
+              "sourceHashes": {
+                "implementation/warlock/adapter/cancellation_endpoint.py": "42247d6a560093b8a46a3369065d7debfe78baa94b78b67490a61c96fafab6f0",
+                "implementation/warlock/adapter/effect_endpoint.py": "e01aa144ef2b80cf1b259fd45a926ec9ee6e101040402134efeef1ad184667ca",
+                "implementation/warlock/qa/check-cancellation-endpoint.py": "ba75b5046328d8c1ebf850879285ab9989e6d04b7b8e1be04b140a6c2ceb23e6",
+                "implementation/warlock/qa/native-cancellation-orders.py": "f099aa936de3b1abc188e2e5f259c736394d58cdfd1fc44cf5f17466578553eb",
+                "implementation/warlock/native/authority.cpp": "2730c6e3605ae4a0c0ed2bc75eae1282854e2ffde369386f6992968e26a262e5",
+                "implementation/warlock/native/effect_cancellation.hpp": "8d5f54f3af56c2111b9a4a6581801f67dc2379469a73ee3affadd43125c9c78a",
+                "implementation/warlock/native/effect_cancellation_parser.hpp": "1dc6e297adcff53e9ccd5ea064cd708c4e31e1ca2fd9b450c06afb656ded93d1"
+              },
+              "independentReview": {
+                "name": "/root/astra_architecture",
+                "independent": true,
+                "disposition": "partial",
+                "evidence": {
+                  "path": "implementation/warlock/qa/evidence/native-cancellation-client-20261030/INDEPENDENT-REVIEW.md",
+                  "sha256": "da35f7f20911d285cde177984683cf91907123282032337cc3d82e799bb6fd87"
+                }
+              }
+            }
+          ],
+          "missingObservation": "Exact retirement of only the cancelled generation resources is not measured by this native fixture. Final cleanup, component counters and an unchanged unrelated window are not substitutes."
         },
         {
           "name": "commit-before-cancel",
           "oracle": "the committed receipt is preserved, late cancellation does not claim rollback, and remaining resources retire",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/native-cancellation-client-20261030/manifest.json",
+              "sha256": "35921f27d8f62295150de9f44efbd6b0134c747bf741af08ca97356799033c64",
+              "scope": "Actual native Restore-only controlled orderings, full receipt correlation, state after late opposing operations and normal final cleanup; original resource/Escape obligations remain incomplete. No original acceptance or production durable daemon/Elm routing.",
+              "sourceBaseRevision": "90d08547e1ad23fda46f06d562a2000f04772d68",
+              "sourceHashes": {
+                "implementation/warlock/adapter/cancellation_endpoint.py": "42247d6a560093b8a46a3369065d7debfe78baa94b78b67490a61c96fafab6f0",
+                "implementation/warlock/adapter/effect_endpoint.py": "e01aa144ef2b80cf1b259fd45a926ec9ee6e101040402134efeef1ad184667ca",
+                "implementation/warlock/qa/check-cancellation-endpoint.py": "ba75b5046328d8c1ebf850879285ab9989e6d04b7b8e1be04b140a6c2ceb23e6",
+                "implementation/warlock/qa/native-cancellation-orders.py": "f099aa936de3b1abc188e2e5f259c736394d58cdfd1fc44cf5f17466578553eb",
+                "implementation/warlock/native/authority.cpp": "2730c6e3605ae4a0c0ed2bc75eae1282854e2ffde369386f6992968e26a262e5",
+                "implementation/warlock/native/effect_cancellation.hpp": "8d5f54f3af56c2111b9a4a6581801f67dc2379469a73ee3affadd43125c9c78a",
+                "implementation/warlock/native/effect_cancellation_parser.hpp": "1dc6e297adcff53e9ccd5ea064cd708c4e31e1ca2fd9b450c06afb656ded93d1"
+              },
+              "independentReview": {
+                "name": "/root/astra_architecture",
+                "independent": true,
+                "disposition": "partial",
+                "evidence": {
+                  "path": "implementation/warlock/qa/evidence/native-cancellation-client-20261030/INDEPENDENT-REVIEW.md",
+                  "sha256": "da35f7f20911d285cde177984683cf91907123282032337cc3d82e799bb6fd87"
+                }
+              }
+            }
+          ],
+          "missingObservation": "Remaining per-generation resource retirement at the commit/late-cancel boundary is not demonstrated; eventual plugin/process cleanup is separate."
         }
       ]
     },

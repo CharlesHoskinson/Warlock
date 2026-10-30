@@ -1,8 +1,10 @@
 """Authenticated experimental effect endpoint; canonical scene capability is false."""
 import math,re
+from copy import deepcopy
+from cancellation_endpoint import CancellationEndpoint
 from endpoint import Endpoint as ReadOnlyEndpoint, Refused, binding, canonical, exact
 
-class Endpoint(ReadOnlyEndpoint):
+class Endpoint(CancellationEndpoint, ReadOnlyEndpoint):
  def hello(self):
   response=self.request({'protocolVersion':3,'kind':'hello'})
   fields=['protocolVersion','kind','binding','compositor','capabilities']
@@ -19,7 +21,7 @@ class Endpoint(ReadOnlyEndpoint):
   address=response.get('previewFdAddress')
   if descriptor and (type(address) is not str or address!='elm-preview-'+str(self.pid)+'-'+attached['lifetime']):raise Refused('Native preview descriptor address')
   self.preview_fd_address=address
-  self.bound=attached;return response
+  self.bound=deepcopy(attached);self._cancellation_reset();return response
  def snapshot(self,request_id,minimum_watermark='0'):
   if not self.bound:raise Refused('Handshake required')
   canonical(request_id);canonical(minimum_watermark,True)

@@ -1,0 +1,111 @@
+{
+  "scope": "Strict production endpoint client and actual native Restore orderings on an isolated compositor-only tuple; original ARC012 scenarios partial, not accepted.",
+  "requirements": [
+    "ELM-ARC-007",
+    "ELM-ARC-008",
+    "ELM-ARC-012"
+  ],
+  "scenarios": [
+    "receipt-cancelled",
+    "prerequisite-Cancelled",
+    "architecture-012",
+    "cancel-before-commit",
+    "commit-before-cancel"
+  ],
+  "nativeExecutionObserved": true,
+  "nativeAcceptance": false,
+  "requirementAccepted": false,
+  "releaseAccepted": false,
+  "sourceBaseRevision": "90d08547e1ad23fda46f06d562a2000f04772d68",
+  "sourceHashes": {
+    "implementation/warlock/adapter/cancellation_endpoint.py": "42247d6a560093b8a46a3369065d7debfe78baa94b78b67490a61c96fafab6f0",
+    "implementation/warlock/adapter/effect_endpoint.py": "e01aa144ef2b80cf1b259fd45a926ec9ee6e101040402134efeef1ad184667ca",
+    "implementation/warlock/qa/check-cancellation-endpoint.py": "ba75b5046328d8c1ebf850879285ab9989e6d04b7b8e1be04b140a6c2ceb23e6",
+    "implementation/warlock/qa/native-cancellation-orders.py": "f099aa936de3b1abc188e2e5f259c736394d58cdfd1fc44cf5f17466578553eb",
+    "implementation/warlock/native/authority.cpp": "2730c6e3605ae4a0c0ed2bc75eae1282854e2ffde369386f6992968e26a262e5",
+    "implementation/warlock/native/effect_cancellation.hpp": "8d5f54f3af56c2111b9a4a6581801f67dc2379469a73ee3affadd43125c9c78a",
+    "implementation/warlock/native/effect_cancellation_parser.hpp": "1dc6e297adcff53e9ccd5ea064cd708c4e31e1ca2fd9b450c06afb656ded93d1"
+  },
+  "files": {
+    "INDEPENDENT-REVIEW.md": {
+      "sha256": "da35f7f20911d285cde177984683cf91907123282032337cc3d82e799bb6fd87",
+      "size": 5619
+    },
+    "LIMITS.md": {
+      "sha256": "84d3150a638df3f952ae64ea77637e27dcf8ab16c175abb8a065109f0adbc126",
+      "size": 4701
+    },
+    "REJECTED-FIXTURE-REVIEW.md": {
+      "sha256": "f7985f9243eb70fac7b57ecae7acd38601ccd7b68569005e2e7905622e3aa9d4",
+      "size": 3755
+    },
+    "RUNTIME-GATES.md": {
+      "sha256": "1202ddcc64cb9f6486327889aeb45768ef991c02d995ce3b2f00067826ecc009",
+      "size": 5060
+    },
+    "cpu/check-cancellation-endpoint.py.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "cpu/check-cancellation-endpoint.py.stdout": {
+      "sha256": "0ae2d19ea97c7473ccf3b120f48b2b74d046cbe34ee0f8fb5c4af70a384a1916",
+      "size": 327
+    },
+    "cpu/check-pointer-ownership.py.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "cpu/check-pointer-ownership.py.stdout": {
+      "sha256": "cef9517577af27110ce655807ac00211f83f7fcb7e5d340060e90b53380bc1cf",
+      "size": 253
+    },
+    "cpu/executed-runner.py": {
+      "sha256": "337e935c2b5a1c2f55f42777ef39670af52348d0263cb121026f4c97ad63f345",
+      "size": 3174
+    },
+    "cpu/report.json": {
+      "sha256": "7cc1f543754259da159771c51d45685ab7c29e1c098680b4f2cd4747bdc0df31",
+      "size": 3887
+    },
+    "failed-native/cancelled-terminal.json": {
+      "sha256": "17ce0476569d31bb978a508083761eb9709ea7c21b8f0bf4e66218e7aa18b698",
+      "size": 483
+    },
+    "failed-native/committed-terminal.json": {
+      "sha256": "436e3b969ab9d202c014fcbf8dd08280e5ce552eda71bd832db64740c38ead6f",
+      "size": 467
+    },
+    "failed-native/report.json": {
+      "sha256": "570cb7a8fcd07b28f72359be0bb0bca7bad0b32b96f9e6bae73898dc8cd21c66",
+      "size": 245248
+    },
+    "failed-native/runner.py": {
+      "sha256": "d202ecd53953dd67d62ecfdeaf817799c39c43c8db8298d90a51b94ef5c19634",
+      "size": 13939
+    },
+    "failed-native/runtime_candidate.py": {
+      "sha256": "91a8acd88af2a60075f4ec2ae0c3775dd6917286408052ec338823b18cfcf6de",
+      "size": 13128
+    },
+    "native/cancelled-terminal.json": {
+      "sha256": "9d3740c788586e9405fca64fa979572f720866c278d7084516575cc62d3f1a40",
+      "size": 483
+    },
+    "native/committed-terminal.json": {
+      "sha256": "a327d468de6e60085ce486dbb670e6f6bf972b7a8acbf9b6a1184490f32678c1",
+      "size": 467
+    },
+    "native/report.json": {
+      "sha256": "6184a5015a080041898b04cb3dc5a87b0cb1e9889934e20c396871ed1e49053c",
+      "size": 244678
+    },
+    "native/runner.py": {
+      "sha256": "a8345edea41d9dd88fb5c4673b64285eba64e09736de73f788e488e773cbbf89",
+      "size": 13948
+    },
+    "native/runtime_candidate.py": {
+      "sha256": "91a8acd88af2a60075f4ec2ae0c3775dd6917286408052ec338823b18cfcf6de",
+      "size": 13128
+    }
+  }
+}

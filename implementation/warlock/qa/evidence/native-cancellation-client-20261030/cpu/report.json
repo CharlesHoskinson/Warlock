@@ -1,0 +1,84 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "transportAuthenticationProved": false,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-14ddea4f752346c397e45e5ae1373c53.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "/home/charles/Warlock/implementation/warlock/adapter/endpoint.py": "e254b870922a46b935de9d85db1de56129838ea2cf73eeb55c9fa16e8539d731",
+    "/home/charles/Warlock/implementation/warlock/adapter/effect_endpoint.py": "e01aa144ef2b80cf1b259fd45a926ec9ee6e101040402134efeef1ad184667ca",
+    "/home/charles/Warlock/implementation/warlock/adapter/cancellation_endpoint.py": "42247d6a560093b8a46a3369065d7debfe78baa94b78b67490a61c96fafab6f0",
+    "/home/charles/Warlock/implementation/warlock/qa/check-cancellation-endpoint.py": "ba75b5046328d8c1ebf850879285ab9989e6d04b7b8e1be04b140a6c2ceb23e6",
+    "/home/charles/Warlock/implementation/warlock/qa/check-pointer-ownership.py": "a4b340962613d6becfce6bdc178c6f77bd34a567547c7a35c4c777ca170cd3d7",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-client-root-v1/run.py": "337e935c2b5a1c2f55f42777ef39670af52348d0263cb121026f4c97ad63f345"
+  },
+  "commands": [
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-client-1793341117730541757/workspace/qa/check-cancellation-endpoint.py"
+      ],
+      "exitCode": 0,
+      "stdoutSHA256": "0ae2d19ea97c7473ccf3b120f48b2b74d046cbe34ee0f8fb5c4af70a384a1916",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-client-1793341117730541757/workspace/qa/check-pointer-ownership.py"
+      ],
+      "exitCode": 0,
+      "stdoutSHA256": "cef9517577af27110ce655807ac00211f83f7fcb7e5d340060e90b53380bc1cf",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "sourceBaseRevision": "90d08547e",
+  "python": {
+    "path": "/usr/bin/python3",
+    "sha256": "375532f83be620283ab780c14ca6bcc5907dc379d2b621de0c5d0a112cf5458b",
+    "version": "3.14.8 (main, Oct  2 2026, 10:23:31) [GCC 16.2.1 20260810]"
+  },
+  "results": {
+    "check-cancellation-endpoint.py": {
+      "passed": true,
+      "checks": 533,
+      "seed": "0xca11ce01",
+      "generatedReplyCases": 200,
+      "nativeAcceptance": false,
+      "transportAuthenticationProved": false,
+      "scope": "Production strict cancellation client codec with explicit native response doubles; actual authenticated native fixture and durable daemon/UI routing remain separate."
+    },
+    "check-pointer-ownership.py": {
+      "passed": true,
+      "checks": [
+        "move9",
+        "resize9",
+        "moveNone",
+        "idleNone",
+        "foreign",
+        "wrong-request",
+        "extra",
+        "mode",
+        "idle-owner",
+        "zero-serial",
+        "leading-zero",
+        "owner-zero",
+        "owner-number",
+        "protocol-bool",
+        "version-bool"
+      ],
+      "nativeAcceptance": false
+    }
+  },
+  "scopeDescription": "Actual new production codec with explicit native response doubles; no native/authenticated transport or durable daemon/UI completion. Existing pointer decoder regression unchanged.",
+  "outputs": {
+    "check-cancellation-endpoint.py.stdout": "0ae2d19ea97c7473ccf3b120f48b2b74d046cbe34ee0f8fb5c4af70a384a1916",
+    "check-cancellation-endpoint.py.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "check-pointer-ownership.py.stdout": "cef9517577af27110ce655807ac00211f83f7fcb7e5d340060e90b53380bc1cf",
+    "check-pointer-ownership.py.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

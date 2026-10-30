@@ -1,6 +1,6 @@
 # Native Restore cancellation protocol
 
-Implementation stage: native source compiled against its owning ABI; not loaded or connected to the production Elm/adapter path. See [evidence and remaining gates](../../../implementation/warlock/qa/evidence/native-restore-cancellation-20261030/LIMITS.md). Existing consumers retain their three-status legacy interface; do not add Cancelled to that interface by assuming native execution.
+Implementation stage: native source compiled against its owning ABI and exercised by a strict client on an isolated real GTK fixture. The client is inherited by the production effect endpoint, but the daemon/Elm workflow is not routed to it. The plugin is unloaded after testing; no main-session deployment is implied. See [evidence and remaining gates](../../../implementation/warlock/qa/evidence/native-restore-cancellation-20261030/LIMITS.md). Existing consumers retain their three-status legacy interface; do not add Cancelled to that interface by assuming native execution.
 
 ## Admission and identity
 
@@ -26,4 +26,11 @@ Typed observed Committed/Refused proof survives later formatting failure separat
 
 ## Limits for callers
 
-There is no shipped production caller for this channel yet. Native source does not establish host deadline origin, durable storage, scoped Escape transport, actual dependency scheduling or full resource retirement. A new native source tuple and runtime qualification must precede deployment. The [ownership explanation](../explanation/ownership-and-lifetimes.md) and [status reference](status-and-evidence.md) distinguish implementation stages from original acceptance.
+The opt-in Python API is available through `effect_endpoint.Endpoint`: `cancellation_negotiate`, `prepare_effect`, `commit_effect`, `cancel_effect`, `query_effect_decision` and `ack_effect_decision`. Its in-memory correlation cache does not implement durable recovery. Calls must be sequential on an instance. There is no routed daemon/Elm workflow for this channel yet. Native source does not establish host deadline origin, durable storage, scoped Escape transport, actual dependency scheduling or full resource retirement. A new native source tuple and runtime qualification must precede deployment. The [ownership explanation](../explanation/ownership-and-lifetimes.md) and [status reference](status-and-evidence.md) distinguish implementation stages from original acceptance.
+
+
+## Current client and native observations
+
+The [strict-client/native evidence](../../../implementation/warlock/qa/evidence/native-cancellation-client-20261030/LIMITS.md) records 533 codec assertions with 200 seeded reply-parameter cases, unchanged pointer regression, and 34 actual native checks on the owning compositor-only tuple. Cancel-first/commit-first and the subsequent late opposing requests preserve the appropriate real window state and exact receipt. Original ARC012 cases remain partial because generation retirement and physical Escape witnesses are missing.
+
+Methods take the full validated prepared/outcome dictionary, preserve its original absolute deadline and return fresh validated native dictionaries. An exact repeated Prepare may recover a prior terminal; it does not execute. Unknown and Prepared cannot be ACKed. The caller must durably retain a known terminal before ACK; the client cannot inspect its storage. A `Refused` exception from validation/transport is not a native Refused certificate and must not be used to guess whether submission happened. See [the protected QA how-to](../how-to/test-native-cancellation.md).

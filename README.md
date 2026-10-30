@@ -23,7 +23,7 @@ canonical-string bridge requirement is now accepted on the recorded source
 tuple using protected protocol fixtures and independent source review; see the
 [acceptance record](implementation/warlock/qa/evidence/lossless-deadline-20261029/whole-requirement-acceptance.json).
 
-Native Restore cancellation now has a [compiled first source implementation](docs/warlock/reference/cancellation-protocol.md). Production bridge/UI wiring and native qualification remain open; older native composition locks retain their historical source tuples.
+Native Restore cancellation now has a [strict client and tested native backend](docs/warlock/reference/cancellation-protocol.md). Real isolated GTK ordering tests pass; production daemon/UI wiring, physical Escape and generation-retirement witnesses remain open. Older full native composition locks retain their historical source tuples.
 
 The current candidate is **not installed in the main Omarchy session**.
 Keyboard context-menu reopening still has a retained shared WebKit renderer
