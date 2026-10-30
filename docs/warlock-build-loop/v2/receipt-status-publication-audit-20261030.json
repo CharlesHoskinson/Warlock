@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "publishedRevision": "e9d932436c5c62db28e87c726fbd72a46f12e442",
+  "parent": "f5f246299df9ccd1f58b969dc62d5dfb2e2fd011",
+  "originalStagingReviewPassed": false,
+  "failure": "Root-created evidence existed before the new participant record, which classified it as protected foreign-dirty. A shell command sequence continued to commit/push after the failed review.",
+  "correction": "Read-only audit of the actual seven-file published diff, immutable blob bytes, retained evidence identities, three isolated ledger changes and unchanged genuinely foreign artifacts. No history rewrite or source change.",
+  "laterEmptyIndexReview": "An isolated Git-environment attempt was ignored by the checker sanitization and yielded an empty-index advisory. This is not a staged-content pass.",
+  "publicationAuditPassed": true,
+  "auditedPathHashes": {
+    "docs/warlock-build-loop/v2/RETROFIT.md": "338228ca889f323b63fd4c2a433251b81fcedf2d1e929165475810f5e9d34b88",
+    "docs/warlock-build-loop/v2/receipt-status-acceptance-20261030.json": "b4b8a66fe4e04815e92220bf37e8e4736af6ed8a8a2aed87fb81c2e87f42b0b7",
+    "docs/warlock-build-loop/v2/requirement-ledger.json": "623989425bcc328ccd6d5ab80c34df32423415459bfcf2a99ecd32cceef1f208",
+    "docs/warlock/reference/status-and-evidence.md": "af57c14ce34fb9cf770173b5921f062c0c7e426f95d3d6ce72c9f64800c36d42",
+    "implementation/warlock/qa/evidence/receipt-status-adjudication-20261030/INDEPENDENT-REVIEW.md": "5c256187e977a46e13a2fbc1bb20613a9140a239e902560869015a10e4c4d4d7",
+    "implementation/warlock/qa/evidence/receipt-status-adjudication-20261030/LIMITS.md": "f0f131c65a6f8a1ca5efe9c4592d0ae26a16212346c18d2e1f785b8236f4ca1a",
+    "implementation/warlock/qa/evidence/receipt-status-adjudication-20261030/manifest.json": "09c5156139a96756aa597221fc3a34d581eeadd677b0c1a7d37e269e32f4b128"
+  },
+  "otherRequirementsUnchanged": true,
+  "genuinelyForeignArtifactsUnchanged": true,
+  "wholeARC007Accepted": false,
+  "releaseAccepted": false
+}
