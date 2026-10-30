@@ -340,7 +340,7 @@
       "owner": "Native authority lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "architecture-007",
@@ -359,9 +359,29 @@
         {
           "name": "receipt-committed",
           "oracle": "the correlated request has exactly state Committed and no other request changes",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "accepted",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/receipt-output-lifecycle-20261030/manifest.json",
+              "sha256": "ddf29dd1735db8ceaa3bd3363e60adf07889c0d7c353972708cd2f6fa583ee1c",
+              "scope": "Actual optimized OutputController/SurfaceController/Desktop/Shell/Effects bridge-fixture trace correlates the exact issued full intent and protocol to Committed on unchanged output, after actual output retirement/expected projection and after disconnect. A separately admitted newer target remains Pending with other issued/unresolved records and scene/counters unchanged. Terminal duplicate and eleven foreign/malformed cases preserve correlation with no emitted mutation. Fresh three-root build and 200 fixed-route parameter cases of 31 checks pass; 12 named Quint tests/five bounded samples support the two-key abstraction. Preserve baseline and test-worker compile failure. Accept ONLY this literal original bridge fixture scenario; no actual native delivery, whole ARC007, Cancelled, full proof-release, resource, deployment or release acceptance.",
+              "sourceRevision": "a4168e63302ba0872c49e62cd4a3e76144ed1efa",
+              "independentReview": {
+                "name": "/root/astra_architecture",
+                "independent": true,
+                "disposition": "accepted",
+                "evidence": {
+                  "path": "implementation/warlock/qa/evidence/receipt-output-lifecycle-20261030/FINAL-DISPOSITION.md",
+                  "sha256": "c5515e797b48381203510d2b322c27401c5a8a01a5ab6d484fefbff9e1fff993"
+                }
+              },
+              "acceptanceRecord": {
+                "path": "docs/warlock-build-loop/v2/receipt-committed-acceptance-20261030.json",
+                "sha256": "569ac090e13e2aa42ec1465eea0b695a764f9450b62c716fba7d0fedd9793ad2"
+              }
+            }
+          ],
+          "missingObservation": ""
         },
         {
           "name": "receipt-refused",
@@ -15908,5 +15928,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-10-30T01:20:25.362386+00:00"
+  "updatedUTC": "2026-10-30T04:15:05.938476+00:00"
 }
