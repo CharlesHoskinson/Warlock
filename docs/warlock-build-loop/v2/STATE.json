@@ -1,35 +1,33 @@
 {
   "schema": 1,
   "owner": "sol",
-  "updatedUTC": "2026-10-30T00:15:01.336871+00:00",
+  "updatedUTC": "2026-10-30T00:31:30.158264+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "current-native-frontend-composition",
+    "id": "attention-composed-native-export",
     "requirements": [
-      "ELM-DEL-003"
+      "ELM-UX-009"
     ],
     "scenarios": [
-      "delivery-003"
+      "ux-009"
     ],
     "paths": [
-      "implementation/warlock/adapter/current_native.py",
-      "implementation/warlock/qa/check-current-native.py",
-      "implementation/warlock/README.md",
-      "implementation/warlock/RELEASE.md"
+      "implementation/warlock/qa/native-attention-current.py",
+      "implementation/warlock/README.md"
     ],
-    "before": "The reviewed current frontend receipt cannot yet be composed through a reusable production validator with the existing unchanged native host/ABI tuple; historical verifier binds older frontend sources and assets.",
-    "after": "Validate an explicit reviewed current-native composition lock binding current frontend, unchanged native host/source/dependency/provider/object order and exact core/plugin/Aquamarine identities. Preserve all historical guards and resolve historical source bytes separately from current frontend; reject unreviewed drift and leave original native/AT/release acceptance open.",
+    "before": "Earlier attention qualification stopped because the native recipe pinned stale frontend and no real AT export fixture existed. Production frontend/native composition APIs bd549/61c92 now validate a reviewed current tuple; actual original attention pixels and AT distinction are still missing.",
+    "after": "Exercise the original inactive-window attention observation on the current composed tuple with distinct native active/attention pixels and actual private AT export, preserving focus, identity, membership, physical activation/key recipient, original deadlines and normal cleanup. Record actual failures and independent original-scenario review without upgrading from static checks.",
     "verification": [
-      "Protected production composition validation against exact reviewed frontend/native locks and immutable prior receipts; verify all historical source/preflight rows with exact old/current deltas, source bytes from immutable Git when applicable. No native GUI launch or unchanged investigation retry.",
-      "Negative contract checks for wrong receipt/hash/source/asset/registry/native object/order/provider/tuple/alias/unknown delta using disposable metadata/artifacts, no frozen runtime inputs changed. Existing native recipe assertions remain authoritative; no automated newnative requalification inferred.",
-      "Independent source-role/guard review, Graphify CUDA/eval, README/release/Diataxis/wiki and regular owned GitHub integration. FullDEL003 provenance/offline/compliance and runtime/original gates remain separate."
+      "Review frozen completed private runtime adapter/runner against exact published current_native/current_build and56a composition/frontend613b locks, all original helper ownership/preflight/Wayland ABI/private bus/scope/core limit/deadline/cleanup guards. New fixture consumes production composition; no unchanged renderer/profile diagnostic retry.",
+      "Root authenticated serial native campaign through loop.py native; preserve original genuine GTK urgency/pixel/physical activation assertions and add unambiguous actual AT tree observations tied to coherent bar output/publication/lease and before/after authority incarnation. No ACCESSIBILITY mode branch substitution or DOM-only AT claim.",
+      "Independent exact UX009 source/current tuple/image/AT/native result review before original ledger acceptance. Preserve raw failures, missing observations, investigation limits, Graphify CUDA/eval and README/Diataxis/wiki; full release/AT/IME/resource/native journeys remain separate."
     ],
-    "owner": "root-current-native",
-    "participantRecord": ".warlock-contributor/current-native-frontend-composition.json"
+    "owner": "root-attention-composed",
+    "participantRecord": ".warlock-contributor/attention-composed-native-export.json"
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -2965,6 +2963,34 @@
         "participantRecord": ".warlock-contributor/current-frontend-build-recipe.json"
       },
       "outcome": "Current frontend recipe implemented and published bd549f0db; actual3root/19assets/34checks passed, nativecomposition remains separate."
+    },
+    {
+      "atUTC": "2026-10-30T00:31:30.158254+00:00",
+      "slice": {
+        "id": "current-native-frontend-composition",
+        "requirements": [
+          "ELM-DEL-003"
+        ],
+        "scenarios": [
+          "delivery-003"
+        ],
+        "paths": [
+          "implementation/warlock/adapter/current_native.py",
+          "implementation/warlock/qa/check-current-native.py",
+          "implementation/warlock/README.md",
+          "implementation/warlock/RELEASE.md"
+        ],
+        "before": "The reviewed current frontend receipt cannot yet be composed through a reusable production validator with the existing unchanged native host/ABI tuple; historical verifier binds older frontend sources and assets.",
+        "after": "Validate an explicit reviewed current-native composition lock binding current frontend, unchanged native host/source/dependency/provider/object order and exact core/plugin/Aquamarine identities. Preserve all historical guards and resolve historical source bytes separately from current frontend; reject unreviewed drift and leave original native/AT/release acceptance open.",
+        "verification": [
+          "Protected production composition validation against exact reviewed frontend/native locks and immutable prior receipts; verify all historical source/preflight rows with exact old/current deltas, source bytes from immutable Git when applicable. No native GUI launch or unchanged investigation retry.",
+          "Negative contract checks for wrong receipt/hash/source/asset/registry/native object/order/provider/tuple/alias/unknown delta using disposable metadata/artifacts, no frozen runtime inputs changed. Existing native recipe assertions remain authoritative; no automated newnative requalification inferred.",
+          "Independent source-role/guard review, Graphify CUDA/eval, README/release/Diataxis/wiki and regular owned GitHub integration. FullDEL003 provenance/offline/compliance and runtime/original gates remain separate."
+        ],
+        "owner": "root-current-native",
+        "participantRecord": ".warlock-contributor/current-native-frontend-composition.json"
+      },
+      "outcome": "Current native composition implemented61c92ce47, capture6/test42passed, independentlyreviewed56a native lock; originalruntime/AT remainunaccepted."
     }
   ]
 }
