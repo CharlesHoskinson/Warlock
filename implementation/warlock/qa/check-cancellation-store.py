@@ -17,7 +17,8 @@ def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 paths = [ROOT / 'adapter' / name for name in [
-    'cancellation_ledger.py', 'cancellation_legacy.py', 'recovery_store.py',
+    'cancellation_host_admission.py', 'cancellation_host_cache.py',
+    'cancellation_host_settlement.py', 'cancellation_ledger.py', 'cancellation_legacy.py', 'recovery_store.py',
     'cancellation_endpoint.py', 'effect_endpoint.py', 'endpoint.py',
     'recovery_journal.py', 'durable_ledger.py', 'admission_ledger.py',
     'retirement_ledger.py', 'delivery_ledger.py', 'workspace_navigation.py',

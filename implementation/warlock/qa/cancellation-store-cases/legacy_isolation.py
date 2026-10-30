@@ -60,6 +60,7 @@ for case in ['parent-bypass','corrupt-replay','different-key-same-target']:
    key,original,native,wire=prepared(store,intent())
    if case=='different-key-same-target':
     terminal(store,key,original,native,wire,'cancel');known=store.cancellation_snapshot(BOUND)[0]
+    host_cached_retirement(store,key)
     later=intent('2');new_record=pending(store,later);check(store.begin(BOUND,later,1),'different full key can begin after certified typed retirement')
    admission_path=store.path/'admissions-v1'/(storage_key(new_record if case=='different-key-same-target' else original)+'.json');old_bytes=admission_path.read_bytes()
   store=RecoveryStore(root,'crosslaneextraqa','1',cancellation=True)

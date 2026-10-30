@@ -79,7 +79,7 @@ See [the store test guide](../how-to/test-cancellation-store.md) and
 
 ## Current-grant coordinator
 
-The daemon constructs `CancellationCoordinator(client, recovery, hello)` only in
+The daemon constructs `CancellationCoordinator(client, recovery, hello, settlement_sink=send)` only in
 its explicit internal mode, after the selected strict client's hello. The
 coordinator attaches that exact current binding, negotiates native cancellation,
 and checks full request identity/protocol/deadline. It persists attempts before
@@ -104,3 +104,33 @@ or original-scenario acceptance.
 The [isolation evidence](../../../implementation/warlock/qa/evidence/cancellation-isolation-20261030/LIMITS.md)
 retains the actual crosslane and downgrade failures, the repaired filesystem
 checks and bounded model correspondence. These guards do not enable host/Elm routing.
+
+
+## Paired host admission and local settlement cache
+
+Each new V7 reservation requires an exact durable Submitted companion in
+`cancellation-admissions-v1` and its matching Pending admission. The companion
+retains one-use selection identity, full scope/publication/lease, the host's
+monotonic acceptance time and its original two-second deadline. Retained records
+are observations; lookup cannot create a reservation or renew execution rights.
+Companion keys remain excluded from legacy projection and settlement, including
+when no V7 cancellation row has yet been registered.
+
+`host-cancellation-settled` carries the current delivery binding and immutable
+original admission, selection, deadline, prepared identity, native terminal
+certificate and ACK state. The backend projects only already-retired certified
+records. It emits Pending before native ACK and the updated Acknowledged receipt
+after storing that ACK. A failed output closes the coordinator; it does not
+manufacture a decision or issue an ACK before the receipt is sent.
+
+Target reuse requires both an exact validated receipt in
+`cancellation-settlements-v1` and this store's matching retired V7 certificate.
+The reader reconfirms file and directory durability under the host writer lock.
+A missing cache keeps the fence; malformed, conflicting or ACK-ahead caches
+refuse. Cache presence never grants native execution or ACK rights. Original
+companion keys remain permanently excluded from legacy settlement.
+
+The Python producer/cache join is integrated. The owning C cache consumer and
+Elm recovery route remain under development with the normal host gate disabled.
+Physical Escape, original deadline origin across the complete route, native
+resource retirement and original scenario acceptance remain unverified here.

@@ -48,7 +48,7 @@ def fixture():
      rec=state['cancellations'][-1];events.append('stored:'+rec['stage']+':'+rec['ackState']+':'+','.join(rec['attemptedKinds']))
    return result
   store.ledger._write_file_locked=writer
-  native=Native(events,depth);hello=native.hello();coordinator=CancellationCoordinator(native,store,hello)
+  native=Native(events,depth);hello=native.hello();coordinator=CancellationCoordinator(native,store,hello,settlement_sink=lambda frame:events.append('host-settlement:'+frame['ackState']))
   try:yield store,native,coordinator,events,depth,hello
   finally:coordinator.close();store.close()
 
@@ -60,7 +60,7 @@ def request(kind,wire=None):
 
 def prepare(store,coordinator):
  coordinator.handle(request('effect-cancellation-negotiate'))
- pending(store,intent())
+ cancellation_pending(store,intent())
  return coordinator.handle(request('effect-prepare'))
 
 def count(native,kind):return sum(x['kind']==kind for x in native.calls)

@@ -1,6 +1,6 @@
 """Independent V7 filesystem/transition regressions; no native or power-loss proof."""
 import copy,hashlib,json,os,pathlib,sys,tempfile
-sys.path.insert(0,str(pathlib.Path(__file__).resolve().parents[2]/'adapter'))
+sys.path[0:0]=[str(pathlib.Path(__file__).resolve().parents[2]/'adapter')]
 from recovery_store import RecoveryStore
 from delivery_ledger import DeliveryLedger
 from admission_ledger import storage_key
@@ -40,6 +40,51 @@ def pending(store,value):
   finally:os.close(fd)
   os.fsync(directory)
  return record
+def cancellation_pending(store,value):
+ """Explicit durable host-writer double for the mandatory new pair, not legacy."""
+ rec=pending(store,value);identifier=storage_key(rec)
+ companion={'schema':1,'kind':'host-cancellation-admission','state':'Submitted','key':identifier,'admission':copy.deepcopy(rec),'selection':{'selectionId':identifier[:32],'scope':{'id':'9','generation':'10'},'publication':'11','lease':'12','controlId':'restore','clock':'CLOCK_MONOTONIC','acceptedMonotonicNs':str(int(DEADLINE)-2000000000),'deadlineMonotonicNs':DEADLINE}}
+ from cancellation_host_admission import validate_companion
+ validate_companion(companion)
+ with store.ledger.host_guard():
+  directory=pathlib.Path(store.path)/'cancellation-admissions-v1'
+  try:directory.mkdir(mode=0o700)
+  except FileExistsError:pass
+  fd=os.open(directory/(identifier+'.json'),os.O_WRONLY|os.O_CREAT|os.O_EXCL|os.O_NOFOLLOW,0o600)
+  try:
+   body=encoded(companion);offset=0
+   while offset<len(body):offset+=os.write(fd,body[offset:])
+   os.fsync(fd)
+  finally:os.close(fd)
+  fd=os.open(directory,os.O_DIRECTORY|os.O_NOFOLLOW)
+  try:os.fsync(fd)
+  finally:os.close(fd)
+  os.fsync(store.fd)
+ return rec
+
+def host_cached_retirement(store,identifier):
+ """Explicit C-cache-writer double after an actual typed producer projection."""
+ from cancellation_host_settlement import validate_settlement
+ frames=[frame for frame in store.cancellation_settlement_frames(BOUND) if frame['key']==identifier]
+ check(len(frames)==1,'actual typed producer supplies exact cache receipt')
+ companion=json.loads((pathlib.Path(store.path)/'cancellation-admissions-v1'/(identifier+'.json')).read_bytes())
+ frame=validate_settlement(frames[0],companion,BOUND)
+ with store.ledger.host_guard():
+  directory=pathlib.Path(store.path)/'cancellation-settlements-v1'
+  try:directory.mkdir(mode=0o700)
+  except FileExistsError:pass
+  path=directory/(identifier+'.json');fd=os.open(path,os.O_WRONLY|os.O_CREAT|os.O_EXCL|os.O_NOFOLLOW,0o600)
+  try:
+   body=encoded(frame);offset=0
+   while offset<len(body):offset+=os.write(fd,body[offset:])
+   os.fsync(fd)
+  finally:os.close(fd)
+  fd=os.open(directory,os.O_DIRECTORY|os.O_NOFOLLOW)
+  try:os.fsync(fd)
+  finally:os.close(fd)
+  os.fsync(store.fd)
+ return frame
+
 class Native(Endpoint):
  """Explicit strict-client native response double, never compositor evidence."""
  def __init__(self):self.bound=copy.deepcopy(BOUND);self.state='Prepared';self.prepared=None;self.calls=[]
@@ -55,7 +100,7 @@ class Native(Endpoint):
   return {**common,'kind':'effect-outcome','status':self.state,'reason':{'Committed':'applied','Cancelled':'cancelled-before-commit','Refused':'dependency-mismatch','Unknown':'effect-unproven'}[self.state],'revision':'7','outputGeneration':'5'}
 
 def prepared(store,value):
- rec=pending(store,value);reserved=store.cancellation_reserve(BOUND,value,DEADLINE)
+ rec=cancellation_pending(store,value);reserved=store.cancellation_reserve(BOUND,value,DEADLINE)
  check(reserved['submitPrepare'] is True,'new reservation is durable before first prepare permission')
  key=reserved['record']['key'];store.cancellation_attempt(key,'prepare')
  native=Native();native.cancellation_negotiate('1');wire=native.prepare_effect(value,DEADLINE)

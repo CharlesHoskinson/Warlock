@@ -18,10 +18,13 @@ for phase in ['prepared','acknowledged','certificate-before-finish']:
   before=store.cancellation_snapshot(BOUND)[0];runtime=store.path.parents[2]
   old_calls=copy.deepcopy(native.calls);coordinator.close();store.close()
   with RecoveryStore(runtime,'coordinatorqa','1',cancellation=True) as reopened:
-   Navigation(reopened);next_events=[];new_client=NewNative(next_events,[0]);new_hello=new_client.hello();new=CancellationCoordinator(new_client,reopened,new_hello)
+   Navigation(reopened);next_events=[];new_client=NewNative(next_events,[0]);new_hello=new_client.hello();new=CancellationCoordinator(new_client,reopened,new_hello,settlement_sink=lambda frame:None)
    try:
-    frames=new.startup();check(len(frames)==1,'nonempty startup emits exactly one historical record '+phase)
-    frame=frames[0]
+    frames=new.startup();history=[f for f in frames if f['kind']=='host-cancellation-recovery'];settled=[f for f in frames if f['kind']=='host-cancellation-settled']
+    check(len(history)==1,'nonempty startup emits exactly one historical recovery record '+phase)
+    check(len(settled)==(0 if phase=='prepared' else 1),'typed local settlement exists only for stored terminal '+phase)
+    if settled:check(settled[0]['binding']==new_client.bound and settled[0]['admission']['binding']==BOUND and settled[0]['certificate']==before['certificate']['response'] and settled[0]['executionAuthorized'] is False,'new historical cleanup preserves exact old native certificate '+phase)
+    frame=history[0]
     check(frame['binding']==new_client.bound and frame['record']['admission']['binding']==BOUND and frame['executionAuthorized'] is False,'historical frame separates new delivery binding and immutable old owner '+phase)
     check(frame['recoveryState']==('Unknown' if phase=='prepared' else 'Terminal'),'historical state reflects actual certification '+phase)
     for field in ['admission','deadlineMonotonicNs','prepared','certificate','attemptedKinds','commitAttempted']:
@@ -42,7 +45,7 @@ with fixture() as (store,native,coordinator,events,depth,hello):
   check(native.calls==before and frames==[],'default unsupported lifecycle has no fallback/native effect')
   daemon.handle_request(native,None,request('effect-cancellation-negotiate'),store,None,cancellation=coordinator)
   check(frames[-1]['kind']=='effect-cancellation-capabilities','explicit coordinator handler routes strict negotiated capability')
-  pending(store,intent())
+  cancellation_pending(store,intent())
   daemon.handle_request(native,None,request('effect-prepare'),store,None,cancellation=coordinator)
   prepared=frames[-1];check(prepared['kind']=='effect-prepared','explicit coordinator handler routes exact prepared reply')
   daemon.handle_request(native,None,request('effect-commit',prepared),store,None,cancellation=coordinator)

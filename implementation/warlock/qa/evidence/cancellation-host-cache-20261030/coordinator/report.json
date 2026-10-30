@@ -1,0 +1,92 @@
+{
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-8ec14af0071042b6a01ff20c154a021a.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "adapter/cancellation_coordinator.py": "c6f35f2a22c948a5c6c7dbcbc69de9f85b6018647054d892a9ed101acb0a2282",
+    "adapter/daemon.py": "70cbfe83a6e6913ec249c895773d32a9d0e0ff429786ef22a267f49a1a3e2906",
+    "adapter/cancellation_host_admission.py": "21afd0b786c69a5a3978c26ff400944b62ca00c3d5f215c0eae2f48ee8336417",
+    "adapter/cancellation_host_cache.py": "6ff8900a5050e2eb07eef23989648fc3a5fc1f93b71c682b858f6d73fc9f8ea8",
+    "adapter/cancellation_host_settlement.py": "839c9d207ae0a827143fca44e235c1a996d758a8373cdf853a91cbfae89d1ade",
+    "adapter/cancellation_ledger.py": "35101521cdee18a8d27d0a3d068c037ff8188802cf7884bda896bb1bb40acec4",
+    "adapter/cancellation_legacy.py": "a1190f6bcf47790ab5b447296836c94bec1df5ee5d061f146cad7d2c3aa2e6d0",
+    "adapter/recovery_store.py": "1c21e905fd1a7ce47583e3fa033843d902aaa710995336a5130e6d3117cdca7d",
+    "adapter/cancellation_endpoint.py": "42247d6a560093b8a46a3369065d7debfe78baa94b78b67490a61c96fafab6f0",
+    "adapter/effect_endpoint.py": "e01aa144ef2b80cf1b259fd45a926ec9ee6e101040402134efeef1ad184667ca",
+    "adapter/endpoint.py": "e254b870922a46b935de9d85db1de56129838ea2cf73eeb55c9fa16e8539d731",
+    "adapter/recovery_journal.py": "ba70923c01e9dabaca4d4cf1ae9c4e57f6227c9eb414d4a212c486f21edfbfe7",
+    "adapter/durable_ledger.py": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+    "adapter/admission_ledger.py": "2faf5eb03dff6993de707f2d7458b929db881f4102bdc1ec467d3f7aaa4413d1",
+    "adapter/retirement_ledger.py": "213cbb6ecd5c2218075d2cc98132c1c53680933f3898c757e7ba1848261faec5",
+    "adapter/delivery_ledger.py": "ce1ff3528b454bdca7412389f5693f69023a5c76bc9586541c1091c1cddc5ca4",
+    "adapter/workspace_navigation.py": "79508bcb112ec602b6d33daf1050ef54f63afeb7bfe427fa5553e8a4c68bb8a9",
+    "adapter/reconciliation.py": "6cd8c55f627528e6197e4bda4cff2e21776991833a78ec8ed29a400b22f3aceb",
+    "adapter/grant_endpoint.py": "4b60a6c7e43aade3f2ce59495600f3b418b781865a7289dae53a189388f5c3f0",
+    "qa/cancellation-coordinator-cases/coordinator_fixture.py": "6b57eab48158f88c5b6f91a653361938b354e8defb028a6abf33568e3f6b6e00",
+    "qa/cancellation-coordinator-cases/daemon_config.py": "51765f6c1da532266046673fcbced68fa1c29d93c2ff88838a887365c1883c26",
+    "qa/cancellation-coordinator-cases/history_routing.py": "2a720dce314f2abe194631941ccec45855f4e39b7345b3490efd1028399f1f82",
+    "qa/cancellation-coordinator-cases/lifecycle.py": "f28ae1d2b144f5294026f0c382aee4f82b99bec59378033f8d4d5307b0c4af30",
+    "qa/cancellation-store-cases/fixture.py": "4188274627a8ca8540be29c04961f89e6f43eafbc7f491bc6f558696f4001bcc",
+    "qa/check-cancellation-coordinator.py": "2a262bcd9c687f8b2f5a40c3327a6353e9ccc3b55fdac6681ce251b10e79e3ea"
+  },
+  "commands": [
+    {
+      "name": "lifecycle",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/charles/Warlock/implementation/warlock/qa/cancellation-coordinator-cases/lifecycle.py"
+      ],
+      "exitCode": 0,
+      "stdoutSHA256": "3fe624180cc96391b9673990a791389e461a4695097acdbfb72aed921d74b597",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "observations": {
+        "passed": true,
+        "checks": 149,
+        "nativeAcceptance": false,
+        "scope": "Actual private coordinator/production V7 store; strict schema response doubles, actual file barriers and lock-depth checks. Adversarial reply regression is not claimed as valid native ordering. No real native transport/C/Elm or full proof."
+      }
+    },
+    {
+      "name": "daemon_config",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/charles/Warlock/implementation/warlock/qa/cancellation-coordinator-cases/daemon_config.py"
+      ],
+      "exitCode": 0,
+      "stdoutSHA256": "9c97fbc9863dcca450fbfaee98f6f183bfc308b01d5703393aa03578993397fa",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "observations": {
+        "passed": true,
+        "checks": 52,
+        "nativeAcceptance": false,
+        "scope": "Actual candidate daemon main config selection/unwind, real V6/V7 stores and strict hello/attach response doubles; services/event I/O inert, no real native/C/Elm journey."
+      }
+    },
+    {
+      "name": "history_routing",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/charles/Warlock/implementation/warlock/qa/cancellation-coordinator-cases/history_routing.py"
+      ],
+      "exitCode": 0,
+      "stdoutSHA256": "24bd94ba51e91459052a3fd50a716e052796a0ea1354fb4e2136cf69eb2c0b26",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "observations": {
+        "passed": true,
+        "checks": 123,
+        "nativeAcceptance": false,
+        "scope": "Actual coordinator startup and candidate daemon dispatch with real V7 across reopened grants; strict response doubles, no real C/Elm/transport/window proof."
+      }
+    }
+  ],
+  "nativeAcceptance": false,
+  "originalAcceptance": false,
+  "productionDefaultCancellationEnabled": false,
+  "completeRuntimeClosureClaimed": false,
+  "limits": "Actual coordinator and daemon with real V6/V7 stores; strict native-schema response and inert service/event doubles. No C/Elm/deadline-origin/physical-input/authenticated-transport/release acceptance."
+}

@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-host-cache-root-v2/qa/cancellation-store-cases/base.py", line 17, in <module>
+    check(store.begin(BOUND,new,1) is True,'new legacy admission follows certified cancellation under shared target guard')
+          ~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-host-cache-root-v2/adapter/recovery_store.py", line 23, in begin
+    def begin(self,bound,intent,effectProtocol=1):return self.ledger.begin(bound,intent,effectProtocol)
+                                                         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-host-cache-root-v2/adapter/cancellation_ledger.py", line 791, in begin
+    raise Refused('Cancellation companion holds native target')
+endpoint.Refused: Cancellation companion holds native target

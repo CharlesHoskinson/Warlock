@@ -1,0 +1,93 @@
+{
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-b5d2fd1091dd406d9348e8ddc83b6d91.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "/home/charles/Warlock/implementation/warlock/adapter/admission_ledger.py": "2faf5eb03dff6993de707f2d7458b929db881f4102bdc1ec467d3f7aaa4413d1",
+    "/home/charles/Warlock/implementation/warlock/adapter/catalog_authority.py": "ad20204afd3b203eb956918300c8da4cb4765b3c5ad86e701b0257a54b8fb9cc",
+    "/home/charles/Warlock/implementation/warlock/adapter/catalog_transport.py": "43bd1cd1059b87ce4d349d72e4b2a917ac1bdc3dacda2f60563fa621e05a4b84",
+    "/home/charles/Warlock/implementation/warlock/adapter/daemon.py": "609d43a35c5f32e1354cdca4744f876fe4d462328826dadfff66cfb581690884",
+    "/home/charles/Warlock/implementation/warlock/adapter/delivery_ledger.py": "ce1ff3528b454bdca7412389f5693f69023a5c76bc9586541c1091c1cddc5ca4",
+    "/home/charles/Warlock/implementation/warlock/adapter/durable_ledger.py": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+    "/home/charles/Warlock/implementation/warlock/adapter/effect_endpoint.py": "e01aa144ef2b80cf1b259fd45a926ec9ee6e101040402134efeef1ad184667ca",
+    "/home/charles/Warlock/implementation/warlock/adapter/endpoint.py": "e254b870922a46b935de9d85db1de56129838ea2cf73eeb55c9fa16e8539d731",
+    "/home/charles/Warlock/implementation/warlock/adapter/explorer.py": "5771d66fe29af0aed5e6f81f0d0287374d816ea048bdeaf08ae07a9cdf681e78",
+    "/home/charles/Warlock/implementation/warlock/adapter/geometry_endpoint.py": "193b9ef7ecf114156c02cd527a703e79383cdec83267b612ff406f165cc3e3a4",
+    "/home/charles/Warlock/implementation/warlock/adapter/geometry_placement.py": "706899e88f911e1e02bceff8351d6426101ed918d194e7f8ca1f7b707c959614",
+    "/home/charles/Warlock/implementation/warlock/adapter/geometry_size_policy.py": "bcca6dd280911a38ed189e2e8ca6d81ea98c775ef261444f9b1e0f4b9a754888",
+    "/home/charles/Warlock/implementation/warlock/adapter/grant_endpoint.py": "4b60a6c7e43aade3f2ce59495600f3b418b781865a7289dae53a189388f5c3f0",
+    "/home/charles/Warlock/implementation/warlock/adapter/jump_list.py": "2280c0ab00ff0683c0a28611a99b70ac122887629cafb9226f40c649be581806",
+    "/home/charles/Warlock/implementation/warlock/adapter/motion_preferences.py": "ec75685d52f81d5d28f82155b92580015dc897bee6488892c2a8f98e0ffa3633",
+    "/home/charles/Warlock/implementation/warlock/adapter/notification_service.py": "129c864f275282320274ab417bdbc2a7a919096c2ce2b58d0438b18988fc334b",
+    "/home/charles/Warlock/implementation/warlock/adapter/reconciliation.py": "6cd8c55f627528e6197e4bda4cff2e21776991833a78ec8ed29a400b22f3aceb",
+    "/home/charles/Warlock/implementation/warlock/adapter/recovery_fault.py": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1",
+    "/home/charles/Warlock/implementation/warlock/adapter/recovery_journal.py": "ba70923c01e9dabaca4d4cf1ae9c4e57f6227c9eb414d4a212c486f21edfbfe7",
+    "/home/charles/Warlock/implementation/warlock/adapter/recovery_profile.py": "ace346503b5afd2c691748e7c2e1c25394fd81cc0a90be60525ff6cd85a78142",
+    "/home/charles/Warlock/implementation/warlock/adapter/recovery_store.py": "3257927b706471357d7461b1f71935cb46dfe44b8f4e112418816eb49aaa22f5",
+    "/home/charles/Warlock/implementation/warlock/adapter/release_builder.py": "43dfc887228de8a755964a0aaa8b645d9fb8f4a4a4a288b7ff48d7b1844d630a",
+    "/home/charles/Warlock/implementation/warlock/adapter/release_repro.py": "68107841f4514394091740799c6b2b1983a2e6a4708e3a490e40b61729f38986",
+    "/home/charles/Warlock/implementation/warlock/adapter/retirement_ledger.py": "213cbb6ecd5c2218075d2cc98132c1c53680933f3898c757e7ba1848261faec5",
+    "/home/charles/Warlock/implementation/warlock/adapter/shell_preferences.py": "702f110efc7db1c5ab45df0fc2910a06891eb0abce5fc4183271dd3538b2bdb4",
+    "/home/charles/Warlock/implementation/warlock/adapter/shortcut_preferences.py": "2a8cc047ebfb5040c7dda4f9fd0f9e80a9b1207245458beda3ac26ff2251c185",
+    "/home/charles/Warlock/implementation/warlock/adapter/system_menu.py": "8e6cba8ae22f821407ab386a0552057de94be3eb03793a87c80817b8c57094e5",
+    "/home/charles/Warlock/implementation/warlock/adapter/taskbar_catalog.py": "5414ed1b6fde57a7508c2f3b20658a97006ce3c4203cecbb893fb73de943b9ba",
+    "/home/charles/Warlock/implementation/warlock/adapter/taskbar_preferences.py": "4fde83478c22f7173ef05727a3666ff7ce72076bc05fddfa4fd08705af9a57d2",
+    "/home/charles/Warlock/implementation/warlock/adapter/taskbar_projection.py": "b9da24de2a910a3d8515f2e8e4de2cb0086bdd0cd26c7f857fcbbdc15978c976",
+    "/home/charles/Warlock/implementation/warlock/adapter/workspace_navigation.py": "79508bcb112ec602b6d33daf1050ef54f63afeb7bfe427fa5553e8a4c68bb8a9",
+    "/home/charles/Warlock/implementation/warlock/adapter/release_compliance.py": "51f7557b4a741106f3b7ffc16df09ae86aa90ca580578ea40a1ff175d4a48964",
+    "/home/charles/Warlock/implementation/warlock/adapter/current_build.py": "d4e5af280a275f9a777322ee60f1f34bf21751b6726edcaa4e4105a02da4dbc7",
+    "/home/charles/Warlock/implementation/warlock/adapter/current_native.py": "2605b6b989b027fd4e1398bb250d8063ad97bfd947fbf71b40b1880fc0b96765",
+    "/home/charles/Warlock/implementation/warlock/adapter/release_tuple.py": "3267a1d3eca90d9dbcccc2f918ea71aafd96e0bba43f49705f7d3d845f330320",
+    "/home/charles/Warlock/implementation/warlock/adapter/cancellation_endpoint.py": "42247d6a560093b8a46a3369065d7debfe78baa94b78b67490a61c96fafab6f0",
+    "/home/charles/Warlock/implementation/warlock/adapter/cancellation_ledger.py": "94dc5b03dd3e513703dec2a705271178b4ff45ea319d0831a70517613fee7a05",
+    "/home/charles/Warlock/implementation/warlock/adapter/cancellation_legacy.py": "a1190f6bcf47790ab5b447296836c94bec1df5ee5d061f146cad7d2c3aa2e6d0",
+    "/home/charles/Warlock/implementation/warlock/adapter/cancellation_coordinator.py": "dda41b74eeb6f350a598b19f1c2022a117f63c71316144f7488873e79fc904f2",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-orphan-root-v2/adapter/cancellation_ledger.py": "050b9b8f420b2144463561c8e62a79881b6ba69f11443ea0d9668fb4f6d6b5e8",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-orphan-root-v2/adapter/cancellation_coordinator.py": "c513a4c4d24f817ba217ac847fbd8d8e3a9ae41d7a3ee30c7d2ae2f1c8e7d7f1",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-orphan-root-v2/adapter/recovery_store.py": "bb7c52a274ca69f35e36f5bdf8073d210d7e03874cd5bcd877860b4a95875f93",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-orphan-root-v2/adapter/daemon.py": "ebe242a00710d43dbcbd189ec685d0d27b2289e006ec01c0110268488e0a073b",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-orphan-root-v2/adapter/cancellation_host_admission.py": "21afd0b786c69a5a3978c26ff400944b62ca00c3d5f215c0eae2f48ee8336417",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-orphan-root-v2/check-orphan.py": "ba9c28d973175e58e67277fdb71ede0e08b62e873bea0ecbddeca733f5f66128",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-orphan-root-v2/qa/check_pair_lookup.py": "6b0b7b8f2322c6c4296bdc176048ded2c035863df09ee283b4e60122003471e5",
+    "/home/charles/Warlock/implementation/warlock/qa/cancellation-store-cases/fixture.py": "3ad01b398692cdf052cd10f1e6ce7459e0ab9b10ea237529364c2d36dc65baac",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-orphan-root-v2/qa/check_reader_guards.py": "6a58ad23f9c0d6ce83af20fe94b21b62fb8a0ba67c31b8bcbb01b1fa90a8a537"
+  },
+  "driverSHA256": "421d09af449f1cc445192659b2a516fb7185738806197586b0d7b7a2935e0e49",
+  "commands": [
+    {
+      "name": "reader-red",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-orphan-root-v2/qa/check_reader_guards.py",
+        "--adapter",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-orphan-root-v2/adapter",
+        "--expect-bug"
+      ],
+      "exitCode": 0,
+      "stdoutSHA256": "42e8d136fe627bea5bd9a10b52f30c11907b3bc28435c506c0025d6c5d179d36",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "observations": {
+        "passed": true,
+        "defectReproduced": true,
+        "observedHostGuardDepths": {
+          "snapshot": [
+            0
+          ],
+          "recover": [
+            1,
+            0
+          ],
+          "blocked": [
+            0
+          ]
+        },
+        "scope": "Actual public read/recovery/blocked entrypoints and production companion scans. No actual adversarial concurrent write schedule executed."
+      }
+    }
+  ],
+  "nativeAcceptance": false,
+  "compilerDependencyClosureClaimed": false
+}

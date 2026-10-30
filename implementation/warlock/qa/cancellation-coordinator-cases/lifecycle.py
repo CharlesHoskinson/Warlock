@@ -42,7 +42,7 @@ with fixture() as (store,native,coordinator,events,depth,hello):
 for case in ['reserve-fault','attempt-fault','binding-before','binding-after','double-attach','close']:
  with fixture() as (store,native,coordinator,events,depth,hello):
   if case=='double-attach':
-   refused(lambda:CancellationCoordinator(native,store,hello),'second coordinator cannot detach an existing live grant')
+   refused(lambda:CancellationCoordinator(native,store,hello,settlement_sink=lambda frame:None),'second coordinator cannot detach an existing live grant')
    check(coordinator.handle(request('effect-cancellation-negotiate'))['kind']=='effect-cancellation-capabilities','original grant survives second attach refusal');continue
   if case=='binding-before':
    native.bound={**BOUND,'frontend':'4'};before=copy.deepcopy(native.calls)

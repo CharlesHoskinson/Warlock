@@ -13,7 +13,10 @@ from recovery_journal import guarded
 
 class CancellationCoordinator:
     """Own one negotiated current grant and serialize durable/native ordering."""
-    def __init__(self, client, recovery, hello):
+    def __init__(self, client, recovery, hello, *, settlement_sink):
+        if not callable(settlement_sink):
+            raise Refused('Owned backend settlement sink required')
+        self.settlement_sink = settlement_sink
         self.client = client
         self.recovery = recovery
         if (not isinstance(hello, dict) or type(hello.get('protocolVersion')) is not int
@@ -117,7 +120,22 @@ class CancellationCoordinator:
                     if not self._attempted(record).issubset(self._attempted(completed)):
                         self.poisoned = True
                         raise Refused('Cancellation attemptedKinds regressed during startup')
-            return self._store(self.recovery.cancellation_recovery_frames, self.bound)
+            return (self._store(self.recovery.cancellation_recovery_frames, self.bound)
+                    + self._store(self.recovery.cancellation_settlement_frames, self.bound))
+
+    def _emit_settlement_locked(self, key):
+        frames = self._store(self.recovery.cancellation_settlement_frames, self.bound)
+        matches = [frame for frame in frames if frame['key'] == key]
+        if len(matches) != 1:
+            self.poisoned = True
+            raise Refused('Exact typed host settlement unavailable')
+        try:
+            # Every short store guard ended before touching owned backend I/O.
+            self.settlement_sink(copy.deepcopy(matches[0]))
+        except Exception:
+            self.poisoned = True
+            self._detach_locked()
+            raise
 
     def _record(self, request):
         records = self._store(self.recovery.cancellation_snapshot, self.bound)
@@ -165,6 +183,7 @@ class CancellationCoordinator:
         if certificate != response:
             self.poisoned = True
             raise Refused('Cancellation terminal certificate representation differs')
+        self._emit_settlement_locked(key)
         try:
             ack = self.client.ack_effect_decision(copy.deepcopy(response))
             self._live()
@@ -177,6 +196,7 @@ class CancellationCoordinator:
             self.poisoned = True
             raise Refused('Cancellation attemptedKinds regressed after ACK')
         self.acks[key] = copy.deepcopy(ack)
+        self._emit_settlement_locked(key)
         return copy.deepcopy(response)
 
     def handle(self, request, workspace_navigation=None):
@@ -185,6 +205,27 @@ class CancellationCoordinator:
             if not isinstance(request, dict):
                 raise Refused('Cancellation request object')
             kind = request.get('kind')
+            if kind == 'host-cancellation-receipt-request':
+                import re
+                exact(request, ('protocolVersion','kind','cancellationHostProtocol','binding','effectProtocol','intent','selectionId','deadlineMonotonicNs'))
+                if (type(request['protocolVersion']) is not int or request['protocolVersion'] != 3 or
+                    type(request['cancellationHostProtocol']) is not int or request['cancellationHostProtocol'] != 1 or
+                    type(request['effectProtocol']) is not int or request['effectProtocol'] != 1 or
+                    binding(request['binding']) != self.bound):
+                    raise Refused('Cancellation receipt scope')
+                self.client._cancellation_intent(request['intent'], self.bound)
+                canonical(request['deadlineMonotonicNs'])
+                selection = request['selectionId']
+                if type(selection) is not str or not re.fullmatch(r'[0-9a-f]{32}', selection):
+                    raise Refused('Cancellation selection identity')
+                result = self._store(self.recovery.cancellation_receipt_lookup, self.bound,
+                                     copy.deepcopy(request['intent']), request['deadlineMonotonicNs'], selection)
+                if result is not None and result['stage'] == 'AdmissionRetired' and result['certificate'] is not None:
+                    self._emit_settlement_locked(result['key'])
+                return {'protocolVersion':3,'kind':'host-cancellation-receipt','cancellationHostProtocol':1,
+                        'binding':copy.deepcopy(self.bound),'effectProtocol':1,'intent':copy.deepcopy(request['intent']),
+                        'selectionId':selection,'deadlineMonotonicNs':request['deadlineMonotonicNs'],
+                        'executionAuthorized':False,'record':copy.deepcopy(result)}
             common = ['protocolVersion', 'kind', 'binding', 'cancellationProtocol']
             if kind == 'effect-cancellation-negotiate':
                 exact(request, common + ['requestId'])

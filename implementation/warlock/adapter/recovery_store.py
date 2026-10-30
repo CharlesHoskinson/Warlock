@@ -53,7 +53,9 @@ class RecoveryStore:
  def cancellation_ack_pending(self,key):return self.ledger.cancellation_ack_pending(key)
  def cancellation_acknowledged(self,key,ack):return self.ledger.cancellation_acknowledged(key,ack)
  def cancellation_snapshot(self,bound):return self.ledger.cancellation_snapshot(bound)
+ def cancellation_receipt_lookup(self,bound,intent,deadline,selection_id):return self.ledger.cancellation_receipt_lookup(bound,intent,deadline,selection_id)
  def cancellation_recovery_frames(self,bound):return self.ledger.cancellation_recovery_frames(bound)
+ def cancellation_settlement_frames(self,bound):return self.ledger.cancellation_settlement_frames(bound)
  def close(self):self.ledger.close()
  def __enter__(self):return self
  def __exit__(self,*args):self.close()

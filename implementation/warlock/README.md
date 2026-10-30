@@ -1096,3 +1096,13 @@ Nine store groups and three coordinator groups pass on the recorded source tuple
 the isolation model has 13 named tests/four bounded samples and does not model
 namespace downgrade. C/Elm admission/delivery, physical Escape, generation resource
 and original native/release obligations remain open. No new original acceptance.
+
+
+Cancellation paired-admission retrofit: new V7 reservations require the exact
+host companion and Pending pair. Orphan companions cannot enter legacy
+projection or settlement. The backend emits typed certified retirement receipts
+before native ACK; target reuse requires an exact durable cache receipt joined
+to its stored certificate. Existing protected store and coordinator regressions
+pass on this source. The C/Elm integration, physical Escape and original native
+acceptance remain open; the normal host gate stays disabled. See the
+[protocol reference](../../docs/warlock/reference/cancellation-protocol.md).

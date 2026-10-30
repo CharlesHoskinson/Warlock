@@ -5,7 +5,7 @@ for case in ['unattempted-prepare','unattempted-commit']:
  with tempfile.TemporaryDirectory(prefix='warlock-v7-provenance-') as temporary:
   with open_store(pathlib.Path(temporary),'provenanceqa','1') as store:
    if case=='unattempted-prepare':
-    rec=pending(store,intent());reserved=store.cancellation_reserve(BOUND,intent(),DEADLINE);key=reserved['record']['key']
+    rec=cancellation_pending(store,intent());reserved=store.cancellation_reserve(BOUND,intent(),DEADLINE);key=reserved['record']['key']
     native=Native();native.cancellation_negotiate('1');wire=native.prepare_effect(intent(),DEADLINE)
     proof=_native_cancellation_evidence(rec,DEADLINE,None,wire,phase='initial')
    else:

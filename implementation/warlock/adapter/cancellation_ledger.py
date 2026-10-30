@@ -378,6 +378,18 @@ class CancellationLedger(DeliveryLedger):
                 raise Refused('Duplicate V7 cancellation key')
             keys.add(record['key'])
         self._legacy_helpers.validate_v7_legacy_locked(self, state['legacy'], old, records)
+        # A host companion owns custody before a V7 cancellation record exists.
+        # Decode-time rejection prevents a persisted legacy settlement/release
+        # from reaching either legacy cleanup or host-admission-settled output.
+        companions = {legacy_key(c['admission']) for c in self._companion_scan_locked()}
+        legacy = state['legacy']
+        definitive = legacy['settled'] + legacy['settlementHistory']
+        if legacy['latest'] is not None and legacy['latest']['status'] in ('Committed','Refused'):
+            definitive = definitive + [legacy['latest']]
+        if any(legacy_key(row) in companions for row in definitive):
+            raise Refused('Companion custody cannot have legacy definitive settlement')
+        if any(legacy_key(row['record']) in companions for row in legacy['releases']):
+            raise Refused('Companion custody cannot have legacy release proof')
         if len(encoded(state)) > _LIMIT:
             raise Refused('V7 byte capacity')
         if _reserved_envelope_bytes(state) > _LIMIT:
@@ -593,6 +605,8 @@ class CancellationLedger(DeliveryLedger):
     def _require_legacy_key_locked(self, record):
         """Legacy proof never authorizes a typed cancellation disposition."""
         identity = legacy_key(record)
+        if any(legacy_key(row['admission']) == identity for row in self._companion_scan_locked()):
+            raise Refused('Host cancellation companion requires certificate settlement')
         state = self._current_v7_locked()
         if any(legacy_key(row['admission']) == identity for row in state['cancellations']):
             raise Refused('Typed cancellation requires its native certificate path')
@@ -631,8 +645,23 @@ class CancellationLedger(DeliveryLedger):
             legacy = self._sync(directory)
             state = self._current_v7_locked()
             typed = {legacy_key(row['admission']) for row in state['cancellations']}
+            typed.update(legacy_key(c['admission']) for c in self._companion_scan_locked())
             records = legacy['entries'] + [deepcopy(row['record']) for row in legacy['releases'] if row['phase'] == 'Released']
             return deepcopy([row for row in records if legacy_key(row) not in typed])
+
+    def snapshot(self):
+        # Public readers also join mutable companion metadata. Keep _load
+        # already-locked so internal writers never recursively acquire a guard.
+        from durable_ledger import Ledger
+        with self.host_guard(): return Ledger.snapshot(self)
+
+    def recover(self, current_binding):
+        from durable_ledger import Ledger
+        with self.host_guard(): return Ledger.recover(self, current_binding)
+
+    def blocked(self, lifetime, incarnation):
+        from durable_ledger import Ledger
+        with self.host_guard(): return Ledger.blocked(self, lifetime, incarnation)
 
     def _load(self):
         return deepcopy(self._current_v7_locked()['legacy'])
@@ -679,6 +708,117 @@ class CancellationLedger(DeliveryLedger):
             self.poisoned = True
             raise
 
+    def _close_companion_locked(self, fd):
+        try: os.close(fd)
+        except OSError:
+            self.poisoned = True
+            raise
+
+    def _companion_directory_locked(self, required=False):
+        # Caller holds host_guard; never create missing custody metadata.
+        import stat
+        fd = None
+        try:
+            try:
+                fd = os.open('cancellation-admissions-v1', os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW | os.O_CLOEXEC, dir_fd=self.fd)
+            except FileNotFoundError:
+                if required: raise Refused('Cancellation host companion directory missing')
+                return None
+            st = os.fstat(fd)
+            if st.st_uid != os.getuid() or stat.S_IMODE(st.st_mode) != 0o700:
+                raise Refused('Cancellation companion directory ownership')
+            return fd
+        except BaseException as error:
+            if isinstance(error, OSError): self.poisoned = True
+            if fd is not None: self._close_companion_locked(fd)
+            raise
+
+    def _companion_scan_locked(self):
+        from cancellation_host_admission import scan_locked
+        try:
+            fd = self._companion_directory_locked()
+            if fd is None: return []
+            try: return scan_locked(self, fd)
+            finally: self._close_companion_locked(fd)
+        except OSError:
+            self.poisoned = True
+            raise
+
+    def _active_companions_locked(self, validated_state):
+        from cancellation_host_cache import cached_retirement_locked
+        return [c for c in self._companion_scan_locked()
+                if cached_retirement_locked(self, c, validated_state) is None]
+
+    def cancellation_settlement_frames(self, current_delivery_binding):
+        from cancellation_host_settlement import make_settlement
+        current = deepcopy(binding(deepcopy(current_delivery_binding)))
+        if current['lifetime'] != self.target['lifetime']:
+            raise Refused('Cancellation settlement delivery lifetime')
+        with self.host_guard() as directory:
+            # Read-only projection. The explicit retirement owner must finish
+            # first; a receipt lookup never imports or finishes local state.
+            state = self._current_v7_locked()
+            companions = {c['key']: c for c in self._companion_scan_locked()}
+            frames = []
+            for record in state['cancellations']:
+                if record['stage'] != 'AdmissionRetired' or record['certificate'] is None:
+                    continue
+                companion = companions.get(record['key'])
+                if companion is None:
+                    # Old retained V7 rows have no host selection. Keep them
+                    # historical; never fabricate acceptance origin or D.
+                    continue
+                try: pending = self.raw(directory, record['key']+'.json', 4096)
+                except OSError:
+                    self.poisoned = True
+                    raise
+                if pending is not None:
+                    raise Refused('Cancellation settlement admission still present')
+                frames.append(make_settlement(record, companion, current))
+            return frames
+
+    def begin(self, bound, intent, effectProtocol=1):
+        # Legacy direct admission may not bypass a typed companion, even an
+        # orphan Reserved companion with no schema-2 Pending file.
+        from durable_ledger import Ledger
+        wanted = normalize({'schema':2,'binding':bound,'intent':intent,'effectProtocol':effectProtocol,'status':'Pending'})
+        with self.host_guard() as directory:
+            self._require_legacy_key_locked(wanted)
+            state = self._current_v7_locked()
+            for companion in self._active_companions_locked(state):
+                prior = companion['admission']
+                if companion['key'] == storage_key(wanted) or prior['intent']['incarnation'] == intent['incarnation']:
+                    raise Refused('Cancellation companion holds native target')
+            self._sync(directory, exclude=wanted)
+            if not any(legacy_key(r) == legacy_key(wanted) for r in self.admissions(directory)):
+                raise Refused('No matching durable host admission')
+            return Ledger.begin(self, bound, intent, effectProtocol)
+
+    def cancellation_receipt_lookup(self, bound, intent, deadline, selection_id):
+        # Read-only: no _sync, reserve, attempt, observe, finish, ACK or RPC.
+        import re
+        canonical(deadline)
+        bound = deepcopy(binding(deepcopy(bound)))
+        CancellationEndpoint._cancellation_intent(intent, bound)
+        if type(selection_id) is not str or not re.fullmatch(r'[0-9a-f]{32}', selection_id):
+            raise Refused('Cancellation selection identity')
+        wanted = normalize({'schema':2,'binding':bound,'intent':deepcopy(intent),'effectProtocol':1,'status':'Pending'})
+        identifier = storage_key(wanted)
+        with self.host_guard():
+            if self._live_cancellation_binding != bound:
+                raise Refused('Exact current cancellation grant not established')
+            state = self._current_v7_locked()
+            rows = [r for r in state['cancellations'] if r['key'] == identifier]
+            if len(rows)>1: raise Refused('Ambiguous cancellation record')
+            if not rows: return None
+            row = rows[0]
+            if row['admission'] != wanted or row['deadlineMonotonicNs'] != deadline:
+                raise Refused('Cancellation lookup identity differs')
+            matching = [c for c in self._companion_scan_locked() if c['key'] == identifier]
+            if len(matching)!=1 or matching[0]['state']!='Submitted' or matching[0]['admission']!=wanted or matching[0]['selection']['selectionId']!=selection_id or matching[0]['selection']['deadlineMonotonicNs']!=deadline:
+                raise Refused('Cancellation lookup companion differs')
+            return deepcopy(row)
+
     def cancellation_reserve(self, bound, intent, deadline):
         canonical(deadline)
         bound = deepcopy(binding(deepcopy(bound)))
@@ -687,6 +827,29 @@ class CancellationLedger(DeliveryLedger):
         identifier = storage_key(wanted)
         with self.host_guard() as directory:
             self._require_live_record({'admission': wanted})
+            # Retained records are observation-only; neither sync nor missing
+            # Pending is allowed to turn an exact duplicate into a first send.
+            state = self._current_v7_locked()
+            existing = [r for r in state['cancellations'] if r['key'] == identifier]
+            if existing:
+                if existing[0]['admission'] != wanted or existing[0]['deadlineMonotonicNs'] != deadline:
+                    raise Refused('Existing cancellation differs')
+                return {'record': deepcopy(existing[0]), 'submitPrepare': False}
+            from cancellation_host_admission import read_pair_locked, scan_locked
+            companion_fd = self._companion_directory_locked(required=True)
+            try:
+                companions = scan_locked(self, companion_fd)
+                pair = read_pair_locked(self, directory, companion_fd, bound, intent, deadline)
+                for companion in self._active_companions_locked(state):
+                    if companion['key'] != identifier and companion['admission']['intent']['incarnation'] == intent['incarnation']:
+                        raise Refused('Cancellation companion holds native target')
+                # Reconfirm durable directory entries under the same guard.
+                os.fsync(companion_fd); os.fsync(directory)
+            except OSError:
+                self.poisoned = True
+                raise
+            finally:
+                self._close_companion_locked(companion_fd)
             from workspace_navigation import NAME as workspace_name, MARKER as workspace_marker, record as workspace_record
             raw = self.raw(self.fd, workspace_name, 4096)
             marker = self.raw(self.fd, workspace_marker, 4096)
@@ -699,11 +862,6 @@ class CancellationLedger(DeliveryLedger):
                 raise Refused('Workspace navigation unresolved')
             self._sync(directory, exclude=wanted)
             state = self._current_v7_locked()
-            existing = [r for r in state['cancellations'] if r['key'] == identifier]
-            if existing:
-                if existing[0]['admission'] != wanted or existing[0]['deadlineMonotonicNs'] != deadline:
-                    raise Refused('Existing cancellation differs')
-                return {'record': deepcopy(existing[0]), 'submitPrepare': False}
             legacy = state['legacy']
             if any(r['admission']['binding'] == bound and r['ackState'] != 'Acknowledged' for r in state['cancellations']):
                 raise Refused('Current binding already has an unacknowledged cancellation slot')
@@ -742,6 +900,7 @@ class CancellationLedger(DeliveryLedger):
         if row['status'] not in ('Committed', 'Refused', 'Unknown'):
             raise Refused('Admission receipt status')
         with self.host_guard() as directory:
+            self._require_legacy_key_locked(row)
             self._sync(directory)
             envelope = self._current_v7_locked()
             if any(item['key'] == storage_key(row) for item in envelope['cancellations']):

@@ -28,3 +28,12 @@ a live host configuration. The normal host still uses the existing default;
 its C/Elm messages and host-issued deadline admission are not integrated.
 See [the protocol reference](../reference/cancellation-protocol.md) and
 [recorded evidence limits](../../../implementation/warlock/qa/evidence/cancellation-coordinator-20261030/LIMITS.md).
+
+
+For the paired admission, settlement-cache and orphan-regression controls, use
+the same protected invocation with
+`implementation/warlock/qa/check-cancellation-host-cache.py` as the entry point.
+Require six completed groups and matching source/output hashes. The tests use
+explicit durable C-cache writer and native-response doubles; they do not qualify
+the actual owning C consumer, physical Escape or native resource retirement.
+See the [paired backend evidence](../../../implementation/warlock/qa/evidence/cancellation-host-cache-20261030/LIMITS.md).

@@ -85,7 +85,7 @@ def event_socket(client):
 def handle_request(client,catalog,request,recovery,reconciliation,notifications=None,system_menu=None,explorer=None,jump_lists=None,workspace_navigation=None,cancellation=None):
  if not isinstance(request,dict):raise Refused('Frontend request object')
  kind=request.get('kind')
- if cancellation is not None and kind in {'effect-cancellation-negotiate','effect-prepare','effect-commit','effect-cancel','effect-decision-request','effect-decision-ack'}:
+ if cancellation is not None and kind in {'effect-cancellation-negotiate','effect-prepare','effect-commit','effect-cancel','effect-decision-request','effect-decision-ack','host-cancellation-receipt-request'}:
   send(cancellation.handle(request,workspace_navigation));return
  if kind in {'workspace-navigation','workspace-navigation-recover'}:
   if workspace_navigation is None:raise Refused('Workspace navigation unavailable')
@@ -214,7 +214,7 @@ def main():
   cancellation=None
   if cancellation_opt_in:
    from cancellation_coordinator import CancellationCoordinator
-   cancellation=CancellationCoordinator(client,recovery,hello)
+   cancellation=CancellationCoordinator(client,recovery,hello,settlement_sink=send)
    lifetime.callback(cancellation.close)
   reconciliation=publish_startup(client,hello,recovery,cancellation)
   send(guarded(lambda:workspace_navigation.recover(client)))

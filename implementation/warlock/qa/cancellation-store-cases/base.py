@@ -12,6 +12,7 @@ with tempfile.TemporaryDirectory(prefix='warlock-v7-test-') as temporary:
   outcome=terminal(store,key,rec,native,wire)
   check(outcome['status']=='Cancelled' and not store.ledger.snapshot()['entries'],'known cancellation removes only certified local reservation without Refused conversion')
   check((where/'ledger-v6.json').read_bytes()==old,'cancellation writes never mutate frozen V6')
+  host_cached_retirement(store,key) # Explicit newly required durable host-cache prerequisite.
   # Exact old Pending reappearance cannot resurrect it or erase a newer intent.
   pending(store,intent());new=intent('2');pending(store,new)
   check(store.begin(BOUND,new,1) is True,'new legacy admission follows certified cancellation under shared target guard')

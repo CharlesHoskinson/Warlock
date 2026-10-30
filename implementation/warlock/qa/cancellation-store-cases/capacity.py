@@ -29,7 +29,7 @@ for status,reason in [('Committed','applied'),('Cancelled','cancelled-before-com
 for offset in [0,-1]:
  with tempfile.TemporaryDirectory(prefix='warlock-v7-capacity-boundary-') as temporary:
   with open_store(pathlib.Path(temporary),'capacityqa','1') as store:
-   rec=pending(store,intent());before=(store.path/'ledger-v7.json').read_bytes()
+   rec=cancellation_pending(store,intent());before=(store.path/'ledger-v7.json').read_bytes()
    with patch.object(ledger_module,'_LIMIT',budget+offset):
     if offset==-1:
      refused(lambda:store.cancellation_reserve(BOUND,intent(),DEADLINE),'one-byte-under funded envelope refuses before submit permission')
