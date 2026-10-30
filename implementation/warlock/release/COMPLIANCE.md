@@ -66,18 +66,23 @@ successful audit is a point-in-time observation.
 
 ## Current disposition
 
-The retained catalogs deliberately report unknown dispositions. The historical
-core, authority plugin and Aquamarine artifacts named by the current pair are
-absent from this checkout; archived substitutes have different hashes. Complete
-native source correspondence, the compiler binary's correspondence with its
+The retained catalogs deliberately report unknown dispositions. Historical pair
+references do not establish current artifact identity. The reviewed current
+derivative is available by explicit composition hash; the isolated-A campaign
+rebuilds its host and all 19 frontend assets exactly, then blocks packaging on
+12 redistribution and seven notice-applicability decisions. No archive, build B
+or two-build comparison exists. See the
+[current evidence](../qa/evidence/current-release-selection-20261030/LIMITS.md).
+Complete native source correspondence, the compiler binary's correspondence with its
 upstream source, applicable project grants and independent redistribution review
 remain unresolved. The external build-tool and system-library inventories also
 retain their review gaps. The copied notices and pinned package sources provide
 bounded evidence, not an approved distributable.
 
-`INDEPENDENT-REVIEW.json` records the independent review and missing original
-observations. A real candidate package and its archive still need to be
-cross-checked after a coherent source and native tuple is available. Existing
+`INDEPENDENT-REVIEW.json` preserves the earlier review and missing observations;
+the current evidence records the later partial isolated build. A completed
+candidate package, its archive and the second clean build still require the
+original checks after the mandatory review decisions are resolved. Existing
 native, AT/IME, hardware, resource, journey, deployment and rollback gates remain
 separate.
 
@@ -97,3 +102,13 @@ These checks exercise real production functions with controlled payloads,
 including refusal and restoration cases. Their success does not build or accept
 the missing historical native tuple, qualify a real release, or make a legal
 determination. Preserve failed observations as well as passing evidence.
+
+## Compiler distribution correspondence
+
+The [bounded distribution report](elm-distribution-20261030.json) records a protected
+28-check pass: both selected npm archives match the retained lock SHA512 integrity,
+and all eight installed files match after the documented wrapper-to-compiler
+placement. The archives were parsed as data; no downloaded script or binary ran.
+Current compiler aliases have equal bytes and distinct inodes. Historical installer
+execution, compiler source-to-binary correspondence and redistribution approval
+remain unestablished. Component statuses and notice decisions are unchanged.

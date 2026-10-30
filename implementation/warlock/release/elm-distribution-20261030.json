@@ -1,0 +1,162 @@
+{
+  "schema": 1,
+  "scope": "Exact npm installer/compiler distribution correspondence as data; not upstream source build, historical installer execution, license approval or whole delivery-005 acceptance.",
+  "requirement": "ELM-DEL-005",
+  "scenario": "delivery-005",
+  "protectedInvocation": "67f151f39fac4b7b92038d172b2349b0",
+  "protectedExit": 0,
+  "checksPassed": 28,
+  "checkerSHA256": "400c78e596344762ca73760d881cfa8d88f7e473fac4383a7281a85f3a8ff8be",
+  "evidence": "implementation/warlock/qa/evidence/elm-distribution-20261030",
+  "result": {
+    "passed": true,
+    "archives": [
+      {
+        "name": "elm",
+        "version": "0.19.2-0",
+        "url": "https://registry.npmjs.org/elm/-/elm-0.19.2-0.tgz",
+        "archiveSHA256": "a3aea90afb69d755eb889253a3361cc03a4f924990323c27ea527c70da68d518",
+        "integrity": "sha512-a2N4WJ6ge+cXOemAgo6tu8gN17cIzzitYoPcJRpvbiPbay1+BfQAv9wyWtgTyR3YkrduN5oQwzLgSIaUBZwjYQ==",
+        "metadataSHA256": "6b82a9030dc678326c68484f65e8892f414370edd23f82b753f0484aee0d1fd9",
+        "declaredLicense": "BSD-3-Clause",
+        "files": {
+          "bin/elm": {
+            "sha256": "5eac6b132f8365dad041b683dd0b23bad99fac4b8537bd6c27cd274a1b8d93e2",
+            "size": 1038
+          },
+          "binary.js": {
+            "sha256": "43e17364dd32cf7a3a8613cdd38e909604f9037b8bb43d54071ab0bf9b637e62",
+            "size": 3619
+          },
+          "install.js": {
+            "sha256": "2ca03540f6b59935137e4eb2dd3f2d6374aa064f0d6f49f7421feb7b3534ac5d",
+            "size": 26
+          },
+          "package.json": {
+            "sha256": "40261a256c19b122c95d519f1796e7d3d3b9ace02fa86fea040ec06dabf45600",
+            "size": 1067
+          },
+          "README.md": {
+            "sha256": "3c75f66d0f37d00286b08fb971f93a4db772091ac3018c2fdd18bea900960a19",
+            "size": 2048
+          }
+        }
+      },
+      {
+        "name": "@elm_binaries/linux_x64",
+        "version": "0.19.2-0",
+        "url": "https://registry.npmjs.org/@elm_binaries/linux_x64/-/linux_x64-0.19.2-0.tgz",
+        "archiveSHA256": "ea998aa56c892bf174c055059dde6c55f6fa42239569bc13b4cfa4b36745a0fd",
+        "integrity": "sha512-03EXHZZBCEFcKKh2kKUGPsFysKXnHANYw2XubBwT3Vj/5uOI/doG0g8kij5ng8n50vma/pNwAWqvVQLSRDmPMA==",
+        "metadataSHA256": "3802386554ca42a2807265fbae5ea415c6b91772308cbeefb8f9f678ce2c55c4",
+        "declaredLicense": "BSD-3-Clause",
+        "files": {
+          "elm": {
+            "sha256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+            "size": 47976272
+          },
+          "package.json": {
+            "sha256": "3781fc4d4589f36037bece84c62b8ea05c7fc751b35c2b1b52cd4fa71e15302d",
+            "size": 302
+          },
+          "README.md": {
+            "sha256": "f30a5769af4ec6c2a46db6709ec0f370d24b0ae0abf5a69d5f17f3b65c10b2c3",
+            "size": 409
+          }
+        }
+      }
+    ],
+    "installed": {
+      "node_modules/elm/README.md": {
+        "sha256": "3c75f66d0f37d00286b08fb971f93a4db772091ac3018c2fdd18bea900960a19",
+        "size": 2048,
+        "mode": "0o644",
+        "device": 58,
+        "inode": 615716,
+        "nlink": 1
+      },
+      "node_modules/elm/bin/elm": {
+        "sha256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+        "size": 47976272,
+        "mode": "0o755",
+        "device": 58,
+        "inode": 615718,
+        "nlink": 1
+      },
+      "node_modules/elm/binary.js": {
+        "sha256": "43e17364dd32cf7a3a8613cdd38e909604f9037b8bb43d54071ab0bf9b637e62",
+        "size": 3619,
+        "mode": "0o644",
+        "device": 58,
+        "inode": 615719,
+        "nlink": 1
+      },
+      "node_modules/elm/install.js": {
+        "sha256": "2ca03540f6b59935137e4eb2dd3f2d6374aa064f0d6f49f7421feb7b3534ac5d",
+        "size": 26,
+        "mode": "0o644",
+        "device": 58,
+        "inode": 615720,
+        "nlink": 1
+      },
+      "node_modules/elm/package.json": {
+        "sha256": "40261a256c19b122c95d519f1796e7d3d3b9ace02fa86fea040ec06dabf45600",
+        "size": 1067,
+        "mode": "0o644",
+        "device": 58,
+        "inode": 615721,
+        "nlink": 1
+      },
+      "node_modules/@elm_binaries/linux_x64/README.md": {
+        "sha256": "f30a5769af4ec6c2a46db6709ec0f370d24b0ae0abf5a69d5f17f3b65c10b2c3",
+        "size": 409,
+        "mode": "0o644",
+        "device": 58,
+        "inode": 615712,
+        "nlink": 1
+      },
+      "node_modules/@elm_binaries/linux_x64/elm": {
+        "sha256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+        "size": 47976272,
+        "mode": "0o755",
+        "device": 58,
+        "inode": 615713,
+        "nlink": 1
+      },
+      "node_modules/@elm_binaries/linux_x64/package.json": {
+        "sha256": "3781fc4d4589f36037bece84c62b8ea05c7fc751b35c2b1b52cd4fa71e15302d",
+        "size": 302,
+        "mode": "0o644",
+        "device": 58,
+        "inode": 615714,
+        "nlink": 1
+      }
+    },
+    "sameCurrentInode": false,
+    "placement": "Installed ELF matches the binary archive and documented installer content placement; this does not prove historical installer execution or hardlinking.",
+    "responseLimits": "Response headers have explicit cookie redaction; current fetch script was edited after capture and is not an attested executed-source identity.",
+    "upstreamSourceBuildCorrespondenceEstablished": false,
+    "redistributionApproved": false,
+    "nativeAcceptance": false,
+    "releaseAccepted": false,
+    "scope": {
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-1121ce8e8a684d7a971f192e74f56ca6.scope",
+      "coreLimit": 1
+    }
+  },
+  "limitations": [
+    "Only selected elm and linux_x64 0.19.2-0 distributions; other optional platform binaries not checked.",
+    "Fetch script edited after capture for cookie redaction; not an attested executed-source identity. Raw captured bodies are pinned.",
+    "SHA512 SRI agrees with retained lock and metadata; this is not package signature verification.",
+    "Installer source and resulting bytes correspond; no claim that current distinct inodes were historically hardlinked.",
+    "Compiler upstream-source build correspondence, project grant, independent redistribution decisions and original native/release gates remain unresolved."
+  ],
+  "redistributionApproved": false,
+  "releaseAccepted": false,
+  "wholeScenarioAccepted": false,
+  "independentReview": {
+    "path": "implementation/warlock/qa/evidence/elm-distribution-20261030/FINAL-DISPOSITION.md",
+    "sha256": "7599151991040ca09c4a3b54ff56d144407f421cd4b3e835f0e64a47f828d41d",
+    "disposition": "Bounded distribution correspondence passes; original delivery-005 remains partial."
+  }
+}

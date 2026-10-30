@@ -1,0 +1,154 @@
+{
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-1121ce8e8a684d7a971f192e74f56ca6.scope",
+    "coreLimit": 1
+  },
+  "sourceSHA256": "400c78e596344762ca73760d881cfa8d88f7e473fac4383a7281a85f3a8ff8be",
+  "checks": [
+    {
+      "name": "Actual protected checker exits normally",
+      "passed": true
+    },
+    {
+      "name": "Both published distributions and eight members observed",
+      "passed": true
+    },
+    {
+      "name": "Observed alias bytes equal exact held compiler",
+      "passed": true
+    },
+    {
+      "name": "No grant or upstream source build correspondence claimed",
+      "passed": true
+    },
+    {
+      "name": "Changed lock bytes refused",
+      "passed": true,
+      "error": "Held package lock differs"
+    },
+    {
+      "name": "Changed actual archive body refused by response join",
+      "passed": true,
+      "error": "Response body differs"
+    },
+    {
+      "name": "Actual SRI validator rejects altered archive",
+      "passed": true,
+      "error": "Archive integrity/size mismatch"
+    },
+    {
+      "name": "Duplicate JSON keys refused",
+      "passed": true,
+      "error": "Duplicate JSON key: x"
+    },
+    {
+      "name": "FIFO refused without blocking read",
+      "passed": true,
+      "error": "Nonregular/oversized input: /home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-distribution-root-v1/nonregular-input"
+    },
+    {
+      "name": "Wrong requested URL refused",
+      "passed": true,
+      "error": "Response URL/status differs"
+    },
+    {
+      "name": "Wrong response URL refused",
+      "passed": true,
+      "error": "Response URL/status differs"
+    },
+    {
+      "name": "Wrong response status refused",
+      "passed": true,
+      "error": "Response URL/status differs"
+    },
+    {
+      "name": "Wrong response body size refused",
+      "passed": true,
+      "error": "Response body differs"
+    },
+    {
+      "name": "Wrong HTTP content length refused",
+      "passed": true,
+      "error": "Response Content-Length differs"
+    },
+    {
+      "name": "Encoded response refused",
+      "passed": true,
+      "error": "Response encoding/redirect scope differs"
+    },
+    {
+      "name": "Changed metadata refused after matching body receipt",
+      "passed": true,
+      "error": "Registry metadata differs from lock"
+    },
+    {
+      "name": "Nonpackage archive prefix refused",
+      "passed": true,
+      "error": "Unsafe archive path"
+    },
+    {
+      "name": "Traversal refused",
+      "passed": true,
+      "error": "Unsafe archive path"
+    },
+    {
+      "name": "Absolute path refused",
+      "passed": true,
+      "error": "Unsafe archive path"
+    },
+    {
+      "name": "Duplicate member refused",
+      "passed": true,
+      "error": "Duplicate/member-count bound"
+    },
+    {
+      "name": "Archive link refused",
+      "passed": true,
+      "error": "Unsupported archive member type/size"
+    },
+    {
+      "name": "Contiguous-file extension refused",
+      "passed": true,
+      "error": "Unsupported archive member type/size"
+    },
+    {
+      "name": "Directory outside exact file-only scope refused",
+      "passed": true,
+      "error": "Unsupported archive member type/size"
+    },
+    {
+      "name": "Oversized declared member refused before read",
+      "passed": true,
+      "error": "Unsupported archive member type/size"
+    },
+    {
+      "name": "Independent copied layout is a reachable positive control",
+      "passed": true
+    },
+    {
+      "name": "Actual changed installed binary copy refused",
+      "passed": true,
+      "error": "Installed package file inventory/bytes differ"
+    },
+    {
+      "name": "Original toolchain still validates after negative",
+      "passed": true
+    },
+    {
+      "name": "Executed checker source unchanged",
+      "passed": true
+    }
+  ],
+  "nativeAcceptance": false,
+  "releaseAccepted": false,
+  "redistributionApproved": false,
+  "counterexample": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-distribution-root-v1/installed-negative/node_modules/elm/bin/elm",
+    "offset": 100,
+    "beforeByte": 0,
+    "afterByte": 1,
+    "sha256": "ead748e287b74b07501209c2366c212e2e72e44725606f05a707529ffdfe0bec",
+    "originalToolchainModified": false
+  }
+}

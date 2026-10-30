@@ -1,0 +1,110 @@
+{
+  "lockPath": "/home/charles/Warlock/implementation/warlock-preview-provider-v143/qa/toolchain/npm-package/package-lock.json",
+  "lockSHA256": "a2a339e6df901717a4fd0a4d88e1430e22d35bbe1641d339d5e4c477c93f22f0",
+  "responses": [
+    {
+      "kind": "metadata",
+      "package": "node_modules/elm",
+      "requestedURL": "https://registry.npmjs.org/elm/0.19.2-0",
+      "responseURL": "https://registry.npmjs.org/elm/0.19.2-0",
+      "status": 200,
+      "headers": {
+        "date": "Fri, 30 Oct 2026 03:18:54 GMT",
+        "content-type": "application/json",
+        "content-length": "1786",
+        "cf-ray": "a527467b0e63e76d-DEN",
+        "cf-cache-status": "DYNAMIC",
+        "access-control-allow-origin": "*",
+        "cache-control": "max-age=300",
+        "server": "cloudflare",
+        "vary": "accept-encoding, accept",
+        "set-cookie": "[redacted]"
+      },
+      "retrievedUTC": "2026-10-30T03:18:54.012006+00:00",
+      "sha256": "6b82a9030dc678326c68484f65e8892f414370edd23f82b753f0484aee0d1fd9",
+      "size": 1786,
+      "file": "elm.json",
+      "redirectPolicy": "disabled",
+      "requestAcceptEncoding": "identity"
+    },
+    {
+      "kind": "archive",
+      "package": "node_modules/elm",
+      "requestedURL": "https://registry.npmjs.org/elm/-/elm-0.19.2-0.tgz",
+      "responseURL": "https://registry.npmjs.org/elm/-/elm-0.19.2-0.tgz",
+      "status": 200,
+      "headers": {
+        "date": "Fri, 30 Oct 2026 03:18:54 GMT",
+        "content-type": "application/octet-stream",
+        "content-length": "3359",
+        "cf-ray": "a527467baab47c28-DEN",
+        "cf-cache-status": "HIT",
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "2226612",
+        "cache-control": "public, immutable, max-age=31557600",
+        "etag": "\"c533e5b22ebbf31036b79d83b47bb78d\"",
+        "last-modified": "Mon, 06 Jul 2026 08:43:49 GMT",
+        "server": "cloudflare",
+        "set-cookie": "[redacted]"
+      },
+      "retrievedUTC": "2026-10-30T03:18:54.051461+00:00",
+      "sha256": "a3aea90afb69d755eb889253a3361cc03a4f924990323c27ea527c70da68d518",
+      "size": 3359,
+      "file": "elm.tgz",
+      "redirectPolicy": "disabled",
+      "requestAcceptEncoding": "identity"
+    },
+    {
+      "kind": "metadata",
+      "package": "node_modules/@elm_binaries/linux_x64",
+      "requestedURL": "https://registry.npmjs.org/@elm_binaries%2Flinux_x64/0.19.2-0",
+      "responseURL": "https://registry.npmjs.org/@elm_binaries%2Flinux_x64/0.19.2-0",
+      "status": 200,
+      "headers": {
+        "date": "Fri, 30 Oct 2026 03:18:54 GMT",
+        "content-type": "application/json",
+        "content-length": "1284",
+        "cf-ray": "a527467beabecef3-DEN",
+        "cf-cache-status": "DYNAMIC",
+        "access-control-allow-origin": "*",
+        "server": "cloudflare",
+        "set-cookie": "[redacted]"
+      },
+      "retrievedUTC": "2026-10-30T03:18:54.160211+00:00",
+      "sha256": "3802386554ca42a2807265fbae5ea415c6b91772308cbeefb8f9f678ce2c55c4",
+      "size": 1284,
+      "file": "linux-x64.json",
+      "redirectPolicy": "disabled",
+      "requestAcceptEncoding": "identity"
+    },
+    {
+      "kind": "archive",
+      "package": "node_modules/@elm_binaries/linux_x64",
+      "requestedURL": "https://registry.npmjs.org/@elm_binaries/linux_x64/-/linux_x64-0.19.2-0.tgz",
+      "responseURL": "https://registry.npmjs.org/@elm_binaries/linux_x64/-/linux_x64-0.19.2-0.tgz",
+      "status": 200,
+      "headers": {
+        "date": "Fri, 30 Oct 2026 03:18:54 GMT",
+        "content-type": "application/octet-stream",
+        "content-length": "11191690",
+        "cf-ray": "a527467c9b3b3d6a-DEN",
+        "cf-cache-status": "HIT",
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "1416730",
+        "cache-control": "public, must-revalidate, max-age=31557600",
+        "etag": "\"cab7b1689334a3e781e482e5a951e65d\"",
+        "last-modified": "Mon, 06 Jul 2026 08:31:48 GMT",
+        "server": "cloudflare",
+        "set-cookie": "[redacted]"
+      },
+      "retrievedUTC": "2026-10-30T03:18:54.564978+00:00",
+      "sha256": "ea998aa56c892bf174c055059dde6c55f6fa42239569bc13b4cfa4b36745a0fd",
+      "size": 11191690,
+      "file": "linux-x64.tgz",
+      "redirectPolicy": "disabled",
+      "requestAcceptEncoding": "identity"
+    }
+  ]
+}

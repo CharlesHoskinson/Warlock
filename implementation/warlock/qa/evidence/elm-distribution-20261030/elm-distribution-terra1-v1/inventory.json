@@ -1,0 +1,223 @@
+{
+  "archives": {
+    "elm": {
+      "package": "node_modules/elm",
+      "version": "0.19.2-0",
+      "url": "https://registry.npmjs.org/elm/-/elm-0.19.2-0.tgz",
+      "expectedSRI": "sha512-a2N4WJ6ge+cXOemAgo6tu8gN17cIzzitYoPcJRpvbiPbay1+BfQAv9wyWtgTyR3YkrduN5oQwzLgSIaUBZwjYQ==",
+      "observedSRI": "sha512-a2N4WJ6ge+cXOemAgo6tu8gN17cIzzitYoPcJRpvbiPbay1+BfQAv9wyWtgTyR3YkrduN5oQwzLgSIaUBZwjYQ==",
+      "archiveSHA256": "a3aea90afb69d755eb889253a3361cc03a4f924990323c27ea527c70da68d518",
+      "metadataSHA256": "6b82a9030dc678326c68484f65e8892f414370edd23f82b753f0484aee0d1fd9",
+      "metadataName": "elm",
+      "metadataVersion": "0.19.2-0",
+      "metadataTarball": "https://registry.npmjs.org/elm/-/elm-0.19.2-0.tgz",
+      "metadataSRI": "sha512-a2N4WJ6ge+cXOemAgo6tu8gN17cIzzitYoPcJRpvbiPbay1+BfQAv9wyWtgTyR3YkrduN5oQwzLgSIaUBZwjYQ==",
+      "memberCount": 5,
+      "members": [
+        {
+          "name": "package/bin/elm",
+          "type": "file",
+          "size": 1038,
+          "mode": "0o755",
+          "linktarget": null,
+          "sha256": "5eac6b132f8365dad041b683dd0b23bad99fac4b8537bd6c27cd274a1b8d93e2",
+          "unsafePath": false,
+          "duplicate": false
+        },
+        {
+          "name": "package/binary.js",
+          "type": "file",
+          "size": 3619,
+          "mode": "0o644",
+          "linktarget": null,
+          "sha256": "43e17364dd32cf7a3a8613cdd38e909604f9037b8bb43d54071ab0bf9b637e62",
+          "unsafePath": false,
+          "duplicate": false
+        },
+        {
+          "name": "package/install.js",
+          "type": "file",
+          "size": 26,
+          "mode": "0o644",
+          "linktarget": null,
+          "sha256": "2ca03540f6b59935137e4eb2dd3f2d6374aa064f0d6f49f7421feb7b3534ac5d",
+          "unsafePath": false,
+          "duplicate": false
+        },
+        {
+          "name": "package/package.json",
+          "type": "file",
+          "size": 1067,
+          "mode": "0o644",
+          "linktarget": null,
+          "sha256": "40261a256c19b122c95d519f1796e7d3d3b9ace02fa86fea040ec06dabf45600",
+          "unsafePath": false,
+          "duplicate": false
+        },
+        {
+          "name": "package/README.md",
+          "type": "file",
+          "size": 2048,
+          "mode": "0o644",
+          "linktarget": null,
+          "sha256": "3c75f66d0f37d00286b08fb971f93a4db772091ac3018c2fdd18bea900960a19",
+          "unsafePath": false,
+          "duplicate": false
+        }
+      ],
+      "implicitDirectories": [
+        "package",
+        "package/bin"
+      ],
+      "unsafeMembers": [],
+      "licenseFileMembers": []
+    },
+    "linux-x64": {
+      "package": "node_modules/@elm_binaries/linux_x64",
+      "version": "0.19.2-0",
+      "url": "https://registry.npmjs.org/@elm_binaries/linux_x64/-/linux_x64-0.19.2-0.tgz",
+      "expectedSRI": "sha512-03EXHZZBCEFcKKh2kKUGPsFysKXnHANYw2XubBwT3Vj/5uOI/doG0g8kij5ng8n50vma/pNwAWqvVQLSRDmPMA==",
+      "observedSRI": "sha512-03EXHZZBCEFcKKh2kKUGPsFysKXnHANYw2XubBwT3Vj/5uOI/doG0g8kij5ng8n50vma/pNwAWqvVQLSRDmPMA==",
+      "archiveSHA256": "ea998aa56c892bf174c055059dde6c55f6fa42239569bc13b4cfa4b36745a0fd",
+      "metadataSHA256": "3802386554ca42a2807265fbae5ea415c6b91772308cbeefb8f9f678ce2c55c4",
+      "metadataName": "@elm_binaries/linux_x64",
+      "metadataVersion": "0.19.2-0",
+      "metadataTarball": "https://registry.npmjs.org/@elm_binaries/linux_x64/-/linux_x64-0.19.2-0.tgz",
+      "metadataSRI": "sha512-03EXHZZBCEFcKKh2kKUGPsFysKXnHANYw2XubBwT3Vj/5uOI/doG0g8kij5ng8n50vma/pNwAWqvVQLSRDmPMA==",
+      "memberCount": 3,
+      "members": [
+        {
+          "name": "package/elm",
+          "type": "file",
+          "size": 47976272,
+          "mode": "0o755",
+          "linktarget": null,
+          "sha256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+          "unsafePath": false,
+          "duplicate": false
+        },
+        {
+          "name": "package/package.json",
+          "type": "file",
+          "size": 302,
+          "mode": "0o644",
+          "linktarget": null,
+          "sha256": "3781fc4d4589f36037bece84c62b8ea05c7fc751b35c2b1b52cd4fa71e15302d",
+          "unsafePath": false,
+          "duplicate": false
+        },
+        {
+          "name": "package/README.md",
+          "type": "file",
+          "size": 409,
+          "mode": "0o644",
+          "linktarget": null,
+          "sha256": "f30a5769af4ec6c2a46db6709ec0f370d24b0ae0abf5a69d5f17f3b65c10b2c3",
+          "unsafePath": false,
+          "duplicate": false
+        }
+      ],
+      "implicitDirectories": [
+        "package"
+      ],
+      "unsafeMembers": [],
+      "licenseFileMembers": []
+    }
+  },
+  "installed": {
+    "node_modules/elm/README.md": {
+      "type": "file",
+      "size": 2048,
+      "mode": "0o644",
+      "device": 58,
+      "inode": 615716,
+      "nlink": 1,
+      "linktarget": null,
+      "sha256": "3c75f66d0f37d00286b08fb971f93a4db772091ac3018c2fdd18bea900960a19"
+    },
+    "node_modules/elm/bin": {
+      "type": "directory",
+      "size": 6,
+      "mode": "0o755",
+      "device": 58,
+      "inode": 615717,
+      "nlink": 1,
+      "linktarget": null,
+      "sha256": null
+    },
+    "node_modules/elm/bin/elm": {
+      "type": "file",
+      "size": 47976272,
+      "mode": "0o755",
+      "device": 58,
+      "inode": 615718,
+      "nlink": 1,
+      "linktarget": null,
+      "sha256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948"
+    },
+    "node_modules/elm/binary.js": {
+      "type": "file",
+      "size": 3619,
+      "mode": "0o644",
+      "device": 58,
+      "inode": 615719,
+      "nlink": 1,
+      "linktarget": null,
+      "sha256": "43e17364dd32cf7a3a8613cdd38e909604f9037b8bb43d54071ab0bf9b637e62"
+    },
+    "node_modules/elm/install.js": {
+      "type": "file",
+      "size": 26,
+      "mode": "0o644",
+      "device": 58,
+      "inode": 615720,
+      "nlink": 1,
+      "linktarget": null,
+      "sha256": "2ca03540f6b59935137e4eb2dd3f2d6374aa064f0d6f49f7421feb7b3534ac5d"
+    },
+    "node_modules/elm/package.json": {
+      "type": "file",
+      "size": 1067,
+      "mode": "0o644",
+      "device": 58,
+      "inode": 615721,
+      "nlink": 1,
+      "linktarget": null,
+      "sha256": "40261a256c19b122c95d519f1796e7d3d3b9ace02fa86fea040ec06dabf45600"
+    },
+    "node_modules/@elm_binaries/linux_x64/README.md": {
+      "type": "file",
+      "size": 409,
+      "mode": "0o644",
+      "device": 58,
+      "inode": 615712,
+      "nlink": 1,
+      "linktarget": null,
+      "sha256": "f30a5769af4ec6c2a46db6709ec0f370d24b0ae0abf5a69d5f17f3b65c10b2c3"
+    },
+    "node_modules/@elm_binaries/linux_x64/elm": {
+      "type": "file",
+      "size": 47976272,
+      "mode": "0o755",
+      "device": 58,
+      "inode": 615713,
+      "nlink": 1,
+      "linktarget": null,
+      "sha256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948"
+    },
+    "node_modules/@elm_binaries/linux_x64/package.json": {
+      "type": "file",
+      "size": 302,
+      "mode": "0o644",
+      "device": 58,
+      "inode": 615714,
+      "nlink": 1,
+      "linktarget": null,
+      "sha256": "3781fc4d4589f36037bece84c62b8ea05c7fc751b35c2b1b52cd4fa71e15302d"
+    }
+  },
+  "otherOptionalPlatforms": "lock records darwin_arm64,darwin_x64,linux_arm64,win32_x64; their archives and installations are outside this inspection",
+  "limits": [
+    "npm integrity does not establish upstream binary build, source provenance, project license grant or redistributability"
+  ]
+}

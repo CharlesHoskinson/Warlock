@@ -1016,3 +1016,11 @@ Packaging then blocks on 12 unresolved redistribution dispositions and seven
 notice-applicability reviews. No archive or build B exists; two-build
 reproducibility and release/installability remain unaccepted. See
 [the current reproducibility how-to](../../docs/warlock/how-to/check-current-release-reproducibility.md).
+
+The [compiler distribution check](release/elm-distribution-20261030.json) now
+records 28 passing protected checks and independent review: both selected npm
+archives match locked SHA512 integrity, and their eight files match the installed
+packages after the documented wrapper-to-compiler placement. This resolves the
+bounded distribution-byte question. Compiler source-to-binary provenance,
+project license grants and redistribution decisions remain unresolved; no release
+acceptance follows. [Retained evidence and limits](qa/evidence/elm-distribution-20261030/LIMITS.md).

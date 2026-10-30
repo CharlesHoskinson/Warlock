@@ -35,7 +35,7 @@
       ],
       "disposition": {
         "status": "unknown",
-        "evidence": "npm metadata identifies 0.19.2-0 and declares BSD-3-Clause; upstream compiler tag 0.19.2 LICENSE https://raw.githubusercontent.com/elm/compiler/0.19.2/LICENSE was retrieved and retained. The cached binary has not been independently linked to that tagged source or distribution archive; source/binary provenance and redistribution review are unresolved."
+        "evidence": "npm metadata identifies 0.19.2-0 and declares BSD-3-Clause; upstream compiler tag 0.19.2 LICENSE is retained. Protected 28-check distribution correspondence verifies both npm archives against locked SHA512 SRI and all eight installed files, including documented installer wrapper replacement; see release/elm-distribution-20261030.json. This does not establish compiler upstream-source build correspondence, historical installer execution or redistribution approval. Status remains unknown."
       },
       "files": []
     },
