@@ -3023,5 +3023,65 @@
       "review-roadmap-execution.md",
       "review-continuity.md"
     ]
+  },
+  "productionLanguagePolicy": {
+    "authoredLanguages": [
+      "Elm",
+      "Haskell"
+    ],
+    "allGuiElements": "Elm",
+    "pythonRuntimeAllowed": false,
+    "source": "Latest explicit user Elm/Haskell architecture instruction",
+    "preserveOriginalRequirementsAndEvidence": true,
+    "developmentToolingSeparateFromShippedProduct": true
+  },
+  "latestUserDecision": {
+    "productionLanguages": [
+      "Elm",
+      "Haskell"
+    ],
+    "allGuiElements": "Elm",
+    "designInterfaceCampaign": "Ten agents authorized for architecture, research, dependencies, Quint, interfaces and workflow plugin",
+    "autonomousImplementation": "Final product implementation and native campaigns remain gated pending independently reviewed readiness and explicit final-loop authorization",
+    "research": "Scrapling",
+    "knowledgeStore": "Living LLM wiki",
+    "pendingWork": "Finish coherent Elm/Haskell architecture, interface/source/tool/plugin/model/fuzz readiness; preserve original behavior/evidence; independently review readiness before final-loop activation.",
+    "autonomousPreparation": "Armed preparation mode under explicit user instruction; architecture/interface source, tooling/plugin/model/fuzz readiness work authorized"
+  },
+  "preparationLoop": {
+    "mode": "preparation",
+    "authorization": "Latest explicit user: arm a loop to help you finish the work to arm the final loop",
+    "allowedWork": [
+      "architecture and native integration feasibility",
+      "interface and readiness source development",
+      "tooling and full workflow plugin delivery",
+      "EARS/OpenSpec alignment preserving original behavior",
+      "Quint correspondence and meaningful property/sequence fuzz preparation"
+    ],
+    "finalImplementationAuthorized": false,
+    "nativeCampaignsAuthorized": false,
+    "configArmed": true,
+    "configMode": "preparation",
+    "rootVerifiedGoalStatus": "active",
+    "goalResume": "Root executed exact one-shot user-authorized paused-goal resume; independently verified get_goal active",
+    "protectedControlChecks": {
+      "rootReportedScope": "c3691251",
+      "passed": 17,
+      "reviewerExecutedQA": false
+    },
+    "timer": {
+      "rootVerifiedEnabled": true,
+      "rootVerifiedActive": true,
+      "cadenceSeconds": 1200
+    },
+    "firstAudit": {
+      "exit": 0,
+      "finishedAt": "2026-10-30T17:48:45.051011+00:00",
+      "run": "/home/charles/.local/state/warlock-team/20261028/muse-supervision/runs/f2cf8384843740839f5b3f5fe4398d07",
+      "agentBusReceipt": "01M66YV6WTM49CNJF9SM4APZET"
+    },
+    "authorizationRecord": "/home/charles/.local/state/warlock-team/20261028/muse-supervision/preparation-authorization.json",
+    "futurePausesProtected": true,
+    "scopeLimit": "Preparation source/tool work is permitted; original native/release gates remain. No acceptance transfer, progress-timer reset, active-original-slice replacement or stopped-investigation reset."
   }
 }

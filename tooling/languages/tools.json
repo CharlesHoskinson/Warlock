@@ -1,0 +1,49 @@
+{
+  "productionLanguages": [
+    "Elm",
+    "Haskell"
+  ],
+  "gui": "Elm",
+  "tools": {
+    "openspec": {
+      "version": "1.15.0",
+      "distribution": "official standalone Linux x64",
+      "sha256": "15dbc91d6c0c8bedda936043f2fc0ea6ce6ca8011e6a40273cb9f5c586cff564"
+    },
+    "elm": {
+      "version": "0.19.2",
+      "purpose": "GUI compiler; exact compiler package/source retained in existing qualified toolchain"
+    },
+    "ghc": {
+      "version": "9.6.7",
+      "purpose": "Haskell backend compiler"
+    },
+    "haskell-language-server": {
+      "version": "2.4.0.0",
+      "compiler": "9.6.7"
+    },
+    "hlint": {
+      "version": "3.6.1"
+    },
+    "fourmolu": {
+      "purpose": "Haskell formatter"
+    },
+    "elm-test": {
+      "version": "0.19.2-1",
+      "compiler": "0.19.2",
+      "package": "elm-explorations/test@2.2.1",
+      "installation": "/home/charles/.local/share/warlock-elm-test/0.19.2-1",
+      "dependencyLockSHA256": "0de64995283e7a4dd7d6fb58520491edbb54735ab161337a766c413adea40fac",
+      "purpose": "Development-only actual Elm decoder/reducer fuzzing with explicit seeds and bounded worker count"
+    },
+    "QuickCheck": {
+      "version": "2.15.0.1",
+      "purpose": "Development-only actual Haskell parser/identity properties with explicit seeds"
+    },
+    "cryptohash-sha256": {
+      "version": "0.11.102.1",
+      "purpose": "Qualified real digest provider for proposed positional-key boundary; not producer authentication"
+    }
+  },
+  "verification": "Installation/version and small compiler checks are support evidence; native architecture still requires proof."
+}

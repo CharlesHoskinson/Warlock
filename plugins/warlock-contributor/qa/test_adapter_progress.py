@@ -24,15 +24,17 @@ class AdapterProgressTests(unittest.TestCase):
         self.cli('record', '--outcome', 'production-fix', '--summary', 'Source change; behavior verification remains pending')
         return json.loads((self.repo / '.warlock-contributor/slice.json').read_text())
 
-    def test_handwritten_keyboard_and_transport_changes_are_recorded_progress(self):
+    def test_historical_adapter_progress_and_new_policy_exclusion(self):
         names = ['assets/bar-adapter.js', 'assets/popup-adapter.js', 'assets/context.js',
                  'assets/activation.js', 'assets/native-preview-proposals.js']
         self.select(names)
         for name in names:
             self.fixture.write('implementation/warlock/' + name, 'changed ' + name + '\n')
             record = self.record()
-            self.assertTrue(record['iterations'][-1]['meaningfulProgress'])
-            self.assertEqual(record['iterations'][-1]['progressPolicy'], 4)
+            self.assertFalse(record['iterations'][-1]['meaningfulProgress'])
+            self.assertEqual(record['iterations'][-1]['progressPolicy'], 5)
+            record['iterations'][-1].update(progressPolicy=4, meaningfulProgress=True)
+            self.fixture.write('.warlock-contributor/slice.json', record)
             self.cli('check')
         # Re-recording identical adapter bytes cannot conceal a stalled investigation.
         self.assertFalse(self.record()['iterations'][-1]['meaningfulProgress'])
@@ -64,7 +66,7 @@ class AdapterProgressTests(unittest.TestCase):
         # A new record uses the current policy without treating old bytes as a new fix.
         self.assertFalse(self.record()['iterations'][-1]['meaningfulProgress'])
         self.fixture.write('implementation/warlock/assets/popup-adapter.js', 'second changed adapter\n')
-        self.assertTrue(self.record()['iterations'][-1]['meaningfulProgress'])
+        self.assertFalse(self.record()['iterations'][-1]['meaningfulProgress'])
 
     def test_fabricated_progress_or_unknown_policy_is_rejected(self):
         self.select(['assets/elm.js'])

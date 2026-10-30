@@ -1,5 +1,7 @@
 # Include actual background-effect protocol facts in family source identity
 
+> Current production-language decision (2026-10-30): Warlock-authored production uses Elm and Haskell only; all GUI elements are Elm. Haskell owns native/runtime capabilities, Haskell supplies pure policy where selected, and Elm owns GUI presentation with one authoritative policy owner per domain. Only Elm and Haskell authored production components may ship, including behind an allowed-language wrapper. Development/formal tooling and separately inventoried third-party libraries are distinct. Preserve original IDs, scenarios, behavior, deadlines and historical evidence; old passes do not accept replacements. Implementation remains paused pending readiness and root/Muse authorization. See `warlock-production-language-migration`.
+
 ## Why
 
 The owning ext-background-effect-v1 implementation sets a root wlSurface background-effect preference when get_background_effect is processed, before a buffer commit. Regions and removal are applied on later surface commits. Current source revisions account for buffers and native styling but omit that preference and exact regions. Snapshot family rendering explicitly disables background blur, so tracking facts alone cannot qualify complete background rendering.

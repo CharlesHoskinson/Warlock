@@ -1,5 +1,7 @@
 # Retire permanently closed preview actors
 
+> Current production-language decision (2026-10-30): Warlock-authored production uses Elm and Haskell only; all GUI elements are Elm. Haskell owns native/runtime capabilities, Haskell supplies pure policy where selected, and Elm owns GUI presentation with one authoritative policy owner per domain. Only Elm and Haskell authored production components may ship, including behind an allowed-language wrapper. Development/formal tooling and separately inventoried third-party libraries are distinct. Preserve original IDs, scenarios, behavior, deadlines and historical evidence; old passes do not accept replacements. Implementation remains paused pending readiness and root/Muse authorization. See `warlock-production-language-migration`.
+
 The current dynamic bridge keeps every introduced subject in its C vector,
 ImportedIntentLedger, ImportedClients frame map, Coordinator slots, Broker
 actors, receiver membership and ReceiptDelivery subject map. The256-subject

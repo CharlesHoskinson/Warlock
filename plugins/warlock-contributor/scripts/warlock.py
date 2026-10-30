@@ -6,6 +6,7 @@ import os
 import tempfile
 import datetime as dt
 import hashlib
+import importlib.util
 import json
 import pathlib
 import shutil
@@ -17,6 +18,11 @@ BASE = 'docs/elm-roadmap/requirements.json'
 STATE = 'docs/warlock-build-loop/v2/STATE.json'
 LEDGER = 'docs/warlock-build-loop/v2/requirement-ledger.json'
 EXPECTED = 'a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b'
+LANGUAGE_BASELINE = 'docs/elm-roadmap/baselines/requirements-pre-language-20261030.json'
+LANGUAGE_REVISION = 'docs/elm-roadmap/language-revision.json'
+LANGUAGE_HELPER = 'docs/elm-roadmap/tools/language_revision.py'
+APPROVED_LANGUAGE_REVISION = '1881ee66f7d2f34a8271abf4c142861f106c3bbfb1805ceadb0cbff686e91ea9'
+APPROVED_LANGUAGE_HELPER = 'a792ed03d3bc7eeed978b387ee5dda8474af0738844c29caaa39cafe1d5c7e4a'
 BOUNDARY = 'Structural compliance only; physical presentation, native input, AT/IME, scenario and release acceptance require external evidence and independent review.'
 AUTHORED_JAVASCRIPT = frozenset('assets/' + name for name in (
     'adapter.js', 'activation.js', 'bar-adapter.js', 'context.js',
@@ -127,10 +133,37 @@ def discover_repo():
     return str(pathlib.Path(__file__).resolve().parents[3])
 
 
+def requirement_document(root):
+    """Retain the frozen original or reproduce its exact governed revision."""
+    path = safe(root, BASE)
+    data = read(path)
+    if digest(path) == EXPECTED:
+        return data
+    try:
+        baseline = safe(root, LANGUAGE_BASELINE)
+        revision = safe(root, LANGUAGE_REVISION)
+        if digest(baseline) != EXPECTED or digest(revision) != APPROVED_LANGUAGE_REVISION:
+            raise ValueError('Unapproved original or language revision')
+        helper = safe(root, LANGUAGE_HELPER)
+        if digest(helper) != APPROVED_LANGUAGE_HELPER:
+            raise ValueError('Unapproved language revision helper')
+        spec = importlib.util.spec_from_file_location('warlock_governed_language_revision', helper)
+        if spec is None or spec.loader is None:
+            raise ValueError('Language revision helper is unavailable')
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        approved = module.apply_language_revision(read(baseline), revision.parent)
+        if data != approved:
+            raise ValueError('Requirement document differs from approved language revision')
+    except (OSError, ValueError, KeyError, TypeError, AttributeError, ImportError) as exc:
+        raise ValueError('Frozen original 242/417 baseline changed: ' + str(exc)) from exc
+    return data
+
+
 def context(root):
-    data = read(safe(root, BASE))
+    data = requirement_document(root)
     reqs = {r['id']: r for r in data['requirements']}
-    if digest(safe(root, BASE)) != EXPECTED or len(reqs) != 242 or sum(len(r['scenarios']) for r in reqs.values()) != 417:
+    if len(reqs) != 242 or sum(len(r['scenarios']) for r in reqs.values()) != 417:
         raise ValueError('Frozen original 242/417 baseline changed')
     ledger = read(safe(root, LEDGER))
     if ledger['baseline']['sha256'] != EXPECTED:
@@ -253,8 +286,21 @@ def authored(name, include_cpp=True, include_js=True):
     return relative.startswith(('src/', 'native/', 'adapter/', 'assets/')) and pathlib.Path(name).suffix in extensions
 
 
-def product_delta(current, previous, include_cpp=True, include_js=True):
-    return any(authored(n, include_cpp, include_js) and current[n] != previous.get(n) for n in current)
+def authored_v5(name):
+    # Policy 5 applies only to newly recorded iterations. Older policies retain
+    # their original authored-language classification and validation semantics.
+    prefix = 'implementation/warlock/'
+    if not name.startswith(prefix):
+        return False
+    relative = name[len(prefix):]
+    suffix = pathlib.Path(relative).suffix
+    return ((suffix == '.elm' and relative.startswith(('src/', 'native/', 'adapter/', 'assets/')))
+            or (suffix == '.hs' and relative.startswith(('src/', 'native/', 'adapter/'))))
+
+
+def product_delta(current, previous, include_cpp=True, include_js=True, policy5=False):
+    return any((authored_v5(n) if policy5 else authored(n, include_cpp, include_js))
+               and current[n] != previous.get(n) for n in current)
 
 
 def extension_baseline(record, previous, position):
@@ -435,7 +481,7 @@ def verification_plan(root, record, reqs, state, selected=False):
     """Suggest existing protected runners. Never run or certify their contents."""
     packet = handoff(root, record, reqs, state)
     paths = packet['slice']['paths'] if selected else packet['changedSinceLastRecord']
-    product = [n for n in paths if authored(n)]
+    product = [n for n in paths if authored(n) or authored_v5(n)]
     requirements = set(packet['slice']['requirements'])
     scenarios = set(packet['slice']['scenarios'])
     primary = bool(scenarios & {'taskbar-inactive', 'taskbar-active', 'taskbar-minimized'})
@@ -1002,7 +1048,7 @@ def validate(root, record, reqs, state):
                 for evidence in c.get('evidence', []):
                     evidence_path = evidence.get('path', '')
                     ignored = git_run(root, 'check-ignore', '--', evidence_path).returncode == 0
-                    if evidence_path in s['paths'] or authored(evidence_path) or evidence_path.startswith('.warlock-contributor/') or ignored:
+                    if evidence_path in s['paths'] or authored(evidence_path) or (item.get('progressPolicy', 1) >= 5 and authored_v5(evidence_path)) or evidence_path.startswith('.warlock-contributor/') or ignored:
                         errors.append('Accepted evidence cannot be product source or ignored scratch')
                 if not c.get('evidence'):
                     errors.append('Accepted claim needs retained evidence')
@@ -1038,10 +1084,10 @@ def validate(root, record, reqs, state):
     for index, item in enumerate(iterations):
         previous = extension_baseline(record, previous, index)
         policy = item.get('progressPolicy', 1)
-        if policy not in (1, 2, 3, 4):
+        if policy not in (1, 2, 3, 4, 5):
             errors.append('Unknown iteration progress policy')
         seen_verdicts = {verdict_key(c, policy) for c in seen_claims}
-        expected_progress = (item['outcome'] == 'production-fix' and product_delta(item['sourceHashes'], previous, policy in (2, 3, 4), policy in (3, 4))) or (item['outcome'] == 'scenario-verdict' and any(verdict_key(c, policy) not in seen_verdicts for c in item.get('claims', [])))
+        expected_progress = (item['outcome'] == 'production-fix' and product_delta(item['sourceHashes'], previous, policy in (2, 3, 4), policy in (3, 4), policy == 5)) or (item['outcome'] == 'scenario-verdict' and any(verdict_key(c, policy) not in seen_verdicts for c in item.get('claims', [])))
         if item['meaningfulProgress'] != expected_progress:
             errors.append('Iteration progress assertion differs from source hashes/recorded verdict')
         previous = item['sourceHashes']
@@ -1231,8 +1277,8 @@ def main():
                 hashes = {n: digest(safe(root,n)) for n in record['slice']['paths']}
                 previous = extension_baseline(record, record['iterations'][-1]['sourceHashes'] if record['iterations'] else record['sourceHashes'], len(record['iterations']))
                 seen_verdicts = {verdict_key(c) for i in record['iterations'] for c in i.get('claims', [])}
-                progress = (args.outcome == 'production-fix' and product_delta(hashes, previous)) or (args.outcome == 'scenario-verdict' and any(verdict_key(c) not in seen_verdicts for c in claims))
-                record['iterations'].append({'atUTC': now(), 'outcome': args.outcome, 'summary': args.summary, 'sourceHashes': hashes, 'meaningfulProgress': progress, 'progressPolicy': 4, 'claims': claims, 'sourceRevision': git(root, 'rev-parse', 'HEAD').decode().strip()})
+                progress = (args.outcome == 'production-fix' and product_delta(hashes, previous, policy5=True)) or (args.outcome == 'scenario-verdict' and any(verdict_key(c) not in seen_verdicts for c in claims))
+                record['iterations'].append({'atUTC': now(), 'outcome': args.outcome, 'summary': args.summary, 'sourceHashes': hashes, 'meaningfulProgress': progress, 'progressPolicy': 5, 'claims': claims, 'sourceRevision': git(root, 'rev-parse', 'HEAD').decode().strip()})
                 errors, warnings = validate(root, record, reqs, state)
                 if not errors:
                     write_record(path, record)

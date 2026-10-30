@@ -14,7 +14,7 @@ The Elm desktop SHALL record the deployed compositor, plugin, shell, compiler an
 
 ### Requirement: ELM-ARC-002
 
-The Elm desktop SHALL assign DOM presentation to Elm, Wayland surface lifetime to the native host, and application-window effects to native authority.
+The Elm desktop SHALL assign DOM presentation and all GUI elements to Elm, backend and native host integration to Haskell, and application-window effects to one native authority.
 
 #### Scenario: ELM-ARC-002 architecture-002
 
@@ -178,7 +178,7 @@ The Elm frontend SHALL derive recurring subscriptions from visible consumers and
 
 ### Requirement: ELM-TEA-005
 
-The Elm host adapter SHALL keep JavaScript limited to validated transport and approved host integrations, keep GPU resources and per-frame work outside Elm messages and use current commands and subscriptions rather than historical Signal APIs.
+The Elm host adapter SHALL use validated Haskell transport and approved host integrations, keep GPU resources and per-frame work outside Elm messages and use current commands and subscriptions rather than historical Signal APIs.
 
 #### Scenario: ELM-TEA-005 tea-narrow-interop
 

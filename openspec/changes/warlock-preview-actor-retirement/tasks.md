@@ -1,4 +1,6 @@
 - [x] Implement and compile authenticated native retirement-state observation against the exact owning ABI.
+
+> Current production-language decision (2026-10-30): Warlock-authored production uses Elm and Haskell only; all GUI elements are Elm. Haskell owns native/runtime capabilities, Haskell supplies pure policy where selected, and Elm owns GUI presentation with one authoritative policy owner per domain. Only Elm and Haskell authored production components may ship, including behind an allowed-language wrapper. Development/formal tooling and separately inventoried third-party libraries are distinct. Preserve original IDs, scenarios, behavior, deadlines and historical evidence; old passes do not accept replacements. Implementation remains paused pending readiness and root/Muse authorization. See `warlock-production-language-migration`.
 - [x] Run explicitly selected Quint and coupled authority/decoder checks, including live, minimized, destroyed, future and foreign identities.
 - [x] Replace dynamic C lifetime history with bounded active membership and nonreused entry serials.
 - [ ] Integrate atomic physical/journal/receiver/Coordinator/Broker/ledger retirement and exact Elm typed facts.

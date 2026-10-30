@@ -4,9 +4,38 @@ Effective October 7, 2026, following the [nine-reviewer AAR](../../warlock-workf
 
 ## Outcome
 
-Deliver one coherent Warlock Elm window system covering the frozen 242 requirements / 417 scenarios, mandatory S01–S16, additive right-click requirements, adopted FRP/Elm and design-language contracts, Warlock branding and the Omarchy vocabulary/keybindings. Preserve optional C00–C06 feasibility gates. The full original scope remains; this workflow changes execution, not acceptance standards.
+Deliver one coherent Warlock window system in Elm and Haskell covering the frozen 242 requirements / 417 scenarios, mandatory S01–S16, additive right-click requirements, adopted FRP/Elm and design-language contracts, Warlock branding and the Omarchy vocabulary/keybindings. Preserve optional C00–C06 feasibility gates. The full original scope remains; this workflow changes execution, not acceptance standards.
 
 Completion requires applicable original scenario oracles, one reproducible source/core/plugin/toolchain tuple, representative journeys, native presentation/input, AT/IME, measured resource/performance budgets and reversible deployment/rollback with drafts preserved. A bounded feature can be accepted before the release. Do not claim a whole release from component passes.
+
+## Current language and functional-programming contract
+
+Warlock-authored production code uses Elm and Haskell only. Every GUI element is
+Elm. Haskell owns backend and reviewed native/runtime integration. Keep one policy
+authority per decision, typed effect descriptions and validated IPC boundaries.
+No Python runtime ships. Development QA/formal tooling is separate from product
+payloads; system libraries and generated Elm output are separately inventoried.
+
+Use the current Elm/Haskell skills and the repository workflow plugin. Carry
+Quint specification/implementation correspondence, meaningful property/sequence
+fuzzing, original deadlines, identity/custody contracts and source-bound evidence.
+Do not transfer acceptance to a port or hide an authored forbidden-language
+implementation behind a wrapper. Preserve original242/417 text/identities and
+all stop histories; evidence remains bound to its original source tuple.
+
+The user authorized ten agents to design the architecture, map dependencies and
+best practices, author/verify the interface, align EARS/OpenSpec and deliver the
+full workflow plugin. All use Scrapling for online research and unique living-wiki
+notes, coordinated by AgentBus. Root serializes protected compiler/model/native
+QA. The user explicitly authorized a Muse-supervised preparation loop to finish
+the readiness work needed to arm the final loop. Preparation mode is now armed;
+it permits architecture/interface source development, tooling/plugin delivery,
+model correspondence and meaningful fuzz/property preparation with root-owned
+protected checks. This is not permission for final product implementation or
+native campaigns: those remain gated by the independently reviewed readiness
+record and explicit final-loop authorization. Future pauses remain binding.
+Readiness, preparation checks and timer operation do not accept native behavior
+or a release. See STATE.preparationLoop for the actual activation receipts.
 
 ## Current source and inputs
 
@@ -27,7 +56,7 @@ Use [quint-llm-kit](https://github.com/quint-co/quint-llm-kit) for behavioral mo
 
 1. **Select one product slice (WIP=1).** Record 1–3 original IDs, exact original scenario names, before/after user behavior, source paths, owner and the smallest decisive verification. Native execution is also WIP=1. Parallel help, if authorized, addresses this slice only.
 2. **Implement in the candidate.** Integrate the change into the runnable application. A supporting safety/infrastructure task must name an observed blocker and the original scenario it unblocks. Do not mint another CONTROL series or source directory because more schedules can be imagined.
-3. **Verify proportionately.** Compile changed Elm entry points or native units and relink. Run the direct behavioral regression and one meaningful negative/lifecycle case. Use Quint/fuzz when concurrency, authority or reducer invariants change. UI/layout/message changes do not automatically require a new model. Broaden regression at integration milestones or when a concrete failure/dependency warrants it.
+3. **Verify proportionately.** Compile changed Haskell packages and actual Elm entry points; relink affected native boundaries. Run the direct behavioral regression and one meaningful negative/lifecycle case. Use Quint/fuzz when concurrency, authority or reducer invariants change. UI/layout/message changes do not automatically require a new model. Broaden regression at integration milestones or when a concrete failure/dependency warrants it.
 4. **Match evidence to the original verification text.** Bridge evidence is sufficient where the original says native **or bridge**; native, keyboard, AT, physical presentation and hardware claims need the evidence each requires. Browser rendering is component evidence. Run the relevant original native journey when ready, using the protected serialized launcher below. Do not automatically rerun the entire 119-command suite for a document, fixture or independent view change.
 5. **Record the result.** Add the source revision, immutable evidence reference/hash, exact oracle, evidence scope, missing observations and reviewer disposition to the scenario row. Close a scenario only when its own obligations pass, and a requirement only when all applicable scenarios and verification obligations pass. Source changes invalidate only relevant evidence, not every unrelated accepted scenario.
 6. **Commit the actual delta and continue.** Publish owned changes in a normal batch under existing authorization. No separate publication-receipt commit, no copied QA trees, no new public version counters. Retain failed reports locally and commit the minimal auditable report/evidence needed by the claim. Do not discard evidence required for reproducibility.
@@ -94,7 +123,7 @@ Visible preview reveal is a product obligation; the existing controlled opacity-
 
 ## Protected execution and authority
 
-Keep one authoritative immutable Elm policy for each responsibility; projection-only view models do not create effect authority. Compose related subsystems through typed events and one integration root. Do not add an independent frontend/native window policy, or perform a wholesale root rewrite merely because several Elm programs exist.
+Keep one authoritative immutable functional policy for each responsibility; projection-only view models do not create effect authority. Compose related subsystems through typed events and one integration root. Do not add an independent frontend/native window policy, or perform a wholesale root rewrite merely because several Elm programs exist.
 
 Preserve exact owning core/plugin ABI, source/toolchain identity, original deadlines/clocks, grants/incarnations, Unknown/no-replay, actual custody retirement, failed evidence and the five crash-noise fixes in `docs/crash-noise/HANDOFF-codex-window-qa.md`.
 
@@ -128,8 +157,12 @@ separate from named scenarios and component/model success.
 Reconcile STATE selection with the actual participant record and current source.
 The regulator review found the accepted UX009 selection stale; it was corrected
 to the current cancellation participant without changing an oracle or resetting
-progress. Continue the demonstrated orphan-companion fix and actual host/C/Elm
-admission/settlement work; do not repeat stopped helper/model qualifications.
+progress. The superseding user language decision requires replacement Elm/Haskell
+components against the same cancellation/admission/settlement contracts. Existing historical prototype snapshots remain reference evidence; reviewed Elm
+GUI source is eligible for reuse with current-source qualification.
+Do not repeat stopped helper/model qualifications or continue forbidden-language
+production integration. Preserve all source-bound historical verdicts; qualify
+replacement behavior rather than transferring those verdicts automatically.
 
 Muse owns no product integration or acceptance authority. Its dedicated AgentBus
 identity publishes findings. Ordinary recovery uses exact-thread `codex queue`,

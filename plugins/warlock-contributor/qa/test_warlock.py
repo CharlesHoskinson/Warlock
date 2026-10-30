@@ -33,6 +33,14 @@ class ContributionPolicyTests(unittest.TestCase):
         baseline = self.repo/'docs/elm-roadmap/requirements.json'
         baseline.parent.mkdir(parents=True)
         baseline.write_bytes(source.read_bytes())
+        # Exercise the same exact governed revision as the real checkout.
+        for name in ('baselines/requirements-pre-language-20261030.json',
+                     'language-revision.json', 'tools/language_revision.py'):
+            original = source.parent / name
+            if original.is_file():
+                target = baseline.parent / name
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(original, target)
         ledger = PLUGIN.parents[1]/'docs/warlock-build-loop/v2/requirement-ledger.json'
         self.write('docs/warlock-build-loop/v2/requirement-ledger.json', json.loads(ledger.read_text()))
         self.slice = {'id': 'visible-feedback', 'requirements': ['ELM-UI-007'],

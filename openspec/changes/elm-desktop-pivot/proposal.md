@@ -1,5 +1,7 @@
 # Elm desktop pivot
 
+> Current production-language decision (2026-10-30): Warlock-authored production uses Elm and Haskell only; all GUI elements are Elm. Haskell owns native/runtime capabilities, Haskell supplies pure policy where selected, and Elm owns GUI presentation with one authoritative policy owner per domain. Only Elm and Haskell authored production components may ship, including behind an allowed-language wrapper. Development/formal tooling and separately inventoried third-party libraries are distinct. Preserve original IDs, scenarios, behavior, deadlines and historical evidence; old passes do not accept replacements. Implementation remains paused pending readiness and root/Muse authorization. See `warlock-production-language-migration`.
+
 ## Why
 
 The current desktop has unfinished Windows-style behavior and observed layering failures: maximized peers can disagree with visible stack order, and Heroic remains visibly covering the display after a minimize route while a terminal is active. The proposed Elm shell centralizes typed presentation/policy, but native window, capture and input authority still require explicit correction and acceptance.

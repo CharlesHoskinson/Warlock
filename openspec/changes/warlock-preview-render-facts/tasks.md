@@ -1,5 +1,7 @@
 # Bounded implementation and remaining qualification
 
+> Current production-language decision (2026-10-30): Warlock-authored production uses Elm and Haskell only; all GUI elements are Elm. Haskell owns native/runtime capabilities, Haskell supplies pure policy where selected, and Elm owns GUI presentation with one authoritative policy owner per domain. Only Elm and Haskell authored production components may ship, including behind an allowed-language wrapper. Development/formal tooling and separately inventoried third-party libraries are distinct. Preserve original IDs, scenarios, behavior, deadlines and historical evidence; old passes do not accept replacements. Implementation remains paused pending readiness and root/Muse authorization. See `warlock-production-language-migration`.
+
 - [x] Implement immutable native configuration snapshot and qualify shadow epoch/stale-context behavior: packet39/native55.
 - [x] Qualify actual shared Elm historical label while native source remains live: packet40/native57.
 - [x] Compile the expanded opaque/sampling native fact collector6 against exact corecrop2; execute20 selected Quint traces/74 replayed states and321 C++ controls in model7.

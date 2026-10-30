@@ -1,0 +1,10 @@
+---
+name: warlock-workflow
+description: Coordinate an authorized Warlock Elm/Haskell contribution from original EARS through model correspondence and source-bound acceptance; use with the existing contributor engine, not for unrelated work.
+---
+
+Read AGENTS.md, docs/HANDOFF.md and the applicable v2 loop. Preserve all original 242 requirements and 417 scenarios. Authored product is Elm/Haskell only; every GUI element is Elm. Haskell owns backend and reviewed native integration. Generated Elm and separately inventoried system libraries are artifacts, not additional authored policy. Keep one policy authority per decision; native effects, physical resource ownership and original acceptance require their own evidence.
+
+Use `warlock-contribute` and its existing record engine; this skill adds no second ledger, approval loop, hooks or service. Respect the user's active authorization and recorded loop mode. Preparation may be armed while native and final implementation gates remain closed. Root owns protected execution and integration; proceed when reviewed readiness conditions hold under existing authorization, without requesting repeated permission. Implementation requires the existing original-scenario record, declared owned sources and actual readiness. Do not reset original timers, adopt other contributors' drafts, suppress failed or unknown outcomes, or infer a native/GUI verdict from a source/model/property result.
+
+Use the installed `warlock-languages:elm-engineering` and `warlock-languages:haskell-engineering` skills for language-specific contracts; [workflow reference](../../references/redesign-flow.md) describes sequencing, AgentBus ownership, shared T3/T4 interface, Quint/Q2/Q3 correspondence, proportional QA, research/wiki and retrofit/Diataxis. Preserve input identities, UInt64s, deadlines, session/lease, unsaved draft, IME, AT, preview resource retirement and Unknown/no replay. Reference exact hashes of authoritative actual inputs. A missing capability, failed gate or stale artifact blocks dependent claims; record the observed result rather than substitute another label.

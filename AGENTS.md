@@ -1,3 +1,21 @@
+# Current production architecture
+
+Warlock-authored production code uses Elm and Haskell only. All GUI elements
+must be Elm. Haskell owns the backend and reviewed native/runtime integration.
+Keep one policy authority for each decision. Generated Elm output and separately
+inventoried system libraries are distinct from authored production source.
+No Python runtime may ship. Development QA/formal tools remain separate.
+Preserve original242 requirements/417 scenarios and all frozen evidence; ports
+need their own source-bound acceptance. Use authenticated AgentBus, Scrapling for
+online research, and the living LLM wiki for ideas, designs and verified outcomes.
+The ten-agent design/interface campaign and Muse-supervised preparation loop
+are explicitly authorized and armed in preparation mode. Preparation includes
+architecture, interface/source development, tooling, workflow plugins, models and
+meaningful fuzz/property checks needed for readiness. Root serializes protected
+checks. Final product implementation and native campaigns remain gated until
+independent readiness review and explicit final-loop authorization. A preparation
+receipt is not original-scenario or release acceptance. Respect future user pauses.
+
 # Working instructions
 
 This is a local archival snapshot of an active Omarchy Windows parity workspace.

@@ -1,5 +1,4 @@
-# ADDED Requirements
-
+## ADDED Requirements
 ### Requirement: WARLOCK-RECEIVER-001 — Native membership preserves old receiver
 
 WHEN a new actual native subject actor is enrolled for an existing preview receiver, the native endpoint SHALL authenticate the same receiver identity and own binding, retain the original receiver epoch and previous membership, and add only actors whose current native scope is already enrolled under that binding; metadata inventory SHALL NOT supply a scope or capture grant.

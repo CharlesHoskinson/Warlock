@@ -1,5 +1,7 @@
 # Shared Elm generated backdrop integration
 
+> Current production-language decision (2026-10-30): Warlock-authored production uses Elm and Haskell only; all GUI elements are Elm. Haskell owns native/runtime capabilities, Haskell supplies pure policy where selected, and Elm owns GUI presentation with one authoritative policy owner per domain. Only Elm and Haskell authored production components may ship, including behind an allowed-language wrapper. Development/formal tooling and separately inventoried third-party libraries are distinct. Preserve original IDs, scenarios, behavior, deadlines and historical evidence; old passes do not accept replacements. Implementation remains paused pending readiness and root/Muse authorization. See `warlock-production-language-migration`.
+
 ## Why
 
 Owning generated-color/blur pixels were qualified in native85 while the full shared GUI34 still consumed only transparent FD3 family captures. The shared Main/Bar/Popup provider must explicitly admit generated native color, map FD4 with its own native child grant, retain historical image ownership across current source changes and retire the original resource before terminal receipt acknowledgement.

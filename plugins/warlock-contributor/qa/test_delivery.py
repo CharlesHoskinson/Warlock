@@ -165,7 +165,7 @@ class DeliveryHelperTests(unittest.TestCase):
         self.fixture.write(name, 'changed native behavior\n')
         return name
 
-    def test_cpp_and_hpp_changes_count_as_authored_progress(self):
+    def test_cpp_and_hpp_are_historical_only_under_policy_five(self):
         for extension in ('.cpp', '.hpp'):
             with self.subTest(extension=extension):
                 if (self.repo / '.warlock-contributor/slice.json').exists():
@@ -175,8 +175,11 @@ class DeliveryHelperTests(unittest.TestCase):
                 self.start_native(extension)
                 self.cli('record', '--outcome', 'production-fix', '--summary', 'native behavior changed')
                 record = json.loads((self.repo / '.warlock-contributor/slice.json').read_text())
-                self.assertTrue(record['iterations'][-1]['meaningfulProgress'])
-                self.assertEqual(record['iterations'][-1]['progressPolicy'], 4)
+                self.assertFalse(record['iterations'][-1]['meaningfulProgress'])
+                self.assertEqual(record['iterations'][-1]['progressPolicy'], 5)
+                # Reconstruct a historical policy-4 row and prove it remains valid.
+                record['iterations'][-1].update(progressPolicy=4, meaningfulProgress=True)
+                self.fixture.write('.warlock-contributor/slice.json', record)
                 self.cli('check')
 
     def test_legacy_cpp_progress_assertion_remains_valid(self):

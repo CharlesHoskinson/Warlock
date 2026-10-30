@@ -1,6 +1,6 @@
 ---
 name: warlock-contribute
-description: Implement or repair Warlock Elm/native GUI code in the original scenario delivery loop, with source ownership, proportional verification and evidence-scoped reporting. Use for Warlock code contributions; unrelated repository work does not need a product slice.
+description: Implement or repair Warlock Elm/Haskell code in the original scenario delivery loop, with source ownership, proportional verification and evidence-scoped reporting. Use for Warlock code contributions; unrelated repository work does not need a product slice.
 ---
 
 Deliver a runnable user behavior in `implementation/warlock/`. Read repository `AGENTS.md` and `docs/warlock-build-loop/v2/INSTRUCTIONS.md`; these remain authoritative after compaction. Read the October 7 AAR once when entering this workflow. Do not turn contribution records or plugin passes into product completion.
@@ -9,7 +9,7 @@ For a new checkout, `doctor` reports local package/CLI availability without laun
 
 For plugin development or checkout troubleshooting, `doctor` also validates local package metadata and references. `self-test` runs only the plugin regression suite with temporary Git fixtures, reports failures and refuses an empty suite. Read the test code before running it. These are support checks, not an extra prerequisite for every GUI slice or evidence of client trust/native acceptance.
 
-Handwritten surface adapters are production source; compiled Elm JavaScript bundles are artifacts. `verify-plan` includes the known adapters and CSS in the relevant view route, while preview transports remain explicit unmapped source requiring a chosen proportional check. Recording changed adapter bytes observes implementation work, not a delivered GUI feature.
+Current authored product is Elm and Haskell only, with all GUI in Elm. Held implementations and generated Elm output remain historical artifacts. Existing `verify-plan` mappings do not qualify replacement code; explicitly choose proportional checks for unmapped Haskell paths.
 
 Use optional `preflight --slice-file <saved-plan>` to preview source conflicts and record availability before `start`. It writes no files and adopts no drafts; selected dirty files still require an actual ownership decision. Existing records should be resumed with `handoff` or retained while choosing a new global `--record`. Saved plan packets must retain exact selected originals; `start` rechecks them and current dirty files. See [scaffold and resume](../../README.md#scaffold-and-resume).
 
@@ -33,7 +33,7 @@ Use `verify-plan` for protected check suggestions based on declared sources chan
 
 The required checks expose a structured `progress` packet with the recorded elapsed time, nonprogress iteration count and slice-change action. Honor its two-iteration/45-minute investigation trigger while continuing independent mandatory work. These fields describe self-attested records; they cannot establish delivered GUI behavior.
 
-New iterations use progress policy 4. A requirement/scenario/disposition counts once across the record: rewording scope or missing observations, regenerating reports, and alternating previously recorded dispositions do not reset the timer. Actual authored source changes still count as `production-fix`; older iterations retain their recorded policy. Do not change labels to manufacture progress.
+New iterations use progress policy 5; policies 1–4 retain their original historical meaning. A requirement/scenario/disposition counts once across the record: rewording scope or missing observations, regenerating reports, and alternating previously recorded dispositions do not reset the timer. Actual selected Elm/Haskell source changes count as `production-fix` under policy 5; older iterations retain their recorded policy. Do not change labels to manufacture progress.
 
 For UI-008 `overflow-resize`, `verify-plan` suggests the existing `--popup-reflow` CPU/native checks, including controller, popup, adapter and host changes. The planner combines shared targets and retains every trigger path. Inspect those runners and preserve the original keyboard, physical presentation and AT obligations.
 

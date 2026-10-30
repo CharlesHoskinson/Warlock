@@ -1,5 +1,7 @@
 # Stable picker targets and observed window toggles
 
+> Current production-language decision (2026-10-30): Warlock-authored production uses Elm and Haskell only; all GUI elements are Elm. Haskell owns native/runtime capabilities, Haskell supplies pure policy where selected, and Elm owns GUI presentation with one authoritative policy owner per domain. Only Elm and Haskell authored production components may ship, including behind an allowed-language wrapper. Development/formal tooling and separately inventoried third-party libraries are distinct. Preserve original IDs, scenarios, behavior, deadlines and historical evidence; old passes do not accept replacements. Implementation remains paused pending readiness and root/Muse authorization. See `warlock-production-language-migration`.
+
 The current pin/MAX draft fails its native context interaction because preview arrival changes picker row geometry between press and release. The native identity guard correctly cancels the mismatched gesture. The current menu also swaps Always on top/Unpin window labels and does not expose checked semantics.
 
 Clarify existing Warlock design contracts with stable preview/status geometry and an observed, consistently named toggle. Preserve the single Elm owner, native custody, identity/publication/lease guards, original UX-016 oracle and deadlines. This additive guidance changes no frozen consensus or accepted evidence. Implementation remains open.

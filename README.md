@@ -2,9 +2,21 @@
 
 [GitHub: CharlesHoskinson/Warlock](https://github.com/CharlesHoskinson/Warlock) · [Local repository entry and rename record](docs/warlock-repository/v1/README.md)
 
-Warlock is an Elm-based Linux window-system project with an active integration
+Warlock is an Elm/Haskell Linux window-system project with an active integration
 candidate and preserved source/evidence history. **Feature completion and release
 acceptance remain open. A GitHub merge does not deploy the desktop.**
+
+The current architecture requires Elm for every GUI element and Haskell for
+authored backend/runtime integration. The [language revision](docs/elm-roadmap/LANGUAGE-REVISION.md)
+preserves all 242 requirement identities, 417 scenario objects and original
+verification statements. Existing native evidence stays bound to its recorded
+source; it does not qualify the replacement architecture.
+
+October 30 preparation checkpoint: the preparation loop is active with Muse
+audits every 20 minutes. The final implementation loop remains gated on reviewed
+native feasibility, the versioned interface, specification alignment and workflow
+verification. See [the architecture explanation](docs/warlock/explanation/elm-haskell-boundary.md)
+for ownership and the unresolved native integration decisions.
 
 Start with the [current product](implementation/warlock/README.md),
 [Diátaxis documentation](docs/warlock/index.md),

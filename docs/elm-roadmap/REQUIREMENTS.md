@@ -396,7 +396,7 @@ Evidence obligation: docs/elm-roadmap/ROADMAP.md
 
 ### ELM-DEL-003
 
-The release builder SHALL pin compiler, Elm packages, test runner, JavaScript adapter, native dependencies and build-tool versions with source and artifact hashes.
+The release builder SHALL pin Elm and Haskell compilers and packages, test runner, approved native dependencies and build-tool versions with source and artifact hashes.
 
 Pattern: ubiquitous. Phase: P6. Priority: must. Status: proposed. Owner: Release integration lead; verifier: Independent acceptance reviewer.
 
@@ -730,7 +730,7 @@ Evidence obligation: implementation/STATUS.md
 
 ### ELM-ARC-002
 
-The Elm desktop SHALL assign DOM presentation to Elm, Wayland surface lifetime to the native host, and application-window effects to native authority.
+The Elm desktop SHALL assign DOM presentation and all GUI elements to Elm, backend and native host integration to Haskell, and application-window effects to one native authority.
 
 Pattern: ubiquitous. Phase: P1. Priority: must. Status: proposed. Owner: Native host lead; verifier: Independent acceptance reviewer.
 
@@ -840,7 +840,7 @@ Evidence obligation: docs/elm-roadmap/ELM-PRACTICES.md; official Elm corpus
 
 ### ELM-TEA-005
 
-The Elm host adapter SHALL keep JavaScript limited to validated transport and approved host integrations, keep GPU resources and per-frame work outside Elm messages and use current commands and subscriptions rather than historical Signal APIs.
+The Elm host adapter SHALL use validated Haskell transport and approved host integrations, keep GPU resources and per-frame work outside Elm messages and use current commands and subscriptions rather than historical Signal APIs.
 
 Pattern: ubiquitous. Phase: P1. Priority: must. Status: proposed. Owner: Native host lead; verifier: Independent acceptance reviewer.
 
@@ -1436,7 +1436,7 @@ Evidence obligation: new coverage: independent audit correction
 
 ### ELM-REN-023
 
-WHERE a compositor replacement is selected, the project SHALL document a native Rust or C++ execution boundary and an Elm policy interface before implementation.
+WHERE a compositor replacement is selected, the project SHALL document a Haskell native execution boundary and an Elm GUI and typed policy interface before implementation.
 
 Pattern: optional. Phase: P7. Priority: conditional. Status: proposed. Owner: Native compositor lead; verifier: Independent acceptance reviewer.
 
@@ -1630,7 +1630,7 @@ Evidence obligation: docs/research/elm-pivot/IMPLEMENTATION.md
 
 ### ELM-DEL-012
 
-WHEN a privileged operation requires authorization, the shell SHALL delegate to the established native authorization flow and keep credentials outside Elm and JavaScript.
+WHEN a privileged operation requires authorization, the shell SHALL delegate to the established native authorization flow and keep credentials outside GUI state and frontend messages.
 
 Pattern: event-driven. Phase: P2. Priority: must. Status: proposed. Owner: Native security lead; verifier: Independent acceptance reviewer.
 

@@ -1,7 +1,14 @@
 schema: spec-driven
 context: |
-  Arch Linux / Omarchy desktop. This Elm pivot is proposed, not implemented.
-  Preserve immutable archived evidence and original native acceptance deadlines.
-  Elm owns GUI and policy; native code owns Wayland, input, buffers and effects.
-  Hyprland remains initial compositor; replacement is separately conditional.
-  Require hardware GPU acceleration; qualify WebGPU in the actual host.
+  Arch Linux / Omarchy desktop. Warlock-authored production uses Elm and Haskell only.
+  All GUI elements and GUI interaction state are Elm; Haskell owns backend and reviewed native/runtime integration.
+  Preserve one authoritative policy owner per decision, validated typed IPC and original receipt/deadline semantics.
+  No authored production runtime in other languages may hide behind an allowed-language wrapper.
+  Development QA/formal tools, generated Elm output and separately inventoried system libraries are distinct from authored product payload.
+  Preserve 242 requirement identities and 417 scenario identities, behavior, native gates and immutable historical evidence.
+  Current EARS implementation-language changes are explicit versioned revisions, never silent baseline replacement.
+  Existing passes do not accept replacement implementations; require source/evidence correspondence.
+  Use the repository Elm/Haskell skills, AgentBus, Scrapling research, living wiki, Quint and meaningful property/sequence fuzzing.
+  Ten-agent architecture/interface work is authorized; autonomous implementation continuation remains disarmed pending readiness review.
+  Hyprland compatibility remains required; any compositor replacement requires separate explicit feasibility admission.
+  Require hardware GPU acceleration and qualify the actual selected host.

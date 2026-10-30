@@ -1,6 +1,6 @@
 # Warlock documentation
 
-Warlock is an evolving Elm/native window-system integration candidate. It is not a ready-to-install release and is not installed in the user's main Omarchy session. These pages document the current contribution workflow, recorded implementation and its limits.
+Warlock targets Elm for every GUI element and Haskell for authored backend/runtime integration. Its existing native candidate and evidence retain their original source tuples. It is not a ready-to-install release and is not installed in the user's main Omarchy session. These pages document the current contribution workflow, recorded implementation and its limits.
 
 Choose a page for the work you are doing:
 
@@ -25,6 +25,7 @@ Choose a page for the work you are doing:
 | Understand application pinning and window top state | [Explanation: application pin and always-on-top](explanation/application-pin-and-always-on-top.md) |
 | Look up the staged native cancellation interface | [Native Restore cancellation protocol](reference/cancellation-protocol.md) |
 | Understand ownership and lifecycle decisions | [Explanation: authority, presentation and lifetimes](explanation/ownership-and-lifetimes.md) |
+| Understand the Elm/Haskell target and native readiness gate | [Explanation: Elm and Haskell ownership](explanation/elm-haskell-boundary.md) |
 
 This structure follows [Diátaxis](https://diataxis.fr/): tutorials teach through a bounded exercise; how-to guides address a concrete task; reference provides lookup facts; explanation develops the reasons behind the system. Root retrieved the official source using Scrapling. The docs are not an installation/deployment claim.
 

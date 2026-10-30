@@ -1,5 +1,4 @@
-# ADDED Requirements
-
+## ADDED Requirements
 ### Requirement: WARLOCK-RECEIPT-001 — Explicit native journal admission
 
 WHEN pixel receiver membership grows, the provider SHALL admit additional terminal receipt subjects only through an explicit trusted native operation reading the same current receiver and actual own scopes under one native critical section, retaining the original receiver epoch, immutable existing entry/incarnation correlations and the single broker journal; frontend metadata SHALL NOT authorize receipt subjects.

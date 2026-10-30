@@ -246,11 +246,11 @@ of that investigation and select another bounded mandatory slice. This remains a
 advisory about contributor records; it does not measure feature delivery or block
 independent work. The required loop checks expose these fields on every continuation.
 
-New records use progress policy 4: each original requirement/scenario/disposition
+New iterations use progress policy 5: each original requirement/scenario/disposition
 counts once across the record. Rewording scope or missing observations, changing
 the observer, regenerating reports, or alternating previously recorded
 dispositions does not restart the timer. Actual authored source changes still
-count through `production-fix`. Historical policies 1–3 keep their original
+count through `production-fix`. Historical policies 1–4 keep their original
 interpretation; a new iteration compares its disposition against all prior
 observations. These checks detect record consistency, not whether a new verdict
 is true. Retain real source/evidence hashes and review the original oracle.
@@ -315,12 +315,11 @@ python3 -B plugins/warlock-contributor/scripts/warlock.py review \
   --include docs/your-owned-observation.md
 ```
 
-Changed authored C++ `.cpp`/`.hpp` files and the ten handwritten JavaScript
-adapters listed in [the contract](references/contract.json) count as implementation
-progress alongside Elm, C, Python, CSS and SVG. Compiled `elm.js`, `bar.js`,
-`popup.js`, unknown JavaScript, QA and documentation remain excluded. New
-iterations record progress policy 4; older policy 1/2/3 records retain their
-original interpretation. Re-recording unchanged bytes does not reset progress.
+Policy 5 counts changed selected Elm source in existing product roots and Haskell
+`.hs` source in `src`, `native`, or `adapter`. Generated Elm output,
+historical artifacts, QA, models and documentation do not count as policy-5 source
+progress. Historical policies 1–4 retain their own recorded interpretations.
+Re-recording unchanged bytes does not reset progress.
 A source change remains an implementation observation; GUI acceptance requires
 the original scenario evidence.
 

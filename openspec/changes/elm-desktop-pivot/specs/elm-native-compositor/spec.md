@@ -4,7 +4,7 @@
 
 ### Requirement: ELM-REN-023
 
-WHERE a compositor replacement is selected, the project SHALL document a native Rust or C++ execution boundary and an Elm policy interface before implementation.
+WHERE a compositor replacement is selected, the project SHALL document a Haskell native execution boundary and an Elm GUI and typed policy interface before implementation.
 
 #### Scenario: ELM-REN-023 ren-023
 

@@ -34,7 +34,10 @@ for r in reqs:
  r['accountableOwnerRole']=ownerRoles[r['capability']]
  r['verifierRole']='Independent acceptance reviewer'
 reqs.sort(key=lambda r:r['id']);assert len({r['id'] for r in reqs})==len(reqs)
-(ROOT/'requirements.json').write_text(json.dumps({'schema':1,'status':'proposed; implementation acceptance pending','requirements':reqs},indent=2)+'\n')
+from language_revision import apply_language_revision
+current=apply_language_revision({'schema':1,'status':'proposed; implementation acceptance pending','requirements':reqs},ROOT)
+reqs=current['requirements']
+(ROOT/'requirements.json').write_text(json.dumps(current,indent=2)+'\n')
 (ROOT/'normalizations.json').write_text(json.dumps(normalizations,indent=2)+'\n')
 groups=collections.defaultdict(list)
 for r in reqs:groups[r['capability']].append(r)
@@ -63,6 +66,7 @@ for phase in sorted({r['phase'] for r in reqs}):
   tasks+=[f"- [ ] {r['taskId']}: {r['task']} Verify: {r['verification']}"]
 (CHANGE/'tasks.md').write_text('\n'.join(tasks)+'\n')
 if (ROOT/'revisions.json').exists():inputs.append(ROOT/'revisions.json')
+inputs += [ROOT/'language-revision.json',ROOT/'tools/language_revision.py',ROOT/'tools/build_specs.py',ROOT/'baselines/requirements-pre-language-20261030.json']
 summary={'requirements':len(reqs),'scenarios':sum(len(r['scenarios']) for r in reqs),'capabilities':len(groups),'phases':dict(collections.Counter(r['phase'] for r in reqs)),'inputs':[{'path':str(p.relative_to(REPO)),'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in inputs]}
 (ROOT/'generation.json').write_text(json.dumps(summary,indent=2)+'\n')
 print(json.dumps({k:v for k,v in summary.items() if k!='inputs'}))
