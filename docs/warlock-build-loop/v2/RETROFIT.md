@@ -54,15 +54,21 @@ These entries are observations/proposals as of October 29, not a completed whole
 ## Settings migration retrofit — ELM-DEL-015
 
 The actual schema-1 settings save overwrote the original without a backup; the
-protected RED baseline is retained. The bounded correction now preserves exact
-original bytes and confirms backup durability before active replacement.
-[Evidence and limitations](../../../implementation/warlock/qa/evidence/settings-migration-20261030/LIMITS.md)
-separate 47 existing settings checks, 327 migration checks and 100 seeded parameter
-sequences from original acceptance. Two-link interruption recovery remains
-fail-closed; physical power-loss, native journeys and model correspondence are
-not claimed complete. The [storage reference](../../warlock/reference/settings-storage.md)
-documents the delivered interface. Keep this debt open for remaining evidence
-and recovery obligations; cancellation's stopped investigation remains separate.
+protected RED baseline is retained. The correction preserves exact original
+bytes and confirms backup durability before active replacement.
+[Original acceptance and independent review](../../../implementation/warlock/qa/evidence/settings-migration-verification-20261030/acceptance.json)
+accept all four original scenarios and the current settings-storage EARS. Evidence
+separates 47 existing settings checks, 327 migration checks, 56 checks across
+eleven actual abrupt process exits, and the model's 29 named tests/five bounded
+samples. Other adopted fixed-schema stores and recovery imports are covered by
+explicit source correspondence, not newly rerun runtime matrices.
+
+The bounded migration debt is closed against those original oracles. Two-link
+interruption remains recoverable but refuses automatic retry; post-rename sync
+failure remains Unknown. Hardware power-loss, native settings UX, accessibility,
+resource and release obligations are separate. The
+[storage reference](../../warlock/reference/settings-storage.md) documents the
+interface and limits. Cancellation's stopped investigation remains separate.
 
 ## Diátaxis documentation contract
 

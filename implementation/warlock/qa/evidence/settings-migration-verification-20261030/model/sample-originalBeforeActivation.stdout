@@ -1,0 +1,906 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      active: 1,
+      activeDirSynced: false,
+      activeFileSynced: false,
+      activeSafe: true,
+      backup: 0,
+      backupFileSynced: false,
+      backupLinks: 0,
+      backupSafe: true,
+      backupSynced: false,
+      broken: false,
+      fixtureOpen: true,
+      initialBackup: 0,
+      legacy: true,
+      old: 1,
+      outcome: NoneYet,
+      phase: Idle,
+      previousActive: 1,
+      publishedBackup: false,
+      readObserved: false,
+      renameOccurred: false,
+      restartBlocked: false,
+      schemaValid: true
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      active: 1,
+      activeDirSynced: false,
+      activeFileSynced: false,
+      activeSafe: false,
+      backup: 0,
+      backupFileSynced: false,
+      backupLinks: 0,
+      backupSafe: true,
+      backupSynced: false,
+      broken: false,
+      fixtureOpen: false,
+      initialBackup: 0,
+      legacy: true,
+      old: 1,
+      outcome: NoneYet,
+      phase: Idle,
+      previousActive: 1,
+      publishedBackup: false,
+      readObserved: false,
+      renameOccurred: false,
+      restartBlocked: false,
+      schemaValid: true
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      active: 1,
+      activeDirSynced: false,
+      activeFileSynced: false,
+      activeSafe: false,
+      backup: 0,
+      backupFileSynced: false,
+      backupLinks: 0,
+      backupSafe: true,
+      backupSynced: false,
+      broken: false,
+      fixtureOpen: false,
+      initialBackup: 0,
+      legacy: true,
+      old: 1,
+      outcome: Refused,
+      phase: Idle,
+      previousActive: 1,
+      publishedBackup: false,
+      readObserved: false,
+      renameOccurred: false,
+      restartBlocked: false,
+      schemaValid: true
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      active: 1,
+      activeDirSynced: false,
+      activeFileSynced: false,
+      activeSafe: false,
+      backup: 0,
+      backupFileSynced: false,
+      backupLinks: 0,
+      backupSafe: true,
+      backupSynced: false,
+      broken: false,
+      fixtureOpen: false,
+      initialBackup: 0,
+      legacy: true,
+      old: 1,
+      outcome: Refused,
+      phase: Idle,
+      previousActive: 1,
+      publishedBackup: false,
+      readObserved: false,
+      renameOccurred: false,
+      restartBlocked: false,
+      schemaValid: true
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      active: 1,
+      activeDirSynced: false,
+      activeFileSynced: false,
+      activeSafe: false,
+      backup: 0,
+      backupFileSynced: false,
+      backupLinks: 0,
+      backupSafe: true,
+      backupSynced: false,
+      broken: false,
+      fixtureOpen: false,
+      initialBackup: 0,
+      legacy: true,
+      old: 1,
+      outcome: Refused,
+      phase: Idle,
+      previousActive: 1,
+      publishedBackup: false,
+      readObserved: false,
+      renameOccurred: false,
+      restartBlocked: false,
+      schemaValid: true
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      active: 1,
+      activeDirSynced: false,
+      activeFileSynced: false,
+      activeSafe: false,
+      backup: 0,
+      backupFileSynced: false,
+      backupLinks: 0,
+      backupSafe: true,
+      backupSynced: false,
+      broken: false,
+      fixtureOpen: false,
+      initialBackup: 0,
+      legacy: true,
+      old: 1,
+      outcome: Refused,
+      phase: Idle,
+      previousActive: 1,
+      publishedBackup: false,
+      readObserved: false,
+      renameOccurred: false,
+      restartBlocked: false,
+      schemaValid: true
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      active: 1,
+      activeDirSynced: false,
+      activeFileSynced: false,
+      activeSafe: false,
+      backup: 0,
+      backupFileSynced: false,
+      backupLinks: 0,
+      backupSafe: true,
+      backupSynced: false,
+      broken: false,
+      fixtureOpen: false,
+      initialBackup: 0,
+      legacy: true,
+      old: 1,
+      outcome: Refused,
+      phase: Idle,
+      previousActive: 1,
+      publishedBackup: false,
+      readObserved: false,
+      renameOccurred: false,
+      restartBlocked: false,
+      schemaValid: true
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      active: 1,
+      activeDirSynced: false,
+      activeFileSynced: false,
+      activeSafe: false,
+      backup: 0,
+      backupFileSynced: false,
+      backupLinks: 0,
+      backupSafe: true,
+      backupSynced: false,
+      broken: false,
+      fixtureOpen: false,
+      initialBackup: 0,
+      legacy: true,
+      old: 1,
+      outcome: Refused,
+      phase: Idle,
+      previousActive: 1,
+      publishedBackup: false,
+      readObserved: false,
+      renameOccurred: false,
+      restartBlocked: false,
+      schemaValid: true
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      active: 1,
+      activeDirSynced: false,
+      activeFileSynced: false,
+      activeSafe: false,
+      backup: 0,
+      backupFileSynced: false,
+      backupLinks: 0,
+      backupSafe: true,
+      backupSynced: false,
+      broken: false,
+      fixtureOpen: false,
+      initialBackup: 0,
+      legacy: true,
+      old: 1,
+      outcome: Refused,
+      phase: Idle,
+      previousActive: 1,
+      publishedBackup: false,
+      readObserved: false,
+      renameOccurred: false,
+      restartBlocked: false,
+      schemaValid: true
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      active: 1,
+      activeDirSynced: false,
+      activeFileSynced: false,
+      activeSafe: false,
+      backup: 0,
+      backupFileSynced: false,
+      backupLinks: 0,
+      backupSafe: true,
+      backupSynced: false,
+      broken: false,
+      fixtureOpen: false,
+      initialBackup: 0,
+      legacy: true,
+      old: 1,
+      outcome: Refused,
+      phase: Idle,
+      previousActive: 1,
+      publishedBackup: false,
+      readObserved: false,
+      renameOccurred: false,
+      restartBlocked: false,
+      schemaValid: true
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      active: 1,
+      activeDirSynced: false,
+      activeFileSynced: false,
+      activeSafe: false,
+      backup: 0,
+      backupFileSynced: false,
+      backupLinks: 0,
+      backupSafe: true,
+      backupSynced: false,
+      broken: false,
+      fixtureOpen: false,
+      initialBackup: 0,
+      legacy: true,
+      old: 1,
+      outcome: Refused,
+      phase: Idle,
+      previousActive: 1,
+      publishedBackup: false,
+      readObserved: false,
+      renameOccurred: false,
+      restartBlocked: false,
+      schemaValid: true
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      active: 1,
+      activeDirSynced: false,
+      activeFileSynced: false,
+      activeSafe: false,
+      backup: 0,
+      backupFileSynced: false,
+      backupLinks: 0,
+      backupSafe: true,
+      backupSynced: false,
+      broken: false,
+      fixtureOpen: false,
+      initialBackup: 0,
+      legacy: true,
+      old: 1,
+      outcome: Refused,
+      phase: Idle,
+      previousActive: 1,
+      publishedBackup: false,
+      readObserved: false,
+      renameOccurred: false,
+      restartBlocked: false,
+      schemaValid: true
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      active: 1,
+      activeDirSynced: false,
+      activeFileSynced: false,
+      activeSafe: false,
+      backup: 0,
+      backupFileSynced: false,
+      backupLinks: 0,
+      backupSafe: true,
+      backupSynced: false,
+      broken: false,
+      fixtureOpen: false,
+      initialBackup: 0,
+      legacy: true,
+      old: 1,
+      outcome: Refused,
+      phase: Idle,
+      previousActive: 1,
+      publishedBackup: false,
+      readObserved: false,
+      renameOccurred: false,
+      restartBlocked: false,
+      schemaValid: true
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      active: 1,
+      activeDirSynced: false,
+      activeFileSynced: false,
+      activeSafe: false,
+      backup: 0,
+      backupFileSynced: false,
+      backupLinks: 0,
+      backupSafe: true,
+      backupSynced: false,
+      broken: false,
+      fixtureOpen: false,
+      initialBackup: 0,
+      legacy: true,
+      old: 1,
+      outcome: Refused,
+      phase: Idle,
+      previousActive: 1,
+      publishedBackup: false,
+      readObserved: false,
+      renameOccurred: false,
+      restartBlocked: false,
+      schemaValid: true
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      active: 1,
+      activeDirSynced: false,
+      activeFileSynced: false,
+      activeSafe: false,
+      backup: 0,
+      backupFileSynced: false,
+      backupLinks: 0,
+      backupSafe: true,
+      backupSynced: false,
+      broken: false,
+      fixtureOpen: false,
+      initialBackup: 0,
+      legacy: true,
+      old: 1,
+      outcome: Refused,
+      phase: Idle,
+      previousActive: 1,
+      publishedBackup: false,
+      readObserved: false,
+      renameOccurred: false,
+      restartBlocked: false,
+      schemaValid: true
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      active: 1,
+      activeDirSynced: false,
+      activeFileSynced: false,
+      activeSafe: false,
+      backup: 0,
+      backupFileSynced: false,
+      backupLinks: 0,
+      backupSafe: true,
+      backupSynced: false,
+      broken: false,
+      fixtureOpen: false,
+      initialBackup: 0,
+      legacy: true,
+      old: 1,
+      outcome: Refused,
+      phase: Idle,
+      previousActive: 1,
+      publishedBackup: false,
+      readObserved: false,
+      renameOccurred: false,
+      restartBlocked: false,
+      schemaValid: true
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      active: 1,
+      activeDirSynced: false,
+      activeFileSynced: false,
+      activeSafe: false,
+      backup: 0,
+      backupFileSynced: false,
+      backupLinks: 0,
+      backupSafe: true,
+      backupSynced: false,
+      broken: false,
+      fixtureOpen: false,
+      initialBackup: 0,
+      legacy: true,
+      old: 1,
+      outcome: Refused,
+      phase: Idle,
+      previousActive: 1,
+      publishedBackup: false,
+      readObserved: false,
+      renameOccurred: false,
+      restartBlocked: false,
+      schemaValid: true
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      active: 1,
+      activeDirSynced: false,
+      activeFileSynced: false,
+      activeSafe: false,
+      backup: 0,
+      backupFileSynced: false,
+      backupLinks: 0,
+      backupSafe: true,
+      backupSynced: false,
+      broken: false,
+      fixtureOpen: false,
+      initialBackup: 0,
+      legacy: true,
+      old: 1,
+      outcome: Refused,
+      phase: Idle,
+      previousActive: 1,
+      publishedBackup: false,
+      readObserved: false,
+      renameOccurred: false,
+      restartBlocked: false,
+      schemaValid: true
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      active: 1,
+      activeDirSynced: false,
+      activeFileSynced: false,
+      activeSafe: false,
+      backup: 0,
+      backupFileSynced: false,
+      backupLinks: 0,
+      backupSafe: true,
+      backupSynced: false,
+      broken: false,
+      fixtureOpen: false,
+      initialBackup: 0,
+      legacy: true,
+      old: 1,
+      outcome: Refused,
+      phase: Idle,
+      previousActive: 1,
+      publishedBackup: false,
+      readObserved: false,
+      renameOccurred: false,
+      restartBlocked: false,
+      schemaValid: true
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      active: 1,
+      activeDirSynced: false,
+      activeFileSynced: false,
+      activeSafe: false,
+      backup: 0,
+      backupFileSynced: false,
+      backupLinks: 0,
+      backupSafe: true,
+      backupSynced: false,
+      broken: false,
+      fixtureOpen: false,
+      initialBackup: 0,
+      legacy: true,
+      old: 1,
+      outcome: Refused,
+      phase: Idle,
+      previousActive: 1,
+      publishedBackup: false,
+      readObserved: false,
+      renameOccurred: false,
+      restartBlocked: false,
+      schemaValid: true
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      active: 1,
+      activeDirSynced: false,
+      activeFileSynced: false,
+      activeSafe: false,
+      backup: 0,
+      backupFileSynced: false,
+      backupLinks: 0,
+      backupSafe: true,
+      backupSynced: false,
+      broken: false,
+      fixtureOpen: false,
+      initialBackup: 0,
+      legacy: true,
+      old: 1,
+      outcome: Refused,
+      phase: Idle,
+      previousActive: 1,
+      publishedBackup: false,
+      readObserved: false,
+      renameOccurred: false,
+      restartBlocked: false,
+      schemaValid: true
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      active: 1,
+      activeDirSynced: false,
+      activeFileSynced: false,
+      activeSafe: false,
+      backup: 0,
+      backupFileSynced: false,
+      backupLinks: 0,
+      backupSafe: true,
+      backupSynced: false,
+      broken: false,
+      fixtureOpen: false,
+      initialBackup: 0,
+      legacy: true,
+      old: 1,
+      outcome: Refused,
+      phase: Idle,
+      previousActive: 1,
+      publishedBackup: false,
+      readObserved: false,
+      renameOccurred: false,
+      restartBlocked: false,
+      schemaValid: true
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      active: 1,
+      activeDirSynced: false,
+      activeFileSynced: false,
+      activeSafe: false,
+      backup: 0,
+      backupFileSynced: false,
+      backupLinks: 0,
+      backupSafe: true,
+      backupSynced: false,
+      broken: false,
+      fixtureOpen: false,
+      initialBackup: 0,
+      legacy: true,
+      old: 1,
+      outcome: Refused,
+      phase: Idle,
+      previousActive: 1,
+      publishedBackup: false,
+      readObserved: false,
+      renameOccurred: false,
+      restartBlocked: false,
+      schemaValid: true
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      active: 1,
+      activeDirSynced: false,
+      activeFileSynced: false,
+      activeSafe: false,
+      backup: 0,
+      backupFileSynced: false,
+      backupLinks: 0,
+      backupSafe: true,
+      backupSynced: false,
+      broken: false,
+      fixtureOpen: false,
+      initialBackup: 0,
+      legacy: true,
+      old: 1,
+      outcome: Refused,
+      phase: Idle,
+      previousActive: 1,
+      publishedBackup: false,
+      readObserved: false,
+      renameOccurred: false,
+      restartBlocked: false,
+      schemaValid: true
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      active: 1,
+      activeDirSynced: false,
+      activeFileSynced: false,
+      activeSafe: false,
+      backup: 0,
+      backupFileSynced: false,
+      backupLinks: 0,
+      backupSafe: true,
+      backupSynced: false,
+      broken: false,
+      fixtureOpen: false,
+      initialBackup: 0,
+      legacy: true,
+      old: 1,
+      outcome: Refused,
+      phase: Idle,
+      previousActive: 1,
+      publishedBackup: false,
+      readObserved: false,
+      renameOccurred: false,
+      restartBlocked: false,
+      schemaValid: true
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      active: 1,
+      activeDirSynced: false,
+      activeFileSynced: false,
+      activeSafe: false,
+      backup: 0,
+      backupFileSynced: false,
+      backupLinks: 0,
+      backupSafe: true,
+      backupSynced: false,
+      broken: false,
+      fixtureOpen: false,
+      initialBackup: 0,
+      legacy: true,
+      old: 1,
+      outcome: Refused,
+      phase: Idle,
+      previousActive: 1,
+      publishedBackup: false,
+      readObserved: false,
+      renameOccurred: false,
+      restartBlocked: false,
+      schemaValid: true
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      active: 1,
+      activeDirSynced: false,
+      activeFileSynced: false,
+      activeSafe: false,
+      backup: 0,
+      backupFileSynced: false,
+      backupLinks: 0,
+      backupSafe: true,
+      backupSynced: false,
+      broken: false,
+      fixtureOpen: false,
+      initialBackup: 0,
+      legacy: true,
+      old: 1,
+      outcome: Refused,
+      phase: Idle,
+      previousActive: 1,
+      publishedBackup: false,
+      readObserved: false,
+      renameOccurred: false,
+      restartBlocked: false,
+      schemaValid: true
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      active: 1,
+      activeDirSynced: false,
+      activeFileSynced: false,
+      activeSafe: false,
+      backup: 0,
+      backupFileSynced: false,
+      backupLinks: 0,
+      backupSafe: true,
+      backupSynced: false,
+      broken: false,
+      fixtureOpen: false,
+      initialBackup: 0,
+      legacy: true,
+      old: 1,
+      outcome: Refused,
+      phase: Idle,
+      previousActive: 1,
+      publishedBackup: false,
+      readObserved: false,
+      renameOccurred: false,
+      restartBlocked: false,
+      schemaValid: true
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      active: 1,
+      activeDirSynced: false,
+      activeFileSynced: false,
+      activeSafe: false,
+      backup: 0,
+      backupFileSynced: false,
+      backupLinks: 0,
+      backupSafe: true,
+      backupSynced: false,
+      broken: false,
+      fixtureOpen: false,
+      initialBackup: 0,
+      legacy: true,
+      old: 1,
+      outcome: Refused,
+      phase: Idle,
+      previousActive: 1,
+      publishedBackup: false,
+      readObserved: false,
+      renameOccurred: false,
+      restartBlocked: false,
+      schemaValid: true
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      active: 1,
+      activeDirSynced: false,
+      activeFileSynced: false,
+      activeSafe: false,
+      backup: 0,
+      backupFileSynced: false,
+      backupLinks: 0,
+      backupSafe: true,
+      backupSynced: false,
+      broken: false,
+      fixtureOpen: false,
+      initialBackup: 0,
+      legacy: true,
+      old: 1,
+      outcome: Refused,
+      phase: Idle,
+      previousActive: 1,
+      publishedBackup: false,
+      readObserved: false,
+      renameOccurred: false,
+      restartBlocked: false,
+      schemaValid: true
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      active: 1,
+      activeDirSynced: false,
+      activeFileSynced: false,
+      activeSafe: false,
+      backup: 0,
+      backupFileSynced: false,
+      backupLinks: 0,
+      backupSafe: true,
+      backupSynced: false,
+      broken: false,
+      fixtureOpen: false,
+      initialBackup: 0,
+      legacy: true,
+      old: 1,
+      outcome: Refused,
+      phase: Idle,
+      previousActive: 1,
+      publishedBackup: false,
+      readObserved: false,
+      renameOccurred: false,
+      restartBlocked: false,
+      schemaValid: true
+    }
+}
+
+[ok] No violation found (479ms at 2088 traces/second).
+Trace length statistics: max=31, min=2, average=6.12
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x135298e --backend=typescript to reproduce.

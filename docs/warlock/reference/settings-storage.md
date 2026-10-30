@@ -35,6 +35,9 @@ leave a two-link original: both original bytes and the old active file remain
 recoverable, but subsequent upgrade attempts refuse. Automatic cleanup/recovery
 of that condition is not implemented; do not bypass the hardlink check.
 
-The [recorded checks](../../../implementation/warlock/qa/evidence/settings-migration-20261030/LIMITS.md)
+The [initial recorded checks](../../../implementation/warlock/qa/evidence/settings-migration-20261030/LIMITS.md)
 exercise the actual store with temporary files and injected syscall failures.
-They are not a physical power-loss experiment or native settings journey.
+[Further verification](../../../implementation/warlock/qa/evidence/settings-migration-verification-20261030/LIMITS.md)
+adds eleven abrupt process-exit/reopen boundaries and a source-correlated finite
+Quint model with 29 explicitly selected named tests and five bounded safety
+samples. These are not physical power-loss experiments or native settings journeys.

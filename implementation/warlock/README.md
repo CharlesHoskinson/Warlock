@@ -6,10 +6,16 @@ Follow `docs/warlock-build-loop/v2/INSTRUCTIONS.md`. Generated builds/browser pr
 
 Explicit appearance-settings upgrades now preserve the exact schema-1 original
 before replacing the active file with schema 2. Protected store regressions and
-migration fault checks pass; interrupted two-link backup publication remains a
+migration fault checks pass. Further verification covers eleven abrupt process
+exit/reopen boundaries and 29 named model tests; interrupted two-link backup
+publication remains a
 documented fail-closed recovery limitation. See the
 [storage reference](../../docs/warlock/reference/settings-storage.md) and
 [evidence limits](qa/evidence/settings-migration-20261030/LIMITS.md).
+Independent review accepts all four original ELM-DEL-015 settings-storage
+scenarios and the requirement on the recorded source tuple; see the
+[acceptance record](qa/evidence/settings-migration-verification-20261030/acceptance.json).
+Native settings journeys and whole-release acceptance remain separate.
 
 Release packaging now includes a [component and notice review gate](release/COMPLIANCE.md).
 It checks exact payload ownership, source and notice hashes, embedded component

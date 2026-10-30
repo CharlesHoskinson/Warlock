@@ -1,0 +1,32 @@
+{
+  "sourceRevision": "fe3faed4cc761ef0ae5a433b4113f76526d15831",
+  "productionStoreUnchanged": true,
+  "protectedExecutionBasis": "Root observed tool output from unchanged qa_run.py; scope/invocation identities below supplement actual reports, not independent retroactive tool attestation.",
+  "runs": [
+    {
+      "kind": "process-cuts",
+      "scope": "qa-harness-49d54b4f2b0a4df1bd998dbf8107695a.scope",
+      "invocation": "5f57b278dd3a4b72b1294c8600e70912",
+      "terminalExit": 0
+    },
+    {
+      "kind": "model",
+      "scope": "qa-harness-59fdc3600e634ba0ba35e278246b6c9e.scope",
+      "invocation": "858c955477144764bc8a421baf357700",
+      "terminalExit": 0
+    }
+  ],
+  "sourceHashes": {
+    "implementation/warlock/adapter/shell_preferences.py": "702f110efc7db1c5ab45df0fc2910a06891eb0abce5fc4183271dd3538b2bdb4",
+    "implementation/warlock/adapter/taskbar_preferences.py": "4fde83478c22f7173ef05727a3666ff7ce72076bc05fddfa4fd08705af9a57d2",
+    "implementation/warlock/adapter/endpoint.py": "e254b870922a46b935de9d85db1de56129838ea2cf73eeb55c9fa16e8539d731",
+    "implementation/warlock/qa/check-settings-migration-crash.py": "d58b7d3a717411127b75938b62bd56f9244230f92b7a4e8ee00648549350c034",
+    "implementation/warlock/qa/settings-migration.qnt": "677962afa6ff53346c4b033efcb7f89a9b8c3bfd98d1ad300715901ba859ddb2",
+    "implementation/warlock/qa/settings-migration_test.qnt": "582737d73c186e4b6a6a5b2346bb90beec02817262e878a84e9252f36d8ca575"
+  },
+  "modelReportScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-59fdc3600e634ba0ba35e278246b6c9e.scope",
+    "coreLimit": 1
+  },
+  "completeRuntimeClosureClaimed": false
+}

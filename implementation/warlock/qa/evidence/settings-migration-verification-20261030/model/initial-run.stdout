@@ -1,0 +1,65 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      active: 1,
+      activeDirSynced: false,
+      activeFileSynced: false,
+      activeSafe: true,
+      backup: 0,
+      backupFileSynced: false,
+      backupLinks: 0,
+      backupSafe: true,
+      backupSynced: false,
+      broken: false,
+      fixtureOpen: true,
+      initialBackup: 0,
+      legacy: true,
+      old: 1,
+      outcome: NoneYet,
+      phase: Idle,
+      previousActive: 1,
+      publishedBackup: false,
+      readObserved: false,
+      renameOccurred: false,
+      restartBlocked: false,
+      schemaValid: true
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      active: 1,
+      activeDirSynced: false,
+      activeFileSynced: false,
+      activeSafe: true,
+      backup: 1,
+      backupFileSynced: false,
+      backupLinks: 2,
+      backupSafe: false,
+      backupSynced: false,
+      broken: false,
+      fixtureOpen: false,
+      initialBackup: 1,
+      legacy: true,
+      old: 1,
+      outcome: NoneYet,
+      phase: Idle,
+      previousActive: 1,
+      publishedBackup: false,
+      readObserved: false,
+      renameOccurred: false,
+      restartBlocked: false,
+      schemaValid: true
+    }
+}
+
+[ok] No violation found (5ms at 200 traces/second).
+Trace length statistics: max=2, min=2, average=2.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x13528a6 --backend=typescript to reproduce.

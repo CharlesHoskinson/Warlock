@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "requirement": "ELM-DEL-015",
+  "requirementAccepted": true,
+  "releaseAccepted": false,
+  "sourceRevision": "fe3faed4cc761ef0ae5a433b4113f76526d15831",
+  "sourceRevisionScope": "Production store and legacy settings checks at this revision; new process/model verification artifacts are independently pinned by hash.",
+  "scope": "Original ELM-DEL-015 settings-storage: actual supported schema1-to2 migration preserves exact original before atomic active publication; invalid refusal and injected/abrupt process-interruption old-or-new recovery. Other adopted fixed-schema stores/recovery imports checked by source correspondence. No hardware power-loss, arbitrary concurrency, native/UI/AT or release acceptance.",
+  "sourceHashes": {
+    "implementation/warlock/adapter/shell_preferences.py": "702f110efc7db1c5ab45df0fc2910a06891eb0abce5fc4183271dd3538b2bdb4",
+    "implementation/warlock/adapter/taskbar_preferences.py": "4fde83478c22f7173ef05727a3666ff7ce72076bc05fddfa4fd08705af9a57d2",
+    "implementation/warlock/adapter/shortcut_preferences.py": "2a8cc047ebfb5040c7dda4f9fd0f9e80a9b1207245458beda3ac26ff2251c185",
+    "implementation/warlock/adapter/motion_preferences.py": "ec75685d52f81d5d28f82155b92580015dc897bee6488892c2a8f98e0ffa3633",
+    "implementation/warlock/adapter/recovery_profile.py": "ace346503b5afd2c691748e7c2e1c25394fd81cc0a90be60525ff6cd85a78142",
+    "implementation/warlock/adapter/endpoint.py": "e254b870922a46b935de9d85db1de56129838ea2cf73eeb55c9fa16e8539d731"
+  },
+  "reviewerDisposition": {
+    "name": "roadmap-fidelity",
+    "independent": true,
+    "disposition": "accepted",
+    "path": "implementation/warlock/qa/evidence/settings-migration-verification-20261030/acceptance-review.md",
+    "sha256": "1880e65fa47afd2877b9b6236b81a553a69f00a6a82564f145994bffa78fe8fd"
+  },
+  "scenarios": [
+    {
+      "name": "delivery-015",
+      "oracle": "valid new settings and recoverable original settings exist",
+      "status": "accepted"
+    },
+    {
+      "name": "invalid-settings",
+      "oracle": "the active settings remain unchanged and validation refuses the write",
+      "status": "accepted"
+    },
+    {
+      "name": "interrupted-settings",
+      "oracle": "either complete old or complete new valid settings are recovered, never partial bytes",
+      "status": "accepted"
+    },
+    {
+      "name": "migration-failure",
+      "oracle": "the preserved pre-migration copy remains recoverable and the failed upgrade is not activated",
+      "status": "accepted"
+    }
+  ],
+  "evidence": {
+    "priorPacketManifestSHA256": "457823255b2ff94f0ce7944ffa0cd235dd73235f83c31fffbeb296fcae35ee4c",
+    "modelReportSHA256": "8bce6f17df2b3ffdba520a4f2bdd866f0edb8c517644e35bfacf9a9cbde839bb",
+    "processReportSHA256": "218f4e39d5b55b024292706ccc186c9201b5fc4491f68d6bdd50e03851db9443",
+    "modelReviewSHA256": "92f4acdfa7ad4fb42bd4cc61c0940664332c1fae8a255d056d7f7b014fed0ad7",
+    "protectedContextSHA256": "b8e4c43f70976a4f2a80d87f360d6b01eb599d2c1ff6f6966756cf8603c62ad2"
+  },
+  "limits": [
+    "Process exits do not prove hardware power-loss semantics.",
+    "A two-link interrupted backup retains originals and refuses retry; no automatic cleanup.",
+    "Postrename directory-sync failure is Unknown, not rollback.",
+    "Finite one-writer model and bounded pin set; no exhaustive implementation/runtime dependency proof."
+  ],
+  "verificationInputs": {
+    "implementation/warlock/qa/check-settings.py": "b39f26f170336599756aab3812c8c41ab1a71fcd6846590abea7b3557409ee5a",
+    "implementation/warlock/qa/check-settings-migration.py": "3fe44bc9252e0a99ee5007d78221cf148c864cd9cb8dedb46da83a1786b7b184",
+    "implementation/warlock/qa/check-settings-migration-crash.py": "d58b7d3a717411127b75938b62bd56f9244230f92b7a4e8ee00648549350c034",
+    "implementation/warlock/qa/settings-migration.qnt": "677962afa6ff53346c4b033efcb7f89a9b8c3bfd98d1ad300715901ba859ddb2",
+    "implementation/warlock/qa/settings-migration_test.qnt": "582737d73c186e4b6a6a5b2346bb90beec02817262e878a84e9252f36d8ca575"
+  }
+}

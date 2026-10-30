@@ -1,0 +1,15 @@
+{
+  "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/settings-migration-quint3-v2",
+  "files": {
+    "settings-migration.qnt": "677962afa6ff53346c4b033efcb7f89a9b8c3bfd98d1ad300715901ba859ddb2",
+    "settings-migration_test.qnt": "582737d73c186e4b6a6a5b2346bb90beec02817262e878a84e9252f36d8ca575"
+  },
+  "testCount": 29,
+  "invariants": [
+    "completeActive",
+    "originalBeforeActivation",
+    "savedAfterBarrier",
+    "backupNeverOverwritten",
+    "twoLinkRecoverable"
+  ]
+}
