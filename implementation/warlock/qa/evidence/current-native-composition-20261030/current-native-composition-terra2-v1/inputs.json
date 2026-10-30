@@ -1,0 +1,153 @@
+{
+  "frontendLock": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-build-lock-root-v5.json",
+    "sha256": "abd0b33788b81c3c268a440b6d3f51e2bb27744aba8683bd9963b9f8ea6169c4"
+  },
+  "frontendReport": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-build-contracts-1793318770694864206/build/report.json",
+    "sha256": "613b4592a37982cedb881ba7edfd68d23349130a057ec9b0e62e213b2b17161d"
+  },
+  "oldElmReport": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/arc004-build-terra2-v1/output/report.json",
+    "sha256": "1c35c3c24cbc2011176affe84191f111bbc96caa4ea32a17ff737dd32f658ef6"
+  },
+  "nativeReport": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/first-use-delivery-context-root-v1/output/report.json",
+    "sha256": "65b7e0fe87f775b6489a2092f355856cd273ec4461114897ddfeed177b721987"
+  },
+  "tuple": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/fresh-pair/tuple.json",
+    "sha256": "bc225242e30baf4a5b8b1182cef6fdc716cc9c67de90dc35674f90c5fa87830b"
+  },
+  "nativeHost": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/first-use-delivery-context-root-v1/output/elm-host",
+    "sha256": "a6b0f0cdfaf9d1fbf35494501fe623c88e889497c14b6fc9f65a7cc6ac5cba97"
+  },
+  "nativeSourceHashes": {
+    "/home/charles/Warlock/implementation/warlock/native/host.c": "56f0952d61f3ce57e7c2cb1122c640dc7548495bfab9b02677961b98266aa022",
+    "/home/charles/Warlock/implementation/warlock/native/shared-host.c": "5d0d43c61574f292842bc34b2e3363cd5e7a215239e609bcb9780d475a9a8bbc"
+  },
+  "slots": {
+    "core": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-build/Hyprland",
+      "sha256": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e"
+    },
+    "authority": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/authority/elm-window-geometry-authority.so",
+      "sha256": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c"
+    },
+    "aquamarine": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/lib/libaquamarine.so.0.15.0",
+      "sha256": "667a22d535aade4e4a26134e39028a87fb3f963c28b7bf7ff79da684bb014ecd"
+    }
+  },
+  "aquamarineAlias": {
+    "sonameAlias": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/lib/libaquamarine.so.14",
+    "aliasTarget": "libaquamarine.so.0.15.0"
+  },
+  "sourceDelta": [
+    {
+      "path": "/home/charles/Warlock/implementation/warlock/src/Announcement.elm",
+      "old": "71bc1e29724266c26301716ea0a1c7452f02c9f67e140e1bd1ec33c5166d402f",
+      "current": "a1e6660c082c7c68657e356c2e4742cd8fd60e843192b88fa0609fb696a40f9f"
+    },
+    {
+      "path": "/home/charles/Warlock/implementation/warlock/src/AnnouncementMessage.elm",
+      "old": null,
+      "current": "fb0f5231bff5beffe0a877046d38bba1bb87bd3d8e786449800093ae38ab2075"
+    },
+    {
+      "path": "/home/charles/Warlock/implementation/warlock/src/Main.elm",
+      "old": "6d797e72117cb0e057638eca1c29bcec8c1fa536221bccd605de48978458cf19",
+      "current": "7f5ddbe6fedf775e143b684ec60c9bfbdf15606414ed4fafc2c5553b514821c2"
+    },
+    {
+      "path": "/home/charles/Warlock/implementation/warlock/src/OutcomeAnnouncements.elm",
+      "old": "158b22f574983da656838c4388c93cca1c7d9b044aaae83ee21153eae29b7586",
+      "current": "c7fd2828c42b7cbc0f3b6fc705c26a551530d1eb22ed325e892a0e1faca6ca7e"
+    },
+    {
+      "path": "/home/charles/Warlock/implementation/warlock/src/OutputController.elm",
+      "old": "8da2227997dda10570707c456df8b00fcc000291c66a8ec2a48e8d5321cee8dc",
+      "current": "aaf1729287ff61595a237201b261e7c1ce11c8f2353c620171f48aff99d86f38"
+    },
+    {
+      "path": "/home/charles/Warlock/implementation/warlock/src/Presentation.elm",
+      "old": "8c3463230d93b768f48784a37ae9e4da7a225defa6f209b3100258af5196c0e9",
+      "current": "8c635b330641c4c06895357bdaee430b8eeed9b8ae88a83742f703c9f23a5dd6"
+    },
+    {
+      "path": "/home/charles/Warlock/implementation/warlock/src/ShortcutPreferences.elm",
+      "old": "d9196adaae768e57e2531b78ad2cd8fd22a2a81ad952d27c7c88d0fc72da8322",
+      "current": "d8c1a63f199612161e078e0f6c7f75cbbfa190953e19325e50169debc425dcec"
+    },
+    {
+      "path": "/home/charles/Warlock/implementation/warlock/src/SurfaceRenderer.elm",
+      "old": "48e03f50fd509ea0e42e23d7a1aa26396122350ab824c8dc179952b5bfd28c63",
+      "current": "f6c653573c1b73b32df132ada5033a1e34aa2cfa1a2dcbb42be4320a4a98a7b8"
+    },
+    {
+      "path": "/home/charles/Warlock/implementation/warlock/src/SurfaceSnapshot.elm",
+      "old": null,
+      "current": "58298ea43fffba3da6bcc64f1456b47bcde3607d476ef99465be0c98c2b433d7"
+    }
+  ],
+  "additionalPreflightRows": [
+    {
+      "index": 3035,
+      "label": "host sourceHashes",
+      "path": "/home/charles/Warlock/implementation/warlock/src/Announcement.elm",
+      "expectedSHA256": "71bc1e29724266c26301716ea0a1c7452f02c9f67e140e1bd1ec33c5166d402f"
+    },
+    {
+      "index": 3052,
+      "label": "host sourceHashes",
+      "path": "/home/charles/Warlock/implementation/warlock/src/Main.elm",
+      "expectedSHA256": "6d797e72117cb0e057638eca1c29bcec8c1fa536221bccd605de48978458cf19"
+    },
+    {
+      "index": 3077,
+      "label": "host sourceHashes",
+      "path": "/home/charles/Warlock/implementation/warlock/src/OutcomeAnnouncements.elm",
+      "expectedSHA256": "158b22f574983da656838c4388c93cca1c7d9b044aaae83ee21153eae29b7586"
+    },
+    {
+      "index": 3078,
+      "label": "host sourceHashes",
+      "path": "/home/charles/Warlock/implementation/warlock/src/OutputController.elm",
+      "expectedSHA256": "8da2227997dda10570707c456df8b00fcc000291c66a8ec2a48e8d5321cee8dc"
+    },
+    {
+      "index": 3085,
+      "label": "host sourceHashes",
+      "path": "/home/charles/Warlock/implementation/warlock/src/Presentation.elm",
+      "expectedSHA256": "8c3463230d93b768f48784a37ae9e4da7a225defa6f209b3100258af5196c0e9"
+    },
+    {
+      "index": 3110,
+      "label": "host sourceHashes",
+      "path": "/home/charles/Warlock/implementation/warlock/src/ShortcutPreferences.elm",
+      "expectedSHA256": "d9196adaae768e57e2531b78ad2cd8fd22a2a81ad952d27c7c88d0fc72da8322"
+    },
+    {
+      "index": 3115,
+      "label": "host sourceHashes",
+      "path": "/home/charles/Warlock/implementation/warlock/src/SurfaceRenderer.elm",
+      "expectedSHA256": "48e03f50fd509ea0e42e23d7a1aa26396122350ab824c8dc179952b5bfd28c63"
+    }
+  ],
+  "oldReceiptOnlyInputs": [
+    "/home/charles/Warlock/implementation/warlock/qa/NativePointerFixture.elm",
+    "/home/charles/Warlock/implementation/warlock/qa/NewInstanceReplay.elm",
+    "/home/charles/Warlock/implementation/warlock/qa/feedback-replay.js"
+  ],
+  "consumedNativeDependencyPathsContainingDelta": [],
+  "counts": {
+    "lockSources": 99,
+    "priorSources": 100,
+    "currentAssets": 19,
+    "hostDependencies": 1020,
+    "retainedObjects": 10,
+    "providers": 144
+  }
+}

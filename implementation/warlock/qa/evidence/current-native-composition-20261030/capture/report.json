@@ -1,0 +1,46 @@
+{
+  "checks": [
+    {
+      "name": "Current frontend and unchanged native role observation succeeds",
+      "passed": true
+    },
+    {
+      "name": "All original preflight and source deltas retained",
+      "passed": true
+    },
+    {
+      "name": "Historical seven and current two additions explicit",
+      "passed": true
+    },
+    {
+      "name": "Executed source unchanged check-current-native.py",
+      "passed": true
+    },
+    {
+      "name": "Executed source unchanged current_native.py",
+      "passed": true
+    },
+    {
+      "name": "Executed source unchanged current_build.py",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "/home/charles/Warlock/implementation/warlock/adapter/current_build.py": "d4e5af280a275f9a777322ee60f1f34bf21751b6726edcaa4e4105a02da4dbc7",
+    "/home/charles/Warlock/implementation/warlock/adapter/current_native.py": "d69b87930e9fd5fea307652ce16ad045688d87aed683fb84e3a6bbae551ebf74",
+    "/home/charles/Warlock/implementation/warlock/qa/check-current-native.py": "9a45445a15d11240a9384e5a8e34f5e88736b229aaeb5e5cf248be427d17b205"
+  },
+  "limit": "Read-only original/current role validation and fixed/seeded declared-lock mutations; frozen host/object/provider/ABI inputs are never modified. No native code is loaded.",
+  "nativeAcceptance": false,
+  "passed": true,
+  "proposedLock": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-native-capture-1793319690247072588/native-lock.json",
+    "sha256": "56a088c4d83b205f0738954eb6c829b9635703628e14d92a433aa7a5a47351ca"
+  },
+  "releaseAccepted": false,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-6b9b380d5931481891f8921e41683dca.scope",
+    "coreLimit": 1
+  },
+  "seed": 20261030
+}
