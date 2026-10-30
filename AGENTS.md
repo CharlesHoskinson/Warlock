@@ -12,9 +12,16 @@ The ten-agent design/interface campaign and Muse-supervised preparation loop
 are explicitly authorized and armed in preparation mode. Preparation includes
 architecture, interface/source development, tooling, workflow plugins, models and
 meaningful fuzz/property checks needed for readiness. Root serializes protected
-checks. Final product implementation and native campaigns remain gated until
-independent readiness review and explicit final-loop authorization. A preparation
+checks. Final product implementation and native acceptance campaigns remain gated
+on independent readiness review under the user's existing conditional rearm
+authorization. A preparation
 receipt is not original-scenario or release acceptance. Respect future user pauses.
+
+Root may run bounded isolated native capability trials needed to establish
+readiness after reviewing the actual source, current provider/ABI, private runtime
+and owned cleanup. Declare a dedicated original-scenario record and retain the
+unchanged serial native launcher, safety guards and stop histories. This permits
+neither main-desktop changes nor acceptance of unobserved original obligations.
 
 # Working instructions
 
@@ -94,6 +101,12 @@ and `REGULATOR.md` when continuing work. Preserve original 242 requirements,
 417 scenarios, literal oracles, whole-EARS obligations and all stopped histories.
 Select a real implementation or original-acceptance action; documentation, model
 counts, audits and timers do not reset production progress or accept GUI behavior.
+
+With Codex collaboration tools, `send_message` queues information but does not
+activate an idle or completed agent. Use `followup_task` to resume that agent's
+coordination turn. Confirm actual source-worker launch receipts and live handles;
+queued assignments are not running jobs. Resume external persistent threads only
+after their prior process and terminal log have been revalidated.
 
 Muse uses its own authenticated `muse-regulator` AgentBus identity. Scheduled
 continuations target this exact root thread through `codex queue`, preserving

@@ -31,9 +31,14 @@ QA. The user explicitly authorized a Muse-supervised preparation loop to finish
 the readiness work needed to arm the final loop. Preparation mode is now armed;
 it permits architecture/interface source development, tooling/plugin delivery,
 model correspondence and meaningful fuzz/property preparation with root-owned
-protected checks. This is not permission for final product implementation or
-native campaigns: those remain gated by the independently reviewed readiness
-record and explicit final-loop authorization. Future pauses remain binding.
+protected checks. Final product implementation and native acceptance campaigns
+remain gated by independently reviewed readiness under the user's existing
+conditional rearm authorization. To establish readiness, root may conduct bounded
+isolated native capability trials after reviewing actual source, current
+provider/ABI, private runtime and owned cleanup. Use a dedicated original-scenario
+record and the unchanged serial native launcher, safety guards and stop histories;
+do not change the main desktop or accept unobserved obligations. Future pauses
+remain binding.
 Readiness, preparation checks and timer operation do not accept native behavior
 or a release. See STATE.preparationLoop for the actual activation receipts.
 
