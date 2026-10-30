@@ -1,0 +1,95 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      decoderHealthy: true,
+      entries:
+        Map(
+          1 ->
+            {
+              ack: false,
+              cert: false,
+              file: true,
+              lane: Legacy,
+              live: true,
+              phase: NoRelease,
+              stage: Unknown
+            },
+          2 ->
+            {
+              ack: false,
+              cert: false,
+              file: true,
+              lane: Typed,
+              live: true,
+              phase: NoRelease,
+              stage: Unknown
+            },
+          3 ->
+            {
+              ack: false,
+              cert: false,
+              file: true,
+              lane: Typed,
+              live: true,
+              phase: NoRelease,
+              stage: Unknown
+            }
+        ),
+      joins: Set(),
+      proofs: Set(),
+      replayCount: 0
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      decoderHealthy: true,
+      entries:
+        Map(
+          1 ->
+            {
+              ack: false,
+              cert: false,
+              file: true,
+              lane: Legacy,
+              live: true,
+              phase: NoRelease,
+              stage: Unknown
+            },
+          2 ->
+            {
+              ack: false,
+              cert: false,
+              file: true,
+              lane: Typed,
+              live: true,
+              phase: NoRelease,
+              stage: Unknown
+            },
+          3 ->
+            {
+              ack: false,
+              cert: true,
+              file: true,
+              lane: Typed,
+              live: true,
+              phase: NoRelease,
+              stage: TerminalStored
+            }
+        ),
+      joins: Set(),
+      proofs: Set(),
+      replayCount: 0
+    }
+}
+
+[ok] No violation found (9ms at 111 traces/second).
+Trace length statistics: max=2, min=2, average=2.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x13528a6 --backend=typescript to reproduce.

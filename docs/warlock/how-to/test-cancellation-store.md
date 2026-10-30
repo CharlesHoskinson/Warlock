@@ -23,7 +23,15 @@ passing matrix. After the launcher is actually terminal, release the QA HOLD.
 
 The groups cover ordinary and typed restart, immutable admission keys, attempt
 prerequisites, certificate-before-retirement ordering, ACK gating, selected
-syscall failures, reopening and funded byte capacity. The [protocol reference](../reference/cancellation-protocol.md)
+syscall failures, reopening and funded byte capacity. The current nine groups
+also cover typed/legacy full-key isolation and V7 namespace ownership (33 checks
+each). A V7 namespace reopened with default/false mode must refuse before
+migration and preserve all data bytes; do not remove its marker or toggle the flag
+to bypass refusal. Clean legacy namespaces remain valid positive controls. The [protocol reference](../reference/cancellation-protocol.md)
 and [recorded limits](../../../implementation/warlock/qa/evidence/cancellation-store-20261030/LIMITS.md)
 identify the current scope. This runner does not qualify authenticated transport,
 physical Escape, C/Elm recovery delivery, all-slot operation or hardware power loss.
+
+See the [current isolation evidence](../../../implementation/warlock/qa/evidence/cancellation-isolation-20261030/LIMITS.md)
+for these added guards and retained failures. The earlier store packet records
+its own historical source tuple and seven-group scope.

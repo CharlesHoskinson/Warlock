@@ -1,0 +1,1371 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      decoderHealthy: true,
+      entries:
+        Map(
+          1 ->
+            {
+              ack: false,
+              cert: false,
+              file: true,
+              lane: Legacy,
+              live: true,
+              phase: NoRelease,
+              stage: Unknown
+            },
+          2 ->
+            {
+              ack: false,
+              cert: false,
+              file: true,
+              lane: Typed,
+              live: true,
+              phase: NoRelease,
+              stage: Unknown
+            },
+          3 ->
+            {
+              ack: false,
+              cert: false,
+              file: true,
+              lane: Typed,
+              live: true,
+              phase: NoRelease,
+              stage: Unknown
+            }
+        ),
+      joins: Set(),
+      proofs: Set(),
+      replayCount: 0
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      decoderHealthy: true,
+      entries:
+        Map(
+          1 ->
+            {
+              ack: false,
+              cert: false,
+              file: true,
+              lane: Legacy,
+              live: true,
+              phase: NoRelease,
+              stage: Unknown
+            },
+          2 ->
+            {
+              ack: false,
+              cert: true,
+              file: true,
+              lane: Typed,
+              live: true,
+              phase: NoRelease,
+              stage: TerminalStored
+            },
+          3 ->
+            {
+              ack: false,
+              cert: false,
+              file: true,
+              lane: Typed,
+              live: true,
+              phase: NoRelease,
+              stage: Unknown
+            }
+        ),
+      joins: Set(),
+      proofs: Set(),
+      replayCount: 0
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      decoderHealthy: true,
+      entries:
+        Map(
+          1 ->
+            {
+              ack: false,
+              cert: false,
+              file: true,
+              lane: Legacy,
+              live: true,
+              phase: NoRelease,
+              stage: Unknown
+            },
+          2 ->
+            {
+              ack: false,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            },
+          3 ->
+            {
+              ack: false,
+              cert: false,
+              file: true,
+              lane: Typed,
+              live: true,
+              phase: NoRelease,
+              stage: Unknown
+            }
+        ),
+      joins: Set(),
+      proofs: Set(),
+      replayCount: 0
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      decoderHealthy: true,
+      entries:
+        Map(
+          1 ->
+            {
+              ack: false,
+              cert: false,
+              file: true,
+              lane: Legacy,
+              live: true,
+              phase: NoRelease,
+              stage: Unknown
+            },
+          2 ->
+            {
+              ack: false,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            },
+          3 ->
+            {
+              ack: false,
+              cert: true,
+              file: true,
+              lane: Typed,
+              live: true,
+              phase: NoRelease,
+              stage: TerminalStored
+            }
+        ),
+      joins: Set(),
+      proofs: Set(),
+      replayCount: 0
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      decoderHealthy: true,
+      entries:
+        Map(
+          1 ->
+            {
+              ack: false,
+              cert: false,
+              file: true,
+              lane: Legacy,
+              live: true,
+              phase: NoRelease,
+              stage: Unknown
+            },
+          2 ->
+            {
+              ack: false,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            },
+          3 ->
+            {
+              ack: false,
+              cert: true,
+              file: true,
+              lane: Typed,
+              live: true,
+              phase: NoRelease,
+              stage: TerminalStored
+            }
+        ),
+      joins: Set(),
+      proofs: Set(3),
+      replayCount: 0
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      decoderHealthy: true,
+      entries:
+        Map(
+          1 ->
+            {
+              ack: false,
+              cert: false,
+              file: true,
+              lane: Legacy,
+              live: true,
+              phase: NoRelease,
+              stage: Unknown
+            },
+          2 ->
+            {
+              ack: false,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            },
+          3 ->
+            {
+              ack: false,
+              cert: true,
+              file: true,
+              lane: Typed,
+              live: true,
+              phase: NoRelease,
+              stage: TerminalStored
+            }
+        ),
+      joins: Set(3),
+      proofs: Set(3),
+      replayCount: 0
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      decoderHealthy: true,
+      entries:
+        Map(
+          1 ->
+            {
+              ack: false,
+              cert: false,
+              file: true,
+              lane: Legacy,
+              live: true,
+              phase: NoRelease,
+              stage: Unknown
+            },
+          2 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            },
+          3 ->
+            {
+              ack: false,
+              cert: true,
+              file: true,
+              lane: Typed,
+              live: true,
+              phase: NoRelease,
+              stage: TerminalStored
+            }
+        ),
+      joins: Set(3),
+      proofs: Set(3),
+      replayCount: 0
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      decoderHealthy: true,
+      entries:
+        Map(
+          1 ->
+            {
+              ack: false,
+              cert: false,
+              file: true,
+              lane: Legacy,
+              live: true,
+              phase: NoRelease,
+              stage: Unknown
+            },
+          2 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            },
+          3 ->
+            {
+              ack: false,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            }
+        ),
+      joins: Set(3),
+      proofs: Set(3),
+      replayCount: 0
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      decoderHealthy: true,
+      entries:
+        Map(
+          1 ->
+            {
+              ack: false,
+              cert: false,
+              file: true,
+              lane: Legacy,
+              live: true,
+              phase: NoRelease,
+              stage: Unknown
+            },
+          2 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            },
+          3 ->
+            {
+              ack: false,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            }
+        ),
+      joins: Set(),
+      proofs: Set(),
+      replayCount: 0
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      decoderHealthy: true,
+      entries:
+        Map(
+          1 ->
+            {
+              ack: false,
+              cert: false,
+              file: true,
+              lane: Legacy,
+              live: true,
+              phase: NoRelease,
+              stage: Unknown
+            },
+          2 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            },
+          3 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            }
+        ),
+      joins: Set(),
+      proofs: Set(),
+      replayCount: 0
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      decoderHealthy: true,
+      entries:
+        Map(
+          1 ->
+            {
+              ack: false,
+              cert: false,
+              file: true,
+              lane: Legacy,
+              live: true,
+              phase: NoRelease,
+              stage: Unknown
+            },
+          2 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            },
+          3 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            }
+        ),
+      joins: Set(),
+      proofs: Set(),
+      replayCount: 0
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      decoderHealthy: true,
+      entries:
+        Map(
+          1 ->
+            {
+              ack: false,
+              cert: false,
+              file: true,
+              lane: Legacy,
+              live: true,
+              phase: NoRelease,
+              stage: Unknown
+            },
+          2 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            },
+          3 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            }
+        ),
+      joins: Set(),
+      proofs: Set(2),
+      replayCount: 0
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      decoderHealthy: true,
+      entries:
+        Map(
+          1 ->
+            {
+              ack: false,
+              cert: false,
+              file: true,
+              lane: Legacy,
+              live: true,
+              phase: NoRelease,
+              stage: Unknown
+            },
+          2 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            },
+          3 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            }
+        ),
+      joins: Set(),
+      proofs: Set(2, 3),
+      replayCount: 0
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      decoderHealthy: true,
+      entries:
+        Map(
+          1 ->
+            {
+              ack: false,
+              cert: false,
+              file: true,
+              lane: Legacy,
+              live: true,
+              phase: NoRelease,
+              stage: Unknown
+            },
+          2 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            },
+          3 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            }
+        ),
+      joins: Set(3),
+      proofs: Set(2, 3),
+      replayCount: 0
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      decoderHealthy: true,
+      entries:
+        Map(
+          1 ->
+            {
+              ack: false,
+              cert: false,
+              file: true,
+              lane: Legacy,
+              live: true,
+              phase: NoRelease,
+              stage: Unknown
+            },
+          2 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            },
+          3 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            }
+        ),
+      joins: Set(3),
+      proofs: Set(2, 3),
+      replayCount: 0
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      decoderHealthy: true,
+      entries:
+        Map(
+          1 ->
+            {
+              ack: false,
+              cert: false,
+              file: true,
+              lane: Legacy,
+              live: true,
+              phase: NoRelease,
+              stage: Unknown
+            },
+          2 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            },
+          3 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            }
+        ),
+      joins: Set(3),
+      proofs: Set(1, 2, 3),
+      replayCount: 0
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      decoderHealthy: true,
+      entries:
+        Map(
+          1 ->
+            {
+              ack: false,
+              cert: false,
+              file: true,
+              lane: Legacy,
+              live: true,
+              phase: NoRelease,
+              stage: Unknown
+            },
+          2 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            },
+          3 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            }
+        ),
+      joins: Set(1, 3),
+      proofs: Set(1, 2, 3),
+      replayCount: 0
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      decoderHealthy: true,
+      entries:
+        Map(
+          1 ->
+            {
+              ack: false,
+              cert: false,
+              file: true,
+              lane: Legacy,
+              live: true,
+              phase: NoRelease,
+              stage: Unknown
+            },
+          2 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            },
+          3 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            }
+        ),
+      joins: Set(1, 3),
+      proofs: Set(1, 2, 3),
+      replayCount: 0
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      decoderHealthy: true,
+      entries:
+        Map(
+          1 ->
+            {
+              ack: false,
+              cert: false,
+              file: true,
+              lane: Legacy,
+              live: true,
+              phase: NoRelease,
+              stage: Unknown
+            },
+          2 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            },
+          3 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            }
+        ),
+      joins: Set(1, 3),
+      proofs: Set(1, 2, 3),
+      replayCount: 0
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      decoderHealthy: true,
+      entries:
+        Map(
+          1 ->
+            {
+              ack: false,
+              cert: false,
+              file: true,
+              lane: Legacy,
+              live: true,
+              phase: NoRelease,
+              stage: Unknown
+            },
+          2 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            },
+          3 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            }
+        ),
+      joins: Set(1, 3),
+      proofs: Set(1, 2, 3),
+      replayCount: 0
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      decoderHealthy: true,
+      entries:
+        Map(
+          1 ->
+            {
+              ack: false,
+              cert: false,
+              file: true,
+              lane: Legacy,
+              live: true,
+              phase: Prepared,
+              stage: Unknown
+            },
+          2 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            },
+          3 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            }
+        ),
+      joins: Set(1, 3),
+      proofs: Set(1, 2, 3),
+      replayCount: 0
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      decoderHealthy: true,
+      entries:
+        Map(
+          1 ->
+            {
+              ack: false,
+              cert: false,
+              file: false,
+              lane: Legacy,
+              live: false,
+              phase: Released,
+              stage: Unknown
+            },
+          2 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            },
+          3 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            }
+        ),
+      joins: Set(1, 3),
+      proofs: Set(1, 2, 3),
+      replayCount: 0
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      decoderHealthy: true,
+      entries:
+        Map(
+          1 ->
+            {
+              ack: false,
+              cert: false,
+              file: false,
+              lane: Legacy,
+              live: false,
+              phase: Released,
+              stage: Unknown
+            },
+          2 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            },
+          3 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            }
+        ),
+      joins: Set(1, 3),
+      proofs: Set(1, 2, 3),
+      replayCount: 0
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      decoderHealthy: true,
+      entries:
+        Map(
+          1 ->
+            {
+              ack: false,
+              cert: false,
+              file: false,
+              lane: Legacy,
+              live: false,
+              phase: Released,
+              stage: Unknown
+            },
+          2 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            },
+          3 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            }
+        ),
+      joins: Set(1, 3),
+      proofs: Set(1, 2, 3),
+      replayCount: 0
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      decoderHealthy: true,
+      entries:
+        Map(
+          1 ->
+            {
+              ack: true,
+              cert: false,
+              file: false,
+              lane: Legacy,
+              live: false,
+              phase: Released,
+              stage: Unknown
+            },
+          2 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            },
+          3 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            }
+        ),
+      joins: Set(1, 3),
+      proofs: Set(1, 2, 3),
+      replayCount: 0
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      decoderHealthy: true,
+      entries:
+        Map(
+          1 ->
+            {
+              ack: true,
+              cert: false,
+              file: false,
+              lane: Legacy,
+              live: false,
+              phase: Released,
+              stage: Unknown
+            },
+          2 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            },
+          3 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            }
+        ),
+      joins: Set(1, 3),
+      proofs: Set(1, 2, 3),
+      replayCount: 0
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      decoderHealthy: true,
+      entries:
+        Map(
+          1 ->
+            {
+              ack: true,
+              cert: false,
+              file: false,
+              lane: Legacy,
+              live: false,
+              phase: Released,
+              stage: Unknown
+            },
+          2 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            },
+          3 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            }
+        ),
+      joins: Set(),
+      proofs: Set(),
+      replayCount: 0
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      decoderHealthy: true,
+      entries:
+        Map(
+          1 ->
+            {
+              ack: true,
+              cert: false,
+              file: false,
+              lane: Legacy,
+              live: false,
+              phase: Released,
+              stage: Unknown
+            },
+          2 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            },
+          3 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            }
+        ),
+      joins: Set(),
+      proofs: Set(),
+      replayCount: 0
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      decoderHealthy: true,
+      entries:
+        Map(
+          1 ->
+            {
+              ack: true,
+              cert: false,
+              file: false,
+              lane: Legacy,
+              live: false,
+              phase: Released,
+              stage: Unknown
+            },
+          2 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            },
+          3 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            }
+        ),
+      joins: Set(),
+      proofs: Set(),
+      replayCount: 0
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      decoderHealthy: true,
+      entries:
+        Map(
+          1 ->
+            {
+              ack: true,
+              cert: false,
+              file: false,
+              lane: Legacy,
+              live: false,
+              phase: Released,
+              stage: Unknown
+            },
+          2 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            },
+          3 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            }
+        ),
+      joins: Set(),
+      proofs: Set(),
+      replayCount: 0
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      decoderHealthy: true,
+      entries:
+        Map(
+          1 ->
+            {
+              ack: true,
+              cert: false,
+              file: false,
+              lane: Legacy,
+              live: false,
+              phase: Released,
+              stage: Unknown
+            },
+          2 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            },
+          3 ->
+            {
+              ack: true,
+              cert: true,
+              file: false,
+              lane: Typed,
+              live: false,
+              phase: NoRelease,
+              stage: AdmissionRetired
+            }
+        ),
+      joins: Set(),
+      proofs: Set(2),
+      replayCount: 0
+    }
+}
+
+[ok] No violation found (533ms at 1876 traces/second).
+Trace length statistics: max=31, min=3, average=13.54
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x1353509 --backend=typescript to reproduce.

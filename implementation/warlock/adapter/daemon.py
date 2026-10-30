@@ -82,9 +82,11 @@ def event_socket(client):
  except BaseException:connection.close();raise
 
 
-def handle_request(client,catalog,request,recovery,reconciliation,notifications=None,system_menu=None,explorer=None,jump_lists=None,workspace_navigation=None):
+def handle_request(client,catalog,request,recovery,reconciliation,notifications=None,system_menu=None,explorer=None,jump_lists=None,workspace_navigation=None,cancellation=None):
  if not isinstance(request,dict):raise Refused('Frontend request object')
  kind=request.get('kind')
+ if cancellation is not None and kind in {'effect-cancellation-negotiate','effect-prepare','effect-commit','effect-cancel','effect-decision-request','effect-decision-ack'}:
+  send(cancellation.handle(request,workspace_navigation));return
  if kind in {'workspace-navigation','workspace-navigation-recover'}:
   if workspace_navigation is None:raise Refused('Workspace navigation unavailable')
   send(guarded(lambda:workspace_navigation.handle(client,request)));return
@@ -174,10 +176,11 @@ class FrontendFrames:
  def finish(self):
   if self.tail:raise Refused('Frontend truncated frame')
 
-def publish_startup(client,hello,recovery):
+def publish_startup(client,hello,recovery,cancellation=None):
  # Complete every short-lock startup read before attached can trigger the C
  # host's nonblocking admission bind. Stage announcements without changing their
  # frontend order, then restore the live callback before any read can arrive.
+ cancellation_frames=cancellation.startup() if cancellation is not None else []
  settlements=guarded(lambda:recovery.settlement_frames(client.bound))
  recovered=guarded(lambda:recovery.recovery_frames(client.bound))
  staged=[]
@@ -187,12 +190,16 @@ def publish_startup(client,hello,recovery):
  send(hello)
  for frame in settlements:send(frame)
  for frame in recovered[:1]:send(frame)
+ for frame in cancellation_frames:send(frame)
  for frame in staged:send(frame)
  send({'protocolVersion':3,'kind':'host-geometry-negotiate'})
  return reconciliation
 
 def main():
- config=json.loads(Path(sys.argv[1]).read_text());roots=config.pop('catalogRoots',None);client=Endpoint(**config);catalog=CatalogTransport(client,roots)
+ config=json.loads(Path(sys.argv[1]).read_text());roots=config.pop('catalogRoots',None)
+ cancellation_opt_in=config.pop('cancellationOptIn',False)
+ if type(cancellation_opt_in) is not bool:raise Refused('Cancellation opt-in must be boolean')
+ client=Endpoint(**config);catalog=CatalogTransport(client,roots)
  # Subscribe before initial projection; notifications may coalesce before a new
  # authoritative snapshot is requested, never after numbered publication.
  with event_socket(client) as events,selectors.DefaultSelector() as selector,ExitStack() as lifetime:
@@ -201,10 +208,15 @@ def main():
   explorer=lifetime.enter_context(Explorer())
   jump_lists=lifetime.enter_context(JumpLists(catalog.authority))
   hello=client.hello()
-  recovery=lifetime.enter_context(guarded(lambda:Journal(config['runtime'],config['instance'],client.bound['lifetime'])))
+  recovery=lifetime.enter_context(guarded(lambda:Journal(config['runtime'],config['instance'],client.bound['lifetime'],cancellation=True) if cancellation_opt_in else Journal(config['runtime'],config['instance'],client.bound['lifetime'])))
   workspace_navigation=guarded(lambda:Navigation(recovery))
   guarded(lambda:workspace_navigation.attach(client))
-  reconciliation=publish_startup(client,hello,recovery)
+  cancellation=None
+  if cancellation_opt_in:
+   from cancellation_coordinator import CancellationCoordinator
+   cancellation=CancellationCoordinator(client,recovery,hello)
+   lifetime.callback(cancellation.close)
+  reconciliation=publish_startup(client,hello,recovery,cancellation)
   send(guarded(lambda:workspace_navigation.recover(client)))
   chord_request=1;send(client.switcher_journal(str(chord_request)))
   pointer_request=1;send(client.pointer_ownership(str(pointer_request)))
@@ -222,7 +234,7 @@ def main():
      if not data:incoming.finish();return 0
      for line in incoming.feed(data):
       request=json.loads(line,object_pairs_hook=unique)
-      handle_request(client,catalog,request,recovery,reconciliation,notification_service,system_menu,explorer,jump_lists,workspace_navigation)
+      handle_request(client,catalog,request,recovery,reconciliation,notification_service,system_menu,explorer,jump_lists,workspace_navigation,cancellation)
       if request.get('kind')=='projection-request':have_snapshot=True;dirty=False
     elif key.data=='notifications':
      notification_service.drain();send(notification_service.observation(client))

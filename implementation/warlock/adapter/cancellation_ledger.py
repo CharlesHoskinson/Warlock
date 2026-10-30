@@ -152,6 +152,7 @@ from delivery_ledger import DeliveryLedger
 from recovery_journal import Journal, validate
 from admission_ledger import storage_key
 from durable_ledger import encoded, normalize, key as legacy_key, watermark
+from retirement_ledger import ObservationJoin, release_payload
 
 _NAME = 'ledger-v7.json'
 _MARKER = 'ledger-v7.initialized'
@@ -222,6 +223,8 @@ class CancellationLedger(DeliveryLedger):
     locked validation/bootstrap. Its API must never treat bare caller keys as
     authorization to erase a reservation. Until installed, construction fails.
     """
+    _supports_cancellation_v7 = True
+
     def __init__(self, runtime, instance, lifetime):
         self.poisoned = False
         self._live_cancellation_binding = None
@@ -586,6 +589,50 @@ class CancellationLedger(DeliveryLedger):
         with self.host_guard() as directory:
             state = self._legacy_helpers.finish_certificate_locked(self, directory, identifier)
             return deepcopy(self._record_locked(state, identifier))
+
+    def _require_legacy_key_locked(self, record):
+        """Legacy proof never authorizes a typed cancellation disposition."""
+        identity = legacy_key(record)
+        state = self._current_v7_locked()
+        if any(legacy_key(row['admission']) == identity for row in state['cancellations']):
+            raise Refused('Typed cancellation requires its native certificate path')
+
+    def _remove_admission(self, directory, record):
+        # Parent _finish and replayed legacy _sync must check BEFORE unlink.
+        self._require_legacy_key_locked(record)
+        return super()._remove_admission(directory, record)
+
+    def release(self, join):
+        if type(join) is not ObservationJoin:
+            raise Refused('Post-retirement join required')
+        payload = release_payload(join.record, join.proof, join.observation())
+        identifier = hashlib.sha256(encoded(payload)).hexdigest()
+        with self.host_guard() as directory:
+            self._require_legacy_key_locked(payload['record'])
+            state = self._sync(directory)
+            # Keep the parent V6 release semantics for genuine legacy keys.
+            existing = next((row for row in state['releases'] if row['record'] == payload['record']), None)
+            if existing is not None:
+                return deepcopy(existing)
+            if len(state['releases']) >= 64:
+                raise Refused('Historical release capacity')
+            matching = [row for row in state['entries'] if legacy_key(row) == legacy_key(payload['record'])]
+            if len(matching) != 1 or matching[0] != payload['record']:
+                raise Refused('Release must match stored Unknown')
+            released = dict(payload, id=identifier, phase='Prepared')
+            state['releases'].append(released)
+            self._save(state)
+            self._finish(directory, state, released)
+            return deepcopy(released)
+
+    def legacy_reconciliation_records(self):
+        """Read-only legacy projection; typed records use cancellation recovery."""
+        with self.host_guard() as directory:
+            legacy = self._sync(directory)
+            state = self._current_v7_locked()
+            typed = {legacy_key(row['admission']) for row in state['cancellations']}
+            records = legacy['entries'] + [deepcopy(row['record']) for row in legacy['releases'] if row['phase'] == 'Released']
+            return deepcopy([row for row in records if legacy_key(row) not in typed])
 
     def _load(self):
         return deepcopy(self._current_v7_locked()['legacy'])

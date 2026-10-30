@@ -75,5 +75,40 @@ effect. Funding future certificate size at admission prevents other ledger growt
 from consuming the space needed to record an already decided outcome.
 
 [The protocol reference](../reference/cancellation-protocol.md) lists the current
-interfaces. The daemon and C/Elm consumers still require integration; these
+interfaces. The normal host and C/Elm consumers still require integration; these
 storage rules do not establish a finished cancellation workflow.
+
+
+## Binding the coordinator's lifetime
+
+The coordinator's volatile handles belong to one authenticated native grant.
+Persisted receipts remain facts about their original owner, so a restarted
+frontend may display them without gaining permission to commit or acknowledge
+an old slot. The daemon attaches only after its selected strict hello and owns
+the coordinator through the same ExitStack as storage.
+
+This creates an explicit cleanup order: detach the coordinator, then close the
+store. Storage failure already poisons subsequent coordinator calls; standalone
+users of the class must still close it to release its volatile attachment. The
+coordinator lock serializes decisions while short store guards end before RPCs,
+so transport latency does not hold the host admission lock. These responsibilities
+carry intents across the boundary; frontend selection and native decision
+ownership keep their existing roles.
+
+
+## Keeping legacy and typed custody separate
+
+A legacy retirement proof cannot substitute for a typed cancellation certificate.
+The typed ledger excludes every registered full key from legacy reconciliation
+and release, including historical keys after typed retirement. A central legacy
+unlink guard and restart validation enforce the same rule even if a caller
+bypasses the normal projection. Genuine legacy records still use their existing
+retirement path. Historical cancellation DTOs report facts without granting
+legacy release or native execution authority.
+
+The namespace itself also has an owner: after V7 creates its ledger or marker,
+a legacy constructor refuses under the lifetime writer lock before migration.
+Otherwise a flag change could import typed Pending into V6 and mutate the frozen
+predecessor. This refusal preserves custody for explicit V7 recovery; it does not
+repair partial files or infer completion from a missing Pending file. See the
+[retained failures and bounded checks](../../../implementation/warlock/qa/evidence/cancellation-isolation-20261030/LIMITS.md).

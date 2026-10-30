@@ -1,0 +1,53 @@
+{
+  "parentRevision": "6249b79762008f5ac275bf7dfa1f1da6ca4a400d",
+  "parentMeaning": "New guards/models/tests are working-tree inputs, not claimed present in parent.",
+  "sourceHashes": {
+    "adapter/cancellation_ledger.py": "94dc5b03dd3e513703dec2a705271178b4ff45ea319d0831a70517613fee7a05",
+    "adapter/cancellation_legacy.py": "a1190f6bcf47790ab5b447296836c94bec1df5ee5d061f146cad7d2c3aa2e6d0",
+    "adapter/recovery_store.py": "3257927b706471357d7461b1f71935cb46dfe44b8f4e112418816eb49aaa22f5",
+    "adapter/cancellation_endpoint.py": "42247d6a560093b8a46a3369065d7debfe78baa94b78b67490a61c96fafab6f0",
+    "adapter/effect_endpoint.py": "e01aa144ef2b80cf1b259fd45a926ec9ee6e101040402134efeef1ad184667ca",
+    "adapter/endpoint.py": "e254b870922a46b935de9d85db1de56129838ea2cf73eeb55c9fa16e8539d731",
+    "adapter/recovery_journal.py": "ba70923c01e9dabaca4d4cf1ae9c4e57f6227c9eb414d4a212c486f21edfbfe7",
+    "adapter/durable_ledger.py": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+    "adapter/admission_ledger.py": "2faf5eb03dff6993de707f2d7458b929db881f4102bdc1ec467d3f7aaa4413d1",
+    "adapter/retirement_ledger.py": "213cbb6ecd5c2218075d2cc98132c1c53680933f3898c757e7ba1848261faec5",
+    "adapter/delivery_ledger.py": "ce1ff3528b454bdca7412389f5693f69023a5c76bc9586541c1091c1cddc5ca4",
+    "adapter/workspace_navigation.py": "79508bcb112ec602b6d33daf1050ef54f63afeb7bfe427fa5553e8a4c68bb8a9",
+    "adapter/reconciliation.py": "6cd8c55f627528e6197e4bda4cff2e21776991833a78ec8ed29a400b22f3aceb",
+    "adapter/grant_endpoint.py": "4b60a6c7e43aade3f2ce59495600f3b418b781865a7289dae53a189388f5c3f0",
+    "qa/cancellation-store-cases/base.py": "7ad250404fd4ba41e8d7c09ee36750952576cf71c33209f254ee4a26f5bf0c09",
+    "qa/cancellation-store-cases/capacity.py": "2458b30c1707a4c55f58ffeba9db8f70457f4edb2c6f4c72be05eee2601ae057",
+    "qa/cancellation-store-cases/faults.py": "82d23b24a1109afc7cad8717e8f155107cea82f14d07425244fac9b489545e90",
+    "qa/cancellation-store-cases/fixture.py": "3ad01b398692cdf052cd10f1e6ce7459e0ab9b10ea237529364c2d36dc65baac",
+    "qa/cancellation-store-cases/legacy_isolation.py": "f7e087249291d73e5acaebe3b4c48b6f6b45c7e6791b36b445e9d5444bbb773f",
+    "qa/cancellation-store-cases/legacy_restart.py": "2443b431fbc3c003963081bb9528159debc3eb893c86ef4a65daa849a5e00639",
+    "qa/cancellation-store-cases/namespace_ownership.py": "5b6030351b54e0ba0926e637827e62fc7917aa30a4c7a67d19dc7493ac731b0f",
+    "qa/cancellation-store-cases/provenance.py": "73216f9a3ca6fe8e14acd1002455bfaf4f54ab478adbdb3fc5f70f7de3bdb853",
+    "qa/cancellation-store-cases/provenance_positive.py": "039a8ef815ad9b84cb473a09f15e4abfbcab4da8ce8cfcc03d9f0e455251f23c",
+    "qa/cancellation-store-cases/typed_restart.py": "012a5c7db8ab7a3c36fdb7f62ca8f6b088bbeff262e45bbc59d086ab09822644",
+    "qa/check-cancellation-store.py": "677b83a774b1a143c2f567552ce8ae0acb1a2fa7d59daad06ab9ecf885718fa0",
+    "qa/typed-retirement-isolation.qnt": "6f0a0dbc464f392cef7e71e22be389cf1cb939d9146c1a4c07dd274587658583",
+    "qa/typed-retirement-isolation_test.qnt": "bea5a89328fe141516a576013c7195da74bbf9c62b4823649673c5645dd1129a"
+  },
+  "protectedExecution": {
+    "basis": "Root-observed protected launcher terminal results; not independent attestation.",
+    "store": {
+      "scope": "qa-harness-401f4499f5d7408eb4a0d587675f9f6a.scope",
+      "invocation": "3dad289b2c7c465b9ff9b20949096d2f",
+      "terminalExit": 0
+    },
+    "model": {
+      "scope": "qa-harness-1a63fc079e6f46deaf29197bea0cc3ea.scope",
+      "invocation": "c81f78811cbf492f9b5302c170e479ce",
+      "terminalExit": 0
+    },
+    "modelRed": {
+      "scope": "qa-harness-f9255f2626db4a5a9b19fb234435e808.scope",
+      "invocation": "5aae2c6decce4914a655a87466628198",
+      "result": "Typecheck failure retained; no tests run."
+    }
+  },
+  "originalAcceptance": false,
+  "releaseAccepted": false
+}

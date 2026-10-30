@@ -1,0 +1,465 @@
+{
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-1a63fc079e6f46deaf29197bea0cc3ea.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node": "caa24debe02770c92a70677e2a62ca98890150e7ac1c17bcfe31bcc98cc89943",
+    "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js": "952a50a28932282528b5c9b86ac5542405d85da4f80876aabe8cb8c7d5a6d0e8",
+    "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/package.json": "c73e78964221e9e8cbe273568ccdad152370fc35786fb82219c64347c71e57dc",
+    "/home/charles/.local/state/warlock-team/20261028/tooling/package-lock.json": "630f4926b18579f08be780630a94a7c4d398b4bcc6f9844def990ff6a7112903",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-crosslane-model-root-v2/typed-retirement-isolation.qnt": "6f0a0dbc464f392cef7e71e22be389cf1cb939d9146c1a4c07dd274587658583",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-crosslane-model-root-v2/typed-retirement-isolation_test.qnt": "bea5a89328fe141516a576013c7195da74bbf9c62b4823649673c5645dd1129a"
+  },
+  "driverSHA256": "da3e1c05540bea3b37c3ecba205a096cf336f44a4944ffc4f758086414554429",
+  "configSHA256": "7f33dd1ee7052378c6034a5ba9fdcf839fc7676b6eb71778daee45e38590d779",
+  "commands": [
+    {
+      "name": "version",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "--version"
+      ],
+      "exitCode": 0,
+      "stdoutSHA256": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "typecheck-typed-retirement-isolation.qnt",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "typecheck",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-crosslane-model-root-v2/typed-retirement-isolation.qnt"
+      ],
+      "exitCode": 0,
+      "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "typecheck-typed-retirement-isolation_test.qnt",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "typecheck",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-crosslane-model-root-v2/typed-retirement-isolation_test.qnt"
+      ],
+      "exitCode": 0,
+      "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "initial-run",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "run",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-crosslane-model-root-v2/typed-retirement-isolation.qnt",
+        "--main",
+        "TypedRetirementIsolation",
+        "--invariant",
+        "typedCustody",
+        "--max-samples=1",
+        "--max-steps=1",
+        "--backend=typescript",
+        "--seed=20261030"
+      ],
+      "exitCode": 0,
+      "stdoutSHA256": "eb864528c165c3b985107de6414382d15fd12e5f141886c6e33638f653a52595",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-brokenUnlinkBeforeSaveTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-crosslane-model-root-v2/typed-retirement-isolation_test.qnt",
+        "--main",
+        "TypedRetirementIsolation_test",
+        "--match",
+        "^brokenUnlinkBeforeSaveTest$",
+        "--backend=typescript",
+        "--max-samples=1",
+        "--seed=20261030"
+      ],
+      "exitCode": 0,
+      "stdoutSHA256": "3cfd5b8e60db469d53c7bf2e975ec2338bc060d22728e71d08618bc0ee4c7faa",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-typedLegacyPrepareBlockedTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-crosslane-model-root-v2/typed-retirement-isolation_test.qnt",
+        "--main",
+        "TypedRetirementIsolation_test",
+        "--match",
+        "^typedLegacyPrepareBlockedTest$",
+        "--backend=typescript",
+        "--max-samples=1",
+        "--seed=20261030"
+      ],
+      "exitCode": 0,
+      "stdoutSHA256": "42769ab4c63fba9e01b9cd739d8d3b3550a8a081c89254febd713bde493cf0b8",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-corruptRestartNoUnlinkTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-crosslane-model-root-v2/typed-retirement-isolation_test.qnt",
+        "--main",
+        "TypedRetirementIsolation_test",
+        "--match",
+        "^corruptRestartNoUnlinkTest$",
+        "--backend=typescript",
+        "--max-samples=1",
+        "--seed=20261030"
+      ],
+      "exitCode": 0,
+      "stdoutSHA256": "77b4ed77fd3f1921b2b06f692c54731d2bb54c4eaa23f835a16a08645da49439",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-directFinishBypassBlockedTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-crosslane-model-root-v2/typed-retirement-isolation_test.qnt",
+        "--main",
+        "TypedRetirementIsolation_test",
+        "--match",
+        "^directFinishBypassBlockedTest$",
+        "--backend=typescript",
+        "--max-samples=1",
+        "--seed=20261030"
+      ],
+      "exitCode": 0,
+      "stdoutSHA256": "b29021732056c3677ba31a45d279880acec63147bcef34afd732ea3c2d20c92b",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-genuineLegacyRetirementTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-crosslane-model-root-v2/typed-retirement-isolation_test.qnt",
+        "--main",
+        "TypedRetirementIsolation_test",
+        "--match",
+        "^genuineLegacyRetirementTest$",
+        "--backend=typescript",
+        "--max-samples=1",
+        "--seed=20261030"
+      ],
+      "exitCode": 0,
+      "stdoutSHA256": "1b6b66c2d8242f85ee39267fc2c4a4d195a705f46a90d690be3d11d775b433a5",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-corruptPeerBlocksLegacyFinishTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-crosslane-model-root-v2/typed-retirement-isolation_test.qnt",
+        "--main",
+        "TypedRetirementIsolation_test",
+        "--match",
+        "^corruptPeerBlocksLegacyFinishTest$",
+        "--backend=typescript",
+        "--max-samples=1",
+        "--seed=20261030"
+      ],
+      "exitCode": 0,
+      "stdoutSHA256": "132ba37981e142e0d48702617d3ffeac6fa6a5d90bb3f10e21e8c55e9ef145d4",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-wrongKeyJoinBlockedTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-crosslane-model-root-v2/typed-retirement-isolation_test.qnt",
+        "--main",
+        "TypedRetirementIsolation_test",
+        "--match",
+        "^wrongKeyJoinBlockedTest$",
+        "--backend=typescript",
+        "--max-samples=1",
+        "--seed=20261030"
+      ],
+      "exitCode": 0,
+      "stdoutSHA256": "be177fd9e03189b91cdde3338bd03224fcfe6848f102a2e72d848be2ce767975",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-wrongCertificateBlockedTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-crosslane-model-root-v2/typed-retirement-isolation_test.qnt",
+        "--main",
+        "TypedRetirementIsolation_test",
+        "--match",
+        "^wrongCertificateBlockedTest$",
+        "--backend=typescript",
+        "--max-samples=1",
+        "--seed=20261030"
+      ],
+      "exitCode": 0,
+      "stdoutSHA256": "16de657bec6744e9e2899af785e3eac639116ee7569e375530fb6aa5423a4bdc",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-typedExactRetirementTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-crosslane-model-root-v2/typed-retirement-isolation_test.qnt",
+        "--main",
+        "TypedRetirementIsolation_test",
+        "--match",
+        "^typedExactRetirementTest$",
+        "--backend=typescript",
+        "--max-samples=1",
+        "--seed=20261030"
+      ],
+      "exitCode": 0,
+      "stdoutSHA256": "52ea680f324ffc060d33c6c170214bc9cad9d4f65d68d78da8967caf43db0edf",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-noTypedAckBeforeCertificateTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-crosslane-model-root-v2/typed-retirement-isolation_test.qnt",
+        "--main",
+        "TypedRetirementIsolation_test",
+        "--match",
+        "^noTypedAckBeforeCertificateTest$",
+        "--backend=typescript",
+        "--max-samples=1",
+        "--seed=20261030"
+      ],
+      "exitCode": 0,
+      "stdoutSHA256": "d009f21425c38a77e9362b6a4216e8dd6a3d2d606274f3fe47a5ce11845add85",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-noLegacyAckBeforeReleaseTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-crosslane-model-root-v2/typed-retirement-isolation_test.qnt",
+        "--main",
+        "TypedRetirementIsolation_test",
+        "--match",
+        "^noLegacyAckBeforeReleaseTest$",
+        "--backend=typescript",
+        "--max-samples=1",
+        "--seed=20261030"
+      ],
+      "exitCode": 0,
+      "stdoutSHA256": "23212364833c69a05b3a5e2064bc27b58698ce9bc908d165c00417166b9fc25f",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-typedNotProjectedTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-crosslane-model-root-v2/typed-retirement-isolation_test.qnt",
+        "--main",
+        "TypedRetirementIsolation_test",
+        "--match",
+        "^typedNotProjectedTest$",
+        "--backend=typescript",
+        "--max-samples=1",
+        "--seed=20261030"
+      ],
+      "exitCode": 0,
+      "stdoutSHA256": "248800dc15f054ed2be800fb06f162f663dcd45f5950e180bed91be0534fca15",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "test-differentKeyIsolationTest",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "test",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-crosslane-model-root-v2/typed-retirement-isolation_test.qnt",
+        "--main",
+        "TypedRetirementIsolation_test",
+        "--match",
+        "^differentKeyIsolationTest$",
+        "--backend=typescript",
+        "--max-samples=1",
+        "--seed=20261030"
+      ],
+      "exitCode": 0,
+      "stdoutSHA256": "353d37c2ec7cccdf0c2dad69063ff976424191c4d94e202f0248ee2e3c5eb85c",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "sample-typedCustody",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "run",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-crosslane-model-root-v2/typed-retirement-isolation.qnt",
+        "--main",
+        "TypedRetirementIsolation",
+        "--invariant",
+        "typedCustody",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--backend=typescript",
+        "--seed=20261030"
+      ],
+      "exitCode": 0,
+      "stdoutSHA256": "22338b47be3d38104e74fd5899e6b62de6d0d1ba6bed1654d8954726e5f632bb",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "sample-ackAfterRetirement",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "run",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-crosslane-model-root-v2/typed-retirement-isolation.qnt",
+        "--main",
+        "TypedRetirementIsolation",
+        "--invariant",
+        "ackAfterRetirement",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--backend=typescript",
+        "--seed=20261030"
+      ],
+      "exitCode": 0,
+      "stdoutSHA256": "97ee309e3f85e0ad4dd92c23bf6db73847fc31909db419892cf3a560daa4b34f",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "sample-noReplay",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "run",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-crosslane-model-root-v2/typed-retirement-isolation.qnt",
+        "--main",
+        "TypedRetirementIsolation",
+        "--invariant",
+        "noReplay",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--backend=typescript",
+        "--seed=20261030"
+      ],
+      "exitCode": 0,
+      "stdoutSHA256": "205ee9760f6becffdb1a2f5c94d764c496fa969331fe118d24ea63e53b0eca89",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "sample-projectedLegacyOnly",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "run",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-crosslane-model-root-v2/typed-retirement-isolation.qnt",
+        "--main",
+        "TypedRetirementIsolation",
+        "--invariant",
+        "projectedLegacyOnly",
+        "--max-samples=1000",
+        "--max-steps=30",
+        "--backend=typescript",
+        "--seed=20261030"
+      ],
+      "exitCode": 0,
+      "stdoutSHA256": "734ac3710339ed6e40da7e949e07952126f70f006cd9f63b028a68322e4a1562",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "seed": 20261030,
+  "nativeAcceptance": false,
+  "fullCorrectnessProved": false,
+  "toolDependencyClosureClaimed": false,
+  "limits": "Three opaque full keys, legacy-vs-typed retirement isolation; noReplay/projection are bookkeeping, not transport proofs. No actual native/OS/fsync/cardinality proof.",
+  "namedTests": [
+    "brokenUnlinkBeforeSaveTest",
+    "typedLegacyPrepareBlockedTest",
+    "corruptRestartNoUnlinkTest",
+    "directFinishBypassBlockedTest",
+    "genuineLegacyRetirementTest",
+    "corruptPeerBlocksLegacyFinishTest",
+    "wrongKeyJoinBlockedTest",
+    "wrongCertificateBlockedTest",
+    "typedExactRetirementTest",
+    "noTypedAckBeforeCertificateTest",
+    "noLegacyAckBeforeReleaseTest",
+    "typedNotProjectedTest",
+    "differentKeyIsolationTest"
+  ],
+  "outputs": {
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck-typed-retirement-isolation.qnt.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck-typed-retirement-isolation.qnt.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck-typed-retirement-isolation_test.qnt.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck-typed-retirement-isolation_test.qnt.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "initial-run.stdout": "eb864528c165c3b985107de6414382d15fd12e5f141886c6e33638f653a52595",
+    "initial-run.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-brokenUnlinkBeforeSaveTest.stdout": "3cfd5b8e60db469d53c7bf2e975ec2338bc060d22728e71d08618bc0ee4c7faa",
+    "test-brokenUnlinkBeforeSaveTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-typedLegacyPrepareBlockedTest.stdout": "42769ab4c63fba9e01b9cd739d8d3b3550a8a081c89254febd713bde493cf0b8",
+    "test-typedLegacyPrepareBlockedTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-corruptRestartNoUnlinkTest.stdout": "77b4ed77fd3f1921b2b06f692c54731d2bb54c4eaa23f835a16a08645da49439",
+    "test-corruptRestartNoUnlinkTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-directFinishBypassBlockedTest.stdout": "b29021732056c3677ba31a45d279880acec63147bcef34afd732ea3c2d20c92b",
+    "test-directFinishBypassBlockedTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-genuineLegacyRetirementTest.stdout": "1b6b66c2d8242f85ee39267fc2c4a4d195a705f46a90d690be3d11d775b433a5",
+    "test-genuineLegacyRetirementTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-corruptPeerBlocksLegacyFinishTest.stdout": "132ba37981e142e0d48702617d3ffeac6fa6a5d90bb3f10e21e8c55e9ef145d4",
+    "test-corruptPeerBlocksLegacyFinishTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-wrongKeyJoinBlockedTest.stdout": "be177fd9e03189b91cdde3338bd03224fcfe6848f102a2e72d848be2ce767975",
+    "test-wrongKeyJoinBlockedTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-wrongCertificateBlockedTest.stdout": "16de657bec6744e9e2899af785e3eac639116ee7569e375530fb6aa5423a4bdc",
+    "test-wrongCertificateBlockedTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-typedExactRetirementTest.stdout": "52ea680f324ffc060d33c6c170214bc9cad9d4f65d68d78da8967caf43db0edf",
+    "test-typedExactRetirementTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-noTypedAckBeforeCertificateTest.stdout": "d009f21425c38a77e9362b6a4216e8dd6a3d2d606274f3fe47a5ce11845add85",
+    "test-noTypedAckBeforeCertificateTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-noLegacyAckBeforeReleaseTest.stdout": "23212364833c69a05b3a5e2064bc27b58698ce9bc908d165c00417166b9fc25f",
+    "test-noLegacyAckBeforeReleaseTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-typedNotProjectedTest.stdout": "248800dc15f054ed2be800fb06f162f663dcd45f5950e180bed91be0534fca15",
+    "test-typedNotProjectedTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-differentKeyIsolationTest.stdout": "353d37c2ec7cccdf0c2dad69063ff976424191c4d94e202f0248ee2e3c5eb85c",
+    "test-differentKeyIsolationTest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-typedCustody.stdout": "22338b47be3d38104e74fd5899e6b62de6d0d1ba6bed1654d8954726e5f632bb",
+    "sample-typedCustody.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-ackAfterRetirement.stdout": "97ee309e3f85e0ad4dd92c23bf6db73847fc31909db419892cf3a560daa4b34f",
+    "sample-ackAfterRetirement.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-noReplay.stdout": "205ee9760f6becffdb1a2f5c94d764c496fa969331fe118d24ea63e53b0eca89",
+    "sample-noReplay.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-projectedLegacyOnly.stdout": "734ac3710339ed6e40da7e949e07952126f70f006cd9f63b028a68322e4a1562",
+    "sample-projectedLegacyOnly.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

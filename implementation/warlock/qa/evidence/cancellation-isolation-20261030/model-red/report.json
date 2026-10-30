@@ -1,0 +1,55 @@
+{
+  "passed": false,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-f9255f2626db4a5a9b19fb234435e808.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node": "caa24debe02770c92a70677e2a62ca98890150e7ac1c17bcfe31bcc98cc89943",
+    "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js": "952a50a28932282528b5c9b86ac5542405d85da4f80876aabe8cb8c7d5a6d0e8",
+    "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/package.json": "c73e78964221e9e8cbe273568ccdad152370fc35786fb82219c64347c71e57dc",
+    "/home/charles/.local/state/warlock-team/20261028/tooling/package-lock.json": "630f4926b18579f08be780630a94a7c4d398b4bcc6f9844def990ff6a7112903",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-crosslane-quint5-v1/typed-retirement-isolation.qnt": "8bb2abebd7111b5ab43e6185a2d6e63073d5e9be53a4ece7af5b9487544128ff",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-crosslane-quint5-v1/typed-retirement-isolation_test.qnt": "bea5a89328fe141516a576013c7195da74bbf9c62b4823649673c5645dd1129a"
+  },
+  "driverSHA256": "da3e1c05540bea3b37c3ecba205a096cf336f44a4944ffc4f758086414554429",
+  "configSHA256": "d00eae5998aa799085e53f0f6447e86cabc90a97bccd362c5638abc699aee906",
+  "commands": [
+    {
+      "name": "version",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "--version"
+      ],
+      "exitCode": 0,
+      "stdoutSHA256": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "typecheck-typed-retirement-isolation.qnt",
+      "argv": [
+        "/home/charles/.local/share/mise/installs/node/26.12.0/bin/node",
+        "/home/charles/.local/state/warlock-team/20261028/tooling/node_modules/@informalsystems/quint/dist/src/cli.js",
+        "typecheck",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-crosslane-quint5-v1/typed-retirement-isolation.qnt"
+      ],
+      "exitCode": 1,
+      "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSHA256": "89cbdbcd8a43fdccbfe8fca93708ffdb706bfe456fddd279c48faa9f527a9982"
+    }
+  ],
+  "seed": 20261030,
+  "nativeAcceptance": false,
+  "fullCorrectnessProved": false,
+  "toolDependencyClosureClaimed": false,
+  "limits": "Three opaque full keys, legacy-vs-typed retirement isolation; noReplay/projection are bookkeeping, not transport proofs. No actual native/OS/fsync/cardinality proof.",
+  "error": "RuntimeError('typecheck-typed-retirement-isolation.qnt failed')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-crosslane-root-v2/run-model.py\", line 29, in main\n    for f in cfg['files']:run('typecheck-'+f,['typecheck',src/f])\n                          ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-crosslane-root-v2/run-model.py\", line 24, in run\n    if p.returncode:raise RuntimeError(name+' failed')\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: typecheck-typed-retirement-isolation.qnt failed\n",
+  "outputs": {
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck-typed-retirement-isolation.qnt.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck-typed-retirement-isolation.qnt.stderr": "89cbdbcd8a43fdccbfe8fca93708ffdb706bfe456fddd279c48faa9f527a9982"
+  }
+}

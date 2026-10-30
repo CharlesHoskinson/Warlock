@@ -24,11 +24,15 @@ class Reconciliation:
         self.current()
         if self.announced:raise Refused('Reconciliation already announced')
         self.announced=True
-        state=self.ledger.synchronization_snapshot()
         # A same-view reconnect may retain a UI reservation even after its
         # original durable release frame was lost. Reannounce exact history,
         # never fabricate a new native effect outcome or mutate its old anchor.
-        records=state['entries']+[copy.deepcopy(r['record']) for r in state['releases'] if r['phase']=='Released']
+        legacy_records=getattr(self.ledger,'legacy_reconciliation_records',None)
+        if legacy_records is not None:
+            records=legacy_records()
+        else:
+            state=self.ledger.synchronization_snapshot()
+            records=state['entries']+[copy.deepcopy(r['record']) for r in state['releases'] if r['phase']=='Released']
         if len(records)>64:raise Refused('Reconciliation capacity')
         proofs={}
         for record in records:

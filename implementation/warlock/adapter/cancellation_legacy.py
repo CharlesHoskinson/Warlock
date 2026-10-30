@@ -281,6 +281,9 @@ def validate_v7_legacy_locked(owner, legacy_v6_dict, predecessor_v6_bytes, cance
             raise Refused('Frozen V6 predecessor differs')
         _marker(view, 'ledger-v6.initialized', {'schema': 1, 'lifetime': owner.target['lifetime'], 'kind': 'retirement-ledger-initialized'})
         predecessor = _decode(actual)
+        typed = {key(row['admission']) for row in cancellation_records}
+        if any(key(row['record']) in typed for row in legacy_v6_dict['releases']):
+            raise Refused('Legacy release collides with typed cancellation custody')
         # Unmodified original validator on the actual predecessor, always.
         RetirementLedger._validate(view, predecessor)
         retired = _certified_records(owner, legacy_v6_dict, cancellation_records)

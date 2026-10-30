@@ -1,6 +1,6 @@
 # Native Restore cancellation protocol
 
-Implementation stage: native source compiled against its owning ABI and exercised by a strict client on an isolated real GTK fixture. The client is inherited by the production effect endpoint, but the daemon/Elm workflow is not routed to it. The plugin is unloaded after testing; no main-session deployment is implied. See [evidence and remaining gates](../../../implementation/warlock/qa/evidence/native-restore-cancellation-20261030/LIMITS.md). Existing consumers retain their three-status legacy interface; do not add Cancelled to that interface by assuming native execution.
+Implementation stage: native source compiled against its owning ABI and exercised by a strict client on an isolated real GTK fixture. The client is inherited by the production effect endpoint, but the normal host/Elm workflow is not routed to it. The plugin is unloaded after testing; no main-session deployment is implied. See [evidence and remaining gates](../../../implementation/warlock/qa/evidence/native-restore-cancellation-20261030/LIMITS.md). Existing consumers retain their three-status legacy interface; do not add Cancelled to that interface by assuming native execution.
 
 ## Admission and identity
 
@@ -14,7 +14,7 @@ Each lifecycle request carries protocolVersion 3, cancellationProtocol 1, effect
 | `effect-commit` | preparedId | Revalidate and execute through the serialized owner if still Prepared and before the original deadline. |
 | `effect-cancel` | preparedId | If Prepared, fix Cancelled before formatting/delivery and retire its token; a later commit cannot execute. |
 | `effect-decision-request` | preparedId | Query the retained exact decision without replay. |
-| `effect-decision-ack` | preparedId | Transfer a complete known terminal decision to the session cache and free its slot. The future adapter must durably retain the decision first. |
+| `effect-decision-ack` | preparedId | Transfer a complete known terminal decision to the session cache and free its slot. The adapter must durably retain the decision first. |
 
 All five preserve the same intent, preparedId and original absolute deadline. Same-session live or unacknowledged slots block direct/geometry effects before their cursor writes. Other sessions have independent ownership. Unknown and terminal-unacknowledged slots consume capacity; uncertainty is never evicted to admit new work.
 
@@ -38,8 +38,15 @@ Methods take the full validated prepared/outcome dictionary, preserve its origin
 ## Optional durable store
 
 `RecoveryStore(runtime, instance, lifetime, cancellation=True)` selects the V7
-store. The default remains the existing legacy store; the production daemon does
-not select V7 in this stage. No frontend option grants this internal capability.
+store. Omitted/false selection uses the legacy store only in a legacy-compatible
+namespace. Presence of either V7 ledger or marker refuses legacy construction
+under the writer lock before migration; there is no automatic downgrade.
+The internal daemon configuration
+`cancellationOptIn` selects V7/coordinator only when exactly Boolean true; omitted
+or false selects that legacy path subject to namespace ownership, and non-Boolean
+values refuse before connection.
+The normal host configuration does not enable this mode. No frontend option grants
+this internal capability.
 
 | API | Storage contract |
 | --- | --- |
@@ -54,7 +61,10 @@ not select V7 in this stage. No frontend option grants this internal capability.
 V6 predecessor bytes stay frozen. V7 preserves strict legacy statuses; Cancelled
 is a distinct typed certificate destination. Startup turns legacy Pending custody
 into Unknown while keeping typed original Pending keys unchanged. A restart or
-reattachment cannot recreate native mutation permission from disk.
+reattachment cannot recreate native mutation permission from disk. Typed full
+keys, including retired history, are excluded from legacy reconciliation and
+release. Legacy unlink and restart validation independently enforce that boundary;
+only the typed certificate retirement path can retire typed admission custody.
 
 Every write reserves each retained record's maximum possible certificate growth,
 using actual strict wire shapes and finite reasons. The one-MiB envelope and
@@ -65,3 +75,32 @@ not implemented, so historical certificates do not yet reach the live UI.
 
 See [the store test guide](../how-to/test-cancellation-store.md) and
 [store evidence](../../../implementation/warlock/qa/evidence/cancellation-store-20261030/LIMITS.md).
+
+
+## Current-grant coordinator
+
+The daemon constructs `CancellationCoordinator(client, recovery, hello)` only in
+its explicit internal mode, after the selected strict client's hello. The
+coordinator attaches that exact current binding, negotiates native cancellation,
+and checks full request identity/protocol/deadline. It persists attempts before
+native calls and performs certificate, admission-retirement and ACK-pending
+barriers before native ACK. A repeated control returns the known local result
+or refuses; it does not renew commit permission.
+
+One coordinator lock serializes these steps. Each store method releases
+`host_guard` before the strict client call. Grant drift or transport errors close
+the coordinator; storage errors poison it and refuse further calls. Standalone
+callers must close poisoned instances. Daemon `ExitStack` closes/detaches the
+coordinator before closing its store on unwinding. Historical startup reports do
+not recreate live handles or native ACK authority.
+
+The [coordinator test guide](../how-to/test-cancellation-coordinator.md) exercises
+this wiring with actual stores and controlled replies. The current host does not
+route these lifecycle messages or consume historical DTOs; Elm issued/Prepared/
+Cancelled delivery, host-owned original deadline admission, physical Escape and
+native resource/release gates remain open. Internal configuration is not native
+or original-scenario acceptance.
+
+The [isolation evidence](../../../implementation/warlock/qa/evidence/cancellation-isolation-20261030/LIMITS.md)
+retains the actual crosslane and downgrade failures, the repaired filesystem
+checks and bounded model correspondence. These guards do not enable host/Elm routing.

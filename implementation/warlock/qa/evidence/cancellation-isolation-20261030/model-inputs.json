@@ -1,0 +1,14 @@
+{
+  "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/cancellation-crosslane-model-root-v2",
+  "files": {
+    "typed-retirement-isolation.qnt": "6f0a0dbc464f392cef7e71e22be389cf1cb939d9146c1a4c07dd274587658583",
+    "typed-retirement-isolation_test.qnt": "bea5a89328fe141516a576013c7195da74bbf9c62b4823649673c5645dd1129a"
+  },
+  "testCount": 13,
+  "invariants": [
+    "typedCustody",
+    "ackAfterRetirement",
+    "noReplay",
+    "projectedLegacyOnly"
+  ]
+}

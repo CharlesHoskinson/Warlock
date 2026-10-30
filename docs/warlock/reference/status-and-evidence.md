@@ -82,7 +82,33 @@ faults, finite maximum-counter terminal pairs and funded capacity boundaries;
 the reduced model passes 24 named tests and nine bounded samples. Reproduced
 private restart/provenance failures and specific repairs are retained.
 
-The default daemon still uses V6; coordinator/C/Elm lifecycle and recovery
-consumers remain unwired. No new original ARC007/008/012/013 verdict, native
+At that storage checkpoint the default daemon used V6; the later internal
+coordinator mode is described below. C/Elm lifecycle and recovery consumers
+remain unwired. No new original ARC007/008/012/013 verdict, native
 transport proof, physical Escape, all-slot/resource or release acceptance follows
 from these store checks. [Protocol reference](cancellation-protocol.md).
+
+
+## Internal coordinator and daemon mode
+
+[Coordinator evidence](../../../implementation/warlock/qa/evidence/cancellation-coordinator-20261030/LIMITS.md)
+records three actual protected groups: 140 lifecycle/order checks, 52 daemon
+selection/unwind checks and 110 historical-startup/direct-dispatch checks. They
+use real V6/V7 stores with strict native-schema and inert service/event doubles.
+The omitted/false default selects V6 only in legacy-compatible namespaces; any
+V7 ledger or marker refuses before migration. Explicit internal Boolean
+true selects the coordinator and V7. This mode is not enabled by the normal host.
+
+Current-grant attachment, no RPC under host_guard, permanent attempt gates,
+certificate/retirement/ACK ordering, drift/poison cleanup and historical no-replay
+are implemented at this boundary. There is no new original acceptance: C/Elm
+routing, host-owned deadline/paired admission, physical Escape, real transport,
+generation resources and release/deployment gates remain open.
+
+Cancellation custody retrofit: [current isolation evidence](../../../implementation/warlock/qa/evidence/cancellation-isolation-20261030/LIMITS.md) retains
+two reproduced storage defects and their fixes: typed full-key exclusion from
+legacy retirement and locked V7 namespace ownership before legacy migration.
+Nine store groups and three coordinator groups pass on the recorded source tuple;
+the isolation model has 13 named tests/four bounded samples and does not model
+namespace downgrade. C/Elm admission/delivery, physical Escape, generation resource
+and original native/release obligations remain open. No new original acceptance.

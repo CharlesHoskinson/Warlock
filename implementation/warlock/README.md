@@ -1071,7 +1071,28 @@ permission, with permanent attempt guards and funded future certificate capacity
 filesystem/restart/fault/capacity checks using strict response doubles; the
 [recorded evidence](qa/evidence/cancellation-store-20261030/LIMITS.md) retains the
 reproduced restart/provenance defects and independent repairs. The reduced model
-passes 24 named tests and nine bounded safety samples. The daemon still uses the
-legacy store; coordinator/C/Elm routing, historical UI receipts, physical Escape,
+passes 24 named tests and nine bounded safety samples. At that checkpoint the daemon used the
+legacy store; the subsequent coordinator mode is described below. C/Elm routing,
+historical UI receipts, physical Escape,
 all-slot/resource and deployment acceptance remain open. See the
 [store test guide](../../docs/warlock/how-to/test-cancellation-store.md).
+
+
+Cancellation coordinator checkpoint (October 30): the daemon now has an internal
+Boolean opt-in for current-grant coordination with V7. The omitted/false default
+selects V6 only in legacy-compatible namespaces; any V7 ledger or marker refuses
+before legacy migration. [Protected coordinator checks](qa/check-cancellation-coordinator.py)
+pass 140 lifecycle/order, 52 selection/unwind and 110 historical-startup/dispatch
+assertions using actual stores and strict response/service doubles. See
+[evidence and limits](qa/evidence/cancellation-coordinator-20261030/LIMITS.md).
+The normal host does not enable the mode; C/Elm routing, host-owned deadline
+admission, physical Escape, real native transport and original resource/release
+acceptance remain open. [Test guide](../../docs/warlock/how-to/test-cancellation-coordinator.md).
+
+Cancellation custody retrofit: [current isolation evidence](qa/evidence/cancellation-isolation-20261030/LIMITS.md) retains
+two reproduced storage defects and their fixes: typed full-key exclusion from
+legacy retirement and locked V7 namespace ownership before legacy migration.
+Nine store groups and three coordinator groups pass on the recorded source tuple;
+the isolation model has 13 named tests/four bounded samples and does not model
+namespace downgrade. C/Elm admission/delivery, physical Escape, generation resource
+and original native/release obligations remain open. No new original acceptance.

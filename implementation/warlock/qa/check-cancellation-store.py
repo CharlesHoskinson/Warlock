@@ -20,7 +20,8 @@ paths = [ROOT / 'adapter' / name for name in [
     'cancellation_ledger.py', 'cancellation_legacy.py', 'recovery_store.py',
     'cancellation_endpoint.py', 'effect_endpoint.py', 'endpoint.py',
     'recovery_journal.py', 'durable_ledger.py', 'admission_ledger.py',
-    'retirement_ledger.py', 'delivery_ledger.py', 'workspace_navigation.py']]
+    'retirement_ledger.py', 'delivery_ledger.py', 'workspace_navigation.py',
+    'reconciliation.py', 'grant_endpoint.py']]
 paths += sorted(CASES.glob('*.py')) + [pathlib.Path(__file__)]
 inputs = {str(p.relative_to(ROOT)): sha(p) for p in paths}
 report = {'passed': False, 'scope': scope, 'inputs': inputs, 'commands': [],
@@ -29,7 +30,8 @@ report = {'passed': False, 'scope': scope, 'inputs': inputs, 'commands': [],
           'limits': 'Actual opt-in store with filesystem faults, exact capacity boundaries and strict native-response doubles; daemon/C/Elm consumers disabled. No actual native transport, all64-slot, power-loss or release proof.'}
 commands = [('base', []), ('legacy_restart', ['--expect-fixed']),
             ('typed_restart', []), ('provenance', ['--expect-fixed']),
-            ('provenance_positive', []), ('faults', []), ('capacity', [])]
+            ('provenance_positive', []), ('faults', []), ('capacity', []),
+            ('legacy_isolation', []), ('namespace_ownership', [])]
 try:
     for name, extra in commands:
         args = [sys.executable, '-B', str(CASES / (name + '.py')), *extra]

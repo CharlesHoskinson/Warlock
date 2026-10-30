@@ -50,6 +50,7 @@ def validate(record):
  return record
 
 class Journal:
+ _supports_cancellation_v7=False
  @staticmethod
  def namespace_path(runtime,instance,lifetime):
   if not isinstance(instance,str) or not re.fullmatch(r'[A-Za-z0-9_]{1,255}',instance):raise Refused('Recovery instance')
@@ -74,6 +75,13 @@ class Journal:
    finally:os.close(scope)
    self.lock=os.open('writer.lock',os.O_CREAT|os.O_RDWR|os.O_NOFOLLOW|os.O_CLOEXEC,0o600,dir_fd=self.fd)
    self.verify(self.lock);fcntl.flock(self.lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+   # Hold the lifetime writer lock before inspecting ownership. A V7 namespace
+   # must never enter mutable legacy migration, even after a mode/config change.
+   if getattr(type(self),'_supports_cancellation_v7',False) is not True:
+    for name in ('ledger-v7.json','ledger-v7.initialized'):
+     try:os.stat(name,dir_fd=self.fd,follow_symlinks=False)
+     except FileNotFoundError:continue
+     raise Refused('V7 recovery namespace requires its explicit owner')
    self.migrate()
   except BaseException:self.close();raise
   finally:os.close(root)

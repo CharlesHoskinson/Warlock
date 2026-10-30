@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "exitCode": 0,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-c07c23b568064641ba496890daf03fb5.scope",
+    "coreLimit": 1
+  },
+  "arguments": [],
+  "inputs": {
+    "adapter/cancellation_ledger.py": "bc8ca211083d947c2b16b491e34ec995ff661dd1b70f298321e13f4e0c8430a1",
+    "adapter/cancellation_legacy.py": "a1190f6bcf47790ab5b447296836c94bec1df5ee5d061f146cad7d2c3aa2e6d0",
+    "adapter/reconciliation.py": "6cd8c55f627528e6197e4bda4cff2e21776991833a78ec8ed29a400b22f3aceb",
+    "adapter/recovery_journal.py": "9cfe06102f03fded5d330b90c317b4c6c32064885ed5a2c8478a87c2e1f25dae",
+    "check-downgrade.py": "58c2ef5394eb9ac553c4a03f349a5edd38385c4d4008624b9bb4deac73e2c7de"
+  }
+}

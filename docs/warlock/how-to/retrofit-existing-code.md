@@ -29,6 +29,30 @@ Choose the page by the reader's need:
 
 Link between quadrants when necessary. Document delivered behavior separately from proposals and unverified behavior. Keep durable instructions in these versioned docs and lessons, failures and ideas in the LLM wiki.
 
+## Follow a completed bounded example
+
+Use the settings migration repair as a reference for the shape of a retrofit,
+not as evidence for another component:
+
+1. Read the [settings storage reference](../reference/settings-storage.md) to
+   identify the actual schema transition and persistence contract. The original
+   schema-1 bytes must survive before the active schema-2 file is replaced.
+2. Follow the [retained migration evidence](../../../implementation/warlock/qa/evidence/settings-migration-20261030/LIMITS.md).
+   The baseline reproduced a save that lost the original copy; the correction
+   added durable backup ordering and explicit refusal/Unknown outcomes.
+3. Inspect the [verification and original acceptance record](../../../implementation/warlock/qa/evidence/settings-migration-verification-20261030/acceptance.json).
+   It separates existing checks, migration checks, abrupt process-exit cases,
+   model results and independent review. Process exits do not prove hardware
+   power-loss behavior.
+4. Compare your selected boundary with the same questions: what concrete failure
+   was observed, which owner enforces the contract, which production transitions
+   were exercised, and which original obligations remain separate?
+
+For your own sprint, give each documentation quadrant an updated page or a
+specific unaffected reason in the sprint record. A storage fix may update a
+reference and ownership explanation while leaving a source-navigation tutorial
+unchanged. State that reason; do not copy one procedure into four pages.
+
 ## Hand off at the sprint gate
 
 Use the [sprint retrofit template](../../warlock-build-loop/v2/SPRINT-RETROFIT-TEMPLATE.md)
