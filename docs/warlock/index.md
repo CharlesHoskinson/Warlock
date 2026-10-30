@@ -16,6 +16,7 @@ Choose a page for the work you are doing:
 | Audit an existing result without executing it | [How to read recorded evidence](how-to/read-recorded-evidence.md) |
 | Exercise the staged native cancellation client | [How to test native cancellation](how-to/test-native-cancellation.md) |
 | Prepare proportionate protected verification | [How to verify a selected change](how-to/verify-selected-change.md) |
+| Look up settings schemas, migration backups and failure outcomes | [Appearance settings storage](reference/settings-storage.md) |
 | Look up paths, commands and machine limits | [Build and runtime reference](reference/build-and-runtime.md) |
 | Understand recorded acceptance and open gates | [Status and evidence reference](reference/status-and-evidence.md) |
 | Understand active and attention indicators | [Explanation: taskbar attention](explanation/taskbar-attention.md) |

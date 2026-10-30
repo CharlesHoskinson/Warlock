@@ -31,6 +31,10 @@ Link between quadrants when necessary. Document delivered behavior separately fr
 
 ## Hand off at the sprint gate
 
+Use the [sprint retrofit template](../../warlock-build-loop/v2/SPRINT-RETROFIT-TEMPLATE.md)
+in the selected sprint's owned handoff so unfinished obligations survive the next
+iteration.
+
 Record the following before integration:
 
 - Original requirement/scenario and the existing boundary assessed.

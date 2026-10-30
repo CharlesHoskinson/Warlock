@@ -51,6 +51,19 @@ These entries are observations/proposals as of October 29, not a completed whole
 | DEBT-13 | Actual output retirement + expected projection + exact late Committed outcome cleared unresolved/issued records while the current transaction stayed Unknown | Correct exact-intent/protocol settlement independently of current observed output; preserve current scene, newer request and no replay. Fresh three-root build, 12 named model tests/five bounded samples and 200 fixed-route parameter cases pass; [retained baseline, fixture failure and results](../../../implementation/warlock/qa/evidence/receipt-output-lifecycle-20261030/LIMITS.md). | Bounded correction verified; original Committed/Pending/Refused/disconnect-Unknown fixtures individually accepted on immutable source a4168e633; native delivery/Cancelled/full proof-release remain separate |
 | DEBT-14 | Native Restore cancellation lacked an authenticated decision owner/channel; local withdrawal could not certify no native mutation | First opt-in owner/parser/typed-executor implementation now compiles with exact owning ABI, bounded owner/formatter checks and unchanged-provider closure. [Evidence/limits](../../../implementation/warlock/qa/evidence/native-restore-cancellation-20261030/LIMITS.md). Complete actual host/adapter/Elm opt-in, durable ACK custody, scoped Escape, dependency/resource proofs, new source composition and native interleavings; retain broader original operation obligations. | Native source plus strict client integrated; [real native two-order fixture](../../../implementation/warlock/qa/evidence/native-cancellation-client-20261030/LIMITS.md) passes with normal cleanup. All ARC012 cases remain partial for original generation-retirement/Escape gaps; no original acceptance or routed production daemon/Elm workflow |
 
+## Settings migration retrofit — ELM-DEL-015
+
+The actual schema-1 settings save overwrote the original without a backup; the
+protected RED baseline is retained. The bounded correction now preserves exact
+original bytes and confirms backup durability before active replacement.
+[Evidence and limitations](../../../implementation/warlock/qa/evidence/settings-migration-20261030/LIMITS.md)
+separate 47 existing settings checks, 327 migration checks and 100 seeded parameter
+sequences from original acceptance. Two-link interruption recovery remains
+fail-closed; physical power-loss, native journeys and model correspondence are
+not claimed complete. The [storage reference](../../warlock/reference/settings-storage.md)
+documents the delivered interface. Keep this debt open for remaining evidence
+and recovery obligations; cancellation's stopped investigation remains separate.
+
 ## Diátaxis documentation contract
 
 Use the [primary Diátaxis framework](https://diataxis.fr/): tutorials teach through a guided learning experience; how-to guides help accomplish a defined task; reference provides accurate lookup material; explanation develops understanding and rationale. Keep each page's purpose clear and link across quadrants instead of mixing a long procedure with design discussion.

@@ -4,6 +4,13 @@ This is the active editable product source. It was materialized once from held G
 
 Follow `docs/warlock-build-loop/v2/INSTRUCTIONS.md`. Generated builds/browser profiles live in ignored `.build/` / `qa/runs/`; commit only minimal reports needed by a bounded claim. Use the held pinned compiler/toolchain by verified reference, not another toolchain copy. Changed Main/Bar/Popup must be rebuilt as one asset package before native qualification.
 
+Explicit appearance-settings upgrades now preserve the exact schema-1 original
+before replacing the active file with schema 2. Protected store regressions and
+migration fault checks pass; interrupted two-link backup publication remains a
+documented fail-closed recovery limitation. See the
+[storage reference](../../docs/warlock/reference/settings-storage.md) and
+[evidence limits](qa/evidence/settings-migration-20261030/LIMITS.md).
+
 Release packaging now includes a [component and notice review gate](release/COMPLIANCE.md).
 It checks exact payload ownership, source and notice hashes, embedded component
 relationships and redistribution dispositions before producing an archive.

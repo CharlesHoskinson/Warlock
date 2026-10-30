@@ -46,6 +46,11 @@ User requirement added October 29, 2026: follow [Fuzzing and contracts for Warlo
 
 ## Retroactive debt and Diátaxis documentation
 
+Use the [sprint retrofit record](SPRINT-RETROFIT-TEMPLATE.md) in the selected
+sprint handoff to make the architecture, QA, four documentation dispositions and
+carry-forward obligations reviewable. Record actual results rather than treating
+the template as a passing gate.
+
 User requirement added October 29, 2026: apply the adopted architecture and QA practices retroactively to existing active code, using the [retrofit debt register](RETROFIT.md), and maintain [Warlock's Diátaxis documentation](../../warlock/index.md). At each sprint select a bounded original-scenario migration, audit existing state/effect/lifetime ownership and contracts, add missing production-route property/lifecycle coverage, and update the relevant tutorial/how-to/reference/explanation. Preserve historical evidence and acceptance relevance; do not infer implementation or native correctness from a debt table or docs lint. Carry open debt forward alongside feature delivery under existing WIP limits.
 
 Use [the retrofit how-to](../../warlock/how-to/retrofit-existing-code.md) for each existing boundary. The sprint handoff records the assessed boundary, original scenario, source/contract change, actual QA and independent review, documentation update, remaining debt and next migration. Feature delivery and retrofit work share the same acceptance standards; documentation maintenance does not reset an investigation stop.
