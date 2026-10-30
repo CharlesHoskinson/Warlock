@@ -66,6 +66,26 @@ RTX 5080 acceleration, and a living LLM Wiki journal. On this host:
   Distinguish proposed ideas, implementation, bounded checks and original
   acceptance. Store neither credentials nor full conversation transcripts.
 
+## Muse EARS regulation and continuity
+
+Charles appointed Muse as regulator, with an independent user timer checking every
+20 minutes. The machine-local runtime is
+`/home/charles/.local/state/warlock-team/20261028/muse-supervision/`;
+`regulator.py status` reports actual state. Read its three `review-*.md` reports
+and `REGULATOR.md` when continuing work. Preserve original 242 requirements,
+417 scenarios, literal oracles, whole-EARS obligations and all stopped histories.
+Select a real implementation or original-acceptance action; documentation, model
+counts, audits and timers do not reset production progress or accept GUI behavior.
+
+Muse uses its own authenticated `muse-regulator` AgentBus identity. Scheduled
+continuations target this exact root thread through `codex queue`, preserving
+terminal input drafts. The initial UI test separately verified physical Enter
+and exact-root nonce acknowledgement; it did not replace the Codex process.
+On a `MUSE_REGULATOR_RESTART` message, acknowledge its exact nonce using the
+documented helper before continuing actual EARS work. Do not restart live workers
+or interpret silence as a terminal process. If the user explicitly pauses/stops
+the goal, disarm the regulator as well; its timer must not override the user.
+
 ## Research and contract testing
 
 - User standing instruction: use Scrapling for all web browsing and downloads. The installed CLI is `scrapling`; use captured source material and primary references. If a required fetch is unavailable, report the actual limitation rather than silently changing tools. Do not copy full copyrighted papers into the repository.

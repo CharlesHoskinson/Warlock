@@ -113,3 +113,30 @@ PYTHONDONTWRITEBYTECODE=1 /usr/bin/python3 -B /home/hoskinson/window-integration
 Maintain core limit 1, valid parent Wayland socket, private owned session directory, exact ABI pair, no DRM/XWayland fallback, and normal owned-helper cleanup. Prepare actual deployment/rollback/preservation checks before any genuinely required session-activation approval; do not restart the user's main compositor incidentally.
 
 Only the host goal tool arms automatic continuation. These files are instructions, not a daemon. Keep the full goal active until achieved, explicitly paused/cancelled, budget-limited, or blocked under the tool's actual rule.
+
+
+## Muse regulation and recovery
+
+Standing user instruction, October30: Muse regulates original EARS fidelity and
+checks continuity every20minutes through an independent user systemd timer.
+Adopt the three reviews in the machine-local `muse-supervision` runtime described
+in AGENTS.md. Each check names original requirement/scenario/oracle, actual source
+delta, evidence tier, next implementation/original-acceptance action, remaining
+observations and preserved stop history. Whole-EARS and release gates remain
+separate from named scenarios and component/model success.
+
+Reconcile STATE selection with the actual participant record and current source.
+The regulator review found the accepted UX009 selection stale; it was corrected
+to the current cancellation participant without changing an oracle or resetting
+progress. Continue the demonstrated orphan-companion fix and actual host/C/Elm
+admission/settlement work; do not repeat stopped helper/model qualifications.
+
+Muse owns no product integration or acceptance authority. Its dedicated AgentBus
+identity publishes findings. Ordinary recovery uses exact-thread `codex queue`,
+not arbitrary keystrokes or a second coordinator. A retained nonce must be
+acknowledged by the configured root and correlated with actual transcript input.
+The separately observed initial UI steering test is a continuation test, not a
+Codex-process replacement or proof of recovery from every capacity failure.
+Preserve drafts, live handles, protected QA ownership and original deadlines.
+Model capacity remains an external limit; retry only with bounded backoff and
+never override a user pause. Local timer operations and lint are support evidence.

@@ -1,33 +1,38 @@
 {
   "schema": 1,
   "owner": "sol",
-  "updatedUTC": "2026-10-30T00:31:30.158264+00:00",
+  "updatedUTC": "2026-10-30T15:10:17.341223+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "attention-composed-native-export",
+    "id": "native-restore-cancellation",
     "requirements": [
-      "ELM-UX-009"
+      "ELM-ARC-007",
+      "ELM-ARC-008",
+      "ELM-ARC-012"
     ],
     "scenarios": [
-      "ux-009"
+      "receipt-cancelled",
+      "prerequisite-Cancelled",
+      "architecture-012",
+      "cancel-before-commit",
+      "commit-before-cancel"
     ],
     "paths": [
-      "implementation/warlock/qa/native-attention-current.py",
-      "implementation/warlock/README.md"
+      "implementation/warlock/adapter/cancellation_ledger.py",
+      "implementation/warlock/adapter/cancellation_coordinator.py",
+      "implementation/warlock/adapter/recovery_store.py",
+      "implementation/warlock/adapter/daemon.py"
     ],
-    "before": "Earlier attention qualification stopped because the native recipe pinned stale frontend and no real AT export fixture existed. Production frontend/native composition APIs bd549/61c92 now validate a reviewed current tuple; actual original attention pixels and AT distinction are still missing.",
-    "after": "Exercise the original inactive-window attention observation on the current composed tuple with distinct native active/attention pixels and actual private AT export, preserving focus, identity, membership, physical activation/key recipient, original deadlines and normal cleanup. Record actual failures and independent original-scenario review without upgrading from static checks.",
+    "before": "Published7ef2c83b7 has internal cancellation coordination; host/C/Elm paired admission and typed local settlement remain incomplete. Frozen private Pythonv2 demonstrably emits legacy settlement for companion-only orphan custody.",
+    "after": "Prevent companion-owned legacy settlement/projection and poison companion I/O faults; integrate immutable host acceptance/deadline admission and exact typed cache-backed C/Elm receipt routing without replay or weakening original requirements.",
     "verification": [
-      "Review frozen completed private runtime adapter/runner against exact published current_native/current_build and56a composition/frontend613b locks, all original helper ownership/preflight/Wayland ABI/private bus/scope/core limit/deadline/cleanup guards. New fixture consumes production composition; no unchanged renderer/profile diagnostic retry.",
-      "Root authenticated serial native campaign through loop.py native; preserve original genuine GTK urgency/pixel/physical activation assertions and add unambiguous actual AT tree observations tied to coherent bar output/publication/lease and before/after authority incarnation. No ACCESSIBILITY mode branch substitution or DOM-only AT claim.",
-      "Independent exact UX009 source/current tuple/image/AT/native result review before original ledger acceptance. Preserve raw failures, missing observations, investigation limits, Graphify CUDA/eval and README/Diataxis/wiki; full release/AT/IME/resource/native journeys remain separate."
+      "Model-first ownership/linearization contract, positive and foreign/duplicate/Unknown/capacity/deadline cases, actual production native dispatch compilation and protected original interleavings/resource/Escape fixtures as each stage becomes source-ready. Kernel-only checks do not establish native Escape or whole original acceptance."
     ],
-    "owner": "root-attention-composed",
-    "participantRecord": ".warlock-contributor/attention-composed-native-export.json"
+    "verify": "Protected actual production-route regressions, preserved orphan RED, full typed/legacy positives including post-settlement reuse, source/model correspondence and owning C/Elm builds; original native/bridge/Escape/resource gates remain separate. No unchanged stopped helper/model reruns."
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -2991,6 +2996,32 @@
         "participantRecord": ".warlock-contributor/current-native-frontend-composition.json"
       },
       "outcome": "Current native composition implemented61c92ce47, capture6/test42passed, independentlyreviewed56a native lock; originalruntime/AT remainunaccepted."
+    },
+    {
+      "atUTC": "2026-10-30T15:10:17.341223+00:00",
+      "previousId": "attention-composed-native-export",
+      "selectedId": "native-restore-cancellation",
+      "reason": "Muse three-reviewer reconciliation: accepted UX009 pointer was stale; current cancellation participant and unfinished host custody work govern continuation. Administrative selection only; no acceptance or progress-timer reset."
     }
-  ]
+  ],
+  "museRegulator": {
+    "role": "Original EARS fidelity and continuity regulator",
+    "model": "muse-wonder-1.0",
+    "intervalSeconds": 1200,
+    "unit": "warlock-muse-regulator.timer",
+    "runtimeRoot": "/home/charles/.local/state/warlock-team/20261028/muse-supervision",
+    "identity": "muse-regulator",
+    "originalInventoryRequirements": 242,
+    "originalInventoryScenarios": 417,
+    "terminalContinuationNonce": "12c77bb3102f40339003ad1f9d9567a4",
+    "terminalContinuationAcknowledgedByRoot": true,
+    "processReplacementClaimed": false,
+    "originalAcceptance": false,
+    "releaseAccepted": false,
+    "recommendations": [
+      "review-ears-fidelity.md",
+      "review-roadmap-execution.md",
+      "review-continuity.md"
+    ]
+  }
 }
