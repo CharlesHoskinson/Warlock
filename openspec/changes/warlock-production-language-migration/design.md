@@ -1,6 +1,6 @@
 # Production language ownership and correspondence
 
-Haskell owns native capabilities, resource lifetime, validated effect admission and runtime integration. Haskell supplies pure policy where selected. All GUI elements, including presentation, controls and views, use Elm. Define exactly one policy authority per domain: a Haskell policy and Elm projection must not become competing effect owners. Native transport, cached history and display projections cannot grant mutation rights.
+Elm owns all GUI elements and existing GUI interaction policy. Haskell owns native admission/custody, resource lifetime and reviewed runtime integration; backend pure policy does not duplicate Elm interaction policy. Keep one host-side native authority per decision, with final compositor enforcement of the same typed intent. Native transport, cached history and display projections cannot grant mutation rights.
 
 Keep original Elm typed-model/reducer/decoder contracts, supported ports and commands/subscriptions where applicable. Sequence dependent effects through matching committed receipts; batch only independent effects. Preserve lossless identities, original absolute deadlines, causal order, Unknown reconciliation/no replay, cleanup and ACK barriers. Compiler/library passes do not prove native input, AT, IME or presentation behavior.
 
@@ -8,4 +8,12 @@ Existing components outside the selected languages require real allowed-language
 
 Preserve original IDs, headings, scenario text and historical command receipts. Map replacement source and evidence to each original behavioral oracle; never transfer historical acceptance to replacement code. The prior audit language-tooling/openspec-audit.md (SHA256 a15ca946b5e2620a3d0a8afc0d9c26f5e888de04f105ee4e9da84999709c6953) records the earlier audit; current ownership is defined here. Current authority is latestUserDecision in docs/warlock-build-loop/v2/STATE.json, AGENTS.md and the latest user instruction; original behavior comes from docs/elm-roadmap/requirements.json and existing OpenSpec contracts.
 
-Implementation remains paused. Readiness documentation alone does not arm the loop; root owns coherent readiness validation and explicit Muse rearming.
+Preparation mode is armed for authorized interface/source/tool/plugin/model/fuzz readiness work. Final implementation-mode promotion requires independently reviewed minimum design readiness under existing user authorization; it does not require completing every native scenario or DEL003/004/005 release obligation first. Readiness documentation alone is not a native, feature or release verdict.
+
+## Adopted intended process placement and transport
+
+Root source decision `root-ui-native-transport-source-decision-v1.json` (SHA256 `82734132273ad9eb0c020e32885fd3b8efe7bc9c5a9b241f0c7dc7b1546ec943`) adopts private-network Elm/WebKit plus Haskell UI/local HTTP ownership and one host-side Haskell native admission/custody authority. Ordinary applications retain the intended host session/network launch context. This adopts preparation source direction only; bootstrap launcher, real native issuer and effect/retirement paths are not qualified.
+
+The intended owned anonymous socketpair uses explicit launch provenance and CLOEXEC before WebKit subprocesses; creator SO_PEERCRED is not child-identity proof. Frame payload is at most65536 bytes, strict JSON depth16 with u32 big-endian length, absolute read/write budgets5000ms, one ordinary and one reserved-control pending frame per direction. Partial writes are not preempted midframe; transport budgets never renew original effect D. Use the existing canonical typed protocol, separate commit/cancel attempts and Unknown/no replay semantics. No FD transfer/import, network proxy, general bus or arbitrary shell bridge. Native operations remain empty until actual issuer, admission, effect and certificate paths are qualified.
+
+Keep HOSTSTOP2 and inherited source/evidence/history unchanged. Neither this placement nor a new name admits a third stopped host trial or automatic provider whitelist. Current A+C platform closure decision still requires finite package/config/helper inputs; it is not complete from a safe resolver/ELF parser alone. Later native presentation/input/AT/IME, physical retirement, source closure, reproducible release and rollback remain explicit obligations.
