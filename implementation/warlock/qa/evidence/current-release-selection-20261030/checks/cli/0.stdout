@@ -1,0 +1,13 @@
+usage: check-release-repro.py [-h] [--probe] [--native-tuple NATIVE_TUPLE]
+                              [--native-tuple-sha256 NATIVE_TUPLE_SHA256]
+
+Protected offline namespace and two-build reproducibility observations.
+
+options:
+  -h, --help            show this help message and exit
+  --probe               Check isolation only; no native tuple selection or
+                        builds
+  --native-tuple NATIVE_TUPLE
+                        Absolute path to an explicitly reviewed native tuple
+  --native-tuple-sha256 NATIVE_TUPLE_SHA256
+                        Expected lowercase SHA-256 of the selected tuple

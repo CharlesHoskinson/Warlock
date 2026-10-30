@@ -1,0 +1,30 @@
+{
+  "task": "ELM-DEL-004 current catalogs private proposal",
+  "status": "PROPOSED SOURCE ONLY; NOT ACCEPTANCE",
+  "counts": {
+    "provenance": 14,
+    "payload": 8,
+    "new-payload-and-provenance": 2
+  },
+  "failure": "Namespace probe passed; capture failed on compliance-provenance native/shared-host.c before repro pair/A/B build. Exact raw log path pending root.",
+  "operations": "JSON parsing and SHA-256 reads only; no builder, compliance audit, compiler, tests, QA or GUI.",
+  "limits": [
+    "No blanket license change; all review and notice states preserved; project permission and compiler/source correspondence remain unknown.",
+    "Current selected host is a reference; an independently rebuilt host must match selected bytes to pass existing builder and actual result remains unobserved.",
+    "Original two isolated builds and byte equality or detailed release block remain unobserved.",
+    "Captured composition and any inputs may become stale before root integrates; root must reverify, recapture and preserve fail-closed review and archive audit.",
+    "Receipt maps project source and staged adapter payload; build tool evidence is not a claim that external build tools ship.",
+    "Notice bytes, historical review records and frozen old catalogs unchanged."
+  ],
+  "files": {
+    "language-components.json.diff": "009cee8cb3e39d4032545e90d2f87904ff9fd6ddfc5885674ddcd36cd6775215",
+    "mismatch-map.json": "8dcb0e8319e08fdd475abb84597e4e302443a1172c918bb4736db9755e1828d4",
+    "native-components.json.diff": "b2f5c56f45e3950159eac9be34490a93369370c8791ad926d357241d59d1821e",
+    "old/language-components.json": "dae1b362a3f08f919dab425f2f8a1230b74c72af03c5a9b2f925d261dee40719",
+    "old/native-components.json": "7999fb2fc69e936b3b496a0d8fef505088afe24fd8a3c564fccc84dd8a13b1b0",
+    "proposed/language-components.json": "62153fb7b88d1c7f482d571ace8622accd966440d0e1b3c771564a434fb57559",
+    "proposed/native-components.json": "f166664a733efd4c21ca03bea600604e547e2a94fa60f06d2795905174f05dfa",
+    "receipt-map.json": "35256737c77c120bcff0f5539fe19d9debb48a9bb0d430552da110e9b67ba66d",
+    "status-invariance.json": "fb5883206d54bf3f930c98209e79e60a70d4d361eb10ff42d7bbf1523df00449"
+  }
+}

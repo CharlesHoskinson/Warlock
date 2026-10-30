@@ -1,0 +1,104 @@
+{
+  "passed": false,
+  "probe": {
+    "passed": true,
+    "command": [
+      "/usr/bin/bwrap",
+      "--unshare-user",
+      "--unshare-pid",
+      "--unshare-net",
+      "--unshare-ipc",
+      "--unshare-uts",
+      "--die-with-parent",
+      "--new-session",
+      "--ro-bind",
+      "/usr",
+      "/usr",
+      "--symlink",
+      "usr/lib",
+      "/lib",
+      "--symlink",
+      "usr/lib",
+      "/lib64",
+      "--symlink",
+      "usr/bin",
+      "/bin",
+      "--dir",
+      "/etc",
+      "--ro-bind",
+      "/etc/ld.so.cache",
+      "/etc/ld.so.cache",
+      "--proc",
+      "/proc",
+      "--dev",
+      "/dev",
+      "--tmpfs",
+      "/tmp",
+      "--",
+      "/usr/bin/python3",
+      "-B",
+      "-c",
+      "import errno,json,os,pathlib,resource,socket,sys\nconnection=socket.socket();connection.settimeout(1)\ntry:connection.connect(('127.0.0.1',int(sys.argv[1])));blocked=False\nexcept OSError as error:blocked=True;reason=error.errno\nconnection.close()\ntry:fd=os.open('/usr/bin/python3',os.O_WRONLY);os.close(fd);read_only=False\nexcept OSError as error:read_only=error.errno in (errno.EROFS,errno.EACCES)\nprint(json.dumps({'namespaces':{n:os.readlink('/proc/self/ns/'+n) for n in ('net','mnt','pid')},\n 'networkBlocked':blocked,'readOnlyInputs':read_only,'coreLimit':list(resource.getrlimit(resource.RLIMIT_CORE)),\n 'cgroup':pathlib.Path('/proc/self/cgroup').read_text(),'hiddenHostSource':not pathlib.Path(sys.argv[2]).exists()}))\n",
+      "40773",
+      "/home/charles/Warlock/implementation/warlock"
+    ],
+    "exitCode": 0,
+    "parentNamespaces": {
+      "net": "net:[4026531833]",
+      "mnt": "mnt:[4026531832]",
+      "pid": "pid:[4026531836]"
+    },
+    "nativeAcceptance": false,
+    "fullReleaseAccepted": false,
+    "observed": {
+      "namespaces": {
+        "net": "net:[4026533150]",
+        "mnt": "mnt:[4026532654]",
+        "pid": "pid:[4026533149]"
+      },
+      "networkBlocked": true,
+      "readOnlyInputs": true,
+      "coreLimit": [
+        1,
+        1
+      ],
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-d132030b701249379c2db3fbebe3de15.scope\n",
+      "hiddenHostSource": true
+    }
+  },
+  "nativeAcceptance": false,
+  "fullReleaseAccepted": false,
+  "selectedNativeTuple": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-native-capture-1793327475166710937/native-lock.json",
+    "sha256": "159926b838187ef3d3b610ed119673293f138da9a53e4f382e787f3f69ad9afb"
+  },
+  "lockSHA256": "5427890510ccc4bb1dc160e91bc7e9614ec1d8db10e8d4413334352474f5a985",
+  "inputCount": 11005,
+  "pair": {
+    "matched": false,
+    "releaseBlocked": true,
+    "error": "Offline build A failed: {\"matched\": false, \"releaseBlocked\": true, \"error\": \"Redistribution review blocked; see compliance-report.json: component elm-compiler-0.19.2: redistribution disposition incomplete; component elm-compiler-generated-runtime: redistribution disposition incomplete; component elm-npm-installer-0.19.2-0: redistribution disposition incomplete; component elm-retained-notices: notice applicability review incomplete; component elm-retained-notices: redistribution disposition incomplete; component native-aquamarine: redistribution disposition incomplete; component native-generated-host: notice applicability review incomplete; component native-generated-host: redistribution disposition incomplete; component native-hyprland-core: redistribution disposition incomplete; component native-window-authority-plugin: notice applicability review incomplete; component native-window-authority-plugin: redistribution disposition incomplete; component warlock-adapter-sources: notice applicability review incomplete; component warlock-adapter-sources: redistribution disposition incomplete; component warlock-external-build-tools: notice applicability review incomplete; component warlock-external-build-tools: redistribution disposition incomplete; component warlock-generated-elm-assets: notice applicability review incomplete; component warlock-generated-elm-assets: redistribution disposition incomplete; component warlock-web-assets: notice applicability review incomplete; component warlock-web-assets: redistribution disposition incomplete\"}\n",
+    "builds": [
+      {
+        "label": "A",
+        "exitCode": 2,
+        "argumentsSHA256": "84a7ad21d99002159f1e636c9dbe2e77a10619d82ebf89abb0a413a1386f0be4"
+      }
+    ],
+    "parentNamespaces": {
+      "net": "net:[4026531833]",
+      "mnt": "mnt:[4026531832]",
+      "pid": "pid:[4026531836]"
+    },
+    "snapshot": {
+      "canonicalFiles": 10781,
+      "symlinks": 234,
+      "lockSHA256": "5427890510ccc4bb1dc160e91bc7e9614ec1d8db10e8d4413334352474f5a985",
+      "inputFileHashesSHA256": "f13b464be9ca5d2d55968adf3770bfb7fa00c2a743c2607993923f8c2c817150"
+    },
+    "lockSHA256": "5427890510ccc4bb1dc160e91bc7e9614ec1d8db10e8d4413334352474f5a985",
+    "nativeAcceptance": false,
+    "fullReleaseAccepted": false
+  },
+  "error": "Two offline builds did not match; see pair logs"
+}

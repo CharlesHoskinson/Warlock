@@ -998,3 +998,21 @@ current route for reproducibility; it is not a passing acceptance campaign or an
 installation command. The stop history remains in force; no automatic retry is
 implied. Original New instance and keyboard-only menu-opening obligations are
 separate.
+
+## Current isolated release rebuild
+
+The reproducibility checker accepts an explicitly hashed current composition,
+with strict paired arguments and no inferred tuple. The release adapter validates
+current frontend and historical native roles separately; corrected catalogue
+identities retain every unresolved redistribution/notice decision.
+
+The [current campaign](qa/evidence/current-release-selection-20261030/LIMITS.md)
+captures 11,005 inputs and rebuilds three Elm roots and eleven native units in
+clean isolated environment A. Its rebuilt host exactly matches the selected
+`a6b0f0…` binary; all 19 frontend assets match the reviewed current build. The
+host's 20 self-tests and 19 compiled New instance assertions pass.
+
+Packaging then blocks on 12 unresolved redistribution dispositions and seven
+notice-applicability reviews. No archive or build B exists; two-build
+reproducibility and release/installability remain unaccepted. See
+[the current reproducibility how-to](../../docs/warlock/how-to/check-current-release-reproducibility.md).

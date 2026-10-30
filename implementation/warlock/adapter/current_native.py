@@ -44,6 +44,7 @@ ADDED_ELM=('AnnouncementMessage.elm','SurfaceSnapshot.elm')
 # Reviewed runtime-only asset seam. Historical native/compiler inputs and
 # retained built assets remain byte-checked in their original roles.
 CHANGED_STATIC=('popup-adapter.js',)
+CHANGED_ADAPTER=('release_tuple.py',)
 
 class ChangedComposition(frontend.ChangedInput):
     pass
@@ -99,7 +100,9 @@ def observe(frontend_path,frontend_sha):
     historical_bytes={}
     static_sources={str(PRODUCT/'assets'/name):data['sourceHistory']['sourceInputs']['assets/'+name]
                     for name in CHANGED_STATIC}
-    for path,value in {**n['sources'],**static_sources}.items():
+    adapter_sources={str(PRODUCT/'adapter'/name):data['sourceHistory']['sourceInputs']['adapter/'+name]
+                     for name in CHANGED_ADAPTER}
+    for path,value in {**n['sources'],**static_sources,**adapter_sources}.items():
         relative=Path(path).relative_to(ROOT).as_posix()
         result=subprocess.run([str(git),'show',HISTORICAL_REVISION+':'+relative],cwd=ROOT,
                               env={'PATH':'/usr/bin:/bin','LC_ALL':'C','TZ':'UTC','GIT_NO_REPLACE_OBJECTS':'1'},capture_output=True,timeout=30)
@@ -113,9 +116,12 @@ def observe(frontend_path,frontend_sha):
                     for path,value in static_sources.items()
                     if value!=current_lock['static'][Path(path).name]}
     current_deltas={**changed,**static_changed}
+    adapter_changed={path:dict(old=value,current=frontend.sha(path))
+                     for path,value in adapter_sources.items() if value!=frontend.sha(path)}
+    history_deltas={**current_deltas,**adapter_changed}
     need(set(changed)=={str(PRODUCT/'src'/name) for name in CHANGED_ELM},'Unknown historical/current Elm changes')
     need(set(added)=={str(PRODUCT/'src'/name) for name in ADDED_ELM} and set(old_sources)<=set(new_sources),'Unknown frontend additions/removals')
-    need(not(set(current_deltas)|set(added))&set(h['freshDependencies']),'Changed frontend is a recorded native compiler input')
+    need(not(set(history_deltas)|set(added))&set(h['freshDependencies']),'Changed source is a recorded native compiler input')
     legacy=module_from_bytes('warlock_immutable_native_history',refs['historical']['path'],checked(refs['historical']['path'],refs['historical']['sha256']))
     original_read=legacy.read; resolved_history=set()
     def historical_read(path,expected):
@@ -157,7 +163,10 @@ def observe(frontend_path,frontend_sha):
             q=Path(row['path']); need(row.get('label')=='aquamarine soname alias' and q.is_symlink() and os.readlink(q)==row['target'],'Unknown/changed preflight alias')
     history=data['sourceHistory']['sourceInputs']; source_changes=dict(data['delta']['sources'])
     need(len(history)==367 and len(source_changes)==4,'Historical source inventory differs')
-    for path,c in current_deltas.items():
+    # Adapter recipes were not in the historical host's frontend preflight.
+    # Preserve every actual preflight row above; bind their separate source
+    # history here rather than inventing a row or skipping an old check.
+    for path,c in history_deltas.items():
         rel=Path(path).relative_to(PRODUCT).as_posix()
         need(rel in history and history[rel]==c['old'] and rel not in source_changes,'Additional source lineage differs')
         source_changes[rel]=c
@@ -216,6 +225,7 @@ def observe(frontend_path,frontend_sha):
                 frontend=dict(path=str(frontend_path),sha256=frontend_sha),frontendLock=current['lock'],references=refs,
                 historicalRevision=HISTORICAL_REVISION,historicalFrontendSources=n['sources'],frontendChanges=changed,frontendAdditions=added,
                 frontendStaticChanges=static_changed,
+                adapterChanges=adapter_changed,
                 preflightDeltas=[changes[i] for i in sorted(changes)],historicalSourceDeltas=source_changes,
                 nativeSources=h['nativeSourcesAfter'],retainedObjects=h['retainedObjects'],nativeCommands=h['commands'],
                 providers=h['providers'],freshDependencies=h['freshDependencies'],inputs=inputs,resolutions=resolutions,aliases=aliases,

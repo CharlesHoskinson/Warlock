@@ -1,4 +1,6 @@
 """Protected offline namespace and two-build reproducibility observations."""
+import argparse
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -9,6 +11,30 @@ import sys
 import time
 
 ROOT = Path(__file__).resolve().parents[1]
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--probe', action='store_true', help='Check isolation only; no native tuple selection or builds')
+parser.add_argument('--native-tuple', type=Path, help='Absolute path to an explicitly reviewed native tuple')
+parser.add_argument('--native-tuple-sha256', help='Expected lowercase SHA-256 of the selected tuple')
+args = parser.parse_args()
+if (args.native_tuple is None) != (args.native_tuple_sha256 is None):
+    parser.error('Both --native-tuple and --native-tuple-sha256 are required')
+if args.native_tuple is not None:
+    if args.probe:
+        parser.error('--probe does not select or validate a native tuple')
+    if not args.native_tuple.is_absolute():
+        parser.error('--native-tuple must be an absolute path')
+    digest = args.native_tuple_sha256
+    if len(digest) != 64 or any(c not in '0123456789abcdef' for c in digest):
+        parser.error('--native-tuple-sha256 must be a lowercase SHA-256')
+    if not args.native_tuple.is_file():
+        parser.error('--native-tuple must name a regular file')
+    try:
+        with args.native_tuple.open('rb') as stream:
+            actual = hashlib.file_digest(stream, 'sha256').hexdigest()
+    except OSError as error:
+        parser.error('Cannot read selected native tuple: ' + str(error))
+    if actual != digest:
+        parser.error('Selected native tuple does not match --native-tuple-sha256')
 OUT = ROOT / 'qa/runs' / ('offline-reproducibility-' + str(time.time_ns()))
 OUT.mkdir(parents=True)
 sys.path.insert(0, str(ROOT / 'adapter'))
@@ -53,14 +79,17 @@ if result.returncode == 0:
         and observed['hiddenHostSource'] and observed['coreLimit'] == [1, 1]
         and 'qa-harness.slice/qa-harness-' in observed['cgroup'])
 (OUT / 'report.json').write_text(json.dumps(report, indent=2) + '\n')
-if '--probe' in sys.argv or not report['passed']:
+if args.probe or not report['passed']:
     print(json.dumps({'passed': report['passed'], 'report': str(OUT / 'report.json')}))
     raise SystemExit(not report['passed'])
 
 full = {'passed': False, 'probe': report, 'nativeAcceptance': False,
         'fullReleaseAccepted': False}
+if args.native_tuple is not None:
+    full['selectedNativeTuple'] = {'path': str(args.native_tuple),
+                                  'sha256': args.native_tuple_sha256}
 try:
-    manifest = builder.capture(ROOT.parents[1])
+    manifest = builder.capture(ROOT.parents[1], args.native_tuple, args.native_tuple_sha256)
     lock = OUT / 'build-lock.json'
     lock.write_text(json.dumps(manifest, indent=2) + '\n')
     full['lockSHA256'] = builder.sha(lock)

@@ -150,7 +150,7 @@
       "provenance": [
         {
           "path": "implementation/warlock/native/shared-host.c",
-          "sha256": "6e7f43b92c08f19ac82f5c93d67ca69d0a11a6c73f01a763a018f2beba282a7a"
+          "sha256": "5d0d43c61574f292842bc34b2e3363cd5e7a215239e609bcb9780d475a9a8bbc"
         },
         {
           "path": "implementation/warlock/qa/evidence/offline-reproducibility/manifest.json",
@@ -163,6 +163,10 @@
         {
           "path": "implementation/warlock/release/native-tuple-20261028.json",
           "sha256": "bc225242e30baf4a5b8b1182cef6fdc716cc9c67de90dc35674f90c5fa87830b"
+        },
+        {
+          "path": "implementation/warlock/release/current-native-composition-20261030.json",
+          "sha256": "159926b838187ef3d3b610ed119673293f138da9a53e4f382e787f3f69ad9afb"
         }
       ],
       "notices": [],
@@ -174,9 +178,10 @@
         {
           "path": "elm-host",
           "type": "file",
-          "sha256": "4377b11ce0afe9e1072210666aa872118b032995275a20657058771e5e6c8347"
+          "sha256": "a6b0f0cdfaf9d1fbf35494501fe623c88e889497c14b6fc9f65a7cc6ac5cba97"
         }
-      ]
+      ],
+      "notes": "Current expected project source/payload identities are declared against reviewed composition159926b838187ef3d3b610ed119673293f138da9a53e4f382e787f3f69ad9afb and frontend65b909422a1866a9df8f118b134ea42778fd69564aed070bdb92c0975f3818d8. Historical disposition text, old locks and earlier native tuple references are retained as history, not proof of current identity or a redistribution grant. Rebuilt host/assets, package audit and two isolated builds remain unproven."
     },
     {
       "id": "native-udis86-static",

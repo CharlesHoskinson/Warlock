@@ -1029,9 +1029,14 @@
             {
               "path": "implementation/warlock/qa/evidence/offline-reproducibility/manifest.json",
               "sha256": "4134b2212792b5ecf39e220aa2b7327d7fae3f52f9abf0d8e351ef087bbc9497"
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/current-release-selection-20261030/manifest.json",
+              "sha256": "6070000343fa0e3e04d25456864148fdf992bddd917c972a0f83531230d3d733",
+              "scope": "Current selection/CLI/contracts and one actual clean isolated host/frontend rebuild. A blocked by19 compliance decisions before archive/B/comparison; not current two-build acceptance."
             }
           ],
-          "missingObservation": "Independent original-scenario acceptance review.; Complete upstream compiler/build-tool source provenance and SBOM/notices/redistribution disposition.; Full native AT/IME/hardware/resources/journeys, accepted Omarchy fallback and reversible main-session deployment.",
+          "missingObservation": "Complete current clean build B and actual distributable/archive comparison after mandatory redistribution/notice reviews are resolved; no current archive exists. Preserve full upstream compiler/build-tool/core/Aquamarine provenance, SBOM/notices, and separate native AT/IME/hardware/resources/journeys/reversible deployment obligations.",
           "priorObservations": [
             {
               "name": "delivery-004",
@@ -1039,22 +1044,60 @@
               "status": "unadjudicated",
               "evidence": [],
               "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+            },
+            {
+              "status": "partial",
+              "evidence": [
+                {
+                  "path": "implementation/warlock/qa/evidence/offline-reproducibility/manifest.json",
+                  "sha256": "4134b2212792b5ecf39e220aa2b7327d7fae3f52f9abf0d8e351ef087bbc9497"
+                }
+              ],
+              "missingObservation": "Independent original-scenario acceptance review.; Complete upstream compiler/build-tool source provenance and SBOM/notices/redistribution disposition.; Full native AT/IME/hardware/resources/journeys, accepted Omarchy fallback and reversible main-session deployment.",
+              "evidenceScope": "Two clean offline fixed-recipe builds match all 56 payload hashes and the 26040320-byte archive hash. Each rebuilds three Elm roots and eleven native host units, with 18 phases and 19 compiled reducer checks. Actual isolated namespaces, blocked parent network socket, read-only source and hidden host marker are observed. Actual archive, payload and same-content loader-alias changes block release; restored artifacts match. The current 9226-input lock independently verifies in another protected process. No upstream native-core rebuild or full release acceptance.",
+              "sourceHashes": {
+                "implementation/warlock/adapter/release_repro.py": "68107841f4514394091740799c6b2b1983a2e6a4708e3a490e40b61729f38986",
+                "implementation/warlock/adapter/release_builder.py": "ba96d41441bee2a2632af02bcff4ef1be6e57405ca744b6cc6a53b6f6ffa7763",
+                "implementation/warlock/qa/check-release-repro.py": "f6913a8e47336cb470494fe352202f818b0a55fc2b0b90dead19d29972b787ac",
+                "implementation/warlock/build-lock.json": "9507f772afbedaf6ff11bf184e57513066f402d954a753599de87c05ca465358",
+                "implementation/warlock/RELEASE.md": "973ad17b82ecbd24ce304f2e1d73815531b82cdd82bcd726d629a04360207190",
+                "implementation/warlock/README.md": "64d15cee43b3e43f63126e7609fa53d6c4f6d3e2653dbba6bcb90d5242dcfdfe"
+              },
+              "reviewer": {
+                "name": "root-offline-reproducibility",
+                "independent": false,
+                "disposition": "partial"
+              },
+              "scenarioAccepted": false,
+              "historicalAfterSourceChange": {
+                "atUTC": "2026-10-28T16:37:43.658017+00:00",
+                "changedPaths": [
+                  "implementation/warlock/adapter/release_builder.py",
+                  "implementation/warlock/README.md",
+                  "implementation/warlock/RELEASE.md"
+                ],
+                "reason": "The new compliance/receipt recipe differs from the frozen historical lock. Retain original evidence and source hashes; a fresh locked build/reproducibility campaign is required after the new native tuple is available."
+              }
             }
           ],
-          "evidenceScope": "Two clean offline fixed-recipe builds match all 56 payload hashes and the 26040320-byte archive hash. Each rebuilds three Elm roots and eleven native host units, with 18 phases and 19 compiled reducer checks. Actual isolated namespaces, blocked parent network socket, read-only source and hidden host marker are observed. Actual archive, payload and same-content loader-alias changes block release; restored artifacts match. The current 9226-input lock independently verifies in another protected process. No upstream native-core rebuild or full release acceptance.",
+          "evidenceScope": "Current tuple159926/inputcapture11005 and isolated build A reproduce exact selected host a6b0 and all19 frontend65b909assets; 20hostselftests and19compiledNewInstanceReplay checks pass. Existing audit blocksA on12unknown redistribution and7notice applicability decisions. Aexit2/Babsent/archiveabsent/no currentA-Bcomparison. ProtectedCLI13/composition48/productionselection23 pass, not native or release acceptance.",
           "verificationScope": "Compare SHA-256 manifests and retain differing build logs.",
           "sourceHashes": {
+            "implementation/warlock/qa/check-release-repro.py": "356fb2bd7b5a601749478013a12075713ec11bc53266dfd59607a269533e0f87",
+            "implementation/warlock/adapter/current_native.py": "8bc7a0c1244192ea8c94f2388933eb056a0a8ad8888a1f879913e2c6d27fff69",
+            "implementation/warlock/adapter/release_tuple.py": "3267a1d3eca90d9dbcccc2f918ea71aafd96e0bba43f49705f7d3d845f330320",
+            "implementation/warlock/adapter/release_builder.py": "43dfc887228de8a755964a0aaa8b645d9fb8f4a4a4a288b7ff48d7b1844d630a",
             "implementation/warlock/adapter/release_repro.py": "68107841f4514394091740799c6b2b1983a2e6a4708e3a490e40b61729f38986",
-            "implementation/warlock/adapter/release_builder.py": "ba96d41441bee2a2632af02bcff4ef1be6e57405ca744b6cc6a53b6f6ffa7763",
-            "implementation/warlock/qa/check-release-repro.py": "f6913a8e47336cb470494fe352202f818b0a55fc2b0b90dead19d29972b787ac",
-            "implementation/warlock/build-lock.json": "9507f772afbedaf6ff11bf184e57513066f402d954a753599de87c05ca465358",
-            "implementation/warlock/RELEASE.md": "973ad17b82ecbd24ce304f2e1d73815531b82cdd82bcd726d629a04360207190",
-            "implementation/warlock/README.md": "64d15cee43b3e43f63126e7609fa53d6c4f6d3e2653dbba6bcb90d5242dcfdfe"
+            "implementation/warlock/release/native-components.json": "7774e61b04073d4ed5f052c35860b622a18fad082df2d92078ad66e575705864",
+            "implementation/warlock/release/language-components.json": "51d67df6b7987cbd8aa0b82f32fa84878320a680c5f7e53b491a234a81466968",
+            "implementation/warlock/release/current-native-composition-20261030.json": "159926b838187ef3d3b610ed119673293f138da9a53e4f382e787f3f69ad9afb"
           },
           "reviewer": {
-            "name": "root-offline-reproducibility",
-            "independent": false,
-            "disposition": "partial"
+            "name": "/root/astra_architecture",
+            "independent": true,
+            "disposition": "partial",
+            "path": "implementation/warlock/qa/evidence/current-release-selection-20261030/review/OFFLINE-A-PARTIAL-DISPOSITION.md",
+            "sha256": "68dc7ba72874f979a4c97537ba9649fc1f47d10f419ac561be27b2be3d7cf6e1"
           },
           "scenarioAccepted": false,
           "historicalAfterSourceChange": {
@@ -1065,6 +1108,15 @@
               "implementation/warlock/RELEASE.md"
             ],
             "reason": "The new compliance/receipt recipe differs from the frozen historical lock. Retain original evidence and source hashes; a fresh locked build/reproducibility campaign is required after the new native tuple is available."
+          },
+          "latestCurrentTupleObservation": {
+            "manifest": "implementation/warlock/qa/evidence/current-release-selection-20261030/manifest.json",
+            "sourceBaseRevision": "d0f0944a4",
+            "buildAExit": 2,
+            "buildBAttempted": false,
+            "archiveProduced": false,
+            "matchedDistributablesObserved": false,
+            "releaseBlocked": true
           }
         }
       ]

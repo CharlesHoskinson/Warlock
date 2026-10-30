@@ -1,0 +1,275 @@
+{
+  "checks": [
+    {
+      "name": "Reviewed production composition validates",
+      "passed": true
+    },
+    {
+      "error": "Receipt/lock digest differs: /home/charles/.local/state/warlock-team/20261028/native-rebuild/current-native-capture-1793327475166710937/native-lock.json",
+      "name": "Wrong reviewed native lock digest refused",
+      "passed": true
+    },
+    {
+      "error": "Different reviewed frontend receipt",
+      "name": "Wrong frontend receipt refused",
+      "passed": true
+    },
+    {
+      "error": "Raised composition acceptance claim",
+      "name": "Raised native acceptance refused",
+      "passed": true
+    },
+    {
+      "error": "Raised composition acceptance claim",
+      "name": "Raised release acceptance refused",
+      "passed": true
+    },
+    {
+      "error": "Raised composition acceptance claim",
+      "name": "Installable claim refused",
+      "passed": true
+    },
+    {
+      "error": "Unknown composition lock",
+      "name": "Unknown native lock schema refused",
+      "passed": true
+    },
+    {
+      "error": "Locked native/current input differs: /home/charles/.local/state/warlock-team/20261028/native-rebuild/first-use-delivery-context-root-v1/output/elm-host",
+      "name": "Wrong declared Host hash refused",
+      "passed": true
+    },
+    {
+      "error": "Locked native/current input differs: /home/charles/.local/state/warlock-team/20261028/native-rebuild/core-build/Hyprland",
+      "name": "Wrong declared Core hash refused",
+      "passed": true
+    },
+    {
+      "error": "Locked native/current input differs: /home/charles/.local/state/warlock-team/20261028/native-rebuild/authority/elm-window-geometry-authority.so",
+      "name": "Wrong declared Authority hash refused",
+      "passed": true
+    },
+    {
+      "error": "Locked native/current input differs: /home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/lib/libaquamarine.so.0.15.0",
+      "name": "Wrong declared Aquamarine hash refused",
+      "passed": true
+    },
+    {
+      "error": "Locked native/current input differs: /home/charles/Warlock/implementation/warlock/native/actor-control-replay.cpp",
+      "name": "Wrong declared Native source hash refused",
+      "passed": true
+    },
+    {
+      "error": "Locked native/current input differs: /home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-host-rebuild-v1/output/preview_uri.cpp.o",
+      "name": "Wrong declared Retained object hash refused",
+      "passed": true
+    },
+    {
+      "error": "Locked native/current input differs: /usr/lib/libwebkit2gtk-4.1.so.0.24.4",
+      "name": "Wrong declared Provider hash refused",
+      "passed": true
+    },
+    {
+      "error": "Locked native/current input differs: /home/charles/Warlock/implementation/warlock/native/shared-host.c",
+      "name": "Wrong declared Dependency hash refused",
+      "passed": true
+    },
+    {
+      "error": "Locked alias differs",
+      "name": "Wrong declared AQ alias refused",
+      "passed": true
+    },
+    {
+      "error": "Current input resolution differs",
+      "name": "Wrong resolved core path refused",
+      "passed": true
+    },
+    {
+      "error": "Current composition or historical/current role inventory differs",
+      "name": "Missing new frontend module refused",
+      "passed": true
+    },
+    {
+      "error": "Current composition or historical/current role inventory differs",
+      "name": "Wrong historical source role refused",
+      "passed": true
+    },
+    {
+      "error": "Current composition or historical/current role inventory differs",
+      "name": "Missing runtime static delta refused",
+      "passed": true
+    },
+    {
+      "error": "Current composition or historical/current role inventory differs",
+      "name": "Wrong historical static digest refused",
+      "passed": true
+    },
+    {
+      "error": "Current composition or historical/current role inventory differs",
+      "name": "Wrong current static digest refused",
+      "passed": true
+    },
+    {
+      "error": "Current composition or historical/current role inventory differs",
+      "name": "Missing release adapter delta refused",
+      "passed": true
+    },
+    {
+      "error": "Current composition or historical/current role inventory differs",
+      "name": "Wrong historical release adapter digest refused",
+      "passed": true
+    },
+    {
+      "error": "Current composition or historical/current role inventory differs",
+      "name": "Wrong current release adapter digest refused",
+      "passed": true
+    },
+    {
+      "error": "Current composition or historical/current role inventory differs",
+      "name": "Missing historical preflight row refused",
+      "passed": true
+    },
+    {
+      "error": "Current composition or historical/current role inventory differs",
+      "name": "Wrong historical row label refused",
+      "passed": true
+    },
+    {
+      "error": "Current composition or historical/current role inventory differs",
+      "name": "Wrong retained object ordering refused",
+      "passed": true
+    },
+    {
+      "error": "Locked native/current input differs: /home/charles/.local/state/warlock-team/20261028/native-rebuild/core-source/tests/helpers/Format.cpp",
+      "name": "Seeded wrong declared input hash 0",
+      "passed": true
+    },
+    {
+      "error": "Locked native/current input differs: /usr/include/c++/16/bits/enable_special_members.h",
+      "name": "Seeded wrong declared input hash 1",
+      "passed": true
+    },
+    {
+      "error": "Locked native/current input differs: /usr/include/gtk-3.0/gtk/gtkcellareabox.h",
+      "name": "Seeded wrong declared input hash 2",
+      "passed": true
+    },
+    {
+      "error": "Locked native/current input differs: /home/charles/.local/state/warlock-team/20261028/native-rebuild/core-source/protocols/pointer-warp-v1.hpp",
+      "name": "Seeded wrong declared input hash 3",
+      "passed": true
+    },
+    {
+      "error": "Locked native/current input differs: /home/charles/Warlock/implementation/warlock/assets/context.js",
+      "name": "Seeded wrong declared input hash 4",
+      "passed": true
+    },
+    {
+      "error": "Locked native/current input differs: /home/charles/Warlock/implementation/warlock/native/core/CaptionGesturePolicy.hpp",
+      "name": "Seeded wrong declared input hash 5",
+      "passed": true
+    },
+    {
+      "error": "Locked native/current input differs: /home/charles/.local/state/warlock-team/20261028/native-rebuild/core-source/src/protocols/XDGShell.cpp",
+      "name": "Seeded wrong declared input hash 6",
+      "passed": true
+    },
+    {
+      "error": "Locked native/current input differs: /usr/include/c++/16/bits/ostream_print.h",
+      "name": "Seeded wrong declared input hash 7",
+      "passed": true
+    },
+    {
+      "error": "Locked native/current input differs: /home/charles/Warlock/implementation/warlock/native/retirement-elm-channel-test-v4.cpp",
+      "name": "Seeded wrong declared input hash 8",
+      "passed": true
+    },
+    {
+      "error": "Locked native/current input differs: /usr/include/gtk-3.0/gtk/gtkcellrenderercombo.h",
+      "name": "Seeded wrong declared input hash 9",
+      "passed": true
+    },
+    {
+      "error": "Locked native/current input differs: /home/charles/.local/state/warlock-team/20261028/native-rebuild/core-source/src/render/shaders/glsl/shadow.glsl",
+      "name": "Seeded wrong declared input hash 10",
+      "passed": true
+    },
+    {
+      "error": "Locked native/current input differs: /home/charles/.local/state/warlock-team/20261028/native-rebuild/core-source/src/state/WorkspaceQueryCore.cpp",
+      "name": "Seeded wrong declared input hash 11",
+      "passed": true
+    },
+    {
+      "error": "Locked native/current input differs: /home/charles/.local/state/warlock-team/20261028/native-rebuild/core-source/subprojects/tracy/examples/ToyPathTracer/Source/enkiTS/Atomics.h",
+      "name": "Seeded wrong declared input hash 12",
+      "passed": true
+    },
+    {
+      "error": "Locked native/current input differs: /home/charles/.local/state/warlock-team/20261028/native-rebuild/core-source/src/helpers/Color.hpp",
+      "name": "Seeded wrong declared input hash 13",
+      "passed": true
+    },
+    {
+      "error": "Locked native/current input differs: /home/charles/.local/state/warlock-team/20261028/native-rebuild/core-source/hyprtester/src/tests/main/layout_custom.cpp",
+      "name": "Seeded wrong declared input hash 14",
+      "passed": true
+    },
+    {
+      "error": "Locked native/current input differs: /home/charles/Warlock/implementation/warlock/native/preview-realm-c-test-v3.cpp",
+      "name": "Seeded wrong declared input hash 15",
+      "passed": true
+    },
+    {
+      "name": "Original composition still validates",
+      "passed": true
+    },
+    {
+      "name": "Executed source unchanged check_composition.py",
+      "passed": true
+    },
+    {
+      "name": "Executed source unchanged current_native.py",
+      "passed": true
+    },
+    {
+      "name": "Executed source unchanged current_build.py",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-repro-root-v1/check_composition.py": "94733b268280878ed9eaf2e3026a6ae3363c4ae348225a6c076daeed64a35aec",
+    "/home/charles/Warlock/implementation/warlock/adapter/current_build.py": "d4e5af280a275f9a777322ee60f1f34bf21751b6726edcaa4e4105a02da4dbc7",
+    "/home/charles/Warlock/implementation/warlock/adapter/current_native.py": "8bc7a0c1244192ea8c94f2388933eb056a0a8ad8888a1f879913e2c6d27fff69"
+  },
+  "limit": "Read-only original/current role validation and fixed/seeded declared-lock mutations; frozen host/object/provider/ABI inputs are never modified. No native code is loaded.",
+  "nativeAcceptance": false,
+  "passed": true,
+  "releaseAccepted": false,
+  "reviewedLock": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-native-capture-1793327475166710937/native-lock.json",
+    "sha256": "159926b838187ef3d3b610ed119673293f138da9a53e4f382e787f3f69ad9afb"
+  },
+  "sampledInputPaths": [
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-source/tests/helpers/Format.cpp",
+    "/usr/include/c++/16/bits/enable_special_members.h",
+    "/usr/include/gtk-3.0/gtk/gtkcellareabox.h",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-source/protocols/pointer-warp-v1.hpp",
+    "/home/charles/Warlock/implementation/warlock/assets/context.js",
+    "/home/charles/Warlock/implementation/warlock/native/core/CaptionGesturePolicy.hpp",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-source/src/protocols/XDGShell.cpp",
+    "/usr/include/c++/16/bits/ostream_print.h",
+    "/home/charles/Warlock/implementation/warlock/native/retirement-elm-channel-test-v4.cpp",
+    "/usr/include/gtk-3.0/gtk/gtkcellrenderercombo.h",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-source/src/render/shaders/glsl/shadow.glsl",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-source/src/state/WorkspaceQueryCore.cpp",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-source/subprojects/tracy/examples/ToyPathTracer/Source/enkiTS/Atomics.h",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-source/src/helpers/Color.hpp",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-source/hyprtester/src/tests/main/layout_custom.cpp",
+    "/home/charles/Warlock/implementation/warlock/native/preview-realm-c-test-v3.cpp"
+  ],
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-b4d05c51f94647409fedae26f1f6ea44.scope",
+    "coreLimit": 1
+  },
+  "seed": 20261030
+}

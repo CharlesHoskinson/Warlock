@@ -1,0 +1,286 @@
+{
+  "preserved": true,
+  "scope": "all component disposition, notice_disposition, notices, notes, scope, category, contains unchanged; no notice content or review evidence modified",
+  "components": [
+    {
+      "catalog": "native-components.json",
+      "component": "native-hyprland-core",
+      "disposition": {
+        "status": "unknown",
+        "evidence": "Current derivative artifact identity is recorded in native-tuple-20261028.json; historical pair/lock references and previous note below are retained as history, not evidence that the old binary equals this derivative. Full redistribution review remains unresolved. Previous historical note: Recorded native binary and referenced native build report are unavailable in this snapshot; binary-to-complete-source and redistribution review remain unresolved. Other than the packaged Aquamarine library, dynamic system libraries are external runtime dependencies; the builder does not copy them. The build lock records an aggregate dynamic-library input set for tools and native inputs, not per-binary attribution. The archived Hyprland license is a candidate notice, not proof of exact source lineage. The current WorkspacePlacementController.cpp matches one locked owning-header source hash only."
+      },
+      "notice_disposition": null,
+      "notices": [
+        {
+          "path": "release/notices/native/hyprland-LICENSE",
+          "sha256": "e01df754903af0ab26babb317b5f5a62dd95f770b733c5275414dd3245d00ae7"
+        }
+      ]
+    },
+    {
+      "catalog": "native-components.json",
+      "component": "native-window-authority-plugin",
+      "disposition": {
+        "status": "unknown",
+        "evidence": "Current derivative artifact identity is recorded in native-tuple-20261028.json; historical pair/lock references and previous note below are retained as history, not evidence that the old binary equals this derivative. Full redistribution review remains unresolved. Previous historical note: Recorded native binary and referenced native build report are unavailable in this snapshot; binary-to-complete-source and redistribution review remain unresolved. Other than the packaged Aquamarine library, dynamic system libraries are external runtime dependencies; the builder does not copy them. The build lock records an aggregate dynamic-library input set for tools and native inputs, not per-binary attribution. Authority source hash matches the pair metadata; no project license or reviewed grant was located."
+      },
+      "notice_disposition": null,
+      "notices": []
+    },
+    {
+      "catalog": "native-components.json",
+      "component": "native-aquamarine",
+      "disposition": {
+        "status": "unknown",
+        "evidence": "Current derivative artifact identity is recorded in native-tuple-20261028.json; historical pair/lock references and previous note below are retained as history, not evidence that the old binary equals this derivative. Full redistribution review remains unresolved. Previous historical note: Recorded native binary and referenced native build report are unavailable in this snapshot; binary-to-complete-source and redistribution review remain unresolved. Other than the packaged Aquamarine library, dynamic system libraries are external runtime dependencies; the builder does not copy them. The build lock records an aggregate dynamic-library input set for tools and native inputs, not per-binary attribution. Archived candidate and upstream license texts match by hash; exact shipped binary source lineage is not established."
+      },
+      "notice_disposition": null,
+      "notices": [
+        {
+          "path": "release/notices/native/aquamarine-LICENSE",
+          "sha256": "52d07f3457591b4496ae2e79b05efd63c7df72135666fa12428d83078c4c0de5"
+        }
+      ]
+    },
+    {
+      "catalog": "native-components.json",
+      "component": "native-generated-host",
+      "disposition": {
+        "status": "unknown",
+        "evidence": "Current derivative artifact identity is recorded in native-tuple-20261028.json; historical pair/lock references and previous note below are retained as history, not evidence that the old binary equals this derivative. Full redistribution review remains unresolved. Previous historical note: Project-generated host source has no identified project license or reviewed grant. Digest is the retained offline build evidence identity, not proof of any current candidate. Host dynamic libraries are external runtime dependencies, not bundled; the build lock records an aggregate dynamic-library input set for tools and native inputs, not per-binary attribution."
+      },
+      "notice_disposition": null,
+      "notices": []
+    },
+    {
+      "catalog": "native-components.json",
+      "component": "native-udis86-static",
+      "disposition": {
+        "status": "reviewed",
+        "evidence": "Independent Quint4/Quint5 evidence and root review are recorded in release/component-reviews-20261028.json. Scoped to the exact source/notice identities and conservative attribution in staged offline v4 A. Preserve the complete notices and continuing non-endorsement conditions; no project grant, compiler/runtime approval or release acceptance is inferred."
+      },
+      "notice_disposition": null,
+      "notices": [
+        {
+          "path": "release/notices/native/udis86-LICENSE",
+          "sha256": "1070640aab24327354da44507627d1db6c67482a6facc8375a758796a05e3dff"
+        }
+      ]
+    },
+    {
+      "catalog": "native-components.json",
+      "component": "native-glaze-headers",
+      "disposition": {
+        "status": "reviewed",
+        "evidence": "Independent Quint4/Quint5 evidence and root review are recorded in release/component-reviews-20261028.json. Scoped to the exact source/notice identities and conservative attribution in staged offline v4 A. Preserve the complete notices and continuing non-endorsement conditions; no project grant, compiler/runtime approval or release acceptance is inferred."
+      },
+      "notice_disposition": null,
+      "notices": [
+        {
+          "path": "release/notices/native/glaze-LICENSE",
+          "sha256": "5d49e66411a0807a7c8d6b911b9a26b59e940c71aebe561a3ad8b0b80ac4b7b6"
+        }
+      ]
+    },
+    {
+      "catalog": "language-components.json",
+      "component": "elm-compiler-0.19.2",
+      "disposition": {
+        "status": "unknown",
+        "evidence": "npm metadata identifies 0.19.2-0 and declares BSD-3-Clause; upstream compiler tag 0.19.2 LICENSE https://raw.githubusercontent.com/elm/compiler/0.19.2/LICENSE was retrieved and retained. The cached binary has not been independently linked to that tagged source or distribution archive; source/binary provenance and redistribution review are unresolved."
+      },
+      "notice_disposition": null,
+      "notices": [
+        {
+          "path": "release/notices/language/elm-compiler-0.19.2.txt",
+          "sha256": "22bd883c0b78625bb39a21b96d38ddcb8469863b51718b8bda1ce46441f5bfce"
+        }
+      ]
+    },
+    {
+      "catalog": "language-components.json",
+      "component": "elm-npm-installer-0.19.2-0",
+      "disposition": {
+        "status": "unknown",
+        "evidence": "Npm metadata declares BSD-3-Clause; archive integrity is recorded in package-lock, but the retained files have not been independently verified against the original archive, tagged source or reviewed for redistribution."
+      },
+      "notice_disposition": null,
+      "notices": [
+        {
+          "path": "release/notices/language/elm-compiler-0.19.2.txt",
+          "sha256": "22bd883c0b78625bb39a21b96d38ddcb8469863b51718b8bda1ce46441f5bfce"
+        }
+      ]
+    },
+    {
+      "catalog": "language-components.json",
+      "component": "warlock-external-build-tools",
+      "disposition": {
+        "status": "unknown",
+        "evidence": "The frozen build lock records cc, g++, pkg-config, Node, Python, Quint, as, ld, ar, ldd, bash, env and bubblewrap identities and input hashes where recorded. Their original paths may be unavailable; actual distributions, licenses, notices, source correspondence and review require separate evidence. They are build dependencies, not claimed as shipped payload."
+      },
+      "notice_disposition": null,
+      "notices": []
+    },
+    {
+      "catalog": "language-components.json",
+      "component": "elm-compiler-generated-runtime",
+      "disposition": {
+        "status": "unknown",
+        "evidence": "Generated Elm JavaScript includes compiler runtime scaffolding; exact source attribution, copyright and provenance of the cached compiler binary and redistribution review remain unresolved. Tagged compiler LICENSE is retained as potentially applicable, not a determination."
+      },
+      "notice_disposition": null,
+      "notices": [
+        {
+          "path": "release/notices/language/elm-compiler-0.19.2.txt",
+          "sha256": "22bd883c0b78625bb39a21b96d38ddcb8469863b51718b8bda1ce46441f5bfce"
+        }
+      ]
+    },
+    {
+      "catalog": "language-components.json",
+      "component": "elm-browser-1.0.2",
+      "disposition": {
+        "status": "reviewed",
+        "evidence": "Independent Quint4/Quint5 evidence and root review are recorded in release/component-reviews-20261028.json. Scoped to the exact source/notice identities and conservative attribution in staged offline v4 A. Preserve the complete notices and continuing non-endorsement conditions; no project grant, compiler/runtime approval or release acceptance is inferred."
+      },
+      "notice_disposition": null,
+      "notices": [
+        {
+          "path": "release/notices/language/elm-browser-1.0.2.txt",
+          "sha256": "d33481c057f582207d41425b1b3ecb740291f9f9c86b21e9a045cd3bea0f6ac8"
+        }
+      ]
+    },
+    {
+      "catalog": "language-components.json",
+      "component": "elm-core-1.0.5",
+      "disposition": {
+        "status": "reviewed",
+        "evidence": "Independent Quint4/Quint5 evidence and root review are recorded in release/component-reviews-20261028.json. Scoped to the exact source/notice identities and conservative attribution in staged offline v4 A. Preserve the complete notices and continuing non-endorsement conditions; no project grant, compiler/runtime approval or release acceptance is inferred."
+      },
+      "notice_disposition": null,
+      "notices": [
+        {
+          "path": "release/notices/language/elm-core-1.0.5.txt",
+          "sha256": "431192066654a9060d29033714fa19eb6f7749031710957c55cf8b8d8bd246c3"
+        }
+      ]
+    },
+    {
+      "catalog": "language-components.json",
+      "component": "elm-html-1.0.0",
+      "disposition": {
+        "status": "reviewed",
+        "evidence": "Independent Quint4/Quint5 evidence and root review are recorded in release/component-reviews-20261028.json. Scoped to the exact source/notice identities and conservative attribution in staged offline v4 A. Preserve the complete notices and continuing non-endorsement conditions; no project grant, compiler/runtime approval or release acceptance is inferred."
+      },
+      "notice_disposition": null,
+      "notices": [
+        {
+          "path": "release/notices/language/elm-html-1.0.0.txt",
+          "sha256": "ac3cefe90f27c4cc550da6eda13d18e1fadb0151b5d9dd99619ea1a10dc6eaad"
+        }
+      ]
+    },
+    {
+      "catalog": "language-components.json",
+      "component": "elm-json-1.1.3",
+      "disposition": {
+        "status": "reviewed",
+        "evidence": "Independent Quint4/Quint5 evidence and root review are recorded in release/component-reviews-20261028.json. Scoped to the exact source/notice identities and conservative attribution in staged offline v4 A. Preserve the complete notices and continuing non-endorsement conditions; no project grant, compiler/runtime approval or release acceptance is inferred."
+      },
+      "notice_disposition": null,
+      "notices": [
+        {
+          "path": "release/notices/language/elm-json-1.1.3.txt",
+          "sha256": "ac3cefe90f27c4cc550da6eda13d18e1fadb0151b5d9dd99619ea1a10dc6eaad"
+        }
+      ]
+    },
+    {
+      "catalog": "language-components.json",
+      "component": "elm-time-1.0.0",
+      "disposition": {
+        "status": "reviewed",
+        "evidence": "Independent Quint4/Quint5 evidence and root review are recorded in release/component-reviews-20261028.json. Scoped to the exact source/notice identities and conservative attribution in staged offline v4 A. Preserve the complete notices and continuing non-endorsement conditions; no project grant, compiler/runtime approval or release acceptance is inferred."
+      },
+      "notice_disposition": null,
+      "notices": [
+        {
+          "path": "release/notices/language/elm-time-1.0.0.txt",
+          "sha256": "a1c31dacffb1a470cb3aaf4844904114b9bc5ebf091e113b2d46bc4953c2c2ea"
+        }
+      ]
+    },
+    {
+      "catalog": "language-components.json",
+      "component": "elm-url-1.0.0",
+      "disposition": {
+        "status": "reviewed",
+        "evidence": "Independent Quint4/Quint5 evidence and root review are recorded in release/component-reviews-20261028.json. Scoped to the exact source/notice identities and conservative attribution in staged offline v4 A. Preserve the complete notices and continuing non-endorsement conditions; no project grant, compiler/runtime approval or release acceptance is inferred."
+      },
+      "notice_disposition": null,
+      "notices": [
+        {
+          "path": "release/notices/language/elm-url-1.0.0.txt",
+          "sha256": "1c818d8c5f129ee90e6a855c9edd16d9c6bd25e2959b1aeaeb8626e7c539cc9b"
+        }
+      ]
+    },
+    {
+      "catalog": "language-components.json",
+      "component": "elm-virtual-dom-1.0.3",
+      "disposition": {
+        "status": "reviewed",
+        "evidence": "Independent Quint4/Quint5 evidence and root review are recorded in release/component-reviews-20261028.json. Scoped to the exact source/notice identities and conservative attribution in staged offline v4 A. Preserve the complete notices and continuing non-endorsement conditions; no project grant, compiler/runtime approval or release acceptance is inferred."
+      },
+      "notice_disposition": null,
+      "notices": [
+        {
+          "path": "release/notices/language/elm-virtual-dom-1.0.3.txt",
+          "sha256": "c63bca41c3a19de3b16ede979ca1dfeb2ce0db93a62f4555dbb61ae3ee777425"
+        }
+      ]
+    },
+    {
+      "catalog": "language-components.json",
+      "component": "warlock-generated-elm-assets",
+      "disposition": {
+        "status": "unknown",
+        "evidence": "Three Elm bundles are combined output of project sources, compiler runtime and selected dependency code. The dependency graph is conservative, not proof every package contributes bytes. Project grant, exact generated-code attribution, upstream source linkage and independent redistribution review remain unresolved."
+      },
+      "notice_disposition": null,
+      "notices": []
+    },
+    {
+      "catalog": "language-components.json",
+      "component": "warlock-web-assets",
+      "disposition": {
+        "status": "unknown",
+        "evidence": "Source ownership, third-party attribution and redistribution grant have not been independently established. The inspected assets tree contains no font or icon files; system-ui references the host font, not a bundled font. Dynamic icon/preview content is outside the static payload inventory."
+      },
+      "notice_disposition": null,
+      "notices": []
+    },
+    {
+      "catalog": "language-components.json",
+      "component": "warlock-adapter-sources",
+      "disposition": {
+        "status": "unknown",
+        "evidence": "These staged adapter scripts include build tools. Authorship, third-party material, project license grant and independent redistribution disposition have not been established."
+      },
+      "notice_disposition": null,
+      "notices": []
+    },
+    {
+      "catalog": "language-components.json",
+      "component": "elm-retained-notices",
+      "disposition": {
+        "status": "unknown",
+        "evidence": "Exact notices retained from cached package LICENSE files and compiler upstream tag; applicability, completeness and redistribution review remain unresolved."
+      },
+      "notice_disposition": null,
+      "notices": []
+    }
+  ]
+}

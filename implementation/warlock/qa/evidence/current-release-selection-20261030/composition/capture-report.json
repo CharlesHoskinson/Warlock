@@ -1,0 +1,54 @@
+{
+  "checks": [
+    {
+      "name": "Current frontend and unchanged native role observation succeeds",
+      "passed": true
+    },
+    {
+      "name": "All original preflight and source deltas retained",
+      "passed": true
+    },
+    {
+      "name": "Historical seven and current two additions explicit",
+      "passed": true
+    },
+    {
+      "name": "One reviewed static asset delta explicit",
+      "passed": true
+    },
+    {
+      "name": "One reviewed release adapter delta explicit",
+      "passed": true
+    },
+    {
+      "name": "Executed source unchanged check_composition.py",
+      "passed": true
+    },
+    {
+      "name": "Executed source unchanged current_native.py",
+      "passed": true
+    },
+    {
+      "name": "Executed source unchanged current_build.py",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-repro-root-v1/check_composition.py": "94733b268280878ed9eaf2e3026a6ae3363c4ae348225a6c076daeed64a35aec",
+    "/home/charles/Warlock/implementation/warlock/adapter/current_build.py": "d4e5af280a275f9a777322ee60f1f34bf21751b6726edcaa4e4105a02da4dbc7",
+    "/home/charles/Warlock/implementation/warlock/adapter/current_native.py": "8bc7a0c1244192ea8c94f2388933eb056a0a8ad8888a1f879913e2c6d27fff69"
+  },
+  "limit": "Read-only original/current role validation and fixed/seeded declared-lock mutations; frozen host/object/provider/ABI inputs are never modified. No native code is loaded.",
+  "nativeAcceptance": false,
+  "passed": true,
+  "proposedLock": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-native-capture-1793327475166710937/native-lock.json",
+    "sha256": "159926b838187ef3d3b610ed119673293f138da9a53e4f382e787f3f69ad9afb"
+  },
+  "releaseAccepted": false,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-ce8cfd04451c47bba3924cf9061193ca.scope",
+    "coreLimit": 1
+  },
+  "seed": 20261030
+}

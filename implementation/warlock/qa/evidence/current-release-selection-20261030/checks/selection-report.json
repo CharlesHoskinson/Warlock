@@ -1,0 +1,196 @@
+{
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-b4d05c51f94647409fedae26f1f6ea44.scope",
+    "coreLimit": 1
+  },
+  "sources": {
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-repro-root-v1/check_selection.py": "85e05cb701ac329d5e76740eaedba8e0d90f5d26f4a7e2f27a98b42f66261601",
+    "/home/charles/Warlock/implementation/warlock/adapter/release_tuple.py": "3267a1d3eca90d9dbcccc2f918ea71aafd96e0bba43f49705f7d3d845f330320",
+    "/home/charles/Warlock/implementation/warlock/adapter/current_native.py": "8bc7a0c1244192ea8c94f2388933eb056a0a8ad8888a1f879913e2c6d27fff69"
+  },
+  "checks": [
+    {
+      "name": "Actual current composition selects exact native artifacts",
+      "passed": true
+    },
+    {
+      "name": "All nineteen current runtime assets retain exact hashes",
+      "passed": true
+    },
+    {
+      "name": "Every composition input retains its recorded digest",
+      "passed": true
+    },
+    {
+      "name": "Current selected host identity retained",
+      "passed": true
+    },
+    {
+      "name": "Owning loader alias retained",
+      "passed": true
+    },
+    {
+      "name": "Source and release provenance limits remain explicit",
+      "passed": true
+    },
+    {
+      "name": "Temporary validator module binding restored",
+      "passed": true
+    },
+    {
+      "name": "Wrong outer reviewed digest refused",
+      "passed": true,
+      "error": "Recorded artifact changed: /home/charles/.local/state/warlock-team/20261028/native-rebuild/current-native-capture-1793327475166710937/native-lock.json",
+      "errorType": "ChangedInput"
+    },
+    {
+      "name": "Unknown schema refused",
+      "passed": true,
+      "error": "Unsupported native tuple scope",
+      "errorType": "ValueError"
+    },
+    {
+      "name": "Unknown tuple kind refused",
+      "passed": true,
+      "error": "Unsupported native tuple scope",
+      "errorType": "ValueError"
+    },
+    {
+      "name": "Missing inputs becomes structured refusal",
+      "passed": true,
+      "error": "Current composition refused: 'inputs'",
+      "errorType": "ValueError"
+    },
+    {
+      "name": "Malformed inputs becomes structured refusal",
+      "passed": true,
+      "error": "Current composition refused: list indices must be integers or slices, not str",
+      "errorType": "ValueError"
+    },
+    {
+      "name": "Missing frontend becomes structured refusal",
+      "passed": true,
+      "error": "Current composition refused: 'frontend'",
+      "errorType": "ValueError"
+    },
+    {
+      "name": "Raised native acceptance refused",
+      "passed": true,
+      "error": "Current composition refused: Raised composition acceptance claim",
+      "errorType": "ValueError"
+    },
+    {
+      "name": "Wrong validator module digest refused",
+      "passed": true,
+      "error": "Current composition refused: Recorded artifact changed: /home/charles/Warlock/implementation/warlock/adapter/current_native.py",
+      "errorType": "ValueError"
+    },
+    {
+      "name": "Wrong historical adapter role refused",
+      "passed": true,
+      "error": "Current composition refused: Current composition or historical/current role inventory differs",
+      "errorType": "ValueError"
+    },
+    {
+      "name": "Wrong runtime asset digest refused",
+      "passed": true,
+      "error": "Current composition refused: Current composition or historical/current role inventory differs",
+      "errorType": "ValueError"
+    },
+    {
+      "name": "Nonobject tuple becomes structured refusal",
+      "passed": true,
+      "error": "Native tuple must be a JSON object",
+      "errorType": "ValueError"
+    },
+    {
+      "name": "Stale pre-adapter composition lock refused",
+      "passed": true,
+      "error": "Current composition refused: Recorded artifact changed: /home/charles/Warlock/implementation/warlock/adapter/current_native.py",
+      "errorType": "ValueError"
+    },
+    {
+      "name": "Original reviewed selection still succeeds",
+      "passed": true
+    },
+    {
+      "name": "Executed source unchanged check_selection.py",
+      "passed": true
+    },
+    {
+      "name": "Executed source unchanged release_tuple.py",
+      "passed": true
+    },
+    {
+      "name": "Executed source unchanged current_native.py",
+      "passed": true
+    }
+  ],
+  "nativeAcceptance": false,
+  "releaseAccepted": false,
+  "limits": "Production tuple selection and declared metadata mutations only. No compiler, native load or two-build comparison.",
+  "selection": {
+    "nativePair": {
+      "core": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-build/Hyprland",
+        "sha256": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e"
+      },
+      "plugin": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/authority/elm-window-geometry-authority.so",
+        "sha256": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c"
+      },
+      "aquamarine": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/lib/libaquamarine.so.0.15.0",
+        "sha256": "667a22d535aade4e4a26134e39028a87fb3f963c28b7bf7ff79da684bb014ecd"
+      }
+    },
+    "aliases": {
+      "libaquamarine.so.14": "libaquamarine.so.0.15.0"
+    },
+    "reference": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-native-capture-1793327475166710937/native-lock.json",
+      "sha256": "159926b838187ef3d3b610ed119673293f138da9a53e4f382e787f3f69ad9afb",
+      "sourceBase": "36c804af2e65a8fd016c98154f5b96b77c3f6fc3",
+      "hostSourcePrefix": "/home/charles/Warlock/implementation/warlock/native/",
+      "hostSHA256": "a6b0f0cdfaf9d1fbf35494501fe623c88e889497c14b6fc9f65a7cc6ac5cba97",
+      "loaderAlias": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/lib/libaquamarine.so.14",
+        "target": "libaquamarine.so.0.15.0"
+      },
+      "assets": {
+        "assets/activation.js": "06e3de6bcbc27e2b9a5d166fd665706e300ef5d4a29640b9bd70aa0f095a2c3e",
+        "assets/adapter.js": "9d99e140af65c67aa5395ce8dc3f3aee42b2b341e039e6514745e14ec9335f96",
+        "assets/appearance.js": "99b01609571af35328d7b69034f647f25651fb59d9d59928063a7e8c83a9b3f6",
+        "assets/bar-adapter.js": "2f1dd1dfd2f47850a2b455732c114bd98acea976c273c6ec594bef5208d4a68c",
+        "assets/bar.html": "b88b0b075fc4bcef147357b023823049b5e63e1b49354eb298737ef003328a66",
+        "assets/bar.js": "796e10a8c592e7dc68716b4976cc8075d4f0c2a6a9a925bd55b3bfb6bc610e6f",
+        "assets/context.js": "e843e72479a6e499a99f4369f145530e8e097c576e7d08926a6a912dbd50bc8d",
+        "assets/controlled-popup-adapter.js": "14d0a8eb0704414a9d7c2e270d23ca7cc2ff8f008e860051f8ab0e31bcab748c",
+        "assets/controlled-popup.html": "1e50055501c563f14762159620e2b56644d88779e5ffeba565d4730ebd4e9e4e",
+        "assets/elm.js": "fcf9a508a9061248eb0223d9cb3023ac3d00a1e82a5b05d865946771ab34157f",
+        "assets/index.html": "ba09087a0dda2fbc4a912d2d5d8f8adb90ae553a8027963fdb6b74a7afaa5d1b",
+        "assets/native-preview-control-outbox.js": "183253d5f781cf8527c4e58f31d44653e1b6fe8be58c0bdc89ae714ffb5e4484",
+        "assets/native-preview-proposals.js": "0172bad6c2491f697497cb9f8274ffa99feb8fca1d9942d31fbb2424bb035bf9",
+        "assets/popup-adapter.js": "5bac00f28cabc0173be32d4c6178daada0c21ace19e68bd8e82a061cdde927d2",
+        "assets/popup.html": "035cb884860bb1cda77c06773a750c631e5d6f20cf90557989bb37756270c422",
+        "assets/popup.js": "89c1b5e7afeac1fe9379079e3317388917ce9fd2bc258365f2c6815b78654c61",
+        "assets/recovered-native-preview-control-outbox.js": "4d5b641f57080b921789ed7c8f33f0c0303aa286bb444730d6054a53474f0297",
+        "assets/retained-preview-controls.js": "64bb384ee03acbb59619f78f3b931b922ed008d14006133b7294e864b92e93e5",
+        "assets/shell.css": "77566e786969cfb4d7c87f2e33cc9f36d2cf4682fdc2da21bf38073340979098"
+      },
+      "nativeAcceptance": false,
+      "historicalBinaryReproduction": false,
+      "compositionFrontend": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/pin-scrollport-build-root-v1/report.json",
+        "sha256": "65b909422a1866a9df8f118b134ea42778fd69564aed070bdb92c0975f3818d8"
+      },
+      "compositionFrontendLock": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/pin-scrollport-frontend-lock-root-v1.json",
+        "sha256": "8f35f73022732f33f156f52488e327cf8cd5d6604be7d27cea0325ca2e054199"
+      },
+      "missingObservation": "Complete at-build core and Aquamarine source, tool and dependency provenance is not attested by these receipts. Composition validates historical host and current frontend as separate roles; the host rebuild and two isolated offline comparisons remain unproven."
+    },
+    "inputCount": 4126
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "commands": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-repro-root-v1/check_composition.py",
+        "--mode",
+        "test",
+        "--frontend-report",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/pin-scrollport-build-root-v1/report.json",
+        "--frontend-sha256",
+        "65b909422a1866a9df8f118b134ea42778fd69564aed070bdb92c0975f3818d8",
+        "--lock",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-native-capture-1793327475166710937/native-lock.json",
+        "--sha256",
+        "159926b838187ef3d3b610ed119673293f138da9a53e4f382e787f3f69ad9afb"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-repro-root-v1/check_selection.py"
+      ],
+      "exit": 0
+    }
+  ],
+  "nativeAcceptance": false,
+  "releaseAccepted": false
+}

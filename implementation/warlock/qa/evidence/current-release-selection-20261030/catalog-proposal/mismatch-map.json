@@ -1,0 +1,239 @@
+{
+  "counts": {
+    "provenance": 14,
+    "payload": 8,
+    "new-payload-and-provenance": 2
+  },
+  "rows": [
+    {
+      "catalog": "native-components.json",
+      "component": "native-generated-host",
+      "role": "provenance",
+      "path": "implementation/warlock/native/shared-host.c",
+      "old": "6e7f43b92c08f19ac82f5c93d67ca69d0a11a6c73f01a763a018f2beba282a7a",
+      "current": "5d0d43c61574f292842bc34b2e3363cd5e7a215239e609bcb9780d475a9a8bbc",
+      "proof": "native-lock.inputs; selected source bytes",
+      "selected": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-native-capture-1793327475166710937/native-lock.json"
+    },
+    {
+      "catalog": "native-components.json",
+      "component": "native-generated-host",
+      "role": "payload",
+      "path": "elm-host",
+      "old": "4377b11ce0afe9e1072210666aa872118b032995275a20657058771e5e6c8347",
+      "current": "a6b0f0cdfaf9d1fbf35494501fe623c88e889497c14b6fc9f65a7cc6ac5cba97",
+      "proof": "native-lock.slots.host and selected host report"
+    },
+    {
+      "catalog": "language-components.json",
+      "component": "warlock-generated-elm-assets",
+      "role": "provenance",
+      "path": "implementation/warlock/src/Announcement.elm",
+      "old": "71bc1e29724266c26301716ea0a1c7452f02c9f67e140e1bd1ec33c5166d402f",
+      "current": "a1e6660c082c7c68657e356c2e4742cd8fd60e843192b88fa0609fb696a40f9f",
+      "proof": "native-lock.inputs; selected source bytes",
+      "selected": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-native-capture-1793327475166710937/native-lock.json"
+    },
+    {
+      "catalog": "language-components.json",
+      "component": "warlock-generated-elm-assets",
+      "role": "provenance",
+      "path": "implementation/warlock/src/Desktop.elm",
+      "old": "1b5b48fc5ca71c6e11bd54ea6ab723f5a37f4d383d6a59c99d14d83b005d5033",
+      "current": "a503d926599b5aa194956a1208fdc0004fb829442cd523c5372d41fd1fab0404",
+      "proof": "native-lock.inputs; selected source bytes",
+      "selected": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-native-capture-1793327475166710937/native-lock.json"
+    },
+    {
+      "catalog": "language-components.json",
+      "component": "warlock-generated-elm-assets",
+      "role": "provenance",
+      "path": "implementation/warlock/src/Main.elm",
+      "old": "6d797e72117cb0e057638eca1c29bcec8c1fa536221bccd605de48978458cf19",
+      "current": "7f5ddbe6fedf775e143b684ec60c9bfbdf15606414ed4fafc2c5553b514821c2",
+      "proof": "native-lock.inputs; selected source bytes",
+      "selected": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-native-capture-1793327475166710937/native-lock.json"
+    },
+    {
+      "catalog": "language-components.json",
+      "component": "warlock-generated-elm-assets",
+      "role": "provenance",
+      "path": "implementation/warlock/src/OutcomeAnnouncements.elm",
+      "old": "158b22f574983da656838c4388c93cca1c7d9b044aaae83ee21153eae29b7586",
+      "current": "c7fd2828c42b7cbc0f3b6fc705c26a551530d1eb22ed325e892a0e1faca6ca7e",
+      "proof": "native-lock.inputs; selected source bytes",
+      "selected": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-native-capture-1793327475166710937/native-lock.json"
+    },
+    {
+      "catalog": "language-components.json",
+      "component": "warlock-generated-elm-assets",
+      "role": "provenance",
+      "path": "implementation/warlock/src/OutputController.elm",
+      "old": "8da2227997dda10570707c456df8b00fcc000291c66a8ec2a48e8d5321cee8dc",
+      "current": "aaf1729287ff61595a237201b261e7c1ce11c8f2353c620171f48aff99d86f38",
+      "proof": "native-lock.inputs; selected source bytes",
+      "selected": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-native-capture-1793327475166710937/native-lock.json"
+    },
+    {
+      "catalog": "language-components.json",
+      "component": "warlock-generated-elm-assets",
+      "role": "provenance",
+      "path": "implementation/warlock/src/Presentation.elm",
+      "old": "8c3463230d93b768f48784a37ae9e4da7a225defa6f209b3100258af5196c0e9",
+      "current": "8c635b330641c4c06895357bdaee430b8eeed9b8ae88a83742f703c9f23a5dd6",
+      "proof": "native-lock.inputs; selected source bytes",
+      "selected": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-native-capture-1793327475166710937/native-lock.json"
+    },
+    {
+      "catalog": "language-components.json",
+      "component": "warlock-generated-elm-assets",
+      "role": "provenance",
+      "path": "implementation/warlock/src/Shell.elm",
+      "old": "93fdf86ac11ff9c190978fb46557623045a6c697d468a42fc9ba16a4bfa4df48",
+      "current": "f14b7fe3bfbf1a57f335f98914c988938c235823ba4596c067cf744776c4a9ae",
+      "proof": "native-lock.inputs; selected source bytes",
+      "selected": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-native-capture-1793327475166710937/native-lock.json"
+    },
+    {
+      "catalog": "language-components.json",
+      "component": "warlock-generated-elm-assets",
+      "role": "provenance",
+      "path": "implementation/warlock/src/ShortcutPreferences.elm",
+      "old": "d9196adaae768e57e2531b78ad2cd8fd22a2a81ad952d27c7c88d0fc72da8322",
+      "current": "d8c1a63f199612161e078e0f6c7f75cbbfa190953e19325e50169debc425dcec",
+      "proof": "native-lock.inputs; selected source bytes",
+      "selected": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-native-capture-1793327475166710937/native-lock.json"
+    },
+    {
+      "catalog": "language-components.json",
+      "component": "warlock-generated-elm-assets",
+      "role": "provenance",
+      "path": "implementation/warlock/src/SurfaceRenderer.elm",
+      "old": "48e03f50fd509ea0e42e23d7a1aa26396122350ab824c8dc179952b5bfd28c63",
+      "current": "f6c653573c1b73b32df132ada5033a1e34aa2cfa1a2dcbb42be4320a4a98a7b8",
+      "proof": "native-lock.inputs; selected source bytes",
+      "selected": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-native-capture-1793327475166710937/native-lock.json"
+    },
+    {
+      "catalog": "language-components.json",
+      "component": "warlock-generated-elm-assets",
+      "role": "payload",
+      "path": "assets/bar.js",
+      "old": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+      "current": "796e10a8c592e7dc68716b4976cc8075d4f0c2a6a9a925bd55b3bfb6bc610e6f",
+      "proof": "native-lock.assets and selected frontend report"
+    },
+    {
+      "catalog": "language-components.json",
+      "component": "warlock-generated-elm-assets",
+      "role": "payload",
+      "path": "assets/elm.js",
+      "old": "700524b6a1da72905daeecffd74216143bcf9242ea13c13d01f8bce3e1665be5",
+      "current": "fcf9a508a9061248eb0223d9cb3023ac3d00a1e82a5b05d865946771ab34157f",
+      "proof": "native-lock.assets and selected frontend report"
+    },
+    {
+      "catalog": "language-components.json",
+      "component": "warlock-generated-elm-assets",
+      "role": "payload",
+      "path": "assets/popup.js",
+      "old": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
+      "current": "89c1b5e7afeac1fe9379079e3317388917ce9fd2bc258365f2c6815b78654c61",
+      "proof": "native-lock.assets and selected frontend report"
+    },
+    {
+      "catalog": "language-components.json",
+      "component": "warlock-web-assets",
+      "role": "provenance",
+      "path": "implementation/warlock/assets/context.js",
+      "old": "2ff41ca906dc4e42ae76f65d486cf119b400414dee41ca886f5589709d2b9333",
+      "current": "e843e72479a6e499a99f4369f145530e8e097c576e7d08926a6a912dbd50bc8d",
+      "proof": "native-lock.inputs; selected source bytes",
+      "selected": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-native-capture-1793327475166710937/native-lock.json"
+    },
+    {
+      "catalog": "language-components.json",
+      "component": "warlock-web-assets",
+      "role": "provenance",
+      "path": "implementation/warlock/assets/popup-adapter.js",
+      "old": "050af2a6cfb58195f6999f126ab94f37573231007cb2fcd7d119873969365605",
+      "current": "5bac00f28cabc0173be32d4c6178daada0c21ace19e68bd8e82a061cdde927d2",
+      "proof": "native-lock.inputs; selected source bytes",
+      "selected": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-native-capture-1793327475166710937/native-lock.json"
+    },
+    {
+      "catalog": "language-components.json",
+      "component": "warlock-web-assets",
+      "role": "payload",
+      "path": "assets/context.js",
+      "old": "2ff41ca906dc4e42ae76f65d486cf119b400414dee41ca886f5589709d2b9333",
+      "current": "e843e72479a6e499a99f4369f145530e8e097c576e7d08926a6a912dbd50bc8d",
+      "proof": "native-lock.assets and selected frontend report"
+    },
+    {
+      "catalog": "language-components.json",
+      "component": "warlock-web-assets",
+      "role": "payload",
+      "path": "assets/popup-adapter.js",
+      "old": "050af2a6cfb58195f6999f126ab94f37573231007cb2fcd7d119873969365605",
+      "current": "5bac00f28cabc0173be32d4c6178daada0c21ace19e68bd8e82a061cdde927d2",
+      "proof": "native-lock.assets and selected frontend report"
+    },
+    {
+      "catalog": "language-components.json",
+      "component": "warlock-adapter-sources",
+      "role": "provenance",
+      "path": "implementation/warlock/adapter/recovery_profile.py",
+      "old": "651220f844591d5206b2f3f0f48fc2a652c7010d55cf796c1fda37cdc6adf6e8",
+      "current": "ace346503b5afd2c691748e7c2e1c25394fd81cc0a90be60525ff6cd85a78142",
+      "proof": "native-lock.inputs; selected source bytes",
+      "selected": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-native-capture-1793327475166710937/native-lock.json"
+    },
+    {
+      "catalog": "language-components.json",
+      "component": "warlock-adapter-sources",
+      "role": "provenance",
+      "path": "implementation/warlock/adapter/release_tuple.py",
+      "old": "4de13ed2c11e37261bb443a9506b5026aba00e785c2539ec4745960badcdd9cc",
+      "current": "3267a1d3eca90d9dbcccc2f918ea71aafd96e0bba43f49705f7d3d845f330320",
+      "proof": "native-lock.inputs; selected source bytes",
+      "selected": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-native-capture-1793327475166710937/native-lock.json"
+    },
+    {
+      "catalog": "language-components.json",
+      "component": "warlock-adapter-sources",
+      "role": "payload",
+      "path": "adapter/recovery_profile.py",
+      "old": "651220f844591d5206b2f3f0f48fc2a652c7010d55cf796c1fda37cdc6adf6e8",
+      "current": "ace346503b5afd2c691748e7c2e1c25394fd81cc0a90be60525ff6cd85a78142",
+      "proof": "actual staged source file; native-lock input when present"
+    },
+    {
+      "catalog": "language-components.json",
+      "component": "warlock-adapter-sources",
+      "role": "payload",
+      "path": "adapter/release_tuple.py",
+      "old": "4de13ed2c11e37261bb443a9506b5026aba00e785c2539ec4745960badcdd9cc",
+      "current": "3267a1d3eca90d9dbcccc2f918ea71aafd96e0bba43f49705f7d3d845f330320",
+      "proof": "actual staged source file; native-lock input when present"
+    },
+    {
+      "catalog": "language-components.json",
+      "component": "warlock-adapter-sources",
+      "role": "new-payload-and-provenance",
+      "path": "adapter/current_build.py",
+      "old": null,
+      "current": "d4e5af280a275f9a777322ee60f1f34bf21751b6726edcaa4e4105a02da4dbc7",
+      "proof": "native-lock.inputs and builder copies complete adapter directory"
+    },
+    {
+      "catalog": "language-components.json",
+      "component": "warlock-adapter-sources",
+      "role": "new-payload-and-provenance",
+      "path": "adapter/current_native.py",
+      "old": null,
+      "current": "8bc7a0c1244192ea8c94f2388933eb056a0a8ad8888a1f879913e2c6d27fff69",
+      "proof": "native-lock.inputs and builder copies complete adapter directory"
+    }
+  ]
+}

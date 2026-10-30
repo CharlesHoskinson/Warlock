@@ -2,6 +2,8 @@
 import os
 import hashlib
 import json
+import importlib.util
+import sys
 from pathlib import Path
 
 REQUIRED_REPORTS = ('core-build-report.json', 'core-source-manifest.json',
@@ -35,6 +37,86 @@ def inside(root, relative):
         raise ValueError('Invalid tuple source path: ' + str(relative))
     return root / p
 
+def capture_composition(repo, path, digest, lock, add):
+    """Validate the reviewed composition with its actual production validators."""
+    adapter = Path(repo) / 'implementation/warlock/adapter'
+    modules = {}
+    for name in ('current_build', 'current_native'):
+        module_path = (adapter / (name + '.py')).absolute()
+        expected = lock['inputs'][str(module_path)]
+        add(module_path, 'composition-validator', expected)
+        body = module_path.read_bytes()
+        if hashlib.sha256(body).hexdigest() != expected:
+            raise ValueError('Composition validator changed during read: ' + str(module_path))
+        spec = importlib.util.spec_from_loader(name, loader=None)
+        module = importlib.util.module_from_spec(spec)
+        module.__file__ = str(module_path)
+        modules[name] = (module, body, module_path)
+    previous = sys.modules.get('current_build')
+    try:
+        frontend, body, module_path = modules['current_build']
+        exec(compile(body, str(module_path), 'exec'), frontend.__dict__)
+        # Decode the same captured bytes that were checked, including nested
+        # frontend receipt/lock reads. All other validator logic is unchanged.
+        def exact_read(path, expected=None):
+            path = Path(path)
+            if expected is not None:
+                add(path, 'composition-json', expected)
+            raw = path.read_bytes()
+            if expected is not None and hashlib.sha256(raw).hexdigest() != expected:
+                raise ValueError('Composition JSON changed during read: ' + str(path))
+            return json.loads(raw, object_pairs_hook=frontend.unique)
+        frontend.read = exact_read
+        sys.modules['current_build'] = frontend
+        native, body, module_path = modules['current_native']
+        exec(compile(body, str(module_path), 'exec'), native.__dict__)
+        receipt = lock['frontend']
+        result = native.validate_composition(receipt['path'], receipt['sha256'], path, digest)
+    except RuntimeError as error:
+        raise ValueError('Current composition refused: ' + str(error)) from error
+    finally:
+        if previous is None:
+            sys.modules.pop('current_build', None)
+        else:
+            sys.modules['current_build'] = previous
+    if result != lock:
+        raise ValueError('Composition changed during selection')
+    for name, expected in result['inputs'].items():
+        p = absolute(name)
+        if str(p.resolve(strict=True)) != result['resolutions'][name]:
+            raise ValueError('Composition input resolution changed: ' + name)
+        add(p, 'current-composition-input', expected)
+    for name, target in result['aliases'].items():
+        p = absolute(name)
+        if not p.is_symlink() or os.readlink(p) != target:
+            raise ValueError('Composition alias changed: ' + name)
+    assets = {}
+    for name, expected in result['assets']['files'].items():
+        source = inside(absolute(result['assets']['directory']), name)
+        add(source, 'current-frontend-output', expected)
+        assets['assets/' + name] = expected
+    slots = result['slots']
+    aq = slots['aquamarine']
+    alias = absolute(aq['sonameAlias'])
+    library = absolute(aq['path'])
+    target = aq['aliasTarget']
+    if (Path(target).name != target or alias.parent != library.parent or
+            target != library.name or not alias.is_symlink() or
+            os.readlink(alias) != target or alias.resolve() != library.resolve()):
+        raise ValueError('Composition Aquamarine loader alias changed')
+    add(alias, 'native-aquamarine-loader-alias', aq['sha256'])
+    pair = {role: {'path': slots[name]['path'], 'sha256': slots[name]['sha256']}
+            for role, name in (('core', 'core'), ('plugin', 'authority'), ('aquamarine', 'aquamarine'))}
+    reference = {'path': str(path), 'sha256': digest,
+        'sourceBase': result['historicalRevision'],
+        'hostSourcePrefix': str(Path(repo) / 'implementation/warlock/native') + '/',
+        'hostSHA256': slots['host']['sha256'],
+        'loaderAlias': {'path': str(alias), 'target': target}, 'assets': assets,
+        'nativeAcceptance': False, 'historicalBinaryReproduction': False,
+        'compositionFrontend': result['frontend'], 'compositionFrontendLock': result['frontendLock'],
+        'missingObservation': 'Complete at-build core and Aquamarine source, tool and dependency provenance is not attested by these receipts. Composition validates historical host and current frontend as separate roles; the host rebuild and two isolated offline comparisons remain unproven.'}
+    return pair, {alias.name: target}, reference
+
 def capture(repo, tuple_path, tuple_sha, add, read, sha):
     """Validate recorded inputs, add them to the immutable lock, return tuple data.
 
@@ -56,6 +138,13 @@ def capture(repo, tuple_path, tuple_sha, add, read, sha):
         raise ValueError('Both native tuple path and lowercase SHA-256 are required')
     path = absolute(tuple_path)
     t = locked_read(path, tuple_sha, 'selected-native-tuple', add)
+    if not isinstance(t, dict):
+        raise ValueError('Native tuple must be a JSON object')
+    if t.get('schema') == 1 and t.get('kind') == 'warlock-current-native-composition-lock':
+        try:
+            return capture_composition(repo, path, tuple_sha, t, add)
+        except (RuntimeError, KeyError, TypeError) as error:
+            raise ValueError('Current composition refused: ' + str(error)) from error
     if t.get('schema') != 1 or t.get('kind') != 'new derivative native tuple; not historical binary reproduction' or t.get('nativeAcceptance') is not False or t.get('pluginLoaded') is not False:
         raise ValueError('Unsupported native tuple scope')
     slots = t['slots']; refs = t['reports']

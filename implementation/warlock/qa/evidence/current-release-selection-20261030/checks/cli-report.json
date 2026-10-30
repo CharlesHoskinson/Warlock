@@ -1,0 +1,177 @@
+{
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-ced52a3eba8f4285a0f467d336b56f65.scope",
+    "coreLimit": 1
+  },
+  "sourceSHA256": "356fb2bd7b5a601749478013a12075713ec11bc53266dfd59607a269533e0f87",
+  "checks": [
+    {
+      "name": "help",
+      "passed": true,
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/charles/Warlock/implementation/warlock/qa/check-release-repro.py",
+        "--help"
+      ],
+      "exit": 0,
+      "expectedExit": 0
+    },
+    {
+      "name": "missing hash",
+      "passed": true,
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/charles/Warlock/implementation/warlock/qa/check-release-repro.py",
+        "--native-tuple",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-repro-root-v1/unselected-test-tuple.json"
+      ],
+      "exit": 2,
+      "expectedExit": 2
+    },
+    {
+      "name": "missing path",
+      "passed": true,
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/charles/Warlock/implementation/warlock/qa/check-release-repro.py",
+        "--native-tuple-sha256",
+        "0000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "exit": 2,
+      "expectedExit": 2
+    },
+    {
+      "name": "relative path",
+      "passed": true,
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/charles/Warlock/implementation/warlock/qa/check-release-repro.py",
+        "--native-tuple",
+        "relative.json",
+        "--native-tuple-sha256",
+        "0000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "exit": 2,
+      "expectedExit": 2
+    },
+    {
+      "name": "short hash",
+      "passed": true,
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/charles/Warlock/implementation/warlock/qa/check-release-repro.py",
+        "--native-tuple",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-repro-root-v1/unselected-test-tuple.json",
+        "--native-tuple-sha256",
+        "bad"
+      ],
+      "exit": 2,
+      "expectedExit": 2
+    },
+    {
+      "name": "uppercase hash",
+      "passed": true,
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/charles/Warlock/implementation/warlock/qa/check-release-repro.py",
+        "--native-tuple",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-repro-root-v1/unselected-test-tuple.json",
+        "--native-tuple-sha256",
+        "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      ],
+      "exit": 2,
+      "expectedExit": 2
+    },
+    {
+      "name": "wrong actual digest",
+      "passed": true,
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/charles/Warlock/implementation/warlock/qa/check-release-repro.py",
+        "--native-tuple",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-repro-root-v1/unselected-test-tuple.json",
+        "--native-tuple-sha256",
+        "0000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "exit": 2,
+      "expectedExit": 2
+    },
+    {
+      "name": "unreadable tuple",
+      "passed": true,
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/charles/Warlock/implementation/warlock/qa/check-release-repro.py",
+        "--native-tuple",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-repro-root-v1/absent.json",
+        "--native-tuple-sha256",
+        "0000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "exit": 2,
+      "expectedExit": 2
+    },
+    {
+      "name": "FIFO refused before read",
+      "passed": true,
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/charles/Warlock/implementation/warlock/qa/check-release-repro.py",
+        "--native-tuple",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-repro-root-v1/unselected-pipe",
+        "--native-tuple-sha256",
+        "0000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "exit": 2,
+      "expectedExit": 2
+    },
+    {
+      "name": "probe cannot claim tuple validation",
+      "passed": true,
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/charles/Warlock/implementation/warlock/qa/check-release-repro.py",
+        "--probe",
+        "--native-tuple",
+        "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-repro-root-v1/unselected-test-tuple.json",
+        "--native-tuple-sha256",
+        "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      ],
+      "exit": 2,
+      "expectedExit": 2
+    },
+    {
+      "name": "unknown argument",
+      "passed": true,
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/charles/Warlock/implementation/warlock/qa/check-release-repro.py",
+        "--unknown"
+      ],
+      "exit": 2,
+      "expectedExit": 2
+    },
+    {
+      "name": "No run directories created on rejected/help arguments",
+      "passed": true
+    },
+    {
+      "name": "Executed source unchanged",
+      "passed": true
+    }
+  ],
+  "nativeAcceptance": false,
+  "releaseAccepted": false,
+  "limits": "Only real CLI help/refusals. No valid tuple capture, namespace probe, compiler or isolated build is run."
+}
