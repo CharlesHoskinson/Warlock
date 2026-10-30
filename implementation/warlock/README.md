@@ -980,3 +980,21 @@ These checks do not observe a live popup or accept application-pin versus
 always-on-top independence. Exact native popup ownership, current geometry,
 applicable input/AT actions and normal cleanup remain required. See
 [the ownership explanation](../../docs/warlock/explanation/application-pin-and-always-on-top.md).
+
+## Native pin/top interval observations
+
+[Current isolated evidence](qa/evidence/pin-top-current-20261030/LIMITS.md) records
+five application-pin save intervals and pointer native pin / keyboard native
+unpin preserving the other state, with exact receipts and no duplicate launches.
+The actual popup scrollport, native object lifetime, current control and pixels
+are observed. Both runs fail overall; the first fixture used Tab where menu
+operations use ArrowDown. The corrected run stops before the real AT action
+because the helper refuses its sole empty action name. All owned clients exit
+normally and both private runtimes are removed.
+
+Complete pin/top independence, applicable AT actions and whole UI004 remain open.
+The protected `qa/native-pin-independence-current.py` entry preserves the failed
+current route for reproducibility; it is not a passing acceptance campaign or an
+installation command. The stop history remains in force; no automatic retry is
+implied. Original New instance and keyboard-only menu-opening obligations are
+separate.

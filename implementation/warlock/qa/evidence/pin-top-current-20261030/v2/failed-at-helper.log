@@ -1,0 +1,7 @@
+/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-pin-semantics/at-action.py:31: DeprecationWarning: Atspi.Action.get_action_name is deprecated
+  action=obj.get_action_iface();actions=[action.get_action_name(i) for i in range(action.get_n_actions())]
+Traceback (most recent call last):
+  File "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-pin-semantics/at-action.py", line 32, in <module>
+    indices=[i for i,n in enumerate(actions) if n.lower() in ['click','press','activate']];assert len(indices)==1,actions
+                                                                                                  ^^^^^^^^^^^^^^^
+AssertionError: ['']

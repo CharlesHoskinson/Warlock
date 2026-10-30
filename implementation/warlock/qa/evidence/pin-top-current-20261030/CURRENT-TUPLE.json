@@ -1,0 +1,68 @@
+{
+  "frontend": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/pin-scrollport-build-root-v1/report.json",
+    "sha256": "65b909422a1866a9df8f118b134ea42778fd69564aed070bdb92c0975f3818d8"
+  },
+  "nativeLock": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/current-native-capture-1793324986522396247/native-lock.json",
+    "sha256": "ba97d48eaa4f8c093c63f4b6b6e46d9d2ad602f95ffae16cda226af550d8bcd0"
+  },
+  "nativeSlots": {
+    "aquamarine": {
+      "aliasTarget": "libaquamarine.so.0.15.0",
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/lib/libaquamarine.so.0.15.0",
+      "sha256": "667a22d535aade4e4a26134e39028a87fb3f963c28b7bf7ff79da684bb014ecd",
+      "sonameAlias": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/prefix/lib/libaquamarine.so.14"
+    },
+    "authority": {
+      "loaded": false,
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/authority/elm-window-geometry-authority.so",
+      "report": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/authority/authority-build-report.json",
+        "sha256": "efa8ad035d2f9bb9a2864f091407df0bdb97685dfae6e512b914a9f32c06280b"
+      },
+      "sha256": "9ae1626ab46a3993f30890689425ab7a92354b0c9ed604e4283f6d507c5d170c",
+      "staticClosureOnly": true
+    },
+    "core": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/core-build/Hyprland",
+      "sha256": "b1c58200342f3cb8f5442bc34b92563ca21801194a0d63afc6e74280ca3abd0e"
+    },
+    "host": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/first-use-delivery-context-root-v1/output/elm-host",
+      "report": {
+        "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/first-use-delivery-context-root-v1/output/report.json",
+        "sha256": "65b7e0fe87f775b6489a2092f355856cd273ec4461114897ddfeed177b721987"
+      },
+      "sha256": "a6b0f0cdfaf9d1fbf35494501fe623c88e889497c14b6fc9f65a7cc6ac5cba97"
+    }
+  },
+  "actualRuntimeAssets": {
+    "directory": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/pin-scrollport-build-root-v1/assets",
+    "files": {
+      "activation.js": "06e3de6bcbc27e2b9a5d166fd665706e300ef5d4a29640b9bd70aa0f095a2c3e",
+      "adapter.js": "9d99e140af65c67aa5395ce8dc3f3aee42b2b341e039e6514745e14ec9335f96",
+      "appearance.js": "99b01609571af35328d7b69034f647f25651fb59d9d59928063a7e8c83a9b3f6",
+      "bar-adapter.js": "2f1dd1dfd2f47850a2b455732c114bd98acea976c273c6ec594bef5208d4a68c",
+      "bar.html": "b88b0b075fc4bcef147357b023823049b5e63e1b49354eb298737ef003328a66",
+      "bar.js": "796e10a8c592e7dc68716b4976cc8075d4f0c2a6a9a925bd55b3bfb6bc610e6f",
+      "context.js": "e843e72479a6e499a99f4369f145530e8e097c576e7d08926a6a912dbd50bc8d",
+      "controlled-popup-adapter.js": "14d0a8eb0704414a9d7c2e270d23ca7cc2ff8f008e860051f8ab0e31bcab748c",
+      "controlled-popup.html": "1e50055501c563f14762159620e2b56644d88779e5ffeba565d4730ebd4e9e4e",
+      "elm.js": "fcf9a508a9061248eb0223d9cb3023ac3d00a1e82a5b05d865946771ab34157f",
+      "index.html": "ba09087a0dda2fbc4a912d2d5d8f8adb90ae553a8027963fdb6b74a7afaa5d1b",
+      "native-preview-control-outbox.js": "183253d5f781cf8527c4e58f31d44653e1b6fe8be58c0bdc89ae714ffb5e4484",
+      "native-preview-proposals.js": "0172bad6c2491f697497cb9f8274ffa99feb8fca1d9942d31fbb2424bb035bf9",
+      "popup-adapter.js": "5bac00f28cabc0173be32d4c6178daada0c21ace19e68bd8e82a061cdde927d2",
+      "popup.html": "035cb884860bb1cda77c06773a750c631e5d6f20cf90557989bb37756270c422",
+      "popup.js": "89c1b5e7afeac1fe9379079e3317388917ce9fd2bc258365f2c6815b78654c61",
+      "recovered-native-preview-control-outbox.js": "4d5b641f57080b921789ed7c8f33f0c0303aa286bb444730d6054a53474f0297",
+      "retained-preview-controls.js": "64bb384ee03acbb59619f78f3b931b922ed008d14006133b7294e864b92e93e5",
+      "shell.css": "77566e786969cfb4d7c87f2e33cc9f36d2cf4682fdc2da21bf38073340979098"
+    }
+  },
+  "note": "Raw report sourceInputs also captures historical generated assets in the checkout. Actual loaded assets are from the separately validated runtime directory recorded here.",
+  "nativeAcceptance": false,
+  "releaseAccepted": false,
+  "slotMetadataScope": "Slots are composition capture metadata. Flags loaded=false/staticClosureOnly describe that static capture, not actual native execution. The raw native reports record owning plugin load and normal unload."
+}

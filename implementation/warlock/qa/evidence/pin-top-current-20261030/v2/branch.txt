@@ -1,0 +1,128 @@
+    elif PINMENUS:
+     import re
+     # ELM-UI-004: observe independent persistence and native m_pinned state.
+     state_file=pathlib.Path(env['XDG_STATE_HOME'])/'warlock/taskbar.json'
+     def stored():
+      if not state_file.exists():return {'revision':'1','identities':[]}
+      value=json.loads(state_file.read_text());assert value['schema']==1 and len(value['identities'])==len(set(value['identities']))
+      return value
+     def native_pin():
+      row=current_window();assert row['incarnation']==target and type(row['pinned']) is bool
+      return row['pinned']
+     def owner_guard():
+      native=current_window(); monitors=s.data('monitors'); owner=[m for m in monitors if str(m['id'])==str(native['monitor'])]
+      check('CurrentOutputOwner',len(owner)==1 and owner[0]['name']=='WAYLAND-1' and owner[0]['x']==0 and owner[0]['y']==0 and owner[0]['width']==800 and owner[0]['height']==600 and owner[0].get('scale')==1 and owner[0].get('transform',0)==0,window=native,outputs=monitors)
+     def fresh_body(mode):
+      body=popup_body();p=projection()
+      return body if body and p and p.get('phase')=='Coherent' and p.get('mode')==mode and body.get('publication')==p.get('publication') and body.get('documentFocused') and body.get('lease') and body.get('mode')==mode else None
+     def exact_button(mode,label):
+      body=fresh_body(mode)
+      if not body:return None
+      buttons=[b for b in body['buttons'] if b['accessibleName']==label and not b['disabled']]
+      if len(buttons)!=1:return None
+      b=buttons[0]
+      if not (b['x']>=0 and b['y']>=0 and b['width']>0 and b['height']>0 and b['x']+b['width']<=body['viewportWidth'] and b['y']+b['height']<=body['viewportHeight']):return None
+      return body,b
+     def popup_guard(mode,label):
+      import math
+      owner_guard();body,button=wait(lambda:exact_button(mode,label));p=projection();join=pin_popup_join(text(),body,p,target)
+      check('PopupNativeObjectBinding',bool(join),body=body,nativeJoin=join)
+      rect=join['rect'];px,py,pw,ph=rect;viewport=(body['viewportWidth'],body['viewportHeight']);port=body.get('scrollport') or {}
+      nums=[px,py,pw,ph,*viewport,*[port.get(k) for k in ('x','y','width','height')],*[button.get(k) for k in ('x','y','width','height')]]
+      check('PopupActualScrollportFinite',all(type(v) in (int,float) and math.isfinite(v) for v in nums) and pw>0 and ph>0 and port['width']>0 and port['height']>0 and button['width']>0 and button['height']>0 and tuple(viewport)==(pw,ph),body=body,rect=rect)
+      image=OUTPUT/('pin-popup-'+str(len(report.get('pinPopupCaptures',[])))+'.png');helper(['/usr/bin/grim',str(image)])
+      import gi;gi.require_version('GdkPixbuf','2.0');from gi.repository import GdkPixbuf
+      pix=GdkPixbuf.Pixbuf.new_from_file(str(image));iw,ih=pix.get_width(),pix.get_height()
+      bx,by,bw,bh=(button[k] for k in ('x','y','width','height'));cx,cy,cw,ch=(port[k] for k in ('x','y','width','height'))
+      check('PopupWholeControlContained',0<=bx and 0<=by and bx+bw<=pw and by+bh<=ph and cx<=bx and cy<=by and bx+bw<=cx+cw and by+bh<=cy+ch and 0<=px+bx and 0<=py+by and px+bx+bw<=iw and py+by+bh<=ih and iw==800 and ih==600,body=body,button=button,rect=rect,scrollport=port,screenshot=[iw,ih])
+      pixels=pix.get_pixels();stride=pix.get_rowstride();channels=pix.get_n_channels();left=math.ceil(px+bx)+12;top=math.ceil(py+by)+6;right=math.floor(px+bx+min(220,bw))-12;bottom=math.floor(py+by+bh)-6
+      area=max(0,right-left)*max(0,bottom-top);bright=sum(1 for y in range(top,bottom) for x in range(left,right) if all(pixels[y*stride+x*channels+c]>170 for c in range(3)));painted=sum(1 for y in range(top,bottom) for x in range(left,right) if all(pixels[y*stride+x*channels+c]>15 for c in range(3)))
+      check('ActualPopupControlTextPixels',area>0 and bright>15 and painted>.9*area,accessibleName=label,brightPixels=bright,paintedPixels=painted,area=area,region=[left,top,right,bottom])
+      again=wait(lambda:exact_button(mode,label));check('PopupFrameUnchangedAfterCapture',again[0]==body and again[1]==button and pin_popup_join(text(),again[0],projection(),target)==join)
+      report.setdefault('pinPopupCaptures',[]).append({'path':str(image),'sha256':sha(image),'body':body,'button':button,'nativeJoin':join,'screenshot':[iw,ih]})
+      current=wait(lambda:exact_button(mode,label));check('PopupFrameUnchangedBeforePointer',current[0]==body and current[1]==button and pin_popup_join(text(),current[0],projection(),target)==join)
+      return body,button,join
+     def popup_pointer(mode,label):
+      body,button,join=popup_guard(mode,label);px,py,_,_=join['rect'];bx,by,bw,bh=(button[k] for k in ('x','y','width','height'))
+      current=wait(lambda:exact_button(mode,label));check('PopupStillCurrentAtPhysicalAction',current[0]==body and current[1]==button and pin_popup_join(text(),current[0],projection(),target)==join)
+      x,y=map(round,(px+bx+bw/2,py+by+bh/2));helper([str(POINTER),'800','600'],f'move {x} {y}\nsleep 100\nbutton 272 1\nsleep 50\nbutton 272 0\nsleep 100\n')
+     def focus_control(mode,label):
+      body,b=wait(lambda:exact_button(mode,label));lease=body['lease'];identity=b['identity']
+      for _ in range(len(body['buttons'])+2):
+       pair=wait(lambda:exact_button(mode,label));body,b=pair;assert body['lease']==lease and b['identity']==identity
+       if body['focus']==b['id']:break
+       key(108 if mode=='menu' else 15)
+      body,b=wait(lambda:exact_button(mode,label));assert body['lease']==lease and b['identity']==identity and body['focus']==b['id']
+      checked_body,checked_button,_=popup_guard(mode,label);assert checked_body==body and checked_button==b
+      return body,b
+     def at_press(mode,label):
+      owner_guard();body,b=focus_control(mode,label);publication=body['publication'];lease=body['lease'];domid=b['id'];identity=b['identity'];host_start=start_time(web.pid)
+      def observed():
+       value=at_observe();focus=(value.get('reader') or {}).get('focus') or {}
+       nodes=[n for n in value['nodes'] if n.get('pid')==web.pid and n.get('name')==label and n.get('role') in ['menu item','check menu item','button','push button','toggle button'] and n.get('identity') and (n.get('attributes') or {}).get('id')==domid and {'enabled','sensitive','showing','visible','focused'}<=set(n['states']) and any(a['role']=='document web' for a in n['ancestors'])]
+       return (value,nodes[0]) if len(nodes)==1 and focus.get('name')==label and focus.get('identity')==nodes[0]['identity'] and start_time(web.pid)==host_start and (mode!='menu' or (nodes[0].get('role')=='check menu item' and any(a.get('role')=='menu' for a in nodes[0].get('ancestors',[])) and ('checked' in nodes[0].get('states',[]))==native_pin())) else None
+      value,node=wait(observed);current=wait(lambda:exact_button(mode,label));check('ActualATCurrentControl'+label,current[0]['publication']==publication and current[0]['lease']==lease and current[1]['identity']==identity and current[1]['id']==domid and current[0]['focus']==domid,node=node)
+      guarded_body,guarded_button,guarded_join=popup_guard(mode,label);check('AtControlFrameStillCurrent',guarded_body==current[0] and guarded_button==current[1] and pin_popup_join(text(),guarded_body,projection(),target)==guarded_join)
+      receipt=OUTPUT/('pin-semantics-at-'+str(len(report.get('pinAtActions',[])))+'.json');helper(['/usr/bin/python3','-B',str(PIN_AT_HELPER),str(web.pid),node['identity'],label,domid,str(receipt)])
+      result=json.loads(receipt.read_text());check('ActualATAction'+label,result['passed'] and result['source']=='actual-at-spi-action' and result['before']['pid']==web.pid and result['before']['domId']==domid and result['before']['identity']==node['identity'] and start_time(web.pid)==host_start,receipt=result);report.setdefault('pinAtActions',[]).append(result)
+     def open_applications_fixture():
+      body=bar_body();p=projection();assert body and p and body['publication']==p['publication'] and p['phase']=='Coherent'
+      b=next(x for x in body['buttons'] if x['accessibleName']=='Open applications' and not x['disabled']);click(assert_current_bar_button(b))
+      def current_search():
+       current=fresh_body('applications')
+       if not current or current.get('focus')!='launcher-search':return None
+       fields=[f for f in current.get('fields',[]) if f.get('id')=='launcher-search' and not f.get('disabled')]
+       if len(fields)!=1:return None
+       return (current['lease'],current['publication'],fields[0]['id'],fields[0]['value'])
+      captured=wait(current_search);lease,publication,identity,value=captured
+      if value=='':
+       before_input=current_search()
+       if before_input!=captured:raise RuntimeError('Applications search changed before typing')
+       query([25,18,18,19],'peer')
+      elif value!='peer':raise RuntimeError('Unexpected retained applications search draft')
+      after=wait(current_search)
+      check('RetainedPeerSearchUsesCurrentLease',after[0]==lease and after[2]==identity and after[3]=='peer',lease=lease,initialPublication=publication,finalPublication=after[1],initialDraft=value)
+     def dismiss_apps():
+      keyboard_button('Close applications and return to windows');wait(lambda:(projection() or {}).get('mode')=='closed' and projection()['phase']=='Coherent')
+     def app_change(label,method,want_pin,want_native):
+      before=stored();before_revision=int(before['revision']);before_native=native_pin();before_requests=len(requests('taskbar-pins-write'));before_effects=len(journal());before_launches=len(launches());assert before_native==want_native
+      open_applications_fixture();owner_guard()
+      if method=='pointer':popup_pointer('applications',label)
+      elif method=='keyboard':focus_control('applications',label);key(28)
+      else:at_press('applications',label)
+      expected=[x for x in before['identities'] if x!='warlock-running-peer']+(['warlock-running-peer'] if want_pin else [])
+      wait(lambda:stored()['identities']==expected and len(requests('taskbar-pins-write'))==before_requests+1)
+      request=requests('taskbar-pins-write')[-1]
+      def outcome():
+       values=[json.loads(line.split(': ',1)[1]) for line in text().splitlines() if line.startswith('backend-frame: ')];return [x for x in values if x.get('kind')=='taskbar-pins-outcome' and x.get('binding')==request['binding'] and x.get('requestId')==request['requestId']]
+      receipts=wait(outcome);check('ApplicationPinPreservesNative'+label+method,request['proposal']['revision']==before['revision'] and request['proposal']['identities']==expected and len(receipts)==1 and receipts[0]['status']=='Saved' and receipts[0]['preferences']['identities']==expected and int(stored()['revision'])==before_revision+1 and receipts[0]['preferences']['revision']==stored()['revision'] and native_pin()==before_native and len(journal())==before_effects and len(launches())==before_launches,request=request,receipt=receipts[0],stored=stored(),nativePinned=native_pin())
+      dismiss_apps()
+     def pin_button():
+      body=bar_body();p=projection()
+      if not body or not p or p.get('phase')!='Coherent' or p.get('publication')!=body.get('publication'):return None
+      matches=[b for b in body['buttons'] if b.get('identity')=='bar:pin:warlock-running-peer' and not b['disabled']]
+      return matches[0] if len(matches)==1 else None
+     def open_menu(method):
+      owner_guard()
+      if method=='pointer':
+       button=wait(pin_button);item=assert_current_bar_button(button);current=projection();check('PinContextStampedBeforeSecondary',current_bar_control(item,current,bar_body()));before_lines=len(text().splitlines());stamp=item['_qaBarControl'];view_rows=[line for line in text().splitlines() if line.startswith('view-report: ') and json.loads(line.split(' ',4)[4])['body'].get('publication')==stamp['publication']];assert view_rows;owner=re.search(r'id=(\d+)',view_rows[-1])[1];topology_rows=[json.loads(line.split(': ',1)[1]) for line in text().splitlines() if line.startswith('view-topology: ')];assert topology_rows and len(topology_rows[-1]['views'])==1 and topology_rows[-1]['views'][0]['id']==owner;generation=topology_rows[-1]['views'][0]['generation'];expected_admission='surface-context-admitted: view='+owner+' generation='+generation+' origin=bar trigger=pointer publication='+stamp['publication']+' lease='+stamp['lease'];x,y=map(round,item['point']);check('CurrentPinContextTarget',item['visible'] and 0<=x<800 and 0<=y<600,item=item)
+       helper([str(POINTER),'800','600'],f'move {x} {y}\nsleep 100\nbutton 273 1\nsleep 50\nbutton 273 0\nsleep 100\n');wait(lambda:expected_admission in text().splitlines()[before_lines:]);check('ExactCurrentContextAdmission',text().splitlines()[before_lines:].count(expected_admission)==1,admission=expected_admission)
+      else:raise RuntimeError('window context opener must be a physical secondary click')
+      body=wait(lambda:fresh_body('menu'));check('ContextPopupTargetsSameNativeIncarnation',bool(pin_popup_join(text(),body,projection(),target)));return body
+     def top_change(method,desired):
+      before=stored();before_bytes=state_file.read_bytes();before_sha=sha(state_file);before_writes=len(requests('taskbar-pins-write'));before_effects=len(journal());before_launches=len(launches());assert native_pin()!=desired
+      open_menu('pointer');label='Always on top'
+      if method=='pointer':popup_pointer('menu',label)
+      elif method=='keyboard':focus_control('menu',label);key(28)
+      else:at_press('menu',label)
+      wait(lambda:native_pin()==desired and len(journal())==before_effects+1)
+      request=journal()[-1];assert request['intent']['incarnation']==target and request['intent']['operation']==('pin' if desired else 'unpin')
+      def outcome():
+       frames=[json.loads(line.split(': ',1)[1]) for line in text().splitlines() if line.startswith('backend-frame: ')];return [x for x in frames if x.get('kind')=='effect-outcome' and x.get('binding')==request['binding'] and x.get('effectProtocol')==request['effectProtocol'] and x.get('intent')==request['intent']]
+      receipts=wait(outcome);check('NativeAlwaysOnTopPreservesApplicationPins'+method+str(desired),len(receipts)==1 and receipts[0]['status']=='Committed' and stored()==before and state_file.read_bytes()==before_bytes and sha(state_file)==before_sha and len(requests('taskbar-pins-write'))==before_writes and len(launches())==before_launches,request=request,receipt=receipts[0],stored=stored(),storedSHA256=before_sha,pinWriteCount=before_writes,nativePinned=native_pin())
+      wait(lambda:(projection() or {}).get('mode')=='closed' and projection()['phase']=='Coherent')
+     check('InitiallySeparatePinStates','warlock-running-peer' not in stored()['identities'] and not native_pin() and not launches(),stored=stored(),nativePinned=native_pin())
+     app_change('Pin Peer','keyboard',True,False);app_change('Unpin Peer','pointer',False,False);app_change('Pin Peer','pointer',True,False)
+     top_change('pointer',True);app_change('Unpin Peer','keyboard',False,True);app_change('Pin Peer','keyboard',True,True);top_change('keyboard',False)
+     top_change('at',True);app_change('Unpin Peer','at',False,True);app_change('Pin Peer','at',True,True);top_change('at',False)
+     report['nativePinIndependenceObserved']=True

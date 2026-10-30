@@ -1,0 +1,520 @@
+{
+  "passed": true,
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-7d12eaedf5d34f70b87ea47bd640ba9b.scope",
+    "coreLimit": 1
+  },
+  "checks": [
+    {
+      "name": "All exact composition anchors and Python syntax valid",
+      "passed": true
+    },
+    {
+      "name": "No stopped keyboard menu opener in selected branch",
+      "passed": true
+    },
+    {
+      "name": "Actual retained popup frame has exact object join",
+      "passed": true
+    },
+    {
+      "name": "Retained configured global box matches actual recorded popup",
+      "passed": true
+    },
+    {
+      "name": "Missing exact parent assignment refused",
+      "passed": true
+    },
+    {
+      "name": "Missing exact xdg acknowledgement refused",
+      "passed": true
+    },
+    {
+      "name": "Missing host geometry callback refused",
+      "passed": true
+    },
+    {
+      "name": "Destroyed popup refused",
+      "passed": true
+    },
+    {
+      "name": "Destroyed and reused wl_surface epoch refused",
+      "passed": true
+    },
+    {
+      "name": "Destroyed parent layer refused",
+      "passed": true
+    },
+    {
+      "name": "Closed host lease refused",
+      "passed": true
+    },
+    {
+      "name": "Stale body publication refused",
+      "passed": true
+    },
+    {
+      "name": "Wrong body lease refused",
+      "passed": true
+    },
+    {
+      "name": "Wrong native menu incarnation refused",
+      "passed": true
+    },
+    {
+      "name": "Closed projection refused",
+      "passed": true
+    },
+    {
+      "name": "Second same-size configure without fresh host callback refused",
+      "passed": true
+    },
+    {
+      "name": "Fresh exact host callback and acknowledgement restore same-size join",
+      "passed": true
+    },
+    {
+      "name": "Ambiguous live popup refused",
+      "passed": true
+    },
+    {
+      "name": "Seeded stale acknowledgement 0",
+      "passed": true
+    },
+    {
+      "name": "Seeded stale acknowledgement 1",
+      "passed": true
+    },
+    {
+      "name": "Seeded stale acknowledgement 2",
+      "passed": true
+    },
+    {
+      "name": "Seeded stale acknowledgement 3",
+      "passed": true
+    },
+    {
+      "name": "Seeded stale acknowledgement 4",
+      "passed": true
+    },
+    {
+      "name": "Seeded stale acknowledgement 5",
+      "passed": true
+    },
+    {
+      "name": "Seeded stale acknowledgement 6",
+      "passed": true
+    },
+    {
+      "name": "Seeded stale acknowledgement 7",
+      "passed": true
+    },
+    {
+      "name": "Seeded stale acknowledgement 8",
+      "passed": true
+    },
+    {
+      "name": "Seeded stale acknowledgement 9",
+      "passed": true
+    },
+    {
+      "name": "Seeded stale acknowledgement 10",
+      "passed": true
+    },
+    {
+      "name": "Seeded stale acknowledgement 11",
+      "passed": true
+    },
+    {
+      "name": "Seeded stale acknowledgement 12",
+      "passed": true
+    },
+    {
+      "name": "Seeded stale acknowledgement 13",
+      "passed": true
+    },
+    {
+      "name": "Seeded stale acknowledgement 14",
+      "passed": true
+    },
+    {
+      "name": "Seeded stale acknowledgement 15",
+      "passed": true
+    },
+    {
+      "name": "Observed source unchanged check_parser.py",
+      "passed": true
+    },
+    {
+      "name": "Observed source unchanged popup_join.py",
+      "passed": true
+    },
+    {
+      "name": "Observed source unchanged runner.py",
+      "passed": true
+    },
+    {
+      "name": "Observed source unchanged branch.txt",
+      "passed": true
+    },
+    {
+      "name": "Observed source unchanged measured_inspection.py",
+      "passed": true
+    },
+    {
+      "name": "Observed source unchanged warlock.log",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/pin-top-root-v1/check_parser.py": "badec823f6113a4fe50d1aebbd297f4cbbe48bfda14e36640b357585c9b32205",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/pin-top-root-v1/popup_join.py": "5a73d1639c0c2350bad922c5017e902e5aa20e9075c6c91cb3af9d1bd6019aa3",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/pin-top-root-v1/runner.py": "4efcd5e2cbe21b7e25c2480d393db48272826e0398a775ed76d594aea38a3546",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/pin-top-root-v1/branch.txt": "2cfe0ebaf3a6b9e15648a1705a37f7262306c019a3ec8eabaaa9a79b478fde85",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-qa/measured_inspection.py": "559775d3a39c14b1cea2b5747773665a4817c5b9850d08afc4782d2919a11f9e",
+    "/home/charles/window-integration-qa/warlock-window-feedback-1793230156693216294/warlock.log": "10a9a90bf5f3344b927e61996f0cc5ac0a20b49dfee36732779b97153287471b"
+  },
+  "seed": 20261030,
+  "nativeAcceptance": false,
+  "releaseAccepted": false,
+  "limits": "Actual retained log positive; in-memory event mutations and seeded stale acknowledgements are parser checks, not new native observations.",
+  "retainedFrame": {
+    "endLine": 746,
+    "join": {
+      "rect": [
+        50,
+        56,
+        700,
+        420
+      ],
+      "popup": "50",
+      "popupEpoch": 615,
+      "xdg": "49",
+      "xdgEpoch": 614,
+      "surface": "44",
+      "surfaceEpoch": 605,
+      "parent": "43",
+      "parentEpoch": 311,
+      "serial": "30",
+      "owner": "1",
+      "generation": "1",
+      "publication": "20",
+      "lease": "1"
+    },
+    "logSHA256": "10a9a90bf5f3344b927e61996f0cc5ac0a20b49dfee36732779b97153287471b",
+    "body": {
+      "focusNode": 2,
+      "focusIdentity": null,
+      "announcements": [
+        {
+          "text": "",
+          "sequence": null,
+          "correlation": null,
+          "live": "polite"
+        }
+      ],
+      "previews": [],
+      "motionProfile": "full",
+      "motionAnimations": 0,
+      "queryObservations": [],
+      "compositionEvents": [],
+      "composing": false,
+      "palette": {
+        "background": "rgb(23, 32, 42)",
+        "foreground": "rgb(244, 246, 247)"
+      },
+      "focusStyle": {
+        "color": "rgb(240, 245, 250)",
+        "background": "rgb(23, 35, 47)",
+        "outlineColor": "rgb(134, 200, 255)",
+        "outlineWidth": "2px",
+        "outlineOffset": "2px",
+        "x": 12,
+        "y": 68,
+        "width": 676,
+        "height": 40
+      },
+      "publication": "20",
+      "lease": "1",
+      "buttons": [
+        {
+          "id": "applications:{\"lifetime\":\"3732305899978578145\",\"session\":\"3\",\"frontend\":\"1\"}:14:control:close",
+          "identity": "control:close",
+          "label": "Windows",
+          "labelRect": {
+            "x": 28,
+            "y": 119,
+            "width": 644,
+            "height": 20
+          },
+          "accessibleName": "Close applications and return to windows",
+          "disabled": false,
+          "nativeDisabled": false,
+          "focusOnly": false,
+          "role": "button",
+          "checked": null,
+          "x": 15,
+          "y": 111,
+          "width": 670,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"3732305899978578145\",\"session\":\"3\",\"frontend\":\"1\"}:14:control:refresh",
+          "identity": "control:refresh",
+          "label": "Refresh",
+          "labelRect": {
+            "x": 28,
+            "y": 158,
+            "width": 644,
+            "height": 20
+          },
+          "accessibleName": "Refresh applications",
+          "disabled": false,
+          "nativeDisabled": false,
+          "focusOnly": false,
+          "role": "button",
+          "checked": null,
+          "x": 15,
+          "y": 150,
+          "width": 670,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"3732305899978578145\",\"session\":\"3\",\"frontend\":\"1\"}:14:jump:open:warlock-editor",
+          "identity": "jump:open:warlock-editor",
+          "label": "Actions for EditorApplication actions and recent files",
+          "labelRect": {
+            "x": 28,
+            "y": 196,
+            "width": 644,
+            "height": 20
+          },
+          "accessibleName": "Actions for Editor",
+          "disabled": false,
+          "nativeDisabled": false,
+          "focusOnly": false,
+          "role": "button",
+          "checked": null,
+          "x": 15,
+          "y": 189,
+          "width": 670,
+          "height": 56
+        },
+        {
+          "id": "applications:{\"lifetime\":\"3732305899978578145\",\"session\":\"3\",\"frontend\":\"1\"}:14:pin:warlock-editor",
+          "identity": "pin:warlock-editor",
+          "label": "Pin EditorAdd to taskbar",
+          "labelRect": {
+            "x": 28,
+            "y": 255,
+            "width": 644,
+            "height": 20
+          },
+          "accessibleName": "Pin Editor",
+          "disabled": false,
+          "nativeDisabled": false,
+          "focusOnly": false,
+          "role": "button",
+          "checked": null,
+          "x": 15,
+          "y": 248,
+          "width": 670,
+          "height": 56
+        },
+        {
+          "id": "applications:{\"lifetime\":\"3732305899978578145\",\"session\":\"3\",\"frontend\":\"1\"}:14:entry:warlock-editor",
+          "identity": "entry:warlock-editor",
+          "label": "Open Editor",
+          "labelRect": {
+            "x": 28,
+            "y": 315,
+            "width": 644,
+            "height": 20
+          },
+          "accessibleName": "Open Editor",
+          "disabled": false,
+          "nativeDisabled": false,
+          "focusOnly": false,
+          "role": "button",
+          "checked": null,
+          "x": 15,
+          "y": 307,
+          "width": 670,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"3732305899978578145\",\"session\":\"3\",\"frontend\":\"1\"}:14:entry:warlock-files",
+          "identity": "entry:warlock-files",
+          "label": "Open Files",
+          "labelRect": {
+            "x": 28,
+            "y": 354,
+            "width": 644,
+            "height": 20
+          },
+          "accessibleName": "Open Files",
+          "disabled": false,
+          "nativeDisabled": false,
+          "focusOnly": false,
+          "role": "button",
+          "checked": null,
+          "x": 15,
+          "y": 346,
+          "width": 670,
+          "height": 36
+        },
+        {
+          "id": "applications:{\"lifetime\":\"3732305899978578145\",\"session\":\"3\",\"frontend\":\"1\"}:14:entry:warlock-running-peer",
+          "identity": "entry:warlock-running-peer",
+          "label": "Open Peer",
+          "labelRect": {
+            "x": 28,
+            "y": 393,
+            "width": 644,
+            "height": 20
+          },
+          "accessibleName": "Open Peer",
+          "disabled": false,
+          "nativeDisabled": false,
+          "focusOnly": false,
+          "role": "button",
+          "checked": null,
+          "x": 15,
+          "y": 385,
+          "width": 670,
+          "height": 36
+        }
+      ],
+      "content": [],
+      "fields": [
+        {
+          "id": "launcher-search",
+          "value": "",
+          "accessibleName": "Search applications",
+          "disabled": false,
+          "caretStart": 0,
+          "caretEnd": 0
+        }
+      ],
+      "focus": "launcher-search",
+      "documentFocused": true,
+      "fontSize": "16px",
+      "theme": "night",
+      "textScale": "100",
+      "effects": "on",
+      "reducedTransparency": "false",
+      "viewportWidth": 700,
+      "viewportHeight": 420,
+      "scrollTop": 0,
+      "scrollHeight": 436,
+      "text": "Applications\n\nType to search applications.\n\n\nWindows\nRefresh\nActions for Editor\nApplication actions and recent files\nPin Editor\nAdd to taskbar\nOpen Editor\nOpen Files\nOpen Peer"
+    },
+    "projection": {
+      "phase": "Coherent",
+      "transaction": "Idle",
+      "groups": [
+        {
+          "key": "application:warlock-primary-fixture",
+          "domId": "group:{\"lifetime\":\"3732305899978578145\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:application:warlock-primary-fixture",
+          "title": "ELM-AUTHORITY-FIXTURE",
+          "active": true,
+          "expanded": false,
+          "disabled": false,
+          "label": "Minimize ELM-AUTHORITY-FIXTURE; Active",
+          "point": [
+            67.0,
+            26.0
+          ],
+          "rect": [
+            3,
+            3,
+            128,
+            46
+          ],
+          "clip": [
+            0,
+            0,
+            800,
+            56
+          ],
+          "visible": true
+        },
+        {
+          "key": "application:warlock-peer-fixture",
+          "domId": "group:{\"lifetime\":\"3732305899978578145\",\"session\":\"3\",\"frontend\":\"1\"}:1:1:application:warlock-peer-fixture",
+          "title": "ELM-ACTIVATION-PEER",
+          "active": false,
+          "expanded": false,
+          "disabled": false,
+          "label": "Activate ELM-ACTIVATION-PEER; Open",
+          "point": [
+            201.0,
+            26.0
+          ],
+          "rect": [
+            137,
+            3,
+            128,
+            46
+          ],
+          "clip": [
+            0,
+            0,
+            800,
+            56
+          ],
+          "visible": true
+        }
+      ],
+      "menu": null,
+      "mode": "applications",
+      "outstanding": 0,
+      "registry": 0,
+      "picker": null,
+      "openerId": "applications:{\"lifetime\":\"3732305899978578145\",\"session\":\"3\",\"frontend\":\"1\"}:14:control:opener",
+      "reconnectId": "reconnect",
+      "focus": "applications:{\"lifetime\":\"3732305899978578145\",\"session\":\"3\",\"frontend\":\"1\"}:14:control:opener",
+      "reconnect": null,
+      "openApplications": {
+        "disabled": false,
+        "label": "Open applications",
+        "point": [
+          311.0,
+          26.0
+        ],
+        "rect": [
+          271,
+          3,
+          80,
+          46
+        ],
+        "clip": [
+          0,
+          0,
+          800,
+          56
+        ],
+        "visible": true
+      },
+      "publication": "20"
+    }
+  },
+  "staleSerials": [
+    581811,
+    240427,
+    597454,
+    359974,
+    917545,
+    441833,
+    49196,
+    779495,
+    841788,
+    552028,
+    629863,
+    897155,
+    284677,
+    675416,
+    293160,
+    139439
+  ]
+}
