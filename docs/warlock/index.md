@@ -13,6 +13,7 @@ Choose a page for the work you are doing:
 | Build the current frontend from a reviewed lock | [How to build the current frontend](how-to/build-current-frontend.md) |
 | Validate current frontend/native composition | [How to validate a current composition](how-to/validate-current-composition.md) |
 | Check an explicitly selected current release build | [How to check current release reproducibility](how-to/check-current-release-reproducibility.md) |
+| Audit an existing result without executing it | [How to read recorded evidence](how-to/read-recorded-evidence.md) |
 | Prepare proportionate protected verification | [How to verify a selected change](how-to/verify-selected-change.md) |
 | Look up paths, commands and machine limits | [Build and runtime reference](reference/build-and-runtime.md) |
 | Understand recorded acceptance and open gates | [Status and evidence reference](reference/status-and-evidence.md) |

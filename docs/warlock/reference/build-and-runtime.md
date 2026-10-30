@@ -1,6 +1,6 @@
 # Build and runtime reference
 
-Snapshot: October 29, 2026. Paths below are lookup facts, not a complete installation procedure. The candidate is not installed in the main Omarchy session.
+Command review: October 30, 2026. Paths below are lookup facts, not a complete installation procedure. The candidate is not installed in the main Omarchy session.
 
 | Item | Location / contract |
 | --- | --- |
@@ -40,3 +40,28 @@ Web browsing/downloads use verified Scrapling 0.5 with fetchers/rag; `scrapling`
 There is no documented one-command ready user installation. Build/capture/verify routines invoke compilers and require reviewed protected execution, local caches, exact consumed inputs and original ABI identity. Source changes can invalidate a lock or the relevance of a retained object; never rebaseline silently. Compliance/provenance and independent reproducibility gates remain separate.
 
 Profile preparation can snapshot selected compatible preference stores and validate command descriptors. It does not demonstrate working full GUI rollback, recover arbitrary unsaved application drafts or repair a failed compositor. The actual managed-profile native trial fails early; direct first-use and renderer failures also remain. Treat `RELEASE.md` and `RECOVERY.md` commands as contracts with explicit readiness prerequisites, not permission to activate the user's session. See [current evidence status](status-and-evidence.md).
+
+
+## Participant records and exit status
+
+The CLI's global options precede the subcommand: `--repo`, `--record` and `--json`. `status`, `inspect`, `remaining`, `handoff`, `report` and `verify-plan` read data; they do not adopt work or execute the suggested QA. `plan` prints a proposal; `start`, `extend` and `record` write participant state and require actual ownership. `review` reads the existing staged bytes; it neither stages nor publishes them.
+
+Both the contributor CLI and loop wrapper default to `.warlock-contributor/slice.json`. That file can be a stale historical record. `STATE.activeSlice` is the coordinator selection, while an explicit participant record can carry a selected-slice override. Ask for the actual owned participant path instead of guessing it from a default or changing historical state to make a command green. For a coordinator-provided path, replace `ACTUAL_RECORD.json` below:
+
+```sh
+python3 -B plugins/warlock-contributor/scripts/warlock.py --repo "$PWD" \
+  --record .warlock-contributor/ACTUAL_RECORD.json --json handoff
+python3 -B docs/warlock-build-loop/v2/loop.py \
+  --record .warlock-contributor/ACTUAL_RECORD.json check
+```
+
+`handoff` includes its effective `slice`, owner, source hashes, foreign paths, latest actual observation and progress warning. A structural `ok:true` with a stop warning still requires ending expansion of that investigation. A nonzero default `status` or `check` is not, by itself, proof that the explicit current record failed. Read its errors and use the intended record; preserve any genuine failure. Never use `start` to overwrite a record or turn a documentation task into source ownership.
+
+For an explicitly requested documentation-only change, run the actual project check before and after:
+
+```sh
+python3 -B plugins/warlock-contributor/scripts/warlock.py --repo "$PWD" \
+  check --project-only
+```
+
+A no-participant warning is expected in that mode; `ok:true` checks repository structure only. It is not a product/native/AT or evidence-truth verdict. See [the first tutorial](../tutorials/first-contribution.md) for a runnable original-scenario inspection and [reading evidence](../how-to/read-recorded-evidence.md) for byte checks that execute no archived runner.

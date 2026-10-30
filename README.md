@@ -7,6 +7,7 @@ candidate and preserved source/evidence history. **Feature completion and releas
 acceptance remain open. A GitHub merge does not deploy the desktop.**
 
 Start with the [current product](implementation/warlock/README.md),
+[Diátaxis documentation](docs/warlock/index.md),
 [remaining implementation checklist](docs/warlock-roadmap/FEATURE-COMPLETION.md)
 and [current workflow](docs/warlock-build-loop/v2/INSTRUCTIONS.md). The
 [delivery ledger](docs/warlock-build-loop/v2/requirement-ledger.json) preserves
@@ -61,6 +62,8 @@ Warlock is the name of the Elm-based window-system project. See the [brand ident
 The [design-language documentation](DesignLanguage/README.md) and
 [browser catalog entrance](DesignLanguage/catalog/index.html) connect current
 guidance, frozen widget specimens and the contributor plugin.
+
+Existing code is being migrated through the [architecture and QA debt register](docs/warlock-build-loop/v2/RETROFIT.md). Each sprint carries a bounded retrofit alongside delivery, with production-route contracts/fuzzing, relevant native verification and documentation updates. Open debt remains visible until its source and evidence have been reviewed.
 
 ## Contents
 

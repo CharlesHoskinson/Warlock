@@ -14,6 +14,22 @@ Update the appropriate documentation quadrant and wiki lessons with the actual c
 
 Product work stays WIP=1 and native QA WIP=1. Parallel agents may prepare disjoint proposals/reviews and documentation; root integrates selected production changes. Deliver the shortest justified production improvement, not an endless audit or blanket rewrite. Keep original deadlines, Unknown/no-replay, ABI identity, drafts and preserved failures.
 
+## Sprint debt queue
+
+The register below is a starting inventory, not an ordered backlog or proof that unlisted code has been assessed. At each sprint, triage the selected existing boundary and keep a small queue in the sprint handoff or a linked owned record. Do not edit frozen evidence or turn every unreviewed component into a new blocker. Use these fields:
+
+| Field | Required content |
+| --- | --- |
+| Original behavior | Existing requirement IDs and exact scenario names; any additional whole-EARS clause remains explicit. Supporting debt IDs never replace original identities. |
+| Current baseline | Source revision/paths, implemented behavior, accepted evidence and its relevance, retained failures and stopped investigations. Unadjudicated does not mean unimplemented. |
+| Boundary triage | State/event/effect/subscription/resource owner; contract or lifetime risk; existing production-route tests and model correspondence. Distinguish observed defect, missing evidence and proposed cleanup. |
+| Selected change | One reversible production migration or fix, owner, declared paths and smallest decisive check. A support-only task names the concrete original behavior it unblocks. |
+| Verification delta | Changed behavior/dependencies to requalify, positive and negative/lifecycle checks, applicable property/sequence coverage and independent review. Keep component, native, AT/IME, resource and release verdicts separate. |
+| Documentation | Tutorial, how-to, reference and explanation each name an updated page or an explicit unaffected disposition; include command/source and local-link checks. |
+| Carry-forward | Remaining original obligations and debt, why deferred, next concrete action, and any preserved no-progress count/timer. Completed support work does not reset a stopped investigation. |
+
+Before integration, compare the delivered change with this queue entry. Retain failed baseline/counterexample evidence and record the final source revision and actual checks. An accepted scenario stays accepted on its recorded tuple unless a relevant behavior or dependency changed; a refactor does not silently accept new routes or invalidate unrelated evidence. Close the bounded debt item only after its declared source, QA, review and documentation obligations are met. Carry unfinished work forward without marking the original requirement or release complete.
+
 ## Initial register
 
 These entries are observations/proposals as of October 29, not a completed whole-code audit. Track unreviewed ownership areas and newly found debt as the retrofit proceeds.
