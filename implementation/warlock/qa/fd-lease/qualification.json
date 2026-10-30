@@ -1,0 +1,43 @@
+{
+  "formatVersion": 1,
+  "scope": "Bounded intended FD-lease model and nonvacuity controls only",
+  "nativeAcceptance": false,
+  "originalAcceptance": false,
+  "releaseAccepted": false,
+  "toolchainClosureComplete": false,
+  "sourceSHA256": {
+    "fd_lease.qnt": "185b215719e017089a03bc409fef744977d3a1fcb1b8438578d7b756ff36385e",
+    "fd_lease_test.qnt": "640799ed854ff859ceb16ff3eda4562bcdd6c1f1af63ef4bfeb1588467dbf2f9",
+    "fd_lease_positive.qnt": "4c8048bae4015bf6253e6208a841eb4dd4b8de20716545e14280f9bf02190bfc",
+    "fd_lease_counterexample.qnt": "fe43779ea884c24cda15c9bea01231aa8051ae0882234c6aa9882528115c3a03",
+    "observer-map.json": "c73cd603b2baadf141652b6b2cf68105084955194a1b938ade1830e63c4b2d8b"
+  },
+  "machineEvidence": [
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/quint-fd-lease-1793393323406319275/report.json",
+      "sha256": "da80c5a5ad8b64040868262edd2d9b060541559dba8c5a3908c2ff0cd433a78e"
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/quint-fd-positive-1793393424406260497/report.json",
+      "sha256": "2634a21b18cbad06c8276d6383615d4b734a4d7f9cfab457c7dc1798eb90e8be"
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/quint-fd-positive-1793393500523627572/report.json",
+      "sha256": "9c9383dd8fa5e9a005f4b1cbe08670f620b67bd307027ea34bf6f9fe337b2a02"
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/quint-fd-lease-1793393532671747846/report.json",
+      "sha256": "1f2d0ff2871f9a23b40609b87147aa1172da3d71b495d9259014dce0753af837"
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/astra-fd-lease-review-v6/REVIEW.md",
+      "sha256": "8becd0b0d27fe154e2c5f18747ea60a2850012267e7e0e095b2fd6eb8deea498"
+    }
+  ],
+  "knownAssumptions": [
+    "Atomic borrow and masked consumer installation",
+    "Trusted procfs/current-process descriptor table",
+    "No modeled real kernel close/EINTR or concurrent source/mount adversary"
+  ],
+  "pairedGuardLimitation": "Epoch and ownership guards are not independently isolated by the reuse tests"
+}

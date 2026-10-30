@@ -1,0 +1,27 @@
+{
+  "step": {
+    "borrowA": "reachedBorrowA",
+    "borrowB": "reachedBorrowB",
+    "borrowFail": "reachedBorrowFail",
+    "retireRoot": "reachedRetireRoot",
+    "closeRetiredOriginal": "reachedCloseRetiredOriginal",
+    "useA": "reachedUseA",
+    "closeA": "reachedCloseA",
+    "closeB": "reachedCloseB",
+    "probeRegular": "reachedProbeRegular",
+    "maskedObserverHandoff": "reachedMaskedObserverHandoff",
+    "observe": "reachedObserve",
+    "cancelObserver": "reachedCancelObserver",
+    "interruptBeforeRetire": "reachedInterruptBeforeRetire",
+    "interruptAfterRetire": "reachedInterruptAfterRetire",
+    "reuseRootSlot": "reachedReuseRootSlot",
+    "rejectStaleClose": "reachedRejectStaleClose"
+  },
+  "namedOnly": {
+    "closeOldRoot": "reachedCloseOldRoot",
+    "brokenEnterLongGate": "reachedBrokenEnterLongGate",
+    "brokenOuterClose": "reachedBrokenOuterClose",
+    "brokenUnmaskedHandoff": "reachedBrokenUnmaskedHandoff",
+    "brokenStaleIntegerClose": "reachedBrokenStaleIntegerClose"
+  }
+}
