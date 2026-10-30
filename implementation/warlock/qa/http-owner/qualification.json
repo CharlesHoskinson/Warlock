@@ -1,0 +1,44 @@
+{
+  "formatVersion": 1,
+  "scope": "Supporting bounded intended-owner model only",
+  "nativeAcceptance": false,
+  "originalAcceptance": false,
+  "releaseAccepted": false,
+  "sourceSHA256": {
+    "http_owner.qnt": "734823d2f4aa2fc49b00031becf9b8410b5c866a281220e0acb161679fdbc5c2",
+    "http_owner_test.qnt": "e1c2229b04523e37f863b57aa4da1c5dfd17b9ba29b8ceea9fbaaa2e42c6c887",
+    "http_owner_regression.qnt": "0ede2b3b1e95439e3be2ebd26604cd4aceed89472358c80213d9331c2561bd9f",
+    "http_owner_expiry_sampling.qnt": "666f9d82c3c20c2aa535569367bbb9a9c594687e729ff27b34561afd4cf378cf"
+  },
+  "machineEvidence": [
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/quint-http-owner-1793390698849513918/report.json",
+      "sha256": "88096bb468a3134f2399c84693eaebe17adfdbfbbd3473e93a9e2d8aa7c96d9e"
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/quint-http-postfree-1793390685403264953/report.json",
+      "sha256": "1f7db925af95a291b241ada7386a1bce01a9d7b0a9922e845305546d89f41f28"
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/quint-http-expiry-focus-1793390839223399624/report.json",
+      "sha256": "75cd7c10d56e24602148a2e403a5fe25960853b88d22dd02ec4c005da18153d7"
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/quint-http-expiry-scenario-1793390991944918000/report.json",
+      "sha256": "3fc4c88cf415a8af6c4f3e602e47e97d3b2252565bb849066459098a280a0c81"
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/quint-http-owner-root-v5/architecture-review.md",
+      "sha256": "e9030da1fd342bdb540457b992293160c142b3d03ec98a7e4d655d083e806371"
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/quint-http-postfree-1793390598309022662/report.json",
+      "sha256": "10e4a229226e25420dba07c0068d9a4518e721514625ef881f7e0217427a365a"
+    },
+    {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/quint-http-postfree-1793390642504868034/report.json",
+      "sha256": "b4613aa2174f6246bcfec175942777110f1539bdbc3494228fb6e22fa2d5da42"
+    }
+  ],
+  "toolchainClosureComplete": false
+}
