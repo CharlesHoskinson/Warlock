@@ -24,6 +24,8 @@ Choose a page for the work you are doing:
 | Understand active and attention indicators | [Explanation: taskbar attention](explanation/taskbar-attention.md) |
 | Understand application pinning and window top state | [Explanation: application pin and always-on-top](explanation/application-pin-and-always-on-top.md) |
 | Look up the staged native cancellation interface | [Native Restore cancellation protocol](reference/cancellation-protocol.md) |
+| Look up the current Haskell cancellation port and its evidence | [Haskell cancellation component](reference/haskell-cancellation.md) |
+| Understand the barriers before releasing cancellation custody | [Explanation: cancellation durability](explanation/cancellation-durability.md) |
 | Understand ownership and lifecycle decisions | [Explanation: authority, presentation and lifetimes](explanation/ownership-and-lifetimes.md) |
 | Understand the Elm/Haskell target and native readiness gate | [Explanation: Elm and Haskell ownership](explanation/elm-haskell-boundary.md) |
 
