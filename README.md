@@ -123,6 +123,8 @@ The [Haskell process custody package](implementation/warlock/haskell/process-cus
 
 The development-only [capture receiver](implementation/warlock/qa/ELM-HASKELL-CAPTURE.md) now preserves and independently checks bounded image evidence even when the capture child exits unsuccessfully. Its synthetic-image CPU checks do not establish real GUI rendering or native acceptance.
 
+The controlled Elm/Haskell launch now has real cgroup migration and escaped-process cleanup checks. Its first changed-composition trial failed before the Elm host started: no image was acquired, and owned resources were released without forced termination. The linked capture notes retain the failure and current diagnostic gap; the final implementation loop remains gated.
+
 ## Why Elm and Haskell
 
 The [migration proposal](openspec/changes/warlock-production-language-migration/proposal.md) gives the 30 October 2026 project decision itself as the reason for the change. The contract each language must meet is set out in the migration design and specification.

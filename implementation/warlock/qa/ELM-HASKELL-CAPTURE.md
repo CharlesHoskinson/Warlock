@@ -54,3 +54,38 @@ Evidence is retained under the local preparation directory in
 `large-frame-pipe-compile-1793426528720597747/report.json`, and
 `large-frame-pipe-controls-1793426560084374827/report.json`.
 These establish bounded output handling, not a real GUI capture or rendering oracle.
+
+## Controlled launcher
+
+`native-elm-haskell-first-render.py` is development QA, run through
+`docs/warlock-build-loop/v2/loop.py --record RECORD native --runner ABSOLUTE_RUNNER`.
+Its machine-local selector pins the Haskell parent, full file manifest, retained
+component evidence and changed-condition review. Missing inputs refuse; the
+selector is not a portable distribution or permission to repeat an attempt.
+Each selection gets one durable claim. Preserve the earlier stopped record.
+
+The launcher requires the coordinator's live whole-file lock. It joins the
+ancestor's actual descriptor identity, kernel `fdinfo` and global lock record,
+then rechecks process start time. Btrfs can report different device numbers in
+`stat` and the lock table; matching an inode alone is insufficient.
+
+The controller stays outside the owned parent/descendant cgroups, retains kill
+authority, bounds collection and cleanup, and archives nonzero-exit output.
+Unknown descendant state cannot establish cleanup. Its reports never accept a
+scenario or release. An unpublished process-creation failure triggers containment
+of the unique QA scope, with confirmation left to the outside coordinator.
+
+## First changed-composition observation
+
+The 31 October controlled attempt reached the configured Haskell bootstrap, but
+Weston exited before the Elm host started. No PNG was acquired. Retained stderr
+reported available process custody, retired file and nine device leases, and
+empty, removed cgroups without forced containment. The bounded diagnostic reader
+observed a 985-byte log but recognized no codes; that diagnostic gap remains open.
+
+The local immutable receipt is
+`native-partial-capture-536cc87b1e9c4d39922d1fafb254edc1/report.json`.
+This failed capability trial does not establish DOM/surface ownership, graphical
+presentation, normal GUI retirement or native-only application effects. Its
+one-shot claim remains consumed. The next trial needs a demonstrated source or
+configuration change and review; the original stopped history remains intact.
