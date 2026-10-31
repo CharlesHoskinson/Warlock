@@ -15,7 +15,7 @@ The screenshot does not establish live keyboard traversal, IME, protocol or nati
 
 ## Revision checks
 
-- The requested Chromium harness renders the revised gallery under `/Warlock/` without console errors, failed requests or external requests. [Gallery](evidence/specimen-chromium.png) and [focused field](evidence/field-focus-chromium.png) are Chromium captures.
+- The requested Chromium harness renders the gallery under `/Warlock/` without console errors, failed requests or external requests. [Gallery](evidence/specimen-chromium.png) and [focused field](evidence/field-focus-chromium.png) are Chromium captures.
 - Chromium keyboard traversal moves from the search field through Windows, Refresh, Actions for Editor, Pin Editor, Open Editor and Open Files in source order. Every control retains a visible focus outline and at least 4px clearance in the bounded scrollport; the scroll position advances to expose both final results.
 - The primary link uses the information token and opens `../../test-drive/index.html?scenario=launcher`. The Night information/canvas pair is 10.87:1 in the shared contrast matrix.
 - The visible label is a separately keyed sibling of the input, which keeps its key and handlers. The compiled test drive shows it, and the repository's browser harnesses pass with it. The 200% fixture does not take focus when the gallery loads.
@@ -23,7 +23,7 @@ The screenshot does not establish live keyboard traversal, IME, protocol or nati
 
 ## Director revision
 
-- Both specimen documents load `assets/shared/specimen-bootstrap.css` before the foundation and launcher styles. The Chromium harness reports no console errors, failed requests or external requests; the updated capture is [specimen-chromium.png](evidence/specimen-chromium.png).
+- Both specimen documents load `assets/shared/specimen-bootstrap.css` before the foundation and launcher styles. The Chromium harness reports no console errors, failed requests or external requests; the capture is [specimen-chromium.png](evidence/specimen-chromium.png).
 - Chromium measures 16px between Refresh or Acknowledge and an immediately following result, including the 6px flex gap. The same rule retains 16px after the existing management controls.
 - The staged renderer and the compiled test-drive Popup emit the label; the input remains separately keyed with its original ID, accessible name and composition handlers.
 

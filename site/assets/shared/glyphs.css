@@ -1,0 +1,62 @@
+/* Apache-2.0. Warlock shell glyphs: original 24px line drawings for the shell's fixed controls.
+   Each --wl-glyph-* names an SVG in assets/shared/glyphs/. Relative URLs in custom properties resolve against the
+   stylesheet that uses them, so the paths assume a consumer two directories below the site root (design/AREA/,
+   assets/shared/). A surface paints the glyph with mask-image and currentColor, so glyphs
+   follow text colour, theme, forced colours and high contrast. Glyphs are decoration: every control keeps its text name. */
+@layer tokens {
+  :root {
+    --wl-glyph-warlock: url("../../assets/shared/glyphs/warlock.svg");
+    --wl-glyph-task-view: url("../../assets/shared/glyphs/task-view.svg");
+    --wl-glyph-switcher: url("../../assets/shared/glyphs/switcher.svg");
+    --wl-glyph-bell: url("../../assets/shared/glyphs/bell.svg");
+    --wl-glyph-folder: url("../../assets/shared/glyphs/folder.svg");
+    --wl-glyph-power: url("../../assets/shared/glyphs/power.svg");
+    --wl-glyph-gear: url("../../assets/shared/glyphs/gear.svg");
+    --wl-glyph-search: url("../../assets/shared/glyphs/search.svg");
+    --wl-glyph-close: url("../../assets/shared/glyphs/close.svg");
+    --wl-glyph-refresh: url("../../assets/shared/glyphs/refresh.svg");
+    --wl-glyph-moon: url("../../assets/shared/glyphs/moon.svg");
+    --wl-glyph-sun: url("../../assets/shared/glyphs/sun.svg");
+    --wl-glyph-contrast: url("../../assets/shared/glyphs/contrast.svg");
+    --wl-glyph-text-size: url("../../assets/shared/glyphs/text-size.svg");
+    --wl-glyph-motion: url("../../assets/shared/glyphs/motion.svg");
+    --wl-glyph-sparkle: url("../../assets/shared/glyphs/sparkle.svg");
+    --wl-glyph-layers: url("../../assets/shared/glyphs/layers.svg");
+    --wl-glyph-keyboard: url("../../assets/shared/glyphs/keyboard.svg");
+    --wl-glyph-save: url("../../assets/shared/glyphs/save.svg");
+    --wl-glyph-help: url("../../assets/shared/glyphs/help.svg");
+    --wl-glyph-desktop: url("../../assets/shared/glyphs/desktop.svg");
+    --wl-glyph-grid: url("../../assets/shared/glyphs/grid.svg");
+    --wl-glyph-move: url("../../assets/shared/glyphs/move.svg");
+    --wl-glyph-go: url("../../assets/shared/glyphs/go.svg");
+    --wl-glyph-pin: url("../../assets/shared/glyphs/pin.svg");
+    --wl-glyph-unpin: url("../../assets/shared/glyphs/unpin.svg");
+    --wl-glyph-arrow-left: url("../../assets/shared/glyphs/arrow-left.svg");
+    --wl-glyph-arrow-right: url("../../assets/shared/glyphs/arrow-right.svg");
+    --wl-glyph-actions: url("../../assets/shared/glyphs/actions.svg");
+    --wl-glyph-open: url("../../assets/shared/glyphs/open.svg");
+    --wl-glyph-home: url("../../assets/shared/glyphs/home.svg");
+    --wl-glyph-recent: url("../../assets/shared/glyphs/recent.svg");
+    --wl-glyph-image: url("../../assets/shared/glyphs/image.svg");
+    --wl-glyph-video: url("../../assets/shared/glyphs/video.svg");
+    --wl-glyph-document: url("../../assets/shared/glyphs/document.svg");
+    --wl-glyph-download: url("../../assets/shared/glyphs/download.svg");
+    --wl-glyph-large-file: url("../../assets/shared/glyphs/large-file.svg");
+    --wl-glyph-screenshot: url("../../assets/shared/glyphs/screenshot.svg");
+    --wl-glyph-speaker: url("../../assets/shared/glyphs/speaker.svg");
+    --wl-glyph-mute: url("../../assets/shared/glyphs/mute.svg");
+    --wl-glyph-network: url("../../assets/shared/glyphs/network.svg");
+    --wl-glyph-lock: url("../../assets/shared/glyphs/lock.svg");
+    --wl-glyph-logout: url("../../assets/shared/glyphs/logout.svg");
+    --wl-glyph-restart: url("../../assets/shared/glyphs/restart.svg");
+    --wl-glyph-suspend: url("../../assets/shared/glyphs/suspend.svg");
+    --wl-glyph-check: url("../../assets/shared/glyphs/check.svg");
+    --wl-glyph-snap: url("../../assets/shared/glyphs/snap.svg");
+    --wl-glyph-window: url("../../assets/shared/glyphs/window.svg");
+    --wl-glyph-minimize: url("../../assets/shared/glyphs/minimize.svg");
+    --wl-glyph-maximize: url("../../assets/shared/glyphs/maximize.svg");
+    --wl-glyph-on-top: url("../../assets/shared/glyphs/on-top.svg");
+    --wl-glyph-new-window: url("../../assets/shared/glyphs/new-window.svg");
+    --wl-glyph-fullscreen: url("../../assets/shared/glyphs/fullscreen.svg");
+  }
+}

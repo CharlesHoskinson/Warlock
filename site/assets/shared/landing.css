@@ -1,0 +1,68 @@
+/* Apache-2.0. Warlock home page: the desktop first, then the features, then the design language. */
+@layer components {
+  body.wl-landing-page { background:var(--wl-sys-color-canvas); }
+  body.wl-landing-page .wl-doc-header {
+    position:sticky; top:0; z-index:20; border-bottom-color:color-mix(in srgb, var(--wl-sys-color-text) 10%, transparent);
+    background:color-mix(in srgb, var(--wl-sys-color-surface) 72%, transparent); backdrop-filter:blur(18px) saturate(140%); -webkit-backdrop-filter:blur(18px) saturate(140%);
+  }
+  .wl-landing { display:block; }
+
+  /* Hero */
+  .wl-hero {
+    position:relative; display:grid; grid-template-columns:minmax(0,5fr) minmax(0,7fr); align-items:center; gap:clamp(24px,4vw,64px);
+    min-height:min(88vh,900px); padding:clamp(40px,7vw,96px) clamp(16px,5vw,72px) clamp(48px,8vw,112px); overflow:hidden;
+    background:linear-gradient(90deg, var(--wl-sys-color-canvas) 0%, color-mix(in srgb, var(--wl-sys-color-canvas) 70%, transparent) 42%, transparent 75%),
+               url("../../test-drive/stage/assets/wallpaper-night.svg") center/cover no-repeat, var(--wl-sys-color-canvas);
+  }
+  html[data-theme="dawn"] .wl-hero { background:linear-gradient(90deg, var(--wl-sys-color-canvas) 0%, color-mix(in srgb, var(--wl-sys-color-canvas) 70%, transparent) 42%, transparent 75%), url("../../test-drive/stage/assets/wallpaper-dawn.svg") center/cover no-repeat, var(--wl-sys-color-canvas); }
+  .wl-hero-copy { position:relative; z-index:1; max-width:34rem; }
+  .wl-hero-eyebrow { display:inline-flex; align-items:center; gap:10px; margin:0 0 20px; padding:6px 14px 6px 10px; border-radius:999px;
+    background:color-mix(in srgb, var(--wl-sys-color-surface) 70%, transparent); border:1px solid color-mix(in srgb, var(--wl-sys-color-text) 12%, transparent);
+    color:var(--wl-sys-color-text); font-size:.8125rem; font-weight:600; letter-spacing:.02em; }
+  .wl-hero h1 { margin:0 0 20px; font-family:var(--wl-sys-font-display); font-size:clamp(2.5rem,5.2vw,4.5rem); font-weight:700; line-height:1.02; letter-spacing:-.025em; }
+  .wl-hero-lead { margin:0 0 28px; font-size:clamp(1.0625rem,1.4vw,1.25rem); line-height:1.6; color:var(--wl-sys-color-text-secondary); }
+  .wl-hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:18px; }
+  .wl-hero-actions .wl-doc-button { min-height:48px; padding:12px 22px; border-radius:999px; font-size:1rem; font-weight:600; text-decoration:none; }
+  .wl-hero-actions .wl-doc-button:not(.wl-doc-button-primary) { background:color-mix(in srgb, var(--wl-sys-color-surface) 60%, transparent); border:1px solid color-mix(in srgb, var(--wl-sys-color-text) 22%, transparent); color:var(--wl-sys-color-text); }
+  .wl-hero-actions .wl-doc-button-primary { box-shadow:0 10px 30px -8px color-mix(in srgb, var(--wl-sys-color-action-fill) 70%, transparent); }
+  .wl-hero-note { margin:0; font-size:.875rem; color:var(--wl-sys-color-text-secondary); }
+  .wl-hero-shot { position:relative; margin:0; z-index:1; }
+  .wl-hero-shot img { display:block; width:118%; max-width:none; height:auto; border-radius:16px; border:1px solid color-mix(in srgb, var(--wl-sys-color-text) 12%, transparent);
+    box-shadow:0 40px 90px -20px rgb(0 0 0 / .75), 0 12px 30px rgb(0 0 0 / .45); transform:perspective(2200px) rotateY(-7deg) rotateX(2deg); transform-origin:left center; }
+
+  /* Features */
+  .wl-features, .wl-band { max-width:1240px; margin:0 auto; padding:clamp(56px,8vw,112px) clamp(16px,4vw,40px); }
+  .wl-section-head { max-width:44rem; margin:0 0 clamp(32px,5vw,64px); }
+  .wl-section-head h2 { margin:6px 0 12px; font-family:var(--wl-sys-font-display); font-size:clamp(1.875rem,3.4vw,2.75rem); line-height:1.1; letter-spacing:-.02em; }
+  .wl-section-head p:not(.wl-doc-eyebrow) { color:var(--wl-sys-color-text-secondary); font-size:1.0625rem; line-height:1.6; }
+  .wl-feature { display:grid; grid-template-columns:minmax(0,7fr) minmax(0,5fr); grid-template-areas:"shot copy"; align-items:center; gap:clamp(24px,4vw,56px); margin-bottom:clamp(56px,8vw,104px); }
+  .wl-feature:nth-of-type(even) { grid-template-columns:minmax(0,5fr) minmax(0,7fr); grid-template-areas:"copy shot"; }
+  .wl-feature-shot { grid-area:shot; margin:0; }
+  .wl-feature-shot img { display:block; width:100%; height:auto; border-radius:14px; border:1px solid color-mix(in srgb, var(--wl-sys-color-text) 10%, transparent); box-shadow:0 28px 64px -18px rgb(0 0 0 / .7), 0 8px 20px rgb(0 0 0 / .35); }
+  .wl-feature-copy { grid-area:copy; }
+  .wl-feature-copy h3 { margin:6px 0 12px; font-family:var(--wl-sys-font-display); font-size:clamp(1.5rem,2.4vw,2rem); line-height:1.15; letter-spacing:-.015em; }
+  .wl-feature-copy p:not(.wl-doc-eyebrow) { margin:0 0 18px; color:var(--wl-sys-color-text-secondary); font-size:1.0625rem; line-height:1.65; }
+  .wl-feature-link { display:inline-flex; align-items:center; gap:8px; font-weight:600; color:var(--wl-sys-color-brand-text); text-decoration:none; }
+  .wl-feature-link::after { content:""; inline-size:1rem; block-size:1rem; background:currentColor;
+    -webkit-mask:var(--wl-glyph-arrow-right) center/contain no-repeat;
+    mask:var(--wl-glyph-arrow-right) center/contain no-repeat; }
+  .wl-feature-link:hover { text-decoration:underline; text-underline-offset:4px; }
+  .wl-band { border-top:1px solid color-mix(in srgb, var(--wl-sys-color-text) 8%, transparent); }
+  .wl-band .wl-doc-grid { grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); }
+  .wl-band .wl-doc-card { border-radius:14px; background:color-mix(in srgb, var(--wl-sys-color-surface) 80%, transparent); }
+
+  @media (max-width: 960px) {
+    .wl-hero { grid-template-columns:minmax(0,1fr); min-height:0; background:linear-gradient(180deg, color-mix(in srgb, var(--wl-sys-color-canvas) 30%, transparent), var(--wl-sys-color-canvas) 92%), url("../../test-drive/stage/assets/wallpaper-night.svg") center/cover no-repeat, var(--wl-sys-color-canvas); }
+    html[data-theme="dawn"] .wl-hero { background:linear-gradient(180deg, color-mix(in srgb, var(--wl-sys-color-canvas) 30%, transparent), var(--wl-sys-color-canvas) 92%), url("../../test-drive/stage/assets/wallpaper-dawn.svg") center/cover no-repeat, var(--wl-sys-color-canvas); }
+    .wl-hero-shot img { width:100%; transform:none; }
+    .wl-feature, .wl-feature:nth-of-type(even) { grid-template-columns:minmax(0,1fr); grid-template-areas:"shot" "copy"; }
+  }
+}
+@layer accessibility {
+  @media (prefers-reduced-motion: reduce) { .wl-hero-shot img { transform:none; } }
+  @media (forced-colors: active) {
+    .wl-hero, html[data-theme="dawn"] .wl-hero { background:Canvas; }
+    .wl-hero-shot img, .wl-feature-shot img { border-color:CanvasText; box-shadow:none; }
+    .wl-feature-link::after { background:LinkText; forced-color-adjust:none; }
+  }
+}

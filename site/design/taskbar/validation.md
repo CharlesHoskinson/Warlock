@@ -1,6 +1,6 @@
 # Validation
 
-The revised [Chromium specimen](specimen-chromium.png) loads under `/Warlock/` with no console errors, failed requests or external requests. The screenshot is inspected. The native attention screenshot is inspected; it shows truncated labels and a prominent status stripe. Image files remain generated concept studies, not renderer evidence.
+The [Chromium specimen](specimen-chromium.png) loads under `/Warlock/` with no console errors, failed requests or external requests. The screenshot is inspected. The native attention screenshot is inspected; it shows truncated labels and a prominent status stripe. Image files remain generated concept studies, not renderer evidence.
 
 At an 800px browser viewport, Chromium focuses every button in the complete Night toolbar at root sizes 16, 20, 24 and 32px. Every button retains at least 4px between its border box and each scrollport edge, sufficient for the 2px outline and 2px offset. The 6px gutter remains reserved. Enter opens the status disclosure, and Escape closes it and returns focus to the trigger. The status remains `aria-live="off"`; the panel has no live role. These checks exercise the specimen reference script, not the production Elm renderer or native adapter.
 
@@ -16,4 +16,4 @@ Chromium measures every bar in [the specimen](specimen.html) and [the 200% docum
 
 The canonical bootstrap loads before the shared foundations and taskbar sheets. Chromium loads both [the specimen](specimen.html) and [the 200% high-contrast document](specimen-scale.html) under `/Warlock/` with no console errors, failed requests or external requests. Both screenshots were inspected. The 200% document exercises long labels, a long status, effects off and a separate document-focus-loss state. The existing images remain unchanged.
 
-This is a specimen check, not production acceptance. The staged Elm renderer still derives activity from detail strings and does not implement the status disclosure. Its window-focus projection is present. D01 owns the production renderer and native popup allocation, which are outside D02’s assigned paths. Keyboard traversal at 800px in this revision and native host behavior remain unverified.
+This is a specimen check, not production acceptance. The staged Elm renderer still derives activity from detail strings and does not implement the status disclosure. Its window-focus projection is present. D01 owns the production renderer and native popup allocation, which are outside D02’s assigned paths. Keyboard traversal at 800px for this document and native host behavior remain unverified.

@@ -38,7 +38,7 @@ Open Applications from the taskbar and type a name to find an installed applicat
 
 Use Alt-Tab to move through open windows. A clear highlight shows the selected window before you switch.
 
-![Window switcher with the selected window marked by corner brackets](docs/warlock-brand/readme/test-drive-switcher.png)
+![The Alt-Tab window switcher with window cards and the selected window marked in red](docs/warlock-brand/readme/test-drive-switcher.png)
 
 ### Task View and workspaces
 
@@ -52,7 +52,7 @@ Open a window group to recognize its windows by their previews, with icons when 
 
 Open Notifications from the taskbar to read messages and their history. Act on a live notification, dismiss it, or turn on do not disturb.
 
-![Notifications with live messages, their actions and an expired history entry](docs/warlock-brand/readme/test-drive-notifications.png)
+![Notifications with do not disturb tiles and a live notification card with its actions](docs/warlock-brand/readme/test-drive-notifications.png)
 
 ### Settings
 
@@ -64,7 +64,7 @@ Open Settings from the taskbar to change appearance, text size, and motion. Revi
 
 Open Files from the taskbar to reach Home, collections, or a folder you enter. Warlock opens the location in Omarchy Files and can reuse its existing window.
 
-![Warlock Files with collections and a labelled folder path](docs/warlock-brand/readme/test-drive-files.png)
+![Warlock Files with quick-access tiles for Home, Recent and the collections](docs/warlock-brand/readme/test-drive-files.png)
 
 ### System menu
 

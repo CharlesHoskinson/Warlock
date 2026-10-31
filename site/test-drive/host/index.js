@@ -24,7 +24,7 @@ export function createHost({frames = {}, onSnapshot = () => {}, onDiagnostic = (
   if (typeof innerWidth === 'number') viewport(innerWidth,innerHeight);
   const tile = workspace => {
     const rows=state.windows.filter(w=>w.workspace===workspace && !w.minimized && !w.owner && (!w.placementMode || w.placementMode==='tiled'));
-    const area=state.workArea, gap=10, count=rows.length; if (!count) return;
+    const area=state.workArea, gap=14, count=rows.length; if (!count) return;
     const width=Math.max(1,(area.width-gap*(count+1))/count);
     rows.forEach((w,i)=>{ const left=Math.round(area.x+gap+i*(width+gap)), right=Math.round(area.x+gap+i*(width+gap)+width); w.geometry={x:left,y:area.y+gap,width:Math.max(1,right-left),height:Math.max(1,area.height-2*gap)}; w.placementMode='tiled'; });
   };
