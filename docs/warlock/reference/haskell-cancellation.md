@@ -18,7 +18,8 @@ component under integration, not an installed window-system backend.
 | `TerminalReceipt` | A same-process observation of the exact owner and one-shot storage object. It requires retained entry/file/directory handles. It grants no native ACK authority. |
 | `DurableReceipt` | The private type has no genuine issuer yet. The ACK path therefore remains unavailable; no test-only success issuer substitutes for it. |
 | History | An in-memory post-ACK history overlay exists, but its positive ACK lifecycle cannot yet be exercised. Persistent generations, recovery and a real host-retirement witness are unfinished. |
-| HostGuard | Retains the private namespace and actual writer-lock file, checks name/inode identity and uses kernel flock. Lifetime host-owner and namespace eligibility are separate unfinished joins. |
+| HostGuard | Retains the private namespace and actual writer-lock file, checks name/inode identity and uses kernel flock. Lifetime host-owner custody is implemented separately; current namespace eligibility remains unfinished. |
+| LifetimeOwner | The host retains exclusive `host-owner.lock` between writer critical sections; private metadata and fixed-name identity are checked before publication/claim. Adapter lifetime `writer.lock` is a distinct owner. Close uncertainty is retained without retrying a numeric descriptor. |
 | SlotStore | Bounded relative scans/reads, exact-old atomic publication and exact unlink/directory sync, with retained FD/stream uncertainty. Its per-call gate does not replace whole-transaction ownership. |
 | PairStore | Privately owns both stores; full inventories precede exact selection spend and Reserved → Pending → Submitted writes. Successful unlock and fresh view/D checks precede one queue insertion/claim. Returned work is data, not native execution or ACK authority. |
 
@@ -58,7 +59,18 @@ checks use trusted fixture inputs and establish bounded component behavior.
 They do not authenticate a host event or discharge the remaining integration gates.
 
 Both `admissions-v1` and `cancellation-admissions-v1` are children of the lifetime
-namespace. Existing legacy temporary/cache handling, real host-owner/current
-namespace eligibility, genuine selection retirement, native dispatch and durable
+namespace. Existing legacy temporary/cache handling, current session/namespace
+migration/marker/predecessor eligibility, genuine selection retirement, native dispatch and durable
 terminal/ACK/recovery remain unfinished. Spent selections still accumulate up
 to16; this is not acceptance of continuous64-active admission behavior.
+
+Lifetime-owner controls include independent open-description contention and retry
+after retirement, filename replacement refusal, metadata/thread/reentrant checks,
+interrupted acquisition, and actual descriptor-number reuse after close uncertainty.
+Two pre-close fault fixtures intentionally retain uncertain descriptors until their
+process exits; that exit does not prove normal resource retirement.
+
+Fixed-name checks are point-in-time observations. The actor serializes its own
+operations and retirement, while continued private namespace integrity remains
+a separate runtime premise. A successful lock check does not establish migration
+eligibility, authenticated GUI input or a native first-mutation permit.

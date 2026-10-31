@@ -4,7 +4,7 @@
 -- Private host-writer custody. A guard lease is not native execution authority.
 module Warlock.Native.Cancellation.HostGuard
  (HostGuard, GuardLease, GuardError(..), GuardPhase(..), HandleState(..), FailureOrigin(..), GuardStatus(..),
-  newHostGuard, offerNamespace, withHostGuard, withNamespace, guardGeneration, guardNamespaceIdentity,
+  newHostGuard, offerNamespace, withHostGuard, withNamespace, withNamespaceCustody, guardGeneration, guardNamespaceIdentity,
   guardStatus, guardFailures, retireHostGuard) where
 #define _GNU_SOURCE 1
 #include <sys/types.h>
@@ -90,6 +90,34 @@ isAsync err = case fromException err :: Maybe SomeAsyncException of Just _ -> Tr
 remember :: IORef State -> FailureOrigin -> SomeException -> IO ()
 remember state origin err = change state $ \(State _ root file held n failures) ->
  State Quarantined root file held n (take 8 ((origin,err):failures))
+
+-- Startup/identity borrow only: this holds descriptor custody but does not
+-- acquire the writer lock or grant a GuardLease/inventory/native permission.
+-- The lifetime host owner must be acquired here before the first writer guard.
+withNamespaceCustody :: forall a. HostGuard -> (Fd -> IO a) -> IO (Either GuardError a)
+withNamespaceCustody (HostGuard owner state gate) action = mask $ \restore -> do
+ thread <- myThreadId
+ if thread/=owner then pure (Left WrongThread) else do
+  acquired <- tryTakeMVar gate
+  case acquired of
+   Nothing -> pure (Left Busy)
+   Just () -> (do
+    result <- try (do
+     State phase root _ held _ _ <- readIORef state
+     case (phase,root,held) of
+      (Ready,Just (Owned directory),Unlocked) -> do
+       uid <- getEffectiveUserID
+       status <- getFdStatus directory
+       if isDirectory status && fileOwner status==uid && privateMode status 0o700
+        then Right <$> restore (action directory)
+        else pure (Left InvalidNamespace)
+      _ -> pure (Left Unavailable)) :: IO (Either SomeException (Either GuardError a))
+    case result of
+     Right value -> pure value
+     Left err -> do
+      remember state OperationFailure err
+      if isAsync err then throwIO err else pure (Left OperationFailed)
+    ) `finally` putMVar gate ()
 
 -- Called only while the nonblocking gate is owned and async exceptions masked.
 -- No user callback runs here. The fixed-name entry must still identify the

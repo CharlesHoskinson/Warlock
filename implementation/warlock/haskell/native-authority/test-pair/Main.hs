@@ -12,6 +12,7 @@ import System.Posix.Files (setFileMode)
 import System.Posix.IO (OpenMode(ReadOnly),openFd,defaultFileFlags,closeFd)
 import qualified Warlock.Native.Cancellation.PairStore as P
 import qualified Warlock.Native.Cancellation.HostGuard as G
+import LifetimeOwnerControls (contenderControls,replacementControls)
 import qualified Warlock.Native.Cancellation.Selection as S
 import qualified Warlock.Native.Cancellation.AdmissionShape as A
 import Warlock.Protocol.Identity (Binding,Counter,parseCounter,binding,context)
@@ -48,7 +49,7 @@ main :: IO ()
 main = do
  args <- getArgs
  root <- case args of [p] -> pure p; _ -> ioError (userError "owned empty fixture root required")
- (store,_,action,captured,path) <- prepare root "positive" (\_ -> pure ())
+ (store,bound,action,captured,path) <- prepare root "positive" (\_ -> pure ())
  P.publishCaptured store captured >>= right
  queued <- P.pairStatus store
  check "actual queue insertion after writes" (map snd (P.transactions queued)==[P.Queued])
@@ -66,7 +67,7 @@ main = do
  check "actual persisted Submitted" ("\"state\":\"Submitted\"" `B.isInfixOf` companion)
  second <- P.claimPreparedWork store >>= right
  check "one queue claim only" (case second of Nothing -> True; Just _ -> False)
- P.closeStorage store >>= right
+ contenderControls store bound path
  checkPending <- B.readFile (path </> "admissions-v1" </> name)
  check "storage close preserves durable Pending" (checkPending==pending)
 
@@ -81,6 +82,10 @@ main = do
  P.publishCaptured busyStore busyCapture >>= right
  P.closeStorage busyStore >>= right
  _ <- G.retireHostGuard other >>= right
+
+ (replacedStore,_,_,replacedCapture,replacedPath) <- prepare root "owner-name-replaced" (\_ -> pure ())
+ P.publishCaptured replacedStore replacedCapture >>= right
+ replacementControls replacedStore replacedPath
 
  (badStore,_,_,badCapture,badPath) <- prepare root "corrupt-inventory" (\_ -> pure ())
  let unrelated=badPath </> "admissions-v1" </> "unexpected"

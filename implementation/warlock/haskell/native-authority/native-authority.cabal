@@ -9,10 +9,10 @@ flag slotstore-test-hooks
   manual: True
 library
   if flag(slotstore-test-hooks)
-    exposed-modules: Warlock.Native.Cancellation.SlotStore, Warlock.Native.Cancellation.AdmissionShape, Warlock.Native.Cancellation.PairStore, Warlock.Native.Cancellation.Selection, Warlock.Native.Cancellation.AdmissionBytes, Warlock.Native.Cancellation.HostGuard
+    exposed-modules: Warlock.Native.Cancellation.LifetimeOwner, Warlock.Native.Cancellation.SlotStore, Warlock.Native.Cancellation.AdmissionShape, Warlock.Native.Cancellation.PairStore, Warlock.Native.Cancellation.Selection, Warlock.Native.Cancellation.AdmissionBytes, Warlock.Native.Cancellation.HostGuard
     cpp-options: -DSLOTSTORE_TESTING
   else
-    other-modules: Warlock.Native.Cancellation.SlotStore, Warlock.Native.Cancellation.AdmissionShape, Warlock.Native.Cancellation.PairStore, Warlock.Native.Cancellation.Selection, Warlock.Native.Cancellation.AdmissionBytes, Warlock.Native.Cancellation.HostGuard
+    other-modules: Warlock.Native.Cancellation.LifetimeOwner, Warlock.Native.Cancellation.SlotStore, Warlock.Native.Cancellation.AdmissionShape, Warlock.Native.Cancellation.PairStore, Warlock.Native.Cancellation.Selection, Warlock.Native.Cancellation.AdmissionBytes, Warlock.Native.Cancellation.HostGuard
   hs-source-dirs: src
   exposed-modules: Warlock.Native.Cancellation
   other-modules: Warlock.Native.Cancellation.Internal, Warlock.Native.Cancellation.Storage
@@ -75,7 +75,8 @@ test-suite slot-store-controls
 test-suite pair-store-smoke
   type: exitcode-stdio-1.0
   main-is: Main.hs
-  hs-source-dirs: test-pair
+  hs-source-dirs: test-pair, test-lifetime
+  other-modules: LifetimeOwnerControls
   build-depends: base >=4.18 && <5, bytestring, text, unix, directory, filepath, warlock-native-authority, warlock-protocol
   if !flag(slotstore-test-hooks)
     buildable: False
@@ -117,6 +118,19 @@ test-suite pair-store-sequences
   main-is: Main.hs
   hs-source-dirs: test-pair-sequences
   build-depends: base >=4.18 && <5, text, unix, directory, filepath, warlock-native-authority, warlock-protocol
+  if !flag(slotstore-test-hooks)
+    buildable: False
+  default-language: Haskell2010
+  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -threaded
+
+-- Root may place LifetimeOwnerControls.hs in test-lifetime-independent/
+-- within the existing native-authority package after source review.
+test-suite independent-lifetime-owner
+  type: exitcode-stdio-1.0
+  main-is: LifetimeOwnerControls.hs
+  hs-source-dirs: test-lifetime-independent
+  build-depends: base >=4.18 && <5, unix, directory, filepath,
+                 warlock-native-authority, warlock-protocol
   if !flag(slotstore-test-hooks)
     buildable: False
   default-language: Haskell2010

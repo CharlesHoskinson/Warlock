@@ -22,6 +22,7 @@ import Data.List (find,nub)
 import qualified Data.Text as T
 import System.Posix.Types (Fd)
 import qualified Warlock.Native.Cancellation.HostGuard as G
+import qualified Warlock.Native.Cancellation.LifetimeOwner as L
 import qualified Warlock.Native.Cancellation.Selection as S
 import qualified Warlock.Native.Cancellation.SlotStore as F
 import qualified Warlock.Native.Cancellation.AdmissionBytes as Bytes
@@ -30,12 +31,12 @@ import Warlock.Protocol.Identity (Binding,Counter,lifetime)
 import Warlock.Protocol.Custody (Intent,intentIncarnation)
 
 data PairError = WrongThread | Busy | NotReady | Poisoned | Capacity | Occupied | InvalidInventory | InvalidSelection
- | GuardFailure G.GuardError | SelectionFailure S.SelectionError | StorageFailure F.SlotError | EncodingFailure Bytes.PairError deriving (Eq,Show)
+ | OwnerFailure L.OwnerError | GuardFailure G.GuardError | SelectionFailure S.SelectionError | StorageFailure F.SlotError | EncodingFailure Bytes.PairError deriving (Eq,Show)
 data PairPhase = Uninitialized | Available | Quarantined | Closed deriving (Eq,Show)
 data TransactionPhase = QueueReserved | Spent | ReservedStored | PendingStored | SubmittedStored | Queued | Claimed | Failed deriving (Eq,Show)
 data Transaction = Transaction !S.Selection !(Maybe Bytes.PairBytes) !TransactionPhase
 data State = State !PairPhase ![Transaction] ![SomeException]
-data PairStore = PairStore !ThreadId !Binding !G.HostGuard !S.SelectionRegistry !F.SlotStore !F.SlotStore !(IORef State) !(MVar ())
+data PairStore = PairStore !ThreadId !Binding !G.HostGuard !L.LifetimeOwner !S.SelectionRegistry !F.SlotStore !F.SlotStore !(IORef State) !(MVar ())
 data PairStatus = PairStatus {pairPhase :: !PairPhase, transactions :: ![(T.Text,TransactionPhase)], exceptionCount :: !Int} deriving (Eq,Show)
 data PreparedWork = PreparedWork !S.Selection !B.ByteString
 workIntent :: PreparedWork -> Intent
@@ -48,13 +49,13 @@ workKey (PreparedWork _ key) = key
 newPairStore :: Counter -> Binding -> IO PairStore
 newPairStore initial bound = allocate initial bound F.newSlotStore F.newSlotStore
 allocate :: Counter -> Binding -> IO F.SlotStore -> IO F.SlotStore -> IO PairStore
-allocate initial bound admissions companions = PairStore <$> myThreadId <*> pure bound <*> G.newHostGuard initial <*> S.newSelectionRegistry <*> admissions <*> companions <*> newIORef (State Uninitialized [] []) <*> newMVar ()
+allocate initial bound admissions companions = PairStore <$> myThreadId <*> pure bound <*> G.newHostGuard initial <*> L.newLifetimeOwner <*> S.newSelectionRegistry <*> admissions <*> companions <*> newIORef (State Uninitialized [] []) <*> newMVar ()
 #ifdef SLOTSTORE_TESTING
 newPairStoreWithHooks :: Counter -> Binding -> (String -> IO ()) -> (String -> IO ()) -> IO PairStore
 newPairStoreWithHooks initial bound admissions companions = allocate initial bound (F.newSlotStoreWithHookForTest admissions) (F.newSlotStoreWithHookForTest companions)
 #endif
 pairStatus :: PairStore -> IO PairStatus
-pairStatus (PairStore _ _ _ _ _ _ state _) = do
+pairStatus (PairStore _ _ _ _ _ _ _ state _) = do
  State phase entries errors <- readIORef state
  pure (PairStatus phase [(S.selectionId s,p) | Transaction s _ p <- entries] (length errors))
 change :: IORef State -> (State -> State) -> IO ()
@@ -62,7 +63,7 @@ change state f = atomicModifyIORef' state (\old -> (f old,()))
 isAsync :: SomeException -> Bool
 isAsync err = case fromException err :: Maybe SomeAsyncException of Just _ -> True; Nothing -> False
 withActor :: forall a. PairStore -> IO (Either PairError a) -> IO (Either PairError a)
-withActor (PairStore owner _ _ _ _ _ state gate) action = mask $ \restore -> do
+withActor (PairStore owner _ _ _ _ _ _ state gate) action = mask $ \restore -> do
  thread <- myThreadId
  if thread/=owner then pure (Left WrongThread) else do
   held <- tryTakeMVar gate
@@ -94,32 +95,52 @@ fromGuard = either (Left . GuardFailure) id
 -- A rejected offer leaves the descriptor with the caller. All child store
 -- objects were allocated above and remain private for their entire lifetime.
 offerNamespace :: PairStore -> Fd -> IO Bool
-offerNamespace store@(PairStore _ _ guard _ _ _ state _) fd = do
+offerNamespace store@(PairStore _ _ guard _ _ _ _ state _) fd = do
  result <- withActor store $ do
   State phase _ _ <- readIORef state
   if phase/=Uninitialized then pure (Right False) else Right <$> G.offerNamespace guard fd
  pure (case result of Right accepted -> accepted; Left _ -> False)
 initializePairStore :: PairStore -> IO (Either PairError ())
-initializePairStore store@(PairStore _ _ guard _ admissions companions state _) = withActor store $ do
+initializePairStore store@(PairStore _ _ guard host _ admissions companions state _) = withActor store $ do
  State phase _ _ <- readIORef state
  if phase/=Uninitialized then pure (Left NotReady) else do
-  guarded <- G.withHostGuard guard $ \lease -> G.withNamespace lease $ \parent -> runExceptT $ do
-   slot (F.offerChildDirectory admissions parent F.Admissions)
-   slot (F.offerChildDirectory companions parent F.Companions)
-  let result=fromGuard (fmap fromGuard guarded)
-  change state $ \(State _ entries errors) -> State (case result of Right () -> Available; Left (GuardFailure G.Busy) -> Uninitialized; Left _ -> Quarantined) entries errors
+  ownership <- G.withNamespaceCustody guard (L.acquireLifetimeOwner host)
+  result <- case either (Left . GuardFailure) (either (Left . OwnerFailure) Right) ownership of
+   Left err -> pure (Left err)
+   Right () -> do
+    guarded <- G.withHostGuard guard $ \lease -> G.withNamespace lease $ \parent -> runExceptT $ do
+     ExceptT (fmap (either (Left . OwnerFailure) Right) (L.validateLifetimeOwner host parent))
+     slot (F.offerChildDirectory admissions parent F.Admissions)
+     slot (F.offerChildDirectory companions parent F.Companions)
+    pure (fromGuard (fmap fromGuard guarded))
+  change state $ \(State _ entries errors) -> State (case result of Right () -> Available; Left (GuardFailure G.Busy) -> Uninitialized; Left (OwnerFailure L.Busy) -> Uninitialized; Left _ -> Quarantined) entries errors
   pure result
+
+-- A startup/identity borrow is not a journal writer or native execution grant.
+checkHost :: PairStore -> ExceptT PairError IO ()
+checkHost (PairStore _ _ guard host _ _ _ state _) = do
+ result <- lift (G.withNamespaceCustody guard (L.validateLifetimeOwner host))
+ let checked= either (Left . GuardFailure) (either (Left . OwnerFailure) Right) result
+ case checked of
+  Left err -> do
+   case err of
+    GuardFailure G.Busy -> pure ()
+    OwnerFailure L.Busy -> pure ()
+    _ -> lift (change state (\(State _ entries errors) -> State Quarantined entries errors))
+   throwE err
+  Right () -> pure ()
 
 -- Only the authenticated current host event producer may supply these view
 -- fields. This API validates correlation; it does not authenticate GUI input.
 installView :: PairStore -> Counter -> Counter -> Counter -> Counter -> T.Text -> Intent -> IO (Either PairError S.ViewClaim)
-installView store@(PairStore _ bound _ registry _ _ state _) scope generation publication lease control action = withActor store $ runExceptT $ do
+installView store@(PairStore _ bound _ _ registry _ _ state _) scope generation publication lease control action = withActor store $ runExceptT $ do
  ready state
+ checkHost store
  claim <- ExceptT (pure (either (Left . SelectionFailure) Right (S.viewClaim bound scope generation publication lease control action)))
  selection (S.installCurrentView registry claim)
  pure claim
 captureSelection :: PairStore -> S.ViewClaim -> IO (Either PairError S.Selection)
-captureSelection store@(PairStore _ _ _ registry _ _ state _) claim = withActor store $ runExceptT $ ready state >> selection (S.captureSelection registry claim)
+captureSelection store@(PairStore _ _ _ _ registry _ _ state _) claim = withActor store $ runExceptT $ ready state >> checkHost store >> selection (S.captureSelection registry claim)
 
 nameFor :: B.ByteString -> ExceptT PairError IO F.SlotName
 nameFor key = ExceptT (pure (either (Left . StorageFailure) Right (F.slotName (key <> ".json"))))
@@ -155,7 +176,7 @@ setTransaction state selected bytes phase = change state $ \(State status entrie
 sameSelection :: S.Selection -> S.Selection -> Bool
 sameSelection a b = S.selectionId a==S.selectionId b && S.selectionBinding a==S.selectionBinding b && S.selectionScope a==S.selectionScope b && S.selectionPublication a==S.selectionPublication b && S.selectionLease a==S.selectionLease b && S.selectionControl a==S.selectionControl b && S.selectionIntent a==S.selectionIntent b && S.selectionAccepted a==S.selectionAccepted b && S.selectionDeadline a==S.selectionDeadline b
 publishCaptured :: PairStore -> S.Selection -> IO (Either PairError ())
-publishCaptured store@(PairStore _ bound guard registry admissions companions state _) captured = withActor store $ do
+publishCaptured store@(PairStore _ bound guard host registry admissions companions state _) captured = withActor store $ do
  State _ before _ <- readIORef state
  let duplicateBefore=any ((==S.selectionId captured) . transactionId) before
  result <- runExceptT $ do
@@ -167,7 +188,9 @@ publishCaptured store@(PairStore _ bound guard registry admissions companions st
   when (any ((==S.selectionId captured) . transactionId) entries) (throwE InvalidSelection)
   (key,_) <- encoding (Bytes.pendingFor (S.selectionIntent captured))
   lift (change state (\(State phase previous errors) -> State phase (previous ++ [Transaction captured Nothing QueueReserved]) errors))
-  guarded <- lift $ G.withHostGuard guard $ \_ -> runExceptT $ do
+  guarded <- lift $ G.withHostGuard guard $ \lease -> runExceptT $ do
+   borrowed <- lift (G.withNamespace lease (L.validateLifetimeOwner host))
+   ExceptT (pure (either (Left . GuardFailure) (either (Left . OwnerFailure) Right) borrowed))
    inventory bound admissions companions captured key
    spent <- selection (S.spendSelection registry (S.selectionId captured) bound (S.selectionIntent captured))
    lift (setTransaction state spent Nothing Spent)
@@ -187,6 +210,7 @@ publishCaptured store@(PairStore _ bound guard registry admissions companions st
   (spent,pair) <- ExceptT (pure (fromGuard guarded))
   -- Unlock failure grants no enqueue. The parent gate and owning event thread
   -- serialize this final currentness check with the actual queue transition.
+  checkHost store
   selection (S.validateSpentCurrent registry spent)
   lift (setTransaction state spent (Just pair) Queued)
  case result of
@@ -198,13 +222,14 @@ publishCaptured store@(PairStore _ bound guard registry admissions companions st
          | p==QueueReserved = Nothing
          | otherwise = Just old
         spentFailure=any (\old@(Transaction _ _ p) -> transactionId old==S.selectionId captured && p/=QueueReserved) entries
-        corrupt=case err of InvalidInventory -> True; StorageFailure _ -> True; GuardFailure G.Busy -> False; GuardFailure _ -> True; _ -> False
+        corrupt=case err of InvalidInventory -> True; StorageFailure _ -> True; GuardFailure G.Busy -> False; GuardFailure _ -> True; OwnerFailure L.Busy -> False; OwnerFailure _ -> True; _ -> False
     in State (if spentFailure || corrupt then Quarantined else phase) [entry | Just entry <- map after entries] errors
    pure (Left err)
 
 claimPreparedWork :: PairStore -> IO (Either PairError (Maybe PreparedWork))
-claimPreparedWork store@(PairStore _ _ _ registry _ _ state _) = withActor store $ runExceptT $ do
+claimPreparedWork store@(PairStore _ _ _ _ registry _ _ state _) = withActor store $ runExceptT $ do
  ready state
+ checkHost store
  State _ entries _ <- lift (readIORef state)
  case find (\(Transaction _ _ phase) -> phase==Queued) entries of
   Nothing -> pure Nothing
@@ -223,15 +248,16 @@ claimPreparedWork store@(PairStore _ _ _ registry _ _ state _) = withActor store
 -- Storage shutdown only. It retains on-disk Pending/certificates and confers
 -- no native cancellation, ACK or physical-effect retirement observation.
 closeStorage :: PairStore -> IO (Either PairError ())
-closeStorage store@(PairStore _ _ guard registry admissions companions state _) = withActor store $ mask $ \restore -> do
+closeStorage store@(PairStore _ _ guard host registry admissions companions state _) = withActor store $ mask $ \restore -> do
  view <- try (restore (S.retireCurrentView registry)) :: IO (Either SomeException (Either S.SelectionError ()))
  first <- try (restore (F.retireSlotStore admissions)) :: IO (Either SomeException F.SlotStatus)
  second <- try (restore (F.retireSlotStore companions)) :: IO (Either SomeException F.SlotStatus)
+ ownerClosed <- try (restore (L.retireLifetimeOwner host)) :: IO (Either SomeException (Either L.OwnerError ()))
  third <- try (restore (G.retireHostGuard guard)) :: IO (Either SomeException (Either G.GuardError G.GuardStatus))
- let exceptions=[err | Left err <- [fmap (const ()) view,fmap (const ()) first,fmap (const ()) second,fmap (const ()) third]]
+ let exceptions=[err | Left err <- [fmap (const ()) view,fmap (const ()) first,fmap (const ()) second,fmap (const ()) ownerClosed,fmap (const ()) third]]
  change state $ \(State _ entries errors) -> State Closed entries (take 8 (exceptions ++ errors))
  case filter isAsync exceptions of
   err:_ -> throwIO err
-  [] -> case (view,first,second,third) of
-   (Right (Right ()),Right a,Right b,Right (Right _)) | not (F.slotBusy a || F.slotBusy b) && F.slotUncertain a==0 && F.slotUncertain b==0 -> pure (Right ())
+  [] -> case (view,first,second,ownerClosed,third) of
+   (Right (Right ()),Right a,Right b,Right (Right ()),Right (Right _)) | not (F.slotBusy a || F.slotBusy b) && F.slotUncertain a==0 && F.slotUncertain b==0 -> pure (Right ())
    _ -> pure (Left Poisoned)

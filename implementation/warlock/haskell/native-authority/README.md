@@ -13,6 +13,7 @@ for source-bound evidence, failures and remaining work.
 | Terminal storage | One-shot owned file/directory/final-entry storage. Final entry must match the held inode; receipt checks hold the same custody gate as retirement. TerminalReceipt is a same-process observation, not DurableReceipt or native ACK permission. WCAN1 remains preliminary, not a release disk format. |
 | Selection | Trusted current-view claim binds scope/generation/publication/lease/control and exact Restore intent. Actual CLOCK_MONOTONIC acceptance fixes D=A+2s. Spending is once-only; stale/retired views cannot revive captures. Installing a claim does not authenticate GUI input. |
 | HostGuard | Owns namespace/lock descriptors, private metadata and fixed-name inode; actual exclusive nonblocking flock, generation-scoped borrowed namespace, original async retention/unlock and once-only close. Writer ownership is distinct from lifetime host-owner eligibility. |
+| LifetimeOwner | Host-side `host-owner.lock` stays exclusively held between writer critical sections. Namespace/held-file/fixed-name metadata joins and owning-thread custody are rechecked before publication/queue claim; cleanup claims close once and retains uncertainty. Adapter `writer.lock` remains separate. |
 | SlotStore | Relative bounded read/scan/exact-old atomic publication and exact removal. Full writes/readback, file fsync, rename, directory fsync and final-entry checks;64 files/oneMiB, retained FD/DIR custody and uncertain close without numeric retry. Child directories are acquired into a preallocated owner before fallible validation. |
 | PairStore | Allocates both stores privately and holds its actor gate plus HostGuard across full inventories, exact selection spend and Reserved → Pending → Submitted durable writes. Current view/D and successful unlock precede queue insertion; claim checks currentness again and consumes queued work once. Failures after spend retain phase and quarantine. |
 | AdmissionShape | Informational legacy Pending decoder/key validation, including schema1. The active admissions folder independently requires schema2 Pending. Decoded data never grants enqueue, native execution or ACK. |
@@ -46,6 +47,11 @@ bounded component results include:
 - Eight seeded12-step production-route traces with independent filesystem/queue
   counts. Observed27 positive,7 duplicate,19 invalid-control,23 stale and20 empty
   operations. These96 actions are bounded coverage, not exhaustive proof.
+- Direct independent lifetime-owner controls for actual writer-independent contention,
+  lock replacement, invalid metadata, owning-thread/reentrant refusal, interrupted
+  acquisition and descriptor-number reuse after close uncertainty. Two pre-close
+  failure cases deliberately retain uncertain descriptors until fixture process
+  exit; their exit is not normal resource-retirement proof.
 - A separate strict ordinary library build with development hooks disabled.
 
 The manual `slotstore-test-hooks` flag defaults to False. Protected developer
@@ -55,10 +61,12 @@ legacy oracle is development tooling, never a production dependency.
 
 ## Still required
 
-Actual authenticated host/view integration, lifetime `host-owner.lock` and current
-namespace migration/marker/predecessor eligibility are not established by
+Actual authenticated host/view integration and current namespace migration/marker/
+predecessor eligibility are not established by
 PairPhase.Available, a writer lock or returned queued-work data. They must be
-joined before real dispatch. The native event-thread/non-yielding provider must
+joined before real dispatch. Lifetime host ownership is now integrated into
+PairStore startup before the writer lock and checked again on publication/claim;
+its bounded controls do not establish those separate eligibility conditions. The native event-thread/non-yielding provider must
 freshly validate original D at the first mutation; Haskell ThreadId alone does
 not prove compositor OS-thread ownership.
 
