@@ -1,0 +1,127 @@
+/* Documentation framing for design specimen pages. Load after specimen-bootstrap.css.
+   Every rule here targets documentation markup; selectors exclude renderer surfaces, whose
+   presentation belongs to the area theme.css files. Stages pair background and text tokens. */
+@layer base {
+ html[data-warlock-design="v1"] body.wl-specimen-page { margin:0; background:var(--wl-sys-color-canvas); color:var(--wl-sys-color-text); font:var(--wl-sys-type-reading-weight) var(--wl-sys-type-reading-size)/var(--wl-sys-type-reading-line-height) var(--wl-sys-type-reading-family); letter-spacing:var(--wl-sys-type-reading-tracking); font-synthesis:none; }
+ .wl-specimen-page :where(h1,h2,h3,p,figure,ul,ol,nav):not(:where(.surface-popup,.surface-bar) *) { margin-block:0; }
+ .wl-specimen-page :where(h1):not(:where(.surface-popup,.surface-bar) *) { font:var(--wl-sys-type-page-title-weight) var(--wl-sys-type-page-title-size)/var(--wl-sys-type-page-title-line-height) var(--wl-sys-type-page-title-family); letter-spacing:var(--wl-sys-type-page-title-tracking); }
+ .wl-specimen-page :where(h2):not(:where(.surface-popup,.surface-bar) *) { font:var(--wl-sys-type-headline-weight) var(--wl-sys-type-headline-size)/var(--wl-sys-type-headline-line-height) var(--wl-sys-type-headline-family); letter-spacing:var(--wl-sys-type-headline-tracking); }
+ .wl-specimen-page :where(h3):not(:where(.surface-popup,.surface-bar) *),
+ .wl-specimen-page :where(.wl-specimen-example,.wl-specimen-gallery > *) > :where(h2,h3):not(:where(.surface-popup,.surface-bar) *) { font:var(--wl-sys-type-section-title-weight) var(--wl-sys-type-section-title-size)/var(--wl-sys-type-section-title-line-height) var(--wl-sys-type-section-title-family); letter-spacing:var(--wl-sys-type-section-title-tracking); }
+ .wl-specimen-page :where(p,li,figcaption):not(:where(.surface-popup,.surface-bar) *) { max-inline-size:70ch; }
+ .wl-specimen-page :where(a):not(:where(.surface-popup,.surface-bar) *) { color:inherit; text-decoration:underline; text-underline-offset:.18em; }
+ .wl-specimen-page :where(code,kbd):not(:where(.surface-popup,.surface-bar) *) { font-family:var(--wl-sys-font-code); font-weight:400; }
+ .wl-specimen-page :where(img):not(:where(.surface-popup,.surface-bar) *) { max-inline-size:100%; block-size:auto; }
+}
+@layer layouts {
+ .wl-specimen-main { box-sizing:border-box; max-inline-size:1200px; margin-inline:auto; padding:32px 24px 64px; }
+ .wl-specimen-main-prose { max-inline-size:calc(70ch + 48px); }
+ .wl-specimen-main > * + * { margin-block-start:16px; }
+ .wl-specimen-main > :is(h2,section) { margin-block-start:48px; }
+ .wl-specimen-main > h2 + *, .wl-specimen-main > section > h2 + * { margin-block-start:12px; }
+ .wl-specimen-main > :is(.wl-specimen-gallery,.wl-specimen-compare) { margin-block-start:24px; }
+ .wl-specimen-main > section > * + * { margin-block-start:16px; }
+ .wl-specimen-breadcrumb { color:var(--wl-sys-color-text-secondary); }
+ .wl-specimen-lead { font:var(--wl-sys-type-reading-lead-weight) var(--wl-sys-type-reading-lead-size)/var(--wl-sys-type-reading-lead-line-height) var(--wl-sys-type-reading-lead-family); color:var(--wl-sys-color-text-secondary); }
+ .wl-specimen-note { color:var(--wl-sys-color-text-secondary); }
+ .wl-specimen-tools { display:flex; flex-wrap:wrap; align-items:center; gap:12px; }
+ .wl-specimen-gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,var(--wl-specimen-column,360px)),1fr)); gap:40px 24px; align-items:start; }
+ .wl-specimen-gallery-wide { --wl-specimen-column:560px; }
+ .wl-specimen-gallery-pair { grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr)); }
+ .wl-specimen-stack { display:grid; gap:32px; }
+ .wl-specimen-example { min-inline-size:0; }
+ .wl-specimen-example > * + * { margin-block-start:8px; }
+ .wl-specimen-example > :is(h2,h3) + p { color:var(--wl-sys-color-text-secondary); }
+ /* A stage is a themed canvas that holds a surface; it paints its own background and text. */
+ .wl-specimen-stage { box-sizing:border-box; position:relative; min-inline-size:0; padding:16px; border:1px solid var(--wl-sys-color-border-essential); border-radius:8px; background:var(--wl-sys-color-canvas); color:var(--wl-sys-color-text); }
+ .wl-specimen-stage > * + * { margin-block-start:12px; }
+ /* Bounded hosts demonstrate a fixed allocation and its scrollport; natural hosts show every control at once. */
+ .wl-specimen-bounded { box-sizing:border-box; block-size:var(--wl-specimen-bound,420px); }
+ .wl-specimen-bounded > .surface-popup { block-size:100%; }
+ .wl-specimen-natural > .surface-popup { block-size:auto; max-block-size:none; }
+ .wl-specimen-studies { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr)); gap:24px; }
+ .wl-specimen-studies figure { margin:0; min-inline-size:0; }
+ .wl-specimen-studies img { display:block; inline-size:100%; block-size:auto; }
+ .wl-specimen-studies figcaption { margin-block-start:8px; color:var(--wl-sys-color-text-secondary); }
+ .wl-specimen-fixture { display:block; box-sizing:border-box; inline-size:100%; block-size:var(--wl-specimen-fixture-height,420px); border:1px solid var(--wl-sys-color-border-essential); background:var(--wl-sys-color-canvas); }
+ @media (max-width:600px) { .wl-specimen-main { padding:24px 16px 48px; } .wl-specimen-stage { padding:12px; } }
+}
+@layer components {
+ /* Documentation controls outside renderer surfaces. */
+ .wl-specimen-page :where(button,select):not(:where(.surface-popup,.surface-bar) *) { box-sizing:border-box; min-block-size:2.25rem; padding:6px 12px; border:1px solid var(--wl-sys-color-border-essential); border-radius:6px; background:var(--wl-sys-color-surface); color:var(--wl-sys-color-text); font:var(--wl-sys-type-label-weight) var(--wl-sys-type-label-size)/var(--wl-sys-type-label-line-height) var(--wl-sys-type-label-family); cursor:pointer; }
+ /* The shared action treatments, for specimen comparisons that need a real focusable action. */
+ .wl-specimen-page .wl-specimen-action[data-treatment="affirmative"] { background:var(--wl-sys-color-action-fill); color:var(--wl-sys-color-on-action); border-color:var(--wl-sys-color-on-action); font-weight:600; }
+ .wl-specimen-page [data-theme="dawn"] .wl-specimen-action[data-treatment="affirmative"] { border-color:var(--wl-sys-color-brand-text); }
+ .wl-specimen-page .wl-specimen-action[data-treatment="secondary"] { background:var(--wl-sys-color-surface); color:var(--wl-sys-color-text); border-color:var(--wl-sys-color-border-essential); }
+
+ /* Attention scene: window focus, application activity, candidate and recipient cues. */
+ .wl-specimen-scene { position:relative; display:grid; gap:16px; padding:24px; border:1px solid var(--wl-sys-color-border-essential); background:var(--wl-sys-color-canvas); color:var(--wl-sys-color-text); }
+ .wl-specimen-window { position:relative; min-inline-size:0; border:2px solid var(--wl-sys-color-window-edge-unfocused); outline:1px solid var(--wl-sys-color-window-guard); outline-offset:0; border-radius:8px; box-shadow:inset 0 0 0 1px var(--wl-sys-color-window-guard), 0 2px 4px 0 rgb(0 0 0 / .154), 0 6px 16px 0 rgb(0 0 0 / .11); background:var(--wl-sys-color-surface); color:var(--wl-sys-color-text); }
+ [data-theme="dawn"] .wl-specimen-window { box-shadow:inset 0 0 0 1px var(--wl-sys-color-window-guard), 0 2px 4px 0 rgb(0 0 0 / .088), 0 6px 16px 0 rgb(0 0 0 / .066); }
+ .wl-specimen-window[data-window-focused="true"] { border-color:var(--wl-sys-color-window-edge-focused); box-shadow:inset 0 0 0 1px var(--wl-sys-color-window-guard), var(--wl-sys-shadow-rest); }
+ .wl-specimen-title { padding:8px 16px; border-radius:6px 6px 0 0; color:var(--wl-sys-color-text-secondary); font:600 .875rem/1.428571 var(--wl-sys-font-body); background:var(--wl-sys-color-surface); }
+ [data-window-focused="true"] > .wl-specimen-title { color:var(--wl-sys-color-text); background:var(--wl-sys-color-surface-raised); }
+ .wl-specimen-title::before { content:""; display:inline-block; vertical-align:-2px; width:3px; height:14px; margin-inline-end:8px; background:transparent; }
+ [data-window-focused="true"] > .wl-specimen-title::before { background:var(--wl-sys-color-text); }
+ .wl-specimen-window[data-active-application="true"]::after { content:""; position:absolute; inset:4px; border:2px solid var(--wl-sys-color-brand-text); border-radius:4px; box-shadow:0 0 0 1px var(--wl-sys-color-window-guard); pointer-events:none; }
+ .wl-specimen-candidate { padding:12px; margin:12px; border:2px solid transparent; color:var(--wl-sys-color-text); font:500 .875rem/1.428571 var(--wl-sys-font-body); background:linear-gradient(var(--wl-sys-color-text),var(--wl-sys-color-text)) left top / 12px 2px no-repeat, linear-gradient(var(--wl-sys-color-text),var(--wl-sys-color-text)) left top / 2px 12px no-repeat, linear-gradient(var(--wl-sys-color-text),var(--wl-sys-color-text)) right top / 12px 2px no-repeat, linear-gradient(var(--wl-sys-color-text),var(--wl-sys-color-text)) right top / 2px 12px no-repeat, linear-gradient(var(--wl-sys-color-text),var(--wl-sys-color-text)) left bottom / 12px 2px no-repeat, linear-gradient(var(--wl-sys-color-text),var(--wl-sys-color-text)) left bottom / 2px 12px no-repeat, linear-gradient(var(--wl-sys-color-text),var(--wl-sys-color-text)) right bottom / 12px 2px no-repeat, linear-gradient(var(--wl-sys-color-text),var(--wl-sys-color-text)) right bottom / 2px 12px no-repeat, var(--wl-sys-color-surface-selected); }
+ .wl-specimen-recipient { color:var(--wl-sys-color-focus); font-weight:600; float:inline-end; }
+
+ /* Compact cue comparison: one stage per theme; the effects-on and effects-off tiers sit side by side when space allows. */
+ .wl-specimen-compare { display:grid; gap:16px; }
+ .wl-specimen-compare > .wl-specimen-stage { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,30rem),1fr)); gap:12px 24px; align-items:start; }
+ .wl-specimen-compare > .wl-specimen-stage > * + * { margin-block-start:0; }
+ .wl-specimen-compare > .wl-specimen-stage > :is(h3,.wl-specimen-actions) { grid-column:1 / -1; }
+ .wl-specimen-compare-tier { display:grid; gap:8px; min-inline-size:0; container-type:inline-size; }
+ .wl-specimen-compare-tier > p { color:var(--wl-sys-color-text-secondary); font:var(--wl-sys-type-caption-weight) var(--wl-sys-type-caption-size)/var(--wl-sys-type-caption-line-height) var(--wl-sys-type-caption-family); letter-spacing:var(--wl-sys-type-caption-tracking); }
+ .wl-specimen-cues { display:grid; grid-template-columns:minmax(0,1fr); gap:8px; align-items:stretch; }
+ .wl-specimen-cues > * { min-inline-size:0; min-block-size:3.25rem; box-sizing:border-box; }
+ @container (min-width:28rem) { .wl-specimen-cues { grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; } .wl-specimen-cues > * { min-block-size:4.5rem; } }
+ .wl-specimen-cues .wl-specimen-candidate { margin:0; display:flex; align-items:center; }
+ .wl-specimen-cues .wl-specimen-title { padding:8px 12px; }
+ .wl-specimen-cues .wl-specimen-window[data-active-application="true"] .wl-specimen-title { padding-inline:14px; }
+ .wl-specimen-actions { display:flex; flex-wrap:wrap; gap:8px; }
+
+ /* Color, effects and depth documentation. */
+ .wl-color-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr)); gap:24px; }
+ .wl-color-grid section { padding:16px; border:1px solid var(--wl-sys-color-border-essential); border-radius:8px; background:var(--wl-sys-color-surface); color:var(--wl-sys-color-text); }
+ .wl-color-grid section > * + * { margin-block-start:12px; }
+ .wl-color-samples { display:grid; grid-template-columns:repeat(2,1fr); gap:6px; padding:8px; background:var(--wl-sys-color-canvas); }
+ .wl-color-samples span { padding:12px; color:var(--wl-sys-color-text); background:var(--wl-sys-color-surface); }
+ .wl-color-samples .wl-color-raised { background:var(--wl-sys-color-surface-raised); }
+ .wl-color-samples .wl-color-brand { color:var(--wl-sys-color-brand-text); }
+ .wl-effects-demo { padding:32px; overflow:hidden; background:var(--wl-sys-color-canvas); border:1px solid var(--wl-sys-color-border-essential); }
+ @media (max-width:600px) { .wl-effects-demo { padding:16px; } }
+ .wl-effects-frame { position:relative; display:grid; place-items:center; height:200px; background:var(--wl-sys-color-surface); border:2px solid var(--wl-sys-color-window-edge-focused); border-radius:8px; }
+ .wl-depth-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:24px; padding:24px; background:var(--wl-sys-color-canvas); }
+ .wl-depth-grid div { padding:16px; background:var(--wl-sys-color-surface); border:1px solid var(--wl-sys-color-border-essential); border-radius:8px; }
+ .wl-depth-grid div[data-depth="rest"] { box-shadow:var(--wl-sys-shadow-rest); }
+ .wl-depth-grid div[data-depth="raised"] { box-shadow:var(--wl-sys-shadow-raised); }
+ .wl-depth-grid div[data-depth="dialog"] { box-shadow:var(--wl-sys-shadow-dialog); }
+}
+@layer states {
+ @media (hover:hover) and (pointer:fine) {
+  .wl-specimen-page :where(button):not(:where(.surface-popup,.surface-bar) *):enabled:hover { background:var(--wl-sys-color-surface-hover); }
+  .wl-specimen-page .wl-specimen-action[data-treatment="affirmative"]:enabled:hover { background:var(--wl-sys-color-action-fill-hover); }
+ }
+ .wl-specimen-page :where(button):not(:where(.surface-popup,.surface-bar) *):enabled:active { background:var(--wl-sys-color-surface-pressed); }
+ .wl-specimen-page .wl-specimen-action[data-treatment="affirmative"]:enabled:active { background:var(--wl-sys-color-action-fill-pressed); }
+ .wl-specimen-page :where(a,button,select,summary,input):not(:where(.surface-popup,.surface-bar) *):focus-visible { outline:2px solid var(--wl-sys-color-focus); outline-offset:2px; box-shadow:0 0 0 2px var(--wl-sys-color-focus-gap); }
+}
+@layer accessibility {
+ :is([data-effects="off"],[data-effects-tier="off"],[data-theme="high-contrast"]) .wl-specimen-window { box-shadow:inset 0 0 0 1px var(--wl-sys-color-window-guard); }
+ :is([data-effects="off"],[data-effects-tier="off"],[data-theme="high-contrast"]) .wl-depth-grid div { box-shadow:none; }
+ @media (pointer:coarse) { .wl-specimen-page :where(button,select):not(:where(.surface-popup,.surface-bar) *) { min-block-size:2.75rem; } }
+ @media (forced-colors:active) {
+  .wl-specimen-page :where(a,button,select,summary,input):not(:where(.surface-popup,.surface-bar) *):focus-visible { outline-color:Highlight; box-shadow:none; }
+  .wl-specimen-page :where(button,select):not(:where(.surface-popup,.surface-bar) *), .wl-specimen-page .wl-specimen-action[data-treatment] { color:ButtonText; background:ButtonFace; border-color:ButtonText; }
+  .wl-specimen-stage { border-color:CanvasText; }
+  .wl-specimen-candidate { forced-color-adjust:none; color:CanvasText; background:linear-gradient(CanvasText,CanvasText) left top / 12px 2px no-repeat, linear-gradient(CanvasText,CanvasText) left top / 2px 12px no-repeat, linear-gradient(CanvasText,CanvasText) right top / 12px 2px no-repeat, linear-gradient(CanvasText,CanvasText) right top / 2px 12px no-repeat, linear-gradient(CanvasText,CanvasText) left bottom / 12px 2px no-repeat, linear-gradient(CanvasText,CanvasText) left bottom / 2px 12px no-repeat, linear-gradient(CanvasText,CanvasText) right bottom / 12px 2px no-repeat, linear-gradient(CanvasText,CanvasText) right bottom / 2px 12px no-repeat, Canvas; }
+  .wl-specimen-window { box-shadow:none; outline-color:Canvas; }
+  .wl-specimen-window[data-window-focused="true"] { border-color:CanvasText; }
+  .wl-specimen-window[data-window-focused="false"] { border-color:GrayText; }
+  [data-window-focused="true"] > .wl-specimen-title::before { forced-color-adjust:none; background:CanvasText; }
+  .wl-specimen-window[data-active-application="true"]::after { border-color:CanvasText; box-shadow:none; }
+  .wl-specimen-recipient { color:Highlight; }
+ }
+}

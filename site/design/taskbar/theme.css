@@ -2,7 +2,9 @@
 @layer components {
   html[data-warlock-design="v1"] .surface-bar { display:flex; box-sizing:border-box; align-items:stretch; height:calc(3rem + 8px); min-width:0; background:var(--wl-sys-color-surface); color:var(--wl-sys-color-text); }
   html[data-warlock-design="v1"] .surface-bar > .surface-actions[role="toolbar"] { display:flex; box-sizing:border-box; flex:1 1 auto; align-items:stretch; min-width:0; height:100%; gap:6px; padding:6px; overflow-x:auto; overflow-y:hidden; scroll-padding-inline:6px; }
-  html[data-warlock-design="v1"] .surface-bar .surface-actions > button { position:relative; flex:0 0 auto; box-sizing:border-box; min-width:0; min-height:0; max-height:none; height:100%; margin:0; padding:2px 12px; border:1px solid transparent; border-radius:6px; background:transparent; color:var(--wl-sys-color-text); font-family:var(--wl-sys-font-body, Inter, sans-serif); font-size:.875rem; line-height:1.428571; font-weight:500; text-align:start; scroll-margin-inline:6px; }
+  /* Compact arrangement: inside the fixed calc(3rem + 8px) allocation each control is a centred column with no block
+     padding, so label, 2px gap and detail fit at 100-200% root text, including WCAG text-spacing overrides. */
+  html[data-warlock-design="v1"] .surface-bar .surface-actions > button { position:relative; display:flex; flex-direction:column; justify-content:center; flex:0 0 auto; box-sizing:border-box; min-width:0; min-height:0; max-height:none; height:100%; margin:0; padding:0 12px; border:1px solid transparent; border-radius:6px; background:transparent; color:var(--wl-sys-color-text); font-family:var(--wl-sys-font-body, Inter, sans-serif); font-size:.875rem; line-height:1.428571; font-weight:500; text-align:start; scroll-margin-inline:6px; }
   html[data-warlock-design="v1"] .surface-bar .surface-actions > .control-group { flex:0 0 auto; width:max-content; min-width:128px; max-width:240px; }
   html[data-warlock-design="v1"] .surface-bar .surface-actions > :is(.control-utility,.control-recovery) { max-width:none; }
   html[data-warlock-design="v1"] .surface-bar .control-label { display:block; min-width:0; line-height:1.428571; }
@@ -14,11 +16,13 @@
   html[data-warlock-design="v1"] .surface-bar > .surface-status-idle { display:none; }
 }
 @layer states {
-  html[data-warlock-design="v1"] .surface-bar .surface-actions > button:enabled:not([aria-disabled="true"]):hover { background:var(--wl-sys-color-surface-hover); }
+  @media (hover:hover) and (pointer:fine) {
+    html[data-warlock-design="v1"] .surface-bar .surface-actions > button:enabled:not([aria-disabled="true"]):hover { background:var(--wl-sys-color-surface-hover); }
+    html[data-warlock-design="v1"] .surface-bar .control-group[data-active-application="true"]:enabled:not([aria-disabled="true"]):hover { background:var(--wl-sys-color-surface-selected-hover); }
+  }
   html[data-warlock-design="v1"] .surface-bar .surface-actions > button:enabled:not([aria-disabled="true"]):active { background:var(--wl-sys-color-surface-pressed); }
   html[data-warlock-design="v1"] .surface-bar .control-group[data-active-application="true"] { background:var(--wl-sys-color-surface-selected); }
   html[data-warlock-design="v1"] .surface-bar .control-group[data-active-application="true"]::after { content:""; position:absolute; inset-inline:12px; inset-block-end:0; height:3px; background:var(--wl-sys-color-brand-text); }
-  html[data-warlock-design="v1"] .surface-bar .control-group[data-active-application="true"]:enabled:not([aria-disabled="true"]):hover { background:var(--wl-sys-color-surface-selected-hover); }
   html[data-warlock-design="v1"] .surface-bar .control-group[data-active-application="true"]:enabled:not([aria-disabled="true"]):active { background:var(--wl-sys-color-surface-selected-pressed); }
   /* Typed hook supplied by the host projection only when focus is observed. */
   html[data-warlock-design="v1"] .surface-bar .control-group[data-window-focused="true"]::before { content:""; position:absolute; width:24px; height:3px; inset-block-start:0; inset-inline-start:50%; transform:translateX(-50%); background:var(--wl-sys-color-text); }

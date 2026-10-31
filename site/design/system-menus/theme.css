@@ -4,6 +4,7 @@
   html[data-warlock-design="v1"] .surface-popup:is([data-mode="system"],[data-mode="jump"]) :is([data-system-content],[data-jump-content]) { margin:16px 12px 2px; color:var(--wl-sys-color-text-secondary); font:400 .875rem/1.428571 Inter,sans-serif; overflow-wrap:anywhere; }
   html[data-warlock-design="v1"] .surface-popup[data-mode="jump"] [data-jump-content="jump:title:state"] { color:var(--wl-sys-color-text); font-weight:600; }
   html[data-warlock-design="v1"] .surface-popup[data-mode="menu"] .surface-controls > button { position:relative; display:grid; align-content:start; min-height:2.25rem; padding-inline-start:40px; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="menu"] .surface-controls > button:has(> .control-detail:not(:empty)) { min-height:3.5rem; }
   html[data-warlock-design="v1"] .surface-popup[data-mode="menu"] [role="menuitemcheckbox"][aria-checked="true"]::after { content:""; position:absolute; inset-inline-start:19px; top:calc(7px + .625rem); width:5px; height:9px; border:solid currentColor; border-width:0 2px 2px 0; transform:translateY(-50%) rotate(45deg); }
   /* Renderer projection: the wrapper contains the original keyed controls in source order. */
   html[data-warlock-design="v1"] .surface-popup[data-mode="system"] [data-system-confirmation] { margin:24px 6px 6px; padding:12px; border:1px solid var(--wl-sys-color-border-essential); border-radius:8px; background:var(--wl-sys-color-surface-raised); display:flex; flex-wrap:wrap; gap:8px; }
@@ -29,5 +30,13 @@
   @media (forced-colors:active) {
     html[data-warlock-design="v1"] .surface-popup[data-mode="menu"] [aria-current="true"] .control-label::before,
     html[data-warlock-design="v1"] .surface-popup[data-mode="menu"] [aria-current="true"] .control-label::after { border-color:CanvasText; }
+  }
+}
+@layer accessibility {
+  /* Coarse pointers: menu rows and confirmation actions are at least 44px; rows with a detail at least 60px. */
+  @media (pointer:coarse) {
+    html[data-warlock-design="v1"] .surface-popup[data-mode="menu"] .surface-controls > button,
+    html[data-warlock-design="v1"] .surface-popup[data-mode="system"] [data-system-confirmation] :is([data-surface-control="system:cancel"],[data-surface-control="system:confirm"]) { min-height:2.75rem; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="menu"] .surface-controls > button:has(> .control-detail:not(:empty)) { min-height:3.75rem; }
   }
 }

@@ -55,7 +55,15 @@
   html[data-warlock-design="v1"] .surface-popup[data-mode="overview"] button[aria-pressed="true"]:not(:disabled):not([aria-disabled="true"]):active { background: var(--wl-sys-color-surface-selected-pressed); }
   html[data-warlock-design="v1"] .surface-popup[data-mode="overview"] button:is(:disabled,[aria-disabled="true"]) { opacity: 1; color: var(--wl-sys-color-text-secondary); background: var(--wl-sys-color-surface-recessed); }
   @media (forced-colors: active) {
-    html[data-warlock-design="v1"] .surface-popup[data-mode="overview"] button[aria-pressed="true"]::after { background: CanvasText; forced-color-adjust: none; }
-    html[data-warlock-design="v1"] .surface-popup[data-mode="overview"] button[aria-pressed="true"]::before { border-color: CanvasText; forced-color-adjust: none; }
+    /* Same specificity as the selection rules above, so the system colours win in forced colours. */
+    html[data-warlock-design="v1"] .surface-popup[data-mode="overview"] :is([data-surface-control="overview:all"],[data-surface-control^="overview:workspace:"])[aria-pressed="true"]::after { background: CanvasText; forced-color-adjust: none; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="overview"] :is([data-surface-control="overview:all"],[data-surface-control^="overview:workspace:"])[aria-pressed="true"]::before { border-color: CanvasText; forced-color-adjust: none; }
+  }
+}
+@layer accessibility {
+  /* Coarse pointers: 44px single-line controls and 60px family rows and other rows with details. */
+  @media (pointer: coarse) {
+    html[data-warlock-design="v1"] .surface-popup[data-mode="overview"] button { min-block-size: 2.75rem; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="overview"] :is([data-surface-control^="overview:family:"], button:has(> .control-detail:not(:empty))) { min-block-size: 3.75rem; }
   }
 }

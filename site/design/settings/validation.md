@@ -19,3 +19,7 @@ The canonical shared specimen bootstrap and foundations stylesheet load in the S
 Chromium pointer-down checks keep the pointer over each control and compare computed backgrounds with the resolved tokens. Neutral, selected and affirmative controls pass: `rgb(56, 48, 50)`, `rgb(66, 48, 53)` and `rgb(150, 26, 32)` respectively. These checks cover the static specimen.
 
 The staged renderer and the compiled test drive retain the keyed outer item, original button ID, control identity, enablement and source detail, and combine the caption with any existing preview description. Appearance, motion and shortcut saves each have their own group.
+
+## Geometry and pointer size checks
+
+Toggling `aria-current`, `aria-pressed` and `disabled` on every Settings row leaves each border box unchanged; the selection bar is an inset marker and the label keeps its position. With Chromium touch emulation (`pointer: coarse`), single-line rows measure at least 44px and rows with a detail at least 60px; with a fine pointer the minimums are 36px and 56px. Each save group renders `button + p.settings-save-caption` with the affirmative fill on enabled saves. Chromium, Firefox and WebKit load the specimen and the scale fixtures with no console errors. These are static specimen checks.

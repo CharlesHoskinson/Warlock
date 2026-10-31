@@ -42,3 +42,7 @@
   html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:bottom-"]::after { top:32px; }
  }
 }
+@layer components {
+  /* Centred region labels mirror the reserved unavailable-cue slot at the inline start, so label, detail and diagram share one centre. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:"] > .control-label { padding-inline-start:calc(.75rem + 8px); }
+}
