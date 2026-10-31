@@ -1,0 +1,136 @@
+{
+  "schema": 1,
+  "task": "applications-window-feedback",
+  "reviewer": "reviewer",
+  "run": "warlock-20261031-setup",
+  "reviewedUTC": "2026-10-31T22:23:57.994208+00:00",
+  "sourceBase": "06ac4f8a72b68a8d65b35ddce9255ad50e1e9011",
+  "disposition": "accepted source and rendered browser component: Applications correlated window feedback and bounded taskbar prefix correction; original ELM-UI-007 scenarios/EARS remain partial for native/keyboard/AT obligations",
+  "requirements": [
+    "ELM-UI-007"
+  ],
+  "scenarios": [
+    "restore-pending",
+    "restore-refused",
+    "restore-unknown"
+  ],
+  "behavior": "Applications now retains the correlated current window-action feedback ahead of existing launcher guidance; an older unresolved Unknown also retains the existing generic recovery notice when the current transaction is Committed or absent. Query context and original effect state are preserved.",
+  "sourceHashes": {
+    "implementation/warlock/src/Surface.elm": "689657630aec36dd6133c762a385284311f67a0b0f9fa95c5897e802b5667412",
+    "implementation/warlock/qa/FeedbackContextReplay.elm": "c98bb05441461e28c011c0e56e0ef6990abeda7c1dbe2ef1950dba5949e62d4f",
+    "implementation/warlock/qa/feedback-context.cjs": "7fff0511c7e1aca4a40a145a74ca191b00f5f2df0798c06422e7bd51118c0710",
+    "implementation/warlock/src/SurfaceRenderer.elm": "e5195fc6b8fbe1dd47d284f1122b34aa211e253a33ed6c8ed79990bd33fecbc9",
+    "implementation/warlock/qa/feedback-context-browser.mjs": "a233c01b9260872b0bbad285d83369bc75f474a10641237a25cb271f49aacaf2",
+    "tools/qa_cpu.py": "1dca34953dafee4af045b04f8d78313db6849a0951dd730ac98e6bc0d1c31934",
+    "tools/check_elm_cpu.py": "35b0ccedacfb2b1a3d0b5ad2a91dff03d2b64d516f4c1feeee477b90ab283879",
+    "tools/check_feedback_browser.py": "376127119a8208749c643b18e1ca28900a62fa8c9f2f73c6069816d471446ef8"
+  },
+  "sourceReview": [
+    "Changes only pure Surface.notice projection and factors unchanged prior notice body into contextNotice.",
+    "Wrapper applies only when mode is Applications and current retained status or recoveryNeeded already exists; no new native authority, effect command, deadline, counter or receipt state is created.",
+    "Pending/Unknown/Refused/Cancelled use existing windowNotice; older unresolved work uses existing generic reservationReason rather than falsely attributing an uncertain current Restore.",
+    "Main/Bar/Popup consume the same existing Surface packet; source entry points remain unchanged.",
+    "SurfaceRenderer applies Elm-owned align-items:flex-start to the existing bar status, preserving its keyed node, complete text, aria-label/title and action routes; popup rendering remains unchanged."
+  ],
+  "testReview": {
+    "executor": "root",
+    "reviewerExecutedProtectedChecks": false,
+    "finalPassed": true,
+    "rows": 160,
+    "checks": 2435,
+    "failures": 0,
+    "seed": 20261031,
+    "generatedCases": 96,
+    "owningRoots": [
+      "Main",
+      "Bar",
+      "Popup"
+    ],
+    "evidenceMeaning": "Actual Desktop SearchQuery and stale-publication route plus Surface.packet/decoder; fixture receipt states are component setup. The96 seeded view variants are bounded variation, not a new state-machine or native proof.",
+    "positiveAndNegativeCases": [
+      "Decoded binding/catalog/idle-pointer and current stamp reach real query update",
+      "Five launcher guidance states, open/closed controls, Pending/Refused/Unknown/Cancelled/Committed/None",
+      "Stale query admission, repeat projection, exact effect and unresolved-custody equality",
+      "Full-width generation/incarnation identities, read-only recovery enablement, disconnect/reconnect behavior",
+      "Older Unknown with current Committed/absent transaction and long query"
+    ],
+    "retainedFailures": [
+      "Initial156-row setup failure used blocked pointer fixture; correctly retained and corrected through actual Idle decoder before product diagnosis.",
+      "Valid156-row baseline had176 missing feedback/order failures.",
+      "Expanded160-row first implementation found4 older-Unknown/currentCommitted-orNone omissions; corrected source now passes2435 checks."
+    ],
+    "finalRenderedTuple": {
+      "report": ".warlock-contributor/elm-cpu-1793485348480251285/report.json",
+      "passed": true,
+      "rows": 160,
+      "pureAssertions": 2435,
+      "browserChecks": 201,
+      "prefixChecks": 24,
+      "actualSourceDrift": [],
+      "owningRoots": [
+        "Main",
+        "Bar",
+        "Popup"
+      ],
+      "fixtureCompiled": true
+    }
+  },
+  "evidence": {
+    ".warlock-contributor/elm-cpu-1793484645007849499/feedback-context.json": "85674884384ef67edde0f9fcd62b9a6d2c23d8475aca28c9fd1edefc5930ab56",
+    ".warlock-contributor/elm-cpu-1793484741741183758/feedback-context.json": "18e739dd8bf28634782e11efa0722f3af3231a0f444358c4a824ac43cd234423",
+    ".warlock-contributor/elm-cpu-1793484823991980202/feedback-context.json": "3400595d369539db21757800a6a1646e5c49491675bd99a2b24122a12c17e8af",
+    ".warlock-contributor/elm-cpu-1793484912330837825/report.json": "3138dbc7041f9a1a4534753d8d4c6da68bb542ef462dc073a26433c72e1204d5",
+    ".warlock-contributor/elm-cpu-1793484912330837825/feedback-context.json": "75b7e8d1a41942100a2ed2dc5723e73e4a48282faf0d0b263e79d014008c1f09",
+    ".warlock-contributor/elm-cpu-1793485068080941261/report.json": "96302f54c8b4ace37f2a9f3925a7b8a8ecf4f7ddab5fe5943fc3daa2d9acafe5",
+    ".warlock-contributor/elm-cpu-1793485068080941261/browser-protection.json": "4113bb23c4e7ff16e8fdc74cf19510a59af04fe6521a7b3bbfd9387943f24481",
+    ".warlock-contributor/elm-cpu-1793485068080941261/feedback-context-browser-report.json": "598f5d77998b3076461630d10ce44a8570b86a6e81544b542f9399e5446160f9",
+    ".warlock-contributor/elm-cpu-1793485068080941261/feedback-context-bar-unknown-320.png": "a43e22d624fd4b101926df7ca83d3acdf9bfdc7fb857fd111982905f640f3f60",
+    ".warlock-contributor/elm-cpu-1793485068080941261/feedback-context-popup-unknown-320.png": "8874df89ab325168047ddbef5199a4f282b20b68ccd6eb4ea202c50fd24589c4",
+    ".warlock-contributor/elm-cpu-1793485068080941261/feedback-context-bar-unknown-1440.png": "69596dd413c18ac4e197befc34652bb6f844f9d796625959cff3daba299709f2",
+    ".warlock-contributor/elm-cpu-1793485068080941261/feedback-context-popup-unknown-1440.png": "fbfc7d70a3c4f0a3de980934ff1e9ace7016d7901494e107dad4663f6cb1e231",
+    ".warlock-contributor/elm-cpu-1793485348480251285/report.json": "c0aa4017bd876b13deab5ef1a50788425730441477545e4697b7a0475b7b2b18",
+    ".warlock-contributor/elm-cpu-1793485348480251285/feedback-context.json": "75b7e8d1a41942100a2ed2dc5723e73e4a48282faf0d0b263e79d014008c1f09",
+    ".warlock-contributor/elm-cpu-1793485348480251285/browser-protection.json": "c83fa9fb1c02b3287dc1f2b2fc2e3091c65ce5403a9d7fab5d2782f04ce95969",
+    ".warlock-contributor/elm-cpu-1793485348480251285/feedback-context-browser-report.json": "29d5cfaf38ac7af97c60c75a655de83d7e88f8725c3ceebf293a6632b1db6870",
+    ".warlock-contributor/elm-cpu-1793485348480251285/feedback-context-bar-unknown-320.png": "4e801310b327d764ba9c4af23efd5578e0ba35a9da5ffb90004d4e192e678106",
+    ".warlock-contributor/elm-cpu-1793485348480251285/feedback-context-popup-unknown-320.png": "8874df89ab325168047ddbef5199a4f282b20b68ccd6eb4ea202c50fd24589c4",
+    ".warlock-contributor/elm-cpu-1793485348480251285/feedback-context-bar-unknown-1440.png": "7632f6c2c3dc93fd0072e81408a4faf1bdd650268654665e2aebe4b4c744fe19",
+    ".warlock-contributor/elm-cpu-1793485348480251285/feedback-context-popup-unknown-1440.png": "fbfc7d70a3c4f0a3de980934ff1e9ace7016d7901494e107dad4663f6cb1e231",
+    ".warlock-contributor/cpu-review-final-rendering.json": "7b332d5a5501bef290451b8157e1611b4f235c434ba988e2f2602f6636cc67e8"
+  },
+  "browserReview": {
+    "status": "accepted rendered browser component only after corrected prefix source, stronger text-range checks and direct screenshot inspection",
+    "report": ".warlock-contributor/elm-cpu-1793485348480251285/feedback-context-browser-report.json",
+    "reportSHA256": "29d5cfaf38ac7af97c60c75a655de83d7e88f8725c3ceebf293a6632b1db6870",
+    "protection": ".warlock-contributor/elm-cpu-1793485348480251285/browser-protection.json",
+    "protectionSHA256": "c83fa9fb1c02b3287dc1f2b2fc2e3091c65ce5403a9d7fab5d2782f04ce95969",
+    "reviewManifest": ".warlock-contributor/cpu-review-final-rendering.json",
+    "reviewManifestSHA256": "7b332d5a5501bef290451b8157e1611b4f235c434ba988e2f2602f6636cc67e8",
+    "checks": 201,
+    "prefixTextRangeChecks": 24,
+    "browserExitCode": 0,
+    "browserSignal": null,
+    "externalRequests": [],
+    "errors": [],
+    "protectedScope": "qa-harness-5615acd89f354a6c83552051450b6ee5.scope/core1, private net:[4026532309]",
+    "directVisualObservation": "Final320px bar image visibly starts Restore: not confirmed for selected window; popup320 shows full correlated Unknown feedback, launcher guidance and retained Ed query. Earlier177-check pass did not catch vertically centered text clipping above bar; its screenshot and limited report remain retained. Final code top-aligns status content and24 DOM Range checks contain Pending/Unknown/Refused prefixes within status box and viewport at320/1440.",
+    "retainedVisualFailure": ".warlock-contributor/elm-cpu-1793485068080941261/feedback-context-bar-unknown-320.png",
+    "limitations": [
+      "Browser component pixels/layout/AX names/focus only, not native input/Wayland presentation or AT speech/braille.",
+      "Bounded320px bar clips the long message tail; full text remains in aria-label/title and popup status.",
+      "One narrow/wide viewport pair and fixture states do not establish all original hardware/text-scale/AT/IME behavior."
+    ]
+  },
+  "remainingObservations": [
+    "Original native keyboard, assistive-technology and correlated input/presentation fixtures",
+    "Haskell/runtime/native replacement issuer and durable certificate/retirement integration",
+    "Whole242/417 obligations, original deadlines, resource/hardware/IME/release and reversible deployment",
+    "Broader text-scale and hardware viewport schedules; this component covers320/1440px only"
+  ],
+  "claim": {
+    "resource": "file:/home/charl/code/Warlock/docs/warlock-build-loop/v2/applications-feedback-review-20261031.json",
+    "hold": "01M6A0F687DZ8V4MJ87TEGTJ7F",
+    "leaseEnd": "2026-11-01T00:14:48.336196Z"
+  },
+  "nextAction": "Root may integrate the owned reviewed component source and evidence, keep UI007 original scenarios/EARS partial, publish through authorized workflow and proceed to the next bounded original-scenario source action."
+}

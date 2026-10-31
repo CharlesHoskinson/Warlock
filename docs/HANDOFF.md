@@ -135,3 +135,11 @@ Hyprland/Weston/private bus. Process disappearance is not proof of normal exit.
 All five crash handoff changes remain mandatory. Never revert the crash-watch
 override, grim or keyring builds. Do not close the user's drafts or restart the
 main compositor as an incidental QA step.
+
+## Current continuation — October31,2026
+
+The user armed the full original Warlock goal and authorized coordinated development beyond setup. Current checkout `/home/charl/code/Warlock` uses the existing authenticated `warlock-20261031-setup` run with ten assigned identities; root is the only coordinator and protected executor. Read current [STATE](warlock-build-loop/v2/STATE.json), [independent readiness](warlock-build-loop/v2/readiness-review-20261031.json) and [current slice record](warlock-build-loop/v2/applications-window-feedback-20261031.json), not the historical Python slice as current production ownership.
+
+Existing Elm Applications feedback source is being integrated through actual source/compiled/pixel regression. Original UI007 remains partial for native/keyboard/AT obligations. All original242/417, deadlines, failed evidence and stopped probes remain preserved. GHC/native integration, current DRM/native capability and external Graphify/wiki/Muse runtime are absent or unready here; scoped existing Elm CPU/component readiness does not promote those gates. No main desktop was changed. Host goal lifecycle is authoritative; no duplicate background coordinator or replacement timer was launched.
+
+Whole original ELM-ARC-005 / architecture-005 is now accepted on immutable tested source `d3a57508ab7974e96e9a631bcd1f5b39b1f6d1d4`, using the original permitted bridge trace. Read [the acceptance](warlock-build-loop/v2/authority-tuple-acceptance-20261031.json), [independent review](warlock-build-loop/v2/authority-tuple-review-20261031.json) and full retained trace. UI007 source and rendered component are implemented/published in `d60fc181d`; its original native/keyboard/AT remains partial. The full host goal stays active; no source-bound verdict transfers to the unintegrated Haskell port or release.

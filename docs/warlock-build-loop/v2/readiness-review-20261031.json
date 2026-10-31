@@ -1,0 +1,133 @@
+{
+  "schema": 1,
+  "task": "warlock-20261031-readiness-reconciliation",
+  "reviewer": "reviewer",
+  "run": "warlock-20261031-setup",
+  "reviewedUTC": "2026-10-31T22:08:12.997977+00:00",
+  "sourceBase": "06ac4f8a72b68a8d65b35ddce9255ad50e1e9011",
+  "scope": "Independent source/readiness review; no protected compiler/model/native execution by reviewer.",
+  "identityHealth": {
+    "sixDoctorChecksPassed": true,
+    "credentialValid": true,
+    "brokerAuthenticated": true,
+    "claimsInitiallyEmpty": true
+  },
+  "disposition": "accepted: minimum design and actual proportional tooling readiness for scoped existing Elm Applications window-action feedback implementation only",
+  "selectedSlice": {
+    "requirement": "ELM-UI-007",
+    "scenarios": [
+      "restore-pending",
+      "restore-refused",
+      "restore-unknown"
+    ],
+    "actualDefect": "Surface.notice excludes retained window transaction feedback when model.open is True, then emits launcher-only guidance. Existing status CSS/display and closed-launcher feedback are already repaired, so the stale initial product sequence is not a new defect.",
+    "boundedChange": "Keep Applications guidance and input context while also projecting correlated Pending/Refused/Unknown window feedback; no new effect, replay right or native authority."
+  },
+  "minimumPrerequisites": [
+    "Use exact owned original-scenario participant record and current grants; root serializes protected verification.",
+    "Restore and validate exact tracked pinned Elm 0.19.2 compiler/cache and required runner inputs; do not treat PATH absence as installed-tool acceptance.",
+    "Review a CPU-only equivalent protected launcher under CONTRIBUTING.md portability allowance: unchanged native launcher and guards retained, qa-harness.slice and matching scope/core1/private runtime verified, reviewed runner hashes and argv checked before child dispatch, no native-session launch or DRM fallback.",
+    "Retain current positive and fail-closed negative launcher evidence, actual Main/Bar/Popup builds and direct production Surface packet regressions with launcher-open positive controls and no transaction/Committed negative controls.",
+    "Root reconciles readiness records with actual source and records scoped implementation promotion only after these concrete conditions hold; no additional user permission is required by this review."
+  ],
+  "nativeAndReleaseReadiness": {
+    "ready": false,
+    "observedHost": {
+      "devDxgPresent": true,
+      "devDriPresent": false
+    },
+    "blockers": [
+      "Original qa_run.py requires accessible DRM render node even for CPU command; WSL /dev/dri is absent. Native guard must remain fail-closed.",
+      "Haskell runtime source is a controlled one-frame bootstrap, not a persistent desktop/native effect server.",
+      "Protocol README records new v2 envelope/legacy Desktop protocolVersion schema difference and no connected live replacement GUI.",
+      "Native-authority source documentation retains missing genuine DurableReceipt issuer, authenticated host/view and namespace eligibility, real native effect/terminal retirement/ACK integration.",
+      "Current GHC/Cabal toolchain and strict dependency build have not been requalified on this host."
+    ],
+    "nativeOperations": "remain empty until genuine issuer/admission/effect/certificate qualification",
+    "stoppedHistory": "HOSTSTOP2/two stopped host feasibility probes remain stopped; no renamed third trial or whitelist expansion reviewed."
+  },
+  "verificationByReviewer": {
+    "sourceInspection": true,
+    "protectedBuilds": false,
+    "models": false,
+    "browser": false,
+    "native": false,
+    "atIme": false
+  },
+  "preservedObligations": [
+    "All original 242 requirements and 417 scenarios, literal oracles and deadlines",
+    "Failed evidence and historical source-bound acceptance",
+    "No replay of Unknown/Pending mutations",
+    "Other contributors drafts and main desktop",
+    "Original native/keyboard/AT/IME/resource/release gates"
+  ],
+  "sourceHashes": {
+    "AGENTS.md": "48a4098d73c981faa4af7e5fa0152862058a6bfd5811b3460cc38e608b75c2b5",
+    "CONTRIBUTING.md": "5e72e897a422454ab88d3b115662a9ee7d88427d977420b611367096782d5ac5",
+    "docs/warlock-build-loop/v2/STATE.json": "076d84d97d7df4ffb657456d911984253b75c0dfc2d05b5dfc57bec7ebcae095",
+    "docs/elm-roadmap/requirements.json": "faa8d7a5d722f0cde1a213ebcf98359f170dcc347cecdb758520d96aea1b8e46",
+    "openspec/changes/warlock-production-language-migration/design.md": "71a52a9b60577e76035155892f4005e8fcf06c510cec2f28e54ea36f1234ec38",
+    "openspec/changes/warlock-production-language-migration/tasks.md": "f47fda462493028431d2034929e483d98984d1c6aa6879898f2c6cb09caacf67",
+    "implementation/warlock/elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+    "implementation/warlock/src/Surface.elm": "a660a4641a9f834c6198bce1e8049b3dd0be40cb74be1cfe1d5e14cfd0cdaa1d",
+    "implementation/warlock/src/SurfaceRenderer.elm": "8b225a5102a4fa65ff2e80e73058a34c3dcce8925e5e52fc21333ec0811fc455",
+    "implementation/warlock/assets/shell.css": "77566e786969cfb4d7c87f2e33cc9f36d2cf4682fdc2da21bf38073340979098",
+    "implementation/warlock/haskell/cabal.project": "b8fc882f0e53b96dacbced3a21d292741ad2a4bcbb59627b9c1c2eb8647a5607",
+    "implementation/warlock/haskell/protocol/README.md": "c07fd3e1cd27a01e30d89a37da3390d5c9ac950a4b75f0b8fca6226a9ffca8ad",
+    "implementation/warlock/haskell/runtime/README.md": "f3ae00de73f490b9bbf89932b6c7e23514b8d0c2b33ef70b8335a276d633e4fd",
+    "implementation/warlock/haskell/native-authority/README.md": "f63a78a2be69bec934c47c55ac59aec27f6d2cf8e555ac1f0be7684a759c8744",
+    "window-integration-qa/qa_run.py": "656f118c268e9f762f2d62c859d146043d74c83b72cd5457b779f1e30cb183a1",
+    "window-integration-qa/qa_launch.py": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23"
+  },
+  "coordination": {
+    "reportClaimResource": "file:/home/charl/code/Warlock/docs/warlock-build-loop/v2/readiness-review-20261031.json",
+    "hold": "01M69ZWXBY5VWK4N0HCHSHVNN6",
+    "leaseEnd": "2026-11-01T00:04:49.419340Z",
+    "deniedHandoffPath": "Original handoff report claim was denied because outside reviewer prefix; no file written there. Canonical in-repo report claimed instead."
+  },
+  "nextAction": "Root may record scoped promotion and implement the declared Applications feedback projection slice. Capture genuine baseline failure and fresh proportional regression; keep all native/Haskell readiness blockers and original acceptance obligations explicit.",
+  "cpuEquivalentSourceReview": {
+    "reviewedUTC": "2026-10-31T22:06:31.503445+00:00",
+    "disposition": "accepted for root-serialized CPU compiler/pure-projection checks only; current positive and two predispatch negative controls reviewed",
+    "reviewManifest": ".warlock-contributor/cpu-review-preparation.json",
+    "reviewManifestSHA256": "3ceedfd14ff9d6de5d3e674a485cd8411ccfbe0ccbb9901aba2caeecb6051f9b",
+    "closureInputs": 107,
+    "closureDrift": [],
+    "requestedRepairs": "Complete mandatory source/toolchain/optional-fixture closure and held/path inode join after flock were both implemented and independently source-reviewed.",
+    "guards": {
+      "tools/qa_cpu.py": "840fd27fc7f301caab291b5b817ee29d73cc712ac8d2e471b80772bec43824d1",
+      "tools/check_elm_cpu.py": "b08e0514c333212fd47157a93653cc740191d6e10af20ed2f29f2afdae162815",
+      "window-integration-qa/qa_launch.py": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23"
+    },
+    "limits": [
+      "Fixed hash-bound runner and empty argv only",
+      "No browser/native support or DRM fallback",
+      "Haskell toolchain not requalified; untouched by selected Elm view change",
+      "Execution remains root-owned"
+    ]
+  },
+  "implementationPromotionScope": {
+    "owner": "root",
+    "requirement": "ELM-UI-007",
+    "allowed": "Existing Elm projection source changes for correlated restore Pending/Refused/Unknown feedback while Applications is open, with declared paths and current contributor record; protected source regression and negative controls follow in selected slice.",
+    "excluded": "General Haskell/native implementation readiness, native operation admission, native GUI campaign, original scenario or release acceptance.",
+    "userAuthorization": "Existing explicit authorization suffices; no new user approval required.",
+    "untouchedHaskellToolchain": "Deferred because this selected existing Elm projection changes no Haskell source or backend boundary. Requalify pinned GHC/Cabal and changed package before any Haskell integration claim."
+  },
+  "readinessExecutionEvidence": {
+    ".warlock-contributor/cpu-review-preparation.json": "3ceedfd14ff9d6de5d3e674a485cd8411ccfbe0ccbb9901aba2caeecb6051f9b",
+    ".warlock-contributor/elm-cpu-1793484391252381177/report.json": "81a9c5185ae6dfb62d02edf33ae8ddd6401201c2a626dc730f50c502c07293a8",
+    ".warlock-contributor/preparation-build.log": "ea7d3933a985c40f96c5d10207ab4fec913c6cbf7ccd57fdc355c69fd8373a99",
+    ".warlock-contributor/cpu-wrong-digest.log": "0405624d367e11a02330d71894bd13f2348bbfa81fb136ab888e018575e2bb10",
+    ".warlock-contributor/cpu-missing-source.log": "f7855f1d3c1f2522f1546abc6d22f7639d284c1a96297fddbad709af4cf2dfb4"
+  },
+  "readinessExecutionReview": {
+    "executor": "root",
+    "reviewerExecuted": false,
+    "passed": true,
+    "positive": "Pinned Elm0.19.2 c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948 compiled actual Main/Bar/Popup with exit0, empty compiler stderr, matching102 current source hashes and three output artifacts.",
+    "protection": "Observed report records qa-harness.slice/qa-harness-6f09c36499d944cb897e9706891e7ef7.scope and exact coreLimit1.",
+    "negative": "Both raw negative traces stop before dispatch: wrong review digest rejected; self-consistent review packet missing Surface.elm rejected by complete-closure guard. Root reports exit1 for both; reviewer inspected trace content.",
+    "limits": "Compiler and fail-closed CPU launcher evidence only; no native input/presentation/AT/IME/release observation."
+  }
+}

@@ -294,17 +294,63 @@
       "capability": "elm-native-bridge",
       "owner": "Native authority lead",
       "verifier": "Independent acceptance reviewer",
-      "requirementAccepted": false,
-      "status": "unadjudicated",
+      "requirementAccepted": true,
+      "status": "accepted",
       "scenarios": [
         {
           "name": "architecture-005",
           "oracle": "the serialized request contains the full authority tuple",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "accepted",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/authority-tuple-20261031/report.json",
+              "sha256": "49bb7708b7da550f3bddb1099d05d903b12bd2bbe8d4865028a52091a8f087a9"
+            },
+            {
+              "path": "docs/warlock-build-loop/v2/authority-tuple-review-20261031.json",
+              "sha256": "aa1ea034f07b4622fb9d38b5eefba85f3069013a547872b4eefdec7bdfe5d479"
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/authority-tuple-20261031/bridge-trace.json.gz",
+              "sha256": "5c93225be677a176fdc89076bbc41982ce4aeb9ac5417e8e7f7f2a79be623dbd"
+            }
+          ],
+          "missingObservation": "",
+          "sourceTuple": {
+            "sourceRevision": "d3a57508ab7974e96e9a631bcd1f5b39b1f6d1d4",
+            "core": "not loaded; original ARC005 permits bridge-only verification",
+            "plugin": "not loaded; no native plugin ABI is claimed",
+            "toolchain": "Elm0.19.2 SHA256 c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948; Node24.22.1 SHA256 e32e2d16081cf644f88392934288086e7662529d0d43277c34f7aad2207cfafb"
+          },
+          "sourceHashes": {
+            "implementation/warlock/src/Effects.elm": "80c574e8c564c28a1fb11f1f89bb5bfa7ac97a92474bbf027a737324bb2a82cd",
+            "implementation/warlock/src/Shell.elm": "f14b7fe3bfbf1a57f335f98914c988938c235823ba4596c067cf744776c4a9ae",
+            "implementation/warlock/src/GeometryProjection.elm": "f1b5708b8b4d1c7c02e46542bc041abb9e8cb0524d965ee4b03ab97f586a544c",
+            "implementation/warlock/src/OutputController.elm": "aaf1729287ff61595a237201b261e7c1ce11c8f2353c620171f48aff99d86f38",
+            "implementation/warlock/src/SurfaceController.elm": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
+            "implementation/warlock/src/Desktop.elm": "a503d926599b5aa194956a1208fdc0004fb829442cd523c5372d41fd1fab0404",
+            "implementation/warlock/src/TaskbarShell.elm": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+            "implementation/warlock/src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+            "implementation/warlock/qa/AuthorityTupleReplay.elm": "78a95932b297f236e50410d3b5c020bcebc2b2c3deccd663746211d24ecd28ab",
+            "implementation/warlock/qa/authority-tuple.cjs": "3033b7c84d667af2566439d7e2e01644df3a171fa332be142388b8d92cdec68a",
+            "implementation/warlock/src/UnsentOperation.elm": "46e315cc739e097805af3c9358f9ca27a807ef1119c733aa296687342c8238ea"
+          },
+          "reviewer": {
+            "name": "reviewer",
+            "independent": true,
+            "disposition": "accepted"
+          },
+          "verificationScope": "Preserved scenario report with native or bridge trace showing: the serialized request contains the full authority tuple; artifact hashes and matching scenario receipts included.",
+          "scope": "Whole original ELM-ARC-005 and its sole architecture-005 scenario on the current Elm desktop source tuple: serialized window-effect intents carry the full authority tuple, established by the original expressly permitted bridge trace with artifact hashes and matching simulated scenario receipts."
         }
-      ]
+      ],
+      "acceptance": {
+        "path": "docs/warlock-build-loop/v2/authority-tuple-acceptance-20261031.json",
+        "sha256": "dfd24c186c9f199014885dc9116d04717f65adc8bd54c9ae5304208a0bb877ba",
+        "scope": "Whole original ELM-ARC-005 and its sole architecture-005 scenario on the current Elm desktop source tuple: serialized window-effect intents carry the full authority tuple, established by the original expressly permitted bridge trace with artifact hashes and matching simulated scenario receipts.",
+        "sourceRevision": "d3a57508ab7974e96e9a631bcd1f5b39b1f6d1d4",
+        "reviewer": "reviewer"
+      }
     },
     {
       "id": "ELM-ARC-006",
@@ -9203,6 +9249,18 @@
               "scope": "Actual pointer/compiled Elm/native effect status, private compositor pixels, and observation-only reconnect/refresh. Keyboard focus/context and AT remain unqualified.",
               "sourceCandidate": "implementation/warlock",
               "nativeAcceptance": false
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/applications-window-feedback-20261031/report.json",
+              "sha256": "89f9c9edb9e733376c16cf9db14e90fb984a6a592db6a090d42e1c7c7cf48129",
+              "scope": "Current compiled Elm Main/Bar/Popup, actual Desktop query/stale input and Surface.packet projection, isolated compiled Bar/Popup rendering/AX names with actual prefix bounds; no native execution.",
+              "sourceCandidate": "implementation/warlock",
+              "sourceHashes": {
+                "src/Surface.elm": "689657630aec36dd6133c762a385284311f67a0b0f9fa95c5897e802b5667412",
+                "src/SurfaceRenderer.elm": "e5195fc6b8fbe1dd47d284f1122b34aa211e253a33ed6c8ed79990bd33fecbc9"
+              },
+              "independentReview": "docs/warlock-build-loop/v2/applications-feedback-review-20261031.json",
+              "nativeAcceptance": false
             }
           ],
           "missingObservation": "Actual native keyboard/focus/context preservation, applicable AT announcement/action observations, frozen numeric P0 feedback/quiescence policy, and independent original-scenario verdict remain pending."
@@ -9225,6 +9283,18 @@
               "scope": "Actual pointer/compiled Elm/native effect status, private compositor pixels, and observation-only reconnect/refresh. Keyboard focus/context and AT remain unqualified.",
               "sourceCandidate": "implementation/warlock",
               "nativeAcceptance": false
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/applications-window-feedback-20261031/report.json",
+              "sha256": "89f9c9edb9e733376c16cf9db14e90fb984a6a592db6a090d42e1c7c7cf48129",
+              "scope": "Current compiled Elm Main/Bar/Popup, actual Desktop query/stale input and Surface.packet projection, isolated compiled Bar/Popup rendering/AX names with actual prefix bounds; no native execution.",
+              "sourceCandidate": "implementation/warlock",
+              "sourceHashes": {
+                "src/Surface.elm": "689657630aec36dd6133c762a385284311f67a0b0f9fa95c5897e802b5667412",
+                "src/SurfaceRenderer.elm": "e5195fc6b8fbe1dd47d284f1122b34aa211e253a33ed6c8ed79990bd33fecbc9"
+              },
+              "independentReview": "docs/warlock-build-loop/v2/applications-feedback-review-20261031.json",
+              "nativeAcceptance": false
             }
           ],
           "missingObservation": "Actual native keyboard/focus/context preservation, applicable AT announcement/action observations, frozen numeric P0 feedback/quiescence policy, and independent original-scenario verdict remain pending."
@@ -9246,6 +9316,18 @@
               "sha256": "3ec7ad79bf3867717d14b969e52251bb85f3cb2eb870b0994380abd50945b746",
               "scope": "Actual pointer/compiled Elm/native effect status, private compositor pixels, and observation-only reconnect/refresh. Keyboard focus/context and AT remain unqualified.",
               "sourceCandidate": "implementation/warlock",
+              "nativeAcceptance": false
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/applications-window-feedback-20261031/report.json",
+              "sha256": "89f9c9edb9e733376c16cf9db14e90fb984a6a592db6a090d42e1c7c7cf48129",
+              "scope": "Current compiled Elm Main/Bar/Popup, actual Desktop query/stale input and Surface.packet projection, isolated compiled Bar/Popup rendering/AX names with actual prefix bounds; no native execution.",
+              "sourceCandidate": "implementation/warlock",
+              "sourceHashes": {
+                "src/Surface.elm": "689657630aec36dd6133c762a385284311f67a0b0f9fa95c5897e802b5667412",
+                "src/SurfaceRenderer.elm": "e5195fc6b8fbe1dd47d284f1122b34aa211e253a33ed6c8ed79990bd33fecbc9"
+              },
+              "independentReview": "docs/warlock-build-loop/v2/applications-feedback-review-20261031.json",
               "nativeAcceptance": false
             }
           ],
