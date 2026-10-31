@@ -2,7 +2,7 @@ cabal-version: 2.4
 name: warlock-process-custody
 version: 0.1.0.0
 build-type: Simple
-extra-source-files: README.md HANDOFF.md RETROFIT.md SOURCE-MAP.md fixture/Main.hs test/Internal.hs test/Public.hs
+extra-source-files: qualification.json SHA256SUMS README.md HANDOFF.md RETROFIT.md SOURCE-MAP.md fixture/Main.hs test/Internal.hs test/Public.hs
 common options
   default-language: Haskell2010
   ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates
