@@ -3,3 +3,6 @@
 
 # Local contributor ownership/evidence records are not publications.
 /.warlock-contributor/
+
+# Bytecode caches from running the site tools
+/site/**/__pycache__/

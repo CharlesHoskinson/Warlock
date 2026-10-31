@@ -5,7 +5,7 @@
   .architecture-controls {display:flex;flex-wrap:wrap;align-items:end;gap:.75rem}
   .architecture-controls label {display:grid;gap:.35rem}
   .architecture-scroll {overflow:auto;max-width:100%;border:1px solid var(--wl-sys-color-border-essential);padding:1rem}
-  .architecture-map {position:relative;min-width:760px;display:grid;gap:1rem}
+  .architecture-map {position:relative;min-width:640px;display:grid;gap:1rem}
   .architecture-band {position:relative;z-index:1;background:var(--wl-sys-color-surface-recessed);border:1px solid var(--wl-sys-color-border-essential);border-radius:8px;padding:1rem}
   .architecture-band h3 {margin:0 0 .25rem}.architecture-band p {margin:.25rem 0 .75rem;color:var(--wl-sys-color-text-secondary)}
   .architecture-nodes {display:flex;flex-wrap:wrap;gap:.75rem}
