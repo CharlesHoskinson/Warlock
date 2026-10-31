@@ -28,3 +28,5 @@ Exact source and output hashes are recorded in [../qualification.json](../qualif
 The local immutable execution report is
 `arc004-handler-quint-1793441133087543802/report.json`. Earlier v8 source and its
 fidelity findings remain frozen; no earlier failure or native STOP2 is reset.
+
+The separate [acquisition model](ACQUISITION.md) now has 26 directed tests and bounded sampled results for the caller-retained transport owner. Its explicit atomic-publication and concurrent-return limits remain separate from this earlier handler accounting model.

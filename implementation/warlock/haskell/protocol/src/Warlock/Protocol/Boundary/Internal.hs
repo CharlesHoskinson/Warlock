@@ -2,9 +2,10 @@
 -- Internal owner integration only. A validated envelope is not a native grant.
 module Warlock.Protocol.Boundary.Internal
  (Direction(..), Reason(..), Envelope, Gate, GateStatus(..), newGate,
-  decodeFor, foldEnvelope, dispatch, retire, gateStatus, rejectionReasons) where
+  decodeFor, foldEnvelope, dispatch, dispatchUntil, retire, gateStatus, rejectionReasons) where
 import Control.Concurrent.MVar
-import Control.Exception (SomeException,mask,uninterruptibleMask_,throwIO,try)
+import Control.Exception (SomeException,evaluate,mask,uninterruptibleMask_,throwIO,try)
+import GHC.Clock (getMonotonicTimeNSec)
 import qualified Data.ByteString as B
 import Data.Text (Text)
 import qualified Data.Text as T
@@ -14,7 +15,7 @@ import qualified Warlock.Protocol.StrictJson as J
 import Warlock.Protocol.Wire (parseBinding)
 
 data Direction = FromElm | FromNative deriving (Eq,Show)
-data Reason = BadUtf8 | TooLarge | BadNul | TooDeep | DuplicateField | Malformed | BadSchema | UnsupportedVersion | BadDigest | ForeignBinding | GateRetired | GateBusy | HandlerFailed deriving (Eq,Show)
+data Reason = BadUtf8 | TooLarge | BadNul | TooDeep | DuplicateField | Malformed | BadSchema | UnsupportedVersion | BadDigest | ForeignBinding | GateRetired | GateBusy | HandlerFailed | AdmissionExpired deriving (Eq,Show)
 data Envelope = Client C.CheckedClient | Server C.CheckedServer deriving (Eq,Show)
 data GateStatus = Live !Int | Draining !Int | Retired deriving (Eq,Show)
 data State = State { status :: !GateStatus, reasons :: ![Reason] }
@@ -79,14 +80,30 @@ decodeFor expected direction raw = do
   codecReason message = if "positional key mismatch" `T.isInfixOf` message then BadDigest else BadSchema
 
 dispatch :: Gate -> Direction -> B.ByteString -> IO (Either Reason ())
-dispatch (Gate owner action state) direction raw = mask $ \restore -> do
- case decodeFor owner direction raw of
-  Left reason -> modifyMVar_ state (publish . record reason) >> pure (Left reason)
+dispatch gate direction raw = dispatchWithDeadline Nothing gate direction raw
+
+-- Only the transport owner supplies this original monotonic frame deadline.
+dispatchUntil :: Gate -> Direction -> B.ByteString -> Integer -> IO (Either Reason ())
+dispatchUntil gate direction raw deadline = dispatchWithDeadline (Just deadline) gate direction raw
+
+dispatchWithDeadline :: Maybe Integer -> Gate -> Direction -> B.ByteString -> IO (Either Reason ())
+dispatchWithDeadline deadline (Gate owner action state) direction raw = mask $ \restore -> do
+ decoded <- restore (evaluate (decodeFor owner direction raw))
+ case decoded of
+  Left reason -> do
+   now <- getMonotonicTimeNSec
+   let actual = if maybe False (toInteger now >=) deadline then AdmissionExpired else reason
+   modifyMVar_ state (publish . record actual)
+   pure (Left actual)
   Right envelope -> do
-   admitted <- modifyMVar state $ \s -> case status s of
-    Live n | n < 64 -> publishWith (s {status=Live (n+1)}) (Right ())
-    Live _ -> publishWith (record GateBusy s) (Left GateBusy)
-    _ -> publishWith (record GateRetired s) (Left GateRetired)
+   _ <- restore (evaluate (length (show envelope)))
+   admitted <- modifyMVar state $ \s -> do
+    now <- getMonotonicTimeNSec
+    if maybe False (toInteger now >=) deadline then publishWith (record AdmissionExpired s) (Left AdmissionExpired)
+    else case status s of
+     Live n | n < 64 -> publishWith (s {status=Live (n+1)}) (Right ())
+     Live _ -> publishWith (record GateBusy s) (Left GateBusy)
+     _ -> publishWith (record GateRetired s) (Left GateRetired)
    case admitted of
     Left reason -> pure (Left reason)
     Right () -> do

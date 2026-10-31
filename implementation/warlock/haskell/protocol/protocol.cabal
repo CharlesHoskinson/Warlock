@@ -2,13 +2,13 @@ cabal-version: 3.0
 name: warlock-protocol
 version: 0.1.0.0
 build-type: Simple
-extra-source-files: README.md qualification.json formal/README.md formal/*.qnt
+extra-source-files: README.md TRANSPORT.md qualification.json transport-qualification.json formal/*.md formal/*.qnt
 data-files: test/fixtures/*.bin
 library
   hs-source-dirs: src
-  exposed-modules: Warlock.Protocol.Boundary, Warlock.Protocol.Codec
-  other-modules: Warlock.Protocol.Boundary.Internal, Warlock.Protocol.Wire, Warlock.Protocol.Server, Warlock.Protocol.StrictJson, Warlock.Protocol.Identity, Warlock.Protocol.Custody, Warlock.Protocol.Lifecycle
-  build-depends: base >=4.18 && <5, bytestring, containers, text, cryptohash-sha256 ==0.11.102.1
+  exposed-modules: Warlock.Protocol.Boundary, Warlock.Protocol.Codec, Warlock.Protocol.Ingress
+  other-modules: Warlock.Protocol.Boundary.Internal, Warlock.Protocol.Ingress.Internal, Warlock.Transport.Channel, Warlock.Transport.Frame, Warlock.Transport.SocketFlags, Warlock.Protocol.Wire, Warlock.Protocol.Server, Warlock.Protocol.StrictJson, Warlock.Protocol.Identity, Warlock.Protocol.Custody, Warlock.Protocol.Lifecycle
+  build-depends: base >=4.18 && <5, bytestring, containers, text, network ==3.2.0.0, cryptohash-sha256 ==0.11.102.1
   default-language: Haskell2010
   ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates
 -- The test suite compiles private modules from the same source directory so the
@@ -20,5 +20,22 @@ test-suite boundary-controls
   other-modules: Warlock.Protocol.Boundary.Internal, Warlock.Protocol.Wire, Warlock.Protocol.Server, Warlock.Protocol.StrictJson, Warlock.Protocol.Identity, Warlock.Protocol.Custody, Warlock.Protocol.Codec, Paths_warlock_protocol
   autogen-modules: Paths_warlock_protocol
   build-depends: base >=4.18 && <5, bytestring, containers, text, cryptohash-sha256 ==0.11.102.1
+  default-language: Haskell2010
+  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -threaded
+test-suite ingress-controls
+  type: exitcode-stdio-1.0
+  hs-source-dirs: test, src
+  main-is: OwnerControls.hs
+  other-modules: Warlock.Protocol.Boundary.Internal, Warlock.Protocol.Ingress, Warlock.Protocol.Ingress.Internal, Warlock.Transport.Channel, Warlock.Transport.Frame, Warlock.Transport.SocketFlags, Warlock.Protocol.Wire, Warlock.Protocol.Server, Warlock.Protocol.StrictJson, Warlock.Protocol.Identity, Warlock.Protocol.Custody, Warlock.Protocol.Lifecycle, Warlock.Protocol.Codec
+  build-depends: base >=4.18 && <5, bytestring, containers, text, network ==3.2.0.0, filepath, cryptohash-sha256 ==0.11.102.1
+  default-language: Haskell2010
+  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -threaded
+
+test-suite owner-sequences
+  type: exitcode-stdio-1.0
+  hs-source-dirs: test, src
+  main-is: OwnerSequenceProperties.hs
+  other-modules: Warlock.Protocol.Boundary.Internal, Warlock.Protocol.Ingress, Warlock.Protocol.Ingress.Internal, Warlock.Transport.Channel, Warlock.Transport.Frame, Warlock.Transport.SocketFlags, Warlock.Protocol.Wire, Warlock.Protocol.Server, Warlock.Protocol.StrictJson, Warlock.Protocol.Identity, Warlock.Protocol.Custody, Warlock.Protocol.Lifecycle, Warlock.Protocol.Codec
+  build-depends: base >=4.18 && <5, bytestring, containers, text, network ==3.2.0.0, filepath, cryptohash-sha256 ==0.11.102.1
   default-language: Haskell2010
   ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -threaded

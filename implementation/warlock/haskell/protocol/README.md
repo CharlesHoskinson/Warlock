@@ -1,6 +1,7 @@
 # Haskell protocol boundary
 
-This package is being integrated for original ELM-ARC-004. Production source is
+This package contains the checked protocol boundary and caller-retained framed
+transport owner, supporting original ELM-ARC-004 and ELM-TEA-005. Production source is
 Haskell; GUI behavior remains Elm. Historical C/legacy bridge acceptance does not
 qualify this port. The stopped host-capture campaign is a separate record.
 
@@ -15,10 +16,13 @@ must remain reachable so rejection tests cannot pass by disabling all work.
 
 Use the root-serialized protected QA launcher for the strict package build,
 negative and positive route fixtures, independent Quint/corpus correspondence,
-and seeded malformed-input properties. The offline Cabal build and 20 named gate
-checks passed. The actual public Elm peer passed 15 refusal checks and three
+and seeded properties. The strict offline library build, 20 named gate checks,
+23 actual socket-pair owner controls and 256 lifecycle sequences of 24 actions
+passed; 132 generated cases reached a live owner. The actual public Elm peer passed 15 refusal checks and three
 preserved late-cancel properties with 1,000 fuzz cases each. These are component
-results; [qualification.json](qualification.json) retains exact evidence and limits.
+results. [qualification.json](qualification.json) preserves the earlier protocol
+wave; [transport-qualification.json](transport-qualification.json) records the new
+owner composition, including failed compiler attempts and the targeted repair.
 
 The installed GHC 9.6.7 SDK provides dynamic interfaces. Use
 `cabal v2-build all --offline --enable-shared --disable-library-vanilla --enable-executable-dynamic`
@@ -39,7 +43,8 @@ only the obsolete uncompiled-proposal comment changed during integration. The
 initial gate and fixed-SHA codec are integrated from the source-reviewed v17
 packet. Root additionally forces bounded rejection history and state before MVar
 publication, aligns nonnumeric-version rejection, and supplies a typed internal
-envelope eliminator. Authenticated owner/framing integration remains incomplete. The
+envelope eliminator. Framed caller-owned transport is now integrated; peer
+authentication and a live GUI connection remain incomplete. The
 [handler model](formal/README.md) has bounded directed and sampled evidence,
 including an explicit zero-random-Busy coverage gap.
 
@@ -57,8 +62,10 @@ that schema or establish a working legacy-desktop connection. The new Elm
 refusal-diagnostic path is implemented and exercised as a reducer; its live
 framed delivery connection still requires integration.
 
-The public gate is opaque. Creation currently belongs to the package-internal
-owner seam; an authenticated owner and framed ingress are not implemented here.
-Valid schema/current binding admit a callback, not native permission. Request
-deduplication, original deadlines and native-effect authorization remain with the
-future owner. Tests of the internal gate cannot establish those missing routes.
+The public gate is opaque. The [transport reference](TRANSPORT.md) describes the
+usable owner shell, explicit socket transfer, activation and retirement. Valid
+schema/current binding admit a callback, not native permission. Peer authentication,
+request deduplication, original effect deadlines and native-effect authorization
+remain open. Transport tests do not establish those missing routes.
+
+The [acquisition model qualification](formal/ACQUISITION.md) records 26 directed tests and 1,000 sampled traces of 30 steps, with source correspondence assumptions and remaining concurrent-return limits.
