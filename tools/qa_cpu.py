@@ -42,7 +42,7 @@ def main():
     if set(packet) != {'schema', 'runner', 'arguments', 'inputs'} or packet['schema'] != 1:
         raise RuntimeError('Unknown CPU review shape')
     runner = REPO / 'tools/check_elm_cpu.py'
-    if packet['runner'] != str(runner) or packet['arguments'] not in [[], ['--browser']]:
+    if packet['runner'] != str(runner) or packet['arguments'] not in [[], ['--browser'], ['--authority']]:
         raise RuntimeError('Only the reviewed Elm component runner is supported')
     mandatory = {'tools/qa_cpu.py', 'tools/check_elm_cpu.py', 'window-integration-qa/qa_launch.py',
                  'implementation/warlock-preview-provider-v143/qa/toolchain.py',
@@ -50,7 +50,10 @@ def main():
                  'implementation/warlock/elm.json'}
     mandatory.update(str(p.relative_to(REPO)) for p in (REPO / 'implementation/warlock/src').rglob('*.elm'))
     fixture = REPO / 'implementation/warlock/qa/FeedbackContextReplay.elm'
-    if fixture.exists():
+    if packet['arguments'] == ['--authority']:
+        mandatory.update(['implementation/warlock/qa/AuthorityTupleReplay.elm',
+                          'implementation/warlock/qa/authority-tuple.cjs'])
+    elif fixture.exists():
         mandatory.update(['implementation/warlock/qa/FeedbackContextReplay.elm',
                           'implementation/warlock/qa/feedback-context.cjs'])
     if packet['arguments'] == ['--browser']:

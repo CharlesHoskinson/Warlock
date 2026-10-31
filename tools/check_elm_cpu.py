@@ -25,7 +25,9 @@ def sha(path):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--browser', action='store_true', help='Separately reviewed private-network browser component checks')
+    modes = parser.add_mutually_exclusive_group()
+    modes.add_argument('--browser', action='store_true', help='Separately reviewed private-network browser component checks')
+    modes.add_argument('--authority', action='store_true', help='Original ARC005 owning-route authority tuple bridge checks')
     args = parser.parse_args()
     scope = require_qa_scope()
     runtime_base()
@@ -35,6 +37,9 @@ def main():
     output.mkdir(parents=True)
     report = {'schema': 1, 'passed': False, 'scope': 'Elm compiler and pure production projection only',
               'nativeAcceptance': False, 'releaseAccepted': False, 'protectedScope': scope, 'commands': []}
+    node = Path(shutil.which('node') or '/missing-node').resolve()
+    report['developmentTools'] = {name: {'path': str(path), 'sha256': sha(path)}
+                                  for name, path in [('python', Path(sys.executable).resolve()), ('node', node)]}
     spec = importlib.util.spec_from_file_location('held_toolchain', held / 'qa/toolchain.py')
     toolchain = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(toolchain)
@@ -67,16 +72,24 @@ def main():
     try:
         compiler = str(held / pinned['compiler'])
         run('compiler-version', [compiler, '--version'])
-        for name in ['Main', 'Bar', 'Popup']:
-            run('compile-' + name, [compiler, 'make', 'src/' + name + '.elm', '--optimize', '--output=' + str(output / (name + '.js'))])
-        fixture = root / 'qa/FeedbackContextReplay.elm'
-        harness = root / 'qa/feedback-context.cjs'
+        run('node-version', [str(node), '--version'])
+        # Unchanged GUI roots already have source-bound qualification. ARC005
+        # compiles its actual production controller/bridge fixture directly.
+        if not args.authority:
+            for name in ['Main', 'Bar', 'Popup']:
+                run('compile-' + name, [compiler, 'make', 'src/' + name + '.elm', '--optimize', '--output=' + str(output / (name + '.js'))])
+        fixture_name = 'AuthorityTupleReplay' if args.authority else 'FeedbackContextReplay'
+        harness_name = 'authority-tuple' if args.authority else 'feedback-context'
+        fixture = root / ('qa/' + fixture_name + '.elm')
+        harness = root / ('qa/' + harness_name + '.cjs')
         if fixture.exists():
             for source in [fixture, harness]:
                 sources[str(source.relative_to(REPO))] = sha(source)
                 shutil.copy2(source, work / 'qa' / source.name)
-            run('compile-feedback-context', [compiler, 'make', 'qa/FeedbackContextReplay.elm', '--optimize', '--output=' + str(output / 'feedback-context.js')])
-            run('feedback-context', ['node', 'qa/feedback-context.cjs', str(output / 'feedback-context.js'), str(output / 'feedback-context.json')])
+            run('compile-' + harness_name, [compiler, 'make', 'qa/' + fixture_name + '.elm', '--optimize', '--output=' + str(output / (harness_name + '.js'))])
+            run(harness_name, [str(node), 'qa/' + harness_name + '.cjs', str(output / (harness_name + '.js')), str(output / (harness_name + '.json'))])
+        elif args.authority:
+            raise RuntimeError('Original authority-tuple fixture is required')
         if args.browser:
             # New network/PID namespaces have no host network or desktop sockets.
             # This is browser component evidence, never a native GUI trial.
@@ -89,6 +102,8 @@ def main():
                                             str(REPO / 'tools/check_feedback_browser.py'), str(output)])
         if not all(sha(REPO / p) == digest for p, digest in sources.items()):
             raise RuntimeError('Source changed during protected check')
+        if not all(sha(Path(tool['path'])) == tool['sha256'] for tool in report['developmentTools'].values()):
+            raise RuntimeError('Development interpreter changed during protected check')
         report['artifacts'] = {p.name: sha(p) for p in output.glob('*.js')}
         report['passed'] = True
     except Exception as error:

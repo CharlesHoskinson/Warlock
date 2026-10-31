@@ -1,37 +1,40 @@
 {
   "schema": 1,
   "owner": "root-agentbus",
-  "updatedUTC": "2026-10-31T22:10:20.859751+00:00",
+  "updatedUTC": "2026-10-31T22:32:59.973551+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "applications-window-feedback",
+    "id": "window-effect-authority-tuple",
     "requirements": [
-      "ELM-UI-007"
+      "ELM-ARC-005"
     ],
     "scenarios": [
-      "restore-pending",
-      "restore-refused",
-      "restore-unknown"
+      "architecture-005"
     ],
     "paths": [
-      "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/qa/FeedbackContextReplay.elm",
-      "implementation/warlock/qa/feedback-context.cjs",
-      "implementation/warlock/qa/feedback-context-browser.mjs",
-      "implementation/warlock/src/SurfaceRenderer.elm"
+      "implementation/warlock/src/Effects.elm",
+      "implementation/warlock/src/Shell.elm",
+      "implementation/warlock/src/GeometryProjection.elm",
+      "implementation/warlock/src/OutputController.elm",
+      "implementation/warlock/src/SurfaceController.elm",
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/src/TaskbarShell.elm",
+      "implementation/warlock/src/UInt64.elm",
+      "implementation/warlock/qa/AuthorityTupleReplay.elm",
+      "implementation/warlock/qa/authority-tuple.cjs",
+      "implementation/warlock/src/UnsentOperation.elm"
     ],
-    "before": "Opening Applications replaces retained Pending, Refused or Unknown window feedback with launcher guidance; search query survives but the action state is hidden.",
-    "after": "Applications retains its query and guidance and exposes the correlated window action status alongside it without dispatch, retry or focus relocation.",
+    "before": "Original ARC005 architecture-005 is unadjudicated despite an existing shared identity-bearing serializer. No current full-authority-tuple bridge trace with exact artifact hashes and matching scenario receipts has been independently adjudicated.",
+    "after": "Close the complete original ARC005 EARS only if actual production owning-route bridge traces preserve all seven distinct full-width authority fields for both protocol construction paths and every operation; retain negative controls and matching bridge receipts. Repair only a demonstrated source defect, without inventing native execution or port acceptance.",
     "verification": [
-      "Protected pinned Main/Bar/Popup compile; actual Surface.packet regressions for launcher guidance and retained Pending/Refused/Unknown plus Committed/no-transaction controls, query/effect invariance and repeated snapshots. Native keyboard/AT and release remain open."
+      "Root protected pinned actual owning Elm route, both protocol paths and all operation constructors, exact raw serialized envelope vs independently known input tuple, canonical full-width strings and no-dispatch negatives, matching bridge scenario receipts, artifact hashes and immutable source commit; independent complete original oracle disposition. No native execution claim."
     ],
     "owner": "root-agentbus",
-    "participantRecord": ".warlock-contributor/applications-window-feedback.json",
-    "currentOutcome": "Current Elm/browser component source verified and independently reviewed; originalUI007 remains partial for native/keyboard/AT. Next wholeEARS-verdict action ARC005 bridge tuple."
+    "participantRecord": ".warlock-contributor/authority-tuple.json"
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -3033,6 +3036,37 @@
       },
       "selectedId": "applications-window-feedback",
       "reason": "Current source/toolchain reconciliation: historical Python ownership is retained as history; independently reviewed existing Elm projection slice selected under current user authorization. No original acceptance or stopped-investigation reset."
+    },
+    {
+      "atUTC": "2026-10-31T22:32:59.973551+00:00",
+      "previousSlice": {
+        "id": "applications-window-feedback",
+        "requirements": [
+          "ELM-UI-007"
+        ],
+        "scenarios": [
+          "restore-pending",
+          "restore-refused",
+          "restore-unknown"
+        ],
+        "paths": [
+          "implementation/warlock/src/Surface.elm",
+          "implementation/warlock/qa/FeedbackContextReplay.elm",
+          "implementation/warlock/qa/feedback-context.cjs",
+          "implementation/warlock/qa/feedback-context-browser.mjs",
+          "implementation/warlock/src/SurfaceRenderer.elm"
+        ],
+        "before": "Opening Applications replaces retained Pending, Refused or Unknown window feedback with launcher guidance; search query survives but the action state is hidden.",
+        "after": "Applications retains its query and guidance and exposes the correlated window action status alongside it without dispatch, retry or focus relocation.",
+        "verification": [
+          "Protected pinned Main/Bar/Popup compile; actual Surface.packet regressions for launcher guidance and retained Pending/Refused/Unknown plus Committed/no-transaction controls, query/effect invariance and repeated snapshots. Native keyboard/AT and release remain open."
+        ],
+        "owner": "root-agentbus",
+        "participantRecord": ".warlock-contributor/applications-window-feedback.json",
+        "currentOutcome": "Current Elm/browser component source verified and independently reviewed; originalUI007 remains partial for native/keyboard/AT. Next wholeEARS-verdict action ARC005 bridge tuple."
+      },
+      "selectedId": "window-effect-authority-tuple",
+      "outcome": "UI007 source fix committed and published d60fc181d904878224d43aaf960652d902297c9f; component verified, original native/keyboard/AT remains partial. User requested full original EARS closure per slice; next selected original explicitly permits bridge evidence."
     }
   ],
   "museRegulator": {
@@ -3114,7 +3148,7 @@
     "authorizationRecord": "/home/charles/.local/state/warlock-team/20261028/muse-supervision/preparation-authorization.json",
     "futurePausesProtected": true,
     "scopeLimit": "Preparation source/tool work is permitted; original native/release gates remain. No acceptance transfer, progress-timer reset, active-original-slice replacement or stopped-investigation reset.",
-    "currentRecord": ".warlock-contributor/applications-window-feedback.json",
+    "currentRecord": ".warlock-contributor/authority-tuple.json",
     "nativeFeasibility": {
       "status": "stopped",
       "qualificationOnlyIterations": 2,
@@ -3159,18 +3193,28 @@
     "roles": {
       "lead": "integration and serialized protected checks",
       "reviewer": "independent readiness and source review",
-      "elm-impl": "Surface.elm source",
-      "elm-tests": "pure production regression fixture",
-      "terra-browser": "compiled Bar/Popup component harness source",
-      "sol-docs": "bounded product reference",
-      "terra-contracts": "actual lifecycle contract audit",
-      "haiku-tools": "tool/source closure audit",
-      "haiku-originals": "original register preservation",
-      "muse": "bounded EARS continuity observer; no separate timer"
+      "elm-impl": "actual production authority bridge fixture",
+      "elm-tests": "independent BigInt oracle and negative-case assertions",
+      "terra-browser": "raw authority input provenance audit; no browser needed",
+      "sol-docs": "authority tuple reference",
+      "terra-contracts": "operation/serializer correspondence",
+      "haiku-tools": "artifact and protected runner closure",
+      "haiku-originals": "exact original bridge oracle and scenario receipt obligations",
+      "muse": "bounded original EARS continuity observer"
     },
-    "externalProcessReceipts": ".warlock-contributor/external-launch-receipts.json",
+    "externalProcessReceipts": ".warlock-contributor/arc005-external-launch-receipts.json",
     "authAcknowledgements": "AgentBus live log; process launch alone is not successful authentication",
     "singleProductSlice": true,
-    "noDuplicateCoordinator": true
+    "noDuplicateCoordinator": true,
+    "currentSlice": "ELM-ARC-005 architecture-005"
+  },
+  "currentGoalTelemetry": {
+    "observedUTC": "2026-10-31T22:33:43Z",
+    "status": "active",
+    "recordedTokensUsed": 1198418,
+    "elapsedSeconds": 1858,
+    "remainingTokenBudget": null,
+    "cost": "unavailable",
+    "scope": "Current host goal telemetry; not a daily usage figure or feature count"
   }
 }
