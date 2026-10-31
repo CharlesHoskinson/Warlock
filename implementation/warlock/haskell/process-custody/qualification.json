@@ -7,15 +7,21 @@
   "limits": [
     "Focused package controls, not complete historical66 or all asynchronous faults",
     "No public lease issuer; trusted resolver integration remains separate",
-    "Does not prove namespace confinement, GUI behavior, reproducible source closure or release readiness"
+    "Does not prove namespace confinement, GUI behavior, reproducible source closure or release readiness",
+    "Selected descriptor route currently accepts 1..128 unique borrowed descriptors; larger GUI candidate is not qualified",
+    "Selected descriptor route does not compose with selected stdin/tickets; conservative prepublication quarantine is not automatic recovery"
   ],
   "priorAssemblyEvidence": {
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/process-custody-package-build-1793413640816067613/report.json": "9c0e5aeb67d32d5aa1e63ee4c1a8a5557938485e0559a4b93190a646d16c29fa",
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/process-custody-package-controls-1793413681601512815/report.json": "a4aea588a139f8cd01856d6530697960093a68af841105f5e66edb385019c6aa"
   },
-  "evidence": {
+  "metadataNote": "Evidence hashes refer to pre-receipt package metadata. Runtime code, Cabal and tests match the executed assembly; this receipt metadata was appended after tests.",
+  "diagnosticAssemblyEvidence": {
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/process-custody-package-build-1793414010636616790/report.json": "9ddb1702ac8de047aee8690350da2dead1ef9068c0671a779d59e60a71d5b282",
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/process-custody-package-controls-1793414023453312016/report.json": "9a263f73dcd65e04d3ff64336df6ae9c69f78e1569f75ec94ebd7db2915c7b7e"
   },
-  "metadataNote": "Evidence hashes refer to pre-receipt package metadata. Runtime code, Cabal and tests match the executed assembly; this receipt metadata was appended after tests."
+  "evidence": {
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/process-custody-package-build-1793415382533884557/report.json": "2240f21a125e820b31fdfc4c5274b56ddbddd9ece0b7a31b8174d7cafdb55620",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/process-custody-package-controls-1793415411111879346/report.json": "51b33f6477e637c29030b7cdd157f6353e084100d23cadfda4a6622ae357db59"
+  }
 }

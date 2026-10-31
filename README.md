@@ -119,7 +119,7 @@ All paths in the diagram are under `implementation/warlock/`.
 
 The intended effect lifecycle runs from user input or a native fact, through the owning Elm transition, to a new model and a proposed effect, then native admission and execution, then a correlated observation back to Elm. This is an architecture model, not an assurance that every current interaction completes the full path. Ports carry the messages but do not guarantee ordering or exactly-once delivery, and an Unknown outcome never permits a blind retry. See [ownership and lifetimes](docs/warlock/explanation/ownership-and-lifetimes.md), the [full architecture](docs/elm-roadmap/ARCHITECTURE.md) and the proposed [layering contract](docs/elm-roadmap/LAYERING.md).
 
-The [Haskell process custody package](implementation/warlock/haskell/process-custody/README.md) now passes a fresh offline strict build and its focused internal/public tests under protected CPU QA. It exposes opaque ownership and deadline types; trusted lease issuance remains separate. These checks do not establish native window behavior or full release readiness.
+The [Haskell process custody package](implementation/warlock/haskell/process-custody/README.md) now passes a fresh offline strict build and its focused internal/public tests under protected CPU QA. It exposes opaque ownership and deadline types; trusted lease issuance remains separate. Focused tests now also cover selected descriptor inheritance and exclusion of ambient files and sockets. These checks do not establish native window behavior or full release readiness.
 
 ## Why Elm and Haskell
 

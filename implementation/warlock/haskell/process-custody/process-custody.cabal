@@ -2,13 +2,13 @@ cabal-version: 2.4
 name: warlock-process-custody
 version: 0.1.0.0
 build-type: Simple
-extra-source-files: qualification.json SHA256SUMS README.md HANDOFF.md RETROFIT.md SOURCE-MAP.md fixture/Main.hs test/Internal.hs test/Public.hs
+extra-source-files: qualification.json SHA256SUMS README.md HANDOFF.md RETROFIT.md SOURCE-MAP.md fixture/Main.hs fixture-selected/Main.hs test/Internal.hs test/Public.hs test/SelectedFD.hs
 common options
   default-language: Haskell2010
   ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates
-  build-depends: base >= 4.16 && < 5, bytestring, text, process, unix, cryptohash-sha256 == 0.11.102.1
+  build-depends: base >= 4.16 && < 5, bytestring, text, process == 1.6.19.0, unix, cryptohash-sha256 == 0.11.102.1
 common implementation
-  other-modules: Warlock.Capture.Process.Internal, Warlock.Capture.Process.Owner, Warlock.Capture.Process.Lease, Warlock.Capture.Process.Transfer, Warlock.Capture.Process.Transfer.Internal
+  other-modules: Warlock.Capture.Process.Whitelist, Warlock.Capture.Process.Internal, Warlock.Capture.Process.Owner, Warlock.Capture.Process.Lease, Warlock.Capture.Process.Transfer, Warlock.Capture.Process.Transfer.Internal
 library
   import: options, implementation
   hs-source-dirs: src
@@ -31,4 +31,18 @@ test-suite public-controls
   hs-source-dirs: test
   main-is: Public.hs
   build-depends: warlock-process-custody
+  ghc-options: -threaded
+
+executable selected-fd-child
+  import: options
+  hs-source-dirs: fixture-selected
+  main-is: Main.hs
+  build-depends: directory
+  ghc-options: -threaded
+test-suite selected-fd-controls
+  import: options, implementation
+  type: exitcode-stdio-1.0
+  hs-source-dirs: test, src
+  main-is: SelectedFD.hs
+  build-depends: directory, network == 3.2.0.0
   ghc-options: -threaded

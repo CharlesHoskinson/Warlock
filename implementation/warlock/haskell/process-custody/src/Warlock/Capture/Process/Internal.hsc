@@ -5,15 +5,16 @@
 #include <sys/wait.h>
 #include <signal.h>
 #include <sys/types.h>
+#include <fcntl.h>
 -- Linux-specific source proposal: independent process/library review required.
 module Warlock.Capture.Process.Internal
- (Tool(..),ToolError(..),Captured(..),Owner,OwnerStatus(..),newOwner,status,runTool,runFixture,runFixturePinned,runFixturePinnedObserved,ToolObservation(..),runFixtureWithHook, selectedFixture, selectedTicketFixture, SelectedSpawn, HeldExecutable, SelectedResult(..), Session, selectedHeld, awaitLeader, runSelected, AdmissionDeadline, deadlineAfter, remainingMicros, runSelectedUntil, runSelectedDetailed, SelectedOutcome(..), Containment(..), SessionObservation(..), observeSession, runSelectedFixtureHook) where
+ (Tool(..),ToolError(..),Captured(..),Owner,OwnerStatus(..),newOwner,status,runTool,runFixture,runFixturePinned,runFixturePinnedObserved,runFixturePinnedFDsObserved,runFixturePinnedFDsObservedHook,ToolObservation(..),runFixtureWithHook, selectedFixture, selectedTicketFixture, SelectedSpawn, HeldExecutable, SelectedResult(..), Session, selectedHeld, awaitLeader, runSelected, AdmissionDeadline, deadlineAfter, remainingMicros, runSelectedUntil, runSelectedDetailed, SelectedOutcome(..), Containment(..), SessionObservation(..), observeSession, runSelectedFixtureHook) where
 import Control.Concurrent (MVar, ThreadId, forkFinally, killThread, newEmptyMVar, newMVar, putMVar, readMVar, threadDelay, withMVar)
-import Control.Exception (IOException, SomeAsyncException, SomeException, bracket, fromException, mask, onException, try, throwIO)
+import Control.Exception (IOException, SomeAsyncException, SomeException, bracket, fromException, mask, onException, try, throwIO, toException)
 import qualified Data.Text as T
-import Warlock.Capture.Process.Owner (Owner,OwnerStatus(..),newOwner,status,begin,abortBegin,publish,quarantine,failUnsettled,settle,newChild,setPid,retainPipe,retainReader,retainBorrow,releaseBorrows,retainTransfer,clearTransfers,retainTicket,clearTickets,retainCore,clearCore,recordStartupFailure)
+import Warlock.Capture.Process.Owner (Owner,OwnerStatus(..),newOwner,status,begin,abortBegin,publish,quarantine,failUnsettled,settle,newChild,setPid,retainPipe,retainReader,retainBorrow,releaseBorrows,retainTransfer,clearTransfers,retainTicket,clearTickets,retainCore,clearCore,recordStartupFailure,newPending,retainPending,pendingRecordFD,pendingIdentityFD,FDIdentity(..),pendingMarkFD,pendingTransferFD,clearPending,pendingRecordIssue)
 import Control.Monad (unless, void)
-import Data.IORef (IORef, newIORef, readIORef, writeIORef, atomicWriteIORef, atomicModifyIORef')
+import Data.IORef (IORef, newIORef, readIORef, writeIORef, modifyIORef', atomicWriteIORef, atomicModifyIORef')
 import GHC.Clock (getMonotonicTimeNSec)
 import Warlock.Capture.Process.Lease (HeldExecutable, borrowHeld)
 import Warlock.Capture.Process.Transfer (TransferTicket)
@@ -25,18 +26,22 @@ import Data.Bits ((.|.), (.&.))
 import Foreign.C.Error (eSRCH, getErrno, throwErrnoIfMinus1Retry)
 import Foreign.C.Types (CInt(..), CUInt(..))
 import Foreign.Marshal.Alloc (allocaBytes)
+import Foreign.Marshal.Array (allocaArray)
 import Foreign.Marshal.Utils (fillBytes)
 import Foreign.Ptr (Ptr)
-import Foreign.Storable (peekByteOff)
+import Foreign.Storable (peekByteOff, peekElemOff)
 import Numeric (showHex)
 import System.Exit (ExitCode(..))
 import System.IO (Handle, IOMode(ReadMode), hClose, openBinaryFile)
-import System.Posix.Files (fileMode, fileOwner, getSymbolicLinkStatus, isDirectory, isRegularFile, readSymbolicLink)
-import System.Posix.Types (ProcessID)
+import System.Posix.Files (fileMode, fileOwner, getSymbolicLinkStatus, isDirectory, isRegularFile, readSymbolicLink, getFdStatus, deviceID, fileID)
+import System.Posix.Types (ProcessID, Fd(..))
+import System.Posix.IO (closeFd, fdToHandle)
+import Warlock.Capture.Process.Whitelist (SelectedFDPlan, trustedBorrowedPlan, spawnWhitelisted)
 import System.Posix.Signals (sigKILL)
 import System.Process (CreateProcess(..), StdStream(..), createProcess_, getPid, proc, waitForProcess)
 import System.Timeout (timeout)
 
+foreign import ccall unsafe "pipe2" c_pipe2 :: Ptr CInt -> CInt -> IO CInt
 foreign import ccall unsafe "waitid" c_waitid :: CInt -> CUInt -> Ptr () -> CInt -> IO CInt
 foreign import ccall unsafe "getpgid" c_getpgid :: CInt -> IO CInt
 foreign import ccall unsafe "kill" c_kill :: CInt -> CInt -> IO CInt
@@ -191,13 +196,26 @@ runFixturePinned owner exe want args n us = operation <$> runFixturePinnedObserv
 
 -- Private per-invocation cell: no output from another run can be reused.
 runFixturePinnedObserved :: Owner -> FilePath -> B.ByteString -> [String] -> Int -> Int -> IO ToolObservation
-runFixturePinnedObserved owner exe want args n us = do
+runFixturePinnedObserved owner exe want args n us = runPinnedObserved owner exe want args Nothing (const (pure ())) n us
+
+-- Internal-only: the caller owns and retains each verified borrowed descriptor.
+runFixturePinnedFDsObserved :: Owner -> FilePath -> B.ByteString -> [String] -> [Fd] -> Int -> Int -> IO ToolObservation
+runFixturePinnedFDsObserved owner exe want args fds n us = runFixturePinnedFDsObservedHook owner exe want args fds n us (const (pure ()))
+
+-- Controlled fixture seam, not a product policy callback.
+runFixturePinnedFDsObservedHook :: Owner -> FilePath -> B.ByteString -> [String] -> [Fd] -> Int -> Int -> (String -> IO ()) -> IO ToolObservation
+runFixturePinnedFDsObservedHook owner exe want args fds n us hook = case trustedBorrowedPlan fds of
+ Left _ -> pure (ToolObservation (Left BadArguments) Nothing)
+ Right plan -> runPinnedObserved owner exe want args (Just plan) hook n us
+
+runPinnedObserved :: Owner -> FilePath -> B.ByteString -> [String] -> Maybe SelectedFDPlan -> (String -> IO ()) -> Int -> Int -> IO ToolObservation
+runPinnedObserved owner exe want args selectedPlan hook n us = do
  observedBytes <- newIORef Nothing
  bytes <- try (readTool exe) :: IO (Either IOException B.ByteString)
  result <- case bytes of
   Left _ -> pure (Left SpawnOrIO)
   Right b | hexDigest (SHA.hash b) /= want -> pure (Left ToolHashMismatch)
-  Right _ -> runOwnedHookCell owner exe args n us (const (pure ())) (Just observedBytes)
+  Right _ -> runOwnedHookCellPlan owner exe args n us hook (Just observedBytes) selectedPlan
  captured <- readIORef observedBytes
  pure (ToolObservation result captured)
 
@@ -261,11 +279,14 @@ runOwnedHook :: Owner -> FilePath -> [String] -> Int -> Int -> (String -> IO ())
 runOwnedHook owner exe args cap micros hook = runOwnedHookCell owner exe args cap micros hook Nothing
 
 runOwnedHookCell :: Owner -> FilePath -> [String] -> Int -> Int -> (String -> IO ()) -> Maybe (IORef (Maybe Captured)) -> IO (Either ToolError Captured)
-runOwnedHookCell owner exe args cap micros hook captureCell = do
+runOwnedHookCell owner exe args cap micros hook captureCell = runOwnedHookCellPlan owner exe args cap micros hook captureCell Nothing
+
+runOwnedHookCellPlan :: Owner -> FilePath -> [String] -> Int -> Int -> (String -> IO ()) -> Maybe (IORef (Maybe Captured)) -> Maybe SelectedFDPlan -> IO (Either ToolError Captured)
+runOwnedHookCellPlan owner exe args cap micros hook captureCell selectedPlan = do
  deadline <- deadlineAfter micros
  case deadline of
   Left err -> pure (Left err)
-  Right d -> runSelectedHook owner (SelectedSpawn exe args Nothing [("LC_ALL","C"),("LANG","C"),("PATH","/usr/bin")] Nothing) cap d awaitLeader hook Nothing captureCell
+  Right d -> runSelectedHook owner (SelectedSpawn exe args Nothing [("LC_ALL","C"),("LANG","C"),("PATH","/usr/bin")] Nothing) cap d awaitLeader hook Nothing captureCell selectedPlan
 
 -- One scoped admission and one cleanup path. The callback receives no raw
 -- process handle and cannot reap or signal the selected process through it.
@@ -290,7 +311,7 @@ runSelectedUntil owner selection cap deadline conversation = do
 runSelectedDetailed :: Owner -> SelectedSpawn -> Int -> AdmissionDeadline -> (Session -> IO (Either ToolError ())) -> IO SelectedOutcome
 runSelectedDetailed owner selection cap deadline conversation = do
  observedExit <- newIORef Nothing
- result <- runSelectedHook owner selection cap deadline conversation (const (pure ())) (Just observedExit) Nothing
+ result <- runSelectedHook owner selection cap deadline conversation (const (pure ())) (Just observedExit) Nothing Nothing
  exited <- readIORef observedExit
  state <- status owner
  let containment = case exited of Just True -> BeforeSignalLeaderExited; Just False -> BeforeSignalLeaderAlive; Nothing -> SignalStateUnknown
@@ -298,10 +319,10 @@ runSelectedDetailed owner selection cap deadline conversation = do
 
 -- Source-fixture seam only; hooks run at actual lifecycle points.
 runSelectedFixtureHook :: Owner -> SelectedSpawn -> Int -> AdmissionDeadline -> (Session -> IO (Either ToolError ())) -> (String -> IO ()) -> IO (Either ToolError Captured)
-runSelectedFixtureHook owner selection cap deadline conversation hook = runSelectedHook owner selection cap deadline conversation hook Nothing Nothing
+runSelectedFixtureHook owner selection cap deadline conversation hook = runSelectedHook owner selection cap deadline conversation hook Nothing Nothing Nothing
 
-runSelectedHook :: Owner -> SelectedSpawn -> Int -> AdmissionDeadline -> (Session -> IO (Either ToolError ())) -> (String -> IO ()) -> Maybe (IORef (Maybe Bool)) -> Maybe (IORef (Maybe Captured)) -> IO (Either ToolError Captured)
-runSelectedHook owner (SelectedSpawn exe args selectedInput selectedEnv selectedLease) cap deadline conversation hook exitObservation captureCell
+runSelectedHook :: Owner -> SelectedSpawn -> Int -> AdmissionDeadline -> (Session -> IO (Either ToolError ())) -> (String -> IO ()) -> Maybe (IORef (Maybe Bool)) -> Maybe (IORef (Maybe Captured)) -> Maybe SelectedFDPlan -> IO (Either ToolError Captured)
+runSelectedHook owner (SelectedSpawn exe args selectedInput selectedEnv selectedLease) cap deadline conversation hook exitObservation captureCell selectedPlan
  | null exe || head exe /= '/' || cap <= 0 || cap > 4194304 = pure (Left BadArguments)
  | otherwise = mask $ \restore -> do
   available <- remainingMicros deadline
@@ -360,7 +381,7 @@ runSelectedHook owner (SelectedSpawn exe args selectedInput selectedEnv selected
          pure (Left TimedOut)
         else do
          case selectedInput of Just (FixtureInput h) -> retainTransfer owner h; _ -> pure ()
-         (out,err,ph,pid,child) <- startupAction owner (spawn selectedPath selectedHandle) closeInput
+         (out,err,ph,pid,child) <- startupAction owner (case selectedPlan of Nothing -> spawn selectedPath selectedHandle; Just plan -> spawnSelected selectedPath selectedHandle plan) closeInput
          -- Every successful reader acquisition is recorded before unmasking.
          (outThread,outResult) <- spawnReader out cap `onException` (cleanupStart closeInput child out err ph pid Nothing)
          retainReader child outThread (void outResult)
@@ -409,7 +430,7 @@ runSelectedHook owner (SelectedSpawn exe args selectedInput selectedEnv selected
           let failures = [T.pack label | (label,failed) <- [("group-or-reap",either (const True) (const False) reaped),("stdout-join",not (completed joinedA)),("stderr-join",not (completed joinedB)),("stdout-close",not (completed closeA)),("stderr-close",not (completed closeB))], failed]
           let transferFailures = either (const ["selected-stdin-close"]) (const []) transfer
               allFailures = failures ++ transferFailures
-          if null allFailures then releaseBorrows owner >> clearTransfers owner >> clearCore owner >> clearTickets owner >> settle owner else quarantine owner (Just child) allFailures
+          if null allFailures then releaseBorrows owner >> clearTransfers owner >> clearCore owner >> clearTickets owner >> clearPending owner >> settle owner else quarantine owner (Just child) allFailures
           let deferred = asyncErrors observed ++ asyncErrors transfer ++ asyncErrors reaped ++ asyncErrors captured ++ asyncErrors killedA ++ asyncErrors killedB ++ asyncErrors joinedA ++ asyncErrors joinedB ++ asyncErrors closeA ++ asyncErrors closeB
           case deferred of first:_ -> throwIO first; [] -> pure ()
           case (admissionObserved,reaped,captured,allFailures) of
@@ -431,6 +452,89 @@ runSelectedHook owner (SelectedSpawn exe args selectedInput selectedEnv selected
       pure (if ownerState == Available then Left SpawnOrIO else Left CleanupUncertain)
      Right value -> pure value
  where
+  -- The finite descriptor route enters the same existing readers and finish
+  -- code. This path currently supports the pinned no-input fixture only.
+  spawnSelected selectedPath selectedHandle plan = do
+   case selectedHandle of Just _ -> ioError (userError "selected stdin transfer not supported on FD route"); Nothing -> pure ()
+   pending <- newPending
+   retained <- retainPending owner pending
+   unless retained (ioError (userError "pending slot already occupied"))
+   rawRef <- newIORef []
+   handleRef <- newIORef []
+   childRef <- newIORef Nothing
+   let takeRaw fd = modifyIORef' rawRef (filter (/= fd))
+       closeRaw fd = do
+        takeRaw fd
+        pendingMarkFD pending fd False
+        result <- try (closeFd fd) :: IO (Either SomeException ())
+        case result of
+         Left ex -> pendingRecordIssue pending "pipe-close-uncertain" >> throwIO ex
+         Right () -> pendingMarkFD pending fd True
+       openPair = allocaArray 2 $ \ptr -> do
+        _ <- throwErrnoIfMinus1Retry "pipe2" (c_pipe2 ptr #{const O_CLOEXEC})
+        first <- Fd <$> peekElemOff ptr 0
+        second <- Fd <$> peekElemOff ptr 1
+        pendingRecordFD pending first
+        pendingRecordFD pending second
+        modifyIORef' rawRef (\xs -> first:second:xs)
+        firstStatus <- getFdStatus first
+        secondStatus <- getFdStatus second
+        pendingIdentityFD pending first (FDIdentity (toInteger (deviceID firstStatus)) (toInteger (fileID firstStatus)))
+        pendingIdentityFD pending second (FDIdentity (toInteger (deviceID secondStatus)) (toInteger (fileID secondStatus)))
+        pure (first,second)
+       convert fd = do
+        takeRaw fd
+        pendingMarkFD pending fd False
+        handle <- fdToHandle fd
+        pendingTransferFD pending fd handle
+        modifyIORef' handleRef (handle:)
+        current <- readIORef childRef
+        case current of Just (child,_,_) -> retainPipe child handle; Nothing -> ioError (userError "child missing during handle conversion")
+        pure handle
+       attempt cleanupStep = do
+        result <- try (timeout 2000000 cleanupStep) :: IO (Either SomeException (Maybe ()))
+        pure $ case result of Left ex -> Left ex; Right Nothing -> Left (toException (userError "bounded cleanup timed out")); Right (Just ()) -> Right ()
+       cleanup = do
+        child <- readIORef childRef
+        stopped <- case child of Nothing -> pure (Right ()); Just (_,ph,pid) -> attempt (void (terminateReap ph pid))
+        raws <- readIORef rawRef
+        closed <- mapM (attempt . closeRaw) raws
+        handles <- readIORef handleRef
+        closedHandles <- mapM (attempt . hClose) handles
+        let failures = [ex | Left ex <- stopped:closed ++ closedHandles]
+        unless (null failures) (pendingRecordIssue pending "partial-startup-cleanup-failed")
+        let asyncFailures = [ex | ex <- failures, Just _ <- [fromException ex :: Maybe SomeAsyncException]]
+        case asyncFailures of
+         first:_ -> throwIO first
+         [] -> case failures of [] -> pure (); first:_ -> throwIO first
+       action = do
+        (inRead,inWrite) <- openPair
+        (outRead,outWrite) <- openPair
+        (errRead,errWrite) <- openPair
+        closeRaw inWrite
+        ph <- spawnWhitelisted pending ((> 0) <$> remainingMicros deadline) (\handle -> do
+         child <- newChild handle
+         publish owner child
+         identity <- getPid handle
+         case identity of
+          Just pid | pid > 0 -> do
+           setPid child pid
+           writeIORef childRef (Just (child,handle,pid))
+           hook "fd-after-publish"
+          _ -> ioError (userError "published child PID missing")) selectedPath args selectedEnv (inRead,outWrite,errWrite) plan
+        closeResults <- mapM (attempt . closeRaw) [inRead,outWrite,errWrite]
+        let closeFailures = [ex | Left ex <- closeResults]
+            closeAsync = [ex | ex <- closeFailures, Just _ <- [fromException ex :: Maybe SomeAsyncException]]
+        unless (null closeFailures) (pendingRecordIssue pending "child-pipe-close-failed")
+        case closeAsync of
+         first:_ -> throwIO first
+         [] -> case closeFailures of [] -> pure (); first:_ -> throwIO first
+        outHandle <- convert outRead
+        errHandle <- convert errRead
+        child <- readIORef childRef
+        case child of Just (entry,_,pid) -> pure (outHandle,errHandle,ph,pid,entry); Nothing -> ioError (userError "published child missing")
+   startupAction owner action cleanup
+
   spawn selectedPath selectedHandle = do
    (input,out,err,ph) <- createProcess_ "warlock-owned-selected" (proc selectedPath args) { env=Just selectedEnv, std_in=maybe NoStream UseHandle selectedHandle, std_out=CreatePipe, std_err=CreatePipe, close_fds=True, create_group=True }
    child <- newChild ph
