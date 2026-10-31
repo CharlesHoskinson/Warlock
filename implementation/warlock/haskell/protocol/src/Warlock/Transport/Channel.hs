@@ -1,8 +1,9 @@
 {-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE ScopedTypeVariables #-}
 -- Source-only owned endpoint; adoption is not bootstrap or peer authentication.
 module Warlock.Transport.Channel
   ( Channel, Direction(..), Priority(..), ChannelError(..), CloseResult(..)
-  , CloseState(..), channelState, channelFlagsVerified, newConfiguredChannel, receive, receiveWith, receiveWithStart, receiveRawDeadline, receiveRawDeadlineWithStart, enqueue, sendNext, closeChannel, retainedFrames ) where
+  , CloseState(..), channelState, channelFlagsVerified, newConfiguredChannel, receive, receiveWith, receiveWithStart, receiveRawDeadline, receiveRawDeadlineWithStart, CredentialFrameError(..), receiveCredentialFrame, enqueue, sendNext, closeChannel, retainedFrames ) where
 import Control.Concurrent.MVar
 import Control.Exception (SomeException, SomeAsyncException, fromException, throwIO, evaluate, mask, uninterruptibleMask_, try, finally, onException)
 import System.Timeout (timeout)
@@ -14,6 +15,8 @@ import qualified Network.Socket.ByteString as N
 import Warlock.Transport.Frame (FrameError(..),headerLength,prefix)
 import Warlock.Protocol.Codec (decodeClientChecked,decodeServerChecked)
 import qualified Warlock.Transport.SocketFlags as F
+import qualified Warlock.Transport.PeerCredentials as P
+import Warlock.Protocol.CredentialGuard (CredentialGuard(..))
 
 data Direction = ClientInbound | ServerInbound deriving (Eq,Show)
 data Priority = Ordinary | Control deriving (Eq,Show)
@@ -101,6 +104,61 @@ receiveRawDeadlineWithStart started channel@(Channel sock _ state readGate _ _) 
       Right (Just (Left e)) -> closeChannel channel >> pure (Left e)
       Right _ -> closeChannel channel >> pure (Left TimedOut)
       Left e -> handleException channel e) `onException` cleanupNoThrow channel
+
+-- The credential reader is retained by the ingress owner.  It borrows the
+-- channel socket only under the same read gate as the legacy receive path.
+data CredentialFrameError refusal = CredentialTransport ChannelError | CredentialAncillary P.CredentialError
+ | CredentialPeer refusal | CredentialChanged deriving (Eq,Show)
+
+receiveCredentialFrame :: forall refusal. P.CredentialReader -> CredentialGuard refusal -> Channel
+ -> IO (Either (CredentialFrameError refusal) (B.ByteString,Integer,P.PeerCredential))
+receiveCredentialFrame reader guard channel@(Channel sock _ state readGate _ _) = mask $ \restore -> do
+ acquired <- tryTakeMVar readGate
+ case acquired of
+  Nothing -> pure (Left (CredentialTransport Busy))
+  Just () -> (restore run `onException` cleanupNoThrow channel) `finally` putMVar readGate ()
+ where
+  run = do
+   closed <- isClosed state
+   if closed then pure (Left (CredentialTransport Closed)) else do
+    start <- getMonotonicTimeNSec
+    let deadline = toInteger start + 5000000000
+    result <- try (timeout 5000000 (frame deadline)) :: IO (Either SomeException (Maybe (Either (CredentialFrameError refusal) (B.ByteString,P.PeerCredential))))
+    end <- getMonotonicTimeNSec
+    case result of
+     Left err -> do failure <- (handleException channel err :: IO (Either ChannelError ())); pure (either (Left . CredentialTransport) (const (Left (CredentialTransport IOErrorClosed))) failure)
+     Right _ | toInteger end >= deadline -> failFrame (CredentialTransport TimedOut)
+     Right Nothing -> failFrame (CredentialTransport TimedOut)
+     Right (Just (Left err)) -> failFrame err
+     Right (Just (Right (bytes,credential))) -> pure (Right (bytes,deadline,credential))
+  failFrame err = do _ <- closeChannel channel; pure (Left err)
+  frame deadline = do
+   header <- pieces deadline 4 Nothing [] (FrameFault TruncatedHeader)
+   case header of
+    Left err -> pure (Left err)
+    Right (raw,credential) -> case headerLength raw of
+     Left err -> pure (Left (CredentialTransport (FrameFault err)))
+     Right size -> pieces deadline size (Just credential) [] (FrameFault TruncatedBody)
+  pieces deadline remaining first chunks eofFault
+   | remaining == 0 = case first of
+      Nothing -> pure (Left (CredentialTransport eofFault))
+      Just credential -> pure (Right (B.concat (reverse chunks),credential))
+   | otherwise = do
+      now <- getMonotonicTimeNSec
+      if toInteger now >= deadline then pure (Left (CredentialTransport TimedOut)) else do
+       result <- P.receiveCredentialChunk reader sock remaining
+       case result of
+        Left err -> pure (Left (CredentialAncillary err))
+        Right P.EndOfStream -> pure (Left (CredentialTransport (if null chunks && first == Nothing && eofFault == FrameFault TruncatedHeader then StreamEOF else eofFault)))
+        Right (P.CredentialChunk bytes credential) -> do
+         approved <- checkFragment guard credential
+         case approved of
+          Left err -> pure (Left (CredentialPeer err))
+          Right () | B.null bytes || B.length bytes > remaining -> pure (Left (CredentialTransport (FrameFault eofFaultFrame)))
+                   | maybe False (/= credential) first -> pure (Left CredentialChanged)
+                   | otherwise -> pieces deadline (remaining - B.length bytes) (Just credential) (bytes:chunks) eofFault
+   where eofFaultFrame = case eofFault of FrameFault err -> err; _ -> TruncatedBody
+
 -- Evaluate every decoded field before the deadline scope exits. `show` here
 -- forces the existing total codec values, is not emitted or logged.
 forceDecoded :: Direction -> B.ByteString -> IO (Either Text ())

@@ -69,3 +69,5 @@ request deduplication, original effect deadlines and native-effect authorization
 remain open. Transport tests do not establish those missing routes.
 
 The [acquisition model qualification](formal/ACQUISITION.md) records 26 directed tests and 1,000 sampled traces of 30 steps, with source correspondence assumptions and remaining concurrent-return limits.
+
+The separate [Haskell runtime](../runtime/README.md) now joins kernel sender credentials to current selected-session admission through `CredentialIngress` and a paired `CredentialGuard`. The generic protocol guard itself authenticates nobody. Its controlled real-child cases are source-bound component evidence; cross-user, persistent GUI and native-effect obligations remain open.

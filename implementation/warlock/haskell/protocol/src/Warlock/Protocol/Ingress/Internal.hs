@@ -1,7 +1,9 @@
+{-# LANGUAGE ScopedTypeVariables #-}
 -- Private owner shell: ownership is not peer authentication or native authority.
 module Warlock.Protocol.Ingress.Internal
  (IngressOwner,IngressBinding,ingressBinding,CounterError(..),Direction(..),Reason(..),GateStatus(..),
   Priority(..),ChannelError(..),EndpointState(..),Phase(..),OwnerStatus(..),OfferResult(..),ActivationResult(..),IngressResult(..),
+  CredentialIngress,CredentialIngressResult(..),newCredentialIngress,newCredentialIngressWithReaderForTest,transferCredentialSocket,activateCredentialIngress,receiveCredentialIngress,retireCredentialIngress,credentialIngressStatus,enqueueCredentialIngress,sendCredentialIngress,retainedCredentialIngressFrames,
   newIngressOwner,newIngressOwnerWithHooks,newIngressOwnerWithPrepareHook,holdOwnerGateForTest,holdCloseGateForTest,flagsForTest,transferSocket,transferSocketWithHooks,activateIngress,activateIngressWithHook,receiveIngress,enqueueIngress,sendIngress,retainedIngressFrames,retireIngress,ingressStatus,ingressRejections) where
 import Control.Concurrent.MVar
 import Control.Exception (SomeException,SomeAsyncException,finally,fromException,mask,uninterruptibleMask_,try,throwIO)
@@ -15,6 +17,8 @@ import Warlock.Protocol.Identity (Binding,CounterError(..),binding,parseCounter)
 import qualified Warlock.Transport.Channel as C
 import Warlock.Transport.Channel (Priority(..),ChannelError(..))
 import qualified Warlock.Transport.SocketFlags as F
+import qualified Warlock.Transport.PeerCredentials as P
+import Warlock.Protocol.CredentialGuard (CredentialGuard(..))
 
 newtype IngressBinding = IngressBinding Binding
 ingressBinding :: Text -> Text -> Text -> Either CounterError IngressBinding
@@ -239,3 +243,69 @@ ingressStatus (IngressOwner gateValue _ state _ _ _) = do
  pure (OwnerStatus actualPhase wasAccepted gateState closeState failure closeErr)
 ingressRejections :: IngressOwner -> IO [Reason]
 ingressRejections (IngressOwner gateValue _ _ _ _ _) = G.rejectionReasons gateValue
+
+-- This owner is allocated before a socket is offered. Its reader and any
+-- quarantined ancillary descriptors remain reachable even after socket close.
+data CredentialIngress = CredentialIngress IngressOwner P.CredentialReader
+data CredentialIngressResult refusal = CredentialDelivered | CredentialRejected Reason
+ | CredentialFrameRejected (C.CredentialFrameError refusal) | CredentialAdmissionRejected refusal
+ | CredentialNotLive deriving (Eq,Show)
+
+newCredentialIngress :: IngressBinding -> Direction -> (CheckedClient -> IO ()) -> (CheckedServer -> IO ()) -> IO CredentialIngress
+newCredentialIngress bindingValue direction client server = do
+ reader <- P.newCredentialReader
+ owner <- newIngressOwnerWithHooks bindingValue direction client server
+   (\socket -> F.configureSocketFlags socket >> P.enablePassCredentials socket) S.close
+ pure (CredentialIngress owner reader)
+-- Same-package source-fixture seam. The public facade cannot replace a reader.
+newCredentialIngressWithReaderForTest :: P.CredentialReader -> IngressBinding -> Direction -> (CheckedClient -> IO ()) -> (CheckedServer -> IO ()) -> IO CredentialIngress
+newCredentialIngressWithReaderForTest reader bindingValue direction client server = do
+ owner <- newIngressOwnerWithHooks bindingValue direction client server
+   (\socket -> F.configureSocketFlags socket >> P.enablePassCredentials socket) S.close
+ pure (CredentialIngress owner reader)
+transferCredentialSocket :: CredentialIngress -> S.Socket -> IO OfferResult
+transferCredentialSocket (CredentialIngress owner _) = transferSocket owner
+activateCredentialIngress :: CredentialIngress -> IO ActivationResult
+activateCredentialIngress (CredentialIngress owner _) = activateIngress owner
+credentialIngressStatus :: CredentialIngress -> IO (OwnerStatus,P.ReaderStatus)
+credentialIngressStatus (CredentialIngress owner reader) = (,) <$> ingressStatus owner <*> P.credentialReaderStatus reader
+retireCredentialIngress :: CredentialIngress -> IO OwnerStatus
+retireCredentialIngress (CredentialIngress owner _) = retireIngress owner
+enqueueCredentialIngress :: CredentialIngress -> Priority -> B.ByteString -> IO (Either ChannelError ())
+enqueueCredentialIngress (CredentialIngress owner _) = enqueueIngress owner
+sendCredentialIngress :: CredentialIngress -> IO (Either ChannelError ())
+sendCredentialIngress (CredentialIngress owner _) = sendIngress owner
+retainedCredentialIngressFrames :: CredentialIngress -> IO [(Priority,B.ByteString)]
+retainedCredentialIngressFrames (CredentialIngress owner _) = retainedIngressFrames owner
+
+-- The same serial admission and channel read gate serve legacy and credential
+-- paths. Scope admission encloses the actual checked gate dispatch and handler;
+-- no credential or checked envelope is an effect or native capability.
+receiveCredentialIngress :: forall refusal. CredentialIngress -> CredentialGuard refusal -> IO (CredentialIngressResult refusal)
+receiveCredentialIngress (CredentialIngress owner@(IngressOwner gateValue direction _ serial _ _) reader) guard = mask $ \restore -> do
+ acquired <- tryTakeMVar serial
+ case acquired of
+  Nothing -> pure (CredentialFrameRejected (C.CredentialTransport C.Busy))
+  Just () -> (do
+   selected <- try (restore (liveChannel owner)) :: IO (Either SomeException (Maybe C.Channel))
+   case selected of
+    Left err -> retireOnError owner err
+    Right Nothing -> pure CredentialNotLive
+    Right (Just channel) -> do
+     readResult <- try (restore (C.receiveCredentialFrame reader guard channel)) :: IO (Either SomeException (Either (C.CredentialFrameError refusal) (B.ByteString,Integer,P.PeerCredential)))
+     case readResult of
+      Left err -> retireOnError owner err
+      Right (Left err) -> do
+       retired <- try (G.retire gateValue) :: IO (Either SomeException GateStatus)
+       case retired of Left failure -> retireOnError owner failure; Right _ -> pure (CredentialFrameRejected err)
+      Right (Right (bytes,deadline,credential)) -> do
+       admission <- try (restore (withCredentialAdmission guard credential (G.dispatchUntil gateValue direction bytes deadline))) :: IO (Either SomeException (Either refusal (Either Reason ())))
+       case admission of
+        Left err -> retireOnError owner err
+        Right (Left refusal) -> do
+         closed <- try (C.closeChannel channel) :: IO (Either SomeException C.CloseResult)
+         case closed of Left err -> retireOnError owner err; Right _ -> pure (CredentialAdmissionRejected refusal)
+        Right (Right (Left reason)) -> do
+         closed <- try (C.closeChannel channel) :: IO (Either SomeException C.CloseResult)
+         case closed of Left err -> retireOnError owner err; Right _ -> pure (CredentialRejected reason)
+        Right (Right (Right ())) -> pure CredentialDelivered) `finally` putMVar serial ()

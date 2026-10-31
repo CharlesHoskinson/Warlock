@@ -4,8 +4,8 @@ version: 0.1.0.0
 build-type: Simple
 library
   hs-source-dirs: src
-  exposed-modules: Warlock.Platform.Resolver, Warlock.Http.Document
-  other-modules: Warlock.Platform.Descriptor, Warlock.Platform.Resolver.Internal
+  exposed-modules: Warlock.Platform.Resolver, Warlock.Platform.Executable, Warlock.Http.Document
+  other-modules: Warlock.Platform.Descriptor, Warlock.Platform.Resolver.Internal, Warlock.Platform.Executable.Internal
   build-depends: base >= 4.16 && < 5, bytestring, containers, unix, cryptohash-sha256 == 0.11.102.1
   pkgconfig-depends: glib-2.0
   default-language: Haskell2010
@@ -18,5 +18,16 @@ test-suite held-document-controls
   other-modules: Warlock.Http.Document, Warlock.Platform.Resolver, Warlock.Platform.Resolver.Internal, Warlock.Platform.Descriptor
   build-depends: base >= 4.16 && < 5, bytestring, containers, unix, cryptohash-sha256 == 0.11.102.1, directory, filepath
   pkgconfig-depends: glib-2.0
+  default-language: Haskell2010
+  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -threaded
+
+test-suite held-executable-controls
+  type: exitcode-stdio-1.0
+  hs-source-dirs: test, src
+  main-is: LeaseControls.hs
+  other-modules: Warlock.Platform.Executable, Warlock.Platform.Executable.Internal, Warlock.Platform.Resolver.Internal, Warlock.Platform.Descriptor
+  build-depends: base >=4.18 && <5, bytestring, containers, unix, cryptohash-sha256 ==0.11.102.1, directory, filepath
+  pkgconfig-depends: glib-2.0
+  cc-options: -D_GNU_SOURCE
   default-language: Haskell2010
   ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -threaded

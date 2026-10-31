@@ -11,7 +11,7 @@ import Numeric (showHex)
 import System.Directory (createDirectory, doesFileExist, getTemporaryDirectory, removeFile, removePathForcibly)
 import System.FilePath ((</>))
 import System.IO (hClose, openTempFile, openBinaryFile, IOMode(ReadMode))
-import System.Posix.IO (handleToFd)
+import VerifiedFixture (validatedFixtureLease)
 import qualified Warlock.Capture.Process.Lease as Lease
 import System.Environment (getArgs)
 import System.Exit (exitFailure)
@@ -117,9 +117,7 @@ main = do
     afterPoll <- awaitLeader sessionAfter
     check "live observation before session close" (case live of Right _ -> True; _ -> False)
     check "escaped session closed after cleanup" (afterObservation == Left SessionClosed && afterPoll == Left SessionClosed && case escapedRun of Left (Unsuccessful _) -> True; _ -> False)
-    leaseInput <- openBinaryFile (root </> "selected-input") ReadMode
-    leaseFd <- handleToFd leaseInput
-    fixtureLease <- Lease.issueVerified leaseFd
+    fixtureLease <- validatedFixtureLease root "selected-input"
     borrow <- Lease.borrowHeld fixtureLease
     case borrow of
      Left _ -> check "lease fixture borrow" False

@@ -1,0 +1,31 @@
+cabal-version: 3.0
+name: warlock-runtime
+version: 0.1.0.0
+build-type: Simple
+extra-source-files: README.md, qualification.json
+library
+  hs-source-dirs: src
+  exposed-modules: Warlock.Bootstrap
+  other-modules: Warlock.Bootstrap.Aggregate, Warlock.Bootstrap.CurrentSessions, Warlock.Bootstrap.ScopedPeer, Warlock.Bootstrap.SocketOwner, Warlock.Bootstrap.CredentialScopeGuard
+  build-depends: base >=4.18 && <5, bytestring, text, containers, network ==3.2.0.0, unix, process ==1.6.19.0, directory, filepath, cryptohash-sha256 ==0.11.102.1, warlock-held-document-proposal, warlock-process-custody, warlock-protocol
+  cc-options: -D_GNU_SOURCE
+  default-language: Haskell2010
+  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates
+
+executable credential-peer-child
+  hs-source-dirs: fixture-peer
+  main-is: Main.hs
+  build-depends: base >=4.18 && <5, bytestring, unix, warlock-protocol
+  default-language: Haskell2010
+  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -threaded
+
+test-suite current-session-oracles
+  type: exitcode-stdio-1.0
+  hs-source-dirs: test, src
+  main-is: Main.hs
+  other-modules: OwnedControls, Warlock.Bootstrap.Aggregate, Warlock.Bootstrap.CurrentSessions, Warlock.Bootstrap.ScopedPeer, Warlock.Bootstrap.SocketOwner, Warlock.Bootstrap.CredentialScopeGuard
+  build-depends: base >=4.18 && <5, bytestring, text, containers, network ==3.2.0.0, unix, process ==1.6.19.0, directory, filepath, cryptohash-sha256 ==0.11.102.1, warlock-held-document-proposal, warlock-process-custody, warlock-protocol
+  cc-options: -D_GNU_SOURCE
+  cpp-options: -DWARLOCK_SCOPED_PEER_TESTING
+  default-language: Haskell2010
+  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -threaded

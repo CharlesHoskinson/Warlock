@@ -380,7 +380,7 @@ runSelectedHook owner (SelectedSpawn exe args selectedInput selectedEnv selected
        borrowed <- borrowHeld lease
        case borrowed of
         Left _ -> ioError (userError "executable lease unavailable")
-        Right (path,release) -> retainBorrow owner release >> pure path
+        Right (path,release) -> (retainBorrow owner release >> pure path) `onException` release
      claimBudget <- remainingMicros deadline
      if claimBudget == 0 then releaseBorrows owner >> abortBegin owner >> pure (Left TimedOut) else do
       prepared <- case selectedInput of

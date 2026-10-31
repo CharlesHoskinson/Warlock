@@ -11,7 +11,7 @@
 -- Linux-specific private proposal. No path, capability, or runtime acceptance.
 module Warlock.Platform.Resolver.Internal
  ( Root, Identity(..), Kind(..), Pin(..), Link(..), Resolution(..), ResolveError(..)
- , withRoot, withRootTestProc, resolve, resolveWithHook, Hooks(..), resolveWithHooks, resolveSnapshot, resolveSnapshotWithHooks ) where
+ , withRoot, withRootTestProc, resolve, resolveWithHook, Hooks(..), resolveWithHooks, resolveSnapshot, resolveSnapshotWithHooks, resolveSnapshotVia, clone, noHooks ) where
 
 import Control.Exception (Exception, IOException, bracket, bracketOnError, throwIO, try, uninterruptibleMask_)
 import Control.Concurrent.MVar (MVar, newMVar, modifyMVar, withMVar)
@@ -28,7 +28,7 @@ import Foreign.C.Types (CChar(..), CInt(..), CSize(..), CLong(..))
 import Foreign.Marshal.Alloc (allocaBytes)
 import Foreign.Ptr (Ptr)
 import Foreign.Storable (peekByteOff)
-import System.Posix.Files (deviceID, fileID, fileSize, getFdStatus, isDirectory, isRegularFile, isSymbolicLink)
+import System.Posix.Files (deviceID, fileID, fileSize, getFdStatus, isDirectory, isRegularFile, isSymbolicLink, modificationTimeHiRes, statusChangeTimeHiRes)
 import System.Posix.IO (closeFd)
 import System.Posix.Types (Fd(..))
 import Warlock.Platform.Descriptor (readAcquiredExact, DescriptorFailure)
@@ -170,7 +170,13 @@ resolveSnapshot :: Root -> [Pin] -> B.ByteString -> [Link] -> Integer -> Integer
 resolveSnapshot root pins input expectedLinks expectedSize limit digest = resolveSnapshotWithHooks root pins input expectedLinks expectedSize limit digest noHooks
 
 resolveSnapshotWithHooks :: Root -> [Pin] -> B.ByteString -> [Link] -> Integer -> Integer -> B.ByteString -> Hooks -> IO (Either ResolveError (Resolution,B.ByteString))
-resolveSnapshotWithHooks (Root gate) pins input expectedLinks expectedSize limit digest hooks = guardErrors $
+resolveSnapshotWithHooks root pins input expectedLinks expectedSize limit digest hooks =
+ resolveSnapshotVia root pins input expectedLinks expectedSize limit digest hooks (\_ bytes -> pure bytes)
+
+-- Package-private consumer receives the already validated still-held read FD.
+-- Its result is returned only after the original parent recheck and all closes.
+resolveSnapshotVia :: Root -> [Pin] -> B.ByteString -> [Link] -> Integer -> Integer -> B.ByteString -> Hooks -> (Fd -> B.ByteString -> IO a) -> IO (Either ResolveError (Resolution,a))
+resolveSnapshotVia (Root gate) pins input expectedLinks expectedSize limit digest hooks consume = guardErrors $
  bracket (lease gate) closeBoth $ \(root,proc) -> do
   afterLease hooks
   inputParts <- fromEither (parts input)
@@ -215,8 +221,11 @@ resolveSnapshotWithHooks (Root gate) pins input expectedLinks expectedSize limit
        recheck checks'
        result <- readAcquiredExact (clone readFd) (beforeConsumer hooks) (afterConsumer hooks) (beforeClose hooks) expectedSize limit digest
        content <- either (abort . FileFailure) pure result
+       consumed <- consume readFd content
+       finalStatus <- getFdStatus readFd
+       unless (isRegularFile finalStatus && deviceID readStatus == deviceID finalStatus && fileID readStatus == fileID finalStatus && fileSize readStatus == fileSize finalStatus && modificationTimeHiRes readStatus == modificationTimeHiRes finalStatus && statusChangeTimeHiRes readStatus == statusChangeTimeHiRes finalStatus) (abort (IdentityMismatch key))
        recheck checks'
-       pure (Resolution key ident links,content)
+       pure (Resolution key ident links,consumed)
      else do
       unless (isDirectory status && pinKind pin == Directory) (abort (TypeMismatch key))
       walk index root proc seen links checks' (probe:parents) probe current rest

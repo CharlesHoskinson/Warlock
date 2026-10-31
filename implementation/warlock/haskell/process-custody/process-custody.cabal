@@ -2,17 +2,17 @@ cabal-version: 2.4
 name: warlock-process-custody
 version: 0.1.0.0
 build-type: Simple
-extra-source-files: qualification.json SHA256SUMS README.md HANDOFF.md RETROFIT.md SOURCE-MAP.md fixture/Main.hs fixture-selected/Main.hs test/Internal.hs test/Public.hs test/SelectedFD.hs fixture-graceful/Main.hs test/DeadlineStop.hs
+extra-source-files: test/negative/*.hs qualification.json SHA256SUMS README.md HANDOFF.md RETROFIT.md SOURCE-MAP.md fixture/Main.hs fixture-selected/Main.hs test/Internal.hs test/Public.hs test/SelectedFD.hs fixture-graceful/Main.hs test/DeadlineStop.hs
 common options
   default-language: Haskell2010
   ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates
-  build-depends: base >= 4.16 && < 5, bytestring, text, process == 1.6.19.0, unix, cryptohash-sha256 == 0.11.102.1
+  build-depends: warlock-held-document-proposal, base >= 4.16 && < 5, bytestring, text, process == 1.6.19.0, unix, cryptohash-sha256 == 0.11.102.1
 common implementation
   other-modules: Warlock.Capture.Process.Whitelist, Warlock.Capture.Process.Internal, Warlock.Capture.Process.Owner, Warlock.Capture.Process.Lease, Warlock.Capture.Process.Transfer, Warlock.Capture.Process.Transfer.Internal
 library
   import: options, implementation
   hs-source-dirs: src
-  exposed-modules: Warlock.Capture.Process
+  exposed-modules: Warlock.Capture.Process, Warlock.Capture.Process.Bootstrap
 executable custody-child
   import: options
   hs-source-dirs: fixture
@@ -20,6 +20,7 @@ executable custody-child
   ghc-options: -threaded
 test-suite internal-controls
   import: options, implementation
+  other-modules: VerifiedFixture
   type: exitcode-stdio-1.0
   hs-source-dirs: test, src
   main-is: Internal.hs
@@ -58,4 +59,18 @@ test-suite deadline-stop-controls
   hs-source-dirs: test, src
   main-is: DeadlineStop.hs
   build-depends: directory
+  ghc-options: -threaded
+
+executable bootstrap-facade-child
+  import: options
+  hs-source-dirs: fixture-bootstrap
+  main-is: FacadeChild.hs
+  ghc-options: -threaded
+
+test-suite bootstrap-facade-controls
+  import: options
+  type: exitcode-stdio-1.0
+  hs-source-dirs: test
+  main-is: FacadeControl.hs
+  build-depends: warlock-process-custody, directory, filepath
   ghc-options: -threaded

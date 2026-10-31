@@ -1106,3 +1106,5 @@ to its stored certificate. Existing protected store and coordinator regressions
 pass on this source. The C/Elm integration, physical Escape and original native
 acceptance remain open; the normal host gate stays disabled. See the
 [protocol reference](../../docs/warlock/reference/cancellation-protocol.md).
+
+The current Elm/Haskell preparation route includes a [controlled Haskell bootstrap](haskell/runtime/README.md). Strict package/test compilation and six actual credential cases pass; the one-frame route is not the persistent GUI backend or original/release acceptance.
