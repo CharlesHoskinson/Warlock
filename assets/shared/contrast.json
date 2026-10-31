@@ -1,0 +1,4028 @@
+{
+  "method": "WCAG relative luminance, unrounded sRGB; Machado severity 1.0 simulations in linear sRGB with clipping",
+  "restrictions": [
+    "Use on-action only on filled actions.",
+    "Disabled labels and placeholders use text-secondary at full opacity.",
+    "Focus gaps use the opaque containing surface.",
+    "Color-vision simulations supplement redundant cues and user testing."
+  ],
+  "checks": [
+    {
+      "theme": "night",
+      "foreground": "text",
+      "background": "canvas",
+      "ratio": 16.890216782595402,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 16.776480420845576,
+        "deuteranopia": 16.961120997232506
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "text",
+      "background": "surface-recessed",
+      "ratio": 16.47545301057005,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 16.377230337761524,
+        "deuteranopia": 16.53568857926924
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "text",
+      "background": "surface",
+      "ratio": 15.885730173471211,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 15.811502961992261,
+        "deuteranopia": 15.930202996933943
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "text",
+      "background": "surface-raised",
+      "ratio": 14.598229516915211,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 14.558586645591358,
+        "deuteranopia": 14.620202096231255
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "text",
+      "background": "surface-hover",
+      "ratio": 13.037584874868907,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 13.031624918451323,
+        "deuteranopia": 13.037893424799629
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "text",
+      "background": "surface-pressed",
+      "ratio": 11.258720199738793,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 11.292790231983231,
+        "deuteranopia": 11.232963984171255
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "text",
+      "background": "surface-selected",
+      "ratio": 13.903334048189615,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 14.236034171988562,
+        "deuteranopia": 13.691212438016269
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "text",
+      "background": "surface-selected-hover",
+      "ratio": 12.470091925538282,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 12.748493284535384,
+        "deuteranopia": 12.289996803200424
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "text",
+      "background": "surface-selected-pressed",
+      "ratio": 10.804303124900299,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 11.009149170667374,
+        "deuteranopia": 10.670043906310273
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "text-secondary",
+      "background": "canvas",
+      "ratio": 9.302657400589416,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "disabled label and placeholder",
+      "cvd": {
+        "protanopia": 9.191258198081997,
+        "deuteranopia": 9.37473417225792
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "text-secondary",
+      "background": "surface-recessed",
+      "ratio": 9.074217154795534,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "disabled label and placeholder",
+      "cvd": {
+        "protanopia": 8.972522771629166,
+        "deuteranopia": 9.139589583211164
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "text-secondary",
+      "background": "surface",
+      "ratio": 8.749414365971226,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "disabled label and placeholder",
+      "cvd": {
+        "protanopia": 8.66258014659813,
+        "deuteranopia": 8.804926185641252
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "text-secondary",
+      "background": "surface-raised",
+      "ratio": 8.040295136470494,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "disabled label and placeholder",
+      "cvd": {
+        "protanopia": 7.976150271216076,
+        "deuteranopia": 8.080863771870959
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "text-secondary",
+      "background": "surface-hover",
+      "ratio": 7.180735865213386,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "disabled label and placeholder",
+      "cvd": {
+        "protanopia": 7.139580314904232,
+        "deuteranopia": 7.206291673980115
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "text-secondary",
+      "background": "surface-pressed",
+      "ratio": 6.200987123811892,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "disabled label and placeholder",
+      "cvd": {
+        "protanopia": 6.186932431308177,
+        "deuteranopia": 6.208672842752267
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "text-secondary",
+      "background": "surface-selected",
+      "ratio": 7.6575662136873675,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "disabled label and placeholder",
+      "cvd": {
+        "protanopia": 7.799434834310157,
+        "deuteranopia": 7.5673935185803165
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "text-secondary",
+      "background": "surface-selected-hover",
+      "ratio": 6.8681766747172155,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "disabled label and placeholder",
+      "cvd": {
+        "protanopia": 6.984462203948569,
+        "deuteranopia": 6.792914986379907
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "text-secondary",
+      "background": "surface-selected-pressed",
+      "ratio": 5.950706951649949,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "disabled label and placeholder",
+      "cvd": {
+        "protanopia": 6.0315352225531935,
+        "deuteranopia": 5.897536209092588
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "brand-text",
+      "background": "canvas",
+      "ratio": 9.9322441996601,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 8.82014429559529,
+        "deuteranopia": 10.659802805848644
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "brand-text",
+      "background": "surface-recessed",
+      "ratio": 9.688343536811713,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 8.610240713050397,
+        "deuteranopia": 10.392425096353866
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "brand-text",
+      "background": "surface",
+      "ratio": 9.341558690674173,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 8.31281258980392,
+        "deuteranopia": 10.011886751598714
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "brand-text",
+      "background": "surface-raised",
+      "ratio": 8.584447571691134,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 7.654098579251956,
+        "deuteranopia": 9.188571401200985
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "brand-text",
+      "background": "surface-hover",
+      "ratio": 7.6667149047150795,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 6.851306668828847,
+        "deuteranopia": 8.19411481910375
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "brand-text",
+      "background": "surface-pressed",
+      "ratio": 6.620658564588792,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 5.93712369027167,
+        "deuteranopia": 7.059744519009285
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "brand-text",
+      "background": "surface-selected",
+      "ratio": 8.175816257039688,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 7.484518352129773,
+        "deuteranopia": 8.604715737011084
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "brand-text",
+      "background": "surface-selected-hover",
+      "ratio": 7.333002281195337,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 6.702451736021648,
+        "deuteranopia": 7.724073333832302
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "brand-text",
+      "background": "surface-selected-pressed",
+      "ratio": 6.3534398891931065,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 5.788000928750541,
+        "deuteranopia": 6.705957936953174
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "focus",
+      "background": "canvas",
+      "ratio": 10.86509807564948,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 11.647356859423162,
+        "deuteranopia": 10.359652822265803
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "focus",
+      "background": "surface-recessed",
+      "ratio": 10.598289832789892,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 11.370170698966277,
+        "deuteranopia": 10.09980371499538
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "focus",
+      "background": "surface",
+      "ratio": 10.218934342863221,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 10.977404846687621,
+        "deuteranopia": 9.729980256810947
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "focus",
+      "background": "surface-raised",
+      "ratio": 9.390714013544603,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 10.107546384957915,
+        "deuteranopia": 8.929847144715955
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "focus",
+      "background": "surface-hover",
+      "ratio": 8.386786277427982,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 9.047427235974656,
+        "deuteranopia": 7.9633916553431146
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "focus",
+      "background": "surface-pressed",
+      "ratio": 7.2424824826707,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 7.84021168153262,
+        "deuteranopia": 6.860962023678595
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "focus",
+      "background": "surface-selected",
+      "ratio": 8.943703325806831,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 9.883608844323748,
+        "deuteranopia": 8.362431209404077
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "focus",
+      "background": "surface-selected-hover",
+      "ratio": 8.021730776300815,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 8.85085828374598,
+        "deuteranopia": 7.506585212657076
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "focus",
+      "background": "surface-selected-pressed",
+      "ratio": 6.950166158438696,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 7.643289050667427,
+        "deuteranopia": 6.5171370740025605
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "info",
+      "background": "canvas",
+      "ratio": 10.86509807564948,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 11.647356859423162,
+        "deuteranopia": 10.359652822265803
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "info",
+      "background": "surface-recessed",
+      "ratio": 10.598289832789892,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 11.370170698966277,
+        "deuteranopia": 10.09980371499538
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "info",
+      "background": "surface",
+      "ratio": 10.218934342863221,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 10.977404846687621,
+        "deuteranopia": 9.729980256810947
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "info",
+      "background": "surface-raised",
+      "ratio": 9.390714013544603,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 10.107546384957915,
+        "deuteranopia": 8.929847144715955
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "info",
+      "background": "surface-hover",
+      "ratio": 8.386786277427982,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 9.047427235974656,
+        "deuteranopia": 7.9633916553431146
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "info",
+      "background": "surface-pressed",
+      "ratio": 7.2424824826707,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 7.84021168153262,
+        "deuteranopia": 6.860962023678595
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "info",
+      "background": "surface-selected",
+      "ratio": 8.943703325806831,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 9.883608844323748,
+        "deuteranopia": 8.362431209404077
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "info",
+      "background": "surface-selected-hover",
+      "ratio": 8.021730776300815,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 8.85085828374598,
+        "deuteranopia": 7.506585212657076
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "info",
+      "background": "surface-selected-pressed",
+      "ratio": 6.950166158438696,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 7.643289050667427,
+        "deuteranopia": 6.5171370740025605
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "positive",
+      "background": "canvas",
+      "ratio": 11.929563594400618,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 12.861406510527305,
+        "deuteranopia": 11.299068395240479
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "positive",
+      "background": "surface-recessed",
+      "ratio": 11.636615856741702,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 12.555328150281646,
+        "deuteranopia": 11.015656114359762
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "positive",
+      "background": "surface",
+      "ratio": 11.220094495364606,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 12.121622773982248,
+        "deuteranopia": 10.612296984485337
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "positive",
+      "background": "surface-raised",
+      "ratio": 10.310732516302002,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 11.161095555836914,
+        "deuteranopia": 9.7396076276155
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "positive",
+      "background": "surface-hover",
+      "ratio": 9.208448883996182,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 9.99047603337959,
+        "deuteranopia": 8.68551374409181
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "positive",
+      "background": "surface-pressed",
+      "ratio": 7.952036397350964,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 8.657427670656068,
+        "deuteranopia": 7.483115553455073
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "positive",
+      "background": "surface-selected",
+      "ratio": 9.819927703532217,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 10.913816127737858,
+        "deuteranopia": 9.120738291776501
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "positive",
+      "background": "surface-selected-hover",
+      "ratio": 8.807628496931065,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 9.77341792891222,
+        "deuteranopia": 8.187283993747034
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "positive",
+      "background": "surface-selected-pressed",
+      "ratio": 7.631081523743101,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 8.439979022241841,
+        "deuteranopia": 7.108112482499848
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "warning",
+      "background": "canvas",
+      "ratio": 11.589582210548222,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 10.755493972885711,
+        "deuteranopia": 12.11282326778695
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "warning",
+      "background": "surface-recessed",
+      "ratio": 11.304983208906144,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 10.499532546259601,
+        "deuteranopia": 11.808999735603134
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "warning",
+      "background": "surface",
+      "ratio": 10.900332316027285,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 10.136841610631514,
+        "deuteranopia": 11.376590825176917
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "warning",
+      "background": "surface-raised",
+      "ratio": 10.016886301251052,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 9.333590061347325,
+        "deuteranopia": 10.441050692337672
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "warning",
+      "background": "surface-hover",
+      "ratio": 8.946016719571952,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 8.354646490282493,
+        "deuteranopia": 9.311041343588533
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "warning",
+      "background": "surface-pressed",
+      "ratio": 7.725410811475806,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 7.2398699983721855,
+        "deuteranopia": 8.02204686446629
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "warning",
+      "background": "surface-selected",
+      "ratio": 9.540068965736948,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 9.126799894473969,
+        "deuteranopia": 9.777610607841135
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "warning",
+      "background": "surface-selected-hover",
+      "ratio": 8.556619337949765,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 8.173129240792406,
+        "deuteranopia": 8.776929264470398
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "warning",
+      "background": "surface-selected-pressed",
+      "ratio": 7.41360285101526,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 7.058026152170991,
+        "deuteranopia": 7.620036206200748
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "danger",
+      "background": "canvas",
+      "ratio": 9.869664469682588,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 8.74539485123616,
+        "deuteranopia": 10.614756799764207
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "danger",
+      "background": "surface-recessed",
+      "ratio": 9.627300542874472,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 8.537270171126236,
+        "deuteranopia": 10.348508970263284
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "danger",
+      "background": "surface",
+      "ratio": 9.282700671410867,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 8.242362708109836,
+        "deuteranopia": 9.969578697712224
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "danger",
+      "background": "surface-raised",
+      "ratio": 8.530359854933133,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 7.589231203311766,
+        "deuteranopia": 9.149742498754621
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "danger",
+      "background": "surface-hover",
+      "ratio": 7.618409512810997,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 6.793242837958787,
+        "deuteranopia": 8.159488273686287
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "danger",
+      "background": "surface-pressed",
+      "ratio": 6.578944021841299,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 5.886807427627206,
+        "deuteranopia": 7.029911575534629
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "danger",
+      "background": "surface-selected",
+      "ratio": 8.124303188751577,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 7.4210881440325185,
+        "deuteranopia": 8.568354081499821
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "danger",
+      "background": "surface-selected-hover",
+      "ratio": 7.286799500287334,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 6.645649429129491,
+        "deuteranopia": 7.691433081406474
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "danger",
+      "background": "surface-selected-pressed",
+      "ratio": 6.313409001439898,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 5.738948459893506,
+        "deuteranopia": 6.677620018557139
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "border-essential",
+      "background": "canvas",
+      "ratio": 6.385788400141159,
+      "threshold": 3,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 6.291436044114977,
+        "deuteranopia": 6.447206930248277
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "border-essential",
+      "background": "surface-recessed",
+      "ratio": 6.228976103514655,
+      "threshold": 3,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 6.14171117332445,
+        "deuteranopia": 6.285492923615545
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "border-essential",
+      "background": "surface",
+      "ratio": 6.006015954398948,
+      "threshold": 3,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 5.929554778551992,
+        "deuteranopia": 6.055337685454428
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "border-essential",
+      "background": "surface-raised",
+      "ratio": 5.519242642745451,
+      "threshold": 3,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 5.459692049569228,
+        "deuteranopia": 5.55738434339526
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "border-essential",
+      "background": "surface-hover",
+      "ratio": 4.929200100355398,
+      "threshold": 3,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 4.887058111632164,
+        "deuteranopia": 4.9559222446394955
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "border-essential",
+      "background": "surface-pressed",
+      "ratio": 4.256653764563417,
+      "threshold": 3,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 4.234968582316495,
+        "deuteranopia": 4.26983825289584
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "border-essential",
+      "background": "surface-selected",
+      "ratio": 5.256519228320649,
+      "threshold": 3,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 5.338729952178315,
+        "deuteranopia": 5.204259773176705
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "border-essential",
+      "background": "surface-selected-hover",
+      "ratio": 4.7146445419725325,
+      "threshold": 3,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 4.780879430397299,
+        "deuteranopia": 4.671634178852427
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "border-essential",
+      "background": "surface-selected-pressed",
+      "ratio": 4.084849499249315,
+      "threshold": 3,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 4.128598858036528,
+        "deuteranopia": 4.055862877815774
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "on-action",
+      "background": "action-fill",
+      "ratio": 6.491392389774312,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "action text and inner boundary",
+      "cvd": {
+        "protanopia": 8.803751441035008,
+        "deuteranopia": 5.542098055209737
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "on-action",
+      "background": "action-fill-hover",
+      "ratio": 5.460374409332465,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "action text and inner boundary",
+      "cvd": {
+        "protanopia": 7.5916997987029955,
+        "deuteranopia": 4.61535371568131
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "on-action",
+      "background": "action-fill-pressed",
+      "ratio": 8.111181447057568,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "action text and inner boundary",
+      "cvd": {
+        "protanopia": 10.525796431508986,
+        "deuteranopia": 7.055458131684388
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "on-action",
+      "background": "canvas",
+      "ratio": 18.32632942012683,
+      "threshold": 3,
+      "pass": true,
+      "usage": "action outer boundary",
+      "cvd": {
+        "protanopia": 18.226927504840003,
+        "deuteranopia": 18.389899550373585
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "on-action",
+      "background": "surface-recessed",
+      "ratio": 17.87629981923363,
+      "threshold": 3,
+      "pass": true,
+      "usage": "action outer boundary",
+      "cvd": {
+        "protanopia": 17.79315938792126,
+        "deuteranopia": 17.928629364688714
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "on-action",
+      "background": "surface",
+      "ratio": 17.2364350313298,
+      "threshold": 3,
+      "pass": true,
+      "usage": "action outer boundary",
+      "cvd": {
+        "protanopia": 17.17852082208493,
+        "deuteranopia": 17.272138615040596
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "on-action",
+      "background": "surface-raised",
+      "ratio": 15.83946295782814,
+      "threshold": 3,
+      "pass": true,
+      "usage": "action outer boundary",
+      "cvd": {
+        "protanopia": 15.817280901922977,
+        "deuteranopia": 15.851785268186212
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "on-action",
+      "background": "surface-hover",
+      "ratio": 14.14612247641002,
+      "threshold": 3,
+      "pass": true,
+      "usage": "action outer boundary",
+      "cvd": {
+        "protanopia": 14.158302379308404,
+        "deuteranopia": 14.136185365912029
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "on-action",
+      "background": "surface-pressed",
+      "ratio": 12.21600751993094,
+      "threshold": 3,
+      "pass": true,
+      "usage": "action outer boundary",
+      "cvd": {
+        "protanopia": 12.26913296009135,
+        "deuteranopia": 12.17921146577396
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "on-action",
+      "background": "surface-selected",
+      "ratio": 15.085483098579594,
+      "threshold": 3,
+      "pass": true,
+      "usage": "action outer boundary",
+      "cvd": {
+        "protanopia": 15.466841453040727,
+        "deuteranopia": 14.844538960545519
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "on-action",
+      "background": "surface-selected-hover",
+      "ratio": 13.530377701378528,
+      "threshold": 3,
+      "pass": true,
+      "usage": "action outer boundary",
+      "cvd": {
+        "protanopia": 13.850691984502328,
+        "deuteranopia": 13.32528709170496
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "on-action",
+      "background": "surface-selected-pressed",
+      "ratio": 11.72295304260759,
+      "threshold": 3,
+      "pass": true,
+      "usage": "action outer boundary",
+      "cvd": {
+        "protanopia": 11.96096909423209,
+        "deuteranopia": 11.56887187274582
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "focus",
+      "background": "canvas",
+      "ratio": 10.86509807564948,
+      "threshold": 3,
+      "pass": true,
+      "usage": "focus ring against opaque gap",
+      "cvd": {
+        "protanopia": 11.647356859423162,
+        "deuteranopia": 10.359652822265803
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "focus",
+      "background": "surface-recessed",
+      "ratio": 10.598289832789892,
+      "threshold": 3,
+      "pass": true,
+      "usage": "focus ring against opaque gap",
+      "cvd": {
+        "protanopia": 11.370170698966277,
+        "deuteranopia": 10.09980371499538
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "focus",
+      "background": "surface",
+      "ratio": 10.218934342863221,
+      "threshold": 3,
+      "pass": true,
+      "usage": "focus ring against opaque gap",
+      "cvd": {
+        "protanopia": 10.977404846687621,
+        "deuteranopia": 9.729980256810947
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "focus",
+      "background": "surface-raised",
+      "ratio": 9.390714013544603,
+      "threshold": 3,
+      "pass": true,
+      "usage": "focus ring against opaque gap",
+      "cvd": {
+        "protanopia": 10.107546384957915,
+        "deuteranopia": 8.929847144715955
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "focus",
+      "background": "surface-hover",
+      "ratio": 8.386786277427982,
+      "threshold": 3,
+      "pass": true,
+      "usage": "focus ring against opaque gap",
+      "cvd": {
+        "protanopia": 9.047427235974656,
+        "deuteranopia": 7.9633916553431146
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "focus",
+      "background": "surface-pressed",
+      "ratio": 7.2424824826707,
+      "threshold": 3,
+      "pass": true,
+      "usage": "focus ring against opaque gap",
+      "cvd": {
+        "protanopia": 7.84021168153262,
+        "deuteranopia": 6.860962023678595
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "focus",
+      "background": "surface-selected",
+      "ratio": 8.943703325806831,
+      "threshold": 3,
+      "pass": true,
+      "usage": "focus ring against opaque gap",
+      "cvd": {
+        "protanopia": 9.883608844323748,
+        "deuteranopia": 8.362431209404077
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "focus",
+      "background": "surface-selected-hover",
+      "ratio": 8.021730776300815,
+      "threshold": 3,
+      "pass": true,
+      "usage": "focus ring against opaque gap",
+      "cvd": {
+        "protanopia": 8.85085828374598,
+        "deuteranopia": 7.506585212657076
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "focus",
+      "background": "surface-selected-pressed",
+      "ratio": 6.950166158438696,
+      "threshold": 3,
+      "pass": true,
+      "usage": "focus ring against opaque gap",
+      "cvd": {
+        "protanopia": 7.643289050667427,
+        "deuteranopia": 6.5171370740025605
+      }
+    },
+    {
+      "theme": "night",
+      "foreground": "window-edge-focused",
+      "background": "window-edge-unfocused",
+      "ratio": 4.308353685555406,
+      "threshold": 3,
+      "pass": true,
+      "usage": "focused versus unfocused edge",
+      "cvd": {
+        "protanopia": 4.257235238792993,
+        "deuteranopia": 4.3393033975442314
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "text",
+      "background": "canvas",
+      "ratio": 16.36369696481056,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 16.32986061724721,
+        "deuteranopia": 16.381613140437008
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "text",
+      "background": "surface-recessed",
+      "ratio": 15.23706438577523,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 15.18048092532614,
+        "deuteranopia": 15.269074793498177
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "text",
+      "background": "surface",
+      "ratio": 18.098444619765544,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 18.126020579657673,
+        "deuteranopia": 18.077562117521925
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "text",
+      "background": "surface-raised",
+      "ratio": 18.38736928383483,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 18.466109622579665,
+        "deuteranopia": 18.33528112097922
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "text",
+      "background": "surface-hover",
+      "ratio": 14.843941217329323,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 14.769698699180347,
+        "deuteranopia": 14.88711343743003
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "text",
+      "background": "surface-pressed",
+      "ratio": 13.404916807048354,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 13.316123862220751,
+        "deuteranopia": 13.457520523493708
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "text",
+      "background": "surface-selected",
+      "ratio": 15.587254664182613,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 15.348205928682066,
+        "deuteranopia": 15.741083139512382
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "text",
+      "background": "surface-selected-hover",
+      "ratio": 14.797275667990027,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 14.607329559607944,
+        "deuteranopia": 14.919072020033482
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "text",
+      "background": "surface-selected-pressed",
+      "ratio": 13.620622521223577,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 13.420579085103979,
+        "deuteranopia": 13.748704689564125
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "text-secondary",
+      "background": "canvas",
+      "ratio": 6.727868521497596,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "disabled label and placeholder",
+      "cvd": {
+        "protanopia": 6.8010236847296,
+        "deuteranopia": 6.680254091634224
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "text-secondary",
+      "background": "surface-recessed",
+      "ratio": 6.264658045277853,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "disabled label and placeholder",
+      "cvd": {
+        "protanopia": 6.322332611319805,
+        "deuteranopia": 6.2265723460988855
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "text-secondary",
+      "background": "surface",
+      "ratio": 7.441103077576931,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "disabled label and placeholder",
+      "cvd": {
+        "protanopia": 7.549084352988742,
+        "deuteranopia": 7.371844718042593
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "text-secondary",
+      "background": "surface-raised",
+      "ratio": 7.559893296966605,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "disabled label and placeholder",
+      "cvd": {
+        "protanopia": 7.690723873989098,
+        "deuteranopia": 7.476939888620621
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "text-secondary",
+      "background": "surface-hover",
+      "ratio": 6.103027027803848,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "disabled label and placeholder",
+      "cvd": {
+        "protanopia": 6.151250952096528,
+        "deuteranopia": 6.070812416362666
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "text-secondary",
+      "background": "surface-pressed",
+      "ratio": 5.511377900322707,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "disabled label and placeholder",
+      "cvd": {
+        "protanopia": 5.54586936768496,
+        "deuteranopia": 5.487839065031306
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "text-secondary",
+      "background": "surface-selected",
+      "ratio": 6.408637376824878,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "disabled label and placeholder",
+      "cvd": {
+        "protanopia": 6.3921863441275555,
+        "deuteranopia": 6.419052516257682
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "text-secondary",
+      "background": "surface-selected-hover",
+      "ratio": 6.083840673943018,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "disabled label and placeholder",
+      "cvd": {
+        "protanopia": 6.083627817411914,
+        "deuteranopia": 6.083844799093799
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "text-secondary",
+      "background": "surface-selected-pressed",
+      "ratio": 5.600064441477036,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "disabled label and placeholder",
+      "cvd": {
+        "protanopia": 5.58937264437994,
+        "deuteranopia": 5.606580986241094
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "brand-text",
+      "background": "canvas",
+      "ratio": 6.885413072845551,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 9.112638213750007,
+        "deuteranopia": 5.9373583750062915
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "brand-text",
+      "background": "surface-recessed",
+      "ratio": 6.411355730872928,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 8.471243804562834,
+        "deuteranopia": 5.534129534532238
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "brand-text",
+      "background": "surface",
+      "ratio": 7.615349236244398,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 10.114958827202281,
+        "deuteranopia": 6.5520387960585165
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "brand-text",
+      "background": "surface-raised",
+      "ratio": 7.736921131845265,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 10.304740508825173,
+        "deuteranopia": 6.645446574062889
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "brand-text",
+      "background": "surface-hover",
+      "ratio": 6.245939846609316,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 8.242012833200356,
+        "deuteranopia": 5.3956913088863185
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "brand-text",
+      "background": "surface-pressed",
+      "ratio": 5.640436242625462,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 7.430866803464288,
+        "deuteranopia": 4.877549085184469
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "brand-text",
+      "background": "surface-selected",
+      "ratio": 6.55870658478539,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 8.564840272457255,
+        "deuteranopia": 5.705204426989718
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "brand-text",
+      "background": "surface-selected-hover",
+      "ratio": 6.226304211449164,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 8.151405126209982,
+        "deuteranopia": 5.407274390262203
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "brand-text",
+      "background": "surface-selected-pressed",
+      "ratio": 5.731199530864267,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 7.48915650219363,
+        "deuteranopia": 4.983085990021992
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "focus",
+      "background": "canvas",
+      "ratio": 6.836529488070264,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 6.11290230241716,
+        "deuteranopia": 7.355341634085964
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "focus",
+      "background": "surface-recessed",
+      "ratio": 6.365837757139346,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 5.682644755841712,
+        "deuteranopia": 6.855812097366721
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "focus",
+      "background": "surface",
+      "ratio": 7.561283406635497,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 6.785274873566475,
+        "deuteranopia": 8.11682244879561
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "focus",
+      "background": "surface-raised",
+      "ratio": 7.681992192063884,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 6.912583436831796,
+        "deuteranopia": 8.232538239406328
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "focus",
+      "background": "surface-hover",
+      "ratio": 6.201596257232348,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 5.528872983084108,
+        "deuteranopia": 6.684311510653132
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "focus",
+      "background": "surface-pressed",
+      "ratio": 5.600391478379817,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 4.984743356025244,
+        "deuteranopia": 6.042424524949991
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "focus",
+      "background": "surface-selected",
+      "ratio": 6.512142480938373,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 5.745430751584044,
+        "deuteranopia": 7.067743767911696
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "focus",
+      "background": "surface-selected-hover",
+      "ratio": 6.182100026959864,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 5.468091895578357,
+        "deuteranopia": 6.698660909041091
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "focus",
+      "background": "surface-selected-pressed",
+      "ratio": 5.690510384814922,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 5.023845010805322,
+        "deuteranopia": 6.173166168127825
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "info",
+      "background": "canvas",
+      "ratio": 6.836529488070264,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 6.11290230241716,
+        "deuteranopia": 7.355341634085964
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "info",
+      "background": "surface-recessed",
+      "ratio": 6.365837757139346,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 5.682644755841712,
+        "deuteranopia": 6.855812097366721
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "info",
+      "background": "surface",
+      "ratio": 7.561283406635497,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 6.785274873566475,
+        "deuteranopia": 8.11682244879561
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "info",
+      "background": "surface-raised",
+      "ratio": 7.681992192063884,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 6.912583436831796,
+        "deuteranopia": 8.232538239406328
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "info",
+      "background": "surface-hover",
+      "ratio": 6.201596257232348,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 5.528872983084108,
+        "deuteranopia": 6.684311510653132
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "info",
+      "background": "surface-pressed",
+      "ratio": 5.600391478379817,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 4.984743356025244,
+        "deuteranopia": 6.042424524949991
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "info",
+      "background": "surface-selected",
+      "ratio": 6.512142480938373,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 5.745430751584044,
+        "deuteranopia": 7.067743767911696
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "info",
+      "background": "surface-selected-hover",
+      "ratio": 6.182100026959864,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 5.468091895578357,
+        "deuteranopia": 6.698660909041091
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "info",
+      "background": "surface-selected-pressed",
+      "ratio": 5.690510384814922,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 5.023845010805322,
+        "deuteranopia": 6.173166168127825
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "positive",
+      "background": "canvas",
+      "ratio": 6.4271911473445815,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 5.966518518477615,
+        "deuteranopia": 6.775817448493097
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "positive",
+      "background": "surface-recessed",
+      "ratio": 5.984682162128251,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 5.546564216518288,
+        "deuteranopia": 6.315645627886625
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "positive",
+      "background": "surface",
+      "ratio": 7.108550304433599,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 6.622789991275812,
+        "deuteranopia": 7.477301519211388
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "positive",
+      "background": "surface-raised",
+      "ratio": 7.222031631248008,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 6.747049935686007,
+        "deuteranopia": 7.583900112735958
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "positive",
+      "background": "surface-hover",
+      "ratio": 5.830274649358667,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 5.396474768922409,
+        "deuteranopia": 6.157657498212871
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "positive",
+      "background": "surface-pressed",
+      "ratio": 5.265067106682953,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 4.86537524603043,
+        "deuteranopia": 5.5663445104472835
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "positive",
+      "background": "surface-selected",
+      "ratio": 6.122226866244086,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 5.607846695407171,
+        "deuteranopia": 6.510879293786276
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "positive",
+      "background": "surface-selected-hover",
+      "ratio": 5.811945759118003,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 5.337149187351626,
+        "deuteranopia": 6.170876313709072
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "positive",
+      "background": "surface-selected-pressed",
+      "ratio": 5.349790128599088,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 4.903540545557007,
+        "deuteranopia": 5.686785076115055
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "warning",
+      "background": "canvas",
+      "ratio": 6.300723818548439,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 6.960050881620807,
+        "deuteranopia": 5.940917277402924
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "warning",
+      "background": "surface-recessed",
+      "ratio": 5.86692204742387,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 6.470166655075533,
+        "deuteranopia": 5.537446738180688
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "warning",
+      "background": "surface",
+      "ratio": 6.968675925719012,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 7.725603327102388,
+        "deuteranopia": 6.555966143053821
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "warning",
+      "background": "surface-raised",
+      "ratio": 7.079924289495376,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 7.8705547812819034,
+        "deuteranopia": 6.649429910463584
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "warning",
+      "background": "surface-hover",
+      "ratio": 5.715552798996881,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 6.295084622089868,
+        "deuteranopia": 5.398925531501468
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "warning",
+      "background": "surface-pressed",
+      "ratio": 5.161466800164961,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 5.675547501558834,
+        "deuteranopia": 4.880472729005943
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "warning",
+      "background": "surface-selected",
+      "ratio": 6.001760295341218,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 6.541653766009248,
+        "deuteranopia": 5.708624174363225
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "warning",
+      "background": "surface-selected-hover",
+      "ratio": 5.6975845648710575,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 6.22588026698133,
+        "deuteranopia": 5.410515555873457
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "warning",
+      "background": "surface-selected-pressed",
+      "ratio": 5.244522733920244,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 5.720068008081129,
+        "deuteranopia": 4.986072893549186
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "danger",
+      "background": "canvas",
+      "ratio": 7.150485266848094,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 9.242681558253338,
+        "deuteranopia": 6.224646117612811
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "danger",
+      "background": "surface-recessed",
+      "ratio": 6.658177833212086,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 8.592134028733726,
+        "deuteranopia": 5.801906461719348
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "danger",
+      "background": "surface",
+      "ratio": 7.908522254157855,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 10.259305946505021,
+        "deuteranopia": 6.869068747141434
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "danger",
+      "background": "surface-raised",
+      "ratio": 8.034774381540757,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 10.451795937623451,
+        "deuteranopia": 6.966996196688243
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "danger",
+      "background": "surface-hover",
+      "ratio": 6.4863938268182935,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 8.35963178054883,
+        "deuteranopia": 5.656769700660156
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "danger",
+      "background": "surface-pressed",
+      "ratio": 5.8575797595279715,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 7.536910163138458,
+        "deuteranopia": 5.113556409929063
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "danger",
+      "background": "surface-selected",
+      "ratio": 6.81120134811402,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 8.68706617982254,
+        "deuteranopia": 5.981259062303333
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "danger",
+      "background": "surface-selected-hover",
+      "ratio": 6.466002265929726,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 8.267731041949121,
+        "deuteranopia": 5.668913246318425
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "danger",
+      "background": "surface-selected-pressed",
+      "ratio": 5.951837220693486,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 7.596031694230179,
+        "deuteranopia": 5.2241998717970795
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "border-essential",
+      "background": "canvas",
+      "ratio": 5.014715125044349,
+      "threshold": 3,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 5.075456812629904,
+        "deuteranopia": 4.975561845941598
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "border-essential",
+      "background": "surface-recessed",
+      "ratio": 4.669454427134474,
+      "threshold": 3,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 4.7182200226540045,
+        "deuteranopia": 4.63765230652562
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "border-essential",
+      "background": "surface",
+      "ratio": 5.546334924784309,
+      "threshold": 3,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 5.633718302514319,
+        "deuteranopia": 5.490669787431069
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "border-essential",
+      "background": "surface-raised",
+      "ratio": 5.634876950832721,
+      "threshold": 3,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 5.739420812184005,
+        "deuteranopia": 5.568946378972042
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "border-essential",
+      "background": "surface-hover",
+      "ratio": 4.548980386149086,
+      "threshold": 3,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 4.5905454823093725,
+        "deuteranopia": 4.521639778724827
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "border-essential",
+      "background": "surface-pressed",
+      "ratio": 4.107986062490909,
+      "threshold": 3,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 4.138762305353043,
+        "deuteranopia": 4.0874317494647565
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "border-essential",
+      "background": "surface-selected",
+      "ratio": 4.776771526048577,
+      "threshold": 3,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 4.770350351925284,
+        "deuteranopia": 4.781014666340914
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "border-essential",
+      "background": "surface-selected-hover",
+      "ratio": 4.534679556905333,
+      "threshold": 3,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 4.540079800150811,
+        "deuteranopia": 4.531346509245743
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "border-essential",
+      "background": "surface-selected-pressed",
+      "ratio": 4.174089872024851,
+      "threshold": 3,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 4.171227859409122,
+        "deuteranopia": 4.175872662726589
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "on-action",
+      "background": "action-fill",
+      "ratio": 7.615349236244398,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "action text and inner boundary",
+      "cvd": {
+        "protanopia": 10.114958827202281,
+        "deuteranopia": 6.5520387960585165
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "on-action",
+      "background": "action-fill-hover",
+      "ratio": 9.273018904727062,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "action text and inner boundary",
+      "cvd": {
+        "protanopia": 11.793948460279452,
+        "deuteranopia": 8.131337259800667
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "on-action",
+      "background": "action-fill-pressed",
+      "ratio": 11.055654924455183,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "action text and inner boundary",
+      "cvd": {
+        "protanopia": 13.438233629803113,
+        "deuteranopia": 9.902224347215185
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "brand-text",
+      "background": "canvas",
+      "ratio": 6.885413072845551,
+      "threshold": 3,
+      "pass": true,
+      "usage": "action outer boundary",
+      "cvd": {
+        "protanopia": 9.112638213750007,
+        "deuteranopia": 5.9373583750062915
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "brand-text",
+      "background": "surface-recessed",
+      "ratio": 6.411355730872928,
+      "threshold": 3,
+      "pass": true,
+      "usage": "action outer boundary",
+      "cvd": {
+        "protanopia": 8.471243804562834,
+        "deuteranopia": 5.534129534532238
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "brand-text",
+      "background": "surface",
+      "ratio": 7.615349236244398,
+      "threshold": 3,
+      "pass": true,
+      "usage": "action outer boundary",
+      "cvd": {
+        "protanopia": 10.114958827202281,
+        "deuteranopia": 6.5520387960585165
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "brand-text",
+      "background": "surface-raised",
+      "ratio": 7.736921131845265,
+      "threshold": 3,
+      "pass": true,
+      "usage": "action outer boundary",
+      "cvd": {
+        "protanopia": 10.304740508825173,
+        "deuteranopia": 6.645446574062889
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "brand-text",
+      "background": "surface-hover",
+      "ratio": 6.245939846609316,
+      "threshold": 3,
+      "pass": true,
+      "usage": "action outer boundary",
+      "cvd": {
+        "protanopia": 8.242012833200356,
+        "deuteranopia": 5.3956913088863185
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "brand-text",
+      "background": "surface-pressed",
+      "ratio": 5.640436242625462,
+      "threshold": 3,
+      "pass": true,
+      "usage": "action outer boundary",
+      "cvd": {
+        "protanopia": 7.430866803464288,
+        "deuteranopia": 4.877549085184469
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "brand-text",
+      "background": "surface-selected",
+      "ratio": 6.55870658478539,
+      "threshold": 3,
+      "pass": true,
+      "usage": "action outer boundary",
+      "cvd": {
+        "protanopia": 8.564840272457255,
+        "deuteranopia": 5.705204426989718
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "brand-text",
+      "background": "surface-selected-hover",
+      "ratio": 6.226304211449164,
+      "threshold": 3,
+      "pass": true,
+      "usage": "action outer boundary",
+      "cvd": {
+        "protanopia": 8.151405126209982,
+        "deuteranopia": 5.407274390262203
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "brand-text",
+      "background": "surface-selected-pressed",
+      "ratio": 5.731199530864267,
+      "threshold": 3,
+      "pass": true,
+      "usage": "action outer boundary",
+      "cvd": {
+        "protanopia": 7.48915650219363,
+        "deuteranopia": 4.983085990021992
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "focus",
+      "background": "canvas",
+      "ratio": 6.836529488070264,
+      "threshold": 3,
+      "pass": true,
+      "usage": "focus ring against opaque gap",
+      "cvd": {
+        "protanopia": 6.11290230241716,
+        "deuteranopia": 7.355341634085964
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "focus",
+      "background": "surface-recessed",
+      "ratio": 6.365837757139346,
+      "threshold": 3,
+      "pass": true,
+      "usage": "focus ring against opaque gap",
+      "cvd": {
+        "protanopia": 5.682644755841712,
+        "deuteranopia": 6.855812097366721
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "focus",
+      "background": "surface",
+      "ratio": 7.561283406635497,
+      "threshold": 3,
+      "pass": true,
+      "usage": "focus ring against opaque gap",
+      "cvd": {
+        "protanopia": 6.785274873566475,
+        "deuteranopia": 8.11682244879561
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "focus",
+      "background": "surface-raised",
+      "ratio": 7.681992192063884,
+      "threshold": 3,
+      "pass": true,
+      "usage": "focus ring against opaque gap",
+      "cvd": {
+        "protanopia": 6.912583436831796,
+        "deuteranopia": 8.232538239406328
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "focus",
+      "background": "surface-hover",
+      "ratio": 6.201596257232348,
+      "threshold": 3,
+      "pass": true,
+      "usage": "focus ring against opaque gap",
+      "cvd": {
+        "protanopia": 5.528872983084108,
+        "deuteranopia": 6.684311510653132
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "focus",
+      "background": "surface-pressed",
+      "ratio": 5.600391478379817,
+      "threshold": 3,
+      "pass": true,
+      "usage": "focus ring against opaque gap",
+      "cvd": {
+        "protanopia": 4.984743356025244,
+        "deuteranopia": 6.042424524949991
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "focus",
+      "background": "surface-selected",
+      "ratio": 6.512142480938373,
+      "threshold": 3,
+      "pass": true,
+      "usage": "focus ring against opaque gap",
+      "cvd": {
+        "protanopia": 5.745430751584044,
+        "deuteranopia": 7.067743767911696
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "focus",
+      "background": "surface-selected-hover",
+      "ratio": 6.182100026959864,
+      "threshold": 3,
+      "pass": true,
+      "usage": "focus ring against opaque gap",
+      "cvd": {
+        "protanopia": 5.468091895578357,
+        "deuteranopia": 6.698660909041091
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "focus",
+      "background": "surface-selected-pressed",
+      "ratio": 5.690510384814922,
+      "threshold": 3,
+      "pass": true,
+      "usage": "focus ring against opaque gap",
+      "cvd": {
+        "protanopia": 5.023845010805322,
+        "deuteranopia": 6.173166168127825
+      }
+    },
+    {
+      "theme": "dawn",
+      "foreground": "window-edge-focused",
+      "background": "window-edge-unfocused",
+      "ratio": 3.263135902394026,
+      "threshold": 3,
+      "pass": true,
+      "usage": "focused versus unfocused edge",
+      "cvd": {
+        "protanopia": 3.2174169183375856,
+        "deuteranopia": 3.292414735794904
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "text",
+      "background": "canvas",
+      "ratio": 21.0,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "text",
+      "background": "surface-recessed",
+      "ratio": 21.0,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "text",
+      "background": "surface",
+      "ratio": 21.0,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "text",
+      "background": "surface-raised",
+      "ratio": 21.0,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "text",
+      "background": "surface-hover",
+      "ratio": 21.0,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "text",
+      "background": "surface-pressed",
+      "ratio": 21.0,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "text",
+      "background": "surface-selected",
+      "ratio": 21.0,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "text",
+      "background": "surface-selected-hover",
+      "ratio": 21.0,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "text",
+      "background": "surface-selected-pressed",
+      "ratio": 21.0,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "text-secondary",
+      "background": "canvas",
+      "ratio": 21.0,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "disabled label and placeholder",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "text-secondary",
+      "background": "surface-recessed",
+      "ratio": 21.0,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "disabled label and placeholder",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "text-secondary",
+      "background": "surface",
+      "ratio": 21.0,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "disabled label and placeholder",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "text-secondary",
+      "background": "surface-raised",
+      "ratio": 21.0,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "disabled label and placeholder",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "text-secondary",
+      "background": "surface-hover",
+      "ratio": 21.0,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "disabled label and placeholder",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "text-secondary",
+      "background": "surface-pressed",
+      "ratio": 21.0,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "disabled label and placeholder",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "text-secondary",
+      "background": "surface-selected",
+      "ratio": 21.0,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "disabled label and placeholder",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "text-secondary",
+      "background": "surface-selected-hover",
+      "ratio": 21.0,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "disabled label and placeholder",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "text-secondary",
+      "background": "surface-selected-pressed",
+      "ratio": 21.0,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "disabled label and placeholder",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "brand-text",
+      "background": "canvas",
+      "ratio": 12.295751371588706,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 11.188741919387747,
+        "deuteranopia": 13.022093252679104
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "brand-text",
+      "background": "surface-recessed",
+      "ratio": 12.295751371588706,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 11.188741919387747,
+        "deuteranopia": 13.022093252679104
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "brand-text",
+      "background": "surface",
+      "ratio": 12.295751371588706,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 11.188741919387747,
+        "deuteranopia": 13.022093252679104
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "brand-text",
+      "background": "surface-raised",
+      "ratio": 12.295751371588706,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 11.188741919387747,
+        "deuteranopia": 13.022093252679104
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "brand-text",
+      "background": "surface-hover",
+      "ratio": 12.295751371588706,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 11.188741919387747,
+        "deuteranopia": 13.022093252679104
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "brand-text",
+      "background": "surface-pressed",
+      "ratio": 12.295751371588706,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 11.188741919387747,
+        "deuteranopia": 13.022093252679104
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "brand-text",
+      "background": "surface-selected",
+      "ratio": 12.295751371588706,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 11.188741919387747,
+        "deuteranopia": 13.022093252679104
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "brand-text",
+      "background": "surface-selected-hover",
+      "ratio": 12.295751371588706,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 11.188741919387747,
+        "deuteranopia": 13.022093252679104
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "brand-text",
+      "background": "surface-selected-pressed",
+      "ratio": 12.295751371588706,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 11.188741919387747,
+        "deuteranopia": 13.022093252679104
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "focus",
+      "background": "canvas",
+      "ratio": 16.748,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 18.714633267999996,
+        "deuteranopia": 15.431796712
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "focus",
+      "background": "surface-recessed",
+      "ratio": 16.748,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 18.714633267999996,
+        "deuteranopia": 15.431796712
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "focus",
+      "background": "surface",
+      "ratio": 16.748,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 18.714633267999996,
+        "deuteranopia": 15.431796712
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "focus",
+      "background": "surface-raised",
+      "ratio": 16.748,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 18.714633267999996,
+        "deuteranopia": 15.431796712
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "focus",
+      "background": "surface-hover",
+      "ratio": 16.748,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 18.714633267999996,
+        "deuteranopia": 15.431796712
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "focus",
+      "background": "surface-pressed",
+      "ratio": 16.748,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 18.714633267999996,
+        "deuteranopia": 15.431796712
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "focus",
+      "background": "surface-selected",
+      "ratio": 16.748,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 18.714633267999996,
+        "deuteranopia": 15.431796712
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "focus",
+      "background": "surface-selected-hover",
+      "ratio": 16.748,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 18.714633267999996,
+        "deuteranopia": 15.431796712
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "focus",
+      "background": "surface-selected-pressed",
+      "ratio": 16.748,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 18.714633267999996,
+        "deuteranopia": 15.431796712
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "info",
+      "background": "canvas",
+      "ratio": 12.92017021300691,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 13.690596539185291,
+        "deuteranopia": 12.420832659080716
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "info",
+      "background": "surface-recessed",
+      "ratio": 12.92017021300691,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 13.690596539185291,
+        "deuteranopia": 12.420832659080716
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "info",
+      "background": "surface",
+      "ratio": 12.92017021300691,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 13.690596539185291,
+        "deuteranopia": 12.420832659080716
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "info",
+      "background": "surface-raised",
+      "ratio": 12.92017021300691,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 13.690596539185291,
+        "deuteranopia": 12.420832659080716
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "info",
+      "background": "surface-hover",
+      "ratio": 12.92017021300691,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 13.690596539185291,
+        "deuteranopia": 12.420832659080716
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "info",
+      "background": "surface-pressed",
+      "ratio": 12.92017021300691,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 13.690596539185291,
+        "deuteranopia": 12.420832659080716
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "info",
+      "background": "surface-selected",
+      "ratio": 12.92017021300691,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 13.690596539185291,
+        "deuteranopia": 12.420832659080716
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "info",
+      "background": "surface-selected-hover",
+      "ratio": 12.92017021300691,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 13.690596539185291,
+        "deuteranopia": 12.420832659080716
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "info",
+      "background": "surface-selected-pressed",
+      "ratio": 12.92017021300691,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 13.690596539185291,
+        "deuteranopia": 12.420832659080716
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "positive",
+      "background": "canvas",
+      "ratio": 16.27165151158035,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 17.191808261110726,
+        "deuteranopia": 15.638656024375647
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "positive",
+      "background": "surface-recessed",
+      "ratio": 16.27165151158035,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 17.191808261110726,
+        "deuteranopia": 15.638656024375647
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "positive",
+      "background": "surface",
+      "ratio": 16.27165151158035,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 17.191808261110726,
+        "deuteranopia": 15.638656024375647
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "positive",
+      "background": "surface-raised",
+      "ratio": 16.27165151158035,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 17.191808261110726,
+        "deuteranopia": 15.638656024375647
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "positive",
+      "background": "surface-hover",
+      "ratio": 16.27165151158035,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 17.191808261110726,
+        "deuteranopia": 15.638656024375647
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "positive",
+      "background": "surface-pressed",
+      "ratio": 16.27165151158035,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 17.191808261110726,
+        "deuteranopia": 15.638656024375647
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "positive",
+      "background": "surface-selected",
+      "ratio": 16.27165151158035,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 17.191808261110726,
+        "deuteranopia": 15.638656024375647
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "positive",
+      "background": "surface-selected-hover",
+      "ratio": 16.27165151158035,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 17.191808261110726,
+        "deuteranopia": 15.638656024375647
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "positive",
+      "background": "surface-selected-pressed",
+      "ratio": 16.27165151158035,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 17.191808261110726,
+        "deuteranopia": 15.638656024375647
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "warning",
+      "background": "canvas",
+      "ratio": 16.281257437479415,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 15.473003391079562,
+        "deuteranopia": 16.77708885895056
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "warning",
+      "background": "surface-recessed",
+      "ratio": 16.281257437479415,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 15.473003391079562,
+        "deuteranopia": 16.77708885895056
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "warning",
+      "background": "surface",
+      "ratio": 16.281257437479415,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 15.473003391079562,
+        "deuteranopia": 16.77708885895056
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "warning",
+      "background": "surface-raised",
+      "ratio": 16.281257437479415,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 15.473003391079562,
+        "deuteranopia": 16.77708885895056
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "warning",
+      "background": "surface-hover",
+      "ratio": 16.281257437479415,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 15.473003391079562,
+        "deuteranopia": 16.77708885895056
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "warning",
+      "background": "surface-pressed",
+      "ratio": 16.281257437479415,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 15.473003391079562,
+        "deuteranopia": 16.77708885895056
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "warning",
+      "background": "surface-selected",
+      "ratio": 16.281257437479415,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 15.473003391079562,
+        "deuteranopia": 16.77708885895056
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "warning",
+      "background": "surface-selected-hover",
+      "ratio": 16.281257437479415,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 15.473003391079562,
+        "deuteranopia": 16.77708885895056
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "warning",
+      "background": "surface-selected-pressed",
+      "ratio": 16.281257437479415,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 15.473003391079562,
+        "deuteranopia": 16.77708885895056
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "danger",
+      "background": "canvas",
+      "ratio": 12.470090965109119,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 11.438319435447552,
+        "deuteranopia": 13.155859021993717
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "danger",
+      "background": "surface-recessed",
+      "ratio": 12.470090965109119,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 11.438319435447552,
+        "deuteranopia": 13.155859021993717
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "danger",
+      "background": "surface",
+      "ratio": 12.470090965109119,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 11.438319435447552,
+        "deuteranopia": 13.155859021993717
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "danger",
+      "background": "surface-raised",
+      "ratio": 12.470090965109119,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 11.438319435447552,
+        "deuteranopia": 13.155859021993717
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "danger",
+      "background": "surface-hover",
+      "ratio": 12.470090965109119,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 11.438319435447552,
+        "deuteranopia": 13.155859021993717
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "danger",
+      "background": "surface-pressed",
+      "ratio": 12.470090965109119,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 11.438319435447552,
+        "deuteranopia": 13.155859021993717
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "danger",
+      "background": "surface-selected",
+      "ratio": 12.470090965109119,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 11.438319435447552,
+        "deuteranopia": 13.155859021993717
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "danger",
+      "background": "surface-selected-hover",
+      "ratio": 12.470090965109119,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 11.438319435447552,
+        "deuteranopia": 13.155859021993717
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "danger",
+      "background": "surface-selected-pressed",
+      "ratio": 12.470090965109119,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 11.438319435447552,
+        "deuteranopia": 13.155859021993717
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "border-essential",
+      "background": "canvas",
+      "ratio": 21.0,
+      "threshold": 3,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "border-essential",
+      "background": "surface-recessed",
+      "ratio": 21.0,
+      "threshold": 3,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "border-essential",
+      "background": "surface",
+      "ratio": 21.0,
+      "threshold": 3,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "border-essential",
+      "background": "surface-raised",
+      "ratio": 21.0,
+      "threshold": 3,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "border-essential",
+      "background": "surface-hover",
+      "ratio": 21.0,
+      "threshold": 3,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "border-essential",
+      "background": "surface-pressed",
+      "ratio": 21.0,
+      "threshold": 3,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "border-essential",
+      "background": "surface-selected",
+      "ratio": 21.0,
+      "threshold": 3,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "border-essential",
+      "background": "surface-selected-hover",
+      "ratio": 21.0,
+      "threshold": 3,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "border-essential",
+      "background": "surface-selected-pressed",
+      "ratio": 21.0,
+      "threshold": 3,
+      "pass": true,
+      "usage": "neutral surface",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "on-action",
+      "background": "action-fill",
+      "ratio": 21.0,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "action text and inner boundary",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "on-action",
+      "background": "action-fill-hover",
+      "ratio": 21.0,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "action text and inner boundary",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "on-action",
+      "background": "action-fill-pressed",
+      "ratio": 21.0,
+      "threshold": 4.5,
+      "pass": true,
+      "usage": "action text and inner boundary",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "action-fill",
+      "background": "canvas",
+      "ratio": 21.0,
+      "threshold": 3,
+      "pass": true,
+      "usage": "action outer boundary",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "action-fill",
+      "background": "surface-recessed",
+      "ratio": 21.0,
+      "threshold": 3,
+      "pass": true,
+      "usage": "action outer boundary",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "action-fill",
+      "background": "surface",
+      "ratio": 21.0,
+      "threshold": 3,
+      "pass": true,
+      "usage": "action outer boundary",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "action-fill",
+      "background": "surface-raised",
+      "ratio": 21.0,
+      "threshold": 3,
+      "pass": true,
+      "usage": "action outer boundary",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "action-fill",
+      "background": "surface-hover",
+      "ratio": 21.0,
+      "threshold": 3,
+      "pass": true,
+      "usage": "action outer boundary",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "action-fill",
+      "background": "surface-pressed",
+      "ratio": 21.0,
+      "threshold": 3,
+      "pass": true,
+      "usage": "action outer boundary",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "action-fill",
+      "background": "surface-selected",
+      "ratio": 21.0,
+      "threshold": 3,
+      "pass": true,
+      "usage": "action outer boundary",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "action-fill",
+      "background": "surface-selected-hover",
+      "ratio": 21.0,
+      "threshold": 3,
+      "pass": true,
+      "usage": "action outer boundary",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "action-fill",
+      "background": "surface-selected-pressed",
+      "ratio": 21.0,
+      "threshold": 3,
+      "pass": true,
+      "usage": "action outer boundary",
+      "cvd": {
+        "protanopia": 21.0,
+        "deuteranopia": 20.999985695999996
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "focus",
+      "background": "canvas",
+      "ratio": 16.748,
+      "threshold": 3,
+      "pass": true,
+      "usage": "focus ring against opaque gap",
+      "cvd": {
+        "protanopia": 18.714633267999996,
+        "deuteranopia": 15.431796712
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "focus",
+      "background": "surface-recessed",
+      "ratio": 16.748,
+      "threshold": 3,
+      "pass": true,
+      "usage": "focus ring against opaque gap",
+      "cvd": {
+        "protanopia": 18.714633267999996,
+        "deuteranopia": 15.431796712
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "focus",
+      "background": "surface",
+      "ratio": 16.748,
+      "threshold": 3,
+      "pass": true,
+      "usage": "focus ring against opaque gap",
+      "cvd": {
+        "protanopia": 18.714633267999996,
+        "deuteranopia": 15.431796712
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "focus",
+      "background": "surface-raised",
+      "ratio": 16.748,
+      "threshold": 3,
+      "pass": true,
+      "usage": "focus ring against opaque gap",
+      "cvd": {
+        "protanopia": 18.714633267999996,
+        "deuteranopia": 15.431796712
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "focus",
+      "background": "surface-hover",
+      "ratio": 16.748,
+      "threshold": 3,
+      "pass": true,
+      "usage": "focus ring against opaque gap",
+      "cvd": {
+        "protanopia": 18.714633267999996,
+        "deuteranopia": 15.431796712
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "focus",
+      "background": "surface-pressed",
+      "ratio": 16.748,
+      "threshold": 3,
+      "pass": true,
+      "usage": "focus ring against opaque gap",
+      "cvd": {
+        "protanopia": 18.714633267999996,
+        "deuteranopia": 15.431796712
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "focus",
+      "background": "surface-selected",
+      "ratio": 16.748,
+      "threshold": 3,
+      "pass": true,
+      "usage": "focus ring against opaque gap",
+      "cvd": {
+        "protanopia": 18.714633267999996,
+        "deuteranopia": 15.431796712
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "focus",
+      "background": "surface-selected-hover",
+      "ratio": 16.748,
+      "threshold": 3,
+      "pass": true,
+      "usage": "focus ring against opaque gap",
+      "cvd": {
+        "protanopia": 18.714633267999996,
+        "deuteranopia": 15.431796712
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "focus",
+      "background": "surface-selected-pressed",
+      "ratio": 16.748,
+      "threshold": 3,
+      "pass": true,
+      "usage": "focus ring against opaque gap",
+      "cvd": {
+        "protanopia": 18.714633267999996,
+        "deuteranopia": 15.431796712
+      }
+    },
+    {
+      "theme": "high-contrast",
+      "foreground": "window-edge-focused",
+      "background": "window-edge-unfocused",
+      "ratio": 4.542224959605253,
+      "threshold": 3,
+      "pass": true,
+      "usage": "focused versus unfocused edge",
+      "cvd": {
+        "protanopia": 4.542224202800843,
+        "deuteranopia": 4.542224154625109
+      }
+    }
+  ]
+}

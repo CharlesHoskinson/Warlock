@@ -1,0 +1,135 @@
+{
+  "sourceCommit": "bc3daf7b80ac7295a1ba1e56639a0e130e520a3c",
+  "selectors": [
+    ".surface-popup[data-mode=\"overview\"]",
+    ".surface-controls",
+    ".overview-workspace",
+    "[data-surface-control^=\"overview:\"]",
+    "[aria-pressed]"
+  ],
+  "evidence": [
+    {
+      "path": "implementation/warlock/src/TaskView.elm",
+      "sha256": "7665dd48cae39ecdc71f85990eaefc0115fb79fe0462e41199b10ec4ccbfcdbe",
+      "classification": "source",
+      "licence": "Apache-2.0 project materials"
+    },
+    {
+      "path": "implementation/warlock/src/WorkspaceInventory.elm",
+      "sha256": "583692398a5038bf17a87c09a7019ddae4059f3f200489342ca89dab50eb3b2e",
+      "classification": "source",
+      "licence": "Apache-2.0 project materials"
+    },
+    {
+      "path": "implementation/warlock/src/WorkspaceNavigation.elm",
+      "sha256": "8313a23008abfa6157324472db852b087b4af09dd3696a33f273d7010634e7f6",
+      "classification": "source",
+      "licence": "Apache-2.0 project materials"
+    },
+    {
+      "path": "implementation/warlock/src/Transfer.elm",
+      "sha256": "357a68e70977184ced8be8b8a4c0db6209730e6fe6ad2f4718087a6d6a2c32be",
+      "classification": "source",
+      "licence": "Apache-2.0 project materials"
+    },
+    {
+      "path": "implementation/warlock/src/GeometryProjection.elm",
+      "sha256": "f1b5708b8b4d1c7c02e46542bc041abb9e8cb0524d965ee4b03ab97f586a544c",
+      "classification": "source",
+      "licence": "Apache-2.0 project materials"
+    },
+    {
+      "path": "implementation/warlock/src/Effects.elm",
+      "sha256": "80c574e8c564c28a1fb11f1f89bb5bfa7ac97a92474bbf027a737324bb2a82cd",
+      "classification": "source",
+      "licence": "Apache-2.0 project materials"
+    },
+    {
+      "path": "implementation/warlock/src/Desktop.elm",
+      "sha256": "a503d926599b5aa194956a1208fdc0004fb829442cd523c5372d41fd1fab0404",
+      "classification": "source",
+      "licence": "Apache-2.0 project materials"
+    },
+    {
+      "path": "implementation/warlock/src/Surface.elm",
+      "sha256": "a660a4641a9f834c6198bce1e8049b3dd0be40cb74be1cfe1d5e14cfd0cdaa1d",
+      "classification": "source",
+      "licence": "Apache-2.0 project materials"
+    },
+    {
+      "path": "implementation/warlock/src/SurfaceRenderer.elm",
+      "sha256": "f6c653573c1b73b32df132ada5033a1e34aa2cfa1a2dcbb42be4320a4a98a7b8",
+      "classification": "source",
+      "licence": "Apache-2.0 project materials"
+    },
+    {
+      "path": "implementation/warlock/assets/shell.css",
+      "sha256": "77566e786969cfb4d7c87f2e33cc9f36d2cf4682fdc2da21bf38073340979098",
+      "classification": "source",
+      "licence": "Apache-2.0 project materials"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-filter-accessibility/current-taskview.png",
+      "sha256": "16efd0ebd5a409fe0dbc05e333220554f1300bf63155309dd2cb87dbf8ac3d81",
+      "classification": "native screenshot",
+      "licence": "Apache-2.0 project materials"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-empty-inventory/popup-empty-workspace.png",
+      "sha256": "ab5351db33f3c1342ad8b7c46ae566e1c43b96520d95dc5d71fc7552632090a1",
+      "classification": "native screenshot",
+      "licence": "Apache-2.0 project materials"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskview-workspace-navigation/nativeNavigation-2-empty-navigation-ready.png",
+      "sha256": "78002f95a12144014ab60aaf86fa4897a0602c2fcdbd156780c87807b180bb83",
+      "classification": "native screenshot",
+      "licence": "Apache-2.0 project materials"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/transfer-current/popup-native-transfer-destinations.png",
+      "sha256": "d6f9edaaa6bd831c5bacdeb23589c88a89569eef814b60ca68201fa5a33df120",
+      "classification": "native screenshot",
+      "licence": "Apache-2.0 project materials"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/transfer-current/popup-native-transfer-workspace-three.png",
+      "sha256": "e88baf6bafffc1f0efcdbced7206bc2a891c5ab32124f2eb16861981323a95bd",
+      "classification": "native screenshot",
+      "licence": "Apache-2.0 project materials"
+    }
+  ],
+  "illustrations": "Generated mockups are illustrations, not native or browser evidence.",
+  "generatedIllustrations": [
+    {
+      "path": "mockups/mockup-1.png",
+      "sha256": "96a1431187a9a60b74ac178455c01a36bb3d597dcc84766c87127bf2af16076c",
+      "classification": "generated illustration",
+      "licence": "project material, Apache-2.0"
+    },
+    {
+      "path": "mockups/mockup-2.png",
+      "sha256": "3f005dfe0d318413faf2ca3e53566fe9212f8eb74ce1279e1beda23611938025",
+      "classification": "generated illustration",
+      "licence": "project material, Apache-2.0"
+    },
+    {
+      "path": "mockups/mockup-3.png",
+      "sha256": "5a03d67c1f29894a09db28c3cd7f1c12654f97e4e8d6917e791404fa7443c4bd",
+      "classification": "generated illustration",
+      "licence": "project material, Apache-2.0"
+    },
+    {
+      "path": "mockups/mockup-4.png",
+      "sha256": "48b9b85a379d839211f6731d97bec72eafdb3ae12624b8dfc796077994ffebc5",
+      "classification": "generated illustration",
+      "licence": "project material, Apache-2.0"
+    }
+  ],
+  "browserCapture": {
+    "path": "specimen-browser.png",
+    "sha256": "13ebec745b305121f2455b8ef8fa9d0990c84d81cf85d0c0b51e91f741d6c5b9",
+    "classification": "Chromium static specimen screenshot",
+    "licence": "Apache-2.0"
+  }
+}

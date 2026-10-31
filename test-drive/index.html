@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" data-warlock-design="v1" data-theme="night">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Try the Warlock interface on a simulated Omarchy desktop.">
+<title>Test drive · Warlock</title>
+<link rel="icon" href="../assets/brand/identity/warlock-mark-mono.svg">
+<link rel="stylesheet" href="../assets/shared/layers.css"><link rel="stylesheet" href="../assets/shared/tokens.css"><link rel="stylesheet" href="../assets/shared/fonts.css"><link rel="stylesheet" href="../assets/shared/site.css"><link rel="stylesheet" href="../assets/shared/effects.css"><link rel="stylesheet" href="desktop.css"><link rel="stylesheet" href="input/legend.css"><link rel="stylesheet" href="tour/tour.css">
+<script type="module" src="bootstrap.js"></script>
+</head>
+<body data-page="test-drive" data-root="../">
+<a class="wl-doc-skip" href="#desktop">Skip to desktop</a>
+<main id="desktop" class="desktop" tabindex="-1" aria-label="Simulated Omarchy desktop">
+<h1 class="visually-hidden">Warlock test drive</h1>
+<div class="desktop-stage" id="stage" role="region" tabindex="0" aria-label="Desktop workspace, scroll to reach windows"></div>
+<iframe id="bar" class="desktop-bar" src="runtime/bar.html" title="Warlock taskbar"></iframe>
+<iframe id="popup" class="desktop-popup" src="runtime/popup.html" title="Warlock popup" hidden></iframe>
+<iframe id="controller" class="desktop-controller" src="runtime/controller.html" title="Warlock controller" tabindex="-1" aria-hidden="true"></iframe>
+<div id="startup" class="desktop-startup" role="status">Starting the real Elm interface…</div>
+</main>
+<nav class="desktop-tools" aria-label="Desktop controls">
+<span class="simulation-label">Simulated desktop · client content is a fixture</span>
+<a href="../index.html">Leave desktop</a>
+<button type="button" id="help-button" aria-expanded="false" aria-controls="help">Help</button>
+<button type="button" id="shortcuts-button" aria-expanded="false" aria-controls="shortcuts">Shortcuts</button>
+<button type="button" id="tour-button">Tour</button>
+<button type="button" id="reset-button">Reset</button>
+</nav>
+<section id="help" class="desktop-panel" hidden aria-labelledby="help-title"><h2 id="help-title">Try Warlock</h2><p>The taskbar opens Warlock surfaces. Client windows are simulated fixtures; they do not run applications or browse the web.</p><p>Use Shortcuts for alternatives to keys intercepted by your system. Reset returns the desktop to its initial state.</p><a href="../get-started/index.html">Get started</a> · <a href="../get-started/licenses/index.html">Licenses and attribution</a></section>
+<section id="shortcuts" class="desktop-panel" hidden aria-labelledby="shortcuts-title"><h2 id="shortcuts-title">Shortcuts</h2><p>Some shortcuts are captured by your browser or operating system. Use the taskbar controls as an in-page alternative.</p><p>Super + Alt + Space opens Applications. Super + 1–9 activates taskbar applications; add Shift to launch or Alt for application actions. Use the controls below when the system intercepts a chord.</p><div id="legend"></div></section>
+<div id="tour" class="desktop-tour"></div>
+</body></html>

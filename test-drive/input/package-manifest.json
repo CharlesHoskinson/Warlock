@@ -1,0 +1,156 @@
+{
+  "package": "T08-input",
+  "sourceCommit": "bc3daf7b80ac7295a1ba1e56639a0e130e520a3c",
+  "assets": [
+    {
+      "source": "T08 implementation",
+      "destination": "test-drive/input/bindings.json",
+      "sha256": "f99eba384958e135d1b146ff88740a2afda701bf5476115fac11d159ec9dac99",
+      "bytes": 3416,
+      "license": "Apache-2.0",
+      "classification": "simulated fixture",
+      "alt": "",
+      "caption": "Input and preview integration."
+    },
+    {
+      "source": "T08 implementation",
+      "destination": "test-drive/input/index.js",
+      "sha256": "186b5fd8ee39fd8cef56680ca7ba75ccaa4b1ad0daff246c2d28fc3d8da9dc87",
+      "bytes": 3507,
+      "license": "Apache-2.0",
+      "classification": "source code",
+      "alt": "",
+      "caption": "Input and preview integration."
+    },
+    {
+      "source": "T08 implementation",
+      "destination": "test-drive/input/keyboard.js",
+      "sha256": "9c573b99cf8235572644e1dd2a8051ea7792ce04718d8b415514a87dd48b480f",
+      "bytes": 6067,
+      "license": "Apache-2.0",
+      "classification": "source code",
+      "alt": "",
+      "caption": "Input and preview integration."
+    },
+    {
+      "source": "T08 implementation",
+      "destination": "test-drive/input/keyboard.test.js",
+      "sha256": "b0f8bb78b01f739f1a81a9cb80d5a5753fb07ae9b8adfcd892a9d3e999098cc3",
+      "bytes": 5963,
+      "license": "Apache-2.0",
+      "classification": "source code",
+      "alt": "",
+      "caption": "Input and preview integration."
+    },
+    {
+      "source": "T08 implementation",
+      "destination": "test-drive/input/legend.css",
+      "sha256": "acbdb0a908b5ec528621adc5f34ae5ce0780e90dba21acd740da453cd20d8316",
+      "bytes": 306,
+      "license": "Apache-2.0",
+      "classification": "source code",
+      "alt": "",
+      "caption": "Input and preview integration."
+    },
+    {
+      "source": "T08 implementation",
+      "destination": "test-drive/input/legend.js",
+      "sha256": "4d1947cf7c34a5ac979f7fffa4dc09b72637ea40c48ac612be3f0051910cf928",
+      "bytes": 6556,
+      "license": "Apache-2.0",
+      "classification": "source code",
+      "alt": "",
+      "caption": "Input and preview integration."
+    },
+    {
+      "source": "T08 implementation",
+      "destination": "test-drive/input/package.json",
+      "sha256": "89c47db7851f89caec72da4f215ebc21cf1e294aeef3b45d2583562d846ab035",
+      "bytes": 33,
+      "license": "Apache-2.0",
+      "classification": "simulated fixture",
+      "alt": "",
+      "caption": "Input and preview integration."
+    },
+    {
+      "source": "T08 implementation",
+      "destination": "test-drive/input/pointer.js",
+      "sha256": "96a69ef7c6be0234df9438ae99d1dff85edde262ea42c7f83c305012088d0528",
+      "bytes": 7784,
+      "license": "Apache-2.0",
+      "classification": "source code",
+      "alt": "",
+      "caption": "Input and preview integration."
+    },
+    {
+      "source": "T08 implementation",
+      "destination": "test-drive/input/pointer.test.js",
+      "sha256": "2de70d7a7b75f46fcb70b9e62ca963522fe40b497d28bb9e9ed9e8b26faa3f7b",
+      "bytes": 3522,
+      "license": "Apache-2.0",
+      "classification": "source code",
+      "alt": "",
+      "caption": "Input geometry checks."
+    },
+    {
+      "source": "T08 implementation",
+      "destination": "test-drive/input/patches/host-input.patch",
+      "sha256": "008812fa09285789f1374f9d31fd0d31ca15736809d25ede308d4a1f5258c6d2",
+      "bytes": 2115,
+      "license": "Apache-2.0",
+      "classification": "source code",
+      "alt": "",
+      "caption": "Host integration patch and checks."
+    },
+    {
+      "source": "T08 implementation",
+      "destination": "test-drive/input/host-patch.test.js",
+      "sha256": "a724a9a20c40b65e27b363ff9e74fa7b6015e7a497483bb86e88f9dc19d04adb",
+      "bytes": 2565,
+      "license": "Apache-2.0",
+      "classification": "source code",
+      "alt": "",
+      "caption": "Host integration patch and checks."
+    },
+    {
+      "source": "T08 implementation",
+      "destination": "test-drive/input/patches/host-snap-shortcuts.patch",
+      "license": "Apache-2.0",
+      "classification": "source code",
+      "alt": "",
+      "caption": "Host snap shortcut integration and checks.",
+      "sha256": "aa4f379ff5c7a8169cba78acbe385ac2de66516c6ec389b9cf0fabe9650e3d6e",
+      "bytes": 3233
+    },
+    {
+      "source": "T08 implementation",
+      "destination": "test-drive/input/snap-host.test.js",
+      "license": "Apache-2.0",
+      "classification": "source code",
+      "alt": "",
+      "caption": "Host snap shortcut integration and checks.",
+      "sha256": "481549107a6e492b0c5ecb2a3e3986c6159057f43bcfb12e23de60fc2ba00e7f",
+      "bytes": 3021
+    },
+    {
+      "source": "T08 implementation",
+      "destination": "test-drive/input/outside.test.js",
+      "sha256": "3888f8a1068357b26b95014c5fdd60128c80f3cf2fe4fa9cda74a6c42b2be4d0",
+      "bytes": 2979,
+      "license": "Apache-2.0",
+      "classification": "source code",
+      "alt": "",
+      "caption": "Outside dismissal, focus publication, replacement lease and cancellation checks."
+    },
+    {
+      "source": "T08 implementation",
+      "destination": "test-drive/input/production-gestures.test.js",
+      "license": "Apache-2.0",
+      "classification": "source code",
+      "alt": "",
+      "caption": "Production host pointer and legend gesture checks.",
+      "sha256": "5db8b304605162468149586b07b3a7167ea92b5824575bcc0ae992ec62f1f5b8",
+      "bytes": 4250
+    }
+  ]
+}

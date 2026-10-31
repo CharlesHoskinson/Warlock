@@ -1,0 +1,102 @@
+{
+  "sourceCommit": "bc3daf7b80ac7295a1ba1e56639a0e130e520a3c",
+  "authority": "docs/warlock-compatibility/omarchy-v1/sources/user/snap.lua",
+  "loadOrder": "packaged omarchy.lua loads defaults; user hyprland.lua loads user bindings and snap.lua. Explicit unbinds in snap.lua replace packaged bindings.",
+  "bindings": [
+    {
+      "chord": "Alt+Tab",
+      "action": "switcher next",
+      "evidence": "sources/user/snap.lua: unbinds both packaged cycle and reveal bindings; chooser commits on Alt release"
+    },
+    {
+      "chord": "Alt+Shift+Tab",
+      "action": "switcher previous",
+      "evidence": "sources/user/snap.lua: chooser -1"
+    },
+    {
+      "chord": "Alt release",
+      "action": "switcher activate",
+      "evidence": "sources/user/snap.lua: ALT_L and ALT_R release bindings"
+    },
+    {
+      "chord": "Super+Tab",
+      "action": "task view",
+      "evidence": "sources/user/snap.lua: replaces packaged next workspace"
+    },
+    {
+      "chord": "Super+Left",
+      "action": "snap window left",
+      "evidence": "sources/user/snap.lua:578-585 unbinds packaged directional focus and binds snap window left"
+    },
+    {
+      "chord": "Super+Right",
+      "action": "snap window right",
+      "evidence": "sources/user/snap.lua:578-585 unbinds packaged directional focus and binds snap window right"
+    },
+    {
+      "chord": "Super+Up",
+      "action": "maximize window",
+      "evidence": "sources/user/snap.lua:578-585 unbinds packaged directional focus and binds maximize window"
+    },
+    {
+      "chord": "Super+Down",
+      "action": "restore snapped or maximized window, otherwise minimize",
+      "evidence": "sources/user/snap.lua:578-585 unbinds packaged directional focus and binds restore snapped or maximized window, otherwise minimize"
+    },
+    {
+      "chord": "Super+Z",
+      "action": "snap layouts",
+      "evidence": "sources/user/snap.lua: hypr-snap-layout"
+    },
+    {
+      "chord": "Alt+Space",
+      "action": "window menu",
+      "evidence": "sources/user/snap.lua: hypr-window-menu system"
+    },
+    {
+      "chord": "Super+Alt+Space",
+      "action": "applications",
+      "evidence": "sources/packaged/bindings/utilities.lua: apps menu"
+    },
+    {
+      "chord": "Super+Escape",
+      "action": "system",
+      "evidence": "sources/packaged/bindings/utilities.lua: system menu"
+    },
+    {
+      "chord": "Super+Shift+Alt+comma",
+      "action": "notifications",
+      "evidence": "sources/packaged/bindings/utilities.lua: notification history"
+    },
+    {
+      "chord": "Super+1..9",
+      "action": "taskbar activate",
+      "evidence": "sources/user/snap.lua: unbind numeric workspace bindings"
+    },
+    {
+      "chord": "Super+Shift+1..9",
+      "action": "taskbar launch",
+      "evidence": "sources/user/snap.lua: unbind numeric window transfer bindings"
+    },
+    {
+      "chord": "Super+Alt+1..9",
+      "action": "taskbar menu",
+      "evidence": "sources/user/snap.lua: unbind numeric group bindings"
+    },
+    {
+      "chord": "Alt+left drag",
+      "action": "move",
+      "evidence": "sources/user/bindings.lua"
+    },
+    {
+      "chord": "Alt+right drag",
+      "action": "resize",
+      "evidence": "sources/user/bindings.lua"
+    },
+    {
+      "chord": "Titlebar primary-button drag",
+      "action": "move and edge snap",
+      "evidence": "sources/user/snap.lua: titlebar drag tracking and edge/corner snap"
+    }
+  ]
+}

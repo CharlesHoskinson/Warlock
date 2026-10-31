@@ -1,0 +1,33 @@
+/* Apache-2.0. Files-only rules; shared foundations own tokens and focus. */
+@layer components {
+  html[data-warlock-design="v1"] .surface-popup[data-mode="files"] .surface-controls { gap:6px; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="files"] .surface-controls > * { flex:0 0 auto; min-width:0; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="files"] .surface-controls button { width:100%; margin:0; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="files"] .control-label { white-space:normal; overflow:visible; text-overflow:clip; overflow-wrap:anywhere; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="files"] .notification-text[data-files-content="files:location:state"] { margin:10px 0 10px; padding:12px; border-radius:6px; background:var(--wl-sys-color-surface-recessed); color:var(--wl-sys-color-text); overflow-wrap:anywhere; font:400 .875rem/1.4286 Inter,sans-serif; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="files"] [data-surface-control="files:home"] { margin-top:0; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="files"] label:has(+ .launcher-search[data-surface-field="control:files-path"]) { margin-block-start:10px; font-weight:600; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="files"] .launcher-search[data-surface-field="control:files-path"] { box-sizing:border-box; width:100%; margin:0; min-height:2.75rem; scroll-margin:6px; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="files"] [data-surface-control="files:open-path"] { min-height:2.25rem; border:1px solid var(--wl-sys-color-border-essential); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="files"] [data-surface-control="files:open-path"] + .control-detail { margin:0; overflow-wrap:anywhere; }
+
+}
+@layer accessibility {
+  @media (forced-colors:active) { html[data-warlock-design="v1"] .surface-popup[data-mode="files"] [data-surface-control="files:open-path"] { color:ButtonText; background:ButtonFace; border-color:ButtonText; } html[data-warlock-design="v1"] .surface-popup[data-mode="files"] [data-surface-control="files:open-path"] .control-detail { color:ButtonText; } }
+}
+@layer layouts {
+  @media (max-height: 360px) {
+    html[data-warlock-design="v1"] .surface-popup[data-mode="files"] { overflow:auto; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="files"] .surface-controls { overflow:visible; flex:0 0 auto; }
+  }
+}
+@layer states {
+  /* The affirmative fill is reserved for the completed label and caption projection. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="files"] .surface-controls:has(> label[for] + .launcher-search[data-surface-field="control:files-path"]) > [data-surface-control="files:open-path"][aria-describedby]:has(+ .control-detail):not(:disabled):not([aria-disabled="true"]) { background:var(--wl-sys-color-action-fill); color:var(--wl-sys-color-on-action); border-color:var(--wl-sys-color-on-action); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="files"][data-theme="dawn"] .surface-controls:has(> label[for] + .launcher-search[data-surface-field="control:files-path"]) > [data-surface-control="files:open-path"][aria-describedby]:has(+ .control-detail):not(:disabled):not([aria-disabled="true"]) { border-color:var(--wl-sys-color-brand-text); }
+  @media (hover:hover) and (pointer:fine) { html[data-warlock-design="v1"] .surface-popup[data-mode="files"] .surface-controls:has(> label[for] + .launcher-search[data-surface-field="control:files-path"]) > [data-surface-control="files:open-path"][aria-describedby]:has(+ .control-detail):not(:disabled):not([aria-disabled="true"]):hover { background:var(--wl-sys-color-action-fill-hover); } }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="files"] .surface-controls:has(> label[for] + .launcher-search[data-surface-field="control:files-path"]) > [data-surface-control="files:open-path"][aria-describedby]:has(+ .control-detail):not(:disabled):not([aria-disabled="true"]):active { background:var(--wl-sys-color-action-fill-pressed); }
+
+  html[data-warlock-design="v1"] .surface-popup[data-mode="files"] .launcher-search::placeholder { color:var(--wl-sys-color-text-secondary); opacity:1; }
+}
+

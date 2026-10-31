@@ -1,0 +1,49 @@
+{
+  "source_commit": "bc3daf7b80ac7295a1ba1e56639a0e130e520a3c",
+  "modules": [
+    "implementation/warlock/src/SurfaceRenderer.elm",
+    "implementation/warlock/src/SurfaceSnapshot.elm"
+  ],
+  "selectors": [
+    ".surface-popup",
+    ".surface-controls",
+    ".control-label",
+    ".control-detail",
+    ".launcher-search",
+    "[data-surface-control]",
+    "[data-surface-field]"
+  ],
+  "assets": [
+    {
+      "file": "evidence/dense-menu.png",
+      "source": "implementation/warlock/qa/evidence/dense-outer-focus/native-dense/popup-dense-first-menu.png",
+      "classification": "native",
+      "sha256": "84fd0adf1c67f6da809dd7031af3db787ddfac87f15f6f8f3c1b27c065843b4e",
+      "license": "Apache-2.0"
+    },
+    {
+      "file": "evidence/layer-night.png",
+      "source": "implementation/warlock/qa/evidence/layer-appearance/layer-appearance-night.png",
+      "classification": "native",
+      "sha256": "a0f707e834f32fe9cdecba85c90db9d6bbfbebab74df2dcec688d3633924fb4b",
+      "license": "Apache-2.0"
+    },
+    {
+      "file": "evidence/high-contrast-focus.png",
+      "source": "implementation/warlock/qa/evidence/high-contrast/native-high-contrast-focus.png",
+      "classification": "native",
+      "sha256": "1a2ee7960a00133bbccad483d3f0161cfd8648fff22a0609f02493131bc7b10b",
+      "license": "Apache-2.0"
+    },
+    {
+      "file": "mockups/foundations-night.png",
+      "classification": "generated illustration",
+      "sha256": "04b74daef243fefe6e8eab43e858a9c0548871288cb07f6bc7466c00dd1b33a7"
+    },
+    {
+      "file": "mockups/foundations-dawn.png",
+      "classification": "generated illustration",
+      "sha256": "7f605e5d1999a1b3748055abffa362cd04baf90e2883f1af5006d67f4be306c7"
+    }
+  ]
+}

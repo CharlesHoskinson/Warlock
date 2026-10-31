@@ -1,0 +1,56 @@
+/* Apache-2.0. Notification mode only; shared foundations own focus and tokens. */
+@layer components {
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls { display:flex; flex-direction:column; gap:6px; min-width:0; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .notification-text[data-notification-content] { margin:0; padding-inline:12px; min-width:0; overflow-wrap:anywhere; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .notification-text[data-notification-content$=":summary"] { margin-block-start:10px; /* plus the 6px sibling gap = 16px */ }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .notification-text[data-notification-content$=":summary"] .control-label { font-size:.875rem; line-height:1.428571; font-weight:600; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .notification-text[data-notification-content$=":body"] .control-label { font-size:.875rem; line-height:1.428571; font-weight:400; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .notification-text .control-detail { display:block; margin-block-start:2px; color:var(--wl-sys-color-text-secondary); font-size:.75rem; line-height:1.333333; letter-spacing:.0075rem; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] :is(.notification-text,button) .control-label { display:block; white-space:normal; overflow:visible; text-overflow:clip; overflow-wrap:anywhere; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] button[data-surface-control^="notification:"] { align-self:flex-start; width:auto; max-width:100%; min-height:2.25rem; text-align:start; }
+}
+@layer states {
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] button:is(:disabled,[aria-disabled="true"]) { opacity:1; color:var(--wl-sys-color-text-secondary); background:var(--wl-sys-color-surface-recessed); }
+}
+@layer components {
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > * { flex: 0 0 auto; min-width:0; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls button { white-space:normal; overflow-wrap:anywhere; max-width:100%; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .control-detail { white-space:normal; overflow-wrap:anywhere; }
+}
+@layer states {
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] button:is([data-surface-control="notifications:dnd"],[data-surface-control="notifications:critical-interrupt"])[aria-pressed="true"] { background:var(--wl-sys-color-surface-selected); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] button:is([data-surface-control="notifications:dnd"],[data-surface-control="notifications:critical-interrupt"])[aria-pressed="true"]::before { content:""; position:absolute; inset-block:6px; inset-inline-start:0; width:3px; background:var(--wl-sys-color-brand-text); border-radius:2px; }
+  @media (hover:hover) { html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] button:is([data-surface-control="notifications:dnd"],[data-surface-control="notifications:critical-interrupt"])[aria-pressed="true"]:not([aria-disabled="true"]):hover { background:var(--wl-sys-color-surface-selected-hover); } }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] button:is([data-surface-control="notifications:dnd"],[data-surface-control="notifications:critical-interrupt"])[aria-pressed="true"]:not([aria-disabled="true"]):active { background:var(--wl-sys-color-surface-selected-pressed); }
+}
+@layer accessibility {
+ @media (forced-colors:active) { html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] button[aria-pressed="true"]::before { background:Highlight; } }
+}
+
+@layer components {
+ html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] { font-family:var(--wl-sys-type-body-family); font-size:var(--wl-sys-type-body-size); line-height:var(--wl-sys-type-body-line-height); }
+ html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .notification-text { font-family:var(--wl-sys-type-body-family); }
+}
+
+@layer layouts {
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls { scroll-padding:6px; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > button { scroll-margin:6px; }
+}
+
+/* Documentation framing; the renderer surface retains its own layout. */
+@layer layouts {
+ .wl-notification-doc { max-width:1100px; margin-inline:auto; padding:48px 24px 64px; }
+ .wl-notification-doc > h1 { margin-block:8px 0; }
+ .wl-notification-doc > h2 { margin-block:48px 8px; }
+ .wl-notification-tools { display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-block-start:24px; }
+ .wl-notification-tools select { min-height:36px; padding:6px 12px; color:var(--wl-sys-color-text); background:var(--wl-sys-color-surface); border:1px solid var(--wl-sys-color-border-essential); border-radius:6px; font:inherit; }
+ .wl-notification-intro, .wl-notification-example > p { color:var(--wl-sys-color-text-secondary); }
+ .wl-notification-gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr)); gap:40px 24px; align-items:start; margin-block-start:24px; }
+ .wl-notification-example { min-width:0; }
+ .wl-notification-example > h3 { margin-block:0 8px; }
+ .wl-notification-example > p { margin-block:0 16px; }
+ .wl-notification-stage { max-width:480px; }
+ .wl-notification-runtime { height:420px; }
+ .wl-notification-runtime > .surface-popup { height:100%; }
+ @media (max-width:600px) { .wl-notification-doc { padding:32px 16px 48px; } }
+}

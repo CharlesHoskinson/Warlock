@@ -1,0 +1,3112 @@
+{
+ "layers": [
+  {
+   "id": "gui",
+   "name": "Elm interface",
+   "summary": "Main coordinates desktop interaction, while Bar and Popup render presentations through The Elm Architecture."
+  },
+  {
+   "id": "bridge",
+   "name": "JavaScript adapters",
+   "summary": "JavaScript connects Elm ports to browser input, native callbacks, presentation acknowledgments, and preview transport."
+  },
+  {
+   "id": "host",
+   "name": "Desktop runtime",
+   "summary": "The desktop build runs a C/C++ GTK host, WebKitGTK, native preview support, and a Python adapter subprocess."
+  },
+  {
+   "id": "compositor",
+   "name": "Hyprland integration",
+   "summary": "Hyprland, its authority plugin, and its display backend manage windows, input, workspaces, and desktop composition."
+  },
+  {
+   "id": "library",
+   "name": "Standalone Haskell packages",
+   "summary": "Five Haskell packages provide ELF observation, held documents, process custody, the checked protocol boundary and a controlled bootstrap, independently of the desktop build."
+  },
+  {
+   "id": "external",
+   "name": "Applications and desktop services",
+   "summary": "Applications, XWayland, desktop services, and local storage supply the capabilities exposed by Warlock."
+  }
+ ],
+ "nodes": [
+  {
+   "id": "main",
+   "name": "Main controller",
+   "kind": "elm-program",
+   "language": "Elm",
+   "layer": "gui",
+   "summary": "Owns desktop interaction state and publishes presentations, native requests, and focus targets from a hidden controller document.",
+   "files": [
+    "implementation/warlock/src/Main.elm",
+    "implementation/warlock/src/Desktop.elm",
+    "implementation/warlock/src/OutputController.elm",
+    "implementation/warlock/src/SurfaceController.elm",
+    "implementation/warlock/src/Surface.elm",
+    "implementation/warlock/assets/index.html",
+    "implementation/warlock/adapter/current_build.py"
+   ],
+   "ports": [
+    "nativeBatchDispositions",
+    "nativeViews",
+    "nativeEvents",
+    "rendererActions",
+    "nativeReflows",
+    "nativeDismissals",
+    "nativeEscapes",
+    "surfaceCommits",
+    "inspections"
+   ],
+   "renders": [],
+   "variant": "default"
+  },
+  {
+   "id": "bar",
+   "name": "Bar",
+   "kind": "elm-program",
+   "language": "Elm",
+   "layer": "gui",
+   "summary": "Renders an output's taskbar, validates captured actions, and delivers announcements assigned to that surface.",
+   "files": [
+    "implementation/warlock/src/Bar.elm",
+    "implementation/warlock/src/Presentation.elm",
+    "implementation/warlock/src/SurfaceRenderer.elm",
+    "implementation/warlock/src/Announcement.elm",
+    "implementation/warlock/assets/bar.html"
+   ],
+   "ports": [
+    "presentation",
+    "requestAction",
+    "actions",
+    "announcements"
+   ],
+   "renders": [
+    "Taskbar on each output",
+    "Pinned applications and window groups",
+    "Utility, status, and recovery controls",
+    "Assigned accessible announcements"
+   ],
+   "variant": "default"
+  },
+  {
+   "id": "popup",
+   "name": "Popup",
+   "kind": "elm-program",
+   "language": "Elm",
+   "layer": "gui",
+   "summary": "Renders the shared popup and manages local text composition, validated actions, announcements, and preview lifecycles.",
+   "files": [
+    "implementation/warlock/src/Popup.elm",
+    "implementation/warlock/src/SurfaceRenderer.elm",
+    "implementation/warlock/src/Presentation.elm",
+    "implementation/warlock/src/RetainedPreviewPresenter.elm",
+    "implementation/warlock/src/PreviewLifecycle.elm",
+    "implementation/warlock/src/PreviewPaintGate.elm",
+    "implementation/warlock/assets/popup.html"
+   ],
+   "ports": [
+    "presentation",
+    "requestAction",
+    "actions",
+    "announcements",
+    "nativePreviews",
+    "previewCommands",
+    "previewPaintRequests",
+    "previewPainted",
+    "nativePreviewGrants",
+    "nativePreviewQuarantine",
+    "nativePreviewClosed",
+    "nativePreviewIssued",
+    "nativePreviewRetry",
+    "nativePreviewRetirement"
+   ],
+   "renders": [
+    "Applications launcher and search",
+    "Application window picker",
+    "Window switcher",
+    "Task View and workspace transfer controls",
+    "Window context menu",
+    "Snap chooser",
+    "Settings and help",
+    "Notification history",
+    "Files navigation panel",
+    "System menu and confirmation panel",
+    "Application actions and recent items",
+    "Window previews and fallbacks within popup panels"
+   ],
+   "variant": "default"
+  },
+  {
+   "id": "controller-adapter",
+   "name": "adapter.js",
+   "kind": "js-adapter",
+   "language": "JavaScript",
+   "layer": "bridge",
+   "summary": "Starts Elm.Main and connects its ports to native callbacks and the WebKit script message handler.",
+   "files": [
+    "implementation/warlock/assets/adapter.js",
+    "implementation/warlock/assets/index.html"
+   ],
+   "ports": [
+    "Elm.Main.init",
+    "receiveBatchDisposition",
+    "receiveTopology",
+    "receiveNative",
+    "receiveAction",
+    "receiveDismiss",
+    "receiveEscape",
+    "receiveReflow",
+    "receiveFocus",
+    "window.webkit.messageHandlers.native.postMessage"
+   ],
+   "renders": [],
+   "variant": "default"
+  },
+  {
+   "id": "bar-adapter",
+   "name": "bar-adapter.js",
+   "kind": "js-adapter",
+   "language": "JavaScript",
+   "layer": "bridge",
+   "summary": "Starts Elm.Bar, routes its ports, acknowledges presentation and focus, and keeps keyboard selection visible.",
+   "files": [
+    "implementation/warlock/assets/bar-adapter.js",
+    "implementation/warlock/assets/bar.html"
+   ],
+   "ports": [
+    "Elm.Bar.init",
+    "submitSurfaceAction",
+    "receivePresentation",
+    "receiveAnnouncement",
+    "receiveFocus",
+    "presentation-ready",
+    "presentation-applied",
+    "focus-applied"
+   ],
+   "renders": [],
+   "variant": "default"
+  },
+  {
+   "id": "popup-adapter",
+   "name": "popup-adapter.js",
+   "kind": "js-adapter",
+   "language": "JavaScript",
+   "layer": "bridge",
+   "summary": "Starts Elm.Popup, orders committed queries after presentation acknowledgment, maintains focus, and transports preview commands and paint acknowledgments.",
+   "files": [
+    "implementation/warlock/assets/popup-adapter.js",
+    "implementation/warlock/assets/popup.html"
+   ],
+   "ports": [
+    "Elm.Popup.init",
+    "submitSurfaceAction",
+    "receivePresentation",
+    "receiveAnnouncement",
+    "receiveFocus",
+    "receiveNativePreview",
+    "receiveNativePreviewBatch",
+    "receiveNativePreviewRetirement",
+    "presentation-ready",
+    "presentation-applied",
+    "focus-applied",
+    "surface-notification-focus",
+    "preview-commands"
+   ],
+   "renders": [],
+   "variant": "default"
+  },
+  {
+   "id": "context-adapter",
+   "name": "context.js",
+   "kind": "js-adapter",
+   "language": "JavaScript",
+   "layer": "bridge",
+   "summary": "Captures context-menu gestures and menu navigation with the originating control and current presentation identity.",
+   "files": [
+    "implementation/warlock/assets/context.js"
+   ],
+   "ports": [
+    "mousedown",
+    "mousemove",
+    "mouseup",
+    "contextmenu",
+    "keydown",
+    "keyup",
+    "surface-context",
+    "surface-menu-navigation",
+    "window.webkit.messageHandlers.native.postMessage"
+   ],
+   "renders": [],
+   "variant": "default"
+  },
+  {
+   "id": "activation-adapter",
+   "name": "activation.js",
+   "kind": "js-adapter",
+   "language": "JavaScript",
+   "layer": "bridge",
+   "summary": "Preserves the captured control through press and release and rejects stale, cancelled, or mismatched activation gestures.",
+   "files": [
+    "implementation/warlock/assets/activation.js"
+   ],
+   "ports": [
+    "pointerdown",
+    "pointerup",
+    "pointercancel",
+    "mousedown",
+    "mouseup",
+    "click",
+    "keydown",
+    "keyup",
+    "blur",
+    "submitSurfaceAction",
+    "surface-action"
+   ],
+   "renders": [],
+   "variant": "default"
+  },
+  {
+   "id": "appearance-adapter",
+   "name": "appearance.js",
+   "kind": "js-adapter",
+   "language": "JavaScript",
+   "layer": "bridge",
+   "summary": "Copies committed Elm appearance attributes to the document root so CSS applies theme, text scale, effects, and transparency.",
+   "files": [
+    "implementation/warlock/assets/appearance.js",
+    "implementation/warlock/assets/shell.css"
+   ],
+   "ports": [
+    "MutationObserver",
+    "data-theme",
+    "data-text-scale",
+    "data-effects",
+    "data-reduced-transparency",
+    "document.documentElement.style.fontSize"
+   ],
+   "renders": [],
+   "variant": "default"
+  },
+  {
+   "id": "native-host",
+   "name": "Shared GTK native host",
+   "kind": "native-host",
+   "language": "C and C++",
+   "layer": "host",
+   "summary": "Owns the hidden controller, output taskbars, popup placement, input admission, backend subprocess, admission journal, and GTK crash recovery.",
+   "files": [
+    "implementation/warlock/native/shared-host.c",
+    "implementation/warlock/native/host.c",
+    "implementation/warlock/native/surface.h",
+    "implementation/warlock/native/host-journal.h",
+    "implementation/warlock/native/announcement-transport.h",
+    "implementation/warlock/native/motion-preference.h",
+    "implementation/warlock/native/controlled-preview-host.h",
+    "implementation/warlock/adapter/release_builder.py"
+   ],
+   "ports": [
+    "script-message-received::native",
+    "surface_eval",
+    "evaluate_delivery",
+    "backend_start",
+    "admission_bind",
+    "admission_batch",
+    "admission_write",
+    "workspace_admission_write",
+    "admission_retire",
+    "gtk_layer_init_for_window",
+    "gtk_layer_set_exclusive_zone",
+    "gtk_layer_set_keyboard_mode",
+    "--authority-config",
+    "--backend",
+    "--qa-preview-controlled"
+   ],
+   "renders": [
+    "GTK recovery bar with Desktop display stopped. and Restart"
+   ],
+   "variant": "default"
+  },
+  {
+   "id": "webkit-renderer",
+   "name": "WebKitGTK renderer",
+   "kind": "renderer",
+   "language": "C/C++ with JavaScript, HTML, and CSS",
+   "layer": "host",
+   "summary": "Executes compiled Elm and JavaScript in sandboxed WebViews and paints their HTML and CSS inside GTK surfaces.",
+   "files": [
+    "implementation/warlock/native/shared-host.c",
+    "implementation/warlock/native/host.c",
+    "implementation/warlock/assets/index.html",
+    "implementation/warlock/assets/bar.html",
+    "implementation/warlock/assets/popup.html",
+    "implementation/warlock/assets/shell.css"
+   ],
+   "ports": [
+    "WebKitWebContext",
+    "WebKitWebView",
+    "WebKitUserContentManager",
+    "webkit_web_view_load_uri",
+    "webkit_web_view_evaluate_javascript",
+    "webkit_web_context_register_uri_scheme",
+    "script-message-received::native",
+    "web-process-terminated",
+    "elm-shell://app/",
+    "elm-shell://preview/",
+    "elm-shell://icon/"
+   ],
+   "renders": [
+    "Taskbar WebViews",
+    "Shared popup WebView"
+   ],
+   "variant": "default"
+  },
+  {
+   "id": "native-previews",
+   "name": "Native preview provider",
+   "kind": "native-host",
+   "language": "C++ with a C interface",
+   "layer": "host",
+   "summary": "Runs inside the host to obtain compositor captures, retain preview resources and receipts, and serve preview images and fallback icons.",
+   "files": [
+    "implementation/warlock/native/preview-provider-bootstrap.cpp",
+    "implementation/warlock/native/preview_client.hpp",
+    "implementation/warlock/native/preview_metadata.hpp",
+    "implementation/warlock/native/client-producer.cpp",
+    "implementation/warlock/native/picker-previews.h",
+    "implementation/warlock/native/picker-previews.inc",
+    "implementation/warlock/native/family_producer.hpp",
+    "implementation/warlock/native/imported-clients.cpp",
+    "implementation/warlock/native/preview_uri.cpp",
+    "implementation/warlock/native/preview-uri-webkit.cpp"
+   ],
+   "ports": [
+    "warlock_preview_bootstrap_open",
+    "warlock_preview_bootstrap_catalog",
+    "warlock_preview_bootstrap_native_transport",
+    "warlock_picker_previews_open",
+    "warlock_picker_previews_poll",
+    "warlock_picker_previews_command",
+    "warlock_picker_previews_stream",
+    "warlock_picker_previews_icon_stream",
+    "warlock_picker_previews_close",
+    "warlock_imported_clients_propose_envelope",
+    "warlock_imported_clients_dispatch_control",
+    "warlock_imported_clients_confirm_control",
+    "previewFdAddress"
+   ],
+   "renders": [],
+   "variant": "default"
+  },
+  {
+   "id": "adapter-daemon",
+   "name": "Adapter daemon",
+   "kind": "daemon",
+   "language": "Python",
+   "layer": "host",
+   "summary": "Runs as the host's child process to authenticate compositor requests, maintain recovery records, and connect desktop services and preferences.",
+   "files": [
+    "implementation/warlock/adapter/daemon.py",
+    "implementation/warlock/adapter/endpoint.py",
+    "implementation/warlock/adapter/effect_endpoint.py",
+    "implementation/warlock/adapter/geometry_endpoint.py",
+    "implementation/warlock/adapter/grant_endpoint.py",
+    "implementation/warlock/adapter/catalog_transport.py",
+    "implementation/warlock/adapter/recovery_store.py",
+    "implementation/warlock/adapter/reconciliation.py",
+    "implementation/warlock/adapter/workspace_navigation.py",
+    "implementation/warlock/adapter/cancellation_coordinator.py"
+   ],
+   "ports": [
+    "stdin",
+    "stdout",
+    "handle_request",
+    "j/elm_observe",
+    ".socket.sock",
+    ".socket2.sock",
+    "projection-request",
+    "window-effect",
+    "geometry-attach",
+    "geometry-facts-request",
+    "workspace-navigation",
+    "catalog-request",
+    "application-launch",
+    "notification-request",
+    "notification-effect",
+    "files-request",
+    "files-open",
+    "system-menu-request",
+    "system-menu-effect",
+    "jump-list-request",
+    "jump-list-effect",
+    "shell-settings-write",
+    "motion-preferences-write",
+    "shortcut-preferences-write",
+    "taskbar-pins-write",
+    "cancellationOptIn"
+   ],
+   "renders": [],
+   "variant": "default"
+  },
+  {
+   "id": "notification-service",
+   "name": "Notification service",
+   "kind": "daemon",
+   "language": "Python",
+   "layer": "host",
+   "summary": "Runs in a Gio thread inside the adapter process to acquire the notification D-Bus name and maintain bounded notification history.",
+   "files": [
+    "implementation/warlock/adapter/notification_service.py",
+    "implementation/warlock/adapter/daemon.py"
+   ],
+   "ports": [
+    "org.freedesktop.Notifications",
+    "/org/freedesktop/Notifications",
+    "GetCapabilities",
+    "GetServerInformation",
+    "Notify",
+    "CloseNotification",
+    "ActionInvoked",
+    "NotificationClosed",
+    "NameOwnerChanged",
+    "Service.read",
+    "Service.effect",
+    "Service.observation",
+    "Service.drain",
+    "wake"
+   ],
+   "renders": [],
+   "variant": "default"
+  },
+  {
+   "id": "authority-plugin",
+   "name": "Hyprland observation authority plugin",
+   "kind": "compositor-plugin",
+   "language": "C++",
+   "layer": "compositor",
+   "summary": "Runs inside Hyprland to assign window identities, report native facts, execute checked operations, route shortcuts, and provide preview captures.",
+   "files": [
+    "implementation/warlock/native/authority.cpp",
+    "implementation/warlock/native/geometry.inc",
+    "implementation/warlock/native/geometry-effects.inc",
+    "implementation/warlock/native/snap-placement.inc",
+    "implementation/warlock/native/workspace-navigation.inc",
+    "implementation/warlock/native/shortcut-bindings.inc",
+    "implementation/warlock/native/picker-preview.inc",
+    "implementation/warlock/native/capture-fd-server.inc"
+   ],
+   "ports": [
+    "PLUGIN_API_VERSION",
+    "PLUGIN_INIT",
+    "PLUGIN_EXIT",
+    "elm_observe",
+    "warlock.apps_menu",
+    "warlock.system_menu",
+    "warlock.notification_history",
+    "warlock.switcher_forward",
+    "warlock.switcher_reverse",
+    "hello",
+    "scene-facts-request",
+    "snapshot-request",
+    "window-effect",
+    "geometry-attach",
+    "geometry-facts-request",
+    "workspace-navigation",
+    "shortcut-bindings-request",
+    "shortcut-bindings-apply",
+    "binding-retire-request",
+    "binding-retirement-state-request",
+    "preview-picker-family-scope-request",
+    "preview-picker-family-capture-request",
+    "preview-picker-family-retire-request",
+    "previewFdAddress"
+   ],
+   "renders": [],
+   "variant": "default"
+  },
+  {
+   "id": "hyprland-omarchy",
+   "name": "Hyprland on Omarchy",
+   "kind": "compositor",
+   "language": "C++ and Lua",
+   "layer": "compositor",
+   "summary": "Composes shell and application surfaces and owns native focus, input, workspaces, and window geometry on the Omarchy desktop.",
+   "files": [
+    "implementation/warlock/native/core/Window.cpp",
+    "implementation/warlock/native/core/Renderer.cpp",
+    "implementation/warlock/native/core/SeatManager.cpp",
+    "implementation/warlock/native/core/InputManager.cpp",
+    "implementation/warlock/native/core/WorkspacePlacementController.cpp",
+    "docs/warlock-compatibility/omarchy-v1/sources/user/hyprland.lua",
+    "docs/warlock-compatibility/omarchy-v1/sources/packaged/omarchy.lua"
+   ],
+   "ports": [
+    "HyprlandAPI::registerHyprCtlCommand",
+    "HyprlandAPI::addLuaFunction",
+    "Event::bus",
+    "Desktop::windowState",
+    "Desktop::focusState",
+    "Desktop::WindowPolicy::applyMinimized",
+    "Fullscreen::controller",
+    "Wayland",
+    "CXDGSurfaceResource",
+    "CXWaylandSurface",
+    "gtk-layer-shell",
+    ".socket.sock",
+    ".socket2.sock"
+   ],
+   "renders": [
+    "Composited desktop containing Warlock surfaces and application windows"
+   ],
+   "variant": "default"
+  },
+  {
+   "id": "aquamarine",
+   "name": "Aquamarine display backend",
+   "kind": "external",
+   "language": "C++",
+   "layer": "compositor",
+   "summary": "Supplies Hyprland's output buffers and presentation backend, including the repository's nested Wayland backend.",
+   "files": [
+    "implementation/warlock/native/aquamarine/Wayland.cpp",
+    "implementation/warlock/native/core/Renderer.cpp",
+    "implementation/warlock/adapter/release_builder.py"
+   ],
+   "ports": [
+    "Aquamarine::IBuffer",
+    "Aquamarine::IOutput",
+    "Aquamarine::CWaylandBackend::start",
+    "Aquamarine::CWaylandBackend::dispatchEvents",
+    "Aquamarine::CWaylandOutput::commit",
+    "Aquamarine::CWaylandOutput::scheduleFrame",
+    "events.frame",
+    "events.present"
+   ],
+   "renders": [],
+   "variant": "default"
+  },
+  {
+   "id": "xwayland",
+   "name": "XWayland",
+   "kind": "external",
+   "language": "C with C++ compositor integration",
+   "layer": "external",
+   "summary": "Connects X11 applications to the Wayland desktop and exposes their surfaces, metadata, lifecycle, and configuration requests to Hyprland.",
+   "files": [
+    "implementation/warlock/native/core/Window.cpp",
+    "implementation/warlock/native/core/ViewHitTester.cpp",
+    "implementation/warlock/native/core/InputManager.cpp"
+   ],
+   "ports": [
+    "X11",
+    "Wayland",
+    "CXWaylandSurface",
+    "map",
+    "unmap",
+    "destroy",
+    "commit",
+    "configureRequest",
+    "stateChanged",
+    "metadataChanged",
+    "resourceChange",
+    "activate",
+    "setGeometry",
+    "configure"
+   ],
+   "renders": [],
+   "variant": "default"
+  },
+  {
+   "id": "native-preview-policy",
+   "name": "Preview policy worker",
+   "kind": "elm-program",
+   "language": "Elm",
+   "layer": "gui",
+   "summary": "A headless Elm worker that the native host runs (native/elm-preview-policy.cpp) to apply Warlock's window preview policy.",
+   "files": [
+    "implementation/warlock/src/NativePreviewPolicy.elm",
+    "implementation/warlock/src/RetainedPreviewPresenter.elm",
+    "implementation/warlock/native/elm-preview-policy.cpp",
+    "implementation/warlock/native/preview-policy-driver.cpp",
+    "implementation/warlock/native/controlled-preview-host.h"
+   ],
+   "ports": [
+    "incoming",
+    "outgoing"
+   ],
+   "renders": [],
+   "variant": "default"
+  },
+  {
+   "id": "native-preview-admission",
+   "name": "NativePreviewAdmission",
+   "kind": "elm-program",
+   "language": "Elm",
+   "layer": "gui",
+   "summary": "Renders and validates the initial popup presentation before the controlled-preview QA path installs its visual receiver.",
+   "files": [
+    "implementation/warlock/src/NativePreviewAdmission.elm",
+    "implementation/warlock/assets/controlled-popup.html"
+   ],
+   "ports": [
+    "presentation",
+    "requestAction",
+    "actions"
+   ],
+   "renders": [
+    "Initial controlled-preview popup in QA mode"
+   ],
+   "variant": "controlled-preview"
+  },
+  {
+   "id": "native-preview-renderer",
+   "name": "NativePreviewRenderer",
+   "kind": "elm-program",
+   "language": "Elm",
+   "layer": "gui",
+   "summary": "Renders visual snapshots bound to a native grant and acknowledges accepted sequences in the controlled-preview QA path.",
+   "files": [
+    "implementation/warlock/src/NativePreviewRenderer.elm",
+    "implementation/warlock/src/NativePreviewReceiver.elm",
+    "implementation/warlock/src/NativePreviewVisual.elm",
+    "implementation/warlock/assets/controlled-popup.html"
+   ],
+   "ports": [
+    "visualSnapshots",
+    "acceptedSnapshots",
+    "surfaceActions"
+   ],
+   "renders": [
+    "Controlled-preview popup and preview visuals in QA mode"
+   ],
+   "variant": "controlled-preview"
+  },
+  {
+   "id": "controlled-popup-adapter",
+   "name": "controlled-popup-adapter.js",
+   "kind": "js-adapter",
+   "language": "JavaScript",
+   "layer": "bridge",
+   "summary": "Connects the admission and visual-receiver Elm programs to native initialization, snapshots, actions, and acknowledgments in controlled-preview QA mode.",
+   "files": [
+    "implementation/warlock/assets/controlled-popup-adapter.js",
+    "implementation/warlock/assets/controlled-popup.html",
+    "implementation/warlock/native/controlled-preview-host.h"
+   ],
+   "ports": [
+    "submitSurfaceAction",
+    "receivePresentation",
+    "receiveFocus",
+    "initializeNativePreviewRenderer",
+    "receiveNativeVisualProjection",
+    "native-preview-projection-accepted",
+    "presentation-ready",
+    "presentation-applied",
+    "focus-applied"
+   ],
+   "renders": [],
+   "variant": "controlled-preview"
+  },
+  {
+   "id": "native-preview-control-outbox",
+   "name": "Native preview control outbox",
+   "kind": "js-adapter",
+   "language": "JavaScript",
+   "layer": "bridge",
+   "summary": "Runs in the host's JavaScriptCore context to retain exact preview command tickets until delivery receipts arrive in controlled-preview QA mode.",
+   "files": [
+    "implementation/warlock/assets/native-preview-control-outbox.js",
+    "implementation/warlock/native/preview-policy-driver.cpp",
+    "implementation/warlock/native/controlled-preview-host.h"
+   ],
+   "ports": [
+    "WarlockNativePreviewControlOutbox",
+    "retain",
+    "acknowledge",
+    "retry",
+    "snapshot",
+    "heldRetain",
+    "heldAcknowledge",
+    "heldRetry",
+    "heldSnapshot",
+    "nativePost",
+    "nativeConfirm",
+    "preview-control-ticket",
+    "preview-control-delivered",
+    "preview-control-confirmed"
+   ],
+   "renders": [],
+   "variant": "default"
+  },
+  {
+   "id": "elf-observation",
+   "name": "elf-observation",
+   "kind": "haskell-package",
+   "language": "Haskell",
+   "layer": "library",
+   "summary": "Parses captured GNU readelf output and resolves declared dependency graphs with explicit bounds and unresolved obligations as a standalone library.",
+   "files": [
+    "implementation/warlock/haskell/elf-observation/elf-observation.cabal",
+    "implementation/warlock/haskell/elf-observation/src/Warlock/Elf/Readelf.hs",
+    "implementation/warlock/haskell/elf-observation/src/Warlock/Elf/Graph.hs"
+   ],
+   "ports": [
+    "warlock-elf-observation-proposal",
+    "Warlock.Elf.Readelf",
+    "Warlock.Elf.Graph",
+    "parseReadelf",
+    "resolveDeclared",
+    "resolveDeclaredWithOrigins",
+    "resolveDeclaredWithSearchPlans"
+   ],
+   "renders": [],
+   "variant": "default"
+  },
+  {
+   "id": "held-document",
+   "name": "held-document",
+   "kind": "haskell-package",
+   "language": "Haskell and hsc2hs FFI",
+   "layer": "library",
+   "summary": "Reads identity-checked snapshots through held file descriptors and prepares hash-verified HTML with script and style hashes as a standalone library.",
+   "files": [
+    "implementation/warlock/haskell/held-document/held-document.cabal",
+    "implementation/warlock/haskell/held-document/src/Warlock/Platform/Resolver.hs",
+    "implementation/warlock/haskell/held-document/src/Warlock/Platform/Resolver/Internal.hsc",
+    "implementation/warlock/haskell/held-document/src/Warlock/Platform/Descriptor.hs",
+    "implementation/warlock/haskell/held-document/src/Warlock/Http/Document.hs"
+   ],
+   "ports": [
+    "warlock-held-document-proposal",
+    "Warlock.Platform.Resolver",
+    "Warlock.Http.Document",
+    "withRoot",
+    "resolveSnapshot",
+    "prepareHtml"
+   ],
+   "renders": [],
+   "variant": "default"
+  },
+  {
+   "id": "process-custody",
+   "name": "process-custody",
+   "kind": "haskell-package",
+   "language": "Haskell and hsc2hs FFI",
+   "layer": "library",
+   "summary": "Controls bounded tool execution and selected child-process sessions with deadlines, descriptor ownership, transfer records, and cleanup tracking as a standalone library.",
+   "files": [
+    "implementation/warlock/haskell/process-custody/process-custody.cabal",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process.hs",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Internal.hsc",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Owner.hs",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Lease.hs",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Transfer.hs",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Whitelist.hsc"
+   ],
+   "ports": [
+    "warlock-process-custody",
+    "Warlock.Capture.Process",
+    "newOwner",
+    "status",
+    "runTool",
+    "Pactree",
+    "Readelf",
+    "selectedHeld",
+    "deadlineAfter",
+    "remainingMicros",
+    "runSelectedUntil",
+    "awaitLeader",
+    "observeSession",
+    "closeCallerTransfer",
+    "transferDisposition"
+   ],
+   "renders": [],
+   "variant": "default"
+  },
+  {
+   "id": "applications",
+   "name": "Installed applications",
+   "kind": "external",
+   "language": "Various",
+   "layer": "external",
+   "summary": "Supply desktop entries, Wayland or X11 windows, declared actions, and notifications while owning their window contents.",
+   "files": [
+    "implementation/warlock/adapter/taskbar_catalog.py",
+    "implementation/warlock/adapter/catalog_authority.py",
+    "implementation/warlock/adapter/jump_list.py",
+    "implementation/warlock/adapter/notification_service.py",
+    "implementation/warlock/native/core/Window.cpp"
+   ],
+   "ports": [
+    "*.desktop",
+    "GioUnix.DesktopAppInfo",
+    "launch",
+    "launch_action",
+    "Wayland",
+    "X11",
+    "org.freedesktop.Notifications"
+   ],
+   "renders": [],
+   "variant": "default"
+  },
+  {
+   "id": "omarchy-files",
+   "name": "Omarchy Files",
+   "kind": "external",
+   "language": "Quickshell/QML",
+   "layer": "external",
+   "summary": "Provides the installed Files application that Warlock opens or navigates through verified Quickshell instance commands.",
+   "files": [
+    "implementation/warlock/adapter/explorer.py"
+   ],
+   "ports": [
+    "/usr/bin/qs",
+    "list --json",
+    "ipc --id",
+    "files migrationStatus",
+    "files uiState",
+    "files open",
+    "--no-duplicate",
+    "--daemonize",
+    "FILES_OPEN"
+   ],
+   "renders": [],
+   "variant": "default"
+  },
+  {
+   "id": "audio-service",
+   "name": "PulseAudio-compatible audio service",
+   "kind": "external",
+   "language": "External implementation",
+   "layer": "external",
+   "summary": "Reports the default audio sink and applies volume or mute changes through the selected local audio server.",
+   "files": [
+    "implementation/warlock/adapter/system_menu.py"
+   ],
+   "ports": [
+    "/usr/bin/pactl",
+    "PULSE_SERVER",
+    "pulse/native",
+    "info",
+    "list sinks",
+    "set-sink-volume",
+    "set-sink-mute"
+   ],
+   "renders": [],
+   "variant": "default"
+  },
+  {
+   "id": "network-manager",
+   "name": "NetworkManager",
+   "kind": "external",
+   "language": "External implementation",
+   "layer": "external",
+   "summary": "Supplies network state and permissions and handles explicit networking enable or disable requests.",
+   "files": [
+    "implementation/warlock/adapter/system_menu.py"
+   ],
+   "ports": [
+    "org.freedesktop.NetworkManager",
+    "/org/freedesktop/NetworkManager",
+    "org.freedesktop.DBus.Properties.GetAll",
+    "GetPermissions",
+    "Enable"
+   ],
+   "renders": [],
+   "variant": "default"
+  },
+  {
+   "id": "login-manager",
+   "name": "systemd-logind",
+   "kind": "external",
+   "language": "External implementation",
+   "layer": "external",
+   "summary": "Reports session and power capabilities and handles lock, logout, suspend, reboot, and power-off requests.",
+   "files": [
+    "implementation/warlock/adapter/system_menu.py"
+   ],
+   "ports": [
+    "org.freedesktop.login1",
+    "org.freedesktop.login1.Manager",
+    "org.freedesktop.login1.Session",
+    "CanSuspend",
+    "CanReboot",
+    "CanPowerOff",
+    "GetSessionByPID",
+    "Lock",
+    "TerminateSession",
+    "Suspend",
+    "Reboot",
+    "PowerOff"
+   ],
+   "renders": [],
+   "variant": "default"
+  },
+  {
+   "id": "desktop-preferences",
+   "name": "Desktop portal and GTK motion preference",
+   "kind": "external",
+   "language": "External implementation",
+   "layer": "external",
+   "summary": "Supplies the host's motion preference through the desktop portal with GTK animation settings as the fallback.",
+   "files": [
+    "implementation/warlock/native/motion-preference.h"
+   ],
+   "ports": [
+    "org.freedesktop.portal.Desktop",
+    "org.freedesktop.portal.Settings.ReadOne",
+    "org.freedesktop.portal.Settings.SettingChanged",
+    "org.freedesktop.appearance",
+    "reduced-motion",
+    "gtk-enable-animations"
+   ],
+   "renders": [],
+   "variant": "default"
+  },
+  {
+   "id": "local-storage",
+   "name": "Desktop data and Warlock state",
+   "kind": "external",
+   "language": "JSON, desktop-entry files, and XBEL",
+   "layer": "external",
+   "summary": "Stores desktop data, saved preferences, the native host's admission records, and the adapter's separate recovery ledgers.",
+   "files": [
+    "implementation/warlock/native/host-journal.h",
+    "implementation/warlock/adapter/taskbar_catalog.py",
+    "implementation/warlock/adapter/taskbar_preferences.py",
+    "implementation/warlock/adapter/shell_preferences.py",
+    "implementation/warlock/adapter/motion_preferences.py",
+    "implementation/warlock/adapter/shortcut_preferences.py",
+    "implementation/warlock/adapter/jump_list.py",
+    "implementation/warlock/adapter/recovery_store.py",
+    "implementation/warlock/adapter/admission_ledger.py",
+    "implementation/warlock/adapter/retirement_ledger.py",
+    "implementation/warlock/adapter/delivery_ledger.py",
+    "implementation/warlock/adapter/cancellation_ledger.py",
+    "implementation/warlock/adapter/workspace_navigation.py"
+   ],
+   "ports": [
+    "XDG_DATA_HOME",
+    "XDG_DATA_DIRS",
+    "XDG_CACHE_HOME",
+    "XDG_STATE_HOME",
+    "taskbar.json",
+    "settings.json",
+    "motion.json",
+    "shortcuts.json",
+    "recently-used.xbel",
+    "admissions-v1",
+    "host-owner.lock",
+    "host-writer.lock",
+    "ledger-v5.json",
+    "ledger-v6.json",
+    "release-deliveries-v1.json",
+    "workspace-navigation-v1.json",
+    "flock",
+    "rename",
+    "fsync"
+   ],
+   "renders": [],
+   "variant": "default"
+  },
+  {
+   "id": "protocol",
+   "name": "protocol",
+   "kind": "haskell-package",
+   "language": "Haskell",
+   "layer": "library",
+   "variant": "default",
+   "summary": "Checks bounded bytes into a versioned protocol envelope, records a refusal reason for rejected input, and provides a caller-owned framed socket transport.",
+   "files": [
+    "implementation/warlock/haskell/protocol/README.md",
+    "implementation/warlock/haskell/protocol/TRANSPORT.md",
+    "implementation/warlock/haskell/protocol/protocol.cabal"
+   ],
+   "ports": [
+    "Warlock.Protocol.Boundary",
+    "Warlock.Transport.Frame"
+   ],
+   "renders": []
+  },
+  {
+   "id": "runtime",
+   "name": "runtime",
+   "kind": "haskell-package",
+   "language": "Haskell",
+   "layer": "library",
+   "variant": "default",
+   "summary": "A controlled bootstrap that selects a held executable, keeps custody of the process it starts, and authenticates the current session's peer before admitting a frame.",
+   "files": [
+    "implementation/warlock/haskell/runtime/README.md",
+    "implementation/warlock/haskell/runtime/runtime.cabal",
+    "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap.hs"
+   ],
+   "ports": [
+    "Warlock.Bootstrap"
+   ],
+   "renders": []
+  }
+ ],
+ "edges": [
+  {
+   "from": "controller-adapter",
+   "to": "main",
+   "channel": "Elm initialization and inbound ports",
+   "messages": [
+    "Elm.Main.init",
+    "nativeViews: view-topology",
+    "nativeEvents",
+    "rendererActions: view-action",
+    "nativeBatchDispositions: batch-disposition",
+    "nativeDismissals",
+    "nativeEscapes",
+    "nativeReflows"
+   ],
+   "summary": "Delivers observations, scoped input, topology, and batch admission results to Main.",
+   "evidence": [
+    "implementation/warlock/assets/adapter.js",
+    "implementation/warlock/src/Main.elm"
+   ]
+  },
+  {
+   "from": "main",
+   "to": "controller-adapter",
+   "channel": "surfaceCommits; inspections",
+   "messages": [
+    "view-commit",
+    "surface-inspection"
+   ],
+   "summary": "Emits coordinated presentation batches and optional QA inspection packets.",
+   "evidence": [
+    "implementation/warlock/src/Main.elm",
+    "implementation/warlock/src/OutputController.elm",
+    "implementation/warlock/src/Inspection.elm",
+    "implementation/warlock/assets/adapter.js"
+   ]
+  },
+  {
+   "from": "controller-adapter",
+   "to": "native-host",
+   "channel": "WebKit script message handler: native.postMessage",
+   "messages": [
+    "host-ready",
+    "view-commit",
+    "surface-inspection",
+    "surface-report"
+   ],
+   "summary": "Serializes controller output and optional QA reports through the registered native handler.",
+   "evidence": [
+    "implementation/warlock/assets/adapter.js",
+    "implementation/warlock/native/shared-host.c"
+   ]
+  },
+  {
+   "from": "native-host",
+   "to": "controller-adapter",
+   "channel": "webkit_web_view_evaluate_javascript",
+   "messages": [
+    "receiveTopology",
+    "receiveNative",
+    "receiveAction",
+    "receiveBatchDisposition",
+    "receiveDismiss",
+    "receiveEscape",
+    "receiveReflow"
+   ],
+   "summary": "Calls controller receivers with native events and input scoped to the owning output and presentation.",
+   "evidence": [
+    "implementation/warlock/native/shared-host.c",
+    "implementation/warlock/native/host.c",
+    "implementation/warlock/assets/adapter.js"
+   ]
+  },
+  {
+   "from": "activation-adapter",
+   "to": "bar-adapter",
+   "channel": "submitSurfaceAction",
+   "messages": [
+    "surface-action"
+   ],
+   "summary": "Submits a completed taskbar gesture with its captured control and presentation stamp.",
+   "evidence": [
+    "implementation/warlock/assets/activation.js",
+    "implementation/warlock/assets/bar-adapter.js"
+   ]
+  },
+  {
+   "from": "activation-adapter",
+   "to": "popup-adapter",
+   "channel": "submitSurfaceAction",
+   "messages": [
+    "surface-action"
+   ],
+   "summary": "Submits a completed popup gesture while its captured target remains current.",
+   "evidence": [
+    "implementation/warlock/assets/activation.js",
+    "implementation/warlock/assets/popup-adapter.js"
+   ]
+  },
+  {
+   "from": "bar-adapter",
+   "to": "bar",
+   "channel": "Elm initialization; presentation; requestAction; announcements",
+   "messages": [
+    "Elm.Bar.init",
+    "presentation",
+    "surface-action",
+    "announcement-projection"
+   ],
+   "summary": "Starts Bar and supplies presentations, captured actions, and assigned announcements.",
+   "evidence": [
+    "implementation/warlock/assets/bar-adapter.js",
+    "implementation/warlock/src/Bar.elm",
+    "implementation/warlock/src/Announcement.elm"
+   ]
+  },
+  {
+   "from": "bar",
+   "to": "bar-adapter",
+   "channel": "actions",
+   "messages": [
+    "surface-action"
+   ],
+   "summary": "Returns actions validated against the current taskbar presentation.",
+   "evidence": [
+    "implementation/warlock/src/Bar.elm",
+    "implementation/warlock/src/Presentation.elm",
+    "implementation/warlock/src/CapturedAction.elm",
+    "implementation/warlock/assets/bar-adapter.js"
+   ]
+  },
+  {
+   "from": "bar-adapter",
+   "to": "native-host",
+   "channel": "WebKit script message handler: native.postMessage",
+   "messages": [
+    "presentation-ready",
+    "presentation-applied",
+    "focus-applied",
+    "surface-action",
+    "surface-report"
+   ],
+   "summary": "Reports readiness, applied presentation and focus, admitted actions, and optional QA observations.",
+   "evidence": [
+    "implementation/warlock/assets/bar-adapter.js",
+    "implementation/warlock/native/shared-host.c"
+   ]
+  },
+  {
+   "from": "native-host",
+   "to": "bar-adapter",
+   "channel": "webkit_web_view_evaluate_javascript",
+   "messages": [
+    "receivePresentation",
+    "receiveAnnouncement",
+    "receiveFocus"
+   ],
+   "summary": "Delivers each output's taskbar presentation, announcements, and focus requests.",
+   "evidence": [
+    "implementation/warlock/native/shared-host.c",
+    "implementation/warlock/native/announcement-transport.h",
+    "implementation/warlock/assets/bar-adapter.js"
+   ]
+  },
+  {
+   "from": "popup-adapter",
+   "to": "popup",
+   "channel": "Elm initialization and inbound ports",
+   "messages": [
+    "Elm.Popup.init",
+    "presentation",
+    "requestAction: surface-action",
+    "announcements: announcement-projection",
+    "nativePreviews",
+    "nativePreviewRetirement",
+    "previewPainted"
+   ],
+   "summary": "Supplies popup presentations, captured actions, announcements, native preview events, and paint acknowledgments.",
+   "evidence": [
+    "implementation/warlock/assets/popup-adapter.js",
+    "implementation/warlock/src/Popup.elm"
+   ]
+  },
+  {
+   "from": "popup",
+   "to": "popup-adapter",
+   "channel": "actions; previewCommands; previewPaintRequests",
+   "messages": [
+    "surface-action",
+    "surface-query",
+    "acquire",
+    "cancel",
+    "release",
+    "acknowledge",
+    "reconcile",
+    "previewPaintRequests"
+   ],
+   "summary": "Emits admitted actions, committed queries, preview commands, and paint tickets while retaining composition drafts locally.",
+   "evidence": [
+    "implementation/warlock/src/Popup.elm",
+    "implementation/warlock/src/Presentation.elm",
+    "implementation/warlock/src/CapturedAction.elm",
+    "implementation/warlock/src/PreviewLifecycle.elm",
+    "implementation/warlock/assets/popup-adapter.js"
+   ]
+  },
+  {
+   "from": "popup-adapter",
+   "to": "native-host",
+   "channel": "WebKit script message handler: native.postMessage",
+   "messages": [
+    "presentation-ready",
+    "presentation-applied",
+    "focus-applied",
+    "surface-action",
+    "surface-query",
+    "surface-notification-focus",
+    "preview-commands",
+    "surface-report"
+   ],
+   "summary": "Sends popup input, acknowledgments, protocol-2 preview command packets, and optional QA observations.",
+   "evidence": [
+    "implementation/warlock/assets/popup-adapter.js",
+    "implementation/warlock/native/shared-host.c",
+    "implementation/warlock/src/CapturedAction.elm"
+   ]
+  },
+  {
+   "from": "native-host",
+   "to": "popup-adapter",
+   "channel": "webkit_web_view_evaluate_javascript",
+   "messages": [
+    "receivePresentation",
+    "receiveAnnouncement",
+    "receiveFocus",
+    "receiveNativePreview",
+    "receiveNativePreviewBatch",
+    "receiveNativePreviewRetirement"
+   ],
+   "summary": "Delivers popup content, focus, announcements, and native preview observations to the owning document.",
+   "evidence": [
+    "implementation/warlock/native/shared-host.c",
+    "implementation/warlock/native/host.c",
+    "implementation/warlock/native/announcement-transport.h",
+    "implementation/warlock/assets/popup-adapter.js"
+   ]
+  },
+  {
+   "from": "context-adapter",
+   "to": "native-host",
+   "channel": "WebKit script message handler: native.postMessage",
+   "messages": [
+    "surface-context",
+    "surface-menu-navigation",
+    "Escape",
+    "Close",
+    "ArrowUp",
+    "ArrowDown",
+    "Home",
+    "End",
+    "Enter"
+   ],
+   "summary": "Routes context invocation and menu navigation through native source and presentation checks.",
+   "evidence": [
+    "implementation/warlock/assets/context.js",
+    "implementation/warlock/native/shared-host.c"
+   ]
+  },
+  {
+   "from": "bar",
+   "to": "appearance-adapter",
+   "channel": "DOM attributes observed by MutationObserver",
+   "messages": [
+    "data-theme",
+    "data-text-scale",
+    "data-effects",
+    "data-reduced-transparency"
+   ],
+   "summary": "Exposes committed taskbar appearance for projection onto the document root.",
+   "evidence": [
+    "implementation/warlock/src/SurfaceRenderer.elm",
+    "implementation/warlock/assets/appearance.js",
+    "implementation/warlock/assets/bar.html"
+   ]
+  },
+  {
+   "from": "popup",
+   "to": "appearance-adapter",
+   "channel": "DOM attributes observed by MutationObserver",
+   "messages": [
+    "data-theme",
+    "data-text-scale",
+    "data-effects",
+    "data-reduced-transparency"
+   ],
+   "summary": "Exposes the committed appearance included in the popup presentation.",
+   "evidence": [
+    "implementation/warlock/src/SurfaceRenderer.elm",
+    "implementation/warlock/assets/appearance.js",
+    "implementation/warlock/assets/popup.html"
+   ]
+  },
+  {
+   "from": "appearance-adapter",
+   "to": "webkit-renderer",
+   "channel": "Document root attributes and CSS",
+   "messages": [
+    "document.documentElement.dataset.theme",
+    "document.documentElement.dataset.textScale",
+    "document.documentElement.dataset.effects",
+    "document.documentElement.dataset.reducedTransparency",
+    "document.documentElement.style.fontSize"
+   ],
+   "summary": "Updates root attributes and font size consumed by shell.css.",
+   "evidence": [
+    "implementation/warlock/assets/appearance.js",
+    "implementation/warlock/assets/shell.css"
+   ]
+  },
+  {
+   "from": "native-host",
+   "to": "webkit-renderer",
+   "channel": "WebKitGTK library calls",
+   "messages": [
+    "webkit_web_context_new_ephemeral",
+    "webkit_web_context_set_sandbox_enabled",
+    "webkit_web_context_register_uri_scheme",
+    "webkit_user_content_manager_register_script_message_handler",
+    "webkit_web_view_load_uri",
+    "webkit_web_view_evaluate_javascript",
+    "webkit_uri_scheme_request_finish_with_response"
+   ],
+   "summary": "Creates WebViews, installs the bridge, loads local documents, evaluates receivers, and returns scoped resource streams.",
+   "evidence": [
+    "implementation/warlock/native/shared-host.c",
+    "implementation/warlock/native/host.c",
+    "implementation/warlock/adapter/release_builder.py"
+   ]
+  },
+  {
+   "from": "webkit-renderer",
+   "to": "native-host",
+   "channel": "WebKitGTK callbacks and custom URI requests",
+   "messages": [
+    "script-message-received::native",
+    "web-process-terminated",
+    "decide-policy",
+    "elm-shell://app/",
+    "elm-shell://preview/",
+    "elm-shell://icon/"
+   ],
+   "summary": "Delivers script messages, resource requests, navigation decisions, and renderer failures to the host.",
+   "evidence": [
+    "implementation/warlock/native/shared-host.c",
+    "implementation/warlock/native/host.c"
+   ]
+  },
+  {
+   "from": "native-host",
+   "to": "hyprland-omarchy",
+   "channel": "GTK/GDK Wayland surfaces and gtk-layer-shell",
+   "messages": [
+    "gtk_layer_init_for_window",
+    "gtk_layer_set_monitor",
+    "gtk_layer_set_namespace",
+    "gtk_layer_set_layer",
+    "gtk_layer_set_anchor",
+    "gtk_layer_set_exclusive_zone",
+    "gtk_layer_set_keyboard_mode",
+    "gtk_layer_try_force_commit"
+   ],
+   "summary": "Places taskbars across output tops, reserves their height, and manages shell-surface keyboard ownership.",
+   "evidence": [
+    "implementation/warlock/native/shared-host.c",
+    "implementation/warlock/native/host.c"
+   ]
+  },
+  {
+   "from": "native-host",
+   "to": "adapter-daemon",
+   "channel": "GSubprocess stdin pipe; newline-delimited JSON",
+   "messages": [
+    "/usr/bin/python3 -B",
+    "projection-request",
+    "geometry-attach",
+    "geometry-facts-request",
+    "window-effect",
+    "workspace-navigation",
+    "workspace-navigation-recover",
+    "catalog-request",
+    "application-launch",
+    "taskbar-pins-write",
+    "shell-settings-request",
+    "shell-settings-write",
+    "motion-preferences-request",
+    "motion-preferences-write",
+    "shortcut-preferences-request",
+    "shortcut-preferences-write",
+    "notification-request",
+    "notification-effect",
+    "files-request",
+    "files-open",
+    "system-menu-request",
+    "system-menu-effect",
+    "jump-list-request",
+    "jump-list-effect",
+    "motion-profile-set",
+    "activation-history-request",
+    "switcher-selection-request",
+    "switcher-cancel-request",
+    "reconciliation-ready"
+   ],
+   "summary": "Starts the Python backend and forwards admitted controller requests over its owned input pipe.",
+   "evidence": [
+    "implementation/warlock/native/host.c",
+    "implementation/warlock/native/shared-host.c",
+    "implementation/warlock/adapter/daemon.py"
+   ]
+  },
+  {
+   "from": "adapter-daemon",
+   "to": "native-host",
+   "channel": "Subprocess stdout pipe; newline-delimited JSON",
+   "messages": [
+    "attached",
+    "host-refresh",
+    "host-disconnected",
+    "host-geometry-negotiate",
+    "action-projection",
+    "projection-unavailable",
+    "geometry-attached",
+    "geometry-facts",
+    "effect-outcome",
+    "workspace-navigation-outcome",
+    "workspace-navigation-recovery",
+    "application-catalog",
+    "application-launch-outcome",
+    "taskbar-pins-outcome",
+    "shell-settings",
+    "shell-settings-outcome",
+    "motion-preferences",
+    "motion-preferences-outcome",
+    "shortcut-preferences",
+    "shortcut-preferences-outcome",
+    "notification-snapshot",
+    "notification-update",
+    "notification-outcome",
+    "files-snapshot",
+    "files-outcome",
+    "system-menu-snapshot",
+    "system-menu-outcome",
+    "jump-list-snapshot",
+    "jump-list-outcome",
+    "motion-profile",
+    "activation-history",
+    "pointer-ownership",
+    "shell-shortcuts",
+    "switcher-journal",
+    "host-recovery-failed",
+    "host-recovery-watermarks",
+    "host-reservation-unknown",
+    "host-reservation-released",
+    "host-admission-settled"
+   ],
+   "summary": "Returns observations, service snapshots, operation outcomes, recovery records, and admission settlements.",
+   "evidence": [
+    "implementation/warlock/adapter/daemon.py",
+    "implementation/warlock/adapter/catalog_transport.py",
+    "implementation/warlock/adapter/workspace_navigation.py",
+    "implementation/warlock/adapter/recovery_store.py",
+    "implementation/warlock/adapter/reconciliation.py",
+    "implementation/warlock/adapter/notification_service.py",
+    "implementation/warlock/adapter/explorer.py",
+    "implementation/warlock/adapter/system_menu.py",
+    "implementation/warlock/adapter/jump_list.py",
+    "implementation/warlock/native/host.c"
+   ]
+  },
+  {
+   "from": "adapter-daemon",
+   "to": "authority-plugin",
+   "channel": "Hyprland IPC over .socket.sock: j/elm_observe",
+   "messages": [
+    "hello",
+    "scene-facts-request",
+    "snapshot-request",
+    "window-effect",
+    "geometry-attach",
+    "geometry-facts-request",
+    "activation-history-request",
+    "pointer-ownership-request",
+    "shell-shortcuts-request",
+    "switcher-journal-request",
+    "switcher-selection-request",
+    "switcher-cancel-request",
+    "motion-profile-set",
+    "shortcut-bindings-request",
+    "shortcut-bindings-apply",
+    "workspace-navigation-attach",
+    "workspace-navigation",
+    "workspace-navigation-state-request",
+    "binding-retire-request",
+    "binding-retirement-state-request"
+   ],
+   "summary": "Sends bounded requests after authenticating the compositor socket and process identity.",
+   "evidence": [
+    "implementation/warlock/adapter/endpoint.py",
+    "implementation/warlock/adapter/effect_endpoint.py",
+    "implementation/warlock/adapter/geometry_endpoint.py",
+    "implementation/warlock/adapter/grant_endpoint.py",
+    "implementation/warlock/adapter/workspace_navigation.py",
+    "implementation/warlock/native/authority.cpp"
+   ]
+  },
+  {
+   "from": "authority-plugin",
+   "to": "adapter-daemon",
+   "channel": "Hyprland IPC replies",
+   "messages": [
+    "attached",
+    "scene-facts",
+    "snapshot",
+    "geometry-attached",
+    "geometry-facts",
+    "effect-outcome",
+    "activation-history",
+    "pointer-ownership",
+    "shell-shortcuts",
+    "switcher-journal",
+    "motion-profile",
+    "shortcut-bindings",
+    "shortcut-bindings-outcome",
+    "workspace-navigation-attached",
+    "workspace-navigation-outcome",
+    "workspace-navigation-state",
+    "binding-retirement",
+    "refused"
+   ],
+   "summary": "Returns correlated native facts, checked outcomes, shortcut inventory, and retirement proofs.",
+   "evidence": [
+    "implementation/warlock/native/authority.cpp",
+    "implementation/warlock/native/shortcut-bindings.inc",
+    "implementation/warlock/native/workspace-navigation.inc",
+    "implementation/warlock/adapter/effect_endpoint.py",
+    "implementation/warlock/adapter/grant_endpoint.py",
+    "implementation/warlock/adapter/workspace_navigation.py"
+   ]
+  },
+  {
+   "from": "adapter-daemon",
+   "to": "authority-plugin",
+   "channel": "Hyprland IPC; cancellationOptIn path",
+   "messages": [
+    "effect-cancellation-negotiate",
+    "effect-prepare",
+    "effect-commit",
+    "effect-cancel",
+    "effect-decision-request",
+    "effect-decision-ack"
+   ],
+   "summary": "Uses the cancellation protocol when explicit configuration enables the cancellation coordinator.",
+   "evidence": [
+    "implementation/warlock/adapter/daemon.py",
+    "implementation/warlock/adapter/cancellation_coordinator.py",
+    "implementation/warlock/adapter/cancellation_endpoint.py",
+    "implementation/warlock/native/authority.cpp"
+   ]
+  },
+  {
+   "from": "authority-plugin",
+   "to": "adapter-daemon",
+   "channel": "Hyprland IPC replies; cancellationOptIn path",
+   "messages": [
+    "effect-cancellation-capabilities",
+    "effect-prepared",
+    "effect-outcome",
+    "effect-decision-acknowledged"
+   ],
+   "summary": "Returns cancellation capabilities, prepared-operation identities, terminal evidence, and acknowledgment receipts.",
+   "evidence": [
+    "implementation/warlock/adapter/cancellation_endpoint.py",
+    "implementation/warlock/adapter/cancellation_coordinator.py",
+    "implementation/warlock/native/authority.cpp"
+   ]
+  },
+  {
+   "from": "hyprland-omarchy",
+   "to": "adapter-daemon",
+   "channel": "Hyprland event socket .socket2.sock",
+   "messages": [
+    "openwindow",
+    "closewindow",
+    "activewindow",
+    "windowtitle",
+    "windowtitlev2",
+    "workspace",
+    "workspacev2",
+    "focusedmon",
+    "focusedmonv2",
+    "movewindow",
+    "movewindowv2",
+    "monitoradded",
+    "monitoraddedv2",
+    "monitorremoved",
+    "fullscreen",
+    "pin",
+    "urgent",
+    "changefloatingmode",
+    "elmwindowstate",
+    "warlockpointer",
+    "warlockshortcuts",
+    "warlockswitcher"
+   ],
+   "summary": "Prompts fresh authenticated observations when window, workspace, pointer, or shortcut state changes.",
+   "evidence": [
+    "implementation/warlock/adapter/daemon.py",
+    "implementation/warlock/native/authority.cpp"
+   ]
+  },
+  {
+   "from": "authority-plugin",
+   "to": "hyprland-omarchy",
+   "channel": "In-process plugin and compositor APIs",
+   "messages": [
+    "HyprlandAPI::registerHyprCtlCommand",
+    "HyprlandAPI::addLuaFunction",
+    "Desktop::WindowPolicy::applyMinimized",
+    "Desktop::focusState()->fullWindowFocus",
+    "Desktop::focusState()->rawMonitorFocus",
+    "Desktop::windowState()->raise",
+    "changeWorkspace",
+    "Fullscreen::controller()->setFullscreenMode",
+    "window->layoutTarget()->setPositionGlobal"
+   ],
+   "summary": "Registers shell integration and applies validated window, focus, workspace, and placement operations.",
+   "evidence": [
+    "implementation/warlock/native/authority.cpp",
+    "implementation/warlock/native/geometry-effects.inc",
+    "implementation/warlock/native/snap-placement.inc",
+    "implementation/warlock/native/workspace-navigation.inc"
+   ]
+  },
+  {
+   "from": "hyprland-omarchy",
+   "to": "authority-plugin",
+   "channel": "Event::bus and registered Lua callbacks",
+   "messages": [
+    "window.open",
+    "window.close",
+    "window.active",
+    "render.pre",
+    "input.keyboard.key",
+    "config.preReload",
+    "config.reloaded",
+    "monitor.added",
+    "monitor.removed",
+    "warlock.apps_menu",
+    "warlock.system_menu",
+    "warlock.notification_history",
+    "warlock.switcher_forward",
+    "warlock.switcher_reverse"
+   ],
+   "summary": "Supplies lifecycle and input events that update window identities, shortcut journals, and preview validity.",
+   "evidence": [
+    "implementation/warlock/native/authority.cpp",
+    "implementation/warlock/native/shortcut-bindings.inc"
+   ]
+  },
+  {
+   "from": "hyprland-omarchy",
+   "to": "aquamarine",
+   "channel": "In-process output and buffer APIs",
+   "messages": [
+    "Aquamarine::IBuffer",
+    "swapchain->next",
+    "state->addDamage",
+    "state->setPresentationMode",
+    "swapchain->rollback"
+   ],
+   "summary": "Obtains output buffers and submits damage and presentation settings through the display backend.",
+   "evidence": [
+    "implementation/warlock/native/core/Renderer.cpp",
+    "implementation/warlock/native/aquamarine/Wayland.cpp"
+   ]
+  },
+  {
+   "from": "aquamarine",
+   "to": "hyprland-omarchy",
+   "channel": "In-process backend events",
+   "messages": [
+    "events.frame",
+    "events.present",
+    "events.state",
+    "events.destroy",
+    "events.newOutput",
+    "events.newKeyboard",
+    "events.newPointer"
+   ],
+   "summary": "Reports output and presentation events, including devices and output changes supplied by the nested Wayland backend.",
+   "evidence": [
+    "implementation/warlock/native/aquamarine/Wayland.cpp",
+    "implementation/warlock/native/core/Renderer.cpp",
+    "implementation/warlock/native/core/InputManager.cpp"
+   ]
+  },
+  {
+   "from": "native-host",
+   "to": "native-previews",
+   "channel": "C library interface",
+   "messages": [
+    "warlock_preview_bootstrap_open",
+    "warlock_preview_bootstrap_catalog",
+    "warlock_preview_bootstrap_native_transport",
+    "warlock_picker_previews_open",
+    "warlock_picker_previews_poll",
+    "warlock_picker_previews_command",
+    "warlock_picker_previews_stream",
+    "warlock_picker_previews_icon_stream",
+    "warlock_picker_previews_close"
+   ],
+   "summary": "Enrolls popup preview families, forwards lifecycle commands, and obtains scoped image streams.",
+   "evidence": [
+    "implementation/warlock/native/shared-host.c",
+    "implementation/warlock/native/preview-provider-bootstrap.cpp",
+    "implementation/warlock/native/picker-previews.h",
+    "implementation/warlock/native/picker-previews.inc"
+   ]
+  },
+  {
+   "from": "native-previews",
+   "to": "native-host",
+   "channel": "C return values, JSON event batches, and GInputStream",
+   "messages": [
+    "catalog",
+    "source-seed",
+    "metadata",
+    "event",
+    "request",
+    "offer",
+    "fence",
+    "source-denied",
+    "receipt",
+    "released",
+    "cancelled",
+    "refused",
+    "image/png"
+   ],
+   "summary": "Returns metadata, lifecycle events, resource receipts, and preview or icon streams.",
+   "evidence": [
+    "implementation/warlock/native/preview-provider-bootstrap.cpp",
+    "implementation/warlock/native/family_producer.hpp",
+    "implementation/warlock/native/picker-previews.inc",
+    "implementation/warlock/native/shared-host.c"
+   ]
+  },
+  {
+   "from": "native-previews",
+   "to": "authority-plugin",
+   "channel": "Hyprland IPC and Unix SOCK_SEQPACKET transport",
+   "messages": [
+    "j/elm_observe",
+    "hello",
+    "snapshot-request",
+    "preview-picker-family-scope-request",
+    "preview-picker-family-capture-request",
+    "preview-picker-family-retire-request",
+    "previewFdAddress"
+   ],
+   "summary": "Uses a separate native connection to obtain family capture facts and owned image resources.",
+   "evidence": [
+    "implementation/warlock/native/preview_client.hpp",
+    "implementation/warlock/native/preview_metadata.hpp",
+    "implementation/warlock/native/preview-provider-bootstrap.cpp",
+    "implementation/warlock/native/picker-preview.inc",
+    "implementation/warlock/native/capture-fd-server.inc"
+   ]
+  },
+  {
+   "from": "authority-plugin",
+   "to": "native-previews",
+   "channel": "Hyprland IPC replies and Unix descriptor transfer",
+   "messages": [
+    "attached",
+    "snapshot",
+    "preview-picker-family-scope",
+    "preview-picker-family-owned",
+    "preview-picker-family-retired",
+    "SCM_RIGHTS",
+    "refused"
+   ],
+   "summary": "Returns family capture metadata and transferred image descriptors under the preview ownership protocol.",
+   "evidence": [
+    "implementation/warlock/native/picker-preview.inc",
+    "implementation/warlock/native/capture-fd-server.inc",
+    "implementation/warlock/native/preview_fd.hpp",
+    "implementation/warlock/native/preview_metadata.hpp",
+    "implementation/warlock/native/preview_client.hpp"
+   ]
+  },
+  {
+   "from": "adapter-daemon",
+   "to": "notification-service",
+   "channel": "Python calls within the adapter process",
+   "messages": [
+    "Service.read",
+    "Service.effect",
+    "Service.observation",
+    "Service.drain"
+   ],
+   "summary": "Reads notification history and submits explicit notification actions to the in-process service.",
+   "evidence": [
+    "implementation/warlock/adapter/daemon.py",
+    "implementation/warlock/adapter/notification_service.py"
+   ]
+  },
+  {
+   "from": "notification-service",
+   "to": "adapter-daemon",
+   "channel": "Wake descriptor and Python return values",
+   "messages": [
+    "wake",
+    "notification-update",
+    "notification-snapshot",
+    "notification-outcome"
+   ],
+   "summary": "Signals history changes and returns notification snapshots and action outcomes.",
+   "evidence": [
+    "implementation/warlock/adapter/notification_service.py",
+    "implementation/warlock/adapter/daemon.py"
+   ]
+  },
+  {
+   "from": "applications",
+   "to": "notification-service",
+   "channel": "Session D-Bus: org.freedesktop.Notifications",
+   "messages": [
+    "GetCapabilities",
+    "GetServerInformation",
+    "Notify",
+    "CloseNotification"
+   ],
+   "summary": "Creates, replaces, or closes notifications under the sending application's D-Bus identity.",
+   "evidence": [
+    "implementation/warlock/adapter/notification_service.py"
+   ]
+  },
+  {
+   "from": "notification-service",
+   "to": "applications",
+   "channel": "Session D-Bus replies and signals",
+   "messages": [
+    "Notify return value",
+    "ActionInvoked",
+    "NotificationClosed"
+   ],
+   "summary": "Returns notification identifiers and reports user actions or notification closure to the producer.",
+   "evidence": [
+    "implementation/warlock/adapter/notification_service.py"
+   ]
+  },
+  {
+   "from": "adapter-daemon",
+   "to": "applications",
+   "channel": "GioUnix.DesktopAppInfo and Gio launch APIs",
+   "messages": [
+    "DesktopAppInfo.new_from_filename",
+    "launch",
+    "launch_action",
+    "Gio.File.new_for_uri",
+    "Gio.AppLaunchContext"
+   ],
+   "summary": "Launches a validated desktop entry, a declared application action, or an application-bound recent file.",
+   "evidence": [
+    "implementation/warlock/adapter/catalog_authority.py",
+    "implementation/warlock/adapter/jump_list.py"
+   ]
+  },
+  {
+   "from": "applications",
+   "to": "hyprland-omarchy",
+   "channel": "Wayland and XDG shell",
+   "messages": [
+    "CXDGSurfaceResource",
+    "map",
+    "unmap",
+    "commit",
+    "stateChanged",
+    "metadataChanged",
+    "requestMove",
+    "requestResize"
+   ],
+   "summary": "Supplies native Wayland application surfaces and requests through the compositor's XDG surface handlers.",
+   "evidence": [
+    "implementation/warlock/native/core/Window.cpp"
+   ]
+  },
+  {
+   "from": "applications",
+   "to": "xwayland",
+   "channel": "X11 display protocol",
+   "messages": [
+    "X11"
+   ],
+   "summary": "Connects X11 applications through XWayland so their windows participate in the Wayland desktop.",
+   "evidence": [
+    "implementation/warlock/native/core/Window.cpp"
+   ]
+  },
+  {
+   "from": "xwayland",
+   "to": "hyprland-omarchy",
+   "channel": "Wayland surfaces and compositor XWayland integration",
+   "messages": [
+    "CWindow::create(SP<CXWaylandSurface>)",
+    "map",
+    "unmap",
+    "destroy",
+    "commit",
+    "configureRequest",
+    "stateChanged",
+    "metadataChanged",
+    "resourceChange",
+    "activate",
+    "setGeometry"
+   ],
+   "summary": "Creates X11-marked compositor windows and delivers their lifecycle, metadata, state, and geometry requests.",
+   "evidence": [
+    "implementation/warlock/native/core/Window.cpp",
+    "implementation/warlock/native/core/ViewHitTester.cpp"
+   ]
+  },
+  {
+   "from": "hyprland-omarchy",
+   "to": "xwayland",
+   "channel": "Compositor XWayland surface API",
+   "messages": [
+    "m_xwaylandSurface->configure"
+   ],
+   "summary": "Returns compositor-selected position and size through the XWayland surface configuration interface.",
+   "evidence": [
+    "implementation/warlock/native/core/Window.cpp"
+   ]
+  },
+  {
+   "from": "adapter-daemon",
+   "to": "omarchy-files",
+   "channel": "Fixed qs commands and Quickshell IPC",
+   "messages": [
+    "qs -p <root> list --json",
+    "qs -p <root> ipc --id <instance> call files migrationStatus",
+    "qs -p <root> ipc --id <instance> call files uiState",
+    "qs -p <root> ipc --id <instance> call files open <target>",
+    "qs -p <root> --no-duplicate --daemonize",
+    "FILES_OPEN"
+   ],
+   "summary": "Reads a verified Files instance and opens Home, a supported collection, or an explicit folder.",
+   "evidence": [
+    "implementation/warlock/adapter/explorer.py"
+   ]
+  },
+  {
+   "from": "adapter-daemon",
+   "to": "audio-service",
+   "channel": "pactl subprocess and local Unix audio socket",
+   "messages": [
+    "pactl --server=<server> --format=json info",
+    "pactl --server=<server> --format=json list sinks",
+    "pactl --server=<server> set-sink-volume",
+    "pactl --server=<server> set-sink-mute"
+   ],
+   "summary": "Reads the default sink and applies explicit volume or mute changes with identity checks and readback.",
+   "evidence": [
+    "implementation/warlock/adapter/system_menu.py"
+   ]
+  },
+  {
+   "from": "adapter-daemon",
+   "to": "network-manager",
+   "channel": "System D-Bus",
+   "messages": [
+    "GetAll",
+    "GetPermissions",
+    "Enable",
+    "NetworkingEnabled",
+    "State"
+   ],
+   "summary": "Reads network state and permissions and confirms requested changes through fresh properties.",
+   "evidence": [
+    "implementation/warlock/adapter/system_menu.py"
+   ]
+  },
+  {
+   "from": "adapter-daemon",
+   "to": "login-manager",
+   "channel": "System D-Bus",
+   "messages": [
+    "CanSuspend",
+    "CanReboot",
+    "CanPowerOff",
+    "GetSessionByPID",
+    "GetAll",
+    "Lock",
+    "TerminateSession",
+    "Suspend",
+    "Reboot",
+    "PowerOff"
+   ],
+   "summary": "Reads session and power capabilities and submits the user's confirmed operation.",
+   "evidence": [
+    "implementation/warlock/adapter/system_menu.py"
+   ]
+  },
+  {
+   "from": "native-host",
+   "to": "desktop-preferences",
+   "channel": "Session D-Bus and GtkSettings",
+   "messages": [
+    "ReadOne",
+    "org.freedesktop.appearance",
+    "reduced-motion",
+    "gtk-enable-animations"
+   ],
+   "summary": "Reads the desktop motion preference through the portal or GTK fallback.",
+   "evidence": [
+    "implementation/warlock/native/motion-preference.h"
+   ]
+  },
+  {
+   "from": "desktop-preferences",
+   "to": "native-host",
+   "channel": "D-Bus signals and GObject property notification",
+   "messages": [
+    "SettingChanged",
+    "NameOwnerChanged",
+    "notify::gtk-enable-animations"
+   ],
+   "summary": "Updates the native preference observation delivered to Main as host-motion-preference.",
+   "evidence": [
+    "implementation/warlock/native/motion-preference.h",
+    "implementation/warlock/native/shared-host.c"
+   ]
+  },
+  {
+   "from": "adapter-daemon",
+   "to": "local-storage",
+   "channel": "Filesystem reads, locked writes, atomic rename, and fsync",
+   "messages": [
+    "*.desktop",
+    "recently-used.xbel",
+    "taskbar.json",
+    "settings.json",
+    "motion.json",
+    "shortcuts.json",
+    "RecoveryStore.begin",
+    "RecoveryStore.settle",
+    "ledger-v5.json",
+    "ledger-v6.json",
+    "release-deliveries-v1.json",
+    "workspace-navigation-v1.json",
+    "CancellationLedger"
+   ],
+   "summary": "Reads desktop data and writes preferences and recovery ledgers, selecting the cancellation ledger when cancellationOptIn is enabled.",
+   "evidence": [
+    "implementation/warlock/adapter/daemon.py",
+    "implementation/warlock/adapter/taskbar_catalog.py",
+    "implementation/warlock/adapter/jump_list.py",
+    "implementation/warlock/adapter/taskbar_preferences.py",
+    "implementation/warlock/adapter/shell_preferences.py",
+    "implementation/warlock/adapter/motion_preferences.py",
+    "implementation/warlock/adapter/shortcut_preferences.py",
+    "implementation/warlock/adapter/recovery_store.py",
+    "implementation/warlock/adapter/delivery_ledger.py",
+    "implementation/warlock/adapter/cancellation_ledger.py",
+    "implementation/warlock/adapter/workspace_navigation.py"
+   ]
+  },
+  {
+   "from": "native-host",
+   "to": "local-storage",
+   "channel": "Native admission journal; openat, flock, renameat, and fsync",
+   "messages": [
+    "admission_bind",
+    "admission_write",
+    "admission_retire",
+    "workspace_admission_write",
+    "admissions-v1",
+    "host-owner.lock",
+    "host-writer.lock",
+    "workspace-navigation-v1.json"
+   ],
+   "summary": "Records admitted window and workspace requests durably before backend delivery and retires matching settled window admissions.",
+   "evidence": [
+    "implementation/warlock/native/host-journal.h",
+    "implementation/warlock/native/host.c",
+    "implementation/warlock/native/shared-host.c"
+   ]
+  },
+  {
+   "from": "native-host",
+   "to": "native-preview-policy",
+   "channel": "JavaScriptCore invocation of incoming.send; QA-only",
+   "messages": [
+    "presentation",
+    "grant",
+    "native",
+    "legacy",
+    "quarantine",
+    "issued",
+    "retry",
+    "closed"
+   ],
+   "summary": "Feeds the retained Elm preview worker through the controlled preview driver.",
+   "evidence": [
+    "implementation/warlock/native/elm-preview-policy.cpp",
+    "implementation/warlock/native/preview-policy-driver.cpp",
+    "implementation/warlock/native/controlled-preview-host.h",
+    "implementation/warlock/src/NativePreviewPolicy.elm"
+   ]
+  },
+  {
+   "from": "native-preview-policy",
+   "to": "native-host",
+   "channel": "outgoing port through JavaScriptCore; QA-only",
+   "messages": [
+    "models",
+    "commands",
+    "realm",
+    "metadata",
+    "enrollment",
+    "feedback",
+    "visuals"
+   ],
+   "summary": "Returns retained preview state, command proposals, and visual observations to the native owner.",
+   "evidence": [
+    "implementation/warlock/src/NativePreviewPolicy.elm",
+    "implementation/warlock/native/elm-preview-policy.cpp",
+    "implementation/warlock/native/preview-policy-driver.cpp"
+   ]
+  },
+  {
+   "from": "native-host",
+   "to": "native-preview-control-outbox",
+   "channel": "JavaScriptCore function calls; QA-only",
+   "messages": [
+    "WarlockNativePreviewControlOutbox",
+    "heldRetain",
+    "preview-control-ticket",
+    "heldAcknowledge",
+    "preview-control-delivered",
+    "heldRetry",
+    "heldSnapshot"
+   ],
+   "summary": "Retains native-issued command tickets and supplies delivery receipts to the original outbox.",
+   "evidence": [
+    "implementation/warlock/native/preview-policy-driver.cpp",
+    "implementation/warlock/assets/native-preview-control-outbox.js",
+    "implementation/warlock/native/controlled-preview-host.h"
+   ]
+  },
+  {
+   "from": "native-preview-control-outbox",
+   "to": "native-host",
+   "channel": "JavaScriptCore nativePost and nativeConfirm callbacks; QA-only",
+   "messages": [
+    "preview-commands",
+    "preview-control-confirmed"
+   ],
+   "summary": "Returns exact retained command wires and receipt-observation confirmations to the native driver.",
+   "evidence": [
+    "implementation/warlock/assets/native-preview-control-outbox.js",
+    "implementation/warlock/native/preview-policy-driver.cpp"
+   ]
+  },
+  {
+   "from": "native-host",
+   "to": "native-previews",
+   "channel": "Controlled preview C interface; QA-only",
+   "messages": [
+    "warlock_imported_clients_propose_envelope",
+    "warlock_imported_clients_dispatch_control",
+    "warlock_imported_clients_confirm_control"
+   ],
+   "summary": "Obtains command tickets, dispatches retained controls, and confirms receipt observation for the controlled preview realm.",
+   "evidence": [
+    "implementation/warlock/native/preview-policy-driver.cpp",
+    "implementation/warlock/native/imported-clients.cpp"
+   ]
+  },
+  {
+   "from": "controlled-popup-adapter",
+   "to": "native-preview-admission",
+   "channel": "Elm initialization; presentation; requestAction; QA-only",
+   "messages": [
+    "Elm.NativePreviewAdmission.init",
+    "presentation",
+    "surface-action"
+   ],
+   "summary": "Starts the initial admission renderer and supplies its presentation and captured actions.",
+   "evidence": [
+    "implementation/warlock/assets/controlled-popup-adapter.js",
+    "implementation/warlock/src/NativePreviewAdmission.elm",
+    "implementation/warlock/src/Presentation.elm",
+    "implementation/warlock/src/CapturedAction.elm"
+   ]
+  },
+  {
+   "from": "native-preview-admission",
+   "to": "controlled-popup-adapter",
+   "channel": "actions; QA-only",
+   "messages": [
+    "surface-action"
+   ],
+   "summary": "Returns actions admitted against the initial controlled popup presentation.",
+   "evidence": [
+    "implementation/warlock/src/NativePreviewAdmission.elm",
+    "implementation/warlock/src/Presentation.elm",
+    "implementation/warlock/src/CapturedAction.elm",
+    "implementation/warlock/assets/controlled-popup-adapter.js"
+   ]
+  },
+  {
+   "from": "controlled-popup-adapter",
+   "to": "native-preview-renderer",
+   "channel": "Elm initialization and visualSnapshots; QA-only",
+   "messages": [
+    "Elm.NativePreviewRenderer.init",
+    "native-preview-renderer-grant",
+    "native-preview-projection"
+   ],
+   "summary": "Replaces the initial renderer with a receiver bound to a native grant and sends ordered visual snapshots.",
+   "evidence": [
+    "implementation/warlock/assets/controlled-popup-adapter.js",
+    "implementation/warlock/src/NativePreviewRenderer.elm",
+    "implementation/warlock/src/NativePreviewReceiver.elm"
+   ]
+  },
+  {
+   "from": "native-preview-renderer",
+   "to": "controlled-popup-adapter",
+   "channel": "acceptedSnapshots; surfaceActions; QA-only",
+   "messages": [
+    "native-preview-projection-accepted",
+    "surface-action"
+   ],
+   "summary": "Reports accepted visual sequences and admitted ordinary surface actions.",
+   "evidence": [
+    "implementation/warlock/src/NativePreviewRenderer.elm",
+    "implementation/warlock/src/NativePreviewReceiver.elm",
+    "implementation/warlock/src/CapturedAction.elm",
+    "implementation/warlock/assets/controlled-popup-adapter.js"
+   ]
+  },
+  {
+   "from": "native-host",
+   "to": "controlled-popup-adapter",
+   "channel": "webkit_web_view_evaluate_javascript; QA-only",
+   "messages": [
+    "receivePresentation",
+    "receiveFocus",
+    "initializeNativePreviewRenderer",
+    "receiveNativeVisualProjection"
+   ],
+   "summary": "Initializes and updates the controlled popup selected by the host's explicit QA option.",
+   "evidence": [
+    "implementation/warlock/native/controlled-preview-host.h",
+    "implementation/warlock/native/host.c",
+    "implementation/warlock/assets/controlled-popup-adapter.js"
+   ]
+  },
+  {
+   "from": "controlled-popup-adapter",
+   "to": "native-host",
+   "channel": "WebKit script message handler: native.postMessage; QA-only",
+   "messages": [
+    "presentation-ready",
+    "presentation-applied",
+    "focus-applied",
+    "surface-action",
+    "native-preview-projection-accepted"
+   ],
+   "summary": "Returns controlled popup actions and acknowledgments while the host owns visibility and preview resources.",
+   "evidence": [
+    "implementation/warlock/assets/controlled-popup-adapter.js",
+    "implementation/warlock/native/controlled-preview-host.h",
+    "implementation/warlock/src/CapturedAction.elm"
+   ]
+  },
+  {
+   "from": "activation-adapter",
+   "to": "controlled-popup-adapter",
+   "channel": "submitSurfaceAction; QA-only",
+   "messages": [
+    "surface-action"
+   ],
+   "summary": "Applies captured activation checks to the controlled popup's current receiver.",
+   "evidence": [
+    "implementation/warlock/assets/activation.js",
+    "implementation/warlock/assets/controlled-popup-adapter.js",
+    "implementation/warlock/assets/controlled-popup.html"
+   ]
+  },
+  {
+   "from": "runtime",
+   "to": "held-document",
+   "channel": "Haskell library import",
+   "messages": [],
+   "summary": "runtime builds on held-document.",
+   "evidence": [
+    "implementation/warlock/haskell/runtime/runtime.cabal"
+   ]
+  },
+  {
+   "from": "runtime",
+   "to": "process-custody",
+   "channel": "Haskell library import",
+   "messages": [],
+   "summary": "runtime builds on process-custody.",
+   "evidence": [
+    "implementation/warlock/haskell/runtime/runtime.cabal"
+   ]
+  },
+  {
+   "from": "runtime",
+   "to": "protocol",
+   "channel": "Haskell library import",
+   "messages": [],
+   "summary": "runtime builds on protocol.",
+   "evidence": [
+    "implementation/warlock/haskell/runtime/runtime.cabal"
+   ]
+  }
+ ],
+ "flows": [
+  {
+   "id": "open-launcher",
+   "name": "Open Applications from the taskbar",
+   "summary": "A taskbar gesture reaches Main through native checks and opens Applications in the shared popup.",
+   "steps": [
+    {
+     "from": "activation-adapter",
+     "to": "bar-adapter",
+     "message": "submitSurfaceAction: surface-action, id=bar:applications",
+     "summary": "Captures the completed Applications gesture."
+    },
+    {
+     "from": "bar-adapter",
+     "to": "bar",
+     "message": "requestAction: surface-action",
+     "summary": "Requests validation against the displayed taskbar."
+    },
+    {
+     "from": "bar",
+     "to": "bar-adapter",
+     "message": "actions: surface-action",
+     "summary": "Returns the admitted action."
+    },
+    {
+     "from": "bar-adapter",
+     "to": "native-host",
+     "message": "native.postMessage: surface-action",
+     "summary": "Sends the action through the native surface gate."
+    },
+    {
+     "from": "native-host",
+     "to": "controller-adapter",
+     "message": "receiveAction: view-action",
+     "summary": "Adds the originating output scope after native checks."
+    },
+    {
+     "from": "controller-adapter",
+     "to": "main",
+     "message": "rendererActions: view-action",
+     "summary": "Delivers the Applications choice to Main."
+    },
+    {
+     "from": "main",
+     "to": "controller-adapter",
+     "message": "surfaceCommits: view-commit, frame.mode=applications",
+     "summary": "Publishes launcher controls, popup ownership, and focus targets."
+    },
+    {
+     "from": "controller-adapter",
+     "to": "native-host",
+     "message": "native.postMessage: view-commit",
+     "summary": "Submits the coordinated presentation."
+    },
+    {
+     "from": "native-host",
+     "to": "popup-adapter",
+     "message": "receivePresentation",
+     "summary": "Delivers the launcher frame to the popup document."
+    },
+    {
+     "from": "popup-adapter",
+     "to": "popup",
+     "message": "presentation",
+     "summary": "Renders search and application controls."
+    },
+    {
+     "from": "popup-adapter",
+     "to": "native-host",
+     "message": "presentation-applied",
+     "summary": "Acknowledges the current presentation after two animation frames."
+    },
+    {
+     "from": "native-host",
+     "to": "popup-adapter",
+     "message": "receiveFocus: surface-focus",
+     "summary": "Directs keyboard focus to the current launcher target."
+    }
+   ]
+  },
+  {
+   "id": "search-and-launch",
+   "name": "Search and launch an application",
+   "summary": "Committed text filters the catalog, and selecting a result submits a launch whose receipt remains separate from window observation.",
+   "steps": [
+    {
+     "from": "popup",
+     "to": "popup-adapter",
+     "message": "actions: surface-query, id=control:search",
+     "summary": "Emits committed search text after local composition handling."
+    },
+    {
+     "from": "popup-adapter",
+     "to": "native-host",
+     "message": "native.postMessage: surface-query",
+     "summary": "Sends the query after its presentation acknowledgment."
+    },
+    {
+     "from": "native-host",
+     "to": "controller-adapter",
+     "message": "receiveAction: view-action",
+     "summary": "Routes the query with the popup owner's scope."
+    },
+    {
+     "from": "controller-adapter",
+     "to": "main",
+     "message": "rendererActions: view-action containing surface-query",
+     "summary": "Updates the search and ranks matching catalog entries."
+    },
+    {
+     "from": "main",
+     "to": "controller-adapter",
+     "message": "surfaceCommits: view-commit",
+     "summary": "Publishes the filtered application controls."
+    },
+    {
+     "from": "controller-adapter",
+     "to": "native-host",
+     "message": "native.postMessage: view-commit",
+     "summary": "Submits the updated launcher presentation."
+    },
+    {
+     "from": "native-host",
+     "to": "popup-adapter",
+     "message": "receivePresentation",
+     "summary": "Delivers the matching results."
+    },
+    {
+     "from": "popup-adapter",
+     "to": "popup",
+     "message": "presentation",
+     "summary": "Renders the filtered list."
+    },
+    {
+     "from": "activation-adapter",
+     "to": "popup-adapter",
+     "message": "submitSurfaceAction: surface-action, id=entry:<catalog-id>",
+     "summary": "Captures the user's explicit result selection."
+    },
+    {
+     "from": "popup-adapter",
+     "to": "popup",
+     "message": "requestAction: surface-action",
+     "summary": "Validates the selection against the displayed results."
+    },
+    {
+     "from": "popup",
+     "to": "popup-adapter",
+     "message": "actions: surface-action",
+     "summary": "Returns the admitted entry action."
+    },
+    {
+     "from": "popup-adapter",
+     "to": "native-host",
+     "message": "native.postMessage: surface-action",
+     "summary": "Sends the launch choice through native input checks."
+    },
+    {
+     "from": "native-host",
+     "to": "controller-adapter",
+     "message": "receiveAction: view-action",
+     "summary": "Routes the choice to the controller."
+    },
+    {
+     "from": "controller-adapter",
+     "to": "main",
+     "message": "rendererActions: view-action",
+     "summary": "Creates an intent bound to the catalog identity and generation."
+    },
+    {
+     "from": "main",
+     "to": "controller-adapter",
+     "message": "surfaceCommits: view-commit containing application-launch",
+     "summary": "Publishes pending feedback and the launch request."
+    },
+    {
+     "from": "controller-adapter",
+     "to": "native-host",
+     "message": "native.postMessage: view-commit",
+     "summary": "Submits the launch request in its controller batch."
+    },
+    {
+     "from": "native-host",
+     "to": "adapter-daemon",
+     "message": "application-launch",
+     "summary": "Forwards the admitted request to the catalog authority."
+    },
+    {
+     "from": "adapter-daemon",
+     "to": "applications",
+     "message": "DesktopAppInfo.launch([], Gio.AppLaunchContext())",
+     "summary": "Revalidates the desktop entry and submits it to Gio."
+    },
+    {
+     "from": "adapter-daemon",
+     "to": "native-host",
+     "message": "application-launch-outcome",
+     "summary": "Reports Submitted, Refused, or Unknown."
+    },
+    {
+     "from": "native-host",
+     "to": "controller-adapter",
+     "message": "receiveNative: application-launch-outcome",
+     "summary": "Delivers the launch receipt."
+    },
+    {
+     "from": "controller-adapter",
+     "to": "main",
+     "message": "nativeEvents: application-launch-outcome",
+     "summary": "Settles launch feedback while compositor observations establish any new window."
+    }
+   ]
+  },
+  {
+   "id": "activate-taskbar-window",
+   "name": "Activate a window from the taskbar",
+   "summary": "Selecting an inactive single-window group creates an activation request that the plugin applies and checks inside Hyprland.",
+   "steps": [
+    {
+     "from": "activation-adapter",
+     "to": "bar-adapter",
+     "message": "submitSurfaceAction: surface-action, id=bar:group:<group-key>",
+     "summary": "Captures the selected taskbar group."
+    },
+    {
+     "from": "bar-adapter",
+     "to": "bar",
+     "message": "requestAction: surface-action",
+     "summary": "Checks the captured action against the current presentation."
+    },
+    {
+     "from": "bar",
+     "to": "bar-adapter",
+     "message": "actions: surface-action",
+     "summary": "Returns the admitted group choice."
+    },
+    {
+     "from": "bar-adapter",
+     "to": "native-host",
+     "message": "native.postMessage: surface-action",
+     "summary": "Sends the choice through the native surface gate."
+    },
+    {
+     "from": "native-host",
+     "to": "controller-adapter",
+     "message": "receiveAction: view-action",
+     "summary": "Associates the action with its output."
+    },
+    {
+     "from": "controller-adapter",
+     "to": "main",
+     "message": "rendererActions: view-action",
+     "summary": "Resolves activation from the group's current window facts."
+    },
+    {
+     "from": "main",
+     "to": "controller-adapter",
+     "message": "surfaceCommits: view-commit containing window-effect, operation=activate",
+     "summary": "Publishes pending feedback and the activation intent."
+    },
+    {
+     "from": "controller-adapter",
+     "to": "native-host",
+     "message": "native.postMessage: view-commit",
+     "summary": "Submits the batch for native admission."
+    },
+    {
+     "from": "native-host",
+     "to": "local-storage",
+     "message": "admission_write: admissions-v1/<key>.json",
+     "summary": "Records the pending window intent durably before delivery."
+    },
+    {
+     "from": "native-host",
+     "to": "adapter-daemon",
+     "message": "window-effect, effectProtocol=1, operation=activate",
+     "summary": "Forwards the admitted activation."
+    },
+    {
+     "from": "adapter-daemon",
+     "to": "authority-plugin",
+     "message": "j/elm_observe: window-effect",
+     "summary": "Submits the operation after recording backend custody."
+    },
+    {
+     "from": "authority-plugin",
+     "to": "hyprland-omarchy",
+     "message": "Desktop::focusState()->fullWindowFocus; Desktop::windowState()->raise",
+     "summary": "Focuses the eligible family recipient and raises the focused window."
+    },
+    {
+     "from": "authority-plugin",
+     "to": "adapter-daemon",
+     "message": "effect-outcome",
+     "summary": "Reports the result after checking native state."
+    },
+    {
+     "from": "adapter-daemon",
+     "to": "native-host",
+     "message": "host-admission-settled; effect-outcome",
+     "summary": "Persists the settlement and returns its admission record and effect receipt."
+    },
+    {
+     "from": "native-host",
+     "to": "controller-adapter",
+     "message": "receiveNative: effect-outcome",
+     "summary": "Consumes the admission settlement locally and delivers the effect outcome."
+    },
+    {
+     "from": "controller-adapter",
+     "to": "main",
+     "message": "nativeEvents: effect-outcome",
+     "summary": "Settles pending activation while fresh observations determine the taskbar's active state."
+    }
+   ]
+  },
+  {
+   "id": "task-view-workspace",
+   "name": "Switch to an empty workspace from Task View",
+   "summary": "Go to workspace navigates to an observed empty destination while Task View filters only change the displayed list.",
+   "steps": [
+    {
+     "from": "activation-adapter",
+     "to": "popup-adapter",
+     "message": "submitSurfaceAction: surface-action, id=overview:go:<workspace>",
+     "summary": "Captures the explicit navigation choice in the open Task View."
+    },
+    {
+     "from": "popup-adapter",
+     "to": "popup",
+     "message": "requestAction: surface-action",
+     "summary": "Checks the destination action against the current presentation."
+    },
+    {
+     "from": "popup",
+     "to": "popup-adapter",
+     "message": "actions: surface-action",
+     "summary": "Returns the admitted navigation action."
+    },
+    {
+     "from": "popup-adapter",
+     "to": "native-host",
+     "message": "native.postMessage: surface-action",
+     "summary": "Sends the destination choice."
+    },
+    {
+     "from": "native-host",
+     "to": "controller-adapter",
+     "message": "receiveAction: view-action",
+     "summary": "Routes the action under its popup owner."
+    },
+    {
+     "from": "controller-adapter",
+     "to": "main",
+     "message": "rendererActions: view-action",
+     "summary": "Binds navigation to the observed source and destination workspace generations."
+    },
+    {
+     "from": "main",
+     "to": "controller-adapter",
+     "message": "surfaceCommits: view-commit containing workspace-navigation",
+     "summary": "Publishes the navigation request and pending state."
+    },
+    {
+     "from": "controller-adapter",
+     "to": "native-host",
+     "message": "native.postMessage: view-commit",
+     "summary": "Submits the navigation batch."
+    },
+    {
+     "from": "native-host",
+     "to": "local-storage",
+     "message": "workspace_admission_write: workspace-navigation-v1.json",
+     "summary": "Records the admitted navigation durably before delivery."
+    },
+    {
+     "from": "native-host",
+     "to": "adapter-daemon",
+     "message": "workspace-navigation",
+     "summary": "Passes the request to its backend coordinator."
+    },
+    {
+     "from": "adapter-daemon",
+     "to": "authority-plugin",
+     "message": "j/elm_observe: workspace-navigation",
+     "summary": "Submits the recorded intent without automatically replaying uncertain delivery."
+    },
+    {
+     "from": "authority-plugin",
+     "to": "hyprland-omarchy",
+     "message": "changeWorkspace; rawMonitorFocus; fullWindowFocus(nullptr)",
+     "summary": "Activates the checked destination monitor and empty workspace."
+    },
+    {
+     "from": "authority-plugin",
+     "to": "adapter-daemon",
+     "message": "workspace-navigation-outcome",
+     "summary": "Reports the result after checking workspace, monitor, and focus."
+    },
+    {
+     "from": "adapter-daemon",
+     "to": "native-host",
+     "message": "workspace-navigation-outcome",
+     "summary": "Persists and forwards the settlement."
+    },
+    {
+     "from": "native-host",
+     "to": "controller-adapter",
+     "message": "receiveNative: workspace-navigation-outcome",
+     "summary": "Delivers the navigation result."
+    },
+    {
+     "from": "controller-adapter",
+     "to": "main",
+     "message": "nativeEvents: workspace-navigation-outcome",
+     "summary": "Settles navigation and reconciles the desktop presentation."
+    }
+   ]
+  },
+  {
+   "id": "receive-notification",
+   "name": "Show an application notification",
+   "summary": "An application notification updates bounded history, taskbar state, and the designated accessible announcement.",
+   "steps": [
+    {
+     "from": "applications",
+     "to": "notification-service",
+     "message": "org.freedesktop.Notifications.Notify",
+     "summary": "Submits notification text and actions under the producer's D-Bus identity."
+    },
+    {
+     "from": "notification-service",
+     "to": "applications",
+     "message": "Notify return value",
+     "summary": "Returns the notification identifier."
+    },
+    {
+     "from": "notification-service",
+     "to": "adapter-daemon",
+     "message": "wake; notification-update",
+     "summary": "Signals changed history and supplies its current snapshot when read."
+    },
+    {
+     "from": "adapter-daemon",
+     "to": "native-host",
+     "message": "notification-update",
+     "summary": "Sends the unsolicited snapshot over the backend pipe."
+    },
+    {
+     "from": "native-host",
+     "to": "controller-adapter",
+     "message": "receiveNative: notification-update",
+     "summary": "Routes the update to the controller."
+    },
+    {
+     "from": "controller-adapter",
+     "to": "main",
+     "message": "nativeEvents: notification-update",
+     "summary": "Updates notification state and applies announcement policy."
+    },
+    {
+     "from": "main",
+     "to": "controller-adapter",
+     "message": "surfaceCommits: view-commit",
+     "summary": "Publishes taskbar state, visible history controls, and any permitted announcement."
+    },
+    {
+     "from": "controller-adapter",
+     "to": "native-host",
+     "message": "native.postMessage: view-commit",
+     "summary": "Submits the coordinated notification presentation."
+    },
+    {
+     "from": "native-host",
+     "to": "bar-adapter",
+     "message": "receivePresentation; receiveAnnouncement",
+     "summary": "Updates the taskbar and sends an announcement when it is the designated recipient."
+    },
+    {
+     "from": "bar-adapter",
+     "to": "bar",
+     "message": "presentation; announcements: announcement-projection",
+     "summary": "Renders notification state and the admitted accessible announcement."
+    },
+    {
+     "from": "native-host",
+     "to": "popup-adapter",
+     "message": "receivePresentation",
+     "summary": "Updates notification history when its panel is open."
+    },
+    {
+     "from": "popup-adapter",
+     "to": "popup",
+     "message": "presentation",
+     "summary": "Renders current history entries and their valid actions."
+    }
+   ]
+  },
+  {
+   "id": "save-appearance",
+   "name": "Save appearance in Settings",
+   "summary": "Saving an edited Settings draft persists the proposal before committed appearance reaches each document's CSS.",
+   "steps": [
+    {
+     "from": "activation-adapter",
+     "to": "popup-adapter",
+     "message": "submitSurfaceAction: surface-action, id=settings:save",
+     "summary": "Captures Save settings after the user edits the draft."
+    },
+    {
+     "from": "popup-adapter",
+     "to": "popup",
+     "message": "requestAction: surface-action",
+     "summary": "Checks Save against the current enabled presentation."
+    },
+    {
+     "from": "popup",
+     "to": "popup-adapter",
+     "message": "actions: surface-action",
+     "summary": "Returns the admitted save action."
+    },
+    {
+     "from": "popup-adapter",
+     "to": "native-host",
+     "message": "native.postMessage: surface-action",
+     "summary": "Sends the explicit save request."
+    },
+    {
+     "from": "native-host",
+     "to": "controller-adapter",
+     "message": "receiveAction: view-action",
+     "summary": "Routes the Settings action to its controller."
+    },
+    {
+     "from": "controller-adapter",
+     "to": "main",
+     "message": "rendererActions: view-action",
+     "summary": "Creates a proposal using the captured storage revision."
+    },
+    {
+     "from": "main",
+     "to": "controller-adapter",
+     "message": "surfaceCommits: view-commit containing shell-settings-write",
+     "summary": "Publishes pending save feedback and proposed values."
+    },
+    {
+     "from": "controller-adapter",
+     "to": "native-host",
+     "message": "native.postMessage: view-commit",
+     "summary": "Submits the settings batch."
+    },
+    {
+     "from": "native-host",
+     "to": "adapter-daemon",
+     "message": "shell-settings-write",
+     "summary": "Forwards the admitted proposal to preference storage."
+    },
+    {
+     "from": "adapter-daemon",
+     "to": "local-storage",
+     "message": "settings.json; rename; fsync",
+     "summary": "Checks the revision and atomically saves the validated values."
+    },
+    {
+     "from": "adapter-daemon",
+     "to": "native-host",
+     "message": "shell-settings-outcome, status=Saved",
+     "summary": "Returns the saved snapshot and new revision."
+    },
+    {
+     "from": "native-host",
+     "to": "controller-adapter",
+     "message": "receiveNative: shell-settings-outcome",
+     "summary": "Delivers the storage receipt."
+    },
+    {
+     "from": "controller-adapter",
+     "to": "main",
+     "message": "nativeEvents: shell-settings-outcome",
+     "summary": "Accepts the matching saved result as committed appearance."
+    },
+    {
+     "from": "main",
+     "to": "controller-adapter",
+     "message": "surfaceCommits: view-commit with appearance",
+     "summary": "Publishes the committed appearance."
+    },
+    {
+     "from": "controller-adapter",
+     "to": "native-host",
+     "message": "native.postMessage: view-commit",
+     "summary": "Submits the updated presentation."
+    },
+    {
+     "from": "native-host",
+     "to": "popup-adapter",
+     "message": "receivePresentation",
+     "summary": "Delivers committed appearance to Settings."
+    },
+    {
+     "from": "popup-adapter",
+     "to": "popup",
+     "message": "presentation",
+     "summary": "Renders the committed appearance attributes."
+    },
+    {
+     "from": "popup",
+     "to": "appearance-adapter",
+     "message": "data-theme; data-text-scale; data-effects; data-reduced-transparency",
+     "summary": "Exposes the saved appearance in the surface DOM."
+    },
+    {
+     "from": "appearance-adapter",
+     "to": "webkit-renderer",
+     "message": "document.documentElement.dataset; style.fontSize",
+     "summary": "Updates the root so shell.css paints the saved appearance."
+    }
+   ]
+  },
+  {
+   "id": "apply-snap",
+   "name": "Apply a snap layout",
+   "summary": "Apply requests checked placement of an eligible floating Wayland window within its observed work area.",
+   "steps": [
+    {
+     "from": "activation-adapter",
+     "to": "popup-adapter",
+     "message": "submitSurfaceAction: surface-action, id=snap:apply",
+     "summary": "Captures Apply for the selected snap region."
+    },
+    {
+     "from": "popup-adapter",
+     "to": "popup",
+     "message": "requestAction: surface-action",
+     "summary": "Validates Apply against the current chooser."
+    },
+    {
+     "from": "popup",
+     "to": "popup-adapter",
+     "message": "actions: surface-action",
+     "summary": "Returns the admitted snap action."
+    },
+    {
+     "from": "popup-adapter",
+     "to": "native-host",
+     "message": "native.postMessage: surface-action",
+     "summary": "Sends Apply through the native popup gate."
+    },
+    {
+     "from": "native-host",
+     "to": "controller-adapter",
+     "message": "receiveAction: view-action",
+     "summary": "Routes the action under its current output owner."
+    },
+    {
+     "from": "controller-adapter",
+     "to": "main",
+     "message": "rendererActions: view-action",
+     "summary": "Builds the snap intent from the selected region and current geometry facts."
+    },
+    {
+     "from": "main",
+     "to": "controller-adapter",
+     "message": "surfaceCommits: view-commit containing window-effect, operation=snap",
+     "summary": "Publishes pending feedback and a placement bound to observed native revisions."
+    },
+    {
+     "from": "controller-adapter",
+     "to": "native-host",
+     "message": "native.postMessage: view-commit",
+     "summary": "Submits the geometry batch."
+    },
+    {
+     "from": "native-host",
+     "to": "local-storage",
+     "message": "admission_write: admissions-v1/<key>.json",
+     "summary": "Records the snap intent durably before backend delivery."
+    },
+    {
+     "from": "native-host",
+     "to": "adapter-daemon",
+     "message": "window-effect, effectProtocol=2, operation=snap",
+     "summary": "Forwards the admitted placement request."
+    },
+    {
+     "from": "adapter-daemon",
+     "to": "authority-plugin",
+     "message": "j/elm_observe: window-effect",
+     "summary": "Records the operation and submits its exact placement."
+    },
+    {
+     "from": "authority-plugin",
+     "to": "hyprland-omarchy",
+     "message": "window->layoutTarget()->setPositionGlobal",
+     "summary": "Applies the region after rechecking window eligibility, work-area identity, and size policy."
+    },
+    {
+     "from": "authority-plugin",
+     "to": "adapter-daemon",
+     "message": "effect-outcome",
+     "summary": "Reports the result after checking geometry and preserved focus."
+    },
+    {
+     "from": "adapter-daemon",
+     "to": "native-host",
+     "message": "host-admission-settled; effect-outcome",
+     "summary": "Persists the settlement and forwards the admission record and effect receipt."
+    },
+    {
+     "from": "native-host",
+     "to": "controller-adapter",
+     "message": "receiveNative: effect-outcome",
+     "summary": "Consumes the admission settlement locally and delivers the snap result."
+    },
+    {
+     "from": "controller-adapter",
+     "to": "main",
+     "message": "nativeEvents: effect-outcome",
+     "summary": "Settles pending feedback and reconciles subsequent geometry observations."
+    }
+   ]
+  }
+ ],
+ "_check": {
+  "round": 3,
+  "false_items": 1,
+  "missing": 0
+ },
+ "_note": "variant=controlled-preview marks the alternative controlled-popup entry (assets/controlled-popup.html); the default runtime loads index.html, bar.html and popup.html."
+}

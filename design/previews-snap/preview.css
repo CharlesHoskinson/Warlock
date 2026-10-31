@@ -1,0 +1,52 @@
+/* Shared preview internals. Load after the legacy layer. */
+@layer components {
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"] .surface-controls { min-width:0; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"] button[data-surface-control^="family:"] { box-sizing:border-box; width:100%; min-width:0; }
+  html[data-warlock-design="v1"] .surface-popup .preview-content { display: contents; }
+  html[data-warlock-design="v1"] .surface-popup .window-preview { min-width: 0; }
+  html[data-warlock-design="v1"] .surface-popup :is(.preview-title,.preview-state,.preview-fidelity) { display:block; white-space:normal; overflow:visible; overflow-wrap:anywhere; text-overflow:clip; }
+  html[data-warlock-design="v1"] .surface-popup :is(.preview-state,.preview-fidelity) { color:var(--wl-sys-color-text-secondary); font-size:.75rem; line-height:1.333333; }
+  html[data-warlock-design="v1"] .surface-popup .preview-image { object-fit:contain; }
+  html[data-warlock-design="v1"] .surface-popup .preview-description[hidden] { display:none; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"][data-picker-admitted="true"] button[data-surface-control^="family:"] { display:grid; position:relative; grid-template-columns:minmax(0,160px) minmax(0,1fr); grid-template-rows:var(--wl-picker-state-slot) var(--wl-picker-title-slot) var(--wl-picker-fidelity-slot) var(--wl-picker-label-slot) var(--wl-picker-detail-slot); column-gap:12px; row-gap:2px; align-content:start; align-items:start; height:min(calc(7.5rem + 16px),calc(100vh - 30px)); min-height:min(calc(7.5rem + 16px),calc(100vh - 30px)); max-height:min(calc(7.5rem + 16px),calc(100vh - 30px)); }
+  /* The well is independent of whether the visual contains an image. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"][data-picker-admitted="true"] button[data-surface-control^="family:"]::before { content:""; grid-column:1; grid-row:1 / span 5; width:100%; height:100px; box-sizing:border-box; background:var(--wl-sys-color-surface-recessed); border:1px solid var(--wl-sys-color-border-essential); border-radius:8px; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"][data-picker-admitted="true"] button[data-surface-control^="family:"] :is(.window-preview,.window-preview > span:not(.preview-title):not(.preview-state)) { display:contents; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"][data-picker-admitted="true"] button[data-surface-control^="family:"] :is(.preview-image,.preview-icon) { grid-column:1; grid-row:1 / span 5; z-index:1; width:100%; height:100%; max-width:160px; max-height:100px; object-fit:contain; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"][data-picker-admitted="true"] button[data-surface-control^="family:"] .preview-icon { width:48px; height:48px; align-self:center; justify-self:center; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"][data-picker-admitted="true"] button[data-surface-control^="family:"] .preview-state { grid-column:2; grid-row:1; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"][data-picker-admitted="true"] button[data-surface-control^="family:"] .preview-title { grid-column:2; grid-row:2; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"][data-picker-admitted="true"] button[data-surface-control^="family:"] .preview-fidelity { grid-column:2; grid-row:3; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"][data-picker-admitted="true"] button[data-surface-control^="family:"] .control-label { grid-column:2; grid-row:4; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"][data-picker-admitted="true"] button[data-surface-control^="family:"] .control-detail { grid-column:2; grid-row:5; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"][data-picker-admitted="true"] button[data-surface-control^="family:"] :is(.control-label,.control-detail) { white-space:normal; overflow:visible; overflow-wrap:anywhere; text-overflow:clip; margin:0; }
+}
+
+/* Proposed host-admitted profiles. The host measures and fixes --wl-picker-row-height
+   before publishing targets; this hook is not emitted by the current Elm renderer. */
+@layer components {
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"][data-picker-admitted="true"][data-picker-profile="expanded"] button[data-surface-control^="family:"],
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"][data-picker-admitted="true"][data-picker-profile="stacked"] button[data-surface-control^="family:"],
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"][data-picker-admitted="true"][data-picker-profile="text-first"] button[data-surface-control^="family:"] { height:var(--wl-picker-row-height); min-height:var(--wl-picker-row-height); max-height:var(--wl-picker-row-height); grid-template-rows:var(--wl-picker-state-slot) var(--wl-picker-title-slot) var(--wl-picker-fidelity-slot) var(--wl-picker-label-slot) var(--wl-picker-detail-slot); align-content:start; row-gap:2px; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"][data-picker-admitted="true"][data-picker-profile="stacked"] button[data-surface-control^="family:"] { grid-template-columns:minmax(0,1fr); grid-template-rows:100px var(--wl-picker-state-slot) var(--wl-picker-title-slot) var(--wl-picker-fidelity-slot) var(--wl-picker-label-slot) var(--wl-picker-detail-slot); gap:2px; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"][data-picker-admitted="true"][data-picker-profile="stacked"] button[data-surface-control^="family:"]::before,
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"][data-picker-admitted="true"][data-picker-profile="stacked"] button[data-surface-control^="family:"] :is(.preview-image,.preview-icon) { grid-column:1; grid-row:1; width:160px; height:100px; max-width:100%; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"][data-picker-admitted="true"][data-picker-profile="stacked"] button[data-surface-control^="family:"] .preview-state {grid-column:1;grid-row:2}
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"][data-picker-admitted="true"][data-picker-profile="stacked"] button[data-surface-control^="family:"] .preview-title {grid-column:1;grid-row:3}
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"][data-picker-admitted="true"][data-picker-profile="stacked"] button[data-surface-control^="family:"] .preview-fidelity {grid-column:1;grid-row:4}
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"][data-picker-admitted="true"][data-picker-profile="stacked"] button[data-surface-control^="family:"] .control-label {grid-column:1;grid-row:5}
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"][data-picker-admitted="true"][data-picker-profile="stacked"] button[data-surface-control^="family:"] .control-detail {grid-column:1;grid-row:6}
+}
+
+/* Text-first admission retains a fixed visual slot without depending on image presence.
+   The host sets the measured common height before publishing the target lease. */
+@layer components {
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"][data-picker-admitted="true"][data-picker-profile="text-first"] button[data-surface-control^="family:"] { grid-template-columns:minmax(0,1fr); grid-template-rows:var(--wl-picker-state-slot) var(--wl-picker-title-slot) var(--wl-picker-fidelity-slot) var(--wl-picker-label-slot) var(--wl-picker-detail-slot) 40px; gap:2px; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"][data-picker-admitted="true"][data-picker-profile="text-first"] button[data-surface-control^="family:"]::before,
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"][data-picker-admitted="true"][data-picker-profile="text-first"] button[data-surface-control^="family:"] :is(.preview-image,.preview-icon) { grid-column:1; grid-row:6; width:64px; height:40px; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"][data-picker-admitted="true"][data-picker-profile="text-first"] button[data-surface-control^="family:"] .preview-state {grid-column:1;grid-row:1}
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"][data-picker-admitted="true"][data-picker-profile="text-first"] button[data-surface-control^="family:"] .preview-title {grid-column:1;grid-row:2}
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"][data-picker-admitted="true"][data-picker-profile="text-first"] button[data-surface-control^="family:"] .preview-fidelity {grid-column:1;grid-row:3}
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"][data-picker-admitted="true"][data-picker-profile="text-first"] button[data-surface-control^="family:"] .control-label {grid-column:1;grid-row:4}
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"][data-picker-admitted="true"][data-picker-profile="text-first"] button[data-surface-control^="family:"] .control-detail {grid-column:1;grid-row:5}
+}

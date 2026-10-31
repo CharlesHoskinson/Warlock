@@ -1,0 +1,25 @@
+--- a/test-drive/host/index.js
++++ b/test-drive/host/index.js
+@@ -274,6 +274,22 @@
+         if (!state.windows.some(w=>w.focused)) { const next=state.windows.find(w=>!w.minimized && w.workspace===state.activeWorkspace); if (next) next.focused=true; }
+         revision++; publish(); observe(); return true;
+       }
++      // Input adapter sends only current, admitted outside presses.
++      if (input?.kind === 'outside-press') {
++        if (input.epoch !== epoch || !presentation || presentation.mode === 'closed' ||
++            input.publication !== presentation.publication || input.lease !== presentation.lease || !applied.has('popup')) return false;
++        deliver('controller','receiveDismiss',presentation.lease); return true;
++      }
++      if (input?.kind === 'placement') {
++        if (input.epoch !== epoch || !['left','right','top-left','top-right','bottom-left','bottom-right','maximize'].includes(input.zone)) return false;
++        const win=state.windows.find(w=>w.id===input.windowId && w.incarnation===input.incarnation && !w.minimized && w.workspace===state.activeWorkspace);
++        const g=input.geometry, area=state.workArea;
++        if (!win || win._drag || !g || !['x','y','width','height'].every(k=>Number.isFinite(g[k])) || g.width<=0 || g.height<=0 || g.x<area.x || g.y<area.y || g.x+g.width>area.x+area.width || g.y+g.height>area.y+area.height) return false;
++        if (!win.restoreGeometry) { win.restoreGeometry={...win.geometry}; win.restorePlacementMode=win.placementMode || 'tiled'; }
++        win.geometry=input.zone==='maximize' ? {...area} : {...g};
++        win.placementMode=input.zone==='maximize' ? 'maximized' : 'snapped';
++        win.maximized=input.zone==='maximize'; revision++; tile(win.workspace); publish(); observe(); return true;
++      }
+       if (input?.kind === 'pointer') {
+         const win=state.windows.find(w=>w.id===input.windowId); if (!win) return false;
+         if (input.action==='start') { if (win._drag) return false; win._drag={geometry:{...win.geometry},placementMode:win.placementMode}; win.placementMode='floating'; return true; }

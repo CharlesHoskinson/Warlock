@@ -1,0 +1,6 @@
+@layer states {
+  html[data-warlock-design="v1"] .surface-bar .control-group[data-window-state] {
+    border-color: transparent;
+    box-shadow: none;
+  }
+}

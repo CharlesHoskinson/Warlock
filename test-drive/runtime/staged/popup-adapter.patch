@@ -1,0 +1,14 @@
+--- a/implementation/warlock/assets/popup-adapter.js
++++ b/test-drive/runtime/vendor/popup-adapter.js
+@@ -153,7 +153,10 @@
+   if(event.isComposing || popupComposing(held.node) || event.ctrlKey || event.metaKey || !held.node.isConnected ||
+     (held.node.dataset.mode==='applications' && (event.altKey || event.shiftKey)) ||
+     (held.node.dataset.mode!=='switcher' && !(held.key==='Escape' && dismissibleModes.includes(held.node.dataset.mode))) || held.node.dataset.publication!==held.packet.publication ||
+-    held.node.dataset.lease!==held.packet.lease || !held.node.contains(event.target)) return;
++    held.node.dataset.lease!==held.packet.lease ||
++    !(held.node.contains(event.target) || (held.key==='Escape' &&
++      (event.target===document.body || event.target===document.documentElement) &&
++      document.querySelector?.('.surface-popup')===held.node))) return;
+   app.ports.requestAction.send(held.packet);
+ },true);
+ window.addEventListener('blur',()=>{switcherTerminal=null;});

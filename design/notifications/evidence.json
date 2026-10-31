@@ -1,0 +1,84 @@
+{
+  "source_commit": "bc3daf7b80ac7295a1ba1e56639a0e130e520a3c",
+  "modules": [
+    "implementation/warlock/src/Notifications.elm",
+    "implementation/warlock/src/Announcement.elm",
+    "implementation/warlock/src/OutcomeAnnouncements.elm",
+    "implementation/warlock/src/AdapterNotice.elm",
+    "implementation/warlock/src/Desktop.elm",
+    "implementation/warlock/src/Surface.elm",
+    "implementation/warlock/src/SurfaceRenderer.elm"
+  ],
+  "styles": [
+    "implementation/warlock/assets/shell.css"
+  ],
+  "catalog": "DesignLanguage/catalog/v6/",
+  "selectors": [
+    ".surface-popup[data-mode=\"notifications\"]",
+    ".notification-text[data-notification-content$=\":summary\"]",
+    ".notification-text[data-notification-content$=\":body\"]",
+    "[data-surface-control^=\"notification:\"]",
+    "[data-surface-control=\"notifications:dnd\"]",
+    "[data-surface-control=\"notifications:critical-interrupt\"]",
+    "[data-surface-control=\"notifications:refresh\"]",
+    "[data-focus-only=\"true\"][aria-disabled=\"true\"]"
+  ],
+  "files": [
+    {
+      "file": "evidence/notification-announcements__native-history.png",
+      "origin": "implementation/warlock/qa/evidence/notification-announcements/native-history.png",
+      "sha256": "7d201e1ec61c823557f806ea9b6af1088dc412e6fe7a6f1bae2fac341bf71cf3",
+      "classification": "native screenshot",
+      "licence": "Apache-2.0 project evidence"
+    },
+    {
+      "file": "evidence/notifications__notification-expired-history.png",
+      "origin": "implementation/warlock/qa/evidence/notifications/notification-expired-history.png",
+      "sha256": "b58457108afbf52f580078a226d0b6337589380953e24f09657f60e9c5433df4",
+      "classification": "native screenshot",
+      "licence": "Apache-2.0 project evidence"
+    },
+    {
+      "file": "evidence/notifications__popup-notification-history.png",
+      "origin": "implementation/warlock/qa/evidence/notifications/popup-notification-history.png",
+      "sha256": "dff8db289f5c8cb47e2b35b1dfd585775da50d1b119242618e83a4edf68ade48",
+      "classification": "native screenshot",
+      "licence": "Apache-2.0 project evidence"
+    },
+    {
+      "file": "evidence/window-feedback__feedback-wide-unknown.png",
+      "origin": "implementation/warlock/qa/evidence/window-feedback/feedback-wide-unknown.png",
+      "sha256": "a120d1140c0a2014c0ed5af1262ca4911d502ec5c2d974eac59258b515c7622c",
+      "classification": "native screenshot",
+      "licence": "Apache-2.0 project evidence"
+    },
+    {
+      "file": "mockups/notifications-dawn.png",
+      "origin": "built-in image generation tool",
+      "sha256": "cf0256842fda864c8b7298a71ffc58619e2e182a99cef5b3df0412ca81f31adc",
+      "classification": "generated illustration",
+      "licence": "project deliverable"
+    },
+    {
+      "file": "mockups/notifications-night.png",
+      "origin": "built-in image generation tool",
+      "sha256": "61baf22a918dd3ed540319969c7acc9cc05c34f1ca06d4931450f5d7ed88ce28",
+      "classification": "generated illustration",
+      "licence": "project deliverable"
+    },
+    {
+      "file": "evidence/specimen-chromium.png",
+      "origin": "Chromium rendered static specimen",
+      "sha256": "79a81db8df7289f471b9b6d2ca4e01280309000f0de0bad56a5e920f0d51ddd6",
+      "classification": "browser screenshot",
+      "licence": "Apache-2.0 project deliverable"
+    },
+    {
+      "file": "evidence/specimen-320.png",
+      "origin": "Chromium rendered static specimen",
+      "sha256": "a6d4de10f260452b3918385995c9b82f27587070fa6ce94310affa8ac3cffa7b",
+      "classification": "browser screenshot",
+      "licence": "Apache-2.0 project deliverable"
+    }
+  ]
+}
