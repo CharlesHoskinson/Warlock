@@ -38,10 +38,14 @@ obligation before using the result in a launch plan.
 
 Build and test this package through Warlock's protected CPU QA launcher. It needs
 GHC 9.6.7 and installed base, bytestring and containers dependencies; the public
-package adds no package-index or native-library dependency. Its pure controls use
-in-memory captures, including malformed metadata and unsafe search/ABI cases.
+package adds no package-index or native-library dependency. Its controls use package-owned retained text fixtures and in-memory malformed
+metadata and unsafe search/ABI cases. Fixture hashes and original observations
+are recorded in `test/fixtures/provenance.json`; tests require no private state tree.
 See [qualification.json](qualification.json) for exact source and evidence scope.
-A tutorial for a runnable window awaits the integrated host and native observation.
+The generated Cabal source archive also passed a fresh private offline build and
+test after bounded extraction and file-hash checks. This is one package portability
+check, not reproducible full-release qualification. A tutorial for a runnable window
+awaits the integrated host and native observation.
 
 ## Ownership explanation
 

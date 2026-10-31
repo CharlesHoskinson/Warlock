@@ -1,0 +1,55 @@
+{
+  "scope": "Retained readelf text observations, no ELF binaries or native execution",
+  "fixtures": {
+    "owner.readelf": {
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/actual-owner-elf-1793398816769438763/capture.stdout",
+      "sha256": "dde3238bd82262f28f06c638a0d36fcb638d997d66dc4ddd0720aa7af2eeee7b",
+      "bytes": 31276
+    },
+    "webkit.readelf": {
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/large-webkit-stream-1793401567657903405/capture.stdout",
+      "sha256": "a8f09ff8258a1ee210341b9ff771837ad88f3cf2aa4114e89cda7ee2fddb8045",
+      "bytes": 156304
+    },
+    "json-glib.readelf": {
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/direct-elf-held-captures-1793403361927926375/captures/12.stdout",
+      "sha256": "77958800953f42fd6282e0ddbad1bd174e935a2d2c0983de88a0a2a5d89d1eba",
+      "bytes": 19476
+    },
+    "ghc.readelf": {
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/direct-elf-held-captures-1793402889586174888/captures/12.stdout",
+      "sha256": "9163a5717086fd01ff0cd242c43e550e2053e8bec20d9658e62169c128cbaf55",
+      "bytes": 32916
+    },
+    "jsc.readelf": {
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/direct-elf-held-captures-1793402889586174888/captures/23.stdout",
+      "sha256": "f552f66304a19ad53d1afbdc5fb3a64f18402e49354da0977763f59fd8b92117",
+      "bytes": 120972
+    },
+    "gcc.readelf": {
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/direct-elf-held-captures-1793402889586174888/captures/38.stdout",
+      "sha256": "7f8953690d8f2b206313517e330975c02a6b5f67a2a86b5244552028b3313168",
+      "bytes": 11939
+    },
+    "sframe.readelf": {
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/direct-elf-held-captures-1793402889586174888/captures/67.stdout",
+      "sha256": "dae88a174d81df1f2b930ae4a57ece4fc319b71e3d26ed8dd66db629d68661a3",
+      "bytes": 37149
+    },
+    "helper-0.readelf": {
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/direct-elf-held-captures-1793404430897445705/captures/0.stdout",
+      "sha256": "c6caa8c1f5af950bd0f923d7a03a5ee263476ea2f9a534f338f592cbc33696b4",
+      "bytes": 5145
+    },
+    "helper-1.readelf": {
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/direct-elf-held-captures-1793404430897445705/captures/1.stdout",
+      "sha256": "ad6812a6d3e1aeb94e3602cd103e05885c863a2f47393ba51ed8982bdd094381",
+      "bytes": 5145
+    },
+    "helper-2.readelf": {
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/direct-elf-held-captures-1793404430897445705/captures/2.stdout",
+      "sha256": "4aabca14f50a5a56554121660ccf0b0bddf3b7446b7a305cbac406b3b586be0b",
+      "bytes": 5145
+    }
+  }
+}

@@ -1,12 +1,12 @@
 {
-  "scope": "Published preparation parser/declared-graph baseline; fresh private offline Cabal build and pure suite passed",
+  "scope": "Preparation parser/declared-graph baseline with packaged retained fixtures; fresh private offline Cabal build and suite passed",
   "sourceSHA256": {
-    "src/Warlock/Elf/Graph.hs": "de3b6575b059baba66f50e4cca5078db6d535a88e380fb713486845c09643e82",
+    "test/ElfCases.hs": "9b70f8370431be1b389904b72656db3005e4745dc989db4e29fcdc95d5d26fb5",
+    "test/GoldenNames.hs": "43c40800868f65f1b8ea45571c8fa44adcf6877e88c28bf52c0e8d8ff0be23ed",
     "src/Warlock/Elf/Readelf.hs": "e53844a3d91a97d17b61566e9e6f032659e7cb178cb6675720888123f76c3103",
-    "test/ElfCases.hs": "9e953c3ffc8fa2df47ff86a9ce26d8274b52f461e24eae8a7ad58c63e5e12acc",
-    "test/GoldenNames.hs": "43c40800868f65f1b8ea45571c8fa44adcf6877e88c28bf52c0e8d8ff0be23ed"
+    "src/Warlock/Elf/Graph.hs": "de3b6575b059baba66f50e4cca5078db6d535a88e380fb713486845c09643e82"
   },
-  "sourceMatchesPrivateBaseline": true,
+  "sourceMatchesPrivateBaseline": false,
   "retainedEvidence": {
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/finite-collector-controls-1793404620387072348/report.json": "f5dc55131942b2284047068acbdbdbd8794cdd167156e6945803aa82f1968797",
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/finite-collector-controls-1793406177584172488/report.json": "17093e625769f7bd7db9b554d2bea69494536bda107db22fb4a514df721dc10d",
@@ -25,7 +25,20 @@
     "Quint result is sampled abstract correspondence, not exhaustive runtime proof",
     "Source-to-namespace placement extension not included"
   ],
-  "publicPackageBuild": {
+  "sourceDelta": "Parser/Graph/GoldenNames unchanged; tests resolve package-owned byte-identical retained captures through Cabal data-files instead of private absolute paths.",
+  "fixtureSHA256": {
+    "owner.readelf": "dde3238bd82262f28f06c638a0d36fcb638d997d66dc4ddd0720aa7af2eeee7b",
+    "webkit.readelf": "a8f09ff8258a1ee210341b9ff771837ad88f3cf2aa4114e89cda7ee2fddb8045",
+    "json-glib.readelf": "77958800953f42fd6282e0ddbad1bd174e935a2d2c0983de88a0a2a5d89d1eba",
+    "ghc.readelf": "9163a5717086fd01ff0cd242c43e550e2053e8bec20d9658e62169c128cbaf55",
+    "jsc.readelf": "f552f66304a19ad53d1afbdc5fb3a64f18402e49354da0977763f59fd8b92117",
+    "gcc.readelf": "7f8953690d8f2b206313517e330975c02a6b5f67a2a86b5244552028b3313168",
+    "sframe.readelf": "dae88a174d81df1f2b930ae4a57ece4fc319b71e3d26ed8dd66db629d68661a3",
+    "helper-0.readelf": "c6caa8c1f5af950bd0f923d7a03a5ee263476ea2f9a534f338f592cbc33696b4",
+    "helper-1.readelf": "ad6812a6d3e1aeb94e3602cd103e05885c863a2f47393ba51ed8982bdd094381",
+    "helper-2.readelf": "4aabca14f50a5a56554121660ccf0b0bddf3b7446b7a305cbac406b3b586be0b"
+  },
+  "publicPackageBuildBeforeFixturePackaging": {
     "report": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/elf-observation-cabal-1793407585014843292/report.json",
     "sha256": "2384062abeb6e807daf1e2cf4257c417595d65a5a00aa08038cab4a9b2372f15",
     "retainedFailure": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/elf-observation-cabal-1793407541995647785/report.json",
@@ -35,5 +48,29 @@
     "freshPrivateBuildAndCache": true,
     "testSuitesPassed": 1,
     "reproducibleReleaseClaimed": false
+  },
+  "publicPackageBuild": {
+    "report": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/elf-observation-cabal-1793408217490054384/report.json",
+    "sha256": "db022aa354a62ed8fa60b18929e67a18c536203741e7dec172de10ca8f8b4d94",
+    "repositories": "disabled",
+    "freshPrivateBuildAndCache": true,
+    "testSuitesPassed": 1,
+    "packagedFixtures": 10,
+    "fixtureBytes": 425467,
+    "privateStatePathsReadByTests": false,
+    "reproducibleReleaseClaimed": false
+  },
+  "sourceDistributionCheck": {
+    "report": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/elf-source-distribution-1793408497441529532/report.json",
+    "sha256": "80653c055547f63ca1bd31de316930788d4a5cefc5288878e69097fcc88b0098",
+    "archiveSHA256": "ad702aed5e8d435eb466727ae3d57be3d3411612c5387204f005c09e2b4f3045",
+    "archiveBytes": 53793,
+    "includedFileCount": 18,
+    "archiveQualificationMetadataSHA256": "df31cb69d4dcdd272d6d0ac99c4b70604308dbb23902cfc5325f53c55e03d26e",
+    "freshPrivateOfflineBuildFromExtractedArchive": true,
+    "testSuitesPassed": 1,
+    "qualificationMetadataUpdatedAfterArchive": true,
+    "notFullReproducibleRelease": true,
+    "retainedCommandFailure": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/elf-source-distribution-1793408481314345899/report.json"
   }
 }

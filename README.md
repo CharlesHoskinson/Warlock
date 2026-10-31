@@ -395,7 +395,7 @@ The published tree has **no root-level licence file**. Subtree licence files sho
 
 ## Current checkpoints
 
-- **30 October 2026 — Haskell source integration.** The bounded ELF parser and declared dependency graph now live in the checkout with their pure controls. A fresh private Cabal build and test suite passed offline with repositories disabled and compiler warnings treated as errors. The earlier build-flag failure is retained in the [qualification record](implementation/warlock/haskell/elf-observation/qualification.json). This is preparation-library verification; original scenario counts and native stop histories are unchanged.
+- **30 October 2026 — Haskell source integration.** The bounded ELF parser and declared dependency graph now live in the checkout with their pure controls. A fresh private Cabal build and test suite passed offline with repositories disabled and compiler warnings treated as errors. The test package includes ten hash-recorded retained text fixtures and reads no private state path. A generated source archive also passed a fresh private offline build and test after extraction. The earlier build-flag failure is retained in the [qualification record](implementation/warlock/haskell/elf-observation/qualification.json). This is preparation-library verification; original scenario counts and native stop histories are unchanged.
 
 Dated integration notes, oldest first, each bounded to its recorded evidence and dated by its evidence record. New checkpoints are appended at the end of this section.
 

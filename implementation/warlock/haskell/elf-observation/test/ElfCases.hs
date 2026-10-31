@@ -4,6 +4,7 @@ import qualified Data.ByteString as B
 import qualified Data.ByteString.Char8 as C
 import qualified Data.Map.Strict as M
 import GoldenNames (goldenNeeded)
+import Paths_warlock_elf_observation_proposal (getDataFileName)
 import Warlock.Elf.Readelf
 import Warlock.Elf.Graph
 
@@ -42,21 +43,22 @@ syntheticDefs = C.pack $ unlines
   , "  0x0000: Rev: 1 Flags: BASE Index: 1 Cnt: 1 Name: libexample.so"
   , "  0x0010: Rev: 1 Flags: none Index: 2 Cnt: 2 Name: EXAMPLE_1"
   , "  0x0020: Parent 1: BASE_VER", "" ]
+fixture :: FilePath -> IO B.ByteString
+fixture name = getDataFileName ("test/fixtures/" ++ name) >>= B.readFile
 main :: IO ()
 main = do
-  raw <- B.readFile "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/actual-owner-elf-1793398816769438763/capture.stdout"
-  webkit <- B.readFile "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/large-webkit-stream-1793401567657903405/capture.stdout"
+  raw <- fixture "owner.readelf"
+  webkit <- fixture "webkit.readelf"
   case parseReadelf complete webkit of
     Left failure -> ioError (userError ("retained WebKit rejected: " ++ show failure))
     Right value -> do
       expect "WebKit identity" (soname value == Just "libwebkit2gtk-4.1.so.0" && elfType value == Shared)
       expect "WebKit nonempty dependencies and version needs" (not (null (needed value)) && not (null (versionNeeds value)))
   expect "WebKit malformed hex version rejected" (rejected (parseReadelf complete (replaceOnce (C.pack "a (GLIBCXX_3.4.11)") (C.pack "q (GLIBCXX_3.4.11)") webkit)))
-  let directory = "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/direct-elf-held-captures-1793402889586174888/captures/"
-  ghcLib <- B.readFile (directory ++ "12.stdout")
-  jscLib <- B.readFile (directory ++ "23.stdout")
-  gccLib <- B.readFile (directory ++ "38.stdout")
-  sframeLib <- B.readFile (directory ++ "67.stdout")
+  ghcLib <- fixture "ghc.readelf"
+  jscLib <- fixture "jsc.readelf"
+  gccLib <- fixture "gcc.readelf"
+  sframeLib <- fixture "sframe.readelf"
   expect "GHC RELACOUNT retained" (case parseReadelf complete ghcLib of Right x -> relaCount x == Just 933; _ -> False)
   expect "JSC RELACOUNT retained" (case parseReadelf complete jscLib of Right x -> relaCount x == Just 4655; _ -> False)
   expect "libgcc compact hidden hex version" (case parseReadelf complete gccLib of Right x -> VersionSymbol 12 True "GCC_4.8.0" `elem` versionSymbols x; _ -> False)
@@ -67,14 +69,14 @@ main = do
   expect "invalid RELACOUNT rejected" (rejected (parseReadelf complete (replaceOnce (C.pack "(RELACOUNT)          933") (C.pack "(RELACOUNT)          9x3") ghcLib)))
   expect "malformed x86 PLT rejected" (rejected (parseReadelf complete (replaceOnce (C.pack "(DT_X86_64_PLT)      0x10040") (C.pack "(DT_X86_64_PLT)      0xq0040") sframeLib)))
   expect "unsupported SFRAME header rejected" (rejected (parseReadelf complete (replaceOnce (C.pack "GNU_SFRAME") (C.pack "GNU_UNKNOWN") sframeLib)))
-  jsonGlib <- B.readFile "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/direct-elf-held-captures-1793403361927926375/captures/12.stdout"
+  jsonGlib <- fixture "json-glib.readelf"
   expect "BASE1 and nonbase2 may share SONAME version name" (case parseReadelf complete jsonGlib of
     Right value -> [(defName d,defFlags d,defIndex d) | d <- versionDefinitions value] == [("libjson-glib-1.0.so.0","BASE",1),("libjson-glib-1.0.so.0","none",2)]
     _ -> False)
   expect "same index still refused" (rejected (parseReadelf complete (replaceOnce (C.pack "Index: 2") (C.pack "Index: 1") jsonGlib)))
   expect "BASE must use index1" (rejected (parseReadelf complete (replaceOnce (C.pack "Index: 1") (C.pack "Index: 8") jsonGlib)))
   mapM_ (\index -> do
-    helper <- B.readFile ("/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/direct-elf-held-captures-1793404430897445705/captures/" ++ show index ++ ".stdout")
+    helper <- fixture ("helper-" ++ show index ++ ".readelf")
     expect "actual WebKit helper remains executable not provider library" (case parseReadelf complete helper of
       Right value -> elfType value == PieExecutable && interpreter value == Just "/lib64/ld-linux-x86-64.so.2" && needed value == ["libwebkit2gtk-4.1.so.0","libc.so.6"]
       _ -> False)) ([0,1,2] :: [Int])
