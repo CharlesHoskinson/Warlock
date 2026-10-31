@@ -1,0 +1,59 @@
+{
+  "status": "Strict owner library and source controls PASS; incomplete native/durability integration",
+  "sourcePackets": [
+    {
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/terra-1-native-cancellation-owner-port-v29/src/Warlock/Native/Cancellation.hs",
+      "target": "/home/charles/Warlock/implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation.hs",
+      "sha256": "db7ec9b019b95adc02929edee4cb89fcf46136ee04e0fe924dde702279a2d597"
+    },
+    {
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/terra-1-native-cancellation-owner-port-v29/src/Warlock/Native/Cancellation/Internal.hs",
+      "target": "/home/charles/Warlock/implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/Internal.hs",
+      "sha256": "9d82c3a4a0159b062671b684efbcca0ab85be9109145b74e230e627b66a847ba"
+    },
+    {
+      "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/terra-5-native-cancellation-port-tests-v16/test/Main.hs",
+      "target": "/home/charles/Warlock/implementation/warlock/haskell/native-authority/test/Main.hs",
+      "sha256": "7ab08aafc7ce9ec77f49ff074d1d627221c7facc1a6c7b88bd6a4f1ad28174cb"
+    }
+  ],
+  "rootCorrections": [
+    "Single terminal publication after proof retention",
+    "Finite provider result forced within exception boundary",
+    "Readonly full native key/ID views for formatter, no constructors",
+    "Opaque commit permit retains original deadline for native boundary validation",
+    "Opaque permanent execution evidence survives terminal publication",
+    "Public snapshot observations are ordinary readonly functions; no public record-update labels",
+    "Lazy provider proof exception stays inside ownership and preserves Unknown without replay"
+  ],
+  "missing": [
+    "Actual native event-thread/non-yielding provider and native validation/first mutation",
+    "Real journal receipt issuer and post-ACK retained history/watermark",
+    "Busy admission joins for other direct/native request paths",
+    "Native resources, Elm routing and original native/GUI verification"
+  ],
+  "nativeAccepted": false,
+  "originalAccepted": false,
+  "releaseAccepted": false,
+  "sourceHashes": {
+    "implementation/warlock/haskell/native-authority/test/Main.hs": "db73eac6970de58083b5aa1d925481f367d426fff717a1268ebab3a69f0c7504",
+    "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation.hs": "9b12e4e95d578e961c7f0db57b1049b0a16da206e9d886469f0c540d9bd415bb",
+    "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/Internal.hs": "f4824b4978a2d3671a9ad7c7279b6fd3f7181f40ec47da1ab17f11bc6ceba539"
+  },
+  "evidence": {
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-cancellation-owner-component-1793458711517727132/report.json": "d9ac32fb06c4e0c383936c209d4cda7b75cad8f7a7944e45d795ca89a45b3a5e",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-cancellation-owner-component-1793458711517727132/test.stdout": "f55965c90b7744dd42a805e5cbc53427eabd1d0f6ae5faa4ae9caab0e61f6979",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-cancellation-port-baseline-1793456630379088981/report.json": "ce19d62d12b1b96fe822632dfd19638b8694c009148597336ad22578a4fd8cf1",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-cancellation-canonical-api-1793456875005969127/report.json": "b48a3d4eeaeb8765aebb01113f7d3e0fd17b20b8a609e1758d69402032de3001",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-cancellation-owner-component-1793460509178260699/report.json": "b9719f28501bf209e0af8c5f197e8eb8ae91e5c645806357681ddb2dbd57834e",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-cancellation-owner-component-1793460509178260699/test.stdout": "ac924cc7cb0e9a4c0203126a94a848106374f479262c7204d2bfa1bd848bbfc1"
+  },
+  "verifiedScope": "Actual Haskell owner called by provider-double controls: exact metadata, cancel/commit ordering, nonreexecution, Unknown/async/fault behavior, peer isolation, capacity64/65, checked exhaustion, seeded reference trajectories. No actual native mutation or real physical retirement proved.",
+  "remainingAudit": [
+    "Real native-thread provider and OS-thread correspondence",
+    "DurableReceipt issuer, retained post-ACK reply and watermark are missing",
+    "Other native direct route busy/cursor joins and live Elm receipt pipeline",
+    "Original D is carried in the permit; actual native provider must freshly check it at first mutation",
+    "Execution metadata retention is tested with provider doubles; real execution/compensation evidence still requires native integration"
+  ]
+}

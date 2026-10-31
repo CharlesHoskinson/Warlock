@@ -1,5 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
--- Private source proposal. Constructors stay internal; no Float conversion.
+-- Canonical opaque identity data, not authentication or native permission.
+-- Constructors stay internal; counters never pass through Float.
 module Warlock.Protocol.Identity
   ( Counter, CounterError(..), parseCounter, renderCounter, isZero, addCounter
   , Binding, binding, lifetime, session, frontend, Context, context
