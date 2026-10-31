@@ -1,0 +1,30 @@
+@layer components {
+.t02-subnav{display:grid;gap:6px;padding-inline-start:16px}.t02-scene,.t02-swatches,.t02-frames{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,12rem),1fr));gap:16px;margin-block:24px}.t02-window,.t02-portal-window{background:var(--wl-sys-color-surface-raised);border:1px solid var(--wl-sys-color-border-essential);border-radius:var(--wl-sys-radius-window);padding:16px;min-width:0}.t02-active{border-inline-start:4px solid var(--wl-sys-color-brand-text)}.t02-focused{border:2px solid var(--wl-sys-color-window-edge-focused);outline:1px solid var(--wl-sys-color-window-guard);outline-offset:1px}.t02-swatches>div{border:1px solid var(--wl-sys-color-border-essential);padding:16px;overflow-wrap:anywhere}.t02-table{overflow:auto}.t02-table table{border-collapse:collapse;min-width:30rem}.t02-table th,.t02-table td{padding:8px;text-align:left;border-bottom:1px solid var(--wl-sys-color-border-essential)}.t02-frames figure{margin:0}.t02-frames img,article figure img{display:block;max-width:100%;height:auto}article figure{margin-inline:0}article figcaption{font-size:.875rem;color:var(--wl-sys-color-text-secondary)}.t02-controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.t02-portal-stage{position:relative;isolation:isolate;padding:32px;margin-block:24px;background:var(--wl-sys-color-canvas);border:1px solid var(--wl-sys-color-border-essential);overflow:hidden}.t02-portal-window{position:relative;z-index:1}.t02-portal-effect-area{position:relative;min-height:8rem;margin-top:16px;overflow:hidden}
+}
+@layer accessibility {@media (prefers-reduced-motion:reduce){.wl-effect-portal{animation:none!important;opacity:0}}@media (forced-colors:active){.wl-effect-portal{display:none}.t02-window{border-color:CanvasText}.t02-recipient{outline-color:Highlight}}}
+
+@layer components {
+.t02-attention { background:var(--wl-sys-color-canvas); color:var(--wl-sys-color-text); border:1px solid var(--wl-sys-color-border-essential); padding:16px; margin:24px 0; }
+.t02-attention figcaption { color:var(--wl-sys-color-text); font-weight:600; margin-bottom:16px; }
+.t02-attention-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%, 13rem),1fr)); gap:20px; }
+.t02-attention-card { position:relative; display:flex; flex-direction:column; gap:12px; min-width:0; padding:16px; background:var(--wl-sys-color-surface); border:1px solid var(--wl-sys-color-window-edge-unfocused); border-radius:var(--wl-sys-radius-window); }
+.t02-attention-card span { overflow-wrap:anywhere; }
+.t02-activity { border:2px solid var(--wl-sys-color-brand-text); }
+.t02-window-focus { border:2px solid var(--wl-sys-color-window-edge-focused); outline:1px solid var(--wl-sys-color-window-guard); outline-offset:1px; box-shadow:inset 0 0 0 1px var(--wl-sys-color-window-guard),var(--wl-sys-shadow-raised); }
+.t02-title { display:flex; justify-content:space-between; gap:12px; background:var(--wl-sys-color-surface-raised); padding:8px; }
+.t02-window-focus button { margin:6px; }
+.t02-brackets { background:var(--wl-sys-color-surface-selected); }
+.t02-corner { position:absolute; width:12px; height:12px; pointer-events:none; border-color:var(--wl-sys-color-text); border-style:solid; }
+.t02-corner-tl { inset:-4px auto auto -4px; border-width:2px 0 0 2px; }
+.t02-corner-tr { inset:-4px -4px auto auto; border-width:2px 2px 0 0; }
+.t02-corner-bl { inset:auto auto -4px -4px; border-width:0 0 2px 2px; }
+.t02-corner-br { inset:auto -4px -4px auto; border-width:0 2px 2px 0; }
+.t02-recipient-mark span { color:var(--wl-sys-color-focus); font-weight:600; }
+.t02-family::before,.t02-family::after { content:""; position:absolute; width:12px; height:10px; border-color:var(--wl-sys-color-text-secondary); border-style:solid; pointer-events:none; }
+.t02-family::before { inset:4px auto auto -5px; border-width:2px 0 0 2px; }
+.t02-family::after { inset:auto -5px 4px auto; border-width:0 2px 2px 0; }
+.t02-effects-off * { box-shadow:none!important; text-shadow:none!important; }
+}
+@layer accessibility { @media (forced-colors:active) { .t02-attention-card,.t02-activity,.t02-window-focus { border-color:CanvasText; } .t02-corner,.t02-family::before,.t02-family::after { border-color:CanvasText; } .t02-recipient-mark span { color:CanvasText; } } }
+
+@layer components { .t02-focus-sample { align-self:start; padding:6px 12px; margin:6px; border:1px solid var(--wl-sys-color-border-essential); outline:2px solid var(--wl-sys-color-focus); outline-offset:3px; border-radius:var(--wl-sys-radius-control); } }

@@ -1,0 +1,44 @@
+{
+  "package": "T04",
+  "source_commit": "bc3daf7b80ac7295a1ba1e56639a0e130e520a3c",
+  "assets": [
+    {
+      "source": "implementation/warlock/qa/evidence/files/files-collections.png",
+      "destination": "components/files/evidence/files__files-collections.png",
+      "sha256": "5c87984ab4ea4f0658033827cbdcd9a46ce18fbddd3dd2ae2bbff15376cf16ae",
+      "bytes": 38434,
+      "license": "Apache License 2.0",
+      "classification": "browser evidence",
+      "alt": "Files collections and Open folder are unavailable while the requested location is pending.",
+      "caption": "Browser capture: Files collections and Open folder are unavailable while the requested location is pending."
+    },
+    {
+      "source": "implementation/warlock/qa/evidence/files/popup-files-existing-explorer.png",
+      "destination": "components/files/evidence/files__popup-files-existing-explorer.png",
+      "sha256": "847aa0c4808da16905fe0046d19c9187d1b8bc118e2dcd7601f965c6f2871add",
+      "bytes": 80012,
+      "license": "Apache License 2.0",
+      "classification": "native evidence",
+      "alt": "Files shows collections with Images focused over an existing file application.",
+      "caption": "Native capture: Files shows collections with Images focused over an existing file application."
+    }
+  ],
+  "route": {
+    "path": "components/files/index.html",
+    "scenario": "files"
+  },
+  "sources": [
+    {
+      "path": "implementation/warlock/src/Files.elm",
+      "sha256": "c2099647bca3b325ca21485bb3a246e0b6d7c2a693d0bcfd5f10dedbad7a89f7"
+    },
+    {
+      "path": "implementation/warlock/src/Surface.elm",
+      "sha256": "a660a4641a9f834c6198bce1e8049b3dd0be40cb74be1cfe1d5e14cfd0cdaa1d"
+    },
+    {
+      "path": "implementation/warlock/src/SurfaceRenderer.elm",
+      "sha256": "f6c653573c1b73b32df132ada5033a1e34aa2cfa1a2dcbb42be4320a4a98a7b8"
+    }
+  ]
+}

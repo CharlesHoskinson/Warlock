@@ -1,0 +1,33 @@
+import assert from 'node:assert/strict';
+import {createPreviewProvider} from './index.js';
+globalThis.location={origin:'https://example.test'};
+let snapshot={epoch:1,binding:{lifetime:'1',session:'2',frontend:'1'},windows:[{id:'1',incarnation:'1'}]};
+const events=[], host={getSnapshot:()=>snapshot}, frames={popup:{contentWindow:{postMessage:m=>events.push(m.payload.value.event)}}};
+const run=createPreviewProvider({host,frames,localImagesReady:true});
+const context={signal:{aborted:false}};
+const job={binding:snapshot.binding,context:{lifetime:'1',incarnation:'1',output:'1',privacy:'1',rendering:'1',scene:'1',content:'1'},request:'1',origin:'1',clock:'1',deadline:'100'};
+const invoke=command=>run({previewProtocol:2,kind:'preview-commands',entries:[{identity:'fixture',commands:[command]}]},context);
+invoke({kind:'acquire',job});
+assert.deepEqual(events.map(x=>x.kind),['offer','fence']);
+assert.equal(events[0].frame.signaled,false); assert.equal(events[1].frame.signaled,true);
+invoke({kind:'release',frame:events[1].frame});
+assert.equal(events.at(-1).event.kind,'released');
+const sequence=events.at(-1).sequence; invoke({kind:'acknowledge',job,sequence});
+const count=events.length; snapshot={...snapshot,epoch:2,binding:{...snapshot.binding,session:'3'}};
+invoke({kind:'acquire',job}); assert.equal(events.length,count);
+// A cancellation and a release of the same job have distinct terminal
+// receipts; acknowledging cancellation must not discard the owned frame.
+snapshot={...snapshot,epoch:3,binding:{...snapshot.binding,session:'4'}};
+const job2={...job,binding:snapshot.binding,request:'2'};
+invoke({kind:'acquire',job:job2});
+const frame2=events.at(-1).frame;
+invoke({kind:'cancel',job:job2});
+const cancelled=events.at(-1);
+assert.equal(cancelled.event.kind,'cancelled');
+invoke({kind:'acknowledge',job:job2,sequence:cancelled.sequence});
+invoke({kind:'release',frame:frame2});
+const released=events.at(-1);
+assert.equal(released.event.kind,'released');
+assert.notEqual(released.sequence,cancelled.sequence);
+invoke({kind:'acknowledge',job:job2,sequence:released.sequence});
+console.log('Preview offer, fence, cancel, release, acknowledgement and epoch checks passed');

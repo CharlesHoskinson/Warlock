@@ -1,0 +1,8 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Runtime transport harness</title><link rel="icon" href="../../assets/brand/identity/warlock-mark-mono.svg"></head><body><h1>Runtime transport harness</h1><iframe id="controller" title="Controller" src="controller.html"></iframe><iframe id="bar" title="Bar" src="bar.html"></iframe><iframe id="popup" title="Popup" src="popup.html"></iframe><script type="module">
+import {createHost} from '../host/index.js';
+import {registerServices} from '../services/index.js';
+const frames = Object.fromEntries(['controller','bar','popup'].map(id=>[id,document.getElementById(id)]));
+const host = createHost({frames,onDiagnostic: console.log}); registerServices(host);
+await Promise.all(Object.values(frames).map(frame => frame.contentDocument?.readyState === 'complete' ? Promise.resolve() : new Promise(resolve => frame.addEventListener('load',resolve,{once:true})))); host.start();
+window.host=host;
+</script></body></html>

@@ -1,0 +1,49 @@
+@import url("../../assets/shared/controls.css");
+@layer components {
+ .wl-specimen-scene { position:relative; display:grid; gap:16px; padding:24px; border:1px solid var(--wl-sys-color-border-essential); background:var(--wl-sys-color-canvas); color:var(--wl-sys-color-text); }
+ .wl-specimen-window { position:relative; border:2px solid var(--wl-sys-color-window-edge-unfocused); outline:1px solid var(--wl-sys-color-window-guard); outline-offset:1px; border-radius:8px; box-shadow:inset 0 0 0 1px var(--wl-sys-color-window-guard), var(--wl-sys-shadow-rest); background:var(--wl-sys-color-surface); }
+ .wl-specimen-window[data-window-focused="true"] { border-color:var(--wl-sys-color-window-edge-focused); }
+ .wl-specimen-title { padding:8px 16px; color:var(--wl-sys-color-text-secondary); font-weight:600; background:var(--wl-sys-color-surface); }
+ [data-window-focused="true"] > .wl-specimen-title { color:var(--wl-sys-color-text); background:var(--wl-sys-color-surface-raised); }
+ .wl-specimen-title::before { content:""; display:inline-block; width:3px; height:14px; margin-inline-end:8px; background:transparent; }
+ [data-window-focused="true"] > .wl-specimen-title::before { background:var(--wl-sys-color-text); }
+ .wl-specimen-window[data-active-application="true"]::after { content:""; position:absolute; inset:4px; border:2px solid var(--wl-sys-color-brand-text); border-radius:4px; box-shadow:0 0 0 1px var(--wl-sys-color-window-guard); pointer-events:none; }
+ .wl-specimen-candidate { padding:12px; margin:12px; border:2px solid transparent; background:linear-gradient(var(--wl-sys-color-text),var(--wl-sys-color-text)) left top / 12px 2px no-repeat, linear-gradient(var(--wl-sys-color-text),var(--wl-sys-color-text)) left top / 2px 12px no-repeat, linear-gradient(var(--wl-sys-color-text),var(--wl-sys-color-text)) right top / 12px 2px no-repeat, linear-gradient(var(--wl-sys-color-text),var(--wl-sys-color-text)) right top / 2px 12px no-repeat, linear-gradient(var(--wl-sys-color-text),var(--wl-sys-color-text)) left bottom / 12px 2px no-repeat, linear-gradient(var(--wl-sys-color-text),var(--wl-sys-color-text)) left bottom / 2px 12px no-repeat, linear-gradient(var(--wl-sys-color-text),var(--wl-sys-color-text)) right bottom / 12px 2px no-repeat, linear-gradient(var(--wl-sys-color-text),var(--wl-sys-color-text)) right bottom / 2px 12px no-repeat, var(--wl-sys-color-surface-selected); }
+ .wl-specimen-recipient { color:var(--wl-sys-color-focus); font-weight:600; float:inline-end; }
+}
+@layer layouts {
+ .wl-foundation-page { margin:0; padding:32px; background:var(--wl-sys-color-canvas); color:var(--wl-sys-color-text); font:var(--wl-sys-type-body-weight) var(--wl-sys-type-body-size)/var(--wl-sys-type-body-line-height) var(--wl-sys-type-body-family); font-synthesis:none; }
+ .wl-foundation-page main { max-width:70ch; margin:auto; }
+ .wl-foundation-page :is(h1,h2) { font-family:var(--wl-sys-font-display); font-weight:700; }
+ .wl-foundation-page a { color:var(--wl-sys-color-brand-text); }
+ .wl-color-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr)); gap:24px; }
+ .wl-color-grid section { padding:16px; border:1px solid var(--wl-sys-color-border-essential); border-radius:8px; background:var(--wl-sys-color-surface); }
+ .wl-color-samples { display:grid; grid-template-columns:repeat(2,1fr); gap:6px; padding:8px; background:var(--wl-sys-color-canvas); }
+ .wl-color-samples span { padding:12px; color:var(--wl-sys-color-text); background:var(--wl-sys-color-surface); }
+ .wl-color-samples .wl-color-raised { background:var(--wl-sys-color-surface-raised); }
+ .wl-color-samples .wl-color-brand { color:var(--wl-sys-color-brand-text); }
+ .wl-effects-demo { padding:32px; background:var(--wl-sys-color-canvas); border:1px solid var(--wl-sys-color-border-essential); }
+ .wl-effects-frame { position:relative; display:grid; place-items:center; height:200px; background:var(--wl-sys-color-surface); border:2px solid var(--wl-sys-color-window-edge-focused); border-radius:8px; }
+ .wl-foundation-page :is(button,select) { min-height:36px; padding:6px 12px; font:inherit; color:var(--wl-sys-color-text); background:var(--wl-sys-color-surface); border:1px solid var(--wl-sys-color-border-essential); border-radius:6px; }
+ .wl-foundation-page :is(button,select,a):focus-visible { outline:2px solid var(--wl-sys-color-focus); outline-offset:2px; box-shadow:0 0 0 2px var(--wl-sys-color-canvas); }
+}
+@layer components {
+ .wl-specimen-window { outline-offset:0; box-shadow:inset 0 0 0 1px var(--wl-sys-color-window-guard), 0 2px 4px 0 rgb(0 0 0 / .154), 0 6px 16px 0 rgb(0 0 0 / .11); }
+ [data-theme="dawn"] .wl-specimen-window { box-shadow:inset 0 0 0 1px var(--wl-sys-color-window-guard), 0 2px 4px 0 rgb(0 0 0 / .088), 0 6px 16px 0 rgb(0 0 0 / .066); }
+ .wl-specimen-window[data-window-focused="true"] { box-shadow:inset 0 0 0 1px var(--wl-sys-color-window-guard), var(--wl-sys-shadow-rest); }
+ .wl-depth-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:24px; padding:24px; background:var(--wl-sys-color-canvas); }
+ .wl-depth-grid div { padding:16px; background:var(--wl-sys-color-surface); border:1px solid var(--wl-sys-color-border-essential); border-radius:8px; }
+ .wl-depth-grid div[data-depth="rest"] { box-shadow:var(--wl-sys-shadow-rest); }
+ .wl-depth-grid div[data-depth="raised"] { box-shadow:var(--wl-sys-shadow-raised); }
+ .wl-depth-grid div[data-depth="dialog"] { box-shadow:var(--wl-sys-shadow-dialog); }
+}
+@layer accessibility {
+ :is([data-effects="off"],[data-effects-tier="off"],[data-theme="high-contrast"]) .wl-specimen-window { box-shadow:inset 0 0 0 1px var(--wl-sys-color-window-guard); }
+ :is([data-effects="off"],[data-effects-tier="off"],[data-theme="high-contrast"]) .wl-depth-grid div { box-shadow:none; }
+ @media (forced-colors:active) {
+  .wl-specimen-candidate { forced-color-adjust:none; color:CanvasText; background:linear-gradient(CanvasText,CanvasText) left top / 12px 2px no-repeat, linear-gradient(CanvasText,CanvasText) left top / 2px 12px no-repeat, linear-gradient(CanvasText,CanvasText) right top / 12px 2px no-repeat, linear-gradient(CanvasText,CanvasText) right top / 2px 12px no-repeat, linear-gradient(CanvasText,CanvasText) left bottom / 12px 2px no-repeat, linear-gradient(CanvasText,CanvasText) left bottom / 2px 12px no-repeat, linear-gradient(CanvasText,CanvasText) right bottom / 12px 2px no-repeat, linear-gradient(CanvasText,CanvasText) right bottom / 2px 12px no-repeat, Canvas; }
+  .wl-specimen-window { box-shadow:none; outline-color:Canvas; }
+  .wl-specimen-window[data-active-application="true"]::after { border-color:CanvasText; box-shadow:none; }
+  .wl-specimen-recipient { color:Highlight; }
+ }
+}

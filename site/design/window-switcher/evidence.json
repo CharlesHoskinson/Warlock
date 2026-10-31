@@ -1,0 +1,56 @@
+{
+  "source_commit": "bc3daf7b80ac7295a1ba1e56639a0e130e520a3c",
+  "licence": "Apache-2.0",
+  "modules": [
+    "implementation/warlock/src/Switcher.elm",
+    "implementation/warlock/src/Desktop.elm",
+    "implementation/warlock/src/Shortcuts.elm",
+    "implementation/warlock/src/Surface.elm",
+    "implementation/warlock/src/Popup.elm",
+    "implementation/warlock/src/SurfaceRenderer.elm",
+    "implementation/warlock/assets/shell.css"
+  ],
+  "selectors": [
+    ".surface-popup[data-mode=switcher]",
+    ".surface-controls",
+    "[role=listbox]",
+    "[role=option][aria-selected]",
+    "[data-surface-control^='switcher:family:']",
+    "[data-surface-control='control:close']",
+    "[data-surface-control='control:reverse']",
+    "[data-surface-control='control:forward']",
+    "[data-surface-control='control:commit']"
+  ],
+  "captures": [
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-native-controls/popup-mru-initial.png",
+      "sha256": "bcc6cee659cbf68a633c4c085de0b2afb8c550c15439526285564061e319bae5",
+      "classification": "native capture"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/switcher-native-controls/popup-reopened.png",
+      "sha256": "c25d6d4a2d615ee61fc71ed2fd99818ca23ca18d9b5ae5154d803831423559c2",
+      "classification": "native capture"
+    },
+    {
+      "path": "mockups/switcher-night.png",
+      "sha256": "f6db10a406a49341f1bd5128dbba579ce2eb517e43d6350862456331039596ec",
+      "classification": "generated illustration"
+    },
+    {
+      "path": "mockups/switcher-dawn.png",
+      "sha256": "cb6c94f8f40596407fc8b151ac8bab7757dc3e46fe005dc8ccb31ef31f927565",
+      "classification": "generated illustration"
+    }
+  ],
+  "related_catalog": "DesignLanguage/catalog/v6/catalog-data.js#picker",
+  "reference_captures": [
+    "material/components__lists__guidelines.md",
+    "bestpractice/fluent-accessibility.md",
+    "bestpractice/ms-keyboard.md",
+    "bestpractice/gnome-keyboard.md",
+    "bestpractice/kde-hig-layout.md",
+    "bestpractice/apple-hig-motion.md",
+    "bestpractice/wcag-focus-not-obscured.md"
+  ]
+}

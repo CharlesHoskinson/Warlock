@@ -1,0 +1,61 @@
+/* Apache-2.0. Overview only; shared foundations own tokens, focus and effects. */
+@layer layouts {
+  html[data-warlock-design="v1"] .surface-popup[data-mode="overview"] .surface-controls {
+    display: flex; flex-direction: column; align-items: stretch; gap: 6px;
+    min-width: 0;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="overview"] .overview-workspace {
+    display: flex; flex-direction: column; gap: 6px; min-width: 0; flex: 0 0 auto;
+    margin-block-start: 18px;
+  }
+}
+@layer components {
+  html[data-warlock-design="v1"] .surface-popup[data-mode="overview"] button {
+    position: relative; display: block; inline-size: 100%; min-inline-size: 0;
+    min-block-size: 2.25rem; flex: 0 0 auto; margin: 0; padding: 6px 12px;
+    border: 1px solid transparent; border-radius: 6px; text-align: start;
+    background: var(--wl-sys-color-surface); color: var(--wl-sys-color-text);
+    scroll-margin: 6px;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="overview"] .control-label {
+    display: block; min-width: 0; overflow: visible; white-space: normal;
+    overflow-wrap: anywhere; text-overflow: clip; font-size: .875rem; line-height: 1.428571;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="overview"] .control-detail {
+    display: block; margin-block-start: 2px; white-space: normal; overflow-wrap: anywhere;
+    color: var(--wl-sys-color-text-secondary); font-size: .75rem; line-height: 1.333333;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="overview"] .control-detail:empty { display: none; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="overview"] :is([data-surface-control="overview:all"],[data-surface-control^="overview:workspace:"]) {
+    padding-inline-start: 40px;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="overview"] [data-surface-control^="overview:workspace:"] .control-label { font-weight: 600; font-size: 1rem; line-height: 1.5; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="overview"] [data-surface-control^="overview:family:"] { padding-inline-start: 40px; min-block-size: 3.5rem; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="overview"] [data-surface-control^="overview:transfer:"] { padding-inline-start: 56px; min-block-size: 2.25rem; color: var(--wl-sys-color-text-secondary); }
+  /* Transfer and navigation are sibling actions, never workspace cards. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="overview"] :is([data-surface-control^="overview:go:"],[data-surface-control^="overview:destination:"]) { border-color: var(--wl-sys-color-border-essential); text-align: start; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="overview"] [data-surface-control="control:close"] { border-color: transparent; text-align: start; }
+}
+@layer states {
+  html[data-warlock-design="v1"] .surface-popup[data-mode="overview"] :is([data-surface-control="overview:all"],[data-surface-control^="overview:workspace:"])[aria-pressed="true"] {
+    background: var(--wl-sys-color-surface-selected);
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="overview"] :is([data-surface-control="overview:all"],[data-surface-control^="overview:workspace:"])[aria-pressed="true"]::before {
+    content: ""; position: absolute; inset-inline-start: 14px; inset-block-start: 11px; inline-size: 10px; block-size: 5px; border-inline-start: 2px solid var(--wl-sys-color-text); border-block-end: 2px solid var(--wl-sys-color-text); transform: rotate(-45deg); pointer-events: none;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="overview"] :is([data-surface-control="overview:all"],[data-surface-control^="overview:workspace:"])[aria-pressed="true"]::after {
+    content: ""; position: absolute; inset-inline-start: 0; inset-block: 6px;
+    inline-size: 3px; background: var(--wl-sys-color-brand-text); pointer-events: none;
+  }
+  @media (hover:hover) {
+    html[data-warlock-design="v1"] .surface-popup[data-mode="overview"] button:not(:disabled):not([aria-disabled="true"]):hover { background: var(--wl-sys-color-surface-hover); }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="overview"] button[aria-pressed="true"]:not(:disabled):not([aria-disabled="true"]):hover { background: var(--wl-sys-color-surface-selected-hover); }
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="overview"] button:not(:disabled):not([aria-disabled="true"]):active { background: var(--wl-sys-color-surface-pressed); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="overview"] button[aria-pressed="true"]:not(:disabled):not([aria-disabled="true"]):active { background: var(--wl-sys-color-surface-selected-pressed); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="overview"] button:is(:disabled,[aria-disabled="true"]) { opacity: 1; color: var(--wl-sys-color-text-secondary); background: var(--wl-sys-color-surface-recessed); }
+  @media (forced-colors: active) {
+    html[data-warlock-design="v1"] .surface-popup[data-mode="overview"] button[aria-pressed="true"]::after { background: CanvasText; forced-color-adjust: none; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="overview"] button[aria-pressed="true"]::before { border-color: CanvasText; forced-color-adjust: none; }
+  }
+}

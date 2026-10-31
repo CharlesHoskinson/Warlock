@@ -1,0 +1,31 @@
+import assert from 'node:assert/strict';
+import {createHost} from './index.js';
+globalThis.location={origin:'https://test.invalid'}; globalThis.addEventListener=()=>{}; globalThis.removeEventListener=()=>{};
+const host=createHost(); host.start();
+const snapshot=()=>host.getSnapshot();
+let w=snapshot().windows[0];
+let authority=()=>({epoch:snapshot().epoch,windowId:w.id,incarnation:w.incarnation});
+const placement=zone=>host.dispatchInput({kind:'placement',...authority(),zone,geometry:{x:10,y:66,width:500,height:300}});
+const gesture=()=>({kind:'pointer',...authority(),pointerId:1,mode:'move',x:100,y:80});
+const relevant=x=>({geometry:x.geometry,placementMode:x.placementMode,maximized:x.maximized,restoreGeometry:x.restoreGeometry,restorePlacementMode:x.restorePlacementMode});
+const current=()=>snapshot().windows.find(x=>x.id===w.id);
+for (const zone of ['maximize','left']) {
+  assert(placement(zone)); const before=relevant(current()); const g=gesture();
+  assert(host.dispatchInput({...g,action:'start'}));
+  assert.equal(current().maximized,false); assert.equal(current().placementMode,'floating');
+  assert.deepEqual(current().geometry,before.restoreGeometry);
+  assert(host.dispatchInput({...g,action:'move',currentX:150,currentY:110}));
+  assert(host.dispatchInput({...g,action:'cancel'})); assert.deepEqual(relevant(current()),before);
+  assert(host.dispatchInput({...g,action:'start'})); assert(host.dispatchInput({...g,action:'end',currentX:150,currentY:110}));
+  const moved=current().geometry; assert.equal(moved.width,before.restoreGeometry.width); assert.equal(current().maximized,false);
+  assert(placement('maximize')); assert.deepEqual(current().restoreGeometry,moved);
+  assert(host.dispatchInput({kind:'window',action:'restore-geometry',...authority()})); assert.deepEqual(current().geometry,moved);
+}
+const stale=authority(), drag=gesture(); assert(host.dispatchInput({...drag,action:'start'}));
+host.reset(); const before=snapshot();
+for (const event of [{kind:'window',action:'close',...stale},{kind:'window',action:'focus',...stale},{...drag,action:'start'},{...drag,action:'end',currentX:200,currentY:200}]) assert.equal(host.dispatchInput(event),false);
+assert.deepEqual(snapshot(),before);
+w=snapshot().windows[0]; const now=gesture(); assert(host.dispatchInput({...now,action:'start'}));
+assert.equal(host.dispatchInput({...now,pointerId:2,action:'end',currentX:200,currentY:200}),false);
+assert(host.dispatchInput({...now,action:'cancel'})); host.destroy();
+console.log('Drag restoration, cancellation, subsequent maximize/restore, stale authority and gesture binding passed.');

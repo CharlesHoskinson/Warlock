@@ -1,0 +1,9 @@
+{
+  "id": "settings-draft-save-boundaries",
+  "source_commit": "bc3daf7b80ac7295a1ba1e56639a0e130e520a3c",
+  "source_fixtures": ["implementation/warlock/qa/evidence/settings-help/keyboard-settings-help.png", "implementation/warlock/src/Settings.elm", "implementation/warlock/src/MotionPreferences.elm", "implementation/warlock/src/ShortcutPreferences.elm"],
+  "initial_external_facts": {"appearance": "committed Night at 100 percent", "motion": "stored Follow system with observed motion profile", "shortcuts": "stored choices and live availability inventory", "binding": "valid current binding"},
+  "entry_intent": "OpenSettings",
+  "supported_actions": ["ToggleSettingsHelp", "EditSettings", "SaveSettings", "RefreshSettings", "EditMotionPreference", "SaveMotionPreference", "RefreshMotionPreference", "EditShortcutChoice", "SaveShortcutChoices", "RefreshShortcutChoices", "CloseSettings"],
+  "expected_observations": ["Draft edits do not change committed appearance", "Help expansion preserves drafts", "Each save uses its own request and result", "Motion application needs its own acknowledgement", "Shortcut success requires stored choices and matching live inventory", "Unconfirmed writes are not repeated by refresh", "Close returns focus to the Settings opener"]
+}

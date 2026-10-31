@@ -1,0 +1,9 @@
+{
+  "id": "switcher-candidate-and-focus",
+  "source_commit": "bc3daf7b80ac7295a1ba1e56639a0e130e520a3c",
+  "source_fixtures": ["implementation/warlock/qa/SwitcherReplay.elm", "implementation/warlock/qa/SwitcherFocusReplay.elm", "implementation/warlock/qa/evidence/switcher-native-controls/manifest.json"],
+  "initial_external_facts": ["A valid attached output and binding", "At least two available observed window families", "A separately observed focused window and application activity"],
+  "entry_intent": "Open the window switcher through a delivered native chord or taskbar control",
+  "supported_actions": ["Cycle forward", "Cycle reverse", "Choose an available candidate", "Move keyboard focus to an action", "Activate selected window", "Cancel", "Escape", "Release the delivered native chord"],
+  "expected_observations": ["Candidate changes immediately without a window activation during traversal", "Candidate remains marked while an action has control focus", "Cancellation closes without a window mutation", "Commit requests activation for the captured candidate; observed focus changes only after an independent native observation", "Stale controls cannot commit"]
+}

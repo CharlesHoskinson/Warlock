@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "activeWorkspace": "1",
+  "workspaces": [
+    {
+      "id": "1",
+      "name": "1"
+    },
+    {
+      "id": "2",
+      "name": "2"
+    },
+    {
+      "id": "3",
+      "name": "3"
+    }
+  ],
+  "windows": [
+    {
+      "id": "1",
+      "incarnation": "1",
+      "label": "Editor",
+      "title": "Editor",
+      "owner": null,
+      "application": "warlock-editor",
+      "workspace": "1",
+      "minimized": false,
+      "focused": true,
+      "geometry": {
+        "x": 16,
+        "y": 72,
+        "width": 610,
+        "height": 620
+      }
+    },
+    {
+      "id": "2",
+      "incarnation": "2",
+      "label": "Browser",
+      "title": "Browser",
+      "owner": null,
+      "application": "warlock-browser",
+      "workspace": "1",
+      "minimized": false,
+      "focused": false,
+      "geometry": {
+        "x": 642,
+        "y": 72,
+        "width": 622,
+        "height": 620
+      }
+    },
+    {
+      "id": "3",
+      "incarnation": "3",
+      "label": "Terminal",
+      "title": "Terminal",
+      "owner": null,
+      "application": "warlock-terminal",
+      "workspace": "2",
+      "minimized": true,
+      "focused": false,
+      "geometry": {
+        "x": 16,
+        "y": 72,
+        "width": 610,
+        "height": 620
+      }
+    },
+    {
+      "id": "4",
+      "incarnation": "4",
+      "label": "Notes",
+      "title": "Notes",
+      "owner": null,
+      "application": "warlock-editor",
+      "workspace": "2",
+      "minimized": false,
+      "focused": false,
+      "geometry": {
+        "x": 642,
+        "y": 72,
+        "width": 622,
+        "height": 620
+      }
+    }
+  ],
+  "activationHistory": [
+    "1",
+    "2",
+    "4",
+    "3"
+  ]
+}

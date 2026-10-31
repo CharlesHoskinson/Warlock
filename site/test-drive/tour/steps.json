@@ -1,0 +1,158 @@
+{
+  "steps": [
+    {
+      "id": "1",
+      "scenario": "taskbar",
+      "title": "Taskbar and groups",
+      "instruction": "Focus a different window using its taskbar group.",
+      "component": "taskbar"
+    },
+    {
+      "id": "2",
+      "scenario": "launcher",
+      "title": "Applications and search",
+      "instruction": "Open Applications and enter a search.",
+      "component": "launcher"
+    },
+    {
+      "id": "3",
+      "scenario": "switcher",
+      "title": "Window switcher",
+      "instruction": "Open the window switcher and inspect the candidate.",
+      "component": "window-switcher"
+    },
+    {
+      "id": "4",
+      "scenario": "task-view",
+      "title": "Task View",
+      "instruction": "Open Task View and inspect the workspace filters.",
+      "component": "task-view"
+    },
+    {
+      "id": "5",
+      "scenario": "task-view",
+      "title": "Empty workspace",
+      "instruction": "Select workspace 3, then choose Go to workspace 3.",
+      "component": "task-view"
+    },
+    {
+      "id": "6",
+      "scenario": "transfer",
+      "title": "Move a window",
+      "instruction": "Open Task View, choose Move for a window, and inspect the destinations.",
+      "component": "workspace-transfer"
+    },
+    {
+      "id": "focus-group",
+      "scenario": "switcher",
+      "title": "Return to the editor group",
+      "instruction": "Open the window switcher and activate an Editor or Notes window. This returns you from the empty workspace and focuses the two-window editor group.",
+      "component": "window-switcher"
+    },
+    {
+      "id": "7",
+      "scenario": "picker",
+      "title": "Window picker and previews",
+      "instruction": "Open a group with multiple windows and inspect its previews.",
+      "component": "window-picker"
+    },
+    {
+      "id": "activate",
+      "scenario": "picker",
+      "title": "Activate a window",
+      "instruction": "Select the other window in the picker. Warlock switches to its workspace and focuses it, ready for window actions.",
+      "component": "window-picker"
+    },
+    {
+      "id": "float-window",
+      "scenario": "snap",
+      "title": "Float the window",
+      "instruction": "Drag the focused window by its title bar to make it floating. Floating windows support snap layouts. Show me performs the same drag.",
+      "component": "snap-layouts"
+    },
+    {
+      "id": "8",
+      "scenario": "snap",
+      "title": "Snap layouts",
+      "instruction": "Open the snap layouts for the floating window and inspect the available regions.",
+      "component": "snap-layouts"
+    },
+    {
+      "id": "9",
+      "scenario": "window-menu",
+      "title": "Window actions",
+      "instruction": "Open a window\u2019s actions and inspect its available controls.",
+      "component": "window-menu"
+    },
+    {
+      "id": "10",
+      "scenario": "application-actions",
+      "title": "Application actions",
+      "instruction": "Open application actions and inspect the declared and recent actions.",
+      "component": "application-actions"
+    },
+    {
+      "id": "11",
+      "scenario": "notifications",
+      "title": "Notifications",
+      "instruction": "Open Notifications and inspect its entries.",
+      "component": "notifications"
+    },
+    {
+      "id": "12",
+      "scenario": "settings",
+      "title": "Appearance",
+      "instruction": "Open Settings and inspect appearance choices.",
+      "component": "appearance-settings"
+    },
+    {
+      "id": "motion",
+      "scenario": "settings",
+      "title": "Motion",
+      "instruction": "In Settings, choose a different motion preference. It remains a draft until you save it.",
+      "component": "motion-shortcuts-help"
+    },
+    {
+      "id": "shortcuts",
+      "scenario": "settings",
+      "title": "Shortcuts",
+      "instruction": "Choose a different available shortcut option for Applications. Save shortcut choices applies the draft.",
+      "component": "motion-shortcuts-help"
+    },
+    {
+      "id": "help",
+      "scenario": "settings",
+      "title": "Inline help",
+      "instruction": "Choose Show help in Settings to read keyboard and recovery guidance.",
+      "component": "motion-shortcuts-help"
+    },
+    {
+      "id": "14",
+      "scenario": "files",
+      "title": "Files",
+      "instruction": "Open Files and inspect the current location and collections.",
+      "component": "files"
+    },
+    {
+      "id": "15",
+      "scenario": "system",
+      "title": "System",
+      "instruction": "Open System and inspect the session facts.",
+      "component": "system-menu"
+    },
+    {
+      "id": "16",
+      "scenario": "confirmation",
+      "title": "Inline confirmation",
+      "instruction": "Choose a session operation, then cancel its inline confirmation.",
+      "component": "dialogs"
+    },
+    {
+      "id": "17",
+      "scenario": "status-recovery",
+      "title": "Status and recovery",
+      "instruction": "Open Files and choose Refresh to read its current status without repeating an operation.",
+      "component": "status-recovery"
+    }
+  ]
+}

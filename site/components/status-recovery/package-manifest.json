@@ -1,0 +1,64 @@
+{
+  "package": "T04",
+  "source_commit": "bc3daf7b80ac7295a1ba1e56639a0e130e520a3c",
+  "assets": [
+    {
+      "source": "implementation/warlock/qa/evidence/window-feedback-native/Pending.png",
+      "destination": "components/status-recovery/evidence/window-feedback-native__Pending.png",
+      "sha256": "4447df1eef88dda885504aff684bd17cda65e275bed7bae9618ab5890ccf4698",
+      "bytes": 57417,
+      "license": "Apache License 2.0",
+      "classification": "native evidence",
+      "alt": "The desktop shows pending window feedback.",
+      "caption": "Native capture: The desktop shows pending window feedback."
+    },
+    {
+      "source": "implementation/warlock/qa/evidence/window-feedback-native/Refused.png",
+      "destination": "components/status-recovery/evidence/window-feedback-native__Refused.png",
+      "sha256": "bff1079dd86e4cb399eab3d372f4551890d072b6cce8d984d7ca53da8388047f",
+      "bytes": 48253,
+      "license": "Apache License 2.0",
+      "classification": "native evidence",
+      "alt": "The desktop shows refused window feedback.",
+      "caption": "Native capture: The desktop shows refused window feedback."
+    },
+    {
+      "source": "implementation/warlock/qa/evidence/window-feedback-native/Unknown.png",
+      "destination": "components/status-recovery/evidence/window-feedback-native__Unknown.png",
+      "sha256": "79c5c0c732bbe339309a9f5b8ea093cf90f145d1acd2f75276b00a24fa5f6a2a",
+      "bytes": 57404,
+      "license": "Apache License 2.0",
+      "classification": "native evidence",
+      "alt": "The desktop shows unconfirmed window feedback.",
+      "caption": "Native capture: The desktop shows unconfirmed window feedback."
+    },
+    {
+      "source": "implementation/warlock/qa/evidence/window-feedback/feedback-wide-unknown.png",
+      "destination": "components/status-recovery/evidence/window-feedback__feedback-wide-unknown.png",
+      "sha256": "a120d1140c0a2014c0ed5af1262ca4911d502ec5c2d974eac59258b515c7622c",
+      "bytes": 15662,
+      "license": "Apache License 2.0",
+      "classification": "browser evidence",
+      "alt": "A wide taskbar reports that restore is not confirmed and offers refresh.",
+      "caption": "Browser capture: A wide taskbar reports that restore is not confirmed and offers refresh."
+    }
+  ],
+  "route": {
+    "path": "components/status-recovery/index.html",
+    "scenario": "status-recovery"
+  },
+  "sources": [
+    {
+      "path": "implementation/warlock/src/Shell.elm",
+      "sha256": "f14b7fe3bfbf1a57f335f98914c988938c235823ba4596c067cf744776c4a9ae"
+    },
+    {
+      "path": "implementation/warlock/src/Effects.elm",
+      "sha256": "80c574e8c564c28a1fb11f1f89bb5bfa7ac97a92474bbf027a737324bb2a82cd"
+    },
+    {
+      "path": "implementation/warlock/src/OutcomeAnnouncements.elm",
+      "sha256": "c7fd2828c42b7cbc0f3b6fc705c26a551530d1eb22ed325e892a0e1faca6ca7e"
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "source_commit": "bc3daf7b80ac7295a1ba1e56639a0e130e520a3c",
+  "source_licence": "Apache License 2.0",
+  "source_files": [
+    {
+      "path": "implementation/warlock/src/SystemMenu.elm",
+      "sha256": "cf44c66fe51a5d86f14e33a8235e04f178553261229fd51e0d81cbc35c944054"
+    },
+    {
+      "path": "implementation/warlock/src/Menu.elm",
+      "sha256": "c40fcfa24bf9d48044ccbe2c08df0abb7d8b94ee04111776234ecd88792ff4f0"
+    },
+    {
+      "path": "implementation/warlock/src/MenuBridge.elm",
+      "sha256": "ec8f531b9437e493f9b29fe1e16d678cd388f560a83ca873448630bbde459b25"
+    },
+    {
+      "path": "implementation/warlock/src/NativeProvider.elm",
+      "sha256": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9"
+    },
+    {
+      "path": "implementation/warlock/src/Provider.elm",
+      "sha256": "2ef450a364d23d334e2ba7dfafdc56bbf51649dfb8f2e9f2e0ab1ca600157727"
+    },
+    {
+      "path": "implementation/warlock/src/JumpList.elm",
+      "sha256": "059841cc0669fdc7fd699498ee72d4211a2aa5d69c466d4aade7558e03b0f68c"
+    },
+    {
+      "path": "implementation/warlock/src/Catalog.elm",
+      "sha256": "3eadb76212a66986ef2d76292a2f33595f7cd7d47dc90c8982435195f9ea3f02"
+    },
+    {
+      "path": "implementation/warlock/src/Launch.elm",
+      "sha256": "dcd7260248ccb0b5bc6001c49319dd51af8c2fae98888919a308ac025ed273a2"
+    },
+    {
+      "path": "implementation/warlock/src/Effects.elm",
+      "sha256": "80c574e8c564c28a1fb11f1f89bb5bfa7ac97a92474bbf027a737324bb2a82cd"
+    },
+    {
+      "path": "implementation/warlock/src/Desktop.elm",
+      "sha256": "a503d926599b5aa194956a1208fdc0004fb829442cd523c5372d41fd1fab0404"
+    },
+    {
+      "path": "implementation/warlock/src/Surface.elm",
+      "sha256": "a660a4641a9f834c6198bce1e8049b3dd0be40cb74be1cfe1d5e14cfd0cdaa1d"
+    },
+    {
+      "path": "implementation/warlock/src/SurfaceRenderer.elm",
+      "sha256": "f6c653573c1b73b32df132ada5033a1e34aa2cfa1a2dcbb42be4320a4a98a7b8"
+    },
+    {
+      "path": "implementation/warlock/assets/shell.css",
+      "sha256": "77566e786969cfb4d7c87f2e33cc9f36d2cf4682fdc2da21bf38073340979098"
+    }
+  ],
+  "selectors": [
+    ".surface-popup[data-mode=\"system\"]",
+    ".surface-popup[data-mode=\"menu\"]",
+    ".surface-popup[data-mode=\"jump\"]",
+    "[data-system-content]",
+    "[data-jump-content]",
+    "[data-surface-control]",
+    "[role=\"menuitemcheckbox\"][aria-checked]"
+  ],
+  "screenshots": [
+    {
+      "path": "implementation/warlock/qa/evidence/system-menu/popup-system-menu-capabilities.png",
+      "sha256": "3e3e10001792f0a77fb492b5f28b235cc9a3821bffa41ad7d70ae9f17cc111ae",
+      "classification": "native capture"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/system-menu/system-menu-confirmation.png",
+      "sha256": "3194a7844297e33532cc6b6609b3775b9ddc421257498fad73a60b3690a17469",
+      "classification": "native capture"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/pin-check/AlwaysOnTopChecked.png",
+      "sha256": "504b53c4dcab060bd10a9563dd9187f781d448bf525652e770b208904dc156d0",
+      "classification": "native capture"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/explicit-new-instance/native/popup-new-instance-application-actions.png",
+      "sha256": "2e92f97b6fe3e9aae761021e7c724166d313979e028e553c9f923ce76ab17436",
+      "classification": "native capture"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/jump-lists/popup-jump-list-declared-and-recent.png",
+      "sha256": "7837fed6baae448151cfbce738fa61dd4e833991bf5567e840f9e1ec1bedb8d6",
+      "classification": "native capture"
+    }
+  ],
+  "generated_mockups": {
+    "classification": "generated illustration",
+    "authority": "Illustrations only; source, HTML and tokens govern.",
+    "files": [
+      {
+        "path": "mockups/mockup-1.png",
+        "sha256": "176ff90b19b4e0a9e870603154d6e5fb9d0adfb4842671c8c9348db001274c32"
+      },
+      {
+        "path": "mockups/mockup-2.png",
+        "sha256": "82058e7e8d8a749b83da9db1ad3879901b963667d7bf0a9b4625b7a125556592"
+      },
+      {
+        "path": "mockups/mockup-3.png",
+        "sha256": "5030aee1bf64623f1cf42495e86d200ce340fe39f61a54d08948e59fdb4c088e"
+      },
+      {
+        "path": "mockups/mockup-4.png",
+        "sha256": "2504a4f8dd55364a3cb5f1b9b6be2d8e04c5024fcb4bd5aa05bcc710f80947b0"
+      },
+      {
+        "path": "mockups/mockup-5.png",
+        "sha256": "7fdd2659d4b67abd0873c39052757837d3e430c353ffe9dbaa99e4a956a1e84e"
+      },
+      {
+        "path": "mockups/mockup-6.png",
+        "sha256": "6af61333f3f5d3db935860f0a3cd092279a376653bf76237283b6c3fcdf1f7e9"
+      },
+      {
+        "path": "mockups/mockup-7.png",
+        "sha256": "99d9703bbc72e961e06989bdfc3892d74db95d19d13e007c6bb0a6962520fa22"
+      },
+      {
+        "path": "mockups/mockup-8.png",
+        "sha256": "d52add286a8b3dd933f85793886c9731bae51ebddf291a1fc61adb15e748018a"
+      }
+    ]
+  },
+  "catalog_reference": "DesignLanguage/catalog/v6/catalog-data.js",
+  "revision_mockups": [
+    {
+      "file": "mockups/mockup-1.png",
+      "classification": "generated illustration",
+      "sha256": "70f76d35fda2e597d2f128b9a94138334daacd3eb48f9310af6a529e6f3111db"
+    },
+    {
+      "file": "mockups/mockup-2.png",
+      "classification": "generated illustration",
+      "sha256": "0344a0454a0400a31b9a6ae0a540c0043868690daf125b5b3bd4b88a051ec161"
+    },
+    {
+      "file": "mockups/mockup-3.png",
+      "classification": "generated illustration",
+      "sha256": "6b431541798052b7eac5734162f1dbb94b3c3c70d5b4f2a29a6f6f37f9bdfc05"
+    },
+    {
+      "file": "mockups/mockup-4.png",
+      "classification": "generated illustration",
+      "sha256": "ae90e45f69fcf187f08665c68ea44300c468355351ff5baf87d5876b890b6dd9"
+    },
+    {
+      "file": "mockups/mockup-5.png",
+      "classification": "generated illustration",
+      "sha256": "a2f55cabaf203a15c99f4f4d2980960cc225223a261d984fac11133c0a59cb57"
+    },
+    {
+      "file": "mockups/mockup-6.png",
+      "classification": "generated illustration",
+      "sha256": "8b4fd71cfb15167d7e47248f623c2d0e763354860d95d8ef159ea26d597316df"
+    },
+    {
+      "file": "mockups/mockup-7.png",
+      "classification": "generated illustration",
+      "sha256": "b48918fa8d1d87b00abf1ca2456eac9f9a9b070cb230de50fbca3321c4c23fe1"
+    },
+    {
+      "file": "mockups/mockup-8.png",
+      "classification": "generated illustration",
+      "sha256": "e404556e44f232a7ac634122536d38761ef3073a6d14e51be76f39e7063ccccb"
+    }
+  ]
+}

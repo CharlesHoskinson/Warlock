@@ -1,0 +1,33 @@
+/* D10: source-projected System, menu and application-action surfaces. */
+@layer components {
+  html[data-warlock-design="v1"] .surface-popup:is([data-mode="system"],[data-mode="menu"],[data-mode="jump"]) .control-label { white-space:normal; overflow:visible; text-overflow:clip; overflow-wrap:anywhere; }
+  html[data-warlock-design="v1"] .surface-popup:is([data-mode="system"],[data-mode="jump"]) :is([data-system-content],[data-jump-content]) { margin:16px 12px 2px; color:var(--wl-sys-color-text-secondary); font:400 .875rem/1.428571 Inter,sans-serif; overflow-wrap:anywhere; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="jump"] [data-jump-content="jump:title:state"] { color:var(--wl-sys-color-text); font-weight:600; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="menu"] .surface-controls > button { position:relative; display:grid; align-content:start; min-height:2.25rem; padding-inline-start:40px; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="menu"] [role="menuitemcheckbox"][aria-checked="true"]::after { content:""; position:absolute; inset-inline-start:19px; top:calc(7px + .625rem); width:5px; height:9px; border:solid currentColor; border-width:0 2px 2px 0; transform:translateY(-50%) rotate(45deg); }
+  /* Renderer projection: the wrapper contains the original keyed controls in source order. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="system"] [data-system-confirmation] { margin:24px 6px 6px; padding:12px; border:1px solid var(--wl-sys-color-border-essential); border-radius:8px; background:var(--wl-sys-color-surface-raised); display:flex; flex-wrap:wrap; gap:8px; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="system"] [data-system-confirmation] [data-system-content="system:confirmation:state"] { flex-basis:100%; display:flex; align-items:baseline; margin:0 0 8px; color:var(--wl-sys-color-text); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="system"] [data-system-confirmation="warning"] [data-consequence-symbol] { margin-inline-end:8px; color:var(--wl-sys-color-warning); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="system"] [data-system-confirmation="danger"] [data-consequence-symbol] { color:var(--wl-sys-color-danger); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="system"] [data-system-confirmation] :is([data-surface-control="system:cancel"],[data-surface-control="system:confirm"]) { min-height:2.25rem; padding:6px 12px; border:1px solid var(--wl-sys-color-border-essential); border-radius:6px; background:var(--wl-sys-color-surface); color:var(--wl-sys-color-text); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="system"] [data-system-confirmation="warning"] [data-surface-control="system:confirm"]:not(:disabled):not([aria-disabled="true"]) { border-color:var(--wl-sys-color-warning); color:var(--wl-sys-color-warning); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="system"] [data-system-confirmation="danger"] [data-surface-control="system:confirm"]:not(:disabled):not([aria-disabled="true"]) { border-color:var(--wl-sys-color-danger); color:var(--wl-sys-color-danger); }
+}
+@layer states {
+  html[data-warlock-design="v1"] .surface-popup[data-mode="menu"] [aria-current="true"] { background-color:var(--wl-sys-color-surface-selected); }
+  /* Two border-painted clipped strips form four corners without using the check or focus layers. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="menu"] [aria-current="true"] .control-label::before,
+  html[data-warlock-design="v1"] .surface-popup[data-mode="menu"] [aria-current="true"] .control-label::after { content:""; position:absolute; inset-inline:0; height:12px; border:2px solid var(--wl-sys-color-text); pointer-events:none; clip-path:polygon(0 0, 12px 0, 12px 6px, calc(100% - 12px) 6px, calc(100% - 12px) 0, 100% 0, 100% 100%, calc(100% - 2px) 100%, calc(100% - 2px) 2px, 2px 2px, 2px 100%, 0 100%); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="menu"] [aria-current="true"] .control-label::before { top:0; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="menu"] [aria-current="true"] .control-label::after { bottom:0; transform:rotate(180deg); }
+  @media (hover:hover) { html[data-warlock-design="v1"] .surface-popup[data-mode="menu"] [aria-current="true"]:not(:disabled):hover { background-color:var(--wl-sys-color-surface-selected-hover); } }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="menu"] [aria-current="true"]:not(:disabled):active { background-color:var(--wl-sys-color-surface-selected-pressed); }
+  html[data-warlock-design="v1"] .surface-popup:is([data-mode="system"],[data-mode="menu"],[data-mode="jump"]) button:disabled .control-detail { color:var(--wl-sys-color-text-secondary); }
+}
+@layer accessibility {
+  @media (forced-colors:active) {
+    html[data-warlock-design="v1"] .surface-popup[data-mode="menu"] [aria-current="true"] .control-label::before,
+    html[data-warlock-design="v1"] .surface-popup[data-mode="menu"] [aria-current="true"] .control-label::after { border-color:CanvasText; }
+  }
+}

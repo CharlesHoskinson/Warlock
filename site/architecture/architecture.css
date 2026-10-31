@@ -1,0 +1,24 @@
+@layer components {
+  .architecture-announcement {position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+  .architecture-intro {max-width: 70ch}
+  .architecture-panel {background:var(--wl-sys-color-surface);border:1px solid var(--wl-sys-color-border-essential);border-radius:var(--wl-sys-radius-card);padding:1.25rem;margin-block:1.5rem}
+  .architecture-controls {display:flex;flex-wrap:wrap;align-items:end;gap:.75rem}
+  .architecture-controls label {display:grid;gap:.35rem}
+  .architecture-scroll {overflow:auto;max-width:100%;border:1px solid var(--wl-sys-color-border-essential);padding:1rem}
+  .architecture-map {position:relative;min-width:760px;display:grid;gap:1rem}
+  .architecture-band {position:relative;z-index:1;background:var(--wl-sys-color-surface-recessed);border:1px solid var(--wl-sys-color-border-essential);border-radius:8px;padding:1rem}
+  .architecture-band h3 {margin:0 0 .25rem}.architecture-band p {margin:.25rem 0 .75rem;color:var(--wl-sys-color-text-secondary)}
+  .architecture-nodes {display:flex;flex-wrap:wrap;gap:.75rem}
+  .architecture-node {text-align:left;max-width:16rem;min-height:3rem;padding:.6rem .8rem;background:var(--wl-sys-color-surface-raised);color:var(--wl-sys-color-text);border:1px solid var(--wl-sys-color-border-essential);border-radius:6px}
+  .architecture-node[aria-pressed=true] {border:2px solid var(--wl-sys-color-brand-text);box-shadow:inset 4px 0 var(--wl-sys-color-brand-text)}
+  .architecture-node[data-hop]::after {content:' • ' attr(data-hop);font-weight:bold}
+  .architecture-edge-layer {position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none;overflow:visible}
+  .architecture-edge-layer line {stroke:var(--wl-sys-color-brand-text);stroke-width:3;stroke-dasharray:7 4}
+  .architecture-details dl {display:grid;grid-template-columns:minmax(6rem,10rem) 1fr;gap:.5rem 1rem}.architecture-details dt {font-weight:700}.architecture-details dd {margin:0;overflow-wrap:anywhere}
+  .architecture-details ul {margin:0;padding-left:1.2rem}.architecture-details li+li {margin-top:.25rem}
+  .architecture-table {overflow:auto;max-width:100%}.architecture-table table {border-collapse:collapse;width:100%;min-width:40rem}.architecture-table th,.architecture-table td {text-align:left;vertical-align:top;padding:.65rem;border-bottom:1px solid var(--wl-sys-color-border-essential)}
+  .architecture-steps li {padding:.35rem}.architecture-steps [aria-current=step] {border-left:4px solid var(--wl-sys-color-brand-text);background:var(--wl-sys-color-surface-selected)}
+  .architecture-message {font-family:var(--wl-sys-font-code);overflow-wrap:anywhere}
+  .architecture-note {color:var(--wl-sys-color-text-secondary)}
+  @media (max-width:600px) {.architecture-details dl {display:block}.architecture-details dd {margin:0 0 1rem}}
+}

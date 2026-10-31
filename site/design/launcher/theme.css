@@ -1,0 +1,50 @@
+/* Apache-2.0. Applications only. Shared foundations supply tokens and focus. */
+@layer layouts {
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] { display:flex; flex-direction:column; min-width:0; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] > .surface-controls { display:flex; flex-direction:column; min-height:0; overflow:auto; padding:6px; scroll-padding:6px; gap:6px; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .surface-controls > * { flex:none; min-width:0; scroll-margin:6px; }
+}
+@layer components {
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] > h1 { margin:0 6px 4px; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] > [role="status"] { margin:0 6px 12px; color:var(--wl-sys-color-text-secondary); overflow-wrap:anywhere; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .launcher-search[data-surface-field="control:search"] { width:100%; min-height:2.75rem; padding:10px 12px; border:1px solid var(--wl-sys-color-border-essential); border-radius:6px; background:var(--wl-sys-color-surface-recessed); color:var(--wl-sys-color-text); font:inherit; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .launcher-search::placeholder { color:var(--wl-sys-color-text-secondary); opacity:1; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .surface-controls > button { display:block; width:100%; min-height:2.25rem; margin:0; padding:6px 12px; border:1px solid transparent; border-radius:6px; text-align:start; background:transparent; color:var(--wl-sys-color-text); font:inherit; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .control-label { display:block; white-space:normal; overflow:visible; overflow-wrap:anywhere; font-weight:500; line-height:1.428571; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .control-detail { display:block; margin-top:2px; white-space:normal; overflow-wrap:anywhere; color:var(--wl-sys-color-text-secondary); font-size:.75rem; line-height:1.333333; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .control-detail:empty { display:none; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] [data-surface-control^="entry:"] { font-weight:600; background:var(--wl-sys-color-surface-raised); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] [data-surface-control^="entry:"] .control-label { font-weight:600; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] :is(.launcher-search, [data-surface-control="control:refresh"], [data-surface-control="control:acknowledge"], [data-surface-control^="pin:"], [data-surface-control^="unpin:"], [data-surface-control^="pin-left:"], [data-surface-control^="pin-right:"], [data-surface-control^="jump:open:"]) + [data-surface-control^="entry:"] { margin-block-start:10px; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .launcher-search + [data-surface-control="control:close"] { margin-block-start:10px; }
+}
+@layer states {
+  @media (hover:hover) { html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] button:enabled:not([aria-disabled="true"]):hover { background:var(--wl-sys-color-surface-hover); } }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] button:enabled:not([aria-disabled="true"]):active { background:var(--wl-sys-color-surface-pressed); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] button:is(:disabled,[aria-disabled="true"]) { opacity:1; color:var(--wl-sys-color-text-secondary); background:var(--wl-sys-color-surface-recessed); }
+}
+@layer accessibility {
+  @media (pointer:coarse) { html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .surface-controls > button { min-height:2.75rem; } }
+  @media (forced-colors:active) { html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .launcher-search { color:FieldText; background:Field; border-color:FieldText; } }
+}
+
+@layer layouts {
+  /* One scroll owner: controls normally, whole surface at short heights. */
+  @media (max-height: 360px) {
+    html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] { overflow:auto; scroll-padding:6px; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] > .surface-controls { overflow:visible; flex:none; }
+  }
+}
+@layer components {
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .surface-controls > button:has(.control-detail:not(:empty)) { min-height:3.5rem; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] :is([data-surface-control="control:refresh"], [data-surface-control="control:acknowledge"]) + :is([data-surface-control^="jump:open:"], [data-surface-control^="pin:"], [data-surface-control^="unpin:"]) { margin-block-start:10px; }
+}
+@layer accessibility {
+  @media (pointer:coarse) { html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .surface-controls > button:has(.control-detail:not(:empty)) { min-height:3.75rem; } }
+}
+
+@layer components {
+  /* Associated label is a keyed sibling of the existing search input. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .launcher-search-label { display:block; margin-block: 0 2px; color:var(--wl-sys-color-text); font-size:.875rem; font-weight:600; line-height:1.428571; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .launcher-search-label + .launcher-search { margin-block-start:-6px; }
+}

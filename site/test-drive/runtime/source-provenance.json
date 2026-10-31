@@ -1,0 +1,182 @@
+{
+  "commit": "bc3daf7b80ac7295a1ba1e56639a0e130e520a3c",
+  "sources": [
+    {
+      "path": "implementation/warlock/src/Main.elm",
+      "sha256": "7f5ddbe6fedf775e143b684ec60c9bfbdf15606414ed4fafc2c5553b514821c2",
+      "byte_size": 3276
+    },
+    {
+      "path": "implementation/warlock/src/Desktop.elm",
+      "sha256": "a503d926599b5aa194956a1208fdc0004fb829442cd523c5372d41fd1fab0404",
+      "byte_size": 126223
+    },
+    {
+      "path": "implementation/warlock/src/OutputController.elm",
+      "sha256": "aaf1729287ff61595a237201b261e7c1ce11c8f2353c620171f48aff99d86f38",
+      "byte_size": 27651
+    },
+    {
+      "path": "implementation/warlock/src/SurfaceController.elm",
+      "sha256": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
+      "byte_size": 16058
+    },
+    {
+      "path": "implementation/warlock/src/Surface.elm",
+      "sha256": "a660a4641a9f834c6198bce1e8049b3dd0be40cb74be1cfe1d5e14cfd0cdaa1d",
+      "byte_size": 65252
+    },
+    {
+      "path": "implementation/warlock/src/Binding.elm",
+      "sha256": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b",
+      "byte_size": 1480
+    },
+    {
+      "path": "implementation/warlock/src/UInt64.elm",
+      "sha256": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+      "byte_size": 1459
+    },
+    {
+      "path": "implementation/warlock/src/CapturedAction.elm",
+      "sha256": "5c820d0c2f5167c42953b564d422429215e21ddf0a6dc955b3d3fe52b07d93cc",
+      "byte_size": 2682
+    },
+    {
+      "path": "implementation/warlock/src/GeometryProjection.elm",
+      "sha256": "f1b5708b8b4d1c7c02e46542bc041abb9e8cb0524d965ee4b03ab97f586a544c",
+      "byte_size": 12165
+    },
+    {
+      "path": "implementation/warlock/src/GeometrySizePolicy.elm",
+      "sha256": "46dda2de43642cd33997382e90813c8eeccde80745d79b7d5cd5fd425b062c43",
+      "byte_size": 6205
+    },
+    {
+      "path": "implementation/warlock/src/Effects.elm",
+      "sha256": "80c574e8c564c28a1fb11f1f89bb5bfa7ac97a92474bbf027a737324bb2a82cd",
+      "byte_size": 18899
+    },
+    {
+      "path": "implementation/warlock/src/WorkspaceNavigation.elm",
+      "sha256": "8313a23008abfa6157324472db852b087b4af09dd3696a33f273d7010634e7f6",
+      "byte_size": 8707
+    },
+    {
+      "path": "implementation/warlock/src/ReconciliationTracking.elm",
+      "sha256": "84482d1bb84160e3bd9e026b2043635c35b76422d6e9066f703411f784b29bf9",
+      "byte_size": 7152
+    },
+    {
+      "path": "implementation/warlock/src/BatchReplay.elm",
+      "sha256": "6300d3c2e617de14b2fd70a40606ea8c94db435a93f0ae30bd19765f5cdce852",
+      "byte_size": 8901
+    },
+    {
+      "path": "implementation/warlock/src/OutputSurfaceReplay.elm",
+      "sha256": "c5b41a03a57830f9fefbc35d67e05b9a438aa7e8aee3be6367e7365fcbf70c26",
+      "byte_size": 3244
+    },
+    {
+      "path": "implementation/warlock/src/TaskbarReplay.elm",
+      "sha256": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351",
+      "byte_size": 1658
+    },
+    {
+      "path": "implementation/warlock/src/SharedRecoveryReplay.elm",
+      "sha256": "f44d52432e1c6c876207c273d8a013fd446b186b85a23d7bf5474943ef26ff8b",
+      "byte_size": 3457
+    },
+    {
+      "path": "implementation/warlock/qa/NativePointerFixture.elm",
+      "sha256": "b674baa48a0d0197d32e6bc400412465e3a83934d3a749ebc7cbba35e82c4124",
+      "byte_size": 954
+    },
+    {
+      "path": "implementation/warlock/qa/TransferReplay.elm",
+      "sha256": "bfbd1e8064e9f24cba2cb71bd8f2cf7beda0892bdb4cff4363b3c593e949dcf1",
+      "byte_size": 5549
+    },
+    {
+      "path": "implementation/warlock/qa/WorkspaceNavigationReplay.elm",
+      "sha256": "92d2907941ebb0530b6f2d77b20fa1a8fe41bd516610daee993f352550284ffe",
+      "byte_size": 7824
+    },
+    {
+      "path": "implementation/warlock/qa/SnapReplay.elm",
+      "sha256": "638ad46f4a9569631bba1faf27a07525a9a9f02bb3070f8408914c3edbb19198",
+      "byte_size": 12026
+    },
+    {
+      "path": "implementation/warlock/native/shared-host.c",
+      "sha256": "5d0d43c61574f292842bc34b2e3363cd5e7a215239e609bcb9780d475a9a8bbc",
+      "byte_size": 154516
+    },
+    {
+      "path": "implementation/warlock/native/host.c",
+      "sha256": "56f0952d61f3ce57e7c2cb1122c640dc7548495bfab9b02677961b98266aa022",
+      "byte_size": 110504
+    }
+  ],
+  "local_popup_build": {
+    "compiler": "Elm 0.19.1",
+    "note": "Built from repository source with the reviewed local image resolution patch and elm.json compiler version set to 0.19.1 for the available compiler. Vendor popup.js remains unchanged.",
+    "files": [
+      {
+        "path": "test-drive/runtime/staged/PreviewVisual.elm",
+        "sha256": "628776858f7c9985446537f23c13af1dbc5f7ba71177300f58c89241a07b5037",
+        "byte_size": 7722
+      },
+      {
+        "path": "test-drive/runtime/staged/local-image-resolution.patch",
+        "sha256": "34fca725211cb095bbaa7679e726913957706f679506739dd66c4aa417283184",
+        "byte_size": 1928
+      },
+      {
+        "path": "test-drive/runtime/popup-local.js",
+        "sha256": "4547091c66188473d3ab31d070c771f00d9f31bf7bf10bd37587910bc351c70c",
+        "byte_size": 444794
+      }
+    ]
+  },
+  "local_bar_build": {
+    "compiler": "Elm 0.19.1",
+    "note": "Bar build from repository source with staged typed activeApplication and windowFocused facts supplied by the host from observed focus. SurfaceRenderer exposes distinct attributes. Vendor bundle remains unchanged. Built with Elm 0.19.1.",
+    "files": [
+      {
+        "path": "test-drive/runtime/staged/SurfaceSnapshot.elm",
+        "sha256": "52042d4286e1f465727cd41e6ce24516b293454c75266866ddd95df880947715",
+        "byte_size": 9778
+      },
+      {
+        "path": "test-drive/runtime/staged/SurfaceRenderer.elm",
+        "sha256": "2fd7a2e1f600734194fd21b76defbb32c9a53cb8248cdbb7bb062b682f0fa2c7",
+        "byte_size": 12643
+      },
+      {
+        "path": "test-drive/runtime/bar-local.js",
+        "sha256": "16adb6f39e7413b72a32ce01c0a0efacbc1b497b40f14d1369119b457ea5ab0b",
+        "byte_size": 181896
+      }
+    ]
+  },
+  "popup_adapter_patch": {
+    "note": "Source adapter patch includes presentation, composition and keyboard handling adaptations, including body Escape keyup for the same current popup. The patch applies to the original repository adapter.",
+    "files": [
+      {
+        "path": "implementation/warlock/assets/popup-adapter.js",
+        "sha256": "5bac00f28cabc0173be32d4c6178daada0c21ace19e68bd8e82a061cdde927d2",
+        "byte_size": 20254
+      },
+      {
+        "path": "test-drive/runtime/vendor/popup-adapter.js",
+        "sha256": "86fb1899877306ece2674c3de8f471f804b6c33e2f12c9c3b7614c12001e8e23",
+        "byte_size": 20432
+      },
+      {
+        "path": "test-drive/runtime/staged/popup-adapter.patch",
+        "sha256": "fb54ccd0786c4d50a6b4d6c02e4f24449799926d7a73da856787500ee4c95724",
+        "byte_size": 999
+      }
+    ]
+  }
+}

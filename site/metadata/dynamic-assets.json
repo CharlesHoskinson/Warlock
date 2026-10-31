@@ -1,0 +1,60 @@
+{
+ "schema": 1,
+ "references": [
+  {
+   "source": "assets/shared/site.js",
+   "assets": [
+    "assets/shared/routes.json"
+   ],
+   "sourceSha256": "8bd542076d57e8c0f99f21da032315e81db606af5ad435fdccfb2685a5343bf1",
+   "review": "Fixed same-origin asset resolved relative to the document or module."
+  },
+  {
+   "source": "test-drive/scenarios/index.js",
+   "assets": [
+    "test-drive/scenarios/taskbar.json",
+    "test-drive/scenarios/launcher.json",
+    "test-drive/scenarios/switcher.json",
+    "test-drive/scenarios/task-view.json",
+    "test-drive/scenarios/transfer.json",
+    "test-drive/scenarios/picker.json",
+    "test-drive/scenarios/preview-states.json",
+    "test-drive/scenarios/snap.json",
+    "test-drive/scenarios/notifications.json",
+    "test-drive/scenarios/settings.json",
+    "test-drive/scenarios/files.json",
+    "test-drive/scenarios/system.json",
+    "test-drive/scenarios/window-menu.json",
+    "test-drive/scenarios/confirmation.json",
+    "test-drive/scenarios/application-actions.json",
+    "test-drive/scenarios/status-recovery.json"
+   ],
+   "sourceSha256": "a5c34157a9fdf561faefeb5eb8c75e6fb843564c4a0939f76661d191573d3a37",
+   "review": "Finite local assets; scenario IDs are allowlisted before interpolation."
+  },
+  {
+   "source": "test-drive/tour/index.js",
+   "assets": [
+    "test-drive/tour/steps.json"
+   ],
+   "sourceSha256": "113d919619b53fe0f2e60db2a52cc4b028323fcadb2e8916a915ee2a0dcafb92",
+   "review": "Reviewed tour fetches module-relative steps.json; component links derive from the locally bundled step definitions."
+  },
+  {
+   "source": "test-drive/input/host-patch.test.js",
+   "assets": [
+    "test-drive/host/index.js"
+   ],
+   "sourceSha256": "a724a9a20c40b65e27b363ff9e74fa7b6015e7a497483bb86e88f9dc19d04adb",
+   "review": "Development-only Node harness imports a command-line temporary patched copy of the host; the listed host is its source input. This is not a browser runtime import."
+  },
+  {
+   "source": "test-drive/input/snap-host.test.js",
+   "assets": [
+    "test-drive/host/index.js"
+   ],
+   "sourceSha256": "481549107a6e492b0c5ecb2a3e3986c6159057f43bcfb12e23de60fc2ba00e7f",
+   "review": "Development-only Node harness imports a command-line temporary patched copy of the host; listed host is its source input. Not a browser runtime import."
+  }
+ ]
+}

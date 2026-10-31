@@ -1,0 +1,24 @@
+@layer components {
+  .wl-tour { position:fixed; z-index:100; right:1rem; bottom:1rem; width:min(25rem,calc(100vw - 2rem)); max-height: min(80vh,45rem); overflow:auto; padding:1rem; color:var(--wl-sys-color-text); background:var(--wl-sys-color-surface-raised); border:1px solid var(--wl-sys-color-border-essential); border-radius:var(--wl-sys-radius-surface); box-shadow:var(--wl-sys-shadow-dialog); }
+  .wl-tour[hidden] { display:none; }
+  .wl-tour-controls { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1rem; }
+  .wl-tour-progress { max-height:8rem; overflow:auto; padding-left:1.5rem; }
+  .wl-tour-progress [aria-current] { font-weight:700; color:var(--wl-sys-color-brand-text); }
+  @media (max-width: 50rem) {
+    /* The desktop has a fixed viewport. Reserve a real, bounded strip for the
+       instructions instead of placing a relative panel below the viewport. */
+    body:has(.wl-tour:not([hidden])) { --wl-tour-space: 40vh; }
+    body:has(.wl-tour:not([hidden])) .desktop { bottom: calc(var(--wl-tour-space) + 8px + var(--desktop-tools-height, 64px)); }
+    body:has(.wl-tour:not([hidden])) .desktop-popup { max-height: calc(100% - 3rem - 8px); }
+    body:has(.wl-tour:not([hidden])) .desktop-tools { bottom: calc(var(--wl-tour-space) + 8px); max-height: 20vh; overflow:auto; }
+    .wl-tour { box-sizing:border-box; inset:auto 0 0; width:100%; height:40vh; max-height:40vh; margin:0; padding:.75rem; border-radius:var(--wl-sys-radius-surface) var(--wl-sys-radius-surface) 0 0; overscroll-behavior:contain; }
+    .wl-tour h2 { margin:.25rem 0; }
+    .wl-tour p { margin:.4rem 0; }
+    .wl-tour-progress { max-height:4rem; }
+  }
+}
+@layer components {
+  .wl-tour-anchor { position: fixed; z-index: 99; pointer-events: none; outline: 3px solid var(--wl-sys-color-focus); outline-offset: 3px; border-radius: var(--wl-sys-radius-control); }
+  .wl-tour-anchor[hidden] { display: none; }
+  @media (max-width: 50rem) { .wl-tour-anchor { display: none; } }
+}

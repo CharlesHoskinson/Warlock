@@ -1,0 +1,393 @@
+[
+  {
+    "id": "taskbar",
+    "title": "Taskbar",
+    "path": "components/taskbar/index.html",
+    "summary": "The top bar keeps applications, window groups, utilities and persistent feedback within reach.",
+    "sourceModules": [
+      "implementation/warlock/src/Bar.elm",
+      "implementation/warlock/src/Taskbar.elm",
+      "implementation/warlock/src/TaskbarShell.elm"
+    ],
+    "designReferences": [
+      "design/taskbar/spec.md"
+    ],
+    "catalogRoutes": [
+      "reference/catalog/v6/index.html#component/taskbar",
+      "reference/catalog/v6/index.html#component/utility"
+    ],
+    "evidencePaths": [
+      "components/taskbar/evidence/taskbar-primary-keyboard__InactiveActivation.png",
+      "components/taskbar/evidence/dense-outer-focus__native-primary__outer-focus-0-activate.png"
+    ],
+    "scenario": "taskbar"
+  },
+  {
+    "id": "application-groups",
+    "title": "Application groups",
+    "path": "components/application-groups/index.html",
+    "summary": "Application groups collect the windows and launcher belonging to an application.",
+    "sourceModules": [
+      "implementation/warlock/src/Taskbar.elm",
+      "implementation/warlock/src/Pins.elm",
+      "implementation/warlock/src/ActionProjection.elm"
+    ],
+    "designReferences": [
+      "design/taskbar/spec.md"
+    ],
+    "catalogRoutes": [
+      "reference/catalog/v6/index.html#component/window-group"
+    ],
+    "evidencePaths": [
+      "components/application-groups/evidence/taskbar-primary-keyboard__ActiveMinimizeToDesktop.png",
+      "components/application-groups/evidence/taskbar-primary-keyboard__MinimizedRestore.png",
+      "components/application-groups/evidence/taskbar-zero-fresh-20261028__keyboard-pins-after-restart.png",
+      "components/application-groups/evidence/attention-native-composed-20261030__v5-passed__taskbar-native-attention.png"
+    ],
+    "scenario": "taskbar"
+  },
+  {
+    "id": "launcher",
+    "title": "Launcher",
+    "path": "components/launcher/index.html",
+    "summary": "Applications presents search, pin management and explicit launch actions in a continuous list.",
+    "sourceModules": [
+      "implementation/warlock/src/Catalog.elm",
+      "implementation/warlock/src/SearchFold.elm",
+      "implementation/warlock/src/Launch.elm",
+      "implementation/warlock/src/Pins.elm"
+    ],
+    "designReferences": [
+      "design/launcher/spec.md"
+    ],
+    "catalogRoutes": [
+      "reference/catalog/v6/index.html#component/applications"
+    ],
+    "evidencePaths": [
+      "components/launcher/evidence/dense-picker__launcher-initial.png",
+      "components/launcher/evidence/dense-picker__launcher-filtered.png",
+      "components/launcher/evidence/dense-picker__launcher-no-match.png",
+      "components/launcher/evidence/dense-picker__launcher-refused.png"
+    ],
+    "scenario": "launcher"
+  },
+  {
+    "id": "window-picker",
+    "title": "Window picker",
+    "path": "components/window-picker/index.html",
+    "summary": "The picker selects a window family from an application group with more than one family.",
+    "sourceModules": [
+      "implementation/warlock/src/Taskbar.elm",
+      "implementation/warlock/src/PreviewPresenter.elm"
+    ],
+    "designReferences": [
+      "design/previews-snap/spec.md"
+    ],
+    "catalogRoutes": [
+      "reference/catalog/v6/index.html#component/picker"
+    ],
+    "evidencePaths": [
+      "components/window-picker/evidence/preview-descriptions__Live.png",
+      "components/window-picker/evidence/preview-application-fallback__native-expired-fallback-ApplicationFallback.png"
+    ],
+    "scenario": "picker"
+  },
+  {
+    "id": "window-switcher",
+    "title": "Window switcher",
+    "path": "components/window-switcher/index.html",
+    "summary": "The window switcher traverses observed families without changing window focus while browsing.",
+    "sourceModules": [
+      "implementation/warlock/src/Switcher.elm"
+    ],
+    "designReferences": [
+      "design/window-switcher/spec.md"
+    ],
+    "catalogRoutes": [],
+    "evidencePaths": [
+      "components/window-switcher/evidence/switcher-native-controls__popup-mru-initial.png"
+    ],
+    "scenario": "switcher"
+  },
+  {
+    "id": "task-view",
+    "title": "Task View",
+    "path": "components/task-view/index.html",
+    "summary": "Task View presents an inventory of workspaces and window families.",
+    "sourceModules": [
+      "implementation/warlock/src/TaskView.elm",
+      "implementation/warlock/src/WorkspaceInventory.elm",
+      "implementation/warlock/src/WorkspaceNavigation.elm"
+    ],
+    "designReferences": [
+      "design/task-view/spec.md"
+    ],
+    "catalogRoutes": [],
+    "evidencePaths": [
+      "components/task-view/evidence/taskview-filter-accessibility__current-taskview.png",
+      "components/task-view/evidence/taskview-empty-inventory__popup-empty-workspace.png"
+    ],
+    "scenario": "task-view"
+  },
+  {
+    "id": "workspace-transfer",
+    "title": "Workspace transfer",
+    "path": "components/workspace-transfer/index.html",
+    "summary": "Transfer moves an eligible window family to an explicitly chosen workspace.",
+    "sourceModules": [
+      "implementation/warlock/src/Transfer.elm",
+      "implementation/warlock/src/GeometryProjection.elm"
+    ],
+    "designReferences": [
+      "design/task-view/spec.md"
+    ],
+    "catalogRoutes": [],
+    "evidencePaths": [
+      "components/workspace-transfer/evidence/transfer-current__popup-native-transfer-destinations.png",
+      "components/workspace-transfer/evidence/transfer-current__popup-native-transfer-workspace-three.png"
+    ],
+    "scenario": "transfer"
+  },
+  {
+    "id": "previews",
+    "title": "Previews",
+    "path": "components/previews/index.html",
+    "summary": "Previews offer a visual reference to a window family while preserving the identity and geometry of its control.",
+    "sourceModules": [
+      "implementation/warlock/src/PreviewLifecycle.elm",
+      "implementation/warlock/src/PreviewPresenter.elm"
+    ],
+    "designReferences": [
+      "design/previews-snap/spec.md"
+    ],
+    "catalogRoutes": [
+      "reference/catalog/v6/index.html#component/preview",
+      "reference/catalog/v6/index.html#component/preview-image",
+      "reference/catalog/v6/index.html#component/preview-caption"
+    ],
+    "evidencePaths": [
+      "components/previews/evidence/preview-states__Live.png",
+      "components/previews/evidence/preview-states__Historical.png",
+      "components/previews/evidence/preview-states__Unavailable.png",
+      "components/previews/evidence/preview-loading-paint__current-native-Loading-attempt.png"
+    ],
+    "scenario": "preview-states"
+  },
+  {
+    "id": "popup-surfaces",
+    "title": "Popup surfaces",
+    "path": "components/popup-surfaces/index.html",
+    "summary": "Popup surfaces host shell controls near their opener and keep their own presentation and focus lifecycle.",
+    "sourceModules": [
+      "implementation/warlock/src/Popup.elm",
+      "implementation/warlock/src/Presentation.elm",
+      "implementation/warlock/src/SurfaceController.elm",
+      "implementation/warlock/src/SurfaceRenderer.elm"
+    ],
+    "designReferences": [
+      "design/system-menus/spec.md"
+    ],
+    "catalogRoutes": [
+      "reference/catalog/v6/index.html#component/popup"
+    ],
+    "evidencePaths": [
+      "components/popup-surfaces/evidence/popup-remap__launcher-popup-initial.png",
+      "components/popup-surfaces/evidence/taskview-focus-return__after-popup-initial.png"
+    ],
+    "scenario": "launcher"
+  },
+  {
+    "id": "window-menu",
+    "title": "Window menu",
+    "path": "components/window-menu/index.html",
+    "summary": "The window menu exposes actions supported for the selected window.",
+    "sourceModules": [
+      "implementation/warlock/src/Menu.elm",
+      "implementation/warlock/src/MenuBridge.elm",
+      "implementation/warlock/src/NativeProvider.elm"
+    ],
+    "designReferences": [
+      "design/system-menus/spec.md"
+    ],
+    "catalogRoutes": [
+      "reference/catalog/v6/index.html#component/menu",
+      "reference/catalog/v6/index.html#component/menu-item"
+    ],
+    "evidencePaths": [
+      "components/window-menu/evidence/pin-check__browser-shipped-AlwaysOnTopChecked.png",
+      "components/window-menu/evidence/explicit-new-instance__native__popup-new-instance-pointer.png"
+    ],
+    "scenario": "window-menu"
+  },
+  {
+    "id": "snap-layouts",
+    "title": "Snap layouts",
+    "path": "components/snap-layouts/index.html",
+    "summary": "Snap layouts offer six placements for an eligible window.",
+    "sourceModules": [
+      "implementation/warlock/src/Snap.elm",
+      "implementation/warlock/src/GeometryProjection.elm"
+    ],
+    "designReferences": [
+      "design/previews-snap/spec.md"
+    ],
+    "catalogRoutes": [],
+    "evidencePaths": [
+      "components/snap-layouts/evidence/snap-chooser__browser-snap-chooser.png"
+    ],
+    "scenario": "snap"
+  },
+  {
+    "id": "application-actions",
+    "title": "Application actions",
+    "path": "components/application-actions/index.html",
+    "summary": "Declared actions, recent items and supported new instances.",
+    "sourceModules": [
+      "implementation/warlock/src/JumpList.elm",
+      "implementation/warlock/src/Menu.elm"
+    ],
+    "designReferences": [
+      "design/system-menus/spec.md"
+    ],
+    "catalogRoutes": [],
+    "evidencePaths": [
+      "components/application-actions/evidence/explicit-new-instance__native__popup-new-instance-application-actions.png",
+      "components/application-actions/evidence/jump-lists__jump-lists-actions.png"
+    ],
+    "scenario": "application-actions"
+  },
+  {
+    "id": "notifications",
+    "title": "Notifications",
+    "path": "components/notifications/index.html",
+    "summary": "Live and historical notifications and their actions.",
+    "sourceModules": [
+      "implementation/warlock/src/Notifications.elm",
+      "implementation/warlock/src/OutcomeAnnouncements.elm"
+    ],
+    "designReferences": [
+      "design/notifications/spec.md"
+    ],
+    "catalogRoutes": [],
+    "evidencePaths": [
+      "components/notifications/evidence/notification-announcements__native-history.png",
+      "components/notifications/evidence/notifications__notification-expired-history.png",
+      "components/notifications/evidence/notifications__popup-notification-history.png"
+    ],
+    "scenario": "notifications"
+  },
+  {
+    "id": "appearance-settings",
+    "title": "Appearance settings",
+    "path": "components/appearance-settings/index.html",
+    "summary": "Appearance choices and save outcomes.",
+    "sourceModules": [
+      "implementation/warlock/src/Settings.elm"
+    ],
+    "designReferences": [
+      "design/settings/spec.md"
+    ],
+    "catalogRoutes": [],
+    "evidencePaths": [
+      "components/appearance-settings/evidence/high-contrast__settings-high-contrast-enlarged.png",
+      "components/appearance-settings/evidence/layer-appearance__layer-appearance-dawn.png",
+      "components/appearance-settings/evidence/layer-appearance__layer-appearance-night.png"
+    ],
+    "scenario": "settings"
+  },
+  {
+    "id": "motion-shortcuts-help",
+    "title": "Motion, shortcuts and help",
+    "path": "components/motion-shortcuts-help/index.html",
+    "summary": "Motion override, shortcuts and inline help.",
+    "sourceModules": [
+      "implementation/warlock/src/Motion.elm",
+      "implementation/warlock/src/ShortcutPreferences.elm",
+      "implementation/warlock/src/Shortcuts.elm"
+    ],
+    "designReferences": [
+      "design/settings/spec.md"
+    ],
+    "catalogRoutes": [],
+    "evidencePaths": [
+      "components/motion-shortcuts-help/evidence/live-motion__live-motion-settings.png",
+      "components/motion-shortcuts-help/evidence/settings-help__keyboard-settings-help.png"
+    ],
+    "scenario": "settings"
+  },
+  {
+    "id": "files",
+    "title": "Files",
+    "path": "components/files/index.html",
+    "summary": "Observed locations, collections and service state.",
+    "sourceModules": [
+      "implementation/warlock/src/Files.elm"
+    ],
+    "designReferences": [
+      "design/files/spec.md"
+    ],
+    "catalogRoutes": [],
+    "evidencePaths": [
+      "components/files/evidence/files__files-collections.png",
+      "components/files/evidence/files__popup-files-existing-explorer.png"
+    ],
+    "scenario": "files"
+  },
+  {
+    "id": "system-menu",
+    "title": "System menu",
+    "path": "components/system-menu/index.html",
+    "summary": "Volume, network, power and session facts.",
+    "sourceModules": [
+      "implementation/warlock/src/SystemMenu.elm"
+    ],
+    "designReferences": [
+      "design/system-menus/spec.md"
+    ],
+    "catalogRoutes": [],
+    "evidencePaths": [
+      "components/system-menu/evidence/system-menu__popup-system-menu-capabilities.png"
+    ],
+    "scenario": "system"
+  },
+  {
+    "id": "dialogs",
+    "title": "Dialogs",
+    "path": "components/dialogs/index.html",
+    "summary": "Inline system confirmation and modal ownership.",
+    "sourceModules": [
+      "implementation/warlock/src/SystemMenu.elm"
+    ],
+    "designReferences": [
+      "design/system-menus/spec.md"
+    ],
+    "catalogRoutes": [],
+    "evidencePaths": [
+      "components/dialogs/evidence/modal-recipient-eligibility__ModalRecipientAfter.png",
+      "components/dialogs/evidence/system-menu__system-menu-confirmation.png"
+    ],
+    "scenario": "confirmation"
+  },
+  {
+    "id": "status-recovery",
+    "title": "Status and recovery",
+    "path": "components/status-recovery/index.html",
+    "summary": "Operation outcomes, refresh and reconnection.",
+    "sourceModules": [
+      "implementation/warlock/src/Shell.elm",
+      "implementation/warlock/src/Effects.elm",
+      "implementation/warlock/src/OutcomeAnnouncements.elm"
+    ],
+    "designReferences": [
+      "design/notifications/spec.md"
+    ],
+    "catalogRoutes": [],
+    "evidencePaths": [
+      "components/status-recovery/evidence/window-feedback-native__Pending.png",
+      "components/status-recovery/evidence/window-feedback-native__Refused.png",
+      "components/status-recovery/evidence/window-feedback-native__Unknown.png",
+      "components/status-recovery/evidence/window-feedback__feedback-wide-unknown.png"
+    ],
+    "scenario": "status-recovery"
+  }
+]

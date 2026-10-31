@@ -1,0 +1,71 @@
+{
+  "id": "notifications-history-and-expiry",
+  "source_commit": "bc3daf7b80ac7295a1ba1e56639a0e130e520a3c",
+  "source_fixtures": [
+    "implementation/warlock/qa/NotificationsReplay.elm",
+    "implementation/warlock/qa/NotificationAnnouncementReplay.elm",
+    "implementation/warlock/qa/evidence/notifications/",
+    "implementation/warlock/qa/evidence/notification-announcements/"
+  ],
+  "initial_external_facts": {
+    "binding": "attached",
+    "service": "available",
+    "entries": [
+      {
+        "app": "Mail",
+        "summary": "Build complete",
+        "body": "The build is ready to review. The complete report includes the results, the changed files, and the details needed to review the work before it is shared.",
+        "state": "live",
+        "actions": [
+          "Open",
+          "Review"
+        ]
+      },
+      {
+        "app": "Calendar",
+        "summary": "Meeting reminder",
+        "body": "Your meeting starts soon.",
+        "state": "expired",
+        "actions": []
+      },
+      {
+        "app": "Mail",
+        "summary": "Review requested",
+        "body": "The review is available.",
+        "state": "invoked",
+        "actions": []
+      },
+      {
+        "app": "Calendar",
+        "summary": "Appointment",
+        "body": "Your appointment is scheduled.",
+        "state": "dismissed",
+        "actions": []
+      }
+    ]
+  },
+  "entry_intent": "Open notifications from the taskbar through the admitted host binding.",
+  "supported_actions": [
+    "Refresh notifications",
+    "Set Do not disturb for this session",
+    "Set critical interruption consent for this session",
+    "Invoke a live action",
+    "Dismiss a live notification",
+    "Close notifications"
+  ],
+  "expected_observations": [
+    "Current snapshots supply history and action identity.",
+    "A focused action that expires remains focus-only and unavailable.",
+    "Refresh reads current state and does not repeat a mutation.",
+    "The elected announcement owner admits fresh arrivals and consent-gated interruption.",
+    "Unknown action outcome remains unconfirmed and is not retried."
+  ],
+  "note": "Illustrative facts are injected through the real protocol with host-generated identities; this file does not define Elm policy.",
+  "expiry_sequence": [
+    "Publish the Calendar entry live with Open, preserving service and incarnation identity.",
+    "Focus Open through the production renderer and report focus through the controller.",
+    "Publish the same entry as expired with no actions.",
+    "Verify the same DOM control retains actual focus, aria-disabled=true, data-focus-only=true, and emits no notification action on Enter or Space.",
+    "Verify exactly one elected announcement owner and no additional gallery live region."
+  ]
+}
