@@ -8,9 +8,9 @@
 #include <fcntl.h>
 -- Linux-specific source proposal: independent process/library review required.
 module Warlock.Capture.Process.Internal
- (Tool(..),ToolError(..),Captured(..),Owner,OwnerStatus(..),newOwner,status,runTool,runFixture,runFixturePinned,runFixturePinnedObserved,runFixturePinnedFDsObserved,runFixturePinnedFDsObservedHook,ToolObservation(..),runFixtureWithHook, selectedFixture, selectedTicketFixture, SelectedSpawn, HeldExecutable, SelectedResult(..), Session, selectedHeld, awaitLeader, runSelected, AdmissionDeadline, deadlineAfter, remainingMicros, runSelectedUntil, runSelectedDetailed, SelectedOutcome(..), Containment(..), SessionObservation(..), observeSession, runSelectedFixtureHook) where
+ (Tool(..),ToolError(..),Captured(..),Owner,OwnerStatus(..),newOwner,status,runTool,runFixture,runFixturePinned,runFixturePinnedObserved,runFixturePinnedFDsObserved,runFixturePinnedFDsObservedHook,runFixturePinnedFDsObservedUntil,ToolObservation(..),runFixtureWithHook, selectedFixture, selectedTicketFixture, SelectedSpawn, HeldExecutable, SelectedResult(..), Session, selectedHeld, selectedHeldNoInput, awaitLeader, requestGracefulStop, runSelected, AdmissionDeadline, deadlineAfter, deadlineAbsoluteNs, deadlineFromAbsoluteNs, deadlineFromAbsoluteNsAt, remainingMicros, runSelectedUntil, runSelectedDetailed, SelectedOutcome(..), Containment(..), SessionObservation(..), observeSession, runSelectedFixtureHook) where
 import Control.Concurrent (MVar, ThreadId, forkFinally, killThread, newEmptyMVar, newMVar, putMVar, readMVar, threadDelay, withMVar)
-import Control.Exception (IOException, SomeAsyncException, SomeException, bracket, fromException, mask, onException, try, throwIO, toException)
+import Control.Exception (IOException, SomeAsyncException, SomeException, bracket, fromException, mask, mask_, onException, try, throwIO, toException)
 import qualified Data.Text as T
 import Warlock.Capture.Process.Owner (Owner,OwnerStatus(..),newOwner,status,begin,abortBegin,publish,quarantine,failUnsettled,settle,newChild,setPid,retainPipe,retainReader,retainBorrow,releaseBorrows,retainTransfer,clearTransfers,retainTicket,clearTickets,retainCore,clearCore,recordStartupFailure,newPending,retainPending,pendingRecordFD,pendingIdentityFD,FDIdentity(..),pendingMarkFD,pendingTransferFD,clearPending,pendingRecordIssue)
 import Control.Monad (unless, void)
@@ -23,6 +23,9 @@ import qualified Crypto.Hash.SHA256 as SHA
 import qualified Data.ByteString as B
 import qualified Data.ByteString.Char8 as C
 import Data.Bits ((.|.), (.&.))
+import Data.Char (ord)
+import Data.List (foldl')
+import Data.Word (Word64)
 import Foreign.C.Error (eSRCH, getErrno, throwErrnoIfMinus1Retry)
 import Foreign.C.Types (CInt(..), CUInt(..))
 import Foreign.Marshal.Alloc (allocaBytes)
@@ -37,7 +40,7 @@ import System.Posix.Files (fileMode, fileOwner, getSymbolicLinkStatus, isDirecto
 import System.Posix.Types (ProcessID, Fd(..))
 import System.Posix.IO (closeFd, fdToHandle)
 import Warlock.Capture.Process.Whitelist (SelectedFDPlan, trustedBorrowedPlan, spawnWhitelisted)
-import System.Posix.Signals (sigKILL)
+import System.Posix.Signals (sigKILL, sigTERM)
 import System.Process (CreateProcess(..), StdStream(..), createProcess_, getPid, proc, waitForProcess)
 import System.Timeout (timeout)
 
@@ -47,7 +50,7 @@ foreign import ccall unsafe "getpgid" c_getpgid :: CInt -> IO CInt
 foreign import ccall unsafe "kill" c_kill :: CInt -> CInt -> IO CInt
 
 data Tool = Pactree FilePath | Readelf FilePath deriving (Eq,Show)
-data ToolError = ToolHashMismatch | BadArguments | SpawnOrIO | TimedOut | OutputLimit | Unsuccessful Int | CleanupUncertain | OwnerBusy | OutputUnavailable | SessionClosed | TransferUnavailable deriving (Eq,Show)
+data ToolError = ToolHashMismatch | BadArguments | SpawnOrIO | TimedOut | OutputLimit | Unsuccessful Int | CleanupUncertain | OwnerBusy | OutputUnavailable | SessionClosed | TransferUnavailable | StopAlreadyAttempted deriving (Eq,Show)
 -- Relative convenience creates exactly one absolute deadline. It is not
 -- a renewable timeout and must also be passed to the channel implementation.
 newtype AdmissionDeadline = AdmissionDeadline Integer deriving (Eq,Show)
@@ -62,6 +65,26 @@ remainingMicros (AdmissionDeadline end) = do
  now <- getMonotonicTimeNSec
  let left = end - toInteger now
  pure (fromInteger (max 0 (min 30000000 ((left + 999) `div` 1000))))
+
+-- Trusted parent/bootstrap argument only: absolute CLOCK_MONOTONIC nanoseconds.
+deadlineAbsoluteNs :: AdmissionDeadline -> String
+deadlineAbsoluteNs (AdmissionDeadline end) = show end
+
+deadlineFromAbsoluteNs :: String -> IO (Either ToolError AdmissionDeadline)
+deadlineFromAbsoluteNs value = do
+ now <- getMonotonicTimeNSec
+ pure (deadlineFromAbsoluteNsAt now value)
+
+-- Test seam: production always supplies its actual monotonic sample above.
+deadlineFromAbsoluteNsAt :: Word64 -> String -> Either ToolError AdmissionDeadline
+deadlineFromAbsoluteNsAt now value
+ | null value || length value > 20 || take 1 value == "0" || any (\c -> c < '0' || c > '9') value = Left BadArguments
+ | end > toInteger (maxBound :: Word64) = Left BadArguments
+ | end <= toInteger now = Left TimedOut
+ | end - toInteger now > 30000000000 = Left BadArguments
+ | otherwise = Right (AdmissionDeadline end)
+ where
+  end = foldl' (\acc digit -> acc * 10 + toInteger (ord digit - ord '0')) 0 value
 
 data SelectedInput = FixtureInput Handle | TicketInput TransferTicket
 data SelectedSpawn = SelectedSpawn FilePath [String] (Maybe SelectedInput) [(String,String)] (Maybe HeldExecutable)
@@ -110,11 +133,13 @@ inScope (SessionScope live gate) deadline action = do
     active <- atomicModifyIORef' live (\v -> (v,v))
     pure (Left (if active then TimedOut else SessionClosed))
 
-data Session = Session (IO (Either ToolError ())) (IO (Either ToolError SessionObservation))
+data Session = Session (IO (Either ToolError ())) (IO (Either ToolError SessionObservation)) (IO (Either ToolError ()))
 awaitLeader :: Session -> IO (Either ToolError ())
-awaitLeader (Session action _) = action
+awaitLeader (Session action _ _) = action
 observeSession :: Session -> IO (Either ToolError SessionObservation)
-observeSession (Session _ action) = action
+observeSession (Session _ action _) = action
+requestGracefulStop :: Session -> IO (Either ToolError ())
+requestGracefulStop (Session _ _ action) = action
 
 -- Evidence only. Endpoint identity remains the channel owner's observation.
 observeChild :: AdmissionDeadline -> ProcessID -> IO (Either ToolError SessionObservation)
@@ -136,6 +161,11 @@ selectedHeld :: HeldExecutable -> [String] -> TransferTicket -> [(String,String)
 selectedHeld lease args input environment =
  let safe (key,value) = not (null key) && all (`notElem` ['=', '\0']) key && '\0' `notElem` value
  in if all safe environment then Right (SelectedSpawn "/" args (Just (TicketInput input)) environment (Just lease)) else Left BadArguments
+
+selectedHeldNoInput :: HeldExecutable -> [String] -> [(String,String)] -> Either ToolError SelectedSpawn
+selectedHeldNoInput lease args environment =
+ let safe (key,value) = not (null key) && all (`notElem` ['=', '\0']) key && '\0' `notElem` value
+ in if all safe environment then Right (SelectedSpawn "/" args Nothing environment (Just lease)) else Left BadArguments
 
 data Captured = Captured { output :: B.ByteString, diagnostics :: B.ByteString } deriving (Eq,Show)
 data ToolObservation = ToolObservation { operation :: Either ToolError Captured, capturedOutput :: Maybe Captured } deriving (Eq,Show)
@@ -201,6 +231,20 @@ runFixturePinnedObserved owner exe want args n us = runPinnedObserved owner exe 
 -- Internal-only: the caller owns and retains each verified borrowed descriptor.
 runFixturePinnedFDsObserved :: Owner -> FilePath -> B.ByteString -> [String] -> [Fd] -> Int -> Int -> IO ToolObservation
 runFixturePinnedFDsObserved owner exe want args fds n us = runFixturePinnedFDsObservedHook owner exe want args fds n us (const (pure ()))
+
+-- Uses the original supplied absolute deadline, never a renewed duration.
+runFixturePinnedFDsObservedUntil :: Owner -> FilePath -> B.ByteString -> [String] -> [Fd] -> Int -> AdmissionDeadline -> IO ToolObservation
+runFixturePinnedFDsObservedUntil owner exe want args fds cap deadline = case trustedBorrowedPlan fds of
+ Left _ -> pure (ToolObservation (Left BadArguments) Nothing)
+ Right plan -> do
+  capturedCell <- newIORef Nothing
+  bytes <- try (readTool exe) :: IO (Either IOException B.ByteString)
+  result <- case bytes of
+   Left _ -> pure (Left SpawnOrIO)
+   Right b | hexDigest (SHA.hash b) /= want -> pure (Left ToolHashMismatch)
+   Right _ -> runSelectedHook owner (SelectedSpawn exe args Nothing [("LC_ALL","C"),("LANG","C"),("PATH","/usr/bin")] Nothing) cap deadline awaitLeader (const (pure ())) Nothing (Just capturedCell) (Just plan)
+  captured <- readIORef capturedCell
+  pure (ToolObservation result captured)
 
 -- Controlled fixture seam, not a product policy callback.
 runFixturePinnedFDsObservedHook :: Owner -> FilePath -> B.ByteString -> [String] -> [Fd] -> Int -> Int -> (String -> IO ()) -> IO ToolObservation
@@ -391,11 +435,12 @@ runSelectedHook owner (SelectedSpawn exe args selectedInput selectedEnv selected
          -- A failed close is retained as uncertainty; never run the conversation.
          transfer <- try (hook "transfer-close" >> closeInput) :: IO (Either SomeException ())
          scope <- newSessionScope
+         stopAttempted <- newIORef False
          remaining <- remainingMicros deadline
          observed <- case transfer of
           Left ex -> pure (Left ex)
           Right () -> try (do
-           result <- restore (timeout remaining (conversation (Session (poll scope pid outResult errResult) (inScope scope deadline (do hook "scope-observation"; value <- observeChild deadline pid; hook "scope-observation-complete"; pure value)))))
+           result <- restore (timeout remaining (conversation (Session (poll scope pid outResult errResult) (inScope scope deadline (do hook "scope-observation"; value <- observeChild deadline pid; hook "scope-observation-complete"; pure value)) (inScope scope deadline (requestStop stopAttempted pid)))))
            hook "after-conversation"
            pure result) :: IO (Either SomeException (Maybe (Either ToolError ())))
          afterConversation <- remainingMicros deadline
@@ -551,6 +596,29 @@ runSelectedHook owner (SelectedSpawn exe args selectedInput selectedEnv selected
        else quarantine owner (Just child) ["unconfirmed-owned-group"] >> ioError (userError "unconfirmed owned group")
       _ -> quarantine owner (Just child) ["missing-owned-pid"] >> ioError (userError "missing owned pid")
     _ -> quarantine owner (Just child) ["missing-owned-pipes"] >> ioError (userError "missing owned pipes")
+  -- Gate and original D surround this entire one-shot leader-only request.
+  -- The sticky mark precedes all observations and the signal; neither an
+  -- exception nor an uncertain result authorizes another numerical PID call.
+  requestStop attempted pid = mask_ $ do
+   already <- atomicModifyIORef' attempted (\old -> (True,old))
+   if already then pure (Left StopAlreadyAttempted) else do
+    result <- try $ do
+     hook "graceful-before-observation"
+     exited <- leaderExited pid
+     if exited then pure (Left SpawnOrIO) else do
+      first <- observeChild deadline pid
+      second <- observeChild deadline pid
+      case (first,second) of
+       (Right a,Right b) | a == b && observedPid a == pid -> do
+        hook "graceful-before-signal"
+        remaining <- remainingMicros deadline
+        if remaining == 0 then pure (Left TimedOut) else do
+         sent <- c_kill (fromIntegral pid) (fromIntegral sigTERM)
+         pure (if sent == 0 then Right () else Left SpawnOrIO)
+       (Left problem,_) -> pure (Left problem)
+       (_,Left problem) -> pure (Left problem)
+       _ -> pure (Left SpawnOrIO)
+    pure (either (const (Left SpawnOrIO)) id (result :: Either IOException (Either ToolError ())))
   poll scope pid getOut getErr = do
    -- Only one WNOWAIT/readers check per gate acquisition. Sleeps are outside.
    step <- inScope scope deadline $ do

@@ -2,7 +2,7 @@ cabal-version: 2.4
 name: warlock-process-custody
 version: 0.1.0.0
 build-type: Simple
-extra-source-files: qualification.json SHA256SUMS README.md HANDOFF.md RETROFIT.md SOURCE-MAP.md fixture/Main.hs fixture-selected/Main.hs test/Internal.hs test/Public.hs test/SelectedFD.hs
+extra-source-files: qualification.json SHA256SUMS README.md HANDOFF.md RETROFIT.md SOURCE-MAP.md fixture/Main.hs fixture-selected/Main.hs test/Internal.hs test/Public.hs test/SelectedFD.hs fixture-graceful/Main.hs test/DeadlineStop.hs
 common options
   default-language: Haskell2010
   ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates
@@ -45,4 +45,17 @@ test-suite selected-fd-controls
   hs-source-dirs: test, src
   main-is: SelectedFD.hs
   build-depends: directory, network == 3.2.0.0
+  ghc-options: -threaded
+
+executable graceful-stop-child
+  import: options
+  hs-source-dirs: fixture-graceful
+  main-is: Main.hs
+  ghc-options: -threaded
+test-suite deadline-stop-controls
+  import: options, implementation
+  type: exitcode-stdio-1.0
+  hs-source-dirs: test, src
+  main-is: DeadlineStop.hs
+  build-depends: directory
   ghc-options: -threaded
