@@ -5,7 +5,7 @@
 module Warlock.Native.Cancellation.Selection
  ( SelectionRegistry, ViewClaim, Selection, SelectionError(..), SelectionPhase(..)
  , newSelectionRegistry, viewClaim, installCurrentView, retireCurrentView
- , captureSelection, spendSelection, selectionId, selectionBinding, selectionScope
+ , captureSelection, spendSelection, validateSpentCurrent, selectionId, selectionBinding, selectionScope
  , selectionPublication, selectionLease, selectionControl, selectionIntent, selectionAccepted, selectionDeadline, selectionPhase ) where
 #define _GNU_SOURCE 1
 #include <sys/types.h>
@@ -156,3 +156,22 @@ spendSelection owner@(SelectionRegistry _ state) ident expectedBinding action = 
       | otherwise -> let spent = Selection token claim accepted end Spent
                          rest = filter ((/=token) . selectionId) slots
                      in (State current (spent:rest),Right spent)
+
+-- Point-in-time correlation only. The owning actor must serialize this check
+-- with its actual queue transition; it is not a transferable native grant.
+validateSpentCurrent :: SelectionRegistry -> Selection -> IO (Either SelectionError ())
+validateSpentCurrent owner@(SelectionRegistry _ state) expected = do
+ checked <- checkThread owner
+ case checked of
+  Left err -> pure (Left err)
+  Right () -> do
+   sampled <- clockCounter
+   case sampled of
+    Left err -> pure (Left err)
+    Right now -> do
+     State current slots <- readIORef state
+     let Selection _ claim accepted end phase = expected
+     pure $ if phase/=Spent || current/=Just claim || not (expected `elem` slots)
+      then Left ForeignSelection
+      else if now<accepted || now>=end then Left Expired
+      else Right ()

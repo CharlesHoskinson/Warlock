@@ -1,83 +1,74 @@
-# Haskell native cancellation owner — integration in progress
+# Haskell cancellation and prequeue components
 
-This component ports the existing cancellation owner to Haskell. It is not a
-native provider or an accepted window-system implementation. Owner construction,
-execution proof and ACK receipts remain private; no decoded wire status grants
-native permission. The actual native event-thread adapter and real durable journal
-issuer/post-ACK history are still missing, so no full/native/GUI acceptance follows.
+This package is under integration. It is not an installed window-system backend,
+a native provider or a complete durable journal. All original requirements and
+native oracles remain mandatory. See [qualification.json](qualification.json)
+for source-bound evidence, failures and remaining work.
 
-The candidate retains full owner/intent/prepared-ID/deadline identity,64 slots,
-cancel fencing, a complete Unknown fallback before a trusted synchronous callback,
-terminal proof across encoding failure, and once-only generation-specific retirement
-with uncertainty retained. Model and callback fixtures do not prove physical closure.
+## Implemented boundaries
 
-Root corrected the reviewed duplicate-publication path: query already publishes
-and clears terminal proof, so commit must not publish a second time and return Busy.
-Readonly key/ID views enable real formatter integration without exposing constructors.
-The finite provider result is forced inside exception ownership; async faults retain
-Unknown and propagate. The strict library build and actual source-control fixture passed under the protected launcher (see qualification.json). Provider callbacks are test doubles; this does not prove a native window mutation or physical closure.
+| Component | Current behavior |
+| --- | --- |
+| Cancellation owner | Canonical full owner/intent/P/original-D identity;64 active slots; cancellation fences execution before encoding/retirement; complete Unknown fallback before a synchronous trusted callback; retained execution evidence and once-only retirement uncertainty. |
+| Terminal storage | One-shot owned file/directory/final-entry storage. Final entry must match the held inode; receipt checks hold the same custody gate as retirement. TerminalReceipt is a same-process observation, not DurableReceipt or native ACK permission. WCAN1 remains preliminary, not a release disk format. |
+| Selection | Trusted current-view claim binds scope/generation/publication/lease/control and exact Restore intent. Actual CLOCK_MONOTONIC acceptance fixes D=A+2s. Spending is once-only; stale/retired views cannot revive captures. Installing a claim does not authenticate GUI input. |
+| HostGuard | Owns namespace/lock descriptors, private metadata and fixed-name inode; actual exclusive nonblocking flock, generation-scoped borrowed namespace, original async retention/unlock and once-only close. Writer ownership is distinct from lifetime host-owner eligibility. |
+| SlotStore | Relative bounded read/scan/exact-old atomic publication and exact removal. Full writes/readback, file fsync, rename, directory fsync and final-entry checks;64 files/oneMiB, retained FD/DIR custody and uncertain close without numeric retry. Child directories are acquired into a preallocated owner before fallible validation. |
+| PairStore | Allocates both stores privately and holds its actor gate plus HostGuard across full inventories, exact selection spend and Reserved → Pending → Submitted durable writes. Current view/D and successful unlock precede queue insertion; claim checks currentness again and consumes queued work once. Failures after spend retain phase and quarantine. |
+| AdmissionShape | Informational legacy Pending decoder/key validation, including schema1. The active admissions folder independently requires schema2 Pending. Decoded data never grants enqueue, native execution or ACK. |
 
-See qualification.json for current evidence. The original native-cancellation.qnt
-and all24 named tests remain unchanged, with their original resource/native premises.
+Both child folders are siblings in the lifetime namespace: `admissions-v1` and
+`cancellation-admissions-v1`. The historical C `admission.directory` denotes
+that lifetime namespace; `admission.entries` denotes the Pending child.
 
-The enhanced component run also passes controls for lazy provider-proof exceptions,
-retained compensation evidence after reply publication, and original-deadline
-carriage in the opaque permit. Native code must still check that deadline freshly
-at the first mutation. Public snapshot accessors cannot forge a snapshot through
-record updates. These are component guarantees, not native-provider acceptance.
+PairStore's full inventory checks precede spending or enqueue. SlotStore's
+individual raw read is informational, not a substitute for that whole-directory
+check. Storage shutdown preserves disk Pending/certificates and does not certify
+native cancellation, physical effect retirement or ACK.
 
-The preliminary terminal storage path now passes real owned-directory component
-controls. A reproduced staging-name substitution defect was fixed by retaining
-and checking the final entry against the original inode; independent entry, file
-and directory close ownership is retained. Fault controls cover actual syscall
-boundaries, metadata rejection and synchronous/asynchronous exceptions.
+## Qualification scope
 
-`TerminalReceipt` observes only this process's owner and one-shot storage; it is
-not `DurableReceipt` or native ACK authority. The WCAN1 representation is preliminary,
-not a release disk format. Generation rotation, stable decoding/recovery, real host
-admission retirement/AckPending and persistent history remain mandatory unfinished
-work. The in-memory history overlay cannot yet exercise ACK because no genuine
-DurableReceipt issuer exists. No test manufactures that authority.
+Protected checks retain the actual wrong-staging-inode RED and its correction,
+compiler failures, the schema1 informational-decoding mismatch, and an ordinary
+publication-failure stage regression. The latter was reproduced before correction:
+failures after Reserved or Pending now preserve that confirmed stage while
+quarantining the store and refusing enqueue. Current
+bounded component results include:
 
-Receipt validation now holds the same nonblocking storage custody lease used by
-retirement and persistence through its handle and owner checks. Concurrent close
-cannot invalidate the handles between those checks. Nested validation returns
-Busy; an asynchronous exception releases the gate. The observation is valid at
-that check, not a transferable native ACK capability.
+- Owner/terminal storage controls, actual kernel lock contention and cleanup.
+- SlotStore filesystem,64-file/oneMiB and uncertain-close/reused-FD controls.
+- Child-acquisition faults and original SlotStore/selection regressions.
+- Thirteen independently invoked PairStore modes, including stale view, expiry,
+  foreign input, corrupt inventory and interrupted publication.
+- Actual persisted pair/Reserved bytes checked by unchanged original validators.
+- Nineteen legacy Pending validity/key cases, including snap/transfer and signed
+  zero, checked against the unchanged original development oracle.
+- Eight seeded12-step production-route traces with independent filesystem/queue
+  counts. Observed27 positive,7 duplicate,19 invalid-control,23 stale and20 empty
+  operations. These96 actions are bounded coverage, not exhaustive proof.
+- A separate strict ordinary library build with development hooks disabled.
 
-The private selection component now binds the exact Restore intent to the current
-trusted view claim. It samples header-derived CLOCK_MONOTONIC and fixes D=A+2s;
-spending cannot renew the deadline or revive a retired/replaced view's token.
-Strict controls exercise real entropy/clock expiry, one-use spending, full-intent
-mismatch and view ABA rejection. Fifteen actual encoded producer cases match the
-unchanged legacy companion validator, storage-key hash and canonical JSON,
-including Unicode. The legacy oracle runs only as development QA.
+The manual `slotstore-test-hooks` flag defaults to False. Protected developer
+fixtures explicitly enable it and link the same library unit; ordinary builds
+keep the implementation modules and test constructors private. The Python
+legacy oracle is development tooling, never a production dependency.
 
-Installing a trusted view claim is not actual authenticated GUI input. The
-selection registry still retains spent slots up to16; a genuine admission
-handoff/retirement lifecycle is required before normal repeated operation and
-original64 active-admission behavior can be claimed. PairBytes is encoding only,
-not durable Reserved/Pending/Submitted publication or native ACK authority.
+## Still required
 
-The private HostGuard now retains its namespace and actual fixed-name lock file,
-verifies private metadata/name-to-inode identity and acquires flock exclusively.
-A generation-scoped borrowed namespace is usable only in the owning thread while
-the guard is held. Kernel-contention, nested/retirement Busy, original async
-propagation/unlock, failed-operation quarantine, lock-name substitution and normal
-once-only retirement controls pass. The guard protects storage coordination; it
-is not native execution authority or the completed PairStore transaction.
+Actual authenticated host/view integration, lifetime `host-owner.lock` and current
+namespace migration/marker/predecessor eligibility are not established by
+PairPhase.Available, a writer lock or returned queued-work data. They must be
+joined before real dispatch. The native event-thread/non-yielding provider must
+freshly validate original D at the first mutation; Haskell ThreadId alone does
+not prove compositor OS-thread ownership.
 
-SlotStore now implements relative bounded scans, reads, exact-old-value atomic
-publication and exact removal with file/directory fsync and final-entry checks.
-Actual controls pass for64 files/oneMiB, wrong expected values, corrupt/debris/link
-cases, mutation interruption, Busy retirement and uncertain close with an actual
-reused-FD sentinel. The ordinary strict library build passes with the manual
-`slotstore-test-hooks` flag disabled. Developer controls explicitly enable it and
-link the same library unit; the ordinary build keeps the module/hooks private.
+Spent selection entries currently accumulate up to16. Genuine handoff/retirement,
+continuous64-active admission behavior, full legacy temporary/cache compatibility,
+versioned journal generations and restart recovery remain unfinished. The native
+owner has no genuine DurableReceipt issuer: real terminal retention, exact host
+admission unlink/directory sync, durable AdmissionRetired/AckPending, native ACK
+and persistent history must still be connected. No test manufactures that grant.
 
-SlotStore per-call serialization does not establish custody across a PairStore
-transaction. PairStore must own these objects exclusively and hold its own gate
-plus HostGuard through the whole sequence. Child-directory acquisition, original
-inventory/selection validation, durable pair publication, queue handoff, genuine
-retirement and journal/ACK/recovery remain integration work. Not every syscall
-failure/async ordering or hardware crash cut has been exercised.
+Provider/retire doubles, syscall-boundary hooks and abstract Quint models do not
+prove native window mutation, compensation, physical closure, all syscall error
+orders, hardware power loss, live Elm delivery or original/release acceptance.

@@ -1,5 +1,5 @@
 {
-  "status": "Strict owner and actual owned-filesystem component controls PASS; full durable journal/native integration incomplete",
+  "status": "Guarded PairStore component, independent/differential/seeded controls and ordinary library build PASS; runtime/native/journal integration incomplete",
   "sourcePackets": [
     {
       "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/terra-1-native-cancellation-owner-port-v29/src/Warlock/Native/Cancellation.hs",
@@ -34,7 +34,13 @@
     "Implement preowned namespace/lock HostGuard with actual exclusive nonblocking flock, exact fixed-name inode check, rank2 generation-scoped borrowed namespace, original async retention/unlock, quarantine and once-only close",
     "Integrate functional relative SlotStore read/scan/exact-old atomic publication/removal with 64file/oneMiB bounds and retained once-close custody",
     "Test hooks false by default; actual filesystem controls compile against same library unit with explicit developer flag, and ordinary library build explicitly disables it",
-    "Root fixed strict name-shadowing compiler error; original RED retained"
+    "Root fixed strict name-shadowing compiler error; original RED retained",
+    "Implement privately owned PairStore with full two-directory inventory before spend, exact one-use selection, durable Reserved/Pending/Submitted sequence and once-only queue claim under HostGuard/actor gate",
+    "Informational legacy Pending decoder accepts schema1 like original recovery validator; active admission directory explicitly requires schema2, and valid0600schema1 cannot enqueue",
+    "Factor canonical pending/key preview for pre-spend checks; revalidate exact spent selection/current view/original D before enqueue and claim",
+    "Real fixed-name child acquisition retains FD before fallible validation, verifies parent/child/name identity and fsyncs newly created directory parent",
+    "Strengthen independent malformed companion fixture with valid0600metadata and exact InvalidInventory reason; no metadata-only false positive",
+    "Ordinary publication failures after durable Reserved/Pending incorrectly replaced the diagnostic phase with Failed. Unchanged controls reproduced this (smoke1793468763298797149), then passed after retaining the last completed phase (smoke1793468871944523789). Quarantine/no enqueue retained; stage-fix independent13 plus seeded96 regressions and ordinary no-hooks build pass. No native/original acceptance."
   ],
   "missing": [
     "Actual native event-thread/non-yielding provider and native validation/first mutation",
@@ -45,7 +51,10 @@
     "Actual host admission unlink/directory fsync, durable AdmissionRetired/AckPending and generation-bound DurableReceipt issuer remain missing",
     "Selection trusted view install is not authenticated native GUI event integration",
     "Spent selection slots remain bounded16 without completed admission retirement; genuine handoff/retirement and original64active admission semantics remain unfinished",
-    "PairStore durable Reserved/Pending/Submitted sequence still requires SlotStore integration, validated inventory, queue reservation and genuine selection retirement"
+    "PairStore durable Reserved/Pending/Submitted sequence still requires SlotStore integration, validated inventory, queue reservation and genuine selection retirement",
+    "Actual host-owner lifetime lock/current namespace migration/marker/predecessor eligibility is not proved by writer HostGuard, PairPhase.Available or queued work",
+    "Full legacy temporary/cache compatibility, genuine selection retirement and continuous64active lifecycle remain unfinished",
+    "Native dispatch/event-thread provider, actual physical resources/Elm routes and persistent terminal journal/ACK/recovery still require implementation and original observations"
   ],
   "nativeAccepted": false,
   "originalAccepted": false,
@@ -59,12 +68,19 @@
     "implementation/warlock/haskell/native-authority/test-storage/ForeignOwnerControls.hs": "404facb5a706cf6b6a08d619453187a95eb5b1766da0867c12c5a97ba6f828c9",
     "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/Storage.hsc": "c2556135079bd0b63870aac9b6b37736041894352939eea1ab87ac8c26889ded",
     "implementation/warlock/haskell/native-authority/test-selection/Main.hs": "d232ec3833bf702f6957aad6e3d425640e9e40370356d808e8620b0d05d470be",
-    "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/Selection.hsc": "cf9094124dd65b4c0281e019fcca1fd1fbc5069ec12b73d38e60ef8eeb5117a1",
-    "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/AdmissionBytes.hs": "3a2a317ad9335be3eaa57e9a067ec3d8398fbb20a9e156cb05fe2531124cd006",
+    "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/Selection.hsc": "eaf96fb03375de6f7169210bd55134c1e4ff43e0b1fb6120d8cd618618e41a38",
+    "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/AdmissionBytes.hs": "06250a307c2978c7670a2c6477c8bed2b12f322b7e363fd129a31cd1757a9e6e",
     "implementation/warlock/haskell/native-authority/test-guard/Main.hs": "249e6a0c97b1f0e66f3d0fbd69854e926caa0fc77106160837fde6f395078dc8",
     "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/HostGuard.hsc": "791b2bb5262dc3a99c805d363bc7992e57396ba2c92909e0c9725b316ba41e71",
     "implementation/warlock/haskell/native-authority/test-slot/SlotStoreControls.hs": "45fd1bee1c7950938bdf72647da8d4709f7f112aaa98bfe077bc33dca21971b8",
-    "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/SlotStore.hsc": "e2fbab376ec41726a189077b13959510f13abfdd5c70c6a5c77cd349b6189f4d"
+    "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/SlotStore.hsc": "43a1210a1cca1d7d177d3dd14b1aed4791bf324bafce5b66d5cc183cd730012d",
+    "implementation/warlock/haskell/native-authority/test-child/ChildDirectoryControls.hs": "0180ab984a9b5b1fc42ced8ba1951714e645a6f71dc100b697357bdfa2037c02",
+    "implementation/warlock/haskell/native-authority/test-pair/Main.hs": "ba513eb2485cf43d03b2c9f6652884525a22e0174ccb0bd11df9d4dc969adfc7",
+    "implementation/warlock/haskell/native-authority/test-pair-independent/Main.hs": "a040ee22ad133dbae7228b979f4be5535b8a143b25c536c11ae9ccd75ca04b2d",
+    "implementation/warlock/haskell/native-authority/test-pair-independent/ShapeMain.hs": "c70dbcd2b2b2e81ba4bd1cc18cbcdcd2e20a9e0bd54378ec48656f36ed8cebbe",
+    "implementation/warlock/haskell/native-authority/test-pair-sequences/Main.hs": "e66a2d68f60e95b7d6c9c33ac846cb2aab706e874dd5351a48d99246607bb93f",
+    "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/AdmissionShape.hs": "2d9182e774ff69ab66034a717985685ed1a53bd4adc94157c8b4268744aac241",
+    "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/PairStore.hs": "93c8344e391440d0068880ac89e1b25482e22551baea7c8a7d7167e865a5d243"
   },
   "evidence": {
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-cancellation-owner-component-1793458711517727132/report.json": "d9ac32fb06c4e0c383936c209d4cda7b75cad8f7a7944e45d795ca89a45b3a5e",
@@ -86,9 +102,24 @@
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-cancellation-hostguard-controls-1793463377261064067/report.json": "9c774fccd6d99aec10133530c4ee7aeeeefacab87093083c6c57d0cf4c1dfd14",
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-cancellation-slotstore-controls-1793463843775455908/report.json": "8fd6eabc403d452f816ae81edf829afebf9b41c6773f27ebb3cf89afde022ae1",
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-cancellation-slotstore-controls-1793463946578468566/report.json": "589664e808a2c6102785b11fbfdbfedfe1ec4917da9cc455d1a1a5d4a384c063",
-    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-cancellation-slotstore-production-build-1793464115210773191/report.json": "6b1a61349341eca5d48505fdebc80e82c87199a4ecf5039b6733f7da81933228"
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-cancellation-slotstore-production-build-1793464115210773191/report.json": "6b1a61349341eca5d48505fdebc80e82c87199a4ecf5039b6733f7da81933228",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-cancellation-pairstore-smoke-1793466094072076490/report.json": "96b04354fa6ec6b3db8ab336c243df13d6301551acf146c07a598d92e1f7dc28",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-admission-shape-controls-1793466588300569203/report.json": "c9b9e3e71779fba492608aa940eb26db4dccccbe92961061ae7ce7cf5caf549a",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/admission-shape-legacy-differential-1793466735720998931/report.json": "6b1a0868d8a032d2ac4feb772062028bd22e7e37550e0b26d5f632c365f8c7d8",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/admission-shape-legacy-differential-1793466752099563593/report.json": "575e13dd54f7992896d0a991bf95b607b572378604fd62506dd8ec770b99b6d4",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-admission-shape-controls-1793466799504287213/report.json": "b53972e1f3303b6c7684a3c3ff57dc8ff386d79b038ae400628b9f295c51fbdf",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/admission-shape-legacy-differential-1793466883274342393/report.json": "4e6df84ca559139b23f2d87a528d1e24d16dda85e3e49351df6005463f47b537",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-independent-pairstore-controls-1793466921747295773/report.json": "855fe34dc3fbc03f56b200c04d459a56eccd6869aeee71fd35b1d2f7e3b79ecb",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/pairstore-original-byte-oracle-1793467119854189450/report.json": "8180ba224844f9526c8fc87570dd853365e7de9eceea38f2eb55d6d5e59c72bb",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/pairstore-dependent-regressions-1793467316068731390/report.json": "62c5ca17c336187708693f4674ba136e90d983262aa3c9ad775098a1e89aa763",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/pairstore-seeded-sequences-1793467517270342593/report.json": "db76d8dff2f77a22fb559b05c7e82182efdad6fd2facf9deeb4b98a65c35322b",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-cancellation-slotstore-production-build-1793467657263203582/report.json": "97fa022d637728a841455bd63aa11ad97fda6e3da22818e251bc5632a7af8e8a",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-cancellation-pairstore-smoke-1793468763298797149/report.json": "2e0ee2a012a19ca48bb0f90a6cd6bd7230de4d02f74c31709bb1a253422793f4",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-cancellation-pairstore-smoke-1793468871944523789/report.json": "ea55fac67d4990ae83745768bdcf6f46dd20b41c26d1174919fe48a01f9853ca",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/pairstore-stage-fix-regressions-1793469054832418064/report.json": "dc1b4c6890b7f62a5979761a1f685fa6a30854e6497070d2a9d3f3618ee2ef10",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-cancellation-slotstore-production-build-1793469255623689370/report.json": "9c9bbf0467874d0fa40e32cd51e2cba2cbd0f40ea4a5ee003cd147deba6cc7e4"
   },
-  "verifiedScope": "Actual Haskell owner called by provider-double controls: exact metadata, cancel/commit ordering, nonreexecution, Unknown/async/fault behavior, peer isolation, capacity64/65, checked exhaustion, seeded reference trajectories. No actual native mutation or real physical retirement proved. Real owned-directory single-record write/fsync/rename/directory-fsync/readback, metadata, name-swap, synchronous/asynchronous fault and once-close controls now pass. TerminalReceipt is same-process storage observation, not durable ACK authority. Selection component strict build/controls PASS and15 actual Haskell companion-output cases match original validate_pair/storage_key/canonical JSON, including Unicode. These are producer/encoder controls, not durable pair publication, genuine native input or ACK authority. Actual host-guard controls pass for independent open-description kernel contention, nested/retirement Busy, callback async propagation and actual unlock, quarantine, exact lock-name substitution refusal/callback0 and normal/idempotent descriptor retirement. Not a full PairStore or native execution authority. SlotStore actual filesystem controls PASS including 64file/oneMiB capacity, full read/replace/remove, metadata/debris/symlink/name-swap rejection, mutation poison, Busy/retirement exclusion and actual closed-FD number reuse sentinel without stale retry. Production-default library strict build PASS with test flag false. Remaining fault matrices and full PairStore/native/ACK are unproved.",
+  "verifiedScope": "Actual Haskell owner called by provider-double controls: exact metadata, cancel/commit ordering, nonreexecution, Unknown/async/fault behavior, peer isolation, capacity64/65, checked exhaustion, seeded reference trajectories. No actual native mutation or real physical retirement proved. Real owned-directory single-record write/fsync/rename/directory-fsync/readback, metadata, name-swap, synchronous/asynchronous fault and once-close controls now pass. TerminalReceipt is same-process storage observation, not durable ACK authority. Selection component strict build/controls PASS and15 actual Haskell companion-output cases match original validate_pair/storage_key/canonical JSON, including Unicode. These are producer/encoder controls, not durable pair publication, genuine native input or ACK authority. Actual host-guard controls pass for independent open-description kernel contention, nested/retirement Busy, callback async propagation and actual unlock, quarantine, exact lock-name substitution refusal/callback0 and normal/idempotent descriptor retirement. Not a full PairStore or native execution authority. SlotStore actual filesystem controls PASS including 64file/oneMiB capacity, full read/replace/remove, metadata/debris/symlink/name-swap rejection, mutation poison, Busy/retirement exclusion and actual closed-FD number reuse sentinel without stale retry. Production-default library strict build PASS with test flag false. Remaining fault matrices and full PairStore/native/ACK are unproved. Actual PairStore independent13 modes PASS; persisted Reserved/Pending/Submitted bytes and immutable selection/D agree with original validators.19 informational legacy Pending cases agree with original validity/storage keys, including schema1, protocol2snap/transfer and signed zero. Child/oldSlotStore/Rootschema2gate/selection regressions pass.8 seeded12-step production-route traces witnessed27positive7duplicate19invalid23stale20empty operations with filesystem/queue-count oracle. Ordinary no-hooks library build passes. All are component-scoped, not actual GUI/host eligibility/native/ACK acceptance.",
   "remainingAudit": [
     "Real native-thread provider and OS-thread correspondence",
     "DurableReceipt issuer, retained post-ACK reply and watermark are missing",

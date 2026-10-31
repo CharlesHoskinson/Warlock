@@ -10,7 +10,7 @@
 #include <stdio.h>
 -- Relative bounded storage; no native-effect, receipt, or authentication authority.
 module Warlock.Native.Cancellation.SlotStore
- (SlotStore,SlotName,SlotError(..),SlotStatus(..),SlotResource(..),newSlotStore,slotName,offerDirectory
+ (SlotStore,SlotName,SlotError(..),SlotStatus(..),SlotResource(..),ChildDirectory(..),newSlotStore,slotName,offerDirectory,offerChildDirectory
  ,readSlot,scanSlots,publishSlot,removeSlot,slotStatus,retireSlotStore
 #ifdef SLOTSTORE_TESTING
  ,newSlotStoreWithHookForTest
@@ -22,9 +22,10 @@ import Control.Exception (IOException,Exception,SomeAsyncException,SomeException
 import Control.Monad (unless,when,foldM)
 import Data.Bits ((.&.),(.|.))
 import qualified Data.ByteString as B
-import System.IO.Error (isDoesNotExistError)
+import System.IO.Error (isDoesNotExistError,isAlreadyExistsError)
+import Data.List (nub)
 import Data.Int (Int64)
-import Data.Word (Word8,Word32)
+import Data.Word (Word8,Word32,Word64)
 import Data.IORef (IORef,atomicModifyIORef',newIORef,readIORef)
 import Foreign.C.Error (throwErrnoIfMinus1,throwErrnoIfMinus1_)
 import Foreign.C.String (CString)
@@ -36,8 +37,10 @@ import Foreign.ForeignPtr (ForeignPtr,mallocForeignPtrArray,withForeignPtr)
 import Foreign.Storable (peek,poke,peekByteOff,peekElemOff,pokeElemOff)
 import System.Posix.Files (FileStatus,deviceID,fileID,fileMode,fileOwner,fileSize,getFdStatus,isDirectory,isRegularFile,linkCount,modificationTimeHiRes,statusChangeTimeHiRes)
 import System.Posix.Types (Fd(..))
-import System.Posix.User (getEffectiveUserID)
+import System.Posix.User (getEffectiveUserID,getRealUserID)
 
+foreign import ccall safe "mkdirat" c_mkdirat :: CInt -> CString -> #{type mode_t} -> IO CInt
+foreign import ccall safe "fstatat" c_fstatat :: CInt -> CString -> Ptr () -> CInt -> IO CInt
 foreign import ccall safe "openat" c_openat :: CInt -> CString -> CInt -> #{type mode_t} -> IO CInt
 foreign import ccall safe "pread" c_pread :: CInt -> Ptr () -> CSize -> #{type off_t} -> IO #{type ssize_t}
 foreign import ccall safe "write" c_write :: CInt -> Ptr () -> CSize -> IO #{type ssize_t}
@@ -50,6 +53,7 @@ foreign import ccall safe "closedir" c_closedir :: Ptr () -> IO CInt
 foreign import ccall safe "readdir" c_readdir :: Ptr () -> IO (Ptr ())
 foreign import ccall unsafe "__errno_location" c_errno :: IO (Ptr CInt)
 
+data ChildDirectory = Admissions | Companions deriving (Eq,Show)
 newtype SlotName = SlotName B.ByteString deriving (Eq,Ord,Show)
 data SlotError = InvalidName | Busy | Unavailable | Corrupt | QuotaExceeded | Mismatch | IoFailure | Uncertain deriving (Eq,Show)
 data Refuse = Refuse SlotError deriving Show
@@ -84,6 +88,90 @@ offerDirectory (SlotStore ref gate) fd = mask $ \_ -> do
   Nothing -> pure False
   Just () -> (atomicModifyIORef' ref $ \s ->
    if offered s || retired s then (s,False) else (s {directory=Just fd,offered=True,stage="offered"},True)) `finally` putMVar gate ()
+-- Borrowed parent; caller retains the original host guard through the entire
+-- multi-directory transaction. There is no authority predicate in this API.
+offerChildDirectory :: SlotStore -> Fd -> ChildDirectory -> IO (Either SlotError ())
+offerChildDirectory (SlotStore ref gate) parent child = mask $ \restore -> do
+ acquired <- tryTakeMVar gate
+ case acquired of
+  Nothing -> pure (Left Busy)
+  Just () -> (do
+   claimed <- atomicModifyIORef' ref $ \s ->
+    if offered s || retired s || poisoned s then (s,False)
+    else (s {offered=True,poisoned=True,stage="child-claimed"},True)
+   if not claimed then pure (Left Unavailable) else do
+    result <- try (do
+      fd <- restore (acquireChild ref parent child)
+      -- Child is already owned by a prepublished cell. Publishing this alias
+      -- never transfers or closes the borrowed parent.
+      change ref (\s -> s {directory=Just fd,poisoned=False,stage="child-ready"})) :: IO (Either SomeException ())
+    case result of
+     Right () -> pure (Right ())
+     Left err -> do
+      change ref (\s -> s {failures=err:failures s,poisoned=True})
+      case fromException err :: Maybe SomeAsyncException of
+       Just _ -> throwIO err
+       Nothing -> case fromException err of
+        Just (Refuse why) -> pure (Left why)
+        Nothing -> pure (Left IoFailure)
+   ) `finally` putMVar gate ()
+
+childName :: ChildDirectory -> B.ByteString
+childName Admissions = "admissions-v1"
+childName Companions = "cancellation-admissions-v1"
+
+-- The original uid contract is real uid (the host is not assumed setuid).
+validRealDirectory :: Fd -> IO FileStatus
+validRealDirectory fd = do
+ value <- getFdStatus fd
+ uid <- getRealUserID
+ effective <- getEffectiveUserID
+ unless (uid == effective && isDirectory value && fileOwner value == uid && fileMode value .&. fromIntegral modeMask == 0o700) (refuse Corrupt)
+ pure value
+
+-- fstatat observes the actual parent-relative name without following links.
+checkChildName :: Fd -> B.ByteString -> FileStatus -> IO ()
+checkChildName parent name held = allocaBytes #{size struct stat} $ \buffer -> B.useAsCString name $ \n -> do
+ _ <- throwErrnoIfMinus1 "fstatat child" (c_fstatat (fdRaw parent) n buffer #{const AT_SYMLINK_NOFOLLOW})
+ dev <- #{peek struct stat, st_dev} buffer :: IO (#{type dev_t})
+ ino <- #{peek struct stat, st_ino} buffer :: IO (#{type ino_t})
+ mode <- #{peek struct stat, st_mode} buffer :: IO (#{type mode_t})
+ uid <- #{peek struct stat, st_uid} buffer :: IO (#{type uid_t})
+ actualUid <- getRealUserID
+ unless (toInteger dev == toInteger (deviceID held) && toInteger ino == toInteger (fileID held)
+  && (mode .&. fromIntegral (#{const S_IFMT} :: CInt)) == fromIntegral (#{const S_IFDIR} :: CInt)
+  && mode .&. fromIntegral modeMask == 0o700 && toInteger uid == toInteger actualUid) (refuse Corrupt)
+
+acquireChild :: IORef State -> Fd -> ChildDirectory -> IO Fd
+acquireChild ref parent which = do
+ mark ref "child-parent-check"
+ parentBefore <- validRealDirectory parent
+ let name = childName which
+ mark ref "child-mkdir"
+ createdResult <- try (B.useAsCString name $ \n -> throwErrnoIfMinus1_ "mkdirat child" (c_mkdirat (fdRaw parent) n 0o700)) :: IO (Either IOException ())
+ created <- case createdResult of
+  Right () -> pure True
+  Left err | isAlreadyExistsError err -> pure False
+  Left err -> throwIO err
+ mark ref (if created then "child-created" else "child-existing")
+ -- openRelative publishes the acquired FD to a preowned native cell before
+ -- any subsequent stat, test hook, or name observation can run.
+ (_,child) <- openRelative ref parent name (#{const O_RDONLY} .|. #{const O_DIRECTORY} .|. #{const O_NOFOLLOW} .|. #{const O_CLOEXEC}) 0
+ mark ref "child-opened"
+ childBefore <- validRealDirectory child
+ mark ref "child-name-check"
+ checkChildName parent name childBefore
+ when created $ do
+  mark ref "child-parent-fsync"
+  syncFd parent
+  mark ref "child-parent-synced"
+ parentAfter <- validRealDirectory parent
+ childAfter <- validRealDirectory child
+ unless (identity parentBefore == identity parentAfter && identity childBefore == identity childAfter) (refuse Corrupt)
+ checkChildName parent name childAfter
+ mark ref "child-validated"
+ pure child
+
 slotStatus :: SlotStore -> IO SlotStatus
 slotStatus (SlotStore ref gate) = mask $ \_ -> do
  available <- tryTakeMVar gate
@@ -92,12 +180,12 @@ slotStatus (SlotStore ref gate) = mask $ \_ -> do
   Nothing -> pure (SlotStatus True (offered s) (poisoned s) (retired s) (-1) (stage s) [] [] [] (failures s))
   Just () -> (do
    values <- mapM (readCell . snd) (holds s)
-   let uncertain h = case h of UnknownFd _ -> True; UnknownStream _ -> True; ClosingFd _ -> True; ClosingStream _ -> True; _ -> False
+   let uncertain h = case h of UnknownFd _ -> True; UnknownStream _ -> True; ClosingFd _ -> True; ClosingStream _ -> True; Owned _ -> retired s; Stream _ -> retired s; _ -> False
        fdOf h = case h of Owned fd -> [fd]; ClosingFd fd -> [fd]; UnknownFd fd -> [fd]; _ -> []
        streamOf h = case h of Stream ptr -> [ptr]; ClosingStream ptr -> [ptr]; UnknownStream ptr -> [ptr]; _ -> []
        resource h = case h of Reserved -> ResourceReserved; Owned fd -> ResourceFD fd; Stream ptr -> ResourceStream ptr; ClosingFd fd -> ResourceClosingFD fd; ClosingStream ptr -> ResourceClosingStream ptr; Closed -> ResourceClosed; UnknownFd fd -> ResourceUnknownFD fd; UnknownStream ptr -> ResourceUnknownStream ptr
    let transferUnknown = retired s && stage s == "closing-directory" && case directory s of Just _ -> True; Nothing -> False
-   pure (SlotStatus False (offered s) (poisoned s || transferUnknown) (retired s) (length (filter uncertain values) + if transferUnknown then 1 else 0) (stage s) (maybe [] (:[]) (directory s) ++ concatMap fdOf values) (concatMap streamOf values) (zip (map fst (holds s)) (map resource values)) (failures s))) `finally` putMVar gate ()
+   pure (SlotStatus False (offered s) (poisoned s || transferUnknown) (retired s) (length (filter uncertain values) + if transferUnknown then 1 else 0) (stage s) (nub (maybe [] (:[]) (directory s) ++ concatMap fdOf values)) (concatMap streamOf values) (zip (map fst (holds s)) (map resource values)) (failures s))) `finally` putMVar gate ()
 
 -- Every cell is allocated and installed into the store before its syscall.
 -- FD/pointer publication writes directly to fixed storage while masked.
@@ -186,7 +274,11 @@ closeKey ref key = mask $ \restore -> do
 cleanup :: IORef State -> IO [SomeException]
 cleanup ref = do
  s <- readIORef ref
- results <- mapM (\(key,_) -> try (closeKey ref key) :: IO (Either SomeException (Maybe SomeException))) (holds s)
+ results <- mapM (\(key,cell) -> try (do
+  held <- readCell cell
+  case held of
+   Owned fd | directory s == Just fd -> pure Nothing
+   _ -> closeKey ref key) :: IO (Either SomeException (Maybe SomeException))) (holds s)
  let unexpected = [e | Left e <- results]
  mapM_ (\e -> change ref (\old -> old {failures=e:failures old,poisoned=True})) unexpected
  pure (concatMap (either (:[]) (maybe [] (:[]))) results)
@@ -430,19 +522,29 @@ retireSlotStore store@(SlotStore ref gate) = mask $ \_ -> do
   Just () -> do
    deferred <- (do
     extras <- cleanup ref
-    key <- reserve ref
-    cell <- cellFor ref key
-    selected <- atomicModifyIORef' ref $ \s -> case directory s of
-     Just fd | not (retired s) -> (s {retired=True,stage="closing-directory"},Just fd)
-     Nothing | not (retired s) -> (s {retired=True,stage="retired"},Nothing)
-     _ -> (s,Nothing)
-    closed <- case selected of
-     Nothing -> pure Nothing
+    before <- readIORef ref
+    closed <- case directory before of
+     Nothing -> do
+      change ref (\s -> s {retired=True,stage="retired"})
+      pure Nothing
      Just fd -> do
-      publishFd cell (fdRaw fd)
-      change ref (\s -> s {directory=Nothing})
+      match <- findDirectoryCell fd (holds before)
+      key <- case match of
+       Just existing -> pure existing
+       Nothing -> do
+        fresh <- reserve ref
+        cell <- cellFor ref fresh
+        publishFd cell (fdRaw fd)
+        pure fresh
+      -- The cell owns the very same descriptor before this atomic handoff.
+      change ref (\s -> s {directory=Nothing,retired=True,stage="closing-directory"})
       closeKey ref key
     pure (chooseException Nothing (extras ++ maybe [] (:[]) closed))) `finally` putMVar gate ()
    case deferred of
     Just e | isAsync e -> throwIO e
     _ -> slotStatus store
+ where
+  findDirectoryCell _ [] = pure Nothing
+  findDirectoryCell target ((key,cell):rest) = do
+   value <- readCell cell
+   case value of Owned fd | fd == target -> pure (Just key); _ -> findDirectoryCell target rest
