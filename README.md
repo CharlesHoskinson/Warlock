@@ -121,6 +121,8 @@ The intended effect lifecycle runs from user input or a native fact, through the
 
 The [Haskell process custody package](implementation/warlock/haskell/process-custody/README.md) now passes a fresh offline strict build and its focused internal/public tests under protected CPU QA. It exposes opaque ownership and deadline types; trusted lease issuance remains separate. Focused tests now also cover selected descriptor inheritance and exclusion of ambient files and sockets. These checks do not establish native window behavior or full release readiness.
 
+The development-only [capture receiver](implementation/warlock/qa/ELM-HASKELL-CAPTURE.md) now preserves and independently checks bounded image evidence even when the capture child exits unsuccessfully. Its synthetic-image CPU checks do not establish real GUI rendering or native acceptance.
+
 ## Why Elm and Haskell
 
 The [migration proposal](openspec/changes/warlock-production-language-migration/proposal.md) gives the 30 October 2026 project decision itself as the reason for the change. The contract each language must meet is set out in the migration design and specification.
