@@ -66,3 +66,18 @@ the guard is held. Kernel-contention, nested/retirement Busy, original async
 propagation/unlock, failed-operation quarantine, lock-name substitution and normal
 once-only retirement controls pass. The guard protects storage coordination; it
 is not native execution authority or the completed PairStore transaction.
+
+SlotStore now implements relative bounded scans, reads, exact-old-value atomic
+publication and exact removal with file/directory fsync and final-entry checks.
+Actual controls pass for64 files/oneMiB, wrong expected values, corrupt/debris/link
+cases, mutation interruption, Busy retirement and uncertain close with an actual
+reused-FD sentinel. The ordinary strict library build passes with the manual
+`slotstore-test-hooks` flag disabled. Developer controls explicitly enable it and
+link the same library unit; the ordinary build keeps the module/hooks private.
+
+SlotStore per-call serialization does not establish custody across a PairStore
+transaction. PairStore must own these objects exclusively and hold its own gate
+plus HostGuard through the whole sequence. Child-directory acquisition, original
+inventory/selection validation, durable pair publication, queue handoff, genuine
+retirement and journal/ACK/recovery remain integration work. Not every syscall
+failure/async ordering or hardware crash cut has been exercised.

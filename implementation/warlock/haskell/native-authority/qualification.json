@@ -31,7 +31,10 @@
     "Selection claim/spending and companion encoding bind exact intent; view replacement/retirement drops unspent old captures to prevent ABA revival",
     "Root corrected source layout and typed entropy peek as Word8; retained compiler REDs",
     "Header-derived CLOCK_MONOTONIC with checked original two-second deadline; actual expiry and independent original companion byte oracle controls pass",
-    "Implement preowned namespace/lock HostGuard with actual exclusive nonblocking flock, exact fixed-name inode check, rank2 generation-scoped borrowed namespace, original async retention/unlock, quarantine and once-only close"
+    "Implement preowned namespace/lock HostGuard with actual exclusive nonblocking flock, exact fixed-name inode check, rank2 generation-scoped borrowed namespace, original async retention/unlock, quarantine and once-only close",
+    "Integrate functional relative SlotStore read/scan/exact-old atomic publication/removal with 64file/oneMiB bounds and retained once-close custody",
+    "Test hooks false by default; actual filesystem controls compile against same library unit with explicit developer flag, and ordinary library build explicitly disables it",
+    "Root fixed strict name-shadowing compiler error; original RED retained"
   ],
   "missing": [
     "Actual native event-thread/non-yielding provider and native validation/first mutation",
@@ -59,7 +62,9 @@
     "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/Selection.hsc": "cf9094124dd65b4c0281e019fcca1fd1fbc5069ec12b73d38e60ef8eeb5117a1",
     "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/AdmissionBytes.hs": "3a2a317ad9335be3eaa57e9a067ec3d8398fbb20a9e156cb05fe2531124cd006",
     "implementation/warlock/haskell/native-authority/test-guard/Main.hs": "249e6a0c97b1f0e66f3d0fbd69854e926caa0fc77106160837fde6f395078dc8",
-    "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/HostGuard.hsc": "791b2bb5262dc3a99c805d363bc7992e57396ba2c92909e0c9725b316ba41e71"
+    "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/HostGuard.hsc": "791b2bb5262dc3a99c805d363bc7992e57396ba2c92909e0c9725b316ba41e71",
+    "implementation/warlock/haskell/native-authority/test-slot/SlotStoreControls.hs": "45fd1bee1c7950938bdf72647da8d4709f7f112aaa98bfe077bc33dca21971b8",
+    "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/SlotStore.hsc": "e2fbab376ec41726a189077b13959510f13abfdd5c70c6a5c77cd349b6189f4d"
   },
   "evidence": {
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-cancellation-owner-component-1793458711517727132/report.json": "d9ac32fb06c4e0c383936c209d4cda7b75cad8f7a7944e45d795ca89a45b3a5e",
@@ -78,14 +83,27 @@
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-cancellation-selection-controls-1793462485043687220/report.json": "184516fb536051cb762c0b06f7b19aef12846aeb6c2fff6c6572e4a92d70073d",
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-selection-legacy-differential-1793462532416053319/report.json": "1dbeb5bd3f882e279b5960d7377ad410b17c00f848f0cfa06b31361e08b95689",
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-cancellation-hostguard-controls-1793463360006228083/report.json": "b0b90b67d92c115ea5345c1e051f535f7c8fec4450f71f1f26ea2ac371f3a1fa",
-    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-cancellation-hostguard-controls-1793463377261064067/report.json": "9c774fccd6d99aec10133530c4ee7aeeeefacab87093083c6c57d0cf4c1dfd14"
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-cancellation-hostguard-controls-1793463377261064067/report.json": "9c774fccd6d99aec10133530c4ee7aeeeefacab87093083c6c57d0cf4c1dfd14",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-cancellation-slotstore-controls-1793463843775455908/report.json": "8fd6eabc403d452f816ae81edf829afebf9b41c6773f27ebb3cf89afde022ae1",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-cancellation-slotstore-controls-1793463946578468566/report.json": "589664e808a2c6102785b11fbfdbfedfe1ec4917da9cc455d1a1a5d4a384c063",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-cancellation-slotstore-production-build-1793464115210773191/report.json": "6b1a61349341eca5d48505fdebc80e82c87199a4ecf5039b6733f7da81933228"
   },
-  "verifiedScope": "Actual Haskell owner called by provider-double controls: exact metadata, cancel/commit ordering, nonreexecution, Unknown/async/fault behavior, peer isolation, capacity64/65, checked exhaustion, seeded reference trajectories. No actual native mutation or real physical retirement proved. Real owned-directory single-record write/fsync/rename/directory-fsync/readback, metadata, name-swap, synchronous/asynchronous fault and once-close controls now pass. TerminalReceipt is same-process storage observation, not durable ACK authority. Selection component strict build/controls PASS and15 actual Haskell companion-output cases match original validate_pair/storage_key/canonical JSON, including Unicode. These are producer/encoder controls, not durable pair publication, genuine native input or ACK authority. Actual host-guard controls pass for independent open-description kernel contention, nested/retirement Busy, callback async propagation and actual unlock, quarantine, exact lock-name substitution refusal/callback0 and normal/idempotent descriptor retirement. Not a full PairStore or native execution authority.",
+  "verifiedScope": "Actual Haskell owner called by provider-double controls: exact metadata, cancel/commit ordering, nonreexecution, Unknown/async/fault behavior, peer isolation, capacity64/65, checked exhaustion, seeded reference trajectories. No actual native mutation or real physical retirement proved. Real owned-directory single-record write/fsync/rename/directory-fsync/readback, metadata, name-swap, synchronous/asynchronous fault and once-close controls now pass. TerminalReceipt is same-process storage observation, not durable ACK authority. Selection component strict build/controls PASS and15 actual Haskell companion-output cases match original validate_pair/storage_key/canonical JSON, including Unicode. These are producer/encoder controls, not durable pair publication, genuine native input or ACK authority. Actual host-guard controls pass for independent open-description kernel contention, nested/retirement Busy, callback async propagation and actual unlock, quarantine, exact lock-name substitution refusal/callback0 and normal/idempotent descriptor retirement. Not a full PairStore or native execution authority. SlotStore actual filesystem controls PASS including 64file/oneMiB capacity, full read/replace/remove, metadata/debris/symlink/name-swap rejection, mutation poison, Busy/retirement exclusion and actual closed-FD number reuse sentinel without stale retry. Production-default library strict build PASS with test flag false. Remaining fault matrices and full PairStore/native/ACK are unproved.",
   "remainingAudit": [
     "Real native-thread provider and OS-thread correspondence",
     "DurableReceipt issuer, retained post-ACK reply and watermark are missing",
     "Other native direct route busy/cursor joins and live Elm receipt pipeline",
     "Original D is carried in the permit; actual native provider must freshly check it at first mutation",
     "Execution metadata retention is tested with provider doubles; real execution/compensation evidence still requires native integration"
-  ]
+  ],
+  "directHeaderSnapshots": {
+    "/usr/include/sys/types.h": "25d29436b206e2b36e3fbe7057fa8b9822fa9f0f7823659c489a8fc71c8cd1db",
+    "/usr/include/sys/stat.h": "68bd6f632451258448ae3563612cf100059b723c3690850acdb0aaf4d200d895",
+    "/usr/include/sys/file.h": "8851db43bd0084825a8bec9fdf2ab60925cb2758b71655e5d585a43e0d93c2de",
+    "/usr/include/dirent.h": "de5e80cf3a1d3f4a6684385ac03f09733cca5212511bfefae11ff356072e2734",
+    "/usr/include/fcntl.h": "fe1013f7cd9d3f42d073af2194a1c611614acfcd586c9a3c1ab3233e965f2e4a",
+    "/usr/include/unistd.h": "ba5298d74a8f21968b08d1a59ed493c63e8344198ab03df127e8015428a109ea",
+    "/usr/include/stdio.h": "7b9d4ea5a3d988998113785f389c635428dbfd25f503197d81688ec9ef0149fa"
+  },
+  "directHeaderSnapshotScope": "Selected direct host headers only; not a complete transitive compiler-input or release-SBOM proof."
 }
