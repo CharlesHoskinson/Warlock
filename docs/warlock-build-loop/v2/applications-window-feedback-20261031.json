@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "updatedUTC": "2026-10-31T22:24:16.589025+00:00",
+  "phase": "Owned Elm source, actual regression and rendered component reviewed; original EARS remains partial",
+  "requirements": [
+    "ELM-UI-007"
+  ],
+  "scenarios": [
+    "restore-pending",
+    "restore-refused",
+    "restore-unknown"
+  ],
+  "participant": ".warlock-contributor/applications-window-feedback.json",
+  "readiness": "docs/warlock-build-loop/v2/readiness-review-20261031.json",
+  "beforeSourceSHA256": "a660a4641a9f834c6198bce1e8049b3dd0be40cb74be1cfe1d5e14cfd0cdaa1d",
+  "preconditions": "Applications mode and retained current window transaction; original intent/status/current query retained",
+  "postconditions": "Current meaningful action feedback remains alongside original launcher guidance; no effect or focus command from projection",
+  "invariants": [
+    "Single Desktop policy authority",
+    "No native effect replay",
+    "No query/draft mutation",
+    "No acceptance transfer from historical evidence",
+    "All original242/417 and deadlines preserved"
+  ],
+  "nativeAcceptance": false,
+  "releaseAccepted": false,
+  "nextAction": "Publish reviewed owned source batch, then execute original ELM-ARC-005 architecture-005 full-authority-tuple bridge verification and independent EARS verdict. Return UI007 native/AT obligations when qualified host is available.",
+  "afterSourceSHA256": "689657630aec36dd6133c762a385284311f67a0b0f9fa95c5897e802b5667412",
+  "evidence": "implementation/warlock/qa/evidence/applications-window-feedback-20261031/report.json",
+  "evidenceSHA256": "89f9c9edb9e733376c16cf9db14e90fb984a6a592db6a090d42e1c7c7cf48129",
+  "independentReview": "docs/warlock-build-loop/v2/applications-feedback-review-20261031.json",
+  "retrofit": {
+    "boundary": "Surface Applications status projection and exact retained Effects custody",
+    "debt": "DEBT-02 view/effect projection; bounded feedback context migration",
+    "existingImplementation": "Closed-launcher status already fixed; new source fixes Applications masking and retained older recovery",
+    "modelDisposition": "No concurrency/authority/reducer invariant changes; existing native/window policy unchanged. No new toy model.",
+    "properties": "Actual production query/stale input and snapshot/custody equality;96 seed20261031 variants,64 fixed/lifecycle cases.",
+    "diataxis": {
+      "tutorial": "docs/warlock/tutorials/first-contribution.md unaffected: no tutorial path change",
+      "howTo": "docs/warlock/how-to/verify-selected-change.md existing workflow retained; new scoped CPU recipe referenced by slice reference",
+      "reference": "docs/warlock/reference/applications-window-feedback.md updated by docs owner",
+      "explanation": "docs/warlock/explanation/elm-haskell-boundary.md retains one Elm GUI authority and separate native gate"
+    },
+    "remainingDebt": "Original UI007 native/keyboard/AT/IME/resource/release and Haskell native integration remain open; current mask/recovery/prefix defects corrected with production-route/pixel evidence."
+  },
+  "rendererSourceSHA256": "e5195fc6b8fbe1dd47d284f1122b34aa211e253a33ed6c8ed79990bd33fecbc9",
+  "originalEarsClosed": false
+}

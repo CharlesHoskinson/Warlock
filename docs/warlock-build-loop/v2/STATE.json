@@ -1,38 +1,37 @@
 {
   "schema": 1,
-  "owner": "sol",
-  "updatedUTC": "2026-10-30T15:10:17.341223+00:00",
+  "owner": "root-agentbus",
+  "updatedUTC": "2026-10-31T22:10:20.859751+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "native-restore-cancellation",
+    "id": "applications-window-feedback",
     "requirements": [
-      "ELM-ARC-007",
-      "ELM-ARC-008",
-      "ELM-ARC-012"
+      "ELM-UI-007"
     ],
     "scenarios": [
-      "receipt-cancelled",
-      "prerequisite-Cancelled",
-      "architecture-012",
-      "cancel-before-commit",
-      "commit-before-cancel"
+      "restore-pending",
+      "restore-refused",
+      "restore-unknown"
     ],
     "paths": [
-      "implementation/warlock/adapter/cancellation_ledger.py",
-      "implementation/warlock/adapter/cancellation_coordinator.py",
-      "implementation/warlock/adapter/recovery_store.py",
-      "implementation/warlock/adapter/daemon.py"
+      "implementation/warlock/src/Surface.elm",
+      "implementation/warlock/qa/FeedbackContextReplay.elm",
+      "implementation/warlock/qa/feedback-context.cjs",
+      "implementation/warlock/qa/feedback-context-browser.mjs",
+      "implementation/warlock/src/SurfaceRenderer.elm"
     ],
-    "before": "Published7ef2c83b7 has internal cancellation coordination; host/C/Elm paired admission and typed local settlement remain incomplete. Frozen private Pythonv2 demonstrably emits legacy settlement for companion-only orphan custody.",
-    "after": "Prevent companion-owned legacy settlement/projection and poison companion I/O faults; integrate immutable host acceptance/deadline admission and exact typed cache-backed C/Elm receipt routing without replay or weakening original requirements.",
+    "before": "Opening Applications replaces retained Pending, Refused or Unknown window feedback with launcher guidance; search query survives but the action state is hidden.",
+    "after": "Applications retains its query and guidance and exposes the correlated window action status alongside it without dispatch, retry or focus relocation.",
     "verification": [
-      "Model-first ownership/linearization contract, positive and foreign/duplicate/Unknown/capacity/deadline cases, actual production native dispatch compilation and protected original interleavings/resource/Escape fixtures as each stage becomes source-ready. Kernel-only checks do not establish native Escape or whole original acceptance."
+      "Protected pinned Main/Bar/Popup compile; actual Surface.packet regressions for launcher guidance and retained Pending/Refused/Unknown plus Committed/no-transaction controls, query/effect invariance and repeated snapshots. Native keyboard/AT and release remain open."
     ],
-    "verify": "Protected actual production-route regressions, preserved orphan RED, full typed/legacy positives including post-settlement reuse, source/model correspondence and owning C/Elm builds; original native/bridge/Escape/resource gates remain separate. No unchanged stopped helper/model reruns."
+    "owner": "root-agentbus",
+    "participantRecord": ".warlock-contributor/applications-window-feedback.json",
+    "currentOutcome": "Current Elm/browser component source verified and independently reviewed; originalUI007 remains partial for native/keyboard/AT. Next wholeEARS-verdict action ARC005 bridge tuple."
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -47,7 +46,7 @@
   "releaseAccepted": false,
   "oldTrackerIsCurrent": false,
   "last24hTokenUsage": "unavailable; old goal figure was cumulative",
-  "hostGoal": "User explicitly requested and root armed the full Warlock completion loop on 2026-10-28; root host goal lifecycle is authoritative, no full completion inferred from this partial slice.",
+  "hostGoal": "Current root goal active, armed explicitly 2026-10-31 for complete original requirements; no native/release completion inferred.",
   "previousSlice": {
     "id": "offline-reproducibility",
     "requirements": [
@@ -3002,6 +3001,38 @@
       "previousId": "attention-composed-native-export",
       "selectedId": "native-restore-cancellation",
       "reason": "Muse three-reviewer reconciliation: accepted UX009 pointer was stale; current cancellation participant and unfinished host custody work govern continuation. Administrative selection only; no acceptance or progress-timer reset."
+    },
+    {
+      "atUTC": "2026-10-31T22:10:20.859751+00:00",
+      "previousSlice": {
+        "id": "native-restore-cancellation",
+        "requirements": [
+          "ELM-ARC-007",
+          "ELM-ARC-008",
+          "ELM-ARC-012"
+        ],
+        "scenarios": [
+          "receipt-cancelled",
+          "prerequisite-Cancelled",
+          "architecture-012",
+          "cancel-before-commit",
+          "commit-before-cancel"
+        ],
+        "paths": [
+          "implementation/warlock/adapter/cancellation_ledger.py",
+          "implementation/warlock/adapter/cancellation_coordinator.py",
+          "implementation/warlock/adapter/recovery_store.py",
+          "implementation/warlock/adapter/daemon.py"
+        ],
+        "before": "Published7ef2c83b7 has internal cancellation coordination; host/C/Elm paired admission and typed local settlement remain incomplete. Frozen private Pythonv2 demonstrably emits legacy settlement for companion-only orphan custody.",
+        "after": "Prevent companion-owned legacy settlement/projection and poison companion I/O faults; integrate immutable host acceptance/deadline admission and exact typed cache-backed C/Elm receipt routing without replay or weakening original requirements.",
+        "verification": [
+          "Model-first ownership/linearization contract, positive and foreign/duplicate/Unknown/capacity/deadline cases, actual production native dispatch compilation and protected original interleavings/resource/Escape fixtures as each stage becomes source-ready. Kernel-only checks do not establish native Escape or whole original acceptance."
+        ],
+        "verify": "Protected actual production-route regressions, preserved orphan RED, full typed/legacy positives including post-settlement reuse, source/model correspondence and owning C/Elm builds; original native/bridge/Escape/resource gates remain separate. No unchanged stopped helper/model reruns."
+      },
+      "selectedId": "applications-window-feedback",
+      "reason": "Current source/toolchain reconciliation: historical Python ownership is retained as history; independently reviewed existing Elm projection slice selected under current user authorization. No original acceptance or stopped-investigation reset."
     }
   ],
   "museRegulator": {
@@ -3042,14 +3073,14 @@
     ],
     "allGuiElements": "Elm",
     "designInterfaceCampaign": "Ten agents authorized for architecture, research, dependencies, Quint, interfaces and workflow plugin",
-    "autonomousImplementation": "Final product implementation and native campaigns remain gated pending independently reviewed readiness and explicit final-loop authorization",
+    "autonomousImplementation": "Current user authorizes continuing into implementation after independently reviewed readiness, without another permission step; scoped existing Elm source readiness accepted 2026-10-31.",
     "research": "Scrapling",
     "knowledgeStore": "Living LLM wiki",
     "pendingWork": "Finish coherent Elm/Haskell architecture, interface/source/tool/plugin/model/fuzz readiness; preserve original behavior/evidence; independently review readiness before final-loop activation.",
     "autonomousPreparation": "Armed preparation mode under explicit user instruction; architecture/interface source, tooling/plugin/model/fuzz readiness work authorized"
   },
   "preparationLoop": {
-    "mode": "preparation",
+    "mode": "scoped-existing-Elm-implementation",
     "authorization": "Latest explicit user: arm a loop to help you finish the work to arm the final loop",
     "allowedWork": [
       "architecture and native integration feasibility",
@@ -3058,7 +3089,7 @@
       "EARS/OpenSpec alignment preserving original behavior",
       "Quint correspondence and meaningful property/sequence fuzz preparation"
     ],
-    "finalImplementationAuthorized": false,
+    "finalImplementationAuthorized": true,
     "nativeCampaignsAuthorized": false,
     "configArmed": true,
     "configMode": "preparation",
@@ -3083,7 +3114,7 @@
     "authorizationRecord": "/home/charles/.local/state/warlock-team/20261028/muse-supervision/preparation-authorization.json",
     "futurePausesProtected": true,
     "scopeLimit": "Preparation source/tool work is permitted; original native/release gates remain. No acceptance transfer, progress-timer reset, active-original-slice replacement or stopped-investigation reset.",
-    "currentRecord": ".warlock-contributor/elm-haskell-host-feasibility-preparation.json",
+    "currentRecord": ".warlock-contributor/applications-window-feedback.json",
     "nativeFeasibility": {
       "status": "stopped",
       "qualificationOnlyIterations": 2,
@@ -3101,6 +3132,45 @@
       "formal": "Private late-cancel model passed typechecks/init, 34 positively selected named tests and 1000x40 safety sampling with seed 20261030",
       "limits": "No authenticated native issuer, real certificate/retirement, filesystem durability, full implementation correspondence or original/native acceptance inferred"
     },
-    "independentNextAction": "Implement and qualify concrete Haskell durable custody IO over the corrected pure owner; no replay or native ACK authority from stored model metadata."
+    "independentNextAction": "Implement and qualify concrete Haskell durable custody IO over the corrected pure owner; no replay or native ACK authority from stored model metadata.",
+    "currentHostReconciliation": {
+      "atUTC": "2026-10-31T22:10:20.859751+00:00",
+      "host": "WSL /home/charl/code/Warlock",
+      "mode": "scoped-existing-Elm-implementation",
+      "independentReadiness": "docs/warlock-build-loop/v2/readiness-review-20261031.json",
+      "finalImplementationScope": "Existing Elm Applications feedback projection only; not general native/Haskell integration readiness",
+      "nativeOperations": "empty until genuine issuer/admission/effect/certificate qualification",
+      "haskellToolchainReady": false,
+      "nativeRuntimeReady": false,
+      "originalMuseRuntimePresent": false,
+      "originalGraphAndExternalWikiPresent": false,
+      "originalTimerStatus": "Historical machine-local timer records preserved; no regulator timer on current host",
+      "protectedCpuEquivalent": "tools/qa_cpu.py",
+      "preparationBuildReport": ".warlock-contributor/elm-cpu-1793484391252381177/report.json",
+      "sourceWipLimit": 1,
+      "nativeWipLimit": 1
+    },
+    "finalImplementationAuthorizationScope": "Existing Elm view slice accepted by independent readiness review only; general Haskell/native product integration still in preparation."
+  },
+  "agentBusCurrentTeam": {
+    "run": "warlock-20261031-setup",
+    "transport": "authenticated individual bindings; existing services reused",
+    "rootCoordinator": "lead",
+    "roles": {
+      "lead": "integration and serialized protected checks",
+      "reviewer": "independent readiness and source review",
+      "elm-impl": "Surface.elm source",
+      "elm-tests": "pure production regression fixture",
+      "terra-browser": "compiled Bar/Popup component harness source",
+      "sol-docs": "bounded product reference",
+      "terra-contracts": "actual lifecycle contract audit",
+      "haiku-tools": "tool/source closure audit",
+      "haiku-originals": "original register preservation",
+      "muse": "bounded EARS continuity observer; no separate timer"
+    },
+    "externalProcessReceipts": ".warlock-contributor/external-launch-receipts.json",
+    "authAcknowledgements": "AgentBus live log; process launch alone is not successful authentication",
+    "singleProductSlice": true,
+    "noDuplicateCoordinator": true
   }
 }

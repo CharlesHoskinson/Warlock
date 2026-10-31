@@ -390,6 +390,17 @@ barControls model =
 
 notice : Desktop.Model -> String
 notice model =
+    let
+        retainedWindowFeedback = model.windows.shell.effects.transaction
+            |> Maybe.map (\transaction -> List.member transaction.status [Effects.Pending,Effects.Unknown,Effects.Refused,Effects.Cancelled])
+            |> Maybe.withDefault False
+        context = contextNotice model
+    -- Keep the action or retained recovery notice first in the bounded bar
+    -- while retaining Applications guidance; this never updates or retries it.
+    in if mode model=="applications" && (retainedWindowFeedback || recoveryNeeded model) then windowNotice model ++ " · " ++ context else context
+
+contextNotice : Desktop.Model -> String
+contextNotice model =
     if not model.overview && mode model=="closed" && WorkspaceNavigation.notice model.workspaceNavigation/="" then WorkspaceNavigation.notice model.workspaceNavigation else
     if model.jumpEntry/=Nothing then (if model.jumpExpected/=Nothing then "Reading application actions…" else model.jumpList.notice)
     else if model.filesOpen then (if model.filesExpected/=Nothing then "Reading Files state…" else model.files.notice)

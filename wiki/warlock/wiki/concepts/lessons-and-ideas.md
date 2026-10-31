@@ -47,3 +47,7 @@ The [Elm architecture study](../../../../docs/warlock-build-loop/v2/ELM-ARCHITEC
 ## A real baseline changes the debt disposition
 
 The [draft baseline](../../raw/notes/2026-10-29-shortcut-draft-production-baseline.md) turns DEBT-05 from a source hypothesis into a reproduced local editor/reconciliation defect. Keep both the five expected RED contracts and ten positive controls; a failing test alone would not distinguish an unreachable operation. Do not turn that reproduction into a completed fix, validated abstract model or native scenario acceptance. Stored preferences, local unsaved intent and active native bindings remain separate states.
+
+## Visible text requires a text observation
+
+A bounding box in the viewport and a complete accessibility name do not prove that the leading action state is painted. The 320px Applications feedback trial passed both while vertically centered overflow clipped “not confirmed” above the taskbar. Use actual text-range bounds and retained screenshots for the relevant prefix; preserve the full semantic name separately. This is a concrete lesson from the [October31 observation](../../raw/notes/2026-10-31-applications-feedback.md), not native/AT acceptance.

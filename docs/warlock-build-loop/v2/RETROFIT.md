@@ -89,3 +89,7 @@ Nine store groups and three coordinator groups pass on the recorded source tuple
 the isolation model has 13 named tests/four bounded samples and does not model
 namespace downgrade. C/Elm admission/delivery, physical Escape, generation resource
 and original native/release obligations remain open. No new original acceptance.
+
+## Applications feedback migration — ELM-UI-007
+
+The selected restore Pending/Refused/Unknown slice exposed Applications masking already-existing window feedback. Source composition now preserves the launcher query/guidance and older unresolved recovery without any new effect authority. The initial input fixture RED and the actual masked-feedback/older-Unknown failures are retained. A passing browser container/AX check then missed vertically clipped leading text at320px; root and reviewer found it in the screenshot, so renderer alignment and a text-range regression are required. [Source-bound slice record](applications-window-feedback-20261031.json) carries current results and four Diátaxis dispositions. Original UI007/native/AT/release remains open; this is a bounded migration, not a whole-EARS closure.

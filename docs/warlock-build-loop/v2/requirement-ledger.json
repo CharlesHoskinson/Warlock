@@ -9203,6 +9203,18 @@
               "scope": "Actual pointer/compiled Elm/native effect status, private compositor pixels, and observation-only reconnect/refresh. Keyboard focus/context and AT remain unqualified.",
               "sourceCandidate": "implementation/warlock",
               "nativeAcceptance": false
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/applications-window-feedback-20261031/report.json",
+              "sha256": "89f9c9edb9e733376c16cf9db14e90fb984a6a592db6a090d42e1c7c7cf48129",
+              "scope": "Current compiled Elm Main/Bar/Popup, actual Desktop query/stale input and Surface.packet projection, isolated compiled Bar/Popup rendering/AX names with actual prefix bounds; no native execution.",
+              "sourceCandidate": "implementation/warlock",
+              "sourceHashes": {
+                "src/Surface.elm": "689657630aec36dd6133c762a385284311f67a0b0f9fa95c5897e802b5667412",
+                "src/SurfaceRenderer.elm": "e5195fc6b8fbe1dd47d284f1122b34aa211e253a33ed6c8ed79990bd33fecbc9"
+              },
+              "independentReview": "docs/warlock-build-loop/v2/applications-feedback-review-20261031.json",
+              "nativeAcceptance": false
             }
           ],
           "missingObservation": "Actual native keyboard/focus/context preservation, applicable AT announcement/action observations, frozen numeric P0 feedback/quiescence policy, and independent original-scenario verdict remain pending."
@@ -9225,6 +9237,18 @@
               "scope": "Actual pointer/compiled Elm/native effect status, private compositor pixels, and observation-only reconnect/refresh. Keyboard focus/context and AT remain unqualified.",
               "sourceCandidate": "implementation/warlock",
               "nativeAcceptance": false
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/applications-window-feedback-20261031/report.json",
+              "sha256": "89f9c9edb9e733376c16cf9db14e90fb984a6a592db6a090d42e1c7c7cf48129",
+              "scope": "Current compiled Elm Main/Bar/Popup, actual Desktop query/stale input and Surface.packet projection, isolated compiled Bar/Popup rendering/AX names with actual prefix bounds; no native execution.",
+              "sourceCandidate": "implementation/warlock",
+              "sourceHashes": {
+                "src/Surface.elm": "689657630aec36dd6133c762a385284311f67a0b0f9fa95c5897e802b5667412",
+                "src/SurfaceRenderer.elm": "e5195fc6b8fbe1dd47d284f1122b34aa211e253a33ed6c8ed79990bd33fecbc9"
+              },
+              "independentReview": "docs/warlock-build-loop/v2/applications-feedback-review-20261031.json",
+              "nativeAcceptance": false
             }
           ],
           "missingObservation": "Actual native keyboard/focus/context preservation, applicable AT announcement/action observations, frozen numeric P0 feedback/quiescence policy, and independent original-scenario verdict remain pending."
@@ -9246,6 +9270,18 @@
               "sha256": "3ec7ad79bf3867717d14b969e52251bb85f3cb2eb870b0994380abd50945b746",
               "scope": "Actual pointer/compiled Elm/native effect status, private compositor pixels, and observation-only reconnect/refresh. Keyboard focus/context and AT remain unqualified.",
               "sourceCandidate": "implementation/warlock",
+              "nativeAcceptance": false
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/applications-window-feedback-20261031/report.json",
+              "sha256": "89f9c9edb9e733376c16cf9db14e90fb984a6a592db6a090d42e1c7c7cf48129",
+              "scope": "Current compiled Elm Main/Bar/Popup, actual Desktop query/stale input and Surface.packet projection, isolated compiled Bar/Popup rendering/AX names with actual prefix bounds; no native execution.",
+              "sourceCandidate": "implementation/warlock",
+              "sourceHashes": {
+                "src/Surface.elm": "689657630aec36dd6133c762a385284311f67a0b0f9fa95c5897e802b5667412",
+                "src/SurfaceRenderer.elm": "e5195fc6b8fbe1dd47d284f1122b34aa211e253a33ed6c8ed79990bd33fecbc9"
+              },
+              "independentReview": "docs/warlock-build-loop/v2/applications-feedback-review-20261031.json",
               "nativeAcceptance": false
             }
           ],

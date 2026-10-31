@@ -245,6 +245,8 @@ python3 -B plugins/warlock-contributor/scripts/warlock.py check --project-only
 
 The [frontend build instructions](docs/warlock/how-to/build-current-frontend.md) build Main, Bar, and Popup together. The documented build uses a compiler, package cache, and build launcher at paths on the development machine. A contributor on another machine needs equivalent inputs and a launcher. The [desktop build instructions](implementation/warlock/RELEASE.md) cover the native host and matching Hyprland components.
 
+Current development now preserves window-action feedback while Applications is open, including older unresolved recovery; the narrow taskbar keeps the action-state prefix visible. See the [source-bound component evidence](implementation/warlock/qa/evidence/applications-window-feedback-20261031/report.json) and [feedback reference](docs/warlock/reference/applications-window-feedback.md). This is compiled Elm/browser component verification. Original native keyboard/AT and release acceptance remain open. New authored production is Elm/Haskell with every GUI element in Elm; the current replacement Haskell/native runtime remains under integration.
+
 The standalone Haskell packages use GHC 9.6.7 and installed dependencies. Follow the build and check instructions for [elf-observation](implementation/warlock/haskell/elf-observation/README.md), [held-document](implementation/warlock/haskell/held-document/README.md), and [process-custody](implementation/warlock/haskell/process-custody/README.md).
 
 Run the checks for the components you change using their instructions and the [verification guide](docs/warlock/how-to/verify-selected-change.md). See the [contribution guide](CONTRIBUTING.md) for the workflow.
