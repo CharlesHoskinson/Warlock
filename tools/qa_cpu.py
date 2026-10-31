@@ -47,6 +47,16 @@ def registry_inputs(root, self_test=False):
     return names
 
 
+def haskell_inputs(root, prepare=False):
+    names = {'tools/qa_cpu.py', 'tools/check_haskell_cpu.py', 'tools/haskell-toolchain.json',
+             'window-integration-qa/qa_launch.py'}
+    if not prepare:
+        names.update({'tools/haskell_build.py', 'tools/haskell_test_wrapper.py', 'tools/haskell-dependencies.json'})
+        names.update(str(path.relative_to(root)) for path in (root / 'implementation/warlock/haskell').rglob('*')
+                     if path.is_file() and not any(part in ('dist-newstyle', '__pycache__') for part in path.parts))
+    return names
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--review', type=Path, required=True)
@@ -60,8 +70,9 @@ def main():
         raise RuntimeError('Unknown CPU review shape')
     runner = Path(packet['runner'])
     registry = runner == REPO / 'tools/check_registry_cpu.py'
-    allowed = [[], ['--self-test']] if registry else [[], ['--browser'], ['--authority']]
-    if (not registry and runner != REPO / 'tools/check_elm_cpu.py') or packet['arguments'] not in allowed:
+    haskell = runner == REPO / 'tools/check_haskell_cpu.py'
+    allowed = [['--prepare'], ['--build']] if haskell else ([[], ['--self-test']] if registry else [[], ['--browser'], ['--authority'], ['--receipts']])
+    if (not registry and not haskell and runner != REPO / 'tools/check_elm_cpu.py') or packet['arguments'] not in allowed:
         raise RuntimeError('Only a fixed reviewed development runner and mode is supported')
     mandatory = {'tools/qa_cpu.py', 'tools/check_elm_cpu.py', 'window-integration-qa/qa_launch.py',
                  'implementation/warlock-preview-provider-v143/qa/toolchain.py',
@@ -72,6 +83,11 @@ def main():
     if packet['arguments'] == ['--authority']:
         mandatory.update(['implementation/warlock/qa/AuthorityTupleReplay.elm',
                           'implementation/warlock/qa/authority-tuple.cjs'])
+    elif packet['arguments'] == ['--receipts']:
+        mandatory.update(['implementation/warlock/qa/ReceiptStateReplay.elm',
+                          'implementation/warlock/qa/receipt-state.cjs',
+                          'implementation/warlock/qa/receipt-lifecycle.qnt',
+                          'implementation/warlock/qa/receipt-lifecycle_test.qnt', 'tools/quint-toolchain.json'])
     elif fixture.exists():
         mandatory.update(['implementation/warlock/qa/FeedbackContextReplay.elm',
                           'implementation/warlock/qa/feedback-context.cjs'])
@@ -81,6 +97,8 @@ def main():
                           'implementation/warlock/assets/shell.css'])
     if registry:
         mandatory = registry_inputs(REPO, packet['arguments'] == ['--self-test'])
+    if haskell:
+        mandatory = haskell_inputs(REPO, packet['arguments'] == ['--prepare'])
     if set(packet['inputs']) != mandatory:
         raise RuntimeError('CPU review does not match the complete current source/fixture/toolchain closure')
     for name, sha in packet['inputs'].items():
@@ -112,7 +130,7 @@ def main():
             env.pop(name, None)
         child = subprocess.Popen([sys.executable, '-B', str(runner), *packet['arguments']], cwd=REPO, env=env, start_new_session=True)
         try:
-            return child.wait(timeout=240)
+            return child.wait(timeout=1200 if haskell else 240)
         except (subprocess.TimeoutExpired, KeyboardInterrupt):
             os.killpg(child.pid, signal.SIGTERM)
             try:

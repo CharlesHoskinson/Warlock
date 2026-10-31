@@ -36,7 +36,7 @@ decoderBody protocolId = strict ["protocolVersion","kind","effectProtocol","bind
         (D.field "binding" Binding.decoder)
         (D.field "intent" (intent protocolId))
         (D.field "status" D.string |> D.andThen (\value ->
-            if List.member value ["Committed","Refused","Unknown"] then D.succeed () else D.fail "Outcome status"))
+            if List.member value ["Committed","Refused","Cancelled","Unknown"] then D.succeed () else D.fail "Outcome status"))
         (D.field "reason" D.string |> D.andThen (\value ->
             if String.length value <= 256 then D.succeed () else D.fail "Outcome reason"))
         (D.map2 (\_ _ -> ()) (D.field "revision" positive) (D.field "outputGeneration" positive)))

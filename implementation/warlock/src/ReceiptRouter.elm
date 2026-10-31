@@ -134,9 +134,10 @@ receipt = strict ["protocolVersion","kind","effectProtocol","binding","intent","
     (D.map8 (\_ _ _ native status reason _ _ -> (native,case status of
         "Committed" -> Menu.Committed
         "Refused" -> Menu.Refusal reason
+        "Cancelled" -> Menu.Cancellation
         _ -> Menu.Uncertain))
         version (kind "effect-outcome") effectVersion key
-        (D.field "status" D.string |> D.andThen (\value -> if List.member value ["Committed","Refused","Unknown"] then D.succeed value else D.fail "Native outcome"))
+        (D.field "status" D.string |> D.andThen (\value -> if List.member value ["Committed","Refused","Cancelled","Unknown"] then D.succeed value else D.fail "Native outcome"))
         (D.field "reason" D.string |> D.andThen (\value -> if String.length value<=256 then D.succeed value else D.fail "Native reason bound"))
         (D.field "revision" positive) (D.field "outputGeneration" positive))
 
