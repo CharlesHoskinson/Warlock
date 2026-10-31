@@ -58,3 +58,11 @@ selection registry still retains spent slots up to16; a genuine admission
 handoff/retirement lifecycle is required before normal repeated operation and
 original64 active-admission behavior can be claimed. PairBytes is encoding only,
 not durable Reserved/Pending/Submitted publication or native ACK authority.
+
+The private HostGuard now retains its namespace and actual fixed-name lock file,
+verifies private metadata/name-to-inode identity and acquires flock exclusively.
+A generation-scoped borrowed namespace is usable only in the owning thread while
+the guard is held. Kernel-contention, nested/retirement Busy, original async
+propagation/unlock, failed-operation quarantine, lock-name substitution and normal
+once-only retirement controls pass. The guard protects storage coordination; it
+is not native execution authority or the completed PairStore transaction.
