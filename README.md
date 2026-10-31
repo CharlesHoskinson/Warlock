@@ -125,6 +125,8 @@ The development-only [capture receiver](implementation/warlock/qa/ELM-HASKELL-CA
 
 The controlled Elm/Haskell launch now has real cgroup migration and escaped-process cleanup checks. Two changed-composition qualification trials failed before the Elm host started: no image was acquired, and owned resources were released without forced termination. The second observed a backend-creation failure message, with the underlying cause still unknown. The diagnostic campaign is stopped under its two-attempt rule; independent implementation work continues and the final implementation loop remains gated.
 
+The new [Haskell protocol component](implementation/warlock/haskell/protocol/README.md) and namespaced Elm v2 peer now have source-bound rejection controls. The Elm fix records bounded refusal reasons while preserving policy state and late-cancel behavior. Strict Haskell/Elm builds, gate controls and reducer properties passed; authenticated framing, the live owner connection and GUI integration remain open.
+
 ## Why Elm and Haskell
 
 The [migration proposal](openspec/changes/warlock-production-language-migration/proposal.md) gives the 30 October 2026 project decision itself as the reason for the change. The contract each language must meet is set out in the migration design and specification.

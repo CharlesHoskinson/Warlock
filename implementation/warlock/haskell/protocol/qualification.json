@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "status": "bounded-source-components-passed-integration-incomplete",
+  "nativeAccepted": false,
+  "releaseAccepted": false,
+  "originalAccepted": false,
+  "requirements": [
+    "ELM-ARC-004"
+  ],
+  "sourceRevisionBeforePublication": "140f8d8b29b5b7b41c53806b717d7bd6eb910457",
+  "codeSHA256": {
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Boundary/Internal.hs": "ab858c73cd80101e3a145e590b832d0743e6520565a87b822a07d95671267908",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Boundary.hs": "afb5b9c3d116ba8f2bfbab8a135546f033de174c734930d2031e4b2624c631ee",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Codec.hs": "9f1fcb18698ca3fba49aacf903a0040a5e78b5cd16d6ff4cde129b84bad68572",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Custody.hs": "fd12b842f71b92e363d1e2541d1a1f6a3969f5545857d0135a8d85d6665b710a",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Identity.hs": "759f7de8fd593b07a125d1f2c71cee52bf3b64d1de661fbe4e125a1e364d4bef",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Lifecycle.hs": "694b5849cc973e909f7f2a75d71bb957906ff70cd516fe347df56cd0339d2b86",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Server.hs": "1b9b44f4940fdbe1e98bff6479c6b176596513e8228f4481ba731ba63d00b126",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/StrictJson.hs": "e72b90de84e347b010e8db7ecc84c2e3ec12f7cc38867439806bd1d47bd6c04e",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Wire.hs": "680237349b3d2e5583849e1c3d43fdc8ebf5313d462e7820b9db8ee8d16c74fd"
+  },
+  "evidence": {
+    "public-protocol-cabal-1793439027147463855": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/public-protocol-cabal-1793439027147463855/report.json",
+      "sha256": "0da43a7235b1c8168a62fee0fdaa478b1991f95acd611035aefb2a647ea25c7f",
+      "limits": "Actual public package strict offline Cabal build and internal gate controls. Typed rejection/valid positive/fixedSHA/bounded reasons/64callback ownership/ThreadKilled only. No authenticated owner creation, actual framed channel, native authority, GUI or complete original-scenario acceptance.",
+      "executedChecks": 20,
+      "forcedContainment": false
+    },
+    "public-elm-refusal-1793439203210261979": {
+      "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/public-elm-refusal-1793439203210261979/report.json",
+      "sha256": "766c793bcaef6a6347a87133e9b3cbea4496b0427130321d6168495658535f86",
+      "limits": "Actual final public Protocol Authority/Wire/Session Elm closure;15named reducer replay checks and preserved3late-cancel properties1000fuzz seed20261030. Fullpolicy equality excludes only bounded diagnostic. No invalid raw UTF8/duplicate/framing/auth/native/GUI proof or legacy Desktop adapter. Compiler/cache isolated and original cache rehashed.",
+      "executedChecks": 15,
+      "forcedContainment": false
+    }
+  },
+  "buildWay": "GHC9.6.7 installed dynamic-only SDK; Cabal offline --enable-shared --disable-library-vanilla --enable-executable-dynamic; cryptohash-sha2560.11.102.1 actual provider",
+  "remaining": [
+    "Authenticated in-package owner registration and actual framed receive-to-gate dispatch integration are not implemented.",
+    "New v2 Elm peer is not a legacy Desktop adapter or a live rendered GUI.",
+    "No native grant/action issuer/certificate/effect sink or duplicate-request prevention is provided by schema validation.",
+    "Full original scenario, GUI/input/AT/IME/resources/release acceptance remains open.",
+    "The sampled model did not reach Busy; directed saturation controls passed separately. No exhaustive or liveness proof is claimed."
+  ],
+  "historicalFailures": [
+    "First Cabal static-way build public-protocol-cabal-1793438943945835293 refused missingstaticSHA256interface; dynamicway corrected withoutreplacingprovider.",
+    "Capture campaign retains two failures and STOP2; neither claim may be retried."
+  ],
+  "formal": {
+    "path": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/arc004-handler-quint-1793441133087543802/report.json",
+    "sha256": "8d830b3ebadd5c849bd1638efc8cdf8f2715316eb4283c2bfcdb2b2e2699f352",
+    "kind": "directed-and-sampled-safety-with-random-saturation-coverage-gap",
+    "directedTests": 23,
+    "samples": 10000,
+    "maxSteps": 200,
+    "seed": 20261031,
+    "witnessCounts": {
+      "witnessAdmitted": 5034,
+      "witnessEntered": 1759,
+      "witnessDraining": 5012,
+      "witnessRetiredAfterWork": 1782,
+      "witnessBusy": 0,
+      "witnessReasonBound": 10000
+    },
+    "zeroRandomWitnesses": [
+      "witnessBusy"
+    ],
+    "sourceModelSHA256": {
+      "handler_gate.qnt": "ed68320eb43ee2872619a9763f503f7c4dd730ecccd258d7b14f63139935762f",
+      "handler_gate_test.qnt": "10565b8c52e5184743bb6a4fbb9ba1d5caecabf983ea87099e13f1b6aa638fcf"
+    },
+    "limits": "Handler-admission/accounting model only; no universal/temporal/heap/parser/auth/native guarantee. Random Busy coverage is zero; directed long controls separately reached saturation."
+  }
+}
