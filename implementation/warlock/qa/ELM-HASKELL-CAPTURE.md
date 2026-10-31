@@ -89,3 +89,16 @@ This failed capability trial does not establish DOM/surface ownership, graphical
 presentation, normal GUI retirement or native-only application effects. Its
 one-shot claim remains consumed. The next trial needs a demonstrated source or
 configuration change and review; the original stopped history remains intact.
+
+A reviewed second attempt changed only the source-grounded diagnostic classifier
+and its executable pins. It observed `FAIL_BACKEND_CREATE`, but still acquired no
+PNG and never started the Elm host. Its receipt is
+`native-partial-capture-d988e6b85e2c495fa9e6494bf863e47d/report.json`.
+Cleanup again completed without force. This identifies a backend-creation failure
+message, not its underlying cause or an EGL/NVIDIA incompatibility.
+
+Both attempts are recorded as qualification only. The same-record two-attempt
+stop applies: no third diagnostic retry, dictionary expansion, renamed record or
+progress-clock reset. Both selection claims remain consumed. Independent work
+on other original implementation obligations may continue; the final loop and
+all original GUI/release acceptance remain gated.
