@@ -6,8 +6,8 @@ extra-source-files: README.md qualification.json
 library
   hs-source-dirs: src
   exposed-modules: Warlock.Native.Cancellation
-  other-modules: Warlock.Native.Cancellation.Internal, Warlock.Native.Cancellation.Storage
-  build-depends: base >=4.18 && <5, bytestring, text, unix, warlock-protocol
+  other-modules: Warlock.Native.Cancellation.Internal, Warlock.Native.Cancellation.Storage, Warlock.Native.Cancellation.Selection, Warlock.Native.Cancellation.AdmissionBytes
+  build-depends: base >=4.18 && <5, bytestring, text, unix, cryptohash-sha256 ==0.11.102.1, warlock-protocol
   cc-options: -D_GNU_SOURCE
   default-language: Haskell2010
   ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates
@@ -17,7 +17,7 @@ test-suite native-cancellation-controls
   main-is: Main.hs
   hs-source-dirs: test, src
   other-modules: Warlock.Native.Cancellation.Internal, Warlock.Native.Cancellation.Storage
-  build-depends: base >=4.18 && <5, bytestring, text, unix, warlock-protocol
+  build-depends: base >=4.18 && <5, bytestring, text, unix, cryptohash-sha256 ==0.11.102.1, warlock-protocol
   cc-options: -D_GNU_SOURCE
   default-language: Haskell2010
   ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -threaded
@@ -29,6 +29,16 @@ test-suite durable-storage-controls
   hs-source-dirs: test-storage, src
   other-modules: SwapControls, ForeignOwnerControls, Warlock.Native.Cancellation.Internal, Warlock.Native.Cancellation.Storage
   build-depends: base >=4.18 && <5, bytestring, text, unix, directory, filepath, warlock-protocol
+  cc-options: -D_GNU_SOURCE
+  default-language: Haskell2010
+  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -threaded
+
+test-suite selection-admission-controls
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  hs-source-dirs: test-selection, src
+  other-modules: Warlock.Native.Cancellation.Selection, Warlock.Native.Cancellation.AdmissionBytes
+  build-depends: base >=4.18 && <5, bytestring, text, unix, directory, filepath, cryptohash-sha256 ==0.11.102.1, warlock-protocol
   cc-options: -D_GNU_SOURCE
   default-language: Haskell2010
   ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -threaded

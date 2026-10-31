@@ -44,3 +44,17 @@ retirement and persistence through its handle and owner checks. Concurrent close
 cannot invalidate the handles between those checks. Nested validation returns
 Busy; an asynchronous exception releases the gate. The observation is valid at
 that check, not a transferable native ACK capability.
+
+The private selection component now binds the exact Restore intent to the current
+trusted view claim. It samples header-derived CLOCK_MONOTONIC and fixes D=A+2s;
+spending cannot renew the deadline or revive a retired/replaced view's token.
+Strict controls exercise real entropy/clock expiry, one-use spending, full-intent
+mismatch and view ABA rejection. Fifteen actual encoded producer cases match the
+unchanged legacy companion validator, storage-key hash and canonical JSON,
+including Unicode. The legacy oracle runs only as development QA.
+
+Installing a trusted view claim is not actual authenticated GUI input. The
+selection registry still retains spent slots up to16; a genuine admission
+handoff/retirement lifecycle is required before normal repeated operation and
+original64 active-admission behavior can be claimed. PairBytes is encoding only,
+not durable Reserved/Pending/Submitted publication or native ACK authority.
