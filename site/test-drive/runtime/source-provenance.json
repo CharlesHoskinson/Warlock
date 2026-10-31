@@ -118,13 +118,23 @@
     }
   ],
   "local_popup_build": {
-    "compiler": "Elm 0.19.1",
-    "note": "Built from repository source with the reviewed local image resolution patch and elm.json compiler version set to 0.19.1 for the available compiler. Vendor popup.js remains unchanged.",
+    "compiler": "Elm 0.19.2 (held toolchain implementation/warlock-preview-provider-v143/qa/toolchain)",
+    "note": "Popup build from repository source at the recorded commit with the staged SurfaceSnapshot, SurfaceRenderer and PreviewVisual (reviewed local image resolution patch). SurfaceRenderer gives the Applications and Files fields a visible label and groups each Settings save button with its caption. Vendor popup.js remains unchanged.",
     "files": [
       {
         "path": "test-drive/runtime/staged/PreviewVisual.elm",
         "sha256": "628776858f7c9985446537f23c13af1dbc5f7ba71177300f58c89241a07b5037",
         "byte_size": 7722
+      },
+      {
+        "path": "test-drive/runtime/staged/SurfaceRenderer.elm",
+        "sha256": "045d43bcedfb06c23052804bf2c90942d0367e2599c5bca171ae46df04ec76e7",
+        "byte_size": 13611
+      },
+      {
+        "path": "test-drive/runtime/staged/SurfaceSnapshot.elm",
+        "sha256": "52042d4286e1f465727cd41e6ce24516b293454c75266866ddd95df880947715",
+        "byte_size": 9778
       },
       {
         "path": "test-drive/runtime/staged/local-image-resolution.patch",
@@ -133,14 +143,14 @@
       },
       {
         "path": "test-drive/runtime/popup-local.js",
-        "sha256": "4547091c66188473d3ab31d070c771f00d9f31bf7bf10bd37587910bc351c70c",
-        "byte_size": 444794
+        "sha256": "ccb994656a19e2505ad7bbdcd83dda252cf032b5cebd21985678782835fc4374",
+        "byte_size": 428960
       }
     ]
   },
   "local_bar_build": {
-    "compiler": "Elm 0.19.1",
-    "note": "Bar build from repository source with staged typed activeApplication and windowFocused facts supplied by the host from observed focus. SurfaceRenderer exposes distinct attributes. Vendor bundle remains unchanged. Built with Elm 0.19.1.",
+    "compiler": "Elm 0.19.2 (held toolchain implementation/warlock-preview-provider-v143/qa/toolchain)",
+    "note": "Bar build from repository source at the recorded commit with the staged SurfaceSnapshot, SurfaceRenderer and PreviewVisual. The host supplies typed activeApplication and windowFocused facts from observed focus, and SurfaceRenderer exposes them as distinct attributes. Vendor bundle remains unchanged.",
     "files": [
       {
         "path": "test-drive/runtime/staged/SurfaceSnapshot.elm",
@@ -149,13 +159,13 @@
       },
       {
         "path": "test-drive/runtime/staged/SurfaceRenderer.elm",
-        "sha256": "2fd7a2e1f600734194fd21b76defbb32c9a53cb8248cdbb7bb062b682f0fa2c7",
-        "byte_size": 12643
+        "sha256": "045d43bcedfb06c23052804bf2c90942d0367e2599c5bca171ae46df04ec76e7",
+        "byte_size": 13611
       },
       {
         "path": "test-drive/runtime/bar-local.js",
-        "sha256": "16adb6f39e7413b72a32ce01c0a0efacbc1b497b40f14d1369119b457ea5ab0b",
-        "byte_size": 181896
+        "sha256": "7478b02b45b6795dcde8e1dc2836d3c9039725a715ce05c41cc544f4c6995ce5",
+        "byte_size": 185061
       }
     ]
   },

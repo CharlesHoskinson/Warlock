@@ -18,12 +18,11 @@ The screenshot does not establish live keyboard traversal, IME, protocol or nati
 - The requested Chromium harness renders the revised gallery under `/Warlock/` without console errors, failed requests or external requests. [Gallery](evidence/specimen-chromium.png) and [focused field](evidence/field-focus-chromium.png) are Chromium captures.
 - Chromium keyboard traversal moves from the search field through Windows, Refresh, Actions for Editor, Pin Editor, Open Editor and Open Files in source order. Every control retains a visible focus outline and at least 4px clearance in the bounded scrollport; the scroll position advances to expose both final results.
 - The primary link uses the information token and opens `../../test-drive/index.html?scenario=launcher`. The Night information/canvas pair is 10.87:1 in the shared contrast matrix.
-- The label patch preserves the existing keyed input and its handlers. It is supplied for integration; the compiled renderer has not been rebuilt or tested with it. The existing test drive therefore still lacks the visible label. The 200% fixture no longer steals focus when the gallery loads.
+- The visible label is a separately keyed sibling of the input, which keeps its key and handlers. The compiled test drive shows it, and the repository's browser harnesses pass with it. The 200% fixture does not take focus when the gallery loads.
 - The existing images remain unchanged as requested. Their text grouping and missing visible label do not establish renderer behavior. Their hashes and classification are recorded in [the manifest](mockups/manifest.json).
 
 ## Director revision
 
 - Both specimen documents load `assets/shared/specimen-bootstrap.css` before the foundation and launcher styles. The Chromium harness reports no console errors, failed requests or external requests; the updated capture is [specimen-chromium.png](evidence/specimen-chromium.png).
 - Chromium measures 16px between Refresh or Acknowledge and an immediately following result, including the 6px flex gap. The same rule retains 16px after the existing management controls.
-- [staged-renderer-label.patch](staged-renderer-label.patch) applies to the current staged renderer and [SurfaceRenderer.elm](SurfaceRenderer.elm) contains the resulting source. The input remains separately keyed with its original ID, accessible name and composition handlers. The staged source SHA-256 is `5fe8086c23588cc094f953792663bca28544da054aa6d105b0714df19e1fa372`; the patched copy is `7c19e446249dc17a80a7fae9310b60af91450278694ae12408de8d07cb705a37`.
-- D03 owns only `design/launcher/**`, so the shared staged renderer and bundles remain unchanged. Integration applies the staged patch and rebuilds the bundles. Compilation and live label verification remain outstanding.
+- The staged renderer and the compiled test-drive Popup emit the label; the input remains separately keyed with its original ID, accessible name and composition handlers.
