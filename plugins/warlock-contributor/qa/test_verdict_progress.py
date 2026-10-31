@@ -63,7 +63,7 @@ class VerdictProgressTests(unittest.TestCase):
                 self.claim['scope'] = 'Current wording after historical record'
                 self.fixture.record_claim(self.claim)
                 current = self.record()['iterations'][-1]
-                self.assertEqual(current['progressPolicy'], 5)
+                self.assertEqual(current['progressPolicy'], 6)
                 self.assertFalse(current['meaningfulProgress'])
                 self.cli('check')
 

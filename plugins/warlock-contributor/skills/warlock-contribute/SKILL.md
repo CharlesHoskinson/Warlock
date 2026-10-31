@@ -33,7 +33,7 @@ Use `verify-plan` for protected check suggestions based on declared sources chan
 
 The required checks expose a structured `progress` packet with the recorded elapsed time, nonprogress iteration count and slice-change action. Honor its two-iteration/45-minute investigation trigger while continuing independent mandatory work. These fields describe self-attested records; they cannot establish delivered GUI behavior.
 
-New iterations use progress policy 5; policies 1–4 retain their original historical meaning. A requirement/scenario/disposition counts once across the record: rewording scope or missing observations, regenerating reports, and alternating previously recorded dispositions do not reset the timer. Actual selected Elm/Haskell source changes count as `production-fix` under policy 5; older iterations retain their recorded policy. Do not change labels to manufacture progress.
+New iterations use progress policy 6; policies 1–5 retain their original historical meaning. A requirement/scenario/disposition counts once across the record: rewording scope or missing observations, regenerating reports, and alternating previously recorded dispositions do not reset the timer. Actual selected Elm/Haskell source changes count as `production-fix` under policy 6, including declared Haskell package src .hs/.hsc files; older iterations retain their recorded policy. Do not change labels to manufacture progress.
 
 For UI-008 `overflow-resize`, `verify-plan` suggests the existing `--popup-reflow` CPU/native checks, including controller, popup, adapter and host changes. The planner combines shared targets and retains every trigger path. Inspect those runners and preserve the original keyboard, physical presentation and AT obligations.
 

@@ -32,7 +32,7 @@ class AdapterProgressTests(unittest.TestCase):
             self.fixture.write('implementation/warlock/' + name, 'changed ' + name + '\n')
             record = self.record()
             self.assertFalse(record['iterations'][-1]['meaningfulProgress'])
-            self.assertEqual(record['iterations'][-1]['progressPolicy'], 5)
+            self.assertEqual(record['iterations'][-1]['progressPolicy'], 6)
             record['iterations'][-1].update(progressPolicy=4, meaningfulProgress=True)
             self.fixture.write('.warlock-contributor/slice.json', record)
             self.cli('check')

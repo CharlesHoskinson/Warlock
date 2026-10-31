@@ -33,7 +33,7 @@ class HaskellPolicy5Tests(unittest.TestCase):
         self.select(['src/Contract.hs', 'src/Desktop.elm'])
         self.fx.write('implementation/warlock/src/Contract.hs', 'module Contract where\nx = 2\n')
         self.cli('record', '--outcome', 'production-fix', '--summary', 'owned Haskell change')
-        self.assertEqual(self.record()['iterations'][-1]['progressPolicy'], 5)
+        self.assertEqual(self.record()['iterations'][-1]['progressPolicy'], 6)
         self.assertTrue(self.record()['iterations'][-1]['meaningfulProgress'])
         self.fx.write('implementation/warlock/src/Desktop.elm', 'module Desktop exposing (identity)\nidentity = "new"\n')
         self.cli('record', '--outcome', 'production-fix', '--summary', 'owned Elm change')

@@ -9,6 +9,7 @@ import hashlib
 import importlib.util
 import json
 import pathlib
+import re
 import shutil
 import shlex
 import subprocess
@@ -287,8 +288,8 @@ def authored(name, include_cpp=True, include_js=True):
 
 
 def authored_v5(name):
-    # Policy 5 applies only to newly recorded iterations. Older policies retain
-    # their original authored-language classification and validation semantics.
+    # Policy 5 is frozen for historical iterations. New records use policy 6;
+    # old records retain their authored-language classification semantics.
     prefix = 'implementation/warlock/'
     if not name.startswith(prefix):
         return False
@@ -298,8 +299,25 @@ def authored_v5(name):
             or (suffix == '.hs' and relative.startswith(('src/', 'native/', 'adapter/'))))
 
 
-def product_delta(current, previous, include_cpp=True, include_js=True, policy5=False):
-    return any((authored_v5(n) if policy5 else authored(n, include_cpp, include_js))
+def authored_v6(name):
+    """Prospective classifier; historical policies never consult this function."""
+    if authored_v5(name):
+        return True
+    parts = pathlib.PurePosixPath(name).parts
+    if len(parts) < 6 or parts[:3] != ('implementation', 'warlock', 'haskell') or parts[4] != 'src':
+        return False
+    # One Cabal package segment, not arbitrary files anywhere under haskell/.
+    if re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', parts[3]) is None:
+        return False
+    support = {'test', 'tests', 'qa', 'formal', 'model', 'models', 'build',
+               'dist', 'dist-newstyle', 'bench', 'benches', 'examples', 'generated'}
+    if any(part in ('.', '..') or part.startswith('.') or part in support for part in parts[5:-1]):
+        return False
+    return not parts[-1].startswith('.') and pathlib.PurePosixPath(name).suffix in ('.hs', '.hsc')
+
+
+def product_delta(current, previous, include_cpp=True, include_js=True, policy5=False, policy6=False):
+    return any((authored_v6(n) if policy6 else authored_v5(n) if policy5 else authored(n, include_cpp, include_js))
                and current[n] != previous.get(n) for n in current)
 
 
@@ -481,7 +499,7 @@ def verification_plan(root, record, reqs, state, selected=False):
     """Suggest existing protected runners. Never run or certify their contents."""
     packet = handoff(root, record, reqs, state)
     paths = packet['slice']['paths'] if selected else packet['changedSinceLastRecord']
-    product = [n for n in paths if authored(n) or authored_v5(n)]
+    product = [n for n in paths if authored(n) or authored_v6(n)]
     requirements = set(packet['slice']['requirements'])
     scenarios = set(packet['slice']['scenarios'])
     primary = bool(scenarios & {'taskbar-inactive', 'taskbar-active', 'taskbar-minimized'})
@@ -1048,7 +1066,7 @@ def validate(root, record, reqs, state):
                 for evidence in c.get('evidence', []):
                     evidence_path = evidence.get('path', '')
                     ignored = git_run(root, 'check-ignore', '--', evidence_path).returncode == 0
-                    if evidence_path in s['paths'] or authored(evidence_path) or (item.get('progressPolicy', 1) >= 5 and authored_v5(evidence_path)) or evidence_path.startswith('.warlock-contributor/') or ignored:
+                    if evidence_path in s['paths'] or authored(evidence_path) or (item.get('progressPolicy', 1) == 5 and authored_v5(evidence_path)) or (item.get('progressPolicy', 1) >= 6 and authored_v6(evidence_path)) or evidence_path.startswith('.warlock-contributor/') or ignored:
                         errors.append('Accepted evidence cannot be product source or ignored scratch')
                 if not c.get('evidence'):
                     errors.append('Accepted claim needs retained evidence')
@@ -1084,10 +1102,10 @@ def validate(root, record, reqs, state):
     for index, item in enumerate(iterations):
         previous = extension_baseline(record, previous, index)
         policy = item.get('progressPolicy', 1)
-        if policy not in (1, 2, 3, 4, 5):
+        if policy not in (1, 2, 3, 4, 5, 6):
             errors.append('Unknown iteration progress policy')
         seen_verdicts = {verdict_key(c, policy) for c in seen_claims}
-        expected_progress = (item['outcome'] == 'production-fix' and product_delta(item['sourceHashes'], previous, policy in (2, 3, 4), policy in (3, 4), policy == 5)) or (item['outcome'] == 'scenario-verdict' and any(verdict_key(c, policy) not in seen_verdicts for c in item.get('claims', [])))
+        expected_progress = (item['outcome'] == 'production-fix' and product_delta(item['sourceHashes'], previous, policy in (2, 3, 4), policy in (3, 4), policy == 5, policy == 6)) or (item['outcome'] == 'scenario-verdict' and any(verdict_key(c, policy) not in seen_verdicts for c in item.get('claims', [])))
         if item['meaningfulProgress'] != expected_progress:
             errors.append('Iteration progress assertion differs from source hashes/recorded verdict')
         previous = item['sourceHashes']
@@ -1277,8 +1295,8 @@ def main():
                 hashes = {n: digest(safe(root,n)) for n in record['slice']['paths']}
                 previous = extension_baseline(record, record['iterations'][-1]['sourceHashes'] if record['iterations'] else record['sourceHashes'], len(record['iterations']))
                 seen_verdicts = {verdict_key(c) for i in record['iterations'] for c in i.get('claims', [])}
-                progress = (args.outcome == 'production-fix' and product_delta(hashes, previous, policy5=True)) or (args.outcome == 'scenario-verdict' and any(verdict_key(c) not in seen_verdicts for c in claims))
-                record['iterations'].append({'atUTC': now(), 'outcome': args.outcome, 'summary': args.summary, 'sourceHashes': hashes, 'meaningfulProgress': progress, 'progressPolicy': 5, 'claims': claims, 'sourceRevision': git(root, 'rev-parse', 'HEAD').decode().strip()})
+                progress = (args.outcome == 'production-fix' and product_delta(hashes, previous, policy6=True)) or (args.outcome == 'scenario-verdict' and any(verdict_key(c) not in seen_verdicts for c in claims))
+                record['iterations'].append({'atUTC': now(), 'outcome': args.outcome, 'summary': args.summary, 'sourceHashes': hashes, 'meaningfulProgress': progress, 'progressPolicy': 6, 'claims': claims, 'sourceRevision': git(root, 'rev-parse', 'HEAD').decode().strip()})
                 errors, warnings = validate(root, record, reqs, state)
                 if not errors:
                     write_record(path, record)

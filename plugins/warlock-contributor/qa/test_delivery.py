@@ -176,7 +176,7 @@ class DeliveryHelperTests(unittest.TestCase):
                 self.cli('record', '--outcome', 'production-fix', '--summary', 'native behavior changed')
                 record = json.loads((self.repo / '.warlock-contributor/slice.json').read_text())
                 self.assertFalse(record['iterations'][-1]['meaningfulProgress'])
-                self.assertEqual(record['iterations'][-1]['progressPolicy'], 5)
+                self.assertEqual(record['iterations'][-1]['progressPolicy'], 6)
                 # Reconstruct a historical policy-4 row and prove it remains valid.
                 record['iterations'][-1].update(progressPolicy=4, meaningfulProgress=True)
                 self.fixture.write('.warlock-contributor/slice.json', record)
