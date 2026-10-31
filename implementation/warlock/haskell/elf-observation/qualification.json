@@ -1,0 +1,39 @@
+{
+  "scope": "Published preparation parser/declared-graph baseline; fresh private offline Cabal build and pure suite passed",
+  "sourceSHA256": {
+    "src/Warlock/Elf/Graph.hs": "de3b6575b059baba66f50e4cca5078db6d535a88e380fb713486845c09643e82",
+    "src/Warlock/Elf/Readelf.hs": "e53844a3d91a97d17b61566e9e6f032659e7cb178cb6675720888123f76c3103",
+    "test/ElfCases.hs": "9e953c3ffc8fa2df47ff86a9ce26d8274b52f461e24eae8a7ad58c63e5e12acc",
+    "test/GoldenNames.hs": "43c40800868f65f1b8ea45571c8fa44adcf6877e88c28bf52c0e8d8ff0be23ed"
+  },
+  "sourceMatchesPrivateBaseline": true,
+  "retainedEvidence": {
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/finite-collector-controls-1793404620387072348/report.json": "f5dc55131942b2284047068acbdbdbd8794cdd167156e6945803aa82f1968797",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/finite-collector-controls-1793406177584172488/report.json": "17093e625769f7bd7db9b554d2bea69494536bda107db22fb4a514df721dc10d",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/finite-collector-controls-1793406913945415836/report.json": "d6699a8a1070ae93a22948b9d142ea4754d9f694f768940968ec1420b3b20559",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/astra-current-graph-review-v10/REVIEW.md": "9ee3d8599fd98fb52b988a04440c4a609318d5263b73afd11651f6c9926921e6",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/astra-pie-helper-profile-review-v12/REVIEW.md": "c2c1d6f2f032322609705f398b0e6cb8b11283c970815a0cca4b0a7c49c8f23c",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/quint-elf-graph-1793405477967957394/report.json": "5d4abb7c46ddeb85b40f8e26cd0787a1dc941cdc639ceb66632f9c2e0ba2252d"
+  },
+  "publicPackageBuildVerified": true,
+  "nativeAccepted": false,
+  "originalAccepted": false,
+  "releaseAccepted": false,
+  "limits": [
+    "Pure grammar/declared-edge checks, not ELF binary or dynamic loader validation",
+    "Historical component reports retain their own input sets and limits",
+    "Quint result is sampled abstract correspondence, not exhaustive runtime proof",
+    "Source-to-namespace placement extension not included"
+  ],
+  "publicPackageBuild": {
+    "report": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/elf-observation-cabal-1793407585014843292/report.json",
+    "sha256": "2384062abeb6e807daf1e2cf4257c417595d65a5a00aa08038cab4a9b2372f15",
+    "retainedFailure": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/elf-observation-cabal-1793407541995647785/report.json",
+    "retainedFailureSHA256": "2e5ef242d71ff7154147f61dccf25a4c6fbe97bac7a03147330c635ae906e0f5",
+    "failureCause": "Root build injected -dynamic while Cabal requested -dynamic-too; -Werror refused. Corrected native Cabal shared/executable flags, no compiler warning suppression.",
+    "repositories": "disabled",
+    "freshPrivateBuildAndCache": true,
+    "testSuitesPassed": 1,
+    "reproducibleReleaseClaimed": false
+  }
+}
