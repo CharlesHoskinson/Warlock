@@ -1,0 +1,34 @@
+cabal-version: 2.4
+name: warlock-process-custody
+version: 0.1.0.0
+build-type: Simple
+extra-source-files: README.md HANDOFF.md RETROFIT.md SOURCE-MAP.md fixture/Main.hs test/Internal.hs test/Public.hs
+common options
+  default-language: Haskell2010
+  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates
+  build-depends: base >= 4.16 && < 5, bytestring, text, process, unix, cryptohash-sha256 == 0.11.102.1
+common implementation
+  other-modules: Warlock.Capture.Process.Internal, Warlock.Capture.Process.Owner, Warlock.Capture.Process.Lease, Warlock.Capture.Process.Transfer, Warlock.Capture.Process.Transfer.Internal
+library
+  import: options, implementation
+  hs-source-dirs: src
+  exposed-modules: Warlock.Capture.Process
+executable custody-child
+  import: options
+  hs-source-dirs: fixture
+  main-is: Main.hs
+  ghc-options: -threaded
+test-suite internal-controls
+  import: options, implementation
+  type: exitcode-stdio-1.0
+  hs-source-dirs: test, src
+  main-is: Internal.hs
+  build-depends: directory, filepath
+  ghc-options: -threaded
+test-suite public-controls
+  import: options
+  type: exitcode-stdio-1.0
+  hs-source-dirs: test
+  main-is: Public.hs
+  build-depends: warlock-process-custody
+  ghc-options: -threaded
