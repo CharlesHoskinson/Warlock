@@ -1,0 +1,2452 @@
+{
+  "schema": 1,
+  "recordedUTC": "2026-10-31T22:42:21.530366+00:00",
+  "requirement": "ELM-ARC-005",
+  "scenario": "architecture-005",
+  "original": {
+    "id": "ELM-ARC-005",
+    "capability": "elm-native-bridge",
+    "pattern": "ubiquitous",
+    "ears": "The Elm desktop SHALL attach request identity, compositor lifetime, frontend epoch, operation generation, window incarnation, output generation and expected native revision to window-effect intents.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Preserved scenario report with native or bridge trace showing: the serialized request contains the full authority tuple; artifact hashes and matching scenario receipts included.",
+    "legacyEvidence": "docs/research/elm-pivot/ARCHITECTURE.md",
+    "task": "Implement identity-bearing effect messages.",
+    "scenarios": [
+      {
+        "name": "architecture-005",
+        "given": "a known window and output",
+        "when": "an effect is requested",
+        "then": "the serialized request contains the full authority tuple"
+      }
+    ],
+    "source": "docs/elm-roadmap/contributions/architecture.json",
+    "status": "proposed",
+    "taskId": "P1-ELM-ARC-005",
+    "accountableOwnerRole": "Native authority lead",
+    "verifierRole": "Independent acceptance reviewer"
+  },
+  "sourceRevision": "d3a57508ab7974e96e9a631bcd1f5b39b1f6d1d4",
+  "sourceHashes": {
+    "implementation/warlock/src/Effects.elm": "80c574e8c564c28a1fb11f1f89bb5bfa7ac97a92474bbf027a737324bb2a82cd",
+    "implementation/warlock/src/Shell.elm": "f14b7fe3bfbf1a57f335f98914c988938c235823ba4596c067cf744776c4a9ae",
+    "implementation/warlock/src/GeometryProjection.elm": "f1b5708b8b4d1c7c02e46542bc041abb9e8cb0524d965ee4b03ab97f586a544c",
+    "implementation/warlock/src/OutputController.elm": "aaf1729287ff61595a237201b261e7c1ce11c8f2353c620171f48aff99d86f38",
+    "implementation/warlock/src/SurfaceController.elm": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
+    "implementation/warlock/src/Desktop.elm": "a503d926599b5aa194956a1208fdc0004fb829442cd523c5372d41fd1fab0404",
+    "implementation/warlock/src/TaskbarShell.elm": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+    "implementation/warlock/src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "implementation/warlock/qa/AuthorityTupleReplay.elm": "78a95932b297f236e50410d3b5c020bcebc2b2c3deccd663746211d24ecd28ab",
+    "implementation/warlock/qa/authority-tuple.cjs": "3033b7c84d667af2566439d7e2e01644df3a171fa332be142388b8d92cdec68a",
+    "implementation/warlock/src/UnsentOperation.elm": "46e315cc739e097805af3c9358f9ca27a807ef1119c733aa296687342c8238ea"
+  },
+  "behavior": "Existing owning Elm desktop route attaches every original authority field to all ten window-effect operations; no production defect or new GUI feature inferred from new evidence.",
+  "verificationScope": "Preserved scenario report with native or bridge trace showing: the serialized request contains the full authority tuple; artifact hashes and matching scenario receipts included.",
+  "scope": "Actual owning Elm controller bridge serialization and matching explicitly simulated bridge receipts; original permitted bridge evidence, no native execution or Haskell port acceptance.",
+  "originalAcceptance": {
+    "requirementAccepted": true,
+    "scenarioDisposition": "accepted",
+    "reviewer": "reviewer",
+    "reviewPath": "docs/warlock-build-loop/v2/authority-tuple-review-20261031.json",
+    "reviewSHA256": "aa1ea034f07b4622fb9d38b5eefba85f3069013a547872b4eefdec7bdfe5d479",
+    "scope": "Whole original ELM-ARC-005 and its sole architecture-005 scenario on the current Elm desktop source tuple: serialized window-effect intents carry the full authority tuple, established by the original expressly permitted bridge trace with artifact hashes and matching simulated scenario receipts.",
+    "sourceRevision": "d3a57508ab7974e96e9a631bcd1f5b39b1f6d1d4"
+  },
+  "nativeAcceptance": false,
+  "haskellPortAcceptance": false,
+  "releaseAccepted": false,
+  "positiveCases": 80,
+  "negativeCases": 232,
+  "assertions": 2986,
+  "failures": 0,
+  "seededTesting": {
+    "initialSeed": 20261031,
+    "algorithm": "initial seed then xorshift32 unsigned-right-shift1, replacing zero with1; select eight distinct fixture offsets modulo17",
+    "seeds": [
+      20261031,
+      269051435,
+      625803773,
+      999566475,
+      2125279913,
+      1431986301,
+      507244483,
+      464812658
+    ],
+    "candidateSeeds": [
+      20261031,
+      269051435,
+      625803773,
+      723835860,
+      999566475,
+      2125279913,
+      1207952501,
+      1431986301,
+      871253559,
+      507244483,
+      464812658
+    ],
+    "constraint": "The fixture varies identities by seed modulo17; equivalent offsets are deduplicated before any execution or oracle outcome is observed",
+    "scope": "Eight fixed production-route matrices with independently varied full-width fixture authority identities; no random scheduler or exhaustive proof claim"
+  },
+  "scenarioReceipts": [
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "activate",
+      "seed": 20261031,
+      "operation": "activate",
+      "effectProtocol": 1,
+      "knownAuthority": {
+        "request": "9007199254741508",
+        "lifetime": "9007199254741007",
+        "epoch": "9007199254741107",
+        "generation": "9007199254741608",
+        "incarnation": "9007199254741707",
+        "output": "9007199254741307",
+        "revision": "9007199254741407"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741007",
+        "epoch": "9007199254741107",
+        "output": "9007199254741307",
+        "revision": "9007199254741407"
+      },
+      "emittedEnvelopeSHA256": "7e1e69bfd56fe6115da4d6d9eceba289d24b07d9857a6dc0210d36a90178f596",
+      "simulatedBridgeReceiptSHA256": "1b5cef5861a1ff17052c1e1eaefc5126dd577b4481dbe006cb0dbc6497ca00bd",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "minimize",
+      "seed": 20261031,
+      "operation": "minimize",
+      "effectProtocol": 1,
+      "knownAuthority": {
+        "request": "9007199254741508",
+        "lifetime": "9007199254741007",
+        "epoch": "9007199254741107",
+        "generation": "9007199254741608",
+        "incarnation": "9007199254741707",
+        "output": "9007199254741307",
+        "revision": "9007199254741407"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741007",
+        "epoch": "9007199254741107",
+        "output": "9007199254741307",
+        "revision": "9007199254741407"
+      },
+      "emittedEnvelopeSHA256": "504db3518a22a46433d8fb929f5b3ed6205acec5414a0ea38995d28c4a62e80c",
+      "simulatedBridgeReceiptSHA256": "1666b8155e2d2bdb075cc832e99aa1a14f22c7fe43f32e6349e9fcc3093feecf",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "restore",
+      "seed": 20261031,
+      "operation": "restore",
+      "effectProtocol": 1,
+      "knownAuthority": {
+        "request": "9007199254741508",
+        "lifetime": "9007199254741007",
+        "epoch": "9007199254741107",
+        "generation": "9007199254741608",
+        "incarnation": "9007199254741707",
+        "output": "9007199254741307",
+        "revision": "9007199254741407"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741007",
+        "epoch": "9007199254741107",
+        "output": "9007199254741307",
+        "revision": "9007199254741407"
+      },
+      "emittedEnvelopeSHA256": "73ee11eb6edb0bd0b73cfb1b16788972faffb82a94ef0cae05e902c90da710e9",
+      "simulatedBridgeReceiptSHA256": "d506fc5d5793e741c20d5fd6795ed5f3a219131ec64bb29bfdd226a952701ef5",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "maximize",
+      "seed": 20261031,
+      "operation": "maximize",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741508",
+        "lifetime": "9007199254741007",
+        "epoch": "9007199254741107",
+        "generation": "9007199254741608",
+        "incarnation": "9007199254741707",
+        "output": "9007199254741307",
+        "revision": "9007199254741407"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741007",
+        "epoch": "9007199254741107",
+        "output": "9007199254741307",
+        "revision": "9007199254741407"
+      },
+      "emittedEnvelopeSHA256": "20b5efee6739bd8aaa7474ef53db326b27166a8a4bbcf0239d82dbadd24d3c88",
+      "simulatedBridgeReceiptSHA256": "50017cbe507432a432311c5af5f9773d6671aba33460e809b00c767b0eb2f715",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "restore-geometry",
+      "seed": 20261031,
+      "operation": "restore-geometry",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741508",
+        "lifetime": "9007199254741007",
+        "epoch": "9007199254741107",
+        "generation": "9007199254741608",
+        "incarnation": "9007199254741707",
+        "output": "9007199254741307",
+        "revision": "9007199254741407"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741007",
+        "epoch": "9007199254741107",
+        "output": "9007199254741307",
+        "revision": "9007199254741407"
+      },
+      "emittedEnvelopeSHA256": "ab88877c3409cb49914c506f1e424318aa6474a3981bdab1a6bf5b51090eea7f",
+      "simulatedBridgeReceiptSHA256": "1b361808d969bf4bc3f62438902b59bbd05da48feb8ea837647c227a0a841721",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "exit-fullscreen",
+      "seed": 20261031,
+      "operation": "exit-fullscreen",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741508",
+        "lifetime": "9007199254741007",
+        "epoch": "9007199254741107",
+        "generation": "9007199254741608",
+        "incarnation": "9007199254741707",
+        "output": "9007199254741307",
+        "revision": "9007199254741407"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741007",
+        "epoch": "9007199254741107",
+        "output": "9007199254741307",
+        "revision": "9007199254741407"
+      },
+      "emittedEnvelopeSHA256": "0d83735e42588e2deb2943227476f4bc464a99fc8658fa7f7124ad231cb76fde",
+      "simulatedBridgeReceiptSHA256": "cc7a118a2ad1b74b8a0e542d9170ac08731e66bae0ce4f0f59f48b2dbd93f87a",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "pin",
+      "seed": 20261031,
+      "operation": "pin",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741508",
+        "lifetime": "9007199254741007",
+        "epoch": "9007199254741107",
+        "generation": "9007199254741608",
+        "incarnation": "9007199254741707",
+        "output": "9007199254741307",
+        "revision": "9007199254741407"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741007",
+        "epoch": "9007199254741107",
+        "output": "9007199254741307",
+        "revision": "9007199254741407"
+      },
+      "emittedEnvelopeSHA256": "8263e4f734393ca9224d6d3350e945566ada05d69128050057c56351df109420",
+      "simulatedBridgeReceiptSHA256": "b1e4baf14bd8a4c10dfccaa68d46911755eda68692634ed9ad7b9d30a78c40da",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "unpin",
+      "seed": 20261031,
+      "operation": "unpin",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741508",
+        "lifetime": "9007199254741007",
+        "epoch": "9007199254741107",
+        "generation": "9007199254741608",
+        "incarnation": "9007199254741707",
+        "output": "9007199254741307",
+        "revision": "9007199254741407"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741007",
+        "epoch": "9007199254741107",
+        "output": "9007199254741307",
+        "revision": "9007199254741407"
+      },
+      "emittedEnvelopeSHA256": "1d0a9e04fac0a8ab9138acae89d5d5047fa7149d195882d6cd17520b17826afb",
+      "simulatedBridgeReceiptSHA256": "9803ca22e5e93d10e9ecd20a5c5e101c4393c701904716df2bff25cc9aad4aca",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "snap",
+      "seed": 20261031,
+      "operation": "snap",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741508",
+        "lifetime": "9007199254741007",
+        "epoch": "9007199254741107",
+        "generation": "9007199254741608",
+        "incarnation": "9007199254741707",
+        "output": "9007199254741307",
+        "revision": "9007199254741407"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741007",
+        "epoch": "9007199254741107",
+        "output": "9007199254741307",
+        "revision": "9007199254741407"
+      },
+      "emittedEnvelopeSHA256": "747a8f0a14c4fddc6d09438b80844f17fc1b01b2234a6f6a8a667685de0eeb73",
+      "simulatedBridgeReceiptSHA256": "faffd9ec9ad258e67ea006edaa1c2fb223210f31816e6fd755d816b2d30753c2",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "transfer-workspace",
+      "seed": 20261031,
+      "operation": "transfer-workspace",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741508",
+        "lifetime": "9007199254741007",
+        "epoch": "9007199254741107",
+        "generation": "9007199254741608",
+        "incarnation": "9007199254741707",
+        "output": "9007199254741307",
+        "revision": "9007199254741407"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741007",
+        "epoch": "9007199254741107",
+        "output": "9007199254741307",
+        "revision": "9007199254741407"
+      },
+      "emittedEnvelopeSHA256": "3ae462c0ad7b534484db4cbe9c0e3f733a5b514c7e1885f95378a0ac976bce9d",
+      "simulatedBridgeReceiptSHA256": "ed8c35bed60bc4ca0202e18b8f04f1d254a0c5c544c333836218e9acbcd67ccf",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "activate",
+      "seed": 269051435,
+      "operation": "activate",
+      "effectProtocol": 1,
+      "knownAuthority": {
+        "request": "9007199254741502",
+        "lifetime": "9007199254741001",
+        "epoch": "9007199254741101",
+        "generation": "9007199254741602",
+        "incarnation": "9007199254741701",
+        "output": "9007199254741301",
+        "revision": "9007199254741401"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741001",
+        "epoch": "9007199254741101",
+        "output": "9007199254741301",
+        "revision": "9007199254741401"
+      },
+      "emittedEnvelopeSHA256": "6673c8d5451f5f270308af14150c55f2159a12de83b95e1973728fe3e6d05b5b",
+      "simulatedBridgeReceiptSHA256": "0da4c924514748df453b6134d9cf6f22f4df9177f58b9dcb8e7d1c7ba41a44f1",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "minimize",
+      "seed": 269051435,
+      "operation": "minimize",
+      "effectProtocol": 1,
+      "knownAuthority": {
+        "request": "9007199254741502",
+        "lifetime": "9007199254741001",
+        "epoch": "9007199254741101",
+        "generation": "9007199254741602",
+        "incarnation": "9007199254741701",
+        "output": "9007199254741301",
+        "revision": "9007199254741401"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741001",
+        "epoch": "9007199254741101",
+        "output": "9007199254741301",
+        "revision": "9007199254741401"
+      },
+      "emittedEnvelopeSHA256": "0daf76ed80d6b7877fb1aa90c98dffb98a3eb0bcd41a36c2e10509aa7abf3c50",
+      "simulatedBridgeReceiptSHA256": "31d3fd28d0deadf849dc91ac4d0c816c9a6c7193185b59ad5670a357d46259c2",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "restore",
+      "seed": 269051435,
+      "operation": "restore",
+      "effectProtocol": 1,
+      "knownAuthority": {
+        "request": "9007199254741502",
+        "lifetime": "9007199254741001",
+        "epoch": "9007199254741101",
+        "generation": "9007199254741602",
+        "incarnation": "9007199254741701",
+        "output": "9007199254741301",
+        "revision": "9007199254741401"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741001",
+        "epoch": "9007199254741101",
+        "output": "9007199254741301",
+        "revision": "9007199254741401"
+      },
+      "emittedEnvelopeSHA256": "c0401cf712352daf8e529382f65f9fd56c7a508cdc474a40c60f2ebdd5341513",
+      "simulatedBridgeReceiptSHA256": "aa2246153fb0a86735907c8937275593acaf16006c40d64b8d5707311d927c28",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "maximize",
+      "seed": 269051435,
+      "operation": "maximize",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741502",
+        "lifetime": "9007199254741001",
+        "epoch": "9007199254741101",
+        "generation": "9007199254741602",
+        "incarnation": "9007199254741701",
+        "output": "9007199254741301",
+        "revision": "9007199254741401"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741001",
+        "epoch": "9007199254741101",
+        "output": "9007199254741301",
+        "revision": "9007199254741401"
+      },
+      "emittedEnvelopeSHA256": "d9106f28667a7db9d9686366e43705ac707408fd0895b74167bf97f28d217567",
+      "simulatedBridgeReceiptSHA256": "d008c981e173fcb3506259f85932a7cff282699706e3bec56d521ccc69466cff",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "restore-geometry",
+      "seed": 269051435,
+      "operation": "restore-geometry",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741502",
+        "lifetime": "9007199254741001",
+        "epoch": "9007199254741101",
+        "generation": "9007199254741602",
+        "incarnation": "9007199254741701",
+        "output": "9007199254741301",
+        "revision": "9007199254741401"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741001",
+        "epoch": "9007199254741101",
+        "output": "9007199254741301",
+        "revision": "9007199254741401"
+      },
+      "emittedEnvelopeSHA256": "9ed811bd323415a610fc773ffcde584f27a2900cb46a0870bdb5d0de8c40a76b",
+      "simulatedBridgeReceiptSHA256": "d5f6354c1d4fa1ed0e852abec6b8b91f0bc2e41af07c6824ddea158d98178c3d",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "exit-fullscreen",
+      "seed": 269051435,
+      "operation": "exit-fullscreen",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741502",
+        "lifetime": "9007199254741001",
+        "epoch": "9007199254741101",
+        "generation": "9007199254741602",
+        "incarnation": "9007199254741701",
+        "output": "9007199254741301",
+        "revision": "9007199254741401"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741001",
+        "epoch": "9007199254741101",
+        "output": "9007199254741301",
+        "revision": "9007199254741401"
+      },
+      "emittedEnvelopeSHA256": "8c6f4ce2f44a0adf5353c3086c9fd41f5b6205a47239f1cf99c5a203f1f5bc68",
+      "simulatedBridgeReceiptSHA256": "6792719ce432fa14de0dcca2459dbb08a11dbd9e79e4aa18e21908b48816760a",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "pin",
+      "seed": 269051435,
+      "operation": "pin",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741502",
+        "lifetime": "9007199254741001",
+        "epoch": "9007199254741101",
+        "generation": "9007199254741602",
+        "incarnation": "9007199254741701",
+        "output": "9007199254741301",
+        "revision": "9007199254741401"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741001",
+        "epoch": "9007199254741101",
+        "output": "9007199254741301",
+        "revision": "9007199254741401"
+      },
+      "emittedEnvelopeSHA256": "23ecd209e26cc0afa01c97fa7fa7bb916539077c15133a4efbce69aef4af3518",
+      "simulatedBridgeReceiptSHA256": "c0ca3f459f769ad5e0e9f63d0f82a8afdce6f7e7412d4ba1fea3990ea0b3f396",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "unpin",
+      "seed": 269051435,
+      "operation": "unpin",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741502",
+        "lifetime": "9007199254741001",
+        "epoch": "9007199254741101",
+        "generation": "9007199254741602",
+        "incarnation": "9007199254741701",
+        "output": "9007199254741301",
+        "revision": "9007199254741401"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741001",
+        "epoch": "9007199254741101",
+        "output": "9007199254741301",
+        "revision": "9007199254741401"
+      },
+      "emittedEnvelopeSHA256": "19254d3ffe5e1ccc4b8824d38cb11a4c431e1a95df22de690fe379014a21e38f",
+      "simulatedBridgeReceiptSHA256": "9630afc104679c5916c2d9625f6527058e27d5634c2e6595737c9aa7a1adfd51",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "snap",
+      "seed": 269051435,
+      "operation": "snap",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741502",
+        "lifetime": "9007199254741001",
+        "epoch": "9007199254741101",
+        "generation": "9007199254741602",
+        "incarnation": "9007199254741701",
+        "output": "9007199254741301",
+        "revision": "9007199254741401"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741001",
+        "epoch": "9007199254741101",
+        "output": "9007199254741301",
+        "revision": "9007199254741401"
+      },
+      "emittedEnvelopeSHA256": "3e29ad8baa8de691e964c637ec4eaca9ec37f3b16f558f9b9fa091c20a32b28e",
+      "simulatedBridgeReceiptSHA256": "f0f6900cc608afb66ad29b5e3f10752356f2d45dea28fea067fdd9bee2f9f5c6",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "transfer-workspace",
+      "seed": 269051435,
+      "operation": "transfer-workspace",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741502",
+        "lifetime": "9007199254741001",
+        "epoch": "9007199254741101",
+        "generation": "9007199254741602",
+        "incarnation": "9007199254741701",
+        "output": "9007199254741301",
+        "revision": "9007199254741401"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741001",
+        "epoch": "9007199254741101",
+        "output": "9007199254741301",
+        "revision": "9007199254741401"
+      },
+      "emittedEnvelopeSHA256": "c2b9e58ca3230bc00b2f6f61dbf1e6f994c7f39a4d0ee699f8cf3b5b51de8ebd",
+      "simulatedBridgeReceiptSHA256": "8e43331987737ccd9af094b126d57f234cbf27c4ab818894eb7f29f843e237a7",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "activate",
+      "seed": 625803773,
+      "operation": "activate",
+      "effectProtocol": 1,
+      "knownAuthority": {
+        "request": "9007199254741513",
+        "lifetime": "9007199254741012",
+        "epoch": "9007199254741112",
+        "generation": "9007199254741613",
+        "incarnation": "9007199254741712",
+        "output": "9007199254741312",
+        "revision": "9007199254741412"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741012",
+        "epoch": "9007199254741112",
+        "output": "9007199254741312",
+        "revision": "9007199254741412"
+      },
+      "emittedEnvelopeSHA256": "a82572932a56904b04aa8c9bc91f33f8f0e1173958652122e6b2e189b4a049a0",
+      "simulatedBridgeReceiptSHA256": "d65482fbba22c97e256848e495c86f17ada1d06d22575ecdc9c0fe8925cf897a",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "minimize",
+      "seed": 625803773,
+      "operation": "minimize",
+      "effectProtocol": 1,
+      "knownAuthority": {
+        "request": "9007199254741513",
+        "lifetime": "9007199254741012",
+        "epoch": "9007199254741112",
+        "generation": "9007199254741613",
+        "incarnation": "9007199254741712",
+        "output": "9007199254741312",
+        "revision": "9007199254741412"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741012",
+        "epoch": "9007199254741112",
+        "output": "9007199254741312",
+        "revision": "9007199254741412"
+      },
+      "emittedEnvelopeSHA256": "541b6ff3eb35c82b8789ed0b69bbeae770b5d38f07afbe1eb81bde39d037e99e",
+      "simulatedBridgeReceiptSHA256": "6779be875ba48ba03984c90f84ab693ab89ed0e940119614f3ee97074841e083",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "restore",
+      "seed": 625803773,
+      "operation": "restore",
+      "effectProtocol": 1,
+      "knownAuthority": {
+        "request": "9007199254741513",
+        "lifetime": "9007199254741012",
+        "epoch": "9007199254741112",
+        "generation": "9007199254741613",
+        "incarnation": "9007199254741712",
+        "output": "9007199254741312",
+        "revision": "9007199254741412"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741012",
+        "epoch": "9007199254741112",
+        "output": "9007199254741312",
+        "revision": "9007199254741412"
+      },
+      "emittedEnvelopeSHA256": "649b7934d96eb32aaef6b25e75b2170277d026b97cf5f493463ad012f20f8ddb",
+      "simulatedBridgeReceiptSHA256": "6e84a6795747e639c7101492087f20cdf8a5d71c17f50a0a8f0c967f1b0e85f6",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "maximize",
+      "seed": 625803773,
+      "operation": "maximize",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741513",
+        "lifetime": "9007199254741012",
+        "epoch": "9007199254741112",
+        "generation": "9007199254741613",
+        "incarnation": "9007199254741712",
+        "output": "9007199254741312",
+        "revision": "9007199254741412"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741012",
+        "epoch": "9007199254741112",
+        "output": "9007199254741312",
+        "revision": "9007199254741412"
+      },
+      "emittedEnvelopeSHA256": "bae8a4f78a04cfd6139913125a4f85686f109a1172d13a4b3b83d0d0d6760fbf",
+      "simulatedBridgeReceiptSHA256": "370237722571f4d77a0d3632f82d2717b1fdf69cbfb666859e13fe630c539e85",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "restore-geometry",
+      "seed": 625803773,
+      "operation": "restore-geometry",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741513",
+        "lifetime": "9007199254741012",
+        "epoch": "9007199254741112",
+        "generation": "9007199254741613",
+        "incarnation": "9007199254741712",
+        "output": "9007199254741312",
+        "revision": "9007199254741412"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741012",
+        "epoch": "9007199254741112",
+        "output": "9007199254741312",
+        "revision": "9007199254741412"
+      },
+      "emittedEnvelopeSHA256": "0bff2b376c9c30a3798b7477392fe40b2abbac09ae13b5b313a2913943e26d25",
+      "simulatedBridgeReceiptSHA256": "6e55126b9c51b8eb224013b278963e294bc682097e5712e3ed427282384a8fb9",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "exit-fullscreen",
+      "seed": 625803773,
+      "operation": "exit-fullscreen",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741513",
+        "lifetime": "9007199254741012",
+        "epoch": "9007199254741112",
+        "generation": "9007199254741613",
+        "incarnation": "9007199254741712",
+        "output": "9007199254741312",
+        "revision": "9007199254741412"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741012",
+        "epoch": "9007199254741112",
+        "output": "9007199254741312",
+        "revision": "9007199254741412"
+      },
+      "emittedEnvelopeSHA256": "1d85166760f7e6e740afb5e2b0da521f17809c7d67f8dc0cfd86cab3d0da0a53",
+      "simulatedBridgeReceiptSHA256": "956380c2f4abddbb23028be81ecdd8c071e873747c47c3905b0ee230015914b7",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "pin",
+      "seed": 625803773,
+      "operation": "pin",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741513",
+        "lifetime": "9007199254741012",
+        "epoch": "9007199254741112",
+        "generation": "9007199254741613",
+        "incarnation": "9007199254741712",
+        "output": "9007199254741312",
+        "revision": "9007199254741412"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741012",
+        "epoch": "9007199254741112",
+        "output": "9007199254741312",
+        "revision": "9007199254741412"
+      },
+      "emittedEnvelopeSHA256": "fdec22f583ff2c57b0a870fe89764ad2cc5cd19caf57239886e970ef6d4dd130",
+      "simulatedBridgeReceiptSHA256": "b3acb44b004697f81f7b8e24b60e8e59bfbc34a9fad22f7eec93a5974accc8db",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "unpin",
+      "seed": 625803773,
+      "operation": "unpin",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741513",
+        "lifetime": "9007199254741012",
+        "epoch": "9007199254741112",
+        "generation": "9007199254741613",
+        "incarnation": "9007199254741712",
+        "output": "9007199254741312",
+        "revision": "9007199254741412"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741012",
+        "epoch": "9007199254741112",
+        "output": "9007199254741312",
+        "revision": "9007199254741412"
+      },
+      "emittedEnvelopeSHA256": "b931b55a94d1da19f2e4ec0c894de885526c053a8adfd34e16e8149352ac7f78",
+      "simulatedBridgeReceiptSHA256": "b2a970be737c6a94ecc5f7ef0f9bdb532999700a9d0a71b202d9afe30ff51265",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "snap",
+      "seed": 625803773,
+      "operation": "snap",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741513",
+        "lifetime": "9007199254741012",
+        "epoch": "9007199254741112",
+        "generation": "9007199254741613",
+        "incarnation": "9007199254741712",
+        "output": "9007199254741312",
+        "revision": "9007199254741412"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741012",
+        "epoch": "9007199254741112",
+        "output": "9007199254741312",
+        "revision": "9007199254741412"
+      },
+      "emittedEnvelopeSHA256": "112745d3d6d73683f521e6d67d028a5c2a873f24d548f676e6b093a92be183c5",
+      "simulatedBridgeReceiptSHA256": "07ce96d46672e4fd6719c02d540499940409e30a0895fe8b863ae88c88f83ddd",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "transfer-workspace",
+      "seed": 625803773,
+      "operation": "transfer-workspace",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741513",
+        "lifetime": "9007199254741012",
+        "epoch": "9007199254741112",
+        "generation": "9007199254741613",
+        "incarnation": "9007199254741712",
+        "output": "9007199254741312",
+        "revision": "9007199254741412"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741012",
+        "epoch": "9007199254741112",
+        "output": "9007199254741312",
+        "revision": "9007199254741412"
+      },
+      "emittedEnvelopeSHA256": "0621968cffcc2fbcefc25f2656f2ab67bf15fbbc9c1c9f934508165a429847f7",
+      "simulatedBridgeReceiptSHA256": "26b4820979de6d0058096d00deb08d030e0f8e26da22412fc8aeb057669bebc2",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "activate",
+      "seed": 999566475,
+      "operation": "activate",
+      "effectProtocol": 1,
+      "knownAuthority": {
+        "request": "9007199254741518",
+        "lifetime": "9007199254741017",
+        "epoch": "9007199254741117",
+        "generation": "9007199254741618",
+        "incarnation": "9007199254741717",
+        "output": "9007199254741317",
+        "revision": "9007199254741417"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741017",
+        "epoch": "9007199254741117",
+        "output": "9007199254741317",
+        "revision": "9007199254741417"
+      },
+      "emittedEnvelopeSHA256": "9053e6bcf5b3cdfb124bd3f8cf051736a604c54f5167afe0279967a9d7ad0203",
+      "simulatedBridgeReceiptSHA256": "da0f968c06a087599dc91fdc47b469701ed954a35dbd79995dd879334927d09a",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "minimize",
+      "seed": 999566475,
+      "operation": "minimize",
+      "effectProtocol": 1,
+      "knownAuthority": {
+        "request": "9007199254741518",
+        "lifetime": "9007199254741017",
+        "epoch": "9007199254741117",
+        "generation": "9007199254741618",
+        "incarnation": "9007199254741717",
+        "output": "9007199254741317",
+        "revision": "9007199254741417"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741017",
+        "epoch": "9007199254741117",
+        "output": "9007199254741317",
+        "revision": "9007199254741417"
+      },
+      "emittedEnvelopeSHA256": "d9132555d437ea063f088b32b5ae752c2de71d70892a0df0a11e95a63c2239e8",
+      "simulatedBridgeReceiptSHA256": "31457165c0767ac8b459f8af3e0f71df271ff12e8e3c0117aab80aaaed83650d",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "restore",
+      "seed": 999566475,
+      "operation": "restore",
+      "effectProtocol": 1,
+      "knownAuthority": {
+        "request": "9007199254741518",
+        "lifetime": "9007199254741017",
+        "epoch": "9007199254741117",
+        "generation": "9007199254741618",
+        "incarnation": "9007199254741717",
+        "output": "9007199254741317",
+        "revision": "9007199254741417"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741017",
+        "epoch": "9007199254741117",
+        "output": "9007199254741317",
+        "revision": "9007199254741417"
+      },
+      "emittedEnvelopeSHA256": "daff8762934b5da82488a42e66db082b6f1287b126c70f36ab2e52e38b7055c6",
+      "simulatedBridgeReceiptSHA256": "18c33a0d3dfc2b87186574979ddb66ea728882e337783e5e19c519262115df39",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "maximize",
+      "seed": 999566475,
+      "operation": "maximize",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741518",
+        "lifetime": "9007199254741017",
+        "epoch": "9007199254741117",
+        "generation": "9007199254741618",
+        "incarnation": "9007199254741717",
+        "output": "9007199254741317",
+        "revision": "9007199254741417"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741017",
+        "epoch": "9007199254741117",
+        "output": "9007199254741317",
+        "revision": "9007199254741417"
+      },
+      "emittedEnvelopeSHA256": "e9550986604d51c0766c6080644c2984917b0c9c7a064ea8c20cbfcdf31fa37f",
+      "simulatedBridgeReceiptSHA256": "7d6a9bdb66feed13976d070c9d5bee1892dd5b619b907a50ee4b94707c5ec38c",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "restore-geometry",
+      "seed": 999566475,
+      "operation": "restore-geometry",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741518",
+        "lifetime": "9007199254741017",
+        "epoch": "9007199254741117",
+        "generation": "9007199254741618",
+        "incarnation": "9007199254741717",
+        "output": "9007199254741317",
+        "revision": "9007199254741417"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741017",
+        "epoch": "9007199254741117",
+        "output": "9007199254741317",
+        "revision": "9007199254741417"
+      },
+      "emittedEnvelopeSHA256": "6a99dee81f27a25e9b369e36a2730c7436f2e5a11af60f55cc665b189b8ca147",
+      "simulatedBridgeReceiptSHA256": "309c91bf5230d005e8eafbd3b4bd83fdaf21d424a987c71dd6fe9941c2eae01b",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "exit-fullscreen",
+      "seed": 999566475,
+      "operation": "exit-fullscreen",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741518",
+        "lifetime": "9007199254741017",
+        "epoch": "9007199254741117",
+        "generation": "9007199254741618",
+        "incarnation": "9007199254741717",
+        "output": "9007199254741317",
+        "revision": "9007199254741417"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741017",
+        "epoch": "9007199254741117",
+        "output": "9007199254741317",
+        "revision": "9007199254741417"
+      },
+      "emittedEnvelopeSHA256": "6ed19902ba4c52ed618d8c055aefa6fc5c2daa7813ae151dd998179aa07e627f",
+      "simulatedBridgeReceiptSHA256": "8c236b9109ef9ceb522b7f4425468e637a34cae54b3110f9d723abd63c124025",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "pin",
+      "seed": 999566475,
+      "operation": "pin",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741518",
+        "lifetime": "9007199254741017",
+        "epoch": "9007199254741117",
+        "generation": "9007199254741618",
+        "incarnation": "9007199254741717",
+        "output": "9007199254741317",
+        "revision": "9007199254741417"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741017",
+        "epoch": "9007199254741117",
+        "output": "9007199254741317",
+        "revision": "9007199254741417"
+      },
+      "emittedEnvelopeSHA256": "820462cc4613f91c972562535b20453f0a7256afd761a5a5d9f9936177639c5c",
+      "simulatedBridgeReceiptSHA256": "9c569575e679ca3c2b4ca02f2e63c89ea5856b1470de2b211da2a48cfae6e151",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "unpin",
+      "seed": 999566475,
+      "operation": "unpin",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741518",
+        "lifetime": "9007199254741017",
+        "epoch": "9007199254741117",
+        "generation": "9007199254741618",
+        "incarnation": "9007199254741717",
+        "output": "9007199254741317",
+        "revision": "9007199254741417"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741017",
+        "epoch": "9007199254741117",
+        "output": "9007199254741317",
+        "revision": "9007199254741417"
+      },
+      "emittedEnvelopeSHA256": "401ac73573eb5b827d0643f32107a6126dc3a12518bff69f44bd646897e79463",
+      "simulatedBridgeReceiptSHA256": "a136a16865dbe975a4deee187c5ac091c4a9dcc586a0645381c10d151afc6397",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "snap",
+      "seed": 999566475,
+      "operation": "snap",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741518",
+        "lifetime": "9007199254741017",
+        "epoch": "9007199254741117",
+        "generation": "9007199254741618",
+        "incarnation": "9007199254741717",
+        "output": "9007199254741317",
+        "revision": "9007199254741417"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741017",
+        "epoch": "9007199254741117",
+        "output": "9007199254741317",
+        "revision": "9007199254741417"
+      },
+      "emittedEnvelopeSHA256": "d10166b6e50b383a7211f1a3c626f9bab69771eab1cf5899c8436d7332884b62",
+      "simulatedBridgeReceiptSHA256": "7abecf52ff5f93755e91424aa3b1eb63d5dfb8dd9758eaa05bc0d41afd321d92",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "transfer-workspace",
+      "seed": 999566475,
+      "operation": "transfer-workspace",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741518",
+        "lifetime": "9007199254741017",
+        "epoch": "9007199254741117",
+        "generation": "9007199254741618",
+        "incarnation": "9007199254741717",
+        "output": "9007199254741317",
+        "revision": "9007199254741417"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741017",
+        "epoch": "9007199254741117",
+        "output": "9007199254741317",
+        "revision": "9007199254741417"
+      },
+      "emittedEnvelopeSHA256": "57c54607c5a0dcdff7224052ebfb28093ecd36d7f2055b9a2eb39685b87f828f",
+      "simulatedBridgeReceiptSHA256": "32d4672ef2b771d4a8cbab2c94711710b8e1888e757107a30bddfa10c3c9b4a6",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "activate",
+      "seed": 2125279913,
+      "operation": "activate",
+      "effectProtocol": 1,
+      "knownAuthority": {
+        "request": "9007199254741510",
+        "lifetime": "9007199254741009",
+        "epoch": "9007199254741109",
+        "generation": "9007199254741610",
+        "incarnation": "9007199254741709",
+        "output": "9007199254741309",
+        "revision": "9007199254741409"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741009",
+        "epoch": "9007199254741109",
+        "output": "9007199254741309",
+        "revision": "9007199254741409"
+      },
+      "emittedEnvelopeSHA256": "35d45a4c07dc215386d9ef5e00f90d015f03fdf1f031b41874c63645223aa53a",
+      "simulatedBridgeReceiptSHA256": "e7d23d6e43d57fa6324a22cf314a0f35bae652c70c4b251ed1a1a463527ad2a0",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "minimize",
+      "seed": 2125279913,
+      "operation": "minimize",
+      "effectProtocol": 1,
+      "knownAuthority": {
+        "request": "9007199254741510",
+        "lifetime": "9007199254741009",
+        "epoch": "9007199254741109",
+        "generation": "9007199254741610",
+        "incarnation": "9007199254741709",
+        "output": "9007199254741309",
+        "revision": "9007199254741409"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741009",
+        "epoch": "9007199254741109",
+        "output": "9007199254741309",
+        "revision": "9007199254741409"
+      },
+      "emittedEnvelopeSHA256": "8c395f253417267c7992db2a3c91931744bb610988f420864c7ca282cad7dc4d",
+      "simulatedBridgeReceiptSHA256": "257cb01339105450aed2e73b023af31e898b7cc9b189d10a71c51f6f8c2dac81",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "restore",
+      "seed": 2125279913,
+      "operation": "restore",
+      "effectProtocol": 1,
+      "knownAuthority": {
+        "request": "9007199254741510",
+        "lifetime": "9007199254741009",
+        "epoch": "9007199254741109",
+        "generation": "9007199254741610",
+        "incarnation": "9007199254741709",
+        "output": "9007199254741309",
+        "revision": "9007199254741409"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741009",
+        "epoch": "9007199254741109",
+        "output": "9007199254741309",
+        "revision": "9007199254741409"
+      },
+      "emittedEnvelopeSHA256": "d3656535b7d6307ef4d75520b6ad8fff67e87dd1bfc558d2217016dc5b7b9cac",
+      "simulatedBridgeReceiptSHA256": "9c0fa8f6c1f2711e8a37bd940e3de9836bdbf5cf0af950a9cfd285fbe280e569",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "maximize",
+      "seed": 2125279913,
+      "operation": "maximize",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741510",
+        "lifetime": "9007199254741009",
+        "epoch": "9007199254741109",
+        "generation": "9007199254741610",
+        "incarnation": "9007199254741709",
+        "output": "9007199254741309",
+        "revision": "9007199254741409"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741009",
+        "epoch": "9007199254741109",
+        "output": "9007199254741309",
+        "revision": "9007199254741409"
+      },
+      "emittedEnvelopeSHA256": "96c46bb797cf46ba3e799553523a5576879b8ea26811716a2be09c56dd7fcabe",
+      "simulatedBridgeReceiptSHA256": "6e6114438c634f581b0a3e6ab5ec7edb6e0084d6091963c9f09e56f088681c62",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "restore-geometry",
+      "seed": 2125279913,
+      "operation": "restore-geometry",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741510",
+        "lifetime": "9007199254741009",
+        "epoch": "9007199254741109",
+        "generation": "9007199254741610",
+        "incarnation": "9007199254741709",
+        "output": "9007199254741309",
+        "revision": "9007199254741409"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741009",
+        "epoch": "9007199254741109",
+        "output": "9007199254741309",
+        "revision": "9007199254741409"
+      },
+      "emittedEnvelopeSHA256": "6e4cc699fdea7964c2998912758cdca80df5686ee7d34789dcf38ac0541f68c6",
+      "simulatedBridgeReceiptSHA256": "cb35fc22f155d476e01526a9eabc25eee556bcc5fe6960bb6c7e2c5b2cbaddd0",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "exit-fullscreen",
+      "seed": 2125279913,
+      "operation": "exit-fullscreen",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741510",
+        "lifetime": "9007199254741009",
+        "epoch": "9007199254741109",
+        "generation": "9007199254741610",
+        "incarnation": "9007199254741709",
+        "output": "9007199254741309",
+        "revision": "9007199254741409"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741009",
+        "epoch": "9007199254741109",
+        "output": "9007199254741309",
+        "revision": "9007199254741409"
+      },
+      "emittedEnvelopeSHA256": "9aa9ffa3ad5ab14835a2bb173223c7270f17c6d10dd8890b8df4ca8d391558c7",
+      "simulatedBridgeReceiptSHA256": "c6c28ddf7b8187aab618274b436d479ff81af0f2c5ae867ef806d6f7e94c4c8a",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "pin",
+      "seed": 2125279913,
+      "operation": "pin",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741510",
+        "lifetime": "9007199254741009",
+        "epoch": "9007199254741109",
+        "generation": "9007199254741610",
+        "incarnation": "9007199254741709",
+        "output": "9007199254741309",
+        "revision": "9007199254741409"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741009",
+        "epoch": "9007199254741109",
+        "output": "9007199254741309",
+        "revision": "9007199254741409"
+      },
+      "emittedEnvelopeSHA256": "cb08096b917e5b864b6ffab033bf045e69fe11025d6d9732b1a100140f2c0ab0",
+      "simulatedBridgeReceiptSHA256": "987273675b11dd44072fe18ef659e4594427629a1f9763ac348220d022dc0fca",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "unpin",
+      "seed": 2125279913,
+      "operation": "unpin",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741510",
+        "lifetime": "9007199254741009",
+        "epoch": "9007199254741109",
+        "generation": "9007199254741610",
+        "incarnation": "9007199254741709",
+        "output": "9007199254741309",
+        "revision": "9007199254741409"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741009",
+        "epoch": "9007199254741109",
+        "output": "9007199254741309",
+        "revision": "9007199254741409"
+      },
+      "emittedEnvelopeSHA256": "d2d44300b24efe3705d4de4298275ff4b4589546fba42f8823035d58dc067f5e",
+      "simulatedBridgeReceiptSHA256": "afbaff20b2e28f356d67b8127013410f90875188e838870b67c5ff60acbf33af",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "snap",
+      "seed": 2125279913,
+      "operation": "snap",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741510",
+        "lifetime": "9007199254741009",
+        "epoch": "9007199254741109",
+        "generation": "9007199254741610",
+        "incarnation": "9007199254741709",
+        "output": "9007199254741309",
+        "revision": "9007199254741409"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741009",
+        "epoch": "9007199254741109",
+        "output": "9007199254741309",
+        "revision": "9007199254741409"
+      },
+      "emittedEnvelopeSHA256": "b86c1ae15ac611a691917ba3e3edf4ef083e316c2dd73501ae70cbb5c59e9660",
+      "simulatedBridgeReceiptSHA256": "531f3d6ed45888c129cf6e57e7e33a6d66516bf328f5f5c520c1744bfddd53ed",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "transfer-workspace",
+      "seed": 2125279913,
+      "operation": "transfer-workspace",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741510",
+        "lifetime": "9007199254741009",
+        "epoch": "9007199254741109",
+        "generation": "9007199254741610",
+        "incarnation": "9007199254741709",
+        "output": "9007199254741309",
+        "revision": "9007199254741409"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741009",
+        "epoch": "9007199254741109",
+        "output": "9007199254741309",
+        "revision": "9007199254741409"
+      },
+      "emittedEnvelopeSHA256": "946db89f02f3b68e958f505d2df587fb4c0989222825157fa0c788db688ee496",
+      "simulatedBridgeReceiptSHA256": "085b9c768c54f2204a51b73eea5f683171046bf578018378f86a52c44f4e6c25",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "activate",
+      "seed": 1431986301,
+      "operation": "activate",
+      "effectProtocol": 1,
+      "knownAuthority": {
+        "request": "9007199254741507",
+        "lifetime": "9007199254741006",
+        "epoch": "9007199254741106",
+        "generation": "9007199254741607",
+        "incarnation": "9007199254741706",
+        "output": "9007199254741306",
+        "revision": "9007199254741406"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741006",
+        "epoch": "9007199254741106",
+        "output": "9007199254741306",
+        "revision": "9007199254741406"
+      },
+      "emittedEnvelopeSHA256": "1272daada86a2133541964af461ad4d391dd7e36304e75ed640c4f66118eaac9",
+      "simulatedBridgeReceiptSHA256": "e99079f87ab297dc5b10baa62dfbeb8741559369b4558eb9120aa61ec38adbca",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "minimize",
+      "seed": 1431986301,
+      "operation": "minimize",
+      "effectProtocol": 1,
+      "knownAuthority": {
+        "request": "9007199254741507",
+        "lifetime": "9007199254741006",
+        "epoch": "9007199254741106",
+        "generation": "9007199254741607",
+        "incarnation": "9007199254741706",
+        "output": "9007199254741306",
+        "revision": "9007199254741406"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741006",
+        "epoch": "9007199254741106",
+        "output": "9007199254741306",
+        "revision": "9007199254741406"
+      },
+      "emittedEnvelopeSHA256": "38dca29f13a0a54b98066bd04071efd62e3657320f32fb8e922812bba2712ef6",
+      "simulatedBridgeReceiptSHA256": "d709fdd1fb00c6410a80af05ca4864c9a5516937afa1ab18140cdd7b0ad8d419",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "restore",
+      "seed": 1431986301,
+      "operation": "restore",
+      "effectProtocol": 1,
+      "knownAuthority": {
+        "request": "9007199254741507",
+        "lifetime": "9007199254741006",
+        "epoch": "9007199254741106",
+        "generation": "9007199254741607",
+        "incarnation": "9007199254741706",
+        "output": "9007199254741306",
+        "revision": "9007199254741406"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741006",
+        "epoch": "9007199254741106",
+        "output": "9007199254741306",
+        "revision": "9007199254741406"
+      },
+      "emittedEnvelopeSHA256": "739dd95662aa1b8e6c65406f077d03e0c25dc0ac09326ac420961461e715b4d3",
+      "simulatedBridgeReceiptSHA256": "6ec8890efa983ef7408ddba01ef5542108281848632ec1a756ae6bc4f4012928",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "maximize",
+      "seed": 1431986301,
+      "operation": "maximize",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741507",
+        "lifetime": "9007199254741006",
+        "epoch": "9007199254741106",
+        "generation": "9007199254741607",
+        "incarnation": "9007199254741706",
+        "output": "9007199254741306",
+        "revision": "9007199254741406"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741006",
+        "epoch": "9007199254741106",
+        "output": "9007199254741306",
+        "revision": "9007199254741406"
+      },
+      "emittedEnvelopeSHA256": "95331ff8372247d438cb6a77792ffc65f44d547b0a3b92d5c0c437cc4a661c06",
+      "simulatedBridgeReceiptSHA256": "0b57d16f937f26ce832163461becc7fe973cafed62fc8cf05c5bc78b6198db1a",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "restore-geometry",
+      "seed": 1431986301,
+      "operation": "restore-geometry",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741507",
+        "lifetime": "9007199254741006",
+        "epoch": "9007199254741106",
+        "generation": "9007199254741607",
+        "incarnation": "9007199254741706",
+        "output": "9007199254741306",
+        "revision": "9007199254741406"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741006",
+        "epoch": "9007199254741106",
+        "output": "9007199254741306",
+        "revision": "9007199254741406"
+      },
+      "emittedEnvelopeSHA256": "c8c38d75681ee7ecaf66b958413734dc0aa6d379718bf6011bb63b7cd5c04be3",
+      "simulatedBridgeReceiptSHA256": "a9e0f4ac93ce9c0eedbe2ad3efed6c02f7c881318d8929f1286b4d8d6b5c03c1",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "exit-fullscreen",
+      "seed": 1431986301,
+      "operation": "exit-fullscreen",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741507",
+        "lifetime": "9007199254741006",
+        "epoch": "9007199254741106",
+        "generation": "9007199254741607",
+        "incarnation": "9007199254741706",
+        "output": "9007199254741306",
+        "revision": "9007199254741406"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741006",
+        "epoch": "9007199254741106",
+        "output": "9007199254741306",
+        "revision": "9007199254741406"
+      },
+      "emittedEnvelopeSHA256": "347ed9bf1ca029fb79bc6356dca6ed6bf75df0e90a4e61c23a66be99d0b271ba",
+      "simulatedBridgeReceiptSHA256": "6c5f5796b42b28bebf316c93aa503503ed577f7cdb4a051d2f933268962f8ae7",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "pin",
+      "seed": 1431986301,
+      "operation": "pin",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741507",
+        "lifetime": "9007199254741006",
+        "epoch": "9007199254741106",
+        "generation": "9007199254741607",
+        "incarnation": "9007199254741706",
+        "output": "9007199254741306",
+        "revision": "9007199254741406"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741006",
+        "epoch": "9007199254741106",
+        "output": "9007199254741306",
+        "revision": "9007199254741406"
+      },
+      "emittedEnvelopeSHA256": "7265cdf1d065435885cbffb3a3bd5136d5fc3c526ea7e81e7ccc2ed48d21d7de",
+      "simulatedBridgeReceiptSHA256": "207ee113528df3d710f3ea699b083e3723fbc7c0f27c63688e2051876b0e1b7e",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "unpin",
+      "seed": 1431986301,
+      "operation": "unpin",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741507",
+        "lifetime": "9007199254741006",
+        "epoch": "9007199254741106",
+        "generation": "9007199254741607",
+        "incarnation": "9007199254741706",
+        "output": "9007199254741306",
+        "revision": "9007199254741406"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741006",
+        "epoch": "9007199254741106",
+        "output": "9007199254741306",
+        "revision": "9007199254741406"
+      },
+      "emittedEnvelopeSHA256": "22c531b576e916a30386910499a72010a5601e85eb2b0546dfe6fd80584a3ac9",
+      "simulatedBridgeReceiptSHA256": "a73616ec0b60ff96ae33f54f11884abfc10aaa290ae3a59e0f7c482b2b4dae82",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "snap",
+      "seed": 1431986301,
+      "operation": "snap",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741507",
+        "lifetime": "9007199254741006",
+        "epoch": "9007199254741106",
+        "generation": "9007199254741607",
+        "incarnation": "9007199254741706",
+        "output": "9007199254741306",
+        "revision": "9007199254741406"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741006",
+        "epoch": "9007199254741106",
+        "output": "9007199254741306",
+        "revision": "9007199254741406"
+      },
+      "emittedEnvelopeSHA256": "f97075282cc7db626c7131f5d7005cee5e73832c2df123a0cd34560dd1a0e65a",
+      "simulatedBridgeReceiptSHA256": "0f58f0548f6e121aac9428834b6f493f79edf5f1ddab74c075e4235bc130c7ec",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "transfer-workspace",
+      "seed": 1431986301,
+      "operation": "transfer-workspace",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741507",
+        "lifetime": "9007199254741006",
+        "epoch": "9007199254741106",
+        "generation": "9007199254741607",
+        "incarnation": "9007199254741706",
+        "output": "9007199254741306",
+        "revision": "9007199254741406"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741006",
+        "epoch": "9007199254741106",
+        "output": "9007199254741306",
+        "revision": "9007199254741406"
+      },
+      "emittedEnvelopeSHA256": "08289659dcc49d104266665c5ea16324a0138100b3182620713ae5ada5163f16",
+      "simulatedBridgeReceiptSHA256": "19d28aa81dff3a39d7592af649d74f4cb2186417cabba004d1be1416d5bf5e79",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "activate",
+      "seed": 507244483,
+      "operation": "activate",
+      "effectProtocol": 1,
+      "knownAuthority": {
+        "request": "9007199254741515",
+        "lifetime": "9007199254741014",
+        "epoch": "9007199254741114",
+        "generation": "9007199254741615",
+        "incarnation": "9007199254741714",
+        "output": "9007199254741314",
+        "revision": "9007199254741414"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741014",
+        "epoch": "9007199254741114",
+        "output": "9007199254741314",
+        "revision": "9007199254741414"
+      },
+      "emittedEnvelopeSHA256": "1dc64b535a0ceac6a35c71d41f3daee15600e89dd76e51f7a0b6c795bda119e4",
+      "simulatedBridgeReceiptSHA256": "e568c69a91b36eb69c3156cf32efa5f1db1cef845af88c65a13f553058cdf9a0",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "minimize",
+      "seed": 507244483,
+      "operation": "minimize",
+      "effectProtocol": 1,
+      "knownAuthority": {
+        "request": "9007199254741515",
+        "lifetime": "9007199254741014",
+        "epoch": "9007199254741114",
+        "generation": "9007199254741615",
+        "incarnation": "9007199254741714",
+        "output": "9007199254741314",
+        "revision": "9007199254741414"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741014",
+        "epoch": "9007199254741114",
+        "output": "9007199254741314",
+        "revision": "9007199254741414"
+      },
+      "emittedEnvelopeSHA256": "6cff5b427f96d129aac8ef12ec788472635e1ae3a92cef5b1860333f966ccaa8",
+      "simulatedBridgeReceiptSHA256": "74b7209a5ee2703bda4f2a8a6d340de524f6ddb8f14c0ea10deba1a80d795a0f",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "restore",
+      "seed": 507244483,
+      "operation": "restore",
+      "effectProtocol": 1,
+      "knownAuthority": {
+        "request": "9007199254741515",
+        "lifetime": "9007199254741014",
+        "epoch": "9007199254741114",
+        "generation": "9007199254741615",
+        "incarnation": "9007199254741714",
+        "output": "9007199254741314",
+        "revision": "9007199254741414"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741014",
+        "epoch": "9007199254741114",
+        "output": "9007199254741314",
+        "revision": "9007199254741414"
+      },
+      "emittedEnvelopeSHA256": "4fbb6846376f26b36203e1827e0863e652e36263f3e2330024a36ce0fa4db53c",
+      "simulatedBridgeReceiptSHA256": "cdd3c08e8b02b165511e2e9aa29002e83b31fffd2aebbb4c13ad0b654e9d2523",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "maximize",
+      "seed": 507244483,
+      "operation": "maximize",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741515",
+        "lifetime": "9007199254741014",
+        "epoch": "9007199254741114",
+        "generation": "9007199254741615",
+        "incarnation": "9007199254741714",
+        "output": "9007199254741314",
+        "revision": "9007199254741414"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741014",
+        "epoch": "9007199254741114",
+        "output": "9007199254741314",
+        "revision": "9007199254741414"
+      },
+      "emittedEnvelopeSHA256": "49c4a1f470656b5a3f6fe4a3615a819275c14b8c7441e15bdcdb86e098e43303",
+      "simulatedBridgeReceiptSHA256": "f4e528c595945ef5caca05878234ed2de5e9ae7f8c820f5b2f522963191b70dc",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "restore-geometry",
+      "seed": 507244483,
+      "operation": "restore-geometry",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741515",
+        "lifetime": "9007199254741014",
+        "epoch": "9007199254741114",
+        "generation": "9007199254741615",
+        "incarnation": "9007199254741714",
+        "output": "9007199254741314",
+        "revision": "9007199254741414"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741014",
+        "epoch": "9007199254741114",
+        "output": "9007199254741314",
+        "revision": "9007199254741414"
+      },
+      "emittedEnvelopeSHA256": "d2f7359a0f95e20ee8b500d565ffa2783eb8cc26b3b8e9e1727b73984c86da08",
+      "simulatedBridgeReceiptSHA256": "bc2fdb4b2d93304217394a8bd3745b88afb1222e5b85975408afe825e1e149f6",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "exit-fullscreen",
+      "seed": 507244483,
+      "operation": "exit-fullscreen",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741515",
+        "lifetime": "9007199254741014",
+        "epoch": "9007199254741114",
+        "generation": "9007199254741615",
+        "incarnation": "9007199254741714",
+        "output": "9007199254741314",
+        "revision": "9007199254741414"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741014",
+        "epoch": "9007199254741114",
+        "output": "9007199254741314",
+        "revision": "9007199254741414"
+      },
+      "emittedEnvelopeSHA256": "663fbc8c0323aba9d1192bb93d1e2dcf194df572aed7f1433129c324efa829e7",
+      "simulatedBridgeReceiptSHA256": "87241eecde4b3ca087694711dbbf0b0c7f863ae5dd34853a006f0e82bb896d0f",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "pin",
+      "seed": 507244483,
+      "operation": "pin",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741515",
+        "lifetime": "9007199254741014",
+        "epoch": "9007199254741114",
+        "generation": "9007199254741615",
+        "incarnation": "9007199254741714",
+        "output": "9007199254741314",
+        "revision": "9007199254741414"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741014",
+        "epoch": "9007199254741114",
+        "output": "9007199254741314",
+        "revision": "9007199254741414"
+      },
+      "emittedEnvelopeSHA256": "d7d72598b462e3e6da264718d3498f556ab91fc5b1c650754c1692830a69dd14",
+      "simulatedBridgeReceiptSHA256": "cd29bea7f7bd86248cffd473b77f3474bc14560077215a0687abcd0d5fbed5fa",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "unpin",
+      "seed": 507244483,
+      "operation": "unpin",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741515",
+        "lifetime": "9007199254741014",
+        "epoch": "9007199254741114",
+        "generation": "9007199254741615",
+        "incarnation": "9007199254741714",
+        "output": "9007199254741314",
+        "revision": "9007199254741414"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741014",
+        "epoch": "9007199254741114",
+        "output": "9007199254741314",
+        "revision": "9007199254741414"
+      },
+      "emittedEnvelopeSHA256": "1a4b5f1d51910e5a9156d486f8d98539d4894325bf5efb5872a646733cac58ed",
+      "simulatedBridgeReceiptSHA256": "0bcdfa32045f246e42ae30b0efe40447e5c0dfa39a33f9ac792baf2dce9f6ff6",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "snap",
+      "seed": 507244483,
+      "operation": "snap",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741515",
+        "lifetime": "9007199254741014",
+        "epoch": "9007199254741114",
+        "generation": "9007199254741615",
+        "incarnation": "9007199254741714",
+        "output": "9007199254741314",
+        "revision": "9007199254741414"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741014",
+        "epoch": "9007199254741114",
+        "output": "9007199254741314",
+        "revision": "9007199254741414"
+      },
+      "emittedEnvelopeSHA256": "a2c930719effdfa4337e7d5db0f3df7e0ed93552c8802a4c3e4589ad8eeaa613",
+      "simulatedBridgeReceiptSHA256": "1865eb74a69efa03988ad911846cdc28f618c186cc9c792ed872df40453479b2",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "transfer-workspace",
+      "seed": 507244483,
+      "operation": "transfer-workspace",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741515",
+        "lifetime": "9007199254741014",
+        "epoch": "9007199254741114",
+        "generation": "9007199254741615",
+        "incarnation": "9007199254741714",
+        "output": "9007199254741314",
+        "revision": "9007199254741414"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741014",
+        "epoch": "9007199254741114",
+        "output": "9007199254741314",
+        "revision": "9007199254741414"
+      },
+      "emittedEnvelopeSHA256": "ef77cdf8b36e0d663cbb0faf02549ed5b7a4f40a0993bc4a51ee213ecb595215",
+      "simulatedBridgeReceiptSHA256": "7e47a4262660713add9a0345814b136aa0b5e85c19514b839cee8e67220093ae",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "activate",
+      "seed": 464812658,
+      "operation": "activate",
+      "effectProtocol": 1,
+      "knownAuthority": {
+        "request": "9007199254741503",
+        "lifetime": "9007199254741002",
+        "epoch": "9007199254741102",
+        "generation": "9007199254741603",
+        "incarnation": "9007199254741702",
+        "output": "9007199254741302",
+        "revision": "9007199254741402"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741002",
+        "epoch": "9007199254741102",
+        "output": "9007199254741302",
+        "revision": "9007199254741402"
+      },
+      "emittedEnvelopeSHA256": "396f8618845f51a04766c04d3640768b1df930defb095442cdb5a39b9a90d04a",
+      "simulatedBridgeReceiptSHA256": "179d8ecf4840f366036388417f3e5d29b55aa0db8fd894721564f80dfebdf3ed",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "minimize",
+      "seed": 464812658,
+      "operation": "minimize",
+      "effectProtocol": 1,
+      "knownAuthority": {
+        "request": "9007199254741503",
+        "lifetime": "9007199254741002",
+        "epoch": "9007199254741102",
+        "generation": "9007199254741603",
+        "incarnation": "9007199254741702",
+        "output": "9007199254741302",
+        "revision": "9007199254741402"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741002",
+        "epoch": "9007199254741102",
+        "output": "9007199254741302",
+        "revision": "9007199254741402"
+      },
+      "emittedEnvelopeSHA256": "76d32eb485bfe5a7ca20cacd08347af8f443fb1f0b3d6d8f887997daaa9532ac",
+      "simulatedBridgeReceiptSHA256": "063df914c4d92224ef4ad3020fdf8b605d74bbd7b66be865adc619d6f0d546f3",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "restore",
+      "seed": 464812658,
+      "operation": "restore",
+      "effectProtocol": 1,
+      "knownAuthority": {
+        "request": "9007199254741503",
+        "lifetime": "9007199254741002",
+        "epoch": "9007199254741102",
+        "generation": "9007199254741603",
+        "incarnation": "9007199254741702",
+        "output": "9007199254741302",
+        "revision": "9007199254741402"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741002",
+        "epoch": "9007199254741102",
+        "output": "9007199254741302",
+        "revision": "9007199254741402"
+      },
+      "emittedEnvelopeSHA256": "8a71e70ada8ac062f02894a4dabb48cc412446f43abce059de4d0a22e6e22423",
+      "simulatedBridgeReceiptSHA256": "de6b47516f13ce0ae6def9fa4355bd3be46f59d18fc99174771140a88a2def21",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "maximize",
+      "seed": 464812658,
+      "operation": "maximize",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741503",
+        "lifetime": "9007199254741002",
+        "epoch": "9007199254741102",
+        "generation": "9007199254741603",
+        "incarnation": "9007199254741702",
+        "output": "9007199254741302",
+        "revision": "9007199254741402"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741002",
+        "epoch": "9007199254741102",
+        "output": "9007199254741302",
+        "revision": "9007199254741402"
+      },
+      "emittedEnvelopeSHA256": "4034d6a57bffe418232c1ed9341948c6fcf9b4e457b8a6ede226c589f5613c3b",
+      "simulatedBridgeReceiptSHA256": "d421e8d5f22c4ac6a3768bc8ee15ce86c4cfcfc7887f65890a19855f3ffeeea2",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "restore-geometry",
+      "seed": 464812658,
+      "operation": "restore-geometry",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741503",
+        "lifetime": "9007199254741002",
+        "epoch": "9007199254741102",
+        "generation": "9007199254741603",
+        "incarnation": "9007199254741702",
+        "output": "9007199254741302",
+        "revision": "9007199254741402"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741002",
+        "epoch": "9007199254741102",
+        "output": "9007199254741302",
+        "revision": "9007199254741402"
+      },
+      "emittedEnvelopeSHA256": "a77e786a15280cf38ba79387ef1e27c9dfdf5bf8f562b905be297dee68d13bc9",
+      "simulatedBridgeReceiptSHA256": "7bca67d80b726ad2c86800dc5f7d4522567dd11aa4f6c1f41bf40052a73e402e",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "exit-fullscreen",
+      "seed": 464812658,
+      "operation": "exit-fullscreen",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741503",
+        "lifetime": "9007199254741002",
+        "epoch": "9007199254741102",
+        "generation": "9007199254741603",
+        "incarnation": "9007199254741702",
+        "output": "9007199254741302",
+        "revision": "9007199254741402"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741002",
+        "epoch": "9007199254741102",
+        "output": "9007199254741302",
+        "revision": "9007199254741402"
+      },
+      "emittedEnvelopeSHA256": "f2e15603c5f46abc8a57e3356709ac1df97f79580172f2687c68c56735ce8f7a",
+      "simulatedBridgeReceiptSHA256": "f01833c76cadc570de23a770c84ddcbefafcf599b96413df8b5eeab3447b11cd",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "pin",
+      "seed": 464812658,
+      "operation": "pin",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741503",
+        "lifetime": "9007199254741002",
+        "epoch": "9007199254741102",
+        "generation": "9007199254741603",
+        "incarnation": "9007199254741702",
+        "output": "9007199254741302",
+        "revision": "9007199254741402"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741002",
+        "epoch": "9007199254741102",
+        "output": "9007199254741302",
+        "revision": "9007199254741402"
+      },
+      "emittedEnvelopeSHA256": "7795e86d0baf8d15c3d9d7e4f01a88dc4702a0f494d0b53c05d4407c95ebe062",
+      "simulatedBridgeReceiptSHA256": "14e06258e3633a211cf994c2038fe094f3c0b675de4b66b917b7275c19cb2663",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "unpin",
+      "seed": 464812658,
+      "operation": "unpin",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741503",
+        "lifetime": "9007199254741002",
+        "epoch": "9007199254741102",
+        "generation": "9007199254741603",
+        "incarnation": "9007199254741702",
+        "output": "9007199254741302",
+        "revision": "9007199254741402"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741002",
+        "epoch": "9007199254741102",
+        "output": "9007199254741302",
+        "revision": "9007199254741402"
+      },
+      "emittedEnvelopeSHA256": "b86d6d51cab253a39de3727c3be549bffd7436ecaa55569c7ae6a5c0deb8a0cf",
+      "simulatedBridgeReceiptSHA256": "4750395221d02e01530e9d715283443cc37ec25b2a6a5a5f02395beff2fbd294",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "snap",
+      "seed": 464812658,
+      "operation": "snap",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741503",
+        "lifetime": "9007199254741002",
+        "epoch": "9007199254741102",
+        "generation": "9007199254741603",
+        "incarnation": "9007199254741702",
+        "output": "9007199254741302",
+        "revision": "9007199254741402"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741002",
+        "epoch": "9007199254741102",
+        "output": "9007199254741302",
+        "revision": "9007199254741402"
+      },
+      "emittedEnvelopeSHA256": "5157da12a50dba0b11b3dc48a317f762276048a48667cd244a157b720d77ddc4",
+      "simulatedBridgeReceiptSHA256": "f2557ce0bd6756a187396f99a3237ff22e6e429ea655a5b11bcc5b2ca62dc71c",
+      "passed": true,
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-ARC-005",
+      "scenario": "architecture-005",
+      "case": "transfer-workspace",
+      "seed": 464812658,
+      "operation": "transfer-workspace",
+      "effectProtocol": 2,
+      "knownAuthority": {
+        "request": "9007199254741503",
+        "lifetime": "9007199254741002",
+        "epoch": "9007199254741102",
+        "generation": "9007199254741603",
+        "incarnation": "9007199254741702",
+        "output": "9007199254741302",
+        "revision": "9007199254741402"
+      },
+      "rawObservationContext": {
+        "lifetime": "9007199254741002",
+        "epoch": "9007199254741102",
+        "output": "9007199254741302",
+        "revision": "9007199254741402"
+      },
+      "emittedEnvelopeSHA256": "219190e17f3c28bf09d3b88bf68cf2ab6a9d388eef91edd424e6155a6e6cd2e1",
+      "simulatedBridgeReceiptSHA256": "313c7f3ef412239bf8daa5ce56666f9baa77dc2b9facc36fa9faf628aacbb979",
+      "passed": true,
+      "nativeAcceptance": false
+    }
+  ],
+  "compiledFixture": {
+    "path": ".warlock-contributor/elm-cpu-1793486342936935609/authority-tuple.js",
+    "sha256": "4f2c6da250bf29995385ca43b1171f493e685391ae3d9e622320e3450e72853e"
+  },
+  "rawTrace": {
+    "path": "implementation/warlock/qa/evidence/authority-tuple-20261031/bridge-trace.json.gz",
+    "compression": "gzip; mtime0",
+    "sha256": "5c93225be677a176fdc89076bbc41982ce4aeb9ac5417e8e7f7f2a79be623dbd",
+    "uncompressedSHA256": "b3b9cc5843490fdaf921f7f8e35f7f2719d3432637520c51bce5f38bfae9aa5b",
+    "uncompressedBytes": 3471462
+  },
+  "reviewPacket": {
+    "path": "implementation/warlock/qa/evidence/authority-tuple-20261031/cpu-review.json",
+    "sha256": "1ad1f06a30510c296fb62ff6b2f2f225ece7cd60538dcf38021e377f22eae8be"
+  },
+  "build": {
+    "schema": 1,
+    "passed": true,
+    "scope": "Elm compiler and pure production projection only",
+    "nativeAcceptance": false,
+    "releaseAccepted": false,
+    "protectedScope": {
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-7ffaa0b00fdf4014b9e1e7841f90e6d4.scope",
+      "coreLimit": 1
+    },
+    "commands": [
+      {
+        "name": "compiler-version",
+        "argv": [
+          "/home/charl/code/Warlock/implementation/warlock-preview-provider-v143/qa/toolchain/npm-package/node_modules/@elm_binaries/linux_x64/elm",
+          "--version"
+        ],
+        "exit": 0
+      },
+      {
+        "name": "node-version",
+        "argv": [
+          "/home/charl/.local/opt/node-v24.22.1-linux-x64/bin/node",
+          "--version"
+        ],
+        "exit": 0
+      },
+      {
+        "name": "compile-authority-tuple",
+        "argv": [
+          "/home/charl/code/Warlock/implementation/warlock-preview-provider-v143/qa/toolchain/npm-package/node_modules/@elm_binaries/linux_x64/elm",
+          "make",
+          "qa/AuthorityTupleReplay.elm",
+          "--optimize",
+          "--output=/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793486342936935609/authority-tuple.js"
+        ],
+        "exit": 0
+      },
+      {
+        "name": "authority-tuple",
+        "argv": [
+          "/home/charl/.local/opt/node-v24.22.1-linux-x64/bin/node",
+          "qa/authority-tuple.cjs",
+          "/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793486342936935609/authority-tuple.js",
+          "/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793486342936935609/authority-tuple.json"
+        ],
+        "exit": 0
+      }
+    ],
+    "developmentTools": {
+      "python": {
+        "path": "/usr/bin/python3.14",
+        "sha256": "6afce98b1e5ce89dc1c5dfca9672276a9486bc318855c7554cbe6da62d073e10"
+      },
+      "node": {
+        "path": "/home/charl/.local/opt/node-v24.22.1-linux-x64/bin/node",
+        "sha256": "e32e2d16081cf644f88392934288086e7662529d0d43277c34f7aad2207cfafb"
+      }
+    },
+    "compilerSHA256": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+    "sources": {
+      "implementation/warlock/src/ActionProjection.elm": "911faed965465fac4e32f404d75a4d130b4e560cda191c7773eb96749be1d062",
+      "implementation/warlock/src/AdapterNotice.elm": "32c4c13e599e843aa6da4a2302cb44da233226eb79d2561f551d0640fe9dd409",
+      "implementation/warlock/src/Announcement.elm": "a1e6660c082c7c68657e356c2e4742cd8fd60e843192b88fa0609fb696a40f9f",
+      "implementation/warlock/src/AnnouncementMessage.elm": "fb0f5231bff5beffe0a877046d38bba1bb87bd3d8e786449800093ae38ab2075",
+      "implementation/warlock/src/Bar.elm": "0c232aabc951c82a12223a209bc054b263c3c5c45bc6153a5000194e00db0cbd",
+      "implementation/warlock/src/BatchReplay.elm": "6300d3c2e617de14b2fd70a40606ea8c94db435a93f0ae30bd19765f5cdce852",
+      "implementation/warlock/src/Binding.elm": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b",
+      "implementation/warlock/src/CapturedAction.elm": "5c820d0c2f5167c42953b564d422429215e21ddf0a6dc955b3d3fe52b07d93cc",
+      "implementation/warlock/src/Catalog.elm": "3eadb76212a66986ef2d76292a2f33595f7cd7d47dc90c8982435195f9ea3f02",
+      "implementation/warlock/src/CatalogReplay.elm": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+      "implementation/warlock/src/Desktop.elm": "a503d926599b5aa194956a1208fdc0004fb829442cd523c5372d41fd1fab0404",
+      "implementation/warlock/src/DesktopReplay.elm": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd",
+      "implementation/warlock/src/Effects.elm": "80c574e8c564c28a1fb11f1f89bb5bfa7ac97a92474bbf027a737324bb2a82cd",
+      "implementation/warlock/src/Files.elm": "c2099647bca3b325ca21485bb3a246e0b6d7c2a693d0bcfd5f10dedbad7a89f7",
+      "implementation/warlock/src/GeometryProjection.elm": "f1b5708b8b4d1c7c02e46542bc041abb9e8cb0524d965ee4b03ab97f586a544c",
+      "implementation/warlock/src/GeometrySizePolicy.elm": "46dda2de43642cd33997382e90813c8eeccde80745d79b7d5cd5fd425b062c43",
+      "implementation/warlock/src/Inspection.elm": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc",
+      "implementation/warlock/src/JumpList.elm": "059841cc0669fdc7fd699498ee72d4211a2aa5d69c466d4aade7558e03b0f68c",
+      "implementation/warlock/src/Launch.elm": "dcd7260248ccb0b5bc6001c49319dd51af8c2fae98888919a308ac025ed273a2",
+      "implementation/warlock/src/LaunchReplay.elm": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97",
+      "implementation/warlock/src/Main.elm": "7f5ddbe6fedf775e143b684ec60c9bfbdf15606414ed4fafc2c5553b514821c2",
+      "implementation/warlock/src/Menu.elm": "c40fcfa24bf9d48044ccbe2c08df0abb7d8b94ee04111776234ecd88792ff4f0",
+      "implementation/warlock/src/MenuBridge.elm": "ec8f531b9437e493f9b29fe1e16d678cd388f560a83ca873448630bbde459b25",
+      "implementation/warlock/src/MenuSurfaceReplay.elm": "7a539b81beddacaf61e85562e9ef2a9346f4d001feb311abe3d41d99129e6c39",
+      "implementation/warlock/src/Motion.elm": "e101862bae874426f0cf9aaf02340c6582abdeea21dec38c32003da7f94e8a69",
+      "implementation/warlock/src/MotionPreferences.elm": "d3130d74c3172cb1808df38efd7a2cc267ba5ae346b564544661d3d539f5c560",
+      "implementation/warlock/src/NativeActorRetirement.elm": "72302b23ea124f45879b176a959b3a5bbd80edbb986bfec631994051bcae31a6",
+      "implementation/warlock/src/NativeFamilyPreviewSource.elm": "dc93a0698cb1bc13c37f9e56c221d356f1c6aea3d4651b71df7d4f7c178d8321",
+      "implementation/warlock/src/NativeFamilyPreviewSourceReplay.elm": "699c1348a7f646dc1eeb03257a3bd92372beacba4b689f8edd71c1b2702ffe99",
+      "implementation/warlock/src/NativeOutcome.elm": "ffb20d47827d29653552d9a5c7f552491473b8df1cd336e00cc036816ae8b396",
+      "implementation/warlock/src/NativePreviewAdmission.elm": "ef5c5aa26edbbdd745bacdb29b0b2e60265bb27ded3f82516adb6562656f5a20",
+      "implementation/warlock/src/NativePreviewDetachment.elm": "39fe1ece48568a5a264d7b018df41322bab97f73cbe0f55a92559ecccb25a47a",
+      "implementation/warlock/src/NativePreviewPolicy.elm": "99a37f7ea929dcfb746e10d1e7356ba51aa307965bd72165aa708d475e6fec64",
+      "implementation/warlock/src/NativePreviewProposalIngress.elm": "b3fc80b316a9b0f90e107c65f35cb0e136a9ae4acce441e3fdf2b69d4994285d",
+      "implementation/warlock/src/NativePreviewRealm.elm": "2a3de2f3eacdf5b00489e5c1f5e5cef058e8f36d74fefecb25a5d3d9ea6024cf",
+      "implementation/warlock/src/NativePreviewRealmReplay.elm": "7d68ebb6703608184c20fa17f261d553119bf1ccf637274b41d1c1ebfb22e621",
+      "implementation/warlock/src/NativePreviewReceiver.elm": "4f9625067fbd6f5e1027524dadedfb318779d2963a16fe14e06ccdbf0a92fb92",
+      "implementation/warlock/src/NativePreviewReceiverReplay.elm": "27ec8515727b39be545b1d19f83bf4d25c42848ae9654c2f00e563f25b43f2b9",
+      "implementation/warlock/src/NativePreviewRenderer.elm": "91c7bf75e3a73dcc389765196138bc38bee089be7263851c80cd5782fedbc0e3",
+      "implementation/warlock/src/NativePreviewSource.elm": "9177298d05a999f3a28660df9a76b8be7cafcda523e7cc20fe73bc471b7c37e9",
+      "implementation/warlock/src/NativePreviewSourceReplay.elm": "d6f26c64fd55fe4943968ff7b0d7774ede6b7c6c62f924b16e96a558fcf6edd8",
+      "implementation/warlock/src/NativePreviewVisual.elm": "807da8e07317469ac03c37907ba8c8830b1b3a7fa93fa3a488ecb525b973886d",
+      "implementation/warlock/src/NativePreviewVisualReplay.elm": "d15bc279a0cbb0af0aa0fa0f85f72f4c3608ffee73a4d68567477d1769c341c6",
+      "implementation/warlock/src/NativeProvider.elm": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9",
+      "implementation/warlock/src/Notifications.elm": "b37bff9f104d80eb1d1ea99f297c4d859b9d5744d7b0c05f6c89fa51581bc244",
+      "implementation/warlock/src/OutcomeAnnouncements.elm": "c7fd2828c42b7cbc0f3b6fc705c26a551530d1eb22ed325e892a0e1faca6ca7e",
+      "implementation/warlock/src/OutputController.elm": "aaf1729287ff61595a237201b261e7c1ce11c8f2353c620171f48aff99d86f38",
+      "implementation/warlock/src/OutputReplay.elm": "44f156b65f816400b75d928371fe5bdba675545eba805fee4793422d5b3f73ff",
+      "implementation/warlock/src/OutputSurfaceReplay.elm": "c5b41a03a57830f9fefbc35d67e05b9a438aa7e8aee3be6367e7365fcbf70c26",
+      "implementation/warlock/src/OverviewRecovery.elm": "1e34eb2fe6cfffb5662699f11736e6778f9dad0f35b73f58f283488a29fcf8e5",
+      "implementation/warlock/src/Pins.elm": "c18f4211444ea54ad5ae65d9e436b4dc3ae404446699812b95dabd7b2c878368",
+      "implementation/warlock/src/PointerOwnership.elm": "7e6d9f3e1ad79670383f58502449533d8a0857d38c6b62538eb89855a70b3ef3",
+      "implementation/warlock/src/Popup.elm": "4ab4195bfb96622cf563efaf4a889045553fb2367347b6881e70f53545bae406",
+      "implementation/warlock/src/Presentation.elm": "8c635b330641c4c06895357bdaee430b8eeed9b8ae88a83742f703c9f23a5dd6",
+      "implementation/warlock/src/PresentationReplay.elm": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c",
+      "implementation/warlock/src/PreviewCatalogReplay.elm": "eaf63404fda37b1111a77eb2a16f5ad4737e4c151290f036cee415add5e4e129",
+      "implementation/warlock/src/PreviewFeedbackReplay.elm": "c54391131b2416266eb25a19602dac0788ea63502d64090bf2be857bb0aceb34",
+      "implementation/warlock/src/PreviewIdentity.elm": "262240e59eed37d362f921a4e7e89d0bb23c8b0f84fb39f0fddc29faaa3de3b5",
+      "implementation/warlock/src/PreviewLifecycle.elm": "232ebe2e823a4f9b07444f9afaccd98cdc3de9a592ff220d9975a64952dacf24",
+      "implementation/warlock/src/PreviewMetadataReplay.elm": "1efedf2492cb9c507be3a5aeb1ee6e371a22b6141aff5156359d6526149d5c3f",
+      "implementation/warlock/src/PreviewPaintGate.elm": "29336cc6d6b21c3d32fd4967911bb189c42b1569ed877ffe79555ed30a7c7d82",
+      "implementation/warlock/src/PreviewPresenter.elm": "10769b8d9a86e5e5b35f1f292d9837a38b20a0ba636d5baa0ee0c3b8fcdac1cc",
+      "implementation/warlock/src/PreviewPresenterReplay.elm": "0eb03b99d5d5470936b51ea77de9b102b9742284020d01c469110388efdbc06e",
+      "implementation/warlock/src/PreviewVisual.elm": "5c285bd8c6fde00b4e1082edfd10e59e281264a4f45b15cea9b5ce0920dd039a",
+      "implementation/warlock/src/Protocol/Authority.elm": "bbf82ae6a176ed3be480df9c03af1c5f9f627357e8e9f4b24d030c08c97dad8b",
+      "implementation/warlock/src/Protocol/Session.elm": "8b765d5a2b6c0946413f7d7b4c48bac371681ab22c2c533977733a334a30ca4a",
+      "implementation/warlock/src/Protocol/Wire.elm": "b4bea849f17402b7007f4697f544b0dc0fd255bec1c3c38888c318741030d61c",
+      "implementation/warlock/src/Provider.elm": "2ef450a364d23d334e2ba7dfafdc56bbf51649dfb8f2e9f2e0ab1ca600157727",
+      "implementation/warlock/src/ReceiptRouter.elm": "d059bfef01de050c794c8709a3a38627fddd63815f115c617e78fefaea32ac1f",
+      "implementation/warlock/src/ReconciliationFrame.elm": "c44fa50ac86d528b35959d50fc4d85bd9d8983c1e866fdda01ad1854f465004e",
+      "implementation/warlock/src/ReconciliationTracking.elm": "84482d1bb84160e3bd9e026b2043635c35b76422d6e9066f703411f784b29bf9",
+      "implementation/warlock/src/Replay.elm": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+      "implementation/warlock/src/RetainedLegacyPresenterReplay.elm": "f5f7bc30d5efda6629a1de4b11e13ebf25d9be80bbd8573dff9d7d0916375845",
+      "implementation/warlock/src/RetainedPreviewPresenter.elm": "3446188256b8422ff79fc177c46871a8dc102f4f06522584e252216727f3c4a8",
+      "implementation/warlock/src/RetainedPreviewPresenterReplay.elm": "1405187825a060cb5003b66b7bf235802323fe6db2d32af6ddb04d1708577175",
+      "implementation/warlock/src/ScopedPreviewPresenterReplay.elm": "203f2b74ce723fc3c39208ff91dffde947fbdbaaf7cf1d233b606ac427ba7a05",
+      "implementation/warlock/src/SearchFold.elm": "31664d665778533dc2c141f433398df5bd37be4b689b7369cd894c89d1459241",
+      "implementation/warlock/src/Settings.elm": "d13f4d63327eae4a80052252c8ba1f1e40db0f69954b46470ccff248e5ba0e7c",
+      "implementation/warlock/src/SharedRecoveryReplay.elm": "f44d52432e1c6c876207c273d8a013fd446b186b85a23d7bf5474943ef26ff8b",
+      "implementation/warlock/src/Shell.elm": "f14b7fe3bfbf1a57f335f98914c988938c235823ba4596c067cf744776c4a9ae",
+      "implementation/warlock/src/ShellReplay.elm": "be85fbef5dda8dd07093b578c4be204d8d92772147e1ffacf80368216b5ba8ca",
+      "implementation/warlock/src/ShortcutPreferences.elm": "d8c1a63f199612161e078e0f6c7f75cbbfa190953e19325e50169debc425dcec",
+      "implementation/warlock/src/Shortcuts.elm": "cfa79040387114e79b7a6cf51ca31aa4fbe569372ff1948105265adf90cd97a7",
+      "implementation/warlock/src/Snap.elm": "8ee61de4cd63557d3f2928893ed35ce93f1e3290128847e66ca388aa5d98ec8e",
+      "implementation/warlock/src/Surface.elm": "689657630aec36dd6133c762a385284311f67a0b0f9fa95c5897e802b5667412",
+      "implementation/warlock/src/SurfaceController.elm": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
+      "implementation/warlock/src/SurfaceRenderer.elm": "e5195fc6b8fbe1dd47d284f1122b34aa211e253a33ed6c8ed79990bd33fecbc9",
+      "implementation/warlock/src/SurfaceReplay.elm": "476f94f33d9225035a479bd8ae8eb755ae8ac914c29ca533f62913fb378a603a",
+      "implementation/warlock/src/SurfaceSnapshot.elm": "58298ea43fffba3da6bcc64f1456b47bcde3607d476ef99465be0c98c2b433d7",
+      "implementation/warlock/src/Switcher.elm": "7523cc13bf794c126cee2d39541d9fbae062ec3b420d5898eed6380792ec3061",
+      "implementation/warlock/src/SystemMenu.elm": "cf44c66fe51a5d86f14e33a8235e04f178553261229fd51e0d81cbc35c944054",
+      "implementation/warlock/src/TaskView.elm": "7665dd48cae39ecdc71f85990eaefc0115fb79fe0462e41199b10ec4ccbfcdbe",
+      "implementation/warlock/src/Taskbar.elm": "31ed9ce6b37e5b35065f8833e31412657800d894b6d9e9544f380bc16e7aa519",
+      "implementation/warlock/src/TaskbarReplay.elm": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351",
+      "implementation/warlock/src/TaskbarShell.elm": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+      "implementation/warlock/src/TaskbarShellReplay.elm": "72ca534bb5adc6d0a02fd68ff9f287cb1815fcb0f68313ce7d0b3033d4ebf130",
+      "implementation/warlock/src/Transfer.elm": "357a68e70977184ced8be8b8a4c0db6209730e6fe6ad2f4718087a6d6a2c32be",
+      "implementation/warlock/src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+      "implementation/warlock/src/UnsentOperation.elm": "46e315cc739e097805af3c9358f9ca27a807ef1119c733aa296687342c8238ea",
+      "implementation/warlock/src/WorkspaceInventory.elm": "583692398a5038bf17a87c09a7019ddae4059f3f200489342ca89dab50eb3b2e",
+      "implementation/warlock/src/WorkspaceNavigation.elm": "8313a23008abfa6157324472db852b087b4af09dd3696a33f273d7010634e7f6",
+      "implementation/warlock/elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+      "implementation/warlock/qa/AuthorityTupleReplay.elm": "78a95932b297f236e50410d3b5c020bcebc2b2c3deccd663746211d24ecd28ab",
+      "implementation/warlock/qa/authority-tuple.cjs": "3033b7c84d667af2566439d7e2e01644df3a171fa332be142388b8d92cdec68a"
+    },
+    "artifacts": {
+      "authority-tuple.js": "4f2c6da250bf29995385ca43b1171f493e685391ae3d9e622320e3450e72853e"
+    }
+  },
+  "retainedFailure": {
+    "path": ".warlock-contributor/elm-cpu-1793486282469768540/report.json",
+    "sha256": "1bd59581637d8c1c0b6ec982308e55a01837e9bdc84a2b6db2b244e7373ac8d2",
+    "scope": "Two fixture local-parameter names shadowed helper field; compiler refusal retained, then renamed without changing product code or oracle."
+  },
+  "independentReview": "docs/warlock-build-loop/v2/authority-tuple-review-20261031.json",
+  "preservedLimits": [
+    "Core and plugin not loaded; no native ABI claim",
+    "Simulated bridge outcomes are not authenticated native issuer or durable certificate observations",
+    "No port acceptance transfers to unintegrated Protocol.Authority/Haskell runtime",
+    "Original UI007 native/keyboard/AT remains partial",
+    "All original242/417, literal deadlines, failed evidence and stopped host probes preserved"
+  ]
+}

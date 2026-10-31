@@ -34,7 +34,8 @@
       "Root protected pinned actual owning Elm route, both protocol paths and all operation constructors, exact raw serialized envelope vs independently known input tuple, canonical full-width strings and no-dispatch negatives, matching bridge scenario receipts, artifact hashes and immutable source commit; independent complete original oracle disposition. No native execution claim."
     ],
     "owner": "root-agentbus",
-    "participantRecord": ".warlock-contributor/authority-tuple.json"
+    "participantRecord": ".warlock-contributor/authority-tuple.json",
+    "currentOutcome": "Whole original ELM-ARC-005 and architecture-005 accepted on immutable d3a57508ab7974e96e9a631bcd1f5b39b1f6d1d4 by reviewer, using literal permitted bridge verification."
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -3216,5 +3217,14 @@
     "remainingTokenBudget": null,
     "cost": "unavailable",
     "scope": "Current host goal telemetry; not a daily usage figure or feature count"
+  },
+  "currentOriginalClosure": {
+    "requirement": "ELM-ARC-005",
+    "scenario": "architecture-005",
+    "accepted": true,
+    "acceptance": "docs/warlock-build-loop/v2/authority-tuple-acceptance-20261031.json",
+    "nativeExecution": false,
+    "haskellPortAcceptance": false,
+    "releaseAcceptance": false
   }
 }

@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "recordedUTC": "2026-10-31T22:44:37.273329+00:00",
+  "requirement": "ELM-ARC-005",
+  "requirementAccepted": true,
+  "status": "accepted",
+  "originalEARS": "The Elm desktop SHALL attach request identity, compositor lifetime, frontend epoch, operation generation, window incarnation, output generation and expected native revision to window-effect intents.",
+  "originalVerification": "Preserved scenario report with native or bridge trace showing: the serialized request contains the full authority tuple; artifact hashes and matching scenario receipts included.",
+  "scenario": "architecture-005",
+  "oracle": "the serialized request contains the full authority tuple",
+  "scenarioDisposition": "accepted",
+  "scope": "Whole original ELM-ARC-005 and its sole architecture-005 scenario on the current Elm desktop source tuple: serialized window-effect intents carry the full authority tuple, established by the original expressly permitted bridge trace with artifact hashes and matching simulated scenario receipts.",
+  "sourceTuple": {
+    "sourceRevision": "d3a57508ab7974e96e9a631bcd1f5b39b1f6d1d4",
+    "core": "not loaded; original ARC005 permits bridge-only verification",
+    "plugin": "not loaded; no native plugin ABI is claimed",
+    "toolchain": "Elm0.19.2 SHA256 c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948; Node24.22.1 SHA256 e32e2d16081cf644f88392934288086e7662529d0d43277c34f7aad2207cfafb"
+  },
+  "sourceHashes": {
+    "implementation/warlock/src/Effects.elm": "80c574e8c564c28a1fb11f1f89bb5bfa7ac97a92474bbf027a737324bb2a82cd",
+    "implementation/warlock/src/Shell.elm": "f14b7fe3bfbf1a57f335f98914c988938c235823ba4596c067cf744776c4a9ae",
+    "implementation/warlock/src/GeometryProjection.elm": "f1b5708b8b4d1c7c02e46542bc041abb9e8cb0524d965ee4b03ab97f586a544c",
+    "implementation/warlock/src/OutputController.elm": "aaf1729287ff61595a237201b261e7c1ce11c8f2353c620171f48aff99d86f38",
+    "implementation/warlock/src/SurfaceController.elm": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
+    "implementation/warlock/src/Desktop.elm": "a503d926599b5aa194956a1208fdc0004fb829442cd523c5372d41fd1fab0404",
+    "implementation/warlock/src/TaskbarShell.elm": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+    "implementation/warlock/src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "implementation/warlock/qa/AuthorityTupleReplay.elm": "78a95932b297f236e50410d3b5c020bcebc2b2c3deccd663746211d24ecd28ab",
+    "implementation/warlock/qa/authority-tuple.cjs": "3033b7c84d667af2566439d7e2e01644df3a171fa332be142388b8d92cdec68a",
+    "implementation/warlock/src/UnsentOperation.elm": "46e315cc739e097805af3c9358f9ca27a807ef1119c733aa296687342c8238ea"
+  },
+  "reviewer": {
+    "name": "reviewer",
+    "independent": true,
+    "disposition": "accepted"
+  },
+  "evidence": [
+    {
+      "path": "implementation/warlock/qa/evidence/authority-tuple-20261031/report.json",
+      "sha256": "49bb7708b7da550f3bddb1099d05d903b12bd2bbe8d4865028a52091a8f087a9"
+    },
+    {
+      "path": "docs/warlock-build-loop/v2/authority-tuple-review-20261031.json",
+      "sha256": "aa1ea034f07b4622fb9d38b5eefba85f3069013a547872b4eefdec7bdfe5d479"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/authority-tuple-20261031/bridge-trace.json.gz",
+      "sha256": "5c93225be677a176fdc89076bbc41982ce4aeb9ac5417e8e7f7f2a79be623dbd"
+    }
+  ],
+  "missingObservations": [],
+  "nativeAcceptance": false,
+  "haskellPortAcceptance": false,
+  "releaseAccepted": false,
+  "limits": [
+    "Core and plugin not loaded; no native ABI claim",
+    "Simulated bridge outcomes are not authenticated native issuer or durable certificate observations",
+    "No port acceptance transfers to unintegrated Protocol.Authority/Haskell runtime",
+    "Original UI007 native/keyboard/AT remains partial",
+    "All original242/417, literal deadlines, failed evidence and stopped host probes preserved"
+  ],
+  "nextAction": "Continue original requirement delivery; UI007 native/keyboard/AT and Haskell runtime/toolchain readiness remain open.",
+  "retrofit": {
+    "assessedBoundary": "Actual owning Desktop/Shell/Effects shared seven-field serialization; existing code already correct, original evidence unadjudicated",
+    "preconditions": "Known admitted window/output, current binding/observation, valid operation and allocatable request/generation",
+    "postconditions": "Actual serialized intent retains all seven independently known authority values and exact matching simulated receipt correlation",
+    "invariants": "Canonical full-width identities; no missing/swapped output generation; no duplicate or uncertain mutation replay; original native/port/release gates unchanged",
+    "modelDisposition": "No policy, concurrency or reducer invariant changed; no new model or toy mirror. Real production routes, all operation constructors and bounded generated input matrices were used.",
+    "independentReview": "docs/warlock-build-loop/v2/authority-tuple-review-20261031.json",
+    "diataxis": {
+      "tutorial": "docs/warlock/tutorials/first-contribution.md unchanged: original contribution path and policy remain valid",
+      "howTo": "docs/warlock/how-to/verify-selected-change.md retained; authority reference adds exact protected original-scenario replay command",
+      "reference": "docs/warlock/reference/window-effect-authority-tuple.md updated with actual accepted mapping, source and evidence",
+      "explanation": "docs/warlock/explanation/elm-haskell-boundary.md unchanged: one Elm policy authority and separate native/Haskell qualification remain binding"
+    },
+    "remainingDebt": "UI007 native/keyboard/AT, Haskell toolchain/runtime/native authority, Graphify/external wiki tooling and release obligations remain open"
+  }
+}
