@@ -1,0 +1,54 @@
+{
+  "source_commit": "bc3daf7b80ac7295a1ba1e56639a0e130e520a3c",
+  "licence": "Apache-2.0 for Warlock project materials; external captures retain their source licences",
+  "modules": [
+    "Desktop.elm",
+    "Catalog.elm",
+    "SearchFold.elm",
+    "Launch.elm",
+    "Pins.elm",
+    "Popup.elm",
+    "Surface.elm",
+    "SurfaceRenderer.elm",
+    "assets/shell.css"
+  ],
+  "selectors": [
+    ".surface-popup[data-mode=applications]",
+    ".launcher-search[data-surface-field=control:search]",
+    "[data-surface-control^=entry:]",
+    "[data-surface-control^=pin:]",
+    "[data-surface-control^=unpin:]",
+    "[data-surface-control^=pin-left:]",
+    "[data-surface-control^=pin-right:]",
+    "[data-surface-control^=jump:open:]"
+  ],
+  "captures": [
+    {
+      "origin": "implementation/warlock/qa/evidence/dense-picker/launcher-initial.png",
+      "sha256": "4d91eec9bc4a0487d9048fa17efede7a861bacaf70e04e9b084fb1e1742c3d2a",
+      "classification": "browser evidence"
+    },
+    {
+      "origin": "implementation/warlock/qa/evidence/popup-remap/launcher-popup-filtered.png",
+      "sha256": "7df3d793bb3a20341815c469142908a955759ac8622e730cc16f62146f53d2d3",
+      "classification": "browser evidence"
+    }
+  ],
+  "catalog": {
+    "origin": "DesignLanguage/catalog/v6/index.html",
+    "classification": "frozen list projection"
+  },
+  "generated_studies": {
+    "classification": "illustration, not renderer or native evidence",
+    "files": [
+      {
+        "path": "mockups/launcher-night.png",
+        "sha256": "cb2a1fcd4ff2f3d33afde35c612ad490187380c187a86a59079995f37d8b87b2"
+      },
+      {
+        "path": "mockups/launcher-dawn.png",
+        "sha256": "cb71693dbe7c7acdc817366605324407b2c53c624e289e1fc5b31901b37e53a5"
+      }
+    ]
+  }
+}

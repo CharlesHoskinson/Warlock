@@ -1,0 +1,9 @@
+{
+  "id": "launcher-search-and-explicit-launch",
+  "source_commit": "bc3daf7b80ac7295a1ba1e56639a0e130e520a3c",
+  "source_fixtures": ["implementation/warlock/qa/evidence/dense-picker/launcher-regression-report.json", "implementation/warlock/qa/evidence/popup-remap/launcher-report.json"],
+  "initial_external_facts": ["Bound host and admitted catalog snapshot", "Pin storage snapshot or explicit unavailability", "Motion and appearance observations"],
+  "entry_intent": "OpenApplications with a current view stamp",
+  "supported_actions": ["Edit search including IME composition", "Refresh applications", "Open an enabled entry", "Pin the first matching unpinned entry", "Unpin or move a pinned entry when enabled", "Open actions for the first result", "Acknowledge an unknown launch after checking windows", "Return to windows"],
+  "expected_observations": ["Search only filters and orders results", "Pending and Unknown disable launch choices", "Submitted is a submission receipt and closes Applications", "Refused and Unknown use source status wording", "A new observed application window alone admits a portal", "Refresh reads facts and does not replay a mutation"]
+}

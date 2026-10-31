@@ -1,0 +1,9 @@
+{
+  "id": "d02-taskbar-primary-and-recovery",
+  "source_commit": "bc3daf7b80ac7295a1ba1e56639a0e130e520a3c",
+  "source_fixtures": ["implementation/warlock/qa/evidence/taskbar-primary-keyboard/manifest.json", "implementation/warlock/qa/evidence/taskbar-zero-fresh-20261028/observations.json", "implementation/warlock/qa/evidence/window-feedback/feedback.json"],
+  "initial_external_facts": ["Attached binding and available catalog", "A pinned launcher without a window", "One available active family, one minimized family and one group with multiple families"],
+  "entry_intent": "Present the attached top taskbar with its source-projected controls.",
+  "supported_actions": ["Activate a group", "Minimize its active family", "Restore a minimized family", "Open the picker for multiple families", "Launch an available zero-window pin", "Refresh observations after an unresolved operation"],
+  "expected_observations": ["Operations follow admitted observations and exact receipt identities", "An unknown result remains unconfirmed; refresh does not repeat it", "A newly observed window, not launch intent or restore, admits a portal", "Keyed control identity and source order persist"]
+}

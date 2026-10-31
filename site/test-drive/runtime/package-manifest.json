@@ -1,0 +1,186 @@
+{
+  "package": "T07 runtime",
+  "source_commit": "bc3daf7b80ac7295a1ba1e56639a0e130e520a3c",
+  "assets": [
+    {
+      "destination": "test-drive/runtime/vendor/activation.js",
+      "sha256": "06e3de6bcbc27e2b9a5d166fd665706e300ef5d4a29640b9bd70aa0f095a2c3e",
+      "license": "Apache-2.0",
+      "classification": "source runtime",
+      "caption": "Unmodified runtime asset from repository HEAD bc3daf7b80ac7295a1ba1e56639a0e130e520a3c.",
+      "source": "implementation/warlock/assets/activation.js",
+      "bytes": 9852,
+      "alt": ""
+    },
+    {
+      "destination": "test-drive/runtime/vendor/adapter.js",
+      "sha256": "9d99e140af65c67aa5395ce8dc3f3aee42b2b341e039e6514745e14ec9335f96",
+      "license": "Apache-2.0",
+      "classification": "source runtime",
+      "caption": "Unmodified runtime asset from repository HEAD bc3daf7b80ac7295a1ba1e56639a0e130e520a3c.",
+      "source": "implementation/warlock/assets/adapter.js",
+      "bytes": 2170,
+      "alt": ""
+    },
+    {
+      "destination": "test-drive/runtime/vendor/appearance.js",
+      "sha256": "99b01609571af35328d7b69034f647f25651fb59d9d59928063a7e8c83a9b3f6",
+      "license": "Apache-2.0",
+      "classification": "source runtime",
+      "caption": "Unmodified runtime asset from repository HEAD bc3daf7b80ac7295a1ba1e56639a0e130e520a3c.",
+      "source": "implementation/warlock/assets/appearance.js",
+      "bytes": 1414,
+      "alt": ""
+    },
+    {
+      "destination": "test-drive/runtime/vendor/bar-adapter.js",
+      "sha256": "2f1dd1dfd2f47850a2b455732c114bd98acea976c273c6ec594bef5208d4a68c",
+      "license": "Apache-2.0",
+      "classification": "source runtime",
+      "caption": "Unmodified runtime asset from repository HEAD bc3daf7b80ac7295a1ba1e56639a0e130e520a3c.",
+      "source": "implementation/warlock/assets/bar-adapter.js",
+      "bytes": 8987,
+      "alt": ""
+    },
+    {
+      "destination": "test-drive/runtime/vendor/bar.js",
+      "sha256": "4eccf6259f934535e25df203e5ad0e96feee392464050423bfd235ab3b694725",
+      "license": "Apache-2.0",
+      "classification": "source runtime",
+      "caption": "Unmodified runtime asset from repository HEAD bc3daf7b80ac7295a1ba1e56639a0e130e520a3c.",
+      "source": "implementation/warlock/assets/bar.js",
+      "bytes": 180274,
+      "alt": ""
+    },
+    {
+      "destination": "test-drive/runtime/vendor/context.js",
+      "sha256": "e843e72479a6e499a99f4369f145530e8e097c576e7d08926a6a912dbd50bc8d",
+      "license": "Apache-2.0",
+      "classification": "source runtime",
+      "caption": "Unmodified runtime asset from repository HEAD bc3daf7b80ac7295a1ba1e56639a0e130e520a3c.",
+      "source": "implementation/warlock/assets/context.js",
+      "bytes": 9684,
+      "alt": ""
+    },
+    {
+      "destination": "test-drive/runtime/vendor/elm.js",
+      "sha256": "700524b6a1da72905daeecffd74216143bcf9242ea13c13d01f8bce3e1665be5",
+      "license": "Apache-2.0",
+      "classification": "source runtime",
+      "caption": "Unmodified runtime asset from repository HEAD bc3daf7b80ac7295a1ba1e56639a0e130e520a3c.",
+      "source": "implementation/warlock/assets/elm.js",
+      "bytes": 1010082,
+      "alt": ""
+    },
+    {
+      "destination": "test-drive/runtime/vendor/popup-adapter.js",
+      "sha256": "86fb1899877306ece2674c3de8f471f804b6c33e2f12c9c3b7614c12001e8e23",
+      "license": "Apache-2.0",
+      "classification": "patched source runtime",
+      "caption": "Popup adapter based on repository HEAD, with the documented staged adapter patch.",
+      "source": "implementation/warlock/assets/popup-adapter.js",
+      "bytes": 20432,
+      "alt": ""
+    },
+    {
+      "destination": "test-drive/runtime/vendor/popup.js",
+      "sha256": "d0fb82031dad13b8d55597ab6069f255e0455540a14ad28bec5da472d6126b43",
+      "license": "Apache-2.0",
+      "classification": "source runtime",
+      "caption": "Unmodified runtime asset from repository HEAD bc3daf7b80ac7295a1ba1e56639a0e130e520a3c.",
+      "source": "implementation/warlock/assets/popup.js",
+      "bytes": 424621,
+      "alt": ""
+    },
+    {
+      "destination": "test-drive/runtime/vendor/shell.css",
+      "sha256": "77566e786969cfb4d7c87f2e33cc9f36d2cf4682fdc2da21bf38073340979098",
+      "license": "Apache-2.0",
+      "classification": "source runtime",
+      "caption": "Unmodified runtime asset from repository HEAD bc3daf7b80ac7295a1ba1e56639a0e130e520a3c.",
+      "source": "implementation/warlock/assets/shell.css",
+      "bytes": 16051,
+      "alt": ""
+    },
+    {
+      "destination": "test-drive/runtime/popup-local.js",
+      "sha256": "4547091c66188473d3ab31d070c771f00d9f31bf7bf10bd37587910bc351c70c",
+      "license": "Apache-2.0",
+      "classification": "source runtime",
+      "caption": "Locally compiled Popup resource boundary or its reviewed source patch.",
+      "source": "implementation/warlock/src/PreviewVisual.elm and T08 resource-boundary patch",
+      "bytes": 444794,
+      "alt": ""
+    },
+    {
+      "destination": "test-drive/runtime/staged/PreviewVisual.elm",
+      "sha256": "628776858f7c9985446537f23c13af1dbc5f7ba71177300f58c89241a07b5037",
+      "license": "Apache-2.0",
+      "classification": "source runtime",
+      "caption": "Locally compiled Popup resource boundary or its reviewed source patch.",
+      "source": "implementation/warlock/src/PreviewVisual.elm and T08 resource-boundary patch",
+      "bytes": 7722,
+      "alt": ""
+    },
+    {
+      "destination": "test-drive/runtime/staged/local-image-resolution.patch",
+      "sha256": "34fca725211cb095bbaa7679e726913957706f679506739dd66c4aa417283184",
+      "license": "Apache-2.0",
+      "classification": "source runtime",
+      "caption": "Locally compiled Popup resource boundary or its reviewed source patch.",
+      "source": "implementation/warlock/src/PreviewVisual.elm and T08 resource-boundary patch",
+      "bytes": 1928,
+      "alt": ""
+    },
+    {
+      "source": "implementation/warlock/src/ (local typed focus patch; see source-provenance.json)",
+      "destination": "test-drive/runtime/bar-local.js",
+      "sha256": "16adb6f39e7413b72a32ce01c0a0efacbc1b497b40f14d1369119b457ea5ab0b",
+      "bytes": 181896,
+      "license": "Apache-2.0",
+      "classification": "source runtime",
+      "alt": "",
+      "caption": "Local Bar renderer with typed observed application activity and window focus."
+    },
+    {
+      "source": "implementation/warlock/src/ (local typed focus patch; see source-provenance.json)",
+      "destination": "test-drive/runtime/staged/SurfaceSnapshot.elm",
+      "sha256": "52042d4286e1f465727cd41e6ce24516b293454c75266866ddd95df880947715",
+      "bytes": 9778,
+      "license": "Apache-2.0",
+      "classification": "source runtime",
+      "alt": "",
+      "caption": "Local Bar renderer with typed observed application activity and window focus."
+    },
+    {
+      "source": "implementation/warlock/src/ (local typed focus patch; see source-provenance.json)",
+      "destination": "test-drive/runtime/staged/SurfaceRenderer.elm",
+      "sha256": "2fd7a2e1f600734194fd21b76defbb32c9a53cb8248cdbb7bb062b682f0fa2c7",
+      "bytes": 12643,
+      "license": "Apache-2.0",
+      "classification": "source runtime",
+      "alt": "",
+      "caption": "Local Bar renderer with typed observed application activity and window focus."
+    },
+    {
+      "source": "T07 runtime integration",
+      "destination": "test-drive/runtime/theme/integration.css",
+      "sha256": "59bc90937ee51315fabe8316ec1154a17bfaca486fab4607c88106deb1e91b4e",
+      "bytes": 157,
+      "license": "Apache-2.0",
+      "classification": "source runtime",
+      "alt": "",
+      "caption": "Neutralizes inherited legacy taskbar state paint."
+    },
+    {
+      "destination": "test-drive/runtime/staged/popup-adapter.patch",
+      "sha256": "fb54ccd0786c4d50a6b4d6c02e4f24449799926d7a73da856787500ee4c95724",
+      "license": "Apache-2.0",
+      "classification": "source patch",
+      "caption": "Changes to the repository popup adapter, including captured body Escape release.",
+      "source": "implementation/warlock/assets/popup-adapter.js",
+      "bytes": 999,
+      "alt": ""
+    }
+  ]
+}

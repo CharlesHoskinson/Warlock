@@ -1,0 +1,60 @@
+{
+  "source_commit": "bc3daf7b80ac7295a1ba1e56639a0e130e520a3c",
+  "license": "Apache-2.0 for project source; generated illustrations are project assets",
+  "modules": [
+    "Settings.elm",
+    "Motion.elm",
+    "MotionPreferences.elm",
+    "ShortcutPreferences.elm",
+    "Shortcuts.elm",
+    "Desktop.elm",
+    "Surface.elm",
+    "SurfaceRenderer.elm",
+    "appearance.js",
+    "shell.css"
+  ],
+  "selectors": [
+    ".surface-popup[data-mode=settings]",
+    ".surface-controls",
+    "[data-surface-control]",
+    "[data-settings-help]",
+    "[data-shortcut-state]"
+  ],
+  "evidence": [
+    {
+      "path": "implementation/warlock/qa/evidence/settings-help/keyboard-settings-help.png",
+      "sha256": "b7dd79f5ebdd6159f999bcbe83b986fe74c4799cfe3a9598d44528bc809d472f",
+      "classification": "native screenshot"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/high-contrast/settings-high-contrast-enlarged.png",
+      "sha256": "8b5b71490a96d911beaeb9c225d016d852987f82c7d136d303970c3b375a1f2f",
+      "classification": "native screenshot"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/high-contrast/settings-high-contrast-forced-colors.png",
+      "sha256": "b280fbb3b2c28d38a383ebf077cf3dd8d9aa2a3be9e4ebb92a1fd428af0a5b83",
+      "classification": "native screenshot"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/layer-appearance/popup-settings-after-restart.png",
+      "sha256": "c0b30e49674a16a24e976d2a4efec505bc0bcc16067bb4d72bb3738a57f658da",
+      "classification": "native screenshot"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/live-motion/live-motion-settings.png",
+      "sha256": "9c0c73f207453f8f0f838232096dfff21c77ce37d0129988ee2b75f548efd19f",
+      "classification": "native screenshot"
+    },
+    {
+      "path": "mockups/mockup-1.png",
+      "sha256": "70de62eeae56bce7a27ad54e6d4d4fa769e0080d34bb27e8919834f1f815ee4c",
+      "classification": "generated illustration"
+    },
+    {
+      "path": "mockups/mockup-2.png",
+      "sha256": "839167e5773756ada9739669de288495880766e12a79f2dfb27d0ec63d374154",
+      "classification": "generated illustration"
+    }
+  ]
+}

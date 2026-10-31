@@ -1,0 +1,34 @@
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {matchesObservation} from '../observation.js';
+const snap=JSON.parse(await readFile(new URL('../snap.json',import.meta.url),'utf8'));
+const target=snap.initialExternalFacts.windows.find(window=>window.focused);
+assert.equal(target.placementMode,'floating');
+assert.equal(target.workspace,snap.initialExternalFacts.activeWorkspace);
+assert.equal(target.minimized,false); assert.equal(target.owner,null);
+assert(target.geometry.width>0 && target.geometry.height>0);
+assert.equal(snap.expectedObservations.mode,'snap');
+const expected={surface:'popup',mode:'settings',controls:['settings:theme:night']};
+const snapshot={epoch:4,presentation:{actionable:true,publication:'8',mode:'settings',applied:{popup:'8'},controls:{popup:['settings:theme:night']}}};
+assert(matchesObservation(snapshot,expected,4));
+for(const patch of [{mode:'system'}, {applied:{popup:'7'}}, {controls:{popup:[]}}, {actionable:false}]) assert(!matchesObservation({...snapshot,presentation:{...snapshot.presentation,...patch}},expected,4));
+assert(!matchesObservation(snapshot,expected,5));
+assert(!matchesObservation({...snapshot,presentation:{actionable:true,publication:'8'}},expected,4));
+assert(!matchesObservation(snapshot,{...expected,status:['Unknown']},4));
+console.log('Verified mode, identity, applied publication, epoch and status checks fail closed.');
+// The taskbar waits for its exact publication to be applied, rather than
+// deciding from the earlier actionable frame.
+const {loadScenario}=await import('../index.js');
+const originalFetch=globalThis.fetch;
+const seed={activeWorkspace:'1',windows:[],workspaces:[]};
+globalThis.fetch=async()=>({ok:true,json:async()=>({id:'taskbar',initialExternalFacts:seed,expectedObservations:{surface:'bar',mode:'closed',controls:[]}})});
+let state={...seed,epoch:1,presentation:{actionable:true,publication:'10',mode:'closed',controls:{bar:[]},applied:{}}};
+const listeners=new Set();
+const fakeHost={getSnapshot:()=>state,subscribe(fn){listeners.add(fn);return()=>listeners.delete(fn);}};
+let settled=false;const pending=loadScenario('taskbar',fakeHost).then(value=>{settled=true;return value;});
+await new Promise(resolve=>setTimeout(resolve,0)); assert.equal(settled,false);
+state={...state,presentation:{...state.presentation,applied:{bar:'9'}}};listeners.forEach(fn=>fn(state));
+await new Promise(resolve=>setTimeout(resolve,0));assert.equal(settled,false);
+state={...state,presentation:{...state.presentation,applied:{bar:'10'}}};listeners.forEach(fn=>fn(state));
+assert.equal((await pending).ok,true);globalThis.fetch=originalFetch;
+console.log('Verified taskbar waits for acknowledgement of the exact publication.');

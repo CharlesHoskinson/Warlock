@@ -1,0 +1,54 @@
+{
+  "package": "T06",
+  "source_commit": "bc3daf7b80ac7295a1ba1e56639a0e130e520a3c",
+  "assets": [
+    {
+      "source": "T06 original",
+      "destination": "test-drive/stage/assets/wallpaper-night.svg",
+      "sha256": "64b1758a3a5f46ad44a4b6999d3912acc790373d90275ae468c19d168f445c86",
+      "bytes": 348,
+      "license": "Apache-2.0",
+      "classification": "simulated fixture",
+      "alt": "Quiet dark folded-plane wallpaper with a red diamond",
+      "caption": "Night wallpaper for the simulated desktop."
+    },
+    {
+      "source": "T06 original",
+      "destination": "test-drive/stage/assets/wallpaper-dawn.svg",
+      "sha256": "49390843de441e0d81c81ff624425228c40a707ca0437c8f4daf412d9c5fa5b8",
+      "bytes": 348,
+      "license": "Apache-2.0",
+      "classification": "simulated fixture",
+      "alt": "Quiet light folded-plane wallpaper with a red diamond",
+      "caption": "Dawn wallpaper for the simulated desktop."
+    },
+    {
+      "source": "implementation/warlock/qa/evidence/live-motion/motion-task-view.png",
+      "destination": "test-drive/stage/reference/motion-task-view.png",
+      "sha256": "587a0f96e1d23c515b3289e4b1f0aee106ca487dd09fdcbf491333935d4cb976",
+      "bytes": 77514,
+      "license": "Apache-2.0",
+      "classification": "native evidence",
+      "alt": "Warlock Task View on the running desktop",
+      "caption": "Unmodified native screenshot of Task View."
+    },
+    {
+      "source": "test-drive/stage/src/DesktopStage.elm (compiled Elm 0.19.1)",
+      "destination": "test-drive/stage/desktop-stage.js",
+      "sha256": "4d7e6a284c0e48460dc65504f42e6c0dc5b8908dc0bc84fb335e9e0969b13bf6",
+      "bytes": 131550,
+      "license": "Apache-2.0",
+      "classification": "compiled application",
+      "alt": "",
+      "caption": "Compiled Elm desktop stage."
+    }
+  ],
+  "build": {
+    "source": "test-drive/stage/src/DesktopStage.elm",
+    "source_sha256": "84aa8baca9162d428c147410c41818ac8f4d93811e22d4a9f027898c328c2db1",
+    "bundle": "test-drive/stage/desktop-stage.js",
+    "bundle_sha256": "4d7e6a284c0e48460dc65504f42e6c0dc5b8908dc0bc84fb335e9e0969b13bf6",
+    "compiler": "Elm 0.19.1",
+    "command": "elm make src/DesktopStage.elm --optimize --output=desktop-stage.js"
+  }
+}

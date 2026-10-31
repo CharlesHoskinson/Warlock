@@ -1,0 +1,36 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Controller regression harness</title></head><body>
+<h1>Controller regression harness</h1><p id="result">Running</p>
+<iframe id="controller" title="Controller" src="../runtime/controller.html"></iframe><iframe id="bar" title="Bar" src="../runtime/bar.html"></iframe><iframe id="popup" title="Popup" src="../runtime/popup.html"></iframe>
+<script type="module">
+import {createHost} from './index.js';
+import {registerServices} from '../services/index.js';
+const frames=Object.fromEntries(['controller','bar','popup'].map(id=>[id,document.getElementById(id)]));
+// Delay real renderer acknowledgements, preserving their original source and origin.
+addEventListener('message',event=>{ if (!event.isTrusted || event.data?.kind!=='native') return; let packet; try {packet=JSON.parse(event.data.payload);} catch {return;} if (packet.kind!=='presentation-applied') return; event.stopImmediatePropagation(); setTimeout(()=>dispatchEvent(new MessageEvent('message',{data:event.data,origin:event.origin,source:event.source})),80); },true);
+const diagnostics=[]; const host=createHost({frames,onDiagnostic:event=>diagnostics.push(event)}); registerServices(host);
+const wait=async (test,label)=>{for(let i=0;i<300;i++){if(test())return;await new Promise(r=>setTimeout(r,20));}throw Error('Timed out: '+label);};
+const assert=(value,label)=>{if(!value)throw Error(label);};
+const mode=()=>host.getSnapshot().presentation?.mode;
+const applied=surface=>host.getSnapshot().presentation?.applied?.[surface]===host.getSnapshot().presentation?.publication;
+const dismiss=()=>{const s=host.getSnapshot();assert(host.dispatchInput({kind:'popup-dismiss',epoch:s.epoch,scope:s.viewScope,lease:s.presentation.lease}),'Dismiss');};
+const close=()=>{const doc=frames.popup.contentDocument;const button=doc.querySelector('[data-surface-control="control:close"]');assert(button,'Close button');button.click();};
+try {
+ await Promise.all(Object.values(frames).map(f=>f.contentDocument?.readyState==='complete'?Promise.resolve():new Promise(r=>f.addEventListener('load',r,{once:true}))));host.start();await wait(()=>mode()==='closed'&&applied('bar'),'startup');
+ let s=host.getSnapshot(), win=s.windows.find(w=>!w.focused&&w.workspace===s.activeWorkspace);assert(win,'Unfocused client');
+ assert(host.dispatchInput({kind:'window',action:'focus',epoch:s.epoch,windowId:win.id,incarnation:win.incarnation}),'Focus client');
+ assert(await host.invoke('window-menu',{windowId:win.id,incarnation:win.incarnation,trigger:'pointer',anchor:{x:700,y:90}}),'First window menu invocation');assert(mode()==='menu','Window menu visible');
+ dismiss();await wait(()=>mode()==='closed'&&applied('bar'),'close menu');
+ s=host.getSnapshot();win=s.windows.find(w=>w.focused);const a=s.workArea;
+ assert(host.dispatchInput({kind:'placement',epoch:s.epoch,windowId:win.id,incarnation:win.incarnation,placementMode:'snapped',geometry:{x:a.x,y:a.y,width:Math.floor(a.width/2),height:a.height}}),'Place client');
+ assert(await host.invoke('snap'),'Snap immediately after placement');assert(mode()==='snap','Snap visible');dismiss();await wait(()=>mode()==='closed'&&applied('bar'),'close snap');
+ for(const method of ['close','escape']) {
+  assert(await host.invoke('system'),'Open System');await wait(()=>mode()==='system'&&applied('popup'),'System');
+  assert(await host.invoke('settings'),'Switch to Settings');await wait(()=>mode()==='settings'&&applied('popup'),'Settings');
+  const start=diagnostics.length;
+  if(method==='close') close();else {const doc=frames.popup.contentDocument;doc.body.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape',bubbles:true}));doc.body.dispatchEvent(new KeyboardEvent('keyup',{key:'Escape',bubbles:true}));}
+  await wait(()=>mode()==='closed'&&applied('bar'),'Settings dismissal');await wait(()=>diagnostics.slice(start).some(d=>d.kind==='focus-applied'),'focus return');await new Promise(r=>setTimeout(r,200));
+  const focus=diagnostics.slice(start).filter(d=>d.kind==='focus-applied');assert(focus.length===1,'One focus acknowledgement after '+method);assert(frames.bar.contentDocument.activeElement?.dataset.surfaceControl==='bar:settings','Settings receives focus after '+method);
+ }
+ document.getElementById('result').textContent='PASS';
+} catch(error) {document.getElementById('result').textContent='FAIL: '+error.stack+' '+JSON.stringify(diagnostics.slice(-20));} finally {host.destroy();}
+</script></body></html>

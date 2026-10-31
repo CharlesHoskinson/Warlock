@@ -1,0 +1,41 @@
+/* Apache-2.0. D02: load after the layered legacy and shared foundations. */
+@layer components {
+  html[data-warlock-design="v1"] .surface-bar { display:flex; box-sizing:border-box; align-items:stretch; height:calc(3rem + 8px); min-width:0; background:var(--wl-sys-color-surface); color:var(--wl-sys-color-text); }
+  html[data-warlock-design="v1"] .surface-bar > .surface-actions[role="toolbar"] { display:flex; box-sizing:border-box; flex:1 1 auto; align-items:stretch; min-width:0; height:100%; gap:6px; padding:6px; overflow-x:auto; overflow-y:hidden; scroll-padding-inline:6px; }
+  html[data-warlock-design="v1"] .surface-bar .surface-actions > button { position:relative; flex:0 0 auto; box-sizing:border-box; min-width:0; min-height:0; max-height:none; height:100%; margin:0; padding:2px 12px; border:1px solid transparent; border-radius:6px; background:transparent; color:var(--wl-sys-color-text); font-family:var(--wl-sys-font-body, Inter, sans-serif); font-size:.875rem; line-height:1.428571; font-weight:500; text-align:start; scroll-margin-inline:6px; }
+  html[data-warlock-design="v1"] .surface-bar .surface-actions > .control-group { flex:0 0 auto; width:max-content; min-width:128px; max-width:240px; }
+  html[data-warlock-design="v1"] .surface-bar .surface-actions > :is(.control-utility,.control-recovery) { max-width:none; }
+  html[data-warlock-design="v1"] .surface-bar .control-label { display:block; min-width:0; line-height:1.428571; }
+  html[data-warlock-design="v1"] .surface-bar .control-group .control-label { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  html[data-warlock-design="v1"] .surface-bar :is(.control-utility,.control-recovery) .control-label { white-space:nowrap; overflow:visible; }
+  html[data-warlock-design="v1"] .surface-bar .control-detail { display:block; margin:2px 0 0; font-size:.75rem; line-height:1.333333; letter-spacing:.0075rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; color:var(--wl-sys-color-text-secondary); }
+  html[data-warlock-design="v1"] .surface-bar .control-detail:empty { display:none; }
+  html[data-warlock-design="v1"] .surface-bar > .surface-status { position:static; display:block; flex:0 1 auto; width:auto; min-width:0; max-width:clamp(160px,24vw,300px); height:auto; padding:6px 12px; margin:0; overflow:auto; clip-path:none; background:var(--wl-sys-color-surface-recessed); color:var(--wl-sys-color-text); border:0; font-size:.75rem; line-height:1.333333; overflow-wrap:anywhere; }
+  html[data-warlock-design="v1"] .surface-bar > .surface-status-idle { display:none; }
+}
+@layer states {
+  html[data-warlock-design="v1"] .surface-bar .surface-actions > button:enabled:not([aria-disabled="true"]):hover { background:var(--wl-sys-color-surface-hover); }
+  html[data-warlock-design="v1"] .surface-bar .surface-actions > button:enabled:not([aria-disabled="true"]):active { background:var(--wl-sys-color-surface-pressed); }
+  html[data-warlock-design="v1"] .surface-bar .control-group[data-active-application="true"] { background:var(--wl-sys-color-surface-selected); }
+  html[data-warlock-design="v1"] .surface-bar .control-group[data-active-application="true"]::after { content:""; position:absolute; inset-inline:12px; inset-block-end:0; height:3px; background:var(--wl-sys-color-brand-text); }
+  html[data-warlock-design="v1"] .surface-bar .control-group[data-active-application="true"]:enabled:not([aria-disabled="true"]):hover { background:var(--wl-sys-color-surface-selected-hover); }
+  html[data-warlock-design="v1"] .surface-bar .control-group[data-active-application="true"]:enabled:not([aria-disabled="true"]):active { background:var(--wl-sys-color-surface-selected-pressed); }
+  /* Typed hook supplied by the host projection only when focus is observed. */
+  html[data-warlock-design="v1"] .surface-bar .control-group[data-window-focused="true"]::before { content:""; position:absolute; width:24px; height:3px; inset-block-start:0; inset-inline-start:50%; transform:translateX(-50%); background:var(--wl-sys-color-text); }
+  html[data-warlock-design="v1"] .surface-bar .surface-actions > button:is(:disabled,[aria-disabled="true"]) { opacity:1; color:var(--wl-sys-color-text-secondary); background:var(--wl-sys-color-surface-recessed); }
+  html[data-warlock-design="v1"] .surface-bar .surface-actions button:focus { outline:none; }
+  html[data-warlock-design="v1"] .surface-bar .surface-actions[data-document-focus="true"] button:focus { z-index:1; outline:2px solid var(--wl-sys-color-focus); outline-offset:2px; box-shadow:0 0 0 2px var(--wl-sys-color-surface); }
+}
+@layer accessibility {
+  @media (forced-colors:active) {
+    html[data-warlock-design="v1"] .surface-bar { background:Canvas; color:CanvasText; }
+    html[data-warlock-design="v1"] .surface-bar .control-group[data-active-application="true"] { border-color:CanvasText; }
+    html[data-warlock-design="v1"] .surface-bar .control-group[data-active-application="true"]::after, html[data-warlock-design="v1"] .surface-bar .control-group[data-window-focused="true"]::before { background:CanvasText; forced-color-adjust:none; }
+    html[data-warlock-design="v1"] .surface-bar .surface-actions[data-document-focus="true"] button:focus { outline-color:Highlight; box-shadow:none; }
+  }
+}
+@layer components {
+  /* Enhancement hook: emitted by the renderer only when status disclosure exists. */
+  html[data-warlock-design="v1"] .surface-bar > .control-status-disclosure { flex:0 0 auto; align-self:center; min-height:2.25rem; margin-inline:6px; padding:6px 12px; border:1px solid var(--wl-sys-color-border-essential); border-radius:6px; background:var(--wl-sys-color-surface); color:var(--wl-sys-color-text); font:500 .875rem/1.428571 Inter,sans-serif; }
+  html[data-warlock-design="v1"] .surface-bar > .control-status-disclosure:focus-visible { outline:2px solid var(--wl-sys-color-focus); outline-offset:2px; box-shadow:0 0 0 2px var(--wl-sys-color-surface); }
+}

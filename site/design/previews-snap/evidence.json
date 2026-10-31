@@ -1,0 +1,152 @@
+{
+  "sourceCommit": "bc3daf7b80ac7295a1ba1e56639a0e130e520a3c",
+  "licence": "Apache-2.0",
+  "modules": [
+    {
+      "path": "implementation/warlock/src/PreviewLifecycle.elm",
+      "sha256": "232ebe2e823a4f9b07444f9afaccd98cdc3de9a592ff220d9975a64952dacf24"
+    },
+    {
+      "path": "implementation/warlock/src/PreviewPresenter.elm",
+      "sha256": "10769b8d9a86e5e5b35f1f292d9837a38b20a0ba636d5baa0ee0c3b8fcdac1cc"
+    },
+    {
+      "path": "implementation/warlock/src/PreviewVisual.elm",
+      "sha256": "5c285bd8c6fde00b4e1082edfd10e59e281264a4f45b15cea9b5ce0920dd039a"
+    },
+    {
+      "path": "implementation/warlock/src/PreviewPaintGate.elm",
+      "sha256": "29336cc6d6b21c3d32fd4967911bb189c42b1569ed877ffe79555ed30a7c7d82"
+    },
+    {
+      "path": "implementation/warlock/src/NativePreviewSource.elm",
+      "sha256": "9177298d05a999f3a28660df9a76b8be7cafcda523e7cc20fe73bc471b7c37e9"
+    },
+    {
+      "path": "implementation/warlock/src/NativeFamilyPreviewSource.elm",
+      "sha256": "dc93a0698cb1bc13c37f9e56c221d356f1c6aea3d4651b71df7d4f7c178d8321"
+    },
+    {
+      "path": "implementation/warlock/src/TaskbarShell.elm",
+      "sha256": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26"
+    },
+    {
+      "path": "implementation/warlock/src/Snap.elm",
+      "sha256": "8ee61de4cd63557d3f2928893ed35ce93f1e3290128847e66ca388aa5d98ec8e"
+    },
+    {
+      "path": "implementation/warlock/src/GeometryProjection.elm",
+      "sha256": "f1b5708b8b4d1c7c02e46542bc041abb9e8cb0524d965ee4b03ab97f586a544c"
+    },
+    {
+      "path": "implementation/warlock/src/GeometrySizePolicy.elm",
+      "sha256": "46dda2de43642cd33997382e90813c8eeccde80745d79b7d5cd5fd425b062c43"
+    },
+    {
+      "path": "implementation/warlock/src/Surface.elm",
+      "sha256": "a660a4641a9f834c6198bce1e8049b3dd0be40cb74be1cfe1d5e14cfd0cdaa1d"
+    },
+    {
+      "path": "implementation/warlock/src/SurfaceRenderer.elm",
+      "sha256": "f6c653573c1b73b32df132ada5033a1e34aa2cfa1a2dcbb42be4320a4a98a7b8"
+    }
+  ],
+  "selectors": [
+    ".surface-popup[data-mode=\"picker\"]",
+    "button[data-surface-control^=\"family:\"]",
+    ".preview-content",
+    ".window-preview[data-preview-state]",
+    ".preview-image",
+    ".preview-icon",
+    ".preview-title",
+    ".preview-state",
+    ".preview-fidelity",
+    ".preview-description",
+    "[data-surface-control^=\"snap:region:\"]",
+    "[data-surface-control=\"snap:apply\"]"
+  ],
+  "screenshots": [
+    {
+      "path": "implementation/warlock/qa/evidence/preview-descriptions/Live.png",
+      "sha256": "8cfb67669efd8d5c0dc4fdbd1b18f4928b03c3b9c92b496bc91fa9ca4ab03f2b",
+      "classification": "native evidence",
+      "qualification": "Native capture; not validation of redesigned CSS"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/preview-descriptions/Unavailable.png",
+      "sha256": "37c7aa4b5354dd06849d23bd8dee10bcf41b7bb150c88d00379e4cd3a869f7c3",
+      "classification": "native evidence",
+      "qualification": "Native capture; not validation of redesigned CSS"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/preview-states/Historical.png",
+      "sha256": "393006a74cab2bd035cd80aeb3e82340c23e9fe479c1c8103b378827e5230e2d",
+      "classification": "native evidence",
+      "qualification": "Native capture; not validation of redesigned CSS"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/picker-shared-storage/native-Loading-attempt.png",
+      "sha256": "57f2a7743f7726d0de22170b9533ec0a7fad3f6128b7aaae311de0a576cff1f2",
+      "classification": "native evidence",
+      "qualification": "Loading attempt, not proof of a painted loading state"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/preview-application-fallback/native-expired-fallback-ApplicationFallback.png",
+      "sha256": "bca05f3c46edc3b11f77b2796b8bfc04a0e47ae3157f734fdbe4459e256e327d",
+      "classification": "native evidence",
+      "qualification": "Native capture; not validation of redesigned CSS"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/snap-chooser/native-snap-chooser.png",
+      "sha256": "916fe3e90e02a996bca9759b8deadc126848061191cc7d2a09a6b103c5e525c0",
+      "classification": "native evidence",
+      "qualification": "Native capture; not validation of redesigned CSS"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/snap-placement/native-left-half-placement.png",
+      "sha256": "c1d2ac3b0aa60ab142e5414d24b5849cc11fbbcc168c45b971711ebd9dcc1afb",
+      "classification": "native evidence",
+      "qualification": "Native capture; not validation of redesigned CSS"
+    },
+    {
+      "path": "assets/live.png",
+      "origin": "implementation/warlock/qa/evidence/preview-descriptions/Live.png",
+      "sha256": "8cfb67669efd8d5c0dc4fdbd1b18f4928b03c3b9c92b496bc91fa9ca4ab03f2b",
+      "classification": "native evidence copy",
+      "qualification": "Local specimen image, not a fresh client frame"
+    },
+    {
+      "path": "assets/historical.png",
+      "origin": "implementation/warlock/qa/evidence/preview-states/Historical.png",
+      "sha256": "393006a74cab2bd035cd80aeb3e82340c23e9fe479c1c8103b378827e5230e2d",
+      "classification": "native evidence copy",
+      "qualification": "Local specimen image, not a fresh client frame"
+    }
+  ],
+  "illustrations": [
+    {
+      "path": "mockups/mockup-1.png",
+      "sha256": "063fc80b5689d3c246baa50993d4c421c1ffaa4c1c26a40f83e091874da233da",
+      "classification": "generated illustration",
+      "qualification": "Generated illustration; control geometry and labels require source verification."
+    },
+    {
+      "path": "mockups/mockup-2.png",
+      "sha256": "d18024b4a01a15cb8d3ca56cd8edaea2fd69b0a7802d56960bfb4b3784b16b07",
+      "classification": "generated illustration",
+      "qualification": "Generated illustration; control geometry and labels require source verification."
+    },
+    {
+      "path": "mockups/mockup-3.png",
+      "sha256": "0bb6de22fb9280b890b6e9bb61ae5dfeff85abce834e6bab72caec7da12f27dd",
+      "classification": "generated illustration",
+      "qualification": "Generated illustration; control geometry and labels require source verification."
+    },
+    {
+      "path": "mockups/mockup-4.png",
+      "sha256": "2158b0cd4bd7a9839ed9f8eefd21a8581ec5f8b1e7a25c04e2b81dad6639858a",
+      "classification": "generated illustration",
+      "qualification": "Generated illustration; control geometry and labels require source verification."
+    }
+  ]
+}

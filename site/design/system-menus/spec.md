@@ -1,0 +1,39 @@
+# System and menus
+
+## Overview
+
+System, window actions and application actions are opaque, immediate shell surfaces. System presents the current volume, network, power and session facts with the operations admitted by the service. Window actions present the current provider's menu. Application actions present the selected catalog entry's declared actions and recent files. Inline System confirmation stays in System.
+
+## Anatomy and hierarchy
+
+The renderer emits `.surface-popup[data-mode="system"|"menu"|"jump"]`, a heading, a quiet `p[role="status"][aria-live="off"]`, and a keyed `.surface-controls` scrollport. `data-system-content` and `data-jump-content` identify fact paragraphs. Buttons retain their `data-surface-control` identity, label and detail spans. Facts use secondary text and 16px separation. Controls use at least 36px height, 6px gaps and 12px inline padding. Titles and controls align at the shared 16px inset. The scrollport reserves 6px for focus paint. At short heights the complete popup scrolls; no sticky heading covers a focused row.
+
+System displays five actual preset buttons, 0, 25, 50, 75 and 100 percent, and Mute or Unmute. It displays network permission, power capability and session facts exactly as projected. Refresh reads current facts. Unavailable actions retain disabled semantics. No slider is implied.
+
+Window menu rows reserve a 20px check column and 8px gap: label inset is 40px including padding. A real `role="menuitemcheckbox"` supplies the Always on top check from `aria-checked`; its label remains stable. This window property is distinct from taskbar pinning. A selected menu candidate uses its existing `aria-current` and Selected detail, separate from the check and keyboard focus. Dynamic menu IDs and labels do not classify commands. The jump list retains `jump:action:<id>` identities and its source-projected desktop or recent detail. New instance appears only when the catalog and launch policy supply it.
+
+The confirmation specimen groups the existing `system:confirmation:state`, `system:cancel`, and `system:confirm` identities in a keyed, neutral 8px-radius inline panel. Cancel precedes Confirm and receives initial focus. The Confirm action refers to the consequence paragraph through `aria-describedby`. A typed warning uses an outlined warning action and triangle; a typed danger uses an outlined danger action and octagonal stop symbol. Untyped consequences remain neutral. The panel adds no dialog role, scrim, trap, separate shadow or invented success state. The current Elm renderer emits siblings and requires the projection below to render this panel.
+
+## States and behaviour
+
+Enabled hover and press use shared neutral tokens. Checked, selected, unavailable and focus states remain separate. Focus uses the shared 2px focus ring with opaque gap. Disabled labels remain fully opaque secondary text. Focus-only unavailable controls remain focusable where the renderer supplies `data-focus-only`. The source's existing wording provides availability and candidate context; the style never interprets text or an index as authority.
+
+The controller owns menu traversal, disabled-item handling, captured anchor, Escape, dismissal and opener focus return. The view preserves source order and identity. System confirmation focuses Cancel; cancel returns focus to the System close control. Pending and unknown requests do not become success. Refresh reads and never replays an uncertain mutation. Declared and recent application actions use their exact identity-bound request. Shell surfaces and inline confirmation enter and leave at 0ms. A confirmed newly mapped external application window alone may invoke the shared portal after observation.
+
+## Accessibility and content
+
+Use sentence case and source strings without clipping or silent rewriting. Keep static status paragraphs quiet and the established announcement owner authoritative. At enlarged text, content wraps and the scrollport retains a focus gutter. Forced colours preserve the open check mark, four separate border-painted candidate corners and the outer focus outline. High contrast removes shadows. Reduced motion and reduced transparency preserve the same opaque layout. The CSS adds no semantics. A typed consequence category, description association and a dedicated unavailable glyph require a renderer projection change before they can be shown reliably; arbitrary labels and menu indices cannot supply either. The check is vertically centered on the first label line using its rem-based line height, including at enlarged text sizes. Four opaque 12px corner brackets with 2px strokes and the existing Selected wording distinguish the current menu candidate. The 20px check slot is open and carries only the check mark.
+
+## Evidence and references
+
+The source screenshots show dense outlined rows, a weak distinction between facts and controls, cramped grouping, and confirmation content visually merged with the list. The checkable item alone reserves a leading column, shifting its label relative to other rows. The redesign establishes shared alignment and quiet grouping. The projected panel requires the renderer hook below. Source evidence and hashes are in `evidence.json`. Native modal-recipient evidence establishes input ownership and does not establish dialog anatomy.
+
+The local Material menu and dialog captures, Fluent accessibility, Windows context-menu guidance, GNOME menus and popovers, KDE layout, Apple HIG and WCAG focus-not-obscured references inform legible grouping, recognizable checks, context placement and unobscured keyboard focus. Warlock's own tokens and interaction policy remain authoritative.
+
+## Renderer requirements
+
+D01 integration handoff: project the typed `systemMenuConfirmation` intent from `Desktop` through `Surface` to `SurfaceRenderer.elm`. `SystemMenu.confirmed` admits Restart, Shut down, Log out and disabling Network. Project those known operations as `warning`; retain a neutral category for untyped or unknown data. Group the three existing keyed identities under a stable keyed, non-modal `div[data-system-confirmation="warning|danger|neutral"]` only while confirmation is present. Keep the existing keyed children, order, publication and lease checks. Give the existing consequence paragraph a stable instance-safe DOM ID and associate Confirm with it using `aria-describedby`. Render a decorative warning triangle for the typed warning; reserve the danger stop symbol and danger outline for an explicitly typed danger consequence. Never infer category from label text, index or receipt. Keep Cancel initially focused and preserve focus return. Until this projection exists, the live siblings retain neutral presentation. A typed unavailable cue also requires renderer support. Preserve native anchor and focus handshakes. The panel adds no operation, result, modal surface, motion timer or portal.
+
+## Try it
+
+[System](../../test-drive/?scenario=system), [window actions](../../test-drive/?scenario=window-menu), [inline confirmation](../../test-drive/?scenario=confirmation), and [application actions](../../test-drive/?scenario=application-actions) open their desktop scenarios. The [specimen](specimen.html) includes anchors for each surface and the required keyed confirmation projection. The [200% root-size fixture](enlarged.html) exercises enlarged controls. The [image manifest](mockups/provenance.md) identifies each Generated concept study; the illustrations do not establish exact fixtures.

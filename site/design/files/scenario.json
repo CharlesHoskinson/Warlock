@@ -1,0 +1,9 @@
+{
+  "id": "files-ready-observed-peer",
+  "source_commit": "bc3daf7b80ac7295a1ba1e56639a0e130e520a3c",
+  "source_fixtures": ["implementation/warlock/qa/FilesReplay.elm"],
+  "initial_external_facts": {"binding": {"lifetime":"1", "session":"1", "frontend":"1"}, "files_snapshot": {"service":"9", "revision":"1", "available":true, "reason":"", "peer":{"pid":"20", "start":"40", "instance":"owned1", "target":"home", "visible":true}}},
+  "entry_intent": "OpenFiles",
+  "supported_actions": ["RefreshFiles", "EditFilesPath", "OpenFilesPath", "OpenFilesTarget", "CloseFiles"],
+  "expected_observations": ["Opening requests a current snapshot and focuses Close Files menu.", "Editing produces no files-open request.", "An explicit supported opening closes the popup and sends one files-open request.", "A matching observed newer peer location establishes the opened outcome.", "Unknown stays unconfirmed; Refresh reads without replaying the opening."]
+}
