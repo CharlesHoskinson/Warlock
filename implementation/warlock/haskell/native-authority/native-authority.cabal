@@ -6,8 +6,9 @@ extra-source-files: README.md qualification.json
 library
   hs-source-dirs: src
   exposed-modules: Warlock.Native.Cancellation
-  other-modules: Warlock.Native.Cancellation.Internal
-  build-depends: base >=4.18 && <5, bytestring, text, warlock-protocol
+  other-modules: Warlock.Native.Cancellation.Internal, Warlock.Native.Cancellation.Storage
+  build-depends: base >=4.18 && <5, bytestring, text, unix, warlock-protocol
+  cc-options: -D_GNU_SOURCE
   default-language: Haskell2010
   ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates
 
@@ -15,7 +16,19 @@ test-suite native-cancellation-controls
   type: exitcode-stdio-1.0
   main-is: Main.hs
   hs-source-dirs: test, src
-  other-modules: Warlock.Native.Cancellation.Internal
-  build-depends: base >=4.18 && <5, bytestring, text, warlock-protocol
+  other-modules: Warlock.Native.Cancellation.Internal, Warlock.Native.Cancellation.Storage
+  build-depends: base >=4.18 && <5, bytestring, text, unix, warlock-protocol
+  cc-options: -D_GNU_SOURCE
+  default-language: Haskell2010
+  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -threaded
+
+test-suite durable-storage-controls
+  cpp-options: -DWARLOCK_FINAL_ENTRY
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  hs-source-dirs: test-storage, src
+  other-modules: SwapControls, ForeignOwnerControls, Warlock.Native.Cancellation.Internal, Warlock.Native.Cancellation.Storage
+  build-depends: base >=4.18 && <5, bytestring, text, unix, directory, filepath, warlock-protocol
+  cc-options: -D_GNU_SOURCE
   default-language: Haskell2010
   ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -threaded

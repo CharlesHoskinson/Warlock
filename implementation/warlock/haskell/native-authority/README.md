@@ -25,3 +25,16 @@ retained compensation evidence after reply publication, and original-deadline
 carriage in the opaque permit. Native code must still check that deadline freshly
 at the first mutation. Public snapshot accessors cannot forge a snapshot through
 record updates. These are component guarantees, not native-provider acceptance.
+
+The preliminary terminal storage path now passes real owned-directory component
+controls. A reproduced staging-name substitution defect was fixed by retaining
+and checking the final entry against the original inode; independent entry, file
+and directory close ownership is retained. Fault controls cover actual syscall
+boundaries, metadata rejection and synchronous/asynchronous exceptions.
+
+`TerminalReceipt` observes only this process's owner and one-shot storage; it is
+not `DurableReceipt` or native ACK authority. The WCAN1 representation is preliminary,
+not a release disk format. Generation rotation, stable decoding/recovery, real host
+admission retirement/AckPending and persistent history remain mandatory unfinished
+work. The in-memory history overlay cannot yet exercise ACK because no genuine
+DurableReceipt issuer exists. No test manufactures that authority.

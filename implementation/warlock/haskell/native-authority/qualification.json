@@ -1,5 +1,5 @@
 {
-  "status": "Strict owner library and source controls PASS; incomplete native/durability integration",
+  "status": "Strict owner and actual owned-filesystem component controls PASS; full durable journal/native integration incomplete",
   "sourcePackets": [
     {
       "source": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/terra-1-native-cancellation-owner-port-v29/src/Warlock/Native/Cancellation.hs",
@@ -24,13 +24,17 @@
     "Opaque commit permit retains original deadline for native boundary validation",
     "Opaque permanent execution evidence survives terminal publication",
     "Public snapshot observations are ordinary readonly functions; no public record-update labels",
-    "Lazy provider proof exception stays inside ownership and preserves Unknown without replay"
+    "Lazy provider proof exception stays inside ownership and preserves Unknown without replay",
+    "Reproduced wrong staged filename producing receipt; retain O_PATH final-entry descriptor and compare exact inode to original before storage success",
+    "Accepted directory requires UID/private0700; terminal regular UID0600 linkcount1 and retained identities"
   ],
   "missing": [
     "Actual native event-thread/non-yielding provider and native validation/first mutation",
     "Real journal receipt issuer and post-ACK retained history/watermark",
     "Busy admission joins for other direct/native request paths",
-    "Native resources, Elm routing and original native/GUI verification"
+    "Native resources, Elm routing and original native/GUI verification",
+    "One-shot storage has no generation rotation or stable restart decoder; preliminary WCAN1 is not a release format",
+    "Actual host admission unlink/directory fsync, durable AdmissionRetired/AckPending and generation-bound DurableReceipt issuer remain missing"
   ],
   "nativeAccepted": false,
   "originalAccepted": false,
@@ -38,7 +42,11 @@
   "sourceHashes": {
     "implementation/warlock/haskell/native-authority/test/Main.hs": "db73eac6970de58083b5aa1d925481f367d426fff717a1268ebab3a69f0c7504",
     "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation.hs": "9b12e4e95d578e961c7f0db57b1049b0a16da206e9d886469f0c540d9bd415bb",
-    "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/Internal.hs": "f4824b4978a2d3671a9ad7c7279b6fd3f7181f40ec47da1ab17f11bc6ceba539"
+    "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/Internal.hs": "be9359868fe16d7a87e01f761c90c31bbf0021e196febe6576d60ce41be9d7b5",
+    "implementation/warlock/haskell/native-authority/test-storage/Main.hs": "49e81446f1ddb892582a530c6d20aa4a15638bbc2f56cfe9a94bc5345ef7f72c",
+    "implementation/warlock/haskell/native-authority/test-storage/SwapControls.hs": "ef6e715bb2e8131b49727bc63fca1cda9316aa784c0ddb72f25201c7a097e95b",
+    "implementation/warlock/haskell/native-authority/test-storage/ForeignOwnerControls.hs": "404facb5a706cf6b6a08d619453187a95eb5b1766da0867c12c5a97ba6f828c9",
+    "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/Storage.hsc": "89f6e81cd3488697cea39d3995169b7c6a5658d91388e0e3c77f433f1b3a9212"
   },
   "evidence": {
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-cancellation-owner-component-1793458711517727132/report.json": "d9ac32fb06c4e0c383936c209d4cda7b75cad8f7a7944e45d795ca89a45b3a5e",
@@ -46,9 +54,13 @@
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-cancellation-port-baseline-1793456630379088981/report.json": "ce19d62d12b1b96fe822632dfd19638b8694c009148597336ad22578a4fd8cf1",
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-cancellation-canonical-api-1793456875005969127/report.json": "b48a3d4eeaeb8765aebb01113f7d3e0fd17b20b8a609e1758d69402032de3001",
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-cancellation-owner-component-1793460509178260699/report.json": "b9719f28501bf209e0af8c5f197e8eb8ae91e5c645806357681ddb2dbd57834e",
-    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-cancellation-owner-component-1793460509178260699/test.stdout": "ac924cc7cb0e9a4c0203126a94a848106374f479262c7204d2bfa1bd848bbfc1"
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-cancellation-owner-component-1793460509178260699/test.stdout": "ac924cc7cb0e9a4c0203126a94a848106374f479262c7204d2bfa1bd848bbfc1",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-cancellation-storage-controls-1793461401069036211/report.json": "00df86a4f69c664b79aed88ed5eaddb4ba0ec43cf68533b937d043e10899b950",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-cancellation-storage-controls-1793461427832809468/report.json": "8c18cefbbb2e6ccba9a698ddf93a564319a4c2f4ebb24b28afedfe30302cc660",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/native-cancellation-owner-component-1793461446220777956/report.json": "e41b71db0342cea32cd40e9fc40b7a5880742cd86de814c058acbb26b2d30955",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/cancellation-durability-baseline-1793461101271216965/report.json": "8d4c3e48251e3c973372ff9420a0e4bab6e36fadffba929c89af55f690bc9253"
   },
-  "verifiedScope": "Actual Haskell owner called by provider-double controls: exact metadata, cancel/commit ordering, nonreexecution, Unknown/async/fault behavior, peer isolation, capacity64/65, checked exhaustion, seeded reference trajectories. No actual native mutation or real physical retirement proved.",
+  "verifiedScope": "Actual Haskell owner called by provider-double controls: exact metadata, cancel/commit ordering, nonreexecution, Unknown/async/fault behavior, peer isolation, capacity64/65, checked exhaustion, seeded reference trajectories. No actual native mutation or real physical retirement proved. Real owned-directory single-record write/fsync/rename/directory-fsync/readback, metadata, name-swap, synchronous/asynchronous fault and once-close controls now pass. TerminalReceipt is same-process storage observation, not durable ACK authority.",
   "remainingAudit": [
     "Real native-thread provider and OS-thread correspondence",
     "DurableReceipt issuer, retained post-ACK reply and watermark are missing",

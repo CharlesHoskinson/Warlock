@@ -7,14 +7,17 @@ module Warlock.Native.Cancellation.Internal
  , Format, Provider(..), CommitPermit, permitMatches, permitDeadline, Retire, DurableReceipt
  , ExecutionEvidence, executionProgress, executionResult
  , newOwner, ownerId, ownerPeer, ownerStart, ownerBinding, key, keyOwner, keyProtocol, keyIntent, preparedCounter, deadlineCounter, deadline, prepare, query, cancel, expire, commit
- , acknowledge, retireOwner, lateDecision, prerequisiteCommitted, busy ) where
+ , acknowledge, retireOwner, lateDecision, prerequisiteCommitted, TerminalTicket, TerminalReceipt, selectTerminalTicket, persistTerminalTicket, terminalReceiptCurrent, busy ) where
 
 import Control.Concurrent (ThreadId, myThreadId)
 import Control.Exception (SomeAsyncException, SomeException, evaluate, fromException, mask, throwIO, try)
 import qualified Data.ByteString as B
+import qualified Data.ByteString.Char8 as BC
+import qualified Data.Text.Encoding as TE
+import qualified Warlock.Native.Cancellation.Storage as Storage
 import Data.IORef (IORef, atomicModifyIORef', newIORef, readIORef)
 import Data.Word (Word8)
-import Warlock.Protocol.Identity (Binding,Counter,addCounter,isZero,lifetime,frontend,contextLifetime,contextEpoch)
+import Warlock.Protocol.Identity (Binding,Counter,addCounter,isZero,lifetime,session,frontend,contextLifetime,contextEpoch,contextOutput,contextRevision,renderCounter)
 import Warlock.Protocol.Custody (Intent,Operation(..),intentBinding,intentRequest,intentGeneration,intentIncarnation,intentContext,intentOperation)
 
 data OwnerId = OwnerId !Counter !Counter !Binding deriving (Eq,Show)
@@ -38,7 +41,7 @@ executionResult (ExecutionEvidence _ result) = result
 data Snapshot = Snapshot { snapshotKey :: !Key, snapshotId :: !PreparedId, snapshotDeadline :: !Deadline,
  snapshotPhase :: !Phase, snapshotFacts :: !(Maybe Facts), snapshotReply :: !B.ByteString,
  snapshotProof :: !(Maybe (Phase,Facts)), snapshotResource :: !Resource, snapshotExecution :: !(Maybe ExecutionEvidence) } deriving (Eq,Show)
-data Record = Record !Snapshot
+data Record = Record !Snapshot deriving (Eq)
 -- This is deliberately unconstructible from the public facade. The actual
 -- journal must supply a matching receipt only after durable retention.
 data DurableReceipt = DurableReceipt !Key !PreparedId !Deadline !Phase
@@ -53,7 +56,7 @@ permitDeadline :: CommitPermit scope -> Deadline
 permitDeadline (CommitPermit _ original) = original
 newtype Provider = Provider { runProvider :: forall scope. CommitPermit scope -> IO (Progress,ProviderResult) }
 type Retire = Key -> IO ()
-data State = State !Counter ![(OwnerId,Record)]
+data State = State !Counter ![(OwnerId,Record)] ![(OwnerId,Record)]
 data Owner = Owner !ThreadId !(IORef State) !Format !Provider !Retire
 
 ownerId :: Counter -> Counter -> Binding -> Either Error OwnerId
@@ -89,7 +92,7 @@ deadline n = if isZero n then Left Invalid else Right (Deadline n)
 newOwner :: Counter -> Format -> Provider -> Retire -> IO (Either Error Owner)
 newOwner initial formatter provider retire = do
  thread <- myThreadId
- state <- newIORef (State initial [])
+ state <- newIORef (State initial [] [])
  pure (Right (Owner thread state formatter provider retire))
 ensureThread :: Owner -> IO (Either Error ())
 ensureThread (Owner expected _ _ _ _) = do actual <- myThreadId; pure (if actual == expected then Right () else Left WrongThread)
@@ -119,7 +122,13 @@ encode formatter record = do
 busy :: Owner -> OwnerId -> IO (Either Error Bool)
 busy owner@(Owner _ state _ _ _) who = do
  checked <- ensureThread owner
- case checked of Left err -> pure (Left err); Right () -> do State _ records <- readIORef state; pure (Right (maybe False (const True) (lookupRecord who records)))
+ case checked of Left err -> pure (Left err); Right () -> do State _ records _ <- readIORef state; pure (Right (maybe False (const True) (lookupRecord who records)))
+
+staleHistory :: Maybe Record -> Intent -> Bool
+staleHistory Nothing _ = False
+staleHistory (Just (Record prior)) next =
+ let old = keyIntent (snapshotKey prior)
+ in intentRequest next <= intentRequest old || intentGeneration next <= intentGeneration old
 
 -- Cursor/watermark are supplied by the trusted existing native admission owner;
 -- capacity and ID are reserved only after the prepared reply is complete.
@@ -129,24 +138,26 @@ prepare owner@(Owner _ state formatter _ _) k d@(Deadline expiry) now watermark 
  case checked of
   Left err -> pure (Left err)
   Right () -> do
-   State next records <- readIORef state
+   State next records history <- readIORef state
    case lookupRecord (ownerOf k) records of
     Just (Record old) -> pure (if snapshotKey old == k && snapshotDeadline old == d then Right old else Left Busy)
-    Nothing -> case k of
-     Key _ _ intentValue
-      | isZero now || now >= expiry || intentRequest intentValue <= watermark || intentGeneration intentValue <= generation -> pure (Left Expired)
-      | length records >= 64 -> pure (Left Capacity)
-      | otherwise -> case addCounter next 1 of
-       Left _ -> pure (Left Exhausted)
-       Right nextId -> do
-        let candidate = Snapshot k (PreparedId nextId) d Prepared Nothing B.empty Nothing TokenLive Nothing
-        formatted <- restore (encode formatter candidate)
-        case formatted of
-         Left err -> pure (Left err)
-         Right bytes -> atomicModifyIORef' state $ \current@(State currentNext currentRecords) ->
-          if currentNext /= next || length currentRecords >= 64 || maybe False (const True) (lookupRecord (ownerOf k) currentRecords)
-           then (current,Left Busy)
-           else let value = candidate {snapshotReply=bytes} in (State nextId (replace (ownerOf k) (Record value) currentRecords),Right value)
+    Nothing -> case lookupRecord (ownerOf k) history of
+     Just (Record previous) | snapshotKey previous == k && snapshotDeadline previous == d -> pure (Right previous)
+     previous -> case k of
+      Key _ _ intentValue
+       | isZero now || now >= expiry || intentRequest intentValue <= watermark || intentGeneration intentValue <= generation || staleHistory previous intentValue -> pure (Left Expired)
+       | length records >= 64 -> pure (Left Capacity)
+       | otherwise -> case addCounter next 1 of
+        Left _ -> pure (Left Exhausted)
+        Right nextId -> do
+         let candidate = Snapshot k (PreparedId nextId) d Prepared Nothing B.empty Nothing TokenLive Nothing
+         formatted <- restore (encode formatter candidate)
+         case formatted of
+          Left err -> pure (Left err)
+          Right bytes -> atomicModifyIORef' state $ \current@(State currentNext currentRecords currentHistory) ->
+           if currentNext /= next || length currentRecords >= 64 || maybe False (const True) (lookupRecord (ownerOf k) currentRecords) || currentHistory /= history
+            then (current,Left Busy)
+            else let value = candidate {snapshotReply=bytes} in (State nextId (replace (ownerOf k) (Record value) currentRecords) (filter ((/=ownerOf k) . fst) currentHistory),Right value)
 
 peek :: Owner -> Key -> PreparedId -> Deadline -> IO (Either Error Snapshot)
 peek owner@(Owner _ state _ _ _) k p d = do
@@ -154,8 +165,9 @@ peek owner@(Owner _ state _ _ _) k p d = do
  case checked of
   Left err -> pure (Left err)
   Right () -> do
-   State _ records <- readIORef state
-   pure $ case lookupRecord (ownerOf k) records of Just (Record value) | same k p d value -> Right value; _ -> Left Foreign
+   State _ records history <- readIORef state
+   let selected = case lookupRecord (ownerOf k) records of Just value -> Just value; Nothing -> lookupRecord (ownerOf k) history
+   pure $ case selected of Just (Record value) | same k p d value -> Right value; _ -> Left Foreign
 
 -- Query may finish encoding an already-proven terminal, never execute again.
 query :: Owner -> Key -> PreparedId -> Deadline -> IO (Either Error Snapshot)
@@ -180,10 +192,10 @@ transition owner@(Owner _ state _ _ _) k p d change = do
  checked <- ensureThread owner
  case checked of
   Left err -> pure (Left err)
-  Right () -> atomicModifyIORef' state $ \current@(State n records) -> case lookupRecord (ownerOf k) records of
+  Right () -> atomicModifyIORef' state $ \current@(State n records history) -> case lookupRecord (ownerOf k) records of
    Just (Record old) | same k p d old -> case change old of
     Left err -> (current,Left err)
-    Right value -> (State n (replace (ownerOf k) (Record value) records),Right value)
+    Right value -> (State n (replace (ownerOf k) (Record value) records) history,Right value)
    _ -> (current,Left Foreign)
 
 -- A claimed retirement is never repeated, even when its outcome is uncertain.
@@ -295,9 +307,11 @@ acknowledge owner@(Owner _ state _ _ _) k p d (DurableReceipt rk rp rd phase) = 
  checked <- ensureThread owner
  case checked of
   Left err -> pure (Left err)
-  Right () -> atomicModifyIORef' state $ \current@(State n records) -> case lookupRecord (ownerOf k) records of
+  Right () -> atomicModifyIORef' state $ \current@(State n records history) -> case lookupRecord (ownerOf k) records of
    Just (Record value) | same k p d value && (rk,rp,rd)==(k,p,d) && phase==snapshotPhase value && phase `elem` [Committed,Refused,Cancelled] && not (B.null (snapshotReply value)) && snapshotResource value == TokenRetired ->
-    (State n (filter ((/=ownerOf k) . fst) records),Right value)
+    if length history >= 64 && maybe True (const False) (lookupRecord (ownerOf k) history)
+     then (current,Left Capacity)
+     else (State n (filter ((/=ownerOf k) . fst) records) (replace (ownerOf k) (Record value) history),Right value)
    _ -> (current,Left NotAcknowledgeable)
 
 -- Owner retirement is a local fence, not a durable acknowledgement. An
@@ -309,7 +323,7 @@ retireOwner owner@(Owner _ state _ _ _) who facts = do
  case checked of
   Left err -> pure (Left err)
   Right () -> do
-   State _ records <- readIORef state
+   State _ records _ <- readIORef state
    case lookupRecord who records of
     Just (Record value) | snapshotPhase value == Prepared -> do
      result <- cancel owner (snapshotKey value) (snapshotId value) (snapshotDeadline value) facts
@@ -324,3 +338,69 @@ prerequisiteCommitted :: Owner -> Key -> PreparedId -> Deadline -> IO (Either Er
 prerequisiteCommitted owner k p d = do
  result <- query owner k p d
  pure (fmap ((== Committed) . snapshotPhase) result)
+
+-- Ticket and receipt constructors never leave this trusted component. The
+-- retained Owner and Storage identities bind this in-process observation;
+-- no restart generation or host ACK witness is implied.
+data TerminalTicket = TerminalTicket !Owner !Snapshot
+data TerminalReceipt = TerminalReceipt !Storage.Storage !TerminalTicket
+
+selectTerminalTicket :: Owner -> Key -> PreparedId -> Deadline -> IO (Either Error TerminalTicket)
+selectTerminalTicket owner k p d = do
+ selected <- peek owner k p d
+ pure $ case selected of
+  Left err -> Left err
+  Right original
+   | snapshotPhase original `notElem` [Committed,Refused,Cancelled] -> Left NotAcknowledgeable
+   | snapshotResource original /= TokenRetired || snapshotProof original /= Nothing || B.null (snapshotReply original) -> Left NotAcknowledgeable
+   | otherwise -> Right (TerminalTicket owner original)
+
+persistTerminalTicket :: Storage.Storage -> TerminalTicket -> IO (Either Error TerminalReceipt)
+persistTerminalTicket storage ticket@(TerminalTicket owner original) = do
+ before <- peek owner (snapshotKey original) (snapshotId original) (snapshotDeadline original)
+ case before of
+  Right current | current == original -> case terminalBytes original of
+   Nothing -> pure (Left ResourceFailure)
+   Just bytes -> do
+    result <- Storage.persistBytes storage bytes
+    case result of
+     Left _ -> pure (Left ResourceFailure)
+     Right () -> do
+      let receipt = TerminalReceipt storage ticket
+      verified <- terminalReceiptCurrent receipt
+      pure (case verified of Right () -> Right receipt; Left err -> Left err)
+  _ -> pure (Left Foreign)
+
+-- Rechecks the exact owner record and the SAME retained storage object.  The
+-- storage status cannot prove host unlink, AckPending or durable ACK.
+terminalReceiptCurrent :: TerminalReceipt -> IO (Either Error ())
+terminalReceiptCurrent (TerminalReceipt storage (TerminalTicket owner original)) = do
+ status <- Storage.storageStatus storage
+ after <- peek owner (snapshotKey original) (snapshotId original) (snapshotDeadline original)
+ pure $ case after of
+  Right current | current == original && Storage.storageStage status == Storage.DirectorySynced &&
+   Storage.directoryStatus status == Storage.HandleOwned && Storage.fileStatus status == Storage.HandleOwned &&
+   Storage.entryStatus status == Storage.HandleOwned -> Right ()
+  _ -> Left Foreign
+
+-- Length-prefixed reply follows fixed, bounded numeric/enum fields. A reader,
+-- crash recovery and durable tombstone format are NOT yet implemented.
+terminalBytes :: Snapshot -> Maybe B.ByteString
+terminalBytes value = do
+ facts <- snapshotFacts value
+ let k = snapshotKey value
+     who = keyOwner k
+     bound = ownerBinding who
+     action = keyIntent k
+     ctx = intentContext action
+     n = TE.encodeUtf8 . renderCounter
+     linesOf = ["WCAN1", n (ownerPeer who), n (ownerStart who), n (lifetime bound),
+      n (session bound), n (frontend bound), BC.pack (show (keyProtocol k)),
+      n (intentRequest action), n (intentGeneration action), n (intentIncarnation action),
+      n (contextLifetime ctx), n (contextEpoch ctx), n (contextOutput ctx), n (contextRevision ctx),
+      "Restore", n (preparedCounter (snapshotId value)), n (deadlineCounter (snapshotDeadline value)),
+      BC.pack (show (snapshotPhase value)), n (factsRevision facts), n (factsOutputGeneration facts),
+      BC.pack (show (factsReason facts)), BC.pack (show (snapshotExecution value)),
+      BC.pack (show (B.length (snapshotReply value)))]
+     prefix = B.intercalate "\n" linesOf <> "\n"
+ pure (prefix <> snapshotReply value)
