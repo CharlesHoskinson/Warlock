@@ -33,6 +33,12 @@ class ContributionPolicyTests(unittest.TestCase):
         baseline = self.repo/'docs/elm-roadmap/requirements.json'
         baseline.parent.mkdir(parents=True)
         baseline.write_bytes(source.read_bytes())
+        # Admission checks the live task and traceability maps against this registry.
+        for name in ('docs/elm-roadmap/TRACEABILITY.md',
+                     'openspec/changes/elm-desktop-pivot/tasks.md'):
+            target = self.repo / name
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(PLUGIN.parents[1] / name, target)
         # Exercise the same exact governed revision as the real checkout.
         for name in ('baselines/requirements-pre-language-20261030.json',
                      'language-revision.json', 'tools/language_revision.py'):

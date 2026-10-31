@@ -18,6 +18,8 @@ import sys
 BASE = 'docs/elm-roadmap/requirements.json'
 STATE = 'docs/warlock-build-loop/v2/STATE.json'
 LEDGER = 'docs/warlock-build-loop/v2/requirement-ledger.json'
+TASKS = 'openspec/changes/elm-desktop-pivot/tasks.md'
+TRACEABILITY = 'docs/elm-roadmap/TRACEABILITY.md'
 EXPECTED = 'a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b'
 LANGUAGE_BASELINE = 'docs/elm-roadmap/baselines/requirements-pre-language-20261030.json'
 LANGUAGE_REVISION = 'docs/elm-roadmap/language-revision.json'
@@ -161,6 +163,129 @@ def requirement_document(root):
     return data
 
 
+def validate_registry_admission(root, requirements):
+    """Check the live assignment bijections without mutating admission state.
+
+    This verifies explicit role labels and mappings, not a reviewer's identity
+    or any implementation/native acceptance. Frozen-source guards still apply.
+    """
+    def fail(message):
+        raise ValueError('Registry admission: ' + message)
+
+    def text(row, key, identity):
+        value = row.get(key)
+        if not isinstance(value, str) or not value.strip():
+            fail(identity + ' missing nonempty ' + key + ' mapping')
+        return value.strip()
+
+    def document(name):
+        try:
+            return safe(root, name).read_text(encoding='utf-8')
+        except (OSError, UnicodeError) as exc:
+            fail(name + ' mapping is unavailable: ' + str(exc))
+
+    def bijection(actual, expected, name):
+        missing, foreign = sorted(set(expected) - set(actual)), sorted(set(actual) - set(expected))
+        if missing or foreign:
+            fail(name + ' mapping identities differ; missing=' + repr(missing) + '; foreign=' + repr(foreign))
+
+    registry, task_ids = {}, {}
+    if not isinstance(requirements, list) or len(requirements) != 242:
+        fail('registry must assign all 242 requirements')
+    for row in requirements:
+        if not isinstance(row, dict):
+            fail('registry row must be an object')
+        identity = text(row, 'id', 'registry row')
+        if identity in registry:
+            fail('duplicate registry requirement mapping: ' + identity)
+        owner = text(row, 'accountableOwnerRole', identity)
+        verifier = text(row, 'verifierRole', identity)
+        if owner.casefold() == verifier.casefold() or not re.search(r'\bindependent\b', verifier, re.IGNORECASE):
+            fail(identity + ' needs a distinct independent verifierRole mapping')
+        phase = text(row, 'phase', identity)
+        task = text(row, 'taskId', identity)
+        text(row, 'task', identity)
+        if not re.fullmatch(r'P[0-8]', phase) or task != phase + '-' + identity:
+            fail(identity + ' phase/taskId mapping differs')
+        if task in task_ids:
+            fail('duplicate registry task mapping: ' + task)
+        scenarios = row.get('scenarios')
+        if not isinstance(scenarios, list) or not scenarios:
+            fail(identity + ' missing named acceptance scenario mapping')
+        names = []
+        for scenario in scenarios:
+            if not isinstance(scenario, dict):
+                fail(identity + ' acceptance scenario must be an object')
+            names.append(text(scenario, 'name', identity + ' acceptance scenario'))
+        if len(set(names)) != len(names):
+            fail(identity + ' duplicate named acceptance scenario mapping')
+        registry[identity], task_ids[task] = row, identity
+
+    tasks, phase = {}, None
+    for line_number, raw in enumerate(document(TASKS).splitlines(), 1):
+        line = raw.strip()
+        heading = re.fullmatch(r'##\s+(P[0-8])(?:\s+.*)?', line)
+        if heading:
+            phase = heading[1]
+        if not line.startswith('- ['):
+            continue
+        item = re.fullmatch(r'-\s+\[[ xX]\]\s+([^:\s]+):\s*(.*?)\s+Verify:\s*(.+)', line)
+        if not item:
+            fail(TASKS + ':' + str(line_number) + ' malformed task mapping')
+        task, description, verification = item.groups()
+        if task in tasks:
+            fail(TASKS + ' duplicate task mapping: ' + task)
+        tasks[task] = (phase, description.strip(), verification.strip())
+    bijection(tasks, task_ids, TASKS)
+    for task, (phase, description, verification) in tasks.items():
+        row = registry[task_ids[task]]
+        if phase != row['phase'] or description != row['task'] or verification != row['verification']:
+            fail(TASKS + ' phase/task/verification mapping differs: ' + task)
+
+    # Split only unescaped Markdown separators; escaped pipes remain text.
+    def cells(line):
+        return [value.strip().replace(r'\|', '|') for value in re.split(r'(?<!\\)\|', line.strip())[1:-1]]
+
+    columns = ['Requirement', 'Phase', 'Priority', 'OpenSpec requirement/scenarios',
+               'Task', 'Owner / verifier', 'Verification', 'Legacy/new evidence']
+    traces, in_table, found_table = {}, False, False
+    for line_number, raw in enumerate(document(TRACEABILITY).splitlines(), 1):
+        line = raw.strip()
+        if not (line.startswith('|') and line.endswith('|')):
+            in_table = False
+            continue
+        values = cells(line)
+        if values and values[0] == 'Requirement':
+            if values != columns:
+                fail(TRACEABILITY + ':' + str(line_number) + ' requirement mapping columns differ')
+            in_table, found_table = True, True
+            continue
+        if not in_table or all(re.fullmatch(r':?-+:?', value) for value in values):
+            continue
+        if len(values) != len(columns):
+            fail(TRACEABILITY + ':' + str(line_number) + ' malformed requirement mapping')
+        identity = values[0]
+        if identity in traces:
+            fail(TRACEABILITY + ' duplicate requirement mapping: ' + identity)
+        traces[identity] = dict(zip(columns, values))
+    if not found_table:
+        fail(TRACEABILITY + ' requirement mapping table is missing')
+    bijection(traces, registry, TRACEABILITY)
+    for identity, trace in traces.items():
+        row = registry[identity]
+        roles = re.split(r'\s*/\s*', trace['Owner / verifier'])
+        expected_link = '../../openspec/changes/elm-desktop-pivot/specs/' + row['capability'] + '/spec.md#requirement-' + identity.lower()
+        scenarios = re.fullmatch(r'\[([0-9]+) scenario\(s\)\]\(([^)]+)\)', trace['OpenSpec requirement/scenarios'])
+        if trace['Phase'] != row['phase'] or trace['Task'] != row['taskId']:
+            fail(TRACEABILITY + ' phase/task mapping differs: ' + identity)
+        if roles != [row['accountableOwnerRole'], row['verifierRole']]:
+            fail(TRACEABILITY + ' owner/verifier role mapping differs: ' + identity)
+        if not scenarios or int(scenarios[1]) != len(row['scenarios']) or scenarios[2] != expected_link:
+            fail(TRACEABILITY + ' named scenario count/capability requirement link mapping differs: ' + identity)
+        if trace['Priority'] != row['priority'] or trace['Verification'] != row['verification']:
+            fail(TRACEABILITY + ' priority/verification mapping differs: ' + identity)
+
+
 def context(root):
     data = requirement_document(root)
     reqs = {r['id']: r for r in data['requirements']}
@@ -181,6 +306,7 @@ def context(root):
         count += len(scenarios)
     if count != 417:
         raise ValueError('Ledger must preserve all 417 scenarios')
+    validate_registry_admission(root, data['requirements'])
     return reqs, read(safe(root, STATE))
 
 

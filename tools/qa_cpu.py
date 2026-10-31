@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Reviewed CPU-only QA for development hosts without a native DRM provider.
 
-No arbitrary command interface: a hash-bound review permits check_elm_cpu.py only.
+No arbitrary command interface: a hash-bound review permits fixed development runners only.
 Native campaigns must still use the unchanged qa_run.py and loop.py native.
 """
 import argparse
@@ -30,6 +30,23 @@ def reviewed(path, expected):
         raise RuntimeError('Reviewed input missing or changed: ' + str(path))
 
 
+def registry_inputs(root, self_test=False):
+    names = {'tools/qa_cpu.py', 'tools/check_registry_cpu.py', 'window-integration-qa/qa_launch.py',
+             'implementation/warlock/qa/check-registry-admission.py',
+             'plugins/warlock-contributor/scripts/warlock.py',
+             'docs/elm-roadmap/requirements.json',
+             'docs/elm-roadmap/baselines/requirements-pre-language-20261030.json',
+             'docs/elm-roadmap/language-revision.json', 'docs/elm-roadmap/tools/language_revision.py',
+             'docs/elm-roadmap/TRACEABILITY.md', 'openspec/changes/elm-desktop-pivot/tasks.md',
+             'docs/warlock-build-loop/v2/STATE.json', 'docs/warlock-build-loop/v2/requirement-ledger.json'}
+    if self_test:
+        names.update(str(path.relative_to(root)) for path in (root / 'plugins/warlock-contributor').rglob('*')
+                     if path.is_file() and '__pycache__' not in path.parts and path.suffix != '.pyc')
+        names.update(['docs/warlock-build-loop/v2/loop.py', 'implementation/elm-build-loop-v1/loop.py',
+                      'window-integration-qa/qa_run.py'])
+    return names
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--review', type=Path, required=True)
@@ -41,9 +58,11 @@ def main():
     packet = json.loads(review.read_text())
     if set(packet) != {'schema', 'runner', 'arguments', 'inputs'} or packet['schema'] != 1:
         raise RuntimeError('Unknown CPU review shape')
-    runner = REPO / 'tools/check_elm_cpu.py'
-    if packet['runner'] != str(runner) or packet['arguments'] not in [[], ['--browser'], ['--authority']]:
-        raise RuntimeError('Only the reviewed Elm component runner is supported')
+    runner = Path(packet['runner'])
+    registry = runner == REPO / 'tools/check_registry_cpu.py'
+    allowed = [[], ['--self-test']] if registry else [[], ['--browser'], ['--authority']]
+    if (not registry and runner != REPO / 'tools/check_elm_cpu.py') or packet['arguments'] not in allowed:
+        raise RuntimeError('Only a fixed reviewed development runner and mode is supported')
     mandatory = {'tools/qa_cpu.py', 'tools/check_elm_cpu.py', 'window-integration-qa/qa_launch.py',
                  'implementation/warlock-preview-provider-v143/qa/toolchain.py',
                  'implementation/warlock-preview-provider-v143/qa/toolchain.json',
@@ -60,6 +79,8 @@ def main():
         mandatory.update(['tools/check_feedback_browser.py',
                           'implementation/warlock/qa/feedback-context-browser.mjs',
                           'implementation/warlock/assets/shell.css'])
+    if registry:
+        mandatory = registry_inputs(REPO, packet['arguments'] == ['--self-test'])
     if set(packet['inputs']) != mandatory:
         raise RuntimeError('CPU review does not match the complete current source/fixture/toolchain closure')
     for name, sha in packet['inputs'].items():
