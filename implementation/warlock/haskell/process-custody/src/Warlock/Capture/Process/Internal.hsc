@@ -7,7 +7,7 @@
 #include <sys/types.h>
 -- Linux-specific source proposal: independent process/library review required.
 module Warlock.Capture.Process.Internal
- (Tool(..),ToolError(..),Captured(..),Owner,OwnerStatus(..),newOwner,status,runTool,runFixture,runFixturePinned,runFixtureWithHook, selectedFixture, selectedTicketFixture, SelectedSpawn, HeldExecutable, SelectedResult(..), Session, selectedHeld, awaitLeader, runSelected, AdmissionDeadline, deadlineAfter, remainingMicros, runSelectedUntil, runSelectedDetailed, SelectedOutcome(..), Containment(..), SessionObservation(..), observeSession, runSelectedFixtureHook) where
+ (Tool(..),ToolError(..),Captured(..),Owner,OwnerStatus(..),newOwner,status,runTool,runFixture,runFixturePinned,runFixturePinnedObserved,ToolObservation(..),runFixtureWithHook, selectedFixture, selectedTicketFixture, SelectedSpawn, HeldExecutable, SelectedResult(..), Session, selectedHeld, awaitLeader, runSelected, AdmissionDeadline, deadlineAfter, remainingMicros, runSelectedUntil, runSelectedDetailed, SelectedOutcome(..), Containment(..), SessionObservation(..), observeSession, runSelectedFixtureHook) where
 import Control.Concurrent (MVar, ThreadId, forkFinally, killThread, newEmptyMVar, newMVar, putMVar, readMVar, threadDelay, withMVar)
 import Control.Exception (IOException, SomeAsyncException, SomeException, bracket, fromException, mask, onException, try, throwIO)
 import qualified Data.Text as T
@@ -133,6 +133,7 @@ selectedHeld lease args input environment =
  in if all safe environment then Right (SelectedSpawn "/" args (Just (TicketInput input)) environment (Just lease)) else Left BadArguments
 
 data Captured = Captured { output :: B.ByteString, diagnostics :: B.ByteString } deriving (Eq,Show)
+data ToolObservation = ToolObservation { operation :: Either ToolError Captured, capturedOutput :: Maybe Captured } deriving (Eq,Show)
 toolSpec :: Tool -> (FilePath,B.ByteString,[String])
 toolSpec (Pactree db) = ("/usr/bin/pactree","bc027d40a55f9bae8b833ee8ed3d23bf492830b4ac4dfce21c7eced1cb8e8e2c",["--dbpath",db,"--graph","--depth","1"])
 toolSpec (Readelf staged) = ("/usr/bin/readelf","a72f12f3dd8c560554a3ba818bcecbda9178db5befbcc64d91bbb6a241fc21bc",["--wide","--file-header","--program-headers","--dynamic","--version-info","--notes","--",staged])
@@ -186,9 +187,19 @@ runFixture = runOwned
 runFixtureWithHook :: Owner -> FilePath -> [String] -> Int -> Int -> (String -> IO ()) -> IO (Either ToolError Captured)
 runFixtureWithHook = runOwnedHook
 runFixturePinned :: Owner -> FilePath -> B.ByteString -> [String] -> Int -> Int -> IO (Either ToolError Captured)
-runFixturePinned owner exe want args n us = do
+runFixturePinned owner exe want args n us = operation <$> runFixturePinnedObserved owner exe want args n us
+
+-- Private per-invocation cell: no output from another run can be reused.
+runFixturePinnedObserved :: Owner -> FilePath -> B.ByteString -> [String] -> Int -> Int -> IO ToolObservation
+runFixturePinnedObserved owner exe want args n us = do
+ observedBytes <- newIORef Nothing
  bytes <- try (readTool exe) :: IO (Either IOException B.ByteString)
- case bytes of Left _ -> pure (Left SpawnOrIO); Right b | hexDigest (SHA.hash b) /= want -> pure (Left ToolHashMismatch); Right _ -> runOwned owner exe args n us
+ result <- case bytes of
+  Left _ -> pure (Left SpawnOrIO)
+  Right b | hexDigest (SHA.hash b) /= want -> pure (Left ToolHashMismatch)
+  Right _ -> runOwnedHookCell owner exe args n us (const (pure ())) (Just observedBytes)
+ captured <- readIORef observedBytes
+ pure (ToolObservation result captured)
 
 -- Requires sole child-reaper ownership: no background library/SIGCHLD reaper
 -- and no tool escaping its created process group. The zombie leader protects
@@ -247,11 +258,14 @@ runOwned :: Owner -> FilePath -> [String] -> Int -> Int -> IO (Either ToolError 
 runOwned owner exe args cap micros = runOwnedHook owner exe args cap micros (const (pure ()))
 
 runOwnedHook :: Owner -> FilePath -> [String] -> Int -> Int -> (String -> IO ()) -> IO (Either ToolError Captured)
-runOwnedHook owner exe args cap micros hook = do
+runOwnedHook owner exe args cap micros hook = runOwnedHookCell owner exe args cap micros hook Nothing
+
+runOwnedHookCell :: Owner -> FilePath -> [String] -> Int -> Int -> (String -> IO ()) -> Maybe (IORef (Maybe Captured)) -> IO (Either ToolError Captured)
+runOwnedHookCell owner exe args cap micros hook captureCell = do
  deadline <- deadlineAfter micros
  case deadline of
   Left err -> pure (Left err)
-  Right d -> runSelectedHook owner (SelectedSpawn exe args Nothing [("LC_ALL","C"),("LANG","C"),("PATH","/usr/bin")] Nothing) cap d awaitLeader hook Nothing
+  Right d -> runSelectedHook owner (SelectedSpawn exe args Nothing [("LC_ALL","C"),("LANG","C"),("PATH","/usr/bin")] Nothing) cap d awaitLeader hook Nothing captureCell
 
 -- One scoped admission and one cleanup path. The callback receives no raw
 -- process handle and cannot reap or signal the selected process through it.
@@ -276,7 +290,7 @@ runSelectedUntil owner selection cap deadline conversation = do
 runSelectedDetailed :: Owner -> SelectedSpawn -> Int -> AdmissionDeadline -> (Session -> IO (Either ToolError ())) -> IO SelectedOutcome
 runSelectedDetailed owner selection cap deadline conversation = do
  observedExit <- newIORef Nothing
- result <- runSelectedHook owner selection cap deadline conversation (const (pure ())) (Just observedExit)
+ result <- runSelectedHook owner selection cap deadline conversation (const (pure ())) (Just observedExit) Nothing
  exited <- readIORef observedExit
  state <- status owner
  let containment = case exited of Just True -> BeforeSignalLeaderExited; Just False -> BeforeSignalLeaderAlive; Nothing -> SignalStateUnknown
@@ -284,10 +298,10 @@ runSelectedDetailed owner selection cap deadline conversation = do
 
 -- Source-fixture seam only; hooks run at actual lifecycle points.
 runSelectedFixtureHook :: Owner -> SelectedSpawn -> Int -> AdmissionDeadline -> (Session -> IO (Either ToolError ())) -> (String -> IO ()) -> IO (Either ToolError Captured)
-runSelectedFixtureHook owner selection cap deadline conversation hook = runSelectedHook owner selection cap deadline conversation hook Nothing
+runSelectedFixtureHook owner selection cap deadline conversation hook = runSelectedHook owner selection cap deadline conversation hook Nothing Nothing
 
-runSelectedHook :: Owner -> SelectedSpawn -> Int -> AdmissionDeadline -> (Session -> IO (Either ToolError ())) -> (String -> IO ()) -> Maybe (IORef (Maybe Bool)) -> IO (Either ToolError Captured)
-runSelectedHook owner (SelectedSpawn exe args selectedInput selectedEnv selectedLease) cap deadline conversation hook exitObservation
+runSelectedHook :: Owner -> SelectedSpawn -> Int -> AdmissionDeadline -> (Session -> IO (Either ToolError ())) -> (String -> IO ()) -> Maybe (IORef (Maybe Bool)) -> Maybe (IORef (Maybe Captured)) -> IO (Either ToolError Captured)
+runSelectedHook owner (SelectedSpawn exe args selectedInput selectedEnv selectedLease) cap deadline conversation hook exitObservation captureCell
  | null exe || head exe /= '/' || cap <= 0 || cap > 4194304 = pure (Left BadArguments)
  | otherwise = mask $ \restore -> do
   available <- remainingMicros deadline
@@ -380,6 +394,12 @@ runSelectedHook owner (SelectedSpawn exe args selectedInput selectedEnv selected
           -- results are awaited before closing pipe handles to preserve final bytes.
           reaped <- try (terminateReap ph pid) :: IO (Either SomeException ExitCode)
           captured <- bounded (hook "capture" >> ((,) <$> outResult <*> errResult))
+          -- A normal nonreaping completion plus two successful bounded readers
+          -- is required: cleanup-induced EOF after timeout is not completion.
+          case (admissionObserved,reaped,captured) of
+           (Right (Just (Right ())),Right _,Right (Just (Right (Right stdoutBytes),Right (Right stderrBytes)))) ->
+            mapM_ (\cell -> writeIORef cell (Just (Captured stdoutBytes stderrBytes))) captureCell
+           _ -> pure ()
           killedA <- bounded (hook "stop-out" >> killThread outThread)
           killedB <- bounded (hook "stop-err" >> killThread errThread)
           joinedA <- bounded (hook "join-out" >> outResult)

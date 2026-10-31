@@ -9,8 +9,13 @@
     "No public lease issuer; trusted resolver integration remains separate",
     "Does not prove namespace confinement, GUI behavior, reproducible source closure or release readiness"
   ],
-  "evidence": {
+  "priorAssemblyEvidence": {
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/process-custody-package-build-1793413640816067613/report.json": "9c0e5aeb67d32d5aa1e63ee4c1a8a5557938485e0559a4b93190a646d16c29fa",
     "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/process-custody-package-controls-1793413681601512815/report.json": "a4aea588a139f8cd01856d6530697960093a68af841105f5e66edb385019c6aa"
-  }
+  },
+  "evidence": {
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/process-custody-package-build-1793414010636616790/report.json": "9ddb1702ac8de047aee8690350da2dead1ef9068c0671a779d59e60a71d5b282",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/process-custody-package-controls-1793414023453312016/report.json": "9a263f73dcd65e04d3ff64336df6ae9c69f78e1569f75ec94ebd7db2915c7b7e"
+  },
+  "metadataNote": "Evidence hashes refer to pre-receipt package metadata. Runtime code, Cabal and tests match the executed assembly; this receipt metadata was appended after tests."
 }

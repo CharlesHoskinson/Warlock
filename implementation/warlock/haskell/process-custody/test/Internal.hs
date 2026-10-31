@@ -5,6 +5,9 @@ import Control.Exception (IOException, SomeAsyncException, SomeException, bracke
 import Data.IORef (newIORef, modifyIORef', readIORef)
 import Control.Monad (unless)
 import qualified Data.ByteString.Char8 as C
+import qualified Data.ByteString as B
+import qualified Crypto.Hash.SHA256 as SHA
+import Numeric (showHex)
 import System.Directory (createDirectory, doesFileExist, getTemporaryDirectory, removeFile, removePathForcibly)
 import System.FilePath ((</>))
 import System.IO (hClose, openTempFile, openBinaryFile, IOMode(ReadMode))
@@ -26,6 +29,20 @@ main = do
    owner <- newOwner
    ok <- runFixture owner exe ["--fixture","ok"] 4096 2000000
    check "owned child output and reap" (ok == Right (Captured "fixture-ok" ""))
+   let hex bytes = concatMap (\n -> let h=showHex n "" in if length h==1 then '0':h else h) (B.unpack bytes)
+   fixtureHash <- C.pack . hex . SHA.hash <$> B.readFile exe
+   failure <- runFixturePinnedObserved owner exe fixtureHash ["--fixture","diagnostic-exit7"] 4096 2000000
+   check "failed operation retains bounded diagnostics" (failure==ToolObservation (Left (Unsuccessful 7)) (Just (Captured "fixture-out" "fixture-error")))
+   legacy <- runFixturePinned owner exe fixtureHash ["--fixture","diagnostic-exit7"] 4096 2000000
+   check "legacy API preserves failure" (legacy==Left (Unsuccessful 7))
+   success <- runFixturePinnedObserved owner exe fixtureHash ["--fixture","ok"] 4096 2000000
+   check "success diagnostic observation" (success==ToolObservation (Right (Captured "fixture-ok" "")) (Just (Captured "fixture-ok" "")))
+   noCapture <- runFixturePinnedObserved owner exe fixtureHash ["--fixture","overflow"] 1024 2000000
+   check "overflow never claims complete capture" (operation noCapture==Left OutputLimit && capturedOutput noCapture==Nothing)
+   late <- runFixturePinnedObserved owner exe fixtureHash ["--fixture","hang"] 4096 100000
+   check "timeout never claims complete capture" (operation late==Left TimedOut && capturedOutput late==Nothing)
+   stale <- runFixturePinnedObserved owner exe "0000000000000000000000000000000000000000000000000000000000000000" ["--fixture","ok"] 4096 2000000
+   check "invocation cannot reuse prior diagnostics" (stale==ToolObservation (Left ToolHashMismatch) Nothing)
    overflow <- runFixture owner exe ["--fixture","overflow"] 1024 2000000
    check "output limit" (overflow == Left OutputLimit)
    stalled <- runFixture owner exe ["--fixture","hang"] 4096 100000

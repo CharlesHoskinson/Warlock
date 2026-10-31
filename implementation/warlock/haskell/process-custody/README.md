@@ -17,3 +17,5 @@ The public module exports abstract `Owner`, `HeldExecutable`, `TransferTicket`, 
 ## Explanation
 
 Trusted integration must co-build a separately reviewed issuer module inside the package boundary, using the held resolver's exclusive verified descriptor and transferring close ownership exactly once. T4's channel/Pair binding and resolver issuer are not implemented here. The trusted component can import the hidden Lease and Transfer internals only within that reviewed package component; arbitrary package clients cannot. Do not open these modules in exposed-modules as a shortcut. A potentially alive quarantined child needs a real persistent supervisor; the component alone is not one. Original scenario, native and release claims remain open.
+
+The internal diagnostic observation keeps complete bounded stdout/stderr when an operation exits unsuccessfully. The operation remains `Unsuccessful`; timeout, overflow and incomplete captures do not claim complete diagnostics. It uses the existing readers and deadline. Focused package controls cover failure bytes, legacy verdicts, success, overflow, timeout and isolation between invocations.
