@@ -4,7 +4,7 @@
 -- private ownership must already be established by the trusted runtime.
 module Warlock.Native.Cancellation.Storage
  (Storage, Stage(..), HandleStatus(..), StorageStatus(..), newStorage, newStorageWithHookForTest, offerDirectory,
-  persistBytes, storageStatus, retireStorage) where
+  persistBytes, storageStatus, withStorageLease, retireStorage) where
 #define _GNU_SOURCE 1
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -12,7 +12,7 @@ module Warlock.Native.Cancellation.Storage
 #include <unistd.h>
 #include <stdio.h>
 import Control.Concurrent.MVar
-import Control.Exception (SomeAsyncException,SomeException,fromException,mask,throwIO,try)
+import Control.Exception (SomeAsyncException,SomeException,finally,fromException,mask,throwIO,try)
 import Data.Bits ((.|.),(.&.))
 import Data.Int (Int64)
 import Data.Word (Word32)
@@ -67,6 +67,16 @@ storageStatus (Storage state _ _ identities entry) = do
 
 -- This is raw byte storage, not a terminal-ticket API. No caller can derive a
 -- DurableReceipt from it; exact owner and host-retirement integration remains.
+-- Status alone is diagnostic. Keep this lease through every correlated owner
+-- check or state transition that depends on the retained handles. Retirement
+-- and persistence use the same gate. Busy never waits or borrows that custody.
+withStorageLease :: Storage -> (StorageStatus -> IO a) -> IO (Maybe a)
+withStorageLease store@(Storage _ gate _ _ _) action = mask $ \restore -> do
+ acquired <- tryTakeMVar gate
+ case acquired of
+  Nothing -> pure Nothing
+  Just () -> (Just <$> (storageStatus store >>= restore . action)) `finally` putMVar gate ()
+
 persistBytes :: Storage -> B.ByteString -> IO (Either String ())
 persistBytes store@(Storage state gate _ _ _) bytes = mask $ \restore -> do
  acquired <- tryTakeMVar gate

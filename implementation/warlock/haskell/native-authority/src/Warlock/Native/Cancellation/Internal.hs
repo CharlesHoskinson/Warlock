@@ -375,13 +375,14 @@ persistTerminalTicket storage ticket@(TerminalTicket owner original) = do
 -- storage status cannot prove host unlink, AckPending or durable ACK.
 terminalReceiptCurrent :: TerminalReceipt -> IO (Either Error ())
 terminalReceiptCurrent (TerminalReceipt storage (TerminalTicket owner original)) = do
- status <- Storage.storageStatus storage
- after <- peek owner (snapshotKey original) (snapshotId original) (snapshotDeadline original)
- pure $ case after of
-  Right current | current == original && Storage.storageStage status == Storage.DirectorySynced &&
-   Storage.directoryStatus status == Storage.HandleOwned && Storage.fileStatus status == Storage.HandleOwned &&
-   Storage.entryStatus status == Storage.HandleOwned -> Right ()
-  _ -> Left Foreign
+ checked <- Storage.withStorageLease storage $ \status -> do
+  after <- peek owner (snapshotKey original) (snapshotId original) (snapshotDeadline original)
+  pure $ case after of
+   Right current | current == original && Storage.storageStage status == Storage.DirectorySynced &&
+    Storage.directoryStatus status == Storage.HandleOwned && Storage.fileStatus status == Storage.HandleOwned &&
+    Storage.entryStatus status == Storage.HandleOwned -> Right ()
+   _ -> Left Foreign
+ pure (case checked of Nothing -> Left Busy; Just result -> result)
 
 -- Length-prefixed reply follows fixed, bounded numeric/enum fields. A reader,
 -- crash recovery and durable tombstone format are NOT yet implemented.

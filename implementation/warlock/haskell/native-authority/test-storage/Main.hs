@@ -4,6 +4,7 @@
 -- Root-only owned-directory component fixture. This is NOT an ACK or journal
 -- recovery test; TerminalReceipt is an in-process storage observation only.
 module Main (main) where
+import Control.Concurrent (forkIO,newEmptyMVar,putMVar,takeMVar)
 import Control.Exception (AsyncException(ThreadKilled),SomeException,fromException,mask_,throwIO,try)
 import Control.Monad (forM_,unless)
 import Data.Either (isLeft)
@@ -90,6 +91,23 @@ main = do
  check "late cancellation preserves terminal" (late == terminal)
  stillCurrent <- terminalReceiptCurrent receipt
  check "terminal unchanged while receipt current" (stillCurrent == Right ())
+ retiring <- newEmptyMVar
+ leased <- S.withStorageLease storage $ \held -> do
+  _ <- forkIO (S.retireStorage storage >>= putMVar retiring)
+  refusedRetire <- takeMVar retiring
+  check "retirement cannot close leased handles" (S.fileStatus refusedRetire == S.HandleOwned && S.directoryStatus refusedRetire == S.HandleOwned && S.entryStatus refusedRetire == S.HandleOwned)
+  nested <- terminalReceiptCurrent receipt
+  check "nested receipt check refuses borrowed custody" (nested == Left Busy)
+  check "leased snapshot retains real handles" (S.fileStatus held == S.HandleOwned)
+ check "storage lease acquired" (leased == Just ())
+ afterLease <- terminalReceiptCurrent receipt
+ check "receipt valid after lease released" (afterLease == Right ())
+ interruptedLease <- try (S.withStorageLease storage (\_ -> throwIO ThreadKilled)) :: IO (Either SomeException (Maybe ()))
+ check "lease propagates original async exception" (case interruptedLease of
+  Left err -> case fromException err of Just ThreadKilled -> True; _ -> False
+  Right _ -> False)
+ afterInterruptedLease <- terminalReceiptCurrent receipt
+ check "async lease releases gate without retiring handles" (afterInterruptedLease == Right ())
  done <- S.retireStorage storage
  check "normal owned descriptors closed" (S.directoryStatus done == S.HandleClosed && S.fileStatus done == S.HandleClosed)
 #ifdef WARLOCK_FINAL_ENTRY

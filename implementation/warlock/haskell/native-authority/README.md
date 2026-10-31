@@ -38,3 +38,9 @@ not a release disk format. Generation rotation, stable decoding/recovery, real h
 admission retirement/AckPending and persistent history remain mandatory unfinished
 work. The in-memory history overlay cannot yet exercise ACK because no genuine
 DurableReceipt issuer exists. No test manufactures that authority.
+
+Receipt validation now holds the same nonblocking storage custody lease used by
+retirement and persistence through its handle and owner checks. Concurrent close
+cannot invalidate the handles between those checks. Nested validation returns
+Busy; an asynchronous exception releases the gate. The observation is valid at
+that check, not a transferable native ACK capability.
