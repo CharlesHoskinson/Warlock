@@ -15,3 +15,7 @@ The supplied Chromium harness loaded the revised specimen under `/Warlock/` with
 ## Selection geometry revision
 
 The canonical specimen bootstrap loads first and the page uses the shared Night document treatment. The selected filter keeps its original border and padding; empty pseudo-elements draw the bar and check without generated text. The high-contrast gallery includes a selected disabled workspace filter with an explicit unavailable detail. The supplied Chromium harness loaded the revised page with no console errors, failed requests or external requests. The `/tmp/task-view.png` capture was visually inspected, including the selected and focused Night filter and the Dawn comparison. Forced-colours rendering and live Elm integration remain unverified in this revision.
+
+## Pointer size checks
+
+With Chromium touch emulation (`pointer: coarse`), every Task View control measures at least 44px and every family row and other row with a detail at least 60px; with a fine pointer the minimums are 36px and 56px. In emulated forced colours the selected unavailable filter shows the check, the bar and the unavailable cue together. Chromium, Firefox and WebKit load the specimen with no console errors. These are static specimen checks.

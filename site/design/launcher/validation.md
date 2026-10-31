@@ -26,3 +26,7 @@ The screenshot does not establish live keyboard traversal, IME, protocol or nati
 - Both specimen documents load `assets/shared/specimen-bootstrap.css` before the foundation and launcher styles. The Chromium harness reports no console errors, failed requests or external requests; the updated capture is [specimen-chromium.png](evidence/specimen-chromium.png).
 - Chromium measures 16px between Refresh or Acknowledge and an immediately following result, including the 6px flex gap. The same rule retains 16px after the existing management controls.
 - The staged renderer and the compiled test-drive Popup emit the label; the input remains separately keyed with its original ID, accessible name and composition handlers.
+
+## Acknowledgement and framing checks
+
+The specimen and the 200% fixture load `assets/shared/specimen-docs.css` after the bootstrap for page typography and framing. In Chromium the Unknown example's acknowledgement computes the essential border on the surface fill, directly after Refresh in source order; enabled launch results compute the raised neutral fill and change to the neutral hover fill under the pointer, with no brand fill. Chromium, Firefox and WebKit load both documents at 1440 and 390px with no console errors. These are static specimen checks.

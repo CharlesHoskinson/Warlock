@@ -22,7 +22,10 @@
   html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .control-utility[aria-disabled="true"] { opacity: 1; color: var(--wl-sys-color-text-secondary); background: var(--wl-sys-color-surface-recessed); }
   html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .control-utility:not(:disabled):not([aria-disabled="true"]):active { background: var(--wl-sys-color-surface-pressed); }
   html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] :is([data-surface-control^="settings:theme:"], [data-surface-control^="settings:scale:"], [data-surface-control^="settings:motion:"], [data-surface-control^="settings:shortcuts:"])[aria-current="true"],
-  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] :is([data-surface-control="settings:effects-off"], [data-surface-control="settings:reduced-transparency"])[aria-pressed="true"] { background: var(--wl-sys-color-surface-selected); border-inline-start: 3px solid var(--wl-sys-color-brand-text); padding-inline-start: 10px; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] :is([data-surface-control="settings:effects-off"], [data-surface-control="settings:reduced-transparency"])[aria-pressed="true"] { background: var(--wl-sys-color-surface-selected); }
+  /* Selection marker: a 3px inset bar painted by ::before; border width and padding stay constant across selection. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] :is([data-surface-control^="settings:theme:"], [data-surface-control^="settings:scale:"], [data-surface-control^="settings:motion:"], [data-surface-control^="settings:shortcuts:"])[aria-current="true"]::before,
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] :is([data-surface-control="settings:effects-off"], [data-surface-control="settings:reduced-transparency"])[aria-pressed="true"]::before { content: ""; position: absolute; inset-block: 6px; inset-inline-start: 0; inline-size: 3px; border-radius: 2px; background: var(--wl-sys-color-brand-text); pointer-events: none; }
   html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] :is([data-surface-control^="settings:theme:"], [data-surface-control^="settings:scale:"], [data-surface-control^="settings:motion:"], [data-surface-control^="settings:shortcuts:"], [data-surface-control="settings:effects-off"], [data-surface-control="settings:reduced-transparency"]):is([aria-current="true"], [aria-pressed="true"]):not(:disabled):not([aria-disabled="true"]):active { background: var(--wl-sys-color-surface-selected-pressed); }
 }
 
@@ -51,4 +54,19 @@
 @layer components {
   html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .settings-save-group { display: flex; flex-direction: column; gap: 2px; }
   html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .settings-save-caption { margin: 0; padding-inline: 12px; color: var(--wl-sys-color-text-secondary); font-size: .75rem; line-height: 1.333333; overflow-wrap: anywhere; }
+}
+
+@layer components {
+  /* Minimum sizes: 36px single-line controls and 56px rows with a detail; the 1px border and 6px 12px padding never change. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .control-utility:has(> .control-detail:not(:empty)) { min-block-size: 3.5rem; }
+}
+@layer accessibility {
+  @media (pointer: coarse) {
+    html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .control-utility { min-block-size: 2.75rem; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .control-utility:has(> .control-detail:not(:empty)) { min-block-size: 3.75rem; }
+  }
+  @media (forced-colors: active) {
+    html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] :is([data-surface-control="settings:effects-off"], [data-surface-control="settings:reduced-transparency"])[aria-pressed="true"]::before,
+    html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] [aria-current="true"]::before { forced-color-adjust: none; background: CanvasText; }
+  }
 }

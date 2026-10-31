@@ -11,3 +11,7 @@ The generated images are captioned “Generated concept study” in the specimen
 ## Integration limits
 
 The static specimen does not validate the Elm controller, native Alt release, activation, cancellation, focus return, stale publications or stacking. The disabled unavailable cue requires a renderer projection. The complete 100/125/150/200% and 200% zoom matrix, text-spacing overrides, forced colours, reduced motion, effects tiers, WebKitGTK, native and assistive-technology checks remain integration work. No native acceptance result is claimed.
+
+## Action grid checks
+
+Chromium measures the action group at viewport widths from 320 to 1440px and at popup widths from 300 to 760px. Every arrangement is four in one row, two rows of two, or one column; no width produces three plus one. Unavailable Activate in the Waiting and Empty examples computes the essential border on the recessed fill with secondary text and the shared unavailable cue. Chromium, Firefox and WebKit load the specimen with no console errors. These are static specimen checks.

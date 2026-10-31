@@ -27,3 +27,7 @@ The measured profile projection, input gate, lease invalidation and held-press t
 ## Revision checks
 
 The canonical specimen bootstrap loads with no failed or external requests in the supplied Chromium harness. The rendered screenshot is `/tmp/previews-snap.png`. A Chromium check at 320px viewport width with 200% root text and WCAG line, letter and word spacing selects the stacked profile; all displayed text bounds remain within their target rows. Changing the first gallery row through the eight lifecycle wordings and removing its image preserves its target rectangle. These are static specimen checks, not a native held-press or publication and lease test. The real renderer still needs the admission, invalidation and acknowledgement integration described in the specification.
+
+## Stage and observer checks
+
+Chromium, Firefox and WebKit load the specimen, resize the viewport through 1200, 900, 600, 390 and 1440px, and report no console errors; every picker ends admitted with its expected profile. Retiring a popup synchronously inside an observer callback makes WebKit report "ResizeObserver loop completed with undelivered notifications"; the specimen defers that work to the next animation frame, and WebKit reports nothing. The Dawn stages paint the Dawn canvas token, and each Night and Dawn pair shares one grid row at equal size. These are static specimen checks.

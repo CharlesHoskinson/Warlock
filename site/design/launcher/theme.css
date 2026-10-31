@@ -13,7 +13,7 @@
   html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .control-label { display:block; white-space:normal; overflow:visible; overflow-wrap:anywhere; font-weight:500; line-height:1.428571; }
   html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .control-detail { display:block; margin-top:2px; white-space:normal; overflow-wrap:anywhere; color:var(--wl-sys-color-text-secondary); font-size:.75rem; line-height:1.333333; }
   html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .control-detail:empty { display:none; }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] [data-surface-control^="entry:"] { font-weight:600; background:var(--wl-sys-color-surface-raised); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .surface-controls > [data-surface-control^="entry:"] { font-weight:600; background:var(--wl-sys-color-surface-raised); }
   html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] [data-surface-control^="entry:"] .control-label { font-weight:600; }
   html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] :is(.launcher-search, [data-surface-control="control:refresh"], [data-surface-control="control:acknowledge"], [data-surface-control^="pin:"], [data-surface-control^="unpin:"], [data-surface-control^="pin-left:"], [data-surface-control^="pin-right:"], [data-surface-control^="jump:open:"]) + [data-surface-control^="entry:"] { margin-block-start:10px; }
   html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .launcher-search + [data-surface-control="control:close"] { margin-block-start:10px; }
@@ -47,4 +47,12 @@
   /* Associated label is a keyed sibling of the existing search input. */
   html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .launcher-search-label { display:block; margin-block: 0 2px; color:var(--wl-sys-color-text); font-size:.875rem; font-weight:600; line-height:1.428571; }
   html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .launcher-search-label + .launcher-search { margin-block-start:-6px; }
+}
+
+@layer components {
+  /* Recovery acknowledgement is the neutral outlined secondary action, distinct from the quiet utilities around it. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .surface-controls > [data-surface-control="control:acknowledge"] { border-color:var(--wl-sys-color-border-essential); background:var(--wl-sys-color-surface); color:var(--wl-sys-color-text); }
+}
+@layer accessibility {
+  @media (forced-colors:active) { html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .surface-controls > [data-surface-control="control:acknowledge"] { border-color:ButtonText; } }
 }
