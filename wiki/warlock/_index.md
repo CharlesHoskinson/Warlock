@@ -18,8 +18,10 @@ Versioned lessons, ideas, architectural decisions and verified outcomes for the 
 
 ## Statistics
 
-4 raw observations; 3 compiled articles. No target architecture or release acceptance is created by this wiki.
+5 raw observations; 3 compiled articles. No target architecture or release acceptance is created by this wiki.
 
 [Inbox](inbox/_index.md) · [Curated outputs](output/_index.md)
 
 Latest original verdict: [ARC005 bridge acceptance](../../docs/warlock-build-loop/v2/authority-tuple-acceptance-20261031.json). [Applications feedback](raw/notes/2026-10-31-applications-feedback.md) has current component evidence while its original native/AT obligations remain open.
+
+Latest administrative verdict: [REV005 admission acceptance](../../docs/warlock-build-loop/v2/registry-admission-acceptance-20261031.json).

@@ -1,41 +1,31 @@
 {
   "schema": 1,
   "owner": "root-agentbus",
-  "updatedUTC": "2026-10-31T22:32:59.973551+00:00",
+  "updatedUTC": "2026-10-31T23:15:45.686328+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "window-effect-authority-tuple",
+    "id": "registry-admission-ownership",
     "requirements": [
-      "ELM-ARC-005"
+      "ELM-REV-005"
     ],
     "scenarios": [
-      "architecture-005"
+      "requirement-ownership"
     ],
     "paths": [
-      "implementation/warlock/src/Effects.elm",
-      "implementation/warlock/src/Shell.elm",
-      "implementation/warlock/src/GeometryProjection.elm",
-      "implementation/warlock/src/OutputController.elm",
-      "implementation/warlock/src/SurfaceController.elm",
-      "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/src/TaskbarShell.elm",
-      "implementation/warlock/src/UInt64.elm",
-      "implementation/warlock/qa/AuthorityTupleReplay.elm",
-      "implementation/warlock/qa/authority-tuple.cjs",
-      "implementation/warlock/src/UnsentOperation.elm"
+      "implementation/warlock/qa/check-registry-admission.py"
     ],
-    "before": "Original ARC005 architecture-005 is unadjudicated despite an existing shared identity-bearing serializer. No current full-authority-tuple bridge trace with exact artifact hashes and matching scenario receipts has been independently adjudicated.",
-    "after": "Close the complete original ARC005 EARS only if actual production owning-route bridge traces preserve all seven distinct full-width authority fields for both protocol construction paths and every operation; retain negative controls and matching bridge receipts. Repair only a demonstrated source defect, without inventing native execution or port acceptance.",
+    "before": "REV005 is unadjudicated. Actual contributor admission pins registry bytes but has no explicit live task/traceability mapping check; missing-mapping admission must be tested with complete positive controls before any fix.",
+    "after": "Original registry/task/traceability bijection and independent nonempty role assignments are enforced before participant admission writes; unchanged original REV005 closes only after direct positive/negative transaction evidence and independent review. This is development workflow behavior, not a GUI feature.",
     "verification": [
-      "Root protected pinned actual owning Elm route, both protocol paths and all operation constructors, exact raw serialized envelope vs independently known input tuple, canonical full-width strings and no-dispatch negatives, matching bridge scenario receipts, artifact hashes and immutable source commit; independent complete original oracle disposition. No native execution claim."
+      "Root protected actual contributor start in isolated Git fixtures with exact frozen inputs, independent242/417 and task/trace mapping cross-check, missing/duplicate/foreign/mismatch cases, no participant/directory mutation on refusal, meaningful seeded variants and retained RED; full immutable checker+fixture+registry source tuple and independent original EARS verdict."
     ],
     "owner": "root-agentbus",
-    "participantRecord": ".warlock-contributor/authority-tuple.json",
-    "currentOutcome": "Whole original ELM-ARC-005 and architecture-005 accepted on immutable d3a57508ab7974e96e9a631bcd1f5b39b1f6d1d4 by reviewer, using literal permitted bridge verification."
+    "participantRecord": ".warlock-contributor/registry-admission.json",
+    "currentOutcome": "Whole original REV005 and requirement-ownership accepted on20df98fefb509ca935d34dc044d0e6664d17a45e; administrative gate repair."
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -3068,6 +3058,41 @@
       },
       "selectedId": "window-effect-authority-tuple",
       "outcome": "UI007 source fix committed and published d60fc181d904878224d43aaf960652d902297c9f; component verified, original native/keyboard/AT remains partial. User requested full original EARS closure per slice; next selected original explicitly permits bridge evidence."
+    },
+    {
+      "atUTC": "2026-10-31T23:15:45.686328+00:00",
+      "previousSlice": {
+        "id": "window-effect-authority-tuple",
+        "requirements": [
+          "ELM-ARC-005"
+        ],
+        "scenarios": [
+          "architecture-005"
+        ],
+        "paths": [
+          "implementation/warlock/src/Effects.elm",
+          "implementation/warlock/src/Shell.elm",
+          "implementation/warlock/src/GeometryProjection.elm",
+          "implementation/warlock/src/OutputController.elm",
+          "implementation/warlock/src/SurfaceController.elm",
+          "implementation/warlock/src/Desktop.elm",
+          "implementation/warlock/src/TaskbarShell.elm",
+          "implementation/warlock/src/UInt64.elm",
+          "implementation/warlock/qa/AuthorityTupleReplay.elm",
+          "implementation/warlock/qa/authority-tuple.cjs",
+          "implementation/warlock/src/UnsentOperation.elm"
+        ],
+        "before": "Original ARC005 architecture-005 is unadjudicated despite an existing shared identity-bearing serializer. No current full-authority-tuple bridge trace with exact artifact hashes and matching scenario receipts has been independently adjudicated.",
+        "after": "Close the complete original ARC005 EARS only if actual production owning-route bridge traces preserve all seven distinct full-width authority fields for both protocol construction paths and every operation; retain negative controls and matching bridge receipts. Repair only a demonstrated source defect, without inventing native execution or port acceptance.",
+        "verification": [
+          "Root protected pinned actual owning Elm route, both protocol paths and all operation constructors, exact raw serialized envelope vs independently known input tuple, canonical full-width strings and no-dispatch negatives, matching bridge scenario receipts, artifact hashes and immutable source commit; independent complete original oracle disposition. No native execution claim."
+        ],
+        "owner": "root-agentbus",
+        "participantRecord": ".warlock-contributor/authority-tuple.json",
+        "currentOutcome": "Whole original ELM-ARC-005 and architecture-005 accepted on immutable d3a57508ab7974e96e9a631bcd1f5b39b1f6d1d4 by reviewer, using literal permitted bridge verification."
+      },
+      "selectedId": "registry-admission-ownership",
+      "reason": "Original REV005 actual missing-mapping gate repaired and independently accepted; administrative original EARS, not GUI delivery."
     }
   ],
   "museRegulator": {
@@ -3149,7 +3174,7 @@
     "authorizationRecord": "/home/charles/.local/state/warlock-team/20261028/muse-supervision/preparation-authorization.json",
     "futurePausesProtected": true,
     "scopeLimit": "Preparation source/tool work is permitted; original native/release gates remain. No acceptance transfer, progress-timer reset, active-original-slice replacement or stopped-investigation reset.",
-    "currentRecord": ".warlock-contributor/authority-tuple.json",
+    "currentRecord": ".warlock-contributor/registry-admission.json",
     "nativeFeasibility": {
       "status": "stopped",
       "qualificationOnlyIterations": 2,
@@ -3194,20 +3219,20 @@
     "roles": {
       "lead": "integration and serialized protected checks",
       "reviewer": "independent readiness and source review",
-      "elm-impl": "actual production authority bridge fixture",
-      "elm-tests": "independent BigInt oracle and negative-case assertions",
-      "terra-browser": "raw authority input provenance audit; no browser needed",
-      "sol-docs": "authority tuple reference",
-      "terra-contracts": "operation/serializer correspondence",
-      "haiku-tools": "artifact and protected runner closure",
-      "haiku-originals": "exact original bridge oracle and scenario receipt obligations",
-      "muse": "bounded original EARS continuity observer"
+      "elm-impl": "contributor admission checker source",
+      "elm-tests": "actual isolated admission regression",
+      "terra-browser": "registry/task/trace format audit",
+      "sol-docs": "admission reference",
+      "terra-contracts": "shared plugin fixture compatibility and test source audit",
+      "haiku-originals": "literal original administrative oracle",
+      "muse": "bounded EARS continuity observation",
+      "terra-artifacts": "fixed runner and artifact closure"
     },
-    "externalProcessReceipts": ".warlock-contributor/arc005-external-launch-receipts.json",
+    "externalProcessReceipts": ".warlock-contributor/rev005-external-launch-receipts.json",
     "authAcknowledgements": "AgentBus live log; process launch alone is not successful authentication",
     "singleProductSlice": true,
     "noDuplicateCoordinator": true,
-    "currentSlice": "ELM-ARC-005 architecture-005"
+    "currentSlice": "ELM-REV-005 requirement-ownership"
   },
   "currentGoalTelemetry": {
     "observedUTC": "2026-10-31T22:33:43Z",
@@ -3219,12 +3244,13 @@
     "scope": "Current host goal telemetry; not a daily usage figure or feature count"
   },
   "currentOriginalClosure": {
-    "requirement": "ELM-ARC-005",
-    "scenario": "architecture-005",
+    "requirement": "ELM-REV-005",
+    "scenario": "requirement-ownership",
     "accepted": true,
-    "acceptance": "docs/warlock-build-loop/v2/authority-tuple-acceptance-20261031.json",
+    "acceptance": "docs/warlock-build-loop/v2/registry-admission-acceptance-20261031.json",
+    "administrative": true,
     "nativeExecution": false,
-    "haskellPortAcceptance": false,
     "releaseAcceptance": false
-  }
+  },
+  "nextConcreteAction": "Requalify pinned GHC9.6.7/Cabal capability on this host and continue actual Haskell backend receipt/cancellation integration against an original EARS, preserving HOSTSTOP2 and native gates."
 }

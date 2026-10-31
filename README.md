@@ -249,6 +249,8 @@ Current development now preserves window-action feedback while Applications is o
 
 Original ARC005 authority-tuple serialization is [accepted on its permitted bridge oracle](docs/warlock-build-loop/v2/authority-tuple-acceptance-20261031.json), including source-bound traces and independent review. This does not qualify native mutation or the Haskell port.
 
+The contributor checker now [blocks incomplete requirement mappings before admission](docs/warlock/reference/requirement-admission.md). Original REV005 is accepted on actual positive/negative admission evidence; this is administrative verification.
+
 The standalone Haskell packages use GHC 9.6.7 and installed dependencies. Follow the build and check instructions for [elf-observation](implementation/warlock/haskell/elf-observation/README.md), [held-document](implementation/warlock/haskell/held-document/README.md), and [process-custody](implementation/warlock/haskell/process-custody/README.md).
 
 Run the checks for the components you change using their instructions and the [verification guide](docs/warlock/how-to/verify-selected-change.md). See the [contribution guide](CONTRIBUTING.md) for the workflow.
