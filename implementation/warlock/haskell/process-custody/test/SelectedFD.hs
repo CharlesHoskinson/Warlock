@@ -15,9 +15,10 @@ import System.Environment (getArgs)
 import System.Exit (exitFailure)
 import System.IO (hFlush, hSeek, SeekMode(AbsoluteSeek), openBinaryTempFile)
 import System.Posix.Files (deviceID, fileID, fileSize, getFdStatus)
-import System.Posix.IO (closeFd, handleToFd, queryFdOption, setFdOption, FdOption(CloseOnExec))
+import System.Posix.IO (dup,closeFd, handleToFd, queryFdOption, setFdOption, FdOption(CloseOnExec))
 import System.Posix.Types (Fd(..))
 import Warlock.Capture.Process.Internal
+import Warlock.Capture.Process.Whitelist (trustedBorrowedPlan, childDestinations)
 
 check :: String -> Bool -> IO ()
 check name condition = unless condition (putStrLn (name ++ ": FAIL") >> exitFailure) >> putStrLn (name ++ ": PASS")
@@ -36,6 +37,13 @@ withFileFd bytes use = bracket acquire release (\(_,fd) -> use fd)
    setFdOption fd CloseOnExec True
    pure (path,fd)
   release (path,fd) = closeFd fd >> removeFile path
+
+withCopies :: Int -> Fd -> ([Fd] -> IO a) -> IO a
+withCopies count source use
+ | count<=0 = use []
+ | otherwise = bracket (dup source) closeFd $ \fd -> do
+    setFdOption fd CloseOnExec True
+    withCopies (count-1) source (\rest -> use (fd:rest))
 
 main :: IO ()
 main = do
@@ -63,12 +71,26 @@ main = do
    successState <- status owner
    check "selected descriptors and sentinel" (case operation success of Right captured -> C.isInfixOf "selected child descriptor 3: PASS" (output captured) && C.isInfixOf "selected child descriptor 4: PASS" (output captured) && C.isInfixOf "unselected sentinel identities absent: PASS" (output captured) && C.isInfixOf "no inherited sockets: PASS" (output captured) && diagnostics captured == "selected-fd-child-stderr"; _ -> False)
    check "parent selected CLOEXEC unchanged" (firstBefore && secondBefore && firstAfter && secondAfter && successState == Available)
+   withCopies 256 first $ \copies -> do
+    flagsBefore <- mapM (\fd -> queryFdOption fd CloseOnExec) copies
+    let fullRows=[row number firstStatus "selected-alpha" | number<-[3..258 :: Int]]
+        fullCommand=[show fullRows,show forbidden,"","ok"]
+        expected=["selected destinations contiguous: PASS"]++["selected child descriptor "++show number++": PASS" | number<-[3..258 :: Int]]++["unselected sentinel identities absent: PASS","no inherited sockets: PASS","explicit standard input: PASS"]
+    full <- runFixturePinnedFDsObserved owner child childHash fullCommand copies 65536 5000000
+    fullState <- status owner
+    flagsAfter <- mapM (\fd -> queryFdOption fd CloseOnExec) copies
+    check "256 real selected descriptors inherited exactly" (case operation full of Right captured -> C.lines (output captured)==map C.pack expected && diagnostics captured=="selected-fd-child-stderr" && fullState==Available; _ -> False)
+    check "256 parent descriptor flags unchanged" (and flagsBefore && flagsAfter==flagsBefore)
    failure <- runFixturePinnedFDsObserved owner child childHash (command "exit7") [first,second] 65536 5000000
    check "nonzero preserves diagnostic" (operation failure == Left (Unsuccessful 7) && case capturedOutput failure of Just captured -> diagnostics captured == "selected-fd-child-stderr"; Nothing -> False)
    duplicate <- runFixturePinnedFDsObserved owner child childHash (command "ok") [first,first] 65536 5000000
    check "duplicate source refused" (operation duplicate == Left BadArguments && capturedOutput duplicate == Nothing)
-   tooMany <- runFixturePinnedFDsObserved owner child childHash (command "ok") (map Fd [3..131]) 65536 5000000
-   check "129 sources refused without truncation" (operation tooMany == Left BadArguments && capturedOutput tooMany == Nothing)
+   let boundary = map Fd [3..258]
+   check "256 sources retain every contiguous child destination" (case trustedBorrowedPlan boundary of Right plan -> childDestinations plan == [3..258]; Left _ -> False)
+   tooMany <- runFixturePinnedFDsObserved owner child childHash (command "ok") (map Fd [3..259]) 65536 5000000
+   check "257 sources refused without truncation" (operation tooMany == Left BadArguments && capturedOutput tooMany == Nothing)
+   afterTooMany <- status owner
+   check "257 sources do not acquire Owner" (afterTooMany == Available)
    expired <- runFixturePinnedFDsObservedHook owner child childHash (command "ok") [first,second] 65536 10000 (\stage -> if stage == "before-spawn" then threadDelay 30000 else pure ())
    expiredState <- status owner
    check "expired D refuses spawn" (operation expired == Left TimedOut && expiredState == Available)

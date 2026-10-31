@@ -32,7 +32,7 @@ data SelectedFDPlan = SelectedFDPlan [Fd]
 -- every borrowed source lease across this call and the resulting publication.
 trustedBorrowedPlan :: [Fd] -> Either String SelectedFDPlan
 trustedBorrowedPlan fds
- | null fds || length fds > 128 = Left "selected count outside bounds"
+ | null fds || length fds > 256 = Left "selected count outside bounds"
  | any (\(Fd fd) -> fd < 0) fds = Left "negative source descriptor"
  | length (nub fds) /= length fds = Left "duplicate source descriptor"
  | otherwise = Right (SelectedFDPlan fds)
