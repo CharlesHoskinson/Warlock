@@ -32,7 +32,7 @@ Integration loads legacy CSS in its layer, D01 tokens/base/focus, then this styl
 
 ## Renderer requirements
 
-Apply [staged-renderer-label.patch](staged-renderer-label.patch) to the staged `SurfaceRenderer.elm` and rebuild both renderer bundles. [SurfaceRenderer.elm](SurfaceRenderer.elm) is the complete patched staged source for review. The repository-source patch remains available as [renderer-label.patch](renderer-label.patch). It inserts an associated label as a separately keyed sibling, preserving the input key, ID, accessible name and composition handlers. The repository renderer and the currently compiled test drive do not yet include this patch. Typed outcome and unavailable cues require semantic renderer nodes; CSS does not derive them from prose. The [launcher test-drive scenario](../../test-drive/index.html?scenario=launcher) opens Applications. The [scenario data](scenario.json) records the source-backed workflow. The static Submitted projection documents wording only, since the source closes Applications after submission.
+The renderer emits a visible `label.launcher-search-label` immediately before the search field as a separately keyed sibling, associated through `for`. The input keeps its key, ID, accessible name and composition handlers. The repository renderer and the compiled test drive both emit the label. Typed outcome and unavailable cues require semantic renderer nodes; CSS does not derive them from prose. The [launcher test-drive scenario](../../test-drive/index.html?scenario=launcher) opens Applications. The [scenario data](scenario.json) records the source-backed workflow. The static Submitted projection documents wording only, since the source closes Applications after submission.
 
 ## Concept studies
 
