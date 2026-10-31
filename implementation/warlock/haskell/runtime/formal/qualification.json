@@ -1,0 +1,25 @@
+{
+  "scope": "Bounded abstract registration safety and source correspondence; not kernel, native, GUI, liveness or original acceptance",
+  "sourceHashes": {
+    "current_registration.qnt": "7d2cb45439ca34535f66d8204202e3616538fd5e9838413187b95827a55b6aa2",
+    "current_registration_test.qnt": "e1322319778547a683b03989b05efcef0c4a9533f22c6a1fee2c7950a9f1ca57"
+  },
+  "executedPrivateSource": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/root-del010-registration-review-v3",
+  "publicSourceDifference": "Header comments only; all noncomment lines equal qualified private Rootv3 source. Public packaging and typecheck receipts are separate from these retained private model runs.",
+  "evidence": {
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/del010-registration-quint-1793452574863284584/report.json": "0eb5b54ce35e5fb2cafb99faa77c32cbd4d05006859d4ba24858fe64e437f405",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/del010-registration-quint-1793452677711560239/report.json": "7b7d2f30935d75427301d5c673a1b34050b4123d976d73d28b39f596752eea26",
+    "/home/charles/.local/state/warlock-team/20261028/native-rebuild/elm-haskell-redesign-20261030/del010-registration-quint-1793452550805445084/report.json": "7de02eb4f053042b9e80ae1874f9bd9290dbfd56d0fbfbb6e87063c888ff9e20"
+  },
+  "directed": "23 initial individually selected cases passed; four strengthened observer cases then passed without rerunning unaffected cases.",
+  "sample": {
+    "samples": 10000,
+    "steps": 30,
+    "seed": 20261031,
+    "safety": "six conjuncts after strengthening, no counterexample observed",
+    "coverage": "11 aggregate state witnesses all nonzero; not per-action sample coverage or exhaustive verification."
+  },
+  "observerCorrection": "currentIsPublished was one-way; add liveIsCurrent and require oldCleanupMutant violate safety, while approved/current-cleanup/prior-admitted-drain cases satisfy safety. Production behavior unchanged.",
+  "originalAccepted": false,
+  "nativeAccepted": false
+}

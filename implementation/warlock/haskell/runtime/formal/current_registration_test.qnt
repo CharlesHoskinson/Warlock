@@ -1,0 +1,27 @@
+// Directed registration witnesses and model-policy sensitivity controls.
+module current_registration_test {
+ import current_registration.* from "./current_registration"
+ run approvedPeer = init.then(reserve(1)).then(buildScope(1)).then(install(1)).then(checkPeer(1)).then(claim(1)).then(callbackDone(1)).expect(s.claims == 1 and s.delivered == 1 and s.lastClaimSafe).expect(safety)
+ run unrelatedPeer = init.then(reserve(1)).then(buildScope(1)).then(install(1)).then(present(CrossUser)).then(rejectPeer(1)).expect(s.claims == 0 and s.delivered == 0 and s.checkedFor == -1)
+ run wrongSession = init.then(reserve(1)).then(buildScope(1)).then(install(1)).then(present(ForeignSession)).then(rejectPeer(1)).expect(s.claims == 0 and s.delivered == 0)
+ run expiredPeer = init.then(reserve(1)).then(buildScope(1)).then(install(1)).then(present(ExpiredSession)).then(rejectPeer(1)).expect(s.claims == 0)
+ run wrongSender = init.then(reserve(1)).then(buildScope(1)).then(install(1)).then(present(WrongSender)).then(rejectPeer(1)).expect(s.claims == 0)
+ run wrongStart = init.then(reserve(1)).then(buildScope(1)).then(install(1)).then(present(WrongStart)).then(rejectPeer(1)).expect(s.claims == 0)
+ run wrongExecutable = init.then(reserve(1)).then(buildScope(1)).then(install(1)).then(present(WrongExecutable)).then(rejectPeer(1)).expect(s.claims == 0)
+ run wrongEndpoint = init.then(reserve(1)).then(buildScope(1)).then(install(1)).then(present(WrongEndpoint)).then(rejectPeer(1)).expect(s.claims == 0)
+ run sourceChanged = init.then(reserve(1)).then(buildScope(1)).then(install(1)).then(switchFragment).then(rejectPeer(1)).expect(s.claims == 0 and s.sourceFault)
+ run retireBeforeBuild = init.then(reserve(1)).then(retireRegistration(1)).then(buildScope(1).fail())
+ run retireAfterBuild = init.then(reserve(1)).then(buildScope(1)).then(retireRegistration(1)).then(install(1).fail())
+ run newerBlocksOld = init.then(reserve(1)).then(buildScope(1)).then(reserve(2)).then(buildScope(2)).then(install(2)).then(install(1).fail())
+ run retiredNewerStillBlocksOld = init.then(reserve(1)).then(buildScope(1)).then(reserve(2)).then(buildScope(2)).then(install(2)).then(retireRegistration(2)).expect(s.high == 2 and s.current == 0).then(install(1).fail())
+ run oldCleanupKeepsNew = init.then(reserve(1)).then(buildScope(1)).then(install(1)).then(reserve(2)).then(buildScope(2)).then(install(2)).then(retireRegistration(1)).expect(s.current == 2 and s.second.scope == Live and s.high == 2).expect(safety)
+ run replacementRejectsChecked = init.then(reserve(1)).then(buildScope(1)).then(install(1)).then(checkPeer(1)).then(reserve(2)).then(buildScope(2)).then(install(2)).then(refuseClaim(1)).expect(s.claims == 0 and s.current == 2)
+ run oldCallbackDrains = init.then(reserve(1)).then(buildScope(1)).then(install(1)).then(checkPeer(1)).then(claim(1)).then(reserve(2)).then(buildScope(2)).then(install(2)).expect(s.first.scope == Draining and s.first.unreaped and s.second.scope == Live).then(callbackDone(1)).then(reap(1)).expect(s.delivered == 1 and s.current == 2 and not(s.first.unreaped)).expect(safety)
+ run noReapBeforeDrain = init.then(reserve(1)).then(buildScope(1)).then(install(1)).then(checkPeer(1)).then(claim(1)).then(retireRegistration(1)).then(reap(1).fail())
+ run exhaustion = init.then(nearExhaustion).then(reserve(1)).expect(s.first.generation == 2 and s.nextGeneration == 0).then(reserve(2).fail())
+ run publishBeforeRevokeMutant = init.then(reserve(1)).then(buildScope(1)).then(install(1)).then(reserve(2)).then(buildScope(2)).then(brokenPublishBeforeRevoke(2)).expect(not(oneLive))
+ run oldCleanupMutant = init.then(reserve(1)).then(buildScope(1)).then(install(1)).then(reserve(2)).then(buildScope(2)).then(install(2)).then(brokenOldCleanup).expect(s.current == 0 and s.second.scope == Live).expect(not(liveIsCurrent) and not(safety))
+ run uidOnlyMutant = init.then(reserve(1)).then(buildScope(1)).then(install(1)).then(present(WrongSender)).then(brokenUidOnly(1)).expect(s.claims == 1 and not(claimWasCurrent))
+ run creatorOnlyMutant = init.then(reserve(1)).then(buildScope(1)).then(install(1)).then(present(WrongSender)).then(brokenCreatorOnly(1)).expect(s.claims == 1 and not(claimWasCurrent))
+ run staleClaimMutant = init.then(reserve(1)).then(buildScope(1)).then(install(1)).then(checkPeer(1)).then(reserve(2)).then(buildScope(2)).then(install(2)).then(brokenStaleClaim(1)).expect(s.claims == 1 and not(claimWasCurrent))
+}
