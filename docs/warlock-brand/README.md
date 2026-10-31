@@ -6,7 +6,7 @@ Warlock is the desktop shell and window system built in this repository. Its bra
 
 - [Brand guide](v2/BRAND-GUIDE.md) and [design tokens](v2/tokens.json) ([CSS](v2/tokens.css))
 - [Warlock Design Language and live specimens](https://charleshoskinson.github.io/Warlock/)
-- [README images](readme/): [banner](readme/banner.png), [Elm architecture](readme/elm-architecture.png), [design language](readme/design-language.png), [portal](readme/portal.gif)
+- [README images](readme/): [banner](readme/banner.png), [Elm architecture](readme/elm-architecture.png), [design language](readme/design-language.png), [portal](readme/portal.gif); test drive screenshots of [Task View](readme/test-drive-task-view.png), [the window switcher](readme/test-drive-switcher.png), [Notifications](readme/test-drive-notifications.png), [Settings](readme/test-drive-settings.png) and [Files](readme/test-drive-files.png)
 - [Vector marks](v1/identity/warlock-mark.svg), [app icon](v1/identity/warlock-app-icon.svg) and [bundled fonts](v1/fonts/); the guide's identity section gives their Lacquer colours
 - [Design philosophy](PHILOSOPHY.md)
 - [Implementation status and remaining work](IMPLEMENTATION.md)
