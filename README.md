@@ -10,7 +10,7 @@ Warlock is an Elm desktop shell for Omarchy, bringing a Windows-style taskbar an
 
 The test drive is the quickest way to try Warlock: the real compiled Elm interface on a simulated Omarchy desktop, right in your browser. Contributors build the native shell from source against matching Hyprland components, and a packaged Omarchy install is on the roadmap.
 
-![The Warlock desktop: taskbar across the top and Task View open over the workspace](implementation/warlock/qa/evidence/live-motion/motion-task-view.png)
+![The Warlock desktop in the test drive: taskbar across the top and Task View open over the workspace](docs/warlock-brand/readme/test-drive-task-view.png)
 
 Open an application and Warlock's portal brings it in: a ring of red ember fragments ignites, expands and resolves into the new window.
 
@@ -38,7 +38,7 @@ Open Applications from the taskbar and type a name to find an installed applicat
 
 Use Alt-Tab to move through open windows. A clear highlight shows the selected window before you switch.
 
-![Window switcher with the selected window highlighted](implementation/warlock/qa/evidence/accessibility/native-switcher-selected.png)
+![Window switcher with the selected window marked by corner brackets](docs/warlock-brand/readme/test-drive-switcher.png)
 
 ### Task View and workspaces
 
@@ -52,19 +52,19 @@ Open a window group to recognize its windows by their previews, with icons when 
 
 Open Notifications from the taskbar to read messages and their history. Act on a live notification, dismiss it, or turn on do not disturb.
 
-![Notification history in the Warlock popup](implementation/warlock/qa/evidence/notifications/popup-notification-history.png)
+![Notifications with live messages, their actions and an expired history entry](docs/warlock-brand/readme/test-drive-notifications.png)
 
 ### Settings
 
 Open Settings from the taskbar to change appearance, text size, and motion. Review changes before saving them.
 
-![Warlock Settings showing appearance controls](implementation/warlock/qa/evidence/layer-appearance/popup-settings-after-restart.png)
+![Warlock Settings with theme and text size choices](docs/warlock-brand/readme/test-drive-settings.png)
 
 ### Files
 
 Open Files from the taskbar to reach Home, collections, or a folder you enter. Warlock opens the location in Omarchy Files and can reuse its existing window.
 
-![Warlock Files panel beside the existing Files application](implementation/warlock/qa/evidence/files/popup-files-existing-explorer.png)
+![Warlock Files with collections and a labelled folder path](docs/warlock-brand/readme/test-drive-files.png)
 
 ### System menu
 
