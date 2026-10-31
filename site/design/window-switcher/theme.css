@@ -1,7 +1,11 @@
 /* Apache-2.0. Switcher rules supplement shared foundations. */
 @layer layouts {
   html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] [role="listbox"] { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .surface-controls > [role="group"] { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr)); gap: 8px; min-width: 0; }
+  /* The action group reads its own available width: four equal columns, two, or one; never an uneven 3 + 1. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .surface-controls { container-type: inline-size; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .surface-controls > [role="group"] { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; min-width: 0; }
+  @container (min-width: 21rem) { html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .surface-controls > [role="group"] { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @container (min-width: 42rem) { html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .surface-controls > [role="group"] { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 }
 @layer components {
   html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .surface-controls { gap: 16px; }
@@ -12,6 +16,8 @@
   html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .surface-controls > [role="group"] :is([data-surface-control="control:reverse"], [data-surface-control="control:forward"]) { border-color: var(--wl-sys-color-border-essential); }
   html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] [data-surface-control="control:commit"]:not(:disabled):not([aria-disabled="true"]) { color:var(--wl-sys-color-on-action); background:var(--wl-sys-color-action-fill); border-color:var(--wl-sys-color-on-action); }
   html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"][data-theme="dawn"] [data-surface-control="control:commit"]:not(:disabled):not([aria-disabled="true"]) { border-color:var(--wl-sys-color-brand-text); }
+  /* Unavailable Activate keeps a neutral boundary with the shared unavailable treatment. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .surface-controls > [role="group"] [data-surface-control="control:commit"]:is(:disabled,[aria-disabled="true"]) { border-color:var(--wl-sys-color-border-essential); background:var(--wl-sys-color-surface-recessed); color:var(--wl-sys-color-text-secondary); }
 }
 @layer states {
   html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] [role="option"][aria-selected="true"] { background: var(--wl-sys-color-surface-selected); }

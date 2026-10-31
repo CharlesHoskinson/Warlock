@@ -39,6 +39,12 @@
       if (!representative) sample.className = selector.slice(1);
       sample.removeAttribute('id');
       sample.style.cssText = 'display:block;position:static;box-sizing:border-box;width:100%;height:auto;min-height:0;max-height:none;white-space:normal;overflow:visible;overflow-wrap:anywhere;margin:0;';
+      /* Keep the inline padding of the measured slot, including the reserved unavailable-cue slot on labels. */
+      if (representative) {
+        const slot = getComputedStyle(representative);
+        sample.style.paddingInlineStart = slot.paddingInlineStart;
+        sample.style.paddingInlineEnd = slot.paddingInlineEnd;
+      }
       probe.append(sample);
       const candidates = examples.map(e => e.textContent);
       if (i === 0) candidates.push(...stateVariants);
@@ -63,16 +69,22 @@
   function refresh(popup) { retire(popup); requestAnimationFrame(() => measure(popup)); }
   document.addEventListener('pointerdown', () => { held = true; }, true);
   for (const event of ['pointerup', 'pointercancel']) document.addEventListener(event, () => { held = false; pending.forEach(measure); }, true);
+  /* Observer callbacks only record what changed. retire() changes attributes that resize the observed popup, so the
+     work runs in the next animation frame, outside resize-observer delivery. */
   const widths = new WeakMap();
-  const observer = new ResizeObserver(entries => entries.forEach(({target, contentRect}) => {
-    if (widths.get(target) !== contentRect.width) { widths.set(target, contentRect.width); refresh(target); }
-  }));
+  const observer = new ResizeObserver(entries => {
+    const changed = [];
+    entries.forEach(({target, contentRect}) => {
+      if (widths.get(target) !== contentRect.width) { widths.set(target, contentRect.width); changed.push(target); }
+    });
+    if (changed.length) requestAnimationFrame(() => changed.forEach(refresh));
+  });
   popups.forEach(popup => {
     const sentinel = document.createElement('span');
     sentinel.textContent = 'Measurement sample';
     sentinel.style.cssText = 'position:absolute;visibility:hidden;pointer-events:none;white-space:nowrap;width:max-content;';
     popup.append(sentinel);
-    new ResizeObserver(() => refresh(popup)).observe(sentinel);
+    new ResizeObserver(() => requestAnimationFrame(() => refresh(popup))).observe(sentinel);
     observer.observe(popup); refresh(popup);
   });
   window.addEventListener('resize', () => popups.forEach(refresh));

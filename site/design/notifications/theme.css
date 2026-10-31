@@ -37,20 +37,14 @@
   html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > button { scroll-margin:6px; }
 }
 
-/* Documentation framing; the renderer surface retains its own layout. */
-@layer layouts {
- .wl-notification-doc { max-width:1100px; margin-inline:auto; padding:48px 24px 64px; }
- .wl-notification-doc > h1 { margin-block:8px 0; }
- .wl-notification-doc > h2 { margin-block:48px 8px; }
- .wl-notification-tools { display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-block-start:24px; }
- .wl-notification-tools select { min-height:36px; padding:6px 12px; color:var(--wl-sys-color-text); background:var(--wl-sys-color-surface); border:1px solid var(--wl-sys-color-border-essential); border-radius:6px; font:inherit; }
- .wl-notification-intro, .wl-notification-example > p { color:var(--wl-sys-color-text-secondary); }
- .wl-notification-gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr)); gap:40px 24px; align-items:start; margin-block-start:24px; }
- .wl-notification-example { min-width:0; }
- .wl-notification-example > h3 { margin-block:0 8px; }
- .wl-notification-example > p { margin-block:0 16px; }
- .wl-notification-stage { max-width:480px; }
- .wl-notification-runtime { height:420px; }
- .wl-notification-runtime > .surface-popup { height:100%; }
- @media (max-width:600px) { .wl-notification-doc { padding:32px 16px 48px; } }
+@layer components {
+  /* Notification actions and Dismiss are neutral secondary actions; session utilities above them stay quiet. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > button[data-surface-control^="notification:"] { border-color:var(--wl-sys-color-border-essential); background:var(--wl-sys-color-surface); color:var(--wl-sys-color-text); }
+}
+@layer states {
+  /* An expired focused action keeps its boundary and reads as unavailable: recessed fill, secondary text and the shared cue. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > button[data-surface-control^="notification:"]:is(:disabled,[aria-disabled="true"]) { border-color:var(--wl-sys-color-border-essential); background:var(--wl-sys-color-surface-recessed); color:var(--wl-sys-color-text-secondary); }
+}
+@layer accessibility {
+  @media (forced-colors:active) { html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > button[data-surface-control^="notification:"] { border-color:ButtonText; } html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > button[data-surface-control^="notification:"]:is(:disabled,[aria-disabled="true"]) { border-color:GrayText; } }
 }

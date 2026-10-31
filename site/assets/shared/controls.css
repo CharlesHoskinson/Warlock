@@ -16,28 +16,49 @@
  @media (pointer:coarse) { html[data-warlock-design="v1"] .surface-popup .surface-controls button { min-height:2.75rem; } html[data-warlock-design="v1"] .surface-popup button:has(.control-detail:not(:empty)) { min-height:3.75rem; } }
  @media (max-height:480px) { html[data-warlock-design="v1"] .surface-popup { overflow:auto; } html[data-warlock-design="v1"] .surface-popup .surface-controls { overflow:visible; flex:none; } }
 }
+@layer components {
+ /* Unavailable cue slot: a constant inline-end reserve on every popup label, so the cue never changes control dimensions. */
+ html[data-warlock-design="v1"] .surface-popup button > .control-label { padding-inline-end:calc(.75rem + 8px); }
+}
 @layer states {
  html[data-warlock-design="v1"] .surface-popup button { transition:none; }
  @media (hover:hover) and (pointer:fine) {
   html[data-warlock-design="v1"] .surface-popup button:not(:disabled):not([aria-disabled="true"]):hover { background:var(--wl-sys-color-surface-hover); }
   html[data-warlock-design="v1"] .surface-popup button:not(:disabled):not([aria-disabled="true"]):active { background:var(--wl-sys-color-surface-pressed); }
-  html[data-warlock-design="v1"] :is(.surface-popup[data-motion="full"], [data-motion="full"] .surface-popup:not([data-motion])) button:not(:disabled):not([aria-disabled="true"]) { transition:background-color 90ms cubic-bezier(.2,0,0,1); }
-  html[data-warlock-design="v1"] :is(.surface-popup[data-motion="full"], [data-motion="full"] .surface-popup:not([data-motion])) button:not(:disabled):not([aria-disabled="true"]):active { transition-duration:60ms; }
+  /* Pointer feedback only: the transition exists while a quiet control is hovered or pressed. A control entering a
+     candidate, selected, unavailable or busy state computes without a transition and changes at once; a selection leaving
+     a hovered control settles over the 90ms pointer timing. */
+  html[data-warlock-design="v1"] :is(.surface-popup[data-motion="full"], [data-motion="full"] .surface-popup:not([data-motion])) button:not(:disabled):not([aria-disabled="true"]):not([data-focus-only="true"]):not([aria-busy="true"]):not(:is([aria-current="true"],[aria-selected="true"],[aria-pressed="true"],[aria-checked="true"],[aria-expanded="true"])):hover { transition:background-color 90ms cubic-bezier(.2,0,0,1); }
+  html[data-warlock-design="v1"] :is(.surface-popup[data-motion="full"], [data-motion="full"] .surface-popup:not([data-motion])) button:not(:disabled):not([aria-disabled="true"]):not([data-focus-only="true"]):not([aria-busy="true"]):not(:is([aria-current="true"],[aria-selected="true"],[aria-pressed="true"],[aria-checked="true"],[aria-expanded="true"])):active { transition:background-color 60ms cubic-bezier(.2,0,0,1); }
  }
- html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] button[aria-current="true"] { background:var(--wl-sys-color-surface-selected); border-inline-start:3px solid var(--wl-sys-color-brand-text); }
+ /* Settings selection: background plus a 3px inset bar; border and padding stay constant. */
+ html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] button[aria-current="true"] { background:var(--wl-sys-color-surface-selected); }
+ html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] button[aria-current="true"]::before { content:""; position:absolute; inset-block:6px; inset-inline-start:0; inline-size:3px; border-radius:2px; background:var(--wl-sys-color-brand-text); pointer-events:none; }
  @media (hover:hover) and (pointer:fine) {
   html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] button[aria-current="true"]:not(:disabled):not([aria-disabled="true"]):hover { background:var(--wl-sys-color-surface-selected-hover); }
   html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] button[aria-current="true"]:not(:disabled):not([aria-disabled="true"]):active { background:var(--wl-sys-color-surface-selected-pressed); }
  }
  html[data-warlock-design="v1"] .surface-popup :is(button,input):focus-visible { outline:2px solid var(--wl-sys-color-focus); outline-offset:2px; box-shadow:0 0 0 2px var(--wl-sys-color-focus-gap); z-index:1; }
  html[data-warlock-design="v1"] .surface-popup button:is(:disabled,[aria-disabled="true"]) { opacity:1; color:var(--wl-sys-color-text-secondary); }
- /* A slash is decorative; native disabled or aria-disabled supplies semantics. */
- html[data-warlock-design="v1"] .surface-popup button:is(:disabled,[aria-disabled="true"])::after { content:""; display:inline-block; width:10px; height:10px; margin-inline-start:8px; border:1px solid currentColor; border-radius:50%; background:linear-gradient(135deg,transparent 44%,currentColor 45% 55%,transparent 56%); }
+ /* The slashed ring is decorative; native disabled or aria-disabled supplies semantics. It paints as the label's own
+    background inside the reserved slot, so button ::before and ::after stay free for selection, checks and diagrams. */
+ html[data-warlock-design="v1"] .surface-popup button:is(:disabled,[aria-disabled="true"]) > .control-label {
+  background-image:linear-gradient(135deg, transparent calc(50% - .75px), currentColor calc(50% - .75px) calc(50% + .75px), transparent calc(50% + .75px)), radial-gradient(circle closest-side, transparent calc(100% - 1.5px), currentColor calc(100% - 1.25px) calc(100% - .25px), transparent 100%);
+  background-repeat:no-repeat; background-origin:padding-box; background-clip:padding-box;
+  background-size:calc(.75rem - 4px) calc(.75rem - 4px), .75rem .75rem;
+  background-position:right 2px top .375rem, right 0 top .25rem;
+  background-position:right 2px top calc((1lh - .75rem) / 2 + 2px), right 0 top calc((1lh - .75rem) / 2);
+ }
+ html[data-warlock-design="v1"] .surface-popup button:is(:disabled,[aria-disabled="true"]) > .control-label:dir(rtl) { background-position:left 2px top calc((1lh - .75rem) / 2 + 2px), left 0 top calc((1lh - .75rem) / 2); }
 }
 @layer accessibility {
  html[data-warlock-design="v1"] :is(.surface-popup[data-effects="off"],.surface-popup[data-effects-tier="off"],.surface-popup[data-theme="high-contrast"], [data-effects="off"] .surface-popup, [data-effects-tier="off"] .surface-popup, [data-theme="high-contrast"] .surface-popup:not([data-theme="night"]):not([data-theme="dawn"])) { box-shadow:none; }
+ /* Reduced or unknown motion: zero-duration feedback, matching the effects precedence. */
+ html[data-warlock-design="v1"] :is(.surface-popup[data-motion="reduced"], [data-motion="reduced"] .surface-popup:not([data-motion])) button { transition:none; }
+ @media (prefers-reduced-motion:reduce) { html[data-warlock-design="v1"]:not([data-motion]) .surface-popup:not([data-motion]) button { transition:none; } }
  @media (forced-colors:active) {
   html[data-warlock-design="v1"] .surface-popup :is(button,input):focus-visible { forced-color-adjust:none; outline:2px solid Highlight; outline-offset:2px; box-shadow:0 0 0 2px Canvas; }
-  html[data-warlock-design="v1"] .surface-popup button:is(:disabled,[aria-disabled="true"])::after { background:none; border:1px solid CanvasText; border-radius:0; transform:rotate(45deg); width:2px; height:10px; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] button[aria-current="true"]::before { forced-color-adjust:none; background:CanvasText; }
+  html[data-warlock-design="v1"] .surface-popup button:is(:disabled,[aria-disabled="true"]) > .control-label { forced-color-adjust:none; color:GrayText; }
  }
 }
