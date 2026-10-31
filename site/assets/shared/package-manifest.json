@@ -1,0 +1,146 @@
+{
+  "package": "T01",
+  "source_revision": "bc3daf7b80ac7295a1ba1e56639a0e130e520a3c",
+  "reviewed_inputs_sha256": {
+    "design/foundations/tokens.json": "d183ade8c1b0d8e50fe0d0fbf1fc9f6ca26c3931c857bfcadd79e4d82f6383c1",
+    "design/foundations/tokens.css": "b776ae48d9c38cfb3cdd7ef7c7261a584c118b1c664554d24f61f9de906958db",
+    "design/foundations/contrast.json": "724dac39b4933a884eb3578faa5ff3bb7afef8afd0073a17632dc7468048ee12",
+    "design/foundations/spec.md": "7c6faa7aea074dfd04e64a8829e88eac7f02eae00aaaad59050a3317eac34735"
+  },
+  "assets": [
+    {
+      "source": "docs/warlock-brand/v1/fonts/inter-LICENSE.txt",
+      "destination": "assets/fonts/inter-LICENSE.txt",
+      "sha256": "262481e844521b326f5ecd053e59b98c8b2da78c8ee1bdbb6e8174305e54935a",
+      "bytes": 4380,
+      "license": "See bundled font notice",
+      "classification": "font notice",
+      "alt": "inter LICENSE",
+      "caption": "Warlock font notice."
+    },
+    {
+      "source": "docs/warlock-brand/v1/fonts/inter-variable.woff2",
+      "destination": "assets/fonts/inter-variable.woff2",
+      "sha256": "693b77d4f32ee9b8bfc995589b5fad5e99adf2832738661f5402f9978429a8e3",
+      "bytes": 352240,
+      "license": "See bundled font notice",
+      "classification": "font",
+      "alt": "inter variable",
+      "caption": "Warlock font."
+    },
+    {
+      "source": "docs/warlock-brand/v1/fonts/jetbrains-mono-OFL.txt",
+      "destination": "assets/fonts/jetbrains-mono-OFL.txt",
+      "sha256": "a76abf002c49097d146e86740a3105a5d00450b1592e820a1109a8c5680cd697",
+      "bytes": 4399,
+      "license": "See bundled font notice",
+      "classification": "font notice",
+      "alt": "jetbrains mono OFL",
+      "caption": "Warlock font notice."
+    },
+    {
+      "source": "docs/warlock-brand/v1/fonts/jetbrains-mono-regular.woff2",
+      "destination": "assets/fonts/jetbrains-mono-regular.woff2",
+      "sha256": "f1a7a03672cdd494ce0d5543fac6e4360fe22403c6de297fdc2e55a815f7baff",
+      "bytes": 92380,
+      "license": "See bundled font notice",
+      "classification": "font",
+      "alt": "jetbrains mono regular",
+      "caption": "Warlock font."
+    },
+    {
+      "source": "docs/warlock-brand/v1/fonts/provenance.json",
+      "destination": "assets/fonts/provenance.json",
+      "sha256": "f900a2c1d9e728dda1c305e7d8cebd9d7730eb4ac25f098c70734f389a37284c",
+      "bytes": 2270,
+      "license": "See bundled font notice",
+      "classification": "font notice",
+      "alt": "provenance",
+      "caption": "Warlock font notice."
+    },
+    {
+      "source": "docs/warlock-brand/v1/fonts/space-grotesk-OFL.txt",
+      "destination": "assets/fonts/space-grotesk-OFL.txt",
+      "sha256": "564ce565c371c5e5bbf286006565a7c9aa55a9f56e7ca58d56e05d649dd61a72",
+      "bytes": 4495,
+      "license": "See bundled font notice",
+      "classification": "font notice",
+      "alt": "space grotesk OFL",
+      "caption": "Warlock font notice."
+    },
+    {
+      "source": "docs/warlock-brand/v1/fonts/space-grotesk-bold.woff2",
+      "destination": "assets/fonts/space-grotesk-bold.woff2",
+      "sha256": "06d705cebbab916f0c0fe82b6c6f4cae06aa07fd6f5ee078421206040326ef63",
+      "bytes": 41780,
+      "license": "See bundled font notice",
+      "classification": "font",
+      "alt": "space grotesk bold",
+      "caption": "Warlock font."
+    },
+    {
+      "source": "docs/warlock-brand/v1/identity/warlock-app-icon.svg",
+      "destination": "assets/brand/identity/warlock-app-icon.svg",
+      "sha256": "fbde49888981e56f8c4fc1e08866d9dea23c9e2fd6eb9e28c592e0ec6a4ce640",
+      "bytes": 916,
+      "license": "Apache-2.0",
+      "classification": "identity",
+      "alt": "warlock app icon",
+      "caption": "Warlock identity."
+    },
+    {
+      "source": "docs/warlock-brand/v1/identity/warlock-mark-mono.svg",
+      "destination": "assets/brand/identity/warlock-mark-mono.svg",
+      "sha256": "502f572250f2e34921b75be5c76466dfaf4b008a33c48319858ed2008da17353",
+      "bytes": 899,
+      "license": "Apache-2.0",
+      "classification": "identity",
+      "alt": "warlock mark mono",
+      "caption": "Warlock identity."
+    },
+    {
+      "source": "docs/warlock-brand/v1/identity/warlock-mark.svg",
+      "destination": "assets/brand/identity/warlock-mark.svg",
+      "sha256": "856e7628774c3f2e9c39f33d9b9cd345679248f434dda8acf0955904e5817565",
+      "bytes": 839,
+      "license": "Apache-2.0",
+      "classification": "identity",
+      "alt": "warlock mark",
+      "caption": "Warlock identity."
+    },
+    {
+      "source": "docs/warlock-brand/readme/banner.png",
+      "destination": "assets/brand/readme/banner.png",
+      "sha256": "89ae0d84980eea082c868764cae8a8345feb94547e8130eb874fd345f34cb515",
+      "bytes": 617967,
+      "license": "Apache-2.0",
+      "classification": "illustration",
+      "alt": "banner",
+      "caption": "Warlock reference illustration."
+    },
+    {
+      "source": "docs/warlock-brand/readme/design-language.png",
+      "destination": "assets/brand/readme/design-language.png",
+      "sha256": "0652388eeb9fb552c64e8cb5ae6399ef54de41267043d6eb22da9b5a77a31f79",
+      "bytes": 700830,
+      "license": "Apache-2.0",
+      "classification": "illustration",
+      "alt": "design language",
+      "caption": "Warlock reference illustration."
+    },
+    {
+      "source": "docs/warlock-brand/readme/elm-architecture.png",
+      "destination": "assets/brand/readme/elm-architecture.png",
+      "sha256": "8c079f837924d5b6a5faaa483555d8bf92daa639e032043a47e76b3f7983f6f1",
+      "bytes": 617126,
+      "license": "Apache-2.0",
+      "classification": "illustration",
+      "alt": "elm architecture",
+      "caption": "Warlock reference illustration."
+    }
+  ],
+  "known_unavailable_assets": [
+    "docs/warlock-brand/readme/architecture.png",
+    "docs/warlock-brand/readme/assurance.png"
+  ]
+}

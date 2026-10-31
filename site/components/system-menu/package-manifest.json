@@ -1,0 +1,34 @@
+{
+  "package": "T04",
+  "source_commit": "bc3daf7b80ac7295a1ba1e56639a0e130e520a3c",
+  "assets": [
+    {
+      "source": "implementation/warlock/qa/evidence/system-menu/popup-system-menu-capabilities.png",
+      "destination": "components/system-menu/evidence/system-menu__popup-system-menu-capabilities.png",
+      "sha256": "3e3e10001792f0a77fb492b5f28b235cc9a3821bffa41ad7d70ae9f17cc111ae",
+      "bytes": 69573,
+      "license": "Apache License 2.0",
+      "classification": "native evidence",
+      "alt": "System shows volume presets, unavailable network, and power capabilities.",
+      "caption": "Native capture: System shows volume presets, unavailable network, and power capabilities."
+    }
+  ],
+  "route": {
+    "path": "components/system-menu/index.html",
+    "scenario": "system"
+  },
+  "sources": [
+    {
+      "path": "implementation/warlock/src/SystemMenu.elm",
+      "sha256": "cf44c66fe51a5d86f14e33a8235e04f178553261229fd51e0d81cbc35c944054"
+    },
+    {
+      "path": "implementation/warlock/src/Surface.elm",
+      "sha256": "a660a4641a9f834c6198bce1e8049b3dd0be40cb74be1cfe1d5e14cfd0cdaa1d"
+    },
+    {
+      "path": "implementation/warlock/src/SurfaceRenderer.elm",
+      "sha256": "f6c653573c1b73b32df132ada5033a1e34aa2cfa1a2dcbb42be4320a4a98a7b8"
+    }
+  ]
+}

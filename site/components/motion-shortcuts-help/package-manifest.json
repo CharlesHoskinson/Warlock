@@ -1,0 +1,48 @@
+{
+  "package": "T04",
+  "source_commit": "bc3daf7b80ac7295a1ba1e56639a0e130e520a3c",
+  "assets": [
+    {
+      "source": "implementation/warlock/qa/evidence/live-motion/live-motion-settings.png",
+      "destination": "components/motion-shortcuts-help/evidence/live-motion__live-motion-settings.png",
+      "sha256": "9c0c73f207453f8f0f838232096dfff21c77ce37d0129988ee2b75f548efd19f",
+      "bytes": 62444,
+      "license": "Apache License 2.0",
+      "classification": "native evidence",
+      "alt": "Settings displays the live motion preferences on the desktop.",
+      "caption": "Native capture: Settings displays the live motion preferences on the desktop."
+    },
+    {
+      "source": "implementation/warlock/qa/evidence/settings-help/keyboard-settings-help.png",
+      "destination": "components/motion-shortcuts-help/evidence/settings-help__keyboard-settings-help.png",
+      "sha256": "b7dd79f5ebdd6159f999bcbe83b986fe74c4799cfe3a9598d44528bc809d472f",
+      "bytes": 113670,
+      "license": "Apache License 2.0",
+      "classification": "native evidence",
+      "alt": "Settings help is open during a keyboard navigation session.",
+      "caption": "Native capture: Settings help is open during a keyboard navigation session."
+    }
+  ],
+  "route": {
+    "path": "components/motion-shortcuts-help/index.html",
+    "scenario": "settings"
+  },
+  "sources": [
+    {
+      "path": "implementation/warlock/src/Motion.elm",
+      "sha256": "e101862bae874426f0cf9aaf02340c6582abdeea21dec38c32003da7f94e8a69"
+    },
+    {
+      "path": "implementation/warlock/src/MotionPreferences.elm",
+      "sha256": "d3130d74c3172cb1808df38efd7a2cc267ba5ae346b564544661d3d539f5c560"
+    },
+    {
+      "path": "implementation/warlock/src/ShortcutPreferences.elm",
+      "sha256": "d8c1a63f199612161e078e0f6c7f75cbbfa190953e19325e50169debc425dcec"
+    },
+    {
+      "path": "implementation/warlock/src/Shortcuts.elm",
+      "sha256": "cfa79040387114e79b7a6cf51ca31aa4fbe569372ff1948105265adf90cd97a7"
+    }
+  ]
+}

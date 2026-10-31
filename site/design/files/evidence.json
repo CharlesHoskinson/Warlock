@@ -1,0 +1,68 @@
+{
+  "source_commit": "bc3daf7b80ac7295a1ba1e56639a0e130e520a3c",
+  "licence": "Apache-2.0",
+  "modules": [
+    "implementation/warlock/src/Files.elm",
+    "implementation/warlock/src/Desktop.elm",
+    "implementation/warlock/src/Surface.elm",
+    "implementation/warlock/src/Popup.elm",
+    "implementation/warlock/src/SurfaceRenderer.elm",
+    "implementation/warlock/qa/FilesReplay.elm"
+  ],
+  "selectors": [
+    ".surface-popup[data-mode=files]",
+    ".notification-text[data-files-content]",
+    ".launcher-search[data-surface-field=\"control:files-path\"]",
+    ".notification-text[data-files-content=\"files:location:state\"]",
+    "[data-surface-control=\"files:refresh\"]",
+    "[data-surface-control=\"files:home\"]",
+    "[data-surface-control^=\"files:collection:\"]",
+    "[data-surface-control=\"files:open-path\"]"
+  ],
+  "captures": [
+    {
+      "path": "evidence/files-collections.png",
+      "origin": "implementation/warlock/qa/evidence/files/files-collections.png",
+      "sha256": "5c87984ab4ea4f0658033827cbdcd9a46ce18fbddd3dd2ae2bbff15376cf16ae",
+      "classification": "native capture",
+      "caption": "Pending location request; destination actions are unavailable."
+    },
+    {
+      "path": "evidence/popup-files-existing-explorer.png",
+      "origin": "implementation/warlock/qa/evidence/files/popup-files-existing-explorer.png",
+      "sha256": "847aa0c4808da16905fe0046d19c9187d1b8bc118e2dcd7601f965c6f2871add",
+      "classification": "native capture",
+      "caption": "Ready popup over an existing file application, with Images focused."
+    },
+    {
+      "path": "mockups/files-night.png",
+      "sha256": "d7d261dd12671d1b9bac917ff5522f9e6c09e3b69179427d4a4c62e376dd3066",
+      "classification": "generated illustration",
+      "caption": "Generated concept study"
+    },
+    {
+      "path": "mockups/files-dawn.png",
+      "sha256": "b9d200daf3974a7c85d1a91930cb769272183ae6638f779c5a5bc564b61860a9",
+      "classification": "generated illustration",
+      "caption": "Generated concept study"
+    },
+    {
+      "path": "evidence/specimen-chromium.png",
+      "sha256": "4e37800e93ba7172b9924c2c2dc95f6ef8a4ec5388c922467802652f165184ef",
+      "classification": "browser capture",
+      "caption": "Static Chromium specimen, Night and Dawn ready and pending states."
+    },
+    {
+      "path": "evidence/focus-chromium.png",
+      "sha256": "47f305c29101561fe421e18fa40b9d7a81b590f6db9876331a27ff9b0c61eb42",
+      "classification": "browser capture",
+      "caption": "Static specimen with keyboard focus on the path field."
+    },
+    {
+      "path": "evidence/focus-200-chromium.png",
+      "sha256": "3cc24127ef1f66b4ce8a5de26d86500aecc8402d01959dfefa31203dd5c8161f",
+      "classification": "browser capture",
+      "caption": "Static specimen with keyboard focus on the path field."
+    }
+  ]
+}

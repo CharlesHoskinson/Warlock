@@ -1,0 +1,6 @@
+/* Load before a component stylesheet. All URLs are local to the site. */
+@layer legacy, reset, tokens, base, layouts, components, states, effects, accessibility;
+@import url("tokens.css") layer(tokens);
+@import url("fonts.css");
+@import url("site.css");
+@import url("effects.css");

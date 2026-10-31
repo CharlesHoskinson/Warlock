@@ -1,0 +1,12 @@
+@layer components {
+  .component-nav { display: grid; gap: var(--wl-sys-space-8); padding-block: var(--wl-sys-space-16); }
+  .component-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: var(--wl-sys-space-16); padding: 0; list-style: none; }
+  .component-grid li { border: 1px solid var(--wl-sys-color-border-essential); border-radius: var(--wl-sys-radius-card); background: var(--wl-sys-color-surface); padding: var(--wl-sys-space-20); }
+  .component-grid li[hidden] { display: none; }
+  .component-grid h2 { margin-top: 0; }
+  .component-evidence { display: grid; gap: var(--wl-sys-space-24); }
+  .component-evidence figure { margin: 0; }
+  .component-evidence img { display: block; max-width: 100%; height: auto; border: 1px solid var(--wl-sys-color-border-essential); }
+  .component-evidence figcaption { margin-top: var(--wl-sys-space-8); color: var(--wl-sys-color-text-secondary); }
+  .wl-specimen-frame iframe { display: block; width: 100%; height: 40rem; max-height: 75vh; border: 1px solid var(--wl-sys-color-border-essential); margin-top: var(--wl-sys-space-16); }
+}

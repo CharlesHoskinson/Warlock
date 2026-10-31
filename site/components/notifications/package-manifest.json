@@ -1,0 +1,58 @@
+{
+  "package": "T04",
+  "source_commit": "bc3daf7b80ac7295a1ba1e56639a0e130e520a3c",
+  "assets": [
+    {
+      "source": "implementation/warlock/qa/evidence/notifications/popup-notification-history.png",
+      "destination": "components/notifications/evidence/notifications__popup-notification-history.png",
+      "sha256": "dff8db289f5c8cb47e2b35b1dfd585775da50d1b119242618e83a4edf68ade48",
+      "bytes": 252528,
+      "license": "Apache License 2.0",
+      "classification": "native evidence",
+      "alt": "Notification history includes expired and invoked entries alongside a live notification.",
+      "caption": "Native capture: Notification history includes expired and invoked entries alongside a live notification."
+    },
+    {
+      "source": "implementation/warlock/qa/evidence/notifications/notification-expired-history.png",
+      "destination": "components/notifications/evidence/notifications__notification-expired-history.png",
+      "sha256": "b58457108afbf52f580078a226d0b6337589380953e24f09657f60e9c5433df4",
+      "bytes": 16305,
+      "license": "Apache License 2.0",
+      "classification": "browser evidence",
+      "alt": "An expired calendar notification remains in history without an action.",
+      "caption": "Browser capture: An expired calendar notification remains in history without an action."
+    },
+    {
+      "source": "implementation/warlock/qa/evidence/notification-announcements/native-history.png",
+      "destination": "components/notifications/evidence/notification-announcements__native-history.png",
+      "sha256": "7d201e1ec61c823557f806ea9b6af1088dc412e6fe7a6f1bae2fac341bf71cf3",
+      "bytes": 79619,
+      "license": "Apache License 2.0",
+      "classification": "native evidence",
+      "alt": "Notification history shows invoked and expired entries and a live notification from another producer.",
+      "caption": "Native capture: Notification history shows invoked and expired entries and a live notification from another producer."
+    }
+  ],
+  "route": {
+    "path": "components/notifications/index.html",
+    "scenario": "notifications"
+  },
+  "sources": [
+    {
+      "path": "implementation/warlock/src/Notifications.elm",
+      "sha256": "b37bff9f104d80eb1d1ea99f297c4d859b9d5744d7b0c05f6c89fa51581bc244"
+    },
+    {
+      "path": "implementation/warlock/src/Announcement.elm",
+      "sha256": "a1e6660c082c7c68657e356c2e4742cd8fd60e843192b88fa0609fb696a40f9f"
+    },
+    {
+      "path": "implementation/warlock/src/OutcomeAnnouncements.elm",
+      "sha256": "c7fd2828c42b7cbc0f3b6fc705c26a551530d1eb22ed325e892a0e1faca6ca7e"
+    },
+    {
+      "path": "implementation/warlock/src/SurfaceRenderer.elm",
+      "sha256": "f6c653573c1b73b32df132ada5033a1e34aa2cfa1a2dcbb42be4320a4a98a7b8"
+    }
+  ]
+}

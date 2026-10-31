@@ -1,0 +1,24 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Notification expiry exercise</title><link rel="icon" href="../../assets/brand/identity/warlock-mark-mono.svg"><link rel="stylesheet" href="../../assets/shared/specimen-bootstrap.css"><link rel="stylesheet" href="theme.css"><style>@layer layouts { .wl-expiry { max-width:70ch; margin:0 auto; padding:32px 16px; } .wl-expiry h1 { margin-block:16px; } .wl-expiry p { margin-block:16px; } .wl-expiry iframe:not(.hidden) { box-sizing:border-box; border:1px solid var(--wl-sys-color-border-essential); width:100%; height:420px; } .wl-expiry iframe.hidden { position:absolute; width:1px; height:1px; opacity:0; pointer-events:none; } }</style></head><body data-root><header class="wl-doc-header"><a class="wl-doc-brand" href="../../index.html"><img src="../../assets/brand/identity/warlock-mark-mono.svg" alt="">WARLOCK</a><nav aria-label="Specimen navigation"><a href="specimen.html">Notifications specimen</a> · <a href="../../test-drive/index.html?scenario=notifications">Try the desktop</a></nav></header><main class="wl-expiry"><h1>Notification expiry exercise</h1><p>Open Notifications, focus Open meeting, then click Expire focused action or press F8 while the action has focus. The notification service reports expiry while the action retains its identity. Return to the action with Tab and try Enter or Space.</p><button id="open">Open Notifications</button> <button id="expire">Expire focused action</button><p id="result">Starting desktop…</p><iframe class="hidden" id="controller" title="Controller" src="../../test-drive/runtime/controller.html"></iframe><iframe class="hidden" id="bar" title="Bar" src="../../test-drive/runtime/bar.html"></iframe><iframe id="popup" title="Notification renderer" src="../../test-drive/runtime/popup.html"></iframe></main><script type="module">
+import {createHost} from '../../test-drive/host/index.js';
+import {registerCatalog} from '../../test-drive/services/catalog.js';
+import {registerPreferences} from '../../test-drive/services/preferences.js';
+import {registerFiles} from '../../test-drive/services/files.js';
+import {registerSystem} from '../../test-drive/services/system.js';
+import {registerApplicationActions} from '../../test-drive/services/application-actions.js';
+import {packet} from '../../test-drive/services/common.js';
+const frames=Object.fromEntries(['controller','bar','popup'].map(id=>[id,document.getElementById(id)]));
+const host=createHost({frames});
+[registerCatalog,registerPreferences,registerFiles,registerSystem,registerApplicationActions].forEach(register=>register(host));
+let ctx, binding, sent=0;
+const entry={id:'1',incarnation:'1',producer:':1.7',app:'Calendar',summary:'Meeting soon',body:'Bring your notes',state:'live',actions:[{key:'open',label:'Open meeting'}]};
+let snapshot={service:'9',revision:'1',available:true,reason:'',entries:[entry]};
+host.registerService('notification-request',(request,context)=>{ctx=context;binding=request.binding; context.reply(packet(request,'notification-snapshot',{snapshot}));});
+host.registerService('notification-effect',(request,context)=>{sent++;context.reply(packet(request,'notification-outcome',{status:'Refused',snapshot}));});
+await Promise.all(Object.values(frames).map(frame=>frame.contentDocument?.readyState==='complete'?Promise.resolve():new Promise(resolve=>frame.addEventListener('load',resolve,{once:true}))));host.start();
+const result=document.getElementById('result');result.textContent='Desktop ready.';
+document.getElementById('open').onclick=async()=>{result.textContent=await host.invoke('notifications')?'Notifications opened.':'Notifications are not ready.';};
+document.getElementById('expire').onmousedown=e=>e.preventDefault();
+document.getElementById('expire').onclick=()=>{const doc=frames.popup.contentDocument;const focused=doc.activeElement;if(!ctx||!focused?.matches('[data-surface-control^="notification:"][data-surface-control*="invoke:"]')){result.textContent='Focus Open meeting in the notification surface first.';return;} snapshot={...snapshot,revision:'2',entries:[{...entry,state:'expired',actions:[]}]};ctx.publishObservation({protocolVersion:3,kind:'notification-update',binding,snapshot}); result.textContent='Expiry observation sent. The focused action remains unavailable.';};
+frames.popup.contentDocument.addEventListener('keydown', event=>{if(event.key==='F8'){event.preventDefault();document.getElementById('expire').click();}});
+window.expiryExercise={host,frames,getSent:()=>sent,expire:()=>document.getElementById('expire').click()};
+</script></body></html>

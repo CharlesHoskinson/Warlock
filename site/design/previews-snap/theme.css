@@ -1,0 +1,44 @@
+@layer components {
+ html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] { container-type:inline-size; }
+ html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls { display:grid; grid-template-columns:minmax(0,1fr); gap:12px; }
+ @container (min-width: 28rem) { html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+ html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] :is([data-surface-control="control:close"],[data-surface-control="snap:apply"]) { grid-column:1 / -1; }
+
+}
+@layer components {
+ html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:"] { min-width:0; min-height:112px; border-inline-start:3px solid transparent; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; gap:6px; padding:12px; background:var(--wl-sys-color-surface); box-shadow:none; text-align:center; }
+ html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:"]::before { content:""; display:block; flex:none; box-sizing:border-box; width:64px; height:40px; border:1px solid var(--wl-sys-color-border-essential); border-radius:4px; background-color:var(--wl-sys-color-surface-recessed); background-image:linear-gradient(var(--wl-sys-color-text-secondary),var(--wl-sys-color-text-secondary)); background-repeat:no-repeat; background-size:50% 100%; background-position:left top; }
+ html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control="snap:region:right-half"]::before { background-position:right top; }
+ html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:top-"]::before, html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:bottom-"]::before { background-size:50% 50%; }
+ html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control="snap:region:top-right"]::before { background-position:right top; }
+ html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control="snap:region:bottom-left"]::before { background-position:left bottom; }
+ html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control="snap:region:bottom-right"]::before { background-position:right bottom; }
+ html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:"] :is(.control-label,.control-detail) { display:block; min-height:1.25em; white-space:normal; overflow:visible; overflow-wrap:anywhere; text-overflow:clip; }
+}
+@layer states {
+ html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:"][aria-current="true"] { background:var(--wl-sys-color-surface-selected); border-inline-start-color:var(--wl-sys-color-brand-text); }
+ html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:"][aria-current="true"]:not(:disabled):not([aria-disabled="true"]):hover { background:var(--wl-sys-color-surface-selected-hover); }
+ html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:"][aria-current="true"]:not(:disabled):not([aria-disabled="true"]):active { background:var(--wl-sys-color-surface-selected-pressed); }
+}
+@layer accessibility {
+ @media (forced-colors:active) { html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:"]::before { border-color:ButtonText; background-color:ButtonFace; background-image:linear-gradient(ButtonText,ButtonText); } html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:"][aria-current="true"] { border-inline-start-color:Highlight; } }
+}
+
+@layer states {
+ html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control="snap:apply"]:not(:disabled):not([aria-disabled="true"]) { background:var(--wl-sys-color-action-fill); color:var(--wl-sys-color-on-action); border-color:var(--wl-sys-color-on-action); }
+ @media (hover:hover) { html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control="snap:apply"]:not(:disabled):not([aria-disabled="true"]):hover { background:var(--wl-sys-color-action-fill-hover); } }
+ html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control="snap:apply"]:not(:disabled):not([aria-disabled="true"]):active { background:var(--wl-sys-color-action-fill-pressed); }
+ html[data-warlock-design="v1"] .surface-popup[data-mode="snap"][data-theme="dawn"] [data-surface-control="snap:apply"]:not(:disabled):not([aria-disabled="true"]) { border-color:var(--wl-sys-color-brand-text); }
+}
+
+/* Forced colours can suppress background images. The selected region is an
+   actual bordered rectangle, separate from the outer screen boundary. */
+@layer accessibility {
+ @media (forced-colors: active) {
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:"] { position:relative; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:"]::after { content:""; position:absolute; box-sizing:border-box; top:12px; left:calc(50% - 32px); width:32px; height:40px; border:2px solid ButtonText; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control="snap:region:right-half"]::after, html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control="snap:region:top-right"]::after, html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control="snap:region:bottom-right"]::after { left:50%; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:top-"]::after, html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:bottom-"]::after { height:20px; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:bottom-"]::after { top:32px; }
+ }
+}

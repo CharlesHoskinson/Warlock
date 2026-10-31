@@ -1,0 +1,6 @@
+@layer components {
+  .wl-shortcut-legend ul { display: grid; gap: var(--wl-sys-space-12); padding-inline-start: 1.5rem; }
+  .wl-shortcut-legend li[hidden] { display: none; }
+  .wl-shortcut-legend input { display: block; max-width: 100%; }
+  .wl-shortcut-legend button { margin: var(--wl-sys-space-6); }
+}

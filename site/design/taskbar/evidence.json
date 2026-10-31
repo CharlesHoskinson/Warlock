@@ -1,0 +1,68 @@
+{
+  "source_commit": "bc3daf7b80ac7295a1ba1e56639a0e130e520a3c",
+  "license": "Apache-2.0 for repository project materials; generated illustrations are image-tool outputs",
+  "modules": [
+    "Bar.elm",
+    "Surface.elm",
+    "SurfaceRenderer.elm",
+    "Presentation.elm",
+    "Taskbar.elm",
+    "TaskbarShell.elm",
+    "Pins.elm",
+    "ActionProjection.elm"
+  ],
+  "selectors": [
+    ".surface-bar",
+    ".surface-actions[role=toolbar]",
+    ".control-group",
+    ".control-utility",
+    ".control-recovery",
+    ".control-label",
+    ".control-detail",
+    ".surface-status"
+  ],
+  "screenshots": [
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-primary-keyboard/InactiveActivation.png",
+      "sha256": "adcb5b8474eac316106c138ad2ebb257207a3e357e30102097634866d35841c5",
+      "classification": "native"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/dense-outer-focus/native-dense/dense-first.png",
+      "sha256": "11a90e6bf3db090bce8b4f0f6c5fc8be2fc86393a9f58cd2e166948fb1268f22",
+      "classification": "native"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/taskbar-zero-fresh-20261028/at-zero-editor-active.png",
+      "sha256": "53498c5cd83c8212a323ea6597fe9c50ec49afb3ee5c2dda5d7183568ab6e931",
+      "classification": "native"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/attention-native-composed-20261030/v5-passed/taskbar-native-attention.png",
+      "sha256": "39182e54c264278448796702a3aa105549940ebe468c923fe884d0948c1ca57d",
+      "classification": "native"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/window-feedback/feedback-wide-unknown.png",
+      "sha256": "a120d1140c0a2014c0ed5af1262ca4911d502ec5c2d974eac59258b515c7622c",
+      "classification": "browser"
+    }
+  ],
+  "illustrations": [
+    {
+      "path": "mockups/taskbar-dawn.png",
+      "sha256": "0f9d019d621edc84b0935485f3005b66e0fdf2fb295f9033645e250e1601a078",
+      "classification": "generated illustration"
+    },
+    {
+      "path": "mockups/taskbar-night.png",
+      "sha256": "f5df9e5ddcfba6f7ff1c9a8aed54e90e29aae106c7b76f9a9ad3c342bb9d0a8e",
+      "classification": "generated illustration"
+    }
+  ],
+  "rendered_specimen": {
+    "path": "specimen-chromium.png",
+    "classification": "browser specimen",
+    "sha256": "2149786f746da145a97ecef275db21f0438d448969b2c1a26328ab3045fcd06b"
+  }
+}

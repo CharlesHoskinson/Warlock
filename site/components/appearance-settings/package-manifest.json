@@ -1,0 +1,54 @@
+{
+  "package": "T04",
+  "source_commit": "bc3daf7b80ac7295a1ba1e56639a0e130e520a3c",
+  "assets": [
+    {
+      "source": "implementation/warlock/qa/evidence/layer-appearance/layer-appearance-night.png",
+      "destination": "components/appearance-settings/evidence/layer-appearance__layer-appearance-night.png",
+      "sha256": "a0f707e834f32fe9cdecba85c90db9d6bbfbebab74df2dcec688d3633924fb4b",
+      "bytes": 76326,
+      "license": "Apache License 2.0",
+      "classification": "browser evidence",
+      "alt": "Settings help and motion controls shown in Night with enlarged text.",
+      "caption": "Browser capture: Settings help and motion controls shown in Night with enlarged text."
+    },
+    {
+      "source": "implementation/warlock/qa/evidence/layer-appearance/layer-appearance-dawn.png",
+      "destination": "components/appearance-settings/evidence/layer-appearance__layer-appearance-dawn.png",
+      "sha256": "b943d4929654a01892e3e01b659565336fbaddf3fb3caffc5cac92617183b85f",
+      "bytes": 76341,
+      "license": "Apache License 2.0",
+      "classification": "browser evidence",
+      "alt": "Settings help and motion controls shown in Dawn with enlarged text.",
+      "caption": "Browser capture: Settings help and motion controls shown in Dawn with enlarged text."
+    },
+    {
+      "source": "implementation/warlock/qa/evidence/high-contrast/settings-high-contrast-enlarged.png",
+      "destination": "components/appearance-settings/evidence/high-contrast__settings-high-contrast-enlarged.png",
+      "sha256": "8b5b71490a96d911beaeb9c225d016d852987f82c7d136d303970c3b375a1f2f",
+      "bytes": 33517,
+      "license": "Apache License 2.0",
+      "classification": "browser evidence",
+      "alt": "High contrast Settings with 200% text selected and Refresh settings focused.",
+      "caption": "Browser capture: High contrast Settings with 200% text selected and Refresh settings focused."
+    }
+  ],
+  "route": {
+    "path": "components/appearance-settings/index.html",
+    "scenario": "settings"
+  },
+  "sources": [
+    {
+      "path": "implementation/warlock/src/Settings.elm",
+      "sha256": "d13f4d63327eae4a80052252c8ba1f1e40db0f69954b46470ccff248e5ba0e7c"
+    },
+    {
+      "path": "implementation/warlock/src/Surface.elm",
+      "sha256": "a660a4641a9f834c6198bce1e8049b3dd0be40cb74be1cfe1d5e14cfd0cdaa1d"
+    },
+    {
+      "path": "implementation/warlock/src/SurfaceRenderer.elm",
+      "sha256": "f6c653573c1b73b32df132ada5033a1e34aa2cfa1a2dcbb42be4320a4a98a7b8"
+    }
+  ]
+}

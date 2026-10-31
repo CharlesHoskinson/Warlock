@@ -1,0 +1,12 @@
+--- a/implementation/warlock/src/PreviewVisual.elm
++++ b/implementation/warlock/src/PreviewVisual.elm
+@@ -124,7 +124,7 @@
+     Local state title -> span [class "window-preview",attribute "data-preview-state" (localName state)] [span [class "preview-title"] [text (if title==localLabel state then "" else title)],span [class "preview-state"] [text (localLabel state)]]
+     Lifecycle data ->
+         let contents = case data.frame of
+-                Just handle -> [("frame:" ++ handle,img [class "preview-image",src ("elm-shell://preview/" ++ handle),alt "",attribute "aria-hidden" "true"] [])]
+-                Nothing -> (data.icon |> Maybe.map (\handle -> [("icon:" ++ handle,img [class "preview-icon",src ("elm-shell://icon/" ++ handle),alt "",attribute "aria-hidden" "true"] [])]) |> Maybe.withDefault []) ++ [("title",span [class "preview-title"] [text (data.title |> Maybe.andThen (\title -> if title==stateLabel data.state then Nothing else Just title) |> Maybe.withDefault "")])]
++                Just handle -> [("frame:" ++ handle,img [class "preview-image",src ("../previews/assets/" ++ handle ++ ".svg"),alt "",attribute "aria-hidden" "true"] [])]
++                Nothing -> (data.icon |> Maybe.map (\handle -> [("icon:" ++ handle,img [class "preview-icon",src ("../previews/assets/" ++ handle ++ ".svg"),alt "",attribute "aria-hidden" "true"] [])]) |> Maybe.withDefault []) ++ [("title",span [class "preview-title"] [text (data.title |> Maybe.andThen (\title -> if title==stateLabel data.state then Nothing else Just title) |> Maybe.withDefault "")])]
+             fidelity = data.fidelity |> Maybe.map fidelityLabel |> Maybe.withDefault ""
+         in Html.Keyed.node root [class "window-preview",attribute "data-preview-state" (stateName data.state)] (contents ++ [("status",Html.node caption [] [span [class "preview-state"] [text (stateLabel data.state)],span [class "preview-fidelity"] [text fidelity]])])

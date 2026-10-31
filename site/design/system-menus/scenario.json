@@ -1,0 +1,90 @@
+{
+  "source_commit": "bc3daf7b80ac7295a1ba1e56639a0e130e520a3c",
+  "scenarios": [
+    {
+      "id": "d10-system",
+      "source_fixtures": [
+        "implementation/warlock/qa/evidence/system-menu/popup-system-menu-capabilities.png"
+      ],
+      "initial_external_facts": [
+        "System service supplies volume, network, power and session snapshots and capability values"
+      ],
+      "entry_intent": "Open System from its taskbar control",
+      "supported_actions": [
+        "Set an admitted volume preset",
+        "Mute or unmute",
+        "Refresh system state",
+        "Choose an available network, power or session operation"
+      ],
+      "expected_observations": [
+        "Facts reflect admitted snapshots",
+        "Unsupported operations are unavailable",
+        "Refresh reads without replaying a change"
+      ],
+      "test_drive_scenario": "system"
+    },
+    {
+      "id": "d10-window-menu",
+      "source_fixtures": [
+        "implementation/warlock/qa/evidence/pin-check/AlwaysOnTopChecked.png"
+      ],
+      "initial_external_facts": [
+        "A bound provider supplies a menu and checked window state"
+      ],
+      "entry_intent": "Open window actions at the captured anchor",
+      "supported_actions": [
+        "Navigate enabled items",
+        "Toggle Always on top when eligible",
+        "Dismiss with Escape"
+      ],
+      "expected_observations": [
+        "Checked state follows the provider",
+        "Candidate and control focus remain distinct",
+        "Dismissal returns focus according to controller policy"
+      ],
+      "test_drive_scenario": "window-menu"
+    },
+    {
+      "id": "d10-confirmation",
+      "source_fixtures": [
+        "implementation/warlock/qa/evidence/system-menu/system-menu-confirmation.png"
+      ],
+      "initial_external_facts": [
+        "Restart capability is available"
+      ],
+      "entry_intent": "Choose Restart in System",
+      "supported_actions": [
+        "Cancel system change",
+        "Confirm Restart"
+      ],
+      "expected_observations": [
+        "Inline confirmation appears immediately with Cancel first and focused",
+        "A receipt alone does not invent completion",
+        "Unknown stays unconfirmed; refresh does not replay"
+      ],
+      "test_drive_scenario": "confirmation"
+    },
+    {
+      "id": "d10-application-actions",
+      "source_fixtures": [
+        "implementation/warlock/qa/evidence/jump-lists/popup-jump-list-declared-and-recent.png",
+        "implementation/warlock/qa/evidence/explicit-new-instance/native/popup-new-instance-application-actions.png"
+      ],
+      "initial_external_facts": [
+        "Catalog entry and identity-bound desktop and recent actions are available"
+      ],
+      "entry_intent": "Open application actions for the selected entry",
+      "supported_actions": [
+        "Refresh application actions",
+        "Invoke a supported declared or recent action",
+        "Request New instance when admitted"
+      ],
+      "expected_observations": [
+        "Actions retain entry and action identities",
+        "Submitted is not a confirmed window",
+        "Only an observed new mapped window admits a portal"
+      ],
+      "test_drive_scenario": "application-actions"
+    }
+  ]
+}

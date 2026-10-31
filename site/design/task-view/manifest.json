@@ -1,0 +1,15 @@
+{
+  "package": "D05",
+  "sourceCommit": "bc3daf7b80ac7295a1ba1e56639a0e130e520a3c",
+  "scenarios": [
+    {"id": "task-view", "href": "../../test-drive/index.html?scenario=task-view", "definition": "../../test-drive/scenarios/task-view.json", "packageScenario": "d05-task-view"},
+    {"id": "transfer", "href": "../../test-drive/index.html?scenario=transfer", "definition": "../../test-drive/scenarios/transfer.json", "packageScenario": "d05-transfer"}
+  ],
+  "images": [
+    {"file": "mockups/mockup-1.png", "caption": "Generated concept study", "subject": "Task View", "theme": "night"},
+    {"file": "mockups/mockup-2.png", "caption": "Generated concept study", "subject": "Task View", "theme": "dawn"},
+    {"file": "mockups/mockup-3.png", "caption": "Generated concept study", "subject": "Transfer", "theme": "night"},
+    {"file": "mockups/mockup-4.png", "caption": "Generated concept study", "subject": "Transfer", "theme": "dawn"}
+  ],
+  "authority": "The Elm renderer, specimen and theme define the interface. Generated concept studies are illustrative."
+}

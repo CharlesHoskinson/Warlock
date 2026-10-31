@@ -1,0 +1,44 @@
+{
+  "package": "T04",
+  "source_commit": "bc3daf7b80ac7295a1ba1e56639a0e130e520a3c",
+  "assets": [
+    {
+      "source": "implementation/warlock/qa/evidence/jump-lists/jump-lists-actions.png",
+      "destination": "components/application-actions/evidence/jump-lists__jump-lists-actions.png",
+      "sha256": "35bfd417cb6a9fe6ca7ffa9be2c2f9a08080784b582967c34d296a43352eca0b",
+      "bytes": 34964,
+      "license": "Apache License 2.0",
+      "classification": "browser evidence",
+      "alt": "Application actions list with declared actions and a recent document.",
+      "caption": "Browser capture: Application actions list with declared actions and a recent document."
+    },
+    {
+      "source": "implementation/warlock/qa/evidence/explicit-new-instance/native/popup-new-instance-application-actions.png",
+      "destination": "components/application-actions/evidence/explicit-new-instance__native__popup-new-instance-application-actions.png",
+      "sha256": "2e92f97b6fe3e9aae761021e7c724166d313979e028e553c9f923ce76ab17436",
+      "bytes": 59767,
+      "license": "Apache License 2.0",
+      "classification": "native evidence",
+      "alt": "Application actions offers New instance for Peer in the desktop.",
+      "caption": "Native capture: Application actions offers New instance for Peer in the desktop."
+    }
+  ],
+  "route": {
+    "path": "components/application-actions/index.html",
+    "scenario": "application-actions"
+  },
+  "sources": [
+    {
+      "path": "implementation/warlock/src/JumpList.elm",
+      "sha256": "059841cc0669fdc7fd699498ee72d4211a2aa5d69c466d4aade7558e03b0f68c"
+    },
+    {
+      "path": "implementation/warlock/src/Launch.elm",
+      "sha256": "dcd7260248ccb0b5bc6001c49319dd51af8c2fae98888919a308ac025ed273a2"
+    },
+    {
+      "path": "implementation/warlock/src/Surface.elm",
+      "sha256": "a660a4641a9f834c6198bce1e8049b3dd0be40cb74be1cfe1d5e14cfd0cdaa1d"
+    }
+  ]
+}

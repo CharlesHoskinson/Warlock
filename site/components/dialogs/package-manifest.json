@@ -1,0 +1,44 @@
+{
+  "package": "T04",
+  "source_commit": "bc3daf7b80ac7295a1ba1e56639a0e130e520a3c",
+  "assets": [
+    {
+      "source": "implementation/warlock/qa/evidence/system-menu/system-menu-confirmation.png",
+      "destination": "components/dialogs/evidence/system-menu__system-menu-confirmation.png",
+      "sha256": "3194a7844297e33532cc6b6609b3775b9ddc421257498fad73a60b3690a17469",
+      "bytes": 69181,
+      "license": "Apache License 2.0",
+      "classification": "browser evidence",
+      "alt": "System displays an inline restart confirmation with Cancel focused before Confirm.",
+      "caption": "Browser capture: System displays an inline restart confirmation with Cancel focused before Confirm."
+    },
+    {
+      "source": "implementation/warlock/qa/evidence/modal-recipient-eligibility/ModalRecipientAfter.png",
+      "destination": "components/dialogs/evidence/modal-recipient-eligibility__ModalRecipientAfter.png",
+      "sha256": "6541cd78fc6ed145aac9a16295535ff8a614ff079c4a615f02efe25146fe8e1e",
+      "bytes": 17560,
+      "license": "Apache License 2.0",
+      "classification": "native evidence",
+      "alt": "A native modal test window appears over its owner with a text field focused.",
+      "caption": "Native capture: A native modal test window appears over its owner with a text field focused."
+    }
+  ],
+  "route": {
+    "path": "components/dialogs/index.html",
+    "scenario": "confirmation"
+  },
+  "sources": [
+    {
+      "path": "implementation/warlock/src/SystemMenu.elm",
+      "sha256": "cf44c66fe51a5d86f14e33a8235e04f178553261229fd51e0d81cbc35c944054"
+    },
+    {
+      "path": "implementation/warlock/src/Surface.elm",
+      "sha256": "a660a4641a9f834c6198bce1e8049b3dd0be40cb74be1cfe1d5e14cfd0cdaa1d"
+    },
+    {
+      "path": "implementation/warlock/src/SurfaceRenderer.elm",
+      "sha256": "f6c653573c1b73b32df132ada5033a1e34aa2cfa1a2dcbb42be4320a4a98a7b8"
+    }
+  ]
+}

@@ -1,0 +1,364 @@
+{
+  "package": "T03",
+  "sourceCommit": "bc3daf7b80ac7295a1ba1e56639a0e130e520a3c",
+  "assets": [
+    {
+      "source": "implementation/warlock/qa/evidence/taskbar-primary-keyboard/InactiveActivation.png",
+      "destination": "components/taskbar/evidence/taskbar-primary-keyboard__InactiveActivation.png",
+      "sha256": "adcb5b8474eac316106c138ad2ebb257207a3e357e30102097634866d35841c5",
+      "bytes": 244440,
+      "license": "Apache License 2.0",
+      "classification": "native evidence",
+      "alt": "Native capture: activating an inactive taskbar group.",
+      "caption": "Native capture: activating an inactive taskbar group."
+    },
+    {
+      "source": "implementation/warlock/qa/evidence/dense-outer-focus/native-primary/outer-focus-0-activate.png",
+      "destination": "components/taskbar/evidence/dense-outer-focus__native-primary__outer-focus-0-activate.png",
+      "sha256": "e740a0449b8fdc83ee0a5cba205607663c4447a0bb108e5262c9a3d84b05b4a5",
+      "bytes": 238148,
+      "license": "Apache License 2.0",
+      "classification": "native evidence",
+      "alt": "Native capture: keyboard focus at the taskbar edge.",
+      "caption": "Native capture: keyboard focus at the taskbar edge."
+    },
+    {
+      "source": "implementation/warlock/qa/evidence/taskbar-primary-keyboard/ActiveMinimizeToDesktop.png",
+      "destination": "components/application-groups/evidence/taskbar-primary-keyboard__ActiveMinimizeToDesktop.png",
+      "sha256": "33d6b702b6b44e1804ec11c822c022ed94e913ff7667204748d8d9de593a0cba",
+      "bytes": 351312,
+      "license": "Apache License 2.0",
+      "classification": "native evidence",
+      "alt": "Native capture: active group minimization.",
+      "caption": "Native capture: active group minimization."
+    },
+    {
+      "source": "implementation/warlock/qa/evidence/taskbar-primary-keyboard/MinimizedRestore.png",
+      "destination": "components/application-groups/evidence/taskbar-primary-keyboard__MinimizedRestore.png",
+      "sha256": "b8e90bc70364848efa2ff0f4bb08e810142bd46fb26843f8101a04ed9e7798ab",
+      "bytes": 244929,
+      "license": "Apache License 2.0",
+      "classification": "native evidence",
+      "alt": "Native capture: restoring a minimized group.",
+      "caption": "Native capture: restoring a minimized group."
+    },
+    {
+      "source": "implementation/warlock/qa/evidence/taskbar-zero-fresh-20261028/keyboard-pins-after-restart.png",
+      "destination": "components/application-groups/evidence/taskbar-zero-fresh-20261028__keyboard-pins-after-restart.png",
+      "sha256": "c133ea231cd0c7fb4150eba9c1985f9eb148a9984abd051d9242aa22129872cc",
+      "bytes": 39553,
+      "license": "Apache License 2.0",
+      "classification": "native evidence",
+      "alt": "Native capture: keyboard access to pins after restart.",
+      "caption": "Native capture: keyboard access to pins after restart."
+    },
+    {
+      "source": "implementation/warlock/qa/evidence/attention-native-composed-20261030/v5-passed/taskbar-native-attention.png",
+      "destination": "components/application-groups/evidence/attention-native-composed-20261030__v5-passed__taskbar-native-attention.png",
+      "sha256": "39182e54c264278448796702a3aa105549940ebe468c923fe884d0948c1ca57d",
+      "bytes": 44737,
+      "license": "Apache License 2.0",
+      "classification": "native evidence",
+      "alt": "Native capture: application attention in the taskbar.",
+      "caption": "Native capture: application attention in the taskbar."
+    },
+    {
+      "source": "implementation/warlock/qa/evidence/dense-picker/launcher-initial.png",
+      "destination": "components/launcher/evidence/dense-picker__launcher-initial.png",
+      "sha256": "4d91eec9bc4a0487d9048fa17efede7a861bacaf70e04e9b084fb1e1742c3d2a",
+      "bytes": 226512,
+      "license": "Apache License 2.0",
+      "classification": "native evidence",
+      "alt": "Native capture: initial Applications list.",
+      "caption": "Native capture: initial Applications list."
+    },
+    {
+      "source": "implementation/warlock/qa/evidence/dense-picker/launcher-filtered.png",
+      "destination": "components/launcher/evidence/dense-picker__launcher-filtered.png",
+      "sha256": "c87ee36198483316737ed27b2997c1204fd3497b705da69dcd1b82a7141032e5",
+      "bytes": 222789,
+      "license": "Apache License 2.0",
+      "classification": "native evidence",
+      "alt": "Native capture: filtered Applications list.",
+      "caption": "Native capture: filtered Applications list."
+    },
+    {
+      "source": "implementation/warlock/qa/evidence/dense-picker/launcher-no-match.png",
+      "destination": "components/launcher/evidence/dense-picker__launcher-no-match.png",
+      "sha256": "8442ba9a238aafd7f960bcdb26e6ae27af3b069bafc4bd423810b47f50a78a1d",
+      "bytes": 221523,
+      "license": "Apache License 2.0",
+      "classification": "native evidence",
+      "alt": "Native capture: search with no matches.",
+      "caption": "Native capture: search with no matches."
+    },
+    {
+      "source": "implementation/warlock/qa/evidence/dense-picker/launcher-refused.png",
+      "destination": "components/launcher/evidence/dense-picker__launcher-refused.png",
+      "sha256": "1e09b1927c039335f2e582737de387cff9e66cf74fc5ccf37bea04c3bc9481f7",
+      "bytes": 226538,
+      "license": "Apache License 2.0",
+      "classification": "native evidence",
+      "alt": "Native capture: refused launch outcome.",
+      "caption": "Native capture: refused launch outcome."
+    },
+    {
+      "source": "implementation/warlock/qa/evidence/preview-descriptions/Live.png",
+      "destination": "components/window-picker/evidence/preview-descriptions__Live.png",
+      "sha256": "8cfb67669efd8d5c0dc4fdbd1b18f4928b03c3b9c92b496bc91fa9ca4ab03f2b",
+      "bytes": 82991,
+      "license": "Apache License 2.0",
+      "classification": "native evidence",
+      "alt": "Native capture: live window preview.",
+      "caption": "Native capture: live window preview."
+    },
+    {
+      "source": "implementation/warlock/qa/evidence/preview-application-fallback/native-expired-fallback-ApplicationFallback.png",
+      "destination": "components/window-picker/evidence/preview-application-fallback__native-expired-fallback-ApplicationFallback.png",
+      "sha256": "bca05f3c46edc3b11f77b2796b8bfc04a0e47ae3157f734fdbe4459e256e327d",
+      "bytes": 156387,
+      "license": "Apache License 2.0",
+      "classification": "native evidence",
+      "alt": "Native capture: application fallback after preview expiry.",
+      "caption": "Native capture: application fallback after preview expiry."
+    },
+    {
+      "source": "implementation/warlock/qa/evidence/switcher-native-controls/popup-mru-initial.png",
+      "destination": "components/window-switcher/evidence/switcher-native-controls__popup-mru-initial.png",
+      "sha256": "bcc6cee659cbf68a633c4c085de0b2afb8c550c15439526285564061e319bae5",
+      "bytes": 88114,
+      "license": "Apache License 2.0",
+      "classification": "native evidence",
+      "alt": "Native capture: window switcher initial list.",
+      "caption": "Native capture: window switcher initial list."
+    },
+    {
+      "source": "implementation/warlock/qa/evidence/taskview-filter-accessibility/current-taskview.png",
+      "destination": "components/task-view/evidence/taskview-filter-accessibility__current-taskview.png",
+      "sha256": "16efd0ebd5a409fe0dbc05e333220554f1300bf63155309dd2cb87dbf8ac3d81",
+      "bytes": 248715,
+      "license": "Apache License 2.0",
+      "classification": "native evidence",
+      "alt": "Native capture: Task View workspace filters.",
+      "caption": "Native capture: Task View workspace filters."
+    },
+    {
+      "source": "implementation/warlock/qa/evidence/taskview-empty-inventory/popup-empty-workspace.png",
+      "destination": "components/task-view/evidence/taskview-empty-inventory__popup-empty-workspace.png",
+      "sha256": "ab5351db33f3c1342ad8b7c46ae566e1c43b96520d95dc5d71fc7552632090a1",
+      "bytes": 245403,
+      "license": "Apache License 2.0",
+      "classification": "native evidence",
+      "alt": "Native capture: an empty workspace in Task View.",
+      "caption": "Native capture: an empty workspace in Task View."
+    },
+    {
+      "source": "implementation/warlock/qa/evidence/transfer-current/popup-native-transfer-destinations.png",
+      "destination": "components/workspace-transfer/evidence/transfer-current__popup-native-transfer-destinations.png",
+      "sha256": "d6f9edaaa6bd831c5bacdeb23589c88a89569eef814b60ca68201fa5a33df120",
+      "bytes": 74711,
+      "license": "Apache License 2.0",
+      "classification": "native evidence",
+      "alt": "Native capture: available transfer destinations.",
+      "caption": "Native capture: available transfer destinations."
+    },
+    {
+      "source": "implementation/warlock/qa/evidence/transfer-current/popup-native-transfer-workspace-three.png",
+      "destination": "components/workspace-transfer/evidence/transfer-current__popup-native-transfer-workspace-three.png",
+      "sha256": "e88baf6bafffc1f0efcdbced7206bc2a891c5ab32124f2eb16861981323a95bd",
+      "bytes": 77053,
+      "license": "Apache License 2.0",
+      "classification": "native evidence",
+      "alt": "Native capture: transfer to workspace three.",
+      "caption": "Native capture: transfer to workspace three."
+    },
+    {
+      "source": "implementation/warlock/qa/evidence/preview-states/Live.png",
+      "destination": "components/previews/evidence/preview-states__Live.png",
+      "sha256": "b1798574bea04e6638cfb3005d48ff09aa17fcf85dcd61b78406e46bb67199bb",
+      "bytes": 77879,
+      "license": "Apache License 2.0",
+      "classification": "native evidence",
+      "alt": "Native capture: live preview state.",
+      "caption": "Native capture: live preview state."
+    },
+    {
+      "source": "implementation/warlock/qa/evidence/preview-states/Historical.png",
+      "destination": "components/previews/evidence/preview-states__Historical.png",
+      "sha256": "393006a74cab2bd035cd80aeb3e82340c23e9fe479c1c8103b378827e5230e2d",
+      "bytes": 158089,
+      "license": "Apache License 2.0",
+      "classification": "native evidence",
+      "alt": "Native capture: historical preview state.",
+      "caption": "Native capture: historical preview state."
+    },
+    {
+      "source": "implementation/warlock/qa/evidence/preview-states/Unavailable.png",
+      "destination": "components/previews/evidence/preview-states__Unavailable.png",
+      "sha256": "d558ef1e9bb2c640e5023d53c114eeca31631e3dcf4385aa9d2cdb04c50735c2",
+      "bytes": 159114,
+      "license": "Apache License 2.0",
+      "classification": "native evidence",
+      "alt": "Native capture: unavailable preview state.",
+      "caption": "Native capture: unavailable preview state."
+    },
+    {
+      "source": "implementation/warlock/qa/evidence/preview-loading-paint/current-native-Loading-attempt.png",
+      "destination": "components/previews/evidence/preview-loading-paint__current-native-Loading-attempt.png",
+      "sha256": "4718ebd1800abecbca134bd074c7e4b8d33274fa26167891b2c509ae94b0f0b5",
+      "bytes": 50017,
+      "license": "Apache License 2.0",
+      "classification": "native evidence",
+      "alt": "Native capture: Loading attempt, not a confirmed loaded preview.",
+      "caption": "Native capture: Loading attempt, not a confirmed loaded preview."
+    },
+    {
+      "source": "implementation/warlock/qa/evidence/popup-remap/launcher-popup-initial.png",
+      "destination": "components/popup-surfaces/evidence/popup-remap__launcher-popup-initial.png",
+      "sha256": "c495b95dc93280989f7cda920ae6f7533ca1dd984ee4444749247b11a41e12c2",
+      "bytes": 50360,
+      "license": "Apache License 2.0",
+      "classification": "native evidence",
+      "alt": "Native capture: Applications popup.",
+      "caption": "Native capture: Applications popup."
+    },
+    {
+      "source": "implementation/warlock/qa/evidence/taskview-focus-return/after-popup-initial.png",
+      "destination": "components/popup-surfaces/evidence/taskview-focus-return__after-popup-initial.png",
+      "sha256": "c15ad02e50b0ed9d8739ec915f29153831d0796854f2f7a915e1a45b908d8b6b",
+      "bytes": 247692,
+      "license": "Apache License 2.0",
+      "classification": "native evidence",
+      "alt": "Native capture: popup before focus return.",
+      "caption": "Native capture: popup before focus return."
+    },
+    {
+      "source": "implementation/warlock/qa/evidence/pin-check/browser-shipped-AlwaysOnTopChecked.png",
+      "destination": "components/window-menu/evidence/pin-check__browser-shipped-AlwaysOnTopChecked.png",
+      "sha256": "9f0baff286e1f9fc00b8047c9e11ac5331061f0224067d90316d4acc812fed0c",
+      "bytes": 29758,
+      "license": "Apache License 2.0",
+      "classification": "browser evidence",
+      "alt": "Browser capture: Always on top checked in the window menu.",
+      "caption": "Browser capture: Always on top checked in the window menu."
+    },
+    {
+      "source": "implementation/warlock/qa/evidence/explicit-new-instance/native/popup-new-instance-pointer.png",
+      "destination": "components/window-menu/evidence/explicit-new-instance__native__popup-new-instance-pointer.png",
+      "sha256": "fc5f08d27322b4d5394da9e31ca27227029376010a9f0b8aa06915330caa2ada",
+      "bytes": 55784,
+      "license": "Apache License 2.0",
+      "classification": "native evidence",
+      "alt": "Native capture: New instance in the window menu.",
+      "caption": "Native capture: New instance in the window menu."
+    },
+    {
+      "source": "implementation/warlock/qa/evidence/snap-chooser/browser-snap-chooser.png",
+      "destination": "components/snap-layouts/evidence/snap-chooser__browser-snap-chooser.png",
+      "sha256": "f6e3fadf6e6cc247df6a51f219d52dcf880f2862bd628b4faba82698ab08fc3f",
+      "bytes": 92834,
+      "license": "Apache License 2.0",
+      "classification": "browser evidence",
+      "alt": "Browser capture: snap chooser with geometry unavailable.",
+      "caption": "Browser capture: snap chooser with geometry unavailable."
+    }
+  ],
+  "sources": [
+    {
+      "path": "implementation/warlock/src/ActionProjection.elm",
+      "sha256": "911faed965465fac4e32f404d75a4d130b4e560cda191c7773eb96749be1d062"
+    },
+    {
+      "path": "implementation/warlock/src/Bar.elm",
+      "sha256": "0c232aabc951c82a12223a209bc054b263c3c5c45bc6153a5000194e00db0cbd"
+    },
+    {
+      "path": "implementation/warlock/src/Catalog.elm",
+      "sha256": "3eadb76212a66986ef2d76292a2f33595f7cd7d47dc90c8982435195f9ea3f02"
+    },
+    {
+      "path": "implementation/warlock/src/GeometryProjection.elm",
+      "sha256": "f1b5708b8b4d1c7c02e46542bc041abb9e8cb0524d965ee4b03ab97f586a544c"
+    },
+    {
+      "path": "implementation/warlock/src/Launch.elm",
+      "sha256": "dcd7260248ccb0b5bc6001c49319dd51af8c2fae98888919a308ac025ed273a2"
+    },
+    {
+      "path": "implementation/warlock/src/Menu.elm",
+      "sha256": "c40fcfa24bf9d48044ccbe2c08df0abb7d8b94ee04111776234ecd88792ff4f0"
+    },
+    {
+      "path": "implementation/warlock/src/MenuBridge.elm",
+      "sha256": "ec8f531b9437e493f9b29fe1e16d678cd388f560a83ca873448630bbde459b25"
+    },
+    {
+      "path": "implementation/warlock/src/NativeProvider.elm",
+      "sha256": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9"
+    },
+    {
+      "path": "implementation/warlock/src/Pins.elm",
+      "sha256": "c18f4211444ea54ad5ae65d9e436b4dc3ae404446699812b95dabd7b2c878368"
+    },
+    {
+      "path": "implementation/warlock/src/Popup.elm",
+      "sha256": "4ab4195bfb96622cf563efaf4a889045553fb2367347b6881e70f53545bae406"
+    },
+    {
+      "path": "implementation/warlock/src/Presentation.elm",
+      "sha256": "8c635b330641c4c06895357bdaee430b8eeed9b8ae88a83742f703c9f23a5dd6"
+    },
+    {
+      "path": "implementation/warlock/src/PreviewLifecycle.elm",
+      "sha256": "232ebe2e823a4f9b07444f9afaccd98cdc3de9a592ff220d9975a64952dacf24"
+    },
+    {
+      "path": "implementation/warlock/src/PreviewPresenter.elm",
+      "sha256": "10769b8d9a86e5e5b35f1f292d9837a38b20a0ba636d5baa0ee0c3b8fcdac1cc"
+    },
+    {
+      "path": "implementation/warlock/src/SearchFold.elm",
+      "sha256": "31664d665778533dc2c141f433398df5bd37be4b689b7369cd894c89d1459241"
+    },
+    {
+      "path": "implementation/warlock/src/Snap.elm",
+      "sha256": "8ee61de4cd63557d3f2928893ed35ce93f1e3290128847e66ca388aa5d98ec8e"
+    },
+    {
+      "path": "implementation/warlock/src/SurfaceController.elm",
+      "sha256": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998"
+    },
+    {
+      "path": "implementation/warlock/src/SurfaceRenderer.elm",
+      "sha256": "f6c653573c1b73b32df132ada5033a1e34aa2cfa1a2dcbb42be4320a4a98a7b8"
+    },
+    {
+      "path": "implementation/warlock/src/Switcher.elm",
+      "sha256": "7523cc13bf794c126cee2d39541d9fbae062ec3b420d5898eed6380792ec3061"
+    },
+    {
+      "path": "implementation/warlock/src/TaskView.elm",
+      "sha256": "7665dd48cae39ecdc71f85990eaefc0115fb79fe0462e41199b10ec4ccbfcdbe"
+    },
+    {
+      "path": "implementation/warlock/src/Taskbar.elm",
+      "sha256": "31ed9ce6b37e5b35065f8833e31412657800d894b6d9e9544f380bc16e7aa519"
+    },
+    {
+      "path": "implementation/warlock/src/TaskbarShell.elm",
+      "sha256": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26"
+    },
+    {
+      "path": "implementation/warlock/src/Transfer.elm",
+      "sha256": "357a68e70977184ced8be8b8a4c0db6209730e6fe6ad2f4718087a6d6a2c32be"
+    },
+    {
+      "path": "implementation/warlock/src/WorkspaceInventory.elm",
+      "sha256": "583692398a5038bf17a87c09a7019ddae4059f3f200489342ca89dab50eb3b2e"
+    },
+    {
+      "path": "implementation/warlock/src/WorkspaceNavigation.elm",
+      "sha256": "8313a23008abfa6157324472db852b087b4af09dd3696a33f273d7010634e7f6"
+    }
+  ]
+}

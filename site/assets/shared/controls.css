@@ -1,0 +1,43 @@
+/* Foundations specimen and shared popup structure. Load after the shared bundle. */
+@layer components {
+ html[data-warlock-design="v1"] .surface-popup { box-sizing:border-box; display:flex; flex-direction:column; min-width:0; max-height:100%; padding:16px 10px; color:var(--wl-sys-color-text); background:var(--wl-sys-color-surface); border:1px solid var(--wl-sys-color-border-essential); border-radius:12px; box-shadow:var(--wl-sys-shadow-raised); font:var(--wl-sys-type-body-weight) var(--wl-sys-type-body-size)/var(--wl-sys-type-body-line-height) var(--wl-sys-type-body-family); letter-spacing:var(--wl-sys-type-body-tracking); font-synthesis:none; }
+ html[data-warlock-design="v1"] .surface-popup > :is(h1,p) { flex:none; margin-inline:6px; }
+ html[data-warlock-design="v1"] .surface-popup > h1 { margin-block:0 4px; font:700 1.25rem/1.4 'Space Grotesk',sans-serif; letter-spacing:-.0125rem; }
+ html[data-warlock-design="v1"] .surface-popup > p { margin-block:0 16px; color:var(--wl-sys-color-text-secondary); }
+ html[data-warlock-design="v1"] .surface-popup .surface-controls { min-height:0; overflow:auto; padding:6px; scroll-padding:6px; display:flex; flex-direction:column; gap:6px; }
+ html[data-warlock-design="v1"] .surface-popup .surface-controls > * { flex-shrink:0; }
+ html[data-warlock-design="v1"] .surface-popup .surface-controls button { position:relative; box-sizing:border-box; min-height:2.25rem; padding:6px 12px; border:1px solid transparent; border-radius:6px; text-align:start; white-space:normal; overflow-wrap:anywhere; color:var(--wl-sys-color-text); background:transparent; font:500 .875rem/1.428571 Inter,sans-serif; scroll-margin:6px; }
+ html[data-warlock-design="v1"] .surface-popup button:has(.control-detail:not(:empty)) { min-height:3.5rem; }
+ html[data-warlock-design="v1"] .surface-popup :is(.control-label,.control-detail) { display:block; }
+ html[data-warlock-design="v1"] .surface-popup .control-detail { color:var(--wl-sys-color-text-secondary); font:var(--wl-sys-type-detail-weight) var(--wl-sys-type-detail-size)/var(--wl-sys-type-detail-line-height) var(--wl-sys-type-detail-family); letter-spacing:var(--wl-sys-type-detail-tracking); margin-top:2px; }
+ html[data-warlock-design="v1"] .surface-popup .control-detail:empty { display:none; }
+ html[data-warlock-design="v1"] .surface-popup .launcher-search { box-sizing:border-box; min-height:2.75rem; padding:10px 12px; border:1px solid var(--wl-sys-color-border-essential); border-radius:6px; background:var(--wl-sys-color-surface-recessed); color:var(--wl-sys-color-text); font:400 .875rem/1.428571 Inter,sans-serif; scroll-margin:6px; }
+ html[data-warlock-design="v1"] .surface-popup .launcher-search::placeholder { color:var(--wl-sys-color-text-secondary); opacity:1; }
+ @media (pointer:coarse) { html[data-warlock-design="v1"] .surface-popup .surface-controls button { min-height:2.75rem; } html[data-warlock-design="v1"] .surface-popup button:has(.control-detail:not(:empty)) { min-height:3.75rem; } }
+ @media (max-height:480px) { html[data-warlock-design="v1"] .surface-popup { overflow:auto; } html[data-warlock-design="v1"] .surface-popup .surface-controls { overflow:visible; flex:none; } }
+}
+@layer states {
+ html[data-warlock-design="v1"] .surface-popup button { transition:none; }
+ @media (hover:hover) and (pointer:fine) {
+  html[data-warlock-design="v1"] .surface-popup button:not(:disabled):not([aria-disabled="true"]):hover { background:var(--wl-sys-color-surface-hover); }
+  html[data-warlock-design="v1"] .surface-popup button:not(:disabled):not([aria-disabled="true"]):active { background:var(--wl-sys-color-surface-pressed); }
+  html[data-warlock-design="v1"] :is(.surface-popup[data-motion="full"], [data-motion="full"] .surface-popup:not([data-motion])) button:not(:disabled):not([aria-disabled="true"]) { transition:background-color 90ms cubic-bezier(.2,0,0,1); }
+  html[data-warlock-design="v1"] :is(.surface-popup[data-motion="full"], [data-motion="full"] .surface-popup:not([data-motion])) button:not(:disabled):not([aria-disabled="true"]):active { transition-duration:60ms; }
+ }
+ html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] button[aria-current="true"] { background:var(--wl-sys-color-surface-selected); border-inline-start:3px solid var(--wl-sys-color-brand-text); }
+ @media (hover:hover) and (pointer:fine) {
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] button[aria-current="true"]:not(:disabled):not([aria-disabled="true"]):hover { background:var(--wl-sys-color-surface-selected-hover); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] button[aria-current="true"]:not(:disabled):not([aria-disabled="true"]):active { background:var(--wl-sys-color-surface-selected-pressed); }
+ }
+ html[data-warlock-design="v1"] .surface-popup :is(button,input):focus-visible { outline:2px solid var(--wl-sys-color-focus); outline-offset:2px; box-shadow:0 0 0 2px var(--wl-sys-color-focus-gap); z-index:1; }
+ html[data-warlock-design="v1"] .surface-popup button:is(:disabled,[aria-disabled="true"]) { opacity:1; color:var(--wl-sys-color-text-secondary); }
+ /* A slash is decorative; native disabled or aria-disabled supplies semantics. */
+ html[data-warlock-design="v1"] .surface-popup button:is(:disabled,[aria-disabled="true"])::after { content:""; display:inline-block; width:10px; height:10px; margin-inline-start:8px; border:1px solid currentColor; border-radius:50%; background:linear-gradient(135deg,transparent 44%,currentColor 45% 55%,transparent 56%); }
+}
+@layer accessibility {
+ html[data-warlock-design="v1"] :is(.surface-popup[data-effects="off"],.surface-popup[data-effects-tier="off"],.surface-popup[data-theme="high-contrast"], [data-effects="off"] .surface-popup, [data-effects-tier="off"] .surface-popup, [data-theme="high-contrast"] .surface-popup:not([data-theme="night"]):not([data-theme="dawn"])) { box-shadow:none; }
+ @media (forced-colors:active) {
+  html[data-warlock-design="v1"] .surface-popup :is(button,input):focus-visible { forced-color-adjust:none; outline:2px solid Highlight; outline-offset:2px; box-shadow:0 0 0 2px Canvas; }
+  html[data-warlock-design="v1"] .surface-popup button:is(:disabled,[aria-disabled="true"])::after { background:none; border:1px solid CanvasText; border-radius:0; transform:rotate(45deg); width:2px; height:10px; }
+ }
+}

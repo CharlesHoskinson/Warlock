@@ -1,0 +1,74 @@
+@property --wl-portal-progress { syntax: '<number>'; inherits: false; initial-value: 0; }
+@property --wl-portal-turn { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+@property --wl-effect-alpha { syntax: '<number>'; inherits: false; initial-value: 0; }
+@property --wl-capture-delay { syntax: '<time>'; inherits: false; initial-value: 0ms; }
+@property --wl-portal-aperture { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
+
+@layer effects {
+ /* Signature portal, full tier. The wrapper covers the observed window's rectangle. ::before is the ember
+    ring: an ellipse through the window's corners whose band is cut into ember fragments by conic gradients.
+    ::after is the aperture: a canvas-coloured cover whose transparent opening grows until the window is
+    fully revealed. Only transform, opacity and the registered aperture radius animate. */
+ .wl-effect-portal { position:absolute; inset:0; margin:0; z-index:30001; isolation:isolate; pointer-events:none; overflow:visible; background:none;
+  -webkit-mask-image:none !important; mask-image:none !important; /* the stage's window-shaped exclusion is not used */ }
+ .wl-effect-portal::before, .wl-effect-portal::after { content:""; position:absolute; pointer-events:none; }
+ /* The wrapper animations carry no visual change; their animationend tells the stage that the portal finished. */
+ .wl-effect-portal[data-portal-phase="open"] { animation:wl-portal-open var(--wl-sys-effects-portal-open, 520ms) linear both; }
+ .wl-effect-portal[data-portal-phase="close"] { animation:wl-portal-close var(--wl-sys-effects-portal-close, 360ms) linear both; }
+ @keyframes wl-portal-open { from {opacity:1} to {opacity:1} }
+ @keyframes wl-portal-close { from {opacity:1} to {opacity:1} }
+ .wl-effect-portal::before {
+  inset:-21%; border-radius:50%; opacity:0; will-change:transform, opacity;
+  background:
+   repeating-conic-gradient(from 7deg, var(--wl-sys-color-brand-text) 0deg 1.6deg, transparent 1.6deg 5deg, var(--wl-sys-color-action-fill) 5deg 6.2deg, transparent 6.2deg 11deg),
+   repeating-conic-gradient(from 2deg, #ffd2c8 0deg .6deg, transparent .6deg 23deg);
+  -webkit-mask:radial-gradient(closest-side, transparent 90.5%, #000 92.5%, #000 97%, transparent 99.5%);
+  mask:radial-gradient(closest-side, transparent 90.5%, #000 92.5%, #000 97%, transparent 99.5%);
+  filter:drop-shadow(0 0 6px color-mix(in srgb, var(--wl-sys-color-action-fill) 70%, transparent));
+ }
+ .wl-effect-portal[data-portal-phase="open"]::after {
+  inset:0; background:var(--wl-sys-color-canvas); border-radius:var(--wl-sys-radius-window, 8px);
+  --wl-portal-aperture:0%;
+  -webkit-mask:radial-gradient(closest-side, transparent var(--wl-portal-aperture), #000 calc(var(--wl-portal-aperture) + .6%));
+  mask:radial-gradient(closest-side, transparent var(--wl-portal-aperture), #000 calc(var(--wl-portal-aperture) + .6%));
+  animation:wl-portal-aperture-open var(--wl-sys-effects-portal-open, 520ms) linear both;
+ }
+ .wl-effect-portal[data-portal-phase="open"]::before { animation:wl-portal-ring-open var(--wl-sys-effects-portal-open, 520ms) linear both; }
+ .wl-effect-portal[data-portal-phase="close"]::before { animation:wl-portal-ring-close var(--wl-sys-effects-portal-close, 360ms) linear both; }
+ .wl-effect-portal[data-portal-phase="close"]::after { display:none; }
+ /* Ignite 0-120ms, expand 120-380ms, resolve 380-460ms, settle 460-520ms. */
+ @keyframes wl-portal-ring-open {
+  0% {transform:scale(.04) rotate(0deg); opacity:0; animation-timing-function:cubic-bezier(.16,0,.3,1)}
+  23.08% {transform:scale(.16) rotate(2deg); opacity:.95; animation-timing-function:cubic-bezier(.2,.72,.2,1)}
+  73.08% {transform:scale(1) rotate(12deg); opacity:.8; animation-timing-function:cubic-bezier(.2,0,0,1)}
+  88.46% {transform:scale(1.02) rotate(12deg); opacity:.25; animation-timing-function:cubic-bezier(0,0,.2,1)}
+  100% {transform:scale(1.03) rotate(12deg); opacity:0}
+ }
+ @keyframes wl-portal-aperture-open {
+  0% {--wl-portal-aperture:0%; opacity:1; animation-timing-function:cubic-bezier(.16,0,.3,1)}
+  23.08% {--wl-portal-aperture:16%; animation-timing-function:cubic-bezier(.2,.72,.2,1)}
+  73.08% {--wl-portal-aperture:146%; opacity:1}
+  88.46%,100% {--wl-portal-aperture:146%; opacity:0}
+ }
+ /* Release 0-90ms, contract 90-270ms, disperse 270-360ms. */
+ @keyframes wl-portal-ring-close {
+  0% {transform:scale(1) rotate(0deg); opacity:0; animation-timing-function:cubic-bezier(.4,0,1,1)}
+  25% {transform:scale(.98) rotate(-1deg); opacity:.85; animation-timing-function:cubic-bezier(.4,0,.2,1)}
+  75% {transform:scale(.06) rotate(-8deg); opacity:.85; animation-timing-function:cubic-bezier(0,0,.2,1)}
+  100% {transform:scale(.02) rotate(-8deg); opacity:0}
+ }
+ [data-effects-tier="reduced"] .wl-effect-portal::before, .wl-effect-portal[data-effects-tier="reduced"]::before { inset:0; opacity:1; filter:none; border:1px solid var(--wl-sys-color-brand-text); border-radius:var(--wl-sys-radius-window); background:none; -webkit-mask:none; mask:none; animation:none; }
+ [data-effects-tier="reduced"] .wl-effect-portal::after, .wl-effect-portal[data-effects-tier="reduced"]::after { display:none; }
+ [data-effects-tier="reduced"] .wl-effect-portal[data-portal-phase="open"], .wl-effect-portal[data-effects-tier="reduced"][data-portal-phase="open"] { animation:wl-portal-fade var(--wl-sys-effects-portal-open-reduced) linear both; }
+ [data-effects-tier="reduced"] .wl-effect-portal[data-portal-phase="close"], .wl-effect-portal[data-effects-tier="reduced"][data-portal-phase="close"] { animation:wl-portal-fade var(--wl-sys-effects-portal-close-reduced) linear both; }
+ @keyframes wl-portal-fade { 0%,100% {opacity:0} 50% {opacity:.35} }
+ @supports not ((mask-image:radial-gradient(black,transparent)) or (-webkit-mask-image:radial-gradient(black,transparent))) {
+  .wl-effect-portal::before { inset:0; opacity:1; filter:none; border:1px solid var(--wl-sys-color-brand-text); border-radius:var(--wl-sys-radius-window); background:none; -webkit-mask:none; mask:none; animation:none!important; }
+  .wl-effect-portal[data-portal-phase="open"] { animation:wl-portal-fade var(--wl-sys-effects-portal-open-reduced) linear both; }
+  .wl-effect-portal[data-portal-phase="close"] { animation:wl-portal-fade var(--wl-sys-effects-portal-close-reduced) linear both; }
+  .wl-effect-portal::after { display:none; }
+ }
+ [data-effects-tier="off"] .wl-effect-portal, .wl-effect-portal[data-effects-tier="off"], [data-motion="reduced"] .wl-effect-portal, [data-theme="high-contrast"] .wl-effect-portal { animation:none; display:none; }
+ @media(prefers-reduced-motion:reduce) { html:not([data-motion]) .wl-effect-portal { animation:none; display:none; } }
+ @media(forced-colors:active) { .wl-effect-portal { animation:none; display:none; } }
+}

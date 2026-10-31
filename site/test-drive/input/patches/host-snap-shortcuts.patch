@@ -1,0 +1,23 @@
+--- a/test-drive/host/index.js
++++ b/test-drive/host/index.js
+@@ -288,11 +288,19 @@
+         const win=state.windows.find(w=>w.id===input.windowId && w.incarnation===input.incarnation);
+         const g=input.geometry, area=state.workArea, placementMode=input.placementMode || (input.zone === 'maximize' ? 'maximized' : ['left','right','top-left','top-right','bottom-left','bottom-right'].includes(input.zone) ? 'snapped' : null);
+         if (input.epoch!==epoch || !win || win.minimized || !['snapped','maximized'].includes(placementMode) || !g || !['x','y','width','height'].every(k=>Number.isFinite(g[k])) || g.width<=0 || g.height<=0 || g.x<area.x || g.y<area.y || g.x+g.width>area.x+area.width || g.y+g.height>area.y+area.height) return false;
+-        win.restoreGeometry={...(win._drag?.geometry || win.geometry)}; win.restorePlacementMode=win._drag?.placementMode || win.placementMode || 'tiled';
++        if (!win.restoreGeometry) { win.restoreGeometry={...(win._drag?.geometry || win.geometry)}; win.restorePlacementMode=win._drag?.placementMode || win.placementMode || 'tiled'; }
+         win.geometry={x:Math.round(g.x),y:Math.round(g.y),width:Math.round(g.width),height:Math.round(g.height)}; win.placementMode=placementMode; win.maximized=placementMode==='maximized'; delete win._drag;
+         tile(win.workspace); revision++; publish(); observe(); return true;
+       }
+       if (input?.kind === 'viewport') { viewport(input.width,input.height); tileAll(); revision++; topologyRevision++; deliver('controller','receiveTopology',{viewProtocol:2,kind:'view-topology',revision:String(topologyRevision),views:[state.viewScope],locations:[{scope:state.viewScope,box:[0,0,state.output.width,state.output.height]}]}); if (presentation?.lease) deliver('controller','receiveReflow',{scope:state.viewScope,lease:presentation.lease}); publish(); observe(); return true; }
++      if (input?.kind === 'window' && input.action === 'restore-geometry') {
++        const win=state.windows.find(w=>w.id===input.windowId && w.incarnation===input.incarnation && w.focused && !w.minimized && w.workspace===state.activeWorkspace);
++        if (input.epoch!==epoch || !win || !win.restoreGeometry || !['snapped','maximized'].includes(win.placementMode)) return false;
++        win.geometry=win.restoreGeometry; delete win.restoreGeometry;
++        win.placementMode=win.restorePlacementMode || 'floating'; delete win.restorePlacementMode; win.maximized=false;
++        tile(win.workspace); revision++; publish(); observe(); return true;
++      }
++      if (input?.kind === 'window' && input.action === 'minimize' && input.epoch !== undefined && (input.epoch !== epoch || !state.windows.some(w=>w.id===input.windowId && w.incarnation===input.incarnation && w.focused && !w.minimized && w.workspace===state.activeWorkspace))) return false;
+       if (input?.kind === 'window' && ['close','minimize'].includes(input.action)) {
+         const win=state.windows.find(w=>w.id===input.windowId); if (!win) return false;
+         if (input.action==='close') { const workspace=win.workspace; state.windows=state.windows.filter(w=>w.id!==win.id); state.activationHistory=state.activationHistory.filter(id=>id!==win.incarnation); tile(workspace); }

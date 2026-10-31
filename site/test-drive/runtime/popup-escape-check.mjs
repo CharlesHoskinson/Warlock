@@ -1,0 +1,17 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import vm from 'node:vm';
+const source=readFileSync(new URL('./vendor/popup-adapter.js',import.meta.url),'utf8');
+const excerpt=source.slice(source.indexOf('let switcherTerminal=null;'),source.indexOf("post({surfaceProtocol:2,kind:'presentation-ready'});"));
+const listeners={}, sent=[], body={}, documentElement={};
+const close={dataset:{surfaceControl:'control:close'},disabled:false};
+const popup={dataset:{mode:'settings',publication:'1',lease:'2'},isConnected:true,closest:()=>null,contains:t=>t===close,querySelectorAll:()=>[close]};
+let current=popup;
+const document={body,documentElement,querySelector:()=>current,addEventListener:(type,fn)=>{(listeners[type] ||= []).push(fn);}};
+const window={addEventListener:()=>{}}; vm.runInNewContext(excerpt,{document,window,app:{ports:{requestAction:{send:x=>sent.push(x)}}}});
+const key=(type,target=body)=>listeners[type][0]({key:'Escape',target,preventDefault(){},stopImmediatePropagation(){}});
+key('keydown'); key('keyup'); assert.equal(sent.length,1); assert.equal(sent[0].id,'control:close');
+key('keydown'); popup.dataset.publication='3'; key('keyup'); assert.equal(sent.length,1);
+popup.dataset.publication='1'; key('keydown'); current={}; key('keyup'); assert.equal(sent.length,1);
+current=popup; key('keydown'); listeners.compositionstart[0](); key('keyup'); assert.equal(sent.length,1);
+console.log('Body Escape release and publication, popup and composition cancellation passed.');
