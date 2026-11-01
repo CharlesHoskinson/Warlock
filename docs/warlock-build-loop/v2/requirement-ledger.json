@@ -6268,17 +6268,61 @@
       "capability": "elm-host",
       "owner": "Native host lead",
       "verifier": "Independent acceptance reviewer",
-      "requirementAccepted": false,
-      "status": "unadjudicated",
+      "requirementAccepted": true,
+      "status": "accepted",
       "scenarios": [
         {
           "name": "tea-narrow-interop",
           "oracle": "the declared contract holds, exact models and effect descriptions match the fixture and no native acceptance is inferred",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "accepted",
+          "evidence": [
+            {
+              "path": "docs/warlock-build-loop/v2/tea-narrow-interop-review-20261101.json",
+              "sha256": "71444c74cb956a6cff3bc943c76e6874a0e82a4d65dd2e0dba0e5aac5c4dc614",
+              "scope": "Whole original ELM-TEA-005 tea-narrow-interop on actual immutable Elm/Haskell adapter: validated approved transport and host integrations, GPU resources and per-frame work outside Elm messages, and modern commands/subscriptions; full source-bound literal replay and independent actual boundary fixtures. Native/provider, AT/IME, hardware, TEA001 and release acceptance remain separate.",
+              "disposition": "accepted"
+            },
+            {
+              "path": "docs/warlock-build-loop/v2/tea-narrow-interop-acceptance-20261101.json",
+              "sha256": "a7871fa44651a38b23be7872c7bf03583d5c9ad272a8dd6bee66f23018af2d97",
+              "scope": "Whole original ELM-TEA-005 tea-narrow-interop on actual immutable Elm/Haskell adapter: validated approved transport and host integrations, GPU resources and per-frame work outside Elm messages, and modern commands/subscriptions; full source-bound literal replay and independent actual boundary fixtures. Native/provider, AT/IME, hardware, TEA001 and release acceptance remain separate.",
+              "disposition": "accepted"
+            }
+          ],
+          "missingObservation": "None for original narrow-interop contract on accepted immutable source. Native/provider, AT/IME, hardware, TEA001 and release remain separately unaccepted.",
+          "sourceRevision": "45ba9ad19bade1187c07690aa8c8245990e0fb6c",
+          "sourceHashes": {
+            "implementation/warlock/src/Main.elm": "a63de0a105e1a13edc5eb67359b665032acba662650659b3a24d4f1999058b66",
+            "implementation/warlock/src/Bar.elm": "aa3cd927c33f9624364b8ba04bc3ceb31c3a13541b6fd1044c9f7ac978d871b7",
+            "implementation/warlock/src/Popup.elm": "fb24afed07ee6396633efb987b3202e57e0dfe52642a8150987e75648c944c58",
+            "implementation/warlock/src/HttpMain.elm": "58a3b1f274bc69b053ca31ece17bcd6b65a593d5722ba65a7728b3d22471d5a9",
+            "implementation/warlock/src/HttpBar.elm": "74d4b6b80267e9b22065b2087ee2b5318a3ce1fe346e1897c99ced6031183af8",
+            "implementation/warlock/src/HttpPopup.elm": "4185692e3613f2bc52eefa896e3c0d57cd796afe090a0a994877d27a52cff354",
+            "implementation/warlock/src/NativePreviewRenderer.elm": "91c7bf75e3a73dcc389765196138bc38bee089be7263851c80cd5782fedbc0e3",
+            "implementation/warlock/src/UiHttp.elm": "3a649f51ff0f783a19fa8bb427bdc0ebb7b3eb7473428044d88a54f78b9da419",
+            "implementation/warlock/haskell/runtime/src/Warlock/Ui/Native.hs": "a3467864d1f675d7943c6799d5b192f7a36f5494792fb6e2cb9f1671d6053665",
+            "implementation/warlock/haskell/runtime/src/Warlock/Ui/Owner.hs": "a780a828eff0c30b26707e4474b84b33f105a9fafcffd6b52f830725b9ad5ca9",
+            "implementation/warlock/haskell/runtime/src/Warlock/Ui/Policy.hs": "5c5d063cdd550a077aedce803656996fc63be34030df5ba635219ffed0d61d40",
+            "implementation/warlock/haskell/runtime/src/Warlock/Ui/Http.hs": "1684af2c7eeee727fc3007e6dcda90da52ad48fe9926a22a9ed489bf6050b1e0",
+            "implementation/warlock/haskell/runtime/src/Warlock/Ui/PrivateNetwork.hsc": "2205761421203a631a1dc861c55501c8356e5630e96de3206dc00f986531fd2b",
+            "implementation/warlock/haskell/runtime/test-ui-origin/Main.hs": "0b0f1780ed2ac5731bdcdf5405e48eddfec40407ff8cd194e8f0c67218e5e7ea",
+            "implementation/warlock/qa/ui-http.cjs": "33891cb1822933680115f1a10d0c3b7f3071a63f12c7f3561aafd49c6a9ec009"
+          },
+          "reviewer": {
+            "name": "elm-tests /root/elm_regression",
+            "independent": true,
+            "disposition": "accepted"
+          },
+          "sourceTuple": {
+            "sourceRevision": "45ba9ad19bade1187c07690aa8c8245990e0fb6c",
+            "core": "Actual current Haskell adapter/owner/adopted Unix transport and three held HttpMain/HttpBar/HttpPopup documents with one Elm DesktopPolicy authority. Native operations remain empty; no native issuer/compositor or provider qualification inferred.",
+            "plugin": "No native plugin loaded. Retained NativePreviewRenderer directly typechecked but not staged/registered in this current Haskell deployment; opaque resource references and change-driven archived semantic preview route are separately inventoried.",
+            "toolchain": "Pinned GHC9.6.7/Cabal3.12.1.0/Elm0.19.2/Node24.22.1 and system library inventories in actual Haskell345/Elm129 input reports. Haskell packetb5985252480beb95844df288d30e37ca29c0a689a47f29609ad3e415d4c39632; Elm packetc9560189a1a009a56463f807ccb80df3747866300d95750dfb69a92f797cf82a. Exact known compile-only check_elm_cpu tool change and unchanged imported function reconciled independently; do not claim all345current byte identity."
+          }
         }
-      ]
+      ],
+      "sourceRevision": "45ba9ad19bade1187c07690aa8c8245990e0fb6c",
+      "acceptance": "docs/warlock-build-loop/v2/tea-narrow-interop-acceptance-20261101.json"
     },
     {
       "id": "ELM-UI-001",
@@ -17356,5 +17400,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-11-01T19:34:33.443537+00:00"
+  "updatedUTC": "2026-11-01T21:15:47.786045+00:00"
 }

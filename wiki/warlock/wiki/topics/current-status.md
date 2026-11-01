@@ -6,10 +6,14 @@ tags: [warlock, architecture, evidence]
 category: topic
 volatility: hot
 sources: [raw/notes/2026-10-29-shortcut-draft-production-baseline.md, raw/notes/2026-10-29-knowledge-space-and-delivery-observation.md, raw/notes/2026-10-31-receipt-states.md]
-summary: "ARC007 closes on current Elm bridge evidence; Haskell package checks are restored, while persistent native desktop and release work remain open."
+summary: "17 whole original requirements/41scenarios accepted; TEA005 closes on actual Elm/Haskell adapter evidence. Current VM readiness failure and persistent native desktop/release work remain open."
 ---
 
 # Current status
+
+As of November1 21:20UTC: **17/242 whole requirements and41/417scenarios accepted**. [Whole005 acceptance](../../../../docs/warlock-build-loop/v2/tea-narrow-interop-acceptance-20261101.json) binds every original adapter clause to published `45ba9ad19`; Root protected7roots/5262HTTP/87typed/58complete histories and10Haskellsuites/273models, with independent374regularblob union. This is existing adapter verification, not a new GUI behavior. All15roles continue; Root owns serialized protected checks. Current Omarchy readiness failed because the popup painted before the toolbar; wait for the actual Applications button in the next unchanged28s trial. Native/provider, AT/IME, hardware, TEA001 and release remain unaccepted. [Immutable dated observation](../../raw/notes/2026-11-01-narrow-interop.md).
+
+## Earlier scoped observations (retained)
 
 The full delivery target remains 242 requirements / 417 scenarios. Consult the [original register](../../../../docs/elm-roadmap/requirements.json) and [acceptance ledger](../../../../docs/warlock-build-loop/v2/requirement-ledger.json) for authoritative identities and dispositions.
 
@@ -230,3 +234,22 @@ Independent reviewer elm-tests /root/elm_regression accepted every original ELM-
 Acceptance and review: `docs/warlock-build-loop/v2/tea-pure-update-acceptance-20261101.json` and `tea-pure-update-review-20261101.json`. Original verification expressly qualifies native behavior separately; this acceptance establishes no native GUI, hardware input, AT/IME, provider cleanup, latency/resource or release result. TEA001 remains partial. Historical 32-case partial evidence, component observations and both failed reports remain unchanged.
 
 The ledger now records **16 whole requirements out of 242 and 40 accepted scenarios out of 417**. This is one new whole EARS closure in the current 19:11:37–20:11:37 UTC window. The preceding hourly window remains recorded as zero. Continue the actual remaining TEA001 finite-state and single-authority work; the full goal stays active.
+
+
+### 2026-11-01T19:43:58.320529+00:00 — next team wave continues
+
+Actual census: 15 owned external worker CLIs; no duplicate identities ([]); absent: []. The ten Terra roles, recurring Sol HIGH advisor and UX/performance owner resumed only after prior actual terminal logs (including bounded timeout124) and CLI absence. Latest Codex receipt: tea-types-1935-launches.json; Gemini GUI/Omarchy: gemini-tea-mvp-1936-launches.json; Gemini site: gemini-site-website-mvp-1942-launch.json. New common cutoff/reconciliation: 20:08 UTC; current hourly report due 20:11:37 UTC. Root remains sole integrator and protected executor.
+
+TEA002 acceptance is published in59a2f38ab2b26f6d76cad34039b59911a36188dc, bound to tested source889e9458d1707c456f5bb6e9af560383b066229e. Counts16whole/40scenarios. Next actual source candidates under remainingTEA001: SystemMenu prepared3aef9297, CapturedAction prepared2e6a48ec, plus newly assigned Snap.Region, Motion source and preview icon kind patches; preserve freeform IDs/provider text. All authors are writing distinct ignored drafts, canonical source remains frozen until Root declaration/ownership. Gemini GUI and Omarchy continue concrete usable-MVP feedback/query-correlation work; Gemini site prepares an ignored Elm website beauty patch while preserving the existing foreign SiteMain draft. Goal stays active; no native or release acceptance.
+
+
+### November1 20:43 UTC — fifteen-role continuity and actual MVP failure
+
+Authenticated AgentBus health passed all six checks; the fresh process census confirms fifteen actual owned workers (ten Terra including five Quint Kit roles, three Gemini Argon, Sol HIGH advisor, and UX/performance Terra). Same persistent identities, bounded memory scopes, no duplicate coordinator/keys. Current launch receipts are `live-continuity-codex-launches.json` and `live-continuity-gemini-launches.json` in the team handoff directory. Root remains sole protected executor.
+
+Fresh current frontend/Haskell integration passed in `.warlock-contributor/haskell-cpu-1793563087632544622/report.json`; all217 Haskell inputs match the qualified guest binaries. Actual current GUI renders in Omarchy. The second28s live attempt retained four QMP acknowledgements but Applications did not open Search; no query/refresh or acceptance claim. It ended with guard FileNotFoundError/exit-9 at28.081s; report observes owned scope/births absent, Foot2095/birth6930 preserved and original idle enabled flag restored. Provider cleanup remains unqualified. First attempt sent no input; its exact failed predicate is unknown, so top-bar overlap is only a hypothesis. Raw evidence remains outside the repository under `/home/charl/vm/omarchy/evidence/warlock-live-usability-20261101T200813Z`.
+
+Whole acceptance remains16/242 and40/417 scenarios. The19:11–20:11UTC hourly window delivered one whole original TEA002, below planning target2/aim3; the next window starts20:11. Current UI005 record has an honestly retained same-owner STATE custody classification failure; independent review does not manufacture foreign ownership or bypass checker. Preserve stopped histories, integrate the next distinct mandatory source behavior, and trace the actual Apps transport failure. VM component checks remain separate from protected native, AT/IME, hardware and release acceptance.
+
+
+November1 20:49UTC: current bounded UI005 live investigation ended under the original45minute stop rule; record/timer and failed actual Apps evidence preserved unchanged. Next distinct mandatory original is ELM-TEA-005/tea-narrow-interop, contributor `.warlock-contributor/tea005-validated-interop.json`. Integrate actual Native.receiveGateway socket-boundary and compiled HTTP concurrent-delivery controls, then protected Root qualification plus independent complete original review. No production defect fabricated, no001/UI005 timer reset, no native acceptance inferred. These Root-owned support bytes are frozen before the successor record starts to preserve custody. Fifteen-role loop remains active.

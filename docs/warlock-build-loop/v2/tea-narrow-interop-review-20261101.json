@@ -1,0 +1,331 @@
+{
+  "schema": 1,
+  "reviewedAtUTC": "2026-11-01T21:14:17.462667+00:00",
+  "reviewer": {
+    "agent": "elm-tests",
+    "task": "/root/elm_regression",
+    "role": "independent acceptance reviewer",
+    "authRun": "warlock-20261031-setup"
+  },
+  "disposition": "accepted",
+  "requirement": "ELM-TEA-005",
+  "scenario": "tea-narrow-interop",
+  "requirementAccepted": true,
+  "scenarioAccepted": true,
+  "sourceRevision": "45ba9ad19bade1187c07690aa8c8245990e0fb6c",
+  "sourceRevisionStatus": "Immutable full commit independently checked; selected15, currentElm129 and Haskell217 match regular Git blobs. Recorded Haskell345 tool exception is explicitly reconciled below.",
+  "original": {
+    "id": "ELM-TEA-005",
+    "capability": "elm-host",
+    "phase": "P1",
+    "pattern": "ubiquitous",
+    "priority": "must",
+    "ears": "The Elm host adapter SHALL use validated Haskell transport and approved host integrations, keep GPU resources and per-frame work outside Elm messages and use current commands and subscriptions rather than historical Signal APIs.",
+    "task": "Freeze minimal interop surface and modern Elm practices.",
+    "verification": "Typed compiler checks, deterministic replay and independent boundary fixtures with source hashes; native behavior qualified separately.",
+    "legacyEvidence": "docs/elm-roadmap/ELM-PRACTICES.md; official Elm corpus",
+    "scenarios": [
+      {
+        "name": "tea-narrow-interop",
+        "given": "a pinned Elm model and named domain fixture",
+        "when": "the narrow-interop boundary and replay campaign execute",
+        "then": "the declared contract holds, exact models and effect descriptions match the fixture and no native acceptance is inferred"
+      }
+    ],
+    "source": "docs/elm-roadmap/coordinator-requirements.json",
+    "status": "proposed",
+    "taskId": "P1-ELM-TEA-005",
+    "accountableOwnerRole": "Native host lead",
+    "verifierRole": "Independent acceptance reviewer"
+  },
+  "clauses": [
+    {
+      "clause": "The Elm host adapter SHALL use validated Haskell transport and approved host integrations",
+      "disposition": "satisfied",
+      "finding": "Current deployed HttpMain/HttpBar/HttpPopup use the fixed typed UiHttp interface and held Haskell-owned role origins/documents. Haskell Policy/Http admits the exact bounded request before callback/dequeue. Owner decodes the entire desktop commit, all request bindings, projection and focus before forwarding its original bytes through Native.sendCommit. Native.receiveGateway validates closed desktop framing, decoder and bound reply; Backend admits typed complete commits through authenticated current-session SCM ingress. Privileged native/owner source originates in trusted Haskell callbacks, not renderer bodies. Approved host integration is the pinned Haskell/WebKit path with held generated Elm documents and separately inventoried libraries, not arbitrary JavaScript or a browser/native issuer claim.",
+      "sourceAnchors": [
+        "UiHttp.elm:9-29,44-69,79-127",
+        "DesktopPolicy.elm:20-42",
+        "Ui/Http.hs strict one-request reader",
+        "Ui/Policy.hs:admitRequest",
+        "Ui/Owner.hs:181-224,245-268",
+        "Ui/Native.hs:28-42,51-79",
+        "Backend.hs:185-209",
+        "runtime/ui/Main.hs:34-86",
+        "Ui/Config.hs:50-72,105-115"
+      ],
+      "evidence": "64 successful protected Haskell commands,10 passing component suites,6431 actual origin/boundary controls including4 newly added owned Unix-socket Native.receiveGateway controls,273 named model cases, closed desktop/credential/peer/role/HTTP fixtures; current compiled HTTP5262 checks with exact headers/bounds/roles/no-replay/FIFO and positive real-root DOM callbacks. Native execution/provider behavior remains separate."
+    },
+    {
+      "clause": "Keep GPU resources and per-frame work outside Elm messages",
+      "disposition": "satisfied",
+      "finding": "Actual Haskell profile loads exactly three held HTTP Elm documents: controller/bar/popup. They carry semantic JSON events/actions and typed effect descriptions, not GPU objects, native FDs, texture/pixel buffers or animation-frame positions/ticks. Browser/WebKit/native renderer owns compositing and CSS animation frames. The HTTP popup explicitly refuses nonempty unqualified preview/paint effects. PreviewVisual validates opaque64hex resource references; metadata and elm-shell scheme tokens are not GPU resources or custody proofs. The seventh compiled NativePreviewRenderer root is latent/unregistered/unshipped in the current Haskell profile; its Receiver/Visual path validates domain/lease/sequence and semantic snapshots. It is not evidence of an approved current native preview producer.",
+      "sourceAnchors": [
+        "NativePreviewRenderer.elm:8-22",
+        "NativePreviewReceiver.elm:21-64",
+        "NativePreviewVisual.elm:18-41",
+        "PreviewVisual.elm:62-96,125-130",
+        "PreviewPaintGate.elm:8-11,24-47",
+        "HttpPopup.elm:17-35",
+        "Ui/Config.hs:61-63,105-115"
+      ],
+      "deploymentInventory": {
+        "currentHaskellDocuments": [
+          "HttpMain",
+          "HttpBar",
+          "HttpPopup"
+        ],
+        "portRoots": [
+          "Main",
+          "Bar",
+          "Popup"
+        ],
+        "latentCompiledRoot": "NativePreviewRenderer; not registered by current Haskell owner manifest",
+        "retainedArchivedProducer": {
+          "path": "implementation/warlock/native/controlled-preview-host.h",
+          "sha256": "4d88000dcf82c899b30d6658fa4554da0e8d3078f696c374bfe4405dbbac7dd2",
+          "finding": "controlled_visual_offer:340-348 suppresses unchanged semantic projection; controlled_tick:514-533 performs native work outside Elm. This archived controlled producer is not deployed by current Haskell tuple and is not an actual per-frame counter or GPU/native acceptance observation."
+        }
+      },
+      "evidence": "Source/data-flow and actual held-document deployment inventory, typed visual/receiver bounds, explicit unsupported-capability branch and seven-root compiler results establish the architectural exclusion. No native producer/GPU lifetime/performance inference is made."
+    },
+    {
+      "clause": "Use current commands and subscriptions rather than historical Signal APIs",
+      "disposition": "satisfied",
+      "finding": "All six deployed/port Elm roots and latent NativePreviewRenderer use Browser.element and typed Cmd/Sub. Ports are explicit; HTTP operations, cancellation, timers and local Browser.Dom focus/scroll are descriptions interpreted at roots/Elm runtime. Domain state stays in pure Model/Msg reducers and exact typed effect descriptions. Bounded production source inventory found no historical Signal API or Elm per-animation-frame subscription. HTTP idle polling is bounded transport work rather than a render-frame loop.",
+      "sourceAnchors": [
+        "Main.elm:15-28",
+        "Bar.elm:149-169",
+        "Popup.elm:45-63",
+        "HttpMain.elm:20-55",
+        "HttpBar.elm:16-65",
+        "HttpPopup.elm:26-79",
+        "NativePreviewRenderer.elm:15-22"
+      ],
+      "evidence": "Seven directly optimized compiler-qualified roots and source-bound replay/transport boundary fixtures. Exact full-model/every-effect campaign runs twice from independently authored literal GIVENs; no Signal compatibility layer is used."
+    }
+  ],
+  "verification": {
+    "originalScenario": "Pinned Elm model and named narrow-interop fixture execute; declared contract holds, full exact models/effect descriptions match literals and no native acceptance is inferred.",
+    "haskell": {
+      "report": "implementation/warlock/qa/evidence/tea-narrow-interop-20261101/haskell-report.json",
+      "reportSHA256": "fa7e03f4282c9b27cf876d36daab735395564424bac2ebee50de35029f415b56",
+      "reviewPacket": "implementation/warlock/qa/evidence/tea-narrow-interop-20261101/haskell-review.json",
+      "packetSHA256": "b5985252480beb95844df288d30e37ca29c0a689a47f29609ad3e415d4c39632",
+      "passed": true,
+      "commands": 64,
+      "suites": 10,
+      "originChecks": 6431,
+      "newOwnedSocketControls": [
+        "foreign binding refused",
+        "fresh matching peer after foreign binding",
+        "native operation refused",
+        "fresh matching peer after native operation"
+      ],
+      "namedModels": 273,
+      "modelScope": "Bounded abstractions and conditional kernel/provider premises, not native proof.",
+      "protectedOriginLogSHA256": "df324f929e46ca05410b77fd007287305e2d534b3bd05abe6ac5d24a6d499660"
+    },
+    "elm": {
+      "report": "implementation/warlock/qa/evidence/tea-narrow-interop-20261101/elm-report.json",
+      "reportSHA256": "b4c96f2261715065e59df8fab05bdc1367ad02ea4aa0d6e152eaa9c5a263cd5b",
+      "reviewPacket": "implementation/warlock/qa/evidence/tea-narrow-interop-20261101/elm-review.json",
+      "packetSHA256": "c9560189a1a009a56463f807ccb80df3747866300d95750dfb69a92f797cf82a",
+      "passed": true,
+      "commands": 20,
+      "optimizedRoots": [
+        "Main",
+        "Bar",
+        "Popup",
+        "HttpMain",
+        "HttpBar",
+        "HttpPopup",
+        "NativePreviewRenderer"
+      ],
+      "httpChecks": 5262,
+      "httpReportSHA256": "256dd1c0c30f4f601ce478e95a4837f28e8a59d372419671ff9fbe6378873e74",
+      "typedControls": 87,
+      "typedReportSHA256": "5cc8d2afcf59840f4fe96e580551837abdbf4f44bc100d557dbd188023a2cf1e",
+      "completeLiteralHistories": 58,
+      "testedTransitions": 134,
+      "setupPreludes": 31,
+      "freshRunsPerHistory": 2,
+      "fullModelAndEveryEffect": true,
+      "observer": {
+        "originalFixtureSha256": "9ab8c194562a3ac7648e0130e15122adf19bdcf47c3c6b6f874270d360ecadf6",
+        "instrumentedFixtureSha256": "2061481549bee5504b4c2b67f2372839c25435ede8c3f4746fd414e7d01e17ad",
+        "oracleSha256": "ab9d3f43d5bbe5b8588274e839d1530e145a68f92d651056a3a694b4735e7b59",
+        "runnerSha256": "15597108de923405823578f89f2c667988f8602f12ddb68f449c365bb17319b8",
+        "fixtureElmSha256": "a63153fc341d548a4382f78f6de331da62dd0d4882bb28d0c4e7dfd20387ed13",
+        "marker": "TEA_CONTRACT_OBSERVE_V1",
+        "patchOffset": 7279,
+        "patchInsertedBytes": 85,
+        "reversiblePatch": true
+      },
+      "observerIndependentlyReconstructed": true,
+      "comparison": "Entire opaque model/effect constructor data captured before Debug formatting; structural JSON values plus exact embedded wire strings. No projection/hash-only or output-captured oracle. Actual emitted Delay tokens are retained and delivered.",
+      "reuse": "Core and debug fixture remain exact against acceptedTEA002 source889e; this new current profile reruns the full campaign. Raw component coverage wording missing whole002 review is historical component scope, not this independent whole005 disposition."
+    },
+    "artifactChecks": {
+      "elmBundles": {
+        "count": 14,
+        "hashes": {
+          "HttpMain.js": "ef8f4aa61ad5683820e8a56a4818cafad29ef57d751033f6f02f322fe53c12de",
+          "tea-contract.js": "9ab8c194562a3ac7648e0130e15122adf19bdcf47c3c6b6f874270d360ecadf6",
+          "Main.js": "c825ef5af009478abf818b57df3bcaf09d7d9ee8b1798c2455ce737196671708",
+          "NotificationRelevanceReplay.js": "a20f60b4a1eb995dcf9ad43c44c49f72839bee62458e89b47e3f324020d668ba",
+          "Popup.js": "3aeb35c15c3f28bab81f63d6527df2080eeea111a1e68e013c9efea034abafca",
+          "HttpBar.js": "661f044c8458ffcbc03ca83c1536c5ff5574f854912757ebeb8b5ee75c84600d",
+          "feedback-context.js": "0482b18d5d24522f2a9c0d647440c2f7e765bf385a5fe149f4d9a133d7f03616",
+          "JumpListReplay.js": "dcb8466b2ac0dd789d5f7baf5704a0a1ed3cd2f9bfe7878a1e795f6243b68445",
+          "Bar.js": "3409c3b5f87750260ec235f2306d8af25c83cdf4aa223ebf38c3820c2991bce9",
+          "HttpPopup.js": "e57e092336ef90a8771cfac613ff73024d18dff28ab04ac42e2d71ccc825cdbf",
+          "NativePreviewRenderer.js": "650ecb5ecd61572d3333b5ddf134fc8a92d2ce86cc1a77dfbf2f0cbc35b7b21f",
+          "NotificationsReplay.js": "77e7aad000d37a20323999990a9b7d2e411eee73959e60c9ca02c2bf92730a8e",
+          "UiHttpReplay.js": "769c6b1343b2e6850a84cd31484e036242f263556e0fb4a204311ba0285ad85b",
+          "RetirementProofReplay.js": "09112d155335d34aba8786e230b36ba450e0825ba78f731754d311e5d7a98240"
+        }
+      },
+      "haskellExecutables": {
+        "count": 12,
+        "source": "haskell-report.build.executables",
+        "allCurrentDeviceInodeSizeSHA256PinsMatch": true,
+        "sha256": {
+          "warlock-runtime:test:ui-origin-controls": "fa60873a8902ac280aa5d3a335a2d1119ac3524b69048d278bc578067ee7d4aa",
+          "warlock-runtime:test:ui-engine-controls": "9106f46a372df7fa092273a60c715fff2f89e084a145a0dbfa2336097347e00f",
+          "warlock-runtime:test:ui-private-network-controls": "1313df1e8f385f447b17fb4d1950b936aac58574f9e114d3aabaf569b7b029e2",
+          "warlock-runtime:test:ui-display-controls": "f7d94af5dec77c40d1ca26bf69a558bb08fc8295a0bc9188eb14eb7abeb136e4",
+          "warlock-runtime:test:ui-mvp-controls": "e170c430f86e549b00aeb074c32f2c8b185c3fa9da2441d70ef74ce397d15795",
+          "warlock-runtime:test:ui-webkit-controls": "c3cee02edd9fa982df37ef19d2109a0412da503b7da92747ed8b8d0a94d24b2c",
+          "warlock-runtime:test:ui-engine-protocol-controls": "8a5a8a384381c97b73b71f40fe873b8739d0f2d3090cbf5c5e7e4595ad405e21",
+          "warlock-runtime:test:ui-engine-exec-controls": "4b44a3c43a82a56a05f40101189bbbee684ea2d1ba985b9661950b494be0a216",
+          "warlock-runtime:test:ui-engine-broker-controls": "aeb39647251b88f726e588493b0d0f20fa8602a346cd439e69a4be106d5e787c",
+          "warlock-protocol:test:desktop-boundary-controls": "68503b3d95d19ec705fe3e8673f10692e127cf9ecd3d54da81e789ef6cb89f25",
+          "warlock-runtime:exe:warlock-ui-backend": "7abbbe24efc24fd089dfc1ccd2eb98b8b30d9c2a3bedcd837136f34850ab51e9",
+          "warlock-runtime:exe:ui-stream-child": "9d39515380da4c61b4f7da3fb8572be2abc59979a682301619ea824f17ced752"
+        }
+      },
+      "currentHeldDocuments": {
+        "controller": {
+          "path": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793566187860125681/haskell-build/frontend/HttpMain.html",
+          "device": "2096",
+          "inode": "1822398",
+          "size": "1069804",
+          "sha256": "00eb89ae3b3e3c8cb846c3b9bfa4627b4d978f61c3f881d3679e4b9e2d01491e"
+        },
+        "bar": {
+          "path": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793566187860125681/haskell-build/frontend/HttpBar.html",
+          "device": "2096",
+          "inode": "1822419",
+          "size": "280039",
+          "sha256": "a79e3fecc5d741dbba926f780f206d3fad658c689c978718a564837db1e8be98"
+        },
+        "popup": {
+          "path": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793566187860125681/haskell-build/frontend/HttpPopup.html",
+          "device": "2096",
+          "inode": "1822450",
+          "size": "507128",
+          "sha256": "4713fbf12dcc597af389b2800f9fc69b30718fafe7fd421e3446ff722b9e1f30"
+        }
+      },
+      "httpArtifactBindings": {
+        "main": "ef8f4aa61ad5683820e8a56a4818cafad29ef57d751033f6f02f322fe53c12de",
+        "bar": "661f044c8458ffcbc03ca83c1536c5ff5574f854912757ebeb8b5ee75c84600d",
+        "popup": "e57e092336ef90a8771cfac613ff73024d18dff28ab04ac42e2d71ccc825cdbf",
+        "replay": "769c6b1343b2e6850a84cd31484e036242f263556e0fb4a204311ba0285ad85b",
+        "harness": "33891cb1822933680115f1a10d0c3b7f3071a63f12c7f3561aafd49c6a9ec009"
+      }
+    },
+    "reviewerExecutedQA": false,
+    "method": "Read-only source and literal-oracle review, parsed existing protected reports, Git regular-blob and SHA256/artifact pin checks, exact tool-delta inspection and debug-observer byte reconstruction. No compiler, test, model, VM, GPU or native execution by reviewer."
+  },
+  "inputBinding": {
+    "selectedRegularBlobs": 15,
+    "selectedSourceHashes": {
+      "implementation/warlock/src/Main.elm": "a63de0a105e1a13edc5eb67359b665032acba662650659b3a24d4f1999058b66",
+      "implementation/warlock/src/Bar.elm": "aa3cd927c33f9624364b8ba04bc3ceb31c3a13541b6fd1044c9f7ac978d871b7",
+      "implementation/warlock/src/Popup.elm": "fb24afed07ee6396633efb987b3202e57e0dfe52642a8150987e75648c944c58",
+      "implementation/warlock/src/HttpMain.elm": "58a3b1f274bc69b053ca31ece17bcd6b65a593d5722ba65a7728b3d22471d5a9",
+      "implementation/warlock/src/HttpBar.elm": "74d4b6b80267e9b22065b2087ee2b5318a3ce1fe346e1897c99ced6031183af8",
+      "implementation/warlock/src/HttpPopup.elm": "4185692e3613f2bc52eefa896e3c0d57cd796afe090a0a994877d27a52cff354",
+      "implementation/warlock/src/NativePreviewRenderer.elm": "91c7bf75e3a73dcc389765196138bc38bee089be7263851c80cd5782fedbc0e3",
+      "implementation/warlock/src/UiHttp.elm": "3a649f51ff0f783a19fa8bb427bdc0ebb7b3eb7473428044d88a54f78b9da419",
+      "implementation/warlock/haskell/runtime/src/Warlock/Ui/Native.hs": "a3467864d1f675d7943c6799d5b192f7a36f5494792fb6e2cb9f1671d6053665",
+      "implementation/warlock/haskell/runtime/src/Warlock/Ui/Owner.hs": "a780a828eff0c30b26707e4474b84b33f105a9fafcffd6b52f830725b9ad5ca9",
+      "implementation/warlock/haskell/runtime/src/Warlock/Ui/Policy.hs": "5c5d063cdd550a077aedce803656996fc63be34030df5ba635219ffed0d61d40",
+      "implementation/warlock/haskell/runtime/src/Warlock/Ui/Http.hs": "1684af2c7eeee727fc3007e6dcda90da52ad48fe9926a22a9ed489bf6050b1e0",
+      "implementation/warlock/haskell/runtime/src/Warlock/Ui/PrivateNetwork.hsc": "2205761421203a631a1dc861c55501c8356e5630e96de3206dc00f986531fd2b",
+      "implementation/warlock/haskell/runtime/test-ui-origin/Main.hs": "0b0f1780ed2ac5731bdcdf5405e48eddfec40407ff8cd194e8f0c67218e5e7ea",
+      "implementation/warlock/qa/ui-http.cjs": "33891cb1822933680115f1a10d0c3b7f3071a63f12c7f3561aafd49c6a9ec009"
+    },
+    "elmCurrentInputs": 129,
+    "haskellCurrentPackageInputs": 217,
+    "recordedHaskellInputs": 345,
+    "unionRegularGitBlobsAndCanonicalEvidenceVerified": 374,
+    "unionNonregularOrMissing": [],
+    "allCurrentBytesMatchCommit": true,
+    "fullHashMaps": "Exact full hash maps retained in canonical elm-review.json/haskell-review.json; selected15 copied here for review linkage."
+  },
+  "scopeReconciliation": {
+    "canonicalRecord": "implementation/warlock/qa/evidence/tea-narrow-interop-20261101/scope-reconciliation.json",
+    "sha256": "babd112474274732e9ffe29f39ad01561daae4d53f84dfb74e9c0a9884227631",
+    "recordedHaskellMismatchToCurrent": [
+      "tools/check_elm_cpu.py"
+    ],
+    "historicalToolSHA256": "5f25113818972a9eb1bfa8fc321cee3d50a073ea773cbefebccd528ea755ff00",
+    "currentToolSHA256": "3206d11c19b5bdeffae2610a6a6693dab3213537a13c2d5e5b8178ab97eee549",
+    "actualDifference": "Exactly3 lines add compile-NativePreviewRenderer inside existing if args.tea_contract execution branch after historical Haskell run finished.",
+    "quintToolchainFunctionUnchanged": true,
+    "shaHelperUnchanged": true,
+    "entireModulePrefixBeforeMainUnchanged": true,
+    "independentJudgment": "Historical Haskell result remains valid for unchanged217 Haskell package/test inputs and unchanged imported function/dependencies. Fresh Elm run covers changed QA checker/current129 inputs. No false claim all345 current bytes equal the historical tuple, and no additional full Haskell run is required solely for this unrelated compile branch."
+  },
+  "preservedFailure": {
+    "elmRedReportSHA256": "44d7b292e3efd0334033b792c591708705025ab37298d839647184201aa456f2",
+    "httpRedSHA256": "037f1b9480c0e841722949cd67e5705258b76fb8422697fd5517d08ba44e48ed",
+    "classification": "Initial5230 checks had8 controller-positive fixture failures: malformed native payload legitimately triggered Shell.rejectEnvelope and Publish. Corrected well-formed unmatched disposition is independently literal, checks zero domain batches, exact FIFO successor and no third POST; existing native-event role-positive and every hostile poison/no-replay assertion remain. This corrects the positive oracle without disguising product replay or suppressing retained failure.",
+    "supportRedRetained": "Separate same-owner support-custody repair reports remain historical/support evidence and are not needed to claim native or whole005 behavior."
+  },
+  "hashes": {
+    "canonicalEvidence": {
+      "implementation/warlock/qa/evidence/tea-narrow-interop-20261101/support-repair-selftest.json": "2afb866f40c98e80759eecdde92dc11ea4c8c09443fa185e7d828d1f38b51de1",
+      "implementation/warlock/qa/evidence/tea-narrow-interop-20261101/support-repair-red-selftest.json": "178f953f2e526cddec4789a6c3808056d0a6c71ad5826e0a04606129a04dda3a",
+      "implementation/warlock/qa/evidence/tea-narrow-interop-20261101/haskell-report.json": "fa7e03f4282c9b27cf876d36daab735395564424bac2ebee50de35029f415b56",
+      "implementation/warlock/qa/evidence/tea-narrow-interop-20261101/support-repair-report.json": "9a23f3ad195de954751065835c91c214e6555a35ac9a1b561ac604305882b0d7",
+      "implementation/warlock/qa/evidence/tea-narrow-interop-20261101/elm-review.json": "c9560189a1a009a56463f807ccb80df3747866300d95750dfb69a92f797cf82a",
+      "implementation/warlock/qa/evidence/tea-narrow-interop-20261101/typed-state.json": "5cc8d2afcf59840f4fe96e580551837abdbf4f44bc100d557dbd188023a2cf1e",
+      "implementation/warlock/qa/evidence/tea-narrow-interop-20261101/ui-http.json": "256dd1c0c30f4f601ce478e95a4837f28e8a59d372419671ff9fbe6378873e74",
+      "implementation/warlock/qa/evidence/tea-narrow-interop-20261101/component-observation.json": "7c18036318b60c1969d992224f8b9e06c9de66656c2f507491c8ee0735e71b92",
+      "implementation/warlock/qa/evidence/tea-narrow-interop-20261101/support-repair-review.json": "f9018d45d9dec264725843acf8e62fd418be50f7827598263ccf42f8a618b186",
+      "implementation/warlock/qa/evidence/tea-narrow-interop-20261101/scope-reconciliation.json": "babd112474274732e9ffe29f39ad01561daae4d53f84dfb74e9c0a9884227631",
+      "implementation/warlock/qa/evidence/tea-narrow-interop-20261101/ui-http-red.json": "037f1b9480c0e841722949cd67e5705258b76fb8422697fd5517d08ba44e48ed",
+      "implementation/warlock/qa/evidence/tea-narrow-interop-20261101/elm-red-report.json": "44d7b292e3efd0334033b792c591708705025ab37298d839647184201aa456f2",
+      "implementation/warlock/qa/evidence/tea-narrow-interop-20261101/haskell-ui-origin.log": "df324f929e46ca05410b77fd007287305e2d534b3bd05abe6ac5d24a6d499660",
+      "implementation/warlock/qa/evidence/tea-narrow-interop-20261101/haskell-review.json": "b5985252480beb95844df288d30e37ca29c0a689a47f29609ad3e415d4c39632",
+      "implementation/warlock/qa/evidence/tea-narrow-interop-20261101/elm-report.json": "b4c96f2261715065e59df8fab05bdc1367ad02ea4aa0d6e152eaa9c5a263cd5b",
+      "implementation/warlock/qa/evidence/tea-narrow-interop-20261101/support-repair-red-report.json": "47fd90db825bc3660dc9e53df37454f80009790186adb27f6b11757983b9b240"
+    },
+    "originalRegisterSHA256": "d26c6d1e0309a55ae670ad70b123447e23d50036120f1339a5ae2b85065fe2ff"
+  },
+  "missing": [],
+  "blockers": [],
+  "nativeAccepted": false,
+  "providerCleanupQualified": false,
+  "atImeAccepted": false,
+  "hardwareAccepted": false,
+  "releaseAccepted": false,
+  "tea001Accepted": false,
+  "limits": [
+    "Whole originalTEA005 acceptance applies to the implemented source-bound adapter contract and the named compiler/replay/independent-boundary fixture; not every conceivable hostile input permutation or native engine execution.",
+    "Actual compositor/provider/GPU resource lifetime, physical frame counters, hardware performance, AT/IME and release retain their own original qualification requirements.",
+    "LatentNativePreviewRenderer compiler success does not activate it, approve an archived host or establish a qualified native GPU producer for current Haskell profile.",
+    "No previously failed UI005 or HOSTSTOP2 history is erased or reclassified. ELM-TEA-001 remains separate.",
+    "Setup preludes assert complete final GIVEN model/effects and literal timer count; their intermediate steps are excluded from134 tested transitions.",
+    "Raw canonical component-observation and fixture reports retain partial/nonacceptance labels from before immutable independent review. This new source-bound disposition discharges their listed missing immutable/original review; it does not rewrite executed evidence."
+  ],
+  "inventoryPreserved": {
+    "requirements": 242,
+    "scenarios": 417
+  },
+  "nextAction": "Root publish this independent whole005 verdict into canonical receipt/ledger/handoff/wiki with exact immutable source and report bindings, then continue remaining mandatory original work."
+}

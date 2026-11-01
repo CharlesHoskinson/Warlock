@@ -1,53 +1,41 @@
 {
   "schema": 1,
   "owner": "root-agentbus",
-  "updatedUTC": "2026-11-01T18:36:29.271734+00:00",
+  "updatedUTC": "2026-11-01T21:21:52.032093+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "tea-model-effects",
+    "id": "tea005-validated-interop",
     "requirements": [
-      "ELM-TEA-002",
-      "ELM-TEA-001"
+      "ELM-TEA-005"
     ],
     "scenarios": [
-      "tea-pure-update",
-      "tea-typed-model"
+      "tea-narrow-interop"
     ],
     "paths": [
       "implementation/warlock/src/Main.elm",
-      "implementation/warlock/src/DesktopPolicy.elm",
-      "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/src/OutputController.elm",
-      "implementation/warlock/src/SurfaceController.elm",
-      "implementation/warlock/src/Shell.elm",
       "implementation/warlock/src/Bar.elm",
       "implementation/warlock/src/Popup.elm",
       "implementation/warlock/src/HttpMain.elm",
       "implementation/warlock/src/HttpBar.elm",
       "implementation/warlock/src/HttpPopup.elm",
-      "implementation/warlock/qa/TeaContractReplay.elm",
-      "implementation/warlock/qa/tea-contract.cjs",
-      "implementation/warlock/qa/tea-contract-cases.cjs",
-      "implementation/warlock/src/Notifications.elm",
-      "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/src/OutcomeAnnouncements.elm",
-      "implementation/warlock/src/JumpList.elm",
-      "implementation/warlock/src/ReconciliationFrame.elm",
-      "implementation/warlock/qa/NotificationsReplay.elm",
-      "implementation/warlock/qa/JumpListReplay.elm",
-      "implementation/warlock/qa/NativePointerFixture.elm",
-      "implementation/warlock/qa/RetirementProofReplay.elm",
-      "implementation/warlock/qa/typed-state.cjs",
-      "implementation/warlock/qa/NotificationRelevanceReplay.elm"
+      "implementation/warlock/src/NativePreviewRenderer.elm",
+      "implementation/warlock/src/UiHttp.elm",
+      "implementation/warlock/haskell/runtime/src/Warlock/Ui/Native.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Ui/Owner.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Ui/Policy.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Ui/Http.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Ui/PrivateNetwork.hsc",
+      "implementation/warlock/haskell/runtime/test-ui-origin/Main.hs",
+      "implementation/warlock/qa/ui-http.cjs"
     ],
-    "before": "Current Elm owning routes compile and selected replays pass, but complete semantic Model and every typed effect have not been checked against independent literal domain expectations; no whole TEA001/002 acceptance is established.",
-    "after": "The actual Elm frontend typed lifecycle/receipt/operation models and pure reducers satisfy the complete original TEA001/002 contracts. Identical sanitized histories yield identical complete models and effects, with independently expected literal state/effect outcomes; native behavior stays separately qualified.",
+    "before": "Current Elm/Haskell adapter is implemented and component-qualified, but the complete original narrow-interop clauses and exact adopted Native.receiveGateway binding boundary plus simultaneous GET/POST no-replay histories lack a current independently reviewed whole-original verdict. Latest actual Omarchy Apps click failed without a proved source cause; that failure remains separately preserved.",
+    "after": "The current actual adapter uses validated Haskell transport and approved host integrations, keeps GPU resource/per-frame ownership outside Elm messages, and modern commands/subscriptions. Real binding/closed-profile reader and adversarial delivery-interleaving controls match independent literal expectations; qualification and original verdict remain scoped separately from native acceptance.",
     "verification": [
-      "Pinned six-root compiler/type checks, actual DesktopPolicy owning-route complete-model/every-effect deterministic histories plus independent literal fixture outcomes and source-bound type/authority separation audit; retain failures and independently adjudicate each whole original EARS, no filtered-model shortcut or inferred native acceptance."
+      "Root-only protected Haskell ui-origin actual socket reader/profile/admission controls with fresh owned per-fixture deadlines; protected six-root Elm +complete policy/every-effect replay and actual compiled HTTP interleavings/independent boundary literals with deterministic seeds and exact source hashes. Source-bound complete adapter/GPU/per-frame/modern API audit and immutable independent review against every original005clause; no native/provider/AT/IME/hardware/release inference."
     ]
   },
   "nextSlices": [
@@ -3477,126 +3465,126 @@
       "terra-browser": "Recurring UX/performance owner: smoothness/latency acceptance criteria and implementation review"
     },
     "externalProcessReceipts": [
-      "/home/charl/.local/state/warlock-team/20261031-agentbus/tea-positive-1900-launches.json",
-      "/home/charl/.local/state/warlock-team/20261031-agentbus/gemini-tea-final-1924-launches.json",
+      "/home/charl/.local/state/warlock-team/20261031-agentbus/live-continuity-codex-launches.json",
+      "/home/charl/.local/state/warlock-team/20261031-agentbus/live-continuity-gemini-launches.json",
       "/home/charl/.local/state/warlock-team/20261031-agentbus/sol-advisor-launch.json",
       "/home/charl/.local/state/warlock-team/20261031-agentbus/ux-performance-launch.json"
     ],
     "authAcknowledgements": "AgentBus live log; process launch alone is not successful authentication",
     "singleProductSlice": true,
     "noDuplicateCoordinator": true,
-    "currentSlice": "ELM-TEA-001 tea-typed-model + ELM-TEA-002 tea-pure-update; complete owning-route model/effect fixture and independent whole-contract audit",
-    "currentProcessObservation": "15 actual owned worker CLIs at 2026-11-01T19:28:33.440634+00:00; duplicates 0; absent []. Bounded liveness, not permanent.",
+    "currentSlice": "Original005 accepted17/41; next actual source implementation: pending-query/recovery UX and remaining001typed domains. Root retains sole protected execution.",
+    "currentProcessObservation": "15 actual owned external CLIs at 2026-11-01T21:21:52.050561+00:00; no duplicate or absent role. Bounded same-session rotations, no keys/coordinator duplication.",
     "lastHealthObservation": {
-      "observedUTC": "2026-11-01T18:57:22Z",
-      "doctor": "All six checks passed: existing verifier/auth, valid unrevoked lead, broker, clock and arbiterPID1116694 reused."
+      "observedUTC": "2026-11-01T20:42:56.701590+00:00",
+      "doctor": "All six checks passed; valid unrevoked lead credential, existing broker/verifier, arbiterPID1116694 reused. No new coordinator or keys."
     },
     "liveCensusReceipt": "/home/charl/.local/state/warlock-team/20261031-agentbus/current-worker-census.json",
-    "lastLivenessUTC": "2026-11-01T19:28:33.440634+00:00",
+    "lastLivenessUTC": "2026-11-01T21:21:52.050561+00:00",
     "actualWorkerCensus": {
-      "observedUTC": "2026-11-01T19:28:33.440634+00:00",
+      "observedUTC": "2026-11-01T21:21:52.050561+00:00",
       "workers": [
         {
-          "name": "sol-advisor",
-          "pid": 2402092,
-          "cli": "codex",
-          "model": "gpt-6.1-sol",
-          "explicitSkipPermissions": false
-        },
-        {
-          "name": "terra-graph",
-          "pid": 2402222,
-          "cli": "codex",
-          "model": "gpt-6.1-terra",
-          "explicitSkipPermissions": false
-        },
-        {
-          "name": "terra-q-front",
-          "pid": 2402223,
-          "cli": "codex",
-          "model": "gpt-6.1-terra",
-          "explicitSkipPermissions": false
-        },
-        {
-          "name": "terra-portable",
-          "pid": 2402224,
-          "cli": "codex",
-          "model": "gpt-6.1-terra",
-          "explicitSkipPermissions": false
-        },
-        {
-          "name": "terra-engine",
-          "pid": 2402226,
-          "cli": "codex",
-          "model": "gpt-6.1-terra",
-          "explicitSkipPermissions": false
-        },
-        {
-          "name": "terra-q-http",
-          "pid": 2402237,
-          "cli": "codex",
-          "model": "gpt-6.1-terra",
-          "explicitSkipPermissions": false
-        },
-        {
-          "name": "terra-q-network",
-          "pid": 2402258,
-          "cli": "codex",
-          "model": "gpt-6.1-terra",
-          "explicitSkipPermissions": false
-        },
-        {
-          "name": "terra-q-lifetime",
-          "pid": 2402269,
-          "cli": "codex",
-          "model": "gpt-6.1-terra",
-          "explicitSkipPermissions": false
-        },
-        {
-          "name": "terra-q-origin",
-          "pid": 2402365,
-          "cli": "codex",
-          "model": "gpt-6.1-terra",
-          "explicitSkipPermissions": false
-        },
-        {
-          "name": "terra-security",
-          "pid": 2402433,
-          "cli": "codex",
-          "model": "gpt-6.1-terra",
-          "explicitSkipPermissions": false
-        },
-        {
-          "name": "terra-vm",
-          "pid": 2402523,
-          "cli": "codex",
-          "model": "gpt-6.1-terra",
-          "explicitSkipPermissions": false
-        },
-        {
-          "name": "ux-performance",
-          "pid": 2402597,
-          "cli": "codex",
-          "model": "gpt-6.1-terra",
-          "explicitSkipPermissions": false
-        },
-        {
           "name": "gemini-omarchy",
-          "pid": 2439816,
+          "pid": 2577737,
           "cli": "agy",
           "model": "gemini-4-argon-high",
           "explicitSkipPermissions": true
         },
         {
           "name": "gemini-site",
-          "pid": 2439818,
+          "pid": 2584883,
           "cli": "agy",
           "model": "gemini-4-argon-high",
           "explicitSkipPermissions": true
         },
         {
+          "name": "sol-advisor",
+          "pid": 2586787,
+          "cli": "codex",
+          "model": "gpt-6.1-sol",
+          "explicitSkipPermissions": false
+        },
+        {
+          "name": "terra-portable",
+          "pid": 2586791,
+          "cli": "codex",
+          "model": "gpt-6.1-terra",
+          "explicitSkipPermissions": false
+        },
+        {
+          "name": "terra-engine",
+          "pid": 2586904,
+          "cli": "codex",
+          "model": "gpt-6.1-terra",
+          "explicitSkipPermissions": false
+        },
+        {
+          "name": "terra-graph",
+          "pid": 2586934,
+          "cli": "codex",
+          "model": "gpt-6.1-terra",
+          "explicitSkipPermissions": false
+        },
+        {
+          "name": "terra-q-front",
+          "pid": 2586949,
+          "cli": "codex",
+          "model": "gpt-6.1-terra",
+          "explicitSkipPermissions": false
+        },
+        {
+          "name": "terra-q-http",
+          "pid": 2586970,
+          "cli": "codex",
+          "model": "gpt-6.1-terra",
+          "explicitSkipPermissions": false
+        },
+        {
+          "name": "terra-q-lifetime",
+          "pid": 2587049,
+          "cli": "codex",
+          "model": "gpt-6.1-terra",
+          "explicitSkipPermissions": false
+        },
+        {
+          "name": "terra-vm",
+          "pid": 2587092,
+          "cli": "codex",
+          "model": "gpt-6.1-terra",
+          "explicitSkipPermissions": false
+        },
+        {
+          "name": "terra-security",
+          "pid": 2587142,
+          "cli": "codex",
+          "model": "gpt-6.1-terra",
+          "explicitSkipPermissions": false
+        },
+        {
+          "name": "terra-q-origin",
+          "pid": 2587201,
+          "cli": "codex",
+          "model": "gpt-6.1-terra",
+          "explicitSkipPermissions": false
+        },
+        {
+          "name": "ux-performance",
+          "pid": 2587264,
+          "cli": "codex",
+          "model": "gpt-6.1-terra",
+          "explicitSkipPermissions": false
+        },
+        {
+          "name": "terra-q-network",
+          "pid": 2587346,
+          "cli": "codex",
+          "model": "gpt-6.1-terra",
+          "explicitSkipPermissions": false
+        },
+        {
           "name": "gemini-gui",
-          "pid": 2439820,
+          "pid": 2599623,
           "cli": "agy",
           "model": "gemini-4-argon-high",
           "explicitSkipPermissions": true
@@ -3616,7 +3604,7 @@
       "continuity": "At each team reconciliation include advisor. Resume same authenticated identity/session only after actual CLI absence and eligible terminal log; no duplicate coordinator or keys.",
       "writes": "Exact-claimed distinct ignored advisor drafts only; no production input mutation.",
       "requiredByUser": true,
-      "cutoff": "2026-11-01T19:35:00Z"
+      "cutoff": "2026-11-01T20:08:00Z"
     },
     "requestedExternalWorkerCount": 15,
     "advisorLaunchReceipt": "/home/charl/.local/state/warlock-team/20261031-agentbus/sol-advisor-launch.json",
@@ -3632,9 +3620,9 @@
       "muse": "bounded DEL010 EARS continuity",
       "terra-artifacts": "unexecuted delegated-UID protected-runner draft"
     },
-    "currentLaunchReceipt": "/home/charl/.local/state/warlock-team/20261031-agentbus/tea-positive-1900-launches.json",
-    "nextReconciliationUTC": "2026-11-01T19:35:00Z",
-    "solAdvisorReconciliationUTC": "2026-11-01T19:35:00Z",
+    "currentLaunchReceipt": "/home/charl/.local/state/warlock-team/20261031-agentbus/live-continuity-codex-launches.json",
+    "nextReconciliationUTC": "2026-11-01T20:08:00Z",
+    "solAdvisorReconciliationUTC": "2026-11-01T20:08:00Z",
     "uxPerformanceOwner": {
       "name": "ux-performance",
       "identity": "terra-browser",
@@ -3644,44 +3632,65 @@
       "role": "Recurring smoothness, UX and latency acceptance-criteria owner across all work threads",
       "requestedExternalOrdinal": 15,
       "canonicalCriteria": "docs/warlock-build-loop/v2/UX-PERFORMANCE-ACCEPTANCE.md",
-      "cutoff": "2026-11-01T19:35:00Z",
+      "cutoff": "2026-11-01T20:08:00Z",
       "launcherPid": 2342454,
       "priorTerminalLog": "/home/charl/.local/state/warlock-team/20261031-agentbus/logs/terra-browser-20261031-182128.log",
-      "log": "/home/charl/.local/state/warlock-team/20261031-agentbus/logs/ux-performance-tea-positive-1900-launcher.log",
-      "prompt": "/home/charl/.local/state/warlock-team/20261031-agentbus/ux-performance-tea-positive-1900.txt",
+      "log": "/home/charl/.local/state/warlock-team/20261031-agentbus/logs/ux-performance-tea-types-1935-launcher.log",
+      "prompt": "/home/charl/.local/state/warlock-team/20261031-agentbus/ux-performance-tea-types-1935.txt",
       "continuity": "Include each census andboundedresumption; actualCLIabsence+eligibleterminallog before same-session resume; rootsolecoordinator/protectedexecutor."
     },
-    "uxPerformanceLaunchReceipt": "/home/charl/.local/state/warlock-team/20261031-agentbus/ux-performance-launch.json"
+    "uxPerformanceLaunchReceipt": "/home/charl/.local/state/warlock-team/20261031-agentbus/ux-performance-launch.json",
+    "continuityPolicy": {
+      "requiredWorkerRoles": 15,
+      "tenBaseTerraHigh": 10,
+      "fiveQuintKitRoles": [
+        "terra-q-origin",
+        "terra-q-lifetime",
+        "terra-q-network",
+        "terra-q-http",
+        "terra-q-front"
+      ],
+      "geminiArgonHigh": 3,
+      "solHighAdvisor": 1,
+      "uxPerformanceTerraHigh": 1,
+      "rootOnlyProtectedExecution": true,
+      "resumption": "Resume same authenticated persistent identities only after eligible terminal prior log and matching CLI absence. Finished/queued jobs are not counted active. Preserve scope memory limits and main desktop."
+    }
   },
   "currentGoalTelemetry": {
     "status": "active",
-    "tokensUsed": 18154352,
-    "timeUsedSeconds": 55445,
+    "tokensUsed": 23897727,
+    "timeUsedSeconds": 83808,
     "budget": "unbudgeted",
-    "observedUTC": "2026-11-01T13:34:51.847813+00:00"
+    "observedUTC": "2026-11-01T21:21:52.032093+00:00",
+    "incrementalSinceContinuationTokenSnapshot": {
+      "baseline": 23227803,
+      "observed": 23897727,
+      "delta": 669924,
+      "scope": "Host goal accounting; no per-worker billing/attribution inferred."
+    }
   },
   "currentOriginalClosure": {
     "requirements": [
-      "ELM-ARC-003",
-      "ELM-DEL-011"
+      "ELM-TEA-005"
     ],
     "scenarios": [
-      "architecture-003",
-      "delivery-011",
-      "arbitrary-path-denied"
+      "tea-narrow-interop"
     ],
     "accepted": true,
     "wholeEARS": true,
-    "acceptance": "docs/warlock-build-loop/v2/ui-backend-acceptance-20261101.json",
-    "independentReview": "docs/warlock-build-loop/v2/ui-backend-review-20261101.json",
-    "sourceRevision": "5818e78f436554a951f1b90f5c9b417e406404b6",
+    "acceptance": "docs/warlock-build-loop/v2/tea-narrow-interop-acceptance-20261101.json",
+    "independentReview": "docs/warlock-build-loop/v2/tea-narrow-interop-review-20261101.json",
+    "sourceRevision": "45ba9ad19bade1187c07690aa8c8245990e0fb6c",
     "administrative": false,
     "nativeExecution": false,
     "guiAcceptance": false,
     "releaseAcceptance": false,
-    "wholeRequirementsAccepted": 15
+    "wholeRequirementsAccepted": 17,
+    "acceptedScenarios": 41,
+    "behaviorChange": "No production behavior change in this boundary QA/acceptance wave; actual adapter verified on immutable source."
   },
-  "nextConcreteAction": "Advance remaining whole TEA001 under the same active contributor record: bounded actual retained finite operation/observation repairs (SystemMenu permission/capability, Snap.Region operand, captured surface/trigger) and independent observation-vs-desired single-authority audit; proportional protected checks, then original immutable review. TEA002 accepted only on889e9458d1707c456f5bb6e9af560383b066229e; native/AT/IME/hardware/resource/provider/release remain.",
+  "nextConcreteAction": "Publish accepted005/support custody handoff with exact independently reviewed same-owner receipts. Resume existing participant histories for actual pending-query/recovery GUI and typed-domain source fixes without resetting stopped timers; integrate production-source patch then proportional tests/current HTML and actual guarded Omarchy journey. Maintain15roles, original242/417/deadlines/failed/native/provider/AT/IME/hardware/release obligations.",
   "currentNamedScenarioClosure": {
     "recordedAccepted": 39,
     "baselineTotal": 417,
@@ -3710,6 +3719,28 @@
       "administrative": false,
       "nativeExecution": false,
       "releaseAcceptance": false
+    },
+    {
+      "requirements": [
+        "ELM-ARC-003",
+        "ELM-DEL-011"
+      ],
+      "scenarios": [
+        "architecture-003",
+        "delivery-011",
+        "arbitrary-path-denied"
+      ],
+      "accepted": true,
+      "wholeEARS": true,
+      "acceptance": "docs/warlock-build-loop/v2/ui-backend-acceptance-20261101.json",
+      "independentReview": "docs/warlock-build-loop/v2/ui-backend-review-20261101.json",
+      "sourceRevision": "5818e78f436554a951f1b90f5c9b417e406404b6",
+      "administrative": false,
+      "nativeExecution": false,
+      "guiAcceptance": false,
+      "releaseAcceptance": false,
+      "wholeRequirementsAccepted": 15,
+      "supersededUTC": "2026-11-01T21:21:52.032093+00:00"
     }
   ],
   "privateUiComponentEvidence": {
@@ -3902,9 +3933,91 @@
       "record": ".warlock-contributor/ui005-haskell-search.json",
       "boundedEnd": "Current physicalUI005searchsnapshotpartialpublished31a92dce9; finalaccepted-query/nativeAT/performanceobligations remain, no netnewclosure.",
       "evidence": "implementation/warlock/qa/evidence/ui005-haskell-search-20261101/observation.json"
+    },
+    {
+      "record": ".warlock-contributor/tea-model-effects.json",
+      "slice": {
+        "id": "tea-model-effects",
+        "requirements": [
+          "ELM-TEA-002",
+          "ELM-TEA-001"
+        ],
+        "scenarios": [
+          "tea-pure-update",
+          "tea-typed-model"
+        ],
+        "paths": [
+          "implementation/warlock/src/Main.elm",
+          "implementation/warlock/src/DesktopPolicy.elm",
+          "implementation/warlock/src/Desktop.elm",
+          "implementation/warlock/src/OutputController.elm",
+          "implementation/warlock/src/SurfaceController.elm",
+          "implementation/warlock/src/Shell.elm",
+          "implementation/warlock/src/Bar.elm",
+          "implementation/warlock/src/Popup.elm",
+          "implementation/warlock/src/HttpMain.elm",
+          "implementation/warlock/src/HttpBar.elm",
+          "implementation/warlock/src/HttpPopup.elm",
+          "implementation/warlock/qa/TeaContractReplay.elm",
+          "implementation/warlock/qa/tea-contract.cjs",
+          "implementation/warlock/qa/tea-contract-cases.cjs",
+          "implementation/warlock/src/Notifications.elm",
+          "implementation/warlock/src/Surface.elm",
+          "implementation/warlock/src/OutcomeAnnouncements.elm",
+          "implementation/warlock/src/JumpList.elm",
+          "implementation/warlock/src/ReconciliationFrame.elm",
+          "implementation/warlock/qa/NotificationsReplay.elm",
+          "implementation/warlock/qa/JumpListReplay.elm",
+          "implementation/warlock/qa/NativePointerFixture.elm",
+          "implementation/warlock/qa/RetirementProofReplay.elm",
+          "implementation/warlock/qa/typed-state.cjs",
+          "implementation/warlock/qa/NotificationRelevanceReplay.elm"
+        ],
+        "before": "Current Elm owning routes compile and selected replays pass, but complete semantic Model and every typed effect have not been checked against independent literal domain expectations; no whole TEA001/002 acceptance is established.",
+        "after": "The actual Elm frontend typed lifecycle/receipt/operation models and pure reducers satisfy the complete original TEA001/002 contracts. Identical sanitized histories yield identical complete models and effects, with independently expected literal state/effect outcomes; native behavior stays separately qualified.",
+        "verification": [
+          "Pinned six-root compiler/type checks, actual DesktopPolicy owning-route complete-model/every-effect deterministic histories plus independent literal fixture outcomes and source-bound type/authority separation audit; retain failures and independently adjudicate each whole original EARS, no filtered-model shortcut or inferred native acceptance."
+        ]
+      },
+      "endedUTC": "2026-11-01T19:59:30.826480+00:00",
+      "disposition": "WholeTEA002 accepted on889e; remainingTEA001 partial carried forward without timer/history reset. User prioritizes fresh actual-product usability; existing15worker preparation continues."
+    },
+    {
+      "slice": {
+        "id": "ui005-live-query-refresh",
+        "requirements": [
+          "ELM-UI-005"
+        ],
+        "scenarios": [
+          "search-race"
+        ],
+        "paths": [
+          "implementation/warlock/src/Main.elm",
+          "implementation/warlock/src/DesktopPolicy.elm",
+          "implementation/warlock/src/Desktop.elm",
+          "implementation/warlock/src/OutputController.elm",
+          "implementation/warlock/src/SurfaceController.elm",
+          "implementation/warlock/src/Popup.elm",
+          "implementation/warlock/src/SurfaceSnapshot.elm",
+          "implementation/warlock/src/HttpMain.elm",
+          "implementation/warlock/src/HttpBar.elm",
+          "implementation/warlock/src/HttpPopup.elm",
+          "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc"
+        ],
+        "before": "The latest immutable frontend passes pure component checks, but the current built product has not been exercised after integration through real Omarchy input; authoritative final query/catalog correlation and usable refresh/recovery remain unobserved on the current app-only Haskell host.",
+        "after": "The actual current built Elm/Haskell app is exercised in an owned bounded Omarchy session. Real input changes query and refreshes while visible feedback, query preservation and current-generation dispatch eligibility are observed. Repair actual demonstrated source failures; retain exact source/artifacts, input acknowledgements, screenshots and cleanup limits.",
+        "verification": [
+          "Reuse current independently qualified frontend tuple889e and unchanged Haskell binaries only after source/artifact review; stage current optimized Http HTML with preimages and dependency inventory. Root-only owned native-on-VM input journey with fresh PID/birth/cgroup/window/lock/Foot/current geometry/original chosen deadline fences before each event, parsed QMP acknowledgements, unique per-attempt receipts and reviewed screenshots. Component/usability observations only until exact original source-bound native/keyboard/AT obligations and independent review pass; never infer protected native/release acceptance."
+        ]
+      },
+      "record": ".warlock-contributor/ui005-live-query-refresh.json",
+      "endedUTC": "2026-11-01T20:48:58.580652+00:00",
+      "disposition": "45-minutes without production fix/original verdict; current actual Apps click-to-search journey failed; do not extend this investigation or reset timers.",
+      "stoppedObservation": ".warlock-contributor/evidence/ui005-live-query-refresh-stopped-2049.json",
+      "previousHistoryPreserved": true
     }
   ],
-  "activeContributorRecord": ".warlock-contributor/tea-model-effects.json",
+  "activeContributorRecord": ".warlock-contributor/tea005-validated-interop.json",
   "ui007StatusScrollCheckpoint": {
     "commit": "425ad4e411cadec68f04214cf7eb5a763a382763",
     "scope": "Component-only; whole UI007 and native/AT remain partial",
@@ -3944,30 +4057,33 @@
     }
   },
   "latestOriginalScenarioVerdict": {
-    "atUTC": "2026-11-01T12:30:32.940180+00:00",
-    "requirement": "ELM-ARC-024",
-    "scenario": "architecture-024",
+    "atUTC": "2026-11-01T21:21:52.032093+00:00",
+    "requirement": "ELM-TEA-005",
+    "scenario": "tea-narrow-interop",
     "scenarioAccepted": true,
-    "wholeRequirementAccepted": false,
-    "scope": "Actual immutable authenticated capability-denial bridge, originalORbranch",
-    "sourceRevision": "eb2178293bb7e3962d7251c8e4a0ce5ffc3def21",
-    "evidence": "docs/warlock-build-loop/v2/arc024-capability-scenario-acceptance-20261101.json",
-    "participantRecord": ".warlock-contributor/arc024-bridge-verdict.json",
-    "oldNativeStartupRecordPreserved": ".warlock-contributor/ui-origin.json"
+    "wholeRequirementAccepted": true,
+    "sourceRevision": "45ba9ad19bade1187c07690aa8c8245990e0fb6c",
+    "evidence": "docs/warlock-build-loop/v2/tea-narrow-interop-acceptance-20261101.json",
+    "participantRecord": ".warlock-contributor/tea005-validated-interop.json",
+    "originalStopHistoriesPreserved": true
   },
   "activeVerificationPhase": {
-    "originalRequirement": "ELM-ARC-002",
-    "originalScenario": "ownership-presentation",
-    "scope": "Actual desktop-only inter-frame idle scheduling source plus socket/SCM/property/Quint checks; before native-on-VM retry",
-    "protectedSession": 22834,
-    "report": ".warlock-contributor/haskell-cpu-1793553496966127943/report.json",
-    "status": "GREEN component run; bounded app-only VM idle/Applications observation partial",
-    "originalDUnchanged": true,
+    "originalRequirement": "ELM-TEA-005",
+    "originalScenario": "tea-narrow-interop",
+    "status": "GREEN; independently whole original accepted",
+    "haskellReport": ".warlock-contributor/haskell-cpu-1793566187860125681/report.json",
+    "elmReport": ".warlock-contributor/elm-cpu-1793567061690853540/report.json",
+    "supportRepairReport": ".warlock-contributor/registry-cpu-1793566908137002341/report.json",
+    "haskellSuites": 10,
+    "originChecks": 6431,
+    "models": 273,
+    "elmOptimizedRoots": 7,
+    "httpChecks": 5262,
+    "typedChecks": 87,
+    "completeHistories": 58,
     "nativeAccepted": false,
     "releaseAccepted": false,
-    "retainedFailure": ".warlock-contributor/haskell-cpu-1793552951595244964/report.json",
-    "retainedFailureDetail": "Nine suites inclnewidleSCM and273named modelcases pass; productionCLIcontrolledchild retired beforefinalframe consumption, leaving3/4callbacks EndpointChanged. Testfix movesexistingsinglecatalogrequest7 into4thfinalframe andawaitsmatchingauthenticatedresponse; unchanged4frames1operationoriginal5sD.",
-    "observation": "implementation/warlock/qa/evidence/engine-idle-20261101/component-observation.json"
+    "sourceRevision": "45ba9ad19bade1187c07690aa8c8245990e0fb6c"
   },
   "threadNamespaceGuardCheckpoint": {
     "source": "implementation/warlock/haskell/runtime/src/Warlock/Ui/ThreadNamespace.hs",
@@ -4008,6 +4124,20 @@
       "positiveOutcome": "PASS actual5ordinaryworldsignals,1remoteCorrectMimeRequest,1.8599s,exit0,within15soriginaldeadline",
       "negativeProbe": "/home/charl/vm/omarchy/evidence/warlock-ui-mvp-20261101/actual-app-20261101T1058Z/security-negative-01",
       "negativeOutcome": "Exit1 before childreceipt, zeroobservedtags. No CSPacceptance. QA-only earlystartupwitness repair assignedportable."
+    },
+    {
+      "originalRequirement": "ELM-ARC-002",
+      "originalScenario": "ownership-presentation",
+      "scope": "Actual desktop-only inter-frame idle scheduling source plus socket/SCM/property/Quint checks; before native-on-VM retry",
+      "protectedSession": 22834,
+      "report": ".warlock-contributor/haskell-cpu-1793553496966127943/report.json",
+      "status": "GREEN component run; bounded app-only VM idle/Applications observation partial",
+      "originalDUnchanged": true,
+      "nativeAccepted": false,
+      "releaseAccepted": false,
+      "retainedFailure": ".warlock-contributor/haskell-cpu-1793552951595244964/report.json",
+      "retainedFailureDetail": "Nine suites inclnewidleSCM and273named modelcases pass; productionCLIcontrolledchild retired beforefinalframe consumption, leaving3/4callbacks EndpointChanged. Testfix movesexistingsinglecatalogrequest7 into4thfinalframe andawaitsmatchingauthenticatedresponse; unchanged4frames1operationoriginal5sD.",
+      "observation": "implementation/warlock/qa/evidence/engine-idle-20261101/component-observation.json"
     }
   ],
   "earsDeliveryTarget": {
@@ -4115,24 +4245,70 @@
           "Whole typed-state and single-authority review, retained finite source fields and original immutable independent acceptance"
         ],
         "replan": "Concentrate existing workers on actual missing literal fixtures and typed-state regressions; Root executes current source wave and independently adjudicates full TEA001/002. No evidence weakening or count inflation."
+      },
+      {
+        "startedUTC": "2026-11-01T19:11:37.655841+00:00",
+        "endedUTC": "2026-11-01T20:11:37.655841+00:00",
+        "reportedUTC": "2026-11-01T20:42:56.701590+00:00",
+        "wholeRequirementsAccepted": 16,
+        "acceptedScenarios": 40,
+        "newWholeRequirementIds": [
+          "ELM-TEA-002"
+        ],
+        "newWholeEarsClosures": 1,
+        "newAcceptedScenarios": [
+          "ELM-TEA-002/tea-pure-update"
+        ],
+        "currentStackWholeRequalifications": [],
+        "targetMet": false,
+        "observedProgress": [
+          "Independent accepted complete original TEA002 on889e source, published59a2f38.",
+          "Fresh actual current frontend/Haskell build passed; Omarchy journey underway at window end."
+        ],
+        "blockingClosureGaps": [
+          "TEA001 retained finite operation/lifecycle fields and whole authority audit remain incomplete.",
+          "Current live app-only search/refresh, native/AT/IME/provider/hardware/release obligations remain separately unaccepted."
+        ],
+        "replan": "Integrate distinct mandatory typed operation-domain source and behavioral boundary cases; keep fifteen role loop and regular actual Omarchy MVP testing. No count inflation."
+      },
+      {
+        "startedUTC": "2026-11-01T20:11:37.655841+00:00",
+        "endedUTC": "2026-11-01T21:11:37.655841+00:00",
+        "reportedUTC": "2026-11-01T21:21:52.032093+00:00",
+        "wholeRequirementsAccepted": 16,
+        "acceptedScenarios": 40,
+        "newWholeRequirementIds": [],
+        "newWholeEarsClosures": 0,
+        "newAcceptedScenarios": [],
+        "currentStackWholeRequalifications": [],
+        "targetMet": false,
+        "observedProgress": [
+          "Published45ba9ad19 actual Native.receiveGateway and HTTPinterleaving fixtures; seven optimized roots and full replay GREEN.",
+          "Same-owner support provenance/explicit staging repair passed277regressions; failed fixture evidence retained."
+        ],
+        "blockingClosureGaps": [
+          "Independent whole005 verdict completed at21:14:17UTC after this reporting window, so excluded from this hour.",
+          "Current GUI query/persistent MVP/native/AT/IME/hardware/provider/release obligations remain separately open."
+        ],
+        "replan": "Finish original005 verdict into nextwindow and integrate actual visible pending-query/recovery source, remaining001typed operation domains; keep15roles and real Omarchy testing without deadline/evidence weakening."
       }
     ],
-    "currentWindowStartedUTC": "2026-11-01T19:11:37.655841+00:00",
-    "nextReportDueUTC": "2026-11-01T20:11:37.655841+00:00",
+    "currentWindowStartedUTC": "2026-11-01T21:11:37.655841+00:00",
+    "nextReportDueUTC": "2026-11-01T22:11:37.655841+00:00",
     "currentWindowProgress": {
-      "observedUTC": "2026-11-01T19:34:33.443537+00:00",
-      "windowStartedUTC": "2026-11-01T19:11:37.655841+00:00",
-      "wholeRequirementsAccepted": 16,
-      "acceptedScenarios": 40,
+      "observedUTC": "2026-11-01T21:21:52.032093+00:00",
+      "windowStartedUTC": "2026-11-01T21:11:37.655841+00:00",
+      "wholeRequirementsAccepted": 17,
+      "acceptedScenarios": 41,
       "newWholeRequirementIds": [
-        "ELM-TEA-002"
+        "ELM-TEA-005"
       ],
       "newWholeEarsClosures": 1,
       "newAcceptedScenarios": [
-        "ELM-TEA-002/tea-pure-update"
+        "ELM-TEA-005/tea-narrow-interop"
       ],
-      "firstWindowMissPreserved": true,
-      "counting": "Immutable source-bound independent original acceptance only. Current window not ended; final hourly actuals due20:11:37UTC."
+      "independentVerdictUTC": "2026-11-01T21:14:17.462667+00:00",
+      "counting": "Whole original independent acceptance only; no new product behavior from QA wave. Hour ended21:11 had0closures; currentwindow remains open."
     }
   },
   "ui005CurrentStackCheckpoint": {
@@ -4197,5 +4373,70 @@
     "nativeAccepted": false,
     "tea001Accepted": false,
     "releaseAccepted": false
+  },
+  "liveUsabilityCadence": {
+    "requestedByUser": true,
+    "observedUTC": "2026-11-01T19:59:30.826480+00:00",
+    "afterIntegratedUserVisibleSlice": true,
+    "maximumImplementationIntervalMinutes": 60,
+    "builtProduct": "Actual current Elm/Haskell app in applicable Omarchy environment",
+    "rootSoleLiveExecutor": true,
+    "teamRolesRetained": 15,
+    "acceptanceBoundary": "No transfer from compile/model/replay/VM to protected native, hardware, AT/IME or release acceptance; preserve original deadlines."
+  },
+  "liveUsability20261101Current": {
+    "observedUTC": "2026-11-01T20:42:56.701590+00:00",
+    "hostEvidenceRoot": "/home/charl/vm/omarchy/evidence/warlock-live-usability-20261101T200813Z",
+    "buildReport": ".warlock-contributor/haskell-cpu-1793563087632544622/report.json",
+    "sourceRevision": "889e9458d1707c456f5bb6e9af560383b066229e",
+    "haskellInputsUnchanged": 217,
+    "attempt01": {
+      "result": "Failed before input; one not-dispatched motion receipt. Exact failed guard predicate not retained; top-bar overlap only a source/geometry hypothesis.",
+      "originalDurationSeconds": 28
+    },
+    "attempt02": {
+      "result": "Current real Elm GUI renders, four QMP pointer acknowledgements, launcher/search did not appear; no typing/refresh performed.",
+      "report": "attempt-02/run-01/host-journey-result.json",
+      "reportSHA256": "89f2cb5ee89a6acb0fd0094e7e44c6ec3ea17187ac1a89c317ff81633749712d",
+      "originalDurationSeconds": 28,
+      "exit": -9,
+      "failure": "Pinned live attempt guard failed: FileNotFoundError",
+      "elapsedSeconds": 28.08102590899216,
+      "cleanup": "Report observes owned scope/principal births absent, Foot2095/birth6930 preserved and original idle enabled flag restored; provider cleanup remains unqualified.",
+      "rootVisualReview": "Viewed006: Applications connected; Window controls unavailable; misleading Choose a window heading, no Search UI."
+    },
+    "nativeAccepted": false,
+    "releaseAccepted": false,
+    "providerCleanupQualified": false,
+    "nativeOperations": [],
+    "workflowCustodyObservation": "UI005 current participant classified Root-owned dirty STATE as protected foreign at start; Root subsequently updated its own STATE. Checker rejects changed hash. Independent same-owner provenance review retained under .warlock-contributor/evidence/foreign-reconciliations/ui005-state-support-provenance-review-20261101.json; existing foreign API does not support same-owner correction. No history/checker bypass or false adoption.",
+    "newReadOnlyVisualDiagnosis": {
+      "observedUTC": "2026-11-01T21:21:52.032093+00:00",
+      "screenshot": "attempt-02/run-01/001-applications-ready.png",
+      "rootViewed": true,
+      "finding": "Popup heading/status already rendered while Applications toolbar remains entirely white. Readiness helper masked popup text rather than actual bar button; accepted readiness is insufficient.",
+      "limits": "Exact dispatch-time bar paint/input delivery not observed; no sole root cause or successful replacement journey claimed.",
+      "nextAction": "Actual button-painted readiness + safe interior above horizontal scrollbar, unchanged28D and all per-event ownership/focus/lock/geometry/Foot fences before fresh distinct trial."
+    }
+  },
+  "teaNarrowInteropAcceptance": {
+    "requirements": [
+      "ELM-TEA-005"
+    ],
+    "scenarios": [
+      "tea-narrow-interop"
+    ],
+    "accepted": true,
+    "wholeEARS": true,
+    "acceptance": "docs/warlock-build-loop/v2/tea-narrow-interop-acceptance-20261101.json",
+    "independentReview": "docs/warlock-build-loop/v2/tea-narrow-interop-review-20261101.json",
+    "sourceRevision": "45ba9ad19bade1187c07690aa8c8245990e0fb6c",
+    "administrative": false,
+    "nativeExecution": false,
+    "guiAcceptance": false,
+    "releaseAcceptance": false,
+    "wholeRequirementsAccepted": 17,
+    "acceptedScenarios": 41,
+    "behaviorChange": "No production behavior change in this boundary QA/acceptance wave; actual adapter verified on immutable source."
   }
 }
