@@ -36,7 +36,7 @@
       "owner": "Native host lead",
       "verifier": "Independent acceptance reviewer",
       "requirementAccepted": false,
-      "status": "unadjudicated",
+      "status": "partial",
       "scenarios": [
         {
           "name": "architecture-002",
@@ -48,9 +48,16 @@
         {
           "name": "ownership-presentation",
           "oracle": "Elm owns DOM state, native host owns surface lifetime and native authority alone owns application effects",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "partial",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/engine-pid1-20261101/component-observation.json",
+              "sha256": "c8c1aeaf065ebd19defe7af20cf3f244ddff78bdc7104548a11ab13b3e57f210",
+              "scope": "Protected component checks plus actual app-only native-on-VM observation; not protected native campaign or original/native/release acceptance",
+              "disposition": "partial"
+            }
+          ],
+          "missingObservation": "Owned PID1 engine rendered actual Elm GUI and catalog, but exited after IPC idle timeout; full original application-effect authority trace, lifetime and independent scenario acceptance remain unqualified. Native/AT/IME/resource and release obligations remain."
         }
       ]
     },
@@ -17259,5 +17266,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-11-01T12:30:32.940180+00:00"
+  "updatedUTC": "2026-11-01T16:59:36.676396+00:00"
 }

@@ -10,7 +10,7 @@ flag vm-security
 
 library
   hs-source-dirs: src
-  exposed-modules: Warlock.Bootstrap, Warlock.Backend, Warlock.Backend.Catalog, Warlock.Backend.PinStore, Warlock.Ui.Http, Warlock.Ui.Owner, Warlock.Ui.Native, Warlock.Ui.Config, Warlock.Ui.Policy, Warlock.Ui.PrivateNetwork, Warlock.Ui.Display, Warlock.Ui.ThreadNamespace
+  exposed-modules: Warlock.Bootstrap, Warlock.Backend, Warlock.Backend.Catalog, Warlock.Backend.PinStore, Warlock.Ui.Http, Warlock.Ui.Owner, Warlock.Ui.Native, Warlock.Ui.Config, Warlock.Ui.Policy, Warlock.Ui.PrivateNetwork, Warlock.Ui.Display, Warlock.Ui.ThreadNamespace, Warlock.Ui.EngineProtocol, Warlock.Ui.EngineAdapter, Warlock.Ui.EngineDeadline, Warlock.Ui.EngineBroker
   other-modules: Warlock.Bootstrap.Aggregate, Warlock.Bootstrap.CurrentSessions, Warlock.Bootstrap.ScopedPeer, Warlock.Bootstrap.SocketOwner, Warlock.Bootstrap.CredentialScopeGuard, Warlock.Backend.Store
   build-depends: base >=4.18 && <5, bytestring, text, containers, network ==3.2.0.0, unix, process ==1.6.19.0, directory, filepath, cryptohash-sha256 ==0.11.102.1, warlock-held-document-proposal, warlock-process-custody, warlock-protocol
   cc-options: -D_GNU_SOURCE
@@ -28,10 +28,10 @@ executable warlock-ui-backend
 executable warlock-ui-owner
   hs-source-dirs: ui
   main-is: Main.hs
-  other-modules: Warlock.Ui.WebKit, Warlock.Ui.WebKitABI, Warlock.Ui.EngineCustody, Warlock.Ui.Mvp
+  other-modules: Warlock.Ui.EngineEntrypoint, Warlock.Ui.WebKit, Warlock.Ui.WebKitABI, Warlock.Ui.EngineCustody, Warlock.Ui.Mvp
   pkgconfig-depends: gobject-2.0
   extra-libraries: webkitgtk-6.0, gtk-4, gobject-2.0, gio-2.0, glib-2.0, soup-3.0
-  build-depends: base >=4.18 && <5, bytestring, text, unix, directory, filepath, warlock-runtime, warlock-protocol, warlock-process-custody
+  build-depends: base >=4.18 && <5, bytestring, text, unix, directory, filepath, warlock-runtime, warlock-protocol, warlock-process-custody, network ==3.2.0.0, cryptohash-sha256 ==0.11.102.1
   default-language: Haskell2010
   ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -with-rtsopts=-V0
 
@@ -92,7 +92,7 @@ executable ui-security-child
   other-modules: Warlock.Ui.WebKit, Warlock.Ui.WebKitABI, Warlock.Ui.EngineCustody, Warlock.Ui.Mvp
   pkgconfig-depends: gobject-2.0
   extra-libraries: webkitgtk-6.0, gtk-4, gobject-2.0, gio-2.0, glib-2.0, soup-3.0
-  build-depends: base >=4.18 && <5, bytestring, text, unix, directory, filepath, process ==1.6.19.0, warlock-runtime, warlock-protocol, warlock-process-custody
+  build-depends: base >=4.18 && <5, bytestring, text, unix, directory, filepath, process ==1.6.19.0, warlock-runtime, warlock-protocol, warlock-process-custody, network ==3.2.0.0, cryptohash-sha256 ==0.11.102.1
   default-language: Haskell2010
   ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -with-rtsopts=-V0
 
@@ -101,7 +101,7 @@ test-suite ui-engine-controls
   hs-source-dirs: test-ui-engine, ui
   main-is: Main.hs
   other-modules: Warlock.Ui.EngineCustody
-  build-depends: base >=4.18 && <5, unix, directory, warlock-runtime, warlock-process-custody
+  build-depends: base >=4.18 && <5, unix, directory, warlock-runtime, warlock-process-custody, bytestring, text, network ==3.2.0.0, cryptohash-sha256 ==0.11.102.1, warlock-protocol
   default-language: Haskell2010
   ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -with-rtsopts=-V0
 
@@ -128,7 +128,7 @@ test-suite ui-display-controls
   main-is: Main.hs
   build-depends: base >=4.18 && <5, text, network ==3.2.0.0, unix, directory, warlock-runtime
   default-language: Haskell2010
-  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates
+  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -with-rtsopts=-V0
 
 test-suite ui-mvp-controls
   type: exitcode-stdio-1.0
@@ -145,7 +145,7 @@ test-suite ui-webkit-controls
   other-modules: Warlock.Ui.WebKit, Warlock.Ui.WebKitABI, Warlock.Ui.EngineCustody, Warlock.Ui.Mvp
   pkgconfig-depends: gobject-2.0
   extra-libraries: webkitgtk-6.0, gtk-4, gobject-2.0, gio-2.0, glib-2.0, soup-3.0
-  build-depends: base >=4.18 && <5, bytestring, text, unix, directory, filepath, process ==1.6.19.0, warlock-runtime, warlock-protocol, warlock-process-custody
+  build-depends: base >=4.18 && <5, bytestring, text, unix, directory, filepath, process ==1.6.19.0, warlock-runtime, warlock-protocol, warlock-process-custody, network ==3.2.0.0, cryptohash-sha256 ==0.11.102.1
   default-language: Haskell2010
   ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -with-rtsopts=-V0
 
@@ -159,3 +159,31 @@ executable ui-security-permissive
   build-depends: base >=4.18 && <5, bytestring, text, network ==3.2.0.0, unix, filepath, cryptohash-sha256 ==0.11.102.1
   default-language: Haskell2010
   ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -threaded
+
+test-suite ui-engine-protocol-controls
+  type: exitcode-stdio-1.0
+  hs-source-dirs: test-ui-engine-protocol
+  main-is: Main.hs
+  other-modules: ProtocolBoundary
+  build-depends: base >=4.18 && <5, bytestring, text, warlock-runtime, warlock-protocol
+  default-language: Haskell2010
+  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -with-rtsopts=-V0
+
+test-suite ui-engine-exec-controls
+  type: exitcode-stdio-1.0
+  hs-source-dirs: test-ui-engine-exec, ui
+  main-is: Main.hs
+  other-modules: Warlock.Ui.EngineEntrypoint, Warlock.Ui.EngineCustody, Warlock.Ui.WebKit, Warlock.Ui.WebKitABI, Warlock.Ui.Mvp
+  pkgconfig-depends: gobject-2.0
+  extra-libraries: webkitgtk-6.0, gtk-4, gobject-2.0, gio-2.0, glib-2.0, soup-3.0
+  build-depends: base >=4.18 && <5, bytestring, text, unix, directory, filepath, network ==3.2.0.0, cryptohash-sha256 ==0.11.102.1, warlock-runtime, warlock-protocol, warlock-process-custody
+  default-language: Haskell2010
+  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -with-rtsopts=-V0
+
+test-suite ui-engine-broker-controls
+  type: exitcode-stdio-1.0
+  hs-source-dirs: test-ui-engine-broker
+  main-is: Main.hs
+  build-depends: base >=4.18 && <5, bytestring, text, unix, network ==3.2.0.0, warlock-runtime, warlock-protocol, warlock-process-custody
+  default-language: Haskell2010
+  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -with-rtsopts=-V0

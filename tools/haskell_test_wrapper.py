@@ -21,7 +21,7 @@ ROOTS = {'durable-storage-controls', 'selection-admission-controls', 'host-guard
          'slot-store-controls', 'pair-store-smoke', 'child-directory-controls',
          'independent-admission-shape', 'pair-store-sequences', 'independent-lifetime-owner'}
 NOARGS = {'held-document-controls', 'public-controls', 'boundary-controls', 'owner-sequences',
-          'elf-cases', 'native-cancellation-controls', 'desktop-boundary-controls', 'ui-engine-controls', 'ui-private-network-controls', 'ui-display-controls', 'ui-webkit-controls'}
+          'elf-cases', 'native-cancellation-controls', 'desktop-boundary-controls', 'ui-engine-controls', 'ui-private-network-controls', 'ui-display-controls', 'ui-webkit-controls', 'ui-engine-protocol-controls', 'ui-engine-exec-controls', 'ui-engine-broker-controls'}
 
 
 def pin(path):

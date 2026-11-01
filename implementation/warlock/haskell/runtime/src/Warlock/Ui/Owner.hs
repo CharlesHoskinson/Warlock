@@ -3,10 +3,10 @@
 -- Actual local UI owner: roles originate in separate bound listeners, never in
 -- browser-supplied tags. Native authority remains on the inherited Unix peer.
 module Warlock.Ui.Owner
- (UiEndpoints(..),TrustedOwnerEvent(..),EngineResult(..),UiResult(..),runUiOwner,uiResultJson) where
+ (UiEndpoints(..),TrustedOwnerEvent(..),EngineResult(..),UiResult(..),runUiOwner,runUiOwnerPrepared,uiResultJson) where
 import Control.Concurrent (ThreadId,forkFinally,killThread)
 import Control.Concurrent.MVar
-import Control.Exception (SomeException,SomeAsyncException,fromException,mask,mask_,throwIO,try)
+import Control.Exception (SomeException,SomeAsyncException,fromException,mask,mask_,throwIO,try,finally)
 import Control.Monad (forM,forM_,unless,when)
 import qualified Crypto.Hash.SHA256 as SHA
 import qualified Data.ByteString as B
@@ -104,7 +104,17 @@ release ledger ticket = mask_ $ do
  pure result
 
 runUiOwner :: PeerNetwork -> UiConfig -> (UiEndpoints -> (TrustedOwnerEvent -> IO (Either Text ())) -> IO EngineResult) -> IO UiResult
-runUiOwner witness config runEngine = mask $ \restore -> do
+runUiOwner witness config runEngine = runUiOwnerPrepared witness config $ \endpoints ownerEvent ->
+ pure (runEngine endpoints ownerEvent, pure ())
+
+-- Prepare the owned engine after binding its immutable origins but before
+-- starting any listener/native workers. Acquisition owns its own partial
+-- failure cleanup. Once returned, retirement runs even if worker startup or
+-- engine execution fails; it remains responsible for its original deadline.
+runUiOwnerPrepared :: PeerNetwork -> UiConfig
+ -> (UiEndpoints -> (TrustedOwnerEvent -> IO (Either Text ())) -> IO (IO EngineResult, IO ()))
+ -> IO UiResult
+runUiOwnerPrepared witness config prepareEngine = mask $ \restore -> do
  ledger <- newMVar (Ledger False False [])
  nativeCell <- newIORef Nothing
  threads <- newIORef ([] :: [(ThreadId,MVar (Either SomeException ()))])
@@ -114,6 +124,7 @@ runUiOwner witness config runEngine = mask $ \restore -> do
  originCell <- newIORef []
  engineStarted <- newIORef False
  engineStatus <- newIORef Nothing
+ engineRetired <- newIORef False
  lastProjection <- newIORef Nothing
  scopeCell <- newMVar (Nothing,Nothing :: Maybe Counter)
  queues <- newMVar [(Controller,[]),(Bar,[]),(Popup,[])]
@@ -239,8 +250,6 @@ runUiOwner witness config runEngine = mask $ \restore -> do
   listeners <- mapM (\role -> case filter ((==role) . documentRole) documents of [document] -> bindRole role document; _ -> ioError (userError "UI role document missing")) [Controller,Bar,Popup]
   writeIORef originCell [(role,originBytes origin) | (role,origin,_,_)<-listeners]
   require (length (unique [originBytes origin | (_,origin,_,_)<-listeners])==3) "UI origins not distinct"
-  forM_ listeners (\(role,origin,document,ticket) -> launch (serve native role origin document ticket))
-  launch $ let loop = do raw <- receiveGateway native; record Controller "native-event" raw; accepted <- enqueue [(Controller,raw)]; require accepted "native event queue full"; loop in loop
   let getOrigin role=case [origin | (key,origin,_,_)<-listeners,key==role] of [origin] -> pure origin; _ -> ioError (userError "UI role invariant")
   controller <- getOrigin Controller
   bar <- getOrigin Bar
@@ -253,11 +262,15 @@ runUiOwner witness config runEngine = mask $ \restore -> do
   -- timeout through those callbacks. The original parent Bootstrap deadline
   -- still bounds this selected process; HTTP/native admission also retains D.
   writeIORef engineStarted True
-  result <- restore (runEngine endpoints ownerEvent)
-  writeIORef engineStatus (Just result)
-  remaining <- remainingMicros deadline
-  require (remaining>0) "original UI engine deadline expired"
-  pure (enginePassed result)
+  (runEngine,retireEngine) <- prepareEngine endpoints ownerEvent
+  (do
+    forM_ listeners (\(role,origin,document,ticket) -> launch (serve native role origin document ticket))
+    launch $ let loop = do raw <- receiveGateway native; record Controller "native-event" raw; accepted <- enqueue [(Controller,raw)]; require accepted "native event queue full"; loop in loop
+    result <- restore runEngine
+    writeIORef engineStatus (Just result)
+    remaining <- remainingMicros deadline
+    require (remaining>0) "original UI engine deadline expired"
+    pure (enginePassed result)) `finally` (retireEngine >> writeIORef engineRetired True)
  held <- modifyMVar ledger (\(Ledger _ poisoned tickets) -> pure (Ledger True poisoned tickets,tickets))
  socketCleanups <- forM held (\ticket -> try (closeTicket ticket) :: IO (Either SomeException Bool))
  native <- readIORef nativeCell
@@ -277,7 +290,8 @@ runUiOwner witness config runEngine = mask $ \restore -> do
  bad <- readIORef failure
  started <- readIORef engineStarted
  status <- readIORef engineStatus
- let engineClean=not started || maybe False engineCleanup status
+ retired <- readIORef engineRetired
+ let engineClean=not started || (retired && maybe False engineCleanup status)
      clean=engineClean && all (either (const False) id) (nativeCleanup:socketCleanups) && all (either (const False) id) joins
      problem=case attempted of Left (err :: SomeException) -> Just (T.pack (show err)); Right _ -> bad
      passed=either (const False) id attempted && clean && problem==Nothing

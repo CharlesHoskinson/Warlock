@@ -12,6 +12,8 @@ The test drive is the quickest way to try Warlock: the real compiled Elm interfa
 
 The current Elm/Haskell native host is still under development. The website and browser test drive are available; a persistent Warlock desktop on Omarchy has not yet met native or release acceptance. The [delivery ledger](docs/warlock-build-loop/v2/requirement-ledger.json) preserves all 242 requirements and 417 scenarios, including 15 historical whole-requirement verdicts with their original source and verification scope. Component checks and isolated VM runs do not extend those verdicts to the current host.
 
+The current Haskell host has now displayed the actual compiled Elm interface in an isolated Omarchy VM, with the Applications catalog connected. That run closed after an IPC idle timeout; sustained operation and physical input testing are the next MVP work. Window controls remain unavailable on the stock VM compositor. See the [source-bound observation](implementation/warlock/qa/evidence/engine-pid1-20261101/component-observation.json) for the exact build, failed runs and remaining obligations.
+
 ![The Warlock desktop in the test drive: taskbar across the top and Task View open over the workspace](docs/warlock-brand/readme/test-drive-task-view.png)
 
 Open an application and Warlock's portal brings it in: a ring of red ember fragments ignites, expands and resolves into the new window.

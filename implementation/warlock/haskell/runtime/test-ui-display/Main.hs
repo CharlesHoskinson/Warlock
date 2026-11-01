@@ -7,7 +7,10 @@ import qualified Network.Socket as S
 import System.Directory (createDirectory, doesPathExist, removeDirectoryRecursive)
 import System.Posix.Files (createSymbolicLink, removeLink, setFileMode, getSymbolicLinkStatus, fileOwner, fileMode, deviceID, fileID, isSocket)
 import System.Posix.User (getRealUserID)
-import Warlock.Ui.Display (resolveDisplayEnvironment)
+import System.Posix.Process (forkProcess, getProcessStatus, ProcessStatus(..), exitImmediately)
+import System.Exit (ExitCode(..))
+import Warlock.Ui.Display (resolveDisplayEnvironment, captureDisplayTransport, displayEnvironmentPairs)
+import Warlock.Ui.PrivateNetwork (enterPrivateNetwork)
 
 check :: String -> Bool -> IO ()
 check name good = do
@@ -45,8 +48,21 @@ main = S.withSocketsDo $ do
     putStrLn ("display_fixture_metadata=" ++ show (observedPath,fileOwner metadata,fileMode metadata,deviceID metadata,fileID metadata,isSocket metadata))
    accepted <- resolveDisplayEnvironment (Just runtime) (Just name)
    check "actual owned private Unix socket accepted" (accepted == Right [("XDG_RUNTIME_DIR",runtime),("WAYLAND_DISPLAY",name)])
+   captured <- captureDisplayTransport (Just runtime) (Just name) >>= either
+     (ioError . userError . show) pure
+   child <- forkProcess $ do
+    enterPrivateNetwork
+    let retained = displayEnvironmentPairs captured
+    exitImmediately (if retained == [("XDG_RUNTIME_DIR",runtime),("WAYLAND_DISPLAY",name)]
+      then ExitSuccess else ExitFailure 1)
+   status <- getProcessStatus True False child
+   putStrLn ("display_namespace_child_status=" ++ show status)
+   check "validated display settings survive actual private user/network namespace entry"
+     (status == Just (Exited ExitSuccess))
    setFileMode runtime 0o755
    refused "shared runtime mode refused" (Just runtime) (Just name)
+   check "captured settings are immutable; a fresh capture still applies strict checks"
+     (displayEnvironmentPairs captured == [("XDG_RUNTIME_DIR",runtime),("WAYLAND_DISPLAY",name)])
    setFileMode runtime 0o700
    createSymbolicLink name (runtime ++ "/wayland-link")
    refused "symlink endpoint refused" (Just runtime) (Just "wayland-link")

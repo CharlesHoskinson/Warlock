@@ -22,7 +22,7 @@ SUITES = {
     'warlock-process-custody': ['internal-controls', 'public-controls', 'selected-fd-controls', 'deadline-stop-controls', 'bootstrap-facade-controls'],
     'warlock-protocol': ['boundary-controls', 'ingress-controls', 'owner-sequences', 'credential-guard-controls', 'desktop-boundary-controls'],
     'warlock-elf-observation-proposal': ['elf-cases'],
-    'warlock-runtime': ['current-session-oracles', 'persistent-bootstrap-controls', 'ui-backend-controls', 'ui-origin-controls', 'ui-engine-controls', 'ui-private-network-controls', 'ui-display-controls', 'ui-mvp-controls', 'ui-webkit-controls'],
+    'warlock-runtime': ['current-session-oracles', 'persistent-bootstrap-controls', 'ui-backend-controls', 'ui-origin-controls', 'ui-engine-controls', 'ui-private-network-controls', 'ui-display-controls', 'ui-mvp-controls', 'ui-webkit-controls', 'ui-engine-protocol-controls', 'ui-engine-exec-controls', 'ui-engine-broker-controls'],
     'warlock-native-authority': ['native-cancellation-controls', 'durable-storage-controls', 'selection-admission-controls', 'host-guard-controls', 'slot-store-controls', 'pair-store-smoke', 'child-directory-controls', 'independent-admission-shape', 'pair-store-sequences', 'independent-lifetime-owner', 'independent-pairstore'],
 }
 FIXTURES = {
@@ -129,7 +129,7 @@ def run_ui_models(copy, source, node, model_cli, model_env, logs, result, requir
         # taken from its source and must actually execute before any tests.
         formal = copy / 'runtime/formal'
         result['uiCompanionModels'] = {}
-        for stem in ('ui-engine-lifetime', 'ui-private-network', 'ui-http-admission', 'ui-frontend-delivery', 'ui-standalone-bootstrap'):
+        for stem in ('ui-engine-lifetime', 'ui-private-network', 'ui-http-admission', 'ui-frontend-delivery', 'ui-standalone-bootstrap', 'ui-engine-rpc', 'ui-engine-topology'):
             module = stem.replace('-', '_')
             model_path, test_path = formal / (stem + '.qnt'), formal / (stem + '_test.qnt')
             hashes = {path.name: digest(path) for path in (model_path, test_path)}
@@ -169,6 +169,35 @@ def run_ui_models(copy, source, node, model_cli, model_env, logs, result, requir
                 required(info, name)
             if re.findall(r'\b(\d+) passing\b', (logs / (stem + '-directed.stdout')).read_text()) != [str(len(names))]:
                 raise RuntimeError(stem + ' directed count differs')
+            # Focused drivers use the SAME init and guarded model actions.
+            # Retain adversarial broad counts, including zeros, separately;
+            # guided reachability never asserts broad coverage or liveness.
+            guided = {
+                'ui-engine-rpc': {'guidedConversationStep': [
+                    'witnessRequestResponse', 'witnessOwnerEvent', 'witnessStaleView', 'witnessCallback']},
+                'ui-engine-topology': {
+                    'guidedCleanStep': ['witnessVisibleUnqualifiedCleanup', 'witnessExitLateCallback', 'witnessClean'],
+                    'guidedExternalStep': ['witnessExternalSurvives'],
+                    'guidedUnknownCallbackStep': ['witnessUnknownQuarantine']},
+            }.get(stem, {})
+            guided_counts = {}
+            for driver, selected in guided.items():
+                if not set(selected) <= set(witnesses):
+                    raise RuntimeError(stem + ' focused witness declaration differs')
+                label = stem + '-' + driver
+                args = [str(node), str(model_cli), 'run', str(model_path), '--main=' + module,
+                        '--backend=typescript', '--step=' + driver, '--invariant=safety',
+                        '--witnesses', *selected, '--seed=20261101', '--max-samples=10000',
+                        '--max-steps=50', '--verbosity=1']
+                info = run(args, formal, model_env, logs, label, timeout=240)
+                result['commands'].append(info)
+                required(info, label)
+                covered = {name: int(n) for name, n in re.findall(r'(\w+) was witnessed in (\d+) trace',
+                           (logs / (label + '.stdout')).read_text())}
+                if set(covered) != set(selected) or any(n == 0 for n in covered.values()):
+                    raise RuntimeError(stem + ' focused witness incomplete or zero: ' + driver)
+                guided_counts[driver] = covered
+            focused_witnesses = set(sum(guided.values(), []))
             per_init = {}
             for init in campaigns:
                 label = stem + '-safety' + ('-' + init if init else '')
@@ -178,12 +207,18 @@ def run_ui_models(copy, source, node, model_cli, model_env, logs, result, requir
                 if set(observed) != set(expected):
                     raise RuntimeError(stem + ' witness output incomplete for ' + str(init))
                 if any(n == 0 for name, n in observed.items()
-                       if not (stem == 'ui-engine-lifetime' and name == 'witnessClean')):
+                       if not ((stem == 'ui-engine-lifetime' and name == 'witnessClean') or name in focused_witnesses)):
                     raise RuntimeError(stem + ' required broad witness zero for ' + str(init))
                 per_init[init or 'default'] = observed
             counts = {name: sum(values.get(name, 0) for values in per_init.values()) for name in witnesses}
             entry = {'sourceHashes': hashes, 'directed': names, 'witnesses': counts,
                      'perInitWitnesses': per_init, 'samplesPerInit': samples, 'maxSteps': 50, 'seed': 20261101}
+            if guided_counts:
+                entry['broadCounts'] = dict(counts)
+                entry['guidedReachability'] = guided_counts
+                entry['scope'] = ('Adversarial broad safety and retained broad witness counts, plus separately '
+                                  'executed focused same-action reachability. Focused drivers exclude failure/time '
+                                  'schedules; no broad-positive coverage, runtime, cleanup, or liveness inference.')
             result['uiCompanionModels'][stem] = entry
             if stem == 'ui-engine-lifetime':
                 if 'witnessClean' not in counts:
@@ -207,8 +242,15 @@ def run_ui_models(copy, source, node, model_cli, model_env, logs, result, requir
                 entry['guidedSeed'] = 20261101
                 if set(guided) != {'witnessClean'} or guided['witnessClean'] == 0:
                     raise RuntimeError('Lifetime guided clean witness missing or zero')
-            elif any(n == 0 for n in counts.values()):
+            elif any(n == 0 and not any(values.get(name, 0) > 0 for values in guided_counts.values())
+                     for name, n in counts.items()):
                 raise RuntimeError(stem + ' witness missing or zero across campaigns')
+            if guided_counts:
+                entry['coverageCounts'] = {
+                    name: counts[name] + sum(values.get(name, 0) for values in guided_counts.values())
+                    for name in witnesses}
+                # Counts remain auditable by campaign; coverageCounts never
+                # replaces broadCounts or claims broad positive reachability.
             for filename, expected in hashes.items():
                 if digest(formal / filename) != expected or digest(source / 'runtime/formal' / filename) != expected:
                     raise RuntimeError(stem + ' source changed during execution')
@@ -227,7 +269,7 @@ def models_only(output, env):
         copy = work / 'source'
         formal = copy / 'runtime/formal'
         formal.mkdir(parents=True, mode=0o700)
-        stems = ('ui-origin', 'ui-engine-lifetime', 'ui-private-network', 'ui-http-admission', 'ui-frontend-delivery', 'ui-standalone-bootstrap')
+        stems = ('ui-origin', 'ui-engine-lifetime', 'ui-private-network', 'ui-http-admission', 'ui-frontend-delivery', 'ui-standalone-bootstrap', 'ui-engine-rpc', 'ui-engine-topology')
         paths = [stem + suffix for stem in stems for suffix in ('.qnt', '_test.qnt')]
         hashes = {}
         for name in paths:
@@ -420,7 +462,7 @@ def build(sdk, output, env, profile='common'):
         required(command('production-build', 'build', ['all']), 'production build')
         required(command('production-freeze', 'freeze', []), 'production freeze')
         targets = ([p + ':test:' + suite for p, suites in SUITES.items() for suite in suites] if profile == 'common'
-                   else (['warlock-runtime:test:ui-origin-controls', 'warlock-runtime:test:ui-engine-controls', 'warlock-runtime:test:ui-private-network-controls', 'warlock-runtime:test:ui-display-controls', 'warlock-runtime:test:ui-mvp-controls', 'warlock-runtime:test:ui-webkit-controls', 'warlock-protocol:test:desktop-boundary-controls']
+                   else (['warlock-runtime:test:ui-origin-controls', 'warlock-runtime:test:ui-engine-controls', 'warlock-runtime:test:ui-private-network-controls', 'warlock-runtime:test:ui-display-controls', 'warlock-runtime:test:ui-mvp-controls', 'warlock-runtime:test:ui-webkit-controls', 'warlock-runtime:test:ui-engine-protocol-controls', 'warlock-runtime:test:ui-engine-exec-controls', 'warlock-runtime:test:ui-engine-broker-controls', 'warlock-protocol:test:desktop-boundary-controls']
                          if profile == 'ui-origin' else ['warlock-runtime:test:persistent-bootstrap-controls']))
         fixtures = (FIXTURES if profile == 'common' else
                     ({'warlock-ui-backend': FIXTURES['warlock-ui-backend'], 'ui-stream-child': FIXTURES['ui-stream-child']} if profile == 'ui-origin'

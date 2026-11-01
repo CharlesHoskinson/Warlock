@@ -1,7 +1,9 @@
 {-# LANGUAGE OverloadedStrings #-}
 -- Only the owning Wayland transport crosses startup, not arbitrary env.
 -- This transport selection does not authenticate compositor effects.
-module Warlock.Ui.Display (readDisplayEnvironment, resolveDisplayEnvironment) where
+module Warlock.Ui.Display
+ (DisplayEnvironment, captureDisplayEnvironment, captureDisplayTransport,
+  displayEnvironmentPairs, readDisplayEnvironment, resolveDisplayEnvironment) where
 import Control.Exception (IOException, try)
 import Control.Monad (unless)
 import Data.Bits ((.&.))
@@ -10,11 +12,26 @@ import System.Environment (lookupEnv)
 import System.Posix.Files (fileMode, fileOwner, getSymbolicLinkStatus, isDirectory, isSocket)
 import System.Posix.User (getRealUserID, getEffectiveUserID)
 
-readDisplayEnvironment :: IO (Either Text [(String,String)])
-readDisplayEnvironment = do
+-- Capture before entering the private user namespace. Its single UID mapping
+-- changes how root-owned outer /run ancestors are represented; rechecking
+-- their numeric owners there would reject an already validated transport.
+-- These immutable settings grant no compositor or window-effect authority.
+newtype DisplayEnvironment = DisplayEnvironment [(String,String)]
+
+displayEnvironmentPairs :: DisplayEnvironment -> [(String,String)]
+displayEnvironmentPairs (DisplayEnvironment pairs) = pairs
+
+captureDisplayEnvironment :: IO (Either Text DisplayEnvironment)
+captureDisplayEnvironment = do
  runtime <- lookupEnv "XDG_RUNTIME_DIR"
  display <- lookupEnv "WAYLAND_DISPLAY"
- resolveDisplayEnvironment runtime display
+ captureDisplayTransport runtime display
+
+captureDisplayTransport :: Maybe FilePath -> Maybe String -> IO (Either Text DisplayEnvironment)
+captureDisplayTransport runtime display = fmap (fmap DisplayEnvironment) (resolveDisplayEnvironment runtime display)
+
+readDisplayEnvironment :: IO (Either Text [(String,String)])
+readDisplayEnvironment = fmap (fmap displayEnvironmentPairs) captureDisplayEnvironment
 
 resolveDisplayEnvironment :: Maybe FilePath -> Maybe String -> IO (Either Text [(String,String)])
 resolveDisplayEnvironment Nothing Nothing = pure (Right [])

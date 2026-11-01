@@ -336,7 +336,7 @@ exerciseOwner budget observations documents endpoints emit = do
  pure (Owner.EngineResult True True)
  where unique = foldr (\value rest -> if value `elem` rest then rest else value:rest) []
 
-data ChildMode = Ordinary | NoNetwork | QueueBound deriving (Eq,Show)
+data ChildMode = Ordinary | NoNetwork | QueueBound | RetireThrows deriving (Eq,Show)
 child :: ChildMode -> FilePath -> FilePath -> IO ()
 child mode configPath observationsPath = do
  budget <- newIORef 0
@@ -344,7 +344,7 @@ child mode configPath observationsPath = do
  outcome <- try $ withPeerNetwork $ \witness -> do
   unless (mode==NoNetwork) enterPrivateNetwork
   config <- Config.loadUiConfig configPath >>= must
-  documents <- if mode==Ordinary then Config.prepareDocuments config else pure []
+  documents <- if mode `elem` [Ordinary,RetireThrows] then Config.prepareDocuments config else pure []
   let queueControl endpoints emit = do
        let origin=Owner.controllerOrigin endpoints;wire=commit [catalogRequest]
        Response code _ _ <- request origin "POST" "/commit" (posted origin wire) wire
@@ -371,14 +371,63 @@ child mode configPath observationsPath = do
        pure (Owner.EngineResult True True)
       callback = case mode of
        Ordinary -> exerciseOwner budget observations documents
+       RetireThrows -> \endpoints emit -> do
+        result <- exerciseOwner budget observations documents endpoints emit
+        -- A local HTTP204 is not backend consumption. Keep the peer live
+        -- until a final read-only fence response proves all prior frames were
+        -- consumed, then trigger the retirement failure being tested.
+        current <- Owner.uiLastProjection endpoints >>= maybe
+          (ioError (userError "retirement fence projection absent")) pure
+        let origin=Owner.controllerOrigin endpoints
+            fenceRequest=replaceJson "requestId" (text "97") catalogRequest
+            wire=jsonBytes (object [("viewProtocol",J.JNumber "1"),("kind",text "view-commit"),
+              ("projection",current),("requests",J.JArray [fenceRequest]),("focus",J.JArray [])])
+        Response sent _ _ <- request origin "POST" "/commit" (posted origin wire) wire
+        check budget "retirement fixture sends one final read-only fence" (sent==204)
+        let pollFence remaining = do
+             Response code _ bytes <- request origin "GET" "/events"
+               [("Host",Policy.hostBytes origin),("X-Warlock-Api","1")] B.empty
+             matched <- if code/=200 then pure False else do
+              packet <- parseJson bytes
+              pure (at "kind" packet==text "native-event"
+                && at "kind" (at "payload" packet)==text "application-catalog"
+                && at "binding" (at "payload" packet)==bindingJson
+                && at "requestId" (at "payload" packet)==text "97")
+             if matched then pure True else if remaining<=0 then pure False
+               else threadDelay 2000 >> pollFence (remaining-1)
+        consumed <- pollFence (64 :: Int)
+        check budget "retirement exception follows actual authenticated backend consumption" consumed
+        pure result
        NoNetwork -> \_ _ -> ioError (userError "UI callback reached without private network")
        QueueBound -> queueControl
-  result <- Owner.runUiOwner witness config callback
-  check budget "actual UI owner independently confirms cleanup" (Owner.uiCleanup result && Owner.uiPeerPid result/=Nothing)
+  prepareCount <- newIORef (0 :: Int)
+  retireCount <- newIORef (0 :: Int)
+  result <- if mode `elem` [Ordinary,RetireThrows] then Owner.runUiOwnerPrepared witness config (\endpoints emit -> do
+    modifyIORef' prepareCount (+1)
+    stopped <- Owner.uiShouldStop endpoints
+    projected <- Owner.uiLastProjection endpoints
+    check budget "prepared owner retains three immutable distinct origins before engine execution"
+      (Owner.controllerOrigin endpoints/=Owner.barOrigin endpoints && Owner.barOrigin endpoints/=Owner.popupOrigin endpoints && Owner.controllerOrigin endpoints/=Owner.popupOrigin endpoints)
+    check budget "prepared owner begins live without a fabricated projection" (not stopped && projected==Nothing)
+    pure (callback endpoints emit,do
+      modifyIORef' retireCount (+1)
+      when (mode==RetireThrows) (ioError (userError "controlled engine retirement failure"))))
+    else Owner.runUiOwner witness config callback
+  when (mode `elem` [Ordinary,RetireThrows]) $ do
+    prepared <- readIORef prepareCount
+    retired <- readIORef retireCount
+    check budget "prepared engine is acquired and retired exactly once" (prepared==1 && retired==1)
+  check budget "actual UI owner independently confirms cleanup disposition"
+    (Owner.uiCleanup result==(mode/=RetireThrows) && Owner.uiPeerPid result/=Nothing)
   case mode of
    Ordinary -> do
     check budget "actual UI owner positive completes" (Owner.uiPassed result)
     check budget "only four complete controller frames and one renderer action admitted" (Owner.uiCommitCount result==4 && Owner.uiActionCount result==1)
+   RetireThrows -> do
+    check budget "retirement failure overrides prior engine success and cleanup receipt"
+      (not (Owner.uiPassed result) && not (Owner.uiCleanup result) && not (Owner.uiEngineCleanup result) && Owner.uiFailure result/=Nothing)
+    check budget "retirement failure preserves actual admitted frame counts"
+      (Owner.uiCommitCount result==5 && Owner.uiActionCount result==1)
    NoNetwork -> check budget "same-backend network refuses before listeners or callbacks" (not (Owner.uiPassed result) && null (Owner.uiOrigins result) && Owner.uiRequestCount result==0 && Owner.uiCommitCount result==0 && Owner.uiActionCount result==0)
    QueueBound -> check budget "event queue bound fails closed without another native frame" (not (Owner.uiPassed result) && Owner.uiCommitCount result==1 && Owner.uiActionCount result==0)
   forM_ (Owner.uiOrigins result) $ \(_,raw) -> do
@@ -509,14 +558,14 @@ parent storage = do
  writePrivate (applications </> "safe.desktop") "[Desktop Entry]\nType=Application\nName=Safe\nExec=/bin/true\n"
  applicationsFact <- directoryFact applications
  pinsFact <- directoryFact pins
- forM_ [("public-library",False,Ordinary),("production-cli",True,Ordinary),("same-network-refused",False,NoNetwork),("event-queue-bound",False,QueueBound)] $ \(label,useCLI,mode) -> do
+ forM_ [("public-library",False,Ordinary),("production-cli",True,Ordinary),("same-network-refused",False,NoNetwork),("event-queue-bound",False,QueueBound),("prepared-retirement-failure",False,RetireThrows)] $ \(label,useCLI,mode) -> do
   directory <- fresh (storage </> label)
   let uiPath=directory </> "ui.json";backendConfigPath=directory </> "backend.json";observationsPath=directory </> "observations.json"
   now <- getMonotonicTimeNSec
   let deadline=text (show (toInteger now+5000000000))
       uiConfig=object [("schema",J.JNumber "1"),("binding",bindingJson),("deadlineMonotonicNs",deadline),("documents",at "documents" manifest)]
       imageFields=case selfImage of J.JObject fields -> fields; _ -> []
-      childFlag=case mode of Ordinary -> "--child"; NoNetwork -> "--child-no-network"; QueueBound -> "--child-queue-bound"
+      childFlag=case mode of Ordinary -> "--child"; NoNetwork -> "--child-no-network"; QueueBound -> "--child-queue-bound"; RetireThrows -> "--child-retire-throws"
       selected=object (imageFields++[("arguments",J.JArray [text childFlag,text uiPath,text observationsPath]),("ancestors",J.JArray parents)])
       backendConfig=object [("schema",J.JNumber "1"),("binding",bindingJson),("deadlineMonotonicNs",deadline),("ui",selected),("catalogRoots",J.JArray [applicationsFact]),("pinsRoot",pinsFact),("locale",text "C")]
   writePrivate uiPath (jsonBytes uiConfig)
@@ -549,8 +598,8 @@ parent storage = do
     when exists $ do
      value <- B.readFile observationsPath >>= parseJson
      C.putStrLn (jsonBytes (object [("passed",at "passed" value),("error",at "error" value),("checksReached",at "checksReached" value)]))
-   let expectedFrames=case mode of Ordinary -> 4; NoNetwork -> 0; QueueBound -> 1
-       expectedOperations=if mode==NoNetwork then 0 else 1
+   let expectedFrames=case mode of Ordinary -> 4; NoNetwork -> 0; QueueBound -> 1; RetireThrows -> 5
+       expectedOperations=case mode of NoNetwork -> 0; RetireThrows -> 2; _ -> 1
    check budget (label++" actual library frame/IO boundary and independent cleanup") (backendCleanup result && backendCallbackCount result==expectedFrames && backendOperationCount result==expectedOperations && backendSelectedPid result/=Nothing && backendPassed result==(mode/=NoNetwork))
   observedBytes <- B.readFile observationsPath
   observed <- parseJson observedBytes
@@ -569,5 +618,6 @@ main = S.withSocketsDo $ do
   ["--child",configPath,observationsPath] -> child Ordinary configPath observationsPath
   ["--child-no-network",configPath,observationsPath] -> child NoNetwork configPath observationsPath
   ["--child-queue-bound",configPath,observationsPath] -> child QueueBound configPath observationsPath
+  ["--child-retire-throws",configPath,observationsPath] -> child RetireThrows configPath observationsPath
   [storage] -> parent storage
   _ -> ioError (userError "expected EMPTY_QA_ROOT or --child UI_CONFIG OBSERVATIONS")
