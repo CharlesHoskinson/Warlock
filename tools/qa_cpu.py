@@ -47,11 +47,23 @@ def registry_inputs(root, self_test=False):
     return names
 
 
-def haskell_inputs(root, prepare=False):
+def haskell_inputs(root, prepare=False, site=False):
     names = {'tools/qa_cpu.py', 'tools/check_haskell_cpu.py', 'tools/haskell-toolchain.json',
              'window-integration-qa/qa_launch.py'}
+    if site:
+        # The fixed site profile invokes site_only, not the Haskell build or
+        # application compiler. Bind its actual complete inputs so unrelated
+        # application edits do not invalidate this independent compilation.
+        names.update({'tools/haskell_build.py', 'site/elm.json',
+                      'implementation/warlock-preview-provider-v143/qa/toolchain.py',
+                      'implementation/warlock-preview-provider-v143/qa/toolchain.json'})
+        names.update(str(path.relative_to(root)) for path in (root / 'site/src').rglob('*')
+                     if path.is_file() and '__pycache__' not in path.parts)
+        return names
     if not prepare:
         names.update({'tools/haskell_build.py', 'tools/haskell_test_wrapper.py', 'tools/haskell-dependencies.json',
+                      'tools/elm_http_dependencies.py', 'tools/elm-http-dependencies.json',
+                      'tools/ui_host_toolchain.py', 'tools/ui-host-toolchain.json',
                       'tools/check_elm_cpu.py', 'tools/quint-toolchain.json', 'tools/ui_backend_frontend.py',
                       'implementation/warlock-preview-provider-v143/qa/toolchain.py',
                       'implementation/warlock-preview-provider-v143/qa/toolchain.json',
@@ -66,6 +78,7 @@ def haskell_inputs(root, prepare=False):
 
 def tea_inputs(root):
     names = {'tools/qa_cpu.py', 'tools/check_tea_cpu.py', 'tools/check_elm_cpu.py',
+             'tools/elm_http_dependencies.py', 'tools/elm-http-dependencies.json',
              'tools/quint-toolchain.json', 'window-integration-qa/qa_launch.py',
              'implementation/warlock-preview-provider-v143/qa/toolchain.py',
              'implementation/warlock-preview-provider-v143/qa/toolchain.json',
@@ -97,15 +110,28 @@ def main():
     registry = runner == REPO / 'tools/check_registry_cpu.py'
     haskell = runner == REPO / 'tools/check_haskell_cpu.py'
     tea = runner == REPO / 'tools/check_tea_cpu.py'
-    allowed = ([[], ['--capacity']] if tea else ([['--prepare'], ['--build']] if haskell else
-               ([[], ['--self-test']] if registry else [[], ['--browser'], ['--authority'], ['--receipts']])))
+    allowed = ([[], ['--capacity']] if tea else ([['--prepare'], ['--build'], ['--ui-origin'], ['--ui-models'], ['--site']] if haskell else
+               ([[], ['--self-test']] if registry else [[], ['--browser'], ['--authority'], ['--receipts'], ['--standalone-mvp'], ['--status-scroll']])))
     if (not registry and not haskell and not tea and runner != REPO / 'tools/check_elm_cpu.py') or packet['arguments'] not in allowed:
         raise RuntimeError('Only a fixed reviewed development runner and mode is supported')
     mandatory = {'tools/qa_cpu.py', 'tools/check_elm_cpu.py', 'window-integration-qa/qa_launch.py',
+                 'tools/elm_http_dependencies.py', 'tools/elm-http-dependencies.json',
                  'implementation/warlock-preview-provider-v143/qa/toolchain.py',
                  'implementation/warlock-preview-provider-v143/qa/toolchain.json',
                  'implementation/warlock/elm.json'}
     mandatory.update(str(p.relative_to(REPO)) for p in (REPO / 'implementation/warlock/src').rglob('*.elm'))
+    if packet['arguments'] == []:
+        mandatory.update({'implementation/warlock/qa/UiHttpReplay.elm', 'implementation/warlock/qa/ui-http.cjs'})
+    if packet['arguments'] == ['--standalone-mvp']:
+        mandatory.update({'implementation/warlock/qa/UiHttpReplay.elm', 'implementation/warlock/qa/ui-http.cjs',
+                          'implementation/warlock/qa/StandaloneMvpReplay.elm', 'implementation/warlock/qa/standalone-mvp.cjs'})
+    if packet['arguments'] == ['--status-scroll']:
+        mandatory.update({'implementation/warlock/qa/UiHttpReplay.elm', 'implementation/warlock/qa/ui-http.cjs',
+                          'implementation/warlock/qa/StatusScrollReplay.elm', 'implementation/warlock/qa/status-scroll.cjs',
+                          'implementation/warlock/qa/status-scroll.qnt', 'implementation/warlock/qa/status-scroll_test.qnt',
+                          'implementation/warlock/qa/RestoreAnnouncementReplay.elm', 'implementation/warlock/qa/restore-announcement.cjs',
+                          'implementation/warlock/qa/SnapReplay.elm', 'implementation/warlock/qa/NativePointerFixture.elm',
+                          'tools/quint-toolchain.json'})
     fixture = REPO / 'implementation/warlock/qa/FeedbackContextReplay.elm'
     if packet['arguments'] == ['--authority']:
         mandatory.update(['implementation/warlock/qa/AuthorityTupleReplay.elm',
@@ -127,7 +153,7 @@ def main():
     if tea:
         mandatory = tea_inputs(REPO)
     if haskell:
-        mandatory = haskell_inputs(REPO, packet['arguments'] == ['--prepare'])
+        mandatory = haskell_inputs(REPO, packet['arguments'] == ['--prepare'], site=packet['arguments'] == ['--site'])
     if set(packet['inputs']) != mandatory:
         raise RuntimeError('CPU review does not match the complete current source/fixture/toolchain closure')
     for name, sha in packet['inputs'].items():
@@ -137,7 +163,7 @@ def main():
         reviewed(REPO / candidate, sha)
     if not args.inside_scope:
         command = ['systemd-run', '--user', '--scope', '--slice=qa-harness.slice',
-                   '--unit=qa-harness-' + uuid.uuid4().hex, '-p', 'MemoryMax=4G', '--',
+                   '--unit=qa-harness-' + uuid.uuid4().hex, '-p', 'MemoryMax=3G', '--',
                    'prlimit', '--core=1:1', '--', sys.executable, '-B', str(Path(__file__).resolve()),
                    '--inside-scope', '--review', str(review), '--sha256', args.sha256]
         os.execvp(command[0], command)
@@ -159,7 +185,7 @@ def main():
             env.pop(name, None)
         child = subprocess.Popen([sys.executable, '-B', str(runner), *packet['arguments']], cwd=REPO, env=env, start_new_session=True)
         try:
-            return child.wait(timeout=1200 if haskell else (600 if tea else 240))
+            return child.wait(timeout=3600 if haskell else (600 if tea else 240))
         except (subprocess.TimeoutExpired, KeyboardInterrupt):
             os.killpg(child.pid, signal.SIGTERM)
             try:

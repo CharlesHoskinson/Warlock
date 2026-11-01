@@ -1,0 +1,102 @@
+{
+  "schema": 1,
+  "slice": "private-ui-origin",
+  "sourceBase": "7b7c27b680628a1acc9c60a28f535e7fad76d600",
+  "record": ".warlock-contributor/ui-origin.json",
+  "requirements": [
+    "ELM-ARC-024",
+    "ELM-DEL-014"
+  ],
+  "scenarios": [
+    "architecture-024",
+    "delivery-014"
+  ],
+  "createdUTC": "2026-11-01T04:43:50.056270+00:00",
+  "phase": "source-preparation-for-real-ui-integration",
+  "inputs": {
+    "implementation/warlock/src/Main.elm": "4065685987bf33fbc46872c3e94e72db24904ec5134373a82fc2f5d7b9362d55",
+    "implementation/warlock/src/Bar.elm": "0c232aabc951c82a12223a209bc054b263c3c5c45bc6153a5000194e00db0cbd",
+    "implementation/warlock/src/Popup.elm": "4ab4195bfb96622cf563efaf4a889045553fb2367347b6881e70f53545bae406",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs": "587416900f00aa410bf01c385af0ddba540db85c8c18ac3f78fd70d19179b966",
+    "implementation/warlock/haskell/held-document/src/Warlock/Http/Document.hs": "b0a0f0187349d1ad79300999c87c3e4d0b481568764b081b7c15742b54bbe2f5",
+    "docs/warlock-build-loop/v2/shared-desktop-contract-20261101.json": "ba1704a791b6dfccdcaec23b476df6932f98b300cc3dfd8c3a5ad50d8fb96436"
+  },
+  "authoredProduction": "Elm and Haskell only; all GUI Elm; compiler-generated HTML/JS separately pinned; no authored JS strings or adapter",
+  "transport": {
+    "roots": [
+      "HttpMain",
+      "HttpBar",
+      "HttpPopup"
+    ],
+    "portsRootsPreserved": [
+      "Main",
+      "Bar",
+      "Popup"
+    ],
+    "policy": "shared pure DesktopPolicy/Bar/Popup transitions, one interpreter selected by pinned artifact; no simultaneously active ports and HTTP",
+    "origins": "three exact distinct 127.0.0.1 ephemeral TCP listeners, role fixed by accepted listener, never body/header/path-selected",
+    "routes": {
+      "Controller": [
+        "GET /index.html",
+        "GET /events",
+        "POST /commit"
+      ],
+      "Bar": [
+        "GET /index.html",
+        "GET /events",
+        "POST /actions"
+      ],
+      "Popup": [
+        "GET /index.html",
+        "GET /events",
+        "POST /actions"
+      ]
+    },
+    "urls": "exact raw route allowlist, no query/fragment/percent/path normalization, filesystem mapping, fallback, redirect or wildcard CORS",
+    "headers": "HTTP/1.1, exact Host including port; every POST requires exact same-role Origin and application/json, finite exact Content-Length; no transfer-encoding/duplicate headers/extra bytes",
+    "bounds": {
+      "headersBytes": 16384,
+      "headerCount": 32,
+      "requestLineBytes": 2048,
+      "commitBytes": 131072,
+      "actionBytes": 8192,
+      "eventBytes": 1048704
+    },
+    "controller": "whole checked viewProtocol1 view-commit bytes forwarded once on inherited fd0 by original authenticated PID, no request extraction",
+    "renderer": "existing typed action accepted only as renderer provenance; never accepts native-event, topology, disposition, dismiss, escape or reflow tags",
+    "native": "only checked current-binding backend fd0 gateway becomes native-event; typed native owner callback is separate from HTTP",
+    "delivery": "HTTP response only means transport receipt; never presentation/disposition/native effect ACK; no replay after ambiguous mutation or deadline renewal",
+    "apiReadIsolation": "Every API request including consuming GET /events requires X-Warlock-Api: 1. Cross-origin browser API fetch triggers forbidden OPTIONS preflight; image/navigation/simple GET cannot dequeue events. Exact Origin still required on POST and whenever present on GET; no CORS."
+  },
+  "assets": {
+    "source": "held resolveSnapshot + prepareHtml exact compiler standalone wrapper and immutable script/style hashes",
+    "mapping": "one exact index.html per role, all documents pinned before listener publication",
+    "csp": "default deny; exact script/style SHA256, connect only exact same-role origin; deny eval/unapproved inline/remote/frame/object/base/form/worker; no unsafe-eval or unsafe-inline scripts"
+  },
+  "webKit": {
+    "target": "WebKitGTK6 GTK4, actual Haskell native C APIs and pinned ABI inventory",
+    "navigation": "explicit decide-policy handler defaults deny and only allows own exact packaged index; deny newwindow and download",
+    "resources": "real blocking compiled WebKitUserContentFilter installed before load plus CSP; resource-load-started/sent-request are notifications, NOT denial hooks",
+    "sandbox": "required renderer sandbox/private networking stays enabled; no software fallback or native device retry"
+  },
+  "lifecycle": {
+    "deadline": "caller original absolute D unchanged, existing Backend <=30s remains bounded; no persistent desktop acceptance",
+    "owners": "bracket 3 listeners, IPC, queue workers, immutable assets, GUI/filter refs and callbacks; bounded queues and owned cleanup",
+    "startup": "must fail closed without actual private-network ownership/configured pinned engine dependencies; no host-network fallback",
+    "nativeState": "do not fabricate initial topology/window snapshot, view-disposition or binding grants; callback requires actual owning observation",
+    "retainedBatches": "existing16 bound remains explicit until actual presentation dispositions exist",
+    "nativeFd": "Inherited fd0 set CLOEXEC before engine subprocess startup; same original approved UI owner PID is the only writer."
+  },
+  "retrofitting": {
+    "boundary": "existing Main/Bar/Popup port-policy coupling and held document route",
+    "existingAcceptance": "ARC003/DEL011 historical source tuple retained; changed tuples need requalification",
+    "change": "extract shared pure policy and add static HTTP transport, approved Haskell host owner",
+    "deferred": "native topology/effect authority and full presentation lifecycle remain original obligations"
+  },
+  "acceptance": {
+    "ARC024": "all original clauses and architecture-024 require source-bound retained native OR bridge denial trace plus packaged asset route; HTTP-only subset not automatic whole closure",
+    "DEL014": "exact CSP and real engine remote/eval/inline execution-negative evidence required, headers alone insufficient",
+    "native": "HOSTSTOP2 and previous stops unchanged; this contract authorizes no retry or privilege attempt",
+    "release": "none implied"
+  }
+}

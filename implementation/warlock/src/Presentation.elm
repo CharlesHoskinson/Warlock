@@ -1,4 +1,4 @@
-module Presentation exposing (Model, initial, accept, current, dispatch, query, editQuery, localEdit)
+module Presentation exposing (Model, initial, accept, current, dispatch, query, editQuery, localEdit, focusTarget)
 
 import Json.Decode as D
 import Json.Encode as E
@@ -13,6 +13,27 @@ initial = Model {last=UInt64.zero,lease=UInt64.zero,snapshot=Nothing}
 
 current : Model -> Maybe SurfaceSnapshot.Snapshot
 current (Model model) = model.snapshot
+
+-- Focus is a renderer-only instruction scoped to the exact accepted frame.
+-- It cannot introduce an arbitrary DOM target or acknowledge a native effect.
+focusTarget : Bool -> D.Value -> Model -> Maybe String
+focusTarget popup raw (Model model) =
+    let
+        decoder = D.keyValuePairs D.value |> D.andThen (\fields ->
+            if List.sort (List.map Tuple.first fields)/=["domId","focusProtocol","kind","lease","publication","surface"] then D.fail "Focus fields" else
+                D.map6 (\version kind surface publication lease domId -> {version=version,kind=kind,surface=surface,publication=publication,lease=lease,domId=domId})
+                    (D.field "focusProtocol" D.int) (D.field "kind" D.string) (D.field "surface" D.string)
+                    (D.field "publication" UInt64.decoder) (D.field "lease" UInt64.decoder)
+                    (D.field "domId" (D.string |> D.andThen (\value -> if not (String.isEmpty value) && String.length value<=1024 && not (String.any (\char -> Char.toCode char<32) value) then D.succeed value else D.fail "Focus target"))))
+    in
+    case (model.snapshot,D.decodeValue decoder raw) of
+        (Just snapshot,Ok instruction) ->
+            let details=SurfaceSnapshot.details snapshot
+                controls=if popup then details.popup else details.bar
+            in if instruction.version==1 && instruction.kind=="focus" && instruction.surface==(if popup then "popup" else "bar")
+                && instruction.publication==details.publication && instruction.lease==details.lease
+                && List.any (\control -> control.domId==instruction.domId && (control.enabled || control.focusOnly)) controls then Just instruction.domId else Nothing
+        _ -> Nothing
 
 accept : D.Value -> Model -> Model
 accept raw ((Model model) as prior) =

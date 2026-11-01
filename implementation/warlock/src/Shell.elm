@@ -32,7 +32,7 @@ type Phase = Detached | Reconciling | Ready | Exhausted
 type Stamp = Stamp Binding Counter Counter
 type Msg = ReconciliationFull | RecoveredUnknown Int Effects.Intent | ReservationReleased Bool Binding Int Effects.Intent | Incoming D.Value | Refresh | Reconnect | Ignore | GeometryAttach | GeometryRefresh | Act Stamp Effects.Operation Counter | UnsentObservations (List (String,Counter)) | SupersedeObservations Bool | UnsentOperations (List UnsentOperation.Key) | RegistrationRefused (List UnsentOperation.Key) (List (String,Counter)) | RegistrationAvailable Bool
 type Effect = Send E.Value | RestartBackend | ArmPrepared Counter
-type alias Model = { decoderRefusal : Maybe String, reconciliationFull : Bool, effects : Effects.Model, binding : Maybe Binding, request : Counter, expected : Maybe Counter, phase : Phase, reconnecting : Bool, notice : String, geometry : Maybe GeometryProjection.Snapshot, geometryCaps : Maybe GeometryProjection.Capabilities, geometryExpected : Maybe Counter, geometryAttachExpected : Maybe Counter, attachNeeded : Bool, recoveryFailure : Maybe RecoveryFailure, issued : List { binding : Binding, protocol : Int, intent : Effects.Intent }, notificationQueued : Bool, projectionRetryQueued : Bool, transportRefused : Bool, deferNotifications : Bool }
+type alias Model = { applicationOnly : Bool, decoderRefusal : Maybe String, reconciliationFull : Bool, effects : Effects.Model, binding : Maybe Binding, request : Counter, expected : Maybe Counter, phase : Phase, reconnecting : Bool, notice : String, geometry : Maybe GeometryProjection.Snapshot, geometryCaps : Maybe GeometryProjection.Capabilities, geometryExpected : Maybe Counter, geometryAttachExpected : Maybe Counter, attachNeeded : Bool, recoveryFailure : Maybe RecoveryFailure, issued : List { binding : Binding, protocol : Int, intent : Effects.Intent }, notificationQueued : Bool, projectionRetryQueued : Bool, transportRefused : Bool, deferNotifications : Bool }
 stampKey : Stamp -> String
 stampKey (Stamp binding output revision) = E.encode 0 (Binding.encode binding) ++ ":" ++ UInt64.string output ++ ":" ++ UInt64.string revision
 capture : Model -> Maybe Stamp
@@ -47,7 +47,7 @@ stampDecoder : D.Decoder Stamp
 stampDecoder = strict ["binding","output","revision"] (D.map3 Stamp (D.field "binding" Binding.decoder) (D.field "output" positive) (D.field "revision" positive))
 
 initial : Model
-initial = { decoderRefusal=Nothing, reconciliationFull=False, effects = Effects.empty, binding = Nothing, request = UInt64.zero, expected = Nothing, phase = Detached, reconnecting = True, notice = "Connecting…", geometry=Nothing,geometryCaps=Nothing,geometryExpected=Nothing,geometryAttachExpected=Nothing,attachNeeded=False,issued=[],notificationQueued=False,projectionRetryQueued=False,transportRefused=False,deferNotifications=False,recoveryFailure=Nothing }
+initial = { applicationOnly=False, decoderRefusal=Nothing, reconciliationFull=False, effects = Effects.empty, binding = Nothing, request = UInt64.zero, expected = Nothing, phase = Detached, reconnecting = True, notice = "Connecting…", geometry=Nothing,geometryCaps=Nothing,geometryExpected=Nothing,geometryAttachExpected=Nothing,attachNeeded=False,issued=[],notificationQueued=False,projectionRetryQueued=False,transportRefused=False,deferNotifications=False,recoveryFailure=Nothing }
 strict : List String -> D.Decoder a -> D.Decoder a
 strict fields decoder = D.keyValuePairs D.value |> D.andThen (\pairs -> if List.sort (List.map Tuple.first pairs) == List.sort fields then decoder else D.fail "Unexpected fields")
 version : D.Decoder ()
@@ -65,6 +65,7 @@ rejectReason reason model = ({model | decoderRefusal=Just reason},[])
 
 refresh : Model -> (Model,List Effect)
 refresh model =
+    if model.applicationOnly then (model,[]) else
     case ( model.binding, UInt64.next model.request ) of
         (Just binding,Just request) ->
             if model.phase == Detached || model.transportRefused then (model,[]) else
@@ -73,9 +74,9 @@ refresh model =
 disconnect : Model -> Model
 disconnect model =
     let (effects,_,_) = Effects.apply (E.object [("kind",E.string "disconnect")]) model.effects
-    in {model | effects = effects, expected = Nothing, geometry=Nothing,geometryCaps=Nothing,geometryExpected=Nothing,geometryAttachExpected=Nothing, attachNeeded=False, notificationQueued=False,projectionRetryQueued=False,transportRefused=False,deferNotifications=False, phase = Detached, reconnecting = False, notice = Maybe.map recoveryNotice model.recoveryFailure |> Maybe.withDefault "Connection lost. Reconnect to continue."}
+    in {model | applicationOnly=False, effects = effects, expected = Nothing, geometry=Nothing,geometryCaps=Nothing,geometryExpected=Nothing,geometryAttachExpected=Nothing, attachNeeded=False, notificationQueued=False,projectionRetryQueued=False,transportRefused=False,deferNotifications=False, phase = Detached, reconnecting = False, notice = Maybe.map recoveryNotice model.recoveryFailure |> Maybe.withDefault "Connection lost. Reconnect to continue."}
 available : Model -> Bool
-available model = not model.reconciliationFull && not model.transportRefused && model.phase == Ready && not model.attachNeeded && not (Effects.pending model.effects) && model.geometryAttachExpected==Nothing && (not (model.geometryCaps |> Maybe.map .effects |> Maybe.withDefault False) || (model.geometryExpected==Nothing && model.geometry/=Nothing))
+available model = not model.applicationOnly && not model.reconciliationFull && not model.transportRefused && model.phase == Ready && not model.attachNeeded && not (Effects.pending model.effects) && model.geometryAttachExpected==Nothing && (not (model.geometryCaps |> Maybe.map .effects |> Maybe.withDefault False) || (model.geometryExpected==Nothing && model.geometry/=Nothing))
 status : Model -> String
 status model =
     if model.reconciliationFull then "Window recovery history is full. Restart the shell to continue." else
@@ -99,7 +100,7 @@ update msg model =
         Reconnect ->
             if model.phase == Detached && not model.reconnecting then ({model | reconnecting = True, notice = "Reconnecting…"},[RestartBackend]) else (model,[])
         SupersedeObservations reissue ->
-            if model.phase==Detached || model.phase==Exhausted || model.binding==Nothing then (model,[]) else
+            if model.applicationOnly || model.phase==Detached || model.phase==Exhausted || model.binding==Nothing then (model,[]) else
                 let attach = model.attachNeeded || model.geometryAttachExpected/=Nothing
                     retired = {model|expected=Nothing,geometryExpected=Nothing,geometryAttachExpected=Nothing,projectionRetryQueued=False,phase=Reconciling,notificationQueued=True,deferNotifications=False}
                 in if not reissue then (retired,[]) else
@@ -174,6 +175,16 @@ update msg model =
                 Ok "host-refresh" ->
                     case D.decodeValue (strict ["protocolVersion","kind"] version) raw of
                         Ok _ -> notificationRefresh model
+                        Err _ -> rejectEnvelope raw model
+                Ok "application-attached" ->
+                    let decoder = strict ["protocolVersion","kind","binding","nativeOperations"]
+                            (D.map3 (\_ binding _ -> binding) version (D.field "binding" Binding.decoder)
+                                (D.field "nativeOperations" (D.list D.string |> D.andThen (\operations -> if List.isEmpty operations then D.succeed () else D.fail "Native operations unavailable"))))
+                    in case D.decodeValue decoder raw of
+                        Ok binding ->
+                            if model.phase /= Detached || not model.reconnecting || (model.binding |> Maybe.map (Binding.replaces binding >> not) |> Maybe.withDefault False) then (model,[]) else
+                                let detached = disconnect model
+                                in ({detached | applicationOnly=True,binding=Just binding,phase=Reconciling,reconnecting=False,recoveryFailure=Nothing,notice="Applications connected. Window controls unavailable."},[])
                         Err _ -> rejectEnvelope raw model
                 Ok "attached" ->
                     case D.decodeValue (D.map2 (\_ binding -> binding) version (D.field "binding" Binding.decoder)) raw of
@@ -287,7 +298,7 @@ captureGeometry model = model.geometry |> Maybe.map (\observed -> Stamp observed
 
 geometryRequest : Bool -> Model -> (Model,List Effect)
 geometryRequest attach model =
-    if model.transportRefused then (model,[]) else
+    if model.applicationOnly || model.transportRefused then (model,[]) else
     case (model.binding,UInt64.next model.request) of
         (Just binding,Just request) ->
             if model.phase==Detached || (attach && model.geometryAttachExpected/=Nothing) || (not attach && (model.geometryCaps==Nothing || model.geometryExpected/=Nothing)) then (model,[]) else
@@ -301,7 +312,7 @@ geometrySupported model = model.geometryCaps |> Maybe.map .effects |> Maybe.with
 
 refreshObservations : Model -> (Model,List Effect)
 refreshObservations model =
-    if model.transportRefused then (model,[]) else
+    if model.applicationOnly || model.transportRefused then (model,[]) else
     let (legacy,commands)=refresh {model|notificationQueued=False}
     in if legacy.attachNeeded then
         let (attached,attachCommands)=geometryRequest True legacy
@@ -313,7 +324,7 @@ refreshObservations model =
 
 notificationRefresh : Model -> (Model,List Effect)
 notificationRefresh model =
-    if model.phase==Detached || model.phase==Exhausted || model.transportRefused then (model,[]) else
+    if model.applicationOnly || model.phase==Detached || model.phase==Exhausted || model.transportRefused then (model,[]) else
     if model.deferNotifications || Effects.pending model.effects || model.expected/=Nothing || model.geometryExpected/=Nothing || model.geometryAttachExpected/=Nothing then ({model|notificationQueued=True},[])
     else refreshObservations model
 

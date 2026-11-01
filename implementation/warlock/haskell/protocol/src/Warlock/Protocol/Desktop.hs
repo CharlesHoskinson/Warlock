@@ -5,7 +5,7 @@ module Warlock.Protocol.Desktop
   , DesktopRequest, RequestKind(..), requestKind, requestBinding, requestId, pinProposal
   , PinSnapshot, pinSnapshot, pinRevision, pinIdentities, decodePinSnapshot, encodePinSnapshot
   , CatalogEntry, catalogEntry, CatalogSnapshot, catalogSnapshot
-  , DesktopReply, PinStatus(..), catalogReply, pinsReply, replyBinding
+  , DesktopReply, PinStatus(..), applicationAttached, catalogReply, pinsReply, replyBinding
   , decodeDesktopReply, encodeDesktopReply, decodeDesktopGateway, encodeDesktopGateway ) where
 
 import qualified Data.ByteString as B
@@ -26,7 +26,8 @@ data CatalogEntry = CatalogEntry Text Text Text Text Text [Text] deriving (Eq, S
 data CatalogSnapshot = CatalogSnapshot Counter Counter [CatalogEntry] deriving (Eq, Show)
 data PinStatus = PinSaved | PinRefused | PinUnknown deriving (Eq, Show)
 data DesktopReply = CatalogReply Binding Counter (Maybe CatalogSnapshot) (Maybe PinSnapshot)
-                  | PinsReply Binding Counter PinStatus (Maybe PinSnapshot) deriving (Eq, Show)
+                  | PinsReply Binding Counter PinStatus (Maybe PinSnapshot)
+                  | ApplicationAttached Binding deriving (Eq, Show)
 
 err :: Show a => Either a b -> Either Text b
 err = either (Left . T.pack . show) Right
@@ -191,10 +192,19 @@ nullable f = maybe JNull f
 replyBinding :: DesktopReply -> Binding
 replyBinding (CatalogReply owner _ _ _) = owner
 replyBinding (PinsReply owner _ _ _) = owner
+replyBinding (ApplicationAttached owner) = owner
 replyJson :: DesktopReply -> Json
 replyJson reply = JObject $ [("protocolVersion",JNumber "3"),("binding",bindingJson (replyBinding reply))] ++ case reply of
   CatalogReply _ request catalog pins -> [("kind",JString "application-catalog"),("requestId",JString (renderCounter request)),("snapshot",nullable catalogJson catalog),("preferences",nullable pinJson pins)]
   PinsReply _ request status pins -> [("kind",JString "taskbar-pins-outcome"),("requestId",JString (renderCounter request)),("status",JString (case status of PinSaved -> "Saved"; PinRefused -> "Refused"; PinUnknown -> "Unknown")),("preferences",nullable pinJson pins)]
+  ApplicationAttached _ -> [("kind",JString "application-attached"),("nativeOperations",JArray [])]
+-- Application attachment announces only the already authenticated application
+-- binding. It creates no native authority or native operations.
+applicationAttached :: Binding -> Either Text DesktopReply
+applicationAttached owner = do
+  let reply = ApplicationAttached owner
+  _ <- encodeDesktopReply reply
+  pure reply
 catalogReply :: Binding -> Counter -> Maybe CatalogSnapshot -> Maybe PinSnapshot -> Either Text DesktopReply
 catalogReply owner request catalog pins = do
   positive request
@@ -215,13 +225,23 @@ decodeDesktopReply raw = do
   fields <- case value of JObject pairs -> Right pairs; _ -> Left "reply object required"
   field "protocolVersion" fields >>= fixed (JNumber "3")
   kind <- field "kind" fields >>= textValue
-  exact <- object (["protocolVersion","kind","binding","requestId","preferences"] ++ if kind == "application-catalog" then ["snapshot"] else ["status"]) value
-  owner <- field "binding" exact >>= parseBinding
-  request <- field "requestId" exact >>= counter
-  pins <- field "preferences" exact >>= optional parsePins
   case kind of
-    "application-catalog" -> field "snapshot" exact >>= optional parseCatalog >>= \catalog -> catalogReply owner request catalog pins
+    "application-attached" -> do
+      exact <- object ["protocolVersion","kind","binding","nativeOperations"] value
+      owner <- field "binding" exact >>= parseBinding
+      field "nativeOperations" exact >>= fixed (JArray [])
+      applicationAttached owner
+    "application-catalog" -> do
+      exact <- object ["protocolVersion","kind","binding","requestId","preferences","snapshot"] value
+      owner <- field "binding" exact >>= parseBinding
+      request <- field "requestId" exact >>= counter
+      pins <- field "preferences" exact >>= optional parsePins
+      field "snapshot" exact >>= optional parseCatalog >>= \catalog -> catalogReply owner request catalog pins
     "taskbar-pins-outcome" -> do
+      exact <- object ["protocolVersion","kind","binding","requestId","preferences","status"] value
+      owner <- field "binding" exact >>= parseBinding
+      request <- field "requestId" exact >>= counter
+      pins <- field "preferences" exact >>= optional parsePins
       status <- field "status" exact >>= textValue
       typed <- case status of "Saved" -> Right PinSaved; "Refused" -> Right PinRefused; "Unknown" -> Right PinUnknown; _ -> Left "pin status"
       pinsReply owner request typed pins

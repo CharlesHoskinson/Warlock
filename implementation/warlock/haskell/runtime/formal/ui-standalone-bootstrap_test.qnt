@@ -1,0 +1,31 @@
+// All blocked-action assertions are terminal: Quint 0.33 fail() has an
+// update effect but a blocked action has no successor state to shift.
+module ui_standalone_bootstrap_test {
+  import ui_standalone_bootstrap.* from "./ui-standalone-bootstrap"
+  run attachPositive = init.then(connect(first, true)).then(wholeCommit(first, 3, true)).then(attachment(first, 3, true, true)).expect(s.phase == Application and s.attempts == 1 and safety)
+  run catalogAndPinPositive = init.then(connect(first, true)).then(wholeCommit(first, 3, true)).then(attachment(first, 3, true, true)).then(requestCatalog).then(receiveCatalog(first, 3, 1)).then(savePin).then(receivePin(first, 3, 2, true)).expect(s.catalogReady and s.pin == PinSaved and safety)
+  run unauthenticatedRefused = init.then(connect(first, false).fail())
+  run zeroBindingRefused = init.then(connect({...first, frontend: 0}, true).fail())
+  run badCommitVersionRefused = init.then(connect(first, true)).then(wholeCommit(first, 2, true).fail())
+  run foreignCommitRefused = init.then(connect(first, true)).then(wholeCommit({...first, session: 2}, 3, true).fail())
+  run malformedCommitRefused = init.then(connect(first, true)).then(wholeCommit(first, 3, false).fail())
+  run duplicateCommitRefused = init.then(connect(first, true)).then(wholeCommit(first, 3, true)).expect(s.attempts == 1).then(wholeCommit(first, 3, true).fail())
+  run foreignAttachmentRefused = init.then(connect(first, true)).then(wholeCommit(first, 3, true)).then(attachment({...first, frontend: 2}, 3, true, true).fail())
+  run attachmentVersionRefused = init.then(connect(first, true)).then(wholeCommit(first, 3, true)).then(attachment(first, 2, true, true).fail())
+  run attachmentFieldsRefused = init.then(connect(first, true)).then(wholeCommit(first, 3, true)).then(attachment(first, 3, false, true).fail())
+  run nativeOperationsRefused = init.then(connect(first, true)).then(wholeCommit(first, 3, true)).then(attachment(first, 3, true, false).fail())
+  run duplicateAttachmentRefused = init.then(connect(first, true)).then(wholeCommit(first, 3, true)).then(attachment(first, 3, true, true)).then(attachment(first, 3, true, true).fail())
+  run conflictingAttachmentRefused = init.then(connect(first, true)).then(wholeCommit(first, 3, true)).then(attachment(first, 3, true, true)).expect(not(s.nativeAuthority) and safety).then(attachment(nextBinding, 3, true, true).fail())
+  run applicationNativeEffectRefused = init.then(connect(first, true)).then(wholeCommit(first, 3, true)).then(attachment(first, 3, true, true)).expect(not(s.nativeAuthority) and not(s.nativeEffectIssued)).then(issueNativeEffect.fail())
+  run staleCatalogRefused = init.then(connect(first, true)).then(wholeCommit(first, 3, true)).then(attachment(first, 3, true, true)).then(requestCatalog).then(receiveCatalog({...first, lifetime: 2}, 3, 1).fail())
+  run duplicateCatalogRefused = init.then(connect(first, true)).then(wholeCommit(first, 3, true)).then(attachment(first, 3, true, true)).then(requestCatalog).then(receiveCatalog(first, 3, 1)).then(receiveCatalog(first, 3, 1).fail())
+  run stalePinRefused = init.then(connect(first, true)).then(wholeCommit(first, 3, true)).then(attachment(first, 3, true, true)).then(requestCatalog).then(receiveCatalog(first, 3, 1)).then(savePin).then(receivePin(first, 3, 1, true).fail())
+  run noReplayAfterUnknown = init.then(connect(first, true)).then(wholeCommit(first, 3, true)).then(attachment(first, 3, true, true)).then(requestCatalog).then(receiveCatalog(first, 3, 1)).then(savePin).then(receivePin(first, 3, 2, false)).expect(s.pin == PinUnknown).then(savePin.fail())
+  run uncertainAttachmentNoReplay = init.then(connect(first, true)).then(wholeCommit(first, 3, true)).then(lose).expect(s.phase == Lost and s.attempts == 1).then(wholeCommit(first, 3, true).fail())
+  run sameSessionReconnectRefused = init.then(connect(first, true)).then(lose).then(connect({...first, frontend: 2}, true).fail())
+  run reconnectPositive = init.then(connect(first, true)).then(wholeCommit(first, 3, true)).then(lose).then(connect(nextBinding, true)).then(wholeCommit(nextBinding, 3, true)).then(attachment(nextBinding, 3, true, true)).expect(s.current == nextBinding and safety)
+  run oldAttachmentAfterReconnectRefused = init.then(connect(first, true)).then(lose).then(connect(nextBinding, true)).then(wholeCommit(nextBinding, 3, true)).then(attachment(first, 3, true, true).fail())
+  run unknownSurvivesReconnect = init.then(connect(first, true)).then(wholeCommit(first, 3, true)).then(attachment(first, 3, true, true)).then(requestCatalog).then(receiveCatalog(first, 3, 1)).then(savePin).then(lose).then(connect(nextBinding, true)).then(wholeCommit(nextBinding, 3, true)).then(attachment(nextBinding, 3, true, true)).expect(s.pin == PinUnknown).then(savePin.fail())
+  run deliberateRecoveryRead = init.then(connect(first, true)).then(wholeCommit(first, 3, true)).then(attachment(first, 3, true, true)).then(requestCatalog).then(receiveCatalog(first, 3, 1)).then(savePin).then(receivePin(first, 3, 2, false)).then(requestCatalog).then(reconcilePin(first, 3, 3, true)).then(savePin).expect(s.pin == PinPending and s.pinRequest == 4 and safety)
+  run missingRecoverySnapshotRefused = init.then(connect(first, true)).then(wholeCommit(first, 3, true)).then(attachment(first, 3, true, true)).then(requestCatalog).then(receiveCatalog(first, 3, 1)).then(savePin).then(receivePin(first, 3, 2, false)).then(requestCatalog).then(reconcilePin(first, 3, 3, false).fail())
+}

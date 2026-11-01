@@ -307,7 +307,7 @@ controls model =
         let
             scoped build = Desktop.capture model |> Maybe.map build
             entries = model.applications |> Maybe.map (Catalog.search model.query) |> Maybe.withDefault []
-            ready = not (List.member (Launch.status model.launch) ["Pending","Unknown"])
+            ready = not model.windows.shell.applicationOnly && not (List.member (Launch.status model.launch) ["Pending","Unknown"])
             entryControl entry =
                 let choice = if ready then Launch.select (Catalog.id entry.identity) model.launch |> Maybe.map Desktop.Start else Nothing
                     label="Open "++entry.name
@@ -321,7 +321,7 @@ controls model =
                    ,pinAction ("pin-left:" ++ identity) label ("Move " ++ label ++ " left") "Pin order" (index>0) (\stamp -> Desktop.MovePin stamp identity -1)
                    ,pinAction ("pin-right:" ++ identity) label ("Move " ++ label ++ " right") "Pin order" (index<List.length pinIds-1) (\stamp -> Desktop.MovePin stamp identity 1)]
             acknowledge = Launch.uncertain model.launch |> Maybe.map (\token -> {id="control:acknowledge",domId=Desktop.key model "control:acknowledge",label="I checked; allow another launch",ariaLabel="I checked; allow another launch",detail="",enabled=True,message=Just (Desktop.Acknowledge token)}) |> Maybe.map List.singleton |> Maybe.withDefault []
-            jump=entries |> List.head |> Maybe.map (\entry -> let label="Actions for "++entry.name in {id="jump:open:"++Catalog.id entry.identity,domId=Desktop.key model ("jump:open:"++Catalog.id entry.identity),label=displayLabel label,ariaLabel=actionName label entry.name,detail="Application actions and recent files",enabled=True,message=scoped (\stamp -> Desktop.OpenJumpList stamp (Catalog.id entry.identity))}) |> Maybe.map List.singleton |> Maybe.withDefault []
+            jump=entries |> List.head |> Maybe.map (\entry -> let label="Actions for "++entry.name in {id="jump:open:"++Catalog.id entry.identity,domId=Desktop.key model ("jump:open:"++Catalog.id entry.identity),label=displayLabel label,ariaLabel=actionName label entry.name,detail="Application actions and recent files",enabled=not model.windows.shell.applicationOnly,message=if model.windows.shell.applicationOnly then Nothing else scoped (\stamp -> Desktop.OpenJumpList stamp (Catalog.id entry.identity))}) |> Maybe.map List.singleton |> Maybe.withDefault []
             prefix=jump++pinFirst++List.concat (List.indexedMap pinRows pinIds)
             prefixCount=List.length prefix
             bodyCount=prefixCount+List.length entries
@@ -421,6 +421,7 @@ barControls model =
         reconnect = {id="bar:reconnect",domId="reconnect",label="Reconnect",ariaLabel="Reconnect to the window system",detail="",enabled=not model.windows.shell.reconnecting,message=Just (Desktop.Window (TaskbarShell.Native Shell.Reconnect))}
         retry = {id="bar:refresh-windows",domId=Desktop.key model "refresh-windows",label="Refresh windows",ariaLabel="Refresh windows",detail="",enabled=model.choice==Nothing,message=Just Desktop.RetryWindows}
         utilities = (if model.windows.shell.phase==Shell.Detached then reconnect else application) :: overview :: switcher :: {id="bar:notifications",domId=Desktop.key model "notifications:opener",label="Notifications"++(model.notifications.snapshot |> Maybe.map (\snapshot -> let count=List.length (List.filter (\entry -> entry.state=="live") snapshot.entries) in if count==0 then "" else " · "++String.fromInt count) |> Maybe.withDefault ""),ariaLabel="Open notifications",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenNotifications} :: {id="bar:files",domId=Desktop.key model "files:opener",label="Files",ariaLabel="Open Files menu",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenFiles} :: {id="bar:system",domId=Desktop.key model "system:opener",label="System",ariaLabel="Open system menu",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenSystemMenu} :: {id="bar:settings",domId=Desktop.key model "settings:opener",label="Settings",ariaLabel="Open settings",detail="",enabled=model.windows.shell.binding/=Nothing,message=Desktop.capture model |> Maybe.map Desktop.OpenSettings} :: []
+        supportedUtilities = if model.windows.shell.applicationOnly then List.map (\control -> if List.member control.id ["bar:notifications","bar:files","bar:system","bar:settings"] then {control | enabled=False,message=Nothing} else control) utilities else utilities
         applications = List.map pinControl pinIds ++ List.map groupControl ordinaryGroups
         recovery = if recoveryNeeded model && model.windows.shell.phase/=Shell.Detached then [recoveryControl "bar:recovery-refresh" model] else []
         workspaceRecovery =
@@ -430,7 +431,7 @@ barControls model =
         compactPins=if List.isEmpty pinIds then [] else
             [{id="bar:pins-summary",domId=Desktop.key model "pins-summary",label=String.fromInt (List.length pinIds)++" pinned applications",ariaLabel="Open Applications for every pin action",detail="Compact taskbar; full pin order retained",enabled=application.enabled,message=application.message}]
     in if model.presentationCapacity then workspaceRecovery++recovery++[application]++compactPins else
-        workspaceRecovery ++ recovery ++ (if model.windows.shell.phase==Shell.Detached then utilities++applications else applications++utilities) ++ (if not (String.isEmpty model.choiceNotice) && model.windows.shell.phase/=Shell.Detached then [retry] else [])
+        workspaceRecovery ++ recovery ++ (if model.windows.shell.phase==Shell.Detached then supportedUtilities++applications else applications++supportedUtilities) ++ (if not (String.isEmpty model.choiceNotice) && model.windows.shell.phase/=Shell.Detached then [retry] else [])
 
 notice : Desktop.Model -> String
 notice model =

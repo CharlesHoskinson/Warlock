@@ -1,0 +1,130 @@
+{
+  "schema": 1,
+  "reviewId": "private-ui-origin-source-readiness-20261101",
+  "reviewedAtUTC": "2026-11-01T04:48:05.334230+00:00",
+  "reviewer": {
+    "name": "reviewer",
+    "independent": true,
+    "disposition": "source-ready"
+  },
+  "sourceBase": "7b7c27b680628a1acc9c60a28f535e7fad76d600",
+  "contract": {
+    "path": "docs/warlock-build-loop/v2/shared-ui-origin-contract-20261101.json",
+    "sha256": "1160df86c139c7dc937c02b04ac19c1c4979bf2d0f9169258f3e4db229697324"
+  },
+  "disposition": "ready-for-declared-source-implementation",
+  "mayProceed": true,
+  "readinessScope": "Minimum feasible reviewed source integration under existing authorized preparation: shared pure Elm policy plus exclusive HTTP roots, strict Haskell role-bound local HTTP owner/pinned assets and WebKit host source. Pure/component verification follows actual source/toolchain review; real engine/native execution is not authorized by this source verdict.",
+  "originalRequirements": {
+    "ELM-ARC-024": {
+      "id": "ELM-ARC-024",
+      "ears": "The Elm desktop SHALL load packaged shell assets from an allowlisted local origin and deny remote navigation, arbitrary native method invocation and unapproved resource URLs.",
+      "verification": "Preserved scenario report with native or bridge trace showing: navigation or capability access is denied; artifact hashes and matching scenario receipts included.",
+      "scenarios": [
+        {
+          "name": "architecture-024",
+          "given": "an untrusted navigation or message",
+          "when": "it targets the privileged bridge",
+          "then": "navigation or capability access is denied"
+        }
+      ]
+    },
+    "ELM-DEL-014": {
+      "id": "ELM-DEL-014",
+      "ears": "The host SHALL enforce a restrictive Content Security Policy that allows only required local assets and denies remote origins, eval and unapproved inline scripts.",
+      "verification": "Retain CSP headers/policy and execution-negative probe reports.",
+      "scenarios": [
+        {
+          "name": "delivery-014",
+          "given": "the packaged host",
+          "when": "remote, eval or inline code is injected",
+          "then": "each unapproved execution is refused"
+        }
+      ]
+    }
+  },
+  "findings": [
+    "The adopted private Elm/WebKit + Haskell UI/localHTTP owner, single host-side native authority, ordinary applications host placement remains the target. No release/privateGUI completion prerequisite is invented for starting this source slice.",
+    "Three distinct exact127.0.0.1 listener origins establish browser role isolation. Role is assigned by listener, never request body/header/path. POST requires same-role Origin; every API request including consuming GET/events requires X-Warlock-Api:1. Cross-origin browser custom-header fetch preflights OPTIONS, which is denied. Ordinary document/image/simple GET cannot consume events.",
+    "Canonical whole view-commit framed IPC remains on inheritedfd0 written only by original approved UI owner PID. fd0CLOEXEC precedes WebKit subprocess creation. RendererHTTP only creates typed renderer provenance; native-event/topology/disposition/dismiss/escape/reflow cannot be chosen by HTTP client.",
+    "HTTP and port roots share pure DesktopPolicy and Bar/Popup transition logic. One interpreter is chosen by pinned artifact; do not leave two active effect paths or duplicate policy. No authored JavaScript adapter, init string or JSC extension is required: exact compiler standaloneHTML/script/style bytes remain separately pinned.",
+    "Exact local asset route and Host/method/Origin/content-type/Content-Length/body/version guards are fail closed before callbacks, including duplicate headers/case variants, transfer-encoding, trailing bytes, path encoding, unknown routes/methods and unapproved capabilities. No wildcard CORS, redirects, file path mapping or directory fallback.",
+    "CSP defaults deny, allows exact compiler script/style hashes and same-role connect origin, excludes unsafe-inline/unsafe-eval/remote/frame/object/base/form/worker access. Header construction is source evidence only; actual engine execution-negative observations remain required.",
+    "WebKit decide-policy must actively default deny unknown cases and reject newwindow/download/remote navigation. Resource-load-started and WebResource.sent-request are observations, not blocking hooks. Real compiled UserContentFilter is installed successfully before first load, alongside exactCSP and assetmap.",
+    "No synthetic initial topology/window snapshot/binding or view-disposition is introduced. HTTP receipt is not presentation/native admission. Existing16retainedbatch obligations and nativeOperations empty remain unchanged.",
+    "Startup requires actual owned private network and pinned engine dependency closure; absence fails closed, never host-network/software/device fallback. Existing absolute Bootstrap deadline<=30s remains bounded and all listeners/queues/workers/filter/native refs have explicit owned cleanup."
+  ],
+  "actualCurrentCapability": {
+    "elm": "Pinned Elm0.19.2 current dependencies browser/core/html/json; elm/http is absent and must be pinned with its actual transitive package closure before compile.",
+    "haskell": "Existing pinned GHC9.6.7/Cabal3.12.1.0 offline six-package build/runtime qualified on5818...; network3.2.0.0 already used. New GUI/HTTP/FFI source and dependencies need their own proportional protected checks.",
+    "hostWebKit": "Read-only dpkg/pkg-config/file inspection found no installed WebKit runtime, dev pc/header set, WebKitWebDriver or MiniBrowser.",
+    "otherHostLibraries": "GTK3runtime3.24.52, GTK4runtime4.24.1 and libsoup3runtime3.6.6 are present; their dev pkg-config metadata is absent. Xvfb exists, but was not launched and does not qualify WebKit/native readiness.",
+    "rootPrivateToolchainWork": "Lead reports pinned GTK6/WebKit headers downloaded; runtime/JSC fetch incomplete/range-bound in progress. No install, engine process or probe executed by reviewer; do not equate a header archive with an executable ABI closure.",
+    "currentPolicySource": {
+      "path": "implementation/warlock/haskell/runtime/src/Warlock/Ui/Policy.hs",
+      "sha256": "5c5d063cdd550a077aedce803656996fc63be34030df5ba635219ffed0d61d40",
+      "review": "Current public API enforces listener role route table, exact host/origin/length/type/forbidden duplicate headers, API GET header, exact navigation URI, generated filter and hash-only CSP. Runtime parser/owner/native adapter correspondence still to be verified."
+    },
+    "graphNavigation": "warlock-ctx executable unavailable; bounded actual-source fallback used."
+  },
+  "implementationAndQABoundaries": [
+    {
+      "part": "Elm shared policy and HTTP roots",
+      "sourceReady": true,
+      "requiredChecks": "Compile owning port+HTTP roots; same controlled inputs produce same Desktop/Bar/Popup state/effects, exclusive transport, no authoredJS. Exact wholecommit order/counter/binding/URI boundaries and stale-origin/navigation cases retain prior accepted5818source history."
+    },
+    {
+      "part": "Haskell policy/HTTP/owner",
+      "sourceReady": true,
+      "requiredChecks": "Public production-linked actual listener/route tests with positive packaged documents and wholeframeIPC, each role; seeded malformed/role/CORS/Host/Origin/path/body/header corpus denies before callback/queue use; crossrole blindGET cannot dequeue; exact script/style/CSP bytes; capacity/deadline/disconnect/stop cleanup and ambiguous no-replay controls."
+    },
+    {
+      "part": "WebKitGTK6 host source",
+      "sourceReady": true,
+      "executionReady": false,
+      "requiredChecks": "Use actual pinned downloaded GTK6/WebKit headers and full transitiveABI/tool inventory before protected compile/link. Filter compiles and installs before load, navigation/newwindow/download gates fail closed, native refs/callback threads retire; missing dependencies or namespace fail closed. No engine execution or HOSTSTOP2 retry from this review."
+    },
+    {
+      "part": "OriginalARC024 acceptance",
+      "accepted": false,
+      "requiredObservation": "Original allows native OR bridge denial trace, but wholeEARS also requires actual packaged local asset loading, remote navigation/resource/native-capability denial. A pure HTTPgate subset alone is not automatic whole closure; hash actual source/artifacts and retain matching architecture-024 receipt."
+    },
+    {
+      "part": "OriginalDEL014 acceptance",
+      "accepted": false,
+      "requiredObservation": "Retain exact generated CSP and actual packaged-host engine positive/negative execution probes for remote/eval/unapprovedinline. Header strings or a synthetic CSP interpreter do not prove refusal. Automation injection must demonstrate ordinary page-world policy, not bypass it through privileged evaluation; preserve safe positive control."
+    }
+  ],
+  "originalAcceptance": false,
+  "nativeAcceptance": false,
+  "guiAcceptance": false,
+  "releaseAccepted": false,
+  "stoppedGates": "HOSTSTOP2 and earlier failed/stopped histories unchanged; no privilege attempt, main-desktop change, engine start, raw compiler/model/test/native execution by reviewer.",
+  "primaryAPIReferences": [
+    {
+      "url": "https://webkitgtk.org/reference/webkit2gtk/stable/signal.WebView.decide-policy.html",
+      "captureSHA256": "c8973f61c68de7814ec0955d7d909020e1204331bd1ce99d5155453573cdec96",
+      "retrieval": "Scrapling HTTPS GET200; local temporary plain-text capture",
+      "scope": "Primary API4.1 documentation labels library2.42.5; structural API rationale, not qualification of chosen WebKitGTK6 ABI."
+    },
+    {
+      "url": "https://webkitgtk.org/reference/webkit2gtk/stable/signal.WebView.resource-load-started.html",
+      "captureSHA256": "6038f0d94d088fff1e8400e3dbd44c859b6fdc48bd096abe3e5c0acad5bee266",
+      "retrieval": "Scrapling HTTPS GET200; local temporary plain-text capture",
+      "scope": "Primary API4.1 documentation labels library2.42.5; structural API rationale, not qualification of chosen WebKitGTK6 ABI."
+    },
+    {
+      "url": "https://webkitgtk.org/reference/webkit2gtk/stable/class.WebResource.html",
+      "captureSHA256": "df42c76f2dae380e5971ebbfab7262dfa09e6a29ae28b5c2be36fe3ad4a068b1",
+      "retrieval": "Scrapling HTTPS GET200; local temporary plain-text capture",
+      "scope": "Primary API4.1 documentation labels library2.42.5; structural API rationale, not qualification of chosen WebKitGTK6 ABI."
+    },
+    {
+      "url": "https://webkitgtk.org/reference/webkit2gtk/stable/class.UserContentFilterStore.html",
+      "captureSHA256": "bc5540dba4739bb0c57abafc2b82cb0cf470bf560356b5471231aa2986fac8ac",
+      "retrieval": "Scrapling HTTPS GET200; local temporary plain-text capture",
+      "scope": "Primary API4.1 documentation labels library2.42.5; structural API rationale, not qualification of chosen WebKitGTK6 ABI."
+    }
+  ],
+  "nextAction": "Root may release declared source owners now. Independently implement public production-route/fuzz QA after exact source path declaration; root alone reviews/executes protected checks. Preserve original242/417/deadlines and record each actual observation without transferring prior bridge/native acceptance."
+}

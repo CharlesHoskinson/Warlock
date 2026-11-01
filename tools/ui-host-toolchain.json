@@ -1,0 +1,2278 @@
+{
+  "schema": 1,
+  "sdkDirectory": "/home/charl/.cache/warlock-ui-host/sdk",
+  "libraryDirectory": "/home/charl/.cache/warlock-ui-host/sdk/sysroot/usr/lib/x86_64-linux-gnu",
+  "target": "WebKitGTK6 2.52.6-1ubuntu1 / installedGTK4; build input qualification only, no engine/native/release execution",
+  "packages": [
+    {
+      "package": "libwebkitgtk-6.0-dev",
+      "version": "2.52.6-1ubuntu1",
+      "url": "https://archive.ubuntu.com/ubuntu/pool/main/w/webkit2gtk/libwebkitgtk-6.0-dev_2.52.6-1ubuntu1_amd64.deb",
+      "size": 182162,
+      "sha512": "a21d00ad689c1267bc60904abab816d5851d2c3a35054ef8d9ca5fcd938ad973e3c34801e6709bfed07cee2bc1efd4a84d63bc7858e8e2aacafb8377bad1c3de",
+      "sha256": "42521d26277739dd968d1c4be02eda918e661b2bdd64de67f613d77917a0c6f1",
+      "path": "/home/charl/.cache/warlock-ui-host/downloads/libwebkitgtk-6.0-dev_2.52.6-1ubuntu1_amd64.deb",
+      "metadata": "Package: libwebkitgtk-6.0-dev\nSource: webkit2gtk\nPriority: optional\nSection: libdevel\nInstalled-Size: 2472\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nArchitecture: amd64\nVersion: 2.52.6-1ubuntu1\nProvides: gir1.2-webkit-6.0-dev (= 2.52.6-1ubuntu1), gir1.2-webkitwebprocessextension-6.0-dev (= 2.52.6-1ubuntu1)\nDepends: libwebkitgtk-6.0-4 (= 2.52.6-1ubuntu1), libgtk-4-dev, libsoup-3.0-dev, libjavascriptcoregtk-6.0-dev (= 2.52.6-1ubuntu1), gir1.2-gtk-4.0-dev, gir1.2-soup-3.0-dev, gir1.2-webkit-6.0 (= 2.52.6-1ubuntu1)\nFilename: pool/main/w/webkit2gtk/libwebkitgtk-6.0-dev_2.52.6-1ubuntu1_amd64.deb\nSize: 182162\nSHA512: a21d00ad689c1267bc60904abab816d5851d2c3a35054ef8d9ca5fcd938ad973e3c34801e6709bfed07cee2bc1efd4a84d63bc7858e8e2aacafb8377bad1c3de\nHomepage: https://webkitgtk.org/\nDescription-en: Web content engine library for GTK - development files\n WebKit is a web content engine, derived from KHTML and KJS from KDE, and\n used primarily in Apple's Safari browser.  It is made to be embedded in\n other applications, such as mail readers, or web browsers.\n .\n It is able to display content such as HTML, SVG, XML, and others. It also\n supports DOM, XMLHttpRequest, XSLT, CSS, JavaScript/ECMAScript and more.\n .\n WebKitGTK is a WebKit port designed to be used in GTK applications.\n This build provides version 6.0 of the API and uses the GTK 4 widget\n toolkit.\n .\n This package contains the development files.\nDescription-md5: e21e4706e323295a0f107f2fc160212c\nOriginal-Maintainer: Debian WebKit Maintainers <pkg-webkit-maintainers@lists.alioth.debian.org>\nOrigin: Ubuntu\nBugs: https://bugs.launchpad.net/ubuntu/+filebug",
+      "utc": "2026-11-01T04:39:15.747672+00:00"
+    },
+    {
+      "package": "libwebkitgtk-6.0-4",
+      "url": "https://archive.ubuntu.com/ubuntu/pool/main/w/webkit2gtk/libwebkitgtk-6.0-4_2.52.6-1ubuntu1_amd64.deb",
+      "attempt": 3,
+      "results": [
+        {
+          "start": 14680064,
+          "bytes": 1048576
+        },
+        {
+          "start": 15728640,
+          "bytes": 1048576
+        },
+        {
+          "start": 23068672,
+          "bytes": 1048576
+        }
+      ],
+      "utc": "2026-11-01T04:57:00.840422+00:00",
+      "sha512": "f45fe4c19e1c2ae9e7830e30aad5494cafaf99ea1b434f25ed777206fa4808cc1370360305d393adcf3ee5196fcf4a2fea5a21cc98cc8f8897f7c04c527365aa",
+      "sha256": "94cb8d314ab8d513f2de2b2d5d3d102fe1916b5e1349c20e7f440c5327e8a593",
+      "bytes": 25460792,
+      "path": "/home/charl/.cache/warlock-ui-host/downloads/libwebkitgtk-6.0-4_2.52.6-1ubuntu1_amd64.deb",
+      "verified": true
+    },
+    {
+      "package": "libjavascriptcoregtk-6.0-1",
+      "url": "https://archive.ubuntu.com/ubuntu/pool/main/w/webkit2gtk/libjavascriptcoregtk-6.0-1_2.52.6-1ubuntu1_amd64.deb",
+      "attempt": 3,
+      "results": [
+        {
+          "start": 5242880,
+          "bytes": 1048576
+        }
+      ],
+      "utc": "2026-11-01T04:57:02.111739+00:00",
+      "sha512": "ff5013386ea186c0402651a881b69066dfc3234335860d4e0b3c10ee6c7ccb3c1bbbd3544888d8b7c7f88c9f083469865127c1823d49c7363904755e83e810a4",
+      "sha256": "6e797eef0e70e4fb738f3b081e887bf307d91b86f1cd82e7028ee0d588e1c41d",
+      "bytes": 8088054,
+      "path": "/home/charl/.cache/warlock-ui-host/downloads/libjavascriptcoregtk-6.0-1_2.52.6-1ubuntu1_amd64.deb",
+      "verified": true
+    }
+  ],
+  "archiveSignature": {
+    "keyring": "/usr/share/keyrings/ubuntu-archive-keyring.gpg",
+    "inReleaseSHA256": "432b0f2ad42b2a997e2b373f5b61cabb3e80b3c5348cd0ff4b9cfc4df2e3d8fb",
+    "verifiedKeyFingerprint": "F6ECB3762474EDA9D21B7022871920D1991BC93C",
+    "result": "gpgv Good signature; selecteddeb exactaptmetadataSHA512 matched"
+  },
+  "files": {
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitApplicationInfo.h": {
+      "sha256": "961025bdabd8cd9a78e553c1f33b9d6c3ac1ba260656ceead17d89fef11b4a98",
+      "mode": "0o644",
+      "bytes": 2385
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitAuthenticationRequest.h": {
+      "sha256": "31bc7d2684b286146906a5a87a349e3621aecf0d4edb62a3a9458e3715776f47",
+      "mode": "0o644",
+      "bytes": 5053
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitAutocleanups.h": {
+      "sha256": "4662a6a518e7fdfcee31ba64ace9e1eaf2228a7b2fc9d9dbdbbf555a594306b1",
+      "mode": "0o644",
+      "bytes": 2376
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitAutomationSession.h": {
+      "sha256": "2c8cfe07301a46b0ad3d5fd28cf4ee4a7616746bf2a941d90ffc176c602afc5b",
+      "mode": "0o644",
+      "bytes": 2267
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitBackForwardList.h": {
+      "sha256": "97e21833893ba163fbc9ee4d257cb230dd7d513b07070ff7ae6341b883a55f0c",
+      "mode": "0o644",
+      "bytes": 2701
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitBackForwardListItem.h": {
+      "sha256": "3b61cb5f44b9547fb1c64186d33fb4f1744c100d4474e1544786c8470585e274",
+      "mode": "0o644",
+      "bytes": 1688
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitClipboardPermissionRequest.h": {
+      "sha256": "02134c4f49c3d88293ec6b5d14131042d950773a5c70831e010766322f7d0ae3",
+      "mode": "0o644",
+      "bytes": 1384
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitColorChooserRequest.h": {
+      "sha256": "0ec163220ee7ca8d606f7aca1996f054a96ee0af41b61a7f25c39933436c4ebb",
+      "mode": "0o644",
+      "bytes": 2683
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitConsoleMessage.h": {
+      "sha256": "f285cf2068b190cde2e098fb5bdd382953bc3f42355ef75955f3df270dcd2fee",
+      "mode": "0o644",
+      "bytes": 3507
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitContextMenu.h": {
+      "sha256": "833786d07fe70882a6553593f65b8250e822812e9b6bd2757cc20b4d7b107ce0",
+      "mode": "0o644",
+      "bytes": 3802
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitContextMenuActions.h": {
+      "sha256": "f60fa1c9a19844258275fd10c9269a02894308878cca418513cec143a5f50a0f",
+      "mode": "0o644",
+      "bytes": 7318
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitContextMenuItem.h": {
+      "sha256": "2288fbce1010955026d045537b158f7b6e320f47c58b65d3fbb95f16f828bdb3",
+      "mode": "0o644",
+      "bytes": 3350
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitCookieManager.h": {
+      "sha256": "00d4eb21c498bb5dd8b9253035824c52569909044ddaef4426c3dfedeead14c9",
+      "mode": "0o644",
+      "bytes": 7588
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitCredential.h": {
+      "sha256": "bf20b754f2b3c41b12b958ee11693bdee536a68077dd1d5adb2a4eeac188172f",
+      "mode": "0o644",
+      "bytes": 3338
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitDefines.h": {
+      "sha256": "dffffc42d23fd347a80dc836bbbfd0f123790061e8204911e4b1c5f59646bf5f",
+      "mode": "0o644",
+      "bytes": 5117
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitDeviceInfoPermissionRequest.h": {
+      "sha256": "c20b783d423f2602e6adb1e482fd2d3e0a7adb0996202cd374317b5794073245",
+      "mode": "0o644",
+      "bytes": 1372
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitDownload.h": {
+      "sha256": "4a6ddd19c0667e02482ba4d7c4fc88e39ff03a772145c89355cf67efe04632c3",
+      "mode": "0o644",
+      "bytes": 2515
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitEditingCommands.h": {
+      "sha256": "c359e6cf2aea92bb58522158cf90a6b22d94c2fe396ac28e44cc4a87891beb17",
+      "mode": "0o644",
+      "bytes": 4909
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitEditorState.h": {
+      "sha256": "10ab5327e473c6b90d0ac54ead483098ae9a3949465af3729be488b4db6a3c14",
+      "mode": "0o644",
+      "bytes": 2678
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitEnumTypes.h": {
+      "sha256": "d43da81af4b917dd39cbe120dac3203b5d43893d454a2161595d73a52bc74cdc",
+      "mode": "0o644",
+      "bytes": 9544
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitError.h": {
+      "sha256": "8c92aed20e4037212946b89fc77322475984be77d98a224f7075dbb854fc343a",
+      "mode": "0o644",
+      "bytes": 9521
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitFaviconDatabase.h": {
+      "sha256": "e03da795021601aa4ff571cdfc91fc51b9891e58e11ed6112f1fa00b5ff18f42",
+      "mode": "0o644",
+      "bytes": 3099
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitFeature.h": {
+      "sha256": "491e2c7bd27417df0a3b0c8a6306a9893bf660de8789f3cc632b6b2402e973aa",
+      "mode": "0o644",
+      "bytes": 4541
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitFileChooserRequest.h": {
+      "sha256": "05fa54b9bc36a7fcd7c10e10fc5ed1a098506cff19e9d34cadfec913c88c020a",
+      "mode": "0o644",
+      "bytes": 2107
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitFindController.h": {
+      "sha256": "fc30bac3fcdc7a933146f853392af767e0285ac463df9efc8a47ef22ee12b7bb",
+      "mode": "0o644",
+      "bytes": 3790
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitFormSubmissionRequest.h": {
+      "sha256": "87ea5b73aa6e95f80be49517c3bff365edceac032cd6a88b29dc80a51139e11c",
+      "mode": "0o644",
+      "bytes": 1751
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitFrame.h": {
+      "sha256": "0132d4d96a1c356b7ee7afb8099ef4f113e0f072d07f09f8ad5550df14799070",
+      "mode": "0o644",
+      "bytes": 1962
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitGeolocationManager.h": {
+      "sha256": "37ebcad43134cff6ae1a1304448eaab29ecb59c6c0fb9915d234fed7a9b02ab5",
+      "mode": "0o644",
+      "bytes": 3658
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitGeolocationPermissionRequest.h": {
+      "sha256": "c858cca9377f37d7e10c3e5219c603f17e22eacfde5f300807f8ffd508b05525",
+      "mode": "0o644",
+      "bytes": 1398
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitHitTestResult.h": {
+      "sha256": "2fb1572d13f129af0e7239aa1fb6518d5f43b15ca73a86788ca928e36ba4a422",
+      "mode": "0o644",
+      "bytes": 3649
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitInputMethodContext.h": {
+      "sha256": "0c5b5c5a311b52d77ff112e783f783760ebf3c2d128361981e5ae26631368803",
+      "mode": "0o644",
+      "bytes": 9635
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitInstallMissingMediaPluginsPermissionRequest.h": {
+      "sha256": "f7e8af1b0a432a24eb7c43ee47790d6327ba97b768127fa3871a1bc9d1b76292",
+      "mode": "0o644",
+      "bytes": 1163
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitMediaKeySystemPermissionRequest.h": {
+      "sha256": "d0226c1f418b7934a006bc219d39a4f3dd3d2c8130729bcd89ce2d7475a644aa",
+      "mode": "0o644",
+      "bytes": 1547
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitMemoryPressureSettings.h": {
+      "sha256": "3ee5baac9e2cb128c47d0ba3e1c248754df3f523d0ff3bee6d4f6081491949ff",
+      "mode": "0o644",
+      "bytes": 3466
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitNavigationAction.h": {
+      "sha256": "11b26167ca28144e4317f93c629c6cfc3e1bca471cbeae238ef9d9dc191217fe",
+      "mode": "0o644",
+      "bytes": 3250
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitNavigationPolicyDecision.h": {
+      "sha256": "e441701017511dc0759b1564e9e239016f722e1ca0881ecc95de4c7122c2e6b3",
+      "mode": "0o644",
+      "bytes": 1643
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitNetworkProxySettings.h": {
+      "sha256": "10c631813080c5756cf4ec3018d35c75bb9345d01cf28d885e80318c1fc08b47",
+      "mode": "0o644",
+      "bytes": 3032
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitNetworkSession.h": {
+      "sha256": "fbdd30bdd45815012d8324ae85a404ef1f977d640138d24ef3a6ebc71bf04029",
+      "mode": "0o644",
+      "bytes": 5516
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitNotification.h": {
+      "sha256": "a87de3be01df029d8da3278e3eaa56d7c360f3f0c4b703accb6da8876c9540ce",
+      "mode": "0o644",
+      "bytes": 1899
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitNotificationPermissionRequest.h": {
+      "sha256": "e2b2bccf5a51eb0e8cc8d9b3c10f1ca238df53cadba56178346c102b8ef1cae1",
+      "mode": "0o644",
+      "bytes": 1405
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitOptionMenu.h": {
+      "sha256": "5978ae6f1afb56c92cd27c575e5c69b1e56746a7bf8605d613adc428b18ccaa4",
+      "mode": "0o644",
+      "bytes": 2003
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitOptionMenuItem.h": {
+      "sha256": "1276ff269ab372a3e57e3806382f4b7963e71199a28d9b19012c49845f655ee8",
+      "mode": "0o644",
+      "bytes": 2050
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitPermissionRequest.h": {
+      "sha256": "83280bd9e29f358940c76ddc292575f82755a16ed41e851ae4ce4a398e33f0bc",
+      "mode": "0o644",
+      "bytes": 1691
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitPermissionStateQuery.h": {
+      "sha256": "c03422655a0c99c9f60835efa0c3f0426b4da860267471f6eeb28e1dd017c17f",
+      "mode": "0o644",
+      "bytes": 2535
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitPointerLockPermissionRequest.h": {
+      "sha256": "5815f0f74898ccad0b9ad189a6e90858519f44a4bb7289b6915552fd6ba0c8d7",
+      "mode": "0o644",
+      "bytes": 1402
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitPolicyDecision.h": {
+      "sha256": "5618d0421003ea983790b82ae23502cfd974ff6196f0bf1b4b70a6256a1f6487",
+      "mode": "0o644",
+      "bytes": 2156
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitPrintOperation.h": {
+      "sha256": "c554f1ef98b1f42df21dc18d860618ef1177ce3bea9939ccd5c987950cfc42e0",
+      "mode": "0o644",
+      "bytes": 2765
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitResponsePolicyDecision.h": {
+      "sha256": "86c29c6eca72ccd68171d9f941128d92bbcf305402462916e256dffb0da8b4e1",
+      "mode": "0o644",
+      "bytes": 1998
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitScriptDialog.h": {
+      "sha256": "99999996b39c413822e0baddd5a46db1ad949d97969de7eed5e7ee4c5e268374",
+      "mode": "0o644",
+      "bytes": 2968
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitScriptWorld.h": {
+      "sha256": "45310f0b0f1519d7b1e71012126f71a3f73578e721e77d3adb139c94faf16888",
+      "mode": "0o644",
+      "bytes": 1649
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitSecurityManager.h": {
+      "sha256": "b1aea104be170f208b9d1fe2e126a0aa3e75df8949496010ffd73be5854a3279",
+      "mode": "0o644",
+      "bytes": 3968
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitSecurityOrigin.h": {
+      "sha256": "300fd69f31904cf5e47f61c5c4dfbe5eed2416cf111d2070c4e20089160a4408",
+      "mode": "0o644",
+      "bytes": 2216
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitSettings.h": {
+      "sha256": "5114b80dc8cbf39466451492a08ddfb43d39f80baeb764543a81e6fa54487aea",
+      "mode": "0o644",
+      "bytes": 22741
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitURIRequest.h": {
+      "sha256": "5d343cb9328069c9c04661cfa61d9a135aa3d378b254b6fce0562aeeb682f986",
+      "mode": "0o644",
+      "bytes": 1863
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitURIResponse.h": {
+      "sha256": "d2fa953b5915752f66ce3c64228b1a8f7904e9177a3a76f1e311de6acd2fba2d",
+      "mode": "0o644",
+      "bytes": 1963
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitURISchemeRequest.h": {
+      "sha256": "66e9b34a9eec1a20e35ca17578be4a2990b1587417848dd2eb1c4be1452df00d",
+      "mode": "0o644",
+      "bytes": 2813
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitURISchemeResponse.h": {
+      "sha256": "ba3129f9e73d0ff1afe334930de61aa84482376c15202edd4802c7de3b3c9868",
+      "mode": "0o644",
+      "bytes": 2197
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitURIUtilities.h": {
+      "sha256": "676593baf75dd268ca4270b53595af39519d2b3d5a1649d6ecbcaa12af4c1823",
+      "mode": "0o644",
+      "bytes": 1156
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitUserContent.h": {
+      "sha256": "69bc4f5c1d66c2ebde4e26ad837b0e2ef7901a66f1cbcc8fa07889c647b4d6f1",
+      "mode": "0o644",
+      "bytes": 6099
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitUserContentFilterStore.h": {
+      "sha256": "a74c5b392ddc6b2a2501907c93ba0612079c563bdd054589e0ebe5e24c93eeff",
+      "mode": "0o644",
+      "bytes": 6429
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitUserContentManager.h": {
+      "sha256": "037b1080a23ec1f19a2766137c940db8d692bf71b8f1bac97c9f325e4b9b4345",
+      "mode": "0o644",
+      "bytes": 7794
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitUserMediaPermissionRequest.h": {
+      "sha256": "e78fa9d64b13343b7b631b850a916be13add8f44b816e2d192d3e5c24590a162",
+      "mode": "0o644",
+      "bytes": 1712
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitUserMessage.h": {
+      "sha256": "b0a35416e6e67ea23fdaf797784066e88c730888275bda3fd304a63dcb802fa5",
+      "mode": "0o644",
+      "bytes": 2592
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitVersion.h": {
+      "sha256": "8be62f31055e5f5e285652cea6aa3451247122708d2839bbae422b8d6a705343",
+      "mode": "0o644",
+      "bytes": 1661
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitWebContext.h": {
+      "sha256": "7a2180f076b7dc6d3038ec82b087e0d80916534f83a03338e9dc27c6755ecb94",
+      "mode": "0o644",
+      "bytes": 8635
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitWebEditor.h": {
+      "sha256": "117c38e537ec8478e51d8784f2cad21aa8da5b384294981eb316e1881ee810e8",
+      "mode": "0o644",
+      "bytes": 1532
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitWebExtension.h": {
+      "sha256": "206c801bf931712f3515ea9dbdcf87f5ee6c3a38775484ab48653b43c14775d7",
+      "mode": "0o644",
+      "bytes": 4929
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitWebExtensionMatchPattern.h": {
+      "sha256": "b9e10bb40d28a6854c25a1624861c8b5f6270307d53882f04e2ffdef93f409ad",
+      "mode": "0o644",
+      "bytes": 5104
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitWebFormManager.h": {
+      "sha256": "7682c1f1567d2d31158888348304d5334a78260b1e62fd3d2fe782aeb0e0b010",
+      "mode": "0o644",
+      "bytes": 2645
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitWebHitTestResult.h": {
+      "sha256": "2071b4b3727b601cba71c62a915d629d496e99535e34b68f750f43f76f01e058",
+      "mode": "0o644",
+      "bytes": 3076
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitWebInspector.h": {
+      "sha256": "37bdcf1be8a4cdc1180fc07453fafadce14407b52a1dcfdb80905da47449f912",
+      "mode": "0o644",
+      "bytes": 2172
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitWebPage.h": {
+      "sha256": "0cf8dc51c75b9274990fb563fb066ec1223f35a0ca4a9cebc57aa68a25687303",
+      "mode": "0o644",
+      "bytes": 2747
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitWebProcessEnumTypes.h": {
+      "sha256": "b1186c330effd07585f292864916a0baa467c9b53188532bda1a1bb832f674d6",
+      "mode": "0o644",
+      "bytes": 1777
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitWebProcessExtension.h": {
+      "sha256": "f19fe5cb0031c29237ae85debbfcdb3c365ffb07ac22f1d21a5b8e45335ecc4a",
+      "mode": "0o644",
+      "bytes": 3506
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitWebResource.h": {
+      "sha256": "281db0ca2c948f7dd5adb5fff73fd2ca5afa72f5e811b7ffadb5cd22825e4116",
+      "mode": "0o644",
+      "bytes": 2101
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitWebView.h": {
+      "sha256": "431d4a2249df3982cc712de8c0c1f9e8df5caddf96e43ce10eaed82c1c78c33d",
+      "mode": "0o644",
+      "bytes": 36408
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitWebViewBase.h": {
+      "sha256": "ca346c30e8b980cf3c818bfab1c0994fac8543e601585e4ff3f8423fb53a3eb8",
+      "mode": "0o644",
+      "bytes": 2180
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitWebViewSessionState.h": {
+      "sha256": "bc713d72b32d3a1533772c629362f19791e031f022a1aaafc7de9da07669bab2",
+      "mode": "0o644",
+      "bytes": 1739
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitWebsiteData.h": {
+      "sha256": "321b0f486448710305bf5efc2079b443b72494165a466a74352861a2623126b2",
+      "mode": "0o644",
+      "bytes": 2733
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitWebsiteDataAccessPermissionRequest.h": {
+      "sha256": "0ad5d5e285c95615901ca40ecd2fb20875af99849c853affe12d328a26512416",
+      "mode": "0o644",
+      "bytes": 1717
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitWebsiteDataManager.h": {
+      "sha256": "6265771e8a920f1405c1d6df8948e3f8044e0321e8e28f9fd7faf2c1d49c5f2e",
+      "mode": "0o644",
+      "bytes": 8081
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitWebsitePolicies.h": {
+      "sha256": "198f41ca6697f52b26fcf630ca93e214147be94e9b27d1aa18a503ebf0a11e17",
+      "mode": "0o644",
+      "bytes": 2161
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitWindowProperties.h": {
+      "sha256": "788ecafae7918925d7f86936d43493921b979da9859f38c2473f08832fec013a",
+      "mode": "0o644",
+      "bytes": 2332
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/WebKitXRPermissionRequest.h": {
+      "sha256": "c91a4b76ffa13b4df548d6014bf4ae6b1035c5e40da1f82c0ad494560bc09fb4",
+      "mode": "0o644",
+      "bytes": 4427
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/webkit-web-process-extension.h": {
+      "sha256": "943c60af29151a07486e24e230ccb998e717b7d7ff649d1bed4b8b0a2a7c2820",
+      "mode": "0o644",
+      "bytes": 1779
+    },
+    "sysroot/usr/include/webkitgtk-6.0/webkit/webkit.h": {
+      "sha256": "bae06f9168ba71e263c1e30af9b9e5cf51bd6e034dbefe5591eeb238f9f9af5d",
+      "mode": "0o644",
+      "bytes": 4269
+    },
+    "sysroot/usr/lib/x86_64-linux-gnu/libgio-2.0.so": {
+      "sha256": "fc7bdbd38a8259acb29c62780eaa0dc73a5a311082284a80cdd7243f7338c8ef",
+      "mode": "0o644",
+      "bytes": 56
+    },
+    "sysroot/usr/lib/x86_64-linux-gnu/libglib-2.0.so": {
+      "sha256": "7bd3e012e92edffa1e0c066bf7246288bccfb2eaf0f2a65d7993b52a014bf206",
+      "mode": "0o644",
+      "bytes": 57
+    },
+    "sysroot/usr/lib/x86_64-linux-gnu/libgobject-2.0.so": {
+      "sha256": "375641297b9101dbddada95a70e70048c72a4099f1c02574544f7247513a169a",
+      "mode": "0o644",
+      "bytes": 60
+    },
+    "sysroot/usr/lib/x86_64-linux-gnu/libgtk-4.so": {
+      "sha256": "5dd35ba7262b989862fe3448c764e11306b1b4f312b4ee2de1bb8cadaf0316d4",
+      "mode": "0o644",
+      "bytes": 54
+    },
+    "sysroot/usr/lib/x86_64-linux-gnu/libjavascriptcoregtk-6.0.so.1": {
+      "symlink": "libjavascriptcoregtk-6.0.so.1.7.14",
+      "resolvedSHA256": "0b339e3f963d3f5bf1209dde4018d7af3f0af9bd1acdb31810cf95a162e080b9"
+    },
+    "sysroot/usr/lib/x86_64-linux-gnu/libjavascriptcoregtk-6.0.so.1.7.14": {
+      "sha256": "0b339e3f963d3f5bf1209dde4018d7af3f0af9bd1acdb31810cf95a162e080b9",
+      "mode": "0o644",
+      "bytes": 32094584
+    },
+    "sysroot/usr/lib/x86_64-linux-gnu/libsoup-3.0.so": {
+      "sha256": "e9662f67e8194bba07cfe4fc4ec30a118744e107e7e1cf46a16a511a66598439",
+      "mode": "0o644",
+      "bytes": 54
+    },
+    "sysroot/usr/lib/x86_64-linux-gnu/libwebkitgtk-6.0.so": {
+      "symlink": "libwebkitgtk-6.0.so.4",
+      "resolvedSHA256": "26cf4962f0b0b7c54db0479d13e1b5082e8f1038513b4dbca75597da5c7d4c97"
+    },
+    "sysroot/usr/lib/x86_64-linux-gnu/libwebkitgtk-6.0.so.4": {
+      "symlink": "libwebkitgtk-6.0.so.4.16.10",
+      "resolvedSHA256": "26cf4962f0b0b7c54db0479d13e1b5082e8f1038513b4dbca75597da5c7d4c97"
+    },
+    "sysroot/usr/lib/x86_64-linux-gnu/libwebkitgtk-6.0.so.4.16.10": {
+      "sha256": "26cf4962f0b0b7c54db0479d13e1b5082e8f1038513b4dbca75597da5c7d4c97",
+      "mode": "0o644",
+      "bytes": 93483696
+    },
+    "sysroot/usr/lib/x86_64-linux-gnu/pkgconfig/webkitgtk-6.0.pc": {
+      "sha256": "1de5345bf393d441ff07df1e514cce1234bf30a9c8ad5b76c39cba3f2c8d2fbe",
+      "mode": "0o644",
+      "bytes": 343
+    },
+    "sysroot/usr/lib/x86_64-linux-gnu/pkgconfig/webkitgtk-web-process-extension-6.0.pc": {
+      "sha256": "11f951634b633380a0a873293109c3160749ccbcfaa8eb3b921a3c1af6051858",
+      "mode": "0o644",
+      "bytes": 391
+    },
+    "sysroot/usr/lib/x86_64-linux-gnu/webkitgtk-6.0/MiniBrowser": {
+      "sha256": "237cc41721c56dc802b4255b4cf8cbfb5fda662bb9bed3c8ea6f9f7bf28fc00c",
+      "mode": "0o755",
+      "bytes": 153904
+    },
+    "sysroot/usr/lib/x86_64-linux-gnu/webkitgtk-6.0/WebKitGPUProcess": {
+      "sha256": "c8b5041b30798c1a65051fa52d6149244f15ddfec4dadfcd750ec2a07520d6fc",
+      "mode": "0o755",
+      "bytes": 14488
+    },
+    "sysroot/usr/lib/x86_64-linux-gnu/webkitgtk-6.0/WebKitNetworkProcess": {
+      "sha256": "f01dad9b4df55a1fbe7ce46d0387f2fdf7d30684beba407d93c7a3b85a56337b",
+      "mode": "0o755",
+      "bytes": 14488
+    },
+    "sysroot/usr/lib/x86_64-linux-gnu/webkitgtk-6.0/WebKitWebProcess": {
+      "sha256": "c5517187d25916ee4df14981e8ace1c275cbc31de50fbf42e81fa7b429174e81",
+      "mode": "0o755",
+      "bytes": 14488
+    },
+    "sysroot/usr/lib/x86_64-linux-gnu/webkitgtk-6.0/injected-bundle/libwebkitgtkinjectedbundle.so": {
+      "sha256": "2fa759de385bff480a4a994063d87b383e5f73f11209bafbd2dc335b1dd92d55",
+      "mode": "0o644",
+      "bytes": 14408
+    },
+    "sysroot/usr/share/doc/libjavascriptcoregtk-6.0-1/changelog.Debian.gz": {
+      "sha256": "6ac9b1142b6a4602fd9c63f4dafe9f69b9ab663f5115f636a8bb78df81e52f63",
+      "mode": "0o644",
+      "bytes": 7630
+    },
+    "sysroot/usr/share/doc/libjavascriptcoregtk-6.0-1/copyright": {
+      "sha256": "ff9dc55504c105938252b90489a87c9377a946c12031fa0fa49a6efba86906e0",
+      "mode": "0o644",
+      "bytes": 277517
+    },
+    "sysroot/usr/share/doc/libwebkitgtk-6.0-4/NEWS.gz": {
+      "sha256": "f400ca6f563fa24391bbdd381c049266ecdd04ca97ca8e3d348381c3037a8893",
+      "mode": "0o644",
+      "bytes": 38904
+    },
+    "sysroot/usr/share/doc/libwebkitgtk-6.0-4/changelog.Debian.gz": {
+      "symlink": "../libjavascriptcoregtk-6.0-1/changelog.Debian.gz",
+      "resolvedSHA256": "6ac9b1142b6a4602fd9c63f4dafe9f69b9ab663f5115f636a8bb78df81e52f63"
+    },
+    "sysroot/usr/share/doc/libwebkitgtk-6.0-4/copyright": {
+      "sha256": "ff9dc55504c105938252b90489a87c9377a946c12031fa0fa49a6efba86906e0",
+      "mode": "0o644",
+      "bytes": 277517
+    },
+    "sysroot/usr/share/doc/libwebkitgtk-6.0-dev/changelog.Debian.gz": {
+      "symlink": "../libjavascriptcoregtk-6.0-1/changelog.Debian.gz",
+      "resolvedSHA256": "6ac9b1142b6a4602fd9c63f4dafe9f69b9ab663f5115f636a8bb78df81e52f63"
+    },
+    "sysroot/usr/share/doc/libwebkitgtk-6.0-dev/copyright": {
+      "sha256": "ff9dc55504c105938252b90489a87c9377a946c12031fa0fa49a6efba86906e0",
+      "mode": "0o644",
+      "bytes": 277517
+    },
+    "sysroot/usr/share/gir-1.0/WebKit-6.0.gir": {
+      "sha256": "ddd9c9b5cec554e63dbd3635288613486b5a589d9b64acf493b64f18ab84f3b6",
+      "mode": "0o644",
+      "bytes": 1630889
+    },
+    "sysroot/usr/share/gir-1.0/WebKitWebProcessExtension-6.0.gir": {
+      "sha256": "a9c98c205e95156f9e5ebc6896ab32292e0c9106aea8fb132222238026dd26b5",
+      "mode": "0o644",
+      "bytes": 216898
+    },
+    "sysroot/usr/share/locale/ar/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "49ec13aa800cbc4c7597165e613dbf8bb1f82064c9db717c82f10994333e3d59",
+      "mode": "0o644",
+      "bytes": 23529
+    },
+    "sysroot/usr/share/locale/as/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "e59b637e4de52f0683fbacdfee74ae028db05fa9188b08dd0ba3af8b77ec3df1",
+      "mode": "0o644",
+      "bytes": 45439
+    },
+    "sysroot/usr/share/locale/bg/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "ca57e5b47e9ac893b22c26ab9ddf61f550facd766a972238f02f65aaabe1ec02",
+      "mode": "0o644",
+      "bytes": 49485
+    },
+    "sysroot/usr/share/locale/ca/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "abe2d94d749d01e7ed9d49f0121dd83cab7ade051f8d17b70a6e195b17ceddd0",
+      "mode": "0o644",
+      "bytes": 12013
+    },
+    "sysroot/usr/share/locale/cs/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "704144d6d6de0a0596f608dead2042f0ef4cfb6e39c4b6ac8225ba7e030dad6b",
+      "mode": "0o644",
+      "bytes": 26967
+    },
+    "sysroot/usr/share/locale/da/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "3fc370980ddd991a5567b7577414d4c93929d10602f0a46c83912eee51d75cd9",
+      "mode": "0o644",
+      "bytes": 51553
+    },
+    "sysroot/usr/share/locale/de/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "4a4568662015388d9f29492c7ca3a99075650e9c9807ba52825c45ac4f52f981",
+      "mode": "0o644",
+      "bytes": 34962
+    },
+    "sysroot/usr/share/locale/el/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "4f3e2270c1e1ac2b49f610581ec886ab979f3910fa37a5b09fa84bfc1386935e",
+      "mode": "0o644",
+      "bytes": 44125
+    },
+    "sysroot/usr/share/locale/en_CA/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "68078cb6ffc839d7dc150d6cd028d12767204213a76b71252263449964806f06",
+      "mode": "0o644",
+      "bytes": 26031
+    },
+    "sysroot/usr/share/locale/en_GB/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "ea5fc229f83a9908f141d11993cbbc1c8a74e2aad1c181b680a35d2749337815",
+      "mode": "0o644",
+      "bytes": 47577
+    },
+    "sysroot/usr/share/locale/eo/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "bca174705a1e11cd814c63fc785fb6f7e2b08b0e0de4fa49f8e958ee1462bb9f",
+      "mode": "0o644",
+      "bytes": 6855
+    },
+    "sysroot/usr/share/locale/es/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "afde6535c4c01dbd11669c64dbae96647f4190d836d1ee645b2fe394aa5f3a09",
+      "mode": "0o644",
+      "bytes": 37787
+    },
+    "sysroot/usr/share/locale/et/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "06ed413e4ae47ff9793eab9c4eeef1bdea2af87f6a6159668d15f48a6b45851d",
+      "mode": "0o644",
+      "bytes": 18395
+    },
+    "sysroot/usr/share/locale/eu/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "d01fdd321aa07e294f8a8abb65f58e44b9f558e39db6ecdf4be8830250503bb0",
+      "mode": "0o644",
+      "bytes": 21139
+    },
+    "sysroot/usr/share/locale/fi/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "379159520c319762f2a8a903fb86199e330994fc0dd50d323a4ffa77ffd61e31",
+      "mode": "0o644",
+      "bytes": 7412
+    },
+    "sysroot/usr/share/locale/fr/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "58d697f35ecd8a1fd078ac7a4cc6e3ac76342f694f2d7252235afbdebb920a68",
+      "mode": "0o644",
+      "bytes": 55684
+    },
+    "sysroot/usr/share/locale/gl/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "2350963eb1bd1e3c703e27942bd1d5b15a1de746c2d2be4ec85597478c417e00",
+      "mode": "0o644",
+      "bytes": 50524
+    },
+    "sysroot/usr/share/locale/gu/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "dea8b6702dd8e68581fb86ee0bed448e6514fa2d78d693cfb62eabc599a64e1b",
+      "mode": "0o644",
+      "bytes": 43431
+    },
+    "sysroot/usr/share/locale/he/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "aeb664de8707b809c397ca5699bdfe4dc571154417484c9ef406817afbfcb3c1",
+      "mode": "0o644",
+      "bytes": 49549
+    },
+    "sysroot/usr/share/locale/hi/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "36cb649768b96f1672344ee5de5294b8bca4c8db2fd43a2740d56afead29522d",
+      "mode": "0o644",
+      "bytes": 44982
+    },
+    "sysroot/usr/share/locale/hr/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "6c9fa2d2dc67fc26bc0e16364f141feb8a26b2ba5ee9379a14c5e7ad7097315a",
+      "mode": "0o644",
+      "bytes": 52239
+    },
+    "sysroot/usr/share/locale/hu/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "cb7c0e600bf90c31d1565ac1f0b951db130e25bc5f634c4202c65d789ed7c206",
+      "mode": "0o644",
+      "bytes": 32942
+    },
+    "sysroot/usr/share/locale/id/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "9602e2260d5dbf41c21816e8ba04e52398876f8db6fefd24b801bbdc1a96f14f",
+      "mode": "0o644",
+      "bytes": 36380
+    },
+    "sysroot/usr/share/locale/it/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "f37ecdf416f0f7622d672b25d506860609222385c1e39a23fec4430577340dd5",
+      "mode": "0o644",
+      "bytes": 46832
+    },
+    "sysroot/usr/share/locale/ja/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "1478dbc68d4712ceb77c4387f7103a03f476820dfa85f8613b880c2a588f11e7",
+      "mode": "0o644",
+      "bytes": 22365
+    },
+    "sysroot/usr/share/locale/ka/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "aa2d81f4378e55edf6af935bddecf81e336e4c78011bb0e84cab760f273ff121",
+      "mode": "0o644",
+      "bytes": 56042
+    },
+    "sysroot/usr/share/locale/kk/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "4acbf8c4003f87f1c60f43b8d739b77393c98545a6ff3b764c6ae618d859c4be",
+      "mode": "0o644",
+      "bytes": 48613
+    },
+    "sysroot/usr/share/locale/kn/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "cda0bff688461f7876473e702773dd2edc34f8d2f2f400d00032ce89d8cdfeee",
+      "mode": "0o644",
+      "bytes": 50128
+    },
+    "sysroot/usr/share/locale/ko/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "0e71d85f5f03a7d7f6c98c18827570939ffc0c8039ceaf1404ae6b0bb8530388",
+      "mode": "0o644",
+      "bytes": 47951
+    },
+    "sysroot/usr/share/locale/lt/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "f857f61408b51b7e6593c897586336c77c699544131a50d3a052b4d818dabd71",
+      "mode": "0o644",
+      "bytes": 21502
+    },
+    "sysroot/usr/share/locale/lv/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "0433394848dca07b658c5ec07c2b0cb9ba8afe950371d16ae7d68cd6ee041120",
+      "mode": "0o644",
+      "bytes": 13479
+    },
+    "sysroot/usr/share/locale/ml/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "253fb6ff895dbd318b3aefef49a8cf24a23aed79e7aa36b10b6add6429eba841",
+      "mode": "0o644",
+      "bytes": 19101
+    },
+    "sysroot/usr/share/locale/mr/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "db18915590441cb661a2d1c58553dfeee3784c50fd1362c7eb1c94b3086d5302",
+      "mode": "0o644",
+      "bytes": 44307
+    },
+    "sysroot/usr/share/locale/nb/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "97421c103810d67017b41f46c9d0add3f13e6f5dbb0832650f2c6c03fcce4fd6",
+      "mode": "0o644",
+      "bytes": 5435
+    },
+    "sysroot/usr/share/locale/nl/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "64d373cde7c99d47b09c07359a53f338d0b2e1c3b5985ad2583d3438a4a429f3",
+      "mode": "0o644",
+      "bytes": 45375
+    },
+    "sysroot/usr/share/locale/or/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "18edce68d22b738afc96f136a19c615103c611c07eb85a6383e423e92e760fa3",
+      "mode": "0o644",
+      "bytes": 47927
+    },
+    "sysroot/usr/share/locale/pa/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "e62b678092de8b826e3c4e273d92f6f430e6534350a0eb3d362defbc1abe0513",
+      "mode": "0o644",
+      "bytes": 18186
+    },
+    "sysroot/usr/share/locale/pl/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "7d03b033a87c06eff7e5f3d6c99e77a9bafaabc98efb52fffdffe7bbee51e1d0",
+      "mode": "0o644",
+      "bytes": 39272
+    },
+    "sysroot/usr/share/locale/pt/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "09620980244d00f83a0394a932d6a7a6ea641b32d94f9cf69b13369f178f68c2",
+      "mode": "0o644",
+      "bytes": 26601
+    },
+    "sysroot/usr/share/locale/pt_BR/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "7b17142082f8e9d57616c281b995adc651e6179f512a4a8b870a464da028d741",
+      "mode": "0o644",
+      "bytes": 38865
+    },
+    "sysroot/usr/share/locale/ro/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "95f57cc1ea21e2d09d66e7f379314d943c7cc92f27de1895d379dd0e152e4189",
+      "mode": "0o644",
+      "bytes": 36101
+    },
+    "sysroot/usr/share/locale/ru/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "71f36f3a2bfa1187c4509d396fd417e10408bac845c8672fae7ad5fecbdafbb0",
+      "mode": "0o644",
+      "bytes": 15419
+    },
+    "sysroot/usr/share/locale/sl/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "698ab162fb92ab6f1aec474e083e6ad5d100015d7228710f4cfe5f01a4cee9fb",
+      "mode": "0o644",
+      "bytes": 38463
+    },
+    "sysroot/usr/share/locale/sr/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "eacd8a1943c265d5b119790e68d809554d7988c373b2c60689e3db1d7639be4b",
+      "mode": "0o644",
+      "bytes": 48269
+    },
+    "sysroot/usr/share/locale/sr@latin/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "151c03873573df901ee5182f93a739f3b8ae291b5ad342777c3736e111ef9213",
+      "mode": "0o644",
+      "bytes": 20475
+    },
+    "sysroot/usr/share/locale/sv/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "93ab7726a02ca2a371535635689fb1b9cb54f86646142e905b996e1f8ce1d75c",
+      "mode": "0o644",
+      "bytes": 37375
+    },
+    "sysroot/usr/share/locale/ta/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "79484bfd6bd53b9a61beb70b8b3cee550815a28831d777b2dccbbd8e643ce2ac",
+      "mode": "0o644",
+      "bytes": 51376
+    },
+    "sysroot/usr/share/locale/te/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "a608abc088fea877cfa6e0be62dc654c18b81a7ecd2d48039ea9fb0dd81b7912",
+      "mode": "0o644",
+      "bytes": 46192
+    },
+    "sysroot/usr/share/locale/tr/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "0b7cc39eff268a947c458f471aa996e3fdb2ce3cf43826fa76bd8d4d6f72f064",
+      "mode": "0o644",
+      "bytes": 38539
+    },
+    "sysroot/usr/share/locale/uk/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "1283a392b09720059575c765c0dbb9702ec275c968ff0f3789eb7e5751a5a98e",
+      "mode": "0o644",
+      "bytes": 48212
+    },
+    "sysroot/usr/share/locale/vi/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "891301710e57e208a232310f734643d533bcfd70bc53a4734b207091117e8848",
+      "mode": "0o644",
+      "bytes": 21119
+    },
+    "sysroot/usr/share/locale/zh_CN/LC_MESSAGES/WebKitGTK-6.0.mo": {
+      "sha256": "8e5117afa26a871cee3b5983cdaee03ac4ca39341ecda9d12185e9ee6ef1b983",
+      "mode": "0o644",
+      "bytes": 47963
+    }
+  },
+  "elfInputs": {
+    "/home/charl/.cache/warlock-ui-host/sdk/sysroot/usr/lib/x86_64-linux-gnu/libjavascriptcoregtk-6.0.so.1.7.14": {
+      "sha256": "0b339e3f963d3f5bf1209dde4018d7af3f0af9bd1acdb31810cf95a162e080b9",
+      "size": 32094584,
+      "needed": [
+        "libatomic.so.1",
+        "libicudata.so.78",
+        "libicui18n.so.78",
+        "libicuuc.so.78",
+        "libgio-2.0.so.0",
+        "libgobject-2.0.so.0",
+        "libglib-2.0.so.0",
+        "libz.so.1",
+        "libsystemd.so.0",
+        "libstdc++.so.6",
+        "libm.so.6",
+        "libgcc_s.so.1",
+        "libc.so.6",
+        "ld-linux-x86-64.so.2"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2": {
+      "sha256": "3b56a07e51593e29b85e2fa8057f9e4bf8bd3022ff9b0f75e3c448fa69877016",
+      "size": 267168,
+      "needed": []
+    },
+    "/usr/lib/x86_64-linux-gnu/libc.so.6": {
+      "sha256": "4f94bc931ad2a03c82ad610dd734eed17f627197068898d04a71862d5ad45207",
+      "size": 2210992,
+      "needed": [
+        "ld-linux-x86-64.so.2"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libgcc_s.so.1": {
+      "sha256": "a1e90d180188096c5de561b8d1358ed345f096872f3a8411024997b80b5e75a0",
+      "size": 187120,
+      "needed": [
+        "libc.so.6",
+        "ld-linux-x86-64.so.2"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libm.so.6": {
+      "sha256": "366e3e5cff8674aef178a08cf8385b734ed8e7d35d8fc0fa66dbef8332bf3746",
+      "size": 1218856,
+      "needed": [
+        "libc.so.6",
+        "ld-linux-x86-64.so.2"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.36": {
+      "sha256": "d6abcc37530c3555131349ba47f6deda7fc4318ff5c236ef7f0211b91217aac0",
+      "size": 2916104,
+      "needed": [
+        "libm.so.6",
+        "libc.so.6",
+        "ld-linux-x86-64.so.2",
+        "libgcc_s.so.1"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libsystemd.so.0.44.0": {
+      "sha256": "5ea210e3fa300ae29fe26a991362594237a447e51a53c8f2a5d97d868a83b7f5",
+      "size": 1218096,
+      "needed": [
+        "libm.so.6",
+        "libc.so.6",
+        "ld-linux-x86-64.so.2"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libz.so.1.3.2": {
+      "sha256": "aa53325c62fdc08cac7bb331f4da444667819cf60df6612a75b9205c99e81bda",
+      "size": 121280,
+      "needed": [
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.9000.0": {
+      "sha256": "9990987ffc88baf5bf5a24c0e1d39fe47834556c3a9c058917362e378f2078a3",
+      "size": 1412840,
+      "needed": [
+        "libatomic.so.1",
+        "libm.so.6",
+        "libpcre2-8.so.0",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libpcre2-8.so.0.14.0": {
+      "sha256": "4a6b6b2078685b074869d75cb068664d7da6b3036df7bca0442b1bbbd4ac7e65",
+      "size": 699056,
+      "needed": [
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libatomic.so.1.2.0": {
+      "sha256": "59f4b817f28044cdf6463136988b092b1291bff9e74b7859cb5604fe325f519b",
+      "size": 35120,
+      "needed": [
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.9000.0": {
+      "sha256": "296d483391d16288c2b2b9d1f66377cd51b37cfffff534c41a7737401e20a139",
+      "size": 408024,
+      "needed": [
+        "libglib-2.0.so.0",
+        "libffi.so.8",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libffi.so.8.5.0": {
+      "sha256": "7392c95b499c0e2fb21417dcb7558493d4f787893a440aa39407e2957115332b",
+      "size": 68280,
+      "needed": [
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.9000.0": {
+      "sha256": "90e050acdf0a61be75230cb8cfa6262c6c0739bd28f72ff69c432746e2a1c58c",
+      "size": 1957416,
+      "needed": [
+        "libglib-2.0.so.0",
+        "libgobject-2.0.so.0",
+        "libgmodule-2.0.so.0",
+        "libz.so.1",
+        "libmount.so.1",
+        "libselinux.so.1",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libselinux.so.1": {
+      "sha256": "c9f533f7a29bd6e08d4101ffb8549bf26df95281aec689b312d96eeb43873fda",
+      "size": 203216,
+      "needed": [
+        "libpcre2-8.so.0",
+        "libc.so.6",
+        "ld-linux-x86-64.so.2"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libmount.so.1.1.0": {
+      "sha256": "2d26cf9f3b6c57baba8029db088695f04bb40572a98cec19b25df8a8c5d32f42",
+      "size": 346960,
+      "needed": [
+        "libblkid.so.1",
+        "libselinux.so.1",
+        "libsystemd.so.0",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libblkid.so.1.1.0": {
+      "sha256": "1e61e65a808d22232329e0eede7ff074223d9495fe2434499328d254cced9e88",
+      "size": 253008,
+      "needed": [
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0.9000.0": {
+      "sha256": "6f89f332ab22b971442bacbe40fa528424d75d2817efb98ba8866353c873b7bd",
+      "size": 22816,
+      "needed": [
+        "libglib-2.0.so.0",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libicuuc.so.78.3": {
+      "sha256": "e39bea71ecc2d37669020cde3240861fb288f451991cf2f74295964f6c49c528",
+      "size": 2267544,
+      "needed": [
+        "libicudata.so.78",
+        "libstdc++.so.6",
+        "libm.so.6",
+        "libgcc_s.so.1",
+        "libc.so.6",
+        "ld-linux-x86-64.so.2"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libicudata.so.78.3": {
+      "sha256": "ad0b9b6ca69964419b782143c56ed6436230f3d2a378d7e1dfa0838bd99bf8aa",
+      "size": 33117904,
+      "needed": []
+    },
+    "/usr/lib/x86_64-linux-gnu/libicui18n.so.78.3": {
+      "sha256": "c42edfb60541f23a5121091ca270df6e26f53b0a81d5d96b01db58212494dfc6",
+      "size": 3853200,
+      "needed": [
+        "libicuuc.so.78",
+        "libstdc++.so.6",
+        "libm.so.6",
+        "libgcc_s.so.1",
+        "libc.so.6"
+      ]
+    },
+    "/home/charl/.cache/warlock-ui-host/sdk/sysroot/usr/lib/x86_64-linux-gnu/libwebkitgtk-6.0.so.4.16.10": {
+      "sha256": "26cf4962f0b0b7c54db0479d13e1b5082e8f1038513b4dbca75597da5c7d4c97",
+      "size": 93483696,
+      "needed": [
+        "libgio-2.0.so.0",
+        "libgmodule-2.0.so.0",
+        "libepoxy.so.0",
+        "libatomic.so.1",
+        "libgtk-4.so.1",
+        "libpangocairo-1.0.so.0",
+        "libpango-1.0.so.0",
+        "libharfbuzz.so.0",
+        "libgdk_pixbuf-2.0.so.0",
+        "libcairo-gobject.so.2",
+        "libcairo.so.2",
+        "libvulkan.so.1",
+        "libgraphene-1.0.so.0",
+        "libfreetype.so.6",
+        "libfontconfig.so.1",
+        "libwebpmux.so.3",
+        "libexpat.so.1",
+        "libgobject-2.0.so.0",
+        "libjavascriptcoregtk-6.0.so.1",
+        "libicudata.so.78",
+        "libicui18n.so.78",
+        "libsystemd.so.0",
+        "libjpeg.so.8",
+        "libpng16.so.16",
+        "libglib-2.0.so.0",
+        "libicuuc.so.78",
+        "libxml2.so.16",
+        "libsqlite3.so.0",
+        "libxslt.so.1",
+        "libz.so.1",
+        "liblcms2.so.2",
+        "libgcrypt.so.20",
+        "libgpg-error.so.0",
+        "libgstallocators-1.0.so.0",
+        "libgstapp-1.0.so.0",
+        "libgstbase-1.0.so.0",
+        "libgstreamer-1.0.so.0",
+        "libgstpbutils-1.0.so.0",
+        "libgstaudio-1.0.so.0",
+        "libgsttag-1.0.so.0",
+        "libgstvideo-1.0.so.0",
+        "libgstgl-1.0.so.0",
+        "libgstfft-1.0.so.0",
+        "libwebpdemux.so.2",
+        "libwebp.so.7",
+        "libjxl.so.0.11",
+        "libsoup-3.0.so.0",
+        "libharfbuzz-icu.so.0",
+        "libX11.so.6",
+        "libwayland-server.so.0",
+        "libwayland-egl.so.1",
+        "libwayland-client.so.0",
+        "libm.so.6",
+        "libseccomp.so.2",
+        "libenchant-2.so.2",
+        "libgbm.so.1",
+        "libdrm.so.2",
+        "libtasn1.so.6",
+        "libhyphen.so.0",
+        "libsecret-1.so.0",
+        "libstdc++.so.6",
+        "libgcc_s.so.1",
+        "libc.so.6",
+        "ld-linux-x86-64.so.2"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libsecret-1.so.0.0.0": {
+      "sha256": "39c9d3e087e129ce61d38dc168c1646295111f8361ad480811629ddef52f8a2b",
+      "size": 379120,
+      "needed": [
+        "libglib-2.0.so.0",
+        "libgio-2.0.so.0",
+        "libgobject-2.0.so.0",
+        "libgcrypt.so.20",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libgcrypt.so.20.7.2": {
+      "sha256": "52a64154b05b7459743072b868c77ef2cea412ca505d967b43415146853a3c53",
+      "size": 1796752,
+      "needed": [
+        "libgpg-error.so.0",
+        "libc.so.6",
+        "ld-linux-x86-64.so.2"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libgpg-error.so.0.42.1": {
+      "sha256": "877a75a591c54ea26ba5d61ecd6c6cc0d5515f8768afa080225c254aad267933",
+      "size": 178512,
+      "needed": [
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libhyphen.so.0.4.0": {
+      "sha256": "f56fe40e32230fe7247447ad3cbe2292e3ed2b849cb1cb519894d60d5165a6e0",
+      "size": 26696,
+      "needed": [
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libtasn1.so.6.6.5": {
+      "sha256": "1255353abfae7b9f52aedb0264876cd4c852f13c2acf3e2203ebd2aab79bce02",
+      "size": 92384,
+      "needed": [
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libdrm.so.2.134.0": {
+      "sha256": "9ecb15af59c930d5039cb43e8d0c3e4ed0e57483ed89da5dedb8997aeaf354ef",
+      "size": 92848,
+      "needed": [
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libgbm.so.1.0.0": {
+      "sha256": "643b2a737923d55dc984f2c169a147735e1c3613eed6ffbaf10aff2034d92736",
+      "size": 23048,
+      "needed": [
+        "libdrm.so.2",
+        "libexpat.so.1",
+        "libm.so.6",
+        "libgcc_s.so.1",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libexpat.so.1.12.3": {
+      "sha256": "9e7f573377d23222c97e0dbcb57184048f8665da22e6ce6f1b505a53b92f8d7c",
+      "size": 182616,
+      "needed": [
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libenchant-2.so.2.8.16": {
+      "sha256": "98883b5c76e7d159fa3b3152669b509bdff95048cdb3e49ffa5787c0bf91b343",
+      "size": 67736,
+      "needed": [
+        "libgobject-2.0.so.0",
+        "libgmodule-2.0.so.0",
+        "libglib-2.0.so.0",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libseccomp.so.2.6.1": {
+      "sha256": "87185a3288a220049a973ce472f96f3922d1561e99fc3d558ff95843484e4777",
+      "size": 178696,
+      "needed": [
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libwayland-client.so.0.26.0": {
+      "sha256": "4b3e98fe2f4c863e7413f4447831e7a181ade581210121674f5889d583c64362",
+      "size": 73112,
+      "needed": [
+        "libffi.so.8",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libwayland-egl.so.1.26.0": {
+      "sha256": "75f28a49c68f4f358cf30f8e4928567e541cb9ea66487ae794d606a80631e3f9",
+      "size": 14424,
+      "needed": [
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libwayland-server.so.0.26.0": {
+      "sha256": "9d35f3dcce31477ecf689a4280f8499ac4a7aa3bd0986ca644ba1a0ad17e4128",
+      "size": 93784,
+      "needed": [
+        "libffi.so.8",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libX11.so.6.4.0": {
+      "sha256": "c7acb54e5a5d252af46e77f7eac662740b64ca5173ba870c01af3932acc0a710",
+      "size": 1318648,
+      "needed": [
+        "libxcb.so.1",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0": {
+      "sha256": "6af94be329e17e57f1cc0f5e4afb5bdfe669a5168accdc31b03274110b937b41",
+      "size": 170680,
+      "needed": [
+        "libXau.so.6",
+        "libXdmcp.so.6",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0": {
+      "sha256": "24beecbb0faf600d1a646b5edfc8c144da6f2965cb427598f4e17edc1285a733",
+      "size": 26856,
+      "needed": [
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libXau.so.6.0.0": {
+      "sha256": "2b742de65acd00f154ed156720af66c0c0af9a58360ba041f25a41e2f775fab5",
+      "size": 18776,
+      "needed": [
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libharfbuzz-icu.so.0.61232.0": {
+      "sha256": "93ea46d00cd81d5b6dc8f2d001325593001ee0c2907419b9a24c2a8cbd88ea25",
+      "size": 14408,
+      "needed": [
+        "libharfbuzz.so.0",
+        "libicuuc.so.78",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libharfbuzz.so.0.61232.0": {
+      "sha256": "b330ca2b82b22fbce5e1a15dabfeffdd97e9976c3a3e48a2696628bfd34526d5",
+      "size": 1220816,
+      "needed": [
+        "libm.so.6",
+        "libfreetype.so.6",
+        "libglib-2.0.so.0",
+        "libgraphite2.so.3",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libgraphite2.so.3.3.1": {
+      "sha256": "b1845baecf2c1383f6fdd220218292ad91682933c31d822b5e4678dbbbd46047",
+      "size": 153952,
+      "needed": [
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libfreetype.so.6.20.6": {
+      "sha256": "2be9211294e2bc088b73617cfe615c0d8f8786c54546bb9eb72130e82c9ed44b",
+      "size": 870552,
+      "needed": [
+        "libz.so.1",
+        "libbz2.so.1.0",
+        "libpng16.so.16",
+        "libbrotlidec.so.1",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libbrotlidec.so.1.2.0": {
+      "sha256": "99a45fb4ac95437b2d5ec9845cead2e9c9f55f523e04d5c43834ac1a958c433d",
+      "size": 55528,
+      "needed": [
+        "libbrotlicommon.so.1",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libbrotlicommon.so.1.2.0": {
+      "sha256": "731278f0f3b21b7c45741bbfced18b4a5c34caf984b0f563ccc3a123134cd885",
+      "size": 141560,
+      "needed": [
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libpng16.so.16.59.0": {
+      "sha256": "6bba994dcdc65ba08a8dddd43c1e33d6d562597b8ddc0bbde2482673b1f59760",
+      "size": 231648,
+      "needed": [
+        "libz.so.1",
+        "libm.so.6",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libbz2.so.1.0.4": {
+      "sha256": "4427719530606773e846e443d0288b32ee7fbdcf0a6f80638c5eda4c810e92eb",
+      "size": 83120,
+      "needed": [
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libsoup-3.0.so.0.7.4": {
+      "sha256": "1d3a1adda0fb782b8bb0a433bf4fc9367c2c17972472f5c540603d11e1605936",
+      "size": 637736,
+      "needed": [
+        "libglib-2.0.so.0",
+        "libgobject-2.0.so.0",
+        "libgio-2.0.so.0",
+        "libsqlite3.so.0",
+        "libpsl.so.5",
+        "libbrotlidec.so.1",
+        "libgssapi_krb5.so.2",
+        "libz.so.1",
+        "libnghttp2.so.14",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libnghttp2.so.14.29.5": {
+      "sha256": "ebb18bb6b8c6dca50a9a23abcad82d109574f8353a969c27681e272cf175d588",
+      "size": 170432,
+      "needed": [
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libgssapi_krb5.so.2.2": {
+      "sha256": "2d7773f4bd45dbed1447650581f2bbcaa3357cda14f81b6fe4b93dae32a441fd",
+      "size": 355160,
+      "needed": [
+        "libkrb5.so.3",
+        "libk5crypto.so.3",
+        "libcom_err.so.2",
+        "libkrb5support.so.0",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libkrb5support.so.0.1": {
+      "sha256": "2f3f8e9c0d8bd46f10221e1abea6eaf70c04b1e24da6012b323840710e3e86ab",
+      "size": 52080,
+      "needed": [
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libcom_err.so.2.1": {
+      "sha256": "044b6ec77fc9dce18283d3b4c9c3a84d0b289584d5ffad9736fea3bec9facc71",
+      "size": 18584,
+      "needed": [
+        "libc.so.6",
+        "ld-linux-x86-64.so.2"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libk5crypto.so.3.1": {
+      "sha256": "59ee4af8162b1d888fdaaf8bcfa8c3537b750a8f9a86305ef839b3f89a22f4f3",
+      "size": 178728,
+      "needed": [
+        "libkrb5support.so.0",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libkrb5.so.3.3": {
+      "sha256": "b64522bb13cce24ed247b82598f81d7e9e853636884a6e31f41a3e7aeb95cf25",
+      "size": 831744,
+      "needed": [
+        "libk5crypto.so.3",
+        "libcom_err.so.2",
+        "libkrb5support.so.0",
+        "libkeyutils.so.1",
+        "libresolv.so.2",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libresolv.so.2": {
+      "sha256": "d321b64c85ec831ade7593ff6a29762269e831b1bf7ec2815556182ba1be9899",
+      "size": 68104,
+      "needed": [
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libkeyutils.so.1.10": {
+      "sha256": "c0c8f8d5adec4abe76fa462d8ad7c010f50c61e2b67b9feaa6f44e462c12cf41",
+      "size": 22680,
+      "needed": [
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libpsl.so.5.3.8": {
+      "sha256": "a0a3bcf003728ce3a48cb92b9c5df23182b4966a4e093dad02a97c1eca2ff14c",
+      "size": 84040,
+      "needed": [
+        "libidn2.so.0",
+        "libunistring.so.5",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libunistring.so.5.2.1": {
+      "sha256": "0348e0d7c021e0ecfe1982990d448552c6580ceea4f0df249230b8b093c0e876",
+      "size": 2001152,
+      "needed": [
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libidn2.so.0.4.0": {
+      "sha256": "f1d3048d8d75e42dfd6fc27ae63a3c385b882572d6d7acb00b6e954a152f8e7f",
+      "size": 133272,
+      "needed": [
+        "libunistring.so.5",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libsqlite3.so.3.53.4": {
+      "sha256": "c754e3607d83409e247e9b8584fb4f8ed687e69e979965eac3db56c4dae0d9ef",
+      "size": 1587880,
+      "needed": [
+        "libm.so.6",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libjxl.so.0.11.2": {
+      "sha256": "fc14c5285c87e073996bcbe1a766ad3e7b712242d63cf55f7c99c291b1ea3ce3",
+      "size": 4020448,
+      "needed": [
+        "libjxl_cms.so.0.11",
+        "libhwy.so.1",
+        "libbrotlidec.so.1",
+        "libbrotlienc.so.1",
+        "libstdc++.so.6",
+        "libm.so.6",
+        "libgcc_s.so.1",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libbrotlienc.so.1.2.0": {
+      "sha256": "70df98b990c6432ccdafbb044c0cf4ae3bb4d4717869a9d03797cfea320c6f14",
+      "size": 686936,
+      "needed": [
+        "libm.so.6",
+        "libbrotlicommon.so.1",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libhwy.so.1.3.0": {
+      "sha256": "308ce7e9f92536d9dbe540b20b6aa385ee50621f6cc86e0e4f3df190e51c04c3",
+      "size": 55696,
+      "needed": [
+        "libstdc++.so.6",
+        "libgcc_s.so.1",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libjxl_cms.so.0.11.2": {
+      "sha256": "120e878e97dfe0539aa41482e9c29f8dea7fee8bc7b544b8dad0aaeff51f694a",
+      "size": 96632,
+      "needed": [
+        "liblcms2.so.2",
+        "libhwy.so.1",
+        "libstdc++.so.6",
+        "libm.so.6",
+        "libc.so.6",
+        "ld-linux-x86-64.so.2"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/liblcms2.so.2.0.19": {
+      "sha256": "16a3e02b56d130888f92f4c0abb63ca3a6fc65a92eea30dcae393a32891a35ef",
+      "size": 423184,
+      "needed": [
+        "libm.so.6",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libwebp.so.7.2.0": {
+      "sha256": "a2bb9639db21fcbfed613ba0f798efe048c7ede918e54a4a0bfb7c3a5c6a7675",
+      "size": 596320,
+      "needed": [
+        "libsharpyuv.so.0",
+        "libm.so.6",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libsharpyuv.so.0.1.2": {
+      "sha256": "2c4f03d8179ed0a0ef14ad6de985c729afa81736ea201d03dcd6a6ec52595cbd",
+      "size": 26712,
+      "needed": [
+        "libm.so.6",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libwebpdemux.so.2.0.17": {
+      "sha256": "2fdb17dfc0bb27f54c5e82075a6fdca08f715c308120b720cdb9711352cd6c6e",
+      "size": 22680,
+      "needed": [
+        "libwebp.so.7",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libgstfft-1.0.so.0.2807.0": {
+      "sha256": "81b8cea4d2e7f2ffb295fe5025e0e92bd653a830986b1a430ee624f0700bafe2",
+      "size": 39160,
+      "needed": [
+        "libglib-2.0.so.0",
+        "libm.so.6",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libgstgl-1.0.so.0.2807.0": {
+      "sha256": "2db5edd85bf619b31339348cbd2d87c705dd4f1f2a185ce188ec86eb3a81cd24",
+      "size": 638880,
+      "needed": [
+        "libgstvideo-1.0.so.0",
+        "libgstallocators-1.0.so.0",
+        "libgstbase-1.0.so.0",
+        "libgstreamer-1.0.so.0",
+        "libgobject-2.0.so.0",
+        "libglib-2.0.so.0",
+        "libgmodule-2.0.so.0",
+        "libGL.so.1",
+        "libEGL.so.1",
+        "libwayland-client.so.0",
+        "libwayland-cursor.so.0",
+        "libwayland-egl.so.1",
+        "libX11.so.6",
+        "libX11-xcb.so.1",
+        "libxcb.so.1",
+        "libgudev-1.0.so.0",
+        "libdrm.so.2",
+        "libgbm.so.1",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libgudev-1.0.so.0.3.0": {
+      "sha256": "1d6ec44c8e94f50697487e39c731b2bf83777bd6399c814e052a9aeeae4a2d55",
+      "size": 51352,
+      "needed": [
+        "libglib-2.0.so.0",
+        "libgobject-2.0.so.0",
+        "libudev.so.1",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libudev.so.1.7.14": {
+      "sha256": "65a10903b4589c524d52454b632a38459c0365833893b83e1bae20277d113998",
+      "size": 302216,
+      "needed": [
+        "libm.so.6",
+        "libc.so.6",
+        "ld-linux-x86-64.so.2"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libX11-xcb.so.1.0.0": {
+      "sha256": "f56bf81443a88ce1167bb4f8188a63f1579e35dd31e8b3260f5d4fce7de90b05",
+      "size": 14104,
+      "needed": []
+    },
+    "/usr/lib/x86_64-linux-gnu/libwayland-cursor.so.0.26.0": {
+      "sha256": "ef9fe6a3b55a0adfcd37e12b0a6581cca6ca153aa7d87ba792ccd229363ae6ea",
+      "size": 35848,
+      "needed": [
+        "libwayland-client.so.0",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libEGL.so.1.1.0": {
+      "sha256": "6fa3af4903be9ce007f56f0a0cd2fff01d6500b5eecb59df13c93f17c2059341",
+      "size": 71840,
+      "needed": [
+        "libGLdispatch.so.0",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libGLdispatch.so.0.0.0": {
+      "sha256": "8c3dbc80a9e435d15bb6394f609f90b823175a92e9ca41133294b5b8fcac50b2",
+      "size": 719144,
+      "needed": [
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libGL.so.1.7.0": {
+      "sha256": "ef85065ae96bff373db8ed59e1f4a77191cae4411f3dd7128d14a4c34af18a18",
+      "size": 538848,
+      "needed": [
+        "libGLdispatch.so.0",
+        "libGLX.so.0",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libGLX.so.0.0.0": {
+      "sha256": "0754505cc97c5c2251aebc10b5ab6ccbb9ad02d765bee07115bc9c09daf13002",
+      "size": 141464,
+      "needed": [
+        "libGLdispatch.so.0",
+        "libX11.so.6",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libgstreamer-1.0.so.0.2807.0": {
+      "sha256": "1cebd48eca451815dbc3a8f4260c019b6bde4367172feb6c231f18c504556fe6",
+      "size": 1498592,
+      "needed": [
+        "libgobject-2.0.so.0",
+        "libglib-2.0.so.0",
+        "libgmodule-2.0.so.0",
+        "libm.so.6",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libgstbase-1.0.so.0.2807.0": {
+      "sha256": "1fc240e3625aa9d9b002e59e2e23a5cc5a533cde76031b213866164b881d2ac2",
+      "size": 542488,
+      "needed": [
+        "libgstreamer-1.0.so.0",
+        "libglib-2.0.so.0",
+        "libgobject-2.0.so.0",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libgstallocators-1.0.so.0.2807.0": {
+      "sha256": "5be65506825d0dbad3e082b92aa8554fc6e3b8759e101fe32edb53415acee282",
+      "size": 35144,
+      "needed": [
+        "libdrm.so.2",
+        "libgstreamer-1.0.so.0",
+        "libgobject-2.0.so.0",
+        "libglib-2.0.so.0",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libgstvideo-1.0.so.0.2807.0": {
+      "sha256": "faf822078604fc80b8c60641541bffd39d4d218d225315d050d1874c0f43aaaf",
+      "size": 936912,
+      "needed": [
+        "libgstallocators-1.0.so.0",
+        "libgstreamer-1.0.so.0",
+        "libgobject-2.0.so.0",
+        "libglib-2.0.so.0",
+        "libgstbase-1.0.so.0",
+        "liborc-0.4.so.0",
+        "libm.so.6",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/liborc-0.4.so.0.44.0": {
+      "sha256": "b8e6c6961774a9c832ddec18e81e3a5568afc6a4ffcbeb7c8df8ff95f663e2ff",
+      "size": 1146536,
+      "needed": [
+        "libm.so.6",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libgsttag-1.0.so.0.2807.0": {
+      "sha256": "75ac7db039308543bef3c057a4d2cca18dde435fa8bfc391da29fdaaec850218",
+      "size": 268768,
+      "needed": [
+        "libgstbase-1.0.so.0",
+        "libgstreamer-1.0.so.0",
+        "libgobject-2.0.so.0",
+        "libglib-2.0.so.0",
+        "libm.so.6",
+        "libz.so.1",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libgstaudio-1.0.so.0.2807.0": {
+      "sha256": "0bf978f5e9216b2386278241053b90b7f39a447daddc02d7129be21b196ff8ed",
+      "size": 568056,
+      "needed": [
+        "libgsttag-1.0.so.0",
+        "libgstreamer-1.0.so.0",
+        "libgobject-2.0.so.0",
+        "libglib-2.0.so.0",
+        "libgstbase-1.0.so.0",
+        "libm.so.6",
+        "liborc-0.4.so.0",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libgstpbutils-1.0.so.0.2807.0": {
+      "sha256": "f08492657d4355a234dee581dca1b1bf27818ad3b163ed0a019f799ba1c0fef7",
+      "size": 293360,
+      "needed": [
+        "libgstvideo-1.0.so.0",
+        "libgstaudio-1.0.so.0",
+        "libgsttag-1.0.so.0",
+        "libgstreamer-1.0.so.0",
+        "libgobject-2.0.so.0",
+        "libglib-2.0.so.0",
+        "libgstbase-1.0.so.0",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libgstapp-1.0.so.0.2807.0": {
+      "sha256": "2adc425d20c3edd673c4c373d3ef10e3de4b01f679163d12c2d925dad468a20f",
+      "size": 100896,
+      "needed": [
+        "libgstbase-1.0.so.0",
+        "libgstreamer-1.0.so.0",
+        "libgobject-2.0.so.0",
+        "libglib-2.0.so.0",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libxslt.so.1.1.45": {
+      "sha256": "9bcd8ca5d3ac056dae5cb0705f0252af5cb42f8bccc41d4ae9613384470fc237",
+      "size": 248264,
+      "needed": [
+        "libxml2.so.16",
+        "libm.so.6",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libxml2.so.16.1.4": {
+      "sha256": "eafaa27af8c35f29531773e802cb1e2a1be85a2e9e84a755cfb3710078463138",
+      "size": 1453208,
+      "needed": [
+        "libz.so.1",
+        "libm.so.6",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libjpeg.so.8.3.2": {
+      "sha256": "baeed615c1d53ec573afb77377a8a746923ecaa8788c497b096a91910a2b7108",
+      "size": 665896,
+      "needed": [
+        "libc.so.6",
+        "ld-linux-x86-64.so.2"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libwebpmux.so.3.1.2": {
+      "sha256": "595f627ec85a54ee1ae2972762879b22de06f7ec0f1a115fb793a391140d8b6c",
+      "size": 55368,
+      "needed": [
+        "libwebp.so.7",
+        "libm.so.6",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libfontconfig.so.1.16.1": {
+      "sha256": "697b49cf7fb3a58b045daf146d780ce7aad14958822877f108996e873650e0d8",
+      "size": 338080,
+      "needed": [
+        "libfreetype.so.6",
+        "libexpat.so.1",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libgraphene-1.0.so.0.1000.8": {
+      "sha256": "9c0c92a48a51537e9e1a37bc5cc3b42c9c158ddea8b057e7fc10330fe783287c",
+      "size": 116808,
+      "needed": [
+        "libm.so.6",
+        "libgobject-2.0.so.0",
+        "libglib-2.0.so.0",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libvulkan.so.1.4.357": {
+      "sha256": "c0a001c8da07b0cbdaf633e97ad2b2e9a8065ef6f141652605af21946dd72981",
+      "size": 613104,
+      "needed": [
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libcairo.so.2.11804.4": {
+      "sha256": "f8ed09b8ed35a1c19be81434bf7cb0fde1c1a0355b8ac74b7d3cf97788bdffe6",
+      "size": 1366968,
+      "needed": [
+        "libm.so.6",
+        "libz.so.1",
+        "libpng16.so.16",
+        "libfontconfig.so.1",
+        "libfreetype.so.6",
+        "libX11.so.6",
+        "libXext.so.6",
+        "libXrender.so.1",
+        "libxcb.so.1",
+        "libxcb-render.so.0",
+        "libxcb-shm.so.0",
+        "libpixman-1.so.0",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libpixman-1.so.0.46.4": {
+      "sha256": "8740b21b15423da495da1c89e83d0fb64ca871bd4da47341d0422d7afb3b25e3",
+      "size": 747768,
+      "needed": [
+        "libm.so.6",
+        "libc.so.6",
+        "ld-linux-x86-64.so.2"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libxcb-shm.so.0.0.0": {
+      "sha256": "58fcb847e2009affbd7eeb1f6d39949f29ccc153f230e0b0d23de00d2b5c1353",
+      "size": 14632,
+      "needed": [
+        "libxcb.so.1",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libxcb-render.so.0.0.0": {
+      "sha256": "ee3c4a0893f4d944acbc83433234a97d94556e10c6a238e533f82b7a6bbe821b",
+      "size": 55608,
+      "needed": [
+        "libxcb.so.1",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0": {
+      "sha256": "708d1c6a5d8aa5169d61e5b79973bf012047de0fb881d2836d44b3167a1a51a5",
+      "size": 43712,
+      "needed": [
+        "libX11.so.6",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libXext.so.6.4.0": {
+      "sha256": "9e358938dc783704b75a8a27f07b9a2cc7dfb7ff73fd05cbcfe634b8c2afc74a",
+      "size": 77592,
+      "needed": [
+        "libX11.so.6",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libcairo-gobject.so.2.11804.4": {
+      "sha256": "3a7ae8610a5608a7d416e02eb5ea1c7f17b127729baf2b7bc0fbb7175662b081",
+      "size": 43000,
+      "needed": [
+        "libcairo.so.2",
+        "libglib-2.0.so.0",
+        "libgobject-2.0.so.0"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so.0.4400.8": {
+      "sha256": "b47f4723b8f54a05fc7dec48ca6312772418f8152591f106941abf5eea3ce254",
+      "size": 216288,
+      "needed": [
+        "libm.so.6",
+        "libglib-2.0.so.0",
+        "libgobject-2.0.so.0",
+        "libgmodule-2.0.so.0",
+        "libgio-2.0.so.0",
+        "libglycin-2.so.0",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libglycin-2.so.0": {
+      "sha256": "540e65e3f7e09c922be00f96eea37d5ea6fe72fa3e6cc92dd7e28067f4d9add8",
+      "size": 4671840,
+      "needed": [
+        "libgio-2.0.so.0",
+        "libgobject-2.0.so.0",
+        "libglib-2.0.so.0",
+        "libseccomp.so.2",
+        "libfontconfig.so.1",
+        "libgcc_s.so.1",
+        "libc.so.6",
+        "ld-linux-x86-64.so.2"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libpango-1.0.so.0.5800.0": {
+      "sha256": "10cc5f7dfb975c45ecf7ff4156d5b9bbe49960b4db257f44646c031cdb48dfc4",
+      "size": 470992,
+      "needed": [
+        "libm.so.6",
+        "libglib-2.0.so.0",
+        "libgobject-2.0.so.0",
+        "libgio-2.0.so.0",
+        "libfribidi.so.0",
+        "libthai.so.0",
+        "libharfbuzz.so.0",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libthai.so.0.3.2": {
+      "sha256": "f93a0dcf314c43cc50543d9bbb0b40bfd610cff818f12369a9d4ea8612235042",
+      "size": 44304,
+      "needed": [
+        "libdatrie.so.1",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libdatrie.so.1.4.1": {
+      "sha256": "13b034ff96a4e0d716baa5b0935f4f343b81c7862787a648f65acfab0ee67955",
+      "size": 30872,
+      "needed": [
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libfribidi.so.0.4.0": {
+      "sha256": "c122a34c3e9cab264c9a07b21b75f16443a646cc8db4e84ac91e800daa7e03ce",
+      "size": 121112,
+      "needed": [
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so.0.5800.0": {
+      "sha256": "01f236d79af9dd5ac167fa7bde6f383de9c8deb64e17038cd8df1e492de835e3",
+      "size": 75984,
+      "needed": [
+        "libpango-1.0.so.0",
+        "libpangoft2-1.0.so.0",
+        "libm.so.6",
+        "libglib-2.0.so.0",
+        "libgobject-2.0.so.0",
+        "libharfbuzz.so.0",
+        "libfontconfig.so.1",
+        "libcairo.so.2",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libpangoft2-1.0.so.0.5800.0": {
+      "sha256": "56662db0a08c92c9747def3f13c41703fff575b81b0ce0dbad4fb14f311e1d99",
+      "size": 129184,
+      "needed": [
+        "libpango-1.0.so.0",
+        "libglib-2.0.so.0",
+        "libgobject-2.0.so.0",
+        "libgio-2.0.so.0",
+        "libharfbuzz.so.0",
+        "libfontconfig.so.1",
+        "libfreetype.so.6",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libgtk-4.so.1.2400.1": {
+      "sha256": "dd01ee061b274caa659081705743720ae8df6d3f9e513534227fe6058999de81",
+      "size": 13155456,
+      "needed": [
+        "libgmodule-2.0.so.0",
+        "libglib-2.0.so.0",
+        "libgobject-2.0.so.0",
+        "libgio-2.0.so.0",
+        "libpangocairo-1.0.so.0",
+        "libpango-1.0.so.0",
+        "libcairo.so.2",
+        "libharfbuzz.so.0",
+        "libharfbuzz-subset.so.0",
+        "libfribidi.so.0",
+        "libcairo-gobject.so.2",
+        "libfontconfig.so.1",
+        "libgdk_pixbuf-2.0.so.0",
+        "libepoxy.so.0",
+        "libm.so.6",
+        "libgstplay-1.0.so.0",
+        "libgstvideo-1.0.so.0",
+        "libgstreamer-1.0.so.0",
+        "libgstgl-1.0.so.0",
+        "libgstallocators-1.0.so.0",
+        "libgraphene-1.0.so.0",
+        "libXi.so.6",
+        "libX11.so.6",
+        "libpangoft2-1.0.so.0",
+        "libvulkan.so.1",
+        "libpng16.so.16",
+        "libtiff.so.6",
+        "libjpeg.so.8",
+        "libxkbcommon.so.0",
+        "libwayland-client.so.0",
+        "libwayland-egl.so.1",
+        "libXext.so.6",
+        "libXcursor.so.1",
+        "libXdamage.so.1",
+        "libXfixes.so.3",
+        "libXrandr.so.2",
+        "libXinerama.so.1",
+        "libcairo-script-interpreter.so.2",
+        "libcups.so.2",
+        "libcolord.so.2",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libcolord.so.2.0.5": {
+      "sha256": "f5e7565fa35b76d4a30f13bf58292676b62c793d28fb8482003d686486c17995",
+      "size": 327016,
+      "needed": [
+        "libgio-2.0.so.0",
+        "libgobject-2.0.so.0",
+        "libglib-2.0.so.0",
+        "liblcms2.so.2",
+        "libm.so.6",
+        "libudev.so.1",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libcups.so.2": {
+      "sha256": "3b2de6d3538ee4bbfbbae8c34627df7a7ef14c823919251e49d2be761888b6e7",
+      "size": 661688,
+      "needed": [
+        "libgssapi_krb5.so.2",
+        "libavahi-common.so.3",
+        "libavahi-client.so.3",
+        "libgnutls.so.30",
+        "libz.so.1",
+        "libm.so.6",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libgnutls.so.30.42.0": {
+      "sha256": "ff7ead3a171078b7959f9e93429a68aadfe6766d30b8bbaa23f78d69c471ecf6",
+      "size": 2173104,
+      "needed": [
+        "libp11-kit.so.0",
+        "libidn2.so.0",
+        "libunistring.so.5",
+        "libtasn1.so.6",
+        "libhogweed.so.6",
+        "libnettle.so.8",
+        "libgmp.so.10",
+        "libc.so.6",
+        "ld-linux-x86-64.so.2"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libgmp.so.10.5.0": {
+      "sha256": "fda9699eef15deda5f1c626e9140377a7f5d88c41516a54278ac02429cb20fa5",
+      "size": 543168,
+      "needed": [
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libnettle.so.8.11": {
+      "sha256": "68c2f760d329a85ce1aa5cfc5e48ffece235258159005726798ad14e6f96a789",
+      "size": 354640,
+      "needed": [
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libhogweed.so.6.11": {
+      "sha256": "67bdc12f1ffe643142d5e185a6a8f654fd38cd14e77bae68201cf9aa71b00b61",
+      "size": 301280,
+      "needed": [
+        "libnettle.so.8",
+        "libgmp.so.10",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libp11-kit.so.0.4.11": {
+      "sha256": "8c49885b2cd545c49f2889190fe18ca6f785c42dec601bbe792b4ab8b5473945",
+      "size": 1937960,
+      "needed": [
+        "libffi.so.8",
+        "libc.so.6",
+        "ld-linux-x86-64.so.2"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libavahi-client.so.3.2.9": {
+      "sha256": "49c276fa0e15902161631801b96fef57e4df1c04146334982ff4ea06c6fbab9a",
+      "size": 80288,
+      "needed": [
+        "libdbus-1.so.3",
+        "libavahi-common.so.3",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libavahi-common.so.3.5.4": {
+      "sha256": "e1df7e7649ed71cb401f626aeb892ed363951074138edc12598548c7edb9aeaf",
+      "size": 55904,
+      "needed": [
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libdbus-1.so.3.38.3": {
+      "sha256": "64f7e0f5ca2d870ecc968c09446a9266ee753c6f0319eb6e9ee38722b4ac1cf0",
+      "size": 321920,
+      "needed": [
+        "libsystemd.so.0",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libcairo-script-interpreter.so.2.11804.4": {
+      "sha256": "a69421dafccb9c5ae36d97a2c537e53be747ee509a29ca63a9db706907e37507",
+      "size": 160720,
+      "needed": [
+        "libcairo.so.2",
+        "libm.so.6",
+        "libz.so.1",
+        "libfontconfig.so.1",
+        "libfreetype.so.6",
+        "liblzo2.so.2",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/liblzo2.so.2.0.0": {
+      "sha256": "1728af970f1689da66c2314c328aef8fd21a7c42332469177914367f5082c086",
+      "size": 149656,
+      "needed": [
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libXinerama.so.1.0.0": {
+      "sha256": "a8af5dca7e30f9b8e949afb5afe8aee91e4d561602feb930efe010df949a47cc",
+      "size": 14696,
+      "needed": [
+        "libX11.so.6",
+        "libXext.so.6",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libXrandr.so.2.2.0": {
+      "sha256": "de834ac7818cdfd326ddea6859781780a20397ff5877508c203eb07b694a412c",
+      "size": 47584,
+      "needed": [
+        "libXext.so.6",
+        "libXrender.so.1",
+        "libX11.so.6",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0": {
+      "sha256": "04f371370ab65d552b214c9d57ac8b05c8fd9127b1bd55e29bd297f417241de0",
+      "size": 26880,
+      "needed": [
+        "libX11.so.6",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libXdamage.so.1.1.0": {
+      "sha256": "25b558d1963cdce972682a289e577ac29e939ae935b7a32f75c3f526db453c6e",
+      "size": 14568,
+      "needed": [
+        "libX11.so.6",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2": {
+      "sha256": "0d8321ceafa73ca8f3921221055051be4e4a2ad75aa59f946578182e1ca45832",
+      "size": 47720,
+      "needed": [
+        "libXrender.so.1",
+        "libXfixes.so.3",
+        "libX11.so.6",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libxkbcommon.so.0.13.1": {
+      "sha256": "8b7d244ea1df8b1c073069344f8c705bab90d6b6bcafb96f1c2eccc2312f4946",
+      "size": 383832,
+      "needed": [
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libtiff.so.6.2.0": {
+      "sha256": "db4ebece089d26721e106aad53f10a652ff1edbda739d354487de128f24ccd53",
+      "size": 624880,
+      "needed": [
+        "libwebp.so.7",
+        "libzstd.so.1",
+        "liblzma.so.5",
+        "libLerc.so.4",
+        "libjbig.so.0",
+        "libjpeg.so.8",
+        "libdeflate.so.0",
+        "libz.so.1",
+        "libm.so.6",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libdeflate.so.0": {
+      "sha256": "265ce4bc419b0c5fe9d80715a091db326c8b0624bd0a47be30883cb540c49b13",
+      "size": 92272,
+      "needed": [
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libjbig.so.0": {
+      "sha256": "19ae16694b0f2c442b367fd9dfecf8da68c9b8ded0bc9029c1d53a9ba91a4151",
+      "size": 70576,
+      "needed": [
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libLerc.so.4": {
+      "sha256": "dec193005832f3b6afa919925cf908ee24ca40c5c2a4ff8cf39b1e044a0402d8",
+      "size": 604416,
+      "needed": [
+        "libstdc++.so.6",
+        "libm.so.6",
+        "libgcc_s.so.1",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/liblzma.so.5.8.3": {
+      "sha256": "5cfd008e1fb1905655305c48456860921355e2e095bb21a3ef92ed9840ab0c4e",
+      "size": 215448,
+      "needed": [
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libzstd.so.1.5.7": {
+      "sha256": "84c2d33e53bfc9a992f15f38274a9dbc27eec84192524f61f2ac10ef9d77b1f2",
+      "size": 796824,
+      "needed": [
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libXi.so.6.1.0": {
+      "sha256": "05aeb2b462c5bd22e969a47c269c7fe0c77edd7bc1e89f3f0dead169f5df222c",
+      "size": 80496,
+      "needed": [
+        "libX11.so.6",
+        "libXext.so.6",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libgstplay-1.0.so.0.2806.0": {
+      "sha256": "bdafb61fb964acc044e511225eac59dca3c07fc42e19b53785c9fd269eec65a7",
+      "size": 149832,
+      "needed": [
+        "libgstreamer-1.0.so.0",
+        "libgobject-2.0.so.0",
+        "libglib-2.0.so.0",
+        "libgstvideo-1.0.so.0",
+        "libgsttag-1.0.so.0",
+        "libgstpbutils-1.0.so.0",
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libepoxy.so.0.0.0": {
+      "sha256": "67533f0552bc23d90402a0df7bed6f4f40d8ec1946782b3f9d245c0e46a758ef",
+      "size": 1185600,
+      "needed": [
+        "libc.so.6"
+      ]
+    },
+    "/usr/lib/x86_64-linux-gnu/libharfbuzz-subset.so.0.61232.0": {
+      "sha256": "5391f1d877a4430bc8b40b3fc4804d16aab2e066f37eb8a68154507fd2ee8608",
+      "size": 1132920,
+      "needed": [
+        "libharfbuzz.so.0",
+        "libm.so.6",
+        "libc.so.6"
+      ]
+    }
+  }
+}

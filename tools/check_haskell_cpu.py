@@ -145,6 +145,9 @@ def main():
     modes = parser.add_mutually_exclusive_group(required=True)
     modes.add_argument('--prepare', action='store_true')
     modes.add_argument('--build', action='store_true')
+    modes.add_argument('--ui-origin', action='store_true')
+    modes.add_argument('--ui-models', action='store_true')
+    modes.add_argument('--site', action='store_true')
     parser.add_argument('--inside-private', type=Path)
     args = parser.parse_args()
     scope = require_qa_scope()
@@ -160,12 +163,14 @@ def main():
         artifacts(packet)
         private = ['/usr/bin/bwrap', '--die-with-parent', '--unshare-net', '--unshare-pid',
                    '--ro-bind', '/', '/', '--proc', '/proc', '--dev', '/dev',
-                   '--tmpfs', '/tmp', '--tmpfs', '/run/user',
+                   # Keep the display fixture's entire runtime ancestry private;
+                   # the outer qa_cpu process retains the host lock independently.
+                   '--tmpfs', '/tmp', '--tmpfs', '/run', '--dir', '/run/user',
                    '--tmpfs', '/home', '--ro-bind', '/home/charl', '/home/charl',
                    '--dir', '/home/charles', '--ro-bind', str(ROOT), '/home/charles/Warlock',
                    '--bind' if args.prepare else '--ro-bind', str(CACHE), str(CACHE), '--bind', str(output), str(output),
                    '--chdir', str(ROOT), '--', sys.executable, '-B', str(Path(__file__).resolve()),
-                   '--inside-private', str(output)] + (['--prepare'] if args.prepare else ['--build'])
+                   '--inside-private', str(output)] + (['--prepare'] if args.prepare else (['--ui-origin'] if args.ui_origin else (['--ui-models'] if args.ui_models else (['--site'] if args.site else ['--build']))))
         report = {'schema': 1, 'protectedScope': scope, 'passed': False, 'prepare': args.prepare,
                   'nativeAccepted': False, 'releaseAccepted': False,
                   'parentNetworkNamespace': os.readlink('/proc/self/ns/net'),
@@ -174,11 +179,13 @@ def main():
         report['systemInputs'] = system_inputs()
         (output / 'report.json').write_text(json.dumps(report, indent=2) + '\n')
         from qa_cpu import haskell_inputs
-        sources = {name: digest(ROOT / name) for name in sorted(haskell_inputs(ROOT, args.prepare))}
+        sources = {name: digest(ROOT / name) for name in sorted(haskell_inputs(ROOT, args.prepare, site=args.site))}
         report['sourceHashes'] = sources
         (output / 'report.json').write_text(json.dumps(report, indent=2) + '\n')
-        result = subprocess.run(private, cwd=ROOT, timeout=1100)
-        if any(digest(ROOT / name) != sha for name, sha in sources.items()):
+        result = subprocess.run(private, cwd=ROOT, timeout=3500)
+        if (set(haskell_inputs(ROOT, args.prepare, site=args.site)) != set(sources)
+                or any(not (ROOT / name).is_file() or (ROOT / name).is_symlink()
+                       or digest(ROOT / name) != sha for name, sha in sources.items())):
             report = json.loads((output / 'report.json').read_text())
             report.update(passed=False, error='Reviewed source changed during execution')
             (output / 'report.json').write_text(json.dumps(report, indent=2) + '\n')
@@ -218,8 +225,10 @@ def main():
             if saved['manifestSHA256'] != digest(MANIFEST) or saved['files'] != tree_hashes_without_receipt(sdk):
                 raise RuntimeError('Installed SDK inventory differs before build')
             from haskell_build import build
-            report['scope'] = 'Actual offline Haskell package build and controlled component tests; no native GUI/provider or original scenario acceptance'
-            report['build'] = build(sdk, output, env)
+            report['scope'] = ('Offline site Elm compilation only; no runtime or original acceptance' if args.site else
+                               'UI model-only component feedback; compilation and runtime tests omitted; no original acceptance' if args.ui_models else
+                               'Actual offline Haskell package build and controlled component tests; no native GUI/provider or original scenario acceptance')
+            report['build'] = build(sdk, output, env, profile='site' if args.site else ('ui-models' if args.ui_models else ('ui-origin' if args.ui_origin else 'common')))
             if not report['build']['passed']:
                 raise RuntimeError(report['build'].get('error', 'Haskell component tests failed; see retained suite reports'))
             if saved['files'] != tree_hashes_without_receipt(sdk):

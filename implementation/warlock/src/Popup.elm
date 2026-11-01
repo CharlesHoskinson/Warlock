@@ -1,4 +1,4 @@
-port module Popup exposing (main, Model, Msg(..), Composition(..), initial, update)
+port module Popup exposing (main, Model, Msg(..), Composition(..), Effect(..), initial, update, transition, view)
 
 import Browser
 import Announcement
@@ -31,6 +31,9 @@ port nativePreviewRetirement : (D.Value -> msg) -> Sub msg
 
 type Msg = Announce D.Value | Present D.Value | Action E.Value | LocalAction E.Value | NativePreview D.Value | PreviewPainted D.Value | NativeGrant D.Value | NativeQuarantine D.Value | NativeClosed D.Value | NativeIssued D.Value | NativeRetry D.Value | NativeRetirement D.Value
 type Composition = Idle | Preediting { baseline : String, before : Maybe String }
+
+-- Pure effect descriptions are shared by the statically selected transports.
+type Effect = Dispatch E.Value | PreviewCommand E.Value | PaintRequest E.Value
 type alias Model = { announcements : Announcement.Model, presentation : Presentation.Model, previews : Preview.Model, paintGate : PreviewPaintGate.Model, pendingQuery : Maybe String, composition : Composition, lastQuery : Maybe (String, UInt64.Counter, UInt64.Counter) }
 
 initial : Model
@@ -43,48 +46,60 @@ main : Program () Model Msg
 main = Browser.element
     { init=\_ -> (initial,Cmd.none)
     , subscriptions=\_ -> Sub.batch [announcements Announce,presentation Present,requestAction Action,nativePreviews NativePreview,previewPainted PreviewPainted,nativePreviewGrants NativeGrant,nativePreviewQuarantine NativeQuarantine,nativePreviewClosed NativeClosed,nativePreviewIssued NativeIssued,nativePreviewRetry NativeRetry,nativePreviewRetirement NativeRetirement]
-    , view=\model -> div [attribute "data-input-composing" (if isComposing model then "true" else "false")] [Presentation.current model.presentation |> Maybe.map (\snapshot -> SurfaceRenderer.viewWithPreview (\identity -> Preview.visual snapshot identity model.previews) True LocalAction (model.pendingQuery |> Maybe.map (\query -> SurfaceRenderer.pendingQuery query snapshot) |> Maybe.withDefault snapshot)) |> Maybe.withDefault (text ""),Presentation.current model.presentation |> Maybe.map (\_ -> Announcement.view model.announcements) |> Maybe.withDefault (text "")]
+    , view=view
     , update=update
     }
 
-update : Msg -> Model -> (Model, Cmd Msg)
+view : Model -> Html.Html Msg
+view model = div [attribute "data-input-composing" (if isComposing model then "true" else "false")] [Presentation.current model.presentation |> Maybe.map (\snapshot -> SurfaceRenderer.viewWithPreview (\identity -> Preview.visual snapshot identity model.previews) True LocalAction (model.pendingQuery |> Maybe.map (\query -> SurfaceRenderer.pendingQuery query snapshot) |> Maybe.withDefault snapshot)) |> Maybe.withDefault (text ""),Presentation.current model.presentation |> Maybe.map (\_ -> Announcement.view model.announcements) |> Maybe.withDefault (text "")]
+
+update : Msg -> Model -> (Model,Cmd Msg)
 update message model =
+    let (next,effects)=transition message model
+        interpret effect = case effect of
+            Dispatch value -> actions value
+            PreviewCommand value -> previewCommands value
+            PaintRequest value -> previewPaintRequests value
+    in (next,Cmd.batch (List.map interpret effects))
+
+transition : Msg -> Model -> (Model,List Effect)
+transition message model =
     case message of
         PreviewPainted raw ->
             let (gate,commands)=PreviewPaintGate.painted raw model.paintGate
-            in ({model | paintGate=gate},previewCommands commands)
+            in ({model | paintGate=gate},[PreviewCommand commands])
         LocalAction value ->
             let kind=D.decodeValue (D.field "kind" D.string) value |> Result.withDefault ""
             in if List.member kind ["surface-query","surface-preedit","surface-composition-start","surface-composition-end"] then
-                Presentation.localEdit value model.presentation |> Maybe.map (\current -> update (Action current) model) |> Maybe.withDefault (model,Cmd.none)
-            else update (Action value) model
-        Announce raw -> ({model | announcements=Announcement.receive True (Presentation.current model.presentation) raw model.announcements},Cmd.none)
+                Presentation.localEdit value model.presentation |> Maybe.map (\current -> transition (Action current) model) |> Maybe.withDefault (model,[])
+            else transition (Action value) model
+        Announce raw -> ({model | announcements=Announcement.receive True (Presentation.current model.presentation) raw model.announcements},[])
         Action value ->
             let kind=D.decodeValue (D.field "kind" D.string) value |> Result.withDefault ""
                 sendQuery query wire current =
                     let key=Presentation.current current.presentation |> Maybe.map (\snapshot -> (query,SurfaceRenderer.publication snapshot,SurfaceRenderer.lease snapshot))
                         unchanged=Presentation.current current.presentation |> Maybe.andThen SurfaceRenderer.queryValue |> (==) (Just query)
                         duplicate=key/=Nothing && key==current.lastQuery
-                    in ({current | pendingQuery=if unchanged then Nothing else Just query,lastQuery=key},if unchanged || duplicate then Cmd.none else actions wire)
+                    in ({current | pendingQuery=if unchanged then Nothing else Just query,lastQuery=key},if unchanged || duplicate then [] else [Dispatch wire])
                 before = {baseline=model.pendingQuery |> Maybe.withDefault (Presentation.current model.presentation |> Maybe.andThen SurfaceRenderer.queryValue |> Maybe.withDefault ""),before=model.pendingQuery}
             in if List.member kind ["surface-query","surface-preedit","surface-composition-start","surface-composition-end"] then
                 case Presentation.editQuery value model.presentation of
                     Just (query,wire) ->
                         if kind=="surface-composition-start" then
-                            ({model | composition=Preediting {baseline=query,before=model.pendingQuery},pendingQuery=Just query},Cmd.none)
+                            ({model | composition=Preediting {baseline=query,before=model.pendingQuery},pendingQuery=Just query},[])
                         else if kind=="surface-composition-end" then
                             case model.composition of
-                                Idle -> (model,Cmd.none)
+                                Idle -> (model,[])
                                 Preediting held ->
                                     if query==held.baseline then
-                                        ({model | composition=Idle,pendingQuery=held.before |> Maybe.andThen (\prior -> if (Presentation.current model.presentation |> Maybe.andThen SurfaceRenderer.queryValue)==Just prior then Nothing else Just prior)},Cmd.none)
+                                        ({model | composition=Idle,pendingQuery=held.before |> Maybe.andThen (\prior -> if (Presentation.current model.presentation |> Maybe.andThen SurfaceRenderer.queryValue)==Just prior then Nothing else Just prior)},[])
                                     else sendQuery query wire {model | composition=Idle}
                         else if kind=="surface-preedit" || isComposing model then
-                            ({model | composition=if isComposing model then model.composition else Preediting before,pendingQuery=Just query},Cmd.none)
+                            ({model | composition=if isComposing model then model.composition else Preediting before,pendingQuery=Just query},[])
                         else sendQuery query wire model
-                    Nothing -> (model,Cmd.none)
-            else if isComposing model || (model.pendingQuery/=Nothing && (D.decodeValue (D.field "id" D.string) value |> Result.map (\identity -> String.startsWith "entry:" identity || identity=="files:open-path" || identity=="files:home" || String.startsWith "files:collection:" identity) |> Result.withDefault False)) then (model,Cmd.none)
-            else (model,Presentation.dispatch True value model.presentation |> Maybe.map actions |> Maybe.withDefault Cmd.none)
+                    Nothing -> (model,[])
+            else if isComposing model || (model.pendingQuery/=Nothing && (D.decodeValue (D.field "id" D.string) value |> Result.map (\identity -> String.startsWith "entry:" identity || identity=="files:open-path" || identity=="files:home" || String.startsWith "files:collection:" identity) |> Result.withDefault False)) then (model,[])
+            else (model,Presentation.dispatch True value model.presentation |> Maybe.map (Dispatch >> List.singleton) |> Maybe.withDefault [])
         Present raw ->
             let acceptedPresentation = Presentation.accept raw model.presentation
                 (previews,commands) = Preview.present (Presentation.current acceptedPresentation) model.previews
@@ -97,10 +112,10 @@ update message model =
                     Just snapshot -> if SurfaceRenderer.queryValue snapshot/=Just query then Just query else Nothing
                     Nothing -> Nothing)
                 key = pending |> Maybe.andThen (\query -> Presentation.current acceptedPresentation |> Maybe.map (\snapshot -> (query,SurfaceRenderer.publication snapshot,SurfaceRenderer.lease snapshot)))
-                queryCommand = if composing || key==model.lastQuery then Cmd.none else pending |> Maybe.andThen (\query -> Presentation.query query acceptedPresentation) |> Maybe.map actions |> Maybe.withDefault Cmd.none
+                queryCommand = if composing || key==model.lastQuery then [] else pending |> Maybe.andThen (\query -> Presentation.query query acceptedPresentation) |> Maybe.map (Dispatch >> List.singleton) |> Maybe.withDefault []
                 lastQuery = if not sameField then Nothing else if composing || pending==Nothing then model.lastQuery else key
                 (updatedPopup,previewEffects)=emitPreview commands {model | presentation=acceptedPresentation,previews=previews,pendingQuery=pending,composition=composition,lastQuery=lastQuery}
-            in (updatedPopup,Cmd.batch [previewEffects,queryCommand])
+            in (updatedPopup,previewEffects++queryCommand)
         NativePreview raw ->
             let (previews,commands) =
                     case D.decodeValue Realm.envelopeDecoder raw of
@@ -112,19 +127,19 @@ update message model =
             in emitPreview commands {model | previews=previews}
         NativeGrant raw ->
             let previews = D.decodeValue Realm.grantDecoder raw |> Result.toMaybe |> Maybe.andThen (\grant -> Preview.enrollRealm grant model.previews) |> Maybe.withDefault model.previews
-            in ({model | previews=previews},Cmd.none)
+            in ({model | previews=previews},[])
         NativeQuarantine raw ->
             let (previews,commands) = D.decodeValue Realm.domainDecoder raw |> Result.map (\domain -> Preview.quarantineRealm domain model.previews) |> Result.withDefault (model.previews,E.list identity [])
             in emitPreview commands {model | previews=previews}
-        NativeIssued raw -> ({model | previews=Preview.issued raw model.previews},Cmd.none)
+        NativeIssued raw -> ({model | previews=Preview.issued raw model.previews},[])
         NativeRetry raw ->
             let (previews,commands) = D.decodeValue Realm.domainDecoder raw |> Result.map (\domain -> Preview.retry domain model.previews) |> Result.withDefault (model.previews,E.list identity [])
             in emitPreview commands {model | previews=previews}
         NativeClosed raw ->
             let previews = D.decodeValue Realm.domainDecoder raw |> Result.toMaybe |> Maybe.andThen (\domain -> Preview.closeRealm domain model.previews) |> Maybe.withDefault model.previews
-            in ({model | previews=previews},Cmd.none)
+            in ({model | previews=previews},[])
 
-emitPreview : E.Value -> Model -> (Model,Cmd Msg)
+emitPreview : E.Value -> Model -> (Model,List Effect)
 emitPreview commands model =
     let (gate,immediate,requests)=PreviewPaintGate.queue commands model.paintGate
-    in ({model | paintGate=gate},Cmd.batch [previewCommands immediate,previewPaintRequests requests])
+    in ({model | paintGate=gate},[PreviewCommand immediate,PaintRequest requests])

@@ -1,0 +1,113 @@
+{
+  "schema": 1,
+  "scope": "Pinned official Elm HTTP dependencies in private offline QA caches; compiler and historical held cache unchanged. External dependency source includes official Elm kernel implementation, no Warlock-authored JavaScript.",
+  "cacheDirectory": "/home/charl/.cache/warlock-elm-http",
+  "packages": [
+    {
+      "package": "elm/http",
+      "version": "2.0.0",
+      "utc": "2026-11-01T04:50:31.450617+00:00",
+      "endpoint": {
+        "url": "https://github.com/elm/http/zipball/2.0.0/",
+        "hash": "83cb7ecb6800e55e3728c756aac451881e55c40a"
+      },
+      "endpointUrl": "https://package.elm-lang.org/packages/elm/http/2.0.0/endpoint.json",
+      "url": "https://codeload.github.com/elm/http/zip/refs/tags/2.0.0",
+      "sha256": "e5b58162c5e29ab9b5f7b132d4ae03309012efbac570d89eec9717189e769fd6",
+      "sha1": "6bdccd7ca5bb51fcd66cc140022877331f3ea883",
+      "bytes": 14676,
+      "files": {
+        ".gitignore": "82eb49c9bfa70dce625c1f54575b410de6d420ba29c7acb0d8ad79144dec1f95",
+        "LICENSE": "541b5012a07b7793dd7fe4683216a87ff7ce2520a35de5a9fda1cbecf8b3af6b",
+        "README.md": "1964ea432f4cff7740f3aa08f513b2466250cc0bf49625af199cebcd75359b0c",
+        "elm.json": "a52cb6d3d4ee83e6eb9c883e28380bda8e25d640fd04b6c3316398ed3951d65b",
+        "rate-limit.md": "054df63afa309559479a4d0daeb5ceb20e5417103e32057d1f6d8ec50b9ae466",
+        "src/Elm/Kernel/Http.js": "0cc54240d870127251fe6f2d76bf7ec0db1701d9dacbd893d79109af3580fce6",
+        "src/Elm/Kernel/Http.server.js": "014637cc6a5b20391af1f65609da5a37b1366da2b82ed21d4f2dc5a9dc1a2f4f",
+        "src/Http.elm": "791023f4674eedb81e09d4509b5b642006f216b076480b4dac76ce49ea065009"
+      },
+      "cachePath": "/home/charl/.cache/warlock-elm-http/packages/elm/http/2.0.0",
+      "publisherArchive": {
+        "url": "https://codeload.github.com/elm/http/legacy.zip/2.0.0",
+        "sha256": "26840f4bc05cc144fd19d8c54e5c6492b067a1842e8957b026d93712c62842fe",
+        "sha1": "83cb7ecb6800e55e3728c756aac451881e55c40a",
+        "bytes": 14820,
+        "file": "/home/charl/.cache/warlock-elm-http/http-2.0.0-publisher.zip",
+        "sourceFilesEqualTagArchive": true
+      }
+    },
+    {
+      "package": "elm/bytes",
+      "version": "1.0.8",
+      "utc": "2026-11-01T04:50:32.154953+00:00",
+      "endpoint": {
+        "url": "https://github.com/elm/bytes/zipball/1.0.8/",
+        "hash": "4368395241cc79679f686217339c37373d43cfc6"
+      },
+      "endpointUrl": "https://package.elm-lang.org/packages/elm/bytes/1.0.8/endpoint.json",
+      "url": "https://codeload.github.com/elm/bytes/zip/refs/tags/1.0.8",
+      "sha256": "08d55273137283ebc45a500c88e62ebdb0b217acce81782651b4e2d7602ca6c9",
+      "sha1": "f7065378bd8700880b81e7cd5109ec68fe36beb6",
+      "bytes": 12999,
+      "files": {
+        ".gitignore": "325ca3f598f8c501370dc6b3ddcb74e16150cc0ae6d3991dd080a616309dc868",
+        "LICENSE": "a1c31dacffb1a470cb3aaf4844904114b9bc5ebf091e113b2d46bc4953c2c2ea",
+        "README.md": "76fd693b9fd4b3e9fb42160d5e3905fb921c8e2168f1c29b018137ba69ec4908",
+        "elm.json": "3e1ed5a8d9f91a44d273a84900258d637c63ba90a4662c4603d75f2cedb266c9",
+        "src/Bytes/Decode.elm": "0081a9ec6a859589b689aad1cd1cb401d8f89f6b71f7dd26a243bcf6cc1a6a4d",
+        "src/Bytes/Encode.elm": "fbad353e50263bc3e8d0a563fad68ab919df0bfd249bf66697031dca033a8607",
+        "src/Bytes.elm": "3a40eb753082a46a555d8169cb87c551f1a10e48876592c69a25a5e5ccf3bd41",
+        "src/Elm/Kernel/Bytes.js": "94ae3e965f180d7677777b74afc55ef74875b37e4fe32c655686481fa8586ab7"
+      },
+      "cachePath": "/home/charl/.cache/warlock-elm-http/packages/elm/bytes/1.0.8",
+      "publisherArchive": {
+        "url": "https://codeload.github.com/elm/bytes/legacy.zip/1.0.8",
+        "sha256": "66b1616707d62d97814b2e71d1337691ddce1a87180f18a3f38e8a6161f1d1a0",
+        "sha1": "4368395241cc79679f686217339c37373d43cfc6",
+        "bytes": 13155,
+        "file": "/home/charl/.cache/warlock-elm-http/bytes-1.0.8-publisher.zip",
+        "sourceFilesEqualTagArchive": true
+      }
+    },
+    {
+      "package": "elm/file",
+      "version": "1.0.5",
+      "utc": "2026-11-01T04:50:32.706206+00:00",
+      "endpoint": {
+        "url": "https://github.com/elm/file/zipball/1.0.5/",
+        "hash": "9be249cec687caeb7cbdd85027b5e38625a9789e"
+      },
+      "endpointUrl": "https://package.elm-lang.org/packages/elm/file/1.0.5/endpoint.json",
+      "url": "https://codeload.github.com/elm/file/zip/refs/tags/1.0.5",
+      "sha256": "73e1c9dc865e80b504f5dceeecea022f2d7766afa519edb68ebda758cb133d85",
+      "sha1": "03b79e730b7f0f821efb4a85b3aa4eb297428f79",
+      "bytes": 16234,
+      "files": {
+        ".gitignore": "82eb49c9bfa70dce625c1f54575b410de6d420ba29c7acb0d8ad79144dec1f95",
+        "LICENSE": "a1c31dacffb1a470cb3aaf4844904114b9bc5ebf091e113b2d46bc4953c2c2ea",
+        "README.md": "88412a6ee13b593312306bad49e6aee534179e883d37541f2f48e9b25aba1be4",
+        "elm.json": "5d4cf2de2834ee996025dc82d9291e83c42c3752ebc63ddb5923014e9e724438",
+        "examples/DragAndDrop.elm": "c8c37706dcce1f26afd876b214ca6fbbc4e3d1683029bf9a6f3de5885d2cf96c",
+        "examples/DragAndDropWithImagePreview.elm": "fed8453b5bda80952e443e651d42595e1dd46c6cae6778699089f13097d6e688",
+        "examples/README.md": "f9a2e274bc7f477eeefdb7f0c24b7a426ee36f98ac43d764adae188acf24c2c7",
+        "examples/SelectFiles.elm": "4b33cdacf34ae0da1ffd111493f1c970927372851175969fd269dd9461acde14",
+        "examples/SelectFilesWithProgress.elm": "d260d5774f02f73c5958c3aa66485a80170f90c3a3b10546b49b66e965370031",
+        "examples/SelectFilesWithProgressAndCancellation.elm": "972ade48cf4ad07d2ab82e887562be7cc483ec14bc70f0d8884fc045e9b9c8aa",
+        "examples/elm.json": "970e03f2cbc2bfa413ae997d11ff020e9b4549119d48f8593783169f1d9f15df",
+        "src/Elm/Kernel/File.js": "b77a131b0841566318c42fc8e952ca06129b5abeccf8cc3c1950e5f966e4d792",
+        "src/File/Download.elm": "9516bec7c52dd9aba7d781410af88a63cd9e36cc3a07cd0d8d843870049f342a",
+        "src/File/Select.elm": "c7d40566987ed90ab8735c16f2d6c1eb813c73e78aaa4fde18fff331e35f4a5d",
+        "src/File.elm": "87e2d28653ec162f589d5fec45ec9d0aa0f4a040aa9d58419ac56ed15519dbd6"
+      },
+      "cachePath": "/home/charl/.cache/warlock-elm-http/packages/elm/file/1.0.5",
+      "publisherArchive": {
+        "url": "https://codeload.github.com/elm/file/legacy.zip/1.0.5",
+        "sha256": "aa63d8cc91e6aad709c7951d965a52933038ffd68cb534c61873ffbbfac4df97",
+        "sha1": "9be249cec687caeb7cbdd85027b5e38625a9789e",
+        "bytes": 16486,
+        "file": "/home/charl/.cache/warlock-elm-http/file-1.0.5-publisher.zip",
+        "sourceFilesEqualTagArchive": true
+      }
+    }
+  ]
+}

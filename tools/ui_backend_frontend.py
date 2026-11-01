@@ -38,6 +38,8 @@ def prepare(root, work, env, run, digest):
     frontend.mkdir(mode=0o700)
     shutil.copytree(source, frontend / 'src', symlinks=True)
     shutil.copytree(held / compiler_pin['elmHome'], frontend / 'elm-home')
+    from elm_http_dependencies import stage as stage_http_dependencies
+    http_dependencies = stage_http_dependencies(frontend / 'elm-home')
     shutil.copyfile(root / 'implementation/warlock/elm.json', frontend / 'elm.json')
     harness = frontend / 'ui-backend-port.cjs'
     shutil.copyfile(root / 'implementation/warlock/qa/ui-backend-port.cjs', harness)
@@ -55,6 +57,23 @@ def prepare(root, work, env, run, digest):
                   'ui-compile-main', timeout=180)
     if command['exit'] != 0 or command['forcedCleanup']:
         raise RuntimeError('Actual UI Main compile failed; see retained logs')
+    documents, document_commands = {}, []
+    for role, entry in (('controller', 'HttpMain'), ('bar', 'HttpBar'), ('popup', 'HttpPopup')):
+        document = frontend / (entry + '.html')
+        info = run([held / compiler_pin['compiler'], 'make', 'src/' + entry + '.elm', '--optimize',
+                    '--output=' + str(document)], frontend, compile_env, work / 'logs',
+                   'ui-compile-' + entry, timeout=180)
+        document_commands.append(info)
+        if info['exit'] != 0 or info['forcedCleanup']:
+            raise RuntimeError('Actual HTTP UI compile failed: ' + entry)
+        status = document.stat()
+        parents = list(reversed(document.parents))
+        if any(p.is_symlink() or not p.is_dir() for p in parents):
+            raise RuntimeError('Unexpected UI document ancestor')
+        documents[role] = {'path': str(document), 'device': str(status.st_dev), 'inode': str(status.st_ino),
+                           'size': str(status.st_size), 'sha256': digest(document),
+                           'ancestors': [{'path': str(p), 'device': str(p.stat().st_dev),
+                                          'inode': str(p.stat().st_ino)} for p in parents if p != p.parent]}
     toolchain.verify()
     quint_toolchain()
     if node.is_symlink() or not node.is_file() or digest(node) != node_pin['node']['sha256']:
@@ -67,6 +86,7 @@ def prepare(root, work, env, run, digest):
     manifest = {name: {'path': str(path), 'sha': digest(path)}
                 for name, path in (('node', node), ('main', main), ('harness', harness))}
     manifest['node']['sha'] = node_pin['node']['sha256']
-    return manifest, {'compiler': compiler_pin, 'node': node_pin['node'],
+    return manifest, {'compiler': compiler_pin, 'node': node_pin['node'], 'httpDependencies': http_dependencies,
+                      'documents': documents, 'documentCommands': document_commands,
                       'sourceHashes': source_before, 'fileHashes': file_hashes,
                       'command': command, 'manifest': manifest}

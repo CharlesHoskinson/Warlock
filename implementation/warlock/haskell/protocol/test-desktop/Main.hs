@@ -41,6 +41,10 @@ rawBinding :: B.ByteString -> B.ByteString -> B.ByteString -> B.ByteString
 rawBinding life sess front = "{\"lifetime\":"<>life<>",\"session\":"<>sess<>",\"frontend\":"<>front<>"}"
 rawRequest :: B.ByteString -> B.ByteString -> B.ByteString -> B.ByteString -> B.ByteString
 rawRequest kind ownerBytes identity extra = "{\"protocolVersion\":3,\"kind\":"<>kind<>",\"binding\":"<>ownerBytes<>",\"requestId\":"<>identity<>extra<>"}"
+attached :: B.ByteString -> B.ByteString -> B.ByteString
+attached ownerBytes operations = "{\"protocolVersion\":3,\"kind\":\"application-attached\",\"binding\":"<>ownerBytes<>",\"nativeOperations\":"<>operations<>"}"
+gatewayOf :: B.ByteString -> B.ByteString
+gatewayOf payload = "{\"bridgeProtocol\":1,\"kind\":\"native-event\",\"payload\":"<>payload<>"}"
 
 generatedCorpus :: (String -> Bool -> IO ()) -> IO ()
 generatedCorpus check = forM_ (zip [0 :: Int ..] fuzzStates) $ \(index,state) -> do
@@ -91,6 +95,23 @@ generatedCorpus check = forM_ (zip [0 :: Int ..] fuzzStates) $ \(index,state) ->
   check (label++" generated invalid suffix rejected before checked commit") (isLeft (D.decodeDesktopCommit corrupted))
   check (label++" generated invalid suffix rejected by real codec") (isLeft (decodeClientCheckedWith desktopProfile corrupted))
   generatedOwner <- must (binding (counter life) (counter sess) (counter front))
+  attachment <- must (D.applicationAttached generatedOwner)
+  attachmentChecked <- must (checkDesktopReply attachment)
+  attachmentWire <- must (encodeServerCheckedWith desktopProfile attachmentChecked)
+  check (label++" authenticated attachment public gateway roundtrip")
+    (D.replyBinding attachment == generatedOwner && decodeServerCheckedWith desktopProfile attachmentWire == Right attachmentChecked && D.decodeDesktopGateway (gatewayOf (attached boundBytes "[]")) == Right attachment)
+  let badAttach=case index `mod` 10 of
+        0 -> attached boundBytes "[\"activate\"]"
+        1 -> attached boundBytes "{}"
+        2 -> attached boundBytes "null"
+        3 -> B.init (attached boundBytes "[]")<>",\"extra\":true}"
+        4 -> B.init (attached boundBytes "[]")<>",\"nativeOperations\":[]}"
+        5 -> attached (badBinding "\"0\"") "[]"
+        6 -> attached (badBinding (quote ("0"<>life))) "[]"
+        7 -> "{\"protocolVersion\":2,\"kind\":\"application-attached\",\"binding\":"<>boundBytes<>",\"nativeOperations\":[]}"
+        8 -> "{\"protocolVersion\":3,\"kind\":\"application-attached\",\"binding\":"<>boundBytes<>"}"
+        _ -> "{\"protocolVersion\":3,\"kind\":\"application-attached\",\"binding\":"<>boundBytes<>",\"nativeOperations\":[],\"requestId\":\"1\"}"
+  check (label++" hostile attachment rejected by public codec") (isLeft (decodeServerCheckedWith desktopProfile (gatewayOf badAttach)))
   preferences <- must (D.pinSnapshot (counter revision) identities)
   entries <- mapM (\n -> must (D.catalogEntry (T.pack ("catalog-"++show state++"-"++show n)) (T.pack ("Name \""++show state)<>" α😀") "application-x-executable" "Generated" "Program" ["α","key"])) [1..1+fromInteger (state `mod` 8) :: Int]
   snapshot <- must (D.catalogSnapshot (counter life) (counter revision) entries)
@@ -118,6 +139,22 @@ main = do
   let nativeHello = "{\"version\":1,\"kind\":\"hello\",\"body\":{\"binding\":" <> bound <> "}}"
   check "native positive control remains accepted" (isRight (decodeServerChecked nativeHello))
   check "desktop server cannot borrow native hello" (isLeft (decodeServerCheckedWith desktopProfile nativeHello))
+  attachedReply <- must (D.applicationAttached owner)
+  attachedChecked <- must (checkDesktopReply attachedReply)
+  attachedWire <- must (encodeServerCheckedWith desktopProfile attachedChecked)
+  check "independent exact attachment wire is accepted" (D.decodeDesktopGateway (gatewayOf (attached bound "[]")) == Right attachedReply)
+  check "attachment public decoder roundtrip and binding retained" (decodeServerCheckedWith desktopProfile attachedWire == Right attachedChecked && D.replyBinding attachedReply == owner)
+  check "attachment never accepted as native reply" (isLeft (decodeServerChecked attachedWire))
+  check "attachment rejects malformed UTF8" (isLeft (D.decodeDesktopGateway (gatewayOf (attached bound (B.pack [255])))))
+  check "numeric rounded session cannot select attachment binding" (isLeft (D.decodeDesktopGateway (gatewayOf (attached (rawBinding "\"9007199254740993\"" "9007199254740996" "\"9007199254740997\"") "[]"))))
+  check "zero session cannot select attachment binding" (isLeft (D.decodeDesktopGateway (gatewayOf (attached (rawBinding "\"9007199254740993\"" "\"0\"" "\"9007199254740997\"") "[]"))))
+  check "missing full binding is refused" (isLeft (D.decodeDesktopGateway (gatewayOf "{\"protocolVersion\":3,\"kind\":\"application-attached\",\"nativeOperations\":[]}")))
+  check "duplicate binding field is refused" (isLeft (D.decodeDesktopGateway (gatewayOf (B.init (attached bound "[]")<>",\"binding\":"<>bound<>"}"))))
+  -- The codec preserves a distinct valid binding; it does not authenticate it.
+  -- Actual foreign-session refusal belongs to the owner-bound ingress gate.
+  foreignReply <- must (D.decodeDesktopGateway (gatewayOf (attached (rawBinding "\"9007199254740993\"" "\"9007199254740996\"" "\"9007199254740997\"") "[]")))
+  check "foreign session remains distinguishable for owner admission" (D.replyBinding foreignReply /= owner)
+  reject "browser attachment masquerading as a commit request" (commit "{}" [attached bound "[]"])
   check "desktop client cannot borrow native hello" (isLeft (decodeClientCheckedWith desktopProfile nativeHello))
   check "empty complete presentation commit is legitimate" (isRight (decodeClientCheckedWith desktopProfile (commit "{}" [])))
   check "sixteen complete requests accepted" (isRight (decodeClientCheckedWith desktopProfile (commit "{}" (map catalog [1..16]))))

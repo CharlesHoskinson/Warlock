@@ -1,0 +1,114 @@
+{
+  "schema": 1,
+  "reviewId": "webkit-native-source-peer-20261101",
+  "reviewedAtUTC": "2026-11-01T05:23:47.432640+00:00",
+  "reviewer": {
+    "name": "reviewer",
+    "independent": true,
+    "disposition": "specific-source-repairs-required"
+  },
+  "scope": "Read-only review of completed292-line actual WebKitGTK6 FFI source, ABI layout source and UI entry point. No engine/compiler/model/GUI/native execution. This is not the earlier fail-closed placeholder and no placeholder behavior is substituted.",
+  "sourceHashes": {
+    "implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKit.hs": "957f53b1898f949b522ae5780855f6005a146f6b0874617a70ed2a656808b57b",
+    "implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKitABI.hsc": "8a016b2cfa837b1874019f376d7e4d1c333f3064ea48e62787565e4a616f40e8",
+    "implementation/warlock/haskell/runtime/ui/Main.hs": "5dffbfe280f264c26b8fd67ff996626c9ff972e12a2699616483518298716adc"
+  },
+  "pinnedHeaderHashes": {
+    "/home/charl/.cache/warlock-ui-host/sdk/sysroot/usr/include/webkitgtk-6.0/webkit/WebKitWebView.h": "431d4a2249df3982cc712de8c0c1f9e8df5caddf96e43ce10eaed82c1c78c33d",
+    "/home/charl/.cache/warlock-ui-host/sdk/sysroot/usr/include/webkitgtk-6.0/webkit/WebKitNetworkSession.h": "fbdd30bdd45815012d8324ae85a404ef1f977d640138d24ef3a6ebc71bf04029",
+    "/home/charl/.cache/warlock-ui-host/sdk/sysroot/usr/include/webkitgtk-6.0/webkit/WebKitUserContentManager.h": "037b1080a23ec1f19a2766137c940db8d692bf71b8f1bac97c9f325e4b9b4345",
+    "/home/charl/.cache/warlock-ui-host/sdk/sysroot/usr/include/webkitgtk-6.0/webkit/WebKitUserContentFilterStore.h": "a74c5b392ddc6b2a2501907c93ba0612079c563bdd054589e0ebe5e24c93eeff",
+    "/home/charl/.cache/warlock-ui-host/sdk/sysroot/usr/include/webkitgtk-6.0/webkit/WebKitDownload.h": "4a6ddd19c0667e02482ba4d7c4fc88e39ff03a772145c89355cf67efe04632c3",
+    "/home/charl/.cache/warlock-ui-host/sdk/sysroot/usr/include/webkitgtk-6.0/webkit/WebKitNavigationPolicyDecision.h": "e441701017511dc0759b1564e9e239016f722e1ca0881ecc95de4c7122c2e6b3",
+    "/home/charl/.cache/warlock-ui-host/sdk/sysroot/usr/include/webkitgtk-6.0/webkit/WebKitResponsePolicyDecision.h": "86c29c6eca72ccd68171d9f941128d92bbcf305402462916e256dffb0da8b4e1",
+    "/home/charl/.cache/warlock-ui-host/sdk/sysroot/usr/share/gir-1.0/WebKit-6.0.gir": "ddd9c9b5cec554e63dbd3635288613486b5a589d9b64acf493b64f18ab84f3b6"
+  },
+  "sourcePreparationReadiness": "Existing readiness for declared implementation is unchanged. Root may repair and protected-compile/link this source within existing authorization. Identified warning/link issues must be corrected; native execution remains forbidden/unqualified under HOSTSTOP2.",
+  "findings": [
+    {
+      "id": "WK001",
+      "severity": "compile-warning",
+      "status": "repair-assigned",
+      "finding": "newDecisionHandler.where defines onException, shadowing imported Control.Exception.onException under -Wall -Werror.",
+      "action": "Rename local catch handler denyException; preserve imported cleanup combinator."
+    },
+    {
+      "id": "WK002",
+      "severity": "linkage",
+      "status": "root-already-fixed-source",
+      "finding": "Direct soup_message_headers_get_one FFI requires explicit Soup linkage rather than relying on transitive DT_NEEDED.",
+      "action": "Root has added soup-3.0 and a private SDK link script/inventory. Do not edit Root-owned Cabal; protected linker verifies actual closure."
+    },
+    {
+      "id": "WK003",
+      "severity": "native-lifetime",
+      "status": "repair-assigned",
+      "finding": "After manager_add_filter, source unreferences store and removes its compiled-filter directory before constructing/loading the view. No verified guarantee establishes backing-file/FD lifetime through later web-process use.",
+      "action": "Conservatively retain owned store/directory until all referencing views/managers/filter objects are retired; retain/quarantine on unretired async completion. Register ownership on allocation, including store creation failure, and avoid premature path deletion."
+    },
+    {
+      "id": "WK004",
+      "severity": "native-async",
+      "status": "partially-correct-needs-preservation",
+      "finding": "compileFilter correctly retains callback/result/cancellable when cancellation does not produce an observed completion, avoiding a guessed free. Unretired store/path must remain reachable and cleanup unconfirmed.",
+      "action": "Preserve quarantine semantics through repair; never free callbacks merely because250ms drain elapsed. Account for all allocation/exception paths and callback main-context ownership."
+    },
+    {
+      "id": "WK005",
+      "severity": "readiness-truth",
+      "status": "repair-assigned",
+      "finding": "Current EngineResult pass is derived from a normal loop exit and local cleanup, without observing successful document loads. uiShouldStop can end the loop at deadline while all views stayed blank or failed.",
+      "action": "Track actual exact-URI load progress and load-failed/web-process-terminated events. FINISHED alone is insufficient because GIR states it also follows failed loads. Do not infer Elm execution or CSP enforcement from load completion."
+    },
+    {
+      "id": "WK006",
+      "severity": "cleanup-scope",
+      "status": "repair-assigned",
+      "finding": "Successful GObject unrefs/signal disconnections do not establish that engine helper processes retired. There is no observed helper-process shutdown receipt in this source.",
+      "action": "Make local-ref cleanup and whole-engine/helper retirement scopes explicit. Keep whole-host/engine retirement unconfirmed where absent; do not set a whole-host pass merely from local cleanup or process-loop exit. Root-owned outer process custody must be independently observed."
+    },
+    {
+      "id": "WK007",
+      "severity": "ffi-reentrancy",
+      "status": "repair-assigned",
+      "finding": "g_cancellable_cancel and policy use/ignore are unsafe imports despite potentially dispatching native callbacks/signals; source comments promise safe calls for reentrant operations.",
+      "action": "Use safe FFI for callback-capable operations; preserve Haskell callback lifetime until exact disconnect/observed completion."
+    },
+    {
+      "id": "WK008",
+      "severity": "constructor-fail-closed",
+      "status": "repair-assigned",
+      "finding": "GObject constructor property names are runtime strings, not checked by GHC. Requested ephemeral session/manager/context must actually be installed in the resulting view.",
+      "action": "Pinned GTK6 headers/GIR provide get_network_session/get_user_content_manager/get_context and construct-only properties. Verify pointer identity/actual ephemeral session before load; fail closed on mismatch."
+    },
+    {
+      "id": "WK009",
+      "severity": "download-denial",
+      "status": "repair-assigned",
+      "finding": "Navigation/response policy defaults deny, rejects redirects/nonapproved URI/MIME/Content-Disposition, but absence of observed all-download denial cannot be replaced by MIME/header inference.",
+      "action": "Pinned GIR confirms NetworkSession.download-started(session,download,userdata)->void; attach a retained safe cancellation callback using webkit_download_cancel. Disconnect before freeing callback/session; do not claim actual denial until engine evidence."
+    }
+  ],
+  "verifiedSourceStrengths": [
+    "Pinned header signatures match filter store save/save_finish, content-manager add_filter, network-session constructor/proxy setter and view getters. GValue size/alignment and GEnumValue.value offset are obtained from selected GLib headers by HSC2HS instead of hardcoded layout.",
+    "Decision callback returns handled and denies unknown decision types, null/malformed data and exceptions; main navigation allows exact packaged index only. Response URI must match request and exact allowed role resource; unsupported MIME/header cases refuse.",
+    "Distinct role sessions are created ephemeral, no-proxy selected, role filter compiled and added before viewLoad; no authored JavaScript, JSC adapter, settings that disable sandbox, or host-network fallback is introduced.",
+    "Existing view/window/signal reference cleanup order keeps the view alive until signal disconnection; callback pointer is freed after exact handler disconnection. Native signal-dispatching constructors/load/destroy/main-loop APIs generally use safe FFI.",
+    "Entry point enters private network before config/IO workers/engine. Original D is read through UiEndpoints; source does not renew admission or call an alternate renderer/device path."
+  ],
+  "explicitUnobserved": [
+    "No real GTK/WebKit instance was created by reviewer. Compiling/linking does not execute policy/filter/CSP or prove ABI behavior under a display.",
+    "Controller window has an empty Elm view and runWebKit currently ignores the TrustedOwnerEvent callback. No actual owned topology, host binding/window snapshot, presentation admission or native effect is established. Do not fabricate these to make a positive fixture.",
+    "No helper-process retirement observation, genuine private display/provider capability, physical GUI/input/AT/IME behavior or release acceptance exists in this review.",
+    "Parent contract requires actual CSP remote/eval/unapproved-inline negative execution evidence; static headers/filter JSON and HTTP bridge denials cannot replace that originalDEL014 oracle."
+  ],
+  "coordination": {
+    "rootFixes": "Root owns Cabal/Soup/private SDK support; elm-regression assigned narrow WebKit/ABI repairs. Reviewer remains read-only to production files.",
+    "next": "Review exact repaired source hash before protected compile/link; keep all preceding false-placeholder and actual-source handoffs/failures. No HOSTSTOP2 retry or privilege/engine attempt."
+  },
+  "originalAcceptance": false,
+  "engineExecutionAuthorized": false,
+  "nativeAcceptance": false,
+  "guiAcceptance": false,
+  "releaseAccepted": false
+}

@@ -390,7 +390,7 @@ windowBase message model =
                     _ -> Nothing
         pins = if disconnected || changed then Pins.initial else model.pins
         read = if changed && not disconnected then windows.shell.binding |> Maybe.andThen (\binding -> UInt64.next model.request |> Maybe.map (\request -> (binding,request))) else Nothing
-        settingsRead = read |> Maybe.andThen (\(binding,request) -> UInt64.next request |> Maybe.map (\next -> (binding,next)))
+        settingsRead = if windows.shell.applicationOnly then Nothing else read |> Maybe.andThen (\(binding,request) -> UInt64.next request |> Maybe.map (\next -> (binding,next)))
         motionRead = settingsRead |> Maybe.andThen (\(binding,request) -> UInt64.next request |> Maybe.map (\next -> (binding,next)))
         shortcutsRead = motionRead |> Maybe.andThen (\(binding,request) -> UInt64.next request |> Maybe.map (\next -> (binding,next)))
         launch =
@@ -586,7 +586,7 @@ update message model =
         _ -> updateOrdinary message model
 
 updateOrdinary message model =
-    if (WorkspaceNavigation.blocked model.workspaceNavigation && workspaceMutation message) || (PointerOwnership.blocked model.windows.shell.binding model.pointer && gestureAction message) || (not (Motion.ready model.windows.shell.binding model.motion) && motionGesture message) then (model,[]) else
+    if (WorkspaceNavigation.blocked model.workspaceNavigation && workspaceMutation message) || (PointerOwnership.blocked model.windows.shell.binding model.pointer && gestureAction message && not (model.windows.shell.applicationOnly && applicationGesture message)) || (not (Motion.ready model.windows.shell.binding model.motion) && motionGesture message) then (model,[]) else
     let (next,effects)=updateAvailable message model
         windowMutation=List.any (\effect -> case effect of
             WindowEffect (Shell.Send wire) -> D.decodeValue (D.field "kind" D.string) wire==Ok "window-effect"
@@ -673,7 +673,7 @@ syncOverviewWorkspace model =
 
 syncMotion : Model -> (Model,List Effect)
 syncMotion model =
-    if model.windows.shell.phase==Shell.Detached || model.windows.shell.phase==Shell.Exhausted then (model,[]) else
+    if model.windows.shell.applicationOnly || model.windows.shell.phase==Shell.Detached || model.windows.shell.phase==Shell.Exhausted then (model,[]) else
     case (model.windows.shell.binding,UInt64.next model.request) of
         (Just binding,Just request) ->
             let (motion,command)=Motion.propose binding request model.motion
@@ -693,6 +693,20 @@ motionGesture message =
         SaveMotionPreference _ -> False
         RefreshMotionPreference _ -> False
         _ -> gestureAction message
+
+-- Application-only sessions have no native pointer observer. Their explicitly
+-- bounded catalog/pin gestures do not exercise compositor or window authority.
+-- Native sessions retain the complete pointer-ownership gate.
+applicationGesture message =
+    case message of
+        OpenApplications _ -> True
+        RefreshApplications _ -> True
+        CloseApplications _ -> True
+        ApplicationsPage _ _ -> True
+        SearchQuery _ _ -> True
+        TogglePin _ _ -> True
+        MovePin _ _ _ -> True
+        _ -> False
 
 gestureAction message =
     case message of

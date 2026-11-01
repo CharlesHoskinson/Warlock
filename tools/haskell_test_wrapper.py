@@ -21,7 +21,7 @@ ROOTS = {'durable-storage-controls', 'selection-admission-controls', 'host-guard
          'slot-store-controls', 'pair-store-smoke', 'child-directory-controls',
          'independent-admission-shape', 'pair-store-sequences', 'independent-lifetime-owner'}
 NOARGS = {'held-document-controls', 'public-controls', 'boundary-controls', 'owner-sequences',
-          'elf-cases', 'native-cancellation-controls', 'desktop-boundary-controls'}
+          'elf-cases', 'native-cancellation-controls', 'desktop-boundary-controls', 'ui-engine-controls', 'ui-private-network-controls', 'ui-display-controls', 'ui-webkit-controls'}
 
 
 def pin(path):
@@ -106,6 +106,26 @@ def main():
         os.chmod(frontend_path, 0o600)
         child_env['WARLOCK_UI_FRONTEND_MANIFEST'] = str(frontend_path)
         calls = [('default', [str(backend), *pin(backend), str(child), *pin(child), str(fresh('storage'))])]
+    elif suite == 'ui-mvp-controls':
+        child = fixture('ui-stream-child')
+        calls = [('default', [str(child), *pin(child), str(fresh('storage'))])]
+    elif suite == 'ui-origin-controls':
+        backend = fixture('warlock-ui-backend')
+        documents = manifest['uiDocuments']
+        if set(documents) != {'controller', 'bar', 'popup'}:
+            raise RuntimeError('Expected exactly three compiled HTTP documents')
+        for role, item in documents.items():
+            image = Path(item['path'])
+            if pin(image) != [item['device'], item['inode'], item['size'], item['sha256']]:
+                raise RuntimeError('HTTP document pin differs: ' + role)
+        values = pin(backend)
+        origin_manifest = {'backend': dict(zip(('path', 'device', 'inode', 'size', 'sha256'), [str(backend), *values])),
+                           'documents': documents}
+        origin_path = base / 'origin-manifest.json'
+        origin_path.write_text(json.dumps(origin_manifest, indent=2) + '\n')
+        os.chmod(origin_path, 0o600)
+        child_env['WARLOCK_UI_ORIGIN_MANIFEST'] = str(origin_path)
+        calls = [('default', [str(fresh('storage'))])]
     else:
         raise RuntimeError('suite is not in fixed whitelist: ' + suite)
     results = []
@@ -149,6 +169,10 @@ def main():
         for name, item in manifest['frontend'].items():
             if pin(item['path'])[3] != item['sha']:
                 raise RuntimeError('UI frontend changed during execution: ' + name)
+    if suite == 'ui-origin-controls':
+        for role, item in manifest['uiDocuments'].items():
+            if pin(item['path']) != [item['device'], item['inode'], item['size'], item['sha256']]:
+                raise RuntimeError('HTTP document changed during execution: ' + role)
     return 0 if len(results) == len(calls) and all(r['exit'] == 0 and not r['forcedCleanup'] for r in results) else 1
 
 

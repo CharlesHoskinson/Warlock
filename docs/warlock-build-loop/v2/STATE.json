@@ -1,68 +1,90 @@
 {
   "schema": 1,
   "owner": "root-agentbus",
-  "updatedUTC": "2026-11-01T04:27:34.961131+00:00",
+  "updatedUTC": "2026-11-01T12:04:40.872626+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "haskell-desktop-stream-catalog-pins",
+    "id": "private-ui-origin",
     "requirements": [
-      "ELM-ARC-003",
-      "ELM-DEL-011"
+      "ELM-ARC-024",
+      "ELM-DEL-014"
     ],
     "scenarios": [
-      "architecture-003",
-      "delivery-011",
-      "arbitrary-path-denied"
+      "architecture-024",
+      "delivery-014"
     ],
     "paths": [
       "implementation/warlock/src/Main.elm",
-      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs",
-      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Profile.hs",
-      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Codec.hs",
-      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/StrictJson.hs",
-      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Boundary/Internal.hs",
-      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress/Internal.hs",
-      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/CredentialIngress.hs",
-      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Framing.hs",
-      "implementation/warlock/haskell/protocol/src/Warlock/Transport/Frame.hs",
-      "implementation/warlock/haskell/protocol/src/Warlock/Transport/Channel.hs",
-      "implementation/warlock/haskell/protocol/protocol.cabal",
-      "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs",
-      "implementation/warlock/haskell/runtime/src/Warlock/Backend/Catalog.hs",
-      "implementation/warlock/haskell/runtime/src/Warlock/Backend/PinStore.hs",
-      "implementation/warlock/haskell/runtime/src/Warlock/Backend/Store.hsc",
-      "implementation/warlock/haskell/runtime/app/Main.hs",
+      "implementation/warlock/src/Bar.elm",
+      "implementation/warlock/src/Popup.elm",
+      "implementation/warlock/src/HttpMain.elm",
+      "implementation/warlock/src/HttpBar.elm",
+      "implementation/warlock/src/HttpPopup.elm",
+      "implementation/warlock/src/UiHttp.elm",
+      "implementation/warlock/src/DesktopPolicy.elm",
+      "implementation/warlock/elm.json",
+      "implementation/warlock/haskell/runtime/src/Warlock/Ui/Policy.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Ui/Http.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Ui/Owner.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Ui/Native.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Ui/Config.hs",
+      "implementation/warlock/haskell/runtime/ui/Main.hs",
+      "implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKit.hs",
       "implementation/warlock/haskell/runtime/runtime.cabal",
-      "implementation/warlock/haskell/runtime/test-ui/Main.hs",
-      "implementation/warlock/haskell/runtime/fixture-ui/Main.hs",
+      "implementation/warlock/haskell/runtime/private/Main.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Ui/PrivateNetwork.hsc",
+      "implementation/warlock/haskell/runtime/test-ui-origin/Main.hs",
+      "implementation/warlock/haskell/runtime/formal/ui-origin.qnt",
+      "implementation/warlock/haskell/runtime/formal/ui-origin_test.qnt",
+      "implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKitABI.hsc",
+      "implementation/warlock/qa/UiHttpReplay.elm",
+      "implementation/warlock/qa/ui-http.cjs",
+      "implementation/warlock/src/Presentation.elm",
+      "implementation/warlock/src/SurfaceRenderer.elm",
+      "implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineCustody.hsc",
+      "implementation/warlock/haskell/runtime/test-ui-engine/Main.hs",
+      "implementation/warlock/haskell/runtime/test-ui-security/Main.hs",
+      "implementation/warlock/haskell/runtime/test-ui-security/fixtures/probes.js",
+      "implementation/warlock/haskell/runtime/formal/ui-engine-lifetime.qnt",
+      "implementation/warlock/haskell/runtime/formal/ui-engine-lifetime_test.qnt",
+      "implementation/warlock/haskell/runtime/formal/ui-private-network.qnt",
+      "implementation/warlock/haskell/runtime/formal/ui-private-network_test.qnt",
+      "implementation/warlock/haskell/runtime/formal/ui-http-admission.qnt",
+      "implementation/warlock/haskell/runtime/formal/ui-http-admission_test.qnt",
+      "implementation/warlock/haskell/runtime/formal/ui-frontend-delivery.qnt",
+      "implementation/warlock/haskell/runtime/formal/ui-frontend-delivery_test.qnt",
+      "implementation/warlock/haskell/runtime/test-ui-private-network/Main.hs",
+      "implementation/warlock/haskell/runtime/ui/Warlock/Ui/EngineCustody.hsc",
+      "implementation/warlock/haskell/runtime/test-ui-security/Parent.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Ui/Display.hs",
+      "implementation/warlock/haskell/runtime/test-ui-display/Main.hs",
+      "implementation/warlock/src/SurfaceTheme.elm",
+      "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc",
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs",
+      "implementation/warlock/src/Shell.elm",
+      "implementation/warlock/qa/StandaloneMvpReplay.elm",
+      "implementation/warlock/qa/standalone-mvp.cjs",
       "implementation/warlock/haskell/protocol/test-desktop/Main.hs",
-      "implementation/warlock/qa/ui-backend-port.cjs",
-      "implementation/warlock/qa/ui-native-stream.qnt",
-      "implementation/warlock/qa/ui-native-stream_test.qnt",
-      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap.hs",
-      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/Aggregate.hs",
-      "implementation/warlock/src/OutputController.elm",
-      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/haskell/runtime/test-ui-mvp/Main.hs",
+      "implementation/warlock/haskell/runtime/formal/ui-standalone-bootstrap.qnt",
+      "implementation/warlock/haskell/runtime/formal/ui-standalone-bootstrap_test.qnt",
+      "implementation/warlock/tools/test_warlock_graph_quint.py",
+      "implementation/warlock/haskell/runtime/test-ui-security/Permissive.hs",
+      "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
       "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/src/SurfaceController.elm"
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/qa/feedback-context-browser.mjs"
     ],
-    "before": "Actual Main exposes multiple incoming ports; current Haskell protocol admits only native1/2 and has no called catalog/pin backend or GUI stream composition. Imported historical Python behavior is not Haskell implementation.",
-    "after": "The actual Main exposes one versioned incoming/outgoing stream and a called production Haskell backend validates full commit and typed operation schema before kernel-authenticated catalog/pin IO, returns matching actual outcomes, and rejects command/path/unknown operations before IO. Full privateUIHTTP/native/persistent-delivery goal remains, not redefined to a library/read-only demo.",
+    "before": "The catalog/pins application bridge is runnable but no production private UI HTTP/WebKit owner loads the packaged Elm roots or enforces their origin and CSP.",
+    "after": "A Haskell UI owner serves pinned generated Elm roots on isolated role origins, connects their Elm-owned HTTP transport to whole authenticated backend frames, and denies unapproved routes, origins, navigation and capabilities with exact CSP. Engine execution-negative obligations remain explicit until observed.",
     "verification": [
-      "Root protected buildall/testall and real production-executable kernel-framed actual compiledMain roundtrip with complete surfaceCommit, matching schema/hash receipts, strict typed profiles and legacy64KiB controls. Meaningful malformed/profile/provenance fuzz before anycallback, actualno command/arbitraryfileIO proof and CAS/privatefile/persistence controls; Quint model actual boundaries. Independently reviewed source readiness/immutable alloriginaloracles; no nativeGUI/AT/release inference."
-    ],
-    "owner": "root-agentbus",
-    "participantRecord": ".warlock-contributor/ui-backend.json",
-    "outcome": "Whole originalARC003+DEL011/all3scenarios independentlyaccepted93674172 onimmutable5818e78f; actualsourceintegration andcompletebridge/preIOsecurityoracles. NativeGUI/privateHTTP/persistentview/AT/IME/release obligations separate.",
-    "readinessReview": ".warlock-contributor/ui-backend-readiness-review.json",
-    "status": "accepted",
-    "sourceRevision": "5818e78f436554a951f1b90f5c9b417e406404b6",
-    "acceptance": "docs/warlock-build-loop/v2/ui-backend-acceptance-20261101.json",
-    "independentReview": "docs/warlock-build-loop/v2/ui-backend-review-20261101.json"
+      "Root protected owning Elm/GHC builds; production-route HTTP and fullframe integration positive/hostile/lifecycle fuzz; pure origin/CSP invariants and sampled corresponding model; actual WebKit negative execution only under unchanged native gates, no HOSTSTOP2 retries."
+    ]
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -2268,49 +2290,32 @@
     "nextOriginalProductWork": "Restore and qualify a fresh coherent native source/core/plugin/host tuple for original taskbar activation/minimize/restore recipients: ELM-UI-004 / ELM-UX-005 / ELM-UX-008. Root owns serialized protected native execution; source reconstruction/build evidence stays separate from GUI acceptance."
   },
   "previousActiveSlice": {
-    "id": "authenticated-session-delivery",
+    "id": "status-scroll",
     "requirements": [
-      "ELM-DEL-010"
+      "ELM-UI-007"
     ],
     "scenarios": [
-      "delivery-010",
-      "peer-wrong-session",
-      "peer-approved-session"
+      "restore-pending",
+      "restore-unknown"
     ],
     "paths": [
-      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/Aggregate.hs",
-      "implementation/warlock/haskell/runtime/runtime.cabal",
-      "implementation/warlock/haskell/runtime/fixture-peer/Main.hs",
-      "implementation/warlock/haskell/runtime/test-persistent/Main.hs",
-      "implementation/warlock/haskell/runtime/formal/current_registration_test.qnt",
-      "implementation/warlock/haskell/runtime/formal/current_registration.qnt",
-      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap.hs",
-      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/ScopedPeer.hs",
-      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/CurrentSessions.hs",
-      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/CredentialScopeGuard.hs",
-      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/SocketOwner.hsc",
-      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/CredentialIngress.hs",
-      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress.hs",
-      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress/Internal.hs",
-      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Codec.hs",
-      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/PeerCredential.hs",
-      "implementation/warlock/haskell/protocol/src/Warlock/Transport/PeerCredentials.hsc",
-      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Internal.hsc",
-      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Bootstrap.hs",
-      "implementation/warlock/haskell/runtime/README.md"
+      "implementation/warlock/src/Bar.elm",
+      "implementation/warlock/src/HttpBar.elm",
+      "implementation/warlock/src/SurfaceRenderer.elm",
+      "implementation/warlock/src/SurfaceTheme.elm",
+      "implementation/warlock/src/StatusScroll.elm",
+      "implementation/warlock/qa/feedback-context-browser.mjs",
+      "implementation/warlock/qa/StatusScrollReplay.elm",
+      "implementation/warlock/qa/status-scroll.cjs",
+      "implementation/warlock/qa/status-scroll.qnt",
+      "implementation/warlock/qa/status-scroll_test.qnt",
+      "implementation/warlock/src/HttpPopup.elm"
     ],
-    "before": "The actual Haskell bootstrap admits only one frame before awaiting child exit. Current kernel-credential/session controls are internal test builds, with no real cross-user trace or multi-frame public production-library witness.",
-    "after": "The existing public bootstrap accepts a bounded live sequence under its single original absolute lifetime, reauthenticates every fragment and final dispatch, refuses actual cross-user and retired/replayed senders before policy admission, and retires its own resources. This advances the real backend; it does not claim an unlimited desktop daemon or native effect issuer.",
+    "before": "A keyboard-scrollable Unknown status retains scrollTop when new pending feedback replaces its text; the new prefix can be hidden. Generic polite mirrored bars also conflict with the single scoped announcer.",
+    "after": "Fresh feedback reveals its opening text while the same status preserves scroll and all current input/focus/draft context. One current scoped Announcement channel owns speech; visible mirror feedback remains readable and passive.",
     "verification": [
-      "Root protected production-library linked Haskell multi-frame/EOF/refusal/retirement controls with distinct full request identities and meaningful seeded fragmentation/order cases; real kernel cross-user UID trace, same-user current and retired/replayed lifetime traces, callback canaries and owned cleanup. Preserve original5s budgets, strict buildall/testall and model correspondence; no synthetic UID original acceptance, no native effect/GUI/release transfer."
-    ],
-    "owner": "root-agentbus",
-    "participantRecord": ".warlock-contributor/persistent-auth.json",
-    "outcome": "All3literal DEL010 scenarios independently accepted on immutable367a4899023340bc9cfeb2765a90b7ed37e58109 after actual source fix and14public cases/25suites/37invocations. WholeEARS stayspartial: required realcrossUID trace unavailable after one askpass timeout.",
-    "sourceRevision": "367a4899023340bc9cfeb2765a90b7ed37e58109",
-    "evidence": "implementation/warlock/qa/evidence/persistent-auth-20261101/report.json",
-    "acceptance": "docs/warlock-build-loop/v2/persistent-auth-acceptance-20261101.json",
-    "independentReview": "docs/warlock-build-loop/v2/persistent-auth-review-20261101.json"
+      "Protected owning Elm roots, current source-bound sequence/fuzz, actual compiled browser621px100/200percent scroll/focus/recovery and single scoped announcement checks; meaningful Quint correspondence. Native keyboard/AT/original whole UI007 remain explicit until observed."
+    ]
   },
   "lastNativeObservation": {
     "report": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-primary-at/native-primary-keyboard-1793215082472811918/report.json",
@@ -2640,6 +2645,67 @@
       "sourceRevision": "b6bfe6146cdbd4a9c3eae06ddc898c93436f5e70",
       "acceptance": "docs/warlock-build-loop/v2/tea-effects-acceptance-20261101.json",
       "independentReview": "docs/warlock-build-loop/v2/tea-effects-review-20261101.json"
+    },
+    {
+      "retainedUTC": "2026-11-01T04:59:30.014062+00:00",
+      "selection": {
+        "id": "haskell-desktop-stream-catalog-pins",
+        "requirements": [
+          "ELM-ARC-003",
+          "ELM-DEL-011"
+        ],
+        "scenarios": [
+          "architecture-003",
+          "delivery-011",
+          "arbitrary-path-denied"
+        ],
+        "paths": [
+          "implementation/warlock/src/Main.elm",
+          "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs",
+          "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Profile.hs",
+          "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Codec.hs",
+          "implementation/warlock/haskell/protocol/src/Warlock/Protocol/StrictJson.hs",
+          "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Boundary/Internal.hs",
+          "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress/Internal.hs",
+          "implementation/warlock/haskell/protocol/src/Warlock/Protocol/CredentialIngress.hs",
+          "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Framing.hs",
+          "implementation/warlock/haskell/protocol/src/Warlock/Transport/Frame.hs",
+          "implementation/warlock/haskell/protocol/src/Warlock/Transport/Channel.hs",
+          "implementation/warlock/haskell/protocol/protocol.cabal",
+          "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs",
+          "implementation/warlock/haskell/runtime/src/Warlock/Backend/Catalog.hs",
+          "implementation/warlock/haskell/runtime/src/Warlock/Backend/PinStore.hs",
+          "implementation/warlock/haskell/runtime/src/Warlock/Backend/Store.hsc",
+          "implementation/warlock/haskell/runtime/app/Main.hs",
+          "implementation/warlock/haskell/runtime/runtime.cabal",
+          "implementation/warlock/haskell/runtime/test-ui/Main.hs",
+          "implementation/warlock/haskell/runtime/fixture-ui/Main.hs",
+          "implementation/warlock/haskell/protocol/test-desktop/Main.hs",
+          "implementation/warlock/qa/ui-backend-port.cjs",
+          "implementation/warlock/qa/ui-native-stream.qnt",
+          "implementation/warlock/qa/ui-native-stream_test.qnt",
+          "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap.hs",
+          "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/Aggregate.hs",
+          "implementation/warlock/src/OutputController.elm",
+          "implementation/warlock/src/Desktop.elm",
+          "implementation/warlock/src/Surface.elm",
+          "implementation/warlock/src/SurfaceController.elm"
+        ],
+        "before": "Actual Main exposes multiple incoming ports; current Haskell protocol admits only native1/2 and has no called catalog/pin backend or GUI stream composition. Imported historical Python behavior is not Haskell implementation.",
+        "after": "The actual Main exposes one versioned incoming/outgoing stream and a called production Haskell backend validates full commit and typed operation schema before kernel-authenticated catalog/pin IO, returns matching actual outcomes, and rejects command/path/unknown operations before IO. Full privateUIHTTP/native/persistent-delivery goal remains, not redefined to a library/read-only demo.",
+        "verification": [
+          "Root protected buildall/testall and real production-executable kernel-framed actual compiledMain roundtrip with complete surfaceCommit, matching schema/hash receipts, strict typed profiles and legacy64KiB controls. Meaningful malformed/profile/provenance fuzz before anycallback, actualno command/arbitraryfileIO proof and CAS/privatefile/persistence controls; Quint model actual boundaries. Independently reviewed source readiness/immutable alloriginaloracles; no nativeGUI/AT/release inference."
+        ],
+        "owner": "root-agentbus",
+        "participantRecord": ".warlock-contributor/ui-backend.json",
+        "outcome": "Whole originalARC003+DEL011/all3scenarios independentlyaccepted93674172 onimmutable5818e78f; actualsourceintegration andcompletebridge/preIOsecurityoracles. NativeGUI/privateHTTP/persistentview/AT/IME/release obligations separate.",
+        "readinessReview": ".warlock-contributor/ui-backend-readiness-review.json",
+        "status": "accepted",
+        "sourceRevision": "5818e78f436554a951f1b90f5c9b417e406404b6",
+        "acceptance": "docs/warlock-build-loop/v2/ui-backend-acceptance-20261101.json",
+        "independentReview": "docs/warlock-build-loop/v2/ui-backend-review-20261101.json"
+      },
+      "reason": "Completed ARC003/DEL011 source-bound acceptance retained; real private UI origin/CSP source integration now selected."
     }
   ],
   "lastCompletedBoundedSlice": {
@@ -3280,6 +3346,13 @@
       "fromSlice": "authenticated-session-delivery",
       "toSlice": "tea-effects-pin-read-causality",
       "reason": "Verified DEL010 public-library slice and all3named scenarios complete; whole crossUID prerequisite remains explicitly partial. Continue mandatory actualElm effect/decoder source work under available toolchain."
+    },
+    {
+      "atUTC": "2026-11-01T11:45:04.541593+00:00",
+      "from": "status-scroll",
+      "to": "private-ui-origin",
+      "reason": "UI007 actual core source delivered in425ad4e411cadec68f04214cf7eb5a763a382763 with component evidence; end broader native qualification. Select existing original ARC024/DEL014 record for concrete inherited-fd nonblocking source repair, preserving its original04:41 start and08:41 last progress and stop history. No timer reset from this selection.",
+      "missingObservation": "UI007 native keyboard/AT/whole acceptance; standalone guest run01 no window,5s authenticated transport TimedOut, cause not established."
     }
   ],
   "museRegulator": {
@@ -3437,12 +3510,15 @@
     "authAcknowledgements": "AgentBus live log; process launch alone is not successful authentication",
     "singleProductSlice": true,
     "noDuplicateCoordinator": true,
-    "currentSlice": "Whole ELM-ARC-003+ELM-DEL-011 accepted; next privateUIHTTP/WebKit/provenance/persistentowner preparation and actualsource integration",
-    "currentProcessObservation": "All source/model/QA/finalreview workers completed handoffs and released claims. Root integrates accepted original verdict/publishes normalbatch; one coordinator, no background worker count inferred from registeredidentities.",
+    "currentSlice": "ARC024/DEL014 privateUI origin and actual Elm/Haskell Applications MVP; both whole EARS OPEN",
+    "currentProcessObservation": "At08:13Z observed10resumedTerra and3Gemini actualprocesses, not merely registeredidentities; completed turns replenished after terminal/process checks. Source-only parallel wave, root serialized execution.",
     "lastHealthObservation": {
-      "observedUTC": "2026-11-01T03:01:00Z",
-      "doctor": "six checks healthy; lead credential valid19hours, arbiter existingPID1116694; services/keys reused"
-    }
+      "observedUTC": "2026-11-01T08:16:36.746367+00:00",
+      "doctor": "six checks healthy; lead credential valid13.8hours, existing arbiterPID1116694; no service/key changes"
+    },
+    "liveCensusReceipt": "/home/charl/.local/state/warlock-team/20261031-agentbus/current-worker-census.json",
+    "lastLivenessUTC": "2026-11-01T11:45:04.541593+00:00",
+    "actualWorkerCensus": "/home/charl/.local/state/warlock-team/20261031-agentbus/current-worker-census.json"
   },
   "currentGoalTelemetry": {
     "observedUTC": "2026-11-01T04:17:58.314662+00:00",
@@ -3472,7 +3548,7 @@
     "guiAcceptance": false,
     "releaseAcceptance": false
   },
-  "nextConcreteAction": "Publish accepted5818e78f source+currentoriginalverdict/wikihandoff throughnormaloriginmain flow, releasefinishedclaims, thenselect concreteoriginal privateUIHTTP/WebKit/persistentowner slice withdeclaredElm/Haskellpaths. Preserve nativeOperations[], crossUID missing evidence, HOSTSTOP2 and no repeatedaskpass.",
+  "nextConcreteAction": "Publish coherent current tested bridge source; independently adjudicate literal ARC024 bridge clauses with immutable source and matching receipts; preserve guest run02 early StreamEOF/noGUI and select next mandatory source behavior under stop rules.",
   "currentNamedScenarioClosure": {
     "requirement": "ELM-DEL-010",
     "scenarios": [
@@ -3514,5 +3590,154 @@
       "nativeExecution": false,
       "releaseAcceptance": false
     }
-  ]
+  ],
+  "privateUiComponentEvidence": {
+    "elm": ".warlock-contributor/elm-cpu-1793510053262162964/report.json",
+    "models": ".warlock-contributor/haskell-cpu-1793517625836497642/report.json",
+    "compiledSourcePriorModelSyntaxFailure": ".warlock-contributor/haskell-cpu-1793517427425625506/report.json",
+    "vm": "/home/charl/vm/omarchy/evidence/warlock-ui-origin-20261101/LIVE-ELM-RESULT-20261101.json",
+    "vmSha256": "2b55367f38e17b01a09ed4310cb127b6c1a77069ca49a8a5bceaf39a9875f36b",
+    "wholeEarsAccepted": false,
+    "nativeAccepted": false,
+    "releaseAccepted": false,
+    "runtimeFailure": ".warlock-contributor/haskell-cpu-1793517818071415473/report.json",
+    "latestFocusedRuntime": ".warlock-contributor/haskell-cpu-1793518705971417081/report.json",
+    "latestFocusedRuntimeDisposition": "FAIL overall; builds/models/engine controls PASS, postenter peer namespace EACCES13 and private display ancestry UID65534 failures remain; newer witness/private-run fixes unverified.",
+    "elmStartup": ".warlock-contributor/elm-cpu-1793522395068788049/report.json",
+    "haskellCompiledModelFailure": ".warlock-contributor/haskell-cpu-1793523091945636320/report.json",
+    "homepageCompile": ".warlock-contributor/haskell-cpu-1793522327699504322/report.json",
+    "homepageVm": "/home/charl/vm/omarchy/evidence/warlock-ui-mvp-20261101/homepage-candidate-01/guest-evidence/report.json",
+    "homepageVmChecks": 10,
+    "homepageDeployed": false
+  },
+  "productSliceHistory": [
+    {
+      "atUTC": "2026-11-01T09:32:01.454221+00:00",
+      "slice": {
+        "id": "private-ui-origin",
+        "requirements": [
+          "ELM-ARC-024",
+          "ELM-DEL-014"
+        ],
+        "scenarios": [
+          "architecture-024",
+          "delivery-014"
+        ],
+        "paths": [
+          "implementation/warlock/src/Main.elm",
+          "implementation/warlock/src/Bar.elm",
+          "implementation/warlock/src/Popup.elm",
+          "implementation/warlock/src/HttpMain.elm",
+          "implementation/warlock/src/HttpBar.elm",
+          "implementation/warlock/src/HttpPopup.elm",
+          "implementation/warlock/src/UiHttp.elm",
+          "implementation/warlock/src/DesktopPolicy.elm",
+          "implementation/warlock/elm.json",
+          "implementation/warlock/haskell/runtime/src/Warlock/Ui/Policy.hs",
+          "implementation/warlock/haskell/runtime/src/Warlock/Ui/Http.hs",
+          "implementation/warlock/haskell/runtime/src/Warlock/Ui/Owner.hs",
+          "implementation/warlock/haskell/runtime/src/Warlock/Ui/Native.hs",
+          "implementation/warlock/haskell/runtime/src/Warlock/Ui/Config.hs",
+          "implementation/warlock/haskell/runtime/ui/Main.hs",
+          "implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKit.hs",
+          "implementation/warlock/haskell/runtime/runtime.cabal",
+          "implementation/warlock/haskell/runtime/private/Main.hs",
+          "implementation/warlock/haskell/runtime/src/Warlock/Ui/PrivateNetwork.hsc",
+          "implementation/warlock/haskell/runtime/test-ui-origin/Main.hs",
+          "implementation/warlock/haskell/runtime/formal/ui-origin.qnt",
+          "implementation/warlock/haskell/runtime/formal/ui-origin_test.qnt",
+          "implementation/warlock/haskell/runtime/ui/Warlock/Ui/WebKitABI.hsc",
+          "implementation/warlock/qa/UiHttpReplay.elm",
+          "implementation/warlock/qa/ui-http.cjs",
+          "implementation/warlock/src/Presentation.elm",
+          "implementation/warlock/src/SurfaceRenderer.elm",
+          "implementation/warlock/haskell/runtime/src/Warlock/Ui/EngineCustody.hsc",
+          "implementation/warlock/haskell/runtime/test-ui-engine/Main.hs",
+          "implementation/warlock/haskell/runtime/test-ui-security/Main.hs",
+          "implementation/warlock/haskell/runtime/test-ui-security/fixtures/probes.js",
+          "implementation/warlock/haskell/runtime/formal/ui-engine-lifetime.qnt",
+          "implementation/warlock/haskell/runtime/formal/ui-engine-lifetime_test.qnt",
+          "implementation/warlock/haskell/runtime/formal/ui-private-network.qnt",
+          "implementation/warlock/haskell/runtime/formal/ui-private-network_test.qnt",
+          "implementation/warlock/haskell/runtime/formal/ui-http-admission.qnt",
+          "implementation/warlock/haskell/runtime/formal/ui-http-admission_test.qnt",
+          "implementation/warlock/haskell/runtime/formal/ui-frontend-delivery.qnt",
+          "implementation/warlock/haskell/runtime/formal/ui-frontend-delivery_test.qnt",
+          "implementation/warlock/haskell/runtime/test-ui-private-network/Main.hs",
+          "implementation/warlock/haskell/runtime/ui/Warlock/Ui/EngineCustody.hsc",
+          "implementation/warlock/haskell/runtime/test-ui-security/Parent.hs",
+          "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs",
+          "implementation/warlock/haskell/runtime/src/Warlock/Ui/Display.hs",
+          "implementation/warlock/haskell/runtime/test-ui-display/Main.hs",
+          "implementation/warlock/src/SurfaceTheme.elm",
+          "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc",
+          "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs",
+          "implementation/warlock/src/Shell.elm",
+          "implementation/warlock/qa/StandaloneMvpReplay.elm",
+          "implementation/warlock/qa/standalone-mvp.cjs",
+          "implementation/warlock/haskell/protocol/test-desktop/Main.hs",
+          "implementation/warlock/haskell/runtime/test-ui-mvp/Main.hs",
+          "implementation/warlock/haskell/runtime/formal/ui-standalone-bootstrap.qnt",
+          "implementation/warlock/haskell/runtime/formal/ui-standalone-bootstrap_test.qnt",
+          "implementation/warlock/tools/test_warlock_graph_quint.py",
+          "implementation/warlock/haskell/runtime/test-ui-security/Permissive.hs",
+          "implementation/warlock/haskell/runtime/test-ui-webkit/Main.hs",
+          "implementation/warlock/src/Surface.elm",
+          "implementation/warlock/src/Desktop.elm",
+          "implementation/warlock/qa/feedback-context-browser.mjs"
+        ],
+        "before": "The catalog/pins application bridge is runnable but no production private UI HTTP/WebKit owner loads the packaged Elm roots or enforces their origin and CSP.",
+        "after": "A Haskell UI owner serves pinned generated Elm roots on isolated role origins, connects their Elm-owned HTTP transport to whole authenticated backend frames, and denies unapproved routes, origins, navigation and capabilities with exact CSP. Engine execution-negative obligations remain explicit until observed.",
+        "verification": [
+          "Root protected owning Elm/GHC builds; production-route HTTP and fullframe integration positive/hostile/lifecycle fuzz; pure origin/CSP invariants and sampled corresponding model; actual WebKit negative execution only under unchanged native gates, no HOSTSTOP2 retries."
+        ],
+        "owner": "lead",
+        "participantRecord": ".warlock-contributor/ui-origin.json",
+        "status": "implementation-in-progress",
+        "readinessReview": "docs/warlock-build-loop/v2/ui-origin-readiness-20261101.json",
+        "outcome": "Shared Elm HTTP roots pass 4798 protected component checks; actual VM compiled Bar/Popup pass20 checks and full scoped2+8 QMP actions with owned cleanup. Haskell production and selected tests build; five UI models pass152 named tests and60000 sampled traces of up to50 steps. Production display route repaired; actual PID namespace custody implemented, exact WebKit provider/callback success remains false. Focused runtime qualification executing; no ARC024/DEL014 or native/release acceptance. Focused runtime run is now terminalFAIL: private NET unshare EINVAL, engine parent-death identity failure, display positive refusal and origin integration failure, all preserved without forced cleanup; no actual Haskell runtime acceptance."
+      },
+      "record": ".warlock-contributor/ui-origin.json",
+      "disposition": "Investigation ended at45minute trigger with actualremainingruntimeorigin and privateSDKloader failures retained; wholeARC024/DEL014unaccepted; prepdiagnostics source handedoff, no source/timer reset."
+    }
+  ],
+  "activeContributorRecord": ".warlock-contributor/ui-origin.json",
+  "ui007StatusScrollCheckpoint": {
+    "commit": "425ad4e411cadec68f04214cf7eb5a763a382763",
+    "scope": "Component-only; whole UI007 and native/AT remain partial",
+    "elmReport": ".warlock-contributor/elm-cpu-1793529117351158392/report.json",
+    "statusChecks": 298,
+    "restoreChecks": 480,
+    "strictBrowserReport": ".warlock-contributor/elm-cpu-1793528915230781333/report.json",
+    "strictBrowserChecks": 255,
+    "committedSourceReport": ".warlock-contributor/elm-cpu-1793529931171600538/report.json"
+  },
+  "nativeStartupRepairCheckpoint": {
+    "atUTC": "2026-11-01T11:47:49.950128+00:00",
+    "originals": [
+      "ELM-ARC-024/architecture-024",
+      "ELM-DEL-014/delivery-014"
+    ],
+    "source": "implementation/warlock/haskell/runtime/src/Warlock/Ui/Native.hs",
+    "behavior": "Inherited fd0 set nonblocking inside owned socket cleanup before nonthreaded native receive; original credential/binding/deadline unchanged",
+    "status": "All7controlledruntime suites PASS; actualguest stillfailsbeforewindow; wholeoriginal/release unaccepted",
+    "review": ".warlock-contributor/evidence/native-fd0-nonblocking-source-review-20261101.json",
+    "vmRun01": "/home/charl/vm/omarchy/evidence/warlock-ui-mvp-20261101/actual-app-20261101T1058Z/run-01",
+    "vmOutcome": "No mapped GUI;6.211s exit1/TimedOut; no input/screenshots. Native/release unaccepted.",
+    "protectedReport": ".warlock-contributor/haskell-cpu-1793534128434552989/report.json",
+    "vmRun02": {
+      "evidenceDirectory": "/home/charl/vm/omarchy/evidence/warlock-ui-mvp-20261101/actual-app-20261101T1058Z/run-02",
+      "exit": 1,
+      "elapsedSeconds": 1.4634739760003868,
+      "mappedWindow": false,
+      "screenshots": [],
+      "inputSent": false,
+      "authTransport": "StreamEOF",
+      "callbacks": 0,
+      "operations": 0,
+      "backendCleanup": true,
+      "forcedAtOriginalDeadline": false,
+      "nativeAccepted": false
+    }
+  }
 }

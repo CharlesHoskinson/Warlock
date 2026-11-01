@@ -45,6 +45,8 @@ def main():
     modes.add_argument('--browser', action='store_true', help='Separately reviewed private-network browser component checks')
     modes.add_argument('--authority', action='store_true', help='Original ARC005 owning-route authority tuple bridge checks')
     modes.add_argument('--receipts', action='store_true', help='Original ARC007 actual desktop receipt bridge and model checks')
+    modes.add_argument('--standalone-mvp', action='store_true', help='Fixed actual standalone MVP replay and six production roots')
+    modes.add_argument('--status-scroll', action='store_true', help='Fixed UI007 status scroll replay and model')
     args = parser.parse_args()
     scope = require_qa_scope()
     runtime_base()
@@ -69,12 +71,14 @@ def main():
     work.mkdir()
     shutil.copytree(root / 'src', work / 'src')
     shutil.copytree(held / pinned['elmHome'], output / 'elm-home')
+    from elm_http_dependencies import stage as stage_http_dependencies
+    report['httpDependencies'] = stage_http_dependencies(output / 'elm-home')
     config = json.loads((root / 'elm.json').read_text())
     config['source-directories'] = ['src', 'qa']
     (work / 'qa').mkdir()
     (work / 'elm.json').write_text(json.dumps(config))
     env = dict(os.environ, ELM_HOME=str(output / 'elm-home'))
-    if args.receipts:
+    if args.receipts or args.status_scroll:
         for key in ('NODE_OPTIONS', 'NODE_PATH', 'FORCE_COLOR'):
             env.pop(key, None)
         env['NO_COLOR'] = '1'
@@ -97,21 +101,127 @@ def main():
         # Unchanged GUI roots already have source-bound qualification. ARC005
         # compiles its actual production controller/bridge fixture directly.
         if not args.authority:
-            for name in ['Main', 'Bar', 'Popup']:
+            for name in ['Main', 'Bar', 'Popup', 'HttpMain', 'HttpBar', 'HttpPopup']:
                 run('compile-' + name, [compiler, 'make', 'src/' + name + '.elm', '--optimize', '--output=' + str(output / (name + '.js'))])
         fixture_name = 'ReceiptStateReplay' if args.receipts else ('AuthorityTupleReplay' if args.authority else 'FeedbackContextReplay')
         harness_name = 'receipt-state' if args.receipts else ('authority-tuple' if args.authority else 'feedback-context')
         fixture = root / ('qa/' + fixture_name + '.elm')
         harness = root / ('qa/' + harness_name + '.cjs')
         if fixture.exists():
+            if any(source.is_symlink() or not source.is_file() for source in (fixture, harness)):
+                raise RuntimeError('Expected regular replay and harness')
             for source in [fixture, harness]:
                 sources[str(source.relative_to(REPO))] = sha(source)
                 shutil.copy2(source, work / 'qa' / source.name)
             run('compile-' + harness_name, [compiler, 'make', 'qa/' + fixture_name + '.elm', '--optimize', '--output=' + str(output / (harness_name + '.js'))])
             if not args.receipts:
                 run(harness_name, [str(node), 'qa/' + harness_name + '.cjs', str(output / (harness_name + '.js')), str(output / (harness_name + '.json'))])
-        elif args.authority or args.receipts:
+        elif args.authority or args.receipts or args.standalone_mvp or args.status_scroll:
             raise RuntimeError('Original scenario fixture is required')
+        if not (args.authority or args.receipts or args.browser):
+            for filename in ('UiHttpReplay.elm', 'ui-http.cjs'):
+                source = root / 'qa' / filename
+                if source.is_symlink() or not source.is_file():
+                    raise RuntimeError('Actual HTTP transport fixture is required')
+                sources[str(source.relative_to(REPO))] = sha(source)
+                shutil.copy2(source, work / 'qa' / filename)
+            run('compile-ui-http-replay', [compiler, 'make', 'qa/UiHttpReplay.elm', '--optimize',
+                                         '--output=' + str(output / 'UiHttpReplay.js')])
+            run('ui-http', [str(node), 'qa/ui-http.cjs', *[str(output / (name + '.js'))
+                           for name in ('HttpMain', 'HttpBar', 'HttpPopup', 'UiHttpReplay')],
+                           str(output / 'ui-http.json')])
+        if args.standalone_mvp:
+            for filename in ('StandaloneMvpReplay.elm', 'standalone-mvp.cjs'):
+                source = root / 'qa' / filename
+                if source.is_symlink() or not source.is_file():
+                    raise RuntimeError('Standalone MVP fixture is required')
+                sources[str(source.relative_to(REPO))] = sha(source)
+                shutil.copy2(source, work / 'qa' / filename)
+            run('compile-standalone-mvp', [compiler, 'make', 'qa/StandaloneMvpReplay.elm', '--optimize',
+                                           '--output=' + str(output / 'standalone-mvp.js')])
+            run('standalone-mvp', [str(node), 'qa/standalone-mvp.cjs', str(output / 'standalone-mvp.js'),
+                                   str(output / 'standalone-mvp.json')])
+            replay_result = json.loads((output / 'standalone-mvp.json').read_text())
+            if (replay_result.get('passed') is not True or not replay_result.get('checks')
+                    or replay_result.get('failures') or any(row.get('passed') is not True for row in replay_result['checks'])):
+                raise RuntimeError('Standalone MVP replay incomplete or failed')
+            report['standaloneMvp'] = {'checks': len(replay_result['checks']), 'seed': replay_result.get('seed'),
+                                       'resultSHA256': sha(output / 'standalone-mvp.json')}
+        if args.status_scroll:
+            for filename in ('StatusScrollReplay.elm', 'status-scroll.cjs', 'status-scroll.qnt', 'status-scroll_test.qnt'):
+                source = root / 'qa' / filename
+                if source.is_symlink() or not source.is_file():
+                    raise RuntimeError('Status scroll fixture and model are required')
+                sources[str(source.relative_to(REPO))] = sha(source)
+                shutil.copy2(source, work / 'qa' / filename)
+                if sha(work / 'qa' / filename) != sources[str(source.relative_to(REPO))]:
+                    raise RuntimeError('Status scroll source changed during staging')
+            run('compile-status-scroll', [compiler, 'make', 'qa/StatusScrollReplay.elm', '--optimize',
+                                           '--output=' + str(output / 'status-scroll.js')])
+            run('status-scroll', [str(node), 'qa/status-scroll.cjs', str(output / 'status-scroll.js'),
+                                  str(output / 'status-scroll.json')])
+            replay = json.loads((output / 'status-scroll.json').read_text())
+            if (replay.get('passed') is not True or not replay.get('checks') or replay.get('failures')
+                    or any(row.get('passed') is not True for row in replay['checks'])):
+                raise RuntimeError('Status scroll replay incomplete or failed')
+            report['statusScrollReplay'] = {'checks': len(replay['checks']), 'seed': replay.get('seed'),
+                                             'resultSHA256': sha(output / 'status-scroll.json')}
+            restore_files = ('RestoreAnnouncementReplay.elm', 'restore-announcement.cjs',
+                             'SnapReplay.elm', 'NativePointerFixture.elm')
+            for filename in restore_files:
+                source = root / 'qa' / filename
+                if source.is_symlink() or not source.is_file():
+                    raise RuntimeError('Restore announcement replay and helpers are required')
+                sources[str(source.relative_to(REPO))] = sha(source)
+                shutil.copy2(source, work / 'qa' / filename)
+                if sha(work / 'qa' / filename) != sources[str(source.relative_to(REPO))]:
+                    raise RuntimeError('Restore announcement source changed during staging')
+            run('compile-restore-announcement', [compiler, 'make', 'qa/RestoreAnnouncementReplay.elm', '--optimize',
+                                                  '--output=' + str(output / 'restore-announcement.js')])
+            run('restore-announcement', [str(node), 'qa/restore-announcement.cjs',
+                                          str(output / 'restore-announcement.js'),
+                                          str(output / 'restore-announcement.json')])
+            restore = json.loads((output / 'restore-announcement.json').read_text())
+            if (restore.get('passed') is not True or not restore.get('checks') or restore.get('failures')
+                    or any(row.get('passed') is not True for row in restore['checks'])):
+                raise RuntimeError('Restore announcement replay incomplete or failed')
+            for filename in restore_files:
+                source = root / 'qa' / filename
+                expected = sources[str(source.relative_to(REPO))]
+                staged = work / 'qa' / filename
+                if (source.is_symlink() or not source.is_file() or staged.is_symlink() or not staged.is_file()
+                        or sha(source) != expected or sha(staged) != expected):
+                    raise RuntimeError('Restore announcement source changed during execution')
+            report['restoreAnnouncementReplay'] = {'checks': len(restore['checks']),
+                                                   'resultSHA256': sha(output / 'restore-announcement.json')}
+            pin, cli = quint_toolchain()
+            if str(node) != pin['node']['path'] or sha(node) != pin['node']['sha256']:
+                raise RuntimeError('Pinned model interpreter differs')
+            sources['tools/quint-toolchain.json'] = sha(REPO / 'tools/quint-toolchain.json')
+            model = work / 'qa/status-scroll.qnt'
+            tests = work / 'qa/status-scroll_test.qnt'
+            names = re.findall(r'^\s*run\s+(\w+)\s*=', tests.read_text(), re.M)
+            witnesses = re.findall(r'^\s*val\s+(witness\w+)\s*(?::[^=]+)?=', model.read_text(), re.M)
+            if not names or len(names) != len(set(names)) or not witnesses or len(witnesses) != len(set(witnesses)):
+                raise RuntimeError('Status scroll named test or witness selection empty or duplicated')
+            selector = '^(?:' + '|'.join(re.escape(name) for name in names) + ')$'
+            run('status-model-typecheck', [str(node), str(cli), 'typecheck', str(model)])
+            run('status-model-test-typecheck', [str(node), str(cli), 'typecheck', str(tests)])
+            run('status-model-directed', [str(node), str(cli), 'test', str(tests), '--main=status_scroll_test',
+                                           '--match=' + selector, '--backend=typescript', '--verbosity=2'])
+            if re.findall(r'\b(\d+) passing\b', (output / 'status-model-directed.stdout').read_text()) != [str(len(names))]:
+                raise RuntimeError('Status scroll exact named test count differs')
+            run('status-model-safety', [str(node), str(cli), 'run', str(model), '--main=status_scroll',
+                                        '--backend=typescript', '--invariant=safety', '--witnesses', *witnesses,
+                                        '--max-samples=10000', '--max-steps=50', '--seed=20261101', '--verbosity=1'])
+            counts = {name: int(n) for name, n in re.findall(r'(\w+) was witnessed in (\d+) trace',
+                      (output / 'status-model-safety.stdout').read_text())}
+            if set(counts) != set(witnesses) or any(n == 0 for n in counts.values()):
+                raise RuntimeError('Status scroll model witness missing or zero')
+            if quint_toolchain()[0] != pin or sha(node) != pin['node']['sha256']:
+                raise RuntimeError('Status scroll model toolchain changed')
+            report['statusScrollModel'] = {'directed': names, 'witnesses': counts, 'samples': 10000,
+                                           'maxSteps': 50, 'seed': 20261101, 'toolchain': pin}
         if args.receipts:
             pin, cli = quint_toolchain()
             report['quintToolchain'] = pin

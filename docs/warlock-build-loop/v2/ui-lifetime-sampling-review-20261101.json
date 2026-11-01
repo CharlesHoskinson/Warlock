@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "reviewedUTC": "2026-11-01T09:05:27.133599+00:00",
+  "reviewer": "independent reviewer /root/readiness_review using existing authenticated reviewer identity",
+  "disposition": "qualified-supplementary-positive-reachability",
+  "sourceHashes": {
+    "implementation/warlock/haskell/runtime/formal/ui-engine-lifetime.qnt": "4d9dc045213c038d12f68c46941fd72b6357222536122e7a693f910edfc9be8d",
+    "implementation/warlock/haskell/runtime/formal/ui-engine-lifetime_test.qnt": "2ad115151339fd2270e8282adc62f97a6eef89aa732734b4654b84d5bbd882e3",
+    "tools/haskell_build.py": "1a4c8d7191b005c3001aaf170aa19ab5c358e5fe9abcdcb960ce70e18adf03a4"
+  },
+  "retainedFailure": ".warlock-contributor/haskell-cpu-1793523091945636320/report.json",
+  "unchangedObligations": [
+    "Original broad init/step/safety/fault/time transitions and seed20261101 10000x50 campaign remain unchanged",
+    "Retain actual broad witnessClean=0 and all prior failing reports; never retroactively relabel as PASS",
+    "Every other broad witness must remain nonzero",
+    "Separate guided campaign from same init and original guarded actions includes signal attachment, active invocation, disconnect, drain, notify, retirement and namespace exit/reap before clean",
+    "Named positive guidedSignalClean trace must execute",
+    "Keep separate broad/guided counts, invocation, source and limitations; do not sum them as broad coverage"
+  ],
+  "references": [
+    "docs/warlock-build-loop/v2/INSTRUCTIONS.md:60",
+    "docs/warlock-build-loop/v2/FUZZING-CONTRACTS.md:22",
+    "docs/warlock-build-loop/v2/FUZZING-CONTRACTS.md:24",
+    "docs/warlock-build-loop/v2/FUZZING-CONTRACTS.md:26"
+  ],
+  "limits": [
+    "Guided schedule excludes time elapse and failures; repeated deterministic guided runs are directed reachability, not diverse schedules",
+    "No timely real cleanup, provider qualification, actual native, whole EARS or release acceptance"
+  ],
+  "componentGate": "Composite broad safety+negative/boundary witness coverage AND explicitly separate positive guided reachability. Broader clean-sampling gap remains visible."
+}

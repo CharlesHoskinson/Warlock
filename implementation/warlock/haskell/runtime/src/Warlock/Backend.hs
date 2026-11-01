@@ -18,6 +18,7 @@ import Text.Read (readMaybe)
 import Warlock.Backend.Catalog
 import Warlock.Backend.PinStore
 import Warlock.Backend.Store
+import Warlock.Ui.Display (readDisplayEnvironment)
 import Warlock.Bootstrap
 import Warlock.Capture.Process.Bootstrap (Containment(..),OwnerStatus(..),deadlineFromAbsoluteNs,selectedCustody,selectedContainment,selectedOperation)
 import Warlock.Platform.Resolver (Identity(..),Kind(..),Pin(..),withRoot)
@@ -29,7 +30,7 @@ import Warlock.Protocol.Ingress (Direction(..),Priority(..),ingressBinding)
 import Warlock.Protocol.StrictJson
 
 data UiImage = UiImage FilePath Integer Integer Integer B.ByteString [String] [DirectoryPin]
-data BackendConfig = BackendConfig Binding String UiImage [DirectoryPin] DirectoryPin Text
+data BackendConfig = BackendConfig Binding String UiImage [DirectoryPin] DirectoryPin Text Bool
 data BackendResult = BackendResult
  {backendPassed :: Bool,backendCleanup :: Bool,backendCallbackCount :: Int,backendOperationCount :: Int
  ,backendBootstrap :: Either Text BootstrapResult,backendAuthObservation :: Maybe AuthObservation
@@ -54,7 +55,14 @@ decodeConfig :: B.ByteString -> Either Text BackendConfig
 decodeConfig bytes = do
  limits <- failure (bounds 131072 16)
  raw <- failure (decodeStrict limits bytes)
- fields <- object ["schema","binding","deadlineMonotonicNs","ui","catalogRoots","pinsRoot","locale"] raw
+ let names=["schema","binding","deadlineMonotonicNs","ui","catalogRoots","pinsRoot","locale"]
+ fields <- case raw of
+  JObject pairs | any ((=="applicationAttachment") . fst) pairs -> object ("applicationAttachment":names) raw
+  _ -> object names raw
+ attachment <- case lookup "applicationAttachment" fields of
+  Nothing -> Right False
+  Just (JBool value) -> Right value
+  _ -> Left "invalid application attachment opt-in"
  require (lookup "schema" fields==Just (JNumber "1")) "unsupported startup schema"
  bound <- key "binding" fields >>= bindingConfig
  deadline <- key "deadlineMonotonicNs" fields >>= string
@@ -65,7 +73,7 @@ decodeConfig bytes = do
  pins <- key "pinsRoot" fields >>= directoryConfig
  locale <- key "locale" fields >>= string
  require (T.length locale<=128 && not (T.any (< ' ') locale)) "invalid trusted locale"
- pure (BackendConfig bound (T.unpack deadline) image roots pins locale)
+ pure (BackendConfig bound (T.unpack deadline) image roots pins locale attachment)
  where
   bindingConfig raw = do
    fields <- object ["lifetime","session","frontend"] raw
@@ -118,9 +126,10 @@ positive :: Json -> Either Text Counter
 positive value = string value >>= failure . parseCounter False
 
 runBackend :: BackendConfig -> IO BackendResult
-runBackend (BackendConfig bound deadlineText (UiImage image dev ino size digest arguments parents) roots pinsRoot locale) = mask $ \restore -> do
+runBackend (BackendConfig bound deadlineText (UiImage image dev ino size digest arguments parents) roots pinsRoot locale attachmentEnabled) = mask $ \restore -> do
  catalog <- newCatalog roots locale (lifetime bound)
  pins <- newPinStore pinsRoot
+ attachmentAttempted <- newIORef False
  callbacks <- newIORef 0
  operations <- newIORef 0
  -- One bounded last-disposition cell plus a high-water mark prevents replay
@@ -179,6 +188,12 @@ runBackend (BackendConfig bound deadlineText (UiImage image dev ino size digest 
        modifyIORef' callbacks (+1)
        let requests=D.commitRequests commit
        unless (all ((==bound) . D.requestBinding) requests) (ioError (userError "checked commit binding mismatch"))
+       -- Reserve the one attempt before enqueue/delivery. Any exception ends
+       -- this authenticated session; an uncertain send is never replayed.
+       firstAttempt <- if attachmentEnabled
+        then atomicModifyIORef' attachmentAttempted (\attempted -> (True,not attempted))
+        else pure False
+       if firstAttempt then construct (D.applicationAttached bound) >>= sendReply else pure ()
        -- The shared codec/gate has validated ALL requests before this point.
        -- Presentation-only commits run this empty loop, with zero domain IO.
        forM_ requests handle
@@ -186,11 +201,12 @@ runBackend (BackendConfig bound deadlineText (UiImage image dev ino size digest 
  writeIORef slot (Just ingress)
  attempted <- try $ restore $ do
   deadline <- deadlineFromAbsoluteNs deadlineText >>= either (ioError . userError . show) pure
+  displayEnvironment <- readDisplayEnvironment >>= either (ioError . userError . T.unpack) pure
   rootStat <- getSymbolicLinkStatus "/"
   let imagePins=[Pin (TE.encodeUtf8 (T.pack (directoryPath parent))) (Identity (directoryDevice parent) (directoryInode parent)) Directory | parent <- parents]
        ++[Pin (TE.encodeUtf8 (T.pack image)) (Identity dev ino) Regular]
   withRoot "/" (Identity (toInteger (deviceID rootStat)) (toInteger (fileID rootStat))) $ \root ->
-   runBootstrapWithArguments owner root imagePins (TE.encodeUtf8 (T.pack (drop 1 image))) [] size digest arguments deadline [("LANG","C"),("LC_ALL","C")] ingress
+   runBootstrapWithArguments owner root imagePins (TE.encodeUtf8 (T.pack (drop 1 image))) [] size digest arguments deadline ([("LANG","C"),("LC_ALL","C")] ++ displayEnvironment) ingress
  processRetirement <- try (retireBootstrap owner) :: IO (Either SomeException Bool)
  catalogRetirement <- try (retireCatalog catalog) :: IO (Either SomeException Bool)
  pinRetirement <- try (retirePinStore pins) :: IO (Either SomeException Bool)
