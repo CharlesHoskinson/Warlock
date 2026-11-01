@@ -13,22 +13,22 @@
       "id": "ELM-ARC-002",
       "pointer": "/requirements/1/ears",
       "before": "The Elm desktop SHALL assign DOM presentation to Elm, Wayland surface lifetime to the native host, and application-window effects to native authority.",
-      "after": "The Elm desktop SHALL assign DOM presentation and all GUI elements to Elm, backend and native host integration to Haskell, and application-window effects to one native authority.",
-      "classification": "Explicit implementation language/ownership revision; behavioral verification remains unchanged"
+      "after": "The Elm desktop SHALL assign DOM presentation and all GUI elements to Elm, Wayland surface lifetime and backend/native host integration to Haskell, and application-window effects to one Haskell-owned native authority.",
+      "classification": "Explicit implementation-language/ownership revision; original scenario verification and behavior retained"
     },
     {
       "id": "ELM-DEL-003",
       "pointer": "/requirements/31/ears",
       "before": "The release builder SHALL pin compiler, Elm packages, test runner, JavaScript adapter, native dependencies and build-tool versions with source and artifact hashes.",
-      "after": "The release builder SHALL pin Elm and Haskell compilers and packages, test runner, approved native dependencies and build-tool versions with source and artifact hashes.",
-      "classification": "Explicit implementation language/ownership revision; behavioral verification remains unchanged"
+      "after": "The release builder SHALL pin Elm and Haskell compilers and packages, test runner, Haskell host and transport adapters, approved native dependencies and build-tool versions with source and artifact hashes.",
+      "classification": "Explicit implementation-language/ownership revision; original scenario verification and behavior retained"
     },
     {
       "id": "ELM-DEL-012",
       "pointer": "/requirements/40/ears",
       "before": "WHEN a privileged operation requires authorization, the shell SHALL delegate to the established native authorization flow and keep credentials outside Elm and JavaScript.",
-      "after": "WHEN a privileged operation requires authorization, the shell SHALL delegate to the established native authorization flow and keep credentials outside GUI state and frontend messages.",
-      "classification": "Explicit implementation language/ownership revision; behavioral verification remains unchanged"
+      "after": "WHEN a privileged operation requires authorization, the shell SHALL delegate to the established native authorization flow and keep credentials outside Elm state and all frontend messages.",
+      "classification": "Explicit implementation-language/ownership revision; original scenario verification and behavior retained"
     },
     {
       "id": "ELM-REN-023",

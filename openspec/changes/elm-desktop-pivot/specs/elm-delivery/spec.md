@@ -24,7 +24,7 @@ The release plan SHALL assign an accountable role, dependencies, runnable delive
 
 ### Requirement: ELM-DEL-003
 
-The release builder SHALL pin Elm and Haskell compilers and packages, test runner, approved native dependencies and build-tool versions with source and artifact hashes.
+The release builder SHALL pin Elm and Haskell compilers and packages, test runner, Haskell host and transport adapters, approved native dependencies and build-tool versions with source and artifact hashes.
 
 #### Scenario: ELM-DEL-003 delivery-003
 

@@ -35,6 +35,7 @@ class AdapterProgressTests(unittest.TestCase):
             self.assertEqual(record['iterations'][-1]['progressPolicy'], 6)
             record['iterations'][-1].update(progressPolicy=4, meaningfulProgress=True)
             self.fixture.write('.warlock-contributor/slice.json', record)
+            self.fixture.refresh_fixture_participant_index()
             self.cli('check')
         # Re-recording identical adapter bytes cannot conceal a stalled investigation.
         self.assertFalse(self.record()['iterations'][-1]['meaningfulProgress'])
@@ -59,9 +60,11 @@ class AdapterProgressTests(unittest.TestCase):
         for policy in (1, 2):
             record['iterations'][-1].update(progressPolicy=policy, meaningfulProgress=False)
             self.fixture.write(path, record)
+            self.fixture.refresh_fixture_participant_index(path)
             self.cli('check')
         record['iterations'][-1].pop('progressPolicy')
         self.fixture.write(path, record)
+        self.fixture.refresh_fixture_participant_index(path)
         self.cli('check')
         # A new record uses the current policy without treating old bytes as a new fix.
         self.assertFalse(self.record()['iterations'][-1]['meaningfulProgress'])
@@ -74,9 +77,11 @@ class AdapterProgressTests(unittest.TestCase):
         record = self.record()
         record['iterations'][-1]['meaningfulProgress'] = True
         self.fixture.write('.warlock-contributor/slice.json', record)
+        self.fixture.refresh_fixture_participant_index()
         self.cli('check', ok=False)
         record['iterations'][-1].update(meaningfulProgress=False, progressPolicy=99)
         self.fixture.write('.warlock-contributor/slice.json', record)
+        self.fixture.refresh_fixture_participant_index()
         self.cli('check', ok=False)
 
 

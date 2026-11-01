@@ -180,6 +180,7 @@ class DeliveryHelperTests(unittest.TestCase):
                 # Reconstruct a historical policy-4 row and prove it remains valid.
                 record['iterations'][-1].update(progressPolicy=4, meaningfulProgress=True)
                 self.fixture.write('.warlock-contributor/slice.json', record)
+                self.fixture.refresh_fixture_participant_index()
                 self.cli('check')
 
     def test_legacy_cpp_progress_assertion_remains_valid(self):
@@ -190,6 +191,7 @@ class DeliveryHelperTests(unittest.TestCase):
         record['iterations'][-1].pop('progressPolicy')
         record['iterations'][-1]['meaningfulProgress'] = False
         self.fixture.write(str(path.relative_to(self.repo)), record)
+        self.fixture.refresh_fixture_participant_index()
         self.cli('check')
         self.cli('record', '--outcome', 'qualification', '--summary', 'no additional code change')
         record = json.loads(path.read_text())

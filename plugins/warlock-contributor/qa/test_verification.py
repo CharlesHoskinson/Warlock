@@ -18,6 +18,8 @@ class VerificationPlannerTests(unittest.TestCase):
                      'check-native-authority.py', 'native-window-feedback.py'):
             self.fixture.write('implementation/warlock/qa/' + name,
                                "raise RuntimeError('planner must never execute this runner')\n")
+        self.fixture.write('window-integration-qa/qa_run.py', '# protected fixture launcher\n')
+        self.fixture.write('window-integration-qa/qa_launch.py', '# import fixture\n')
         self.fixture.run_git('add', '.')
         self.fixture.run_git('commit', '-qm', 'runner fixtures')
 
@@ -53,8 +55,12 @@ class VerificationPlannerTests(unittest.TestCase):
         packet = self.packet('--selected')
         target = packet['cpuTargets'][0]
         self.assertEqual(target['runner'], 'implementation/warlock/qa/check-feedback.py')
-        self.assertIn('/home/hoskinson/window-integration-qa/qa_run.py', target['argv'])
-        self.assertEqual(shlex.split(target['command'])[1:], target['argv'])
+        self.assertEqual(target['argv'][2], str(self.repo / 'window-integration-qa/qa_run.py'))
+        self.assertEqual(target['environment'], {
+            'PYTHONDONTWRITEBYTECODE': '1',
+            'PYTHONPATH': str(self.repo / 'window-integration-qa'),
+        })
+        self.assertEqual(shlex.split(target['command'])[2:], target['argv'])
         self.assertIsNone(packet['observations'][0]['recordedDisposition'])
         original = next(r for r in self.fixture.original['requirements'] if r['id'] == 'ELM-UI-007')
         self.assertEqual(packet['observations'][0]['verificationScope'], original['verification'])
@@ -75,6 +81,42 @@ class VerificationPlannerTests(unittest.TestCase):
         self.assertFalse(target['runnerAvailable'])
         self.assertIsNone(target['command'])
         self.assertIsNone(target['runnerSha256'])
+
+    def test_missing_protected_launcher_does_not_offer_direct_execution(self):
+        (self.repo / 'window-integration-qa/qa_run.py').unlink()
+        self.fixture.start()
+        target = self.packet('--selected')['cpuTargets'][0]
+        self.assertTrue(target['runnerAvailable'])
+        self.assertFalse(target['protectedLauncherAvailable'])
+        self.assertIsNone(target['command'])
+        self.assertIsNone(target['argv'])
+
+    def test_ux006_selects_preview_replay_and_keeps_native_gate_explicit(self):
+        paths = ['qa/PreviewStateReplay.elm', 'src/ActionProjection.elm',
+                 'src/Taskbar.elm', 'src/PreviewPresenter.elm', 'src/SurfaceRenderer.elm']
+        self.select('ELM-UX-006', 'ux-006', paths)
+        self.fixture.start()
+        packet = self.packet('--selected')
+        self.assertEqual(packet['verificationPlanSchema'], 2)
+        self.assertEqual(packet['unmappedProductPaths'], [])
+        self.assertEqual(packet['supportPaths'], ['implementation/warlock/qa/PreviewStateReplay.elm'])
+        self.assertEqual(len(packet['cpuTargets']), 1)
+        target = packet['cpuTargets'][0]
+        self.assertEqual(target['runner'], 'implementation/warlock/qa/check-search.py')
+        self.assertEqual(target['arguments'], ['--preview-states'])
+        self.assertEqual(target['triggerPaths'], sorted(
+            'implementation/warlock/' + path for path in paths[1:]))
+        self.assertEqual(packet['nativeCandidates'], [])
+        self.assertEqual(packet['unplannedOriginalObservations'], [{
+            'requirement': 'ELM-UX-006',
+            'scenario': 'ux-006',
+            'requiredVerification': 'Elm replay assertion and isolated native recording: entry remains present with historical preview label.',
+            'scenarioOracle': 'entry remains present with historical preview label',
+            'missingObservation': 'Isolated current-source native recording',
+            'reason': 'No qualified current-source UX-006 native runner is mapped; do not use the historical preview wrapper.',
+        }])
+        self.assertFalse(packet['executionPerformed'])
+        self.assertFalse(packet['acceptanceInferred'])
 
     def test_unknown_product_and_support_changes_stay_explicit(self):
         self.select('ELM-UI-007', 'restore-pending', ['src/NewFeature.elm', 'qa/helper.py'])

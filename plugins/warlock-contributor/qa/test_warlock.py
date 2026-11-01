@@ -90,6 +90,27 @@ class ContributionPolicyTests(unittest.TestCase):
     def start(self):
         self.cli('start', '--owner', 'fresh-contributor')
 
+    def refresh_fixture_participant_index(self, record_path='.warlock-contributor/slice.json'):
+        """Re-pin deliberate legacy fixture rewrites; never used by product commands."""
+        index_path = self.repo/'.warlock-contributor/participant-index.json'
+        index = json.loads(index_path.read_text())
+        path = self.repo/record_path
+        record = json.loads(path.read_bytes())
+        identity = {'owner': record['owner'], 'baseline': record['baseline'],
+                    'startedUTC': record['startedUTC'],
+                    'requirements': record['slice']['requirements'],
+                    'scenarios': record['slice']['scenarios']}
+        identity_bytes = json.dumps(identity, sort_keys=True, separators=(',', ':'), ensure_ascii=False).encode()
+        entry = {'identitySha256': hashlib.sha256(identity_bytes).hexdigest(),
+                 'owner': identity['owner'], 'baseline': identity['baseline'],
+                 'startedUTC': identity['startedUTC'], 'requirements': identity['requirements'],
+                 'scenarios': identity['scenarios'], 'recordSha256': hashlib.sha256(path.read_bytes()).hexdigest()}
+        index['records'][record_path] = entry
+        payload = {'schema': 1, 'records': dict(sorted(index['records'].items()))}
+        payload['indexSha256'] = hashlib.sha256(json.dumps(payload, sort_keys=True,
+            separators=(',', ':'), ensure_ascii=False).encode()).hexdigest()
+        index_path.write_text(json.dumps(payload, indent=2)+'\n')
+
     def claim(self, scope='component', scenario='restore-pending'):
         row = next(r for r in self.original['requirements'] if r['id'] == 'ELM-UI-007')
         original = next(s for s in row['scenarios'] if s['name'] == scenario)

@@ -59,6 +59,7 @@ class VerdictProgressTests(unittest.TestCase):
                 newer['claims'][0]['scope'] = 'Historical reworded observation'
                 record['iterations'].append(newer)
                 self.fixture.write('.warlock-contributor/slice.json', record)
+                self.fixture.refresh_fixture_participant_index()
                 self.cli('check')
                 self.claim['scope'] = 'Current wording after historical record'
                 self.fixture.record_claim(self.claim)
