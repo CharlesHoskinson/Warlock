@@ -52,7 +52,7 @@ The native service SHALL expose an allowlisted versioned operation schema and re
 
 ### Requirement: ELM-DEL-012
 
-WHEN a privileged operation requires authorization, the shell SHALL delegate to the established native authorization flow and keep credentials outside GUI state and frontend messages.
+WHEN a privileged operation requires authorization, the shell SHALL delegate to the established native authorization flow and keep credentials outside Elm state and all frontend messages.
 
 #### Scenario: ELM-DEL-012 delivery-012
 
