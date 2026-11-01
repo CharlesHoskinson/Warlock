@@ -61,17 +61,115 @@
       "capability": "elm-native-bridge",
       "owner": "Native authority lead",
       "verifier": "Independent acceptance reviewer",
-      "requirementAccepted": false,
-      "status": "unadjudicated",
+      "requirementAccepted": true,
+      "status": "accepted",
       "scenarios": [
         {
           "name": "architecture-003",
           "oracle": "both conform to the recorded schema",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "accepted",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/ui-backend-20261101/report.json",
+              "sha256": "c120a3781c5bf0c25f2fe4434ce80416a5c49d776d7458f5358f2941f615b298"
+            },
+            {
+              "path": "docs/warlock-build-loop/v2/ui-backend-review-20261101.json",
+              "sha256": "936741728bc6d5fe075ccc8abd01a212113a81c4fb720a453272699bf29bfb81"
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/ui-backend-20261101/checks.tar.gz",
+              "sha256": "7e2b9b26d30822d47c43936bf8bce1a1bc0ce22ac9c5d0c0c1350a0be42b0a61"
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/ui-backend-20261101/cpu-review.json",
+              "sha256": "14dffa755f9a39ae216c9b67a48e3e40d7fd3e5cea3560c68ed416459be7c173"
+            }
+          ],
+          "missingObservation": "",
+          "sourceTuple": {
+            "sourceRevision": "5818e78f436554a951f1b90f5c9b417e406404b6",
+            "core": "Actual compiled Elm Main/Bar/Popup and production Haskell catalog/pin backend over complete framed Linux SCM-credential/current-session bridge; no compositor loaded.",
+            "plugin": "No native plugin or GUI issuer loaded. Owning native core/plugin/provider ABI and physical GUI acceptance remain separate.",
+            "toolchain": "Pinned private GHC9.6.7/Cabal3.12.1.0 SDK inventory1fa8052136ec7e126372116f661cf986ad999f2e4d37eec7d9f4b579b569c8e9; Elm0.19.2 compiler c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948; Node24.22.1 e32e2d16081cf644f88392934288086e7662529d0d43277c34f7aad2207cfafb; Quint0.33.0 inventory verified. Frozen282Haskell+123Elm input union and identical compiledMain artifacts retained in evidence."
+          },
+          "sourceHashes": {
+            "implementation/warlock/src/Main.elm": "4065685987bf33fbc46872c3e94e72db24904ec5134373a82fc2f5d7b9362d55",
+            "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs": "e6a1a51cff8b45d9a0d0ad36d4273fae32a577ff27b7e7208f3af1beb5ede3b3",
+            "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Profile.hs": "ab79af8af70bf612ee8600ea6de8516ccd78c398dfddf6bf636a7835cc7703d0",
+            "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Codec.hs": "b59c1e2cd287d38c6667505b998c217ef1372cf8f6edac207a5b0e403d3f1098",
+            "implementation/warlock/haskell/protocol/src/Warlock/Protocol/StrictJson.hs": "1f3aacf0b5023c631472ebd7d6f9e7dbce54c5970af738469ee7ab3c1dde6edb",
+            "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Boundary/Internal.hs": "e79692fd8b0cc20dd5894af2dc899b35970351de0f44515fb985ab6fce299e8a",
+            "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress/Internal.hs": "d19e0f063981ab336d80c4eac9fbf4c234e1cc37fcb41aee95c485819f649ac4",
+            "implementation/warlock/haskell/protocol/src/Warlock/Protocol/CredentialIngress.hs": "c86974d8e829ad3116ece3c18be7f84fe13568392d6a07e50539cf95b9cd48d5",
+            "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Framing.hs": "75b0629a8ebbc26b3c1cb3133cb53414f2044da20b2f45e8843ac4ed0b7998c9",
+            "implementation/warlock/haskell/protocol/src/Warlock/Transport/Frame.hs": "987e6d32362a0360f42b46a0b7557b8127a37c5cf2b94909aefcc8b40b26a32c",
+            "implementation/warlock/haskell/protocol/src/Warlock/Transport/Channel.hs": "1cf54460cfd06c162f42b142698f8a7c5229829c62d72d816b7c13172dd91891",
+            "implementation/warlock/haskell/protocol/protocol.cabal": "5178daeb6e11fe13b9630445c1177df347468ba79616b3a484258aa36d7ef824",
+            "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs": "587416900f00aa410bf01c385af0ddba540db85c8c18ac3f78fd70d19179b966",
+            "implementation/warlock/haskell/runtime/src/Warlock/Backend/Catalog.hs": "4d5046a6a3c646196ab354553bc368c55046815831f982477f67c164c238ee83",
+            "implementation/warlock/haskell/runtime/src/Warlock/Backend/PinStore.hs": "98d910b51737944b5f2e03ac3d065c819297f0c0b6d01a4dc5ade41efc61a2f9",
+            "implementation/warlock/haskell/runtime/src/Warlock/Backend/Store.hsc": "2aa8ee35f9ef5c767fd259b413f705c8930bfb0f62effe4a97bdc906b47cceb9",
+            "implementation/warlock/haskell/runtime/app/Main.hs": "e2003201056710bbc803789ddb8b1a871da77ac5e5fa891b85485e2f1d0fda22",
+            "implementation/warlock/haskell/runtime/runtime.cabal": "38c85dd560f847545064746722b7fd624d16d14f0f1a71aad9db2e7ada55cc65",
+            "implementation/warlock/haskell/runtime/test-ui/Main.hs": "aaeea5db613516dbd2b0c274d22f493050014cadd38329f6f57ba209daac27bb",
+            "implementation/warlock/haskell/runtime/fixture-ui/Main.hs": "cfc433bc54c5eb5ca37e482b0eb64ac445d272922a85e6c8222134dc71c2cd6b",
+            "implementation/warlock/haskell/protocol/test-desktop/Main.hs": "d7bba80d3db010c1cfb9b466bdd6c1f208be2679ecdbfa0cda4057916974221b",
+            "implementation/warlock/qa/ui-backend-port.cjs": "20bb06c1f4dd3537cf3a25a58acb13edf263311415464a1e113ac9dd0cebee6b",
+            "implementation/warlock/qa/ui-native-stream.qnt": "8d8220e7f9dd9c9b9e01277ec16e66df18be602f81a41f0e235b7429d44c3966",
+            "implementation/warlock/qa/ui-native-stream_test.qnt": "c3c58080ad0160cb1d81cc5d40c19351bf5acc92efecfe028f06787efba967c3",
+            "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap.hs": "a195eb148828972a943135503ab9b230df39b821e5a1e1a9ffa883dfa2bdac11",
+            "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/Aggregate.hs": "21476f5689a3c822087317aa563f5b7993c857ce8be67105c45f2283a32dafe7",
+            "implementation/warlock/src/OutputController.elm": "fdf7b44483ec9312182a1b50bb2bbb5d52b804538e5c4d4ce5a4a8479e9af6ae",
+            "implementation/warlock/src/Desktop.elm": "315649a93b407648efc4d73dd41e16c496035983ebbae9feb1ac0f96b67388f3",
+            "implementation/warlock/src/Surface.elm": "5d94386fd423920c537841bc35f0c8101782cd38aee400b810dbee578d4ef5da",
+            "implementation/warlock/src/SurfaceController.elm": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
+            "implementation/warlock/src/Pins.elm": "c44da7aa32a193fc998d4efc39af25067998adc37d67da6d0c5b834f073635a4",
+            "implementation/warlock/qa/StreamCapacityReplay.elm": "6d3341047586efc479cd0292c89d3f16e76079d1d2a1433d673006d00fa98c92"
+          },
+          "reviewer": {
+            "name": "reviewer",
+            "independent": true,
+            "disposition": "accepted",
+            "identity": "Authenticated AgentBus reviewer in warlock-20261031-setup",
+            "independenceDisclosure": "Reviewer authored the independent public-linked QA and bridge harness, not the production Main/protocol/backend/paging/guard changes. Root reviewed QA and exclusively executed protected compiler/model/runtime checks."
+          },
+          "verificationScope": "Preserved scenario report with native or bridge trace showing: both conform to the recorded schema; artifact hashes and matching scenario receipts included.",
+          "scope": "Actual compiled Main Applications intent crossed the complete framed/kernel-authenticated production Haskell CLI and its actual checked gateway outcome entered the same compiled Main. Both conform to the recorded production schema, with exact request/binding and matching retained scenario receipt."
         }
-      ]
+      ],
+      "adjudicationHistory": [
+        {
+          "atUTC": "2026-11-01T04:25:52.772093+00:00",
+          "previousRecordedRow": {
+            "id": "ELM-ARC-003",
+            "phase": "P1",
+            "priority": "must",
+            "capability": "elm-native-bridge",
+            "owner": "Native authority lead",
+            "verifier": "Independent acceptance reviewer",
+            "requirementAccepted": false,
+            "status": "unadjudicated",
+            "scenarios": [
+              {
+                "name": "architecture-003",
+                "oracle": "both conform to the recorded schema",
+                "status": "unadjudicated",
+                "evidence": [],
+                "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+              }
+            ]
+          },
+          "reason": "Actual Elm/Haskell production integration and independent immutable review of complete original stream/security EARS and every named scenario."
+        }
+      ],
+      "acceptance": {
+        "path": "docs/warlock-build-loop/v2/ui-backend-acceptance-20261101.json",
+        "sha256": "41b7fbd0d52f5362ef8e80a4d03caf909bda9446ff7f50e080360f67d255d54c",
+        "scope": "Complete original ELM-ARC-003 stream/envelope and ELM-DEL-011 versioned allowlisted operation-boundary EARS, with all three named original scenarios accepted on this immutable source. ARC003 explicitly permits bridge evidence. This is not full product/native GUI or release acceptance.",
+        "sourceRevision": "5818e78f436554a951f1b90f5c9b417e406404b6",
+        "reviewer": "reviewer"
+      }
     },
     {
       "id": "ELM-ARC-004",
@@ -1984,24 +2082,195 @@
       "capability": "elm-security",
       "owner": "Native security lead",
       "verifier": "Independent acceptance reviewer",
-      "requirementAccepted": false,
-      "status": "unadjudicated",
+      "requirementAccepted": true,
+      "status": "accepted",
       "scenarios": [
         {
           "name": "delivery-011",
           "oracle": "native authority rejects it",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "accepted",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/ui-backend-20261101/report.json",
+              "sha256": "c120a3781c5bf0c25f2fe4434ce80416a5c49d776d7458f5358f2941f615b298"
+            },
+            {
+              "path": "docs/warlock-build-loop/v2/ui-backend-review-20261101.json",
+              "sha256": "936741728bc6d5fe075ccc8abd01a212113a81c4fb720a453272699bf29bfb81"
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/ui-backend-20261101/checks.tar.gz",
+              "sha256": "7e2b9b26d30822d47c43936bf8bce1a1bc0ce22ac9c5d0c0c1350a0be42b0a61"
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/ui-backend-20261101/cpu-review.json",
+              "sha256": "14dffa755f9a39ae216c9b67a48e3e40d7fd3e5cea3560c68ed416459be7c173"
+            }
+          ],
+          "missingObservation": "",
+          "sourceTuple": {
+            "sourceRevision": "5818e78f436554a951f1b90f5c9b417e406404b6",
+            "core": "Actual compiled Elm Main/Bar/Popup and production Haskell catalog/pin backend over complete framed Linux SCM-credential/current-session bridge; no compositor loaded.",
+            "plugin": "No native plugin or GUI issuer loaded. Owning native core/plugin/provider ABI and physical GUI acceptance remain separate.",
+            "toolchain": "Pinned private GHC9.6.7/Cabal3.12.1.0 SDK inventory1fa8052136ec7e126372116f661cf986ad999f2e4d37eec7d9f4b579b569c8e9; Elm0.19.2 compiler c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948; Node24.22.1 e32e2d16081cf644f88392934288086e7662529d0d43277c34f7aad2207cfafb; Quint0.33.0 inventory verified. Frozen282Haskell+123Elm input union and identical compiledMain artifacts retained in evidence."
+          },
+          "sourceHashes": {
+            "implementation/warlock/src/Main.elm": "4065685987bf33fbc46872c3e94e72db24904ec5134373a82fc2f5d7b9362d55",
+            "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs": "e6a1a51cff8b45d9a0d0ad36d4273fae32a577ff27b7e7208f3af1beb5ede3b3",
+            "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Profile.hs": "ab79af8af70bf612ee8600ea6de8516ccd78c398dfddf6bf636a7835cc7703d0",
+            "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Codec.hs": "b59c1e2cd287d38c6667505b998c217ef1372cf8f6edac207a5b0e403d3f1098",
+            "implementation/warlock/haskell/protocol/src/Warlock/Protocol/StrictJson.hs": "1f3aacf0b5023c631472ebd7d6f9e7dbce54c5970af738469ee7ab3c1dde6edb",
+            "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Boundary/Internal.hs": "e79692fd8b0cc20dd5894af2dc899b35970351de0f44515fb985ab6fce299e8a",
+            "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress/Internal.hs": "d19e0f063981ab336d80c4eac9fbf4c234e1cc37fcb41aee95c485819f649ac4",
+            "implementation/warlock/haskell/protocol/src/Warlock/Protocol/CredentialIngress.hs": "c86974d8e829ad3116ece3c18be7f84fe13568392d6a07e50539cf95b9cd48d5",
+            "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Framing.hs": "75b0629a8ebbc26b3c1cb3133cb53414f2044da20b2f45e8843ac4ed0b7998c9",
+            "implementation/warlock/haskell/protocol/src/Warlock/Transport/Frame.hs": "987e6d32362a0360f42b46a0b7557b8127a37c5cf2b94909aefcc8b40b26a32c",
+            "implementation/warlock/haskell/protocol/src/Warlock/Transport/Channel.hs": "1cf54460cfd06c162f42b142698f8a7c5229829c62d72d816b7c13172dd91891",
+            "implementation/warlock/haskell/protocol/protocol.cabal": "5178daeb6e11fe13b9630445c1177df347468ba79616b3a484258aa36d7ef824",
+            "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs": "587416900f00aa410bf01c385af0ddba540db85c8c18ac3f78fd70d19179b966",
+            "implementation/warlock/haskell/runtime/src/Warlock/Backend/Catalog.hs": "4d5046a6a3c646196ab354553bc368c55046815831f982477f67c164c238ee83",
+            "implementation/warlock/haskell/runtime/src/Warlock/Backend/PinStore.hs": "98d910b51737944b5f2e03ac3d065c819297f0c0b6d01a4dc5ade41efc61a2f9",
+            "implementation/warlock/haskell/runtime/src/Warlock/Backend/Store.hsc": "2aa8ee35f9ef5c767fd259b413f705c8930bfb0f62effe4a97bdc906b47cceb9",
+            "implementation/warlock/haskell/runtime/app/Main.hs": "e2003201056710bbc803789ddb8b1a871da77ac5e5fa891b85485e2f1d0fda22",
+            "implementation/warlock/haskell/runtime/runtime.cabal": "38c85dd560f847545064746722b7fd624d16d14f0f1a71aad9db2e7ada55cc65",
+            "implementation/warlock/haskell/runtime/test-ui/Main.hs": "aaeea5db613516dbd2b0c274d22f493050014cadd38329f6f57ba209daac27bb",
+            "implementation/warlock/haskell/runtime/fixture-ui/Main.hs": "cfc433bc54c5eb5ca37e482b0eb64ac445d272922a85e6c8222134dc71c2cd6b",
+            "implementation/warlock/haskell/protocol/test-desktop/Main.hs": "d7bba80d3db010c1cfb9b466bdd6c1f208be2679ecdbfa0cda4057916974221b",
+            "implementation/warlock/qa/ui-backend-port.cjs": "20bb06c1f4dd3537cf3a25a58acb13edf263311415464a1e113ac9dd0cebee6b",
+            "implementation/warlock/qa/ui-native-stream.qnt": "8d8220e7f9dd9c9b9e01277ec16e66df18be602f81a41f0e235b7429d44c3966",
+            "implementation/warlock/qa/ui-native-stream_test.qnt": "c3c58080ad0160cb1d81cc5d40c19351bf5acc92efecfe028f06787efba967c3",
+            "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap.hs": "a195eb148828972a943135503ab9b230df39b821e5a1e1a9ffa883dfa2bdac11",
+            "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/Aggregate.hs": "21476f5689a3c822087317aa563f5b7993c857ce8be67105c45f2283a32dafe7",
+            "implementation/warlock/src/OutputController.elm": "fdf7b44483ec9312182a1b50bb2bbb5d52b804538e5c4d4ce5a4a8479e9af6ae",
+            "implementation/warlock/src/Desktop.elm": "315649a93b407648efc4d73dd41e16c496035983ebbae9feb1ac0f96b67388f3",
+            "implementation/warlock/src/Surface.elm": "5d94386fd423920c537841bc35f0c8101782cd38aee400b810dbee578d4ef5da",
+            "implementation/warlock/src/SurfaceController.elm": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
+            "implementation/warlock/src/Pins.elm": "c44da7aa32a193fc998d4efc39af25067998adc37d67da6d0c5b834f073635a4",
+            "implementation/warlock/qa/StreamCapacityReplay.elm": "6d3341047586efc479cd0292c89d3f16e76079d1d2a1433d673006d00fa98c92"
+          },
+          "reviewer": {
+            "name": "reviewer",
+            "independent": true,
+            "disposition": "accepted",
+            "identity": "Authenticated AgentBus reviewer in warlock-20261031-setup",
+            "independenceDisclosure": "Reviewer authored the independent public-linked QA and bridge harness, not the production Main/protocol/backend/paging/guard changes. Root reviewed QA and exclusively executed protected compiler/model/runtime checks."
+          },
+          "verificationScope": "Fuzz bridge operations and confirm no spawned command or arbitrary file read.",
+          "scope": "The actual selected authenticated client sent shell/unknown operations through the called production service. Native-side Haskell ingress rejected them before callback, with actual credential rejection receipts, no arbitrary command sentinel and no domain operation. Valid production catalog and CAS controls succeeded."
         },
         {
           "name": "arbitrary-path-denied",
           "oracle": "schema validation refuses it with no file read, write or command execution",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "accepted",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/ui-backend-20261101/report.json",
+              "sha256": "c120a3781c5bf0c25f2fe4434ce80416a5c49d776d7458f5358f2941f615b298"
+            },
+            {
+              "path": "docs/warlock-build-loop/v2/ui-backend-review-20261101.json",
+              "sha256": "936741728bc6d5fe075ccc8abd01a212113a81c4fb720a453272699bf29bfb81"
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/ui-backend-20261101/checks.tar.gz",
+              "sha256": "7e2b9b26d30822d47c43936bf8bce1a1bc0ce22ac9c5d0c0c1350a0be42b0a61"
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/ui-backend-20261101/cpu-review.json",
+              "sha256": "14dffa755f9a39ae216c9b67a48e3e40d7fd3e5cea3560c68ed416459be7c173"
+            }
+          ],
+          "missingObservation": "",
+          "sourceTuple": {
+            "sourceRevision": "5818e78f436554a951f1b90f5c9b417e406404b6",
+            "core": "Actual compiled Elm Main/Bar/Popup and production Haskell catalog/pin backend over complete framed Linux SCM-credential/current-session bridge; no compositor loaded.",
+            "plugin": "No native plugin or GUI issuer loaded. Owning native core/plugin/provider ABI and physical GUI acceptance remain separate.",
+            "toolchain": "Pinned private GHC9.6.7/Cabal3.12.1.0 SDK inventory1fa8052136ec7e126372116f661cf986ad999f2e4d37eec7d9f4b579b569c8e9; Elm0.19.2 compiler c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948; Node24.22.1 e32e2d16081cf644f88392934288086e7662529d0d43277c34f7aad2207cfafb; Quint0.33.0 inventory verified. Frozen282Haskell+123Elm input union and identical compiledMain artifacts retained in evidence."
+          },
+          "sourceHashes": {
+            "implementation/warlock/src/Main.elm": "4065685987bf33fbc46872c3e94e72db24904ec5134373a82fc2f5d7b9362d55",
+            "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs": "e6a1a51cff8b45d9a0d0ad36d4273fae32a577ff27b7e7208f3af1beb5ede3b3",
+            "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Profile.hs": "ab79af8af70bf612ee8600ea6de8516ccd78c398dfddf6bf636a7835cc7703d0",
+            "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Codec.hs": "b59c1e2cd287d38c6667505b998c217ef1372cf8f6edac207a5b0e403d3f1098",
+            "implementation/warlock/haskell/protocol/src/Warlock/Protocol/StrictJson.hs": "1f3aacf0b5023c631472ebd7d6f9e7dbce54c5970af738469ee7ab3c1dde6edb",
+            "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Boundary/Internal.hs": "e79692fd8b0cc20dd5894af2dc899b35970351de0f44515fb985ab6fce299e8a",
+            "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress/Internal.hs": "d19e0f063981ab336d80c4eac9fbf4c234e1cc37fcb41aee95c485819f649ac4",
+            "implementation/warlock/haskell/protocol/src/Warlock/Protocol/CredentialIngress.hs": "c86974d8e829ad3116ece3c18be7f84fe13568392d6a07e50539cf95b9cd48d5",
+            "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Framing.hs": "75b0629a8ebbc26b3c1cb3133cb53414f2044da20b2f45e8843ac4ed0b7998c9",
+            "implementation/warlock/haskell/protocol/src/Warlock/Transport/Frame.hs": "987e6d32362a0360f42b46a0b7557b8127a37c5cf2b94909aefcc8b40b26a32c",
+            "implementation/warlock/haskell/protocol/src/Warlock/Transport/Channel.hs": "1cf54460cfd06c162f42b142698f8a7c5229829c62d72d816b7c13172dd91891",
+            "implementation/warlock/haskell/protocol/protocol.cabal": "5178daeb6e11fe13b9630445c1177df347468ba79616b3a484258aa36d7ef824",
+            "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs": "587416900f00aa410bf01c385af0ddba540db85c8c18ac3f78fd70d19179b966",
+            "implementation/warlock/haskell/runtime/src/Warlock/Backend/Catalog.hs": "4d5046a6a3c646196ab354553bc368c55046815831f982477f67c164c238ee83",
+            "implementation/warlock/haskell/runtime/src/Warlock/Backend/PinStore.hs": "98d910b51737944b5f2e03ac3d065c819297f0c0b6d01a4dc5ade41efc61a2f9",
+            "implementation/warlock/haskell/runtime/src/Warlock/Backend/Store.hsc": "2aa8ee35f9ef5c767fd259b413f705c8930bfb0f62effe4a97bdc906b47cceb9",
+            "implementation/warlock/haskell/runtime/app/Main.hs": "e2003201056710bbc803789ddb8b1a871da77ac5e5fa891b85485e2f1d0fda22",
+            "implementation/warlock/haskell/runtime/runtime.cabal": "38c85dd560f847545064746722b7fd624d16d14f0f1a71aad9db2e7ada55cc65",
+            "implementation/warlock/haskell/runtime/test-ui/Main.hs": "aaeea5db613516dbd2b0c274d22f493050014cadd38329f6f57ba209daac27bb",
+            "implementation/warlock/haskell/runtime/fixture-ui/Main.hs": "cfc433bc54c5eb5ca37e482b0eb64ac445d272922a85e6c8222134dc71c2cd6b",
+            "implementation/warlock/haskell/protocol/test-desktop/Main.hs": "d7bba80d3db010c1cfb9b466bdd6c1f208be2679ecdbfa0cda4057916974221b",
+            "implementation/warlock/qa/ui-backend-port.cjs": "20bb06c1f4dd3537cf3a25a58acb13edf263311415464a1e113ac9dd0cebee6b",
+            "implementation/warlock/qa/ui-native-stream.qnt": "8d8220e7f9dd9c9b9e01277ec16e66df18be602f81a41f0e235b7429d44c3966",
+            "implementation/warlock/qa/ui-native-stream_test.qnt": "c3c58080ad0160cb1d81cc5d40c19351bf5acc92efecfe028f06787efba967c3",
+            "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap.hs": "a195eb148828972a943135503ab9b230df39b821e5a1e1a9ffa883dfa2bdac11",
+            "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/Aggregate.hs": "21476f5689a3c822087317aa563f5b7993c857ce8be67105c45f2283a32dafe7",
+            "implementation/warlock/src/OutputController.elm": "fdf7b44483ec9312182a1b50bb2bbb5d52b804538e5c4d4ce5a4a8479e9af6ae",
+            "implementation/warlock/src/Desktop.elm": "315649a93b407648efc4d73dd41e16c496035983ebbae9feb1ac0f96b67388f3",
+            "implementation/warlock/src/Surface.elm": "5d94386fd423920c537841bc35f0c8101782cd38aee400b810dbee578d4ef5da",
+            "implementation/warlock/src/SurfaceController.elm": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
+            "implementation/warlock/src/Pins.elm": "c44da7aa32a193fc998d4efc39af25067998adc37d67da6d0c5b834f073635a4",
+            "implementation/warlock/qa/StreamCapacityReplay.elm": "6d3341047586efc479cd0292c89d3f16e76079d1d2a1433d673006d00fa98c92"
+          },
+          "reviewer": {
+            "name": "reviewer",
+            "independent": true,
+            "disposition": "accepted",
+            "identity": "Authenticated AgentBus reviewer in warlock-20261031-setup",
+            "independenceDisclosure": "Reviewer authored the independent public-linked QA and bridge harness, not the production Main/protocol/backend/paging/guard changes. Root reviewed QA and exclusively executed protected compiler/model/runtime checks."
+          },
+          "verificationScope": "Fuzz bridge operations and confirm no spawned command or arbitrary file read.",
+          "scope": "Operation paths, nested pin selectors and malformed suffixes were refused before any checked domain callback. Independent source trace confirms catalog/store effects occur only after this gate; all actual negative counters are0, reply logs empty, fixed-file bytes preserved and arbitrary commands absent. Presentation text is never interpreted as an IO path."
         }
-      ]
+      ],
+      "adjudicationHistory": [
+        {
+          "atUTC": "2026-11-01T04:25:52.772093+00:00",
+          "previousRecordedRow": {
+            "id": "ELM-DEL-011",
+            "phase": "P2",
+            "priority": "must",
+            "capability": "elm-security",
+            "owner": "Native security lead",
+            "verifier": "Independent acceptance reviewer",
+            "requirementAccepted": false,
+            "status": "unadjudicated",
+            "scenarios": [
+              {
+                "name": "delivery-011",
+                "oracle": "native authority rejects it",
+                "status": "unadjudicated",
+                "evidence": [],
+                "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+              },
+              {
+                "name": "arbitrary-path-denied",
+                "oracle": "schema validation refuses it with no file read, write or command execution",
+                "status": "unadjudicated",
+                "evidence": [],
+                "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+              }
+            ]
+          },
+          "reason": "Actual Elm/Haskell production integration and independent immutable review of complete original stream/security EARS and every named scenario."
+        }
+      ],
+      "acceptance": {
+        "path": "docs/warlock-build-loop/v2/ui-backend-acceptance-20261101.json",
+        "sha256": "41b7fbd0d52f5362ef8e80a4d03caf909bda9446ff7f50e080360f67d255d54c",
+        "scope": "Complete original ELM-ARC-003 stream/envelope and ELM-DEL-011 versioned allowlisted operation-boundary EARS, with all three named original scenarios accepted on this immutable source. ARC003 explicitly permits bridge evidence. This is not full product/native GUI or release acceptance.",
+        "sourceRevision": "5818e78f436554a951f1b90f5c9b417e406404b6",
+        "reviewer": "reviewer"
+      }
     },
     {
       "id": "ELM-DEL-012",
@@ -16944,5 +17213,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-11-01T02:02:46.684712+00:00"
+  "updatedUTC": "2026-11-01T04:25:52.772093+00:00"
 }

@@ -1,8 +1,8 @@
 # Desktop application stream
 
 The current source integrates Elm Main with a bounded Haskell catalog/pin
-backend. Protected executable and bridge checks pass; independent original acceptance
-is pending. This page asserts no native GUI or release acceptance. The
+backend. Protected executable and bridge checks pass. Complete original ARC003
+and DEL011 are independently accepted on the [immutable source tuple](../../warlock-build-loop/v2/ui-backend-acceptance-20261101.json). This page asserts no native GUI or release acceptance. The
 [shared contract](../../warlock-build-loop/v2/shared-desktop-contract-20261101.json)
 records the reviewed schema and its provenance.
 
@@ -55,8 +55,9 @@ before domain I/O, and legitimate missing identities retain their order.
 ARC003 requires one incoming/outgoing stream, the recorded versioned schema and
 matching intent/outcome bridge receipts with artifact hashes. DEL011 requires
 both shell/unknown-method refusal and arbitrary-path refusal without operation
-file I/O or command execution. All three original scenarios need independent
-source-bound adjudication; decoder counts alone do not close them.
+file I/O or command execution. All three original scenarios have independent
+source-bound adjudication in the linked acceptance; decoder counts alone did not
+close them.
 
 The fixed QA route runs compiled Main against the actual production executable
 and physical catalog/store files. Connected-host topology and native bootstrap

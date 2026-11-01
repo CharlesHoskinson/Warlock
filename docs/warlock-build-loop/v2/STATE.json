@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "owner": "root-agentbus",
-  "updatedUTC": "2026-11-01T04:17:58.314636+00:00",
+  "updatedUTC": "2026-11-01T04:27:34.961131+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
@@ -57,8 +57,12 @@
     ],
     "owner": "root-agentbus",
     "participantRecord": ".warlock-contributor/ui-backend.json",
-    "outcome": "Sixthruntime PASS4c37dc57:27suites39invocations/55maliciouscases/pure1656; actualMain8010checks401orderedframes/all2048in257pages/max32fullnames96management129pages. FullElm PASS1f6d6bf6. Evidencec120a378/archive7e2b9b26retainallfailures; immutablecommit+independentoriginalARC003/DEL011all3scenarios pending. Native/privateHTTP/persistentGUI/release remainopen.",
-    "readinessReview": ".warlock-contributor/ui-backend-readiness-review.json"
+    "outcome": "Whole originalARC003+DEL011/all3scenarios independentlyaccepted93674172 onimmutable5818e78f; actualsourceintegration andcompletebridge/preIOsecurityoracles. NativeGUI/privateHTTP/persistentview/AT/IME/release obligations separate.",
+    "readinessReview": ".warlock-contributor/ui-backend-readiness-review.json",
+    "status": "accepted",
+    "sourceRevision": "5818e78f436554a951f1b90f5c9b417e406404b6",
+    "acceptance": "docs/warlock-build-loop/v2/ui-backend-acceptance-20261101.json",
+    "independentReview": "docs/warlock-build-loop/v2/ui-backend-review-20261101.json"
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -2104,6 +2108,36 @@
       "owner": "root-launcher-policy",
       "participantRecord": ".warlock-contributor/launcher-frozen-policy-states.json",
       "outcome": "Whole original UI005 independently accepted after current compiled ranking/actual locale adapter-to-search and native initial/held-loading paint/keyboard/AT. Exact independent review bbe84bd8 binds current367native sources and supports bounded older named-scenario tuple reuse. Five named scenario ledger objects unchanged; evidence source revision4070beb50440077dcf36842ade7c5887173604e5. Renderer/New Instance/pin-top/IME and full release remain open."
+    },
+    {
+      "id": "pure-announcement-message-contract",
+      "requirements": [
+        "ELM-UI-010"
+      ],
+      "scenarios": [
+        "announce-launch refusal",
+        "announce-transfer refusal",
+        "announce-settings validation failure"
+      ],
+      "paths": [
+        "implementation/warlock/src/AnnouncementMessage.elm",
+        "implementation/warlock/src/Announcement.elm",
+        "implementation/warlock/src/OutcomeAnnouncements.elm",
+        "implementation/warlock/qa/AnnouncementMessageContracts.elm",
+        "implementation/warlock/qa/announcement-message-contracts.cjs",
+        "implementation/warlock/qa/check-announcement-message-contracts.py",
+        "implementation/warlock/README.md"
+      ],
+      "before": "OutputController transitively imports Html through OutcomeAnnouncements to Announcement, because the existing public announcement Message record and encoder live alongside receiver/view code. Snapshot migration already removed the other direct policy/render contract dependency.",
+      "after": "A pure AnnouncementMessage value/encoder module owns the exact existing public record alias and extensible encoder; Announcement forwards those APIs and retains byte-identical receiver validation/routing/view. OutcomeAnnouncements imports the pure module; refuse/notify/DND/correlation/sequence/focus policy is unchanged. Remove remaining policy-to-Html import path without claiming a new validated opaque message type.",
+      "verification": [
+        "Fresh optimized Main Bar Popup build with exact current source/compiler/cache provenance. Compile and run actual AnnouncementReplay and NotificationAnnouncementReplay assertions plus bounded seeded differential old/new/public-facade encoder checks, including extensible-record input and canonical counter/string/interrupt preservation.",
+        "Preserve existing receiver bounds and native authority, publication/lease, deduplication, critical opt-in/DND and no-focus semantics. Invalid receiver strings may be encoder-equivalence inputs, not receiver-admission claims. No model change for pure alias/encoder move, no native rerun or original AT/audible/braille acceptance from CPU tests.",
+        "Independent exact source delta/caller/import closure review, actual report hashes and original scenario scope. Update DEBT02 and Diataxis/wiki, refresh Graphify CUDA/eval; do not silently reuse old three-root source report after changes. No further renderer diagnostic investigation under this slice."
+      ],
+      "owner": "root-announcement-message",
+      "participantRecord": ".warlock-contributor/pure-announcement-message-contract.json",
+      "outcome": "Published a7d61506a pure announcement value extraction and actual 3-root/216encoder/12refusal passes; six notification checks byte-identical failing before/after exactabe216twofilebaseline. Bothfailures preserved, DEBT12 causeopen, notification investigation STOP2. No native/scenario promotion."
     }
   ],
   "lastSlice": {
@@ -2609,34 +2643,61 @@
     }
   ],
   "lastCompletedBoundedSlice": {
-    "id": "pure-announcement-message-contract",
+    "id": "haskell-desktop-stream-catalog-pins",
     "requirements": [
-      "ELM-UI-010"
+      "ELM-ARC-003",
+      "ELM-DEL-011"
     ],
     "scenarios": [
-      "announce-launch refusal",
-      "announce-transfer refusal",
-      "announce-settings validation failure"
+      "architecture-003",
+      "delivery-011",
+      "arbitrary-path-denied"
     ],
     "paths": [
-      "implementation/warlock/src/AnnouncementMessage.elm",
-      "implementation/warlock/src/Announcement.elm",
-      "implementation/warlock/src/OutcomeAnnouncements.elm",
-      "implementation/warlock/qa/AnnouncementMessageContracts.elm",
-      "implementation/warlock/qa/announcement-message-contracts.cjs",
-      "implementation/warlock/qa/check-announcement-message-contracts.py",
-      "implementation/warlock/README.md"
+      "implementation/warlock/src/Main.elm",
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Profile.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Codec.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/StrictJson.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Boundary/Internal.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress/Internal.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/CredentialIngress.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Framing.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Transport/Frame.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Transport/Channel.hs",
+      "implementation/warlock/haskell/protocol/protocol.cabal",
+      "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Backend/Catalog.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Backend/PinStore.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Backend/Store.hsc",
+      "implementation/warlock/haskell/runtime/app/Main.hs",
+      "implementation/warlock/haskell/runtime/runtime.cabal",
+      "implementation/warlock/haskell/runtime/test-ui/Main.hs",
+      "implementation/warlock/haskell/runtime/fixture-ui/Main.hs",
+      "implementation/warlock/haskell/protocol/test-desktop/Main.hs",
+      "implementation/warlock/qa/ui-backend-port.cjs",
+      "implementation/warlock/qa/ui-native-stream.qnt",
+      "implementation/warlock/qa/ui-native-stream_test.qnt",
+      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/Aggregate.hs",
+      "implementation/warlock/src/OutputController.elm",
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/src/Surface.elm",
+      "implementation/warlock/src/SurfaceController.elm"
     ],
-    "before": "OutputController transitively imports Html through OutcomeAnnouncements to Announcement, because the existing public announcement Message record and encoder live alongside receiver/view code. Snapshot migration already removed the other direct policy/render contract dependency.",
-    "after": "A pure AnnouncementMessage value/encoder module owns the exact existing public record alias and extensible encoder; Announcement forwards those APIs and retains byte-identical receiver validation/routing/view. OutcomeAnnouncements imports the pure module; refuse/notify/DND/correlation/sequence/focus policy is unchanged. Remove remaining policy-to-Html import path without claiming a new validated opaque message type.",
+    "before": "Actual Main exposes multiple incoming ports; current Haskell protocol admits only native1/2 and has no called catalog/pin backend or GUI stream composition. Imported historical Python behavior is not Haskell implementation.",
+    "after": "The actual Main exposes one versioned incoming/outgoing stream and a called production Haskell backend validates full commit and typed operation schema before kernel-authenticated catalog/pin IO, returns matching actual outcomes, and rejects command/path/unknown operations before IO. Full privateUIHTTP/native/persistent-delivery goal remains, not redefined to a library/read-only demo.",
     "verification": [
-      "Fresh optimized Main Bar Popup build with exact current source/compiler/cache provenance. Compile and run actual AnnouncementReplay and NotificationAnnouncementReplay assertions plus bounded seeded differential old/new/public-facade encoder checks, including extensible-record input and canonical counter/string/interrupt preservation.",
-      "Preserve existing receiver bounds and native authority, publication/lease, deduplication, critical opt-in/DND and no-focus semantics. Invalid receiver strings may be encoder-equivalence inputs, not receiver-admission claims. No model change for pure alias/encoder move, no native rerun or original AT/audible/braille acceptance from CPU tests.",
-      "Independent exact source delta/caller/import closure review, actual report hashes and original scenario scope. Update DEBT02 and Diataxis/wiki, refresh Graphify CUDA/eval; do not silently reuse old three-root source report after changes. No further renderer diagnostic investigation under this slice."
+      "Root protected buildall/testall and real production-executable kernel-framed actual compiledMain roundtrip with complete surfaceCommit, matching schema/hash receipts, strict typed profiles and legacy64KiB controls. Meaningful malformed/profile/provenance fuzz before anycallback, actualno command/arbitraryfileIO proof and CAS/privatefile/persistence controls; Quint model actual boundaries. Independently reviewed source readiness/immutable alloriginaloracles; no nativeGUI/AT/release inference."
     ],
-    "owner": "root-announcement-message",
-    "participantRecord": ".warlock-contributor/pure-announcement-message-contract.json",
-    "outcome": "Published a7d61506a pure announcement value extraction and actual 3-root/216encoder/12refusal passes; six notification checks byte-identical failing before/after exactabe216twofilebaseline. Bothfailures preserved, DEBT12 causeopen, notification investigation STOP2. No native/scenario promotion."
+    "owner": "root-agentbus",
+    "participantRecord": ".warlock-contributor/ui-backend.json",
+    "outcome": "Whole originalARC003+DEL011/all3scenarios independentlyaccepted93674172 onimmutable5818e78f; actualsourceintegration andcompletebridge/preIOsecurityoracles. NativeGUI/privateHTTP/persistentview/AT/IME/release obligations separate.",
+    "readinessReview": ".warlock-contributor/ui-backend-readiness-review.json",
+    "status": "accepted",
+    "sourceRevision": "5818e78f436554a951f1b90f5c9b417e406404b6",
+    "acceptance": "docs/warlock-build-loop/v2/ui-backend-acceptance-20261101.json",
+    "independentReview": "docs/warlock-build-loop/v2/ui-backend-review-20261101.json"
   },
   "stoppedInvestigations": [
     {
@@ -3376,8 +3437,8 @@
     "authAcknowledgements": "AgentBus live log; process launch alone is not successful authentication",
     "singleProductSlice": true,
     "noDuplicateCoordinator": true,
-    "currentSlice": "ELM-ARC-003/architecture-003 and ELM-DEL-011/delivery-011+arbitrary-path-denied; all clauses pending whole original adjudication",
-    "currentProcessObservation": "Root protected third run active, source inputs frozen. All three internal workers completed handoffs/claims released per collaboration list; model launcher PID1501042 absent; own log terminal exit0. Registered identities are not running agents; no parallel protected job.",
+    "currentSlice": "Whole ELM-ARC-003+ELM-DEL-011 accepted; next privateUIHTTP/WebKit/provenance/persistentowner preparation and actualsource integration",
+    "currentProcessObservation": "All source/model/QA/finalreview workers completed handoffs and released claims. Root integrates accepted original verdict/publishes normalbatch; one coordinator, no background worker count inferred from registeredidentities.",
     "lastHealthObservation": {
       "observedUTC": "2026-11-01T03:01:00Z",
       "doctor": "six checks healthy; lead credential valid19hours, arbiter existingPID1116694; services/keys reused"
@@ -3392,18 +3453,26 @@
     "scope": "Host cumulative telemetry; component/native/original acceptance separate"
   },
   "currentOriginalClosure": {
-    "requirement": "ELM-TEA-003",
+    "requirements": [
+      "ELM-ARC-003",
+      "ELM-DEL-011"
+    ],
     "scenarios": [
-      "tea-effects"
+      "architecture-003",
+      "delivery-011",
+      "arbitrary-path-denied"
     ],
     "accepted": true,
-    "acceptance": "docs/warlock-build-loop/v2/tea-effects-acceptance-20261101.json",
-    "sourceRevision": "b6bfe6146cdbd4a9c3eae06ddc898c93436f5e70",
+    "wholeEARS": true,
+    "acceptance": "docs/warlock-build-loop/v2/ui-backend-acceptance-20261101.json",
+    "independentReview": "docs/warlock-build-loop/v2/ui-backend-review-20261101.json",
+    "sourceRevision": "5818e78f436554a951f1b90f5c9b417e406404b6",
     "administrative": false,
     "nativeExecution": false,
+    "guiAcceptance": false,
     "releaseAcceptance": false
   },
-  "nextConcreteAction": "Commit exacttested32source/evidence tuple; independentwholeARC003/DEL011review againstimmutablecommit andall3originaloracles, thenrecordwarrantedledgerverdict/publishnormalbatch. ContinueprivateUIHTTP/WebKit/persistentowner work underexistingauthorization; no HOSTSTOP2 or askpassretry.",
+  "nextConcreteAction": "Publish accepted5818e78f source+currentoriginalverdict/wikihandoff throughnormaloriginmain flow, releasefinishedclaims, thenselect concreteoriginal privateUIHTTP/WebKit/persistentowner slice withdeclaredElm/Haskellpaths. Preserve nativeOperations[], crossUID missing evidence, HOSTSTOP2 and no repeatedaskpass.",
   "currentNamedScenarioClosure": {
     "requirement": "ELM-DEL-010",
     "scenarios": [
@@ -3431,5 +3500,19 @@
     "reviewedAuthenticationInputsStillExact": 164,
     "conflicts": [],
     "scope": "Preserved concurrent Lacquer presentation and UI007 restore-context commits via ordinary merge. Authentication20-source tuple remains exact. No native/GUI/release acceptance inferred; refresh next pin-save source inspection against incoming Desktop changes."
-  }
+  },
+  "originalClosureHistory": [
+    {
+      "requirement": "ELM-TEA-003",
+      "scenarios": [
+        "tea-effects"
+      ],
+      "accepted": true,
+      "acceptance": "docs/warlock-build-loop/v2/tea-effects-acceptance-20261101.json",
+      "sourceRevision": "b6bfe6146cdbd4a9c3eae06ddc898c93436f5e70",
+      "administrative": false,
+      "nativeExecution": false,
+      "releaseAcceptance": false
+    }
+  ]
 }

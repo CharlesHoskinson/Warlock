@@ -1,0 +1,466 @@
+{
+  "schema": 1,
+  "reviewId": "ui-backend-original-20261101",
+  "reviewedAtUTC": "2026-11-01T04:23:57.939915+00:00",
+  "reviewer": {
+    "name": "reviewer",
+    "independent": true,
+    "disposition": "accepted",
+    "identity": "Authenticated AgentBus reviewer in warlock-20261031-setup",
+    "independenceDisclosure": "Reviewer authored the independent public-linked QA and bridge harness, not the production Main/protocol/backend/paging/guard changes. Root reviewed QA and exclusively executed protected compiler/model/runtime checks."
+  },
+  "disposition": "accepted",
+  "sourceRevision": "5818e78f436554a951f1b90f5c9b417e406404b6",
+  "sourceHashes": {
+    "implementation/warlock/src/Main.elm": "4065685987bf33fbc46872c3e94e72db24904ec5134373a82fc2f5d7b9362d55",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs": "e6a1a51cff8b45d9a0d0ad36d4273fae32a577ff27b7e7208f3af1beb5ede3b3",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Profile.hs": "ab79af8af70bf612ee8600ea6de8516ccd78c398dfddf6bf636a7835cc7703d0",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Codec.hs": "b59c1e2cd287d38c6667505b998c217ef1372cf8f6edac207a5b0e403d3f1098",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/StrictJson.hs": "1f3aacf0b5023c631472ebd7d6f9e7dbce54c5970af738469ee7ab3c1dde6edb",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Boundary/Internal.hs": "e79692fd8b0cc20dd5894af2dc899b35970351de0f44515fb985ab6fce299e8a",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress/Internal.hs": "d19e0f063981ab336d80c4eac9fbf4c234e1cc37fcb41aee95c485819f649ac4",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/CredentialIngress.hs": "c86974d8e829ad3116ece3c18be7f84fe13568392d6a07e50539cf95b9cd48d5",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Framing.hs": "75b0629a8ebbc26b3c1cb3133cb53414f2044da20b2f45e8843ac4ed0b7998c9",
+    "implementation/warlock/haskell/protocol/src/Warlock/Transport/Frame.hs": "987e6d32362a0360f42b46a0b7557b8127a37c5cf2b94909aefcc8b40b26a32c",
+    "implementation/warlock/haskell/protocol/src/Warlock/Transport/Channel.hs": "1cf54460cfd06c162f42b142698f8a7c5229829c62d72d816b7c13172dd91891",
+    "implementation/warlock/haskell/protocol/protocol.cabal": "5178daeb6e11fe13b9630445c1177df347468ba79616b3a484258aa36d7ef824",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs": "587416900f00aa410bf01c385af0ddba540db85c8c18ac3f78fd70d19179b966",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/Catalog.hs": "4d5046a6a3c646196ab354553bc368c55046815831f982477f67c164c238ee83",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/PinStore.hs": "98d910b51737944b5f2e03ac3d065c819297f0c0b6d01a4dc5ade41efc61a2f9",
+    "implementation/warlock/haskell/runtime/src/Warlock/Backend/Store.hsc": "2aa8ee35f9ef5c767fd259b413f705c8930bfb0f62effe4a97bdc906b47cceb9",
+    "implementation/warlock/haskell/runtime/app/Main.hs": "e2003201056710bbc803789ddb8b1a871da77ac5e5fa891b85485e2f1d0fda22",
+    "implementation/warlock/haskell/runtime/runtime.cabal": "38c85dd560f847545064746722b7fd624d16d14f0f1a71aad9db2e7ada55cc65",
+    "implementation/warlock/haskell/runtime/test-ui/Main.hs": "aaeea5db613516dbd2b0c274d22f493050014cadd38329f6f57ba209daac27bb",
+    "implementation/warlock/haskell/runtime/fixture-ui/Main.hs": "cfc433bc54c5eb5ca37e482b0eb64ac445d272922a85e6c8222134dc71c2cd6b",
+    "implementation/warlock/haskell/protocol/test-desktop/Main.hs": "d7bba80d3db010c1cfb9b466bdd6c1f208be2679ecdbfa0cda4057916974221b",
+    "implementation/warlock/qa/ui-backend-port.cjs": "20bb06c1f4dd3537cf3a25a58acb13edf263311415464a1e113ac9dd0cebee6b",
+    "implementation/warlock/qa/ui-native-stream.qnt": "8d8220e7f9dd9c9b9e01277ec16e66df18be602f81a41f0e235b7429d44c3966",
+    "implementation/warlock/qa/ui-native-stream_test.qnt": "c3c58080ad0160cb1d81cc5d40c19351bf5acc92efecfe028f06787efba967c3",
+    "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap.hs": "a195eb148828972a943135503ab9b230df39b821e5a1e1a9ffa883dfa2bdac11",
+    "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/Aggregate.hs": "21476f5689a3c822087317aa563f5b7993c857ce8be67105c45f2283a32dafe7",
+    "implementation/warlock/src/OutputController.elm": "fdf7b44483ec9312182a1b50bb2bbb5d52b804538e5c4d4ce5a4a8479e9af6ae",
+    "implementation/warlock/src/Desktop.elm": "315649a93b407648efc4d73dd41e16c496035983ebbae9feb1ac0f96b67388f3",
+    "implementation/warlock/src/Surface.elm": "5d94386fd423920c537841bc35f0c8101782cd38aee400b810dbee578d4ef5da",
+    "implementation/warlock/src/SurfaceController.elm": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
+    "implementation/warlock/src/Pins.elm": "c44da7aa32a193fc998d4efc39af25067998adc37d67da6d0c5b834f073635a4",
+    "implementation/warlock/qa/StreamCapacityReplay.elm": "6d3341047586efc479cd0292c89d3f16e76079d1d2a1433d673006d00fa98c92"
+  },
+  "scope": "Complete original ELM-ARC-003 stream/envelope and ELM-DEL-011 versioned allowlisted operation-boundary EARS, with all three named original scenarios accepted on this immutable source. ARC003 explicitly permits bridge evidence. This is not full product/native GUI or release acceptance.",
+  "wholeRequirementVerdicts": [
+    {
+      "requirement": "ELM-ARC-003",
+      "requirementAccepted": true,
+      "disposition": "accepted",
+      "ears": "The Elm desktop SHALL expose one incoming event stream and one outgoing intent stream with versioned, discriminated envelopes.",
+      "verification": "Preserved scenario report with native or bridge trace showing: both conform to the recorded schema; artifact hashes and matching scenario receipts included.",
+      "clauseVerdicts": [
+        {
+          "clause": "one incoming event stream",
+          "disposition": "accepted",
+          "source": "Actual Main declares only incoming and surfaceCommits, unit init, no legacy incoming or inspection ports. Actual compiled Main port-set assertion passed."
+        },
+        {
+          "clause": "one outgoing intent stream",
+          "disposition": "accepted",
+          "source": "All actual application-phase OutputController commits were emitted on surfaceCommits and preserved as complete view-commit objects. The archived trace and actual CLI scripts account for all401 in original order."
+        },
+        {
+          "clause": "versioned, discriminated envelopes",
+          "disposition": "accepted",
+          "source": "Main exact bridgeProtocol1/kind/payload incoming schema and domain typed decoders; outgoing exact viewProtocol1/kind/projection/requests/focus; production Desktop3 checked codec/gateway encoder, matching request/binding receipts and malformed discriminators refused."
+        }
+      ],
+      "scenarioNames": [
+        "architecture-003"
+      ],
+      "missingObservations": [],
+      "nativeAcceptance": false
+    },
+    {
+      "requirement": "ELM-DEL-011",
+      "requirementAccepted": true,
+      "disposition": "accepted",
+      "ears": "The native service SHALL expose an allowlisted versioned operation schema and reject arbitrary command execution, filesystem paths and unrecognized methods from web content.",
+      "verification": "Fuzz bridge operations and confirm no spawned command or arbitrary file read.",
+      "clauseVerdicts": [
+        {
+          "clause": "allowlisted versioned operation schema",
+          "disposition": "accepted",
+          "source": "Trusted opaque Desktop profile selected before socket offer. Exact full-commit decoder admits only version3 catalog-request/taskbar-pins-write with bounded typed arguments/current binding; old native1/2 private profile retains64KiB wrappers."
+        },
+        {
+          "clause": "reject arbitrary command execution and unrecognized methods from web content",
+          "disposition": "accepted",
+          "source": "Actual authenticated connected-client shell/unknown/native-effect/server/profile-forgery corpus rejected before handler. All55 hostile frames produced callbacks0/operations0, cleanup and no reply. Exec metadata was read, never dispatched; no requested shell sentinel was created."
+        },
+        {
+          "clause": "reject filesystem paths from web content before file read/write/command",
+          "disposition": "accepted",
+          "source": "Path/URI/traversal/shell selectors and unexpected operation fields, including invalid suffix after valid first request, fail complete production codec/gate validation before sole checked callback. Backend catalog/store IO is reachable only inside this callback. No web argument becomes a path/argv; actual fixed file bytes remain unchanged. Trusted startup reads and approved UI image execution are explicitly outside the refused operation, not falsely claimed absent."
+        }
+      ],
+      "scenarioNames": [
+        "delivery-011",
+        "arbitrary-path-denied"
+      ],
+      "missingObservations": [],
+      "nativeAcceptance": false
+    }
+  ],
+  "scenarioVerdicts": [
+    {
+      "requirement": "ELM-ARC-003",
+      "scenario": "architecture-003",
+      "status": "accepted",
+      "disposition": "accepted",
+      "accepted": true,
+      "originalOracle": {
+        "name": "architecture-003",
+        "given": "a connected host",
+        "when": "an intent and its outcome cross the bridge",
+        "then": "both conform to the recorded schema"
+      },
+      "verification": "Preserved scenario report with native or bridge trace showing: both conform to the recorded schema; artifact hashes and matching scenario receipts included.",
+      "observation": "Actual compiled Main Applications intent crossed the complete framed/kernel-authenticated production Haskell CLI and its actual checked gateway outcome entered the same compiled Main. Both conform to the recorded production schema, with exact request/binding and matching retained scenario receipt.",
+      "receipt": {
+        "requirement": "ELM-ARC-003",
+        "scenario": "architecture-003",
+        "intentSHA256": "c4c8e0e1da9fdd7cb1732410c79b388063648efa400d86d87154d99860bf1ab4",
+        "outcomeSHA256": "538de8b5f918048fcbfb8715c8863ee004205443165ec48beb0e54ebe6a75147",
+        "nativeAcceptance": false
+      },
+      "evidenceReportSHA256": "c120a3781c5bf0c25f2fe4434ce80416a5c49d776d7458f5358f2941f615b298",
+      "missingObservations": []
+    },
+    {
+      "requirement": "ELM-DEL-011",
+      "scenario": "delivery-011",
+      "status": "accepted",
+      "disposition": "accepted",
+      "accepted": true,
+      "originalOracle": {
+        "name": "delivery-011",
+        "given": "a connected renderer",
+        "when": "it sends a shell command or unknown method",
+        "then": "native authority rejects it"
+      },
+      "verification": "Fuzz bridge operations and confirm no spawned command or arbitrary file read.",
+      "observation": "The actual selected authenticated client sent shell/unknown operations through the called production service. Native-side Haskell ingress rejected them before callback, with actual credential rejection receipts, no arbitrary command sentinel and no domain operation. Valid production catalog and CAS controls succeeded.",
+      "receiptCount": 55,
+      "generatedRuntimeCases": 32,
+      "receiptResultHashes": {
+        "duplicate-top-key": "2cc739c74d24f837ad453399379985a427bd6a41ce36ccc5a5f33f80d36acc8a",
+        "gateway-as-client": "15394754ba7c2eb320b120e8dc0ef45b77e1844ebeff3971fc5da6a7eb8a865d",
+        "mixed-binding": "9d2fda96151d4815f9459d5993e468c6bed51cf7aab2de09fc972ce24328734f",
+        "native-effect": "b8517402076208d8235cdf44d178b52ae7c68336e4c09d2dcf34266542420ce2",
+        "native-profile": "ec906b8853682cc9efc6f1f35c47d77ecbc9f216d5ccec8217ae3c84b801e93d",
+        "nested-path-0": "6c42a4921b00b90eb2c14aa95ff2951fe54a6dab25c719c6687240c1715f6ee8",
+        "nested-path-1": "bd5d2b3e8ba3c96b39eb93e50e580022f4daf83887456cc5cd1b806ca77b0f0c",
+        "nested-path-2": "b414333214439acda4cb5ed859bd1aeb818c3149bc227f7b35d50059d3eb5b81",
+        "nested-path-3": "fadc9a752b46a3af3688f0b05b657b8dcc86f01aba298b66c62b47d4d030cbcb",
+        "nested-path-4": "dbcd0cd0fd49fe0c79aaa45ce1ec3572c039915ebd37334ee8d780ad5e501d4b",
+        "nested-path-5": "d6d0d1166ca6824af42f2a4c1a7395cb692195fa202743a4fc18a5e54de85878",
+        "path-extra": "c3e24f29cb186afe0a073648ac7aef5bf03b8d712713fd685f9273f8aad610c0",
+        "runtime-LCG20261101-case-0-state-2039838056": "dd336c975d9b81679dba98b8a3812e47781aeea680266d2acd3c3c0404b6b132",
+        "runtime-LCG20261101-case-1-state-1828018599": "49d5c3ebb1f0816ca5a3e981d4c472d631d6f116656eaf9c5cbed78fa5adbfa1",
+        "runtime-LCG20261101-case-10-state-4226860482": "fd779f2daeb5734f7d5ba8b87cb92c889c0cb182e7520ed8907c1a62b15134b0",
+        "runtime-LCG20261101-case-11-state-1181108793": "0c5e18e94614404e4cb22ff2063445c7183c8bebf2eb6d4f0af165c270be8338",
+        "runtime-LCG20261101-case-12-state-3502534212": "d60eec27cbdd9cd368498f4ff81931eb75da0c171b091f2956a7b0908fa4104d",
+        "runtime-LCG20261101-case-13-state-3741033683": "9f0e0d6f030645f0c5e2e6e69cc36ba0e38baca0d5fd38cfadedab8fa4c70143",
+        "runtime-LCG20261101-case-14-state-3950863382": "7d83b0ee1f4acced4478a96e9511334aec07a294238317236a5eaa22863f09a6",
+        "runtime-LCG20261101-case-15-state-3990080637": "20a142a4ad8ea176c383d56981fd48ba493be8acd6cc8875045dd5b8924c425e",
+        "runtime-LCG20261101-case-16-state-2883527608": "d87e5b6d25b07e58d12b6bc7288880209b40d3a6ee79b332366038b079c0081b",
+        "runtime-LCG20261101-case-17-state-1542919095": "a9fc25ec30c0298afa066662830943a2dbf34ce6fec80e315ca3c696b00c845c",
+        "runtime-LCG20261101-case-18-state-1186258346": "8fb7ef50ff0e70b78a6789af7292f0828dd88bc288c7ef47219ed8387e05af46",
+        "runtime-LCG20261101-case-19-state-2307518721": "3e5842c6080ddc34482a982931d39af6ee741923d3892aa01b286d56724ce119",
+        "runtime-LCG20261101-case-2-state-1206651610": "c080d962a02a9f0a98c2215d47ab25d5f96f48be56c68a963c93a29efa2f5033",
+        "runtime-LCG20261101-case-20-state-3079640684": "aab2d7e3e1625df42ee1d5b6e7a361c4b08be47066602c6639b9812a152843b3",
+        "runtime-LCG20261101-case-21-state-1966382811": "fddccc50b494e1f7fcec9668f9cb0baa8ce2a969df1be2704bd033d2cd9debee",
+        "runtime-LCG20261101-case-22-state-2865317502": "a598d46a0c3cae3aa28a84f0543308f2409014b8e114dfafbbec372adf561920",
+        "runtime-LCG20261101-case-23-state-4245404613": "350b05b2d29d0fba1a7eb1e299f8c60e4e8822d29f0d2e59d18eb48f2604c002",
+        "runtime-LCG20261101-case-24-state-420805216": "c1e749ec7a3175034190edaf8fb05d5762da0a49fa1b9f415b0012fd7f6bb6a6",
+        "runtime-LCG20261101-case-25-state-1369565759": "53a155e36b1e76c255c881e6f6e5fde65df3009932bc63641bdc4f47265af7be",
+        "runtime-LCG20261101-case-26-state-3307467410": "632ce6cf62274be3369d0d2c6491d795bef0b8adb544169133ee5f554f0147f5",
+        "runtime-LCG20261101-case-27-state-1110077641": "9b042ff00be97155ce919a68a4edf0c314f07e392ba00bcd75564dbf0f753291",
+        "runtime-LCG20261101-case-28-state-2233975700": "422c49d3f73843745a92d5caf369587177eae2aa2526c811f18ccc73b0ce0d07",
+        "runtime-LCG20261101-case-29-state-4040481251": "dd6eea8a5b26c69190904e47c3aa9123751acf9843a3a859b3375830c3ee070d",
+        "runtime-LCG20261101-case-3-state-4278738033": "114c9f974648183e23260492767a633d0aae69cca21214b2aef2f4caaf95c639",
+        "runtime-LCG20261101-case-30-state-2369353190": "fa9cf07943c18e2ee0cb7d0be0527a36a8ff2b7fdbc582e8ecde578406095252",
+        "runtime-LCG20261101-case-31-state-3502871565": "a552e9c9e7eab3ed874fcd25692ac02e095b77bd6bfbfcc105f53a91b16f5ac0",
+        "runtime-LCG20261101-case-4-state-2344200988": "4084216ca34c557cf6eda2e45c92a5c1e9d0c561555183f40ba25fed6175baa6",
+        "runtime-LCG20261101-case-5-state-80071627": "0abb4915ce07738e8433f344f49bfd75da78f72a9cf8b117dc9dc76510fccbac",
+        "runtime-LCG20261101-case-6-state-813706926": "2c12ffc8d6c5b07d2ab255357c3f405d09dbb3510b3101ba6df24efdd8d40a4d",
+        "runtime-LCG20261101-case-7-state-1418241589": "fbf65acdefd639c18138988108361dd54776778bf00ddd8e33abfafbe083288d",
+        "runtime-LCG20261101-case-8-state-885359120": "509b295b59c9c9968b3818b02cb30b788c79d17a0619d82f289ceb3efc827719",
+        "runtime-LCG20261101-case-9-state-1339616815": "b5db7689ecb9f534b99cc9570c5e689171121c7bd3ded9f10c57debb54f4bf82",
+        "seeded-shell-20261101": "4f679b8c150aadb5e734807708d70eb11dbe66dabc4c0d56b8e6b78b95a87220",
+        "seeded-shell-20261102": "a4b3d0be94b51e6a3ec137d88cdae9f93bb046213a00f7ab6c415b566ae51be0",
+        "seeded-shell-20261103": "dfc4291e7137e78fa3a8d5c8a919264cc195191df8fb0b1384f68ff29a92b518",
+        "seeded-shell-20261104": "cc05b15f0839b80bc6d3ab75f59a30d3139e7a28d699ae2a8839a1824e19e575",
+        "seeded-shell-20261105": "95f3a1c0ebf3db5d8eff8e89643d3cb819d8daacc8182569ec897335ca91efe7",
+        "seeded-shell-20261106": "87d1b2b61ecf8412c6ab7ca633f43591dc51f728416385e28721f636f124338d",
+        "seeded-shell-20261107": "b3a144042ac9ac04b93bb788f15fc91a4f4d6da15fdc7186cffe0fe7e2bc17f2",
+        "seeded-shell-20261108": "bcef9e4b0ecb8a64f5ba5c1cb139c2c72cc7580c7c8d57c0f330fcdfb837675d",
+        "server-forgery": "a837a4efb24094dfd63f9699a7d66b743c702f7e404b8c186701be7d857ac497",
+        "unknown-field": "ab4cf990be3e9ba6aa68f46a0638e054b1af0d17648fcb87af9d68995bc76e30",
+        "unknown-method": "6099be8f47fb68fe55d4d3eab51767ca7e41326c389a9dcec0002ce12e187f7f"
+      },
+      "missingObservations": []
+    },
+    {
+      "requirement": "ELM-DEL-011",
+      "scenario": "arbitrary-path-denied",
+      "status": "accepted",
+      "disposition": "accepted",
+      "accepted": true,
+      "originalOracle": {
+        "name": "arbitrary-path-denied",
+        "given": "a connected renderer",
+        "when": "it submits an arbitrary filesystem path to an operation",
+        "then": "schema validation refuses it with no file read, write or command execution"
+      },
+      "verification": "Fuzz bridge operations and confirm no spawned command or arbitrary file read.",
+      "observation": "Operation paths, nested pin selectors and malformed suffixes were refused before any checked domain callback. Independent source trace confirms catalog/store effects occur only after this gate; all actual negative counters are0, reply logs empty, fixed-file bytes preserved and arbitrary commands absent. Presentation text is never interpreted as an IO path.",
+      "receiptCount": 55,
+      "receiptScriptHashes": {
+        "duplicate-top-key": "5b892b23c76388add386109baee3d035c2c96366d9607f1fe743288717caace8",
+        "gateway-as-client": "8baa7e20b86b25013d5507794df4f6d8823eeb701874c58b1f048fca7461d802",
+        "mixed-binding": "fd3a2d865cf468896c48274321d18c856b3d50f281fdbaf6d43bc8f36cb0c76a",
+        "native-effect": "a3a9084e6000cba3bcf6c1cc0bd6e115a2d9e5ae9bf78e2e645ab4a4b44268ef",
+        "native-profile": "a987acc8139dde84752163211f691d97a8ec7e7316a76085d242354d1ef861b7",
+        "nested-path-0": "a4749e69167b15b15f6e9b06eef79f30f6ad807c536f07fabf6d5c63402d128c",
+        "nested-path-1": "76a12c7c4f990a06b7b0c39d327b8751100cda8ae5906b854412b48c10f6b7f2",
+        "nested-path-2": "6d170855bafb18d98026369a33da7f266a69a0e011d532000a3ab33e1236db8e",
+        "nested-path-3": "ade62502ac948eb08e76a52de59b0cc2a4204b11793308854b0b9a00c4ec1c2d",
+        "nested-path-4": "760c58948adb441ac1e1577355c06b655a03a4cc2ab39b21c93e5a5e7e539d4a",
+        "nested-path-5": "e85354ee2a36ebb91b391f1a47bd01936db11a70fdb458826a5f5d69f2b8a33f",
+        "path-extra": "6c3435f80506e27cd15704e77a5bbbcf411539fe511a3939bb96b67d1b58f354",
+        "runtime-LCG20261101-case-0-state-2039838056": "9a97029532e75db173b440238f9ce02deec021789cdedaa6c7e6082a828c9477",
+        "runtime-LCG20261101-case-1-state-1828018599": "c84a6867b3859ff8942e347c64cdfaf1e61257b0c7d966fcf815161d8f21854c",
+        "runtime-LCG20261101-case-10-state-4226860482": "dc8b7e0144bbb203e7e8b82283d650f9bff5514845d009f8b905b724ac54eb9b",
+        "runtime-LCG20261101-case-11-state-1181108793": "2292a7345f8971b35b3fc7669043cf047aa80a073e231cc9304c41935a0091b0",
+        "runtime-LCG20261101-case-12-state-3502534212": "06b8ae185d93cc2890b84df680cb5a57d96c4c9101e4c8d693ff0fcc3fef62f9",
+        "runtime-LCG20261101-case-13-state-3741033683": "f76813e85fa8077153e0acc169d756bc32108100627e34daa0448eeda4c6af18",
+        "runtime-LCG20261101-case-14-state-3950863382": "7b4e6ba42227714df778f8c70e4c93b54efd17cd2a61743272d87d77b7e9081d",
+        "runtime-LCG20261101-case-15-state-3990080637": "819ac669bd2a51e291ffb341d8efdab25a7a712d5c0ce08fbdbed01e2113d516",
+        "runtime-LCG20261101-case-16-state-2883527608": "7e0bf540e3da7d7397be13296050f101e15373cea4ca2011a3f600a8fab457be",
+        "runtime-LCG20261101-case-17-state-1542919095": "05809faed4232a8b9c0818447ccadb684ae285fe0acbcac34c5e46bd73b553ea",
+        "runtime-LCG20261101-case-18-state-1186258346": "a7ddd7ee291d04d31cb336a4ed53e4f5c09b23379080628af2735a750c24edff",
+        "runtime-LCG20261101-case-19-state-2307518721": "2292a7345f8971b35b3fc7669043cf047aa80a073e231cc9304c41935a0091b0",
+        "runtime-LCG20261101-case-2-state-1206651610": "f39360d7645b3ecad0b12ce13b7f92941b38513e1a23ef706024edc065d5fde0",
+        "runtime-LCG20261101-case-20-state-3079640684": "06b8ae185d93cc2890b84df680cb5a57d96c4c9101e4c8d693ff0fcc3fef62f9",
+        "runtime-LCG20261101-case-21-state-1966382811": "3cb8fed27b251c69fab87c6232c6c835335dd233bbd0bb2f6bf9a8e0c1574f51",
+        "runtime-LCG20261101-case-22-state-2865317502": "69722070bebc6e5b9a9ae8b275db1219d735dc882279750e09f1c323ddff1b5e",
+        "runtime-LCG20261101-case-23-state-4245404613": "819ac669bd2a51e291ffb341d8efdab25a7a712d5c0ce08fbdbed01e2113d516",
+        "runtime-LCG20261101-case-24-state-420805216": "842ec6fc7ac15733eafe6d05eb1b9cd271a1af224eaa26c0786cacdf92a5d8fa",
+        "runtime-LCG20261101-case-25-state-1369565759": "d9b1f2b600bfbd2b62c1f92c17e5bc68a411c1ddaf54764b8bd5113f03c90f5c",
+        "runtime-LCG20261101-case-26-state-3307467410": "c10152b7ec394c10d79ce824902bc316e40b9338a50d0d674e4d35cfdc4a0d23",
+        "runtime-LCG20261101-case-27-state-1110077641": "2292a7345f8971b35b3fc7669043cf047aa80a073e231cc9304c41935a0091b0",
+        "runtime-LCG20261101-case-28-state-2233975700": "06b8ae185d93cc2890b84df680cb5a57d96c4c9101e4c8d693ff0fcc3fef62f9",
+        "runtime-LCG20261101-case-29-state-4040481251": "030010d320a156c48d05bb3ddf8b6f3020b097846d3ed54521a9a6ade7a9ca9b",
+        "runtime-LCG20261101-case-3-state-4278738033": "2292a7345f8971b35b3fc7669043cf047aa80a073e231cc9304c41935a0091b0",
+        "runtime-LCG20261101-case-30-state-2369353190": "f92565e0decc014124f5f4e3f53fad7b0a43faf96b5e732a47aa53d678eb2f5e",
+        "runtime-LCG20261101-case-31-state-3502871565": "819ac669bd2a51e291ffb341d8efdab25a7a712d5c0ce08fbdbed01e2113d516",
+        "runtime-LCG20261101-case-4-state-2344200988": "06b8ae185d93cc2890b84df680cb5a57d96c4c9101e4c8d693ff0fcc3fef62f9",
+        "runtime-LCG20261101-case-5-state-80071627": "f4d56a3c952d421fbb1b90f77423e30e728e1912d078fed36836eb0d6f1017e3",
+        "runtime-LCG20261101-case-6-state-813706926": "7b17b33c1199c509d05dadfcf7e056fdd2025a0bb2bc661997b5ae00b0cdeca6",
+        "runtime-LCG20261101-case-7-state-1418241589": "819ac669bd2a51e291ffb341d8efdab25a7a712d5c0ce08fbdbed01e2113d516",
+        "runtime-LCG20261101-case-8-state-885359120": "40dad42db3ac3aab860637f6418d09cc13c7166cd308628425c9d289e11c8559",
+        "runtime-LCG20261101-case-9-state-1339616815": "3cb9241ac821623988d08ceaeeec54357b6122bfab2544f6708c6eed4149e75d",
+        "seeded-shell-20261101": "733a240ac36ec4988591f3e799d8f5941cc9b51aa43a5917239f023ec356ab15",
+        "seeded-shell-20261102": "afab3ff615e3a872be59f3f4bc6c9cbabc1deb702972aa95e608c0c6ee7e2e8c",
+        "seeded-shell-20261103": "b982dd2fb29041dfb961bf44d7ec8a6422a857420a4c9a0e7fb39d05819bef7b",
+        "seeded-shell-20261104": "23a6183c3bf3c8ae2accb6b8fb7c91311f004433bf547e63ad8ce18db82528b6",
+        "seeded-shell-20261105": "cdc02026bcad8ec3fa5af82aa3de74f3ef8f545e478c8ceaf6ae2d25b36f3662",
+        "seeded-shell-20261106": "09855cdd49739227480ce4e5ac6df063c6c6914abbb91627f212d0815ad1566e",
+        "seeded-shell-20261107": "e860317452071c70182fc28be34fdfaf51c45349f64db7ecd996c3b8f321a13d",
+        "seeded-shell-20261108": "6350743dc03f6e9105b08d39ab07e5147b2fb415b8e1750c725c8f008e9ea231",
+        "server-forgery": "4bfb15c4ca97c062a1e327a9d39af839e2c57a76d8c4a6319a47c82a0605ba3a",
+        "unknown-field": "19cb02976e776d0a30ee55fb4151f4062893592318e972f4c724c410f6f31b44",
+        "unknown-method": "d1528d0020613508c022e89723d4ac4d7fb0ab301a41fb4d6d1564f865b172c2"
+      },
+      "missingObservations": []
+    }
+  ],
+  "verification": {
+    "reviewExecution": "Read-only source, Git blob, archive/hash/JSON/raw-log inspection; reviewer ran no compiler/test/model/native campaign.",
+    "archive": {
+      "path": "implementation/warlock/qa/evidence/ui-backend-20261101/checks.tar.gz",
+      "sha256": "7e2b9b26d30822d47c43936bf8bce1a1bc0ce22ac9c5d0c0c1350a0be42b0a61",
+      "members": 23502,
+      "manifestFiles": 23501,
+      "manifestSHA256": "4ab963a49afe1e17fe6124ebe40bd0d7bf4cc849408ba351a36654f243c84b55",
+      "allRegularMemberHashesAndLengthsVerified": true,
+      "duplicateNames": 0,
+      "extractedToFilesystem": false
+    },
+    "immutableSource": {
+      "selectedRegularGitBlobsVerified": 32,
+      "haskellInputCount": 282,
+      "elmInputCount": 123,
+      "unionInputCount": 297,
+      "all297RegularSourceInputBlobsMatchedCommit": true,
+      "selectedStreamCapacityWorker": "6d3341047586efc479cd0292c89d3f16e76079d1d2a1433d673006d00fa98c92 is bound by fresh TEA packet, not used by Haskell runner",
+      "sameCompiledMainSHA256": "f93086bbe166385a3b30275f5bde9ebe0a83c3b487317655ce017d825e295b16"
+    },
+    "haskell": {
+      "suiteCount": 27,
+      "normalInvocations": 39,
+      "allExitZeroNoTimeoutNoForcedCleanup": true,
+      "sourceInputsStable": true,
+      "pureChecks": 1656,
+      "pureGeneratedCases": 256,
+      "pureMutationClasses": 16,
+      "runtimeChecks": 161,
+      "hostileAuthenticatedFrames": 55,
+      "generatedRuntimeFrames": 32,
+      "runtimeMutationClasses": 8,
+      "allHostileCallbacksAndDomainOperationsZero": true,
+      "allHostileRepliesEmptyAndCleanupConfirmed": true
+    },
+    "frontend": {
+      "checks": 8010,
+      "failures": 0,
+      "actualProductionCLISessions": 40,
+      "completeFrames": 401,
+      "allRawScriptHashesAndActualReceiptCallbacksVerified": true,
+      "exactOrderNoOmissionOrDuplication": true,
+      "maxPresentationBatchFrames": 16,
+      "originalSessionDeadlineNs": "5000000000",
+      "suiteTimeoutSeconds": 180,
+      "reportLimitBytes": 16777216,
+      "noFakeGUIAck": true,
+      "bootstrapPhase": "Eight trace rows are explicit controlled connected-host preconditions. Every precondition whole commit/input is retained; application backend is not represented as native/projection resource authority."
+    },
+    "capacity": {
+      "actualCatalogEntries": 2048,
+      "normalPages": 257,
+      "all2048EntryIdentitiesReachableExactlyOnce": true,
+      "actualGatewayBytes": 399726,
+      "boundedMainCommitBytes": 7334,
+      "fullMetadataFixtureEntries": 32,
+      "nameUTF16Units": 512,
+      "nameUTF8Bytes": 1536,
+      "actualPrivatePinCount": 32,
+      "pinRevision": "1000",
+      "compactPages": 129,
+      "reachableEntries": 32,
+      "reachablePinManagementActions": 96,
+      "maximumGatewayBytes": 53641,
+      "boundedCompactCommitBytes": 6236,
+      "fullNamesRetainedInCatalogAndAria": true,
+      "queryInputLimit256Preserved": true,
+      "overlongQueryInertValidPrefixSearchAndResetVerified": true
+    },
+    "modelCorrespondence": {
+      "uiDirectedTests": [
+        "catalogTest",
+        "pinsSavedTest",
+        "emptyCommitTest",
+        "refusedPinTest",
+        "unknownNoReplayTest",
+        "wholeBadBatchTest",
+        "pathSelectorTest",
+        "badBindingTest",
+        "kernelSessionTest",
+        "schemaVersionTest",
+        "boundaryTest",
+        "legacyTest",
+        "trustedNativeProfileTest",
+        "forgedGatewayTest"
+      ],
+      "uiSafetySamples": 10000,
+      "uiMaxSteps": 50,
+      "uiSeed": 20261101,
+      "uiPositiveWitnessCounts": {
+        "catalogWitness": 5116,
+        "pinsWitness": 1815,
+        "emptyWitness": 2899,
+        "refusalWitness": 1776,
+        "badBatchWitness": 2431,
+        "unknownWitness": 1669
+      },
+      "scope": "Bounded trusted profile/whole-frame-before-callback/order/uncertain-write correspondence; not exhaustive JSON/OS/durability/native GUI proof. Actual production decoder and kernel/physical-store evidence independently supplies those component observations."
+    },
+    "freshElmRegression": {
+      "reportSHA256": "1f6d6bf6763e6d9d109b2c865d6eb559ecf5f9339733e4f60f8eb9b388ccaf0b",
+      "owningRoots": 3,
+      "workers": 6,
+      "priorBoundaryChecks": 7023,
+      "newCapacityAggregatedPredicates": 21,
+      "capacityInputMatrices": 32,
+      "namedModelTests": 26,
+      "separateSafetyCampaigns": "Two seeded10k50 campaigns with all required positive witnesses; unchanged inputs."
+    },
+    "sourceRepairCorrespondence": [
+      "Normal8/compact1 combined action pages retain full catalog, pins and every action; stale publications inert, lease stable and current publication advances.",
+      "Visible entry slicing precedes control construction, preserving the same prefix/entry order including crossing pages and fixing actual eager-render cost; unchanged complete traversal now passes the same180s limit.",
+      "Whole131072UTF8/UTF16,16-request and8192-per-request guards precede every emission including requests[]. Compact fallback is a real rechecked Elm model projection, never rewritten synthetic JSON.",
+      "Strict application-only local omission avoids poisoning native queue state while preserving existing refusal and all registered batches. Exact fresh Saving may settle unsent; Unknown/recovery state remains unchanged and a later published fresh action is admitted. Same6d fixture focused RED20pass/1fail across32matrices becomes all21pass; failures retained."
+    ]
+  },
+  "evidenceHashes": {
+    "implementation/warlock/qa/evidence/ui-backend-20261101/report.json": "c120a3781c5bf0c25f2fe4434ce80416a5c49d776d7458f5358f2941f615b298",
+    "implementation/warlock/qa/evidence/ui-backend-20261101/cpu-review.json": "14dffa755f9a39ae216c9b67a48e3e40d7fd3e5cea3560c68ed416459be7c173",
+    "implementation/warlock/qa/evidence/ui-backend-20261101/checks.tar.gz": "7e2b9b26d30822d47c43936bf8bce1a1bc0ce22ac9c5d0c0c1350a0be42b0a61"
+  },
+  "rawArchiveHashes": {
+    "haskell/06-candidate-green/report.json": "4c37dc573f29c93df69fa7af9fc28f28fa93f975f4fcee1a56e4a5bb880e1219",
+    "elm/current-full-regression/report.json": "1f6d6bf6763e6d9d109b2c865d6eb559ecf5f9339733e4f60f8eb9b388ccaf0b",
+    "haskell/06-candidate-green/haskell-build/runs/ui-backend-controls/storage/frontend-report.json": "09dcc38b0fd42ed59dc917acba2d79edbef64d5825bcb3997da5bb37fc1517b9",
+    "haskell/06-candidate-green/haskell-build/runs/desktop-boundary-controls/default.log": "318fa18a2390cbcd6a44cf4d7f5705da6716560ccc3c29163f93b13338bfe37d",
+    "haskell/06-candidate-green/haskell-build/runs/ui-backend-controls/default.log": "00dc7409cdfcc34187cc2cad19364c34e92190392ca2ca47547a345ffbe6beb8",
+    "elm/focused-product-red/report.json": "800e244bf3c5e9f86fbc8cec0b028c9654aed5ae25c04e27141478a61f5ef657",
+    "elm/same-oracle-product-green/report.json": "7061cad871e5c7443f105f73bb8e870e2e838ba9d299c4d3a4813535d31f86e0"
+  },
+  "retainedAttempts": [
+    {
+      "label": "01-qa-openFd-build-failure",
+      "reportSHA256": "199f270735958a79affab04bd22565f828873941ca9ec04ae776b196b9d17f55",
+      "passed": false,
+      "error": "production build failed; see retained logs"
+    },
+    {
+      "label": "02-qa-shadow-build-failure",
+      "reportSHA256": "945f81fe4197b7a09a941c490deba49bb077bbd766da84406b3a806bcca0e745",
+      "passed": false,
+      "error": "production build failed; see retained logs"
+    },
+    {
+      "label": "03-real-capacity-red-and-utf8-fixture-failure",
+      "reportSHA256": "b2fc5324a464f58a5fda1ebeb651e0027851381af53c05a45654ad9944fd8b7b",
+      "passed": false,
+      "error": "Haskell component tests failed; see retained suite reports"
+    },
+    {
+      "label": "04-per-cli-180s-timeout",
+      "reportSHA256": "8012354e2a5d6f34d6785448dc13672527b8961df4de679cdb6c497c3b53919f",
+      "passed": false,
+      "error": "Haskell component tests failed; see retained suite reports"
+    },
+    {
+      "label": "05-eager-main-180s-timeout",
+      "reportSHA256": "417352b888dafba33776d6e16bd3177f96b4462ab1617747bd01eae9a0c80b4d",
+      "passed": false,
+      "error": "Haskell component tests failed; see retained suite reports"
+    },
+    {
+      "label": "06-candidate-green",
+      "reportSHA256": "4c37dc573f29c93df69fa7af9fc28f28fa93f975f4fcee1a56e4a5bb880e1219",
+      "passed": true,
+      "error": null
+    }
+  ],
+  "remainingObligations": [
+    "All original242 requirements/417 scenarios and original deadlines remain. Accepting these two EARS does not accept the whole desktop.",
+    "Private HTTP/WebKit trusted provenance owner, continuous private GUI composition, actual view-resource application/dispositions and persistent16registered-batch lifecycle remain mandatory unfinished implementation/acceptance.",
+    "Controlled bridge bootstrap does not prove native core/plugin loading, owning ABI compatibility, real native effect issuer, physical GUI/input/AT/IME/rendering or release acceptance.",
+    "Bounded Haskell Bootstrap sessions and independent CLI restart storage checks are not perpetual-daemon or continuous desktop lifecycle qualification.",
+    "Compact non-Applications modes offer disclosure/recovery; their complete original physical behaviors still require their own scenarios and evidence.",
+    "DEL010 actual crossUID verification remains missing; no authentication/native acceptance transfers from this slice. HOSTSTOP2 stop history remains unchanged and was not retried.",
+    "Archived failures remain failures: two QA compile issues, Unicode fixture error plus real863317-byte Main defect,180s per-process QA timeout,180s eager-render performance timeout, followed by this exact immutable passing source."
+  ],
+  "nativeAcceptance": false,
+  "guiAcceptance": false,
+  "releaseAccepted": false
+}

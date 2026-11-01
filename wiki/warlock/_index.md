@@ -28,3 +28,6 @@ Latest administrative verdict: [REV005 admission acceptance](../../docs/warlock-
 
 
 Latest whole frontend verdict: [TEA003 effect/decoder acceptance](../../docs/warlock-build-loop/v2/tea-effects-acceptance-20261101.json). The current [single-stream Haskell source contract](../../docs/warlock-build-loop/v2/shared-desktop-contract-20261101.json) is under actual build/process verification; no new ARC003/DEL011 or GUI/release verdict is claimed.
+
+
+Latest complete original verdicts: [ARC003 and DEL011](../../docs/warlock-build-loop/v2/ui-backend-acceptance-20261101.json), with [actual stream observation](raw/notes/2026-11-01-desktop-application-stream.md). The next target is private UI HTTP/WebKit ownership and persistent lifecycle; no native GUI or release verdict follows.

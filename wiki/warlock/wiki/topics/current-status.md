@@ -67,3 +67,6 @@ Independent review now accepts `delivery-010`, `peer-wrong-session` and `peer-ap
 ## Current single-stream backend slice
 
 Main single incoming/outgoing gateway and the actual Haskell catalog/durable pin actor are implemented and undergoing root’s protected verification. [The shared source contract](../../../../docs/warlock-build-loop/v2/shared-desktop-contract-20261101.json) records real byte/profile/path/custody bounds and explicitly preserves missing historical private proof. Whole ARC003 and DEL011 are not yet accepted. Bridge fixtures are labelled preconditions; component/model/process checks cannot establish private HTTP/WebKit placement, persistent GUI lifecycle, native effects, accessibility or release.
+
+
+Whole original ARC003 and DEL011/all3scenarios are now independently [accepted](../../../../docs/warlock-build-loop/v2/ui-backend-acceptance-20261101.json) on source `5818e78f436554a951f1b90f5c9b417e406404b6`. The [actual observation](../../raw/notes/2026-11-01-desktop-application-stream.md) records real Haskell catalog/pin I/O, complete Main frame custody, paging/compact fallback and exact security refusal. Earlier pending paragraphs retain their historical meaning. Private HTTP/WebKit provenance, persistent16batch/disposition lifecycle, native GUI/AT/IME and release remain mandatory; the full goal is active.
