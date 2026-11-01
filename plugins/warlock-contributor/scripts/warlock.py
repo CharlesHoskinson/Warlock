@@ -1079,6 +1079,123 @@ def participant_index_path_error(record_path):
 
 
 PARTICIPANT_INDEX = '.warlock-contributor/participant-index.json'
+BOOTSTRAP_CLASSIFICATIONS = '.warlock-contributor/participant-bootstrap-classifications.json'
+
+
+def bootstrap_json(body):
+    def unique(pairs):
+        result = {}
+        for key, value in pairs:
+            if key in result:
+                raise ValueError('Duplicate bootstrap field: ' + key)
+            result[key] = value
+        return result
+    return json.loads(body, object_pairs_hook=unique)
+
+
+def bootstrap_artifact(root, name):
+    """Snapshot an exact leaf; a symlink's raw target is never dereferenced."""
+    parent, leaf = open_parent(root / name)
+    try:
+        before = os.stat(leaf, dir_fd=parent, follow_symlinks=False)
+        if stat.S_ISLNK(before.st_mode):
+            target = os.fsencode(os.readlink(leaf, dir_fd=parent))
+            after = os.stat(leaf, dir_fd=parent, follow_symlinks=False)
+            signature = lambda item: (item.st_dev, item.st_ino, item.st_mtime_ns, item.st_ctime_ns)
+            if signature(before) != signature(after) or not stat.S_ISLNK(after.st_mode):
+                raise ValueError('Bootstrap symlink changed: ' + name)
+            return 'symlink', 'symlink:' + hashlib.sha256(target).hexdigest(), None
+        body = regular_bytes_at(parent, leaf)
+        try:
+            record = json.loads(body)
+        except (ValueError, UnicodeError):
+            record = None
+        return 'file', hashlib.sha256(body).hexdigest(), record
+    finally:
+        os.close(parent)
+
+
+def bootstrap_classifications(root, indexed, bound):
+    """Reviewed provenance exclusions, never a participant/history verdict."""
+    if bound is not None:
+        if (not isinstance(bound, dict) or set(bound) != {'path', 'sha256'}
+                or bound['path'] != BOOTSTRAP_CLASSIFICATIONS
+                or not isinstance(bound['sha256'], str)
+                or re.fullmatch(r'[0-9a-f]{64}', bound['sha256']) is None):
+            raise ValueError('Invalid indexed bootstrap classification binding')
+    path = root / BOOTSTRAP_CLASSIFICATIONS
+    if not os.path.lexists(path):
+        if bound is not None:
+            raise ValueError('Indexed bootstrap classification manifest is missing')
+        return {}, None
+    body = regular_bytes(path)
+    source_sha = hashlib.sha256(body).hexdigest()
+    if bound is not None and bound['sha256'] != source_sha:
+        raise ValueError('Indexed bootstrap classification manifest bytes changed')
+    manifest = bootstrap_json(body)
+    if (not isinstance(manifest, dict)
+            or set(manifest) != {'schema', 'owner', 'reviewer', 'entries', 'review'}
+            or manifest['schema'] != 1 or not isinstance(manifest['entries'], dict)):
+        raise ValueError('Unsupported bootstrap classification manifest shape')
+    owner, reviewer = manifest['owner'], manifest['reviewer']
+    if (not isinstance(owner, str) or not owner.strip()
+            or not isinstance(reviewer, str) or not reviewer.strip()
+            or owner.strip().casefold() == reviewer.strip().casefold()):
+        raise ValueError('Bootstrap classification requires distinct owner and reviewer')
+    review = manifest['review']
+    if (not isinstance(review, dict) or set(review) != {'path', 'sha256'}
+            or not isinstance(review['path'], str)
+            or participant_index_path_error(review['path'])
+            or review['path'] != pathlib.PurePosixPath(review['path']).as_posix()
+            or review['path'] == BOOTSTRAP_CLASSIFICATIONS
+            or not isinstance(review['sha256'], str)
+            or re.fullmatch(r'[0-9a-f]{64}', review['sha256']) is None):
+        raise ValueError('Invalid bootstrap review artifact reference')
+    review_body = regular_bytes(safe(root, review['path']))
+    if hashlib.sha256(review_body).hexdigest() != review['sha256']:
+        raise ValueError('Bootstrap review artifact bytes changed')
+    reviewed = bootstrap_json(review_body)
+    payload = {key: manifest[key] for key in ('schema', 'owner', 'reviewer', 'entries')}
+    if (not isinstance(reviewed, dict) or reviewed.get('schema') != 1
+            or reviewed.get('disposition') != 'accepted'
+            or reviewed.get('scope') != 'participant-inventory-bootstrap-only'
+            or reviewed.get('scenarioAcceptance') is not False
+            or reviewed.get('independent') is not True
+            or reviewed.get('owner') != owner or reviewed.get('reviewer') != reviewer
+            or reviewed.get('classificationsSha256') != json_sha256(payload)):
+        raise ValueError('Bootstrap review does not bind this exact provenance-only payload')
+    entries = manifest['entries']
+    for name, entry in entries.items():
+        if (not isinstance(name, str) or participant_index_path_error(name)
+                or name != pathlib.PurePosixPath(name).as_posix()
+                or name in (BOOTSTRAP_CLASSIFICATIONS, review['path']) or name in indexed):
+            raise ValueError('Bootstrap classification cannot exclude indexed/control path: ' + str(name))
+        if (not isinstance(entry, dict)
+                or set(entry) != {'kind', 'fingerprint', 'reason', 'producer'}
+                or entry['kind'] not in ('file', 'symlink')
+                or any(not isinstance(entry[key], str) or not entry[key].strip()
+                       for key in ('fingerprint', 'reason', 'producer'))):
+            raise ValueError('Invalid bootstrap classification entry: ' + name)
+        kind, actual, record = bootstrap_artifact(root, name)
+        if kind != entry['kind'] or actual != entry['fingerprint']:
+            raise ValueError('Bootstrap classification artifact fingerprint differs: ' + name)
+        if isinstance(record, dict):
+            if 'startedUTC' in record or 'iterations' in record:
+                raise ValueError('Bootstrap classification cannot exclude participant or possible history: ' + name)
+            try:
+                participant_entry(record)
+            except (ValueError, TypeError):
+                pass
+            else:
+                raise ValueError('Bootstrap classification cannot exclude a genuine participant: ' + name)
+    return entries, {'path': BOOTSTRAP_CLASSIFICATIONS, 'sha256': source_sha}
+
+
+def participant_index_payload(entries, classification_binding=None):
+    payload = {'schema': 1, 'records': dict(sorted(entries.items()))}
+    if classification_binding is not None:
+        payload['bootstrapClassifications'] = classification_binding
+    return payload
 
 
 def participant_identity(record):
@@ -1130,8 +1247,10 @@ def participant_inventory(root):
             index, _ = json_snapshot(root / PARTICIPANT_INDEX)
             if not isinstance(index, dict) or index.get('schema') != 1 or not isinstance(index.get('records'), dict):
                 raise ValueError('Participant index has an unsupported shape')
+            if 'bootstrapClassifications' in index and index['bootstrapClassifications'] is None:
+                raise ValueError('Participant index has an empty bootstrap classification binding')
             supplied = index.get('indexSha256')
-            payload = {'schema': 1, 'records': index['records']}
+            payload = participant_index_payload(index['records'], index.get('bootstrapClassifications'))
             if supplied != json_sha256(payload):
                 raise ValueError('Participant index digest does not match its contents')
             indexed = dict(index['records'])
@@ -1140,6 +1259,13 @@ def participant_inventory(root):
             return {'records': {}, 'entries': {}, 'errors': errors, 'warnings': warnings,
                     'hasIndex': True}
 
+    try:
+        classified, classification_binding = bootstrap_classifications(
+            root, indexed, index.get('bootstrapClassifications') if has_index else None)
+    except (OSError, ValueError, TypeError) as exc:
+        errors.append('Participant bootstrap classifications are invalid: ' + str(exc))
+        return {'records': {}, 'entries': indexed, 'errors': errors, 'warnings': warnings,
+                'hasIndex': has_index}
     participants = {}
     missing_indexed = {}
     for name, entry in indexed.items():
@@ -1169,12 +1295,20 @@ def participant_inventory(root):
 
     if not directory.is_dir():
         return {'records': participants, 'entries': indexed, 'errors': errors,
-                'warnings': warnings, 'hasIndex': has_index}
+                'warnings': warnings, 'hasIndex': has_index, 'bootstrapClassifications': classification_binding}
     for path in sorted(directory.rglob('*.json')):
         relative = path.relative_to(root).as_posix()
         if relative == PARTICIPANT_INDEX:
             continue
         if relative.startswith('.warlock-contributor/evidence/') and relative not in indexed:
+            continue
+        if relative in classified:
+            try:
+                kind, actual, _ = bootstrap_artifact(root, relative)
+                if kind != classified[relative]['kind'] or actual != classified[relative]['fingerprint']:
+                    raise ValueError('artifact fingerprint differs')
+            except (OSError, ValueError, TypeError) as exc:
+                errors.append('Reviewed bootstrap artifact changed at ' + relative + ': ' + str(exc))
             continue
         try:
             record, source_sha256 = json_snapshot(root / relative)
@@ -1228,20 +1362,20 @@ def participant_inventory(root):
                           (' and has no unique exact relocation' if not matches or (len(matches) == 1 and relocation_destinations[matches[0]] > 1)
                            else ' and has ambiguous exact relocations'))
     return {'records': participants, 'entries': indexed, 'errors': errors,
-            'warnings': warnings, 'hasIndex': has_index}
+            'warnings': warnings, 'hasIndex': has_index, 'bootstrapClassifications': classification_binding}
 
 
 def write_participant_index(root, inventory, record_path, record, parent_fd):
     """Append immutable participant identity after the record write succeeds."""
     entries = dict(inventory['entries'])
     entries[record_path] = participant_entry(record)
-    payload = {'schema': 1, 'records': dict(sorted(entries.items()))}
+    payload = participant_index_payload(entries, inventory.get('bootstrapClassifications'))
     index = dict(payload, indexSha256=json_sha256(payload))
     write_record(root / PARTICIPANT_INDEX, index, parent_fd=parent_fd)
 
 
 def write_participant_inventory_index(root, inventory, parent_fd):
-    payload = {'schema': 1, 'records': dict(sorted(inventory['entries'].items()))}
+    payload = participant_index_payload(inventory['entries'], inventory.get('bootstrapClassifications'))
     index = dict(payload, indexSha256=json_sha256(payload))
     write_record(root / PARTICIPANT_INDEX, index, parent_fd=parent_fd)
 

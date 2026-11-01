@@ -284,8 +284,11 @@ def main():
                 descriptor = mutation() if mutation else {'kind': 'complete-current-inputs'}
                 case_index += 1
                 case_name = 'attempt-' + str(case_index).zfill(3)
-                record = '.warlock-contributor/' + case_name + '/record.json'
-                parent = fixture / '.warlock-contributor' / case_name
+                # Current contributor policy inventories direct-child records.
+                # Keep the global creation watch: a rejected mapping must still
+                # create no record or lock, even transiently.
+                record = '.warlock-contributor/' + case_name + '.json'
+                parent = fixture / record
                 command = [str(python), '-B', str(fixture / CHECKER), '--repo', str(fixture), '--record', record, '--json',
                            'start', '--owner', 'registry-fixture', '--slice-file', 'admission-slice.json']
                 entry = {'name': name, 'seeded': seeded, 'mutation': descriptor, 'expectedAdmission': expected_admission,
@@ -296,7 +299,7 @@ def main():
                                                            (fixture / TRACE).read_text() if (fixture / TRACE).exists() else '')
                 entry['independentMappingErrors'] = require_errors
                 check(name + ': independent oracle classifies the intended input', (not require_errors) == expected_admission, require_errors)
-                check(name + ': unique participant parent does not already exist', not parent.exists())
+                check(name + ': unique participant record does not already exist', not parent.exists())
                 watch = CreationWatch(fixture / '.warlock-contributor') if (fixture / '.warlock-contributor').exists() else None
                 try:
                     result = subprocess.run(command, cwd=fixture, env=env, capture_output=True, text=True, timeout=30)

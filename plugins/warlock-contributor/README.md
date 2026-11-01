@@ -484,3 +484,31 @@ for any stronger claim of conflict-safe integration against uncooperative writer
 The current draft is not a secure integration certificate. An immutable,
 no-replace generation protocol would be a separate reviewed change if that stronger
 conflict contract is required; no silent weakening or automatic retry is permitted.
+
+
+### Bootstrap with retained negative QA fixtures
+
+An existing checkout may contain deliberately malformed storage fixtures, raw
+symlinks, captured CLI output or handoff packets under `.warlock-contributor/`.
+Keep their original paths and bytes. Initial indexing still refuses unknown or
+ambiguous history; do not create an empty index or convert failures to warnings.
+
+For independently audited **nonparticipant evidence only**, the fixed ignored
+`.warlock-contributor/participant-bootstrap-classifications.json` can name exact
+paths and fingerprints. Its schema has `schema: 1`, distinct `owner` and
+`reviewer`, an `entries` object and a hash-bound `review` reference. Each entry
+has `kind` (`file` or `symlink`), `fingerprint`, `reason` and `producer`. File
+fingerprints are SHA-256 of exact bytes; link fingerprints are `symlink:` plus
+SHA-256 of the raw link target, without dereferencing it. The independent review
+binds the canonical schema/owner/reviewer/entries payload and explicitly uses
+`scope: participant-inventory-bootstrap-only`, `scenarioAcceptance: false`,
+`independent: true` and `disposition: accepted`. See the executable examples in
+[`qa/test_bootstrap_classifications.py`](qa/test_bootstrap_classifications.py).
+
+Genuine participants, possible history containing `startedUTC` or `iterations`,
+indexed paths and control files cannot be excluded. Unknown corruption, changed
+fixture fingerprints and missing or changed reviews still fail closed. The
+resulting index binds the exact manifest bytes in its digest. This classifies
+provenance; it neither adopts source drafts nor resets progress or accepts EARS.
+Use `--json` and save command output beneath `.warlock-contributor/evidence/`
+so captured status text is not confused with another participant record.
