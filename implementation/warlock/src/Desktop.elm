@@ -1033,7 +1033,7 @@ updateAvailable message model =
                         Ok receipt ->
                             if model.windows.shell.phase /= Shell.Detached && model.windows.shell.binding == Just receipt.binding && model.expected == Just receipt.request then
                                 let applications = Catalog.decode receipt.snapshot |> Result.toMaybe
-                                    next = advance {model | launch = Launch.catalog receipt.snapshot model.launch, applications = applications, pins = Pins.observe receipt.pins model.pins, expected = Nothing, catalogFailure = Nothing, catalogOpening=False, adapterNotice = AdapterNotice.failedRead AdapterNotice.Applications receipt.binding receipt.request Nothing Nothing (applications==Nothing) model.adapterNotice}
+                                    next = advance {model | launch = Launch.catalog receipt.snapshot model.launch, applications = applications, pins = Pins.observeRead receipt.request receipt.pins model.pins, expected = Nothing, catalogFailure = Nothing, catalogOpening=False, adapterNotice = AdapterNotice.failedRead AdapterNotice.Applications receipt.binding receipt.request Nothing Nothing (applications==Nothing) model.adapterNotice}
                                     target = "launcher-search"
                                 in (next,if next.open && model.catalogOpening && applications/=Nothing then [Focus target] else [])
                             else (model,[])
@@ -1336,7 +1336,7 @@ requestApplications opening stamp model =
     in case (model.windows.shell.binding, UInt64.next model.request) of
         (Just binding,Just request) ->
             if model.windows.shell.phase == Shell.Detached || retired.presentation == Nothing then (retired,[]) else
-                ({retired | request = request, expected = Just request},[catalogRequest binding request]++(if opening then [Focus "launcher-search"] else []))
+                ({retired | request = request, expected = Just request, pins = Pins.readStarted request retired.pins},[catalogRequest binding request]++(if opening then [Focus "launcher-search"] else []))
         _ -> (retired,[])
 
 catalogRequest : Binding.Binding -> Counter -> Effect

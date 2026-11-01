@@ -21,6 +21,7 @@ Choose a page for the work you are doing:
 | Look up settings schemas, migration backups and failure outcomes | [Appearance settings storage](reference/settings-storage.md) |
 | Look up paths, commands and machine limits | [Build and runtime reference](reference/build-and-runtime.md) |
 | Look up bounded peer authentication and its original evidence boundary | [Authenticated bootstrap](reference/authenticated-bootstrap.md) |
+| Understand pin save/read causality and the complete frontend effect contract | [Pin saves and effect-boundary causality](reference/pin-save-causality.md) |
 | Understand recorded acceptance and open gates | [Status and evidence reference](reference/status-and-evidence.md) |
 | Understand active and attention indicators | [Explanation: taskbar attention](explanation/taskbar-attention.md) |
 | Understand application pinning and window top state | [Explanation: application pin and always-on-top](explanation/application-pin-and-always-on-top.md) |

@@ -1,11 +1,12 @@
-module Pins exposing (Model, Snapshot, initial, decoder, encode, observe, propose, receive, toggle, move, writable, bytes)
+module Pins exposing (Model, Snapshot, Confirmation, initial, decoder, encode, observe, readStarted, observeRead, propose, receive, toggle, move, writable, bytes)
 
 import Json.Decode as D
 import Json.Encode as E
 import UInt64 exposing (Counter)
 
 type alias Snapshot = { revision : Counter, identities : List String }
-type alias Model = { snapshot : Maybe Snapshot, pending : Maybe {request : Counter, identities : List String}, notice : String }
+type Confirmation = Saving | Unconfirmed (Maybe Counter)
+type alias Model = { snapshot : Maybe Snapshot, pending : Maybe {request : Counter, identities : List String, confirmation : Confirmation}, notice : String }
 initial : Model
 initial = {snapshot=Nothing,pending=Nothing,notice=""}
 strict fields child = D.keyValuePairs D.value |> D.andThen (\pairs -> if List.sort (List.map Tuple.first pairs)==List.sort fields then child else D.fail "Pin fields")
@@ -18,6 +19,35 @@ encode : Snapshot -> E.Value
 encode snapshot = E.object [("revision",E.string (UInt64.string snapshot.revision)),("identities",E.list E.string snapshot.identities)]
 observe : Maybe Snapshot -> Model -> Model
 observe snapshot model =
+    if model.pending/=Nothing then model else observeSnapshot snapshot model
+
+-- A recovery read must begin after the write became unconfirmed. A read
+-- already in flight cannot acquire this authority when its receipt arrives.
+readStarted : Counter -> Model -> Model
+readStarted request model =
+    case model.pending of
+        Just pending ->
+            case pending.confirmation of
+                Saving -> model
+                Unconfirmed _ ->
+                    if UInt64.compare request pending.request/=GT then model else
+                        {model | pending=Just {pending | confirmation=Unconfirmed (Just request)}}
+        Nothing -> model
+
+observeRead : Counter -> Maybe Snapshot -> Model -> Model
+observeRead request snapshot model =
+    case model.pending of
+        Nothing -> observeSnapshot snapshot model
+        Just pending ->
+            case pending.confirmation of
+                Saving -> model
+                Unconfirmed recovery ->
+                    if recovery==Just request then observeSnapshot snapshot model else model
+
+-- Saving reads, including unavailable and higher-revision snapshots, leave
+-- the captured base and proposal intact for the matching write receipt.
+observeSnapshot : Maybe Snapshot -> Model -> Model
+observeSnapshot snapshot model =
     case snapshot of
         Nothing -> {model | snapshot=Nothing,pending=Nothing,notice="Pin storage unavailable. Refresh applications to try again."}
         Just value ->
@@ -30,7 +60,7 @@ propose request values model =
     case model.snapshot of
         Just snapshot ->
             if not (writable model) || not (valid values) || values==snapshot.identities then (model,Nothing) else
-                ({model | pending=Just {request=request,identities=values},notice="Saving pin order…"},Just (encode {snapshot | identities=values}))
+                ({model | pending=Just {request=request,identities=values,confirmation=Saving},notice="Saving pin order…"},Just (encode {snapshot | identities=values}))
         Nothing -> (model,Nothing)
 receive : Counter -> String -> Maybe Snapshot -> Model -> Model
 receive request status snapshot model =
@@ -40,7 +70,11 @@ receive request status snapshot model =
                 if status=="Saved" && (snapshot |> Maybe.map (\s -> s.identities==pending.identities && (model.snapshot |> Maybe.map (\old -> UInt64.compare s.revision old.revision==GT) |> Maybe.withDefault False)) |> Maybe.withDefault False) then
                     {model | snapshot=snapshot,pending=Nothing,notice="Pin order saved."}
                 else if status=="Refused" then {model | pending=Nothing,notice="Pin change refused. Refresh applications and choose again."}
-                else {model | notice="Pin save not confirmed. Refresh applications to read the order; the change will not be repeated."}
+                else
+                    let confirmation = case pending.confirmation of
+                            Saving -> Unconfirmed Nothing
+                            Unconfirmed recovery -> Unconfirmed recovery
+                    in {model | pending=Just {pending | confirmation=confirmation},notice="Pin save not confirmed. Refresh applications to read the order; the change will not be repeated."}
         Nothing -> model
 
 toggle : String -> List String -> List String

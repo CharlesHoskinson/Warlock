@@ -58,6 +58,23 @@ def haskell_inputs(root, prepare=False):
     return names
 
 
+def tea_inputs(root):
+    names = {'tools/qa_cpu.py', 'tools/check_tea_cpu.py', 'tools/check_elm_cpu.py',
+             'tools/quint-toolchain.json', 'window-integration-qa/qa_launch.py',
+             'implementation/warlock-preview-provider-v143/qa/toolchain.py',
+             'implementation/warlock-preview-provider-v143/qa/toolchain.json',
+             'implementation/warlock/elm.json'}
+    names.update(str(p.relative_to(root)) for p in (root / 'implementation/warlock/src').rglob('*.elm'))
+    names.update('implementation/warlock/qa/' + name for name in (
+        'PinsPendingReplay.elm', 'pins-pending.cjs', 'PinsReplay.elm',
+        'NativePointerFixture.elm', 'PreviewPaintReplay.elm',
+        'AuthorityTupleReplay.elm', 'authority-tuple.cjs',
+        'ReceiptStateReplay.elm', 'receipt-state.cjs',
+        'pins-save-lifecycle.qnt', 'pins-save-lifecycle_test.qnt',
+        'receipt-lifecycle.qnt', 'receipt-lifecycle_test.qnt'))
+    return names
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--review', type=Path, required=True)
@@ -72,8 +89,10 @@ def main():
     runner = Path(packet['runner'])
     registry = runner == REPO / 'tools/check_registry_cpu.py'
     haskell = runner == REPO / 'tools/check_haskell_cpu.py'
-    allowed = [['--prepare'], ['--build']] if haskell else ([[], ['--self-test']] if registry else [[], ['--browser'], ['--authority'], ['--receipts']])
-    if (not registry and not haskell and runner != REPO / 'tools/check_elm_cpu.py') or packet['arguments'] not in allowed:
+    tea = runner == REPO / 'tools/check_tea_cpu.py'
+    allowed = ([[]] if tea else ([['--prepare'], ['--build']] if haskell else
+               ([[], ['--self-test']] if registry else [[], ['--browser'], ['--authority'], ['--receipts']])))
+    if (not registry and not haskell and not tea and runner != REPO / 'tools/check_elm_cpu.py') or packet['arguments'] not in allowed:
         raise RuntimeError('Only a fixed reviewed development runner and mode is supported')
     mandatory = {'tools/qa_cpu.py', 'tools/check_elm_cpu.py', 'window-integration-qa/qa_launch.py',
                  'implementation/warlock-preview-provider-v143/qa/toolchain.py',
@@ -98,6 +117,8 @@ def main():
                           'implementation/warlock/assets/shell.css'])
     if registry:
         mandatory = registry_inputs(REPO, packet['arguments'] == ['--self-test'])
+    if tea:
+        mandatory = tea_inputs(REPO)
     if haskell:
         mandatory = haskell_inputs(REPO, packet['arguments'] == ['--prepare'])
     if set(packet['inputs']) != mandatory:
@@ -131,7 +152,7 @@ def main():
             env.pop(name, None)
         child = subprocess.Popen([sys.executable, '-B', str(runner), *packet['arguments']], cwd=REPO, env=env, start_new_session=True)
         try:
-            return child.wait(timeout=1200 if haskell else 240)
+            return child.wait(timeout=1200 if haskell else (600 if tea else 240))
         except (subprocess.TimeoutExpired, KeyboardInterrupt):
             os.killpg(child.pid, signal.SIGTERM)
             try:
