@@ -28,10 +28,56 @@ transfer model = model.windows.shell.effects.transaction |> Maybe.andThen (\tran
         _ -> Nothing)
 settings model = model.settings.outcome |> Maybe.andThen (\outcome -> if outcome.result==Settings.Refused then Just outcome.request else Nothing)
 
+-- Current-session Restore announcements are derived from typed effects, not
+-- from the rendered status text. Recovered older-frontend records and a
+-- disconnected binding need their own durable correlation policy.
+currentRestore : Desktop.Model -> Maybe ( Binding.Binding, Effects.Transaction )
+currentRestore model =
+    let shell = model.windows.shell
+    in case (shell.binding,shell.effects.transaction) of
+        (Just binding,Just transaction) ->
+            if shell.effects.connected
+                && transaction.effectProtocol==1
+                && transaction.intent.operation==Effects.Restore
+                && Binding.matchesContext transaction.intent.context.lifetime transaction.intent.context.epoch binding
+                && List.member transaction.status [Effects.Pending,Effects.Refused,Effects.Unknown] then
+                Just (binding,transaction)
+            else Nothing
+        _ -> Nothing
+
+issuedRestore : Binding.Binding -> Effects.Transaction -> Desktop.Model -> Bool
+issuedRestore binding transaction model =
+    List.any (\entry -> entry.binding==binding && entry.protocol==transaction.effectProtocol && entry.intent==transaction.intent) model.windows.shell.issued
+
+restoreChange : Desktop.Model -> Desktop.Model -> Maybe ( Binding.Binding, Effects.Transaction )
+restoreChange before after =
+    case currentRestore after of
+        Nothing -> Nothing
+        Just (binding,transaction) ->
+            if before.windows.shell.binding/=Just binding then Nothing else
+                case transaction.status of
+                    Effects.Pending ->
+                        if before.windows.shell.effects.connected
+                            && currentRestore before/=Just (binding,transaction)
+                            && not (issuedRestore binding transaction before)
+                            && issuedRestore binding transaction after then Just (binding,transaction) else Nothing
+                    Effects.Refused -> restoreSettlement binding transaction before
+                    Effects.Unknown -> restoreSettlement binding transaction before
+                    _ -> Nothing
+
+restoreSettlement : Binding.Binding -> Effects.Transaction -> Desktop.Model -> Maybe ( Binding.Binding, Effects.Transaction )
+restoreSettlement binding transaction before =
+    case currentRestore before of
+        Just (oldBinding,old) ->
+            if oldBinding==binding && old.effectProtocol==transaction.effectProtocol && old.intent==transaction.intent
+                && List.member old.status [Effects.Pending,Effects.Unknown]
+                && old.status/=transaction.status && issuedRestore binding old before then Just (binding,transaction) else Nothing
+        Nothing -> Nothing
+
 observe : Desktop.Model -> Desktop.Model -> Model -> Model
 observe before after ((Model sequence _) as prior) =
     let correlated kind value text = {correlation=E.encode 0 (E.object [("outcome",E.string kind),("binding",after.windows.shell.binding |> Maybe.map Binding.encode |> Maybe.withDefault E.null),("identity",value)]),text=text,interrupt=False}
-        candidate =
+        existingCandidate =
             if before.adapterNotice/=after.adapterNotice && after.adapterNotice/=Nothing then
                 after.adapterNotice |> Maybe.map (\notice -> {correlation=E.encode 0 (E.object [("outcome",E.string "adapter-unavailable"),("binding",Binding.encode notice.binding),("identity",AdapterNotice.encode notice)]),text=AdapterNotice.message notice,interrupt=False})
             else
@@ -53,6 +99,15 @@ observe before after ((Model sequence _) as prior) =
                         identity=after.notifications.snapshot |> Maybe.map (\snapshot -> E.object [("service",E.string (UInt64.string snapshot.service)),("revision",E.string (UInt64.string snapshot.revision)),("incarnations",E.list (\entry -> E.string (UInt64.string entry.incarnation)) arrivals)]) |> Maybe.withDefault E.null
                         event=correlated "notification-arrival" identity (details++". Open Notifications for details and current actions.")
                     in if not (List.isEmpty expired) then Just (correlated "notification-expiration" expiryIdentity expiryText) else if List.isEmpty arrivals then Nothing else Just {event|interrupt=after.notifications.policy.interruptCritical && List.all Notifications.critical arrivals}
+        candidate =
+            case existingCandidate of
+                Just event -> Just event
+                Nothing -> restoreChange before after |> Maybe.map (\(_,transaction) ->
+                    let identity = E.object [("effectProtocol",E.int transaction.effectProtocol),("intent",Effects.encodeIntent transaction.intent),("status",E.string (Effects.statusName transaction.status))]
+                        -- Screen-reader payloads reject control characters and are
+                        -- bounded independently of labels from window metadata.
+                        text = Surface.windowNotice after |> String.filter (\char -> Char.toCode char>=32 && Char.toCode char/=127) |> String.left 1024
+                    in correlated "restore-status" identity text)
     in case (candidate,UInt64.next sequence) of
         (Just event,Just next) -> Model next (Just {sequence=next,correlation=event.correlation,text=event.text,interrupt=event.interrupt})
         _ -> prior

@@ -10139,9 +10139,24 @@
               },
               "independentReview": "docs/warlock-build-loop/v2/applications-feedback-review-20261031.json",
               "nativeAcceptance": false
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/ui007-status-scroll-20261101/component-observation.json",
+              "sha256": "f4066d23614085cb77c7699fa3a1f59a6cbee42dbfc43610e2b00abaa598a6b6",
+              "scope": "Current source-bound Elm compilation, actual production-route seeded replay, Quint sampling and isolated compiled Chromium component. Not native input, AT, whole EARS or release acceptance.",
+              "sourceCandidate": "implementation/warlock",
+              "workingTreeSources": true,
+              "sourceHashes": {
+                "implementation/warlock/src/Bar.elm": "aa3cd927c33f9624364b8ba04bc3ceb31c3a13541b6fd1044c9f7ac978d871b7",
+                "implementation/warlock/src/OutcomeAnnouncements.elm": "ea57b2c448f5f510ceef256bc0670bd464fc997d29d144741ab1ce3fd004d709",
+                "implementation/warlock/src/StatusScroll.elm": "9348a397d03cd7671faad4407fa0951f8765f4c72ccf98913db3ed35857ba034",
+                "implementation/warlock/src/SurfaceRenderer.elm": "d6cc2985db97749633af2ab33748e98fbc5d482e08fb0e333e3ea6576ae9dd98"
+              },
+              "nativeAcceptance": false,
+              "wholeRequirementAccepted": false
             }
           ],
-          "missingObservation": "Actual native keyboard/focus/context preservation, applicable AT announcement/action observations, frozen numeric P0 feedback/quiescence policy, and independent original-scenario verdict remain pending."
+          "missingObservation": "Actual native keyboard/focus/context preservation, applicable AT announcement/action observations, frozen numeric P0 feedback/quiescence policy, and independent original-scenario verdict remain pending. Current component evidence additionally leaves new Restore scoped-owner delivery, disconnected/older-frontend announcement correlation, simultaneous-candidate arbitration and broader owner/mount lifetime unqualified."
         },
         {
           "name": "restore-refused",
@@ -10207,9 +10222,24 @@
               },
               "independentReview": "docs/warlock-build-loop/v2/applications-feedback-review-20261031.json",
               "nativeAcceptance": false
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/ui007-status-scroll-20261101/component-observation.json",
+              "sha256": "f4066d23614085cb77c7699fa3a1f59a6cbee42dbfc43610e2b00abaa598a6b6",
+              "scope": "Current source-bound Elm compilation, actual production-route seeded replay, Quint sampling and isolated compiled Chromium component. Not native input, AT, whole EARS or release acceptance.",
+              "sourceCandidate": "implementation/warlock",
+              "workingTreeSources": true,
+              "sourceHashes": {
+                "implementation/warlock/src/Bar.elm": "aa3cd927c33f9624364b8ba04bc3ceb31c3a13541b6fd1044c9f7ac978d871b7",
+                "implementation/warlock/src/OutcomeAnnouncements.elm": "ea57b2c448f5f510ceef256bc0670bd464fc997d29d144741ab1ce3fd004d709",
+                "implementation/warlock/src/StatusScroll.elm": "9348a397d03cd7671faad4407fa0951f8765f4c72ccf98913db3ed35857ba034",
+                "implementation/warlock/src/SurfaceRenderer.elm": "d6cc2985db97749633af2ab33748e98fbc5d482e08fb0e333e3ea6576ae9dd98"
+              },
+              "nativeAcceptance": false,
+              "wholeRequirementAccepted": false
             }
           ],
-          "missingObservation": "Actual native keyboard/focus/context preservation, applicable AT announcement/action observations, frozen numeric P0 feedback/quiescence policy, and independent original-scenario verdict remain pending."
+          "missingObservation": "Actual native keyboard/focus/context preservation, applicable AT announcement/action observations, frozen numeric P0 feedback/quiescence policy, and independent original-scenario verdict remain pending. Current component evidence additionally leaves new Restore scoped-owner delivery, disconnected/older-frontend announcement correlation, simultaneous-candidate arbitration and broader owner/mount lifetime unqualified."
         },
         {
           "name": "pin-pending",
@@ -17213,5 +17243,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-11-01T04:25:52.772093+00:00"
+  "updatedUTC": "2026-11-01T10:39:32.165213+00:00"
 }
