@@ -120,6 +120,14 @@ module overview_recovery_context {
     s' = s,
   }
 
+  // Sensitivity-only mutant: repeated activation emits another Focus command
+  // while leaving the selected control unchanged. The production replay checks
+  // full (model, effects) equality; this catches the model's narrower observer.
+  action repeatedOpenExtraFocusMutant = all {
+    s.overviewOpen,
+    s' = { ...s, focusCommands: s.focusCommands + 1 },
+  }
+
   // Return after Refused only while the exact refusal still owns the current
   // transaction. A different current intent cancels the old return context.
   action freshReadAfterRefusal = all {

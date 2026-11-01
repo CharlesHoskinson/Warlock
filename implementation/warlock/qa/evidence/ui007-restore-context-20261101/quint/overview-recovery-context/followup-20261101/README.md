@@ -1,0 +1,7 @@
+# Quint recovery-context follow-up
+
+Sol's read-only review found that the earlier repeated-open named test did not assert exact focus-command count, and that two explicit reducer mutants were rejected by directed tests but not detected by the four invariants in the normal-transition random sample. The model now strengthens the repeated-open postcondition to check selected workspace, focus target, exactly one focus command and exactly one restore mutation. A focused-only extra-Focus mutant is rejected by a new named test. This does not make normal-transition sampling a mutant-sensitivity check: `oldOriginReturnedAfterMismatch` remains at zero occurrences in the non-mutant sample, and the mismatched-return mutant is rejected by its explicit named test.
+
+Under `window-integration-qa/qa_run.py`, Quint 0.33.0 model/test typechecks pass, all nine named tests pass with seed `52012`, and a 5,000-trace normal-transition sample at max 8 transitions passes four invariants with seed `52012`. The sample reaches the existing-workspace Unknown witness 271 times and missing-workspace fallback 1,091 times; the forbidden old-origin mismatch return is witnessed zero times, as expected for the non-mutant transition relation.
+
+Sources are copied here and pinned in [`report.json`](report.json). Exact command output is retained in the adjacent `followup-20261101-*.txt` files. This model omits production binding/authority/stamp/output and UI guards, native input, physical focus and AT; it is not original-scenario acceptance.

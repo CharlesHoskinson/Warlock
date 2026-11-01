@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "model": "implementation/warlock/qa/overview-recovery-context.qnt",
+  "modelSHA256": "e403440248627bd049220b6192560484362c48f844954feed7eaa08c2a282c9c",
+  "tests": "implementation/warlock/qa/overview-recovery-context_test.qnt",
+  "testsSHA256": "868260c7fa37af8a99b1932e1eec38d05aca65c28c5079f3efc7a05851b8817b",
+  "quintVersion": "0.33.0",
+  "protectedRunner": "window-integration-qa/qa_run.py",
+  "backend": "rust",
+  "modelTypecheck": "pass",
+  "testTypecheck": "pass",
+  "testSeed": "52012",
+  "namedTestsPassed": 9,
+  "namedMutationTests": [
+    "repeatedOpenResetMutantDetectedTest",
+    "repeatedOpenExtraFocusMutantDetectedTest",
+    "missingWorkspaceRetainMutantDetectedTest",
+    "mismatchedRefusalReturnMutantDetectedTest"
+  ],
+  "safetyRun": {
+    "seed": "52012",
+    "samples": 5000,
+    "maxTransitions": 8,
+    "invariants": [
+      "noReplayOnUnknownReopen",
+      "selectedWorkspaceExists",
+      "focusMatchesSelection",
+      "returnRequiresExactRefusal"
+    ],
+    "result": "no violation observed",
+    "witnesses": {
+      "unknownWorkspaceWitness": 271,
+      "vanishedWorkspaceFallbackWitness": 1091,
+      "oldOriginReturnedAfterMismatch": 0
+    }
+  },
+  "limits": [
+    "Mutation regressions are detected by named directed tests; the normal-transition sampled invariants do not independently detect two of the explicit mutants.",
+    "The repeated-open test now checks exact retained selection, focus target, focus command count and mutation count; the focused-only mutant proves its count assertion is active.",
+    "This is reducer-level correspondence only and omits full binding, authority, stamps, outputs, current-read identity, menu/choice guards, native delivery, physical focus and assistive technology."
+  ]
+}

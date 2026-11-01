@@ -95,3 +95,7 @@ compositor rendering, physical keyboard focus, actual assistive-technology
 announcement and action behavior, frozen numeric feedback policy, and the
 independent original oracle remain open. The original 242 requirements / 417
 scenarios and `releaseAccepted=false` are unchanged.
+
+## Model review follow-up
+
+Sol's review found a missing exact-focus-count assertion in the repeated-open model test and correctly noted that the four sampled invariants do not detect two explicit reducer mutants. The model was updated with an exact focus-command postcondition and a focused-only extra-Focus mutant; the mutant test passes. Under the protected runner, both model files typecheck and all nine named tests pass. A reproducible 5,000-trace, max-8-step sample passes four normal-transition invariants. The sample reaches the Unknown-with-workspace witness 271 times and the vanished-workspace fallback 1,091 times; the mismatched-return forbidden witness occurs zero times in this non-mutant sample. Named directed tests, not the sampled safety run, detect the explicit mutants. Exact source pins and outputs are in [`the follow-up packet`](quint/overview-recovery-context/followup-20261101/README.md).
