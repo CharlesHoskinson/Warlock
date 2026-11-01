@@ -5769,17 +5769,107 @@
       "capability": "elm-host",
       "owner": "Native host lead",
       "verifier": "Independent acceptance reviewer",
-      "requirementAccepted": false,
-      "status": "unadjudicated",
+      "requirementAccepted": true,
+      "status": "accepted",
       "scenarios": [
         {
           "name": "tea-effects",
           "oracle": "the declared contract holds, exact models and effect descriptions match the fixture and no native acceptance is inferred",
-          "status": "unadjudicated",
-          "evidence": [],
-          "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+          "status": "accepted",
+          "evidence": [
+            {
+              "path": "implementation/warlock/qa/evidence/tea-effects-20261101/report.json",
+              "sha256": "0cfb16fbbdca28a21aab3d3bad468be3007f571065d1acb50e0b074225982d8b"
+            },
+            {
+              "path": "docs/warlock-build-loop/v2/tea-effects-review-20261101.json",
+              "sha256": "730cdc6cbad64fbff4c88c9db9c872b4d8377de03cccb3617972d1fb7075c7a9"
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/tea-effects-20261101/checks.tar.gz",
+              "sha256": "3e603cf0444ae47c227a221dcd88eeaec7750808d46db0741ff4f6663c5844e8"
+            },
+            {
+              "path": "implementation/warlock/qa/evidence/tea-effects-20261101/cpu-review.json",
+              "sha256": "34002d25d2bba0d13d55cb63dd7aa6a578c70f9cab4d3f9fe5eca401ee9ec920"
+            }
+          ],
+          "missingObservation": "",
+          "sourceTuple": {
+            "sourceRevision": "b6bfe6146cdbd4a9c3eae06ddc898c93436f5e70",
+            "core": "Actual Main/Bar/Popup and owning Elm output/surface/Desktop reducers with explicit simulated bridge frames; no native compositor or issuer loaded.",
+            "plugin": "No native plugin loaded; native/GPU ABI and physical presentation acceptance remain separate.",
+            "toolchain": "Pinned Elm0.19.2 compiler c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948; Node24.22.1 e32e2d16081cf644f88392934288086e7662529d0d43277c34f7aad2207cfafb; Quint0.33.0 inventoried4681files, exact122input review34002d25d2bba0d13d55cb63dd7aa6a578c70f9cab4d3f9fe5eca401ee9ec920."
+          },
+          "sourceHashes": {
+            "implementation/warlock/src/Pins.elm": "fcaeb91b1fa8f3c45922e1775abf618e73cc4331f07122aedcc539a8094dd4b2",
+            "implementation/warlock/src/Desktop.elm": "7c91563879ca349d3777d6f0c7a0436be11b427cc0246e1ae276da30da385dec",
+            "implementation/warlock/src/Main.elm": "7f5ddbe6fedf775e143b684ec60c9bfbdf15606414ed4fafc2c5553b514821c2",
+            "implementation/warlock/src/Popup.elm": "4ab4195bfb96622cf563efaf4a889045553fb2367347b6881e70f53545bae406",
+            "implementation/warlock/src/Effects.elm": "80c574e8c564c28a1fb11f1f89bb5bfa7ac97a92474bbf027a737324bb2a82cd",
+            "implementation/warlock/src/Shell.elm": "f14b7fe3bfbf1a57f335f98914c988938c235823ba4596c067cf744776c4a9ae",
+            "implementation/warlock/src/ReceiptRouter.elm": "c6c5bc025cddd2bb7a0e8daa22ee3ff0cddff36e37131095130215d5e85825d0",
+            "implementation/warlock/src/NativeOutcome.elm": "79252d7e3fefa4a4ca93dfe4d6fc18552b710d514ec1cdb4521d1ecea9c8c2e6",
+            "implementation/warlock/src/Surface.elm": "689657630aec36dd6133c762a385284311f67a0b0f9fa95c5897e802b5667412",
+            "implementation/warlock/src/SurfaceController.elm": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
+            "implementation/warlock/src/OutputController.elm": "aaf1729287ff61595a237201b261e7c1ce11c8f2353c620171f48aff99d86f38",
+            "implementation/warlock/src/Binding.elm": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b",
+            "implementation/warlock/src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+            "implementation/warlock/qa/PinsPendingReplay.elm": "f877fc0061eeb0c8be2b7f32061e6e25294b1fa02924be1d8a0658afdf190999",
+            "implementation/warlock/qa/pins-pending.cjs": "359164591f48becc0f99b1389039aec0c2738e6763127e39babba6075ac837b6",
+            "implementation/warlock/qa/pins-save-lifecycle.qnt": "fdf0ebae038096384bc91358d568916f553921084f044a4bdb5e326558445324",
+            "implementation/warlock/qa/pins-save-lifecycle_test.qnt": "67b31b84f5b715e42e06caeed87abd55de5dc6a37725fdd8cbb453d299215d98",
+            "implementation/warlock/qa/ReceiptStateReplay.elm": "d4e06b035a9eed7d9662da908a2170fe90033e672afc4427810898184817f331",
+            "implementation/warlock/qa/receipt-state.cjs": "479e79b00a07f3b1e8aae0deeacf2f98b2d6e86bfb80717ef4fe6b4afa4743a6",
+            "implementation/warlock/qa/AuthorityTupleReplay.elm": "78a95932b297f236e50410d3b5c020bcebc2b2c3deccd663746211d24ecd28ab",
+            "implementation/warlock/qa/authority-tuple.cjs": "3033b7c84d667af2566439d7e2e01644df3a171fa332be142388b8d92cdec68a",
+            "implementation/warlock/src/SurfaceSnapshot.elm": "58298ea43fffba3da6bcc64f1456b47bcde3607d476ef99465be0c98c2b433d7",
+            "implementation/warlock/src/PreviewPaintGate.elm": "29336cc6d6b21c3d32fd4967911bb189c42b1569ed877ffe79555ed30a7c7d82",
+            "implementation/warlock/qa/PreviewPaintReplay.elm": "488e33a7e09e5937385be99e7525ba45765cf195e54cf2244627a8e2c799ab18",
+            "implementation/warlock/qa/PinsReplay.elm": "5014fa611be6138bba47b3b3326e769d1a4c63db4bf463f6d85c26d2bce0f85a",
+            "implementation/warlock/qa/NativePointerFixture.elm": "b674baa48a0d0197d32e6bc400412465e3a83934d3a749ebc7cbba35e82c4124"
+          },
+          "reviewer": {
+            "name": "reviewer",
+            "independent": true,
+            "disposition": "accepted"
+          },
+          "verificationScope": "Typed compiler checks, deterministic replay and independent boundary fixtures with source hashes; native behavior qualified separately.",
+          "scope": "Whole original ELM-TEA-003/tea-effects on the current actual Elm frontend: all three effect/decoder clauses qualified by typed root compilation, actual owning-route dependent pin outcomes, matching window receipt/authority controls, all four independent Cmd.batch sites with paint gating, and strict independent decoder/effect fixtures. No native GUI, storage persistence, AT/IME or release acceptance inferred."
         }
-      ]
+      ],
+      "adjudicationHistory": [
+        {
+          "atUTC": "2026-11-01T02:02:46.684712+00:00",
+          "previousRecordedRow": {
+            "id": "ELM-TEA-003",
+            "phase": "P2",
+            "priority": "must",
+            "capability": "elm-host",
+            "owner": "Native host lead",
+            "verifier": "Independent acceptance reviewer",
+            "requirementAccepted": false,
+            "status": "unadjudicated",
+            "scenarios": [
+              {
+                "name": "tea-effects",
+                "oracle": "the declared contract holds, exact models and effect descriptions match the fixture and no native acceptance is inferred",
+                "status": "unadjudicated",
+                "evidence": [],
+                "missingObservation": "Existing evidence not yet adjudicated against this original scenario."
+              }
+            ]
+          },
+          "reason": "Actual pin causality source fix and independent immutable review of all three original frontend clauses."
+        }
+      ],
+      "acceptance": {
+        "path": "docs/warlock-build-loop/v2/tea-effects-acceptance-20261101.json",
+        "sha256": "f20c2f78205856cf44d1ceca048521753e6b4ac3c8d0bbce51ba37a8bd3cadd3",
+        "scope": "Whole original ELM-TEA-003/tea-effects on the current actual Elm frontend: all three effect/decoder clauses qualified by typed root compilation, actual owning-route dependent pin outcomes, matching window receipt/authority controls, all four independent Cmd.batch sites with paint gating, and strict independent decoder/effect fixtures. No native GUI, storage persistence, AT/IME or release acceptance inferred.",
+        "sourceRevision": "b6bfe6146cdbd4a9c3eae06ddc898c93436f5e70",
+        "reviewer": "reviewer"
+      }
     },
     {
       "id": "ELM-TEA-004",
@@ -16854,5 +16944,5 @@
       ]
     }
   ],
-  "updatedUTC": "2026-11-01T01:21:17.592572+00:00"
+  "updatedUTC": "2026-11-01T02:02:46.684712+00:00"
 }

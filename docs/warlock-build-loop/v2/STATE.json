@@ -1,56 +1,59 @@
 {
   "schema": 1,
   "owner": "root-agentbus",
-  "updatedUTC": "2026-11-01T01:24:22.661488+00:00",
+  "updatedUTC": "2026-11-01T02:02:46.684712+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "authenticated-session-delivery",
+    "id": "tea-effects-pin-read-causality",
     "requirements": [
-      "ELM-DEL-010"
+      "ELM-TEA-003"
     ],
     "scenarios": [
-      "delivery-010",
-      "peer-wrong-session",
-      "peer-approved-session"
+      "tea-effects"
     ],
     "paths": [
-      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/Aggregate.hs",
-      "implementation/warlock/haskell/runtime/runtime.cabal",
-      "implementation/warlock/haskell/runtime/fixture-peer/Main.hs",
-      "implementation/warlock/haskell/runtime/test-persistent/Main.hs",
-      "implementation/warlock/haskell/runtime/formal/current_registration_test.qnt",
-      "implementation/warlock/haskell/runtime/formal/current_registration.qnt",
-      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap.hs",
-      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/ScopedPeer.hs",
-      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/CurrentSessions.hs",
-      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/CredentialScopeGuard.hs",
-      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/SocketOwner.hsc",
-      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/CredentialIngress.hs",
-      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress.hs",
-      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress/Internal.hs",
-      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Codec.hs",
-      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/PeerCredential.hs",
-      "implementation/warlock/haskell/protocol/src/Warlock/Transport/PeerCredentials.hsc",
-      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Internal.hsc",
-      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Bootstrap.hs",
-      "implementation/warlock/haskell/runtime/README.md"
+      "implementation/warlock/src/Pins.elm",
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/src/Main.elm",
+      "implementation/warlock/src/Popup.elm",
+      "implementation/warlock/src/Effects.elm",
+      "implementation/warlock/src/Shell.elm",
+      "implementation/warlock/src/ReceiptRouter.elm",
+      "implementation/warlock/src/NativeOutcome.elm",
+      "implementation/warlock/src/Surface.elm",
+      "implementation/warlock/src/SurfaceController.elm",
+      "implementation/warlock/src/OutputController.elm",
+      "implementation/warlock/src/Binding.elm",
+      "implementation/warlock/src/UInt64.elm",
+      "implementation/warlock/qa/PinsPendingReplay.elm",
+      "implementation/warlock/qa/pins-pending.cjs",
+      "implementation/warlock/qa/pins-save-lifecycle.qnt",
+      "implementation/warlock/qa/pins-save-lifecycle_test.qnt",
+      "implementation/warlock/qa/ReceiptStateReplay.elm",
+      "implementation/warlock/qa/receipt-state.cjs",
+      "implementation/warlock/qa/AuthorityTupleReplay.elm",
+      "implementation/warlock/qa/authority-tuple.cjs",
+      "implementation/warlock/src/SurfaceSnapshot.elm",
+      "implementation/warlock/src/PreviewPaintGate.elm",
+      "implementation/warlock/qa/PreviewPaintReplay.elm",
+      "implementation/warlock/qa/PinsReplay.elm",
+      "implementation/warlock/qa/NativePointerFixture.elm"
     ],
-    "before": "The actual Haskell bootstrap admits only one frame before awaiting child exit. Current kernel-credential/session controls are internal test builds, with no real cross-user trace or multi-frame public production-library witness.",
-    "after": "The existing public bootstrap accepts a bounded live sequence under its single original absolute lifetime, reauthenticates every fragment and final dispatch, refuses actual cross-user and retired/replayed senders before policy admission, and retires its own resources. This advances the real backend; it does not claim an unlimited desktop daemon or native effect issuer.",
+    "before": "An earlier application refresh can arrive during a later pin write and may clear its pending identity without the matching save receipt; actual owning-route RED is required. Full TEA003 committed dependency, batch independence and typed decoder obligations remain unadjudicated.",
+    "after": "The actual Elm UI preserves in-flight pin order and save identity across an earlier read, adopts only its authorized completion or deliberately correlated Unknown recovery, and the whole original effect/decoder contract is exercised through the real owning roots without native acceptance.",
     "verification": [
-      "Root protected production-library linked Haskell multi-frame/EOF/refusal/retirement controls with distinct full request identities and meaningful seeded fragmentation/order cases; real kernel cross-user UID trace, same-user current and retired/replayed lifetime traces, callback canaries and owned cleanup. Preserve original5s budgets, strict buildall/testall and model correspondence; no synthetic UID original acceptance, no native effect/GUI/release transfer."
+      "Root protected compiler checks actual Main/Bar/Popup, owning-route R-before-W RED then fix, independent seeded fullwidth request/revision/raw-effect fixtures and invalid/duplicate/read-order/Unknown-recovery controls; matching Committed dependency and typed decoder boundaries via current ReceiptState/AuthorityTuple plus exact batch correspondence, meaningful source-linked Quint safety/reachability. Whole TEA003 requires all three clauses, original literal oracle and independent immutable review; no pin-only or native verdict."
     ],
     "owner": "root-agentbus",
-    "participantRecord": ".warlock-contributor/persistent-auth.json",
-    "outcome": "All3literal DEL010 scenarios independently accepted on immutable367a4899023340bc9cfeb2765a90b7ed37e58109 after actual source fix and14public cases/25suites/37invocations. WholeEARS stayspartial: required realcrossUID trace unavailable after one askpass timeout.",
-    "sourceRevision": "367a4899023340bc9cfeb2765a90b7ed37e58109",
-    "evidence": "implementation/warlock/qa/evidence/persistent-auth-20261101/report.json",
-    "acceptance": "docs/warlock-build-loop/v2/persistent-auth-acceptance-20261101.json",
-    "independentReview": "docs/warlock-build-loop/v2/persistent-auth-review-20261101.json"
+    "participantRecord": ".warlock-contributor/tea-effects.json",
+    "outcome": "Whole original TEA003/tea-effects independently accepted: actual pin-save causality fix and all three effect/decoder clauses on immutable tested source; no native/GUI/AT/persistence/release transfer.",
+    "sourceRevision": "b6bfe6146cdbd4a9c3eae06ddc898c93436f5e70",
+    "acceptance": "docs/warlock-build-loop/v2/tea-effects-acceptance-20261101.json",
+    "independentReview": "docs/warlock-build-loop/v2/tea-effects-review-20261101.json"
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -2226,45 +2229,49 @@
     "nextOriginalProductWork": "Restore and qualify a fresh coherent native source/core/plugin/host tuple for original taskbar activation/minimize/restore recipients: ELM-UI-004 / ELM-UX-005 / ELM-UX-008. Root owns serialized protected native execution; source reconstruction/build evidence stays separate from GUI acceptance."
   },
   "previousActiveSlice": {
-    "id": "receipt-cancelled-correlation",
+    "id": "authenticated-session-delivery",
     "requirements": [
-      "ELM-ARC-007"
+      "ELM-DEL-010"
     ],
     "scenarios": [
-      "architecture-007",
-      "receipt-pending",
-      "receipt-committed",
-      "receipt-refused",
-      "receipt-cancelled"
+      "delivery-010",
+      "peer-wrong-session",
+      "peer-approved-session"
     ],
     "paths": [
-      "implementation/warlock/src/NativeOutcome.elm",
-      "implementation/warlock/src/ReceiptRouter.elm",
-      "implementation/warlock/qa/ReceiptStateReplay.elm",
-      "implementation/warlock/qa/receipt-state.cjs",
-      "implementation/warlock/qa/receipt-lifecycle.qnt",
-      "implementation/warlock/src/Effects.elm",
-      "implementation/warlock/src/Shell.elm",
-      "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/src/TaskbarShell.elm",
-      "implementation/warlock/src/Menu.elm",
-      "implementation/warlock/src/MenuBridge.elm",
-      "implementation/warlock/src/Binding.elm",
-      "implementation/warlock/src/UInt64.elm",
-      "implementation/warlock/src/OutputController.elm",
-      "implementation/warlock/src/SurfaceController.elm",
-      "implementation/warlock/src/NativeProvider.elm",
-      "implementation/warlock/src/ActionProjection.elm",
-      "implementation/warlock/src/GeometryProjection.elm"
+      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/Aggregate.hs",
+      "implementation/warlock/haskell/runtime/runtime.cabal",
+      "implementation/warlock/haskell/runtime/fixture-peer/Main.hs",
+      "implementation/warlock/haskell/runtime/test-persistent/Main.hs",
+      "implementation/warlock/haskell/runtime/formal/current_registration_test.qnt",
+      "implementation/warlock/haskell/runtime/formal/current_registration.qnt",
+      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/ScopedPeer.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/CurrentSessions.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/CredentialScopeGuard.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/SocketOwner.hsc",
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/CredentialIngress.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress/Internal.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Codec.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/PeerCredential.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Transport/PeerCredentials.hsc",
+      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Internal.hsc",
+      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Bootstrap.hs",
+      "implementation/warlock/haskell/runtime/README.md"
     ],
-    "before": "The live Elm effect-outcome gates reject Cancelled despite the receipt model supporting it. Haskell protocol preparation is separate and does not supply native effect proof.",
-    "after": "The actual desktop routes a correctly correlated Cancelled receipt to its request, preserves other requests, and retains five distinct states including Unknown after unproven disconnect. Whole ARC007 closes only on all original bridge fixtures and independent source-bound review; native acceptance stays open.",
+    "before": "The actual Haskell bootstrap admits only one frame before awaiting child exit. Current kernel-credential/session controls are internal test builds, with no real cross-user trace or multi-frame public production-library witness.",
+    "after": "The existing public bootstrap accepts a bounded live sequence under its single original absolute lifetime, reauthenticates every fragment and final dispatch, refuses actual cross-user and retired/replayed senders before policy admission, and retires its own resources. This advances the real backend; it does not claim an unlimited desktop daemon or native effect issuer.",
     "verification": [
-      "Root protected actual desktop source route, all five original ARC007 scenarios with independent matching bridge receipts; full-width authority, two-request isolation, changed binding/intent/protocol rejection, duplicate/late/drop/recovery no replay, meaningful seeded sequence properties and matching receipt lifecycle model. Compile actual Elm entries. Preserve RED and native obligations."
+      "Root protected production-library linked Haskell multi-frame/EOF/refusal/retirement controls with distinct full request identities and meaningful seeded fragmentation/order cases; real kernel cross-user UID trace, same-user current and retired/replayed lifetime traces, callback canaries and owned cleanup. Preserve original5s budgets, strict buildall/testall and model correspondence; no synthetic UID original acceptance, no native effect/GUI/release transfer."
     ],
     "owner": "root-agentbus",
-    "participantRecord": ".warlock-contributor/receipt-state-integration.json",
-    "outcome": "Whole original ARC007 accepted on current Elm bridge source; real Cancelled gate fix, no native/port/release transfer."
+    "participantRecord": ".warlock-contributor/persistent-auth.json",
+    "outcome": "All3literal DEL010 scenarios independently accepted on immutable367a4899023340bc9cfeb2765a90b7ed37e58109 after actual source fix and14public cases/25suites/37invocations. WholeEARS stayspartial: required realcrossUID trace unavailable after one askpass timeout.",
+    "sourceRevision": "367a4899023340bc9cfeb2765a90b7ed37e58109",
+    "evidence": "implementation/warlock/qa/evidence/persistent-auth-20261101/report.json",
+    "acceptance": "docs/warlock-build-loop/v2/persistent-auth-acceptance-20261101.json",
+    "independentReview": "docs/warlock-build-loop/v2/persistent-auth-review-20261101.json"
   },
   "lastNativeObservation": {
     "report": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-primary-at/native-primary-keyboard-1793215082472811918/report.json",
@@ -3153,6 +3160,12 @@
       "fromSlice": "receipt-cancelled-correlation",
       "toSlice": "authenticated-session-delivery",
       "reason": "Real production bootstrap stops after first authenticated frame; selected DEL010 original lifetime/identity boundary under independently reviewed source readiness."
+    },
+    {
+      "selectedUTC": "2026-11-01T01:28:02.658445+00:00",
+      "fromSlice": "authenticated-session-delivery",
+      "toSlice": "tea-effects-pin-read-causality",
+      "reason": "Verified DEL010 public-library slice and all3named scenarios complete; whole crossUID prerequisite remains explicitly partial. Continue mandatory actualElm effect/decoder source work under available toolchain."
     }
   ],
   "museRegulator": {
@@ -3296,22 +3309,22 @@
     "rootCoordinator": "lead",
     "roles": {
       "lead": "integration and serialized protected checks",
-      "reviewer": "independent source/ownership review and literal original dispositions",
-      "elm-impl": "actual bounded multi-frame bootstrap and owned normal-exit completion source",
-      "elm-tests": "independent public production-library kernel credential/retirement/lifecycle controls",
+      "reviewer": "Full original TEA003 immutable source/evidence acceptance",
+      "elm-impl": "Actual typed Pins/Desktop causality fix; next Haskell/Elm backend source integration survey",
+      "elm-tests": "Independent actual renderer/controller pin sequence oracle and next backend original obligations",
       "terra-browser": "public production route source audit",
       "sol-docs": "bounded bootstrap documentation suggestions",
-      "terra-contracts": "delegated UID mapping/capability contract source audit",
+      "terra-contracts": "Source-only causal read/save formal model handoff, root corrected syntax/correspondence and executed",
       "haiku-originals": "literal original security audit",
       "muse": "bounded DEL010 EARS continuity",
       "terra-artifacts": "unexecuted delegated-UID protected-runner draft"
     },
-    "externalProcessReceipts": ".warlock-contributor/auth-external-launch-receipts.json",
+    "externalProcessReceipts": ".warlock-contributor/tea-external-launch-receipts.json",
     "authAcknowledgements": "AgentBus live log; process launch alone is not successful authentication",
     "singleProductSlice": true,
     "noDuplicateCoordinator": true,
-    "currentSlice": "ELM-DEL-010 authentication, all three literal original scenarios and whole-EARS cross-user verification obligation",
-    "currentProcessObservation": "All assigned source/audit/QA and independent review jobs have terminal handoffs; root integrates published evidence and continues active goal. No background worker count inferred from identity inventory."
+    "currentSlice": "ELM-TEA-003 all3clauses; next Haskell UI/backend integration survey",
+    "currentProcessObservation": "All source/formal/QA/final-review jobs handed off; root publishes full original verdict and continues host goal. No background liveness inferred from identities."
   },
   "currentGoalTelemetry": {
     "observedUTC": "2026-10-31T23:58:16.047484+00:00",
@@ -3323,22 +3336,18 @@
     "scope": "Current host goal telemetry sampled during this batch, not a daily usage figure or feature count"
   },
   "currentOriginalClosure": {
-    "requirement": "ELM-ARC-007",
+    "requirement": "ELM-TEA-003",
     "scenarios": [
-      "architecture-007",
-      "receipt-pending",
-      "receipt-committed",
-      "receipt-refused",
-      "receipt-cancelled"
+      "tea-effects"
     ],
     "accepted": true,
-    "acceptance": "docs/warlock-build-loop/v2/receipt-state-acceptance-20261031.json",
+    "acceptance": "docs/warlock-build-loop/v2/tea-effects-acceptance-20261101.json",
+    "sourceRevision": "b6bfe6146cdbd4a9c3eae06ddc898c93436f5e70",
     "administrative": false,
     "nativeExecution": false,
-    "haskellPortAcceptance": false,
     "releaseAcceptance": false
   },
-  "nextConcreteAction": "Finish independent literal DEL010 dispositions and retain whole-EARS realcrossUID blocker, publish source/evidence/handoff, then reproduce actual Elm refresh-before-pin-save counterexample under TEA003 without weakening recovery/native obligations.",
+  "nextConcreteAction": "Implement actual Haskell catalog/pins backend and current Elm stream composition, starting with Applications Refresh under original ARC003; reconcile existing shared wire/capacity and missing private source-decision artifact within authorized preparation, preserve eventual durable read/write/privateHTTP target, no competing protocol/truncation/nativeOps activation.",
   "currentNamedScenarioClosure": {
     "requirement": "ELM-DEL-010",
     "scenarios": [

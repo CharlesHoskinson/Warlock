@@ -9,3 +9,4 @@
 | [2026-10-31-registry-admission.md](2026-10-31-registry-admission.md) | Actual bad admission repaired; whole original REV005 accepted as administrative behavior | 2026-10-31 |
 | [2026-10-31-receipt-states.md](2026-10-31-receipt-states.md) | Whole ARC007 real Cancelled gate fix and separate current Haskell package readiness | 2026-10-31 |
 | [2026-11-01-authenticated-bootstrap.md](2026-11-01-authenticated-bootstrap.md) | Actual multi-frame source fix, retained-peer regression and passing public-library controls; whole DEL010 cross-user obligation remains open | 2026-11-01 |
+| [2026-11-01-pin-save-causality.md](2026-11-01-pin-save-causality.md) | Actual pending pin-save race fixed; whole original TEA003 accepted across all three clauses | 2026-11-01 |

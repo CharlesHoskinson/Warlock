@@ -1,0 +1,479 @@
+{
+  "schema": 1,
+  "reviewedUTC": "2026-11-01T01:58:05.907664+00:00",
+  "reviewer": {
+    "name": "/root/readiness_review",
+    "authenticatedIdentity": "reviewer",
+    "agentBusRun": "warlock-20261031-setup",
+    "independent": true,
+    "execution": "Read-only source,immutableGitblobs,retainedtraces andartifactinspection; root exclusively executed protected compiler/model/replaycampaign."
+  },
+  "requirement": "ELM-TEA-003",
+  "sourceRevision": "b6bfe6146cdbd4a9c3eae06ddc898c93436f5e70",
+  "status": "accepted",
+  "disposition": "accepted",
+  "requirementAccepted": true,
+  "acceptedScenarios": [
+    "tea-effects"
+  ],
+  "originalEARS": "The Elm frontend SHALL sequence dependent native effects through matching committed receipts, reserve Cmd.batch for independent effects and validate observations at typed decoders before model mutation.",
+  "originalVerification": "Typed compiler checks, deterministic replay and independent boundary fixtures with source hashes; native behavior qualified separately.",
+  "scenarios": [
+    {
+      "name": "tea-effects",
+      "given": "a pinned Elm model and named domain fixture",
+      "when": "the effects boundary and replay campaign execute",
+      "then": "the declared contract holds, exact models and effect descriptions match the fixture and no native acceptance is inferred",
+      "status": "accepted",
+      "disposition": "accepted",
+      "sourceRevision": "b6bfe6146cdbd4a9c3eae06ddc898c93436f5e70",
+      "observation": "All three declared frontend clauses qualified on the current owning effect boundary using compilerchecks,deterministic replay,independent rawdecoder/effect fixtures and boundedmodels. Exact models/effectdescriptions match; no native acceptance inferred.",
+      "matchingScenarioReceipts": [
+        {
+          "requirement": "ELM-TEA-003",
+          "scenario": "tea-effects",
+          "seed": 20261031,
+          "pins": 2,
+          "readRequest": "6",
+          "pendingWriteRequest": "7",
+          "originalRevision": "9007199254745008",
+          "expectedSavedRevision": "9007199254745009",
+          "matrixHash": "7a625940f753b1d38b2072a02abfa469b894d2844d002d359b867430e93211d9",
+          "simulatedBridge": true,
+          "nativeAcceptance": false,
+          "wholeRequirementAccepted": false
+        },
+        {
+          "requirement": "ELM-TEA-003",
+          "scenario": "tea-effects",
+          "seed": 20261032,
+          "pins": 3,
+          "readRequest": "6",
+          "pendingWriteRequest": "7",
+          "originalRevision": "9007199254745009",
+          "expectedSavedRevision": "9007199254745010",
+          "matrixHash": "f94ba950ce1679a122b767c362484067b3a2b9424b709cfd5801fab4ea37fcad",
+          "simulatedBridge": true,
+          "nativeAcceptance": false,
+          "wholeRequirementAccepted": false
+        },
+        {
+          "requirement": "ELM-TEA-003",
+          "scenario": "tea-effects",
+          "seed": 20261033,
+          "pins": 4,
+          "readRequest": "6",
+          "pendingWriteRequest": "7",
+          "originalRevision": "9007199254745010",
+          "expectedSavedRevision": "9007199254745011",
+          "matrixHash": "e31c71e95cd074602c9d28a2e112881c650d202ccfcc38c185042bb31c2475b3",
+          "simulatedBridge": true,
+          "nativeAcceptance": false,
+          "wholeRequirementAccepted": false
+        },
+        {
+          "requirement": "ELM-TEA-003",
+          "scenario": "tea-effects",
+          "seed": 20261034,
+          "pins": 5,
+          "readRequest": "6",
+          "pendingWriteRequest": "7",
+          "originalRevision": "9007199254745011",
+          "expectedSavedRevision": "9007199254745012",
+          "matrixHash": "20f127ba9a9a6b86de1cf126349a23eb30c0b84114a06ac98329432c4775c76b",
+          "simulatedBridge": true,
+          "nativeAcceptance": false,
+          "wholeRequirementAccepted": false
+        },
+        {
+          "requirement": "ELM-TEA-003",
+          "scenario": "tea-effects",
+          "seed": 20261035,
+          "pins": 6,
+          "readRequest": "6",
+          "pendingWriteRequest": "7",
+          "originalRevision": "9007199254745012",
+          "expectedSavedRevision": "9007199254745013",
+          "matrixHash": "55a6b82d824413dd963f56d60d2c486d70201ae4318e8354211a503db6d2285d",
+          "simulatedBridge": true,
+          "nativeAcceptance": false,
+          "wholeRequirementAccepted": false
+        },
+        {
+          "requirement": "ELM-TEA-003",
+          "scenario": "tea-effects",
+          "seed": 20261036,
+          "pins": 7,
+          "readRequest": "6",
+          "pendingWriteRequest": "7",
+          "originalRevision": "9007199254745013",
+          "expectedSavedRevision": "9007199254745014",
+          "matrixHash": "a403dbdf3f958c04591baa112d465983376a8a7c953a5691778beee67943adab",
+          "simulatedBridge": true,
+          "nativeAcceptance": false,
+          "wholeRequirementAccepted": false
+        },
+        {
+          "requirement": "ELM-TEA-003",
+          "scenario": "tea-effects",
+          "seed": 20261037,
+          "pins": 8,
+          "readRequest": "6",
+          "pendingWriteRequest": "7",
+          "originalRevision": "9007199254745014",
+          "expectedSavedRevision": "9007199254745015",
+          "matrixHash": "968eb1d49f336ff53a2577eb105f004cfbd0987db66cd6fac003c4ceacde776b",
+          "simulatedBridge": true,
+          "nativeAcceptance": false,
+          "wholeRequirementAccepted": false
+        },
+        {
+          "requirement": "ELM-TEA-003",
+          "scenario": "tea-effects",
+          "seed": 20261038,
+          "pins": 2,
+          "readRequest": "6",
+          "pendingWriteRequest": "7",
+          "originalRevision": "9007199254745015",
+          "expectedSavedRevision": "9007199254745016",
+          "matrixHash": "1fab16fd456c44e9e98ddbe71229044ab7f129a39091f31806f17e3b3aa9a86d",
+          "simulatedBridge": true,
+          "nativeAcceptance": false,
+          "wholeRequirementAccepted": false
+        }
+      ]
+    }
+  ],
+  "acceptanceScope": "Whole literal original frontend effect-interpreter/decoder contract and its one named tea-effects scenario. This verdict combines all three clause observations below; the pin-only fixture explicitly remains insufficient alone. Native behavior is qualified separately exactly as originalverification requires.",
+  "nativeAcceptance": false,
+  "nativeIssuerAcceptance": false,
+  "nativePersistenceAcceptance": false,
+  "guiAcceptance": false,
+  "assistiveTechnologyAcceptance": false,
+  "releaseAccepted": false,
+  "changedBehavior": "Refreshing Applications while a pin reorder is Saving no longer erases the pending write or enables a conflicting command. Exact laterSaved updates the confirmed-order model and emits the expected search-focus command. A read alreadyinflight when a write becomesUnconfirmed cannot masquerade as newrecovery; only an explicitlyissued freshread registeredafteruncertainty reconciles observations withoutreplayingthewrite.",
+  "sourceHashes": {
+    "implementation/warlock/src/Pins.elm": "fcaeb91b1fa8f3c45922e1775abf618e73cc4331f07122aedcc539a8094dd4b2",
+    "implementation/warlock/src/Desktop.elm": "7c91563879ca349d3777d6f0c7a0436be11b427cc0246e1ae276da30da385dec",
+    "implementation/warlock/src/Main.elm": "7f5ddbe6fedf775e143b684ec60c9bfbdf15606414ed4fafc2c5553b514821c2",
+    "implementation/warlock/src/Popup.elm": "4ab4195bfb96622cf563efaf4a889045553fb2367347b6881e70f53545bae406",
+    "implementation/warlock/src/Effects.elm": "80c574e8c564c28a1fb11f1f89bb5bfa7ac97a92474bbf027a737324bb2a82cd",
+    "implementation/warlock/src/Shell.elm": "f14b7fe3bfbf1a57f335f98914c988938c235823ba4596c067cf744776c4a9ae",
+    "implementation/warlock/src/ReceiptRouter.elm": "c6c5bc025cddd2bb7a0e8daa22ee3ff0cddff36e37131095130215d5e85825d0",
+    "implementation/warlock/src/NativeOutcome.elm": "79252d7e3fefa4a4ca93dfe4d6fc18552b710d514ec1cdb4521d1ecea9c8c2e6",
+    "implementation/warlock/src/Surface.elm": "689657630aec36dd6133c762a385284311f67a0b0f9fa95c5897e802b5667412",
+    "implementation/warlock/src/SurfaceController.elm": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
+    "implementation/warlock/src/OutputController.elm": "aaf1729287ff61595a237201b261e7c1ce11c8f2353c620171f48aff99d86f38",
+    "implementation/warlock/src/Binding.elm": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b",
+    "implementation/warlock/src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "implementation/warlock/qa/PinsPendingReplay.elm": "f877fc0061eeb0c8be2b7f32061e6e25294b1fa02924be1d8a0658afdf190999",
+    "implementation/warlock/qa/pins-pending.cjs": "359164591f48becc0f99b1389039aec0c2738e6763127e39babba6075ac837b6",
+    "implementation/warlock/qa/pins-save-lifecycle.qnt": "fdf0ebae038096384bc91358d568916f553921084f044a4bdb5e326558445324",
+    "implementation/warlock/qa/pins-save-lifecycle_test.qnt": "67b31b84f5b715e42e06caeed87abd55de5dc6a37725fdd8cbb453d299215d98",
+    "implementation/warlock/qa/ReceiptStateReplay.elm": "d4e06b035a9eed7d9662da908a2170fe90033e672afc4427810898184817f331",
+    "implementation/warlock/qa/receipt-state.cjs": "479e79b00a07f3b1e8aae0deeacf2f98b2d6e86bfb80717ef4fe6b4afa4743a6",
+    "implementation/warlock/qa/AuthorityTupleReplay.elm": "78a95932b297f236e50410d3b5c020bcebc2b2c3deccd663746211d24ecd28ab",
+    "implementation/warlock/qa/authority-tuple.cjs": "3033b7c84d667af2566439d7e2e01644df3a171fa332be142388b8d92cdec68a",
+    "implementation/warlock/src/SurfaceSnapshot.elm": "58298ea43fffba3da6bcc64f1456b47bcde3607d476ef99465be0c98c2b433d7",
+    "implementation/warlock/src/PreviewPaintGate.elm": "29336cc6d6b21c3d32fd4967911bb189c42b1569ed877ffe79555ed30a7c7d82",
+    "implementation/warlock/qa/PreviewPaintReplay.elm": "488e33a7e09e5937385be99e7525ba45765cf195e54cf2244627a8e2c799ab18",
+    "implementation/warlock/qa/PinsReplay.elm": "5014fa611be6138bba47b3b3326e769d1a4c63db4bf463f6d85c26d2bce0f85a",
+    "implementation/warlock/qa/NativePointerFixture.elm": "b674baa48a0d0197d32e6bc400412465e3a83934d3a749ebc7cbba35e82c4124"
+  },
+  "immutableTupleReview": {
+    "selectedPaths": 26,
+    "matchingSelectedRegularGitBlobs": 26,
+    "completeGuardInputs": 122,
+    "matchingGuardRegularGitBlobs": 122,
+    "mismatches": [],
+    "guardManifest": {
+      "path": "implementation/warlock/qa/evidence/tea-effects-20261101/cpu-review.json",
+      "sha256": "34002d25d2bba0d13d55cb63dd7aa6a578c70f9cab4d3f9fe5eca401ee9ec920"
+    },
+    "allBeforeAfterInputHashesMatch": true,
+    "compilerRoots": [
+      "Main",
+      "Bar",
+      "Popup"
+    ],
+    "compiledWorkers": [
+      "PinsPendingReplay",
+      "PinsReplay",
+      "PreviewPaintReplay",
+      "AuthorityTupleReplay",
+      "ReceiptStateReplay"
+    ],
+    "noUnwiredSubstitute": "ProposedProtocol.Session is not Main owningroute and was not substituted for current effect-boundary evidence. No nonexistent automaticrestore-then-focus feature is claimed."
+  },
+  "clauseReview": [
+    {
+      "clause": "Sequence dependent native effects through matching committed receipts",
+      "disposition": "accepted",
+      "actualSource": "Main/OutputController/SurfaceController/Desktop -> Shell/Effects/NativeOutcome/ReceiptRouter/MenuBridge; actualPins typedphase and write/readcorrelation.",
+      "observations": [
+        "Actual owningrouteRefreshR6 precedesMovePinW7,then matchingoldreadR6 arriveswhileW7Saving. EntirePinsbase/proposal/request/writable remainsidentical; actualpublishedpincontrol staysdisabled and conflicting action leavescompleteDesktop/Output model+effectsunchanged. ExactSavedW7 adoptsproposal withrevision9007199254745009>9007199254745008,retiringonlythatwrite; no read is treatedascommit.",
+        "MatchingtypedSaved/Refused keepspreference-domain semantics. Saved is not mislabeled as literal nativewindowCommitted. FreshReceiptStateReplay onthissource exercises exactfullintent/protocol nativeCommitted,Refused,Cancelled,Pending,Unknown and2requests; terminal/foreign/duplicate/drop/readrecovery never automaticallyemit anotherwindowmutation.",
+        "FreshAuthorityTupleReplay verifiesall10nativeoperationconstructors,theiractualprotocolroutes andall7losslessauthorityfields; mismatched/stale/invalidprepared authority cannot forwarda nativeeffect. Nativecommittedcorrelation and currentPending/Unknownreservations remaincheckedbeforea new action.",
+        "Explicit postUnknownfreshread is observationreconciliation for a new independentuserintent underdeclaredrevision-CAS; it never claimsoldwriteSaved or automaticallyreplaysproposal. A new independentchoice afterRefused/recovery is not a continuation authorized by an uncommitted oldeffect."
+      ],
+      "evidence": [
+        "pins-pending1563checks/8matchingmatrixreceipts",
+        "receipt-state2451checks/80matchingexplicitbridgeoutcomereceipts",
+        "authority-tuple2986checks/80matchingsimulatedbridgeoutcomereceipts"
+      ]
+    },
+    {
+      "clause": "Reserve Cmd.batch for independent effects",
+      "disposition": "accepted",
+      "actualSites": [
+        {
+          "path": "implementation/warlock/src/Main.elm",
+          "line": 42,
+          "commands": "one atomic surfaceCommits portpacket plus keyed localdeadline timers",
+          "independence": "Timers expire/cancel or markuncertainty only for matchingtoken and do not dispatch a dependentnativewrite. Atomicpacket contents do not obtain Cmd.batch order."
+        },
+        {
+          "path": "implementation/warlock/src/Main.elm",
+          "line": 60,
+          "commands": "commit packet/effects plus optional QAinspection",
+          "independence": "Inspection observes an alreadycomputed immutable model and does not supply authority/order to nativecommit."
+        },
+        {
+          "path": "implementation/warlock/src/Popup.elm",
+          "line": 103,
+          "commands": "preview lifecycle effects plus current query command",
+          "independence": "Independent previewcleanup/demand and textquery; previewcleanupcompletion is not borrowed as query/nativepermission."
+        },
+        {
+          "path": "implementation/warlock/src/Popup.elm",
+          "line": 130,
+          "commands": "immediate previewcontrols plus paintrequest tickets",
+          "independence": "ActualPreviewPaintGate retains acquireuntil exacttypedpaintticket,while cancel removes onlyexactunsentjob and release/ACK remainimmediate. No acquire/cleanuporder assumed from Cmd.batch."
+        }
+      ],
+      "scope": "These are all4actualCmd.batchsites in current productionElm source. No unreviewed dependentwrite batch found. This is source classification plus actualpaint/effect replay composition,not a claim that ElmCmd.batch supplies order.",
+      "boundaryFixture": "FreshPreviewPaintReplay10exactnamedchecks: acquirewaitsforpaint,originaljob/deadline forwarded,duplicate/old/foreign/numeric/extrafieldticketinert,exactcancelretiresonlymatchingunsentacquire,differentrequest/bindingcannotcancel,duplicateacquiredoesnotmintticket,release/ACKdonotwaitforpaint."
+    },
+    {
+      "clause": "Validate observations at typed decoders before model mutation",
+      "disposition": "accepted",
+      "actualSource": "StrictOutputController topology/disposition/capturedrenderer,Desktop kind/schema/binding/request,PinsboundedUInt64snapshot,NativeOutcome/Effects/ReceiptRouter fullintent/status/protocol,Presentation/SurfaceSnapshot andpaintticket boundaries.",
+      "observations": [
+        "Newactualrootfixture establishescatalog/pins via native typedsetup andpublishedApplicationsopener,not model-fieldassignment. All9pinreadnegativecategories,6Savednegativecategories,invalidmatchingproofs,duplicate/stalereceipts andnull/lower/same/higherreadvariants execute againstcomplete owningmodels/effects.",
+        "Malformed/numeric/foreign/extraschema observations are rejected beforePinspolicy; typedbutmatchingunusableSavedproof becomesUnconfirmed withoutlosingcustody orclaimingSaved.",
+        "Freshnativeauthority/outcome fixtures independentlycompare exactauthority/custody models andeffectdescriptions forfulltuple/protocol/binding/status/numeric/schema mismatches. Paintticket invalidfields cannot release acquire.",
+        "Actualtypedrejection/reconciliation/UIrevocation may be a declared failuretransition; blanket entiremodelunchanged is not incorrectly imposed on every valid typedfailurebranch. Exactunchanged assertions apply to specificallyrejectedboundaryinputs."
+      ],
+      "evidence": "Currentcompiler+independentNodeoracles withliteralexpectations/BigIntrevision andrawmatchingtracehashes; existinglegacyPins13checks alsopass."
+    }
+  ],
+  "evidence": [
+    {
+      "path": "implementation/warlock/qa/evidence/tea-effects-20261101/report.json",
+      "sha256": "0cfb16fbbdca28a21aab3d3bad468be3007f571065d1acb50e0b074225982d8b"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/tea-effects-20261101/cpu-review.json",
+      "sha256": "34002d25d2bba0d13d55cb63dd7aa6a578c70f9cab4d3f9fe5eca401ee9ec920"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/tea-effects-20261101/checks.tar.gz",
+      "sha256": "3e603cf0444ae47c227a221dcd88eeaec7750808d46db0741ff4f6663c5844e8"
+    }
+  ],
+  "archiveReview": {
+    "regularMembers": 615,
+    "memberHashesIndependentlyVerified": 615,
+    "completeManifestMatch": true,
+    "rawCandidateReportSHA256": "c021dbac95825fac99610edfc859a6dc4174cf077cc7de01b5e7c7a1ac4f4719",
+    "archivedRootAndAllFiveFixtureReportsByteExact": true,
+    "canonicalPinBridgeTraceEqualsActualRawReport": true,
+    "rawScenarioMatrixHashesIndependentlyRecomputed": 8,
+    "matrixHashAlgorithm": "ExistingNodeSHA256(JSON.stringify(pipeline)); independentlyrecomputed fromretained orderedJSON withcompactUTF8 serialization. This is a bridgefixture receipt,not native authority."
+  },
+  "verification": {
+    "protectedScope": {
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-8fda3f5e79764f57beb1a86a3a21f751.scope",
+      "coreLimit": 1
+    },
+    "commands": 24,
+    "allExit0": true,
+    "timeouts": 0,
+    "forcedCleanup": 0,
+    "inputsUnchanged": true,
+    "postcheckError": null,
+    "totalAssertions": 7023,
+    "fixtures": {
+      "pins-pending": {
+        "passed": true,
+        "checks": 1563,
+        "failures": 0,
+        "reportSHA256": "9ad418a5cbb3772820f26f7c5ed3c06d688927e5c2953ba3c96300cb63b208c6"
+      },
+      "legacy-pins": {
+        "passed": true,
+        "checks": 13,
+        "failures": 0,
+        "reportSHA256": "b1ef2a8a7b980a4200c596e45773da519d9d39b849c79656b92aecb08eef102f"
+      },
+      "preview-paint": {
+        "passed": true,
+        "checks": 10,
+        "failures": 0,
+        "reportSHA256": "9f3bbf49330347dd3e98601b90f65ce914f428bde7d275786b91cbaf9330b52e"
+      },
+      "authority-tuple": {
+        "passed": true,
+        "checks": 2986,
+        "failures": 0,
+        "reportSHA256": "2575eb4a6e46bd5743555b42521e70c9d515179104d5f77314f96841439bc968"
+      },
+      "receipt-state": {
+        "passed": true,
+        "checks": 2451,
+        "failures": 0,
+        "reportSHA256": "4849cc380d639d4d34a04a965ba46a57590c76483faabebd22eee1c2f28d7819"
+      }
+    },
+    "pinsMatrices": 8,
+    "pinsSeedList": [
+      20261031,
+      20261032,
+      20261033,
+      20261034,
+      20261035,
+      20261036,
+      20261037,
+      20261038
+    ],
+    "authorityMatchingReceipts": 80,
+    "outcomeMatchingReceipts": 80,
+    "typedCompiler": "PinnedElm0.19.2 andheldpackagecache verifiedbefore/aftercommands andfinally; pinnedNode/Quint/Python inventories also stable,includingfailurepaths.",
+    "noNativeInference": "Allbridgeoutcomes explicitlyfixtures/simulated; no nativeissuer/provider/GUI/AT/release result is imported from componentgreen."
+  },
+  "modelReview": {
+    "PinsDirectedTests": 12,
+    "ReceiptDirectedTests": 14,
+    "exactNamedSelectionsAndPositiveWitnessGates": true,
+    "campaigns": {
+      "pins-save-lifecycle": {
+        "directedTests": {
+          "pins-save-lifecycle_test.qnt": [
+            "rBeforeWTest",
+            "wBeforeRReceiptOrderedTest",
+            "unknownOldRThenNewRTest",
+            "wrongDuplicateOutcomeTest",
+            "lowerNoneHigherReadWhileSavingTest",
+            "lateSavedAfterRecoveryDoesNotRewindTest",
+            "refusalAndInvalidBoundaryTest",
+            "staleRecoveryRequiresNewReadTest",
+            "unavailableRecoveryRequiresFreshObservationTest",
+            "readIssuedWhileSavingNotRecoveryTest",
+            "invalidSavedPreservesRegisteredRecoveryTest",
+            "nullableProofForeignRequestIsInertTest"
+          ]
+        },
+        "sampling": {
+          "samples": 10000,
+          "maxSteps": 50,
+          "seed": 20261101,
+          "witnesses": {
+            "savingWitness": 8445,
+            "predecessorReadRefusedAsSettlementWitness": 2165,
+            "matchedSavedWitness": 1481,
+            "unknownHeldWitness": 6173,
+            "newRecoveryReadWitness": 4591,
+            "recoveredFreshIntentWitness": 153,
+            "noReplayWitness": 1187
+          }
+        }
+      },
+      "receipt-lifecycle": {
+        "directedTests": {
+          "receipt-lifecycle.qnt": [
+            "cancelledCurrentTest",
+            "cancelledOldPreservesNewTest"
+          ],
+          "receipt-lifecycle_test.qnt": [
+            "sameOutputCommitTest",
+            "outputChangedLateCommitTest",
+            "brokenBaselineWitnessTest",
+            "unrelatedNewCurrentTest",
+            "foreignBindingTest",
+            "foreignProtocolTest",
+            "foreignIntentTest",
+            "duplicateTest",
+            "disconnectUnknownTest",
+            "unknownReceiptTest",
+            "validatedRecoveryReleaseTest",
+            "refusalTest"
+          ]
+        },
+        "sampling": {
+          "samples": 10000,
+          "maxSteps": 50,
+          "seed": 20261101,
+          "witnesses": {
+            "witnessPending": 3390,
+            "witnessCommitted": 1154,
+            "witnessRefused": 1183,
+            "witnessCancelled": 1132,
+            "witnessUnknown": 2098,
+            "witnessDisconnected": 10000,
+            "witnessNewRequest": 811
+          }
+        }
+      }
+    },
+    "campaignBoundary": "Two separate10,000sample/max50step/seed20261101safetycampaigns,each7positivewitnesses. Do not sum them intooneexploration orclaimexhaustiveness.",
+    "refinement": "PinsNoPending->Idle,Saving->Saving,Unconfirmed->Unknown. AllSavingreadskeepbase==snapshot. MatchinginvalidSaved/nullproofentersUnconfirmed; repeatedUnknown/invalidSavedretainregisteredfreshR. Abstractrecoveryauthority is compositePins.Unconfirmed(JustR) ANDDesktop.expected==JustR undercurrentbinding. LowerresponseconsumesDesktop.expected,so leftoverstoredmarker hasnoauthority andmapsmodelrecovery0; duplicateoldR rejectedbeforePins,newactualread supersedesmarker. No additionalpatch/gate required.",
+    "limits": "Pins8requestlabels/3revisionorders andreceipt2keys are finiteabstractions. Typedinput,storeatomicCAS/externalwriters/restart,durable/nativeissuer/scheduling are not implemented bythesemodels. Oldpins.qnt andhistoricalevidence remainseparate; theirnativeobligations are not transferred."
+  },
+  "failureContinuity": {
+    "runs": [
+      {
+        "label": "fixture-syntax-failure",
+        "reportSHA256": "3771d5c2f793c569a14dfe5032b966618990692d08b167c9c5b2ff4f52270633",
+        "passed": false,
+        "error": "compile-pins-pending failed; retained stdout/stderr contain the result"
+      },
+      {
+        "label": "model-parse-failure",
+        "reportSHA256": "1e254ad94c6d9948c5d7407496574aa33d4923dc312776785362f3125d55da1e",
+        "passed": false,
+        "error": "pins-save-lifecycle.qnt-typecheck failed; retained stdout/stderr contain the result"
+      },
+      {
+        "label": "owning-route-red",
+        "reportSHA256": "9309d0d7fec7512f775ed6c3331c65c989c47a8e77fda2e636b7db94c9bea403",
+        "passed": false,
+        "error": "pins-pending failed; retained stdout/stderr contain the result"
+      },
+      {
+        "label": "candidate",
+        "reportSHA256": "c021dbac95825fac99610edfc859a6dc4174cf077cc7de01b5e7c7a1ac4f4719",
+        "passed": true,
+        "error": null
+      }
+    ],
+    "actualRED": "1531assertions96failures=12causalcategoriesx8matrices,1435positivecontrols; allotherboundaries/models hadpassed andinputsUnchanged. Earlierfixture-parenthesis/model-returntype failures remainpreparationfailures,notproductRED.",
+    "oracleUnchangedSHA256": "359164591f48becc0f99b1389039aec0c2738e6763127e39babba6075ac837b6",
+    "all1531BaselineCheckNamesRetained": true,
+    "additionalCandidateChecks": 32,
+    "additionalCheckMeaning": "OnlyexpectedmatchingSavedpublication/actualregisteredcommit effectchecks added dynamically byunchangedknownEffects oracle asfixedsourceactuallyemits them. No removed/relaxedassertions,changedseeds orneworacle manufacturedgreen.",
+    "failedSourcesAndLogs": "Allpreparation/REDsourcecopies,logs,models andcandidateartifacts are retained in615memberhash-boundarchive."
+  },
+  "remainingObservations": [
+    "This accepts the whole literalTEA003frontendcontract,not wholeWarlock orphysicalnativebehavior. Nativeeffectissuer,realpersistentGUI/keyboard/AT,storageCAS/durabilityandreleaseacceptance remainseparate.",
+    "All242originalrequirements,417scenarios,deadlines,failed evidence andacceptanceobligations preserved. HOSTSTOP2,main desktop andconcurrentdrafts unchanged.",
+    "DEL010realcross-usercredentialverification remainsopen; no acceptance transfers from this Elmcomponentcampaign."
+  ],
+  "claim": {
+    "resource": "file:/home/charl/code/Warlock/docs/warlock-build-loop/v2/tea-effects-review-20261101.json",
+    "hold": "01M6AD370DXADTPQTR9Z4JMWAP",
+    "authoredPaths": [
+      "docs/warlock-build-loop/v2/tea-effects-review-20261101.json"
+    ],
+    "release": "After authenticatedBuslead handoff; no sourcechanges orprotectedexecution byreviewer."
+  }
+}

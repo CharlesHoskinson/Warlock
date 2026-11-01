@@ -86,3 +86,9 @@ Its five fixtures cover the following parts of TEA-003:
 An independent immutable-source review determines the original verdict. Test
 counts alone do not accept TEA-003. Native input, presentation, AT/IME, actual
 backend persistence and release acceptance retain their separate obligations.
+
+[Independent review](../../warlock-build-loop/v2/tea-effects-review-20261101.json)
+now accepts the whole original on immutable source
+`b6bfe6146cdbd4a9c3eae06ddc898c93436f5e70`; the
+[canonical acceptance](../../warlock-build-loop/v2/tea-effects-acceptance-20261101.json)
+retains its exact scope and separate native/release obligations.

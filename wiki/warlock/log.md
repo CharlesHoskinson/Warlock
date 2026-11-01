@@ -54,3 +54,9 @@ The Haskell bootstrap now receives multiple authenticated requests within one or
 Whole DEL010 remains partial: genuine cross-user trace is missing after the single askpass timeout, and no helper was installed. Native issuer/GUI/AT/release acceptance remains separate. Historical Muse timer health was corrected to current-host inactive/not-found while preserving old observations; the host goal is active. Next reproduce the reachable Elm refresh-before-pin-save race rather than treating source suspicion or test totals as EARS closure.
 
 Independent review now accepts `delivery-010`, `peer-wrong-session` and `peer-approved-session` on the immutable tested source. Whole ELM-DEL-010 remains partial for its separate required cross-user trace; these three scenario verdicts are not a whole-EARS, native GUI or release closure.
+
+## 2026-11-01 — Whole original frontend effect contract accepted
+
+The real Elm pin reorder no longer loses pending write custody when an earlier refresh replies. New typed confirmation state retains the original base and permits only deliberately correlated Unknown recovery. Independent review accepts all three original TEA003 clauses on `b6bfe6146cdbd4a9c3eae06ddc898c93436f5e70`: 7,023 checks, three roots, five fixtures, 26 named model tests and two separate 10,000 × 50 samples. The actual 96-failure RED and both preparation failures remain preserved; native GUI/AT/persistence/release remain separate. [Dated observation](raw/notes/2026-11-01-pin-save-causality.md).
+
+Next connect actual Haskell backend delivery to Elm under the shared architecture: reconcile wire/capacity facts, implement Applications Refresh, then durable pin read/write and private UI composition. This is a real production gap, not an opportunity to count historical Python acceptance as a Haskell feature.
