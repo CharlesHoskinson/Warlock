@@ -19,6 +19,16 @@ module overview_recovery_context {
     focusWorkspace: int,
     focusCommands: int,
     nativeMutations: int,
+    reached: {
+      issueRestore: bool,
+      exactUnknown: bool,
+      exactRefusal: bool,
+      differentUnknown: bool,
+      removeWorkspace: bool,
+      reopen: bool,
+      repeatedOpen: bool,
+      freshReadAfterRefusal: bool,
+    },
   }
 
   var s: State
@@ -36,6 +46,16 @@ module overview_recovery_context {
     focusWorkspace: 0,
     focusCommands: 0,
     nativeMutations: 0,
+    reached: {
+      issueRestore: false,
+      exactUnknown: false,
+      exactRefusal: false,
+      differentUnknown: false,
+      removeWorkspace: false,
+      reopen: false,
+      repeatedOpen: false,
+      freshReadAfterRefusal: false,
+    },
   }
 
   // A restore is issued from workspace 2; this accounts for the one legitimate
@@ -52,26 +72,30 @@ module overview_recovery_context {
     overviewOpen: false,
     selectedWorkspace: 0,
     nativeMutations: s.nativeMutations + 1,
+      reached: { ...s.reached, issueRestore: true },
     },
   }
 
   action exactUnknown = all {
     s.recovery == Issued,
     s.currentIntent == s.originIntent,
-    s' = { ...s, currentStatus: Unknown },
+    s' = { ...s, currentStatus: Unknown,
+      reached: { ...s.reached, exactUnknown: true } },
   }
 
   action exactRefusal = all {
     s.recovery == Issued,
     s.currentIntent == s.originIntent,
-    s' = { ...s, currentStatus: Refused, recovery: Returning, readOutstanding: true },
+    s' = { ...s, currentStatus: Refused, recovery: Returning, readOutstanding: true,
+      reached: { ...s.reached, exactRefusal: true } },
   }
 
   // A different admitted reservation becomes the current transaction while the
   // original Refused route is waiting on its read. It is not a retry.
   action differentUnknown = all {
     s.recovery == Returning,
-    s' = { ...s, currentIntent: 2, currentStatus: Unknown, recovery: Idle },
+    s' = { ...s, currentIntent: 2, currentStatus: Unknown, recovery: Idle,
+      reached: { ...s.reached, differentUnknown: true } },
   }
 
   action removeWorkspace = s' = {
@@ -80,6 +104,7 @@ module overview_recovery_context {
     selectedWorkspace: 0,
     focusWorkspace: if (s.selectedWorkspace == 2) 0 else s.focusWorkspace,
     focusCommands: s.focusCommands + if (s.selectedWorkspace == 2) 1 else 0,
+    reached: { ...s.reached, removeWorkspace: true },
   }
 
   action reopen = all {
@@ -94,6 +119,7 @@ module overview_recovery_context {
       selectedWorkspace: if (s.workspacePresent) s.originWorkspace else 0,
       focusWorkspace: if (s.workspacePresent) s.originWorkspace else 0,
       focusCommands: s.focusCommands + 1,
+      reached: { ...s.reached, reopen: true },
     },
   }
 
@@ -117,7 +143,8 @@ module overview_recovery_context {
 
   action repeatedOpen = all {
     s.overviewOpen,
-    s' = s,
+    // Ghost coverage only; the production-state projection is unchanged.
+    s' = { ...s, reached: { ...s.reached, repeatedOpen: true } },
   }
 
   // Sensitivity-only mutant: repeated activation emits another Focus command
@@ -136,8 +163,10 @@ module overview_recovery_context {
       { ...s, recovery: Idle, readOutstanding: false, overviewOpen: true,
         selectedWorkspace: if (s.workspacePresent) s.originWorkspace else 0,
         focusWorkspace: if (s.workspacePresent) s.originWorkspace else 0,
-        focusCommands: s.focusCommands + 1 }
-      else { ...s, recovery: Idle, readOutstanding: false },
+        focusCommands: s.focusCommands + 1,
+        reached: { ...s.reached, freshReadAfterRefusal: true } }
+      else { ...s, recovery: Idle, readOutstanding: false,
+        reached: { ...s.reached, freshReadAfterRefusal: true } },
   }
 
   action freshReadAfterRefusalMutant = all {
@@ -180,4 +209,15 @@ module overview_recovery_context {
 
   val oldOriginReturnedAfterMismatch =
     s.overviewOpen and s.currentIntent != s.originIntent
+
+  // Ghost witnesses report which normal transition functions the sampled run
+  // actually executes. They do not affect action guards or product state.
+  val issueRestoreReached = s.reached.issueRestore
+  val exactUnknownReached = s.reached.exactUnknown
+  val exactRefusalReached = s.reached.exactRefusal
+  val differentUnknownReached = s.reached.differentUnknown
+  val removeWorkspaceReached = s.reached.removeWorkspace
+  val reopenReached = s.reached.reopen
+  val repeatedOpenReached = s.reached.repeatedOpen
+  val freshReadAfterRefusalReached = s.reached.freshReadAfterRefusal
 }

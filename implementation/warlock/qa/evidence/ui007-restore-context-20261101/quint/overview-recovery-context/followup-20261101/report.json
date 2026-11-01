@@ -9,7 +9,7 @@
   "backend": "rust",
   "modelTypecheck": "pass",
   "testTypecheck": "pass",
-  "testSeed": "52012",
+  "testSeedArgument": "52012",
   "namedTestsPassed": 9,
   "namedMutationTests": [
     "repeatedOpenResetMutantDetectedTest",
@@ -18,7 +18,7 @@
     "mismatchedRefusalReturnMutantDetectedTest"
   ],
   "safetyRun": {
-    "seed": "52012",
+    "seedArgument": "52012",
     "samples": 5000,
     "maxTransitions": 8,
     "invariants": [
@@ -27,7 +27,16 @@
       "focusMatchesSelection",
       "returnRequiresExactRefusal"
     ],
-    "result": "no violation observed",
+    "result": "no violation observed; exact rerun with --seed=52012 reproduced the same witness counts",
+    "quintSuggestedReplaySeed": "0x5acec",
+    "suggestedReplayMatched": false,
+    "suggestedReplayNote": "Passing Quint's printed suggested seed 0x5acec produced a different witness count; the recorded command argument 52012 reproduced the original counts. Preserve both transcripts and use the exact command argument for this run.",
+    "outputSHA256": {
+      "initialSample": "77a52de75fb71a190d4b24039b9eb4f762a3802643a81a1730482224c3878ba4",
+      "sameArgumentRerun": "1e54cd5f2a3ceabe7f64869c81d90ddaaa8dd451d142d90e91871a76ab08dd4a",
+      "suggestedSeedRerun": "1db6f83b9853ef87c7ed37a68c05e9fe2ebc657fa4a829abde9a5386ed1c5315",
+      "namedTests": "e371016c0334259b6585815fa262933f661913301ef98a283e60cb4a780cc9b9"
+    },
     "witnesses": {
       "unknownWorkspaceWitness": 271,
       "vanishedWorkspaceFallbackWitness": 1091,
