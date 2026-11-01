@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "model": "implementation/warlock/qa/overview-recovery-context.qnt",
+  "modelSHA256": "8db11e16cbe9bb4b4fdbc262e36e373b96cb32520e6898367b24d023f137379d",
+  "tests": "implementation/warlock/qa/overview-recovery-context_test.qnt",
+  "testsSHA256": "868260c7fa37af8a99b1932e1eec38d05aca65c28c5079f3efc7a05851b8817b",
+  "quintVersion": "0.33.0",
+  "protectedRunner": "window-integration-qa/qa_run.py",
+  "commandScript": "implementation/warlock/qa/evidence/ui007-restore-context-20261101/quint/overview-recovery-context/followup-20261101-v2/run-protected-quint.sh",
+  "commandScriptSHA256": "b32c37999ea3d4766d3f6afa926d921c04f637511978c449e3ad4c241a666de8",
+  "backend": "rust",
+  "modelTypecheck": "pass",
+  "testTypecheck": "pass",
+  "namedTestsPassed": 9,
+  "namedMutationTests": [
+    "repeatedOpenResetMutantDetectedTest",
+    "repeatedOpenExtraFocusMutantDetectedTest",
+    "missingWorkspaceRetainMutantDetectedTest",
+    "mismatchedRefusalReturnMutantDetectedTest"
+  ],
+  "normalTransitionSample": {
+    "seedArgument": "52012",
+    "samples": 5000,
+    "maxTransitions": 8,
+    "invariants": [
+      "noReplayOnUnknownReopen",
+      "selectedWorkspaceExists",
+      "focusMatchesSelection",
+      "returnRequiresExactRefusal"
+    ],
+    "result": "no violation observed",
+    "sameArgumentRerunWitnessCountsMatch": true,
+    "witnesses": {
+      "issueRestoreReached": 4974,
+      "exactUnknownReached": 2500,
+      "exactRefusalReached": 3606,
+      "differentUnknownReached": 1699,
+      "removeWorkspaceReached": 4965,
+      "reopenReached": 1104,
+      "repeatedOpenReached": 2130,
+      "freshReadAfterRefusalReached": 2930,
+      "unknownWorkspaceWitness": 271,
+      "vanishedWorkspaceFallbackWitness": 1091,
+      "oldOriginReturnedAfterMismatch": 0
+    }
+  },
+  "seedOutputCaveat": {
+    "quintPrintedSuggestedReplaySeed": "0x5acec",
+    "suggestedSeedRerunMatchesOriginalWitnessCounts": false,
+    "note": "The exact CLI argument 52012 reproduced identical original counts twice. Passing Quint's printed suggestion 0x5acec produced different counts; preserve the CLI argument, not the printed suggestion, for this packet."
+  },
+  "outputSHA256": {
+      "initialSample": "34b21c01157d2a3d262df2246dd9cf7e7f4d5fe291f0affa3f8153cccf13422a",
+      "sameArgumentRerun": "e9c10ebeafc287519703b509c926b48eb80fac679f40db47963a519c023b0efa",
+      "suggestedSeedRerun": "72acbfaa8adfeda25a689d82929dc6f99e5e64d7d90bf5db9c82e02409630cfb",
+      "namedTests": "11b016c27ea52c810f58bdd4e3b15856ee2b6a417158f2a30ff9652fe2ba12be"
+  },
+  "limits": [
+    "Reachability fields are ghost coverage flags; they do not guard transitions or represent product state/effects.",
+    "Mutation regressions are detected by named directed tests; the normal-transition sampled invariants do not independently detect two explicit mutants.",
+    "The model is reducer-level correspondence only and omits full binding, authority, stamps, outputs, current-read identity, competing UI guards, native delivery, physical focus and assistive technology."
+  ]
+}

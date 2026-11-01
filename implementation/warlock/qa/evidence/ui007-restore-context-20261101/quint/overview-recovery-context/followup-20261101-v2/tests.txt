@@ -1,0 +1,13 @@
+
+  overview_recovery_context_test
+    ok unknownReopenPreservesOriginAndDoesNotReplayTest passed 1 test(s)
+    ok missingWorkspaceFallsBackToAllTest passed 1 test(s)
+    ok repeatedOpenIsIdempotentTest passed 1 test(s)
+    ok unrelatedUnknownCannotResumeRefusedOriginTest passed 1 test(s)
+    ok exactRefusalStillReturnsAfterFreshReadTest passed 1 test(s)
+    ok repeatedOpenResetMutantDetectedTest passed 1 test(s)
+    ok repeatedOpenExtraFocusMutantDetectedTest passed 1 test(s)
+    ok missingWorkspaceRetainMutantDetectedTest passed 1 test(s)
+    ok mismatchedRefusalReturnMutantDetectedTest passed 1 test(s)
+
+  9 passing (85ms)

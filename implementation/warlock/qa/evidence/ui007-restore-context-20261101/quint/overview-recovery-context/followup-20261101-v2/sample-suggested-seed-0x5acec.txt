@@ -1,0 +1,14 @@
+[ok] No violation found (215ms at 23256 traces/second).
+Witnesses:
+issueRestoreReached was witnessed in 4985 trace(s) out of 5000 explored (99.70%)
+exactUnknownReached was witnessed in 2391 trace(s) out of 5000 explored (47.82%)
+exactRefusalReached was witnessed in 3637 trace(s) out of 5000 explored (72.74%)
+differentUnknownReached was witnessed in 1737 trace(s) out of 5000 explored (34.74%)
+removeWorkspaceReached was witnessed in 4972 trace(s) out of 5000 explored (99.44%)
+reopenReached was witnessed in 1095 trace(s) out of 5000 explored (21.90%)
+repeatedOpenReached was witnessed in 2191 trace(s) out of 5000 explored (43.82%)
+freshReadAfterRefusalReached was witnessed in 2985 trace(s) out of 5000 explored (59.70%)
+unknownWorkspaceWitness was witnessed in 269 trace(s) out of 5000 explored (5.38%)
+vanishedWorkspaceFallbackWitness was witnessed in 1083 trace(s) out of 5000 explored (21.66%)
+oldOriginReturnedAfterMismatch was witnessed in 0 trace(s) out of 5000 explored (0.00%)
+Use --seed=0xa8eac --backend=rust to reproduce.

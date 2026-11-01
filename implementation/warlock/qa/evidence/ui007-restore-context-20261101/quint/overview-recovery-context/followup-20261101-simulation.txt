@@ -1,0 +1,6 @@
+[ok] No violation found (174ms at 28736 traces/second).
+Witnesses:
+unknownWorkspaceWitness was witnessed in 271 trace(s) out of 5000 explored (5.42%)
+vanishedWorkspaceFallbackWitness was witnessed in 1091 trace(s) out of 5000 explored (21.82%)
+oldOriginReturnedAfterMismatch was witnessed in 0 trace(s) out of 5000 explored (0.00%)
+Use --seed=0x5acec --backend=rust to reproduce.

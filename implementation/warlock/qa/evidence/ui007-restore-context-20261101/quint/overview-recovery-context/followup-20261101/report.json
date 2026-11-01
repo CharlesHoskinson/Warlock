@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "model": "implementation/warlock/qa/overview-recovery-context.qnt",
+  "modelSHA256": "e403440248627bd049220b6192560484362c48f844954feed7eaa08c2a282c9c",
+  "tests": "implementation/warlock/qa/overview-recovery-context_test.qnt",
+  "testsSHA256": "868260c7fa37af8a99b1932e1eec38d05aca65c28c5079f3efc7a05851b8817b",
+  "quintVersion": "0.33.0",
+  "protectedRunner": "window-integration-qa/qa_run.py",
+  "backend": "rust",
+  "modelTypecheck": "pass",
+  "testTypecheck": "pass",
+  "testSeedArgument": "52012",
+  "namedTestsPassed": 9,
+  "namedMutationTests": [
+    "repeatedOpenResetMutantDetectedTest",
+    "repeatedOpenExtraFocusMutantDetectedTest",
+    "missingWorkspaceRetainMutantDetectedTest",
+    "mismatchedRefusalReturnMutantDetectedTest"
+  ],
+  "safetyRun": {
+    "seedArgument": "52012",
+    "samples": 5000,
+    "maxTransitions": 8,
+    "invariants": [
+      "noReplayOnUnknownReopen",
+      "selectedWorkspaceExists",
+      "focusMatchesSelection",
+      "returnRequiresExactRefusal"
+    ],
+    "result": "no violation observed; exact rerun with --seed=52012 reproduced the same witness counts",
+    "quintSuggestedReplaySeed": "0x5acec",
+    "suggestedReplayMatched": false,
+    "suggestedReplayNote": "Passing Quint's printed suggested seed 0x5acec produced a different witness count; the recorded command argument 52012 reproduced the original counts. Preserve both transcripts and use the exact command argument for this run.",
+    "outputSHA256": {
+      "initialSample": "77a52de75fb71a190d4b24039b9eb4f762a3802643a81a1730482224c3878ba4",
+      "sameArgumentRerun": "1e54cd5f2a3ceabe7f64869c81d90ddaaa8dd451d142d90e91871a76ab08dd4a",
+      "suggestedSeedRerun": "1db6f83b9853ef87c7ed37a68c05e9fe2ebc657fa4a829abde9a5386ed1c5315",
+      "namedTests": "e371016c0334259b6585815fa262933f661913301ef98a283e60cb4a780cc9b9"
+    },
+    "witnesses": {
+      "unknownWorkspaceWitness": 271,
+      "vanishedWorkspaceFallbackWitness": 1091,
+      "oldOriginReturnedAfterMismatch": 0
+    }
+  },
+  "limits": [
+    "Mutation regressions are detected by named directed tests; the normal-transition sampled invariants do not independently detect two of the explicit mutants.",
+    "The repeated-open test now checks exact retained selection, focus target, focus command count and mutation count; the focused-only mutant proves its count assertion is active.",
+    "This is reducer-level correspondence only and omits full binding, authority, stamps, outputs, current-read identity, menu/choice guards, native delivery, physical focus and assistive technology."
+  ]
+}

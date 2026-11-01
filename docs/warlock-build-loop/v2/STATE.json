@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "owner": "root-agentbus",
-  "updatedUTC": "2026-11-01T01:21:17.592572+00:00",
+  "updatedUTC": "2026-11-01T01:24:22.661488+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
@@ -3356,5 +3356,15 @@
     "sourceRevision": "367a4899023340bc9cfeb2765a90b7ed37e58109",
     "nativeExecution": false,
     "releaseAcceptance": false
+  },
+  "concurrentIntegration": {
+    "checkedUTC": "2026-11-01T01:24:22.660340+00:00",
+    "remote": "origin",
+    "remoteMain": "7f99c5c935962485873e99efae7219c76454c389",
+    "incomingPaths": 188,
+    "overlapWithAuthenticationInputs": 0,
+    "reviewedAuthenticationInputsStillExact": 164,
+    "conflicts": [],
+    "scope": "Preserved concurrent Lacquer presentation and UI007 restore-context commits via ordinary merge. Authentication20-source tuple remains exact. No native/GUI/release acceptance inferred; refresh next pin-save source inspection against incoming Desktop changes."
   }
 }

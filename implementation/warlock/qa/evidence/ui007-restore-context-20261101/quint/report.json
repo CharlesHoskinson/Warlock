@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "model": "implementation/warlock/qa/action-feedback-priority.qnt",
+  "modelSHA256": "e02b64116ab04ec757df7b5e13722ce0b7ef3e41dca263d802f90829dec4d0e5",
+  "tests": "implementation/warlock/qa/action-feedback-priority_test.qnt",
+  "testsSHA256": "fdeb604ca134315d957bc432f3d0cee7c731653243e9be8e5f910f2ad3b73c31",
+  "quintVersion": "0.33.0",
+  "backend": "typescript",
+  "typecheck": "pass",
+  "testSeed": "52011",
+  "namedTestsPassed": 9,
+  "sensitivityTests": [
+    "wrongPriorityMutantIsDetectedTest",
+    "disabledLiveRegionMutantIsDetectedTest"
+  ],
+  "safetyRun": {
+    "seed": "52012",
+    "samples": 1000,
+    "maxTransitions": 8,
+    "invariants": [
+      "renderedMatchesPolicy",
+      "actionFeedbackKeepsPriority",
+      "liveRegionMatchesRenderedState"
+    ],
+    "result": "no violation observed",
+    "witnesses": {
+      "pendingScenarioWitness": 721,
+      "pendingNoWorkspaceWitness": 710,
+      "refusedScenarioWitness": 713,
+      "unknownScenarioWitness": 722,
+      "committedScenarioWitness": 712,
+      "cancelledScenarioWitness": 702,
+      "closedOverviewWitness": 693
+    }
+  },
+  "limitations": [
+    "Rendered-choice contract only; does not model production reducer transitions or native dispatch.",
+    "Does not model focus, keyboard, compositor, assistive technology, or original-scenario acceptance."
+  ]
+}

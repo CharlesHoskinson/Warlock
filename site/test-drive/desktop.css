@@ -76,3 +76,40 @@
   .stage-window[data-placement="floating"]::before { box-shadow:none; border:1px solid Canvas; }
  }
 }
+
+/* Lacquer desktop: frosted bar and popup over the wallpaper, rounded windows with depth. */
+@layer components {
+ .desktop-bar { background:transparent; color-scheme:normal; backdrop-filter:blur(26px) saturate(150%); -webkit-backdrop-filter:blur(26px) saturate(150%); }
+ .desktop-popup { background:transparent; color-scheme:normal; border-radius:14px; backdrop-filter:blur(30px) saturate(160%); -webkit-backdrop-filter:blur(30px) saturate(160%);
+  box-shadow:0 24px 60px -12px rgb(0 0 0 / .62), 0 8px 18px rgb(0 0 0 / .38); }
+ .desktop:has(.desktop-stage[data-effects-tier="off"]) :is(.desktop-bar,.desktop-popup),
+ .desktop:has(.desktop-stage[data-theme="high-contrast"]) :is(.desktop-bar,.desktop-popup) { backdrop-filter:none; -webkit-backdrop-filter:none; }
+ .desktop-stage { background-color:#0b0909; }
+ .stage-window { --stage-titlebar-height:2rem; border-width:1px; border-radius:10px; overflow:hidden;
+  box-shadow:0 18px 44px -14px rgb(0 0 0 / .7), 0 4px 12px rgb(0 0 0 / .35); }
+ .stage-window[data-placement] { border-radius:10px; }
+ .stage-window.is-focused { box-shadow:0 26px 60px -14px rgb(0 0 0 / .78), 0 6px 16px rgb(0 0 0 / .42); }
+ .stage-titlebar { background:color-mix(in srgb, var(--wl-sys-color-surface-raised) 92%, transparent); border-bottom:1px solid color-mix(in srgb, var(--wl-sys-color-text) 7%, transparent); }
+ .stage-titlebar .stage-title { padding-inline:14px; font-size:.8125rem; font-weight:600; letter-spacing:.01em; }
+ .is-focused .stage-title::before { left:6px; width:3px; height:45%; border-radius:999px; }
+ .stage-titlebar > button:not(.stage-title) { flex-basis:2.75rem; font-size:1rem; }
+ .stage-titlebar > button:not(.stage-title):last-child:hover { background:var(--wl-sys-color-action-fill); color:var(--wl-sys-color-on-action); }
+ .stage-client { background:color-mix(in srgb, var(--wl-sys-color-surface-recessed) 96%, transparent); padding:22px 26px; }
+ .stage-client h2 { font-family:var(--wl-sys-font-display); font-size:1.375rem; letter-spacing:-.01em; margin:.25rem 0 .5rem; }
+ .stage-client .fixture-label { color:var(--wl-sys-color-brand-text); opacity:.85; }
+ .stage-client pre { padding:14px 16px; border-radius:10px; background:color-mix(in srgb, var(--wl-sys-color-canvas) 80%, transparent); border:1px solid color-mix(in srgb, var(--wl-sys-color-text) 7%, transparent); line-height:1.6; }
+ .desktop-tools { background:color-mix(in srgb, var(--wl-sys-color-surface) 88%, transparent); backdrop-filter:blur(18px); border-top-color:color-mix(in srgb, var(--wl-sys-color-text) 10%, transparent); }
+}
+
+/* Window tint: client areas carry a trace of the wallpaper's warmth; inactive windows recede. Window panes take no
+    backdrop blur: in the simulation it doubles popup opening time without a GPU, and Hyprland draws real blur natively. */
+@layer components {
+ .stage-window { background:transparent; }
+ .stage-client { background:color-mix(in srgb, var(--wl-sys-color-surface) 90%, transparent); }
+ .stage-window:not(.is-focused) .stage-client { background:color-mix(in srgb, var(--wl-sys-color-surface) 86%, transparent); }
+ .stage-titlebar { background:color-mix(in srgb, var(--wl-sys-color-surface-raised) 94%, transparent); }
+ .stage-window:not(.is-focused) .stage-titlebar { background:color-mix(in srgb, var(--wl-sys-color-surface) 88%, transparent); }
+ .stage-client .fixture-label { color:var(--wl-sys-color-text-secondary); }
+ .desktop-stage[data-effects-tier="off"] :is(.stage-client,.stage-titlebar),
+ .desktop-stage[data-theme="high-contrast"] :is(.stage-client,.stage-titlebar) { background:var(--wl-sys-color-surface); }
+}

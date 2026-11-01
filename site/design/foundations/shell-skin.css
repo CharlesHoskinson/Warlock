@@ -1,0 +1,218 @@
+/* Apache-2.0. Warlock shell skin: the Lacquer desktop presentation for the taskbar and every popup.
+   Loads after the area themes. Layout follows the familiar Windows desktop (taskbar, Start-style launcher, card
+   switcher, Task View columns, snap flyout, notification cards, Settings switches); colour, depth and type are
+   Lacquer. Glyphs are decoration on fixed shell controls; every control keeps its text name and source order. */
+
+/* ---------- Shared glass surface ---------- */
+@layer components {
+  html[data-warlock-design="v1"]:has(:is(.surface-bar,.surface-popup)),
+  html[data-warlock-design="v1"]:has(:is(.surface-bar,.surface-popup)) body { background:transparent; }
+
+  html[data-warlock-design="v1"] :is(.surface-bar,.surface-popup) {
+    --skin-glass: color-mix(in srgb, var(--wl-sys-color-surface) 78%, transparent);
+    --skin-glass-strong: color-mix(in srgb, var(--wl-sys-color-surface-raised) 88%, transparent);
+    --skin-hairline: color-mix(in srgb, var(--wl-sys-color-text) 9%, transparent);
+    --skin-hover: color-mix(in srgb, var(--wl-sys-color-text) 7%, transparent);
+    --skin-press: color-mix(in srgb, var(--wl-sys-color-text) 11%, transparent);
+    --skin-tile: color-mix(in srgb, var(--wl-sys-color-text) 4%, transparent);
+    --skin-selected: color-mix(in srgb, var(--wl-sys-color-action-fill) 22%, transparent);
+    --skin-selected-hover: color-mix(in srgb, var(--wl-sys-color-action-fill) 30%, transparent);
+    font-family:var(--wl-sys-font-body);
+  }
+  html[data-warlock-design="v1"] :is(.surface-bar,.surface-popup):is([data-theme="high-contrast"],[data-effects="off"],[data-reduced-transparency="true"]) {
+    --skin-glass: var(--wl-sys-color-surface);
+    --skin-glass-strong: var(--wl-sys-color-surface-raised);
+  }
+
+  /* Glyph slot: a 1.25rem mask painted in currentColor before the label text. */
+  html[data-warlock-design="v1"] :is(.surface-bar,.surface-popup) [data-skin-glyph] > .control-label::before,
+  html[data-warlock-design="v1"] :is(.surface-bar,.surface-popup) :is(
+    [data-surface-control^="bar:"]:not(.control-group),
+    [data-surface-control="control:close"],[data-surface-control$=":refresh"],[data-surface-control="control:refresh"],
+    [data-surface-control^="settings:theme:"],[data-surface-control^="settings:scale:"],[data-surface-control^="settings:motion:"]:not([data-surface-control$=":save"]):not([data-surface-control$=":refresh"]),
+    [data-surface-control="settings:effects-off"],[data-surface-control="settings:reduced-transparency"],[data-surface-control="settings:help"],
+    [data-surface-control$=":save"],[data-surface-control="notifications:dnd"],[data-surface-control="notifications:critical-interrupt"],
+    [data-surface-control^="files:collection:"],[data-surface-control="files:open-path"],
+    [data-surface-control^="overview:workspace:"],[data-surface-control^="overview:transfer:"],[data-surface-control^="overview:go:"],[data-surface-control="overview:all"],
+    [data-surface-control^="unpin:"],[data-surface-control^="pin-left:"],[data-surface-control^="pin-right:"],[data-surface-control^="jump:open:"],[data-surface-control^="entry:"],
+    [data-surface-control="control:reverse"],[data-surface-control="control:forward"],[data-surface-control="control:commit"]
+  ) > .control-label::before {
+    content:""; display:inline-block; flex:0 0 auto; inline-size:1.25rem; block-size:1.25rem; margin-inline-end:.625rem; vertical-align:-.3rem;
+    background:currentColor; -webkit-mask:var(--skin-glyph, var(--wl-glyph-open)) center/contain no-repeat; mask:var(--skin-glyph, var(--wl-glyph-open)) center/contain no-repeat;
+  }
+  html[data-warlock-design="v1"] [data-surface-control="bar:applications"] { --skin-glyph: var(--wl-glyph-warlock); }
+  html[data-warlock-design="v1"] [data-surface-control="bar:overview"] { --skin-glyph: var(--wl-glyph-task-view); }
+  html[data-warlock-design="v1"] [data-surface-control="bar:switcher"] { --skin-glyph: var(--wl-glyph-switcher); }
+  html[data-warlock-design="v1"] [data-surface-control="bar:notifications"] { --skin-glyph: var(--wl-glyph-bell); }
+  html[data-warlock-design="v1"] [data-surface-control="bar:files"] { --skin-glyph: var(--wl-glyph-folder); }
+  html[data-warlock-design="v1"] [data-surface-control="bar:system"] { --skin-glyph: var(--wl-glyph-power); }
+  html[data-warlock-design="v1"] [data-surface-control="bar:settings"] { --skin-glyph: var(--wl-glyph-gear); }
+  html[data-warlock-design="v1"] [data-surface-control="bar:recovery-refresh"] { --skin-glyph: var(--wl-glyph-refresh); }
+  html[data-warlock-design="v1"] [data-surface-control="control:close"] { --skin-glyph: var(--wl-glyph-close); }
+  html[data-warlock-design="v1"] :is([data-surface-control$=":refresh"],[data-surface-control="control:refresh"]) { --skin-glyph: var(--wl-glyph-refresh); }
+  html[data-warlock-design="v1"] [data-surface-control="settings:theme:night"] { --skin-glyph: var(--wl-glyph-moon); }
+  html[data-warlock-design="v1"] [data-surface-control="settings:theme:dawn"] { --skin-glyph: var(--wl-glyph-sun); }
+  html[data-warlock-design="v1"] [data-surface-control="settings:theme:high-contrast"] { --skin-glyph: var(--wl-glyph-contrast); }
+  html[data-warlock-design="v1"] [data-surface-control^="settings:scale:"] { --skin-glyph: var(--wl-glyph-text-size); }
+  html[data-warlock-design="v1"] [data-surface-control^="settings:motion"] { --skin-glyph: var(--wl-glyph-motion); }
+  html[data-warlock-design="v1"] [data-surface-control="settings:effects-off"] { --skin-glyph: var(--wl-glyph-sparkle); }
+  html[data-warlock-design="v1"] [data-surface-control="settings:reduced-transparency"] { --skin-glyph: var(--wl-glyph-layers); }
+  html[data-warlock-design="v1"] [data-surface-control="settings:help"] { --skin-glyph: var(--wl-glyph-help); }
+  html[data-warlock-design="v1"] [data-surface-control$=":save"] { --skin-glyph: var(--wl-glyph-save); }
+  html[data-warlock-design="v1"] [data-surface-control="notifications:dnd"] { --skin-glyph: var(--wl-glyph-moon); }
+  html[data-warlock-design="v1"] [data-surface-control="notifications:critical-interrupt"] { --skin-glyph: var(--wl-glyph-bell); }
+  html[data-warlock-design="v1"] [data-surface-control="files:collection:home"] { --skin-glyph: var(--wl-glyph-home); }
+  html[data-warlock-design="v1"] [data-surface-control="files:collection:recent"] { --skin-glyph: var(--wl-glyph-recent); }
+  html[data-warlock-design="v1"] [data-surface-control="files:collection:images"] { --skin-glyph: var(--wl-glyph-image); }
+  html[data-warlock-design="v1"] [data-surface-control="files:collection:videos"] { --skin-glyph: var(--wl-glyph-video); }
+  html[data-warlock-design="v1"] [data-surface-control="files:collection:documents"] { --skin-glyph: var(--wl-glyph-document); }
+  html[data-warlock-design="v1"] [data-surface-control="files:collection:downloads"] { --skin-glyph: var(--wl-glyph-download); }
+  html[data-warlock-design="v1"] [data-surface-control="files:collection:large"] { --skin-glyph: var(--wl-glyph-large-file); }
+  html[data-warlock-design="v1"] [data-surface-control="files:collection:screenshots"] { --skin-glyph: var(--wl-glyph-screenshot); }
+  html[data-warlock-design="v1"] [data-surface-control="files:open-path"] { --skin-glyph: var(--wl-glyph-folder); }
+  html[data-warlock-design="v1"] [data-surface-control^="overview:workspace:"] { --skin-glyph: var(--wl-glyph-desktop); }
+  html[data-warlock-design="v1"] [data-surface-control="overview:all"] { --skin-glyph: var(--wl-glyph-grid); }
+  html[data-warlock-design="v1"] [data-surface-control^="overview:transfer:"] { --skin-glyph: var(--wl-glyph-move); }
+  html[data-warlock-design="v1"] [data-surface-control^="overview:go:"] { --skin-glyph: var(--wl-glyph-go); }
+  html[data-warlock-design="v1"] [data-surface-control^="unpin:"] { --skin-glyph: var(--wl-glyph-unpin); }
+  html[data-warlock-design="v1"] [data-surface-control^="pin-left:"] { --skin-glyph: var(--wl-glyph-arrow-left); }
+  html[data-warlock-design="v1"] [data-surface-control^="pin-right:"] { --skin-glyph: var(--wl-glyph-arrow-right); }
+  html[data-warlock-design="v1"] [data-surface-control^="jump:open:"] { --skin-glyph: var(--wl-glyph-actions); }
+  html[data-warlock-design="v1"] [data-surface-control^="entry:"] { --skin-glyph: var(--wl-glyph-open); }
+  html[data-warlock-design="v1"] [data-surface-control="control:reverse"] { --skin-glyph: var(--wl-glyph-arrow-left); }
+  html[data-warlock-design="v1"] [data-surface-control="control:forward"] { --skin-glyph: var(--wl-glyph-arrow-right); }
+  html[data-warlock-design="v1"] [data-surface-control="control:commit"] { --skin-glyph: var(--wl-glyph-check); }
+}
+
+/* ---------- Taskbar: a Windows-style bar across the top ---------- */
+@layer components {
+  html[data-warlock-design="v1"] .surface-bar {
+    position:relative; container:skin-bar / inline-size;
+    background:linear-gradient(180deg, color-mix(in srgb, var(--wl-sys-color-surface-raised) 74%, transparent), color-mix(in srgb, var(--wl-sys-color-canvas) 70%, transparent));
+    box-shadow:inset 0 -1px 0 var(--skin-hairline), 0 1px 0 color-mix(in srgb, var(--wl-sys-color-shadow) 40%, transparent);
+  }
+  html[data-warlock-design="v1"] .surface-bar[data-theme="high-contrast"] { background:var(--wl-sys-color-surface); }
+  html[data-warlock-design="v1"] .surface-bar > .surface-actions[role="toolbar"] { gap:4px; padding:6px 10px; align-items:center; }
+  html[data-warlock-design="v1"] .surface-bar .surface-actions > button { height:calc(100% - 2px); border-radius:10px; padding:0 14px; background:transparent; border-color:transparent; }
+  html[data-warlock-design="v1"] .surface-bar .surface-actions > .control-group { min-width:104px; max-width:200px; padding-inline:16px; align-items:center; }
+  html[data-warlock-design="v1"] .surface-bar .control-group .control-label { font-size:.875rem; font-weight:600; letter-spacing:.005em; }
+  /* The pill carries running state visually; the button's accessible name carries the full detail. */
+  html[data-warlock-design="v1"] .surface-bar .control-group .control-detail { position:absolute; inline-size:1px; block-size:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; margin:0; }
+  /* Utilities: glyph and label on one line. */
+  html[data-warlock-design="v1"] .surface-bar .surface-actions > .control-utility { flex-direction:row; align-items:center; padding-inline:12px 14px; }
+  html[data-warlock-design="v1"] .surface-bar .control-utility .control-label { display:flex; align-items:center; font-size:.875rem; font-weight:500; }
+  html[data-warlock-design="v1"] .surface-bar .surface-actions.surface-actions > .control-utility > .control-label::before { margin-inline-end:.5rem; vertical-align:0; }
+  html[data-warlock-design="v1"] .surface-bar .control-utility .control-detail:not(:empty) { margin:0 0 0 .5rem; padding:1px 7px; border-radius:999px; background:var(--wl-sys-color-action-fill); color:var(--wl-sys-color-on-action); font-size:.6875rem; font-weight:600; }
+  /* Start: the folded W leads the shell controls. */
+  html[data-warlock-design="v1"] .surface-bar .surface-actions.surface-actions > [data-surface-control="bar:applications"] { margin-inline-start:10px; }
+  html[data-warlock-design="v1"] .surface-bar [data-surface-control="bar:applications"]::before { content:""; position:absolute; inset-inline-start:-8px; inset-block:12px; inline-size:1px; background:var(--skin-hairline); }
+  html[data-warlock-design="v1"] .surface-bar .surface-actions.surface-actions > [data-surface-control="bar:applications"] > .control-label::before { inline-size:1.375rem; block-size:1.375rem; color:var(--wl-sys-color-brand-text); }
+  /* The tray: notifications, files, system and settings sit at the right edge with the status. */
+  html[data-warlock-design="v1"] .surface-bar .surface-actions.surface-actions > [data-surface-control="bar:notifications"] { margin-inline-start:auto; }
+  html[data-warlock-design="v1"] .surface-bar > .surface-status { align-self:center; margin:0 10px 0 4px; padding:5px 12px; max-width:clamp(160px,22vw,320px); border:0; border-radius:10px; background:var(--skin-tile); color:var(--wl-sys-color-text-secondary); font-size:.75rem; line-height:1.35; }
+  @container skin-bar (max-width: 1180px) {
+    html[data-warlock-design="v1"] .surface-bar .control-utility:not([data-surface-control="bar:applications"]) .control-label { font-size:0; }
+    html[data-warlock-design="v1"] .surface-bar .control-utility:not([data-surface-control="bar:applications"]) .control-label::before { margin:0; }
+    html[data-warlock-design="v1"] .surface-bar .surface-actions > .control-utility:not([data-surface-control="bar:applications"]) { padding-inline:11px; }
+  }
+}
+@layer states {
+  @media (hover:hover) and (pointer:fine) {
+    html[data-warlock-design="v1"] .surface-bar .surface-actions > button:enabled:not([aria-disabled="true"]):hover { background:var(--skin-hover); }
+    html[data-warlock-design="v1"] .surface-bar .control-group[data-active-application="true"]:enabled:not([aria-disabled="true"]):hover { background:var(--skin-selected-hover); }
+  }
+  html[data-warlock-design="v1"] .surface-bar .surface-actions > button:enabled:not([aria-disabled="true"]):active { background:var(--skin-press); }
+  html[data-warlock-design="v1"] .surface-bar .control-group[data-active-application="true"] { background:var(--skin-selected); }
+  /* Running indicator: a short neutral pill; the active application widens it to a red pill. */
+  html[data-warlock-design="v1"] .surface-bar .control-group:is([data-window-state="open"],[data-window-state="minimized"],[data-window-state="attention"],[data-window-state="active"])::after {
+    content:""; position:absolute; inset-inline:auto; inset-block-end:3px; left:50%; inline-size:14px; block-size:3px; transform:translateX(-50%); border-radius:999px; background:var(--wl-sys-color-text-secondary);
+  }
+  html[data-warlock-design="v1"] .surface-bar .control-group[data-window-state="minimized"]::after { opacity:.55; }
+  html[data-warlock-design="v1"] .surface-bar .control-group[data-window-state="attention"]::after { inline-size:22px; background:var(--wl-sys-color-warning); }
+  html[data-warlock-design="v1"] .surface-bar .control-group[data-active-application="true"]::after { inline-size:28px; background:var(--wl-sys-color-brand-text); }
+}
+@layer accessibility {
+  @media (forced-colors:active) {
+    html[data-warlock-design="v1"] :is(.surface-bar,.surface-popup) .control-label::before { background:CanvasText; forced-color-adjust:none; }
+    html[data-warlock-design="v1"] .surface-bar .control-group::after { background:CanvasText; forced-color-adjust:none; }
+  }
+}
+
+/* ---------- Popups: one glass panel, generous type, rounded rows ---------- */
+@layer components {
+  html[data-warlock-design="v1"] .surface-popup {
+    box-sizing:border-box; background:var(--skin-glass); color:var(--wl-sys-color-text);
+    padding:20px 20px 16px; border-radius:14px;
+    box-shadow:inset 0 0 0 1px var(--skin-hairline), inset 0 1px 0 color-mix(in srgb, var(--wl-sys-color-text) 6%, transparent);
+  }
+  html[data-warlock-design="v1"] .surface-popup > h1 { margin:0 0 2px; font-family:var(--wl-sys-font-display); font-size:1.375rem; font-weight:600; letter-spacing:-.01em; line-height:1.25; }
+  html[data-warlock-design="v1"] .surface-popup > p[role="status"] { margin:0 0 14px; color:var(--wl-sys-color-text-secondary); font-size:.8125rem; line-height:1.45; }
+  html[data-warlock-design="v1"] .surface-popup .surface-controls { gap:2px; }
+  html[data-warlock-design="v1"] .surface-popup .surface-controls button { border-radius:10px; }
+  html[data-warlock-design="v1"] .surface-popup .surface-controls button .control-label { display:flex; align-items:center; font-weight:500; }
+  html[data-warlock-design="v1"] .surface-popup .surface-controls button .control-detail { font-size:.75rem; color:var(--wl-sys-color-text-secondary); }
+  html[data-warlock-design="v1"] .surface-popup [data-skin-glyph] > .control-detail,
+  html[data-warlock-design="v1"] .surface-popup .control-label:has(+ .control-detail) + .control-detail { padding-inline-start:0; }
+}
+@layer states {
+  @media (hover:hover) and (pointer:fine) {
+    html[data-warlock-design="v1"] .surface-popup .surface-controls button:enabled:not([aria-disabled="true"]):not([aria-current="true"]):not([aria-pressed="true"]):not([aria-selected="true"]):hover { background:var(--skin-hover); }
+  }
+}
+
+/* ---------- Launcher: Start-style panel ---------- */
+@layer components {
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .surface-controls {
+    display:grid; grid-template-columns:repeat(6, minmax(0,1fr)); gap:6px; align-content:start;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .surface-controls > * { grid-column:span 6; }
+  /* The vendored shell.css gives popup buttons a 3px margin and a calculated width; the grid owns both here. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .surface-controls.surface-controls.surface-controls > button { margin:0; width:auto; align-self:stretch; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] { padding-top:16px; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] > h1 { position:absolute; inline-size:1px; block-size:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] > p[role="status"] { margin-bottom:10px; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .launcher-search-label { font-size:.75rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--wl-sys-color-text-secondary); margin:0; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .launcher-search[data-surface-field] {
+    block-size:46px; margin:0 0 6px; padding-inline:44px 16px; border-radius:999px; font-size:.9375rem;
+    border:1px solid var(--skin-hairline); background-color:var(--skin-tile);
+    background-image:url("../../assets/shared/glyphs/field-search-night.svg");
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .launcher-search[data-surface-field]:is(:focus,:not(:focus)) { background-repeat:no-repeat; background-position:16px center; background-size:18px; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"][data-theme="dawn"] .launcher-search[data-surface-field] { background-image:url("../../assets/shared/glyphs/field-search-dawn.svg"); }
+  /* Small utility row: Close and Refresh share a line. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .surface-controls.surface-controls.surface-controls > :is([data-surface-control="control:close"],[data-surface-control="control:refresh"]) { grid-column:span 3; min-height:36px; padding-block:6px; }
+  /* Pin management: compact chips, three per row. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .surface-controls.surface-controls.surface-controls > :is([data-surface-control^="unpin:"],[data-surface-control^="pin-left:"],[data-surface-control^="pin-right:"]) {
+    grid-column:span 2; min-height:34px; padding:4px 10px; background:var(--skin-tile); font-size:.75rem;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .surface-controls.surface-controls.surface-controls > :is([data-surface-control^="unpin:"],[data-surface-control^="pin-left:"],[data-surface-control^="pin-right:"]) .control-label { font-size:.75rem; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .surface-controls.surface-controls.surface-controls > :is([data-surface-control^="unpin:"],[data-surface-control^="pin-left:"],[data-surface-control^="pin-right:"]) .control-label::before { inline-size:1rem; block-size:1rem; margin-inline-end:.4rem; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .surface-controls.surface-controls.surface-controls > :is([data-surface-control^="unpin:"],[data-surface-control^="pin-left:"],[data-surface-control^="pin-right:"]) .control-detail { display:none; }
+  /* Launch results: tiles, three per row, glyph above the name. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .surface-controls.surface-controls.surface-controls > [data-surface-control^="entry:"] {
+    grid-column:span 2; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
+    min-height:84px; padding:10px 8px; background:var(--skin-tile); border:1px solid var(--skin-hairline);
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .surface-controls.surface-controls.surface-controls > [data-surface-control^="entry:"] .control-label { flex-direction:column; gap:8px; font-size:.8125rem; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .surface-controls.surface-controls.surface-controls > [data-surface-control^="entry:"] .control-label::before { inline-size:1.75rem; block-size:1.75rem; margin:0; color:var(--wl-sys-color-brand-text); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="applications"] .surface-controls.surface-controls.surface-controls > [data-surface-control^="jump:open:"] { background:var(--skin-tile); border:1px solid var(--skin-hairline); }
+}
+
+/* Forced colours: the glass becomes an opaque system surface, and focused controls keep system text colours
+   (controls.css opts the focused control out of forced colours to paint its own ring). */
+@layer accessibility {
+  @media (forced-colors:active) {
+    html[data-warlock-design="v1"] :is(.surface-bar,.surface-popup) { background:Canvas; color:CanvasText; box-shadow:none; }
+    html[data-warlock-design="v1"] .surface-popup .surface-controls button:focus { color:ButtonText; background:ButtonFace; }
+    html[data-warlock-design="v1"] .surface-popup .launcher-search[data-surface-field] { background-image:none; }
+  }
+}
+
+/* Requirements that outrank area layouts: essential field boundaries, minimum targets, and no glow or inner shadow
+   when effects are off or the theme is high contrast. */
+@layer accessibility {
+  html[data-warlock-design="v1"] .surface-popup .launcher-search[data-surface-field] { border-color:var(--wl-sys-color-border-essential); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="overview"] [data-surface-control^="overview:transfer:"] { min-block-size:2.25rem; }
+  @media (pointer:coarse) { html[data-warlock-design="v1"] .surface-popup[data-mode="overview"] [data-surface-control^="overview:transfer:"] { min-block-size:2.75rem; } }
+  html[data-warlock-design="v1"] .surface-popup:is([data-effects="off"],[data-theme="high-contrast"]) :is(.settings-save-group > button,[data-files-content]) { box-shadow:none; }
+}

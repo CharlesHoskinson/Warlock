@@ -1,48 +1,203 @@
-@layer components {
- html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] { container-type:inline-size; }
- html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls { display:grid; grid-template-columns:minmax(0,1fr); gap:12px; }
- @container (min-width: 28rem) { html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls { grid-template-columns:repeat(2,minmax(0,1fr)); } }
- html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] :is([data-surface-control="control:close"],[data-surface-control="snap:apply"]) { grid-column:1 / -1; }
+/* Apache-2.0. Snap layouts and window picker, Lacquer desktop. Shared foundations own tokens, focus, motion and the
+   unavailable cue; shell-skin.css (loaded after this file) owns the glass panel and the glyph slot; preview.css owns the
+   host-admitted picker profiles, which this file leaves untouched. Grid placement follows source order. */
 
-}
+/* ---------- Lacquer desktop: snap layouts flyout ----------
+   The region buttons are the diagram: the two halves form one miniature screen, the four quarters a second one. Each
+   miniature screen is a frame painted by a .surface-controls pseudo-element placed behind its zones. */
 @layer components {
- html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:"] { min-width:0; min-height:112px; border-inline-start:3px solid transparent; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; gap:6px; padding:12px; background:var(--wl-sys-color-surface); box-shadow:none; text-align:center; }
- html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:"]::before { content:""; display:block; flex:none; box-sizing:border-box; width:64px; height:40px; border:1px solid var(--wl-sys-color-border-essential); border-radius:4px; background-color:var(--wl-sys-color-surface-recessed); background-image:linear-gradient(var(--wl-sys-color-text-secondary),var(--wl-sys-color-text-secondary)); background-repeat:no-repeat; background-size:50% 100%; background-position:left top; }
- html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control="snap:region:right-half"]::before { background-position:right top; }
- html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:top-"]::before, html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:bottom-"]::before { background-size:50% 50%; }
- html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control="snap:region:top-right"]::before { background-position:right top; }
- html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control="snap:region:bottom-left"]::before { background-position:left bottom; }
- html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control="snap:region:bottom-right"]::before { background-position:right bottom; }
- html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:"] :is(.control-label,.control-detail) { display:block; min-height:1.25em; white-space:normal; overflow:visible; overflow-wrap:anywhere; text-overflow:clip; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] { container: wl-snap / inline-size; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls > :not([data-surface-control^="snap:region:"]) { grid-column: 1 / -1; }
+
+  /* Zones: muted panes inside the frame; label and detail centred. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls > button[data-surface-control^="snap:region:"] {
+    position: relative; z-index: 1; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+    inline-size: auto; min-inline-size: 0; min-block-size: 4.75rem; margin: 0; padding: 10px 6px;
+    border: 1px solid color-mix(in srgb, var(--wl-sys-color-text) 8%, transparent); border-radius: 8px;
+    background: color-mix(in srgb, var(--wl-sys-color-text) 9%, transparent); color: var(--wl-sys-color-text);
+    box-shadow: inset 0 1px 0 color-mix(in srgb, var(--wl-sys-color-text) 6%, transparent); text-align: center;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls > button[data-surface-control^="snap:region:"] > :is(.control-label,.control-detail) {
+    display: block; min-height: 1.25em; white-space: normal; overflow: visible; overflow-wrap: anywhere; text-overflow: clip;
+  }
+  /* The zone is the diagram; the legacy miniature on ::before is retired. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls > button[data-surface-control^="snap:region:"]::before { content: none; }
+  /* The label mirrors the reserved unavailable-cue slot at its inline start, so label, detail and zone share one centre. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls > button[data-surface-control^="snap:region:"] > .control-label {
+    padding-inline-start: calc(.75rem + 8px); font-size: .8125rem; font-weight: 600; line-height: 1.3;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls > button[data-surface-control^="snap:region:"] > .control-detail {
+    margin: 0; font-size: .6875rem; font-weight: 600; letter-spacing: .02em; color: var(--wl-sys-color-text-secondary);
+  }
+
+  /* Close: quiet. Apply: the one primary action. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls > button[data-surface-control="control:close"] {
+    inline-size: auto; justify-self: start; min-block-size: 2.25rem; padding: 6px 14px 6px 10px; color: var(--wl-sys-color-text-secondary);
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls > button[data-surface-control="control:close"] > .control-label { font-size: .8125rem; font-weight: 600; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls > button[data-surface-control="snap:apply"] {
+    inline-size: auto; justify-self: end; min-block-size: 2.5rem; padding: 8px 18px 8px 14px; border: 1px solid transparent; border-radius: 10px;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls > button[data-surface-control="snap:apply"] > .control-label { font-size: .875rem; font-weight: 600; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls > button[data-surface-control="snap:apply"] > .control-label::before {
+    content: ""; display: inline-block; flex: 0 0 auto; inline-size: 1.125rem; block-size: 1.125rem; margin-inline-end: .5rem;
+    background: currentColor; -webkit-mask: var(--wl-glyph-snap, linear-gradient(transparent, transparent)) center/contain no-repeat; mask: var(--wl-glyph-snap, linear-gradient(transparent, transparent)) center/contain no-repeat;
+  }
+
+  /* Full six-zone flyout: halves screen and quarters screen side by side. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls:has(> [data-surface-control="snap:region:bottom-right"]) {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: auto minmax(5.5rem, auto) 22px repeat(2, minmax(4.25rem, auto)) auto;
+    gap: 6px; padding-inline: 14px;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls:has(> [data-surface-control="snap:region:bottom-right"]) > [data-surface-control="control:close"] { grid-row: 1; margin-block-end: 12px; margin-inline-start: -8px; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls:has(> [data-surface-control="snap:region:bottom-right"]) > [data-surface-control="snap:region:left-half"] { grid-column: 1; grid-row: 2; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls:has(> [data-surface-control="snap:region:bottom-right"]) > [data-surface-control="snap:region:right-half"] { grid-column: 2; grid-row: 2; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls:has(> [data-surface-control="snap:region:bottom-right"]) > [data-surface-control="snap:region:top-left"] { grid-column: 1; grid-row: 4; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls:has(> [data-surface-control="snap:region:bottom-right"]) > [data-surface-control="snap:region:top-right"] { grid-column: 2; grid-row: 4; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls:has(> [data-surface-control="snap:region:bottom-right"]) > [data-surface-control="snap:region:bottom-left"] { grid-column: 1; grid-row: 5; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls:has(> [data-surface-control="snap:region:bottom-right"]) > [data-surface-control="snap:region:bottom-right"] { grid-column: 2; grid-row: 5; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls:has(> [data-surface-control="snap:region:bottom-right"]) > [data-surface-control="snap:apply"] { grid-row: 6; margin-block-start: 18px; }
+  /* Miniature screen frames behind the zones. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls:has(> [data-surface-control="snap:region:bottom-right"])::before,
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls:has(> [data-surface-control="snap:region:bottom-right"])::after {
+    content: ""; z-index: 0; margin: -7px; border-radius: 14px; pointer-events: none;
+    border: 1px solid var(--skin-hairline, color-mix(in srgb, var(--wl-sys-color-text) 9%, transparent)); background: color-mix(in srgb, var(--wl-sys-color-canvas) 55%, transparent);
+    box-shadow: inset 0 1px 0 color-mix(in srgb, var(--wl-sys-color-text) 5%, transparent), 0 1px 0 color-mix(in srgb, var(--wl-sys-color-text) 4%, transparent);
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls:has(> [data-surface-control="snap:region:bottom-right"])::before { grid-column: 1 / span 2; grid-row: 2 / span 1; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls:has(> [data-surface-control="snap:region:bottom-right"])::after { grid-column: 1 / span 2; grid-row: 4 / span 2; }
+  /* Wide flyout: the two screens sit side by side, halves first. */
+  @container wl-snap (min-width: 34rem) {
+    html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls:has(> [data-surface-control="snap:region:bottom-right"]) {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) 30px repeat(2, minmax(0, 1fr)); grid-template-rows: auto repeat(2, minmax(5rem, auto)) auto;
+    }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls:has(> [data-surface-control="snap:region:bottom-right"]) > [data-surface-control="snap:region:left-half"] { grid-column: 1; grid-row: 2 / span 2; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls:has(> [data-surface-control="snap:region:bottom-right"]) > [data-surface-control="snap:region:right-half"] { grid-column: 2; grid-row: 2 / span 2; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls:has(> [data-surface-control="snap:region:bottom-right"]) > [data-surface-control="snap:region:top-left"] { grid-column: 4; grid-row: 2; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls:has(> [data-surface-control="snap:region:bottom-right"]) > [data-surface-control="snap:region:top-right"] { grid-column: 5; grid-row: 2; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls:has(> [data-surface-control="snap:region:bottom-right"]) > [data-surface-control="snap:region:bottom-left"] { grid-column: 4; grid-row: 3; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls:has(> [data-surface-control="snap:region:bottom-right"]) > [data-surface-control="snap:region:bottom-right"] { grid-column: 5; grid-row: 3; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls:has(> [data-surface-control="snap:region:bottom-right"]) > [data-surface-control="snap:apply"] { grid-row: 4; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls:has(> [data-surface-control="snap:region:bottom-right"])::before { grid-column: 1 / span 2; grid-row: 2 / span 2; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls:has(> [data-surface-control="snap:region:bottom-right"])::after { grid-column: 4 / span 2; grid-row: 2 / span 2; }
+  }
+}
+
+/* ---------- Lacquer desktop: snap states ---------- */
+@layer states {
+  /* The target region fills with brand red. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls > button[data-surface-control^="snap:region:"][aria-current="true"] {
+    background: var(--wl-sys-color-action-fill); border-color: transparent; color: var(--wl-sys-color-on-action);
+    box-shadow: inset 0 1px 0 color-mix(in srgb, var(--wl-sys-color-on-action) 22%, transparent), 0 2px 10px color-mix(in srgb, var(--wl-sys-color-action-fill) 38%, transparent);
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls > button[data-surface-control^="snap:region:"][aria-current="true"] > .control-detail { color: var(--wl-sys-color-on-action); }
+  @media (hover:hover) and (pointer:fine) {
+    /* Hovering a region previews it in brand red. */
+    html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls > button[data-surface-control^="snap:region:"][aria-current="false"]:enabled:not(:disabled):not([aria-disabled="true"]):hover {
+      background: color-mix(in srgb, var(--wl-sys-color-action-fill) 42%, transparent); border-color: color-mix(in srgb, var(--wl-sys-color-action-fill) 70%, transparent);
+    }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls > button[data-surface-control^="snap:region:"][aria-current="true"]:not(:disabled):not([aria-disabled="true"]):hover { background: var(--wl-sys-color-action-fill-hover); }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls > button[data-surface-control="snap:apply"]:not(:disabled):not([aria-disabled="true"]):hover { background: var(--wl-sys-color-action-fill-hover); }
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls > button[data-surface-control^="snap:region:"]:not(:disabled):not([aria-disabled="true"]):active { background: var(--wl-sys-color-action-fill-pressed); color: var(--wl-sys-color-on-action); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls > button[data-surface-control^="snap:region:"]:is(:disabled,[aria-disabled="true"]) { background: var(--wl-sys-color-surface-recessed); color: var(--wl-sys-color-text-secondary); box-shadow: none; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls > button[data-surface-control="snap:apply"]:not(:disabled):not([aria-disabled="true"]) {
+    background: var(--wl-sys-color-action-fill); color: var(--wl-sys-color-on-action);
+    box-shadow: 0 1px 2px color-mix(in srgb, var(--wl-sys-color-shadow) 30%, transparent), 0 4px 14px color-mix(in srgb, var(--wl-sys-color-action-fill) 32%, transparent), inset 0 1px 0 color-mix(in srgb, var(--wl-sys-color-on-action) 18%, transparent);
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls > button[data-surface-control="snap:apply"]:not(:disabled):not([aria-disabled="true"]):active { background: var(--wl-sys-color-action-fill-pressed); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls > button[data-surface-control="snap:apply"]:is(:disabled,[aria-disabled="true"]) { border-color: var(--wl-sys-color-border-essential); background: var(--wl-sys-color-surface-recessed); color: var(--wl-sys-color-text-secondary); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls > button:is([data-surface-control^="snap:region:"],[data-surface-control="snap:apply"]):focus-visible { box-shadow: 0 0 0 2px var(--wl-sys-color-focus-gap); }
+}
+
+/* ---------- Lacquer desktop: window picker cards (thumbnail above the title) ---------- */
+@layer components {
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"]:not([data-picker-admitted="true"]) .surface-controls {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 12.5rem), 1fr)); gap: 12px; align-items: start;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"]:not([data-picker-admitted="true"]) .surface-controls > :not([data-surface-control^="family:"]) { grid-column: 1 / -1; justify-self: start; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"]:not([data-picker-admitted="true"]) .surface-controls > button[data-surface-control="control:close"] {
+    inline-size: auto; min-block-size: 2.25rem; padding: 6px 14px 6px 10px; color: var(--wl-sys-color-text-secondary);
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"]:not([data-picker-admitted="true"]) .surface-controls > button[data-surface-control="control:close"] > .control-label { font-size: .8125rem; font-weight: 600; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"]:not([data-picker-admitted="true"]) .surface-controls > button[data-surface-control^="family:"] {
+    position: relative; box-sizing: border-box; display: flex; flex-direction: column; align-items: stretch; gap: 2px;
+    inline-size: auto; min-inline-size: 0; block-size: auto; min-block-size: 0; max-block-size: none; margin: 0; padding: 8px 8px 12px;
+    border: 1px solid var(--skin-hairline, color-mix(in srgb, var(--wl-sys-color-text) 9%, transparent)); border-radius: 12px; background: var(--skin-tile, color-mix(in srgb, var(--wl-sys-color-text) 4%, transparent));
+    box-shadow: inset 0 1px 0 color-mix(in srgb, var(--wl-sys-color-text) 5%, transparent); text-align: start;
+  }
+  /* The thumbnail well: 16:9, image fitted inside, never stretched. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"]:not([data-picker-admitted="true"]) button[data-surface-control^="family:"] .window-preview {
+    position: relative; display: block; margin: 0 0 8px; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 8px;
+    background: var(--wl-sys-color-surface-recessed); box-shadow: inset 0 0 0 1px var(--skin-hairline, color-mix(in srgb, var(--wl-sys-color-text) 9%, transparent));
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"]:not([data-picker-admitted="true"]) button[data-surface-control^="family:"] :is(.preview-image,.preview-icon) {
+    display: block; inline-size: 100%; block-size: 100%; max-inline-size: none; max-block-size: none; object-fit: contain;
+  }
+  /* The well is reserved before a preview publishes, so a target keeps its geometry when its frame arrives. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"]:not([data-picker-admitted="true"]) .surface-controls > button[data-surface-control^="family:"]:not(:has(.window-preview))::before {
+    content: ""; display: block; margin: 0 0 8px; aspect-ratio: 16 / 9; border-radius: 8px;
+    background: var(--wl-sys-color-surface-recessed); box-shadow: inset 0 0 0 1px var(--skin-hairline, color-mix(in srgb, var(--wl-sys-color-text) 9%, transparent));
+  }
+  /* A fallback icon stays icon-sized, centred in the well. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"]:not([data-picker-admitted="true"]) button[data-surface-control^="family:"] .preview-icon {
+    position: absolute; inset: 0; inline-size: 3rem; block-size: 3rem; margin: auto;
+  }
+  /* Preview state and fidelity ride on the thumbnail as one small pill. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"]:not([data-picker-admitted="true"]) button[data-surface-control^="family:"] .window-preview > span:not(.preview-title):not(.preview-state) {
+    position: absolute; inset-inline-start: 6px; inset-block-end: 6px; max-inline-size: calc(100% - 12px); box-sizing: border-box;
+    display: flex; flex-wrap: wrap; align-items: center; column-gap: 6px; padding: 2px 8px; border-radius: 999px;
+    background: color-mix(in srgb, var(--wl-sys-color-canvas) 84%, transparent); box-shadow: inset 0 0 0 1px var(--skin-hairline, color-mix(in srgb, var(--wl-sys-color-text) 9%, transparent));
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"]:not([data-picker-admitted="true"]) button[data-surface-control^="family:"] :is(.preview-state,.preview-fidelity) {
+    display: inline-flex; align-items: center; gap: 5px; margin: 0; color: var(--wl-sys-color-text); font-size: .625rem; font-weight: 600; line-height: 1.5; letter-spacing: .01em;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"]:not([data-picker-admitted="true"]) button[data-surface-control^="family:"] .preview-fidelity { color: var(--wl-sys-color-text-secondary); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"]:not([data-picker-admitted="true"]) button[data-surface-control^="family:"] .window-preview[data-preview-state="live"] .preview-state::before {
+    content: ""; inline-size: 6px; block-size: 6px; border-radius: 50%; background: var(--wl-sys-color-brand-text);
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"]:not([data-picker-admitted="true"]) .surface-controls > button[data-surface-control^="family:"] > .control-label {
+    padding-inline: 4px calc(.75rem + 8px); font-weight: 600; font-size: .875rem; white-space: normal; overflow-wrap: anywhere;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"]:not([data-picker-admitted="true"]) .surface-controls > button[data-surface-control^="family:"] > .control-detail { margin: 0; padding-inline: 4px; }
 }
 @layer states {
- html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:"][aria-current="true"] { background:var(--wl-sys-color-surface-selected); border-inline-start-color:var(--wl-sys-color-brand-text); }
- html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:"][aria-current="true"]:not(:disabled):not([aria-disabled="true"]):hover { background:var(--wl-sys-color-surface-selected-hover); }
- html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:"][aria-current="true"]:not(:disabled):not([aria-disabled="true"]):active { background:var(--wl-sys-color-surface-selected-pressed); }
-}
-@layer accessibility {
- @media (forced-colors:active) { html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:"]::before { border-color:ButtonText; background-color:ButtonFace; background-image:linear-gradient(ButtonText,ButtonText); } html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:"][aria-current="true"] { border-inline-start-color:Highlight; } }
-}
-
-@layer states {
- html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control="snap:apply"]:not(:disabled):not([aria-disabled="true"]) { background:var(--wl-sys-color-action-fill); color:var(--wl-sys-color-on-action); border-color:var(--wl-sys-color-on-action); }
- @media (hover:hover) { html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control="snap:apply"]:not(:disabled):not([aria-disabled="true"]):hover { background:var(--wl-sys-color-action-fill-hover); } }
- html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control="snap:apply"]:not(:disabled):not([aria-disabled="true"]):active { background:var(--wl-sys-color-action-fill-pressed); }
- html[data-warlock-design="v1"] .surface-popup[data-mode="snap"][data-theme="dawn"] [data-surface-control="snap:apply"]:not(:disabled):not([aria-disabled="true"]) { border-color:var(--wl-sys-color-brand-text); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"]:not([data-picker-admitted="true"]) .surface-controls > button[data-surface-control^="family:"]:is([aria-current="true"],[aria-selected="true"]) {
+    background: var(--skin-selected, color-mix(in srgb, var(--wl-sys-color-action-fill) 22%, transparent)); border-color: color-mix(in srgb, var(--wl-sys-color-brand-text) 55%, transparent);
+  }
+  @media (hover:hover) and (pointer:fine) {
+    html[data-warlock-design="v1"] .surface-popup[data-mode="picker"]:not([data-picker-admitted="true"]) .surface-controls > button[data-surface-control^="family:"]:not(:disabled):not([aria-disabled="true"]):hover { border-color: color-mix(in srgb, var(--wl-sys-color-text) 18%, transparent); }
+  }
 }
 
-/* Forced colours can suppress background images. The selected region is an
-   actual bordered rectangle, separate from the outer screen boundary. */
+/* ---------- Lacquer desktop: contrast, effects, forced colours ---------- */
 @layer accessibility {
- @media (forced-colors: active) {
-  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:"] { position:relative; }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:"]::after { content:""; position:absolute; box-sizing:border-box; top:12px; left:calc(50% - 32px); width:32px; height:40px; border:2px solid ButtonText; }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control="snap:region:right-half"]::after, html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control="snap:region:top-right"]::after, html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control="snap:region:bottom-right"]::after { left:50%; }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:top-"]::after, html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:bottom-"]::after { height:20px; }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:bottom-"]::after { top:32px; }
- }
-}
-@layer components {
-  /* Centred region labels mirror the reserved unavailable-cue slot at the inline start, so label, detail and diagram share one centre. */
-  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] [data-surface-control^="snap:region:"] > .control-label { padding-inline-start:calc(.75rem + 8px); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"]:is([data-theme="high-contrast"],[data-effects="off"]) .surface-controls > button:is([data-surface-control^="snap:region:"],[data-surface-control="snap:apply"]):not(:focus-visible) { box-shadow: none; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"]:is([data-theme="high-contrast"],[data-effects="off"],[data-reduced-transparency="true"]) .surface-controls::before,
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"]:is([data-theme="high-contrast"],[data-effects="off"],[data-reduced-transparency="true"]) .surface-controls::after { background: var(--wl-sys-color-surface-recessed); box-shadow: none; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"][data-theme="high-contrast"] .surface-controls > button[data-surface-control^="snap:region:"] { border-color: var(--wl-sys-color-border-essential); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"][data-theme="high-contrast"] .surface-controls::before,
+  html[data-warlock-design="v1"] .surface-popup[data-mode="snap"][data-theme="high-contrast"] .surface-controls::after { border-color: var(--wl-sys-color-border-essential); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"]:is([data-effects="off"],[data-reduced-transparency="true"],[data-theme="high-contrast"]) button[data-surface-control^="family:"] .window-preview > span:not(.preview-title):not(.preview-state) { background: var(--wl-sys-color-canvas); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="picker"][data-theme="high-contrast"] .surface-controls > button[data-surface-control^="family:"] { border-color: var(--wl-sys-color-border-essential); }
+  @media (forced-colors: active) {
+    html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls > button[data-surface-control^="snap:region:"] { border-color: ButtonText; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls > button[data-surface-control^="snap:region:"][aria-current="true"] { forced-color-adjust: none; background: Highlight; color: HighlightText; border-color: Highlight; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls > button[data-surface-control^="snap:region:"][aria-current="true"] > :is(.control-label,.control-detail) { color: HighlightText; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls::before,
+    html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls::after { forced-color-adjust: none; background: Canvas; border-color: CanvasText; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls > button[data-surface-control="snap:apply"] { border-color: ButtonText; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="picker"] .surface-controls > button[data-surface-control^="family:"] { border-color: ButtonText; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="picker"] .surface-controls > button[data-surface-control^="family:"]:is([aria-current="true"],[aria-selected="true"]) { border-color: Highlight; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="picker"] button[data-surface-control^="family:"] .window-preview > span:not(.preview-title):not(.preview-state) { forced-color-adjust: none; background: Canvas; color: CanvasText; box-shadow: inset 0 0 0 1px CanvasText; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="picker"] button[data-surface-control^="family:"] :is(.preview-state,.preview-fidelity) { forced-color-adjust: none; color: CanvasText; }
+    /* The shared forced-colours focus rule opts the focused control out of colour forcing; these surfaces keep forcing on so the focused card stays readable on Canvas, and the Highlight outline remains. */
+    html[data-warlock-design="v1"] .surface-popup:is([data-mode="snap"],[data-mode="picker"]) .surface-controls button:focus-visible { forced-color-adjust: auto; outline: 2px solid Highlight; outline-offset: 2px; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls > button[data-surface-control^="snap:region:"][aria-current="true"]:focus-visible { forced-color-adjust: none; }
+  }
+  @media (pointer: coarse) {
+    html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls > button { min-block-size: 2.75rem; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="snap"] .surface-controls > button[data-surface-control^="snap:region:"] { min-block-size: 4.75rem; }
+  }
 }
