@@ -1221,13 +1221,19 @@ updateAvailable message model =
                 let next = advance {model | open = False, expected = Nothing, catalogOpening=False}
                 in (next,[Focus (key next "control:opener")])
         OpenOverview stamp ->
-            if capture model/=Just stamp || model.choice/=Nothing || not (Shell.available model.windows.shell) || MenuBridge.preparedSnapshot model.windows.menus/=Nothing then (model,[]) else
+            if capture model/=Just stamp || model.overview || model.choice/=Nothing || not (Shell.available model.windows.shell) || MenuBridge.preparedSnapshot model.windows.menus/=Nothing then (model,[]) else
             let base = (MenuBridge.menuSnapshot model.windows.menus).menu
                     |> Maybe.map (\menu -> windowBase (TaskbarShell.MenuEvent (Menu.Dismiss menu.id)) model |> Tuple.first)
                     |> Maybe.withDefault model
                 windows=base.windows
-                next=advance (retireSwitcher {base | snap=Nothing,jumpEntry=Nothing,jumpOpening=False,filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,overview=True,overviewWorkspace=Nothing,overviewTransfer=Nothing,open=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing}})
-                focus=taskViewGroups next |> Maybe.andThen (List.filter .active >> List.head) |> Maybe.map .identity |> Maybe.map (\workspace -> key next ("overview:workspace:"++workspace)) |> Maybe.withDefault (key next "overview:all")
+                recoveryOrigin=OverviewRecovery.retainedOrigin base.windows.shell.binding base.windows.shell.effects.transaction base.overviewRecovery
+                restoredWorkspace=recoveryOrigin |> Maybe.map .workspace |> Maybe.withDefault Nothing
+                currentGroups=taskViewGroups base |> Maybe.withDefault []
+                validWorkspace=restoredWorkspace |> Maybe.andThen (\workspace -> currentGroups |> List.filter (.identity >> (==) workspace) |> List.head |> Maybe.map .identity)
+                next=advance (retireSwitcher {base | snap=Nothing,jumpEntry=Nothing,jumpOpening=False,filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,overview=True,overviewWorkspace=validWorkspace,overviewTransfer=Nothing,open=False,expected=Nothing,returnFocus=Nothing,menuOrigin=Nothing,windows={windows | picker=Nothing}})
+                groups=taskViewGroups next |> Maybe.withDefault []
+                recoveryFocus=recoveryOrigin |> Maybe.map (\_ -> validWorkspace |> Maybe.map (\workspace -> key next ("overview:workspace:"++workspace)) |> Maybe.withDefault (key next "overview:all"))
+                focus=recoveryFocus |> Maybe.withDefault (groups |> List.filter .active |> List.head |> Maybe.map (.identity >> (\workspace -> key next ("overview:workspace:"++workspace))) |> Maybe.withDefault (key next "overview:all"))
             in (next,[Focus focus])
         CloseOverview stamp ->
             if capture model/=Just stamp || not model.overview then (model,[]) else

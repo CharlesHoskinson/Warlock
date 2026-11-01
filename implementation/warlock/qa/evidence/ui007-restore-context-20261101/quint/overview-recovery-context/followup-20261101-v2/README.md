@@ -1,0 +1,7 @@
+# Quint recovery-context follow-up v2
+
+Sol's review led to an exact repeated-open assertion for workspace, focus target, focus-command count and restore mutation count, plus a focused-only extra-Focus mutant. The model now also carries eight observational reachability flags for its normal transitions. These flags only record coverage: they are not guards, capabilities, UI output, or product state. Protected Quint 0.33.0 model/test typechecks pass; all nine named tests pass, including four explicit mutant tests.
+
+The protected normal-transition sample uses four safety invariants, 5,000 traces, at most 8 transitions and CLI seed argument `52012`. All eight normal actions were reached; counts and positive route witnesses are in [`report.json`](report.json). Repeating the exact CLI argument yielded identical witness counts. Quint's output suggested replay seed `0x5acec`, but running with that printed value produced different counts; both runs and hashes are retained. The protected command script is pinned in the report and can reproduce the exact arguments. The script uses `window-integration-qa/qa_run.py`.
+
+The `oldOriginReturnedAfterMismatch` witness is zero under normal transitions. The explicit mismatched-return mutant is detected by a named test; it is not a sampled-invariant sensitivity result. The model omits full Elm binding/authority/stamp/output/read and competing-UI guards, native delivery, physical focus and AT.

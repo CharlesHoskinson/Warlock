@@ -18,5 +18,5 @@ packet status =
         base=Desktop.initial
         windows=base.windows
         shell=windows.shell
-        model={base | windows={windows | shell={shell | effects=effects,phase=Shell.Ready,notice="Ready"}}}
-    in E.object [("status",E.string (Effects.statusName status)),("frame",Surface.packet one one model),("unresolved",E.int (List.length effects.unresolved))]
+        model={base | overview=True,overviewWorkspace=Nothing,windows={windows | shell={shell | effects=effects,phase=Shell.Ready,notice="Ready"}}}
+    in E.object [("status",E.string (Effects.statusName status)),("frame",Surface.packet one one model),("context",E.object [("overview",E.bool model.overview),("workspace",Maybe.map E.string model.overviewWorkspace |> Maybe.withDefault E.null)]),("unresolved",E.int (List.length effects.unresolved))]
