@@ -1,6 +1,6 @@
 // Bounded, local Elm receipt bookkeeping abstraction; see HANDOFF.md.
 module ReceiptLifecycle {
-  type Status = Empty | Pending | Unknown | Committed | Refused
+  type Status = Empty | Pending | Unknown | Committed | Refused | Cancelled
   type Audit = {receipt: bool, key: int, terminal: bool, scene: int,
     request: int, generation: int, sends: int, otherCurrent: int, otherStatus: Status, outcome: Status}
   type State = {connected: bool, scene: int, request: int, generation: int, sends: int,
@@ -46,7 +46,7 @@ module ReceiptLifecycle {
       newStatus: if (key == 2) status else x.newStatus}
   }
   action receive(binding: int, protocol: int, key: int, status: Status): bool = all {
-    matches(s, binding, protocol, key), status == Committed or status == Refused or status == Unknown,
+    matches(s, binding, protocol, key), status == Committed or status == Refused or status == Cancelled or status == Unknown,
     s' = result(s, key, status, false)}
   // Separate baseline counterexample; deliberately excluded from step.
   action brokenReceiveOld = all {matches(s, 1, 1, 1), s' = result(s, 1, Committed, true)}
@@ -64,8 +64,8 @@ module ReceiptLifecycle {
   action releaseOld = all {s.oldPresent, s.oldStatus == Unknown, s.oldIssued,
     s' = {...quiet(s), oldPresent: false, oldIssued: false}}
   action step = any {beginOld, changeOutput, beginNew, receive(1, 1, 1, Committed),
-    receive(1, 1, 1, Refused), receive(1, 1, 1, Unknown), receive(1, 1, 2, Committed),
-    receive(1, 1, 2, Refused), receive(1, 1, 2, Unknown), ignored(2, 1, 1),
+    receive(1, 1, 1, Refused), receive(1, 1, 1, Cancelled), receive(1, 1, 1, Unknown), receive(1, 1, 2, Committed),
+    receive(1, 1, 2, Refused), receive(1, 1, 2, Cancelled), receive(1, 1, 2, Unknown), ignored(2, 1, 1),
     ignored(1, 2, 1), ignored(1, 1, 3), disconnect, recoverOld, releaseOld}
   val receiptPreservesSceneCounters = s.audit.receipt implies
     s.scene == s.audit.scene and s.request == s.audit.request and s.generation == s.audit.generation and s.sends == s.audit.sends
@@ -75,4 +75,26 @@ module ReceiptLifecycle {
     s.currentStatus == s.audit.outcome
   val pendingHasReservation = (s.oldPresent implies s.oldIssued) and (s.newPresent implies s.newIssued)
   val bounded = s.request <= 2 and s.generation <= 2 and s.sends <= 2
+  val terminalRetiresReservation =
+    ((s.oldStatus == Committed or s.oldStatus == Refused or s.oldStatus == Cancelled) implies
+      not(s.oldPresent) and not(s.oldIssued)) and
+    ((s.newStatus == Committed or s.newStatus == Refused or s.newStatus == Cancelled) implies
+      not(s.newPresent) and not(s.newIssued))
+  val safety = receiptPreservesSceneCounters and otherCurrentPreserved and
+    exactCurrentTerminalSettled and pendingHasReservation and bounded and terminalRetiresReservation
+  val witnessPending = s.currentStatus == Pending
+  val witnessCommitted = s.currentStatus == Committed
+  val witnessRefused = s.currentStatus == Refused
+  val witnessCancelled = s.currentStatus == Cancelled
+  val witnessUnknown = s.currentStatus == Unknown
+  val witnessDisconnected = not(s.connected)
+  val witnessNewRequest = s.current == 2
+  // Exact-key native outcome is an assumption, not proof of physical cancellation.
+  run cancelledCurrentTest = init.then(beginOld).then(receive(1, 1, 1, Cancelled))
+    .expect(s.currentStatus == Cancelled and not(s.oldPresent) and not(s.oldIssued) and s.sends == 1)
+    .then(ignored(1, 1, 1)).expect(s.currentStatus == Cancelled and s.sends == 1)
+  run cancelledOldPreservesNewTest = init.then(beginOld).then(changeOutput).then(beginNew)
+    .then(receive(1, 1, 1, Cancelled))
+    .expect(s.current == 2 and s.currentStatus == Pending and s.newPresent and s.newIssued and
+      not(s.oldPresent) and not(s.oldIssued) and s.sends == 2 and otherCurrentPreserved)
 }

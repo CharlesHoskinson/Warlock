@@ -7,3 +7,4 @@
 | [2026-10-31-applications-feedback.md](2026-10-31-applications-feedback.md) | Actual feedback/recovery and clipped-text failures; component correction, original native/AT still open | 2026-10-31 |
 | [2026-10-31-authority-tuple.md](2026-10-31-authority-tuple.md) | Whole original ARC005 accepted on immutable permitted bridge evidence | 2026-10-31 |
 | [2026-10-31-registry-admission.md](2026-10-31-registry-admission.md) | Actual bad admission repaired; whole original REV005 accepted as administrative behavior | 2026-10-31 |
+| [2026-10-31-receipt-states.md](2026-10-31-receipt-states.md) | Whole ARC007 real Cancelled gate fix and separate current Haskell package readiness | 2026-10-31 |

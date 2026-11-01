@@ -1,0 +1,2143 @@
+{
+  "schema": 1,
+  "protectedScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-752ec448f0904ed199a90f80f788e7ca.scope",
+    "coreLimit": 1
+  },
+  "passed": true,
+  "prepare": false,
+  "nativeAccepted": false,
+  "releaseAccepted": false,
+  "parentNetworkNamespace": "net:[4026531833]",
+  "manifestSHA256": "7a2c7706cbf05b3e68abd661c7789cd9ce9d24a5b714091176e6e6b275ac0a76",
+  "commands": [],
+  "scope": "Actual offline Haskell package build and controlled component tests; no native GUI/provider or original scenario acceptance",
+  "systemInputs": {
+    "gcc": {
+      "path": "/usr/bin/x86_64-linux-gnu-gcc-15",
+      "sha256": "cff242d0f6998991fad6264b8f347261850c88989f46cfc5fd86c86f46f5581f"
+    },
+    "make": {
+      "path": "/usr/bin/make",
+      "sha256": "27c9f6d806aee15882b01c2c61848f7aa75caa14bc7b6f608ba422f9e46a7d49"
+    },
+    "ld": {
+      "path": "/usr/bin/x86_64-linux-gnu-ld.bfd",
+      "sha256": "64d437300d49057ca7f3435c79d0e4c496e7550914bbcfcb60a1e8777b915699"
+    },
+    "ar": {
+      "path": "/usr/bin/x86_64-linux-gnu-ar",
+      "sha256": "03ec4b3fee0f863eec1119fc6a87508afee3c7bf986f89e087bb58eb8e4da976"
+    },
+    "ranlib": {
+      "path": "/usr/bin/x86_64-linux-gnu-ranlib",
+      "sha256": "8efb55635b0110eb729b07f78cc6d641858ed32c2dc5baf97450a4cd2e9d9908"
+    },
+    "as": {
+      "path": "/usr/bin/x86_64-linux-gnu-as",
+      "sha256": "081c69041ddc45a546dfeeb2a79179830cf92bcd07cc38d8b3af6b40b03deef0"
+    },
+    "strip": {
+      "path": "/usr/bin/x86_64-linux-gnu-strip",
+      "sha256": "08c72b1f7e4cf39e569482f0632ab80e229fa443b698c40c698dbcdac722cf9a"
+    },
+    "pkg-config": {
+      "path": "/usr/bin/pkgconf",
+      "sha256": "33fe3cef13ad2e476c13416867bf0ba152423738ce299e03cdd3859aff780a91"
+    },
+    "dpkg-deb": {
+      "path": "/usr/bin/dpkg-deb",
+      "sha256": "18c53126448865d3457cc752547e74c2d38db45b6a92ec1e1ba15343e43491d6"
+    },
+    "bwrap": {
+      "path": "/usr/bin/bwrap",
+      "sha256": "5d1f77a455d3a5cc1a45bdbf2e23b89cbd7b33e640dd9ae3b5ce2573d133889e"
+    },
+    "sh": {
+      "path": "/usr/bin/dash",
+      "sha256": "c626229526bb58ec2d0f585f3c3ae1412e6f973b4353385042d11c38d8426917"
+    },
+    "python": {
+      "path": "/usr/bin/python3.14",
+      "sha256": "6afce98b1e5ce89dc1c5dfca9672276a9486bc318855c7554cbe6da62d073e10"
+    },
+    "libgmp.so.10": {
+      "path": "/usr/lib/x86_64-linux-gnu/libgmp.so.10.5.0",
+      "sha256": "fda9699eef15deda5f1c626e9140377a7f5d88c41516a54278ac02429cb20fa5"
+    },
+    "libffi.so.8": {
+      "path": "/usr/lib/x86_64-linux-gnu/libffi.so.8.5.0",
+      "sha256": "7392c95b499c0e2fb21417dcb7558493d4f787893a440aa39407e2957115332b"
+    },
+    "libglib-2.0.so.0": {
+      "path": "/usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.9000.0",
+      "sha256": "9990987ffc88baf5bf5a24c0e1d39fe47834556c3a9c058917362e378f2078a3"
+    }
+  },
+  "sourceHashes": {
+    "implementation/warlock/haskell/cabal.project": "b8fc882f0e53b96dacbced3a21d292741ad2a4bcbb59627b9c1c2eb8647a5607",
+    "implementation/warlock/haskell/elf-observation/README.md": "d5d789263049e4c4ab7a677448192e70f3f8f5fb1c97c87a8de73c7af4e6b320",
+    "implementation/warlock/haskell/elf-observation/elf-observation.cabal": "9a71bb015ac1cd15f5a1cc78d5b4a1bae31d877ec132065fb7769a9126f4bdcf",
+    "implementation/warlock/haskell/elf-observation/qualification.json": "e22cb3c5429f04bcc9a5b9c34f2766a6ce9268ed9dbef4b8cb2124808f4cb72c",
+    "implementation/warlock/haskell/elf-observation/src/Warlock/Elf/Graph.hs": "de3b6575b059baba66f50e4cca5078db6d535a88e380fb713486845c09643e82",
+    "implementation/warlock/haskell/elf-observation/src/Warlock/Elf/Readelf.hs": "e53844a3d91a97d17b61566e9e6f032659e7cb178cb6675720888123f76c3103",
+    "implementation/warlock/haskell/elf-observation/test/ElfCases.hs": "9b70f8370431be1b389904b72656db3005e4745dc989db4e29fcdc95d5d26fb5",
+    "implementation/warlock/haskell/elf-observation/test/GoldenNames.hs": "43c40800868f65f1b8ea45571c8fa44adcf6877e88c28bf52c0e8d8ff0be23ed",
+    "implementation/warlock/haskell/elf-observation/test/fixtures/gcc.readelf": "7f8953690d8f2b206313517e330975c02a6b5f67a2a86b5244552028b3313168",
+    "implementation/warlock/haskell/elf-observation/test/fixtures/ghc.readelf": "9163a5717086fd01ff0cd242c43e550e2053e8bec20d9658e62169c128cbaf55",
+    "implementation/warlock/haskell/elf-observation/test/fixtures/helper-0.readelf": "c6caa8c1f5af950bd0f923d7a03a5ee263476ea2f9a534f338f592cbc33696b4",
+    "implementation/warlock/haskell/elf-observation/test/fixtures/helper-1.readelf": "ad6812a6d3e1aeb94e3602cd103e05885c863a2f47393ba51ed8982bdd094381",
+    "implementation/warlock/haskell/elf-observation/test/fixtures/helper-2.readelf": "4aabca14f50a5a56554121660ccf0b0bddf3b7446b7a305cbac406b3b586be0b",
+    "implementation/warlock/haskell/elf-observation/test/fixtures/jsc.readelf": "f552f66304a19ad53d1afbdc5fb3a64f18402e49354da0977763f59fd8b92117",
+    "implementation/warlock/haskell/elf-observation/test/fixtures/json-glib.readelf": "77958800953f42fd6282e0ddbad1bd174e935a2d2c0983de88a0a2a5d89d1eba",
+    "implementation/warlock/haskell/elf-observation/test/fixtures/owner.readelf": "dde3238bd82262f28f06c638a0d36fcb638d997d66dc4ddd0720aa7af2eeee7b",
+    "implementation/warlock/haskell/elf-observation/test/fixtures/provenance.json": "4de54e658fd54dc6a930b42433116da7cf90979bde30a2c76e96d129938d63b7",
+    "implementation/warlock/haskell/elf-observation/test/fixtures/sframe.readelf": "dae88a174d81df1f2b930ae4a57ece4fc319b71e3d26ed8dd66db629d68661a3",
+    "implementation/warlock/haskell/elf-observation/test/fixtures/webkit.readelf": "a8f09ff8258a1ee210341b9ff771837ad88f3cf2aa4114e89cda7ee2fddb8045",
+    "implementation/warlock/haskell/held-document/README.md": "c54e0457d05cd85c222dfcccb1c3b3d8d20013407d5d000846c691f7dce7f6ed",
+    "implementation/warlock/haskell/held-document/held-document.cabal": "fd73f544a29c114a32f6c26bcf0ef7fd810fef11d2ea75191cd988e569ad9999",
+    "implementation/warlock/haskell/held-document/qualification.json": "eef9d8ab2df193d112237b89ca5e72927b99ab914102a1f35889a71672a16fd7",
+    "implementation/warlock/haskell/held-document/src/Warlock/Http/Document.hs": "b0a0f0187349d1ad79300999c87c3e4d0b481568764b081b7c15742b54bbe2f5",
+    "implementation/warlock/haskell/held-document/src/Warlock/Platform/Descriptor.hs": "221af8008db858225b9bffee7a86bd15ee93ce6484b289200a4e79bb2034cf64",
+    "implementation/warlock/haskell/held-document/src/Warlock/Platform/Executable.hs": "4eee3ac9b73b78483a88f15f569c68657374dca3d95f56fe03ec8c5b561a8074",
+    "implementation/warlock/haskell/held-document/src/Warlock/Platform/Executable/Internal.hs": "1bd4e87275a0c3b69839a0dd7ef3351405350754afafa57a15ffb738a9af717a",
+    "implementation/warlock/haskell/held-document/src/Warlock/Platform/Resolver.hs": "7f751443f003932fbc7ec11a8e2957999ecb332b3e07decfc3280628bd0100d0",
+    "implementation/warlock/haskell/held-document/src/Warlock/Platform/Resolver/Internal.hsc": "3fb73e909e6f9fdea0d863fc156cd1409685c85be95b0f7fb3878c980c4b46ed",
+    "implementation/warlock/haskell/held-document/test/LeaseControls.hs": "d193d706cd63c8689d4ac4d66f3e0095634ceed3abab5083f54afac9f7aeb1a9",
+    "implementation/warlock/haskell/held-document/test/Main.hs": "735ef78224bb13e05a5c02c966b12b9811c758339c33e3fa3c618feef3bad501",
+    "implementation/warlock/haskell/native-authority/README.md": "f63a78a2be69bec934c47c55ac59aec27f6d2cf8e555ac1f0be7684a759c8744",
+    "implementation/warlock/haskell/native-authority/native-authority.cabal": "0f6e8579cc148c5c5599797f33919bde411c2610539b68fc2cfb4700e8215ec3",
+    "implementation/warlock/haskell/native-authority/qualification.json": "5b537f836cc94b0779018377c693961cce8e940fcae0b482ed705573aad3893a",
+    "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation.hs": "9b12e4e95d578e961c7f0db57b1049b0a16da206e9d886469f0c540d9bd415bb",
+    "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/AdmissionBytes.hs": "06250a307c2978c7670a2c6477c8bed2b12f322b7e363fd129a31cd1757a9e6e",
+    "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/AdmissionShape.hs": "2d9182e774ff69ab66034a717985685ed1a53bd4adc94157c8b4268744aac241",
+    "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/HostGuard.hsc": "8ae02f272b7f002128e871064b26bcaf30876a1a610065a5729c7083b7a0c346",
+    "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/Internal.hs": "85e1ef5008c223121decf3f34a6ad083b7a26d785a2ab9f074bc7a5928056bc7",
+    "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/LifetimeOwner.hsc": "5995e5a6b5beef6412831daad6db9f8206b531cd11993c8fdf3f423d9e906976",
+    "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/PairStore.hs": "99d5594019dd9f1e13162b56f48f9e8657a90e1dd2e200c53aa80374fa91cf47",
+    "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/Selection.hsc": "eaf96fb03375de6f7169210bd55134c1e4ff43e0b1fb6120d8cd618618e41a38",
+    "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/SlotStore.hsc": "43a1210a1cca1d7d177d3dd14b1aed4791bf324bafce5b66d5cc183cd730012d",
+    "implementation/warlock/haskell/native-authority/src/Warlock/Native/Cancellation/Storage.hsc": "c2556135079bd0b63870aac9b6b37736041894352939eea1ab87ac8c26889ded",
+    "implementation/warlock/haskell/native-authority/test-child/ChildDirectoryControls.hs": "0180ab984a9b5b1fc42ced8ba1951714e645a6f71dc100b697357bdfa2037c02",
+    "implementation/warlock/haskell/native-authority/test-guard/Main.hs": "249e6a0c97b1f0e66f3d0fbd69854e926caa0fc77106160837fde6f395078dc8",
+    "implementation/warlock/haskell/native-authority/test-lifetime-independent/LifetimeOwnerControls.hs": "405b6539a99dfbf8d09502d8e60089c6dc06358c73c27ac2f362968c7f2c6893",
+    "implementation/warlock/haskell/native-authority/test-lifetime/LifetimeOwnerControls.hs": "35cf69840a1da11cde9ad962f065022e31fe81b9b991bf146fd66b9196b33e82",
+    "implementation/warlock/haskell/native-authority/test-pair-independent/Main.hs": "a040ee22ad133dbae7228b979f4be5535b8a143b25c536c11ae9ccd75ca04b2d",
+    "implementation/warlock/haskell/native-authority/test-pair-independent/ShapeMain.hs": "c70dbcd2b2b2e81ba4bd1cc18cbcdcd2e20a9e0bd54378ec48656f36ed8cebbe",
+    "implementation/warlock/haskell/native-authority/test-pair-sequences/Main.hs": "e66a2d68f60e95b7d6c9c33ac846cb2aab706e874dd5351a48d99246607bb93f",
+    "implementation/warlock/haskell/native-authority/test-pair/Main.hs": "776bf66ca42e39370fd6c989fc00f689b3dfb12c90e219c2b529eb3402d1ee02",
+    "implementation/warlock/haskell/native-authority/test-selection/Main.hs": "d232ec3833bf702f6957aad6e3d425640e9e40370356d808e8620b0d05d470be",
+    "implementation/warlock/haskell/native-authority/test-slot/SlotStoreControls.hs": "45fd1bee1c7950938bdf72647da8d4709f7f112aaa98bfe077bc33dca21971b8",
+    "implementation/warlock/haskell/native-authority/test-storage/ForeignOwnerControls.hs": "404facb5a706cf6b6a08d619453187a95eb5b1766da0867c12c5a97ba6f828c9",
+    "implementation/warlock/haskell/native-authority/test-storage/Main.hs": "c06b8ed27e0e6d29ed3c6911bc5214283d22ebb5afe749c9d36187c5367ab268",
+    "implementation/warlock/haskell/native-authority/test-storage/SwapControls.hs": "ef6e715bb2e8131b49727bc63fca1cda9316aa784c0ddb72f25201c7a097e95b",
+    "implementation/warlock/haskell/native-authority/test/Main.hs": "db73eac6970de58083b5aa1d925481f367d426fff717a1268ebab3a69f0c7504",
+    "implementation/warlock/haskell/process-custody/HANDOFF.md": "401861bea381583225e4ffc4f4c541ccc72fa6e8a525a9a6139a01d70995f06e",
+    "implementation/warlock/haskell/process-custody/README.md": "f3a81d75207e1f7a3505830781b371f6545e40b383cc633be6ef771ea7adfb9b",
+    "implementation/warlock/haskell/process-custody/RETROFIT.md": "4ff2abe3e7626ef0d572e666a297bfa97f992a678d46ed411829ab3909482360",
+    "implementation/warlock/haskell/process-custody/SHA256SUMS": "aa08200922b446d3c2fad67719b0f00343c9f5ae0444838040091290cd027cf9",
+    "implementation/warlock/haskell/process-custody/SOURCE-MAP.md": "d16d0445e3d2f1f71e3f58c0cfa8c72f78b15365a1b74b04054dbfcb032aa290",
+    "implementation/warlock/haskell/process-custody/fixture-bootstrap/FacadeChild.hs": "75b3101897b3c15b71df9b32931f9e4a6aa7122d9edc2aa10790c16065b567f2",
+    "implementation/warlock/haskell/process-custody/fixture-graceful/Main.hs": "e2116e43764fce5ff0e0649a294cc6ca2fe0dabaae4a220009cd15f75ab0af6c",
+    "implementation/warlock/haskell/process-custody/fixture-selected/Main.hs": "ddb77f498858d132315f2768854e7e74a78fbf18b7f081cf49191a1e7d3806de",
+    "implementation/warlock/haskell/process-custody/fixture/Main.hs": "3a6c1baefca82d447ff03566b254758a4f86c1386589e99e2255717d7a707610",
+    "implementation/warlock/haskell/process-custody/process-custody.cabal": "ba77fc52c394747e446475a53660d0c5065e9753d77aeaea22714e5737bc13ab",
+    "implementation/warlock/haskell/process-custody/qualification.json": "8dc5086cd83edd072deab11651a3e5a5f34f5d7c4f2f32dae7b14e65cf187716",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process.hs": "39a0805202bd0843affe2c32bfc0c8f9f79197231a94f1f2e6c40905dcf96fef",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Bootstrap.hs": "dc8273cb33d6f23757b20f16f7cefc83d00fc8ab4d00520149744928bbd1a461",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Internal.hsc": "f13472d6da143a38d8aeaf5c944a1346b754844a7b8f67fae295d31733bbf11f",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Lease.hs": "06b508e1ae3600422ae23f95fa148a33f8ee79b74b5171766a2712f593884049",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Owner.hs": "3f02dc906eb9ce2490821d6e09b131ba019e09d19707db053ba9980fccc89123",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Transfer.hs": "e6ac6bf23bc5568b6a88623d23bdf9fed2a4162d2cd4966e73db31c3342f8d66",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Transfer/Internal.hs": "189618508d05ddad7639f894b37879e7dc449da32171e9bde82b6d0ea49a9d8d",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Whitelist.hsc": "62775261c983b9b2f8f256734c731fee492f1f4a327ceab845370bd6e82da416",
+    "implementation/warlock/haskell/process-custody/test/DeadlineStop.hs": "73d44888cd349224663790847e2ac593c3fb60ec27cd07fcbfef9b130cc00166",
+    "implementation/warlock/haskell/process-custody/test/FacadeControl.hs": "4948dd410e463023570345ed66d5939a67e80a1fd1ccd78500285355b449dd91",
+    "implementation/warlock/haskell/process-custody/test/Internal.hs": "bc7d6362bf78adf4e5badf3e2e6285ec2496d7770b1e76c5f895f84edb621aeb",
+    "implementation/warlock/haskell/process-custody/test/Public.hs": "9ab22e6705dab47416b55126104fa160fda4fec6bbec4d3635d5d254adc34600",
+    "implementation/warlock/haskell/process-custody/test/SelectedFD.hs": "c3748e48f8e520e7a2eba6b27611b445013d8c33d0d617bd7e861fbdf2f854a8",
+    "implementation/warlock/haskell/process-custody/test/VerifiedFixture.hs": "0c0212820247927fd52c1cf770b8bd3c6c4de625cff9a2c999951a2297ad308a",
+    "implementation/warlock/haskell/process-custody/test/negative/CoreCapability.hs": "9bd073b4e08cbb179fadd0eace46cfda3ab866d9b5c0201f12c4ae86e1a91110",
+    "implementation/warlock/haskell/process-custody/test/negative/RawIssuer.hs": "1ad937597d06dbefb9ec9a5edec70f6a080684d47da6a2ddc590e3faadd5305f",
+    "implementation/warlock/haskell/process-custody/test/negative/SelectedSpawnConstructor.hs": "4c28b3897417504b9c09ed29922f798947c208237cc5a61883d334c5ab1e7314",
+    "implementation/warlock/haskell/protocol/README.md": "c07fd3e1cd27a01e30d89a37da3390d5c9ac950a4b75f0b8fca6226a9ffca8ad",
+    "implementation/warlock/haskell/protocol/TRANSPORT.md": "47985c788f31031987aa4c9082829b20426eab83045aa74a0f17ccd989a6f98b",
+    "implementation/warlock/haskell/protocol/formal/ACQUISITION.md": "af661eb1131c7d0b5fbf815b976ad4899a19a27061bc5b8113b63cefa48d6c32",
+    "implementation/warlock/haskell/protocol/formal/README.md": "c496560993a076d6766ae37a4279e6012b9401f9a74172e1f6b77ab8e11d345b",
+    "implementation/warlock/haskell/protocol/formal/acquisition.qnt": "5e8ed18ddd56ee172f927cdde7e41fc60bb57448a9b7fb315bc8067b7151c592",
+    "implementation/warlock/haskell/protocol/formal/acquisition_test.qnt": "e0caed809f42b63b7fd07d311fe692be533a5bad9d49dcd3a5b0efb7c331cec2",
+    "implementation/warlock/haskell/protocol/formal/handler_gate.qnt": "ed68320eb43ee2872619a9763f503f7c4dd730ecccd258d7b14f63139935762f",
+    "implementation/warlock/haskell/protocol/formal/handler_gate_test.qnt": "10565b8c52e5184743bb6a4fbb9ba1d5caecabf983ea87099e13f1b6aa638fcf",
+    "implementation/warlock/haskell/protocol/protocol.cabal": "fd6bdd13d221de0f925022792520eb4443d1d009e0c55ce1e1db0ffd22d5bd43",
+    "implementation/warlock/haskell/protocol/qualification.json": "988dd7e0c6597dd22e6d43f808eb132ff377bd52ce249814b4a5ce4c334f82d4",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Boundary.hs": "afb5b9c3d116ba8f2bfbab8a135546f033de174c734930d2031e4b2624c631ee",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Boundary/Internal.hs": "4368da772a31647c16146078feffbab4b25ef05ef56e735e0c8295b8fe613977",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Codec.hs": "9f1fcb18698ca3fba49aacf903a0040a5e78b5cd16d6ff4cde129b84bad68572",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/CredentialGuard.hs": "f6f9ace572c62a0aba9412c457d172a4a1fd7bb24f357e13ed3e30d7158239a7",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/CredentialIngress.hs": "89b735faff45941cc4523a89515cf408eeadfde44cb8b1bd5a6b70f8ed5a4a96",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Custody.hs": "87a8d62a378359bf52589c426ac67f0376195493a2cf9e84d02c1253bac40e01",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Framing.hs": "e338206c5fbf2d8d7f47b4dff66d51fec4cfe2ad9316a355eb9aeb7ac29df708",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Identity.hs": "ed3f94bbf9c9ca631aecf8657816ad0a045caaa7a2b73f0f18a773b34ae69e7a",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress.hs": "fb5123cf92f0f84c78938cf37ee14cf301df3aeb13f0368099dfa092b663c234",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress/Internal.hs": "034a50695089d225d639c2be95f300a4f8e4478008e6adeaa748e7a00139daef",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Lifecycle.hs": "694b5849cc973e909f7f2a75d71bb957906ff70cd516fe347df56cd0339d2b86",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/PeerCredential.hs": "3f0db514bad7b5d752bef31abca98805d9bef3602c6b8b7ea4348fdf29a67e76",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Server.hs": "1b9b44f4940fdbe1e98bff6479c6b176596513e8228f4481ba731ba63d00b126",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/StrictJson.hs": "e72b90de84e347b010e8db7ecc84c2e3ec12f7cc38867439806bd1d47bd6c04e",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Wire.hs": "680237349b3d2e5583849e1c3d43fdc8ebf5313d462e7820b9db8ee8d16c74fd",
+    "implementation/warlock/haskell/protocol/src/Warlock/Transport/Channel.hs": "75b7d54d886be19ac3c17ddb4ed45819d4430727ea60519cce3729b587a68adf",
+    "implementation/warlock/haskell/protocol/src/Warlock/Transport/Frame.hs": "a2af9148dd5f7d5d80bb9a1427cf9daf39550ee16f2b850cb483707235793606",
+    "implementation/warlock/haskell/protocol/src/Warlock/Transport/PeerCredentials.hsc": "73adfbd3faf50b6918b805844ed5d95463914f4bd041bb3ab057d357765f2ee1",
+    "implementation/warlock/haskell/protocol/src/Warlock/Transport/SocketFlags.hsc": "dc12bd6112f1bc146123303f5b799d5e6186b03eab5277ac164b13e08b97b482",
+    "implementation/warlock/haskell/protocol/test/GuardControls.hs": "6698548053e57a128f3341017b35a222e10fcd27aa302751ebb1c6ec43ff0eb4",
+    "implementation/warlock/haskell/protocol/test/Main.hs": "4e19a493ce14da32d1b67dd152ee3c8feba1f65dea50be0df5d153be477f663c",
+    "implementation/warlock/haskell/protocol/test/OwnerControls.hs": "e23a5e2b082a2669eacb5d80b243156c18cc38a4373d338ec8b060d4504d6e36",
+    "implementation/warlock/haskell/protocol/test/OwnerSequenceProperties.hs": "eda99bb99ef18eb59d2403071b8fdbbd2855c927d3adc9223335e9d6044558b8",
+    "implementation/warlock/haskell/protocol/test/PeerCredentialsCases.hsc": "4b132ee6e37a6cf0197ff1f934b2c68b9821f93ee7023a6c36ffceef65be45a1",
+    "implementation/warlock/haskell/protocol/test/QuarantineControls.hs": "a37aefb1d8fd54be04b95f76f2d4b84ddbbe652684cb30d1246f4a82d00a2c49",
+    "implementation/warlock/haskell/protocol/test/fixtures/history-valid-positional-key.bin": "4ab5dcab96c18db6a50b667b6d98fe773ae3ac479c594471a00acf6ed7f844fa",
+    "implementation/warlock/haskell/protocol/test/fixtures/invalid-context-lifetime.bin": "5a7f6ebaef0f441407a3288b47f86e7b667ee4b543e7e3c9b6963d93770b3606",
+    "implementation/warlock/haskell/protocol/test/fixtures/invalid-duplicate-key.bin": "534a4bfbbc280c837dda31c926a21821259158859ac9aa48a256e2255d51698d",
+    "implementation/warlock/haskell/protocol/test/fixtures/invalid-extra-field.bin": "031fa55a5c29a3d90edbea97e40cde527d54d2514d3b0868888777da8ffbf420",
+    "implementation/warlock/haskell/protocol/test/fixtures/invalid-kind-unknown.bin": "1b010a8971b514dae3cee63cb0e8df4eab82e100730ec354b723d62c1237fe84",
+    "implementation/warlock/haskell/protocol/test/fixtures/invalid-version-boolean.bin": "19e7004d4f7fede867da179fc74a5140407513efe50657bb9c534fe8cf9e0297",
+    "implementation/warlock/haskell/protocol/test/fixtures/invalid-version-unknown.bin": "4b15479df542ecefcaefb0bf171bd88510c3b785f1ba8d0201c5e178a280809b",
+    "implementation/warlock/haskell/protocol/test/fixtures/lookup-v2-request-live.bin": "4b4ac27237d62ded83b0439dd949c8d7eec80b92b9540da5c82bd614be426103",
+    "implementation/warlock/haskell/protocol/test/fixtures/lookup-v2-result-absent.bin": "7e5dbf851ce53812d7613cfa17b5ae6275c5d901a72acb989a19592bb2c41931",
+    "implementation/warlock/haskell/protocol/test/fixtures/lookup-v2-wrong-key.bin": "8054dd3a23c0c0b6cabec06e82de9ed6eabc54882a3fef0db27b716eee2a4e90",
+    "implementation/warlock/haskell/protocol/test/fixtures/valid-hello.bin": "cd15d1f8e15be5aaf86fefef213ba4c7ff167ae5527bd8a7195213c8f3198798",
+    "implementation/warlock/haskell/protocol/test/fixtures/valid-negotiate.bin": "80fd224e5d644eefddc92598527d3b4e0c5cd372a5d7d9327db250054b62e34e",
+    "implementation/warlock/haskell/protocol/test/fixtures/valid-prepare.bin": "0d3341e70d17fbe5967dc898efcc978ff05b9029e80d60aee971ca9cfb8f2ed1",
+    "implementation/warlock/haskell/protocol/transport-qualification.json": "47afea44d3dc724866010a7be1c975a195673f269907b343f2334c4b63fef036",
+    "implementation/warlock/haskell/runtime/README.md": "f3ae00de73f490b9bbf89932b6c7e23514b8d0c2b33ef70b8335a276d633e4fd",
+    "implementation/warlock/haskell/runtime/fixture-peer/Main.hs": "d4e7849812d90213f7a8108a85562de13f2778599ddcd2f7e5364855ecab865e",
+    "implementation/warlock/haskell/runtime/formal/README.md": "9eb7d65f0e922ff3fced324bbb054936fe8fd720817a7faa77be5c127484bc56",
+    "implementation/warlock/haskell/runtime/formal/current_registration.qnt": "7d2cb45439ca34535f66d8204202e3616538fd5e9838413187b95827a55b6aa2",
+    "implementation/warlock/haskell/runtime/formal/current_registration_test.qnt": "e1322319778547a683b03989b05efcef0c4a9533f22c6a1fee2c7950a9f1ca57",
+    "implementation/warlock/haskell/runtime/formal/qualification.json": "94deb979ba0e4e20b0a211ba5f0822154d441a73759cd6e99372b508a05af9d8",
+    "implementation/warlock/haskell/runtime/qualification.json": "ccb70a02d87f851cce36f05f53a300f8146ca48ac3835a9174a1dc244fbe2b54",
+    "implementation/warlock/haskell/runtime/runtime.cabal": "25caa84e8b6ef96b4b6cf6634abfd129c1031400c98a6d2a4c66cd5508c3c79d",
+    "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap.hs": "76f26fe661ab97dac21b2deedc3e724aae0578c3b75050576b794fb255728ede",
+    "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/Aggregate.hs": "c4254442aa3d8850815f6b79f7d051d4c88b96dbf92b450c32665b96ad4fd14f",
+    "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/CredentialScopeGuard.hs": "99328b00fd46bdc810b89dd824b182c26a77b4836fd0c20b7bb5f5af7ec19281",
+    "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/CurrentSessions.hs": "6047f19ea3020c0860a54e0666c2866846aa77cd8643fc550f145bb66efe2a39",
+    "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/ScopedPeer.hs": "9836f7e5020efbbe917b8c2de4dd0de015174f28eb0484a554f98abfff0d7f18",
+    "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/SocketOwner.hsc": "507324e970cd977df6f351eee1090c2b2e419e8c2441554e85b5e5d9b4e2a84d",
+    "implementation/warlock/haskell/runtime/test/CurrentSessionsControls.hs": "31d4038dc700006bbb7521c4a7ceb9a3a176aef742546cad2c018bcaada31587",
+    "implementation/warlock/haskell/runtime/test/Main.hs": "98ad395210d26fe7c244c5d75056563f4d23fc707e14675d2f0df0b0e741fab1",
+    "implementation/warlock/haskell/runtime/test/OwnedControls.hs": "6e54634fa6fab03e9b830faa9d13fd7943842cd49d6b6404494d7cb260b2cf9d",
+    "implementation/warlock/haskell/runtime/test/PublicationControls.hs": "504273c7d9c7605ad79a725c22ca58158ccb67b16b3b4a7ae75b77cc39220779",
+    "implementation/warlock/haskell/runtime/test/ScopedPeerControls.hs": "07f39cc70a82eca00ff85970635175f9df39bbf2936506156ad406053b3ab52d",
+    "implementation/warlock/haskell/runtime/test/SocketHandoffControls.hs": "91ae3d484ef7ef91dc0c85822c1947b652243f3e80d8e61d8ff3ea9d1c4a4007",
+    "tools/check_haskell_cpu.py": "ce045c6f37c462acf8c726a19c9e66fb2180bcf48a463e4161293dbe757e3111",
+    "tools/haskell-dependencies.json": "ca6a7fe7f45cfe4baaf074c55b7c1f0faeba4accae4ee1059788f02681d75a5a",
+    "tools/haskell-toolchain.json": "7a2c7706cbf05b3e68abd661c7789cd9ce9d24a5b714091176e6e6b275ac0a76",
+    "tools/haskell_build.py": "5620246189298052293d617c31a067281b62901413c031d5818f55ea64f9c0f7",
+    "tools/haskell_test_wrapper.py": "ce788dea8b3cddaf95803d2bac16943272083924ff9df6f7b41c42e440a921c9",
+    "tools/qa_cpu.py": "95c0874a3c8daae63c3c866e3ebcbbd391621b96aee97f0c530016ea7a6c2db3",
+    "window-integration-qa/qa_launch.py": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23"
+  },
+  "networkNamespace": "net:[4026532311]",
+  "build": {
+    "schema": 1,
+    "passed": true,
+    "commands": [
+      {
+        "argv": [
+          "/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/cabal",
+          "--config-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/cabal.config",
+          "build",
+          "--project-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/source/cabal.project",
+          "--builddir=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-production",
+          "--offline",
+          "--with-compiler=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc",
+          "--with-hc-pkg=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc-pkg",
+          "--with-hsc2hs=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/hsc2hs",
+          "--with-gcc=/usr/bin/gcc",
+          "--with-ar=/usr/bin/ar",
+          "--with-ld=/usr/bin/ld",
+          "--with-pkg-config=/usr/bin/pkg-config",
+          "--jobs=2",
+          "all"
+        ],
+        "exit": 0,
+        "timeout": false,
+        "forcedCleanup": false,
+        "stdout": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/production-build.stdout",
+        "stderr": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/production-build.stderr"
+      },
+      {
+        "argv": [
+          "/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/cabal",
+          "--config-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/cabal.config",
+          "freeze",
+          "--project-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/source/cabal.project",
+          "--builddir=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-production",
+          "--offline",
+          "--with-compiler=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc",
+          "--with-hc-pkg=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc-pkg",
+          "--with-hsc2hs=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/hsc2hs",
+          "--with-gcc=/usr/bin/gcc",
+          "--with-ar=/usr/bin/ar",
+          "--with-ld=/usr/bin/ld",
+          "--with-pkg-config=/usr/bin/pkg-config",
+          "--jobs=2"
+        ],
+        "exit": 0,
+        "timeout": false,
+        "forcedCleanup": false,
+        "stdout": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/production-freeze.stdout",
+        "stderr": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/production-freeze.stderr"
+      },
+      {
+        "argv": [
+          "/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/cabal",
+          "--config-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/cabal.config",
+          "build",
+          "--project-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/source/test.project",
+          "--builddir=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test",
+          "--offline",
+          "--with-compiler=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc",
+          "--with-hc-pkg=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc-pkg",
+          "--with-hsc2hs=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/hsc2hs",
+          "--with-gcc=/usr/bin/gcc",
+          "--with-ar=/usr/bin/ar",
+          "--with-ld=/usr/bin/ld",
+          "--with-pkg-config=/usr/bin/pkg-config",
+          "--jobs=2",
+          "warlock-held-document-proposal:test:held-document-controls",
+          "warlock-held-document-proposal:test:held-executable-controls",
+          "warlock-process-custody:test:internal-controls",
+          "warlock-process-custody:test:public-controls",
+          "warlock-process-custody:test:selected-fd-controls",
+          "warlock-process-custody:test:deadline-stop-controls",
+          "warlock-process-custody:test:bootstrap-facade-controls",
+          "warlock-protocol:test:boundary-controls",
+          "warlock-protocol:test:ingress-controls",
+          "warlock-protocol:test:owner-sequences",
+          "warlock-protocol:test:credential-guard-controls",
+          "warlock-elf-observation-proposal:test:elf-cases",
+          "warlock-runtime:test:current-session-oracles",
+          "warlock-native-authority:test:native-cancellation-controls",
+          "warlock-native-authority:test:durable-storage-controls",
+          "warlock-native-authority:test:selection-admission-controls",
+          "warlock-native-authority:test:host-guard-controls",
+          "warlock-native-authority:test:slot-store-controls",
+          "warlock-native-authority:test:pair-store-smoke",
+          "warlock-native-authority:test:child-directory-controls",
+          "warlock-native-authority:test:independent-admission-shape",
+          "warlock-native-authority:test:pair-store-sequences",
+          "warlock-native-authority:test:independent-lifetime-owner",
+          "warlock-native-authority:test:independent-pairstore",
+          "warlock-process-custody:exe:custody-child",
+          "warlock-process-custody:exe:selected-fd-child",
+          "warlock-process-custody:exe:graceful-stop-child",
+          "warlock-process-custody:exe:bootstrap-facade-child",
+          "warlock-runtime:exe:credential-peer-child"
+        ],
+        "exit": 0,
+        "timeout": false,
+        "forcedCleanup": false,
+        "stdout": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/test-build.stdout",
+        "stderr": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/test-build.stderr"
+      },
+      {
+        "argv": [
+          "/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/cabal",
+          "--config-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/cabal.config",
+          "freeze",
+          "--project-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/source/test.project",
+          "--builddir=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test",
+          "--offline",
+          "--with-compiler=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc",
+          "--with-hc-pkg=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc-pkg",
+          "--with-hsc2hs=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/hsc2hs",
+          "--with-gcc=/usr/bin/gcc",
+          "--with-ar=/usr/bin/ar",
+          "--with-ld=/usr/bin/ld",
+          "--with-pkg-config=/usr/bin/pkg-config",
+          "--jobs=2"
+        ],
+        "exit": 0,
+        "timeout": false,
+        "forcedCleanup": false,
+        "stdout": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/test-freeze.stdout",
+        "stderr": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/test-freeze.stderr"
+      },
+      {
+        "argv": [
+          "/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/cabal",
+          "--config-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/cabal.config",
+          "list-bin",
+          "--project-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/source/test.project",
+          "--builddir=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test",
+          "--offline",
+          "--with-compiler=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc",
+          "--with-hc-pkg=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc-pkg",
+          "--with-hsc2hs=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/hsc2hs",
+          "--with-gcc=/usr/bin/gcc",
+          "--with-ar=/usr/bin/ar",
+          "--with-ld=/usr/bin/ld",
+          "--with-pkg-config=/usr/bin/pkg-config",
+          "--jobs=2",
+          "warlock-held-document-proposal:test:held-document-controls"
+        ],
+        "exit": 0,
+        "timeout": false,
+        "forcedCleanup": false,
+        "stdout": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-0.stdout",
+        "stderr": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-0.stderr"
+      },
+      {
+        "argv": [
+          "/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/cabal",
+          "--config-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/cabal.config",
+          "list-bin",
+          "--project-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/source/test.project",
+          "--builddir=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test",
+          "--offline",
+          "--with-compiler=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc",
+          "--with-hc-pkg=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc-pkg",
+          "--with-hsc2hs=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/hsc2hs",
+          "--with-gcc=/usr/bin/gcc",
+          "--with-ar=/usr/bin/ar",
+          "--with-ld=/usr/bin/ld",
+          "--with-pkg-config=/usr/bin/pkg-config",
+          "--jobs=2",
+          "warlock-held-document-proposal:test:held-executable-controls"
+        ],
+        "exit": 0,
+        "timeout": false,
+        "forcedCleanup": false,
+        "stdout": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-1.stdout",
+        "stderr": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-1.stderr"
+      },
+      {
+        "argv": [
+          "/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/cabal",
+          "--config-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/cabal.config",
+          "list-bin",
+          "--project-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/source/test.project",
+          "--builddir=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test",
+          "--offline",
+          "--with-compiler=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc",
+          "--with-hc-pkg=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc-pkg",
+          "--with-hsc2hs=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/hsc2hs",
+          "--with-gcc=/usr/bin/gcc",
+          "--with-ar=/usr/bin/ar",
+          "--with-ld=/usr/bin/ld",
+          "--with-pkg-config=/usr/bin/pkg-config",
+          "--jobs=2",
+          "warlock-process-custody:test:internal-controls"
+        ],
+        "exit": 0,
+        "timeout": false,
+        "forcedCleanup": false,
+        "stdout": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-2.stdout",
+        "stderr": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-2.stderr"
+      },
+      {
+        "argv": [
+          "/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/cabal",
+          "--config-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/cabal.config",
+          "list-bin",
+          "--project-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/source/test.project",
+          "--builddir=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test",
+          "--offline",
+          "--with-compiler=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc",
+          "--with-hc-pkg=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc-pkg",
+          "--with-hsc2hs=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/hsc2hs",
+          "--with-gcc=/usr/bin/gcc",
+          "--with-ar=/usr/bin/ar",
+          "--with-ld=/usr/bin/ld",
+          "--with-pkg-config=/usr/bin/pkg-config",
+          "--jobs=2",
+          "warlock-process-custody:test:public-controls"
+        ],
+        "exit": 0,
+        "timeout": false,
+        "forcedCleanup": false,
+        "stdout": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-3.stdout",
+        "stderr": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-3.stderr"
+      },
+      {
+        "argv": [
+          "/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/cabal",
+          "--config-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/cabal.config",
+          "list-bin",
+          "--project-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/source/test.project",
+          "--builddir=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test",
+          "--offline",
+          "--with-compiler=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc",
+          "--with-hc-pkg=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc-pkg",
+          "--with-hsc2hs=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/hsc2hs",
+          "--with-gcc=/usr/bin/gcc",
+          "--with-ar=/usr/bin/ar",
+          "--with-ld=/usr/bin/ld",
+          "--with-pkg-config=/usr/bin/pkg-config",
+          "--jobs=2",
+          "warlock-process-custody:test:selected-fd-controls"
+        ],
+        "exit": 0,
+        "timeout": false,
+        "forcedCleanup": false,
+        "stdout": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-4.stdout",
+        "stderr": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-4.stderr"
+      },
+      {
+        "argv": [
+          "/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/cabal",
+          "--config-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/cabal.config",
+          "list-bin",
+          "--project-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/source/test.project",
+          "--builddir=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test",
+          "--offline",
+          "--with-compiler=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc",
+          "--with-hc-pkg=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc-pkg",
+          "--with-hsc2hs=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/hsc2hs",
+          "--with-gcc=/usr/bin/gcc",
+          "--with-ar=/usr/bin/ar",
+          "--with-ld=/usr/bin/ld",
+          "--with-pkg-config=/usr/bin/pkg-config",
+          "--jobs=2",
+          "warlock-process-custody:test:deadline-stop-controls"
+        ],
+        "exit": 0,
+        "timeout": false,
+        "forcedCleanup": false,
+        "stdout": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-5.stdout",
+        "stderr": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-5.stderr"
+      },
+      {
+        "argv": [
+          "/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/cabal",
+          "--config-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/cabal.config",
+          "list-bin",
+          "--project-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/source/test.project",
+          "--builddir=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test",
+          "--offline",
+          "--with-compiler=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc",
+          "--with-hc-pkg=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc-pkg",
+          "--with-hsc2hs=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/hsc2hs",
+          "--with-gcc=/usr/bin/gcc",
+          "--with-ar=/usr/bin/ar",
+          "--with-ld=/usr/bin/ld",
+          "--with-pkg-config=/usr/bin/pkg-config",
+          "--jobs=2",
+          "warlock-process-custody:test:bootstrap-facade-controls"
+        ],
+        "exit": 0,
+        "timeout": false,
+        "forcedCleanup": false,
+        "stdout": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-6.stdout",
+        "stderr": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-6.stderr"
+      },
+      {
+        "argv": [
+          "/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/cabal",
+          "--config-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/cabal.config",
+          "list-bin",
+          "--project-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/source/test.project",
+          "--builddir=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test",
+          "--offline",
+          "--with-compiler=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc",
+          "--with-hc-pkg=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc-pkg",
+          "--with-hsc2hs=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/hsc2hs",
+          "--with-gcc=/usr/bin/gcc",
+          "--with-ar=/usr/bin/ar",
+          "--with-ld=/usr/bin/ld",
+          "--with-pkg-config=/usr/bin/pkg-config",
+          "--jobs=2",
+          "warlock-protocol:test:boundary-controls"
+        ],
+        "exit": 0,
+        "timeout": false,
+        "forcedCleanup": false,
+        "stdout": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-7.stdout",
+        "stderr": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-7.stderr"
+      },
+      {
+        "argv": [
+          "/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/cabal",
+          "--config-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/cabal.config",
+          "list-bin",
+          "--project-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/source/test.project",
+          "--builddir=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test",
+          "--offline",
+          "--with-compiler=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc",
+          "--with-hc-pkg=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc-pkg",
+          "--with-hsc2hs=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/hsc2hs",
+          "--with-gcc=/usr/bin/gcc",
+          "--with-ar=/usr/bin/ar",
+          "--with-ld=/usr/bin/ld",
+          "--with-pkg-config=/usr/bin/pkg-config",
+          "--jobs=2",
+          "warlock-protocol:test:ingress-controls"
+        ],
+        "exit": 0,
+        "timeout": false,
+        "forcedCleanup": false,
+        "stdout": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-8.stdout",
+        "stderr": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-8.stderr"
+      },
+      {
+        "argv": [
+          "/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/cabal",
+          "--config-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/cabal.config",
+          "list-bin",
+          "--project-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/source/test.project",
+          "--builddir=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test",
+          "--offline",
+          "--with-compiler=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc",
+          "--with-hc-pkg=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc-pkg",
+          "--with-hsc2hs=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/hsc2hs",
+          "--with-gcc=/usr/bin/gcc",
+          "--with-ar=/usr/bin/ar",
+          "--with-ld=/usr/bin/ld",
+          "--with-pkg-config=/usr/bin/pkg-config",
+          "--jobs=2",
+          "warlock-protocol:test:owner-sequences"
+        ],
+        "exit": 0,
+        "timeout": false,
+        "forcedCleanup": false,
+        "stdout": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-9.stdout",
+        "stderr": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-9.stderr"
+      },
+      {
+        "argv": [
+          "/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/cabal",
+          "--config-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/cabal.config",
+          "list-bin",
+          "--project-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/source/test.project",
+          "--builddir=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test",
+          "--offline",
+          "--with-compiler=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc",
+          "--with-hc-pkg=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc-pkg",
+          "--with-hsc2hs=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/hsc2hs",
+          "--with-gcc=/usr/bin/gcc",
+          "--with-ar=/usr/bin/ar",
+          "--with-ld=/usr/bin/ld",
+          "--with-pkg-config=/usr/bin/pkg-config",
+          "--jobs=2",
+          "warlock-protocol:test:credential-guard-controls"
+        ],
+        "exit": 0,
+        "timeout": false,
+        "forcedCleanup": false,
+        "stdout": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-10.stdout",
+        "stderr": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-10.stderr"
+      },
+      {
+        "argv": [
+          "/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/cabal",
+          "--config-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/cabal.config",
+          "list-bin",
+          "--project-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/source/test.project",
+          "--builddir=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test",
+          "--offline",
+          "--with-compiler=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc",
+          "--with-hc-pkg=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc-pkg",
+          "--with-hsc2hs=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/hsc2hs",
+          "--with-gcc=/usr/bin/gcc",
+          "--with-ar=/usr/bin/ar",
+          "--with-ld=/usr/bin/ld",
+          "--with-pkg-config=/usr/bin/pkg-config",
+          "--jobs=2",
+          "warlock-elf-observation-proposal:test:elf-cases"
+        ],
+        "exit": 0,
+        "timeout": false,
+        "forcedCleanup": false,
+        "stdout": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-11.stdout",
+        "stderr": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-11.stderr"
+      },
+      {
+        "argv": [
+          "/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/cabal",
+          "--config-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/cabal.config",
+          "list-bin",
+          "--project-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/source/test.project",
+          "--builddir=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test",
+          "--offline",
+          "--with-compiler=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc",
+          "--with-hc-pkg=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc-pkg",
+          "--with-hsc2hs=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/hsc2hs",
+          "--with-gcc=/usr/bin/gcc",
+          "--with-ar=/usr/bin/ar",
+          "--with-ld=/usr/bin/ld",
+          "--with-pkg-config=/usr/bin/pkg-config",
+          "--jobs=2",
+          "warlock-runtime:test:current-session-oracles"
+        ],
+        "exit": 0,
+        "timeout": false,
+        "forcedCleanup": false,
+        "stdout": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-12.stdout",
+        "stderr": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-12.stderr"
+      },
+      {
+        "argv": [
+          "/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/cabal",
+          "--config-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/cabal.config",
+          "list-bin",
+          "--project-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/source/test.project",
+          "--builddir=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test",
+          "--offline",
+          "--with-compiler=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc",
+          "--with-hc-pkg=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc-pkg",
+          "--with-hsc2hs=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/hsc2hs",
+          "--with-gcc=/usr/bin/gcc",
+          "--with-ar=/usr/bin/ar",
+          "--with-ld=/usr/bin/ld",
+          "--with-pkg-config=/usr/bin/pkg-config",
+          "--jobs=2",
+          "warlock-native-authority:test:native-cancellation-controls"
+        ],
+        "exit": 0,
+        "timeout": false,
+        "forcedCleanup": false,
+        "stdout": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-13.stdout",
+        "stderr": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-13.stderr"
+      },
+      {
+        "argv": [
+          "/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/cabal",
+          "--config-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/cabal.config",
+          "list-bin",
+          "--project-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/source/test.project",
+          "--builddir=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test",
+          "--offline",
+          "--with-compiler=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc",
+          "--with-hc-pkg=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc-pkg",
+          "--with-hsc2hs=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/hsc2hs",
+          "--with-gcc=/usr/bin/gcc",
+          "--with-ar=/usr/bin/ar",
+          "--with-ld=/usr/bin/ld",
+          "--with-pkg-config=/usr/bin/pkg-config",
+          "--jobs=2",
+          "warlock-native-authority:test:durable-storage-controls"
+        ],
+        "exit": 0,
+        "timeout": false,
+        "forcedCleanup": false,
+        "stdout": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-14.stdout",
+        "stderr": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-14.stderr"
+      },
+      {
+        "argv": [
+          "/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/cabal",
+          "--config-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/cabal.config",
+          "list-bin",
+          "--project-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/source/test.project",
+          "--builddir=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test",
+          "--offline",
+          "--with-compiler=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc",
+          "--with-hc-pkg=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc-pkg",
+          "--with-hsc2hs=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/hsc2hs",
+          "--with-gcc=/usr/bin/gcc",
+          "--with-ar=/usr/bin/ar",
+          "--with-ld=/usr/bin/ld",
+          "--with-pkg-config=/usr/bin/pkg-config",
+          "--jobs=2",
+          "warlock-native-authority:test:selection-admission-controls"
+        ],
+        "exit": 0,
+        "timeout": false,
+        "forcedCleanup": false,
+        "stdout": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-15.stdout",
+        "stderr": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-15.stderr"
+      },
+      {
+        "argv": [
+          "/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/cabal",
+          "--config-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/cabal.config",
+          "list-bin",
+          "--project-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/source/test.project",
+          "--builddir=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test",
+          "--offline",
+          "--with-compiler=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc",
+          "--with-hc-pkg=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc-pkg",
+          "--with-hsc2hs=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/hsc2hs",
+          "--with-gcc=/usr/bin/gcc",
+          "--with-ar=/usr/bin/ar",
+          "--with-ld=/usr/bin/ld",
+          "--with-pkg-config=/usr/bin/pkg-config",
+          "--jobs=2",
+          "warlock-native-authority:test:host-guard-controls"
+        ],
+        "exit": 0,
+        "timeout": false,
+        "forcedCleanup": false,
+        "stdout": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-16.stdout",
+        "stderr": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-16.stderr"
+      },
+      {
+        "argv": [
+          "/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/cabal",
+          "--config-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/cabal.config",
+          "list-bin",
+          "--project-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/source/test.project",
+          "--builddir=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test",
+          "--offline",
+          "--with-compiler=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc",
+          "--with-hc-pkg=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc-pkg",
+          "--with-hsc2hs=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/hsc2hs",
+          "--with-gcc=/usr/bin/gcc",
+          "--with-ar=/usr/bin/ar",
+          "--with-ld=/usr/bin/ld",
+          "--with-pkg-config=/usr/bin/pkg-config",
+          "--jobs=2",
+          "warlock-native-authority:test:slot-store-controls"
+        ],
+        "exit": 0,
+        "timeout": false,
+        "forcedCleanup": false,
+        "stdout": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-17.stdout",
+        "stderr": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-17.stderr"
+      },
+      {
+        "argv": [
+          "/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/cabal",
+          "--config-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/cabal.config",
+          "list-bin",
+          "--project-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/source/test.project",
+          "--builddir=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test",
+          "--offline",
+          "--with-compiler=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc",
+          "--with-hc-pkg=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc-pkg",
+          "--with-hsc2hs=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/hsc2hs",
+          "--with-gcc=/usr/bin/gcc",
+          "--with-ar=/usr/bin/ar",
+          "--with-ld=/usr/bin/ld",
+          "--with-pkg-config=/usr/bin/pkg-config",
+          "--jobs=2",
+          "warlock-native-authority:test:pair-store-smoke"
+        ],
+        "exit": 0,
+        "timeout": false,
+        "forcedCleanup": false,
+        "stdout": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-18.stdout",
+        "stderr": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-18.stderr"
+      },
+      {
+        "argv": [
+          "/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/cabal",
+          "--config-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/cabal.config",
+          "list-bin",
+          "--project-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/source/test.project",
+          "--builddir=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test",
+          "--offline",
+          "--with-compiler=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc",
+          "--with-hc-pkg=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc-pkg",
+          "--with-hsc2hs=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/hsc2hs",
+          "--with-gcc=/usr/bin/gcc",
+          "--with-ar=/usr/bin/ar",
+          "--with-ld=/usr/bin/ld",
+          "--with-pkg-config=/usr/bin/pkg-config",
+          "--jobs=2",
+          "warlock-native-authority:test:child-directory-controls"
+        ],
+        "exit": 0,
+        "timeout": false,
+        "forcedCleanup": false,
+        "stdout": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-19.stdout",
+        "stderr": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-19.stderr"
+      },
+      {
+        "argv": [
+          "/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/cabal",
+          "--config-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/cabal.config",
+          "list-bin",
+          "--project-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/source/test.project",
+          "--builddir=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test",
+          "--offline",
+          "--with-compiler=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc",
+          "--with-hc-pkg=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc-pkg",
+          "--with-hsc2hs=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/hsc2hs",
+          "--with-gcc=/usr/bin/gcc",
+          "--with-ar=/usr/bin/ar",
+          "--with-ld=/usr/bin/ld",
+          "--with-pkg-config=/usr/bin/pkg-config",
+          "--jobs=2",
+          "warlock-native-authority:test:independent-admission-shape"
+        ],
+        "exit": 0,
+        "timeout": false,
+        "forcedCleanup": false,
+        "stdout": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-20.stdout",
+        "stderr": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-20.stderr"
+      },
+      {
+        "argv": [
+          "/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/cabal",
+          "--config-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/cabal.config",
+          "list-bin",
+          "--project-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/source/test.project",
+          "--builddir=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test",
+          "--offline",
+          "--with-compiler=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc",
+          "--with-hc-pkg=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc-pkg",
+          "--with-hsc2hs=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/hsc2hs",
+          "--with-gcc=/usr/bin/gcc",
+          "--with-ar=/usr/bin/ar",
+          "--with-ld=/usr/bin/ld",
+          "--with-pkg-config=/usr/bin/pkg-config",
+          "--jobs=2",
+          "warlock-native-authority:test:pair-store-sequences"
+        ],
+        "exit": 0,
+        "timeout": false,
+        "forcedCleanup": false,
+        "stdout": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-21.stdout",
+        "stderr": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-21.stderr"
+      },
+      {
+        "argv": [
+          "/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/cabal",
+          "--config-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/cabal.config",
+          "list-bin",
+          "--project-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/source/test.project",
+          "--builddir=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test",
+          "--offline",
+          "--with-compiler=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc",
+          "--with-hc-pkg=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc-pkg",
+          "--with-hsc2hs=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/hsc2hs",
+          "--with-gcc=/usr/bin/gcc",
+          "--with-ar=/usr/bin/ar",
+          "--with-ld=/usr/bin/ld",
+          "--with-pkg-config=/usr/bin/pkg-config",
+          "--jobs=2",
+          "warlock-native-authority:test:independent-lifetime-owner"
+        ],
+        "exit": 0,
+        "timeout": false,
+        "forcedCleanup": false,
+        "stdout": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-22.stdout",
+        "stderr": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-22.stderr"
+      },
+      {
+        "argv": [
+          "/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/cabal",
+          "--config-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/cabal.config",
+          "list-bin",
+          "--project-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/source/test.project",
+          "--builddir=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test",
+          "--offline",
+          "--with-compiler=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc",
+          "--with-hc-pkg=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc-pkg",
+          "--with-hsc2hs=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/hsc2hs",
+          "--with-gcc=/usr/bin/gcc",
+          "--with-ar=/usr/bin/ar",
+          "--with-ld=/usr/bin/ld",
+          "--with-pkg-config=/usr/bin/pkg-config",
+          "--jobs=2",
+          "warlock-native-authority:test:independent-pairstore"
+        ],
+        "exit": 0,
+        "timeout": false,
+        "forcedCleanup": false,
+        "stdout": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-23.stdout",
+        "stderr": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-23.stderr"
+      },
+      {
+        "argv": [
+          "/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/cabal",
+          "--config-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/cabal.config",
+          "list-bin",
+          "--project-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/source/test.project",
+          "--builddir=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test",
+          "--offline",
+          "--with-compiler=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc",
+          "--with-hc-pkg=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc-pkg",
+          "--with-hsc2hs=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/hsc2hs",
+          "--with-gcc=/usr/bin/gcc",
+          "--with-ar=/usr/bin/ar",
+          "--with-ld=/usr/bin/ld",
+          "--with-pkg-config=/usr/bin/pkg-config",
+          "--jobs=2",
+          "warlock-process-custody:exe:custody-child"
+        ],
+        "exit": 0,
+        "timeout": false,
+        "forcedCleanup": false,
+        "stdout": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-24.stdout",
+        "stderr": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-24.stderr"
+      },
+      {
+        "argv": [
+          "/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/cabal",
+          "--config-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/cabal.config",
+          "list-bin",
+          "--project-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/source/test.project",
+          "--builddir=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test",
+          "--offline",
+          "--with-compiler=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc",
+          "--with-hc-pkg=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc-pkg",
+          "--with-hsc2hs=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/hsc2hs",
+          "--with-gcc=/usr/bin/gcc",
+          "--with-ar=/usr/bin/ar",
+          "--with-ld=/usr/bin/ld",
+          "--with-pkg-config=/usr/bin/pkg-config",
+          "--jobs=2",
+          "warlock-process-custody:exe:selected-fd-child"
+        ],
+        "exit": 0,
+        "timeout": false,
+        "forcedCleanup": false,
+        "stdout": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-25.stdout",
+        "stderr": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-25.stderr"
+      },
+      {
+        "argv": [
+          "/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/cabal",
+          "--config-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/cabal.config",
+          "list-bin",
+          "--project-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/source/test.project",
+          "--builddir=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test",
+          "--offline",
+          "--with-compiler=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc",
+          "--with-hc-pkg=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc-pkg",
+          "--with-hsc2hs=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/hsc2hs",
+          "--with-gcc=/usr/bin/gcc",
+          "--with-ar=/usr/bin/ar",
+          "--with-ld=/usr/bin/ld",
+          "--with-pkg-config=/usr/bin/pkg-config",
+          "--jobs=2",
+          "warlock-process-custody:exe:graceful-stop-child"
+        ],
+        "exit": 0,
+        "timeout": false,
+        "forcedCleanup": false,
+        "stdout": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-26.stdout",
+        "stderr": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-26.stderr"
+      },
+      {
+        "argv": [
+          "/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/cabal",
+          "--config-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/cabal.config",
+          "list-bin",
+          "--project-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/source/test.project",
+          "--builddir=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test",
+          "--offline",
+          "--with-compiler=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc",
+          "--with-hc-pkg=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc-pkg",
+          "--with-hsc2hs=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/hsc2hs",
+          "--with-gcc=/usr/bin/gcc",
+          "--with-ar=/usr/bin/ar",
+          "--with-ld=/usr/bin/ld",
+          "--with-pkg-config=/usr/bin/pkg-config",
+          "--jobs=2",
+          "warlock-process-custody:exe:bootstrap-facade-child"
+        ],
+        "exit": 0,
+        "timeout": false,
+        "forcedCleanup": false,
+        "stdout": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-27.stdout",
+        "stderr": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-27.stderr"
+      },
+      {
+        "argv": [
+          "/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/cabal",
+          "--config-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/cabal.config",
+          "list-bin",
+          "--project-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/source/test.project",
+          "--builddir=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test",
+          "--offline",
+          "--with-compiler=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc",
+          "--with-hc-pkg=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc-pkg",
+          "--with-hsc2hs=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/hsc2hs",
+          "--with-gcc=/usr/bin/gcc",
+          "--with-ar=/usr/bin/ar",
+          "--with-ld=/usr/bin/ld",
+          "--with-pkg-config=/usr/bin/pkg-config",
+          "--jobs=2",
+          "warlock-runtime:exe:credential-peer-child"
+        ],
+        "exit": 0,
+        "timeout": false,
+        "forcedCleanup": false,
+        "stdout": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-28.stdout",
+        "stderr": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/list-bin-28.stderr"
+      },
+      {
+        "argv": [
+          "/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/cabal",
+          "--config-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/cabal.config",
+          "test",
+          "--project-file=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/source/test.project",
+          "--builddir=/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test",
+          "--offline",
+          "--with-compiler=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc",
+          "--with-hc-pkg=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/ghc-pkg",
+          "--with-hsc2hs=/home/charl/.cache/warlock-haskell/sdk-ghc9.6.7-cabal3.12.1.0/bin/hsc2hs",
+          "--with-gcc=/usr/bin/gcc",
+          "--with-ar=/usr/bin/ar",
+          "--with-ld=/usr/bin/ld",
+          "--with-pkg-config=/usr/bin/pkg-config",
+          "--jobs=2",
+          "all",
+          "--test-show-details=direct",
+          "--test-wrapper=/home/charl/code/Warlock/tools/haskell_test_wrapper.py"
+        ],
+        "exit": 0,
+        "timeout": false,
+        "forcedCleanup": false,
+        "stdout": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/test-all.stdout",
+        "stderr": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/logs/test-all.stderr"
+      }
+    ],
+    "suites": {
+      "warlock-held-document-proposal:test:held-document-controls": {
+        "passed": true,
+        "runs": [
+          {
+            "mode": "default",
+            "argv": [],
+            "exit": 0,
+            "timeout": false,
+            "forcedCleanup": false,
+            "log": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/held-document-controls/default.log"
+          }
+        ]
+      },
+      "warlock-held-document-proposal:test:held-executable-controls": {
+        "passed": true,
+        "runs": [
+          {
+            "mode": "default",
+            "argv": [
+              "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/held-executable-controls/image",
+              "custody-child",
+              "1432760",
+              "ddff791da2bf625537849de3f71b69788f997ba53554d7ef763daae7eabfb0f2"
+            ],
+            "exit": 0,
+            "timeout": false,
+            "forcedCleanup": false,
+            "log": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/held-executable-controls/default.log"
+          }
+        ]
+      },
+      "warlock-process-custody:test:internal-controls": {
+        "passed": true,
+        "runs": [
+          {
+            "mode": "default",
+            "argv": [
+              "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test/build/x86_64-linux/ghc-9.6.7/warlock-process-custody-0.1.0.0/x/custody-child/build/custody-child/custody-child"
+            ],
+            "exit": 0,
+            "timeout": false,
+            "forcedCleanup": false,
+            "log": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/internal-controls/default.log"
+          }
+        ]
+      },
+      "warlock-process-custody:test:public-controls": {
+        "passed": true,
+        "runs": [
+          {
+            "mode": "default",
+            "argv": [],
+            "exit": 0,
+            "timeout": false,
+            "forcedCleanup": false,
+            "log": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/public-controls/default.log"
+          }
+        ]
+      },
+      "warlock-process-custody:test:selected-fd-controls": {
+        "passed": true,
+        "runs": [
+          {
+            "mode": "default",
+            "argv": [
+              "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test/build/x86_64-linux/ghc-9.6.7/warlock-process-custody-0.1.0.0/x/selected-fd-child/build/selected-fd-child/selected-fd-child"
+            ],
+            "exit": 0,
+            "timeout": false,
+            "forcedCleanup": false,
+            "log": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/selected-fd-controls/default.log"
+          }
+        ]
+      },
+      "warlock-process-custody:test:deadline-stop-controls": {
+        "passed": true,
+        "runs": [
+          {
+            "mode": "default",
+            "argv": [
+              "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test/build/x86_64-linux/ghc-9.6.7/warlock-process-custody-0.1.0.0/x/graceful-stop-child/build/graceful-stop-child/graceful-stop-child"
+            ],
+            "exit": 0,
+            "timeout": false,
+            "forcedCleanup": false,
+            "log": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/deadline-stop-controls/default.log"
+          }
+        ]
+      },
+      "warlock-process-custody:test:bootstrap-facade-controls": {
+        "passed": true,
+        "runs": [
+          {
+            "mode": "default",
+            "argv": [
+              "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/bootstrap-facade-controls/image",
+              "bootstrap-facade-child",
+              "1422760",
+              "3c837e137bcc0b4565a26818d9cb3991333b040381da6703e4bca7631562d465"
+            ],
+            "exit": 0,
+            "timeout": false,
+            "forcedCleanup": false,
+            "log": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/bootstrap-facade-controls/default.log"
+          }
+        ]
+      },
+      "warlock-protocol:test:boundary-controls": {
+        "passed": true,
+        "runs": [
+          {
+            "mode": "default",
+            "argv": [],
+            "exit": 0,
+            "timeout": false,
+            "forcedCleanup": false,
+            "log": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/boundary-controls/default.log"
+          }
+        ]
+      },
+      "warlock-protocol:test:ingress-controls": {
+        "passed": true,
+        "runs": [
+          {
+            "mode": "default",
+            "argv": [
+              "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/source/protocol/test/fixtures"
+            ],
+            "exit": 0,
+            "timeout": false,
+            "forcedCleanup": false,
+            "log": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/ingress-controls/default.log"
+          }
+        ]
+      },
+      "warlock-protocol:test:owner-sequences": {
+        "passed": true,
+        "runs": [
+          {
+            "mode": "default",
+            "argv": [],
+            "exit": 0,
+            "timeout": false,
+            "forcedCleanup": false,
+            "log": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/owner-sequences/default.log"
+          }
+        ]
+      },
+      "warlock-protocol:test:credential-guard-controls": {
+        "passed": true,
+        "runs": [
+          {
+            "mode": "default",
+            "argv": [
+              "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/source/protocol/test/fixtures"
+            ],
+            "exit": 0,
+            "timeout": false,
+            "forcedCleanup": false,
+            "log": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/credential-guard-controls/default.log"
+          }
+        ]
+      },
+      "warlock-elf-observation-proposal:test:elf-cases": {
+        "passed": true,
+        "runs": [
+          {
+            "mode": "default",
+            "argv": [],
+            "exit": 0,
+            "timeout": false,
+            "forcedCleanup": false,
+            "log": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/elf-cases/default.log"
+          }
+        ]
+      },
+      "warlock-runtime:test:current-session-oracles": {
+        "passed": true,
+        "runs": [
+          {
+            "mode": "default",
+            "argv": [
+              "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/x/credential-peer-child/build/credential-peer-child/credential-peer-child",
+              "2096",
+              "1677498",
+              "2310912",
+              "e57425da139ffa82f45f37ed97503ce23c9882549b3b313eddfa18681d4771a2"
+            ],
+            "exit": 0,
+            "timeout": false,
+            "forcedCleanup": false,
+            "log": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/current-session-oracles/default.log"
+          }
+        ]
+      },
+      "warlock-native-authority:test:native-cancellation-controls": {
+        "passed": true,
+        "runs": [
+          {
+            "mode": "default",
+            "argv": [],
+            "exit": 0,
+            "timeout": false,
+            "forcedCleanup": false,
+            "log": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/native-cancellation-controls/default.log"
+          }
+        ]
+      },
+      "warlock-native-authority:test:durable-storage-controls": {
+        "passed": true,
+        "runs": [
+          {
+            "mode": "default",
+            "argv": [
+              "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/durable-storage-controls/storage"
+            ],
+            "exit": 0,
+            "timeout": false,
+            "forcedCleanup": false,
+            "log": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/durable-storage-controls/default.log"
+          }
+        ]
+      },
+      "warlock-native-authority:test:selection-admission-controls": {
+        "passed": true,
+        "runs": [
+          {
+            "mode": "default",
+            "argv": [
+              "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/selection-admission-controls/storage"
+            ],
+            "exit": 0,
+            "timeout": false,
+            "forcedCleanup": false,
+            "log": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/selection-admission-controls/default.log"
+          }
+        ]
+      },
+      "warlock-native-authority:test:host-guard-controls": {
+        "passed": true,
+        "runs": [
+          {
+            "mode": "default",
+            "argv": [
+              "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/host-guard-controls/storage"
+            ],
+            "exit": 0,
+            "timeout": false,
+            "forcedCleanup": false,
+            "log": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/host-guard-controls/default.log"
+          }
+        ]
+      },
+      "warlock-native-authority:test:slot-store-controls": {
+        "passed": true,
+        "runs": [
+          {
+            "mode": "default",
+            "argv": [
+              "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/slot-store-controls/storage"
+            ],
+            "exit": 0,
+            "timeout": false,
+            "forcedCleanup": false,
+            "log": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/slot-store-controls/default.log"
+          }
+        ]
+      },
+      "warlock-native-authority:test:pair-store-smoke": {
+        "passed": true,
+        "runs": [
+          {
+            "mode": "default",
+            "argv": [
+              "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/pair-store-smoke/storage"
+            ],
+            "exit": 0,
+            "timeout": false,
+            "forcedCleanup": false,
+            "log": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/pair-store-smoke/default.log"
+          }
+        ]
+      },
+      "warlock-native-authority:test:child-directory-controls": {
+        "passed": true,
+        "runs": [
+          {
+            "mode": "default",
+            "argv": [
+              "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/child-directory-controls/storage"
+            ],
+            "exit": 0,
+            "timeout": false,
+            "forcedCleanup": false,
+            "log": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/child-directory-controls/default.log"
+          }
+        ]
+      },
+      "warlock-native-authority:test:independent-admission-shape": {
+        "passed": true,
+        "runs": [
+          {
+            "mode": "default",
+            "argv": [
+              "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/independent-admission-shape/storage"
+            ],
+            "exit": 0,
+            "timeout": false,
+            "forcedCleanup": false,
+            "log": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/independent-admission-shape/default.log"
+          }
+        ]
+      },
+      "warlock-native-authority:test:pair-store-sequences": {
+        "passed": true,
+        "runs": [
+          {
+            "mode": "default",
+            "argv": [
+              "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/pair-store-sequences/storage"
+            ],
+            "exit": 0,
+            "timeout": false,
+            "forcedCleanup": false,
+            "log": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/pair-store-sequences/default.log"
+          }
+        ]
+      },
+      "warlock-native-authority:test:independent-lifetime-owner": {
+        "passed": true,
+        "runs": [
+          {
+            "mode": "default",
+            "argv": [
+              "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/independent-lifetime-owner/storage"
+            ],
+            "exit": 0,
+            "timeout": false,
+            "forcedCleanup": false,
+            "log": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/independent-lifetime-owner/default.log"
+          }
+        ]
+      },
+      "warlock-native-authority:test:independent-pairstore": {
+        "passed": true,
+        "runs": [
+          {
+            "mode": "positive",
+            "argv": [
+              "positive",
+              "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/independent-pairstore/positive"
+            ],
+            "exit": 0,
+            "timeout": false,
+            "forcedCleanup": false,
+            "log": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/independent-pairstore/positive.log"
+          },
+          {
+            "mode": "busy",
+            "argv": [
+              "busy",
+              "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/independent-pairstore/busy"
+            ],
+            "exit": 0,
+            "timeout": false,
+            "forcedCleanup": false,
+            "log": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/independent-pairstore/busy.log"
+          },
+          {
+            "mode": "inventory",
+            "argv": [
+              "inventory",
+              "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/independent-pairstore/inventory"
+            ],
+            "exit": 0,
+            "timeout": false,
+            "forcedCleanup": false,
+            "log": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/independent-pairstore/inventory.log"
+          },
+          {
+            "mode": "malformed",
+            "argv": [
+              "malformed",
+              "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/independent-pairstore/malformed"
+            ],
+            "exit": 0,
+            "timeout": false,
+            "forcedCleanup": false,
+            "log": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/independent-pairstore/malformed.log"
+          },
+          {
+            "mode": "stale",
+            "argv": [
+              "stale",
+              "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/independent-pairstore/stale"
+            ],
+            "exit": 0,
+            "timeout": false,
+            "forcedCleanup": false,
+            "log": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/independent-pairstore/stale.log"
+          },
+          {
+            "mode": "stale-claim",
+            "argv": [
+              "stale-claim",
+              "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/independent-pairstore/stale-claim"
+            ],
+            "exit": 0,
+            "timeout": false,
+            "forcedCleanup": false,
+            "log": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/independent-pairstore/stale-claim.log"
+          },
+          {
+            "mode": "view-fields",
+            "argv": [
+              "view-fields",
+              "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/independent-pairstore/view-fields"
+            ],
+            "exit": 0,
+            "timeout": false,
+            "forcedCleanup": false,
+            "log": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/independent-pairstore/view-fields.log"
+          },
+          {
+            "mode": "foreign",
+            "argv": [
+              "foreign",
+              "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/independent-pairstore/foreign"
+            ],
+            "exit": 0,
+            "timeout": false,
+            "forcedCleanup": false,
+            "log": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/independent-pairstore/foreign.log"
+          },
+          {
+            "mode": "wrong-thread",
+            "argv": [
+              "wrong-thread",
+              "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/independent-pairstore/wrong-thread"
+            ],
+            "exit": 0,
+            "timeout": false,
+            "forcedCleanup": false,
+            "log": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/independent-pairstore/wrong-thread.log"
+          },
+          {
+            "mode": "expiry",
+            "argv": [
+              "expiry",
+              "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/independent-pairstore/expiry"
+            ],
+            "exit": 0,
+            "timeout": false,
+            "forcedCleanup": false,
+            "log": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/independent-pairstore/expiry.log"
+          },
+          {
+            "mode": "reserved-cut",
+            "argv": [
+              "reserved-cut",
+              "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/independent-pairstore/reserved-cut"
+            ],
+            "exit": 0,
+            "timeout": false,
+            "forcedCleanup": false,
+            "log": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/independent-pairstore/reserved-cut.log"
+          },
+          {
+            "mode": "pending-sync-cut",
+            "argv": [
+              "pending-sync-cut",
+              "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/independent-pairstore/pending-sync-cut"
+            ],
+            "exit": 0,
+            "timeout": false,
+            "forcedCleanup": false,
+            "log": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/independent-pairstore/pending-sync-cut.log"
+          },
+          {
+            "mode": "submitted-cut",
+            "argv": [
+              "submitted-cut",
+              "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/independent-pairstore/submitted-cut"
+            ],
+            "exit": 0,
+            "timeout": false,
+            "forcedCleanup": false,
+            "log": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/runs/independent-pairstore/submitted-cut.log"
+          }
+        ]
+      }
+    },
+    "nativeAccepted": false,
+    "releaseAccepted": false,
+    "sourceHashes": {
+      "cabal.project": "b8fc882f0e53b96dacbced3a21d292741ad2a4bcbb59627b9c1c2eb8647a5607",
+      "elf-observation/README.md": "d5d789263049e4c4ab7a677448192e70f3f8f5fb1c97c87a8de73c7af4e6b320",
+      "elf-observation/elf-observation.cabal": "9a71bb015ac1cd15f5a1cc78d5b4a1bae31d877ec132065fb7769a9126f4bdcf",
+      "elf-observation/qualification.json": "e22cb3c5429f04bcc9a5b9c34f2766a6ce9268ed9dbef4b8cb2124808f4cb72c",
+      "elf-observation/src/Warlock/Elf/Graph.hs": "de3b6575b059baba66f50e4cca5078db6d535a88e380fb713486845c09643e82",
+      "elf-observation/src/Warlock/Elf/Readelf.hs": "e53844a3d91a97d17b61566e9e6f032659e7cb178cb6675720888123f76c3103",
+      "elf-observation/test/ElfCases.hs": "9b70f8370431be1b389904b72656db3005e4745dc989db4e29fcdc95d5d26fb5",
+      "elf-observation/test/GoldenNames.hs": "43c40800868f65f1b8ea45571c8fa44adcf6877e88c28bf52c0e8d8ff0be23ed",
+      "elf-observation/test/fixtures/gcc.readelf": "7f8953690d8f2b206313517e330975c02a6b5f67a2a86b5244552028b3313168",
+      "elf-observation/test/fixtures/ghc.readelf": "9163a5717086fd01ff0cd242c43e550e2053e8bec20d9658e62169c128cbaf55",
+      "elf-observation/test/fixtures/helper-0.readelf": "c6caa8c1f5af950bd0f923d7a03a5ee263476ea2f9a534f338f592cbc33696b4",
+      "elf-observation/test/fixtures/helper-1.readelf": "ad6812a6d3e1aeb94e3602cd103e05885c863a2f47393ba51ed8982bdd094381",
+      "elf-observation/test/fixtures/helper-2.readelf": "4aabca14f50a5a56554121660ccf0b0bddf3b7446b7a305cbac406b3b586be0b",
+      "elf-observation/test/fixtures/jsc.readelf": "f552f66304a19ad53d1afbdc5fb3a64f18402e49354da0977763f59fd8b92117",
+      "elf-observation/test/fixtures/json-glib.readelf": "77958800953f42fd6282e0ddbad1bd174e935a2d2c0983de88a0a2a5d89d1eba",
+      "elf-observation/test/fixtures/owner.readelf": "dde3238bd82262f28f06c638a0d36fcb638d997d66dc4ddd0720aa7af2eeee7b",
+      "elf-observation/test/fixtures/provenance.json": "4de54e658fd54dc6a930b42433116da7cf90979bde30a2c76e96d129938d63b7",
+      "elf-observation/test/fixtures/sframe.readelf": "dae88a174d81df1f2b930ae4a57ece4fc319b71e3d26ed8dd66db629d68661a3",
+      "elf-observation/test/fixtures/webkit.readelf": "a8f09ff8258a1ee210341b9ff771837ad88f3cf2aa4114e89cda7ee2fddb8045",
+      "held-document/README.md": "c54e0457d05cd85c222dfcccb1c3b3d8d20013407d5d000846c691f7dce7f6ed",
+      "held-document/held-document.cabal": "fd73f544a29c114a32f6c26bcf0ef7fd810fef11d2ea75191cd988e569ad9999",
+      "held-document/qualification.json": "eef9d8ab2df193d112237b89ca5e72927b99ab914102a1f35889a71672a16fd7",
+      "held-document/src/Warlock/Http/Document.hs": "b0a0f0187349d1ad79300999c87c3e4d0b481568764b081b7c15742b54bbe2f5",
+      "held-document/src/Warlock/Platform/Descriptor.hs": "221af8008db858225b9bffee7a86bd15ee93ce6484b289200a4e79bb2034cf64",
+      "held-document/src/Warlock/Platform/Executable/Internal.hs": "1bd4e87275a0c3b69839a0dd7ef3351405350754afafa57a15ffb738a9af717a",
+      "held-document/src/Warlock/Platform/Executable.hs": "4eee3ac9b73b78483a88f15f569c68657374dca3d95f56fe03ec8c5b561a8074",
+      "held-document/src/Warlock/Platform/Resolver/Internal.hsc": "3fb73e909e6f9fdea0d863fc156cd1409685c85be95b0f7fb3878c980c4b46ed",
+      "held-document/src/Warlock/Platform/Resolver.hs": "7f751443f003932fbc7ec11a8e2957999ecb332b3e07decfc3280628bd0100d0",
+      "held-document/test/LeaseControls.hs": "d193d706cd63c8689d4ac4d66f3e0095634ceed3abab5083f54afac9f7aeb1a9",
+      "held-document/test/Main.hs": "735ef78224bb13e05a5c02c966b12b9811c758339c33e3fa3c618feef3bad501",
+      "native-authority/README.md": "f63a78a2be69bec934c47c55ac59aec27f6d2cf8e555ac1f0be7684a759c8744",
+      "native-authority/native-authority.cabal": "0f6e8579cc148c5c5599797f33919bde411c2610539b68fc2cfb4700e8215ec3",
+      "native-authority/qualification.json": "5b537f836cc94b0779018377c693961cce8e940fcae0b482ed705573aad3893a",
+      "native-authority/src/Warlock/Native/Cancellation/AdmissionBytes.hs": "06250a307c2978c7670a2c6477c8bed2b12f322b7e363fd129a31cd1757a9e6e",
+      "native-authority/src/Warlock/Native/Cancellation/AdmissionShape.hs": "2d9182e774ff69ab66034a717985685ed1a53bd4adc94157c8b4268744aac241",
+      "native-authority/src/Warlock/Native/Cancellation/HostGuard.hsc": "8ae02f272b7f002128e871064b26bcaf30876a1a610065a5729c7083b7a0c346",
+      "native-authority/src/Warlock/Native/Cancellation/Internal.hs": "85e1ef5008c223121decf3f34a6ad083b7a26d785a2ab9f074bc7a5928056bc7",
+      "native-authority/src/Warlock/Native/Cancellation/LifetimeOwner.hsc": "5995e5a6b5beef6412831daad6db9f8206b531cd11993c8fdf3f423d9e906976",
+      "native-authority/src/Warlock/Native/Cancellation/PairStore.hs": "99d5594019dd9f1e13162b56f48f9e8657a90e1dd2e200c53aa80374fa91cf47",
+      "native-authority/src/Warlock/Native/Cancellation/Selection.hsc": "eaf96fb03375de6f7169210bd55134c1e4ff43e0b1fb6120d8cd618618e41a38",
+      "native-authority/src/Warlock/Native/Cancellation/SlotStore.hsc": "43a1210a1cca1d7d177d3dd14b1aed4791bf324bafce5b66d5cc183cd730012d",
+      "native-authority/src/Warlock/Native/Cancellation/Storage.hsc": "c2556135079bd0b63870aac9b6b37736041894352939eea1ab87ac8c26889ded",
+      "native-authority/src/Warlock/Native/Cancellation.hs": "9b12e4e95d578e961c7f0db57b1049b0a16da206e9d886469f0c540d9bd415bb",
+      "native-authority/test/Main.hs": "db73eac6970de58083b5aa1d925481f367d426fff717a1268ebab3a69f0c7504",
+      "native-authority/test-child/ChildDirectoryControls.hs": "0180ab984a9b5b1fc42ced8ba1951714e645a6f71dc100b697357bdfa2037c02",
+      "native-authority/test-guard/Main.hs": "249e6a0c97b1f0e66f3d0fbd69854e926caa0fc77106160837fde6f395078dc8",
+      "native-authority/test-lifetime/LifetimeOwnerControls.hs": "35cf69840a1da11cde9ad962f065022e31fe81b9b991bf146fd66b9196b33e82",
+      "native-authority/test-lifetime-independent/LifetimeOwnerControls.hs": "405b6539a99dfbf8d09502d8e60089c6dc06358c73c27ac2f362968c7f2c6893",
+      "native-authority/test-pair/Main.hs": "776bf66ca42e39370fd6c989fc00f689b3dfb12c90e219c2b529eb3402d1ee02",
+      "native-authority/test-pair-independent/Main.hs": "a040ee22ad133dbae7228b979f4be5535b8a143b25c536c11ae9ccd75ca04b2d",
+      "native-authority/test-pair-independent/ShapeMain.hs": "c70dbcd2b2b2e81ba4bd1cc18cbcdcd2e20a9e0bd54378ec48656f36ed8cebbe",
+      "native-authority/test-pair-sequences/Main.hs": "e66a2d68f60e95b7d6c9c33ac846cb2aab706e874dd5351a48d99246607bb93f",
+      "native-authority/test-selection/Main.hs": "d232ec3833bf702f6957aad6e3d425640e9e40370356d808e8620b0d05d470be",
+      "native-authority/test-slot/SlotStoreControls.hs": "45fd1bee1c7950938bdf72647da8d4709f7f112aaa98bfe077bc33dca21971b8",
+      "native-authority/test-storage/ForeignOwnerControls.hs": "404facb5a706cf6b6a08d619453187a95eb5b1766da0867c12c5a97ba6f828c9",
+      "native-authority/test-storage/Main.hs": "c06b8ed27e0e6d29ed3c6911bc5214283d22ebb5afe749c9d36187c5367ab268",
+      "native-authority/test-storage/SwapControls.hs": "ef6e715bb2e8131b49727bc63fca1cda9316aa784c0ddb72f25201c7a097e95b",
+      "process-custody/HANDOFF.md": "401861bea381583225e4ffc4f4c541ccc72fa6e8a525a9a6139a01d70995f06e",
+      "process-custody/README.md": "f3a81d75207e1f7a3505830781b371f6545e40b383cc633be6ef771ea7adfb9b",
+      "process-custody/RETROFIT.md": "4ff2abe3e7626ef0d572e666a297bfa97f992a678d46ed411829ab3909482360",
+      "process-custody/SHA256SUMS": "aa08200922b446d3c2fad67719b0f00343c9f5ae0444838040091290cd027cf9",
+      "process-custody/SOURCE-MAP.md": "d16d0445e3d2f1f71e3f58c0cfa8c72f78b15365a1b74b04054dbfcb032aa290",
+      "process-custody/fixture/Main.hs": "3a6c1baefca82d447ff03566b254758a4f86c1386589e99e2255717d7a707610",
+      "process-custody/fixture-bootstrap/FacadeChild.hs": "75b3101897b3c15b71df9b32931f9e4a6aa7122d9edc2aa10790c16065b567f2",
+      "process-custody/fixture-graceful/Main.hs": "e2116e43764fce5ff0e0649a294cc6ca2fe0dabaae4a220009cd15f75ab0af6c",
+      "process-custody/fixture-selected/Main.hs": "ddb77f498858d132315f2768854e7e74a78fbf18b7f081cf49191a1e7d3806de",
+      "process-custody/process-custody.cabal": "ba77fc52c394747e446475a53660d0c5065e9753d77aeaea22714e5737bc13ab",
+      "process-custody/qualification.json": "8dc5086cd83edd072deab11651a3e5a5f34f5d7c4f2f32dae7b14e65cf187716",
+      "process-custody/src/Warlock/Capture/Process/Bootstrap.hs": "dc8273cb33d6f23757b20f16f7cefc83d00fc8ab4d00520149744928bbd1a461",
+      "process-custody/src/Warlock/Capture/Process/Internal.hsc": "f13472d6da143a38d8aeaf5c944a1346b754844a7b8f67fae295d31733bbf11f",
+      "process-custody/src/Warlock/Capture/Process/Lease.hs": "06b508e1ae3600422ae23f95fa148a33f8ee79b74b5171766a2712f593884049",
+      "process-custody/src/Warlock/Capture/Process/Owner.hs": "3f02dc906eb9ce2490821d6e09b131ba019e09d19707db053ba9980fccc89123",
+      "process-custody/src/Warlock/Capture/Process/Transfer/Internal.hs": "189618508d05ddad7639f894b37879e7dc449da32171e9bde82b6d0ea49a9d8d",
+      "process-custody/src/Warlock/Capture/Process/Transfer.hs": "e6ac6bf23bc5568b6a88623d23bdf9fed2a4162d2cd4966e73db31c3342f8d66",
+      "process-custody/src/Warlock/Capture/Process/Whitelist.hsc": "62775261c983b9b2f8f256734c731fee492f1f4a327ceab845370bd6e82da416",
+      "process-custody/src/Warlock/Capture/Process.hs": "39a0805202bd0843affe2c32bfc0c8f9f79197231a94f1f2e6c40905dcf96fef",
+      "process-custody/test/DeadlineStop.hs": "73d44888cd349224663790847e2ac593c3fb60ec27cd07fcbfef9b130cc00166",
+      "process-custody/test/FacadeControl.hs": "4948dd410e463023570345ed66d5939a67e80a1fd1ccd78500285355b449dd91",
+      "process-custody/test/Internal.hs": "bc7d6362bf78adf4e5badf3e2e6285ec2496d7770b1e76c5f895f84edb621aeb",
+      "process-custody/test/Public.hs": "9ab22e6705dab47416b55126104fa160fda4fec6bbec4d3635d5d254adc34600",
+      "process-custody/test/SelectedFD.hs": "c3748e48f8e520e7a2eba6b27611b445013d8c33d0d617bd7e861fbdf2f854a8",
+      "process-custody/test/VerifiedFixture.hs": "0c0212820247927fd52c1cf770b8bd3c6c4de625cff9a2c999951a2297ad308a",
+      "process-custody/test/negative/CoreCapability.hs": "9bd073b4e08cbb179fadd0eace46cfda3ab866d9b5c0201f12c4ae86e1a91110",
+      "process-custody/test/negative/RawIssuer.hs": "1ad937597d06dbefb9ec9a5edec70f6a080684d47da6a2ddc590e3faadd5305f",
+      "process-custody/test/negative/SelectedSpawnConstructor.hs": "4c28b3897417504b9c09ed29922f798947c208237cc5a61883d334c5ab1e7314",
+      "protocol/README.md": "c07fd3e1cd27a01e30d89a37da3390d5c9ac950a4b75f0b8fca6226a9ffca8ad",
+      "protocol/TRANSPORT.md": "47985c788f31031987aa4c9082829b20426eab83045aa74a0f17ccd989a6f98b",
+      "protocol/formal/ACQUISITION.md": "af661eb1131c7d0b5fbf815b976ad4899a19a27061bc5b8113b63cefa48d6c32",
+      "protocol/formal/README.md": "c496560993a076d6766ae37a4279e6012b9401f9a74172e1f6b77ab8e11d345b",
+      "protocol/formal/acquisition.qnt": "5e8ed18ddd56ee172f927cdde7e41fc60bb57448a9b7fb315bc8067b7151c592",
+      "protocol/formal/acquisition_test.qnt": "e0caed809f42b63b7fd07d311fe692be533a5bad9d49dcd3a5b0efb7c331cec2",
+      "protocol/formal/handler_gate.qnt": "ed68320eb43ee2872619a9763f503f7c4dd730ecccd258d7b14f63139935762f",
+      "protocol/formal/handler_gate_test.qnt": "10565b8c52e5184743bb6a4fbb9ba1d5caecabf983ea87099e13f1b6aa638fcf",
+      "protocol/protocol.cabal": "fd6bdd13d221de0f925022792520eb4443d1d009e0c55ce1e1db0ffd22d5bd43",
+      "protocol/qualification.json": "988dd7e0c6597dd22e6d43f808eb132ff377bd52ce249814b4a5ce4c334f82d4",
+      "protocol/src/Warlock/Protocol/Boundary/Internal.hs": "4368da772a31647c16146078feffbab4b25ef05ef56e735e0c8295b8fe613977",
+      "protocol/src/Warlock/Protocol/Boundary.hs": "afb5b9c3d116ba8f2bfbab8a135546f033de174c734930d2031e4b2624c631ee",
+      "protocol/src/Warlock/Protocol/Codec.hs": "9f1fcb18698ca3fba49aacf903a0040a5e78b5cd16d6ff4cde129b84bad68572",
+      "protocol/src/Warlock/Protocol/CredentialGuard.hs": "f6f9ace572c62a0aba9412c457d172a4a1fd7bb24f357e13ed3e30d7158239a7",
+      "protocol/src/Warlock/Protocol/CredentialIngress.hs": "89b735faff45941cc4523a89515cf408eeadfde44cb8b1bd5a6b70f8ed5a4a96",
+      "protocol/src/Warlock/Protocol/Custody.hs": "87a8d62a378359bf52589c426ac67f0376195493a2cf9e84d02c1253bac40e01",
+      "protocol/src/Warlock/Protocol/Framing.hs": "e338206c5fbf2d8d7f47b4dff66d51fec4cfe2ad9316a355eb9aeb7ac29df708",
+      "protocol/src/Warlock/Protocol/Identity.hs": "ed3f94bbf9c9ca631aecf8657816ad0a045caaa7a2b73f0f18a773b34ae69e7a",
+      "protocol/src/Warlock/Protocol/Ingress/Internal.hs": "034a50695089d225d639c2be95f300a4f8e4478008e6adeaa748e7a00139daef",
+      "protocol/src/Warlock/Protocol/Ingress.hs": "fb5123cf92f0f84c78938cf37ee14cf301df3aeb13f0368099dfa092b663c234",
+      "protocol/src/Warlock/Protocol/Lifecycle.hs": "694b5849cc973e909f7f2a75d71bb957906ff70cd516fe347df56cd0339d2b86",
+      "protocol/src/Warlock/Protocol/PeerCredential.hs": "3f0db514bad7b5d752bef31abca98805d9bef3602c6b8b7ea4348fdf29a67e76",
+      "protocol/src/Warlock/Protocol/Server.hs": "1b9b44f4940fdbe1e98bff6479c6b176596513e8228f4481ba731ba63d00b126",
+      "protocol/src/Warlock/Protocol/StrictJson.hs": "e72b90de84e347b010e8db7ecc84c2e3ec12f7cc38867439806bd1d47bd6c04e",
+      "protocol/src/Warlock/Protocol/Wire.hs": "680237349b3d2e5583849e1c3d43fdc8ebf5313d462e7820b9db8ee8d16c74fd",
+      "protocol/src/Warlock/Transport/Channel.hs": "75b7d54d886be19ac3c17ddb4ed45819d4430727ea60519cce3729b587a68adf",
+      "protocol/src/Warlock/Transport/Frame.hs": "a2af9148dd5f7d5d80bb9a1427cf9daf39550ee16f2b850cb483707235793606",
+      "protocol/src/Warlock/Transport/PeerCredentials.hsc": "73adfbd3faf50b6918b805844ed5d95463914f4bd041bb3ab057d357765f2ee1",
+      "protocol/src/Warlock/Transport/SocketFlags.hsc": "dc12bd6112f1bc146123303f5b799d5e6186b03eab5277ac164b13e08b97b482",
+      "protocol/test/GuardControls.hs": "6698548053e57a128f3341017b35a222e10fcd27aa302751ebb1c6ec43ff0eb4",
+      "protocol/test/Main.hs": "4e19a493ce14da32d1b67dd152ee3c8feba1f65dea50be0df5d153be477f663c",
+      "protocol/test/OwnerControls.hs": "e23a5e2b082a2669eacb5d80b243156c18cc38a4373d338ec8b060d4504d6e36",
+      "protocol/test/OwnerSequenceProperties.hs": "eda99bb99ef18eb59d2403071b8fdbbd2855c927d3adc9223335e9d6044558b8",
+      "protocol/test/PeerCredentialsCases.hsc": "4b132ee6e37a6cf0197ff1f934b2c68b9821f93ee7023a6c36ffceef65be45a1",
+      "protocol/test/QuarantineControls.hs": "a37aefb1d8fd54be04b95f76f2d4b84ddbbe652684cb30d1246f4a82d00a2c49",
+      "protocol/test/fixtures/history-valid-positional-key.bin": "4ab5dcab96c18db6a50b667b6d98fe773ae3ac479c594471a00acf6ed7f844fa",
+      "protocol/test/fixtures/invalid-context-lifetime.bin": "5a7f6ebaef0f441407a3288b47f86e7b667ee4b543e7e3c9b6963d93770b3606",
+      "protocol/test/fixtures/invalid-duplicate-key.bin": "534a4bfbbc280c837dda31c926a21821259158859ac9aa48a256e2255d51698d",
+      "protocol/test/fixtures/invalid-extra-field.bin": "031fa55a5c29a3d90edbea97e40cde527d54d2514d3b0868888777da8ffbf420",
+      "protocol/test/fixtures/invalid-kind-unknown.bin": "1b010a8971b514dae3cee63cb0e8df4eab82e100730ec354b723d62c1237fe84",
+      "protocol/test/fixtures/invalid-version-boolean.bin": "19e7004d4f7fede867da179fc74a5140407513efe50657bb9c534fe8cf9e0297",
+      "protocol/test/fixtures/invalid-version-unknown.bin": "4b15479df542ecefcaefb0bf171bd88510c3b785f1ba8d0201c5e178a280809b",
+      "protocol/test/fixtures/lookup-v2-request-live.bin": "4b4ac27237d62ded83b0439dd949c8d7eec80b92b9540da5c82bd614be426103",
+      "protocol/test/fixtures/lookup-v2-result-absent.bin": "7e5dbf851ce53812d7613cfa17b5ae6275c5d901a72acb989a19592bb2c41931",
+      "protocol/test/fixtures/lookup-v2-wrong-key.bin": "8054dd3a23c0c0b6cabec06e82de9ed6eabc54882a3fef0db27b716eee2a4e90",
+      "protocol/test/fixtures/valid-hello.bin": "cd15d1f8e15be5aaf86fefef213ba4c7ff167ae5527bd8a7195213c8f3198798",
+      "protocol/test/fixtures/valid-negotiate.bin": "80fd224e5d644eefddc92598527d3b4e0c5cd372a5d7d9327db250054b62e34e",
+      "protocol/test/fixtures/valid-prepare.bin": "0d3341e70d17fbe5967dc898efcc978ff05b9029e80d60aee971ca9cfb8f2ed1",
+      "protocol/transport-qualification.json": "47afea44d3dc724866010a7be1c975a195673f269907b343f2334c4b63fef036",
+      "runtime/README.md": "f3ae00de73f490b9bbf89932b6c7e23514b8d0c2b33ef70b8335a276d633e4fd",
+      "runtime/fixture-peer/Main.hs": "d4e7849812d90213f7a8108a85562de13f2778599ddcd2f7e5364855ecab865e",
+      "runtime/formal/README.md": "9eb7d65f0e922ff3fced324bbb054936fe8fd720817a7faa77be5c127484bc56",
+      "runtime/formal/current_registration.qnt": "7d2cb45439ca34535f66d8204202e3616538fd5e9838413187b95827a55b6aa2",
+      "runtime/formal/current_registration_test.qnt": "e1322319778547a683b03989b05efcef0c4a9533f22c6a1fee2c7950a9f1ca57",
+      "runtime/formal/qualification.json": "94deb979ba0e4e20b0a211ba5f0822154d441a73759cd6e99372b508a05af9d8",
+      "runtime/qualification.json": "ccb70a02d87f851cce36f05f53a300f8146ca48ac3835a9174a1dc244fbe2b54",
+      "runtime/runtime.cabal": "25caa84e8b6ef96b4b6cf6634abfd129c1031400c98a6d2a4c66cd5508c3c79d",
+      "runtime/src/Warlock/Bootstrap/Aggregate.hs": "c4254442aa3d8850815f6b79f7d051d4c88b96dbf92b450c32665b96ad4fd14f",
+      "runtime/src/Warlock/Bootstrap/CredentialScopeGuard.hs": "99328b00fd46bdc810b89dd824b182c26a77b4836fd0c20b7bb5f5af7ec19281",
+      "runtime/src/Warlock/Bootstrap/CurrentSessions.hs": "6047f19ea3020c0860a54e0666c2866846aa77cd8643fc550f145bb66efe2a39",
+      "runtime/src/Warlock/Bootstrap/ScopedPeer.hs": "9836f7e5020efbbe917b8c2de4dd0de015174f28eb0484a554f98abfff0d7f18",
+      "runtime/src/Warlock/Bootstrap/SocketOwner.hsc": "507324e970cd977df6f351eee1090c2b2e419e8c2441554e85b5e5d9b4e2a84d",
+      "runtime/src/Warlock/Bootstrap.hs": "76f26fe661ab97dac21b2deedc3e724aae0578c3b75050576b794fb255728ede",
+      "runtime/test/CurrentSessionsControls.hs": "31d4038dc700006bbb7521c4a7ceb9a3a176aef742546cad2c018bcaada31587",
+      "runtime/test/Main.hs": "98ad395210d26fe7c244c5d75056563f4d23fc707e14675d2f0df0b0e741fab1",
+      "runtime/test/OwnedControls.hs": "6e54634fa6fab03e9b830faa9d13fd7943842cd49d6b6404494d7cb260b2cf9d",
+      "runtime/test/PublicationControls.hs": "504273c7d9c7605ad79a725c22ca58158ccb67b16b3b4a7ae75b77cc39220779",
+      "runtime/test/ScopedPeerControls.hs": "07f39cc70a82eca00ff85970635175f9df39bbf2936506156ad406053b3ab52d",
+      "runtime/test/SocketHandoffControls.hs": "91ae3d484ef7ef91dc0c85822c1947b652243f3e80d8e61d8ff3ea9d1c4a4007"
+    },
+    "dependencyHashes": {
+      "cryptohash-sha256-0.11.102.1/LICENSE": "85cba5053cc10efdbf66295af758de7c6d2c0e29533638f6bde5a4f31a6eab9b",
+      "cryptohash-sha256-0.11.102.1/Setup.hs": "5066653559d4d6134b022d66a634a17fdcf8db35d28b447e581fec284afa4689",
+      "cryptohash-sha256-0.11.102.1/cbits/hs_sha256.h": "5126b652ae80e2aae042f2b49b5d906d8e23af47cd2b91b1276a2d1b84a58192",
+      "cryptohash-sha256-0.11.102.1/changelog.md": "b51a68b0e6fae277fe9f734981d83b4a5ef1ad96754d73921e4413b3f8dc6d9a",
+      "cryptohash-sha256-0.11.102.1/cryptohash-sha256.cabal": "0e9de2ccce261e7a5b027e842f6f47f50eb0e6059a0de98a5479f75aa8164107",
+      "cryptohash-sha256-0.11.102.1/src/Compat.hs": "babdeb0c2fca8b3d01afeebc0c0f33f860dd4c98a7db13553faf29f40488da70",
+      "cryptohash-sha256-0.11.102.1/src/Crypto/Hash/SHA256/FFI.hs": "77dc89a3a160b293efb821b78018e5bc7d6c3864b449bc1fcb3f118f222345e6",
+      "cryptohash-sha256-0.11.102.1/src/Crypto/Hash/SHA256.hs": "3b1cab1c5fbfdd174351464c3766bf978491ff04ba9c6de49066b9e3a37e862d",
+      "cryptohash-sha256-0.11.102.1/src-bench/bench-sha256.hs": "d0e66a7ee92dbfb3b5326e2fb8de99c496e7e4543a9d3df323014ec7dc83f316",
+      "cryptohash-sha256-0.11.102.1/src-exe/sha256sum.hs": "6e9361e73374e7e59ef96a3a7c47dfdde3b1920e645b05450d8701b8e9f207f3",
+      "cryptohash-sha256-0.11.102.1/src-pure/Crypto/Hash/SHA256.hs": "f1ed9baeed3078ae93394d09c8f69a3eebb57eab6c1339fddd666c979db63646",
+      "cryptohash-sha256-0.11.102.1/src-tests/test-sha256.hs": "c89ca78fba59add83b7f34eb0d05b6eabc32674637d308d9fa164e7246cd580e",
+      "hsc2hs-0.68.10/LICENSE": "e06c13b8a117652621781c15d622bd4c62c568307954f7136955b4b656d14ec1",
+      "hsc2hs-0.68.10/Setup.hs": "5066653559d4d6134b022d66a634a17fdcf8db35d28b447e581fec284afa4689",
+      "hsc2hs-0.68.10/cbits/utils.c": "487fd52561abdd1aeb964cfff90bd05f409209eba044b076d21cac9bcf7915e1",
+      "hsc2hs-0.68.10/changelog.md": "11ae58b48baaa0c9ca041cd1fa96274e37ac9dae2d52a8973f9f8e6b9d6dfef3",
+      "hsc2hs-0.68.10/data/template-hsc.h": "5e15f274e9e279d70b5d76266c01dcea9150f8bce0e1fe17f001863830acd0f3",
+      "hsc2hs-0.68.10/hsc2hs.cabal": "39b25fd929b02b01a3fe59fec7ca8b2da6f0f9e282276b7a84e63a4702c4d725",
+      "hsc2hs-0.68.10/src/ATTParser.hs": "30e00e3fbdc37e063ece1a09607163f5a227f7210d70a1283890c93d8a90db95",
+      "hsc2hs-0.68.10/src/C.hs": "5ea6f9a6c89a0fbd18a5887f8b025bac2737a84ead5417ca48aa62d526d3c336",
+      "hsc2hs-0.68.10/src/Common.hs": "dcdce9f5d9688a81f377045644017d48ddc53795d2e546cfa0ebf751b8376fcf",
+      "hsc2hs-0.68.10/src/Compat/ResponseFile.hs": "32dd482dce6291c8da4587a8751365b91f6b49dcd7906bfdd256a13441d703c0",
+      "hsc2hs-0.68.10/src/Compat/TempFile.hs": "5bfe2dc99f4b4ce266512a74b2ade35bde2751d7aa6a88d8252d06ca04e22d0d",
+      "hsc2hs-0.68.10/src/CrossCodegen.hs": "35d874d6c6315c353cbd9143fb119e7c16cffb00e1d8441d77417b4b7cd6aa6c",
+      "hsc2hs-0.68.10/src/DirectCodegen.hs": "da5cc827aa7d0a5347fe13ffa5391c8f75508bdad7b7add8b236ab5c935f31cd",
+      "hsc2hs-0.68.10/src/Flags.hs": "8a623c1bdead4f62d75c440e3233ee78141d5865a860b2f1b5186de574c3e9d4",
+      "hsc2hs-0.68.10/src/HSCParser.hs": "026fbe6bbe9e11de29e923085c1c719ab65cc3a5c41822ac5e95821f50611250",
+      "hsc2hs-0.68.10/src/Main.hs": "bf22361a037281cf1d314670051ef096abae016ca24218c1c709c6b4aafb0fe4",
+      "hsc2hs-0.68.10/src/UtilsCodegen.hs": "6e4e39a926047544c41ffd23d06deafe0029348f6bbd27f56493a7a1aa5d7655",
+      "hsc2hs-0.68.10/test/BDD.hs": "2ebafeeb6c498bac990fc44f210d30ff274665800c05cfcedd6cd430ba06de9a",
+      "hsc2hs-0.68.10/test/Spec.hs": "c39e029c29cb4f25a0be1dd47e7f757d4113fe1163dfb32fe2383600b7314298",
+      "hsc2hs-0.68.10/test/asm/aarch64-ios.s": "22b3f7bdf4fb2140757ba9570f2aa2d3d404ce72be59660c046cd95f84621960",
+      "hsc2hs-0.68.10/test/asm/aarch64.s": "30a4b6066b90ebcc8155e5a5f7a77d2386ce1a7228e4207b7d71fa4604d31fb2",
+      "hsc2hs-0.68.10/test/asm/alpha-linux.s": "351e3273c4d534846567d98a05fa096b6fb629881ec2c8ea47ad15fcfcfca76c",
+      "hsc2hs-0.68.10/test/asm/arm-ios.s": "324d2812e15363cad2b0514238e786f04f9c473cfc65e539c55e7bb62cdd23c5",
+      "hsc2hs-0.68.10/test/asm/arm.s": "f32c68457e23896836815374cd8b9359bec5e6d891678232cc4444f162388397",
+      "hsc2hs-0.68.10/test/asm/hppa-linux.s": "2328e02308ebfb72b6bd52e50674b108bb6cb21de1e06253a457755a31e1c7e9",
+      "hsc2hs-0.68.10/test/asm/ia64-linux.s": "0aca1701e1bb9a609e9a19f7fd6444f9c351f68486d12af649155da4f66a3403",
+      "hsc2hs-0.68.10/test/asm/m68k-linux.s": "21219c180a82e0b6858f3e5fbf9ca52fd98ec537759f1814561458c2d0d6dd32",
+      "hsc2hs-0.68.10/test/asm/mips-linux.s": "fe15f395b9e1327dfb0030a4f50e68514ffaee1eeada485b7bf73a78c7f0b919",
+      "hsc2hs-0.68.10/test/asm/mips64-linux.s": "dbf5360fea1063e360a16f0de284450f5d1457907fe160c61ec7045ce2615d76",
+      "hsc2hs-0.68.10/test/asm/nios2-linux.s": "2a201b5de6f0cc75f1722bcc3f5091cc041b9855a9d82446ecbb17037c4edb9b",
+      "hsc2hs-0.68.10/test/asm/powerpc-linux.s": "a9dd07d49711c1284ab89cd349e40fafd0494175ec2736037e1c10ec024b05d9",
+      "hsc2hs-0.68.10/test/asm/powerpc64-linux.s": "8a7051e705a86edbdd4931aff6c0fd6713821e7500f58474a9b89873e08581ae",
+      "hsc2hs-0.68.10/test/asm/powerpc64le-linux.s": "5eddf6c10a9e428707298e1b7ab53d0ea2ce219bfaad93a64616651fb4a0c726",
+      "hsc2hs-0.68.10/test/asm/s390-linux.s": "a8e95b6089668ac7e97a0ee40c00490b51f5988d84d4c8169d1f0acaaa7388e1",
+      "hsc2hs-0.68.10/test/asm/s390x-linux.s": "838760111561e842449fec385af7d5ac575f8cb08585f242b1f5a39dafe5491b",
+      "hsc2hs-0.68.10/test/asm/sh4-linux.s": "0134fb562e95c95021155f08633b2f73310d1de2b3223c96ca052734c5fc5089",
+      "hsc2hs-0.68.10/test/asm/sparc-linux.s": "9d84cd0a417088a5ebde736ce3ab77533202008a260e8b0293d45016d5d6de70",
+      "hsc2hs-0.68.10/test/asm/sparc64-linux.s": "f7bb871c092ec72cf1d91a34771f5488293cb010f639dd9401bf9e5df68abc65",
+      "hsc2hs-0.68.10/test/asm/x86-linux.s": "4733ea418b0d3b39fb3c83876c60bf2f33a31fa57b20779a59e3c7cf0bddaf16",
+      "hsc2hs-0.68.10/test/asm/x86_64-linux.s": "383cbe5cbf676246cd3586daf7f1b2f5ca54956b13842c69925a43592b609aba",
+      "hsc2hs-0.68.10/test/asm/x86_64-mac.s": "1d9f6011321b630c594a992ac0a6670f61dfc0bdfea7222afbf469dc3916adcf",
+      "hsc2hs-0.68.10/test/asm/x86_64-mingw32.s": "d2fe19a772b75f54cf80d730f3c116b3917c048b86d0f3475ecf73ce2bdc83ad",
+      "network-3.2.0.0/CHANGELOG.md": "2ddd8ef4c6c6214147dfba9cc274bb456d361d2383dcd20ed8793aa2adb453fb",
+      "network-3.2.0.0/LICENSE": "52b7b34c66e567678e498103d010a1bd163ef8b06e7e044016b04286a08db982",
+      "network-3.2.0.0/Network/Socket/Address.hs": "38a7d1d325cbd30d9559797e7a391192e172e94aa1ae8a7af5ae5271b2097d5d",
+      "network-3.2.0.0/Network/Socket/Buffer.hsc": "b39b1c1dabb30a4c9f35b981efd7b56eab67666ee31ce23d5589798c0a5b2ad3",
+      "network-3.2.0.0/Network/Socket/ByteString/IO.hsc": "7f05e703bc7c344c17c480247e8f07b38ad68523d0ca9af263d0a02cf22a5782",
+      "network-3.2.0.0/Network/Socket/ByteString/Internal.hs": "23f25b22831ad4e7d898aab8ed9a402a3274658405ba1ba49b09be6bd126a704",
+      "network-3.2.0.0/Network/Socket/ByteString/Lazy/Posix.hs": "c6461e4ba8d579bcb1547d700d163a5fcf33bfa9c3d3d9fec1bbefc328189b88",
+      "network-3.2.0.0/Network/Socket/ByteString/Lazy/Windows.hs": "de6f7077ddf2977b539f8f1e57b15ce34ed2dd9d5dcf8ae3b77a0d6338db31f5",
+      "network-3.2.0.0/Network/Socket/ByteString/Lazy.hs": "2bc6de934f705f072f47b57f195ab9a07e63f165a3b531359c3da643cfe0d640",
+      "network-3.2.0.0/Network/Socket/ByteString.hs": "f82f27ab4654d2e17d1888dfd41bf50b7c6711f9fca19d308e5d0bc6fbf26a09",
+      "network-3.2.0.0/Network/Socket/Cbits.hsc": "b71a0c9c2d5cae53c61f5600862d61ce22cd9e0bd8386d0e1d089ea08b25ccf2",
+      "network-3.2.0.0/Network/Socket/Fcntl.hs": "b1f2e13f9da9f94a060a0cf8ef0cbb9987f2467392e0555f82ccf73ecd59c607",
+      "network-3.2.0.0/Network/Socket/Flag.hsc": "e539665246dc880357be5d794ad2f930ef7392a85451822d6fc9495183b9b3e7",
+      "network-3.2.0.0/Network/Socket/Handle.hs": "f88195a16bdfcc8bba29f29d3241651db2d71327f0be5cc0400b61c4dcec4117",
+      "network-3.2.0.0/Network/Socket/If.hs": "606e81826288580ee52a340389de4d5b9319241d92e89cdd249b0b962ef028b4",
+      "network-3.2.0.0/Network/Socket/Imports.hs": "5c58f6a28b079405e76e6647b519718fe0ed3a6782f18554f0babf83fcd1686a",
+      "network-3.2.0.0/Network/Socket/Info.hsc": "292e33794c6d97d901914a50463ee545fa06b5df7d6657ab9e7a1e0c43685963",
+      "network-3.2.0.0/Network/Socket/Internal.hs": "5e5c53052a49c921d032c52be6802709de21b4a68f513b57fe34ca22569f7648",
+      "network-3.2.0.0/Network/Socket/Name.hs": "b416afb4437501de8a8e9180e04c1a37c711272332043917991aab7b817e0b25",
+      "network-3.2.0.0/Network/Socket/Options.hsc": "2a7f334a635386f9efd4c6e0d729a41b98512bc238211c09a51cc81fe0364794",
+      "network-3.2.0.0/Network/Socket/Posix/Cmsg.hsc": "f0e600fc25e60a6d242b18da39e0dc6c054fcb2414062d79577c7cfa31f350f4",
+      "network-3.2.0.0/Network/Socket/Posix/CmsgHdr.hsc": "2eb199e1f2d50194947a7dc00e977b647f989859f133cf4edb30db2f009740e4",
+      "network-3.2.0.0/Network/Socket/Posix/IOVec.hsc": "7b513669e64f8755e2ce9b372b442c3d7dd307bb13c0caf4495b49ce473ce0f4",
+      "network-3.2.0.0/Network/Socket/Posix/MsgHdr.hsc": "b902ca9399b9b20bab50a215a76478a8d36263948a3ca303cdbcb709694526a9",
+      "network-3.2.0.0/Network/Socket/ReadShow.hs": "f3e811485c4c3f38160c17a091c278e961316f434d283bd42abfd7d6743eace2",
+      "network-3.2.0.0/Network/Socket/Shutdown.hs": "296dca8946da44d6519d360ee85986307e481d3e6a98b7f14ae1dc67918f5cfb",
+      "network-3.2.0.0/Network/Socket/SockAddr.hs": "94fa2f729fc74583c3f47eb2ef44d1aa29791147d09fe15a1da3ce08c4b586be",
+      "network-3.2.0.0/Network/Socket/Syscall.hs": "f5cbbfc1f577e83431d660a1dab762fc30d79050925cb6702e3669cfcebaa17f",
+      "network-3.2.0.0/Network/Socket/Types.hsc": "afb4456ebfe3b43e11f2afee1d2881b329d02455378d8512273e70d5b92f2fab",
+      "network-3.2.0.0/Network/Socket/Unix.hsc": "06c423d20185c289b9fb9d96aad3b10661eacc4680f024bf2d94a41ea82d4414",
+      "network-3.2.0.0/Network/Socket/Win32/Cmsg.hsc": "ca163c93794d46c84447d922607aee39e97566c783aff2cb978eeef8646a489e",
+      "network-3.2.0.0/Network/Socket/Win32/CmsgHdr.hsc": "860cea69fc6012e786f49a039bd8e05ab200c236eb978a7d3014fab846cb2815",
+      "network-3.2.0.0/Network/Socket/Win32/MsgHdr.hsc": "e3d7a198b5feaa8755cc9bf7d268b9b21877d79a756a01f87281d75d045eb66a",
+      "network-3.2.0.0/Network/Socket/Win32/WSABuf.hsc": "999cbe32ef4240627e84abb14fe620caa4cc420775f0bdb347d942bfc76e6a9b",
+      "network-3.2.0.0/Network/Socket.hs": "cf39fef8b333b31c7aa59f5ba5de4533db5816bd4407df00741cca1a6f9b4eb7",
+      "network-3.2.0.0/README.md": "149451cd513d36fe16704f78227ab504785dbb565d7e691af396e7ef0ed019c2",
+      "network-3.2.0.0/Setup.hs": "b206f84f29cfcc0bf888704fede29596d0dc0f12f07d5a7d857bd992ba6ecba1",
+      "network-3.2.0.0/cbits/HsNet.c": "227fb2b822eb8f74cd3e9c1bab177ca106df0f00294884200b7cf5f3f5490a52",
+      "network-3.2.0.0/cbits/asyncAccept.c": "5b1f05bfb70f9d105aa3186474dd2bfac8a93a9828da2ecd716d1922d7cb463f",
+      "network-3.2.0.0/cbits/cmsg.c": "64e9b0c17771b5db2276e0e534222c939d6847ba68d24429ea349e34c26c5e8a",
+      "network-3.2.0.0/cbits/initWinSock.c": "78875db27cdc711212e6b992438ffa06ac1bed301dfe1b4ca5fa0dd1bfaa0b85",
+      "network-3.2.0.0/cbits/winSockErr.c": "9b25f9b8ded2cb0b89630459fa2e40b6e4e25ba71ea2c35fad672ad96e781513",
+      "network-3.2.0.0/config.guess": "af8a1922c9b3c240bf2119d4ec0965a0b5ec36b1016017ba66db44b3b53e9cea",
+      "network-3.2.0.0/config.sub": "18945c917a1ac6a647570fdeb71eab86cba296660a13c0fd5785e393e76a541c",
+      "network-3.2.0.0/configure": "e668153c41ad8679b42c1f31c95d4bb9221cf1808ac925b0b09375ff493e2cd9",
+      "network-3.2.0.0/configure.ac": "482524cf2b6142af3818c9979c8e7f07e9f3c25060c2abe84596d67ff9e8a2a5",
+      "network-3.2.0.0/examples/EchoClient.hs": "b1fcd3abb5408a4ec61e0ad85fa7089ee630727b768a6f4fe2f6b89bb432a872",
+      "network-3.2.0.0/examples/EchoServer.hs": "b7afa4b2bfad2d54d2996cdcf86fceb5df0936f43f443ff80ba0520b7bd3192b",
+      "network-3.2.0.0/include/HsNet.h": "dd2fbbca0eee31403d45a6efa035b7208a6c8ebb8ae92127a90b287f912f284f",
+      "network-3.2.0.0/include/HsNetDef.h": "51c17d9f4eb2151a70615c2f3d803183ea1f621dd71c60c11ffe767abbdfc98c",
+      "network-3.2.0.0/include/HsNetworkConfig.h.in": "f69d3a4ac72a32fc1450ff4c7250191ac734601d4e6194929aa88ca81d90cc75",
+      "network-3.2.0.0/include/afunix_compat.h": "6c7f639cbe23a89928e93bcf1d4863ad9eb9c7019a19198093041c6c9d891db1",
+      "network-3.2.0.0/include/alignment.h": "caa0508facd314989bba81ed8caf7607f462955a104f6f15e1728fca0ed8492d",
+      "network-3.2.0.0/include/win32defs.h": "9ec4d80206cf49a36992fd93835a01f005959b5ddcdb7b973137c82ad21f3692",
+      "network-3.2.0.0/install-sh": "7916e69fbd5ca35b1a30690aed94da3c9c36ce1745e6268c0d36ed3e8ad58ccf",
+      "network-3.2.0.0/network.cabal": "25440c1bbd5772fdbbeec068f20138121131e1a56453db0adc113dcdf9044105",
+      "network-3.2.0.0/tests/BadFileDescriptor.hs": "b6a39ae44a01b042bb3e526119327b22c7fcec85d32a29e5f0a832d36378bb30",
+      "network-3.2.0.0/tests/Network/Socket/ByteString/LazySpec.hs": "614bb1256941f534d931a6d3f95c0914f3bf7cbf0c237f36b05ab0e537a0adfe",
+      "network-3.2.0.0/tests/Network/Socket/ByteStringSpec.hs": "7626d76f8fc0380504b9ef7a5e26275ced950c703102a7fb20571647f3214ef7",
+      "network-3.2.0.0/tests/Network/SocketSpec.hs": "9e46b9c8c36acf4e59e14cf51b954ca670ccb8feed68f99ac21a808356f18997",
+      "network-3.2.0.0/tests/Network/Test/Common.hs": "a9c2d436caea0ee8af31bf4e5ed0c3b57991842351dbd77af72dc38c218e90be",
+      "network-3.2.0.0/tests/Spec.hs": "2fbd14b119a40eaca54f6255686c7cfbe8ff26a9c18d79ec474a61225232d324"
+    },
+    "dependenciesManifestSHA256": "ca6a7fe7f45cfe4baaf074c55b7c1f0faeba4accae4ee1059788f02681d75a5a",
+    "wrapperSHA256": "ce788dea8b3cddaf95803d2bac16943272083924ff9df6f7b41c42e440a921c9",
+    "executables": {
+      "warlock-held-document-proposal:test:held-document-controls": {
+        "path": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test/build/x86_64-linux/ghc-9.6.7/warlock-held-document-proposal-0.1.0.0/t/held-document-controls/build/held-document-controls/held-document-controls",
+        "pin": [
+          "2096",
+          "1676692",
+          "2061760",
+          "f1e80ecb90f233af7b294c1ee9738635958115d448f335cdd36bc50f566e06ce"
+        ]
+      },
+      "warlock-held-document-proposal:test:held-executable-controls": {
+        "path": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test/build/x86_64-linux/ghc-9.6.7/warlock-held-document-proposal-0.1.0.0/t/held-executable-controls/build/held-executable-controls/held-executable-controls",
+        "pin": [
+          "2096",
+          "1676629",
+          "3207184",
+          "7da86fe63c2e0c83b09242e503af696745cfc5520aa2765ca2a9b1879f894582"
+        ]
+      },
+      "warlock-process-custody:test:internal-controls": {
+        "path": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test/build/x86_64-linux/ghc-9.6.7/warlock-process-custody-0.1.0.0/t/internal-controls/build/internal-controls/internal-controls",
+        "pin": [
+          "2096",
+          "1676913",
+          "2780304",
+          "db698054c152d562d21044aa2bc5432503dba26f7d5882cd55edf3359946290c"
+        ]
+      },
+      "warlock-process-custody:test:public-controls": {
+        "path": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test/build/x86_64-linux/ghc-9.6.7/warlock-process-custody-0.1.0.0/t/public-controls/build/public-controls/public-controls",
+        "pin": [
+          "2096",
+          "1677428",
+          "2545224",
+          "a5f48b9a22ca9b9ccf7b1ba5ec9475a7bfba3905844f590b034f659066f21459"
+        ]
+      },
+      "warlock-process-custody:test:selected-fd-controls": {
+        "path": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test/build/x86_64-linux/ghc-9.6.7/warlock-process-custody-0.1.0.0/t/selected-fd-controls/build/selected-fd-controls/selected-fd-controls",
+        "pin": [
+          "2096",
+          "1677425",
+          "4266536",
+          "f7347ffc23d864f3b023fb2834a0e90846ea73c29c696c2e54536a6a670589e8"
+        ]
+      },
+      "warlock-process-custody:test:deadline-stop-controls": {
+        "path": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test/build/x86_64-linux/ghc-9.6.7/warlock-process-custody-0.1.0.0/t/deadline-stop-controls/build/deadline-stop-controls/deadline-stop-controls",
+        "pin": [
+          "2096",
+          "1677084",
+          "2648264",
+          "6e56c16ade44b62e6871d29e540d25be493c2e80d3823454eb1ce497d32b7c0a"
+        ]
+      },
+      "warlock-process-custody:test:bootstrap-facade-controls": {
+        "path": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test/build/x86_64-linux/ghc-9.6.7/warlock-process-custody-0.1.0.0/t/bootstrap-facade-controls/build/bootstrap-facade-controls/bootstrap-facade-controls",
+        "pin": [
+          "2096",
+          "1677467",
+          "3776448",
+          "c6c429996caf918a772d7d91ed38cfb4a8eee964e68c7088db1823c0e3a6c5bf"
+        ]
+      },
+      "warlock-protocol:test:boundary-controls": {
+        "path": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/t/boundary-controls/build/boundary-controls/boundary-controls",
+        "pin": [
+          "2096",
+          "1676644",
+          "2470176",
+          "b9e87ff3ea7e63b0a4e814e1d9a26980475edf1f39fd3eb1311450f80062d969"
+        ]
+      },
+      "warlock-protocol:test:ingress-controls": {
+        "path": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/t/ingress-controls/build/ingress-controls/ingress-controls",
+        "pin": [
+          "2096",
+          "1677248",
+          "4722584",
+          "4eac0448579818d5b6df94a26bb83e0cacbd197b7ff7de57f62b63d47ad4e16f"
+        ]
+      },
+      "warlock-protocol:test:owner-sequences": {
+        "path": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/t/owner-sequences/build/owner-sequences/owner-sequences",
+        "pin": [
+          "2096",
+          "1677201",
+          "4640472",
+          "2c85a7b03d8aac7d12775992c1457cab5b7edf0e8547aa27a9339d4e31a001ce"
+        ]
+      },
+      "warlock-protocol:test:credential-guard-controls": {
+        "path": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test/build/x86_64-linux/ghc-9.6.7/warlock-protocol-0.1.0.0/t/credential-guard-controls/build/credential-guard-controls/credential-guard-controls",
+        "pin": [
+          "2096",
+          "1677307",
+          "4695456",
+          "042e0d42338e3e07b8189c1b8f0ae1132a2c220d65c7aa9ca715205bd29c6746"
+        ]
+      },
+      "warlock-elf-observation-proposal:test:elf-cases": {
+        "path": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test/build/x86_64-linux/ghc-9.6.7/warlock-elf-observation-proposal-0.1.0.0/t/elf-cases/build/elf-cases/elf-cases",
+        "pin": [
+          "2096",
+          "1676751",
+          "3041272",
+          "b5022b5e09e2b5c6aedf6637d2a7b51b944dcdc4b1556a6655ffa8b70fa81ee9"
+        ]
+      },
+      "warlock-runtime:test:current-session-oracles": {
+        "path": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/t/current-session-oracles/build/current-session-oracles/current-session-oracles",
+        "pin": [
+          "2096",
+          "1677510",
+          "5824512",
+          "559b28d516fc3da4b1b1e4ff7a3c3780fafc1fc4d1c36e8f0f9d28dc8bd9bedc"
+        ]
+      },
+      "warlock-native-authority:test:native-cancellation-controls": {
+        "path": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test/build/x86_64-linux/ghc-9.6.7/warlock-native-authority-0.1.0.0/t/native-cancellation-controls/build/native-cancellation-controls/native-cancellation-controls",
+        "pin": [
+          "2096",
+          "1677584",
+          "2061000",
+          "a84a79830d83e61c06b2388ca15c500c83d4b759df9a25333066065130d91500"
+        ]
+      },
+      "warlock-native-authority:test:durable-storage-controls": {
+        "path": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test/build/x86_64-linux/ghc-9.6.7/warlock-native-authority-0.1.0.0/t/durable-storage-controls/build/durable-storage-controls/durable-storage-controls",
+        "pin": [
+          "2096",
+          "1677652",
+          "2134296",
+          "3761ca2a7fd9f0357db16501e0a41b96a28b62b215784c761170743fee5a72fa"
+        ]
+      },
+      "warlock-native-authority:test:selection-admission-controls": {
+        "path": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test/build/x86_64-linux/ghc-9.6.7/warlock-native-authority-0.1.0.0/t/selection-admission-controls/build/selection-admission-controls/selection-admission-controls",
+        "pin": [
+          "2096",
+          "1677551",
+          "1938432",
+          "09d9ca72a008ab81a4ed2a9eb8e4eb7e08bd3f11f6e82ddb8623bef40d05e71a"
+        ]
+      },
+      "warlock-native-authority:test:host-guard-controls": {
+        "path": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test/build/x86_64-linux/ghc-9.6.7/warlock-native-authority-0.1.0.0/t/host-guard-controls/build/host-guard-controls/host-guard-controls",
+        "pin": [
+          "2096",
+          "1677583",
+          "1772072",
+          "4b94d3661709fb25e1224552675c57e45485d5cced4c4e59c6c50fa78be79023"
+        ]
+      },
+      "warlock-native-authority:test:slot-store-controls": {
+        "path": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test/build/x86_64-linux/ghc-9.6.7/warlock-native-authority-0.1.0.0/t/slot-store-controls/build/slot-store-controls/slot-store-controls",
+        "pin": [
+          "2096",
+          "1677718",
+          "1895400",
+          "0169c6f8103601d214d0597fde071d0626e655c55f16a6517207109abbe81ebd"
+        ]
+      },
+      "warlock-native-authority:test:pair-store-smoke": {
+        "path": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test/build/x86_64-linux/ghc-9.6.7/warlock-native-authority-0.1.0.0/t/pair-store-smoke/build/pair-store-smoke/pair-store-smoke",
+        "pin": [
+          "2096",
+          "1677719",
+          "4230832",
+          "11ae5521ce69370a8bd613500deedfcfe8257d7503d577f3a63020ab4a5a006a"
+        ]
+      },
+      "warlock-native-authority:test:child-directory-controls": {
+        "path": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test/build/x86_64-linux/ghc-9.6.7/warlock-native-authority-0.1.0.0/t/child-directory-controls/build/child-directory-controls/child-directory-controls",
+        "pin": [
+          "2096",
+          "1677816",
+          "1871712",
+          "d6ad1b7c192fad59845316609383759734ef1dbdca8056fe7ac7beaf98cab2fa"
+        ]
+      },
+      "warlock-native-authority:test:independent-admission-shape": {
+        "path": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test/build/x86_64-linux/ghc-9.6.7/warlock-native-authority-0.1.0.0/t/independent-admission-shape/build/independent-admission-shape/independent-admission-shape",
+        "pin": [
+          "2096",
+          "1677795",
+          "3304048",
+          "4eb9fa857ccee92d2f56365c3845c191f065fd3cb60baf4d5bcb0b2a46bca9dc"
+        ]
+      },
+      "warlock-native-authority:test:pair-store-sequences": {
+        "path": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test/build/x86_64-linux/ghc-9.6.7/warlock-native-authority-0.1.0.0/t/pair-store-sequences/build/pair-store-sequences/pair-store-sequences",
+        "pin": [
+          "2096",
+          "1677754",
+          "4130208",
+          "2fb7afcc58c8560a3e3d7824603bbcf0defebf25deb4c35c55466f1dbd57c013"
+        ]
+      },
+      "warlock-native-authority:test:independent-lifetime-owner": {
+        "path": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test/build/x86_64-linux/ghc-9.6.7/warlock-native-authority-0.1.0.0/t/independent-lifetime-owner/build/independent-lifetime-owner/independent-lifetime-owner",
+        "pin": [
+          "2096",
+          "1677794",
+          "3119880",
+          "838d5dd2ec588cd4265ce68edf4b968d0d0f2958e3345b505b896e0a8d99db0b"
+        ]
+      },
+      "warlock-native-authority:test:independent-pairstore": {
+        "path": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test/build/x86_64-linux/ghc-9.6.7/warlock-native-authority-0.1.0.0/t/independent-pairstore/build/independent-pairstore/independent-pairstore",
+        "pin": [
+          "2096",
+          "1677757",
+          "4271624",
+          "e480f543681d7d4ff5caa14b839b3558237e1244a7b2d41e6c3b2a34306ac72d"
+        ]
+      },
+      "warlock-process-custody:exe:custody-child": {
+        "path": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test/build/x86_64-linux/ghc-9.6.7/warlock-process-custody-0.1.0.0/x/custody-child/build/custody-child/custody-child",
+        "pin": [
+          "2096",
+          "1677025",
+          "1432760",
+          "ddff791da2bf625537849de3f71b69788f997ba53554d7ef763daae7eabfb0f2"
+        ]
+      },
+      "warlock-process-custody:exe:selected-fd-child": {
+        "path": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test/build/x86_64-linux/ghc-9.6.7/warlock-process-custody-0.1.0.0/x/selected-fd-child/build/selected-fd-child/selected-fd-child",
+        "pin": [
+          "2096",
+          "1676771",
+          "2903904",
+          "900308f8f9da07adfaf3598d9987816f76b04eafaa6d1f3cf4796fa62011d4f7"
+        ]
+      },
+      "warlock-process-custody:exe:graceful-stop-child": {
+        "path": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test/build/x86_64-linux/ghc-9.6.7/warlock-process-custody-0.1.0.0/x/graceful-stop-child/build/graceful-stop-child/graceful-stop-child",
+        "pin": [
+          "2096",
+          "1676983",
+          "1452376",
+          "2e4878c0bfa9d70687726876acaa67d8a2450be3b22f7ea567c078c2017ca74e"
+        ]
+      },
+      "warlock-process-custody:exe:bootstrap-facade-child": {
+        "path": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test/build/x86_64-linux/ghc-9.6.7/warlock-process-custody-0.1.0.0/x/bootstrap-facade-child/build/bootstrap-facade-child/bootstrap-facade-child",
+        "pin": [
+          "2096",
+          "1677048",
+          "1422760",
+          "3c837e137bcc0b4565a26818d9cb3991333b040381da6703e4bca7631562d465"
+        ]
+      },
+      "warlock-runtime:exe:credential-peer-child": {
+        "path": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793490415780847988/haskell-build/dist-test/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/x/credential-peer-child/build/credential-peer-child/credential-peer-child",
+        "pin": [
+          "2096",
+          "1677498",
+          "2310912",
+          "e57425da139ffa82f45f37ed97503ce23c9882549b3b313eddfa18681d4771a2"
+        ]
+      }
+    }
+  },
+  "sourceRevision": "01ad95b87c7550c8179fd13e907625a5a9b57cb4",
+  "recordedUTC": "2026-10-31T23:54:00.186024+00:00",
+  "rawReportSHA256": "f58bbaad7d59a54263ec77748260f3a12f7cea7957c797cb8f932afcf76498ad",
+  "rawEvidence": {
+    "path": "implementation/warlock/qa/evidence/haskell-toolchain-20261031/raw-reports.tar.gz",
+    "sha256": "0c453b3fe896f136ce721653cbe5b4baa0c3aba8aa13c78398434cc5088bc04b",
+    "files": 170
+  },
+  "reviewPacket": {
+    "path": "implementation/warlock/qa/evidence/haskell-toolchain-20261031/cpu-review.json",
+    "sha256": "9642a3e0d5a775a70bc63d28ee3ba2ae1c9b9a46df418c6e4666f507903b10b5"
+  },
+  "limits": [
+    "Controlled CPU component checks only; no native provider, GUI presentation/input, AT/IME, genuine effect issuer or release acceptance.",
+    "SDK/network/cryptohash/hsc2hs metadata are pinned; original resolver failure preserved before hsc2hs build-tool package was added.",
+    "All six current Haskell packages compile, production hooks disabled; separate test build enables reviewed private hooks. Bootstrap remains one-frame.",
+    "No main desktop, service coordinator, identity key, original deadline or stopped native probe changed."
+  ]
+}

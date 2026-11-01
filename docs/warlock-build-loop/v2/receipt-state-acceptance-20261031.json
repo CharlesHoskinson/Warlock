@@ -1,0 +1,171 @@
+{
+  "schema": 1,
+  "recordedUTC": "2026-10-31T23:58:16.047484+00:00",
+  "requirement": "ELM-ARC-007",
+  "requirementAccepted": true,
+  "status": "accepted",
+  "originalEARS": "The Elm desktop SHALL correlate each outcome with its request and represent Pending, Committed, Refused, Cancelled and Unknown as distinct states.",
+  "originalVerification": "Preserved scenario report with native or bridge trace showing: its state is Unknown rather than Committed; artifact hashes and matching scenario receipts included.",
+  "scope": "Whole original ARC007 on all five exact original scenarios through current actual Elm desktop/menu/receipt routes, using the original expressly permitted bridge evidence. This does not transfer to native cancellation/retirement or the Haskell protocol port.",
+  "sourceTuple": {
+    "sourceRevision": "01ad95b87c7550c8179fd13e907625a5a9b57cb4",
+    "core": "not loaded; original ARC007 expressly permits bridge verification",
+    "plugin": "not loaded; no native ABI or physical cancellation claim",
+    "toolchain": "Elm0.19.2 SHA256 c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948; Node24.22.1 SHA256 e32e2d16081cf644f88392934288086e7662529d0d43277c34f7aad2207cfafb; Quint0.33.0 TypeScript tree 336f3ece0ad5a10965cdfc9acd15e9e2e1b08b7e9a849c9ffa7f76a6d13d7338"
+  },
+  "sourceHashes": {
+    "implementation/warlock/src/NativeOutcome.elm": "79252d7e3fefa4a4ca93dfe4d6fc18552b710d514ec1cdb4521d1ecea9c8c2e6",
+    "implementation/warlock/src/ReceiptRouter.elm": "c6c5bc025cddd2bb7a0e8daa22ee3ff0cddff36e37131095130215d5e85825d0",
+    "implementation/warlock/qa/ReceiptStateReplay.elm": "d4e06b035a9eed7d9662da908a2170fe90033e672afc4427810898184817f331",
+    "implementation/warlock/qa/receipt-state.cjs": "479e79b00a07f3b1e8aae0deeacf2f98b2d6e86bfb80717ef4fe6b4afa4743a6",
+    "implementation/warlock/qa/receipt-lifecycle.qnt": "b9fe529d8832552f155cbec1174cc95d0aa5d94138ba86a6ae109cbc32f20cc0",
+    "implementation/warlock/src/Effects.elm": "80c574e8c564c28a1fb11f1f89bb5bfa7ac97a92474bbf027a737324bb2a82cd",
+    "implementation/warlock/src/Shell.elm": "f14b7fe3bfbf1a57f335f98914c988938c235823ba4596c067cf744776c4a9ae",
+    "implementation/warlock/src/Desktop.elm": "a503d926599b5aa194956a1208fdc0004fb829442cd523c5372d41fd1fab0404",
+    "implementation/warlock/src/TaskbarShell.elm": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+    "implementation/warlock/src/Menu.elm": "c40fcfa24bf9d48044ccbe2c08df0abb7d8b94ee04111776234ecd88792ff4f0",
+    "implementation/warlock/src/MenuBridge.elm": "ec8f531b9437e493f9b29fe1e16d678cd388f560a83ca873448630bbde459b25",
+    "implementation/warlock/src/Binding.elm": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b",
+    "implementation/warlock/src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "implementation/warlock/src/OutputController.elm": "aaf1729287ff61595a237201b261e7c1ce11c8f2353c620171f48aff99d86f38",
+    "implementation/warlock/src/SurfaceController.elm": "2e86781c41c1b1c62d518e886ee965a875a04ea88980159a00511c549b25e998",
+    "implementation/warlock/src/NativeProvider.elm": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9",
+    "implementation/warlock/src/ActionProjection.elm": "911faed965465fac4e32f404d75a4d130b4e560cda191c7773eb96749be1d062",
+    "implementation/warlock/src/GeometryProjection.elm": "f1b5708b8b4d1c7c02e46542bc041abb9e8cb0524d965ee4b03ab97f586a544c"
+  },
+  "scenarios": [
+    {
+      "name": "architecture-007",
+      "oracle": "its state is Unknown rather than Committed",
+      "status": "accepted",
+      "matchingBridgeReceipts": 16,
+      "missingObservations": []
+    },
+    {
+      "name": "receipt-pending",
+      "oracle": "the correlated request has exactly state Pending and no other request changes",
+      "status": "accepted",
+      "matchingBridgeReceipts": 16,
+      "missingObservations": []
+    },
+    {
+      "name": "receipt-committed",
+      "oracle": "the correlated request has exactly state Committed and no other request changes",
+      "status": "accepted",
+      "matchingBridgeReceipts": 16,
+      "missingObservations": []
+    },
+    {
+      "name": "receipt-refused",
+      "oracle": "the correlated request has exactly state Refused and no other request changes",
+      "status": "accepted",
+      "matchingBridgeReceipts": 16,
+      "missingObservations": []
+    },
+    {
+      "name": "receipt-cancelled",
+      "oracle": "the correlated request has exactly state Cancelled and no other request changes",
+      "status": "accepted",
+      "matchingBridgeReceipts": 16,
+      "missingObservations": []
+    }
+  ],
+  "reviewer": {
+    "name": "reviewer",
+    "independent": true,
+    "disposition": "accepted"
+  },
+  "evidence": [
+    {
+      "path": "implementation/warlock/qa/evidence/receipt-state-20261031/report.json",
+      "sha256": "62d9962ac69aa81b8f4669f192ee3a55e54eac9e6041d2e227306b105f9c3770"
+    },
+    {
+      "path": "docs/warlock-build-loop/v2/receipt-state-review-20261031.json",
+      "sha256": "b689d50453e3da515dfdd013415dfb8a94d8fa3053ace34f464c97b49db1181e"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/receipt-state-20261031/bridge-trace.json.gz",
+      "sha256": "a2d98f2b27f2b6f10238bd976f70b9ef860f4f39200ec32f1cbb9307158018ec"
+    }
+  ],
+  "verification": {
+    "assertions": 2451,
+    "failedAssertions": 0,
+    "matchingScenarioReceipts": 80,
+    "fixtureMatrices": 8,
+    "effectProtocols": [
+      1,
+      2
+    ],
+    "uniqueNamedModelTests": 14,
+    "modelTestInvocations": 16,
+    "sampledTraces": 10000,
+    "maxSteps": 50,
+    "seed": 20261031,
+    "witnessCounts": {
+      "witnessPending": 3403,
+      "witnessCommitted": 1191,
+      "witnessRefused": 1145,
+      "witnessCancelled": 1188,
+      "witnessUnknown": 2123,
+      "witnessDisconnected": 10000,
+      "witnessNewRequest": 885
+    }
+  },
+  "preservedFailures": {
+    "mixedFixtureFailure": {
+      "localPath": "/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793490161718092674",
+      "wrapperReportSHA256": "a7bf175ecbec982d0075d17c5e6c273c61a4363d30889599f8970325bef86369",
+      "regressionReportSHA256": "db9510979a071624c6de4a69f841ed56c24d3bb85664068d172e22b6b0a67d88",
+      "checks": 2403,
+      "failures": 120,
+      "traces": 8,
+      "scenarioReceipts": 80
+    },
+    "cleanCancelledRed": {
+      "localPath": "/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793490354986569926",
+      "wrapperReportSHA256": "fd0b8061c26732513b25dd511634ffe2ed28079d0f46cb9df847056a8915dbf0",
+      "regressionReportSHA256": "735bcc3529b7efd15f056da960fbd0f364eba0676937d22190684862f05f17bb",
+      "checks": 2451,
+      "failures": 112,
+      "traces": 8,
+      "scenarioReceipts": 80
+    },
+    "candidate": {
+      "localPath": "/home/charl/code/Warlock/.warlock-contributor/elm-cpu-1793490539870001810",
+      "wrapperReportSHA256": "b76a5a80cdc8d9f4276522d9af3b949fdb9e998371154a3090ef8d17fe3e0e0c",
+      "regressionReportSHA256": "3d6471f722ccdd041b7ba4d1e85aa1a6594cb02164521308806e78170e9a89cd",
+      "checks": 2451,
+      "failures": 0,
+      "traces": 8,
+      "scenarioReceipts": 80
+    }
+  },
+  "nativeAcceptance": false,
+  "haskellPortAcceptance": false,
+  "releaseAccepted": false,
+  "missingObservations": [],
+  "remainingObservations": [
+    "Genuine native issuer and cancellation-before-commit/resource retirement remain original ARC012 obligations.",
+    "Haskell bootstrap remains one-frame and is not a persistent desktop/backend receipt service.",
+    "Native GUI/input/AT/IME, host-provider feasibility, hardware/resource budgets, deployment/rollback and release remain open; HOSTSTOP2 is preserved."
+  ],
+  "retrofit": {
+    "assessedBoundary": "Actual NativeOutcome/ReceiptRouter terminal decoding into existing Menu/Shell/Effects custody, linked to original ARC007",
+    "observedDefect": "Both live gates rejected Cancelled; clean baseline left request Pending and retained its local reservations (112 failures)",
+    "change": "Admit only the additional Cancelled terminal and map it explicitly to existing Menu.Cancellation; no duplicate state authority or native issuer",
+    "preconditions": "Authenticated bounded channel, strict shape/version/positive canonical counters and exact matching binding/protocol/full intent for an issued unresolved request",
+    "postconditions": "Only matching request settles Cancelled; other unresolved request remains byte-equal, matching local reservations retire, no mutation is emitted",
+    "invariants": "Unknown remains unresolved across drop/read; terminal duplicate and foreign full identity do not change custody or replay; all original limits/deadlines preserved",
+    "modelDisposition": "Existing bounded local model extended with Cancelled, preserving all previous invariants and broken-baseline witness; physical/native validation remains an explicit abstraction assumption",
+    "diataxis": {
+      "tutorial": "docs/warlock/tutorials/first-contribution.md retained: contribution and authority workflow unchanged",
+      "howTo": "docs/warlock/how-to/verify-selected-change.md retained; new receipt reference links exact protected fixture packet and evidence",
+      "reference": "docs/warlock/reference/receipt-states.md added for actual states, correlation and current toolchain evidence",
+      "explanation": "docs/warlock/explanation/elm-haskell-boundary.md retained: Elm status policy, backend authority and non-authorizing observation remain distinct"
+    },
+    "remainingDebt": "Owned persistent Haskell session/explicit schema bridge, genuine issuer/admission/effect/durable receipt integration; UI007 native/AT, ARC012/native resources and full release remain open"
+  },
+  "nextAction": "Implement owned persistent authenticated Haskell session delivery and an explicit reviewed bridge to existing Elm policy; use current pinned package controls, preserve HOSTSTOP2 and empty native operations until genuine qualification."
+}
