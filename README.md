@@ -14,6 +14,8 @@ The current Elm/Haskell native host is still under development. The website and 
 
 The current Haskell host displays the compiled Elm interface in an isolated Omarchy VM. Its idle repair kept the owned window mapped across 26.4 seconds of observations in a bounded 28-second trial. Physical input opened Applications and typed a search query with visible no-match feedback. The [current-source observation](implementation/warlock/qa/evidence/ui005-haskell-search-20261101/observation.json) keeps final query correlation, native/AT/IME and provider cleanup unqualified. Window controls remain unavailable on the stock VM compositor.
 
+The latest pure-policy check compiles all six production Elm entry points and compares 32 named histories against independent complete-model/effect expectations. This includes pin-save refusal, unconfirmed recovery without repeating writes, and matching saved results. The [component evidence](implementation/warlock/qa/evidence/tea-contract-20261101/observation.json) keeps whole TEA, native GUI and release acceptance open.
+
 ![The Warlock desktop in the test drive: taskbar across the top and Task View open over the workspace](docs/warlock-brand/readme/test-drive-task-view.png)
 
 Open an application and Warlock's portal brings it in: a ring of red ember fragments ignites, expands and resolves into the new window.

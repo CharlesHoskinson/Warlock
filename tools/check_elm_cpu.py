@@ -47,6 +47,7 @@ def main():
     modes.add_argument('--receipts', action='store_true', help='Original ARC007 actual desktop receipt bridge and model checks')
     modes.add_argument('--standalone-mvp', action='store_true', help='Fixed actual standalone MVP replay and six production roots')
     modes.add_argument('--status-scroll', action='store_true', help='Fixed UI007 status scroll replay and model')
+    modes.add_argument('--tea-contract', action='store_true', help='Original TEA001/002 complete-model and typed-effect component fixture')
     args = parser.parse_args()
     scope = require_qa_scope()
     runtime_base()
@@ -78,7 +79,7 @@ def main():
     (work / 'qa').mkdir()
     (work / 'elm.json').write_text(json.dumps(config))
     env = dict(os.environ, ELM_HOME=str(output / 'elm-home'))
-    if args.receipts or args.status_scroll:
+    if args.receipts or args.status_scroll or args.tea_contract:
         for key in ('NODE_OPTIONS', 'NODE_PATH', 'FORCE_COLOR'):
             env.pop(key, None)
         env['NO_COLOR'] = '1'
@@ -116,7 +117,7 @@ def main():
             run('compile-' + harness_name, [compiler, 'make', 'qa/' + fixture_name + '.elm', '--optimize', '--output=' + str(output / (harness_name + '.js'))])
             if not args.receipts:
                 run(harness_name, [str(node), 'qa/' + harness_name + '.cjs', str(output / (harness_name + '.js')), str(output / (harness_name + '.json'))])
-        elif args.authority or args.receipts or args.standalone_mvp or args.status_scroll:
+        elif args.authority or args.receipts or args.standalone_mvp or args.status_scroll or args.tea_contract:
             raise RuntimeError('Original scenario fixture is required')
         if not (args.authority or args.receipts or args.browser):
             for filename in ('UiHttpReplay.elm', 'ui-http.cjs'):
@@ -147,6 +148,32 @@ def main():
                 raise RuntimeError('Standalone MVP replay incomplete or failed')
             report['standaloneMvp'] = {'checks': len(replay_result['checks']), 'seed': replay_result.get('seed'),
                                        'resultSHA256': sha(output / 'standalone-mvp.json')}
+        if args.tea_contract:
+            for filename in ('TeaContractReplay.elm', 'tea-contract.cjs', 'tea-contract-cases.cjs'):
+                source = root / 'qa' / filename
+                if source.is_symlink() or not source.is_file():
+                    raise RuntimeError('Complete TEA contract fixture/oracle/runner are required')
+                sources[str(source.relative_to(REPO))] = sha(source)
+                shutil.copy2(source, work / 'qa' / filename)
+                if sha(work / 'qa' / filename) != sources[str(source.relative_to(REPO))]:
+                    raise RuntimeError('TEA contract input changed during staging')
+            # Production roots above remain optimized. This QA-only fixture
+            # retains Debug.log so the read-only runner can observe the entire
+            # unmodified reducer tuple without exposing opaque constructors.
+            run('compile-tea-contract', [compiler, 'make', 'qa/TeaContractReplay.elm',
+                                         '--output=' + str(output / 'tea-contract.js')])
+            run('tea-contract', [str(node), 'qa/tea-contract.cjs', str(output / 'tea-contract.js'),
+                                 str(work / 'qa/tea-contract-cases.cjs')])
+            contract = json.loads((output / 'tea-contract.stdout').read_text())
+            if (contract.get('passed') is not True or contract.get('reversiblePatch') is not True
+                    or not contract.get('cases') or contract.get('transitions', 0) <= 0
+                    or contract.get('runsPerCase') != 2
+                    or contract.get('originalFixtureSha256') != sha(output / 'tea-contract.js')
+                    or contract.get('oracleSha256') != sha(work / 'qa/tea-contract-cases.cjs')):
+                raise RuntimeError('Complete-model replay receipt incomplete or mismatched')
+            report['teaContract'] = dict(contract,
+                originalAccepted=False, nativeAccepted=False, releaseAccepted=False,
+                acceptanceLimit='Named complete-model/effect fixture only; whole original clauses require independent review and adequate positive/lifecycle coverage')
         if args.status_scroll:
             for filename in ('StatusScrollReplay.elm', 'status-scroll.cjs', 'status-scroll.qnt', 'status-scroll_test.qnt'):
                 source = root / 'qa' / filename

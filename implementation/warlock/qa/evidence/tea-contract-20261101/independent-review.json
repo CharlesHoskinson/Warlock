@@ -1,0 +1,108 @@
+{
+  "schema": 1,
+  "reviewedAtUTC": "2026-11-01T19:05:55.599879+00:00",
+  "reviewer": {
+    "name": "reviewer",
+    "independent": true,
+    "disposition": "accepted-component-observation-only"
+  },
+  "requirements": [
+    "ELM-TEA-001",
+    "ELM-TEA-002"
+  ],
+  "disposition": "partial",
+  "scope": "Actual protected compiler and named complete DesktopPolicy structural model/effect replay. No original scenario/whole EARS/native/release acceptance.",
+  "sourceRevision": null,
+  "sourceRevisionStatus": "Uncommitted tested source tuple; component input hashes bind evidence but do not constitute an accepted immutable original-source claim.",
+  "inputBinding": {
+    "packet": ".warlock-contributor/evidence/tea-contract-review-02.json",
+    "packetSHA256": "c9d404a72b7140212e2714e30ee05d6c286de0d3778f5d4352bec3dc0f997720",
+    "inputCount": 123,
+    "currentRegularMatches": 123,
+    "errors": [],
+    "completeHashesRetainedInPacket": true,
+    "forbiddenFilesRead": false
+  },
+  "relevantSourceHashes": {
+    "implementation/warlock/qa/TeaContractReplay.elm": "a63153fc341d548a4382f78f6de331da62dd0d4882bb28d0c4e7dfd20387ed13",
+    "implementation/warlock/qa/tea-contract.cjs": "15597108de923405823578f89f2c667988f8602f12ddb68f449c365bb17319b8",
+    "implementation/warlock/qa/tea-contract-cases.cjs": "c3272b69d6e22182063014649a04acdf0a87b1aaf61ce5b9b043c6f7bb1e5a9c",
+    "implementation/warlock/src/Desktop.elm": "91223c94074f8ff908b2ed66f52e8025c8afcb78a977d4a5f3daf44df8ce7af4",
+    "tools/check_elm_cpu.py": "3e244fae2cc7388809ce0242365d0df56f790001e83a8718a7afd9aebe5f8323",
+    "tools/qa_cpu.py": "1b3ebe26d6c56f3a901513c75573854d811956a25753b283b6a0910dfa99a3a3"
+  },
+  "evidence": {
+    "report": ".warlock-contributor/elm-cpu-1793559549930167342/report.json",
+    "reportSHA256": "2cce6038d59e0759e48ef37eba1434a25a54982837167f86a1aff8b69eb297d4",
+    "canonicalObservation": "implementation/warlock/qa/evidence/tea-contract-20261101/observation.json",
+    "canonicalObservationSHA256": "2ca77a7f6f3e9e4466fbc4d63c4e1e1e325128048bc999388304ec0f8a03ad5d",
+    "firstComponentReport": ".warlock-contributor/elm-cpu-1793559196114529322/report.json",
+    "firstComponentReportSHA256": "e2e163a2397f721acfff74ce66bb124abc381f1de2b68c3087adb2b8ac32f360"
+  },
+  "acceptedComponentFacts": {
+    "passed": true,
+    "commandsNormalExit0": 14,
+    "optimizedProductionRoots": [
+      "Main",
+      "Bar",
+      "Popup",
+      "HttpMain",
+      "HttpBar",
+      "HttpPopup"
+    ],
+    "controlFixtures": [
+      "FeedbackContextReplay",
+      "UiHttpReplay"
+    ],
+    "namedCases": 32,
+    "testedTransitions": 64,
+    "setupPreludesExcluded": 6,
+    "freshRunsPerCase": 2,
+    "comparison": "Complete structural model and every typed effect field compare to source-authored literal outcomes, then repeat traces compare. Embedded wire strings are exact; object property serialization order is not observed.",
+    "observerProof": {
+      "originalCompiledFixtureSHA256": "511dc8d529a1819d80696e2c24c28a3f0fdef103720e60ff03a80fd0dfe80754",
+      "inMemoryInstrumentedSHA256": "edc9da6c6df922cf11ef465f27a7ea8240ec201b2a0564a21872d86f662251e8",
+      "patchOffset": 7279,
+      "insertedUtf8Bytes": 85,
+      "hashesIndependentlyReconstructed": true,
+      "reversalByteExact": true,
+      "sourceMutation": false,
+      "meaning": "Only pre-format _Debug_log read hook; original return value and reducer/model/effect values remain unchanged. No compiled artifact rewrite or constructor injection."
+    },
+    "guardFixesVerified": [
+      "Node environment scrub includes tea-contract",
+      "FeedbackContext fixture/harness mandatory in exact input closure and missing fixture fails",
+      "fixed runner/mode/hash/source closure/scope/core/private runtime/lock preserved"
+    ],
+    "networkScope": "No private network namespace is established by this non-browser mode; no network-isolation qualification claimed."
+  },
+  "fixtureAudit": {
+    "prelude": "Literal setupTimers accounts for all retained setup delays. Setup is excluded from tested-transition counts, requires a later actual tested transition, and full final GIVEN/last effects are independently asserted.",
+    "pins": "Six pending/refused/Saved/Unknown/reconciliation histories have actual compiled full-state/effect qualification; Saved pin-domain outcome is not a generic window Committed receipt.",
+    "coverageComplete": false,
+    "wholeTeaStatus": "NOT_ASSESSED"
+  },
+  "remainingOriginalGaps": [
+    "window-pending-mutation",
+    "window-committed-receipt",
+    "window-refused-mutation-receipt",
+    "disconnect-unknown-no-replay",
+    "rebind",
+    "exact-reachable-delay",
+    "Reachable pending motion/shortcut/settings malformed-preference/status regression with exact preservation and positive controls",
+    "Whole frontend custom-type and native-observation/desired-state/authoritative-snapshot inventory; strict finite decoder alone is not complete custom-type closure",
+    "Independent original requirement/scenario adjudication on a full immutable tested source commit"
+  ],
+  "nonblockingBoundaryCorpusLimit": "Current literals are named cases, not universal malformed-key proof. Oracle cloneLiteral forbids __proto__/constructor/prototype input keys; pinned Elm Json keyValuePairs uses value.hasOwnProperty. An own hasOwnProperty non-function field is an untested boundary case if arbitrary JSON objects are claimed in scope. No execution/counterexample was produced by reviewer, and no new native approval gate is inferred.",
+  "canonicalObservationAudit": {
+    "noFalseOriginalClosure": true,
+    "sourceUncommittedExplicit": true,
+    "wordingPrecision": "Explicit correction retained alongside historical canonical observation SHA2ca77a7f6f3e9e4466fbc4d63c4e1e1e325128048bc999388304ec0f8a03ad5d without changing its bytes: comparison means complete Publish payload values and embedded wire strings. JSON serialization byte ordering is not established by sorted structural snapshots. No oracle or acceptance verdict changes."
+  },
+  "originalAccepted": false,
+  "nativeAccepted": false,
+  "releaseAccepted": false,
+  "newWholeEarsClosures": 0,
+  "executionByReviewer": false,
+  "productionEditsByReviewer": false
+}

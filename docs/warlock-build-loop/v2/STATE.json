@@ -1,30 +1,42 @@
 {
   "schema": 1,
   "owner": "root-agentbus",
-  "updatedUTC": "2026-11-01T18:28:56.767423+00:00",
+  "updatedUTC": "2026-11-01T18:36:29.271734+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "ui005-haskell-search",
+    "id": "tea-model-effects",
     "requirements": [
-      "ELM-UI-005"
+      "ELM-TEA-002",
+      "ELM-TEA-001"
     ],
     "scenarios": [
-      "search-no-match"
+      "tea-pure-update",
+      "tea-typed-model"
     ],
     "paths": [
       "implementation/warlock/src/Main.elm",
-      "implementation/warlock/src/Surface.elm",
+      "implementation/warlock/src/DesktopPolicy.elm",
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/src/OutputController.elm",
+      "implementation/warlock/src/SurfaceController.elm",
+      "implementation/warlock/src/Shell.elm",
+      "implementation/warlock/src/Bar.elm",
+      "implementation/warlock/src/Popup.elm",
+      "implementation/warlock/src/HttpMain.elm",
+      "implementation/warlock/src/HttpBar.elm",
       "implementation/warlock/src/HttpPopup.elm",
-      "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc"
+      "implementation/warlock/qa/TeaContractReplay.elm",
+      "implementation/warlock/qa/tea-contract.cjs",
+      "implementation/warlock/qa/tea-contract-cases.cjs"
     ],
-    "before": "The current Haskell/Elm MVP physically opens Applications, but current physical search input and no-match/query retention have not been observed. Bounded QA input attempts have timing/geometry limits, not a demonstrated search defect.",
-    "after": "A user opens Applications, physically focuses search and types a nonmatching query; the current compiled Elm query and no-match message remain visible without launching. Repair actual source if the observed route fails, preserving Haskell native authority and all original obligations.",
+    "before": "Current Elm owning routes compile and selected replays pass, but complete semantic Model and every typed effect have not been checked against independent literal domain expectations; no whole TEA001/002 acceptance is established.",
+    "after": "The actual Elm frontend typed lifecycle/receipt/operation models and pure reducers satisfy the complete original TEA001/002 contracts. Identical sanitized histories yield identical complete models and effects, with independently expected literal state/effect outcomes; native behavior stays separately qualified.",
     "verification": [
-      "Protected current-source Elm/Haskell checks proportionate to actual fixes; actual owned app-only Omarchy physical search observation under unchanged original28s trial D, with retained query/no-match and no launch, fresh PID/birth/scope/geometry fences. VM component results do not replace native/keyboard/AT/IME/release acceptance."
+      "Pinned six-root compiler/type checks, actual DesktopPolicy owning-route complete-model/every-effect deterministic histories plus independent literal fixture outcomes and source-bound type/authority separation audit; retain failures and independently adjudicate each whole original EARS, no filtered-model shortcut or inferred native acceptance."
     ]
   },
   "nextSlices": [
@@ -3453,19 +3465,136 @@
       "sol-docs": "GPT-6.1 Sol HIGH recurring cross-thread advisor",
       "terra-browser": "Recurring UX/performance owner: smoothness/latency acceptance criteria and implementation review"
     },
-    "externalProcessReceipts": ".warlock-contributor/ui-stream-model-launch.json",
+    "externalProcessReceipts": [
+      "/home/charl/.local/state/warlock-team/20261031-agentbus/tea-positive-1900-launches.json",
+      "/home/charl/.local/state/warlock-team/20261031-agentbus/gemini-tea-positive-1900-launches.json",
+      "/home/charl/.local/state/warlock-team/20261031-agentbus/sol-advisor-launch.json",
+      "/home/charl/.local/state/warlock-team/20261031-agentbus/ux-performance-launch.json"
+    ],
     "authAcknowledgements": "AgentBus live log; process launch alone is not successful authentication",
     "singleProductSlice": true,
     "noDuplicateCoordinator": true,
-    "currentSlice": "ELM-UI-005 / search-no-match; current replacement route, historical original verdict preserved",
-    "currentProcessObservation": "14 actual external worker CLIs confirmed2026-11-01T17:04:40Z:10Terra,3GeminiArgon,1SolHIGH; no duplicates. Bounded turns, not permanent liveness.",
+    "currentSlice": "ELM-TEA-001 tea-typed-model + ELM-TEA-002 tea-pure-update; complete owning-route model/effect fixture and independent whole-contract audit",
+    "currentProcessObservation": "15 actual external worker CLIs confirmed 2026-11-01T19:01:45.742107+00:00:10 base Terra,3 Gemini Argon HIGH,1 Sol6.1HIGH advisor,1 TerraHIGH UX/performance owner; no duplicates. Bounded turns only.",
     "lastHealthObservation": {
-      "observedUTC": "2026-11-01T16:58:00Z",
-      "doctor": "Six checks passed; existing verifier/auth/arbiterPID1116694 reused; Sol identity separately passed six checks17:03."
+      "observedUTC": "2026-11-01T18:57:22Z",
+      "doctor": "All six checks passed: existing verifier/auth, valid unrevoked lead, broker, clock and arbiterPID1116694 reused."
     },
     "liveCensusReceipt": "/home/charl/.local/state/warlock-team/20261031-agentbus/current-worker-census.json",
-    "lastLivenessUTC": "2026-11-01T17:04:40.519834+00:00",
-    "actualWorkerCensus": "/home/charl/.local/state/warlock-team/20261031-agentbus/census-1315-20261101.json",
+    "lastLivenessUTC": "2026-11-01T19:01:45.742107+00:00",
+    "actualWorkerCensus": {
+      "observedUTC": "2026-11-01T19:01:45.742107+00:00",
+      "workers": [
+        {
+          "name": "gemini-gui",
+          "pid": 2401372,
+          "cli": "agy",
+          "model": "gemini-4-argon-high",
+          "explicitSkipPermissions": true
+        },
+        {
+          "name": "gemini-site",
+          "pid": 2401374,
+          "cli": "agy",
+          "model": "gemini-4-argon-high",
+          "explicitSkipPermissions": true
+        },
+        {
+          "name": "gemini-omarchy",
+          "pid": 2401376,
+          "cli": "agy",
+          "model": "gemini-4-argon-high",
+          "explicitSkipPermissions": true
+        },
+        {
+          "name": "sol-advisor",
+          "pid": 2402092,
+          "cli": "codex",
+          "model": "gpt-6.1-sol",
+          "explicitSkipPermissions": false
+        },
+        {
+          "name": "terra-graph",
+          "pid": 2402222,
+          "cli": "codex",
+          "model": "gpt-6.1-terra",
+          "explicitSkipPermissions": false
+        },
+        {
+          "name": "terra-q-front",
+          "pid": 2402223,
+          "cli": "codex",
+          "model": "gpt-6.1-terra",
+          "explicitSkipPermissions": false
+        },
+        {
+          "name": "terra-portable",
+          "pid": 2402224,
+          "cli": "codex",
+          "model": "gpt-6.1-terra",
+          "explicitSkipPermissions": false
+        },
+        {
+          "name": "terra-engine",
+          "pid": 2402226,
+          "cli": "codex",
+          "model": "gpt-6.1-terra",
+          "explicitSkipPermissions": false
+        },
+        {
+          "name": "terra-q-http",
+          "pid": 2402237,
+          "cli": "codex",
+          "model": "gpt-6.1-terra",
+          "explicitSkipPermissions": false
+        },
+        {
+          "name": "terra-q-network",
+          "pid": 2402258,
+          "cli": "codex",
+          "model": "gpt-6.1-terra",
+          "explicitSkipPermissions": false
+        },
+        {
+          "name": "terra-q-lifetime",
+          "pid": 2402269,
+          "cli": "codex",
+          "model": "gpt-6.1-terra",
+          "explicitSkipPermissions": false
+        },
+        {
+          "name": "terra-q-origin",
+          "pid": 2402365,
+          "cli": "codex",
+          "model": "gpt-6.1-terra",
+          "explicitSkipPermissions": false
+        },
+        {
+          "name": "terra-security",
+          "pid": 2402433,
+          "cli": "codex",
+          "model": "gpt-6.1-terra",
+          "explicitSkipPermissions": false
+        },
+        {
+          "name": "terra-vm",
+          "pid": 2402523,
+          "cli": "codex",
+          "model": "gpt-6.1-terra",
+          "explicitSkipPermissions": false
+        },
+        {
+          "name": "ux-performance",
+          "pid": 2402597,
+          "cli": "codex",
+          "model": "gpt-6.1-terra",
+          "explicitSkipPermissions": false
+        }
+      ],
+      "count": 15,
+      "duplicates": [],
+      "absent": []
+    },
     "solAdvisor": {
       "name": "sol-advisor",
       "identity": "sol-docs",
@@ -3475,7 +3604,8 @@
       "role": "Recurring cross-thread architecture/delivery/EARS advisor; Root retains sole coordination, source integration and protected execution.",
       "continuity": "At each team reconciliation include advisor. Resume same authenticated identity/session only after actual CLI absence and eligible terminal log; no duplicate coordinator or keys.",
       "writes": "Exact-claimed distinct ignored advisor drafts only; no production input mutation.",
-      "requiredByUser": true
+      "requiredByUser": true,
+      "cutoff": "2026-11-01T19:35:00Z"
     },
     "requestedExternalWorkerCount": 15,
     "advisorLaunchReceipt": "/home/charl/.local/state/warlock-team/20261031-agentbus/sol-advisor-launch.json",
@@ -3491,9 +3621,9 @@
       "muse": "bounded DEL010 EARS continuity",
       "terra-artifacts": "unexecuted delegated-UID protected-runner draft"
     },
-    "currentLaunchReceipt": "/home/charl/.local/state/warlock-team/20261031-agentbus/idle-delivery-1700-launches.json",
-    "nextReconciliationUTC": "2026-11-01T17:25:00Z",
-    "solAdvisorReconciliationUTC": "2026-11-01T17:29:00Z",
+    "currentLaunchReceipt": "/home/charl/.local/state/warlock-team/20261031-agentbus/tea-positive-1900-launches.json",
+    "nextReconciliationUTC": "2026-11-01T19:35:00Z",
+    "solAdvisorReconciliationUTC": "2026-11-01T19:35:00Z",
     "uxPerformanceOwner": {
       "name": "ux-performance",
       "identity": "terra-browser",
@@ -3503,11 +3633,11 @@
       "role": "Recurring smoothness, UX and latency acceptance-criteria owner across all work threads",
       "requestedExternalOrdinal": 15,
       "canonicalCriteria": "docs/warlock-build-loop/v2/UX-PERFORMANCE-ACCEPTANCE.md",
-      "cutoff": "2026-11-01T18:29:00Z",
+      "cutoff": "2026-11-01T19:35:00Z",
       "launcherPid": 2342454,
       "priorTerminalLog": "/home/charl/.local/state/warlock-team/20261031-agentbus/logs/terra-browser-20261031-182128.log",
-      "log": "/home/charl/.local/state/warlock-team/20261031-agentbus/logs/ux-performance-1802-launcher.log",
-      "prompt": "/home/charl/.local/state/warlock-team/20261031-agentbus/ux-performance-1802.txt",
+      "log": "/home/charl/.local/state/warlock-team/20261031-agentbus/logs/ux-performance-tea-positive-1900-launcher.log",
+      "prompt": "/home/charl/.local/state/warlock-team/20261031-agentbus/ux-performance-tea-positive-1900.txt",
       "continuity": "Include each census andboundedresumption; actualCLIabsence+eligibleterminallog before same-session resume; rootsolecoordinator/protectedexecutor."
     },
     "uxPerformanceLaunchReceipt": "/home/charl/.local/state/warlock-team/20261031-agentbus/ux-performance-launch.json"
@@ -3540,7 +3670,7 @@
     "releaseAcceptance": false,
     "wholeRequirementsAccepted": 15
   },
-  "nextConcreteAction": "Implement complete-model/every-effect deterministic owning-route fixture for original TEA002; audit TEA001 typed lifecycle/authority separately, then TEA005 interop. Exact compiler/replay/independent boundary evidence per original; native qualified separately, no acceptance shortcuts.",
+  "nextConcreteAction": "Complete original TEA001/002: source-literal actual pending preference malformed-status regression, missing window receipt/disconnect/rebind/exact Delay fixture coverage, and retained finite ADT source repairs; Root executes proportional protected checks then independently adjudicates whole originals. Current component PASS is partial.",
   "currentNamedScenarioClosure": {
     "recordedAccepted": 39,
     "baselineTotal": 417,
@@ -3736,9 +3866,34 @@
       "record": ".warlock-contributor/engine-pid1.json",
       "boundedEnd": "Published3f88ed9b498cf07d7c944cdcb3cb27163358b310; verified idle and physical Applications component observation. ARC002 stillpartial; originaltimer andfailures retained.",
       "evidence": "implementation/warlock/qa/evidence/engine-idle-20261101/component-observation.json"
+    },
+    {
+      "slice": {
+        "id": "ui005-haskell-search",
+        "requirements": [
+          "ELM-UI-005"
+        ],
+        "scenarios": [
+          "search-no-match"
+        ],
+        "paths": [
+          "implementation/warlock/src/Main.elm",
+          "implementation/warlock/src/Surface.elm",
+          "implementation/warlock/src/HttpPopup.elm",
+          "implementation/warlock/haskell/runtime/ui/Warlock/Ui/Mvp.hsc"
+        ],
+        "before": "The current Haskell/Elm MVP physically opens Applications, but current physical search input and no-match/query retention have not been observed. Bounded QA input attempts have timing/geometry limits, not a demonstrated search defect.",
+        "after": "A user opens Applications, physically focuses search and types a nonmatching query; the current compiled Elm query and no-match message remain visible without launching. Repair actual source if the observed route fails, preserving Haskell native authority and all original obligations.",
+        "verification": [
+          "Protected current-source Elm/Haskell checks proportionate to actual fixes; actual owned app-only Omarchy physical search observation under unchanged original28s trial D, with retained query/no-match and no launch, fresh PID/birth/scope/geometry fences. VM component results do not replace native/keyboard/AT/IME/release acceptance."
+        ]
+      },
+      "record": ".warlock-contributor/ui005-haskell-search.json",
+      "boundedEnd": "Current physicalUI005searchsnapshotpartialpublished31a92dce9; finalaccepted-query/nativeAT/performanceobligations remain, no netnewclosure.",
+      "evidence": "implementation/warlock/qa/evidence/ui005-haskell-search-20261101/observation.json"
     }
   ],
-  "activeContributorRecord": ".warlock-contributor/ui005-haskell-search.json",
+  "activeContributorRecord": ".warlock-contributor/tea-model-effects.json",
   "ui007StatusScrollCheckpoint": {
     "commit": "425ad4e411cadec68f04214cf7eb5a763a382763",
     "scope": "Component-only; whole UI007 and native/AT remain partial",
@@ -3935,5 +4090,27 @@
     "originalWholeAccepted": false,
     "nativeAccepted": false,
     "remaining": "Final authoritativequery/cataloggenerationcorrelation; nativeATIME/provider/performance/release. HistoricalUI005wholeverdictunchanged."
+  },
+  "teaContractComponentObservation": {
+    "observedUTC": "2026-11-01T19:03:40.080729+00:00",
+    "evidence": "implementation/warlock/qa/evidence/tea-contract-20261101/observation.json",
+    "reportSHA256": "2cce6038d59e0759e48ef37eba1434a25a54982837167f86a1aff8b69eb297d4",
+    "optimizedRoots": 6,
+    "cases": 32,
+    "transitions": 64,
+    "excludedSetupPreludes": 6,
+    "runsPerCase": 2,
+    "wholeAccepted": false,
+    "missing": [
+      "window-pending-mutation",
+      "window-committed-receipt",
+      "window-refused-mutation-receipt",
+      "disconnect-unknown-no-replay",
+      "rebind",
+      "exact-reachable-delay",
+      "Reachable pending motion/shortcut/settings malformed-status production regression",
+      "Whole frontend custom-type/authority audit and retained finite String state conversion",
+      "Independent whole original requirement adjudication with immutable source commit"
+    ]
   }
 }

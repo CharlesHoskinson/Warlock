@@ -111,7 +111,7 @@ def main():
     haskell = runner == REPO / 'tools/check_haskell_cpu.py'
     tea = runner == REPO / 'tools/check_tea_cpu.py'
     allowed = ([[], ['--capacity']] if tea else ([['--prepare'], ['--build'], ['--ui-origin'], ['--ui-models'], ['--site']] if haskell else
-               ([[], ['--self-test']] if registry else [[], ['--browser'], ['--authority'], ['--receipts'], ['--standalone-mvp'], ['--status-scroll']])))
+               ([[], ['--self-test']] if registry else [[], ['--browser'], ['--authority'], ['--receipts'], ['--standalone-mvp'], ['--status-scroll'], ['--tea-contract']])))
     if (not registry and not haskell and not tea and runner != REPO / 'tools/check_elm_cpu.py') or packet['arguments'] not in allowed:
         raise RuntimeError('Only a fixed reviewed development runner and mode is supported')
     mandatory = {'tools/qa_cpu.py', 'tools/check_elm_cpu.py', 'window-integration-qa/qa_launch.py',
@@ -125,6 +125,13 @@ def main():
     if packet['arguments'] == ['--standalone-mvp']:
         mandatory.update({'implementation/warlock/qa/UiHttpReplay.elm', 'implementation/warlock/qa/ui-http.cjs',
                           'implementation/warlock/qa/StandaloneMvpReplay.elm', 'implementation/warlock/qa/standalone-mvp.cjs'})
+    if packet['arguments'] == ['--tea-contract']:
+        mandatory.update({'implementation/warlock/qa/UiHttpReplay.elm', 'implementation/warlock/qa/ui-http.cjs',
+                          'implementation/warlock/qa/TeaContractReplay.elm',
+                          'implementation/warlock/qa/tea-contract.cjs',
+                          'implementation/warlock/qa/tea-contract-cases.cjs',
+                          'implementation/warlock/qa/FeedbackContextReplay.elm',
+                          'implementation/warlock/qa/feedback-context.cjs'})
     if packet['arguments'] == ['--status-scroll']:
         mandatory.update({'implementation/warlock/qa/UiHttpReplay.elm', 'implementation/warlock/qa/ui-http.cjs',
                           'implementation/warlock/qa/StatusScrollReplay.elm', 'implementation/warlock/qa/status-scroll.cjs',

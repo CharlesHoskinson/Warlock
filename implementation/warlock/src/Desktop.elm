@@ -117,6 +117,38 @@ choiceToken model = model.choice |> Maybe.map .token
 
 type ViewStamp = ViewStamp (Maybe Binding.Binding) Counter
 
+type SaveReceipt = ReceiptSaved | ReceiptRefused | ReceiptUnknown
+
+type ShortcutSaveReceipt = ShortcutSaved | ShortcutStored | ShortcutRefused | ShortcutUnknown
+
+saveReceiptDecoder : D.Decoder SaveReceipt
+saveReceiptDecoder = D.string |> D.andThen (\raw -> case raw of
+    "Saved" -> D.succeed ReceiptSaved
+    "Refused" -> D.succeed ReceiptRefused
+    "Unknown" -> D.succeed ReceiptUnknown
+    _ -> D.fail "Save receipt status")
+
+saveReceiptName : SaveReceipt -> String
+saveReceiptName status = case status of
+    ReceiptSaved -> "Saved"
+    ReceiptRefused -> "Refused"
+    ReceiptUnknown -> "Unknown"
+
+shortcutSaveReceiptDecoder : D.Decoder ShortcutSaveReceipt
+shortcutSaveReceiptDecoder = D.string |> D.andThen (\raw -> case raw of
+    "Saved" -> D.succeed ShortcutSaved
+    "Stored" -> D.succeed ShortcutStored
+    "Refused" -> D.succeed ShortcutRefused
+    "Unknown" -> D.succeed ShortcutUnknown
+    _ -> D.fail "Shortcut receipt status")
+
+shortcutSaveReceiptName : ShortcutSaveReceipt -> String
+shortcutSaveReceiptName status = case status of
+    ShortcutSaved -> "Saved"
+    ShortcutStored -> "Stored"
+    ShortcutRefused -> "Refused"
+    ShortcutUnknown -> "Unknown"
+
 type Msg
     = SurfaceEntry PopupOrigin Msg
     | Window TaskbarShell.Msg
@@ -884,13 +916,13 @@ updateAvailable message model =
                                 preference=MotionPreferences.observe receipt.snapshot motion.preferences
                             in (advance {model | motion={motion | preferences=preference},motionExpected=Nothing,adapterNotice=AdapterNotice.failedRead AdapterNotice.Motion receipt.binding receipt.request Nothing Nothing (receipt.snapshot==Nothing) model.adapterNotice},[])
                 Ok "motion-preferences-outcome" ->
-                    let decoder=strict ["protocolVersion","kind","binding","requestId","status","snapshot"] (D.map5 (\_ binding request status snapshot -> {binding=binding,request=request,status=status,snapshot=snapshot}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "status" D.string) (D.field "snapshot" (D.nullable MotionPreferences.decoder)))
+                    let decoder=strict ["protocolVersion","kind","binding","requestId","status","snapshot"] (D.map5 (\_ binding request status snapshot -> {binding=binding,request=request,status=status,snapshot=snapshot}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "status" saveReceiptDecoder) (D.field "snapshot" (D.nullable MotionPreferences.decoder)))
                     in case D.decodeValue decoder raw of
                         Err _ -> (model,[])
                         Ok receipt ->
                             if model.windows.shell.binding/=Just receipt.binding then (model,[]) else
                             let motion=model.motion
-                                preference=MotionPreferences.receive receipt.request receipt.status receipt.snapshot motion.preferences
+                                preference=MotionPreferences.receive receipt.request (saveReceiptName receipt.status) receipt.snapshot motion.preferences
                             in if preference==motion.preferences then (model,[]) else (advance {model | motion={motion | preferences=preference}},[])
                 Ok "host-motion-preference" ->
                     case D.decodeValue Motion.decoder raw of
@@ -1024,11 +1056,11 @@ updateAvailable message model =
                                 (advance {model | shortcutPreferences=ShortcutPreferences.observe receipt.snapshot (Just receipt.inventory) model.shortcutPreferences,shortcutExpected=Nothing,adapterNotice=AdapterNotice.failedRead AdapterNotice.Shortcuts receipt.binding receipt.request Nothing Nothing (receipt.snapshot==Nothing) model.adapterNotice},[])
                         Err _ -> (model,[])
                 Ok "shortcut-preferences-outcome" ->
-                    let decoder=strict ["protocolVersion","kind","binding","requestId","status","snapshot","inventory"] (D.map6 (\_ binding request status snapshot inventory -> {binding=binding,request=request,status=status,snapshot=snapshot,inventory=inventory}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "status" D.string) (D.field "snapshot" (D.nullable ShortcutPreferences.decoder)) (D.field "inventory" ShortcutPreferences.inventoryDecoder))
+                    let decoder=strict ["protocolVersion","kind","binding","requestId","status","snapshot","inventory"] (D.map6 (\_ binding request status snapshot inventory -> {binding=binding,request=request,status=status,snapshot=snapshot,inventory=inventory}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "status" shortcutSaveReceiptDecoder) (D.field "snapshot" (D.nullable ShortcutPreferences.decoder)) (D.field "inventory" ShortcutPreferences.inventoryDecoder))
                     in case D.decodeValue decoder raw of
                         Ok receipt ->
                             if model.windows.shell.binding/=Just receipt.binding then (model,[]) else
-                                let preferences=ShortcutPreferences.receive receipt.request receipt.status receipt.snapshot (Just receipt.inventory) model.shortcutPreferences
+                                let preferences=ShortcutPreferences.receive receipt.request (shortcutSaveReceiptName receipt.status) receipt.snapshot (Just receipt.inventory) model.shortcutPreferences
                                 in if preferences==model.shortcutPreferences then (model,[]) else (advance {model | shortcutPreferences=preferences},[])
                         Err _ -> (model,[])
                 Ok "shell-settings" ->
@@ -1040,11 +1072,11 @@ updateAvailable message model =
                                 in (next,if model.settingsOpen && model.settingsOpening && receipt.snapshot/=Nothing then [Focus (key next "settings:close")] else [])
                         Err _ -> (model,[])
                 Ok "shell-settings-outcome" ->
-                    let decoder=strict ["protocolVersion","kind","binding","requestId","status","snapshot"] (D.map5 (\_ binding request status snapshot -> {binding=binding,request=request,status=status,snapshot=snapshot}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "status" D.string) (D.field "snapshot" (D.nullable Settings.decoder)))
+                    let decoder=strict ["protocolVersion","kind","binding","requestId","status","snapshot"] (D.map5 (\_ binding request status snapshot -> {binding=binding,request=request,status=status,snapshot=snapshot}) version (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder) (D.field "status" saveReceiptDecoder) (D.field "snapshot" (D.nullable Settings.decoder)))
                     in case D.decodeValue decoder raw of
                         Ok receipt ->
                             if model.windows.shell.binding/=Just receipt.binding then (model,[]) else
-                                let settings=Settings.receive receipt.request receipt.status receipt.snapshot model.settings
+                                let settings=Settings.receive receipt.request (saveReceiptName receipt.status) receipt.snapshot model.settings
                                 in if settings==model.settings then (model,[]) else (advance {model | settings=settings},[])
                         Err _ -> (model,[])
                 Ok "application-catalog" ->
