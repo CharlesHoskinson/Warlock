@@ -1,0 +1,132 @@
+{
+  "schema": 1,
+  "updatedUTC": "2026-11-01T01:21:17.592572+00:00",
+  "requirement": "ELM-DEL-010",
+  "originalEARS": "The native service SHALL authenticate bridge peers by local user identity and approved session lifetime before accepting effect requests.",
+  "originalVerification": "Retain peer-credential traces for allowed and cross-user/replayed sessions.",
+  "status": "partial",
+  "requirementAccepted": false,
+  "componentAccepted": true,
+  "sourceRevision": "367a4899023340bc9cfeb2765a90b7ed37e58109",
+  "sourceHashes": {
+    "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/Aggregate.hs": "e4993f121972d48ac35cfda661f61da5abd4f423fae70892779bed983fd35a08",
+    "implementation/warlock/haskell/runtime/runtime.cabal": "86955f37a289eca925470ba0cf1d3cc1be28aab357f1040b1fcd5927e6f1b111",
+    "implementation/warlock/haskell/runtime/fixture-peer/Main.hs": "aa95817a45984d8f5f526f0e36312ce1d9e21256edde40075f72ebff5967565d",
+    "implementation/warlock/haskell/runtime/test-persistent/Main.hs": "e5cbed6fa0951ea8cc4cd880b76ade7c35c432a5656bb102c47337cb6e668c5f",
+    "implementation/warlock/haskell/runtime/formal/current_registration_test.qnt": "157288b0e7f37e6696b6f898ea52882ae3b9f237b1065814a5b000217f363e78",
+    "implementation/warlock/haskell/runtime/formal/current_registration.qnt": "f3f4cbd87ea61db42d94250361a834a037e7d4b8638f51d410859435c6186c84",
+    "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap.hs": "76f26fe661ab97dac21b2deedc3e724aae0578c3b75050576b794fb255728ede",
+    "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/ScopedPeer.hs": "9836f7e5020efbbe917b8c2de4dd0de015174f28eb0484a554f98abfff0d7f18",
+    "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/CurrentSessions.hs": "6047f19ea3020c0860a54e0666c2866846aa77cd8643fc550f145bb66efe2a39",
+    "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/CredentialScopeGuard.hs": "99328b00fd46bdc810b89dd824b182c26a77b4836fd0c20b7bb5f5af7ec19281",
+    "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/SocketOwner.hsc": "76ee35cc970ef53990e4daa0e42cb47cb1885da892791631e8bfbf8796769219",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/CredentialIngress.hs": "89b735faff45941cc4523a89515cf408eeadfde44cb8b1bd5a6b70f8ed5a4a96",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress.hs": "fb5123cf92f0f84c78938cf37ee14cf301df3aeb13f0368099dfa092b663c234",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress/Internal.hs": "034a50695089d225d639c2be95f300a4f8e4478008e6adeaa748e7a00139daef",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Codec.hs": "9f1fcb18698ca3fba49aacf903a0040a5e78b5cd16d6ff4cde129b84bad68572",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/PeerCredential.hs": "3f0db514bad7b5d752bef31abca98805d9bef3602c6b8b7ea4348fdf29a67e76",
+    "implementation/warlock/haskell/protocol/src/Warlock/Transport/PeerCredentials.hsc": "73adfbd3faf50b6918b805844ed5d95463914f4bd041bb3ab057d357765f2ee1",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Internal.hsc": "f13472d6da143a38d8aeaf5c944a1346b754844a7b8f67fae295d31733bbf11f",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Bootstrap.hs": "dc8273cb33d6f23757b20f16f7cefc83d00fc8ab4d00520149744928bbd1a461",
+    "implementation/warlock/haskell/runtime/README.md": "806a9a4f3e41afc100c15c24ea6ae5bfe06a8d88dfdf9bbe71ed7be79b22a215"
+  },
+  "sourceTuple": {
+    "sourceRevision": "367a4899023340bc9cfeb2765a90b7ed37e58109",
+    "core": "Actual ordinary production warlock-runtime Haskell library, real selected child and kernel recvmsg credentials; no compositor or native effect issuer loaded.",
+    "plugin": "No native plugin loaded; no core/plugin ABI or GUI acceptance claimed.",
+    "toolchain": "Private pinned GHC9.6.7/Cabal3.12.1.0 offline SDK; exact dependency metadata/plans and11250-file inventory retained. Quint0.33.0/Node24.22.1, reviewed164input packet7251f65ae67d9774a459a8f615254f91b480de24517ade2f63fee96da30f9d2f."
+  },
+  "acceptedScenarios": [
+    {
+      "name": "delivery-010",
+      "oracle": "the request is refused without an effect",
+      "status": "accepted",
+      "scope": "Literal original named scenario on actual public ordinary-production-library Haskell authentication boundary; no native effect issuer or GUI acceptance. Approved prefix enters once from selectedPID13050/UID1000/GID1000. Real unrelated forkPID13055/UID1000/GID1000 sends a valid prepare/restore effect intent on the same endpoint. Actual recvmsg suffix is FragmentObserved13055/1000/1000, exactForeignProcess, no further admission attempt or checked-policy callback. No effect request from that unrelated sender is accepted. Whole ELM-DEL-010 remains partial for separately missing real cross-user verification.",
+      "missingObservations": []
+    },
+    {
+      "name": "peer-wrong-session",
+      "oracle": "session authorization rejects the request without a native effect",
+      "status": "accepted",
+      "scope": "Literal original named scenario on actual public ordinary-production-library Haskell authentication boundary; no native effect issuer or GUI acceptance. Same real selectedPID13035/UID1000/GID1000 first authenticates and enters checked policy. Host retires its actual current registration beforeACK1; compiled client waits forACK1 then sends the next valid effect intent. Actual recvmsg suffix retains samePID/UID/GID and exactScopeClosed; zero new checked-policy callback. Thus the sender is expired before the later send as well as before admission. Separate buffered-retirement controlPID13030 rejects already-queued later input after retirement. Running retireBootstrap returnsFalse and is not mistaken for physical cleanup; final independent retirement succeeds. Whole ELM-DEL-010 remains partial for separately missing real cross-user verification.",
+      "missingObservations": []
+    },
+    {
+      "name": "peer-approved-session",
+      "oracle": "authentication admits it for subsequent native policy validation",
+      "status": "accepted",
+      "scope": "Literal original named scenario on actual public ordinary-production-library Haskell authentication boundary; no native effect issuer or GUI acceptance. Eight current approved same-user conversations deliver3,4,5,3,4,5,3,4 distinct valid current prepare/restore intents in expected order,31checked-policy entries total. Every delivered frame retains its own actual kernel fragments followed by final admission; selectedPID and actual receiverUID1000/GID1000 match. Actual callbackwire strings exactly equal independently authored expected rawframes in these retained traces. This is authentication admission for subsequent native policy validation. Whole ELM-DEL-010 remains partial for separately missing real cross-user verification.",
+      "missingObservations": []
+    }
+  ],
+  "reviewer": {
+    "name": "reviewer",
+    "independent": true,
+    "wholeRequirementDisposition": "partial",
+    "namedScenarioDisposition": "accepted"
+  },
+  "evidence": [
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-20261101/report.json",
+      "sha256": "22c018c3de6ac6aca3a0cddc14aa2755c1fc173920546c9b95e50ac9f417e072"
+    },
+    {
+      "path": "docs/warlock-build-loop/v2/persistent-auth-review-20261101.json",
+      "sha256": "b5eb98f722ab6dcf123191984794cdab854c93b2122965be7ed162493ea830bc"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-20261101/checks.tar.gz",
+      "sha256": "3197e6b8b0eb80a82278a63dfbe8a75f549949e7b6f862630594f16553509814"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-20261101/cpu-review.json",
+      "sha256": "7251f65ae67d9774a459a8f615254f91b480de24517ade2f63fee96da30f9d2f"
+    }
+  ],
+  "verification": {
+    "suiteCount": 25,
+    "invocations": 37,
+    "testCommandExit": 0,
+    "publicCases": 14,
+    "publicPolicyEntries": 36,
+    "namedModelTests": 27,
+    "genericSampling": {
+      "samples": 10000,
+      "maxSteps": 100,
+      "seed": 20261031,
+      "witnessCounts": {
+        "witnessReserved": 7468,
+        "witnessBuilt": 4283,
+        "witnessLive": 2260,
+        "witnessChecked": 10,
+        "witnessClaim": 6,
+        "witnessDelivered": 6,
+        "witnessRetired": 10000,
+        "witnessReaped": 2260,
+        "witnessExhausted": 3501,
+        "witnessRefused": 10000,
+        "witnessMixed": 3405,
+        "witnessMultipleFrames": 0
+      }
+    },
+    "focusedConversationSampling": {
+      "samples": 10000,
+      "maxSteps": 30,
+      "seed": 20261031,
+      "witnessCounts": {
+        "witnessLive": 1212,
+        "witnessClaim": 297,
+        "witnessDelivered": 297,
+        "witnessMultipleFrames": 47
+      }
+    }
+  },
+  "missingObservations": [
+    "Required actual cross-user credential trace remains missing: common mode exercises same-user senders and real retired sessions. newuidmap/newgidmap absent; single graphical authorization attempt timed out, no package installed or repeated prompt."
+  ],
+  "nativeAcceptance": false,
+  "guiAcceptance": false,
+  "assistiveTechnologyAcceptance": false,
+  "releaseAccepted": false,
+  "nextAction": "Continue independent mandatory source work; qualify real cross-user evidence only after the actual UID mapping prerequisite is available, without retrying the expired prompt or bypassing authorization."
+}

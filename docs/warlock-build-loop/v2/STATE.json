@@ -1,52 +1,56 @@
 {
   "schema": 1,
   "owner": "root-agentbus",
-  "updatedUTC": "2026-10-31T23:58:16.047484+00:00",
+  "updatedUTC": "2026-11-01T01:21:17.592572+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "receipt-cancelled-correlation",
+    "id": "authenticated-session-delivery",
     "requirements": [
-      "ELM-ARC-007"
+      "ELM-DEL-010"
     ],
     "scenarios": [
-      "architecture-007",
-      "receipt-pending",
-      "receipt-committed",
-      "receipt-refused",
-      "receipt-cancelled"
+      "delivery-010",
+      "peer-wrong-session",
+      "peer-approved-session"
     ],
     "paths": [
-      "implementation/warlock/src/NativeOutcome.elm",
-      "implementation/warlock/src/ReceiptRouter.elm",
-      "implementation/warlock/qa/ReceiptStateReplay.elm",
-      "implementation/warlock/qa/receipt-state.cjs",
-      "implementation/warlock/qa/receipt-lifecycle.qnt",
-      "implementation/warlock/src/Effects.elm",
-      "implementation/warlock/src/Shell.elm",
-      "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/src/TaskbarShell.elm",
-      "implementation/warlock/src/Menu.elm",
-      "implementation/warlock/src/MenuBridge.elm",
-      "implementation/warlock/src/Binding.elm",
-      "implementation/warlock/src/UInt64.elm",
-      "implementation/warlock/src/OutputController.elm",
-      "implementation/warlock/src/SurfaceController.elm",
-      "implementation/warlock/src/NativeProvider.elm",
-      "implementation/warlock/src/ActionProjection.elm",
-      "implementation/warlock/src/GeometryProjection.elm"
+      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/Aggregate.hs",
+      "implementation/warlock/haskell/runtime/runtime.cabal",
+      "implementation/warlock/haskell/runtime/fixture-peer/Main.hs",
+      "implementation/warlock/haskell/runtime/test-persistent/Main.hs",
+      "implementation/warlock/haskell/runtime/formal/current_registration_test.qnt",
+      "implementation/warlock/haskell/runtime/formal/current_registration.qnt",
+      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/ScopedPeer.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/CurrentSessions.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/CredentialScopeGuard.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/SocketOwner.hsc",
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/CredentialIngress.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress/Internal.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Codec.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/PeerCredential.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Transport/PeerCredentials.hsc",
+      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Internal.hsc",
+      "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Bootstrap.hs",
+      "implementation/warlock/haskell/runtime/README.md"
     ],
-    "before": "The live Elm effect-outcome gates reject Cancelled despite the receipt model supporting it. Haskell protocol preparation is separate and does not supply native effect proof.",
-    "after": "The actual desktop routes a correctly correlated Cancelled receipt to its request, preserves other requests, and retains five distinct states including Unknown after unproven disconnect. Whole ARC007 closes only on all original bridge fixtures and independent source-bound review; native acceptance stays open.",
+    "before": "The actual Haskell bootstrap admits only one frame before awaiting child exit. Current kernel-credential/session controls are internal test builds, with no real cross-user trace or multi-frame public production-library witness.",
+    "after": "The existing public bootstrap accepts a bounded live sequence under its single original absolute lifetime, reauthenticates every fragment and final dispatch, refuses actual cross-user and retired/replayed senders before policy admission, and retires its own resources. This advances the real backend; it does not claim an unlimited desktop daemon or native effect issuer.",
     "verification": [
-      "Root protected actual desktop source route, all five original ARC007 scenarios with independent matching bridge receipts; full-width authority, two-request isolation, changed binding/intent/protocol rejection, duplicate/late/drop/recovery no replay, meaningful seeded sequence properties and matching receipt lifecycle model. Compile actual Elm entries. Preserve RED and native obligations."
+      "Root protected production-library linked Haskell multi-frame/EOF/refusal/retirement controls with distinct full request identities and meaningful seeded fragmentation/order cases; real kernel cross-user UID trace, same-user current and retired/replayed lifetime traces, callback canaries and owned cleanup. Preserve original5s budgets, strict buildall/testall and model correspondence; no synthetic UID original acceptance, no native effect/GUI/release transfer."
     ],
     "owner": "root-agentbus",
-    "participantRecord": ".warlock-contributor/receipt-state-integration.json",
-    "outcome": "Whole original ARC007 accepted on current Elm bridge source; real Cancelled gate fix, no native/port/release transfer."
+    "participantRecord": ".warlock-contributor/persistent-auth.json",
+    "outcome": "All3literal DEL010 scenarios independently accepted on immutable367a4899023340bc9cfeb2765a90b7ed37e58109 after actual source fix and14public cases/25suites/37invocations. WholeEARS stayspartial: required realcrossUID trace unavailable after one askpass timeout.",
+    "sourceRevision": "367a4899023340bc9cfeb2765a90b7ed37e58109",
+    "evidence": "implementation/warlock/qa/evidence/persistent-auth-20261101/report.json",
+    "acceptance": "docs/warlock-build-loop/v2/persistent-auth-acceptance-20261101.json",
+    "independentReview": "docs/warlock-build-loop/v2/persistent-auth-review-20261101.json"
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -2222,36 +2226,45 @@
     "nextOriginalProductWork": "Restore and qualify a fresh coherent native source/core/plugin/host tuple for original taskbar activation/minimize/restore recipients: ELM-UI-004 / ELM-UX-005 / ELM-UX-008. Root owns serialized protected native execution; source reconstruction/build evidence stays separate from GUI acceptance."
   },
   "previousActiveSlice": {
-    "id": "launcher-refused-rebuilt-verdict",
+    "id": "receipt-cancelled-correlation",
     "requirements": [
-      "ELM-UI-005"
+      "ELM-ARC-007"
     ],
     "scenarios": [
-      "search-refused"
+      "architecture-007",
+      "receipt-pending",
+      "receipt-committed",
+      "receipt-refused",
+      "receipt-cancelled"
     ],
     "paths": [
+      "implementation/warlock/src/NativeOutcome.elm",
+      "implementation/warlock/src/ReceiptRouter.elm",
+      "implementation/warlock/qa/ReceiptStateReplay.elm",
+      "implementation/warlock/qa/receipt-state.cjs",
+      "implementation/warlock/qa/receipt-lifecycle.qnt",
+      "implementation/warlock/src/Effects.elm",
+      "implementation/warlock/src/Shell.elm",
       "implementation/warlock/src/Desktop.elm",
-      "implementation/warlock/src/Launch.elm",
-      "implementation/warlock/src/Catalog.elm",
-      "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/native/host.c",
-      "implementation/warlock/assets/popup-adapter.js",
-      "implementation/warlock/adapter/catalog_authority.py",
-      "implementation/warlock/README.md",
-      "implementation/warlock/qa/native-launcher-refused-at-portable.py",
-      "implementation/warlock/qa/native-launcher-accepted-portable.py",
-      "implementation/warlock/qa/surface_launch.qnt",
-      "implementation/warlock/qa/surface_launch_test.qnt"
+      "implementation/warlock/src/TaskbarShell.elm",
+      "implementation/warlock/src/Menu.elm",
+      "implementation/warlock/src/MenuBridge.elm",
+      "implementation/warlock/src/Binding.elm",
+      "implementation/warlock/src/UInt64.elm",
+      "implementation/warlock/src/OutputController.elm",
+      "implementation/warlock/src/SurfaceController.elm",
+      "implementation/warlock/src/NativeProvider.elm",
+      "implementation/warlock/src/ActionProjection.elm",
+      "implementation/warlock/src/GeometryProjection.elm"
     ],
-    "before": "The original search-refused scenario retained a failed Orca observation. The Pending visibility and native singleton-launch repair now passes native success and refusal with independent review, while the ledger still records the earlier failure.",
-    "after": "Adopt the exact original search-refused verdict on the immutable source and native tuple, preserve all earlier failures, and keep whole requirement and release acceptance separate.",
+    "before": "The live Elm effect-outcome gates reject Cancelled despite the receipt model supporting it. Haskell protocol preparation is separate and does not supply native effect proof.",
+    "after": "The actual desktop routes a correctly correlated Cancelled receipt to its request, preserves other requests, and retains five distinct states including Unknown after unproven disconnect. Whole ARC007 closes only on all original bridge fixtures and independent source-bound review; native acceptance stays open.",
     "verification": [
-      "Actual native success73980 and refused74204 terminal0/cleanuptrue; current367sourceinputs/core/plugin/AQ/newe0a2host verified by rootandQ5. RealOrcafocus417 before navigation and ATSPIRefresh352/currentcataloggen2/no replacementlaunch.",
-      "Record literal originaloracle andexactverification, current sourcehashes from immutableGit b8049bb20b041d46fd2880aac92752da35d7f267, canonicalcompressedraw/captures/Q5review. No reexecutionforadministrativeadoption or originaldeadlinechange."
+      "Root protected actual desktop source route, all five original ARC007 scenarios with independent matching bridge receipts; full-width authority, two-request isolation, changed binding/intent/protocol rejection, duplicate/late/drop/recovery no replay, meaningful seeded sequence properties and matching receipt lifecycle model. Compile actual Elm entries. Preserve RED and native obligations."
     ],
-    "owner": "root-launcher-refused-rebuilt",
-    "participantRecord": ".warlock-contributor/launcher-refused-rebuilt-verdict.json",
-    "outcome": "Original ELM-UI-005/search-refused independently accepted by Quint5 on source b8049bb20b041d46fd2880aac92752da35d7f267 and rebuilt host e0a2. Actual native refusal has 41 passing checks, retained query and logical invoker focus, real Orca focus, and guarded AT Refresh to current catalog without replacement launch. All five named scenarios now have accepted observations on their recorded tuples; whole UI005 remains unaccepted pending relevant freshness and full frozen-policy review."
+    "owner": "root-agentbus",
+    "participantRecord": ".warlock-contributor/receipt-state-integration.json",
+    "outcome": "Whole original ARC007 accepted on current Elm bridge source; real Cancelled gate fix, no native/port/release transfer."
   },
   "lastNativeObservation": {
     "report": "/home/charles/.local/state/warlock-team/20261028/native-rebuild/taskbar-primary-at/native-primary-keyboard-1793215082472811918/report.json",
@@ -3134,6 +3147,12 @@
       },
       "selectedId": "registry-admission-ownership",
       "reason": "Original REV005 actual missing-mapping gate repaired and independently accepted; administrative original EARS, not GUI delivery."
+    },
+    {
+      "selectedUTC": "2026-11-01T00:13:56.991674+00:00",
+      "fromSlice": "receipt-cancelled-correlation",
+      "toSlice": "authenticated-session-delivery",
+      "reason": "Real production bootstrap stops after first authenticated frame; selected DEL010 original lifetime/identity boundary under independently reviewed source readiness."
     }
   ],
   "museRegulator": {
@@ -3154,7 +3173,13 @@
       "review-ears-fidelity.md",
       "review-roadmap-execution.md",
       "review-continuity.md"
-    ]
+    ],
+    "currentHostObservation": {
+      "runtimePresent": false,
+      "timerActive": false,
+      "timerInstalled": false,
+      "externalMuseWorker": "Bounded authenticated audit terminal; not a persistent regulator."
+    }
   },
   "productionLanguagePolicy": {
     "authoredLanguages": [
@@ -3182,7 +3207,7 @@
   },
   "preparationLoop": {
     "mode": "scoped-existing-Elm-implementation",
-    "authorization": "Latest explicit user: arm a loop to help you finish the work to arm the final loop",
+    "authorization": "Explicit current user authorization on 2026-10-31: arm ongoing full-original-requirements goal, coordinated distinct authenticated identities, proceed through implementation and verification under existing gates.",
     "allowedWork": [
       "architecture and native integration feasibility",
       "interface and readiness source development",
@@ -3195,16 +3220,20 @@
     "configArmed": true,
     "configMode": "preparation",
     "rootVerifiedGoalStatus": "active",
-    "goalResume": "Root executed exact one-shot user-authorized paused-goal resume; independently verified get_goal active",
+    "goalResume": "Current host goal created under explicit user authorization and independently verified active; old resume receipt remains historical.",
     "protectedControlChecks": {
       "rootReportedScope": "c3691251",
       "passed": 17,
       "reviewerExecutedQA": false
     },
     "timer": {
-      "rootVerifiedEnabled": true,
-      "rootVerifiedActive": true,
-      "cadenceSeconds": 1200
+      "currentHostCheckedUTC": "2026-11-01T01:18:24.280890+00:00",
+      "rootVerifiedEnabled": false,
+      "rootVerifiedActive": false,
+      "isActiveOutput": "inactive",
+      "isEnabledOutput": "not-found",
+      "runtimePresent": false,
+      "scope": "Historical Muse runtime and timer are absent on this WSL host; current host goal is active, no background scheduler was invented or duplicate coordinator started."
     },
     "firstAudit": {
       "exit": 0,
@@ -3215,7 +3244,7 @@
     "authorizationRecord": "/home/charles/.local/state/warlock-team/20261028/muse-supervision/preparation-authorization.json",
     "futurePausesProtected": true,
     "scopeLimit": "Preparation source/tool work is permitted; original native/release gates remain. No acceptance transfer, progress-timer reset, active-original-slice replacement or stopped-investigation reset.",
-    "currentRecord": ".warlock-contributor/registry-admission.json",
+    "currentRecord": ".warlock-contributor/persistent-auth.json",
     "nativeFeasibility": {
       "status": "stopped",
       "qualificationOnlyIterations": 2,
@@ -3253,7 +3282,13 @@
       "haskellReadiness": "docs/warlock-build-loop/v2/haskell-toolchain-readiness-20261031.json",
       "latestIndependentReview": "docs/warlock-build-loop/v2/receipt-state-review-20261031.json"
     },
-    "finalImplementationAuthorizationScope": "Existing Elm receipt correlation verified on original bridge oracle; current Haskell package source/build/test development qualified. Genuine native effects, persistent GUI composition and original native acceptance remain gated."
+    "finalImplementationAuthorizationScope": "Existing Elm receipt correlation verified on original bridge oracle; current Haskell package source/build/test development qualified. Genuine native effects, persistent GUI composition and original native acceptance remain gated.",
+    "historicalTimerObservation": {
+      "rootVerifiedEnabled": true,
+      "rootVerifiedActive": true,
+      "cadenceSeconds": 1200
+    },
+    "historicalGoalResumeObservation": "Root executed exact one-shot user-authorized paused-goal resume; independently verified get_goal active"
   },
   "agentBusCurrentTeam": {
     "run": "warlock-20261031-setup",
@@ -3261,22 +3296,22 @@
     "rootCoordinator": "lead",
     "roles": {
       "lead": "integration and serialized protected checks",
-      "reviewer": "independent original acceptance and current Haskell package readiness",
-      "elm-impl": "live Elm Cancelled decoder/router fix",
-      "elm-tests": "independent actual desktop correlation regression",
-      "terra-browser": "registry/task/trace format audit",
-      "sol-docs": "admission reference",
-      "terra-contracts": "shared plugin fixture compatibility and test source audit",
-      "haiku-originals": "literal original administrative oracle",
-      "muse": "bounded EARS continuity observation",
-      "terra-artifacts": "offline Haskell builder/wrapper/dependency preparation"
+      "reviewer": "independent source/ownership review and literal original dispositions",
+      "elm-impl": "actual bounded multi-frame bootstrap and owned normal-exit completion source",
+      "elm-tests": "independent public production-library kernel credential/retirement/lifecycle controls",
+      "terra-browser": "public production route source audit",
+      "sol-docs": "bounded bootstrap documentation suggestions",
+      "terra-contracts": "delegated UID mapping/capability contract source audit",
+      "haiku-originals": "literal original security audit",
+      "muse": "bounded DEL010 EARS continuity",
+      "terra-artifacts": "unexecuted delegated-UID protected-runner draft"
     },
-    "externalProcessReceipts": ".warlock-contributor/haskell-external-launch-receipts.json",
+    "externalProcessReceipts": ".warlock-contributor/auth-external-launch-receipts.json",
     "authAcknowledgements": "AgentBus live log; process launch alone is not successful authentication",
     "singleProductSlice": true,
     "noDuplicateCoordinator": true,
-    "currentSlice": "ELM-ARC-007 five receipt scenarios; Haskell package readiness support",
-    "currentProcessObservation": "All assigned source/audit jobs and protected checks reached terminal results; root continues the active host goal. No worker count is inferred from identities."
+    "currentSlice": "ELM-DEL-010 authentication, all three literal original scenarios and whole-EARS cross-user verification obligation",
+    "currentProcessObservation": "All assigned source/audit/QA and independent review jobs have terminal handoffs; root integrates published evidence and continues active goal. No background worker count inferred from identity inventory."
   },
   "currentGoalTelemetry": {
     "observedUTC": "2026-10-31T23:58:16.047484+00:00",
@@ -3303,5 +3338,23 @@
     "haskellPortAcceptance": false,
     "releaseAcceptance": false
   },
-  "nextConcreteAction": "Implement owned persistent authenticated Haskell session delivery and an explicit reviewed bridge to existing Elm policy; use current pinned package controls, preserve HOSTSTOP2 and empty native operations until genuine qualification."
+  "nextConcreteAction": "Finish independent literal DEL010 dispositions and retain whole-EARS realcrossUID blocker, publish source/evidence/handoff, then reproduce actual Elm refresh-before-pin-save counterexample under TEA003 without weakening recovery/native obligations.",
+  "currentNamedScenarioClosure": {
+    "requirement": "ELM-DEL-010",
+    "scenarios": [
+      "delivery-010",
+      "peer-wrong-session",
+      "peer-approved-session"
+    ],
+    "namedScenariosAccepted": true,
+    "requirementAccepted": false,
+    "status": "partial",
+    "missingObservations": [
+      "Required actual cross-user credential trace remains missing: common mode exercises same-user senders and real retired sessions. newuidmap/newgidmap absent; single graphical authorization attempt timed out, no package installed or repeated prompt."
+    ],
+    "acceptance": "docs/warlock-build-loop/v2/persistent-auth-acceptance-20261101.json",
+    "sourceRevision": "367a4899023340bc9cfeb2765a90b7ed37e58109",
+    "nativeExecution": false,
+    "releaseAcceptance": false
+  }
 }

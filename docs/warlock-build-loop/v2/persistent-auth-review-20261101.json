@@ -1,0 +1,396 @@
+{
+  "schema": 1,
+  "reviewedUTC": "2026-11-01T01:20:01.300937+00:00",
+  "reviewer": {
+    "name": "/root/readiness_review",
+    "authenticatedIdentity": "reviewer",
+    "agentBusRun": "warlock-20261031-setup",
+    "independent": true,
+    "execution": "Read-only source,immutable Gitblobs,retained raw traces and artifact hashes. Root exclusively executed protected models/compiler/tests."
+  },
+  "requirement": "ELM-DEL-010",
+  "sourceRevision": "367a4899023340bc9cfeb2765a90b7ed37e58109",
+  "status": "partial",
+  "disposition": "partial",
+  "requirementAccepted": false,
+  "componentDisposition": "accepted",
+  "acceptedScenarios": [
+    "delivery-010",
+    "peer-wrong-session",
+    "peer-approved-session"
+  ],
+  "originalEARS": "The native service SHALL authenticate bridge peers by local user identity and approved session lifetime before accepting effect requests.",
+  "originalVerification": "Retain peer-credential traces for allowed and cross-user/replayed sessions.",
+  "scenarios": [
+    {
+      "name": "delivery-010",
+      "given": "an unrelated local peer",
+      "when": "it requests a window effect",
+      "then": "the request is refused without an effect",
+      "status": "accepted",
+      "disposition": "accepted",
+      "sourceRevision": "367a4899023340bc9cfeb2765a90b7ed37e58109",
+      "scope": "Literal original named scenario on actual public ordinary-production-library Haskell authentication boundary; no native effect issuer or GUI acceptance.",
+      "observation": "Approved prefix enters once from selectedPID13050/UID1000/GID1000. Real unrelated forkPID13055/UID1000/GID1000 sends a valid prepare/restore effect intent on the same endpoint. Actual recvmsg suffix is FragmentObserved13055/1000/1000, exactForeignProcess, no further admission attempt or checked-policy callback. No effect request from that unrelated sender is accepted.",
+      "matchingScenarioReceipts": [
+        {
+          "case": "unrelated-same-user",
+          "sha256CanonicalCaseJSON": "a08791f0b4d48e3e2a9c422c6c452b6ada09ffd756db4df00312c1d1ed2bd40f",
+          "selectedPid": 13050,
+          "receiverUid": 1000,
+          "receiverGid": 1000,
+          "subsequentPolicyEntryCount": 1,
+          "authObservation": "Just (FrameObserved (CredentialFrameRejected (CredentialPeer ForeignProcess)))"
+        }
+      ]
+    },
+    {
+      "name": "peer-wrong-session",
+      "given": "an authenticated same-user peer from another or expired session",
+      "when": "it sends an effect request",
+      "then": "session authorization rejects the request without a native effect",
+      "status": "accepted",
+      "disposition": "accepted",
+      "sourceRevision": "367a4899023340bc9cfeb2765a90b7ed37e58109",
+      "scope": "Literal original named scenario on actual public ordinary-production-library Haskell authentication boundary; no native effect issuer or GUI acceptance.",
+      "observation": "Same real selectedPID13035/UID1000/GID1000 first authenticates and enters checked policy. Host retires its actual current registration beforeACK1; compiled client waits forACK1 then sends the next valid effect intent. Actual recvmsg suffix retains samePID/UID/GID and exactScopeClosed; zero new checked-policy callback. Thus the sender is expired before the later send as well as before admission. Separate buffered-retirement controlPID13030 rejects already-queued later input after retirement. Running retireBootstrap returnsFalse and is not mistaken for physical cleanup; final independent retirement succeeds.",
+      "matchingScenarioReceipts": [
+        {
+          "case": "after-retirement-send",
+          "sha256CanonicalCaseJSON": "02b5f4b673512773537085b93240b55dbd88ba74de5f220fa9107f8f2d64d7ea",
+          "selectedPid": 13035,
+          "receiverUid": 1000,
+          "receiverGid": 1000,
+          "subsequentPolicyEntryCount": 1,
+          "authObservation": "Just (FrameObserved (CredentialFrameRejected (CredentialPeer ScopeClosed)))"
+        },
+        {
+          "case": "buffered-retirement",
+          "sha256CanonicalCaseJSON": "c077892c38d5ae0d9e925cf2a2835b65fb6ccdaffd34a4864d6de1403151678d",
+          "selectedPid": 13030,
+          "receiverUid": 1000,
+          "receiverGid": 1000,
+          "subsequentPolicyEntryCount": 1,
+          "authObservation": "Just (FrameObserved (CredentialFrameRejected (CredentialPeer ScopeClosed)))"
+        }
+      ]
+    },
+    {
+      "name": "peer-approved-session",
+      "given": "an approved current-session same-user peer",
+      "when": "it sends an authorized current operation",
+      "then": "authentication admits it for subsequent native policy validation",
+      "status": "accepted",
+      "disposition": "accepted",
+      "sourceRevision": "367a4899023340bc9cfeb2765a90b7ed37e58109",
+      "scope": "Literal original named scenario on actual public ordinary-production-library Haskell authentication boundary; no native effect issuer or GUI acceptance.",
+      "observation": "Eight current approved same-user conversations deliver3,4,5,3,4,5,3,4 distinct valid current prepare/restore intents in expected order,31checked-policy entries total. Every delivered frame retains its own actual kernel fragments followed by final admission; selectedPID and actual receiverUID1000/GID1000 match. Actual callbackwire strings exactly equal independently authored expected rawframes in these retained traces. This is authentication admission for subsequent native policy validation.",
+      "matchingScenarioReceipts": [
+        {
+          "case": "seed-20261031",
+          "sha256CanonicalCaseJSON": "9401d0a794dd62759b2db5895f6effa3095cc25d43b67ed2ca7ad7c0cbba66af",
+          "selectedPid": 12885,
+          "receiverUid": 1000,
+          "receiverGid": 1000,
+          "subsequentPolicyEntryCount": 3,
+          "authObservation": "Just (FrameObserved CredentialDelivered)"
+        },
+        {
+          "case": "seed-20261032",
+          "sha256CanonicalCaseJSON": "bdec9c4891923b9bca6bd07c54a4d3e3aab1506afca663175ab5851554aad6d5",
+          "selectedPid": 12907,
+          "receiverUid": 1000,
+          "receiverGid": 1000,
+          "subsequentPolicyEntryCount": 4,
+          "authObservation": "Just (FrameObserved CredentialDelivered)"
+        },
+        {
+          "case": "seed-20261033",
+          "sha256CanonicalCaseJSON": "bd1c4d0c30eff68e3fb26111d436d903e6136c0cac4366e466067ceec14e43c8",
+          "selectedPid": 12918,
+          "receiverUid": 1000,
+          "receiverGid": 1000,
+          "subsequentPolicyEntryCount": 5,
+          "authObservation": "Just (FrameObserved CredentialDelivered)"
+        },
+        {
+          "case": "seed-20261034",
+          "sha256CanonicalCaseJSON": "56c621ebf8bca2fa18a2b206f6519442222d18c955d52a46899b48cc125f8853",
+          "selectedPid": 12939,
+          "receiverUid": 1000,
+          "receiverGid": 1000,
+          "subsequentPolicyEntryCount": 3,
+          "authObservation": "Just (FrameObserved CredentialDelivered)"
+        },
+        {
+          "case": "seed-20261035",
+          "sha256CanonicalCaseJSON": "b9461ceeb9452b9c358bd362e45c0cab4f47bc10bfb0256774275f7df85813b2",
+          "selectedPid": 12962,
+          "receiverUid": 1000,
+          "receiverGid": 1000,
+          "subsequentPolicyEntryCount": 4,
+          "authObservation": "Just (FrameObserved CredentialDelivered)"
+        },
+        {
+          "case": "seed-20261036",
+          "sha256CanonicalCaseJSON": "6e0b4bad37358c586dc51689ec35ce334c59e0f10ac9b552a5c61871cb56a747",
+          "selectedPid": 12980,
+          "receiverUid": 1000,
+          "receiverGid": 1000,
+          "subsequentPolicyEntryCount": 5,
+          "authObservation": "Just (FrameObserved CredentialDelivered)"
+        },
+        {
+          "case": "seed-20261037",
+          "sha256CanonicalCaseJSON": "deaf7161b2653e7261440806f5c91f704755332494cd0c77d61adb9723296edc",
+          "selectedPid": 12991,
+          "receiverUid": 1000,
+          "receiverGid": 1000,
+          "subsequentPolicyEntryCount": 3,
+          "authObservation": "Just (FrameObserved CredentialDelivered)"
+        },
+        {
+          "case": "seed-20261038",
+          "sha256CanonicalCaseJSON": "e0f6db76be185bea8116c4304e39fe117085dee8c3fd8c99a7794eb780d12ef7",
+          "selectedPid": 13003,
+          "receiverUid": 1000,
+          "receiverGid": 1000,
+          "subsequentPolicyEntryCount": 4,
+          "authObservation": "Just (FrameObserved CredentialDelivered)"
+        }
+      ]
+    }
+  ],
+  "wholeRequirementReason": "All three named literal scenarios are accepted on this exact current production authentication tuple. Whole DEL010 remains PARTIAL/requirementAccepted=false because the original verification also requires retained actual cross-user peer-credential evidence, which common mode omits. Same-user unrelatedPID and expired-session refusal cannot be relabeled cross-user. No inferred completeness from enum,mode name,scope booleans or passing common tests.",
+  "nativeAcceptance": false,
+  "nativeIssuerAcceptance": false,
+  "guiAcceptance": false,
+  "assistiveTechnologyAcceptance": false,
+  "releaseAccepted": false,
+  "changedBehavior": "Existing public runBootstrap now serves multiple checked effect-intent frames within one approved bounded conversation, preserving original absoluteD,real kernel sender checks and final admission on every frame. An owned nonreaping sameD observer half-closes only the retained socket peer write direction after confirmed leader exit, exposing EOF while retaining descriptor identity. Exact initial/partial/error EOF and authentication refusals remain failures. No perpetual desktop service or native effect issuer is established.",
+  "sourceHashes": {
+    "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/Aggregate.hs": "e4993f121972d48ac35cfda661f61da5abd4f423fae70892779bed983fd35a08",
+    "implementation/warlock/haskell/runtime/runtime.cabal": "86955f37a289eca925470ba0cf1d3cc1be28aab357f1040b1fcd5927e6f1b111",
+    "implementation/warlock/haskell/runtime/fixture-peer/Main.hs": "aa95817a45984d8f5f526f0e36312ce1d9e21256edde40075f72ebff5967565d",
+    "implementation/warlock/haskell/runtime/test-persistent/Main.hs": "e5cbed6fa0951ea8cc4cd880b76ade7c35c432a5656bb102c47337cb6e668c5f",
+    "implementation/warlock/haskell/runtime/formal/current_registration_test.qnt": "157288b0e7f37e6696b6f898ea52882ae3b9f237b1065814a5b000217f363e78",
+    "implementation/warlock/haskell/runtime/formal/current_registration.qnt": "f3f4cbd87ea61db42d94250361a834a037e7d4b8638f51d410859435c6186c84",
+    "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap.hs": "76f26fe661ab97dac21b2deedc3e724aae0578c3b75050576b794fb255728ede",
+    "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/ScopedPeer.hs": "9836f7e5020efbbe917b8c2de4dd0de015174f28eb0484a554f98abfff0d7f18",
+    "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/CurrentSessions.hs": "6047f19ea3020c0860a54e0666c2866846aa77cd8643fc550f145bb66efe2a39",
+    "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/CredentialScopeGuard.hs": "99328b00fd46bdc810b89dd824b182c26a77b4836fd0c20b7bb5f5af7ec19281",
+    "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/SocketOwner.hsc": "76ee35cc970ef53990e4daa0e42cb47cb1885da892791631e8bfbf8796769219",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/CredentialIngress.hs": "89b735faff45941cc4523a89515cf408eeadfde44cb8b1bd5a6b70f8ed5a4a96",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress.hs": "fb5123cf92f0f84c78938cf37ee14cf301df3aeb13f0368099dfa092b663c234",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress/Internal.hs": "034a50695089d225d639c2be95f300a4f8e4478008e6adeaa748e7a00139daef",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Codec.hs": "9f1fcb18698ca3fba49aacf903a0040a5e78b5cd16d6ff4cde129b84bad68572",
+    "implementation/warlock/haskell/protocol/src/Warlock/Protocol/PeerCredential.hs": "3f0db514bad7b5d752bef31abca98805d9bef3602c6b8b7ea4348fdf29a67e76",
+    "implementation/warlock/haskell/protocol/src/Warlock/Transport/PeerCredentials.hsc": "73adfbd3faf50b6918b805844ed5d95463914f4bd041bb3ab057d357765f2ee1",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Internal.hsc": "f13472d6da143a38d8aeaf5c944a1346b754844a7b8f67fae295d31733bbf11f",
+    "implementation/warlock/haskell/process-custody/src/Warlock/Capture/Process/Bootstrap.hs": "dc8273cb33d6f23757b20f16f7cefc83d00fc8ab4d00520149744928bbd1a461",
+    "implementation/warlock/haskell/runtime/README.md": "806a9a4f3e41afc100c15c24ea6ae5bfe06a8d88dfdf9bbe71ed7be79b22a215"
+  },
+  "immutableTupleReview": {
+    "selectedPaths": 20,
+    "matchingSelectedRegularGitBlobs": 20,
+    "completeGuardInputs": 164,
+    "matchingGuardRegularGitBlobs": 164,
+    "mismatches": [],
+    "guardManifest": {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-20261101/cpu-review.json",
+      "sha256": "7251f65ae67d9774a459a8f615254f91b480de24517ade2f63fee96da30f9d2f"
+    },
+    "allRuntimeReportSourceHashesMatchGuard": true,
+    "ordinaryProductionLibrary": "Public persistent-bootstrap-controls stanza has onlytest-persistent source and depends on ordinarywarlock-runtime; no runtime-src/admissionCPP hooks. Existing macro-enabled current-session-oracles remains a separate regression witness. Sourcecommit and archived production/test plans retain exact library/binary identities."
+  },
+  "evidence": [
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-20261101/report.json",
+      "sha256": "22c018c3de6ac6aca3a0cddc14aa2755c1fc173920546c9b95e50ac9f417e072"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-20261101/cpu-review.json",
+      "sha256": "7251f65ae67d9774a459a8f615254f91b480de24517ade2f63fee96da30f9d2f"
+    },
+    {
+      "path": "implementation/warlock/qa/evidence/persistent-auth-20261101/checks.tar.gz",
+      "sha256": "3197e6b8b0eb80a82278a63dfbe8a75f549949e7b6f862630594f16553509814"
+    }
+  ],
+  "archiveReview": {
+    "members": 1880,
+    "allRegular": true,
+    "memberHashesIndependentlyVerified": 1880,
+    "completeManifestMatch": true,
+    "rawFinalReportSHA256": "65fc43b40348173079fd3b1dd97269685b2cb4dea93629eef6b1909ea3d58a61",
+    "archivedFinalReportEqualsActualLocalReport": true,
+    "rawPublicTraceMember": "candidate/haskell-build/runs/persistent-bootstrap-controls/default.log",
+    "rawPublicTraceSHA256": "7d0a50ac57e4f6e1609edda84d7797e34233b07719839f9205e2478ed955bd24",
+    "canonicalPublicRowsEqualActualRawRows": true,
+    "caseHashAlgorithm": "SHA256 of UTF8 JSON with sortedkeys,compactcomma/colon separators,ensure_ascii=false; cases selected from canonical report publicSuite and exact raw log rows. These are scenario receipt hashes, not native authority certificates."
+  },
+  "verification": {
+    "protectedScope": {
+      "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-824304e4a5054cb1b511187eaadf0817.scope",
+      "coreLimit": 1
+    },
+    "networkNamespace": "net:[4026532309]",
+    "parentNetworkNamespace": "net:[4026531833]",
+    "productionBuildAll": 0,
+    "productionFreeze": 0,
+    "testBuildAll": 0,
+    "testFreeze": 0,
+    "testCommandExit": 0,
+    "packages": 6,
+    "suites": 25,
+    "suiteInvocations": 37,
+    "commands": 39,
+    "allNormalExit0": true,
+    "timeouts": 0,
+    "forcedCleanup": 0,
+    "publicCommonCases": 14,
+    "allCasesPassed": true,
+    "positiveMatrices": 8,
+    "positivePolicyEntries": 31,
+    "authorizedNegativePrefixes": 5,
+    "allCheckedPolicyEntries": 36,
+    "refusedSuffixPolicyEntries": 0,
+    "emptyInitialEOFPolicyEntries": 0,
+    "literalExpectedCallbackWireInspection": "All36retained callbackwire strings exactly equal independently authored expectedRawFrames. This is independent trace inspection, not a newly executed test nor exhaustive shared-codec correctness proof.",
+    "selectedChildArtifact": {
+      "schema": 1,
+      "kind": "persistent-auth-environment",
+      "mode": "common",
+      "scope": "Public Haskell bootstrap library with actual kernel credentials; subsequent policy entry only, no native effects",
+      "selectedExecutable": "/home/charl/code/Warlock/.warlock-contributor/haskell-cpu-1793495553183025256/haskell-build/dist-test/build/x86_64-linux/ghc-9.6.7/warlock-runtime-0.1.0.0/x/credential-peer-child/build/credential-peer-child/credential-peer-child",
+      "sha256": "75547944fa97bbf019ea157375e6647f47773c188bdf6ff8d73c4fa8a25e51bb",
+      "size": 3611232,
+      "device": 2096,
+      "inode": 1689136,
+      "uidMap": "      1000          0          1\n",
+      "gidMap": "      1000          0          1\n",
+      "crossUserRequired": false,
+      "crossUserEvidence": "unavailable in common mode; no full original acceptance"
+    },
+    "publicVerdict": {
+      "schema": 1,
+      "kind": "persistent-auth-verdict",
+      "mode": "common",
+      "passed": true,
+      "cases": 14,
+      "crossUserIncluded": false,
+      "completeOriginalEvidence": false,
+      "nativeExecutionAcceptance": false
+    },
+    "normalRetirement": "All14cases independently show Available,BeforeSignalLeaderExited,retireBootstrapRightTrue,OwnerRetired/EndpointConfirmed andReaderReady. Refusals retainLeftBadArguments; discardedstdout is not demanded. EOF/ACK/callback alone is never a retirement or physical-effect certificate."
+  },
+  "modelReview": {
+    "directedTests": 27,
+    "originalDirectedTestsPreserved": 23,
+    "newDirectedTests": 4,
+    "exactAnchoredSelectionRecorded": true,
+    "generic": {
+      "samples": 10000,
+      "maxSteps": 100,
+      "seed": 20261031,
+      "safetyNoViolation": true,
+      "witnessCounts": {
+        "witnessReserved": 7468,
+        "witnessBuilt": 4283,
+        "witnessLive": 2260,
+        "witnessChecked": 10,
+        "witnessClaim": 6,
+        "witnessDelivered": 6,
+        "witnessRetired": 10000,
+        "witnessReaped": 2260,
+        "witnessExhausted": 3501,
+        "witnessRefused": 10000,
+        "witnessMixed": 3405,
+        "witnessMultipleFrames": 0
+      },
+      "scope": "Full originalstep,all6originalsafetyproperties and deliberatemutants preserved; original11witnesses positive. New multipleFrames0 remains visible, not mislabeled reached."
+    },
+    "focused": {
+      "samples": 10000,
+      "maxSteps": 30,
+      "seed": 20261031,
+      "safetyNoViolation": true,
+      "witnessCounts": {
+        "witnessLive": 1212,
+        "witnessClaim": 297,
+        "witnessDelivered": 297,
+        "witnessMultipleFrames": 47
+      },
+      "scope": "conversationStep is strictsubset of exact originalactions from sameinit,actor1 only; all4declared witnesses requiredpositive. This separately achieves multi-frame47 and does not replace or expand fullcampaign coverage."
+    },
+    "limits": "Two-registration/generation abstraction; kernel identity and trusted ownedprocess facts are assumptions corroborated only by these concrete actual traces. No arbitrary-capacity,physical nativeeffect,durable cancellation,distributed authority or liveness proof. Campaigns are kept separate without summed coverage."
+  },
+  "ownershipAndFailureReview": {
+    "pump": "One originalD/Session/currentregistration/Scope/guard/ingressreader maintained; every fragment/currentcheck and finalwithAdmission/strictdispatch repeats on originalthread.",
+    "observer": "forkFinally ownedobserver calls only sameD nonreaping awaitLeader,then internal opaqueSocketOwnerSHUT_WR onRightonly. Fixed finite ownerlock excludesclose;PWriteClosed/PWriteUncertain retainfd,stickyfailure forbids retry/cleanclaim. Workercompletion joined beforeScopeexit; only intentionalThreadKilled ignored,unexpectederrors/awaitLeft propagate. No externally supplied numericFD,no native/signaling authority added.",
+    "EOF": "Only exactStreamEOF after>=1Delivered is clean; firstEOF and partialframes fail. Queuedbytes retain ordinaryauthentication,including possible refusal afterprocessdeath. Actual finalchildexit and ownerretirement verified separately.",
+    "reportingRepair": "Per-suite receipts are now independent of another suiteglobalexit; overall remains strict testexit0/noforcedcleanup/all25suites. Original RED false aggregate flags and actual24old/36normalinvocation receipts are both retained."
+  },
+  "failedEvidencePreserved": [
+    {
+      "label": "setup-model-selector",
+      "reportSHA256": "d312f43d3be8d5b2ccb3b4940d1027fc2349a618fc9955f9d83288323d9b6ac2",
+      "passed": false,
+      "error": "registration-directed failed; see retained logs",
+      "archivePrefix": "setup-model-selector/"
+    },
+    {
+      "label": "generic-witness-gap",
+      "reportSHA256": "66ecf63b260b8a49b56ceeb6b520ca8b70f74faa8d2350b312dfb6c9b69507dd",
+      "passed": false,
+      "error": "Registration reachability witness missing or zero; inspect retained model output",
+      "archivePrefix": "generic-witness-gap/"
+    },
+    {
+      "label": "public-production-red",
+      "reportSHA256": "b25eda1c6f796152e814e19562040e9dc45b7e7a6bf7a91ce74a12ff4e5ec533",
+      "passed": false,
+      "error": "Haskell component tests failed; see retained suite reports",
+      "archivePrefix": "public-production-red/"
+    },
+    {
+      "label": "candidate-compile-failure",
+      "reportSHA256": "c38698e50484f42b9c572431f361ffc7f2e6945d651e28c91f6178a26ab66e63",
+      "passed": false,
+      "error": "production build failed; see retained logs",
+      "archivePrefix": "candidate-compile-failure/"
+    },
+    {
+      "label": "candidate-retained-peer-failure",
+      "reportSHA256": "97aaa0d09667358529389da9b101d91daa4760c7d442fa2e1fd22116e9ec20c7",
+      "passed": false,
+      "error": "Haskell component tests failed; see retained suite reports",
+      "archivePrefix": "candidate-retained-peer-failure/"
+    }
+  ],
+  "failureContinuity": "Retained setupQNT502 broadselector failure; genericmulti-witnesscoverage failure; clean actual one-frame productionRED; candidatecompile/layout failure; retained-peerEOF runtime regression; finalGREEN. Source,models,logs,plans and relevant artifacts are archived without rewriting failed evidence. No test oracle/authrefusal weakened to obtain green.",
+  "crossUserRemaining": {
+    "attemptedUTC": "2026-11-01T00:27:22.414994+00:00",
+    "authorizationCommand": "SUDO_ASKPASS=/home/charl/.local/bin/sudo-askpass timeout60 sudo -A -v",
+    "exit": 124,
+    "result": "Graphical askpass authorization timed out; no dpkg installation attempted",
+    "newuidmapInstalled": false,
+    "newgidmapInstalled": false,
+    "doNotRetryPromptWithoutUserSteering": true,
+    "scope": "Only full cross-user DEL010 acceptance is pending this setup; continue independent source and common public production-library checks"
+  },
+  "remainingObservations": [
+    "Actual receiver-visible differentUID kernel sender trace remains missing; mappedUID mode was not executed or accepted. Common UIDmap reports immediateparent mapping only and does not establish hostdistinctusers.",
+    "Missing newuidmap/newgidmap plus graphicalaskpass timeout124 retained; no installation was attempted. Do not retry authorization prompt without usersteering. Continue other authorized work; no new review/approval gate invented.",
+    "No genuine native effect issuer/provider/certificate,durableACK,ARC012physicalcancellation,newpersistentElmGUI/AT or release transfer. Nativeoperations/HOSTSTOP2/main desktop remain unchanged.",
+    "All242original requirements,417scenarios,deadlines,failed evidence and acceptance obligations remain; only these three literal scenario dispositions and scoped component behavior are newly accepted."
+  ],
+  "claim": {
+    "resource": "file:/home/charl/code/Warlock/docs/warlock-build-loop/v2/persistent-auth-review-20261101.json",
+    "hold": "01M6AAT039X9H1ZK6TJRAD8WV6",
+    "authoredPaths": [
+      "docs/warlock-build-loop/v2/persistent-auth-review-20261101.json"
+    ],
+    "release": "After authenticated lead handoff; no source edits or reviewer execution."
+  }
+}
