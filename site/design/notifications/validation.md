@@ -6,7 +6,7 @@ The static gallery has no additional live region and represents focus-only attri
 
 The generated Night and Dawn studies do not meet the matched-pair criterion: they change action placement and introduce unsupported details. Their discrepancies are recorded in `mockups/provenance.md`; HTML and source remain authoritative. The additional draft is archived.
 
-The prescribed specimen check and the expiry exercise run in Chromium. Scaling, 200% browser zoom, 320px width, text-spacing overrides, keyboard-only use, forced colours, all effects tiers, reduced transparency, native assistive technology, WebKitGTK and Firefox remain to be tested for this revision. The native evidence demonstrates the original history presentation, not the revised theme.
+The prescribed specimen check and the expiry exercise run in Chromium. Scaling, 200% browser zoom, 320px width, text-spacing overrides, keyboard-only use, forced colours, all effects tiers, reduced transparency, native assistive technology, WebKitGTK and Firefox remain to be tested. The native evidence demonstrates the history presentation of the source commit, not the card treatment.
 
 ## Revision verification
 
@@ -22,4 +22,4 @@ The renderer-backed expiry sequence was rerun after the shared focus style corre
 
 ## Action boundary checks
 
-The specimen takes its page framing from `assets/shared/specimen-docs.css`; `theme.css` holds only renderer rules. In Chromium, producer actions and Dismiss notification compute the essential border on the surface fill, the expired focused action keeps that border on the recessed fill, and Close, Refresh, Do not disturb and critical interruption keep no border. Chromium, Firefox and WebKit load the specimen with no console errors. These are static specimen checks.
+The specimen takes its page framing from `assets/shared/specimen-docs.css`; `theme.css` holds only renderer rules. In Chromium, producer actions compute fully rounded pills with a text-at-14% edge on the pill fill, Dismiss notification computes no border or fill, the expired focus-only action keeps its pill edge on the recessed fill with secondary text, Close and Refresh keep no border, and Do not disturb and critical interruption compute 12px tiles with a hairline edge, the pressed tile with the brand tint and a brand edge. Chromium, Firefox and WebKit load the specimen with no console errors. These are static specimen checks.

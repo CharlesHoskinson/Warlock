@@ -1,72 +1,328 @@
-/* Apache-2.0. Settings rules consume the shared Warlock token and focus layers. */
+/* Apache-2.0. Settings in the Lacquer skin with a familiar Windows Settings layout: a help expander and info card,
+   switch rows for the two deferred appearance toggles, segmented choices for motion and text size, swatch cards for the
+   themes, a primary Save per task boundary, and shortcut routes as cards of radio rows. The renderer list is flat; every
+   group is drawn from consecutive pieces in source order. Shared foundations own focus, tokens and the unavailable cue. */
 @layer components {
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] {
+    block-size:100%; max-block-size:100%;
+    --st-card: color-mix(in srgb, var(--wl-sys-color-text) 5%, transparent);
+    --st-card-strong: color-mix(in srgb, var(--wl-sys-color-text) 8%, transparent);
+    --st-edge: color-mix(in srgb, var(--wl-sys-color-text) 9%, transparent);
+    --st-rule: color-mix(in srgb, var(--wl-sys-color-text) 7%, transparent);
+    --st-on: color-mix(in srgb, var(--wl-sys-color-action-fill) 24%, transparent);
+    --st-on-hover: color-mix(in srgb, var(--wl-sys-color-action-fill) 32%, transparent);
+    --st-on-edge: color-mix(in srgb, var(--wl-sys-color-brand-text) 55%, transparent);
+    --st-track: color-mix(in srgb, var(--wl-sys-color-text) 6%, transparent);
+    --st-radius: 10px;
+    --st-glyph-indent: 1.875rem;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"][data-theme="dawn"] {
+    --st-card: color-mix(in srgb, var(--wl-sys-color-surface-raised) 72%, transparent);
+    --st-card-strong: var(--wl-sys-color-surface-raised);
+    --st-edge: color-mix(in srgb, var(--wl-sys-color-text) 12%, transparent);
+    --st-rule: color-mix(in srgb, var(--wl-sys-color-text) 9%, transparent);
+    --st-on: color-mix(in srgb, var(--wl-sys-color-action-fill) 10%, transparent);
+    --st-on-hover: color-mix(in srgb, var(--wl-sys-color-action-fill) 16%, transparent);
+    --st-track: color-mix(in srgb, var(--wl-sys-color-text) 5%, transparent);
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"][data-theme="high-contrast"] {
+    --st-card: var(--wl-sys-color-surface);
+    --st-card-strong: var(--wl-sys-color-surface);
+    --st-edge: var(--wl-sys-color-border-essential);
+    --st-rule: var(--wl-sys-color-window-edge-unfocused);
+    --st-on: color-mix(in srgb, var(--wl-sys-color-text) 22%, var(--wl-sys-color-surface));
+    --st-on-hover: color-mix(in srgb, var(--wl-sys-color-text) 30%, var(--wl-sys-color-surface));
+    --st-on-edge: var(--wl-sys-color-brand-text);
+    --st-track: var(--wl-sys-color-surface);
+  }
+
+  /* A twelve-column flow: full-width rows by default, three theme cards, four text sizes, three motion choices.
+     Row gaps are zero so grouped pieces meet without seams; vertical rhythm comes from margins. */
   html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls {
-    display: flex; flex-direction: column; gap: 6px;
-    min-block-size: 0; overflow: auto; scroll-padding: 6px; padding: 6px;
+    display:grid; grid-template-columns:repeat(12, minmax(0, 1fr)); gap:0 8px; align-content:start;
+    min-block-size:0; overflow:auto; scroll-padding:6px; padding:6px; container-type:inline-size;
   }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .control-utility {
-    box-sizing: border-box; position: relative; min-block-size: 2.25rem;
-    inline-size: 100%; padding: 6px 12px; border: 1px solid transparent;
-    border-radius: 6px; background: var(--wl-sys-color-surface);
-    color: var(--wl-sys-color-text); text-align: start; white-space: normal;
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > * { grid-column:1 / -1; min-inline-size:0; margin:0; box-sizing:border-box; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls button {
+    inline-size:auto; min-block-size:2.25rem; padding:6px 12px; border:1px solid transparent; border-radius:var(--st-radius);
+    background:transparent; box-shadow:none; color:var(--wl-sys-color-text); text-align:start; white-space:normal;
   }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .control-label,
-  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .control-detail { display: block; overflow-wrap: anywhere; }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .control-detail:not(:empty) { margin-block-start: 2px; color: var(--wl-sys-color-text-secondary); font-size: .75rem; line-height: 1.333333; }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .notification-text { margin: 0; padding: 6px 12px; color: var(--wl-sys-color-text); overflow-wrap: anywhere; }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] [data-settings-help] .control-label { font-weight: 600; }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] :is([data-surface-control="settings:effects-off"], [data-surface-control="settings:motion"], [data-surface-control="settings:theme:night"], [data-surface-control="settings:scale:100"], [data-shortcut-state="settings:shortcuts:notice:state"], [data-shortcut-state="settings:shortcuts:applications:state"], [data-shortcut-state="settings:shortcuts:system:state"], [data-shortcut-state="settings:shortcuts:notifications:state"]) { margin-block-start: 18px; /* 6px list gap + 18px = 24px */ }
-}
-@layer states {
-  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .control-utility:disabled,
-  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .control-utility[aria-disabled="true"] { opacity: 1; color: var(--wl-sys-color-text-secondary); background: var(--wl-sys-color-surface-recessed); }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .control-utility:not(:disabled):not([aria-disabled="true"]):active { background: var(--wl-sys-color-surface-pressed); }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] :is([data-surface-control^="settings:theme:"], [data-surface-control^="settings:scale:"], [data-surface-control^="settings:motion:"], [data-surface-control^="settings:shortcuts:"])[aria-current="true"],
-  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] :is([data-surface-control="settings:effects-off"], [data-surface-control="settings:reduced-transparency"])[aria-pressed="true"] { background: var(--wl-sys-color-surface-selected); }
-  /* Selection marker: a 3px inset bar painted by ::before; border width and padding stay constant across selection. */
-  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] :is([data-surface-control^="settings:theme:"], [data-surface-control^="settings:scale:"], [data-surface-control^="settings:motion:"], [data-surface-control^="settings:shortcuts:"])[aria-current="true"]::before,
-  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] :is([data-surface-control="settings:effects-off"], [data-surface-control="settings:reduced-transparency"])[aria-pressed="true"]::before { content: ""; position: absolute; inset-block: 6px; inset-inline-start: 0; inline-size: 3px; border-radius: 2px; background: var(--wl-sys-color-brand-text); pointer-events: none; }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] :is([data-surface-control^="settings:theme:"], [data-surface-control^="settings:scale:"], [data-surface-control^="settings:motion:"], [data-surface-control^="settings:shortcuts:"], [data-surface-control="settings:effects-off"], [data-surface-control="settings:reduced-transparency"]):is([aria-current="true"], [aria-pressed="true"]):not(:disabled):not([aria-disabled="true"]):active { background: var(--wl-sys-color-surface-selected-pressed); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] :is(.control-label,.control-detail) { white-space:normal; overflow:visible; text-overflow:clip; overflow-wrap:anywhere; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .control-detail:not(:empty) { margin-block-start:2px; color:var(--wl-sys-color-text-secondary); font-size:.75rem; line-height:1.333333; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] button:has(> .control-detail:not(:empty)) { min-block-size:3.5rem; }
+  /* Details under a glyph row align with the label text. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] :is([data-surface-control$=":refresh"],[data-surface-control="settings:motion"]) > .control-detail { padding-inline-start:var(--st-glyph-indent); }
+
+  /* Glyph slot this area adds: the motion status row. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] [data-surface-control="settings:motion"] > .control-label::before {
+    content:""; display:inline-block; flex:0 0 auto; inline-size:1.25rem; block-size:1.25rem; margin-inline-end:.625rem; vertical-align:-.3rem;
+    background:currentColor; -webkit-mask:var(--wl-glyph-motion) center/contain no-repeat; mask:var(--wl-glyph-motion) center/contain no-repeat;
+  }
+
+  /* Close: a quiet header control. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > [data-surface-control="control:close"] { justify-self:start; padding-inline:10px 4px; }
+
+  /* Help: an expander header with a drawn chevron, then its paragraphs as one info card. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > [data-surface-control="settings:help"] {
+    margin-block-start:6px; display:grid; grid-template-columns:minmax(0, 1fr) auto auto; align-items:center; column-gap:12px;
+    min-block-size:3.25rem; padding-block:8px 8px; padding-inline:14px 16px; border-color:var(--st-edge); background:var(--st-card);
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] [data-surface-control="settings:help"] > .control-label { grid-column:1; font-weight:600; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] [data-surface-control="settings:help"] > .control-detail { grid-column:2; grid-row:1; margin:0; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] [data-surface-control="settings:help"]::after {
+    content:""; grid-column:3; grid-row:1; inline-size:.4375rem; block-size:.4375rem; margin:0 4px .25rem;
+    border:solid currentColor; border-width:0 1.5px 1.5px 0; rotate:45deg; color:var(--wl-sys-color-text-secondary);
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] [data-surface-control="settings:help"][aria-expanded="true"]::after { rotate:-135deg; margin-block:.25rem 0; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > [data-surface-control="settings:help"]:has(+ [data-settings-help]) { border-end-start-radius:0; border-end-end-radius:0; }
+
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > .notification-text[data-settings-help] {
+    padding-block:10px; padding-inline:calc(14px + var(--st-glyph-indent)) 16px;
+    border:1px solid var(--st-edge); border-block-start:0; background:var(--st-card); color:var(--wl-sys-color-text);
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > .notification-text[data-settings-help] + .notification-text[data-settings-help] { box-shadow:inset 0 1px 0 var(--st-rule); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > .notification-text[data-settings-help]:not(:has(+ [data-settings-help])) {
+    padding-block-end:14px; border-end-start-radius:var(--st-radius); border-end-end-radius:var(--st-radius);
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .notification-text[data-settings-help] > .control-label { font-size:.8125rem; font-weight:600; line-height:1.4; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .notification-text[data-settings-help] > .control-detail { margin-block-start:2px; font-size:.75rem; line-height:1.45; }
+
+  /* Appearance toggles: Windows-style switch rows. Detail (On/Off) and the drawn switch sit at the inline end. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > :is([data-surface-control="settings:effects-off"],[data-surface-control="settings:reduced-transparency"]) {
+    display:grid; grid-template-columns:minmax(0, 1fr) auto auto; align-items:center; column-gap:12px;
+    min-block-size:3.5rem; padding-block:8px 8px; padding-inline:14px 16px; border-color:var(--st-edge); background:var(--st-card);
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > [data-surface-control="settings:effects-off"] { margin-block-start:20px; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > [data-surface-control="settings:reduced-transparency"] { margin-block-start:4px; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] :is([data-surface-control="settings:effects-off"],[data-surface-control="settings:reduced-transparency"]) > .control-label { grid-column:1; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] :is([data-surface-control="settings:effects-off"],[data-surface-control="settings:reduced-transparency"]) > .control-detail:not(:empty) {
+    grid-column:2; grid-row:1; margin:0; font-size:.8125rem; line-height:1.4;
+  }
+
+  /* Motion: the status row heads the group; the three choices form a segmented control. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > [data-surface-control="settings:motion"] {
+    margin-block-start:20px; padding-inline:14px 12px; background:transparent; border-color:transparent;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] [data-surface-control="settings:motion"] > .control-label { font-weight:600; inline-size:fit-content; max-inline-size:100%; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > :is([data-surface-control="settings:motion:system"],[data-surface-control="settings:motion:reduced"],[data-surface-control="settings:motion:full"]) { grid-column:span 4; margin-block-start:6px; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > [data-surface-control^="settings:scale:"] { grid-column:span 3; margin-block-start:8px; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > :is([data-surface-control="settings:motion:system"],[data-surface-control="settings:motion:reduced"],[data-surface-control="settings:motion:full"],[data-surface-control^="settings:scale:"]) {
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; text-align:center;
+    min-block-size:3.5rem; padding-block:8px 12px; padding-inline:20px 0; border-color:var(--st-edge); border-radius:4px; background:var(--st-card);
+  }
+  /* Segments sit 2px apart; the outer ends carry the group radius. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > :is([data-surface-control="settings:motion:system"],[data-surface-control="settings:motion:reduced"],[data-surface-control^="settings:scale:"]):not([data-surface-control="settings:scale:200"]) { margin-inline-end:-6px; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > :is([data-surface-control="settings:motion:system"],[data-surface-control="settings:scale:100"]) { border-start-start-radius:var(--st-radius); border-end-start-radius:var(--st-radius); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > :is([data-surface-control="settings:motion:full"],[data-surface-control="settings:scale:200"]) { border-start-end-radius:var(--st-radius); border-end-end-radius:var(--st-radius); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] :is([data-surface-control="settings:motion:system"],[data-surface-control="settings:motion:reduced"],[data-surface-control="settings:motion:full"],[data-surface-control^="settings:scale:"]) > .control-label {
+    flex-direction:column; justify-content:center; gap:6px; font-size:.8125rem;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > button:is([data-surface-control="settings:motion:system"],[data-surface-control="settings:motion:reduced"],[data-surface-control="settings:motion:full"]) > .control-label::before { display:none; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] :is([data-surface-control="settings:motion:system"],[data-surface-control="settings:motion:reduced"],[data-surface-control="settings:motion:full"],[data-surface-control^="settings:scale:"]) > .control-detail:not(:empty) { margin:0; padding:0; color:var(--wl-sys-color-brand-text); font-weight:600; font-size:.6875rem; }
+  /* Text size segments preview their own size with the glyph. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > button[data-surface-control^="settings:scale:"] > .control-label::before { margin:0; vertical-align:0; inline-size:var(--st-scale-glyph, 1rem); block-size:var(--st-scale-glyph, 1rem); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] [data-surface-control^="settings:scale:"] > .control-label { justify-content:flex-end; min-block-size:calc(1.5rem + 6px + 1lh); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] [data-surface-control="settings:scale:100"] { --st-scale-glyph: .875rem; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] [data-surface-control="settings:scale:125"] { --st-scale-glyph: 1.0625rem; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] [data-surface-control="settings:scale:150"] { --st-scale-glyph: 1.25rem; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] [data-surface-control="settings:scale:200"] { --st-scale-glyph: 1.5rem; }
+
+  /* Themes: three swatch cards. Each swatch is a small desktop drawn in that theme's own token colours. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > [data-surface-control^="settings:theme:"] {
+    grid-column:span 4; margin-block-start:20px; display:flex; flex-direction:column; align-items:stretch; justify-content:flex-start; gap:8px;
+    padding:6px 6px 10px; border-color:var(--st-edge); border-radius:12px; background:var(--st-card);
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] [data-surface-control^="settings:theme:"] > .control-label { padding-inline-start:6px; font-size:.8125rem; font-weight:600; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > button[data-surface-control^="settings:theme:"] > .control-label::before { inline-size:1.125rem; block-size:1.125rem; margin-inline-end:.5rem; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] [data-surface-control^="settings:theme:"] > .control-detail:not(:empty) { margin:-6px 0 0; padding-inline-start:calc(6px + 1.625rem); color:var(--wl-sys-color-brand-text); font-weight:600; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] [data-surface-control="settings:theme:night"] {
+    --sw-canvas:#100E0E; --sw-glow:#4A1418; --sw-bar:#221D1E; --sw-frame:#383032; --sw-surface:#191516; --sw-text:#F6EFE8; --sw-text2:#BDB2AF; --sw-accent:#B02026;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] [data-surface-control="settings:theme:dawn"] {
+    --sw-canvas:#F6F1EA; --sw-glow:#F3D9D3; --sw-bar:#FFFFFF; --sw-frame:#E3DBD0; --sw-surface:#FFFDF9; --sw-text:#181314; --sw-text2:#706562; --sw-accent:#A11D22;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] [data-surface-control="settings:theme:high-contrast"] {
+    --sw-canvas:#000000; --sw-glow:#000000; --sw-bar:#000000; --sw-frame:#FFFFFF; --sw-surface:#000000; --sw-text:#FFFFFF; --sw-text2:#FFFFFF; --sw-accent:#FFB3AC;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] [data-surface-control^="settings:theme:"] {
+    --st-swatch:
+      linear-gradient(var(--sw-accent) 0 0) left 22px top 2.95rem / 1.5rem .3125rem no-repeat,
+      linear-gradient(var(--sw-text2) 0 0) left 22px top 2.45rem / 34% .1875rem no-repeat,
+      linear-gradient(var(--sw-text) 0 0) left 22px top 1.95rem / 22% .25rem no-repeat,
+      linear-gradient(var(--sw-surface) 0 0) left 15px top calc(1.45rem + 1px) / calc(62% - 2px) calc(2.3rem - 2px) no-repeat,
+      linear-gradient(var(--sw-frame) 0 0) left 14px top 1.45rem / 62% 2.3rem no-repeat,
+      linear-gradient(var(--sw-surface) 0 0) right 15px top calc(1.45rem + 1px) / calc(20% - 2px) calc(2.3rem - 2px) no-repeat,
+      linear-gradient(var(--sw-frame) 0 0) right 14px top 1.45rem / 20% 2.3rem no-repeat,
+      linear-gradient(var(--sw-accent) 0 0) left 8px top .3125rem / .5rem .3125rem no-repeat,
+      linear-gradient(var(--sw-frame) 0 0) left 0 top .875rem / 100% 1px no-repeat,
+      linear-gradient(var(--sw-bar) 0 0) left 0 top 0 / 100% .875rem no-repeat,
+      linear-gradient(150deg, var(--sw-canvas) 40%, var(--sw-glow));
+  }
+
+  /* Save: the primary red action with its caption beneath; Refresh stays quiet. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > .settings-save-group {
+    margin-block-start:14px; display:flex; flex-direction:column; align-items:flex-start; gap:6px;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .settings-save-group > button {
+    margin:0; min-inline-size:min(100%, 13rem); max-inline-size:100%; min-block-size:2.5rem; padding-block:8px 8px; padding-inline:16px 18px; justify-content:center;
+    border-color:var(--st-edge); background:var(--st-card-strong); color:var(--wl-sys-color-text);
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .settings-save-group > button > .control-label { justify-content:center; font-weight:600; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .settings-save-caption { margin:0; padding-inline:6px; color:var(--wl-sys-color-text-secondary); font-size:.75rem; line-height:1.333333; overflow-wrap:anywhere; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > .settings-save-group + button[data-surface-control$=":refresh"] { margin-block-start:6px; }
+
+  /* Shortcut choices: the notice reads as a quiet note; each route is a card of radio rows with chord captions. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > .notification-text[data-shortcut-state] {
+    padding:0 16px; background:var(--st-card); border:1px solid var(--st-edge); border-block-width:0; color:var(--wl-sys-color-text);
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > .notification-text[data-shortcut-state="settings:shortcuts:notice:state"] {
+    margin-block-start:22px; padding:0 4px 2px; background:transparent; border:0; color:var(--wl-sys-color-text-secondary); font-size:.8125rem; line-height:1.45;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > .notification-text:is([data-shortcut-state="settings:shortcuts:applications:state"],[data-shortcut-state="settings:shortcuts:system:state"],[data-shortcut-state="settings:shortcuts:notifications:state"]) {
+    margin-block-start:10px; padding-block:12px 6px; border-block-start-width:1px; border-start-start-radius:var(--st-radius); border-start-end-radius:var(--st-radius);
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .notification-text:is([data-shortcut-state="settings:shortcuts:applications:state"],[data-shortcut-state="settings:shortcuts:system:state"],[data-shortcut-state="settings:shortcuts:notifications:state"]) > .control-label { font-weight:600; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > .notification-text:is([data-shortcut-state$=":default:state"],[data-shortcut-state$=":alternate:state"]) {
+    padding-block:0 8px; padding-inline:calc(14px + var(--st-glyph-indent)) 16px;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .notification-text:is([data-shortcut-state$=":default:state"],[data-shortcut-state$=":alternate:state"]) > .control-label {
+    font-family:var(--wl-sys-font-code); font-size:.75rem; line-height:1.5; letter-spacing:0; color:var(--wl-sys-color-text-secondary);
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > button:is([data-surface-control$=":keep"],[data-surface-control$=":default"],[data-surface-control$=":alternate"])[data-surface-control^="settings:shortcuts:"] {
+    padding-block:6px 6px; padding-inline:14px 16px; border-color:var(--st-edge); border-block-width:0; border-radius:0; background:var(--st-card);
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] button:is([data-surface-control$=":keep"],[data-surface-control$=":default"],[data-surface-control$=":alternate"])[data-surface-control^="settings:shortcuts:"] > .control-detail { padding-inline-start:var(--st-glyph-indent); }
+  /* The last piece of each route closes its card. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > :is(.notification-text[data-shortcut-state],button[data-surface-control^="settings:shortcuts:"]):has(+ :is([data-shortcut-state="settings:shortcuts:applications:state"],[data-shortcut-state="settings:shortcuts:system:state"],[data-shortcut-state="settings:shortcuts:notifications:state"],.settings-save-group)) {
+    padding-block-end:12px; border-block-end-width:1px; border-end-start-radius:var(--st-radius); border-end-end-radius:var(--st-radius);
+  }
+  /* Radio indicator in the glyph slot: a ring, filled with a dot when the choice is selected. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] button:is([data-surface-control$=":keep"],[data-surface-control$=":default"],[data-surface-control$=":alternate"])[data-surface-control^="settings:shortcuts:"] > .control-label::before {
+    content:""; display:inline-block; flex:0 0 auto; inline-size:1.25rem; block-size:1.25rem; margin-inline-end:.625rem; vertical-align:-.3rem;
+    background:var(--wl-sys-color-text-secondary);
+    -webkit-mask:radial-gradient(circle closest-side, transparent calc(100% - 3.5px), #000 calc(100% - 3px) calc(100% - 1.5px), transparent calc(100% - 1px));
+    mask:radial-gradient(circle closest-side, transparent calc(100% - 3.5px), #000 calc(100% - 3px) calc(100% - 1.5px), transparent calc(100% - 1px));
+  }
 }
 
-@layer components {
-  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] { block-size: 100%; max-block-size: 100%; }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > * { flex: 0 0 auto; min-inline-size: 0; }
-}
 @layer states {
-  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .settings-save-group > :is([data-surface-control="settings:save"], [data-surface-control="settings:motion:save"], [data-surface-control="settings:shortcuts:save"]):not(:disabled):not([aria-disabled="true"]) { background: var(--wl-sys-color-action-fill); border-color: var(--wl-sys-color-on-action); color: var(--wl-sys-color-on-action); }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .settings-save-group > :is([data-surface-control="settings:save"], [data-surface-control="settings:motion:save"], [data-surface-control="settings:shortcuts:save"]):not(:disabled):not([aria-disabled="true"]):active { background: var(--wl-sys-color-action-fill-pressed); }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"][data-theme="dawn"] .settings-save-group > :is([data-surface-control="settings:save"], [data-surface-control="settings:motion:save"], [data-surface-control="settings:shortcuts:save"]):not(:disabled):not([aria-disabled="true"]) { border-color: var(--wl-sys-color-brand-text); }
+  /* Switch: a drawn track and thumb at the inline end, reflecting aria-pressed. */
+  /* The row itself never changes with state (it may also carry aria-current); only the switch and the On/Off detail do. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > button:is([data-surface-control="settings:effects-off"],[data-surface-control="settings:reduced-transparency"]):is([aria-current],[aria-pressed]) { background:var(--st-card); border-color:var(--st-edge); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > button:is([data-surface-control="settings:effects-off"],[data-surface-control="settings:reduced-transparency"]):is([aria-current],[aria-pressed])::before { content:none; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] :is([data-surface-control="settings:effects-off"],[data-surface-control="settings:reduced-transparency"])::after {
+    content:""; grid-column:3; grid-row:1; box-sizing:border-box; inline-size:2.5rem; block-size:1.25rem; border-radius:999px;
+    border:1px solid var(--wl-sys-color-border-essential); background:var(--st-track) radial-gradient(circle closest-side, var(--wl-sys-color-text-secondary) calc(100% - .5px), transparent 100%) no-repeat;
+    background-size:.75rem .75rem; background-position:left .1875rem center;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] :is([data-surface-control="settings:effects-off"],[data-surface-control="settings:reduced-transparency"]):dir(rtl)::after { background-position:right .1875rem center; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] :is([data-surface-control="settings:effects-off"],[data-surface-control="settings:reduced-transparency"])[aria-pressed="true"]::after {
+    border-color:var(--wl-sys-color-action-fill);
+    background:var(--wl-sys-color-action-fill) radial-gradient(circle closest-side, var(--wl-sys-color-on-action) calc(100% - .5px), transparent 100%) no-repeat;
+    background-size:.75rem .75rem; background-position:right .1875rem center;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] :is([data-surface-control="settings:effects-off"],[data-surface-control="settings:reduced-transparency"])[aria-pressed="true"]:dir(rtl)::after { background-position:left .1875rem center; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] :is([data-surface-control="settings:effects-off"],[data-surface-control="settings:reduced-transparency"])[aria-pressed="true"] > .control-detail { color:var(--wl-sys-color-text); }
+
+  /* Segments: the selected choice takes the brand tint, a brand edge and a short brand pill under its label. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > :is([data-surface-control="settings:motion:system"],[data-surface-control="settings:motion:reduced"],[data-surface-control="settings:motion:full"],[data-surface-control^="settings:scale:"])[aria-current="true"] {
+    background:var(--st-on); border-color:var(--st-on-edge);
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > :is([data-surface-control="settings:motion:system"],[data-surface-control="settings:motion:reduced"],[data-surface-control="settings:motion:full"],[data-surface-control^="settings:scale:"])[aria-current="true"]::before {
+    content:""; position:absolute; inset-block:auto 5px; inset-inline:0; margin-inline:auto; inline-size:18px; block-size:3px; border-radius:999px; background:var(--wl-sys-color-brand-text); pointer-events:none;
+  }
+
+  /* Theme cards: the swatch is the card's leading piece; the selected card gets a brand ring and a check badge. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > [data-surface-control^="settings:theme:"]::before,
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > [data-surface-control^="settings:theme:"][aria-current="true"]::before {
+    content:""; position:static; display:block; inset:auto; inline-size:auto; block-size:4.25rem; border-radius:7px; pointer-events:none;
+    box-shadow:inset 0 0 0 1px color-mix(in srgb, var(--sw-text) 14%, transparent);
+    background:var(--st-swatch);
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > [data-surface-control^="settings:theme:"][aria-current="true"] {
+    border-color:var(--wl-sys-color-brand-text); box-shadow:inset 0 0 0 1px var(--wl-sys-color-brand-text); background:var(--st-on);
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > [data-surface-control^="settings:theme:"][aria-current="true"]::after {
+    content:""; position:absolute; inset-block-start:12px; inset-inline-end:12px; inline-size:1.25rem; block-size:1.25rem; border-radius:50%; pointer-events:none;
+    background:var(--wl-sys-color-action-fill);
+    -webkit-mask:var(--wl-glyph-check, none) center/80% no-repeat, radial-gradient(circle closest-side, #000 calc(100% - .5px), transparent 100%);
+    -webkit-mask-composite:xor;
+    mask:var(--wl-glyph-check, none) center/80% no-repeat exclude, radial-gradient(circle closest-side, #000 calc(100% - .5px), transparent 100%);
+  }
+
+  /* Shortcut choices: the radio fills; the row keeps the card fill so the route reads as one list. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > button[data-surface-control^="settings:shortcuts:"]:is([data-surface-control$=":keep"],[data-surface-control$=":default"],[data-surface-control$=":alternate"])[aria-current="true"] { background:var(--st-card); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > button[data-surface-control^="settings:shortcuts:"]:is([data-surface-control$=":keep"],[data-surface-control$=":default"],[data-surface-control$=":alternate"])[aria-current="true"]::before { content:none; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] button[data-surface-control^="settings:shortcuts:"]:is([data-surface-control$=":keep"],[data-surface-control$=":default"],[data-surface-control$=":alternate"])[aria-current="true"] > .control-label::before {
+    background:var(--wl-sys-color-brand-text);
+    -webkit-mask:radial-gradient(circle closest-side, #000 calc(45% - .5px), transparent 45% calc(100% - 3.5px), #000 calc(100% - 3px) calc(100% - 1.5px), transparent calc(100% - 1px));
+    mask:radial-gradient(circle closest-side, #000 calc(45% - .5px), transparent 45% calc(100% - 3.5px), #000 calc(100% - 3px) calc(100% - 1.5px), transparent calc(100% - 1px));
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] button[data-surface-control^="settings:shortcuts:"][aria-current="true"] > .control-detail:not(:empty) { color:var(--wl-sys-color-brand-text); font-weight:600; }
+
+  /* Save: affirmative fill when enabled. Disabled saves stay readable on a neutral fill with the shared cue. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"][data-mode] .settings-save-group > button[data-surface-control$=":save"]:not(:disabled):not([aria-disabled="true"]) {
+    background:var(--wl-sys-color-action-fill); border-color:var(--wl-sys-color-action-fill); color:var(--wl-sys-color-on-action);
+    box-shadow:0 1px 0 color-mix(in srgb, var(--wl-sys-color-on-action) 14%, transparent) inset, 0 2px 8px color-mix(in srgb, var(--wl-sys-color-action-fill) 30%, transparent);
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"][data-mode] .surface-controls > .settings-save-group > button[data-surface-control$=":save"]:not(:disabled):not([aria-disabled="true"]):not([aria-current="true"]):not([aria-pressed="true"]):not([aria-selected="true"]):active { background:var(--wl-sys-color-action-fill-pressed); border-color:var(--wl-sys-color-action-fill-pressed); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"][data-theme="dawn"] .settings-save-group > button[data-surface-control$=":save"]:not(:disabled):not([aria-disabled="true"]) { border-color:var(--wl-sys-color-brand-text); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .settings-save-group > button[data-surface-control$=":save"]:is(:disabled,[aria-disabled="true"]) { opacity:1; color:var(--wl-sys-color-text-secondary); background:var(--st-card); border-color:var(--st-edge); }
+
+  /* Unavailable rows keep opacity 1, secondary text and the shared cue on their label. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls button:is(:disabled,[aria-disabled="true"]) { opacity:1; color:var(--wl-sys-color-text-secondary); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > [data-surface-control="settings:motion"]:is(:disabled,[aria-disabled="true"]) { background:transparent; }
+
+  /* Pointer feedback: hover only on enabled controls with a fine pointer; selection keeps its fill family. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"][data-mode] .surface-controls button:not(:disabled):not([aria-disabled="true"]):not([aria-current="true"]):not([aria-pressed="true"]):not([aria-selected="true"]):active { background:var(--skin-press, var(--wl-sys-color-surface-pressed)); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"][data-mode] .surface-controls button:is([aria-current="true"],[aria-pressed="true"]):not(:disabled):not([aria-disabled="true"]):not([data-surface-control^="settings:shortcuts:"]):not(:is([data-surface-control="settings:effects-off"],[data-surface-control="settings:reduced-transparency"])):active { background:var(--st-on-hover); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"][data-mode] .surface-controls > button:is([data-surface-control="settings:effects-off"],[data-surface-control="settings:reduced-transparency"]):not(:disabled):not([aria-disabled="true"]):active { background:var(--skin-press, var(--wl-sys-color-surface-pressed)); }
+  @media (hover:hover) and (pointer:fine) {
+    html[data-warlock-design="v1"] .surface-popup[data-mode="settings"][data-mode] .surface-controls button:not(:disabled):not([aria-disabled="true"]):not([aria-current="true"]):not([aria-pressed="true"]):not([aria-selected="true"]):hover:not(:active) { background:var(--skin-hover, var(--wl-sys-color-surface-hover)); }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="settings"][data-mode] .surface-controls :is([data-surface-control="settings:effects-off"],[data-surface-control="settings:reduced-transparency"],[data-surface-control="settings:help"],[data-surface-control^="settings:theme:"],[data-surface-control^="settings:scale:"],[data-surface-control^="settings:motion:"],[data-surface-control^="settings:shortcuts:"]):not([data-surface-control$=":save"]):not([data-surface-control$=":refresh"]):not(:disabled):not([aria-disabled="true"]):not([aria-current="true"]):hover:not(:active) { background:var(--st-card-strong); }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="settings"][data-mode] .surface-controls button:is([aria-current="true"],[aria-pressed="true"]):not(:disabled):not([aria-disabled="true"]):not([data-surface-control^="settings:shortcuts:"]):not([data-surface-control="settings:effects-off"]):not([data-surface-control="settings:reduced-transparency"]):hover:not(:active) { background:var(--st-on-hover); }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="settings"][data-mode] .surface-controls button[data-surface-control^="settings:shortcuts:"][aria-current="true"]:not(:disabled):not([aria-disabled="true"]):hover:not(:active) { background:var(--st-card-strong); }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="settings"][data-mode] .surface-controls > button:is([data-surface-control="settings:effects-off"],[data-surface-control="settings:reduced-transparency"]):not(:disabled):not([aria-disabled="true"]):hover:not(:active) { background:var(--st-card-strong); }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="settings"][data-mode] .surface-controls > .settings-save-group > button[data-surface-control$=":save"]:not(:disabled):not([aria-disabled="true"]):not([aria-current="true"]):not([aria-pressed="true"]):not([aria-selected="true"]):hover:not(:active) { background:var(--wl-sys-color-action-fill-hover); border-color:var(--wl-sys-color-action-fill-hover); }
+  }
 }
+
 @layer accessibility {
-  @media (max-height: 300px) { html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] { overflow: auto; } html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls { overflow: visible; flex: 0 0 auto; } }
-  @media (forced-colors: active) { html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .settings-save-group > :is([data-surface-control="settings:save"], [data-surface-control="settings:motion:save"], [data-surface-control="settings:shortcuts:save"]):not(:disabled) { color: ButtonText; background: ButtonFace; border-color: ButtonText; } }
-}
-@layer states {
-  @media (hover: hover) and (pointer: fine) {
-  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .control-utility:not(:disabled):not([aria-disabled="true"]):hover:not(:active) { background: var(--wl-sys-color-surface-hover); }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] :is([data-surface-control^="settings:theme:"], [data-surface-control^="settings:scale:"], [data-surface-control^="settings:motion:"], [data-surface-control^="settings:shortcuts:"], [data-surface-control="settings:effects-off"], [data-surface-control="settings:reduced-transparency"]):is([aria-current="true"], [aria-pressed="true"]):not(:disabled):not([aria-disabled="true"]):hover:not(:active) { background: var(--wl-sys-color-surface-selected-hover); }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .settings-save-group > :is([data-surface-control="settings:save"], [data-surface-control="settings:motion:save"], [data-surface-control="settings:shortcuts:save"]):not(:disabled):not([aria-disabled="true"]):hover:not(:active) { background: var(--wl-sys-color-action-fill-hover); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"][data-theme="high-contrast"] .settings-save-group > button:is(:disabled,[aria-disabled="true"]) { border-style:dashed; border-color:var(--wl-sys-color-window-edge-unfocused); }
+  @media (max-height:300px) {
+    html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] { overflow:auto; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls { overflow:visible; flex:0 0 auto; }
   }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] :is([data-surface-control^="settings:theme:"], [data-surface-control^="settings:scale:"], [data-surface-control^="settings:motion:"], [data-surface-control^="settings:shortcuts:"], [data-surface-control="settings:effects-off"], [data-surface-control="settings:reduced-transparency"]):is([aria-current="true"], [aria-pressed="true"]):is(:disabled, [aria-disabled="true"]) { color: var(--wl-sys-color-text-secondary); background: var(--wl-sys-color-surface-selected); opacity: 1; }
-}
-
-@layer components {
-  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .settings-save-group { display: flex; flex-direction: column; gap: 2px; }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .settings-save-caption { margin: 0; padding-inline: 12px; color: var(--wl-sys-color-text-secondary); font-size: .75rem; line-height: 1.333333; overflow-wrap: anywhere; }
-}
-
-@layer components {
-  /* Minimum sizes: 36px single-line controls and 56px rows with a detail; the 1px border and 6px 12px padding never change. */
-  html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .control-utility:has(> .control-detail:not(:empty)) { min-block-size: 3.5rem; }
-}
-@layer accessibility {
-  @media (pointer: coarse) {
-    html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .control-utility { min-block-size: 2.75rem; }
-    html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .control-utility:has(> .control-detail:not(:empty)) { min-block-size: 3.75rem; }
+  @media (pointer:coarse) {
+    html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls button { min-block-size:2.75rem; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls button:has(> .control-detail:not(:empty)) { min-block-size:3.75rem; }
   }
-  @media (forced-colors: active) {
-    html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] :is([data-surface-control="settings:effects-off"], [data-surface-control="settings:reduced-transparency"])[aria-pressed="true"]::before,
-    html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] [aria-current="true"]::before { forced-color-adjust: none; background: CanvasText; }
+  /* Narrow or heavily scaled surfaces: grouped choices reflow to fewer columns, never clipping. */
+  @container (max-width: 26rem) {
+    html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > :is([data-surface-control^="settings:theme:"],[data-surface-control^="settings:scale:"],[data-surface-control="settings:motion:system"],[data-surface-control="settings:motion:reduced"],[data-surface-control="settings:motion:full"]) { grid-column:1 / -1; margin-inline-end:0; border-radius:var(--st-radius); }
+  }
+  @media (forced-colors:active) {
+    /* An opaque panel, and system colours on every control so a focused control (which the shared focus rule leaves
+       unforced) still reads correctly. */
+    html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] { background:Canvas; color:CanvasText; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls button { background:ButtonFace; color:ButtonText; border-color:ButtonText; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > :is([data-surface-control="control:close"],[data-surface-control$=":refresh"],[data-surface-control="settings:motion"]) { border-color:transparent; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls button:is(:disabled,[aria-disabled="true"]) { color:GrayText; border-color:GrayText; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > [data-surface-control="settings:motion"]:is(:disabled,[aria-disabled="true"]) { border-color:transparent; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls button .control-detail { color:inherit; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] :is(.notification-text[data-settings-help],.notification-text[data-shortcut-state]:not([data-shortcut-state="settings:shortcuts:notice:state"])) { border-color:CanvasText; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] :is([data-surface-control="settings:effects-off"],[data-surface-control="settings:reduced-transparency"])::after {
+      forced-color-adjust:none; border-color:ButtonText; background:Canvas radial-gradient(circle closest-side, ButtonText calc(100% - .5px), transparent 100%) no-repeat; background-size:.75rem .75rem; background-position:left .1875rem center;
+    }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] :is([data-surface-control="settings:effects-off"],[data-surface-control="settings:reduced-transparency"])[aria-pressed="true"]::after {
+      border-color:Highlight; background:Highlight radial-gradient(circle closest-side, HighlightText calc(100% - .5px), transparent 100%) no-repeat; background-size:.75rem .75rem; background-position:right .1875rem center;
+    }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > [data-surface-control^="settings:theme:"]::before,
+    html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > [data-surface-control^="settings:theme:"][aria-current="true"]::before { forced-color-adjust:none; box-shadow:0 0 0 1px CanvasText; background:var(--st-swatch); }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > [data-surface-control^="settings:theme:"][aria-current="true"]::after { forced-color-adjust:none; background:Highlight; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > :is([data-surface-control^="settings:theme:"],[data-surface-control^="settings:scale:"],[data-surface-control^="settings:motion:"])[aria-current="true"] { border-color:Highlight; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .surface-controls > :is([data-surface-control^="settings:scale:"],[data-surface-control^="settings:motion:"])[aria-current="true"]::before { forced-color-adjust:none; background:Highlight; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] button[data-surface-control^="settings:shortcuts:"][aria-current="true"] > .control-label::before { background:Highlight; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="settings"] .settings-save-group > button[data-surface-control$=":save"]:not(:disabled) { color:ButtonText; background:ButtonFace; border-color:ButtonText; }
   }
 }

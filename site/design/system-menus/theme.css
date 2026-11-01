@@ -17,19 +17,22 @@
 }
 @layer states {
   html[data-warlock-design="v1"] .surface-popup[data-mode="menu"] [aria-current="true"] { background-color:var(--wl-sys-color-surface-selected); }
-  /* Two border-painted clipped strips form four corners without using the check or focus layers. */
-  html[data-warlock-design="v1"] .surface-popup[data-mode="menu"] [aria-current="true"] .control-label::before,
-  html[data-warlock-design="v1"] .surface-popup[data-mode="menu"] [aria-current="true"] .control-label::after { content:""; position:absolute; inset-inline:0; height:12px; border:2px solid var(--wl-sys-color-text); pointer-events:none; clip-path:polygon(0 0, 12px 0, 12px 6px, calc(100% - 12px) 6px, calc(100% - 12px) 0, 100% 0, 100% 100%, calc(100% - 2px) 100%, calc(100% - 2px) 2px, 2px 2px, 2px 100%, 0 100%); }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="menu"] [aria-current="true"] .control-label::before { top:0; }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="menu"] [aria-current="true"] .control-label::after { bottom:0; transform:rotate(180deg); }
+  /* Four separate border-painted corners on the row's own ::before: one 2px border, masked to its four 12px corners.
+     The label's pseudo-elements stay free for glyphs and group rules; ::after stays the check. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="menu"] .surface-controls > [aria-current="true"]::before {
+    content:""; position:absolute; inset:0; width:auto; height:auto; box-sizing:border-box; border:2px solid var(--wl-sys-color-text); border-radius:inherit; background:none; pointer-events:none;
+    -webkit-mask:linear-gradient(90deg, #000 12px, transparent 12px calc(100% - 12px), #000 calc(100% - 12px)), linear-gradient(180deg, #000 12px, transparent 12px calc(100% - 12px), #000 calc(100% - 12px));
+    -webkit-mask-composite:source-in;
+    mask:linear-gradient(90deg, #000 12px, transparent 12px calc(100% - 12px), #000 calc(100% - 12px)), linear-gradient(180deg, #000 12px, transparent 12px calc(100% - 12px), #000 calc(100% - 12px));
+    mask-composite:intersect;
+  }
   @media (hover:hover) { html[data-warlock-design="v1"] .surface-popup[data-mode="menu"] [aria-current="true"]:not(:disabled):hover { background-color:var(--wl-sys-color-surface-selected-hover); } }
   html[data-warlock-design="v1"] .surface-popup[data-mode="menu"] [aria-current="true"]:not(:disabled):active { background-color:var(--wl-sys-color-surface-selected-pressed); }
   html[data-warlock-design="v1"] .surface-popup:is([data-mode="system"],[data-mode="menu"],[data-mode="jump"]) button:disabled .control-detail { color:var(--wl-sys-color-text-secondary); }
 }
 @layer accessibility {
   @media (forced-colors:active) {
-    html[data-warlock-design="v1"] .surface-popup[data-mode="menu"] [aria-current="true"] .control-label::before,
-    html[data-warlock-design="v1"] .surface-popup[data-mode="menu"] [aria-current="true"] .control-label::after { border-color:CanvasText; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="menu"] .surface-controls > [aria-current="true"]::before { forced-color-adjust:none; border-color:CanvasText; }
   }
 }
 @layer accessibility {
@@ -38,5 +41,235 @@
     html[data-warlock-design="v1"] .surface-popup[data-mode="menu"] .surface-controls > button,
     html[data-warlock-design="v1"] .surface-popup[data-mode="system"] [data-system-confirmation] :is([data-surface-control="system:cancel"],[data-surface-control="system:confirm"]) { min-height:2.75rem; }
     html[data-warlock-design="v1"] .surface-popup[data-mode="menu"] .surface-controls > button:has(> .control-detail:not(:empty)) { min-height:3.75rem; }
+  }
+}
+
+/* ---------- Shell skin (runtime popup only) ----------
+   System is a quick-settings flyout: a quiet toolbar, then each state paragraph opens its group as a caption with a
+   glyph, followed by that group's actions as tiles. The confirmation group closes the list as one card. The window
+   menu is a compact context menu; application actions are a jump list. Placement always follows source order. */
+@layer components {
+  html[data-warlock-design="v1"] body.popup .surface-popup:is([data-mode="system"],[data-mode="menu"],[data-mode="jump"]) {
+    --sk-line: var(--skin-hairline);
+    --sk-tile: var(--skin-tile);
+    --sk-card: color-mix(in srgb, var(--wl-sys-color-surface-raised) 92%, transparent);
+  }
+  html[data-warlock-design="v1"] body.popup .surface-popup:is([data-mode="system"],[data-mode="menu"],[data-mode="jump"]):is([data-effects="off"],[data-reduced-transparency="true"]) { --sk-card: var(--wl-sys-color-surface-raised); }
+  html[data-warlock-design="v1"] body.popup .surface-popup:is([data-mode="system"],[data-mode="menu"],[data-mode="jump"])[data-theme="high-contrast"] { --sk-line: var(--wl-sys-color-border-essential); --sk-card: var(--wl-sys-color-surface); }
+
+  /* Glyph slot for identities the shared skin does not map; same mask pattern as the shared slot. */
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] :is(
+    [data-surface-control^="system:volume-mute:"],[data-surface-control^="system:network-enable:"],[data-surface-control^="system:suspend:"],
+    [data-surface-control^="system:reboot:"],[data-surface-control^="system:poweroff:"],[data-surface-control^="system:session-lock:"],[data-surface-control^="system:session-logout:"],
+    [data-system-content="system:volume:state"],[data-system-content="system:network:state"],[data-system-content="system:power:state"],[data-system-content="system:session:state"]
+  ) > .control-label::before,
+  html[data-warlock-design="v1"] body.popup .surface-popup:is([data-mode="menu"],[data-mode="jump"]) :is(
+    [data-surface-control="control:menu-close"],[data-surface-control^="control:new-instance:"],[data-surface-control^="jump:action:"],[data-jump-content="jump:title:state"]
+  ) > .control-label::before {
+    content:""; display:inline-block; flex:0 0 auto; inline-size:1.25rem; block-size:1.25rem; margin-inline-end:.625rem; vertical-align:-.3rem;
+    background:currentColor; -webkit-mask:var(--skin-glyph) center/contain no-repeat; mask:var(--skin-glyph) center/contain no-repeat;
+  }
+  html[data-warlock-design="v1"] body.popup .surface-popup [data-system-content="system:volume:state"] { --skin-glyph: var(--wl-glyph-speaker); }
+  html[data-warlock-design="v1"] body.popup .surface-popup [data-system-content="system:network:state"] { --skin-glyph: var(--wl-glyph-network); }
+  html[data-warlock-design="v1"] body.popup .surface-popup [data-system-content="system:power:state"] { --skin-glyph: var(--wl-glyph-power); }
+  html[data-warlock-design="v1"] body.popup .surface-popup [data-system-content="system:session:state"] { --skin-glyph: var(--wl-glyph-desktop); }
+  html[data-warlock-design="v1"] body.popup .surface-popup [data-surface-control="system:volume-mute:1"] { --skin-glyph: var(--wl-glyph-mute); }
+  html[data-warlock-design="v1"] body.popup .surface-popup [data-surface-control="system:volume-mute:0"] { --skin-glyph: var(--wl-glyph-speaker); }
+  html[data-warlock-design="v1"] body.popup .surface-popup [data-surface-control^="system:network-enable:"] { --skin-glyph: var(--wl-glyph-network); }
+  html[data-warlock-design="v1"] body.popup .surface-popup [data-surface-control^="system:suspend:"] { --skin-glyph: var(--wl-glyph-suspend); }
+  html[data-warlock-design="v1"] body.popup .surface-popup [data-surface-control^="system:reboot:"] { --skin-glyph: var(--wl-glyph-restart); }
+  html[data-warlock-design="v1"] body.popup .surface-popup [data-surface-control^="system:poweroff:"] { --skin-glyph: var(--wl-glyph-power); }
+  html[data-warlock-design="v1"] body.popup .surface-popup [data-surface-control^="system:session-lock:"] { --skin-glyph: var(--wl-glyph-lock); }
+  html[data-warlock-design="v1"] body.popup .surface-popup [data-surface-control^="system:session-logout:"] { --skin-glyph: var(--wl-glyph-logout); }
+  html[data-warlock-design="v1"] body.popup .surface-popup [data-surface-control="control:menu-close"] { --skin-glyph: var(--wl-glyph-close); }
+  html[data-warlock-design="v1"] body.popup .surface-popup [data-surface-control^="control:new-instance:"] { --skin-glyph: var(--wl-glyph-new-window); }
+  html[data-warlock-design="v1"] body.popup .surface-popup [data-surface-control^="jump:action:"] { --skin-glyph: var(--wl-glyph-open); }
+  html[data-warlock-design="v1"] body.popup .surface-popup [data-surface-control^="jump:action:recent:"] { --skin-glyph: var(--wl-glyph-recent); }
+  html[data-warlock-design="v1"] body.popup .surface-popup [data-jump-content="jump:title:state"] { --skin-glyph: var(--wl-glyph-actions); }
+
+  /* ----- System: grid and quiet toolbar ----- */
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] .surface-controls { display:grid; grid-template-columns:repeat(6, minmax(0,1fr)); gap:6px; align-content:start; }
+  html[data-warlock-design="v1"] body.popup .surface-popup:is([data-mode="system"],[data-mode="jump"]) .surface-controls > * { grid-column:1 / -1; width:auto; margin:0; }
+  html[data-warlock-design="v1"] body.popup .surface-popup:is([data-mode="system"],[data-mode="jump"]) .surface-controls > :is([data-surface-control="control:close"],[data-surface-control$=":refresh"]) {
+    grid-column:span 3; display:flex; flex-direction:column; justify-content:center; min-height:2.5rem; padding:6px 10px;
+  }
+  html[data-warlock-design="v1"] body.popup .surface-popup:is([data-mode="system"],[data-mode="jump"]) .surface-controls > :is([data-surface-control="control:close"],[data-surface-control$=":refresh"]) > .control-label { font-size:.8125rem; }
+  html[data-warlock-design="v1"] body.popup .surface-popup:is([data-mode="system"],[data-mode="jump"]) .surface-controls > :is([data-surface-control="control:close"],[data-surface-control$=":refresh"]) > .control-label::before { inline-size:1.125rem; block-size:1.125rem; }
+  html[data-warlock-design="v1"] body.popup .surface-popup:is([data-mode="system"],[data-mode="jump"]) .surface-controls > [data-surface-control$=":refresh"] > .control-detail { margin:1px 0 0; padding-inline-start:1.75rem; font-size:.6875rem; }
+
+  /* Group captions: the source state paragraph, a glyph and a hairline above. */
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] .surface-controls > [data-system-content]:not([data-system-content="system:confirmation:state"]) {
+    display:flex; align-items:center; margin:6px 0 0; padding:12px 4px 2px; border-top:1px solid var(--sk-line);
+    color:var(--wl-sys-color-text-secondary); font:500 .8125rem/1.4 var(--wl-sys-font-body);
+  }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] [data-system-content] > .control-label { display:flex; align-items:center; min-width:0; }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] [data-system-content] > .control-label::before { inline-size:1.125rem; block-size:1.125rem; color:var(--wl-sys-color-brand-text); }
+
+  /* Action tiles: glyph above the name, three to a row; the five volume presets and Mute share one row. */
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] .surface-controls > :is(
+    [data-surface-control^="system:volume-set:"],[data-surface-control^="system:volume-mute:"],[data-surface-control^="system:network-enable:"],
+    [data-surface-control^="system:suspend:"],[data-surface-control^="system:reboot:"],[data-surface-control^="system:poweroff:"],
+    [data-surface-control^="system:session-lock:"],[data-surface-control^="system:session-logout:"]
+  ) {
+    grid-column:span 2; display:flex; flex-direction:column; align-items:stretch; justify-content:center; min-height:4.25rem; padding:10px 6px 9px; text-align:center;
+    background:var(--sk-tile); border:1px solid var(--sk-line); border-radius:12px;
+  }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] .surface-controls > :is([data-surface-control^="system:volume-set:"],[data-surface-control^="system:volume-mute:"]) { grid-column:span 1; padding-inline:4px; }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] .surface-controls > :is(
+    [data-surface-control^="system:volume-set:"],[data-surface-control^="system:volume-mute:"],[data-surface-control^="system:network-enable:"],
+    [data-surface-control^="system:suspend:"],[data-surface-control^="system:reboot:"],[data-surface-control^="system:poweroff:"],
+    [data-surface-control^="system:session-lock:"],[data-surface-control^="system:session-logout:"]
+  ) > .control-label { flex-direction:column; justify-content:center; gap:6px; padding-inline:4px; font-size:.8125rem; line-height:1.3; }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] .surface-controls > :is(
+    [data-surface-control^="system:volume-mute:"],[data-surface-control^="system:network-enable:"],
+    [data-surface-control^="system:suspend:"],[data-surface-control^="system:reboot:"],[data-surface-control^="system:poweroff:"],
+    [data-surface-control^="system:session-lock:"],[data-surface-control^="system:session-logout:"]
+  ) > .control-label::before { inline-size:1.375rem; block-size:1.375rem; margin:0; color:var(--wl-sys-color-brand-text); }
+  /* Volume presets: the name wraps after "Set volume" in every tile; a level mark above shows each preset's own step. */
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] .surface-controls > [data-surface-control^="system:volume-set:"] > .control-label {
+    padding-inline:max(0px, calc((100% - 6.25em) / 2)); font-size:.75rem;
+  }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] { --lv-off:.26; }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"]:is([data-theme="high-contrast"],[data-theme="dawn"]) { --lv-off:.4; }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] [data-surface-control^="system:volume-set:"] { --lv1:var(--lv-off); --lv2:var(--lv-off); --lv3:var(--lv-off); --lv4:var(--lv-off); }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] [data-surface-control="system:volume-set:25"] { --lv1:1; }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] [data-surface-control="system:volume-set:50"] { --lv1:1; --lv2:1; }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] [data-surface-control="system:volume-set:75"] { --lv1:1; --lv2:1; --lv3:1; }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] [data-surface-control="system:volume-set:100"] { --lv1:1; --lv2:1; --lv3:1; --lv4:1; }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] .surface-controls > [data-surface-control^="system:volume-set:"] > .control-label::before {
+    content:""; display:block; flex:0 0 auto; inline-size:1.375rem; block-size:1.375rem; margin:0; background:currentColor; color:var(--wl-sys-color-brand-text);
+    -webkit-mask:
+      linear-gradient(rgb(0 0 0 / var(--lv1)) 0 0) 0 85% / 16% 34% no-repeat,
+      linear-gradient(rgb(0 0 0 / var(--lv2)) 0 0) 33.3% 85% / 16% 52% no-repeat,
+      linear-gradient(rgb(0 0 0 / var(--lv3)) 0 0) 66.6% 85% / 16% 70% no-repeat,
+      linear-gradient(rgb(0 0 0 / var(--lv4)) 0 0) 100% 85% / 16% 88% no-repeat;
+    mask:
+      linear-gradient(rgb(0 0 0 / var(--lv1)) 0 0) 0 85% / 16% 34% no-repeat,
+      linear-gradient(rgb(0 0 0 / var(--lv2)) 0 0) 33.3% 85% / 16% 52% no-repeat,
+      linear-gradient(rgb(0 0 0 / var(--lv3)) 0 0) 66.6% 85% / 16% 70% no-repeat,
+      linear-gradient(rgb(0 0 0 / var(--lv4)) 0 0) 100% 85% / 16% 88% no-repeat;
+  }
+  /* Larger text: presets and Mute fall back to three per row. */
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"]:is([data-text-scale="150"],[data-text-scale="200"]) .surface-controls > :is([data-surface-control^="system:volume-set:"],[data-surface-control^="system:volume-mute:"]) { grid-column:span 2; }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"][data-text-scale="200"] .surface-controls > :is(
+    [data-surface-control^="system:volume-set:"],[data-surface-control^="system:volume-mute:"],[data-surface-control^="system:network-enable:"],
+    [data-surface-control^="system:suspend:"],[data-surface-control^="system:reboot:"],[data-surface-control^="system:poweroff:"],
+    [data-surface-control^="system:session-lock:"],[data-surface-control^="system:session-logout:"]
+  ) { grid-column:span 3; }
+  html[data-warlock-design="v1"] body.popup .surface-popup:is([data-mode="system"],[data-mode="jump"])[data-text-scale="200"] .surface-controls > :is([data-surface-control="control:close"],[data-surface-control$=":refresh"]) { grid-column:1 / -1; }
+
+  /* ----- Confirmation: one card. The consequence is the body; Cancel and Confirm are its two footer cells. ----- */
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] .surface-controls > [data-system-content="system:confirmation:state"] {
+    margin:14px 0 0; padding:16px 18px 14px; border:1px solid var(--sk-line); border-bottom:0; border-radius:14px 14px 0 0;
+    background:var(--sk-card); color:var(--wl-sys-color-text); font:500 .9375rem/1.45 var(--wl-sys-font-body);
+    box-shadow:inset 0 1px 0 color-mix(in srgb, var(--wl-sys-color-text) 6%, transparent);
+  }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] .surface-controls > [data-system-content="system:confirmation:state"] ~ :is([data-surface-control="system:cancel"],[data-surface-control="system:confirm"]) {
+    grid-column:span 3; margin-top:-6px; display:flex; flex-direction:column; justify-content:center; min-height:3rem; padding:8px 12px; text-align:center;
+    background:var(--sk-card); border:1px solid var(--sk-line); border-radius:0;
+  }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] .surface-controls > [data-system-content="system:confirmation:state"] ~ [data-surface-control="system:cancel"] { border-inline-end-width:0; border-end-start-radius:14px; }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] .surface-controls > [data-system-content="system:confirmation:state"] ~ [data-surface-control="system:confirm"] { margin-inline-start:-6px; border-end-end-radius:14px; }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] :is([data-surface-control="system:cancel"],[data-surface-control="system:confirm"]) > .control-label { justify-content:center; padding-inline:calc(.75rem + 8px); }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] [data-surface-control="system:confirm"] > .control-label { font-weight:600; }
+  /* Typed projection: the wrapper becomes the same card; only a typed warning or danger colours it. */
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] .surface-controls > [data-system-confirmation] {
+    grid-column:1 / -1; display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:0; margin:14px 0 0; padding:0;
+    border:1px solid var(--sk-line); border-radius:14px; background:var(--sk-card);
+  }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] [data-system-confirmation] > [data-system-content="system:confirmation:state"] {
+    grid-column:1 / -1; display:flex; align-items:baseline; margin:0; padding:16px 18px 14px; color:var(--wl-sys-color-text); font:500 .9375rem/1.45 var(--wl-sys-font-body);
+  }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] [data-system-confirmation] > :is([data-surface-control="system:cancel"],[data-surface-control="system:confirm"]) {
+    width:auto; margin:0; display:flex; flex-direction:column; justify-content:center; min-height:3rem; padding:8px 12px; text-align:center;
+    background:transparent; border:0; border-top:1px solid var(--sk-line); border-radius:0;
+  }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] [data-system-confirmation] > [data-surface-control="system:cancel"] { border-end-start-radius:13px; }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] [data-system-confirmation] > [data-surface-control="system:confirm"] { border-inline-start:1px solid var(--sk-line); border-end-end-radius:13px; }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] [data-system-confirmation="warning"] { border-color:color-mix(in srgb, var(--wl-sys-color-warning) 55%, transparent); }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] [data-system-confirmation="danger"] { border-color:color-mix(in srgb, var(--wl-sys-color-danger) 60%, transparent); }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] [data-system-confirmation="warning"] > [data-surface-control="system:confirm"]:not(:disabled):not([aria-disabled="true"]) { color:var(--wl-sys-color-warning); border-color:var(--sk-line); background:color-mix(in srgb, var(--wl-sys-color-warning) 10%, transparent); }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] [data-system-confirmation="danger"] > [data-surface-control="system:confirm"]:not(:disabled):not([aria-disabled="true"]) { color:var(--wl-sys-color-danger); border-color:var(--sk-line); background:color-mix(in srgb, var(--wl-sys-color-danger) 12%, transparent); }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] [data-system-confirmation] [data-consequence-symbol] { flex:none; margin-inline-end:10px; }
+
+  /* ----- Window menu: compact context menu. Glyph column, label, detail as a right-aligned hint. ----- */
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="menu"] .surface-controls { gap:2px; }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="menu"] .surface-controls > button {
+    display:flex; flex-wrap:wrap; align-items:flex-start; align-content:center; column-gap:16px; row-gap:0;
+    width:auto; margin:0; min-height:2.25rem; padding:calc(.5rem - 1px) 14px calc(.5rem - 1px) calc(26px + 1.125rem); border-radius:8px;
+  }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="menu"] .surface-controls > button:has(> .control-detail:not(:empty)) { min-height:2.25rem; }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="menu"] .surface-controls > button > .control-label { flex:1 1 auto; min-width:0; font-size:.875rem; line-height:1.25rem; font-weight:500; }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="menu"] .surface-controls > button > .control-detail { flex:0 1 auto; margin:0 0 0 auto; font-size:.75rem; line-height:1.25rem; text-align:end; }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="menu"] .surface-controls > button > .control-label::before {
+    position:absolute; inset-inline-start:13px; top:calc(.5rem - 1px + .0625rem); inline-size:1.125rem; block-size:1.125rem; margin:0;
+  }
+  /* The check sits in the glyph column of its row; the legacy box is removed so the slot carries only the check. */
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="menu"] .surface-controls > [role="menuitemcheckbox"] { padding-inline-start:calc(26px + 1.125rem); }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="menu"] .surface-controls > [role="menuitemcheckbox"]:not([aria-current="true"])::before { content:none; }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="menu"] .surface-controls > [role="menuitemcheckbox"][aria-checked="true"]::after {
+    inset-inline-start:calc(13px + .375rem); top:calc(.5rem - 1px + .5625rem); width:.375rem; height:.6875rem; color:var(--wl-sys-color-brand-text);
+  }
+  /* Separators where the identity namespace changes: window commands sit between Close and the application group. */
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="menu"] .surface-controls > :is(:not([data-surface-control^="menu:"]) + [data-surface-control^="menu:"],[data-surface-control^="menu:"] + :not([data-surface-control^="menu:"])) { margin-top:9px; }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="menu"] .surface-controls > :is(:not([data-surface-control^="menu:"]) + [data-surface-control^="menu:"],[data-surface-control^="menu:"] + :not([data-surface-control^="menu:"])) > .control-label::after {
+    content:""; position:absolute; inset-inline:8px; top:-7px; block-size:1px; background:var(--sk-line); pointer-events:none;
+  }
+
+  /* ----- Application actions: jump list. Title, then the actions, then recent files below a hairline. ----- */
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="jump"] .surface-controls { display:grid; grid-template-columns:repeat(6, minmax(0,1fr)); gap:4px; align-content:start; }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="jump"] .surface-controls > [data-jump-content="jump:title:state"] {
+    display:flex; align-items:center; margin:8px 0 4px; padding:12px 4px 2px; border-top:1px solid var(--sk-line);
+    color:var(--wl-sys-color-text); font:600 .875rem/1.4 var(--wl-sys-font-body);
+  }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="jump"] [data-jump-content] > .control-label { display:flex; align-items:center; min-width:0; }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="jump"] [data-jump-content] > .control-label::before { inline-size:1.125rem; block-size:1.125rem; color:var(--wl-sys-color-brand-text); }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="jump"] .surface-controls > :is([data-surface-control^="control:new-instance:"],[data-surface-control^="jump:action:"]) {
+    display:flex; flex-direction:column; justify-content:center; min-height:3.25rem; padding:7px 14px 7px calc(10px + 2.25rem + 12px); border-radius:10px;
+  }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="jump"] .surface-controls > :is([data-surface-control^="control:new-instance:"],[data-surface-control^="jump:action:"])::before {
+    content:""; position:absolute; inset-inline-start:10px; top:50%; inline-size:2.25rem; block-size:2.25rem; transform:translateY(-50%); box-sizing:border-box;
+    border:1px solid color-mix(in srgb, var(--wl-sys-color-brand-text) 22%, transparent); border-radius:10px;
+    background:color-mix(in srgb, var(--wl-sys-color-brand-text) 11%, transparent); pointer-events:none;
+  }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="jump"][data-theme="high-contrast"] .surface-controls > :is([data-surface-control^="control:new-instance:"],[data-surface-control^="jump:action:"])::before { border-color:var(--sk-line); }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="jump"] .surface-controls > :is([data-surface-control^="control:new-instance:"],[data-surface-control^="jump:action:"]) > .control-label { font-weight:600; }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="jump"] .surface-controls > :is([data-surface-control^="control:new-instance:"],[data-surface-control^="jump:action:"]) > .control-label::before {
+    position:absolute; inset-inline-start:calc(10px + .5rem); top:50%; transform:translateY(-50%); margin:0; color:var(--wl-sys-color-brand-text);
+  }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="jump"] .surface-controls > :is([data-surface-control^="control:new-instance:"],[data-surface-control^="jump:action:"]) > .control-detail { margin-top:1px; }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="jump"] .surface-controls > :not([data-surface-control^="jump:action:recent:"]) + [data-surface-control^="jump:action:recent:"] { margin-top:9px; }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="jump"] .surface-controls > :not([data-surface-control^="jump:action:recent:"]) + [data-surface-control^="jump:action:recent:"] > .control-label::after {
+    content:""; position:absolute; inset-inline:8px; top:-7px; block-size:1px; background:var(--sk-line); pointer-events:none;
+  }
+}
+@layer states {
+  /* Tiles and the confirmation cells keep opaque hover and press over the card; unavailable glyphs go quiet. */
+  @media (hover:hover) and (pointer:fine) {
+    html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] .surface-controls > [data-system-content="system:confirmation:state"] ~ :is([data-surface-control="system:cancel"],[data-surface-control="system:confirm"]):enabled:not([aria-disabled="true"]):hover,
+    html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] [data-system-confirmation] > :is([data-surface-control="system:cancel"],[data-surface-control="system:confirm"]):enabled:not([aria-disabled="true"]):hover { background:var(--wl-sys-color-surface-hover); }
+  }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] .surface-controls > [data-system-content="system:confirmation:state"] ~ :is([data-surface-control="system:cancel"],[data-surface-control="system:confirm"]):enabled:not([aria-disabled="true"]):active,
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] [data-system-confirmation] > :is([data-surface-control="system:cancel"],[data-surface-control="system:confirm"]):enabled:not([aria-disabled="true"]):active { background:var(--wl-sys-color-surface-pressed); }
+  html[data-warlock-design="v1"] body.popup .surface-popup:is([data-mode="system"],[data-mode="menu"],[data-mode="jump"]) button:is(:disabled,[aria-disabled="true"]) > .control-label::before { color:inherit; }
+  /* Tile cue: the slashed ring sits in the tile's top corner beside the glyph, where it never meets the name. */
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] .surface-controls > :is(
+    [data-surface-control^="system:volume-set:"],[data-surface-control^="system:volume-mute:"],[data-surface-control^="system:network-enable:"],
+    [data-surface-control^="system:suspend:"],[data-surface-control^="system:reboot:"],[data-surface-control^="system:poweroff:"],
+    [data-surface-control^="system:session-lock:"],[data-surface-control^="system:session-logout:"]
+  ):is(:disabled,[aria-disabled="true"]) > .control-label { background-position:right 2px top 2px, right 0 top 0; }
+}
+@layer accessibility {
+  @media (forced-colors:active) {
+    html[data-warlock-design="v1"] body.popup .surface-popup:is([data-mode="system"],[data-mode="menu"],[data-mode="jump"]) button:is(:disabled,[aria-disabled="true"]) > .control-label::before { background:GrayText; }
+    html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="jump"] .surface-controls > :is([data-surface-control^="control:new-instance:"],[data-surface-control^="jump:action:"])::before { border-color:CanvasText; }
+    /* The glass panel keeps its alpha under forced colours; paint it opaque so nothing shows through. */
+    html[data-warlock-design="v1"] body.popup .surface-popup:is([data-mode="system"],[data-mode="menu"],[data-mode="jump"]) { background:Canvas; }
+    /* The shared focus ring opts the focused control out of forced colours; keep its text in the system colour. */
+    html[data-warlock-design="v1"] body.popup .surface-popup:is([data-mode="system"],[data-mode="menu"],[data-mode="jump"]) button:focus-visible { color:ButtonText; background:ButtonFace; }
+  }
+  @media (pointer:coarse) {
+    html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="menu"] .surface-controls > button { min-height:2.75rem; }
+    html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="system"] :is([data-surface-control="system:cancel"],[data-surface-control="system:confirm"]) { min-height:2.75rem; }
   }
 }

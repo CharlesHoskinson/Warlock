@@ -1,33 +1,142 @@
-/* Apache-2.0. Switcher rules supplement shared foundations. */
-@layer layouts {
-  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] [role="listbox"] { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
-  /* The action group reads its own available width: four equal columns, two, or one; never an uneven 3 + 1. */
-  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .surface-controls { container-type: inline-size; }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .surface-controls > [role="group"] { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; min-width: 0; }
-  @container (min-width: 21rem) { html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .surface-controls > [role="group"] { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-  @container (min-width: 42rem) { html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .surface-controls > [role="group"] { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
-}
+/* Apache-2.0. Window switcher, Lacquer desktop: an Alt-Tab row of window cards above a compact action row.
+   Shared foundations own tokens, focus, motion and the unavailable cue; shell-skin.css (loaded after this file) owns
+   the glass panel and the glyph slot. Cards and actions keep source order; the grid fills rows in DOM order. */
+
+/* ---------- Lacquer desktop: layout ---------- */
 @layer components {
-  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .surface-controls { gap: 16px; }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] [role="option"] { position: relative; display: block; width: 100%; min-width: 0; min-height: 3.5rem; margin: 0; padding: 6px 12px; white-space: normal; }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .control-label { overflow: visible; text-overflow: clip; white-space: normal; overflow-wrap: anywhere; }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .control-detail { white-space: normal; overflow-wrap: anywhere; }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .surface-controls > [role="group"] button { width: 100%; min-width: 0; margin: 0; border-color: transparent; }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .surface-controls > [role="group"] :is([data-surface-control="control:reverse"], [data-surface-control="control:forward"]) { border-color: var(--wl-sys-color-border-essential); }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] [data-surface-control="control:commit"]:not(:disabled):not([aria-disabled="true"]) { color:var(--wl-sys-color-on-action); background:var(--wl-sys-color-action-fill); border-color:var(--wl-sys-color-on-action); }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"][data-theme="dawn"] [data-surface-control="control:commit"]:not(:disabled):not([aria-disabled="true"]) { border-color:var(--wl-sys-color-brand-text); }
-  /* Unavailable Activate keeps a neutral boundary with the shared unavailable treatment. */
-  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .surface-controls > [role="group"] [data-surface-control="control:commit"]:is(:disabled,[aria-disabled="true"]) { border-color:var(--wl-sys-color-border-essential); background:var(--wl-sys-color-surface-recessed); color:var(--wl-sys-color-text-secondary); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .surface-controls { gap: 14px; }
+  /* Cards fill rows in source order: four across at the host allocation, fewer as text grows, with a short last row
+     centred the way a desktop window switcher centres it. Every card keeps one width. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] [role="listbox"] {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; min-width: 0;
+  }
+  /* Actions under a hairline, in source order: Cancel, then Previous and Next on the first row; Activate closes the
+     second row at the inline end. Narrow or enlarged text stacks them in one column. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] { container: wl-switcher / inline-size; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .surface-controls > [role="group"] {
+    display: grid; grid-template-columns: minmax(0, 1fr); align-items: center; gap: 8px; min-width: 0;
+    padding-block-start: 14px; border-block-start: 1px solid var(--skin-hairline, color-mix(in srgb, var(--wl-sys-color-text) 9%, transparent));
+  }
+  @container wl-switcher (min-width: 30rem) {
+    html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .surface-controls > [role="group"] { grid-template-columns: minmax(0, 1fr) auto auto; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .surface-controls > [role="group"] > [data-surface-control="control:close"] { justify-self: start; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .surface-controls > [role="group"] > [data-surface-control="control:commit"] { grid-column: 1 / -1; justify-self: end; }
+  }
 }
+
+/* ---------- Lacquer desktop: window cards ---------- */
+@layer components {
+  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] [role="listbox"] > [role="option"] {
+    position: relative; isolation: isolate; box-sizing: border-box; display: flex; flex-direction: column; align-items: stretch;
+    flex: 0 0 min(100%, max(7.5rem, calc((100% - 30px) / 4))); inline-size: auto; min-inline-size: 0; min-block-size: 11rem; margin: 0; padding: 14px 14px 12px;
+    border: 1px solid var(--skin-hairline, color-mix(in srgb, var(--wl-sys-color-text) 9%, transparent)); border-radius: 12px; background: var(--skin-tile, color-mix(in srgb, var(--wl-sys-color-text) 4%, transparent));
+    box-shadow: inset 0 1px 0 color-mix(in srgb, var(--wl-sys-color-text) 5%, transparent);
+    text-align: start; white-space: normal;
+  }
+  /* The label carries the glyph plate at the top and the title at the bottom of the card. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] [role="listbox"] > [role="option"] > .control-label {
+    flex: 1 1 auto; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; gap: 14px;
+    font-family: var(--wl-sys-font-display); font-size: 1rem; font-weight: 600; line-height: 1.3; letter-spacing: -.005em;
+    overflow: visible; text-overflow: clip; white-space: normal; overflow-wrap: anywhere;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] [role="listbox"] > [role="option"] > .control-detail {
+    margin: 3px 0 0; color: var(--wl-sys-color-text-secondary); font-size: .75rem; line-height: 1.35; white-space: normal; overflow-wrap: anywhere;
+  }
+  /* One generic window glyph for every candidate; it never varies by identity. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] [data-surface-control^="switcher:family:"] > .control-label::before {
+    content: ""; display: block; flex: none; box-sizing: content-box; inline-size: 1.5rem; block-size: 1.5rem; margin: .625rem;
+    color: var(--wl-sys-color-brand-text); background: currentColor;
+    -webkit-mask: var(--wl-glyph-window, linear-gradient(transparent, transparent)) center/contain no-repeat; mask: var(--wl-glyph-window, linear-gradient(transparent, transparent)) center/contain no-repeat;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] [data-surface-control^="switcher:family:"]::after {
+    content: ""; position: absolute; z-index: -1; inset-block-start: 14px; inset-inline-start: 14px; inline-size: 2.75rem; block-size: 2.75rem;
+    border-radius: 11px; background: color-mix(in srgb, var(--wl-sys-color-text) 7%, transparent);
+    box-shadow: inset 0 0 0 1px var(--skin-hairline, color-mix(in srgb, var(--wl-sys-color-text) 9%, transparent)); pointer-events: none;
+  }
+
+  /* Actions: quiet Cancel, outlined Previous and Next, one primary Activate. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .surface-controls > [role="group"] button {
+    inline-size: auto; max-inline-size: 100%; min-inline-size: 0; min-block-size: 2.25rem; margin: 0; padding: 6px 14px 6px 12px;
+    border: 1px solid transparent; border-radius: 10px; background: transparent;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .surface-controls > [role="group"] button > .control-label {
+    font-size: .8125rem; font-weight: 600; line-height: 1.35; white-space: normal; overflow-wrap: anywhere;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .surface-controls > [role="group"] button > .control-label::before {
+    inline-size: 1.125rem; block-size: 1.125rem; margin-inline-end: .5rem;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .surface-controls > [role="group"] [data-surface-control="control:close"] { color: var(--wl-sys-color-text-secondary); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .surface-controls > [role="group"] :is([data-surface-control="control:reverse"], [data-surface-control="control:forward"]) {
+    border-color: color-mix(in srgb, var(--wl-sys-color-text) 20%, transparent); background: var(--skin-tile, color-mix(in srgb, var(--wl-sys-color-text) 4%, transparent));
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .surface-controls > [role="group"] [data-surface-control="control:commit"]:not(:disabled):not([aria-disabled="true"]) {
+    padding-inline: 14px 18px; color: var(--wl-sys-color-on-action); background: var(--wl-sys-color-action-fill); border-color: transparent;
+    box-shadow: 0 1px 2px color-mix(in srgb, var(--wl-sys-color-shadow) 30%, transparent), 0 4px 14px color-mix(in srgb, var(--wl-sys-color-action-fill) 32%, transparent), inset 0 1px 0 color-mix(in srgb, var(--wl-sys-color-on-action) 18%, transparent);
+  }
+  /* Unavailable Activate keeps a neutral boundary with the shared unavailable cue. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .surface-controls > [role="group"] [data-surface-control="control:commit"]:is(:disabled,[aria-disabled="true"]) {
+    border-color: var(--wl-sys-color-border-essential); background: var(--wl-sys-color-surface-recessed); color: var(--wl-sys-color-text-secondary);
+  }
+}
+
+/* ---------- Lacquer desktop: candidate, hover, press, focus ---------- */
 @layer states {
-  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] [role="option"][aria-selected="true"] { background: var(--wl-sys-color-surface-selected); }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] [role="option"][aria-selected="true"]::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(var(--wl-sys-color-text),var(--wl-sys-color-text)) left top / 12px 2px no-repeat, linear-gradient(var(--wl-sys-color-text),var(--wl-sys-color-text)) left top / 2px 12px no-repeat, linear-gradient(var(--wl-sys-color-text),var(--wl-sys-color-text)) right top / 12px 2px no-repeat, linear-gradient(var(--wl-sys-color-text),var(--wl-sys-color-text)) right top / 2px 12px no-repeat, linear-gradient(var(--wl-sys-color-text),var(--wl-sys-color-text)) left bottom / 12px 2px no-repeat, linear-gradient(var(--wl-sys-color-text),var(--wl-sys-color-text)) left bottom / 2px 12px no-repeat, linear-gradient(var(--wl-sys-color-text),var(--wl-sys-color-text)) right bottom / 12px 2px no-repeat, linear-gradient(var(--wl-sys-color-text),var(--wl-sys-color-text)) right bottom / 2px 12px no-repeat; }
-  @media (hover:hover) { html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] [role="option"][aria-selected="true"]:not(:disabled):not([aria-disabled="true"]):hover { background:var(--wl-sys-color-surface-selected-hover); } }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] [role="option"][aria-selected="true"]:not(:disabled):not([aria-disabled="true"]):active { background:var(--wl-sys-color-surface-selected-pressed); }
-  @media (hover:hover) { html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] [data-surface-control="control:commit"]:not(:disabled):not([aria-disabled="true"]):hover { background:var(--wl-sys-color-action-fill-hover); } }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] [data-surface-control="control:commit"]:not(:disabled):not([aria-disabled="true"]):active { background:var(--wl-sys-color-action-fill-pressed); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] [role="listbox"] > [role="option"][aria-selected="true"] {
+    background: var(--skin-selected, color-mix(in srgb, var(--wl-sys-color-action-fill) 22%, transparent)); border-color: color-mix(in srgb, var(--wl-sys-color-brand-text) 55%, transparent);
+    box-shadow: var(--wl-sys-shadow-raised), inset 0 1px 0 color-mix(in srgb, var(--wl-sys-color-text) 9%, transparent);
+  }
+  /* Candidate corner brackets: four 14px arms, 2px thick, inset inside the rounded card. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] [role="listbox"] > [role="option"][aria-selected="true"]::before {
+    --switcher-bracket: var(--wl-sys-color-brand-text);
+    content: ""; position: absolute; inset: 6px; pointer-events: none;
+    background:
+      linear-gradient(var(--switcher-bracket),var(--switcher-bracket)) left top / 14px 2px no-repeat,
+      linear-gradient(var(--switcher-bracket),var(--switcher-bracket)) left top / 2px 14px no-repeat,
+      linear-gradient(var(--switcher-bracket),var(--switcher-bracket)) right top / 14px 2px no-repeat,
+      linear-gradient(var(--switcher-bracket),var(--switcher-bracket)) right top / 2px 14px no-repeat,
+      linear-gradient(var(--switcher-bracket),var(--switcher-bracket)) left bottom / 14px 2px no-repeat,
+      linear-gradient(var(--switcher-bracket),var(--switcher-bracket)) left bottom / 2px 14px no-repeat,
+      linear-gradient(var(--switcher-bracket),var(--switcher-bracket)) right bottom / 14px 2px no-repeat,
+      linear-gradient(var(--switcher-bracket),var(--switcher-bracket)) right bottom / 2px 14px no-repeat;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] [role="listbox"] > [role="option"][aria-selected="true"]::after {
+    background: var(--wl-sys-color-action-fill); box-shadow: 0 2px 8px color-mix(in srgb, var(--wl-sys-color-action-fill) 40%, transparent);
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] [role="listbox"] > [role="option"][aria-selected="true"] > .control-label::before { color: var(--wl-sys-color-on-action); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] [role="listbox"] > [role="option"][aria-selected="true"] > .control-detail { color: var(--wl-sys-color-brand-text); font-weight: 600; }
+  @media (hover:hover) and (pointer:fine) {
+    html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] [role="listbox"] > [role="option"][aria-selected="false"]:not(:disabled):not([aria-disabled="true"]):hover { border-color: color-mix(in srgb, var(--wl-sys-color-text) 18%, transparent); }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] [role="listbox"] > [role="option"][aria-selected="true"]:not(:disabled):not([aria-disabled="true"]):hover { background: var(--skin-selected-hover, color-mix(in srgb, var(--wl-sys-color-action-fill) 30%, transparent)); }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .surface-controls > [role="group"] [data-surface-control="control:commit"]:not(:disabled):not([aria-disabled="true"]):hover { background: var(--wl-sys-color-action-fill-hover); }
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] [role="listbox"] > [role="option"][aria-selected="true"]:not(:disabled):not([aria-disabled="true"]):active { background: color-mix(in srgb, var(--wl-sys-color-action-fill) 36%, transparent); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .surface-controls > [role="group"] [data-surface-control="control:commit"]:not(:disabled):not([aria-disabled="true"]):active { background: var(--wl-sys-color-action-fill-pressed); }
+  /* The shared focus ring stays additive to the candidate depth. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .surface-controls :is([role="option"],[role="group"] > button):focus-visible { box-shadow: 0 0 0 2px var(--wl-sys-color-focus-gap); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .surface-controls [role="listbox"] > [role="option"][aria-selected="true"]:focus-visible { box-shadow: 0 0 0 2px var(--wl-sys-color-focus-gap), var(--wl-sys-shadow-raised); }
 }
+
+/* ---------- Lacquer desktop: contrast, effects, forced colours ---------- */
 @layer accessibility {
-  @media (forced-colors:active) { html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] [role="option"][aria-selected="true"]::before { background:none; border:2px solid CanvasText; clip-path:polygon(0 0, 12px 0, 12px 2px, 2px 2px, 2px 12px, 0 12px, 0 0, 100% 0, 100% 12px, calc(100% - 2px) 12px, calc(100% - 2px) 2px, calc(100% - 12px) 2px, calc(100% - 12px) 0, 100% 0, 100% 100%, calc(100% - 12px) 100%, calc(100% - 12px) calc(100% - 2px), calc(100% - 2px) calc(100% - 2px), calc(100% - 2px) calc(100% - 12px), 100% calc(100% - 12px), 100% 100%, 0 100%, 0 calc(100% - 12px), 2px calc(100% - 12px), 2px calc(100% - 2px), 12px calc(100% - 2px), 12px 100%, 0 100%); } }
-  @media (pointer:coarse) { html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] [role="option"] { min-height:3.75rem; } html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .surface-controls > [role="group"] button { min-height:2.75rem; } }
+  /* Effects off: the panel is already opaque; cards drop their cast shadows and keep hairlines. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"]:is([data-theme="high-contrast"],[data-effects="off"]) :is([role="option"],[data-surface-control="control:commit"]):not(:focus-visible) { box-shadow: none; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"][data-theme="high-contrast"] [role="listbox"] > [role="option"] { border-color: var(--wl-sys-color-border-essential); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"][data-theme="high-contrast"] [role="listbox"] > [role="option"][aria-selected="true"] { border-color: var(--wl-sys-color-brand-text); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"][data-theme="high-contrast"] .surface-controls > [role="group"] :is([data-surface-control="control:reverse"], [data-surface-control="control:forward"]) { border-color: var(--wl-sys-color-border-essential); }
+  @media (forced-colors:active) {
+    html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] [role="listbox"] > [role="option"] { border-color: CanvasText; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] [role="listbox"] > [role="option"][aria-selected="true"] { border-color: Highlight; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] [role="listbox"] > [role="option"]::after { forced-color-adjust: none; background: Canvas; box-shadow: inset 0 0 0 1px CanvasText; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] [role="listbox"] > [role="option"][aria-selected="true"]::before {
+      forced-color-adjust: none; background: none; border: 2px solid Highlight;
+      clip-path: polygon(0 0, 14px 0, 14px 2px, 2px 2px, 2px 14px, 0 14px, 0 0, 100% 0, 100% 14px, calc(100% - 2px) 14px, calc(100% - 2px) 2px, calc(100% - 14px) 2px, calc(100% - 14px) 0, 100% 0, 100% 100%, calc(100% - 14px) 100%, calc(100% - 14px) calc(100% - 2px), calc(100% - 2px) calc(100% - 2px), calc(100% - 2px) calc(100% - 14px), 100% calc(100% - 14px), 100% 100%, 0 100%, 0 calc(100% - 14px), 2px calc(100% - 14px), 2px calc(100% - 2px), 14px calc(100% - 2px), 14px 100%, 0 100%);
+    }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .surface-controls > [role="group"] button { border-color: ButtonText; }
+    /* The shared forced-colours focus rule opts the focused control out of colour forcing; these surfaces keep forcing on so the focused card stays readable on Canvas, and the Highlight outline remains. */
+    html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .surface-controls button:focus-visible { forced-color-adjust: auto; outline: 2px solid Highlight; outline-offset: 2px; }
+  }
+  @media (pointer:coarse) {
+    html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] [role="listbox"] > [role="option"] { min-block-size: 11.25rem; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="switcher"] .surface-controls > [role="group"] button { min-block-size: 2.75rem; }
+  }
 }

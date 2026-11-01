@@ -31,3 +31,101 @@
   html[data-warlock-design="v1"] .surface-popup[data-mode="files"] .launcher-search::placeholder { color:var(--wl-sys-color-text-secondary); opacity:1; }
 }
 
+
+/* ---------- Shell skin: Explorer-style quick access (runtime popup only) ----------
+   Close and Refresh form a quiet toolbar, the location reads as an address pill, collections are glyph tiles in a
+   four-column grid, and the labelled path field sits beside Open folder. Every control keeps its source position. */
+@layer components {
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="files"] {
+    --sk-line: var(--skin-hairline);
+    --sk-tile: var(--skin-tile);
+    --sk-well: color-mix(in srgb, var(--wl-sys-color-canvas) 62%, transparent);
+  }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="files"]:is([data-effects="off"],[data-reduced-transparency="true"]) { --sk-well: var(--wl-sys-color-surface-recessed); }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="files"][data-theme="high-contrast"] { --sk-line: var(--wl-sys-color-border-essential); --sk-well: var(--wl-sys-color-surface); }
+
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="files"] .surface-controls {
+    display:grid; grid-template-columns:repeat(12, minmax(0,1fr)); gap:8px; align-content:start;
+  }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="files"] .surface-controls > * { grid-column:1 / -1; width:auto; margin:0; }
+
+  /* Quiet toolbar: Close and Refresh share the first row. */
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="files"] .surface-controls > :is([data-surface-control="control:close"],[data-surface-control="files:refresh"]) {
+    grid-column:span 6; display:flex; flex-direction:column; justify-content:center; min-height:2.5rem; padding:6px 10px;
+  }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="files"] :is([data-surface-control="control:close"],[data-surface-control="files:refresh"]) > .control-label { font-size:.8125rem; }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="files"] :is([data-surface-control="control:close"],[data-surface-control="files:refresh"]) > .control-label::before { inline-size:1.125rem; block-size:1.125rem; }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="files"] [data-surface-control="files:refresh"] > .control-detail { margin:1px 0 0; padding-inline-start:1.75rem; font-size:.6875rem; }
+
+  /* Location: an address pill with a folder glyph. The source string stays whole and wraps. */
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="files"] .notification-text[data-files-content="files:location:state"] {
+    display:flex; align-items:center; min-height:2.5rem; margin:2px 0 6px; padding:7px 16px 7px 12px; box-sizing:border-box;
+    border:1px solid var(--sk-line); border-radius:999px; background:var(--sk-well); color:var(--wl-sys-color-text);
+    font:500 .8125rem/1.45 var(--wl-sys-font-body);
+    box-shadow:inset 0 1px 2px color-mix(in srgb, var(--wl-sys-color-shadow) 22%, transparent);
+  }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="files"] [data-files-content="files:location:state"] > .control-label { display:flex; align-items:center; min-width:0; overflow-wrap:anywhere; }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="files"] [data-files-content="files:location:state"] > .control-label::before {
+    content:""; flex:0 0 auto; inline-size:1.125rem; block-size:1.125rem; margin-inline-end:.625rem; padding-inline-end:0;
+    background:currentColor; color:var(--wl-sys-color-brand-text);
+    -webkit-mask:var(--wl-glyph-folder) center/contain no-repeat; mask:var(--wl-glyph-folder) center/contain no-repeat;
+  }
+
+  /* Collections: Home and the seven collections as tiles, glyph above the name. */
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="files"] [data-surface-control="files:home"] { --skin-glyph: var(--wl-glyph-home); }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="files"] [data-surface-control="files:home"] > .control-label::before {
+    content:""; display:inline-block; flex:0 0 auto; inline-size:1.25rem; block-size:1.25rem; margin-inline-end:.625rem; vertical-align:-.3rem;
+    background:currentColor; -webkit-mask:var(--skin-glyph) center/contain no-repeat; mask:var(--skin-glyph) center/contain no-repeat;
+  }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="files"] .surface-controls > :is([data-surface-control="files:home"],[data-surface-control^="files:collection:"]) {
+    grid-column:span 3; display:flex; flex-direction:column; align-items:stretch; justify-content:center;
+    min-height:4.75rem; padding:12px 6px 10px; text-align:center;
+    background:var(--sk-tile); border:1px solid var(--sk-line); border-radius:12px;
+  }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="files"] :is([data-surface-control="files:home"],[data-surface-control^="files:collection:"]) > .control-label {
+    flex-direction:column; justify-content:center; gap:8px; padding-inline:4px; font-size:.8125rem; font-weight:500; overflow-wrap:normal;
+  }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="files"] :is([data-surface-control="files:home"],[data-surface-control^="files:collection:"]) > .control-label::before {
+    inline-size:1.75rem; block-size:1.75rem; margin:0; color:var(--wl-sys-color-brand-text);
+  }
+
+  /* Path entry: the visible label, then the field beside Open folder. */
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="files"] .surface-controls > .launcher-search-label {
+    margin:8px 2px -2px; font-size:.75rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--wl-sys-color-text-secondary);
+  }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="files"] .surface-controls > .launcher-search[data-surface-field="control:files-path"] {
+    grid-column:span 8; align-self:stretch; min-height:3rem; padding-inline:16px; border:1px solid var(--sk-line); border-radius:12px;
+    background:var(--sk-well); font-size:.875rem;
+  }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="files"] .surface-controls > [data-surface-control="files:open-path"] {
+    grid-column:span 4; display:flex; flex-direction:column; justify-content:center; min-height:3rem; padding:6px 12px;
+    border:1px solid var(--sk-line); border-radius:12px; background:var(--sk-tile);
+  }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="files"] [data-surface-control="files:open-path"] > .control-label::before { color:var(--wl-sys-color-brand-text); }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="files"] [data-surface-control="files:open-path"] > .control-detail { margin:1px 0 0; padding-inline-start:1.875rem; font-size:.6875rem; }
+
+  /* Larger text: two tiles per row, and the field and its action stack. */
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="files"]:is([data-text-scale="150"],[data-text-scale="200"]) .surface-controls > :is([data-surface-control="files:home"],[data-surface-control^="files:collection:"]) { grid-column:span 6; }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="files"]:is([data-text-scale="150"],[data-text-scale="200"]) .surface-controls > :is(.launcher-search[data-surface-field="control:files-path"],[data-surface-control="files:open-path"]) { grid-column:1 / -1; }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="files"][data-text-scale="200"] .surface-controls > :is([data-surface-control="control:close"],[data-surface-control="files:refresh"]) { grid-column:1 / -1; }
+}
+@layer states {
+  /* The unavailable cue sits in the tile's top corner, beside the glyph, where it never meets the name. */
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="files"] :is([data-surface-control="files:home"],[data-surface-control^="files:collection:"]):is(:disabled,[aria-disabled="true"]) > .control-label {
+    background-position:right 2px top 2px, right 0 top 0;
+  }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="files"] :is([data-surface-control="files:home"],[data-surface-control^="files:collection:"],[data-surface-control="files:open-path"]):is(:disabled,[aria-disabled="true"]) > .control-label::before { color:inherit; }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="files"] .launcher-search[data-surface-field="control:files-path"]:hover { border-color:color-mix(in srgb, var(--wl-sys-color-text) 22%, transparent); }
+  html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="files"][data-theme="high-contrast"] .launcher-search[data-surface-field="control:files-path"]:hover { border-color:var(--wl-sys-color-border-essential); }
+}
+@layer accessibility {
+  @media (forced-colors:active) {
+    html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="files"] .notification-text[data-files-content="files:location:state"] { border-color:CanvasText; box-shadow:none; }
+    html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="files"] :is(:disabled,[aria-disabled="true"]) > .control-label::before { background:GrayText; }
+    /* The glass panel keeps its alpha under forced colours; paint it opaque so nothing shows through. */
+    html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="files"] { background:Canvas; }
+    /* The shared focus ring opts the focused control out of forced colours; keep its text in the system colour. */
+    html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="files"] button:focus-visible { color:ButtonText; background:ButtonFace; }
+    html[data-warlock-design="v1"] body.popup .surface-popup[data-mode="files"] input:focus-visible { color:FieldText; background:Field; }
+  }
+}

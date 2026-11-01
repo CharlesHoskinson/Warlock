@@ -1,35 +1,192 @@
-/* Apache-2.0. Notification mode only; shared foundations own focus and tokens. */
+/* Apache-2.0. Notification center in the Lacquer skin: a quiet header row, two quick-settings tiles and one card per
+   notification. The renderer emits a flat sequence (summary, optional body, actions), so each card is drawn from its
+   consecutive pieces: matching fills, rounded first and last pieces, and an action band painted behind the buttons by the
+   first action. Placement follows source order. Shared foundations own focus, tokens and the unavailable cue. */
 @layer components {
-  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls { display:flex; flex-direction:column; gap:6px; min-width:0; }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .notification-text[data-notification-content] { margin:0; padding-inline:12px; min-width:0; overflow-wrap:anywhere; }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .notification-text[data-notification-content$=":summary"] { margin-block-start:10px; /* plus the 6px sibling gap = 16px */ }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .notification-text[data-notification-content$=":summary"] .control-label { font-size:.875rem; line-height:1.428571; font-weight:600; }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .notification-text[data-notification-content$=":body"] .control-label { font-size:.875rem; line-height:1.428571; font-weight:400; }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .notification-text .control-detail { display:block; margin-block-start:2px; color:var(--wl-sys-color-text-secondary); font-size:.75rem; line-height:1.333333; letter-spacing:.0075rem; }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] :is(.notification-text,button) .control-label { display:block; white-space:normal; overflow:visible; text-overflow:clip; overflow-wrap:anywhere; }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] button[data-surface-control^="notification:"] { align-self:flex-start; width:auto; max-width:100%; min-height:2.25rem; text-align:start; }
-}
-@layer states {
-  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] button:is(:disabled,[aria-disabled="true"]) { opacity:1; color:var(--wl-sys-color-text-secondary); background:var(--wl-sys-color-surface-recessed); }
-}
-@layer components {
-  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > * { flex: 0 0 auto; min-width:0; }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls button { white-space:normal; overflow-wrap:anywhere; max-width:100%; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] {
+    --nt-pad: 14px;
+    --nt-radius: 12px;
+    --nt-card: color-mix(in srgb, var(--wl-sys-color-text) 6%, var(--wl-sys-color-surface-raised));
+    --nt-card-history: color-mix(in srgb, var(--wl-sys-color-text) 2.5%, var(--wl-sys-color-surface));
+    --nt-edge: color-mix(in srgb, var(--wl-sys-color-text) 9%, transparent);
+    --nt-edge-history: color-mix(in srgb, var(--wl-sys-color-text) 6%, transparent);
+    --nt-pill: color-mix(in srgb, var(--wl-sys-color-text) 9%, var(--nt-card));
+    --nt-pill-hover: color-mix(in srgb, var(--wl-sys-color-text) 15%, var(--nt-card));
+    --nt-pill-press: color-mix(in srgb, var(--wl-sys-color-text) 20%, var(--nt-card));
+    --nt-pill-edge: color-mix(in srgb, var(--wl-sys-color-text) 14%, transparent);
+    --nt-tile: color-mix(in srgb, var(--wl-sys-color-text) 5%, transparent);
+    --nt-on: color-mix(in srgb, var(--wl-sys-color-action-fill) 28%, transparent);
+    --nt-on-hover: color-mix(in srgb, var(--wl-sys-color-action-fill) 36%, transparent);
+    --nt-on-edge: color-mix(in srgb, var(--wl-sys-color-brand-text) 50%, transparent);
+    --nt-depth: 0 10px 18px -12px color-mix(in srgb, var(--wl-sys-color-shadow) 85%, transparent);
+    --nt-sheen: inset 0 1px 0 color-mix(in srgb, var(--wl-sys-color-text) 5%, transparent);
+    font-family:var(--wl-sys-type-body-family); font-size:var(--wl-sys-type-body-size); line-height:var(--wl-sys-type-body-line-height);
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"][data-theme="dawn"] {
+    --nt-card: var(--wl-sys-color-surface-raised);
+    --nt-card-history: color-mix(in srgb, var(--wl-sys-color-text) 3.5%, var(--wl-sys-color-surface));
+    --nt-edge: color-mix(in srgb, var(--wl-sys-color-text) 12%, transparent);
+    --nt-edge-history: color-mix(in srgb, var(--wl-sys-color-text) 8%, transparent);
+    --nt-pill: color-mix(in srgb, var(--wl-sys-color-text) 5%, var(--nt-card));
+    --nt-pill-hover: color-mix(in srgb, var(--wl-sys-color-text) 9%, var(--nt-card));
+    --nt-pill-press: color-mix(in srgb, var(--wl-sys-color-text) 13%, var(--nt-card));
+    --nt-tile: color-mix(in srgb, var(--wl-sys-color-surface-raised) 80%, transparent);
+    --nt-on: color-mix(in srgb, var(--wl-sys-color-action-fill) 12%, transparent);
+    --nt-on-hover: color-mix(in srgb, var(--wl-sys-color-action-fill) 18%, transparent);
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"][data-theme="high-contrast"] {
+    --nt-card: var(--wl-sys-color-surface);
+    --nt-card-history: var(--wl-sys-color-surface);
+    --nt-edge: var(--wl-sys-color-border-essential);
+    --nt-edge-history: var(--wl-sys-color-window-edge-unfocused);
+    --nt-pill: var(--wl-sys-color-surface);
+    --nt-pill-hover: color-mix(in srgb, var(--wl-sys-color-text) 22%, var(--wl-sys-color-surface));
+    --nt-pill-press: color-mix(in srgb, var(--wl-sys-color-text) 30%, var(--wl-sys-color-surface));
+    --nt-pill-edge: var(--wl-sys-color-border-essential);
+    --nt-tile: var(--wl-sys-color-surface);
+    --nt-on: color-mix(in srgb, var(--wl-sys-color-text) 22%, var(--wl-sys-color-surface));
+    --nt-on-hover: color-mix(in srgb, var(--wl-sys-color-text) 30%, var(--wl-sys-color-surface));
+    --nt-on-edge: var(--wl-sys-color-brand-text);
+    --nt-depth: 0 0 transparent;
+    --nt-sheen: 0 0 transparent;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"]:is([data-effects="off"],[data-reduced-transparency="true"]) { --nt-depth: 0 0 transparent; }
+
+  /* One wrapping row flow: full-width pieces break lines, tiles and actions share them. Row gaps are zero so card pieces
+     meet without seams; vertical rhythm comes from margins. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls {
+    display:flex; flex-flow:row wrap; align-content:flex-start; align-items:stretch; gap:0 8px; min-width:0;
+    isolation:isolate; container-type:inline-size;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > * { flex:1 1 100%; min-width:0; box-sizing:border-box; margin:0; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > button { inline-size:auto; max-width:100%; white-space:normal; overflow-wrap:anywhere; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] :is(.notification-text,button) .control-label { white-space:normal; overflow:visible; text-overflow:clip; overflow-wrap:anywhere; }
   html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .control-detail { white-space:normal; overflow-wrap:anywhere; }
-}
-@layer states {
-  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] button:is([data-surface-control="notifications:dnd"],[data-surface-control="notifications:critical-interrupt"])[aria-pressed="true"] { background:var(--wl-sys-color-surface-selected); }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] button:is([data-surface-control="notifications:dnd"],[data-surface-control="notifications:critical-interrupt"])[aria-pressed="true"]::before { content:""; position:absolute; inset-block:6px; inset-inline-start:0; width:3px; background:var(--wl-sys-color-brand-text); border-radius:2px; }
-  @media (hover:hover) { html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] button:is([data-surface-control="notifications:dnd"],[data-surface-control="notifications:critical-interrupt"])[aria-pressed="true"]:not([aria-disabled="true"]):hover { background:var(--wl-sys-color-surface-selected-hover); } }
-  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] button:is([data-surface-control="notifications:dnd"],[data-surface-control="notifications:critical-interrupt"])[aria-pressed="true"]:not([aria-disabled="true"]):active { background:var(--wl-sys-color-surface-selected-pressed); }
-}
-@layer accessibility {
- @media (forced-colors:active) { html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] button[aria-pressed="true"]::before { background:Highlight; } }
+
+  /* Header: Close and Refresh stay quiet, side by side. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > :is([data-surface-control="control:close"],[data-surface-control="notifications:refresh"]) {
+    min-height:2.5rem; padding-block:6px 6px; padding-inline:10px 12px; border-color:transparent; background:transparent; color:var(--wl-sys-color-text);
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > [data-surface-control="control:close"] { flex:0 1 auto; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > [data-surface-control="notifications:refresh"] { flex:1 1 60%; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] [data-surface-control="notifications:refresh"] > .control-detail { padding-inline-start:1.875rem; margin-top:0; }
+
+  /* Quick-settings tiles: glyph, name and On/Off state; a pressed tile takes the brand red tint. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > :is([data-surface-control="notifications:dnd"],[data-surface-control="notifications:critical-interrupt"]) {
+    flex:1 1 40%; margin-block-start:10px; display:flex; flex-direction:column; align-items:flex-start; justify-content:flex-start; gap:3px;
+    min-height:6.25rem; padding:14px 14px 12px; border:1px solid var(--nt-edge); border-radius:var(--nt-radius);
+    background:var(--nt-tile); box-shadow:var(--nt-sheen); color:var(--wl-sys-color-text); text-align:start;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] :is([data-surface-control="notifications:dnd"],[data-surface-control="notifications:critical-interrupt"]) > .control-label {
+    flex-direction:column; align-items:flex-start; gap:12px; font-weight:600; font-size:.875rem; line-height:1.3;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] :is([data-surface-control="notifications:dnd"],[data-surface-control="notifications:critical-interrupt"]) > .control-label::before {
+    inline-size:1.375rem; block-size:1.375rem; margin:0; vertical-align:0;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] :is([data-surface-control="notifications:dnd"],[data-surface-control="notifications:critical-interrupt"]) > .control-detail {
+    margin:0; font-size:.75rem; line-height:1.35; color:var(--wl-sys-color-text-secondary);
+  }
+
+  /* Notification cards. Every piece starts in the history treatment; live pieces are promoted below. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .notification-text[data-notification-content] {
+    padding:0 var(--nt-pad); border:1px solid var(--nt-edge-history); border-block-width:0; background:var(--nt-card-history);
+    color:var(--wl-sys-color-text-secondary); overflow-wrap:anywhere;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .notification-text[data-notification-content$=":summary"] {
+    margin-block-start:8px; padding-block-start:12px; border-block-start-width:1px;
+    border-start-start-radius:var(--nt-radius); border-start-end-radius:var(--nt-radius);
+    display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:2px 12px;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .notification-text[data-notification-content$=":summary"]:first-of-type { margin-block-start:16px; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .notification-text[data-notification-content$=":summary"] > .control-label {
+    flex:1 1 12rem; min-width:0; font-size:.875rem; line-height:1.428571; font-weight:600;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .notification-text[data-notification-content$=":summary"] > .control-detail {
+    flex:0 1 auto; margin:0; font-size:.75rem; line-height:1.333333; letter-spacing:.0075rem; color:var(--wl-sys-color-text-secondary);
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .notification-text[data-notification-content$=":body"] { padding-block-start:4px; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .notification-text[data-notification-content$=":body"] > .control-label { font-size:.875rem; line-height:1.428571; font-weight:400; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .notification-text[data-notification-content$=":body"] > .control-detail { margin-top:2px; font-size:.75rem; line-height:1.333333; }
+  /* Text followed by actions leaves room for the action row; text that ends the card closes it. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .notification-text[data-notification-content]:has(+ button) { padding-block-end:12px; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .notification-text[data-notification-content]:is(:last-child,:has(+ .notification-text[data-notification-content$=":summary"])) {
+    padding-block-end:14px; border-block-end-width:1px; border-end-start-radius:var(--nt-radius); border-end-end-radius:var(--nt-radius);
+  }
+
+  /* Live entries: the summary (with or without a body) is followed by an action that is not focus-only. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .notification-text[data-notification-content$=":summary"]:is(:has(+ button:not([data-focus-only="true"])),:has(+ .notification-text + button:not([data-focus-only="true"]))),
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .notification-text[data-notification-content$=":body"]:has(+ button:not([data-focus-only="true"])) {
+    background:var(--nt-card); border-color:var(--nt-edge); color:var(--wl-sys-color-text);
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .notification-text[data-notification-content$=":summary"]:is(:has(+ button:not([data-focus-only="true"])),:has(+ .notification-text + button:not([data-focus-only="true"]))) { box-shadow:var(--nt-sheen); }
+  /* The live lifecycle detail reads as a small brand badge; history keeps plain secondary text. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .notification-text[data-notification-content$=":summary"]:is(:has(+ button:not([data-focus-only="true"])),:has(+ .notification-text + button:not([data-focus-only="true"]))) > .control-detail {
+    padding:1px 8px; border-radius:999px; background:var(--nt-on); color:var(--wl-sys-color-brand-text);
+    font-size:.6875rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; line-height:1.45;
+  }
+
+  /* Action row: producer actions share the row as pills; Dismiss is a quiet trailing control. The row never wraps
+     (flex-basis 0), so the first action can paint the band for the whole row. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > button[data-surface-control^="notification:"] {
+    flex:1 1 0; min-width:0; margin:0 0 12px; min-height:2.25rem; padding:6px 12px; border:1px solid var(--nt-pill-edge); border-radius:999px;
+    background:var(--nt-pill); color:var(--wl-sys-color-text); text-align:center;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > button[data-surface-control^="notification:"] > .control-label {
+    justify-content:center; padding-inline-start:calc(.75rem + 8px); font-weight:600; font-size:.8125rem;
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > .notification-text + button[data-surface-control^="notification:"] { margin-inline-start:var(--nt-pad); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > button[data-surface-control^="notification:"]:is(:last-child,:has(+ .notification-text)) { margin-inline-end:var(--nt-pad); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > button[data-surface-control^="notification:"][data-surface-control$=":dismiss:"] {
+    flex:0 1 auto; padding-inline:12px 0; border-color:transparent; background:transparent; color:var(--wl-sys-color-text-secondary);
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > button[data-surface-control^="notification:"][data-surface-control$=":dismiss:"] > .control-label { padding-inline-start:0; font-weight:500; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > .notification-text + button[data-surface-control^="notification:"][data-surface-control$=":dismiss:"] { flex-grow:1; justify-content:flex-start; text-align:start; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > .notification-text + button[data-surface-control^="notification:"][data-surface-control$=":dismiss:"] > .control-label { justify-content:flex-start; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] [data-surface-control^="notification:"][data-surface-control$=":dismiss:"] > .control-label::before {
+    content:""; display:inline-block; flex:0 0 auto; inline-size:1rem; block-size:1rem; margin-inline-end:.5rem; vertical-align:-.2rem;
+    background:currentColor; -webkit-mask:var(--wl-glyph-close) center/contain no-repeat; mask:var(--wl-glyph-close) center/contain no-repeat;
+  }
+
+  /* The card band behind the action row: card edge to card edge, from the row top through the 12px bottom padding. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > .notification-text + button[data-surface-control^="notification:"]::before {
+    content:""; position:absolute; z-index:-1; pointer-events:none; box-sizing:border-box;
+    inset-block:-1px -13px; inset-inline-start:calc(-1 * var(--nt-pad) - 1px); inline-size:100cqw;
+    border:1px solid var(--nt-edge); border-block-start-width:0; border-end-start-radius:var(--nt-radius); border-end-end-radius:var(--nt-radius);
+    background:var(--nt-card); box-shadow:var(--nt-depth);
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > .notification-text + button[data-surface-control^="notification:"][data-focus-only="true"]::before {
+    border-color:var(--nt-edge-history); background:var(--nt-card-history); box-shadow:none;
+  }
 }
 
-@layer components {
- html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] { font-family:var(--wl-sys-type-body-family); font-size:var(--wl-sys-type-body-size); line-height:var(--wl-sys-type-body-line-height); }
- html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .notification-text { font-family:var(--wl-sys-type-body-family); }
+@layer states {
+  /* Pressed tiles: brand tint, brand edge and brand glyph; the On wording stays the non-colour cue. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > :is([data-surface-control="notifications:dnd"],[data-surface-control="notifications:critical-interrupt"])[aria-pressed="true"] {
+    background:var(--nt-on); border-color:var(--nt-on-edge);
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] :is([data-surface-control="notifications:dnd"],[data-surface-control="notifications:critical-interrupt"])[aria-pressed="true"] > .control-label::before { color:var(--wl-sys-color-brand-text); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] :is([data-surface-control="notifications:dnd"],[data-surface-control="notifications:critical-interrupt"])[aria-pressed="true"] > .control-detail { color:var(--wl-sys-color-text); }
+
+  /* Unavailable actions keep their pill, the recessed fill, secondary text and the shared cue. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > button[data-surface-control^="notification:"]:is(:disabled,[aria-disabled="true"]) {
+    opacity:1; border-color:var(--nt-pill-edge); background:var(--wl-sys-color-surface-recessed); color:var(--wl-sys-color-text-secondary);
+  }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > button[data-surface-control^="notification:"][data-surface-control$=":dismiss:"]:is(:disabled,[aria-disabled="true"]) { border-color:transparent; background:transparent; }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > :is([data-surface-control="notifications:dnd"],[data-surface-control="notifications:critical-interrupt"]):is(:disabled,[aria-disabled="true"]) {
+    opacity:1; background:transparent; color:var(--wl-sys-color-text-secondary);
+  }
+
+  /* A focused action stays in the list stacking context, so the band never paints over its pill. */
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > button[data-surface-control^="notification:"]:focus-visible { z-index:auto; }
+
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > button[data-surface-control^="notification:"]:enabled:not([aria-disabled="true"]):not([aria-current="true"]):not([aria-pressed="true"]):not([aria-selected="true"]):active { background:var(--nt-pill-press); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > button[data-surface-control^="notification:"][data-surface-control$=":dismiss:"]:enabled:not([aria-disabled="true"]):not([aria-current="true"]):not([aria-pressed="true"]):not([aria-selected="true"]):active { background:var(--skin-press, var(--wl-sys-color-surface-pressed)); color:var(--wl-sys-color-text); }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > :is([data-surface-control="notifications:dnd"],[data-surface-control="notifications:critical-interrupt"])[aria-pressed="true"]:enabled:not([aria-disabled="true"]):active { background:var(--nt-on-hover); }
+  @media (hover:hover) and (pointer:fine) {
+    html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > button[data-surface-control^="notification:"]:enabled:not([aria-disabled="true"]):not([aria-current="true"]):not([aria-pressed="true"]):not([aria-selected="true"]):hover:not(:active) { background:var(--nt-pill-hover); }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > button[data-surface-control^="notification:"][data-surface-control$=":dismiss:"]:enabled:not([aria-disabled="true"]):not([aria-current="true"]):not([aria-pressed="true"]):not([aria-selected="true"]):hover:not(:active) { background:var(--skin-hover, var(--wl-sys-color-surface-hover)); color:var(--wl-sys-color-text); }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > :is([data-surface-control="notifications:dnd"],[data-surface-control="notifications:critical-interrupt"])[aria-pressed="true"]:enabled:not([aria-disabled="true"]):hover:not(:active) { background:var(--nt-on-hover); }
+  }
 }
 
 @layer layouts {
@@ -37,14 +194,23 @@
   html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > button { scroll-margin:6px; }
 }
 
-@layer components {
-  /* Notification actions and Dismiss are neutral secondary actions; session utilities above them stay quiet. */
-  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > button[data-surface-control^="notification:"] { border-color:var(--wl-sys-color-border-essential); background:var(--wl-sys-color-surface); color:var(--wl-sys-color-text); }
-}
-@layer states {
-  /* An expired focused action keeps its boundary and reads as unavailable: recessed fill, secondary text and the shared cue. */
-  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > button[data-surface-control^="notification:"]:is(:disabled,[aria-disabled="true"]) { border-color:var(--wl-sys-color-border-essential); background:var(--wl-sys-color-surface-recessed); color:var(--wl-sys-color-text-secondary); }
-}
 @layer accessibility {
-  @media (forced-colors:active) { html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > button[data-surface-control^="notification:"] { border-color:ButtonText; } html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > button[data-surface-control^="notification:"]:is(:disabled,[aria-disabled="true"]) { border-color:GrayText; } }
+  html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"][data-theme="high-contrast"] .surface-controls > button[data-surface-control^="notification:"]:not([data-surface-control$=":dismiss:"]):is(:disabled,[aria-disabled="true"]) { border-style:dashed; border-color:var(--wl-sys-color-window-edge-unfocused); }
+  @media (forced-colors:active) {
+    /* An opaque panel, and system colours on every control and on the band, so a focused control (which the shared
+       focus rule leaves unforced) still reads correctly. */
+    html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] { background:Canvas; color:CanvasText; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .notification-text[data-notification-content] { background:Canvas; color:CanvasText; border-color:CanvasText; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > .notification-text + button[data-surface-control^="notification:"]::before { background:Canvas; border-color:CanvasText; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > button { background:ButtonFace; color:ButtonText; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > button .control-detail { color:inherit; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > button[data-surface-control^="notification:"] { border-color:ButtonText; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > button[data-surface-control^="notification:"]:is(:disabled,[aria-disabled="true"]) { background:Canvas; color:GrayText; border-color:GrayText; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > :is([data-surface-control="notifications:dnd"],[data-surface-control="notifications:critical-interrupt"]) { border-color:ButtonText; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] .surface-controls > :is([data-surface-control="notifications:dnd"],[data-surface-control="notifications:critical-interrupt"])[aria-pressed="true"] {
+      forced-color-adjust:none; background:SelectedItem; color:SelectedItemText; border-color:SelectedItem;
+    }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] :is([data-surface-control="notifications:dnd"],[data-surface-control="notifications:critical-interrupt"])[aria-pressed="true"] > :is(.control-label,.control-detail) { color:SelectedItemText; }
+    html[data-warlock-design="v1"] .surface-popup[data-mode="notifications"] :is([data-surface-control="notifications:dnd"],[data-surface-control="notifications:critical-interrupt"])[aria-pressed="true"] > .control-label::before { background:SelectedItemText; }
+  }
 }
