@@ -29,3 +29,11 @@ test-suite current-session-oracles
   cpp-options: -DWARLOCK_SCOPED_PEER_TESTING
   default-language: Haskell2010
   ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -threaded
+
+test-suite persistent-bootstrap-controls
+  type: exitcode-stdio-1.0
+  hs-source-dirs: test-persistent
+  main-is: Main.hs
+  build-depends: base >=4.18 && <5, bytestring, unix, filepath, cryptohash-sha256 ==0.11.102.1, warlock-held-document-proposal, warlock-process-custody, warlock-protocol, warlock-runtime
+  default-language: Haskell2010
+  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -threaded

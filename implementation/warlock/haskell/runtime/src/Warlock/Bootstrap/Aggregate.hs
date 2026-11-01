@@ -2,13 +2,15 @@
 -- Internal adapter. Observation is not a native grant or a process manager.
 module Warlock.Bootstrap.Aggregate (BootstrapOwner, BootstrapResult(..), AuthObservation(..), newBootstrapOwner, runBootstrap, bootstrapAuthObservation, bootstrapCredentialTrace, bootstrapSelectedPid, retireBootstrap) where
 import Control.Concurrent.MVar
-import Control.Exception (SomeException,SomeAsyncException,fromException,mask,mask_,uninterruptibleMask_,onException,throwIO,try)
+import Control.Concurrent (forkFinally,killThread)
+import Control.Exception (Exception,AsyncException(ThreadKilled),SomeException,SomeAsyncException,fromException,mask,mask_,uninterruptibleMask_,onException,throwIO,try,finally)
 import qualified Data.ByteString as B
 import Data.IORef (IORef,newIORef,readIORef,writeIORef)
 import Warlock.Bootstrap.ScopedPeer (PeerRefusal)
 import Warlock.Bootstrap.CurrentSessions (CurrentSessions, Registration, newRegistration, withApprovedOwnedPeer, retireRegistration)
-import Warlock.Protocol.CredentialIngress (CredentialIngress, CredentialIngressResult(..), receiveCredentialIngress)
-import Warlock.Bootstrap.SocketOwner (SocketOwner,newSocketOwner,acquireSocketOwner,withEndpoints,claimTransfer,retireSocketOwner)
+import Warlock.Protocol.CredentialIngress (CredentialIngress, CredentialIngressResult(..), CredentialFrameError(CredentialTransport), receiveCredentialIngress, retireCredentialIngress)
+import Warlock.Protocol.Ingress (ChannelError(StreamEOF))
+import Warlock.Bootstrap.SocketOwner (SocketOwner,newSocketOwner,acquireSocketOwner,withEndpoints,claimTransfer,shutdownPeerWrite,retireSocketOwner)
 import Warlock.Capture.Process.Bootstrap (Owner,OwnerStatus(..),SelectedOutcome,AdmissionDeadline,ToolError(..),newOwner,status,selectedHeld,remainingMicros,runSelectedDetailed,awaitLeader,observeSession,observedPid)
 import Warlock.Platform.Executable (HeldExecutable,retireHeld,LeaseError(..))
 import Warlock.Capture.Process.Bootstrap (TransferTicket,TransferDisposition(..),newTransferTicket,closeCallerTransfer,transferDisposition)
@@ -21,13 +23,15 @@ data State = State Phase (Maybe HeldExecutable) (Maybe TransferTicket)
 data AuthObservation = EpochRefused | SessionRetired | ScopeRefused PeerRefusal | FrameObserved (CredentialIngressResult PeerRefusal) deriving (Eq,Show)
 data BootstrapOwner = BootstrapOwner Owner ExecutableLease SocketOwner (MVar State) (IORef (Maybe AuthObservation)) (IORef [CredentialObservation]) (IORef (Maybe Integer)) Registration
 data BootstrapResult = Executed SelectedOutcome | Refused | PendingCustody deriving (Eq,Show)
+data LeaderWatchFailure = LeaderWatchFailure ToolError deriving (Show)
+instance Exception LeaderWatchFailure
 newBootstrapOwner :: CurrentSessions -> IO BootstrapOwner
 newBootstrapOwner currentSessions = BootstrapOwner <$> newOwner <*> newExecutableLease <*> newSocketOwner <*> newMVar (State Fresh Nothing Nothing) <*> newIORef Nothing <*> newIORef [] <*> newIORef Nothing <*> newRegistration currentSessions
 bootstrapAuthObservation :: BootstrapOwner -> IO (Maybe AuthObservation)
 bootstrapAuthObservation (BootstrapOwner _ _ _ _ observation _ _ _) = readIORef observation
 
 -- The one D is supplied before selection and is also the core callback D.
--- The credential-aware ingress gates one checked frame within the owned session.
+-- Every checked frame uses the same approved scope and original deadline.
 -- The exact resolver receipt and owned Session remain scoped to the core callback.
 runBootstrap :: BootstrapOwner -> Root -> [Pin] -> B.ByteString -> [Link] -> Integer -> B.ByteString -> AdmissionDeadline -> [(String,String)] -> CredentialIngress -> IO BootstrapResult
 runBootstrap owner@(BootstrapOwner core lease pair state authObservation trace selectedPid admission) root pins path links size digest deadline environment ingress =
@@ -68,13 +72,23 @@ runBootstrap owner@(BootstrapOwner core lease pair state authObservation trace s
                               Right observation -> do
                                 writeIORef selectedPid (Just (toInteger (observedPid observation)))
                                 scoped <- withApprovedOwnedPeer admission session peer (resolvedIdentity receipt) role $ \scope -> do
-                                  frame <- receiveCredentialIngress ingress (guardForScopeTracing trace scope)
-                                  writeIORef authObservation (Just (FrameObserved frame))
-                                  pure frame
+                                  let guard = guardForScopeTracing trace scope
+                                      pump delivered = do
+                                        frame <- receiveCredentialIngress ingress guard
+                                        case frame of
+                                          CredentialDelivered -> do
+                                            writeIORef authObservation (Just (FrameObserved frame))
+                                            pump True
+                                          CredentialFrameRejected (CredentialTransport StreamEOF) | delivered -> pure True
+                                          _ -> do
+                                            writeIORef authObservation (Just (FrameObserved frame))
+                                            pure False
+                                  withLeaderExit session (pump False)
                                 case scoped of
-                                  Left reason -> writeIORef authObservation (Just (ScopeRefused reason)) >> pure (Left BadArguments)
-                                  Right CredentialDelivered -> awaitLeader session
-                                  Right _ -> pure (Left BadArguments)))
+                                  Left reason -> writeIORef authObservation (Just (ScopeRefused reason)) >> refuseAfterExit session
+                                  Right (Left err) -> retireCredentialIngress ingress >> pure (Left err)
+                                  Right (Right True) -> awaitLeader session
+                                  Right (Right False) -> refuseAfterExit session))
                             :: IO (Either SomeException SelectedOutcome)
                           case result of
                             Left e -> do
@@ -87,6 +101,40 @@ runBootstrap owner@(BootstrapOwner core lease pair state authObservation trace s
  where
   finish value = uninterruptibleMask_ $ modifyMVar_ state (\(State _ held ticket) -> pure (State Finished held ticket)) >> pure value
   poison = uninterruptibleMask_ $ modifyMVar_ state (\(State _ held ticket) -> pure (State Uncertain held ticket))
+  refuseAfterExit session = do
+    _ <- retireCredentialIngress ingress
+    exited <- awaitLeader session
+    pure $ case exited of Left err -> Left err; Right () -> Left BadArguments
+  -- Observe the already-owned leader without reaping it. The retained peer FD
+  -- prevents EOF even after the child's own FD closes, so only this independent
+  -- exit observation may end its write direction. Main admission stays on the
+  -- Scope's original thread; no Scope or credential guard enters the watcher.
+  withLeaderExit session action = mask $ \restore -> do
+    completion <- newEmptyMVar
+    watcher <- forkFinally (restore (do
+      exited <- awaitLeader session
+      case exited of
+        Left err -> pure (Left err)
+        Right () -> do
+          ended <- shutdownPeerWrite pair
+          if ended then pure (Right ()) else ioError (userError "owned peer write-end shutdown unconfirmed"))) (putMVar completion)
+    let cleanup = do
+          before <- tryReadMVar completion
+          let stopping = case before of Nothing -> True; Just _ -> False
+              join deferred = do
+                waited <- try (killThread watcher >> readMVar completion) :: IO (Either SomeException (Either SomeException (Either ToolError ())))
+                case waited of
+                  Left err -> join (case deferred of Nothing -> Just err; other -> other)
+                  Right result -> case deferred of
+                    Just err -> throwIO err
+                    Nothing -> case result of
+                      Left err | stopping && (fromException err :: Maybe AsyncException) == Just ThreadKilled -> pure ()
+                      Left err -> throwIO err
+                      Right (Left err) -> throwIO (LeaderWatchFailure err)
+                      Right (Right ()) -> pure ()
+          join Nothing
+    result <- try (restore action `finally` cleanup) :: IO (Either LeaderWatchFailure Bool)
+    pure $ case result of Left (LeaderWatchFailure err) -> Left err; Right value -> Right value
 
 -- Preserve the original exception; leave every aggregate owner reachable.
 retainOnException :: BootstrapOwner -> IO ()

@@ -13,7 +13,8 @@ MODES = ('positive', 'busy', 'inventory', 'malformed', 'stale', 'stale-claim',
          'view-fields', 'foreign', 'wrong-thread', 'expiry', 'reserved-cut',
          'pending-sync-cut', 'submitted-cut')
 CHILD = {'internal-controls': 'custody-child', 'selected-fd-controls': 'selected-fd-child',
-         'deadline-stop-controls': 'graceful-stop-child', 'current-session-oracles': 'credential-peer-child'}
+         'deadline-stop-controls': 'graceful-stop-child', 'current-session-oracles': 'credential-peer-child',
+         'persistent-bootstrap-controls': 'credential-peer-child'}
 COPY = {'held-executable-controls': 'custody-child', 'bootstrap-facade-controls': 'bootstrap-facade-child'}
 FIXTURES = {'ingress-controls', 'credential-guard-controls'}
 ROOTS = {'durable-storage-controls', 'selection-admission-controls', 'host-guard-controls',
@@ -71,7 +72,10 @@ def main():
             if pin(historical)[3] != expected or pin(copied)[3] != expected:
                 raise RuntimeError('historical prepare fixture mapping differs')
         values = pin(child)
-        calls = [('default', [str(child)] + (values if suite == 'current-session-oracles' else []))]
+        args = [str(child)] + (values if suite in ('current-session-oracles', 'persistent-bootstrap-controls') else [])
+        if suite == 'persistent-bootstrap-controls':
+            args += ['full', '1'] if manifest.get('authProfile') == 'auth' else ['common']
+        calls = [('default', args)]
     elif suite in COPY:
         original = fixture(COPY[suite])
         target_dir = fresh('image')

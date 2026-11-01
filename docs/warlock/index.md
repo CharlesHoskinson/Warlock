@@ -20,6 +20,7 @@ Choose a page for the work you are doing:
 | Prepare proportionate protected verification | [How to verify a selected change](how-to/verify-selected-change.md) |
 | Look up settings schemas, migration backups and failure outcomes | [Appearance settings storage](reference/settings-storage.md) |
 | Look up paths, commands and machine limits | [Build and runtime reference](reference/build-and-runtime.md) |
+| Look up bounded peer authentication and its original evidence boundary | [Authenticated bootstrap](reference/authenticated-bootstrap.md) |
 | Understand recorded acceptance and open gates | [Status and evidence reference](reference/status-and-evidence.md) |
 | Understand active and attention indicators | [Explanation: taskbar attention](explanation/taskbar-attention.md) |
 | Understand application pinning and window top state | [Explanation: application pin and always-on-top](explanation/application-pin-and-always-on-top.md) |

@@ -2,19 +2,21 @@
 
 This package integrates held executable selection, selected-process custody,
 credential-aware framing and current-session admission. Warlock-authored runtime
-code is Haskell; GUI policy remains Elm. It is a controlled one-frame bootstrap,
-not a persistent desktop server or a native effect authorization service.
+code is Haskell; GUI policy remains Elm. The controlled bootstrap supports a
+bounded conversation within one approved lifetime. It does not establish a
+perpetual desktop server or native effect authority.
 
-## Tutorial: follow one approved request
+## Tutorial: follow one approved conversation
 
 Read `test/Main.hs` with `fixture-peer/Main.hs`. Root independently pins the actual
 built child's path, device, inode, size and SHA256. The resolver validates the held
 inode and issues an opaque executable lease. The process core inherits only the
 owned endpoint. A current registration scopes the real Session, executable and
 endpoint identity. Each consumed stream fragment supplies kernel sender
-credentials. After checked decoding, the same scope rechecks final admission;
-the callback enters subsequent policy validation. The fixture exchanges an
-explicit ACK and observes normal exit and independent resource retirement.
+credentials. After checked decoding, the same scope rechecks final admission
+for each frame; the callback enters subsequent policy validation. An earlier
+admission grants no later admission right. The fixture exchanges an explicit ACK
+per request and observes normal exit and independent resource retirement.
 
 ## How to run the controlled checks
 
@@ -28,6 +30,14 @@ between its child cases. Keep output and actual source/toolchain hashes.
 
 The test stanza alone enables `WARLOCK_SCOPED_PEER_TESTING`. Build the production
 library separately without that macro. It exposes no admission-race hook.
+The separate `persistent-bootstrap-controls` suite links the ordinary production
+library, with only `test-persistent` as its source directory and no testing macro.
+It takes the same five trusted child arguments followed by `common`, or `full 1`.
+`common` omits the real cross-user case. `full 1` needs a separately qualified
+delegated UID mapping and actual sender UID change; its name is not acceptance.
+Root's fixed runner retains seeds, callback order, kernel credentials, executable
+pins, production/test plans and independent owner cleanup. New controls preserve
+the five-second absolute budget for each bounded conversation.
 Source records and machine-local qualified runner receipts are in
 [qualification.json](qualification.json). Follow root's protected QA workflow;
 an arbitrary unprotected `cabal test` does not provide those containment records.
@@ -38,6 +48,12 @@ The only exposed module is `Warlock.Bootstrap`. `newCurrentSessions` creates one
 trusted current-session authority; `newRegistration` creates an opaque lifetime.
 `newBootstrapOwner` retains the process, executable, socket and registration
 owners before acquisition. `runBootstrap` uses a caller-supplied absolute deadline.
+The same original deadline covers every frame and child wait, with the existing
+30-second maximum. Neither peers nor callbacks renew it. Empty first EOF,
+partial frames, malformed requests and authentication refusals remain failures.
+Exact EOF after a delivered request can finish the conversation; it does not
+alone prove normal child exit or resource retirement. The host retains a peer
+descriptor for authentication, so child exit alone cannot be treated as EOF.
 `retireBootstrap` settles those independent owners or retains uncertainty.
 Read-only `bootstrapAuthObservation`, `bootstrapCredentialTrace` and
 `bootstrapSelectedPid` carry no signal right or authentication grant.
@@ -50,9 +66,10 @@ and current registration all constrain admission. GID is retained diagnostically
 it is not an additional grant. Do not use JSON PID, socketpair creator credentials,
 a cookie or a caller-provided UID as a substitute.
 
-Credential traces retain at most 64 rows and are not complete audit logs. The
-fixture rejects empty or truncated vectors and compares their PID/UID/GID to
-independent real process facts. `AdmissionObserved` records an attempt, not success.
+Credential traces retain at most 64 rows and are not complete audit logs. Cases
+that transmit frames reject empty or truncated vectors and compare PID/UID/GID
+to independent real process facts; the empty-EOF control instead requires no
+credential rows or callbacks. `AdmissionObserved` records an attempt, not success.
 
 ## Explanation: retirement and the tested race
 
@@ -69,6 +86,13 @@ other I/O errors and positive ACK failures still fail the fixture. This is separ
 from confirming socket, reader, process, transfer and executable retirement.
 
 ## Verified scope and remaining work
+
+The November 1 multi-frame campaign and its preserved failures are recorded in
+[the current authentication reference](../../../../docs/warlock/reference/authenticated-bootstrap.md).
+That source-bound record supersedes the one-frame behavior description, not the
+historical qualification below. Whole ELM-DEL-010 requires real cross-user traces
+in addition to allowed and retired-session controls; common-mode results cannot
+close that separate verification obligation.
 
 The recorded strict five-package/test build and all six controlled credential
 cases passed. Eleven related suites passed on unchanged non-runtime sources.

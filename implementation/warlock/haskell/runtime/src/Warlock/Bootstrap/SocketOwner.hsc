@@ -2,7 +2,7 @@
 {-# LANGUAGE ForeignFunctionInterface #-}
 -- Internal ownership: each endpoint and transfer has its own sticky state.
 module Warlock.Bootstrap.SocketOwner
- (SocketOwner, newSocketOwner, acquireSocketOwner, withEndpoints, withEndpointsFault, Fault(..), socketStatus, claimTransfer, retireSocketOwner
+ (SocketOwner, newSocketOwner, acquireSocketOwner, withEndpoints, withEndpointsFault, Fault(..), socketStatus, claimTransfer, shutdownPeerWrite, retireSocketOwner
 #ifdef WARLOCK_SOCKETOWNER_TESTING
  , PublicationProbe(..), holdStateForTest, acquireSocketOwnerProbed, withEndpointsProbed, custodyForTest, rawPairOpenForTest
 #endif
@@ -28,9 +28,10 @@ import Warlock.Protocol.Ingress (OfferResult(..), ActivationResult(..), OwnerSta
 import Warlock.Protocol.CredentialIngress (CredentialIngress, transferCredentialSocket, activateCredentialIngress, retireCredentialIngress, credentialIngressStatus, ReaderStatus(..))
 foreign import ccall unsafe "socketpair" c_pair :: CInt -> CInt -> CInt -> Ptr CInt -> IO CInt
 foreign import ccall unsafe "fcntl" c_fcntl :: CInt -> CInt -> CInt -> IO CInt
+foreign import ccall unsafe "shutdown" c_shutdown :: CInt -> CInt -> IO CInt
 
 data Host = HEmpty | HRaw Fd | HMoving Fd | HSocket S.Socket | HAdopting S.Socket CredentialIngress | HChannel CredentialIngress | HClosing | HClosed | HUnknown (Maybe Fd) (Maybe S.Socket) (Maybe CredentialIngress)
-data Peer = PEmpty | PRaw Fd | PClosing | PClosed | PUnknown Fd
+data Peer = PEmpty | PRaw Fd | PWriteClosed Fd | PWriteUncertain Fd | PClosing | PClosed | PUnknown Fd
 data Transfer = TEmpty | TConverting Fd | THandle Handle | TTransferred | TClosing | TClosed | TUnknown (Maybe Fd) (Maybe Handle)
 data State = State Host Peer Transfer Bool
 newtype SocketOwner = SocketOwner (MVar State)
@@ -51,7 +52,7 @@ holdStateForTest (SocketOwner state) entered release = withMVar state $ \_ -> pu
 custodyForTest :: SocketOwner -> IO (Bool,Bool,Bool)
 custodyForTest (SocketOwner state) = withMVar state $ \(State host peer transfer _) -> pure
   (case host of HRaw _ -> True; HSocket _ -> True; HAdopting _ _ -> True; HChannel _ -> True; HUnknown _ _ _ -> True; _ -> False,
-   case peer of PRaw _ -> True; PUnknown _ -> True; _ -> False,
+   case peer of PRaw _ -> True; PWriteClosed _ -> True; PWriteUncertain _ -> True; PUnknown _ -> True; _ -> False,
    case transfer of TConverting _ -> True; THandle _ -> True; TUnknown _ _ -> True; TTransferred -> True; _ -> False)
 -- Only call in the quiescent fixture after the worker has exited; no close or
 -- ownership transfer races this observation. It does not export descriptors.
@@ -171,6 +172,23 @@ claimTransfer (SocketOwner state) = mask_ $ uninterruptibleMask_ $ modifyMVar st
   THandle _ | not busy -> pure (State h p TTransferred False,True)
   _ -> pure (s,False)
 
+-- Only after the owned leader has exited. Keep the descriptor/inode pinned
+-- for Scope checks while ending this retained duplicate's write direction.
+-- This fixed AF_UNIX syscall is nonblocking; the finite lock excludes close.
+-- Failure is sticky and never authorizes retry or a clean-EOF claim.
+shutdownPeerWrite :: SocketOwner -> IO Bool
+shutdownPeerWrite (SocketOwner state) = mask_ $ do
+  (ok,problem) <- modifyMVar state $ \s@(State h p t busy) -> case (p,busy) of
+    (PRaw fd@(Fd descriptor),False) -> do
+      result <- try (throwErrnoIfMinus1 "shutdown(SHUT_WR)" (c_shutdown descriptor #{const SHUT_WR}) >> pure ()) :: IO (Either SomeException ())
+      pure (State h (either (const (PWriteUncertain fd)) (const (PWriteClosed fd)) result) t False,
+            (either (const False) (const True) result,either Just (const Nothing) result))
+    (PWriteClosed _,False) -> pure (s,(True,Nothing))
+    _ -> pure (s,(False,Nothing))
+  case problem of
+    Just e -> rethrow e >> pure False
+    Nothing -> pure ok
+
 clearBusy :: MVar State -> IO ()
 clearBusy state = uninterruptibleMask_ $ modifyMVar_ state $ \(State h p t _) -> pure (State h p t False)
 failHost :: MVar State -> SomeException -> IO (Maybe a)
@@ -222,9 +240,11 @@ closeHost state = do
 
 closePeer :: MVar State -> IO (Bool,Maybe SomeException)
 closePeer state = do
-  picked <- uninterruptibleMask_ $ modifyMVar state $ \s@(State h p t busy) -> case (p,busy) of
-    (PRaw fd,False) -> pure (State h PClosing t False,Just fd)
-    _ -> pure (s,Nothing)
+  picked <- uninterruptibleMask_ $ modifyMVar state $ \s@(State h p t busy) ->
+    let owned = case p of PRaw fd -> Just fd; PWriteClosed fd -> Just fd; PWriteUncertain fd -> Just fd; _ -> Nothing
+    in case (owned,busy) of
+      (Just fd,False) -> pure (State h PClosing t False,Just fd)
+      _ -> pure (s,Nothing)
   case picked of
     Nothing -> withMVar state $ \(State _ p _ _) -> pure ((case p of PEmpty -> True; PClosed -> True; _ -> False),Nothing)
     Just fd -> do

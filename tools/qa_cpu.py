@@ -51,7 +51,8 @@ def haskell_inputs(root, prepare=False):
     names = {'tools/qa_cpu.py', 'tools/check_haskell_cpu.py', 'tools/haskell-toolchain.json',
              'window-integration-qa/qa_launch.py'}
     if not prepare:
-        names.update({'tools/haskell_build.py', 'tools/haskell_test_wrapper.py', 'tools/haskell-dependencies.json'})
+        names.update({'tools/haskell_build.py', 'tools/haskell_test_wrapper.py', 'tools/haskell-dependencies.json',
+                      'tools/check_elm_cpu.py', 'tools/quint-toolchain.json'})
         names.update(str(path.relative_to(root)) for path in (root / 'implementation/warlock/haskell').rglob('*')
                      if path.is_file() and not any(part in ('dist-newstyle', '__pycache__') for part in path.parts))
     return names

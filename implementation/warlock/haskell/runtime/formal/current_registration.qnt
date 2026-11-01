@@ -77,6 +77,9 @@ module current_registration {
   action step: bool = any {reserve(1),reserve(2),buildScope(1),buildScope(2),install(1),install(2),retireRegistration(1),retireRegistration(2),
     present(Good),present(CrossUser),present(ForeignSession),present(ExpiredSession),present(WrongSender),present(WrongStart),present(WrongExecutable),present(WrongEndpoint),present(MixedFragments),
     switchFragment,checkPeer(1),checkPeer(2),rejectPeer(1),rejectPeer(2),claim(1),claim(2),refuseClaim(1),refuseClaim(2),callbackDone(1),callbackDone(2),reap(1),reap(2),nearExhaustion}
+  // A coverage schedule over the same actions, starting from the same init.
+  // The full step above remains the authority/interference safety campaign.
+  action conversationStep: bool = any {reserve(1),buildScope(1),install(1),checkPeer(1),claim(1),callbackDone(1),retireRegistration(1),reap(1)}
   val liveIsCurrent = (s.first.scope == Live implies s.current == 1) and (s.second.scope == Live implies s.current == 2)
   val safety = oneLive and currentIsPublished and liveIsCurrent and claimWasCurrent and noReapInFlight and monotoneHigh
   val witnessReserved = s.first.phase == Reserved or s.second.phase == Reserved
@@ -90,4 +93,5 @@ module current_registration {
   val witnessExhausted = s.nextGeneration == 0
   val witnessRefused = s.checkedFor == -1
   val witnessMixed = s.sourceFault
+  val witnessMultipleFrames = s.delivered >= 2
 }
