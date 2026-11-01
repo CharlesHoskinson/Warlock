@@ -19,9 +19,9 @@ WRAPPER = ROOT / 'tools/haskell_test_wrapper.py'
 SUITES = {
     'warlock-held-document-proposal': ['held-document-controls', 'held-executable-controls'],
     'warlock-process-custody': ['internal-controls', 'public-controls', 'selected-fd-controls', 'deadline-stop-controls', 'bootstrap-facade-controls'],
-    'warlock-protocol': ['boundary-controls', 'ingress-controls', 'owner-sequences', 'credential-guard-controls'],
+    'warlock-protocol': ['boundary-controls', 'ingress-controls', 'owner-sequences', 'credential-guard-controls', 'desktop-boundary-controls'],
     'warlock-elf-observation-proposal': ['elf-cases'],
-    'warlock-runtime': ['current-session-oracles', 'persistent-bootstrap-controls'],
+    'warlock-runtime': ['current-session-oracles', 'persistent-bootstrap-controls', 'ui-backend-controls'],
     'warlock-native-authority': ['native-cancellation-controls', 'durable-storage-controls', 'selection-admission-controls', 'host-guard-controls', 'slot-store-controls', 'pair-store-smoke', 'child-directory-controls', 'independent-admission-shape', 'pair-store-sequences', 'independent-lifetime-owner', 'independent-pairstore'],
 }
 FIXTURES = {
@@ -30,6 +30,8 @@ FIXTURES = {
     'graceful-stop-child': 'warlock-process-custody:exe:graceful-stop-child',
     'bootstrap-facade-child': 'warlock-process-custody:exe:bootstrap-facade-child',
     'credential-peer-child': 'warlock-runtime:exe:credential-peer-child',
+    'warlock-ui-backend': 'warlock-runtime:exe:warlock-ui-backend',
+    'ui-stream-child': 'warlock-runtime:exe:ui-stream-child',
 }
 
 
@@ -174,8 +176,18 @@ def build(sdk, output, env, profile='common'):
         def required(info, name):
             if info['exit'] != 0 or info['forcedCleanup']:
                 raise RuntimeError(name + ' failed; see retained logs')
+        # Compile first so syntax/API diagnostics do not repeat unrelated
+        # sampled campaigns. Models still qualify the boundary before tests
+        # execute any newly built product or fixture executable.
+        required(command('production-build', 'build', ['all']), 'production build')
+        required(command('production-freeze', 'freeze', []), 'production freeze')
+        targets = ([p + ':test:' + suite for p, suites in SUITES.items() for suite in suites] if profile == 'common'
+                   else ['warlock-runtime:test:persistent-bootstrap-controls'])
+        fixtures = FIXTURES if profile == 'common' else {'credential-peer-child': FIXTURES['credential-peer-child']}
+        required(command('test-build', 'build', targets + list(fixtures.values()), test=True), 'test build')
+        required(command('test-freeze', 'freeze', [], test=True), 'test freeze')
         # Authentication changes repeat the existing registration claim for
-        # each frame; qualify its unchanged invariants before executing code.
+        # each frame; qualify its unchanged invariants before behavioral tests.
         from check_elm_cpu import quint_toolchain
         model_pin, model_cli = quint_toolchain()
         node = Path(model_pin['node']['path'])
@@ -222,14 +234,51 @@ def build(sdk, output, env, profile='common'):
                 or len(focused) != 4 or any(count == 0 for count in focused.values())):
             raise RuntimeError('Registration reachability witness missing or zero in its declared campaign')
         result['modelToolchain'] = model_pin
+        if profile == 'common':
+            ui_models = work / 'ui-models'
+            ui_models.mkdir(mode=0o700)
+            ui_hashes = {}
+            for filename in ('ui-native-stream.qnt', 'ui-native-stream_test.qnt'):
+                original = ROOT / 'implementation/warlock/qa' / filename
+                if original.is_symlink() or not original.is_file():
+                    raise RuntimeError('Expected regular UI model source')
+                ui_hashes[filename] = digest(original)
+                shutil.copyfile(original, ui_models / filename)
+                if digest(ui_models / filename) != ui_hashes[filename] or digest(original) != ui_hashes[filename]:
+                    raise RuntimeError('UI model changed during staging')
+            ui_test = ui_models / 'ui-native-stream_test.qnt'
+            ui_model = ui_models / 'ui-native-stream.qnt'
+            names = re.findall(r'^\s*run\s+(\w+)\s*=', ui_test.read_text(), re.M)
+            reach = [n for n in re.findall(r'^\s*val\s+(\w+)\s*:', ui_model.read_text(), re.M)
+                     if n.startswith('witness') or n.endswith('Witness')]
+            if not names or len(names) != len(set(names)) or not reach or len(reach) != len(set(reach)):
+                raise RuntimeError('UI model directed/reachability selection empty or duplicated')
+            selector = '^(?:' + '|'.join(re.escape(n) for n in names) + ')$'
+            ui_commands = [
+                ('ui-model-typecheck', [str(node), str(model_cli), 'typecheck', str(ui_model)]),
+                ('ui-model-test-typecheck', [str(node), str(model_cli), 'typecheck', str(ui_test)]),
+                ('ui-model-directed', [str(node), str(model_cli), 'test', str(ui_test), '--main=uiNativeStreamTest',
+                                       '--match=' + selector, '--backend=typescript', '--verbosity=2']),
+                ('ui-model-safety', [str(node), str(model_cli), 'run', str(ui_model), '--main=uiNativeStream',
+                                    '--backend=typescript', '--invariant=safety', '--witnesses', *reach,
+                                    '--seed=20261101', '--max-samples=10000', '--max-steps=50', '--verbosity=1'])]
+            for name, argv in ui_commands:
+                info = run(argv, ui_models, model_env, logs, name, timeout=240)
+                result['commands'].append(info)
+                required(info, name)
+            counts = {name: int(n) for name, n in re.findall(r'(\w+) was witnessed in (\d+) trace',
+                      (logs / 'ui-model-safety.stdout').read_text())}
+            result['uiModel'] = {'sourceHashes': ui_hashes, 'directed': names, 'witnesses': counts,
+                                 'samples': 10000, 'maxSteps': 50, 'seed': 20261101}
+            if re.findall(r'\b(\d+) passing\b', (logs / 'ui-model-directed.stdout').read_text()) != [str(len(names))]:
+                raise RuntimeError('UI model exact directed count not executed')
+            if set(counts) != set(reach) or any(n == 0 for n in counts.values()):
+                raise RuntimeError('UI model witness missing or zero; retain coverage gap')
+            for filename, expected in ui_hashes.items():
+                if (digest(ROOT / 'implementation/warlock/qa' / filename) != expected
+                        or digest(ui_models / filename) != expected):
+                    raise RuntimeError('UI model changed during execution')
         quint_toolchain()
-        required(command('production-build', 'build', ['all']), 'production build')
-        required(command('production-freeze', 'freeze', []), 'production freeze')
-        targets = ([p + ':test:' + suite for p, suites in SUITES.items() for suite in suites] if profile == 'common'
-                   else ['warlock-runtime:test:persistent-bootstrap-controls'])
-        fixtures = FIXTURES if profile == 'common' else {'credential-peer-child': FIXTURES['credential-peer-child']}
-        required(command('test-build', 'build', targets + list(fixtures.values()), test=True), 'test build')
-        required(command('test-freeze', 'freeze', [], test=True), 'test freeze')
         bins = {}
         for index, target in enumerate(targets + list(fixtures.values())):
             info = command('list-bin-' + str(index), 'list-bin', [target], test=True)
@@ -242,12 +291,17 @@ def build(sdk, output, env, profile='common'):
                 raise RuntimeError('unexpected executable from list-bin: ' + str(path))
             bins[target] = {'path': str(path), 'pin': pin(path)}
         result['executables'] = bins
+        frontend = None
+        if profile == 'common':
+            from ui_backend_frontend import prepare as prepare_frontend
+            frontend, result['uiFrontend'] = prepare_frontend(ROOT, work, build_env, run, digest)
         dispatches = {}
         for target in targets:
             suite = target.rsplit(':', 1)[1]
             dispatch = {'suite': suite, 'test': bins[target],
                         'fixtures': {name: bins[t] for name, t in fixtures.items()},
                         'authProfile': profile,
+                        'frontend': frontend if suite == 'ui-backend-controls' else None,
                         'protocolFixtures': str(copy / 'protocol/test/fixtures'),
                         'runRoot': str(work / 'runs' / suite)}
             (work / 'runs').mkdir(exist_ok=True, mode=0o700)

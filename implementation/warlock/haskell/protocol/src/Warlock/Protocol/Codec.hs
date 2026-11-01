@@ -1,6 +1,9 @@
 {-# LANGUAGE OverloadedStrings #-}
 -- Codec values are observations only; they are not native evidence or permission.
-module Warlock.Protocol.Codec (CheckedClient, CheckedServer, decodeClientChecked, decodeServerChecked, encodeClientChecked, encodeServerChecked) where
+module Warlock.Protocol.Codec
+ (CheckedClient, CheckedServer, decodeClientChecked, decodeServerChecked, encodeClientChecked, encodeServerChecked
+ , CodecProfile, nativeProfile, desktopProfile, decodeClientCheckedWith, decodeServerCheckedWith
+ , encodeClientCheckedWith, encodeServerCheckedWith, checkedDesktopCommit, checkedDesktopReply, checkDesktopReply) where
 import qualified Data.ByteString as BS
 import qualified Crypto.Hash.SHA256 as SHA
 import Data.Char (ord)
@@ -9,6 +12,8 @@ import qualified Data.Text as T
 import qualified Data.Text.Encoding as TE
 import Numeric (showHex)
 import Warlock.Protocol.StrictJson
+import Warlock.Protocol.Profile
+import qualified Warlock.Protocol.Desktop as Desktop
 import Warlock.Protocol.Wire (decodeCommand)
 import Warlock.Protocol.Server (ServerFrame, ServerKind(..), serverKind, serverJson, decodeServer, CheckedHistory, verifyHistoryKey, checkedHistoryFrame, verifyPositionalKey, verifyLookupResultKey)
 
@@ -43,7 +48,7 @@ escaped c = case c of
 
 -- CheckedServer validates K for historical frames using the chosen reviewed
 -- backend SHA256. It is still untrusted wire data, never native evidence.
-data CheckedServer = CheckedOrdinary ServerFrame | CheckedHistoric CheckedHistory deriving (Eq, Show)
+data CheckedServer = CheckedOrdinary ServerFrame | CheckedHistoric CheckedHistory | CheckedDesktopServer Desktop.DesktopReply deriving (Eq, Show)
 decodeServerChecked :: BS.ByteString -> Either Text CheckedServer
 decodeServerChecked bytes = do
   frame <- decodeServer bytes
@@ -54,10 +59,11 @@ encodeServerChecked :: CheckedServer -> Either Text BS.ByteString
 encodeServerChecked checked = case checked of
   CheckedOrdinary frame -> encodeServer frame
   CheckedHistoric history -> encodeServer (checkedHistoryFrame history)
+  CheckedDesktopServer _ -> Left "desktop reply requires desktop profile"
 
 -- Checked client lookup validates its positional key; not an authenticated
 -- session, query permission, persisted receipt, or right to act.
-newtype CheckedClient = CheckedClient ClientFrame deriving (Eq, Show)
+data CheckedClient = CheckedClient ClientFrame | CheckedDesktopClient Desktop.DesktopCommit deriving (Eq, Show)
 decodeClientChecked :: BS.ByteString -> Either Text CheckedClient
 decodeClientChecked raw = do
   frame <- decodeClient raw
@@ -84,3 +90,35 @@ encodeClientChecked (CheckedClient (ClientFrame frame)) = do
   let raw = TE.encodeUtf8 (render frame)
   _ <- decodeClientChecked raw
   pure raw
+encodeClientChecked (CheckedDesktopClient _) = Left "desktop commit requires desktop profile"
+
+decodeClientCheckedWith :: CodecProfile -> BS.ByteString -> Either Text CheckedClient
+decodeClientCheckedWith profile raw
+  | profile == nativeProfile = decodeClientChecked raw
+  | otherwise = CheckedDesktopClient <$> Desktop.decodeDesktopCommit raw
+decodeServerCheckedWith :: CodecProfile -> BS.ByteString -> Either Text CheckedServer
+decodeServerCheckedWith profile raw
+  | profile == nativeProfile = decodeServerChecked raw
+  | otherwise = CheckedDesktopServer <$> Desktop.decodeDesktopGateway raw
+encodeClientCheckedWith :: CodecProfile -> CheckedClient -> Either Text BS.ByteString
+encodeClientCheckedWith profile frame
+  | profile == nativeProfile = encodeClientChecked frame
+  | otherwise = case frame of
+      CheckedDesktopClient commit -> Desktop.encodeDesktopCommit commit
+      _ -> Left "native command refused by desktop profile"
+encodeServerCheckedWith :: CodecProfile -> CheckedServer -> Either Text BS.ByteString
+encodeServerCheckedWith profile frame
+  | profile == nativeProfile = encodeServerChecked frame
+  | otherwise = case frame of
+      CheckedDesktopServer reply -> Desktop.encodeDesktopGateway reply
+      _ -> Left "native reply refused by desktop profile"
+checkedDesktopCommit :: CheckedClient -> Maybe Desktop.DesktopCommit
+checkedDesktopCommit (CheckedDesktopClient commit) = Just commit
+checkedDesktopCommit _ = Nothing
+checkedDesktopReply :: CheckedServer -> Maybe Desktop.DesktopReply
+checkedDesktopReply (CheckedDesktopServer reply) = Just reply
+checkedDesktopReply _ = Nothing
+checkDesktopReply :: Desktop.DesktopReply -> Either Text CheckedServer
+checkDesktopReply reply = do
+  _ <- Desktop.encodeDesktopGateway reply
+  pure (CheckedDesktopServer reply)

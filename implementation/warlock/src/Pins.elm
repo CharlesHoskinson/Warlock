@@ -1,4 +1,4 @@
-module Pins exposing (Model, Snapshot, Confirmation, initial, decoder, encode, observe, readStarted, observeRead, propose, receive, toggle, move, writable, bytes)
+module Pins exposing (Model, Snapshot, Confirmation, initial, decoder, encode, observe, readStarted, observeRead, propose, receive, rejectUnsent, toggle, move, writable, bytes)
 
 import Json.Decode as D
 import Json.Encode as E
@@ -75,6 +75,17 @@ receive request status snapshot model =
                             Saving -> Unconfirmed Nothing
                             Unconfirmed recovery -> Unconfirmed recovery
                     in {model | pending=Just {pending | confirmation=confirmation},notice="Pin save not confirmed. Refresh applications to read the order; the change will not be repeated."}
+        Nothing -> model
+
+-- The caller proves this exact newly proposed command was omitted locally.
+-- Unknown retains its reservation and recovery read; it is never unsent proof.
+rejectUnsent : Counter -> Model -> Model
+rejectUnsent request model =
+    case model.pending of
+        Just pending ->
+            if pending.request==request && pending.confirmation==Saving then
+                {model | pending=Nothing,notice="Pin change was not sent. Refine the view or refresh applications and choose again."}
+            else model
         Nothing -> model
 
 toggle : String -> List String -> List String

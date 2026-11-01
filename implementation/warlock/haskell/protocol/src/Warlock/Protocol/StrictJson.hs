@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 -- Byte ingress validation before envelope decoding or effect admission.
 module Warlock.Protocol.StrictJson
-  ( Json(..), DecodeError(..), Bounds, bounds, decodeStrict, exactObject ) where
+  ( Json(..), DecodeError(..), Bounds, bounds, decodeStrict, exactObject, renderJson, utf16Length ) where
 
 import qualified Data.ByteString as BS
 import Data.Char (chr, ord)
@@ -9,6 +9,27 @@ import qualified Data.Set as Set
 import Data.Text (Text)
 import qualified Data.Text as T
 import qualified Data.Text.Encoding as TE
+import Numeric (showHex)
+
+utf16Length :: Text -> Int
+utf16Length = T.foldl' (\total c -> total + if ord c > 65535 then 2 else 1) 0
+
+renderJson :: Json -> Text
+renderJson json = case json of
+  JObject pairs -> "{" <> T.intercalate "," [quote key <> ":" <> renderJson value | (key,value) <- pairs] <> "}"
+  JArray values -> "[" <> T.intercalate "," (map renderJson values) <> "]"
+  JString value -> quote value
+  JNumber value -> value
+  JBool True -> "true"
+  JBool False -> "false"
+  JNull -> "null"
+  where
+    quote value = "\"" <> T.concatMap escaped value <> "\""
+    escaped c = case c of
+      '"' -> "\\\""
+      '\\' -> "\\\\"
+      _ | ord c < 32 -> let h = showHex (ord c) "" in "\\u" <> T.pack (replicate (4 - length h) '0' ++ h)
+        | otherwise -> T.singleton c
 
 data Json = JObject [(Text, Json)] | JArray [Json] | JString Text
           | JNumber Text | JBool Bool | JNull deriving (Eq, Show)

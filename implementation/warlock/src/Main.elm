@@ -2,7 +2,6 @@ port module Main exposing (main)
 
 import Browser
 import Desktop
-import Inspection
 import Html exposing (text)
 import Json.Decode as D
 import Json.Encode as E
@@ -14,20 +13,38 @@ import TaskbarShell
 import OutputController as Outputs
 import UInt64
 
-port nativeBatchDispositions : (D.Value -> msg) -> Sub msg
-port nativeViews : (D.Value -> msg) -> Sub msg
-port nativeEvents : (D.Value -> msg) -> Sub msg
-port rendererActions : (D.Value -> msg) -> Sub msg
-port nativeReflows : (D.Value -> msg) -> Sub msg
-port nativeDismissals : (D.Value -> msg) -> Sub msg
-port nativeEscapes : (D.Value -> msg) -> Sub msg
-port inspections : E.Value -> Cmd msg
+port incoming : (D.Value -> msg) -> Sub msg
 
 port surfaceCommits : E.Value -> Cmd msg
 
-type alias Model = {controller : Outputs.Model, qa : Bool}
+type alias Model = {controller : Outputs.Model}
 
-type Msg = Disposition D.Value | Native D.Value | Action D.Value | Dismiss D.Value | Escape D.Value | Reflow D.Value | Topology D.Value | Deadline Desktop.Msg
+type Msg = Incoming D.Value | Deadline Desktop.Msg
+
+-- The trusted Haskell UI owner supplies the source discriminator from its
+-- actual transport/handler. Web actions cannot select a native/owner source.
+-- Each payload still passes the existing domain decoder before mutation.
+incomingEvent : D.Value -> Maybe Outputs.Event
+incomingEvent raw =
+    let
+        version = D.field "bridgeProtocol" D.int |> D.andThen (\value -> if value==1 then D.succeed () else D.fail "Bridge protocol")
+        decoder = D.keyValuePairs D.value |> D.andThen (\pairs ->
+            if List.sort (List.map Tuple.first pairs)==["bridgeProtocol","kind","payload"] then
+                D.map3 (\_ kind payload -> (kind,payload)) version (D.field "kind" D.string) (D.field "payload" D.value)
+            else D.fail "Bridge fields")
+    in
+    case D.decodeValue decoder raw of
+        Ok (kind,payload) ->
+            case kind of
+                "native-event" -> Just (Outputs.Interaction (Desktop.Incoming payload))
+                "view-topology" -> Just (Outputs.Topology payload)
+                "view-action" -> Just (Outputs.Renderer payload)
+                "view-disposition" -> Just (Outputs.Disposition payload)
+                "view-dismiss" -> Just (Outputs.Dismiss payload)
+                "view-escape" -> Just (Outputs.Escape payload)
+                "view-reflow" -> Just (Outputs.Reflow payload)
+                _ -> Nothing
+        Err _ -> Nothing
 
 commit : Maybe E.Value -> List Controller.Effect -> Cmd Msg
 commit packet effects =
@@ -44,25 +61,19 @@ commit packet effects =
 update : Msg -> Model -> (Model,Cmd Msg)
 update message model =
     let event = case message of
-            Disposition raw -> Just (Outputs.Disposition raw)
-            Topology raw -> Just (Outputs.Topology raw)
-            Native raw -> Just (Outputs.Interaction (Desktop.Incoming raw))
-            Action raw -> Just (Outputs.Renderer raw)
+            Incoming raw -> incomingEvent raw
             Deadline value -> Just (Outputs.Interaction value)
-            Reflow raw -> Just (Outputs.Reflow raw)
-            Dismiss raw -> Just (Outputs.Dismiss raw)
-            Escape raw -> Just (Outputs.Escape raw)
     in case event of
         Nothing -> (model,Cmd.none)
         Just value ->
             let (updated,effects) = Outputs.update value model.controller
                 (next,packet) = Outputs.register effects updated
-            in ({model | controller=next},Cmd.batch [commit packet effects,if model.qa then inspections (Inspection.packet (Outputs.controller next)) else Cmd.none])
+            in ({model | controller=next},commit packet effects)
 
-main : Program Bool Model Msg
+main : Program () Model Msg
 main = Browser.element
-    { init=\qa -> ({controller=Outputs.initial,qa=qa},Cmd.none)
+    { init=\_ -> ({controller=Outputs.initial},Cmd.none)
     , update=update
     , view=\_ -> text ""
-    , subscriptions=\_ -> Sub.batch [nativeBatchDispositions Disposition,nativeViews Topology,nativeEvents Native,rendererActions Action,nativeDismissals Dismiss,nativeEscapes Escape,nativeReflows Reflow]
+    , subscriptions=\_ -> incoming Incoming
     }

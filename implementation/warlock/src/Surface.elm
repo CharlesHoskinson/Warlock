@@ -85,9 +85,31 @@ newInstanceControl model domId entry =
     in {id="control:new-instance:"++identity,domId=domId,label="New instance",ariaLabel="Open new instance of "++entry.name,detail=detail,enabled=enabled,
         message=if enabled then Desktop.capture model |> Maybe.map (\stamp -> Desktop.NewInstance stamp identity) else Nothing}
 
+-- Keep display text within the renderer contract with an explicit ellipsis.
+-- The full catalog name remains available to search and in the aria label.
+displayLabel : String -> String
+displayLabel value = if String.length value>512 then displayPrefix 511 value++"…" else value
+
+displayPrefix : Int -> String -> String
+displayPrefix limit value =
+    let step char (kept,units,stopped) =
+            let size=if Char.toCode char>65535 then 2 else 1
+            in if stopped || units+size>limit then (kept,units,True) else (char::kept,units+size,False)
+        (characters,_,_)=List.foldl step ([],0,False) (String.toList value)
+    in String.fromList (List.reverse characters)
+
+actionName : String -> String -> String
+actionName action name = if String.length action>512 then name else action
+
+capacityStatus : Desktop.Model -> String -> String
+capacityStatus model value = if model.presentationCapacity && String.length value>1024 then displayPrefix 1023 value++"…" else value
+
 controls : Desktop.Model -> List Control
 controls model =
-    if model.jumpEntry/=Nothing then
+    if model.presentationCapacity && mode model/="applications" then
+        if mode model=="closed" then [] else
+            [{id="control:capacity",domId=Desktop.key model "capacity",label="Presentation condensed. Open Applications to browse every application and pin action.",ariaLabel="Presentation condensed. Open Applications to browse every application and pin action.",detail="Full state retained",enabled=False,message=Nothing}]
+    else if model.jumpEntry/=Nothing then
         let scoped message=Desktop.capture model |> Maybe.map message
             control identity label detail enabled message={id=identity,domId=Desktop.key model (if identity=="control:close" then "jump:close" else identity),label=label,ariaLabel=label,detail=detail,enabled=enabled,message=if enabled then scoped message else Nothing}
             current=model.jumpList.snapshot |> Maybe.andThen (\snapshot -> if Just snapshot.entry==model.jumpEntry then Just snapshot else Nothing)
@@ -288,21 +310,40 @@ controls model =
             ready = not (List.member (Launch.status model.launch) ["Pending","Unknown"])
             entryControl entry =
                 let choice = if ready then Launch.select (Catalog.id entry.identity) model.launch |> Maybe.map Desktop.Start else Nothing
-                in {id="entry:" ++ Catalog.id entry.identity,domId=Desktop.key model ("entry:" ++ Catalog.id entry.identity),label="Open " ++ entry.name,ariaLabel="Open " ++ entry.name,detail="",enabled=choice/=Nothing,message=choice}
+                    label="Open "++entry.name
+                in {id="entry:" ++ Catalog.id entry.identity,domId=Desktop.key model ("entry:" ++ Catalog.id entry.identity),label=displayLabel label,ariaLabel=actionName label entry.name,detail="",enabled=choice/=Nothing,message=choice}
             pinIds = Desktop.pinIdentities model
-            pinAction suffix label detail allowed message = {id=suffix,domId=Desktop.key model suffix,label=label,ariaLabel=label,detail=detail,enabled=Pins.writable model.pins && allowed,message=if Pins.writable model.pins && allowed then scoped message else Nothing}
-            pinFirst = entries |> List.head |> Maybe.andThen (\entry -> if List.member (Catalog.id entry.identity) pinIds then Nothing else Just (pinAction ("pin:" ++ Catalog.id entry.identity) ("Pin " ++ entry.name) "Add to taskbar" True (\stamp -> Desktop.TogglePin stamp (Catalog.id entry.identity)))) |> Maybe.map List.singleton |> Maybe.withDefault []
+            pinAction suffix name label detail allowed message = {id=suffix,domId=Desktop.key model suffix,label=displayLabel label,ariaLabel=actionName label name,detail=detail,enabled=Pins.writable model.pins && allowed,message=if Pins.writable model.pins && allowed then scoped message else Nothing}
+            pinFirst = entries |> List.head |> Maybe.andThen (\entry -> if List.member (Catalog.id entry.identity) pinIds then Nothing else Just (pinAction ("pin:" ++ Catalog.id entry.identity) entry.name ("Pin " ++ entry.name) "Add to taskbar" True (\stamp -> Desktop.TogglePin stamp (Catalog.id entry.identity)))) |> Maybe.map List.singleton |> Maybe.withDefault []
             pinRows index identity =
                 let label=model.applications |> Maybe.andThen (Catalog.lookup identity) |> Maybe.map .name |> Maybe.withDefault identity
-                in [pinAction ("unpin:" ++ identity) ("Unpin " ++ label) "Pinned application" True (\stamp -> Desktop.TogglePin stamp identity)
-                   ,pinAction ("pin-left:" ++ identity) ("Move " ++ label ++ " left") "Pin order" (index>0) (\stamp -> Desktop.MovePin stamp identity -1)
-                   ,pinAction ("pin-right:" ++ identity) ("Move " ++ label ++ " right") "Pin order" (index<List.length pinIds-1) (\stamp -> Desktop.MovePin stamp identity 1)]
+                in [pinAction ("unpin:" ++ identity) label ("Unpin " ++ label) "Pinned application" True (\stamp -> Desktop.TogglePin stamp identity)
+                   ,pinAction ("pin-left:" ++ identity) label ("Move " ++ label ++ " left") "Pin order" (index>0) (\stamp -> Desktop.MovePin stamp identity -1)
+                   ,pinAction ("pin-right:" ++ identity) label ("Move " ++ label ++ " right") "Pin order" (index<List.length pinIds-1) (\stamp -> Desktop.MovePin stamp identity 1)]
             acknowledge = Launch.uncertain model.launch |> Maybe.map (\token -> {id="control:acknowledge",domId=Desktop.key model "control:acknowledge",label="I checked; allow another launch",ariaLabel="I checked; allow another launch",detail="",enabled=True,message=Just (Desktop.Acknowledge token)}) |> Maybe.map List.singleton |> Maybe.withDefault []
-            jump=entries |> List.head |> Maybe.map (\entry -> {id="jump:open:"++Catalog.id entry.identity,domId=Desktop.key model ("jump:open:"++Catalog.id entry.identity),label="Actions for "++entry.name,ariaLabel="Actions for "++entry.name,detail="Application actions and recent files",enabled=True,message=scoped (\stamp -> Desktop.OpenJumpList stamp (Catalog.id entry.identity))}) |> Maybe.map List.singleton |> Maybe.withDefault []
+            jump=entries |> List.head |> Maybe.map (\entry -> let label="Actions for "++entry.name in {id="jump:open:"++Catalog.id entry.identity,domId=Desktop.key model ("jump:open:"++Catalog.id entry.identity),label=displayLabel label,ariaLabel=actionName label entry.name,detail="Application actions and recent files",enabled=True,message=scoped (\stamp -> Desktop.OpenJumpList stamp (Catalog.id entry.identity))}) |> Maybe.map List.singleton |> Maybe.withDefault []
+            prefix=jump++pinFirst++List.concat (List.indexedMap pinRows pinIds)
+            prefixCount=List.length prefix
+            bodyCount=prefixCount+List.length entries
+            size=Desktop.applicationPageSize model
+            pages=max 1 ((bodyCount+size-1)//size)
+            page=clamp 0 (pages-1) model.applicationPage
+            offset=page*size
+            visiblePrefix=prefix |> List.drop offset |> List.take size
+            entryOffset=max 0 (offset-prefixCount)
+            entrySlots=size-List.length visiblePrefix
+            -- Entries stay in the full catalog/search result. Construct only
+            -- the visible controls, including a page crossing the pin prefix.
+            visibleEntries=entries |> List.drop entryOffset |> List.take entrySlots |> List.map entryControl
+            navigation identity label enabled direction={id=identity,domId=Desktop.key model identity,label=label,ariaLabel=label,detail="",enabled=enabled,message=if enabled then scoped (\stamp -> Desktop.ApplicationsPage stamp direction) else Nothing}
+            paging=if pages<=1 then [] else
+                [{id="control:page-range",domId=Desktop.key model "page-range",label="Items "++String.fromInt (offset+1)++"–"++String.fromInt (min bodyCount (offset+size))++" of "++String.fromInt bodyCount,ariaLabel="Application and pin actions page",detail=String.fromInt (List.length entries)++" matching applications · "++String.fromInt (List.length pinIds)++" pinned",enabled=False,message=Nothing}
+                ,navigation "control:page-previous" "Previous page" (page>0) (-1)
+                ,navigation "control:page-next" "Next page" (page<pages-1) 1]
         in [ {id="control:search",domId="launcher-search",label=model.query,ariaLabel="Search applications",detail="",enabled=True,message=scoped (\stamp -> Desktop.SearchQuery stamp model.query)}
            , {id="control:close",domId=Desktop.key model "control:close",label="Windows",ariaLabel="Close applications and return to windows",detail="",enabled=True,message=scoped Desktop.CloseApplications}
            , {id="control:refresh",domId=Desktop.key model "control:refresh",label="Refresh",ariaLabel="Refresh applications",detail="",enabled=True,message=scoped Desktop.RefreshApplications}
-           ] ++ acknowledge ++ jump ++ pinFirst ++ List.concat (List.indexedMap pinRows pinIds) ++ List.map entryControl entries
+           ] ++ acknowledge ++ paging ++ visiblePrefix ++ visibleEntries
     else if (MenuBridge.menuSnapshot model.windows.menus).menu/=Nothing then
         case (MenuBridge.menuSnapshot model.windows.menus).menu of
             Nothing -> []
@@ -366,16 +407,16 @@ barControls model =
             let entry=model.applications |> Maybe.andThen (Catalog.lookup identity)
                 label=entry |> Maybe.map .name |> Maybe.withDefault identity
                 choice=if Shell.available model.windows.shell then Launch.select identity model.launch |> Maybe.map Desktop.Start else Nothing
-                disabled reason={id="bar:pin:" ++ identity,domId=Desktop.key model ("pin:" ++ identity),label=label,ariaLabel=reason ++ label,detail=reason,enabled=False,message=Nothing}
+                disabled reason={id="bar:pin:" ++ identity,domId=Desktop.key model ("pin:" ++ identity),label=label,ariaLabel=actionName (reason ++ label) label,detail=reason,enabled=False,message=Nothing}
             in case Desktop.pinnedGroup identity model of
                 Just group ->
                     if List.length (owners group)==1 then
                         let control=groupControl group
-                        in {control|id="bar:pin:" ++ identity,label=label,detail="Pinned; " ++ control.detail}
+                        in {control|id="bar:pin:" ++ identity,label=label,ariaLabel=actionName control.ariaLabel label,detail="Pinned; " ++ control.detail}
                     else disabled "Ambiguous application identity: "
                 Nothing ->
                     if entry==Nothing then disabled "Unavailable application: " else if not (List.isEmpty (Desktop.pinGroups identity model)) then disabled "Ambiguous application identity: " else
-                        {id="bar:pin:" ++ identity,domId=Desktop.key model ("pin:" ++ identity),label=label,ariaLabel="Open " ++ label,detail="Pinned launcher",enabled=choice/=Nothing,message=choice}
+                        {id="bar:pin:" ++ identity,domId=Desktop.key model ("pin:" ++ identity),label=label,ariaLabel=actionName ("Open " ++ label) label,detail="Pinned launcher",enabled=choice/=Nothing,message=choice}
         ordinaryGroups=TaskbarShell.groups model.windows |> List.filter (\group -> List.length (owners group)/=1)
         reconnect = {id="bar:reconnect",domId="reconnect",label="Reconnect",ariaLabel="Reconnect to the window system",detail="",enabled=not model.windows.shell.reconnecting,message=Just (Desktop.Window (TaskbarShell.Native Shell.Reconnect))}
         retry = {id="bar:refresh-windows",domId=Desktop.key model "refresh-windows",label="Refresh windows",ariaLabel="Refresh windows",detail="",enabled=model.choice==Nothing,message=Just Desktop.RetryWindows}
@@ -386,7 +427,10 @@ barControls model =
             if model.windows.shell.phase/=Shell.Detached && (model.workspaceNavigation.record |> Maybe.map (\record -> record.status==WorkspaceNavigation.Unknown) |> Maybe.withDefault False) then
                 [{id="bar:workspace-refresh",domId=Desktop.key model "workspace-refresh",label="Refresh workspace status",ariaLabel="Read workspace switch status without repeating the action",detail="Observation only",enabled=not model.workspaceNavigation.recovering,message=Desktop.capture model |> Maybe.map Desktop.RefreshWorkspaceNavigation}]
             else []
-    in workspaceRecovery ++ recovery ++ (if model.windows.shell.phase==Shell.Detached then utilities++applications else applications++utilities) ++ (if not (String.isEmpty model.choiceNotice) && model.windows.shell.phase/=Shell.Detached then [retry] else [])
+        compactPins=if List.isEmpty pinIds then [] else
+            [{id="bar:pins-summary",domId=Desktop.key model "pins-summary",label=String.fromInt (List.length pinIds)++" pinned applications",ariaLabel="Open Applications for every pin action",detail="Compact taskbar; full pin order retained",enabled=application.enabled,message=application.message}]
+    in if model.presentationCapacity then workspaceRecovery++recovery++[application]++compactPins else
+        workspaceRecovery ++ recovery ++ (if model.windows.shell.phase==Shell.Detached then utilities++applications else applications++utilities) ++ (if not (String.isEmpty model.choiceNotice) && model.windows.shell.phase/=Shell.Detached then [retry] else [])
 
 notice : Desktop.Model -> String
 notice model =
@@ -394,7 +438,7 @@ notice model =
         retainedWindowFeedback = model.windows.shell.effects.transaction
             |> Maybe.map (\transaction -> List.member transaction.status [Effects.Pending,Effects.Unknown,Effects.Refused,Effects.Cancelled])
             |> Maybe.withDefault False
-        context = contextNotice model
+        context = (if model.presentationCapacity then "Compact presentation; open Applications, search or use pages for every application and pin action. · " else "")++contextNotice model
     -- Keep the action or retained recovery notice first in the bounded bar
     -- while retaining Applications guidance; this never updates or retries it.
     in if mode model=="applications" && (retainedWindowFeedback || recoveryNeeded model) then windowNotice model ++ " · " ++ context else context
@@ -483,7 +527,7 @@ packet publication lease model =
                             Provider.geometryObservation provider |> Maybe.andThen (GeometryProjection.window (Provider.incarnation provider)) |> Maybe.andThen .pin |> Maybe.map .pinned)
                         _ -> Nothing))
         encode control = E.object ([("id",E.string control.id),("domId",E.string control.domId),("label",E.string control.label),("ariaLabel",E.string control.ariaLabel),("detail",E.string control.detail),("enabled",E.bool (control.enabled && control.message/=Nothing && not (WorkspaceNavigation.blocked model.workspaceNavigation && (control.message |> Maybe.map Desktop.workspaceMutation |> Maybe.withDefault False)))),("focusOnly",E.bool (model.notificationsOpen && not control.enabled && Notifications.focusedIdentity model.notifications==Just control.id))] ++ (checked control |> Maybe.map (\value -> [("checked",E.bool value)]) |> Maybe.withDefault []))
-    in E.object [("surfaceProtocol",E.int 2),("keyboardParent",E.bool (model.popupOrigin==Desktop.KeyboardEntry)),("motion",E.string (Motion.name (Motion.desired model.motion))),("appearance",Settings.encodeValues (model.settings.snapshot |> Maybe.map .values |> Maybe.withDefault Settings.defaults)),("publication",E.string (UInt64.string publication)),("lease",E.string (UInt64.string lease)),("mode",E.string (mode model)),("status",E.string ((notice model)++(if not model.filesOpen && (model.files.pending/=Nothing || String.startsWith "Files:" model.files.notice) then " · "++model.files.notice else "")++(if model.jumpEntry==Nothing && (model.jumpList.pending/=Nothing || String.startsWith "Application action:" model.jumpList.notice) then " · "++model.jumpList.notice else ""))),("bar",E.list encode (barControls model)),("popup",E.list encode (controls model))]
+    in E.object [("surfaceProtocol",E.int 2),("keyboardParent",E.bool (model.popupOrigin==Desktop.KeyboardEntry)),("motion",E.string (Motion.name (Motion.desired model.motion))),("appearance",Settings.encodeValues (model.settings.snapshot |> Maybe.map .values |> Maybe.withDefault Settings.defaults)),("publication",E.string (UInt64.string publication)),("lease",E.string (UInt64.string lease)),("mode",E.string (mode model)),("status",E.string (capacityStatus model ((notice model)++(if not model.filesOpen && (model.files.pending/=Nothing || String.startsWith "Files:" model.files.notice) then " · "++model.files.notice else "")++(if model.jumpEntry==Nothing && (model.jumpList.pending/=Nothing || String.startsWith "Application action:" model.jumpList.notice) then " · "++model.jumpList.notice else "")))),("bar",E.list encode (barControls model)),("popup",E.list encode (controls model))]
 
 resolveAction : Counter -> Counter -> D.Value -> Desktop.Model -> Maybe Desktop.Msg
 resolveAction publication lease raw model =
@@ -509,9 +553,9 @@ resolveBase publication lease raw model =
     let strict fields child = D.keyValuePairs D.value |> D.andThen (\pairs -> if List.sort (List.map Tuple.first pairs)==List.sort fields then child else D.fail "Surface event fields")
         scopes child = D.map4 (\version shown scoped role -> (version==2 && shown==publication && scoped==lease,role)) (D.field "surfaceProtocol" D.int) (D.field "publication" UInt64.decoder) (D.field "lease" UInt64.decoder) (D.field "surface" D.string) |> D.andThen (\(valid,role) -> if valid then child role else D.fail "Stale surface event")
         context = strict ["surfaceProtocol","kind","surface","publication","lease","id","trigger","x","y"] (scopes (\role -> D.map4 (\identity trigger x y -> (role,identity,trigger)) (D.field "id" D.string) (D.field "trigger" D.string) (D.field "x" D.int) (D.field "y" D.int)))
-        navigation = strict ["surfaceProtocol","kind","surface","publication","lease","key"] (scopes (\role -> if role=="popup" && mode model=="menu" then D.field "key" D.string else D.fail "No menu"))
-        attention = strict ["surfaceProtocol","kind","surface","publication","lease","id"] (scopes (\role -> if role=="popup" && model.notificationsOpen then D.field "id" D.string else D.fail "No notification popup"))
-        query = strict ["surfaceProtocol","kind","surface","publication","lease","id","query"] (scopes (\role -> if role=="popup" && (model.open || model.filesOpen) then D.map2 Tuple.pair (D.field "id" D.string) (D.field "query" D.string) else D.fail "No applications"))
+        navigation = strict ["surfaceProtocol","kind","surface","publication","lease","key"] (scopes (\role -> if role=="popup" && mode model=="menu" && not model.presentationCapacity then D.field "key" D.string else D.fail "No menu"))
+        attention = strict ["surfaceProtocol","kind","surface","publication","lease","id"] (scopes (\role -> if role=="popup" && model.notificationsOpen && not model.presentationCapacity then D.field "id" D.string else D.fail "No notification popup"))
+        query = strict ["surfaceProtocol","kind","surface","publication","lease","id","query"] (scopes (\role -> if role=="popup" && (model.open || (model.filesOpen && not model.presentationCapacity)) then D.map2 Tuple.pair (D.field "id" D.string) (D.field "query" D.string) else D.fail "No applications"))
         menuMessage key =
             (MenuBridge.menuSnapshot model.windows.menus).menu |> Maybe.andThen (\menu ->
                 let send = Just << Desktop.Window << TaskbarShell.MenuEvent
@@ -531,7 +575,7 @@ resolveBase publication lease raw model =
         Ok "surface-menu-navigation" -> D.decodeValue navigation raw |> Result.toMaybe |> Maybe.andThen menuMessage
         Ok "surface-context" ->
             D.decodeValue context raw |> Result.toMaybe |> Maybe.andThen (\(role,identity,trigger) ->
-                if not (List.member trigger ["pointer","keyboard"]) || model.choice/=Nothing then Nothing else
+                if not (List.member trigger ["pointer","keyboard"]) || model.choice/=Nothing || (model.presentationCapacity && role/="bar") then Nothing else
                 Shell.capture model.windows.shell |> Maybe.andThen (\stamp ->
                     if role=="bar" then
                         let enabled=barControls model |> List.any (\control -> control.id==identity && control.enabled)

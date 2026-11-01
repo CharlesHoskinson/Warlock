@@ -1,59 +1,64 @@
 {
   "schema": 1,
   "owner": "root-agentbus",
-  "updatedUTC": "2026-11-01T02:02:46.684712+00:00",
+  "updatedUTC": "2026-11-01T04:17:58.314636+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
   "productWIPLimit": 1,
   "nativeWIPLimit": 1,
   "activeSlice": {
-    "id": "tea-effects-pin-read-causality",
+    "id": "haskell-desktop-stream-catalog-pins",
     "requirements": [
-      "ELM-TEA-003"
+      "ELM-ARC-003",
+      "ELM-DEL-011"
     ],
     "scenarios": [
-      "tea-effects"
+      "architecture-003",
+      "delivery-011",
+      "arbitrary-path-denied"
     ],
     "paths": [
-      "implementation/warlock/src/Pins.elm",
-      "implementation/warlock/src/Desktop.elm",
       "implementation/warlock/src/Main.elm",
-      "implementation/warlock/src/Popup.elm",
-      "implementation/warlock/src/Effects.elm",
-      "implementation/warlock/src/Shell.elm",
-      "implementation/warlock/src/ReceiptRouter.elm",
-      "implementation/warlock/src/NativeOutcome.elm",
-      "implementation/warlock/src/Surface.elm",
-      "implementation/warlock/src/SurfaceController.elm",
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Desktop.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Profile.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Codec.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/StrictJson.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Boundary/Internal.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress/Internal.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/CredentialIngress.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Framing.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Transport/Frame.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Transport/Channel.hs",
+      "implementation/warlock/haskell/protocol/protocol.cabal",
+      "implementation/warlock/haskell/runtime/src/Warlock/Backend.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Backend/Catalog.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Backend/PinStore.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Backend/Store.hsc",
+      "implementation/warlock/haskell/runtime/app/Main.hs",
+      "implementation/warlock/haskell/runtime/runtime.cabal",
+      "implementation/warlock/haskell/runtime/test-ui/Main.hs",
+      "implementation/warlock/haskell/runtime/fixture-ui/Main.hs",
+      "implementation/warlock/haskell/protocol/test-desktop/Main.hs",
+      "implementation/warlock/qa/ui-backend-port.cjs",
+      "implementation/warlock/qa/ui-native-stream.qnt",
+      "implementation/warlock/qa/ui-native-stream_test.qnt",
+      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/Aggregate.hs",
       "implementation/warlock/src/OutputController.elm",
-      "implementation/warlock/src/Binding.elm",
-      "implementation/warlock/src/UInt64.elm",
-      "implementation/warlock/qa/PinsPendingReplay.elm",
-      "implementation/warlock/qa/pins-pending.cjs",
-      "implementation/warlock/qa/pins-save-lifecycle.qnt",
-      "implementation/warlock/qa/pins-save-lifecycle_test.qnt",
-      "implementation/warlock/qa/ReceiptStateReplay.elm",
-      "implementation/warlock/qa/receipt-state.cjs",
-      "implementation/warlock/qa/AuthorityTupleReplay.elm",
-      "implementation/warlock/qa/authority-tuple.cjs",
-      "implementation/warlock/src/SurfaceSnapshot.elm",
-      "implementation/warlock/src/PreviewPaintGate.elm",
-      "implementation/warlock/qa/PreviewPaintReplay.elm",
-      "implementation/warlock/qa/PinsReplay.elm",
-      "implementation/warlock/qa/NativePointerFixture.elm"
+      "implementation/warlock/src/Desktop.elm",
+      "implementation/warlock/src/Surface.elm",
+      "implementation/warlock/src/SurfaceController.elm"
     ],
-    "before": "An earlier application refresh can arrive during a later pin write and may clear its pending identity without the matching save receipt; actual owning-route RED is required. Full TEA003 committed dependency, batch independence and typed decoder obligations remain unadjudicated.",
-    "after": "The actual Elm UI preserves in-flight pin order and save identity across an earlier read, adopts only its authorized completion or deliberately correlated Unknown recovery, and the whole original effect/decoder contract is exercised through the real owning roots without native acceptance.",
+    "before": "Actual Main exposes multiple incoming ports; current Haskell protocol admits only native1/2 and has no called catalog/pin backend or GUI stream composition. Imported historical Python behavior is not Haskell implementation.",
+    "after": "The actual Main exposes one versioned incoming/outgoing stream and a called production Haskell backend validates full commit and typed operation schema before kernel-authenticated catalog/pin IO, returns matching actual outcomes, and rejects command/path/unknown operations before IO. Full privateUIHTTP/native/persistent-delivery goal remains, not redefined to a library/read-only demo.",
     "verification": [
-      "Root protected compiler checks actual Main/Bar/Popup, owning-route R-before-W RED then fix, independent seeded fullwidth request/revision/raw-effect fixtures and invalid/duplicate/read-order/Unknown-recovery controls; matching Committed dependency and typed decoder boundaries via current ReceiptState/AuthorityTuple plus exact batch correspondence, meaningful source-linked Quint safety/reachability. Whole TEA003 requires all three clauses, original literal oracle and independent immutable review; no pin-only or native verdict."
+      "Root protected buildall/testall and real production-executable kernel-framed actual compiledMain roundtrip with complete surfaceCommit, matching schema/hash receipts, strict typed profiles and legacy64KiB controls. Meaningful malformed/profile/provenance fuzz before anycallback, actualno command/arbitraryfileIO proof and CAS/privatefile/persistence controls; Quint model actual boundaries. Independently reviewed source readiness/immutable alloriginaloracles; no nativeGUI/AT/release inference."
     ],
     "owner": "root-agentbus",
-    "participantRecord": ".warlock-contributor/tea-effects.json",
-    "outcome": "Whole original TEA003/tea-effects independently accepted: actual pin-save causality fix and all three effect/decoder clauses on immutable tested source; no native/GUI/AT/persistence/release transfer.",
-    "sourceRevision": "b6bfe6146cdbd4a9c3eae06ddc898c93436f5e70",
-    "acceptance": "docs/warlock-build-loop/v2/tea-effects-acceptance-20261101.json",
-    "independentReview": "docs/warlock-build-loop/v2/tea-effects-review-20261101.json"
+    "participantRecord": ".warlock-contributor/ui-backend.json",
+    "outcome": "Sixthruntime PASS4c37dc57:27suites39invocations/55maliciouscases/pure1656; actualMain8010checks401orderedframes/all2048in257pages/max32fullnames96management129pages. FullElm PASS1f6d6bf6. Evidencec120a378/archive7e2b9b26retainallfailures; immutablecommit+independentoriginalARC003/DEL011all3scenarios pending. Native/privateHTTP/persistentGUI/release remainopen.",
+    "readinessReview": ".warlock-contributor/ui-backend-readiness-review.json"
   },
   "nextSlices": [
     "taskbar activation/minimize/restore and popup focus journeys",
@@ -2553,6 +2558,54 @@
       "owner": "root-agentbus",
       "participantRecord": ".warlock-contributor/registry-admission.json",
       "currentOutcome": "Whole original REV005 and requirement-ownership accepted on20df98fefb509ca935d34dc044d0e6664d17a45e; administrative gate repair."
+    },
+    {
+      "id": "tea-effects-pin-read-causality",
+      "requirements": [
+        "ELM-TEA-003"
+      ],
+      "scenarios": [
+        "tea-effects"
+      ],
+      "paths": [
+        "implementation/warlock/src/Pins.elm",
+        "implementation/warlock/src/Desktop.elm",
+        "implementation/warlock/src/Main.elm",
+        "implementation/warlock/src/Popup.elm",
+        "implementation/warlock/src/Effects.elm",
+        "implementation/warlock/src/Shell.elm",
+        "implementation/warlock/src/ReceiptRouter.elm",
+        "implementation/warlock/src/NativeOutcome.elm",
+        "implementation/warlock/src/Surface.elm",
+        "implementation/warlock/src/SurfaceController.elm",
+        "implementation/warlock/src/OutputController.elm",
+        "implementation/warlock/src/Binding.elm",
+        "implementation/warlock/src/UInt64.elm",
+        "implementation/warlock/qa/PinsPendingReplay.elm",
+        "implementation/warlock/qa/pins-pending.cjs",
+        "implementation/warlock/qa/pins-save-lifecycle.qnt",
+        "implementation/warlock/qa/pins-save-lifecycle_test.qnt",
+        "implementation/warlock/qa/ReceiptStateReplay.elm",
+        "implementation/warlock/qa/receipt-state.cjs",
+        "implementation/warlock/qa/AuthorityTupleReplay.elm",
+        "implementation/warlock/qa/authority-tuple.cjs",
+        "implementation/warlock/src/SurfaceSnapshot.elm",
+        "implementation/warlock/src/PreviewPaintGate.elm",
+        "implementation/warlock/qa/PreviewPaintReplay.elm",
+        "implementation/warlock/qa/PinsReplay.elm",
+        "implementation/warlock/qa/NativePointerFixture.elm"
+      ],
+      "before": "An earlier application refresh can arrive during a later pin write and may clear its pending identity without the matching save receipt; actual owning-route RED is required. Full TEA003 committed dependency, batch independence and typed decoder obligations remain unadjudicated.",
+      "after": "The actual Elm UI preserves in-flight pin order and save identity across an earlier read, adopts only its authorized completion or deliberately correlated Unknown recovery, and the whole original effect/decoder contract is exercised through the real owning roots without native acceptance.",
+      "verification": [
+        "Root protected compiler checks actual Main/Bar/Popup, owning-route R-before-W RED then fix, independent seeded fullwidth request/revision/raw-effect fixtures and invalid/duplicate/read-order/Unknown-recovery controls; matching Committed dependency and typed decoder boundaries via current ReceiptState/AuthorityTuple plus exact batch correspondence, meaningful source-linked Quint safety/reachability. Whole TEA003 requires all three clauses, original literal oracle and independent immutable review; no pin-only or native verdict."
+      ],
+      "owner": "root-agentbus",
+      "participantRecord": ".warlock-contributor/tea-effects.json",
+      "outcome": "Whole original TEA003/tea-effects independently accepted: actual pin-save causality fix and all three effect/decoder clauses on immutable tested source; no native/GUI/AT/persistence/release transfer.",
+      "sourceRevision": "b6bfe6146cdbd4a9c3eae06ddc898c93436f5e70",
+      "acceptance": "docs/warlock-build-loop/v2/tea-effects-acceptance-20261101.json",
+      "independentReview": "docs/warlock-build-loop/v2/tea-effects-review-20261101.json"
     }
   ],
   "lastCompletedBoundedSlice": {
@@ -3308,32 +3361,35 @@
     "transport": "authenticated individual bindings; existing services reused",
     "rootCoordinator": "lead",
     "roles": {
-      "lead": "integration and serialized protected checks",
-      "reviewer": "Full original TEA003 immutable source/evidence acceptance",
-      "elm-impl": "Actual typed Pins/Desktop causality fix; next Haskell/Elm backend source integration survey",
-      "elm-tests": "Independent actual renderer/controller pin sequence oracle and next backend original obligations",
+      "lead": "Integration and sole protected compile/model/process/native executor",
+      "reviewer": "Independent production-linked QA author; pending whole ARC003/DEL011 immutable acceptance review",
+      "elm-impl": "Actual shared Desktop profile source owner and independent backend/storage/Main/runner peer review",
+      "elm-tests": "Actual Haskell catalog/durable pin backend source owner; cross-boundary API/doc handoff",
       "terra-browser": "public production route source audit",
       "sol-docs": "bounded bootstrap documentation suggestions",
-      "terra-contracts": "Source-only causal read/save formal model handoff, root corrected syntax/correspondence and executed",
+      "terra-contracts": "Source-only UI whole-batch/profile model author; root executed14directed+10k50/all6witnesses before retained fixture failures",
       "haiku-originals": "literal original security audit",
       "muse": "bounded DEL010 EARS continuity",
       "terra-artifacts": "unexecuted delegated-UID protected-runner draft"
     },
-    "externalProcessReceipts": ".warlock-contributor/tea-external-launch-receipts.json",
+    "externalProcessReceipts": ".warlock-contributor/ui-stream-model-launch.json",
     "authAcknowledgements": "AgentBus live log; process launch alone is not successful authentication",
     "singleProductSlice": true,
     "noDuplicateCoordinator": true,
-    "currentSlice": "ELM-TEA-003 all3clauses; next Haskell UI/backend integration survey",
-    "currentProcessObservation": "All source/formal/QA/final-review jobs handed off; root publishes full original verdict and continues host goal. No background liveness inferred from identities."
+    "currentSlice": "ELM-ARC-003/architecture-003 and ELM-DEL-011/delivery-011+arbitrary-path-denied; all clauses pending whole original adjudication",
+    "currentProcessObservation": "Root protected third run active, source inputs frozen. All three internal workers completed handoffs/claims released per collaboration list; model launcher PID1501042 absent; own log terminal exit0. Registered identities are not running agents; no parallel protected job.",
+    "lastHealthObservation": {
+      "observedUTC": "2026-11-01T03:01:00Z",
+      "doctor": "six checks healthy; lead credential valid19hours, arbiter existingPID1116694; services/keys reused"
+    }
   },
   "currentGoalTelemetry": {
-    "observedUTC": "2026-10-31T23:58:16.047484+00:00",
+    "observedUTC": "2026-11-01T04:17:58.314662+00:00",
     "status": "active",
-    "recordedTokensUsed": 3210609,
-    "elapsedSeconds": 6722,
-    "remainingTokenBudget": null,
-    "cost": "unavailable",
-    "scope": "Current host goal telemetry sampled during this batch, not a daily usage figure or feature count"
+    "tokensUsed": 10103251,
+    "timeUsedSeconds": 22391,
+    "tokenBudget": null,
+    "scope": "Host cumulative telemetry; component/native/original acceptance separate"
   },
   "currentOriginalClosure": {
     "requirement": "ELM-TEA-003",
@@ -3347,7 +3403,7 @@
     "nativeExecution": false,
     "releaseAcceptance": false
   },
-  "nextConcreteAction": "Implement actual Haskell catalog/pins backend and current Elm stream composition, starting with Applications Refresh under original ARC003; reconcile existing shared wire/capacity and missing private source-decision artifact within authorized preparation, preserve eventual durable read/write/privateHTTP target, no competing protocol/truncation/nativeOps activation.",
+  "nextConcreteAction": "Commit exacttested32source/evidence tuple; independentwholeARC003/DEL011review againstimmutablecommit andall3originaloracles, thenrecordwarrantedledgerverdict/publishnormalbatch. ContinueprivateUIHTTP/WebKit/persistentowner work underexistingauthorization; no HOSTSTOP2 or askpassretry.",
   "currentNamedScenarioClosure": {
     "requirement": "ELM-DEL-010",
     "scenarios": [

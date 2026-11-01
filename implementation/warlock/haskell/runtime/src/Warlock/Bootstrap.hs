@@ -1,7 +1,7 @@
 -- Trusted application bootstrap. Approval is not native-effect authorization.
 module Warlock.Bootstrap
   (BootstrapOwner, BootstrapResult(..), AuthObservation(..), newBootstrapOwner,
-   runBootstrap, bootstrapAuthObservation, bootstrapCredentialTrace, bootstrapSelectedPid, retireBootstrap,
+   runBootstrap, runBootstrapWithArguments, bootstrapAuthObservation, bootstrapCredentialTrace, bootstrapSelectedPid, retireBootstrap,
    CredentialStage(..), CredentialObservation(..),
    CurrentSessions, Registration, newCurrentSessions, newRegistration,
    withApprovedOwnedPeer, retireRegistration, Scope, ScopeStatus(..), PeerRefusal(..),

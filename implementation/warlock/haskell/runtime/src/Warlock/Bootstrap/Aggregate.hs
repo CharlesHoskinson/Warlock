@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 -- Internal adapter. Observation is not a native grant or a process manager.
-module Warlock.Bootstrap.Aggregate (BootstrapOwner, BootstrapResult(..), AuthObservation(..), newBootstrapOwner, runBootstrap, bootstrapAuthObservation, bootstrapCredentialTrace, bootstrapSelectedPid, retireBootstrap) where
+module Warlock.Bootstrap.Aggregate (BootstrapOwner, BootstrapResult(..), AuthObservation(..), newBootstrapOwner, runBootstrap, runBootstrapWithArguments, bootstrapAuthObservation, bootstrapCredentialTrace, bootstrapSelectedPid, retireBootstrap) where
 import Control.Concurrent.MVar
 import Control.Concurrent (forkFinally,killThread)
 import Control.Exception (Exception,AsyncException(ThreadKilled),SomeException,SomeAsyncException,fromException,mask,mask_,uninterruptibleMask_,onException,throwIO,try,finally)
@@ -34,7 +34,13 @@ bootstrapAuthObservation (BootstrapOwner _ _ _ _ observation _ _ _) = readIORef 
 -- Every checked frame uses the same approved scope and original deadline.
 -- The exact resolver receipt and owned Session remain scoped to the core callback.
 runBootstrap :: BootstrapOwner -> Root -> [Pin] -> B.ByteString -> [Link] -> Integer -> B.ByteString -> AdmissionDeadline -> [(String,String)] -> CredentialIngress -> IO BootstrapResult
-runBootstrap owner@(BootstrapOwner core lease pair state authObservation trace selectedPid admission) root pins path links size digest deadline environment ingress =
+runBootstrap owner root pins path links size digest deadline environment ingress =
+ runBootstrapWithArguments owner root pins path links size digest [] deadline environment ingress
+
+-- Arguments are selected by the trusted supervisor, never by a wire request.
+-- Keep the original entry point, owner, deadline and authentication unchanged.
+runBootstrapWithArguments :: BootstrapOwner -> Root -> [Pin] -> B.ByteString -> [Link] -> Integer -> B.ByteString -> [String] -> AdmissionDeadline -> [(String,String)] -> CredentialIngress -> IO BootstrapResult
+runBootstrapWithArguments owner@(BootstrapOwner core lease pair state authObservation trace selectedPid admission) root pins path links size digest arguments deadline environment ingress =
  (mask $ \restore -> do
   admitted <- uninterruptibleMask_ $ modifyMVar state $ \s@(State phase held ticket) -> case phase of
     Fresh -> pure (State Running held ticket,True)
@@ -62,7 +68,7 @@ runBootstrap owner@(BootstrapOwner core lease pair state authObservation trace s
                     uninterruptibleMask_ $ modifyMVar_ state $ \(State phase current _) -> pure (State phase current (Just ticket))
                     movedTransfer <- claimTransfer pair
                     if not movedTransfer then poison >> pure PendingCustody else
-                      case selectedHeld held [] ticket environment of
+                      case selectedHeld held arguments ticket environment of
                         Left _ -> finish Refused
                         Right plan -> do
                           result <- try (restore (runSelectedDetailed core plan 1048576 deadline $ \session -> do

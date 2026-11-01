@@ -2,7 +2,7 @@
 module Warlock.Protocol.CredentialIngress
  (CredentialIngress, CredentialIngressResult(..), CredentialFrameError(..),
   CredentialError(..), ReaderStatus(..), CredentialGuard(..),
-  newCredentialIngress, transferCredentialSocket, activateCredentialIngress,
+  newCredentialIngress, newDesktopCredentialIngress, transferCredentialSocket, activateCredentialIngress,
   receiveCredentialIngress, retireCredentialIngress, credentialIngressStatus,
   enqueueCredentialIngress, sendCredentialIngress, retainedCredentialIngressFrames) where
 import Warlock.Protocol.Ingress.Internal

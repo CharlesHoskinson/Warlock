@@ -1,4 +1,4 @@
-module Desktop exposing (Effect(..), ChoiceToken, choiceToken, Model, Msg(..), PopupOrigin(..), initial, update, ViewStamp, capture, key, taskViewGroups, overviewTransferAvailable, workspaceNavigationIntent, workspaceMutation, switcherOpen, canProveCatalogUnsent, pinnedGroup, pinGroups, pinIdentities, menuApplication, newInstanceAvailable)
+module Desktop exposing (Effect(..), ChoiceToken, choiceToken, Model, Msg(..), PopupOrigin(..), initial, update, ViewStamp, capture, key, taskViewGroups, overviewTransferAvailable, workspaceNavigationIntent, workspaceMutation, switcherOpen, canProveCatalogUnsent, pinnedGroup, pinGroups, pinIdentities, menuApplication, newInstanceAvailable, applicationPageSize, applicationPageCount)
 
 import Menu
 import ActionProjection as Scene
@@ -47,6 +47,8 @@ type alias Model =
     , launch : Launch.Model
     , launchFromApplications : Bool
     , applications : Maybe Catalog.Snapshot
+    , applicationPage : Int
+    , presentationCapacity : Bool
     , pins : Pins.Model
     , pointer : PointerOwnership.Model
     , shortcuts : Shortcuts.Model
@@ -130,6 +132,9 @@ type Msg
     | Incoming D.Value
     | OpenApplications ViewStamp
     | RefreshApplications ViewStamp
+    | ApplicationsPage ViewStamp Int
+    | PresentationCapacity
+    | PinsUnsent Binding.Binding Counter
     | OpenJumpList ViewStamp String
     | CloseJumpList ViewStamp
     | RefreshJumpList ViewStamp
@@ -201,7 +206,7 @@ type Effect
 
 initial : Model
 initial =
-    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", popupOrigin = KeyboardEntry, returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, launchFromApplications = False, applications = Nothing, query = "", pins = Pins.initial, pointer = PointerOwnership.initial, shortcuts = Shortcuts.initial, jumpList = JumpList.initial, jumpEntry = Nothing, jumpOpening = False, jumpExpected = Nothing, jumpBack = False, files = Files.initial, filesOpen = False, filesOpening = False, filesExpected = Nothing, systemMenu = SystemMenu.initial, systemMenuOpen = False, systemMenuOpening = False, systemMenuExpected = Nothing, systemMenuConfirmation = Nothing, notifications = Notifications.initial, notificationsOpen = False, notificationsOpening = False, notificationsExpected = Nothing, motionExpected = Nothing, motion = Motion.initial, settings = Settings.initial, settingsOpen = False, settingsOpening = False, settingsExpected = Nothing, settingsHelp = True, shortcutPreferences = ShortcutPreferences.initial, shortcutExpected = Nothing, open = False, overview = False, overviewWorkspace = Nothing, overviewRecovery = OverviewRecovery.initial, workspaceInventory = Nothing, workspaceNavigation = WorkspaceNavigation.initial, overviewTransfer = Nothing, snap = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, adapterNotice = Nothing, catalogFailure = Nothing, catalogOpening=False }
+    { windows = TaskbarShell.initial, choice = Nothing, choiceNotice = "", popupOrigin = KeyboardEntry, returnFocus = Nothing, menuOrigin = Nothing, ownerScope = Nothing, ownerExhausted = False, launch = Launch.init, launchFromApplications = False, applications = Nothing, applicationPage = 0, presentationCapacity = False, query = "", pins = Pins.initial, pointer = PointerOwnership.initial, shortcuts = Shortcuts.initial, jumpList = JumpList.initial, jumpEntry = Nothing, jumpOpening = False, jumpExpected = Nothing, jumpBack = False, files = Files.initial, filesOpen = False, filesOpening = False, filesExpected = Nothing, systemMenu = SystemMenu.initial, systemMenuOpen = False, systemMenuOpening = False, systemMenuExpected = Nothing, systemMenuConfirmation = Nothing, notifications = Notifications.initial, notificationsOpen = False, notificationsOpening = False, notificationsExpected = Nothing, motionExpected = Nothing, motion = Motion.initial, settings = Settings.initial, settingsOpen = False, settingsOpening = False, settingsExpected = Nothing, settingsHelp = True, shortcutPreferences = ShortcutPreferences.initial, shortcutExpected = Nothing, open = False, overview = False, overviewWorkspace = Nothing, overviewRecovery = OverviewRecovery.initial, workspaceInventory = Nothing, workspaceNavigation = WorkspaceNavigation.initial, overviewTransfer = Nothing, snap = Nothing, switcher=Switcher.initial, nativeSwitcher=Nothing, switcherOrigin=Nothing, switcherExpected=Nothing, switcherHistory=Nothing, request = UInt64.zero, presentation = Just UInt64.zero, expected = Nothing, adapterNotice = Nothing, catalogFailure = Nothing, catalogOpening=False }
 
 taskViewGroups : Model -> Maybe (List TaskView.Workspace)
 taskViewGroups model = TaskView.groupsWith model.workspaceInventory model.windows.shell
@@ -438,6 +443,8 @@ windowBase message model =
         , shortcutExpected = if disconnected || changed then shortcutsRead |> Maybe.map Tuple.second else model.shortcutExpected
         , request = shortcutsRead |> Maybe.map Tuple.second |> Maybe.withDefault (motionRead |> Maybe.map Tuple.second |> Maybe.withDefault (settingsRead |> Maybe.map Tuple.second |> Maybe.withDefault (read |> Maybe.map Tuple.second |> Maybe.withDefault model.request)))
         , applications = if disconnected || changed then Nothing else model.applications
+        , applicationPage = if disconnected || changed then 0 else model.applicationPage
+        , presentationCapacity = if disconnected || changed then False else model.presentationCapacity
         , expected = if disconnected || changed then read |> Maybe.map Tuple.second else model.expected
         , adapterNotice = if disconnected && model.windows.shell.phase /= Shell.Detached then model.windows.shell.binding |> Maybe.map (\binding -> AdapterNotice.connectionLost binding model.windows.shell.request) else if changed then Nothing else model.adapterNotice
         , catalogFailure = if disconnected || changed then Nothing else model.catalogFailure
@@ -690,6 +697,8 @@ motionGesture message =
 gestureAction message =
     case message of
         Incoming _ -> False
+        PresentationCapacity -> False
+        PinsUnsent _ _ -> False
         ScopedShortcut _ _ -> False
         OwnerScope _ -> False
         PresentationOwner _ -> False
@@ -1033,7 +1042,7 @@ updateAvailable message model =
                         Ok receipt ->
                             if model.windows.shell.phase /= Shell.Detached && model.windows.shell.binding == Just receipt.binding && model.expected == Just receipt.request then
                                 let applications = Catalog.decode receipt.snapshot |> Result.toMaybe
-                                    next = advance {model | launch = Launch.catalog receipt.snapshot model.launch, applications = applications, pins = Pins.observeRead receipt.request receipt.pins model.pins, expected = Nothing, catalogFailure = Nothing, catalogOpening=False, adapterNotice = AdapterNotice.failedRead AdapterNotice.Applications receipt.binding receipt.request Nothing Nothing (applications==Nothing) model.adapterNotice}
+                                    next = advance {model | launch = Launch.catalog receipt.snapshot model.launch, applications = applications, applicationPage = 0, pins = Pins.observeRead receipt.request receipt.pins model.pins, expected = Nothing, catalogFailure = Nothing, catalogOpening=False, adapterNotice = AdapterNotice.failedRead AdapterNotice.Applications receipt.binding receipt.request Nothing Nothing (applications==Nothing) model.adapterNotice}
                                     target = "launcher-search"
                                 in (next,if next.open && model.catalogOpening && applications/=Nothing then [Focus target] else [])
                             else (model,[])
@@ -1044,7 +1053,8 @@ updateAvailable message model =
                         Ok receipt ->
                             if model.windows.shell.phase==Shell.Detached || model.windows.shell.binding/=Just receipt.binding || not (List.member receipt.status ["Saved","Refused","Unknown"]) then (model,[]) else
                                 let pins = Pins.receive receipt.request receipt.status receipt.pins model.pins
-                                in ({model | pins=pins},if model.open && pins/=model.pins then [Focus "launcher-search"] else [])
+                                    next={model | pins=pins}
+                                in ({next | applicationPage=clamp 0 (applicationPageCount next-1) next.applicationPage},if model.open && pins/=model.pins then [Focus "launcher-search"] else [])
                         Err _ -> (model,[])
                 Ok "application-launch-outcome" ->
                     let decoder = strict ["protocolVersion","kind","binding","outcome"] (D.map3 (\_ binding outcome -> (binding,outcome)) version (D.field "binding" Binding.decoder) (D.field "outcome" D.value))
@@ -1213,6 +1223,20 @@ updateAvailable message model =
             requestApplications True stamp model
         RefreshApplications stamp ->
             if not model.open then (model,[]) else requestApplications False stamp model
+        PresentationCapacity ->
+            if model.presentationCapacity then (model,[]) else
+                (advance {model | presentationCapacity=True,applicationPage=model.applicationPage*8},[])
+        PinsUnsent binding request ->
+            if model.windows.shell.binding/=Just binding then (model,[]) else
+                let pins=Pins.rejectUnsent request model.pins
+                in ({model | pins=pins},[])
+        ApplicationsPage stamp direction ->
+            let current=clamp 0 (applicationPageCount model-1) model.applicationPage
+                target=current+direction
+            in if capture model/=Just stamp || not model.open || not (List.member direction [-1,1]) || target<0 || target>=applicationPageCount model then (model,[]) else
+                let next=advance {model | applicationPage=target}
+                    focus=if direction>0 && target<applicationPageCount next-1 then "control:page-next" else if direction<0 && target>0 then "control:page-previous" else if direction>0 then "control:page-previous" else "control:page-next"
+                in (next,[Focus (key next focus)])
         CatalogUnsent binding request ->
             if not (canProveCatalogUnsent binding request model) then (model,[]) else
                 ({model | expected=Nothing,catalogOpening=False,catalogFailure=Just {binding=binding,request=request},adapterNotice=AdapterNotice.failedRead AdapterNotice.Applications binding request Nothing Nothing True model.adapterNotice},[])
@@ -1295,7 +1319,7 @@ updateAvailable message model =
                 _ -> (model,[])
         SearchQuery stamp query ->
             if capture model /= Just stamp || not model.open || query==model.query || String.length query > 256 || String.any (\c -> Char.toCode c < 32 || Char.toCode c == 127) query then (model,[]) else
-                (advance {model | query=query},[])
+                (advance {model | query=query,applicationPage=0},[])
         TogglePin stamp identity ->
             if capture model/=Just stamp || not model.open || not (Pins.writable model.pins) || (not (List.member identity (pinIdentities model)) && (model.applications |> Maybe.andThen (Catalog.lookup identity))==Nothing) then (model,[]) else
                 savePins (Pins.toggle identity (pinIdentities model)) model
@@ -1332,7 +1356,7 @@ requestApplications opening stamp model =
                 Nothing -> model
                 Just menu -> windowBase (TaskbarShell.MenuEvent (Menu.Dismiss menu.id)) model |> Tuple.first
         windows=base.windows
-        retired = advance (retireSwitcher {base | windows={windows | picker=Nothing}, returnFocus=Nothing, menuOrigin=Nothing, snap=Nothing, jumpEntry=Nothing,jumpOpening=False,filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,open = True, overview = False, applications = Nothing, launch = Launch.catalog E.null model.launch, expected = Nothing, catalogFailure = Nothing, catalogOpening=opening})
+        retired = advance (retireSwitcher {base | windows={windows | picker=Nothing}, returnFocus=Nothing, menuOrigin=Nothing, snap=Nothing, jumpEntry=Nothing,jumpOpening=False,filesOpen=False,filesOpening=False,systemMenuOpen=False,systemMenuOpening=False,systemMenuConfirmation=Nothing,notificationsOpen=False,notificationsOpening=False,settingsOpen=False,settingsOpening=False,open = True, overview = False, applications = Nothing, applicationPage = 0, launch = Launch.catalog E.null model.launch, expected = Nothing, catalogFailure = Nothing, catalogOpening=opening})
     in case (model.windows.shell.binding, UInt64.next model.request) of
         (Just binding,Just request) ->
             if model.windows.shell.phase == Shell.Detached || retired.presentation == Nothing then (retired,[]) else
@@ -1344,6 +1368,21 @@ catalogRequest binding request = Send (E.object [("protocolVersion",E.int 3),("k
 
 pinIdentities : Model -> List String
 pinIdentities model = model.pins.snapshot |> Maybe.map .identities |> Maybe.withDefault []
+
+-- Page the complete ordered action list, not the retained catalog itself.
+-- Capacity recovery uses one row while keeping every action reachable.
+applicationPageSize : Model -> Int
+applicationPageSize model = if model.presentationCapacity then 1 else 8
+
+applicationPageCount : Model -> Int
+applicationPageCount model =
+    let entries=model.applications |> Maybe.map (Catalog.search model.query) |> Maybe.withDefault []
+        leading=case List.head entries of
+            Nothing -> 0
+            Just entry -> if List.member (Catalog.id entry.identity) (pinIdentities model) then 1 else 2
+        total=leading+3*List.length (pinIdentities model)+List.length entries
+        size=applicationPageSize model
+    in max 1 ((total+size-1)//size)
 
 savePins : List String -> Model -> (Model,List Effect)
 savePins values model =

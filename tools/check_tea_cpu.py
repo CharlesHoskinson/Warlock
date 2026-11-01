@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fixed TEA003 compiler, effect/decoder replay and causal-model CPU campaign."""
+"""Fixed owning Elm effect/decoder and stream-capacity CPU campaigns."""
 import hashlib
 import importlib.util
 import json
@@ -25,7 +25,9 @@ def digest(path):
 BOOLEAN_WORKER = r'''
 const fs=require('node:fs'),vm=require('node:vm');
 const [file,name,output]=process.argv.slice(1);
+const capacityNames=['publishedPinReachable','sixteenRequestsAdmitted','seventeenRequestsRefused','freshSavingLocallyUnsent','unknownReservationPreserved','mismatchedIdentityPreserved','noPartialReplay','everyFallbackBounded','requestlessDomainPreserved','request8192AsciiAdmitted','request8193AsciiRefused','request8192UnicodeAdmitted','request8193UnicodeRefused','whole131072UnicodeAdmitted','whole131073UnicodeCompacted','requestlessOverflowCompacted','unboundOverflowCompacted','missingBindingOverflowCompacted','refusalPreservesRegisteredBatchCount','refusalDoesNotAllocateRequest','freshActionAfterLocalRefusalAdmitted'];
 const names={PinsReplay:['pinWritesOnce','doesNotClaimSaveBeforeReceipt','pinOrderConfirmed','reorderConfirmed','restartPreservesExactIdentitiesAndOrder','staleActionRejected','staleReceiptRejected','missingEntryCannotBePinned','boundaryReorderNoWrite','zeroWindowPinLaunchesOnce','unknownReceiptNeverWrites','currentPinReceiptRestoresSearchFocus','unknownReceiptKeepsRecoveryReachable'],PreviewPaintReplay:['OriginalAcquireWaitsForPaint','PaintForwardsExactOriginalJobAndDeadline','DuplicatePaintCannotReplayAcquire','ExactCancelRetiresUnsentAcquireImmediately','DifferentRequestCannotCancelPendingAcquire','DifferentBindingCannotCancelPendingAcquire','RepeatedPendingAcquireDoesNotMintAnotherTicket','OldPaintCannotBorrowFreshRequest','ReleaseAndAckNeverWaitForPaint','ForeignNumericExtraPaintCannotCapture']};
+names.StreamCapacityReplay=capacityNames;
 let done=false;
 const report={passed:false,nativeAcceptance:false,releaseAccepted:false,module:name};
 function save(){fs.writeFileSync(output,JSON.stringify(report,null,2)+'\n');}
@@ -46,14 +48,17 @@ try {
 
 
 def main():
-    if sys.argv[1:]:
-        raise RuntimeError('This fixed runner takes no arguments')
+    capacity_only = sys.argv[1:] == ['--capacity']
+    if sys.argv[1:] and not capacity_only:
+        raise RuntimeError('Only the fixed --capacity mode is supported')
     scope = require_qa_scope()
     runtime_base()
     output = ROOT / '.warlock-contributor' / ('tea-cpu-' + str(time.time_ns()))
     output.mkdir(mode=0o700)
-    report = {'schema': 1, 'requirement': 'ELM-TEA-003', 'passed': False,
-              'scope': 'Actual owning Elm compiler/replay and independent effect/decoder fixtures; sampled causal models',
+    report = {'schema': 1, 'requirement': 'ELM-ARC-003' if capacity_only else 'ELM-TEA-003', 'passed': False,
+              'mode': 'stream-capacity' if capacity_only else 'effects-and-capacity',
+              'scope': ('Actual owning Elm compiler and production register/refusal property fixture; no model sampling in this focused mode'
+                        if capacity_only else 'Actual owning Elm compiler/replay and independent effect/decoder fixtures; sampled causal models'),
               'protectedScope': scope, 'originalAcceptance': False, 'nativeAcceptance': False,
               'releaseAccepted': False, 'commands': [], 'models': {}}
     work = output / 'work'
@@ -115,13 +120,13 @@ def main():
         run('node-version', [node, '--version'])
         for module in ('Main', 'Bar', 'Popup'):
             run('compile-' + module, [compiler, 'make', 'src/' + module + '.elm', '--optimize', '--output=' + str(output / (module + '.js'))])
-        fixtures = [('PinsPendingReplay', 'pins-pending'), ('PinsReplay', 'legacy-pins'),
+        fixtures = [('StreamCapacityReplay', 'stream-capacity')] if capacity_only else [('PinsPendingReplay', 'pins-pending'), ('PinsReplay', 'legacy-pins'),
                     ('PreviewPaintReplay', 'preview-paint'), ('AuthorityTupleReplay', 'authority-tuple'),
-                    ('ReceiptStateReplay', 'receipt-state')]
+                    ('ReceiptStateReplay', 'receipt-state'), ('StreamCapacityReplay', 'stream-capacity')]
         for module, name in fixtures:
             run('compile-' + name, [compiler, 'make', 'qa/' + module + '.elm', '--optimize', '--output=' + str(output / (name + '.js'))])
 
-        for model in ('pins-save-lifecycle', 'receipt-lifecycle'):
+        for model in (() if capacity_only else ('pins-save-lifecycle', 'receipt-lifecycle')):
             model_report = {'directedTests': {}}
             report['models'][model] = model_report
             for filename in (model + '.qnt', model + '_test.qnt'):
@@ -155,7 +160,7 @@ def main():
         quint_toolchain()
         # Run unchanged boundary controls before the intentionally failing RED.
         for module, name in fixtures[1:] + fixtures[:1]:
-            if module in ('PinsReplay', 'PreviewPaintReplay'):
+            if module in ('PinsReplay', 'PreviewPaintReplay', 'StreamCapacityReplay'):
                 run(name, [node, '-e', BOOLEAN_WORKER, output / (name + '.js'), module, output / (name + '.json')])
             else:
                 run(name, [node, 'qa/' + name + '.cjs', output / (name + '.js'), output / (name + '.json')])

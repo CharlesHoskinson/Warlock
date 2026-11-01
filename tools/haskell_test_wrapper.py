@@ -21,7 +21,7 @@ ROOTS = {'durable-storage-controls', 'selection-admission-controls', 'host-guard
          'slot-store-controls', 'pair-store-smoke', 'child-directory-controls',
          'independent-admission-shape', 'pair-store-sequences', 'independent-lifetime-owner'}
 NOARGS = {'held-document-controls', 'public-controls', 'boundary-controls', 'owner-sequences',
-          'elf-cases', 'native-cancellation-controls'}
+          'elf-cases', 'native-cancellation-controls', 'desktop-boundary-controls'}
 
 
 def pin(path):
@@ -61,6 +61,7 @@ def main():
             raise RuntimeError('fixture executable pin changed: ' + name)
         return path
     calls = []
+    child_env = dict(os.environ)
     if suite in NOARGS:
         calls = [('default', [])]
     elif suite in CHILD:
@@ -91,6 +92,20 @@ def main():
         calls = [('default', [str(fresh('storage'))])]
     elif suite == 'independent-pairstore':
         calls = [(mode, [mode, str(fresh(mode))]) for mode in MODES]
+    elif suite == 'ui-backend-controls':
+        backend, child = fixture('warlock-ui-backend'), fixture('ui-stream-child')
+        frontend = manifest['frontend']
+        if set(frontend) != {'node', 'main', 'harness'}:
+            raise RuntimeError('Unexpected fixed frontend manifest')
+        for name, item in frontend.items():
+            path = Path(item['path'])
+            if set(item) != {'path', 'sha'} or not path.is_absolute() or pin(path)[3] != item['sha']:
+                raise RuntimeError('UI frontend pin differs: ' + name)
+        frontend_path = base / 'frontend.json'
+        frontend_path.write_text(json.dumps(frontend, indent=2) + '\n')
+        os.chmod(frontend_path, 0o600)
+        child_env['WARLOCK_UI_FRONTEND_MANIFEST'] = str(frontend_path)
+        calls = [('default', [str(backend), *pin(backend), str(child), *pin(child), str(fresh('storage'))])]
     else:
         raise RuntimeError('suite is not in fixed whitelist: ' + suite)
     results = []
@@ -98,7 +113,7 @@ def main():
         log = base / (label + '.log')
         with log.open('wb') as stream:
             proc = subprocess.Popen([str(requested), *args], stdout=stream, stderr=subprocess.STDOUT,
-                                    start_new_session=True)
+                                    start_new_session=True, env=child_env)
             timed_out = False
             def terminate_child(signum, frame):
                 try:
@@ -130,6 +145,10 @@ def main():
             results.append({'mode': label, 'argv': args, 'exit': code, 'timeout': timed_out,
                             'forcedCleanup': forced or timed_out, 'log': str(log)})
         (base / 'results.json').write_text(json.dumps(results, indent=2) + '\n')
+    if suite == 'ui-backend-controls':
+        for name, item in manifest['frontend'].items():
+            if pin(item['path'])[3] != item['sha']:
+                raise RuntimeError('UI frontend changed during execution: ' + name)
     return 0 if len(results) == len(calls) and all(r['exit'] == 0 and not r['forcedCleanup'] for r in results) else 1
 
 

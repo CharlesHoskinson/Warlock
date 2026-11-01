@@ -3,6 +3,7 @@ module OutputController exposing (Model, Event(..), Scope, initial, update, fram
 import Binding
 import Shortcuts
 import PointerOwnership
+import Pins
 import MenuBridge
 import Shell
 import TaskbarShell
@@ -210,6 +211,41 @@ nativePopup event raw ((Model model) as current) =
 pendingBatches : Model -> Int
 pendingBatches (Model model) = List.length model.batches
 
+-- One bound applies to every port commit, including unbound reconnects and
+-- presentation-only updates. No early registration branch can bypass it.
+commit : List E.Value -> List E.Value -> Model -> E.Value
+commit requests focus current =
+    E.object
+        [("viewProtocol",E.int 1),("kind",E.string "view-commit")
+        ,("projection",frame current),("requests",E.list identityValue requests)
+        ,("focus",E.list identityValue focus)]
+
+identityValue : a -> a
+identityValue value = value
+
+withinCommitBound : List E.Value -> E.Value -> Bool
+withinCommitBound requests packet =
+    let text = E.encode 0 packet
+        requestFits request =
+            let wire = E.encode 0 request
+            in String.length wire<=8192 && utf8Length wire<=8192
+    in List.length requests<=16 && List.all requestFits requests
+        && String.length text<=131072 && utf8Length text<=131072
+
+-- The compact surface is still authored and resolved by Surface. It retains
+-- the full domain model, mints a publication, and offers explicit navigation;
+-- the original oversized projection is never rewritten into synthetic JSON.
+boundedPresentation : Bool -> List E.Value -> Model -> (Model,Maybe E.Value)
+boundedPresentation capacityNotice focus current =
+    let packet = commit [] focus current
+    in if not capacityNotice && withinCommitBound [] packet then (current,Just packet) else
+        let (compact,_) = apply (Controller.Interaction Desktop.PresentationCapacity) current
+            fallback = commit [] [] compact
+        in if withinCommitBound [] fallback then (compact,Just fallback) else
+            -- Publication exhaustion or an unforeseen projection violation
+            -- cannot authorize an oversized transport or a fabricated ACK.
+            (compact,Nothing)
+
 register : List Controller.Effect -> Model -> (Model,Maybe E.Value)
 register effects ((Model model) as current) =
     let requests = List.filterMap (\effect -> case effect of
@@ -220,37 +256,60 @@ register effects ((Model model) as current) =
         focus = List.filterMap (\effect -> case effect of
             Controller.DesktopEffect (Desktop.Focus target) -> Just (E.string target)
             _ -> Nothing) effects
-        packet = E.object [("viewProtocol",E.int 1),("kind",E.string "view-commit"),("projection",frame current),("requests",E.list (\item -> item) requests),("focus",E.list (\item -> item) focus)]
+        packet = commit requests focus current
         text = E.encode 0 packet
+        fits = withinCommitBound requests packet
         binding = (Controller.desktop model.controller).windows.shell.binding
         scoped = owner current |> Maybe.withDefault (model.selected |> Maybe.withDefault (Scope UInt64.zero UInt64.zero))
         observations = List.filterMap observation requests
         catalogs = List.filterMap catalogRequest requests
+        pins = List.filterMap pinRequest requests
         operations = List.filterMap (\request -> D.decodeValue UnsentOperation.commandDecoder request |> Result.toMaybe) requests
         bound = List.all (\request -> D.decodeValue (D.field "binding" Binding.decoder) request |> Result.toMaybe |> (==) binding) requests
+        refuse () =
+            let capacity = List.length model.batches>=16 && List.member scoped model.views && fits
+                -- Rejecting an oversized application commit is local proof of
+                -- omission, not evidence that native transport or its queue
+                -- failed. Keep any existing refusal, but do not create one.
+                applicationOnly = List.length catalogs+List.length pins==List.length requests
+                localBoundRefusal = not fits && applicationOnly && bound && binding/=Nothing && List.isEmpty operations && List.isEmpty observations
+                (refused,_) =
+                    if localBoundRefusal then (current,[]) else
+                        apply (Controller.Interaction (Desktop.Window (TaskbarShell.Native (Shell.RegistrationRefused operations observations)))) (Model {model|batchExhausted=True,capacityRefused=if model.batchExhausted then model.capacityRefused else capacity})
+                prepared = MenuBridge.preparedSnapshot (Controller.desktop (controller refused)).windows.menus
+                belongs slot = List.member ("projection-request",slot.legacyRequest) observations || (slot.geometryRequest |> Maybe.map (\id -> List.member ("geometry-facts-request",id) observations) |> Maybe.withDefault False)
+                (settled,_) = case prepared of
+                    Just slot -> if belongs slot then apply (Controller.Interaction (Desktop.Window (TaskbarShell.CancelPrepared slot.token))) refused else (refused,[])
+                    Nothing -> (refused,[])
+                -- These commands were omitted by THIS pure registration call.
+                -- This local proof is separate from native certification.
+                (catalogSettled,catalogEffects) = refuseCatalogs (lease model.controller) catalogs settled
+                pinSettled = List.foldl (\request state -> apply (Controller.Interaction (Desktop.PinsUnsent request.binding request.request)) state |> Tuple.first) catalogSettled pins
+                catalogFocus = List.filterMap (\effect -> case effect of
+                    Controller.DesktopEffect (Desktop.Focus target) -> Just (E.string target)
+                    _ -> Nothing) catalogEffects
+            in boundedPresentation (not fits) catalogFocus pinSettled
     in if List.isEmpty effects then (current,Nothing) else
-        if List.isEmpty requests || not bound || binding==Nothing then (current,Just packet) else
-            if not (List.member scoped model.views) || model.batchExhausted || List.length model.batches>=16 || List.length requests>16 || String.length text>131072 || utf8Length text>131072 then
-                let capacity = List.length model.batches>=16 && List.member scoped model.views && List.length requests<=16 && String.length text<=131072 && utf8Length text<=131072
-                    (refused,_) = apply (Controller.Interaction (Desktop.Window (TaskbarShell.Native (Shell.RegistrationRefused operations observations)))) (Model {model|batchExhausted=True,capacityRefused=if model.batchExhausted then model.capacityRefused else capacity})
-                    prepared = MenuBridge.preparedSnapshot (Controller.desktop (controller refused)).windows.menus
-                    belongs slot = List.member ("projection-request",slot.legacyRequest) observations || (slot.geometryRequest |> Maybe.map (\id -> List.member ("geometry-facts-request",id) observations) |> Maybe.withDefault False)
-                    (settled,_) = case prepared of
-                        Just slot -> if belongs slot then apply (Controller.Interaction (Desktop.Window (TaskbarShell.CancelPrepared slot.token))) refused else (refused,[])
-                        Nothing -> (refused,[])
-                    -- These commands are omitted by THIS pure register call.
-                    -- This local proof is separate from native certification.
-                    (catalogSettled,catalogEffects) = refuseCatalogs (lease model.controller) catalogs settled
-                    catalogFocus = List.filterMap (\effect -> case effect of
-                        Controller.DesktopEffect (Desktop.Focus target) -> Just (E.string target)
-                        _ -> Nothing) catalogEffects
-                    presentation = E.object [("viewProtocol",E.int 1),("kind",E.string "view-commit"),("projection",frame catalogSettled),("requests",E.list (\value -> value) []),("focus",E.list (\value -> value) catalogFocus)]
-                in (catalogSettled,Just presentation)
-            else case (binding,SurfaceSnapshot.decode (Controller.frame model.controller)) of
-                (Just authority,Ok snapshot) ->
-                    let batch = {scope=scoped,revision=model.revision,publication=SurfaceSnapshot.publication snapshot,lease=SurfaceSnapshot.lease snapshot,binding=authority,wire=text,observations=observations,operations=operations,catalogs=catalogs}
-                    in (Model {model|batches=batch::model.batches},Just packet)
-                _ -> (current,Nothing)
+        if not fits then
+            if List.isEmpty requests then boundedPresentation True focus current else refuse ()
+        else if List.isEmpty requests || not bound || binding==Nothing then (current,Just packet)
+        else if not (List.member scoped model.views) || model.batchExhausted || List.length model.batches>=16 then refuse ()
+        else case (binding,SurfaceSnapshot.decode (Controller.frame model.controller)) of
+            (Just authority,Ok snapshot) ->
+                let batch = {scope=scoped,revision=model.revision,publication=SurfaceSnapshot.publication snapshot,lease=SurfaceSnapshot.lease snapshot,binding=authority,wire=text,observations=observations,operations=operations,catalogs=catalogs}
+                in (Model {model|batches=batch::model.batches},Just packet)
+            _ -> (current,Nothing)
+
+pinRequest : D.Value -> Maybe CatalogRequest
+pinRequest raw =
+    let decoder = strict ["protocolVersion","kind","binding","requestId","proposal"]
+            (D.map5 (\version kind binding request _ -> (version,kind,{binding=binding,request=request}))
+                (D.field "protocolVersion" D.int) (D.field "kind" D.string)
+                (D.field "binding" Binding.decoder) (D.field "requestId" UInt64.decoder)
+                (D.field "proposal" Pins.decoder))
+    in case D.decodeValue decoder raw of
+        Ok (3,"taskbar-pins-write",request) -> if request.request==UInt64.zero then Nothing else Just request
+        _ -> Nothing
 
 catalogRequest : D.Value -> Maybe CatalogRequest
 catalogRequest raw =

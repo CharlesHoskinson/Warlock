@@ -5,12 +5,34 @@ build-type: Simple
 extra-source-files: README.md, qualification.json, formal/*.qnt, formal/*.md, formal/*.json
 library
   hs-source-dirs: src
-  exposed-modules: Warlock.Bootstrap
-  other-modules: Warlock.Bootstrap.Aggregate, Warlock.Bootstrap.CurrentSessions, Warlock.Bootstrap.ScopedPeer, Warlock.Bootstrap.SocketOwner, Warlock.Bootstrap.CredentialScopeGuard
+  exposed-modules: Warlock.Bootstrap, Warlock.Backend, Warlock.Backend.Catalog, Warlock.Backend.PinStore
+  other-modules: Warlock.Bootstrap.Aggregate, Warlock.Bootstrap.CurrentSessions, Warlock.Bootstrap.ScopedPeer, Warlock.Bootstrap.SocketOwner, Warlock.Bootstrap.CredentialScopeGuard, Warlock.Backend.Store
   build-depends: base >=4.18 && <5, bytestring, text, containers, network ==3.2.0.0, unix, process ==1.6.19.0, directory, filepath, cryptohash-sha256 ==0.11.102.1, warlock-held-document-proposal, warlock-process-custody, warlock-protocol
   cc-options: -D_GNU_SOURCE
   default-language: Haskell2010
   ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates
+
+executable warlock-ui-backend
+  hs-source-dirs: app
+  main-is: Main.hs
+  build-depends: base >=4.18 && <5, bytestring, warlock-runtime
+  default-language: Haskell2010
+  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -threaded
+
+executable ui-stream-child
+  hs-source-dirs: fixture-ui
+  main-is: Main.hs
+  build-depends: base >=4.18 && <5, bytestring, text, unix, warlock-protocol
+  default-language: Haskell2010
+  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -threaded
+
+test-suite ui-backend-controls
+  type: exitcode-stdio-1.0
+  hs-source-dirs: test-ui
+  main-is: Main.hs
+  build-depends: base >=4.18 && <5, bytestring, text, containers, unix, directory, filepath, process ==1.6.19.0, cryptohash-sha256 ==0.11.102.1, warlock-runtime, warlock-protocol
+  default-language: Haskell2010
+  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -threaded
 
 executable credential-peer-child
   hs-source-dirs: fixture-peer

@@ -1,7 +1,7 @@
 ---
 title: "Warlock current knowledge status"
 created: 2026-10-29
-updated: 2026-10-31
+updated: 2026-11-01
 tags: [warlock, architecture, evidence]
 category: topic
 volatility: hot
@@ -62,3 +62,8 @@ Independent review now accepts `delivery-010`, `peer-wrong-session` and `peer-ap
 ## Whole TEA003 frontend effect contract
 
 [Whole original TEA003 is accepted](../../../../docs/warlock-build-loop/v2/tea-effects-acceptance-20261101.json) on actual source `b6bfe6146cdbd4a9c3eae06ddc898c93436f5e70`. Pending pin reorder survives an earlier read and its matching Saved updates the displayed order; deliberate post-Unknown read recovery remains available without replay. All three effect/decoder clauses were qualified, with7,023 checks and separate sampled models. [Dated record](../../raw/notes/2026-11-01-pin-save-causality.md) preserves the RED, failure preparation history and exact limits. Original native GUI, input, AT/IME, physical persistence and release are not accepted by these component results. Next implement the real Haskell catalog/pins/Elm transport composition; preserve its complete read/write target and actual shared protocol bounds.
+
+
+## Current single-stream backend slice
+
+Main single incoming/outgoing gateway and the actual Haskell catalog/durable pin actor are implemented and undergoing root’s protected verification. [The shared source contract](../../../../docs/warlock-build-loop/v2/shared-desktop-contract-20261101.json) records real byte/profile/path/custody bounds and explicitly preserves missing historical private proof. Whole ARC003 and DEL011 are not yet accepted. Bridge fixtures are labelled preconditions; component/model/process checks cannot establish private HTTP/WebKit placement, persistent GUI lifecycle, native effects, accessibility or release.

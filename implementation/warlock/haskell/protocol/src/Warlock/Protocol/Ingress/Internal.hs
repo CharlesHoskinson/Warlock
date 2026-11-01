@@ -3,7 +3,7 @@
 module Warlock.Protocol.Ingress.Internal
  (IngressOwner,IngressBinding,ingressBinding,CounterError(..),Direction(..),Reason(..),GateStatus(..),
   Priority(..),ChannelError(..),EndpointState(..),Phase(..),OwnerStatus(..),OfferResult(..),ActivationResult(..),IngressResult(..),
-  CredentialIngress,CredentialIngressResult(..),newCredentialIngress,newCredentialIngressWithReaderForTest,transferCredentialSocket,activateCredentialIngress,receiveCredentialIngress,retireCredentialIngress,credentialIngressStatus,enqueueCredentialIngress,sendCredentialIngress,retainedCredentialIngressFrames,
+  CredentialIngress,CredentialIngressResult(..),newCredentialIngress,newDesktopCredentialIngress,newCredentialIngressWithReaderForTest,transferCredentialSocket,activateCredentialIngress,receiveCredentialIngress,retireCredentialIngress,credentialIngressStatus,enqueueCredentialIngress,sendCredentialIngress,retainedCredentialIngressFrames,
   newIngressOwner,newIngressOwnerWithHooks,newIngressOwnerWithPrepareHook,holdOwnerGateForTest,holdCloseGateForTest,flagsForTest,transferSocket,transferSocketWithHooks,activateIngress,activateIngressWithHook,receiveIngress,enqueueIngress,sendIngress,retainedIngressFrames,retireIngress,ingressStatus,ingressRejections) where
 import Control.Concurrent.MVar
 import Control.Exception (SomeException,SomeAsyncException,finally,fromException,mask,uninterruptibleMask_,try,throwIO)
@@ -13,6 +13,7 @@ import qualified Network.Socket as S
 import qualified Warlock.Protocol.Boundary.Internal as G
 import Warlock.Protocol.Boundary.Internal (Direction(..),Reason(..),GateStatus(..))
 import Warlock.Protocol.Codec (CheckedClient,CheckedServer)
+import Warlock.Protocol.Profile
 import Warlock.Protocol.Identity (Binding,CounterError(..),binding,parseCounter)
 import qualified Warlock.Transport.Channel as C
 import Warlock.Transport.Channel (Priority(..),ChannelError(..))
@@ -37,21 +38,21 @@ data IngressResult = Delivered | Rejected Reason | TransportFailure ChannelError
 data SharedClose = SharedClose S.Socket (IO ()) (MVar (EndpointState,Maybe String))
 data Slot = NoSocket | Offered SharedClose | Setup SharedClose Bool | Running SharedClose C.Channel | Broken SharedClose | Stopped (Maybe SharedClose) (Maybe C.Channel)
 data State = State Slot Bool (Maybe String)
-data IngressOwner = IngressOwner G.Gate Direction (MVar State) (MVar ()) (S.Socket -> IO ()) (S.Socket -> IO ())
+data IngressOwner = IngressOwner CodecProfile G.Gate Direction (MVar State) (MVar ()) (S.Socket -> IO ()) (S.Socket -> IO ())
 
 -- Private deterministic fixture only; never exported through the public facade.
 holdOwnerGateForTest :: IngressOwner -> MVar () -> MVar () -> IO ()
-holdOwnerGateForTest (IngressOwner _ _ state _ _ _) entered release =
+holdOwnerGateForTest (IngressOwner _ _ _ state _ _ _) entered release =
  modifyMVar_ state $ \current -> putMVar entered () >> takeMVar release >> pure current
 holdCloseGateForTest :: IngressOwner -> MVar () -> MVar () -> IO ()
-holdCloseGateForTest (IngressOwner _ _ state _ _ _) entered release = do
+holdCloseGateForTest (IngressOwner _ _ _ state _ _ _) entered release = do
  selected <- withMVar state $ \(State slot _ _) -> pure $ case slot of Offered shared -> Just shared; _ -> Nothing
  case selected of
   Nothing -> ioError (userError "fixture requires pending socket")
   Just (SharedClose _ _ cell) -> modifyMVar_ cell $ \current -> putMVar entered () >> takeMVar release >> pure current
 -- Nonconcurrent fixture observation; never exposes a socket or raw descriptor.
 flagsForTest :: IngressOwner -> IO Bool
-flagsForTest (IngressOwner _ _ state _ _ _) = do
+flagsForTest (IngressOwner _ _ _ state _ _ _) = do
  selected <- withMVar state $ \(State slot _ _) -> pure $ case slot of Running shared _ -> Just shared; _ -> Nothing
  case selected of Nothing -> pure False; Just (SharedClose sock _ _) -> F.socketFlagsVerified sock
 
@@ -61,19 +62,21 @@ newIngressOwner b d client server = newIngressOwnerWithHooks b d client server F
 newIngressOwnerWithHooks :: IngressBinding -> Direction -> (CheckedClient -> IO ()) -> (CheckedServer -> IO ()) -> (S.Socket -> IO ()) -> (S.Socket -> IO ()) -> IO IngressOwner
 newIngressOwnerWithHooks = newIngressOwnerWithPrepareHook (pure ())
 newIngressOwnerWithPrepareHook :: IO () -> IngressBinding -> Direction -> (CheckedClient -> IO ()) -> (CheckedServer -> IO ()) -> (S.Socket -> IO ()) -> (S.Socket -> IO ()) -> IO IngressOwner
-newIngressOwnerWithPrepareHook prepare (IngressBinding bindingValue) direction client server configure closer = do
+newIngressOwnerWithPrepareHook = newIngressOwnerWithProfile nativeProfile
+newIngressOwnerWithProfile :: CodecProfile -> IO () -> IngressBinding -> Direction -> (CheckedClient -> IO ()) -> (CheckedServer -> IO ()) -> (S.Socket -> IO ()) -> (S.Socket -> IO ()) -> IO IngressOwner
+newIngressOwnerWithProfile profile prepare (IngressBinding bindingValue) direction client server configure closer = do
  prepare
  serial <- newMVar ()
  state <- newMVar (State NoSocket False Nothing)
- gateValue <- G.newGate bindingValue (G.foldEnvelope client server)
- pure (IngressOwner gateValue direction state serial configure closer)
+ gateValue <- G.newGateWith profile bindingValue (G.foldEnvelope client server)
+ pure (IngressOwner profile gateValue direction state serial configure closer)
 
 -- One exclusive caller offers one socket. Before the MVar publication the
 -- caller owns it; afterwards the owner does, regardless of return/exception.
 transferSocket :: IngressOwner -> S.Socket -> IO OfferResult
 transferSocket = transferSocketWithHooks (pure ()) (pure ())
 transferSocketWithHooks :: IO () -> IO () -> IngressOwner -> S.Socket -> IO OfferResult
-transferSocketWithHooks before after (IngressOwner _ _ state _ _ closer) sock = mask $ \restore -> do
+transferSocketWithHooks before after (IngressOwner _ _ _ state _ _ closer) sock = mask $ \restore -> do
  restore before
  closeState <- newMVar (EndpointOpen,Nothing)
  let shared = SharedClose sock (closer sock) closeState
@@ -111,14 +114,14 @@ activateIngress :: IngressOwner -> IO ActivationResult
 activateIngress = activateIngressWithHook (pure ())
 -- Controlled private seam after Live is already published in the retained shell.
 activateIngressWithHook :: IO () -> IngressOwner -> IO ActivationResult
-activateIngressWithHook afterPublication owner@(IngressOwner _ direction state _ configure _) = mask $ \restore -> do
+activateIngressWithHook afterPublication owner@(IngressOwner profile _ direction state _ configure _) = mask $ \restore -> do
  selected <- modifyMVar state $ \current@(State slot wasAccepted failure) -> case slot of
   Offered shared -> pure (State (Setup shared False) wasAccepted failure,Just shared)
   _ -> pure (current,Nothing)
  case selected of
   Nothing -> pure ActivationUnavailable
   Just shared@(SharedClose sock _ _) -> do
-   result <- try (restore (configure sock >> C.newConfiguredChannel sock (case direction of FromElm -> C.ClientInbound; FromNative -> C.ServerInbound) (closeShared shared))) :: IO (Either SomeException C.Channel)
+   result <- try (restore (configure sock >> C.newConfiguredChannelWith profile sock (case direction of FromElm -> C.ClientInbound; FromNative -> C.ServerInbound) (closeShared shared))) :: IO (Either SomeException C.Channel)
    -- Finite ownership publication only: never interrupt after setup has
    -- finished but before its lease/state transition is recorded.
    disposition <- uninterruptibleMask_ $ modifyMVar state $ \current@(State slot wasAccepted _) -> case slot of
@@ -145,7 +148,7 @@ throwPreferred original cleanup = case fromException original :: Maybe SomeAsync
   Right () -> throwIO original
 
 liveChannel :: IngressOwner -> IO (Maybe C.Channel)
-liveChannel (IngressOwner _ _ state _ _ _) = do
+liveChannel (IngressOwner _ _ _ state _ _ _) = do
  selected <- withMVar state $ \(State slot _ _) -> pure $ case slot of
   Running shared channel -> Just (shared,channel)
   _ -> Nothing
@@ -156,7 +159,7 @@ liveChannel (IngressOwner _ _ state _ _ _) = do
   Nothing -> pure Nothing
 
 receiveIngress :: IngressOwner -> IO IngressResult
-receiveIngress owner@(IngressOwner gateValue direction _ serial _ _) = mask $ \restore -> do
+receiveIngress owner@(IngressOwner _ gateValue direction _ serial _ _) = mask $ \restore -> do
  acquired <- tryTakeMVar serial
  case acquired of
   Nothing -> pure (TransportFailure C.Busy)
@@ -192,7 +195,7 @@ sendIngress owner = withLiveOperation owner C.sendNext
 
 -- Observation only: uncertain queued bytes never authorize retransmission.
 retainedIngressFrames :: IngressOwner -> IO [(Priority,B.ByteString)]
-retainedIngressFrames (IngressOwner _ _ state _ _ _) = do
+retainedIngressFrames (IngressOwner _ _ _ state _ _ _) = do
  selected <- withMVar state $ \(State slot _ _) -> pure $ case slot of
   Running _ channel -> Just channel
   Stopped _ channel -> channel
@@ -207,7 +210,7 @@ withLiveOperation owner action = mask $ \restore -> do
  case result of Left err -> retireOnError owner err; Right value -> pure value
 
 retireIngress :: IngressOwner -> IO OwnerStatus
-retireIngress owner@(IngressOwner gateValue _ state _ _ _) = mask $ \_ -> do
+retireIngress owner@(IngressOwner _ gateValue _ state _ _ _) = mask $ \_ -> do
  -- Mark retirement before gate closure to serialize against setup publication;
  -- the gate still closes before any live socket close is attempted.
  action <- uninterruptibleMask_ $ modifyMVar state $ \(State slot wasAccepted failure) -> case slot of
@@ -224,7 +227,7 @@ retireIngress owner@(IngressOwner gateValue _ state _ _ _) = mask $ \_ -> do
   Right _ -> case cleanup of Left err -> throwIO (err :: SomeException); Right () -> ingressStatus owner
 
 ingressStatus :: IngressOwner -> IO OwnerStatus
-ingressStatus (IngressOwner gateValue _ state _ _ _) = do
+ingressStatus (IngressOwner _ gateValue _ state _ _ _) = do
  (p,wasAccepted,failure,shared) <- withMVar state $ \(State slot a f) -> pure $ case slot of
   NoSocket -> (OwnerEmpty,a,f,Nothing)
   Offered s -> (OwnerPending,a,f,Just s)
@@ -242,7 +245,7 @@ ingressStatus (IngressOwner gateValue _ state _ _ _) = do
       | otherwise = p
  pure (OwnerStatus actualPhase wasAccepted gateState closeState failure closeErr)
 ingressRejections :: IngressOwner -> IO [Reason]
-ingressRejections (IngressOwner gateValue _ _ _ _ _) = G.rejectionReasons gateValue
+ingressRejections (IngressOwner _ gateValue _ _ _ _ _) = G.rejectionReasons gateValue
 
 -- This owner is allocated before a socket is offered. Its reader and any
 -- quarantined ancillary descriptors remain reachable even after socket close.
@@ -252,9 +255,13 @@ data CredentialIngressResult refusal = CredentialDelivered | CredentialRejected 
  | CredentialNotLive deriving (Eq,Show)
 
 newCredentialIngress :: IngressBinding -> Direction -> (CheckedClient -> IO ()) -> (CheckedServer -> IO ()) -> IO CredentialIngress
-newCredentialIngress bindingValue direction client server = do
+newCredentialIngress = newCredentialIngressWithProfile nativeProfile
+newDesktopCredentialIngress :: IngressBinding -> Direction -> (CheckedClient -> IO ()) -> (CheckedServer -> IO ()) -> IO CredentialIngress
+newDesktopCredentialIngress = newCredentialIngressWithProfile desktopProfile
+newCredentialIngressWithProfile :: CodecProfile -> IngressBinding -> Direction -> (CheckedClient -> IO ()) -> (CheckedServer -> IO ()) -> IO CredentialIngress
+newCredentialIngressWithProfile profile bindingValue direction client server = do
  reader <- P.newCredentialReader
- owner <- newIngressOwnerWithHooks bindingValue direction client server
+ owner <- newIngressOwnerWithProfile profile (pure ()) bindingValue direction client server
    (\socket -> F.configureSocketFlags socket >> P.enablePassCredentials socket) S.close
  pure (CredentialIngress owner reader)
 -- Same-package source-fixture seam. The public facade cannot replace a reader.
@@ -282,7 +289,7 @@ retainedCredentialIngressFrames (CredentialIngress owner _) = retainedIngressFra
 -- paths. Scope admission encloses the actual checked gate dispatch and handler;
 -- no credential or checked envelope is an effect or native capability.
 receiveCredentialIngress :: forall refusal. CredentialIngress -> CredentialGuard refusal -> IO (CredentialIngressResult refusal)
-receiveCredentialIngress (CredentialIngress owner@(IngressOwner gateValue direction _ serial _ _) reader) guard = mask $ \restore -> do
+receiveCredentialIngress (CredentialIngress owner@(IngressOwner _ gateValue direction _ serial _ _) reader) guard = mask $ \restore -> do
  acquired <- tryTakeMVar serial
  case acquired of
   Nothing -> pure (CredentialFrameRejected (C.CredentialTransport C.Busy))

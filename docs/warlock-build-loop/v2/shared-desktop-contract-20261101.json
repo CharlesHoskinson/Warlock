@@ -1,0 +1,76 @@
+{
+  "schema": 1,
+  "id": "desktop-application-stream-v1",
+  "status": "Independently reviewed initial production source contract; implementation verification and original acceptance pending",
+  "recordedUTC": "2026-11-01T03:03:25.988870+00:00",
+  "candidateSHA256": "ff24777a5f086b7b9ba4c00b534d38d47a60bfdaf954525c916e8c60aa443aea",
+  "readinessReviewSHA256": "2e3c9d10dfcc7365a7be107b8717cca0574ea4e3bac874d758cc37ccfacb9423",
+  "contract": {
+    "schema": 1,
+    "id": "desktop-application-stream-v1",
+    "status": "source-readiness candidate; existing independent review and owner acknowledgements required before source implementation, not a new user approval gate",
+    "authority": "Existing authorized preparation and plugins/warlock-contributor/references/redesign-flow.md:24; original private source-decision artifact is absent, not represented as recovered bytes.",
+    "sourceDirectionSHA256": "b7e8e02206eb619951a9b1fcb3cda6f8f5cd3545460eca8b998d5cfc3955509e",
+    "placement": "Private Elm/WebKit plus Haskell UI/localHTTP owner, one host-side Haskell native authority, ordinary apps in host context. HTTP/renderer/private-placement execution remains mandatory later; initial called backend is bounded owned bootstrap, not perpetual daemon/native acceptance.",
+    "fullTarget": [
+      "Actual Haskell catalog read and durable pin read/write",
+      "Actual existing Elm stream roundtrip through a called production Haskell backend",
+      "Private UI HTTP/WebKit composition and persistent lifecycle",
+      "All original native/GUI/AT/IME/resource/release obligations"
+    ],
+    "canonicalStream": {
+      "outgoing": "Actual unmodified OutputController.register viewProtocol1 kind view-commit with exactly projection, requests and focus; full envelope consumed and validated in production shared Desktop codec before any request handler. No test-only extraction.",
+      "incoming": "Exactly one Main.incoming port receives bridgeProtocol1 kind/payload envelope. Native service emits kind native-event with checked protocolVersion3 application-catalog or taskbar-pins-outcome payload. Future trustedUIowner emits fixed renderer/topology/disposition/dismiss/escape/reflow tags from actual provenance; web payload cannot choose privileged source tag.",
+      "outgoingPort": "surfaceCommits",
+      "otherMainPorts": "Remove legacy7incoming ports and inspections; keep actual timers and policyroute, unit init flags for compiler-generatedHTML. Bar/Popup private presentation mechanisms are not native admission.",
+      "scope": "Backend validates and dispatches the whole commit requests list in original order, <=16. Empty requests permitted with zero domainIO. Unsupported nested request rejects entire frame before any IO, no partial mutation/silent discard. Projection/focus are bounded presentation data; this backend emits NO fabricated presentation/native batch-acceptance ACK."
+    },
+    "profiles": {
+      "Native": {
+        "versions": [
+          1,
+          2
+        ],
+        "clientBytes": 65536,
+        "serverBytes": 65536,
+        "depth": 16,
+        "selection": "Existing trusted constructor and all old exported wrappers unchanged."
+      },
+      "Desktop": {
+        "viewProtocol": 1,
+        "payloadProtocolVersion": 3,
+        "clientBytes": 131072,
+        "requestBytes": 8192,
+        "desktopReplyBytes": 1048576,
+        "gatewayServerBytes": 1048704,
+        "depth": 16,
+        "selection": "Explicit trusted newDesktopCredentialIngress before socket offer, never payload sniff. Server allowance is existing1MiB reply plus fixed <=128-byte provenance gateway; preserve native caps.",
+        "requests": [
+          "catalog-request",
+          "taskbar-pins-write"
+        ],
+        "requestBindings": "All nested requests equal current trusted positive-string Binding; mismatched and unsupported schemas rejected before callback.",
+        "reply": "Typed checkedDesktopReply wrapped as native-event by production encoder; UI forwards actual bytes into Main.incoming.",
+        "chunks": "At most65536 per recvmsg, unchanged kernel credentialreader bound; exactsame credential across entire frame, original frameD and Bootstrap D."
+      }
+    },
+    "domain": {
+      "bindings": "Current lifetime/session/frontend canonical positive UInt64 strings, lossless.",
+      "pinIdentity": "Nonempty <=256 JSUTF16 units; no controls/DEL, slash/backslash, URI colon, standalone dot/dotdot, shell metacharacter selectors. Space and ordinary Unicode opaque names permitted. No identity ever interpreted as a filesystem path; preserve legitimate path-free missing pins. Shared decoder rejects unsafe selector before any IO.",
+      "pinOrder": "<=32 unique identities, canonical encoded UTF8 array<=3000bytes, revision canonical positive UInt64. Saved requires actual CAS/revision advance + filefsync/rename/dirfsync/readback; uncertainIO=>Unknown/no replay.",
+      "catalog": "Actual trusted ordered desktop roots, symlinks/traversal/races fail closed, actualcatalogProtocol2 metadata; <=2048entries. Whole reply overflow yields explicit unavailable/null, never partial/silent truncation.",
+      "storage": "Trusted startup-only pinned private root; fixed taskbar.lock and taskbar.json schema1 names, UID/private modes/noFollow/nlink/lock/CAS. No web supplied path/argv/method/nativeops.",
+      "nativeOperations": []
+    },
+    "lifetime": "Reuse existing approved held image/session/SCM credentials/current registration and absolute callerD<=30s; no clock widening, FD transfer/proxy/generalbus/arbitrary shell bridge. Preserve uncertainty and independently owned retirement.",
+    "verification": "Root protected six-package buildall/testall + existing controls, production executable and public-linked malicious schema/physicalFS/fuzz controls; actual compiledMain port set and complete surfaceCommit -> actual framed/authenticated backend -> exact matching Main.incoming outcome. Meaningful Quint causal/profile model. Native/GUI/AT/release not inferred."
+  },
+  "acceptance": {
+    "ARC003": false,
+    "DEL011": false,
+    "native": false,
+    "GUI": false,
+    "release": false
+  },
+  "historicalPrivateArtifact": "root-ui-native-transport-source-decision-v1.json absent; this records current reviewed direction, not recovered historical proof"
+}

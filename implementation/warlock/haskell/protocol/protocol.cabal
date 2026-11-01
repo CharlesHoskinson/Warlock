@@ -6,8 +6,8 @@ extra-source-files: README.md TRANSPORT.md qualification.json transport-qualific
 data-files: test/fixtures/*.bin
 library
   hs-source-dirs: src
-  exposed-modules: Warlock.Protocol.Boundary, Warlock.Protocol.Codec, Warlock.Protocol.Ingress, Warlock.Protocol.CredentialIngress, Warlock.Protocol.CredentialGuard, Warlock.Protocol.PeerCredential, Warlock.Protocol.Framing, Warlock.Protocol.Identity, Warlock.Protocol.Custody, Warlock.Protocol.StrictJson
-  other-modules: Warlock.Transport.PeerCredentials, Warlock.Protocol.Boundary.Internal, Warlock.Protocol.Ingress.Internal, Warlock.Transport.Channel, Warlock.Transport.Frame, Warlock.Transport.SocketFlags, Warlock.Protocol.Wire, Warlock.Protocol.Server, Warlock.Protocol.Lifecycle
+  exposed-modules: Warlock.Protocol.Desktop, Warlock.Protocol.Boundary, Warlock.Protocol.Codec, Warlock.Protocol.Ingress, Warlock.Protocol.CredentialIngress, Warlock.Protocol.CredentialGuard, Warlock.Protocol.PeerCredential, Warlock.Protocol.Framing, Warlock.Protocol.Identity, Warlock.Protocol.Custody, Warlock.Protocol.StrictJson
+  other-modules: Warlock.Protocol.Profile, Warlock.Transport.PeerCredentials, Warlock.Protocol.Boundary.Internal, Warlock.Protocol.Ingress.Internal, Warlock.Transport.Channel, Warlock.Transport.Frame, Warlock.Transport.SocketFlags, Warlock.Protocol.Wire, Warlock.Protocol.Server, Warlock.Protocol.Lifecycle
   build-depends: base >=4.18 && <5, bytestring, containers, text, network ==3.2.0.0, unix, cryptohash-sha256 ==0.11.102.1
   cc-options: -D_GNU_SOURCE
   default-language: Haskell2010
@@ -18,7 +18,7 @@ test-suite boundary-controls
   type: exitcode-stdio-1.0
   hs-source-dirs: test, src
   main-is: Main.hs
-  other-modules: Warlock.Protocol.Boundary.Internal, Warlock.Protocol.Wire, Warlock.Protocol.Server, Warlock.Protocol.StrictJson, Warlock.Protocol.Identity, Warlock.Protocol.Custody, Warlock.Protocol.Codec, Paths_warlock_protocol
+  other-modules: Warlock.Protocol.Desktop, Warlock.Protocol.Profile, Warlock.Protocol.Boundary.Internal, Warlock.Protocol.Wire, Warlock.Protocol.Server, Warlock.Protocol.StrictJson, Warlock.Protocol.Identity, Warlock.Protocol.Custody, Warlock.Protocol.Codec, Paths_warlock_protocol
   autogen-modules: Paths_warlock_protocol
   build-depends: base >=4.18 && <5, bytestring, containers, text, cryptohash-sha256 ==0.11.102.1
   cc-options: -D_GNU_SOURCE
@@ -28,7 +28,7 @@ test-suite ingress-controls
   type: exitcode-stdio-1.0
   hs-source-dirs: test, src
   main-is: OwnerControls.hs
-  other-modules: Warlock.Protocol.Boundary.Internal, Warlock.Protocol.Ingress, Warlock.Protocol.Ingress.Internal, Warlock.Transport.Channel, Warlock.Transport.PeerCredentials, Warlock.Protocol.CredentialGuard, Warlock.Transport.Frame, Warlock.Transport.SocketFlags, Warlock.Protocol.Wire, Warlock.Protocol.Server, Warlock.Protocol.StrictJson, Warlock.Protocol.Identity, Warlock.Protocol.Custody, Warlock.Protocol.Lifecycle, Warlock.Protocol.Codec
+  other-modules: Warlock.Protocol.Desktop, Warlock.Protocol.Profile, Warlock.Protocol.Boundary.Internal, Warlock.Protocol.Ingress, Warlock.Protocol.Ingress.Internal, Warlock.Transport.Channel, Warlock.Transport.PeerCredentials, Warlock.Protocol.CredentialGuard, Warlock.Transport.Frame, Warlock.Transport.SocketFlags, Warlock.Protocol.Wire, Warlock.Protocol.Server, Warlock.Protocol.StrictJson, Warlock.Protocol.Identity, Warlock.Protocol.Custody, Warlock.Protocol.Lifecycle, Warlock.Protocol.Codec
   build-depends: base >=4.18 && <5, bytestring, containers, text, network ==3.2.0.0, unix, filepath, cryptohash-sha256 ==0.11.102.1
   cc-options: -D_GNU_SOURCE
   default-language: Haskell2010
@@ -38,7 +38,7 @@ test-suite owner-sequences
   type: exitcode-stdio-1.0
   hs-source-dirs: test, src
   main-is: OwnerSequenceProperties.hs
-  other-modules: Warlock.Protocol.Boundary.Internal, Warlock.Protocol.Ingress, Warlock.Protocol.Ingress.Internal, Warlock.Transport.Channel, Warlock.Transport.PeerCredentials, Warlock.Protocol.CredentialGuard, Warlock.Transport.Frame, Warlock.Transport.SocketFlags, Warlock.Protocol.Wire, Warlock.Protocol.Server, Warlock.Protocol.StrictJson, Warlock.Protocol.Identity, Warlock.Protocol.Custody, Warlock.Protocol.Lifecycle, Warlock.Protocol.Codec
+  other-modules: Warlock.Protocol.Desktop, Warlock.Protocol.Profile, Warlock.Protocol.Boundary.Internal, Warlock.Protocol.Ingress, Warlock.Protocol.Ingress.Internal, Warlock.Transport.Channel, Warlock.Transport.PeerCredentials, Warlock.Protocol.CredentialGuard, Warlock.Transport.Frame, Warlock.Transport.SocketFlags, Warlock.Protocol.Wire, Warlock.Protocol.Server, Warlock.Protocol.StrictJson, Warlock.Protocol.Identity, Warlock.Protocol.Custody, Warlock.Protocol.Lifecycle, Warlock.Protocol.Codec
   build-depends: base >=4.18 && <5, bytestring, containers, text, network ==3.2.0.0, unix, filepath, cryptohash-sha256 ==0.11.102.1
   cc-options: -D_GNU_SOURCE
   default-language: Haskell2010
@@ -48,8 +48,17 @@ test-suite credential-guard-controls
   type: exitcode-stdio-1.0
   hs-source-dirs: test, src
   main-is: GuardControls.hs
-  other-modules: Warlock.Protocol.Boundary.Internal, Warlock.Protocol.Ingress.Internal, Warlock.Transport.Channel, Warlock.Transport.PeerCredentials, Warlock.Protocol.CredentialGuard, Warlock.Transport.Frame, Warlock.Transport.SocketFlags, Warlock.Protocol.Wire, Warlock.Protocol.Server, Warlock.Protocol.StrictJson, Warlock.Protocol.Identity, Warlock.Protocol.Custody, Warlock.Protocol.Lifecycle, Warlock.Protocol.Codec
+  other-modules: Warlock.Protocol.Desktop, Warlock.Protocol.Profile, Warlock.Protocol.Boundary.Internal, Warlock.Protocol.Ingress.Internal, Warlock.Transport.Channel, Warlock.Transport.PeerCredentials, Warlock.Protocol.CredentialGuard, Warlock.Transport.Frame, Warlock.Transport.SocketFlags, Warlock.Protocol.Wire, Warlock.Protocol.Server, Warlock.Protocol.StrictJson, Warlock.Protocol.Identity, Warlock.Protocol.Custody, Warlock.Protocol.Lifecycle, Warlock.Protocol.Codec
   build-depends: base >=4.18 && <5, bytestring, containers, text, network ==3.2.0.0, unix, filepath, cryptohash-sha256 ==0.11.102.1
   cc-options: -D_GNU_SOURCE
   default-language: Haskell2010
   ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -threaded
+
+-- Public-linked application profile checks; no source shadow or test hooks.
+test-suite desktop-boundary-controls
+  type: exitcode-stdio-1.0
+  hs-source-dirs: test-desktop
+  main-is: Main.hs
+  build-depends: base >=4.18 && <5, bytestring, text, warlock-protocol
+  default-language: Haskell2010
+  ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates

@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 -- Pure framing; no authority or native effect follows from a complete frame.
-module Warlock.Transport.Frame (Framer, FrameError(..), empty, feed, eof, prefix, headerLength) where
+module Warlock.Transport.Frame (Framer, FrameError(..), empty, feed, eof, prefix, headerLength, prefixWithLimit, headerLengthWithLimit) where
 import qualified Data.ByteString as B
 import Data.Bits (shiftL, shiftR, (.&.))
 import Data.Word (Word8, Word32)
@@ -10,19 +10,23 @@ data FrameError = ZeroLength | TooLarge | TruncatedHeader | TruncatedBody derivi
 empty :: Framer
 empty = Header B.empty
 prefix :: B.ByteString -> Either FrameError B.ByteString
-prefix bytes
+prefix = prefixWithLimit 65536
+prefixWithLimit :: Int -> B.ByteString -> Either FrameError B.ByteString
+prefixWithLimit limit bytes
   | n == 0 = Left ZeroLength
-  | n > 65536 = Left TooLarge
+  | limit <= 0 || limit > 1048704 || n > limit = Left TooLarge
   | otherwise = Right (B.pack [octet 24,octet 16,octet 8,octet 0] <> bytes)
   where n = B.length bytes
         octet bits = fromIntegral ((n `shiftR` bits) .&. 255) :: Word8
 -- Consumes at most one frame. Remaining input is returned to its owner, with
 -- no growing queue or hidden copying of coalesced frames.
 headerLength :: B.ByteString -> Either FrameError Int
-headerLength header
+headerLength = headerLengthWithLimit 65536
+headerLengthWithLimit :: Int -> B.ByteString -> Either FrameError Int
+headerLengthWithLimit limit header
   | B.length header /= 4 = Left TruncatedHeader
   | n == 0 = Left ZeroLength
-  | n > 65536 = Left TooLarge
+  | limit <= 0 || limit > 1048704 || toInteger n > toInteger limit = Left TooLarge
   | otherwise = Right (fromIntegral n)
   where n = B.foldl' (\acc byte -> (acc `shiftL` 8) + fromIntegral byte) (0 :: Word32) header
 feed :: Framer -> B.ByteString -> Either FrameError (Framer,Maybe B.ByteString,B.ByteString)

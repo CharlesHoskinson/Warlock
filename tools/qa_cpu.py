@@ -52,7 +52,13 @@ def haskell_inputs(root, prepare=False):
              'window-integration-qa/qa_launch.py'}
     if not prepare:
         names.update({'tools/haskell_build.py', 'tools/haskell_test_wrapper.py', 'tools/haskell-dependencies.json',
-                      'tools/check_elm_cpu.py', 'tools/quint-toolchain.json'})
+                      'tools/check_elm_cpu.py', 'tools/quint-toolchain.json', 'tools/ui_backend_frontend.py',
+                      'implementation/warlock-preview-provider-v143/qa/toolchain.py',
+                      'implementation/warlock-preview-provider-v143/qa/toolchain.json',
+                      'implementation/warlock/elm.json', 'implementation/warlock/qa/ui-backend-port.cjs',
+                      'implementation/warlock/qa/ui-native-stream.qnt',
+                      'implementation/warlock/qa/ui-native-stream_test.qnt'})
+        names.update(str(path.relative_to(root)) for path in (root / 'implementation/warlock/src').rglob('*.elm'))
         names.update(str(path.relative_to(root)) for path in (root / 'implementation/warlock/haskell').rglob('*')
                      if path.is_file() and not any(part in ('dist-newstyle', '__pycache__') for part in path.parts))
     return names
@@ -70,6 +76,7 @@ def tea_inputs(root):
         'NativePointerFixture.elm', 'PreviewPaintReplay.elm',
         'AuthorityTupleReplay.elm', 'authority-tuple.cjs',
         'ReceiptStateReplay.elm', 'receipt-state.cjs',
+        'StreamCapacityReplay.elm',
         'pins-save-lifecycle.qnt', 'pins-save-lifecycle_test.qnt',
         'receipt-lifecycle.qnt', 'receipt-lifecycle_test.qnt'))
     return names
@@ -90,7 +97,7 @@ def main():
     registry = runner == REPO / 'tools/check_registry_cpu.py'
     haskell = runner == REPO / 'tools/check_haskell_cpu.py'
     tea = runner == REPO / 'tools/check_tea_cpu.py'
-    allowed = ([[]] if tea else ([['--prepare'], ['--build']] if haskell else
+    allowed = ([[], ['--capacity']] if tea else ([['--prepare'], ['--build']] if haskell else
                ([[], ['--self-test']] if registry else [[], ['--browser'], ['--authority'], ['--receipts']])))
     if (not registry and not haskell and not tea and runner != REPO / 'tools/check_elm_cpu.py') or packet['arguments'] not in allowed:
         raise RuntimeError('Only a fixed reviewed development runner and mode is supported')

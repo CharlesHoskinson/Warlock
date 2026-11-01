@@ -18,10 +18,13 @@ Versioned lessons, ideas, architectural decisions and verified outcomes for the 
 
 ## Statistics
 
-6 raw observations; 3 compiled articles. No target architecture or release acceptance is created by this wiki.
+The [raw observation index](raw/notes/_index.md) and topic links above identify the current retained notes; counts do not establish delivery. No target architecture or release acceptance is created by this wiki.
 
 [Inbox](inbox/_index.md) · [Curated outputs](output/_index.md)
 
 Latest original verdict: [ARC007 receipt-state acceptance](../../docs/warlock-build-loop/v2/receipt-state-acceptance-20261031.json), with a [dated observation](raw/notes/2026-10-31-receipt-states.md). ARC005 remains accepted on its own tuple. [Applications feedback](raw/notes/2026-10-31-applications-feedback.md) has current component evidence while its original native/AT obligations remain open.
 
 Latest administrative verdict: [REV005 admission acceptance](../../docs/warlock-build-loop/v2/registry-admission-acceptance-20261031.json).
+
+
+Latest whole frontend verdict: [TEA003 effect/decoder acceptance](../../docs/warlock-build-loop/v2/tea-effects-acceptance-20261101.json). The current [single-stream Haskell source contract](../../docs/warlock-build-loop/v2/shared-desktop-contract-20261101.json) is under actual build/process verification; no new ARC003/DEL011 or GUI/release verdict is claimed.

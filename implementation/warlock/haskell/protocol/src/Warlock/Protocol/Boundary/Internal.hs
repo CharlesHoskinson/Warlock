@@ -2,7 +2,7 @@
 -- Internal owner integration only. A validated envelope is not a native grant.
 module Warlock.Protocol.Boundary.Internal
  (Direction(..), Reason(..), Envelope, Gate, GateStatus(..), newGate,
-  decodeFor, foldEnvelope, dispatch, dispatchUntil, retire, gateStatus, rejectionReasons) where
+  decodeFor, decodeForWith, newGateWith, foldEnvelope, dispatch, dispatchUntil, retire, gateStatus, rejectionReasons) where
 import Control.Concurrent.MVar
 import Control.Exception (SomeException,evaluate,mask,uninterruptibleMask_,throwIO,try)
 import GHC.Clock (getMonotonicTimeNSec)
@@ -13,18 +13,22 @@ import qualified Warlock.Protocol.Codec as C
 import Warlock.Protocol.Identity (Binding)
 import qualified Warlock.Protocol.StrictJson as J
 import Warlock.Protocol.Wire (parseBinding)
+import Warlock.Protocol.Profile
+import qualified Warlock.Protocol.Desktop as Desktop
 
 data Direction = FromElm | FromNative deriving (Eq,Show)
 data Reason = BadUtf8 | TooLarge | BadNul | TooDeep | DuplicateField | Malformed | BadSchema | UnsupportedVersion | BadDigest | ForeignBinding | GateRetired | GateBusy | HandlerFailed | AdmissionExpired deriving (Eq,Show)
 data Envelope = Client C.CheckedClient | Server C.CheckedServer deriving (Eq,Show)
 data GateStatus = Live !Int | Draining !Int | Retired deriving (Eq,Show)
 data State = State { status :: !GateStatus, reasons :: ![Reason] }
-data Gate = Gate Binding (Envelope -> IO ()) (MVar State)
+data Gate = Gate CodecProfile Binding (Envelope -> IO ()) (MVar State)
 
 -- This function is NOT exposed in the public library. The existing trusted
 -- owner must provide its live authenticated binding and own callback lifecycle.
 newGate :: Binding -> (Envelope -> IO ()) -> IO Gate
-newGate owner action = Gate owner action <$> newMVar (State (Live 0) [])
+newGate = newGateWith nativeProfile
+newGateWith :: CodecProfile -> Binding -> (Envelope -> IO ()) -> IO Gate
+newGateWith profile owner action = Gate profile owner action <$> newMVar (State (Live 0) [])
 record :: Reason -> State -> State
 record reason s =
  let bounded = take 128 (reason : reasons s)
@@ -87,8 +91,8 @@ dispatchUntil :: Gate -> Direction -> B.ByteString -> Integer -> IO (Either Reas
 dispatchUntil gate direction raw deadline = dispatchWithDeadline (Just deadline) gate direction raw
 
 dispatchWithDeadline :: Maybe Integer -> Gate -> Direction -> B.ByteString -> IO (Either Reason ())
-dispatchWithDeadline deadline (Gate owner action state) direction raw = mask $ \restore -> do
- decoded <- restore (evaluate (decodeFor owner direction raw))
+dispatchWithDeadline deadline (Gate profile owner action state) direction raw = mask $ \restore -> do
+ decoded <- restore (evaluate (decodeForWith profile owner direction raw))
  case decoded of
   Left reason -> do
    now <- getMonotonicTimeNSec
@@ -120,10 +124,38 @@ dispatchWithDeadline deadline (Gate owner action state) direction raw = mask $ \
 -- Existing admitted callbacks complete under caller-owned threads. No hidden
 -- workers are created. Retired means none in flight; Draining is not retired.
 retire :: Gate -> IO GateStatus
-retire (Gate _ _ state) = modifyMVar state $ \s ->
+retire (Gate _ _ _ state) = modifyMVar state $ \s ->
  let next = case status s of Live 0 -> Retired; Live n -> Draining n; other -> other
  in publishWith (s {status=next}) next
 gateStatus :: Gate -> IO GateStatus
-gateStatus (Gate _ _ state) = status <$> readMVar state
+gateStatus (Gate _ _ _ state) = status <$> readMVar state
 rejectionReasons :: Gate -> IO [Reason]
-rejectionReasons (Gate _ _ state) = reverse . reasons <$> readMVar state
+rejectionReasons (Gate _ _ _ state) = reverse . reasons <$> readMVar state
+
+-- Validate the complete application commit before the gate may invoke a
+-- callback. No earlier request can run while a later request is unchecked.
+decodeForWith :: CodecProfile -> Binding -> Direction -> B.ByteString -> Either Reason Envelope
+decodeForWith profile expected direction raw
+ | profile == nativeProfile = decodeFor expected direction raw
+ | otherwise = do
+    let limit = case direction of FromElm -> clientLimit profile; FromNative -> serverLimit profile
+    bound <- either (Left . jsonReason) Right (J.bounds limit 16)
+    root <- either (Left . jsonReason) Right (J.decodeStrict bound raw)
+    let (names,versionField) = case direction of
+          FromElm -> (["viewProtocol","kind","projection","requests","focus"],"viewProtocol")
+          FromNative -> (["bridgeProtocol","kind","payload"],"bridgeProtocol")
+    fields <- either (Left . jsonReason) Right (J.exactObject names root)
+    case lookup versionField fields of
+      Just (J.JNumber "1") -> Right ()
+      Just (J.JNumber _) -> Left UnsupportedVersion
+      _ -> Left BadSchema
+    case direction of
+      FromElm -> do
+        checked <- either (const (Left BadSchema)) Right (C.decodeClientCheckedWith profile raw)
+        commit <- maybe (Left BadSchema) Right (C.checkedDesktopCommit checked)
+        if all ((== expected) . Desktop.requestBinding) (Desktop.commitRequests commit)
+          then Right (Client checked) else Left ForeignBinding
+      FromNative -> do
+        checked <- either (const (Left BadSchema)) Right (C.decodeServerCheckedWith profile raw)
+        reply <- maybe (Left BadSchema) Right (C.checkedDesktopReply checked)
+        if Desktop.replyBinding reply == expected then Right (Server checked) else Left ForeignBinding
