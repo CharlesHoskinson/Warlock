@@ -547,4 +547,128 @@ async function seededPendingQueryDom(){
   }
 }
 
-(async()=>{try{await roots();await focusRoutes();await rendererSeedRoutes();await fifo();await capacities();await failures();await eventDuringDelivery();await receiptNotAck();await pendingQueryHonestControls();await seededPendingQueryDom();report.passed=report.failures.length===0;}catch(error){report.error=String(error.stack??error);check('harness completed all campaigns',false,String(error));}finally{for(const env of environments)env.close();save();process.exitCode=report.passed?0:1;}})();
+async function httpPopupRetainedQueryOnFailure(){
+  const row=(id,label=id,enabled=true)=>({id,domId:'ret-'+id.replaceAll(':','-'),label,ariaLabel:label,detail:'',enabled});
+  const appFrame=(publication,lease,query)=>({
+    surfaceProtocol:2,publication,lease,mode:'applications',status:'Authoritative results',
+    bar:[row('bar:applications','Applications')],
+    popup:[row('control:search',query),row('control:close','Windows'),row('control:refresh','Refresh'),row('pin:org.gnome.TextEditor','Pin')]
+  });
+  const event=(node,type,extra={})=>({type,target:node,currentTarget:node,stopPropagation(){},preventDefault(){},...extra});
+  const findAlert=root=>walk(root,n=>n.attributes?.role==='alert');
+  const findRetainedInput=root=>walk(root,n=>n.id==='http-popup-retained-query');
+  const findRetainedLabel=root=>walk(root,n=>n.tagName==='LABEL'&&n.htmlFor==='http-popup-retained-query');
+  const findWrapper=root=>walk(root,n=>n.attributes?.['data-transport-stopped']==='true');
+  const hasInteractiveSurface=root=>walk(root,n=>n.attributes?.['data-surface-field']!==undefined||n.attributes?.['data-surface-control']!==undefined)!==null;
+
+  // 1. Positive live query + matching acknowledgement, then GET failure retains confirmed query read-only.
+  const confirmedEnv=harness(popupFile,'HttpPopup');await confirmedEnv.flush();
+  await confirmedEnv.event(gateway('presentation',appFrame('1','7','')));
+  check('retained-query positive initial has no alert or retained field',findAlert(confirmedEnv.container)===null&&findRetainedInput(confirmedEnv.container)===null);
+  const liveSearch=walk(confirmedEnv.container,n=>n.attributes?.['data-surface-field']==='control:search');
+  need('retained-query positive live search painted',Boolean(liveSearch)&&typeof liveSearch.listeners.input==='function'&&!liveSearch.readOnly);
+  liveSearch.value='foot';
+  liveSearch.listeners.input(event(liveSearch,'input',{isComposing:false}));await confirmedEnv.flush();
+  need('retained-query positive query emits one POST',confirmedEnv.posts().length===1&&equal(JSON.parse(confirmedEnv.posts()[0].body),{surfaceProtocol:2,kind:'surface-query',surface:'popup',publication:'1',lease:'7',id:'control:search',query:'foot'}));
+  confirmedEnv.posts()[0].respond(204);await confirmedEnv.flush();
+  await confirmedEnv.event(gateway('presentation',appFrame('2','7','foot')));
+  check('retained-query positive matching frame keeps live interactive field',walk(confirmedEnv.container,n=>n.attributes?.['data-surface-field']==='control:search')?.value==='foot'&&findAlert(confirmedEnv.container)===null&&findRetainedInput(confirmedEnv.container)===null);
+
+  confirmedEnv.get().fail('error');await confirmedEnv.flush();
+  const confirmedAlert=findAlert(confirmedEnv.container);
+  const confirmedInput=findRetainedInput(confirmedEnv.container);
+  const confirmedLabel=findRetainedLabel(confirmedEnv.container);
+  check('retained-query confirmed GET failure alert text',confirmedAlert?.textContent==='UI event transport unavailable. Actions were not retried. Restart this view to reconnect.',confirmedAlert?.textContent);
+  check('retained-query confirmed GET failure removes interactive surface controls',!hasInteractiveSurface(confirmedEnv.container)&&Boolean(findWrapper(confirmedEnv.container)));
+  check('retained-query confirmed GET failure renders read-only confirmed input',Boolean(confirmedInput)&&confirmedInput.type==='text'&&confirmedInput.readOnly===true&&confirmedInput.value==='foot'&&confirmedInput.attributes['aria-readonly']==='true'&&confirmedInput.attributes['aria-label']==='Last confirmed search query (read-only)'&&confirmedInput.attributes['data-retained-surface-field']==='control:search'&&confirmedInput.attributes['data-retained-query-state']==='confirmed'&&Object.keys(confirmedInput.listeners).length===0,confirmedInput?domWitness(confirmedInput):null);
+  check('retained-query confirmed GET failure pairs label htmlFor',confirmedLabel?.textContent==='Last confirmed search query (read-only)');
+  const confirmedReqCount=confirmedEnv.requests.length;
+  await confirmedEnv.tick(10000);
+  check('retained-query confirmed GET failure never auto-reconnects',confirmedEnv.requests.length===confirmedReqCount&&confirmedEnv.posts().length===1);
+  confirmedEnv.close();
+
+  // 2. Unconfirmed draft query retained read-only on POST error/timeout/500 + explicit view-restart recovery without auto-replay.
+  for(const failure of ['error','timeout','status500']){
+    const draftText='foot-draft-'+failure;
+    const loss=harness(popupFile,'HttpPopup');await loss.flush();
+    await loss.event(gateway('presentation',appFrame('5','9','old')));
+    const field=walk(loss.container,n=>n.attributes?.['data-surface-field']==='control:search');
+    const refresh=walk(loss.container,n=>n.attributes?.['data-surface-control']==='control:refresh');
+    need(`retained-query/${failure} live controls painted`,Boolean(field)&&Boolean(refresh));
+    field.value=draftText;
+    field.listeners.input(event(field,'input',{isComposing:false}));await loss.flush();
+    refresh.listeners.click(event(refresh,'click'));await loss.flush();
+    need(`retained-query/${failure} single active query POST with refresh queued`,loss.posts().length===1&&equal(JSON.parse(loss.posts()[0].body),{surfaceProtocol:2,kind:'surface-query',surface:'popup',publication:'5',lease:'9',id:'control:search',query:draftText}));
+    const activeGet=loss.gets().at(-1);
+    if(failure==='status500')loss.posts()[0].respond(500,'');else loss.posts()[0].fail(failure);
+    await loss.flush();
+    const expectedAlert=failure==='status500'?'UI delivery is unconfirmed. The action will not be repeated. Restart this view to reconnect.':'UI delivery is unconfirmed. The action will not be repeated. Restart this view to reconnect.';
+    const alertNode=findAlert(loss.container);
+    const retained=findRetainedInput(loss.container);
+    const labelNode=findRetainedLabel(loss.container);
+    const expectedLabel='Unconfirmed draft search query (read-only; not confirmed by desktop)';
+    check(`retained-query/${failure} exact unconfirmed alert`,alertNode?.textContent===expectedAlert,alertNode?.textContent);
+    check(`retained-query/${failure} aborts active GET and removes interactive controls`,Boolean(activeGet?.aborted)&&!hasInteractiveSurface(loss.container)&&Boolean(findWrapper(loss.container)));
+    check(`retained-query/${failure} retains unconfirmed draft read-only`,Boolean(retained)&&retained.type==='text'&&retained.readOnly===true&&retained.value===draftText&&retained.attributes['aria-readonly']==='true'&&retained.attributes['aria-label']===expectedLabel&&retained.attributes['data-retained-surface-field']==='control:search'&&retained.attributes['data-retained-query-state']==='unconfirmed-draft'&&Object.keys(retained.listeners).length===0,retained?domWitness(retained):null);
+    check(`retained-query/${failure} label matches unconfirmed draft`,labelNode?.textContent===expectedLabel);
+    const beforeTick=loss.requests.length;
+    await loss.tick(10000);
+    check(`retained-query/${failure} never repeats unconfirmed draft or queued refresh`,loss.posts().length===1&&loss.requests.length===beforeTick);
+
+    if(failure==='error'){
+      const copiedDraft=retained?.value??'';
+      loss.close();
+      const restarted=harness(popupFile,'HttpPopup');await restarted.flush();
+      check('retained-query recovery restart starts clean with zero auto-replay POSTs',restarted.gets().length===1&&restarted.posts().length===0&&findAlert(restarted.container)===null&&findRetainedInput(restarted.container)===null);
+      await restarted.event(gateway('presentation',appFrame('6','10','')));
+      const freshField=walk(restarted.container,n=>n.attributes?.['data-surface-field']==='control:search');
+      need('retained-query recovery fresh view paints interactive search field',Boolean(freshField)&&!freshField.readOnly&&freshField.value==='');
+      freshField.value=copiedDraft;
+      freshField.listeners.input(event(freshField,'input',{isComposing:false}));await restarted.flush();
+      need('retained-query recovery re-entered draft dispatches once on new lease/publication',restarted.posts().length===1&&equal(JSON.parse(restarted.posts()[0].body),{surfaceProtocol:2,kind:'surface-query',surface:'popup',publication:'6',lease:'10',id:'control:search',query:copiedDraft}));
+      restarted.posts()[0].respond(204);await restarted.flush();
+      await restarted.event(gateway('presentation',appFrame('7','10',copiedDraft)));
+      check('retained-query recovery settles cleanly on restarted view',walk(restarted.container,n=>n.attributes?.['data-surface-field']==='control:search')?.value===copiedDraft&&findAlert(restarted.container)===null&&findRetainedInput(restarted.container)===null);
+      restarted.close();
+    }else{
+      loss.close();
+    }
+  }
+
+  // 3. Files mode + active IME preedit retained on GET timeout; non-query/missing-field modes fabricate no input.
+  const filesEnv=harness(popupFile,'HttpPopup');await filesEnv.flush();
+  await filesEnv.event(gateway('presentation',{
+    surfaceProtocol:2,publication:'3',lease:'11',mode:'files',status:'Choose a folder.',
+    bar:[row('bar:applications','Applications')],
+    popup:[row('control:close','Close'),row('control:files-path','/home/charl'),row('files:open-path','Open folder')]
+  }));
+  const pathField=walk(filesEnv.container,n=>n.attributes?.['data-surface-field']==='control:files-path');
+  need('retained-query files path painted',Boolean(pathField));
+  pathField.listeners.compositionstart(event(pathField,'compositionstart'));await filesEnv.flush();
+  pathField.value='/home/charl/漢字';
+  pathField.listeners.input(event(pathField,'input',{isComposing:true}));await filesEnv.flush();
+  check('retained-query files preedit sends zero POSTs',filesEnv.posts().length===0);
+  filesEnv.get().fail('timeout');await filesEnv.flush();
+  const retainedPath=findRetainedInput(filesEnv.container);
+  check('retained-query files preedit retained as unconfirmed folder path',Boolean(retainedPath)&&retainedPath.readOnly===true&&retainedPath.value==='/home/charl/漢字'&&retainedPath.attributes['data-retained-surface-field']==='control:files-path'&&retainedPath.attributes['data-retained-query-state']==='unconfirmed-draft'&&retainedPath.attributes['aria-label']==='Unconfirmed draft folder path (read-only; not confirmed by desktop)'&&Object.keys(retainedPath.listeners).length===0);
+  filesEnv.close();
+
+  const preSnap=harness(popupFile,'HttpPopup');await preSnap.flush();
+  preSnap.get().fail('error');await preSnap.flush();
+  check('retained-query pre-snapshot failure fabricates no retained input',Boolean(findAlert(preSnap.container))&&findRetainedInput(preSnap.container)===null&&findWrapper(preSnap.container)===null);
+  preSnap.close();
+
+  const sysEnv=harness(popupFile,'HttpPopup');await sysEnv.flush();
+  await sysEnv.event(gateway('presentation',{surfaceProtocol:2,publication:'1',lease:'12',mode:'system',status:'Ready',bar:[row('bar:applications')],popup:[row('control:close','Close')]}));
+  sysEnv.get().fail('error');await sysEnv.flush();
+  check('retained-query system mode fabricates no retained input',Boolean(findAlert(sysEnv.container))&&findRetainedInput(sysEnv.container)===null&&findWrapper(sysEnv.container)===null);
+  sysEnv.close();
+
+  const noFieldEnv=harness(popupFile,'HttpPopup');await noFieldEnv.flush();
+  await noFieldEnv.event(gateway('presentation',{surfaceProtocol:2,publication:'1',lease:'13',mode:'applications',status:'Ready',bar:[row('bar:applications')],popup:[row('control:refresh','Refresh')]}));
+  noFieldEnv.get().fail('error');await noFieldEnv.flush();
+  check('retained-query applications without search row fabricates no empty input',Boolean(findAlert(noFieldEnv.container))&&findRetainedInput(noFieldEnv.container)===null&&findWrapper(noFieldEnv.container)===null);
+  noFieldEnv.close();
+}
+
+(async()=>{try{await roots();await focusRoutes();await rendererSeedRoutes();await fifo();await capacities();await failures();await eventDuringDelivery();await receiptNotAck();await pendingQueryHonestControls();await seededPendingQueryDom();await httpPopupRetainedQueryOnFailure();report.passed=report.failures.length===0;}catch(error){report.error=String(error.stack??error);check('harness completed all campaigns',false,String(error));}finally{for(const env of environments)env.close();save();process.exitCode=report.passed?0:1;}})();

@@ -1,0 +1,85 @@
+{
+  "schema": 1,
+  "observedUTC": "2026-11-01T22:30:35.255314+00:00",
+  "originalRequirement": "ELM-UI-005",
+  "scenario": "search-race",
+  "disposition": "partial",
+  "baseCommit": "d6becb72c4b261739a84325a55aac07a984ab1e4",
+  "sourceHashes": {
+    "implementation/warlock/src/HttpPopup.elm": "e814d56f212765154436c1ab01cc2657b669a6d5d68f5c6d2180ccb64c9eeeb3",
+    "implementation/warlock/qa/ui-http.cjs": "da32ed550a2afeaa062367ab4cf366e985fe469bf43f223a0301b3da4725933a"
+  },
+  "behavior": "On HTTP failure, retain a labelled read-only current query or unconfirmed pending/preedit draft beside the existing alert. No update, command, transport, action replay or reconnect change.",
+  "verification": {
+    "protectedReport": "implementation/warlock/qa/evidence/retained-query-20261101/report.json",
+    "reviewedInputs": 132,
+    "compiledJavascriptRoots": 7,
+    "compiledHtmlDocuments": 3,
+    "httpDomChecks": 7177,
+    "typedChecks": 118,
+    "completePolicyHistories": 58,
+    "quintNamedRuns": 51,
+    "quintSamples": 10000,
+    "quintMaxSteps": 50,
+    "quintSeed": 20261101,
+    "red": {
+      "path": "implementation/warlock/qa/evidence/retained-query-20261101/red-ui-http.json",
+      "failedObservations": 8,
+      "limit": "Includes derived re-entry and harness stop after missing retained field; these are not eight independent product defects."
+    },
+    "sourceReview": "implementation/warlock/qa/evidence/retained-query-20261101/source-review.json",
+    "scopeLimit": "Controlled DOM proves value retention and explicit re-entry into a new program. It does not prove physical clipboard copying, host restart, AT or real IME. No restart button is implemented."
+  },
+  "liveOmarchy": {
+    "stage": "/home/charl/vm/omarchy/evidence/warlock-live-usability-retained-20261101T222559Z/stage.json",
+    "stageSHA256": "c69768e3d7694bd613eb09ad132db9435ea367bacb01664e1944b79516766f70",
+    "currentHtmlQualified": true,
+    "journey": "implementation/warlock/qa/evidence/retained-query-20261101/vm-journey.json",
+    "completedPhysicalSequence": true,
+    "acknowledgedGuardedInputs": 13,
+    "rootViewedImages": [
+      "implementation/warlock/qa/evidence/retained-query-20261101/positive-foot.png",
+      "implementation/warlock/qa/evidence/retained-query-20261101/negative-footz.png"
+    ],
+    "observation": "Tiled current product: foot yields Foot results; footz shows no matching applications and retains query. Existing Foot terminal remains.",
+    "changedBranchObserved": false,
+    "changedBranchLimit": "Normal physical search journey only; no live transport-failure injection, physical copy or host restart performed.",
+    "durationSeconds": 28,
+    "guestBackendExit": 1,
+    "guestElapsedSeconds": 28.01816671199049,
+    "forced": false,
+    "diagnosticLimit": "Cleanup=true and passed=false establish success=false only. Backend JSON omits selected operation/custody/containment, so the exact false conjunct is not observed. Provider proof intentionally remains false in current source.",
+    "cleanupLimit": "Recorded launcher reaped, owned births/scope absent, original Foot preserved and idle restored. Controller read errors can resemble absence; no provider/resource acceptance."
+  },
+  "team": {
+    "externalRoleCount": 15,
+    "actualCensusUTC": "2026-11-01T22:30:35.276177+00:00",
+    "actualLiveCount": 15,
+    "duplicates": [],
+    "baseTerra": 10,
+    "quintKitRoles": 5,
+    "geminiArgon": 3,
+    "solHighAdvisor": 1,
+    "additionalUxPerformance": 1
+  },
+  "nativeAccepted": false,
+  "releaseAccepted": false,
+  "originalWholeAccepted": false,
+  "providerCleanupQualified": false,
+  "remaining": [
+    "Live controlled transport failure, keyboard copying and actual host restart/recovery observations.",
+    "Further composition-cancel pending loss/rebase case is source-predicted and assigned to Sol/VM/q-front/q-http; named reproduction/model correction not yet executed.",
+    "Complete original UI005 ranking/current-generation/removed-before-Enter/refusal/focus, native keyboard/AT/IME obligations.",
+    "Persistent Haskell lifetime, actual native window operations, provider proof, hardware latency/resource and release gates."
+  ],
+  "evidenceHashes": {
+    "implementation/warlock/qa/evidence/retained-query-20261101/negative-footz.png": "b50345564f2fe3d06fea14621e1b910ef210d20c438562126f1fed06cd8f6980",
+    "implementation/warlock/qa/evidence/retained-query-20261101/positive-foot.png": "077ad640efccf6f350848f37cd34187020730fd7d1c95900d0ea9a398ee9c7ea",
+    "implementation/warlock/qa/evidence/retained-query-20261101/red-ui-http.json": "de9f89b360b15d03a4ae275bb9be465925fb7d7a01cfe81234ed44d3d0337a24",
+    "implementation/warlock/qa/evidence/retained-query-20261101/report.json": "9e337a6f3f43fc93fd80e335b22d66452c3a0ae68bc7e9813b0aa22ecbb2d7e3",
+    "implementation/warlock/qa/evidence/retained-query-20261101/review-packet.json": "afbccc1276a1b53925fd37b0de0db2e16a233e62c3c536325aa1c8e6c059a963",
+    "implementation/warlock/qa/evidence/retained-query-20261101/source-review.json": "6f8c6476f14327033372f931df96b3f7b6def8dfa29b16da12d66a99de7d7858",
+    "implementation/warlock/qa/evidence/retained-query-20261101/ui-http.json": "51fce33e5e967b48201736644a35c6913fd7ed6a2b6d7a1d65992add2fd94e2e",
+    "implementation/warlock/qa/evidence/retained-query-20261101/vm-journey.json": "f64fb313b57060d59f516bf2366770d0a409d949faae74518fe7eaee82d9ec5e"
+  }
+}

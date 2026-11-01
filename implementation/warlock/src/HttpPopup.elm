@@ -2,8 +2,8 @@ module HttpPopup exposing (main)
 
 import Browser
 import Browser.Dom
-import Html exposing (div, text)
-import Html.Attributes exposing (attribute)
+import Html exposing (div, input, label, text)
+import Html.Attributes exposing (attribute, for, id, readonly, type_, value)
 import Json.Decode as D
 import Popup
 import Presentation
@@ -67,11 +67,36 @@ apply message command model =
     let (next,emitted)=update (View message) model
     in (next,Cmd.batch [Cmd.map Transport command,emitted])
 
+retainedField : Popup.Model -> List (Html.Html Msg)
+retainedField popup =
+    case Presentation.current popup.presentation of
+        Just snapshot ->
+            if List.member (SurfaceRenderer.mode snapshot) ["applications","files"] then
+                let fieldId = SurfaceRenderer.fieldIdentity snapshot
+                    noun = if SurfaceRenderer.mode snapshot=="files" then "folder path" else "search query"
+                    renderField stateTag fieldLabel retained =
+                        [ label [for "http-popup-retained-query"] [text fieldLabel]
+                        , input [id "http-popup-retained-query",type_ "text",readonly True,value retained,attribute "aria-readonly" "true",attribute "aria-label" fieldLabel,attribute "data-retained-surface-field" fieldId,attribute "data-retained-query-state" stateTag] []
+                        ]
+                in case (popup.pendingQuery,SurfaceRenderer.queryValue snapshot) of
+                    (Just draft,_) ->
+                        renderField "unconfirmed-draft" ("Unconfirmed draft " ++ noun ++ " (read-only; not confirmed by desktop)") draft
+                    (Nothing,Just confirmed) ->
+                        renderField "confirmed" ("Last confirmed " ++ noun ++ " (read-only)") confirmed
+                    (Nothing,Nothing) ->
+                        []
+            else []
+        Nothing -> []
+
 view : Model -> Html.Html Msg
 view model =
     case UiHttp.problem model.http of
         Nothing -> Html.map View (Popup.view model.popup)
-        Just reason -> div [attribute "role" "alert"] [text (reason++" Restart this view to reconnect.")]
+        Just reason ->
+            let alert = div [attribute "role" "alert"] [text (reason++" Restart this view to reconnect.")]
+            in case retainedField model.popup of
+                [] -> alert
+                retained -> div [attribute "data-transport-stopped" "true"] (alert :: retained)
 
 main : Program () Model Msg
 main = Browser.element
