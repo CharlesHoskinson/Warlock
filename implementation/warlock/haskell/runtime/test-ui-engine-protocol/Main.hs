@@ -6,6 +6,7 @@
 -- SCM credentials, held exec, real owner callbacks, custody, or GUI behavior.
 module Main (main) where
 
+import qualified DesktopIdleControls
 import qualified ProtocolBoundary
 import Control.Monad (forM_, unless, when)
 import Data.Bits (shiftR)
@@ -198,6 +199,7 @@ refusal start label bad = do
 
 main :: IO ()
 main = do
+ DesktopIdleControls.run
  ProtocolBoundary.run
  start <- initial
  let startupLiteral = "{\"version\":1,\"controller\":12001,\"bar\":12002,\"popup\":12003,\"deadline\":\"123456789\",\"incarnation\":\"91\"}"

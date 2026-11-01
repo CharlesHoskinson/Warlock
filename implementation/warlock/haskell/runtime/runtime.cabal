@@ -164,8 +164,8 @@ test-suite ui-engine-protocol-controls
   type: exitcode-stdio-1.0
   hs-source-dirs: test-ui-engine-protocol
   main-is: Main.hs
-  other-modules: ProtocolBoundary
-  build-depends: base >=4.18 && <5, bytestring, text, warlock-runtime, warlock-protocol
+  other-modules: ProtocolBoundary, DesktopIdleControls
+  build-depends: base >=4.18 && <5, bytestring, text, unix, network ==3.2.0.0, warlock-runtime, warlock-protocol
   default-language: Haskell2010
   ghc-options: -Wall -Werror -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates -with-rtsopts=-V0
 

@@ -271,14 +271,11 @@ exerciseOwner budget observations documents endpoints emit = do
   check budget ("actual complete controller valid-first invalid-suffix refuses case "++show index) (code==400)
  afterRejected <- Owner.uiLastProjection endpoints
  check budget "rejected commits preserve last successfully sent projection" (afterRejected == committedProjection)
- Response catalogCode _ _ <- api controller "POST" "/commit" (commit [catalogRequest])
- check budget "actual controller whole catalog commit forwarded once" (catalogCode==204)
- let poll remaining = do
-      response@(Response code _ _) <- api controller "GET" "/events" B.empty
-      if code==200 || remaining<=0 then pure response else threadDelay 2000 >> poll (remaining-1)
- Response gatewayCode _ gatewayBytes <- poll (32 :: Int)
- gateway <- parseJson gatewayBytes
- check budget "actual authenticated backend gateway reaches only controller" (gatewayCode==200 && at "kind" gateway==text "native-event" && at "kind" (at "payload" gateway)==text "application-catalog" && at "binding" (at "payload" gateway)==bindingJson && at "requestId" (at "payload" gateway)==text "7")
+ -- Preserve four whole commits and one catalog operation, but put that
+ -- operation in the final commit below so its authenticated response fences
+ -- all preceding native delivery before this controlled peer may retire.
+ Response catalogCode _ _ <- api controller "POST" "/commit" (commit [])
+ check budget "actual controller whole presentation commit forwarded once" (catalogCode==204)
  -- This explicitly controlled native callback is a QA precondition, not actual
  -- compositor/window evidence or a production-startup fabricated topology.
  let topology=object [("viewProtocol",J.JNumber "1"),("kind",text "view-topology"),("revision",text "1"),("views",J.JArray [scopeJson])]
@@ -306,9 +303,16 @@ exerciseOwner budget observations documents endpoints emit = do
   packet <- parseJson eventBytes
   check budget ("current " ++ kind ++ " enqueued once") (accepted == Right () && eventCode == 200 && at "kind" packet == text kind)
  let newerFrame = replaceJson "lease" (text "1") (replaceJson "publication" (text "2") (at "frame" scopedProjection))
-     newerCommit = replaceJson "projection" (replaceJson "frame" newerFrame scopedProjection) focused
+     newerCommit = replaceJson "requests" (J.JArray [catalogRequest])
+       (replaceJson "projection" (replaceJson "frame" newerFrame scopedProjection) focused)
  Response newerCode _ _ <- api controller "POST" "/commit" (jsonBytes newerCommit)
- check budget "new current projection forwarded" (newerCode == 204)
+ check budget "new current projection and single catalog operation forwarded" (newerCode == 204)
+ let poll remaining = do
+      response@(Response code _ _) <- api controller "GET" "/events" B.empty
+      if code==200 || remaining<=0 then pure response else threadDelay 2000 >> poll (remaining-1)
+ Response gatewayCode _ gatewayBytes <- poll (32 :: Int)
+ gateway <- parseJson gatewayBytes
+ check budget "actual authenticated backend gateway reaches only controller" (gatewayCode==200 && at "kind" gateway==text "native-event" && at "kind" (at "payload" gateway)==text "application-catalog" && at "binding" (at "payload" gateway)==bindingJson && at "requestId" (at "payload" gateway)==text "7")
  let wrongScope = object [("id",text "2"),("generation",text "1")]
  forM_ [("old dismiss lease", Owner.OwnerDismiss (eventPayload scopeJson "0")),
         ("old reflow lease", Owner.OwnerReflow (eventPayload scopeJson "0")),

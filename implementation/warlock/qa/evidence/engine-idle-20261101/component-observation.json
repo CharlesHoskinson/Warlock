@@ -1,0 +1,117 @@
+{
+  "schema": 1,
+  "observedUTC": "2026-11-01T17:45:53.145576+00:00",
+  "requirement": "ELM-ARC-002",
+  "scenario": "ownership-presentation",
+  "originalOracle": "Elm owns DOM state, native host owns surface lifetime and native authority alone owns application effects",
+  "disposition": "partial",
+  "scope": "Protected component checks and actual owned app-only native-on-VM idle/Applications observation; not protected native campaign or original/native/release acceptance",
+  "sourceRevisionBeforeCommit": "392d1838fa042059361b589f8bbf9b657125026c",
+  "workingTreeSources": true,
+  "protected": {
+    "passed": true,
+    "sourceInputs": 345,
+    "suitesPassed": 10,
+    "namedModelTests": 273,
+    "newIdleNamedModelTests": 25,
+    "realSocketControls": "Same-process kernel SCM ingress; idle5.3s positive,32 seeded fragmentations,coalesced frames,partial header/body5s,EOF/revoke/retirement/unrelated sentinel/originalD; not selected-child proof",
+    "retainedRed": ".warlock-contributor/haskell-cpu-1793552951595244964/report.json",
+    "redDetail": "Nine suites and273named models pass; ordinary controlled CLI peer retired before fourth-frame consumption, backend3callbacks/1op EndpointChanged. Corrected existing catalogrequest7/reply moved to fourth/final frame, preserving4frames/1op/original5sD; RetireThrows97 remains5/2."
+  },
+  "evidenceSha256": {
+    "protected-report.json": "2088b85bda81004372a59d7cf9237deecae9dba24d2b52e10ca3d744a66e539b",
+    "source-freeze.json": "409c150abd2f5789b478d4f68334e8949f4b5f13a3d1751a0567b0b44dc378ed",
+    "readiness-review.json": "5b7fa20fda31082bd8db00c5cd4ecd9639a53bc30b03cc6a9bf4c3b738415a6c",
+    "guest-artifacts.json": "06f8fc12af56198be328ada42f9cac29989b48d79991f0fa42aa8be2626d57eb",
+    "trial-result.json": "1dfb79c751d7b4de91768f014cb8d9bcffb791a79802a804a880c0d9cb806df1"
+  },
+  "vm": {
+    "rawEvidenceDirectory": "/home/charl/vm/omarchy/evidence/warlock-ui-mvp-20261101/actual-app-20261101T1058Z/engine-idle-20261101T172728Z",
+    "buildExit": 0,
+    "sourceInputCount": 217,
+    "incrementalFiles": 10,
+    "engine": {
+      "pid": 106427,
+      "birth": "6460083",
+      "ppid": 106426,
+      "pgid": 106426,
+      "executable": "warlock-ui-owner",
+      "device": 58,
+      "inode": 37661,
+      "namespacePids": [
+        106427,
+        1
+      ]
+    },
+    "liveScope": {
+      "queryExit": 0,
+      "properties": {
+        "ActiveState": "active",
+        "SubState": "running",
+        "Result": "success",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/warlock-mvp-app-f5915e419092.scope"
+      },
+      "membershipKnown": true
+    },
+    "originalTrialDurationSeconds": 28,
+    "observedMappedIntervalSeconds": 26.414921440999024,
+    "backend": {
+      "schema": 1,
+      "passed": false,
+      "cleanup": true,
+      "callbacks": 3,
+      "operations": 1,
+      "auth": "Just (FrameObserved CredentialDelivered)",
+      "credentialRows": 9,
+      "selectedPid": 106426,
+      "nativeAccepted": false,
+      "releaseAccepted": false
+    },
+    "lateScreenshot": {
+      "path": "/home/charl/vm/omarchy/evidence/warlock-ui-mvp-20261101/actual-app-20261101T1058Z/engine-idle-20261101T172728Z/run-01/live-07.png",
+      "sha256": "93567684e5cc887043c2ffe0d8080d0ed88b1647a2540e2be13710fb703f70df",
+      "inspectedByRoot": true
+    },
+    "physicalApplications": {
+      "run": "run-03",
+      "windowPid": 108512,
+      "windowBirth": "6501136",
+      "scope": "warlock-mvp-app-51e663ec2206.scope",
+      "observation": "Current visible Applications control physically clicked via separate QMP motion/press/release after fresh owned PID/birth/lineage/cgroup/active-window/geometry/monitor/lock/Foot/D fences. Actual catalog opened and displayed62matching applications.",
+      "screenshot": "/home/charl/vm/omarchy/evidence/warlock-ui-mvp-20261101/actual-app-20261101T1058Z/engine-idle-20261101T172728Z/run-03-apps-settled.png",
+      "screenshotSha256": "ca5d63e49ae2ae6d72d027c44843ef72180ebf281f71ecb7a5d0639ea556c1d0",
+      "inspectedByRoot": true,
+      "keyboardSearchVerified": false
+    },
+    "retainedAttempts": {
+      "run-02": "Pre-input scope check refused after trial ended; no click delivered.",
+      "run-03": "Applications physically opened; remaining-D reserve refused Search click/type.",
+      "run-04": "Applications click delivered; no settled search observation before closure. Initial blank/white frame directly observed; retain as visual issue.",
+      "run-05": "Pixel-ready control check refused before input because helper assumed historical tiled geometry while current window was full-size. No input delivered. QA orchestration gap, not a demonstrated product search defect."
+    },
+    "rawHashes": {
+      "physical-inputs.jsonl": "878e1bac8664a0d916ea7ea44bfea26bde26d3a89c7ab322252ac83f17b513e1",
+      "physical-journey-05.py": "d5f0a655e8e34e32ad63c36e096480e728a4e190329d4767730e0ab3ead8d945",
+      "physical-journey-05-result.json": "85f3e957f933230d012d94c46c04d596d3abe0ebad3019df9b6d73c482d299ac",
+      "manual-physical.py": "e5bce1020f2a5ac07aa155a3d1246c900d99648ac62f3393742c5599cf2519a3"
+    },
+    "footPid": 2095,
+    "footBirth": "6930",
+    "run01ObservedPidBirthsRemainingInAfterSnapshot": [],
+    "run01IdleRestorationExit": 0,
+    "finalScopeMembershipKnown": false,
+    "providerCleanupQualified": false,
+    "nativeOperations": []
+  },
+  "missingObservations": [
+    "Physical search query/no-match retention on current source",
+    "Original complete native-or-bridge application-effects authority and surface retirement trace",
+    "Provider/callback/backing cleanup, native window operations, AT/IME/hardware and release obligations"
+  ],
+  "nextAction": "End this bounded idle investigation with verified source and retained GUI/input limits; take current Haskell/Elm physical search into original UI005/search-no-match slice.",
+  "historicalWholeRequirementCount": 15,
+  "historicalAcceptedScenarioCount": 39,
+  "originalAcceptance": false,
+  "nativeAccepted": false,
+  "releaseAccepted": false
+}

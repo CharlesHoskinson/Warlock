@@ -3,11 +3,12 @@
 -- Source-only owned endpoint; adoption is not bootstrap or peer authentication.
 module Warlock.Transport.Channel
   ( Channel, Direction(..), Priority(..), ChannelError(..), CloseResult(..)
-  , CloseState(..), channelState, channelFlagsVerified, newConfiguredChannel, newConfiguredChannelWith, receive, receiveWith, receiveWithStart, receiveRawDeadline, receiveRawDeadlineWithStart, CredentialFrameError(..), receiveCredentialFrame, enqueue, sendNext, closeChannel, retainedFrames ) where
+  , CloseState(..), channelState, channelFlagsVerified, newConfiguredChannel, newConfiguredChannelWith, receive, receiveWith, receiveWithStart, receiveRawDeadline, receiveRawDeadlineWithStart, CredentialFrameError(..), receiveCredentialFrame, receiveCredentialFrameAfterIdle, enqueue, sendNext, closeChannel, retainedFrames ) where
 import Control.Concurrent.MVar
 import Control.Exception (SomeException, SomeAsyncException, fromException, throwIO, evaluate, mask, uninterruptibleMask_, try, finally, onException)
 import System.Timeout (timeout)
 import GHC.Clock (getMonotonicTimeNSec)
+import GHC.Conc (threadWaitRead)
 import qualified Data.ByteString as B
 import Data.Text (Text)
 import qualified Network.Socket as S
@@ -115,17 +116,49 @@ data CredentialFrameError refusal = CredentialTransport ChannelError | Credentia
 
 receiveCredentialFrame :: forall refusal. P.CredentialReader -> CredentialGuard refusal -> Channel
  -> IO (Either (CredentialFrameError refusal) (B.ByteString,Integer,P.PeerCredential))
-receiveCredentialFrame reader guard channel@(Channel profile sock direction state readGate _ _) = mask $ \restore -> do
+receiveCredentialFrame = receiveCredentialFrameWithIdle Nothing
+
+-- Desktop inter-frame scheduling only. Readiness consumes no bytes/ancillary
+-- data and confers no trust. Keep the same exclusive reader through the wait
+-- and unchanged frame receive, bounded by the caller's original absolute D.
+receiveCredentialFrameAfterIdle :: Integer -> P.CredentialReader -> CredentialGuard refusal -> Channel
+ -> IO (Either (CredentialFrameError refusal) (B.ByteString,Integer,P.PeerCredential))
+receiveCredentialFrameAfterIdle deadline = receiveCredentialFrameWithIdle (Just deadline)
+
+receiveCredentialFrameWithIdle :: forall refusal. Maybe Integer -> P.CredentialReader -> CredentialGuard refusal -> Channel
+ -> IO (Either (CredentialFrameError refusal) (B.ByteString,Integer,P.PeerCredential))
+receiveCredentialFrameWithIdle idleDeadline reader guard channel@(Channel profile sock direction state readGate _ _) = mask $ \restore -> do
  acquired <- tryTakeMVar readGate
  case acquired of
   Nothing -> pure (Left (CredentialTransport Busy))
-  Just () -> (restore run `onException` cleanupNoThrow channel) `finally` putMVar readGate ()
+  Just () -> (restore scheduled `onException` cleanupNoThrow channel) `finally` putMVar readGate ()
  where
+  scheduled = case idleDeadline of
+   Nothing -> run
+   Just original | profile /= desktopProfile -> pure (Left (CredentialTransport Busy))
+                 | otherwise -> do
+      now <- getMonotonicTimeNSec
+      let left = original - toInteger now
+      if left <= 0 then failFrame (CredentialTransport TimedOut) else do
+       closed <- isClosed state
+       if closed then pure (Left (CredentialTransport Closed)) else do
+        outcome <- try (timeout (fromInteger (min (toInteger (maxBound :: Int)) ((left + 999) `div` 1000)))
+          (S.withFdSocket sock (threadWaitRead . fromIntegral) >> run))
+          :: IO (Either SomeException (Maybe (Either (CredentialFrameError refusal) (B.ByteString,Integer,P.PeerCredential))))
+        ended <- getMonotonicTimeNSec
+        case outcome of
+         Left err -> do
+          failure <- (handleException channel err :: IO (Either ChannelError ()))
+          pure (either (Left . CredentialTransport) (const (Left (CredentialTransport IOErrorClosed))) failure)
+         _ | toInteger ended >= original -> failFrame (CredentialTransport TimedOut)
+         Right Nothing -> failFrame (CredentialTransport TimedOut)
+         Right (Just result) -> pure result
   run = do
    closed <- isClosed state
    if closed then pure (Left (CredentialTransport Closed)) else do
     start <- getMonotonicTimeNSec
-    let deadline = toInteger start + 5000000000
+    let frameDeadline = toInteger start + 5000000000
+        deadline = maybe frameDeadline (min frameDeadline) idleDeadline
     result <- try (timeout 5000000 (frame deadline)) :: IO (Either SomeException (Maybe (Either (CredentialFrameError refusal) (B.ByteString,P.PeerCredential))))
     end <- getMonotonicTimeNSec
     case result of

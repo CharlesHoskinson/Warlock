@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "owner": "root-agentbus",
-  "updatedUTC": "2026-11-01T16:59:36.676396+00:00",
+  "updatedUTC": "2026-11-01T17:45:53.145576+00:00",
   "workflow": "docs/warlock-build-loop/v2/INSTRUCTIONS.md",
   "sourceCandidate": "implementation/warlock",
   "heldParent": "implementation/warlock-preview-provider-v143",
@@ -44,7 +44,14 @@
       "implementation/warlock/haskell/runtime/test-ui-engine-broker/Main.hs",
       "implementation/warlock/haskell/runtime/test-ui-engine-exec/Main.hs",
       "implementation/warlock/haskell/runtime/src/Warlock/Ui/Display.hs",
-      "implementation/warlock/haskell/runtime/test-ui-display/Main.hs"
+      "implementation/warlock/haskell/runtime/test-ui-display/Main.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Transport/Channel.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/Ingress/Internal.hs",
+      "implementation/warlock/haskell/protocol/src/Warlock/Protocol/CredentialIngress.hs",
+      "implementation/warlock/haskell/runtime/src/Warlock/Bootstrap/Aggregate.hs",
+      "implementation/warlock/haskell/runtime/test-ui-engine-protocol/DesktopIdleControls.hs",
+      "implementation/warlock/haskell/runtime/formal/desktop-idle-lifetime.qnt",
+      "implementation/warlock/haskell/runtime/formal/desktop-idle-lifetime_test.qnt"
     ],
     "before": "The current selected UI owner refuses GTK startup because its child PID namespace differs; no actual Warlock window is created.",
     "after": "Run the three actual Elm GUI roots inside an owned Haskell engine process with a compatible PID namespace; the authenticated broker keeps native authority and original deadline. Observe an app-only window before any original-scenario acceptance.",
@@ -3461,6 +3468,49 @@
     "transport": "authenticated individual bindings; existing services reused",
     "rootCoordinator": "lead",
     "roles": {
+      "lead": "Root sole coordinator/integrator/protected executor",
+      "terra-engine": "Desktop idle transport implementation draft/review",
+      "terra-portable": "Actual socket/SCM regression drafts",
+      "terra-security": "Credential and ownership review",
+      "terra-graph": "Source relationship and dependency review",
+      "terra-vm": "Owned VM evidence/controller review",
+      "terra-q-origin": "Quint engine RPC correspondence",
+      "terra-q-lifetime": "Quint idle/lifetime model",
+      "terra-q-network": "Quint credential/fragment invariants",
+      "terra-q-http": "Quint deadline/idle contract review",
+      "terra-q-front": "Quint frontend integration correspondence",
+      "gemini-site": "Elm website source and visual review",
+      "gemini-gui": "Elm beta GUI source and visual review",
+      "gemini-omarchy": "Physical app-only VM journey planning",
+      "sol-docs": "GPT-6.1 Sol HIGH recurring cross-thread advisor"
+    },
+    "externalProcessReceipts": ".warlock-contributor/ui-stream-model-launch.json",
+    "authAcknowledgements": "AgentBus live log; process launch alone is not successful authentication",
+    "singleProductSlice": true,
+    "noDuplicateCoordinator": true,
+    "currentSlice": "ELM-ARC-002 / ownership-presentation; owned engine rendered real Elm MVP, idle lifetime fix under verification",
+    "currentProcessObservation": "14 actual external worker CLIs confirmed2026-11-01T17:04:40Z:10Terra,3GeminiArgon,1SolHIGH; no duplicates. Bounded turns, not permanent liveness.",
+    "lastHealthObservation": {
+      "observedUTC": "2026-11-01T16:58:00Z",
+      "doctor": "Six checks passed; existing verifier/auth/arbiterPID1116694 reused; Sol identity separately passed six checks17:03."
+    },
+    "liveCensusReceipt": "/home/charl/.local/state/warlock-team/20261031-agentbus/current-worker-census.json",
+    "lastLivenessUTC": "2026-11-01T17:04:40.519834+00:00",
+    "actualWorkerCensus": "/home/charl/.local/state/warlock-team/20261031-agentbus/census-1315-20261101.json",
+    "solAdvisor": {
+      "name": "sol-advisor",
+      "identity": "sol-docs",
+      "session": "01a1947b-90dd-7ac0-9b96-477ca1e32bc2",
+      "model": "gpt-6.1-sol",
+      "reasoning": "high",
+      "role": "Recurring cross-thread architecture/delivery/EARS advisor; Root retains sole coordination, source integration and protected execution.",
+      "continuity": "At each team reconciliation include advisor. Resume same authenticated identity/session only after actual CLI absence and eligible terminal log; no duplicate coordinator or keys.",
+      "writes": "Exact-claimed distinct ignored advisor drafts only; no production input mutation.",
+      "requiredByUser": true
+    },
+    "requestedExternalWorkerCount": 14,
+    "advisorLaunchReceipt": "/home/charl/.local/state/warlock-team/20261031-agentbus/sol-advisor-launch.json",
+    "historicalRoles": {
       "lead": "Integration and sole protected compile/model/process/native executor",
       "reviewer": "Independent production-linked QA author; pending whole ARC003/DEL011 immutable acceptance review",
       "elm-impl": "Actual shared Desktop profile source owner and independent backend/storage/Main/runner peer review",
@@ -3472,19 +3522,9 @@
       "muse": "bounded DEL010 EARS continuity",
       "terra-artifacts": "unexecuted delegated-UID protected-runner draft"
     },
-    "externalProcessReceipts": ".warlock-contributor/ui-stream-model-launch.json",
-    "authAcknowledgements": "AgentBus live log; process launch alone is not successful authentication",
-    "singleProductSlice": true,
-    "noDuplicateCoordinator": true,
-    "currentSlice": "ARC024/DEL014 privateUI origin and actual Elm/Haskell Applications MVP; both whole EARS OPEN",
-    "currentProcessObservation": "At08:13Z observed10resumedTerra and3Gemini actualprocesses, not merely registeredidentities; completed turns replenished after terminal/process checks. Source-only parallel wave, root serialized execution.",
-    "lastHealthObservation": {
-      "observedUTC": "2026-11-01T08:16:36.746367+00:00",
-      "doctor": "six checks healthy; lead credential valid13.8hours, existing arbiterPID1116694; no service/key changes"
-    },
-    "liveCensusReceipt": "/home/charl/.local/state/warlock-team/20261031-agentbus/current-worker-census.json",
-    "lastLivenessUTC": "2026-11-01T13:17:55.596078+00:00",
-    "actualWorkerCensus": "/home/charl/.local/state/warlock-team/20261031-agentbus/census-1315-20261101.json"
+    "currentLaunchReceipt": "/home/charl/.local/state/warlock-team/20261031-agentbus/idle-delivery-1700-launches.json",
+    "nextReconciliationUTC": "2026-11-01T17:25:00Z",
+    "solAdvisorReconciliationUTC": "2026-11-01T17:29:00Z"
   },
   "currentGoalTelemetry": {
     "status": "active",
@@ -3514,7 +3554,7 @@
     "releaseAcceptance": false,
     "wholeRequirementsAccepted": 15
   },
-  "nextConcreteAction": "Desktop-only owned inter-frame readiness wait after delivery under same absolute deadline, then unchanged credential frame receive; preserve first receive/native profile/SCM/fail-closed semantics.",
+  "nextConcreteAction": "End this bounded idle investigation with verified source and retained GUI/input limits; take current Haskell/Elm physical search into original UI005/search-no-match slice.",
   "currentNamedScenarioClosure": {
     "recordedAccepted": 39,
     "baselineTotal": 417,
@@ -3707,13 +3747,18 @@
     "oldNativeStartupRecordPreserved": ".warlock-contributor/ui-origin.json"
   },
   "activeVerificationPhase": {
-    "originalRequirement": "ELM-DEL-014",
-    "originalScenario": "delivery-014",
-    "scope": "Existing independently source-reviewed VM-only real-engine execution sensitivity/productionCSP observers. NativeMVP startup investigation ended with retainedrun02noGUI/StreamEOF. No timer reset from source-only QA witness changes.",
-    "positiveControl": "/home/charl/vm/omarchy/evidence/warlock-ui-mvp-20261101/actual-app-20261101T1058Z/security-positive-01",
-    "positiveOutcome": "PASS actual5ordinaryworldsignals,1remoteCorrectMimeRequest,1.8599s,exit0,within15soriginaldeadline",
-    "negativeProbe": "/home/charl/vm/omarchy/evidence/warlock-ui-mvp-20261101/actual-app-20261101T1058Z/security-negative-01",
-    "negativeOutcome": "Exit1 before childreceipt, zeroobservedtags. No CSPacceptance. QA-only earlystartupwitness repair assignedportable."
+    "originalRequirement": "ELM-ARC-002",
+    "originalScenario": "ownership-presentation",
+    "scope": "Actual desktop-only inter-frame idle scheduling source plus socket/SCM/property/Quint checks; before native-on-VM retry",
+    "protectedSession": 22834,
+    "report": ".warlock-contributor/haskell-cpu-1793553496966127943/report.json",
+    "status": "GREEN component run; bounded app-only VM idle/Applications observation partial",
+    "originalDUnchanged": true,
+    "nativeAccepted": false,
+    "releaseAccepted": false,
+    "retainedFailure": ".warlock-contributor/haskell-cpu-1793552951595244964/report.json",
+    "retainedFailureDetail": "Nine suites inclnewidleSCM and273named modelcases pass; productionCLIcontrolledchild retired beforefinalframe consumption, leaving3/4callbacks EndpointChanged. Testfix movesexistingsinglecatalogrequest7 into4thfinalframe andawaitsmatchingauthenticatedresponse; unchanged4frames1operationoriginal5sD.",
+    "observation": "implementation/warlock/qa/evidence/engine-idle-20261101/component-observation.json"
   },
   "threadNamespaceGuardCheckpoint": {
     "source": "implementation/warlock/haskell/runtime/src/Warlock/Ui/ThreadNamespace.hs",
@@ -3737,10 +3782,23 @@
     "retainedModelGap": ".warlock-contributor/haskell-cpu-1793545191214305889/report.json:21newRPCnamedPASS/safety10000 no invariant violation, required broad positive witnesses missing; explicit same-action focused drivers added, current execution pending.",
     "vmHealth": "QMP running, Hyprland0.56.2, locked=true, original mapped Foot PID2095 present at15:28UTC. No new GUI launched.",
     "currentProtectedReport": "implementation/warlock/qa/evidence/engine-pid1-20261101/protected-report.json",
-    "componentObservation": "implementation/warlock/qa/evidence/engine-pid1-20261101/component-observation.json",
+    "componentObservation": "implementation/warlock/qa/evidence/engine-idle-20261101/component-observation.json",
     "actualElmWindowObserved": true,
     "physicalInputsObserved": false,
     "providerCleanupQualified": false,
-    "originalAcceptance": false
-  }
+    "originalAcceptance": false,
+    "physicalApplicationsObserved": true,
+    "physicalSearchVerified": false
+  },
+  "verificationPhaseHistory": [
+    {
+      "originalRequirement": "ELM-DEL-014",
+      "originalScenario": "delivery-014",
+      "scope": "Existing independently source-reviewed VM-only real-engine execution sensitivity/productionCSP observers. NativeMVP startup investigation ended with retainedrun02noGUI/StreamEOF. No timer reset from source-only QA witness changes.",
+      "positiveControl": "/home/charl/vm/omarchy/evidence/warlock-ui-mvp-20261101/actual-app-20261101T1058Z/security-positive-01",
+      "positiveOutcome": "PASS actual5ordinaryworldsignals,1remoteCorrectMimeRequest,1.8599s,exit0,within15soriginaldeadline",
+      "negativeProbe": "/home/charl/vm/omarchy/evidence/warlock-ui-mvp-20261101/actual-app-20261101T1058Z/security-negative-01",
+      "negativeOutcome": "Exit1 before childreceipt, zeroobservedtags. No CSPacceptance. QA-only earlystartupwitness repair assignedportable."
+    }
+  ]
 }

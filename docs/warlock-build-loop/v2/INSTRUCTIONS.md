@@ -149,6 +149,24 @@ Maintain core limit 1, valid parent Wayland socket, private owned session direct
 Only the host goal tool arms automatic continuation. These files are instructions, not a daemon. Keep the full goal active until achieved, explicitly paused/cancelled, budget-limited, or blocked under the tool's actual rule.
 
 
+## Recurring team advisor
+
+User instruction, November 1: keep GPT-6.1 Sol with high reasoning as the 14th
+external agent alongside ten Terra agents (five Quint-LLM-Kit roles) and three
+Gemini Argon agents. Sol advises across the work threads on architecture,
+delivery priorities, original EARS evidence and integration; Root remains the
+sole coordinator, integrator and protected executor. Advisory findings are not
+acceptance or an additional approval gate.
+
+Include the advisor in every team liveness reconciliation and bounded resumption.
+Reuse the existing authenticated `sol-docs` identity and its recorded persistent
+session; check the previous actual CLI process and terminal log before resuming.
+Record the new live handle and cutoff, and distinguish running jobs from queued
+assignments or completed turns. Keep canonical STATE/HANDOFF and the team brief
+current. Preserve keys, the single coordinator, exact path ownership and all
+original source/evidence boundaries. A bounded turn ending does not remove this
+recurring role from the active goal.
+
 ## Muse regulation and recovery
 
 Standing user instruction, October30: Muse regulates original EARS fidelity and

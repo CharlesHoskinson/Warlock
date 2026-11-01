@@ -3,7 +3,7 @@ module Warlock.Protocol.CredentialIngress
  (CredentialIngress, CredentialIngressResult(..), CredentialFrameError(..),
   CredentialError(..), ReaderStatus(..), CredentialGuard(..),
   newCredentialIngress, newDesktopCredentialIngress, transferCredentialSocket, activateCredentialIngress,
-  receiveCredentialIngress, retireCredentialIngress, credentialIngressStatus,
+  receiveCredentialIngress, receiveDesktopCredentialIngressAfterIdle, retireCredentialIngress, credentialIngressStatus,
   enqueueCredentialIngress, sendCredentialIngress, retainedCredentialIngressFrames) where
 import Warlock.Protocol.Ingress.Internal
 import Warlock.Transport.Channel (CredentialFrameError(..))

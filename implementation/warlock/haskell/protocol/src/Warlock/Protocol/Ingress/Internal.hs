@@ -3,7 +3,7 @@
 module Warlock.Protocol.Ingress.Internal
  (IngressOwner,IngressBinding,ingressBinding,CounterError(..),Direction(..),Reason(..),GateStatus(..),
   Priority(..),ChannelError(..),EndpointState(..),Phase(..),OwnerStatus(..),OfferResult(..),ActivationResult(..),IngressResult(..),
-  CredentialIngress,CredentialIngressResult(..),newCredentialIngress,newDesktopCredentialIngress,newCredentialIngressWithReaderForTest,transferCredentialSocket,activateCredentialIngress,receiveCredentialIngress,retireCredentialIngress,credentialIngressStatus,enqueueCredentialIngress,sendCredentialIngress,retainedCredentialIngressFrames,
+  CredentialIngress,CredentialIngressResult(..),newCredentialIngress,newDesktopCredentialIngress,newCredentialIngressWithReaderForTest,transferCredentialSocket,activateCredentialIngress,receiveCredentialIngress,receiveDesktopCredentialIngressAfterIdle,retireCredentialIngress,credentialIngressStatus,enqueueCredentialIngress,sendCredentialIngress,retainedCredentialIngressFrames,
   newIngressOwner,newIngressOwnerWithHooks,newIngressOwnerWithPrepareHook,holdOwnerGateForTest,holdCloseGateForTest,flagsForTest,transferSocket,transferSocketWithHooks,activateIngress,activateIngressWithHook,receiveIngress,enqueueIngress,sendIngress,retainedIngressFrames,retireIngress,ingressStatus,ingressRejections) where
 import Control.Concurrent.MVar
 import Control.Exception (SomeException,SomeAsyncException,finally,fromException,mask,uninterruptibleMask_,try,throwIO)
@@ -289,7 +289,15 @@ retainedCredentialIngressFrames (CredentialIngress owner _) = retainedIngressFra
 -- paths. Scope admission encloses the actual checked gate dispatch and handler;
 -- no credential or checked envelope is an effect or native capability.
 receiveCredentialIngress :: forall refusal. CredentialIngress -> CredentialGuard refusal -> IO (CredentialIngressResult refusal)
-receiveCredentialIngress (CredentialIngress owner@(IngressOwner _ gateValue direction _ serial _ _) reader) guard = mask $ \restore -> do
+receiveCredentialIngress = receiveCredentialIngressWithIdle Nothing
+
+-- The original session deadline is supplied by the retained bootstrap owner.
+-- Native profile and the first receive keep their original immediate frame D.
+receiveDesktopCredentialIngressAfterIdle :: Integer -> CredentialIngress -> CredentialGuard refusal -> IO (CredentialIngressResult refusal)
+receiveDesktopCredentialIngressAfterIdle deadline = receiveCredentialIngressWithIdle (Just deadline)
+
+receiveCredentialIngressWithIdle :: forall refusal. Maybe Integer -> CredentialIngress -> CredentialGuard refusal -> IO (CredentialIngressResult refusal)
+receiveCredentialIngressWithIdle idleDeadline (CredentialIngress owner@(IngressOwner profile gateValue direction _ serial _ _) reader) guard = mask $ \restore -> do
  acquired <- tryTakeMVar serial
  case acquired of
   Nothing -> pure (CredentialFrameRejected (C.CredentialTransport C.Busy))
@@ -299,7 +307,9 @@ receiveCredentialIngress (CredentialIngress owner@(IngressOwner _ gateValue dire
     Left err -> retireOnError owner err
     Right Nothing -> pure CredentialNotLive
     Right (Just channel) -> do
-     readResult <- try (restore (C.receiveCredentialFrame reader guard channel)) :: IO (Either SomeException (Either (C.CredentialFrameError refusal) (B.ByteString,Integer,P.PeerCredential)))
+     readResult <- try (restore (case idleDeadline of
+       Just deadline | profile == desktopProfile -> C.receiveCredentialFrameAfterIdle deadline reader guard channel
+       _ -> C.receiveCredentialFrame reader guard channel)) :: IO (Either SomeException (Either (C.CredentialFrameError refusal) (B.ByteString,Integer,P.PeerCredential)))
      case readResult of
       Left err -> retireOnError owner err
       Right (Left err) -> do

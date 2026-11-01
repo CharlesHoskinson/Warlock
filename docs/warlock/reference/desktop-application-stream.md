@@ -29,6 +29,35 @@ Both profiles retain depth 16. Constructors select the profile before transport
 use; payloads cannot select it. Kernel credential chunks remain at most 65,536
 bytes. Existing absolute bootstrap and frame deadlines are preserved.
 
+## Desktop inter-frame idle scheduling
+
+The candidate desktop path calls
+`receiveDesktopCredentialIngressAfterIdle` only after an authenticated frame has
+been delivered. The retained owner waits for readability under its original
+absolute session deadline D, then invokes the existing credentialed frame
+receiver. Readiness consumes no payload or ancillary data and grants no trust.
+The same channel read gate covers waiting and receiving; the ingress serial
+covers delivery and dispatch. The owned leader watcher remains responsible for
+observing exit and shutting the retained peer write direction.
+
+The first receive and the Native profile keep their immediate five-second read
+path. After desktop readiness, the absolute frame/admission deadline is the
+smaller of receive-start plus five seconds and D. Header/body fragments renew
+neither deadline. EOF, bad credentials, malformed data, retirement and expiry
+remain failures; no heartbeat or synthetic domain request keeps the stream alive.
+An already-admitted callback retains its existing drain contract: scheduling may
+let its body start or finish after the admission deadline. That is separate from
+admitting a new callback after the deadline or confirming cleanup.
+
+The real-socket idle controls exercise kernel credentials with a same-process
+fixture guard, including a known quiet interval above five seconds, seeded
+fragmentation, stalled frames and original-D expiry. They do not authenticate a
+held selected child. The selected-owner test's existing single catalog request
+is in its fourth/final frame; the matching authenticated reply fences all four
+frames before its controlled peer retires. HTTP204 alone is not consumption.
+Current protected results and the actual VM outcome remain source-bound in the
+canonical handoff; these contracts establish no native or release acceptance.
+
 ## Actual backend
 
 The production executable is `warlock-ui-backend CONFIG`. Its Haskell

@@ -129,7 +129,7 @@ def run_ui_models(copy, source, node, model_cli, model_env, logs, result, requir
         # taken from its source and must actually execute before any tests.
         formal = copy / 'runtime/formal'
         result['uiCompanionModels'] = {}
-        for stem in ('ui-engine-lifetime', 'ui-private-network', 'ui-http-admission', 'ui-frontend-delivery', 'ui-standalone-bootstrap', 'ui-engine-rpc', 'ui-engine-topology'):
+        for stem in ('ui-engine-lifetime', 'ui-private-network', 'ui-http-admission', 'ui-frontend-delivery', 'ui-standalone-bootstrap', 'ui-engine-rpc', 'ui-engine-topology', 'desktop-idle-lifetime'):
             module = stem.replace('-', '_')
             model_path, test_path = formal / (stem + '.qnt'), formal / (stem + '_test.qnt')
             hashes = {path.name: digest(path) for path in (model_path, test_path)}
@@ -179,6 +179,11 @@ def run_ui_models(copy, source, node, model_cli, model_env, logs, result, requir
                     'guidedCleanStep': ['witnessVisibleUnqualifiedCleanup', 'witnessExitLateCallback', 'witnessClean'],
                     'guidedExternalStep': ['witnessExternalSurvives'],
                     'guidedUnknownCallbackStep': ['witnessUnknownQuarantine']},
+                'desktop-idle-lifetime': {
+                    'guidedIdleStep': ['witnessIdleBeyondFrameBudget', 'witnessSecondDelivery'],
+                    'guidedLeaderExitStep': ['witnessExitWaiting'],
+                    'guidedRetirementStep': ['witnessRetireWaiting'],
+                    'guidedPartialTimeoutStep': ['witnessPartialTimeout']},
             }.get(stem, {})
             guided_counts = {}
             for driver, selected in guided.items():
@@ -269,7 +274,7 @@ def models_only(output, env):
         copy = work / 'source'
         formal = copy / 'runtime/formal'
         formal.mkdir(parents=True, mode=0o700)
-        stems = ('ui-origin', 'ui-engine-lifetime', 'ui-private-network', 'ui-http-admission', 'ui-frontend-delivery', 'ui-standalone-bootstrap', 'ui-engine-rpc', 'ui-engine-topology')
+        stems = ('ui-origin', 'ui-engine-lifetime', 'ui-private-network', 'ui-http-admission', 'ui-frontend-delivery', 'ui-standalone-bootstrap', 'ui-engine-rpc', 'ui-engine-topology', 'desktop-idle-lifetime')
         paths = [stem + suffix for stem in stems for suffix in ('.qnt', '_test.qnt')]
         hashes = {}
         for name in paths:

@@ -5,13 +5,14 @@ import Control.Concurrent.MVar
 import Control.Concurrent (forkFinally,killThread)
 import Control.Exception (Exception,AsyncException(ThreadKilled),SomeException,SomeAsyncException,fromException,mask,mask_,uninterruptibleMask_,onException,throwIO,try,finally)
 import qualified Data.ByteString as B
+import Text.Read (readMaybe)
 import Data.IORef (IORef,newIORef,readIORef,writeIORef)
 import Warlock.Bootstrap.ScopedPeer (PeerRefusal)
 import Warlock.Bootstrap.CurrentSessions (CurrentSessions, Registration, newRegistration, withApprovedOwnedPeer, retireRegistration)
-import Warlock.Protocol.CredentialIngress (CredentialIngress, CredentialIngressResult(..), CredentialFrameError(CredentialTransport), receiveCredentialIngress, retireCredentialIngress)
+import Warlock.Protocol.CredentialIngress (CredentialIngress, CredentialIngressResult(..), CredentialFrameError(CredentialTransport), receiveCredentialIngress, receiveDesktopCredentialIngressAfterIdle, retireCredentialIngress)
 import Warlock.Protocol.Ingress (ChannelError(StreamEOF))
 import Warlock.Bootstrap.SocketOwner (SocketOwner,newSocketOwner,acquireSocketOwner,withEndpoints,claimTransfer,shutdownPeerWrite,retireSocketOwner)
-import Warlock.Capture.Process.Bootstrap (Owner,OwnerStatus(..),SelectedOutcome,AdmissionDeadline,ToolError(..),newOwner,status,selectedHeld,remainingMicros,runSelectedDetailed,awaitLeader,observeSession,observedPid)
+import Warlock.Capture.Process.Bootstrap (Owner,OwnerStatus(..),SelectedOutcome,AdmissionDeadline,ToolError(..),newOwner,status,selectedHeld,remainingMicros,deadlineAbsoluteNs,runSelectedDetailed,awaitLeader,observeSession,observedPid)
 import Warlock.Platform.Executable (HeldExecutable,retireHeld,LeaseError(..))
 import Warlock.Capture.Process.Bootstrap (TransferTicket,TransferDisposition(..),newTransferTicket,closeCallerTransfer,transferDisposition)
 import Warlock.Platform.Resolver (Root,Pin,Link,Resolution(..))
@@ -80,7 +81,9 @@ runBootstrapWithArguments owner@(BootstrapOwner core lease pair state authObserv
                                 scoped <- withApprovedOwnedPeer admission session peer (resolvedIdentity receipt) role $ \scope -> do
                                   let guard = guardForScopeTracing trace scope
                                       pump delivered = do
-                                        frame <- receiveCredentialIngress ingress guard
+                                        frame <- if delivered
+                                          then receiveDesktopCredentialIngressAfterIdle (maybe 0 id (readMaybe (deadlineAbsoluteNs deadline))) ingress guard
+                                          else receiveCredentialIngress ingress guard
                                         case frame of
                                           CredentialDelivered -> do
                                             writeIORef authObservation (Just (FrameObserved frame))
